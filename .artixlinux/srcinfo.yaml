@@ -1,0 +1,31 @@
+---
+version: 5.15.17+kde+r2-1
+pkgbase:
+  name: qt5-websockets
+  pkgdesc: Provides WebSocket communication compliant with RFC 6455
+  pkgver: 5.15.17+kde+r2
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - qt5-declarative
+    - git
+  depends:
+    - qt5-base
+  optdepends:
+    - 'qt5-declarative: QML bindings'
+  source:
+    - kde-qtwebsockets::git+https://invent.kde.org/qt/qt/qtwebsockets#commit=db9cb84499229143506a9692fc65d3cb223b3978
+  sha256sums:
+    - 69fdbccd906d3184aede90f4c59cdf8fcb4ff8d54e07faa41ce332fb365c8d6e
+pkgname:
+  - name: qt5-websockets
+# generated with artixpkg 0.36.2-1-any
