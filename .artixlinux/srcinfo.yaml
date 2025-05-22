@@ -1,10 +1,10 @@
 ---
-version: 1.8.0-1
+version: 1.8.0-2
 pkgbase:
   name: timew
   pkgdesc: Timewarrior, A command line time tracking application
   pkgver: 1.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://timewarrior.net/
   install: timew.install
   arch:
@@ -24,4 +24,4 @@ pkgbase:
     - 1ea54302dcefa4aa658f89b6b825f0e8b49c04f15cf153a2e7d8bce5525920b4
 pkgname:
   - name: timew
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
