@@ -1,10 +1,10 @@
 ---
-version: 20250508.788aadc8-1
+version: 20250508.788aadc8-2
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
   pkgver: 20250508.788aadc8
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
     - any
@@ -65,4 +65,4 @@ pkgname:
     pkgdesc: Firmware files for Linux - bnx2x / Firmware for Broadcom NetXtreme II 10Gb ethernet adapters
     depends:
       - linux-firmware-whence
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-2-any
