@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 20250522-1
     packages:
       - archlinux-mirrorlist-20250522-1-any.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 20250503-1
-    packages:
-      - archlinux-mirrorlist-20250503-1-any.pkg.tar.zst
     debug: []
 team: galaxy
