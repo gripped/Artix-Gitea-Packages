@@ -1,0 +1,30 @@
+---
+version: 5.15.17+kde+r7-1
+pkgbase:
+  name: qt5-location
+  pkgdesc: Provides access to position, satellite and area monitoring classes
+  pkgver: 5.15.17+kde+r7
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - git
+  depends:
+    - qt5-declarative
+  source:
+    - kde-qtlocation::git+https://invent.kde.org/qt/qt/qtlocation#commit=c6e6c63e8566fc75551cb901c3b5939b39e7a25c
+    - git+https://invent.kde.org/qt/qt/qtlocation-mapboxgl.git
+  sha256sums:
+    - 8c27e7ec72bdf94f2dc2b93a55760076e418e89097ad56d6ddfb89657edc370a
+    - SKIP
+pkgname:
+  - name: qt5-location
+# generated with artixpkg 0.36.2-1-any
