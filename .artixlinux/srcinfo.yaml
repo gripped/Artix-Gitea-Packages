@@ -1,0 +1,32 @@
+---
+version: 5.15.17+kde+r21-1
+pkgbase:
+  name: qt5-declarative
+  pkgdesc: Classes for QML and JavaScript languages
+  pkgver: 5.15.17+kde+r21
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - python
+    - vulkan-headers
+    - git
+  depends:
+    - qt5-base
+  conflicts:
+    - qtchooser
+  source:
+    - kde-qtdeclarative::git+https://invent.kde.org/qt/qt/qtdeclarative#commit=11ea94fc8ea95d0ba95745a021a1b139283b8b36
+  sha256sums:
+    - 81d62f00c2014cecf74b28d28fa0d08f94d0677bcad018c1f46035cdd7660c1f
+pkgname:
+  - name: qt5-declarative
+# generated with artixpkg 0.36.2-1-any
