@@ -1,10 +1,10 @@
 ---
-version: 5.15.19-1
+version: 5.15.19-2
 pkgbase:
   name: qt5-script
   pkgdesc: Classes for making Qt applications scriptable. Provided for Qt 4.x compatibility
   pkgver: 5.15.19
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 2430cc89b5dd03128586237635c097fa2640ad8ea484796e6e7da170c0b4d9cc
 pkgname:
   - name: qt5-script
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.2-1-any
