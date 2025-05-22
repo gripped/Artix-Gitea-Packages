@@ -1,0 +1,28 @@
+---
+version: 1.30.0-2
+pkgbase:
+  name: pkcs11-helper
+  pkgdesc: A library that simplifies the interaction with PKCS11 providers for end-user applications using a simple API and optional OpenSSL engine
+  pkgver: 1.30.0
+  pkgrel: 2
+  url: https://github.com/OpenSC/pkcs11-helper
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - BSD
+  makedepends:
+    - git
+  depends:
+    - gnutls
+    - nss
+    - openssl
+  provides:
+    - libpkcs11-helper.so
+  source:
+    - git+https://github.com/OpenSC/pkcs11-helper#tag=pkcs11-helper-1.30.0
+  sha256sums:
+    - 9ad2b74ec2604fa41f87be143b375e82db72a954f99edf8df8ad684ea84f9adf
+pkgname:
+  - name: pkcs11-helper
+# generated with artixpkg 0.36.2-2-any
