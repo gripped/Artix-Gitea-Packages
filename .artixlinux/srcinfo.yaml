@@ -1,0 +1,47 @@
+---
+version: 1:1.9.0-2.1
+pkgbase:
+  name: libgit2
+  pkgdesc: A linkable library for Git
+  pkgver: 1.9.0
+  pkgrel: 2.1
+  epoch: 1
+  url: https://github.com/libgit2/libgit2
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-GPL-2.0-only-with-linking-exception
+  makedepends:
+    - cmake
+    - libssh2
+    - openssl
+    - pcre2
+    - python
+  depends:
+    - gcc-libs
+    - glibc
+    - llhttp
+    - zlib
+  provides:
+    - libgit2.so
+  source:
+    - https://github.com/libgit2/libgit2/archive/v1.9.0/libgit2-v1.9.0.tar.gz
+  sha512sums:
+    - 38547ace676b933a3146c2a00405fc6815063a7af923b9f2c09c536ec717be77d19c513b383939054913ce617d7917c100a5cbd3378d101fcdb5eacd1d14f687
+  b2sums:
+    - c81beab379bd78a66d28a48600527979a6c51d33f946df1f996f52ac274cadc88f7afb8c90683f584300941a214bc69389412fb6c9be3b48d22c708b41ca0e1d
+pkgname:
+  - name: libgit2
+    depends:
+      - gcc-libs
+      - glibc
+      - llhttp
+      - zlib
+      - libssh2
+      - libssh2.so
+      - openssl
+      - libcrypto.so
+      - libssl.so
+      - pcre2
+      - libpcre2-8.so
+# generated with artixpkg 0.36.2-2-any
