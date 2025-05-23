@@ -1,0 +1,50 @@
+---
+version: 0.89.0-1
+pkgbase:
+  name: ruby-async-http
+  pkgdesc: A HTTP client and server library
+  pkgver: 0.89.0
+  pkgrel: 1
+  url: https://github.com/socketry/async-http
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-async-container
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-localhost
+    - ruby-rack-test
+    - ruby-sus
+    - ruby-sus-fixtures-async
+    - ruby-sus-fixtures-async-http
+    - ruby-sus-fixtures-openssl
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-async
+    - ruby-async-pool
+    - ruby-io-endpoint
+    - ruby-io-stream
+    - ruby-metrics
+    - ruby-protocol-http
+    - ruby-protocol-http1
+    - ruby-protocol-http2
+    - ruby-traces
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/async-http/archive/v0.89.0/ruby-async-http-0.89.0.tar.gz
+  sha512sums:
+    - 880583793b8344ca1b820d685387f05463d5d1cc6aedba7b409aef35ad6485041ca35cc3cec7c963fc9a12220e5f72a55bb87b80c807a9284b2eaed2231203a7
+  b2sums:
+    - 1b1becd9c3aaa501195b1021f0b25c5be30923a7a8ce05069f6d96b3ac8f639fb3993ecfcc87bc3ba0bf9db5f6f2542f74e86b0399a5e79d5ae030f23930a8ad
+pkgname:
+  - name: ruby-async-http
+# generated with artixpkg 0.36.2-1-any
