@@ -46,7 +46,7 @@ build() {
   cd cryptography
   echo $RUSTFLAGS
   # https://github.com/pyca/cryptography/issues/9023
-  CC=clang RUSTFLAGS+="-Clinker-plugin-lto -Clinker=clang -Clink-arg=-fuse-ld=lld" \
+  CC=clang RUSTFLAGS+=" -Clinker-plugin-lto -Clinker=clang -Clink-arg=-fuse-ld=lld" \
     python -m build --wheel --no-isolation --skip-dependency-check
 }
 
