@@ -1,0 +1,68 @@
+---
+version: 2025.5.0-1
+pkgbase:
+  name: python-fsspec
+  pkgdesc: Specification that python filesystems should adhere to
+  pkgver: 2025.5.0
+  pkgrel: 1
+  url: https://github.com/intake/filesystem_spec
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - git
+    - jupyter-notebook
+    - python-aiohttp
+    - python-cloudpickle
+    - python-dask
+    - python-distributed
+    - python-fastparquet
+    - python-jinja
+    - python-libarchive-c
+    - python-lz4
+    - python-msgpack
+    - python-numpy
+    - python-pandas
+    - python-paramiko
+    - python-pyarrow
+    - python-pyftpdlib
+    - python-pygit2
+    - python-pytest
+    - python-pytest-asyncio
+    - python-pytest-mock
+    - python-pytest-rerunfailures
+    - python-pytest-vcr
+    - python-requests
+    - python-smbprotocol
+    - python-snappy
+    - python-tqdm
+    - python-zstandard
+  makedepends:
+    - python-build
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-aiohttp: HTTP support'
+    - 'python-distributed: Dask support'
+    - 'python-libarchive-c: archives support'
+    - 'python-lz4: LZ4 compression support'
+    - 'python-paramiko: SFTP support'
+    - 'python-pyarrow: Arrow/Parquet support'
+    - 'python-pygit2: git support'
+    - 'python-requests: web protocols support'
+    - 'python-smbprotocol: SMB support'
+    - 'python-snappy: snappy compression support'
+    - 'python-tqdm: progress bar support'
+    - 'python-zstandard: zstandard (zstd) compression support'
+  source:
+    - https://github.com/intake/filesystem_spec/archive/2025.5.0/python-fsspec-2025.5.0.tar.gz
+  sha256sums:
+    - d5f4ca010ecae3e1256eef865ff10fe24457142635e9693fd823fc1e8cd5311b
+pkgname:
+  - name: python-fsspec
+# generated with artixpkg 0.36.2-1-any
