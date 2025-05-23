@@ -1,9 +1,9 @@
 ---
-version: 0.21.2-1
+version: 0.22.0-1
 pkgbase:
   name: python-validators
   pkgdesc: Python Data Validation for Humans
-  pkgver: 0.21.2
+  pkgver: 0.22.0
   pkgrel: 1
   url: https://github.com/kvesteri/validators
   arch:
@@ -17,13 +17,12 @@ pkgbase:
     - python-build
     - python-installer
     - python-setuptools
-    - python-wheel
   depends:
     - python
   source:
-    - git+https://github.com/kvesteri/validators.git#tag=0.21.2
+    - git+https://github.com/kvesteri/validators.git#tag=0.22.0
   sha512sums:
-    - e16884351866c87761bd4f3ff3d09ef6a6269ec7ee121eebaebe48ca591a96406807a5b7d74be05f8714af48fad97f3165c0018ccc9ce71b054ef7bec8137f9e
+    - 4adc3e95a78bb416d4473dfa03e1450c3cc94c17f87f4c4b1259be90a76cb041dfbde831896379ed0dacfa53087622b0da6c4cc1a86c8c467dc1c75cc4ddd47d
 pkgname:
   - name: python-validators
 # generated with artixpkg 0.36.2-1-any
