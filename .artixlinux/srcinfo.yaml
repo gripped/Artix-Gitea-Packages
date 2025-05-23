@@ -1,0 +1,48 @@
+---
+version: 2.1.5-1
+pkgbase:
+  name: terminator
+  pkgdesc: Terminal emulator that supports tabs and grids
+  pkgver: 2.1.5
+  pkgrel: 1
+  url: https://github.com/gnome-terminator/terminator
+  arch:
+    - any
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - intltool
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gsettings-desktop-schemas
+    - libkeybinder3
+    - libnotify
+    - python
+    - python-cairo
+    - python-configobj
+    - python-dbus
+    - python-gobject
+    - python-psutil
+    - vte3
+    - xdg-utils
+  source:
+    - https://github.com/gnome-terminator/terminator/releases/download/v2.1.5/terminator-2.1.5.tar.gz
+    - https://github.com/gnome-terminator/terminator/releases/download/v2.1.5/terminator-2.1.5.tar.gz.asc
+    - 0001-fixed-validate-module-import-for-newer-version-of-co.patch
+  validpgpkeys:
+    - 6FBDB41587919A0F4BA96EBA9A358BAB04A4ED27
+    - D11A7596F61705480C711598F2FAC7C7BAE930A5
+  sha512sums:
+    - 27dc3e9cbe7074e3236b6a0fda9460f4b13492010ad37500c0e68bf08cc1949d44347089671259313853014f708cde4be1321b33edf6b5494256b75386616e56
+    - SKIP
+    - da609bbb1f2fce64bd345ec43c05f6b8d76046cfbd1be764d6fcd555d306dfca1dd5786b0fc65c0984e49a85454c9eeabf5a1f8c960412c14a97c5350912f8a9
+  b2sums:
+    - 0a1fd90ac06a61b584cbc621a85413dea4ea29ba8d3fc217e80f394f77cd6a8ce65ae8b9bdbabbf1ea96b390f3b0d4986bde691088fa85bc18701cd6f89fb72c
+    - SKIP
+    - 7cde90cefde34346ef20b50ebd5b930cb47df650c649e199adbb1b6235db0b40c0c2ad2b0e30bc764d52469357ce0b0424648f70da93b10d39ed0793cbbfe648
+pkgname:
+  - name: terminator
+# generated with artixpkg 0.36.2-1-any
