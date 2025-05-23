@@ -1,11 +1,11 @@
 ---
 team: world
 actions:
-  addRepo: null
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -22,8 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.18.2-1
+    packages:
+      - wlroots0.18-0.18.2-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
