@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 1.2.0-1
     packages:
       - xfce4-fsguard-plugin-1.2.0-1-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 1.1.4-1
-    packages:
-      - xfce4-fsguard-plugin-1.1.4-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
