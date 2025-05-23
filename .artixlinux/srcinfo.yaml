@@ -1,0 +1,71 @@
+---
+version: 1:1.10.1-3
+pkgbase:
+  name: sway
+  pkgdesc: Tiling Wayland compositor and replacement for the i3 window manager
+  pkgver: 1.10.1
+  pkgrel: 3
+  epoch: 1
+  url: https://swaywm.org/
+  install: sway.install
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - meson
+    - ninja
+    - scdoc
+    - wayland-protocols
+    - libelogind
+  depends:
+    - cairo
+    - gdk-pixbuf2
+    - libevdev.so
+    - libinput
+    - libjson-c.so
+    - libpixman-1.so
+    - libudev.so
+    - libwayland-server.so
+    - libxcb
+    - libxkbcommon.so
+    - pango
+    - pcre2
+    - ttf-font
+    - wlroots0.18
+    - xcb-util-wm
+  optdepends:
+    - 'brightnessctl: Brightness adjustment tool used in the default configuration'
+    - 'foot: Terminal emulator used in the default configuration'
+    - 'i3status: Status line generation'
+    - 'libpulse: Volume adjustment tool (pactl) used in the default configuration'
+    - 'mako: Lightweight notification daemon'
+    - 'polkit: System privilege control. Required if not using seatd service'
+    - 'swaybg: Wallpaper tool for sway'
+    - 'sway-contrib: Collection of user-contributed scripts for sway'
+    - 'swayidle: Idle management daemon'
+    - 'swaylock: Screen locker'
+    - 'waybar: Highly customizable bar'
+    - 'wmenu: Application launcher used in default config'
+    - 'xorg-xwayland: X11 support'
+    - 'xdg-desktop-portal-gtk: Default xdg-desktop-portal for file picking'
+    - 'xdg-desktop-portal-wlr: xdg-desktop-portal backend'
+  provides:
+    - wayland-compositor
+  backup:
+    - etc/sway/config
+  source:
+    - git+https://github.com/swaywm/sway.git#tag=1.10.1?signed
+    - sway-portals.conf
+    - remove_git_version_format.patch
+  validpgpkeys:
+    - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
+    - 9DDA3B9FA5D58DD5392C78E652CB6609B22DA89A
+  sha512sums:
+    - ec7752ac270dac861130255d00b135f03b1e9bc8313b2f21b1e565a7e0a10ef4fa839c6566f541e5b922715b8da836c654b29ebad0d0850699c03e0bb08a8796
+    - 4f9576b7218aef8152eb60e646985e96b13540b7a4fd34ba68fdc490199cf7a7b46bbee85587e41bffe81fc730222cf408d5712e6251edc85a0a0b0408c1a2df
+    - c3a450d3411b5ec6d4bcb485744213a49ee95698d3237804a7bf93258e091753de4666a2245ffe74129151749ec296be4d7741814380133b673f3fd2ec71932b
+pkgname:
+  - name: sway
+# generated with artixpkg 0.36.2-1-any
