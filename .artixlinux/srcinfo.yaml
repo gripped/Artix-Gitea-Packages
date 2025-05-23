@@ -1,0 +1,36 @@
+---
+version: 0.19.1-1
+pkgbase:
+  name: ruby-async-rest
+  pkgdesc: A library for RESTful clients (and hopefully servers)
+  pkgver: 0.19.1
+  pkgrel: 1
+  url: https://github.com/socketry/async-rest
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+    - ruby-sus-fixtures-async-http
+  depends:
+    - ruby
+    - ruby-async-http
+    - ruby-protocol-http
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/async-rest/archive/v0.19.1/ruby-async-rest-0.19.1.tar.gz
+  sha512sums:
+    - 31bce6f344370f38fd096765567ea729dd6f0d9cc32a462d431bf17d9a7a4c407b26dc3220e6568ac5c991079155af8e6ed84f5e854afc20b7266e00bcaa5206
+  b2sums:
+    - 40938b67f3f7c0b4c6c175736b2d98858c276472cfd342fca86545db2a1d72e107fde5a0236c566b00ad90d10171ee4773eb492e723bc47f1b572ea73b071b69
+pkgname:
+  - name: ruby-async-rest
+# generated with artixpkg 0.36.2-1-any
