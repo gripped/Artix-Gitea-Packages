@@ -1,0 +1,37 @@
+---
+version: 1.18.4-1
+pkgbase:
+  name: elixir
+  pkgdesc: A dynamic, functional language for building scalable and maintainable applications
+  pkgver: 1.18.4
+  pkgrel: 1
+  url: https://elixir-lang.org
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - erlang-dialyzer
+    - erlang-eunit
+    - git
+  makedepends:
+    - erlang-compiler
+    - erlang-crypto
+    - erlang-erts
+    - erlang-inets
+    - erlang-kernel
+    - erlang-parsetools
+    - erlang-public_key
+    - erlang-sasl
+    - erlang-stdlib
+    - erlang-tools
+    - erlang-xmerl
+  depends:
+    - erlang-core
+  source:
+    - elixir-1.18.4.tar.gz::https://github.com/elixir-lang/elixir/archive/v1.18.4.tar.gz
+  sha256sums:
+    - 8e136c0a92160cdad8daa74560e0e9c6810486bd232fbce1709d40fcc426b5e0
+pkgname:
+  - name: elixir
+# generated with artixpkg 0.36.2-1-any
