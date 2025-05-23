@@ -1,0 +1,60 @@
+---
+version: 2.44.0-1
+pkgbase:
+  name: fastfetch
+  pkgdesc: A feature-rich and performance oriented neofetch like system information tool
+  pkgver: 2.44.0
+  pkgrel: 1
+  url: https://github.com/fastfetch-cli/fastfetch
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - chafa
+    - cmake
+    - dbus
+    - dconf
+    - ddcutil
+    - directx-headers
+    - imagemagick
+    - libpulse
+    - libxcb
+    - libxrandr
+    - ocl-icd
+    - opencl-headers
+    - sqlite
+    - vulkan-headers
+    - vulkan-icd-loader
+    - wayland
+    - xfconf
+    - zlib
+  depends:
+    - glibc
+    - yyjson
+  optdepends:
+    - 'chafa: Image output as ascii art'
+    - 'dbus: Bluetooth, Player & Media detection'
+    - 'dconf: Needed for values that are only stored in DConf + Fallback for GSettings'
+    - 'ddcutil: Brightness detection of external displays'
+    - 'directx-headers: GPU detection in WSL'
+    - 'glib2: Output for values that are only stored in GSettings'
+    - 'hwdata: GPU output'
+    - 'imagemagick: Image output using sixel or kitty graphics protocol'
+    - 'libdrm: Displays detection'
+    - 'libelf: st term font detection and fast path of systemd version detection'
+    - 'libpulse: Sound detection'
+    - 'libxrandr: Multi monitor support'
+    - 'ocl-icd: OpenCL module'
+    - 'python: Needed for zsh and fish completions'
+    - 'sqlite: Needed for Sqlite integration and Soar packages count'
+    - 'vulkan-icd-loader: Vulkan module & fallback for GPU output'
+    - 'xfconf: Needed for XFWM theme and XFCE Terminal font'
+    - 'zlib: Faster image output when using kitty graphics protocol'
+  source:
+    - fastfetch-2.44.0.tar.gz::https://github.com/fastfetch-cli/fastfetch/archive/refs/tags/2.44.0.tar.gz
+  sha256sums:
+    - 3fc2b6d71e38f07ccef29945937daac7825a7cf48f67658207d31a5d42a5a90b
+pkgname:
+  - name: fastfetch
+# generated with artixpkg 0.36.1-3-any
