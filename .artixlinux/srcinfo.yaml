@@ -1,0 +1,58 @@
+---
+version: 2.11.5-1
+pkgbase:
+  name: python-pydantic
+  pkgdesc: Data parsing and validation using Python type hints
+  pkgver: 2.11.5
+  pkgrel: 1
+  url: https://github.com/pydantic/pydantic
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-ansi2html
+    - python-cloudpickle
+    - python-dirty-equals
+    - python-email-validator
+    - python-faker
+    - python-greenlet
+    - python-hypothesis
+    - python-jsonschema
+    - python-packaging
+    - python-pygments
+    - python-pytest
+    - python-pytest-benchmark
+    - python-pytest-examples
+    - python-pytest-mock
+    - python-pytest-pretty
+    - python-pytest-run-parallel
+    - python-pytz
+    - python-sqlalchemy
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-fancy-pypi-readme
+    - python-wheel
+  depends:
+    - python
+    - python-annotated-types
+    - python-pydantic-core
+    - python-typing_extensions
+    - python-typing-inspection
+  optdepends:
+    - 'mypy: for type validation with mypy'
+    - 'python-dotenv: for .env file support'
+    - 'python-email-validator: for email validation'
+    - 'python-hypothesis: for hypothesis plugin when using legacy v1'
+  source:
+    - https://github.com/pydantic/pydantic/archive/v2.11.5/pydantic-v2.11.5.tar.gz
+  sha512sums:
+    - 08a45bc92efed12f2b8606dc194bfd5736bf3c018f137255b92f05517ea4073bc1e70ac314196fe96fe819b1867e393cd66b5292605ed2144f72d82f76c00df5
+  b2sums:
+    - 896734c326379c49af35f2f58c3ed9c60cf41367e4ce8a9ff202e17939e5efbb331c2b211cb5c2799b4e4703e0ae59191a6c5272359f6dad2298a77e77b356f2
+pkgname:
+  - name: python-pydantic
+# generated with artixpkg 0.36.2-2-any
