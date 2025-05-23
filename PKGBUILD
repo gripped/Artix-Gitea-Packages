@@ -4,7 +4,7 @@
 # Contributor: Bernhard Landauer <oberon@manjaro.org>
 
 pkgname=xfce4-panel-profiles
-pkgver=1.1.0
+pkgver=1.1.1
 pkgrel=1
 pkgdesc="Simple application to manage Xfce panel layouts"
 arch=('any')
@@ -13,7 +13,7 @@ license=('GPL-3.0-only')
 depends=('xfce4-panel' 'python' 'python-gobject' 'python-psutil')
 makedepends=('git' 'meson' 'xfce4-dev-tools')
 source=("git+https://gitlab.xfce.org/apps/xfce4-panel-profiles.git#tag=$pkgname-$pkgver")
-sha256sums=('410a3c6ed084207d099dc9fab5c0f311ea7912f2133a2c982bc28c220721045d')
+sha256sums=('4bc7a0a07c1600173a497efe8ebda26431089f3cf9458941409a10f396621f47')
 
 build() {
   artix-meson $pkgname build
