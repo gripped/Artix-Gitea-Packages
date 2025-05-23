@@ -27,7 +27,7 @@ pkgname=(
   qemu-{base,desktop,emulators-full,full}
 )
 pkgver=10.0.0
-pkgrel=3
+pkgrel=5
 pkgdesc="A generic and open source machine emulator and virtualizer"
 arch=(x86_64)
 url="https://www.qemu.org/"
@@ -774,7 +774,7 @@ package_qemu-hw-display-virtio-gpu() {
 
 package_qemu-hw-display-virtio-gpu-rutabaga() {
   pkgdesc="QEMU virtio-gpu-rutabaga display device"
-  depends=(gcc-libs pixman rutabaga-ffi glibc qemu-common=$pkgver-$pkgrel)
+  depends=(gcc-libs glibc pixman libpixman-1.so qemu-common=$pkgver-$pkgrel rutabaga-ffi)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -795,7 +795,7 @@ package_qemu-hw-display-virtio-gpu-pci() {
 
 package_qemu-hw-display-virtio-gpu-pci-rutabaga() {
   pkgdesc="QEMU virtio-gpu-pci-rutabaga display device"
-  depends=(gcc-libs pixman rutabaga-ffi glibc qemu-common=$pkgver-$pkgrel)
+  depends=(gcc-libs glibc pixman libpixman-1.so qemu-common=$pkgver-$pkgrel rutabaga-ffi)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -823,7 +823,7 @@ package_qemu-hw-display-virtio-vga-gl() {
 
 package_qemu-hw-display-virtio-vga-rutabaga() {
   pkgdesc="QEMU virtio-vga-rutabaga display device"
-  depends=(gcc-libs pixman rutabaga-ffi glibc qemu-common=$pkgver-$pkgrel)
+  depends=(gcc-libs glibc pixman qemu-common=$pkgver-$pkgrel rutabaga-ffi)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1228,8 +1228,8 @@ package_qemu-desktop() {
     qemu-audio-{alsa,dbus,jack,oss,pa,pipewire,sdl,spice}=$pkgver-$pkgrel
     qemu-block-{curl,dmg,nfs,ssh}=$pkgver-$pkgrel
     qemu-chardev-spice=$pkgver-$pkgrel
-    qemu-hw-display-{qxl,virtio-gpu{,-{gl,pci,pci-gl}}}=$pkgver-$pkgrel
-    qemu-hw-display-virtio-vga{,-gl}=$pkgver-$pkgrel
+    qemu-hw-display-{qxl,virtio-gpu{,-{gl,rutabaga,pci,pci-gl,pci-rutabaga}}}=$pkgver-$pkgrel
+    qemu-hw-display-virtio-vga{,-gl,-rutabaga}=$pkgver-$pkgrel
     qemu-hw-uefi-vars=$pkgver-$pkgrel
     qemu-hw-usb-{host,redirect,smartcard}=$pkgver-$pkgrel
     qemu-ui-{curses,dbus,egl-headless,gtk,opengl,sdl,spice-{app,core}}=$pkgver-$pkgrel
