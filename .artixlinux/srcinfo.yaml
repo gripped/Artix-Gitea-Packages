@@ -1,0 +1,33 @@
+---
+version: 5.15.17-1
+pkgbase:
+  name: qt5-xmlpatterns
+  pkgdesc: Support for XPath, XQuery, XSLT and XML schema validation
+  pkgver: 5.15.17
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - qt5-declarative
+    - git
+  depends:
+    - qt5-base
+  optdepends:
+    - 'qt5-declarative: QML bindings'
+  conflicts:
+    - qtchooser
+  source:
+    - kde-qtxmlpatterns::git+https://invent.kde.org/qt/qt/qtxmlpatterns#commit=e645537910450ba8bf5ecfbb735f69acdeeef046
+  sha256sums:
+    - 7b9feb7227e92b9bfff83b2e1447cea7c315c223c3d7229ee78deaceb8050b51
+pkgname:
+  - name: qt5-xmlpatterns
+# generated with artixpkg 0.36.2-1-any
