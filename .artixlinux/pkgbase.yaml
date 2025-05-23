@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.4.1-1
+    version: 3.4.2-1
     packages:
-      - python-bitarray-3.4.1-1-x86_64.pkg.tar.zst
+      - python-bitarray-3.4.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.4.0-1
