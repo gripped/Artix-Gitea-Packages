@@ -1,0 +1,33 @@
+---
+version: 0.104.1-1
+pkgbase:
+  name: nushell
+  pkgdesc: A new type of shell
+  pkgver: 0.104.1
+  pkgrel: 1
+  url: https://www.nushell.sh
+  install: nushell.install
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - procps-ng
+  makedepends:
+    - cargo
+    - git
+  depends:
+    - glibc
+    - gcc-libs
+    - libcrypto.so
+    - libssl.so
+    - zlib
+  source:
+    - git+https://github.com/nushell/nushell.git#tag=0.104.1
+  sha512sums:
+    - c61b1b3d76178a608cc922bf20121fd4fdcdd682b007401a158f1f2e6da0c9179fc7a643ff7708e594cc9f781b93075375932d405f74c1be4350045746550a69
+  b2sums:
+    - ff4ecaaff0021656f3eaf72e3a294860c11e716cc3dcb9cd660b5dd4588fc961379bb0dcecd4dd83c884df0216942da5ff4620a7cd84f96dea2b1b51da8686c9
+pkgname:
+  - name: nushell
+# generated with artixpkg 0.36.2-1-any
