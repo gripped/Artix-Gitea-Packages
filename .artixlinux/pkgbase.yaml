@@ -13,11 +13,11 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 6.12.29-2
+    version: 6.12.30-1
     packages:
-      - linux-lts-6.12.29-2-x86_64.pkg.tar.zst
-      - linux-lts-headers-6.12.29-2-x86_64.pkg.tar.zst
-      - linux-lts-docs-6.12.29-2-x86_64.pkg.tar.zst
+      - linux-lts-6.12.30-1-x86_64.pkg.tar.zst
+      - linux-lts-headers-6.12.30-1-x86_64.pkg.tar.zst
+      - linux-lts-docs-6.12.30-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 6.12.27-1
