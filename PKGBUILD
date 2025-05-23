@@ -14,7 +14,7 @@ arch=('x86_64')
 depends=('libdisplay-info.so' 'libglvnd' 'libinput' 'liblcms2.so' 'libliftoff.so' 'libpixman-1.so'
          'libseat.so' 'libudev.so' 'libvulkan.so' 'libwayland-client.so' 'libwayland-server.so'
          'libxcb' 'libxkbcommon.so' 'opengl-driver' 'xcb-util-errors' 'xcb-util-renderutil' 'xcb-util-wm')
-makedepends=('git' 'glslang' 'meson' 'ninja' 'systemd' 'vulkan-headers' 'wayland-protocols' 'xorg-xwayland')
+makedepends=('git' 'glslang' 'meson' 'ninja' 'vulkan-headers' 'wayland-protocols' 'xorg-xwayland')
 optdepends=('xorg-xwayland: Xwayland support')
 provides=("libwlroots-${pkgver%.*}.so")
 replaces=("${_pkgname}")

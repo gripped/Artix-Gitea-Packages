@@ -15,7 +15,6 @@ pkgbase:
     - glslang
     - meson
     - ninja
-    - systemd
     - vulkan-headers
     - wayland-protocols
     - xorg-xwayland
