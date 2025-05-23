@@ -1,0 +1,33 @@
+---
+version: 5.15.17+kde+r1-1
+pkgbase:
+  name: qt5-speech
+  pkgdesc: Qt module to make text to speech and speech recognition easy
+  pkgver: 5.15.17+kde+r1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt5
+  license:
+    - GPL3
+    - LGPL3
+    - FDL
+    - custom
+  makedepends:
+    - git
+    - flite
+    - speech-dispatcher
+  depends:
+    - qt5-multimedia
+  optdepends:
+    - 'flite: flite TTS backend'
+    - 'speech-dispatcher: speech-dispatcher TTS backend'
+  source:
+    - kde-qtspeech::git+https://invent.kde.org/qt/qt/qtspeech#commit=088b86a0e53ebb714c1276d041ab2c06fee58e6e
+  sha256sums:
+    - 02cec0b6b5876b6980f67adeb12a892436cb76a487dde1008c9f9d9347643c5a
+pkgname:
+  - name: qt5-speech
+# generated with artixpkg 0.36.2-1-any
