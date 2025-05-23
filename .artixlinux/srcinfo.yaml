@@ -1,0 +1,36 @@
+---
+version: 1.11.2-1
+pkgbase:
+  name: xfce4-screenshooter
+  pkgdesc: An application to take screenshots
+  pkgver: 1.11.2
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/xfce4-screenshooter/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - xfce4-dev-tools
+  depends:
+    - xfce4-panel
+    - hicolor-icon-theme
+    - wayland-protocols
+  optdepends:
+    - 'curl: upload screenshots to Imgur'
+    - 'jq: upload screenshots to Imgur'
+    - 'xclip: upload screenshots to Imgur'
+    - 'zenity: upload screenshots to Imgur'
+  source:
+    - git+https://gitlab.xfce.org/apps/xfce4-screenshooter.git#tag=xfce4-screenshooter-1.11.2
+    - git+https://gitlab.freedesktop.org/wlroots/wlr-protocols.git
+  sha256sums:
+    - 8f12610907e922d615598a0a8be2fe8234f7dc8e5192c26d7d57fe7be1c2291d
+    - SKIP
+pkgname:
+  - name: xfce4-screenshooter
+# generated with artixpkg 0.36.2-1-any
