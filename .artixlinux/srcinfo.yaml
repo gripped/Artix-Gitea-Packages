@@ -1,0 +1,33 @@
+---
+version: 0.35.0-1
+pkgbase:
+  name: python-dbusmock
+  pkgdesc: Mock D-Bus objects for tests
+  pkgver: 0.35.0
+  pkgrel: 1
+  url: https://github.com/martinpitt/python-dbusmock
+  arch:
+    - any
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - glib2
+    - python
+    - python-dbus
+    - python-gobject
+  source:
+    - git+https://github.com/martinpitt/python-dbusmock#tag=0.35.0
+  validpgpkeys:
+    - 3DB46B55EFA59D40E6232148D14EF15DAFE11347
+  b2sums:
+    - 6dbf267a8e641d3eb16d26609887a2b6c17ebeecc646c72d75c6334a80a9aa4220def0abe543c2d08846139e23e9fb588e11287297a495528151d06d747a8638
+pkgname:
+  - name: python-dbusmock
+# generated with artixpkg 0.36.2-1-any
