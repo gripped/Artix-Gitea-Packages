@@ -1,0 +1,36 @@
+---
+version: 7.8.2-1
+pkgbase:
+  name: python-coverage
+  pkgdesc: A tool for measuring code coverage of Python programs
+  pkgver: 7.8.2
+  pkgrel: 1
+  url: https://coverage.readthedocs.io/en/latest/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-flaky
+    - python-hypothesis
+    - python-pytest
+    - python-pytest-xdist
+    - python-unittest-mixins
+    - python-virtualenv
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+  source:
+    - python-coverage-7.8.2.tar.gz::https://github.com/nedbat/coveragepy/archive/7.8.2.tar.gz
+  sha512sums:
+    - ef0474f19548d19568a3d7126788f5bfc7e6a96ce73b9b89b33d61b26e113e1e23c5a4387408f19c97f5fbe0c826e6fa38cc9a82ecba9b7cb18043676545469a
+  b2sums:
+    - fb88b0f7ec996ebae1a0086a871219969518f9c16f7cdcbef47c42781b45635460745c95c61d79ce3f5cef971a2d315417494fdd4fc69e969218bd9401ada569
+pkgname:
+  - name: python-coverage
+# generated with artixpkg 0.36.2-2-any
