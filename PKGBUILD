@@ -7,7 +7,7 @@ _bootstrap=0
 _bootstrap_version=3.13.0
 pkgname=python-setuptools
 _name=${pkgname#python-}
-pkgver=80.3.1
+pkgver=80.8.0
 pkgrel=1
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
@@ -71,7 +71,7 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-b2sums=('81e41556e41f4896e848e5af2e2a0a52d0612b76f0c62c9b51dc9c66d9b42881a16cd37c38cfffc1dbcb9f2b766cd817520c7e2eb89a687f1dd0afef9039ca08'
+b2sums=('7aafba0d1e7d5ac23ad8d23765f270eb14b7a7fbdaaeab71cd5ef0cab1859403f89bf6a947c9e62511436ae45d956ab434688e3a869e665d8948224051754a0a'
         'ff0caf384def8ba8aa1c7fbb29077f2bc14c42935f7f81b6c4993ebe835053207b6773865158ad3143147234b311b95033b266f9b4c34a78a67f0b7e83bb5537')
 #validpgpkeys=('CE380CF3044959B8F377DA03708E6CB181B4C47E') # Jason R. Coombs <jaraco@jaraco.com>
 
