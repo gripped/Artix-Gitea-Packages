@@ -1,0 +1,33 @@
+---
+version: 2.17.0-1
+pkgbase:
+  name: python-babel
+  pkgdesc: A collection of tools for internationalizing Python applications
+  pkgver: 2.17.0
+  pkgrel: 1
+  url: http://babel.pocoo.org/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-freezegun
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+    - python-pytz
+  noextract:
+    - cldr-core-46.zip
+  source:
+    - python-babel-2.17.0.tar.gz::https://github.com/python-babel/babel/archive/v2.17.0.tar.gz
+    - cldr-core-46.zip::http://unicode.org/Public/cldr/46/core.zip
+    - cldr-common-46.0.zip::http://unicode.org/Public/cldr/46/cldr-common-46.0.zip
+  sha256sums:
+    - a52696499d9da7860726444c170f3481dc7409398392f3500783d01c07221bbf
+    - fbce9c2275862ad26668fb34783fe6c339f3d92ddfeb5a10a1775fb58181a15d
+    - fbce9c2275862ad26668fb34783fe6c339f3d92ddfeb5a10a1775fb58181a15d
+pkgname:
+  - name: python-babel
+# generated with artixpkg 0.36.2-2-any
