@@ -1,0 +1,39 @@
+---
+version: 2.8.8-1
+pkgbase:
+  name: xapp
+  pkgdesc: Common library for X-Apps project
+  pkgver: 2.8.8
+  pkgrel: 1
+  url: https://github.com/linuxmint/xapp
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - meson
+    - samurai
+    - gobject-introspection
+    - python-gobject
+    - vala
+    - glib2-devel
+  depends:
+    - libdbusmenu-gtk3
+    - libgnomekbd
+  optdepends:
+    - 'python: for mate-desktop status applet'
+  provides:
+    - xapps
+  conflicts:
+    - xapps
+  replaces:
+    - xapps
+  source:
+    - https://github.com/linuxmint/xapp/archive/2.8.8/xapp-2.8.8.tar.gz
+  sha256sums:
+    - 343cc336dc0fba86f4b27a46125600c2173c6d7ea0bf7df28cf941c42b55a45d
+  b2sums:
+    - ad6d33785a2935777bf1dfa96de22edef676280eb7ac48976889c27351010627805c7ebabfd2f7ba7c16ac71ccc65f7306f40f94a045733ff005a841e8b17676
+pkgname:
+  - name: xapp
+# generated with artixpkg 0.36.2-1-any
