@@ -1,0 +1,23 @@
+---
+version: 7.9.1-1
+pkgbase:
+  name: optipng
+  pkgdesc: Compresses PNG files to a smaller size, without losing any information.
+  pkgver: 7.9.1
+  pkgrel: 1
+  url: http://optipng.sourceforge.net/
+  arch:
+    - x86_64
+  license:
+    - ZLIB
+  depends:
+    - glibc
+    - libpng
+    - zlib
+  source:
+    - https://downloads.sourceforge.net/sourceforge/optipng/optipng-7.9.1.tar.gz
+  sha256sums:
+    - c2579be58c2c66dae9d63154edcb3d427fef64cb00ec0aff079c9d156ec46f29
+pkgname:
+  - name: optipng
+# generated with artixpkg 0.36.2-2-any
