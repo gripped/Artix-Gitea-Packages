@@ -1,0 +1,48 @@
+---
+version: 5.0.8-1
+pkgbase:
+  name: openpmix
+  pkgdesc: Extended version of the PMI standard
+  pkgver: 5.0.8
+  pkgrel: 1
+  url: https://github.com/openpmix/openpmix
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - glibc
+    - hwloc
+    - perl
+    - libevent
+    - libevent_core-2.1.so
+    - libevent_pthreads-2.1.so
+    - python
+    - zlib
+  options:
+    - '!lto'
+  source:
+    - https://github.com/openpmix/openpmix/releases/download/v5.0.8/pmix-5.0.8.tar.gz
+  sha512sums:
+    - 1dde2218c86a0b2fa76ea76a7098b5e99ffa72776729393c0e3eb511e5d44616e48d84add8e1b4bcfa57365d5d0e49123f8e3370411708bd2e59af6afee24dfc
+  b2sums:
+    - a242b9ed7596337e4545f6665854ca9dd72a9d629433ced6f9e5a8c74a6a8d31cff3ace0af6fdbea5797933aa263f31602adde26d204308b5c89fbd29edcecdc
+pkgname:
+  - name: openpmix
+    depends:
+      - glibc
+      - hwloc
+      - libevent
+      - libevent_core-2.1.so
+      - libevent_pthreads-2.1.so
+      - zlib
+    optdepends:
+      - 'openpmix-docs: for documentation'
+    provides:
+      - libpmix.so
+      - pmix
+    backup:
+      - etc/openpmix/pmix-mca-params.conf
+  - name: openpmix-docs
+    pkgdesc: Extended version of the PMI standard - documentation
+# generated with artixpkg 0.36.3-1-any
