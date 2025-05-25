@@ -1,10 +1,10 @@
 ---
-version: 3.4.4-1
+version: 3.4.4-2
 pkgbase:
   name: ruby
   pkgdesc: An object-oriented language for quick and easy programming
   pkgver: 3.4.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.ruby-lang.org/en/
   arch:
     - x86_64
@@ -194,4 +194,4 @@ pkgname:
     depends:
       - ruby-default-gems
       - ruby-bundled-gems
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
