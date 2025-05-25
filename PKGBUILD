@@ -11,7 +11,7 @@
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
 pkgver=31.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
 url='https://developers.google.com/protocol-buffers/'
@@ -98,6 +98,9 @@ build() {
     --install-dir "tmp_install${_gemdir}" \
     --bindir "tmp_install/usr/bin" \
     "pkg/${_gemname}-${_gemver}.gem"
+
+  install -D lib/google/protobuf_c.so \
+    "tmp_install${_gemdir}/gems/${_gemname}-${_gemver}"/lib/google/$(ruby -e 'require "rbconfig"; puts RbConfig::CONFIG["RUBY_API_VERSION"]')/protobuf_c.so
 
   # remove unrepreducible files
   rm --force --recursive --verbose \
