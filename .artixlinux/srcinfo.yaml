@@ -1,9 +1,9 @@
 ---
-version: 7.4.2-1
+version: 7.4.3-1
 pkgbase:
   name: jupyter-notebook
   pkgdesc: The language-agnostic HTML notebook application for Project Jupyter
-  pkgver: 7.4.2
+  pkgver: 7.4.3
   pkgrel: 1
   url: https://github.com/jupyter/notebook
   arch:
@@ -33,9 +33,9 @@ pkgbase:
   replaces:
     - jupyter-retrolab
   source:
-    - git+https://github.com/jupyter/notebook#tag=v7.4.2
+    - git+https://github.com/jupyter/notebook#tag=v7.4.3
   sha256sums:
-    - 93e715d8507108398b6cdc1c310024143b9a0ef3f946d0a74a717b1880b64f57
+    - 463767c965c75ef31db55142ac1460894c8d54ca8048911786adbbd171d638e7
 pkgname:
   - name: jupyter-notebook
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-1-any
