@@ -1,0 +1,35 @@
+---
+version: 3.7.5-1
+pkgbase:
+  name: icewm
+  pkgdesc: Window Manager designed for speed, usability, and consistency
+  pkgver: 3.7.5
+  pkgrel: 1
+  url: https://ice-wm.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-only
+  makedepends:
+    - asciidoctor
+    - cmake
+    - xorg-mkfontscale
+  depends:
+    - alsa-lib
+    - imlib2
+    - librsvg
+    - libsndfile
+    - libxcomposite
+    - libxdamage
+    - libxinerama
+    - libxpm
+    - libxrandr
+  optdepends:
+    - 'perl: for icewm-menu-xrandr'
+  source:
+    - icewm-3.7.5.tar.gz::https://github.com/ice-wm/icewm/archive/refs/tags/3.7.5.tar.gz
+  sha256sums:
+    - ffcaa0eb86af022edbf8b3ad7d57c6c20125a64f678cf451a0665d891a4683e0
+pkgname:
+  - name: icewm
+# generated with artixpkg 0.36.3-1-any
