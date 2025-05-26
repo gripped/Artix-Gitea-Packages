@@ -1,0 +1,31 @@
+---
+version: 0.20.1-1
+pkgbase:
+  name: liborcus
+  pkgdesc: File import filter library for spreadsheet documents.
+  pkgver: 0.20.1
+  pkgrel: 1
+  url: https://gitlab.com/orcus/orcus/blob/master/README.md
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0
+  makedepends:
+    - boost
+    - mdds
+  depends:
+    - libixion
+    - glibc
+    - boost-libs
+    - gcc-libs
+    - zlib
+    - python
+  optdepends:
+    - 'python-requests: in tool bugzilla'
+  source:
+    - https://gitlab.com/api/v4/projects/orcus%2Forcus/packages/generic/source/0.20.1/liborcus-0.20.1.tar.xz
+  sha256sums:
+    - ec27f30e8445a2a3f307f7e829fc446fd48193150b7f8f23bb5bfb25ec6e4e27
+pkgname:
+  - name: liborcus
+# generated with artixpkg 0.36.3-1-any
