@@ -1,0 +1,40 @@
+---
+version: 9.3.1-1
+pkgbase:
+  name: python-diff-cover
+  pkgdesc: Automatically find diff lines that need test coverage
+  pkgver: 9.3.1
+  pkgrel: 1
+  url: https://github.com/Bachmann1234/diff_cover
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - flake8
+    - python-pycodestyle
+    - python-pyflakes
+    - python-pylint
+    - python-pytest
+    - python-pytest-datadir
+    - python-pytest-mock
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-wheel
+  depends:
+    - python
+    - python-chardet
+    - python-jinja
+    - python-pluggy
+    - python-pygments
+  optdepends:
+    - 'python-tomli: for TOML support'
+  source:
+    - python-diff-cover-9.3.1.tar.gz::https://github.com/Bachmann1234/diff_cover/archive/v9.3.1.tar.gz
+  sha256sums:
+    - c25734fedd522900880037a8068cc710f8910a334727ada0f8b48179540055f2
+pkgname:
+  - name: python-diff-cover
+# generated with artixpkg 0.36.3-1-any
