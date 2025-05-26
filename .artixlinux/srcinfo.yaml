@@ -1,0 +1,78 @@
+---
+version: 5.1.5-1
+pkgbase:
+  name: python-moto
+  pkgdesc: Moto is a library to mock out the boto library.
+  pkgver: 5.1.5
+  pkgrel: 1
+  url: https://github.com/spulec/moto
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-antlr4
+    - python-aws-xray-sdk
+    - python-cfn-lint
+    - python-crc32c
+    - python-docker
+    - python-flask
+    - python-flask-cors
+    - python-freezegun
+    - python-graphql-core
+    - python-joserfc
+    - python-jsondiff
+    - python-jsonpath-ng
+    - python-jsonschema
+    - python-multipart
+    - python-openapi-spec-validator
+    - python-py-partiql-parser
+    - python-pyparsing
+    - python-pytest
+    - python-pytest-order
+    - python-yaml
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-boto3
+    - python-botocore
+    - python-cryptography
+    - python-dateutil
+    - python-jinja
+    - python-requests
+    - python-responses
+    - python-urllib3
+    - python-werkzeug
+    - python-xmltodict
+  optdepends:
+    - 'python-yaml: for apigatewayv2, cloudformation, s3 and ssm'
+    - 'python-joserfc: for apigateway, cloudformation and cognitoidp'
+    - 'python-openapi-spec-validator: for apigateway and cloudformation'
+    - 'python-docker: for awslambda, batch, cloudformation, dynamodb and dynamodbstreams'
+    - 'python-graphql-core: For appsync and cloudformation'
+    - 'python-jsondiff: for iotdata and cloudformation'
+    - 'python-aws-xray-sdk: for xray and cloudformation'
+    - 'python-cfn-lint: for cloudformation'
+    - 'python-pyparsing: for glue and cloudformation'
+    - 'python-py-partiql-parser: for cloudformation and s3'
+    - 'python-crc32c: for s3'
+    - 'python-flask: for moto_server'
+    - 'python-flask-cors: for moto_server'
+    - 'python-multipart: for moto_proxy'
+    - 'python-antlr4: for stepfunctions'
+    - 'python-jsonpath-ng: for events, stepfunctions'
+    - 'python-jsonschema: for quicksight'
+  source:
+    - git+https://github.com/getmoto/moto#tag=5.1.5
+    - fix-tests.diff
+  sha256sums:
+    - 0a17d3c99ced7663702c7e5fd542ed20e24835379bdfb8037b4d66b59ccd0ea7
+    - 21305cdf3d650ced1acb1d0f7dde8760b26e32a94c56a5571e798d6b6976cf5a
+pkgname:
+  - name: python-moto
+# generated with artixpkg 0.36.3-1-any
