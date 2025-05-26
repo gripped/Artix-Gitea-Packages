@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,17 +45,16 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 0.git29.c4192e8-2
-    packages:
-      - libtg_owt-0.git29.c4192e8-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy-gremlins:
     version: null
     packages: []
     debug: []
   galaxy:
-    version: 0.git29.c4192e8-1
+    version: 0.git29.c4192e8-2
     packages:
-      - libtg_owt-0.git29.c4192e8-1-x86_64.pkg.tar.zst
+      - libtg_owt-0.git29.c4192e8-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
