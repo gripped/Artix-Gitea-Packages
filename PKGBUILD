@@ -2,8 +2,8 @@
 
 pkgname=waterfox
 _pkgname=Waterfox
-pkgver=6.5.7
-pkgrel=2.2
+pkgver=6.5.9
+pkgrel=2
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -285,7 +285,7 @@ EOT
         fi
 }
 
-b2sums=('b3a03e95380b11d19bf54e1324734ef8a2e7a7c05e289f6c110bf94611c94f6c49f4667c20ba0e9eeb4afb95192df25d0dfb2f5e77963ecb4d3afc3e550020ab'
+b2sums=('092c576bee39d83f9409217a66822324df729b746e69236379516df3395d1838e30345e3eb7d0dacd7afafbc78dfc590d51aae8c53a55c7955682567bfc0f76f'
         'dae98ce62bcc76d822d16a9c140a65943cd1d383734684b08e765b12e61e7010c104a0b333888a6f911fc22c2521c9148a8634cf36d7f120f964bb2ddcde162b'
         '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
         '164844bacff82d9c6431c55ab078725e8e23ff0dc67bf079d56a5696f70b54ca81ec27e5a37acb336b52048c956cd39db087ac060414a1863d8ef3c47120df67'
