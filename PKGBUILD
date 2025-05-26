@@ -7,14 +7,15 @@
 # Check if new updates break python-engineio
 
 pkgname=python-aiohttp
-pkgver=3.11.18
-pkgrel=1.1
+pkgver=3.12.1
+pkgrel=1
 pkgdesc='HTTP client/server for asyncio'
 arch=(x86_64)
 url=https://aiohttp.readthedocs.io
 license=(Apache-2.0)
 depends=(
   glibc
+  llhttp
   python
   python-aiohappyeyeballs
   python-aiosignal
@@ -30,51 +31,51 @@ makedepends=(
   npm
   python-build
   python-installer
+  python-pkgconfig
   python-setuptools
   python-wheel
 )
 checkdepends=(
   gunicorn
   python-aiodns
+  python-blockbuster
   python-brotli
   python-freezegun
+  python-isal
   python-proxy.py
   python-pytest
   python-pytest-codspeed
   python-pytest-mock
+  python-pytest-xdist
   python-re-assert
   python-time-machine
   python-trustme
   python-uvloop
+  python-zlib-ng
 )
 optdepends=(
   'gunicorn: to deploy using Gunicorn'
   'python-aiodns: for fast DNS resolving'
   'python-brotli: for Brotli transfer-encodings support'
 )
-source=(
-  "$pkgname::git+https://github.com/aio-libs/aiohttp#tag=v$pkgver"
-  git+https://github.com/nodejs/llhttp.git
-)
-b2sums=('02c8f8a2f20d176d28fc95fcae31652d5dc8c70def8ba77a840a7b71a4db31c4bd550fb721bd2fb5d50878ad25aef2a23bc901c2642c7d02d1546828e7865c00'
-        'SKIP')
+source=("$pkgname::git+https://github.com/aio-libs/aiohttp#tag=v$pkgver")
+b2sums=('80732a89c75a6797986bd4a6bd12187e14175ddb6bdcc3b2efa2a833d5f5c8aac9c6de0240c57e2d12d78bc29e72fbf4cc093af57a663584a81586440f0b70f6')
 
 prepare() {
   cd $pkgname
-  git submodule init
-  git config submodule.vendor/llhttp.url ../llhttp
-  git -c protocol.file.allow=always submodule update --recursive
   sed 's|.install-cython ||' -i Makefile
 }
 
 build() {
   cd $pkgname
-  make generate-llhttp cythonize
+  export AIOHTTP_USE_SYSTEM_DEPS=1
+  make cythonize
   python -m build --wheel --no-isolation
 }
 
 check() {
   local pytest_args=(
+    -vvv
     --override-ini="addopts="
 
     # Fails, not sure why.
@@ -95,6 +96,9 @@ check() {
     --ignore=tests/test_benchmarks_cookiejar.py
     --ignore=tests/test_benchmarks_http_websocket.py
     --ignore=tests/test_benchmarks_http_writer.py
+
+    # Tests freeze and timeout when running serialized, no idea why
+    -n auto
   )
 
   cd $pkgname

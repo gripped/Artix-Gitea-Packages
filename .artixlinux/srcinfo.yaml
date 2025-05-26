@@ -1,0 +1,60 @@
+---
+version: 3.12.1-1
+pkgbase:
+  name: python-aiohttp
+  pkgdesc: HTTP client/server for asyncio
+  pkgver: 3.12.1
+  pkgrel: 1
+  url: https://aiohttp.readthedocs.io
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - gunicorn
+    - python-aiodns
+    - python-blockbuster
+    - python-brotli
+    - python-freezegun
+    - python-isal
+    - python-proxy.py
+    - python-pytest
+    - python-pytest-codspeed
+    - python-pytest-mock
+    - python-pytest-xdist
+    - python-re-assert
+    - python-time-machine
+    - python-trustme
+    - python-uvloop
+    - python-zlib-ng
+  makedepends:
+    - cython
+    - git
+    - npm
+    - python-build
+    - python-installer
+    - python-pkgconfig
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - llhttp
+    - python
+    - python-aiohappyeyeballs
+    - python-aiosignal
+    - python-attrs
+    - python-frozenlist
+    - python-multidict
+    - python-propcache
+    - python-yarl
+  optdepends:
+    - 'gunicorn: to deploy using Gunicorn'
+    - 'python-aiodns: for fast DNS resolving'
+    - 'python-brotli: for Brotli transfer-encodings support'
+  source:
+    - python-aiohttp::git+https://github.com/aio-libs/aiohttp#tag=v3.12.1
+  b2sums:
+    - 80732a89c75a6797986bd4a6bd12187e14175ddb6bdcc3b2efa2a833d5f5c8aac9c6de0240c57e2d12d78bc29e72fbf4cc093af57a663584a81586440f0b70f6
+pkgname:
+  - name: python-aiohttp
+# generated with artixpkg 0.36.3-1-any
