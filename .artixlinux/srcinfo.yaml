@@ -1,0 +1,32 @@
+---
+version: 22.7.2-1
+pkgbase:
+  name: intel-gmmlib
+  pkgdesc: Intel Graphics Memory Management Library
+  pkgver: 22.7.2
+  pkgrel: 1
+  url: https://github.com/intel/gmmlib/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+  depends:
+    - gcc-libs
+    - glibc
+  provides:
+    - gmmlib
+  conflicts:
+    - gmmlib
+  replaces:
+    - gmmlib
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/intel/gmmlib/archive/intel-gmmlib-22.7.2.tar.gz
+  sha256sums:
+    - 36f2ff2b59158d1253a33d735f4e35a1b5740c4751818bdaa222b8ddf96ee881
+pkgname:
+  - name: intel-gmmlib
+# generated with artixpkg 0.36.3-1-any
