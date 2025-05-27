@@ -2,7 +2,7 @@
 
 pkgname=lib32-libnghttp3
 pkgver=1.10.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="HTTP/3 library written in C (32-bit)"
 url='https://github.com/ngtcp2/nghttp3'
 arch=('x86_64')
