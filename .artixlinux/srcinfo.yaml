@@ -1,0 +1,38 @@
+---
+version: 0.25.0-4
+pkgbase:
+  name: bat
+  pkgdesc: Cat clone with syntax highlighting and git integration
+  pkgver: 0.25.0
+  pkgrel: 4
+  url: https://github.com/sharkdp/bat
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 OR MIT
+  makedepends:
+    - cargo-edit
+    - clang
+    - cmake
+    - git
+    - rust
+  depends:
+    - gcc-libs
+    - glibc
+    - libgit2
+    - oniguruma
+    - zlib
+  source:
+    - git+https://github.com/sharkdp/bat#tag=v0.25.0
+  b2sums:
+    - 900a83b54404578e7466ea8d1f614a61c7c7086f10c98562fbc195a5a522fa3a8b41e20b2f3a731a3c6d1c17f64f0b82190c5e131466ab43768bc26ae544e1a3
+pkgname:
+  - name: bat
+    depends:
+      - gcc-libs
+      - glibc
+      - libgit2
+      - oniguruma
+      - zlib
+      - libgit2.so
+# generated with artixpkg 0.36.3-1-any
