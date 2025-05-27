@@ -1,10 +1,10 @@
 ---
-version: 1:1.9.0-2.1
+version: 1:1.9.0-2.2
 pkgbase:
   name: libgit2
   pkgdesc: A linkable library for Git
   pkgver: 1.9.0
-  pkgrel: 2.1
+  pkgrel: 2.2
   epoch: 1
   url: https://github.com/libgit2/libgit2
   arch:
@@ -44,4 +44,4 @@ pkgname:
       - libssl.so
       - pcre2
       - libpcre2-8.so
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.36.3-1-any
