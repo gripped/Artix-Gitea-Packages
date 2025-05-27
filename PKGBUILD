@@ -1,0 +1,22 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: robertfoster
+
+pkgname=distrobox
+pkgver=1.8.1.2
+pkgrel=1
+pkgdesc="Use any linux distribution inside your terminal."
+url="https://distrobox.it"
+arch=('any')
+license=('GPL-3.0-only')
+depends=('bash' 'hicolor-icon-theme')
+optdepends=('docker: Docker support'
+	    'podman: Podman support')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/89luca89/distrobox/archive/${pkgver}.tar.gz")
+sha256sums=('3ecbce9b8c5b5df941f986798ffa6ea7fdf742223d42204207974c4323d5b9fc')
+
+package() {
+	cd "${pkgname}-${pkgver}"
+	./install -P "${pkgdir}/usr"
+	find docs -name "*.md" -exec install -Dm 644 -t "${pkgdir}/usr/share/doc/${pkgname}" {} +
+}
