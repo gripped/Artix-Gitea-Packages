@@ -1,10 +1,10 @@
 ---
-version: 1.2.11-1
+version: 1.2.11-2
 pkgbase:
   name: strawberry
   pkgdesc: A music player aimed at audio enthusiasts and music collectors
   pkgver: 1.2.11
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.strawberrymusicplayer.org/
   arch:
     - x86_64
@@ -51,4 +51,4 @@ pkgbase:
     - 379b5da44767195a655f4230f666aed22f64de25096d4aaabbc454444ede52d1
 pkgname:
   - name: strawberry
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
