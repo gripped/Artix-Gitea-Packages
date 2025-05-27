@@ -1,0 +1,67 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+
+pkgname=eza
+pkgver=0.21.3
+pkgrel=1
+pkgdesc="A modern replacement for ls (community fork of exa)"
+url="https://github.com/eza-community/eza"
+arch=(x86_64)
+license=(EUPL-1.2)
+provides=(exa)
+replaces=(exa)
+conflicts=(exa)
+depends=(gcc-libs # libgcc_s.so
+         glibc # libc.so libm.so
+         libgit2)
+makedepends=(cargo
+             pandoc)
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('f0827d39406f0799e6676ab87e349193e88b6220af1670e98b988e8ee0c2b7c0')
+b2sums=('e30517f43a3a306217671f9e2ba134e73aa4c309d6d508b7d5180e98cb07622b1b025cdbf6ea6fc50514c628b7f6bdec83034026f5bbef46413b953f094c5506')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  # Make sure the build fails if our system libgit2 is out
+  # of range rather than silently starting to vendor it.
+  export LIBGIT2_NO_VENDOR=1
+  CFLAGS+=' -ffat-lto-objects'
+  cargo build --frozen --release
+  mkdir -p target/man
+  for manpage in eza.1 eza_colors.5 eza_colors-explanation.5; do
+    pandoc --standalone -f markdown -t man "man/${manpage}.md" > "target/man/${manpage}"
+  done
+}
+
+check() {
+  cd "${pkgname}-${pkgver}"
+  cargo test --frozen
+  target/release/eza -la
+}
+
+
+package() {
+  depends+=(libgit2.so)
+  cd "${pkgname}-${pkgver}"
+  install -Dm755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  ln -s eza "${pkgdir}/usr/bin/exa"
+
+  # install completions
+  install -Dm644 "completions/bash/${pkgname}" -t "${pkgdir}/usr/share/bash-completion/completions"
+  install -Dm644 "completions/zsh/_${pkgname}" -t "${pkgdir}/usr/share/zsh/site-functions/"
+  install -Dm644 "completions/fish/${pkgname}.fish" -t "${pkgdir}/usr/share/fish/vendor_completions.d"
+
+  # install man pages
+  install -Dm644 target/man/*.1 -t "${pkgdir}/usr/share/man/man1"
+  install -Dm644 target/man/*.5 -t "${pkgdir}/usr/share/man/man5"
+
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}/" LICENSE.txt
+}
+
+# vim: ts=2 sw=2 et:
