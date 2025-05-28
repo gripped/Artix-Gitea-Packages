@@ -1,0 +1,98 @@
+---
+version: 48.3-1
+pkgbase:
+  name: mutter
+  pkgdesc: Window manager and compositor for GNOME
+  pkgver: 48.3
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/mutter
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - bash-completion
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - python-docutils
+    - sysprof
+    - wayland-protocols
+  depends:
+    - at-spi2-core
+    - cairo
+    - colord
+    - dconf
+    - egl-wayland
+    - fontconfig
+    - fribidi
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-desktop-4
+    - gnome-settings-daemon
+    - graphene
+    - gsettings-desktop-schemas
+    - gtk4
+    - harfbuzz
+    - iio-sensor-proxy
+    - lcms2
+    - libcanberra
+    - libcolord
+    - libdisplay-info
+    - libdrm
+    - libei
+    - libgirepository
+    - libglvnd
+    - libgudev
+    - libice
+    - libinput
+    - libpipewire
+    - libsm
+    - libsysprof-capture
+    - libwacom
+    - libx11
+    - libxau
+    - libxcb
+    - libxcomposite
+    - libxcursor
+    - libxdamage
+    - libxext
+    - libxfixes
+    - libxi
+    - libxinerama
+    - libxkbcommon
+    - libxkbcommon-x11
+    - libxkbfile
+    - libxrandr
+    - libxtst
+    - mesa
+    - pango
+    - pipewire
+    - pixman
+    - python
+    - python-argcomplete
+    - python-gobject
+    - startup-notification
+    - libelogind
+    - wayland
+    - xorg-xwayland
+  source:
+    - git+https://gitlab.gnome.org/GNOME/mutter.git#tag=48.3
+    - git+https://gitlab.gnome.org/GNOME/gvdb.git#commit=466fc22016cf0981424e7121557611942191992f
+  b2sums:
+    - d8b1d4ff788075c26f25dd40b9f46de640e523ea3acefb2d9d178033d1780ff63d882e730d47001224e27683d01d8453330d54a8282d3699ab65cad2e76372eb
+    - c25796ff54fee353c5fc7a0815c25255b399490148d2bad1f37932d2da66d80561d6e262a5f256c89d142419a504c23eff69f7ef4e65e349f2dea3e0ac0bac1a
+pkgname:
+  - name: mutter
+    optdepends:
+      - 'bash-completion: Bash completions for gdctl'
+    provides:
+      - libmutter-16.so
+  - name: mutter-docs
+    pkgdesc: Window manager and compositor for GNOME (documentation)
+    depends: []
+# generated with artixpkg 0.36.2-1-any
