@@ -1,0 +1,26 @@
+---
+version: 48.2-1
+pkgbase:
+  name: gnome-user-docs
+  pkgdesc: User documentation for GNOME
+  pkgver: 48.2
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-user-docs
+  arch:
+    - any
+  groups:
+    - gnome
+  license:
+    - CC-BY-3.0
+  makedepends:
+    - git
+    - yelp-tools
+  depends:
+    - yelp
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-user-docs.git#tag=48.2
+  b2sums:
+    - 423e288edd9bbb3c048ba065233e2cd15a1db71dd368cdeb19add9132258eabd798c87c3b449beec387b064ecb234dbaca20f002084f9bc10eb860fef9e0df6d
+pkgname:
+  - name: gnome-user-docs
+# generated with artixpkg 0.36.2-1-any
