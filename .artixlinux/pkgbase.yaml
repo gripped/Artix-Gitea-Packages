@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 20250524-1
     packages:
       - dnssec-anchors-20250524-1-any.pkg.tar.zst
-    debug: []
-  system:
-    version: 20190629-4
-    packages:
-      - dnssec-anchors-20190629-4-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
