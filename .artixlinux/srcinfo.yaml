@@ -1,0 +1,48 @@
+---
+version: 48.3-1
+pkgbase:
+  name: gnome-maps
+  pkgdesc: Find places around the world
+  pkgver: 48.3
+  pkgrel: 1
+  url: https://apps.gnome.org/Maps
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - gobject-introspection
+    - meson
+    - yelp-tools
+  depends:
+    - cairo
+    - dconf
+    - hicolor-icon-theme
+    - gcc-libs
+    - geoclue
+    - geocode-glib-2
+    - gjs
+    - glib2
+    - glibc
+    - gtk4
+    - json-glib
+    - libadwaita
+    - libgweather-4
+    - libportal
+    - librest
+    - librsvg
+    - libshumate
+    - libxml2
+    - pango
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-maps.git?signed#tag=48.3
+  validpgpkeys:
+    - 7448F128A4B18AB2EF87F092FA6624580A420D5D
+  b2sums:
+    - ec702bec1d30f5f7938fae3d7f4482e568fb8067e860d8b65156d52fa4bcedf18feaaf6d5b88e01f6b5fe0fd0be8a63bf7efb8931ddd8f93166528b20e430cda
+pkgname:
+  - name: gnome-maps
+# generated with artixpkg 0.36.2-1-any

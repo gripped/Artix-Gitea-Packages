@@ -3,8 +3,8 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-maps
-pkgver=48.2
-pkgrel=2
+pkgver=48.3
+pkgrel=1
 pkgdesc="Find places around the world"
 url="https://apps.gnome.org/Maps"
 arch=(x86_64)
@@ -40,7 +40,7 @@ groups=(gnome)
 source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-maps.git?signed#tag=${pkgver/[a-z]/.&}"
 )
-b2sums=('2bcc5659cfdd68eaa268542f91f28b29e813a39f294dfa9dadeaa63e9d2f92ea45e57d8971adad2b791d0d967ed1d7f83c6facf4a4371317922f643df382813c')
+b2sums=('ec702bec1d30f5f7938fae3d7f4482e568fb8067e860d8b65156d52fa4bcedf18feaaf6d5b88e01f6b5fe0fd0be8a63bf7efb8931ddd8f93166528b20e430cda')
 validpgpkeys=(
   7448F128A4B18AB2EF87F092FA6624580A420D5D # Marcus Lundblad <ml@update.uu.se>
 )
