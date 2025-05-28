@@ -1,0 +1,163 @@
+---
+version: 48.2-1
+pkgbase:
+  name: gnome-control-center
+  pkgdesc: GNOME's main interface to configure various aspects of the desktop
+  pkgver: 48.2
+  pkgrel: 1
+  url: https://apps.gnome.org/Settings/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - python-dbusmock
+    - python-gobject
+    - xorg-server-xvfb
+  makedepends:
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - meson
+    - modemmanager
+  depends:
+    - accountsservice
+    - bolt
+    - cairo
+    - colord-gtk4
+    - cups-pk-helper
+    - dconf
+    - fontconfig
+    - gcc-libs
+    - gcr-4
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-bluetooth-3.0
+    - gnome-color-manager
+    - gnome-desktop-4
+    - gnome-online-accounts
+    - gnome-settings-daemon
+    - gnome-shell
+    - gnutls
+    - graphene
+    - gsettings-desktop-schemas
+    - gsound
+    - gst-plugins-good
+    - gtk4
+    - hicolor-icon-theme
+    - json-glib
+    - krb5
+    - libadwaita
+    - libcolord
+    - libcups
+    - libepoxy
+    - libgoa
+    - libgtop
+    - libgudev
+    - libibus
+    - libmalcontent
+    - libmm-glib
+    - libnm
+    - libnma-gtk4
+    - libpulse
+    - libpwquality
+    - libsecret
+    - libsoup3
+    - libwacom
+    - libx11
+    - libxi
+    - libxml2
+    - pango
+    - polkit
+    - smbclient
+    - sound-theme-freedesktop
+    - tecla
+    - udisks2
+    - upower
+    - wayland
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-control-center.git#tag=48.2
+    - git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
+    - git+https://gitlab.gnome.org/GNOME/libgxdp.git#commit=e6c11f2812cad0a43e847ec97bfc1c67bf50be52
+  validpgpkeys:
+    - 9B60FE7947F0A3C58136817F2C2A218742E016BE
+  b2sums:
+    - 696f097e46faec52fba4e20ad6f555234c7ee968e17e8bac140b9e2d7da61dda96f2a0409933d9d6c66bc83b56e538e5adbd2b19a514a79224b7663fc02b4b66
+    - SKIP
+    - 778c8c83d6a9568d1df3fc237ae2b5d1fbac1c62b51d9d228725f43321a85dc97e8dd1ca88458520001facef0ad0a99c0b2fb86817dbf62d1f9ddd31d6e753d9
+pkgname:
+  - name: gnome-control-center
+    groups:
+      - gnome
+    depends:
+      - accountsservice
+      - bolt
+      - cairo
+      - colord-gtk4
+      - cups-pk-helper
+      - dconf
+      - fontconfig
+      - gcc-libs
+      - gcr-4
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gnome-bluetooth-3.0
+      - gnome-color-manager
+      - gnome-desktop-4
+      - gnome-online-accounts
+      - gnome-settings-daemon
+      - gnome-shell
+      - gnutls
+      - graphene
+      - gsettings-desktop-schemas
+      - gsound
+      - gst-plugins-good
+      - gtk4
+      - hicolor-icon-theme
+      - json-glib
+      - krb5
+      - libadwaita
+      - libcolord
+      - libcups
+      - libepoxy
+      - libgoa
+      - libgtop
+      - libgudev
+      - libibus
+      - libmalcontent
+      - libmm-glib
+      - libnm
+      - libnma-gtk4
+      - libpulse
+      - libpwquality
+      - libsecret
+      - libsoup3
+      - libwacom
+      - libx11
+      - libxi
+      - libxml2
+      - pango
+      - polkit
+      - smbclient
+      - sound-theme-freedesktop
+      - tecla
+      - udisks2
+      - upower
+      - wayland
+      - gnome-keybindings
+    optdepends:
+      - 'fwupd: device security panel'
+      - 'gnome-remote-desktop: screen sharing'
+      - 'gnome-user-share: WebDAV file sharing'
+      - 'malcontent: application permission control'
+      - 'networkmanager: network settings'
+      - 'openssh: remote login'
+      - 'power-profiles-daemon: power profiles'
+      - 'rygel: media sharing'
+      - 'system-config-printer: printer settings'
+  - name: gnome-keybindings
+    pkgdesc: Keybindings configuration for GNOME applications
+    depends: []
+# generated with artixpkg 0.36.2-1-any
