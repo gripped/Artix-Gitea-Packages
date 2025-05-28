@@ -1,0 +1,30 @@
+---
+version: 5.6.1-1
+pkgbase:
+  name: whois
+  pkgdesc: Intelligent WHOIS client
+  pkgver: 5.6.1
+  pkgrel: 1
+  url: https://github.com/rfc1036/whois
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - perl
+    - git
+    - bash-completion
+  depends:
+    - libidn2
+    - libxcrypt
+  backup:
+    - etc/whois.conf
+  source:
+    - git+https://github.com/rfc1036/whois.git#tag=v5.6.1?signed
+  validpgpkeys:
+    - 6791403B68AE2690517C42EAE6FFF1E38DC968B0
+  sha256sums:
+    - 6d9e86db10931b94955205028c670b59e65f2db60cf11eeda690d63e4747ef4f
+pkgname:
+  - name: whois
+# generated with artixpkg 0.36.3-1-any
