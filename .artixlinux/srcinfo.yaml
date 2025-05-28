@@ -1,0 +1,27 @@
+---
+version: 48.2.1-1
+pkgbase:
+  name: gnome-backgrounds
+  pkgdesc: Background images and data for GNOME
+  pkgver: 48.2.1
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-backgrounds
+  arch:
+    - any
+  groups:
+    - gnome
+  license:
+    - CC-BY-SA-3.0
+  makedepends:
+    - glib2
+    - git
+    - meson
+  depends:
+    - libjxl
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-backgrounds.git#tag=48.2.1
+  b2sums:
+    - 7540c8a198d5c5956382695639c84d4be80ca9a7f8d2e1512276fdbbdbd552b005bd13a2af7c7e6c491b1ecf81f72c37709831d691cf90cfa702ba5893774a8c
+pkgname:
+  - name: gnome-backgrounds
+# generated with artixpkg 0.36.2-1-any
