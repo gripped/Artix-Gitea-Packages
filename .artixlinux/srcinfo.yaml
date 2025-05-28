@@ -1,0 +1,26 @@
+---
+version: 1.2.0-1
+pkgbase:
+  name: kdsingleapplication
+  pkgdesc: KDAB's helper class for single-instance policy applications
+  pkgver: 1.2.0
+  pkgrel: 1
+  url: https://github.com/KDAB/KDSingleApplication
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+  source:
+    - git+https://github.com/KDAB/KDSingleApplication#tag=v1.2.0
+  sha256sums:
+    - bfd4df2db09cf1dac6e14b38e78f9897925b3eb98272a8962eab7f0b0c6e941e
+pkgname:
+  - name: kdsingleapplication
+# generated with artixpkg 0.36.3-1-any
