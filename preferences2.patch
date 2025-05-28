@@ -1,14 +1,10 @@
-diff --git a/browser/components/enterprisepolicies/schemas/policies-schema.json b/browser/components/enterprisepolicies/schemas/policies-schema.json
-index d436cf1ca1..ecd6e53b9e 100644
---- a/browser/components/enterprisepolicies/schemas/policies-schema.json
-+++ b/browser/components/enterprisepolicies/schemas/policies-schema.json
-@@ -1074,7 +1074,7 @@
+--- a/browser/components/enterprisepolicies/schemas/policies-schema.json	2025-05-28 05:13:27.857604432 -0400
++++ b/browser/components/enterprisepolicies/schemas/policies-schema.json	2025-05-28 05:17:14.670934813 -0400
+@@ -1409,6 +1409,7 @@
      },
  
      "SearchEngines": {
--      "enterprise_only": true,
 +      "enterprise_only": false,
- 
        "type": "object",
        "properties": {
-
+         "Add": {
