@@ -3,7 +3,7 @@
 
 pkgname=strawberry
 pkgver=1.2.11
-pkgrel=2
+pkgrel=2.1
 pkgdesc='A music player aimed at audio enthusiasts and music collectors'
 arch=(x86_64)
 url='https://www.strawberrymusicplayer.org/'
