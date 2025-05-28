@@ -1,10 +1,10 @@
 ---
-version: 3.56.1-4
+version: 3.56.2-1
 pkgbase:
   name: evolution-data-server
   pkgdesc: Unified contacts, tasks and calendar backend
-  pkgver: 3.56.1
-  pkgrel: 4
+  pkgver: 3.56.2
+  pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/evolution/-/wikis/home
   arch:
     - x86_64
@@ -55,9 +55,9 @@ pkgbase:
     - webkit2gtk-4.1
     - zlib
   source:
-    - git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#tag=3.56.1
+    - git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#tag=3.56.2
   b2sums:
-    - ac735cc0d3766399b8035502bb0baaed55bda9a09b61f9e1e728d7c448b418c8e5ff0816009195c38fddf824b22c1a76d1270614f3a44aa590fa77c983ee177f
+    - a2cc58b1f7225fd204feea16593b36d63e260f39af6f97edf7c383005f5986558393ed83ce23eb3b7d61cf77135c2a58399edd6df18ec91035a080d4d5aea730
 pkgname:
   - name: evolution-data-server
     provides:
@@ -73,7 +73,7 @@ pkgname:
   - name: libedataserverui4
     pkgdesc: Unified contacts, tasks and calendar backend - GTK 4 UI library
     depends:
-      - evolution-data-server=3.56.1-4
+      - evolution-data-server=3.56.2-1
       - glib2
       - glibc
       - gtk4
