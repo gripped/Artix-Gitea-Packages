@@ -1,0 +1,26 @@
+---
+version: 0.13.6-1
+pkgbase:
+  name: cargo-edit
+  pkgdesc: Managing cargo dependencies from the command line
+  pkgver: 0.13.6
+  pkgrel: 1
+  url: https://github.com/killercup/cargo-edit/releases
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - Apache-2.0
+  depends:
+    - cargo
+    - libssh2
+    - openssl
+  source:
+    - https://github.com/killercup/cargo-edit/archive/v0.13.6/cargo-edit-0.13.6.tar.gz
+  sha512sums:
+    - 73386a2e0eeae0891ede99ebe7459aa97975f223f3892c5a758a89392b0c80f1602ebf4568317bf32e5c5a4e78edd5d75fdf4a7d8ac5c71acf8ced3e6f40d41c
+  b2sums:
+    - c36a4acb6e44adf157e0f9f2e8a94346e53830df5f98da1a672e5e9532665415d27fed1617ed3edd5da3394c184347d89852ca54d766c054d6b1aed2e4b6fa4a
+pkgname:
+  - name: cargo-edit
+# generated with artixpkg 0.36.3-1-any
