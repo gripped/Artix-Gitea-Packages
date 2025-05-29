@@ -1,0 +1,46 @@
+---
+version: 0.19.0-1
+pkgbase:
+  name: magic-wormhole
+  pkgdesc: Securely transfer data between computers
+  pkgver: 0.19.0
+  pkgrel: 1
+  url: https://github.com/magic-wormhole/magic-wormhole
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-magic-wormhole-mailbox-server
+    - python-magic-wormhole-transit-relay
+    - python-noiseprotocol
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-twisted
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+    - python-versioneer
+  depends:
+    - python-autobahn
+    - python-click
+    - python-humanize
+    - python-idna
+    - python-iterable-io
+    - python-pynacl
+    - python-pyopenssl
+    - python-qrcode
+    - python-service-identity
+    - python-spake2
+    - python-tqdm
+    - python-txtorcon
+    - python-zipstream-ng
+  source:
+    - https://github.com/magic-wormhole/magic-wormhole/archive/0.19.0/magic-wormhole-0.19.0.tar.gz
+  sha512sums:
+    - 7a92785b3e3f782323f1176c1688e796ea390a0f1600d853c510405ae1feca42c90d071c05bdf5a7c1c6d1a845988d7fbca2be89bdc0f0ed14b0b3f7f484a561
+pkgname:
+  - name: magic-wormhole
+# generated with artixpkg 0.36.3-1-any
