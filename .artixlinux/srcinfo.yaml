@@ -1,10 +1,10 @@
 ---
-version: 25.05.1-1
+version: 25.05.1-2
 pkgbase:
   name: niri
   pkgdesc: A scrollable-tiling Wayland compositor
   pkgver: 25.05.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/YaLTeR/niri
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgbase:
     - 012c44351e6fa0e8631b3c44243da119cd03eb41a5ab81c787961df9f3456acb73c3cbb3639d620d19d8111e954797965c2a1bf4b0b3657142e3a1ab77413d7d
 pkgname:
   - name: niri
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
