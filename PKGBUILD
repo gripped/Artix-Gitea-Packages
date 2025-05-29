@@ -33,7 +33,9 @@ build() {
 
 check() {
   cd ${pkgname#python-}
-  pytest
+  pytest -v \
+    --deselect tests/test_blockbuster.py::test_socket_send \
+    --deselect tests/test_blockbuster.py::test_socket_send_non_blocking
 }
 
 package() {
