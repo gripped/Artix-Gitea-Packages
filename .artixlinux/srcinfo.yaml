@@ -1,10 +1,10 @@
 ---
-version: 2.4.9-3
+version: 2.4.9-4
 pkgbase:
   name: libffado
   pkgdesc: Driver for FireWire audio devices
   pkgver: 2.4.9
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.ffado.org/
   arch:
     - x86_64
@@ -54,4 +54,4 @@ pkgname:
       - libdbus-c++-1.so
       - libconfig
       - libconfig++.so
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.3-1-any
