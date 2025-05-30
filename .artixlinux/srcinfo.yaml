@@ -1,9 +1,9 @@
 ---
-version: 1:1.4.3-1
+version: 1:1.4.4-1
 pkgbase:
   name: lib32-pipewire
   pkgdesc: Low-latency audio/video router and processor - 32-bit
-  pkgver: 1.4.3
+  pkgver: 1.4.4
   pkgrel: 1
   epoch: 1
   url: https://pipewire.org
@@ -18,13 +18,13 @@ pkgbase:
     - lib32-glib2
     - meson
   source:
-    - git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=1.4.3
+    - git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=1.4.4
   b2sums:
-    - 87c328572f13440f985fdeb6143a25af4fe553ff8d1def9df2ed40d7b47a4cfcc6da0efbe7acb3ca2285510f657b01e4d9432999601dd7db6e7d02b61a93f083
+    - a18b43771fb4213f2ccda399d71c081a872c99d24f6548d59c387e0d20a7ce65bc25ee499f8bf46f71e83ac78a3100d2e697772fc1bb3d45e62e7b5b51b1c55b
 pkgname:
   - name: lib32-pipewire
     depends:
-      - lib32-libpipewire=1:1.4.3-1
+      - lib32-libpipewire=1:1.4.4-1
       - libpipewire-0.3.so
       - lib32-alsa-lib
       - libasound.so
@@ -53,9 +53,9 @@ pkgname:
       - GPL-2.0-only
       - LGPL-2.1-or-later
     depends:
-      - lib32-libpipewire=1:1.4.3-1
+      - lib32-libpipewire=1:1.4.4-1
       - libpipewire-0.3.so
-      - lib32-pipewire=1:1.4.3-1
+      - lib32-pipewire=1:1.4.4-1
       - lib32-glibc
       - pipewire-jack
     provides:
@@ -69,10 +69,10 @@ pkgname:
   - name: lib32-pipewire-v4l2
     pkgdesc: Low-latency audio/video router and processor - 32-bit - V4L2 interceptor
     depends:
-      - lib32-libpipewire=1:1.4.3-1
+      - lib32-libpipewire=1:1.4.4-1
       - libpipewire-0.3.so
-      - lib32-pipewire=1:1.4.3-1
+      - lib32-pipewire=1:1.4.4-1
       - libpipewire-0.3.so
       - lib32-glibc
       - pipewire-v4l2
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
