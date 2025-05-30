@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.30.223.271-619
+    version: 6.30.223.271-621
     packages:
-      - broadcom-wl-6.30.223.271-619-x86_64.pkg.tar.zst
+      - broadcom-wl-6.30.223.271-621-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.30.223.271-618
