@@ -1,16 +1,4 @@
 ---
-pkgbase:
-  name: vte3
-  version: 0.80.1-1
-  arch:
-    - x86_64
-  pkgname:
-    - vte-common
-    - vte3
-    - vte3-utils
-    - vte4
-    - vte4-utils
-    - vte-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -23,43 +11,55 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 0.80.1-1
+    version: 0.80.2-1
     packages:
-      - vte-common-0.80.1-1-x86_64.pkg.tar.zst
-      - vte3-0.80.1-1-x86_64.pkg.tar.zst
-      - vte3-utils-0.80.1-1-x86_64.pkg.tar.zst
-      - vte4-0.80.1-1-x86_64.pkg.tar.zst
-      - vte4-utils-0.80.1-1-x86_64.pkg.tar.zst
-      - vte-docs-0.80.1-1-x86_64.pkg.tar.zst
+      - vte-common-0.80.2-1-x86_64.pkg.tar.zst
+      - vte3-0.80.2-1-x86_64.pkg.tar.zst
+      - vte3-utils-0.80.2-1-x86_64.pkg.tar.zst
+      - vte4-0.80.2-1-x86_64.pkg.tar.zst
+      - vte4-utils-0.80.2-1-x86_64.pkg.tar.zst
+      - vte-docs-0.80.2-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world

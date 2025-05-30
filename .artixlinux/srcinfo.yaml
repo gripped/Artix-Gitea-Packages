@@ -1,0 +1,122 @@
+---
+version: 0.80.2-1
+pkgbase:
+  name: vte3
+  pkgdesc: Virtual Terminal Emulator widget
+  pkgver: 0.80.2
+  pkgrel: 1
+  url: https://wiki.gnome.org/Apps/Terminal/VTE
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+    - GPL-3.0-or-later
+  makedepends:
+    - at-spi2-core
+    - gi-docgen
+    - fast_float
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gperf
+    - gtk3
+    - gtk4
+    - meson
+    - vala
+  depends:
+    - cairo
+    - fribidi
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnutls
+    - graphene
+    - icu
+    - lz4
+    - pango
+    - pcre2
+  options:
+    - '!lto'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/vte.git#tag=0.80.2
+  b2sums:
+    - 00b5209285ef5fbdf060c76900406b2f3016a6ed3e382bed1230c0e50c197962e0c2bd5c6ea9e2b9a20616c497075af27ec8e24e51c3fd50424552340216fa33
+pkgname:
+  - name: vte-common
+    pkgdesc: Virtual Terminal Emulator widget (common files)
+    depends:
+      - glibc
+  - name: vte3
+    pkgdesc: Virtual Terminal Emulator widget (GTK3)
+    license:
+      - LGPL-3.0-or-later
+    depends:
+      - cairo
+      - fribidi
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gnutls
+      - graphene
+      - icu
+      - lz4
+      - pango
+      - pcre2
+      - at-spi2-core
+      - gtk3
+      - vte-common
+    provides:
+      - libvte-2.91.so
+  - name: vte3-utils
+    pkgdesc: VTE3 test utilities
+    license:
+      - GPL-3.0-or-later
+    depends:
+      - cairo
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gtk3
+      - pango
+      - vte3
+  - name: vte4
+    pkgdesc: Virtual Terminal Emulator widget (GTK4)
+    license:
+      - LGPL-3.0-or-later
+    depends:
+      - cairo
+      - fribidi
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gnutls
+      - graphene
+      - icu
+      - lz4
+      - pango
+      - pcre2
+      - gtk4
+      - vte-common
+    provides:
+      - libvte-2.91-gtk4.so
+  - name: vte4-utils
+    pkgdesc: VTE4 test utilities
+    license:
+      - GPL-3.0-or-later
+    depends:
+      - cairo
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gtk4
+      - pango
+      - vte4
+  - name: vte-docs
+    pkgdesc: Virtual Terminal Emulator widget (documentation)
+    depends: []
+# generated with artixpkg 0.36.3-1-any
