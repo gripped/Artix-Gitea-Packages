@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 570.153.02-1
+    version: 570.153.02-3
     packages:
-      - nvidia-570.153.02-1-x86_64.pkg.tar.zst
+      - nvidia-570.153.02-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 570.144-5
