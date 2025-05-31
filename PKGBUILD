@@ -6,13 +6,13 @@
 _pkgbase=systemd
 
 _alpm=2.2
-_tag='257.5'
+_tag='257.6'
 
 pkgbase=udev
 pkgname=('udev' 'libudev' 'esysusers' 'etmpfiles')
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=2
+pkgrel=1
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -49,14 +49,12 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-artix-standalone-install.patch
 )
-sha512sums=('41b3a09f710a7801cec2d89a245c7ac06977aa91e133b72464179ab74c682f0a10320483ea48ebe774e0dc8d57bc453198cf91915d74ceda672379a4c06e77f8'
+sha512sums=('098f5800149b6d51c569ea33d126b7ce901a886b7fcebab26138089f1c33e1cf1e8489978e9ae724a568c5e198a5ebc3df3889ffaa0559a0a5332af4242d1837'
             '3b0c46459666137ff164bedb4b64c30a9713e8e236cf2675afca413ee25a1f2c0b9f0a65eab798e51fda70be84ab1bc84a3e3b137b776bf64133f2007e56ae84'
             '78065bde708118b7d6e4ed492e096c763e4679a1c54bd98750d5d609d8cc2f1373023f308880f14fc923ae7f9fea34824917ef884c0f996b1f43d08ef022c0fb'
             'c2d1b85f3cd5948333edca36b590dad19d5045424f0145b64fe9abdf6fe7e2c3a0fca6c1901e9bfaa26b4e6fc98ff0ec8d9c825845f778fe77d681075cc47eb2')
 
 _backports=(
-  # fast-forward to current v257-stable
-  "v${pkgver}..1fb1f637baa979fd58fef67ea72b3e7255a99e21"
 )
 
 _reverts=(
