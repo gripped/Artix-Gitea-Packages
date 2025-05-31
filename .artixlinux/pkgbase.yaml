@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.12.1-1
+    version: 3.12.6-1
     packages:
-      - python-aiohttp-3.12.1-1-x86_64.pkg.tar.zst
+      - python-aiohttp-3.12.6-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.11.18-1.1

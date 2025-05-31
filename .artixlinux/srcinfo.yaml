@@ -1,9 +1,9 @@
 ---
-version: 3.12.1-1
+version: 3.12.6-1
 pkgbase:
   name: python-aiohttp
   pkgdesc: HTTP client/server for asyncio
-  pkgver: 3.12.1
+  pkgver: 3.12.6
   pkgrel: 1
   url: https://aiohttp.readthedocs.io
   arch:
@@ -52,9 +52,9 @@ pkgbase:
     - 'python-aiodns: for fast DNS resolving'
     - 'python-brotli: for Brotli transfer-encodings support'
   source:
-    - python-aiohttp::git+https://github.com/aio-libs/aiohttp#tag=v3.12.1
+    - python-aiohttp::git+https://github.com/aio-libs/aiohttp#tag=v3.12.6
   b2sums:
-    - 80732a89c75a6797986bd4a6bd12187e14175ddb6bdcc3b2efa2a833d5f5c8aac9c6de0240c57e2d12d78bc29e72fbf4cc093af57a663584a81586440f0b70f6
+    - 7b69f135f2f1aac72d9045facc728cd0647f4fa78d5508b0cbdd83e6bd9ce6048c79d1914044f890e80c1c887350594da486943e4a48e143a737442ecc6fa095
 pkgname:
   - name: python-aiohttp
 # generated with artixpkg 0.36.3-1-any
