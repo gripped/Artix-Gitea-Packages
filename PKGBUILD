@@ -14,7 +14,7 @@
 
 pkgname=dpkg
 pkgver=1.22.19
-pkgrel=1
+pkgrel=2
 pkgdesc='The Debian Package Manager tools'
 arch=('x86_64')
 url="https://tracker.debian.org/pkg/dpkg"
@@ -26,7 +26,7 @@ depends=(
   'libmd'
   'perl'
   'xz'
-  'zlib'
+  'zlib-ng'
   'zstd'
 )
 makedepends=(
