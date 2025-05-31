@@ -1,99 +1,82 @@
 ---
-pkgbase:
-  name: gstreamer
-  version: 1.26.1-1
-  arch:
-    - x86_64
-  pkgname:
-    - gstreamer
-    - gst-plugins-bad-libs
-    - gst-plugins-base-libs
-    - gst-plugins-base
-    - gst-plugins-good
-    - gst-plugins-bad
-    - gst-plugins-ugly
-    - gst-libav
-    - gst-plugin-gtk
-    - gst-plugin-msdk
-    - gst-plugin-opencv
-    - gst-plugin-qml6
-    - gst-plugin-qmlgl
-    - gst-plugin-qsv
-    - gst-plugin-va
-    - gst-plugin-wpe
-    - gst-devtools-libs
-    - gst-devtools
-    - gst-rtsp-server
-    - gst-editing-services
-    - gstreamer-vaapi
-    - gst-python
-    - gstreamer-docs
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.26.1-1
+    version: 1.26.2-1
     packages:
-      - gstreamer-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugins-bad-libs-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugins-base-libs-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugins-base-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugins-good-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugins-bad-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugins-ugly-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-libav-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-gtk-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-msdk-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-opencv-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-qml6-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-qmlgl-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-qsv-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-va-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-plugin-wpe-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-devtools-libs-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-devtools-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-rtsp-server-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-editing-services-1.26.1-1-x86_64.pkg.tar.zst
-      - gstreamer-vaapi-1.26.1-1-x86_64.pkg.tar.zst
-      - gst-python-1.26.1-1-x86_64.pkg.tar.zst
-      - gstreamer-docs-1.26.1-1-x86_64.pkg.tar.zst
+      - gstreamer-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugins-bad-libs-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugins-base-libs-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugins-base-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugins-good-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugins-bad-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugins-ugly-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-libav-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-gtk-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-msdk-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-opencv-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-qml6-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-qmlgl-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-qsv-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-va-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-plugin-wpe-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-devtools-libs-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-devtools-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-rtsp-server-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-editing-services-1.26.2-1-x86_64.pkg.tar.zst
+      - gstreamer-vaapi-1.26.2-1-x86_64.pkg.tar.zst
+      - gst-python-1.26.2-1-x86_64.pkg.tar.zst
+      - gstreamer-docs-1.26.2-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
