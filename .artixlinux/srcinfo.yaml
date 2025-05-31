@@ -1,0 +1,38 @@
+---
+version: 1.18.0-1
+pkgbase:
+  name: python-pygit2
+  pkgdesc: Python bindings for libgit2
+  pkgver: 1.18.0
+  pkgrel: 1
+  url: https://github.com/libgit2/pygit2
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-GPL-2.0-only-with-linking-exception
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - libgit2
+    - python
+    - python-cffi
+  source:
+    - https://github.com/libgit2/pygit2/archive/v1.18.0/python-pygit2-1.18.0.tar.gz
+  sha256sums:
+    - 688cbaab1c52fde358589270fbfdf09a87f8e0fbaa68d120e7a2c923ac8e5c34
+pkgname:
+  - name: python-pygit2
+    depends:
+      - glibc
+      - libgit2
+      - python
+      - python-cffi
+      - libgit2.so
+# generated with artixpkg 0.36.3-1-any
