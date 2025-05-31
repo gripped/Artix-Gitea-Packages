@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.38.23-1
+    version: 1.38.27-1
     packages:
-      - python-boto3-1.38.23-1-any.pkg.tar.zst
+      - python-boto3-1.38.27-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.38.18-1
