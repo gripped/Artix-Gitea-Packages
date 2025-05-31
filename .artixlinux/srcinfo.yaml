@@ -1,0 +1,39 @@
+---
+version: 9.8.1-1
+pkgbase:
+  name: python-pikepdf
+  pkgdesc: Read and write PDFs with Python, powered by qpdf
+  pkgver: 9.8.1
+  pkgrel: 1
+  url: https://github.com/pikepdf/pikepdf
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0
+  checkdepends:
+    - python-hypothesis
+    - python-psutil
+    - python-pytest-xdist
+  makedepends:
+    - git
+    - pybind11
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-toml
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+    - python-lxml
+    - python-packaging
+    - python-pillow
+    - qpdf
+  source:
+    - git+https://github.com/pikepdf/pikepdf#tag=v9.8.1
+  sha256sums:
+    - dd4e83b6c7cfd415cce27fdccae6f4a4b534e666808dc10bbc7102fc5910fbf4
+pkgname:
+  - name: python-pikepdf
+# generated with artixpkg 0.36.3-1-any
