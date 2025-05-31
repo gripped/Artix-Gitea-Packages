@@ -1,0 +1,84 @@
+---
+version: 8.14.0-1
+pkgbase:
+  name: lib32-curl
+  pkgdesc: command line tool and library for transferring data with URLs (32-bit)
+  pkgver: 8.14.0
+  pkgrel: 1
+  url: https://curl.se/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - patchelf
+    - lib32-gnutls
+    - lib32-openssl
+  depends:
+    - curl
+    - lib32-brotli
+    - libbrotlidec.so
+    - lib32-krb5
+    - libgssapi_krb5.so
+    - lib32-libidn2
+    - libidn2.so
+    - lib32-libnghttp2
+    - libnghttp2.so
+    - lib32-libnghttp3
+    - libnghttp3.so
+    - lib32-libpsl
+    - libpsl.so
+    - lib32-libssh2
+    - libssh2.so
+    - lib32-zlib
+    - libz.so
+    - lib32-zstd
+    - libzstd.so
+  source:
+    - git+https://github.com/curl/curl.git#tag=curl-8_14_0?signed
+  validpgpkeys:
+    - 27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2
+  sha512sums:
+    - 2d1103904a7e876db02fc42591743c9d51eacaf8a66becd612875f8053102ec207456efeab6ff9f0197ccb516423566355115916991e1eff61499d3031763140
+pkgname:
+  - name: lib32-curl
+    depends:
+      - curl
+      - lib32-brotli
+      - libbrotlidec.so
+      - lib32-krb5
+      - libgssapi_krb5.so
+      - lib32-libidn2
+      - libidn2.so
+      - lib32-libnghttp2
+      - libnghttp2.so
+      - lib32-libnghttp3
+      - libnghttp3.so
+      - lib32-libpsl
+      - libpsl.so
+      - lib32-libssh2
+      - libssh2.so
+      - lib32-zlib
+      - libz.so
+      - lib32-zstd
+      - libzstd.so
+      - lib32-openssl
+      - libcrypto.so
+      - libssl.so
+    provides:
+      - libcurl.so
+  - name: lib32-libcurl-compat
+    pkgdesc: command line tool and library for transferring data with URLs (32-bit, no versioned symbols)
+    depends:
+      - lib32-curl
+    provides:
+      - libcurl-compat.so
+  - name: lib32-libcurl-gnutls
+    pkgdesc: command line tool and library for transferring data with URLs (32-bit, no versioned symbols, linked against gnutls)
+    depends:
+      - lib32-curl
+      - lib32-gnutls
+    provides:
+      - libcurl-gnutls.so
+# generated with artixpkg 0.36.3-1-any
