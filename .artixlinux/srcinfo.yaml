@@ -1,0 +1,38 @@
+---
+version: 5.8.1-1
+pkgbase:
+  name: python-jupyter-core
+  pkgdesc: Jupyter core package. A base package on which Jupyter projects rely
+  pkgver: 5.8.1
+  pkgrel: 1
+  url: https://pypi.python.org/pypi/jupyter_core
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pip
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-argcomplete
+    - python-traitlets
+    - python-platformdirs
+  provides:
+    - python-jupyter_core
+  conflicts:
+    - python-jupyter_core
+  replaces:
+    - python-jupyter_core
+  source:
+    - git+https://github.com/jupyter/jupyter_core#tag=v5.8.1
+  sha256sums:
+    - 0b5823d0976f3b18a3405296f13bdec529715c369aadac69f63849f7c3f59483
+pkgname:
+  - name: python-jupyter-core
+# generated with artixpkg 0.36.3-1-any
