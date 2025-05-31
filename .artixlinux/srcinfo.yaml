@@ -1,9 +1,9 @@
 ---
-version: 7.3-1
+version: 7.4-1
 pkgbase:
   name: python-zope-testrunner
   pkgdesc: Zope testrunner script
-  pkgver: 7.3
+  pkgver: 7.4
   pkgrel: 1
   url: https://github.com/zopefoundation/zope.testrunner
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - python-zope-exceptions
     - python-zope-interface
   source:
-    - https://github.com/zopefoundation/zope.testrunner/archive/7.3/python-zope-testrunner-7.3.tar.gz
+    - https://github.com/zopefoundation/zope.testrunner/archive/7.4/python-zope-testrunner-7.4.tar.gz
   sha512sums:
-    - 6aef63802c4c50a94d3b0c2692a7a3eb8261110fdfe70e6c7817a7c3ad8f688ff7fc2155479c4cbf38a0cf6ad32484cfbbb92b2428885d312a5a2c62a7907e7b
+    - 1ff3cd6e0bc40549bec073944a8a97ec6d30888bcaf08c597ba0cf3f85e988ae0914dd02c849a23430c70e19d2cf0591447cdfdb6314b41f434a7830092eda8a
 pkgname:
   - name: python-zope-testrunner
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
