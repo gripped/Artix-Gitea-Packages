@@ -1,0 +1,41 @@
+---
+version: 0.23.2-1
+pkgbase:
+  name: python-inline-snapshot
+  pkgdesc: Create and update inline snapshots in your python tests
+  pkgver: 0.23.2
+  pkgrel: 1
+  url: https://github.com/15r10nk/inline-snapshot
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-dirty-equals
+    - python-hypothesis
+    - python-pydantic
+    - python-pytest-freezer
+    - python-pytest-mock
+    - python-pytest-subtests
+    - python-pytest-xdist
+    - python-time-machine
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-asttokens
+    - python-black
+    - python-executing
+    - python-pytest
+    - python-rich
+    - python-typing_extensions
+  source:
+    - python-inline-snapshot-0.23.2.tar.gz::https://github.com/15r10nk/inline-snapshot/archive/v0.23.2.tar.gz
+  sha256sums:
+    - 85498458512f75a1e4b0890de5bfe61a947341aaa5296c2f22438c9fdf60448c
+pkgname:
+  - name: python-inline-snapshot
+# generated with artixpkg 0.36.3-1-any
