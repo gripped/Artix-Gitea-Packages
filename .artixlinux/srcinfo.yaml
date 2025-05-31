@@ -1,10 +1,10 @@
 ---
-version: 6.4.0-1.1
+version: 6.4.1-1
 pkgbase:
   name: roctracer
   pkgdesc: ROCm tracer library for performance tracing
-  pkgver: 6.4.0
-  pkgrel: 1.1
+  pkgver: 6.4.1
+  pkgrel: 1
   url: https://rocm.docs.amd.com/projects/roctracer/en/latest
   arch:
     - x86_64
@@ -24,9 +24,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - roctracer-6.4.0.tar.gz::https://github.com/ROCm/roctracer/archive/refs/tags/rocm-6.4.0.tar.gz
+    - roctracer-6.4.1.tar.gz::https://github.com/ROCm/roctracer/archive/refs/tags/rocm-6.4.1.tar.gz
   sha256sums:
-    - e5c6e3b20ed3c0d2dca61ad472f9878107c9ce09a2108ff6583ae32031298022
+    - 57d61441d95b05b12cd05210a80d81cd1d7a21dab7487680897427dfbdafddca
 pkgname:
   - name: roctracer
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.3-1-any
