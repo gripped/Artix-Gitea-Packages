@@ -1,9 +1,9 @@
 ---
-version: 2.48.2-1
+version: 2.48.3-1
 pkgbase:
   name: webkit2gtk
   pkgdesc: Web content engine for GTK
-  pkgver: 2.48.2
+  pkgver: 2.48.3
   pkgrel: 1
   url: https://webkitgtk.org
   arch:
@@ -98,16 +98,16 @@ pkgbase:
     - xdg-dbus-proxy
     - zlib
   source:
-    - https://webkitgtk.org/releases/webkitgtk-2.48.2.tar.xz
-    - https://webkitgtk.org/releases/webkitgtk-2.48.2.tar.xz.asc
+    - https://webkitgtk.org/releases/webkitgtk-2.48.3.tar.xz
+    - https://webkitgtk.org/releases/webkitgtk-2.48.3.tar.xz.asc
   validpgpkeys:
     - 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
     - 013A0127AC9C65B34FFA62526C1009B693975393
   sha256sums:
-    - ec58f6dfc25d3b360388e192f865068d69aab09b4d7df021f90e314d2fa54f37
+    - d4dc5970f0fc6a529ff7fd67bcbfab2bbb5e91be789b2e9279640b3217a782c3
     - SKIP
   b2sums:
-    - 78d57d93d7bc31f7fcb767d142fb850c707e9062f4d5637929e434c40088df7fd807f9ca21cf2a194551dcb5af3b44f910008e03f7fd3324fbad7bb589555a78
+    - d07afd02ca3159e2a8998167818614eb586754f6485ea5b998a10686df44a16c99c5890b6fc7ccb3c1aa4aef82f1626be39cd67a4e60dbbe9eda466fd17aa002
     - SKIP
 pkgname:
   - name: webkit2gtk
@@ -122,4 +122,4 @@ pkgname:
   - name: webkit2gtk-docs
     pkgdesc: Web content engine for GTK (documentation)
     depends: []
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
