@@ -1,0 +1,88 @@
+---
+version: 8.14.0-2
+pkgbase:
+  name: curl
+  pkgdesc: command line tool and library for transferring data with URLs
+  pkgver: 8.14.0
+  pkgrel: 2
+  url: https://curl.se/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - valgrind
+  makedepends:
+    - git
+    - patchelf
+  depends:
+    - ca-certificates
+    - brotli
+    - libbrotlidec.so
+    - krb5
+    - libgssapi_krb5.so
+    - libidn2
+    - libidn2.so
+    - libnghttp2
+    - libnghttp2.so
+    - libnghttp3
+    - libnghttp3.so
+    - libpsl
+    - libpsl.so
+    - libssh2
+    - libssh2.so
+    - zlib
+    - libz.so
+    - zstd
+    - libzstd.so
+  source:
+    - git+https://github.com/curl/curl.git#tag=curl-8_14_0?signed
+  validpgpkeys:
+    - 27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2
+  sha512sums:
+    - 2d1103904a7e876db02fc42591743c9d51eacaf8a66becd612875f8053102ec207456efeab6ff9f0197ccb516423566355115916991e1eff61499d3031763140
+pkgname:
+  - name: curl
+    depends:
+      - ca-certificates
+      - brotli
+      - libbrotlidec.so
+      - krb5
+      - libgssapi_krb5.so
+      - libidn2
+      - libidn2.so
+      - libnghttp2
+      - libnghttp2.so
+      - libnghttp3
+      - libnghttp3.so
+      - libpsl
+      - libpsl.so
+      - libssh2
+      - libssh2.so
+      - zlib
+      - libz.so
+      - zstd
+      - libzstd.so
+      - openssl
+      - libcrypto.so
+      - libssl.so
+    provides:
+      - libcurl.so
+    conflicts:
+      - wcurl
+    replaces:
+      - wcurl
+  - name: libcurl-compat
+    pkgdesc: command line tool and library for transferring data with URLs (no versioned symbols)
+    depends:
+      - curl
+    provides:
+      - libcurl-compat.so
+  - name: libcurl-gnutls
+    pkgdesc: command line tool and library for transferring data with URLs (no versioned symbols, linked against gnutls)
+    depends:
+      - curl
+      - gnutls
+    provides:
+      - libcurl-gnutls.so
+# generated with artixpkg 0.36.3-1-any

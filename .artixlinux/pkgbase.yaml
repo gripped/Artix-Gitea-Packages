@@ -1,59 +1,65 @@
 ---
-pkgbase:
-  name: curl
-  version: 8.13.0-2
-  arch:
-    - x86_64
-  pkgname:
-    - curl
-    - libcurl-compat
-    - libcurl-gnutls
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 8.14.0-2
+    packages:
+      - curl-8.14.0-2-x86_64.pkg.tar.zst
+      - libcurl-compat-8.14.0-2-x86_64.pkg.tar.zst
+      - libcurl-gnutls-8.14.0-2-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 8.13.0-2
     packages:
       - curl-8.13.0-2-x86_64.pkg.tar.zst
       - libcurl-compat-8.13.0-2-x86_64.pkg.tar.zst
       - libcurl-gnutls-8.13.0-2-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
