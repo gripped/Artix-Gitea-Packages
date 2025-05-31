@@ -1,9 +1,9 @@
 ---
-version: 6.4.0-4
+version: 6.4.1-1
 pkgbase:
   name: rocm-llvm
-  pkgver: 6.4.0
-  pkgrel: 4
+  pkgver: 6.4.1
+  pkgrel: 1
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
     - x86_64
@@ -27,11 +27,11 @@ pkgbase:
     - staticlibs
     - '!lto'
   source:
-    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.0
+    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.1
     - rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
     - rocm-llvm-6.4-fix-array-assert.patch
   sha256sums:
-    - 16f93fda1aa536eded0b903de5e2fa60d9fb9ec43d5a902e7c07d686c711cb30
+    - edb637d082a0d0a41e50f5128cf5b23226313bbc4f28e888843cde137e2f3594
     - 0293c307131426a9c031f215045e2f0725677de0aac6dda1729456ac9a444415
     - 6485a06e4f3b85df76110548f428217f86e785ec3dec7b0de0a7a2cf6384f0c0
 pkgname:
@@ -68,4 +68,4 @@ pkgname:
       - rocm-core
       - rocm-llvm
       - rocm-device-libs
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
