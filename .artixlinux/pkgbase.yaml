@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.32.6-1
+    version: 0.32.8-1
     packages:
-      - aws-crt-cpp-0.32.6-1-x86_64.pkg.tar.zst
+      - aws-crt-cpp-0.32.8-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.32.5-1
