@@ -5,8 +5,8 @@
 
 pkgname=rawtherapee
 epoch=1
-pkgver=5.11
-pkgrel=3
+pkgver=5.12
+pkgrel=1
 pkgdesc='A powerful cross-platform raw image processing program'
 arch=('x86_64')
 url='https://www.rawtherapee.com/'
@@ -25,8 +25,8 @@ depends=('exiv2'
          'libjxl')
 makedepends=('cmake')
 source=("https://github.com/Beep6581/RawTherapee/releases/download/${pkgver}/rawtherapee-$pkgver.tar.xz")
-sha1sums=('2cb2932a904660158ee9ae8eafd8c07de77ed195')
-sha256sums=('e584c18dec112de29954b2b6471449a302a85e5cca4e42ede75fa333a36de724')
+sha1sums=('cff721096609ee5b93d42bb37770880525e05c89')
+sha256sums=('d9a6c10537d64a285bc465675fe59aaa94ce3223823dfbecf0ae2c9599082d57')
 
 build() {
   mkdir -p "$srcdir/$pkgname-build"

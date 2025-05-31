@@ -1,0 +1,37 @@
+---
+version: 1:5.12-1
+pkgbase:
+  name: rawtherapee
+  pkgdesc: A powerful cross-platform raw image processing program
+  pkgver: 5.12
+  pkgrel: 1
+  epoch: 1
+  url: https://www.rawtherapee.com/
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - cmake
+  depends:
+    - exiv2
+    - desktop-file-utils
+    - fftw
+    - glibmm
+    - gtk3
+    - gtkmm3
+    - hicolor-icon-theme
+    - lcms2
+    - lensfun
+    - libcanberra
+    - libiptcdata
+    - libjxl
+  source:
+    - https://github.com/Beep6581/RawTherapee/releases/download/5.12/rawtherapee-5.12.tar.xz
+  sha1sums:
+    - cff721096609ee5b93d42bb37770880525e05c89
+  sha256sums:
+    - d9a6c10537d64a285bc465675fe59aaa94ce3223823dfbecf0ae2c9599082d57
+pkgname:
+  - name: rawtherapee
+# generated with artixpkg 0.36.3-1-any
