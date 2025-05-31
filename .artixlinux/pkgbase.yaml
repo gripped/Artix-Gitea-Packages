@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.3.5-3
+    packages:
+      - shairport-sync-4.3.5-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 4.3.5-2
