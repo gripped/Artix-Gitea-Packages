@@ -1,10 +1,10 @@
 ---
-version: 6.4.0-1.1
+version: 6.4.1-1
 pkgbase:
   name: rocprofiler-register
   pkgdesc: Helper library for the ROCprofiler (v2) library
-  pkgver: 6.4.0
-  pkgrel: 1.1
+  pkgver: 6.4.1
+  pkgrel: 1
   url: https://github.com/ROCm/rocprofiler-register
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
     - fmt
     - google-glog
   source:
-    - rocprofiler-register-6.4.0.tar.gz::https://github.com/ROCm/rocprofiler-register/archive/refs/tags/rocm-6.4.0.tar.gz
+    - rocprofiler-register-6.4.1.tar.gz::https://github.com/ROCm/rocprofiler-register/archive/refs/tags/rocm-6.4.1.tar.gz
   sha256sums:
-    - 7439d789f722971b2dd2f8e7b5c5cbdb1522e47a6fbb428fd9bcb24234c6fd48
+    - bb8a55d73049f433c039300357713e040ba5b37ed5490336fae435385d09e596
 pkgname:
   - name: rocprofiler-register
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
