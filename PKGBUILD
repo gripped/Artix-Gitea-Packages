@@ -6,20 +6,30 @@
 pkgname=thermald
 _pkgname=thermal_daemon
 pkgver=2.5.9
-pkgrel=2
+pkgrel=3
 pkgdesc='The Linux Thermal Daemon program from 01.org'
 arch=('x86_64')
-url='https://01.org/linux-thermal-daemon'
+url='https://github.com/intel/thermal_daemon'
 license=('GPL2')
-depends=('dbus-glib' 'libxml2' 'libevdev' 'upower')
-makedepends=('autoconf-archive' 'python' 'gtk-doc')
-source=(
-  "https://github.com/intel/thermal_daemon/archive/v${pkgver}/${_pkgname}-${pkgver}.tar.gz"
+depends=(
+  dbus-glib
+  libevdev
+  libxml2
+  upower
 )
-b2sums=('200609171070bae818f15505d75c5f3aefd265ff6ceca73e846b7efa25a73fc6c8635c59dcbb07c276e7547318ec8b232b00bacd4be936c3384e579c5c7823bc')
+makedepends=(
+  autoconf-archive
+  git
+  gtk-doc
+  python
+)
+source=(
+  "git+https://github.com/intel/thermal_daemon.git#tag=v${pkgver}"
+)
+b2sums=('bd4bb51710363cb14c8343f26bb895bdd8335fe7bb48b42452d812157e5b08d4ac96e0027ff9d648633d2aa10dd160957cb6fa7a3ca579749b02f533e6be5f44')
 
 build() {
-  cd ${_pkgname}-${pkgver}
+  cd ${_pkgname}
   ./autogen.sh
   ./configure \
     --prefix=/usr \
@@ -31,6 +41,6 @@ build() {
 }
 
 package() {
-  cd ${_pkgname}-${pkgver}
+  cd ${_pkgname}
   DESTDIR="${pkgdir}" make install
 }
