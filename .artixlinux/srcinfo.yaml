@@ -1,0 +1,46 @@
+---
+version: 0.47.0-1
+pkgbase:
+  name: python-starlette
+  pkgdesc: The little ASGI framework that shines
+  pkgver: 0.47.0
+  pkgrel: 1
+  url: https://github.com/encode/starlette
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-aiosqlite
+    - python-databases
+    - python-pytest
+    - python-trio
+    - python-itsdangerous
+    - python-jinja
+    - python-python-multipart
+    - python-pyyaml
+    - python-httpx
+    - python-sqlalchemy
+  makedepends:
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-wheel
+  depends:
+    - python
+    - python-anyio
+  optdepends:
+    - 'python-itsdangerous: for session middleware support'
+    - 'python-jinja: for jinja templates'
+    - 'python-python-multipart: for form parsing'
+    - 'python-pyyaml: for schema generator'
+    - 'python-httpx: for test client'
+  source:
+    - starlette-0.47.0.tar.gz::https://github.com/encode/starlette/archive/0.47.0.tar.gz
+  sha512sums:
+    - 4a53a0e91cbcb67df1e065217a9a905888049d3bbd7a3f39ce392816cebb9e8e4bdd0b269c191e9d6003dc3f306355dd7d50d180c56b904485fffa793ba82e72
+  b2sums:
+    - 4272451fed218d7a2ec0ccb9d7d921bce62be01ff28f6cf0e906e221507f345f850ca8fd3e09aedf748b45df36c2692bb6b3abb4058e8bbaf777312765f51281
+pkgname:
+  - name: python-starlette
+# generated with artixpkg 0.36.3-1-any
