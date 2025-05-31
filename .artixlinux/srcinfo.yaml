@@ -1,10 +1,10 @@
 ---
-version: 12.5-2
+version: 12.5-3
 pkgbase:
   name: picom
   pkgdesc: Lightweight compositor for X11
   pkgver: 12.5
-  pkgrel: 2
+  pkgrel: 3
   url: https://picom.app
   arch:
     - x86_64
@@ -45,4 +45,4 @@ pkgbase:
     - 6df1649e6b7842223b846e148ea59160a2b8c5513235a4f84f62387648b5f64cce39fefa65d40cef59e6fc02c40fff4f40d2b7c26158c132c3cc9ab651eb814c
 pkgname:
   - name: picom
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.3-1-any
