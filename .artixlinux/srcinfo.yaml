@@ -1,10 +1,10 @@
 ---
-version: 6.4.0-1.1
+version: 6.4.1-1
 pkgbase:
   name: rocminfo
   pkgdesc: ROCm Application for Reporting System Info
-  pkgver: 6.4.0
-  pkgrel: 1.1
+  pkgver: 6.4.1
+  pkgrel: 1
   url: https://github.com/ROCm/rocminfo
   arch:
     - x86_64
@@ -21,9 +21,9 @@ pkgbase:
     - python
     - hsa-rocr
   source:
-    - rocminfo-6.4.0.tar.gz::https://github.com/ROCm/rocminfo/archive/rocm-6.4.0.tar.gz
+    - rocminfo-6.4.1.tar.gz::https://github.com/ROCm/rocminfo/archive/rocm-6.4.1.tar.gz
   sha256sums:
-    - 060184e70755cb267017553ec37cc5b36af2c94e6b0643cad4b9fed270199a79
+    - eabbe4bfb29152900bbde812c6fffd5555b45842259242d85f29e449c00f3249
 pkgname:
   - name: rocminfo
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any

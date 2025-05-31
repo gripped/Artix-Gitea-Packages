@@ -5,8 +5,8 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocminfo
-pkgver=6.4.0
-pkgrel=1.1
+pkgver=6.4.1
+pkgrel=1
 pkgdesc='ROCm Application for Reporting System Info '
 arch=('x86_64')
 url='https://github.com/ROCm/rocminfo'
@@ -14,7 +14,7 @@ license=('NCSA')
 depends=('rocm-core' 'glibc' 'gcc-libs' 'pciutils' 'python' 'hsa-rocr')
 makedepends=('cmake' 'rocm-cmake')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/rocm-$pkgver.tar.gz")
-sha256sums=('060184e70755cb267017553ec37cc5b36af2c94e6b0643cad4b9fed270199a79')
+sha256sums=('eabbe4bfb29152900bbde812c6fffd5555b45842259242d85f29e449c00f3249')
 _dirname="$(basename "$url")-$(basename "${source[0]}" .tar.gz)"
 
 build() {
