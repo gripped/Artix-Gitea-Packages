@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 44.0.3-1
+    version: 45.0.3-1
     packages:
-      - python-cryptography-44.0.3-1-x86_64.pkg.tar.zst
+      - python-cryptography-45.0.3-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 44.0.3-1
