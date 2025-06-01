@@ -2,12 +2,13 @@
 
 pkgname=labwc
 pkgver=0.8.4
-pkgrel=2
+pkgrel=2.1
 pkgdesc='wlroots-based window-stacking compositor for wayland'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
 license=('GPL-2.0-only')
-depends=('libpng' 'librsvg' 'pango' 'seatd' 'ttf-font' 'wlroots=0.18.2' 'wayland' 'xorg-xwayland' 'libsfdo' )
+depends=(cairo glib2 glibc libinput libpng librsvg libsfdo libwlroots-0.18.so
+         libxcb libxkbcommon libxml2 pango pixman ttf-font wayland xorg-xwayland)
 makedepends=('meson' 'cmake' 'scdoc' 'wayland-protocols')
 provides=(wayland-compositor)
 source=("${url}/archive/refs/tags/${pkgver}.tar.gz")

@@ -1,10 +1,10 @@
 ---
-version: 0.8.4-2
+version: 0.8.4-2.1
 pkgbase:
   name: labwc
   pkgdesc: wlroots-based window-stacking compositor for wayland
   pkgver: 0.8.4
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/labwc/labwc
   arch:
     - x86_64
@@ -16,15 +16,22 @@ pkgbase:
     - scdoc
     - wayland-protocols
   depends:
+    - cairo
+    - glib2
+    - glibc
+    - libinput
     - libpng
     - librsvg
+    - libsfdo
+    - libwlroots-0.18.so
+    - libxcb
+    - libxkbcommon
+    - libxml2
     - pango
-    - seatd
+    - pixman
     - ttf-font
-    - wlroots=0.18.2
     - wayland
     - xorg-xwayland
-    - libsfdo
   provides:
     - wayland-compositor
   source:
