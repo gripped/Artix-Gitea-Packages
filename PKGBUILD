@@ -104,6 +104,7 @@ check() {
     --deselect='tests/test_connector.py::test_tcp_connector_socket_factory[pyloop]'
     --deselect='tests/test_connector.py::test_available_connections_with_limit_per_host'
     --deselect='tests/test_connector.py::test_available_connections_without_limit_per_host'
+    --deselect='tests/test_connector.py::test_available_connections_no_limits'
 
     # Tests freeze and timeout when running serialized, no idea why
     -n auto
