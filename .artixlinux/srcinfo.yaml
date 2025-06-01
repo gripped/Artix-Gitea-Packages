@@ -1,0 +1,37 @@
+---
+version: 0.9.1-1
+pkgbase:
+  name: wayvnc
+  pkgdesc: VNC server for wlroots-based Wayland compositors
+  pkgver: 0.9.1
+  pkgrel: 1
+  url: https://github.com/any1/wayvnc
+  arch:
+    - x86_64
+  license:
+    - ISC
+  makedepends:
+    - meson
+    - ninja
+    - pam
+    - scdoc
+  depends:
+    - glibc
+    - jansson
+    - libaml.so
+    - libdrm
+    - libneatvnc.so
+    - libpixman-1.so
+    - libxkbcommon.so
+    - wayland
+  optdepends:
+    - 'pam: PAM authentication'
+  source:
+    - https://github.com/any1/wayvnc/archive/refs/tags/v0.9.1.tar.gz
+    - LICENSE
+  b2sums:
+    - 64702ff290776eb2fde8002615c791853d1158465229a3136655c05de50f34f1214c851888679c1e1949500c90aaa51ce460b07fc5658edf043eff0d46971c2d
+    - c0afb2f05920179b4dc49c46e682244866f8c053a720b5ef93a9939ae721405d340741e15b05e9ea7dc8874111562cd932de2d6ac305589760119307a5f543d5
+pkgname:
+  - name: wayvnc
+# generated with artixpkg 0.36.2-1-any
