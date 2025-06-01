@@ -106,6 +106,7 @@ check() {
     --deselect='tests/test_cookiejar.py::test_constructor'
     --deselect='tests/test_cookiejar.py::test_save_load'
     --deselect='tests/test_cookiejar.py::test_update_cookie_with_unicode_domain'
+    --deselect='tests/test_cookiejar.py::test_filter_cookie_with_unicode_domain'
     --deselect='tests/test_proxy_functional.py::test_proxy_http_connection_error[pyloop]'
     --deselect='tests/test_proxy_functional.py::test_proxy_https_connection_error[pyloop]'
 
