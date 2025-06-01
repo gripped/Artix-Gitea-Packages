@@ -5,7 +5,7 @@
 # Contributor: Dobroslaw Kijowski
 
 pkgname=mitmproxy
-pkgver=12.0.1
+pkgver=12.1.1
 pkgrel=1
 pkgdesc='SSL-capable man-in-the-middle HTTP proxy'
 arch=('any')
@@ -57,8 +57,8 @@ provides=('pathod')
 conflicts=('pathod')
 replaces=('pathod')
 source=("https://github.com/mitmproxy/mitmproxy/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha256sums=('752814add90d4d65424c53aa3f3973d9b58186a5bb9285d4a9ad11860884a9e8')
-b2sums=('f7b5749a13d5287f488ed787c03494e39cb9837d6a24871ab205c404a2b2ea1d197af542d5321d6a6434dde78c932a74a443b2f80d08c715d63d1b0eb3d3f576')
+sha256sums=('b0870eb946b5918f4aa881006c24bba5fa5351db1f3b6226002cbd443f1eb6c2')
+b2sums=('00d3d1f4e0e071d91a014e8b68ad69a373dc5efed5b0e4c5a8cc664110c1d21ac441dcf5635072b035f4573b292a2d933b6760e2323e466186a21bbe54217a7d')
 
 build() {
   cd $pkgname-$pkgver
@@ -73,7 +73,7 @@ check() {
 
   local pytest_opts=(
   	--override-ini="addopts="
-  		--deselect test/mitmproxy/addons/test_dns_resolver.py
+    --deselect test/mitmproxy/addons/test_dns_resolver.py
   )
   PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv "${pytest_opts[@]}"
 }
