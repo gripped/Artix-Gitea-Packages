@@ -1,0 +1,31 @@
+---
+version: 19.1.7-1
+pkgbase:
+  name: lib32-spirv-llvm-translator
+  pkgdesc: Tool and a library for bi-directional translation between SPIR-V and LLVM IR (32-bit)
+  pkgver: 19.1.7
+  pkgrel: 1
+  url: https://github.com/KhronosGroup/SPIRV-LLVM-Translator
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-custom
+  makedepends:
+    - git
+    - cmake
+    - llvm
+    - lib32-llvm
+    - lib32-spirv-tools
+    - spirv-headers
+  depends:
+    - lib32-gcc-libs
+    - lib32-glibc
+    - lib32-llvm-libs
+    - spirv-llvm-translator
+  source:
+    - git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git#tag=v19.1.7
+  sha256sums:
+    - 9f18053231af570fb2e24d29840421cbff1b977bc3ac04c9e8a4a19cffea2529
+pkgname:
+  - name: lib32-spirv-llvm-translator
+# generated with artixpkg 0.36.3-1-any
