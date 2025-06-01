@@ -1,0 +1,39 @@
+---
+version: 20.1.6-1
+pkgbase:
+  name: compiler-rt
+  pkgdesc: Compiler runtime libraries for clang
+  pkgver: 20.1.6
+  pkgrel: 1
+  url: https://compiler-rt.llvm.org/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 WITH LLVM-exception
+  makedepends:
+    - llvm
+    - cmake
+    - ninja
+    - python
+  depends:
+    - gcc-libs
+  options:
+    - staticlibs
+  source:
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/compiler-rt-20.1.6.src.tar.xz
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/compiler-rt-20.1.6.src.tar.xz.sig
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/cmake-20.1.6.src.tar.xz
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/cmake-20.1.6.src.tar.xz.sig
+  validpgpkeys:
+    - 474E22316ABF4785A88C6E8EA2C794A986419D8A
+    - D574BD5D1D0E98895E3BF90044F2485E45D59042
+  sha256sums:
+    - 34ff389ce2c34ac1fe8badcf842265295daa91fd1149d69a7ebaf131edf01e4d
+    - SKIP
+    - b4b3efa5d5b01b3f211f1ba326bb6f0c318331f828202d332c95b7f30fca5f8c
+    - SKIP
+  makedepends_x86_64:
+    - lib32-gcc-libs
+pkgname:
+  - name: compiler-rt
+# generated with artixpkg 0.36.3-1-any
