@@ -2,7 +2,7 @@
 # Contributor: Marc Tiehuis <marctiehuis@gmail.com>
 
 pkgname=zig
-pkgver=0.14.0
+pkgver=0.14.1
 pkgrel=1
 pkgdesc='a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software'
 arch=('x86_64')
@@ -13,16 +13,13 @@ depends=('clang' 'lld' 'llvm-libs')
 makedepends=('cmake' 'llvm')
 checkdepends=('lib32-glibc')
 source=("https://ziglang.org/download/$pkgver/zig-$pkgver.tar.xz"
-        "https://github.com/ziglang/zig/pull/23645.patch"
         "skip-localhost-test.patch")
-sha256sums=('c76638c03eb204c4432ae092f6fa07c208567e110fbd4d862d131a7332584046'
-            '4cc16c31b5148ec831427277439031b18f8f5777bf173636b54d63aae2e6cf47'
+sha256sums=('237f8abcc8c3fd68c70c66cdbf63dce4fb5ad4a2e6225ac925e3d5b4c388f203'
             'eeb5f0f72035c52bf558ffc77a171a3ddf93eac7d663ef0c82826007763717a8')
 
 prepare() {
     cd "$pkgname-$pkgver"
 
-    patch -p1 -i ../23645.patch
     patch -p1 -i ../skip-localhost-test.patch
 }
 
