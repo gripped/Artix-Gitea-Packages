@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,10 @@ repos:
       - wasi-libc++abi-19.1.6-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 19.1.6-1
+    packages:
+      - wasi-libc++-19.1.6-1-any.pkg.tar.zst
+      - wasi-libc++abi-19.1.6-1-any.pkg.tar.zst
     debug: []
   world:
     version: 19.1.6-2

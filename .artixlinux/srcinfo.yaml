@@ -1,10 +1,10 @@
 ---
-version: 19.1.6-2
+version: 19.1.6-1
 pkgbase:
   name: wasi-libc++
   pkgdesc: WASI LLVM C++ standard library
   pkgver: 19.1.6
-  pkgrel: 2
+  pkgrel: 1
   url: https://libcxx.llvm.org/
   arch:
     - any
@@ -45,7 +45,7 @@ pkgname:
     depends:
       - wasi-libc
       - wasi-compiler-rt
-      - wasi-libc++abi=19.1.6-2
+      - wasi-libc++abi=19.1.6-1
   - name: wasi-libc++abi
     pkgdesc: Low level support for the WASI LLVM C++ standard library
 # generated with artixpkg 0.36.3-1-any
