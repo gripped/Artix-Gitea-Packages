@@ -1,0 +1,26 @@
+---
+version: 0.5.18-1
+pkgbase:
+  name: moksha-theme-blueelectric
+  pkgdesc: Moksha Blue Electric theme
+  pkgver: 0.5.18
+  pkgrel: 1
+  url: https://github.com/thewaiter
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - efl
+  options:
+    - '!strip'
+  source:
+    - git+https://github.com/thewaiter/MokshaBlueElectric.git
+    - artix-icon.png
+  sha256sums:
+    - SKIP
+    - d3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95
+pkgname:
+  - name: moksha-theme-blueelectric
+# generated with artixpkg 0.36.2-1-any

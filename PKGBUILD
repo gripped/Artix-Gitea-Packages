@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-blueelectric
-pkgver=0.5.17
+pkgver=0.5.18
 _pkgname2=MokshaBlueElectric
 _pkgname3=$_pkgname2
 _pkgname4=Moksha-BlueElectric
