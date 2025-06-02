@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 19.1.6-1
+    version: 20.1.6-1
     packages:
-      - wasi-compiler-rt-19.1.6-1-any.pkg.tar.zst
+      - wasi-compiler-rt-20.1.6-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
