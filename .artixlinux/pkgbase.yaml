@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.22.1-1
+    version: 0.22.1-1.1
     packages:
-      - vc-intrinsics-0.22.1-1-x86_64.pkg.tar.zst
+      - vc-intrinsics-0.22.1-1.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
