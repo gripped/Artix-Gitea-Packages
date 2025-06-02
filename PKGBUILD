@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-detour
-pkgver=0.12.10
+pkgver=0.12.11
 _pkgname2=MokshaDetour
 _pkgname3=MokshaDetourious
 pkgrel=1

@@ -1,0 +1,24 @@
+---
+version: 0.12.11-1
+pkgbase:
+  name: moksha-theme-detour
+  pkgdesc: Moksha Detour theme
+  pkgver: 0.12.11
+  pkgrel: 1
+  url: https://github.com/thewaiter
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - efl
+  options:
+    - '!strip'
+  source:
+    - git+https://github.com/thewaiter/MokshaDetour.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: moksha-theme-detour
+# generated with artixpkg 0.36.2-1-any
