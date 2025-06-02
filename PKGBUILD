@@ -4,7 +4,7 @@
 
 pkgname=lib32-spirv-tools
 pkgver=1.4.313.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="API and commands for processing SPIR-V modules (32-bit)"
 url="https://www.khronos.org/spirv/"
