@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: lib32-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: lib32-goblins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,9 +33,8 @@ repos:
     packages: []
     debug: []
   lib32-goblins:
-    version: 1:1.4.313.0-1.1
-    packages:
-      - lib32-spirv-tools-1:1.4.313.0-1.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-gremlins:
     version: null
