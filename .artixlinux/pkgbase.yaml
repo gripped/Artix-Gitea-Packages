@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.9.10-2
+    version: 0.9.11-1
     packages:
-      - libfaketime-0.9.10-2-x86_64.pkg.tar.zst
+      - libfaketime-0.9.11-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.9.10-2
