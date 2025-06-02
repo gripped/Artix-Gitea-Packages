@@ -1,55 +1,61 @@
 ---
 team: galaxy
-pkgbase:
-  name: moksha-theme-forum
-  version: 0.7.4.8-1
-  arch:
-    - any
-  pkgname:
-    - moksha-theme-forum
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.7.4.9-1
+    packages:
+      - moksha-theme-forum-0.7.4.9-1-any.pkg.tar.zst
+    debug: []
   galaxy:
     version: 0.7.4.8-1
     packages:
       - moksha-theme-forum-0.7.4.8-1-any.pkg.tar.zst
+    debug: []
