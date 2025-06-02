@@ -1,0 +1,24 @@
+---
+version: 0.0.1-13
+pkgbase:
+  name: moksha-theme-dimensions
+  pkgdesc: Moksha Dimensions theme
+  pkgver: 0.0.1
+  pkgrel: 13
+  url: https://github.com/thewaiter
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - efl
+  options:
+    - '!strip'
+  source:
+    - git+https://github.com/thewaiter/MokshaDimensions.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: moksha-theme-dimensions
+# generated with artixpkg 0.36.2-1-any
