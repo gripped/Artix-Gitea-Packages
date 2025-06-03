@@ -1,0 +1,39 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-3d
+  pkgdesc: C++ and QML APIs for easy inclusion of 3D graphics
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - assimp
+    - cmake
+    - git
+    - ninja
+    - qt6-declarative
+    - qt6-shadertools
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+  optdepends:
+    - 'assimp: assimp importer plugin'
+    - 'qt6-declarative: QML bindings'
+    - 'qt6-shadertools: RHI renderer'
+  source:
+    - git+https://code.qt.io/qt/qt3d#tag=v6.9.1
+  sha256sums:
+    - 8ec08036b76670c69236497c8b53fea63cd8415341af8e2028e8486bd23763ed
+pkgname:
+  - name: qt6-3d
+# generated with artixpkg 0.36.2-1-any
