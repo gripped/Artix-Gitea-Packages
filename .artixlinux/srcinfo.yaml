@@ -1,0 +1,37 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-imageformats
+  pkgdesc:
+    Plugins for additional image formats: TIFF, MNG, TGA, WBMP
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  depends:
+    - gcc-libs
+    - glibc
+    - jasper
+    - libmng
+    - libtiff
+    - libwebp
+    - qt6-base
+  source:
+    - git+https://code.qt.io/qt/qtimageformats#tag=v6.9.1
+  sha256sums:
+    - cd8a15976033b589d867e91f44fc1d8fcf4ff0a64ce2d74e3a056166fd18b441
+pkgname:
+  - name: qt6-imageformats
+# generated with artixpkg 0.36.2-1-any
