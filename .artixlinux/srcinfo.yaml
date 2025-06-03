@@ -1,0 +1,100 @@
+---
+version: 5.83-1
+pkgbase:
+  name: bluez
+  pkgver: 5.83
+  pkgrel: 1
+  url: http://www.bluez.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - dbus
+    - libical
+    - alsa-lib
+    - json-c
+    - ell
+    - python-docutils
+    - python-pygments
+    - cups
+  source:
+    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.83.tar.xz
+    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.83.tar.sign
+    - bluetooth.modprobe
+  validpgpkeys:
+    - E932D120BC2AEC444E558F0106CA9F5D1DCF2659
+  sha256sums:
+    - 108522d909d220581399bfec93daab62035539ceef3dda3e79970785c63bd24c
+    - SKIP
+    - 46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4
+pkgname:
+  - name: bluez
+    pkgdesc: Daemons for the bluetooth protocol stack
+    depends:
+      - dbus
+      - glib2
+      - alsa-lib
+      - glibc
+    backup:
+      - etc/bluetooth/main.conf
+      - etc/bluetooth/input.conf
+      - etc/bluetooth/network.conf
+  - name: bluez-utils
+    pkgdesc: Development and debugging utilities for the bluetooth protocol stack
+    depends:
+      - dbus
+      - glib2
+      - glibc
+      - readline
+    optdepends:
+      - 'ell: for btpclient'
+    provides:
+      - bluez-plugins
+    replaces:
+      - bluez-plugins
+  - name: bluez-libs
+    pkgdesc: Deprecated libraries for the bluetooth protocol stack
+    license:
+      - LGPL-2.1-only
+    depends:
+      - glibc
+    provides:
+      - libbluetooth.so
+  - name: bluez-cups
+    pkgdesc: CUPS printer backend for Bluetooth printers
+    depends:
+      - cups
+      - glib2
+      - glibc
+      - dbus
+  - name: bluez-deprecated-tools
+    pkgdesc: Deprecated tools that are no longer maintained
+    depends:
+      - json-c
+      - glib2
+      - dbus
+      - readline
+      - glibc
+  - name: bluez-hid2hci
+    pkgdesc: Put HID proxying bluetooth HCI's into HCI mode
+    depends:
+      - glibc
+  - name: bluez-mesh
+    pkgdesc: Services for bluetooth mesh
+    depends:
+      - ell
+      - json-c
+      - readline
+      - glibc
+    backup:
+      - etc/bluetooth/mesh-main.conf
+  - name: bluez-obex
+    pkgdesc: Object Exchange daemon for sharing content
+    depends:
+      - glib2
+      - libical
+      - dbus
+      - readline
+      - glibc
+# generated with artixpkg 0.36.3-1-any
