@@ -3,7 +3,7 @@
 
 pkgname=pacman
 pkgver=7.0.0.r6.gc685ae6
-pkgrel=2
+pkgrel=3
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
 _git_tag=7.0.0
 _git_patch_level_commit=c685ae6412af04cae1eaa5d6bda8c277c7ffb8c8
@@ -14,14 +14,15 @@ license=('GPL-2.0-or-later')
 depends=(
   bash
   coreutils
-  curl
+  curl libcurl.so
   gawk
   gettext
   glibc
   gnupg
-  gpgme
+  gpgme libgpgme.so
   grep
-  libarchive
+  libarchive libarchive.so
+  openssl libcrypto.so
   artix-mirrorlist
 )
 makedepends=(
@@ -57,7 +58,7 @@ sha256sums=('06d082c3ce6f0811ca728515aa82d69d372800bd3ada99f5c445ef9429b6e3a6'
             '03b3165fde80c3a5889ea5f9d3de190704825a262478f64a0b5d12a50deda9f3'
             '06ec1332f835a33de2b26ae4517ffc00fbabe3abf311bd0c0d86e8f7c99575dd'
             'c8760d7ebb6c9817d508c691c67084be251cd9c8811ee1ccf92c1278bad74c1c'
-            '59a8bbdc32830c90dbce5ead9f90074a2bb31cd85ec92bc5f92251bb4bcf8a1d'
+            '6fe03e6ea3f69d99d59a48847a8ae97c2160fca847c7aedf7b89d05e4aa9386d'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
             'f563c81338d462f3c3bbcc182b4eb4139abf078acb119c0bc730e4e777b9eb2e')
 
