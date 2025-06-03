@@ -1,0 +1,48 @@
+---
+version: 1.6.0-1
+pkgbase:
+  name: ktextaddons
+  pkgdesc: Various text handling addons
+  pkgver: 1.6.0
+  pkgrel: 1
+  url: https://invent.kde.org/libraries/ktextaddons
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - doxygen
+    - extra-cmake-modules
+    - qt6-doc
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - karchive
+    - kcolorscheme
+    - kconfig
+    - kcoreaddons
+    - ki18n
+    - kio
+    - ktextwidgets
+    - kwidgetsaddons
+    - qt6-base
+    - qt6-speech
+    - qtkeychain-qt6
+    - sonnet
+    - syntax-highlighting
+  optdepends:
+    - 'languagetool: Grammar checking'
+    - 'grammalecte: French grammar checking'
+    - 'libreoffice: Use autocorrection data from LibreOffice'
+  source:
+    - https://download.kde.org/stable/ktextaddons/1.6.0/ktextaddons-1.6.0.tar.xz
+    - https://download.kde.org/stable/ktextaddons/1.6.0/ktextaddons-1.6.0.tar.xz.sig
+  validpgpkeys:
+    - 90A774939A973FF1ECC827788FFE4352ED54BB8A
+  sha256sums:
+    - d9846505a52f97bda64ead193032bc29573ec31481f473be3c586f5b8321ecdc
+    - SKIP
+pkgname:
+  - name: ktextaddons
+# generated with artixpkg 0.36.3-1-any
