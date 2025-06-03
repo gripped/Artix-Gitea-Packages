@@ -1,0 +1,39 @@
+---
+version: 4.2.0-3
+pkgbase:
+  name: libqtxdg
+  pkgdesc: Library providing freedesktop.org XDG specs implementations for Qt
+  pkgver: 4.2.0
+  pkgrel: 3
+  url: https://github.com/lxqt/libqtxdg
+  arch:
+    - x86_64
+  license:
+    - LGPL
+    - custom
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - cmake
+    - lxqt-build-tools
+  depends:
+    - qt6-base
+    - qt6-svg
+  optdepends:
+    - 'xterm: the default terminal for running .desktop files'
+  provides:
+    - libQt6Xdg.so
+    - libQt6XdgIconLoader.so
+  source:
+    - https://github.com/lxqt/libqtxdg/releases/download/4.2.0/libqtxdg-4.2.0.tar.xz
+    - https://github.com/lxqt/libqtxdg/releases/download/4.2.0/libqtxdg-4.2.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - a5d430218550d66fa806debce7c418db41268286b17bdab46b8ce3a58f0fe82a
+    - SKIP
+pkgname:
+  - name: libqtxdg
+# generated with artixpkg 0.36.2-1-any
