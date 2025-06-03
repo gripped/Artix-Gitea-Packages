@@ -1,16 +1,17 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: system-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.0.0-1
+    packages:
+      - gpgme-2.0.0-1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
