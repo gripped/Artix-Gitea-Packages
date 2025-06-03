@@ -1,0 +1,35 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-quickeffectmaker
+  pkgdesc: Qt Quick Effect Maker (QQEM) for creating and editing custom shader effects
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+    - qt6-declarative
+    - qt6-quick3d
+    - qt6-shadertools
+  source:
+    - git+https://code.qt.io/qt/qtquickeffectmaker#tag=v6.9.1
+  sha256sums:
+    - a2076eb400fa36442f2db809e43ceeb30d335ae9dad6f1e303a0cf1e9d4dd640
+pkgname:
+  - name: qt6-quickeffectmaker
+# generated with artixpkg 0.36.2-1-any
