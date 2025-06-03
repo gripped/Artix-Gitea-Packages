@@ -1,0 +1,38 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-wayland
+  pkgdesc: Provides APIs for Wayland
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+    - vulkan-headers
+  depends:
+    - gcc-libs
+    - glibc
+    - libglvnd
+    - libxkbcommon
+    - qt6-base
+    - qt6-declarative
+    - qt6-svg
+    - wayland
+  source:
+    - git+https://code.qt.io/qt/qtwayland#tag=v6.9.1
+  sha256sums:
+    - 4b1c5f703a3ad9a516d75b9753742871b51df298324d68fc457ac18e7186a5de
+pkgname:
+  - name: qt6-wayland
+# generated with artixpkg 0.36.2-1-any
