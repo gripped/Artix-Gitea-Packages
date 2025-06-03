@@ -1,0 +1,31 @@
+---
+version: 2.2.0-2
+pkgbase:
+  name: lxqt-qtplugin
+  pkgdesc: LXQt platform integration for Qt
+  pkgver: 2.2.0
+  pkgrel: 2
+  url: https://github.com/lxqt/lxqt-qtplugin
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - lxqt-build-tools
+  depends:
+    - libdbusmenu-lxqt
+    - libqtxdg
+    - libfm-qt
+    - libQt6XdgIconLoader.so
+  source:
+    - git+https://github.com/lxqt/lxqt-qtplugin?signed#tag=2.2.0
+  validpgpkeys:
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 36ec3bf3b4f7ba8acafb433760b3164bbdd5a976d4158e3513f079ed27752088
+pkgname:
+  - name: lxqt-qtplugin
+# generated with artixpkg 0.36.2-1-any
