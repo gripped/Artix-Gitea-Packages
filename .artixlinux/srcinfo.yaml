@@ -1,0 +1,102 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: pyside6
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - clang
+    - cmake
+    - git
+    - llvm
+    - ninja
+    - python-numpy
+    - python-setuptools
+    - qt6-3d
+    - qt6-charts
+    - qt6-connectivity
+    - qt6-datavis3d
+    - qt6-graphs
+    - qt6-httpserver
+    - qt6-location
+    - qt6-multimedia
+    - qt6-networkauth
+    - qt6-positioning
+    - qt6-quick3d
+    - qt6-remoteobjects
+    - qt6-scxml
+    - qt6-sensors
+    - qt6-serialbus
+    - qt6-serialport
+    - qt6-shadertools
+    - qt6-speech
+    - qt6-svg
+    - qt6-tools
+    - qt6-webchannel
+    - qt6-webengine
+    - qt6-websockets
+  source:
+    - git+https://code.qt.io/pyside/pyside-setup#tag=v6.9.1
+    - fix-build.patch
+  sha256sums:
+    - f1702331e597f05fd5ef3de6f45ec549b9f9839a129f734c482400d81c150a45
+    - 77b83cb164ea87d826259864f6a81fb33199510e1948d6daaf5c8d5ab55735a7
+pkgname:
+  - name: pyside6
+    pkgdesc: Enables the use of Qt6 APIs in Python applications
+    depends:
+      - gcc-libs
+      - glibc
+      - python
+      - qt6-base
+      - qt6-declarative
+      - shiboken6
+    optdepends:
+      - 'qt6-3d: Qt3D bindings'
+      - 'qt6-charts: QtCharts bindings'
+      - 'qt6-connectivity: QtBluetooth and QtNfc bindings'
+      - 'qt6-datavis3d: QtDataVisualization bindings'
+      - 'qt6-graphs: QtGraphs bindings'
+      - 'qt6-httpserver: QtHttpServer bindings'
+      - 'qt6-location: QtLocation bindings'
+      - 'qt6-multimedia: QtMultimedia bindings'
+      - 'qt6-networkauth: QtNetworkAuth bindings'
+      - 'qt6-positioning: QtPositioning bindings'
+      - 'qt6-quick3d: QtQuick3D bindings'
+      - 'qt6-remoteobjects: QtRemoteObjects bindings'
+      - 'qt6-scxml: QtScxml bindings'
+      - 'qt6-sensors: QtSensors bindings'
+      - 'qt6-serialbus: QtSerialBus bindings'
+      - 'qt6-serialport: QtSerialPort bindings'
+      - 'qt6-speech: QtTextToSpeech bindings'
+      - 'qt6-svg: QtSvg bindings'
+      - 'qt6-tools: QtHelp, QtUiTools bindings'
+      - 'qt6-webchannel: QtWebChannel bindings'
+      - 'qt6-webengine: QtWebEngine bindings'
+      - 'qt6-websockets: QtWebSockets bindings'
+    provides:
+      - qt6-python-bindings
+  - name: pyside6-tools
+    pkgdesc: Tools for pyside6
+    depends:
+      - pyside6
+      - python
+  - name: shiboken6
+    pkgdesc: Generates bindings for C++ libraries using CPython source code
+    depends:
+      - clang
+      - gcc-libs
+      - glibc
+      - libxml2
+      - libxslt
+      - llvm
+      - python
+      - qt6-base
+    optdepends:
+      - 'python: Python bindings'
+# generated with artixpkg 0.36.2-1-any
