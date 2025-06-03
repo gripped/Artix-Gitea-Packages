@@ -1,0 +1,40 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-speech
+  pkgdesc: Qt Speech support
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - flite
+    - git
+    - ninja
+    - qt6-declarative
+    - speech-dispatcher
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+    - qt6-multimedia
+  optdepends:
+    - 'flite: flite TTS backend'
+    - 'speech-dispatcher: speech-dispatcher TTS backend'
+    - 'qt6-declarative: QML bindings'
+  source:
+    - git+https://code.qt.io/qt/qtspeech#tag=v6.9.1
+  sha256sums:
+    - 3d31910126f249129ce4879f9eb8e5546007a9d98cdd75b2590d9410c7a13325
+pkgname:
+  - name: qt6-speech
+# generated with artixpkg 0.36.2-1-any
