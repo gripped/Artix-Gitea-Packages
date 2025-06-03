@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: mm-common
-  version: 1.0.6-1
-  arch:
-    - any
-  pkgname:
-    - mm-common
 actions:
   addRepo: world
   removeRepo: null
@@ -18,37 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.0.6-1
+    version: 1.0.6-2
     packages:
-      - mm-common-1.0.6-1-any.pkg.tar.zst
+      - mm-common-1.0.6-2-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
+team: world
