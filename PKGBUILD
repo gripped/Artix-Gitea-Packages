@@ -1,8 +1,8 @@
 # Maintainer: Jeff_WuYo <62562200+Jeff-WuYo@users.noreply.github.com>
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 pkgname=qt6gtk2
-pkgver=0.5
-pkgrel=1
+pkgver=0.4
+pkgrel=1.1
 pkgdesc='GTK+2.0 integration plugins for Qt6'
 arch=('any')
 groups=('therepoclub')
