@@ -1,0 +1,33 @@
+---
+version: 0.2.3-2
+pkgbase:
+  name: libjcat
+  pkgdesc: Library for reading and writing Jcat files
+  pkgver: 0.2.3
+  pkgrel: 2
+  url: https://github.com/hughsie/libjcat
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - meson
+    - gobject-introspection
+    - gtk-doc
+    - vala
+    - help2man
+  depends:
+    - json-glib
+    - gnutls
+    - gpgme
+  source:
+    - https://github.com/hughsie/libjcat/releases/download/0.2.3/libjcat-0.2.3.tar.xz
+    - https://github.com/hughsie/libjcat/releases/download/0.2.3/libjcat-0.2.3.tar.xz.asc
+  validpgpkeys:
+    - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
+  sha256sums:
+    - f2f115aad8a8f16b8dde1ed55de7abacb91d0878539aa29b2b60854b499db639
+    - SKIP
+pkgname:
+  - name: libjcat
+# generated with artixpkg 0.36.2-1-any
