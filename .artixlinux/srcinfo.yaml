@@ -1,10 +1,10 @@
 ---
-version: 4.11.3-1
+version: 4.11.3-2
 pkgbase:
   name: ccache
   pkgdesc: Compiler cache that speeds up recompilation by caching previous compilations
   pkgver: 4.11.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://ccache.dev/
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: ccache
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-1-any
