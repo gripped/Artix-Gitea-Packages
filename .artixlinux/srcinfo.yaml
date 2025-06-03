@@ -1,0 +1,91 @@
+---
+version: 1:44.3-1
+pkgbase:
+  name: gnome-desktop
+  pkgdesc: Provides API shared by several apps on the GNOME desktop
+  pkgver: 44.3
+  pkgrel: 1
+  epoch: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-desktop
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - gtk3
+    - gtk4
+    - meson
+    - elogind
+    - yelp-tools
+  depends:
+    - bubblewrap
+    - cairo
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gsettings-desktop-schemas
+    - iso-codes
+    - libseccomp
+    - libxkbcommon
+    - libelogind
+    - xkeyboard-config
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-desktop.git#tag=44.3
+  b2sums:
+    - c59704adb27ce2784278de9bba2e9d0b0d84abc9ee15e2211ec8d2f56f78382c8ee1ceeeb3edec290d573a59c10b4c5a66569e6bc3a39a524d656db422958540
+pkgname:
+  - name: gnome-desktop-common
+    pkgdesc: Provides API shared by several apps on the GNOME desktop (common files)
+    depends: []
+  - name: gnome-desktop
+    pkgdesc: Provides API shared by several apps on the GNOME desktop using GTK 3
+    depends:
+      - bubblewrap
+      - cairo
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gsettings-desktop-schemas
+      - iso-codes
+      - libseccomp
+      - libxkbcommon
+      - libelogind
+      - xkeyboard-config
+      - gnome-desktop-common=1:44.3-1
+      - gtk3
+    provides:
+      - libgnome-desktop-3.so
+  - name: gnome-desktop-4
+    pkgdesc: Provides API shared by several apps on the GNOME desktop using GTK 4
+    depends:
+      - bubblewrap
+      - cairo
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gsettings-desktop-schemas
+      - iso-codes
+      - libseccomp
+      - libxkbcommon
+      - libelogind
+      - xkeyboard-config
+      - gnome-desktop-common=1:44.3-1
+      - gtk4
+    provides:
+      - libgnome-bg-4.so
+      - libgnome-desktop-4.so
+      - libgnome-rr-4.so
+  - name: gnome-desktop-docs
+    pkgdesc: Provides API shared by several apps on the GNOME desktop (documentation)
+    depends: []
+# generated with artixpkg 0.36.3-1-any
