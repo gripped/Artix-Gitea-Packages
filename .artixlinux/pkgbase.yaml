@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 14.3.1+r25+g42e99e057bd7-1
+    packages:
+      - gcc14-14.3.1+r25+g42e99e057bd7-1-x86_64.pkg.tar.zst
+      - gcc14-libs-14.3.1+r25+g42e99e057bd7-1-x86_64.pkg.tar.zst
+      - gcc14-fortran-14.3.1+r25+g42e99e057bd7-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 14.2.1+r753+g1cd744a6828f-3
