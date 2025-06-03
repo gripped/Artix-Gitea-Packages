@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 8.2.013-2
     packages:
       - readline-8.2.013-2-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 8.2.013-1
-    packages:
-      - readline-8.2.013-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
