@@ -1,0 +1,72 @@
+---
+version: 4.3.1-2
+pkgbase:
+  name: claws-mail
+  pkgdesc: A GTK+ based e-mail client
+  pkgver: 4.3.1
+  pkgrel: 2
+  url: https://www.claws-mail.org
+  install: claws-mail.install
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - spamassassin
+    - bogofilter
+    - networkmanager
+    - valgrind
+    - libnotify
+    - libcanberra
+    - poppler-glib
+    - libytnef
+    - libical
+    - dillo
+    - python
+    - gumbo-parser
+    - webkit2gtk-4.1
+    - docbook-utils
+    - texlive-formatsextra
+  depends:
+    - gtk3
+    - gnutls
+    - startup-notification
+    - enchant
+    - gpgme
+    - libetpan
+    - compface
+    - libsm
+    - dbus-glib
+  optdepends:
+    - 'python:            needed for some tools'
+    - 'perl:              needed for some tools and perl plugin'
+    - 'spamassassin:      adds support for spamfiltering'
+    - 'bogofilter:        adds support for spamfiltering'
+    - 'libnotify:         for notification plugin'
+    - 'libcanberra:       for notification plugin'
+    - 'dbus:              for notification plugin'
+    - 'libxml2:           for rssyl plugins'
+    - 'curl:              for vcalendar, rssyl and spamreport plugins'
+    - 'libarchive:        for archive plugin and various other plugins'
+    - 'libytnef:          for tnef_parse plugin'
+    - 'poppler-glib:      for pdf viewer plugin'
+    - 'ghostscript:       for pdf viewer plugin'
+    - 'libical:           for vcalendar plugin'
+    - 'dillo:             for dillo html viewer plugin'
+    - 'webkit2gtk-4.1:    for fancy webkit html viewer plugin'
+    - 'gumbo-parser:      for litehtml plugin'
+  provides:
+    - claws
+  source:
+    - https://www.claws-mail.org/download.php?file=releases/claws-mail-4.3.1.tar.xz
+    - https://www.claws-mail.org/download.php?file=releases/claws-mail-4.3.1.tar.xz.asc
+    - bash_completion
+  validpgpkeys:
+    - D04526CE8C87436EBBC51588E0E355F76BE234CA
+  sha256sums:
+    - d8adf210c767ab58252dfc5ab3c69e603d7ffdb7281a1e3340d2d86062f468a6
+    - SKIP
+    - 3f6c248b8658cd7a62186bff572cce2525712a498f363cbbda1ed459021c28cb
+pkgname:
+  - name: claws-mail
+# generated with artixpkg 0.36.3-1-any
