@@ -1,10 +1,10 @@
 ---
-version: 7.0.0.r6.gc685ae6-3
+version: 7.0.0.r6.gc685ae6-4
 pkgbase:
   name: pacman
   pkgdesc: A library-based package manager with dependency support
   pkgver: 7.0.0.r6.gc685ae6
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.archlinux.org/pacman/
   arch:
     - x86_64
