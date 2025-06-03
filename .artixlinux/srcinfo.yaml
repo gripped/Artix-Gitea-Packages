@@ -1,0 +1,39 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-declarative
+  pkgdesc: Classes for QML and JavaScript languages
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+    - python
+    - qt6-languageserver
+    - qt6-shadertools
+    - qt6-svg
+    - vulkan-headers
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+  optdepends:
+    - 'qt6-svg: for QtQuickVectorImage and svgtoqml'
+  source:
+    - git+https://code.qt.io/qt/qtdeclarative#tag=v6.9.1
+  sha256sums:
+    - 407186c6c32798b93d625a6f4cd76e6c82ad2a611fddb0161b4c4febbe4677f2
+pkgname:
+  - name: qt6-declarative
+# generated with artixpkg 0.36.2-1-any
