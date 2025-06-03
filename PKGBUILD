@@ -27,7 +27,7 @@ source=(
   https://gcc.gnu.org/onlinedocs/libstdc++/latest-doxygen/libstdc++.tag
 )
 b2sums=('e3e6857edcb7a03b3a959a9dfba381b0cd77c06231a1cdd3784f42888e6494321db8a6378c797e87e95a90dcde1350e4c5b3616b91e4d9f02fdddab9b56c4091'
-        '1c532b8369667bbca42b446c757de784d0f06c4987f0174972d98378b2fc38f7877b731c26d0b0fa9858f13ddfcf8331e39fc04f8a957e0c15c6e1a5168cc0e7')
+        'SKIP')
 
 prepare() {
   cd $pkgname
