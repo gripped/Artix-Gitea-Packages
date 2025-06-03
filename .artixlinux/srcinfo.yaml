@@ -1,0 +1,49 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-doc
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - any
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - alsa-lib
+    - clang
+    - cmake
+    - cups
+    - freetds
+    - gperf
+    - gst-plugins-base-libs
+    - gtk3
+    - libpulse
+    - libxkbfile
+    - llvm
+    - mariadb-libs
+    - ninja
+    - nodejs
+    - openxr
+    - postgresql
+    - python
+    - python-html5lib
+    - unixodbc
+    - vulkan-headers
+  source:
+    - https://download.qt.io/official_releases/qt/6.9/6.9.1/single/qt-everywhere-src-6.9.1.tar.xz
+  sha256sums:
+    - 364fde2d7fa42dd7c9b2ea6db3d462dd54f3869e9fd0ca0a0ca62f750cd8329b
+pkgname:
+  - name: qt6-doc
+    pkgdesc: A cross-platform application and UI framework (Documentation)
+  - name: qt6-examples
+    pkgdesc: Examples and demos from qt6 documentation
+    depends:
+      - qt6-doc
+# generated with artixpkg 0.36.2-1-any
