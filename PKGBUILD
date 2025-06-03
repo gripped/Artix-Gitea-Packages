@@ -4,7 +4,7 @@
 
 pkgname=gpgme
 pkgver=2.0.0
-pkgrel=1
+pkgrel=0.8
 pkgdesc='C wrapper library for GnuPG'
 arch=('x86_64')
 url='https://www.gnupg.org/related_software/gpgme/'
@@ -21,7 +21,7 @@ depends=(
   'libgpg-error'
   'gnupg>=2')
 makedepends=('git')
-provides=('libgpgme.so')
+#provides=('libgpgme.so')
 options=('!emptydirs')
 validpgpkeys=('6DAA6E64A76D2840571B4902528897B826403ADA'  # Werner Koch (dist signing 2020)
               'AC8E115BF73E2D8D47FA9908E98E9B2D19C6C8BD') # Niibe Yutaka (GnuPG Release Key)
