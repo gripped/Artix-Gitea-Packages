@@ -1,0 +1,35 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-quick3dphysics
+  pkgdesc: Physics engine integration for Qt Quick 3D
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+    - qt6-shadertools
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+    - qt6-declarative
+    - qt6-quick3d
+  source:
+    - git+https://code.qt.io/qt/qtquick3dphysics#tag=v6.9.1
+  sha256sums:
+    - 9897cede88f4f1b8ca58af054afdb555b049d54c41b148d62b3de128b79ff736
+pkgname:
+  - name: qt6-quick3dphysics
+# generated with artixpkg 0.36.2-1-any
