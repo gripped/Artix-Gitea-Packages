@@ -1,10 +1,10 @@
 ---
-version: 6.3.5-1
+version: 6.3.5-2
 pkgbase:
   name: kwin
   pkgdesc: An easy to use, but flexible, composited Window Manager
   pkgver: 6.3.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   install: kwin.install
   arch:
@@ -101,4 +101,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kwin
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-1-any
