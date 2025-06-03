@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.9.1-2
+    packages:
+      - pyside6-6.9.1-2-x86_64.pkg.tar.zst
+      - pyside6-tools-6.9.1-2-x86_64.pkg.tar.zst
+      - shiboken6-6.9.1-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 6.9.1-1
