@@ -1,0 +1,44 @@
+---
+version: 6.9.1-1
+pkgbase:
+  name: qt6-tools
+  pkgdesc: A cross-platform application and UI framework (Development Tools, QtHelp)
+  pkgver: 6.9.1
+  pkgrel: 1
+  url: https://www.qt.io
+  arch:
+    - x86_64
+  groups:
+    - qt6
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+    - LicenseRef-Qt-Commercial
+    - Qt-GPL-exception-1.0
+  makedepends:
+    - clang
+    - cmake
+    - git
+    - litehtml
+    - llvm
+    - ninja
+    - qt6-declarative
+    - vulkan-headers
+  depends:
+    - gcc-libs
+    - glibc
+    - qt6-base
+    - zstd
+  optdepends:
+    - 'clang: for qdoc and lupdate'
+    - 'litehtml: for assistant'
+    - 'qt6-declarative: for qdistancefieldgenerator, qdoc and lupdate'
+  source:
+    - git+https://code.qt.io/qt/qttools#tag=v6.9.1
+    - git+https://code.qt.io/playground/qlitehtml
+  sha256sums:
+    - 7bc25a2a68017566823384df67e1caf1a13c35d2e5ff0801cc9f29bdce096c25
+    - SKIP
+pkgname:
+  - name: qt6-tools
+# generated with artixpkg 0.36.2-1-any
