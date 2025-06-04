@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,8 +21,19 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1:25.1.1-3
+    packages:
+      - mesa-1:25.1.1-3-x86_64.pkg.tar.zst
+      - opencl-mesa-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-dzn-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-gfxstream-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-intel-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-nouveau-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:25.1.1-3-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:25.1.1-3-x86_64.pkg.tar.zst
+      - mesa-docs-1:25.1.1-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
