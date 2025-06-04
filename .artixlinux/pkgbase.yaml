@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:

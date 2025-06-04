@@ -69,4 +69,4 @@ pkgbase:
     - 3f6c248b8658cd7a62186bff572cce2525712a498f363cbbda1ed459021c28cb
 pkgname:
   - name: claws-mail
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
