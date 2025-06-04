@@ -1,10 +1,10 @@
 ---
-version: 5.1.9-5
+version: 5.1.9-6
 pkgbase:
   name: fcitx5-qt
   pkgdesc: Fcitx5 Qt Library (Qt5 & Qt6 integrations)
   pkgver: 5.1.9
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/fcitx/fcitx5-qt
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgbase:
     - 6833a87dc70f34691799c804510b98c8d754e7947a04857f3b3ac4ac157027901c8fe174cb40d0830b236348a2520a09f4d10ca83e56be111c7eac2787debee8
 pkgname:
   - name: fcitx5-qt
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
