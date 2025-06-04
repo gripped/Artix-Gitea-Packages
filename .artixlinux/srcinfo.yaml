@@ -1,10 +1,10 @@
 ---
-version: 1.28.2-1
+version: 1.28.2-2
 pkgbase:
   name: rustup
   pkgdesc: The Rust toolchain installer
   pkgver: 1.28.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rust-lang/rustup.rs
   install: post.install
   arch:
@@ -15,7 +15,8 @@ pkgbase:
   makedepends:
     - cargo
   depends:
-    - curl
+    - gcc-libs
+    - glibc
     - xz
     - zstd
   optdepends:
@@ -48,4 +49,4 @@ pkgbase:
     - 18d5b4ab9a032cb43fd0b59fb553a878068981534e549935c5ff4a12dc2f74849ce36367eb59e670d674a19a7d4bc0056d0694d7f87ede187416c2ffcbb20355
 pkgname:
   - name: rustup
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.36.3-1-any
