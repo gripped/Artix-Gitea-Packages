@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,12 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 1.17.10-1
     packages:
       - moksha-theme-green-1.17.10-1-any.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 1.17.9-1
-    packages:
-      - moksha-theme-green-1.17.9-1-any.pkg.tar.zst
     debug: []
