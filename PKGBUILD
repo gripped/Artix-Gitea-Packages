@@ -43,8 +43,8 @@ pkgname=(
   erlang-wx
   erlang-xmerl
 )
-pkgver=27.3.4
-pkgrel=1
+pkgver=28.0
+pkgrel=2
 pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
 arch=(x86_64)
 url='https://erlang.org/'
@@ -75,7 +75,7 @@ source=(
   "git+https://github.com/erlang/otp#tag=OTP-$pkgver"
   epmd.conf
 )
-b2sums=('f600f2c8bf9accec59665a79184d1f5fea894b9023595804f89e38d13368a9a955f095fa9c50f07fe409ed19dacb36fbb3e18dbdaa8706e3e47ccde784799b6f'
+b2sums=('a1c9115572dfd8d141be4d0d1ca6aeb28574e36cd84e2eae7df4540d713e1deaa3503166a54aef98cc212ba998e44b7d3d6c0b64f72ba2588084095ef21d6571'
         '1675ac9bf948ab19e8b63077d870ccf356fcdbce14de2777f00b3488aa1ce34a5e0a5cdc0428707f744dee5940b12653a44e0ded0554de95ebb31bce4676ff87')
 
 prepare() {
@@ -180,7 +180,7 @@ package_erlang-headless() {
 }
 
 package_erlang-core() {
-  pkgdesc='Erlang core compenents (compiler, crypto, erts, kernel, stdlib)'
+  pkgdesc='Erlang core components (compiler, crypto, erts, kernel, stdlib)'
   depends=(
     gcc-libs
     glibc
