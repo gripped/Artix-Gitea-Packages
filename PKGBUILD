@@ -39,6 +39,7 @@ makedepends=(
     'git'
     'gnupg'
     'libxslt'
+  'notmuch'
     'w3m'
 )
 source=(

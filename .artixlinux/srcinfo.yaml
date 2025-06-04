@@ -15,6 +15,7 @@ pkgbase:
     - git
     - gnupg
     - libxslt
+    - notmuch
     - w3m
   depends:
     - gdbm
