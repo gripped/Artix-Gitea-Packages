@@ -1,0 +1,31 @@
+---
+version: 4.7-1
+pkgbase:
+  name: squashfs-tools
+  pkgdesc: Tools for squashfs, a highly compressed read-only filesystem for Linux
+  pkgver: 4.7
+  pkgrel: 1
+  url: https://github.com/plougher/squashfs-tools
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - help2man
+  depends:
+    - glibc
+    - gcc-libs
+    - lz4
+    - lzo
+    - xz
+    - zlib
+    - zstd
+  source:
+    - https://github.com/plougher/squashfs-tools/archive/4.7/squashfs-tools-4.7.tar.gz
+  sha512sums:
+    - db69937dd62c61c77ee555df0346942a5da671e5a9c2e93cd76ea1132f7e20b17fc701d53d8a232b192301c4769869b6b1ea47dac877afcc8dfa9a4eea31e1e0
+  b2sums:
+    - 331b5c9dfeb0c9829858a1b7e400120dc74cc503059b1c4a730633ae30d8f9839f420a042f2f3ae4b4d14eb753be622714a0cb22a1c3ac4bdf2e81d9cc77d84b
+pkgname:
+  - name: squashfs-tools
+# generated with artixpkg 0.36.3-1-any
