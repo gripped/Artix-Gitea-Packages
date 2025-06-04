@@ -1,10 +1,10 @@
 ---
-version: 1:1.87.0-1
+version: 1:1.87.0-2
 pkgbase:
   name: rust
   pkgdesc: Systems programming language focused on safety, speed and concurrency
   pkgver: 1.87.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.rust-lang.org/
   arch:
@@ -119,4 +119,4 @@ pkgname:
     pkgdesc: Source code for the Rust standard library
     depends:
       - rust
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
