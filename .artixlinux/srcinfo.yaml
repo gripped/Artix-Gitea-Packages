@@ -110,6 +110,7 @@ pkgbase:
     - python-setuptools
     - rhino
     - argon2
+    - gpgmepp
   noextract:
     - a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
     - 0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
