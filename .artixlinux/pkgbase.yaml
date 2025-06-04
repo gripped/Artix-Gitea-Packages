@@ -2,8 +2,8 @@
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 20.1.6-1
+    version: 20.1.6-2
     packages:
-      - llvm-20.1.6-1-x86_64.pkg.tar.zst
-      - llvm-libs-20.1.6-1-x86_64.pkg.tar.zst
+      - llvm-20.1.6-2-x86_64.pkg.tar.zst
+      - llvm-libs-20.1.6-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
