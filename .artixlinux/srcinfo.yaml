@@ -1,9 +1,9 @@
 ---
-version: 25.2.3-3
+version: 25.2.3-4
 pkgbase:
   name: libreoffice-fresh
   pkgver: 25.2.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -323,4 +323,4 @@ pkgname:
       - etc/libreoffice/psprint.conf
       - etc/profile.d/libreoffice-fresh.sh
       - etc/profile.d/libreoffice-fresh.csh
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-1-any
