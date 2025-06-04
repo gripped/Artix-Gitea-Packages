@@ -27,8 +27,8 @@ makedepends=(
   libfabric
   libnl
   openpmix
-  openucc
-  openucx
+  # openucc
+  # openucx
   prrte
   valgrind
   zlib
@@ -77,8 +77,8 @@ build() {
     --with-pmix=external
     --with-prrte=external
     --with-valgrind
-    --with-ucc=/usr
-    --with-ucx=/usr
+    #--with-ucc=/usr
+    #--with-ucx=/usr
     --with-cuda=/opt/cuda
     # this tricks the configure script to look for /usr/lib/pkgconfig/cuda.pc
     # instead of /opt/cuda/lib/pkgconfig/cuda.pc
@@ -116,7 +116,7 @@ package_openmpi() {
     libfabric
     libnl
     openpmix libpmix.so
-    openucx
+    # openucx
     prrte
     zlib
   )
@@ -125,7 +125,7 @@ package_openmpi() {
     'hip-runtime-amd: ROCm support'
     'gcc-fortran: fortran support'
     'openssh: for execution on remote hosts via plm_ssh_agent'
-    'openucc: for UCC accelerated collectives'
+    # 'openucc: for UCC accelerated collectives'
   )
   provides=(
     libmpi.so

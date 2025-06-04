@@ -22,8 +22,6 @@ pkgbase:
     - libfabric
     - libnl
     - openpmix
-    - openucc
-    - openucx
     - prrte
     - valgrind
     - zlib
@@ -49,7 +47,6 @@ pkgname:
       - libnl
       - openpmix
       - libpmix.so
-      - openucx
       - prrte
       - zlib
     optdepends:
@@ -57,7 +54,6 @@ pkgname:
       - 'hip-runtime-amd: ROCm support'
       - 'gcc-fortran: fortran support'
       - 'openssh: for execution on remote hosts via plm_ssh_agent'
-      - 'openucc: for UCC accelerated collectives'
     provides:
       - libmpi.so
       - libmpi_mpifh.so
@@ -69,4 +65,4 @@ pkgname:
       - etc/openmpi/openmpi-mca-params.conf
   - name: openmpi-docs
     pkgdesc: High performance message passing library (MPI) - documentation
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-1-any
