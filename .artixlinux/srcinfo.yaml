@@ -66,4 +66,4 @@ pkgname:
       - libncursesw.so
       - openssl
       - libssl.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.2-1-any
