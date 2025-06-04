@@ -3,12 +3,12 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xreader
-pkgver=4.2.1
+pkgver=4.2.6
 pkgrel=1
 pkgdesc="Document viewer for files like PDF and Postscript. X-Apps Project."
 arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
-license=(GPL)
+license=(GPL-2.0-or-later)
 groups=(x-apps)
 depends=(poppler-glib webkit2gtk-4.1 xapp)
 optdepends=('djvulibre: support for djvu files'
@@ -17,13 +17,13 @@ optdepends=('djvulibre: support for djvu files'
             'mathjax2: support for math in epub files'
             'texlive-bin: support for dvi files')
 makedepends=(meson samurai intltool itstool gobject-introspection djvulibre
-             libgxps libspectre texlive-bin glib2-devel)
-source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('33d77a68c21fff6107a0b5fa539073b9ee8e2e82935dd32356458c6870461db6')
-b2sums=('f81b68f69c369ff9327fa2eb24d649ff89b1862d6c864bb401cba5d96c2381bb20ee402f5ebdc301c186e2152612f211bf4ca84bce3f599827c58a12a3a388e8')
+             git libgxps libspectre texlive-bin glib2-devel)
+source=(git+https://github.com/linuxmint/xreader.git#tag=${pkgver})
+sha256sums=('510527f7b6be453be49fa93b29c8b3af5a00115a171e978d4a1baa348c6e3725')
+b2sums=('c99bab7e7f13145a2cef4ae75919863c2211a5308f205d9a22faf1e27cd264b53b9dfb0486e9939ae888a14cd4889d3ff92e2a03caafb5a07fcd59c22db1ac82')
 
 build() {
-  artix-meson ${pkgname}-${pkgver} build \
+  artix-meson ${pkgname} build \
     --libexecdir=lib/${pkgname} \
     -Dmathjax-directory=/usr/share/mathjax2 \
     -Dcomics=true \
