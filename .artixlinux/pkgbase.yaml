@@ -1,13 +1,6 @@
 ---
-pkgbase:
-  name: gmime3
-  version: 3.2.15-1
-  arch:
-    - x86_64
-  pkgname:
-    - gmime3
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -18,38 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.2.15-2
+    packages:
+      - gmime3-3.2.15-2-x86_64.pkg.tar.zst
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: 3.2.15-1
     packages:
       - gmime3-3.2.15-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
