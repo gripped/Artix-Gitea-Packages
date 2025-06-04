@@ -1,9 +1,9 @@
 ---
-version: 19.1.7-1
+version: 19.1.7-1.1
 pkgbase:
   name: llvm19
   pkgver: 19.1.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://llvm.org/
   arch:
     - x86_64
