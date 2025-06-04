@@ -1,15 +1,7 @@
 ---
 team: galaxy
-pkgbase:
-  name: profanity
-  version: 1:0.15.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - profanity
-    - profanity-gtk
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -20,38 +12,52 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1:0.15.0-2
+    packages:
+      - profanity-1:0.15.0-2-x86_64.pkg.tar.zst
+      - profanity-gtk-1:0.15.0-2-x86_64.pkg.tar.zst
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: 1:0.15.0-1
     packages:
       - profanity-1:0.15.0-1-x86_64.pkg.tar.zst
       - profanity-gtk-1:0.15.0-1-x86_64.pkg.tar.zst
+    debug: []
