@@ -1,0 +1,35 @@
+---
+version: 5.0.1-3
+pkgbase:
+  name: screen
+  pkgdesc: Full-screen window manager that multiplexes a physical terminal
+  pkgver: 5.0.1
+  pkgrel: 3
+  url: https://www.gnu.org/software/screen/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+  depends:
+    - libcrypt.so
+    - libncursesw.so
+    - libpam.so
+    - libutempter
+  options:
+    - '!makeflags'
+  backup:
+    - etc/screenrc
+    - etc/pam.d/screen
+  source:
+    - git+https://git.savannah.gnu.org/git/screen.git#tag=v.5.0.1
+    - tmpfiles.d
+    - pam.d
+  sha256sums:
+    - ab8109790f3b0f9719cb8f8b51ffd9c7a3f0cbcca426c9abf0a8185d637e9eef
+    - 1f33ce4faca7bd05dd80403411af31e682d5d23e79558e884ae5a35f1dd96223
+    - 971c25929ea97422c09e10679ab98e9e6c59295aae1a4a9970909d2206e23090
+pkgname:
+  - name: screen
+# generated with artixpkg 0.36.3-1-any
