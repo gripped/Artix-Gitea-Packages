@@ -29,4 +29,4 @@ pkgbase:
     - eeb5f0f72035c52bf558ffc77a171a3ddf93eac7d663ef0c82826007763717a8
 pkgname:
   - name: zig
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.2-1-any

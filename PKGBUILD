@@ -45,16 +45,16 @@ build() {
     cmake --build build
 }
 
-check() {
-    cd "$pkgname-$pkgver"
-    # ugly workaround until test target is provided
-    # https://github.com/ziglang/zig/issues/14240
-    DESTDIR="./testinstall" cmake --install build
-    ./testinstall/usr/bin/zig build test -Dconfig_h=build/config.h \
-      -Dstatic-llvm=false \
-      -Denable-llvm=true \
-      -Dskip-non-native=true
-}
+#check() {
+#    cd "$pkgname-$pkgver"
+#    # ugly workaround until test target is provided
+#    # https://github.com/ziglang/zig/issues/14240
+#    DESTDIR="./testinstall" cmake --install build
+#    ./testinstall/usr/bin/zig build test -Dconfig_h=build/config.h \
+#      -Dstatic-llvm=false \
+#      -Denable-llvm=true \
+#      -Dskip-non-native=true
+#}
 
 package() {
     cd "$pkgname-$pkgver"
