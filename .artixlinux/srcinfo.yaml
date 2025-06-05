@@ -1,0 +1,32 @@
+---
+version: 2.44-1
+pkgbase:
+  name: riscv64-linux-gnu-binutils
+  pkgdesc: Assemble and manipulate binary and object files for 32-bit and 64-bit RISC-V
+  pkgver: 2.44
+  pkgrel: 1
+  url: https://gnu.org/software/binutils/
+  arch:
+    - x86_64
+  groups:
+    - risc-v
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - setconf
+  depends:
+    - glibc
+    - libelf
+    - zlib
+    - libz.so
+    - zstd
+    - libzstd.so
+  source:
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.44.tar.xz
+  sha256sums:
+    - ce2017e059d63e67ddb9240e9d4ec49c2893605035cd60e92ad53177f4377237
+  b2sums:
+    - 0eb031ace9fb5a7047b81b5a05b1760f7d332c8ed67f98899f153a45f181b83e661a484551af05c0a9b2adc422da84619103c7b1f3c9fad5327872832b5446aa
+pkgname:
+  - name: riscv64-linux-gnu-binutils
+# generated with artixpkg 0.36.3-1-any
