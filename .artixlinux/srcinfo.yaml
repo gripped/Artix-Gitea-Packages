@@ -1,0 +1,116 @@
+---
+version: 48.0-2
+pkgbase:
+  name: gdm
+  pkgdesc: Display manager and login screen
+  pkgver: 48.0
+  pkgrel: 2
+  url: https://gitlab.gnome.org/GNOME/gdm
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - check
+  makedepends:
+    - dconf
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - plymouth
+    - yelp-tools
+    - xorg-server
+    - xorg-xhost
+    - xorg-xrdb
+  depends:
+    - accountsservice
+    - audit
+    - bash
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-session
+    - gnome-shell
+    - gtk3
+    - json-glib
+    - keyutils
+    - libcanberra
+    - libgudev
+    - libx11
+    - libxau
+    - libxcb
+    - libxdmcp
+    - pam
+    - elogind
+    - libelogind
+    - upower
+  optdepends:
+    - 'xorg-server: X session support'
+    - 'xorg-xhost: X session support'
+    - 'xorg-xrdb: X session support'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gdm.git#tag=48.0
+    - 0001-Xsession-Don-t-start-ssh-agent-by-default.patch
+    - 0002-gdm-settings-utils-rename-variable-to-fix-build-with.patch
+  b2sums:
+    - d08d2137f630999b2f36bd8b798805e145fd7350fc4a092056cfdddd2170ae57b3b17a3a8f44f4c08a7e527a165fdce0dfa7a934188bc487d2a6d5bd848497b0
+    - f7e868fdd7cc121433de1572583eb728f4d186cd4f52c6d6c8f2ccf4a3cf781144ff71f704f13571ddb97a1ff4ec55cfa3df25d38737ad19da21e84ddc2d3ee4
+    - c704138b5f6be3ebb7d6606a78d2008cff1116bb033a0ba531b21e2b0cfc7c631c7c0720aa35694c1f0e36d9d6b81e9186f8e3f9fa12e885fe522cfcd2d98d63
+pkgname:
+  - name: gdm
+    groups:
+      - gnome
+    depends:
+      - accountsservice
+      - audit
+      - bash
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gnome-session
+      - gnome-shell
+      - gtk3
+      - json-glib
+      - keyutils
+      - libcanberra
+      - libgudev
+      - libx11
+      - libxau
+      - libxcb
+      - libxdmcp
+      - pam
+      - elogind
+      - libelogind
+      - upower
+      - libgdm
+    optdepends:
+      - 'fprintd: fingerprint authentication'
+    backup:
+      - etc/gdm/PostSession/Default
+      - etc/gdm/PreSession/Default
+      - etc/gdm/Xsession
+      - etc/gdm/custom.conf
+      - etc/pam.d/gdm-autologin
+      - etc/pam.d/gdm-fingerprint
+      - etc/pam.d/gdm-launch-environment
+      - etc/pam.d/gdm-password
+      - etc/pam.d/gdm-smartcard
+  - name: libgdm
+    pkgdesc: Display manager and login screen - support library
+    depends:
+      - dconf
+      - gcc-libs
+      - glib2
+      - glibc
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+      - libelogind.so
+      - libelogind
+    provides:
+      - libgdm.so
+# generated with artixpkg 0.36.3-1-any
