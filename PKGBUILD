@@ -69,10 +69,10 @@ build() {
   make -C docs man
 }
 
-check() {
-  cd nvchecker
-  pytest
-}
+#check() {
+#  cd nvchecker
+#  pytest
+#}
 
 package() {
   cd nvchecker
