@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: doublecmd
-  version: 1.1.24-3
-  arch:
-    - x86_64
-  pkgname:
-    - doublecmd-qt5
-    - doublecmd-qt6
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 1.1.24-3
+    version: 1.1.25-1
     packages:
-      - doublecmd-qt5-1.1.24-3-x86_64.pkg.tar.zst
-      - doublecmd-qt6-1.1.24-3-x86_64.pkg.tar.zst
+      - doublecmd-qt5-1.1.25-1-x86_64.pkg.tar.zst
+      - doublecmd-qt6-1.1.25-1-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy

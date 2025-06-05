@@ -1,0 +1,65 @@
+---
+version: 1.1.25-1
+pkgbase:
+  name: doublecmd
+  pkgver: 1.1.25
+  pkgrel: 1
+  url: http://doublecmd.sourceforge.net/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+    - MIT
+    - MPL-1.1
+    - MPL-2.0
+    - Apache-2.0
+    - BSD-2-Clause
+    - Zlib
+  makedepends:
+    - lazarus
+    - qt5pas
+    - qt6pas
+    - imagemagick
+    - ffmpegthumbnailer
+  optdepends:
+    - 'lua: scripting'
+    - 'unzip: support extracting zip archives'
+    - 'zip: suport packing zip archives'
+    - 'p7zip: support for 7zip archives'
+    - 'libunrar: support for rar archives'
+    - 'imagemagick: preview xcf files'
+    - 'ffmpegthumbnailer: preview video files'
+    - 'mplayer: to make use of the wlxmplayer plugin'
+  provides:
+    - doublecmd
+  source:
+    - https://downloads.sourceforge.net/project/doublecmd/Double%20Commander%20Source/doublecmd-1.1.25-src.tar.gz
+  sha512sums:
+    - a2a299ea4b7db7928744b86ee9d3c30a18c6847f9a0322ba88a3edc7ece0ffab3daa1f3e2c5139af58b0271234dbc3406604f5d410e856dcce5d1d0f7c86b0c1
+pkgname:
+  - name: doublecmd-qt5
+    pkgdesc: twin-panel (commander-style) file manager (Qt5)
+    depends:
+      - qt5pas
+      - desktop-file-utils
+      - hicolor-icon-theme
+      - shared-mime-info
+    conflicts:
+      - doublecmd-gtk2
+      - doublecmd-qt6
+    replaces:
+      - doublecmd-qt
+      - doublecmd-qt4
+      - doublecmd-gtk2
+  - name: doublecmd-qt6
+    pkgdesc: twin-panel (commander-style) file manager (Qt6)
+    depends:
+      - qt6pas
+      - desktop-file-utils
+      - hicolor-icon-theme
+      - shared-mime-info
+    conflicts:
+      - doublecmd-gtk2
+      - doublecmd-qt5
+# generated with artixpkg 0.36.3-1-any
