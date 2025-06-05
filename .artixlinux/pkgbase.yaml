@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,11 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.14.10.artix1-1
+    packages:
+      - linux-6.14.10.artix1-1-x86_64.pkg.tar.zst
+      - linux-headers-6.14.10.artix1-1-x86_64.pkg.tar.zst
+      - linux-docs-6.14.10.artix1-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 6.14.9.artix1-1
