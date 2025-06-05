@@ -1,0 +1,28 @@
+---
+version: 0.25.0-1
+pkgbase:
+  name: tree-sitter-bash
+  pkgdesc: Bash grammar for tree-sitter
+  pkgver: 0.25.0
+  pkgrel: 1
+  url: https://github.com/tree-sitter/tree-sitter-bash
+  arch:
+    - x86_64
+  groups:
+    - tree-sitter-grammars
+  license:
+    - MIT
+  makedepends:
+    - git
+    - tree-sitter-cli
+  optdepends:
+    - 'tree-sitter: core library'
+  provides:
+    - libtree-sitter-bash.so
+  source:
+    - git+https://github.com/tree-sitter/tree-sitter-bash.git#commit=v0.25.0
+  b2sums:
+    - c7300bcf1ebfc5931e4eb8e4fcb574169cf2f0ce3e145a5d8cdd114929e9ca0a2cba867907464dac47066ce40c2c987f6ba81bb4bb59465f5dea311bd050a158
+pkgname:
+  - name: tree-sitter-bash
+# generated with artixpkg 0.36.3-1-any
