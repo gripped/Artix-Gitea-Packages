@@ -1,0 +1,51 @@
+---
+version: 3:1.40.1-2
+pkgbase:
+  name: ldc
+  pkgdesc: A D Compiler based on the LLVM Compiler Infrastructure including D runtime and libphobos2
+  pkgver: 1.40.1
+  pkgrel: 2
+  epoch: 3
+  url: https://github.com/ldc-developers/ldc
+  arch:
+    - x86_64
+  groups:
+    - dlang
+    - dlang-ldc
+  license:
+    - BSD-3-Clause AND BSL-1.0 AND Apache-2.0 WITH LLVM-exception
+  makedepends:
+    - git
+    - cmake
+    - llvm19
+    - lld
+    - ldc
+    - ninja
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/ldc-developers/ldc#commit=880d514c1d553e15fc07cc49091ae2cc3239c3f3
+    - ldc-phobos::git+https://github.com/ldc-developers/phobos.git
+  sha256sums:
+    - 4146e0a78d554d94cd1d45aa49d9855baf6c35caa6de5be5153611eeec302274
+    - SKIP
+pkgname:
+  - name: ldc
+    depends:
+      - liblphobos
+      - llvm-libs
+      - gcc
+      - compiler-rt
+    provides:
+      - d-compiler=2.110.0
+    backup:
+      - etc/ldc2.conf
+  - name: liblphobos
+    depends:
+      - curl
+    provides:
+      - d-runtime
+      - d-stdlib
+    options:
+      - staticlibs
+# generated with artixpkg 0.36.3-1-any
