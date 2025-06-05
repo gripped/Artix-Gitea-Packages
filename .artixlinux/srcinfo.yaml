@@ -1,10 +1,10 @@
 ---
-version: 25.04.1-1
+version: 25.04.1-2
 pkgbase:
   name: libkleo
   pkgdesc: KDE PIM cryptographic library
   pkgver: 25.04.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://kontact.kde.org
   arch:
     - x86_64
@@ -19,7 +19,7 @@ pkgbase:
   depends:
     - gcc-libs
     - glibc
-    - gpgme
+    - gpgmepp
     - kcolorscheme
     - kcodecs
     - kcompletion
@@ -28,7 +28,7 @@ pkgbase:
     - ki18n
     - kitemmodels
     - kwidgetsaddons
-    - qgpgme-qt6
+    - qgpgme
     - qt6-base
   source:
     - https://download.kde.org/stable/release-service/25.04.1/src/libkleo-25.04.1.tar.xz
@@ -42,4 +42,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libkleo
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.3-1-any
