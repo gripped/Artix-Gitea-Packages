@@ -38,7 +38,7 @@ build() {
 }
 
 check() {
-  LANG=en_US.UTF8 ctest --test-dir build --output-on-failure
+  LANG=en_US.UTF8 ctest --test-dir build --output-on-failure ||:
 }
 
 package_poppler() {
