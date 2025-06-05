@@ -1,0 +1,46 @@
+---
+version: 1:8.4.0-1
+pkgbase:
+  name: python-pytest
+  pkgdesc: Simple powerful testing with Python
+  pkgver: 8.4.0
+  pkgrel: 1
+  epoch: 1
+  url: https://docs.pytest.org
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-argcomplete
+    - python-attrs
+    - python-hypothesis
+    - python-requests
+    - python-xmlschema
+    - lsof
+    - python-decorator
+    - python-docutils
+    - python-jinja
+    - python-numpy
+    - python-pexpect
+    - python-pytest-xdist
+    - python-twisted
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python-iniconfig
+    - python-packaging
+    - python-pluggy
+    - python-pygments
+  source:
+    - git+https://github.com/pytest-dev/pytest.git#tag=8.4.0
+  b2sums:
+    - 0b3b6c4e4538e4744102b623ae442076762d78c8361073ddc838b7d7d64643337fe5e490d7a0ea496a331f375aa887fb90479aba1fce9c21415daa8af47fb4aa
+pkgname:
+  - name: python-pytest
+# generated with artixpkg 0.36.3-1-any
