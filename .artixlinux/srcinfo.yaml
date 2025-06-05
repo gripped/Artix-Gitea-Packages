@@ -1,0 +1,55 @@
+---
+version: 5.5.4-1
+pkgbase:
+  name: python-kombu
+  pkgdesc: A messaging library for Python
+  pkgver: 5.5.4
+  pkgrel: 1
+  url: https://github.com/celery/kombu
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-boto3
+    - python-brotli
+    - python-hypothesis
+    - python-msgpack
+    - python-pycurl
+    - python-pymongo
+    - python-pyro
+    - python-pytest
+    - python-pytest-freezer
+    - python-pytest-sugar
+    - python-pytz
+    - python-redis
+    - python-sqlalchemy
+    - python-yaml
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-amqp
+    - python-vine
+  optdepends:
+    - 'python-boto3: for Amazon SQS support'
+    - 'python-brotli: for brotli compression support'
+    - 'python-kazoo: for Zookeeper support'
+    - 'python-msgpack: for MessagePack support'
+    - 'python-pycurl: for Amazon SQS support'
+    - 'python-pymongo: for MongoDB support'
+    - 'python-pyro: for Pyro support'
+    - 'python-redis: for Redis support'
+    - 'python-sqlalchemy: for SQLAlchemy support'
+    - 'python-yaml: for YAML support'
+    - 'python-zstandard: for zstd compression support'
+  source:
+    - https://github.com/celery/kombu/archive/v5.5.4/python-kombu-5.5.4.tar.gz
+  sha256sums:
+    - 7793a288cc0316d06e66785a18182b8629a692a9fb2976b85c51cb466f95c008
+pkgname:
+  - name: python-kombu
+# generated with artixpkg 0.36.3-1-any
