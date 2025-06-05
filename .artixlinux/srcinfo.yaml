@@ -1,0 +1,32 @@
+---
+version: 8.2.0-1
+pkgbase:
+  name: python-flufl-lock
+  pkgdesc: NFS-safe file locking with timeouts for POSIX systems for Python
+  pkgver: 8.2.0
+  pkgrel: 1
+  url: https://gitlab.com/warsaw/flufl.lock
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-sybil
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-atpublic
+    - python-psutil
+  source:
+    - https://gitlab.com/warsaw/flufl.lock/-/archive/8.2.0/flufl.lock-8.2.0.tar.gz
+  sha512sums:
+    - e81208aee2e620528291630836a235d41ab1d16482cf29976e85058b139cb5729053ed958791ecf56c7505b54f96e5d74e1f414725335bc96b7930379c9fe539
+  b2sums:
+    - 6223e4806a3c5d329370f866031a06e004c431e1eb33617df9e4d185231c30e6b8ca58db82bb19eb648ab2130d1ff13b0c3ce0a14f9402aea051de2d5ad74f5f
+pkgname:
+  - name: python-flufl-lock
+# generated with artixpkg 0.36.3-1-any
