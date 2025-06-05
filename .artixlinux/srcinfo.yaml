@@ -1,0 +1,33 @@
+---
+version: 25.3.0-1
+pkgbase:
+  name: python-attrs
+  pkgdesc: Attributes without boilerplate.
+  pkgver: 25.3.0
+  pkgrel: 1
+  url: https://www.attrs.org
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-cloudpickle
+    - python-hypothesis
+    - python-pytest
+    - python-zope-interface
+  makedepends:
+    - git
+    - python-build
+    - python-hatch-fancy-pypi-readme
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+  source:
+    - git+https://github.com/python-attrs/attrs.git#tag=25.3.0
+  sha512sums:
+    - 296e9262a12ccd10db8c7a540761ab387c9c884570a17d634906447feea6677fdd4e7d43d9d990487e66beeca245310e6e594e876cd6f45f687f106a0358d232
+pkgname:
+  - name: python-attrs
+# generated with artixpkg 0.36.3-1-any
