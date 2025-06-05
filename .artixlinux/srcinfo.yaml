@@ -1,0 +1,32 @@
+---
+version: 2025.5.1-1
+pkgbase:
+  name: python-regress
+  pkgdesc: Python bindings to the Rust regress crate which provides ECMA regular expressions
+  pkgver: 2025.5.1
+  pkgrel: 1
+  url: https://github.com/crate-py/regress
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-maturin
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  source:
+    - python-regress-2025.5.1.tar.gz::https://github.com/crate-py/regress/archive/refs/tags/v2025.5.1.tar.gz
+  sha512sums:
+    - c63c76e1645ac85b550879c19bf952288cc6ea065271bb65ba19cf11fa3fdb532b7f36012769e91956f28c15894accfee6ae8439f707601fac8afb78f225d292
+  b2sums:
+    - 32daf50aacd2f97e8b1b8ccbfcfd767b45e10cae3d516ea5b1dc5385193138a13791f327524293110a61540fcf4fd9822e437e7dd2a1d411403c52e40889dc72
+pkgname:
+  - name: python-regress
+# generated with artixpkg 0.36.3-1-any
