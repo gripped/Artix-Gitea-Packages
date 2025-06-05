@@ -1,0 +1,34 @@
+---
+version: 3.0.1-1
+pkgbase:
+  name: python-django-guardian
+  pkgdesc: Per object permissions for Django
+  pkgver: 3.0.1
+  pkgrel: 1
+  url: https://github.com/django-guardian/django-guardian
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-django
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-django
+    - python-django-environ
+  source:
+    - python-django-guardian-3.0.1.tar.gz::https://github.com/django-guardian/django-guardian/archive/refs/tags/3.0.1.tar.gz
+  sha512sums:
+    - 5f07b5b336a7126bb42e6212681536af608a13b320b372413cf671f7515f81f83b9f793c992e97e51e5008958620232aaa61ceaee03c0ef67ae770e351d6e74d
+  b2sums:
+    - b261f7823b41e03eafb33294c6a715886d008fb303270d4acec0543063a283a68042d1de3814b9e7439655eed0da50a8b07c48327fb45711fce50c364196426b
+pkgname:
+  - name: python-django-guardian
+# generated with artixpkg 0.36.3-1-any
