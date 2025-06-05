@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.4.4-16.1
+    version: 0.4.4-17
     packages:
-      - zathura-pdf-mupdf-0.4.4-16.1-x86_64.pkg.tar.zst
+      - zathura-pdf-mupdf-0.4.4-17-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
