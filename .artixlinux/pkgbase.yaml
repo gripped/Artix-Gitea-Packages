@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - plasma-pass-1.2.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.2.2-2
+    packages:
+      - plasma-pass-1.2.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.2.2-1
