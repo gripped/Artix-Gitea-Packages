@@ -1,0 +1,30 @@
+---
+version: 2025.05.29-1
+pkgbase:
+  name: python-pbs-installer
+  pkgdesc: Installer for Python Build Standalone
+  pkgver: 2025.05.29
+  pkgrel: 1
+  url: https://github.com/frostming/pbs-installer
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-pdm-backend
+  depends:
+    - python
+  optdepends:
+    - 'python-httpx: for download support'
+    - 'python-zstandard: for zstd installation support'
+  source:
+    - pbs-installer-2025.05.29.tar.gz::https://github.com/frostming/pbs-installer/archive/refs/tags/2025.05.29.tar.gz
+  sha512sums:
+    - bc508703006ccd6b74a48841ec1b577261bc24c982a5d1194172251f32d468cf010c68d1718f0bc3cc1dafd495e4dea0a1258e1962f68e82515de7ffc398e89a
+  b2sums:
+    - 52fc880873594e8ac168cc4a8efda53bad74c0c567e3999e77c36f3efaf6927ffd84b8a1a948d9e1e586244dfd3746b192e058a1e6a5de3ff0ac993ef62b34fb
+pkgname:
+  - name: python-pbs-installer
+# generated with artixpkg 0.36.3-1-any
