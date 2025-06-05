@@ -1,9 +1,9 @@
 ---
-version: 8.4.4_4-4
+version: 8.4.5_5-1
 pkgbase:
   name: percona-server
-  pkgver: 8.4.4_4
-  pkgrel: 4
+  pkgver: 8.4.5_5
+  pkgrel: 1
   url: https://www.percona.com/software/mysql-database/percona-server
   arch:
     - x86_64
@@ -25,13 +25,13 @@ pkgbase:
     - libevent
     - libfido2
   source:
-    - https://www.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.4-4/source/tarball/percona-server-8.4.4-4.tar.gz
+    - https://www.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.5-5/source/tarball/percona-server-8.4.5-5.tar.gz
     - gcc-14.patch
     - my.cnf
     - mysql-user.conf
     - mysqlrouter-user.conf
   sha256sums:
-    - d74418250782637a451e6b41210ef6aec6a089c349807bcdb5b2cfbe38d4ca0e
+    - 8b47ff35dc2a6e7eaacaa2d204ae456c15b5d9953360ccb6250da8d68d98f6af
     - eeb9c6c8f70dd5eb05f735df0cdfc294365b393e5819f26029320e38714069a6
     - b467b04d6d06152b2abc33f2a6de63fef0fc922dd5119d2ee1d07d3c1a489731
     - b4e357a0e2e3a7dc01f9459efcbed77ce3229f8d94273e3ff464bcd67c9413fc
@@ -57,8 +57,8 @@ pkgname:
       - jemalloc
       - readline
     provides:
-      - mysql-clients=8.4.4_4
-      - mariadb-clients=8.4.4_4
+      - mysql-clients=8.4.5_5
+      - mariadb-clients=8.4.5_5
     conflicts:
       - mysql-clients
   - name: percona-server
@@ -78,8 +78,8 @@ pkgname:
     optdepends:
       - perl-dbd-mysql
     provides:
-      - mysql=8.4.4_4
-      - mariadb=8.4.4_4
+      - mysql=8.4.5_5
+      - mariadb=8.4.5_5
     conflicts:
       - mysql
     options:
@@ -87,4 +87,4 @@ pkgname:
     backup:
       - etc/mysql/my.cnf
       - etc/mysqlrouter/mysqlrouter.conf
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
