@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -45,8 +45,10 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 24.8.7-2
+    packages:
+      - libreoffice-still-sdk-24.8.7-2-x86_64.pkg.tar.zst
+      - libreoffice-still-24.8.7-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
