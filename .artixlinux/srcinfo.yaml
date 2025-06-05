@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
     - qgpgme-qt6
+    - gpgme
   depends:
     - gcc-libs
     - glibc
@@ -27,7 +28,6 @@ pkgbase:
     - qgpgme
     - qt6-base
     - qt6-declarative
-    - gcc14
   source:
     - https://download.kde.org/stable/plasma-pass/plasma-pass-1.2.2.tar.xz
     - https://download.kde.org/stable/plasma-pass/plasma-pass-1.2.2.tar.xz.sig
