@@ -2,7 +2,7 @@
 
 pkgname=gpgmepp
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='C++ bindings for GPGME'
 arch=(x86_64)
 url='https://gnupg.org/software/gpgme/index.html'
@@ -14,6 +14,7 @@ depends=(gcc-libs
 makedepends=(cmake
              git)
 provides=(libgpgmepp.so)
+conflicts=('gpgme<2')
 source=(git+https://dev.gnupg.org/source/gpgmepp#tag=gpgmepp-$pkgver)
 sha256sums=('94d24543dcdbfb6e6625d0a9852dd318e4af198ae0b70bdad092634d0aa864c0')
 
