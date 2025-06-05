@@ -7,9 +7,9 @@ pkgname=(
   'postgresql-libs'
   'postgresql-docs'
 )
-pkgver=17.4
+pkgver=17.5
 _majorver=${pkgver%.*}
-pkgrel=5
+pkgrel=1
 pkgdesc='Sophisticated object-relational DBMS'
 url='https://www.postgresql.org/'
 arch=('x86_64')
@@ -27,7 +27,8 @@ depends=(
   'lz4'
   'openssl'
   'pam'
-  'readline' 
+  'readline'
+ 
   'util-linux-libs'
   'zlib'
   'zstd'
@@ -40,6 +41,7 @@ makedepends=(
   'perl'
   'perl-ipc-run'
   'python'
+ 
   'tcl'
   'util-linux'
 )
@@ -53,7 +55,7 @@ source=(
   postgresql.sysusers
   postgresql.tmpfiles
 )
-md5sums=('4d5f4119cabe4adeb5ce8b5377928578'
+md5sums=('8831df48f22433ef3a3b53d20b47acea'
          'a5b05db6d869c74a2fc0d8f752618b1d'
          'b74d848f5527740dce663ae72f39c5ae'
          '10123caec61006cbe316de8ab7a497bc'
@@ -61,7 +63,7 @@ md5sums=('4d5f4119cabe4adeb5ce8b5377928578'
          '96f82c38f3f540b53f3e5144900acf17'
          'da6a0dda84638d0c3463abf4bc01e621'
          '9138244e0e6b98acc770931a4b150b86')
-sha256sums=('c4605b73fea11963406699f949b966e5d173a7ee0ccaef8938dec0ca8a995fe7'
+sha256sums=('fcb7ab38e23b264d1902cb25e6adafb4525a6ebcbd015434aeef9eda80f528d8'
             '2c09429dca9caf540be647fdac9540eeccb68935994bb54cfd3f2108464916c7'
             '0fb4915c06b9767933b27adc329e7319485e043fb9f17b1697b969779a00cf14'
             '94af93b53bf7772e6664c239523ef952ffc905a0de3c2c4b2dfc2fe8f3a2efed'
@@ -69,7 +71,7 @@ sha256sums=('c4605b73fea11963406699f949b966e5d173a7ee0ccaef8938dec0ca8a995fe7'
             '57dfd072fd7ef0018c6b0a798367aac1abb5979060ff3f9df22d1048bb71c0d5'
             '3cfe36dd202af56b3ef8e6d6a746b24e6f46f0d9e0d3fa125dbfb5e598170afb'
             'ea771830c15b24c8725ded92e6a9ba9848b13f722357c5f5857dfeb21985d54c')
-b2sums=('d8095023ae85ba2a28479e4c1d6dac57ccb71471e6e3a74730052c368a71e66e3e84df36a1e1b85f3bd070141b9464aa9c4aad179f421ea8fea274a7975398af'
+b2sums=('56166737be1125eb0312ae212c86a430610a27ce4f5fbca56aeb46fd5e022a9ee1d7095c3a28bee60623f222f54152eb44f755df074dcf1caf6cb8fa78fc7ffd'
         'c924fd8f58a85d0ed073af7f9778467db6d106b8b66e011048c5148a6b7d02afe4d02451970bd08d351a7356abe7b9a8ea17e3bf1cce32f17977196215d49b5b'
         'd98280e004adcb1ad85053d9bd202a2b4798df6e7a72b21cb263da6b282f42b5463ce77dcc4f0b1b39d3f55303d0f6869b23f2338ffcd98720b0550204adf85a'
         '682bfab1189221d82f6cce9bcb8c40c6d37ecacbcaf0568bbaa2706503b1f102e5476d0d110dcc6240ab62c5e7c2c20a5d9af8edd4038d212327f8866b1cf15a'
