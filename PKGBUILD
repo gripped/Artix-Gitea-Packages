@@ -2,7 +2,7 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=netavark
-pkgver=1.15.0
+pkgver=1.15.2
 pkgrel=1
 pkgdesc="Container network stack"
 arch=(x86_64)
@@ -21,7 +21,7 @@ makedepends=(
 )
 provides=(container-network-stack=2)
 source=(git+$url#tag=v$pkgver)
-sha256sums=('a194adefd71975f28c57fecc36dcc0ab989281fbe5e2159d97594a13f80ff900')
+sha256sums=('9f145c43038859f7abb25809c948e496460fcdc9b275852fb4e8697ede439848')
 # NOTE: pinning commit until upstream clarifies commitment to chain of trust:
 # https://github.com/containers/netavark/issues/231
 # validpgpkeys=('74FE091D25519980B2D84447160386BECB6F0643')  # Brent Baude <bbaude@redhat.com>
