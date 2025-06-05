@@ -214,7 +214,6 @@ package_mariadb() {
            'coreutils'
            'libxml2' 'libxml2.so'
            'lz4' 'liblz4.so'
-           'libsystemd.so'
            'zstd' 'libzstd.so')
   optdepends=('cracklib: for cracklib plugin'
               'curl: for ha_s3 plugin'

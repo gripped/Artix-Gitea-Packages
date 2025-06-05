@@ -106,7 +106,6 @@ pkgname:
       - libxml2.so
       - lz4
       - liblz4.so
-      - libsystemd.so
       - zstd
       - libzstd.so
     optdepends:
