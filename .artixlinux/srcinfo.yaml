@@ -1,10 +1,10 @@
 ---
-version: 575.57.08-1
+version: 575.57.08-2
 pkgbase:
   name: nvidia
   pkgdesc: NVIDIA kernel modules
   pkgver: 575.57.08
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.nvidia.com/
   arch:
     - x86_64
