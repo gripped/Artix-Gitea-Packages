@@ -1,0 +1,29 @@
+---
+version: 2.7-2
+pkgbase:
+  name: stellarsolver
+  pkgdesc: The cross platform Sextractor and Astrometry.net-Based internal astrometric solver
+  pkgver: 2.7
+  pkgrel: 2
+  url: https://github.com/rlancaste/stellarsolver
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cmake
+    - git
+  depends:
+    - cfitsio
+    - gcc-libs
+    - glibc
+    - gsl
+    - qt6-base
+    - wcslib
+  source:
+    - git+https://github.com/rlancaste/stellarsolver#tag=2.7
+  sha256sums:
+    - 53ba85b18f1a2c2b87830fa7c6d5acdadc115ae0be70a23ea0bb4aa288114466
+pkgname:
+  - name: stellarsolver
+# generated with artixpkg 0.36.3-1-any
