@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.132.0
+pkgver=6.133.2
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -58,8 +58,8 @@ optdepends=(
   'python-watchdog: for tracking file system events'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('e5b397ee0b3351e18fcc5df5e89027a4109526b5582a4ba17e2f462c6cc1c1f3a403d4560d73898f7433d992caa64f97d446f12620319df9df7d88ecf824a26b')
-b2sums=('40cfd318a0e6b16ed03bfba3caeabc985f5882fa8da00966d4ec74a80920216fe66e9fa73043f79a87df84cc12ec44c413476f62b2ab9f03deade60a2b36fe43')
+sha512sums=('aa43dc87d8ed679fd9330c8f2cb2af3ca2a83700e51e7ffb5624cf361f490196841553d2ee6aeb02ea6b83454903ba150bbe2a3f511c479195d5eb110aaaade7')
+b2sums=('084801ba0314a0c569ae406a553859c537507b275a07f45275d907526101db198a1ccfc88cb65c2a8c72b53b177024ad3de2755b500941a56c403202dd79326d')
 
 prepare() {
   cd $pkgname/hypothesis-python
@@ -78,6 +78,8 @@ check() {
   test-env/bin/python -m installer dist/*.whl
   local pytest_options=(
     -vv
+    # Run tests in parallel, takes forever otherwise
+    -n auto
     # Depends on python-hypothesis-crosshair which is not packaged,
     # for some reason --deselect does not work, so ignoring whole file
     --ignore=tests/crosshair/test_crosshair.py
