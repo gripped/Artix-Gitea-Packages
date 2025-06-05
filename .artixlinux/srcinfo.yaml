@@ -12,6 +12,7 @@ pkgbase:
     - GPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
+    - qgpgme-qt6
   depends:
     - gcc-libs
     - glibc
