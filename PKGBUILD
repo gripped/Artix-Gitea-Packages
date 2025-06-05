@@ -11,8 +11,8 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=11.7.2
-pkgrel=3
+pkgver=11.8.2
+pkgrel=1
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -28,7 +28,7 @@ source=("mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-${pkgver
         'git+https://github.com/mariadb-corporation/mariadb-columnstore-engine.git'
         '0001-arch-specific.patch'
 'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
-sha256sums=('11f4af52c4ae42bc03f62b69ed3a2cba8f4959083ca4b47484c7e445a5e6c2a8'
+sha256sums=('3c6c8dc3de8c716315c8380fbc7a54bd233b21becea54513d27db596390a0ad7'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -51,20 +51,6 @@ prepare() {
   git config --file=.gitmodules submodule.storage/columnstore/columnstore.url ../mariadb-columnstore-engine/
   git submodule init
   git -c protocol.file.allow=always submodule update
-
-  # MDEV-35969 wsrep: add more details in service manager status
-  # MDEV-35969 wsrep: set new status for service manager
-  git cherry-pick -n \
-    '0b8762822eb36523239de5ba994f71f1630c3173' \
-    '02893e875bc346cc930ce0418e9e7a09986354b9'
-
-  # MDEV-36229: Remove CAP_DAC_OVERRIDE CAP_AUDIT_WRITE from AmbientCapabilities
-  git cherry-pick -n \
-    '85ecb80fa3192035b3beff9578dc254a857175dc'
-
-  # MDEV-36427 - FTBFS with libxml2 2.14.0
-  git cherry-pick -n \
-    'b02ad4a6f8ea09c5cdf0a44a9ee57a60f2989f48'
 
   # Arch Linux specific patches:
   #  * enable PrivateTmp for a little bit more security
@@ -153,10 +139,20 @@ check() {
 
 package_mariadb-libs() {
   pkgdesc='MariaDB libraries'
-  depends=('liburing' 'libxcrypt' 'libcrypt.so' 'openssl' 'pcre2' 'zlib' 'zstd')
+  depends=('liburing' 'liburing.so'
+           'libxcrypt' 'libcrypt.so'
+           'openssl' 'libcrypto.so' 'libssl.so'
+           'pcre2' 'libpcre2-8.so'
+           'zlib' 'libz.so'
+           'zstd' 'libzstd.so')
   optdepends=('krb5: for gssapi authentication')
-  conflicts=('libmysqlclient' 'libmariadbclient' 'mariadb-connector-c')
-  provides=('libmariadbclient' 'mariadb-connector-c' 'libmariadb.so' 'libmariadbd.so')
+  conflicts=('libmysqlclient'
+	     'libmariadbclient'
+	     'mariadb-connector-c')
+  provides=('libmariadbclient'
+	    'mariadb-connector-c'
+	    'libmariadb.so'
+	    'libmariadbd.so')
   replaces=('libmariadbclient')
 
   cd build
@@ -183,7 +179,9 @@ package_mariadb-libs() {
 
 package_mariadb-clients() {
   pkgdesc='MariaDB client tools'
-  depends=("mariadb-libs=${pkgver}" 'jemalloc' 'ncurses')
+  depends=("mariadb-libs=${pkgver}"
+           'jemalloc'
+           'ncurses' 'libncursesw.so')
   conflicts=('mysql-clients')
   provides=("mysql-clients=${pkgver}")
 
@@ -211,8 +209,13 @@ package_mariadb() {
           'etc/my.cnf.d/spider.cnf'
           'etc/security/user_map.conf')
   install=mariadb.install
-  depends=("mariadb-clients=${pkgver}" 'bzip2' 'coreutils' 'libxml2' 'lz4'
-           'zstd')
+  depends=("mariadb-clients=${pkgver}"
+           'bzip2' 'libbz2.so'
+           'coreutils'
+           'libxml2' 'libxml2.so'
+           'lz4' 'liblz4.so'
+           'libsystemd.so'
+           'zstd' 'libzstd.so')
   optdepends=('cracklib: for cracklib plugin'
               'curl: for ha_s3 plugin'
               'galera: for MariaDB cluster with Galera WSREP'
@@ -221,7 +224,8 @@ package_mariadb() {
               'python-mysqlclient: for myrocks_hotbackup'
               'xz: lzma provider')
   conflicts=('mysql')
-  provides=("mariadb-server=${pkgver}" "mysql=${pkgver}")
+  provides=("mariadb-server=${pkgver}"
+	    "mysql=${pkgver}")
   options=('emptydirs')
 
   cd build
@@ -275,7 +279,9 @@ package_mariadb() {
 
 package_mytop() {
   pkgdesc='Top clone for MariaDB'
-  depends=('perl' 'perl-dbd-mariadb' 'perl-term-readkey')
+  depends=('perl'
+	   'perl-dbd-mariadb'
+	   'perl-term-readkey')
 
   install -D -m0755 build/scripts/mytop "$pkgdir"/usr/bin/mytop
 }
