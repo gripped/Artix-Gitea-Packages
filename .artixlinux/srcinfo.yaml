@@ -1,0 +1,28 @@
+---
+version: 0.6.1-1
+pkgbase:
+  name: tree-sitter-query
+  pkgdesc: TS query grammar for tree-sitter
+  pkgver: 0.6.1
+  pkgrel: 1
+  url: https://github.com/tree-sitter-grammars/tree-sitter-query
+  arch:
+    - x86_64
+  groups:
+    - tree-sitter-grammars
+  license:
+    - Apache-2.0
+  makedepends:
+    - git
+    - tree-sitter-cli
+  optdepends:
+    - 'tree-sitter: core library'
+  provides:
+    - libtree-sitter-query.so
+  source:
+    - git+https://github.com/tree-sitter-grammars/tree-sitter-query.git#tag=v0.6.1
+  b2sums:
+    - 97157d6d6836447f18f6e9fe5958336cfe0036b7872bf5fdbf34bb6085cdbe918d4c4a6580072918dfb445d3342ba784b2069af7fd8986ecf788bb5676818bda
+pkgname:
+  - name: tree-sitter-query
+# generated with artixpkg 0.36.3-1-any
