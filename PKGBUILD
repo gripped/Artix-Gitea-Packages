@@ -7,7 +7,7 @@ pkgname=libgit2
 # NOTE: add the following packages to rebuild TODOs on soname change (although they do not link against libgit2.so):
 # julia
 pkgver=1.9.0
-pkgrel=2.2
+pkgrel=2.3
 epoch=1
 pkgdesc="A linkable library for Git"
 arch=(x86_64)
@@ -39,6 +39,7 @@ build() {
     -D REGEX_BACKEND=pcre2
     -D USE_HTTP_PARSER=llhttp
     -D USE_SSH=ON
+    -D USE_THREADS:BOOL=ON
     -S $pkgname-$pkgver
     -W no-dev
   )
