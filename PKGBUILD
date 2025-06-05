@@ -20,7 +20,7 @@ depends=(gcc-libs
          qgpgme
          qt6-base
          qt6-declarative)
-makedepends=(extra-cmake-modules qgpgme-qt6 gpgme-1)
+makedepends=(extra-cmake-modules qgpgme-qt6 gpgme)
 source=(https://download.kde.org/stable/$pkgname/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('2a726455084d7806fe78bc8aa6222a44f328b6063479f8b7afc3692e18c397ce'
             'SKIP')

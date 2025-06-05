@@ -13,7 +13,7 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
     - qgpgme-qt6
-    - gpgme-1
+    - gpgme
   depends:
     - gcc-libs
     - glibc
