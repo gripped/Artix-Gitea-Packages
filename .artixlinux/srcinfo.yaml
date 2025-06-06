@@ -1,0 +1,40 @@
+---
+version: 0.4.9-1
+pkgbase:
+  name: dinit-rc
+  pkgdesc: rc files for dinit
+  pkgver: 0.4.9
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/dinit-rc
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - scdoc
+  depends:
+    - udev
+    - artix-cgroups
+    - dbus
+  optdepends:
+    - 'cryptsetup-dinit: Encrypted disks support'
+    - 'lvm2-dinit: LVM support'
+    - 'mdadm-dinit: MD devices support'
+  provides:
+    - init-udev
+    - init-rc
+  conflicts:
+    - init-udev
+    - init-rc
+  backup:
+    - etc/dinit.d/config/console.conf
+    - etc/hwclock.conf
+    - etc/rc.local
+    - etc/rc.shutdown
+  source:
+    - dinit-rc-0.4.9.tar.gz::https://gitea.artixlinux.org/artix/dinit-rc/archive/0.4.9.tar.gz
+  sha256sums:
+    - ec1b29798f7506b88006c697e59904868cf503dcd57b39b345de89551574f9c7
+pkgname:
+  - name: dinit-rc
+# generated with artixpkg 0.36.2-1-any
