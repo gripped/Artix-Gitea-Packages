@@ -3,7 +3,7 @@
 
 pkgname=mailcommon
 pkgver=25.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE PIM library providing support for mail applications'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -12,7 +12,7 @@ depends=(akonadi-contacts
          akonadi-mime
          gcc-libs
          glibc
-         gpgme
+         gpgmepp
          karchive
          kcodecs
          kcolorscheme
@@ -37,7 +37,7 @@ depends=(akonadi-contacts
          mailimporter
          messagelib
          pimcommon
-         qgpgme-qt6
+         qgpgme
          qt6-base
          qt6-multimedia
          syntax-highlighting)
