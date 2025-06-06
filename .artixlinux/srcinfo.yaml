@@ -1,0 +1,32 @@
+---
+version: 3.8.1-1
+pkgbase:
+  name: dart
+  pkgdesc: The dart programming language SDK
+  pkgver: 3.8.1
+  pkgrel: 1
+  url: https://dart.dev/
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - dart
+    - git
+    - gn
+    - ninja
+    - python
+    - python-httplib2
+  depends:
+    - glibc
+  source:
+    - git+https://github.com/dart-lang/sdk.git#tag=3.8.1
+    - git+https://chromium.googlesource.com/chromium/tools/depot_tools.git
+    - DEPS.patch
+  sha256sums:
+    - d3a30ad8d9073c66d86d43dd43e7394ad748327bf666d2cf1e923b9ef97d8d14
+    - SKIP
+    - db6576a70c6719e26795b9824546058b79fefa64158c1002d36546d826084403
+pkgname:
+  - name: dart
+# generated with artixpkg 0.36.3-1-any
