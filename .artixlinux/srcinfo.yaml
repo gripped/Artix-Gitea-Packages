@@ -1,10 +1,10 @@
 ---
-version: 0.12.0-1
+version: 0.12.0-2
 pkgbase:
   name: xfce4-weather-plugin
   pkgdesc: A weather plugin for the Xfce4 panel
   pkgver: 0.12.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/panel-plugins/xfce4-weather-plugin/start
   arch:
     - x86_64
@@ -19,7 +19,7 @@ pkgbase:
   depends:
     - xfce4-panel
     - libxml2
-    - libsoup
+    - libsoup3
     - hicolor-icon-theme
     - upower
   source:
@@ -28,4 +28,4 @@ pkgbase:
     - 6df8516c076453b5968a31972c33f1cd48ef1909d1a56d607eb7092252c321c4
 pkgname:
   - name: xfce4-weather-plugin
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
