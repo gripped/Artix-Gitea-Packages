@@ -8,8 +8,8 @@
 # Contributor: Ignas Anikevicius <anikevicius ð gmail đ com>
 
 pkgname=tp_smapi
-pkgver=0.44
-pkgrel=133
+pkgver=0.44+r10+ga6122c0
+pkgrel=1
 pkgdesc="Modules for ThinkPad's SMAPI functionality"
 url='https://github.com/evgeni/tp_smapi'
 arch=(x86_64)
@@ -18,9 +18,9 @@ makedepends=(
   git
   linux-headers
 )
-_commit=6e80bb1752280bcd142d86ecd0739661bd0e8312  # master
+_commit=a6122c0840c36bf232250afd1da30aaedaf24910  # master
 source=("git+https://github.com/evgeni/tp_smapi#commit=$_commit")
-b2sums=('efee82d76217367b3e41314e685f26b6793a5f6421b0caf5e09b70f38fc5dab08600d90f98e9508f96e7649e41ba66d7497ce8dcdc8b739003ea666f5318a383')
+b2sums=('ece16a811414f4e4b4060a20de0a1c362a7021845deae1255e3d93a429e5631a46fdae1079063ea1a938a3c7022f23ea214e447de9035891f79b653827fdb377')
 
 pkgver() {
   cd tp_smapi
