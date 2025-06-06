@@ -1,0 +1,49 @@
+---
+version: 0.5.0-3
+pkgbase:
+  name: dino
+  pkgdesc: Modern XMPP (Jabber) chat client written in Vala
+  pkgver: 0.5.0
+  pkgrel: 3
+  url: https://dino.im
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - meson
+    - vala
+    - ninja
+  depends:
+    - glib2
+    - glib-networking
+    - gtk4
+    - libadwaita
+    - gpgme
+    - libgee
+    - libgcrypt
+    - libomemo-c
+    - libsoup3
+    - sqlite
+    - qrencode
+    - gspell
+    - libnice
+    - gstreamer
+    - gst-plugin-gtk
+    - gst-plugins-base
+    - gst-plugins-good
+    - libsrtp
+    - webrtc-audio-processing
+    - gdk-pixbuf2
+  source:
+    - https://github.com/dino/dino/releases/download/v0.5.0/dino-0.5.0.tar.gz
+    - https://github.com/dino/dino/releases/download/v0.5.0/dino-0.5.0.tar.gz.asc
+  validpgpkeys:
+    - A32134DD19952FB12EC43E4501FABCC83FEA225E
+  sha256sums:
+    - 914e265faf56a5ff4ffc3b957df181222e5cacab6b5a744ed72696041bf5f0c1
+    - SKIP
+pkgname:
+  - name: dino
+# generated with artixpkg 0.36.3-1-any
