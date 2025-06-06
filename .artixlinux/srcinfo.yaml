@@ -1,0 +1,38 @@
+---
+version: 2.8.2-2
+pkgbase:
+  name: ncdu
+  pkgdesc: Disk usage analyzer with an ncurses interface
+  pkgver: 2.8.2
+  pkgrel: 2
+  url: https://dev.yorhel.nl/ncdu
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - zig
+  depends:
+    - ncurses
+    - glibc
+    - zstd
+  source:
+    - https://dev.yorhel.nl/download/ncdu-2.8.2.tar.gz
+    - https://dev.yorhel.nl/download/ncdu-2.8.2.tar.gz.asc
+  validpgpkeys:
+    - 74460D32B80810EBA9AFA2E962394C698C2739FA
+  sha256sums:
+    - 022fa765d35a79797acdc80c831707df43c9a3ba60d1ae3e6ea4cc1b7a2c013d
+    - SKIP
+  b2sums:
+    - cc14e058c1951179abe762f5275a26577bb85607f86488ac3eabdba33b45d7c0ded9b59446b7573d40bdf11a66d94a246386401049c4455cf5d1cbe4802724e5
+    - SKIP
+pkgname:
+  - name: ncdu
+    depends:
+      - ncurses
+      - glibc
+      - zstd
+      - libncursesw.so
+      - libzstd.so
+# generated with artixpkg 0.36.3-1-any
