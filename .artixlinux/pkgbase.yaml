@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 0.4.9-1
+    version: 0.5.0-1
     packages:
-      - dinit-rc-0.4.9-1-x86_64.pkg.tar.zst
+      - dinit-rc-0.5.0-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 0.4.8-1

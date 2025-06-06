@@ -1,9 +1,9 @@
 ---
-version: 0.4.9-1
+version: 0.5.0-1
 pkgbase:
   name: dinit-rc
   pkgdesc: rc files for dinit
-  pkgver: 0.4.9
+  pkgver: 0.5.0
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/dinit-rc
   arch:
@@ -32,9 +32,9 @@ pkgbase:
     - etc/rc.local
     - etc/rc.shutdown
   source:
-    - dinit-rc-0.4.9.tar.gz::https://gitea.artixlinux.org/artix/dinit-rc/archive/0.4.9.tar.gz
+    - dinit-rc-0.5.0.tar.gz::https://gitea.artixlinux.org/artix/dinit-rc/archive/0.5.0.tar.gz
   sha256sums:
-    - ec1b29798f7506b88006c697e59904868cf503dcd57b39b345de89551574f9c7
+    - 09a7298253b7f4f7c709886a4e5e710ee7681e6cf5589ca4961cc772f41acb03
 pkgname:
   - name: dinit-rc
 # generated with artixpkg 0.36.2-1-any
