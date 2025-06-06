@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -49,15 +49,13 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 25.2.3-4
     packages:
       - libreoffice-fresh-sdk-25.2.3-4-x86_64.pkg.tar.zst
       - libreoffice-fresh-25.2.3-4-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 25.2.3-3
-    packages:
-      - libreoffice-fresh-sdk-25.2.3-3-x86_64.pkg.tar.zst
-      - libreoffice-fresh-25.2.3-3-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
