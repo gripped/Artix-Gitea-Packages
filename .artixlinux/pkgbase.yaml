@@ -2,8 +2,8 @@
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.0.6.1-1
+    version: 3.0.7.0-1
     packages:
-      - openimageio-3.0.6.1-1-x86_64.pkg.tar.zst
+      - openimageio-3.0.7.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.0.5.0-1
