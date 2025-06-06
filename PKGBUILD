@@ -4,8 +4,9 @@
 pkgbase=wxwidgets
 pkgname=(wxwidgets-common
          wxwidgets-gtk3
-         wxwidgets-qt5)
-pkgver=3.2.8.1
+#        wxwidgets-gtk4 - doesn't build
+         wxwidgets-qt)
+pkgver=3.3.0
 pkgrel=1
 arch=(x86_64)
 url='https://wxwidgets.org'
@@ -14,16 +15,49 @@ makedepends=(cmake
              git
              glu
              gst-plugins-base
+             gtk4
              libmspack
              libnotify
              nanosvg
-             qt5-base
+             qt6-base
              sdl2
              webkit2gtk-4.1)
-source=(git+https://github.com/wxWidgets/wxWidgets#tag=v$pkgver)
-sha256sums=('11bfcbbbb10515d9fd31f52477166bc37725e704dc7f3baf6cad30b92e1defe8')
+source=(git+https://github.com/wxWidgets/wxWidgets#tag=v$pkgver
+        git+https://github.com/wxWidgets/scintilla
+        git+https://github.com/wxWidgets/lexilla
+        qt-6.9.patch)
+sha256sums=('3826b01bddf3fc80bcb6b4b942968f6c028d0699a661e86c14dd06d320998e44'
+            'SKIP'
+            'SKIP'
+            '9b2af48ed8beee7de1d2c1fc697e6442ad9347b4b1c81da6c7ff629f3dbe8f39')
+
+prepare() {
+  cd wxWidgets
+  git submodule init
+  git submodule set-url src/stc/scintilla "$srcdir"/scintilla
+  git submodule set-url src/stc/lexilla "$srcdir"/lexilla
+  git -c protocol.file.allow=always submodule update src/stc/scintilla src/stc/lexilla
+
+  patch -p1 -i ../qt-6.9.patch
+}
 
 build() {
+  cmake -B build-base -S wxWidgets \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None \
+    -DwxUSE_GUI=OFF \
+    -DwxUSE_REGEX=sys\
+    -DwxUSE_ZLIB=sys \
+    -DwxUSE_EXPAT=sys \
+    -DwxUSE_LIBJPEG=sys \
+    -DwxUSE_LIBPNG=sys \
+    -DwxUSE_LIBTIFF=sys \
+    -DwxUSE_LIBLZMA=sys \
+    -DwxUSE_NANOSVG=sys \
+    -DwxUSE_LIBMSPACK=ON \
+    -DwxUSE_PRIVATE_FONTS=ON
+  cmake --build build-base
+
   cmake -B build-gtk3 -S wxWidgets \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None \
@@ -42,7 +76,25 @@ build() {
     -DwxUSE_GTKPRINT=ON
   cmake --build build-gtk3
 
-  cmake -B build-qt5 -S wxWidgets \
+#   cmake -B build-gtk4 -S wxWidgets \
+#     -DCMAKE_INSTALL_PREFIX=/usr \
+#     -DCMAKE_BUILD_TYPE=None \
+#     -DwxBUILD_TOOLKIT=gtk4 \
+#     -DwxUSE_OPENGL=ON \
+#     -DwxUSE_REGEX=sys\
+#     -DwxUSE_ZLIB=sys \
+#     -DwxUSE_EXPAT=sys \
+#     -DwxUSE_LIBJPEG=sys \
+#     -DwxUSE_LIBPNG=sys \
+#     -DwxUSE_LIBTIFF=sys \
+#     -DwxUSE_LIBLZMA=sys \
+#     -DwxUSE_NANOSVG=sys \
+#     -DwxUSE_LIBMSPACK=ON \
+#     -DwxUSE_PRIVATE_FONTS=ON \
+#     -DwxUSE_GTKPRINT=ON
+#   cmake --build build-gtk4
+
+  cmake -B build-qt -S wxWidgets \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_BUILD_TYPE=None \
     -DwxBUILD_TOOLKIT=qt \
@@ -57,7 +109,7 @@ build() {
     -DwxUSE_NANOSVG=sys \
     -DwxUSE_LIBMSPACK=ON \
     -DwxUSE_PRIVATE_FONTS=ON
-  cmake --build build-qt5
+  cmake --build build-qt
 
 # Run configure to generate the Makefile, cmake doesn't install translations
   cd wxWidgets
@@ -67,30 +119,32 @@ build() {
 
 package_wxwidgets-common() {
   pkgdesc='Common libraries and headers for wxwidgets'
-  depends=(curl
+  depends=(bash
+           curl
            gcc-libs
            glib2
            glibc
            expat
-           libsecret
            pcre2
            xz
            zlib)
   conflicts=(wxgtk-common)
   replaces=(wxgtk-common)
 
-  DESTDIR="$pkgdir" cmake --install build-qt5
+  DESTDIR="$pkgdir" cmake --install build-qt
+#   DESTDIR="$pkgdir" cmake --install build-gtk4
   DESTDIR="$pkgdir" cmake --install build-gtk3
-  rm -r "$pkgdir"/usr/lib/{cmake,wx/{3*,include,config/qt*},libwx_{gtk,qt}*}
+  DESTDIR="$pkgdir" cmake --install build-base
+  rm -r "$pkgdir"/usr/lib/{cmake,wx/{3*,include,config/{gtk*,qt*}},libwx_{gtk,qt}*}
   install -Dm644 wxWidgets/wxwin.m4 -t "$pkgdir"/usr/share/aclocal
+  mv "$pkgdir"/usr/bin/wx-config{,-base} # Conflicts with wx-gtk3
 
   install -Dm644 wxWidgets/docs/licence.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
 
 package_wxwidgets-gtk3() {
   pkgdesc='GTK+3 implementation of wxWidgets API for GUI'
-  depends=(bash
-           cairo
+  depends=(cairo
            fontconfig
            gcc-libs
            gdk-pixbuf2
@@ -104,8 +158,8 @@ package_wxwidgets-gtk3() {
            libnotify
            libmspack
            libpng
-           libsm # cmake target
            libtiff
+           libwebp
            libx11
            libxkbcommon
            libxtst
@@ -114,19 +168,48 @@ package_wxwidgets-gtk3() {
            wayland
            wxwidgets-common)
   optdepends=('webkit2gtk-4.1: for webview support')
-  conflicts=(wxgtk3)
-  provides=(wxgtk3
-            wxwidgets)
-  replaces=(wxgtk3)
 
   DESTDIR="$pkgdir" cmake --install build-gtk3
-  rm -r "$pkgdir"/usr/{include,lib/libwx_base*,lib/wx/config,bin,share}
+  rm -r "$pkgdir"/usr/{include,lib/libwx_base*,share,bin/wxrc*}
   
   install -Dm644 wxWidgets/docs/licence.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
 
-package_wxwidgets-qt5() {
-  pkgdesc='Qt5 implementation of wxWidgets API for GUI'
+# package_wxwidgets-gtk4() {
+#   pkgdesc='GTK+4 implementation of wxWidgets API for GUI'
+#   depends=(bash
+#            cairo
+#            fontconfig
+#            gcc-libs
+#            gdk-pixbuf2
+#            glib2
+#            glibc
+#            gtk4
+#            libglvnd
+#            libjpeg-turbo
+#            libnotify
+#            libmspack
+#            libpng
+#            libsm # cmake target
+#            libtiff
+#            libx11
+#            libxkbcommon
+#            libxtst
+#            pango
+#            sdl2
+#            wayland
+#            wxwidgets-common)
+#   optdepends=('webkit2gtk-4.1: for webview support')
+# 
+#   DESTDIR="$pkgdir" cmake --install build-gtk4
+#   rm -r "$pkgdir"/usr/{include,lib/libwx_base*,bin/wxrc*,share}
+#   mv "$pkgdir"/usr/bin/wx-config{,-gtk4} # Conflicts with wx-gtk3
+#   
+#   install -Dm644 wxWidgets/docs/licence.txt "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+# }
+
+package_wxwidgets-qt() {
+  pkgdesc='Qt6 implementation of wxWidgets API for GUI'
   depends=(bash
            gcc-libs
            glibc
@@ -135,12 +218,12 @@ package_wxwidgets-qt5() {
            libmspack
            libpng
            libtiff
-           qt5-base
+           libwebp
+           qt6-base
            sdl2
            wxwidgets-common)
-  provides=(wxwidgets)
 
-  DESTDIR="$pkgdir" cmake --install build-qt5
+  DESTDIR="$pkgdir" cmake --install build-qt
   rm -r "$pkgdir"/usr/{include,lib/libwx_base*,bin/wxrc*,share}
   mv "$pkgdir"/usr/bin/wx-config{,-qt} # Conflicts with wx-gtk3
 # Rename cmake files for coinstallability
