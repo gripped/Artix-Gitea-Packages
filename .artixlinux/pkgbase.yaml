@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 3.50.1-1
+    packages:
+      - sqlite-3.50.1-1-x86_64.pkg.tar.zst
+      - sqlite-tcl-3.50.1-1-x86_64.pkg.tar.zst
+      - sqlite-analyzer-3.50.1-1-x86_64.pkg.tar.zst
+      - lemon-3.50.1-1-x86_64.pkg.tar.zst
+      - sqlite-doc-3.50.1-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 3.50.0-1
