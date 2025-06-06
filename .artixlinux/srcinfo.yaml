@@ -1,0 +1,96 @@
+---
+version: 4.4.6-1
+pkgbase:
+  name: ffmpeg4.4
+  pkgdesc: Complete solution to record, convert and stream audio and video
+  pkgver: 4.4.6
+  pkgrel: 1
+  url: https://ffmpeg.org/
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - amf-headers
+    - avisynthplus
+    - git
+    - ladspa
+    - nasm
+  depends:
+    - alsa-lib
+    - aom
+    - bzip2
+    - fontconfig
+    - fribidi
+    - gmp
+    - gnutls
+    - gsm
+    - jack
+    - lame
+    - libass.so
+    - libavc1394
+    - libbluray.so
+    - libdav1d.so
+    - libdrm
+    - libfreetype.so
+    - libiec61883
+    - libmfx
+    - libmodplug
+    - libpulse
+    - librav1e.so
+    - libraw1394
+    - librsvg-2.so
+    - libsoxr
+    - libssh
+    - libtheora
+    - libva.so
+    - libva-drm.so
+    - libva-x11.so
+    - libvdpau
+    - libvidstab.so
+    - libvorbisenc.so
+    - libvorbis.so
+    - libvpx.so
+    - libwebp
+    - libx11
+    - libx264.so
+    - libx265.so
+    - libxcb
+    - libxext
+    - libxml2
+    - libxv
+    - libxvidcore.so
+    - libzimg.so
+    - opencore-amr
+    - openjpeg2
+    - opus
+    - sdl2
+    - speex
+    - srt
+    - svt-av1
+    - v4l-utils
+    - xz
+    - zlib
+  optdepends:
+    - 'avisynthplus: AviSynthPlus support'
+    - 'intel-media-sdk: Intel QuickSync support'
+    - 'ladspa: LADSPA filters'
+    - 'nvidia-utils: Nvidia NVDEC/NVENC support'
+  provides:
+    - libavcodec.so
+    - libavdevice.so
+    - libavfilter.so
+    - libavformat.so
+    - libavutil.so
+    - libpostproc.so
+    - libswresample.so
+    - libswscale.so
+  source:
+    - git+https://git.ffmpeg.org/ffmpeg.git#tag=n4.4.6
+    - binutils-2.41.patch
+  b2sums:
+    - 399a78790cdb985f1d23e09790360c273845a70cc2b5e7590c5aaa972fc48d5c11955cb1f881aeb62553d0745cdd26bc0880db461ab67e939b16b2c226dd790e
+    - b656a17dd3996c6871d322ba1fcf25410ed580d9600348cda087d705660601d06070492300d31c12d54b0e9914cb92bb9d997e51462c0577e1a90539bf0b76ee
+pkgname:
+  - name: ffmpeg4.4
+# generated with artixpkg 0.36.3-1-any
