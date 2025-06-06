@@ -1,10 +1,10 @@
 ---
-version: 2:7.1.1-3
+version: 2:7.1.1-4
 pkgbase:
   name: ffmpeg
   pkgdesc: Complete solution to record, convert and stream audio and video
   pkgver: 7.1.1
-  pkgrel: 3
+  pkgrel: 4
   epoch: 2
   url: https://ffmpeg.org
   arch:
@@ -110,8 +110,6 @@ pkgbase:
     - libpostproc.so
     - libswresample.so
     - libswscale.so
-  options:
-    - debug
   source:
     - git+https://git.ffmpeg.org/ffmpeg.git?signed#tag=a1328e68877e12ab5a6e5d92a84aefa566783ea5
     - 0001-Add-av_stream_get_first_dts-for-Chromium.patch
@@ -221,4 +219,4 @@ pkgname:
       - libxvidcore.so
       - libzimg.so
       - libzmq.so
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
