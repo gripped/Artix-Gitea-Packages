@@ -4,7 +4,7 @@
 
 pkgname=kmail
 pkgver=25.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE mail client'
 arch=(x86_64)
 url='https://apps.kde.org/kmail2/'
@@ -15,7 +15,7 @@ depends=(akonadi-contacts
          akonadi-search
          gcc-libs
          glibc
-         gpgme
+         gpgmepp
          kbookmarks
          kcalendarcore
          kcalutils
@@ -67,7 +67,7 @@ depends=(akonadi-contacts
          pim-data-exporter
          pim-sieve-editor
          pimcommon
-         qgpgme-qt6
+         qgpgme
          qt6-base
          qt6-webengine
          qtkeychain-qt6
