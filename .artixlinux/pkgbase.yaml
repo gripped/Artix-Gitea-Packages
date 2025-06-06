@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,16 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 2.0.0-1
     packages:
       - gpgme-2.0.0-1-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 1.24.3-2
-    packages:
-      - gpgme-1.24.3-2-x86_64.pkg.tar.zst
-      - qgpgme-qt6-1.24.3-2-x86_64.pkg.tar.zst
-      - python-gpgme-1.24.3-2-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
