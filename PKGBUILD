@@ -3,21 +3,21 @@
 
 pkgname=isoimagewriter
 pkgver=25.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Program to write hybrid ISO files onto USB disks'
 arch=(x86_64)
 url='https://apps.kde.org/isoimagewriter/'
 license=(GPL-3.0-or-later)
 depends=(gcc-libs
          glibc
-         gpgme
+         gpgmepp
          karchive
          kcoreaddons
          kcrash
          ki18n
          kiconthemes
          kwidgetsaddons
-         qgpgme-qt6
+         qgpgme
          qt6-base
          solid)
 makedepends=(extra-cmake-modules)
