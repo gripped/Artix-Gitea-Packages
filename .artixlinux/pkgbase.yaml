@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 7.0.0.r6.gc685ae6-6
     packages:
       - pacman-7.0.0.r6.gc685ae6-6-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 7.0.0.r6.gc685ae6-5
-    packages:
-      - pacman-7.0.0.r6.gc685ae6-5-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
