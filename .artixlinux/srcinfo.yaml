@@ -1,0 +1,46 @@
+---
+version: 1.19.8-3
+pkgbase:
+  name: libheif
+  pkgdesc: An HEIF and AVIF file format decoder and encoder
+  pkgver: 1.19.8
+  pkgrel: 3
+  url: https://github.com/strukturag/libheif
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - cmake
+    - dav1d
+    - ffmpeg
+    - gdk-pixbuf2
+    - git
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - rav1e
+    - svt-av1
+  depends:
+    - aom
+    - gcc-libs
+    - glibc
+    - libde265
+    - libwebp
+    - x265
+  optdepends:
+    - 'libjpeg-turbo: for heif-convert and heif-enc'
+    - 'libpng: for heif-convert and heif-enc'
+    - 'dav1d: dav1d encoder'
+    - 'ffmpeg: hardware decode'
+    - 'rav1e: rav1e encoder'
+    - 'svt-av1: svt-av1 encoder'
+  provides:
+    - libheif.so
+  source:
+    - git+https://github.com/strukturag/libheif#tag=v1.19.8
+  sha256sums:
+    - b77dfccd82588bcce71615d55d731aca5452d36b70c4127102ac0798cf022970
+pkgname:
+  - name: libheif
+# generated with artixpkg 0.36.3-1-any
