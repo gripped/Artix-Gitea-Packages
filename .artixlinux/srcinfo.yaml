@@ -1,10 +1,10 @@
 ---
-version: 3.0.21-20
+version: 3.0.21-21
 pkgbase:
   name: vlc
   pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player
   pkgver: 3.0.21
-  pkgrel: 20
+  pkgrel: 21
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
@@ -260,4 +260,4 @@ pkgname:
       - dbus
       - gcc-libs
       - glibc
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
