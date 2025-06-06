@@ -3,7 +3,7 @@
 
 pkgname=akonadi-calendar
 pkgver=25.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Akonadi calendar integration'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -12,7 +12,7 @@ depends=(akonadi-contacts
          akonadi-mime
          gcc-libs
          glibc
-         gpgme
+         gpgmepp
          kcalendarcore
          kcalutils
          kcodecs
@@ -34,7 +34,7 @@ depends=(akonadi-contacts
          libakonadi
          libkleo
          messagelib
-         qgpgme-qt6
+         qgpgme
          qt6-base)
 makedepends=(doxygen
              extra-cmake-modules
