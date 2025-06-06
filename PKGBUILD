@@ -3,7 +3,7 @@
 
 pkgname=merkuro
 pkgver=25.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Application suite designed to handle emails, calendars, contacts and tasks'
 arch=(x86_64)
 url='https://apps.kde.org/merkuro/'
@@ -14,7 +14,7 @@ depends=(akonadi-calendar
          akonadi-search
          gcc-libs
          glibc
-         gpgme
+         gpgmepp
          kcalendarcore
          kcodecs
          kconfig
