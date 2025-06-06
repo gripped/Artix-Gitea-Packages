@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.04.2-1
+    version: 25.04.1-2
     packages:
-      - mimetreeparser-25.04.2-1-x86_64.pkg.tar.zst
+      - mimetreeparser-25.04.1-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.04.1-1
