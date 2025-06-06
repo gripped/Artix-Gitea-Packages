@@ -1,0 +1,89 @@
+---
+version: 8.6.0-4
+pkgbase:
+  name: digikam
+  pkgdesc: An advanced digital photo management application
+  pkgver: 8.6.0
+  pkgrel: 4
+  url: https://www.digikam.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - boost
+    - doxygen
+    - eigen
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - akonadi-contacts
+    - exiv2
+    - expat
+    - ffmpeg
+    - gcc-libs
+    - glib2
+    - glibc
+    - imagemagick
+    - jasper
+    - kcalendarcore
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcontacts
+    - kcoreaddons
+    - kfilemetadata
+    - ki18n
+    - kiconthemes
+    - kio
+    - knotifications
+    - knotifyconfig
+    - kservice
+    - kwidgetsaddons
+    - kxmlgui
+    - lcms2
+    - lensfun
+    - libglvnd
+    - libgphoto2
+    - libheif
+    - libjpeg-turbo
+    - libjxl
+    - libksane
+    - libpng
+    - libtiff
+    - libx11
+    - libxml2
+    - libxslt
+    - opencv
+    - perl
+    - perl-image-exiftool
+    - qt6-base
+    - qt6-multimedia
+    - qt6-networkauth
+    - qt6-scxml
+    - qt6-svg
+    - qt6-webengine
+    - sh
+    - solid
+    - sonnet
+    - threadweaver
+    - x265
+    - zlib
+  optdepends:
+    - 'darktable: RAW import'
+    - 'hugin: panorama tool'
+    - 'qt6-imageformats: support for additional image formats (WEBP, TIFF)'
+    - 'rawtherapee: RAW import'
+  source:
+    - https://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz
+    - https://download.kde.org/stable/digikam/8.6.0/digiKam-8.6.0.tar.xz.sig
+    - https://invent.kde.org/graphics/digikam/-/commit/325b19fc.patch
+  validpgpkeys:
+    - D1CF2444A7858C5F2FB095B74A77747BC2386E50
+  sha256sums:
+    - 000971e117201976cba413b6d7201720a8893799d6064bcf158d4388e829c233
+    - SKIP
+    - 84a04775acbe2a6ce9fe688123301b18fdba417bb6a54e7c0bca327647912af3
+pkgname:
+  - name: digikam
+# generated with artixpkg 0.36.3-1-any
