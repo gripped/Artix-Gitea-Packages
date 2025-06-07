@@ -1,0 +1,865 @@
+---
+version: 25.2.4-1
+pkgbase:
+  name: libreoffice-fresh-i18n
+  pkgver: 25.2.4
+  pkgrel: 1
+  url: https://www.documentfoundation.org
+  arch:
+    - any
+  license:
+    - LGPL-3.0-or-later
+  options:
+    - '!strip'
+  source:
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_af.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_af.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_am.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_am.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_am.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_am.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ar.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ar.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ar.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ar.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_as.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_as.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ast.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ast.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ast.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ast.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_be.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_be.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bg.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bg.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bg.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bg.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bn-IN.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bn-IN.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bn-IN.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bn-IN.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_br.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_br.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_brx.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_brx.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bs.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_bs.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bs.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_bs.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ca-valencia.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ca-valencia.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ca-valencia.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ca-valencia.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ca.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ca.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ca.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ca.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ckb.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ckb.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_cs.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_cs.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_cs.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_cs.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_cy.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_cy.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_da.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_da.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_da.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_da.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_de.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_de.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_de.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_de.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_dgo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_dgo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_dsb.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_dsb.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_dz.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_dz.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_dz.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_dz.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_el.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_el.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_el.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_el.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_en-GB.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_en-GB.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_en-GB.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_en-GB.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_en-ZA.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_en-ZA.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_en-ZA.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_en-ZA.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_eo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_eo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_eo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_eo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_es.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_es.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_es.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_es.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_et.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_et.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_et.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_et.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_eu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_eu.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_eu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_eu.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fa.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fa.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fi.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fi.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_fi.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_fi.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_fr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_fr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fur.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fur.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fy.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_fy.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ga.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ga.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gd.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gd.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_gl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_gl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gu.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_gu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_gu.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gug.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_gug.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_he.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_he.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_he.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_he.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hi.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hi.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_hi.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_hi.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_hr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_hr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hsb.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hsb.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_hu.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_hu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_hu.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_id.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_id.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_id.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_id.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_is.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_is.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_is.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_is.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_it.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_it.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_it.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_it.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ja.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ja.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ja.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ja.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ka.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ka.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ka.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ka.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kab.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kab.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_km.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_km.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_km.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_km.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kmr-Latn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kmr-Latn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ko.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ko.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ko.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ko.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kok.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_kok.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ks.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ks.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lb.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lb.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_lo.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_lo.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lt.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lt.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_lt.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_lt.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lv.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_lv.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_lv.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_lv.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mai.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mai.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_mk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_mk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ml.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ml.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mni.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mni.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_mr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_my.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_my.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nb.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nb.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_nb.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_nb.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ne.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ne.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ne.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ne.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_nl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_nl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_nn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_nn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nso.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_nso.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_oc.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_oc.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_om.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_om.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_om.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_om.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_or.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_or.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pa-IN.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pa-IN.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_pl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_pl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pt-BR.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pt-BR.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_pt-BR.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_pt-BR.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pt.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_pt.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_pt.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_pt.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ro.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ro.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ro.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ro.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ru.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ru.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ru.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ru.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_rw.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_rw.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sa-IN.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sa-IN.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sat.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sat.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sd.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sd.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_si.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_si.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_si.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_si.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sid.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sid.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sid.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sid.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sq.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sq.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sq.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sq.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sr-Latn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sr-Latn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ss.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ss.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_st.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_st.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sv.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sv.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sv.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_sv.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sw-TZ.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_sw-TZ.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_szl.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_szl.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ta.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ta.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ta.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ta.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_te.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_te.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tg.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tg.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_tg.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_tg.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_th.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_th.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tn.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tn.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_tr.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_tr.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ts.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ts.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tt.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_tt.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ug.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ug.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ug.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_ug.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_uk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_uk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_uk.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_uk.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_uz.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_uz.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ve.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_ve.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_vec.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_vec.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_vi.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_vi.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_vi.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_vi.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_xh.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_xh.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_zh-CN.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_zh-CN.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_zh-CN.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_zh-CN.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_zh-TW.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_zh-TW.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_zh-TW.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_helppack_zh-TW.tar.gz.asc
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_zu.tar.gz
+    - https://download.documentfoundation.org/libreoffice/stable/25.2.4/rpm/x86_64/LibreOffice_25.2.4_Linux_x86-64_rpm_langpack_zu.tar.gz.asc
+  validpgpkeys:
+    - C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3
+  sha256sums:
+    - a9da072e4cd38febdbc02b11d8a8feb6890d29c41ef27dee1190af8a6b5e1f8f
+    - SKIP
+    - 804c92f42eb13f071f7c37d91912a2bdbad5fc7d2f35ca7727986db918120556
+    - SKIP
+    - b27bee3a9eba447f5de9fd408d8bd95130d2ec6cf92a4f4ba47e8dac1b6a9830
+    - SKIP
+    - 7636ea1e58b03ab4643f1b69ae75621d5e0d1494c486923fb35428a5af12d03b
+    - SKIP
+    - 180dec0af857376b7ff8758dcce40ccc35dadf8b95bf876eb0637e7a5d565461
+    - SKIP
+    - 7546e320c156fb06d2a89cd843f0d27af7d4a72644470e3054cb69d3a4e33707
+    - SKIP
+    - 0bfcae97956946172c0040a76530b1e641866379838ce7a98a9ab0c3e63d027e
+    - SKIP
+    - 69f8ce9716d2abaebb0bbfe2852d914ec9b737656fd8bc341bd6a38bfe19c780
+    - SKIP
+    - e50eb19669364fa789ccf8820dfaebc9aa39cc77a0c034df5f9861eccbad4154
+    - SKIP
+    - 26e98aa9f2c9c49f65f1543e752c818f840c8d62c1dc6887f39eb6619699ba1f
+    - SKIP
+    - c65fb8e027e5e6095f8f35364435a5cef2194a1a2e9ca091da5772715111f843
+    - SKIP
+    - 359b589616f59ffd7067dada4053a615fa59b03b206730a8074f11d0015cb761
+    - SKIP
+    - 0216af9934bb006a3342feafc61cb586c1950249f2ce11424ffc93dbbb7ab2d6
+    - SKIP
+    - ea52d79ee95eb005d4ffeb616f8a86f0d87a37fac48829ae5a51fbbd405c7c13
+    - SKIP
+    - e96f59c96016057b51c049400068a6a718fd5030c819933270eff706e8349812
+    - SKIP
+    - 27fa3cbcbe72efc3985f12c3096277972a3eb48ccd0fcc92ed7f925a92b5e513
+    - SKIP
+    - f94ce7aa979954c9cde9a061cf30cb661f38e93af555dff27a41ac4f6500df70
+    - SKIP
+    - 04f3af00e1bee73f3a09d0a3588ab57be196c10615e2d85bb1ab6dd0ba6c2a02
+    - SKIP
+    - 9876d97e2837b4af3b51cc8851789cd917645bbc6c793397270f576b399c9c2d
+    - SKIP
+    - 2da40169fdad96fcaf26541a9cd94f4c0043734191b5db7dbccf83a942964ddf
+    - SKIP
+    - 02ed302a0de9f8a0bce472e279691399a026a2a1cd8f553c990f9f513a557812
+    - SKIP
+    - a465dbee65716af97844da8fa90c5434c7e563c22acb3567c6d2c95058b4a816
+    - SKIP
+    - b5445a7d8bccf2c7d5afcc0b0819aa4aae0c5793ee3689c93f092f5751fea4a8
+    - SKIP
+    - 96a0f6b2390d9eaff6f2639466c54c301d81a5e52b9f0dc127728a7a7004bcc5
+    - SKIP
+    - 9ee55de8e6dd43820134365d742b0257bc2e5232829faae6b94ec4a0083f2144
+    - SKIP
+    - c719d2c61d9839d5e45d73a8f4d8b82d403306b2ab59de8abcd5ef8e1550ce97
+    - SKIP
+    - b46be39f42f82673294daf0d0c34fc0ce91001fc02b71f977fe617281b17ac1e
+    - SKIP
+    - 292ed5a9098fcec35dc8d3c2a924f81627630ba47ee143aa37e91cb5ba0d54b9
+    - SKIP
+    - ffdef9251d4d6c33f5a592ad125a4f686fb2a699bb3756be81df38129ea2ffa7
+    - SKIP
+    - 8510b704ff7e6d01f0b8ffd04527c9bc50c75595ccaca6a71cd3c692117dc031
+    - SKIP
+    - f6d8f07f5d188004599c4851e1f1890558831f8b93283da54813f92825808bc0
+    - SKIP
+    - 18caa6c21c29d370bea48ea6c4960aa0ed304e54f39747a064bdeadcb78b2dee
+    - SKIP
+    - 38fa9f305223a66bc096003b391a0488c3ca47dfe333e17060838290ebb6ee35
+    - SKIP
+    - 1fdb8b61aad73e8b30af135322768f6bbad950b3f6fa1f5dffa07d84a9ea068c
+    - SKIP
+    - 4b9b63877240c225da1b6d1cc60023465ba5afca80c80870ad4a4a61937a6bc9
+    - SKIP
+    - 624cbe7e1257c89e7308c927442854444c92f61b5230fa8f25e6a4fb7ebce70a
+    - SKIP
+    - 6a74cd96507be2b60db3b1f47c450b0bbbf1405f08c75927018e97ea9db667e8
+    - SKIP
+    - 72ca6203d495fd97b02ff9d729d064a97502668f4d9f2a57b5d676388bd76d0c
+    - SKIP
+    - a132d189e2859dfb863f8b3b2809c21d9d9d52197c19baa049fa9e3b56fd92f3
+    - SKIP
+    - 01442f66c0b716c5f189bb5861540a34b9775ef7f16e2cd8ca29f01a5a4cf862
+    - SKIP
+    - 9537312cc31b160e7e335a1be38dfa644337987921f296ae2f3cfa3f98e1400f
+    - SKIP
+    - 11885e70195f923994153c669da05832ca7df8a0ef86c56dc52a4b4c83509a1e
+    - SKIP
+    - 726b038c00ed8e6dca7759821dc4e20ff52d0d7e9264e0d78c03af5b23e6beb7
+    - SKIP
+    - f31c431adf51b885dda1a0ac79e02ab31a4173ebbc19fb3e2cd8fb2cae9591eb
+    - SKIP
+    - f21a6325ca76e20ab33cbe4f17db74378fb7480324b8d2987070764f815c295b
+    - SKIP
+    - 12d60feb303be87e22eca91f8fb7c323cce99b05bab5adb54af00b6a6de6c809
+    - SKIP
+    - 577ffffe4d836d7f84188650095397fa27a94ad95a797bc56bde23e29521fe5e
+    - SKIP
+    - dcebd675120660ae1c6decbda6c786455871d16d83a5ca77ad4a5c426f66bd63
+    - SKIP
+    - cae05f09df5addbd74a8f7b298a9b7de858e9ee3470c166bfb0a64a163d31f5c
+    - SKIP
+    - 234b32909dd7778ee7b86e9c382e8d5b3f3451bbaf1218dabb469d7abeb0cabb
+    - SKIP
+    - 215de1c1b380af7d19e09fefe899fd196ff624385f21b277754bd7d68d30f4db
+    - SKIP
+    - 30517e95cba62a67577f2b3f8285bf0359859e013e50b21f61bdab5a9f3425f0
+    - SKIP
+    - 988d421a1d3c90417a54a18ca22e307a8a7ece1e3bd6900531dca1a3f0b3f155
+    - SKIP
+    - c0d84627dcde25c3bf1a54f4f5b5689c03ad9f917f2bf65bc04937137903d633
+    - SKIP
+    - ae254abffba1e73d6f2f96e1b343562d550c77a6b576f2093c131231fc9e6ab0
+    - SKIP
+    - af9759e870e5feb33dab552f97beee0be176fb1843521433f76e0998cb854282
+    - SKIP
+    - 56dabc77281d124579e2d749a0589fea426c4ab5bc75a31fb108c59d025e70e6
+    - SKIP
+    - 50e3a7e832162e0c06f8887bdcd7b9dd72b0e7fddd505d73159403771e0b03cd
+    - SKIP
+    - e79311cfbb6e81f9583e6a82d1e89e88605deb8698b3cc9719d0e16de41942cb
+    - SKIP
+    - 94a4659489e79a69661de3488f2f098c5f739a9c8484640dab551a00fdca89f3
+    - SKIP
+    - 7aa350f8a89bfb188ce3dd4163569f127cd1554f77d2a6e595fe438a18acb01c
+    - SKIP
+    - 0d87912b72d2d2ea34519e94751b76d879ff08d05b8f062bb8de0da89e60eb80
+    - SKIP
+    - 802609c25f79d981ee5bfd6337e1412d8e8c71d57679dab6b138117516b56084
+    - SKIP
+    - 5bf7863e52f57efb41e8061aa9b623bab9b51489ecdc86b18d68145869682ea4
+    - SKIP
+    - 559b26ea8e1dbf22351e7e4160780d6951b4cfbf80ef7452fc3dec8d8f9e2da6
+    - SKIP
+    - 0c4e413e4ce7eb165fb55a85f01aa7c357a105b162e0cdbb60bf39a994c2188e
+    - SKIP
+    - eb402536503ecf38c3c8a74e7e239effd0fb806517484d65fc5969638324fe6c
+    - SKIP
+    - b0865a0b126c6223d4da21da7c5cab4809dd95c262638da5e5cf801b833da564
+    - SKIP
+    - 594f067e4191f145ec2eabae9d26b1ec5e40b1e8aba72198e18b20050d487cc3
+    - SKIP
+    - a35c2633c87cdc08ce4cc57eb76ac96e41a2a693a1aa59026316a709d51570a2
+    - SKIP
+    - 6c23cee9543bb7a4fce8c4e898d6c41b745f7e35223df6acd677175559513eba
+    - SKIP
+    - 51fdacc785b186cb553e02f16f32673e547956705b2b4468fa9e7616dd210254
+    - SKIP
+    - cb34172ce94829a6a7bf4a7c5d40461b0dfc27f939d1a70fe2cd2e001319b889
+    - SKIP
+    - 96c134c118aab10b12c793e0966eee810cfdd71ce32936c5148305861e440046
+    - SKIP
+    - 597670c695433e5f7f76000474bfd0e17770f5f561c1191e473a03a942d81e5b
+    - SKIP
+    - 652af71157592e6ad84f3850d04f6d36d56304a85035a1fe1c2631d26541887e
+    - SKIP
+    - b0638f0549a94e3b0b579f0a7c7229aae5f170a89f9f9b96dfef8d998db6dbf2
+    - SKIP
+    - cd61ac91d776aec3f7ce71d6075d7b6827d33b9a419d983ad178278a20e2e831
+    - SKIP
+    - aa0f51445cfd60345d44f3f34996ac45806d4daf211b868470630836ffceb9a4
+    - SKIP
+    - 70a93435dc829c61193828fc7d97f323a6ae3d84293ced71a062d255b001c969
+    - SKIP
+    - ae716bd707c19f49e6b31e5f6b2a3d8ae4ab8c1e2b20a964932d68720f581615
+    - SKIP
+    - 9159fd453e5cc57ad24c2d693ef0750ff7ddcadf4e76e21fc0481b64a7b69673
+    - SKIP
+    - 62dbc7fbe1ad7b31ca9f7bb09e407d1edce491d0daaeaf893f3b0f81adddbdb4
+    - SKIP
+    - fc14c33d4cd616f5bf77749fccdcba6d9ad6219b9fb523c6b8c8716083443050
+    - SKIP
+    - b75dde9adf150efde5bc5f8955c7eb35a19627c921b1178b2f354f19bf08df86
+    - SKIP
+    - 56a04d1435f4f590d9f859e816be784c724f0a3684ef13d36d924d64e2cb58a0
+    - SKIP
+    - e6d60913ad64a48109b58a2dbd170f72f82b5ba8f9c4c0970b404797a539d41f
+    - SKIP
+    - 444120d9e940b74de8ec76e23596e16284231b9f69e026b33180af45a510e846
+    - SKIP
+    - b5665039a3dabf3d53c092b2e647fe41235bef80a70054b0ac1e3aabac21bdad
+    - SKIP
+    - 1de797ec442fd2c88afd898c9dbe6df36156c81a670b2c4ab0d48ade0f6e5dcf
+    - SKIP
+    - 221a72d9bc8d7489709bdab24db65a7ca78f4876ec34491ce09ff5b5f71e4092
+    - SKIP
+    - 595d86efe68d061f22798536826708b52dc459268e0eeb70f1c85e4df8588be4
+    - SKIP
+    - 64ae52f453b4c53c96547f7fae58430054d11cd5082009ee2f36262598696ee6
+    - SKIP
+    - 5a0bf519b2463c810cf50c253621f12638314caa710015d72dcb88a6e65f630d
+    - SKIP
+    - e4b04cd6102090938756e001bbdfc824880971544c15df04a81d4cc5c509c9ed
+    - SKIP
+    - ab210fa32648df4681bd41ab299dec7165319ee3bcf6b4da8aa855257bec68cb
+    - SKIP
+    - 09618c01bc54d95f75a3d979c9038131576710d6fa52c55422fcf0eb6b4654ca
+    - SKIP
+    - 63637ed132911633412e1dd0b542bd3dca6d3846e551c729caa2bcf808cd9be7
+    - SKIP
+    - 19beeb91a68ef7cbcb321cf5668af01a5ae6973fb5c844544dae644010f497ca
+    - SKIP
+    - 002cdd59cde932ffd931d46aeb418329a583c1c6f7e70434446361d16953a062
+    - SKIP
+    - d17c6ebcbbbf31a992d2b6fcde7c4b681b96f2db49369a38d9b437e1b6e06077
+    - SKIP
+    - fa734be6cc20de22c8ec639a5f0ffc9b2b02b6142d75421fd6323f3d1486b3b6
+    - SKIP
+    - f00319d8582d43fbdf54d795cc9e9bdb0fb24b34dfcf8c5aba40df316ba55e6f
+    - SKIP
+    - 060c387e2ad46d64564e08d92f13d02709979994ece2d6a6029b5094fc8ac120
+    - SKIP
+    - 1fbe4ece0106516c9cd081860c0615066807996822b65a227e371551ab0cf7ea
+    - SKIP
+    - be18b87a8bba7fa64eb545c7497a6033182d3cee59719aa31d55a1da910b9c1e
+    - SKIP
+    - 12e7cf4ffd300716c61fe03b223b54779ea1000b07a9b7341058629bc0e0d6a7
+    - SKIP
+    - e74a23756f529f7989e62295213e7762ac304288e439190589584ce0bb7025a3
+    - SKIP
+    - c7b947cb0f7bdccb83e5635c773117b60cfa375ae3d5061440941f5ccc06eed4
+    - SKIP
+    - e9f5ac6de029e1cc38cddbd0cd77aaca1f13c3340de9fddbbc7ca579bcb17efa
+    - SKIP
+    - 538157bd12b47aeac04a1a765a9ab0758f5c5b16825cb2a59f0f27c0ff76913e
+    - SKIP
+    - 687a84303f98a4c161a3a0633ad04532e156a8f6e294f179ed2baae926850de2
+    - SKIP
+    - 1c24817292a161ace8269057581acf9d3bf4820df1aa7e2d538f25c54bf941bb
+    - SKIP
+    - 7eb6e9a45da2479199a44ec0b6a427f770e1b0cfdc93645c73e4269119eb5005
+    - SKIP
+    - 649757c14557991a61ecc252188d9aec2503e1e8a3edc21670fc82585a1d1298
+    - SKIP
+    - 0926353ee53ac45c29d02e2cbb6346b5cb47e2c2cc568880a2563501962c5234
+    - SKIP
+    - e53e067f2bedffc146c6b039db5e552c0dfa3f493fe6a9d159359dca25f9c46a
+    - SKIP
+    - 4d477c93a3ba3e826964c01b45adf3ce723cde5427bff3abb5d9cd5d5c96849e
+    - SKIP
+    - 5159504c0dea11fef4291509e2a4bde23f431ebcba6c3cb8be30cab773bd10a9
+    - SKIP
+    - 12f28eb7653a41094db3a673311ff4119a6e053a522d37a225fc6ff3018ba403
+    - SKIP
+    - d297119b75f8b3d48b1362ccc678502dd294897be1675ffd4a2c576100a81159
+    - SKIP
+    - fbba407efdbe41f215fc1af0615dd56081b5a9cc0aa5cd1135098b7455c46ee6
+    - SKIP
+    - 05443fb8061a96558eb3692c9a66f34a6f85a462ae0ae1955fcda5164fa1b108
+    - SKIP
+    - d5296775ab207493f4a01b304bc5f0c4a2958321e87959900adefc05d76bbd33
+    - SKIP
+    - 981111e1cca602bf370fc0ceb946c743f52a1916c606ea80cb95d019ba28ce09
+    - SKIP
+    - 8224a4550ebb6c2c68711456a1ea9f967ff158faf4fabd0545b455cea777a350
+    - SKIP
+    - 002335832b73b9fa1575459df7b1e30aafd60435a7fc147b6a155e9e4dc42cbc
+    - SKIP
+    - 1a25f41dcae98b4843cad68a0faf758fafe257b2b90b0623b598a9000a4d139d
+    - SKIP
+    - 26b7cbf4203c15fa29b4991e77deb51a1598c144be9452edf1a38cdd532d08ce
+    - SKIP
+    - bcd12682fdfc182e8b48744ca47cde3b0296c6ad91e726781735a3d754102ae7
+    - SKIP
+    - c5f7ee29393b7118cfc9c58f6f0c4d8e565b94f06560b41fd7948dab4130a698
+    - SKIP
+    - e6d28a633d38c65f5cf4b5de5756beb3e47216104cb3e4399b82e6f9e3fd6376
+    - SKIP
+    - 211deabc299ad7a0bceb7abb9d51ae39c4d70710f40af6e634bbc5cae63cbee5
+    - SKIP
+    - d07ac9185b94acdff09702c07cf2c77d57ce5e45aeabaa42638c3c01ed172954
+    - SKIP
+    - d5a8b21e0bca487c893951f1785ebd9f4b432185df14f68269c7697938ddfe94
+    - SKIP
+    - 2f8e4686ea714c3943744607cfe7ff8d528971bff4e2172d0240078f167a4d5d
+    - SKIP
+    - 4161508286115f77c38544230840955e01d5e1aca64963736c06b64f839877b8
+    - SKIP
+    - f0d929afe8a40ffe2df24e87c0308f55228badb67392b8b6d80bc8c5e4eaf451
+    - SKIP
+    - a280835fbd9fe0a7703ce2438130dec579e6e42e6ba1b8fd666ac0694ebe39d9
+    - SKIP
+    - bf9a4028076c213897680dec133c3050326b13c4d8df7300a1e3920f23d6041f
+    - SKIP
+    - 17c889b42a98ee8f4cd1f3d87497b2a0d3cd42107724948ee31ffede53c6f3ea
+    - SKIP
+    - 8c9fd736d4576c6a8e3e34c72172fc4d9a060c670870fa1c290259b4e8ee2089
+    - SKIP
+    - a7d7645c135f86eb93d4f1fbf839683513d7f269749ae8cd86165999fc3e6a70
+    - SKIP
+    - 201b0fb6c3bb71a0c3e5d48123010c1f081dd881c05c342babe88c59501e0ed6
+    - SKIP
+    - de1148d899ee6c92e80129febc5b093a513081bc870e800adc52934973463781
+    - SKIP
+    - 7297d61ec948c7e045c8d7d02b2875399cd621e7beae1f0661818310adc79f58
+    - SKIP
+    - c6f0cae1f4bc4e7e4ca19dcdc4f29a5b1b358be614497f6dbb899ff85c1fa172
+    - SKIP
+    - 73dc4f724223be8b220c5002d4e763d9b27dc57f3390980ed92e039ef3e17063
+    - SKIP
+    - 2b98bfd639e4fa2558af5e2b306cf29693a5114403e219bdc4d236953a88ec14
+    - SKIP
+    - cfa1a65bda9fbc5e924fa00524646080d292ba88b1210d822a213cebd9f927b0
+    - SKIP
+    - 8fb9bb9f36be834414bc26c773648a9e5c7cf408e841945e98959d793fb709c2
+    - SKIP
+    - da7f785ff3ab0d3030a7eb4e05a05609c5e8a72dde4a84da241aac1ab238df78
+    - SKIP
+    - 065ffe33847bc94574e2e0cdb78a6e3178ac5ffd66896a9d3dd23b57e4854fd4
+    - SKIP
+    - 0ac4ba9a14e37588874b7b28f27842de28325834989405843327b17e707d0257
+    - SKIP
+    - 06371f532565fd1d0778655f4a6addf2dd7e3a242e72a9405dd6c0ed7bd629e2
+    - SKIP
+    - 5c8d05f6c9c2ad6ff9f9235f3a2e72edf2dd947b2d9265919187b6cc873a3958
+    - SKIP
+    - 0d1b735ea19c8b8a2349c1872651209e3d67d42c3a05619f5b235f5aab31e9cb
+    - SKIP
+    - 66fa9a9dd60322b56ea38a545d673b45687dfcc4476a5bae77259547e01dc798
+    - SKIP
+    - 77d6257079d49e2579a13844918e1558df12a040f30eba64f17cd63819753ab0
+    - SKIP
+    - e1aec97abe19c688d9da0299bc3b016fee91625011c8dc29ced6a1beb29afeb7
+    - SKIP
+    - 5946792d571b9d0f8e24eea4c4536eb4fbde386933bb2cd0d2c173dc530da9e0
+    - SKIP
+    - c14d9b14de549d7cdc8a9de20886e49b2522248688a9b71bc4016eaca048b107
+    - SKIP
+    - 391c096eadf4d41761ac10d05e5fd1c26746cca4789540fbfe369f071fd7f78b
+    - SKIP
+    - 91af751d762851548f8a368642b0a2148cf2945e1030567fdbd48f6671e8b33f
+    - SKIP
+    - 4f1d385e6bfc7ccf620b44aff1f6349c72d6aa8370a8143dc9e89d6c87c01eba
+    - SKIP
+    - 3bcf53c41260f7ca3306aa5842ff69f6aa9164640b42993be7176991c6b2729f
+    - SKIP
+    - 711e70269bf94e87a03e4d4f780626ccc71cee422bcab5034b72eae48ebbac7c
+    - SKIP
+    - 2f71148aaa966f3ff96ae1b5fbf2e83409f081001cd0aaaf9c909c29c18bcb7b
+    - SKIP
+    - ca9fc25ce6452027d3747bc8d20a9b5375c0b1df1d4ae607ebf43a3c929d4c08
+    - SKIP
+    - d92b6e9affad7b1bf0e5bb4268d90ef2e3d3502aca16ed40ccd686f655566477
+    - SKIP
+    - d1cf3cf32f3c3f570226d0ea8807124da9827fe8461808dbc9cc86c6f1210af5
+    - SKIP
+    - 21a64e12073ef7633837936e8073b2ccba2a73d091aab19011900d07db6c2509
+    - SKIP
+    - 7d4d66cc4f495fcdc275179656d7fbf23e11d68019c4519dc1c3679e559ef594
+    - SKIP
+    - 78f5ee0769f2844c5125597d359ceadfe062ee09f37f971b0910f9c32131de79
+    - SKIP
+    - 7f81d20db3f442b3e2076e3b7aa05597a41c698bc2a7cc4e4d912fe92b8accf1
+    - SKIP
+    - 23c445a965d6970d7f61dc977f5bb9408e4f5bc9975947a6e0277670e9dc6b8d
+    - SKIP
+    - 8bb9c0162f051d07fdfdd82667c794799a09d5a11fda4d07c62cb6ff654b9b54
+    - SKIP
+    - 67fccb2f52feaa6ca89db85ddc1271457a35afcd102ce3663e0106b92a529961
+    - SKIP
+    - fc9db2304e89b7452e68dd627f030591086deb746bccfbb7b8a39c68f4b88e47
+    - SKIP
+    - c4b2e869c305e5d314bcb68437f975129fcf5db9b59bd23b883382b478b748c3
+    - SKIP
+    - 2311e1033e461a4714e4a69222467a5ad36dae172379c2c0caec40f2a0b1d45d
+    - SKIP
+    - 34596dc53cedfe075643b034ea0a6ea7c325a32192ebcca791c5055e4e851da3
+    - SKIP
+pkgname:
+  - name: libreoffice-fresh-af
+  - name: libreoffice-fresh-am
+  - name: libreoffice-fresh-ar
+  - name: libreoffice-fresh-as
+  - name: libreoffice-fresh-ast
+  - name: libreoffice-fresh-be
+  - name: libreoffice-fresh-bg
+  - name: libreoffice-fresh-bn-in
+  - name: libreoffice-fresh-bn
+  - name: libreoffice-fresh-bo
+  - name: libreoffice-fresh-br
+  - name: libreoffice-fresh-brx
+  - name: libreoffice-fresh-bs
+  - name: libreoffice-fresh-ca-valencia
+  - name: libreoffice-fresh-ca
+  - name: libreoffice-fresh-ckb
+  - name: libreoffice-fresh-cs
+  - name: libreoffice-fresh-cy
+  - name: libreoffice-fresh-da
+  - name: libreoffice-fresh-de
+  - name: libreoffice-fresh-dgo
+  - name: libreoffice-fresh-dsb
+  - name: libreoffice-fresh-dz
+  - name: libreoffice-fresh-el
+  - name: libreoffice-fresh-en-gb
+  - name: libreoffice-fresh-en-za
+  - name: libreoffice-fresh-eo
+  - name: libreoffice-fresh-es
+  - name: libreoffice-fresh-et
+  - name: libreoffice-fresh-eu
+  - name: libreoffice-fresh-fa
+  - name: libreoffice-fresh-fi
+  - name: libreoffice-fresh-fr
+  - name: libreoffice-fresh-fur
+  - name: libreoffice-fresh-fy
+  - name: libreoffice-fresh-ga
+  - name: libreoffice-fresh-gd
+  - name: libreoffice-fresh-gl
+  - name: libreoffice-fresh-gu
+  - name: libreoffice-fresh-gug
+  - name: libreoffice-fresh-he
+  - name: libreoffice-fresh-hi
+  - name: libreoffice-fresh-hr
+  - name: libreoffice-fresh-hsb
+  - name: libreoffice-fresh-hu
+  - name: libreoffice-fresh-id
+  - name: libreoffice-fresh-is
+  - name: libreoffice-fresh-it
+  - name: libreoffice-fresh-ja
+  - name: libreoffice-fresh-ka
+  - name: libreoffice-fresh-kab
+  - name: libreoffice-fresh-kk
+  - name: libreoffice-fresh-km
+  - name: libreoffice-fresh-kmr-latn
+  - name: libreoffice-fresh-kn
+  - name: libreoffice-fresh-ko
+  - name: libreoffice-fresh-kok
+  - name: libreoffice-fresh-ks
+  - name: libreoffice-fresh-lb
+  - name: libreoffice-fresh-lo
+  - name: libreoffice-fresh-lt
+  - name: libreoffice-fresh-lv
+  - name: libreoffice-fresh-mai
+  - name: libreoffice-fresh-mk
+  - name: libreoffice-fresh-ml
+  - name: libreoffice-fresh-mn
+  - name: libreoffice-fresh-mni
+  - name: libreoffice-fresh-mr
+  - name: libreoffice-fresh-my
+  - name: libreoffice-fresh-nb
+  - name: libreoffice-fresh-ne
+  - name: libreoffice-fresh-nl
+  - name: libreoffice-fresh-nn
+  - name: libreoffice-fresh-nr
+  - name: libreoffice-fresh-nso
+  - name: libreoffice-fresh-oc
+  - name: libreoffice-fresh-om
+  - name: libreoffice-fresh-or
+  - name: libreoffice-fresh-pa-in
+  - name: libreoffice-fresh-pl
+  - name: libreoffice-fresh-pt-br
+  - name: libreoffice-fresh-pt
+  - name: libreoffice-fresh-ro
+  - name: libreoffice-fresh-ru
+  - name: libreoffice-fresh-rw
+  - name: libreoffice-fresh-sa-in
+  - name: libreoffice-fresh-sat
+  - name: libreoffice-fresh-sd
+  - name: libreoffice-fresh-si
+  - name: libreoffice-fresh-sid
+  - name: libreoffice-fresh-sk
+  - name: libreoffice-fresh-sl
+  - name: libreoffice-fresh-sq
+  - name: libreoffice-fresh-sr-latn
+  - name: libreoffice-fresh-sr
+  - name: libreoffice-fresh-ss
+  - name: libreoffice-fresh-st
+  - name: libreoffice-fresh-sv
+  - name: libreoffice-fresh-sw-tz
+  - name: libreoffice-fresh-szl
+  - name: libreoffice-fresh-ta
+  - name: libreoffice-fresh-te
+  - name: libreoffice-fresh-tg
+  - name: libreoffice-fresh-th
+  - name: libreoffice-fresh-tn
+  - name: libreoffice-fresh-tr
+  - name: libreoffice-fresh-ts
+  - name: libreoffice-fresh-tt
+  - name: libreoffice-fresh-ug
+  - name: libreoffice-fresh-uk
+  - name: libreoffice-fresh-uz
+  - name: libreoffice-fresh-ve
+  - name: libreoffice-fresh-vec
+  - name: libreoffice-fresh-vi
+  - name: libreoffice-fresh-xh
+  - name: libreoffice-fresh-zh-cn
+  - name: libreoffice-fresh-zh-tw
+  - name: libreoffice-fresh-zu
+# generated with artixpkg 0.36.3-1-any
