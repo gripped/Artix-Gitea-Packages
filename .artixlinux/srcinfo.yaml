@@ -1,10 +1,10 @@
 ---
-version: 0.21.4-1
+version: 0.21.4-1.1
 pkgbase:
   name: eza
   pkgdesc: A modern replacement for ls (community fork of exa)
   pkgver: 0.21.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/eza-community/eza
   arch:
     - x86_64

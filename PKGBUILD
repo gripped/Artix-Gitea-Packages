@@ -4,7 +4,7 @@
 
 pkgname=eza
 pkgver=0.21.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A modern replacement for ls (community fork of exa)"
 url="https://github.com/eza-community/eza"
 arch=(x86_64)
