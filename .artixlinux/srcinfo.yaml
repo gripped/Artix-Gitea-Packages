@@ -1,10 +1,10 @@
 ---
-version: 6.9.0-2
+version: 6.9.1-1
 pkgbase:
   name: pyqt6
   pkgdesc: A set of Python bindings for the Qt6 toolkit
-  pkgver: 6.9.0
-  pkgrel: 2
+  pkgver: 6.9.1
+  pkgrel: 1
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
     - x86_64
@@ -58,9 +58,9 @@ pkgbase:
   provides:
     - qt6-python-bindings
   source:
-    - https://pypi.python.org/packages/source/P/PyQt6/pyqt6-6.9.0.tar.gz
+    - https://pypi.python.org/packages/source/P/PyQt6/pyqt6-6.9.1.tar.gz
   sha256sums:
-    - 6a8ff8e3cd18311bb7d937f7d741e787040ae7ff47ce751c28a94c5cddc1b4e6
+    - 50642be03fb40f1c2111a09a1f5a0f79813e039c15e78267e6faaf8a96c1c3a6
 pkgname:
   - name: python-pyqt6
 # generated with artixpkg 0.36.2-1-any
