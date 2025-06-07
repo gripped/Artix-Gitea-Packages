@@ -1,0 +1,48 @@
+---
+version: 1.5.5-1
+pkgbase:
+  name: xdp-tools
+  pkgdesc: Utilities and example programs for use with XDP
+  pkgver: 1.5.5
+  pkgrel: 1
+  url: https://github.com/xdp-project/xdp-tools
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - LGPL
+    - BSD2
+  makedepends:
+    - clang
+    - llvm
+    - gcc
+    - make
+    - m4
+    - pkgconfig
+    - libpcap
+    - zlib
+    - bpf
+  depends:
+    - libelf
+    - linux-api-headers
+    - libbpf
+  options:
+    - '!lto'
+  source:
+    - xdp-tools-1.5.5.tar.gz::https://github.com/xdp-project/xdp-tools/archive/refs/tags/v1.5.5.tar.gz
+  sha512sums:
+    - d5bdf6e7398fde5144aec0c18bff8d0f3d2f00890106cfbc6446322a093ccbddd740a7769153f2a3caca9a1b4d8e3f3b05c218fc049d7cf6195de48a140930e9
+  b2sums:
+    - b8e7227b827f4783442e1d111902c1de8f8884e2168bb056ee2eff897f31add90d174b9904f8f03e0375059c3ddebeda52513019ee5071a94572795298b02530
+pkgname:
+  - name: xdp-tools
+    pkgdesc: Utilities and example programs for use with XDP
+    depends:
+      - libxdp
+      - libpcap.so
+      - libbpf
+  - name: libxdp
+    pkgdesc: The libxdp package contains the libxdp library for managing XDP programs
+    provides:
+      - libxdp.so
+# generated with artixpkg 0.36.2-1-any
