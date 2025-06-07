@@ -1,7 +1,7 @@
 # Maintainer: Jonas Witschel <diabonas@archlinux.org>
 pkgname=tang
 pkgver=15
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='Server for binding data to network presence'
 arch=('x86_64')
 url='https://github.com/latchset/tang'

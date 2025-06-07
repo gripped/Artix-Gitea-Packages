@@ -1,10 +1,10 @@
 ---
-version: 15-2.1
+version: 15-2.2
 pkgbase:
   name: tang
   pkgdesc: Server for binding data to network presence
   pkgver: 15
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://github.com/latchset/tang
   arch:
     - x86_64
