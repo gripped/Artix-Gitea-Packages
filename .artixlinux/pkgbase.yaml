@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.3.0-2
+    packages:
+      - wxwidgets-common-3.3.0-2-x86_64.pkg.tar.zst
+      - wxwidgets-gtk3-3.3.0-2-x86_64.pkg.tar.zst
+      - wxwidgets-qt-3.3.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

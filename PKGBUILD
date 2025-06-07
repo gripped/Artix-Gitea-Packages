@@ -7,7 +7,7 @@ pkgname=(wxwidgets-common
 #        wxwidgets-gtk4 - doesn't build
          wxwidgets-qt)
 pkgver=3.3.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://wxwidgets.org'
 license=(custom:wxWindows)
@@ -55,7 +55,8 @@ build() {
     -DwxUSE_LIBLZMA=sys \
     -DwxUSE_NANOSVG=sys \
     -DwxUSE_LIBMSPACK=ON \
-    -DwxUSE_PRIVATE_FONTS=ON
+    -DwxUSE_PRIVATE_FONTS=ON \
+    -DwxUSE_STD_STRING_CONV_IN_WXSTRING=ON
   cmake --build build-base
 
   cmake -B build-gtk3 -S wxWidgets \
@@ -73,7 +74,8 @@ build() {
     -DwxUSE_NANOSVG=sys \
     -DwxUSE_LIBMSPACK=ON \
     -DwxUSE_PRIVATE_FONTS=ON \
-    -DwxUSE_GTKPRINT=ON
+    -DwxUSE_GTKPRINT=ON \
+    -DwxUSE_STD_STRING_CONV_IN_WXSTRING=ON
   cmake --build build-gtk3
 
 #   cmake -B build-gtk4 -S wxWidgets \
@@ -108,13 +110,9 @@ build() {
     -DwxUSE_LIBLZMA=sys \
     -DwxUSE_NANOSVG=sys \
     -DwxUSE_LIBMSPACK=ON \
-    -DwxUSE_PRIVATE_FONTS=ON
+    -DwxUSE_PRIVATE_FONTS=ON \
+    -DwxUSE_STD_STRING_CONV_IN_WXSTRING=ON
   cmake --build build-qt
-
-# Run configure to generate the Makefile, cmake doesn't install translations
-  cd wxWidgets
-  ./configure --prefix=/usr --disable-tests
-  make -C locale allmo
 }
 
 package_wxwidgets-common() {
