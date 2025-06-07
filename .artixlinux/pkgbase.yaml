@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.15.0-1
+    version: 5.15.2-1
     packages:
-      - telegram-desktop-5.15.0-1-x86_64.pkg.tar.zst
+      - telegram-desktop-5.15.2-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
