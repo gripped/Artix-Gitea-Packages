@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.12.9-1
+    version: 3.12.11-1.1
     packages:
-      - python-aiohttp-3.12.9-1-x86_64.pkg.tar.zst
+      - python-aiohttp-3.12.11-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.12.11-1
