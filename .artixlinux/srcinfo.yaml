@@ -1,0 +1,36 @@
+---
+version: 0.13.0-1
+pkgbase:
+  name: ruby-async-service
+  pkgdesc: A service layer for Async
+  pkgver: 0.13.0
+  pkgrel: 1
+  url: https://github.com/socketry/async-service
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-async-container
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/async-service/archive/v0.13.0/ruby-async-service-0.13.0.tar.gz
+  sha512sums:
+    - c95838f4bedfb61e13e40e88364feef0a1f632a0461933f8b6035bd52d2825419c6a273d5de450431ef18b2b5d4f6f84b6852ddc32883e15f2184ac16e2bc4e1
+  b2sums:
+    - 704a27bd4b519cef74671d9bba220af0a172ea289d2ff190c6661f6f8b75bf73e797cf8f0ac7a85287f9efdc235421324cd59385294e235f88aeace37b7c5561
+pkgname:
+  - name: ruby-async-service
+# generated with artixpkg 0.36.3-1-any
