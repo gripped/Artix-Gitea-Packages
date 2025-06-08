@@ -1,0 +1,47 @@
+---
+version: 3.13.4-1
+pkgbase:
+  name: ruby-rspec-support
+  pkgdesc: Common code needed by the other RSpec gems. Not intended for direct use
+  pkgver: 3.13.4
+  pkgrel: 1
+  url: https://github.com/rspec/rspec
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bigdecimal
+    - ruby-bundler
+    - ruby-childprocess
+    - ruby-diff-lcs
+    - ruby-drb
+    - ruby-ffi
+    - ruby-minitest
+    - ruby-mutex_m
+    - ruby-rake
+    - ruby-rspec
+    - ruby-rspec-core
+    - ruby-rspec-expectations
+    - ruby-rspec-mocks
+    - ruby-test-unit
+    - ruby-thread_order
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-rspec-support::git+https://github.com/rspec/rspec#tag=rspec-support-v3.13.4
+    - ruby-rspec-support_no_version_constraints.patch
+  sha512sums:
+    - cded0d911b0d183a61885f37de3da8451efcac205165634e353e7ecb74b0342a84a8d6680ef9de835adc5d1925696082d20ed14d80177518b9fc449765e9ccdd
+    - fc4017b614df31190e13800c7491dbf64997f1752b575c6e6aea2aca3ff8762a121f2e324f8c77fac3f63a3e9acb3f0f34b2a8831df9f44fa54efcaaaaace993
+  b2sums:
+    - c275d2936f7488064419e8b5e926b0a78d18eefba58e37587ec8a3d35e9700cd614d6bae075ac975a8001c79697666654774155ebe6d45c5989d1a2b15a3b2e2
+    - 4cc52da007104b31a7173801de625bbc88e19648d25a7b3d9da72267dede0af5210b9b1b2b47d8073eb3f927cf97d7eda0ae94772d3491a0835c3e9c1c831386
+pkgname:
+  - name: ruby-rspec-support
+# generated with artixpkg 0.36.3-1-any
