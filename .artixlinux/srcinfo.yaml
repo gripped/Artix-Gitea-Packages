@@ -1,0 +1,39 @@
+---
+version: 1.31.0-1
+pkgbase:
+  name: ruby-console
+  pkgdesc: Beautiful logging for Ruby
+  pkgver: 1.31.0
+  pkgrel: 1
+  url: https://github.com/socketry/console
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+    - ruby-sus-fixtures-console
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-fiber-annotation
+    - ruby-fiber-local
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/socketry/console.git#tag=v1.31.0
+  sha512sums:
+    - 3a6f89a395ff6d61f911004d081dd85669d7bf894f4ff55a07c7dd02667af25e74b195ecc3d90cab92ba025d7baef838e6f8fa85fc263ee57a73686dc0a0fd43
+  b2sums:
+    - 2ec5be3d705f371e751f025479068e73dd10e69d1d44b2937c5293da368d06a6602cbfd5044bf355c94fc60738b6d25f5125a0fa2cf38e04497eca6fbe5cd5f6
+pkgname:
+  - name: ruby-console
+# generated with artixpkg 0.36.3-1-any
