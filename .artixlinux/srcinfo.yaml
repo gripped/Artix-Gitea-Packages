@@ -1,0 +1,52 @@
+---
+version: 0.51.1-1
+pkgbase:
+  name: ruby-falcon
+  pkgdesc: A fast, asynchronous, rack-compatible web server
+  pkgver: 0.51.1
+  pkgrel: 1
+  url: https://github.com/socketry/falcon
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-async-process
+    - ruby-async-websocket
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-covered
+    - ruby-decode
+    - ruby-puma
+    - ruby-rackup
+    - ruby-sus
+    - ruby-sus-fixtures-async
+    - ruby-sus-fixtures-async-http
+    - ruby-sus-fixtures-openssl
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-async
+    - ruby-async-container
+    - ruby-async-container-supervisor
+    - ruby-async-http
+    - ruby-async-http-cache
+    - ruby-async-service
+    - ruby-bundler
+    - ruby-localhost
+    - ruby-protocol-http
+    - ruby-protocol-rack
+    - ruby-samovar
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/falcon/archive/v0.51.1/ruby-falcon-0.51.1.tar.gz
+  sha512sums:
+    - 2951d3d79819a5cbf04cfe5a540e31a99f8e30fe96f587ac187e689c78cceb934840961d8b18e73774e0cc3ef4998f5e31403eeaf5958eefa2b8ae8754269a7c
+  b2sums:
+    - ed7542908463915682769edc7630ee3bcf69c1dc4205e9b044a10b25624ceab74c13c4d5c99878c477e5441cc9d9b37e60c7c253cb9a56564924f2732f21256b
+pkgname:
+  - name: ruby-falcon
+# generated with artixpkg 0.36.3-1-any
