@@ -4,7 +4,7 @@
 
 pkgname=openrct2
 pkgver=0.4.23
-pkgrel=0
+pkgrel=1
 pkgdesc='Open source re-implementation of Roller Coaster Tycoon 2 (requires full copy of the game)'
 arch=('x86_64')
 url='https://openrct2.io'
@@ -38,7 +38,7 @@ build() {
   export CXXFLAGS+=" -Wno-error=maybe-uninitialized  -Wno-error=restrict  -Wno-error=null-dereference"
   cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr \
     -DSTATIC=off -DWITH_TESTS=on -DCMAKE_INSTALL_LIBDIR=/usr/lib ..
-  make all graphics
+  make all
 }
 
 check() {
