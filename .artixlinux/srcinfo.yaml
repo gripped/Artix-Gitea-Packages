@@ -1,9 +1,9 @@
 ---
-version: 2.2.6-1
+version: 2.3.0-1
 pkgbase:
   name: python-numpy
   pkgdesc: Scientific tools for Python
-  pkgver: 2.2.6
+  pkgver: 2.3.0
   pkgrel: 1
   url: https://www.numpy.org/
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   optdepends:
     - 'blas-openblas: faster linear algebra'
   source:
-    - https://github.com/numpy/numpy/releases/download/v2.2.6/numpy-2.2.6.tar.gz
+    - https://github.com/numpy/numpy/releases/download/v2.3.0/numpy-2.3.0.tar.gz
   sha512sums:
-    - 00c82476c6cc8e68c4cd3210896172d91bdb52a46676931d173a3bbd772b29cebc8e819dfbbaf621eba9225fff3fa3f81426fe864d8812de4ff2975e7ac5c338
+    - d3fdae873fc50a692135045ee7fb542b0206ff167ffbe575a975ace4786b2a2f2d4b52034de3f61653feddffb5a850f5b2a499a32ec5214c0872c20b319d4d65
 pkgname:
   - name: python-numpy
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
