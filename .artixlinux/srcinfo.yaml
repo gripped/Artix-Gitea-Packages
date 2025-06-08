@@ -54,4 +54,4 @@ pkgbase:
     - 2985d371fddf3d8fa57c75584419b3307adf7d0048989418028ff0c48e17cfb2
 pkgname:
   - name: python-xarray
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-1-any
