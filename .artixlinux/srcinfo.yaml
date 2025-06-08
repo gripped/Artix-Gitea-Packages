@@ -1,0 +1,37 @@
+---
+version: 3.17.0.5-1
+pkgbase:
+  name: ruby-language_server-protocol
+  pkgdesc: A Language Server Protocol SDK
+  pkgver: 3.17.0.5
+  pkgrel: 1
+  url: https://github.com/mtsmfm/language_server-protocol-ruby
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-activesupport
+    - ruby-benchmark-ips
+    - ruby-bundler
+    - ruby-m
+    - ruby-minitest
+    - ruby-minitest-power_assert
+    - ruby-pry-byebug
+    - ruby-rake
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/mtsmfm/language_server-protocol-ruby#tag=v3.17.0.5
+  sha512sums:
+    - a3ff433000358e0a901154ee05522b20cb0bd0d256b305a2fe195b13a9826f389bf8eb45d12a402626d31a2df7917689e62fe8b0393dd7b46047adc71e0ef021
+  b2sums:
+    - 636554d9cbace543efc49b56b6d68be2e69e560b7c1e3c97d94d53b02b2279376f29e3d66999f113a73a491bb2061785ad53c99bce783af030249fafc6fefd5e
+pkgname:
+  - name: ruby-language_server-protocol
+# generated with artixpkg 0.36.3-1-any
