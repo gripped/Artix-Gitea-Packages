@@ -1,9 +1,9 @@
 ---
-version: 6.12.30-1
+version: 6.12.32-1
 pkgbase:
   name: linux-lts
   pkgdesc: LTS Linux
-  pkgver: 6.12.30
+  pkgver: 6.12.32
   pkgrel: 1
   url: https://www.kernel.org
   arch:
@@ -27,32 +27,29 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.30.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.30.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.32.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.32.tar.sign
     - 0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
     - 0002-Default-to-maximum-amount-of-ASLR-bits.patch
     - 0003-skip-simpledrm-if-nvidia-drm.modeset=1-is.patch
     - config
-    - 0001-loop-don-t-require-write_iter-for-writable-files-in-loop_configure.patch
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - df046a48971e40ce0b2e003e7e55b6b1e7da2912120eb216d5d6c8450c9cf82e
+    - a9b020721778384507010177d3929e7d4058f7f6120f05a99d56b5c5c0346a70
     - SKIP
     - 3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c
     - 423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e
     - 596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1
-    - da0494ea82ced0c5c87069218855953215b0de99af03f0df187d06cdb086a67e
-    - 8b15224f39036ef6f9d418d62ad5e7db4639496c597564c1ca7be6faed6e237f
+    - 5b772a048a05beb2ad72660a2a16d9de14e6a1202e70ada46583fa9ad7617267
   b2sums:
-    - 33f06b0cf1d1872442139bf8ebd0e6b782034bb9dd4cb897388eed2283a79019ab1d37362648afc3816dcec20922898b44ba5b344210bf4964569149a54bca1e
+    - 21142861062d4d5f5dca4db5b8c7f40c613157727ace43be55091f2f4b11cdb0b47de0f33a36814831591fde160b90953d53b1ee9046f27c82fceb7f6f3af4c4
     - SKIP
     - b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918
     - 01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5
     - 410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea
-    - e5e907823919cc602c693a53166c3b06fc9d2a7fe84ec7cda82c71cf09b9422133e46ae1fbd644299924da829ff54851c0cfc7257ac4b4715ff236f2b5752ff9
-    - d2e3cf50febe9f61fb52716529e0796533a2a5fe517393c020b4be9a46d0911c06aa68f74e570075cb17254120d9bcfaaf9cbf7836b88eb21a9f4d71d95ea5a5
+    - 0516d879cc254b43d69b00a95fd2989fdf900140541096d5656c217c45099cf0034393a48f2da47ade940ef7cca7efa0a1d88116a4afe66ad86d626360341226
 pkgname:
   - name: linux-lts
     pkgdesc: The LTS Linux kernel and modules
@@ -169,4 +166,4 @@ pkgname:
       - GPL-2.0-or-later OR X11
       - LGPL-2.1-only OR BSD-2-Clause
       - MIT
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.36.3-1-any
