@@ -1,0 +1,34 @@
+---
+version: 0.1.11-1
+pkgbase:
+  name: ruby-repl_type_completor
+  pkgdesc: Type based completion for REPL
+  pkgver: 0.1.11
+  pkgrel: 1
+  url: https://github.com/ruby/repl_type_completor
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-abbrev
+    - ruby-bundler
+    - ruby-rake
+    - ruby-test-unit
+    - ruby-test-unit-ruby-core
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-rbs
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/ruby/repl_type_completor/archive/v0.1.11/ruby-repl_type_completor-0.1.11.tar.gz
+  sha512sums:
+    - 380e5d45024c80ad616446a194f75760da843fbcd8344adc15e368d666c468f76531875639dcb779fc97367c7904c586ea55ecb020c9beba746073880733b70f
+  b2sums:
+    - 88ed128ce5284d1d8c4d4f2eb5c1fd0511960b90c64c80d983a73c155185a6727143d35bd7e2d92b7066d332bbeb92a99494c20a835441c326a597660d4a3f9b
+pkgname:
+  - name: ruby-repl_type_completor
+# generated with artixpkg 0.36.3-1-any
