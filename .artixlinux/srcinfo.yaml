@@ -1,0 +1,41 @@
+---
+version: 1.18.8-1
+pkgbase:
+  name: ruby-nokogiri
+  pkgdesc: Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
+  pkgver: 1.18.8
+  pkgrel: 1
+  url: https://nokogiri.org
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-minitest
+    - ruby-rake
+    - ruby-rake-compiler
+    - ruby-rake-compiler-dock
+    - ruby-rubyzip
+    - ruby-simplecov
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - libxslt
+    - ruby
+    - ruby-mini_portile2
+    - ruby-racc
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/sparklemotion/nokogiri/archive/v1.18.8/ruby-nokogiri-1.18.8.tar.gz
+    - https://github.com/sparklemotion/nokogiri/commit/af5b1b0590e2f365763d1801a4a5106198b47a53.patch
+  sha512sums:
+    - cefec463825c7664dc81b8668d8bf18a9fa4b659dbece0d1251c913eeccac1c762fb30fdd183e8fdd4a3da89e8cfa1bf828a1d9b11809c6f8c61fd4efa990306
+    - 3ca191db16e283e485fa1f8541834229b97a956b77ea300fcef1c0149f11174e4f9e34424ec67a8eb3f7818d8fe6e52adfb23c8fcf072f417d269ae03a5211c0
+  b2sums:
+    - 5ff4eac2aba046114be84791a3aafc436558ea52cd537d5ae58b259d30686ac4e6306d7f691a8bd3e6c328b90c03d925ef6f0e6d9e58c148f936e9691fae838b
+    - 268936f19c3bbcc672e408e0488cee14f10609824fd879b7adf0f93ffcf7588c8201820b0913d056d80cfd83a006c54faa2e4a1fba34795555a66afa97ec1e64
+pkgname:
+  - name: ruby-nokogiri
+# generated with artixpkg 0.36.3-1-any
