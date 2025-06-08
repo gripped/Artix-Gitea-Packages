@@ -1,0 +1,34 @@
+---
+version: 25.1.0-1
+pkgbase:
+  name: python-pyopenssl
+  pkgdesc: Python wrapper around the OpenSSL library
+  pkgver: 25.1.0
+  pkgrel: 1
+  url: https://pyopenssl.org/
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-pretend
+    - python-pytest-rerunfailures
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-cryptography
+  source:
+    - python-pyopenssl::git+https://github.com/pyca/pyopenssl#tag=25.1.0
+  sha512sums:
+    - f60abe6ac67eb37b0c30957719d2d2b97cf34faaaaacdd0067c699a8ae56b1836776b40f92799ab2ebabe085e298b9fbb44a9dfda76e3ebb89bc905a91f10de8
+  b2sums:
+    - bbb6144ab8ea63ea321dbb07d496192ae60294d576350fe4a37a7e134529a46d123b51872babe1b335fdc409aa08202f6d87f9589c8bc924fa60f234fa0aa7ea
+pkgname:
+  - name: python-pyopenssl
+# generated with artixpkg 0.36.3-1-any
