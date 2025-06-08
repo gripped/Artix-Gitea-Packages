@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,6 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
     version: 28.0-2
     packages:
       - erlang-28.0-2-x86_64.pkg.tar.zst
@@ -57,10 +61,6 @@ repos:
       - erlang-tools-28.0-2-x86_64.pkg.tar.zst
       - erlang-wx-28.0-2-x86_64.pkg.tar.zst
       - erlang-xmerl-28.0-2-x86_64.pkg.tar.zst
-    debug: []
-  world-gremlins:
-    version: null
-    packages: []
     debug: []
   world:
     version: 27.3.4-1
