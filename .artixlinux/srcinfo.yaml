@@ -1,0 +1,37 @@
+---
+version: 1.8.2-1
+pkgbase:
+  name: python-poetry-dynamic-versioning
+  pkgdesc: Plugin for Poetry to enable dynamic versioning based on VCS tags
+  pkgver: 1.8.2
+  pkgrel: 1
+  url: https://github.com/mtkennerly/poetry-dynamic-versioning
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-dunamai
+    - python-tomlkit
+    - python-jinja
+    - python-poetry
+    - python-cleo
+    - python-poetry-core
+    - python-packaging
+  source:
+    - python-poetry-dynamic-versioning::git+https://github.com/mtkennerly/poetry-dynamic-versioning#tag=v1.8.2
+  sha512sums:
+    - 894ae0e5cf0449da330b96450f821b4eb414add641b46e7b98e0c3869aaab94dc8fc1b74fe73a20f144648f8e04c9546561b9fea5808c483798b3ca71d0253c0
+  b2sums:
+    - 4e3306f2b192f0fcc518dfd50e1662c1600d25c260229335e3ccccd3edd45f2a23454140ca31b4ab3401b2fdd2e9707b33c52dbc0bd3d6dfda772ec8cecb6a1f
+pkgname:
+  - name: python-poetry-dynamic-versioning
+# generated with artixpkg 0.36.3-1-any
