@@ -1,9 +1,9 @@
 ---
-version: 25.1.0-1
+version: 25.1.1-1
 pkgbase:
   name: python-cattrs
   pkgdesc: Complex custom class converters for attrs
-  pkgver: 25.1.0
+  pkgver: 25.1.1
   pkgrel: 1
   url: https://catt.rs
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - python
     - python-attrs
   source:
-    - https://files.pythonhosted.org/packages/source/c/cattrs/cattrs-25.1.0.tar.gz
+    - https://files.pythonhosted.org/packages/source/c/cattrs/cattrs-25.1.1.tar.gz
   sha256sums:
-    - 3bf01e9592b38a49bdae47a26385583f000c98862d0efcda2c03a508b02b95b8
+    - c914b734e0f2d59e5b720d145ee010f1fd9a13ee93900922a2f3f9d593b8382c
 pkgname:
   - name: python-cattrs
 # generated with artixpkg 0.36.3-1-any
