@@ -1,0 +1,54 @@
+---
+version: 6.4-1
+pkgbase:
+  name: lxd
+  pkgdesc: Daemon based on liblxc offering a REST API to manage containers
+  pkgver: 6.4
+  pkgrel: 1
+  url: https://ubuntu.com/lxd
+  arch:
+    - x86_64
+  license:
+    - AGPL-3.0-only
+  makedepends:
+    - go
+    - git
+    - tcl
+    - apparmor
+    - libseccomp
+    - udev
+  depends:
+    - lxc
+    - lxcfs
+    - squashfs-tools
+    - dnsmasq
+    - dqlite
+    - libuv
+    - ebtables
+    - sqlite
+    - libcap
+    - acl
+  optdepends:
+    - 'lvm2: lvm2 support'
+    - 'thin-provisioning-tools: thin provisioning support'
+    - 'btrfs-progs: btrfs storage driver support'
+    - 'minio: storage buckets support'
+    - 'cdrtools: VM support'
+    - 'qemu: VM support'
+    - 'edk2-ovmf: VM support'
+    - 'libudev: unix device hotplug support'
+    - 'apparmor: apparmor support'
+  source:
+    - https://github.com/canonical/lxd/releases/download/lxd-6.4/lxd-6.4.tar.gz
+    - https://github.com/canonical/lxd/releases/download/lxd-6.4/lxd-6.4.tar.gz.asc
+    - lxd.sysusers
+  validpgpkeys:
+    - 602F567663E593BCBD14F338C638974D64792D67
+    - ED1CA1E7A6F80E22E5CB2DA84ACE106615754614
+  sha256sums:
+    - 69fb7aead2325c7a5eede6dcb1a943a0f6544892929e6ae394729582abdd9aa7
+    - SKIP
+    - d0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4
+pkgname:
+  - name: lxd
+# generated with artixpkg 0.36.3-1-any
