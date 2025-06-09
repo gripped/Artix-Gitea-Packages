@@ -1,9 +1,9 @@
 ---
-version: 9.0.1-1
+version: 9.0.2-1
 pkgbase:
   name: python-elasticsearch
   pkgdesc: Official Python client for Elasticsearch
-  pkgver: 9.0.1
+  pkgver: 9.0.2
   pkgrel: 1
   url: https://github.com/elastic/elasticsearch-py
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - 'python-pyarrow: support for Arrow deserialization'
     - 'python-requests: support for synchronous requests'
   source:
-    - python-elasticsearch-9.0.1.tar.gz::https://github.com/elastic/elasticsearch-py/archive/v9.0.1.tar.gz
+    - python-elasticsearch-9.0.2.tar.gz::https://github.com/elastic/elasticsearch-py/archive/v9.0.2.tar.gz
   sha256sums:
-    - 35accbdafdb34619655c0f226d99edb3080675735b4dc9ff6b96ee1602dfda64
+    - 5a26e4d928d448f086d00b591a58bb30832da802022d2e00d40bc0fbd54575d3
 pkgname:
   - name: python-elasticsearch
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.3-2-any
