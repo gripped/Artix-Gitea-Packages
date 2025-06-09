@@ -1,14 +1,15 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=fvwm3
-pkgver=1.1.2
-pkgrel=1.1
+pkgver=1.1.3
+pkgrel=1
 pkgdesc="A highly customizable virtual desktop window manager with small memory footprint."
 arch=('x86_64')
 url="https://www.fvwm.org"
 license=('GPL' 'custom')
-depends=('libevent' 'libx11' 'libxft' 'libxrender' 'libxt' 'python' 'libxrandr' 'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
-makedepends=('meson' 'cmake' 'go' 'xtrans' 'librsvg' 'libxcursor' 'libxpm' 'asciidoctor')
+depends=('libevent' 'libx11' 'libxft' 'libxrender' 'libxt' 'python' 'libxrandr' 'libxpm'
+         'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
+makedepends=('meson' 'cmake' 'go' 'xtrans' 'librsvg' 'libxcursor' 'asciidoctor')
 optdepends=('freetype2: Font rasterization library'
             'asciidoctor: An implementation of AsciiDoc in Ruby'
             'fribidi: A Free Implementation of the Unicode Bidirectional Algorithm'
@@ -25,7 +26,7 @@ optdepends=('freetype2: Font rasterization library'
 options=('!emptydirs' '!makeflags')
 source=("https://github.com/fvwmorg/${pkgname}/archive/refs/tags/${pkgver}.tar.gz"
         "fvwm3.desktop")
-sha256sums=('6843ff7320d1890dc4757ac7e83c6b4ac18d95a846111ad68d01b463c539bd2c'
+sha256sums=('60080776f3eac070c6b2bc8504fde7d9bad9531bf0bc32755871fdf4cd86f134'
             'e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db')
 
 build() {
