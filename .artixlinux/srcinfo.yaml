@@ -1,0 +1,36 @@
+---
+version: 1.98.0-1
+pkgbase:
+  name: python-aws-sam-translator
+  pkgdesc: AWS Serverless Application Model (AWS SAM) prescribes rules for expressing Serverless applications on AWS
+  pkgver: 1.98.0
+  pkgrel: 1
+  url: https://github.com/aws/serverless-application-model
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-parameterized
+    - python-pytest
+    - python-pytest-rerunfailures
+    - python-yaml
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-boto3
+    - python-botocore
+    - python-jsonschema
+    - python-pydantic
+    - python-typing_extensions
+  source:
+    - https://github.com/aws/serverless-application-model/archive/v1.98.0/python-aws-sam-translator-1.98.0.tar.gz
+  sha256sums:
+    - 84c1e6c25759f1881c131a3d1d9a384d7cb1cf1d2f4c08405d0645857de1c9f0
+pkgname:
+  - name: python-aws-sam-translator
+# generated with artixpkg 0.36.3-2-any
