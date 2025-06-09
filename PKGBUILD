@@ -10,7 +10,7 @@ pkgname=(
   audacity-docs
 )
 pkgver=3.7.3
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="A program that lets you manipulate digital audio waveforms"
 arch=(x86_64)
@@ -98,7 +98,7 @@ build() {
   )
 
   export VST3SDK='/usr/src/vst3sdk'
-  export CFLAGS+=" -DNDEBUG"
+  export CFLAGS+=" -DNDEBUG -std=gnu17"
   export CXXFLAGS+=" -DNDEBUG"
   cmake "${cmake_options[@]}"
   cmake --build build --verbose
