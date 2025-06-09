@@ -1,9 +1,9 @@
 ---
-version: 20.1.6-2
+version: 20.1.6-3
 pkgbase:
   name: llvm
   pkgver: 20.1.6
-  pkgrel: 2
+  pkgrel: 3
   url: https://llvm.org/
   arch:
     - x86_64
@@ -58,9 +58,8 @@ pkgname:
       - libffi
       - libedit
       - libxml2
-      - llvm19-libs
     provides:
       - libLLVM.so
       - libLTO.so
       - libRemarks.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
