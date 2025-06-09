@@ -1,10 +1,10 @@
 ---
-version: 0.36.3-1
+version: 0.36.3-2
 pkgbase:
   name: artools
   pkgdesc: Development tools for Artix
   pkgver: 0.36.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/artools
   arch:
     - any
