@@ -1,9 +1,9 @@
 ---
-version: 1:28.2.0-1
+version: 1:28.2.2-1
 pkgbase:
   name: docker
   pkgdesc: Pack, ship and run any application as a lightweight container
-  pkgver: 28.2.0
+  pkgver: 28.2.2
   pkgrel: 1
   epoch: 1
   url: https://www.docker.com/
@@ -37,15 +37,15 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/docker/cli.git#tag=v28.2.0
-    - git+https://github.com/moby/moby.git#tag=v28.2.0
+    - git+https://github.com/docker/cli.git#tag=v28.2.2
+    - git+https://github.com/moby/moby.git#tag=v28.2.2
     - git+https://github.com/krallin/tini.git#commit=de40ad007797e0dcd8b7126f27bb87401d224240
     - docker.sysusers
   sha256sums:
-    - 9ed95dfaa6c61ff6c89c15a9df257fbc8774861ca2a95ec12709f5e26125a1f1
-    - 604c5a69b8fe2a86e390c0cc8a9987b56ec129100d8fdd422f0ee7ca12b3ee35
+    - 1b6bbe11f949ac912f26ead851e185e1ab5faa87ac37db77e079557d2b7921b1
+    - d2c70ad584b1f4e0ab924607589b3273ad23cfa976fef6890b38a1a7200e354b
     - 28a6641d508f60d47315efb3c85d97360188750a45bd6d3c8737d3f1a2b44121
     - 541826011a9836d05a2f42293d5f1beadf2ca8d89fb604487d61a013505678eb
 pkgname:
   - name: docker
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
