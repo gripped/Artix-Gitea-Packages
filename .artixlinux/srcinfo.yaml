@@ -1,0 +1,41 @@
+---
+version: 2.32.4-1
+pkgbase:
+  name: python-requests
+  pkgdesc: Python HTTP for Humans
+  pkgver: 2.32.4
+  pkgrel: 1
+  url: https://requests.readthedocs.io/
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pysocks
+    - python-pytest-httpbin
+    - python-trustme
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - ca-certificates
+    - python-charset-normalizer
+    - python-idna
+    - python-urllib3
+  optdepends:
+    - 'python-chardet: alternative character encoding library'
+    - 'python-pysocks: SOCKS proxy support'
+  source:
+    - git+https://github.com/psf/requests.git#tag=v2.32.4
+    - certs.patch
+  validpgpkeys:
+    - 87227E29AD9CFF5CFAC3EA6A44D3FF97B80DC864
+  b2sums:
+    - 2e6c1041b82f89a53896fb43ca7eaa9594336a4cd0c1abc3b244df5ac3ef4b3ebf19a1cb6badac93d53c7b6cfe238bb6b53438e02f1e4cd0054dad2e4fb0490b
+    - 30fc6f283f2416318a1011bffab1ee23b0551188704eeacac77b28f5709f42fc33755a14a2eeb3ba2dccb2904a97a87021cff1423fe9149c78f2b9560998308d
+pkgname:
+  - name: python-requests
+# generated with artixpkg 0.36.3-2-any
