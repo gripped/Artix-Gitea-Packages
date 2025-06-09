@@ -13,8 +13,8 @@
 # Contributor: hugelgupf <ckoch (at) cs.nmt.edu>
 
 pkgname=dpkg
-pkgver=1.22.19
-pkgrel=2
+pkgver=1.22.20
+pkgrel=1
 pkgdesc='The Debian Package Manager tools'
 arch=('x86_64')
 url="https://tracker.debian.org/pkg/dpkg"
@@ -45,7 +45,7 @@ source=(
   origin.archlinux
   origin.artixlinux
 )
-sha256sums=('e6534e32d4f423ce449f73d72157ab1be39d0a7a7cd1f8fc4ec465a04d7f8b50'
+sha256sums=('eb5c474c433a14b73794af1c53c4068f8ff8f99a02a23706712ddef9f04c77bb'
             '9cfd50f65f1fb52adccf48ea859871259a549f24620b52466c890931919b7e04'
             '33ff4f2677b4438e58810bf4a276a338ff17d0d6cd0adbfaa1004f09148f627a')
 validpgpkeys=('4F3E74F436050C10F5696574B972BF3EA4AE57A3') # Guillem Jover <guillem@hadrons.org>
