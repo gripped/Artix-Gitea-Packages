@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 17.5-1
+    version: 17.5-2
     packages:
-      - postgresql-17.5-1-x86_64.pkg.tar.zst
-      - postgresql-libs-17.5-1-x86_64.pkg.tar.zst
-      - postgresql-docs-17.5-1-x86_64.pkg.tar.zst
+      - postgresql-17.5-2-x86_64.pkg.tar.zst
+      - postgresql-libs-17.5-2-x86_64.pkg.tar.zst
+      - postgresql-docs-17.5-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 17.4-4
