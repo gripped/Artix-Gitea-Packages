@@ -2,8 +2,8 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=prometheus
-pkgver=3.3.1
-pkgrel=2
+pkgver=3.4.1
+pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
 url='https://prometheus.io'
@@ -20,7 +20,7 @@ source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/ar
         prometheus.sysusers
         )
 
-sha256sums=('2d4a71efb7c662f265c7af5f7db3367b2a7d3981fdc8860103909148b9a82846'
+sha256sums=('2b0b5d6eec26e1fe78e351b87643f3dc78e62f8d57616b227b0257b1d87f6e0e'
             '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
 
 prepare() {
@@ -49,12 +49,10 @@ build() {
 
   go generate -tags plugins ./plugins
 
-  # stringlabels: https://github.com/prometheus/prometheus/issues/16490
   go build \
     -buildmode=pie \
     -mod=readonly \
     -modcacherw \
-    -tags stringlabels \
     -ldflags "-compressdwarf=false -linkmode external $LDFLAGS" \
     ./cmd/prometheus
   go build \
