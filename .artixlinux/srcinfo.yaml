@@ -1,0 +1,27 @@
+---
+version: 3.3.4-1
+pkgbase:
+  name: openexr
+  pkgdesc: A high dynamic-range image file format library
+  pkgver: 3.3.4
+  pkgrel: 1
+  url: https://www.openexr.com/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - git
+  depends:
+    - gcc-libs
+    - glibc
+    - imath
+    - libdeflate
+  source:
+    - git+https://github.com/openexr/openexr#tag=v3.3.4
+  sha256sums:
+    - 4a63fce351d15de94277376b323d3150b8c696546324975d0a47cf48df62f38e
+pkgname:
+  - name: openexr
+# generated with artixpkg 0.36.3-1-any
