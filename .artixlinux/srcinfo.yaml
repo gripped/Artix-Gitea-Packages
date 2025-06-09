@@ -1,0 +1,38 @@
+---
+version: 25.6.0-1
+pkgbase:
+  name: smplayer
+  pkgdesc: Media player with built-in codecs that can play virtually all video and audio formats
+  pkgver: 25.6.0
+  pkgrel: 1
+  url: https://www.smplayer.info/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - qt5-tools
+  depends:
+    - glibc
+    - qt5-base
+    - qt5-declarative
+    - mpv
+    - libx11
+    - zlib
+    - gcc-libs
+    - hicolor-icon-theme
+  optdepends:
+    - 'smplayer-themes: icon themes collection'
+    - 'smplayer-skins: skin themes collection'
+    - 'youtube-dl: youtube videos and streaming'
+    - 'yt-dlp: youtube videos and streaming'
+    - 'mplayer: alternative multimedia engine'
+  source:
+    - https://github.com/smplayer-dev/smplayer/releases/download/v25.6.0/smplayer-25.6.0.tar.bz2
+  sha512sums:
+    - 0d40a2baad19f71f61774cdcbbbe243359a1b5ea2ba758f1b7f69f5f7ea7a87480391a109460aadd4473760095ac6d5ac3ade416a8bdba169a2ef7526fea285c
+  b2sums:
+    - 78d3696b1589006442f9ec64ec840392fae9c62597289449b7b66dc5867b74a853d0e44ee7fabf56a2559248227aadac1861f325c25d38565549a142cb3dccc8
+pkgname:
+  - name: smplayer
+# generated with artixpkg 0.36.2-1-any
