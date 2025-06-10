@@ -1,0 +1,34 @@
+---
+version: 3.1.1-1
+pkgbase:
+  name: box2d
+  pkgdesc: 2D rigid body simulation library for games
+  pkgver: 3.1.1
+  pkgrel: 1
+  url: http://www.box2d.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - ninja
+    - git
+    - wayland
+    - libxinerama
+    - libxkbcommon
+    - libxkbcommon-x11
+    - libxt
+    - xorg-xrandr
+    - libxcursor
+    - xorg-xinput
+    - glfw
+  depends:
+    - gcc-libs
+  source:
+    - box2d-3.1.1.tar.gz::https://github.com/erincatto/Box2D/archive/v3.1.1.tar.gz
+  sha512sums:
+    - 7367640e7f2ff395b8ca48766c71f57c96e08c298627c996eba76899a149ee28b0e3ecacfa4a224fdb5d160c7e25c6069bb8414fd1575787727d796097aa347b
+pkgname:
+  - name: box2d
+# generated with artixpkg 0.36.3-2-any
