@@ -2,8 +2,8 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=pacman-contrib
-pkgver=1.11.0
-pkgrel=1.1
+pkgver=1.12.0
+pkgrel=1
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=(x86_64)
 url=https://gitlab.archlinux.org/pacman/pacman-contrib
@@ -18,15 +18,17 @@ optdepends=(
   'fakeroot: for checkupdates'
   'findutils: for pacdiff --find'
   'mlocate: for pacdiff --locate'
+  'plocate: faster mlocate alternative'
   'perl: for pacsearch'
   'sudo: privilege elevation for several scripts'
-  'vim: default merge program for pacdiff'
+  'vim: default diff program for pacdiff'
+  'neovim: default diff program for pacdiff if EDITOR=nvim'
 )
 source=("git+$url.git#tag=v$pkgver"
         pacman-contrib-artix.patch)
-b2sums=('58b04aedd5536ec868ada5f133ac751592a7a9206431d23e8ad5144138433cc6c7291db35f52f702079712712bb6ba0f603ac9b761d2a1996b15a908dd2fff97'
+b2sums=('1c278a80a13d6e074056cff440a9f9792161c7f9987ea68f23849d849916a7a8b65b16137ce5f61bcf47d63783f84b743c42ef5130dd21e5d65a73f914f1b48d'
         '22774e40aecc942e59420410b35f11c5bf41236c429545c8e62fe516619fa57b87d550b911b000fd287c360ecafe46b7bf0e70496eecebee59d94f31eb980523')
-validpgpkeys=(04DC3FB1445FECA813C27EFAEA4F7B321A906AD9) # Daniel M. Capella <polyzen@archlinux.org>
+validpgpkeys=(04DC3FB1445FECA813C27EFAEA4F7B321A906AD9 44A62127789A949F2F082ED429C71CE612B57264) # Daniel M. Capella <polyzen@archlinux.org>
 #             5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5)  # Johannes Löthberg <johannes@kyriasis.com>
 
 prepare() {
