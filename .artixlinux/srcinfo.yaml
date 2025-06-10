@@ -1,10 +1,10 @@
 ---
-version: 25.04.1-2
+version: 25.04.2-1
 pkgbase:
   name: falkon
   pkgdesc: Cross-platform QtWebEngine browser
-  pkgver: 25.04.1
-  pkgrel: 2
+  pkgver: 25.04.2
+  pkgrel: 1
   url: https://www.falkon.org/
   arch:
     - x86_64
@@ -42,15 +42,15 @@ pkgbase:
     - 'purpose: KDE integration'
     - 'pyside6: Python plugins'
   source:
-    - https://download.kde.org/stable/release-service/25.04.1/src/falkon-25.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.1/src/falkon-25.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.2/src/falkon-25.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.2/src/falkon-25.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - af2ffb2cf4c62d17ddfb737e71dfda7a85816d2facf5c82baf23436fcd3bdef0
+    - 8bfda5e95abc463a88241148c81584a30bd443b767818d1225739e681942c988
     - SKIP
 pkgname:
   - name: falkon
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
