@@ -1,0 +1,56 @@
+---
+version: 0.17.4-3
+pkgbase:
+  name: hotdoc
+  pkgdesc: The tastiest API documentation system
+  pkgver: 0.17.4
+  pkgrel: 3
+  url: https://github.com/hotdoc/hotdoc
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - git
+    - npm
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - bash
+    - glib2
+    - glibc
+    - json-glib
+    - libxml2
+    - python
+    - python-appdirs
+    - python-dbus-deviation
+    - python-faust-cchardet
+    - python-feedgen
+    - python-lxml
+    - python-networkx
+    - python-pkgconfig
+    - python-schema
+    - python-toposort
+    - python-wheezy-template
+    - python-yaml
+  optdepends:
+    - 'clang: for the C extension'
+    - 'llvm: for the C extension'
+  source:
+    - git+https://github.com/hotdoc/hotdoc#tag=0.17.4
+    - git+https://github.com/MathieuDuponchelle/cmark
+    - git+https://github.com/PrismJS/prism
+    - git+https://github.com/hotdoc/hotdoc_bootstrap_theme
+    - 0001-Simplify-deps-for-Python-3.11.patch
+  sha256sums:
+    - 9ba11a71cb8e4c5fa2bb33bc4f27f5fee02cf8328b5f8a2bcb4986116f98d443
+    - SKIP
+    - SKIP
+    - SKIP
+    - 865812a0c5a66822ece814e898b4b3ca46553ba51190adc944bb4f01c0db6cf0
+pkgname:
+  - name: hotdoc
+# generated with artixpkg 0.36.3-2-any
