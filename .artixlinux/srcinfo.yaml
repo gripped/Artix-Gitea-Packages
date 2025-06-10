@@ -1,9 +1,9 @@
 ---
-version: 25.04.1-1
+version: 25.04.2-1
 pkgbase:
   name: ksanecore
   pkgdesc: Library providing logic to interface scanners
-  pkgver: 25.04.1
+  pkgver: 25.04.2
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -20,15 +20,15 @@ pkgbase:
     - qt6-base
     - sane
   source:
-    - https://download.kde.org/stable/release-service/25.04.1/src/ksanecore-25.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.1/src/ksanecore-25.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.2/src/ksanecore-25.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.2/src/ksanecore-25.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 110338209019dc30714687d5c243355746284cfac412dcf703ac1b6e07f48be5
+    - 7039e9c4c1f2c295359a68d9581f07c0674572848391ac7ccbb1af22c07915d8
     - SKIP
 pkgname:
   - name: ksanecore
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.3-2-any
