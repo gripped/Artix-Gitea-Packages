@@ -7,7 +7,7 @@ pkgbase=gnuplot
 pkgname=(gnuplot
          gnuplot-demos)
 pkgver=6.0.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Plotting package which outputs to X11, PostScript, PNG, GIF, and others' 
 arch=(x86_64)
 url='http://www.gnuplot.info'
