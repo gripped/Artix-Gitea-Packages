@@ -1,10 +1,10 @@
 ---
-version: 3:1.40.1-2
+version: 3:1.40.1-3
 pkgbase:
   name: ldc
   pkgdesc: A D Compiler based on the LLVM Compiler Infrastructure including D runtime and libphobos2
   pkgver: 1.40.1
-  pkgrel: 2
+  pkgrel: 3
   epoch: 3
   url: https://github.com/ldc-developers/ldc
   arch:
@@ -33,9 +33,9 @@ pkgname:
   - name: ldc
     depends:
       - liblphobos
-      - llvm-libs
+      - llvm19-libs
       - gcc
-      - compiler-rt
+      - compiler-rt19
     provides:
       - d-compiler=2.110.0
     backup:
@@ -48,4 +48,4 @@ pkgname:
       - d-stdlib
     options:
       - staticlibs
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
