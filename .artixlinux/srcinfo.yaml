@@ -1,0 +1,52 @@
+---
+version: 48.2-1
+pkgbase:
+  name: orca
+  pkgdesc: Screen reader for individuals who are blind or visually impaired
+  pkgver: 48.2
+  pkgrel: 1
+  url: https://orca.gnome.org/
+  arch:
+    - any
+  groups:
+    - gnome
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - itstool
+    - meson
+    - yelp-tools
+  depends:
+    - at-spi2-core
+    - brltty
+    - glib2
+    - gobject-introspection-runtime
+    - gsettings-desktop-schemas
+    - gstreamer
+    - gst-plugins-base
+    - gst-plugins-good
+    - gtk3
+    - hicolor-icon-theme
+    - liblouis
+    - libwnck3
+    - pango
+    - python
+    - python-cairo
+    - python-dbus
+    - python-gobject
+    - python-psutil
+    - python-setproctitle
+    - speech-dispatcher
+    - xorg-xkbcomp
+    - xorg-xmodmap
+  source:
+    - git+https://gitlab.gnome.org/GNOME/orca.git?signed#tag=48.2
+  validpgpkeys:
+    - DBDB67681333AA61BBCB97140A042BFD3DA3816C
+    - 85D0D0B3FB02946101A46295E7A697B5609D4701
+  b2sums:
+    - 375ea7e15a7363e5f0265e3a8823af81c10692f4794a46011a368e3f5b4f549dc5ef755bb537c9b5f2c5a6471ae47e873f815b7f4675f434dc098eeeef8ab5de
+pkgname:
+  - name: orca
+# generated with artixpkg 0.36.3-1-any
