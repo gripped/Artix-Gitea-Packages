@@ -1,0 +1,66 @@
+---
+version: 4.1.1-1
+pkgbase:
+  name: apparmor
+  pkgdesc: Mandatory Access Control (MAC) using Linux Security Module (LSM)
+  pkgver: 4.1.1
+  pkgrel: 1
+  url: https://gitlab.com/apparmor/apparmor
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+    - LGPL-2.0-only
+    - LGPL-2.1-only
+  checkdepends:
+    - dejagnu
+    - perl-locale-gettext
+    - python-gobject
+    - python-notify2
+    - python-psutil
+    - sqlite
+    - tk
+  makedepends:
+    - apache
+    - autoconf-archive
+    - git
+    - libxcrypt
+    - python-setuptools
+    - ruby
+    - swig
+  depends:
+    - audit
+    - bash
+    - gcc-libs
+    - glibc
+    - pam
+    - python
+    - python-legacy-cgi
+  optdepends:
+    - 'perl: for perl bindings'
+    - 'python-gobject: for aa-notify'
+    - 'python-notify2: for aa-notify'
+    - 'python-psutil: for aa-notify'
+    - 'ruby: for ruby bindings'
+    - 'sqlite: for aa-notify'
+    - 'tk: for aa-notify'
+  provides:
+    - libapparmor.so
+  backup:
+    - etc/apparmor/easyprof.conf
+    - etc/apparmor/logprof.conf
+    - etc/apparmor/notify.conf
+    - etc/apparmor/parser.conf
+    - etc/apparmor/severity.db
+  source:
+    - git+https://gitlab.com/apparmor/apparmor.git#tag=v4.1.1?signed
+  validpgpkeys:
+    - 3ECDCBA5FB34D254961CC53F6689E64E3D3664BB
+    - EDC4830FBD39AB6AC51047FB052F367018D5C3D8
+  sha512sums:
+    - 7b97e42fcaf26ff74b86d44067af056de85f8a6bf441dab4c9e79d11223b8975c509d1e41b07d4f3cd31003a0fa1eaccfa3fbf570f504b65b27ee5697c618924
+  b2sums:
+    - 57c7271683638689f3f785b587bc9b002249f8f8f0fe15e5f511cebff7804672e0896fcbf6661c6cefbb92bee75a8281e14f3a2e03a6293a6351c8da0f29cb54
+pkgname:
+  - name: apparmor
+# generated with artixpkg 0.36.3-1-any
