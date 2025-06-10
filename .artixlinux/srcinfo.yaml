@@ -1,0 +1,57 @@
+---
+version: 1:0.26.22-1
+pkgbase:
+  name: okteta
+  pkgdesc: KDE hex editor for viewing and editing the raw data of files
+  pkgver: 0.26.22
+  pkgrel: 1
+  epoch: 1
+  url: https://apps.kde.org/okteta/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools5
+    - qt5-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - kcmutils5
+    - kcodecs5
+    - kcompletion5
+    - kconfig5
+    - kconfigwidgets5
+    - kcoreaddons5
+    - kcrash5
+    - kdbusaddons5
+    - ki18n5
+    - kiconthemes5
+    - kio5
+    - kjobwidgets5
+    - knewstuff5
+    - kparts5
+    - kservice5
+    - kwidgetsaddons5
+    - kxmlgui5
+    - qca-qt5
+    - qt5-base
+    - qt5-declarative
+    - qt5-script
+  optdepends:
+    - 'konsolepart5: terminal plugin'
+  source:
+    - https://download.kde.org/stable/okteta/0.26.22/src/okteta-0.26.22.tar.xz
+    - https://download.kde.org/stable/okteta/0.26.22/src/okteta-0.26.22.tar.xz.sig
+  validpgpkeys:
+    - E191FD5BE6F46870F09E82B2024E7FB43D015474
+    - 0A48BC961075B4BA8523E3790A345FB086E797D9
+    - E6EBD6EB0518FE5BCCA5F6A76AACDD263C2CEFD4
+  sha256sums:
+    - be2ed784c8ff3da31e2b857a17153b622ed7c9631a38151e9da7d93e968ffa7d
+    - SKIP
+pkgname:
+  - name: okteta
+# generated with artixpkg 0.36.3-2-any
