@@ -1,9 +1,9 @@
 ---
-version: 25.04.1-1
+version: 25.04.2-1
 pkgbase:
   name: juk
   pkgdesc: A jukebox, tagger and music collection manager
-  pkgver: 25.04.1
+  pkgver: 25.04.2
   pkgrel: 1
   url: https://apps.kde.org/juk/
   arch:
@@ -42,15 +42,15 @@ pkgbase:
     - qt6-svg
     - taglib
   source:
-    - https://download.kde.org/stable/release-service/25.04.1/src/juk-25.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.1/src/juk-25.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.2/src/juk-25.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.2/src/juk-25.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - e4d15477ab5074007f93aa8726966b671b827383da1d19daacaf9935490ceadf
+    - e404d37b0ea44b9272035d7135124ffb6ce7052926c4ae365c157df245e0426e
     - SKIP
 pkgname:
   - name: juk
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.3-2-any
