@@ -1,10 +1,10 @@
 ---
-version: 25.04.1-2
+version: 25.04.2-1
 pkgbase:
   name: messagelib
   pkgdesc: KDE PIM messaging library
-  pkgver: 25.04.1
-  pkgrel: 2
+  pkgver: 25.04.2
+  pkgrel: 1
   url: https://kontact.kde.org
   arch:
     - x86_64
@@ -56,21 +56,21 @@ pkgbase:
     - libkleo
     - openssl
     - pimcommon
-    - qgpgme-qt6
+    - qgpgme
     - qt6-base
     - qt6-webengine
     - sonnet
     - syntax-highlighting
   source:
-    - https://download.kde.org/stable/release-service/25.04.1/src/messagelib-25.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.1/src/messagelib-25.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.2/src/messagelib-25.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.2/src/messagelib-25.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 92f0e1fe2ac1b8cb53168e18709c203d43cccdae382d0895b3e2846757df0770
+    - 7354aea72b25c2ed92db1dcb89d9f5f5b82ba2b382979d0d1303c47716561a05
     - SKIP
 pkgname:
   - name: messagelib
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
