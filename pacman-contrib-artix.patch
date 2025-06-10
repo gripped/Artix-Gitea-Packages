@@ -1,11 +1,11 @@
  doc/checkupdates.8.adoc |  3 +--
- doc/paccache.8.adoc     |  9 +--------
+ doc/paccache.8.adoc     |  8 +-------
  doc/paclist.8.adoc      |  2 +-
  src/Makefile.am         |  6 ------
  src/paclist.sh.in       |  2 +-
  src/rankmirrors.sh.in   | 10 +++++-----
- test/pacsorttest.sh     |  6 +++---
- 7 files changed, 12 insertions(+), 26 deletions(-)
+ test/pacsorttest.sh     |  5 +----
+ 7 files changed, 10 insertions(+), 26 deletions(-)
 
 diff --git a/doc/checkupdates.8.adoc b/doc/checkupdates.8.adoc
 index d4a2dba..8e007ba 100644
@@ -22,10 +22,10 @@ index d4a2dba..8e007ba 100644
  *-V, \--version*::
  	Display version information.
 diff --git a/doc/paccache.8.adoc b/doc/paccache.8.adoc
-index bc950a0..09ab190 100644
+index bc950a0..5012995 100644
 --- a/doc/paccache.8.adoc
 +++ b/doc/paccache.8.adoc
-@@ -79,15 +79,8 @@ Options
+@@ -79,15 +79,9 @@ Options
  	Display version information.
 
 
@@ -35,7 +35,7 @@ index bc950a0..09ab190 100644
 -'paccache.timer'. If the timer is enabled the cache will be cleaned weekly with
 -paccache's default options.
 -
--
+
  See Also
  --------
 -linkman:pacman[8], linkman:pacman.conf[5], linkman:systemctl[1]
@@ -43,13 +43,13 @@ index bc950a0..09ab190 100644
 
  include::footer.adoc[]
 diff --git a/doc/paclist.8.adoc b/doc/paclist.8.adoc
-index 141489e..38071f3 100644
+index 2613c30..2a7bd2b 100644
 --- a/doc/paclist.8.adoc
 +++ b/doc/paclist.8.adoc
-@@ -16,7 +16,7 @@ Description
- 'paclist' will list all packages installed on the system from a given repository.
+@@ -17,7 +17,7 @@ Description
  Useful for seeing which packages you may have installed from the testing repositories,
  for instance.
+
 -Example: paclist core-testing
 +Example: paclist system-gremlins
 
@@ -73,10 +73,10 @@ index c893aff..3526512 100644
  	checkupdates \
  	paccache \
 diff --git a/src/paclist.sh.in b/src/paclist.sh.in
-index 99258df..ce3ef08 100644
+index f46acbd..0257200 100644
 --- a/src/paclist.sh.in
 +++ b/src/paclist.sh.in
-@@ -32,7 +32,7 @@ Options:
+@@ -33,7 +33,7 @@ Options:
    -h, --help     show this help message and exit
    -V, --version  display version information and exit
 
@@ -86,10 +86,10 @@ index 99258df..ce3ef08 100644
  }
 
 diff --git a/src/rankmirrors.sh.in b/src/rankmirrors.sh.in
-index 3927812..429b75f 100644
+index 03a319b..8140141 100644
 --- a/src/rankmirrors.sh.in
 +++ b/src/rankmirrors.sh.in
-@@ -67,7 +67,7 @@ err() {
+@@ -66,7 +66,7 @@ err() {
  	exit 1
  }
 
@@ -98,7 +98,7 @@ index 3927812..429b75f 100644
  # returns the fetching time, or timeout, or unreachable
  gettime() {
  	IFS=' ' read -ra output <<< "$(curl -s -m "$MAX_TIME" -w "%{time_total} %{http_code}" "$1" -o/dev/null)"
-@@ -77,10 +77,10 @@ gettime() {
+@@ -76,10 +76,10 @@ gettime() {
  	return 0
  }
 
@@ -112,7 +112,7 @@ index 3927812..429b75f 100644
  ARCH="$(uname -m)"
  getfetchurl() {
  	local strippedurl="${1%/}"
-@@ -89,7 +89,7 @@ getfetchurl() {
+@@ -88,7 +88,7 @@ getfetchurl() {
  	local replacedurl="${strippedurl//'$arch'/$ARCH}"
  	if [[ ! $TARGETREPO ]]; then
  		# shellcheck disable=SC2016
@@ -122,7 +122,7 @@ index 3927812..429b75f 100644
  		tmp="${tmp%/*}"
 
 diff --git a/test/pacsorttest.sh b/test/pacsorttest.sh
-index 561e4b9..b7e4d79 100755
+index 561e4b9..66e3cf7 100755
 --- a/test/pacsorttest.sh
 +++ b/test/pacsorttest.sh
 @@ -37,7 +37,7 @@ tap_runtest() {
@@ -134,14 +134,13 @@ index 561e4b9..b7e4d79 100755
 
  in="1\n2\n3\n4\n"
  tap_runtest $in $in "already ordered"
-@@ -81,8 +81,8 @@ tap_runtest $in $in "filename sort with epoch" "--files"
+@@ -81,9 +81,6 @@ tap_runtest $in $in "filename sort with epoch" "--files"
  in="/packages/dia-log-1:1.2_20130928-1-x86_64.pkg.tar.xz\n/packages/dialog-1.2_20131001-1-x86_64.pkg.tar.xz\n"
  tap_runtest $in $in "filename sort with differing package names and epoch" "--files"
 
 -in="/packages/systemd-217-1-x86_64.pkg.tar.xz\n/packages/systemd-sysvcompat-217-1-x86_64.pkg.tar.xz\n"
 -tap_runtest $in $in "filename sort with package names as shared substring" "--files"
-+# in="/packages/systemd-217-1-x86_64.pkg.tar.xz\n/packages/systemd-sysvcompat-217-1-x86_64.pkg.tar.xz\n"
-+# tap_runtest $in $in "filename sort with package names as shared substring" "--files"
-
+-
  # generate some long input/expected for the next few tests
  declare fields fields_reverse normal reverse separator separator_reverse
+ for ((i=1; i<600; i++)); do

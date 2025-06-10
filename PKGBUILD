@@ -27,7 +27,7 @@ optdepends=(
 source=("git+$url.git#tag=v$pkgver"
         pacman-contrib-artix.patch)
 b2sums=('1c278a80a13d6e074056cff440a9f9792161c7f9987ea68f23849d849916a7a8b65b16137ce5f61bcf47d63783f84b743c42ef5130dd21e5d65a73f914f1b48d'
-        '22774e40aecc942e59420410b35f11c5bf41236c429545c8e62fe516619fa57b87d550b911b000fd287c360ecafe46b7bf0e70496eecebee59d94f31eb980523')
+        'e7ec0e49e94c9d1ad2ddfd748966431759b57181e96bea93e60ae6451556fc7d258ed1d1b10f40f123adf442839f2b5b4306e3cf23a7383ae7fcae8930a01157')
 validpgpkeys=(04DC3FB1445FECA813C27EFAEA4F7B321A906AD9 44A62127789A949F2F082ED429C71CE612B57264) # Daniel M. Capella <polyzen@archlinux.org>
 #             5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5)  # Johannes Löthberg <johannes@kyriasis.com>
 
