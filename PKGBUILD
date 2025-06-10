@@ -6,7 +6,7 @@
 pkgname=veracrypt
 _pkgname=VeraCrypt
 pkgver=1.26.24
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Disk encryption with strong security based on TrueCrypt'
 url='https://www.veracrypt.fr/'
 arch=(x86_64)
