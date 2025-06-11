@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-1
+version: 2.3.0-2
 pkgbase:
   name: python-numpy
   pkgdesc: Scientific tools for Python
   pkgver: 2.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.numpy.org/
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - d3fdae873fc50a692135045ee7fb542b0206ff167ffbe575a975ace4786b2a2f2d4b52034de3f61653feddffb5a850f5b2a499a32ec5214c0872c20b319d4d65
 pkgname:
   - name: python-numpy
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
