@@ -1,0 +1,37 @@
+---
+version: 0.16.0-1
+pkgbase:
+  name: python-pycrdt-websocket
+  pkgdesc: CRDTs based on Yrs
+  pkgver: 0.16.0
+  pkgrel: 1
+  url: https://github.com/y-crdt/pycrdt-websocket
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - hypercorn
+    - python-httpx-ws
+    - python-pytest
+    - python-pytest-asyncio
+    - python-trio
+    - python-websockets
+    - uvicorn
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-anyio
+    - python-pycrdt
+    - python-pycrdt-store
+  source:
+    - git+https://github.com/y-crdt/pycrdt-websocket#tag=0.16.0
+  sha256sums:
+    - a2edb8e05c5841eb933b78cfd005c3381f96343fcd04c9377ef728ccb64126a2
+pkgname:
+  - name: python-pycrdt-websocket
+# generated with artixpkg 0.36.3-2-any
