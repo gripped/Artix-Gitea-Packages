@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.6.2-1
+    version: 1.7.0-1
     packages:
-      - python-frozenlist-1.6.2-1-x86_64.pkg.tar.zst
+      - python-frozenlist-1.7.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.6.1-1

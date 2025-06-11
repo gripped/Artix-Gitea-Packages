@@ -1,9 +1,9 @@
 ---
-version: 1.6.2-1
+version: 1.7.0-1
 pkgbase:
   name: python-frozenlist
   pkgdesc: FrozenList is a list-like structure which can be made immutable
-  pkgver: 1.6.2
+  pkgver: 1.7.0
   pkgrel: 1
   url: https://github.com/aio-libs/frozenlist
   arch:
@@ -23,11 +23,11 @@ pkgbase:
     - glibc
     - python
   source:
-    - https://github.com/aio-libs/frozenlist/archive/v1.6.2/python-frozenlist-1.6.2.tar.gz
+    - https://github.com/aio-libs/frozenlist/archive/v1.7.0/python-frozenlist-1.7.0.tar.gz
   sha512sums:
-    - 98af12defa65033f42a1ead3012dc6a2df5b018fc96fb02449aeb42465bd22c86edb28663d35c5a2bdbcda71649c99e8edae98836de6ace6957599474a00dda7
+    - 007118195032ebeeba172d2113b8e0af330d6a1ed67ad3ab4313c01b4948a3d5890e526fb3258e930e3ea8a221f239fd061abe3eead0c6b6196a95e78fb29422
   b2sums:
-    - 88daf2ba5476902fbd1c49a547bfa1d2b6aca4892f3476c275bb7cfddd04c186a7db2dd85d810ef4f8a9ba097ea79a10f9b3604a575b693b3a011e50a17cf101
+    - 8ce7444524bcc1d3bc0c4288a21a06830fb461dbb2c6226995dddca5574f90a88aac03bf21caa0401ffacf5d069096c2f7430325c74ae26105d03c6ff7348c06
 pkgname:
   - name: python-frozenlist
 # generated with artixpkg 0.36.3-2-any
