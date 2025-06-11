@@ -6,58 +6,15 @@ _url=https://gitea.artixlinux.org/artix
 _extra=1.3
 _alpm=2.2
 
-pkgname=openrc
-pkgver=0.62.2
+pkgbase=openrc
+pkgname=('openrc' 'libeinfo')
+pkgver=0.62.3
 pkgrel=1
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
 license=('BSD-2-Clause')
 makedepends=('git' 'meson')
-depends=(
-    'audit' #'libaudit.so'
-    'bash'
-    'glibc'
-    'inetutils'
-    'libcap' 'libcap.so'
-    'netifrc'
-    'pam' 'libpam.so'
-    'psmisc'
-    'perl'
-)
-optdepends=(
-    'networkmanager-openrc: networkmanager init script'
-    'elogind-openrc: elogind init script'
-)
-provides=(
-    'init-rc'
-    'svc-manager'
-    'librc.so'
-    'libeinfo.so'
-)
-conflicts=('init-rc' 'svc-manager')
-replaces=(openrc-{deptree2dot,{bash,zsh}-completions})
-backup=(
-    'etc/rc.conf'
-    'etc/conf.d/consolefont'
-    'etc/conf.d/keymaps'
-    'etc/conf.d/hostname'
-    'etc/conf.d/modules'
-    'etc/conf.d/hwclock'
-    'etc/conf.d/etmpfiles-dev'
-    'etc/conf.d/etmpfiles-setup'
-    'etc/conf.d/udev'
-    'etc/conf.d/udev-trigger'
-    'etc/conf.d/udev-settle'
-    'etc/conf.d/localmount'
-    'etc/conf.d/netmount'
-    'etc/conf.d/bootmisc'
-    'etc/conf.d/dmesg'
-    'etc/conf.d/devfs'
-    'etc/conf.d/killprocs'
-    'etc/conf.d/swap'
-    'etc/conf.d/agetty.tty'{1,2,3,4,5,6}
-)
 source=(
     "git+${url}.git#tag=${pkgver}"
     'openrc.logrotate'
@@ -69,7 +26,7 @@ source=(
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
     "openrc-agetty-meson-conf-d.patch::https://github.com/OpenRC/openrc/pull/850/commits/e3961a81809ed8d0e594402b012ee685e4ad970f.patch"
 )
-sha256sums=('510dab44b0a6dcc80dda3372b3de7d2031657ddbb1195bc9630743636e59244f'
+sha256sums=('deca4c2842b41e5dbdb336dfbe0ca30099e0d44a06efb7a2ca3ac92a00b7271a'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
@@ -80,7 +37,7 @@ sha256sums=('510dab44b0a6dcc80dda3372b3de7d2031657ddbb1195bc9630743636e59244f'
             '0a2aead8c5257cca191e8a3a57c080d4deb4ba5fae89df4709843584eef53534')
 
 prepare() {
-    cd "${pkgname}"
+    cd "${pkgbase}"
     # apply patch from the source array (should be a pacman feature)
     local src
     for src in "${source[@]}"; do
@@ -115,18 +72,64 @@ build(){
         -Dlibrcdir=openrc
     )
 
-    artix-meson "${pkgname}" build "${_meson_options[@]}"
+    artix-meson "${pkgbase}" build "${_meson_options[@]}"
 
     meson compile -C build
 }
 
-package() {
+package_openrc() {
+    pkgdesc="Universal init system"
+    depends=(
+        'audit' #'libaudit.so'
+        'bash'
+        'glibc'
+        'inetutils'
+        'libcap' 'libcap.so'
+        'netifrc'
+        'pam' 'libpam.so'
+        'psmisc'
+        'perl'
+        'libeinfo' 'libeinfo.so'
+    )
+    optdepends=(
+        'networkmanager-openrc: networkmanager init script'
+        'elogind-openrc: elogind init script'
+    )
+    provides=(
+        'init-rc'
+        'svc-manager'
+        'librc.so'
+    )
+    conflicts=('init-rc' 'svc-manager')
+    replaces=(openrc-{deptree2dot,{bash,zsh}-completions})
+    backup=(
+        'etc/rc.conf'
+        'etc/conf.d/consolefont'
+        'etc/conf.d/keymaps'
+        'etc/conf.d/hostname'
+        'etc/conf.d/modules'
+        'etc/conf.d/hwclock'
+        'etc/conf.d/etmpfiles-dev'
+        'etc/conf.d/etmpfiles-setup'
+        'etc/conf.d/udev'
+        'etc/conf.d/udev-trigger'
+        'etc/conf.d/udev-settle'
+        'etc/conf.d/localmount'
+        'etc/conf.d/netmount'
+        'etc/conf.d/bootmisc'
+        'etc/conf.d/dmesg'
+        'etc/conf.d/devfs'
+        'etc/conf.d/killprocs'
+        'etc/conf.d/swap'
+        'etc/conf.d/agetty.tty'{1,2,3,4,5,6}
+    )
+
     meson install -C build --destdir "${pkgdir}"
 
     # user pam
-    install -m755 "$srcdir"/openrc-user.pam "$pkgdir"/etc/pam.d/openrc-user
+    install -m755 "${srcdir}"/openrc-user.pam "${pkgdir}"/etc/pam.d/openrc-user
 
-    install -Dm644 "${srcdir}/${pkgname}".logrotate "${pkgdir}"/etc/logrotate.d/"${pkgname}"
+    install -Dm644 "${srcdir}/${pkgbase}".logrotate "${pkgdir}"/etc/logrotate.d/"${pkgname}"
 
     install -d "${pkgdir}"/usr/lib/{openrc/cache,binfmt.d,sysctl.d}
 
@@ -134,10 +137,10 @@ package() {
     install -m755 "${srcdir}"/sysctl.conf "${pkgdir}"/usr/lib/sysctl.d/50-default.conf
 
     # license
-    install -Dm644 "${pkgname}"/LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
+    install -Dm644 "${pkgbase}"/LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
 
     # openrc extra; agetty,kmod,udev,tmpfiles,sysusers
-    make -C "${pkgname}"-extra DESTDIR="${pkgdir}" install
+    make -C "${pkgbase}"-extra DESTDIR="${pkgdir}" install
 
     # pacman hooks
     make -C alpm-hooks DESTDIR="${pkgdir}" install_openrc
@@ -148,5 +151,26 @@ package() {
     # remove init symlink
     rm -v "${pkgdir}"/usr/bin/init
 
-    install -m755 "${pkgname}"/support/deptree2dot/deptree2dot "${pkgdir}"/usr/bin/deptree2dot
+    install -m755 "${pkgbase}"/support/deptree2dot/deptree2dot "${pkgdir}"/usr/bin/deptree2dot
+
+    # split out libeinfo
+    install -d "${srcdir}"/_libeinfo/usr/{lib//pkgconfig,share/man/man3}
+    mv -v "${pkgdir}"/usr/lib/libeinfo.so* "${srcdir}"/_libeinfo/usr/lib/
+    mv -v "${pkgdir}"/usr/lib/pkgconfig/einfo.pc "${srcdir}"/_libeinfo/usr/lib/pkgconfig/
+    mv -v "${pkgdir}"/usr/share/man/man3/e*.3 "${srcdir}"/_libeinfo/usr/share/man/man3/
+}
+
+package_libeinfo() {
+    pkgdesc="Pretty console informational display"
+    depends=(
+        'glibc'
+    )
+    provides=(
+        'libeinfo.so'
+    )
+
+    mv -v "${srcdir}"/_libeinfo/* "${pkgdir}"/
+
+    # license
+    install -Dm644 "${pkgbase}"/LICENSE "${pkgdir}"/usr/share/licenses/"${pkgname}"/LICENSE
 }
