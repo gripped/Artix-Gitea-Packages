@@ -1,10 +1,10 @@
 ---
-version: 4.3.1-3
+version: 4.3.1-3.1
 pkgbase:
   name: claws-mail
   pkgdesc: A GTK+ based e-mail client
   pkgver: 4.3.1
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://www.claws-mail.org
   install: claws-mail.install
   arch:
@@ -69,4 +69,4 @@ pkgbase:
     - 3f6c248b8658cd7a62186bff572cce2525712a498f363cbbda1ed459021c28cb
 pkgname:
   - name: claws-mail
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.2-1-any
