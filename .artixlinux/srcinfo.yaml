@@ -1,9 +1,9 @@
 ---
-version: 6.14.9.zen1-1
+version: 6.15.2.zen1-1
 pkgbase:
   name: linux-zen
   pkgdesc: Linux ZEN
-  pkgver: 6.14.9.zen1
+  pkgver: 6.15.2.zen1
   pkgrel: 1
   url: https://github.com/zen-kernel/zen-kernel
   arch:
@@ -32,27 +32,27 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.9.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.9.tar.sign
-    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.14.9-zen1/linux-v6.14.9-zen1.patch.zst
-    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.14.9-zen1/linux-v6.14.9-zen1.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.2.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.15.2.tar.sign
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.15.2-zen1/linux-v6.15.2-zen1.patch.zst
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.15.2-zen1/linux-v6.15.2-zen1.patch.zst.sig
     - config
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - 390cdde032719925a08427270197ef55db4e90c09d454e9c3554157292c9f361
+    - 3458cd6a6c508e161dbc5406e72b99d5dbdf929faf704a67db9ba46d07514858
     - SKIP
-    - 1bf08b52cdfde1aa15a5f0459c2b5fc3828ddb85cef87bb37af74b5af845028a
+    - 1422aa150333ed3f38998d320250ff84e2a1e133c9993df784d95439ebb0d81a
     - SKIP
-    - e65c3988ddc6750aab798e8efb25bd335348041fb6792200582a51da7f24e507
+    - d262cb6c3c596774d151c71a016e8138e3fe7bf9ed4cf74cdec8c97afca34406
   b2sums:
-    - 4a675b88d7ddc8aaaf7258af95915ccbc8a09b6b7f5d10c865fc6dce3254aecfd2f72110be898fb6bb1abc5658c3a35758a1b0d90237de922f538613091d46b8
+    - c2b23abc39af6d2cf67f5963121f16d4a231869203d3915ed6260d6f39ef0d7dbd5c86abac9cc6f9af5b00f8ad6c754f212bdde1d670e60e3a91866718980799
     - SKIP
-    - 0af9a049769afbb32e38792a8b7a09d0edf18fd19c4b976f2b399ccb2d2575d542d4d3461f3746d1eca1700352f01b0d5e4e5c555118ff67cb03c08794a1d6b7
+    - 0238b74413a0047a44084623838033bed82eed7c0778296b206ee1f6523fe6e86b6173896e716e4bfb8bb0e8af5adbdd584660bea5a21134ae5a4dd1825bee88
     - SKIP
-    - 6d7e1ca59ee428f6122bb1efa74e6bcb6deacee127e664e7bdcc385c328466d9cef4af82a38698e80ed5be0206de8c75dc26394af743ef2c1e4cadf3b70eaf1d
+    - 85a31badfb44c85952ffbc3147a1ebe2a78667f87d7e6a36296751c4d5abd1389348cfec102e7029b961179bc92ea01d1453884196afc2a2136ba4f6029e55aa
 pkgname:
   - name: linux-zen
     pkgdesc: The Linux ZEN kernel and modules
@@ -67,7 +67,6 @@ pkgname:
     provides:
       - KSMBD-MODULE
       - NTSYNC-MODULE
-      - UKSMD-BUILTIN
       - VHBA-MODULE
       - VIRTUALBOX-GUEST-MODULES
       - WIREGUARD-MODULE
@@ -78,4 +77,4 @@ pkgname:
       - pahole
   - name: linux-zen-docs
     pkgdesc: Documentation for the Linux ZEN kernel
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
