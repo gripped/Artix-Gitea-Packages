@@ -1,9 +1,9 @@
 ---
-version: 575.57.08-1
+version: 575.57.08-3
 pkgbase:
   name: nvidia-utils
   pkgver: 575.57.08
-  pkgrel: 1
+  pkgrel: 3
   url: http://www.nvidia.com/
   arch:
     - x86_64
@@ -86,4 +86,4 @@ pkgname:
     conflicts:
       - nvidia-open
       - NVIDIA-MODULE
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
