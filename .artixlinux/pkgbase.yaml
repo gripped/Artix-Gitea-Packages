@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.04.0-1
+    version: 2025.06.0-1
     packages:
-      - python-xarray-2025.04.0-1-any.pkg.tar.zst
+      - python-xarray-2025.06.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2025.04.0-1
