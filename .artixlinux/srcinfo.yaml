@@ -1,10 +1,10 @@
 ---
-version: 0.62.3-1
+version: 0.62.3-2
 pkgbase:
   name: openrc
   pkgdesc: OpenRC is a dependency-based init system that works with the system-provided init program
   pkgver: 0.62.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/OpenRC/openrc
   arch:
     - x86_64

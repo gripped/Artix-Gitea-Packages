@@ -9,7 +9,7 @@ _alpm=2.2
 pkgbase=openrc
 pkgname=('openrc' 'libeinfo')
 pkgver=0.62.3
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
@@ -154,8 +154,10 @@ package_openrc() {
     install -m755 "${pkgbase}"/support/deptree2dot/deptree2dot "${pkgdir}"/usr/bin/deptree2dot
 
     # split out libeinfo
-    install -d "${srcdir}"/_libeinfo/usr/{lib//pkgconfig,share/man/man3}
+    install -d "${srcdir}"/_libeinfo/usr/{include,lib/{pkgconfig,openrc/bin},share/man/man3}
+    mv -v "${pkgdir}"/usr/include/einfo.h "${srcdir}"/_libeinfo/usr/include/
     mv -v "${pkgdir}"/usr/lib/libeinfo.so* "${srcdir}"/_libeinfo/usr/lib/
+    mv -v "${pkgdir}"/usr/lib/openrc/bin/e* "${srcdir}"/_libeinfo/usr/lib/openrc/bin/
     mv -v "${pkgdir}"/usr/lib/pkgconfig/einfo.pc "${srcdir}"/_libeinfo/usr/lib/pkgconfig/
     mv -v "${pkgdir}"/usr/share/man/man3/e*.3 "${srcdir}"/_libeinfo/usr/share/man/man3/
 }
