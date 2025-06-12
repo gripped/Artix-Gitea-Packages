@@ -1,0 +1,32 @@
+---
+version: 20210505-1
+pkgbase:
+  name: shairplay-openrc
+  pkgdesc: shairplay OpenRC init
+  pkgver: 20210505
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artixlinux/packages-openrc
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  depends:
+    - openrc
+    - shairplay
+  provides:
+    - init-shairplay
+  conflicts:
+    - init-shairplay
+  backup:
+    - etc/conf.d/shairplay
+  source:
+    - shairplay.initd
+    - shairplay.confd
+  sha256sums:
+    - 9d965498d857d96b0399aac54c55673b7bc15dd4bf80303333cb3e3430338a4d
+    - b7a30e3b767858609e191c8937588e246a445a13744c51d1c6c447a2cb5d78a1
+pkgname:
+  - name: shairplay-openrc
+# generated with artixpkg 0.36.4-1-any

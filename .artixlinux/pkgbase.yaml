@@ -1,54 +1,60 @@
 ---
-pkgbase:
-  name: shairplay-openrc
-  version: 20210505-1
-  arch:
-    - any
-  pkgname:
-    - shairplay-openrc
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 20210505-1
-    packages:
-      - shairplay-openrc-20210505-1-any.pkg.tar.zst
+    version: null
+    packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 20210505-1
+    packages:
+      - shairplay-openrc-20210505-1-any.pkg.tar.zst
+    debug: []
+team: galaxy
