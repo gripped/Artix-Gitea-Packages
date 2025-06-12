@@ -2,8 +2,8 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.36.3
-pkgrel=2
+pkgver=0.36.4
+pkgrel=1
 pkgdesc='Development tools for Artix'
 arch=('any')
 url='https://gitea.artixlinux.org/artix/artools'
@@ -19,10 +19,9 @@ groups=(
 )
 # checkdepends=('shellcheck')
 source=("git+${url}.git#tag=${pkgver}")
-sha256sums=('2e26f6653a8fe0653573381c53069246d50fa1caee7304fe16b33b0c3fe1122b')
+sha256sums=('65e811be194a8858f28ae7e77b8192757932e56c6e09743b830290db93962b31')
 
 _patches=(
-    95afc31152c16ee5fbfd143fd9c43db8d157c1e1
 )
 
 prepare() {
