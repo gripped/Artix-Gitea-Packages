@@ -1,0 +1,33 @@
+---
+version: 0.9.74-2
+pkgbase:
+  name: firejail
+  pkgdesc: Linux namespaces sandbox program
+  pkgver: 0.9.74
+  pkgrel: 2
+  url: https://github.com/netblue30/firejail
+  install: firejail.install
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+  depends:
+    - apparmor
+  optdepends:
+    - 'xdg-dbus-proxy: for D-Bus filtering'
+  backup:
+    - etc/apparmor.d/local/firejail-default
+    - etc/firejail/firecfg.config
+    - etc/firejail/firejail.config
+    - etc/firejail/login.users
+  source:
+    - git+https://github.com/netblue30/firejail.git#tag=0.9.74
+  sha256sums:
+    - 5f0c747749d36189973926372220fef2e96b2a496da2f519ba1ad1537157724d
+  b2sums:
+    - c868d381e40637b5794fbead2d504b395c44efd74bf0bd098be25517a406ca5dc2a22a5727a6aee95953aada6140e29d52f9bb918d2a0d1d345064447c08f29a
+pkgname:
+  - name: firejail
+# generated with artixpkg 0.36.3-2-any
