@@ -1,0 +1,26 @@
+---
+version: 3.8.1-1
+pkgbase:
+  name: ack
+  pkgdesc: A Perl-based grep replacement, aimed at programmers with large trees of heterogeneous source code
+  pkgver: 3.8.1
+  pkgrel: 1
+  url: http://betterthangrep.com/
+  arch:
+    - any
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl-file-next
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/ack-v3.8.1.tar.gz
+  md5sums:
+    - e5846c61c92fc98b70f0c28bf390d930
+  sha256sums:
+    - 1c03ab46f4922a0bd2462f4cf7eeb3cb4b4e6d43cebd3cfcf3a2e132319eb88e
+pkgname:
+  - name: ack
+# generated with artixpkg 0.36.3-2-any
