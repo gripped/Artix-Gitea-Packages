@@ -1,0 +1,30 @@
+---
+version: 20230829-1
+pkgbase:
+  name: shairplay-s6
+  pkgdesc: s6-rc service scripts for shairplay
+  pkgver: 20230829
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-services
+  arch:
+    - any
+  groups:
+    - s6-world
+  makedepends:
+    - git
+  depends:
+    - shairplay
+    - s6-base
+  provides:
+    - init-shairplay
+  conflicts:
+    - init-shairplay
+  backup:
+    - etc/s6/config/shairplay.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=f8db772e97393417271f286a3c9dc136d25a959c
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: shairplay-s6
+# generated with artixpkg 0.36.4-1-any
