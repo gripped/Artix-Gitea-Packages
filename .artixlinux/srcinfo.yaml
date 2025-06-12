@@ -1,0 +1,37 @@
+---
+version: 7.1.0-2
+pkgbase:
+  name: neofetch
+  pkgdesc: A CLI system information tool written in BASH that supports displaying images.
+  pkgver: 7.1.0
+  pkgrel: 2
+  url: https://github.com/dylanaraps/neofetch
+  arch:
+    - any
+  license:
+    - MIT
+  depends:
+    - bash
+  optdepends:
+    - 'catimg: Display Images'
+    - 'chafa: Image to text support'
+    - 'feh: Wallpaper Display'
+    - 'imagemagick: Image cropping / Thumbnail creation / Take a screenshot'
+    - 'jp2a: Display Images'
+    - 'libcaca: Display Images'
+    - 'nitrogen: Wallpaper Display'
+    - 'w3m: Display Images'
+    - 'xdotool: See https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal'
+    - 'xorg-xdpyinfo: Resolution detection (Single Monitor)'
+    - 'xorg-xprop: Desktop Environment and Window Manager'
+    - 'xorg-xrandr: Resolution detection (Multi Monitor + Refresh rates)'
+    - 'xorg-xwininfo: See https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal'
+  backup:
+    - etc/neofetch/config.conf
+  source:
+    - neofetch-7.1.0.tar.gz::https://github.com/dylanaraps/neofetch/archive/7.1.0.tar.gz
+  sha256sums:
+    - 58a95e6b714e41efc804eca389a223309169b2def35e57fa934482a6b47c27e7
+pkgname:
+  - name: neofetch
+# generated with artixpkg 0.36.4-1-any

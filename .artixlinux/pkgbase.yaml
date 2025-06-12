@@ -1,54 +1,60 @@
 ---
-pkgbase:
-  name: neofetch
-  version: 7.1.0-2
-  arch:
-    - any
-  pkgname:
-    - neofetch
 actions:
-  addRepo: null
-  removeRepo: null
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: false
+  triggersRepoAdd: true
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 7.1.0-2
-    packages:
-      - neofetch-7.1.0-2-any.pkg.tar.zst
+    version: null
+    packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 7.1.0-2
+    packages:
+      - neofetch-7.1.0-2-any.pkg.tar.zst
+    debug: []
+team: galaxy
