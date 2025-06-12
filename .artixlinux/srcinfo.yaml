@@ -1,10 +1,10 @@
 ---
-version: 1.5.2-3
+version: 1.5.2-4
 pkgbase:
   name: protobuf-c
   pkgdesc: Protocol Buffers implementation in C
   pkgver: 1.5.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/protobuf-c/protobuf-c
   arch:
     - x86_64
@@ -22,4 +22,4 @@ pkgbase:
     - e2c86271873a79c92b58fef7ebf8de1aa0df4738347a8bd5d4e65a80a16d0d24
 pkgname:
   - name: protobuf-c
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-2-any
