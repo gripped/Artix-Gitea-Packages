@@ -1,0 +1,60 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Kevin Song <kevin.s05@gmail.com>
+
+pkgname=starship
+pkgdesc='The cross-shell prompt for astronauts'
+pkgver=1.23.0
+pkgrel=1
+arch=(x86_64)
+url=https://starship.rs/
+_url="https://github.com/$pkgname/$pkgname"
+license=(ISC)
+depends=(
+  gcc-libs
+  glibc
+)
+makedepends=(
+  cmake
+  git
+  rust
+)
+checkdepends=(python)
+optdepends=('ttf-font-nerd: Nerd Font Symbols preset')
+source=("git+$_url.git#tag=v$pkgver")
+sha256sums=('1ba9865e7d6f061520e176c90e1538bb69f6a9f1c8748a4dcd564fced0c495c0')
+
+prepare() {
+  cargo fetch \
+    --locked \
+    --target "$(rustc -vV | sed -n 's/host: //p')" \
+    --manifest-path starship/Cargo.toml
+}
+
+build() {
+  export CARGO_TARGET_DIR=target
+  CFLAGS+=" -ffat-lto-objects"
+  cargo build \
+    --release \
+    --frozen \
+    --manifest-path starship/Cargo.toml
+}
+
+check() {
+  cargo test \
+    --frozen \
+    --manifest-path starship/Cargo.toml
+}
+
+package() {
+  install -Dm 755 target/release/starship -t "${pkgdir}"/usr/bin/
+  install -Dm 644 starship/LICENSE -t "${pkgdir}"/usr/share/licenses/starship/
+  install -dm 755 "${pkgdir}"/usr/share/{bash-completion/completions,elvish/lib,fish/vendor_completions.d,zsh/site-functions}/
+  ./target/release/starship completions bash > "${pkgdir}"/usr/share/bash-completion/completions/starship
+  ./target/release/starship completions elvish > "${pkgdir}"/usr/share/elvish/lib/starship.elv
+  ./target/release/starship completions fish > "${pkgdir}"/usr/share/fish/vendor_completions.d/starship.fish
+  ./target/release/starship completions zsh > "${pkgdir}"/usr/share/zsh/site-functions/_starship
+}
+
+# vim: ts=2 sw=2 et:
