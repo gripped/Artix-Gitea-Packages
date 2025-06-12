@@ -1,9 +1,9 @@
 ---
-version: 2.37.0-1
+version: 2.37.1-1
 pkgbase:
   name: docker-compose
   pkgdesc: Fast, isolated development environments using Docker
-  pkgver: 2.37.0
+  pkgver: 2.37.1
   pkgrel: 1
   url: https://www.docker.com/
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   makedepends:
     - go
   source:
-    - docker-compose-2.37.0.tar.gz::https://github.com/docker/compose/archive/v2.37.0.tar.gz
+    - docker-compose-2.37.1.tar.gz::https://github.com/docker/compose/archive/v2.37.1.tar.gz
   b2sums:
-    - 77ad31957b75a4d6ed9ce37f100e45cb297ccb06d14a224826a6e68c6499e3f2a19af76f5ae88d17677ce365bcb1459a3d97d32d3fa5fb45abd7b43db08e578e
+    - 5bc0b035fde5232a01bd89eac0c45b17ecac1955d7cd857e11010d52662cf4aae34d03b91ade78de6a8839a5199fed69ec908005c7e536af6e89b3b59ac1483f
 pkgname:
   - name: docker-compose
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
