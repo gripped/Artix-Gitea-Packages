@@ -1,0 +1,33 @@
+---
+version: 4.1.0-1
+pkgbase:
+  name: certbot-dns-ovh
+  pkgdesc: OVH DNS Authenticator plugin for Certbot
+  pkgver: 4.1.0
+  pkgrel: 1
+  url: https://pypi.python.org/pypi/certbot-dns-ovh
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - certbot=4.1.0
+    - python-acme=4.1.0
+    - dns-lexicon
+  source:
+    - github.com-certbot-certbot::git+https://github.com/certbot/certbot#tag=v4.1.0
+  sha512sums:
+    - 37d8a9577c06b160c9756e4a1998b248874a9aae0ff3d50e2f42d8f79ec2b69ee1e4615a3b6daecbcea9270812bf71b18f209f6fc2835f5e5043154c957c5c1f
+  b2sums:
+    - 0de2ba13a8132816ca14087e50d7ccc3329f245ce4b9d572de3f34a604b4701eb48ebf455fdb5032cdcb66880431dd90d6d1b4605fa7ab8ff681ee9fbb756ab3
+pkgname:
+  - name: certbot-dns-ovh
+# generated with artixpkg 0.36.3-1-any
