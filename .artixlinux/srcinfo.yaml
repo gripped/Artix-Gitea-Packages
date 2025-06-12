@@ -1,0 +1,34 @@
+---
+version: 20211102-4
+pkgbase:
+  name: salt-dinit
+  pkgdesc: dinit service scripts for salt
+  pkgver: 20211102
+  pkgrel: 4
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - salt
+    - dinit
+  provides:
+    - init-salt
+  conflicts:
+    - init-salt
+  source:
+    - salt-master
+    - salt-api
+    - salt-minion
+    - salt-syndic
+  sha256sums:
+    - 8cee8eab8b55cf11b9ae5c32cfb820bf095dfcbecd5bdee25a71105080dfd77e
+    - 8afb0828a11ac7f9a6357d55e01272e8b4afe59c8b74ce121d38931764b01ed5
+    - 149682fd8a4cfa2e0d5b1bcd4c0cd29808e4d5bd962105fdd6b840899fb5e913
+    - e238bd4a8c6b4c1b9d2c298f6dcb247e4f73e982148b935e02dcaf1472f50581
+pkgname:
+  - name: salt-dinit
+# generated with artixpkg 0.36.4-1-any
