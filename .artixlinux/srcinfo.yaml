@@ -1,0 +1,52 @@
+---
+version: 3007.1-1
+pkgbase:
+  name: salt
+  pkgdesc: Central system and configuration manager
+  pkgver: 3007.1
+  pkgrel: 1
+  url: http://saltstack.org/
+  install: salt.install
+  arch:
+    - any
+  license:
+    - Apache
+  makedepends:
+    - python-setuptools
+  depends:
+    - python-jinja
+    - python-jmespath
+    - python-msgpack
+    - python-yaml
+    - python-markupsafe
+    - python-requests
+    - python-distro
+    - python-psutil
+    - python-packaging
+    - python-looseversion
+    - python-pyzmq
+    - python-m2crypto
+    - python-importlib-metadata
+    - python-pycryptodomex
+  optdepends:
+    - 'dmidecode: decode SMBIOS/DMI tables'
+    - 'python-pygit2: gitfs support'
+  conflicts:
+    - salt-zmq
+    - salt-raet
+  replaces:
+    - salt-zmq
+    - salt-raet
+  backup:
+    - etc/logrotate.d/salt
+    - etc/salt/master
+    - etc/salt/minion
+  source:
+    - https://pypi.io/packages/source/s/salt/salt-3007.1.tar.gz
+    - salt.logrotate
+  sha256sums:
+    - b933ac4cb3e4b1118b46dada55c9cc6bdc6f0f94b4c92877aec44b25c6a28c9a
+    - abecc3c1be124c4afffaaeb3ba32b60dfee8ba6dc32189edfa2ad154ecb7a215
+pkgname:
+  - name: salt
+# generated with artixpkg 0.36.4-1-any
