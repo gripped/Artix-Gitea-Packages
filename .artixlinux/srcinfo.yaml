@@ -1,0 +1,26 @@
+---
+version: 42.4-1
+pkgbase:
+  name: yelp-xsl
+  pkgdesc: Document transformations from Yelp
+  pkgver: 42.4
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/yelp-xsl
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - itstool
+    - libxslt
+    - meson
+  source:
+    - git+https://gitlab.gnome.org/GNOME/yelp-xsl.git#tag=42.4
+  b2sums:
+    - efa5b673926b3f3f5021c652ad62d9562042fbbcf8a82dffc1b9bdfe336382c7c5f25c61673bce427b1a92e7d9c6878c130e0a8199fd7a11b315aec626b6ac16
+pkgname:
+  - name: yelp-xsl
+# generated with artixpkg 0.36.3-2-any
