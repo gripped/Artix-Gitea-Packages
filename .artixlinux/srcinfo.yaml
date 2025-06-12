@@ -1,0 +1,34 @@
+---
+version: 0.2.18-1
+pkgbase:
+  name: rio
+  pkgdesc: A hardware-accelerated GPU terminal emulator powered by WebGPU
+  pkgver: 0.2.18
+  pkgrel: 1
+  url: https://github.com/raphamorim/rio
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cargo
+    - cmake
+    - desktop-file-utils
+    - libxcb
+    - libxkbcommon
+    - python
+  depends:
+    - gcc-libs
+    - fontconfig
+    - freetype2
+    - glibc
+    - hicolor-icon-theme
+  options:
+    - '!lto'
+  source:
+    - rio-0.2.18.tar.gz::https://github.com/raphamorim/rio/archive/refs/tags/v0.2.18.tar.gz
+  sha512sums:
+    - b7345f04cf748c27e2c99471e6ce9316cf668bcf9eb5e6bfdf637081b9e7bbed48e22d027448222d9b8ac1a7d64f65144ab96f72d562ab5731135a5f422a09e7
+pkgname:
+  - name: rio
+# generated with artixpkg 0.36.3-2-any
