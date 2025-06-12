@@ -1,0 +1,29 @@
+---
+version: 8.5-1
+pkgbase:
+  name: nano
+  pkgdesc: Pico editor clone with enhancements
+  pkgver: 8.5
+  pkgrel: 1
+  url: https://www.nano-editor.org
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  depends:
+    - ncurses
+    - file
+    - glibc
+  backup:
+    - etc/nanorc
+  source:
+    - https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz
+    - https://www.nano-editor.org/dist/v8/nano-8.5.tar.xz.asc
+  validpgpkeys:
+    - 168E6F4297BFD7A79AFD4496514BBE2EB8E1961F
+  sha256sums:
+    - 000b011d339c141af9646d43288f54325ff5c6e8d39d6e482b787bbc6654c26a
+    - SKIP
+pkgname:
+  - name: nano
+# generated with artixpkg 0.36.3-2-any
