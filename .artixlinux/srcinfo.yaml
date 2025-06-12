@@ -1,0 +1,38 @@
+---
+version: 3.0.6-6
+pkgbase:
+  name: etherwall
+  pkgdesc: Ethereum GUI Wallet (Qt5)
+  pkgver: 3.0.6
+  pkgrel: 6
+  url: https://etherwall.com
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - hidapi
+  depends:
+    - qt5-declarative
+    - qt5-graphicaleffects
+    - qt5-quickcontrols
+    - qt5-quickcontrols2
+    - qt5-websockets
+    - geth
+    - protobuf
+    - libhidapi-libusb.so
+    - libusb
+    - libudev
+  source:
+    - etherwall-3.0.6.tar.gz::https://github.com/almindor/etherwall/archive/v3.0.6.tar.gz
+    - ew-node-8f12917510c280bdc6680eeebf6092246c2ba7cc.tar.gz::https://github.com/almindor/ew-node/archive/8f12917510c280bdc6680eeebf6092246c2ba7cc.tar.gz
+    - trezor-common-db106e8f2766155bc72802e4dc3f9f59c90d9c3e.tar.gz::https://github.com/trezor/trezor-common/archive/db106e8f2766155bc72802e4dc3f9f59c90d9c3e.tar.gz
+    - etherwall.desktop
+  sha512sums:
+    - 52d9b6a482630558fa070c59d3820f7ce7eeeafbb41d11768b2561a2e4e44e7de0aebc772f2bfa6ff7254e0fe32516ed417d040a7816b700fbd8199c44a18939
+    - 4b2bfab471316d207a16f04115ab468b3e1963e0b3b0d02e929b72adfac95bbc79f434a065d6693879d320a223af55448a29e8ee587bbf1bd7716175ed253828
+    - 745044fe0686c4f2843a67440e3be8501d8c1d5b8b7275fad7310cfd1110d5cc00378ba4205bed6f5926636a65aa986448594fc6fe276b9f46c902c642ad0373
+    - 82ecee1f1d7a6fe7014b928e3ab79ed507c3c5795ac3e832e0be1aca8fc5659212c5a4323d5dec4571b9e9255c5c46615bd9865dc03eba85d8be9b969b534d57
+pkgname:
+  - name: etherwall
+# generated with artixpkg 0.36.3-2-any
