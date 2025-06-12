@@ -1,10 +1,10 @@
 ---
-version: 1.5.0-1
+version: 1.5.0-2
 pkgbase:
   name: xfce4-sensors-plugin
   pkgdesc: Sensors plugin for the Xfce panel
   pkgver: 1.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/panel-plugins/xfce4-sensors-plugin/start
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 11185e845b5a52813b9a7610505384813eb4ad3cfe3c3e7aee5ce10d75b91468
 pkgname:
   - name: xfce4-sensors-plugin
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-2-any
