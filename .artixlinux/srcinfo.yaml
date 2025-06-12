@@ -1,0 +1,33 @@
+---
+version: 1.7.2-1
+pkgbase:
+  name: tealdeer
+  pkgdesc: A fast tldr client in Rust
+  pkgver: 1.7.2
+  pkgrel: 1
+  url: https://github.com/tealdeer-rs/tealdeer
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - Apache-2.0
+  makedepends:
+    - git
+    - rust
+  depends:
+    - gcc-libs
+  provides:
+    - tldr
+  conflicts:
+    - tldr
+  options:
+    - '!lto'
+  source:
+    - tealdeer::git+https://github.com/tealdeer-rs/tealdeer#tag=v1.7.2
+  sha512sums:
+    - 9d237578bd91e7b5809398d1e49572bd03f520a06f3b2c26c8ea5e7e4fb043f93e9b679f1411323b5e9ee8124c1596c65a39f8c126ede3b2283c22fc324eaf32
+  b2sums:
+    - 2133fca93c4493ded450af1d495bc7ce146b9410b013fa805dee944b942b98587e7a522b54b19be1f6d0cdc8d0c1c0dc83ff0c4ab8c0d0dcda6592a4ea36ae4d
+pkgname:
+  - name: tealdeer
+# generated with artixpkg 0.36.3-2-any

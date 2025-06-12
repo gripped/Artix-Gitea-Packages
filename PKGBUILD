@@ -1,0 +1,57 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Danilo Bargen <aur at dbrgn dot ch>
+# Contributor: Maxim Andersson <thesilentboatman@gmail.com>
+
+pkgname=tealdeer
+pkgver=1.7.2
+pkgrel=1
+pkgdesc='A fast tldr client in Rust'
+arch=('x86_64')
+url='https://github.com/tealdeer-rs/tealdeer'
+license=('MIT' 'Apache-2.0')
+depends=('gcc-libs')
+makedepends=('git' 'rust')
+provides=('tldr')
+conflicts=('tldr')
+options=('!lto')
+source=("$pkgname::git+$url#tag=v$pkgver")
+sha512sums=('9d237578bd91e7b5809398d1e49572bd03f520a06f3b2c26c8ea5e7e4fb043f93e9b679f1411323b5e9ee8124c1596c65a39f8c126ede3b2283c22fc324eaf32')
+b2sums=('2133fca93c4493ded450af1d495bc7ce146b9410b013fa805dee944b942b98587e7a522b54b19be1f6d0cdc8d0c1c0dc83ff0c4ab8c0d0dcda6592a4ea36ae4d')
+
+prepare() {
+  cd "$pkgname"
+
+  # download dependencies
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname"
+
+  cargo build --release --frozen
+}
+
+check() {
+  cd "$pkgname"
+
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" "target/release/tldr"
+
+  # licenses
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE*
+
+  # completions
+  cd completion
+  install -vDm644 bash_tealdeer "$pkgdir/usr/share/bash-completion/completions/tldr"
+  install -vDm644 fish_tealdeer "$pkgdir/usr/share/fish/vendor_completions.d/tldr.fish"
+  install -vDm644 zsh_tealdeer "$pkgdir/usr/share/zsh/site-functions/_tldr"
+}
+
+# vim:set ts=2 sw=2 et:
