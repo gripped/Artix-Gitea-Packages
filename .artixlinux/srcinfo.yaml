@@ -1,0 +1,34 @@
+---
+version: 20180314-4
+pkgbase:
+  name: salt-runit
+  pkgdesc: Runit service script for salt
+  pkgver: 20180314
+  pkgrel: 4
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-galaxy
+  license:
+    - BSD
+  depends:
+    - salt
+    - runit
+  provides:
+    - init-salt
+  conflicts:
+    - init-salt
+  source:
+    - salt-master.run
+    - salt-minion.run
+    - salt-api.run
+    - salt-syndic.run
+  sha256sums:
+    - 677fecc601ce7ab64898b38d0f3e7d63beb9cf72f1380139b1316b9f600cee70
+    - fd8514f4741e4ca7a46c4bd0e4614c6906c5d84589515cf554977dcc27d5378e
+    - 3cf87795872b701f5de7518f961b2253ce368df273283c3959c2b1ab4cb991df
+    - d98ae07db9ab328341e77ebd34f0a60f368d59c286193db034a06a8e1e977936
+pkgname:
+  - name: salt-runit
+# generated with artixpkg 0.36.4-1-any
