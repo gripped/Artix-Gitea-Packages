@@ -1,0 +1,26 @@
+---
+version: 20180824.096b61a-5
+pkgbase:
+  name: shairplay
+  pkgdesc: Apple airplay and raop protocol server
+  pkgver: 20180824.096b61a
+  pkgrel: 5
+  url: https://github.com/juhovh/shairplay
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - git
+  depends:
+    - libao
+    - avahi
+  options:
+    - '!libtool'
+  source:
+    - shairplay::git+https://github.com/juhovh/shairplay.git#commit=096b61a
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: shairplay
+# generated with artixpkg 0.36.4-1-any
