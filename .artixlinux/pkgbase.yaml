@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,9 +46,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 3.42.2-2
+    version: 3.42.3-2
     packages:
-      - qgis-3.42.2-2-x86_64.pkg.tar.zst
+      - qgis-3.42.3-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
