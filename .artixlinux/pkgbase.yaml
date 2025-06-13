@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -55,9 +55,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.4.5.2-1
+    version: 0.4.5.2-1.1
     packages:
-      - xcursor-vanilla-dmz-0.4.5.2-1-any.pkg.tar.zst
-      - xcursor-vanilla-dmz-aa-0.4.5.2-1-any.pkg.tar.zst
+      - xcursor-vanilla-dmz-0.4.5.2-1.1-any.pkg.tar.zst
+      - xcursor-vanilla-dmz-aa-0.4.5.2-1.1-any.pkg.tar.zst
     debug: []
 team: galaxy
