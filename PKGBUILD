@@ -6,8 +6,8 @@
 # Contributor: nofxx <x@<nick>.com>
 
 pkgname=valkey
-pkgver=8.1.1
-pkgrel=2
+pkgver=8.1.2
+pkgrel=1
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
 url='https://valkey.io/'
@@ -48,7 +48,7 @@ source=(
   valkey-5.0-use-system-jemalloc.patch
   remove-deprecated-use-of-je_calloc.patch
 )
-sha512sums=('1f84b24839856c8d6cdbe1bca5f571fc41cda2b08f495ee80e9a0a03a8ba737f0effeedcb0508195f8d30570443cbccd3c0cf8f4d93980e57f9f8ac656379327'
+sha512sums=('04908cd4652a8ba11052fed7c67ae9b23fff91c090e32588a9a22bb921251931bf62860cde2814e9eb51f113a2f62eb7b14e1ad42e3e6de7a516bc3d57f26bda'
             'd47185f700293304b5c23caf59999fecda2d1485a28a5eeff3a2922906f0184794d3eeeeeaac2ca415b865d7c4b5d74f88e694d34eeb6d1ee3a6bedbcd6edfdd'
             '11cf6d6999329af7a9fa4bcbbcf22242b461cec0c16ad949cc6b0383703f19417092782569bf6224f94167a560de0b4ba53ec0d8522683736a14f01bc5986b28'
             '032b19af22dd96c7898aa3dcae76d63fd8566c1d35ccb069e22fd0b76612d3285cd318f26ad5994b4f761f44a23c091d5322dec975b9a5a8cc65455399576045'
