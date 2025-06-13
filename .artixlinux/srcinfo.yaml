@@ -1,10 +1,10 @@
 ---
-version: 48.3.1-1
+version: 48.3.1-2
 pkgbase:
   name: mutter
   pkgdesc: Window manager and compositor for GNOME
   pkgver: 48.3.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/mutter
   arch:
     - x86_64
@@ -95,4 +95,4 @@ pkgname:
   - name: mutter-docs
     pkgdesc: Window manager and compositor for GNOME (documentation)
     depends: []
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.3-2-any
