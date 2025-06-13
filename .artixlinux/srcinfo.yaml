@@ -1,10 +1,10 @@
 ---
-version: 4.8.3-3
+version: 4.8.3-4
 pkgbase:
   name: syslog-ng
   pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities
   pkgver: 4.8.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/syslog-ng/syslog-ng
   install: syslog-ng.install
   arch:
@@ -111,4 +111,4 @@ pkgbase:
     - 7623df735def048a058905de6e5fdd8958866051efd8415e86f2dc12cf60838a
 pkgname:
   - name: syslog-ng
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
