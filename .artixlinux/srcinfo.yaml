@@ -1,0 +1,29 @@
+---
+version: 1.6.49-1
+pkgbase:
+  name: lib32-libpng
+  pkgdesc: A collection of routines used to create PNG format graphics files (32-bit)
+  pkgver: 1.6.49
+  pkgrel: 1
+  url: http://www.libpng.org/pub/png/libpng.html
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - git
+  depends:
+    - lib32-zlib
+    - libpng
+  provides:
+    - libpng16.so
+  source:
+    - git+https://github.com/pnggroup/libpng.git?signed#tag=v1.6.49
+  validpgpkeys:
+    - F57A55036A4D45837074FD92C9E384533403C2F8
+    - 1FED507E3236B4A6E53E922BB292C64843FF5BCF
+  sha256sums:
+    - f9fe444413f8c3c3979d06a350725c0b52ba4c6264f2d215902eaa253d9a25e0
+pkgname:
+  - name: lib32-libpng
+# generated with artixpkg 0.36.3-2-any
