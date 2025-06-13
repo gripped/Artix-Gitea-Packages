@@ -1,9 +1,9 @@
 ---
-version: 6.14.0-1
+version: 6.15.0-1
 pkgbase:
   name: solid
   pkgdesc: Hardware integration and detection
-  pkgver: 6.14.0
+  pkgver: 6.15.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -17,7 +17,6 @@ pkgbase:
     - doxygen
     - extra-cmake-modules
     - qt6-declarative
-    - qt6-doc
     - qt6-tools
   depends:
     - gcc-libs
@@ -33,15 +32,15 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.14/solid-6.14.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.14/solid-6.14.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.15/solid-6.15.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.15/solid-6.15.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 00996f063478863fe61b902d20c96c9eb4f4ac43353e59b779b466fa62b1a8c4
+    - 608b2d3ad987369718a2fe8a5fa7b71c75faa51a20eaff5ba6b0edf0e5ebbb4a
     - SKIP
 pkgname:
   - name: solid
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
