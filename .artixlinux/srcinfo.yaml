@@ -1,0 +1,35 @@
+---
+version: 7.4-1
+pkgbase:
+  name: cifs-utils
+  pkgdesc: CIFS filesystem user-space tools
+  pkgver: 7.4
+  pkgrel: 1
+  url: https://wiki.samba.org/index.php/LinuxCIFS_utils
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - python-docutils
+  depends:
+    - keyutils
+    - krb5
+    - pam
+    - libcap-ng
+    - libwbclient
+    - talloc
+  optdepends:
+    - 'python: for smb2-quota and smbinfo script'
+  source:
+    - git+https://git.samba.org/cifs-utils.git?signed#tag=cifs-utils-7.4
+  validpgpkeys:
+    - C699981A31F338706C817650DF5BA9D30642D5A0
+    - E9FB2EF297488ED584FC3A4B8A2CBD7007724F51
+    - F2D066D1E8C2D888248F7A7C627A8E85F6858D07
+  b2sums:
+    - c44d65dfaee435add0512275904189df51eb48d712cdb40c542c10767db35e13ff0d45247ea062b9704341117ad9a9c376d8f5867c47da9f29baa032213079fa
+pkgname:
+  - name: cifs-utils
+# generated with artixpkg 0.36.4-1-any
