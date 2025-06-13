@@ -5,7 +5,7 @@
 
 pkgname=llhttp
 pkgver=9.3.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Port of http_parser to llparse'
 arch=(x86_64)
 url='https://llhttp.org'
