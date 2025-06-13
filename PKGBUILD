@@ -5,10 +5,10 @@ pkgbase=linux-firmware
 pkgname=(linux-firmware-whence linux-firmware amd-ucode
          linux-firmware-{nfp,mellanox,marvell,qcom,liquidio,qlogic,bnx2x}
 )
-_tag=20250509
+_tag=20250613
 #_commit=c979a06518069901e4c43e0019d3a15b435b7e16
-pkgver=20250508.788aadc8
-pkgrel=2
+pkgver=20250613.12fe085f
+pkgrel=1
 pkgdesc="Firmware files for Linux"
 url="https://gitlab.com/kernel-firmware/linux-firmware"
 license=(
@@ -29,29 +29,29 @@ options=(
   !debug
 )
 source=("git+$url.git?signed#tag=${_tag}")
-b2sums=('6e606e0b656c8fb177064a71dc7542661141efb2eb4824479f569b2284aac2b14e0afb1bbbf0c1fe6edd442663b4cb971aa537039da17fad34c4dc1c56fae320')
+b2sums=('30f3e8359762a62337d6a63fc914bd689a43341a810dcfe180fd5678bdeb1b4a54aa804186317cbf522d0e0873561dcb671c0c4ef302430a85d3ac8ab6ceaefe')
 validpgpkeys=('4CDE8575E547BF835FE15807A31B6BD72486CFD6') # Josh Boyer <jwboyer@fedoraproject.org>
 
 #_backports=(
 #)
 
 _reverts=(
-  360fd45301707daa3d95be32d84132481b17db46 # revert ath12k: https://bugzilla.kernel.org/show_bug.cgi?id=220108
+  # 360fd45301707daa3d95be32d84132481b17db46 # revert ath12k: https://bugzilla.kernel.org/show_bug.cgi?id=220108
 )
 
-prepare() {
-  cd ${pkgbase}
+#prepare() {
+#  cd ${pkgbase}
 
-  local _c
+#  local _c
 #  for _c in "${_backports[@]}"; do
 #    git log --oneline -1 "${_c}"
 #    git cherry-pick -n "${_c}"
 #  done
-  for _c in "${_reverts[@]}"; do
-    git log --oneline -1 "${_c}"
-    git revert -n "${_c}"
-  done
-}
+#  for _c in "${_reverts[@]}"; do
+#    git log --oneline -1 "${_c}"
+#    git revert -n "${_c}"
+#  done
+#}
 
 pkgver() {
   cd ${pkgbase}

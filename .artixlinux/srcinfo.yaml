@@ -1,10 +1,10 @@
 ---
-version: 20250508.788aadc8-2
+version: 20250613.12fe085f-1
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
-  pkgver: 20250508.788aadc8
-  pkgrel: 2
+  pkgver: 20250613.12fe085f
+  pkgrel: 1
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
     - any
@@ -22,11 +22,11 @@ pkgbase:
     - '!strip'
     - '!debug'
   source:
-    - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20250509
+    - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20250613
   validpgpkeys:
     - 4CDE8575E547BF835FE15807A31B6BD72486CFD6
   b2sums:
-    - 6e606e0b656c8fb177064a71dc7542661141efb2eb4824479f569b2284aac2b14e0afb1bbbf0c1fe6edd442663b4cb971aa537039da17fad34c4dc1c56fae320
+    - 30f3e8359762a62337d6a63fc914bd689a43341a810dcfe180fd5678bdeb1b4a54aa804186317cbf522d0e0873561dcb671c0c4ef302430a85d3ac8ab6ceaefe
 pkgname:
   - name: linux-firmware-whence
     pkgdesc: Firmware files for Linux - contains the WHENCE license file which documents the vendor license details
@@ -65,4 +65,4 @@ pkgname:
     pkgdesc: Firmware files for Linux - bnx2x / Firmware for Broadcom NetXtreme II 10Gb ethernet adapters
     depends:
       - linux-firmware-whence
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.36.4-1-any
