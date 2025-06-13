@@ -1,9 +1,9 @@
 ---
-version: 4.0.2-1
+version: 4.0.3-1
 pkgbase:
   name: cmake
   pkgdesc: A cross-platform open-source make system
-  pkgver: 4.0.2
+  pkgver: 4.0.3
   pkgrel: 1
   url: https://www.cmake.org/
   arch:
@@ -34,13 +34,13 @@ pkgbase:
     - 'ninja: for ninja generator'
     - 'qt6-base: cmake-gui'
   source:
-    - git+https://gitlab.kitware.com/cmake/cmake.git#tag=v4.0.2?signed
+    - git+https://gitlab.kitware.com/cmake/cmake.git#tag=v4.0.3?signed
     - artix-cmake.patch
   validpgpkeys:
     - CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA
   sha512sums:
-    - 59a847a3719d58eaa5117cfd21d89fc7e9c31fa7f2190e85c77abd3560ac4d567b14b85b4b399ec1dccd89ea59104c5d6c1faf5dc4dff17b3f8673b874ca5f1a
+    - 19bbc12717eecf60225c085e1c5bd7cfb22ef52e939584ee912eb6f685bdeadff5eb320c1b267a167c8fee6323955f24df3eb27bbb728a25fbb86b71f0b2b6d3
     - b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6
 pkgname:
   - name: cmake
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
