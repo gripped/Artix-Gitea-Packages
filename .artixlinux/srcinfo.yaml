@@ -1,10 +1,10 @@
 ---
-version: 1.5.735-10
+version: 1.5.735-11
 pkgbase:
   name: mumble
   pkgdesc: An Open Source, low-latency, high quality voice chat software
   pkgver: 1.5.735
-  pkgrel: 10
+  pkgrel: 11
   url: https://www.mumble.info/
   arch:
     - x86_64
@@ -122,4 +122,4 @@ pkgname:
       - murmur<1.5
     backup:
       - etc/mumble/mumble-server.ini
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
