@@ -1,9 +1,9 @@
 ---
-version: 8.4.5_5-1
+version: 8.4.5_5-2
 pkgbase:
   name: percona-server
   pkgver: 8.4.5_5
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.percona.com/software/mysql-database/percona-server
   arch:
     - x86_64
@@ -87,4 +87,4 @@ pkgname:
     backup:
       - etc/mysql/my.cnf
       - etc/mysqlrouter/mysqlrouter.conf
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
