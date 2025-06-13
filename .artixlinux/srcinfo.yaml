@@ -1,9 +1,9 @@
 ---
-version: 6.14.0-1
+version: 6.15.0-1
 pkgbase:
   name: kidletime
   pkgdesc: Monitoring user activity
-  pkgver: 6.14.0
+  pkgver: 6.15.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - libxss
     - plasma-wayland-protocols
-    - qt6-doc
     - qt6-tools
     - qt6-wayland
     - wayland-protocols
@@ -34,15 +33,15 @@ pkgbase:
     - 'qt6-wayland: Wayland plugin'
     - 'wayland: Wayland plugin'
   source:
-    - https://download.kde.org/stable/frameworks/6.14/kidletime-6.14.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.14/kidletime-6.14.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.15/kidletime-6.15.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.15/kidletime-6.15.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 16775b2bdc3efd54c65a96bce6f27a001d119905531d84bb23e23215a196ecb8
+    - 08ec47248502cdc2c8a003b44b5936bfda9dae277a1adb921801892745e87cfe
     - SKIP
 pkgname:
   - name: kidletime
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
