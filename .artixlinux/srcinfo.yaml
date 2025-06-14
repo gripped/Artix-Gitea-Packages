@@ -1,9 +1,9 @@
 ---
-version: 6.14.0-1
+version: 6.15.0-1
 pkgbase:
   name: frameworkintegration
   pkgdesc: Framework providing components to allow applications to integrate with a KDE Workspace
-  pkgver: 6.14.0
+  pkgver: 6.15.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -17,6 +17,7 @@ pkgbase:
     - appstream-qt
     - extra-cmake-modules
     - packagekit-qt6
+    - qt6-tools
   depends:
     - gcc-libs
     - glibc
@@ -32,15 +33,15 @@ pkgbase:
     - 'appstream-qt: dependency resolving via AppStream'
     - 'packagekit-qt6: dependency resolving via AppStream'
   source:
-    - https://download.kde.org/stable/frameworks/6.14/frameworkintegration-6.14.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.14/frameworkintegration-6.14.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.15/frameworkintegration-6.15.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.15/frameworkintegration-6.15.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - ea263722de4b37c8742a70ab057da062e5b71d0e08e986456a3dc44e20f003b7
+    - 6e64870e5d3dcee2a7f7d0a509b5236667fa11f78dd38cd8923911f1ca7ba786
     - SKIP
 pkgname:
   - name: frameworkintegration
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
