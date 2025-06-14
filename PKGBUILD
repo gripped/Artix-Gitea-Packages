@@ -57,7 +57,9 @@ check() {
     --deselect tests/ndarray/test_reductions.py::test_save_version1 \
     --deselect tests/ndarray/test_reductions.py::test_save_version2 \
     --deselect tests/ndarray/test_reductions.py::test_save_version3 \
-    --deselect tests/ndarray/test_reductions.py::test_save_version4
+    --deselect tests/ndarray/test_reductions.py::test_save_version4 \
+    --deselect tests/ndarray/test_lazyexpr.py::test_chain_persistentexpressions
+    # this last one is Artix CI specific
 }
 
 package() {

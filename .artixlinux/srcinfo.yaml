@@ -41,4 +41,4 @@ pkgbase:
     - 69b484af09778008fd1e9d7881a0b960c5db0c52d2b10435c86da369032fda217b45d199754437dfac4b88e7cb32045ef62c7ebcb1846b994e131c979dfc2265
 pkgname:
   - name: python-blosc2
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
