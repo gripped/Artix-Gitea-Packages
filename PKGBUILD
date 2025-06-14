@@ -51,4 +51,3 @@ package() {
   echo "NotShowIn=KDE;GNOME;" >> "${pkgdir}/usr/share/applications/xscreensaver-settings.desktop"
 }
 
-# vim: ts=2 sw=2 et:
