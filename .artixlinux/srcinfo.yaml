@@ -1,0 +1,44 @@
+---
+version: 42.3-1
+pkgbase:
+  name: yelp
+  pkgdesc: Get help with GNOME
+  pkgver: 42.3
+  pkgrel: 1
+  url: https://apps.gnome.org/Yelp
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - itstool
+    - meson
+  depends:
+    - bzip2
+    - dconf
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libhandy
+    - libxml2
+    - libxslt
+    - sqlite
+    - webkit2gtk-4.1
+    - xz
+    - yelp-xsl
+  optdepends:
+    - 'man-db: View manual pages'
+  provides:
+    - libyelp.so
+  source:
+    - git+https://gitlab.gnome.org/GNOME/yelp.git#tag=42.3
+  b2sums:
+    - e571f5ab96e2b5ce78c5cdc9c835441e1bc10bcfc81d65c5d7b82209a50094662c4fe07f2eb732c60e15fa4172d7141026d4cecbe47897003ad5989239a02ed1
+pkgname:
+  - name: yelp
+# generated with artixpkg 0.36.4-1-any
