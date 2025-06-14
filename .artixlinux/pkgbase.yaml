@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.1.0-1
+    version: 4.1.1-1
     packages:
-      - python-acme-4.1.0-1-any.pkg.tar.zst
+      - python-acme-4.1.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 4.0.0-2
