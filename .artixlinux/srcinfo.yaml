@@ -1,9 +1,9 @@
 ---
-version: 6.14.0-1
+version: 6.15.0-1
 pkgbase:
   name: baloo
   pkgdesc: A framework for searching and managing metadata
-  pkgver: 6.14.0
+  pkgver: 6.15.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -40,15 +40,15 @@ pkgbase:
   replaces:
     - baloo5
   source:
-    - https://download.kde.org/stable/frameworks/6.14/baloo-6.14.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.14/baloo-6.14.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.15/baloo-6.15.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.15/baloo-6.15.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - ab60f943607f67929b619c029498f07fa8767aec6a7fb02ecf7392ced25734b4
+    - 241015fd14ea0fcf281080fd160994f92b6e0ba0750cfafd488d31bf0e0a7f4f
     - SKIP
 pkgname:
   - name: baloo
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
