@@ -1,0 +1,59 @@
+---
+version: 10.2.0-1
+pkgbase:
+  name: octave
+  pkgdesc: A high-level language, primarily intended for numerical computations
+  pkgver: 10.2.0
+  pkgrel: 1
+  url: https://www.gnu.org/software/octave/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - gcc-fortran
+    - suitesparse
+    - texinfo
+    - gnuplot
+    - fltk
+    - portaudio
+    - jdk-openjdk
+    - rapidjson
+  depends:
+    - fftw
+    - curl
+    - graphicsmagick
+    - glpk
+    - hdf5
+    - qhull
+    - arpack
+    - glu
+    - ghostscript
+    - sundials
+    - gl2ps
+    - qscintilla-qt6
+    - libsndfile
+    - qt6-5compat
+    - qt6-tools
+    - qrupdate
+    - pcre2
+  optdepends:
+    - 'texinfo: for help-support in octave'
+    - 'gnuplot: alternative plotting'
+    - 'portaudio: audio support'
+    - 'java-runtime: java support'
+    - 'fltk: FLTK GUI'
+    - 'texlive-bin: for the publish command'
+  options:
+    - '!emptydirs'
+  source:
+    - https://ftp.gnu.org/gnu/octave/octave-10.2.0.tar.gz
+    - https://ftp.gnu.org/gnu/octave/octave-10.2.0.tar.gz.sig
+  validpgpkeys:
+    - DBD9C84E39FE1AAE99F04446B05F05B75D36644B
+  sha512sums:
+    - a2ee66eeccaea372ef4025bad053c71b567dcbe39d1f3fc843c92a63bc065fca3f150504af53a6314b1d9ac4d9f1e53df39bcb425e37802459dadb8c5f58b9a6
+    - SKIP
+pkgname:
+  - name: octave
+# generated with artixpkg 0.36.3-1-any
