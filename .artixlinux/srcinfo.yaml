@@ -1,10 +1,10 @@
 ---
-version: 5.15.4-2
+version: 5.15.4-2.1
 pkgbase:
   name: telegram-desktop
   pkgdesc: Official Telegram Desktop client
   pkgver: 5.15.4
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://desktop.telegram.org/
   install: telegram-desktop.install
   arch:
@@ -68,4 +68,4 @@ pkgbase:
     - d622b8f3580ee49415546d025c4ba45f5b2de50b315fc379dc57c0427c5f815c7cc3820cca937c12182ee461641bb61f87ebc99b6c74a1a666cea9a08f0f41a0
 pkgname:
   - name: telegram-desktop
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.3-1-any
