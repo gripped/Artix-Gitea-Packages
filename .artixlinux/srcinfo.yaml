@@ -1,9 +1,9 @@
 ---
-version: 6.14.0-1
+version: 6.15.0-1
 pkgbase:
   name: kded
   pkgdesc: Extensible deamon for providing system level services
-  pkgver: 6.14.0
+  pkgver: 6.15.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -26,15 +26,15 @@ pkgbase:
     - kservice
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.14/kded-6.14.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.14/kded-6.14.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.15/kded-6.15.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.15/kded-6.15.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 59f1aec94bd0176eba8bffd35a6ad5925b6d40702e26ee1697a46b3a4617d1ca
+    - 0b4c0f1940fe1f18d4dacc67f663f6d38221de677f94d9fb39886a2b0616d434
     - SKIP
 pkgname:
   - name: kded
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.2-1-any
