@@ -1,0 +1,29 @@
+---
+version: 5.0.2.1613-2
+pkgbase:
+  name: libfbclient
+  pkgdesc: Client library for Firebird
+  pkgver: 5.0.2.1613
+  pkgrel: 2
+  url: https://www.firebirdsql.org/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - editline
+    - libtomcrypt
+    - unzip
+    - cmake
+  depends:
+    - gcc-libs
+    - libtommath
+  options:
+    - '!lto'
+  source:
+    - https://github.com/FirebirdSQL/firebird/releases/download/v5.0.2/Firebird-5.0.2.1613-0-source.tar.xz
+  sha512sums:
+    - be010804d90ec78e2b1c82f0353c32ed0a2cf2cfda8710a14eddf5a32fc6d7175c3a634f1e10f9e43ea6e957ec2c5ac2b9c03b034108084c60997afd9822684f
+pkgname:
+  - name: libfbclient
+# generated with artixpkg 0.36.2-1-any
