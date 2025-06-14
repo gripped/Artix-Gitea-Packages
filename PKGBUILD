@@ -3,7 +3,7 @@
 pkgbase=mesa-demos
 pkgname=('mesa-demos' 'mesa-utils')
 pkgver=9.0.0
-pkgrel=6
+pkgrel=6.1
 arch=('x86_64')
 url="https://www.mesa3d.org/"
 license=('MIT')
