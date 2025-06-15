@@ -1,0 +1,32 @@
+---
+version: 4.4.4-1
+pkgbase:
+  name: python-lz4
+  pkgdesc: LZ4 bindings for Python
+  pkgver: 4.4.4
+  pkgrel: 1
+  url: https://github.com/python-lz4/python-lz4
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-psutil
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-pkgconfig
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - glibc
+    - lz4
+    - python
+  source:
+    - https://github.com/python-lz4/python-lz4/archive/v4.4.4/python-lz4-4.4.4.tar.gz
+  sha512sums:
+    - f9655e1657b7217776b6f55ee75c729c394529321fe15796a473ad2fe112dfec38f724f56ad9d39d91fac4eb02625a8c308f2065100e7b980438998da48d4369
+pkgname:
+  - name: python-lz4
+# generated with artixpkg 0.36.4-1-any
