@@ -12,7 +12,7 @@ pkgname=(
   hdf5-openmpi
 )
 pkgver=1.14.6
-pkgrel=4
+pkgrel=5
 pkgdesc="General purpose library and file format for storing scientific data"
 arch=(x86_64)
 url="https://www.hdfgroup.org/hdf5"
@@ -100,6 +100,7 @@ check() {
 package_hdf5() {
   cd ${pkgbase}-${pkgbase}_${pkgver/_/-}
   DESTDIR="$pkgdir" cmake --install build
+  rm -vr "$pkgdir/usr/share/COPYING"
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
 }
 
@@ -111,5 +112,6 @@ package_hdf5-openmpi() {
 
   cd ${pkgbase}-${pkgbase}_${pkgver/_/-}
   DESTDIR="$pkgdir" cmake --install build-mpi
+  rm -vr "$pkgdir/usr/share/COPYING"
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
 }
