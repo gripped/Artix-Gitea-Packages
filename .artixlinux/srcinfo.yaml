@@ -1,0 +1,164 @@
+---
+version: 1.57.2-4
+pkgbase:
+  name: gvfs
+  pkgdesc: Virtual filesystem implementation for GIO
+  pkgver: 1.57.2
+  pkgrel: 4
+  url: https://gitlab.gnome.org/GNOME/gvfs
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - LGPL-2.0-only
+  makedepends:
+    - avahi
+    - dbus
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - libgdata
+    - libgoa
+    - libgphoto2
+    - libimobiledevice
+    - libmtp
+    - libnfs
+    - libxml2
+    - meson
+    - msgraph
+    - openssh
+    - python
+    - smbclient
+    - wsdd
+  depends:
+    - dconf
+    - fuse3
+    - gcc-libs
+    - gcr-4
+    - glib2
+    - glibc
+    - gsettings-desktop-schemas
+    - libarchive
+    - libbluray
+    - libcdio
+    - libcdio-paranoia
+    - libgcrypt
+    - libgudev
+    - libsecret
+    - libsoup3
+    - polkit
+    - procps-ng
+    - udisks2
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gvfs.git#tag=1.57.2
+    - gvfsd.hook
+    - 0001-monitor-Do-not-load-monitors-when-GIO_USE_VFS-local.patch
+  b2sums:
+    - 78264e9b38a8cc7031e4bb44a16cd9d66b522453ecd6b9fe9a30348d32d89f565efcb676e078e9aba63cb5414abf6b788b6c023ba2f5f815e12dfae814e9f69d
+    - a0356a49c419dc69466c591d5e69701b865bb97ca336ea6d8bca0f0d9173b832b73d9f2c701d572a0245957d39c9a38ab6dff4ea7c737c34f2a1a28d93c0427f
+    - 0f49b0c2425521f79c48ea092b7a26b601a18f9c2559cbfef6f2a1e338fa2f8d44e75edb85445248f4f35f41e2636836d398019fae0f908689385bf0171bd023
+pkgname:
+  - name: gvfs
+    optdepends:
+      - 'gvfs-afc: AFC support (Apple mobile devices)'
+      - 'gvfs-dnssd: DNS-SD and WebDAV support (macOS file sharing)'
+      - 'gvfs-goa:  Gnome Online Accounts support (e.g. OwnCloud)'
+      - 'gvfs-google: Google Drive support'
+      - 'gvfs-gphoto2: gphoto2 support (PTP camera, MTP media player)'
+      - 'gvfs-mtp: MTP support (Android, media player)'
+      - 'gvfs-nfs: NFS support'
+      - 'gvfs-onedrive: Microsoft OneDrive support'
+      - 'gvfs-smb: SMB/CIFS support (Windows file sharing)'
+      - 'gvfs-wsdd: Web Services Dynamic Discovery support (Windows discovery)'
+    replaces:
+      - gvfs-afp
+      - gvfs-obexftp
+  - name: gvfs-afc
+    pkgdesc: Virtual filesystem implementation for GIO - AFC backend (Apple mobile devices)
+    depends:
+      - gvfs=1.57.2
+      - glib2
+      - glibc
+      - libimobiledevice
+      - libplist
+      - usbmuxd
+  - name: gvfs-dnssd
+    pkgdesc: Virtual filesystem implementation for GIO - DNS-SD and WebDAV backend (macOS file sharing)
+    depends:
+      - gvfs=1.57.2
+      - avahi
+      - dconf
+      - glib2
+      - glibc
+      - libsoup3
+      - libxml2
+  - name: gvfs-goa
+    pkgdesc: Virtual filesystem implementation for GIO - Gnome Online Accounts backend (e.g. OwnCloud)
+    depends:
+      - gvfs=1.57.2
+      - glib2
+      - glibc
+      - libgoa
+  - name: gvfs-google
+    pkgdesc: Virtual filesystem implementation for GIO - Google Drive backend
+    depends:
+      - gvfs-goa=1.57.2
+      - glib2
+      - glibc
+      - libgdata
+      - libgoa
+  - name: gvfs-gphoto2
+    pkgdesc: Virtual filesystem implementation for GIO - gphoto2 backend (PTP camera, MTP media player)
+    depends:
+      - gvfs=1.57.2
+      - glib2
+      - glibc
+      - libgphoto2
+      - libgudev
+  - name: gvfs-mtp
+    pkgdesc: Virtual filesystem implementation for GIO - MTP backend (Android, media player)
+    depends:
+      - gvfs=1.57.2
+      - glib2
+      - glibc
+      - libgudev
+      - libmtp
+      - libusb
+  - name: gvfs-nfs
+    pkgdesc: Virtual filesystem implementation for GIO - NFS backend
+    install: gvfs-nfs.install
+    depends:
+      - gvfs=1.57.2
+      - gcc-libs
+      - glib2
+      - glibc
+      - libnfs
+  - name: gvfs-onedrive
+    pkgdesc: Virtual filesystem implementation for GIO - Microsoft OneDrive backend
+    depends:
+      - gvfs-goa=1.57.2
+      - gcc-libs
+      - glib2
+      - glibc
+      - libgoa
+      - msgraph
+  - name: gvfs-smb
+    pkgdesc: Virtual filesystem implementation for GIO - SMB/CIFS backend (Windows file sharing)
+    depends:
+      - gvfs=1.57.2
+      - smbclient>=4.12.0
+      - dconf
+      - gcc-libs
+      - glib2
+      - glibc
+  - name: gvfs-wsdd
+    pkgdesc: Virtual filesystem implementation for GIO - Web Services Dynamic Discovery backend (Windows discovery)
+    depends:
+      - gvfs=1.57.2
+      - dconf
+      - gcc-libs
+      - glib2
+      - glibc
+      - wsdd
+# generated with artixpkg 0.36.3-2-any
