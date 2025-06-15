@@ -1,0 +1,155 @@
+---
+version: 1:2503-3
+pkgbase:
+  name: dolphin-emu
+  pkgdesc: A Gamecube and Wii emulator
+  pkgver: 2503
+  pkgrel: 3
+  epoch: 1
+  url: https://dolphin-emu.org
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - alsa-lib
+    - cmake
+    - git
+    - libevdev
+    - libminiupnpc.so
+    - libpulse
+    - libudev.so
+    - ninja
+    - python
+    - qt6-base
+    - qt6-svg
+    - vulkan-headers
+  depends:
+    - bluez-libs
+    - bzip2
+    - enet
+    - gcc-libs
+    - glibc
+    - hidapi
+    - libavcodec.so
+    - libavformat.so
+    - libavutil.so
+    - libcurl.so
+    - libgl
+    - libspng.so
+    - libswscale.so
+    - libusb-1.0.so
+    - libx11
+    - libxi
+    - libxrandr
+    - lz4
+    - lzo
+    - mbedtls2
+    - pugixml
+    - sdl2
+    - speexdsp
+    - xxhash
+    - xz
+    - zstd
+  optdepends:
+    - 'pulseaudio: PulseAudio backend'
+  options:
+    - '!emptydirs'
+    - '!lto'
+  source:
+    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=9763c0a1e2b9db0c3861d25bc2f5a0ace6a15ee3
+    - git+https://github.com/mozilla/cubeb.git
+    - git+https://github.com/epezent/implot.git
+    - git+https://github.com/fmtlib/fmt.git
+    - git+https://github.com/mgba-emu/mgba.git
+    - git+https://github.com/zlib-ng/minizip-ng.git
+    - git+https://github.com/RetroAchievements/rcheevos.git
+    - git+https://github.com/arsenm/sanitizers-cmake.git
+    - git+https://github.com/KhronosGroup/SPIRV-Cross.git
+    - git+https://github.com/syoyo/tinygltf.git
+    - git+https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
+    - git+https://github.com/zlib-ng/zlib-ng.git
+  b2sums:
+    - 33965c02b34ad449f16e267d853e4b9869902a4c74d169d3b34eb762b07167228e13df5c5dba632acf49183066bd62f947f045e83be927896bb0259adf9e7c6f
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+pkgname:
+  - name: dolphin-emu
+    depends:
+      - bluez-libs
+      - bzip2
+      - enet
+      - gcc-libs
+      - glibc
+      - hidapi
+      - libavcodec.so
+      - libavformat.so
+      - libavutil.so
+      - libcurl.so
+      - libgl
+      - libspng.so
+      - libswscale.so
+      - libusb-1.0.so
+      - libx11
+      - libxi
+      - libxrandr
+      - lz4
+      - lzo
+      - mbedtls2
+      - pugixml
+      - sdl2
+      - speexdsp
+      - xxhash
+      - xz
+      - zstd
+      - alsa-lib
+      - hicolor-icon-theme
+      - libevdev
+      - libminiupnpc.so
+      - libpulse
+      - libudev.so
+      - qt6-base
+      - qt6-svg
+  - name: dolphin-emu-tool
+    depends:
+      - bluez-libs
+      - bzip2
+      - enet
+      - gcc-libs
+      - glibc
+      - hidapi
+      - libavcodec.so
+      - libavformat.so
+      - libavutil.so
+      - libcurl.so
+      - libgl
+      - libspng.so
+      - libswscale.so
+      - libusb-1.0.so
+      - libx11
+      - libxi
+      - libxrandr
+      - lz4
+      - lzo
+      - mbedtls2
+      - pugixml
+      - sdl2
+      - speexdsp
+      - xxhash
+      - xz
+      - zstd
+      - alsa-lib
+      - libevdev
+      - libpulse
+      - libudev.so
+      - qt6-base
+# generated with artixpkg 0.36.4-1-any
