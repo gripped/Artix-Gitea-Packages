@@ -1,0 +1,42 @@
+---
+version: 2.3.3-1
+pkgbase:
+  name: miniupnpc
+  pkgdesc: Small UPnP client library/tool to access Internet Gateway Devices
+  pkgver: 2.3.3
+  pkgrel: 1
+  url: https://miniupnp.tuxfamily.org/
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - sh
+    - glibc
+    - lsb-release
+    - python
+    - python-setuptools
+  source:
+    - http://miniupnp.free.fr/files/miniupnpc-2.3.3.tar.gz
+    - http://miniupnp.free.fr/files/miniupnpc-2.3.3.tar.gz.sig
+  validpgpkeys:
+    - 751E9FF6944A3B36A5432216DB511043A31ACAAF
+  sha512sums:
+    - a4ac76ae4dac73773b68f4af81f8f8502d168122e16313c986b7fa7cdea02ded0e722a6dd6c8dc8633f167e04b8df1ed6f7202db0d76438c4010780c48e5594c
+    - SKIP
+  b2sums:
+    - 3f20f13c5b4056be1f61dfcfc3c8a8ece65cd6377d8c2a96c2bc937932f7d084820f43f0c4a7c05f1676347c558ee6edea77df9552ed0f13232338114bd910c3
+    - SKIP
+pkgname:
+  - name: miniupnpc
+    depends:
+      - sh
+      - glibc
+    provides:
+      - libminiupnpc.so
+  - name: python-miniupnpc
+    pkgdesc: Python bindings for miniupnpc
+    depends:
+      - python
+      - glibc
+# generated with artixpkg 0.36.4-1-any
