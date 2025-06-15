@@ -1,0 +1,23 @@
+---
+version: 1.1.4-1
+pkgbase:
+  name: libaec
+  pkgdesc: Adaptive Entropy Coding library
+  pkgver: 1.1.4
+  pkgrel: 1
+  url: https://gitlab.dkrz.de/k202009/libaec
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - cmake
+  depends:
+    - glibc
+  source:
+    - https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.4/libaec-v1.1.4.tar.bz2
+  sha256sums:
+    - cf869c166656a83857adf62a092311a0069855c6ced3446e3f090a6d52279f65
+pkgname:
+  - name: libaec
+# generated with artixpkg 0.36.4-1-any
