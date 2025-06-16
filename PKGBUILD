@@ -3,12 +3,12 @@
 
 pkgname=libfido2
 pkgver=1.16.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Library functionality for FIDO 2.0, including communication with a device over USB'
 url='https://developers.yubico.com/libfido2/'
 arch=('x86_64')
 license=('BSD-2-Clause')
-depends=('glibc' 'openssl' 'libcbor' 'libcbor.so' 'hidapi' 'libudev' 'zlib')
+depends=('glibc' 'openssl' 'libcbor' 'libcbor.so' 'hidapi' 'libudev'  'libudev.so' 'zlib')
 makedepends=('cmake' 'udev')
 provides=('libfido2.so')
 source=("https://developers.yubico.com/libfido2/Releases/libfido2-${pkgver}.tar.gz"{,.sig})
@@ -25,7 +25,7 @@ validpgpkeys=(
 
 build() {
   cd ${pkgname}-${pkgver}
-  # do not use bundled udev rules superseded by systemd
+  # do not use bundled udev rules superseded by udev
   cmake -B build \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
