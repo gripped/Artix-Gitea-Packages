@@ -39,4 +39,4 @@ pkgbase:
     - 96c3b607146963233105cde7947c39a55474e6232e0879c03759fce6b605a62d
 pkgname:
   - name: xterm
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
