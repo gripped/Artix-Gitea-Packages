@@ -1,0 +1,59 @@
+From c77f3d74c83ecec0ebb4523cb60a7f229d7ee0b5 Mon Sep 17 00:00:00 2001
+From: Yann Droneaud <yann@droneaud.fr>
+Date: Sun, 15 Jun 2025 10:59:37 +0200
+Subject: [PATCH] get_device_info(): don't leak free()'ed pointer on error
+
+Programs using libwacom on a system without any supported
+device are being subject to a segfault:
+
+    malloc_consolidate(): unaligned fastbin chunk detected
+    Abandon (core dumped)
+
+Using valgrind on list-local-devices shows the issue:
+
+    ==29751== Command: ./list-local-devices
+    ==29751==
+    ==29751== Invalid free() / delete / delete[] / realloc()
+    ==29751==    at 0x4842E43: free (vg_replace_malloc.c:989)
+    ==29751==    by 0x48D8D44: g_free (gmem.c:208)
+    ==29751==    by 0x485BD8B: g_autoptr_cleanup_generic_gfree (glib-autocleanups.h:32)
+    ==29751==    by 0x485DCC2: libwacom_new_from_path (libwacom.c:790)
+    ==29751==    by 0x4014B0: main (list-local-devices.c:301)
+    ==29751==  Address 0x5234aa0 is 0 bytes inside a block of size 28 free'd
+    ==29751==    at 0x4842E43: free (vg_replace_malloc.c:989)
+    ==29751==    by 0x48D8D44: g_free (gmem.c:208)
+    ==29751==    by 0x485C9ED: get_device_info (libwacom.c:369)
+    ==29751==    by 0x485DBE9: libwacom_new_from_path (libwacom.c:799)
+    ==29751==    by 0x4014B0: main (list-local-devices.c:301)
+    ==29751==  Block was alloc'd at
+    ==29751==    at 0x483FB26: malloc (vg_replace_malloc.c:446)
+    ==29751==    by 0x48DE9E9: g_malloc (gmem.c:100)
+    ==29751==    by 0x48F8AB9: g_strdup (gstrfuncs.c:323)
+    ==29751==    by 0x485C4F9: g_strdup_inline (gstrfuncs.h:321)
+    ==29751==    by 0x485C4F9: get_device_prop (libwacom.c:228)
+    ==29751==    by 0x485C8C8: get_device_info (libwacom.c:342)
+    ==29751==    by 0x485DBE9: libwacom_new_from_path (libwacom.c:799)
+    ==29751==    by 0x4014B0: main (list-local-devices.c:301)
+    ==29751==
+    Failed to find any devices known to libwacom.
+
+In case of error in get_device_info(), pointer being released
+must not be returned to the caller.
+---
+ libwacom/libwacom.c | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/libwacom/libwacom.c b/libwacom/libwacom.c
+index 725ec661..e65bcf29 100644
+--- a/libwacom/libwacom.c
++++ b/libwacom/libwacom.c
+@@ -367,7 +367,9 @@ get_device_info (const char            *path,
+ out:
+ 	if (retval == FALSE) {
+ 		g_free (*name);
++		*name = NULL;
+ 		g_free (*uniq);
++		*uniq = NULL;
+ 	}
+ 	return retval;
+ }

@@ -1,10 +1,10 @@
 ---
-version: 2.16.0-1
+version: 2.16.0-2
 pkgbase:
   name: libwacom
   pkgdesc: Library to identify Wacom tablets and their features
   pkgver: 2.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/linuxwacom/libwacom/wiki
   arch:
     - x86_64
@@ -27,11 +27,13 @@ pkgbase:
   source:
     - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.0/libwacom-2.16.0.tar.xz
     - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.0/libwacom-2.16.0.tar.xz.sig
+    - 0001_do_not_leak_freeed_pointer_on_error.patch
   validpgpkeys:
     - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
   sha256sums:
     - 6c3eb173828174f39fb9af07c1fad80bf920358adbaf6236e4ae8490f7abe01f
     - SKIP
+    - 3537891414eef42bf78c63320acfd71e30c962df1e35c1e76cdbfae9159706c5
 pkgname:
   - name: libwacom
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
