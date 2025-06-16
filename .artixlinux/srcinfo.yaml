@@ -1,10 +1,10 @@
 ---
-version: 2.16.0-2
+version: 2.16.1-1
 pkgbase:
   name: libwacom
   pkgdesc: Library to identify Wacom tablets and their features
-  pkgver: 2.16.0
-  pkgrel: 2
+  pkgver: 2.16.1
+  pkgrel: 1
   url: https://github.com/linuxwacom/libwacom/wiki
   arch:
     - x86_64
@@ -25,15 +25,13 @@ pkgbase:
     - 'python-libevdev: for libwacom-show-stylus'
     - 'python-pyudev: for libwacom-show-stylus'
   source:
-    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.0/libwacom-2.16.0.tar.xz
-    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.0/libwacom-2.16.0.tar.xz.sig
-    - 0001_do_not_leak_freeed_pointer_on_error.patch
+    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.1/libwacom-2.16.1.tar.xz
+    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.16.1/libwacom-2.16.1.tar.xz.sig
   validpgpkeys:
     - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
   sha256sums:
-    - 6c3eb173828174f39fb9af07c1fad80bf920358adbaf6236e4ae8490f7abe01f
+    - 0f9bc90babad92b2c4c6571b53af3aee065f437cce01c06c860599e1a10680aa
     - SKIP
-    - 3537891414eef42bf78c63320acfd71e30c962df1e35c1e76cdbfae9159706c5
 pkgname:
   - name: libwacom
 # generated with artixpkg 0.36.4-1-any

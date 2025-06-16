@@ -1,8 +1,8 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=libwacom
-pkgver=2.16.0
-pkgrel=2
+pkgver=2.16.1
+pkgrel=1
 pkgdesc="Library to identify Wacom tablets and their features"
 arch=('x86_64')
 url="https://github.com/linuxwacom/libwacom/wiki"
@@ -11,20 +11,12 @@ depends=('glib2' 'libevdev' 'libgudev' 'glibc')
 makedepends=('libxml2' 'meson' 'python-pytest' 'python-libevdev' 'python-pyudev')
 optdepends=('python-libevdev: for libwacom-show-stylus'
             'python-pyudev: for libwacom-show-stylus')
-source=(https://github.com/linuxwacom/libwacom/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz{,.sig}
-        0001_do_not_leak_freeed_pointer_on_error.patch)
+source=(https://github.com/linuxwacom/libwacom/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz{,.sig})
 # https://github.com/linuxwacom/libwacom/releases
-sha256sums=('6c3eb173828174f39fb9af07c1fad80bf920358adbaf6236e4ae8490f7abe01f'
-            'SKIP'
-            '3537891414eef42bf78c63320acfd71e30c962df1e35c1e76cdbfae9159706c5')
+sha256sums=('0f9bc90babad92b2c4c6571b53af3aee065f437cce01c06c860599e1a10680aa'
+            'SKIP')
 validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF') # "Peter Hutterer (Who-T) <office@who-t.net>"
 #validpgpkeys=('594ABBA066118C7A02D10A80A8AF906D9307FBAD') # "Joshua Dickens <Joshua@Joshua-Dickens.com>"
-
-prepare() {
-  cd $pkgname-$pkgver
-  # fix gdm crash - #1
-  patch -Np1 -i ../0001_do_not_leak_freeed_pointer_on_error.patch
-}
 
 build() {
   artix-meson $pkgname-$pkgver build
