@@ -1,0 +1,39 @@
+---
+version: 1.2.0-1
+pkgbase:
+  name: capnproto
+  pkgdesc: Cap'n Proto serialization/RPC system
+  pkgver: 1.2.0
+  pkgrel: 1
+  url: https://capnproto.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+  depends:
+    - gcc-libs
+    - glibc
+    - openssl
+    - zlib
+  provides:
+    - libcapnp.so
+    - libcapnp-json.so
+    - libcapnp-rpc.so
+    - libcapnpc.so
+    - libkj-async.so
+    - libkj-gzip.so
+    - libkj-http.so
+    - libkj-test.so
+    - libkj-tls.so
+    - libkj.so
+  source:
+    - capnproto-1.2.0.tar.gz::https://github.com/capnproto/capnproto/archive/v1.2.0.tar.gz
+  sha512sums:
+    - 342f08683e60b8346f7d119242781835889d7804d54fca00348f14abe9f76bcb4572678dd4d3471c638cabe94e5a77aaf7c19b6edf297cb25a319ac544c659e4
+  b2sums:
+    - 4d95c0bbf602238c5bf01b0ac5929ee87b25becbe4dcab64992fa843122dac990f267babe09048add7c9825aec62b16ca78e75356362bd2a0da343bf2168f8e7
+pkgname:
+  - name: capnproto
+# generated with artixpkg 0.36.4-1-any
