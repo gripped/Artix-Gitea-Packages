@@ -1,0 +1,28 @@
+---
+version: 3.5.1-1
+pkgbase:
+  name: openvswitch
+  pkgdesc: Production Quality, Multilayer Open Virtual Switch
+  pkgver: 3.5.1
+  pkgrel: 1
+  url: http://openvswitch.org
+  install: openvswitch.install
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - python
+  depends:
+    - openssl
+    - libcap-ng
+    - dpdk
+  source:
+    - http://openvswitch.org/releases/openvswitch-3.5.1.tar.gz
+    - openvswitch.tmpfiles
+  sha256sums:
+    - a47024f8c10d03a9984f598cf09b31768b6c88b9f9a4448e0565f65afac122aa
+    - e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9
+pkgname:
+  - name: openvswitch
+# generated with artixpkg 0.36.4-1-any
