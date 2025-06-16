@@ -1,0 +1,61 @@
+---
+version: 2.11.0-1
+pkgbase:
+  name: sssd
+  pkgdesc: System Security Services Daemon
+  pkgver: 2.11.0
+  pkgrel: 1
+  url: https://github.com/SSSD/sssd
+  install: sssd.install
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - check
+    - cmocka
+    - libfaketime
+    - openssh
+    - softhsm
+    - valgrind
+  makedepends:
+    - docbook-xsl
+    - doxygen
+    - python
+    - samba
+    - tevent
+    - ldb
+    - bc
+    - python-setuptools
+  depends:
+    - bind
+    - c-ares
+    - cyrus-sasl-gssapi
+    - ding-libs
+    - libnl
+    - libunistring
+    - smbclient
+    - nfsidmap
+    - jansson
+    - jose
+    - libtevent.so
+    - libldb.so
+    - curl
+    - pcre2
+  options:
+    - '!lto'
+  backup:
+    - etc/logrotate.d/sssd
+  source:
+    - https://github.com/SSSD/sssd/releases/download/2.11.0/sssd-2.11.0.tar.gz
+    - https://github.com/SSSD/sssd/releases/download/2.11.0/sssd-2.11.0.tar.gz.asc
+    - sssd-perms.tmpfile
+  validpgpkeys:
+    - C13CD07FFB2DB1408E457A3CD3D21B2910CF6759
+  sha512sums:
+    - cf273853170ff8fa8767eb7f760ee205d7b0b9c725f81de51c44463b96b66b509c5e257a4e9c9a633bd7080fde42b11164579291664de4629654ffa9989352fb
+    - SKIP
+    - 21646ea5900340c1b0a69c79fc72b0d3e360d56e04dc0daf7947024a420d214a931365e684e8f7cfd37c959327e6909ad4c0d6c3a8186153bca870f508dad486
+pkgname:
+  - name: sssd
+# generated with artixpkg 0.36.4-1-any
