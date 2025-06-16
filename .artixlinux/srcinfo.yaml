@@ -1,10 +1,10 @@
 ---
-version: 399-1.1
+version: 400-1
 pkgbase:
   name: xterm
   pkgdesc: X Terminal Emulator
-  pkgver: 399
-  pkgrel: 1.1
+  pkgver: 400
+  pkgrel: 1
   url: https://invisible-island.net/xterm/
   arch:
     - x86_64
@@ -32,11 +32,11 @@ pkgbase:
   optdepends:
     - 'xorg-mkfontscale: font scaling'
   source:
-    - xterm::git+https://github.com/ThomasDickey/xterm-snapshots.git?signed#tag=xterm-399
+    - xterm::git+https://github.com/ThomasDickey/xterm-snapshots.git?signed#tag=xterm-400
   validpgpkeys:
     - 19882D92DDA4C400C22C0D56CC2AF4472167BE03
   sha256sums:
-    - 96c3b607146963233105cde7947c39a55474e6232e0879c03759fce6b605a62d
+    - d89243248839a3d7da42861e700f5a2cc1810b3dc43db5b4177ae7da0332bb50
 pkgname:
   - name: xterm
 # generated with artixpkg 0.36.4-1-any
