@@ -1,0 +1,35 @@
+---
+version: 9.2.160-1
+pkgbase:
+  name: python-claripy
+  pkgdesc: Abstraction layer for constraint solvers
+  pkgver: 9.2.160
+  pkgrel: 1
+  url: https://github.com/angr/claripy
+  arch:
+    - any
+  license:
+    - custom:BSD2
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-cachetools
+    - python-decorator
+    - python-pysmt
+    - python-typing_extensions
+    - python-z3-solver
+  source:
+    - https://github.com/angr/claripy/archive/v9.2.160/python-claripy-9.2.160.tar.gz
+  sha512sums:
+    - 7bb1a6b3c50fb9cc2d0e7b9174ef06f5eb119cb2fedcb9fc7482177022953160ff1837e23a28f70910b62ab2185e7c96e7d2ab8d2afbf72e21778220da7a6249
+  b2sums:
+    - 7060d03e881a3b65bc53b0b220067e9ede5d08c380af6ac8bf54e6664d7d7914397994f3472866b1973f570241231253eecedcd55122f7b524e2aafa7fa92b7a
+pkgname:
+  - name: python-claripy
+# generated with artixpkg 0.36.4-1-any
