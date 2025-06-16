@@ -1,10 +1,10 @@
 ---
-version: 2.57.0-1
+version: 2.57.0-2
 pkgbase:
   name: i2pd
   pkgdesc: A full-featured C++ implementation of the I2P router
   pkgver: 2.57.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://i2pd.website/
   arch:
     - x86_64
@@ -49,4 +49,4 @@ pkgbase:
     - fe8cc2ec83cb5b5c2b2ec8cce9a989e0cb6fd347e00b84e03a17b12efd152fac
 pkgname:
   - name: i2pd
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
