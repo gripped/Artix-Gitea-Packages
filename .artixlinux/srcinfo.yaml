@@ -1,0 +1,82 @@
+---
+version: 4.0.6-10
+pkgbase:
+  name: transmission
+  pkgver: 4.0.6
+  pkgrel: 10
+  url: http://www.transmissionbt.com/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+    - curl
+    - dht
+    - glibmm-2.68
+    - gtk4
+    - gtkmm-4.0
+    - intltool
+    - libb64
+    - libdeflate
+    - libevent
+    - libnatpmp
+    - miniupnpc
+    - ninja
+    - npm
+    - qt6-base
+    - qt6-svg
+    - qt6-tools
+    - etmpfiles
+    - esysusers
+  source:
+    - https://github.com/transmission/transmission/releases/download/4.0.6/transmission-4.0.6.tar.xz
+    - febfe49c.patch
+    - transmission-cli.sysusers
+    - transmission-cli.tmpfiles
+  sha256sums:
+    - 2a38fe6d8a23991680b691c277a335f8875bdeca2b97c6b26b598bc9c7b0c45f
+    - 1e5917c79a0c17595f18b544c5c1ab101ecbef5b2ffb0ca42a0a3b221a85e044
+    - 641310fb0590d40e00bea1b5b9c843953ab78edf019109f276be9c6a7bdaf5b2
+    - 1266032bb07e47d6bcdc7dabd74df2557cc466c33bf983a5881316a4cc098451
+pkgname:
+  - name: transmission-cli
+    pkgdesc: Fast, easy, and free BitTorrent client (CLI tools, daemon and web client)
+    depends:
+      - curl
+      - libb64
+      - libdeflate
+      - libevent
+      - libnatpmp
+      - miniupnpc
+      - etmpfiles
+      - esysusers
+  - name: transmission-gtk
+    pkgdesc: Fast, easy, and free BitTorrent client (GTK+ GUI)
+    depends:
+      - curl
+      - gtk4
+      - gtkmm-4.0
+      - hicolor-icon-theme
+      - libb64
+      - libdeflate
+      - libevent
+      - libnatpmp
+      - miniupnpc
+    optdepends:
+      - 'libnotify: Desktop notification support'
+      - 'transmission-cli: daemon and web support'
+  - name: transmission-qt
+    pkgdesc: Fast, easy, and free BitTorrent client (Qt GUI)
+    depends:
+      - curl
+      - libb64
+      - libdeflate
+      - libevent
+      - libnatpmp
+      - miniupnpc
+      - qt6-base
+      - qt6-svg
+    optdepends:
+      - 'transmission-cli: daemon and web support'
+# generated with artixpkg 0.36.4-1-any
