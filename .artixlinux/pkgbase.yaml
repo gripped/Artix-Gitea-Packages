@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: ppsspp
-  version: 1.18.1-4
-  arch:
-    - x86_64
-  pkgname:
-    - ppsspp
-    - ppsspp-assets
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 1.18.1-4
+    version: 1.18.1-5
     packages:
-      - ppsspp-1.18.1-4-x86_64.pkg.tar.zst
-      - ppsspp-assets-1.18.1-4-x86_64.pkg.tar.zst
+      - ppsspp-1.18.1-5-x86_64.pkg.tar.zst
+      - ppsspp-assets-1.18.1-5-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
