@@ -1,0 +1,33 @@
+---
+version: 1.1.0-1
+pkgbase:
+  name: python-watchfiles
+  pkgdesc: Simple, modern and high performance file watching and code reload in Python
+  pkgver: 1.1.0
+  pkgrel: 1
+  url: https://github.com/samuelcolvin/watchfiles
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-dirty-equals
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-timeout
+  makedepends:
+    - python-build
+    - python-installer
+    - python-maturin
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+    - python-anyio
+  source:
+    - https://github.com/samuelcolvin/watchfiles/archive/v1.1.0/python-watchfiles-1.1.0.tar.gz
+  b2sums:
+    - dbb698473687133edea13a8064d7ae60c27fcfd4ab51038a9c98bec2b74acf6632e4e08669a93b381a862fb918443aac8185eb6f18b9323fddf7c697abcad5b6
+pkgname:
+  - name: python-watchfiles
+# generated with artixpkg 0.36.4-1-any
