@@ -1,10 +1,10 @@
 ---
-version: 1.8.7-1
+version: 1.8.7-2
 pkgbase:
   name: maturin
   pkgdesc: Build and publish crates with pyo3, rust-cpython and cffi bindings
   pkgver: 1.8.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/PyO3/maturin
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgname:
     depends:
       - maturin=1.8.7
       - python
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
