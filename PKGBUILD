@@ -6,7 +6,7 @@
 
 pkgname=python-pymongo
 _pkgname=mongo-python-driver
-pkgver=4.13.1
+pkgver=4.13.2
 pkgrel=1
 pkgdesc="The official MongoDB Python driver"
 arch=(x86_64)
@@ -48,7 +48,7 @@ optdepends=(
   'python-zstandard: for [zstd]'
 )
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver/$pkgver.tar.gz")
-sha256sums=('74c4787a9ea30cab4f1cf0d60de980daa2153eaba02c16fb068c52a875270e70')
+sha256sums=('cd19cfa41fcee212f9ed2499b9368a4cef29e0f0935340e96789d026f78ec0be')
 
 build() {
   cd "$_pkgname-$pkgver"
