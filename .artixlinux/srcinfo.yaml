@@ -1,0 +1,179 @@
+---
+version: 21.1.17-1
+pkgbase:
+  name: xorg-server
+  pkgver: 21.1.17
+  pkgrel: 1
+  url: https://xorg.freedesktop.org
+  arch:
+    - x86_64
+  groups:
+    - xorg
+  license:
+    - LicenseRef-Adobe-Display-PostScript
+    - BSD-3-Clause
+    - LicenseRef-DEC-3-Clause
+    - HPND
+    - LicenseRef-HPND-sell-MIT-disclaimer-xserver
+    - HPND-sell-variant
+    - ICU
+    - ISC
+    - MIT
+    - MIT-open-group
+    - NTP
+    - SGI-B-2.0
+    - SMLNJ
+    - X11
+    - X11-distribute-modifications-variant
+  makedepends:
+    - xorgproto
+    - pixman
+    - libx11
+    - mesa
+    - mesa-libgl
+    - xtrans
+    - libxkbfile
+    - libxfont2
+    - libpciaccess
+    - libxv
+    - libxcvt
+    - libxmu
+    - libxrender
+    - libxi
+    - libxaw
+    - libxtst
+    - libxres
+    - xorg-xkbcomp
+    - xorg-util-macros
+    - xorg-font-util
+    - libepoxy
+    - xcb-util
+    - xcb-util-image
+    - xcb-util-renderutil
+    - xcb-util-wm
+    - xcb-util-keysyms
+    - libxshmfence
+    - libunwind
+    - elogind
+    - meson
+    - git
+  source:
+    - xorg-server::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=xorg-server-21.1.17
+    - xvfb-run
+    - xvfb-run.1
+  validpgpkeys:
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+    - 67DC86F2623FC5FD4BB5225D14706DBE1E4B4540
+    - FD0004A26EADFE43A4C3F249C6F7AE200374452D
+    - 3BB639E56F861FA2E86505690FDD682D974CA72A
+  sha512sums:
+    - 6cc5ffd68789fe69a1bde3b2157f22340914e513ad8155f74dcb5198a535f81497e4ebca728e8f93d7875a89d98e0d7807d0b5ba29015c5b71f3df7455db8d8a
+    - 672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49
+    - de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22
+pkgname:
+  - name: xorg-server
+    pkgdesc: Xorg X server
+    install: xorg-server.install
+    depends:
+      - libepoxy
+      - libxfont2
+      - pixman
+      - xorg-server-common
+      - libunwind
+      - dbus
+      - libgl
+      - xf86-input-libinput
+      - nettle
+      - libxdmcp
+      - sh
+      - glibc
+      - libxau
+      - libelogind
+      - libtirpc
+      - libpciaccess
+      - libdrm
+      - libxshmfence
+      - libxcvt
+    provides:
+      - X-ABI-VIDEODRV_VERSION=25.2
+      - X-ABI-XINPUT_VERSION=24.4
+      - X-ABI-EXTENSION_VERSION=10.0
+      - x-server
+    conflicts:
+      - nvidia-utils<=331.20
+      - glamor-egl
+      - xf86-video-modesetting
+    replaces:
+      - glamor-egl
+      - xf86-video-modesetting
+  - name: xorg-server-xephyr
+    pkgdesc: A nested X server that runs as an X application
+    depends:
+      - libxfont2
+      - libgl
+      - libepoxy
+      - libunwind
+      - libelogind
+      - pixman
+      - xorg-server-common
+      - xcb-util-image
+      - xcb-util-renderutil
+      - xcb-util-wm
+      - xcb-util-keysyms
+      - nettle
+      - libtirpc
+      - xcb-util
+      - libxdmcp
+      - libx11
+      - libxau
+      - libxshmfence
+      - glibc
+  - name: xorg-server-xvfb
+    pkgdesc: Virtual framebuffer X server
+    license:
+      - MIT
+      - GPL-2.0-only
+    depends:
+      - libxfont2
+      - libunwind
+      - pixman
+      - xorg-server-common
+      - xorg-xauth
+      - libgl
+      - nettle
+      - libtirpc
+      - libelogind
+      - libxdmcp
+      - sh
+      - glibc
+      - libxau
+  - name: xorg-server-xnest
+    pkgdesc: A nested X server that runs as an X application
+    depends:
+      - libxfont2
+      - libunwind
+      - libxext
+      - pixman
+      - xorg-server-common
+      - nettle
+      - libtirpc
+      - libelogind
+      - libxdmcp
+      - glibc
+      - libx11
+      - libxau
+  - name: xorg-server-common
+    pkgdesc: Xorg server common files
+    depends:
+      - xkeyboard-config
+      - xorg-xkbcomp
+      - xorg-setxkbmap
+  - name: xorg-server-devel
+    pkgdesc: Development files for the X.Org X server
+    depends:
+      - xorgproto
+      - mesa
+      - libpciaccess
+      - pixman
+      - xorg-util-macros
+# generated with artixpkg 0.36.4-1-any
