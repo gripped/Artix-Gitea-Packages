@@ -1,10 +1,10 @@
 ---
-version: 2.10-2
+version: 2.11-1
 pkgbase:
   name: liburing
   pkgdesc: Linux-native io_uring I/O access library
-  pkgver: 2.10
-  pkgrel: 2
+  pkgver: 2.11
+  pkgrel: 1
   url: https://git.kernel.dk/cgit/liburing
   arch:
     - x86_64
@@ -18,11 +18,11 @@ pkgbase:
     - liburing.so
     - liburing-ffi.so
   source:
-    - git+https://git.kernel.dk/liburing.git?signed#tag=liburing-2.10
+    - git+https://git.kernel.dk/liburing.git?signed#tag=liburing-2.11
   validpgpkeys:
     - C0FC392DCADE26D975FA5E4AF7D358FB2971E0A6
   sha512sums:
-    - 3a391208aea703715d6a797244b597170a809af12d9f6dac5d5396e0baa985e061dd66c71bb8687ef3abfbd20479eca36618c17889691d687088afc0e818d0ee
+    - 79e45ff6cdc0193481e0701a3d70772d669a3a56dedf68aa73c7a89077869f22f58613e38e451176ee1b50a33f0a30cd3eacf0055a5eebf44280064122914cf1
 pkgname:
   - name: liburing
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any

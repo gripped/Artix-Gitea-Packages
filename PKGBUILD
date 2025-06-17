@@ -2,8 +2,8 @@
 # Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 pkgname=liburing
-pkgver=2.10
-pkgrel=2
+pkgver=2.11
+pkgrel=1
 pkgdesc="Linux-native io_uring I/O access library"
 arch=(x86_64)
 url="https://git.kernel.dk/cgit/liburing"
@@ -18,7 +18,7 @@ provides=(
   liburing-ffi.so
 )
 source=("git+https://git.kernel.dk/liburing.git?signed#tag=$pkgname-$pkgver")
-sha512sums=('3a391208aea703715d6a797244b597170a809af12d9f6dac5d5396e0baa985e061dd66c71bb8687ef3abfbd20479eca36618c17889691d687088afc0e818d0ee')
+sha512sums=('79e45ff6cdc0193481e0701a3d70772d669a3a56dedf68aa73c7a89077869f22f58613e38e451176ee1b50a33f0a30cd3eacf0055a5eebf44280064122914cf1')
 validpgpkeys=(C0FC392DCADE26D975FA5E4AF7D358FB2971E0A6)  # Jens Axboe <axboe@kernel.dk>
 
 prepare() {
