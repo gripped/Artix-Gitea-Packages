@@ -1,0 +1,73 @@
+---
+version: 24.1.7-1
+pkgbase:
+  name: xorg-xwayland
+  pkgdesc: run X clients under wayland
+  pkgver: 24.1.7
+  pkgrel: 1
+  url: https://xorg.freedesktop.org
+  arch:
+    - x86_64
+  groups:
+    - xorg
+  license:
+    - LicenseRef-Adobe-Display-PostScript
+    - BSD-3-Clause
+    - LicenseRef-DEC-3-Clause
+    - HPND
+    - LicenseRef-HPND-sell-MIT-disclaimer-xserver
+    - HPND-sell-variant
+    - ICU
+    - ISC
+    - MIT
+    - MIT-open-group
+    - NTP
+    - SGI-B-2.0
+    - SMLNJ
+    - X11
+    - X11-distribute-modifications-variant
+  makedepends:
+    - meson
+    - xorgproto
+    - xtrans
+    - libxkbfile
+    - dbus
+    - xorg-font-util
+    - wayland-protocols
+    - mesa-libgl
+    - elogind
+  depends:
+    - nettle
+    - libepoxy
+    - libxfont2
+    - pixman
+    - xorg-server-common
+    - libxcvt
+    - mesa
+    - libglvnd
+    - libxau
+    - wayland
+    - libdrm
+    - libtirpc
+    - libei
+    - libxshmfence
+    - libdecor
+    - glibc
+  provides:
+    - xorg-server-xwayland
+  conflicts:
+    - xorg-server-xwayland
+  replaces:
+    - xorg-server-xwayland
+  source:
+    - https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz
+    - https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz.sig
+  validpgpkeys:
+    - 67DC86F2623FC5FD4BB5225D14706DBE1E4B4540
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+  sha512sums:
+    - b5c5d39619743bff328c178a7496f04e17b527d3d7d6f6f54b0d2804fed54dbae16b76eb8f3921ca2557fa50b85601e40f8a2c809dc3c1e896cc1c662f91e013
+    - SKIP
+pkgname:
+  - name: xorg-xwayland
+# generated with artixpkg 0.36.4-1-any

@@ -1,7 +1,7 @@
 # Maintainer: AndyRTR <andyrtr@archlinux.org>
 
 pkgname=xorg-xwayland
-pkgver=24.1.6
+pkgver=24.1.7
 pkgrel=1
 arch=('x86_64')
 license=(
@@ -32,7 +32,7 @@ makedepends=('meson' 'xorgproto' 'xtrans' 'libxkbfile' 'dbus'
              'xorg-font-util' 'wayland-protocols' 'mesa-libgl'
              'elogind')
 source=(https://xorg.freedesktop.org/archive/individual/xserver/xwayland-$pkgver.tar.xz{,.sig})
-sha512sums=('b6dcc87f5c4d880cb23216518171a704c2a501803ac2efd9d01760895d755a617cd82313c6516f27a888b0581c64d74e3f8db5c238e1ae0d13da6cc1a547c02f'
+sha512sums=('b5c5d39619743bff328c178a7496f04e17b527d3d7d6f6f54b0d2804fed54dbae16b76eb8f3921ca2557fa50b85601e40f8a2c809dc3c1e896cc1c662f91e013'
             'SKIP')
 provides=('xorg-server-xwayland')
 conflicts=('xorg-server-xwayland')
