@@ -1,10 +1,10 @@
 ---
-version: 37-1
+version: 37-2
 pkgbase:
   name: dbus-broker
   pkgdesc: Linux D-Bus Message Broker
   pkgver: 37
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/bus1/dbus-broker/wiki
   arch:
     - x86_64

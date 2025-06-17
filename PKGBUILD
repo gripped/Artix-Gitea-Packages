@@ -6,7 +6,7 @@ pkgname=(
   dbus-broker
 )
 pkgver=37
-pkgrel=1
+pkgrel=2
 pkgdesc="Linux D-Bus Message Broker"
 url="https://github.com/bus1/dbus-broker/wiki"
 arch=(x86_64)
