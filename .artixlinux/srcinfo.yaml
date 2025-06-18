@@ -1,9 +1,9 @@
 ---
-version: 24.1.7-1
+version: 24.1.8-1
 pkgbase:
   name: xorg-xwayland
   pkgdesc: run X clients under wayland
-  pkgver: 24.1.7
+  pkgver: 24.1.8
   pkgrel: 1
   url: https://xorg.freedesktop.org
   arch:
@@ -60,13 +60,13 @@ pkgbase:
   replaces:
     - xorg-server-xwayland
   source:
-    - https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz
-    - https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.7.tar.xz.sig
+    - https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.8.tar.xz
+    - https://xorg.freedesktop.org/archive/individual/xserver/xwayland-24.1.8.tar.xz.sig
   validpgpkeys:
     - 67DC86F2623FC5FD4BB5225D14706DBE1E4B4540
     - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
   sha512sums:
-    - b5c5d39619743bff328c178a7496f04e17b527d3d7d6f6f54b0d2804fed54dbae16b76eb8f3921ca2557fa50b85601e40f8a2c809dc3c1e896cc1c662f91e013
+    - 417498baa87e6bfc11a778d31788a2b2d381efa08f2ac8308cfd8b1828ea62ba1da43542f798f124c25b51e8229ad1bdffc252462c0abf51be8fa0337f26d7e2
     - SKIP
 pkgname:
   - name: xorg-xwayland
