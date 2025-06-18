@@ -1,0 +1,27 @@
+---
+version: 6.0.0-1
+pkgbase:
+  name: intel-metee
+  pkgdesc: Access library for Intel CSME HECI interface
+  pkgver: 6.0.0
+  pkgrel: 1
+  url: https://github.com/intel/metee/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+    - doxygen
+    - graphviz
+  source:
+    - https://github.com/intel/metee//archive/6.0.0/intel-metee-6.0.0.tar.gz
+  sha256sums:
+    - cf604756f78da6f66a79f6ae7a1c2fa6833495316036a97824bce40483fee9f4
+pkgname:
+  - name: intel-metee
+    depends:
+      - glibc
+  - name: intel-metee-doc
+    pkgdesc: Access library for Intel CSME HECI interface (documentation)
+# generated with artixpkg 0.36.4-1-any
