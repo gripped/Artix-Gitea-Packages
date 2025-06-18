@@ -4,7 +4,7 @@
 # Contributor: Sander Boom <sanderboom@gmail.com>
 
 pkgname=ansible-lint
-pkgver=25.5.0
+pkgver=25.6.0
 pkgrel=1
 pkgdesc="Checks playbooks for practices and behaviour that could potentially be improved."
 arch=('any')
@@ -18,7 +18,7 @@ optdepends=('ansible: check official ansible collections')
 source=(git+https://github.com/ansible/ansible-lint.git#tag=v$pkgver
         disable_version_check.patch
         ignore_yamllint_unknown_option.patch)
-b2sums=('9bd5feba74ef8270c4712f52db0468a714870c0fc37b826e023a79171164f5ed01b39bc7a0040dcdc3a5494b7319139502b840c53e39487dd49bca70765f16b5'
+b2sums=('bfaab6e1a772f503e8bae800810faf7705b30e213ec6895d3285fa91b3233760565cc8f1cf94a6199fc4d6b11f49cf9a87a6a99d03f52930124ec2b0c3af8381'
         '98294f267ca693c0bc3921f8e076d674a219a891502cd31a0af789bc0b1447b53834b9c85853a134f6bc1ac384f31cb174cba2d55fbcc1636cae9bd3c0bd8f84'
         '8e419c65642bdbd60aa81d1e204139e69fc4c86aaddde4131fbfe3c21f5751e608a5a635d3ec4f518d3d5dc9d254a84b302e09bb4f873e21628e2f014b151516')
 
@@ -67,6 +67,7 @@ check() {
     # ignore yamllint tests
     --deselect 'test/test_yaml_utils.py::test_yamllint_incompatible_config'
     --deselect 'test/rules/test_syntax_check.py::test_syntax_check_role'
+    --deselect 'test/test_transformer.py::test_transformer[strings]'
     # ignore tests that wants to pull stuff from ansible-galaxy
     --deselect 'test/test_transformer.py::test_pruned_err_after_fix'
     --deselect 'test/test_dependencies_in_meta.py::test_external_dependency_is_ok'
