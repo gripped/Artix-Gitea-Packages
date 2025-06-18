@@ -1,8 +1,8 @@
 ---
-version: 21.1.17-1
+version: 21.1.18-1
 pkgbase:
   name: xorg-server
-  pkgver: 21.1.17
+  pkgver: 21.1.18
   pkgrel: 1
   url: https://xorg.freedesktop.org
   arch:
@@ -54,11 +54,11 @@ pkgbase:
     - xcb-util-keysyms
     - libxshmfence
     - libunwind
-    - elogind
+    - systemd
     - meson
     - git
   source:
-    - xorg-server::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=xorg-server-21.1.17
+    - xorg-server::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=xorg-server-21.1.18
     - xvfb-run
     - xvfb-run.1
   validpgpkeys:
@@ -67,7 +67,7 @@ pkgbase:
     - FD0004A26EADFE43A4C3F249C6F7AE200374452D
     - 3BB639E56F861FA2E86505690FDD682D974CA72A
   sha512sums:
-    - 6cc5ffd68789fe69a1bde3b2157f22340914e513ad8155f74dcb5198a535f81497e4ebca728e8f93d7875a89d98e0d7807d0b5ba29015c5b71f3df7455db8d8a
+    - 7677bb9585e44f5cfeba955514152ae8232841db402e833696b841c9620662a9f11dcf1d1a6b7392a6e22489607048b022b9c22c9c544703cd76e520cdb01e11
     - 672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49
     - de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22
 pkgname:
@@ -88,7 +88,7 @@ pkgname:
       - sh
       - glibc
       - libxau
-      - libelogind
+      - systemd-libs
       - libtirpc
       - libpciaccess
       - libdrm
@@ -113,7 +113,7 @@ pkgname:
       - libgl
       - libepoxy
       - libunwind
-      - libelogind
+      - systemd-libs
       - pixman
       - xorg-server-common
       - xcb-util-image
@@ -142,7 +142,7 @@ pkgname:
       - libgl
       - nettle
       - libtirpc
-      - libelogind
+      - systemd-libs
       - libxdmcp
       - sh
       - glibc
@@ -157,7 +157,7 @@ pkgname:
       - xorg-server-common
       - nettle
       - libtirpc
-      - libelogind
+      - systemd-libs
       - libxdmcp
       - glibc
       - libx11
