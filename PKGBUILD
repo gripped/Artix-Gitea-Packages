@@ -5,7 +5,7 @@
 
 pkgname=xf86-input-wacom
 pkgver=1.2.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="X.Org Wacom tablet driver"
 arch=(x86_64)
 url="https://github.com/linuxwacom/xf86-input-wacom"
