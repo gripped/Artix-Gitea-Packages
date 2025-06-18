@@ -1,10 +1,10 @@
 ---
-version: 17:4.4.3-3
+version: 17:4.4.3-4
 pkgbase:
   name: blender
   pkgdesc: A fully integrated 3D graphics creation suite
   pkgver: 4.4.3
-  pkgrel: 3
+  pkgrel: 4
   epoch: 17
   url: https://www.blender.org
   arch:
@@ -122,4 +122,4 @@ pkgbase:
     - 52dd6c4496af38505761e559adee556176aa2ad023f073618af77f6c9bc5e3a8faa59c8f259dc92302f7e650740afd2060951129408f1939d29c0901e8ccccae
 pkgname:
   - name: blender
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
