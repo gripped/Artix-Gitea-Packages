@@ -54,7 +54,7 @@ pkgbase:
     - xcb-util-keysyms
     - libxshmfence
     - libunwind
-    - systemd
+    - elogind
     - meson
     - git
   source:
@@ -88,7 +88,7 @@ pkgname:
       - sh
       - glibc
       - libxau
-      - systemd-libs
+      - libelogind
       - libtirpc
       - libpciaccess
       - libdrm
@@ -113,7 +113,7 @@ pkgname:
       - libgl
       - libepoxy
       - libunwind
-      - systemd-libs
+      - libelogind
       - pixman
       - xorg-server-common
       - xcb-util-image
@@ -142,7 +142,7 @@ pkgname:
       - libgl
       - nettle
       - libtirpc
-      - systemd-libs
+      - libelogind
       - libxdmcp
       - sh
       - glibc
@@ -157,7 +157,7 @@ pkgname:
       - xorg-server-common
       - nettle
       - libtirpc
-      - systemd-libs
+      - libelogind
       - libxdmcp
       - glibc
       - libx11
