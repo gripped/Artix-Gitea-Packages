@@ -1,10 +1,10 @@
 ---
-version: 10.9-1
+version: 10.9-1.1
 pkgbase:
   name: wine
   pkgdesc: A compatibility layer for running Windows programs
   pkgver: 10.9
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.winehq.org
   install: wine.install
   arch:
