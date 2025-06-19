@@ -1,9 +1,9 @@
 ---
-version: 6.3.5-1
+version: 6.4.0-1
 pkgbase:
   name: kde-cli-tools
   pkgdesc: Tools based on KDE Frameworks to better interact with the system
-  pkgver: 6.3.5
+  pkgver: 6.4.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -34,16 +34,16 @@ pkgbase:
     - qt6-svg
     - sh
   source:
-    - https://download.kde.org/stable/plasma/6.3.5/kde-cli-tools-6.3.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.3.5/kde-cli-tools-6.3.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.0/kde-cli-tools-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/kde-cli-tools-6.4.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - f047a46756c882f9392c64e3e62ad098ab18f37f1f35bdfc62082b14a7a69037
+    - 4f4ebed7c17a25079c54ef031929ac55d6777acd3cf595ca6343f4d0a4f00ba9
     - SKIP
 pkgname:
   - name: kde-cli-tools
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
