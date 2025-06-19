@@ -1,9 +1,9 @@
 ---
-version: 6.3.5-1
+version: 6.4.0-1
 pkgbase:
   name: krdp
   pkgdesc: Library and examples for creating an RDP server
-  pkgver: 6.3.5
+  pkgver: 6.4.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -16,7 +16,7 @@ pkgbase:
     - extra-cmake-modules
     - plasma-wayland-protocols
   depends:
-    - freerdp2
+    - freerdp
     - gcc-libs
     - glibc
     - kcmutils
@@ -34,16 +34,16 @@ pkgbase:
     - qtkeychain-qt6
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.3.5/krdp-6.3.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.3.5/krdp-6.3.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.0/krdp-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/krdp-6.4.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 6a575a16dcc53896df0c821de3dd49340f1e23c061cfb528b6bc7e3499ffc2e6
+    - efc167a1b78d216a28a62fd3cc99818502862ba841eff17593ee15721ce145d5
     - SKIP
 pkgname:
   - name: krdp
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
