@@ -1,0 +1,25 @@
+---
+version: 0.7.1-1
+pkgbase:
+  name: cargo-about
+  pkgdesc: Cargo plugin to generate list of all licenses for a crate
+  pkgver: 0.7.1
+  pkgrel: 1
+  url: https://github.com/EmbarkStudios/cargo-about
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+    - MIT
+  depends:
+    - cargo
+    - gcc-libs
+  options:
+    - '!lto'
+  source:
+    - cargo-about-0.7.1.tar.gz::https://github.com/EmbarkStudios/cargo-about/archive/0.7.1.tar.gz
+  sha256sums:
+    - 5b090871bda2c2cf645de826c219b41486c36ffe0b474ad9f6ecba7e21d279a0
+pkgname:
+  - name: cargo-about
+# generated with artixpkg 0.36.4-1-any

@@ -1,0 +1,38 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+
+pkgname=cargo-about
+pkgver=0.7.1
+pkgrel=1
+pkgdesc="Cargo plugin to generate list of all licenses for a crate"
+arch=('x86_64')
+url="https://github.com/EmbarkStudios/cargo-about"
+license=('Apache-2.0' 'MIT')
+depends=('cargo' 'gcc-libs')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+sha256sums=('5b090871bda2c2cf645de826c219b41486c36ffe0b474ad9f6ecba7e21d279a0')
+options=('!lto')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --frozen
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm 755 "target/release/$pkgname" -t "$pkgdir/usr/bin"
+  install -Dm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
+  install -Dm 644 LICENSE-MIT -t "$pkgdir/usr/share/licenses/$pkgname"
+}
+
+# vim:set ts=2 sw=2 et:
