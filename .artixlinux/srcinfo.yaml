@@ -1,0 +1,30 @@
+---
+version: 1.0.8-1
+pkgbase:
+  name: python-rencode
+  pkgdesc: A Module similar to bencode from the BitTorrent project
+  pkgver: 1.0.8
+  pkgrel: 1
+  url: https://github.com/aresch/rencode
+  arch:
+    - x86_64
+  license:
+    - GPL-3
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - cython
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - git+https://github.com/aresch/rencode.git#tag=v1.0.8
+  sha512sums:
+    - 974d3efb1e1f7a54902c3772663a5d122399b2e825592634cc88ba1f1a51ebf97470c368e6891d9e52af8a700a50749d428d273de2c5b21b6334fa456f664443
+pkgname:
+  - name: python-rencode
+# generated with artixpkg 0.36.4-1-any
