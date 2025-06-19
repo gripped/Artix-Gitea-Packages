@@ -1,9 +1,9 @@
 ---
-version: 6.3.5-1
+version: 6.4.0-1
 pkgbase:
   name: kscreen
   pkgdesc: KDE screen management software
-  pkgver: 6.3.5
+  pkgver: 6.4.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -14,6 +14,7 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
+    - wayland-protocols
   depends:
     - gcc-libs
     - glibc
@@ -23,6 +24,7 @@ pkgbase:
     - kdbusaddons
     - ki18n
     - kirigami
+    - kitemmodels
     - ksvg
     - kwindowsystem
     - layer-shell-qt
@@ -35,17 +37,19 @@ pkgbase:
     - qt6-base
     - qt6-declarative
     - qt6-sensors
+    - qt6-wayland
+    - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.3.5/kscreen-6.3.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.3.5/kscreen-6.3.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.0/kscreen-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/kscreen-6.4.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 71dcb79021681d8e48d819b810e6736e88b2a464e6b159a5f70fe945fa910a25
+    - e4cee0890a534053151fa5e85372ad82e9269b94cd3dc332b737c36c4711727f
     - SKIP
 pkgname:
   - name: kscreen
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
