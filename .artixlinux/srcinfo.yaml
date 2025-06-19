@@ -1,0 +1,90 @@
+---
+version: 6.4.0-2
+pkgbase:
+  name: kwin-x11
+  pkgdesc: An easy to use, but flexible, X Window Manager
+  pkgver: 6.4.0
+  pkgrel: 2
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+    - plasma-wayland-protocols
+    - python
+    - wayland-protocols
+  depends:
+    - aurorae
+    - breeze
+    - gcc-libs
+    - glibc
+    - plasma-activities
+    - kauth
+    - kcmutils
+    - kcolorscheme
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - kdeclarative
+    - kdecoration
+    - kglobalaccel
+    - kglobalacceld
+    - kguiaddons
+    - ki18n
+    - kirigami
+    - kitemmodels
+    - knewstuff
+    - knotifications
+    - kpackage
+    - kquickcharts
+    - kscreenlocker
+    - kservice
+    - ksvg
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - lcms2
+    - libcanberra
+    - libdisplay-info
+    - libdrm
+    - libepoxy
+    - libqaccessibilityclient-qt6
+    - libx11
+    - libxcb
+    - libxi
+    - libxkbcommon
+    - libxkbcommon-x11
+    - mesa
+    - libplasma
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-sensors
+    - qt6-svg
+    - qt6-tools
+    - qt6-wayland
+    - libelogind
+    - wayland
+    - xcb-util-cursor
+    - xcb-util-keysyms
+    - xcb-util-wm
+  source:
+    - https://download.kde.org/stable/plasma/6.4.0/kwin-x11-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/kwin-x11-6.4.0.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 76d7c018eb6ee657292c892ab9ce74098290eee07c3fdfa9d7c531497d8e5b77
+    - SKIP
+pkgname:
+  - name: kwin-x11
+# generated with artixpkg 0.36.4-1-any
