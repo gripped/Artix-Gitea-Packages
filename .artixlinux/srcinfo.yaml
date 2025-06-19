@@ -1,10 +1,10 @@
 ---
-version: 6.3.5-1
+version: 6.4.0-2
 pkgbase:
   name: plasma-vault
   pkgdesc: Plasma applet and services for creating encrypted vaults
-  pkgver: 6.3.5
-  pkgrel: 1
+  pkgver: 6.4.0
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -15,9 +15,10 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
   depends:
+    - fuse2
     - gcc-libs
     - glibc
-    - plasma-activities
+    - gocryptfs
     - kconfig
     - kcoreaddons
     - kdbusaddons
@@ -28,26 +29,23 @@ pkgbase:
     - kservice
     - kwidgetsaddons
     - libksysguard
-    - networkmanager-qt
     - libplasma
+    - networkmanager-qt
+    - plasma-activities
     - plasma-workspace
     - qt6-base
     - qt6-declarative
-  optdepends:
-    - 'cryfs: to use cryFS for encryption'
-    - 'encfs: to use encFS for encryption'
-    - 'gocryptfs: to use gocryptfs for encryption'
   source:
-    - https://download.kde.org/stable/plasma/6.3.5/plasma-vault-6.3.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.3.5/plasma-vault-6.3.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.0/plasma-vault-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/plasma-vault-6.4.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - a6cc8eae781671f62d465dc9ec453604409a24a5c9a91ca2bd029122b7d01e73
+    - cdd0edabe1a215c85668c47349f3ac8eed95a461bbd564d67ec8df2170eae76c
     - SKIP
 pkgname:
   - name: plasma-vault
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
