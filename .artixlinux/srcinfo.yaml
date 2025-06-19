@@ -1,10 +1,10 @@
 ---
-version: 15.1.0-1.1
+version: 15.1.0-2
 pkgbase:
   name: mingw-w64-gcc
   pkgdesc: Cross GCC for the MinGW-w64 cross-compiler
   pkgver: 15.1.0
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://gcc.gnu.org
   arch:
     - x86_64
@@ -46,4 +46,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: mingw-w64-gcc
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
