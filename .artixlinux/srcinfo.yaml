@@ -1,9 +1,9 @@
 ---
-version: 3.8-1
+version: 3.8.1-1
 pkgbase:
   name: python-markdown
   pkgdesc: Python implementation of John Gruber's Markdown
-  pkgver: 3.8
+  pkgver: 3.8.1
   pkgrel: 1
   url: https://python-markdown.github.io/
   arch:
@@ -23,9 +23,9 @@ pkgbase:
   optdepends:
     - 'python-yaml: parse Python in YAML metadata'
   source:
-    - python-markdown::git+https://github.com/Python-Markdown/markdown#tag=3.8
+    - python-markdown::git+https://github.com/Python-Markdown/markdown#tag=3.8.1
   sha256sums:
-    - a0646857408861e6bf23d38bc09c6bc3107ec483dabfde627702d6ead382d6d5
+    - b90a816bbdf9836f1c48e73d0020d27e5667c9fd8c1988a7e4738c9497cf3ebd
 pkgname:
   - name: python-markdown
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.36.4-1-any
