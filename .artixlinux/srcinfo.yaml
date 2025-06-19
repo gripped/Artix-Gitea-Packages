@@ -1,10 +1,10 @@
 ---
-version: 6.3.5-2
+version: 6.4.0-3
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
-  pkgver: 6.3.5
-  pkgrel: 2
+  pkgver: 6.4.0
+  pkgrel: 3
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -104,6 +104,7 @@ pkgbase:
     - qt6-5compat
     - qt6-base
     - qt6-declarative
+    - qt6-location
     - qt6-positioning
     - qt6-svg
     - qt6-tools
@@ -120,30 +121,16 @@ pkgbase:
     - xorg-xrdb
     - xorg-xwayland
     - zlib
-  optdepends:
-    - 'appmenu-gtk-module: global menu support for GTK2 and some GTK3 applications'
-    - 'baloo: Baloo search runner'
-    - 'discover: manage applications installation from the launcher'
-    - 'kdepim-addons: displaying PIM events in the calendar'
-    - 'kwayland-integration: Wayland integration for Qt5 applications'
-    - 'networkmanager-qt: IP based geolocation'
-    - 'plasma-workspace-wallpapers: additional wallpapers'
-    - 'plasma5-integration: use Plasma settings in Qt5 applications'
-    - 'xdg-desktop-portal-gtk: sync font settings to Flatpak apps'
-  conflicts:
-    - plasma-wayland-session
-  replaces:
-    - plasma-wayland-session
   source:
-    - https://download.kde.org/stable/plasma/6.3.5/plasma-workspace-6.3.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.3.5/plasma-workspace-6.3.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.0/plasma-workspace-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/plasma-workspace-6.4.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 7f508f6ca27d7d615eee27919dd0b0f94d168ba81c3a4d543968046bccb787f2
+    - 961ef54f7fd21f212f8d633300f1bb0520524aa9794e433ae1abe16ac0560b2b
     - SKIP
 pkgname:
   - name: plasma-workspace
@@ -232,6 +219,7 @@ pkgname:
       - qt6-5compat
       - qt6-base
       - qt6-declarative
+      - qt6-location
       - qt6-positioning
       - qt6-svg
       - qt6-tools
@@ -249,4 +237,25 @@ pkgname:
       - xorg-xwayland
       - zlib
       - plasma-integration
-# generated with artixpkg 0.36.2-1-any
+    optdepends:
+      - 'appmenu-gtk-module: global menu support for GTK2 and some GTK3 applications'
+      - 'baloo: Baloo search runner'
+      - 'discover: manage applications installation from the launcher'
+      - 'kdepim-addons: displaying PIM events in the calendar'
+      - 'kwayland-integration: Wayland integration for Qt5 applications'
+      - 'kwin-x11: X session window manager'
+      - 'networkmanager-qt: IP based geolocation'
+      - 'plasma-workspace-wallpapers: additional wallpapers'
+      - 'plasma5-integration: use Plasma settings in Qt5 applications'
+      - 'xdg-desktop-portal-gtk: sync font settings to Flatpak apps'
+    conflicts:
+      - plasma-wayland-session
+    replaces:
+      - plasma-wayland-session
+  - name: plasma-x11-session
+    pkgdesc: Plasma X11 session
+    groups: []
+    depends:
+      - plasma-workspace
+      - kwin-x11
+# generated with artixpkg 0.36.4-1-any
