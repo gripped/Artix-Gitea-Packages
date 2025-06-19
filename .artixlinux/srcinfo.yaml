@@ -1,0 +1,29 @@
+---
+version: 4.69-1
+pkgbase:
+  name: perl-cgi
+  pkgdesc: Handle Common Gateway Interface requests and responses
+  pkgver: 4.69
+  pkgrel: 1
+  url: https://metacpan.org/dist/CGI
+  arch:
+    - any
+  license:
+    - Artistic-2.0
+  checkdepends:
+    - perl-test-nowarnings
+    - perl-test-warn>=0.3
+  depends:
+    - perl>=5.8.1
+    - perl-html-parser
+  options:
+    - '!emptydirs'
+  source:
+    - perl-cgi-4.69.tar.gz::https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-4.69.tar.gz
+  sha512sums:
+    - d8dbb476fdfb43bac1d7674c25e046eabaf15dcf582c453e1810367cb2ed435b7fcc597ecaab32692832997e16d04152928cc145502781f8c6698bfdefcc4407
+  b2sums:
+    - 71e244baee17cd6adf8f6794f8a51a7da943f76d88316e5e239771bb369ebc4e44a976fbe2e86f83fc6dff620d22bfd940d792484bd5b1fca2409a6828716b70
+pkgname:
+  - name: perl-cgi
+# generated with artixpkg 0.36.4-1-any
