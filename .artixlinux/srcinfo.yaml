@@ -1,0 +1,35 @@
+---
+version: 5.1.4-1
+pkgbase:
+  name: fcitx5-gtk
+  pkgdesc: Fcitx5 gtk im module and glib based dbus client library
+  pkgver: 5.1.4
+  pkgrel: 1
+  url: https://github.com/fcitx/fcitx5-gtk
+  arch:
+    - x86_64
+  groups:
+    - fcitx5-im
+  license:
+    - GPL
+  makedepends:
+    - git
+    - extra-cmake-modules
+    - glib2-devel
+    - gobject-introspection
+    - gtk2
+    - gtk3
+    - gtk4
+    - ninja
+    - vulkan-headers
+  depends:
+    - glib2
+  source:
+    - git+https://github.com/fcitx/fcitx5-gtk.git#tag=5.1.4?signed
+  validpgpkeys:
+    - 2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9
+  sha512sums:
+    - df69f1c9cd9b466191358e7ff34335e5cb1437a36883b1803b7a40be90eaba5efa4d6e197cfe3545f61f236ec834e88ba8c8203867b571f105b0b8fa0f6c6244
+pkgname:
+  - name: fcitx5-gtk
+# generated with artixpkg 0.36.4-1-any
