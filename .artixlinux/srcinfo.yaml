@@ -16,7 +16,6 @@ pkgbase:
     - breeze
     - breeze-gtk
     - discover
-    - drkonqi
     - kactivitymanagerd
     - kde-cli-tools
     - kde-gtk-config
@@ -34,6 +33,7 @@ pkgbase:
     - kwallet-pam
     - kwayland
     - kwin
+    - kwin-x11
     - kwrited
     - layer-shell-qt
     - libkscreen
@@ -70,7 +70,6 @@ pkgbase:
     - 'breeze-plymouth: Breeze theme for Plymouth'
     - 'flatpak-kcm: Manage Flatpak applications from systemsettings'
     - 'kgamma: Adjust gamma settings on X'
-    - 'kwin-x11: X11 window manager'
     - 'plasma-x11-session: Plasma X11 session'
     - 'plymouth-kcm: Configure Plymouth from systemsettings'
     - 'plasma-sdk: Development tools'

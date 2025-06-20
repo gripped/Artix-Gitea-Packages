@@ -13,7 +13,6 @@ depends=(aurorae
          breeze
          breeze-gtk
          discover
-         drkonqi
          kactivitymanagerd
          kde-cli-tools
          kde-gtk-config
@@ -31,6 +30,7 @@ depends=(aurorae
          kwallet-pam
          kwayland
          kwin
+         kwin-x11
          kwrited
          layer-shell-qt
          libkscreen
@@ -67,7 +67,7 @@ optdepends=('breeze-grub: Breeze theme for GRUB'
             'breeze-plymouth: Breeze theme for Plymouth'
             'flatpak-kcm: Manage Flatpak applications from systemsettings'
             'kgamma: Adjust gamma settings on X'
-            'kwin-x11: X11 window manager'
+            #'kwin-x11: X11 window manager'
             'plasma-x11-session: Plasma X11 session'
             'plymouth-kcm: Configure Plymouth from systemsettings'
             'plasma-sdk: Development tools'
