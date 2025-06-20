@@ -5,7 +5,7 @@
 pkgname=kwin-x11
 pkgver=6.4.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=2.1
 pkgdesc='An easy to use, but flexible, X Window Manager'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -70,7 +70,8 @@ makedepends=(extra-cmake-modules
              python
              wayland-protocols)
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig
+        plasmax11.desktop)
 sha256sums=('76d7c018eb6ee657292c892ab9ce74098290eee07c3fdfa9d7c531497d8e5b77'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
