@@ -5,7 +5,7 @@
 
 _base=textual
 pkgname=python-${_base}
-pkgver=3.4.0
+pkgver=3.5.0
 pkgrel=1
 pkgdesc="Modern Text User Interface framework"
 arch=(any)
@@ -18,7 +18,7 @@ optdepends=('python-tree-sitter: for syntax highlighting support'
             'python-tree-sitter-languages: for custom languages support'
             'python-textual-dev: tools for developers')
 source=(${_base}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)
-sha512sums=('2bfe275739259465663e1bae0f589e8f65565816956de358185bb9af552e9f051091918b1444fea64c93b4916c8668d9a964241582035fdb16436efd3d90d368')
+sha512sums=('db0e33ded789d28de1cb97e3fc76482e1ec705f1570f62c1c368b11a49f2ba59b896fb1858ef6b5d323c3188ef8d3c5512ce8b0df722c56d3fb156ddc7a362c1')
 
 build() {
   cd ${_base}-${pkgver}
