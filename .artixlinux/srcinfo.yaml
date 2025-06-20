@@ -1,10 +1,10 @@
 ---
-version: 0.21.4-1.1
+version: 0.21.5-1
 pkgbase:
   name: eza
   pkgdesc: A modern replacement for ls (community fork of exa)
-  pkgver: 0.21.4
-  pkgrel: 1.1
+  pkgver: 0.21.5
+  pkgrel: 1
   url: https://github.com/eza-community/eza
   arch:
     - x86_64
@@ -24,11 +24,11 @@ pkgbase:
   replaces:
     - exa
   source:
-    - https://github.com/eza-community/eza/archive/v0.21.4/eza-0.21.4.tar.gz
+    - https://github.com/eza-community/eza/archive/v0.21.5/eza-0.21.5.tar.gz
   sha256sums:
-    - dbe04448febef15b144e86551db633146864f4afb272f96c4d586e0bc8284ffb
+    - 85aff87a87bc66130a43106ee64fdefa572d709f5e1ae33d7ef1de76329d2950
   b2sums:
-    - 73383b391748d21eb283a75cf422bfaa1f941af82b4f7d61279f30244f070e6f27e6b297b7fac44f3aff2310754b2cdb57294842464b4d889c65c5364707b8dd
+    - 1bfcb9c2c1a2a4f65d0cfd2cfd33bb16f87d171282d7a16d927446912dad7304a65cb108bfe48dc6e8f536d799917c70b433d262fd8e8667d8c5009643f90fb5
 pkgname:
   - name: eza
     depends:
@@ -36,4 +36,4 @@ pkgname:
       - glibc
       - libgit2
       - libgit2.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
