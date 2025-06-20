@@ -5,7 +5,7 @@
 pkgname=kwin-x11
 pkgver=6.4.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='An easy to use, but flexible, X Window Manager'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -90,4 +90,5 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 $srcdir/plasmax11.desktop -t $pkgdir/usr/share/xsessions
 }
