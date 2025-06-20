@@ -1,0 +1,62 @@
+---
+version: 0.191.6-1
+pkgbase:
+  name: zed
+  pkgdesc: A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
+  pkgver: 0.191.6
+  pkgrel: 1
+  url: https://zed.dev
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+    - AGPL-3.0-or-later
+    - Apache-2.0
+  makedepends:
+    - cargo
+    - cargo-about
+    - clang
+    - cmake
+    - protobuf
+    - vulkan-headers
+    - vulkan-validation-layers
+  depends:
+    - alsa-lib
+    - libasound.so
+    - curl
+    - libcurl.so
+    - fontconfig
+    - gcc-libs
+    - glibc
+    - libxcb
+    - libxkbcommon
+    - libxkbcommon-x11
+    - nodejs>=18
+    - netcat
+    - openssl
+    - libcrypto.so
+    - libssl.so
+    - sqlite
+    - vulkan-driver
+    - vulkan-icd-loader
+    - vulkan-tools
+    - wayland
+    - zlib
+    - libz.so
+    - zstd
+    - libzstd.so
+  optdepends:
+    - 'clang: improved C/C++ language support'
+    - 'eslint: improved Javascript language support'
+    - 'pyright: improved Python language support'
+    - 'rust-analyzer: improved Rust language support'
+    - 'org.freedesktop.secrets: to keep you logged into your Zed account'
+  replaces:
+    - zed-editor
+  source:
+    - https://github.com/zed-industries/zed/archive/v0.191.6/zed-0.191.6.tar.gz
+  sha256sums:
+    - 0251a96be6709b7cc0c6ba9dbfa257ebb7de4488bfbdf0d89b72240bdb67dace
+pkgname:
+  - name: zed
+# generated with artixpkg 0.36.4-1-any
