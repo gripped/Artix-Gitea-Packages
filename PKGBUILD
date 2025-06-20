@@ -5,14 +5,14 @@
 _name=kcrash
 pkgname=${_name}5
 pkgver=5.116.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Support for application crash analysis and bug report from apps'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
 depends=(kcoreaddons5 kwindowsystem5)
 makedepends=(extra-cmake-modules doxygen qt5-tools qt5-doc)
-optdepends=('drkonqi: KDE crash handler application')
+#optdepends=('drkonqi: KDE crash handler application')
 conflicts=("$_name<5.111")
 replaces=("$_name<5.111")
 groups=(kf5)
