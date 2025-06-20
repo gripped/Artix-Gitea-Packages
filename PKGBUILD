@@ -6,7 +6,7 @@ pkgbase=plasma-workspace
 pkgname=(plasma-workspace plasma-x11-session)
 pkgver=6.4.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=4
+pkgrel=4.1
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -142,12 +142,13 @@ package_plasma-workspace() {
             'discover: manage applications installation from the launcher'
             'kdepim-addons: displaying PIM events in the calendar'
             'kwayland-integration: Wayland integration for Qt5 applications'
-            'kwin-x11: X session window manager'
+            #'kwin-x11: X session window manager'
             'networkmanager-qt: IP based geolocation'
             'plasma-workspace-wallpapers: additional wallpapers'
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
-  depends+=(plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
+  depends+=(plasma-integration # Declare runtime dependency here to avoid dependency cycles at build time
+            plasma-x11-session)
   conflicts=(plasma-wayland-session)
   replaces=(plasma-wayland-session)
 
