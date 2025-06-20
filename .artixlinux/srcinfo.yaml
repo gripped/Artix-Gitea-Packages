@@ -74,7 +74,8 @@ pkgbase:
     - xcb-util-keysyms
     - xcb-util-wm
   source:
-    - https://download.kde.org/stable/plasma/6.4.0/kwin-x11-6.4.0.tar.xz{,.sig
+    - https://download.kde.org/stable/plasma/6.4.0/kwin-x11-6.4.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.0/kwin-x11-6.4.0.tar.xz.sig
     - plasmax11.desktop
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
@@ -85,6 +86,7 @@ pkgbase:
   sha256sums:
     - 76d7c018eb6ee657292c892ab9ce74098290eee07c3fdfa9d7c531497d8e5b77
     - SKIP
+    - 0a9f1614b646f0cdb05f14a9bd272e9037ce126ffdb11c9dc1fc32f13d6fa02e
 pkgname:
   - name: kwin-x11
 # generated with artixpkg 0.36.4-1-any

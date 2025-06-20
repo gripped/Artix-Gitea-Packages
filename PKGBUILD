@@ -70,10 +70,11 @@ makedepends=(extra-cmake-modules
              python
              wayland-protocols)
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
         plasmax11.desktop)
 sha256sums=('76d7c018eb6ee657292c892ab9ce74098290eee07c3fdfa9d7c531497d8e5b77'
-            'SKIP')
+            'SKIP'
+            '0a9f1614b646f0cdb05f14a9bd272e9037ce126ffdb11c9dc1fc32f13d6fa02e')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
