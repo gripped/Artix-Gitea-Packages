@@ -6,7 +6,7 @@ pkgbase=plasma-workspace
 pkgname=(plasma-workspace plasma-x11-session)
 pkgver=6.4.0
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=4.1
+pkgrel=5
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -87,7 +87,6 @@ depends=(accountsservice
          libxtst
          milou
          ocean-sound-theme
-         phonon-qt6
          plasma-activities
          plasma-activities-stats
          plasma5support
@@ -116,6 +115,7 @@ makedepends=(baloo
              extra-cmake-modules
              kdoctools
              networkmanager-qt
+             phonon-qt6
              plasma-wayland-protocols
              qcoro)
 groups=(plasma)
@@ -164,7 +164,7 @@ package_plasma-x11-session() {
   depends=(plasma-workspace kwin-x11)
   groups=()
 
-  install -Dm644 build/login-sessions/plasmax11.desktop "$pkgdir"/usr/share/xsessions/plasma-x11.desktop
+  install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
 
   rm -rf $pkgdir/usr/lib/systemd
 }

@@ -1,10 +1,10 @@
 ---
-version: 6.4.0-4.1
+version: 6.4.0-5
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
   pkgver: 6.4.0
-  pkgrel: 4.1
+  pkgrel: 5
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -17,6 +17,7 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
     - networkmanager-qt
+    - phonon-qt6
     - plasma-wayland-protocols
     - qcoro
   depends:
@@ -96,7 +97,6 @@ pkgbase:
     - libxtst
     - milou
     - ocean-sound-theme
-    - phonon-qt6
     - plasma-activities
     - plasma-activities-stats
     - plasma5support
@@ -211,7 +211,6 @@ pkgname:
       - libxtst
       - milou
       - ocean-sound-theme
-      - phonon-qt6
       - plasma-activities
       - plasma-activities-stats
       - plasma5support
