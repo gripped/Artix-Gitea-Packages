@@ -1,0 +1,63 @@
+---
+version: 2:5.2.0-1
+pkgbase:
+  name: darktable
+  pkgdesc: Utility to organize and develop raw images
+  pkgver: 5.2.0
+  pkgrel: 1
+  epoch: 2
+  url: https://darktable.org
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - clang
+    - cmake
+    - desktop-file-utils
+    - intltool
+    - json-glib
+    - libwebp
+    - llvm
+    - portmidi
+    - python-jsonschema
+  depends:
+    - colord-gtk
+    - exiv2
+    - flickcurl
+    - gmic
+    - graphicsmagick
+    - iso-codes
+    - jasper
+    - lensfun
+    - libavif
+    - libgphoto2
+    - libjpeg-turbo
+    - libjxl
+    - libsecret
+    - lua
+    - openexr
+    - openjpeg2
+    - openmp
+    - osm-gps-map
+    - pugixml
+    - zlib
+  optdepends:
+    - 'dcraw: base curve script'
+    - 'perl-image-exiftool: base curve script'
+    - 'imagemagick: base curve and noise profile scripts'
+    - 'ghostscript: noise profile script'
+    - 'portmidi: game and midi controller input devices'
+    - 'gnuplot: noise profile script'
+  source:
+    - https://github.com/darktable-org/darktable/releases/download/release-5.2.0/darktable-5.2.0.tar.xz
+    - https://github.com/darktable-org/darktable/releases/download/release-5.2.0/darktable-5.2.0.tar.xz.asc
+  validpgpkeys:
+    - C4CBC150699956E2A3268EF5BB5CC8295B1779C9
+    - F10F9686652B0E949FCD94C318DCA123F949BD3B
+  sha256sums:
+    - 53a46cd46ef7118485c4abf4ab407c181639bb8634243ec0ed1f7c1e8299bec6
+    - SKIP
+pkgname:
+  - name: darktable
+# generated with artixpkg 0.36.4-1-any
