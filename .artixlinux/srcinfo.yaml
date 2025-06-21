@@ -1,0 +1,28 @@
+---
+version: 2.6.9-1
+pkgbase:
+  name: ruby-bundler
+  pkgdesc: Manages an application's dependencies through its entire life, across many machines, systematically and repeatably
+  pkgver: 2.6.9
+  pkgrel: 1
+  url: https://bundler.io
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - ruby-rake
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/rubygems/rubygems/archive/bundler-v2.6.9/ruby-bundler-2.6.9.tar.gz
+  sha512sums:
+    - a2121369dc6dea94e8b5aed55536cf38a8b6fabb6348ba2809e0dc2ec6e1a672f41772df7f2270d32a2d93334f85a13b8c38c7a383fa668558434a481a652140
+  b2sums:
+    - 92ab45ad8f864f0f402d493f368caab1933ed3f1d09466bff41899521a262fc60b4d3c9463c2823f80510aa45f89ba31ea9bf99f730f65f6f191951acc0ca65f
+pkgname:
+  - name: ruby-bundler
+# generated with artixpkg 0.36.4-1-any
