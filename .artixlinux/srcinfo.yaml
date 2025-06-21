@@ -1,0 +1,28 @@
+---
+version: 20250621-1
+pkgbase:
+  name: autofs-dinit
+  pkgdesc: dinit service script for autofs
+  pkgver: 20250621
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-system
+  license:
+    - BSD
+  depends:
+    - autofs
+    - dinit
+  provides:
+    - init-autofs
+  conflicts:
+    - init-autofs
+  source:
+    - automount
+  sha256sums:
+    - c028019a74950a89955bb90647e1de20b75df99bf9401a577183ddd55af8bbc8
+pkgname:
+  - name: autofs-dinit
+# generated with artixpkg 0.36.4-1-any
