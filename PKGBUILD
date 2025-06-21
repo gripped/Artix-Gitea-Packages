@@ -2,13 +2,13 @@
 
 pkgname=autofs-dinit
 pkgver=20250621
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service script for autofs"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 depends=('autofs' 'dinit')
-groups=('dinit-system')
+groups=('dinit-galaxy')
 conflicts=('init-autofs')
 provides=('init-autofs')
 source=("automount")
