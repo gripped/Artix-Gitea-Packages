@@ -1,0 +1,25 @@
+---
+version: 2.008002-1
+pkgbase:
+  name: perl-type-tiny
+  pkgdesc: Tiny, yet Moo(se)-compatible type constraint
+  pkgver: 2.008002
+  pkgrel: 1
+  url: https://metacpan.org/release/Type-Tiny
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  depends:
+    - perl
+    - perl-exporter-tiny
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/T/TO/TOBYINK/Type-Tiny-2.008002.tar.gz
+  sha512sums:
+    - 5781060cbd001650cf78a4fe1691caa653e0f18063ce797d8760b27fb5c55aae7bfb9978b4ebf37484991288083456ef0081361b173fd742cb81d1ae4d33b244
+pkgname:
+  - name: perl-type-tiny
+# generated with artixpkg 0.36.4-1-any
