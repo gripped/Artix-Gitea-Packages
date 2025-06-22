@@ -2,7 +2,7 @@
 # Contributor: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=python-cfn-lint
-pkgver=1.36.0
+pkgver=1.36.1
 pkgrel=1
 pkgdesc='CloudFormation Linter'
 arch=(any)
@@ -42,7 +42,7 @@ optdepends=(
   'python-sarif-om: for sarif formatter'
 )
 source=("git+$url.git#tag=v$pkgver")
-sha256sums=('1be7c1143e6011aa5723e37ffda5b633c1904186fb10aea2e72aaa0032ffb9e4')
+sha256sums=('ca8cf31a9c68489695d91f5f88a003c574196d4a4359623c06efd3d197b81795')
 
 build() {
   cd ${pkgname#python-}
@@ -53,8 +53,7 @@ check() {
   cd ${pkgname#python-}
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  PATH=$PWD/test-env/bin:$PATH test-env/bin/python -m pytest -n auto \
-    --deselect test/unit/rules/templates/test_limitsize_template.py::TestTemplateLimitSize::test_file_negative
+  PATH=$PWD/test-env/bin:$PATH test-env/bin/python -m pytest -n auto
 }
 
 package() {
