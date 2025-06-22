@@ -1,0 +1,26 @@
+---
+version: 0.26026-1
+pkgbase:
+  name: perl-pkgconfig
+  pkgdesc: Pure-Perl Core-Only replacement for pkg-config
+  pkgver: 0.26026
+  pkgrel: 1
+  url: https://metacpan.org/release/PkgConfig
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  checkdepends:
+    - perl-capture-tiny
+    - perl-test-minimumversion
+  depends:
+    - perl
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/PkgConfig-0.26026.tar.gz
+  sha512sums:
+    - f177737d653c2caacc6298a6f2b5665d87f9dfdc904b5012ad0ff4d41515a0eab9a739e0bc3e99319be8248c163062a9373fd6d7aef26a23c4c3117d66a685de
+pkgname:
+  - name: perl-pkgconfig
+# generated with artixpkg 0.36.4-1-any
