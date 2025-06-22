@@ -1,0 +1,24 @@
+---
+version: 1:2.048-1
+pkgbase:
+  name: noto-fonts-emoji
+  pkgdesc: Google Noto Color Emoji font
+  pkgver: 2.048
+  pkgrel: 1
+  epoch: 1
+  url: https://www.google.com/get/noto/
+  arch:
+    - any
+  license:
+    - custom:OFL
+  makedepends:
+    - git
+  provides:
+    - emoji-font
+  source:
+    - git+https://github.com/googlefonts/noto-emoji.git#tag=v2.048
+  sha256sums:
+    - 7e6a3d53865c42f619d578362c9e50068beb61230204682b964fb21549867807
+pkgname:
+  - name: noto-fonts-emoji
+# generated with artixpkg 0.36.4-1-any
