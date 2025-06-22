@@ -1,0 +1,25 @@
+---
+version: 0.15.3-1
+pkgbase:
+  name: liburcu
+  pkgdesc: LGPLv2.1 userspace RCU (read-copy-update) library
+  pkgver: 0.15.3
+  pkgrel: 1
+  url: https://lttng.org/urcu
+  arch:
+    - x86_64
+  license:
+    - LGPL2.1
+  depends:
+    - glibc
+  source:
+    - https://lttng.org/files/urcu/userspace-rcu-0.15.3.tar.bz2
+    - https://lttng.org/files/urcu/userspace-rcu-0.15.3.tar.bz2.asc
+  validpgpkeys:
+    - 2A0B4ED915F2D3FA45F5B16217280A9781186ACF
+  sha256sums:
+    - 26687ec84e3e114759454c884a08abeaf79dec09b041895ddf4c45ec150acb6d
+    - SKIP
+pkgname:
+  - name: liburcu
+# generated with artixpkg 0.36.4-1-any
