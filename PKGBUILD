@@ -7,40 +7,39 @@
 # Contributor: Todd Maynard <arch@toddmaynard.com>
 
 pkgname=kmymoney
-pkgver=5.1.3
-pkgrel=26
+pkgver=5.2.0
+pkgrel=3
 pkgdesc="Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
 arch=('x86_64')
 url="https://kmymoney.org/"
 license=('GPL')
-depends=('aqbanking' 'gwenhywfar' 'libalkimia' 'sqlcipher' 'qt5-base' 'qt5-webengine' 'gpgmepp' 'karchive5'
-         'kcoreaddons5' 'kconfig5' 'kwidgetsaddons5' 'ki18n5' 'kcompletion5' 'kcmutils5' 'kitemmodels5'
-         'kitemviews5' 'kservice5' 'kwallet5' 'kxmlgui5'
-         'ktextwidgets5' 'knotifications5' 'kio5' 'kholidays5' 'kactivities5'
-         'kqtquickcharts' 'kdiagram5' 'libical' 'shared-mime-info' 'libofx')
-makedepends=('extra-cmake-modules' 'kdoctools5' 'doxygen')
+depends=('glibc' 'gcc-libs' 'gmp' 'libalkimia' 'sqlcipher' 'qt6-base' 'qt6-5compat' 'gpgmepp' 'karchive'
+         'kcoreaddons' 'kconfig' 'kwidgetsaddons' 'ki18n' 'kcompletion' 'kcmutils' 'kitemmodels'
+         'kitemviews' 'kxmlgui' 'ktextwidgets' 'kio' 'kholidays' 'kjobwidgets' 'sonnet'
+         'kcolorscheme' 'kconfigwidgets' 'kdiagram' 'libical' 'libofx' 'qtkeychain-qt6'
+         'kidentitymanagement' 'libakonadi' 'kcontacts') # 'aqbanking' 'gwenhywfar' - not ported to Qt6 yet
+makedepends=('extra-cmake-modules' 'kdoctools' 'doxygen' 'qgpgme')
 optdepends=('perl: for financequote.pl')
 changelog=$pkgname.changelog
-source=(https://download.kde.org/stable/$pkgname/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/$pkgname/$pkgver/$pkgname-$pkgver.tar.xz{,.sig}
+        identitymanagement.patch)
 validpgpkeys=('D69A745A55331F44F404D8258D4DE062AA2EB01C')
-sha256sums=('3938b8078b7391ba32e12bb4239762fae134683a0c2ec1a75105c302ca3e5e3f'
-            'SKIP')
+sha256sums=('f308b0a2297f22f43d9bbe46b4c7dc6aac08bd594454e635a844d06abda4d33c'
+            'SKIP'
+            'a92ed7427764bbff9e043b45a38280a1e752ef70413605d34957acb3caaa9761')
+
+prepare() {
+  patch -d $pkgname-$pkgver -p1 < identitymanagement.patch
+}
 
 build() {
-  cd "${srcdir}"/$pkgname-$pkgver
-
-  mkdir build
-  cd build
-
-  cmake ../ \
-    -DENABLE_WEBENGINE=ON \
+  cmake -B build -S $pkgname-$pkgver \
+    -DBUILD_WITH_QT6=ON \
     -DCMAKE_SKIP_RPATH=YES \
     -Wno-dev
-  make
+  cmake --build build
 }
 
 package() {
-  cd "${srcdir}"/$pkgname-$pkgver/build
-
-  make DESTDIR="${pkgdir}" install
+  DESTDIR="${pkgdir}" cmake --install build
 }
