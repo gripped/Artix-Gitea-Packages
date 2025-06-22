@@ -1,0 +1,38 @@
+---
+version: 2.19.2-1
+pkgbase:
+  name: python-pygments
+  pkgdesc: Python syntax highlighter
+  pkgver: 2.19.2
+  pkgrel: 1
+  url: https://pygments.org/
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-lxml
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-setuptools
+    - python-sphinx
+    - python-wcag-contrast-ratio
+    - python-wheel
+  depends:
+    - python
+  provides:
+    - pygmentize
+  conflicts:
+    - pygmentize
+  replaces:
+    - pygmentize
+  source:
+    - https://github.com/pygments/pygments/archive/2.19.2/python-pygments-2.19.2.tar.gz
+  sha256sums:
+    - 542e317dffd5287585b7bc4327969fe2f8d4b7ccec0b46045a83ef45dc840ed9
+pkgname:
+  - name: python-pygments
+# generated with artixpkg 0.36.4-1-any
