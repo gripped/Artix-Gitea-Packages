@@ -5,7 +5,7 @@
 
 pkgname=kio-extras
 pkgver=25.04.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Additional components to increase the functionality of KIO'
 arch=(x86_64)
 url='https://www.kde.org/'
@@ -34,7 +34,6 @@ depends=(gcc-libs
          libssh
          libtirpc
          libxcursor
-         phonon-qt6
          plasma-activities
          qt6-5compat
          qt6-base
@@ -49,6 +48,7 @@ makedepends=(extra-cmake-modules
              kdoctools
              libappimage
              openexr
+             phonon-qt6
              plasma-activities-stats
              qcoro
              taglib)
@@ -57,6 +57,7 @@ optdepends=('icoutils: Windows executable thumbnails'
             'libappimage: AppImage thumbnails'
             'openexr: EXR format thumbnails'
             'perl: info kioslave'
+            'phonon-qt6: audio file previews in file dialogs'
             'plasma-activities-stats: recently used kioslave'
             'qt6-imageformats: thumbnails for additional image formats'
             'taglib: audio file thumbnails')
