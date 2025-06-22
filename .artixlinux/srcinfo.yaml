@@ -1,0 +1,33 @@
+---
+version: 8.2.0-1
+pkgbase:
+  name: libalkimia
+  pkgdesc: A library with common classes and functionality used by finance applications for the KDE SC
+  pkgver: 8.2.0
+  pkgrel: 1
+  url: https://community.kde.org/Alkimia/libalkimia
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - cmake
+    - doxygen
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - qt6-webengine
+    - knewstuff
+    - ktextwidgets
+  source:
+    - https://download.kde.org/stable/alkimia/8.2.0/alkimia-8.2.0.tar.xz
+    - https://download.kde.org/stable/alkimia/8.2.0/alkimia-8.2.0.tar.xz.sig
+  validpgpkeys:
+    - 91F17B048CF4668CD27FE9FBD3694D8B346FCA80
+    - D69A745A55331F44F404D8258D4DE062AA2EB01C
+  sha256sums:
+    - 68ee1ac4b3ea0516ada66343889d871170b3da63fc9fac89a0c5675af6583996
+    - SKIP
+pkgname:
+  - name: libalkimia
+# generated with artixpkg 0.36.4-1-any
