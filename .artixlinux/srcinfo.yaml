@@ -1,0 +1,31 @@
+---
+version: 0.09-1
+pkgbase:
+  name: perl-alien-cmake3
+  pkgdesc: Find or download or build cmake 3 or better
+  pkgver: 0.09
+  pkgrel: 1
+  url: https://metacpan.org/release/Alien-cmake3
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  makedepends:
+    - perl-html-parser
+    - perl-sort-versions
+    - perl-test2-suite
+    - perl-uri
+    - perl-io-socket-ssl
+    - perl-mozilla-ca
+  depends:
+    - cmake
+    - perl-alien-build
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-cmake3-0.09.tar.gz
+  sha512sums:
+    - 6d0fb388b41fc30291af982fb9725945ddbcd3dd12ce579198b049d8c00f297644e5aed9033553906d44ba0a1d9a3207c6d8fc040ffdc112bec5b990b3463252
+pkgname:
+  - name: perl-alien-cmake3
+# generated with artixpkg 0.36.4-1-any
