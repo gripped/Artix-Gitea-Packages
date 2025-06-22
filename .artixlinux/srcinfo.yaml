@@ -1,9 +1,9 @@
 ---
-version: 1.15.3-1
+version: 1.16.0-1
 pkgbase:
   name: python-scipy
   pkgdesc: Open-source software for mathematics, science, and engineering
-  pkgver: 1.15.3
+  pkgver: 1.16.0
   pkgrel: 1
   url: https://www.scipy.org/
   arch:
@@ -39,14 +39,14 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/scipy/scipy#tag=v1.15.3
+    - git+https://github.com/scipy/scipy#tag=v1.16.0
     - git+https://github.com/data-apis/array-api-compat
     - git+https://github.com/boostorg/math
     - git+https://github.com/cobyqa/cobyqa
     - git+https://github.com/scipy/pocketfft
     - git+https://github.com/scipy/unuran
   sha256sums:
-    - 2408d7751503fdc805f50a06a6529b1cee4bebb7fc1349a21e44c2ac82cdea94
+    - f8e44d6b774cc6f9306be5699e40dbb9250cc09deabd414980e605767652c78a
     - SKIP
     - SKIP
     - SKIP
@@ -54,4 +54,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-scipy
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
