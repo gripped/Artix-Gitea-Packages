@@ -1,0 +1,25 @@
+---
+version: 0.089-1
+pkgbase:
+  name: perl-ppix-regexp
+  pkgdesc: Parse regular expressions
+  pkgver: 0.089
+  pkgrel: 1
+  url: https://metacpan.org/release/PPIx-Regexp
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  depends:
+    - perl-list-moreutils
+    - perl-ppi
+    - perl-task-weaken
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/W/WY/WYANT/PPIx-Regexp-0.089.tar.gz
+  sha512sums:
+    - e934d4f5e27f2a497d2cae8641e2371053c74f98e1742a67ba0eebe98ce9baed14288924bc3b42c1c6c1d277a9713d25dd2cf53db98275e306418abc4cc41aa9
+pkgname:
+  - name: perl-ppix-regexp
+# generated with artixpkg 0.36.4-1-any
