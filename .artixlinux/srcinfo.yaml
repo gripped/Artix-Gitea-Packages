@@ -1,0 +1,289 @@
+---
+version: 3.3.1-1
+pkgbase:
+  name: libblockdev
+  pkgdesc: A library for manipulating block devices
+  pkgver: 3.3.1
+  pkgrel: 1
+  url: https://github.com/storaged-project/libblockdev
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - autoconf-archive
+    - btrfs-progs
+    - cryptsetup
+    - device-mapper
+    - dosfstools
+    - e2fsprogs
+    - exfatprogs
+    - gcc-libs
+    - glib2
+    - glibc
+    - gobject-introspection
+    - gtk-doc
+    - json-glib
+    - kmod
+    - keyutils
+    - libatasmart
+    - libbytesize
+    - libnvme
+    - libyaml
+    - lvm2
+    - mdadm
+    - ndctl
+    - nss
+    - parted
+    - python
+    - libudev
+    - util-linux
+    - util-linux-libs
+    - volume_key
+  source:
+    - https://github.com/storaged-project/libblockdev/releases/download/3.3.1/libblockdev-3.3.1.tar.gz
+  sha512sums:
+    - f9cc15bf19120a8bb77efe82889b15c9435f4c94a1ed677839a1bcfe5bd242719f40221ba2685f4376cc52ec1e8a044f93840cb504fd7574fff1a8dd5e85d477
+  b2sums:
+    - 4baf4f980df4a71faf085f9e94cd18b0eb64f3f8f0fd68c3bd20b54109709c7cd3aca26cedfa1a8ec9ae4fd44df55a5d4237c3d3fc61a58dbd5288da6f0c0189
+pkgname:
+  - name: libblockdev
+    depends:
+      - glib2
+      - libglib-2.0.so
+      - libgio-2.0.so
+      - libgobject-2.0.so
+      - glibc
+      - kmod
+      - libkmod.so
+      - libudev
+      - libudev.so
+    optdepends:
+      - 'libblockdev-btrfs: for BTRFS support'
+      - 'libblockdev-crypto: for crypto support'
+      - 'libblockdev-dm: for device-mapper support'
+      - 'libblockdev-fs: for filesystem support'
+      - 'libblockdev-loop: for loop device support'
+      - 'libblockdev-lvm: for LVM support'
+      - 'libblockdev-mdraid: for MDRAID support'
+      - 'libblockdev-mpath: for multipath support'
+      - 'libblockdev-nvdimm: for NVDIMM support'
+      - 'libblockdev-nvme: for NVME support'
+      - 'libblockdev-part: for partitioning support'
+      - 'libblockdev-smart: for S.M.A.R.T. support'
+      - 'libblockdev-swap: for swap support'
+      - 'python-libblockdev: for Python support'
+    provides:
+      - libbd_utils.so
+      - libblockdev.so
+    conflicts:
+      - libblockdev-utils
+    replaces:
+      - libblockdev-utils
+  - name: libblockdev-btrfs
+    pkgdesc: A library for manipulating block devices - BTRFS support
+    depends:
+      - btrfs-progs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - libbytesize
+    provides:
+      - libbd_btrfs.so
+  - name: libblockdev-crypto
+    pkgdesc: A library for manipulating block devices - crypto support
+    depends:
+      - cryptsetup
+      - libcryptsetup.so
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - keyutils
+      - libkeyutils.so
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - nss
+      - util-linux-libs
+      - libblkid.so
+      - volume_key
+    provides:
+      - libbd_crypto.so
+  - name: libblockdev-dm
+    pkgdesc: A library for manipulating block devices - device mapper support
+    depends:
+      - device-mapper
+      - libdevmapper.so
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+    provides:
+      - libbd_dm.so
+  - name: libblockdev-fs
+    pkgdesc: A library for manipulating block devices - filesystem support
+    depends:
+      - e2fsprogs
+      - libext2fs.so
+      - libe2p.so
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - libbytesize
+      - parted
+      - util-linux-libs
+      - libblkid.so
+      - libmount.so
+      - libuuid.so
+    optdepends:
+      - 'btrfs-progs: for BTRFS filesystem support'
+      - 'dosfstools: for VFAT filesystem support'
+      - 'exfatprogs: for exFAT filesystem support'
+      - 'f2fs-tools: for F2FS filesystem support'
+      - 'nilfs-utils: for nilfs filesystem support'
+      - 'ntfs-3g: for NTFS filesystem support'
+      - 'udftools: for UDF filesystem support'
+      - 'xfsprogs: for XFS filesystem support'
+    provides:
+      - libbd_fs.so
+    conflicts:
+      - libblockdev-tools
+    replaces:
+      - libblockdev-tools
+  - name: libblockdev-loop
+    pkgdesc: A library for manipulating block devices - loop device support
+    depends:
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+    provides:
+      - libbd_loop.so
+  - name: libblockdev-lvm
+    pkgdesc: A library for manipulating block devices - LVM support
+    depends:
+      - device-mapper
+      - libdevmapper.so
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - libblockdev.so
+      - libyaml
+      - libbytesize
+    provides:
+      - libbd_lvm.so
+      - libbd_lvm-dbus.so
+    conflicts:
+      - libblockdev-lvm-dbus
+      - libblockdev-tools
+    replaces:
+      - libblockdev-lvm-dbus
+      - libblockdev-tools
+  - name: libblockdev-mdraid
+    pkgdesc: A library for manipulating block devices - MDRAID support
+    depends:
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - libbytesize
+      - mdadm
+    provides:
+      - libbd_mdraid.so
+  - name: libblockdev-mpath
+    pkgdesc: A library for manipulating block devices - multipath device support
+    depends:
+      - device-mapper
+      - libdevmapper.so
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+    provides:
+      - libbd_mpath.so
+  - name: libblockdev-nvdimm
+    pkgdesc: A library for manipulating block devices - NVDIMM support
+    depends:
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - ndctl
+      - util-linux-libs
+      - libuuid.so
+    provides:
+      - libbd_nvdimm.so
+  - name: libblockdev-nvme
+    pkgdesc: A library for manipulating block devices - NVME support
+    depends:
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - libnvme
+    provides:
+      - libbd_nvme.so
+  - name: libblockdev-part
+    pkgdesc: A library for manipulating block devices - partitioning support
+    depends:
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - util-linux-libs
+      - libfdisk.so
+    provides:
+      - libbd_part.so
+  - name: libblockdev-smart
+    pkgdesc: A library for manipulating block devices - S.M.A.R.T. support
+    depends:
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - json-glib
+      - libatasmart
+      - libblockdev=3.3.1
+      - libbd_utils.so
+    optdepends:
+      - 'smartmontools: for experimental smartmontools-based plugin'
+    provides:
+      - libbd_smart.so
+      - libbd_smartmontools.so
+  - name: libblockdev-swap
+    pkgdesc: A library for manipulating block devices - swap device support
+    depends:
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - glibc
+      - libblockdev=3.3.1
+      - libbd_utils.so
+      - util-linux-libs
+      - libblkid.so
+    provides:
+      - libbd_swap.so
+  - name: python-libblockdev
+    pkgdesc: A library for manipulating block devices - Python support
+    depends:
+      - glib2
+      - libbytesize
+      - python
+      - python-gobject
+# generated with artixpkg 0.36.4-1-any
