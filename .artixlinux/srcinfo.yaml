@@ -1,10 +1,10 @@
 ---
-version: 3.5-1
+version: 3.5-2
 pkgbase:
   name: dvisvgm
   pkgdesc: A fast DVI, EPS, and PDF to SVG converter
   pkgver: 3.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://dvisvgm.de/
   arch:
     - x86_64
@@ -21,6 +21,7 @@ pkgbase:
     - ghostscript
     - glibc
     - potrace
+    - texlive-basic
     - texlive-bin
     - woff2
     - xxhash
@@ -33,4 +34,4 @@ pkgbase:
     - ce49a6a01905589ae5ad267b19a3955eb7172b6cd40db6c8976e5318f9efd349
 pkgname:
   - name: dvisvgm
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
