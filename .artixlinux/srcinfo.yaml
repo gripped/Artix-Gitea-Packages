@@ -1,0 +1,33 @@
+---
+version: 13.30-2
+pkgbase:
+  name: perl-image-exiftool
+  pkgdesc: Reader and rewriter of EXIF information that supports raw files
+  pkgver: 13.30
+  pkgrel: 2
+  url: https://exiftool.org/
+  arch:
+    - any
+  license:
+    - Artistic-1.0-Perl OR GPL-3.0-or-later
+  makedepends:
+    - git
+  depends:
+    - perl
+  optdepends:
+    - 'perl-archive-zip: Support for zip files, including epub'
+    - 'perl-io-compress-brotli: Support for brotli-compressed metadata'
+  provides:
+    - exiftool
+    - perl-exiftool=13.30
+  replaces:
+    - perl-exiftool
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/exiftool/exiftool.git#tag=13.30
+  sha256sums:
+    - 2e450e3168628d94d9e5bbe9ee4358d66ae25c298d0f659de51faae6f3aecccc
+pkgname:
+  - name: perl-image-exiftool
+# generated with artixpkg 0.36.4-1-any
