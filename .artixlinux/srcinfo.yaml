@@ -1,0 +1,42 @@
+---
+version: 0.1.4-1
+pkgbase:
+  name: hyprgraphics
+  pkgdesc: hyprland graphics resources and utilities
+  pkgver: 0.1.4
+  pkgrel: 1
+  url: https://github.com/hyprwm/hyprgraphics
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+  depends:
+    - cairo
+    - file
+    - libmagic.so
+    - gcc-libs
+    - glibc
+    - hyprutils
+    - libhyprutils.so
+    - libjpeg-turbo
+    - libjpeg.so
+    - libjxl
+    - libjxl.so
+    - libjxl_threads.so
+    - libspng
+    - libspng.so
+    - libwebp
+    - libwebp.so
+    - pixman
+  provides:
+    - libhyprgraphics.so
+  source:
+    - https://github.com/hyprwm/hyprgraphics/archive/v0.1.4/hyprgraphics-0.1.4.tar.gz
+  sha256sums:
+    - 8b4662a0e687351da703a19e9cd9fdbe4b4b053e7380957584cda112c96feb9f
+pkgname:
+  - name: hyprgraphics
+# generated with artixpkg 0.36.4-1-any
