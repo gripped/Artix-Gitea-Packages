@@ -10,7 +10,7 @@
 pkgbase=qbittorrent
 pkgname=(qbittorrent
          qbittorrent-nox)
-pkgver=5.1.0
+pkgver=5.1.1
 pkgrel=1
 arch=(x86_64)
 url='https://www.qbittorrent.org'
@@ -31,7 +31,7 @@ optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver
         sysusers.conf
         tmpfiles.conf)
-sha256sums=('cab1e79b0e491f1ef047aecc40159fa02a05734dd36c4a77d7bd7babf4e208e5'
+sha256sums=('81b30c25718f91ae3f8e0a4647d6f728c1ef1d3ca6527f1cfa773db7bdf41f67'
             '0f148c97cc5fae83fc5022b5f2da374b60a1e2f62a4faf01265e73a9f208825a'
             '941a90f59d3400fff022a2c2239502eec3aac97b31d25f30593cf3d95b1d788b')
 validpgpkeys=('D8F3DA77AAC6741053599C136E4A2D025B7CC9A2') # sledgehammer999 <sledgehammer999@qbittorrent.org>

@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: qbittorrent
-  version: 5.1.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - qbittorrent
-    - qbittorrent-nox
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 5.1.0-1
+    version: 5.1.1-1
     packages:
-      - qbittorrent-5.1.0-1-x86_64.pkg.tar.zst
-      - qbittorrent-nox-5.1.0-1-x86_64.pkg.tar.zst
+      - qbittorrent-5.1.1-1-x86_64.pkg.tar.zst
+      - qbittorrent-nox-5.1.1-1-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
