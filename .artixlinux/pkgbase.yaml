@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.6.0-1
+    version: 25.6.1-1
     packages:
-      - ansible-lint-25.6.0-1-any.pkg.tar.zst
+      - ansible-lint-25.6.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 25.5.0-1
