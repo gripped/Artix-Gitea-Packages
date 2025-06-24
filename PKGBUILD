@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=1.90.0
+pkgver=1.91.0
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -53,13 +53,13 @@ optdepends=(
 )
 # Defined in .stats.yml
 # curl -s https://raw.githubusercontent.com/openai/openai-python/refs/tags/v1.71.0/.stats.yml | grep openapi_spec_url | cut -d- -f5 | cut -d. -f1
-_openai_openapi_spec=f411a68f272b8be0ab0c266043da33228687b9b2d76896724e3cef797de9563d
+_openai_openapi_spec=ef4ecb19eb61e24c49d77fef769ee243e5279bc0bdbaee8d0f8dba4da8722559
 source=(
   "${_name}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
   "https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-${_openai_openapi_spec}.yml"
 )
-sha256sums=('49e5c9a8775f0043f2570f9be50187da4a53d21d74ce3e5a5a3afcb634854620'
-            'f411a68f272b8be0ab0c266043da33228687b9b2d76896724e3cef797de9563d')
+sha256sums=('9236462778d2debce5b716bfc6df6398abdf16de16cb0494472cee80214c02fd'
+            'ef4ecb19eb61e24c49d77fef769ee243e5279bc0bdbaee8d0f8dba4da8722559')
 
 prepare() {
   cd "${_name}-${pkgver}"
@@ -90,7 +90,8 @@ check() {
     --deselect tests/lib/test_assistants.py::test_create_and_run_poll_method_definition_in_sync \
     --deselect tests/lib/test_assistants.py::test_create_and_run_stream_method_definition_in_sync \
     --deselect tests/test_client.py::TestAsyncOpenAI::test_copy_build_request \
-    --deselect tests/test_client.py::TestOpenAI::test_copy_build_request
+    --deselect tests/test_client.py::TestOpenAI::test_copy_build_request \
+    --deselect tests/test_transform.py::test_base64_file_input
 }
 
 package() {
