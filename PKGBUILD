@@ -127,7 +127,6 @@ ac_add_options --allow-addon-sideload
 ac_add_options --with-app-name=$pkgname
 export MOZILLA_OFFICIAL=1
 export MOZ_APP_REMOTINGNAME=$pkgname
-export MOZ_APP_PROFILE="mozilla/firefox-esr"
 
 # System libraries
 ac_add_options --with-system-nspr
