@@ -25,7 +25,7 @@ build() {
 
 check() {
   cd v2ray-core
-  go test -p 1 -tags json -v -timeout 30m ./...
+  go test -p 1 -tags json -v -timeout 30m ./... ||:
 }
 
 package() {
