@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.10.0-1
+    version: 2.10.1-1
     packages:
-      - python-pydantic-settings-2.10.0-1-any.pkg.tar.zst
+      - python-pydantic-settings-2.10.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.9.1-1
