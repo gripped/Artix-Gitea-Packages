@@ -2,7 +2,7 @@
 
 pkgname=python-httpx-aiohttp
 pkgver=0.1.6
-pkgrel=1
+pkgrel=2
 pkgdesc='aiohttp-powered httpx client'
 arch=(any)
 url=https://github.com/karpetrosyan/httpx-aiohttp
@@ -26,31 +26,18 @@ checkdepends=(
   python-chardet
   python-h2
   python-pytest
-  python-pytest-asyncio
-  python-pytest-trio
   python-trio
   python-trustme
   python-zstandard
   uvicorn
 )
-source=(
-  "git+$url.git#tag=$pkgver"
-  "git+https://github.com/encode/httpx.git#tag=0.28.1"
-  "uvicorn-test-server-use-h11.diff"
-)
-b2sums=('42abf64362a8d0e19b9e7e25ad873143b44ed2d422fa70c5695929818b323d3ff0d00d258a45b9d2eb9348aeb44e015a10ad0aafd3b7cf3f19bfb542ac0ad1f4'
-        'aa0786b725741ada9126b3a352414444d3c7cf71bc220f6d6ee1be3c563199a1eae999848342714e44962f8f9ed12ccafe5a06aa80ecb8c6ba5af75a5722055b'
-        'f7fc5aa67d59dfbf544ea2668a5df6449d1cb30f5adf1433d92ebbc0fd10d46fec592f1befe829e126d72240666b9c3ea1f69a9f2cca6f3f4e135a7e454be25d')
+source=("git+$url.git#tag=$pkgver")
+b2sums=('42abf64362a8d0e19b9e7e25ad873143b44ed2d422fa70c5695929818b323d3ff0d00d258a45b9d2eb9348aeb44e015a10ad0aafd3b7cf3f19bfb542ac0ad1f4')
 
 prepare() {
-  cd "$srcdir/httpx"
-  # Fixes/patches from python-httpx:prepare():
-  patch -Np1 -i ../uvicorn-test-server-use-h11.diff
-  sed -i '/"error",/d' pyproject.toml
-
   cd "$srcdir/${pkgname#python-}"
   rm -vr tests/httpx/
-  ln -vs "$srcdir/httpx" tests/httpx
+  ln -vs /usr/share/python-httpx tests/httpx
 }
 
 build() {
