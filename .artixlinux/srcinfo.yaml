@@ -1,0 +1,37 @@
+---
+version: 2.10.0-1
+pkgbase:
+  name: python-pydantic-settings
+  pkgdesc: Settings management using pydantic
+  pkgver: 2.10.0
+  pkgrel: 1
+  url: https://github.com/pydantic/pydantic-settings
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-examples
+    - python-pytest-mock
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-dotenv
+    - python-pydantic
+    - python-pydantic-core
+    - python-typing_extensions
+  optdepends:
+    - 'python-pyyaml: for YAML support'
+  source:
+    - pydantic-settings-2.10.0.tar.gz::https://github.com/pydantic/pydantic-settings/archive/refs/tags/2.10.0.tar.gz
+  sha512sums:
+    - 8ceabcddcfc3f4fdfa54d94f7fda2cd48a28336ee71efa3fc184aaeda0d339463b840ef41237e5e77ad81005b86a5d7fceef32de7cd223a853ba148a342ba471
+  b2sums:
+    - 630f2a322bcc1fae3e43bb9da8237406df5d9561b65a1cb595df5ffce764a54e8429748e1f96129746a1393e11103884e4e01eebd3e7eea74deecc77750e5266
+pkgname:
+  - name: python-pydantic-settings
+# generated with artixpkg 0.36.4-1-any
