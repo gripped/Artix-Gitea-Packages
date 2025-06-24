@@ -1,0 +1,57 @@
+---
+version: 2.40.3-1
+pkgbase:
+  name: python-google-auth
+  pkgdesc: Google Authentication Library
+  pkgver: 2.40.3
+  pkgrel: 1
+  url: https://github.com/GoogleCloudPlatform/google-auth-library-python
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-aiohttp
+    - python-aioresponses
+    - python-cryptography
+    - python-flask
+    - python-freezegun
+    - python-pyjwt
+    - python-pyopenssl
+    - python-pytest
+    - python-pytest-asyncio
+    - python-pytest-localserver
+    - python-pyu2f
+    - python-requests
+    - python-requests-mock
+    - python-responses
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-cachetools
+    - python-certifi
+    - python-cgi
+    - python-oauth2client
+    - python-packaging
+    - python-pyasn1-modules
+    - python-rsa
+  optdepends:
+    - 'python-aiohttp: for async HTTP support'
+    - 'python-cryptography: for TLS support'
+    - 'python-pyjwt: for JSON Web Key support'
+    - 'python-pyopenssl: for TLS support'
+    - 'python-pyu2f: for reauthentication support'
+    - 'python-requests: for async HTTP support'
+  source:
+    - https://github.com/GoogleCloudPlatform/google-auth-library-python/archive/v2.40.3/python-google-auth-2.40.3.tar.gz
+    - python-pyopenssl-compatibility.patch
+  sha512sums:
+    - 6aa3e6ff29411a5f0dadda0f45f2538b6d3e12f75946a6acd0684a9100b2861b764067446ef3655f07f98dcd00680b9fd3ada9c15455979a4d19620224c16f1d
+    - 4e23dfaeec6933b1fb6736b6402f1f3cce0fedc0967e527879bc1b3e6215d94c986c28ab9d6b9b4ba975f39316eb0159bb74144aca1f27345b0a9174857fcfff
+pkgname:
+  - name: python-google-auth
+# generated with artixpkg 0.36.4-1-any
