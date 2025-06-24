@@ -1,0 +1,35 @@
+---
+version: 1.4.1-1
+pkgbase:
+  name: python-nethsm-sdk-py
+  pkgdesc: Client-side Python SDK for NetHSM
+  pkgver: 1.4.1
+  pkgrel: 1
+  url: https://github.com/Nitrokey/nethsm-sdk-py
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  makedepends:
+    - python-build
+    - python-flit-core
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-certifi
+    - python-cryptography
+    - python-dateutil
+    - python-typing_extensions
+    - python-urllib3
+  provides:
+    - python-nethsm
+  source:
+    - nethsm-sdk-py-1.4.1.tar.gz::https://github.com/Nitrokey/nethsm-sdk-py/archive/refs/tags/v1.4.1.tar.gz
+  sha512sums:
+    - b12c17b4894f5129f9704cb253d181d898e2b7436c09a3666e14c1e22756c0a30e47be677ca2f594e99e3176567a5458e368176a5383c66fa2b25f97a2e3e2b1
+  b2sums:
+    - 7efd514823d0a374874ede4075c7ee4f2ca8b2d5f0c030dff8a840fed69e3b4a2e998b8cfd072caa0c7d5c2f32ed0b647f251f22df6f14c6df25e1372b22fa5a
+pkgname:
+  - name: python-nethsm-sdk-py
+# generated with artixpkg 0.36.4-1-any
