@@ -12,8 +12,8 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-pkgver='2.41'
-pkgrel=4
+pkgver=2.41.1
+pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -23,6 +23,7 @@ makedepends=('asciidoctor'
              'git'
              'libcap-ng'
              'libxcrypt'
+             'libutempter'
              'meson'
              'po4a'
              'python'
@@ -44,17 +45,20 @@ validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
 source=("git+https://github.com/util-linux/util-linux#tag=v${pkgver/rc/-rc}?signed"
         $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
         pam-{login,common,remote,runuser,su}
+        'util-linux.sysusers'
         '60-rfkill.rules'
-        0001-sysusers-and-tmpfiles-no-systemd.patch)
-sha256sums=('bf69afb12389883698078d47ea5ef299d34346ab1c38a885573833ae4b43e5ec'
+        0001-util-linux-no-systemd.patch
+       )
+sha256sums=('1995919a5c3e8a2cff213bd3ab8a421ee209aff99cbe5da4536cccd57de9267b'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
             '8bfbee453618ba44d60ba7fb00eced6c62edebfc592f2e75dede08e769ed8931'
             '48d6fba767631e3dd3620cf02a71a74c5d65a525d4c4ce4b5a0b7d9f41ebfea1'
             '3f54249ac2db44945d6d12ec728dcd0d69af0735787a8b078eacd2c67e38155b'
+            '4a0b3dd8aa6d34dd29e1d153f396cacf908b0d64f7218276cbcab684587c0a0a'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            'dcba4bca5b8454c4611c97d7ca8fb3e03d2e8a7e21ab28dfd6d9d95021e1793c')
+            '43180fb2bf51696654cc6bda7a5bacc769882268613343d783caad875749ef45')
 
 _backports=(
   # meson: fix po-man installation
@@ -82,8 +86,7 @@ prepare() {
     git revert --mainline 1 --no-commit "${_c}"
   done
 
-  # create fully locked system accout
-  git apply ../0001-sysusers-and-tmpfiles-no-systemd.patch
+  git apply ../0001-util-linux-no-systemd.patch
 
   # create fully locked system accout
   sed -i '/^u /s|u|u!|' misc-utils/uuidd-sysusers.conf.in
@@ -98,7 +101,7 @@ build() {
     -Dfs-search-path=/usr/bin:/usr/local/bin
 
     -Dlibuser=disabled
-    -Dlibutempter=disabled
+    -Dlibutempter=enabled
     -Dncurses=disabled
     -Dncursesw=enabled
     -Deconf=disabled
@@ -132,7 +135,8 @@ package_util-linux() {
            'pam'
            'readline'
            'shadow'
-           'libudev'
+           'libudev' # 'libudev.so'
+           'libutempter'
            'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
@@ -172,6 +176,10 @@ package_util-linux() {
   mv "$pkgdir"/"${_python_stdlib}"/site-packages util-linux-libs/site-packages
   rmdir "$pkgdir"/"${_python_stdlib}"
   mv "$pkgdir"/usr/share/man/man3 util-linux-libs/man3
+
+  # install esysusers
+  install -Dm0644 util-linux.sysusers \
+    "${pkgdir}/usr/lib/sysusers.d/util-linux.conf"
 
   install -Dm0644 60-rfkill.rules \
     "${pkgdir}/usr/lib/udev/rules.d/60-rfkill.rules"
