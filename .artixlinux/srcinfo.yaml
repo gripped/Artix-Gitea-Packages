@@ -1,10 +1,10 @@
 ---
-version: 0.42.1-1
+version: 0.42.1-1.1
 pkgbase:
   name: kitty
   pkgdesc: Modern, hackable, featureful, OpenGL based terminal emulator
   pkgver: 0.42.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://sw.kovidgoyal.net/kitty/
   arch:
     - x86_64
@@ -48,6 +48,7 @@ pkgbase:
     - hicolor-icon-theme
     - pixman
     - cairo
+    - tk
   source:
     - https://github.com/kovidgoyal/kitty/releases/download/v0.42.1/kitty-0.42.1.tar.xz
     - https://github.com/kovidgoyal/kitty/releases/download/v0.42.1/kitty-0.42.1.tar.xz.sig
@@ -78,6 +79,7 @@ pkgname:
       - hicolor-icon-theme
       - pixman
       - cairo
+      - tk
       - kitty-terminfo
       - kitty-shell-integration
     optdepends:
@@ -88,4 +90,4 @@ pkgname:
       - ncurses
   - name: kitty-shell-integration
     pkgdesc: Shell integration scripts for kitty, an OpenGL-based terminal emulator
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.4-1-any

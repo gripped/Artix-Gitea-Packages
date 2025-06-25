@@ -3,14 +3,14 @@
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
 pkgver=0.42.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Modern, hackable, featureful, OpenGL based terminal emulator"
 arch=(x86_64)
 url="https://sw.kovidgoyal.net/kitty/"
 license=(GPL3)
 depends=('python>=3.8' 'harfbuzz>=2.2.0' zlib libpng freetype2 fontconfig openssl libx11 libxi
          libgl libcanberra dbus lcms2 libxkbcommon-x11 xxhash librsync hicolor-icon-theme
-         pixman cairo)
+         pixman cairo tk)
 makedepends=(git python-setuptools libxinerama libxrandr libxkbcommon mesa
              wayland-protocols python-sphinx python-sphinx-copybutton libxcursor
              python-sphinx-inline-tabs python-sphinxext-opengraph python-sphinx-furo go
