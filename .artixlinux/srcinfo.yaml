@@ -1,0 +1,37 @@
+---
+version: 2.41.1-1
+pkgbase:
+  name: lib32-util-linux
+  pkgdesc: Miscellaneous system utilities for Linux (32-bit)
+  pkgver: 2.41.1
+  pkgrel: 1
+  url: https://github.com/util-linux/util-linux
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - git
+    - meson
+    - lib32-libxcrypt
+    - lib32-ncurses
+  depends:
+    - util-linux-libs
+    - lib32-glibc
+  provides:
+    - libuuid.so
+    - libblkid.so
+    - libfdisk.so
+    - libmount.so
+    - libsmartcols.so
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/util-linux/util-linux#tag=v2.41.1?signed
+  validpgpkeys:
+    - B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284
+  sha256sums:
+    - 1995919a5c3e8a2cff213bd3ab8a421ee209aff99cbe5da4536cccd57de9267b
+pkgname:
+  - name: lib32-util-linux
+# generated with artixpkg 0.36.4-1-any
