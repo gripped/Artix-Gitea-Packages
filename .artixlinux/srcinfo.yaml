@@ -1,0 +1,48 @@
+---
+version: 1.53.0-1
+pkgbase:
+  name: python-playwright
+  pkgdesc: A Python library to automate Chromium, Firefox and WebKit browsers with a single API
+  pkgver: 1.53.0
+  pkgrel: 1
+  url: https://github.com/microsoft/playwright-python
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-autobahn
+    - python-flaky
+    - python-objgraph
+    - python-pixelmatch
+    - python-pyopenssl
+    - python-pytest
+    - chromium
+    - python-pytest-playwright
+    - python-requests
+  makedepends:
+    - git
+    - python-auditwheel
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - nodejs
+    - python
+    - python-greenlet
+    - python-pyee
+    - sh
+  noextract:
+    - playwright-1.53.0-linux.zip
+  source:
+    - git+https://github.com/microsoft/playwright-python#tag=v1.53.0
+    - https://playwright.azureedge.net/builds/driver/playwright-1.53.0-linux.zip
+    - auditwheel-6.3.patch
+  sha256sums:
+    - f3f6f6cf9235d611bfa883e0fc473e422b9ae297769609f7721f3b9265d9c81f
+    - da7774b5d7b9441ec31c332802ce0b209d13f61f8462726ea953af86eb29a3f0
+    - 8af7d2f2a41582212fc20665ec5a38e569b79195d85ec35e25f4ec421cb5db32
+pkgname:
+  - name: python-playwright
+# generated with artixpkg 0.36.4-1-any
