@@ -1,7 +1,6 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=waterfox
-_pkgname=Waterfox
 pkgver=6.5.10
 pkgrel=1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
@@ -75,7 +74,7 @@ options=(!emptydirs !makeflags !strip !lto !debug)
 
 prepare() {
         mkdir -p mozbuild
-        cd "$_pkgname-$pkgver"
+        cd "$pkgname-$pkgver"
 
 	bsdtar xvf ../l10n.zip --strip-components=1 -C waterfox/browser/locales
         patch -Np1 -i ../remove-organization-policy-banner.patch
@@ -141,7 +140,7 @@ END
 }
 
 build() {
-	cd "$_pkgname-$pkgver"
+	cd "$pkgname-$pkgver"
 
 	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
 	export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -211,7 +210,7 @@ END
 }
 
 package() {
-	cd "$_pkgname-$pkgver" || exit
+	cd "$pkgname-$pkgver" || exit
 
 	install -Ddvm755 "${pkgdir}/usr/lib/${pkgname}"
 	cp -rvf "obj-Linux-x86_64/dist/${pkgname}/." "${pkgdir}/usr/lib/${pkgname}"
