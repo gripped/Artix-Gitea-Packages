@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.2.1-1
+    packages:
+      - lxqt-build-tools-2.2.1-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 2.2.1-1
