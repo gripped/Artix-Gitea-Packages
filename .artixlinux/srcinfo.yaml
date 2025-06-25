@@ -1,10 +1,10 @@
 ---
-version: 6.5.9-2
+version: 6.5.10-1
 pkgbase:
   name: waterfox
   pkgdesc: Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.
-  pkgver: 6.5.9
-  pkgrel: 2
+  pkgver: 6.5.10
+  pkgrel: 1
   url: https://www.waterfox.net/
   arch:
     - x86_64
@@ -71,7 +71,7 @@ pkgbase:
     - '!lto'
     - '!debug'
   source:
-    - waterfox-6.5.9.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.5.9.tar.gz
+    - waterfox-6.5.10.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.5.10.tar.gz
     - l10n.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main
     - waterfox.desktop
     - policies.json
@@ -90,4 +90,4 @@ pkgbase:
     - 681c4141128e774a57c474f690e9e550f1f17675d5195e39201f17f254a8a376827d30f7ccc0ab2bd1d37495abcbc95bb9321285895c3aa99546a3600ea1668c
 pkgname:
   - name: waterfox
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
