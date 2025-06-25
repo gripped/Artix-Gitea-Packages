@@ -1,0 +1,40 @@
+---
+version: 3.5-1
+pkgbase:
+  name: python-networkx
+  pkgdesc: Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+  pkgver: 3.5
+  pkgrel: 1
+  url: https://networkx.org/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-lxml
+    - python-pydot
+    - python-pygraphviz
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+    - git
+  depends:
+    - python-numpy
+    - python-scipy
+    - python-matplotlib
+    - python-pandas
+  optdepends:
+    - 'python-lxml: for GraphML XML format'
+    - 'python-pydot: for graph drawing and graph layout algorithms in pure Python via GraphViz'
+    - 'python-pygraphviz: for graph drawing and graph layout algorithms with bindings to GraphViz'
+    - 'python-sympy: for polynomial algorithms'
+  source:
+    - git+https://github.com/networkx/networkx#tag=networkx-3.5
+  sha512sums:
+    - d1544694d4485242d2c971175b350ac6b2ce176472d15c7b8c5a63b541a837839bd1405aae4cecd9cac4a536d19f1eb91bcdbb19a85173ba3e02c2835f6e6f0d
+pkgname:
+  - name: python-networkx
+# generated with artixpkg 0.36.4-1-any
