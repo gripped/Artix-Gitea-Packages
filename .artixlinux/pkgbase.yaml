@@ -2,8 +2,8 @@
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 9.5.0-1
+    version: 9.5.0-2
     packages:
-      - vtk-9.5.0-1-x86_64.pkg.tar.zst
+      - vtk-9.5.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
