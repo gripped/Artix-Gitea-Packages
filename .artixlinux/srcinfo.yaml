@@ -1,26 +1,23 @@
 ---
-version: 20250613.12fe085f-1
+version: 20250613.12fe085f-9
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
   pkgver: 20250613.12fe085f
-  pkgrel: 1
+  pkgrel: 9
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
     - any
   license:
-    - GPL-2.0-only
-    - GPL-2.0-or-later
-    - GPL-3.0-only
-    - custom
+    - LicenseRef-WHENCE
   makedepends:
     - git
     - parallel
     - python
     - rdfind
   options:
-    - '!strip'
     - '!debug'
+    - '!strip'
   source:
     - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20250613
   validpgpkeys:
@@ -28,41 +25,147 @@ pkgbase:
   b2sums:
     - 30f3e8359762a62337d6a63fc914bd689a43341a810dcfe180fd5678bdeb1b4a54aa804186317cbf522d0e0873561dcb671c0c4ef302430a85d3ac8ab6ceaefe
 pkgname:
-  - name: linux-firmware-whence
-    pkgdesc: Firmware files for Linux - contains the WHENCE license file which documents the vendor license details
   - name: linux-firmware
+    pkgdesc: Firmware files for Linux - Default set
+    license:
+      - CC0-1.0
     depends:
-      - linux-firmware-whence
+      - linux-firmware-amdgpu
+      - linux-firmware-atheros
+      - linux-firmware-broadcom
+      - linux-firmware-cirrus
+      - linux-firmware-intel
+      - linux-firmware-mediatek
+      - linux-firmware-nvidia
+      - linux-firmware-other
+      - linux-firmware-radeon
+      - linux-firmware-realtek
+    optdepends:
+      - 'linux-firmware-liquidio: Firmware for Cavium LiquidIO server adapters'
+      - 'linux-firmware-marvell: Firmware for Marvell devices'
+      - 'linux-firmware-mellanox: Firmware for Mellanox Spectrum switches'
+      - 'linux-firmware-nfp: Firmware for Netronome Flow Processors'
+      - 'linux-firmware-qcom: Firmware for Qualcomm SoCs'
+      - 'linux-firmware-qlogic: Firmware for QLogic devices'
+  - name: linux-firmware-whence
+    pkgdesc: Firmware files for Linux - WHENCE file (vendor licenses)
+  - name: linux-firmware-other
+    pkgdesc: Firmware files for Linux - Unsorted firmware for various devices
   - name: amd-ucode
     pkgdesc: Microcode update image for AMD CPUs
     license:
-      - custom
-  - name: linux-firmware-nfp
-    pkgdesc: Firmware files for Linux - nfp / Firmware for Netronome Flow Processors
+      - LicenseRef-amd-ucode
+  - name: linux-firmware-amdgpu
+    pkgdesc: Firmware files for Linux - Firmware for AMD Radeon GPUs
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-amdgpu
     depends:
       - linux-firmware-whence
-  - name: linux-firmware-mellanox
-    pkgdesc: Firmware files for Linux - mellanox / Firmware for Mellanox Spectrum switches
+  - name: linux-firmware-atheros
+    pkgdesc: Firmware files for Linux - Firmware for Qualcomm Atheros WiFi and Bluetooth adapters
+    license:
+      - LicenseRef-WHENCE
+      - GPL-2.0-only
+      - LicenseRef-atheros
     depends:
       - linux-firmware-whence
-  - name: linux-firmware-marvell
-    pkgdesc: Firmware files for Linux - marvell / Firmware for Marvell devices
+  - name: linux-firmware-broadcom
+    pkgdesc: Firmware files for Linux - Firmware for Broadcom and Cypress network adapters
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-broadcom
     depends:
       - linux-firmware-whence
-  - name: linux-firmware-qcom
-    pkgdesc: Firmware files for Linux - qcom / Firmware for Qualcomm SoCs
+    provides:
+      - linux-firmware-bnx2x
+    conflicts:
+      - linux-firmware-bnx2x
+    replaces:
+      - linux-firmware-bnx2x<=20250613.12fe085f-4
+  - name: linux-firmware-cirrus
+    pkgdesc: Firmware files for Linux - Firmware for Cirrus Logic audio devices
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-cirrus
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-intel
+    pkgdesc: Firmware files for Linux - Firmware for Intel devices
+    license:
+      - LicenseRef-WHENCE
+      - Apache-2.0
+      - GPL-2.0-only
+      - LicenseRef-intel
     depends:
       - linux-firmware-whence
   - name: linux-firmware-liquidio
-    pkgdesc: Firmware files for Linux - liquidio / Firmware for Cavium LiquidIO server adapters
+    pkgdesc: Firmware files for Linux - Firmware for Cavium LiquidIO server adapters
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-liquidio
     depends:
+      - linux-firmware-whence
+  - name: linux-firmware-marvell
+    pkgdesc: Firmware files for Linux - Firmware for Marvell devices
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-marvell
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-mediatek
+    pkgdesc: Firmware files for Linux - Firmware for MediaTek and Ralink devices
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-mediatek
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-mellanox
+    pkgdesc: Firmware files for Linux - Firmware for Mellanox Spectrum switches
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-nfp
+    pkgdesc: Firmware files for Linux - Firmware for Netronome Flow Processors
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-netronome
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-nvidia
+    pkgdesc: Firmware files for Linux - Firmware for NVIDIA GPUs and SoCs
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-nvidia
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-qcom
+    pkgdesc: Firmware files for Linux - Firmware for Qualcomm SoCs
+    license:
+      - LicenseRef-WHENCE
+      - BSD-3-Clause
+      - LicenseRef-qcom
+    depends:
+      - linux-firmware-atheros
       - linux-firmware-whence
   - name: linux-firmware-qlogic
-    pkgdesc: Firmware files for Linux - qlogic / Firmware for QLogic devices
+    pkgdesc: Firmware files for Linux - Firmware for QLogic devices
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-qlogic
     depends:
       - linux-firmware-whence
-  - name: linux-firmware-bnx2x
-    pkgdesc: Firmware files for Linux - bnx2x / Firmware for Broadcom NetXtreme II 10Gb ethernet adapters
+  - name: linux-firmware-radeon
+    pkgdesc: Firmware files for Linux - Firmware for ATI Radeon GPUs
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-radeon
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-realtek
+    pkgdesc: Firmware files for Linux - Firmware for Realtek devices
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-realtek
     depends:
       - linux-firmware-whence
 # generated with artixpkg 0.36.4-1-any
