@@ -5,7 +5,7 @@ pkgbase=avogadrolibs
 pkgname=(avogadrolibs
          avogadrolibs-qt5)
 pkgver=1.100.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Libraries that provide 3D rendering, visualization, analysis and data processing useful in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas'
 arch=(x86_64)
 url='https://www.openchemistry.org/'
@@ -50,7 +50,8 @@ build() {
     -DUSE_PYTHON=ON \
     -DUSE_SYSTEM_GENXRDPATTERN=ON \
     -DUSE_EXTERNAL_NLOHMANN=ON \
-    -DUSE_EXTERNAL_PUGIXML=ON
+    -DUSE_EXTERNAL_PUGIXML=ON \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build
 }
 
