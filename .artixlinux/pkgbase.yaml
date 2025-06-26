@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:7.8.1-3
+    version: 1:7.9.1-1
     packages:
-      - opencascade-1:7.8.1-3-x86_64.pkg.tar.zst
+      - opencascade-1:7.9.1-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
