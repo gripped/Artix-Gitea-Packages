@@ -1,0 +1,31 @@
+---
+version: 3.1.2-4
+pkgbase:
+  name: python-daemon
+  pkgdesc: Python library to implement a well-behaved Unix daemon process
+  pkgver: 3.1.2
+  pkgrel: 4
+  url: https://pagure.io/python-daemon/
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-testscenarios
+    - python-testtools
+  makedepends:
+    - python-build
+    - python-changelog-chug
+    - python-docutils
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-lockfile
+  source:
+    - https://files.pythonhosted.org/packages/source/p/python_daemon/python_daemon-3.1.2.tar.gz
+  sha256sums:
+    - f7b04335adc473de877f5117e26d5f1142f4c9f7cd765408f0877757be5afbf4
+pkgname:
+  - name: python-daemon
+# generated with artixpkg 0.36.4-1-any
