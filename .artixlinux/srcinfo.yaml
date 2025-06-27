@@ -1,9 +1,9 @@
 ---
-version: 1.92.2-1
+version: 1.92.3-1
 pkgbase:
   name: python-openai
   pkgdesc: Python client library for the OpenAI API
-  pkgver: 1.92.2
+  pkgver: 1.92.3
   pkgrel: 1
   url: https://github.com/openai/openai-python
   arch:
@@ -47,10 +47,10 @@ pkgbase:
     - 'python-pandas: Datalib support'
     - 'python-websockets: Realtime support'
   source:
-    - openai-python-1.92.2.tar.gz::https://github.com/openai/openai-python/archive/v1.92.2.tar.gz
+    - openai-python-1.92.3.tar.gz::https://github.com/openai/openai-python/archive/v1.92.3.tar.gz
     - https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-a473967d1766dc155994d932fbc4a5bcbd1c140a37c20d0a4065e1bf0640536d.yml
   sha256sums:
-    - 150904672497d22916be0655148c8fed484280997361b0daeae51df8fcd3ccb7
+    - 709003bbdccf1740079aaca452fb095a1e21120d233d44869a0fdded7d4cd817
     - a473967d1766dc155994d932fbc4a5bcbd1c140a37c20d0a4065e1bf0640536d
 pkgname:
   - name: python-openai
