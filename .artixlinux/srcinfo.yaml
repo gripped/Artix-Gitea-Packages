@@ -1,9 +1,9 @@
 ---
-version: 48.2-1
+version: 48.3-1
 pkgbase:
   name: gnome-software
   pkgdesc: Allows you to find and install new apps
-  pkgver: 48.2
+  pkgver: 48.3
   pkgrel: 1
   url: https://apps.gnome.org/Software
   arch:
@@ -48,14 +48,14 @@ pkgbase:
     - 'fwupd: fwupd support plugin'
     - 'malcontent: Parental control plugin'
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-software.git?signed#tag=48.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-software.git?signed#tag=48.3
     - git+https://gitlab.gnome.org/mwleeds/gnome-pwa-list.git
   validpgpkeys:
     - 2AA441054BD2F1715EC11610FB183E7EF3C36A0D
     - 923B7025EE03C1C59F42684CF0942E894B2EAFA0
   b2sums:
-    - 2a532088463f7783b2b5398269c758059faf4fd5883f503ad4e832a395876e65cb5efe6602fb813c132b8d45a62bb96dba921dd82aeb450b0057fd9e15c73323
+    - 84416c7bd04f6263dbaf90254b5b5cf659fe00488b5d095d592e6e65d8ec561f207baaf360582a8ecaa93be0340c5a69414f96913bff6ec428824de0222df72f
     - SKIP
 pkgname:
   - name: gnome-software
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
