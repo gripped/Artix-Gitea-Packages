@@ -1,0 +1,36 @@
+---
+version: 0.1.12-4
+pkgbase:
+  name: hyprcursor
+  pkgdesc: The hyprland cursor format, library and utilities
+  pkgver: 0.1.12
+  pkgrel: 4
+  url: https://github.com/hyprwm/hyprcursor
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+  depends:
+    - cairo
+    - gcc-libs
+    - glibc
+    - hyprlang
+    - libhyprlang.so
+    - librsvg
+    - librsvg-2.so
+    - libzip
+    - libzip.so
+    - tomlplusplus
+    - libtomlplusplus.so
+  provides:
+    - libhyprcursor.so
+  source:
+    - https://github.com/hyprwm/hyprcursor/archive/v0.1.12/hyprcursor-0.1.12.tar.gz
+  sha256sums:
+    - 3200a7a31e28884b9d046f8ec7b0aa67ede9ce0ab0d20193c2b61ee522d6b1f2
+pkgname:
+  - name: hyprcursor
+# generated with artixpkg 0.36.4-1-any
