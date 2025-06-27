@@ -1,0 +1,35 @@
+---
+version: 25.5.0-2
+pkgbase:
+  name: ansible-navigator
+  pkgdesc: A text-based user interface (TUI) for Ansible
+  pkgver: 25.5.0
+  pkgrel: 2
+  url: https://github.com/ansible/ansible-navigator
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-jsonschema
+    - python-onigurumacffi
+    - ansible-core
+    - ansible-runner
+  optdepends:
+    - 'ansible: check official ansible collections'
+    - 'docker: To use docker as a container runtime'
+    - 'podman: To use podman as a container runtime'
+  source:
+    - ansible-navigator-25.5.0.tar.gz::https://github.com/ansible/ansible-navigator/archive/refs/tags/v25.5.0.tar.gz
+  sha256sums:
+    - 733f06716b3d0dd06b2d32bec39c6571bac651888c9f5a82124fce625c048163
+pkgname:
+  - name: ansible-navigator
+# generated with artixpkg 0.36.4-1-any
