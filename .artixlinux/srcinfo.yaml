@@ -1,9 +1,9 @@
 ---
-version: 6.4.0-1
+version: 6.4.1-1
 pkgbase:
   name: kscreenlocker
   pkgdesc: Library and components for secure lock screen architecture
-  pkgver: 6.4.0
+  pkgver: 6.4.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -51,8 +51,8 @@ pkgbase:
     - etc/pam.d/kde-fingerprint
     - etc/pam.d/kde-smartcard
   source:
-    - https://download.kde.org/stable/plasma/6.4.0/kscreenlocker-6.4.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.0/kscreenlocker-6.4.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.1/kscreenlocker-6.4.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.1/kscreenlocker-6.4.1.tar.xz.sig
     - kde.pam
     - kde-fingerprint.pam
     - kde-smartcard.pam
@@ -62,7 +62,7 @@ pkgbase:
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - b840202ba6b5bd7832ab2116beee2c8e386fa9b844e6db0e425a84006b6698fa
+    - c849dc939a050a26f270393f8b59e8b86d671983a752e014af7c89a1c955b925
     - SKIP
     - adba7bb7c27eb3a572e5e9d3cea0dbeebe59d3634472d1863d14fe892cb13b2b
     - 32734b4e1ec8b7f7e32b6cb2d68285c5c4f15f53736bba085096e76095181241
