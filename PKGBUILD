@@ -23,7 +23,7 @@ makedepends=(
 )
 install=fontconfig-32.install
 source=(
-  "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git?signed#tag=$pkgver"
+  "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#tag=$pkgver"
   fontconfig-32.hook
 )
 b2sums=('8ba4930ffcc3c6ad0af99e40bc6199dd674fccc2597746935f0e99fe23aae989e7f9194eb4804a704129e0280047abcad4e55b75daaa76eb0ba14d86738a1ad1'
