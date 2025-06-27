@@ -1,0 +1,62 @@
+---
+version: 48.5-1
+pkgbase:
+  name: epiphany
+  pkgdesc: A GNOME web browser based on the WebKit rendering engine
+  pkgver: 48.5
+  pkgrel: 1
+  url: https://apps.gnome.org/Epiphany
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - aspell
+    - glibc-locales
+    - hspell
+    - hunspell
+    - libvoikko
+    - nuspell
+    - xorg-server-xvfb
+  makedepends:
+    - docbook-xml
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - lsb-release
+    - meson
+    - startup-notification
+    - yelp-tools
+  depends:
+    - cairo
+    - dconf
+    - gcc-libs
+    - gcr-4
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gmp
+    - gstreamer
+    - gtk4
+    - hicolor-icon-theme
+    - json-glib
+    - libadwaita
+    - libarchive
+    - libportal
+    - libportal-gtk4
+    - libsecret
+    - libsoup3
+    - libxml2
+    - nettle
+    - pango
+    - sqlite
+    - webkitgtk-6.0
+  source:
+    - git+https://gitlab.gnome.org/GNOME/epiphany.git#tag=48.5
+  b2sums:
+    - 49b2b48fb2d66472ebb4e6f6fb84f182f183b192202fbca87931d4c83532a7582988a6cdabd8bc1af38f2609d6c0267678e50ddc35474a46ea3611a14d34deef
+pkgname:
+  - name: epiphany
+# generated with artixpkg 0.36.4-1-any
