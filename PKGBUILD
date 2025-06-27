@@ -3,7 +3,7 @@
 pkgname=krb5
 _pkgvermajor=1.21
 pkgver=1.21.3
-pkgrel=1
+pkgrel=2
 pkgdesc='The Kerberos network authentication system'
 url='https://web.mit.edu/kerberos/'
 arch=('x86_64')
@@ -57,8 +57,8 @@ prepare() {
 
 build() {
    cd ${pkgname}-${pkgver}/src
-   export CFLAGS+=" -fPIC -fno-strict-aliasing -fstack-protector-all"
-   export CPPFLAGS+=" -I/usr/include/et"
+   export CFLAGS+=" -fPIC -fno-strict-aliasing -fstack-protector-all -std=gnu17"
+   
    ./configure --prefix=/usr \
                --sbindir=/usr/bin \
                --sysconfdir=/etc \
@@ -90,7 +90,6 @@ package() {
 
    install -Dm 644 "${srcdir}"/${pkgname}-${pkgver}/NOTICE \
      "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-
 }
 
 # vim: ts=2 sw=2 et:
