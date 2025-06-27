@@ -1,0 +1,40 @@
+---
+version: 0.11.2-1
+pkgbase:
+  name: libssh
+  pkgdesc: Library for accessing ssh client services through C libraries
+  pkgver: 0.11.2
+  pkgrel: 1
+  url: https://www.libssh.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - cmocka
+    - doxygen
+    - openssh
+    - python
+  depends:
+    - glibc
+    - openssl
+    - zlib
+  provides:
+    - libssh.so
+  source:
+    - https://www.libssh.org/files/0.11/libssh-0.11.2.tar.xz
+    - https://www.libssh.org/files/0.11/libssh-0.11.2.tar.xz.asc
+  validpgpkeys:
+    - 8DFF53E18F2ABC8D8F3C92237EE0FC4DCC014E3D
+    - 88A228D89B07C2C77D0C780903D5DF8CFDD3E8E7
+  sha256sums:
+    - 69529fc18f5b601f0baf0e5a4501a2bc26df5e2f116f5f8f07f19fafaa6d04e7
+    - SKIP
+pkgname:
+  - name: libssh
+  - name: libssh-docs
+    pkgdesc: Documentation for libssh
+    depends: []
+    provides: []
+# generated with artixpkg 0.36.4-1-any
