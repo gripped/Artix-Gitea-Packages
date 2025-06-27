@@ -5,7 +5,7 @@
 
 pkgname=hyprland
 pkgver=0.49.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/${pkgname^}"
@@ -80,7 +80,7 @@ prepare() {
 
 build() {
 	cd "$_archive"
-	make release PREFIX=/usr
+	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr -DNO_SYSTEMD=True
 }
 
 package() {
