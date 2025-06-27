@@ -1,0 +1,31 @@
+---
+version: 0.0.3-4
+pkgbase:
+  name: python-changelog-chug
+  pkgdesc: Parser for project Change Log documents
+  pkgver: 0.0.3
+  pkgrel: 4
+  url: https://git.sr.ht/~bignose/changelog-chug
+  arch:
+    - any
+  license:
+    - AGPL-3.0-or-later
+  checkdepends:
+    - python-testscenarios
+    - python-testtools
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-semver
+    - python-docutils
+  source:
+    - python-changelog-chug-0.0.3.tar.gz::https://git.sr.ht/~bignose/changelog-chug/archive/release/0.0.3.tar.gz
+  sha256sums:
+    - 0777bacb46df129120d813ab198419735acb43870cdc32dae181c57e37eafaa7
+pkgname:
+  - name: python-changelog-chug
+# generated with artixpkg 0.36.4-1-any
