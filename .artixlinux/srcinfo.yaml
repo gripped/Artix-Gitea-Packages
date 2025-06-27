@@ -1,0 +1,31 @@
+---
+version: 1.4.1-2
+pkgbase:
+  name: python-onigurumacffi
+  pkgdesc: Python cffi bindings for the oniguruma regex engine
+  pkgver: 1.4.1
+  pkgrel: 2
+  url: https://github.com/asottile/onigurumacffi
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - oniguruma
+    - python
+    - python-cffi
+  source:
+    - python-onigurumacffi-1.4.1.tar.gz::https://github.com/asottile/onigurumacffi/archive/v1.4.1.tar.gz
+  sha256sums:
+    - 8a642fe93a3c3fd2ad28baf506d3364bcae04e9cb93aa63c08ac4a4180007b0c
+pkgname:
+  - name: python-onigurumacffi
+# generated with artixpkg 0.36.4-1-any
