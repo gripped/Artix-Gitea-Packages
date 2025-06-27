@@ -1,0 +1,34 @@
+---
+version: 0.1.6-5
+pkgbase:
+  name: hypridle
+  pkgdesc: hyprland’s idle daemon
+  pkgver: 0.1.6
+  pkgrel: 5
+  url: https://github.com/hyprwm/hypridle
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - hyprland-protocols
+  depends:
+    - gcc-libs
+    - glibc
+    - hyprlang
+    - libhyprlang.so
+    - hyprwayland-scanner
+    - sdbus-cpp
+    - libsdbus-c++.so
+    - wayland
+    - libwayland-client.so
+    - wayland-protocols
+  source:
+    - https://github.com/hyprwm/hypridle/archive/v0.1.6/hypridle-0.1.6.tar.gz
+  sha256sums:
+    - ea4faf92e7ef303a538551e2b0ea67a557b2d711574993a5a3fea3b27667dc63
+pkgname:
+  - name: hypridle
+# generated with artixpkg 0.36.4-1-any
