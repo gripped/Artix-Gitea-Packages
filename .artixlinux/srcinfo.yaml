@@ -1,0 +1,49 @@
+---
+version: 1:1.56.4-1
+pkgbase:
+  name: pango
+  pkgdesc: A library for layout and rendering of text
+  pkgver: 1.56.4
+  pkgrel: 1
+  epoch: 1
+  url: https://www.pango.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - help2man
+    - meson
+    - python-docutils
+  depends:
+    - cairo
+    - fontconfig
+    - freetype2
+    - fribidi
+    - glib2
+    - glibc
+    - harfbuzz
+    - libsysprof-capture
+    - libthai
+    - libx11
+    - libxft
+    - libxrender
+  source:
+    - git+https://gitlab.gnome.org/GNOME/pango.git#tag=1.56.4
+  b2sums:
+    - 2396a29025fca9e843b4aad11369aa89141f65d55ee92bea633fcac714d881616b4d5405687375afddbcf3453b46fbf4ad6e41ba1d85d6d763e5c7493f305771
+pkgname:
+  - name: pango
+    provides:
+      - libpango-1.0.so
+      - libpangocairo-1.0.so
+      - libpangoft2-1.0.so
+      - libpangoxft-1.0.so
+  - name: pango-docs
+    pkgdesc: A library for layout and rendering of text (documentation)
+    depends: []
+# generated with artixpkg 0.36.4-1-any
