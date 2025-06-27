@@ -1,9 +1,9 @@
 ---
-version: 6.4.0-1
+version: 6.4.1-1
 pkgbase:
   name: plasma-workspace-wallpapers
   pkgdesc: Additional wallpapers for the Plasma Workspace
-  pkgver: 6.4.0
+  pkgver: 6.4.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -16,15 +16,15 @@ pkgbase:
     - extra-cmake-modules
     - qt5-base
   source:
-    - https://download.kde.org/stable/plasma/6.4.0/plasma-workspace-wallpapers-6.4.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.0/plasma-workspace-wallpapers-6.4.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.1/plasma-workspace-wallpapers-6.4.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.1/plasma-workspace-wallpapers-6.4.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - cc4b353cb23adf3268b38b15c6f6fbd25a63774b4982468f80e450f600d39302
+    - 7245e7e258f56282fe214259fae821495efc02b3b91aa9d6a39f2bed9f5e61d7
     - SKIP
 pkgname:
   - name: plasma-workspace-wallpapers
