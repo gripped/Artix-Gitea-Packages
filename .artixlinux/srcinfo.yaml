@@ -1,9 +1,9 @@
 ---
-version: 6.4.0-1
+version: 6.4.1-1
 pkgbase:
   name: plasma-disks
   pkgdesc: Monitors S.M.A.R.T. capable devices for imminent failure
-  pkgver: 6.4.0
+  pkgver: 6.4.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -33,15 +33,15 @@ pkgbase:
     - smartmontools
     - solid
   source:
-    - https://download.kde.org/stable/plasma/6.4.0/plasma-disks-6.4.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.0/plasma-disks-6.4.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.1/plasma-disks-6.4.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.1/plasma-disks-6.4.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 94c95ed1bd494448c81e35360dc8b49ae05acec131651ec81716f4a52218ea90
+    - c98f9a0d5322982a908497d7cc02867825486257b8e25462d197f336011c5314
     - SKIP
 pkgname:
   - name: plasma-disks
