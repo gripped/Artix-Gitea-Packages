@@ -1,0 +1,48 @@
+---
+version: 0.8.0-5
+pkgbase:
+  name: aquamarine
+  pkgdesc: a very light linux rendering backend library
+  pkgver: 0.8.0
+  pkgrel: 5
+  url: https://github.com/hyprwm/aquamarine
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+  depends:
+    - gcc-libs
+    - glibc
+    - hyprutils
+    - libhyprutils.so
+    - hyprwayland-scanner
+    - libdisplay-info
+    - libdisplay-info.so
+    - libdrm
+    - libglvnd
+    - libEGL.so
+    - libGLESv2.so
+    - libinput
+    - mesa
+    - opengl-driver
+    - pixman
+    - pugixml
+    - seatd
+    - libseat.so
+    - libudev
+    - libudev.so
+    - wayland
+    - libwayland-client.so
+    - wayland-protocols
+  provides:
+    - libaquamarine.so
+  source:
+    - https://github.com/hyprwm/aquamarine/archive/v0.8.0/aquamarine-0.8.0.tar.gz
+  sha256sums:
+    - 1c3570de268fff008c6dd76472d783710b7f62c545f76091580c9edd13ad23d5
+pkgname:
+  - name: aquamarine
+# generated with artixpkg 0.36.4-1-any
