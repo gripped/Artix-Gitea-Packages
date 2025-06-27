@@ -1,9 +1,9 @@
 ---
-version: 20.1.6-1
+version: 20.1.7-1
 pkgbase:
   name: openmp
   pkgdesc: LLVM OpenMP Runtime Library
-  pkgver: 20.1.6
+  pkgver: 20.1.7
   pkgrel: 1
   url: https://openmp.llvm.org/
   arch:
@@ -26,18 +26,18 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/openmp-20.1.6.src.tar.xz
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/openmp-20.1.6.src.tar.xz.sig
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/cmake-20.1.6.src.tar.xz
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.6/cmake-20.1.6.src.tar.xz.sig
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/openmp-20.1.7.src.tar.xz
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/openmp-20.1.7.src.tar.xz.sig
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/cmake-20.1.7.src.tar.xz
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/cmake-20.1.7.src.tar.xz.sig
   validpgpkeys:
     - 474E22316ABF4785A88C6E8EA2C794A986419D8A
     - D574BD5D1D0E98895E3BF90044F2485E45D59042
   sha256sums:
-    - ff8dabd89212cd41b4fc5c26433bcde368873e4f10ea0331792e6b6e7707eff9
+    - 7d90b938728882dbfc332b37517c126bae35f2eaa4612e9b2999bf554a033b50
     - SKIP
-    - b4b3efa5d5b01b3f211f1ba326bb6f0c318331f828202d332c95b7f30fca5f8c
+    - afdab526c9b337a4eacbb401685beb98a18fb576037ecfaa93171d4c644fe791
     - SKIP
 pkgname:
   - name: openmp
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
