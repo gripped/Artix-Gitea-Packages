@@ -1,10 +1,10 @@
 ---
-version: 6.4.0-5
+version: 6.4.1-1
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
-  pkgver: 6.4.0
-  pkgrel: 5
+  pkgver: 6.4.1
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -122,15 +122,15 @@ pkgbase:
     - xorg-xwayland
     - zlib
   source:
-    - https://download.kde.org/stable/plasma/6.4.0/plasma-workspace-6.4.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.0/plasma-workspace-6.4.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.1/plasma-workspace-6.4.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.1/plasma-workspace-6.4.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 961ef54f7fd21f212f8d633300f1bb0520524aa9794e433ae1abe16ac0560b2b
+    - 2067b539e57445bb35fc3b589a4f5f7aee31549906e220e88d8790d7af32aee4
     - SKIP
 pkgname:
   - name: plasma-workspace
