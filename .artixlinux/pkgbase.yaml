@@ -1,19 +1,5 @@
 ---
 team: world
-pkgbase:
-  name: dotnet-core
-  version: 9.0.4.sdk105-1
-  arch:
-    - x86_64
-  pkgname:
-    - dotnet-host
-    - dotnet-runtime
-    - aspnet-runtime
-    - dotnet-sdk
-    - netstandard-targeting-pack
-    - dotnet-targeting-pack
-    - aspnet-targeting-pack
-    - dotnet-source-built-artifacts
 actions:
   addRepo: world
   removeRepo: null
@@ -26,44 +12,56 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 9.0.4.sdk105-1
+    version: 9.0.5.sdk106-1
     packages:
-      - dotnet-host-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - netstandard-targeting-pack-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-9.0.4.sdk105-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-9.0.4.sdk105-1-x86_64.pkg.tar.zst
+      - dotnet-host-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - netstandard-targeting-pack-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-9.0.5.sdk106-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []

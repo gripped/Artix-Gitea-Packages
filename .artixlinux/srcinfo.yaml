@@ -1,0 +1,115 @@
+---
+version: 9.0.5.sdk106-1
+pkgbase:
+  name: dotnet-core
+  pkgver: 9.0.5.sdk106
+  pkgrel: 1
+  url: https://dotnet.microsoft.com
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - bash
+    - clang18
+    - cmake
+    - dotnet-sdk
+    - dotnet-source-built-artifacts
+    - git
+    - icu
+    - krb5
+    - libgit2
+    - libunwind
+    - libxml2
+    - lldb
+    - llvm18
+    - lttng-ust2.12
+    - nodejs
+    - openssl
+    - udev
+    - zlib
+  optdepends:
+    - 'bash-completion: Bash completion support'
+  options:
+    - '!lto'
+    - staticlibs
+  source:
+    - git+https://github.com/dotnet/dotnet.git#tag=3d441471e6d6513e40022042a13b536bebff0590
+  b2sums:
+    - 3be60f19bb2d3ced03cb215851e4febf54b2bd4dab94418f355449581d17af3b6eee33c58178801d4fcdbee07aba7392448dee5363eea0f90373f78dd66a21f0
+pkgname:
+  - name: dotnet-host
+    pkgdesc: A generic driver for the .NET Core Command Line Interface
+    depends:
+      - gcc-libs
+      - glibc
+    optdepends:
+      - 'bash-completion: Bash completion support'
+  - name: dotnet-runtime
+    pkgdesc: The .NET Core runtime
+    depends:
+      - dotnet-host
+      - gcc-libs
+      - glibc
+      - icu
+      - krb5
+      - libunwind
+      - zlib
+      - openssl
+    optdepends:
+      - 'lttng-ust2.12: CoreCLR tracing'
+    provides:
+      - dotnet-runtime-9.0
+    conflicts:
+      - dotnet-runtime-9.0
+  - name: aspnet-runtime
+    pkgdesc: The ASP.NET Core runtime
+    depends:
+      - dotnet-runtime
+    provides:
+      - aspnet-runtime-9.0
+    conflicts:
+      - aspnet-runtime-9.0
+  - name: dotnet-sdk
+    pkgdesc: The .NET Core SDK
+    depends:
+      - dotnet-runtime
+      - dotnet-targeting-pack
+      - glibc
+      - gcc-libs
+      - netstandard-targeting-pack
+    optdepends:
+      - 'aspnet-targeting-pack: Build ASP.NET Core applications'
+    provides:
+      - dotnet-sdk-9.0
+    conflicts:
+      - dotnet-sdk-9.0
+  - name: netstandard-targeting-pack
+    pkgdesc: The .NET Standard targeting pack
+    provides:
+      - netstandard-targeting-pack-2.1
+    conflicts:
+      - netstandard-targeting-pack-2.1
+  - name: dotnet-targeting-pack
+    pkgdesc: The .NET Core targeting pack
+    depends:
+      - netstandard-targeting-pack
+    provides:
+      - dotnet-targeting-pack-9.0
+    conflicts:
+      - dotnet-targeting-pack-9.0
+  - name: aspnet-targeting-pack
+    pkgdesc: The ASP.NET Core targeting pack
+    depends:
+      - dotnet-targeting-pack
+    provides:
+      - aspnet-targeting-pack-9.0
+    conflicts:
+      - aspnet-targeting-pack-9.0
+  - name: dotnet-source-built-artifacts
+    pkgdesc: Internal package for building the .NET Core SDK
+    provides:
+      - dotnet-source-built-artifacts-9.0
+    conflicts:
+      - dotnet-source-built-artifacts-9.0
+# generated with artixpkg 0.36.4-1-any
