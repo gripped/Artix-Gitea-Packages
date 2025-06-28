@@ -1,0 +1,38 @@
+---
+version: 0.10.1-1
+pkgbase:
+  name: libdex
+  pkgdesc: A library supporting 'Deferred Execution'
+  pkgver: 0.10.1
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/libdex
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - libsoup3
+    - libsysprof-capture
+    - meson
+    - vala
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - liburing
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libdex.git#tag=0.10.1
+  b2sums:
+    - fc458f54b51d28ab9308acbdbc9c3c0a179573074af6982651d8d6ca091bbd9fbe73a5b0ee85c735a3ffe2f38ba9c35ac9beb8e053a2dd315e8a8194e561a488
+pkgname:
+  - name: libdex
+    provides:
+      - libdex-1.so
+  - name: libdex-docs
+    pkgdesc: A library supporting 'Deferred Execution' (documentation)
+    depends: []
+# generated with artixpkg 0.36.4-1-any
