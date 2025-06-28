@@ -7,7 +7,7 @@ pkgname=(qt6-base
          qt6-xcb-private-headers)
 _pkgver=6.9.1
 pkgver=${_pkgver/-/}
-pkgrel=2
+pkgrel=2.1
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -95,6 +95,13 @@ prepare() {
   patch -d $_pkgfn -p1 < qt6-base-cflags.patch # Use system CFLAGS
   patch -d $_pkgfn -p1 < qt6-base-nostrip.patch # Don't strip binaries with qmake
   git -C $_pkgfn cherry-pick -n dc52aa68ea305d8ef40f8b514bfeba80cd6c2c1e # Unbreak reproducibility
+
+  # https://forum.qt.io/topic/162427/segmentation-fault-when-exiting-when-linked-against-qt-6.9.1/27
+  git -C $_pkgfn cherry-pick -n ca8219583bd31a807b2040bf621e819097902646
+  git -C $_pkgfn cherry-pick -n 2de8518d9d66646db979260a252ed3307af59363
+  git -C $_pkgfn cherry-pick -n a63b47a7a6bef5ffcce5b5bdcfceda34faf0ee4b
+  git -C $_pkgfn cherry-pick -n 3fd873079e2fe8ffad0595015230a82c765e27c1
+  git -C $_pkgfn cherry-pick -n 6694c0fbfce6426ad4b8e2ffe8794b41ee69e32f
 }
 
 build() {
