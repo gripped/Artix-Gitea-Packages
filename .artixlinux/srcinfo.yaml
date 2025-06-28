@@ -1,0 +1,51 @@
+---
+version: 1.2.2-1
+pkgbase:
+  name: glycin
+  pkgdesc: Sandboxed and extendable image decoding
+  pkgver: 1.2.2
+  pkgrel: 1
+  url: https://gitlab.gnome.org/sophie-h/glycin
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0 OR LGPL-2.1-or-later
+  checkdepends:
+    - dav1d
+    - ffmpeg
+    - rav1e
+    - svt-av1
+  makedepends:
+    - clang
+    - git
+    - gobject-introspection
+    - libheif
+    - meson
+    - rust
+    - vala
+  depends:
+    - bubblewrap
+    - cairo
+    - fontconfig
+    - gcc-libs
+    - glib2
+    - glibc
+    - gtk4
+    - lcms2
+    - libjxl
+    - librsvg
+    - libseccomp
+  optdepends:
+    - 'libheif: heif/heic file support'
+  provides:
+    - libglycin-1.so
+    - libglycin-gtk4-1.so
+  source:
+    - git+https://gitlab.gnome.org/sophie-h/glycin.git#tag=1.2.2
+    - git+https://gitlab.gnome.org/sophie-h/test-images.git
+  b2sums:
+    - 5e60eeb3145f70590c1c4a510dd683249478ac49ef5d68ad94d66d14911687005f81a5c985012dea9f044b025250702f9eddbdfac8b16943ba3e419c3c367b91
+    - SKIP
+pkgname:
+  - name: glycin
+# generated with artixpkg 0.36.4-1-any
