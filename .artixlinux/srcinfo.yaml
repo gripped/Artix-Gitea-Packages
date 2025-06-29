@@ -1,0 +1,33 @@
+---
+version: 0.5.10-1
+pkgbase:
+  name: lib32-libproxy
+  pkgdesc: Automatic proxy configuration management library (32-bit)
+  pkgver: 0.5.10
+  pkgrel: 1
+  url: https://libproxy.github.io/libproxy/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - gsettings-desktop-schemas
+    - meson
+  depends:
+    - lib32-curl
+    - lib32-duktape
+    - lib32-gcc-libs
+    - lib32-glib2
+    - lib32-glibc
+    - libproxy
+  source:
+    - git+https://github.com/libproxy/libproxy#tag=0.5.10
+  b2sums:
+    - 604754e593ba1fe2e7fbf54acf331442af92b5e5e8609e43d16af2374d468c893e8d09001d4dbecb6524fabdeeac0fd8b671b20784092c1d421a48e28f57b508
+pkgname:
+  - name: lib32-libproxy
+    provides:
+      - libproxy.so
+    conflicts: []
+# generated with artixpkg 0.36.4-1-any
