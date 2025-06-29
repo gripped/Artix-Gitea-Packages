@@ -3,7 +3,7 @@
 
 pkgname=smokeping
 pkgver=2.9.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A tool to keep track of your network latency"
 arch=('any')
 url="https://oss.oetiker.ch/smokeping/"
