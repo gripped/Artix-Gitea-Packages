@@ -1,9 +1,9 @@
 ---
-version: 48.2-1
+version: 48.3-1
 pkgbase:
   name: gnome-shell-extensions
   pkgdesc: Extensions for GNOME shell, including classic mode
-  pkgver: 48.2
+  pkgver: 48.3
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - 'gnome-menus: Apps Menu extension'
     - 'libgtop: System Monitor extension'
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git#tag=48.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-shell-extensions.git#tag=48.3
   b2sums:
-    - 854646307379b1ca5c14351cd42c076c1dcc8f446778e9517c4d48a444a3f278664cf0fb6442bcb62e2e58df64669496b0ece745bc8ab45d378cd71c82e7aa99
+    - 25ef95ddc90b536b51f3185cde6b10ed8b61af52c272eec81be2d1a5d0036323291e5eb6b18d900744300d9f8c8369d4f96cb8c4f2de854fb8b0c9f3fdf7ed37
 pkgname:
   - name: gnome-shell-extensions
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
