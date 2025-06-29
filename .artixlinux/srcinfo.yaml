@@ -1,0 +1,22 @@
+---
+version: 49.0-2
+pkgbase:
+  name: adwaita-fonts
+  pkgdesc: The typefaces for GNOME
+  pkgver: 49.0
+  pkgrel: 2
+  url: https://gitlab.gnome.org/GNOME/adwaita-fonts
+  arch:
+    - any
+  license:
+    - OFL-1.1
+  makedepends:
+    - git
+    - meson
+  source:
+    - git+https://gitlab.gnome.org/GNOME/adwaita-fonts.git#tag=49.0
+  b2sums:
+    - 100ff750435ae864dfaf659e03926f9cb03f09b3f3b68167d393db0536a723c41def4fde8a4f6ea8359018c49fbd75be5395c1201b53c3ff46bdd07e1ed579d7
+pkgname:
+  - name: adwaita-fonts
+# generated with artixpkg 0.36.4-1-any
