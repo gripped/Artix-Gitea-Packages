@@ -1,0 +1,36 @@
+---
+version: 2.9.0-1
+pkgbase:
+  name: smokeping
+  pkgdesc: A tool to keep track of your network latency
+  pkgver: 2.9.0
+  pkgrel: 1
+  url: https://oss.oetiker.ch/smokeping/
+  arch:
+    - any
+  license:
+    - GPL2
+  depends:
+    - perl-config-grammar
+    - perl-digest-hmac
+    - perl-libwww
+    - rrdtool
+    - perl-fcgi
+    - perl-cgi-fast
+    - perl-io-tty
+    - perl-net-dns
+    - perl-net-snmp
+    - perl-net-telnet
+    - perl-ldap
+    - perl-net-openssh
+  source:
+    - smokeping_release-2.9.0.tar.gz::https://github.com/oetiker/SmokePing/releases/download/v2.9.0/smokeping-2.9.0.tar.gz
+    - smokeping.sysusers
+    - smokeping.tmpfiles
+  sha256sums:
+    - f1be35bfccc2ba1c9f75f76d222b29b57024efe89c5b564b86c1a37ce2d1ddb1
+    - ab3b399f58118fc31fac5f627814bbb3b1d7752dd3b4fed2d6b7ee58f24fbd2e
+    - afd3196804a120866e8e5f207f177c96fd64b36c974888d8287fba3c216b1583
+pkgname:
+  - name: smokeping
+# generated with artixpkg 0.36.4-1-any
