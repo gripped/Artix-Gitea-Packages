@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.1.1-1
+    version: 5.1.1-2
     packages:
-      - qbittorrent-5.1.1-1-x86_64.pkg.tar.zst
-      - qbittorrent-nox-5.1.1-1-x86_64.pkg.tar.zst
+      - qbittorrent-5.1.1-2-x86_64.pkg.tar.zst
+      - qbittorrent-nox-5.1.1-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
