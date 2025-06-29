@@ -2,7 +2,7 @@
 
 pkgname=waterfox
 pkgver=6.5.10
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
