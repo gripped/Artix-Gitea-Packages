@@ -1,9 +1,9 @@
 ---
-version: 6.14.9.hardened1-1
+version: 6.14.11.hardened1-1
 pkgbase:
   name: linux-hardened
   pkgdesc: Security-Hardened Linux
-  pkgver: 6.14.9.hardened1
+  pkgver: 6.14.11.hardened1
   pkgrel: 1
   url: https://github.com/anthraxx/linux-hardened
   arch:
@@ -32,27 +32,27 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.9.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.9.tar.sign
-    - https://github.com/anthraxx/linux-hardened/releases/download/v6.14.9-hardened1/linux-hardened-v6.14.9-hardened1.patch
-    - https://github.com/anthraxx/linux-hardened/releases/download/v6.14.9-hardened1/linux-hardened-v6.14.9-hardened1.patch.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.11.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.14.11.tar.sign
+    - https://github.com/anthraxx/linux-hardened/releases/download/v6.14.11-hardened1/linux-hardened-v6.14.11-hardened1.patch
+    - https://github.com/anthraxx/linux-hardened/releases/download/v6.14.11-hardened1/linux-hardened-v6.14.11-hardened1.patch.sig
     - config
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - E240B57E2C4630BA768E2F26FC1B547C8D8172C8
   sha256sums:
-    - 390cdde032719925a08427270197ef55db4e90c09d454e9c3554157292c9f361
+    - 3f1ccd0a6dc9c9777cb6fcef357c77e4a2386c84c52b6d5bbcda79c16af33b1b
     - SKIP
-    - d73699fd4155700f2007e897fc10cebd7ce54970be0e54e79819a5f14e2679d0
+    - 9706a5285b4af2fe6a631d258fb344cb1552c0e144d0d62963d23c95cd69c01d
     - SKIP
-    - f13ea94ef4c06c7b62d33634afaf58d7875689737b7edb32f09bbeec3a06e3db
+    - 855709b6a4566674d643852a983c1f00801cc6203e22b8779ac0b19c03e3cb96
   b2sums:
-    - 4a675b88d7ddc8aaaf7258af95915ccbc8a09b6b7f5d10c865fc6dce3254aecfd2f72110be898fb6bb1abc5658c3a35758a1b0d90237de922f538613091d46b8
+    - 8745d85cae53e4b07c413c8fc956383e8c2a78906306fba9f49ac670ce2fc54adf05f4854043bde4d40b5bfcbd161c6355757319586dac393ef31176f5136038
     - SKIP
-    - 61294e77e830a6ce11314afb8287bab3db5c1fb3fb1d0ca25c732ce199ba9c5ee6c3b2fa5e531cf4d24b8ff5f909f9691a2cc9459e1a26704d8d67985fdad43a
+    - 168f9d32084f16f6d5eac63472580ad750bb69527e81280b33e063964117b96acc47c777b1361f0b3b8ec94c6dc3bc714447e6caed24fb32710fc6a814335fc1
     - SKIP
-    - ed1efadaed8850504fa12860c332d15af200e8759d2d9df90e8b86ec36ccc8b6f176c1e224dcf699e4575902dd0c1224c0c6aacac68d12a98d9bad1e4f83c823
+    - 4cf2638d228722caaf4bde4084559d94d69a615eb57f3de748d17e7ed82d0fda8689b6a7830f4fa1fdcb9cc3e2b577164f67639f52333a57bc0a392482c8358b
 pkgname:
   - name: linux-hardened
     pkgdesc: The Security-Hardened Linux kernel and modules
@@ -77,4 +77,4 @@ pkgname:
       - pahole
   - name: linux-hardened-docs
     pkgdesc: Documentation for the Security-Hardened Linux kernel
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
