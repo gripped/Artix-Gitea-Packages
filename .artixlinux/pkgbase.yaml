@@ -13,10 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 2.03.33-1
+    version: 2.03.33-1.1
     packages:
-      - lvm2-2.03.33-1-x86_64.pkg.tar.zst
-      - device-mapper-2.03.33-1-x86_64.pkg.tar.zst
+      - lvm2-2.03.33-1.1-x86_64.pkg.tar.zst
+      - device-mapper-2.03.33-1.1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 2.03.32-1.1

@@ -4,7 +4,7 @@
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
 pkgver=2.03.33
-pkgrel=1
+pkgrel=1.1
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL-2.0-only' 'LGPL-2.1-only')
@@ -34,7 +34,7 @@ prepare() {
 
   # prepare for non-systemd initcpio
   patch -Np1  --output='udev/69-dm-lvm-initcpio.rules.in' -i ../0001-lvm2-autoactivate.patch
-  patch -Np1 --output='udev/69-dm-lvm-initcpio.rules.in' < ../0001-udev-initcpio.patch
+  #patch -Np1 --output='udev/69-dm-lvm-initcpio.rules.in' < ../0001-udev-initcpio.patch
 
 }
 

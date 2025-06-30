@@ -1,9 +1,9 @@
 ---
-version: 2.03.33-1
+version: 2.03.33-1.1
 pkgbase:
   name: lvm2
   pkgver: 2.03.33
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://sourceware.org/lvm2/
   arch:
     - x86_64
