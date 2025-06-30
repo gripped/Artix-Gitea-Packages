@@ -1,0 +1,45 @@
+---
+version: 1.9.17.p1-1
+pkgbase:
+  name: sudo
+  pkgdesc: Give certain users the ability to run some commands as root
+  pkgver: 1.9.17.p1
+  pkgrel: 1
+  url: https://www.sudo.ws/sudo/
+  install: sudo.install
+  arch:
+    - x86_64
+  license:
+    - custom
+  depends:
+    - glibc
+    - openssl
+    - pam
+    - libldap
+    - zlib
+  backup:
+    - etc/pam.d/sudo
+    - etc/sudo.conf
+    - etc/sudo_logsrvd.conf
+    - etc/sudoers
+  source:
+    - https://www.sudo.ws/sudo/dist/sudo-1.9.17p1.tar.gz
+    - https://www.sudo.ws/sudo/dist/sudo-1.9.17p1.tar.gz.sig
+    - sudo.pam
+  validpgpkeys:
+    - 59D1E9CCBA2B376704FDD35BA9F4C021CEA470FB
+  sha256sums:
+    - ff607ea717072197738a78f778692cd6df9a7e3e404565f51de063ca27455d32
+    - SKIP
+    - d1738818070684a5d2c9b26224906aad69a4fea77aabd960fc2675aee2df1fa2
+pkgname:
+  - name: sudo
+    depends:
+      - glibc
+      - openssl
+      - pam
+      - libldap
+      - zlib
+      - libcrypto.so
+      - libssl.so
+# generated with artixpkg 0.36.4-1-any
