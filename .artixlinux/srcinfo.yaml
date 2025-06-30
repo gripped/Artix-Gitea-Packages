@@ -22,7 +22,7 @@ pkgbase:
     - lib32-freetype2
     - lib32-glibc
   source:
-    - git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git?signed#tag=2.17.0
+    - git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git#tag=2.17.0
     - fontconfig-32.hook
   validpgpkeys:
     - F77A64C4B5B45FF8763A278F65755979B34E1294
