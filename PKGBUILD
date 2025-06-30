@@ -27,11 +27,13 @@ license=(
 depends=(
   'bzip2'
   'expat'
+  'gcc-libs'
   'glibc'
   'icu'
   'krb5'
   'libcap'
   'libsodium'
+  'libstemmer'
   'libxcrypt'
   'lz4'
   'mariadb-libs'
@@ -46,12 +48,14 @@ makedepends=(
   'clucene'
   'libldap'
   'lua53'
+  'xapian-core'
   'xz'
 )
 optdepends=(
   'clucene: alternative FTS indexer'
   'libldap: ldap plugin'
   'lua53: LUA auth and push support'
+  'xapian-core: FTS flatcurve indexer'
 )
 provides=(
   'imap-server'
@@ -135,6 +139,8 @@ build() {
     --with-solr \
     --with-sodium \
     --with-libcap \
+    --with-stemmer \
+    --with-flatcurve \
     --with-docs
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
