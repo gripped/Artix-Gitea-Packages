@@ -1,0 +1,93 @@
+---
+version: 1.24.0-2
+pkgbase:
+  name: modemmanager
+  pkgdesc: Mobile broadband modem management service
+  pkgver: 1.24.0
+  pkgrel: 2
+  url: https://www.freedesktop.org/wiki/Software/ModemManager/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-dbus
+    - python-gobject
+  makedepends:
+    - bash-completion
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - meson
+    - elogind
+    - vala
+  depends:
+    - bash
+    - gcc-libs
+    - glib2
+    - glibc
+    - hicolor-icon-theme
+    - libgudev
+    - libmbim
+    - libqmi
+    - libqrtr-glib
+    - mobile-broadband-provider-info
+    - polkit
+    - ppp
+    - libelogind
+  source:
+    - git+https://gitlab.freedesktop.org/mobile-broadband/ModemManager.git?signed#tag=1.24.0
+  validpgpkeys:
+    - A814D09B9C5BC01945A64308AECE0239C6606AD5
+    - 3A948E16E8860C68CD68441D734614319E26A433
+  b2sums:
+    - 71728bbd6abda4b88c24b7ba727f809fbe84db556ceab914bd1e3982e009ea5992da4214a8efc6ac76b6ebd9f6727f3da287d4c8206e37d97b405ea74e970963
+pkgname:
+  - name: modemmanager
+    license:
+      - GPL-2.0-or-later
+    depends:
+      - bash
+      - gcc-libs
+      - glib2
+      - glibc
+      - hicolor-icon-theme
+      - libgudev
+      - libmbim
+      - libqmi
+      - libqrtr-glib
+      - mobile-broadband-provider-info
+      - polkit
+      - ppp
+      - libelogind
+      - libmm-glib=1.24.0-2
+      - libmm-glib.so
+      - libgudev-1.0.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+      - libgmodule-2.0.so
+      - libmbim-glib.so
+      - libqmi-glib.so
+      - libelogind.so
+    optdepends:
+      - 'usb_modeswitch: install if your modem shows up as a storage drive'
+  - name: libmm-glib
+    pkgdesc: ModemManager library
+    license:
+      - LGPL-2.1-or-later
+    depends:
+      - gcc-libs
+      - glib2
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+      - glibc
+    provides:
+      - libmm-glib.so
+  - name: modemmanager-docs
+    pkgdesc: Mobile broadband modem management service (documentation)
+    depends: []
+# generated with artixpkg 0.36.4-1-any
