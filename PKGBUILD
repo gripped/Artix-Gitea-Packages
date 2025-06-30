@@ -16,7 +16,7 @@
 pkgname=dovecot
 pkgver=2.4.1
 _pkgver=$pkgver-4
-pkgrel=2
+pkgrel=5
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -61,23 +61,28 @@ provides=(
   'imap-server'
   'pop3-server'
 )
-backup=('etc/pam.d/dovecot')
+backup=(
+  'etc/dovecot/dovecot.conf'
+  'etc/pam.d/dovecot'
+)
 options=('!emptydirs')
 _json_lua_ver='0.1.2'
 source=(
   "https://dovecot.org/releases/2.4/${pkgname}-${_pkgver}.tar.gz"{,.sig}
   'https://github.com/dovecot/core/commit/8dd2ec82f63ba1bf9ddf1b74243e00185ebba9b1.patch'
+  'https://github.com/dovecot/core/commit/473532fb9b5d00aa0900331f463d404a672e3b8f.patch'
   "json-v$_json_lua_ver.lua::https://raw.githubusercontent.com/rxi/json.lua/v$_json_lua_ver/json.lua"
-  'dovecot.sysusersd'
-  'dovecot.tmpfilesd'
+  'dovecot.sysusers'
+  'dovecot.tmpfiles'
   'dovecot.ld.so.conf'
   'dovecot.pam'
 )
 sha256sums=('fb188603f419ed7aaa07794a8692098c3ec2660bb9c67d0efe24948cbb32ae00'
             'SKIP'
-            '3578f472dbc59a5745e22d5c380cc7990a18feca8ad3f8fda339975803298332'
+            'b35f00097be92df3246a6036e0c985bb13847245ffc7f1e3422e23a8dd71ce2f'
+            '30319697bbff2c0fc5509c1b64df4a62288f07a4ab99aa15c278dd8e7457a7a1'
             'b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87'
-            'c5e3a8ffe23e5deb4f7893d9877d972347c2ee45c4ebf713de85c537e47cfcaf'
+            '068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc'
             '0b0625b1e66ca6a95d506fd00d6a68e70620c8ea28606e2528953ffb1806b08e'
             'a457a1691cfa82495fc0503bfa4b61e54b149e63400fe0f568dff2c24a3f7858'
             'ad9245f5e916480edd67139603cbe52e7a868233075f900ab63a0ce58f03741a')
@@ -92,6 +97,9 @@ prepare() {
 
   # Fix build: Drop support for old iconv()
   patch -Np1 -f < ../8dd2ec82f63ba1bf9ddf1b74243e00185ebba9b1.patch || :
+  # Backport fix for GSSAPI:
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/dovecot/-/issues/5
+  patch -Np1 -f < ../473532fb9b5d00aa0900331f463d404a672e3b8f.patch
 
   # Fix path in helper script
   sed -i 's:OPENSSLCONFIG=${OPENSSLCONFIG-dovecot-openssl.cnf}:OPENSSLCONFIG=${OPENSSLCONFIG-/etc/ssl/dovecot-openssl.cnf}:' doc/mkcert.sh
@@ -159,9 +167,9 @@ package() {
 
   cd "${pkgname}-${_pkgver}"
   make DESTDIR="$pkgdir" install
-  install -vDm644 "${srcdir}/dovecot.sysusersd" \
+  install -vDm644 "${srcdir}/dovecot.sysusers" \
     "${pkgdir}/usr/lib/sysusers.d/dovecot.conf"
-  install -vDm644 "${srcdir}/dovecot.tmpfilesd" \
+  install -vDm644 "${srcdir}/dovecot.tmpfiles" \
     "${pkgdir}/usr/lib/tmpfiles.d/dovecot.conf"
   install -vdm755 "${pkgdir}/etc/dovecot/conf.d"
   rm -vf "${pkgdir}/etc/dovecot/README"
