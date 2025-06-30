@@ -8,7 +8,7 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=48.2
+pkgver=48.3
 pkgrel=1
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
@@ -52,10 +52,8 @@ makedepends=(
 checkdepends=(python-gobject)
 source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=${pkgver/[a-z]/.&}"
-  0001-Disable-tracker-test.patch
 )
-b2sums=('8fa2029d0cd17bb01861ac9bac645a2d00cb4c6ec45fd5e3af70f4f77d0d265e044d73a35b14402bcdac17d1bbceeb3d863e090ea38e2a823d0e6d5d01c905ce'
-        'b70c17cc83308e25fa1d5fcc0c735f82ba641fa6f78a064c5b01d65fa5b45505d23247528e2d97254a6983e939e3e9e1b1a737f3aab2546e5ecc825f954d9dcc')
+b2sums=('01e845a0e03e0fc6604e6285f68facd79e2de2d0a3a19198b1dc85d4cf3a3eedd58a51d67091f864da80e1309b0e8f02b4a650cd2cd5ba1a3abb76fe8a666f62')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
   550660707A6F40376B9B9F8D504A78811E6160CC # Corey Berla <corey@berla.me>
@@ -63,9 +61,6 @@ validpgpkeys=(
 
 prepare() {
   cd nautilus
-
-  # Tracker test is broken in our build containers
-  git apply -3 ../0001-Disable-tracker-test.patch
 }
 
 build() {
