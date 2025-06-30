@@ -1,0 +1,25 @@
+---
+version: 3.05-13
+pkgbase:
+  name: perl-text-soundex
+  pkgdesc: Implementation of the soundex algorithm
+  pkgver: 3.05
+  pkgrel: 13
+  url: https://metacpan.org/release/Text-Soundex
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl
+  options:
+    - '!emptydirs'
+    - purge
+  source:
+    - https://search.cpan.org/CPAN/authors/id/R/RJ/RJBS/Text-Soundex-3.05.tar.gz
+  sha256sums:
+    - f6dd55b4280b25dea978221839864382560074e1d6933395faee2510c2db60ed
+pkgname:
+  - name: perl-text-soundex
+# generated with artixpkg 0.36.4-1-any
