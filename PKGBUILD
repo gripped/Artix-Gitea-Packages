@@ -16,7 +16,7 @@
 pkgname=dovecot
 pkgver=2.4.1
 _pkgver=$pkgver-4
-pkgrel=1
+pkgrel=2
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
