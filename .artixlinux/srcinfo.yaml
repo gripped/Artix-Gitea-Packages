@@ -24,7 +24,7 @@ pkgbase:
     - lib32-glib2
     - lib32-glibc
     - lib32-lcms2
-    - lib32-systemd
+    - lib32-elogind
     - libcolord
   provides:
     - libcolord.so

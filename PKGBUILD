@@ -16,7 +16,7 @@ depends=(
   lib32-glib2
   lib32-glibc
   lib32-lcms2
-  lib32-systemd
+  lib32-elogind
   libcolord
 )
 makedepends=(
@@ -50,6 +50,7 @@ build() {
     -D introspection=false
     -D libcolordcompat=true
     -D man=false
+    -D systemd=false
   )
 
   artix-meson colord build "${meson_options[@]}"
