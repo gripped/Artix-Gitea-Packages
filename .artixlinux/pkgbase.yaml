@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: terminus-font
-  version: 4.49.1-7
-  arch:
-    - any
-  pkgname:
-    - terminus-font
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 4.49.1-7
+    version: 4.49.1-8
     packages:
-      - terminus-font-4.49.1-7-any.pkg.tar.zst
+      - terminus-font-4.49.1-8-any.pkg.tar.zst
+    debug: []
 team: galaxy
