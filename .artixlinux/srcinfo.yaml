@@ -1,0 +1,54 @@
+---
+version: 1:1.6.9-1
+pkgbase:
+  name: gupnp
+  pkgdesc: GObject-based UPNP framework
+  pkgver: 1.6.9
+  pkgrel: 1
+  epoch: 1
+  url: https://wiki.gnome.org/Projects/GUPnP
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - vala
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - gssdp
+    - libxml2
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gupnp.git?signed#tag=gupnp-1.6.9
+  validpgpkeys:
+    - AC9CD4E32D7C7F6357BA8ADD10F6E970175D29E1
+  b2sums:
+    - 835c2aa1584895a39e076fd9821a16a8f3103bec788bb2ec41fb53e586e70efdd9a6ccd64d7f6a786dc1c050525f11e3f4262c6032601f0415568f4f2b4ff95e
+pkgname:
+  - name: gupnp
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - gssdp
+      - libxml2
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+      - libgmodule-2.0.so
+      - libgssdp-1.6.so
+      - libsoup-3.0.so
+    optdepends:
+      - 'python: gupnp-binding-tool'
+    provides:
+      - libgupnp-1.6.so
+  - name: gupnp-docs
+    pkgdesc: GObject-based UPNP framework (documentation)
+    depends: []
+# generated with artixpkg 0.36.4-1-any
