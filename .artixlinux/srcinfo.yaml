@@ -1,10 +1,10 @@
 ---
-version: 10.11-1
+version: 10.11-2
 pkgbase:
   name: wine-staging
   pkgdesc: A compatibility layer for running Windows programs - Staging branch
   pkgver: 10.11
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.wine-staging.com
   install: wine.install
   arch:
@@ -12,15 +12,10 @@ pkgbase:
   license:
     - LGPL-2.1-or-later
   makedepends:
-    - autoconf
-    - bison
-    - perl
-    - flex
-    - mingw-w64-gcc
-    - git
     - alsa-lib
     - ffmpeg
     - giflib
+    - git
     - gnutls
     - gst-plugins-base-libs
     - gtk3
@@ -32,9 +27,11 @@ pkgbase:
     - libxinerama
     - libxxf86vm
     - mesa
-    - mesa-libgl
+    - mingw-w64-gcc
     - opencl-headers
     - opencl-icd-loader
+    - pcsclite
+    - perl
     - samba
     - sane
     - sdl2
@@ -51,6 +48,7 @@ pkgbase:
     - libxcursor
     - libxi
     - libxrandr
+    - wayland
   optdepends:
     - alsa-lib
     - alsa-plugins
@@ -67,6 +65,7 @@ pkgbase:
     - libxcomposite
     - libxinerama
     - opencl-icd-loader
+    - pcsclite
     - samba
     - sane
     - sdl2
@@ -79,7 +78,6 @@ pkgbase:
   conflicts:
     - wine
   options:
-    - staticlibs
     - '!lto'
   source:
     - git+https://gitlab.winehq.org/wine/wine.git?signed#tag=wine-10.11

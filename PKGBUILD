@@ -7,7 +7,7 @@
 
 pkgname=wine-staging
 pkgver=10.11
-pkgrel=1
+pkgrel=2
 
 _pkgbasever=${pkgver/rc/-rc}
 _winever=$_pkgbasever
@@ -27,7 +27,7 @@ validpgpkeys=(5AC1A08B03BD7A313E0A955AF5E6E9EEB9461DD7
 pkgdesc="A compatibility layer for running Windows programs - Staging branch"
 url="https://www.wine-staging.com"
 arch=(x86_64)
-options=(staticlibs !lto)
+options=(!lto)
 license=(LGPL-2.1-or-later)
 CFLAGS+=" -Wno-error=incompatible-pointer-types -fPIC"
 depends=(
@@ -41,13 +41,14 @@ depends=(
   libxcursor
   libxi
   libxrandr
+  wayland
 )
 CFLAGS+=" -Wno-error=incompatible-pointer-types -fPIC"
-makedepends=(autoconf bison perl flex mingw-w64-gcc
-  git
+makedepends=(
   alsa-lib
   ffmpeg
   giflib
+  git
   gnutls
   gst-plugins-base-libs
   gtk3
@@ -59,9 +60,11 @@ makedepends=(autoconf bison perl flex mingw-w64-gcc
   libxinerama
   libxxf86vm
   mesa
-  mesa-libgl
+  mingw-w64-gcc
   opencl-headers
   opencl-icd-loader
+  pcsclite
+  perl
   samba
   sane
   sdl2
@@ -85,6 +88,7 @@ optdepends=(
   libxcomposite
   libxinerama
   opencl-icd-loader
+  pcsclite
   samba
   sane
   sdl2
@@ -109,32 +113,21 @@ prepare() {
 }
 
 build() {
-  # Doesn't compile without remove these flags as of 4.10
-  # incompatible-pointer-types: https://bugs.gentoo.org/919758
-  export CFLAGS="$CFLAGS -ffat-lto-objects -Wno-error=incompatible-pointer-types"
-
   # Apply flags for cross-compilation
   export CROSSCFLAGS="-O2 -pipe"
   export CROSSCXXFLAGS="-O2 -pipe"
   export CROSSLDFLAGS="-Wl,-O1"
 
-  echo "Building Wine-64..."
   cd "$srcdir/$pkgname-64-build"
   ../wine/configure \
     --prefix=/usr \
     --libdir=/usr/lib \
-    --with-x \
-    --with-wayland \
-    --with-gstreamer \
-    --with-xattr \
-    --with-freetype \
     --enable-archs=x86_64,i386
 
   make
 }
 
 package() {
-  echo "Packaging Wine-64..."
   cd "$srcdir/$pkgname-64-build"
   make prefix="$pkgdir/usr" \
     libdir="$pkgdir/usr/lib" \
