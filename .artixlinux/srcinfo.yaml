@@ -1,0 +1,29 @@
+---
+version: 1:2.2.1-3
+pkgbase:
+  name: wl-clipboard
+  pkgdesc: Command-line copy/paste utilities for Wayland
+  pkgver: 2.2.1
+  pkgrel: 3
+  epoch: 1
+  url: https://github.com/bugaevc/wl-clipboard
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - meson
+    - wayland-protocols
+  depends:
+    - glibc
+    - wayland
+  optdepends:
+    - 'xdg-utils: for content type inference in wl-copy'
+    - 'mailcap: for type inference in wl-paste'
+  source:
+    - wl-clipboard-2.2.1.tar.gz::https://github.com/bugaevc/wl-clipboard/archive/v2.2.1.tar.gz
+  sha256sums:
+    - 6eb8081207fb5581d1d82c4bcd9587205a31a3d47bea3ebeb7f41aa1143783eb
+pkgname:
+  - name: wl-clipboard
+# generated with artixpkg 0.36.4-1-any
