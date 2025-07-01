@@ -1,10 +1,10 @@
 ---
-version: 1:25.1.4-1
+version: 1:25.1.4-2
 pkgbase:
   name: mesa
   pkgdesc: Open-source OpenGL drivers
   pkgver: 25.1.4
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.mesa3d.org/
   arch:
@@ -144,9 +144,9 @@ pkgname:
     optdepends:
       - 'opengl-man-pages: for the OpenGL API man pages'
     provides:
-      - libva-mesa-driver=1:25.1.4-1
-      - mesa-libgl=1:25.1.4-1
-      - mesa-vdpau=1:25.1.4-1
+      - libva-mesa-driver=1:25.1.4-2
+      - mesa-libgl=1:25.1.4-2
+      - mesa-vdpau=1:25.1.4-2
       - libva-driver
       - opengl-driver
       - vdpau-driver
