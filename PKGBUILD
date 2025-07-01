@@ -5,7 +5,7 @@
 # Contributor: Carlos Torres <torr@artixlinux.org>
 
 pkgname=artix-mirrorlist
-pkgver=20250410
+pkgver=20250701
 pkgrel=1
 pkgdesc="Artix mirror list for use by pacman"
 arch=('any')
@@ -16,7 +16,7 @@ conflicts=('pacman-mirrorlist')
 replaces=('pacman-mirrorlist')
 backup=(etc/pacman.d/mirrorlist)
 source=(mirrorlist)
-sha256sums=('bcd989c0aec1d49fa3fb9351b9b13d54828aaa0bc9044091f7e0fb602f481dc2')
+sha256sums=('3444c5c958a8280642467544a00c773da79ebd717d5ec5eac866e8c752c0d3ad')
 
 package() {
   mkdir -p "${pkgdir}"/etc/pacman.d
