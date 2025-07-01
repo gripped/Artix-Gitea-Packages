@@ -1,0 +1,26 @@
+---
+version: 6.0.2-1
+pkgbase:
+  name: assimp
+  pkgdesc: Library to import various well-known 3D model formats in an uniform manner
+  pkgver: 6.0.2
+  pkgrel: 1
+  url: https://github.com/assimp/assimp
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - ninja
+  depends:
+    - zlib
+    - gcc-libs
+    - glibc
+  source:
+    - assimp-6.0.2.tar.gz::https://github.com/assimp/assimp/archive/v6.0.2.tar.gz
+  sha512sums:
+    - dc9637b183a1ab4c87d3548b1cacf4278fc5d30ffa4ca35436f94723c20b916932791e8e2c2f0d2a63786078457e61a42fb7aac8462551172f7f5bd2582ad9a9
+pkgname:
+  - name: assimp
+# generated with artixpkg 0.36.4-1-any
