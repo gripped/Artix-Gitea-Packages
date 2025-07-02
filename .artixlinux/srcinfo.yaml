@@ -1,0 +1,37 @@
+---
+version: 2.2.1-1
+pkgbase:
+  name: lxqt-powermanagement
+  pkgdesc: LXQt power management daemon
+  pkgver: 2.2.1
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-powermanagement
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL2.1
+  makedepends:
+    - cmake
+    - lxqt-build-tools
+  depends:
+    - qt6-svg
+    - upower
+    - kidletime
+    - solid
+    - hicolor-icon-theme
+    - lxqt-globalkeys
+  source:
+    - https://github.com/lxqt/lxqt-powermanagement/releases/download/2.2.1/lxqt-powermanagement-2.2.1.tar.xz
+    - https://github.com/lxqt/lxqt-powermanagement/releases/download/2.2.1/lxqt-powermanagement-2.2.1.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 7d4de8bbab4dd05ae95ad53592380928047ca8958a5983d0dc733271b441badd
+    - SKIP
+pkgname:
+  - name: lxqt-powermanagement
+# generated with artixpkg 0.36.4-1-any
