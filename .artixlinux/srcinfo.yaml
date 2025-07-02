@@ -1,6 +1,7 @@
 ---
 version: 3.9.10-1
 pkgbase:
+  name: maven
   pkgdesc: Java project management and project comprehension tool
   pkgver: 3.9.10
   pkgrel: 1
@@ -43,4 +44,6 @@ pkgbase:
     - SKIP
     - 11858be1cda65d4c0a4f0a558e27ac2e110f5d2c6ae92d1b2da5849d99873a45
     - 6ec2fef2a5f179f873b180452c72915e639e7b881a6894e13c209816b3518908
+pkgname:
+  - name: maven
 # generated with artixpkg 0.36.4-1-any

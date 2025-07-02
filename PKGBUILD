@@ -2,7 +2,7 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: William Rea <sillywilly@gmail.com>
 
-pkgnammavene=maven
+pkgname=maven
 pkgver=3.9.10
 pkgrel=1
 pkgdesc='Java project management and project comprehension tool'
