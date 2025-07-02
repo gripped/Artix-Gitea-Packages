@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 20.1.3-1
+    version: 20.1.4-1
     packages:
-      - lib32-spirv-llvm-translator-20.1.3-1-x86_64.pkg.tar.zst
+      - lib32-spirv-llvm-translator-20.1.4-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
