@@ -1,10 +1,10 @@
 ---
-version: 5.15.17-1
+version: 5.15.17-2
 pkgbase:
   name: qt5-3d
   pkgdesc: C++ and QML APIs for easy inclusion of 3D graphics
   pkgver: 5.15.17
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -18,13 +18,16 @@ pkgbase:
   makedepends:
     - git
     - vulkan-headers
-  depends:
-    - qt5-declarative
     - assimp
+  depends:
+    - qt5-base
+    - qt5-declarative
+  optdepends:
+    - 'assimp: assimp import plugin'
   source:
     - kde-qt3d::git+https://invent.kde.org/qt/qt/qt3d#commit=73c1dda553f338c5a3b9ebbfd0e7de114f0c93dc
   sha256sums:
     - 73ed1001fda2391f19b15324b7175fe5ae38ea27d5167fa25606aaeb654a04fc
 pkgname:
   - name: qt5-3d
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
