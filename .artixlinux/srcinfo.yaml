@@ -1,0 +1,43 @@
+---
+version: 0.1.6-2
+pkgbase:
+  name: xf86-video-qxl
+  pkgdesc: Xorg X11 qxl video driver
+  pkgver: 0.1.6
+  pkgrel: 2
+  url: https://www.x.org
+  arch:
+    - x86_64
+  groups:
+    - xorg-drivers
+  license:
+    - MIT
+  makedepends:
+    - xorg-server-devel
+    - X-ABI-VIDEODRV_VERSION=25.2
+    - spice-protocol
+    - xorgproto
+    - git
+    - libcacard
+  depends:
+    - spice
+    - libudev
+    - libxfont2
+    - glibc
+  optdepends:
+    - 'python: for Xspice'
+  conflicts:
+    - xf86-video-qxl-git
+    - X-ABI-VIDEODRV_VERSION<25
+    - X-ABI-VIDEODRV_VERSION>=26
+  source:
+    - https://xorg.freedesktop.org/releases/individual/driver/xf86-video-qxl-0.1.6.tar.xz
+    - https://xorg.freedesktop.org/releases/individual/driver/xf86-video-qxl-0.1.6.tar.xz.sig
+  validpgpkeys:
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+  sha256sums:
+    - 2ad39558db47a8fcc036e290e0b084671e58d43344a57b279abd870c4c67965f
+    - SKIP
+pkgname:
+  - name: xf86-video-qxl
+# generated with artixpkg 0.36.4-1-any
