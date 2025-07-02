@@ -1,10 +1,10 @@
 ---
-version: 5.15.17+kde+r1-1
+version: 5.15.17+kde+r1-2
 pkgbase:
   name: qt5-quick3d
   pkgdesc: Qt module and API for defining 3D content in Qt Quick
   pkgver: 5.15.17+kde+r1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 57a3ac54c46f86d1f99ce20653bb34215cbd65fbd36f7ee802360336e88f268e
 pkgname:
   - name: qt5-quick3d
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
