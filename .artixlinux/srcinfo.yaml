@@ -1,0 +1,35 @@
+---
+version: 2.4.5-1
+pkgbase:
+  name: blueman
+  pkgdesc: GTK+ Bluetooth Manager
+  pkgver: 2.4.5
+  pkgrel: 1
+  url: https://github.com/blueman-project/blueman
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cython
+    - intltool
+    - iproute2
+  depends:
+    - bluez
+    - bluez-libs
+    - gtk3
+    - libnm
+    - python-cairo
+    - python-gobject
+  optdepends:
+    - 'dnsmasq: Network Access Point (NAP) support'
+    - 'iproute2: Network Access Point (NAP) support'
+    - 'networkmanager: Dial Up Networking (DUN) and Personal Area Networking (PAN) support'
+    - 'pulseaudio-bluetooth: audio devices support'
+  source:
+    - blueman-2.4.5.tar.gz::https://github.com/blueman-project/blueman/archive/refs/tags/2.4.5.tar.gz
+  sha256sums:
+    - fdb492afbe138eb5257530c16d0c8f6f41817a749b5f27ff24888dc386be62f0
+pkgname:
+  - name: blueman
+# generated with artixpkg 0.36.4-1-any

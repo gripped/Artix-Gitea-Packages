@@ -4,7 +4,7 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=blueman
-pkgver=2.4.4
+pkgver=2.4.5
 pkgrel=1
 pkgdesc="GTK+ Bluetooth Manager"
 url="https://github.com/blueman-project/blueman"
@@ -17,7 +17,7 @@ optdepends=('dnsmasq: Network Access Point (NAP) support'
             'networkmanager: Dial Up Networking (DUN) and Personal Area Networking (PAN) support'
             'pulseaudio-bluetooth: audio devices support')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('08443ad0d2fc6fca0a23b492bd476861163b0c174b44cd3e45ee7977a00dbf90')
+sha256sums=('fdb492afbe138eb5257530c16d0c8f6f41817a749b5f27ff24888dc386be62f0')
 
 prepare() {
 	cd "${pkgname}-${pkgver}"
