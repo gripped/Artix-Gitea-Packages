@@ -1,10 +1,10 @@
 ---
-version: 4.32c-1
+version: 4.32c-2
 pkgbase:
   name: afl++
   pkgdesc: instrumentation-driven fuzzer for binary format
   pkgver: 4.32c
-  pkgrel: 1
+  pkgrel: 2
   url: https://aflplus.plus/
   arch:
     - x86_64
@@ -46,4 +46,4 @@ pkgbase:
     - 259edf3fe4405a8703a7452f99406fd390e97763d687445e0a6104f884ba304b3f6755fcdef36f7f8d9743db945ef60791402462cf4599c5a90593ecbb414daf
 pkgname:
   - name: afl++
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
