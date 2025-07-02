@@ -1,9 +1,9 @@
 ---
-version: 1.22.20-1
+version: 1.22.21-1
 pkgbase:
   name: dpkg
   pkgdesc: The Debian Package Manager tools
-  pkgver: 1.22.20
+  pkgver: 1.22.21
   pkgrel: 1
   url: https://tracker.debian.org/pkg/dpkg
   install: dpkg.install
@@ -30,15 +30,15 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://git.dpkg.org/git/dpkg/dpkg.git?signed#tag=1.22.20
+    - git+https://git.dpkg.org/git/dpkg/dpkg.git?signed#tag=1.22.21
     - origin.archlinux
     - origin.artixlinux
   validpgpkeys:
     - 4F3E74F436050C10F5696574B972BF3EA4AE57A3
   sha256sums:
-    - eb5c474c433a14b73794af1c53c4068f8ff8f99a02a23706712ddef9f04c77bb
+    - 73fc4ebba8037122fdfeff070ec80ce4a6204359d857d9d335b6a1f72e877c55
     - 9cfd50f65f1fb52adccf48ea859871259a549f24620b52466c890931919b7e04
     - 33ff4f2677b4438e58810bf4a276a338ff17d0d6cd0adbfaa1004f09148f627a
 pkgname:
   - name: dpkg
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
