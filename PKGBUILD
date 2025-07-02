@@ -11,8 +11,8 @@
 pkgbase=qbittorrent
 pkgname=(qbittorrent
          qbittorrent-nox)
-pkgver=5.1.1
-pkgrel=2
+pkgver=5.1.2
+pkgrel=1
 arch=(x86_64)
 url='https://www.qbittorrent.org'
 license=(GPL-2.0-or-later
@@ -32,7 +32,7 @@ optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver
         sysusers.conf
         tmpfiles.conf)
-sha256sums=('81b30c25718f91ae3f8e0a4647d6f728c1ef1d3ca6527f1cfa773db7bdf41f67'
+sha256sums=('72749b5be5a430a506a26e9a5126917f28c29e12cbd37c1d4ced7da05849a79e'
             '0f148c97cc5fae83fc5022b5f2da374b60a1e2f62a4faf01265e73a9f208825a'
             '8bd2274ba9a6d414cd0170c8855cd6823fa026158ce7ed5eb74d661f21457238')
 validpgpkeys=('D8F3DA77AAC6741053599C136E4A2D025B7CC9A2') # sledgehammer999 <sledgehammer999@qbittorrent.org>
@@ -74,3 +74,4 @@ package_qbittorrent-nox() {
   install -Dm644 sysusers.conf "$pkgdir/usr/lib/sysusers.d/qbittorrent.conf"
   install -Dm644 tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/qbittorrent.conf"
 }
+
