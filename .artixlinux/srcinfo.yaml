@@ -1,0 +1,44 @@
+---
+version: 6.79-1
+pkgbase:
+  name: perl-libwww
+  pkgdesc: The World-Wide Web library for Perl
+  pkgver: 6.79
+  pkgrel: 1
+  url: https://metacpan.org/release/libwww-perl
+  arch:
+    - any
+  license:
+    - GPL-1.0-or-later OR Artistic-1.0-Perl
+  checkdepends:
+    - perl-test-fatal
+    - perl-test-needs
+    - perl-test-requiresinternet
+  depends:
+    - perl
+    - perl-encode-locale
+    - perl-file-listing
+    - perl-html-parser
+    - perl-http-cookies
+    - perl-http-daemon
+    - perl-http-cookiejar
+    - perl-http-date
+    - perl-http-negotiate
+    - perl-lwp-mediatypes
+    - perl-net-http
+    - perl-try-tiny
+    - perl-uri
+    - perl-www-robotrules
+  optdepends:
+    - 'perl-lwp-protocol-https: for https:// url schemes'
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/O/OA/OALDERS/libwww-perl-6.79.tar.gz
+  sha512sums:
+    - 0546003f9b780875a684bfd6aeca9c213cb1bf9f021f0c5872871c39ff5415d53d005fff0e2ba968d8f5a43b811fab1fe7696dcd2296de8344939e7a8da20ebe
+  b2sums:
+    - a61f07cd2d08a9c7fbecb00a138c5494101c7ca108f4957d6438c28200577cca1081b1b123a5662008e35db010b686231d0b30444bd35374edff4684ece87476
+pkgname:
+  - name: perl-libwww
+# generated with artixpkg 0.36.4-1-any
