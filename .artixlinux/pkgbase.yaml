@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 401-1
+    version: 401-1.1
     packages:
-      - xterm-401-1-x86_64.pkg.tar.zst
+      - xterm-401-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 401-1
