@@ -1,10 +1,10 @@
 ---
-version: 3.0.21-24
+version: 3.0.21-25
 pkgbase:
   name: vlc
   pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player
   pkgver: 3.0.21
-  pkgrel: 24
+  pkgrel: 25
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
@@ -46,6 +46,7 @@ pkgbase:
     - libavc1394
     - libbluray
     - libcaca
+    - libcddb
     - libdca
     - libdc1394
     - libdvbpsi
@@ -76,7 +77,6 @@ pkgbase:
     - libshout
     - libsoxr
     - libssh2
-    - libtar
     - libtheora
     - libtiger
     - libupnp
@@ -100,14 +100,15 @@ pkgbase:
     - qt5-base
     - qt5-svg
     - qt5-x11extras
+    - sdl12-compat
     - sdl_image
     - smbclient
     - speex
+    - speexdsp
     - srt
     - libudev
     - taglib
     - twolame
-    - vcdimager
     - wayland
     - wayland-protocols
     - x264
@@ -125,6 +126,7 @@ pkgbase:
     - taglib-2.patch
     - libnfs6-mr-6527.patch
     - https://github.com/videolan/vlc/commit/8befcbfa.patch
+    - vlc-3.0.21-fix-opus-crash.patch::https://code.videolan.org/videolan/vlc/-/commit/a761e1c202b632e7865d18fcf11a2b9e285ea9ae.patch
   validpgpkeys:
     - 65F7C6B4206BD057A7EB73787180713BE58D1ADC
   sha512sums:
@@ -134,124 +136,68 @@ pkgbase:
     - ea0d1e1dfed16dac8f9027eb55d987dee59630568b9744ceb42bfa134ea9295252d83574f3d793a76a5be3b02661c1731ed366003b6b55b2d7f02fde70586ff3
     - ea13dd8a1815af183064590d25eb9e652e81bd2d481d311bc4f841c32977205d1d3663d1c3e1c2fe642d546b5e6ab38d5fa6e3ea77808f76d138052900c19032
     - eae772959f3f48f6a8e0ccb27711cc3ce59314db49ad38ecb4e03f52782e6acabd1d5ab21a2a5c1b702d7e35218c305d2e8f3082c84000bd6d1c0e136d33178e
+    - 050196963f410a8d4e8a9977023c033ab54a6ada833374af07f2e8c332b5064ef837dba73185c31afad0c2362170656a0e8ac47ca5bf19751b75bb2437ff8ea6
 pkgname:
   - name: vlc
     depends:
-      - a52dec
-      - abseil-cpp
-      - aribb24
       - bash
-      - cairo
-      - dbus
-      - faad2
-      - ffmpeg4.4
-      - fontconfig
-      - freetype2
-      - fribidi
-      - gcc-libs
-      - gdk-pixbuf2
-      - glib2
-      - glibc
-      - gnutls
-      - harfbuzz
       - hicolor-icon-theme
-      - libarchive
-      - libdca
-      - libdvbpsi
-      - libglvnd
-      - libidn
-      - libmad
-      - libmatroska
-      - libmpcdec
-      - libmpeg2
-      - libproxy
-      - libsecret
-      - libtar
-      - libupnp
-      - libva
-      - libvlc
-      - libx11
-      - libxcb
-      - libxinerama
-      - libxml2
-      - libxpm
-      - lua
-      - qt5-base
-      - qt5-svg
-      - qt5-x11extras
-      - taglib
-      - wayland
-      - xcb-util-keysyms
-      - zlib
+      - vlc-gui-qt=3.0.21
     optdepends:
-      - 'aalib: ASCII art video output'
-      - 'alsa-lib: ALSA audio output'
-      - 'aom: AOM AV1 codec'
-      - 'aribb25: aribcam support'
-      - 'avahi: service discovery using bonjour protocol'
-      - 'dav1d: dav1d AV1 decoder'
-      - 'flac: Free Lossless Audio Codec plugin'
-      - 'fluidsynth: FluidSynth based MIDI playback plugin'
-      - 'gnu-free-fonts: subtitle font'
-      - 'gst-plugins-base-libs: for libgst plugins'
-      - 'gstreamer: for libgst plugins'
-      - 'gtk3: notification plugin'
-      - 'jack: jack audio server'
-      - 'kwallet: kwallet keystore'
-      - 'libass: Subtitle support'
-      - 'libavc1394: devices using the 1394ta AV/C'
-      - 'libbluray: Blu-Ray video input'
-      - 'libcaca: colored ASCII art video output'
-      - 'libcdio: audio CD playback'
-      - 'libdc1394: IEEE 1394 access plugin'
-      - 'libdvdcss: decoding encrypted DVDs'
-      - 'libdvdnav: DVD with navigation input module'
-      - 'libdvdread: DVD input module'
-      - 'libgme: Game Music Emu plugin'
-      - 'libgoom2: Goom visualization'
-      - 'libjpeg-turbo: JPEG support'
-      - 'libkate: Kate codec'
-      - 'libmodplug: MOD output plugin'
-      - 'libmicrodns: mDNS services discovery (chromecast etc)'
-      - 'libmtp: MTP devices discovery'
-      - 'libnfs: NFS access'
-      - 'libnotify: notification plugin'
-      - 'libogg: Ogg and OggSpots codec'
-      - 'libpng: PNG support'
-      - 'libpulse: PulseAudio audio output'
-      - 'libraw1394: IEEE 1394 access plugin'
-      - 'librsvg: SVG plugin'
-      - 'libsamplerate: audio Resampler'
-      - 'libshout: shoutcast/icecast output plugin'
-      - 'libsoxr: SoX audio Resampler'
-      - 'libssh2: sftp access'
-      - 'libtheora: theora codec'
-      - 'libtiger: Tiger rendering for Kate streams'
-      - 'libva-intel-driver: video backend intel'
-      - 'libvorbis: Vorbis decoder/encoder'
-      - 'libvpx: VP8 and VP9 codec'
-      - 'lirc: lirc control'
-      - 'live-media: streaming over RTSP'
-      - 'lua-socket: http interface'
-      - 'mpg123: mpg123 codec'
-      - 'ncurses: ncurses interface'
-      - 'opus: opus codec'
-      - 'pcsclite: aribcam support'
-      - 'projectm: ProjectM visualisation'
-      - 'protobuf: chromecast streaming'
-      - 'sdl12-compat: SDL image support'
-      - 'sdl_image: SDL image support'
-      - 'smbclient: SMB access plugin'
-      - 'speex: Speex codec'
-      - 'speexdsp: Speex codec'
-      - 'srt: SRT input/output plugin'
-      - 'libudev: udev services discovery'
-      - 'ttf-dejavu: subtitle font'
-      - 'twolame: TwoLAME mpeg2 encoder plugin'
-      - 'vcdimager: navigate VCD with libvcdinfo'
-      - 'x264: H264 encoding'
-      - 'x265: HEVC/H.265 encoder'
-      - 'zvbi: VBI/Teletext/webcam/v4l2 capture/decoding'
+      - 'vlc-gui-ncurses: for ncurses TUI'
+      - 'vlc-gui-skins2: for Skins2 GUI'
+      - 'vlc-plugins-all: for all plugins'
+      - 'vlc-plugins-extra: for extra plugins'
+      - 'vlc-plugins-visualization: for visualization plugins'
+      - 'vlc-plugin-aalib: for ASCII art video output support'
+      - 'vlc-plugin-aom: for AOM AV1 codec support'
+      - 'vlc-plugin-archive: for archive stream extractor support'
+      - 'vlc-plugin-aribb24: for ARIB STD-24 codec and demux support'
+      - 'vlc-plugin-aribb25: for ARIB STD-25 stream filter support'
+      - 'vlc-plugin-ass: for SSA/ASS subtitle codec support'
+      - 'vlc-plugin-avahi: for mDNS/DNS-SD services discovery support'
+      - 'vlc-plugin-bluray: for Blu-ray access support'
+      - 'vlc-plugin-caca: for color ASCII art video output support'
+      - 'vlc-plugin-cddb: for CDDB access support'
+      - 'vlc-plugin-chromecast: for Chromecast stream out support'
+      - 'vlc-plugin-dca: for DTS Coherent Acoustics codec support'
+      - 'vlc-plugin-dvb: for DVB access, mux and demux support'
+      - 'vlc-plugin-dvd: for DVD access support'
+      - 'vlc-plugin-ffmpeg: for FFMPEG based access, codec, demux, packetizer, VDPAU, video chroma and video filter support'
+      - 'vlc-plugin-firewire: for FireWire device access support'
+      - 'vlc-plugin-fluidsynth: for FluidSynth codec support'
+      - 'vlc-plugin-freetype: for Freetype2 text renderer support'
+      - 'vlc-plugin-gme: for Game Music Emulation demux support'
+      - 'vlc-plugin-gstreamer: for GStreamer codec support'
+      - 'vlc-plugin-jack: for JACK access and audio output support'
+      - 'vlc-plugin-kate: for kate karaoke codec support'
+      - 'vlc-plugin-kwallet: for kwallet keystore support'
+      - 'vlc-plugin-libsecret: for libsecret keystore support'
+      - 'vlc-plugin-lirc: for infrared remote control support'
+      - 'vlc-plugin-live555: for live555 access support'
+      - 'vlc-plugin-mad: for MPEG Audio Decoder audio filter support'
+      - 'vlc-plugin-matroska: for Matroska demux support'
+      - 'vlc-plugin-mdns: for mDNS services discovery support'
+      - 'vlc-plugin-modplug: for MOD demux support'
+      - 'vlc-plugin-mpeg2: for MPEG2 codec support'
+      - 'vlc-plugin-mtp: for MTP device access and discovery support'
+      - 'vlc-plugin-musepack: for MusePack demux support'
+      - 'vlc-plugin-nfs: for NFS access support'
+      - 'vlc-plugin-notify: for notify support'
+      - 'vlc-plugin-ogg: for OGG mux and demux support'
+      - 'vlc-plugin-quicksync: for Intel QuickSync H264/H262 codec support'
+      - 'vlc-plugin-samplerate: for samplerate audio filter support'
+      - 'vlc-plugin-sdl: for SDL codec support'
+      - 'vlc-plugin-sftp: for SFTP access support'
+      - 'vlc-plugin-smb: for SMB access support'
+      - 'vlc-plugin-soxr: for SoX Resampler audio filter support'
+      - 'vlc-plugin-srt: for subtitle support'
+      - 'vlc-plugin-svg: for SVG codec and text renderer support'
+      - 'vlc-plugin-udev: for ALSA services discovery support using udev'
+      - 'vlc-plugin-upnp: for UPnP services discovery support'
+      - 'vlc-plugin-x264: for H264/AVC encoding support'
+      - 'vlc-plugin-x265: for H265/HEVC encoding support'
+      - 'vlc-plugin-zvbi: for VBI access (also over V4L2) and codec support'
     conflicts:
       - vlc-plugin
     replaces:
@@ -262,4 +208,746 @@ pkgname:
       - dbus
       - gcc-libs
       - glibc
-# generated with artixpkg 0.36.3-2-any
+    provides:
+      - libvlc.so
+      - libvlccore.so
+  - name: vlc-cli
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - command line interface
+    depends:
+      - bash
+      - glibc
+      - libvlc
+      - libvlc.so
+      - vlc-plugins-base=3.0.21
+    optdepends:
+      - 'vlc-plugin-lua: for Lua scripting plugins'
+  - name: vlc-gui-ncurses
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Ncurses TUI
+    depends:
+      - bash
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - ncurses
+      - vlc-plugins-base
+  - name: vlc-gui-qt
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Qt GUI
+    depends:
+      - bash
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libx11
+      - qt5-base
+      - qt5-svg
+      - qt5-wayland
+      - qt5-x11extras
+      - vlc-cli=3.0.21
+      - vlc-plugin-lua=3.0.21
+      - vlc-plugin-pulse=3.0.21
+      - vlc-plugins-base=3.0.21
+      - vlc-plugins-video-output=3.0.21
+      - wayland
+    optdepends:
+      - 'vlc-plugin-ffmpeg: for FFMPEG support'
+      - 'vlc-plugin-kwallet: for kwallet keyring support on KDE'
+      - 'vlc-plugin-libsecret: for libsecret/gnome-keyring support on Gnome'
+      - 'vlc-plugin-notify: for notification support'
+      - 'vlc-plugins-extra: for extra plugins'
+      - 'vlc-plugins-visualization: for visualization plugins'
+  - name: vlc-gui-skins2
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Skins2 GUI
+    depends:
+      - bash
+      - freetype2
+      - fribidi
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libx11
+      - libxext
+      - libxinerama
+      - libxpm
+      - vlc-cli=3.0.21
+      - vlc-gui-qt=3.0.21
+  - name: vlc-plugin-a52dec
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ATSC A/52 (AC-3) plugin
+    depends:
+      - a52dec
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-aalib
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ASCII art video output plugin
+    depends:
+      - aalib
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libx11
+  - name: vlc-plugin-alsa
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ALSA plugins
+    depends:
+      - alsa-lib
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-aom
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - AOM AV1 plugin
+    depends:
+      - aom
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-archive
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - stream extractor plugin
+    depends:
+      - glibc
+      - libarchive
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-aribb24
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ARIB STD-B24 plugins
+    depends:
+      - aribb24
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-aribb25
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ARIB STD-B25 plugin
+    depends:
+      - aribb25
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - pcsclite
+  - name: vlc-plugin-ass
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SSA/ASS subtitle plugin
+    depends:
+      - glibc
+      - libass
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-avahi
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - mDNS/DNS-SD plugin
+    depends:
+      - avahi
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-bluray
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Blu-ray plugin
+    depends:
+      - glibc
+      - libbluray
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-caca
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Color ASCII art video output plugin
+    depends:
+      - glibc
+      - libcaca
+      - libvlc
+      - libvlccore.so
+      - libx11
+  - name: vlc-plugin-cddb
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - CDDB plugin
+    depends:
+      - glibc
+      - libcddb
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-chromecast
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Chromecast plugin
+    depends:
+      - abseil-cpp
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - protobuf
+  - name: vlc-plugin-dav1d
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - dav1d AV1 plugin
+    depends:
+      - dav1d
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-dbus
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Dbus plugin
+    depends:
+      - dbus
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-dbus-screensaver
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - dbus screensaver plugin
+    depends:
+      - dbus
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-dca
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - DTS Coherent Acoustics plugin
+    depends:
+      - glibc
+      - libdca
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-dvb
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - DVB plugins
+    depends:
+      - aribb24
+      - glibc
+      - libdvbpsi
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-dvd
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - DVD plugins
+    depends:
+      - glibc
+      - libdvdnav
+      - libdvdread
+      - libvlc
+      - libvlccore.so
+    optdepends:
+      - 'libdvdcss: for decoding encrypted DVDs'
+  - name: vlc-plugin-faad2
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FAAD2 AAC plugin
+    depends:
+      - faad2
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-ffmpeg
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FFMPEG plugins
+    depends:
+      - ffmpeg4.4
+      - glibc
+      - libva
+      - libvlc
+      - libvlccore.so
+      - libx11
+      - vlc-plugins-video-output
+      - libvlc_vdpau.so
+  - name: vlc-plugin-firewire
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FireWire plugins
+    depends:
+      - gcc-libs
+      - glibc
+      - libavc1394
+      - libdc1394
+      - libraw1394
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-flac
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FLAC plugin
+    depends:
+      - flac
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-fluidsynth
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FluidSynth plugin
+    depends:
+      - fluidsynth
+      - glibc
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-freetype
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Freetype plugin
+    depends:
+      - fontconfig
+      - freetype2
+      - fribidi
+      - glibc
+      - harfbuzz
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-gme
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Game music emulation plugin
+    depends:
+      - glibc
+      - libgme
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-gnutls
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - GnuTLS plugin
+    depends:
+      - glibc
+      - gnutls
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-gstreamer
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - GStreamer plugin
+    depends:
+      - glib2
+      - glibc
+      - gst-plugins-base-libs
+      - gstreamer
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-inflate
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - inflate plugin
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - zlib
+  - name: vlc-plugin-jack
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - JACK plugin
+    depends:
+      - glibc
+      - jack
+      - libjack.so
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-journal
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Systemd journal plugin
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libudev
+  - name: vlc-plugin-jpeg
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - JPEG plugin
+    depends:
+      - glibc
+      - libjpeg-turbo
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-kate
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - kate plugin
+    depends:
+      - glibc
+      - libkate
+      - libtiger
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-kwallet
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Kwallet keystore plugin
+    depends:
+      - dbus
+      - glibc
+      - kwallet
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-libsecret
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - libsecret/gnome-keyring plugin
+    depends:
+      - glib2
+      - glibc
+      - libsecret
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-lirc
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Infrared remote control plugin
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - lirc
+  - name: vlc-plugin-live555
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - live555 plugin
+    depends:
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - live-media
+  - name: vlc-plugin-lua
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Lua scripting plugins
+    depends:
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - lua
+    optdepends:
+      - 'lua-socket: for http interface'
+  - name: vlc-plugin-mad
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MPEG Audio Decoder plugin
+    depends:
+      - glibc
+      - libmad
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-matroska
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Matroska plugin
+    depends:
+      - gcc-libs
+      - glibc
+      - libebml
+      - libmatroska
+      - libvlc
+      - libvlccore.so
+      - zlib
+  - name: vlc-plugin-mdns
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - mDNS plugin
+    depends:
+      - glibc
+      - libmicrodns
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-modplug
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MOD plugin
+    depends:
+      - glibc
+      - libmodplug
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-mpeg2
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MPEG2 plugin
+    depends:
+      - glibc
+      - libmpeg2
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-mpg123
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MPG1/2/3 plugin
+    depends:
+      - glibc
+      - mpg123
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-mtp
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MTP plugins
+    depends:
+      - glibc
+      - libmtp
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-musepack
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MusePack plugin
+    depends:
+      - glibc
+      - libmpcdec
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-nfs
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - NFS plugin
+    depends:
+      - glibc
+      - libnfs
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-notify
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - notification plugin
+    depends:
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gtk3
+      - libnotify
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-ogg
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - OGG plugins
+    depends:
+      - glibc
+      - libogg
+      - libvlc
+      - libvlccore.so
+      - libvorbis
+  - name: vlc-plugin-opus
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Opus plugin
+    depends:
+      - glibc
+      - opus
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-png
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - PNG plugin
+    depends:
+      - glibc
+      - libpng
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-pulse
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - PulseAudio plugins
+    depends:
+      - glibc
+      - libpulse
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-quicksync
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Intel QuickSync plugin
+    depends:
+      - glibc
+      - libmfx
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-samplerate
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - samplerate plugin
+    depends:
+      - glibc
+      - libsamplerate
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-sdl
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SDL plugin
+    depends:
+      - glibc
+      - sdl12-compat
+      - sdl_image
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-sftp
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SFTP plugin
+    depends:
+      - glibc
+      - libssh2
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-shout
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - shoutcast plugin
+    depends:
+      - glibc
+      - libshout
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-smb
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SMB plugin
+    depends:
+      - glibc
+      - smbclient
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-soxr
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SoX Resampler plugin
+    depends:
+      - glibc
+      - libsoxr
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-speex
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Speex plugins
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - speex
+      - speexdsp
+  - name: vlc-plugin-srt
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SRT plugins
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - srt
+  - name: vlc-plugin-svg
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SVG plugins
+    depends:
+      - cairo
+      - glib2
+      - glibc
+      - librsvg
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-tag
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - tag plugin
+    depends:
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - taglib
+  - name: vlc-plugin-theora
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Theora plugins
+    depends:
+      - glibc
+      - libtheora
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-twolame
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - TwoLAME plugins
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - twolame
+  - name: vlc-plugin-udev
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - udev plugin
+    depends:
+      - alsa-lib
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libudev
+  - name: vlc-plugin-upnp
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - UPnP plugin
+    depends:
+      - gcc-libs
+      - glibc
+      - libupnp
+      - libvlc
+      - libvlccore.so
+  - name: vlc-plugin-vorbis
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Vorbis plugin
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libvorbis
+  - name: vlc-plugin-vpx
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - VP8 and VP9 plugin
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libvpx
+  - name: vlc-plugin-x264
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - H264/AVC encoding
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - x264
+  - name: vlc-plugin-x265
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - H265/HEVC encoding
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - x265
+  - name: vlc-plugin-xml
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - XML plugin
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libxml2
+  - name: vlc-plugin-zvbi
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - VBI plugins
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - zvbi
+  - name: vlc-plugins-all
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - all plugins
+    depends:
+      - vlc-plugin-ffmpeg
+      - vlc-plugin-fluidsynth
+      - vlc-plugin-firewire
+      - vlc-plugin-gstreamer
+      - vlc-plugin-jack
+      - vlc-plugin-kwallet
+      - vlc-plugin-libsecret
+      - vlc-plugin-lua
+      - vlc-plugin-notify
+      - vlc-plugin-pulse
+      - vlc-plugin-smb
+      - vlc-plugin-svg
+      - vlc-plugin-x264
+      - vlc-plugin-x265
+      - vlc-plugins-base
+      - vlc-plugins-extra
+      - vlc-plugins-video-output
+      - vlc-plugins-visualization
+  - name: vlc-plugins-base
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - base plugins
+    depends:
+      - gcc-libs
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - vlc-plugin-alsa
+      - vlc-plugin-a52dec
+      - vlc-plugin-dav1d
+      - vlc-plugin-dbus
+      - vlc-plugin-dbus-screensaver
+      - vlc-plugin-faad2
+      - vlc-plugin-flac
+      - vlc-plugin-gnutls
+      - vlc-plugin-inflate
+      - vlc-plugin-jpeg
+      - vlc-plugin-journal
+      - vlc-plugin-mpg123
+      - vlc-plugin-opus
+      - vlc-plugin-png
+      - vlc-plugin-shout
+      - vlc-plugin-speex
+      - vlc-plugin-tag
+      - vlc-plugin-theora
+      - vlc-plugin-twolame
+      - vlc-plugin-vorbis
+      - vlc-plugin-vpx
+      - vlc-plugin-xml
+      - zlib
+  - name: vlc-plugins-extra
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - extra plugins
+    depends:
+      - glibc
+      - libvlc
+      - libvlccore.so
+      - libxcb
+      - vlc-plugin-aalib
+      - vlc-plugin-aom
+      - vlc-plugin-archive
+      - vlc-plugin-aribb24
+      - vlc-plugin-aribb25
+      - vlc-plugin-ass
+      - vlc-plugin-avahi
+      - vlc-plugin-bluray
+      - vlc-plugin-caca
+      - vlc-plugin-cddb
+      - vlc-plugin-chromecast
+      - vlc-plugin-dca
+      - vlc-plugin-dvb
+      - vlc-plugin-dvd
+      - vlc-plugin-freetype
+      - vlc-plugin-gme
+      - vlc-plugin-kate
+      - vlc-plugin-lirc
+      - vlc-plugin-live555
+      - vlc-plugin-mad
+      - vlc-plugin-matroska
+      - vlc-plugin-mdns
+      - vlc-plugin-modplug
+      - vlc-plugin-mpeg2
+      - vlc-plugin-mtp
+      - vlc-plugin-musepack
+      - vlc-plugin-nfs
+      - vlc-plugin-quicksync
+      - vlc-plugin-samplerate
+      - vlc-plugin-sdl
+      - vlc-plugin-sftp
+      - vlc-plugin-soxr
+      - vlc-plugin-srt
+      - vlc-plugin-udev
+      - vlc-plugin-upnp
+      - vlc-plugin-zvbi
+  - name: vlc-plugins-video-output
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - video output plugins
+    depends:
+      - gcc-libs
+      - glibc
+      - libglvnd
+      - libva
+      - libvlc
+      - libvlccore.so
+      - libx11
+      - libxcb
+      - wayland
+      - xcb-util-keysyms
+    optdepends:
+      - 'libva-intel-driver: for Intel VA-API drivers'
+      - 'libva-mesa-driver: for open-source VA-API drivers'
+    provides:
+      - libvlc_xcb_events.so
+      - libvlc_vdpau.so
+  - name: vlc-plugins-visualization
+    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - visualization plugins
+    depends:
+      - gcc-libs
+      - glibc
+      - libglvnd
+      - libgoom2
+      - libvlc
+      - libvlccore.so
+      - projectm
+      - ttf-dejavu
+# generated with artixpkg 0.36.4-1-any
