@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,9 +49,8 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 2.2.2-1
-    packages:
-      - lxqt-panel-2.2.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy:
     version: 2.2.2-1
