@@ -9,7 +9,7 @@ pkgname=(
   libvlc
   vlc-cli
   vlc-gui-{ncurses,qt,skins2}
-  vlc-plugin-{a52dec,aalib,alsa,aom,archive,aribb24,aribb25,ass,avahi,bluray,caca,cddb,chromecast,dav1d,dbus,dbus-screensaver,dca,dvb,dvd,faad2,ffmpeg,firewire,flac,fluidsynth,freetype,gme,gnutls,gstreamer,inflate,jack,journal,jpeg,kate,kwallet,libsecret,lirc,live555,lua,mad,matroska,mdns,modplug,mpeg2,mpg123,mtp,musepack,nfs,notify,ogg,opus,png,pulse,quicksync,samplerate,sdl,sftp,shout,smb,soxr,speex,srt,svg,tag,theora,twolame,udev,upnp,vorbis,vpx,x264,x265,xml,zvbi}
+  vlc-plugin-{a52dec,aalib,alsa,aom,archive,aribb24,aribb25,ass,avahi,bluray,caca,cddb,chromecast,dav1d,dbus,dbus-screensaver,dca,dvb,dvd,faad2,ffmpeg,firewire,flac,fluidsynth,freetype,gme,gnutls,gstreamer,inflate,jack,jpeg,kate,kwallet,libsecret,lirc,live555,lua,mad,matroska,mdns,modplug,mpeg2,mpg123,mtp,musepack,nfs,notify,ogg,opus,png,pulse,quicksync,samplerate,sdl,sftp,shout,smb,soxr,speex,srt,svg,tag,theora,twolame,udev,upnp,vorbis,vpx,x264,x265,xml,zvbi}
   vlc-plugins-{all,base,extra,video-output,visualization}
 )
 _vlcver=3.0.21
@@ -1329,16 +1329,6 @@ package_vlc-plugin-jack() {
   mv -v $pkgname/* "$pkgdir"
 }
 
-package_vlc-plugin-journal() {
-  pkgdesc+=" - Systemd journal plugin"
-  depends=(
-    glibc
-    libvlc libvlccore.so
-    libudev
-  )
-
-  mv -v $pkgname/* "$pkgdir"
-}
 
 package_vlc-plugin-jpeg() {
   pkgdesc+=" - JPEG plugin"
@@ -1864,7 +1854,6 @@ package_vlc-plugins-base() {
     vlc-plugin-gnutls
     vlc-plugin-inflate
     vlc-plugin-jpeg
-    vlc-plugin-journal
     vlc-plugin-mpg123
     vlc-plugin-opus
     vlc-plugin-png

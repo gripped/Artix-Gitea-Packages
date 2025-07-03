@@ -63,7 +63,6 @@ repos:
       - vlc-plugin-gstreamer-3.0.21-25-x86_64.pkg.tar.zst
       - vlc-plugin-inflate-3.0.21-25-x86_64.pkg.tar.zst
       - vlc-plugin-jack-3.0.21-25-x86_64.pkg.tar.zst
-      - vlc-plugin-journal-3.0.21-25-x86_64.pkg.tar.zst
       - vlc-plugin-jpeg-3.0.21-25-x86_64.pkg.tar.zst
       - vlc-plugin-kate-3.0.21-25-x86_64.pkg.tar.zst
       - vlc-plugin-kwallet-3.0.21-25-x86_64.pkg.tar.zst

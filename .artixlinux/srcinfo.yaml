@@ -504,13 +504,6 @@ pkgname:
       - libjack.so
       - libvlc
       - libvlccore.so
-  - name: vlc-plugin-journal
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Systemd journal plugin
-    depends:
-      - glibc
-      - libvlc
-      - libvlccore.so
-      - libudev
   - name: vlc-plugin-jpeg
     pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - JPEG plugin
     depends:
@@ -864,7 +857,6 @@ pkgname:
       - vlc-plugin-gnutls
       - vlc-plugin-inflate
       - vlc-plugin-jpeg
-      - vlc-plugin-journal
       - vlc-plugin-mpg123
       - vlc-plugin-opus
       - vlc-plugin-png
