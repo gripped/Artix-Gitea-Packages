@@ -1,0 +1,56 @@
+---
+version: 2.6.3-1
+pkgbase:
+  name: onionshare
+  pkgdesc: Share a file over Tor Hidden Services anonymously and securely
+  pkgver: 2.6.3
+  pkgrel: 1
+  url: https://github.com/onionshare/onionshare
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-wheel
+  depends:
+    - hicolor-icon-theme
+    - pyside6
+    - python
+    - python-cffi
+    - python-colorama
+    - python-eventlet
+    - python-flask
+    - python-flask-compress
+    - python-flask-socketio
+    - python-gevent
+    - python-gevent-websocket
+    - python-gnupg
+    - python-packaging
+    - python-psutil
+    - python-pynacl
+    - python-pysocks
+    - python-qrcode
+    - python-requests
+    - python-setuptools
+    - python-stem
+    - python-unidecode
+    - python-urllib3
+    - python-waitress
+    - python-werkzeug
+    - tor
+  optdepends:
+    - 'python-nautilus: enable Nautilus right-click extension'
+  source:
+    - onionshare-2.6.3.tar.gz::https://github.com/onionshare/onionshare/archive/refs/tags/v2.6.3.tar.gz
+  sha512sums:
+    - 0ea925230617c303c47fd5558066f8dec58f5d2f920738a7351c83fa2655e7d9fd1433ee0c552d1e8affea6f18cb3d489696d640847129b4082f00fa7481f220
+  b2sums:
+    - 9a6f75f1cf05de3bce9f7847f7cf4146550e45c102ae9f8b193f55825924fe2665925e33709a6137b6da743c4187204607cabdf5f8d559ab5ab044e01b2e22af
+pkgname:
+  - name: onionshare
+# generated with artixpkg 0.36.4-1-any
