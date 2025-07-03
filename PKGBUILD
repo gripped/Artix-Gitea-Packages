@@ -30,12 +30,10 @@ provides=(
   libturbojpeg.so
 )
 source=(
-  $_url/releases/download/$pkgver/$_name-$pkgver.tar.gz{,.sig}
+  $_url/releases/download/$pkgver/$_name-$pkgver.tar.gz
 )
-sha512sums=('d08c8eb77281c1eee2c93ef9f2eefaf79a4b9adff5172ebcb20c845ccad8896a28fc3d622002cc8b28964ff860dca0a491d6b1b921aaa7aedccd21b909aad4cb'
-            'SKIP')
-b2sums=('813781b1c91ed132b2d1b6e3d7834673e202765362cc9e77a6e7d4a92e89c0192312405ae8197e1c306ad3c89e23cd6dc5e418bb9f3570f110014ab79f717401'
-        'SKIP')
+sha512sums=('d08c8eb77281c1eee2c93ef9f2eefaf79a4b9adff5172ebcb20c845ccad8896a28fc3d622002cc8b28964ff860dca0a491d6b1b921aaa7aedccd21b909aad4cb')
+b2sums=('813781b1c91ed132b2d1b6e3d7834673e202765362cc9e77a6e7d4a92e89c0192312405ae8197e1c306ad3c89e23cd6dc5e418bb9f3570f110014ab79f717401')
 validpgpkeys=('0338C8D8D9FDA62CF9C421BD7EC2DBB6F4DBF434') # The libjpeg-turbo Project (Signing key for official binaries) <information@libjpeg-turbo.org>
 
 build() {
