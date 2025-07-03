@@ -459,7 +459,6 @@ package_vlc() {
     _pick $pkgname-plugin-jack usr/lib/vlc/plugins/access/libaccess_jack_plugin.so
     _pick $pkgname-plugin-jack usr/lib/vlc/plugins/audio_output/libjack_plugin.so
 
-    _pick $pkgname-plugin-journal usr/lib/vlc/plugins/logger/libsd_journal_plugin.so
 
     _pick $pkgname-plugin-jpeg usr/lib/vlc/plugins/codec/libjpeg_plugin.so
 
