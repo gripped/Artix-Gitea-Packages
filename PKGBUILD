@@ -82,3 +82,4 @@ package() {
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
   install -vDm644 -t "$pkgdir/usr/share/applications" {xterm,uxterm}.desktop
 }
+
