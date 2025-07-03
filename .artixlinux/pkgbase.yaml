@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.46.0-1
+    version: 2.47.0-1
     packages:
-      - fastfetch-2.46.0-1-x86_64.pkg.tar.zst
+      - fastfetch-2.47.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
