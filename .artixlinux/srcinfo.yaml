@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kpublictransport
   pkgdesc: Library to assist with accessing public transport timetables and other data
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://www.kde.org
   arch:
@@ -26,15 +26,15 @@ pkgbase:
   optdepends:
     - 'kirigami: QML bindings'
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kpublictransport-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kpublictransport-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kpublictransport-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kpublictransport-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8815e68e2e9a004a8665074ca91619c0003d2845b5211f9dc03c8904db8262a4
+    - 637bac5ff238b92d31c4a677e92a7319981611795756348552f00dd528425e5e
     - SKIP
 pkgname:
   - name: kpublictransport
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
