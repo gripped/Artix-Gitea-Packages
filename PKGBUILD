@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kmime
-pkgver=25.04.2
-pkgrel=1.1
+pkgver=25.04.3
+pkgrel=1
 pkgdesc='Library for handling mail messages and newsgroup articles'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -17,7 +17,7 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('6102c1191a34475af463f786e7407ee9f328bb75f93a1235e51ab3ef62500d3a'
+sha256sums=('23ece71d839261024b861ca4b956ea0787ee59db883d17bea83236aaf8bda1ea'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
