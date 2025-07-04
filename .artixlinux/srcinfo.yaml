@@ -1,9 +1,9 @@
 ---
-version: 2025.06.1-1
+version: 2025.07.0-1
 pkgbase:
   name: python-xarray
   pkgdesc: N-D labeled arrays and datasets in Python
-  pkgver: 2025.06.1
+  pkgver: 2025.07.0
   pkgrel: 1
   url: https://xarray.pydata.org/
   arch:
@@ -50,9 +50,9 @@ pkgbase:
     - 'python-seaborn: better color palettes for plots'
     - 'python-pint: units of measure support'
   source:
-    - https://github.com/pydata/xarray/archive/v2025.06.1/python-xarray-2025.06.1.tar.gz
+    - https://github.com/pydata/xarray/archive/v2025.07.0/python-xarray-2025.07.0.tar.gz
   sha256sums:
-    - 8574add36c377b2e0f75e2be64771cca205d4c3b4218469dcd5e14bc19cbe933
+    - 7b38636daf0e33f58097c0abbca8c8934187ee6996efd3de2e19b5a306e03b17
 pkgname:
   - name: python-xarray
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
