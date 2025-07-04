@@ -1,0 +1,30 @@
+---
+version: 2.5.0-1
+pkgbase:
+  name: collada-dom
+  pkgdesc: COLLADA Document Object Model (DOM) C++ Library
+  pkgver: 2.5.0
+  pkgrel: 1
+  url: https://github.com/rdiankov/collada-dom/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - cmake
+    - boost
+  depends:
+    - boost-libs
+    - minizip
+    - libxml2
+    - gcc-libs
+    - glibc
+  source:
+    - collada-dom-2.5.0.tar.gz::https://github.com/rdiankov/collada-dom/archive/refs/tags/v2.5.0.tar.gz
+    - collada-dom-fix-boost1.85.patch::https://github.com/rdiankov/collada-dom/pull/43.patch
+  sha512sums:
+    - f189d09e2396faa266734981bb7b5e91ec34b6faa9ad340206e769dae316496bf4271c129980668dc2756874dbb8c1157162197d0d3a74075e35200821875156
+    - b1f742316cecf4a932df7ba86f2d3bc7dda8a0cae0b0300c0638e8858e654ce5de8bc351c094f99bb6a9fba693f272de6969411679ac2c4bfe99bb9b95d1ed79
+pkgname:
+  - name: collada-dom
+# generated with artixpkg 0.36.4-1-any
