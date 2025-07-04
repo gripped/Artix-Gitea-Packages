@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: ktnef
   pkgdesc: API for handling TNEF data
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -24,15 +24,15 @@ pkgbase:
     - ki18n
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/ktnef-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/ktnef-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/ktnef-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/ktnef-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 4edd18335f85416fec4c793d359802f935de838a7b60fd6f4d9cfe7ee6acca3e
+    - 5119f03d17cc1f567c0d429af6506335a1e8c0bd43b539b1b6444ecc3bd6b36a
     - SKIP
 pkgname:
   - name: ktnef
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
