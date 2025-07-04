@@ -1,0 +1,27 @@
+---
+version: 0.1.11-5
+pkgbase:
+  name: zathura-cb
+  pkgdesc: Adds comic book support to zathura
+  pkgver: 0.1.11
+  pkgrel: 5
+  url: https://pwmt.org/projects/zathura-cb/
+  arch:
+    - x86_64
+  license:
+    - Zlib
+  makedepends:
+    - meson
+    - ninja
+    - appstream-glib
+  depends:
+    - zathura
+    - libarchive
+    - desktop-file-utils
+  source:
+    - zathura-cb-0.1.11.tar.gz::https://github.com/pwmt/zathura-cb/archive/refs/tags/0.1.11.tar.gz
+  sha512sums:
+    - 27246eca7ca8b5ca02e979943d43d80248da4cf226ce6929cdbbf4f2516d8872c9ba487d1e3cefdd27a63e30a396897b6884c73ae1774e2c7a4ba9afb3c6d593
+pkgname:
+  - name: zathura-cb
+# generated with artixpkg 0.36.4-1-any
