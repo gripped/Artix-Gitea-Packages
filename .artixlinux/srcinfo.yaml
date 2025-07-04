@@ -1,0 +1,41 @@
+---
+version: 0.5.12-1
+pkgbase:
+  name: zathura
+  pkgdesc: Minimalistic document viewer
+  pkgver: 0.5.12
+  pkgrel: 1
+  url: https://pwmt.org/projects/zathura/
+  arch:
+    - x86_64
+  license:
+    - Zlib
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - python-sphinx
+    - texlive-bin
+    - meson
+    - ninja
+    - appstream-glib
+    - check
+  depends:
+    - girara
+    - sqlite
+    - desktop-file-utils
+    - file
+    - libsynctex
+    - libseccomp
+  optdepends:
+    - 'zathura-djvu: DjVu support'
+    - 'zathura-pdf-poppler: PDF support using Poppler'
+    - 'zathura-pdf-mupdf: PDF support using MuPDF'
+    - 'zathura-ps: PostScript support'
+    - 'zathura-cb: Comic book support'
+  source:
+    - zathura-0.5.12.tar.gz::https://github.com/pwmt/zathura/archive/refs/tags/0.5.12.tar.gz
+  sha512sums:
+    - a5972c6814418a540769d9a04b4b3a65060a8779b0902f0c86febd080c7487ca7c5bf2ba2cc326482870009df70b46577cd222731af6678a16acb4ffa62aead2
+pkgname:
+  - name: zathura
+# generated with artixpkg 0.36.4-1-any
