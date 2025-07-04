@@ -1,0 +1,64 @@
+---
+version: 0.11.1-4
+pkgbase:
+  name: libjxl
+  pkgdesc: JPEG XL image format reference implementation
+  pkgver: 0.11.1
+  pkgrel: 4
+  url: https://jpeg.org/jpegxl/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - asciidoc
+    - brotli
+    - cmake
+    - doxygen
+    - gdk-pixbuf2
+    - giflib
+    - git
+    - gperftools
+    - graphviz
+    - gtest
+    - highway
+    - java-environment
+    - libjpeg-turbo
+    - libpng
+    - python
+    - xdg-utils
+  source:
+    - git+https://github.com/libjxl/libjxl.git#tag=v0.11.1
+    - git+https://github.com/mm2/Little-CMS.git
+    - git+https://github.com/webmproject/sjpeg.git
+    - git+https://skia.googlesource.com/skcms.git
+    - libjxl-testdata::git+https://github.com/libjxl/testdata.git
+    - git+https://github.com/libjpeg-turbo/libjpeg-turbo.git
+  sha256sums:
+    - 6420adcb5ccd23547eed91feb38ac9d7bdaac77def7183776e00699880148e3e
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+pkgname:
+  - name: libjxl
+    depends:
+      - brotli
+      - gcc-libs
+      - giflib
+      - glibc
+      - gperftools
+      - highway
+      - libjpeg-turbo
+      - libpng
+    optdepends:
+      - 'gdk-pixbuf2: for gdk-pixbuf loader'
+      - 'java-runtime: for JNI bindings'
+    provides:
+      - libjxl.so
+      - libjxl_cms.so
+      - libjxl_threads.so
+  - name: libjxl-doc
+    pkgdesc: JPEG XL image format reference implementation (documentation)
+# generated with artixpkg 0.36.4-1-any
