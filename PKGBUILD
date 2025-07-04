@@ -1,0 +1,33 @@
+# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
+# Contributor: AUR user FredBezies
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: David Rosenstrauch <darose@darose.net>
+
+pkgname=qps
+pkgver=2.11.1
+pkgrel=1
+pkgdesc="Qt process viewer and manager"
+url="https://github.com/lxqt/qps"
+depends=('hicolor-icon-theme' 'liblxqt' 'qt6-base')
+makedepends=('lxqt-build-tools')
+arch=('x86_64')
+license=("GPL")
+groups=("lxqt")
+source=("https://github.com/lxqt/qps/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
+sha256sums=('a40c6ce9d879e6a2d44cc2db41d6a71b9150e5123ee968e90db4e31285ce6436'
+            'SKIP')
+validpgpkeys=(
+  "19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # https://github.com/tsujan.gpg
+)
+
+build() {
+  cmake -B build -S "$srcdir/$pkgname-$pkgver" \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make -C build
+}
+
+package() {
+  cd build
+  make DESTDIR="$pkgdir" install
+}

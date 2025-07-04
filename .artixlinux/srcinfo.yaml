@@ -1,0 +1,31 @@
+---
+version: 2.11.1-1
+pkgbase:
+  name: qps
+  pkgdesc: Qt process viewer and manager
+  pkgver: 2.11.1
+  pkgrel: 1
+  url: https://github.com/lxqt/qps
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - GPL
+  makedepends:
+    - lxqt-build-tools
+  depends:
+    - hicolor-icon-theme
+    - liblxqt
+    - qt6-base
+  source:
+    - https://github.com/lxqt/qps/releases/download/2.11.1/qps-2.11.1.tar.xz
+    - https://github.com/lxqt/qps/releases/download/2.11.1/qps-2.11.1.tar.xz.asc
+  validpgpkeys:
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - a40c6ce9d879e6a2d44cc2db41d6a71b9150e5123ee968e90db4e31285ce6436
+    - SKIP
+pkgname:
+  - name: qps
+# generated with artixpkg 0.36.4-1-any
