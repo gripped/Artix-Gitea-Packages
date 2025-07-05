@@ -1,26 +1,25 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersRepoRemove: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 0.397-1
     packages:
       - hwdata-0.397-1-any.pkg.tar.zst
-    debug: []
-  system:
-    version: 0.396-1
-    packages:
-      - hwdata-0.396-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
