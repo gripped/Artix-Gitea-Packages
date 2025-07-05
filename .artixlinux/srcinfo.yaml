@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kmail
   pkgdesc: KDE mail client
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kmail2/
   arch:
@@ -84,15 +84,15 @@ pkgbase:
     - 'kdepim-addons: additional plugins'
     - 'kleopatra: mail encryption support'
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kmail-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kmail-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kmail-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kmail-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ccb6d5998c64959454879c1b059c7fe2cd1dc05b88f698fc2c60e61deee19433
+    - 19ea73dc617b39772a8b3c92a0b86132bee6150ca4692d3f7b776bf74c41f509
     - SKIP
 pkgname:
   - name: kmail
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
