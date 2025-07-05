@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: libksieve
   pkgdesc: KDE PIM library for managing sieves
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -39,15 +39,15 @@ pkgbase:
     - sonnet
     - syntax-highlighting
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/libksieve-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/libksieve-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/libksieve-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/libksieve-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 5484749b19342a60e924dee1f80f6f5ef1348cd19906d136eadb36651350cbc0
+    - 07f6d97362e408dabcfb191b0bfd728edfd5996ee37a84074e928cb2e9c13a9d
     - SKIP
 pkgname:
   - name: libksieve
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
