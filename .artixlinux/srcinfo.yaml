@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kcharselect
   pkgdesc: Character Selector
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kcharselect/
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - kxmlgui
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kcharselect-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kcharselect-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kcharselect-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kcharselect-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 34ba7813a7b43e758e103516d11b92e68125f813989bc0e9a6e437f3395e3f63
+    - a2c4dac5c6f1a6e4be9149d2ab5afdd181e395cde0baa5ff51e25853ab878e07
     - SKIP
 pkgname:
   - name: kcharselect
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
