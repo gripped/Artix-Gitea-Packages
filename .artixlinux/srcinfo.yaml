@@ -1,10 +1,10 @@
 ---
-version: 0.1.6-2
+version: 0.1.8-1
 pkgbase:
   name: python-httpx-aiohttp
   pkgdesc: aiohttp-powered httpx client
-  pkgver: 0.1.6
-  pkgrel: 2
+  pkgver: 0.1.8
+  pkgrel: 1
   url: https://github.com/karpetrosyan/httpx-aiohttp
   arch:
     - any
@@ -32,9 +32,9 @@ pkgbase:
     - python-aiohttp
     - python-httpx
   source:
-    - git+https://github.com/karpetrosyan/httpx-aiohttp.git#tag=0.1.6
+    - git+https://github.com/karpetrosyan/httpx-aiohttp.git#tag=0.1.8
   b2sums:
-    - 42abf64362a8d0e19b9e7e25ad873143b44ed2d422fa70c5695929818b323d3ff0d00d258a45b9d2eb9348aeb44e015a10ad0aafd3b7cf3f19bfb542ac0ad1f4
+    - d6ff34a14839668eaa82d280cac0bc1444674c39c174e92cc866610ad976585b16e41105f37a630df3569d13901872eedd3606644ca25991dbadd7fc481098c1
 pkgname:
   - name: python-httpx-aiohttp
 # generated with artixpkg 0.36.4-1-any
