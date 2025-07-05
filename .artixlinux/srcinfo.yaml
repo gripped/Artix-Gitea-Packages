@@ -1,9 +1,9 @@
 ---
-version: 0.4.23-1
+version: 0.4.24-1
 pkgbase:
   name: openrct2
   pkgdesc: Open source re-implementation of Roller Coaster Tycoon 2 (requires full copy of the game)
-  pkgver: 0.4.23
+  pkgver: 0.4.24
   pkgrel: 1
   url: https://openrct2.io
   arch:
@@ -35,11 +35,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - openrct2-0.4.23.tar.gz::https://github.com/OpenRCT2/OpenRCT2/archive/v0.4.23.tar.gz
+    - openrct2-0.4.24.tar.gz::https://github.com/OpenRCT2/OpenRCT2/archive/v0.4.24.tar.gz
     - googletest-fix-maybe-uninitialized.patch
   sha256sums:
-    - 1eac23e999aab1280da88a052d66f928c9d66ec4e7e6c844d628b1b3744f9d18
+    - e34c8e792bb35a54bc4d26c4b5dd3d8fe9bb5002e20652a26acd8cf97a657444
     - 6c4becab25ec1824883a4c1946d4aa4b45534b9a6199b782db7879b78178ff84
 pkgname:
   - name: openrct2
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
