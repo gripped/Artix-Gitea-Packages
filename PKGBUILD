@@ -4,7 +4,7 @@
 
 pkgname=opentracker
 pkgver=1.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc='A free and open torrent tracker'
 arch=(x86_64 i686 armv7h aarch64)
 url='http://erdgeist.org/arts/software/opentracker/'
@@ -19,10 +19,12 @@ source=(
   "https://erdgeist.org/arts/software/${pkgname}/${pkgname}-${pkgver}.tar.bz2"
   'opentracker.sysusers'
   'opentracker.tmpfiles'
+  'compile_options.patch'
 )
 sha256sums=('8109cbf271d4374020af719aca5448b1354517c0b2f4b74b167332944a61eb31'
             'c0097bc231e0f6f7c8ff17e3cca99f2215218cc227476a4390936b04300c8fc7'
-            '0c7f180db96168dd7546b30cb276ab1058201c919059b251d84868fe63990f08')
+            '0c7f180db96168dd7546b30cb276ab1058201c919059b251d84868fe63990f08'
+            'a521688e593f265a79a24632af29a4fdfdfa331cd1cf0b57bd7526bcb789e984')
 
 _cvsroot=':pserver:cvs@cvs.fefe.de:/cvs'
 _cvsmod='libowfat'
@@ -43,7 +45,8 @@ build() {
   make
   cd ..
   cd "opentracker-${pkgver}"
-  make
+  patch -Nup0 -i ../compile_options.patch
+  make -j 8
 }
 
 package() {
