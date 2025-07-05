@@ -1,9 +1,9 @@
 ---
-version: 1.40.45-1
+version: 1.41.3-1
 pkgbase:
   name: aws-cli
   pkgdesc: Universal Command Line Interface for Amazon Web Services
-  pkgver: 1.40.45
+  pkgver: 1.41.3
   pkgrel: 1
   url: https://github.com/aws/aws-cli
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - python-s3transfer
     - python-yaml
   source:
-    - https://github.com/aws/aws-cli/archive/1.40.45/aws-cli-1.40.45.tar.gz
+    - https://github.com/aws/aws-cli/archive/1.41.3/aws-cli-1.41.3.tar.gz
   sha256sums:
-    - 2f9d1e5ed90cfb73cbb858f365a011993309935f9ec9213114bbdef06f7dfb3d
+    - 452829981569c764340ce8ac3359b8cddb5dbaa585ffd4964aafee524246aa4e
 pkgname:
   - name: aws-cli
 # generated with artixpkg 0.36.4-1-any
