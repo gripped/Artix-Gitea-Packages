@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: akonadi-import-wizard
   pkgdesc: Import data from other mail clients to KMail
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -42,15 +42,15 @@ pkgbase:
   optdepends:
     - 'kdepim-addons: additional import plugins'
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/akonadi-import-wizard-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/akonadi-import-wizard-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-import-wizard-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/akonadi-import-wizard-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 10504267930244ad3d409fb6d0191456131e8cb518174b053801a6cc9aef7a01
+    - a397fdb3739ad4cb93c0d97f796689aa78f48fb2965f0fad5d804162a8a44c1c
     - SKIP
 pkgname:
   - name: akonadi-import-wizard
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
