@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-07-01
+## Generated on 2025-07-05
 ##
 
 # Artix mirrors
@@ -60,6 +60,7 @@ Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
 Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://mirrors.ocf.berkeley.edu/artix-linux/$repo/os/$arch
 Server = https://mirror.cs.odu.edu/artixlinux/$repo/os/$arch
+Server = https://mirror.akardam.net/artix/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
 Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
 # Canada
