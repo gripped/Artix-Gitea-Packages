@@ -1,10 +1,10 @@
 ---
-version: 2.32.56-1
+version: 2.32.56-2
 pkgbase:
   name: sdl2-compat
   pkgdesc: An SDL2 compatibility layer that uses SDL3 behind the scenes
   pkgver: 2.32.56
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/libsdl-org/sdl2-compat
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: sdl2-compat
-# generated with artixpkg 0.36.0-2-any
+# generated with artixpkg 0.36.4-1-any
