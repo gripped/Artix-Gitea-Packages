@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: mcomix
-  version: 3.1.0-2.1
-  arch:
-    - any
-  pkgname:
-    - mcomix
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 3.1.0-2.1
+    version: 3.1.0-2.2
     packages:
-      - mcomix-3.1.0-2.1-any.pkg.tar.zst
+      - mcomix-3.1.0-2.2-any.pkg.tar.zst
+    debug: []
 team: galaxy
