@@ -1,9 +1,9 @@
 ---
-version: 3.16.9-1
+version: 3.16.14-1
 pkgbase:
   name: gamescope
   pkgdesc: SteamOS session compositing window manager
-  pkgver: 3.16.9
+  pkgver: 3.16.14
   pkgrel: 1
   url: https://github.com/ValveSoftware/gamescope
   arch:
@@ -57,7 +57,7 @@ pkgbase:
     - xcb-util-wm
     - xorg-server-xwayland
   source:
-    - git+https://github.com/ValveSoftware/gamescope.git#commit=3.16.9
+    - git+https://github.com/ValveSoftware/gamescope.git#commit=3.16.14
     - git+https://gitlab.freedesktop.org/emersion/libdisplay-info.git
     - git+https://gitlab.freedesktop.org/emersion/libliftoff.git
     - git+https://github.com/ValveSoftware/openvr.git
@@ -65,9 +65,8 @@ pkgbase:
     - git+https://github.com/KhronosGroup/SPIRV-Headers.git
     - git+https://github.com/Joshua-Ashton/vkroots.git
     - git+https://github.com/Joshua-Ashton/wlroots.git
-    - gamescope-openvr-cmake4.patch::https://github.com/ValveSoftware/openvr/pull/1890.patch
   b2sums:
-    - a8f152983417a5dcdfed0050f575d9567b1ed91b27f49d64c8b41034cd8a742e76fd0aa94560eecdd12ef655da5164a2064619d9f209f5fd1ea2cdc29c64e898
+    - 659bfa966084c1e1bb604ce081364a8d9c712c44c16e47b3903f9a0a26cde03b1cb4cefb2537a5728c981b2bdfea956281687026e667829e91e8c48d000ab37d
     - SKIP
     - SKIP
     - SKIP
@@ -75,7 +74,6 @@ pkgbase:
     - SKIP
     - SKIP
     - SKIP
-    - ca715d31473649b6e342d75f44c8cf22cb4c303d546718085a18f00afa2e32532f478261c8c150bd0799005b6742a993575c1914575f5da39ae551315f8cac31
 pkgname:
   - name: gamescope
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
