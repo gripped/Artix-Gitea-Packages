@@ -16,7 +16,7 @@ _vlcver=3.0.21
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=$_vlcver${_vlcfixupver//-/.r}
-pkgrel=25
+pkgrel=26
 pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
 url=https://www.videolan.org/vlc/
 arch=(x86_64)
@@ -332,7 +332,7 @@ package_vlc() {
     'vlc-plugin-kwallet: for kwallet keystore support'
     'vlc-plugin-libsecret: for libsecret keystore support'
     'vlc-plugin-lirc: for infrared remote control support'
-    'vlc-plugin-live555: for live555 access support'
+    'vlc-plugin-live555: for RTP/RTSP stream access support'
     'vlc-plugin-mad: for MPEG Audio Decoder audio filter support'
     'vlc-plugin-matroska: for Matroska demux support'
     'vlc-plugin-mdns: for mDNS services discovery support'
@@ -1389,7 +1389,7 @@ package_vlc-plugin-lirc() {
 }
 
 package_vlc-plugin-live555() {
-  pkgdesc+=" - live555 plugin"
+  pkgdesc+=" - live555 RTP/RSTP client plugin"
   depends=(
     gcc-libs
     glibc
