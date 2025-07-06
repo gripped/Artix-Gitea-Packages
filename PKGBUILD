@@ -77,6 +77,8 @@ check() {
     --deselect tests/test_project.py::test_access_index_with_auth
     # unclear issue with no isolation build
     --deselect tests/cli/test_build.py::test_build_with_no_isolation
+    # fails with permission error (ARTIX CI)
+    --deselect tests/cli/test_python.py::test_find_python
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
