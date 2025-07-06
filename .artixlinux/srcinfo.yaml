@@ -1,9 +1,9 @@
 ---
-version: 3.5.0-1
+version: 3.6.0-1
 pkgbase:
   name: python-textual
   pkgdesc: Modern Text User Interface framework
-  pkgver: 3.5.0
+  pkgver: 3.6.0
   pkgrel: 1
   url: https://github.com/Textualize/textual
   arch:
@@ -30,9 +30,9 @@ pkgbase:
     - 'python-tree-sitter-languages: for custom languages support'
     - 'python-textual-dev: tools for developers'
   source:
-    - textual-3.5.0.tar.gz::https://github.com/Textualize/textual/archive/v3.5.0.tar.gz
+    - textual-3.6.0.tar.gz::https://github.com/Textualize/textual/archive/v3.6.0.tar.gz
   sha512sums:
-    - db0e33ded789d28de1cb97e3fc76482e1ec705f1570f62c1c368b11a49f2ba59b896fb1858ef6b5d323c3188ef8d3c5512ce8b0df722c56d3fb156ddc7a362c1
+    - 7740e4b6c6f20edaad25a96b798b2017a5a7d096cb1ded24073f3e7dab27bcfaa79d0c6b02c8eba15eb30f34ac4fa32e5c5196cad3cd0a025db70e833f3a31ac
 pkgname:
   - name: python-textual
 # generated with artixpkg 0.36.4-1-any
