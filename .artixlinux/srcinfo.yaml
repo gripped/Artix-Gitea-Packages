@@ -1,10 +1,10 @@
 ---
-version: 0.44+r10+ga6122c0-4
+version: 0.45-5
 pkgbase:
   name: tp_smapi
   pkgdesc: Modules for ThinkPad's SMAPI functionality
-  pkgver: 0.44+r10+ga6122c0
-  pkgrel: 4
+  pkgver: 0.45
+  pkgrel: 5
   url: https://github.com/evgeni/tp_smapi
   arch:
     - x86_64
@@ -14,11 +14,11 @@ pkgbase:
     - git
     - linux-headers
   source:
-    - git+https://github.com/evgeni/tp_smapi#commit=a6122c0840c36bf232250afd1da30aaedaf24910
+    - git+https://github.com/evgeni/tp_smapi#commit=2ed5e3b8ae4103e3fbc196fba7c96eba773dd7e1
   b2sums:
-    - ece16a811414f4e4b4060a20de0a1c362a7021845deae1255e3d93a429e5631a46fdae1079063ea1a938a3c7022f23ea214e447de9035891f79b653827fdb377
+    - dbe198a983c3e0cc555736ad2f96c424b82984b4ba10f0757bc090e6ac2a9f9e46162abecdaef68b779a39c39b3a6433773fb688ae4c424bcf90b0f021bf8e62
 pkgname:
   - name: tp_smapi
     depends:
       - linux
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
