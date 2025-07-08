@@ -1,9 +1,9 @@
 ---
-version: 6.4.1-1
+version: 6.4.2-1
 pkgbase:
   name: plasma5support
   pkgdesc: Support components for porting from KF5/Qt5 to KF6/Qt6
-  pkgver: 6.4.1
+  pkgver: 6.4.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -42,15 +42,15 @@ pkgbase:
     - 'networkmanager-qt: IP-based geolocation dataengine'
     - 'plasma-activities: activities dataengine'
   source:
-    - https://download.kde.org/stable/plasma/6.4.1/plasma5support-6.4.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.1/plasma5support-6.4.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.2/plasma5support-6.4.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.2/plasma5support-6.4.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 117a3b9bcd3a63de83719d94f39a34cccf643a71435c84a5c505b044446b8dab
+    - 24a07ceff083a6a7a2d9b4152812549050623c434ef7319109963085a114aef2
     - SKIP
 pkgname:
   - name: plasma5support
