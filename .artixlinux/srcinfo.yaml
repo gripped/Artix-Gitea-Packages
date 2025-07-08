@@ -1,9 +1,9 @@
 ---
-version: 6.4.1-1
+version: 6.4.2-1
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
-  pkgver: 6.4.1
+  pkgver: 6.4.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -122,15 +122,15 @@ pkgbase:
     - xorg-xwayland
     - zlib
   source:
-    - https://download.kde.org/stable/plasma/6.4.1/plasma-workspace-6.4.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.1/plasma-workspace-6.4.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-workspace-6.4.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.2/plasma-workspace-6.4.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 2067b539e57445bb35fc3b589a4f5f7aee31549906e220e88d8790d7af32aee4
+    - ed657be39ec9bc1d4e5ba4c5e717b4ab683dd27bececfaef6e7e209f771b4850
     - SKIP
 pkgname:
   - name: plasma-workspace
@@ -236,13 +236,13 @@ pkgname:
       - xorg-xwayland
       - zlib
       - plasma-integration
-      - plasma-x11-session
     optdepends:
       - 'appmenu-gtk-module: global menu support for GTK2 and some GTK3 applications'
       - 'baloo: Baloo search runner'
       - 'discover: manage applications installation from the launcher'
       - 'kdepim-addons: displaying PIM events in the calendar'
       - 'kwayland-integration: Wayland integration for Qt5 applications'
+      - 'kwin-x11: X session window manager'
       - 'networkmanager-qt: IP based geolocation'
       - 'plasma-workspace-wallpapers: additional wallpapers'
       - 'plasma5-integration: use Plasma settings in Qt5 applications'

@@ -4,7 +4,7 @@
 # Contributor: Alexey D. <lq07829icatm at rambler.ru>
 pkgbase=plasma-workspace
 pkgname=(plasma-workspace plasma-x11-session)
-pkgver=6.4.1
+pkgver=6.4.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='KDE Plasma Workspace'
@@ -120,7 +120,7 @@ makedepends=(baloo
              qcoro)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('2067b539e57445bb35fc3b589a4f5f7aee31549906e220e88d8790d7af32aee4'
+sha256sums=('ed657be39ec9bc1d4e5ba4c5e717b4ab683dd27bececfaef6e7e209f771b4850'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -142,20 +142,18 @@ package_plasma-workspace() {
             'discover: manage applications installation from the launcher'
             'kdepim-addons: displaying PIM events in the calendar'
             'kwayland-integration: Wayland integration for Qt5 applications'
-            #'kwin-x11: X session window manager'
+            'kwin-x11: X session window manager'
             'networkmanager-qt: IP based geolocation'
             'plasma-workspace-wallpapers: additional wallpapers'
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
-  depends+=(plasma-integration # Declare runtime dependency here to avoid dependency cycles at build time
-            plasma-x11-session)
+  depends+=(plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
   conflicts=(plasma-wayland-session)
   replaces=(plasma-wayland-session)
 
   DESTDIR="$pkgdir" cmake --install build
 
   rm -r "$pkgdir"/usr/share/xsessions/plasmax11.desktop
-  rm -rf $pkgdir/usr/lib/systemd
 }
 
 
@@ -165,6 +163,4 @@ package_plasma-x11-session() {
   groups=()
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
-
-  rm -rf $pkgdir/usr/lib/systemd
 }
