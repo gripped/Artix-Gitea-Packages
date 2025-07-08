@@ -1,9 +1,9 @@
 ---
-version: 3.18.1-1
+version: 3.18.2-1
 pkgbase:
   name: python-peewee
   pkgdesc: A small, expressive orm
-  pkgver: 3.18.1
+  pkgver: 3.18.2
   pkgrel: 1
   url: https://github.com/coleifer/peewee
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - 'python-psycopg2: for PostgreSQL database support'
     - 'python-pymysql: for MySQL database support'
   source:
-    - https://github.com/coleifer/peewee/archive/3.18.1/python-peewee-3.18.1.tar.gz
+    - https://github.com/coleifer/peewee/archive/3.18.2/python-peewee-3.18.2.tar.gz
   sha512sums:
-    - eeef91aa30eea6ea6d4e1a7cdef7e8c207511ae65455cb0b5f84945c38ac6de3c8e218aa24752e3345d1eb4efcbf20ed289cf764c6fbd631b51be3d5075bc8b7
+    - d4c68b88b1652ca065e49d692fcc875717a1d67c4ee5c9dfc0942f2994bf49ef564bb14aa046f10f5201835a19f21a15979f5069a812133e9a2b0214dc6226c6
 pkgname:
   - name: python-peewee
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
