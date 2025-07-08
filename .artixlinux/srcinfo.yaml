@@ -1,9 +1,9 @@
 ---
-version: 1:6.4.1-1
+version: 1:6.4.2-1
 pkgbase:
   name: bluedevil
   pkgdesc: Integrate the Bluetooth technology within KDE workspace and applications
-  pkgver: 6.4.1
+  pkgver: 6.4.2
   pkgrel: 1
   epoch: 1
   url: https://kde.org/plasma-desktop/
@@ -41,15 +41,15 @@ pkgbase:
     - 'bluez-obex: file transfer'
     - 'pulseaudio-bluetooth: to connect to A2DP profile'
   source:
-    - https://download.kde.org/stable/plasma/6.4.1/bluedevil-6.4.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.1/bluedevil-6.4.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.2/bluedevil-6.4.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.2/bluedevil-6.4.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 9ad474ddd69bce854980d3042fde8905bd94059fdaaa800425c76cd7627e06ef
+    - 253bd63305ab2b76391feca721f735b6bae6c5c13799164b8caa09fbfa3a0e06
     - SKIP
 pkgname:
   - name: bluedevil
