@@ -50,10 +50,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.4.1-23
+    version: 0.4.1-23.1
     packages:
-      - moksha-0.4.1-23-x86_64.pkg.tar.zst
-      - moksha-module-mixer-0.4.1-23-x86_64.pkg.tar.zst
+      - moksha-0.4.1-23.1-x86_64.pkg.tar.zst
+      - moksha-module-mixer-0.4.1-23.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.4.1-22.1
