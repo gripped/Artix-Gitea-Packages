@@ -10,8 +10,7 @@ arch=('x86_64')
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
 license=('BSD')
 makedepends=('git' 'efl>=1.27.0' 'glib2' 'libpng' 'harfbuzz' 'fribidi' 'fontconfig' 'luajit' 'bullet'
-             'libxcb' 'automake' 'libx11' 'xcb-util-keysyms' 'alsa-lib' 'udisks2' 'libsndfile'
-             'gettext')
+             'libxcb' 'automake' 'libx11' 'xcb-util-keysyms' 'alsa-lib' 'udisks2' 'libsndfile')
 options=('lto')
 source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=${_commit}"
         "moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git"
