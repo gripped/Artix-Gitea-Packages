@@ -1,10 +1,10 @@
 ---
-version: 6.4.2-1
+version: 6.4.2-1.1
 pkgbase:
   name: plasma-vault
   pkgdesc: Plasma applet and services for creating encrypted vaults
   pkgver: 6.4.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
