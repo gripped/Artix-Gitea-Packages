@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kig
   pkgdesc: Interactive Geometry
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kig/
   arch:
@@ -39,15 +39,15 @@ pkgbase:
     - qt5-svg
     - qt5-xmlpatterns
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kig-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kig-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kig-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kig-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 1e2de78c76d38863c9da0def20258f41ed5a795dc0f3073e060082604e8076fb
+    - 22df542700ba1be9cc1fd2efe8f6cbaa0251cb0aacd1a71b46d0c21b671bc5a3
     - SKIP
 pkgname:
   - name: kig
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
