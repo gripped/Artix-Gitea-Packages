@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kgoldrunner
   pkgdesc: A game of action and puzzle solving
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kgoldrunner/
   arch:
@@ -33,15 +33,15 @@ pkgbase:
     - libkdegames
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kgoldrunner-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kgoldrunner-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kgoldrunner-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kgoldrunner-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 1a48941920c2504bf35225110593a4c3ce6a5b7adb8b36599745bd664a685dc2
+    - 5d67848eb3385d59487ee2809f8bc44ef9fbd52db29978cb0487e5a9cdaf1e7d
     - SKIP
 pkgname:
   - name: kgoldrunner
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
