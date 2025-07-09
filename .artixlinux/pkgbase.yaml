@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 8.1.2-1
+    version: 8.1.3-1
     packages:
-      - valkey-8.1.2-1-x86_64.pkg.tar.zst
+      - valkey-8.1.3-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
