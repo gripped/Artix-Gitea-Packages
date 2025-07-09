@@ -1,0 +1,54 @@
+---
+version: 0.15.0-3
+pkgbase:
+  name: qtkeychain
+  pkgdesc: Provides support for secure credentials storage
+  pkgver: 0.15.0
+  pkgrel: 3
+  url: https://github.com/frankosterfeld/qtkeychain
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - clang
+    - cmake
+    - git
+    - qt5-tools
+    - qt6-declarative
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - org.freedesktop.secrets
+  source:
+    - git+https://github.com/frankosterfeld/qtkeychain#tag=0.15.0
+  sha256sums:
+    - 0ffe67e46fa4a99da93c1f13090a7e153dfe1cee25b9ef269f85a504834360db
+pkgname:
+  - name: qtkeychain-qt5
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - org.freedesktop.secrets
+      - qt5-base
+    optdepends:
+      - 'kwallet5: kwallet backend'
+    provides:
+      - qtkeychain
+    conflicts:
+      - qtkeychain
+    replaces:
+      - qtkeychain
+  - name: qtkeychain-qt6
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - org.freedesktop.secrets
+      - qt6-base
+    optdepends:
+      - 'kwallet: kwallet backend'
+# generated with artixpkg 0.36.4-1-any

@@ -6,11 +6,11 @@ pkgbase=qtkeychain
 pkgname=(qtkeychain-qt5
          qtkeychain-qt6)
 pkgver=0.15.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Provides support for secure credentials storage'
 arch=(x86_64)
 url='https://github.com/frankosterfeld/qtkeychain'
-license=(BSD)
+license=(BSD-3-Clause)
 depends=(gcc-libs
          glib2
          glibc
