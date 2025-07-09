@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kdiamond
   pkgdesc: A single player puzzle game
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kdiamond/
   arch:
@@ -34,15 +34,15 @@ pkgbase:
     - kxmlgui
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kdiamond-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kdiamond-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kdiamond-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kdiamond-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 877916a517bb123f7b55227ae181aa1aad83c69e6b99bbe021d0c7fdcc8d7d8f
+    - ff6f80f8684671d24f2464dada3c6d21a3414f3403cc09700dde46acfad9a870
     - SKIP
 pkgname:
   - name: kdiamond
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
