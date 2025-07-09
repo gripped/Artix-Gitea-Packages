@@ -142,18 +142,20 @@ package_plasma-workspace() {
             'discover: manage applications installation from the launcher'
             'kdepim-addons: displaying PIM events in the calendar'
             'kwayland-integration: Wayland integration for Qt5 applications'
-            'kwin-x11: X session window manager'
+            # 'kwin-x11: X session window manager'
             'networkmanager-qt: IP based geolocation'
             'plasma-workspace-wallpapers: additional wallpapers'
             'plasma5-integration: use Plasma settings in Qt5 applications'
             'xdg-desktop-portal-gtk: sync font settings to Flatpak apps')
-  depends+=(plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
+  depends+=(plasma-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
   conflicts=(plasma-wayland-session)
   replaces=(plasma-wayland-session)
 
   DESTDIR="$pkgdir" cmake --install build
 
   rm -r "$pkgdir"/usr/share/xsessions/plasmax11.desktop
+
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 
@@ -163,4 +165,6 @@ package_plasma-x11-session() {
   groups=()
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
+
+  rm -r $pkgdir/usr/lib/systemd
 }
