@@ -1,9 +1,9 @@
 ---
-version: 24.8.7-3
+version: 24.8.7-4
 pkgbase:
   name: libreoffice-still
   pkgver: 24.8.7
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -324,4 +324,4 @@ pkgname:
       - etc/libreoffice/psprint.conf
       - etc/profile.d/libreoffice-still.sh
       - etc/profile.d/libreoffice-still.csh
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
