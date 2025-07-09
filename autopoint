@@ -406,9 +406,9 @@ case "$ver" in
   0.25 | 0.25.1 )
     ;;
   *)
-    func_fatal_error "The AM_GNU_GETTEXT_VERSION declaration in your $configure_in
-               file requires the infrastructure from gettext-$ver but this version
-               is older. Please upgrade to gettext-$ver or newer."
+    #func_fatal_error "The AM_GNU_GETTEXT_VERSION declaration in your $configure_in
+    #           file requires the infrastructure from gettext-$ver but this version
+    #           is older. Please upgrade to gettext-$ver or newer."
     ;;
 esac
 
