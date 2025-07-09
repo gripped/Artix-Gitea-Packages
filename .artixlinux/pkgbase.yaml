@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.25.5-1
+    version: 0.25.6-1
     packages:
-      - esbuild-0.25.5-1-x86_64.pkg.tar.zst
+      - esbuild-0.25.6-1-x86_64.pkg.tar.zst
     debug: []
