@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=elisa
-pkgver=25.04.2
-pkgrel=1
+pkgver=25.04.3
+pkgrel=2
 pkgdesc='A simple music player aiming to provide a nice experience for its users'
 url='https://apps.kde.org/elisa/'
 arch=(x86_64)
@@ -24,17 +24,18 @@ depends=(gcc-libs
          kirigami-addons
          kitemviews
          kxmlgui
+         libvlc
          qqc2-desktop-style
          qt6-base
          qt6-declarative
          qt6-multimedia
-         vlc)
+         vlc-plugins-base)
 makedepends=(extra-cmake-modules
              kdoctools)
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('e3d5e341e533e91969ee5f2015a1f81f8ec2b0b1b60102ea7c16882d36bfe750'
+sha256sums=('16e4e38a9e7dcf9b42441c66707d5bbb52aef5c95422d8ee04a4a21e7f157392'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
