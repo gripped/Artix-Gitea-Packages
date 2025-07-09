@@ -1,9 +1,9 @@
 ---
-version: 3.3.10-1
+version: 3.3.11-1
 pkgbase:
   name: psutils
   pkgdesc: A set of postscript utilities
-  pkgver: 3.3.10
+  pkgver: 3.3.11
   pkgrel: 1
   url: https://github.com/rrthomas/psutils
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - python-puremagic
     - python-pypdf
   source:
-    - https://github.com/rrthomas/psutils/releases/download/v3.3.10/psutils-3.3.10.tar.gz
+    - https://github.com/rrthomas/psutils/releases/download/v3.3.11/psutils-3.3.11.tar.gz
   sha256sums:
-    - 698a18f291183d48d63cd43b6a2e43d133e89ab438d5aef5baa24374660729f7
+    - 4bc1bb3667e144f907527bda2df92fb5533deba0192f9d2e086ceb9d6c15328b
 pkgname:
   - name: psutils
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.4-1-any
