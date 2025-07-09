@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kasts
-pkgver=25.04.2
-pkgrel=1
+pkgver=25.04.3
+pkgrel=2
 pkgdesc='Kirigami-based podcast player'
 url='https://apps.kde.org/kasts/'
 arch=(x86_64)
@@ -21,6 +21,7 @@ depends=(breeze-icons
          kirigami
          kirigami-addons
          kwindowsystem
+         libvlc
          qqc2-desktop-style
          qt6-base
          qt6-declarative
@@ -29,13 +30,13 @@ depends=(breeze-icons
          syndication
          taglib
          threadweaver
-         vlc)
+         vlc-plugins-base)
 makedepends=(extra-cmake-modules
              python)
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d81b9524f38fc71874fb80a945a862ccfb3e880b66cde6107bc6a5130431be63'
+sha256sums=('4c46103e0490ee8b38735be61f5c498c4651150118a9c914538190f0249f2f2f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
