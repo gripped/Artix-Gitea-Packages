@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kcachegrind
   pkgdesc: Visualization of Performance Profiling Data
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kcachegrind/
   arch:
@@ -18,14 +18,14 @@ pkgbase:
     - kxmlgui
     - qt6-tools
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kcachegrind-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kcachegrind-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kcachegrind-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kcachegrind-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - cf4f8d9471ffe24fc42537eed00a0bf9feea0e9d705334bf8c5c3176d8b7cc6b
+    - 23c7dcbbf15c5ee00ddac068022f118b5de939d097199b0f918df9f94f74d9e1
     - SKIP
 pkgname:
   - name: kcachegrind
@@ -64,4 +64,4 @@ pkgname:
       - qt6-base
     optdepends:
       - 'graphviz: for plotting support'
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
