@@ -3,7 +3,7 @@
 
 pkgname=elisa
 pkgver=25.04.3
-pkgrel=2
+pkgrel=3
 pkgdesc='A simple music player aiming to provide a nice experience for its users'
 url='https://apps.kde.org/elisa/'
 arch=(x86_64)
@@ -29,7 +29,8 @@ depends=(gcc-libs
          qt6-base
          qt6-declarative
          qt6-multimedia
-         vlc-plugins-base)
+         vlc-plugins-base
+         vlc-plugin-ffmpeg)
 makedepends=(extra-cmake-modules
              kdoctools)
 groups=(kde-applications
