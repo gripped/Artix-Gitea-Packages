@@ -1,10 +1,10 @@
 ---
-version: 2.8.2-2
+version: 2.8.2-3
 pkgbase:
   name: ncdu
   pkgdesc: Disk usage analyzer with an ncurses interface
   pkgver: 2.8.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://dev.yorhel.nl/ncdu
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgname:
       - zstd
       - libncursesw.so
       - libzstd.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
