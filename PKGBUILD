@@ -31,6 +31,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/page_040.patch"
   patch -Np1 -i "${srcdir}/e_wizard.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
+sed -i 's|0.19|0.19.1|' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
   sed -i 's/MokshaArcGreen/default/g' config/bodhi/e.src
