@@ -31,12 +31,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/page_040.patch"
   patch -Np1 -i "${srcdir}/e_wizard.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
-#sed -i 's|0.19|0.19.1|' configure.ac
-#sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_REQUIRE_VERSION([0.19])|' configure.ac
 sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
-grep GETTEXT configure.ac | grep VERSION
-#sed -i 's/autoreconf --force --install || exit 1/autoreconf --install/' autogen.sh
-#read
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
   sed -i 's/MokshaArcGreen/default/g' config/bodhi/e.src
@@ -111,6 +106,6 @@ sha256sums=('e341fdda21577e53a00ec39e02442a15db29b7f81f19c8797e0e20716af6ad0e'
             '8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c'
             '1b6f11541e730b1a8c28d32ce058f0c4129940f917a8952e9f80b27dec956c11'
             '6e44b16c0a4cddea98dafe9e922d9157bc1ec10c997f5c026b6d633eb1c06831'
-            '1efdfc4f4c785d2a801b1408f621281483414df26e65f160be4ff64c9b19a9a5'
+            'a1e3685bd8f98063529397eed51ab9f9e749488d32809e9e29ed92e8109090a9'
             'd3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95')
 
