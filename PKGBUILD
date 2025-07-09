@@ -165,6 +165,4 @@ package_plasma-x11-session() {
   groups=()
 
   install -Dm644 build/login-sessions/plasmax11.desktop -t "$pkgdir"/usr/share/xsessions
-
-  rm -r $pkgdir/usr/lib/systemd
 }
