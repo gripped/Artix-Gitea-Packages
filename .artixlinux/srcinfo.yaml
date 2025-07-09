@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: kjumpingcube
   pkgdesc: A simple tactical game
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/kjumpingcube/
   arch:
@@ -34,15 +34,15 @@ pkgbase:
     - qt6-base
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/kjumpingcube-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/kjumpingcube-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/kjumpingcube-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/kjumpingcube-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 77584a369b32b6914748acfe80b39171884fe251f491c39cd267ad9a07ecfb94
+    - 2fa7771f7a38e42e4800feb93d987d633305b582d5eebbb2ab5403f0f67617c5
     - SKIP
 pkgname:
   - name: kjumpingcube
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
