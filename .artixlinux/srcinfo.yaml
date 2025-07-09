@@ -1,9 +1,9 @@
 ---
-version: 25.04.2-1
+version: 25.04.3-1
 pkgbase:
   name: cantor
   pkgdesc: KDE Frontend to Mathematical Software
-  pkgver: 25.04.2
+  pkgver: 25.04.3
   pkgrel: 1
   url: https://apps.kde.org/cantor/
   arch:
@@ -61,15 +61,15 @@ pkgbase:
     - 'sagemath: SageMath backend'
     - 'julia: Julia backend'
   source:
-    - https://download.kde.org/stable/release-service/25.04.2/src/cantor-25.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.2/src/cantor-25.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.04.3/src/cantor-25.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.04.3/src/cantor-25.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8cb744b18da22de4315b300f88b3e580eb2af559918187a73b78b3948615be74
+    - 1a7732a34bc703f2febeceb074fb2827f84adf913b86c115553d73a2eb67af05
     - SKIP
 pkgname:
   - name: cantor
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
