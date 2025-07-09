@@ -386,6 +386,8 @@ if test -z "$ver"; then
   ver=0.23.1
 fi
 
+ver=0.19
+
 # Check whether the version number is supported.
 case "$ver" in
   0.10.35 | 0.10.36 | 0.10.37 | 0.10.38 | 0.10.39 | 0.10.40 | \
