@@ -4,7 +4,7 @@
 
 pkgname=inkscape
 pkgver=1.4.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -114,6 +114,10 @@ _backports=(
   # Fix build with poppler 25.06.0
   # See https://gitlab.com/inkscape/inkscape/-/merge_requests/7261
   '1fdfb889bba9ee146c8b826e97bc58a88cb1e529'
+
+  # Fix build with poppler 25.07.0
+  # See https://gitlab.com/inkscape/inkscape/-/merge_requests/7321
+  '7f4f106b5438be1546052ebeebcfe3e8196d5884'
 )
 
 _reverts=(
