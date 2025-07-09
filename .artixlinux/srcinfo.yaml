@@ -27,7 +27,6 @@ pkgbase:
     - alsa-lib
     - udisks2
     - libsndfile
-    - gettext
   options:
     - lto
   source:
