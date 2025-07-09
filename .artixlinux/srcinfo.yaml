@@ -31,7 +31,7 @@ pkgbase:
   options:
     - lto
   source:
-    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=79f54f93305ce6886a894e55c1a7a9ba67f1f802
+    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=afc09c5e44a7dc94bbd7f38d7ef5f2517624379f
     - moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git
     - page_000.patch
     - page_040.patch
@@ -41,9 +41,10 @@ pkgbase:
     - sysactions.patch
     - Artix_dna_spiral_dark_bw-4K.png
     - background.edc
+    - autopoint
     - artix-icon.png
   sha256sums:
-    - 068e662fd90e2639667384b2ca77e5ffcbe2fcd8ebd9369f1113108652f55a35
+    - e341fdda21577e53a00ec39e02442a15db29b7f81f19c8797e0e20716af6ad0e
     - SKIP
     - f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb
     - aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98
@@ -53,6 +54,7 @@ pkgbase:
     - 8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c
     - 1b6f11541e730b1a8c28d32ce058f0c4129940f917a8952e9f80b27dec956c11
     - 6e44b16c0a4cddea98dafe9e922d9157bc1ec10c997f5c026b6d633eb1c06831
+    - 2d5216e69fe772e585774611f7b5627ad92ccb06b222fc0de54947603f873bd3
     - d3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95
 pkgname:
   - name: moksha
