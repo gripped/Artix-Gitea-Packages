@@ -59,7 +59,7 @@ depends=(aurorae
          qt6-svg
          qt6-tools
          qt6-wayland
-         systemd-libs
+         libelogind
          wayland
          xcb-util-cursor
          xcb-util-keysyms
@@ -88,4 +88,6 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
+
+  rm -r $pkgdir/usr/lib/systemd
 }

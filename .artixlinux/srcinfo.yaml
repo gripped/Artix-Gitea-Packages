@@ -68,7 +68,7 @@ pkgbase:
     - qt6-svg
     - qt6-tools
     - qt6-wayland
-    - systemd-libs
+    - libelogind
     - wayland
     - xcb-util-cursor
     - xcb-util-keysyms
