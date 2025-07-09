@@ -33,8 +33,9 @@ prepare() {
   patch -Np1 -i "${srcdir}/sysactions.patch"
 #sed -i 's|0.19|0.19.1|' configure.ac
 #sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_REQUIRE_VERSION([0.19])|' configure.ac
-sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.23.1], [external])|' configure.ac
+sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
 grep GETTEXT configure.ac | grep VERSION
+sed -i 's/ || exit 1//' autogen.sh
 #read
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
@@ -50,8 +51,6 @@ build() {
   CFLAGS+=" -Wno-incompatible-pointer-types"
   cd "$srcdir/${pkgname}"
   autopoint=$srcdir/autopoint ./autogen.sh
-echo $?
-read
   ./configure --prefix=/usr --disable-bodhi
   make
 }
