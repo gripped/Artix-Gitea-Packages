@@ -1,0 +1,16 @@
+--- a/src/modules/wizard/page_000.c	2025-07-08 10:03:14.390899224 +0200
++++ b/src/modules/wizard/page_000.c	2025-07-08 10:15:52.643490596 +0200
+@@ -31,12 +31,7 @@
+ {
+    Evas_Object *o;
+ 
+-   if (ecore_file_exists("/etc/bodhi/iso"))
+-     {
+-        e_wizard_title_set(_("Moksha"));
+-     }
+-   else
+-      e_wizard_title_set(_("Please Wait As We Are Loading Moksha Settings!"));
++   e_wizard_title_set(_("Moksha on Artix. Select your language."));
+ 
+    e_wizard_button_next_enable_set(0);
+    o = edje_object_add(pg->evas);
