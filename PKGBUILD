@@ -35,7 +35,7 @@ prepare() {
 #sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_REQUIRE_VERSION([0.19])|' configure.ac
 sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
 grep GETTEXT configure.ac | grep VERSION
-sed -i 's/ || exit 1//' autogen.sh
+sed -i 's/autoreconf --force --install || exit 1/autoreconf/' autogen.sh
 #read
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
