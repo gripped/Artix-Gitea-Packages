@@ -1,0 +1,48 @@
+---
+version: 1.52.1-1
+pkgbase:
+  name: lib32-libnm
+  pkgdesc: NetworkManager client library (32-bit)
+  pkgver: 1.52.1
+  pkgrel: 1
+  url: https://networkmanager.dev/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - lib32-dbus
+    - lib32-libndp
+    - lib32-libpsl
+    - lib32-polkit
+    - libxslt
+    - meson
+  depends:
+    - lib32-gcc-libs
+    - lib32-glib2
+    - lib32-glibc
+    - lib32-nspr
+    - lib32-nss
+    - lib32-util-linux
+    - libnm
+  provides:
+    - libnm.so
+  source:
+    - git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git?signed#tag=1.52.1
+  validpgpkeys:
+    - 3D10AD045AB4AAFF8E8F36AF9B980AC2FB874FEB
+    - F07F7C1EABD382F81CBFBA3B998D4828CD7E1656
+    - 2B5F3B2028801E15F57AAA309906C97AA15D984F
+    - 48FD6FAE515A77B48436821C8789567B8715CEBC
+    - ACFA41513D2854D0A72F55BE9A2C77A85F2D72FE
+    - 4B8EF9745A973724E965939189A2DA5AF73D5E3D
+    - E472337703D0C46002928B5790617850A125DE59
+    - 49EA7C670E0850E7419514F629C2366E4DFC5728
+    - 07F9AEC86144386D9576210B66A44781B4EBC2D0
+  b2sums:
+    - 0af9767688f43ccdca335c1655f4a0b7b2f0568f965b7cfc268aad63a4dfa0f0d9b86746a72e5d27923f0fb8fe8cc74d429fe977c10edea3b24dd47497d021b1
+pkgname:
+  - name: lib32-libnm
+# generated with artixpkg 0.36.4-1-any
