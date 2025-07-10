@@ -1,10 +1,10 @@
 ---
-version: 3.7.0-1
+version: 3.7.0-1.1
 pkgbase:
   name: git-lfs
   pkgdesc: Git extension for versioning large files
   pkgver: 3.7.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://git-lfs.github.com
   arch:
     - x86_64

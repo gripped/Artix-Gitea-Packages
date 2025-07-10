@@ -3,7 +3,7 @@
 
 pkgname=git-lfs
 pkgver=3.7.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Git extension for versioning large files"
 arch=('x86_64' 'aarch64')
 url="https://git-lfs.github.com"
