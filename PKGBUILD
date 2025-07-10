@@ -3,7 +3,7 @@
 # Contributor: SpepS <dreamspepser at yahoo dot it>
 
 pkgname=openimageio
-pkgver=3.0.7.0
+pkgver=3.0.8.1
 pkgrel=1
 pkgdesc="A library for reading and writing images, including classes, utilities, and applications"
 arch=('x86_64')
@@ -16,7 +16,7 @@ makedepends=('cmake' 'qt5-base' 'python' 'boost' 'mesa' 'fontconfig' 'libxrender
 optdepends=('qt5-base: iv image viewer'
             'python: bindings support')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/OpenImageIO/oiio/archive/refs/tags/v$pkgver.tar.gz")
-sha512sums=('f677e9111c8b48b6e2b09c3130ed77ea1aa6166c92da326d0b4c592d4a8ae9349a44190f3c2e758f827df853c16f3ea788efba2e80c06df761784b1960e2525f')
+sha512sums=('f99511c5815b3dd510dcddbf828f32e92c05d433880442e621e9d87ace6d68ed6230132fef9377a8e706ddd44824963b65b6294b7e389bacb2628a256b61bd0e')
 
 build() {
   cd OpenImageIO-$pkgver
