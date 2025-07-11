@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.8.4-2.1
+    version: 0.9.0-1
     packages:
-      - labwc-0.8.4-2.1-x86_64.pkg.tar.zst
+      - labwc-0.9.0-1-x86_64.pkg.tar.zst
     debug: []
