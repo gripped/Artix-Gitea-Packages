@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.07.0-1
+    version: 2025.07.1-1
     packages:
-      - python-xarray-2025.07.0-1-any.pkg.tar.zst
+      - python-xarray-2025.07.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2025.06.1-1
