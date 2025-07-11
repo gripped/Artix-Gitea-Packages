@@ -41,6 +41,7 @@ pkgbase:
   source:
     - https://github.com/JuliaLang/julia/releases/download/v1.11.6/julia-1.11.6-full.tar.gz
     - https://github.com/JuliaLang/julia/releases/download/v1.11.6/julia-1.11.6-full.tar.gz.asc
+    - localhost.patch
     - c12e8515.patch
     - julia-hardcoded-libs.patch
     - julia-libgit2-1.8.patch
@@ -52,6 +53,7 @@ pkgbase:
   sha256sums:
     - b268def41adc17496c3e0e7dcb5e27b2cbe6a1c61c78f6463544c5f4c734168a
     - SKIP
+    - fc94d316bd56902f1720da55c331d43d315ce487d6b4cc7e5ffcb207cf9a8299
     - 2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367
     - e981ce26bb2394333c83512a607e8aa48ae0d66ec40e0f0b6d97ec70b6baa39f
     - 3ba9a85464e874c8ac4caeba155a217e34c3e78e85eccaeb3c2a331ed83882b3
