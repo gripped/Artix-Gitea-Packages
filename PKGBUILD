@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=1.95.0
+pkgver=1.95.1
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -53,13 +53,13 @@ optdepends=(
 )
 # Defined in .stats.yml
 # curl -s https://raw.githubusercontent.com/openai/openai-python/refs/tags/v1.71.0/.stats.yml | grep openapi_spec_url | cut -d- -f5 | cut -d. -f1
-_openai_openapi_spec=2d116cda53321baa3479e628512def723207a81eb1cdaebb542bd0555e563bda
+_openai_openapi_spec=de3e91790d0b9f3ce26d679ac07079880ccc695bd8c878f961c4d577a5025a2e
 source=(
   "${_name}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
   "https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-${_openai_openapi_spec}.yml"
 )
-sha256sums=('48b1261ab12e3ca722a03c790b139a9e9e4ca10d07f2ea95f9e56861e4890b3b'
-            '2d116cda53321baa3479e628512def723207a81eb1cdaebb542bd0555e563bda')
+sha256sums=('f7e028ca21abe2742803c56f9978526be38fb1260e0aac33951bc4995c645597'
+            'de3e91790d0b9f3ce26d679ac07079880ccc695bd8c878f961c4d577a5025a2e')
 
 prepare() {
   cd "${_name}-${pkgver}"
