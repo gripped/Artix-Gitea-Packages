@@ -1,72 +1,31 @@
---- a/screenlayout/widget.py	2021-11-21 15:23:47.236666730 +0100
-+++ b/screenlayout/widget.py	2021-11-21 14:58:25.180000095 +0100
-@@ -145,6 +145,69 @@
-         os.chmod(file, stat.S_IRWXU)
-         self.load_from_file(file)
- 
-+    def save_to_startup(self, template=None, additional=None):
-+        """Save xrandr command to Moksha startupcommands file.
-+        
-+        Ignored in non moksha desktops or if the environmental variable
-+        MOKSHA_ARANDR_IGNORE is set regardless of the value it is set to
-+        
-+        A Bodhi linux hack added by ylee <ylee@bodhilinux.com>
-+        """
-+
-+        if 'Moksha' not in os.environ['DESKTOP'] or \
-+           'MOKSHA_ARANDR_IGNORE' in os.environ:
-+            return
-+        data = self._xrandr.save_to_shellscript_string(template, additional)
-+        data = data.split('\n')[1]+data.split('\n')[2]
-+        apps = ['xrandr', 'zarfy']
-+        user_apps = os.getenv('MOKSHA_RANDR_APPS')
-+        try:
-+            apps = apps + user_apps.split(':')
-+        except AttributeError:
-+            pass
+--- a/screenlayout/widget.py	2025-07-12 21:51:51.878372236 +0200
++++ b/screenlayout/widget.py	2025-07-12 21:47:35.704084088 +0200
+@@ -165,8 +165,8 @@
+             apps = apps + user_apps.split(':')
+         except AttributeError:
+             pass
+-        moksha_config = os.getenv('E_HOME_DIR')
+-        moksha_startup = os.path.expanduser(moksha_config + '/applications/startup/startupcommands')
 +
 +        moksha_startup = os.path.expanduser('~/.e/e/applications/startup/startupcommands')
-+        try:
-+            os.stat(moksha_startup)
-+            backup = True
-+        except OSError:
-+            backup = False
-+            open(moksha_startup+'.bak', 'a').close()
-+        if backup:
-+            os.rename(moksha_startup, moksha_startup+'.bak')
-+        os.chmod(moksha_startup+'.bak', stat.S_IRWXU | stat.S_IRWXG | stat.S_IROTH | stat.S_IXOTH)
-+
-+        with open(moksha_startup+'.bak') as start:
-+            replace = 'xrandr' in start.read()
-+        if replace:
-+            rflag = True
-+            with open(moksha_startup+'.bak', 'r') as bak, \
-+                 open(moksha_startup, 'w') as start:
-+                content = bak.readlines()
-+                sanitized = ''
-+                for line in content:
-+                    if line != '\n' and not any(cmd in line for cmd in apps):
-+                        sanitized += line
-+                    else:
-+                        if rflag and any(cmd in line for cmd in apps):
-+                            sanitized += data + '\n'
-+                            rflag = False
-+                start.writelines(sanitized)
-+        else:
-+            with open(moksha_startup+'.bak', 'r') as bak, \
-+                 open(moksha_startup, "w") as start:
-+                content = bak.readlines()
-+                sanitized = ''
-+                for line in content:
-+                    if line != '\n':
-+                        sanitized += line
-+                start.writelines(sanitized)
-+                if sanitized and sanitized[-1] != '\n':
-+                    start.write('\n')
-+                start.write(data+'\n')
-+        os.chmod(moksha_startup, stat.S_IRWXU | stat.S_IRWXG | stat.S_IROTH | stat.S_IXOTH)
-+
-+
-     #################### doing changes ####################
- 
-     def _set_something(self, which, output_name, data):
+         try:
+             os.stat(moksha_startup)
+             backup = True
+@@ -190,6 +190,8 @@
+                         sanitized += line
+                     else:
+                         if rflag and any(cmd in line for cmd in apps):
++                            if line.rstrip('\r*\n').endswith('\\'):
++                                data = data.rstrip('\r*\n') + ' | \\'
+                             sanitized += data + '\n'
+                             rflag = False
+                 start.writelines(sanitized)
+@@ -200,6 +202,8 @@
+                 sanitized = ''
+                 for line in content:
+                     if line != '\n':
++                        if not line.rstrip('\r*\n').endswith('\\'):
++                            line = line.rstrip('\r*\n') + ' | \\ \n'
+                         sanitized += line
+                 start.writelines(sanitized)
+                 if sanitized and sanitized[-1] != '\n':

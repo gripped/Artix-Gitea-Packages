@@ -1,14 +1,7 @@
 ---
 team: galaxy
-pkgbase:
-  name: moksha-arandr
-  version: 0.1.11-3
-  arch:
-    - any
-  pkgname:
-    - moksha-arandr
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,37 +12,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 0.1.11-3.1
+    packages:
+      - moksha-arandr-0.1.11-3.1-any.pkg.tar.zst
+    debug: []
   galaxy:
     version: 0.1.11-3
     packages:
       - moksha-arandr-0.1.11-3-any.pkg.tar.zst
+    debug: []

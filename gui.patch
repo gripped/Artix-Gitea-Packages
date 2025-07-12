@@ -1,37 +1,19 @@
---- a/screenlayout/gui.py	2021-11-21 15:23:47.216666730 +0100
-+++ b/screenlayout/gui.py	2021-11-21 14:58:25.156666762 +0100
-@@ -81,6 +81,7 @@
-                 <menuitem action="New" />
-                 <menuitem action="Open" />
-                 <menuitem action="SaveAs" />
-+                <menuitem action="SaveToStartup" />
-                 <separator />
-                 <menuitem action="Apply" />
-                 <menuitem action="LayoutSettings" />
-@@ -105,6 +106,7 @@
-             <toolitem action="New" />
+--- a/screenlayout/gui.py	2025-07-12 21:51:40.370737804 +0200
++++ b/screenlayout/gui.py	2025-07-12 21:47:35.703855270 +0200
+@@ -107,7 +107,6 @@
              <toolitem action="Open" />
              <toolitem action="SaveAs" />
-+            <toolitem action="SaveToStartup" />
+             <toolitem action="SaveToStartup" />
+-
          </toolbar>
      </ui>
      """
-@@ -120,6 +122,7 @@
+@@ -123,7 +122,7 @@
              ("New", Gtk.STOCK_NEW, None, None, None, self.do_new),
              ("Open", Gtk.STOCK_OPEN, None, None, None, self.do_open),
              ("SaveAs", Gtk.STOCK_SAVE_AS, None, None, None, self.do_save_as),
+-            ("SaveToStartup", Gtk.STOCK_SAVE, 'Moksha', None, 'Save to Moksha Startup', self.do_save_to_start),
 +            ("SaveToStartup", Gtk.STOCK_SAVE, 'Save to Startup', None, 'Save to Moksha Startup', self.do_save_to_start),
  
              ("Apply", Gtk.STOCK_APPLY, None, '<Control>Return', None, self.do_apply),
              ("LayoutSettings", Gtk.STOCK_PROPERTIES, None,
-@@ -263,6 +266,10 @@
-                 filename = filename + '.sh'
-             self.widget.save_to_file(filename, self.filetemplate)
- 
-+    @actioncallback
-+    def do_save_to_start(self):
-+         self.widget.save_to_startup(self.filetemplate)
-+
-     def _new_file_dialog(self, title, dialog_type, buttontype):  # pylint: disable=no-self-use
-         dialog = Gtk.FileChooserDialog(title, None, dialog_type)
-         dialog.add_button(Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL)
