@@ -1,0 +1,36 @@
+---
+version: 4.15.7-1
+pkgbase:
+  name: a2ps
+  pkgdesc: An Any to PostScript filter
+  pkgver: 4.15.7
+  pkgrel: 1
+  url: https://www.gnu.org/software/a2ps
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - gperf
+  depends:
+    - imagemagick
+    - perl
+    - psutils
+  backup:
+    - etc/a2ps/a2ps.cfg
+    - etc/a2ps/a2ps-site.cfg
+  source:
+    - https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.7.tar.gz
+    - https://ftp.gnu.org/gnu/a2ps/a2ps-4.15.7.tar.gz.sig
+    - a2ps-4.13c-emacs.patch
+    - a2ps-adhere-source-date-epoch.patch
+  validpgpkeys:
+    - 24093F016FFE8602EF449BB84C8EF3DA3FD37230
+  sha256sums:
+    - 715f38670afd950b4ca71c01f468feefad265ca52d3f112934c63c0a8bfbb8af
+    - SKIP
+    - 943739a788db47f10942477754f42c8c9b22cdaad4463bea4103c31a330de76a
+    - 305ba7b9a44e7d6480a23098efb27aab5daedde71defcfe2f1b01b70d025e3db
+pkgname:
+  - name: a2ps
+# generated with artixpkg 0.36.4-1-any
