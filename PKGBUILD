@@ -7,7 +7,7 @@ pkgname=(qt6-base
          qt6-xcb-private-headers)
 _pkgver=6.9.1
 pkgver=${_pkgver/-/}
-pkgrel=4.1
+pkgrel=4.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -106,6 +106,8 @@ prepare() {
   git -C $_pkgfn cherry-pick -n a63b47a7a6bef5ffcce5b5bdcfceda34faf0ee4b
   git -C $_pkgfn cherry-pick -n 3fd873079e2fe8ffad0595015230a82c765e27c1
   git -C $_pkgfn cherry-pick -n 6694c0fbfce6426ad4b8e2ffe8794b41ee69e32f
+  git -C $_pkgfn cherry-pick -n 2c8692adaed1c3374ca01842e166af79ed3861cc
+  git -C $_pkgfn cherry-pick -n 9f562f2203dec09dcf63006206e77c860bd82514
 }
 
 build() {
