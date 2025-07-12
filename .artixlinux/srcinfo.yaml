@@ -1,0 +1,27 @@
+---
+version: 0.17.0-1
+pkgbase:
+  name: python-pyzstd
+  pkgdesc: Python bindings to Zstandard (zstd) compression library
+  pkgver: 0.17.0
+  pkgrel: 1
+  url: https://pypi.org/project/pyzstd
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - zstd
+  source:
+    - https://files.pythonhosted.org/packages/source/p/pyzstd/pyzstd-0.17.0.tar.gz
+  sha256sums:
+    - d84271f8baa66c419204c1dd115a4dec8b266f8a2921da21b81764fa208c1db6
+pkgname:
+  - name: python-pyzstd
+# generated with artixpkg 0.36.4-1-any
