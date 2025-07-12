@@ -1,15 +1,3 @@
-From 810768f93b8b4ef62d33524d90c1a85d1a740731 Mon Sep 17 00:00:00 2001
-From: Dudemanguy <dudemanguy@artixlinux.org>
-Date: Mon, 16 Jun 2025 20:55:04 -0500
-Subject: [PATCH] fix types
-
----
- Source/MediaInfo/Export/Export_Graph.cpp           | 2 +-
- Source/MediaInfo/Export/Export_Graph_gvc_Include.h | 2 +-
- 2 files changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/Source/MediaInfo/Export/Export_Graph.cpp b/Source/MediaInfo/Export/Export_Graph.cpp
-index 1145cce..dd4bcca 100644
 --- a/Source/MediaInfo/Export/Export_Graph.cpp
 +++ b/Source/MediaInfo/Export/Export_Graph.cpp
 @@ -116,7 +116,7 @@ Ztring Dot2Svg(const Ztring& Dot)
@@ -21,8 +9,6 @@ index 1145cce..dd4bcca 100644
      bool Cairo=false;
  
      if (!Export_Graph::Load())
-diff --git a/Source/MediaInfo/Export/Export_Graph_gvc_Include.h b/Source/MediaInfo/Export/Export_Graph_gvc_Include.h
-index 2026ae4..a3191c3 100644
 --- a/Source/MediaInfo/Export/Export_Graph_gvc_Include.h
 +++ b/Source/MediaInfo/Export/Export_Graph_gvc_Include.h
 @@ -102,7 +102,7 @@ typedef int (*gvc_Module_gvFreeContext)(GVC_t*); static gvc_Module_gvFreeContext
@@ -34,6 +20,3 @@ index 2026ae4..a3191c3 100644
  typedef void (*gvc_Module_gvFreeRenderData)(char*); static gvc_Module_gvFreeRenderData gvFreeRenderData=NULL;
  typedef void (*gvc_Module_gvFinalize)(GVC_t*); static gvc_Module_gvFinalize gvFinalize=NULL;
  typedef graph_t* (*cgraph_Module_agmemread)(const char*); static cgraph_Module_agmemread agmemread=NULL;
--- 
-2.49.0
-

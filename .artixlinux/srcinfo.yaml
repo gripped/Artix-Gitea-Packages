@@ -1,10 +1,10 @@
 ---
-version: 25.04-2
+version: 25.04-3
 pkgbase:
   name: libmediainfo
   pkgdesc: Shared library for MediaInfo
   pkgver: 25.04
-  pkgrel: 2
+  pkgrel: 3
   url: https://mediaarea.net
   arch:
     - x86_64
@@ -22,13 +22,13 @@ pkgbase:
     - zlib
   source:
     - libmediainfo-25.04.tar.xz::https://mediaarea.net/download/source/libmediainfo/25.04/libmediainfo_25.04.tar.xz
-    - 0001-fix-types.patch
+    - graphviz-13.patch
   sha512sums:
     - 2dc1cfc7317c0d08505499ba775d69312a0b83d4a3b4200eb50ca258018a2fa4d12aab2a9c487df42eda92ad2cb221156d90ffbe60e3e47c0382e7a80c514ea0
-    - 355bb7c45be08d15a1c0c5c211689d06e8db2b9b0a9d511ce175e2b8b3be53a59e2d6ad56618e80553f4db2513e99f3cf33d47fadc9e610c60420190683a0b44
+    - c5d9d5f4cb1a22e1e7fe9d08f6cb1c60fb25a74a653473d9f441a8c936959fdf770b7e9e200683ed884351bd825d3e7de73556186e9b39668285cc93d414b336
   b2sums:
     - fe0d2a13030da0fc36c6a91d2f534e69b2c41e1ce0c9f9d03c06df903f00274276e5e3d783396e475fd80bf7222337bb1b598a6076a11c7b70c79815769cd7ef
-    - 377cf985f7d813c67ee3fc92ca0983df1302921ff49ba6a3a31f8984e97cd31386c1bcea7a960db091619d1823a838ff9e758c582bc22728a11b3205c382bcfe
+    - a26d3207609bf16f66ef12ee54104af0b8660288abb2f9be6c73eb314fa347fd9f38cb15215ce23dbc63fe0a2525437f330a4bee2efd5b702ee7dbdb5b3b8660
 pkgname:
   - name: libmediainfo
 # generated with artixpkg 0.36.4-1-any
