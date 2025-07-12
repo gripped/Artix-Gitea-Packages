@@ -1,9 +1,9 @@
 ---
-version: 6.135.27-1
+version: 6.135.29-1
 pkgbase:
   name: python-hypothesis
   pkgdesc: Advanced Quickcheck style testing library for Python
-  pkgver: 6.135.27
+  pkgver: 6.135.29
   pkgrel: 1
   url: https://hypothesis.readthedocs.org
   arch:
@@ -53,11 +53,11 @@ pkgbase:
     - 'python-rich: for CLI'
     - 'python-watchdog: for tracking file system events'
   source:
-    - python-hypothesis::git+https://github.com/HypothesisWorks/hypothesis#tag=hypothesis-python-6.135.27
+    - python-hypothesis::git+https://github.com/HypothesisWorks/hypothesis#tag=hypothesis-python-6.135.29
   sha512sums:
-    - 38a8052cdd845359c4da8f2626303ccab3bdf86df69f6e40c946cbe351c688886bd676408558f69593a955dee76bc420ffe7ffd5a2ecae195366ab1bb12dc2de
+    - cd60c5e5aed47e0c49542c1114d4443bf8bd3214fdc8a08d6f90cbf187be7213b67df00b6d4a7d740e419227d50862708eae4ca48cc0d57ca759cc09844de304
   b2sums:
-    - f55a15483489669dcefb8894c690239af75c90c9625caff888006373303482fd4f10445ce0476de31851eba8ac07228c273933942134c11bd5006952f3aee28a
+    - 5e31f0415d2eb23cfd86fd47c9c1db9a05b07e64c97abcc9f4105b7bc7b2f70cad883ba5cd2a6c89f71a09c53da2037ddc2403b757f68d569bc3cfd99e1c3323
 pkgname:
   - name: python-hypothesis
 # generated with artixpkg 0.36.4-1-any
