@@ -5,8 +5,8 @@
 
 _base=textual
 pkgname=python-${_base}
-pkgver=3.7.1
-pkgrel=1.1
+pkgver=4.0.0
+pkgrel=1
 pkgdesc="Modern Text User Interface framework"
 arch=(any)
 url="https://github.com/Textualize/${_base}"
@@ -18,7 +18,7 @@ optdepends=('python-tree-sitter: for syntax highlighting support'
             'python-tree-sitter-languages: for custom languages support'
             'python-textual-dev: tools for developers')
 source=(${_base}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)
-sha512sums=('1a39566f7832eac05840159f10a07f11cf2cf42a621b972779b37a8658c88caea090510150e512c3a7494f1c9372a59a966b01d773ed066799f2b1b1124d506a')
+sha512sums=('532ce1ef47e4abfc9025aea36f5dcf9612a523ed0cc29a6c03ff642a00579807de93f0ebc85120af3fd296445eb1e5afd8ae92042928d48f917e56f1819c2b82')
 
 build() {
   cd ${_base}-${pkgver}
@@ -29,7 +29,7 @@ check() {
   cd ${_base}-${pkgver}
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  # Execute tests in parallel
+  # Execute tests in parallel 
   test-env/bin/python -m pytest \
     -n auto \
     --ignore=tests/test_markdown.py \
