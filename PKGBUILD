@@ -7,7 +7,7 @@ pkgdesc='wlroots-based window-stacking compositor for wayland'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
 license=('GPL-2.0-only')
-depends=(cairo glib2 glibc libinput libpng librsvg libsfdo libwlroots-0.18.so
+depends=(cairo glib2 glibc libinput libpng librsvg libsfdo libwlroots-0.19.so
          libxcb libxkbcommon libxml2 pango pixman ttf-font wayland xorg-xwayland)
 makedepends=('meson' 'cmake' 'scdoc' 'wayland-protocols')
 provides=(wayland-compositor)
