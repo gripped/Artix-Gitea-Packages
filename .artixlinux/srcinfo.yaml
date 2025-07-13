@@ -1,8 +1,8 @@
 ---
-version: 6.4.0-1
+version: 6.4.1-1
 pkgbase:
   name: rocm-hip-sdk
-  pkgver: 6.4.0
+  pkgver: 6.4.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/en/latest/
   arch:
@@ -86,4 +86,4 @@ pkgname:
       - rocm-hip-libraries
       - rocm-llvm
       - miopen-hip
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
