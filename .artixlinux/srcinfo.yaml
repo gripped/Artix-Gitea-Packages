@@ -1,0 +1,34 @@
+---
+version: 3.2.1-1
+pkgbase:
+  name: python-tappy
+  pkgdesc: Test Anything Protocol (TAP) tools for Python
+  pkgver: 3.2.1
+  pkgrel: 1
+  url: https://pypi.python.org/pypi/tap.py
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-tests
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-hatchling
+  depends:
+    - python
+    - python-babel
+    - python-pyaml
+    - python-more-itertools
+  options:
+    - '!emptydirs'
+  source:
+    - https://files.pythonhosted.org/packages/source/t/tap_py/tap_py-3.2.1.tar.gz
+  sha256sums:
+    - d03c9e6af0a56fad994f1c69f14041e676811d73eeeef20bf4077c43d621d608
+pkgname:
+  - name: python-tappy
+# generated with artixpkg 0.36.4-1-any
