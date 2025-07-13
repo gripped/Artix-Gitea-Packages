@@ -1,0 +1,27 @@
+---
+version: 1.647-2
+pkgbase:
+  name: perl-dbi
+  pkgdesc: Database independent interface for Perl
+  pkgver: 1.647
+  pkgrel: 2
+  url: http://search.cpan.org/dist/DBI/
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  checkdepends:
+    - perl-test-pod
+    - perl-test-pod-coverage
+  depends:
+    - perl
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-1.647.tgz
+  sha512sums:
+    - 365b9d51d3c17bb3d8ce6941ef5141512e5aaf4886a62297cb4b56f8bfce9d49d45163ba3841cef59040ff649c752136407c6e8355f8f5a3b2244efd8ef6b0d7
+pkgname:
+  - name: perl-dbi
+# generated with artixpkg 0.36.4-1-any
