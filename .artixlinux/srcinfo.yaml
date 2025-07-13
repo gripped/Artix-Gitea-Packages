@@ -1,0 +1,36 @@
+---
+version: 7.00-2
+pkgbase:
+  name: perl-http-message
+  pkgdesc: HTTP style messages
+  pkgver: 7.00
+  pkgrel: 2
+  url: https://search.cpan.org/dist/HTTP-Message
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  checkdepends:
+    - perl-io-compress-brotli
+    - perl-test-needs
+    - perl-try-tiny
+  depends:
+    - perl
+    - perl-clone
+    - perl-encode-locale
+    - perl-http-date
+    - perl-io-html
+    - perl-lwp-mediatypes
+    - perl-uri
+  conflicts:
+    - perl-libwww<6
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/libwww-perl/HTTP-Message/archive/v7.00/perl-http-message-7.00.tar.gz
+  sha512sums:
+    - 0ad1a6a42cf0351b447918f867bb2879e4a1f0b511e2177e73e5148be0b06c4094ccf628eafa7d6eed4388fe23034344fe0d091da00be41c73b3e4b17b8d5e16
+pkgname:
+  - name: perl-http-message
+# generated with artixpkg 0.36.4-1-any
