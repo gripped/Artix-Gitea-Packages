@@ -1,0 +1,35 @@
+---
+version: 1.66-2
+pkgbase:
+  name: perl-datetime
+  pkgdesc: A complete, easy to use date and time object
+  pkgver: 1.66
+  pkgrel: 2
+  url: https://search.cpan.org/dist/DateTime
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  makedepends:
+    - perl-module-build
+  depends:
+    - perl-datetime-timezone>=0.59
+    - perl-datetime-locale>=0.41
+    - perl-params-validate>=0.76
+    - perl-math-round
+    - perl-namespace-autoclean
+    - perl-specio
+    - perl-eval-closure
+    - perl-params-validationcompiler
+  provides:
+    - perl-datetime=1.6600
+  options:
+    - '!emptydirs'
+  source:
+    - https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-1.66.tar.gz
+  sha512sums:
+    - 18e371dad068b1e13415bf00274e4a3f421e6afc53eca9dbe07f63b27e8b71a8f0466fa3fa9f91c3d4b66a6f6c8cb0541f15f9534148fe57dbb813283c58ebdb
+pkgname:
+  - name: perl-datetime
+# generated with artixpkg 0.36.4-1-any
