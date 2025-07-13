@@ -1,0 +1,38 @@
+---
+version: 2.84-2
+pkgbase:
+  name: perl-alien-build
+  pkgdesc: Build external dependencies for use in CPAN
+  pkgver: 2.84
+  pkgrel: 2
+  url: https://metacpan.org/release/Alien-Build
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  checkdepends:
+    - perl-alien-base-modulebuild
+    - perl-alien-cmake3
+    - perl-env-shellwords
+    - perl-pkgconfig
+    - perl-pkgconfig-libpkgconf
+    - perl-readonly
+    - perl-sort-versions
+    - wget
+  makedepends:
+    - perl-test2-suite
+  depends:
+    - perl-capture-tiny
+    - perl-ffi-checklib
+    - perl-file-chdir
+    - perl-file-which
+    - perl-path-tiny
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Build-2.84.tar.gz
+  sha512sums:
+    - 48f67543e44651f73d4f7668ea4e34d2b522cf8ca6cf4eb0713f13809d5876ed1c1439340e3f0277cac989e17bc03fc0d7671bc26272a39e7fbeb7cef5862784
+pkgname:
+  - name: perl-alien-build
+# generated with artixpkg 0.36.4-1-any
