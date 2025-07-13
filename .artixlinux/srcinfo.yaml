@@ -1,0 +1,25 @@
+---
+version: 0.66-2
+pkgbase:
+  name: perl-berkeleydb
+  pkgdesc: Interface to Berkeley DB
+  pkgver: 0.66
+  pkgrel: 2
+  url: https://search.cpan.org/dist/BerkeleyDB/
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl
+    - db5.3
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/P/PM/PMQS/BerkeleyDB-0.66.tar.gz
+  sha256sums:
+    - c64138df293afcd961fc6d5d4253992d94dcbbfbd54bf889565cc8be4fe6b291
+pkgname:
+  - name: perl-berkeleydb
+# generated with artixpkg 0.36.4-1-any
