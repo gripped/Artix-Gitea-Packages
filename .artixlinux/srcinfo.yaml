@@ -1,0 +1,26 @@
+---
+version: 0.47-2
+pkgbase:
+  name: perl-clone
+  pkgdesc: Recursive copy of nested objects.
+  pkgver: 0.47
+  pkgrel: 2
+  url: https://github.com/garu/Clone
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  checkdepends:
+    - perl-b-cow
+  depends:
+    - perl
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-0.47.tar.gz
+  sha512sums:
+    - dc5ebde05ecafbd3089cdb978083584ad77e1e4dce2e95e466b1cc8357092422a36489d2e9cda99c8009a8d7a0bd18466e3c21b580b95c29fb9ad843911bb9fe
+pkgname:
+  - name: perl-clone
+# generated with artixpkg 0.36.4-1-any
