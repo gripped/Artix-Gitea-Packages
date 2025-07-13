@@ -1,10 +1,10 @@
 ---
-version: 0.087-1
+version: 0.087-2
 pkgbase:
   name: perl-cryptx
   pkgdesc: Cryptographic toolkit
   pkgver: 0.087
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/CryptX
   arch:
     - x86_64
