@@ -1,0 +1,29 @@
+---
+version: 1:0.019-2
+pkgbase:
+  name: perl-io-compress-brotli
+  pkgdesc: Read/write Brotli buffers/streams
+  pkgver: 0.019
+  pkgrel: 2
+  epoch: 1
+  url: https://metacpan.org/release/IO-Compress-Brotli
+  arch:
+    - x86_64
+  license:
+    - PerlArtistic
+    - GPL
+  depends:
+    - perl
+    - brotli
+    - perl-file-slurper
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/T/TI/TIMLEGGE/IO-Compress-Brotli-0.019.tar.gz
+    - use-system-brotli.patch
+  sha512sums:
+    - d81fb94dfbdae24af3985349ccccfac9d5a863452b173542f7718e3a1ffcf18819b4456e2e0c305afabe0eeb336c0ad648d4d3f0fdb1f6229e82e0fad4751628
+    - 0a1993afd163e11cec04a5a305d0035b3fd98071ed051672e3adb46355e0809a559292e025e01bec02c42fe8015bccd2f1dbe3278c170ffdae75cb477c032dd8
+pkgname:
+  - name: perl-io-compress-brotli
+# generated with artixpkg 0.36.4-1-any
