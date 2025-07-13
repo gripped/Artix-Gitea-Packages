@@ -1,0 +1,41 @@
+---
+version: 1.17-5
+pkgbase:
+  name: perl-alien-base-modulebuild
+  pkgdesc:
+    'A Module::Build subclass for building Alien:': modules and their libraries
+  pkgver: 1.17
+  pkgrel: 5
+  url: https://metacpan.org/release/Alien-Base-ModuleBuild
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  checkdepends:
+    - perl-acme-alien-dontpanic
+    - perl-inline
+    - perl-inline-c
+    - perl-inline-cpp
+  makedepends:
+    - perl-test2-suite
+  depends:
+    - perl-alien-build
+    - perl-archive-extract
+    - perl-capture-tiny
+    - perl-file-chdir
+    - perl-html-parser
+    - perl-module-build
+    - perl-path-tiny
+    - perl-shell-config-generate
+    - perl-shell-guess
+    - perl-sort-versions
+    - perl-uri
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/P/PL/PLICEASE/Alien-Base-ModuleBuild-1.17.tar.gz
+  sha512sums:
+    - 06c463ca6be60505805c49c44e91afca5e4e8835667b40f7536627b443621a7f30c7f75634b1dcaeb664f7f83c672cf7e324ef0e48673adbab122f4088b7727a
+pkgname:
+  - name: perl-alien-base-modulebuild
+# generated with artixpkg 0.36.4-1-any
