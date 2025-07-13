@@ -1,0 +1,23 @@
+---
+version: 0.22-3
+pkgbase:
+  name: perl-file-fcntllock
+  pkgdesc: Perl module for file locking with fcntl(2)
+  pkgver: 0.22
+  pkgrel: 3
+  url: http://search.cpan.org/dist/$_perlmod/
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - glibc
+    - perl
+  source:
+    - http://search.cpan.org/CPAN/authors/id/J/JT/JTT/File-FcntlLock-0.22.tar.gz
+  sha256sums:
+    - 9a9abb2efff93ab73741a128d3f700e525273546c15d04e7c51c704ab09dbcdf
+pkgname:
+  - name: perl-file-fcntllock
+# generated with artixpkg 0.36.4-1-any
