@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 13.30-3
+    packages:
+      - perl-image-exiftool-13.30-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
