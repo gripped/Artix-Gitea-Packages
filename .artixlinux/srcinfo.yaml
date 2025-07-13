@@ -1,10 +1,10 @@
 ---
-version: 2.23.0-1
+version: 2.23.0-2
 pkgbase:
   name: python-aiobotocore
   pkgdesc: asyncio support for botocore library using aiohttp
   pkgver: 2.23.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/aio-libs/aiobotocore
   arch:
     - any
