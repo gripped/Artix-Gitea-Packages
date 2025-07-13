@@ -1,10 +1,10 @@
 ---
-version: 13.1.0-1
+version: 13.1.0-2
 pkgbase:
   name: graphviz
   pkgdesc: Graph visualization software
   pkgver: 13.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.graphviz.org/
   install: install
   arch:
