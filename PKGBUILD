@@ -2,7 +2,7 @@
 
 pkgname=perl-alien-build-plugin-download-gitlab
 pkgver=0.01
-pkgrel=4
+pkgrel=5
 pkgdesc="Alien::Build plugin to download from GitLab"
 arch=('any')
 license=('PerlArtistic')
