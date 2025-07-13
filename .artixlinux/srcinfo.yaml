@@ -1,0 +1,27 @@
+---
+version: 0.73_06-7
+pkgbase:
+  name: perl-crypt-ssleay
+  pkgdesc: OpenSSL glue that provides LWP https support
+  pkgver: 0.73_06
+  pkgrel: 7
+  url: https://search.cpan.org/dist/Crypt-SSLeay
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl-lwp-protocol-https
+    - perl-try-tiny
+    - perl-path-class
+    - perl-bytes-random-secure
+  options:
+    - '!emptydirs'
+  source:
+    - https://www.cpan.org/CPAN/authors/id/N/NA/NANIS/Crypt-SSLeay-0.73_06.tar.gz
+  sha256sums:
+    - f8ecca45c87eb91325992b13f0594f808e6f1bc4c3b9a7f141b9a838384d252c
+pkgname:
+  - name: perl-crypt-ssleay
+# generated with artixpkg 0.36.4-1-any
