@@ -1,10 +1,10 @@
 ---
-version: 16.9-1
+version: 16.9-2
 pkgbase:
   name: postgresql-old-upgrade
   pkgdesc: PostgreSQL build for migrating between major versions with pg_upgrade
   pkgver: 16.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.postgresql.org/
   arch:
     - x86_64
@@ -45,4 +45,4 @@ pkgname:
       - 'perl: for PL/Perl support'
       - 'python: for PL/Python 3 support'
       - 'tcl: for PL/Tcl support'
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
