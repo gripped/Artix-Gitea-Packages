@@ -1,9 +1,9 @@
 ---
-version: 6.15.0-1
+version: 6.16.0-1
 pkgbase:
   name: kdnssd
   pkgdesc: Abstraction to system DNSSD features
-  pkgver: 6.15.0
+  pkgver: 6.16.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -22,15 +22,15 @@ pkgbase:
     - glibc
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.15/kdnssd-6.15.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.15/kdnssd-6.15.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.16/kdnssd-6.16.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.16/kdnssd-6.16.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 192164a395ce9f0667184cae78f369a7c0b8acab0e0d073cdedb2a54bc7c4d5a
+    - b08bdf05c7d98e31366995a2087ac7471a8993c49917d3cd79c0ba1d2f69a8e0
     - SKIP
 pkgname:
   - name: kdnssd
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
