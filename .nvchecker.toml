@@ -1,0 +1,4 @@
+[python-i3ipc]
+source = "git"
+git = "https://github.com/altdesktop/i3ipc-python.git"
+prefix = "v"
