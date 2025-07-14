@@ -1,9 +1,9 @@
 ---
-version: 6.15.0-1
+version: 6.16.0-1
 pkgbase:
   name: syndication
   pkgdesc: RSS/Atom parser library
-  pkgver: 6.15.0
+  pkgver: 6.16.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -23,15 +23,15 @@ pkgbase:
     - kcodecs
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.15/syndication-6.15.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.15/syndication-6.15.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.16/syndication-6.16.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.16/syndication-6.16.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 8d6ade8812295a9d3978ac1b2cd46cc0fb1819c598001562582851d9442ee01a
+    - 901f5270720911818174024e6cd2fe44c94c752f36db0ce18d3a7dcd9a6cb6de
     - SKIP
 pkgname:
   - name: syndication
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
