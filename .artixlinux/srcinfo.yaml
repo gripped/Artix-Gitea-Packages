@@ -1,10 +1,10 @@
 ---
-version: 1.10.1-1
+version: 1.10.1-2
 pkgbase:
   name: znc
   pkgdesc: An IRC bouncer with modules & scripts support
   pkgver: 1.10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.znc.in/
   install: znc.install
   arch:
