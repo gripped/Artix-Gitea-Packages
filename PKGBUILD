@@ -1,0 +1,43 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Daniel Eklöf <daniel at ekloef dot se>
+
+pkgname=fuzzel
+pkgver=1.12.0
+pkgrel=1
+pkgdesc='Application launcher for wlroots based Wayland compositors'
+url="https://codeberg.org/dnkl/$pkgname"
+arch=(x86_64)
+license=(MIT)
+depends=(cairo
+         fcft
+         fontconfig
+         libfcft.so
+         libpng
+         libxkbcommon
+         pixman
+         wayland
+         librsvg) # use librsvg instead of bundled nanosvg
+makedepends=(meson
+             scdoc
+             tllist
+             wayland-protocols)
+backup=('etc/xdg/fuzzel/fuzzel.ini')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+sha256sums=('7f23b86d8fc635c368c69be7227aa7f8068a6ec7d07305a33c12db259400d3e8')
+
+build() {
+	cd "$pkgname"
+	artix-meson \
+		-Denable-cairo=enabled \
+		-Dpng-backend=libpng \
+		-Dsvg-backend=librsvg \
+		. build
+	meson compile -C build
+}
+
+package() {
+	cd "$pkgname"
+	meson install -C build --destdir "$pkgdir"
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}
