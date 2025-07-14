@@ -1,10 +1,10 @@
 ---
-version: 1.56.1-1
+version: 1.56.1-2
 pkgbase:
   name: libguestfs
   pkgdesc: Access and modify virtual machine disk images
   pkgver: 1.56.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://libguestfs.org/
   arch:
     - x86_64
