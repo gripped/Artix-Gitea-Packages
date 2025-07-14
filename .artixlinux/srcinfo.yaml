@@ -1,10 +1,10 @@
 ---
-version: 6.4.1-1
+version: 6.4.1-2
 pkgbase:
   name: hsa-rocr
   pkgdesc: HSA Runtime API and runtime for ROCm
   pkgver: 6.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ROCm/ROCR-Runtime
   arch:
     - x86_64
@@ -23,6 +23,7 @@ pkgbase:
     - libelf
     - libdrm
     - rocm-device-libs
+    - rocprofiler-register
   provides:
     - hsakmt-roct=6.4.1
   replaces:
@@ -37,4 +38,4 @@ pkgbase:
     - 6b7c62245fd9021ade8046e6a769e48c8c1868131dbac19531befc5f2a4c25b5
 pkgname:
   - name: hsa-rocr
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
