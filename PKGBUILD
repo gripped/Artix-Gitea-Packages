@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=23.1
+pkgrel=23.2
 _commit="afc09c5e44a7dc94bbd7f38d7ef5f2517624379f"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -17,6 +17,8 @@ source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=$
         "page_000.patch"
         "page_040.patch"
         "e_wizard.patch"
+        "e_main_c.patch"
+        "e_src.patch"
         "eina-log.sh"
         "80-local.rules"
         "sysactions.patch"
@@ -30,11 +32,13 @@ prepare() {
   patch -Np1 -i "${srcdir}/page_000.patch"
   patch -Np1 -i "${srcdir}/page_040.patch"
   patch -Np1 -i "${srcdir}/e_wizard.patch"
+  patch -Np1 -i "${srcdir}/e_src.patch"
+  patch -Np1 -i "${srcdir}/e_main_c.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
 sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
-  sed -i 's/MokshaArcGreen/default/g' config/bodhi/e.src
+  #sed -i 's/MokshaArcGreen/default/g' config/bodhi/e.src
   sed -i 's/About Operating System/Moksha Desktop/g' po/*.po*
   sed -i 's/Bodhi/Artix/g' config/bodhi/profile.desktop
   cp "$srcdir/artix-icon.png" config/bodhi/icon.png
@@ -101,6 +105,8 @@ sha256sums=('e341fdda21577e53a00ec39e02442a15db29b7f81f19c8797e0e20716af6ad0e'
             'f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb'
             'aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98'
             'c60c2c7594aeb5e6773c2366b41449af5535f1694eebc9d6ad5e7a92876d9cd1'
+            '510748ae2273ded9ae126333a7dbd6c115140f675e6589978c438e89ef29458f'
+            '81bc98939acf03bbf77575b582a1db97c61c4509b1abcdc15a435a0d6ba4d431'
             '0bd52f4d66bd5f964996f88b379e6b8f50fcf457151ff30083d2d1b13f27dc36'
             '67a67d03fbfb59edecafc6bd3311e258e79da12726dcb1a44f037d54f31a1797'
             '8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c'

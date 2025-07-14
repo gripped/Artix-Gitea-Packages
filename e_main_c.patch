@@ -1,0 +1,14 @@
+--- a/src/bin/e_main.c	2025-07-14 09:36:00.835440273 +0200
++++ b/src/bin/e_main.c	2025-07-14 09:44:26.793456917 +0200
+@@ -595,8 +595,9 @@
+         /* who wish to use Qt apps without any gnome or gtk usage may choose to    */
+         /* install qt5ct and overwrite this variable with qt5ct and use that to    */
+         /* configure there Qt5 applications.                                       */
+-        e_util_env_set("QT_QPA_PLATFORMTHEME", "gtk2");
+-        e_util_env_set("QT_STYLE_OVERRIDE", "gtk2");
++        /* Artist:                                         */
++        /* e_util_env_set("QT_QPA_PLATFORMTHEME", "gtk2"); */
++        /* e_util_env_set("QT_STYLE_OVERRIDE", "gtk2");    */
+      }
+ 
+    _fix_user_default_edj();

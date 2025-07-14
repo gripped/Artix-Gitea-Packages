@@ -1,0 +1,42 @@
+--- a/config/bodhi/e.src	2025-07-14 09:41:24.137435523 +0200
++++ b/config/bodhi/e.src	2025-07-14 09:42:48.367150990 +0200
+@@ -1,30 +1,10 @@
+ group "E_Config" struct {
+     group "env_vars" list {
+         group "E_Config_Env_Var" struct {
+-            value "var" string: "QT_STYLE_OVERRIDE";
+-            value "val" string: "gtk2";
+-            value "unset" uchar: 0;
+-        }
+-        group "E_Config_Env_Var" struct {
+-            value "var" string: "QT_QPA_PLATFORMTHEME";
+-            value "val" string: "gtk2";
+-            value "unset" uchar: 0;
+-        }
+-        group "E_Config_Env_Var" struct {
+             value "var" string: "XDG_MENU_PREFIX";
+             value "val" string: "moksha-";
+             value "unset" uchar: 0;
+         }
+-        group "E_Config_Env_Var" struct {
+-            value "var" string: "BODHI_APTURL";
+-            value "val" string: "0";
+-            value "unset" uchar: 0;
+-        }
+-        group "E_Config_Env_Var" struct {
+-            value "var" string: "MOKSHA_PKEXEC";
+-            value "val" string: "leafpad:thunar";
+-            value "unset" uchar: 0;
+-        }
+     }
+     group "syscon.actions" list {
+         group "E_Config_Syscon_Action" struct {
+@@ -1712,7 +1692,7 @@
+     group "themes" list {
+         group "E_Config_Theme" struct {
+             value "category" string: "theme";
+-            value "file" string: "/usr/share/enlightenment/data/themes/MokshaGreen.edj";
++            value "file" string: "/usr/share/enlightenment/data/themes/default.edj";
+         }
+     }
+     group "bad_modules" list {
