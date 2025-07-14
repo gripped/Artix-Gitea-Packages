@@ -1,0 +1,80 @@
+---
+version: 2.14.14-3
+pkgbase:
+  name: pidgin
+  pkgver: 2.14.14
+  pkgrel: 3
+  url: https://pidgin.im/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - startup-notification
+    - gtkspell
+    - libxss
+    - nss
+    - libsasl
+    - libsm
+    - libidn
+    - libgadu
+    - python
+    - hicolor-icon-theme
+    - farstream
+    - tk
+    - libnsl
+    - avahi
+    - ca-certificates
+    - intltool
+    - libnm
+    - dbus-glib
+    - libgnt
+    - libxcrypt
+  options:
+    - '!emptydirs'
+  source:
+    - https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.14/pidgin-2.14.14.tar.bz2
+    - https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.14/pidgin-2.14.14.tar.bz2.asc
+  validpgpkeys:
+    - 40DE1DC7288FE3F50AB938C548F66AFFD9BDB729
+  sha256sums:
+    - 0ffc9994def10260f98a55cd132deefa8dc4a9835451cc0e982747bd458e2356
+    - SKIP
+pkgname:
+  - name: pidgin
+    pkgdesc: Multi-protocol instant messaging client
+    depends:
+      - libpurple
+      - startup-notification
+      - gtkspell
+      - libxss
+      - libsm
+      - gst-plugins-base
+      - gst-plugins-good
+      - hicolor-icon-theme
+    optdepends:
+      - 'aspell: for spelling correction'
+  - name: libpurple
+    pkgdesc: IM library extracted from Pidgin
+    depends:
+      - farstream
+      - libsasl
+      - libidn
+      - libnsl
+      - libgadu
+      - dbus-glib
+      - nss
+      - libnm
+      - libxcrypt
+    optdepends:
+      - 'avahi: Bonjour protocol support'
+      - 'ca-certificates: SSL CA certificates'
+      - 'python-dbus: for purple-remote and purple-url-handler'
+      - 'tk: Tcl/Tk scripting support'
+  - name: finch
+    pkgdesc: A ncurses-based messaging client
+    depends:
+      - libpurple
+      - libgnt
+      - libx11
+# generated with artixpkg 0.36.4-1-any
