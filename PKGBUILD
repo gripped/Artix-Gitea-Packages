@@ -3,8 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kcrash
-pkgver=6.15.0
-pkgrel=1.1
+pkgver=6.16.0
+pkgrel=1
 pkgdesc='Support for application crash analysis and bug report from apps'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
@@ -17,10 +17,10 @@ depends=(gcc-libs
 makedepends=(doxygen
              extra-cmake-modules
              qt6-tools)
-#optdepends=('drkonqi: KDE crash handler application')
+optdepends=('drkonqi: KDE crash handler application')
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('99248c7ca8a4c2a17836a8cc34ffab920a223b8095029c6304613dd9734f1474'
+sha256sums=('06e3a109ba597a395154330250495c3e03a774b7d6f213a352789ad9c3691dc3'
             'SKIP')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
               E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
