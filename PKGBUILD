@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Daniel Eklöf <daniel at ekloef dot se>
+
+# TODO: un-vendor nanosvg, migrate package from AUR and build against that
+
+pkgname=fcft
+pkgver=3.3.1
+pkgrel=1
+pkgdesc='Simple library for font loading and glyph rasterization'
+arch=(x86_64)
+url=https://codeberg.org/dnkl/${pkgname}
+license=(MIT)
+depends=(fontconfig
+         freetype2
+         harfbuzz
+         libutf8proc
+         pixman)
+makedepends=(meson
+             scdoc
+             tllist)
+checkdepends=(ttf-dejavu)
+provides=(libfcft.so)
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+sha256sums=('f18bf79562e06d41741690cd1e07a02eb2600ae39eb5752eef8a698f603a482c')
+
+build() {
+	artix-meson $pkgname build \
+		-Dgrapheme-shaping=enabled \
+		-Drun-shaping=enabled
+}
+
+check() {
+	meson test -C build
+}
+
+package() {
+	meson install -C build --destdir "$pkgdir"
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" "$pkgname/LICENSE"
+	install -Dm0644 "$pkgname/unicode/license.txt" "$pkgdir/usr/share/licenses/$pkgname/LICENSE.unicode"
+}
