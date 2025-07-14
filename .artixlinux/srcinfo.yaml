@@ -1,0 +1,39 @@
+---
+version: 1.14.1-2
+pkgbase:
+  name: strip-nondeterminism
+  pkgdesc: Tool for stripping bits of non-deterministic information from files
+  pkgver: 1.14.1
+  pkgrel: 2
+  url: https://salsa.debian.org/reproducible-builds/strip-nondeterminism
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+  depends:
+    - perl
+    - perl-archive-zip
+    - perl-archive-cpio
+    - perl-sub-override
+  options:
+    - '!emptydirs'
+  source:
+    - https://salsa.debian.org/reproducible-builds/strip-nondeterminism/-/archive/1.14.1/strip-nondeterminism-1.14.1.tar.bz2
+    - https://salsa.debian.org/reproducible-builds/reproducible-lfs/raw/master/releases/strip-nondeterminism/strip-nondeterminism-1.14.1.tar.bz2.asc
+  validpgpkeys:
+    - C2FE4BD271C139B86C533E461E953E27D4311E58
+    - EF5D84C1838F2EB6D8968C0410378EFC2080080C
+    - 2F5DAF3FC1F793D94F3D900CA721DA055374AA4F
+    - B8BF54137B09D35CF026FE9D091AB856069AAA1C
+    - 66AE2B4AFCCF3F52DA184D184B043FCDB9444540
+  sha256sums:
+    - 149e5e7585cd1d8e777564d5772fb1afa5ed7be4a049c52ffc3a31de2bc04b93
+    - SKIP
+  b2sums:
+    - ff7f7e6987031b92fa03785252c6042c56ce5114705d02d0f00a6e5189c30670baea10d2ac71f38c95d9efd8c6600fd10307249e9a232a4728f94382a9c93d88
+    - SKIP
+pkgname:
+  - name: strip-nondeterminism
+# generated with artixpkg 0.36.4-1-any
