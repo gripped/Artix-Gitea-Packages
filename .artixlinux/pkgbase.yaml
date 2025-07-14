@@ -1,20 +1,6 @@
 ---
-pkgbase:
-  name: nginx
-  version: 1.28.0-3
-  arch:
-    - x86_64
-  pkgname:
-    - nginx
-    - nginx-mod-geoip
-    - nginx-mod-image-filter
-    - nginx-mod-mail
-    - nginx-mod-perl
-    - nginx-mod-stream
-    - nginx-mod-xslt
-    - nginx-src
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,18 +11,31 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.28.0-4
+    packages:
+      - nginx-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-mod-geoip-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-mod-image-filter-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-mod-mail-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-mod-perl-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-mod-stream-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-mod-xslt-1.28.0-4-x86_64.pkg.tar.zst
+      - nginx-src-1.28.0-4-x86_64.pkg.tar.zst
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: 1.28.0-3
     packages:
@@ -48,22 +47,29 @@ repos:
       - nginx-mod-stream-1.28.0-3-x86_64.pkg.tar.zst
       - nginx-mod-xslt-1.28.0-3-x86_64.pkg.tar.zst
       - nginx-src-1.28.0-3-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
