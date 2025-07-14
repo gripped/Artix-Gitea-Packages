@@ -1,0 +1,97 @@
+---
+version: 0.9.5-5
+pkgbase:
+  name: xmms2
+  pkgdesc: X-platform Music Multiplexing System 2
+  pkgver: 0.9.5
+  pkgrel: 5
+  url: https://github.com/xmms2/wiki/wiki
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+    - LGPL-2.1-only
+  makedepends:
+    - alsa-lib
+    - avahi
+    - boost
+    - curl
+    - cython
+    - faad2
+    - ffmpeg
+    - fftw
+    - flac
+    - fluidsynth
+    - jack
+    - libao
+    - libcdio-paranoia
+    - libdiscid
+    - libgme
+    - libmad
+    - libmms
+    - libmodplug
+    - libmpcdec
+    - libofa
+    - libsamplerate
+    - libshout
+    - libvorbis
+    - libxml2
+    - mac
+    - mpg123
+    - opusfile
+    - perl
+    - ruby
+    - smbclient
+    - speex
+    - sqlite
+    - wavpack
+    - git
+    - libpulse
+    - perl-pod-parser
+    - waf
+  optdepends:
+    - 'alsa-lib: ALSA output'
+    - 'avahi: announce xmms2d via bonjour/mDNS/zeroconf'
+    - 'boost: C++ bindings'
+    - 'curl: play HTTP streams'
+    - 'cython: Python bindings'
+    - 'faad2: AAC support'
+    - 'ffmpeg: WMA, avcodec & avformat support'
+    - 'fftw: visualization'
+    - 'flac: FLAC support'
+    - 'fluidsynth: MIDI support'
+    - 'jack: JACK output'
+    - 'libao: libao output'
+    - 'libcdio-paranoia: CDDA support'
+    - 'libdiscid: CDDA support'
+    - 'libgme: support for various video game music formats'
+    - 'libmad: MP3 support'
+    - 'libmms: play MMS streams'
+    - 'libmodplug: MOD support'
+    - 'libmpcdec: Musepack support'
+    - 'libofa: MusicDNS fingerprinting'
+    - 'libsamplerate: vocoder support'
+    - 'libshout: Icecast output'
+    - 'libvorbis: Ogg Vorbis support'
+    - 'libxml2: XSPF and podcast support'
+    - 'mac: APE support'
+    - 'mpg123: alternative MP3 support'
+    - 'opusfile: Opus support'
+    - 'perl: Perl bindings'
+    - 'ruby: Ruby bindings'
+    - 'smbclient: direct CIFS/SMB access'
+    - 'speex: Speex support'
+    - 'sqlite: for sqlite2s4'
+    - 'wavpack: WavPack support'
+    - 'pulseaudio: PulseAudio output'
+  source:
+    - https://github.com/xmms2/xmms2-devel/releases/download/0.9.5/xmms2-0.9.5.tar.xz
+    - tmpfiles.conf
+    - sysusers.conf
+  sha256sums:
+    - 695f2305e4085e9d7a07cabc6c5669a00a55745fe7d6013651dd21fa1f621333
+    - 13e3e2720e21d048d776156f8ab17c40d05b70437823da00b3c4cc2e7f7ecf7f
+    - a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a
+pkgname:
+  - name: xmms2
+# generated with artixpkg 0.36.4-1-any
