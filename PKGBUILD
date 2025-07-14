@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=baloo
-pkgver=6.15.0
+pkgver=6.16.0
 pkgrel=1
 pkgdesc='A framework for searching and managing metadata'
 arch=(x86_64)
@@ -25,14 +25,13 @@ depends=(gcc-libs
 makedepends=(doxygen
              extra-cmake-modules
              kdoctools
-             qt6-doc
              qt6-tools)
 optdepends=('qt6-declarative: QML bindings')
 conflicts=(baloo5)
 replaces=(baloo5)
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('241015fd14ea0fcf281080fd160994f92b6e0ba0750cfafd488d31bf0e0a7f4f'
+sha256sums=('8c27feeca25ab073862e433c735782f28713568d1390a84771b1ba43f6171f65'
             'SKIP')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
               E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
@@ -48,7 +47,4 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-
-  #remove systemd service
-  rm -r $pkgdir/usr/lib/systemd
 }
