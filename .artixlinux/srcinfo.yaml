@@ -1,0 +1,28 @@
+---
+version: 2.2.0-1
+pkgbase:
+  name: python-feedgenerator
+  pkgdesc: Standalone version of Django's feedgenerator module
+  pkgver: 2.2.0
+  pkgrel: 1
+  url: https://github.com/getpelican/feedgenerator
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://github.com/getpelican/feedgenerator/archive/2.2.0/feedgenerator-2.2.0.tar.gz
+  sha512sums:
+    - b3cbf9c09821b184767f5291388c62af91e5897289ddcf199fcf0cbd4199964127d4af88ab1f87427195a77c30dd200159ef61646cc3db393f1afff4a5ad0888
+pkgname:
+  - name: python-feedgenerator
+# generated with artixpkg 0.36.4-1-any
