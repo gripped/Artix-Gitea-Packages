@@ -1,10 +1,10 @@
 ---
-version: 65.9.0-1
+version: 65.9.0-2
 pkgbase:
   name: python-django-allauth
   pkgdesc: Authentication, registration, account management and 3rd party account authentication
   pkgver: 65.9.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://codeberg.org/allauth/django-allauth
   arch:
     - any
