@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=23.2
+pkgrel=23.3
 _commit="afc09c5e44a7dc94bbd7f38d7ef5f2517624379f"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -19,6 +19,7 @@ source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=$
         "e_wizard.patch"
         "e_main_c.patch"
         "e_src.patch"
+        "tasks_edc.patch"
         "eina-log.sh"
         "80-local.rules"
         "sysactions.patch"
@@ -34,6 +35,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/e_wizard.patch"
   patch -Np1 -i "${srcdir}/e_src.patch"
   patch -Np1 -i "${srcdir}/e_main_c.patch"
+  patch -Np1 -i "${srcdir}/tasks_edc.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
 sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
@@ -107,6 +109,7 @@ sha256sums=('e341fdda21577e53a00ec39e02442a15db29b7f81f19c8797e0e20716af6ad0e'
             'c60c2c7594aeb5e6773c2366b41449af5535f1694eebc9d6ad5e7a92876d9cd1'
             '510748ae2273ded9ae126333a7dbd6c115140f675e6589978c438e89ef29458f'
             '81bc98939acf03bbf77575b582a1db97c61c4509b1abcdc15a435a0d6ba4d431'
+            '395c52c6b12db3747318c33158204a5c97526768571b334f490a5b0a9d81f36b'
             '0bd52f4d66bd5f964996f88b379e6b8f50fcf457151ff30083d2d1b13f27dc36'
             '67a67d03fbfb59edecafc6bd3311e258e79da12726dcb1a44f037d54f31a1797'
             '8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c'
