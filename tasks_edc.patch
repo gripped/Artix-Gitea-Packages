@@ -1,0 +1,31 @@
+--- a/data/themes/edc/tasks.edc	2025-07-14 20:05:30.719012095 +0200
++++ b/data/themes/edc/tasks.edc	2025-07-14 20:06:28.683271160 +0200
+@@ -34,7 +34,7 @@
+             inherit: "default" 0.0;
+             rel1.offset: -4 -4;
+             rel2.offset: 3 3;
+-            color: 255 255 255 128;
++            color: 255 255 255 223;
+          }
+          description { state: "hilighted" 0.0;
+             inherit: "default" 0.0;
+@@ -130,8 +130,8 @@
+          }
+          description { state: "iconic" 0.0;
+             inherit: "default" 0.0;
+-            color: 21 21 21 255;
+-            color3: 255 255 255 25;
++            color: 191 191 191 255;
++            color3: 255 255 255 159;
+          }
+          description { state: "clicked" 0.0;
+             inherit: "default";
+@@ -179,7 +179,7 @@
+          }
+          description { state: "iconic" 0.0;
+             inherit: "default" 0.0;
+-            color: 255 255 255 64;
++            color: 255 255 255 191;
+          }
+       }
+       part { name: "bar"; mouse_events: 0;
