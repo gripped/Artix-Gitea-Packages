@@ -1,10 +1,10 @@
 ---
-version: 2:7.1.1-4
+version: 2:7.1.1-5
 pkgbase:
   name: ffmpeg
   pkgdesc: Complete solution to record, convert and stream audio and video
   pkgver: 7.1.1
-  pkgrel: 4
+  pkgrel: 5
   epoch: 2
   url: https://ffmpeg.org
   arch:
@@ -219,4 +219,4 @@ pkgname:
       - libxvidcore.so
       - libzimg.so
       - libzmq.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
