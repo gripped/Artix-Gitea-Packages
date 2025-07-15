@@ -1,0 +1,30 @@
+---
+version: 1.8.15-1
+pkgbase:
+  name: python-debugpy
+  pkgdesc: An implementation of the Debug Adapter Protocol for Python
+  pkgver: 1.8.15
+  pkgrel: 1
+  url: https://aka.ms/debugpy
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cython
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  source:
+    - git+https://github.com/microsoft/debugpy#tag=v1.8.15
+  sha256sums:
+    - 1c9c9ce98ffb1daab5b81254e4370249b840558b9930225cc3befc6824cf8f85
+pkgname:
+  - name: python-debugpy
+# generated with artixpkg 0.36.4-1-any
