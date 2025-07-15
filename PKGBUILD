@@ -40,7 +40,6 @@ prepare() {
 sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
-  #sed -i 's/MokshaArcGreen/default/g' config/bodhi/e.src
   sed -i 's/About Operating System/Moksha Desktop/g' po/*.po*
   sed -i 's/Bodhi/Artix/g' config/bodhi/profile.desktop
   cp "$srcdir/artix-icon.png" config/bodhi/icon.png
