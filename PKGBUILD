@@ -33,7 +33,10 @@ build() {
 
 check() {
   cd ${pkgname#python-}
-  pytest
+  pytest \
+    --deselect tests/test_blockbuster.py::test_socket_send \
+    --deselect tests/test_blockbuster.py::test_socket_send_non_blocking
+  # The above tests fail in artix CI
 }
 
 package() {
