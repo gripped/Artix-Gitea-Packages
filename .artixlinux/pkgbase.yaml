@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.1.1-2
+    version: 4.1.1-3
     packages:
-      - apparmor-4.1.1-2-x86_64.pkg.tar.zst
+      - apparmor-4.1.1-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
