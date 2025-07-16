@@ -1,0 +1,29 @@
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
+
+pkgname=mpv-mpris
+pkgver=1.1
+pkgrel=3
+pkgdesc='MPRIS plugin for mpv'
+arch=('x86_64')
+url='https://github.com/hoyon/mpv-mpris'
+license=('MIT')
+depends=('glib2' 'libavformat.so' 'mpv')
+checkdepends=('jq' 'playerctl' 'socat' 'sound-theme-freedesktop' 'xorg-server-xvfb')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz")
+sha512sums=('81622e5e34a8ebde735c39a1615569c833d6cf53c70b4f77794788fd8b19982cc33a71ff5768027826dafc608fa72a089e38c0925a907fa249f5c527d17f9541')
+
+build() {
+	cd "$pkgname-$pkgver"
+	make
+}
+
+check() {
+	cd "$pkgname-$pkgver"
+	make test
+}
+
+package() {
+	cd "$pkgname-$pkgver"
+	make PREFIX=/usr DESTDIR="$pkgdir" install
+	install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+}
