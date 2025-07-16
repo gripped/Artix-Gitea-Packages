@@ -1,0 +1,135 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Muflone http://www.muflone.com/contacts/english/
+# Contributor: Arne Hoch <arne@derhoch.de>
+
+pkgname=dbeaver
+pkgver=25.1.1
+pkgrel=1
+_COMMON_COMMIT_ID='43aecd564831e01a5b1fc97bbce702fc842f50cc'
+_JDBC_LIBSQL_COMMIT_ID='b9649475ca0e78db52a67f61b56ba5eb615a9437'
+pkgdesc="Free universal SQL Client for developers and database administrators (community edition)"
+arch=('x86_64')
+url="https://dbeaver.io/"
+license=("Apache-2.0")
+depends=('java-runtime>=21' 'gtk3' 'gtk-update-icon-cache' 'libsecret')
+makedepends=('maven' 'java-environment>=21')
+optdepends=('dbeaver-plugin-office: export data in Microsoft Office Excel format'
+            'dbeaver-plugin-svg-format: save diagrams in SVG format')
+conflicts=('dbeaver-plugin-sshj-lib')
+replaces=('dbeaver-plugin-sshj-lib')
+source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver/archive/${pkgver}.tar.gz"
+        "dbeaver-common-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver-common/archive/${_COMMON_COMMIT_ID}.tar.gz"
+        "dbeaver-jdbc-libsql-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver-jdbc-libsql/archive/${_JDBC_LIBSQL_COMMIT_ID}.tar.gz"
+        "io.${pkgname}.DBeaver.desktop"
+        "${pkgname}.sh"
+        "${pkgname}.profile.gz"
+        "${pkgname}.hook"
+        "${pkgname}.install")
+sha256sums=('900c35df7a14c793ee63c8583ae9231bae5303f08b73434f75066f04599ceb5c'
+            'eca55aab87082cf91171a2b60438c43e28d7671c97aa13a20e54a1a6a98811d5'
+            '520018cfb8f2d13470990f15e4a03fe85e04dc078d1cb82f9a334e1bec740277'
+            '9480a7d08f680e10c399db070c5a04cbabf282442602a2ef83d1159fe7c3e88b'
+            '406a2980806c394670e88b1ae70134900be376c2ea4a4216610591cc8b557526'
+            '1863e74bdcf22b7328e6e8487cbebff7d5360e34bde85c1dd226b168b4737034'
+            'f8b763ca210bfa4d9a4e407b656ba4f5d1bf2f3f54c67044f7a4dd0c3625fc22'
+            'f8d65dd933049b587a5815ea75a30ef944300b812df383ca1c2dcd68280bc7ab')
+install="${pkgname}.install"
+
+prepare() {
+  # Fix version number in profile file
+  gzip --decompress --keep --stdout "${pkgname}.profile.gz" | 
+    sed "s/DBEAVER_VERSION/${pkgver}/g" |
+    gzip -9 > "${pkgname}.profile-${pkgver}.gz"
+
+  # Fix dependencies path
+  ln -sf dbeaver-common-${_COMMON_COMMIT_ID} dbeaver-common
+  ln -sf dbeaver-jdbc-libsql-${_JDBC_LIBSQL_COMMIT_ID} dbeaver-jdbc-libsql
+
+  cd "${srcdir}/${pkgname}-${pkgver}"
+
+  # Download dependencies during prepare FS#55873
+  # https://bugs.archlinux.org/task/55873
+  export MAVEN_OPTS="-Xmx2048m"
+  mvn --batch-mode validate
+}
+
+build() {
+  cd "${pkgname}-${pkgver}"
+  cd "product/aggregate"
+  mvn --batch-mode -Djdk.xml.maxGeneralEntitySizeLimit=0 -Djdk.xml.totalEntitySizeLimit=0 package
+}
+
+package() {
+  cd "${pkgname}-${pkgver}/product/community"
+  # Install icons into /usr/share/icons/hicolor
+  for _size in 16 32 48 64 128 256 512
+  do
+    install -m 644 -D "icons-sources/icon_${_size}x${_size}.png" \
+      "${pkgdir}/usr/share/icons/hicolor/${_size}x${_size}/apps/dbeaver.png"
+  done
+
+  # Move into the target directory
+  cd "target/products/org.jkiss.dbeaver.core.product/linux/gtk/${CARCH}"
+
+  # Removed different architectures libraries
+  for _dir in aix-ppc aix-ppc64 darwin-aarch64 darwin-x86-64 \
+    dragonflybsd-x86-64 freebsd-aarch64 freebsd-x86 freebsd-x86-64 \
+    linux-aarch64 linux-arm linux-armel linux-loongarch64 linux-mips64el \
+    linux-ppc linux-ppc64le linux-riscv64 linux-s390x linux-x86 \
+    openbsd-x86 openbsd-x86-64 \
+    sunos-sparc sunos-sparcv9 sunos-x86 sunos-x86-64 \
+    win32 win32-aarch64 win32-x86 win32-x86-64
+  do
+    rm -r "dbeaver/plugins/com.sun.jna_5.17.0.v20250316-1700/com/sun/jna/${_dir}"
+  done
+  # Initially install everything into /usr/lib/dbeaver
+  install -m 755 -d "${pkgdir}/usr/lib"
+  cp -r "dbeaver" "${pkgdir}/usr/lib/${pkgname}"
+
+  # Move shared data to /usr/share/dbeaver
+  cd "${pkgdir}/usr/lib/${pkgname}"
+  install -m 755 -d "${pkgdir}/usr/share/${pkgname}"
+  for _file in configuration features p2 .eclipseproduct artifacts.xml dbeaver.ini readme.txt
+  do
+    mv "${_file}" "${pkgdir}/usr/share/${pkgname}"
+    ln -s "/usr/share/${pkgname}/${_file}" .
+  done
+
+  # Install additional licenses
+  install -m 755 -d "${pkgdir}/usr/share/licenses"
+  mv licenses "${pkgdir}/usr/share/licenses/${pkgname}"
+  ln -s "/usr/share/licenses/${pkgname}" "${pkgdir}/usr/lib/${pkgname}/licenses"
+
+  # Install icons
+  install -m 755 -d "${pkgdir}/usr/share/pixmaps"
+  mv dbeaver.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  mv icon.xpm "${pkgdir}/usr/share/pixmaps/${pkgname}.xpm"
+
+  # Install executable script into /usr/bin
+  install -m 755 -d "${pkgdir}/usr/bin"
+  install -m 755 "${srcdir}/dbeaver.sh" "${pkgdir}/usr/bin/${pkgname}"
+
+  # Install application launcher into /usr/share/applications
+  install -m 755 -d "${pkgdir}/usr/share/applications"
+  install -m 755 -t "${pkgdir}/usr/share/applications" "${srcdir}/io.${pkgname}.DBeaver.desktop"
+
+  # Clean up and install new profile
+  rm -rf "${pkgdir}/usr/share/${pkgname}/p2/org.eclipse.equinox.p2.core"
+  cd "${pkgdir}/usr/share/${pkgname}/p2/org.eclipse.equinox.p2.engine/profileRegistry/DefaultProfile.profile"
+  find . -name "*.profile.gz" -delete
+  install -m 644 "${srcdir}/${pkgname}.profile-${pkgver}.gz" "1502633007017.profile.gz"
+  cd "${pkgdir}/usr/share/${pkgname}/p2/org.eclipse.equinox.p2.engine"
+  rm -f ".settings/org.eclipse.equinox.p2.artifact.repository.prefs"
+  rm ".settings/org.eclipse.equinox.p2.metadata.repository.prefs"
+  rmdir ".settings"
+
+  # Install system hook
+  install -m 755 -d "${pkgdir}/usr/share/libalpm/hooks"
+  install -m 644 "${srcdir}/${pkgname}.hook" "${pkgdir}/usr/share/libalpm/hooks"
+
+  # Create configuration file (handled by the hook)
+  cd "${pkgdir}/usr/share/dbeaver/configuration/org.eclipse.equinox.simpleconfigurator"
+  install -m 755 -d "${pkgdir}/etc/${pkgname}/bundles.d"
+  mv "bundles.info" "${pkgdir}/etc/${pkgname}/bundles.d/00-${pkgname}.info"
+  ln -s "/etc/${pkgname}/bundles.info" .
+}
