@@ -1,0 +1,31 @@
+---
+version: 0.051-3
+pkgbase:
+  name: perl-glib-object-introspection
+  pkgdesc: Dynamically create Perl language bindings
+  pkgver: 0.051
+  pkgrel: 3
+  url: https://metacpan.org/release/Glib-Object-Introspection
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - gobject-introspection
+    - perl-extutils-depends
+    - perl-extutils-pkgconfig
+    - perl-cairo-gobject
+  depends:
+    - glib-perl
+    - gobject-introspection-runtime
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-Object-Introspection-0.051.tar.gz
+    - fix-tests.patch
+  sha512sums:
+    - 93ebe81b586270cbeca4296bfdd1d337d931b6349ca16a8e50bfc631c89a77d93f4d8076289e91bdcec0fdb732a2900b2a6c5e78e571c0c0fd4c7f5239cc0de5
+    - 9b4eacf4d7be40886f5f083c996743c9968cb9380846716217752dd6704f39b02ca8928daedc6aba7e5c4783e7e568282ec349dc1bbe51dc55f43ed88a607f42
+pkgname:
+  - name: perl-glib-object-introspection
+# generated with artixpkg 0.36.4-1-any
