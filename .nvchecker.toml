@@ -1,0 +1,4 @@
+[lazygit]
+source = "git"
+git = "https://github.com/jesseduffield/lazygit.git"
+prefix = "v"
