@@ -1,10 +1,10 @@
 ---
-version: 0.42.1-1.1
+version: 0.42.2-1
 pkgbase:
   name: kitty
   pkgdesc: Modern, hackable, featureful, OpenGL based terminal emulator
-  pkgver: 0.42.1
-  pkgrel: 1.1
+  pkgver: 0.42.2
+  pkgrel: 1
   url: https://sw.kovidgoyal.net/kitty/
   arch:
     - x86_64
@@ -50,12 +50,12 @@ pkgbase:
     - cairo
     - tk
   source:
-    - https://github.com/kovidgoyal/kitty/releases/download/v0.42.1/kitty-0.42.1.tar.xz
-    - https://github.com/kovidgoyal/kitty/releases/download/v0.42.1/kitty-0.42.1.tar.xz.sig
+    - https://github.com/kovidgoyal/kitty/releases/download/v0.42.2/kitty-0.42.2.tar.xz
+    - https://github.com/kovidgoyal/kitty/releases/download/v0.42.2/kitty-0.42.2.tar.xz.sig
   validpgpkeys:
     - 3CE1780F78DD88DF45194FD706BC317B515ACE7C
   sha256sums:
-    - 77a2bcf759c45c5eb18ef41669a2fe2dd1a3069ac122f536a4af60b0006d5b3c
+    - 719796b6f67f81d212e80a5dcd51ba84cff54e009f32a728108f6854f00306a1
     - SKIP
 pkgname:
   - name: kitty
