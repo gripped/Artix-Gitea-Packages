@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.7200-5
+    version: 2.7200-6
     packages:
-      - perl-acme-alien-dontpanic-2.7200-5-any.pkg.tar.zst
+      - perl-acme-alien-dontpanic-2.7200-6-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

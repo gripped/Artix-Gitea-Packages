@@ -1,17 +1,16 @@
 ---
-version: 2.7200-5
+version: 2.7200-6
 pkgbase:
   name: perl-acme-alien-dontpanic
   pkgdesc: Test Module for Alien::Base
   pkgver: 2.7200
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/Acme-Alien-DontPanic
   arch:
     - any
   license:
     - PerlArtistic
   checkdepends:
-    - perl-test2-suite
     - perl-inline
     - perl-inline-c
     - perl-inline-cpp
