@@ -1,0 +1,24 @@
+---
+version: 1.102-7
+pkgbase:
+  name: perl-params-util
+  pkgdesc: Simple, compact and correct param-checking functions
+  pkgver: 1.102
+  pkgrel: 7
+  url: https://metacpan.org/release/Params-Util
+  arch:
+    - x86_64
+  license:
+    - PerlArtistic
+    - GPL
+  depends:
+    - perl
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/R/RE/REHSACK/Params-Util-1.102.tar.gz
+  sha512sums:
+    - e2587b62545cf0572cc8f719ea8e5411d710789c3cbcab4038c5b01f86073a010d32191551f6aeea1bdae22d49e7d34358250b4e7ece9f261a598854af187194
+pkgname:
+  - name: perl-params-util
+# generated with artixpkg 0.36.4-1-any
