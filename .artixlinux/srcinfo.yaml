@@ -1,0 +1,27 @@
+---
+version: 2.03-3
+pkgbase:
+  name: perl-parallel-forkmanager
+  pkgdesc: A simple parallel processing fork manager
+  pkgver: 2.03
+  pkgrel: 3
+  url: https://metacpan.org/release/Parallel-ForkManager
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  checkdepends:
+    - perl-test-warn
+  depends:
+    - perl
+    - perl-moo
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/Y/YA/YANICK/Parallel-ForkManager-2.03.tar.gz
+  sha256sums:
+    - c0e0bead458224b9ac5bb32ed2b1fa088963b565521c1bb1a6a3566d522c2e35
+pkgname:
+  - name: perl-parallel-forkmanager
+# generated with artixpkg 0.36.4-1-any
