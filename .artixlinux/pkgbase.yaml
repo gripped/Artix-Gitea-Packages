@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:0.111-2
+    version: 1:0.111-3
     packages:
-      - perl-data-munge-1:0.111-2-any.pkg.tar.zst
+      - perl-data-munge-1:0.111-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

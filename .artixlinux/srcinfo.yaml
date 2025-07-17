@@ -1,18 +1,16 @@
 ---
-version: 1:0.111-2
+version: 1:0.111-3
 pkgbase:
   name: perl-data-munge
   pkgdesc: Various utility functions
   pkgver: 0.111
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://metacpan.org/release/Data-Munge
   arch:
     - any
   license:
     - PerlArtistic
-  checkdepends:
-    - perl-test2-suite
   depends:
     - perl
   options:
