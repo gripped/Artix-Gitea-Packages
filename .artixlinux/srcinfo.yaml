@@ -1,9 +1,9 @@
 ---
-version: 2025.5.1-1
+version: 2025.7.0-1
 pkgbase:
   name: python-fsspec
   pkgdesc: Specification that python filesystems should adhere to
-  pkgver: 2025.5.1
+  pkgver: 2025.7.0
   pkgrel: 1
   url: https://github.com/intake/filesystem_spec
   arch:
@@ -60,9 +60,9 @@ pkgbase:
     - 'python-tqdm: progress bar support'
     - 'python-zstandard: zstandard (zstd) compression support'
   source:
-    - https://github.com/intake/filesystem_spec/archive/2025.5.1/python-fsspec-2025.5.1.tar.gz
+    - https://github.com/intake/filesystem_spec/archive/2025.7.0/python-fsspec-2025.7.0.tar.gz
   sha256sums:
-    - a71eacc36f0a5cefcd8c7b0754cba1970a51e4d6c9b1a6c08ecc9ad01923acd5
+    - 7d9e29f6a8b55caf945d59bb96c8c0642f773752b5b4afe2c953fbca47074156
 pkgname:
   - name: python-fsspec
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
