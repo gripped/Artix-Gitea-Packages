@@ -1,10 +1,10 @@
 ---
-version: 0.68-6
+version: 0.68-7
 pkgbase:
   name: perl-ldap
   pkgdesc: Interface to LDAP Protocol (RFC1777)
   pkgver: 0.68
-  pkgrel: 6
+  pkgrel: 7
   url: https://search.cpan.org/dist/perl-ldap
   arch:
     - any
