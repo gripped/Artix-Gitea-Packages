@@ -1,0 +1,30 @@
+---
+version: 3.017-2
+pkgbase:
+  name: perl-mail-message
+  pkgdesc: container for MIME-encoded message information
+  pkgver: 3.017
+  pkgrel: 2
+  url: https://search.mcpan.org/dist/Mail-Message
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  depends:
+    - perl
+    - perl-user-identity
+    - perl-mailtools
+    - perl-mime-types
+    - perl-io-stringy
+    - perl-uri
+    - perl-hash-ordered
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/Mail-Message-3.017.tar.gz
+  sha256sums:
+    - 6180b2eb539bf6f8b0f5e90a3c3218031abc4034ac7b1fff9193a005cde63f9a
+pkgname:
+  - name: perl-mail-message
+# generated with artixpkg 0.36.4-1-any
