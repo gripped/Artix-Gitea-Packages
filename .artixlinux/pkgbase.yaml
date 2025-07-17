@@ -1,8 +1,8 @@
 ---
 team: lib32
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: lib32-goblins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -38,14 +38,13 @@ repos:
     packages: []
     debug: []
   lib32-gremlins:
+    version: null
+    packages: []
+    debug: []
+  lib32:
     version: 1.4.321.0-1
     packages:
       - lib32-vulkan-utility-libraries-1.4.321.0-1-x86_64.pkg.tar.zst
-    debug: []
-  lib32:
-    version: 1.4.313.0-1
-    packages:
-      - lib32-vulkan-utility-libraries-1.4.313.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
