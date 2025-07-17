@@ -1,0 +1,28 @@
+---
+version: 1.65-2
+pkgbase:
+  name: perl-xml-rss
+  pkgdesc: Parse or create Rich Site Summaries (RSS)
+  pkgver: 1.65
+  pkgrel: 2
+  url: https://search.cpan.org/dist/XML-RSS
+  arch:
+    - any
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl-datetime
+    - perl-datetime-format-mail
+    - perl-datetime-format-w3cdtf
+    - perl-html-parser
+    - perl-xml-parser
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/S/SH/SHLOMIF/XML-RSS-1.65.tar.gz
+  sha256sums:
+    - bb3b231f5081445912ee866a9046dfacb085cfd317e342e9d89663c85ca680f0
+pkgname:
+  - name: perl-xml-rss
+# generated with artixpkg 0.36.4-1-any
