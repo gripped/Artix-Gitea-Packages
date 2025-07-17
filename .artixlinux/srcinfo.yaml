@@ -1,0 +1,26 @@
+---
+version: 0.148-2
+pkgbase:
+  name: perl-path-tiny
+  pkgdesc: File path utility
+  pkgver: 0.148
+  pkgrel: 2
+  url: https://metacpan.org/release/Path-Tiny
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  depends:
+    - perl>=5.8.1
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/D/DA/DAGOLDEN/Path-Tiny-0.148.tar.gz
+  md5sums:
+    - b6a3eae2cea1fa4336f6c8fcff946636
+  sha512sums:
+    - 2adc60d3872ebd53dff4197b6c8fe4132f6bf3a5de4f27ef0d5885e8f2cdcc88d0fbce3bd12f2b547681d0cd59fd8ce9a7eaf896a580f54089f118a28e0a0393
+pkgname:
+  - name: perl-path-tiny
+# generated with artixpkg 0.36.4-1-any
