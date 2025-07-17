@@ -1,10 +1,10 @@
 ---
-version: 0.11-10
+version: 0.11-11
 pkgbase:
   name: perl-pkgconfig-libpkgconf
   pkgdesc: Perl bindings for libpkgconf
   pkgver: 0.11
-  pkgrel: 10
+  pkgrel: 11
   url: https://metacpan.org/release/PkgConfig-LibPkgConf
   arch:
     - x86_64
