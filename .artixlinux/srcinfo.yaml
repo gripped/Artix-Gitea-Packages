@@ -1,10 +1,10 @@
 ---
-version: 1.229_1-1
+version: 1.229_1-2
 pkgbase:
   name: openbsd-netcat
   pkgdesc: TCP/IP swiss army knife. OpenBSD variant.
   pkgver: 1.229_1
-  pkgrel: 1
+  pkgrel: 2
   url: https://salsa.debian.org/debian/netcat-openbsd
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - 0f2c92b623619b1bb150f265f8a6040c0dda7f72d38dd838be4b36fa6d0ac87e6acf5daa6f14817b11f355646d76534d704ae7512146dc9dea9e476ea32b5e69
 pkgname:
   - name: openbsd-netcat
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
