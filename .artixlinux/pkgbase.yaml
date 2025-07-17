@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: world-goblins
-  removeRepo: galaxy-goblins
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -21,14 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
     version: 5.2.6-3.1
     packages:
       - kvirc-5.2.6-3.1-x86_64.pkg.tar.zst
-    debug: []
-  world-gremlins:
-    version: 5.2.6-3
-    packages:
-      - kvirc-5.2.6-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 5.2.6-2
