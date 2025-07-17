@@ -1,0 +1,30 @@
+---
+version: 6.14-3
+pkgbase:
+  name: perl-lwp-protocol-https
+  pkgdesc: Provide https support for LWP::UserAgent
+  pkgver: 6.14
+  pkgrel: 3
+  url: https://metacpan.org/release/LWP-Protocol-https
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  checkdepends:
+    - perl-test-requiresinternet
+    - perl-test-needs
+  depends:
+    - ca-certificates
+    - perl-io-socket-ssl
+    - perl-net-http
+    - perl-libwww
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/O/OA/OALDERS/LWP-Protocol-https-6.14.tar.gz
+  sha512sums:
+    - 8f220c307833a803a8539a1c794598097133f24017edda9030eba2ff558d54104040fbae64d7068e99b9e03142e6e96a8b11c478e2a5571e908754a385b59fab
+pkgname:
+  - name: perl-lwp-protocol-https
+# generated with artixpkg 0.36.4-1-any
