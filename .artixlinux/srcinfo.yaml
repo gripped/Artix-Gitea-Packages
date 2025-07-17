@@ -1,10 +1,10 @@
 ---
-version: 1.329.4-3
+version: 1.329.4-3.1
 pkgbase:
   name: glib-perl
   pkgdesc: Perl wrappers for glib 2.x, including GObject
   pkgver: 1.329.4
-  pkgrel: 3
+  pkgrel: 3.1
   url: http://gtk2-perl.sourceforge.net/
   arch:
     - x86_64
