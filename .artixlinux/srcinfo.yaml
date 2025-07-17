@@ -1,10 +1,10 @@
 ---
-version: 6.0.1-13
+version: 6.0.1-14
 pkgbase:
   name: perl-net-snmp
   pkgdesc: Perl interface to SNMP
   pkgver: 6.0.1
-  pkgrel: 13
+  pkgrel: 14
   url: https://search.cpan.org/dist/Net-SNMP
   arch:
     - any
