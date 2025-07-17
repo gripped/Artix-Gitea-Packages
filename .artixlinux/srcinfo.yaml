@@ -1,0 +1,220 @@
+---
+version: 24.0.2.u12-1
+pkgbase:
+  name: java-openjdk
+  pkgver: 24.0.2.u12
+  pkgrel: 1
+  url: https://openjdk.java.net/
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-Java
+  makedepends:
+    - java-environment>=22
+    - alsa-lib
+    - bash
+    - cpio
+    - freetype2
+    - gcc-libs
+    - giflib
+    - glibc
+    - graphviz
+    - harfbuzz
+    - lcms2
+    - libcups
+    - libelf
+    - libjpeg-turbo
+    - libnet
+    - libpng
+    - libx11
+    - libxext
+    - libxrandr
+    - libxrender
+    - libxt
+    - libxtst
+    - pandoc
+    - unzip
+    - zip
+  optdepends:
+    - 'gvfs: open links e.g. hyperlinks'
+  source:
+    - https://github.com/openjdk/jdk24u/archive/jdk-24.0.2+12.tar.gz
+    - freedesktop-java.desktop
+    - freedesktop-jconsole.desktop
+    - freedesktop-jshell.desktop
+  sha256sums:
+    - 947087e85c4222f25e1b9a707cea89b04c00a0a9eb79ded489f0bab92ea42beb
+    - ad877c65ac7e752369407f4af8fd9a20a377f2a55e62224e44df1c9a9af407a3
+    - 3544325a47fd7f9854d2ee4a0a6eb17d729af20889b641838aceb58837fb2d58
+    - 5d6beeeac3d097b2c85099fceeba4a5e48e07fd286ad438f57936ebcd7bfbdbb
+pkgname:
+  - name: jdk-openjdk
+    pkgdesc: OpenJDK Java 24 development kit
+    install: install_jdk-openjdk.sh
+    depends:
+      - java-runtime-common>=3
+      - ca-certificates-utils
+      - freetype2
+      - gcc-libs
+      - glibc
+      - harfbuzz
+      - lcms2
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - nss
+      - java-environment-common=3
+      - ca-certificates-utils
+      - freetype2
+      - harfbuzz
+      - hicolor-icon-theme
+      - lcms2
+      - libelf
+      - libfreetype.so
+      - libgif.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - libpng
+      - nss
+    optdepends:
+      - 'java-rhino: for some JavaScript support'
+      - 'alsa-lib: for basic sound support'
+      - 'gtk3: for the Gtk+ 3 look and feel - desktop usage'
+    provides:
+      - java-environment=24
+      - java-environment-openjdk=24
+      - jdk24-openjdk=24.0.2.u12-1
+      - java-runtime=24
+      - java-runtime-openjdk=24
+      - jre24-openjdk=24.0.2.u12-1
+      - java-runtime-headless=24
+      - java-runtime-headless-openjdk=24
+      - jre24-openjdk-headless=24.0.2.u12-1
+    conflicts:
+      - jre-openjdk
+      - jre-openjdk-headless
+    backup:
+      - etc/java-openjdk/logging.properties
+      - etc/java-openjdk/management/jmxremote.access
+      - etc/java-openjdk/management/jmxremote.password.template
+      - etc/java-openjdk/management/management.properties
+      - etc/java-openjdk/net.properties
+      - etc/java-openjdk/security/java.policy
+      - etc/java-openjdk/security/java.security
+      - etc/java-openjdk/security/policy/README.txt
+      - etc/java-openjdk/security/policy/limited/default_US_export.policy
+      - etc/java-openjdk/security/policy/limited/default_local.policy
+      - etc/java-openjdk/security/policy/limited/exempt_local.policy
+      - etc/java-openjdk/security/policy/unlimited/default_US_export.policy
+      - etc/java-openjdk/security/policy/unlimited/default_local.policy
+      - etc/java-openjdk/sound.properties
+  - name: jre-openjdk
+    pkgdesc: OpenJDK Java 24 full runtime environment
+    install: install_jre-openjdk.sh
+    depends:
+      - java-runtime-common>=3
+      - ca-certificates-utils
+      - freetype2
+      - gcc-libs
+      - glibc
+      - harfbuzz
+      - lcms2
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - nss
+      - giflib
+      - libgif.so
+      - libpng
+    optdepends:
+      - 'alsa-lib: for basic sound support'
+      - 'gtk3: for the Gtk+ 3 look and feel - desktop usage'
+    provides:
+      - java-runtime=24
+      - java-runtime-openjdk=24
+      - jre24-openjdk=24.0.2.u12-1
+      - java-runtime-headless=24
+      - java-runtime-headless-openjdk=24
+      - jre24-openjdk-headless=24.0.2.u12-1
+    conflicts:
+      - jdk-openjdk
+      - jre-openjdk-headless
+    backup:
+      - etc/java-openjdk/logging.properties
+      - etc/java-openjdk/management/jmxremote.access
+      - etc/java-openjdk/management/jmxremote.password.template
+      - etc/java-openjdk/management/management.properties
+      - etc/java-openjdk/net.properties
+      - etc/java-openjdk/security/java.policy
+      - etc/java-openjdk/security/java.security
+      - etc/java-openjdk/security/policy/README.txt
+      - etc/java-openjdk/security/policy/limited/default_US_export.policy
+      - etc/java-openjdk/security/policy/limited/default_local.policy
+      - etc/java-openjdk/security/policy/limited/exempt_local.policy
+      - etc/java-openjdk/security/policy/unlimited/default_US_export.policy
+      - etc/java-openjdk/security/policy/unlimited/default_local.policy
+      - etc/java-openjdk/sound.properties
+  - name: jre-openjdk-headless
+    pkgdesc: OpenJDK Java 24 headless runtime environment
+    install: install_jre-openjdk-headless.sh
+    depends:
+      - java-runtime-common>=3
+      - ca-certificates-utils
+      - freetype2
+      - gcc-libs
+      - glibc
+      - harfbuzz
+      - lcms2
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - nss
+    optdepends:
+      - 'java-rhino: for some JavaScript support'
+    provides:
+      - java-runtime-headless=24
+      - java-runtime-headless-openjdk=24
+      - jre24-openjdk-headless=24.0.2.u12-1
+    conflicts:
+      - jdk-openjdk
+      - jre-openjdk
+    backup:
+      - etc/java-openjdk/logging.properties
+      - etc/java-openjdk/management/jmxremote.access
+      - etc/java-openjdk/management/jmxremote.password.template
+      - etc/java-openjdk/management/management.properties
+      - etc/java-openjdk/net.properties
+      - etc/java-openjdk/security/java.policy
+      - etc/java-openjdk/security/java.security
+      - etc/java-openjdk/security/policy/README.txt
+      - etc/java-openjdk/security/policy/limited/default_US_export.policy
+      - etc/java-openjdk/security/policy/limited/default_local.policy
+      - etc/java-openjdk/security/policy/limited/exempt_local.policy
+      - etc/java-openjdk/security/policy/unlimited/default_US_export.policy
+      - etc/java-openjdk/security/policy/unlimited/default_local.policy
+      - etc/java-openjdk/sound.properties
+  - name: openjdk-doc
+    pkgdesc: OpenJDK Java 24 documentation
+    depends:
+      - jdk24-openjdk=24.0.2.u12-1
+    provides:
+      - openjdk24-doc=24.0.2.u12-1
+  - name: openjdk-src
+    pkgdesc: OpenJDK Java 24 sources
+    depends:
+      - jdk24-openjdk=24.0.2.u12-1
+    provides:
+      - openjdk24-src=24.0.2.u12-1
+# generated with artixpkg 0.36.4-1-any
