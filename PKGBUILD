@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Florian Pritz <bluewind@xinu.at>
+# Maintainer: Florian Pritz <bluewind@xinu.at>
 # Contributor: Dale Blount <dale@archlinux.org>
 # Contributor: Manolis Tzanidakis
 pkgname=spamassassin
 pkgver=4.0.1
-pkgrel=4
+pkgrel=5
 pkgdesc="A mail filter to identify spam."
 arch=('x86_64')
 license=('APACHE')
@@ -12,7 +11,7 @@ url="https://spamassassin.apache.org"
 depends=('openssl' 'zlib' 're2c' 'perl-net-dns' 'perl-io-socket-ssl'
          'perl-libwww' 'perl-mail-spf' 'perl-http-message' 'perl-net-http'
          'perl-io-socket-inet6' 'perl-mail-dkim')
-makedepends=('razor' 'perl-dbi' 'perl-crypt-ssleay')
+makedepends=('razor' 'perl-dbi')
 checkdepends=('perl-text-diff')
 optdepends=('razor: to identify collaborately-flagged spam'
             'make: to use sa-compile'
@@ -66,7 +65,7 @@ check() {
   # parallel tests cause lots of failures; disable for now
   #export HARNESS_OPTIONS="j$(echo $MAKEFLAGS | sed 's/.*-j\([0-9][0-9]*\).*/\1/')"
 
-  make test ||:
+  make test
 }
 
 package() {
