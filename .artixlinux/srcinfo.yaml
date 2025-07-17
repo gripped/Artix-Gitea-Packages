@@ -1,0 +1,24 @@
+---
+version: 0.53-3
+pkgbase:
+  name: perl-par-dist
+  pkgdesc: Perl bindings to create and manipulate PAR distributions
+  pkgver: 0.53
+  pkgrel: 3
+  url: https://search.cpan.org/dist/PAR-Dist/
+  arch:
+    - any
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/R/RS/RSCHUPP/PAR-Dist-0.53.tar.gz
+  sha512sums:
+    - 19dcc9e6afe5de749d68da1f02b622c70c463fa00cedcda454a9efcd31403bd1e39cd29c8c4bf0d5be742cd6d340f8423663f2f30c6cd994a192f8e1fa55a64a
+pkgname:
+  - name: perl-par-dist
+# generated with artixpkg 0.36.4-1-any
