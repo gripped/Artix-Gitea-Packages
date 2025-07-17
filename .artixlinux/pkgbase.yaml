@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.01-5
+    version: 0.01-6
     packages:
-      - perl-alien-build-plugin-download-gitlab-0.01-5-any.pkg.tar.zst
+      - perl-alien-build-plugin-download-gitlab-0.01-6-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

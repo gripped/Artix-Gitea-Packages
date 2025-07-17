@@ -1,17 +1,15 @@
 ---
-version: 0.01-5
+version: 0.01-6
 pkgbase:
   name: perl-alien-build-plugin-download-gitlab
   pkgdesc: Alien::Build plugin to download from GitLab
   pkgver: 0.01
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/Alien-Build-Plugin-Download-GitLab
   arch:
     - any
   license:
     - PerlArtistic
-  makedepends:
-    - perl-test2-suite
   depends:
     - perl-alien-build
     - perl-path-tiny
