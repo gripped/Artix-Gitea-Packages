@@ -1,10 +1,10 @@
 ---
-version: 3.20250505-1
+version: 3.20250505-2
 pkgbase:
   name: perl-mail-spf
   pkgdesc: Perl module that provides SPF support
   pkgver: 3.20250505
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Mail-SPF/
   arch:
     - any
