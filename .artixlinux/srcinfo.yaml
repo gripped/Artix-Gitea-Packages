@@ -1,0 +1,27 @@
+---
+version: 1.31-5
+pkgbase:
+  name: perl-params-validate
+  pkgdesc: Validate sub params against a spec
+  pkgver: 1.31
+  pkgrel: 5
+  url: https://search.cpan.org/dist/Params-Validate
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  makedepends:
+    - perl-module-build
+  depends:
+    - perl
+    - perl-module-implementation
+  options:
+    - '!emptydirs'
+  source:
+    - https://www.cpan.org/authors/id/D/DR/DROLSKY/Params-Validate-1.31.tar.gz
+  sha256sums:
+    - 1bf2518ef2c4869f91590e219f545c8ef12ed53cf313e0eb5704adf7f1b2961e
+pkgname:
+  - name: perl-params-validate
+# generated with artixpkg 0.36.4-1-any
