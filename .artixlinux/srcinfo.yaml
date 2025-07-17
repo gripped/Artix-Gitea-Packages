@@ -1,9 +1,9 @@
 ---
-version: 9.5.0-1
+version: 9.6.0-1
 pkgbase:
   name: python-diff-cover
   pkgdesc: Automatically find diff lines that need test coverage
-  pkgver: 9.5.0
+  pkgver: 9.6.0
   pkgrel: 1
   url: https://github.com/Bachmann1234/diff_cover
   arch:
@@ -11,7 +11,7 @@ pkgbase:
   license:
     - Apache-2.0
   checkdepends:
-    - flake8
+    - python-flake8
     - python-pycodestyle
     - python-pyflakes
     - python-pylint
@@ -32,9 +32,9 @@ pkgbase:
   optdepends:
     - 'python-tomli: for TOML support'
   source:
-    - python-diff-cover-9.5.0.tar.gz::https://github.com/Bachmann1234/diff_cover/archive/v9.5.0.tar.gz
+    - python-diff-cover-9.6.0.tar.gz::https://github.com/Bachmann1234/diff_cover/archive/v9.6.0.tar.gz
   sha256sums:
-    - 3112edc478a07761cbf1c59cc4263fffa6f366c0aeb11ea85a47dfbf31fb8f24
+    - 09b0b5f428e6fde8548051e81e5d94c59afd6fbd3f90a8f8f0b3dbae73fd9993
 pkgname:
   - name: python-diff-cover
 # generated with artixpkg 0.36.4-1-any

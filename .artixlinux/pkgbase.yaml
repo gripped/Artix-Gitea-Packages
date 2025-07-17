@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 9.5.0-1
+    version: 9.6.0-1
     packages:
-      - python-diff-cover-9.5.0-1-any.pkg.tar.zst
+      - python-diff-cover-9.6.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 9.4.1-1
