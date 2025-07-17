@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-9
+version: 4.4.0-9.1
 pkgbase:
   name: backuppc
   pkgdesc: Enterprise-grade system for backing up Linux, Windows and MacOS PCs
   pkgver: 4.4.0
-  pkgrel: 9
+  pkgrel: 9.1
   url: https://github.com/backuppc/
   install: backuppc.install
   arch:
