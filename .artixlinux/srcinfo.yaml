@@ -1,10 +1,10 @@
 ---
-version: 1.7-25
+version: 1.7-26
 pkgbase:
   name: perl-text-iconv
   pkgdesc: Interface to iconv codeset conversion
   pkgver: 1.7
-  pkgrel: 25
+  pkgrel: 26
   url: https://search.cpan.org/dist/Text-Iconv/
   arch:
     - x86_64
