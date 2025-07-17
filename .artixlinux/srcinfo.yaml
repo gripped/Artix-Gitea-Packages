@@ -1,10 +1,10 @@
 ---
-version: 1.995-1
+version: 1.995-2
 pkgbase:
   name: perl-test-file
   pkgdesc: A collection of test utilities for file attributes.
   pkgver: 1.995
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/briandfoy/test-file
   arch:
     - any
