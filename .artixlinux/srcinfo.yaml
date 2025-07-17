@@ -1,0 +1,26 @@
+---
+version: 0.75-7
+pkgbase:
+  name: perl-pegex
+  pkgdesc: Acmeist PEG Parser Framework
+  pkgver: 0.75
+  pkgrel: 7
+  url: https://metacpan.org/release/Pegex
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  depends:
+    - perl-yaml-libyaml
+    - perl-file-sharedir-install
+    - perl-yaml-pp
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/I/IN/INGY/Pegex-0.75.tar.gz
+  sha256sums:
+    - 4dc8d335de80b25247cdb3f946f0d10d9ba0b3c34b0ed7d00316fd068fd05edc
+pkgname:
+  - name: perl-pegex
+# generated with artixpkg 0.36.4-1-any
