@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.135.31
+pkgver=6.135.32
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -58,8 +58,8 @@ optdepends=(
   'python-watchdog: for tracking file system events'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('db2b3440f853fb4b2630cba046f1120371980c53232427927c20ee15345c25275c3ffd2327ab505de1e7b01c0722433fd1100e7327ff905f4206e11e1f1de231')
-b2sums=('5eb685c180869fbcd66127b99b85abcae70d84ebd4987bcb8a65d1cc429b52f711324829f51623a04ff67c83a197f5792b443a2191aeacf374730954643cf116')
+sha512sums=('11ff00ad60125ca2a49d01e5b7f584f754b6e5b7d25c8df730a96c7dc1c9551e5fc51c139a445ad23a202290bfb4fc290e71d3a6bbf7c382d673d2b9d24acba8')
+b2sums=('985168ecc5baabe76475b93a6348ba899c22de88983f8de08bed5112abbde6f24961028ca1d1d390b843cbcb195e4146f7709ebf5a5a70ebb0735f1e282e5d69')
 
 prepare() {
   cd $pkgname/hypothesis-python
