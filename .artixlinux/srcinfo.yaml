@@ -1,9 +1,9 @@
 ---
-version: 6.15-1
+version: 6.15-2
 pkgbase:
   name: linux-tools
   pkgver: 6.15
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -161,4 +161,4 @@ pkgname:
     pkgdesc: Read or write MSR_IA32_ENERGY_PERF_BIAS
     depends:
       - glibc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
