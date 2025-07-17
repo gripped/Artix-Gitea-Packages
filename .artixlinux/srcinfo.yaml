@@ -1,9 +1,9 @@
 ---
-version: 0.13.6-1
+version: 0.14.0-1
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
-  pkgver: 0.13.6
+  pkgver: 0.14.0
   pkgrel: 1
   url: https://gstreamer.freedesktop.org/
   arch:
@@ -14,9 +14,12 @@ pkgbase:
     - cairo
     - cargo-c
     - dav1d
+    - fontconfig
+    - freetype2
     - git
     - graphene
     - gst-plugins-bad
+    - gst-plugins-bad-libs
     - gst-plugins-base
     - gst-plugins-base-libs
     - gst-plugins-good
@@ -34,11 +37,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.13.6
+    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.14.0
   validpgpkeys:
     - 7F4BC7CC3CA06F97336BBFEB0668CC1486C2D7B5
   b2sums:
-    - aa42d141a53bd9c6ed4f7e01fdeb2062101a3fcc2fbb0ca578c2ea31a756c514143733beea4215e4f223fe02c84266921a6da4e40947e12387cf15e34099cd9e
+    - 88a30bd8b960689d08eec40f05de9cc2c3647e277e143e6fab1c81abc6dc55f81df3aae5acf011ae4785649abe2ec44cebd69c52c734477a67d16b9c96ab6fa4
 pkgname:
   - name: gst-webrtc-signalling-server
     pkgdesc: Multimedia graph framework - webrtc signalling server
@@ -53,7 +56,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-hlssink3=0.13.6-1
+      - gst-plugin-hlssink3=0.14.0-1
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -88,6 +91,15 @@ pkgname:
       - gstreamer
       - dav1d
       - gst-plugins-base-libs
+  - name: gst-plugin-elevenlabs
+    pkgdesc: Multimedia graph framework - elevenlabs plugin
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - gstreamer
+      - gst-plugins-base-libs
+      - openssl
   - name: gst-plugin-fallbackswitch
     pkgdesc: Multimedia graph framework - fallbackswitch plugin
     depends:
@@ -143,6 +155,15 @@ pkgname:
       - graphene
       - gst-plugins-base-libs
       - gtk4
+  - name: gst-plugin-hlsmultivariantsink
+    pkgdesc: Multimedia graph framework - hlsmultivariantsink plugin
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - gstreamer
+      - gst-plugin-hlssink3
+      - gst-plugins-base-libs
   - name: gst-plugin-hlssink3
     pkgdesc: Multimedia graph framework - hlssink3 plugin
     depends:
@@ -246,12 +267,13 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-aws=0.13.6-1
-      - gst-plugin-textwrap=0.13.6-1
+      - gst-plugin-textwrap=0.14.0-1
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
       - pango
+    optdepends:
+      - 'gst-plugin-aws: transcriberbin, translationbin'
   - name: gst-plugin-rsfile
     pkgdesc: Multimedia graph framework - rsfile plugin
     license:
@@ -313,6 +335,12 @@ pkgname:
       - gst-plugins-good
   - name: gst-plugin-rstracers
     pkgdesc: Multimedia graph framework - rstracers plugin
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - gstreamer
+      - openssl
   - name: gst-plugin-rsvideofx
     pkgdesc: Multimedia graph framework - rsvideofx plugin
     depends:
@@ -338,11 +366,21 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-rsrtp=0.13.6-1
+      - gst-plugin-rsrtp=0.14.0-1
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
       - openssl
+  - name: gst-plugin-skia
+    pkgdesc: Multimedia graph framework - skia plugin
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - gstreamer
+      - fontconfig
+      - freetype2
+      - gst-plugins-base-libs
   - name: gst-plugin-sodium
     pkgdesc: Multimedia graph framework - sodium plugin
     license:
@@ -353,8 +391,19 @@ pkgname:
       - glibc
       - gstreamer
       - libsodium
+  - name: gst-plugin-speechmatics
+    pkgdesc: Multimedia graph framework - speechmatics plugin
+    depends:
+      - gcc-libs
+      - glib2
+      - glibc
+      - gstreamer
+      - gst-plugins-base-libs
+      - openssl
   - name: gst-plugin-spotify
     pkgdesc: Multimedia graph framework - spotify plugin
+  - name: gst-plugin-streamgrouper
+    pkgdesc: Multimedia graph framework - streamgrouper plugin
   - name: gst-plugin-textahead
     pkgdesc: Multimedia graph framework - textahead plugin
   - name: gst-plugin-textwrap
@@ -377,6 +426,8 @@ pkgname:
       - glibc
       - gstreamer
       - gst-plugins-base-libs
+  - name: gst-plugin-uriplaylistbin
+    pkgdesc: Multimedia graph framework - uriplaylistbin plugin
   - name: gst-plugin-webrtchttp
     pkgdesc: Multimedia graph framework - webrtchttp plugin
     depends:
@@ -388,4 +439,4 @@ pkgname:
       - gst-plugins-bad-libs
       - gst-plugins-base-libs
       - openssl
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
