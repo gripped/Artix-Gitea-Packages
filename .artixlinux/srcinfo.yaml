@@ -1,9 +1,9 @@
 ---
-version: 2.6.10-1
+version: 2.6.10-2
 pkgbase:
   name: openldap
   pkgver: 2.6.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.openldap.org/
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgname:
       - libsasl
     backup:
       - etc/openldap/ldap.conf
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.36.4-1-any
