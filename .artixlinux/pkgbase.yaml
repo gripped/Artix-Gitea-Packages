@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.02-9
+    version: 0.02-10
     packages:
-      - perl-env-shellwords-0.02-9-any.pkg.tar.zst
+      - perl-env-shellwords-0.02-10-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

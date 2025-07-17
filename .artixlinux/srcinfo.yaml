@@ -1,17 +1,15 @@
 ---
-version: 0.02-9
+version: 0.02-10
 pkgbase:
   name: perl-env-shellwords
   pkgdesc: Environment variables for arguments as array
   pkgver: 0.02
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Env-ShellWords
   arch:
     - any
   license:
     - PerlArtistic
-  makedepends:
-    - perl-test2-suite
   depends:
     - perl
   options:
