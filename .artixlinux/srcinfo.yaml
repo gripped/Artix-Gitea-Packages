@@ -1,10 +1,10 @@
 ---
-version: 3.05-13
+version: 3.05-14
 pkgbase:
   name: perl-text-soundex
   pkgdesc: Implementation of the soundex algorithm
   pkgver: 3.05
-  pkgrel: 13
+  pkgrel: 14
   url: https://metacpan.org/release/Text-Soundex
   arch:
     - x86_64
