@@ -1,10 +1,10 @@
 ---
-version: 1.44-1
+version: 1.44-2
 pkgbase:
   name: perl-perl-minimumversion
   pkgdesc: Find a minimum required version of perl for Perl code
   pkgver: 1.44
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Perl-MinimumVersion
   arch:
     - any
