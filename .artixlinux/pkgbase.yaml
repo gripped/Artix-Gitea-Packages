@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.84-2
+    version: 2.84-3
     packages:
-      - perl-alien-build-2.84-2-any.pkg.tar.zst
+      - perl-alien-build-2.84-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
