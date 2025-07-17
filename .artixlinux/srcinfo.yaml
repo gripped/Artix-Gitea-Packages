@@ -1,10 +1,10 @@
 ---
-version: 0.052-1
+version: 0.052-2
 pkgbase:
   name: perl-module-build-tiny
   pkgdesc: A tiny replacement for Module::Build
   pkgver: 0.052
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Module-Build-Tiny
   arch:
     - any
