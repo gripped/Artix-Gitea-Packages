@@ -1,10 +1,10 @@
 ---
-version: 20250602-1
+version: 20250602-2
 pkgbase:
   name: perl-mozilla-ca
   pkgdesc: Mozilla's CA cert bundle in PEM format (using system CA store)
   pkgver: 20250602
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Mozilla-CA
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - b0db10f11f02a5395d99880c4ff598b2da5e5dceee920bb39ea7183544a6a4f280685bf98e1cc25e3085daebe48d13f4bcca07e582191e500866cd80fe389b2d
 pkgname:
   - name: perl-mozilla-ca
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
