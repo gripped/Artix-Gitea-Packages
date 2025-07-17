@@ -1,0 +1,31 @@
+---
+version: 1.8.0.3-2
+pkgbase:
+  name: socat
+  pkgdesc: Multipurpose relay
+  pkgver: 1.8.0.3
+  pkgrel: 2
+  url: http://www.dest-unreach.org/socat/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  checkdepends:
+    - bash
+    - net-tools
+    - procps-ng
+  depends:
+    - glibc
+    - openssl
+    - libssl.so
+    - readline
+    - libreadline.so
+  source:
+    - http://www.dest-unreach.org/socat/download/socat-1.8.0.3.tar.gz
+  sha256sums:
+    - a9f9eb6cfb9aa6b1b4b8fe260edbac3f2c743f294db1e362b932eb3feca37ba4
+  b2sums:
+    - 39c2a9971df59ab418e07c77f4d36b6ffac268037d6ba876d1a58ca0a2fecf1784ce65cdc9435825c687736d358cbb24c635b7b9db5c606f9cbda266031c0858
+pkgname:
+  - name: socat
+# generated with artixpkg 0.36.4-1-any
