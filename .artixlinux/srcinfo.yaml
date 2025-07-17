@@ -1,10 +1,10 @@
 ---
-version: 2.86-3
+version: 2.86-3.1
 pkgbase:
   name: razor
   pkgdesc: A distributed, collaborative, spam detection and filtering network
   pkgver: 2.86
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://metacpan.org/dist/Razor2-Client-Agent
   arch:
     - x86_64

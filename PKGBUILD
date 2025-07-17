@@ -4,7 +4,7 @@
 
 pkgname=razor
 pkgver=2.86
-pkgrel=3
+pkgrel=3.1
 pkgdesc="A distributed, collaborative, spam detection and filtering network"
 arch=('x86_64')
 url="https://metacpan.org/dist/Razor2-Client-Agent"
