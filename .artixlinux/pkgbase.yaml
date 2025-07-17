@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.47-1
+    version: 1.47-2
     packages:
-      - perl-term-readline-gnu-1.47-1-x86_64.pkg.tar.zst
+      - perl-term-readline-gnu-1.47-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
