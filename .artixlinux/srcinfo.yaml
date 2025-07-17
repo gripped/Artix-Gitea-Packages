@@ -1,10 +1,10 @@
 ---
-version: 0.20-2
+version: 0.20-3
 pkgbase:
   name: perl-alien-libxml2
   pkgdesc: Install the C libxml2 library on your system
   pkgver: 0.20
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/Alien-Libxml2
   arch:
     - any
@@ -14,7 +14,6 @@ pkgbase:
     - perl-alien-build-plugin-download-gitlab
     - perl-html-parser
     - perl-sort-versions
-    - perl-test2-suite
     - perl-uri
   depends:
     - libxml2
