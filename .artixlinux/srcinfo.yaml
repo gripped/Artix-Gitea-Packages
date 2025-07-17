@@ -1,10 +1,10 @@
 ---
-version: 0.26026-1
+version: 0.26026-2
 pkgbase:
   name: perl-pkgconfig
   pkgdesc: Pure-Perl Core-Only replacement for pkg-config
   pkgver: 0.26026
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/PkgConfig
   arch:
     - any
