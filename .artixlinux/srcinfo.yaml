@@ -1,0 +1,40 @@
+---
+version: 1.156-2
+pkgbase:
+  name: perl-perl-critic
+  pkgdesc: Critique Perl source code for best-practices
+  pkgver: 1.156
+  pkgrel: 2
+  url: https://metacpan.org/release/Perl-Critic
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  checkdepends:
+    - perl-test-memory-cycle
+  depends:
+    - perl-b-keywords
+    - perl-config-tiny
+    - perl-exception-class
+    - perl-file-homedir
+    - perl-file-which
+    - perl-list-someutils
+    - perl-module-build
+    - perl-module-pluggable
+    - perl-ppi
+    - perl-ppix-quotelike
+    - perl-ppix-regexp
+    - perl-ppix-utils
+    - perl-pod-spell
+    - perl-tidy
+    - perl-readonly
+    - perl-string-format
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/P/PE/PETDANCE/Perl-Critic-1.156.tar.gz
+  sha512sums:
+    - c5aa84e6dca89f2af3e1afff920bd36a71ac69e1c5b5f3260e1a50b6cb6e6b88cecae28200e54d9ff98540a97ad6a7755c6e1b468d1a1d642d73b6e05e468c34
+pkgname:
+  - name: perl-perl-critic
+# generated with artixpkg 0.36.4-1-any
