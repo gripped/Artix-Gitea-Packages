@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-1
+version: 6.24.0-2
 pkgbase:
   name: xmrig
   pkgdesc: RandomX, KawPow, CryptoNight, AstroBWT and GhostRider unified CPU/GPU miner and RandomX benchmark
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/xmrig/xmrig
   arch:
     - x86_64

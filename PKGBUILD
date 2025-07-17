@@ -4,7 +4,7 @@
 
 pkgname=xmrig
 pkgver=6.24.0
-pkgrel=1
+pkgrel=2
 pkgdesc='RandomX, KawPow, CryptoNight, AstroBWT and GhostRider unified CPU/GPU miner and RandomX benchmark'
 url='https://github.com/xmrig/xmrig'
 arch=('x86_64')
