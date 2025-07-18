@@ -1,0 +1,36 @@
+---
+version: 1:0.51.0-1
+pkgbase:
+  name: libfilezilla
+  pkgdesc: Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs
+  pkgver: 0.51.0
+  pkgrel: 1
+  epoch: 1
+  url: https://lib.filezilla-project.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - cppunit
+  makedepends:
+    - clang
+  depends:
+    - glibc
+    - gcc-libs
+    - nettle
+    - gnutls
+    - libnettle.so
+    - libhogweed.so
+    - libcrypt.so
+  provides:
+    - libfilezilla.so
+  source:
+    - https://sources.archlinux.org/other/libfilezilla/libfilezilla-0.51.0.tar.xz
+  sha512sums:
+    - 0864c1d6e93f077005223d7a2818ff8711bfed0812bc369b04d2d20c07c1b41908951e5a96d4402407287b350513bf037b4b522a7cdff850071c8e2b045e83b0
+  b2sums:
+    - 5d99dac0595fbd7c60e4e9c4b6d5992db9966151457f0d7fc93c51063144860adef14b5410c28192cd8ad5298e71f665217bfd418098d217318b52fda7f14383
+pkgname:
+  - name: libfilezilla
+# generated with artixpkg 0.36.4-1-any
