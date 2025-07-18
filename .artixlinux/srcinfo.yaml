@@ -1,9 +1,9 @@
 ---
-version: 0.22.1-1
+version: 0.23.0-1
 pkgbase:
   name: eza
   pkgdesc: A modern replacement for ls (community fork of exa)
-  pkgver: 0.22.1
+  pkgver: 0.23.0
   pkgrel: 1
   url: https://github.com/eza-community/eza
   arch:
@@ -24,11 +24,11 @@ pkgbase:
   replaces:
     - exa
   source:
-    - https://github.com/eza-community/eza/archive/v0.22.1/eza-0.22.1.tar.gz
+    - https://github.com/eza-community/eza/archive/v0.23.0/eza-0.23.0.tar.gz
   sha256sums:
-    - 148eafa3e5eae4bdddd8cc7b2e666fc17853d43fbcc8f985dde0b22b58357916
+    - 119973d58aef7490f6c553f818cfde142998f5e93205f53f94981a9631b50310
   b2sums:
-    - 3b3e0f549ada29bcf135347a386eba08fb96c7203c9191bc9e667e41901686d9961064a09f4acad1c2e4991aa8d5c768248cf11a11f9f87d1bc82a6ad12e7092
+    - e82d20d1e391768b384223651ea53e1a44fffc4c52e49a2f076d86f0fa63bd56826fd06089c87d64dad16e6179fe464bb8ba112dc5401a5dce46d1fe4b033995
 pkgname:
   - name: eza
     depends:
