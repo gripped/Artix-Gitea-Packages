@@ -1,9 +1,9 @@
 ---
-version: 1.7.0-1
+version: 1.7.1-1
 pkgbase:
   name: python-scikit-learn
   pkgdesc: A set of python modules for machine learning and data mining
-  pkgver: 1.7.0
+  pkgver: 1.7.1
   pkgrel: 1
   url: https://scikit-learn.org
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://github.com/scikit-learn/scikit-learn/archive/1.7.0/scikit-learn-1.7.0.tar.gz
+    - https://github.com/scikit-learn/scikit-learn/archive/1.7.1/scikit-learn-1.7.1.tar.gz
   sha256sums:
-    - 60f3e08038f7395e040254a543948be738c41081c1d3bcf3a56a8116d64fd616
+    - 4f872d0e5d21b644a2f8dd36cac44c6257ebb2660af3d19bc0ee69dd48b08dfe
 pkgname:
   - name: python-scikit-learn
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
