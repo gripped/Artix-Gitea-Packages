@@ -1,0 +1,29 @@
+---
+version: 0.29-1
+pkgbase:
+  name: celluloid
+  pkgdesc: Simple GTK+ frontend for mpv
+  pkgver: 0.29
+  pkgrel: 1
+  url: https://celluloid-player.github.io/
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - appstream-glib
+    - meson
+    - glib2-devel
+  depends:
+    - gtk4
+    - mpv
+    - libadwaita
+  replaces:
+    - gnome-mpv
+  source:
+    - https://github.com/celluloid-player/celluloid/releases/download/v0.29/celluloid-0.29.tar.xz
+  sha256sums:
+    - 5b9991557cc2764a8281a24aa726a645287eb075cde0f0ae7c737965264a119c
+pkgname:
+  - name: celluloid
+# generated with artixpkg 0.36.4-1-any

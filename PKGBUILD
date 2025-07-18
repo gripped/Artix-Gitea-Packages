@@ -1,0 +1,30 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Ainola
+
+pkgname=celluloid
+pkgver=0.29
+pkgrel=1
+pkgdesc='Simple GTK+ frontend for mpv'
+arch=('x86_64')
+url='https://celluloid-player.github.io/'
+license=('GPL3')
+depends=('gtk4' 'mpv' 'libadwaita')
+makedepends=('appstream-glib' 'meson' 'glib2-devel')
+replaces=('gnome-mpv')
+source=("https://github.com/celluloid-player/$pkgname/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz")
+#validpgpkeys=('4BA23A4D2F798D926C7A0E0D0F9039A19BE2326C') # gnome-mpv
+sha256sums=('5b9991557cc2764a8281a24aa726a645287eb075cde0f0ae7c737965264a119c')
+
+build() {
+  artix-meson $pkgname-$pkgver build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
