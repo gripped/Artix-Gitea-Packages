@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 5.42.0-1
     packages:
       - perl-5.42.0-1-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 5.40.2-1
-    packages:
-      - perl-5.40.2-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
