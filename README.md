@@ -1,0 +1,2 @@
+# wl-clip-persist
+
