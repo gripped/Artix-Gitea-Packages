@@ -114,7 +114,7 @@ check() {
     --deselect distributed/deploy/tests/test_local.py::test_remote_access
     --deselect distributed/deploy/tests/test_local.py::test_local_tls[True]
     --deselect distributed/deploy/tests/test_local.py::test_local_tls[False]
-    --deselect istributed/tests/test_scheduler.py::test_dashboard_host
+    --deselect distributed/tests/test_scheduler.py::test_dashboard_host
   )
 
   cd $_name-$pkgver
