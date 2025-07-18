@@ -106,6 +106,15 @@ check() {
     --deselect distributed/tests/test_worker.py::test_statistical_profiling
     # TimeoutError: Test timeout (30) hit after 30.000276130624115s
     --deselect distributed/tests/test_scheduler.py::test_resubmit_nondeterministic_task_different_deps
+
+    # Artix CI only. network tests, not important I guess.
+    --deselect distributed/comm/tests/test_comms.py::test_default_client_server_ipv6[tornado]
+    --deselect distributed/comm/tests/test_comms.py::test_tcp_client_server_ipv6[tornado]
+    --deselect distributed/deploy/tests/test_local.py::test_only_local_access
+    --deselect distributed/deploy/tests/test_local.py::test_remote_access
+    --deselect distributed/deploy/tests/test_local.py::test_local_tls[True]
+    --deselect distributed/deploy/tests/test_local.py::test_local_tls[False]
+    --deselect istributed/tests/test_scheduler.py::test_dashboard_host
   )
 
   cd $_name-$pkgver
