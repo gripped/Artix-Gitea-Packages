@@ -1,10 +1,10 @@
 ---
-version: 2.6.3-1
+version: 2.6.3-2
 pkgbase:
   name: onionshare
   pkgdesc: Share a file over Tor Hidden Services anonymously and securely
   pkgver: 2.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/onionshare/onionshare
   arch:
     - any
