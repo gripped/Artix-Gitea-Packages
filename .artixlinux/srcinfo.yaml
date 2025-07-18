@@ -1,10 +1,10 @@
 ---
-version: 48.2-1
+version: 48.2-2
 pkgbase:
   name: gnome-builder
   pkgdesc: An IDE for writing GNOME-based software
   pkgver: 48.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Builder/
   arch:
     - x86_64
@@ -32,7 +32,6 @@ pkgbase:
     - ctags
     - dconf
     - desktop-file-utils
-    - devhelp
     - editorconfig-core-c
     - flatpak
     - gcc-libs
@@ -91,7 +90,6 @@ pkgname:
       - ctags
       - dconf
       - desktop-file-utils
-      - devhelp
       - editorconfig-core-c
       - flatpak
       - gcc-libs
