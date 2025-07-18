@@ -2,15 +2,15 @@
 
 pkgname=nauty
 epoch=1
-pkgver=2.8.9
-pkgrel=2
+pkgver=2.9.0
+pkgrel=1
 pkgdesc='A program for computing automorphism groups of graphs and digraphs'
 arch=(x86_64)
 url='http://pallini.di.uniroma1.it/'
 license=(Apache-2.0)
 depends=(glibc)
 source=(http://pallini.di.uniroma1.it/nauty${pkgver//./_}.tar.gz)
-sha256sums=('c97ab42bf48796a86a598bce3e9269047ca2b32c14fc23e07208a244fe52c4ee')
+sha256sums=('7b38834c7cefe17d25e05eef1ef3882fa9cd1933f582b9eb9de7477411956053')
  
 build() {
   cd nauty${pkgver//./_}
