@@ -1,16 +1,17 @@
 ---
-version: 4.3.5-3
+version: 4.3.5-4
 pkgbase:
   name: shairport-sync
   pkgdesc: Emulates an AirPort Express for the purpose of streaming music from iTunes and compatible iPods and iPhones
   pkgver: 4.3.5
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/mikebrady/shairport-sync
   arch:
     - x86_64
   license:
     - GPL
   makedepends:
+    - glib2-devel
     - xmltoman
     - vim
   depends:
@@ -20,6 +21,7 @@ pkgbase:
     - popt
     - alsa-lib
     - libconfig
+    - libpipewire
     - libpulse
     - jack
     - mosquitto
@@ -35,4 +37,4 @@ pkgbase:
     - 3973049b1a92c729efacd3312636a8c7f3d51cd62c7d5af214668c8104378dc6
 pkgname:
   - name: shairport-sync
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
