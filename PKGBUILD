@@ -1,0 +1,62 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Contributor: Grzegorz Koperwas <admin@grzegorzkoperwas.site>
+
+pkgname=swww
+pkgver=0.10.3
+pkgrel=1
+pkgdesc="A Solution to your Wayland Wallpaper Woes"
+arch=(x86_64)
+url="https://github.com/LGFae/swww"
+license=(GPL-3.0-only)
+depends=(
+  gcc-libs
+  glibc
+  lz4
+)
+makedepends=(
+  cargo
+  scdoc
+  wayland
+  wayland-protocols
+)
+options=(!lto)
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('8a86fe633c54e1d4278644cb728deea5decd0d4b1630506f4925a65ccf8a67e5')
+
+prepare() {
+  cd $pkgname-$pkgver
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd $pkgname-$pkgver
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release --all-features
+
+  # manpages
+  ./doc/gen.sh
+}
+
+check() {
+  cd $pkgname-$pkgver
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen --all-features
+}
+
+package() {
+  cd $pkgname-$pkgver
+  install -vDm755 -t "$pkgdir/usr/bin" \
+    target/release/swww \
+    target/release/swww-daemon
+
+  install -vDm644 completions/swww.bash "$pkgdir/usr/share/bash-completion/completions/swww"
+  install -vDm644 completions/swww.fish "$pkgdir/usr/share/fish/vendor_completions.d/swww.fish"
+  install -vDm644 completions/_swww "$pkgdir/usr/share/zsh/site-functions/_swww"
+  install -vDm644 completions/swww.elv "$pkgdir/usr/share/elvish/lib/swww.elv"
+
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" ./*.md
+  install -vDm644 -t "$pkgdir/usr/share/man/man1" ./doc/generated/*.1
+}
