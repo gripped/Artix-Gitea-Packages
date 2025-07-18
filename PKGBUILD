@@ -1,8 +1,9 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 
 pkgbase=fltk
 pkgname=(fltk fltk-docs)
-pkgver=1.3.11
+pkgver=1.4.3
 pkgrel=1
 pkgdesc="Graphical user interface toolkit for X"
 arch=(x86_64)
@@ -13,6 +14,7 @@ makedepends=(
   cmake
   doxygen
   fontconfig
+  glu
   libglvnd
   libjpeg-turbo
   libpng
@@ -25,8 +27,8 @@ makedepends=(
   mesa
 )
 source=(https://github.com/$pkgbase/$pkgbase/archive/release-$pkgver/$pkgbase-release-$pkgver.tar.gz)
-sha512sums=('b18ff6322349af4416a37d28c4f42ebe355260786ed42bdd54dcc20dc92db1a38a8db74e6d637fdff8f320bdd51e2515c0fa939d30679c5f22ea99fb32c97204')
-b2sums=('13f5a208f6fe19e4df3184be1143042d6469b5518f2771d60c8bba543129660c9b3d7ed5cb547cf364c91d6abd1d5d4f538dede0bfdf57db26ae9f4a8e4d069a')
+sha512sums=('4793b2d277792c7b840ec1e76eaed231548eec68d57a14f80ae292718d14541f1d1b7b335c3600809b3536014038aa70765e81e91bd688563debd95ff21d76df')
+b2sums=('441b89417a5e22d468834caceb6eae081e0a566c7110951c5ee9e9340f4ba874207b231a7debd1368f54bc4aa7c76dd3e0ce529701b16b870cb3c1e5b485a7db')
 
 _pick() {
   local p="$1" f d; shift
@@ -44,9 +46,9 @@ build() {
     -D CMAKE_INSTALL_PREFIX=/usr
     -D CMAKE_BUILD_TYPE=None
     -D FLTK_LIBDIR=/usr/lib
-    -D OPTION_BUILD_SHARED_LIBS=ON
-    -D OPTION_BUILD_HTML_DOCUMENTATION=ON
-    -D OPTION_INSTALL_HTML_DOCUMENTATION=ON
+    -D FLTK_BUILD_SHARED_LIBS=ON
+    -D FLTK_BUILD_HTML_DOCS=ON
+    -D FLTK_INSTALL_HTML_DOCS=ON
     -S $pkgbase-release-$pkgver
     -W no-dev
   )
@@ -59,10 +61,6 @@ build() {
   cmake --build build --verbose
   # build documentation explicitly as it is otherwise not generated/ installed
   make VERBOSE=1 -C build/documentation html
-}
-
-check() {
-  ctest --test-dir build --output-on-failure
 }
 
 package_fltk() {

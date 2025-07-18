@@ -1,9 +1,9 @@
 ---
-version: 1.3.11-1
+version: 1.4.3-1
 pkgbase:
   name: fltk
   pkgdesc: Graphical user interface toolkit for X
-  pkgver: 1.3.11
+  pkgver: 1.4.3
   pkgrel: 1
   url: https://www.fltk.org/
   arch:
@@ -15,6 +15,7 @@ pkgbase:
     - cmake
     - doxygen
     - fontconfig
+    - glu
     - libglvnd
     - libjpeg-turbo
     - libpng
@@ -26,11 +27,11 @@ pkgbase:
     - libxrender
     - mesa
   source:
-    - https://github.com/fltk/fltk/archive/release-1.3.11/fltk-release-1.3.11.tar.gz
+    - https://github.com/fltk/fltk/archive/release-1.4.3/fltk-release-1.4.3.tar.gz
   sha512sums:
-    - b18ff6322349af4416a37d28c4f42ebe355260786ed42bdd54dcc20dc92db1a38a8db74e6d637fdff8f320bdd51e2515c0fa939d30679c5f22ea99fb32c97204
+    - 4793b2d277792c7b840ec1e76eaed231548eec68d57a14f80ae292718d14541f1d1b7b335c3600809b3536014038aa70765e81e91bd688563debd95ff21d76df
   b2sums:
-    - 13f5a208f6fe19e4df3184be1143042d6469b5518f2771d60c8bba543129660c9b3d7ed5cb547cf364c91d6abd1d5d4f538dede0bfdf57db26ae9f4a8e4d069a
+    - 441b89417a5e22d468834caceb6eae081e0a566c7110951c5ee9e9340f4ba874207b231a7debd1368f54bc4aa7c76dd3e0ce529701b16b870cb3c1e5b485a7db
 pkgname:
   - name: fltk
     depends:
@@ -60,4 +61,4 @@ pkgname:
       - staticlibs
   - name: fltk-docs
     pkgdesc: Graphical user interface toolkit for X - documentation
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
