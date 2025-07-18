@@ -1,0 +1,29 @@
+---
+version: 0.9.8-2
+pkgbase:
+  name: zoxide
+  pkgdesc: A smarter cd command for your terminal
+  pkgver: 0.9.8
+  pkgrel: 2
+  url: https://github.com/ajeetdsouza/zoxide
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cargo
+    - git
+  depends:
+    - gcc-libs
+    - glibc
+  optdepends:
+    - 'fzf: for interactive selection'
+  options:
+    - '!lto'
+  source:
+    - zoxide::git+https://github.com/ajeetdsouza/zoxide.git#tag=v0.9.8
+  sha256sums:
+    - 32c5bb9657f5e6d68a579406b627373da7330deb0b10814b571c4a7238772b91
+pkgname:
+  - name: zoxide
+# generated with artixpkg 0.36.4-1-any
