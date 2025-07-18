@@ -1,9 +1,9 @@
 ---
-version: 8.14.1-1
+version: 8.15.0-1
 pkgbase:
   name: lib32-curl
   pkgdesc: command line tool and library for transferring data with URLs (32-bit)
-  pkgver: 8.14.1
+  pkgver: 8.15.0
   pkgrel: 1
   url: https://curl.se/
   arch:
@@ -36,11 +36,11 @@ pkgbase:
     - lib32-zstd
     - libzstd.so
   source:
-    - git+https://github.com/curl/curl.git#tag=curl-8_14_1?signed
+    - git+https://github.com/curl/curl.git#tag=curl-8_15_0?signed
   validpgpkeys:
     - 27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2
   sha512sums:
-    - 3c63dc98c695413bc9d5c2f7d12de7b635777cb93bc6724f8636c00752a0ccf87c827c5e04b03dba38822e93caca58095c6e0f4bdd83a82e20956a7e7f75c0a4
+    - e96403a562b7a818998c78138f3896032ea8b22499d1115c2e19f6a07502b6dac4cea4f6da6427f61c425c1f0ba2b984ebb06d4ee32fdb5ecb94a757dea13f8a
 pkgname:
   - name: lib32-curl
     depends:
@@ -81,4 +81,4 @@ pkgname:
       - lib32-gnutls
     provides:
       - libcurl-gnutls.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
