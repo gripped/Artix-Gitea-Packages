@@ -1,10 +1,10 @@
 ---
-version: 0.12-1
+version: 0.12-2
 pkgbase:
   name: minisign
   pkgdesc: A dead-simple tool to sign files and verify digital signatures
   pkgver: 0.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jedisct1/minisign
   arch:
     - x86_64
