@@ -1,0 +1,47 @@
+---
+version: 2.15-3
+pkgbase:
+  name: i3lock
+  pkgdesc: Improved screenlocker based upon XCB and PAM
+  pkgver: 2.15
+  pkgrel: 3
+  url: https://i3wm.org/i3lock/
+  arch:
+    - x86_64
+  groups:
+    - i3
+  license:
+    - MIT
+  makedepends:
+    - meson
+  depends:
+    - cairo
+    - libcairo.so
+    - glibc
+    - libev
+    - libev.so
+    - libxcb
+    - libxkbcommon
+    - libxkbcommon.so
+    - libxkbcommon-x11
+    - libxkbcommon-x11.so
+    - pam
+    - libpam.so
+    - xcb-util
+    - xcb-util-image
+    - xcb-util-xrm
+  options:
+    - docs
+  backup:
+    - etc/pam.d/i3lock
+  source:
+    - https://i3wm.org/i3lock/i3lock-2.15.tar.xz
+    - https://i3wm.org/i3lock/i3lock-2.15.tar.xz.asc
+  validpgpkeys:
+    - 424E14D703E7C6D43D9D6F364E7160ED4AC8EE1D
+  sha512sums:
+    - 6079f5233c0820c6e38f3cd8f3732d585e95e7d670408e4fb18ab580a2e1face8f3d6ea13eaaeedc8671f74def917183667e736b35306bf7c630d40625b41ac2
+    - SKIP
+pkgname:
+  - name: i3lock
+# generated with artixpkg 0.36.4-1-any

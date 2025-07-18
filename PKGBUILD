@@ -4,7 +4,7 @@
 
 pkgname=i3lock
 pkgver=2.15
-pkgrel=2
+pkgrel=3
 pkgdesc='Improved screenlocker based upon XCB and PAM'
 url='https://i3wm.org/i3lock/'
 arch=('x86_64')
@@ -13,7 +13,7 @@ groups=('i3')
 depends=(
   'cairo' 'libcairo.so'
   'glibc'
-  'libev'
+  'libev' 'libev.so'
   'libxcb'
   'libxkbcommon' 'libxkbcommon.so'
   'libxkbcommon-x11' 'libxkbcommon-x11.so'
