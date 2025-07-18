@@ -1,0 +1,40 @@
+---
+version: 3.69.2-1
+pkgbase:
+  name: filezilla
+  pkgdesc: Fast and reliable FTP, FTPS and SFTP client
+  pkgver: 3.69.2
+  pkgrel: 1
+  url: https://filezilla-project.org
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - boost
+    - gnutls
+    - libidn
+  depends:
+    - dbus
+    - libdbus-1.so
+    - gtk3
+    - libgtk-3.so
+    - libgdk-3.so
+    - hicolor-icon-theme
+    - libfilezilla
+    - libfilezilla.so
+    - nettle
+    - libnettle.so
+    - sqlite
+    - libsqlite3.so
+    - wxwidgets-gtk3
+    - xdg-utils
+  source:
+    - https://sources.archlinux.org/other/filezilla/filezilla-3.69.2.tar.xz
+  sha256sums:
+    - ee1868310acbefe312981364b219e7ea85f6028e5f7596a7aa305ee15a4e7a01
+  sha512sums:
+    - 136526616d54ab75dffff7384f197561f482a5bc4ffd6b5815bbcfd55223a06da651e99af848ef68aa651f3b35949b80e87226f0e239d787686fc8fc48d76ec5
+pkgname:
+  - name: filezilla
+# generated with artixpkg 0.36.4-1-any
