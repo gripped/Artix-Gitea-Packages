@@ -1,9 +1,9 @@
 ---
-version: 0.13.2-1
+version: 0.13.3-1
 pkgbase:
   name: aws-c-mqtt
   pkgdesc: C99 implementation of the MQTT 3.1.1 specification
-  pkgver: 0.13.2
+  pkgver: 0.13.3
   pkgrel: 1
   url: https://github.com/awslabs/aws-c-mqtt
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - aws-c-io
     - glibc
   source:
-    - aws-c-mqtt-0.13.2.tar.gz::https://github.com/awslabs/aws-c-mqtt/archive/v0.13.2.tar.gz
+    - aws-c-mqtt-0.13.3.tar.gz::https://github.com/awslabs/aws-c-mqtt/archive/v0.13.3.tar.gz
   sha256sums:
-    - 8d22b181e4c90f5c683e786aadb9fb59a30a699c332e96e16595216ef9058c2f
+    - 1dfc11d6b3dc1a6d408df64073e8238739b4c50374078d36d3f2d30491d15527
 pkgname:
   - name: aws-c-mqtt
 # generated with artixpkg 0.36.4-1-any
