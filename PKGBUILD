@@ -16,7 +16,7 @@
 pkgname=dovecot
 pkgver=2.4.1
 _pkgver=$pkgver-4
-pkgrel=6
+pkgrel=7
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -68,6 +68,7 @@ source=(
   "https://dovecot.org/releases/2.4/${pkgname}-${_pkgver}.tar.gz"{,.sig}
   'https://github.com/dovecot/core/commit/8dd2ec82f63ba1bf9ddf1b74243e00185ebba9b1.patch'
   'https://github.com/dovecot/core/commit/473532fb9b5d00aa0900331f463d404a672e3b8f.patch'
+  'https://github.com/dovecot/core/commit/9240e3a4386808789d593537a8ebe3e873e89683.patch'
   "json-v$_json_lua_ver.lua::https://raw.githubusercontent.com/rxi/json.lua/v$_json_lua_ver/json.lua"
   'dovecot.sysusers'
   'dovecot.tmpfiles'
@@ -76,8 +77,9 @@ source=(
 )
 sha256sums=('fb188603f419ed7aaa07794a8692098c3ec2660bb9c67d0efe24948cbb32ae00'
             'SKIP'
-            'SKIP'
+            'b35f00097be92df3246a6036e0c985bb13847245ffc7f1e3422e23a8dd71ce2f'
             '30319697bbff2c0fc5509c1b64df4a62288f07a4ab99aa15c278dd8e7457a7a1'
+            '1a0c5e497e652f2838ead55b4d619b0e0ab44cf14c8a3bac04ef739dc47c211a'
             'b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87'
             '068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc'
             '0b0625b1e66ca6a95d506fd00d6a68e70620c8ea28606e2528953ffb1806b08e'
@@ -97,6 +99,9 @@ prepare() {
   # Backport fix for GSSAPI:
   # https://gitlab.archlinux.org/archlinux/packaging/packages/dovecot/-/issues/5
   patch -Np1 -f < ../473532fb9b5d00aa0900331f463d404a672e3b8f.patch
+  # Backport fix for crash when config reloaded & logging to syslog
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/dovecot/-/issues/8
+  patch -Np1 -f < ../9240e3a4386808789d593537a8ebe3e873e89683.patch
 
   # Fix path in helper script
   sed -i 's:OPENSSLCONFIG=${OPENSSLCONFIG-dovecot-openssl.cnf}:OPENSSLCONFIG=${OPENSSLCONFIG-/etc/ssl/dovecot-openssl.cnf}:' doc/mkcert.sh
