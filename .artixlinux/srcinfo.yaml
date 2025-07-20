@@ -1,15 +1,13 @@
 ---
-version: 3.56.2-1
+version: 3.56.2-2
 pkgbase:
   name: gnome-terminal
   pkgdesc: The GNOME Terminal Emulator
   pkgver: 3.56.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Terminal
   arch:
     - x86_64
-  groups:
-    - gnome-extra
   license:
     - GPL-3.0-or-later
     - CC-BY-SA-3.0
@@ -45,4 +43,4 @@ pkgbase:
     - 4a968d1cd4d79a332db0bf9eb8ae177b1e6901f28b25fc3ee5fa18d6e16565c383ba74bfbf79fa68b7d9e60e1b20fc9ea5f18e6dc62c80de106f52b0813ea44c
 pkgname:
   - name: gnome-terminal
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
