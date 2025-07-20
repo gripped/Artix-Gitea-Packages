@@ -1,10 +1,10 @@
 ---
-version: 1.18.8-1
+version: 1.18.8-2
 pkgbase:
   name: ruby-nokogiri
   pkgdesc: Nokogiri (鋸) is an HTML, XML, SAX, and Reader parser
   pkgver: 1.18.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://nokogiri.org
   arch:
     - x86_64
@@ -38,4 +38,4 @@ pkgbase:
     - 268936f19c3bbcc672e408e0488cee14f10609824fd879b7adf0f93ffcf7588c8201820b0913d056d80cfd83a006c54faa2e4a1fba34795555a66afa97ec1e64
 pkgname:
   - name: ruby-nokogiri
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
