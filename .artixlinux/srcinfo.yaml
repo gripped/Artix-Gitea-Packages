@@ -1,0 +1,40 @@
+---
+version: 20250720-1
+pkgbase:
+  name: artix-community-presets
+  pkgdesc: Application settings and presets for the community ISOs
+  pkgver: 20250720
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/desktop-presets
+  arch:
+    - any
+  groups:
+    - artix-branding
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - artix-gtk-presets
+    - artix-qt-presets
+  optdepends:
+    - qt5ct
+    - qt6ct
+    - qt6gtk2
+  conflicts:
+    - artix-lxqt-presets
+    - artix-lxde-presets
+    - artix-mate-presets
+    - artix-cinnamon-presets
+  replaces:
+    - artix-lxqt-presets
+    - artix-lxde-presets
+    - artix-mate-presets
+    - artix-cinnamon-presets
+  source:
+    - git+https://gitea.artixlinux.org/artix/desktop-presets.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-community-presets
+# generated with artixpkg 0.36.4-1-any

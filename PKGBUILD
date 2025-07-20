@@ -3,7 +3,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-community-presets
-pkgver=20250421
+pkgver=20250720
 pkgrel=1
 pkgdesc='Application settings and presets for the community ISOs'
 arch=('any')
@@ -12,7 +12,7 @@ license=('GPL')
 depends=('artix-gtk-presets' 'artix-qt-presets')
 conflicts=('artix-lxqt-presets' 'artix-lxde-presets' 'artix-mate-presets' 'artix-cinnamon-presets')
 replaces=('artix-lxqt-presets' 'artix-lxde-presets' 'artix-mate-presets' 'artix-cinnamon-presets')
-optdepends=('qt5ct' 'qt6ct')
+optdepends=('qt5ct' 'qt6ct' 'qt6gtk2')
 makedepends=('git')
 groups=('artix-branding')
 #_commit=7e34832631eb1b2653628e9799e58207bac6f021
