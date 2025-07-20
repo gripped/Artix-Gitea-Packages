@@ -1,0 +1,66 @@
+---
+version: 1:46.0-6
+pkgbase:
+  name: geary
+  pkgdesc: A lightweight email client for the GNOME desktop
+  pkgver: 46.0
+  pkgrel: 6
+  epoch: 1
+  url: https://wiki.gnome.org/Apps/Geary
+  arch:
+    - x86_64
+  license:
+    - CC-BY-3.0
+    - CC-BY-SA-3.0
+    - LGPL-2.1-or-later
+  makedepends:
+    - appstream-glib
+    - cmake
+    - git
+    - gobject-introspection
+    - meson
+    - vala
+    - yelp-tools
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - enchant
+    - folks
+    - gcr
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gmime3
+    - gnome-online-accounts
+    - gsound
+    - gspell
+    - gtk3
+    - hicolor-icon-theme
+    - icu
+    - iso-codes
+    - json-glib
+    - libgee
+    - libgoa
+    - libhandy
+    - libpeas
+    - libsecret
+    - libsoup3
+    - libstemmer
+    - libunwind
+    - libxml2
+    - libytnef
+    - org.freedesktop.secrets
+    - pango
+    - sqlite
+    - webkit2gtk-4.1
+  source:
+    - git+https://gitlab.gnome.org/GNOME/geary.git#tag=46.0
+  validpgpkeys:
+    - 3A2EF7F138557A145F2866E99FAB18747A8FC649
+    - 71BFA565F77720034F44E0B00CF8493F76A7AE36
+  b2sums:
+    - 7e424cc2f5964390881aefdc6becf527a1e7e05f4edaac373149a73a20b22605d907bb465a0da7456431b2bd6dbb4e1dfe85dccbb5fc8a50e2cee2ea3f335e32
+pkgname:
+  - name: geary
+# generated with artixpkg 0.36.4-1-any
