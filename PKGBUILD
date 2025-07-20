@@ -7,7 +7,7 @@
 
 pkgname=openssh
 pkgver=10.0p1
-pkgrel=3
+pkgrel=4
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=(x86_64)
 url='https://www.openssh.com/portable.html'
@@ -87,21 +87,22 @@ prepare() {
 
 build() {
   local configure_options=(
+    --disable-lastlog
+    --disable-strip
+    --libexecdir=/usr/lib/ssh
     --prefix=/usr
     --sbindir=/usr/bin
-    --libexecdir=/usr/lib/ssh
     --sysconfdir=/etc/ssh
-    --disable-strip
+    --with-default-path='/usr/local/sbin:/usr/local/bin:/usr/bin'
+    --with-kerberos5=/usr
     --with-libedit
+    --with-pam
+    --with-pid-dir=/run
+    --with-privsep-path=/usr/share/empty.sshd
+    --with-privsep-user=nobody
     --with-security-key-builtin
     --with-ssl-engine
-    --with-pam
-    --with-privsep-user=nobody
-    --with-privsep-path=/usr/share/empty.sshd
-    --with-kerberos5=/usr
     --with-xauth=/usr/bin/xauth
-    --with-pid-dir=/run
-    --with-default-path='/usr/local/sbin:/usr/local/bin:/usr/bin'
     --without-zlib-version-check
   )
 
