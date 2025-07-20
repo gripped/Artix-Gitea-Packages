@@ -1,0 +1,37 @@
+---
+version: 20250720-1
+pkgbase:
+  name: artix-qt-presets
+  pkgdesc: Artix Qt presets (KDE Plasma and LXQt)
+  pkgver: 20250720
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/desktop-presets
+  arch:
+    - any
+  groups:
+    - artix-branding
+    - artix-style
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - artix-desktop-presets
+    - qt5-styleplugins
+  optdepends:
+    - qt5ct
+    - qt6ct
+    - qt6gtk2
+  provides:
+    - desktop-presets
+  conflicts:
+    - artix-lxqt-presets
+  replaces:
+    - artix-lxqt-presets
+  source:
+    - git+https://gitea.artixlinux.org/artix/desktop-presets.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-qt-presets
+# generated with artixpkg 0.36.4-1-any
