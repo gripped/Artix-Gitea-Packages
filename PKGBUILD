@@ -1,4 +1,4 @@
-# Maintainer: Fabian Bornschein <fabiscafe-at-mailbox-dot-org>
+# Maintainer: Fabian Bornschein <fabiscafe@archlinux.org>
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
@@ -8,7 +8,7 @@ pkgname=(
   eog-docs
 )
 pkgver=47.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Eye of Gnome: An image viewing and cataloging program"
 url="https://wiki.gnome.org/Apps/EyeOfGnome"
 arch=(x86_64)
@@ -62,7 +62,6 @@ check() {
 
 package_eog() {
   optdepends=('eog-plugins: Additional features')
-  groups=(gnome-extra)
 
   meson install -C build --destdir "$pkgdir"
 
