@@ -1,0 +1,31 @@
+---
+version: 1.22.5-1
+pkgbase:
+  name: level-zero
+  pkgdesc: API for accessing low level interfaces in oneAPI platform devices
+  pkgver: 1.22.5
+  pkgrel: 1
+  url: https://github.com/oneapi-src/level-zero/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+    - opencl-headers
+    - spdlog
+  source:
+    - https://github.com/oneapi-src/level-zero/archive/v1.22.5/level-zero-1.22.5.tar.gz
+  sha256sums:
+    - fefa6be2635e0d8617f196e9e9108552ecd62bde5bbdf5099bfaabccf459f170
+pkgname:
+  - name: level-zero-headers
+    pkgdesc: API for accessing low level interfaces in oneAPI platform devices (headers)
+  - name: level-zero-loader
+    pkgdesc: API for accessing low level interfaces in oneAPI platform devices (loader)
+    depends:
+      - gcc-libs
+      - glibc
+      - spdlog
+# generated with artixpkg 0.36.4-1-any
