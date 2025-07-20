@@ -1,9 +1,9 @@
 ---
-version: 11.0.27.u6-2
+version: 11.0.27.u6-3
 pkgbase:
   name: java11-openjdk
   pkgver: 11.0.27.u6
-  pkgrel: 2
+  pkgrel: 3
   url: https://openjdk.java.net/
   arch:
     - x86_64
@@ -54,13 +54,27 @@ pkgname:
   - name: jre11-openjdk-headless
     pkgdesc: OpenJDK Java 11 headless runtime environment
     install: install_jre-openjdk-headless.sh
-    depends: []
+    depends:
+      - java-runtime-common>=3
+      - ca-certificates-utils
+      - freetype2
+      - gcc14-libs
+      - glibc
+      - harfbuzz
+      - lcms2
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - nss
     optdepends:
       - 'java-rhino: for some JavaScript support'
     provides:
       - java-runtime-headless=11
       - java-runtime-headless-openjdk=11
-      - jre11-openjdk-headless=11.0.27.u6-2
+      - jre11-openjdk-headless=11.0.27.u6-3
     conflicts:
       - jdk11-openjdk
       - jre11-openjdk
@@ -83,6 +97,20 @@ pkgname:
     pkgdesc: OpenJDK Java 11 full runtime environment
     install: install_jre-openjdk.sh
     depends:
+      - java-runtime-common>=3
+      - ca-certificates-utils
+      - freetype2
+      - gcc14-libs
+      - glibc
+      - harfbuzz
+      - lcms2
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - nss
       - giflib
       - libgif.so
       - libpng
@@ -92,10 +120,10 @@ pkgname:
     provides:
       - java-runtime=11
       - java-runtime-openjdk=11
-      - jre11-openjdk=11.0.27.u6-2
+      - jre11-openjdk=11.0.27.u6-3
       - java-runtime-headless=11
       - java-runtime-headless-openjdk=11
-      - jre11-openjdk-headless=11.0.27.u6-2
+      - jre11-openjdk-headless=11.0.27.u6-3
     conflicts:
       - jdk11-openjdk
       - jre11-openjdk-headless
@@ -118,6 +146,20 @@ pkgname:
     pkgdesc: OpenJDK Java 11 development kit
     install: install_jdk-openjdk.sh
     depends:
+      - java-runtime-common>=3
+      - ca-certificates-utils
+      - freetype2
+      - gcc14-libs
+      - glibc
+      - harfbuzz
+      - lcms2
+      - libfreetype.so
+      - libharfbuzz.so
+      - libjpeg.so
+      - libjpeg-turbo
+      - liblcms2.so
+      - libnet
+      - nss
       - java-environment-common=3
       - ca-certificates-utils
       - freetype2
@@ -141,13 +183,13 @@ pkgname:
     provides:
       - java-environment=11
       - java-environment-openjdk=11
-      - jdk11-openjdk=11.0.27.u6-2
+      - jdk11-openjdk=11.0.27.u6-3
       - java-runtime=11
       - java-runtime-openjdk=11
-      - jre11-openjdk=11.0.27.u6-2
+      - jre11-openjdk=11.0.27.u6-3
       - java-runtime-headless=11
       - java-runtime-headless-openjdk=11
-      - jre11-openjdk-headless=11.0.27.u6-2
+      - jre11-openjdk-headless=11.0.27.u6-3
     conflicts:
       - jre11-openjdk
       - jre11-openjdk-headless
@@ -169,13 +211,13 @@ pkgname:
   - name: openjdk11-src
     pkgdesc: OpenJDK Java 11 sources
     depends:
-      - jdk11-openjdk=11.0.27.u6-2
+      - jdk11-openjdk=11.0.27.u6-3
     provides:
-      - openjdk11-src=11.0.27.u6-2
+      - openjdk11-src=11.0.27.u6-3
   - name: openjdk11-doc
     pkgdesc: OpenJDK Java 11 documentation
     depends:
-      - jdk11-openjdk=11.0.27.u6-2
+      - jdk11-openjdk=11.0.27.u6-3
     provides:
-      - openjdk11-doc=11.0.27.u6-2
+      - openjdk11-doc=11.0.27.u6-3
 # generated with artixpkg 0.36.4-1-any
