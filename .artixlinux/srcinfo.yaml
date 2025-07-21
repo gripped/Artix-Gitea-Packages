@@ -1,0 +1,32 @@
+---
+version: 5.8.0-2
+pkgbase:
+  name: wolfssl
+  pkgdesc: Lightweight, portable, C-language-based SSL/TLS library
+  pkgver: 5.8.0
+  pkgrel: 2
+  url: https://www.wolfssl.com/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+  depends:
+    - glibc
+  provides:
+    - libwolfssl.so
+  source:
+    - wolfssl-5.8.0-stable.tar.gz::https://github.com/wolfssl/wolfssl/archive/refs/tags/v5.8.0-stable.tar.gz
+    - https://github.com/wolfssl/wolfssl/releases/download/v5.8.0-stable/wolfssl-5.8.0-stable.tar.gz.asc
+  validpgpkeys:
+    - A2A48E7BCB96C5BECB987314EBC80E415CA29677
+  sha512sums:
+    - b3953692a87aada84d77a26aac3ee1791344af3cf6e3d0b4fa9913095bc0892dd4cfe1491a893b469469bdfba511fe067ee80d3c0beab8df5ac5e174fa5f5577
+    - SKIP
+  b2sums:
+    - 3f2dcac0d2587ecb2ce29903e358f2b432f1360b13eb69fc8e6632f8ed19e1ebd039c54806dca38c7969bb7fff2613d7d1a94b7eb70be8c70026f4f5de7f8563
+    - SKIP
+pkgname:
+  - name: wolfssl
+# generated with artixpkg 0.36.4-1-any
