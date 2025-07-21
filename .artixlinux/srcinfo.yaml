@@ -1,0 +1,45 @@
+---
+version: 6.30.0-1
+pkgbase:
+  name: python-ipykernel
+  pkgdesc: The ipython kernel for Jupyter
+  pkgver: 6.30.0
+  pkgrel: 1
+  url: https://pypi.org/project/ipykernel/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-debugpy
+    - python-flaky
+    - python-ipyparallel
+    - python-matplotlib
+    - python-pytest-asyncio
+    - python-pytest-timeout
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - ipython
+    - python
+    - python-comm
+    - python-jupyter-client
+    - python-jupyter-core
+    - python-nest-asyncio
+    - python-packaging
+    - python-psutil
+    - python-pyzmq
+    - python-tornado
+    - python-traitlets
+  optdepends:
+    - 'python-debugpy: debugger support'
+  source:
+    - git+https://github.com/ipython/ipykernel#tag=v6.30.0
+  sha256sums:
+    - f3dbf83cdfbad1af89dd41b7a1ef90415c2addcceda9e8d43bbe5d6e05e9d071
+pkgname:
+  - name: python-ipykernel
+# generated with artixpkg 0.36.4-1-any
