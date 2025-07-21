@@ -1,0 +1,51 @@
+---
+version: 5.2.4-1
+pkgbase:
+  name: powerdns-recursor
+  pkgdesc: Resolving DNS server
+  pkgver: 5.2.4
+  pkgrel: 1
+  url: https://www.powerdns.com/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - boost
+    - pandoc
+    - ragel
+    - rust
+  depends:
+    - gcc-libs
+    - boost-libs
+    - libcap
+    - libcurl.so
+    - libsodium
+    - esysusers
+    - luajit
+    - openssl
+    - libboost_context.so
+    - fstrm
+    - net-snmp
+  provides:
+    - pdns-recursor
+  conflicts:
+    - pdns-recursor
+  options:
+    - '!lto'
+  backup:
+    - etc/powerdns/recursor.conf
+  source:
+    - https://downloads.powerdns.com/releases/pdns-recursor-5.2.4.tar.bz2
+    - https://downloads.powerdns.com/releases/pdns-recursor-5.2.4.tar.bz2.asc
+    - sysusers.conf
+  validpgpkeys:
+    - FBAE0323821C7706A5CA151BDCF513FA7EED19F3
+    - 16E12866B7738C73976A57436FFC33439B0D04DF
+  sha512sums:
+    - 04683e4fecc9b93599b76fe3aede486e6666aacfa141ca206431a213ee0007424872832ee62d874053a8d4f3df0ad19cd2e9a16733f294dd5989211ad5754888
+    - SKIP
+    - 7aada0f186bc1cd6af9a4af598511e7f517f0c103973397d260796c8e83c789d720990579d6ccba53e4aa4a8a6c5b2107f4d32d09ce9a72118ae5030b03bb6ab
+pkgname:
+  - name: powerdns-recursor
+# generated with artixpkg 0.36.4-1-any
