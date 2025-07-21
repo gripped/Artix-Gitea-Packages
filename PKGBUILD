@@ -3,8 +3,8 @@
 
 pkgbase=fltk
 pkgname=(fltk fltk-docs)
-pkgver=1.4.3
-pkgrel=1
+pkgver=1.4.4
+pkgrel=2
 pkgdesc="Graphical user interface toolkit for X"
 arch=(x86_64)
 license=('LGPL-2.0-only WITH FLTK-exception')
@@ -27,8 +27,8 @@ makedepends=(
   mesa
 )
 source=(https://github.com/$pkgbase/$pkgbase/archive/release-$pkgver/$pkgbase-release-$pkgver.tar.gz)
-sha512sums=('4793b2d277792c7b840ec1e76eaed231548eec68d57a14f80ae292718d14541f1d1b7b335c3600809b3536014038aa70765e81e91bd688563debd95ff21d76df')
-b2sums=('441b89417a5e22d468834caceb6eae081e0a566c7110951c5ee9e9340f4ba874207b231a7debd1368f54bc4aa7c76dd3e0ce529701b16b870cb3c1e5b485a7db')
+sha512sums=('51ca9fd8d5903bbfb4d18145dd85a89f2e4281baf224d34d0a8b67591ff8b00b151cf1b353fd3871a1456d443848a7f69df8ecc6c959fbf6135d019d97099c28')
+b2sums=('2028e00060a4c9016ce94c2a04e007b4de1ab4bfa051e65d381505e7815c82978540d86f07a1baaf8a398f28410ba20244ac51a31c521dd471701335b27dcfde')
 
 _pick() {
   local p="$1" f d; shift
@@ -65,10 +65,11 @@ build() {
 
 package_fltk() {
   depends=(
+    fontconfig libfontconfig.so
     gcc-libs
     glibc
+    glu
     hicolor-icon-theme
-    fontconfig libfontconfig.so
     libglvnd
     libjpeg-turbo
     libpng
