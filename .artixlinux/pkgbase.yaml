@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: geany
-  version: 2.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - geany
 actions:
   addRepo: world
   removeRepo: null
@@ -18,37 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 2.0-1
+    version: 2.1-1
     packages:
-      - geany-2.0-1-x86_64.pkg.tar.zst
+      - geany-2.1-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
+team: world
