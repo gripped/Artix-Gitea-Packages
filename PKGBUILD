@@ -1,7 +1,7 @@
 # Maintainer: Chris Cromer <cromer@artixlinux.org>
 
 pkgname=mint-x-icons
-pkgver=1.6.4
+pkgver=1.7.3
 pkgrel=1
 pkgdesc='A mint/metal theme based on mintified versions of Clearlooks Revamp, Elementary and Faenza'
 arch=('any')
@@ -14,7 +14,7 @@ depends=(
 )
 options=(!strip)
 source=("${url}/${pkgname}_${pkgver}.tar.xz")
-sha256sums=('269b1de4f8cce1ee367b7be4385dc67e34de2e6c451eeed9abe129478a96fe3d')
+sha256sums=('dcf303f824845194e100c09586447cb27dc6ccf980af7201ed690f9a97e3c897')
 
 package() {
     cd "${srcdir}"/"${pkgname}"

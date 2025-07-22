@@ -1,0 +1,25 @@
+---
+version: 1.7.3-1
+pkgbase:
+  name: mint-x-icons
+  pkgdesc: A mint/metal theme based on mintified versions of Clearlooks Revamp, Elementary and Faenza
+  pkgver: 1.7.3
+  pkgrel: 1
+  url: http://packages.linuxmint.com/pool/main/m/mint-x-icons
+  arch:
+    - any
+  license:
+    - GPL3
+  depends:
+    - gdk-pixbuf2
+    - gtk-update-icon-cache
+    - hicolor-icon-theme
+  options:
+    - '!strip'
+  source:
+    - http://packages.linuxmint.com/pool/main/m/mint-x-icons/mint-x-icons_1.7.3.tar.xz
+  sha256sums:
+    - dcf303f824845194e100c09586447cb27dc6ccf980af7201ed690f9a97e3c897
+pkgname:
+  - name: mint-x-icons
+# generated with artixpkg 0.36.4-1-any
