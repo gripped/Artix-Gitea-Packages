@@ -1,16 +1,14 @@
 ---
-version: 1:47.0.1-3
+version: 1:47.0.1-4
 pkgbase:
   name: seahorse
-  pkgdesc: GNOME application for managing PGP keys.
+  pkgdesc: GNOME application for managing PGP keys
   pkgver: 47.0.1
-  pkgrel: 3
+  pkgrel: 4
   epoch: 1
   url: https://wiki.gnome.org/Apps/Seahorse
   arch:
     - x86_64
-  groups:
-    - gnome-extra
   license:
     - GPL-2.0-or-later AND LGPL-2.1-or-later AND CC-BY-SA-3.0
   makedepends:
@@ -48,4 +46,4 @@ pkgbase:
     - 38a4de15a485d12328bcc8645f6c08f3080664e1b699e2acaf21bf06af85af91a734454f542b00b06f6391112d30d1c9eb79544cbc1cf7ece33dd10fd0a83654
 pkgname:
   - name: seahorse
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
