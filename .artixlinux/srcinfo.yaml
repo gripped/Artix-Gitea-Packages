@@ -1,0 +1,49 @@
+---
+version: 40.1-10
+pkgbase:
+  name: gnome-notes
+  pkgdesc: Write out notes, every detail matters
+  pkgver: 40.1
+  pkgrel: 10
+  url: https://wiki.gnome.org/Apps/Notes
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+    - yelp-tools
+  depends:
+    - cairo
+    - curl
+    - dconf
+    - evolution-data-server
+    - gcc-libs
+    - glib2
+    - glibc
+    - gnome-online-accounts
+    - gtk3
+    - hicolor-icon-theme
+    - json-glib
+    - libgoa
+    - libhandy
+    - libical
+    - libxml2
+    - pango
+    - tinysparql
+    - webkit2gtk-4.1
+  provides:
+    - bijiben=40.1
+  conflicts:
+    - bijiben
+  replaces:
+    - bijiben
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-notes.git#tag=BIJIBEN_40_1
+  b2sums:
+    - 794f39b637b48a8a64a0fdb98fbd1d346f0a22dc2c752dfbba97f3ffe1c3c6b5d44cd3bbe64fdcc4877065140d6e7b3d3f3961ca872df05c4df22b617729a83d
+pkgname:
+  - name: gnome-notes
+# generated with artixpkg 0.36.4-1-any
