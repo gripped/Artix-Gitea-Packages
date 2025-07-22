@@ -1,10 +1,10 @@
 ---
-version: 3.56.2-1
+version: 3.56.2-2
 pkgbase:
   name: evolution
   pkgdesc: Manage your email, contacts and schedule
   pkgver: 3.56.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/evolution/-/wikis/home
   arch:
     - x86_64
@@ -63,8 +63,6 @@ pkgbase:
     - 01c27e0d45f8f5d3de01cce2d42399e06cb33f486d89fc990e6cf93f70cbfba58ddd54ca4fd7d6118a41030c086545c9935a6faa49ef075b1ab014dc0e079bdd
 pkgname:
   - name: evolution
-    groups:
-      - gnome-extra
     license:
       - LGPL-2.1-or-later
       - LicenseRef-OpenLDAP-Public-License
@@ -127,4 +125,4 @@ pkgname:
       - glibc
       - gtk3
       - spamassassin
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
