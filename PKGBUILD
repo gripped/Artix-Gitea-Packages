@@ -16,7 +16,7 @@ optdepends=(
 )
 options=(!strip)
 source=("${url}/${pkgname}_${pkgver}.tar.xz")
-sha256sums=('6d1e83faa7305a44a13b16818546f81cb4dfc41e8aef7d87df14d0447c746d44')
+sha256sums=('e06892771c1866f4e4deee40e4f27dc616cb428cd7980b54fd28d8a512246840')
 
 package() {
   cd "${srcdir}"/"${pkgname}"

@@ -20,7 +20,7 @@ pkgbase:
   source:
     - http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.8.4.tar.xz
   sha256sums:
-    - 6d1e83faa7305a44a13b16818546f81cb4dfc41e8aef7d87df14d0447c746d44
+    - e06892771c1866f4e4deee40e4f27dc616cb428cd7980b54fd28d8a512246840
 pkgname:
   - name: mint-y-icons
 # generated with artixpkg 0.36.4-1-any
