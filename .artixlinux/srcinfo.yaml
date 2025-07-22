@@ -1,0 +1,32 @@
+---
+version: 20250722-1
+pkgbase:
+  name: chrony-dinit
+  pkgdesc: dinit service scripts for chrony
+  pkgver: 20250722
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - chrony
+    - dinit
+  provides:
+    - init-chrony
+  conflicts:
+    - init-chrony
+  source:
+    - chronyd
+    - chrony
+    - chronyd.script
+  sha256sums:
+    - c5e4e7493d1af7a0366fb466f387c8fcaf84b14faccd3766e3de2eb5c4c7eefc
+    - de6ad518bac7c6f8424e4df55ccbe862677f6252718ac877f2f4dc86b584b27a
+    - ba21a44acc82fce706e8753310f20fa85061b0f126d4e765bbd220d35bf7c00c
+pkgname:
+  - name: chrony-dinit
+# generated with artixpkg 0.36.4-1-any
