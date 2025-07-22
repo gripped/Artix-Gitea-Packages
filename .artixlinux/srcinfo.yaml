@@ -1,0 +1,48 @@
+---
+version: 1.5-1
+pkgbase:
+  name: wofi
+  pkgdesc: launcher for wlroots-based wayland compositors
+  pkgver: 1.5
+  pkgrel: 1
+  url: https://hg.sr.ht/~scoopta/wofi
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cairo
+    - gdk-pixbuf2
+    - glib2
+    - gtk3
+    - meson
+    - pango
+    - wayland
+  depends:
+    - glibc
+  source:
+    - wofi-v1.5.tar.gz::https://hg.sr.ht/~scoopta/wofi/archive/v1.5.tar.gz
+  sha512sums:
+    - 5c3e7dd79b2a2bf2651defd822a3d2d49a416b570eb88cbf696fac1e90db878ad0e3a3ae51ca1611a04f00e61d142cc4bdd1aee4d4a1a1def6109936bf51c44c
+  b2sums:
+    - bdfbba7d838340e65458d98b9899ab2e8fe95add23ba72bade99f4799df0945f2df30e25478f87ef0f98b7666729d99e2d197812e3cfe5863edade76dcaa913f
+pkgname:
+  - name: wofi
+    depends:
+      - glibc
+      - cairo
+      - libcairo.so
+      - gdk-pixbuf2
+      - libgdk_pixbuf-2.0.so
+      - glib2
+      - libgio-2.0.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - gtk3
+      - libgdk-3.so
+      - libgtk-3.so
+      - pango
+      - libpango-1.0.so
+      - wayland
+      - libwayland-client.so
+# generated with artixpkg 0.36.4-1-any
