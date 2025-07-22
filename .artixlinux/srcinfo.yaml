@@ -1,0 +1,52 @@
+---
+version: 4.5.2-1
+pkgbase:
+  name: musescore
+  pkgdesc: Create, play and print beautiful sheet music
+  pkgver: 4.5.2
+  pkgrel: 1
+  url: https://musescore.org/
+  arch:
+    - x86_64
+  groups:
+    - pro-audio
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cmake
+    - doxygen
+    - git
+    - lame
+    - ninja
+    - python
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - harfbuzz
+    - hicolor-icon-theme
+    - libasound.so
+    - libfreetype.so
+    - libopusenc
+    - libsndfile.so
+    - opus
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-networkauth
+    - qt6-scxml
+    - qt6-svg
+    - tinyxml2
+    - zlib
+    - zstd
+  optdepends:
+    - 'lame: MP3 export'
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/musescore/MuseScore.git#tag=v4.5.2
+  sha256sums:
+    - a5ebc0484855d3984b85dbf9cb818563d5936a35402712f4a9f6113ebb654ee4
+pkgname:
+  - name: musescore
+# generated with artixpkg 0.36.4-1-any
