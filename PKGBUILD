@@ -1,10 +1,11 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio5-extras
 pkgver=24.02.2
-pkgrel=2
+pkgrel=4
 pkgdesc='Additional components to increase the functionality of KIO'
 arch=(x86_64)
 url='https://www.kde.org/'
@@ -26,8 +27,6 @@ depends=(gcc-libs
          libssh
          libtirpc
          libxcursor
-         phonon-qt5
-         kactivities5
          qt5-base
          qt5-svg
          smbclient
@@ -38,14 +37,12 @@ makedepends=(extra-cmake-modules
              kdoctools5
              libappimage
              openexr
-             kactivities-stats5
              taglib)
 optdepends=('icoutils: Windows executable thumbnails'
             'kimageformats5: thumbnails for additional image formats'
             'libappimage: AppImage thumbnails'
             'openexr: EXR format thumbnails'
             'perl: info kioslave'
-            'kactivities-stats5: recently used kioslave'
             'qt5-imageformats: thumbnails for additional image formats'
             'taglib: audio file thumbnails')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/kio-extras-kf5-$pkgver.tar.xz{,.sig})
@@ -59,7 +56,8 @@ build() {
   cmake -B build -S kio-extras-kf5-$pkgver \
     -DLIBAPPIMAGE_LIBRARIES=libappimage.so \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
-    -DBUILD_TESTING=OFF
+    -DBUILD_TESTING=OFF \
+    -DBUILD_ACTIVITIES=OFF
   cmake --build build
 }
 
