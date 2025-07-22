@@ -1,10 +1,10 @@
 ---
-version: 0.12.0-4
+version: 0.12.0-5
 pkgbase:
   name: phonon-vlc
   pkgdesc: Phonon VLC backend
   pkgver: 0.12.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://community.kde.org/Phonon
   arch:
     - x86_64
@@ -22,6 +22,8 @@ pkgbase:
     - vlc-plugins-base
   provides:
     - phonon-qt6-backend
+  conflicts:
+    - phonon-qt5-vlc<0.12.0-6
   source:
     - https://download.kde.org/stable/phonon/phonon-backend-vlc/0.12.0/phonon-backend-vlc-0.12.0.tar.xz
     - https://download.kde.org/stable/phonon/phonon-backend-vlc/0.12.0/phonon-backend-vlc-0.12.0.tar.xz.sig
