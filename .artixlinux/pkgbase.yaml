@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -49,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 7.63.0-1
+    packages:
+      - signal-desktop-7.63.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 7.62.0-1
