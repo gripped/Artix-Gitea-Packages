@@ -1,0 +1,30 @@
+---
+version: 3.38.1+r137+g0d01085-1
+pkgbase:
+  name: iagno
+  pkgdesc: Dominate the board in a classic version of Reversi
+  pkgver: 3.38.1+r137+g0d01085
+  pkgrel: 1
+  url: https://wiki.gnome.org/Apps/Reversi
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - meson
+    - gobject-introspection
+    - yelp-tools
+    - appstream
+    - vala
+    - git
+  depends:
+    - gtk3
+    - gsound
+    - librsvg
+  source:
+    - git+https://gitlab.gnome.org/GNOME/iagno.git#commit=0d0108571402e40761f95274cf1fad0b03fda8c9
+  b2sums:
+    - 90be43ed4ac67181703f36d0c8c88257f1800c2721abf158c13b6988783f97909e5bf12d4bdc304abf866ddd2a9179275f4a6c662feb6e1ada1555de251a359f
+pkgname:
+  - name: iagno
+# generated with artixpkg 0.36.4-1-any
