@@ -1,10 +1,10 @@
 ---
-version: 1.11-1
+version: 1.11-2
 pkgbase:
   name: nng
   pkgdesc: A lightweight, broker-less messaging library
   pkgver: 1.11
-  pkgrel: 1
+  pkgrel: 2
   url: https://nng.nanomsg.org/
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
     - cmake
     - ninja
   depends:
+    - glibc
     - wolfssl
   source:
     - nng::git+https://github.com/nanomsg/nng#tag=v1.11
