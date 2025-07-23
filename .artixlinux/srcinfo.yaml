@@ -1,10 +1,10 @@
 ---
-version: 11.4.2-1
+version: 11.4.2-2
 pkgbase:
   name: npm
   pkgdesc: JavaScript package manager
   pkgver: 11.4.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.npmjs.com
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 223f4ba1e54ad96939d493f425fa0f9ca02f4a4cead055439ca9a9ac8aa2263a86b7f31dd437c635ca15040d9b394b243827680abe536ed6a3f120579d5a6eff
 pkgname:
   - name: npm
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
