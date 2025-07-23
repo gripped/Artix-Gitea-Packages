@@ -1,10 +1,10 @@
 ---
-version: 2.3.3-7
+version: 2.3.3-8
 pkgbase:
   name: vde2
   pkgdesc: Virtual Distributed Ethernet for emulators like qemu
   pkgver: 2.3.3
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/virtualsquare/vde-2
   arch:
     - x86_64
