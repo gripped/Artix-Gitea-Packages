@@ -1,10 +1,10 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: Thomas Haider <t.haider@vcnc.org>
 
 pkgname=libev
 pkgver=4.33
-pkgrel=3
+pkgrel=4
 pkgdesc="A full-featured and high-performance event loop"
 arch=('x86_64')
 url="https://software.schmorp.de/pkg/libev.html"
