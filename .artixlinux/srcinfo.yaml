@@ -1,0 +1,35 @@
+---
+version: 3.3.1-1
+pkgbase:
+  name: python-oauthlib
+  pkgdesc: A generic, spec-compliant, thorough implementation of the OAuth request-signing logic
+  pkgver: 3.3.1
+  pkgrel: 1
+  url: https://github.com/oauthlib/oauthlib
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-blinker
+    - python-cryptography
+    - python-pyjwt
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-blinker: for signals support'
+    - 'python-cryptography: for RSA and signed token support'
+    - 'python-pyjwt: for signed token support'
+  source:
+    - oauthlib-3.3.1.tar.gz::https://github.com/oauthlib/oauthlib/archive/refs/tags/v3.3.1.tar.gz
+  sha256sums:
+    - eb93759adad48251a472c5d20fbce3e08ee53fcec2909a22448d48c9fa100ea0
+pkgname:
+  - name: python-oauthlib
+# generated with artixpkg 0.36.4-1-any
