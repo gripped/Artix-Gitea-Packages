@@ -3,7 +3,7 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.132.0
+pkgver=1.134.0
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
@@ -32,17 +32,16 @@ optdepends=('perl: sync_room_to_group.pl'
             'python-hiredis'
             'python-pyicu: Improve user search for international display names'
             'python-authlib: OpenID SSO support')
+options=(!lto)
 source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf'
-        'rm-faling-test.patch'
         )
-sha256sums=('5f63a8bec7a18e8e9d248cf936dc631d5ea7487ee4bcf59e03b045a02761dcee'
+sha256sums=('0584026fee6d2efef97448cd14b96de66a74f43a94a5a32f2a71e505db692a3d'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             '574175c27a4f07d4ce6a676d86b697c82c36b796442d0955881da588b6f4bb65'
-            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f'
-            '00c2c75295cf5e674bee3cf9cdbeeecf108627761daf8560aa9343e7b58b83c0')
+            '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
 backup=('etc/synapse/log_config.yaml')
 install=synapse.install
 validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
@@ -57,11 +56,13 @@ validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
 
 prepare() {
 	cd $pkgname
-	# allow any poetry-core to be used
-	sed 's/poetry-core>=1.1.0,<=1.9.1/poetry-core>=1.0.0/' -i pyproject.toml
-	sed 's/setuptools_rust>=1.3,<=1.10.2/setuptools_rust>=1.3.0/' -i pyproject.toml
 
-	patch -p 1 -i ../rm-faling-test.patch
+	# Required to make synapse work with lxml 6.0
+	git cherry-pick --no-commit 4555f61db5d6caf3cbbe03dfd3051e72c1b9c221
+
+	# allow any poetry-core to be used
+	sed 's/poetry-core>=1.1.0,<=2.1.3/poetry-core>=1.1.0/' -i pyproject.toml
+	sed 's/setuptools_rust>=1.3,<=1.11.1/setuptools_rust>=1.3.0/' -i pyproject.toml
 }
 
 build() {
