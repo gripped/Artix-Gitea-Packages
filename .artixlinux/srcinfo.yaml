@@ -1,0 +1,32 @@
+---
+version: 2025.4.1-1
+pkgbase:
+  name: python-jsonschema-specifications
+  pkgdesc: The JSON Schema meta-schemas and vocabularies, exposed as a Registry
+  pkgver: 2025.4.1
+  pkgrel: 1
+  url: https://github.com/python-jsonschema/jsonschema-specifications
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python
+    - python-referencing
+  source:
+    - python-jsonschema-specifications::git+https://github.com/python-jsonschema/jsonschema-specifications#tag=v2025.4.1
+  sha512sums:
+    - 492fa595d7d713b77dcb62282233c2f0f0c99aa783245bae8cfa340fe04f0512ab132d134b5648e5cb8784925f2f36a3461da2c4f2f6ce101cbbbc5a473f0aa9
+  b2sums:
+    - 37b4d93c1554ee3ac813df8bf2e33645f92f7484232f4f12dc41c2a1436fcb9bdabf6e7f8576893bb36a3f15138421b9241ed36b9404032ba5727aa5ed669db7
+pkgname:
+  - name: python-jsonschema-specifications
+# generated with artixpkg 0.36.4-1-any
