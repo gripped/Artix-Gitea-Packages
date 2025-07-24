@@ -1,10 +1,10 @@
 ---
-version: 6.9.1-1
+version: 6.9.1-2
 pkgbase:
   name: qt6-declarative
   pkgdesc: Classes for QML and JavaScript languages
   pkgver: 6.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - 407186c6c32798b93d625a6f4cd76e6c82ad2a611fddb0161b4c4febbe4677f2
 pkgname:
   - name: qt6-declarative
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
