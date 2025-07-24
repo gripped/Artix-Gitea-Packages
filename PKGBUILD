@@ -6,7 +6,7 @@
 
 pkgbase=nvidia-utils
 pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-dkms' 'nvidia-open-dkms')
-pkgver=575.64.03
+pkgver=575.64.05
 pkgrel=1
 arch=('x86_64')
 url="http://www.nvidia.com/"
@@ -27,8 +27,8 @@ sha512sums=('de7116c09f282a27920a1382df84aa86f559e537664bb30689605177ce37dc50677
             '1bcf2c6ee71686c0d32625e746ec8c0f7cf42fc63c76c3076ff2526b2661e8b9e9f76eaa2c4b213c7cc437a6f06006cc07672c4974d7f4515b2de2fd7c47a891'
             'f8f071f5a46c1a5ce5188e104b017808d752e61c0c20de1466feb5d693c0b55a5586314411e78cc2ab9c0e16e2c67afdd358da94c0c75df1f8233f54c280762c'
             'c7fea39d11565f05a507d3aded4e9ea506ef9dbebf313e0fc8d6ebc526af3f9d6dec78af9d6c4456c056310f98911c638706bccdd9926d07f492615569430455'
-            'ca705ad35dbb6e3e4872ec85dd78e70760e86b28d5d4b9bfe7b5d5ad0fca3bfdcf794e8708f3b1dfcea8edeabc208e820388af4a57dc9c6dcffb5d1761598779'
-            '2acd48d39e9aabc892ad0eb3d98bc9b723fd79a9b7f24b9f55b3e591e5d27445fe5ffc9d1bd8042e9741d56ca815c47065f36d88a3a008e635af2011eb07cf40'
+            '1f5ea98478c913b044cccb25934e12d58561643b83074e5967d84126baac9a5ddc092a6ea017956957abae174520718d747415d09c6fb2da110de51629df98a2'
+            '4cbe2e2d78eab84a8a0153f68ab6b1fefa75225c145b3bd9db4fab9d0cb212a4202a89d0e6d0f2d0dedb5663389f7c9ed6cadb6a656eb32dbde0cf0f806652e2'
             '0bb89b9037f0baa9aae1ff8e70c9c93896f03fd0cc380eea4b0dc094a6991c3ad6738c9fbbaa42d8b5a544f77dc91c0e6401b1501c5970c576d5efbc0de8dd34'
             '42f621179d4fd9bf608f0d84b9019f5a5fdf5d92d68d22ce9b9a9add1cad1c90dcb3764db68e0b9bc7e902bb6b955c59563ea6d4f39f2e39a340387e4d5deb82')
 
@@ -305,7 +305,7 @@ END
 
 package_nvidia-open-dkms() {
   pkgdesc="NVIDIA open kernel modules - module sources"
-  depends+=('dkms')
+  depends+=('dkms' "nvidia-utils=$pkgver")
   license=('MIT AND GPL-2.0-only')
   conflicts=('nvidia-open' 'NVIDIA-MODULE')
   provides=('nvidia-open' 'NVIDIA-MODULE')
