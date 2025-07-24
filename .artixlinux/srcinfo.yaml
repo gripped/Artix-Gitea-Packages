@@ -1,0 +1,28 @@
+---
+version: 2.4.1-1
+pkgbase:
+  name: opam
+  pkgdesc: OCaml package manager
+  pkgver: 2.4.1
+  pkgrel: 1
+  url: https://opam.ocaml.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  depends:
+    - bubblewrap
+    - ocaml-compiler-libs
+    - unzip
+  optdepends:
+    - 'darcs: For downloading packages with darcs'
+    - 'git: For downloading packages with git'
+    - 'mercurial: For downloading packages with mercurial'
+    - 'rsync: For downloading packages with rsync'
+  source:
+    - https://github.com/ocaml/opam/releases/download/2.4.1/opam-full-2.4.1.tar.gz
+  b2sums:
+    - 5b2fbca21955c4ce88ab4ef05e7cabe32e4fe9b787b333a1641e735b440ffc1b0b6c3f4c3e4cc3fbe13265ca39c6a896067553a6db4fc0d5ee09aa76106160d5
+pkgname:
+  - name: opam
+# generated with artixpkg 0.36.4-1-any
