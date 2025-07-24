@@ -1,10 +1,10 @@
 ---
-version: 3.0.21-26
+version: 3.0.21-27
 pkgbase:
   name: vlc
-  pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player
+  pkgdesc: Free and open source cross-platform multimedia player and framework
   pkgver: 3.0.21
-  pkgrel: 26
+  pkgrel: 27
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
@@ -151,7 +151,6 @@ pkgname:
       - 'vlc-plugins-visualization: for visualization plugins'
       - 'vlc-plugin-aalib: for ASCII art video output support'
       - 'vlc-plugin-aom: for AOM AV1 codec support'
-      - 'vlc-plugin-archive: for archive stream extractor support'
       - 'vlc-plugin-aribb24: for ARIB STD-24 codec and demux support'
       - 'vlc-plugin-aribb25: for ARIB STD-25 stream filter support'
       - 'vlc-plugin-ass: for SSA/ASS subtitle codec support'
@@ -166,7 +165,7 @@ pkgname:
       - 'vlc-plugin-ffmpeg: for FFMPEG based access, codec, demux, packetizer, VDPAU, video chroma and video filter support'
       - 'vlc-plugin-firewire: for FireWire device access support'
       - 'vlc-plugin-fluidsynth: for FluidSynth codec support'
-      - 'vlc-plugin-freetype: for Freetype2 text renderer support'
+      - 'vlc-plugin-freetype: for subtitle and on screen display text rendering support'
       - 'vlc-plugin-gme: for Game Music Emulation demux support'
       - 'vlc-plugin-gstreamer: for GStreamer codec support'
       - 'vlc-plugin-jack: for JACK access and audio output support'
@@ -183,15 +182,14 @@ pkgname:
       - 'vlc-plugin-mtp: for MTP device access and discovery support'
       - 'vlc-plugin-musepack: for MusePack demux support'
       - 'vlc-plugin-nfs: for NFS access support'
-      - 'vlc-plugin-notify: for notify support'
-      - 'vlc-plugin-ogg: for OGG mux and demux support'
+      - 'vlc-plugin-notify: for notification support'
       - 'vlc-plugin-quicksync: for Intel QuickSync H264/H262 codec support'
       - 'vlc-plugin-samplerate: for samplerate audio filter support'
       - 'vlc-plugin-sdl: for SDL codec support'
       - 'vlc-plugin-sftp: for SFTP access support'
       - 'vlc-plugin-smb: for SMB access support'
       - 'vlc-plugin-soxr: for SoX Resampler audio filter support'
-      - 'vlc-plugin-srt: for subtitle support'
+      - 'vlc-plugin-srt: for SRT subtitle file support'
       - 'vlc-plugin-svg: for SVG codec and text renderer support'
       - 'vlc-plugin-udev: for ALSA services discovery support using udev'
       - 'vlc-plugin-upnp: for UPnP services discovery support'
@@ -203,7 +201,7 @@ pkgname:
     replaces:
       - vlc-plugin
   - name: libvlc
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - library
+    pkgdesc: Free and open source cross-platform multimedia player and framework - library
     depends:
       - dbus
       - gcc-libs
@@ -212,7 +210,7 @@ pkgname:
       - libvlc.so
       - libvlccore.so
   - name: vlc-cli
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - command line interface
+    pkgdesc: Free and open source cross-platform multimedia player and framework - command line interface
     depends:
       - bash
       - glibc
@@ -222,7 +220,7 @@ pkgname:
     optdepends:
       - 'vlc-plugin-lua: for Lua scripting plugins'
   - name: vlc-gui-ncurses
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Ncurses TUI
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Ncurses TUI
     depends:
       - bash
       - glibc
@@ -231,7 +229,7 @@ pkgname:
       - ncurses
       - vlc-plugins-base
   - name: vlc-gui-qt
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Qt GUI
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Qt GUI
     depends:
       - bash
       - gcc-libs
@@ -257,7 +255,7 @@ pkgname:
       - 'vlc-plugins-extra: for extra plugins'
       - 'vlc-plugins-visualization: for visualization plugins'
   - name: vlc-gui-skins2
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Skins2 GUI
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Skins2 GUI
     depends:
       - bash
       - freetype2
@@ -273,94 +271,103 @@ pkgname:
       - vlc-cli=3.0.21
       - vlc-gui-qt=3.0.21
   - name: vlc-plugin-a52dec
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ATSC A/52 (AC-3) plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - ATSC A/52 (AC-3) plugin
     depends:
       - a52dec
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-aalib
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ASCII art video output plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - ASCII art video output plugin
     depends:
       - aalib
       - glibc
       - libvlc
       - libvlccore.so
       - libx11
+      - vlc-plugins-base
   - name: vlc-plugin-alsa
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ALSA plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - ALSA plugins
     depends:
       - alsa-lib
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-aom
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - AOM AV1 plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - AOM AV1 plugin
     depends:
       - aom
       - glibc
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-archive
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - stream extractor plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - stream extractor plugin
     depends:
       - glibc
       - libarchive
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-aribb24
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ARIB STD-B24 plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - ARIB STD-B24 plugins
     depends:
       - aribb24
       - glibc
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-aribb25
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - ARIB STD-B25 plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - ARIB STD-B25 plugin
     depends:
       - aribb25
       - glibc
       - libvlc
       - libvlccore.so
       - pcsclite
+      - vlc-plugins-base
   - name: vlc-plugin-ass
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SSA/ASS subtitle plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SSA/ASS subtitle plugin
     depends:
       - glibc
       - libass
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-avahi
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - mDNS/DNS-SD plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - mDNS/DNS-SD plugin
     depends:
       - avahi
       - glibc
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-bluray
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Blu-ray plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Blu-ray plugin
     depends:
       - glibc
       - libbluray
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-caca
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Color ASCII art video output plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Color ASCII art video output plugin
     depends:
       - glibc
       - libcaca
       - libvlc
       - libvlccore.so
       - libx11
+      - vlc-plugins-base
   - name: vlc-plugin-cddb
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - CDDB plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - CDDB plugin
     depends:
       - glibc
       - libcddb
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-chromecast
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Chromecast plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Chromecast plugin
     depends:
       - abseil-cpp
       - gcc-libs
@@ -368,61 +375,65 @@ pkgname:
       - libvlc
       - libvlccore.so
       - protobuf
+      - vlc-plugins-base
   - name: vlc-plugin-dav1d
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - dav1d AV1 plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - dav1d AV1 plugin
     depends:
       - dav1d
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-dbus
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Dbus plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Dbus plugin
     depends:
       - dbus
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-dbus-screensaver
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - dbus screensaver plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - dbus screensaver plugin
     depends:
       - dbus
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-dca
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - DTS Coherent Acoustics plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - DTS Coherent Acoustics plugin
     depends:
       - glibc
       - libdca
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-dvb
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - DVB plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - DVB plugins
     depends:
       - aribb24
       - glibc
       - libdvbpsi
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-dvd
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - DVD plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - DVD plugins
     depends:
       - glibc
       - libdvdnav
       - libdvdread
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
     optdepends:
       - 'libdvdcss: for decoding encrypted DVDs'
   - name: vlc-plugin-faad2
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FAAD2 AAC plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - FAAD2 AAC plugin
     depends:
       - faad2
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-ffmpeg
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FFMPEG plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - FFMPEG plugins
     depends:
       - ffmpeg4.4
       - glibc
@@ -430,10 +441,11 @@ pkgname:
       - libvlc
       - libvlccore.so
       - libx11
+      - vlc-plugins-base
       - vlc-plugins-video-output
       - libvlc_vdpau.so
   - name: vlc-plugin-firewire
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FireWire plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - FireWire plugins
     depends:
       - gcc-libs
       - glibc
@@ -442,22 +454,24 @@ pkgname:
       - libraw1394
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-flac
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FLAC plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - FLAC plugin
     depends:
       - flac
       - glibc
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-fluidsynth
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - FluidSynth plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - FluidSynth plugin
     depends:
       - fluidsynth
       - glibc
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-freetype
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Freetype plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - subtitle and on screen display text rendering support
     depends:
       - fontconfig
       - freetype2
@@ -466,22 +480,24 @@ pkgname:
       - harfbuzz
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-gme
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Game music emulation plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Game music emulation plugin
     depends:
       - glibc
       - libgme
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-gnutls
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - GnuTLS plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - GnuTLS plugin
     depends:
       - glibc
       - gnutls
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-gstreamer
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - GStreamer plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - GStreamer plugin
     depends:
       - glib2
       - glibc
@@ -489,86 +505,95 @@ pkgname:
       - gstreamer
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-inflate
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - inflate plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - inflate plugin
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - zlib
   - name: vlc-plugin-jack
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - JACK plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - JACK plugin
     depends:
       - glibc
       - jack
       - libjack.so
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-jpeg
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - JPEG plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - JPEG plugin
     depends:
       - glibc
       - libjpeg-turbo
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-kate
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - kate plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - kate plugin
     depends:
       - glibc
       - libkate
       - libtiger
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-kwallet
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Kwallet keystore plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Kwallet keystore plugin
     depends:
       - dbus
       - glibc
       - kwallet
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-libsecret
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - libsecret/gnome-keyring plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - libsecret/gnome-keyring plugin
     depends:
       - glib2
       - glibc
       - libsecret
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-lirc
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Infrared remote control plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Infrared remote control plugin
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - lirc
+      - vlc-plugins-base
   - name: vlc-plugin-live555
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - live555 RTP/RSTP client plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - live555 RTP/RSTP client plugin
     depends:
       - gcc-libs
       - glibc
       - libvlc
       - libvlccore.so
       - live-media
+      - vlc-plugins-base
   - name: vlc-plugin-lua
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Lua scripting plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Lua scripting plugins
     depends:
       - gcc-libs
       - glibc
       - libvlc
       - libvlccore.so
       - lua
+      - vlc-plugins-base
     optdepends:
       - 'lua-socket: for http interface'
   - name: vlc-plugin-mad
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MPEG Audio Decoder plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - MPEG Audio Decoder plugin
     depends:
       - glibc
       - libmad
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-matroska
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Matroska plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Matroska plugin
     depends:
       - gcc-libs
       - glibc
@@ -577,57 +602,64 @@ pkgname:
       - libvlc
       - libvlccore.so
       - zlib
+      - vlc-plugins-base
   - name: vlc-plugin-mdns
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - mDNS plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - mDNS plugin
     depends:
       - glibc
       - libmicrodns
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-modplug
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MOD plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - MOD plugin
     depends:
       - glibc
       - libmodplug
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-mpeg2
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MPEG2 plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - MPEG2 plugin
     depends:
       - glibc
       - libmpeg2
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-mpg123
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MPG1/2/3 plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - MPG1/2/3 plugin
     depends:
       - glibc
       - mpg123
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-mtp
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MTP plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - MTP plugins
     depends:
       - glibc
       - libmtp
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-musepack
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - MusePack plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - MusePack plugin
     depends:
       - glibc
       - libmpcdec
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-nfs
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - NFS plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - NFS plugin
     depends:
       - glibc
       - libnfs
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-notify
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - notification plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - notification plugin
     depends:
       - gdk-pixbuf2
       - glib2
@@ -636,8 +668,9 @@ pkgname:
       - libnotify
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-ogg
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - OGG plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - OGG plugins
     depends:
       - glibc
       - libogg
@@ -645,78 +678,85 @@ pkgname:
       - libvlccore.so
       - libvorbis
   - name: vlc-plugin-opus
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Opus plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Opus plugin
     depends:
       - glibc
       - opus
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-png
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - PNG plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - PNG plugin
     depends:
       - glibc
       - libpng
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-pulse
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - PulseAudio plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - PulseAudio plugins
     depends:
       - glibc
       - libpulse
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-quicksync
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Intel QuickSync plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Intel QuickSync plugin
     depends:
       - glibc
       - libmfx
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-samplerate
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - samplerate plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - samplerate plugin
     depends:
       - glibc
       - libsamplerate
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-sdl
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SDL plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SDL plugin
     depends:
       - glibc
       - sdl12-compat
       - sdl_image
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-sftp
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SFTP plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SFTP plugin
     depends:
       - glibc
       - libssh2
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-shout
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - shoutcast plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - shoutcast plugin
     depends:
       - glibc
       - libshout
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-smb
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SMB plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SMB plugin
     depends:
       - glibc
       - smbclient
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-soxr
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SoX Resampler plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SoX Resampler plugin
     depends:
       - glibc
       - libsoxr
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-speex
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Speex plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Speex plugins
     depends:
       - glibc
       - libvlc
@@ -724,14 +764,15 @@ pkgname:
       - speex
       - speexdsp
   - name: vlc-plugin-srt
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SRT plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SRT subtitle file support
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - srt
+      - vlc-plugins-base
   - name: vlc-plugin-svg
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - SVG plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - SVG plugins
     depends:
       - cairo
       - glib2
@@ -739,8 +780,9 @@ pkgname:
       - librsvg
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-tag
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - tag plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - tag plugin
     depends:
       - gcc-libs
       - glibc
@@ -748,79 +790,84 @@ pkgname:
       - libvlccore.so
       - taglib
   - name: vlc-plugin-theora
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Theora plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Theora plugins
     depends:
       - glibc
       - libtheora
       - libvlc
       - libvlccore.so
   - name: vlc-plugin-twolame
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - TwoLAME plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - TwoLAME plugins
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - twolame
   - name: vlc-plugin-udev
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - udev plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - udev plugin
     depends:
       - alsa-lib
       - glibc
       - libvlc
       - libvlccore.so
       - libudev
+      - vlc-plugins-base
   - name: vlc-plugin-upnp
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - UPnP plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - UPnP plugin
     depends:
       - gcc-libs
       - glibc
       - libupnp
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
   - name: vlc-plugin-vorbis
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - Vorbis plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - Vorbis plugin
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - libvorbis
   - name: vlc-plugin-vpx
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - VP8 and VP9 plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - VP8 and VP9 plugin
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - libvpx
   - name: vlc-plugin-x264
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - H264/AVC encoding
+    pkgdesc: Free and open source cross-platform multimedia player and framework - H264/AVC encoding
     depends:
       - glibc
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
       - x264
   - name: vlc-plugin-x265
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - H265/HEVC encoding
+    pkgdesc: Free and open source cross-platform multimedia player and framework - H265/HEVC encoding
     depends:
       - glibc
       - libvlc
       - libvlccore.so
+      - vlc-plugins-base
       - x265
   - name: vlc-plugin-xml
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - XML plugin
+    pkgdesc: Free and open source cross-platform multimedia player and framework - XML plugin
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - libxml2
   - name: vlc-plugin-zvbi
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - VBI plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - VBI plugins
     depends:
       - glibc
       - libvlc
       - libvlccore.so
       - zvbi
+      - vlc-plugins-base
   - name: vlc-plugins-all
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - all plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - all plugins
     depends:
       - vlc-plugin-ffmpeg
       - vlc-plugin-fluidsynth
@@ -841,7 +888,7 @@ pkgname:
       - vlc-plugins-video-output
       - vlc-plugins-visualization
   - name: vlc-plugins-base
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - base plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - base plugins
     depends:
       - gcc-libs
       - glibc
@@ -849,6 +896,7 @@ pkgname:
       - libvlccore.so
       - vlc-plugin-alsa
       - vlc-plugin-a52dec
+      - vlc-plugin-archive
       - vlc-plugin-dav1d
       - vlc-plugin-dbus
       - vlc-plugin-dbus-screensaver
@@ -858,6 +906,7 @@ pkgname:
       - vlc-plugin-inflate
       - vlc-plugin-jpeg
       - vlc-plugin-mpg123
+      - vlc-plugin-ogg
       - vlc-plugin-opus
       - vlc-plugin-png
       - vlc-plugin-shout
@@ -870,7 +919,7 @@ pkgname:
       - vlc-plugin-xml
       - zlib
   - name: vlc-plugins-extra
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - extra plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - extra plugins
     depends:
       - glibc
       - libvlc
@@ -878,7 +927,6 @@ pkgname:
       - libxcb
       - vlc-plugin-aalib
       - vlc-plugin-aom
-      - vlc-plugin-archive
       - vlc-plugin-aribb24
       - vlc-plugin-aribb25
       - vlc-plugin-ass
@@ -912,8 +960,9 @@ pkgname:
       - vlc-plugin-udev
       - vlc-plugin-upnp
       - vlc-plugin-zvbi
+      - vlc-plugins-base
   - name: vlc-plugins-video-output
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - video output plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - video output plugins
     depends:
       - gcc-libs
       - glibc
@@ -932,7 +981,7 @@ pkgname:
       - libvlc_xcb_events.so
       - libvlc_vdpau.so
   - name: vlc-plugins-visualization
-    pkgdesc: Multi-platform MPEG, VCD/DVD, and DivX player - visualization plugins
+    pkgdesc: Free and open source cross-platform multimedia player and framework - visualization plugins
     depends:
       - gcc-libs
       - glibc

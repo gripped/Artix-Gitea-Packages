@@ -16,8 +16,8 @@ _vlcver=3.0.21
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=$_vlcver${_vlcfixupver//-/.r}
-pkgrel=26
-pkgdesc='Multi-platform MPEG, VCD/DVD, and DivX player'
+pkgrel=27
+pkgdesc='Free and open source cross-platform multimedia player and framework'
 url=https://www.videolan.org/vlc/
 arch=(x86_64)
 license=(
@@ -309,7 +309,6 @@ package_vlc() {
     'vlc-plugins-visualization: for visualization plugins'
     'vlc-plugin-aalib: for ASCII art video output support'
     'vlc-plugin-aom: for AOM AV1 codec support'
-    'vlc-plugin-archive: for archive stream extractor support'
     'vlc-plugin-aribb24: for ARIB STD-24 codec and demux support'
     'vlc-plugin-aribb25: for ARIB STD-25 stream filter support'
     'vlc-plugin-ass: for SSA/ASS subtitle codec support'
@@ -324,7 +323,7 @@ package_vlc() {
     'vlc-plugin-ffmpeg: for FFMPEG based access, codec, demux, packetizer, VDPAU, video chroma and video filter support'
     'vlc-plugin-firewire: for FireWire device access support'
     'vlc-plugin-fluidsynth: for FluidSynth codec support'
-    'vlc-plugin-freetype: for Freetype2 text renderer support'
+    'vlc-plugin-freetype: for subtitle and on screen display text rendering support'
     'vlc-plugin-gme: for Game Music Emulation demux support'
     'vlc-plugin-gstreamer: for GStreamer codec support'
     'vlc-plugin-jack: for JACK access and audio output support'
@@ -341,15 +340,14 @@ package_vlc() {
     'vlc-plugin-mtp: for MTP device access and discovery support'
     'vlc-plugin-musepack: for MusePack demux support'
     'vlc-plugin-nfs: for NFS access support'
-    'vlc-plugin-notify: for notify support'
-    'vlc-plugin-ogg: for OGG mux and demux support'
+    'vlc-plugin-notify: for notification support'
     'vlc-plugin-quicksync: for Intel QuickSync H264/H262 codec support'
     'vlc-plugin-samplerate: for samplerate audio filter support'
     'vlc-plugin-sdl: for SDL codec support'
     'vlc-plugin-sftp: for SFTP access support'
     'vlc-plugin-smb: for SMB access support'
     'vlc-plugin-soxr: for SoX Resampler audio filter support'
-    'vlc-plugin-srt: for subtitle support'
+    'vlc-plugin-srt: for SRT subtitle file support'
     'vlc-plugin-svg: for SVG codec and text renderer support'
     'vlc-plugin-udev: for ALSA services discovery support using udev'
     'vlc-plugin-upnp: for UPnP services discovery support'
@@ -996,6 +994,7 @@ package_vlc-plugin-aalib() {
     glibc
     libvlc libvlccore.so
     libx11
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1018,6 +1017,7 @@ package_vlc-plugin-aom() {
     aom
     glibc
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1040,6 +1040,7 @@ package_vlc-plugin-aribb24() {
     aribb24
     glibc
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1052,6 +1053,7 @@ package_vlc-plugin-aribb25() {
     glibc
     libvlc libvlccore.so
     pcsclite
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1063,6 +1065,7 @@ package_vlc-plugin-ass() {
     glibc
     libass
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1074,6 +1077,7 @@ package_vlc-plugin-avahi() {
     avahi
     glibc
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1085,6 +1089,7 @@ package_vlc-plugin-bluray() {
     glibc
     libbluray
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1097,6 +1102,7 @@ package_vlc-plugin-caca() {
     libcaca
     libvlc libvlccore.so
     libx11
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1108,6 +1114,7 @@ package_vlc-plugin-cddb() {
     glibc
     libcddb
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1121,6 +1128,7 @@ package_vlc-plugin-chromecast() {
     glibc
     libvlc libvlccore.so
     protobuf
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1165,6 +1173,7 @@ package_vlc-plugin-dca() {
     glibc
     libdca
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1177,6 +1186,7 @@ package_vlc-plugin-dvb() {
     glibc
     libdvbpsi
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1189,6 +1199,7 @@ package_vlc-plugin-dvd() {
     libdvdnav
     libdvdread
     libvlc libvlccore.so
+    vlc-plugins-base
   )
   optdepends=(
     'libdvdcss: for decoding encrypted DVDs'
@@ -1216,6 +1227,7 @@ package_vlc-plugin-ffmpeg() {
     libva
     libvlc libvlccore.so
     libx11
+    vlc-plugins-base
     vlc-plugins-video-output libvlc_vdpau.so
   )
 
@@ -1231,6 +1243,7 @@ package_vlc-plugin-firewire() {
     libdc1394
     libraw1394
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1253,13 +1266,14 @@ package_vlc-plugin-fluidsynth() {
     fluidsynth
     glibc
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
 }
 
 package_vlc-plugin-freetype() {
-  pkgdesc+=" - Freetype plugin"
+  pkgdesc+=" - subtitle and on screen display text rendering support"
   depends=(
     fontconfig
     freetype2
@@ -1267,6 +1281,7 @@ package_vlc-plugin-freetype() {
     glibc
     harfbuzz
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1278,6 +1293,7 @@ package_vlc-plugin-gme() {
     glibc
     libgme
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1302,6 +1318,7 @@ package_vlc-plugin-gstreamer() {
     gst-plugins-base-libs
     gstreamer
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1324,6 +1341,7 @@ package_vlc-plugin-jack() {
     glibc
     jack libjack.so
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1348,6 +1366,7 @@ package_vlc-plugin-kate() {
     libkate
     libtiger
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1360,6 +1379,7 @@ package_vlc-plugin-kwallet() {
     glibc
     kwallet
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1372,6 +1392,7 @@ package_vlc-plugin-libsecret() {
     glibc
     libsecret
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1383,6 +1404,7 @@ package_vlc-plugin-lirc() {
     glibc
     libvlc libvlccore.so
     lirc
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1395,6 +1417,7 @@ package_vlc-plugin-live555() {
     glibc
     libvlc libvlccore.so
     live-media
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1407,6 +1430,7 @@ package_vlc-plugin-lua() {
     glibc
     libvlc libvlccore.so
     lua
+    vlc-plugins-base
   )
   optdepends=(
     'lua-socket: for http interface'
@@ -1421,6 +1445,7 @@ package_vlc-plugin-mad() {
     glibc
     libmad
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1435,6 +1460,7 @@ package_vlc-plugin-matroska() {
     libmatroska
     libvlc libvlccore.so
     zlib
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1446,6 +1472,7 @@ package_vlc-plugin-mdns() {
     glibc
     libmicrodns
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1457,6 +1484,7 @@ package_vlc-plugin-modplug() {
     glibc
     libmodplug
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1468,6 +1496,7 @@ package_vlc-plugin-mpeg2() {
     glibc
     libmpeg2
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1490,6 +1519,7 @@ package_vlc-plugin-mtp() {
     glibc
     libmtp
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1501,6 +1531,7 @@ package_vlc-plugin-musepack() {
     glibc
     libmpcdec
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1512,6 +1543,7 @@ package_vlc-plugin-nfs() {
     glibc
     libnfs
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1526,6 +1558,7 @@ package_vlc-plugin-notify() {
     gtk3
     libnotify
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1571,6 +1604,7 @@ package_vlc-plugin-pulse() {
     glibc
     libpulse
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1582,6 +1616,7 @@ package_vlc-plugin-quicksync() {
     glibc
     libmfx
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1593,6 +1628,7 @@ package_vlc-plugin-samplerate() {
     glibc
     libsamplerate
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1605,6 +1641,7 @@ package_vlc-plugin-sdl() {
     sdl12-compat
     sdl_image
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1616,6 +1653,7 @@ package_vlc-plugin-sftp() {
     glibc
     libssh2
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1638,6 +1676,7 @@ package_vlc-plugin-smb() {
     glibc
     smbclient
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1649,6 +1688,7 @@ package_vlc-plugin-soxr() {
     glibc
     libsoxr
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1667,11 +1707,12 @@ package_vlc-plugin-speex() {
 }
 
 package_vlc-plugin-srt() {
-  pkgdesc+=" - SRT plugins"
+  pkgdesc+=" - SRT subtitle file support"
   depends=(
     glibc
     libvlc libvlccore.so
     srt
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1685,6 +1726,7 @@ package_vlc-plugin-svg() {
     glibc
     librsvg
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1731,6 +1773,7 @@ package_vlc-plugin-udev() {
     glibc
     libvlc libvlccore.so
     libudev
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1743,6 +1786,7 @@ package_vlc-plugin-upnp() {
     glibc
     libupnp
     libvlc libvlccore.so
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1775,6 +1819,7 @@ package_vlc-plugin-x264() {
   depends=(
     glibc
     libvlc libvlccore.so
+    vlc-plugins-base
     x264
   )
 
@@ -1786,6 +1831,7 @@ package_vlc-plugin-x265() {
   depends=(
     glibc
     libvlc libvlccore.so
+    vlc-plugins-base
     x265
   )
 
@@ -1809,6 +1855,7 @@ package_vlc-plugin-zvbi() {
     glibc
     libvlc libvlccore.so
     zvbi
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -1846,6 +1893,7 @@ package_vlc-plugins-base() {
     libvlc libvlccore.so
     vlc-plugin-alsa
     vlc-plugin-a52dec
+    vlc-plugin-archive
     vlc-plugin-dav1d
     vlc-plugin-dbus
     vlc-plugin-dbus-screensaver
@@ -1855,6 +1903,7 @@ package_vlc-plugins-base() {
     vlc-plugin-inflate
     vlc-plugin-jpeg
     vlc-plugin-mpg123
+    vlc-plugin-ogg
     vlc-plugin-opus
     vlc-plugin-png
     vlc-plugin-shout
@@ -1879,7 +1928,6 @@ package_vlc-plugins-extra() {
     libxcb
     vlc-plugin-aalib
     vlc-plugin-aom
-    vlc-plugin-archive
     vlc-plugin-aribb24
     vlc-plugin-aribb25
     vlc-plugin-ass
@@ -1913,6 +1961,7 @@ package_vlc-plugins-extra() {
     vlc-plugin-udev
     vlc-plugin-upnp
     vlc-plugin-zvbi
+    vlc-plugins-base
   )
 
   mv -v $pkgname/* "$pkgdir"
