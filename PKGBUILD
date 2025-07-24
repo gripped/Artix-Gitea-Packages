@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.12.39
+pkgver=6.12.40
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
@@ -42,18 +42,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('6e562502a8fd11639f558e43b74f0df0d85fa85e60f5332acb275a75a35f5345'
+sha256sums=('4811af1317f98d2cccea3c7695969a2c03a27cb02fd2d5327032dd5341842933'
             'SKIP'
             '3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c'
             '423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e'
             '596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1'
-            'fa52ce62cd672566f7651fce9668b7b06c9659d1d8aab82e4e8191320a597f2a')
-b2sums=('405c076e8ad055fb593c219b3810cdcfc84117c289744778e89e8f6076b8a0b6f238d1a438a0a46f615a4da50c05814d7da76ccedd6656c4ff6917d99a4c13e4'
+            '803c5b9ca969c23d57175ca36355f153f2d2073e3f84c143bcf8ddd56077364d')
+b2sums=('dff8761c8cbeb527e3a7539af0b8cf48ed88fbf4e7c045fcef51f024e15b5347a3be264b2f029d2948012f7d4ee2085f372938756a7f58a8c9658ae7918b8111'
         'SKIP'
         'b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918'
         '01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5'
         '410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea'
-        'd0f4f63a148d6239db56f34abe33ab71d83d6fcc22b4ca72236bffe07f87732f050179880755be84c0c8003409fa09682664c85e09f0b315f14c473df6218b98')
+        '06f929e83858a7d1717e227feb0aa86e996fc4569c906c5683759276b7dd1b0efdd20cfd6d8ab2ba1096f9c875a101b536f99c916f070b409cc7f2eb979e4a2a')
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
