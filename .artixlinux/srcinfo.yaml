@@ -1,0 +1,31 @@
+---
+version: 1.8.0-1
+pkgbase:
+  name: kanshi
+  pkgdesc: Dynamic output configuration for Wayland WMs
+  pkgver: 1.8.0
+  pkgrel: 1
+  url: https://wayland.emersion.fr/kanshi/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - meson
+    - scdoc
+  depends:
+    - glibc
+    - libscfg.so
+    - libvarlink
+    - wayland
+  source:
+    - https://gitlab.freedesktop.org/emersion/kanshi/-/releases/v1.8.0/downloads/kanshi-1.8.0.tar.gz
+    - https://gitlab.freedesktop.org/emersion/kanshi/-/releases/v1.8.0/downloads/kanshi-1.8.0.tar.gz.sig
+  validpgpkeys:
+    - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
+  sha256sums:
+    - d82760e139cedc7d120f0f8446f1f39710009574faf393f78c224c316f3ad56c
+    - SKIP
+pkgname:
+  - name: kanshi
+# generated with artixpkg 0.36.4-1-any
