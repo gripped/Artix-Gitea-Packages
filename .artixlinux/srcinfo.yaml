@@ -1,0 +1,28 @@
+---
+version: 1:679-1
+pkgbase:
+  name: less
+  pkgdesc: A terminal based program for viewing text files
+  pkgver: 679
+  pkgrel: 1
+  epoch: 1
+  url: https://www.greenwoodsoftware.com/less/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later OR LicenseRef-Less
+  depends:
+    - glibc
+    - ncurses
+    - pcre2
+  source:
+    - https://www.greenwoodsoftware.com/less/less-679.tar.gz
+    - less-679.tar.gz.sig::https://www.greenwoodsoftware.com/less/less-679.sig
+  validpgpkeys:
+    - AE27252BD6846E7D6EAE1DD6F153A7C833235259
+  b2sums:
+    - 024cd7f4014958e9be52a89aefd9404298850c56f0f8d2403e8648b06ce37bcca6742ebd8a3a4900acb78a3884c4f17270919feb3ca76c6978c34ec79043f154
+    - SKIP
+pkgname:
+  - name: less
+# generated with artixpkg 0.36.4-1-any
