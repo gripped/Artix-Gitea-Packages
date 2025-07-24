@@ -1,10 +1,10 @@
 ---
-version: 2.1-1
+version: 2.1-2
 pkgbase:
   name: geany-plugins
   pkgdesc: Plugins for Geany
   pkgver: 2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://plugins.geany.org
   arch:
     - x86_64
@@ -23,7 +23,7 @@ pkgbase:
     - lua51
     - python
     - vte3
-    - webkit2gtk
+    - webkit2gtk-4.1
   source:
     - git+https://github.com/geany/geany-plugins#tag=2.1.0
   b2sums:
