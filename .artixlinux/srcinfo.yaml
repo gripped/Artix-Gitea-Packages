@@ -1,10 +1,10 @@
 ---
-version: 575.64.03-3
+version: 575.64.05-2
 pkgbase:
   name: nvidia
   pkgdesc: NVIDIA kernel modules
-  pkgver: 575.64.03
-  pkgrel: 3
+  pkgver: 575.64.05
+  pkgrel: 2
   url: https://www.nvidia.com/
   arch:
     - x86_64
@@ -12,7 +12,7 @@ pkgbase:
     - LicenseRef-custom
   makedepends:
     - linux-headers
-    - nvidia-dkms=575.64.03
+    - nvidia-dkms=575.64.05
   provides:
     - NVIDIA-MODULE
   options:
@@ -21,6 +21,6 @@ pkgname:
   - name: nvidia
     depends:
       - linux
-      - nvidia-utils=575.64.03
+      - nvidia-utils=575.64.05
       - libglvnd
 # generated with artixpkg 0.36.4-1-any

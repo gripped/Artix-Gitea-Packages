@@ -3,8 +3,8 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=nvidia
-pkgver=575.64.03
-pkgrel=3
+pkgver=575.64.05
+pkgrel=2
 pkgdesc="NVIDIA kernel modules"
 arch=('x86_64')
 url="https://www.nvidia.com/"
