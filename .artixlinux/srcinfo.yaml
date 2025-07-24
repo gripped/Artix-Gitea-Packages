@@ -1,9 +1,9 @@
 ---
-version: 6.14-1
+version: 6.15-1
 pkgbase:
   name: man-pages
   pkgdesc: Linux man pages
-  pkgver: 6.14
+  pkgver: 6.15
   pkgrel: 1
   url: https://www.kernel.org/doc/man-pages/
   arch:
@@ -33,18 +33,18 @@ pkgbase:
   depends:
     - sh
   source:
-    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.14.tar.xz
-    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.14.tar.sign
+    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.15.tar.xz
+    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.15.tar.sign
     - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/man-pages-posix-2017-a.tar.xz
     - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/man-pages-posix-2017-a.tar.sign
   validpgpkeys:
     - E522595B52EDA4E6BFCCCB5E856199113A35CE5E
     - A9348594CE31283A826FBDD8D57633D441E25BB5
   sha256sums:
-    - 71e13067b780044b2f372eec25f4209bc0413cc32af714141ef3d22d21eae8e3
+    - 03d8ebf618bd5df57cb4bf355efa3f4cd3a00b771efd623d4fd042b5dceb4465
     - SKIP
     - ce67bb25b5048b20dad772e405a83f4bc70faf051afa289361c81f9660318bc3
     - SKIP
 pkgname:
   - name: man-pages
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.36.4-1-any
