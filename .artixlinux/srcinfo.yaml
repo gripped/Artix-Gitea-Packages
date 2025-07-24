@@ -1,10 +1,10 @@
 ---
-version: 25.5.31-1
+version: 25.5.31-2
 pkgbase:
   name: yazi
   pkgdesc: Blazing fast terminal file manager written in Rust, based on async I/O
   pkgver: 25.5.31
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sxyazi/yazi
   arch:
     - x86_64
@@ -17,16 +17,20 @@ pkgbase:
     - gcc-libs
     - ttf-nerd-fonts-symbols
   optdepends:
-    - 'jq: for JSON preview'
-    - '7zip: for archive preview'
     - 'ffmpeg: for video thumbnails'
+    - '7zip: for archive extraction and preview'
+    - 'jq: for JSON preview'
+    - 'poppler: for PDF preview'
     - 'fd: for file searching'
     - 'ripgrep: for file content searching'
-    - 'fzf: for directory jumping'
-    - 'poppler: for PDF preview'
-    - 'zoxide: for directory jumping'
-    - 'imagemagick: for previewing fonts'
-    - 'chafa: for previewing images'
+    - 'fzf: for quick file subtree navigation'
+    - 'zoxide: for historical directories navigation'
+    - 'resvg: for SVG preview'
+    - 'imagemagick: for image and font preview'
+    - 'xclip: for X11 clipboard support'
+    - 'xsel: for X11 clipboard support'
+    - 'wl-clipboard: for Wayland clipboard support'
+    - 'chafa: for ASCII image preview as fallback'
   options:
     - '!lto'
   source:
@@ -35,4 +39,4 @@ pkgbase:
     - 4d005e7c3f32b5574d51ab105597f3da3a4be2f7b5cd1bcb284143ad38253ed4
 pkgname:
   - name: yazi
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
