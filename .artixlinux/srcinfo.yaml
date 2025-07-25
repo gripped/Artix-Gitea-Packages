@@ -1,0 +1,33 @@
+---
+version: 1:0.17.0-1
+pkgbase:
+  name: tevent
+  pkgdesc: Event system based on the talloc memory management library
+  pkgver: 0.17.0
+  pkgrel: 1
+  epoch: 1
+  url: https://tevent.samba.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - python
+    - cmocka
+  depends:
+    - talloc
+  optdepends:
+    - 'python: for python bindings'
+  provides:
+    - libtevent.so
+  source:
+    - https://samba.org/ftp/tevent/tevent-0.17.0.tar.gz
+    - https://samba.org/ftp/tevent/tevent-0.17.0.tar.asc
+  validpgpkeys:
+    - 9147A339719518EE9011BCB54793916113084025
+  b2sums:
+    - 352a00bc1d90880eac54c1fc91e52edcb1c92514ce684d10ea642f6a73d7f827fc8794e5dbd06641f03143445fda34e0d4bc1f0ccf98109d50c5d335d35cdb56
+    - SKIP
+pkgname:
+  - name: tevent
+# generated with artixpkg 0.36.4-1-any
