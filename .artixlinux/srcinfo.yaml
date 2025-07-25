@@ -1,10 +1,10 @@
 ---
-version: 1:3.7.7-1
+version: 1:3.7.7-3
 pkgbase:
   name: kstars
   pkgdesc: Desktop Planetarium
   pkgver: 3.7.7
-  pkgrel: 1
+  pkgrel: 3
   epoch: 1
   url: https://kstars.kde.org/
   arch:
@@ -53,11 +53,13 @@ pkgbase:
   source:
     - https://download.kde.org/stable/kstars/3.7.7/kstars-3.7.7.tar.xz
     - https://download.kde.org/stable/kstars/3.7.7/kstars-3.7.7.tar.xz.sig
+    - fix-platesolving-377.diff
   validpgpkeys:
     - 259D9FCEE9175351965633696D9CE2AEE028C4F3
   sha256sums:
     - f2dbd6c26c45512aa7c3924f0bf0606a8ef978e468c54505dcc0cb2fe1200245
     - SKIP
+    - ede1fb564d22b63c356577b26ad917349bb880bfe6f9d24c08e4f2e65557c5d0
 pkgname:
   - name: kstars
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
