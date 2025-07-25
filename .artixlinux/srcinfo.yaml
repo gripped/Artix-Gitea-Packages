@@ -1,0 +1,31 @@
+---
+version: 25.0-1
+pkgbase:
+  name: hwinfo
+  pkgdesc: Hardware detection tool from openSUSE
+  pkgver: 25.0
+  pkgrel: 1
+  url: https://github.com/openSUSE/hwinfo
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - flex
+    - git
+    - sysfsutils
+  depends:
+    - libx86emu
+    - perl-xml-parser
+    - perl-xml-writer
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/openSUSE/hwinfo#tag=25.0
+    - custom_ioctl.patch
+  b2sums:
+    - ecab8bc9f378532c960625036b9fdce9036d621a64efefc85bfa2ebec61a10f9eb82dc6ea9cd75edc0797682be6fdcdd8c08fbc4feef3a17c456b35d86a23fe3
+    - 2b1bd3b53bbfc1e545e1a70ffd6cca08f704639a104928b2c02ccca3e82000f07a470fbdf129566ece6dfb2b98fdad0e82f18cc5c2016ebfeed043b4edb295b4
+pkgname:
+  - name: hwinfo
+# generated with artixpkg 0.36.4-1-any
