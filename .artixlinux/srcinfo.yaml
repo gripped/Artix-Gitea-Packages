@@ -1,10 +1,10 @@
 ---
-version: 15.1.0-1
+version: 15.1.0-2
 pkgbase:
   name: aarch64-linux-gnu-gcc
   pkgdesc: The GNU Compiler Collection - cross compiler for ARM64 target
   pkgver: 15.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gcc.gnu.org/
   arch:
     - x86_64
@@ -39,4 +39,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: aarch64-linux-gnu-gcc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
