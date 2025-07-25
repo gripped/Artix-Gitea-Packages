@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=npm
-pkgver=11.4.2
-pkgrel=2
+pkgver=11.5.1
+pkgrel=1
 pkgdesc='JavaScript package manager'
 arch=(any)
 url=https://www.npmjs.com
@@ -18,9 +18,10 @@ makedepends=(
   git
   jq
 )
+options=(!zipman)
 optdepends=("git: for dependencies using Git URL's")
 source=("npm-cli::git+https://github.com/npm/cli.git#tag=v$pkgver")
-b2sums=('223f4ba1e54ad96939d493f425fa0f9ca02f4a4cead055439ca9a9ac8aa2263a86b7f31dd437c635ca15040d9b394b243827680abe536ed6a3f120579d5a6eff')
+b2sums=('4869860e1a7d7a024d30aceaf85ec0ea763fd0aaecfa226caafb97c36841547b596e5105cf365debd3bc98d7fc9d566e8eaeb9664034566c570a9534b53d34e6')
 
 build() {
   cd npm-cli
@@ -70,6 +71,8 @@ package() {
 
     mv "$page" "${page/\///npm-}"
   done
+
+  gzip --no-name man?/*
 
   # Support both `man` and `npm help`
   local dest sec_dir

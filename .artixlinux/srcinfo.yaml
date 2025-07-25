@@ -1,10 +1,10 @@
 ---
-version: 11.4.2-2
+version: 11.5.1-1
 pkgbase:
   name: npm
   pkgdesc: JavaScript package manager
-  pkgver: 11.4.2
-  pkgrel: 2
+  pkgver: 11.5.1
+  pkgrel: 1
   url: https://www.npmjs.com
   arch:
     - any
@@ -18,10 +18,12 @@ pkgbase:
     - nodejs>=20.17.0
     - nodejs-nopt
     - semver
+  options:
+    - '!zipman'
   source:
-    - npm-cli::git+https://github.com/npm/cli.git#tag=v11.4.2
+    - npm-cli::git+https://github.com/npm/cli.git#tag=v11.5.1
   b2sums:
-    - 223f4ba1e54ad96939d493f425fa0f9ca02f4a4cead055439ca9a9ac8aa2263a86b7f31dd437c635ca15040d9b394b243827680abe536ed6a3f120579d5a6eff
+    - 4869860e1a7d7a024d30aceaf85ec0ea763fd0aaecfa226caafb97c36841547b596e5105cf365debd3bc98d7fc9d566e8eaeb9664034566c570a9534b53d34e6
 pkgname:
   - name: npm
 # generated with artixpkg 0.36.4-1-any
