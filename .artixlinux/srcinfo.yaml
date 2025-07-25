@@ -1,0 +1,50 @@
+---
+version: 8.2.5-1
+pkgbase:
+  name: gala
+  pkgdesc: The Pantheon Window Manager
+  pkgver: 8.2.5
+  pkgrel: 1
+  url: https://github.com/elementary/gala
+  arch:
+    - x86_64
+  groups:
+    - pantheon
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cmake
+    - git
+    - gnome-common
+    - intltool
+    - meson
+    - vala
+  depends:
+    - cairo
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-desktop
+    - graphene
+    - gtk3
+    - gtk4
+    - libcanberra
+    - libgee
+    - libgl
+    - libgranite.so
+    - libgranite-7.so
+    - libhandy-1.so
+    - libxfixes
+    - mutter46
+    - sqlite
+    - wayland
+  provides:
+    - libgala.so
+  source:
+    - git+https://github.com/elementary/gala.git#tag=97e5524b757910ab7700af1c733989a4b26a4dee
+  b2sums:
+    - 77d96b3f503353b4f1ce22360e25e7f9261d0c79658274c848067fed24f99c8a3ba95634c6cfc061c1d587866812cb0ba3f1be15897b2ce3f8504730e64272aa
+pkgname:
+  - name: gala
+# generated with artixpkg 0.36.4-1-any
