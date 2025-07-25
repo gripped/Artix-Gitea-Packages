@@ -8,7 +8,7 @@ _alpm=2.2
 
 pkgbase=openrc
 pkgname=('openrc' 'libeinfo')
-pkgver=0.62.5
+pkgver=0.62.6
 pkgrel=1
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
@@ -26,7 +26,7 @@ source=(
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
     "openrc-agetty-meson-conf-d.patch::https://github.com/OpenRC/openrc/pull/850/commits/e3961a81809ed8d0e594402b012ee685e4ad970f.patch"
 )
-sha256sums=('56e299d3ef9d58fa74d361d474767f0d82085637c48db3661b65a5b31b2c32b8'
+sha256sums=('2a2fb96fcd2487ae4a9b99c7256fec93f6a68f8b815a62af87df276b07dd71f8'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
