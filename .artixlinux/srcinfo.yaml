@@ -1,10 +1,10 @@
 ---
-version: 4.6.0-1
+version: 4.6.0-2
 pkgbase:
   name: electrum
   pkgdesc: Lightweight Bitcoin wallet
   pkgver: 4.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://electrum.org
   arch:
     - any
@@ -12,9 +12,7 @@ pkgbase:
     - MIT
   checkdepends:
     - python-pycryptodomex
-    - python-pyqt6
     - python-pytest
-    - qt6-declarative
   makedepends:
     - git
     - python-build
@@ -38,16 +36,15 @@ pkgbase:
     - python-pillow
     - python-protobuf
     - python-pyaes
-    - python-pyqt5
+    - python-pyqt6
     - python-qrcode
+    - qt6-declarative
   optdepends:
     - 'python-hidapi: Digital Bitbox hardware wallet support'
     - 'python-matplotlib: plot transaction history in graphical mode'
     - 'python-pycryptodomex: use PyCryptodome AES implementation instead of pyaes'
     - 'python-qdarkstyle: optional dark theme in graphical mode'
     - 'python-rpyc: send commands to Electrum Python console from an external script'
-    - 'python-pyqt6: QML GUI'
-    - 'qt6-declarative: QML GUI'
     - 'zbar: QR code reading support'
   source:
     - git+https://github.com/spesmilo/electrum.git#tag=4.6.0?signed
