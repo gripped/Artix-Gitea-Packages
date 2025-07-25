@@ -1,10 +1,10 @@
 ---
-version: 2.41-1
+version: 2.41-2
 pkgbase:
   name: riscv64-linux-gnu-glibc
   pkgdesc: GNU C Library RISCV target
   pkgver: 2.41
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/libc/
   arch:
     - any
@@ -37,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: riscv64-linux-gnu-glibc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
