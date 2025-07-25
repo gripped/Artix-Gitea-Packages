@@ -1,9 +1,9 @@
 ---
-version: 1.10.1-1
+version: 1.11.0-1
 pkgbase:
   name: libnghttp3
   pkgdesc: HTTP/3 library written in C
-  pkgver: 1.10.1
+  pkgver: 1.11.0
   pkgrel: 1
   url: https://github.com/ngtcp2/nghttp3
   arch:
@@ -15,13 +15,13 @@ pkgbase:
   provides:
     - libnghttp3.so
   source:
-    - https://github.com/ngtcp2/nghttp3/releases/download/v1.10.1/nghttp3-1.10.1.tar.xz
-    - https://github.com/ngtcp2/nghttp3/releases/download/v1.10.1/nghttp3-1.10.1.tar.xz.asc
+    - https://github.com/ngtcp2/nghttp3/releases/download/v1.11.0/nghttp3-1.11.0.tar.xz
+    - https://github.com/ngtcp2/nghttp3/releases/download/v1.11.0/nghttp3-1.11.0.tar.xz.asc
   validpgpkeys:
     - F4F3B91474D1EB29889BD0EF7E8403D5D673C366
   sha256sums:
-    - e6b8ebaadf8e57cba77a3e34ee8de465fe952481fbf77c4f98d48737bdf50e03
+    - 27d084518f06d78279b050cc9cdff2418f80fb753da019427ce853cec920f33f
     - SKIP
 pkgname:
   - name: libnghttp3
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
