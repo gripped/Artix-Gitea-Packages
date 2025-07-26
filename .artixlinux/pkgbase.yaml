@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,6 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 8.0.18.sdk118-1
     packages:
       - dotnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
@@ -34,10 +38,6 @@ repos:
       - dotnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
       - aspnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
       - dotnet-source-built-artifacts-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-    debug: []
-  world:
-    version: null
-    packages: []
     debug: []
   lib32-goblins:
     version: null
