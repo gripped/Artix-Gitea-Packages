@@ -99,7 +99,6 @@ prepare() {
   git -C $_pkgfn cherry-pick -n 1fe3a3c059bcaa2319505006df60df1f7f60769d # https://bugreports.qt.io/browse/QTBUG-137427
   git -C $_pkgfn cherry-pick -n f5eb24d5b8767521e821b00aed87ab87615800e4 # Fix potential use-after-free
 
-
   # https://forum.qt.io/topic/162427/segmentation-fault-when-exiting-when-linked-against-qt-6.9.1/27
   git -C $_pkgfn cherry-pick -n ca8219583bd31a807b2040bf621e819097902646
   git -C $_pkgfn cherry-pick -n 2de8518d9d66646db979260a252ed3307af59363
@@ -108,6 +107,11 @@ prepare() {
   git -C $_pkgfn cherry-pick -n 6694c0fbfce6426ad4b8e2ffe8794b41ee69e32f
   git -C $_pkgfn cherry-pick -n 2c8692adaed1c3374ca01842e166af79ed3861cc
   git -C $_pkgfn cherry-pick -n 9f562f2203dec09dcf63006206e77c860bd82514
+
+  git -C $_pkgfn cherry-pick -n c903337a069d37dfb9d529757e4068a4382311f8 \
+                                c2bfd0b67dccb348fcf6710ed3fd40173ee6ed56 \
+                                e14c892997ddcabb78fd1b6102cf54e13850faa8 \
+                                86c8200e0175330d5e21fd45ed35dea5444e883f # Fix crash in TabBar
 }
 
 build() {
