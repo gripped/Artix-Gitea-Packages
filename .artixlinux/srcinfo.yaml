@@ -1,0 +1,28 @@
+---
+version: 61-1
+pkgbase:
+  name: libinih
+  pkgdesc: A simple .INI file parser written in C
+  pkgver: 61
+  pkgrel: 1
+  url: https://github.com/benhoyt/inih
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - git
+    - meson
+  depends:
+    - gcc-libs
+    - glibc
+  provides:
+    - libinih.so
+    - libINIReader.so
+  source:
+    - git+https://github.com/benhoyt/inih.git#tag=3eda303b34610adc0554bdea08d02a25668c774c
+  b2sums:
+    - 0805f00009782f09e17e083a8c36e4a79237686b618e189fcc3cef21fe4fab04e7015e624dff5d8bc61080cdb3548a75213006549f8e3a6348158f11be965862
+pkgname:
+  - name: libinih
+# generated with artixpkg 0.36.4-1-any

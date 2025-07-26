@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: libinih
-  version: 60-1
-  arch:
-    - x86_64
-  pkgname:
-    - libinih
 actions:
   addRepo: system-gremlins
   removeRepo: null
@@ -18,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: 60-1
+    version: 61-1
     packages:
-      - libinih-60-1-x86_64.pkg.tar.zst
+      - libinih-61-1-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 58-1
     packages:
       - libinih-58-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
