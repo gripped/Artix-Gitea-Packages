@@ -2,7 +2,7 @@
 
 pkgname=firefox
 pkgver=141.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -87,28 +87,24 @@ validpgpkeys=(
   # https://blog.mozilla.org/security/2023/05/11/updated-gpg-key-for-signing-firefox-releases/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
-sha256sums=(
+sha256sums=('80982a84bb7ca41a67ac073321de96f74e0c25f296d19ca432b11fc2a33535c8'
             'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-            'SKIP'
-)
-b2sums=(
+            'a9b8b4a0a1f4a7b4af77d5fc70c2686d624038909263c795ecc81e0aec7711e9'
+            '71fe797430198ac8c00b538dce537284cf526e48be0496698cf5a980d70c16da'
+            '23f557fa7989adcae03cc9458d94716981dbcf0e9d6d52a289a2426e50b4b785'
+            '883ca2fa723a7572269d18559d5b82412782ad63e5dd3820eeb0540e3fe34314'
+            '2e7778696d79f160d0183982eb7534ec5dfff075f9572eaf748930e5e91b08d2'
+            '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2'
+            '7802a6e1c6fb2d117041671b7853d376cebc5e7d76001159ed960fc557d2a0f5')
+b2sums=('c65fc01879474a0934343289430f8b6d4c38091b4d98dd0689e5f0c8782d6b200296da093ed6e9de4055d51b9bc6fb66164df70336ae5b2094096d717c9cf0bc'
         'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-)
+        '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34'
+        '2c7936949ef922307fb593bd0480a13bde2eab8ae24fc89071d809d6659384705f9b7838b1ae8bc46b98a152ba01fcffad606d4c84796ad9bfaaf20166f0a0fd'
+        '1a7fc030b1051df00df1b2f5b247b8c658de6cdfba0788041c830da3aaaa6ac974ab684e05feb80672aa2d2c22294cacfa93a71dc664b3e60becdd65e879fcee'
+        '8a894b01e405b628877483e40e9b018647977cb053b6af02afc901ed24d6e1f767f3db8c321070e33aea4a05ba16f1eb47ae600e5299b5f9caad03d20ba38cf5'
+        '0f4bd67142c701c23617d7df236b2ae765f5c15e13f4ab33de605a78a67cfd5989a1c8b3d6de3219cddb8efff9f05fc342ec4625ccaf171c17d5abf0b5661568'
+        '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
+        'e4c6d14fbfde0237da9fad63289c2dc55084378e1edc805e39c207595dc71c12e731934b83fbf0286635f520832774c6c33398a47b11288dd4c34e431e8f6ffd')
 
 
 prepare() {

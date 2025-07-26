@@ -1,6 +1,7 @@
 {
     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
+        "browser.ml.chat.enabled": false,
         "AppUpdateURL": "https://localhost",
         "OverridePostUpdatePage": "",
         "DisableAppUpdate": true,
