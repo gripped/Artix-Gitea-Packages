@@ -1,0 +1,36 @@
+---
+version: 0.15.0-1
+pkgbase:
+  name: python-trio-asyncio
+  pkgdesc: A re-implementation of the asyncio mainloop on top of Trio
+  pkgver: 0.15.0
+  pkgrel: 1
+  url: https://github.com/python-trio/trio-asyncio
+  arch:
+    - any
+  license:
+    - Apache-2.0 OR MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-timeout
+    - python-pytest-trio
+    - python-tests
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-greenlet
+    - python-outcome
+    - python-sniffio
+    - python-trio
+  source:
+    - git+https://github.com/python-trio/trio-asyncio.git#tag=d4a510072d88f7217b6b4a081c5f6e5247a66233
+  b2sums:
+    - f39e13d8bf8c5fdb5f994a67cbb4fbf844d12cfe1cf4cc11b50aac5fadf38b4c0cd4ca145a206a44e88fa98b20dda69c31ae46dcb256419f422d137a8e7330b4
+pkgname:
+  - name: python-trio-asyncio
+# generated with artixpkg 0.36.4-1-any
