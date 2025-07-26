@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: libretro-beetle-psx
-  version: 2762-1
-  arch:
-    - x86_64
-  pkgname:
-    - libretro-beetle-psx
-    - libretro-beetle-psx-hw
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 2762-1
+    version: 2774-1
     packages:
-      - libretro-beetle-psx-2762-1-x86_64.pkg.tar.zst
-      - libretro-beetle-psx-hw-2762-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-2774-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-hw-2774-1-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
