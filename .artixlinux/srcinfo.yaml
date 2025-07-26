@@ -1,0 +1,23 @@
+---
+version: 1.21.1-1
+pkgbase:
+  name: libretro-core-info
+  pkgdesc: Libretro core info files
+  pkgver: 1.21.1
+  pkgrel: 1
+  url: https://github.com/libretro/libretro-core-info
+  arch:
+    - any
+  groups:
+    - libretro
+  license:
+    - GPL3
+  makedepends:
+    - git
+  source:
+    - git+https://github.com/libretro/libretro-core-info.git#tag=98016cb2ee6447f98deaf9a7f8743516c78b4bbe
+  sha256sums:
+    - 72e0f9ef64b5d6e292b017b2e5f41464d9abc45603cfd8351151bf39a8ae5c0c
+pkgname:
+  - name: libretro-core-info
+# generated with artixpkg 0.36.4-1-any
