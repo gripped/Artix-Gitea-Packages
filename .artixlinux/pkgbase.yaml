@@ -3,8 +3,8 @@ team: world
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,14 +26,14 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 8.0.18.sdk118-0
+    version: 8.0.18.sdk118-1
     packages:
-      - dotnet-runtime-8.0-8.0.18.sdk118-0-x86_64.pkg.tar.zst
-      - aspnet-runtime-8.0-8.0.18.sdk118-0-x86_64.pkg.tar.zst
-      - dotnet-sdk-8.0-8.0.18.sdk118-0-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-8.0-8.0.18.sdk118-0-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-8.0-8.0.18.sdk118-0-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-8.0-8.0.18.sdk118-0-x86_64.pkg.tar.zst
+      - dotnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null
