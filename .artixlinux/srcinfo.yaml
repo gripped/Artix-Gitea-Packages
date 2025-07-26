@@ -1,0 +1,34 @@
+---
+version: 1:532-1
+pkgbase:
+  name: retroarch-assets
+  pkgdesc: XMB menu assets for RetroArch
+  pkgver: 532
+  pkgrel: 1
+  epoch: 1
+  url: http://www.libretro.com/
+  arch:
+    - any
+  groups:
+    - libretro
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - retroarch
+  source:
+    - git+https://github.com/libretro/retroarch-assets.git#commit=2d24ef2972a709f870cc3f73853158fa2376f37d
+  sha256sums:
+    - 5b45e41d12ac657519ac1706f9b467f4f90f9881d5fa1f604e2e4987417e11e7
+pkgname:
+  - name: retroarch-assets-glui
+    depends:
+      - retroarch
+      - retroarch-assets-xmb
+  - name: retroarch-assets-ozone
+    depends:
+      - retroarch
+      - retroarch-assets-xmb
+  - name: retroarch-assets-xmb
+# generated with artixpkg 0.36.4-1-any

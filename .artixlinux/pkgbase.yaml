@@ -1,13 +1,4 @@
 ---
-pkgbase:
-  name: retroarch-assets
-  version: 1:528-1
-  arch:
-    - any
-  pkgname:
-    - retroarch-assets-glui
-    - retroarch-assets-ozone
-    - retroarch-assets-xmb
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -20,40 +11,52 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 1:528-1
+    version: 1:532-1
     packages:
-      - retroarch-assets-glui-1:528-1-any.pkg.tar.zst
-      - retroarch-assets-ozone-1:528-1-any.pkg.tar.zst
-      - retroarch-assets-xmb-1:528-1-any.pkg.tar.zst
+      - retroarch-assets-glui-1:532-1-any.pkg.tar.zst
+      - retroarch-assets-ozone-1:532-1-any.pkg.tar.zst
+      - retroarch-assets-xmb-1:532-1-any.pkg.tar.zst
+    debug: []
 team: galaxy
