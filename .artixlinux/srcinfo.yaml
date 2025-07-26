@@ -1,10 +1,10 @@
 ---
-version: 0.26-1
+version: 0.26-1.1
 pkgbase:
   name: gettext
   pkgdesc: GNU internationalization library
   pkgver: 0.26
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.gnu.org/software/gettext/
   arch:
     - x86_64
@@ -32,6 +32,7 @@ pkgbase:
   source:
     - https://ftp.gnu.org/pub/gnu/gettext/gettext-0.26.tar.gz
     - https://ftp.gnu.org/pub/gnu/gettext/gettext-0.26.tar.gz.sig
+    - autopoint.patch
   validpgpkeys:
     - 462225C3B46F34879FC8496CD605848ED7E69871
     - 68D94D8AAEEAD48AE7DC5B904F494A942E4616C2
@@ -40,6 +41,7 @@ pkgbase:
   b2sums:
     - f8e6b6d232b0a92f333d934c273a6923af40a9d6c632e20d240c7260d13f4be4bacd89efe4ccc2cce5a847e45e87911d692ef6c6f749c1821d1d5508daa14188
     - SKIP
+    - f18bc3e5e5ae42ab32d391edf2baa6bba9fd33d3fdcdf44b01ea36f4f7346b1baaf6f5da01439d850f855dd93f07441a9813351edcc31bc89db58a379a42926f
 pkgname:
   - name: gettext
 # generated with artixpkg 0.36.4-1-any
