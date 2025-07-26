@@ -14,16 +14,16 @@ pkgname=(
  dotnet-source-built-artifacts-8.0
 )
 pkgver=8.0.18.sdk118
-pkgrel=0.1
+pkgrel=1
 arch=(x86_64)
 url=https://dotnet.microsoft.com
 license=(MIT)
 makedepends=(
-  tar
-  zstd
   bash
   clang18
   cmake
+  dotnet-sdk-8.0
+  dotnet-source-built-artifacts-8.0
   git
   icu
   krb5
@@ -44,25 +44,72 @@ options=(
   !lto
   staticlibs
 )
-_tag=e78e8a64f20e61e1fea4f24afca66ad1dc56285f
-source=(
-  https://mirror.sanin.dev/arch-linux/extra/os/x86_64/aspnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  https://mirror.sanin.dev/arch-linux/extra/os/x86_64/aspnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  https://mirror.sanin.dev/arch-linux/extra/os/x86_64/dotnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  https://mirror.sanin.dev/arch-linux/extra/os/x86_64/dotnet-sdk-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  dotnet-source-built-artifacts-retry-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst::https://america.mirror.pkgbuild.com/extra/os/x86_64/dotnet-source-built-artifacts-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  https://mirror.sanin.dev/arch-linux/extra/os/x86_64/dotnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  )
-b2sums=('01f81462c018b135503454a92084a417643640fdfdc02518ea39931e52edc56c98e91b1a69c1a9a62b4fc021f92be625704e7e64ca8c6ba47876d5f04a0aa0b3'
-        '4ca1214595c472de39b1459063e14a5c7c20b45f82e6976ee4828d4e17c574ac664ab47be3589d28c7afd8fdd9a45ec2e7f61e96206167e3150cee72c381de50'
-        'e511f18c4d793b7c1823b6fb2427e98044efd54a43a3a998cd448e2e81ea7aedcaceb04cb21ec4fff6409d8dd3d5d9ae4e35499d1918e641a4f5456395d8c3e6'
-        '42ad5b61c0514e13feea92cd1f4207f2e55b5fcd5e818f66c98844437cc9fa95ec604538cbde3b1ada33cd80627494eb705db22b6a2ee4ce493d3e2d0ad0d413'
-        '58ff8c684ffbb32763ac97b68483c6063532d658924321a8c4bbb79be06489fd7ec85148a4530f846cd9e353d6b0e31d4bf585ef6372c71417be8bcf29286654'
-        'ef0285b6ada80cf38fb9c09cc55d04372bad25e296ef3ecfd273a79b5a0873aae7eccb52e9c3614a8da9dc2b029da042cf4aa6963fe50c4ba049351c9ae429f6')
-noextract=("${source[@]##*/}")
+_tag=f4d2dc9c002dee003c875b89729d1ce958c24a9e
+source=(git+https://github.com/dotnet/dotnet.git#tag=${_tag})
+b2sums=('c08cc660e79567a39121bb05fd5bf96004efd0db259d190e695b05696f02dbea20783903c621ef5f74b27957d3ab1f00df94f57877b247f8eeeb32917a26c44d')
+
+prepare() {
+  cd dotnet
+
+  # fix bootstrap
+  git remote set-url origin https://github.com/dotnet/dotnet.git
+
+  local _bootstrapver=$(xmllint --xpath "//*[local-name()='PrivateSourceBuiltArtifactsPackageVersion']/text()" src/installer/eng/Versions.props)
+  local _previousver=$(pacman -Q dotnet-source-built-artifacts-8.0 | sed -r 's/.*([0-9]+\.[0-9]+)\.[0-9]+\.sdk([0-9]+)-.*/\1.\2/')
+
+  if [[ $_bootstrapver == $_previousver ]]; then
+    cp -r /usr/share/dotnet .dotnet
+    ln -sf /usr/share/dotnet/source-built-artifacts/Private.SourceBuilt.Artifacts.*.tar.gz prereqs/packages/archive/
+    ln -sf /usr/share/dotnet/source-built-artifacts/Private.SourceBuilt.Prebuilts.*.tar.gz prereqs/packages/archive/
+  fi
+  ./prep.sh
+}
+
+pkgver() {
+  cd dotnet
+
+  if [[ $(git describe --tags) != v8.0.* ]]; then
+    msg "Invalid SDK version"
+    exit 1
+  fi
+
+  local _standardver=$(xmllint --xpath "//*[local-name()='NETStandardLibraryRefPackageVersion']/text()" src/installer/eng/Versions.props)
+
+  if [[ $_standardver != 2.1.0 ]]; then
+    msg "Invalid Standard version"
+    exit 1
+  fi
+
+  local _sdkver=$(xmllint --xpath "//*[local-name()='VersionSDKMinor']/text()" src/installer/eng/Versions.props)$(xmllint --xpath "//*[local-name()='VersionFeature']/text()" src/installer/eng/Versions.props)
+  local _runtimever=$(xmllint --xpath "//*[local-name()='MicrosoftNETCoreAppRuntimewinx64PackageVersion']/text()" src/installer/eng/Versions.props)
+
+  echo "${_runtimever}.sdk${_sdkver}"
+}
 
 build() {
-  cd .
+  export DOTNET_CLI_TELEMETRY_OPTOUT=1
+  cd dotnet
+
+  export COMPlus_LTTng=0
+  export VERBOSE=1
+  export OPENSSL_ENABLE_SHA1_SIGNATURES=1
+
+  export PATH="/usr/lib/llvm18/bin:$PATH"
+
+  # this uses malloc_usable_size, which is incompatible with fortification level 3
+  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
+  CFLAGS=$(echo $CFLAGS  | sed -e 's/-fstack-clash-protection//' )
+  CXXFLAGS=$(echo $CXXFLAGS  | sed -e 's/-fstack-clash-protection//' )
+  export EXTRA_CFLAGS="$CFLAGS"
+  export EXTRA_CXXFLAGS="$CXXFLAGS"
+  export EXTRA_LDFLAGS="$LDFLAGS"
+  unset CFLAGS
+  unset CXXFLAGS
+  unset LDFLAGS
+
+  ./build.sh --clean-while-building --online
 }
 
 package_dotnet-runtime-8.0() {
@@ -79,19 +126,18 @@ package_dotnet-runtime-8.0() {
   )
   optdepends=('lttng-ust2.12: CoreCLR tracing')
 
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/dotnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
+  bsdtar -xf dotnet/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.NETCore.App
+  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-runtime-8.0
 }
-
 
 package_aspnet-runtime-8.0() {
   pkgdesc='The ASP.NET Core runtime'
   depends=(dotnet-runtime-8.0)
 
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/aspnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
+  bsdtar -xf dotnet/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.AspNetCore.App
+  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/aspnet-runtime-8.0
 }
 
 package_dotnet-sdk-8.0() {
@@ -105,35 +151,34 @@ package_dotnet-sdk-8.0() {
   )
   optdepends=('aspnet-targeting-pack: Build ASP.NET Core applications')
 
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/dotnet-sdk-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
+  bsdtar -xf dotnet/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner sdk sdk-manifests templates
+  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-sdk-8.0
 }
 
 package_dotnet-targeting-pack-8.0() {
   pkgdesc='The .NET Core targeting pack'
   depends=(netstandard-targeting-pack)
 
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/dotnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
+  bsdtar -xf dotnet/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.NETCore.App.{Host.artix-x64,Ref}
+  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-targeting-pack-8.0
 }
 
 package_aspnet-targeting-pack-8.0() {
   pkgdesc='The ASP.NET Core targeting pack'
   depends=(dotnet-targeting-pack-8.0)
 
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/aspnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
+  bsdtar -xf dotnet/artifacts/x64/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-x64.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.AspNetCore.App.Ref
+  ln -s dotnet-host "${pkgdir}"/usr/share/licenses/aspnet-targeting-pack-8.0
 }
 
 package_dotnet-source-built-artifacts-8.0() {
   pkgdesc='Internal package for building the .NET Core SDK'
 
-  cd "${pkgdir}"
-  tar --use-compress-program=unzstd -xf "${srcdir}"/dotnet-source-built-artifacts-retry-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-  rm "${pkgdir}"/.{BUILDINFO,MTREE,PKGINFO}
+  install -Dm 644 dotnet/artifacts/x64/Release/Private.SourceBuilt.Artifacts.*.tar.gz -t "${pkgdir}"/usr/share/dotnet/source-built-artifacts/
+  install -Dm 644 dotnet/artifacts/x64/Release/Private.SourceBuilt.Prebuilts.*.tar.gz -t "${pkgdir}"/usr/share/dotnet/source-built-artifacts/
 }
 
 # vim: ts=2 sw=2 et:
