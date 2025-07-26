@@ -46,7 +46,7 @@ pkgbase:
     - https://mirror.sanin.dev/arch-linux/extra/os/x86_64/aspnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
     - https://mirror.sanin.dev/arch-linux/extra/os/x86_64/dotnet-runtime-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
     - https://mirror.sanin.dev/arch-linux/extra/os/x86_64/dotnet-sdk-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
-    - https://america.mirror.pkgbuild.com/extra/os/x86_64/dotnet-source-built-artifacts-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
+    - dotnet-source-built-artifacts-retry-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst::https://america.mirror.pkgbuild.com/extra/os/x86_64/dotnet-source-built-artifacts-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
     - https://mirror.sanin.dev/arch-linux/extra/os/x86_64/dotnet-targeting-pack-8.0-8.0.18.sdk118-1-x86_64.pkg.tar.zst
   b2sums:
     - 01f81462c018b135503454a92084a417643640fdfdc02518ea39931e52edc56c98e91b1a69c1a9a62b4fc021f92be625704e7e64ca8c6ba47876d5f04a0aa0b3
