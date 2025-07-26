@@ -1,0 +1,70 @@
+---
+version: 1.21.0-1
+pkgbase:
+  name: retroarch
+  pkgdesc: Reference frontend for the libretro API
+  pkgver: 1.21.0
+  pkgrel: 1
+  url: http://www.libretro.com/
+  arch:
+    - x86_64
+  groups:
+    - libretro
+  license:
+    - GPL
+  makedepends:
+    - gamemode
+    - git
+    - libdecor
+    - vulkan-icd-loader
+    - wayland-protocols
+  depends:
+    - alsa-lib
+    - dbus
+    - ffmpeg
+    - flac
+    - fontconfig
+    - fribidi
+    - gcc-libs
+    - glibc
+    - libass.so
+    - libdrm
+    - libfreetype.so
+    - libgl
+    - libpulse
+    - libudev.so
+    - libusb
+    - libx11
+    - libxcb
+    - libxext
+    - libxinerama
+    - libxkbcommon
+    - libxrandr
+    - libxxf86vm
+    - libxv
+    - mesa
+    - openssl
+    - qt6-base
+    - sdl2
+    - v4l-utils
+    - wayland
+    - zlib
+  optdepends:
+    - 'gamemode: GameMode support'
+    - 'libdecor: Wayland decorations'
+    - 'libretro-overlays: Collection of overlays'
+    - 'libretro-shaders: Collection of shaders'
+    - 'python: retroarch-cg2glsl'
+    - 'retroarch-assets-ozone: Ozone menu assets'
+    - 'retroarch-assets-xmb: XMB menu assets'
+  backup:
+    - etc/retroarch.cfg
+  source:
+    - git+https://github.com/libretro/RetroArch.git#tag=baee906ef35b99283f9a1a060a2ce5ac86159b63
+    - retroarch-config.patch
+  b2sums:
+    - 0eb80d8ba9dabd3b1a40dd8beb3d2a83feb56b764085d827db6361509c3d57f871be3177ffb5b339727323f0492cd1f9d10f12361b318847605f4c992cebfbd7
+    - 5ecbe57126c7f9b66bdf189f0af2f1cec031cb68ea85bb9609847ba9beb0e720c902cd3330d7c286901a73e6c2e272c3f04166cf9a47bb6f80097f19dde8ce3a
+pkgname:
+  - name: retroarch
+# generated with artixpkg 0.36.4-1-any
