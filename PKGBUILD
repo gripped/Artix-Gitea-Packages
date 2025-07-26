@@ -7,7 +7,7 @@ pkgname=(qt6-base
          qt6-xcb-private-headers)
 _pkgver=6.9.1
 pkgver=${_pkgver/-/}
-pkgrel=4.2
+pkgrel=5
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -107,11 +107,6 @@ prepare() {
   git -C $_pkgfn cherry-pick -n 6694c0fbfce6426ad4b8e2ffe8794b41ee69e32f
   git -C $_pkgfn cherry-pick -n 2c8692adaed1c3374ca01842e166af79ed3861cc
   git -C $_pkgfn cherry-pick -n 9f562f2203dec09dcf63006206e77c860bd82514
-
-  git -C $_pkgfn cherry-pick -n c903337a069d37dfb9d529757e4068a4382311f8 \
-                                c2bfd0b67dccb348fcf6710ed3fd40173ee6ed56 \
-                                e14c892997ddcabb78fd1b6102cf54e13850faa8 \
-                                86c8200e0175330d5e21fd45ed35dea5444e883f # Fix crash in TabBar
 }
 
 build() {

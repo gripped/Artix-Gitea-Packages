@@ -1,10 +1,10 @@
 ---
-version: 6.9.1-4.2
+version: 6.9.1-5
 pkgbase:
   name: qt6-base
   pkgdesc: A cross-platform application and UI framework
   pkgver: 6.9.1
-  pkgrel: 4.2
+  pkgrel: 5
   url: https://www.qt.io
   arch:
     - x86_64
