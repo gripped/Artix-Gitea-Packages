@@ -1,0 +1,26 @@
+---
+version: 0.9.3-1
+pkgbase:
+  name: rgbds
+  pkgdesc: Rednex GameBoy Development System
+  pkgver: 0.9.3
+  pkgrel: 1
+  url: https://github.com/gbdev/rgbds
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  depends:
+    - glibc
+    - libpng
+  source:
+    - git+https://github.com/gbdev/rgbds.git#tag=8b85875b6700244669fcba0d21d8b157b8ae7f57
+  b2sums:
+    - 5614d0bbc8e94bd4aa57d97d6425671d6292760eeb36052703141c9ec0067af477aee94d53322d0eadfe8b8370b08176f7cd22b6087538eafe66052a0e434249
+pkgname:
+  - name: rgbds
+# generated with artixpkg 0.36.4-1-any
