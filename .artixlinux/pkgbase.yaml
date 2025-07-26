@@ -1,11 +1,11 @@
 ---
 team: world
 actions:
-  addRepo: null
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -26,8 +26,14 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.0.12.sdk112-1
+    packages:
+      - dotnet-runtime-8.0-8.0.12.sdk112-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-8.0-8.0.12.sdk112-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-8.0-8.0.12.sdk112-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-8.0-8.0.12.sdk112-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-8.0-8.0.12.sdk112-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-8.0-8.0.12.sdk112-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null

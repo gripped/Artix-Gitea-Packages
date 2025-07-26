@@ -1,0 +1,79 @@
+---
+version: 8.0.12.sdk112-1
+pkgbase:
+  name: dotnet-core-8.0
+  pkgver: 8.0.12.sdk112
+  pkgrel: 1
+  url: https://dotnet.microsoft.com
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - bash
+    - clang18
+    - cmake
+    - dotnet-sdk-8.0
+    - dotnet-source-built-artifacts
+    - git
+    - icu
+    - krb5
+    - libgit2
+    - libunwind
+    - libxml2
+    - lldb
+    - llvm18
+    - lttng-ust2.12
+    - nodejs
+    - openssl
+    - udev
+    - zlib
+  optdepends:
+    - 'bash-completion: Bash completion support'
+  options:
+    - '!buildflags'
+    - '!lto'
+    - staticlibs
+  source:
+    - git+https://github.com/dotnet/dotnet.git#tag=ab5d79b36d4f8a16f9f91f53fd6504b354c977b1
+  b2sums:
+    - 4fd29d18bccfac6317ea99486eadd5124cbbdb0c33c7c25845d1c9cb4e58415e2c9351861d5e1420969db6b730e23c4d3f50d6f55958a1eb09d6485b7f22e7e6
+pkgname:
+  - name: dotnet-runtime-8.0
+    pkgdesc: The .NET Core runtime
+    depends:
+      - dotnet-host
+      - gcc-libs
+      - glibc
+      - icu
+      - krb5
+      - libunwind
+      - zlib
+      - openssl
+    optdepends:
+      - 'lttng-ust2.12: CoreCLR tracing'
+  - name: aspnet-runtime-8.0
+    pkgdesc: The ASP.NET Core runtime
+    depends:
+      - dotnet-runtime-8.0
+  - name: dotnet-sdk-8.0
+    pkgdesc: The .NET Core SDK
+    depends:
+      - dotnet-runtime-8.0
+      - dotnet-targeting-pack-8.0
+      - glibc
+      - gcc-libs
+      - netstandard-targeting-pack
+    optdepends:
+      - 'aspnet-targeting-pack: Build ASP.NET Core applications'
+  - name: dotnet-targeting-pack-8.0
+    pkgdesc: The .NET Core targeting pack
+    depends:
+      - netstandard-targeting-pack
+  - name: aspnet-targeting-pack-8.0
+    pkgdesc: The ASP.NET Core targeting pack
+    depends:
+      - dotnet-targeting-pack-8.0
+  - name: dotnet-source-built-artifacts-8.0
+    pkgdesc: Internal package for building the .NET Core SDK
+# generated with artixpkg 0.36.4-1-any
