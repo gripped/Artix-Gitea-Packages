@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.18.1-5
+    version: 1.19.3-1
     packages:
-      - ppsspp-1.18.1-5-x86_64.pkg.tar.zst
-      - ppsspp-assets-1.18.1-5-x86_64.pkg.tar.zst
+      - ppsspp-1.19.3-1-x86_64.pkg.tar.zst
+      - ppsspp-assets-1.19.3-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
