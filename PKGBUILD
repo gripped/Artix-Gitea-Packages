@@ -10,7 +10,7 @@ pkgname=(
   lib32-pipewire-v4l2
 )
 pkgver=1.4.7
-pkgrel=1.1
+pkgrel=1.2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
