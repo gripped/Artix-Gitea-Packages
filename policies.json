@@ -1,7 +1,6 @@
 {
     "__COMMENT__ More Information": "https://github.com/mozilla/policy-templates/blob/master/README.md",
     "policies": {
-        "browser.ml.chat.enabled": false,
         "AppUpdateURL": "https://localhost",
         "OverridePostUpdatePage": "",
         "DisableAppUpdate": true,
@@ -15,6 +14,13 @@
         "DisableDeveloperTools": false,
         "NoDefaultBookmarks": true,
         "SSLVersionMin": "tls1.2",
+        "Preferences": {
+            "browser.ml.chat.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             }
+        },
         "WebsiteFilter": {
             "Block": [
                 "https://localhost/*"
