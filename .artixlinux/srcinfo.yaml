@@ -1,0 +1,65 @@
+---
+version: 3.9.7-1
+pkgbase:
+  name: kid3
+  pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor
+  pkgver: 3.9.7
+  pkgrel: 1
+  url: https://kid3.kde.org/
+  changelog: kid3.changelog
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+    - extra-cmake-modules
+    - chromaprint
+    - id3lib
+    - python
+    - taglib
+    - libmp4v2
+    - qt6-tools
+    - clang
+    - qt6-declarative
+    - qt6-multimedia
+    - kdoctools
+    - kxmlgui
+    - kio
+  source:
+    - https://prdownloads.sourceforge.net/kid3/kid3-3.9.7.tar.gz
+    - https://prdownloads.sourceforge.net/kid3/kid3-3.9.7.tar.gz.sig
+  validpgpkeys:
+    - 7D09794C2812F62194B081C14CAD34426E354DD2
+  sha256sums:
+    - 392aafb176cc8dc9fdf08364f9bb754913725447b8f3e0e581c1d96c2fc30ae4
+    - SKIP
+pkgname:
+  - name: kid3-common
+    pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor, CLI version and common files
+    depends:
+      - chromaprint
+      - flac
+      - id3lib
+      - libmp4v2
+      - libvorbis
+      - qt6-base
+      - taglib
+    optdepends:
+      - 'qt6-declarative: GUI support library'
+      - 'qt6-multimedia: GUI support library'
+  - name: kid3-qt
+    pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor, Qt version
+    depends:
+      - kid3-common=3.9.7
+      - qt6-declarative
+      - qt6-multimedia
+  - name: kid3
+    pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor, KDE version
+    depends:
+      - kid3-common=3.9.7
+      - kxmlgui
+      - qt6-declarative
+      - qt6-multimedia
+      - kio
+# generated with artixpkg 0.36.4-1-any
