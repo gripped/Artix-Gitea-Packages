@@ -1,0 +1,49 @@
+---
+version: 0.13.5-2
+pkgbase:
+  name: mat2
+  pkgdesc: Metadata removal tool, supporting a wide range of commonly used file formats
+  pkgver: 0.13.5
+  pkgrel: 2
+  url: https://0xacab.org/jvoisin/mat2
+  arch:
+    - any
+  license:
+    - LGPL-3.0-or-later
+  checkdepends:
+    - ffmpeg
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gdk-pixbuf2
+    - hicolor-icon-theme
+    - librsvg
+    - mailcap
+    - perl-image-exiftool
+    - poppler-glib
+    - python
+    - python-cairo
+    - python-gobject
+    - python-mutagen
+  optdepends:
+    - 'ffmpeg: video support'
+    - 'bubblewrap: sandboxing support'
+    - 'kdialog: dolphin file browser integration'
+  source:
+    - https://0xacab.org/jvoisin/mat2/-/archive/0.13.5/mat2-0.13.5.tar.gz
+    - https://0xacab.org/-/project/1139/uploads/060efa77668fa7f6d9baeb8a327857af/mat2-0.13.5.tar.gz.asc
+  validpgpkeys:
+    - 9FCDEE9E1A381F311EA62A7404D041E8171901CC
+  sha512sums:
+    - a700f5c136b20203b5173c685b49d589f75082a067b9a6059766dd3d78d7cf2988080c5e523e0d35e6aced79790e9a322c3b0d4a8364bb83af6ce2490acb6abb
+    - SKIP
+  b2sums:
+    - d8fd5007c65ac6eab4c493f5f71e9c5dbc56f4f89f04546ed861aed6142026cf3a013fcfe130dcf3879d45ffbe4144d51930cfc320d9f31479b3bee5fc5a103f
+    - SKIP
+pkgname:
+  - name: mat2
+# generated with artixpkg 0.36.4-1-any
