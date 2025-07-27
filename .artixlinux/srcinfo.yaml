@@ -1,0 +1,30 @@
+---
+version: 0.45.0-1
+pkgbase:
+  name: gitoxide
+  pkgdesc: An idiomatic, lean, fast & safe pure Rust implementation of Git
+  pkgver: 0.45.0
+  pkgrel: 1
+  url: https://github.com/Byron/gitoxide
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - Apache-2.0
+  makedepends:
+    - cargo
+    - cmake
+  depends:
+    - gcc-libs
+    - glibc
+  options:
+    - '!lto'
+  source:
+    - https://github.com/Byron/gitoxide/archive/v0.45.0/gitoxide-0.45.0.tar.gz
+  sha256sums:
+    - 1914573c9efa69a3a8b8ef97483a7756a4d5ab433a93e43502fb18332f77b623
+  b2sums:
+    - 5bfa5d9246e91ca256409740150b077d3377d0a21a1f9be330490c741a3f088f6734e9a16188f8211eae3885467fdbeca51129a869efa0fb4e377e0a2d813c15
+pkgname:
+  - name: gitoxide
+# generated with artixpkg 0.36.4-1-any

@@ -1,0 +1,56 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+
+pkgname=gitoxide
+pkgver=0.45.0
+pkgrel=1
+pkgdesc="An idiomatic, lean, fast & safe pure Rust implementation of Git"
+url='https://github.com/Byron/gitoxide'
+arch=('x86_64')
+license=('MIT' 'Apache-2.0')
+depends=(
+  'gcc-libs'
+  'glibc'
+)
+makedepends=(
+  'cargo'
+  'cmake'
+)
+options=(!lto)
+source=(https://github.com/Byron/${pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('1914573c9efa69a3a8b8ef97483a7756a4d5ab433a93e43502fb18332f77b623')
+b2sums=('5bfa5d9246e91ca256409740150b077d3377d0a21a1f9be330490c741a3f088f6734e9a16188f8211eae3885467fdbeca51129a869efa0fb4e377e0a2d813c15')
+
+prepare() {
+  cd "${pkgname}-${pkgver}"
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+  cargo build --frozen --release --no-default-features --features max-pure
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+
+  for bin in gix ein; do
+    install -Dm 755 -t "${pkgdir}/usr/bin" "target/release/${bin}"
+
+    # install completions
+    install -d "${pkgdir}/usr/share/bash-completion/completions" \
+               "${pkgdir}/usr/share/zsh/site-functions" \
+               "${pkgdir}/usr/share/fish/vendor_completions.d" \
+               "${pkgdir}/usr/share/elvish/lib"
+
+    "${pkgdir}/usr/bin/${bin}" completions -s bash > "${pkgdir}/usr/share/bash-completion/completions/${bin}"
+    "${pkgdir}/usr/bin/${bin}" completions -s zsh > "${pkgdir}/usr/share/zsh/site-functions/_${bin}"
+    "${pkgdir}/usr/bin/${bin}" completions -s fish > "${pkgdir}/usr/share/fish/vendor_completions.d/${bin}.fish"
+    "${pkgdir}/usr/bin/${bin}" completions -s elvish > "${pkgdir}/usr/share/elvish/lib/${bin}.elv"
+  done
+
+  install -Dm644 LICENSE-* -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:
