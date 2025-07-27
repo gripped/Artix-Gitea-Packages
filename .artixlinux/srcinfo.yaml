@@ -1,0 +1,78 @@
+---
+version: 9.9.0-1
+pkgbase:
+  name: solr
+  pkgdesc: Open source enterprise search platform built on Apache Lucene
+  pkgver: 9.9.0
+  pkgrel: 1
+  url: https://lucene.apache.org/solr/
+  arch:
+    - any
+  license:
+    - Apache
+  makedepends:
+    - gradle
+    - git
+    - groovy
+    - java-environment=11
+    - npm
+  depends:
+    - bash
+    - java-runtime=11
+  backup:
+    - etc/solr/server/jetty-http.xml
+    - etc/solr/server/jetty-https.xml
+    - etc/solr/server/jetty-ssl.xml
+    - etc/solr/server/jetty.xml
+    - etc/solr/server/webdefault.xml
+    - etc/solr/solr.in.sh
+    - etc/solr/solr.xml
+    - etc/solr/zoo.cfg
+  source:
+    - https://archive.apache.org/dist/solr/solr/9.9.0/solr-9.9.0-src.tgz
+    - solr.sysusers
+    - solr.tmpfiles
+    - support-reproducible-builds.patch
+    - skip-failing-test.patch
+    - skip-checks-for-git-repo.patch
+    - allow-using-system-gradle.patch
+  validpgpkeys:
+    - 2085660D9C1FCCACC4A479A3BF160FF14992A24C
+    - E58A6F4D5B2B48AC66D5E53BD4F181881A42F9E6
+    - 81D3EB0408B4E1EB10AF443BA4F4C886B29BC2F4
+    - 86EDB9C33B8517228E88A8F93E48C0C6EF362B9E
+    - 38DA0C3CE8181703A08E4D57377C3BA26AD29C0A
+    - 50E3EE1C91C7E0CB4DFB007B369424FC98F3F6EC
+    - 902CC51935C140BF820230961FD5295281436075
+    - 7D8D90F8F64F23077AC87CF7CB77CB79928BB0EC
+    - CFCE5FBB920C3C745CEEE084C38FF5EC3FCFDB3E
+    - FBC25D7E1712025294FE66590A6AA179B9BBF45E
+    - 9722F25F650057E26C803B60A6D064D833B3A969
+    - E6E21FFCDCEA14C95910EA65051A0FAF76BC6507
+    - 3558857D1F5754B78C7F8B5A71A45A3D0D8D0B93
+    - C3E7CBD9B9FE2B419EB14B89612B39A5BC981763
+    - FDB3D11D716BB32ACF8C93AB919B21537AA80271
+    - 2289AC4180E130507D7A82F479C211E0AEFCA72E
+    - 515EA995ED1DD799FA1422E5CA7514D8385D790B
+    - E05FDF113D89E7FB4A2DF4B2684D544160392455
+    - 1CF0DAD1470504C4EA95C697140BC45803B03F7F
+    - EDF961FF03E647F9CA8A9C2C758051CCA3A13A7F
+  sha512sums:
+    - c510492f8a2a210024b034d546ef49f9784d7a66fd6609fb98b5cae3d6485cd232902a3c8c799d089e7dd7d085b0b6d9b544b3fe5e3cd32907fcdc873b9a46a7
+    - 4a92e55709bcaffeab9456b2c3a7e76b38ab91f0bcf8a714f7da0691c46dfb28ef39741827ab90a1e7a26d716acfdc050af5cd4d043137bff51c07e114819fc2
+    - 97252d1ba1e4e211a6b5a038981cbc9d6663a0d7a980b23484f838eebb2f8194571a3f34ea6b92ed0efd4b7f862e020b5e3e8478ad1de1c6832e232d0b20ff6d
+    - cda14703a9144e0add93d6f7a32691a80e2cadbb738c0c752122e6e27bbf1441a48a1a2ee146f10dd4f0ba4e5f5e38a46b45c1e01ff8c79bd477f3030a7c265d
+    - 8daad1f07686984d59c459317936a73dfc35599b4e50f0c2bab769b42950117aae56e775f028c5241c877c771241d9fc5666cc57500a4e94576bfd30be421fe9
+    - 1ad7eb67116fc58e7ad38926a696e76f9bc10447101e95ddfb0da914cb7a9916aeab47ad498fec3ff18285827f21d8855c1854778ce09c8e70dc9ce1576b57d1
+    - 5e45fcd63be50484dbdd7b909f187d4d90a89639b80571bd93c432599b2064498344d4168dd06dfc45368ce043a873ae6be804d3ff1a3c42746b045c215cab92
+  b2sums:
+    - 9fa583da0190c3d7bd37d63cb8927371a827ccf54722fbe77a26d95bb0e7104cdb6a854c0cf4af60a2076da4572064918ac4a928119b4da22dd470d1cb7ef49c
+    - bd7624d92430c461063faa63dc00f5b546f86937c01161d3f2027406a37e8e3b7bcd7b3ca4b268e2ccd6c96c3f49addcfea4a86844145822ed70eaecdd3fd4bc
+    - 37ab5d9af1da1178fcc58ce39654fdecb842b24d4e2264a2eec95c10223e7d003f27a6b2957a267a17ce0fa72258d96642d5b909963576a5a7d13e4e05c47a51
+    - 60b0b2124ff8e4e2faa9323a0156fa02ea606c5779f7b80e42a05de78fa7e67546e33a444c5b1b4d61aaf2dcd067430022091449da386c310b8a99ce75eb1d3c
+    - 21c65f14aa76a8110fed7d7b684c22342c72510376f68c2cde5ebf4ea996f38e287a29429ac7ebd93b68dbbffe030149b31d06a1dbc4b80c2182c14c53684c0a
+    - 3e7d4e76994752bd62aa6e519bbfecc9db2ad81d3f086ea1920f5bc78bb93c68aab6ca01225860e46e59666af450f3a826fe91edf7a820396be342d431002b94
+    - ef52cfc76c484b78bacfee8a6e6321d80d3a03bdf11f81ab15e8328dd680cc87010e34a3f59423325707f60c87fe03fb2e77a082140e364d61ebaf5582101f59
+pkgname:
+  - name: solr
+# generated with artixpkg 0.36.4-1-any
