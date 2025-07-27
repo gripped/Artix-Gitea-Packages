@@ -1,0 +1,30 @@
+---
+version: 0.10.0-1
+pkgbase:
+  name: libchewing
+  pkgdesc: Intelligent Chinese phonetic input method
+  pkgver: 0.10.0
+  pkgrel: 1
+  url: https://chewing.im/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - minisign
+    - rust
+    - corrosion
+  depends:
+    - sqlite
+  optdepends:
+    - 'chewing-editor: view and modify libchewing user phrases database'
+  source:
+    - https://github.com/chewing/libchewing/releases/download/v0.10.0/libchewing-0.10.0.tar.zst
+    - https://github.com/chewing/libchewing/releases/download/v0.10.0/libchewing-0.10.0.tar.zst.minisig
+  sha256sums:
+    - 303eb86da31b83e67840a5bf79874cca00b06ce35f0e46fbd5e669f4b561ca21
+    - d1daa68159b0cd21166fc05e3477dd7c563cbcea0b944091cd28f031a806d151
+pkgname:
+  - name: libchewing
+# generated with artixpkg 0.36.4-1-any
