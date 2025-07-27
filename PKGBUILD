@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=anubis
-pkgver=1.20.0
+pkgver=1.21.3
 pkgrel=1
 pkgdesc="Reverse proxy to protect against scraper bots"
 url="https://anubis.techaro.lol/"
@@ -26,7 +26,7 @@ options=(
 source=(
   "git+https://github.com/TecharoHQ/anubis?signed#tag=v${pkgver/[a-z]/-&}"
 )
-b2sums=('3e058531e506ce0dfb18fb067cecab0fde6a859b505a55a9324cf66d64e11246467aa81291bf4a3b2c6f50299f49436921349a004742c6b48ad1b1af1ac4d9bc')
+b2sums=('2b5d48ec547eb70da30876d2531c566dd935cd95d422e7b8c2def8898edecd9f5fdb7e695c494e1372edf8b6d42dd46f5f2f6ddd61d95e8ce60501f41df4182f')
 validpgpkeys=(
   833F64161167B501058C394756375DA2DF02ABFF # Techaro Packages Signatures <gpg+packages@techaro.lol>
 )
