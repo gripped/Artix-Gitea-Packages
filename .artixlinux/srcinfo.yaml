@@ -1,0 +1,31 @@
+---
+version: 33.1.0-1
+pkgbase:
+  name: ruby-cucumber-gherkin
+  pkgdesc: Gherkin for Ruby
+  pkgver: 33.1.0
+  pkgrel: 1
+  url: https://github.com/cucumber/gherkin/blob/main/ruby
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+  makedepends:
+    - ruby-rake
+    - ruby-rspec
+  depends:
+    - ruby
+    - ruby-cucumber-messages
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/cucumber/gherkin/archive/v33.1.0/cucumber-gherkin-33.1.0.tar.gz
+  sha512sums:
+    - 176a9e8bf448f07da54a0e35095e40d82ff4a842132ef58052e4451d3ccd3a551d493319c6f44c0148ae2e6dec950e4a0baaffea5aea77c161bafc0970c18f48
+  b2sums:
+    - 026dc11c4451e5243dc4ede0108c19162cb29784507095642d4a2599c52143f8a594b6dba21552a4c061f62fccfe71f3ed4bb574453d68e35231f99340876e90
+pkgname:
+  - name: ruby-cucumber-gherkin
+# generated with artixpkg 0.36.4-1-any
