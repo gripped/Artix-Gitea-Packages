@@ -1,0 +1,31 @@
+---
+version: 19.0.0-1
+pkgbase:
+  name: ruby-cucumber-compatibility-kit
+  pkgdesc: Kit to check compatibility with official cucumber implementation
+  pkgver: 19.0.0
+  pkgrel: 1
+  url: https://github.com/cucumber/compatibility-kit
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-rspec
+  makedepends:
+    - npm
+  depends:
+    - ruby
+    - ruby-cucumber-messages
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/cucumber/compatibility-kit/archive/v19.0.0/ruby-cucumber-compatibility-kit-19.0.0.tar.gz
+  sha512sums:
+    - 59d2ca131171e926b45949877ae57f28f5429054bdcd4e542f4c3bca8b8cdf96517ffaddd99ce30ad5e360052d93e70bf83a88a3365583fb172312db9920c108
+  b2sums:
+    - bfbf432883ee5c3df9fa31a3ae55bced71817a22d1cbfbb5fc5e05d5029bc66a35279e398790231a4ab7eeb0dfcfbca2a8cdc332e506877c124b37d6fb5e7af2
+pkgname:
+  - name: ruby-cucumber-compatibility-kit
+# generated with artixpkg 0.36.4-1-any
