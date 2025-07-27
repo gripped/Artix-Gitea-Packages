@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: lib32-libx11
-  version: 1.8.12-1
-  arch:
-    - x86_64
-  pkgname:
-    - lib32-libx11
 actions:
   addRepo: lib32
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
-    version: 1.8.12-1
+    version: 1.8.12-2
     packages:
-      - lib32-libx11-1.8.12-1-x86_64.pkg.tar.zst
+      - lib32-libx11-1.8.12-2-x86_64.pkg.tar.zst
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: lib32
