@@ -1,0 +1,32 @@
+---
+version: 21.13.0-1
+pkgbase:
+  name: ruby-cucumber-html-formatter
+  pkgdesc: HTML formatter for Cucumber
+  pkgver: 21.13.0
+  pkgrel: 1
+  url: https://github.com/cucumber/html-formatter/tree/main/ruby
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - npm
+    - ruby-bundler
+    - ruby-rake
+    - ruby-rspec
+    - ruby-cucumber-compatibility-kit
+  depends:
+    - ruby
+    - ruby-cucumber-messages
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/cucumber/html-formatter/archive/v21.13.0/cucumber-html-formatter-21.13.0.tar.gz
+  sha512sums:
+    - 81723ed0c1c8b2a0f78114290758aecdcc8903671ab6e4040fb7b77f1e764413bf6f12a68eff2a94b2faef37fc77636d7025dd1d5bbe6e541545275e3a61dd3e
+  b2sums:
+    - 55b794e28819511e65427fb8a1554bc51faf7778657243001412cff3f3fc1a9f4522f0f364522729985d04ebd1c4e65b1148c7221949b9895e3f12b1c5ecea5c
+pkgname:
+  - name: ruby-cucumber-html-formatter
+# generated with artixpkg 0.36.4-1-any
