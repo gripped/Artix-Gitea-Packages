@@ -1,0 +1,33 @@
+---
+version: 9.4.0-1
+pkgbase:
+  name: python-mysql-connector
+  pkgdesc: A standardized database driver for Python platforms and development
+  pkgver: 9.4.0
+  pkgrel: 1
+  url: https://dev.mysql.com/downloads/connector/python/
+  arch:
+    - any
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - python-dnspython
+    - python-typing_extensions
+  source:
+    - https://cdn.mysql.com//Downloads/Connector-Python/mysql-connector-python-9.4.0-src.tar.gz
+    - mysql-connector-python-9.4.0-src.tar.gz.asc::https://dev.mysql.com/downloads/gpg/?file=mysql-connector-python-9.4.0-src.tar.gz&p=29
+  validpgpkeys:
+    - 859BE8D7C586F538430B19C2467B942D3A79BD29
+    - BCA43417C3B485DD128EC6D4B7B3B788A8D3785C
+  sha512sums:
+    - be9ed6728f618261f4bacdc8e6cd519d66924460720fb8f2714199aa3fc0c473484aeb0ba221c429a8e6629e35a06f6f8dcb88c0bca18867939c4ff2e1f71ba5
+    - SKIP
+pkgname:
+  - name: python-mysql-connector
+# generated with artixpkg 0.36.4-1-any
