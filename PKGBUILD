@@ -1,9 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Bert Peters <bertptrs@archlinux.org>
 
 pkgname=ruby-cucumber-tag-expressions
-pkgver=5.0.6
-pkgrel=5
+pkgver=6.2.0
+pkgrel=1
 pkgdesc="Cucumber tag expressions for ruby"
 arch=(any)
 url='https://github.com/cucumber/tag-expressions'
@@ -20,7 +21,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(https://github.com/cucumber/tag-expressions/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('b8c24625c3ba29208d614d949dce57aa11960bc27f23bc713877e39c7fea918d')
+sha256sums=('05f0fcb1bdbaad21d8645eb99205b8481716afa8a76e778e90b192e6118298b9')
 
 build() {
   local _gemdir="$(gem env gemdir)"
