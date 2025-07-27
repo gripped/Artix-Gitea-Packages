@@ -1,15 +1,28 @@
 ---
-version: 2.0.23-7
+version: 2.0.23-8
 pkgbase:
   name: asciidoctor
   pkgdesc: An implementation of AsciiDoc in Ruby
   pkgver: 2.0.23
-  pkgrel: 7
+  pkgrel: 8
   url: https://asciidoctor.org
   arch:
     - any
   license:
     - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-coderay
+    - ruby-concurrent
+    - ruby-cucumber
+    - ruby-erubi
+    - ruby-haml
+    - ruby-minitest
+    - ruby-nokogiri
+    - ruby-rake
+    - ruby-rouge
+    - ruby-slim
+    - ruby-tilt
   makedepends:
     - git
     - ruby-rdoc
