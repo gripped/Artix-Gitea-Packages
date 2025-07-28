@@ -40,7 +40,7 @@ depends=(
   'pam'
   'perl'
   'pixman'
-  'systemd-libs'
+  'libudev'
   'xkeyboard-config'
   'xorg-xauth'
   'xorg-xinit'
