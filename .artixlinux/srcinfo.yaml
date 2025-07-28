@@ -1,0 +1,40 @@
+---
+version: 1:41.0-1
+pkgbase:
+  name: gnome-screenshot
+  pkgdesc: Take pictures of your screen
+  pkgver: 41.0
+  pkgrel: 1
+  epoch: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-screenshot
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - appstream
+    - git
+    - meson
+  depends:
+    - cairo
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libhandy
+    - libx11
+    - libxext
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-screenshot.git#tag=41.0
+    - 0001-Fix-various-fallback-paths.patch
+    - 0001-Present-existing-window-if-already-in-interactive-mo.patch
+  b2sums:
+    - 15ad277923e91e5282dd7792796b254800ad1f0084761a4dd70107afd3c7d68c516b2d48dc2a8eeb733702f88d0590bbbf4c78aec11d3a7086f11a529dfc3db6
+    - 543ba200a41eb5948c40dadf0ffa2c2c484f6e83f10ea0d9a4c3bb8c91a7b27e0ea14d9f4cee8c85355f981a7fa87b3ba04dad16251d396c65011967a53da9aa
+    - e410e92cfed63a520b8f3f52be83027bcaa22675f9926ddd58bd8a6bd0e0d6b11fac94227f8080e34392b916039b1ed42198882b761282b40935ceff24c38ab4
+pkgname:
+  - name: gnome-screenshot
+# generated with artixpkg 0.36.4-1-any
