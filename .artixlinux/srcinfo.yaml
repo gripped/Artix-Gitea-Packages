@@ -1,0 +1,41 @@
+---
+version: 4.4.1-1
+pkgbase:
+  name: libwebsockets
+  pkgdesc: C library for websocket clients and servers
+  pkgver: 4.4.1
+  pkgrel: 1
+  url: https://libwebsockets.org
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - glib2
+    - libcap
+  depends:
+    - glibc
+    - openssl
+    - libuv
+    - libev
+    - zlib
+  provides:
+    - libwebsockets.so
+  source:
+    - libwebsockets-4.4.1.tar.gz::https://github.com/warmcat/libwebsockets/archive/v4.4.1.tar.gz
+  sha512sums:
+    - 86f85066ce0e9f7f29af5b7c7be803bd19f1a7e6afd8bcdd7c3afc1a66735324317852d7b19bbe9a5af69e759ec532dd28bebffa256f3e1c30ade7ead41a4275
+  b2sums:
+    - ecc71d595503dd211e6341c84c1fed8adf29b055cbcd7a06fbb0f807d6cfc3814bb0b7df51f78c3f535b6f3dbb8e57b3fdfb6c2b6b706801ef540f6bcaabc207
+pkgname:
+  - name: libwebsockets
+    depends:
+      - glibc
+      - openssl
+      - libuv
+      - libev
+      - zlib
+      - libcap.so
+      - libglib-2.0.so
+# generated with artixpkg 0.36.4-1-any
