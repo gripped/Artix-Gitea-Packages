@@ -1,10 +1,10 @@
 ---
-version: 0.16.0-1
+version: 0.16.0-2
 pkgbase:
   name: spice
   pkgdesc: SPICE server
   pkgver: 0.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.spice-space.org
   arch:
     - x86_64
@@ -15,7 +15,6 @@ pkgbase:
     - glib-networking
   makedepends:
     - meson
-    - python-six
     - python-pyparsing
     - glib2-devel
   depends:
@@ -39,4 +38,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: spice
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
