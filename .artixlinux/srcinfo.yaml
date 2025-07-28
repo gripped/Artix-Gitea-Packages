@@ -1,0 +1,28 @@
+---
+version: 2.0-4
+pkgbase:
+  name: cmatrix
+  pkgdesc: A curses-based scrolling 'Matrix'-like screen
+  pkgver: 2.0
+  pkgrel: 4
+  url: https://www.asty.org/cmatrix/
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - cmake
+  depends:
+    - ncurses
+  optdepends:
+    - 'kbd: cmatrix-tty custom font'
+    - 'xterm: cmatrix-tty custom font'
+  source:
+    - cmatrix-2.0.tgz::https://github.com/abishekvashok/cmatrix/archive/v2.0.tar.gz
+    - cmatrix-tty
+  sha256sums:
+    - ad93ba39acd383696ab6a9ebbed1259ecf2d3cf9f49d6b97038c66f80749e99a
+    - 94890bec3d04f076ae43c56a7768e67cff2a209e02819e2ce80fd61173b15a30
+pkgname:
+  - name: cmatrix
+# generated with artixpkg 0.36.4-1-any
