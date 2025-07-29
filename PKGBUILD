@@ -3,7 +3,7 @@
 pkgname=wasi-libc
 pkgver=0+440+3f7eb4c7
 _commit=3f7eb4c7d6ede4dde3c4bffa6ed14e8d656fe93f # tags/wasi-sdk-27
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='WASI libc implementation for WebAssembly'
 url='https://github.com/WebAssembly/wasi-libc'
