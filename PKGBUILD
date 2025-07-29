@@ -6,29 +6,56 @@
 # toolchain build order: linux-api-headers->glibc->binutils->gcc->glibc->binutils->gcc
 
 pkgname=binutils
-pkgver=2.44+r94+gfe459e33c676
-_commit=fe459e33c676883b5f28cc96c00e242973d906a9
+pkgver=2.45+r8+g09be88bfb653
+_commit=09be88bfb653bc9739bc281733407fcae73fb12f
 pkgrel=1
 pkgdesc='A set of programs to assemble and manipulate binary and object files'
 arch=(x86_64)
 url='https://www.gnu.org/software/binutils/'
 license=(GPL-2.0-or-later GPL-3.0-or-later LGPL-2.0-or-later LGPL-3.0-or-later GFDL-1.3 FSFAP)
-depends=(glibc jansson libelf zlib zstd)
-makedepends=(git)
-checkdepends=(dejagnu debuginfod bc)
-optdepends=('debuginfod: for debuginfod server/client functionality')
-conflicts=(binutils-multilib)
-replaces=(binutils-multilib)
+depends=(
+  glibc
+  jansson
+  libelf
+  zlib
+  zstd
+)
+makedepends=(
+  git
+)
+checkdepends=(
+  bc
+  dejagnu
+  debuginfod
+)
+optdepends=(
+  'debuginfod: for debuginfod server/client functionality'
+)
+conflicts=(
+  binutils-multilib
+)
+replaces=(
+  binutils-multilib
+)
 provides=(
   libctf.so
   libgprofng.so
   libsframe.so
 )
-backup=('etc/gprofng.rc')
-options=(staticlibs !distcc !ccache debug)
-source=(git+https://sourceware.org/git/binutils-gdb.git#commit=${_commit}
-        gold-warn-unsupported.patch)
-sha256sums=('07a821f494fbb61dcf9e958f6f840eaa4a45c748c59415fd3ea1ec4b3326673c'
+backup=(
+  'etc/gprofng.rc'
+)
+options=(
+  staticlibs
+  !distcc
+  !ccache
+  debug
+)
+source=(
+  git+https://sourceware.org/git/binutils-gdb.git#commit=${_commit}
+  gold-warn-unsupported.patch
+)
+sha256sums=('68533b94c94db960cd138f0651002f91305a835619a691ad75fe259838103f25'
             '2d430b66f84a19c154725ec535280c493be1d34f1a90f95208dce02fecd0e4e4')
 validpgpkeys=(3A24BC1E8FB409FA9F14371813FCEF89DD9E3C4F)
 
