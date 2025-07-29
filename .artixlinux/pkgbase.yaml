@@ -1,55 +1,62 @@
 ---
-pkgbase:
-  name: libtool
-  version: 2.5.4+r23+g5b582aed-1
-  arch:
-    - x86_64
-  pkgname:
-    - libtool
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.5.4+r23+g5b582aed-2
+    packages:
+      - libtool-2.5.4+r23+g5b582aed-2-x86_64.pkg.tar.zst
+    debug:
+      - libtool-debug-2.5.4+r23+g5b582aed-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: 2.5.4+r23+g5b582aed-1
     packages:
       - libtool-2.5.4+r23+g5b582aed-1-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system

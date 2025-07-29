@@ -1,0 +1,44 @@
+---
+version: 2.5.4+r23+g5b582aed-2
+pkgbase:
+  name: libtool
+  pkgdesc: A generic library support script
+  pkgver: 2.5.4+r23+g5b582aed
+  pkgrel: 2
+  url: https://www.gnu.org/software/libtool
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later WITH Libtool-exception
+  checkdepends:
+    - gcc-fortran
+  makedepends:
+    - gcc>=15.1.1
+    - git
+    - help2man
+  depends:
+    - sh
+    - tar
+    - glibc
+  provides:
+    - libltdl=2.5.4+r23+g5b582aed
+    - libtool-multilib=2.5.4+r23+g5b582aed
+  conflicts:
+    - libltdl
+    - libtool-multilib
+  replaces:
+    - libltdl
+    - libtool-multilib
+  options:
+    - debug
+  source:
+    - git+https://git.savannah.gnu.org/git/libtool.git#commit=5b582aed255d0a998bc2b678597ce7b03aef6ffa
+    - git+https://git.savannah.gnu.org/git/gnulib.git
+    - gnulib-bootstrap::git+https://github.com/gnulib-modules/bootstrap.git
+  b2sums:
+    - a1a3f6d95c5a26e6317439419042586ec41573e74a2728780a2e895932097d2e9b6fd2c4a9e88e9c0511c51288d3c6276da4dad837280c9794dd530f70a79759
+    - SKIP
+    - SKIP
+pkgname:
+  - name: libtool
+# generated with artixpkg 0.36.4-1-any
