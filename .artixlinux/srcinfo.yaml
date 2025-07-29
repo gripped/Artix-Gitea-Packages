@@ -1,10 +1,10 @@
 ---
-version: 3.5.1-1
+version: 3.5.1-2
 pkgbase:
   name: qutebrowser
   pkgdesc: A keyboard-driven, vim-like browser based on Python and Qt
   pkgver: 3.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qutebrowser.org/
   arch:
     - any
@@ -22,7 +22,7 @@ pkgbase:
   optdepends:
     - 'python-adblock: adblocking backend'
     - python-pygments
-    - 'pdfjs: displaying PDF in-browser'
+    - 'pdfjs-legacy: displaying PDF in-browser'
   options:
     - '!emptydirs'
   source:
@@ -35,4 +35,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: qutebrowser
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
