@@ -1,10 +1,10 @@
 ---
-version: 2023_07_R2-4
+version: 2023_07_R2-5
 pkgbase:
   name: kismet
   pkgdesc: 802.11 layer2 wireless network detector, sniffer, and intrusion detection system
   pkgver: 2023_07_R2
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.kismetwireless.net/
   install: kismet.install
   arch:
@@ -71,4 +71,4 @@ pkgbase:
     - fbf487148e50b6e3ec60fd0490ccfef1249fdb6b974d6fa25ae1e04101cd62f3c2737d81554b8f1229cd89b177f46f0ea2e853d066fe434a1bd988407809b067
 pkgname:
   - name: kismet
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.36.4-1-any
