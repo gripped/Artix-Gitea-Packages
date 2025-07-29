@@ -1,10 +1,10 @@
 ---
-version: 1.15.0-2
+version: 1.15.0-3
 pkgbase:
   name: tigervnc
   pkgdesc: Suite of VNC servers and clients based on the VNC 4 branch of TightVNC
   pkgver: 1.15.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.tigervnc.org
   arch:
     - x86_64
@@ -16,6 +16,7 @@ pkgbase:
     - imagemagick
     - java-environment=8
     - nasm
+    - strip-nondeterminism
     - xorg-font-util
     - xorg-util-macros
     - xorgproto
@@ -29,7 +30,6 @@ pkgbase:
     - gmp
     - gnutls
     - hicolor-icon-theme
-    - java-runtime=8
     - libgl
     - libjpeg-turbo
     - libunwind
@@ -57,6 +57,8 @@ pkgbase:
     - xorg-xkbcomp
     - xorg-xsetroot
     - zlib
+  optdepends:
+    - 'java-runtime: for java-based client'
   conflicts:
     - tightvnc
   backup:

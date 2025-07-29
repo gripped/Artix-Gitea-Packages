@@ -4,7 +4,7 @@
 
 pkgname=tigervnc
 pkgver=1.15.0
-pkgrel=2
+pkgrel=3
 _xorgver=21.1.15
 pkgdesc="Suite of VNC servers and clients based on the VNC 4 branch of TightVNC"
 arch=('x86_64')
@@ -19,7 +19,6 @@ depends=(
   'gmp'
   'gnutls'
   'hicolor-icon-theme'
-  'java-runtime=8'
   'libgl'
   'libjpeg-turbo'
   'libunwind'
@@ -54,10 +53,14 @@ makedepends=(
   'imagemagick'
   'java-environment=8'
   'nasm'
+  'strip-nondeterminism'
   'xorg-font-util'
   'xorg-util-macros'
   'xorgproto'
   'xtrans'
+)
+optdepends=(
+  'java-runtime: for java-based client'
 )
 conflicts=('tightvnc')
 backup=(
@@ -146,6 +149,8 @@ package() {
   cd unix/xserver/hw/vnc
   make DESTDIR="$pkgdir" install
   install -Dm0755 "$srcdir"/Xsession "$pkgdir"/etc/X11/tigervnc/Xsession
+
+  strip-nondeterminism "$pkgdir"/usr/share/vnc/classes/VncViewer.jar
 
   sed -i '/systemd/Id' "$pkgdir"/etc/pam.d/tigervnc
 }
