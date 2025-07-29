@@ -1,0 +1,169 @@
+---
+version: 8.12-3
+pkgbase:
+  name: ardour
+  pkgdesc: Professional-grade digital audio workstation
+  pkgver: 8.12
+  pkgrel: 3
+  url: https://ardour.org/
+  arch:
+    - x86_64
+  groups:
+    - pro-audio
+  license:
+    - CC0-1.0
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - MIT
+  makedepends:
+    - aubio
+    - boost
+    - cairomm
+    - cppunit
+    - curl
+    - dbus
+    - doxygen
+    - fftw
+    - flac
+    - fluidsynth
+    - fontconfig
+    - freetype2
+    - git
+    - glib2
+    - glibmm
+    - graphviz
+    - hidapi
+    - itstool
+    - jack
+    - libarchive
+    - liblo
+    - liblrdf
+    - libltc
+    - libogg
+    - libpng
+    - libpulse
+    - libsamplerate
+    - libsndfile
+    - libusb
+    - libwebsockets
+    - libxml2
+    - lilv
+    - lv2
+    - pango
+    - pangomm
+    - readline
+    - rubberband
+    - serd
+    - sord
+    - sratom
+    - unzip
+    - vamp-plugin-sdk
+    - waf
+  depends:
+    - cairo
+    - gcc-libs
+    - glibc
+    - hicolor-icon-theme
+    - libsigc++
+    - libx11
+    - libxext
+    - sh
+    - taglib
+  optdepends:
+    - 'harvid: for video timeline and MP3 export'
+    - 'new-session-manager: for session management'
+    - 'xjadeo: for video monitoring'
+  provides:
+    - ladspa-host
+    - lv2-host
+    - vamp-host
+    - vst-host
+    - vst3-host
+  noextract:
+    - ardour-midi-8.12.zip
+  source:
+    - ardour::git+https://github.com/ardour/ardour.git#tag=8.12
+    - ardour-midi-8.12.zip::http://stuff.ardour.org/loops/ArdourBundledMedia.zip
+    - ardour-7.0-re-vendor_qm-dsp.patch
+  sha512sums:
+    - fe9d92402b13e5cea13d1bee097ee7e153e8965eb64cb9cd59fcc53b1f4959131e5c611acff3da268f113a03be30f89c8b46558ddea587f42b354a982368bf59
+    - 94b681f989e834f5de25ce87da9c174b11d90617063f8c96147d7eb470391b35f6d54b85de16da8d963cacb01b50d1c1fab0fddd18eb3b086fe17124ecfa4f65
+    - a3da14925bc25d8a57ba3e137c4b2b04010054667ac4ae2aec116ce6c157b03c9dd76bf4d73c313022282362d19b91683f062d6ab2ee0c73a576d3fa6272bd1d
+  b2sums:
+    - d0d18ad1f48bfa34a9e6400f83140e587f7d6068d572bc3a39de04fe40880772154d576c5235c9a53f35a8a8bf71fa6fad9e6828bafc7245a7494963a0315f22
+    - e31be6b51a217e2f7f799aa1d6e8c3cd024d80ab2d8d4371496a2b8bf0215749979217b565909841a346d6b3128fbfd674d2fae64b9fe741a5b418cd184c23be
+    - 73845adce9a48938cd7aef5fbc65f492e470de316620d278365d247c80caef44531e850fbd3d2f5de65a8562e67aabfd982c938439bd3670726a27bc003be017
+pkgname:
+  - name: ardour
+    depends:
+      - cairo
+      - gcc-libs
+      - glibc
+      - hicolor-icon-theme
+      - libsigc++
+      - libx11
+      - libxext
+      - sh
+      - taglib
+      - alsa-lib
+      - libasound.so
+      - aubio
+      - libaubio.so
+      - cairomm
+      - libcairomm-1.0.so
+      - curl
+      - libcurl.so
+      - dbus
+      - libdbus-1.so
+      - fftw
+      - libfftw3f.so
+      - libfftw3f_threads.so
+      - fluidsynth
+      - libfluidsynth.so
+      - fontconfig
+      - libfontconfig.so
+      - glib2
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - glibmm
+      - libglibmm-2.4.so
+      - jack
+      - libjack.so
+      - libarchive
+      - libarchive.so
+      - liblo
+      - liblo.so
+      - libpulse
+      - libpulse.so
+      - liblrdf
+      - liblrdf.so
+      - libltc
+      - libltc.so
+      - libpng
+      - libpng16.so
+      - libsamplerate
+      - libsamplerate.so
+      - libsndfile
+      - libsndfile.so
+      - libusb
+      - libusb-1.0.so
+      - libwebsockets
+      - libwebsockets.so
+      - libxml2
+      - libxml2.so
+      - lilv
+      - liblilv-0.so
+      - pango
+      - libpango-1.0.so
+      - libpangocairo-1.0.so
+      - libpangoft2-1.0.so
+      - pangomm
+      - libpangomm-1.4.so
+      - readline
+      - libreadline.so
+      - rubberband
+      - librubberband.so
+      - vamp-plugin-sdk
+      - libvamp-hostsdk.so
+      - libvamp-sdk.so
+# generated with artixpkg 0.36.4-1-any
