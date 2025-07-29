@@ -64,3 +64,4 @@ package() {
   # Custom license
   install -Dm644 doc/COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+
