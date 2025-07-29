@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,13 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.26.3-1
+    version: 1.26.4-1
     packages:
-      - libmupdf-1.26.3-1-x86_64.pkg.tar.zst
-      - mupdf-1.26.3-1-x86_64.pkg.tar.zst
-      - mupdf-gl-1.26.3-1-x86_64.pkg.tar.zst
-      - mupdf-tools-1.26.3-1-x86_64.pkg.tar.zst
-      - python-mupdf-1.26.3-1-x86_64.pkg.tar.zst
+      - libmupdf-1.26.4-1-x86_64.pkg.tar.zst
+      - mupdf-1.26.4-1-x86_64.pkg.tar.zst
+      - mupdf-gl-1.26.4-1-x86_64.pkg.tar.zst
+      - mupdf-tools-1.26.4-1-x86_64.pkg.tar.zst
+      - python-mupdf-1.26.4-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
