@@ -29,10 +29,12 @@ optdepends=(
 )
 provides=('valgrind-multilib')
 replaces=('valgrind-multilib')
+# options=(
+#   '!emptydirs'
+#   '!strip'
+# )
 options=(
-  '!emptydirs'
-  '!strip'
-  'debug'
+  debug
   !lto # https://bugs.kde.org/show_bug.cgi?id=338252
 )
 source=(https://sourceware.org/pub/valgrind/valgrind-${pkgver}.tar.bz2{,.asc}

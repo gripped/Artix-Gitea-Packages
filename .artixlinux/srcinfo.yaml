@@ -31,8 +31,6 @@ pkgbase:
   replaces:
     - valgrind-multilib
   options:
-    - '!emptydirs'
-    - '!strip'
     - debug
     - '!lto'
   source:
