@@ -1,10 +1,10 @@
 ---
-version: 43.2-1
+version: 43.2-2
 pkgbase:
   name: totem
   pkgdesc: Movie player for the GNOME desktop based on GStreamer
   pkgver: 43.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Totem/
   arch:
     - x86_64
@@ -73,4 +73,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: totem
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
