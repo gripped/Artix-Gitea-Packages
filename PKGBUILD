@@ -14,6 +14,11 @@ backup=(etc/v2ray/config.json)
 source=("git+https://github.com/v2fly/v2ray-core.git#tag=v$pkgver")
 sha512sums=('485b4ab8bb279a02e95d45a7a97bcbbde62dc5102c181759550ca2c3e3c1c5984e91b48398c3583681c9e5313188e009c821f799177fc3ac5b367a2560e8de71')
 
+prepare() {
+  cd v2ray-core
+  sed -i 's|/usr/local/bin|/usr/bin|;s|/usr/local/etc|/etc|' release/config/systemd/system/*.service
+}
+
 build() {
   cd v2ray-core
   export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external"
