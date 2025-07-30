@@ -12,24 +12,17 @@ pkgbase:
     - GPL-2.1
   makedepends:
     - cbindgen
-    - clang
+    - libxml2-legacy
     - diffutils
     - imake
     - inetutils
     - lld
-    - llvm
     - mesa
-    - nasm
     - nodejs
     - python
-    - rust
+    - rustup
     - unzip
-    - wasi-compiler-rt
-    - wasi-libc
-    - wasi-libc++
-    - wasi-libc++abi
     - xorg-server-xvfb
-    - yasm
     - zip
   depends:
     - cairo
@@ -54,8 +47,6 @@ pkgbase:
     - libxss
     - libxt
     - mime-types
-    - nspr
-    - nss
     - pango
     - ttf-font
   optdepends:

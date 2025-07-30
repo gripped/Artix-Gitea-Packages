@@ -5,6 +5,7 @@ pkgver=6.5.11
 pkgrel=1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
+_disable_pgo=true
 license=(GPL-2.1)
 url='https://www.waterfox.net/'
 source=("$pkgname-$pkgver.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/$pkgver.tar.gz"
@@ -39,31 +40,29 @@ depends=(
 	libxss
 	libxt
 	mime-types
-	nspr
-	nss
 	pango
 	ttf-font
 )
 makedepends=(
 	cbindgen
-	clang
+        libxml2-legacy
 	diffutils
 	imake
 	inetutils
 	lld
-	llvm
+	#llvm
 	mesa
-	nasm
+	#nasm
 	nodejs
 	python
-	rust
+	rustup
 	unzip
-	wasi-compiler-rt
-	wasi-libc
-	wasi-libc++
-	wasi-libc++abi
+	#wasi-compiler-rt
+	#wasi-libc
+	#wasi-libc++
+	#wasi-libc++abi
 	xorg-server-xvfb
-	yasm
+	#yasm
 	zip
 )
 optdepends=(
@@ -84,6 +83,7 @@ prepare() {
         sed -i -e "s/^/$pkgver-/" browser/config/version_display.txt
 
 	cat >../mozconfig <<END
+ac_add_options --enable-elf-hack
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
 ac_add_options --enable-rust-simd
@@ -104,7 +104,7 @@ ac_add_options --enable-install-strip
 ac_add_options --enable-jxl
 ac_add_options --enable-linker=lld
 ac_add_options --enable-strip
-ac_add_options --disable-bootstrap
+ac_add_options --enable-bootstrap
 # ac_add_options --enable-unverified-updates
 
 ac_add_options --target=x86_64-pc-linux-gnu
@@ -122,6 +122,7 @@ export MOZ_TELEMETRY_REPORTING=
 
 ac_add_options --enable-pulseaudio
 ac_add_options --enable-alsa
+ac_add_options --without-sysroot
 ac_add_options --enable-jack
 
 ac_add_options --disable-jprof
@@ -129,9 +130,6 @@ ac_add_options --disable-updater
 
 ac_add_options --prefix=/usr
 ac_add_options --enable-hardening
-ac_add_options --with-system-nspr
-ac_add_options --with-system-nss
-ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 
 mk_add_options MOZ_OBJDIR=./obj-"$(uname -s)"-"$(uname -m)"
 
@@ -142,6 +140,7 @@ END
 build() {
 	cd "$pkgname-$pkgver"
 
+        export RUSTUP_TOOLCHAIN=1.86
 	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
 	export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
 	export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
@@ -155,7 +154,6 @@ build() {
 	CXXFLAGS+=" -w"
 
 	ulimit -n 4096
-
 	if [[ -z $_disable_pgo ]]; then
 	# Do 3-tier PGO
 	echo; echo "----- Building instrumented browser -----"; echo
@@ -188,7 +186,7 @@ END
 
 	echo; echo "----- Building optimized browser -----"; echo
 	cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto=cross
+ac_add_options --enable-lto=cross,thin
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
@@ -197,7 +195,6 @@ END
 	else
 	echo; echo "----- Building browser without PGO -----"; echo
 	cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto
 END
 	fi
 
