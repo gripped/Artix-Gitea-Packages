@@ -1,0 +1,24 @@
+---
+version: 3.2.7-1
+pkgbase:
+  name: ada
+  pkgdesc: WHATWG-compliant and fast URL parser written in modern C++
+  pkgver: 3.2.7
+  pkgrel: 1
+  url: https://github.com/ada-url/ada
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+  depends:
+    - glibc
+    - gcc-libs
+  source:
+    - ada-3.2.7.tar.gz::https://github.com/ada-url/ada/archive/refs/tags/v3.2.7.tar.gz
+  b2sums:
+    - 7d72a848b94599ec930800a0ea970bf72bc7702727c23fb7fbbb66441246a8145bd7d7d876259fbe5975832555031fac36fb519b3f73dd3714d5514de193ead7
+pkgname:
+  - name: ada
+# generated with artixpkg 0.36.4-1-any
