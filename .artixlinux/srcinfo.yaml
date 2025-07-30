@@ -1,0 +1,64 @@
+---
+version: 48.0-6
+pkgbase:
+  name: sysprof
+  pkgdesc: Kernel based performance profiler
+  pkgver: 48.0
+  pkgrel: 6
+  url: https://apps.gnome.org/Sysprof/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - meson
+    - glib2-devel
+    - yelp-tools
+  depends:
+    - cairo
+    - gcc-libs
+    - glib2
+    - glibc
+    - graphene
+    - gtk4
+    - hicolor-icon-theme
+    - json-glib
+    - libadwaita
+    - libdex
+    - libelf
+    - libpanel
+    - libunwind
+    - pango
+    - polkit
+  source:
+    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=48.0
+  b2sums:
+    - 87dd3a47350b0e2d2d15072fcaef53578e4614b9c14a1f4ac3ff83233538adbc3486b5550500231b91ce267e99c0f0a96820878dadf280909fe0bfc8e311a3a8
+pkgname:
+  - name: sysprof
+    groups:
+      - gnome-extra
+    depends:
+      - cairo
+      - gcc-libs
+      - glib2
+      - glibc
+      - graphene
+      - gtk4
+      - hicolor-icon-theme
+      - json-glib
+      - libadwaita
+      - libdex
+      - libelf
+      - libpanel
+      - libunwind
+      - pango
+      - polkit
+      - libsysprof-capture
+  - name: libsysprof-capture
+    pkgdesc: Kernel based performance profiler - capture library
+    license:
+      - BSD-2-Clause-Patent
+    depends: []
+# generated with artixpkg 0.36.4-1-any
