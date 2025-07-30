@@ -1,10 +1,10 @@
 ---
-version: 1:0.40.0-4
+version: 1:0.40.0-5
 pkgbase:
   name: mpv
   pkgdesc: a free, open source, and cross-platform media player
   pkgver: 0.40.0
-  pkgrel: 4
+  pkgrel: 5
   epoch: 1
   url: https://mpv.io/
   arch:
@@ -57,7 +57,7 @@ pkgbase:
     - mujs
     - libpipewire
     - rubberband
-    - sdl2-compat
+    - sdl2
     - openal
     - uchardet
     - vapoursynth
@@ -118,7 +118,7 @@ pkgname:
       - mujs
       - libpipewire
       - rubberband
-      - sdl2-compat
+      - sdl2
       - openal
       - uchardet
       - vapoursynth
