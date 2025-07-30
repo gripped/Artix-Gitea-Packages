@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,8 +49,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.6.87.rt54.artix1-2
+    packages:
+      - linux-rt-lts-6.6.87.rt54.artix1-2-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.6.87.rt54.artix1-2-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.6.87.rt54.artix1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 6.6.87.rt54.artix1-1
