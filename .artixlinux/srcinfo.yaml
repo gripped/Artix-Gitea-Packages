@@ -1,10 +1,10 @@
 ---
-version: 1.20.1-1
+version: 1.20.1-2
 pkgbase:
   name: libheif
   pkgdesc: An HEIF and AVIF file format decoder and encoder
   pkgver: 1.20.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/strukturag/libheif
   arch:
     - x86_64
@@ -19,6 +19,7 @@ pkgbase:
     - libjpeg-turbo
     - libpng
     - libtiff
+    - openjpeg2
     - rav1e
     - svt-av1
   depends:
@@ -27,12 +28,14 @@ pkgbase:
     - glibc
     - libde265
     - libwebp
+    - openh264
     - x265
   optdepends:
     - 'libjpeg-turbo: for heif-convert and heif-enc'
     - 'libpng: for heif-convert and heif-enc'
     - 'dav1d: dav1d encoder'
     - 'ffmpeg: hardware decode'
+    - 'openjpeg2: JPEG2000 decoder'
     - 'rav1e: rav1e encoder'
     - 'svt-av1: svt-av1 encoder'
   provides:

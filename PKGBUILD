@@ -4,7 +4,7 @@
 
 pkgname=libheif
 pkgver=1.20.1
-pkgrel=1
+pkgrel=2
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
 url='https://github.com/strukturag/libheif'
@@ -18,6 +18,7 @@ makedepends=(cmake
              libjpeg-turbo
              libpng
              libtiff
+             openjpeg2
              rav1e
              svt-av1)
 depends=(aom
@@ -25,11 +26,13 @@ depends=(aom
          glibc
          libde265
          libwebp
+         openh264
          x265)
 optdepends=('libjpeg-turbo: for heif-convert and heif-enc'
             'libpng: for heif-convert and heif-enc'
             'dav1d: dav1d encoder'
             'ffmpeg: hardware decode'
+            'openjpeg2: JPEG2000 decoder'
             'rav1e: rav1e encoder'
             'svt-av1: svt-av1 encoder')
 source=(git+https://github.com/strukturag/libheif#tag=v$pkgver)
@@ -42,7 +45,8 @@ build() {
     -DWITH_RAV1E=ON \
     -DWITH_FFMPEG_DECODER=ON \
     -DWITH_FFMPEG_DECODER_PLUGIN=ON \
-    -DWITH_SvtEnc=ON
+    -DWITH_SvtEnc=ON \
+    -DWITH_OpenJPEG_DECODER=ON
   cmake --build build
 }
 
