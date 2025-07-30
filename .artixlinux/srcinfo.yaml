@@ -1,0 +1,33 @@
+---
+version: 1:0.22-1
+pkgbase:
+  name: python-docutils
+  pkgdesc: Set of tools for processing plaintext docs into formats such as HTML, XML, or LaTeX
+  pkgver: 0.22
+  pkgrel: 1
+  epoch: 1
+  url: http://docutils.sourceforge.net
+  arch:
+    - any
+  license:
+    - LicenseRef-Public-Domain
+    - BSD-2-Clause
+  checkdepends:
+    - python-pillow
+  makedepends:
+    - python-build
+    - python-flit-core
+    - python-installer
+  depends:
+    - python
+  optdepends:
+    - 'python-myst-parser: to parse input in "Markdown" (CommonMark) format'
+    - 'python-pillow: for some image manipulation operations'
+    - 'python-pygments: for syntax highlighting of code directives and roles'
+  source:
+    - https://downloads.sourceforge.net/docutils/docutils-0.22.tar.gz
+  b2sums:
+    - 8ad9fc3d064e39bb618f5bac7ef6b69a77e7e811ff2f7c4c1b34f4f8bc1ba793f995e653d20ba536d24af5905f68b8e3f636a0f28f1c9eef46bb6f755d988bc2
+pkgname:
+  - name: python-docutils
+# generated with artixpkg 0.36.4-1-any
