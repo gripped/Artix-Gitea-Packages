@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.14.11.hardened1-2
+    packages:
+      - linux-hardened-6.14.11.hardened1-2-x86_64.pkg.tar.zst
+      - linux-hardened-headers-6.14.11.hardened1-2-x86_64.pkg.tar.zst
+      - linux-hardened-docs-6.14.11.hardened1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 6.14.11.hardened1-1
