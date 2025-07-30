@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.2.2-1
+    version: 0.2.3-1
     packages:
-      - artix-mlg-0.2.2-1-any.pkg.tar.zst
+      - artix-mlg-0.2.3-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: null

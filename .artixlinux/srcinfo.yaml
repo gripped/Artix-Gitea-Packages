@@ -1,9 +1,9 @@
 ---
-version: 0.2.2-1
+version: 0.2.3-1
 pkgbase:
   name: artix-mlg
   pkgdesc: Artix mirrorlist generator
-  pkgver: 0.2.2
+  pkgver: 0.2.3
   pkgrel: 1
   url: https://gitea.artixlinux.org/corysanin/artix-mlg
   arch:
@@ -15,13 +15,13 @@ pkgbase:
   depends:
     - nodejs
   noextract:
-    - artix-mlg-0.2.2.tgz
+    - artix-mlg-0.2.3.tgz
   options:
     - '!strip'
   source:
-    - https://registry.npmjs.org/artix-mlg/-/artix-mlg-0.2.2.tgz
+    - https://registry.npmjs.org/artix-mlg/-/artix-mlg-0.2.3.tgz
   sha512sums:
-    - 03c5615b6d34b35a45402520e022db2b0af6a494d40e30ca4ddb7a3d3f619e6ed56114fd6a5943afbbee562f6a0a91e6f13b924af4b3f24eaf8e266e0036c8f0
+    - 75f05af06f70f81aab93e09e6ed9a0bfbd673f9f983b243dcf9dd9bbcdfceac422088619ae5e3d82109102118e2f198e6ec8a0152b50ce01968235961baf4b5e
 pkgname:
   - name: artix-mlg
 # generated with artixpkg 0.36.4-1-any

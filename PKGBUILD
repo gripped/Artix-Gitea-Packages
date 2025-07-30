@@ -1,7 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 
 pkgname=artix-mlg
-pkgver=0.2.2
+pkgver=0.2.3
 pkgrel=1
 pkgdesc="Artix mirrorlist generator"
 arch=('any')
@@ -15,7 +15,7 @@ makedepends=(
 )
 source=("https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz")
 noextract=($pkgname-$pkgver.tgz)
-sha512sums=('03c5615b6d34b35a45402520e022db2b0af6a494d40e30ca4ddb7a3d3f619e6ed56114fd6a5943afbbee562f6a0a91e6f13b924af4b3f24eaf8e266e0036c8f0')
+sha512sums=('75f05af06f70f81aab93e09e6ed9a0bfbd673f9f983b243dcf9dd9bbcdfceac422088619ae5e3d82109102118e2f198e6ec8a0152b50ce01968235961baf4b5e')
 options=("!strip")
 
 package() {
