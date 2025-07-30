@@ -1,8 +1,8 @@
 ---
-version: 7.4.0-1
+version: 7.4.1-1
 pkgbase:
   name: zabbix
-  pkgver: 7.4.0
+  pkgver: 7.4.1
   pkgrel: 1
   url: https://www.zabbix.com/
   arch:
@@ -22,7 +22,7 @@ pkgbase:
     - pcre2
     - openipmi
   source:
-    - https://cdn.zabbix.com/zabbix/sources/stable/7.4/zabbix-7.4.0.tar.gz
+    - https://cdn.zabbix.com/zabbix/sources/stable/7.4/zabbix-7.4.1.tar.gz
     - zabbix-agent.sysusers
     - zabbix-agent.tmpfiles
     - zabbix-server.sysusers
@@ -32,7 +32,7 @@ pkgbase:
     - zabbix-web-service.sysusers
     - zabbix-web-service.tmpfiles
   sha512sums:
-    - aee2c06dea0777c54b3f73f0e98a04de139045bedb8b372f38980a426db2b3a3d187e52cc78af682a15d733254807a68b97bb9d90bd2fc821a8f13781a28064d
+    - 45765f21b0e71fe435eb1957bbf1111580221a5ecfb0cf7aed280573f0751bc14cd85bfe101a1199974e9df5b430fc19c71ffc937bd235cdeaf159988efc9987
     - 7a04f644e32f337794d5cba778ad755b6390830b5598ddfbc135fcb1646f63f0b136a484fbd9238634d3bf43d3ff8e5b17f4d34a8079f72b67f5c9985d664f7f
     - ca6b4779de23829dfdd80ee21e924fbe4e2754f4e693bed4b1a2aa846cd87d150e399b1169d7fe58d30c50ed837c1b8254e580de420267d0a1834d6dc409c43d
     - 50012749cb7c5d7d2f8361a64bcbb10e70f90688b1f55917c0f19b045506427b32b891aac930c2576cae4f6e6da5ab45d3be093399e442e440ffe15aef663a36
