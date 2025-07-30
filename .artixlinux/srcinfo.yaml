@@ -1,0 +1,35 @@
+---
+version: 25.7.1-1
+pkgbase:
+  name: ansible-creator
+  pkgdesc: A CLI tool for scaffolding all your Ansible Content
+  pkgver: 25.7.1
+  pkgrel: 1
+  url: https://github.com/ansible/ansible-creator
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-jsonschema
+    - python-onigurumacffi
+    - ansible-core
+    - ansible-runner
+  optdepends:
+    - 'ansible: check official ansible collections'
+    - 'docker: To use docker as a container runtime'
+    - 'podman: To use podman as a container runtime'
+  source:
+    - ansible-creator-25.7.1.tar.gz::https://github.com/ansible/ansible-creator/archive/refs/tags/v25.7.1.tar.gz
+  sha256sums:
+    - 0b113a97eee39af986e73617b32ce45b9a5bbe32d467a5d4cebb25ae96b39bc0
+pkgname:
+  - name: ansible-creator
+# generated with artixpkg 0.36.4-1-any
