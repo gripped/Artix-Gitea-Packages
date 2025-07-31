@@ -1,0 +1,48 @@
+---
+version: 25.2-1
+pkgbase:
+  name: python-pip
+  pkgdesc: The PyPA recommended tool for installing Python packages
+  pkgver: 25.2
+  pkgrel: 1
+  url: https://pip.pypa.io/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - git
+    - python-freezegun
+    - python-proxy.py
+    - python-pytest
+    - python-pytest-rerunfailures
+    - python-pytest-xdist
+    - python-scripttest
+    - python-tomli-w
+    - python-virtualenv
+    - python-werkzeug
+    - subversion
+  makedepends:
+    - python-build
+    - python-installer
+    - python-myst-parser
+    - python-flit-core
+    - python-sphinx
+    - python-sphinx-copybutton
+    - python-sphinx-inline-tabs
+    - python-sphinx-issues
+  depends:
+    - python
+    - python-attrs
+    - python-cryptography
+    - python-filelock
+    - python-wheel
+  source:
+    - https://github.com/pypa/pip/archive/25.2/pip-25.2.tar.gz
+  sha512sums:
+    - 5cc65c9091fdda7905e26ce32ddaa3a1c2fd287d69fd3da67c814ba7e8e5be59301d8327c06cdca78c1b95f4a5b5f75c87f36a549022408cc0e8f9411c0db11e
+  b2sums:
+    - 3bfe61d6d0d6f3a79c3fd801f5cb40b203fd12085d925ae7cde53adca3c5ee523fdfd9449546e1bc8ca719b3e8766cfef3162919e13a77f7adc0d20a951d11c7
+pkgname:
+  - name: python-pip
+# generated with artixpkg 0.36.4-1-any
