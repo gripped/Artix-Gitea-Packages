@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.2.4-1
+    version: 0.2.5-1
     packages:
-      - artix-mlg-0.2.4-1-any.pkg.tar.zst
+      - artix-mlg-0.2.5-1-any.pkg.tar.zst
     debug: []
