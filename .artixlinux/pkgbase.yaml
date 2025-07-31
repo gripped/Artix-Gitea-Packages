@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.34.0-1
+    version: 2.34.1-1
     packages:
-      - python-sentry_sdk-2.34.0-1-any.pkg.tar.zst
+      - python-sentry_sdk-2.34.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.33.2-1
