@@ -11,6 +11,7 @@ pkgbase:
   license:
     - GPL3
   makedepends:
+    - meson
     - intltool
     - vala
     - gnome-common
