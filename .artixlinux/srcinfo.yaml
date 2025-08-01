@@ -1,10 +1,10 @@
 ---
-version: 12.9.1-1
+version: 12.9.1-2
 pkgbase:
   name: cuda
   pkgdesc: NVIDIA's GPU programming toolkit
   pkgver: 12.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.nvidia.com/cuda-zone
   install: cuda.install
   arch:
@@ -55,6 +55,7 @@ pkgbase:
     - nsight-systems.desktop
     - nvvp.desktop
     - fix-glibc241.patch
+    - fix-glibc242.patch
   sha512sums:
     - fc29c5fc1121fb6634f1fe396abe7f34d351686454516269e9143e678ea178f906a35b916b8bb2d96ecfcfc705dda7d0f4547f7e7f00d36e392d981a766b6a56
     - 0d16ae7c880ee6e73babac28a80cb439098ded2224f06b3f0a1cbd8ad35302505fd89230a2b7d5a1a7dbd2df170a7897884eb9d06d515b56500dfc32a8d81fad
@@ -91,6 +92,7 @@ pkgbase:
     - 1f3edd63bc8d252f2818204657da9bcf9c78ec009d4b4e2addbad83e619c1ebaad9c28c0e592974d29e1ce1c29588ff9100a0970febe789cdea7316d16884cce
     - 0fdd26868445946d5a3a64fd1a9a996dab6e85ee07b08e7c64a66a5db194653b98817bee876838c792cf57fcd4747173f1b1e77b083a9bbbb68932c0aa95185a
     - a6107446d30b3e95b63064c56a86622cf186e140de2ed2de476035ad1d7caaf056af6c86149818edbd6b488942b24724d176cf8f976f272ab4023bbe2f972681
+    - c7c7dbb0e21cb2342ede4bf730fe1191d59879e03151707c5519f4cafb64f1f7fdc3211f9d451ca789ab362de67cd43c2d4e1e2a714c8537a601b36cb63cb5b2
 pkgname:
   - name: cuda
     optdepends:
@@ -118,4 +120,4 @@ pkgname:
       - nss
     optdepends:
       - 'perl: required by some NVVP plugins'
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
