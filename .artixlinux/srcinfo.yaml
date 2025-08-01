@@ -1,0 +1,25 @@
+---
+version: 5.9.2-1
+pkgbase:
+  name: typescript
+  pkgdesc: JavaScript with syntax for types
+  pkgver: 5.9.2
+  pkgrel: 1
+  url: http://www.typescriptlang.org
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  makedepends:
+    - git
+    - npm
+    - rsync
+  depends:
+    - nodejs
+  source:
+    - git+https://github.com/microsoft/TypeScript.git#tag=v5.9.2
+  b2sums:
+    - 0f700079c0428dbcfb4c74640d3081cbfdad28d72bfa465e332cde26f269c84abcf0b7dd332b108123c3f8c5decbc8bd18fb9460f62d91d489830428bc804ca6
+pkgname:
+  - name: typescript
+# generated with artixpkg 0.36.4-1-any
