@@ -1,0 +1,44 @@
+---
+version: 0.2.1-1
+pkgbase:
+  name: lxqt-wayland-session
+  pkgdesc: Files needed for the LXQt Wayland Session
+  pkgver: 0.2.1
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-wayland-session
+  arch:
+    - any
+  license:
+    - LGPL-2.1-only
+    - MIT
+    - GPL-2.0-only
+    - GPL-3.0-only
+    - GPL-3.0-or-later
+    - BSD-3-Clause
+    - CC-BY-SA-4.0
+  makedepends:
+    - git
+    - cmake
+    - qt6-tools
+    - lxqt-build-tools
+  depends:
+    - sh
+    - lxqt-session
+    - qtxdg-tools
+    - layer-shell-qt
+  optdepends:
+    - labwc
+    - kwin
+    - hyprland
+    - niri
+    - river
+    - sway
+  source:
+    - git+https://github.com/lxqt/lxqt-wayland-session.git?signed#tag=0.2.1
+  validpgpkeys:
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - b879bd2dea02b90eb218e0b81b03feff4c7658954a1406efeae8a8d2d3083022
+pkgname:
+  - name: lxqt-wayland-session
+# generated with artixpkg 0.36.4-1-any
