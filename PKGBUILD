@@ -29,7 +29,6 @@ prepare() {
   cd xmlrpc-c-$pkgver
 
   patch -p1 -i ../xmlrpc-c-1.59.03-use-system-expat.patch
-  patch -p1 -i ../xmlrpc-c-1.51.06-pkg-config-libxml2.patch
 }
 
 build() {
@@ -40,7 +39,7 @@ build() {
     --disable-libwww-client \
     --disable-wininet-client \
     --enable-cplusplus \
-    --enable-libxml2-backend \
+    --disable-libxml2-backend \
     --mandir=/usr/share/man \
     --prefix=/usr
 
