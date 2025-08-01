@@ -1,0 +1,39 @@
+---
+version: 4.6.0-1
+pkgbase:
+  name: ruby-rouge
+  pkgdesc: Pure-ruby code highlighter that is compatible with pygments
+  pkgver: 4.6.0
+  pkgrel: 1
+  url: https://rouge.jneen.net/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-memory_profiler
+    - ruby-minitest
+    - ruby-minitest-power_assert
+    - ruby-mutex_m
+    - ruby-pry
+    - ruby-puma
+    - ruby-rake
+    - ruby-redcarpet
+    - ruby-sinatra
+    - ruby-yard
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/jneen/rouge/archive/v4.6.0/ruby-rouge-4.6.0.tar.gz
+  sha512sums:
+    - 5cc4279ff7023a334cebf58deb31233f652ba79faba7565e70a0166f75b5f3be1677c650043dc39291c0a167acedb91365bb66048836f605dc167406c471d0cf
+  b2sums:
+    - 2176d03499cd70f5061710e24b09bf78ec52808bc711802649b3f1e474d2a905cdcd68805a4cd3bfa272fc37d1f1ab8e6c494feba3c234c25c392379a834cbdc
+pkgname:
+  - name: ruby-rouge
+# generated with artixpkg 0.36.4-1-any

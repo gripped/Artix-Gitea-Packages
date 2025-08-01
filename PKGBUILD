@@ -1,0 +1,115 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+
+_gemname=rouge
+pkgname=ruby-rouge
+pkgver=4.6.0
+pkgrel=1
+pkgdesc='Pure-ruby code highlighter that is compatible with pygments'
+url='https://rouge.jneen.net/'
+arch=('any')
+license=('MIT')
+depends=(
+  ruby
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bundler
+  ruby-memory_profiler
+  ruby-minitest
+  ruby-minitest-power_assert
+  ruby-mutex_m
+  ruby-pry
+  ruby-puma
+  ruby-rake
+  ruby-redcarpet
+  ruby-sinatra
+  ruby-yard
+)
+options=('!emptydirs')
+source=("https://github.com/jneen/rouge/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('5cc4279ff7023a334cebf58deb31233f652ba79faba7565e70a0166f75b5f3be1677c650043dc39291c0a167acedb91365bb66048836f605dc167406c471d0cf')
+b2sums=('2176d03499cd70f5061710e24b09bf78ec52808bc711802649b3f1e474d2a905cdcd68805a4cd3bfa272fc37d1f1ab8e6c494feba3c234c25c392379a834cbdc')
+
+prepare() {
+  cd "${_gemname}-${pkgver}"
+
+  # update gemspec/Gemfile to allow newer version of the dependencies
+  sed --in-place --regexp-extended 's|~>|>=|g' "${_gemname}.gemspec"
+
+  sed --in-place --regexp-extended \
+    --expression '/changelog/d' \
+    --expression '/git/d' \
+    --expression '/rubocop/d' \
+    --expression '/shotgun/d' \
+    Gemfile \
+    Rakefile
+
+  rm --verbose \
+    tasks/check/style.rake \
+    tasks/update/changelog.rake
+}
+
+build() {
+  cd "${_gemname}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  gem build --verbose "${_gemname}.gemspec"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install${_gemdir}" \
+    --bindir "tmp_install/usr/bin" \
+    "${_gemname}-${pkgver}.gem"
+
+  # remove unrepreducible files
+  rm --force --recursive --verbose \
+    "tmp_install${_gemdir}/cache/" \
+    "tmp_install${_gemdir}/gems/${_gemname}-${pkgver}/vendor/" \
+    "tmp_install${_gemdir}/doc/${_gemname}-${pkgver}/ri/ext/"
+
+  find "tmp_install${_gemdir}/gems/" \
+    -type f \
+    \( \
+      -iname "*.o" -o \
+      -iname "*.c" -o \
+      -iname "*.so" -o \
+      -iname "*.time" -o \
+      -iname "gem.build_complete" -o \
+      -iname "Makefile" \
+    \) \
+    -delete
+
+  find "tmp_install${_gemdir}/extensions/" \
+    -type f \
+    \( \
+      -iname "mkmf.log" -o \
+      -iname "gem_make.out" \
+    \) \
+    -delete
+}
+
+check() {
+  cd "${_gemname}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  GEM_HOME="tmp_install${_gemdir}" rake check:specs check:warnings
+}
+
+package() {
+  cd "${_gemname}-${pkgver}"
+
+  cp --archive --verbose tmp_install/* "${pkgdir}"
+
+  install --verbose -D --mode=0644 LICENSE* --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
+  install --verbose -D --mode=0644 *.md --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: tabstop=2 shiftwidth=2 expandtab:
