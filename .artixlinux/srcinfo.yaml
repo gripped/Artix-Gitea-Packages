@@ -1,0 +1,26 @@
+---
+version: 1.14.2-1
+pkgbase:
+  name: poco
+  pkgdesc: C++ class libraries for network-centric, portable applications, complete edition with debug libraries
+  pkgver: 1.14.2
+  pkgrel: 1
+  url: http://www.pocoproject.org/
+  arch:
+    - x86_64
+  license:
+    - custom:boost
+  makedepends:
+    - cmake
+    - ninja
+  depends:
+    - mariadb-libs
+    - openssl
+    - unixodbc
+  source:
+    - https://pocoproject.org/releases/poco-1.14.2/poco-1.14.2-all.tar.bz2
+  sha256sums:
+    - 7738a4c880f08e89318fc53915f86be5a0e70f14eb1e7f0e1767c8781c40d794
+pkgname:
+  - name: poco
+# generated with artixpkg 0.36.4-1-any
