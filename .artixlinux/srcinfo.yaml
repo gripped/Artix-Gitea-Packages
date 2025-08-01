@@ -1,8 +1,8 @@
 ---
-version: 1:7.1.9-1
+version: 1:7.1.10-1
 pkgbase:
   name: unrar
-  pkgver: 7.1.9
+  pkgver: 7.1.10
   pkgrel: 1
   epoch: 1
   url: https://www.rarlab.com/rar_add.htm
@@ -14,9 +14,9 @@ pkgbase:
     - gcc-libs
     - glibc
   source:
-    - https://www.rarlab.com/rar/unrarsrc-7.1.9.tar.gz
+    - https://www.rarlab.com/rar/unrarsrc-7.1.10.tar.gz
   sha256sums:
-    - cbb5c7b65b720e59ffa47b2d00b8d1022a961da7ae1db27b6986c43671719483
+    - 72a9ccca146174f41876e8b21ab27e973f039c6d10b13aabcb320e7055b9bb98
 pkgname:
   - name: libunrar
     pkgdesc: Library and header file for applications that use libunrar
