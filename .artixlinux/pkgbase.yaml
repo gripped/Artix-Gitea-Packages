@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.1.12-4
+    version: 0.1.13-1
     packages:
-      - hyprcursor-0.1.12-4-x86_64.pkg.tar.zst
+      - hyprcursor-0.1.13-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
