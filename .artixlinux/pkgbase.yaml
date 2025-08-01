@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.1.26-2
+    version: 1.1.27-1
     packages:
-      - doublecmd-qt5-1.1.26-2-x86_64.pkg.tar.zst
-      - doublecmd-qt6-1.1.26-2-x86_64.pkg.tar.zst
+      - doublecmd-qt5-1.1.27-1-x86_64.pkg.tar.zst
+      - doublecmd-qt6-1.1.27-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
