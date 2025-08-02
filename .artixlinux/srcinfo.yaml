@@ -1,9 +1,9 @@
 ---
-version: 20.1.4-1
+version: 20.1.5-1
 pkgbase:
   name: spirv-llvm-translator
   pkgdesc: Tool and a library for bi-directional translation between SPIR-V and LLVM IR
-  pkgver: 20.1.4
+  pkgver: 20.1.5
   pkgrel: 1
   url: https://github.com/KhronosGroup/SPIRV-LLVM-Translator
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - llvm-libs
     - spirv-tools
   source:
-    - git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git#tag=v20.1.4
+    - git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator.git#tag=v20.1.5
   sha256sums:
-    - 902641ccb6e00116b93fb446ed93bab75e8aa923072daf91b4f52060bbe3df6a
+    - 735001cb8622fc0dfcc4e2005299d185ebc4bb1970a98189a43da262c6c1dfe3
 pkgname:
   - name: spirv-llvm-translator
 # generated with artixpkg 0.36.4-1-any
