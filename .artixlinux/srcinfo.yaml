@@ -1,10 +1,10 @@
 ---
-version: 0.6.6-3
+version: 0.6.6-3.1
 pkgbase:
   name: python-wsaccel
   pkgdesc: Accelerator for ws4py and AutobahnPython
   pkgver: 0.6.6
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/methane/wsaccel
   arch:
     - x86_64
