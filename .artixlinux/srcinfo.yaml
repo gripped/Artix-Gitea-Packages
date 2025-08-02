@@ -1,0 +1,47 @@
+---
+version: 2025.1.1-1
+pkgbase:
+  name: python-pycuda
+  pkgdesc: Python wrapper for Nvidia CUDA
+  pkgver: 2025.1.1
+  pkgrel: 1
+  url: https://documen.tician.de/pycuda/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - boost
+    - ctags
+    - mesa
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - boost-libs
+    - cuda
+    - gcc-libs
+    - glibc
+    - nvidia-utils
+    - python
+    - python-numpy
+    - python-pytools
+  provides:
+    - pycuda-headers
+  conflicts:
+    - pycuda-headers
+  replaces:
+    - pycuda-headers
+  source:
+    - pycuda-2025.1.1.tar.gz::https://github.com/inducer/pycuda/archive/refs/tags/v2025.1.1.tar.gz
+  sha512sums:
+    - fb1710ea9a77ea70c9e6955e6db0a7cfea1f52db28fa0f48b17717d4fe3222d61d324879297cb34059a7c943bfb1faa02ebb935f4c8ffb800c7c8110088107db
+  b2sums:
+    - 99c74e5d06b2917385beb64a594b95b5996aee90c585eb0c5f8640aac42a4a7e2e61840b4bd3820c980b05007b84f93f3c391928d449ea0d848365d28c754eb1
+pkgname:
+  - name: python-pycuda
+# generated with artixpkg 0.36.4-1-any
