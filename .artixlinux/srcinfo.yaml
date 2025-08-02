@@ -1,0 +1,24 @@
+---
+version: 3.1.9-1
+pkgbase:
+  name: pyopengl
+  pkgdesc: The cross platform Python binding to OpenGL and related APIs
+  pkgver: 3.1.9
+  pkgrel: 1
+  url: http://pyopengl.sourceforge.net/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+    - freeglut
+  source:
+    - https://pypi.python.org/packages/source/P/PyOpenGL/pyopengl-3.1.9.tar.gz
+  sha512sums:
+    - b0fae0031cf0c47899d3cef6a334ee885595b4bc7d3da5055cd12240e6612b2ade1dc75afe1b1f6fe8e4572b994b88c4ec557d893e6606353f4700111cb6f161
+pkgname:
+  - name: python-opengl
+# generated with artixpkg 0.36.4-1-any
