@@ -1,0 +1,31 @@
+---
+version: 2025.7.34-1
+pkgbase:
+  name: python-regex
+  pkgdesc: Alternative python regular expression module.
+  pkgver: 2025.7.34
+  pkgrel: 1
+  url: https://github.com/mrabarnett/mrab-regex
+  arch:
+    - x86_64
+  license:
+    - Python
+    - Apache
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  options:
+    - '!emptydirs'
+  source:
+    - https://files.pythonhosted.org/packages/source/r/regex/regex-2025.7.34.tar.gz
+  sha256sums:
+    - 9ead9765217afd04a86822dfcd4ed2747dfe426e887da413b15ff0ac2457e21a
+  b2sums:
+    - 4eb0c5600b9ef759f1e7511d01d533a3fda7b6010b6c974c0071e7cde2f5bbd9a8c62289b7abb4f2e0d9c251a9421876f6bf0a021892073babffb181d099ae55
+pkgname:
+  - name: python-regex
+# generated with artixpkg 0.36.4-1-any
