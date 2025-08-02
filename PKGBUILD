@@ -4,7 +4,7 @@
 pkgname=python-zope-event
 _pkgname=zope.event
 pkgver=5.1.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Provides a simple event system"
 arch=(any)
 url="https://github.com/zopefoundation/zope.event"
