@@ -1,10 +1,10 @@
 ---
-version: 22.17.1-1
+version: 22.18.0-1
 pkgbase:
   name: nodejs-lts-jod
   pkgdesc:
     Evented I/O for V8 javascript ("Active LTS" release: Jod)
-  pkgver: 22.17.1
+  pkgver: 22.18.0
   pkgrel: 1
   url: https://nodejs.org/
   arch:
@@ -25,16 +25,16 @@ pkgbase:
   optdepends:
     - 'npm: nodejs package manager'
   provides:
-    - nodejs=22.17.1
+    - nodejs=22.18.0
     - nodejs-lts
   conflicts:
     - nodejs
   options:
     - '!lto'
   source:
-    - https://nodejs.org/dist/v22.17.1/node-v22.17.1.tar.xz
+    - https://nodejs.org/dist/v22.18.0/node-v22.18.0.tar.xz
   sha256sums:
-    - 327415fd76fcebb98133bf56e2d90e3ac048b038fac2676f03b6db91074575b9
+    - 120e0f74419097a9fafae1fd80b9de7791a587e6f1c48c22b193239ccd0f7084
 pkgname:
   - name: nodejs-lts-jod
 # generated with artixpkg 0.36.4-1-any
