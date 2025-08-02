@@ -1,0 +1,69 @@
+---
+version: 24.4.2-3.1
+pkgbase:
+  name: python-autobahn
+  pkgdesc: Real-time framework for Web, Mobile & Internet of Things
+  pkgver: 24.4.2
+  pkgrel: 3.1
+  url: https://github.com/crossbario/autobahn-python/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - python-argon2_cffi
+    - python-cbor2
+    - python-flatbuffers
+    - python-msgpack
+    - python-passlib
+    - python-pynacl
+    - python-pytrie
+    - python-ubjson
+    - python-u-msgpack
+    - python-ujson
+    - python-qrcode
+    - python-pyopenssl
+    - python-snappy
+    - python-click
+    - python-txtorcon
+  depends:
+    - glibc
+    - python
+    - python-cffi
+    - python-twisted
+    - python-txaio
+    - python-wsaccel
+    - python-cryptography
+    - python-hyperlink
+    - python-zope-interface
+  optdepends:
+    - 'python-cbor2: CBOR serializer support'
+    - 'python-flatbuffers: FlatBuffers serializer support'
+    - 'python-msgpack: MsgPack serializer support'
+    - 'python-u-msgpack: pure-python alternative to python-msgpack for MsgPack serializer support'
+    - 'python-ubjson: UBJSON serializer support'
+    - 'python-ujson: accelerated JSON serializer support'
+    - 'python-argon2_cffi: WAMP-SCRAM authentication support'
+    - 'python-passlib: WAMP-SCRAM authentication support'
+    - 'python-pynacl: WAMP-cryptosign and WAMP-cryptobox support'
+    - 'python-pytrie: WAMP-cryptobox support'
+    - 'python-qrcode: support QR codes in WAMP'
+    - 'python-pyopenssl: SSL/TLS support'
+    - 'python-snappy: snappy compression suppport for WebSocket messages'
+    - 'python-click: for text highlights'
+    - 'python-txtorcon: connections to Tor Onion services'
+  source:
+    - git+https://github.com/crossbario/autobahn-python.git#tag=v24.4.2
+  sha256sums:
+    - 2850e7a45ce0c466a460b09433e23d3a6bba5914fa3596428ca7233ef6815204
+pkgname:
+  - name: python-autobahn
+# generated with artixpkg 0.36.4-1-any
