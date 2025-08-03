@@ -1,0 +1,43 @@
+---
+version: 2.27.0-1
+pkgbase:
+  name: ruby-async
+  pkgdesc: Composable asynchronous I/O
+  pkgver: 2.27.0
+  pkgrel: 1
+  url: https://github.com/socketry/async
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-decode
+    - ruby-sus
+    - ruby-sus-fixtures-async
+    - ruby-sus-fixtures-benchmark
+    - ruby-sus-fixtures-console
+    - ruby-sus-fixtures-time
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-console
+    - ruby-fiber-annotation
+    - ruby-io-event
+    - ruby-metrics
+    - ruby-traces
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/async/archive/v2.27.0/ruby-async-2.27.0.tar.gz
+  sha512sums:
+    - 54effa447bf71596e05ee1389a9ca0fb036a31bb0eca7699452ad1faeccde0a1519fa70cf1532755b23147a19e1a15d87e5533592fd94cce60bc3c164bc92467
+  b2sums:
+    - b699f9276f4d0de3f2c7ea2a53a2a5f19b6762431c6762451485bfbc8e90a209da9cd79c58e6f15c04b17185e35a98e0d3ec5d6bf7f8fcfa1befeb3adbdd79bf
+pkgname:
+  - name: ruby-async
+# generated with artixpkg 0.36.4-1-any
