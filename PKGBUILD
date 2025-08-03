@@ -2,7 +2,7 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocm-smi-lib
-pkgver=6.4.1
+pkgver=6.4.2
 pkgrel=1
 pkgdesc='ROCm System Management Interface Library'
 arch=('x86_64')
@@ -12,7 +12,7 @@ depends=('rocm-core' 'glibc' 'gcc-libs' 'hsa-rocr' 'python')
 makedepends=('cmake')
 _git='https://github.com/ROCm/rocm_smi_lib'
 source=("$pkgname-$pkgver.tar.gz::$_git/archive/rocm-$pkgver.tar.gz")
-sha256sums=('c82c8c9de89537b903d82711c531b4b1c6d104098b5370d049527d1f250944b7')
+sha256sums=('466f6351c1d94c043195c6b5addd70d21eb1e678d5637b9849dc6b5d0e858cb5')
 options=(!lto)
 _dirname="$(basename "$_git")-$(basename "${source[0]}" .tar.gz)"
 
