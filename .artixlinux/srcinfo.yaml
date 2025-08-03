@@ -1,0 +1,36 @@
+---
+version: 0.34.1-1
+pkgbase:
+  name: ruby-protocol-http1
+  pkgdesc: A low level implementation of the HTTP/1 protocol
+  pkgver: 0.34.1
+  pkgrel: 1
+  url: https://github.com/socketry/protocol-http1
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-protocol-http
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/protocol-http1/archive/v0.34.1/ruby-protocol-http1-0.34.1.tar.gz
+  sha512sums:
+    - c052ff76a52a13f4e5590a71094dba51e026b06542640eec5f4a6cbee8d33de9b20d4b1e0bea4060d6d4751166d4b146a98ec0d848c97b2701318cfdea96825d
+  b2sums:
+    - c4e7583565ae7678dc056cabca29d79ba94f8ab9c00a65cd7adce0c80cd68801c9fcb89deb8e224e3007e0cdfd01b008eca4526ac7079e63a33a0a2f06a672a9
+pkgname:
+  - name: ruby-protocol-http1
+# generated with artixpkg 0.36.4-1-any
