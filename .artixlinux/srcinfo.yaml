@@ -1,0 +1,34 @@
+---
+version: 2.0.1-1
+pkgbase:
+  name: ruby-thin
+  pkgdesc: Thin and fast Ruby web server
+  pkgver: 2.0.1
+  pkgrel: 1
+  url: https://github.com/macournoyer/thin
+  arch:
+    - x86_64
+  license:
+    - RUBY
+  checkdepends:
+    - ruby-rake-compiler
+    - ruby-rspec
+  makedepends:
+    - ruby-rake
+  depends:
+    - glibc
+    - ruby
+    - ruby-daemons
+    - ruby-eventmachine
+    - ruby-rack
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-thin-2.0.1.tar.gz::https://github.com/macournoyer/thin/archive/v2.0.1.tar.gz
+  sha512sums:
+    - 2a32c37116f8753fb29210b4c48b0179dc18d80c0328bfabfae5d3507790befc0d088bf898e49dd1c660598df956268b6d98ff694fe3f673bf9e929fd1c19596
+  b2sums:
+    - 3ce422b4e88f1635954363204b8b7fec77d8e63c7ed01b1932be200b27d8d01fe6374a5b0853d8e3c8bb093d81ebedc34f6d4a8bdaec75c921c3f320d393c407
+pkgname:
+  - name: ruby-thin
+# generated with artixpkg 0.36.4-1-any
