@@ -3,7 +3,7 @@
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Aleksey Filippov <sarum9in@gmail.com>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Thomas S Hatch <thatch45@gmail.com>
 # Contributor: Geoffroy Carrier <geoffroy@archlinux.org>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
@@ -11,7 +11,7 @@
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
 pkgver=31.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
 url='https://developers.google.com/protocol-buffers/'
@@ -162,6 +162,7 @@ package_ruby-google-protobuf() {
   depends=(
     'ruby'
     'ruby-bigdecimal'
+    'ruby-rake'
   )
 
   cp -a $pkgbase/ruby/tmp_install/* "$pkgdir"
