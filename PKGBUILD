@@ -2,7 +2,7 @@
 
 _pkgname=debuginfod
 pkgname=${_pkgname}-openrc
-pkgver=20250303
+pkgver=20250803
 pkgrel=1
 pkgdesc="OpenRC ${_pkgname} init script"
 arch=('any')
@@ -15,7 +15,7 @@ conflicts=(init-${_pkgname})
 backup=(etc/conf.d/${_pkgname})
 source=(${_pkgname}.{confd,initd}
         80-${_pkgname}.hook)
-sha256sums=('10e014e2fce8b83ab9bf872323ecf73f3213b77dc1d21990c09d7238b890c433'
+sha256sums=('76910706b9fad0d2a2690832961ff2f9f2d8a5a952d282fbae5eceaea51630c1'
             'ced16b45240615d97aee0c8418e5477dcea263ba8870b7a164be39203300a436'
             'a82789006152258850afbfd070b1b3f642bfc610891ac02303446ce0a2581f74')
 
