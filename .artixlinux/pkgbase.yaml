@@ -1,13 +1,4 @@
 ---
-pkgbase:
-  name: nvidia-390xx-utils
-  version: 390.157-7
-  arch:
-    - x86_64
-  pkgname:
-    - nvidia-390xx-utils
-    - opencl-nvidia-390xx
-    - nvidia-390xx-dkms
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -20,39 +11,52 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 390.157-7
+    version: 390.157-17
     packages:
-      - nvidia-390xx-utils-390.157-7-x86_64.pkg.tar.zst
-      - opencl-nvidia-390xx-390.157-7-x86_64.pkg.tar.zst
-      - nvidia-390xx-dkms-390.157-7-x86_64.pkg.tar.zst
+      - nvidia-390xx-utils-390.157-17-x86_64.pkg.tar.zst
+      - opencl-nvidia-390xx-390.157-17-x86_64.pkg.tar.zst
+      - nvidia-390xx-dkms-390.157-17-x86_64.pkg.tar.zst
+    debug: []
+team: galaxy
