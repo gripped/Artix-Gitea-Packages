@@ -1,10 +1,11 @@
 ---
-version: 7.4.1-1
+version: 7.4.1-2
 pkgbase:
   name: zabbix
+  pkgdesc: The universal, open-source observability solution for IT & OT
   pkgver: 7.4.1
-  pkgrel: 1
-  url: https://www.zabbix.com/
+  pkgrel: 2
+  url: https://www.zabbix.com
   arch:
     - x86_64
   license:
@@ -21,30 +22,36 @@ pkgbase:
     - pkgconfig
     - pcre2
     - openipmi
+    - git
   source:
-    - https://cdn.zabbix.com/zabbix/sources/stable/7.4/zabbix-7.4.1.tar.gz
-    - zabbix-agent.sysusers
-    - zabbix-agent.tmpfiles
-    - zabbix-server.sysusers
+    - git+https://git.zabbix.com/scm/zbx/zabbix.git#tag=7.4.1
+    - zabbix-common.sysusers
+    - zabbix-common.tmpfiles
     - zabbix-server.tmpfiles
-    - zabbix-proxy.sysusers
-    - zabbix-proxy.tmpfiles
-    - zabbix-web-service.sysusers
     - zabbix-web-service.tmpfiles
+    - zabbix-proxy.tmpfiles
+    - zabbix-agent.tmpfiles
+    - zabbix-agent2.tmpfiles
+    - write_log_to_syslog.patch
+    - set_socket_paths.patch
   sha512sums:
-    - 45765f21b0e71fe435eb1957bbf1111580221a5ecfb0cf7aed280573f0751bc14cd85bfe101a1199974e9df5b430fc19c71ffc937bd235cdeaf159988efc9987
-    - 7a04f644e32f337794d5cba778ad755b6390830b5598ddfbc135fcb1646f63f0b136a484fbd9238634d3bf43d3ff8e5b17f4d34a8079f72b67f5c9985d664f7f
-    - ca6b4779de23829dfdd80ee21e924fbe4e2754f4e693bed4b1a2aa846cd87d150e399b1169d7fe58d30c50ed837c1b8254e580de420267d0a1834d6dc409c43d
-    - 50012749cb7c5d7d2f8361a64bcbb10e70f90688b1f55917c0f19b045506427b32b891aac930c2576cae4f6e6da5ab45d3be093399e442e440ffe15aef663a36
-    - b6d548a26f845ef1a39724e3273aa521715272e20a0038144f86d377a26dfec6e3e129404cfda77632cad2f5cd6bab4a33f70a26c8c67b0d0b2abb3678ad2d83
-    - b52ab5099a74d851c2de521230929523fc8a9aa6fea3face9a3b97b24b09e78f2e3ec5c186393bd8d86ab1af3a554b9c01c173beef283551c27ae43b3365bb2c
-    - 64042ddf511b56b2a5a311e34643f4e049c09d909ea65b7343a8a9637f33dc59f2b1342201290ca0774cbcbf616096b3696982047fb622b7d51afb5eceb298dd
-    - 985da35f11eb29cb134fb9e1facfe55e69be6a10ccc70e98fafc36e6e8498bdc85881b1726d3c47b454e638584ec75082f5eb6b1b815a1574bd670d630a8c79f
-    - 309f55c8c381364eca6d31c4709a0ebb7e04cefad9e51f44173d839a58e7f8e95e3c678922f9e1fe42cff90dba5144cc7ee3a6e1c236b079b501c0e08ad2152d
+    - e9d22d5a0dd8ba4996d2b64a57e32fe7b4fff87a3eec35bd276858e019d38ca7ac298fb99d5a58074e7261acd8f5cfdfee0182e3ea35f55880ea0d7361a19d78
+    - 0c3e974c6f8366d46e7156f6669e42b76a184cd9727e2474abc9253064d42f806bd7c2dd31d214dd083f039eac48d14a79bd8e16935a3a43a45b880dce15bbc1
+    - 7c39d1cb1d269e8a2a22c634612c7d110e9e67c170f32add33312f97bc2e7f8f19bf5bb1d1c71df43afc893043472069b9f828dfc5a9f2946606798ed54c73a0
+    - c82056591146e7ef0020a3cd9865322407a116e20beb1ddd6fc2afdec09306b6d249d9a2afe8d9234932861b506b3b50a3b528944ab3889c076e5088cd7e63ed
+    - 3c3e64be4dd050b3cc483098e1a2165c87ba9a4a421aa29f1bc49b9536ce446457949bf85b3bd87cd3f1842b6c4d5db675e343078ef90820557a8278293019f7
+    - d4d7fd47bb0aaaec02802edb1d6895791300ab2491c71ff9dc59ec26659c906918d0ea9162b4bc799e358abef186356544e5a2cc9e14a6ec82c08f6240bc0946
+    - ab3ecc109e44dea93ace28ada44d2b3e1163649a5a5a041a3095c76ff5b2f8885039033261df607fbd430be6499cbe7a8c1dbecdb0ca23f4270f2cd86d7c058f
+    - cb2a6571edb88db442f107717fba636e45bbeab2c9fc08d4d9d110a1d808299e3ba384d1ce1496deb9013f8724218bb0ed5ea2e0b25769a6cce02eda98e47560
+    - 49a197a97536745818664593cf597540eb51e1f0c2429efea6be9ab85ee57f2a4b6e72a197bf02440c9b49a80a7ea0417f9b5a23bef003dc3337d7f08792cbf5
+    - 55dec0ef08d54e7972421e3958119cb7df9e0ef10ff6c58836306d4ad6e3724fb902e819070d76e4a5fa24428610d838db7eb0425f05b19493b5e2c9b5919931
 pkgname:
+  - name: zabbix-common
+    pkgdesc: Zabbix user and group required by zabbix packages
   - name: zabbix-server
     pkgdesc: Monitoring software for networks and applications
     depends:
+      - zabbix-common
       - net-snmp
       - curl
       - libxml2
@@ -59,23 +66,23 @@ pkgname:
       - 'zabbix-web-service: for scheduled PDF report generation'
     backup:
       - etc/zabbix/zabbix_server.conf
-  - name: zabbix-agent
-    pkgdesc: Monitoring agent for Zabbix
+  - name: zabbix-frontend-php
+    pkgdesc: PHP frontend for Zabbix
     depends:
-      - curl
-      - pcre2
-    backup:
-      - etc/zabbix/zabbix_agentd.conf
-  - name: zabbix-agent2
-    pkgdesc: Monitoring agent for Zabbix (version 2)
+      - zabbix-server
+      - php
+      - php-gd
+  - name: zabbix-web-service
+    pkgdesc: Zabbix web service used to generate and send scheduled reports
     depends:
-      - curl
-      - pcre2
+      - zabbix-common
+      - chromium
     backup:
-      - etc/zabbix/zabbix_agent2.conf
+      - etc/zabbix/zabbix_web_service.conf
   - name: zabbix-proxy
     pkgdesc: Data collecting proxy for Zabbix
     depends:
+      - zabbix-common
       - net-snmp
       - curl
       - libxml2
@@ -90,16 +97,20 @@ pkgname:
       - 'postgresql-libs: for PostgreSQL support'
     backup:
       - etc/zabbix/zabbix_proxy.conf
-  - name: zabbix-frontend-php
-    pkgdesc: PHP frontend for Zabbix
+  - name: zabbix-agent
+    pkgdesc: Monitoring agent for Zabbix
     depends:
-      - zabbix-server
-      - php
-      - php-gd
-  - name: zabbix-web-service
-    pkgdesc: Zabbix web service used to generate and send scheduled reports
-    depends:
-      - chromium
+      - zabbix-common
+      - curl
+      - pcre2
     backup:
-      - etc/zabbix/zabbix_web_service.conf
+      - etc/zabbix/zabbix_agentd.conf
+  - name: zabbix-agent2
+    pkgdesc: Monitoring agent for Zabbix (version 2)
+    depends:
+      - zabbix-common
+      - curl
+      - pcre2
+    backup:
+      - etc/zabbix/zabbix_agent2.conf
 # generated with artixpkg 0.36.4-1-any
