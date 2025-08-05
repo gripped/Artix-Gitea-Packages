@@ -1,10 +1,10 @@
 ---
-version: 25.07.4-1
+version: 25.07.4-1.1
 pkgbase:
   name: timeshift
   pkgdesc: A system restore utility for Linux
   pkgver: 25.07.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/linuxmint/timeshift
   install: timeshift.install
   arch:

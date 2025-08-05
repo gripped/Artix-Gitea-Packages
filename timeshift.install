@@ -1,8 +1,6 @@
 post_install() {
-	if ! systemctl -q is-enabled cronie.service; then
-		echo "TimeShift scheduled backups require the cronie.service to be running."
-    		echo "Try:"
-   	 	echo "  systemctl enable --now cronie.service"
+	if ! pgrep -x crond &> /dev/null 2>&1; then
+		echo "TimeShift scheduled backups require the cronie service to be running."
   	fi
 }
 

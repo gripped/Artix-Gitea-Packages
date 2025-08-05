@@ -8,7 +8,7 @@
 
 pkgname=timeshift
 pkgver=25.07.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A system restore utility for Linux"
 url="https://github.com/linuxmint/timeshift"
 arch=('x86_64')
