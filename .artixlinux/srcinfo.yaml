@@ -1,0 +1,69 @@
+---
+version: 3.9-3
+pkgbase:
+  name: vice
+  pkgdesc: Versatile Commodore Emulator
+  pkgver: 3.9
+  pkgrel: 3
+  url: https://vice-emu.sourceforge.io/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - dos2unix
+    - giflib
+    - glib2-devel
+    - gtk3
+    - libjpeg-turbo
+    - libpcap
+    - libxaw
+    - python
+    - sdl2
+    - sdl2_image
+    - xa
+    - xorg-bdftopcf
+    - xorg-mkfontscale
+  depends:
+    - alsa-lib
+    - glew
+    - libevdev
+    - libpng
+    - libpulse
+  source:
+    - https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.9.tar.gz
+    - disable-fc-cache.patch
+  b2sums:
+    - 0c063e152c10ff537fbc9b1d8a5b4a108f08874fa4240772ec159ca19e457f626d6a5abbf4cb7c350291cc8b9fc19f8dba0b2be058363d50040ea42554d3ef4c
+    - a27ff2a70537a57fd1c3be561181403fede8a6fd75ca8a31a4a4ed97b010cd8f8f0376a619be126ac22ad8c81bf0d1fd9c7e5e411bf94da32006c9ecdd10d32e
+pkgname:
+  - name: vice
+    pkgdesc: Versatile Commodore Emulator (GTK3)
+    depends:
+      - alsa-lib
+      - glew
+      - libevdev
+      - libpng
+      - libpulse
+      - giflib
+      - gtk3
+    provides:
+      - vice
+    conflicts:
+      - vice-sdl2
+  - name: vice-sdl2
+    pkgdesc: Versatile Commodore Emulator (SDL2)
+    depends:
+      - alsa-lib
+      - glew
+      - libevdev
+      - libpng
+      - libpulse
+      - giflib
+      - sdl2
+      - sdl2_image
+    provides:
+      - vice
+    conflicts:
+      - vice
+# generated with artixpkg 0.36.4-1-any
