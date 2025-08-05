@@ -1,10 +1,10 @@
 ---
-version: 25.0-1
+version: 25.0-2
 pkgbase:
   name: hwinfo
   pkgdesc: Hardware detection tool from openSUSE
   pkgver: 25.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openSUSE/hwinfo
   arch:
     - x86_64
