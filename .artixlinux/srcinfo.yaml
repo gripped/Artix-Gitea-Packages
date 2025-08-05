@@ -1,10 +1,10 @@
 ---
-version: 0.10.0-1
+version: 0.10.0-2
 pkgbase:
   name: diffuse
   pkgdesc: Graphical tool for merging and comparing text files
   pkgver: 0.10.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/MightyCreak/diffuse
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 1c1d64438c82fedc70f0b07f2f76d8113e3a5c445779ae80b160667b38dc87c5308506f90974ccc52b421fcf8317a240fbb5fe75abcf02b08ce1798b554565d6
 pkgname:
   - name: diffuse
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
