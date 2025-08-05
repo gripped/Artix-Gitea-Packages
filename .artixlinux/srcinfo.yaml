@@ -1,0 +1,40 @@
+---
+version: 10.0.1.0-1
+pkgbase:
+  name: jruby
+  pkgdesc: 100% pure-Java implementation of the Ruby programming language
+  pkgver: 10.0.1.0
+  pkgrel: 1
+  url: https://www.jruby.org/
+  arch:
+    - any
+  license:
+    - (EPL-2.0 OR GPL-2.0-only OR LGPL-2.1-only) AND BSD-3-Clause AND MIT AND MIT-0 AND Apache-2.0 AND Ruby
+  depends:
+    - bash
+    - gcc-libs
+    - glibc
+    - java-runtime-headless
+  options:
+    - '!debug'
+    - '!strip'
+  source:
+    - https://repo1.maven.org/maven2/org/jruby/jruby-dist/10.0.1.0/jruby-dist-10.0.1.0-bin.tar.gz
+    - https://repo1.maven.org/maven2/org/jruby/jruby-dist/10.0.1.0/jruby-dist-10.0.1.0-bin.tar.gz.asc
+  validpgpkeys:
+    - 416952B945B78A34C6C7678562EBFC78FE4156D1
+  md5sums:
+    - cdeb4e6b0ba8b26059b9ad87b7d478b0
+    - SKIP
+  sha1sums:
+    - 52bfb5c543c4d129b67d9adba5dbe203b7a2fc29
+    - SKIP
+  sha256sums:
+    - 22174ed408aa19340fc3c609b67f5a83374539ecc50053153d60f6e1f81faa9d
+    - SKIP
+  b2sums:
+    - b62f17653033e5bbea744fdb8d7249d2484d5986ff8624bebc5fbea42f466a15d83440daf491d94cf7a8821af07d3b02ebcc8ce244e5533c801301e1f5ee3e90
+    - SKIP
+pkgname:
+  - name: jruby
+# generated with artixpkg 0.36.4-1-any
