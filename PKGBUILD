@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.15.8.zen1
+pkgver=6.16.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -45,16 +45,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('d37e92bc16b962a3025df156647bdad90b2db4ff36c7a6137817fe81ef3f28a6'
+sha256sums=('1a4be2fe6b5246aa4ac8987a8a4af34c42a8dd7d08b46ab48516bcc1befbcd83'
             'SKIP'
-            '45e531689e138347e03798464e11673a2b7ecdce8a5d36754984a1f37b148b3c'
+            '53ca3e1c5d0e4b4a70da3e5946beb92987100105c19fee0934ae12f99755df60'
             'SKIP'
-            '121ff6a14e4bc7c031f51cabd588c81e8e266909cf45588be9f77f60a53c25f1')
-b2sums=('bf2d461a990f18e593a00cdcc324c24075f922c9623b7cca6be3e6145c05008c38266fee740e27b1f818c433969be66f0f5dee1c5e7679a4490682ec955fd24b'
+            '9dc92df04e25263d4b711c3ae3513f6c67e98629c7c43afcec009f7ba921a6dd')
+b2sums=('87bc4da7e89cc8265aebffea7ec6c09f711be24fee87cb1c03a264c03fd5a538d66aa806640835aa5103926e612cdfbc52d7c861d7f7065f1a8bb11d893b0921'
         'SKIP'
-        'd745afe5b5209a978ad2ddc4a978b6ef4a2b5bde3696e123840454177f27564826c8ba1fffade8f232fb8658240ff5261874fa4e0138547b1140f2bb4c1d37b6'
+        '48ac300a860ea50199afa6651467a08d5d4ac83b1eea417c91f2b3e128894b21bbc519c4aa5c0b80dd76bd4f20597779bcde207126cb52422989386f2ab7e00e'
         'SKIP'
-        '722ab84116366b2e9e1e9a59006f88a45d6bd7feaad74ed174806456a78b0e223f8fb556adb26fb10d1d4f57e08abf9a3c45c96cb55f45271f6c9848e080d5f4')
+        'bcf8163ec93105faaacca0fc8a8e7ca8d99aa8dd5e893e8e7b46a14b718c48e44bd487aacbb055152e0383c8ee05f3e1ba6c7ea3b21af27531714d038836cbef')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -90,7 +90,7 @@ build() {
   cd $_srcname
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  make htmldocs
+  make htmldocs SPHINXOPTS=-QT
 }
 
 _package() {
