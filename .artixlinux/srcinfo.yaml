@@ -1,0 +1,62 @@
+---
+version: 2.74.3-4
+pkgbase:
+  name: lib32-libsoup
+  pkgdesc: HTTP client/server library for GNOME (32-bit)
+  pkgver: 2.74.3
+  pkgrel: 4
+  url: https://wiki.gnome.org/Projects/libsoup
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  checkdepends:
+    - apache
+    - php-apache
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+    - samba
+  depends:
+    - lib32-brotli
+    - lib32-glib-networking
+    - lib32-glib2
+    - lib32-glibc
+    - lib32-krb5
+    - lib32-libpsl
+    - lib32-libxml2
+    - lib32-sqlite
+    - lib32-zlib
+    - libsoup
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libsoup.git#tag=2.74.3
+    - 0001-Disable-flaky-test.patch
+  b2sums:
+    - 9f2a278482af7ab851aa08b69f59bdd9de8187cac8cb2ac0d904ff087155afaadab253842d7c48fd8e162b3cba742565226e3ec390e671dc7921075fc089949d
+    - b468451f6e411c3a4e0b03b593ea8498f74d73bca6ee679baa6c81c45de0773ddc5d627000dcc3738c9ae4ba59cad36c63ca074c6f4bfb7c3574cda3452a670e
+pkgname:
+  - name: lib32-libsoup
+    depends:
+      - lib32-brotli
+      - lib32-glib-networking
+      - lib32-glib2
+      - lib32-glibc
+      - lib32-krb5
+      - lib32-libpsl
+      - lib32-libxml2
+      - lib32-sqlite
+      - lib32-zlib
+      - libsoup
+      - libbrotlidec.so
+      - libgssapi_krb5.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+      - libpsl.so
+    optdepends:
+      - 'samba: Windows Domain SSO'
+    provides:
+      - libsoup-2.4.so
+      - libsoup-gnome-2.4.so
+# generated with artixpkg 0.36.4-1-any
