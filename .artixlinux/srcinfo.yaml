@@ -1,0 +1,31 @@
+---
+version: 1:2.4.6-2
+pkgbase:
+  name: python-frozendict
+  pkgdesc: An immutable dictionary
+  pkgver: 2.4.6
+  pkgrel: 2
+  epoch: 1
+  url: https://pypi.python.org/pypi/frozendict/
+  arch:
+    - any
+  license:
+    - LGPL-3.0-only
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://pypi.org/packages/source/f/frozendict/frozendict-2.4.6.tar.gz
+  sha512sums:
+    - 3e6d1b530bbad65ea6a38645a3222d722e06e27eb65d19f903f4f434c7aa48d7522040ebc19035f73b4545761ce84a72b5d812c839ec199a5446f8c4d94354b4
+  b2sums:
+    - fafd946ccb11b0d2a8428adba2da35ba625117be351e1fc3412e904355c85f2ff320633be726d33e9246f8e194bb7656c67e08de8dd0493a80f4333ea5b1a2d2
+pkgname:
+  - name: python-frozendict
+# generated with artixpkg 0.36.4-1-any
