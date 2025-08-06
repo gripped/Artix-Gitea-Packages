@@ -75,6 +75,4 @@ pkgname:
     pkgdesc: Headers and scripts for building modules for the Linux ZEN kernel
     depends:
       - pahole
-  - name: linux-zen-docs
-    pkgdesc: Documentation for the Linux ZEN kernel
 # generated with artixpkg 0.36.4-1-any
