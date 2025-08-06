@@ -2,7 +2,7 @@
 
 pkgname=nftables
 epoch=1
-pkgver=1.1.3
+pkgver=1.1.4
 pkgrel=1
 pkgdesc='Netfilter tables userspace tools'
 arch=('x86_64')
@@ -11,33 +11,23 @@ license=('GPL-2.0-only')
 depends=('libmnl' 'libnftnl' 'gmp' 'readline' 'ncurses' 'jansson')
 optdepends=('python: Python bindings')
 makedepends=('asciidoc' 'python' 'python-setuptools' 'python-build'
-             'python-installer' 'python-wheel')
+             'git' 'python-installer' 'python-wheel')
 backup=('etc/nftables.conf')
 validpgpkeys=('8C5F7146A1757A65E2422A94D70D1A666ACF2B21') # Netfilter Core Team
-source=("https://netfilter.org/projects/nftables/files/nftables-$pkgver.tar.xz"{,.sig}
+source=("git+https://git.netfilter.org/nftables.git#tag=v${pkgver}?signed"
         'nftables.conf'
         )
 install=nftables.install
-sha256sums=('9c8a64b59c90b0825e540a9b8fcb9d2d942c636f81ba50199f068fde44f34ed8'
-            'SKIP'
+sha256sums=('af9029347c5cbec915cf4d1f4503a269908cee86a15e35b9f4526b465823ed78'
             'f83d6f2f99f306866850c60ff0e343bbd9bc0c989d333ebe288563f7be4afe20')
 
 prepare() {
-  cd $pkgname-$pkgver
-  # apply patch from the source array (should be a pacman feature)
-  local src
-  for src in "${source[@]}"; do
-    src="${src%%::*}"
-    src="${src##*/}"
-    [[ $src = *.patch ]] || continue
-    msg2 "Applying patch $src..."
-    patch -Np1 < "../$src"
-  done
-  :
+  cd $pkgname
+  autoreconf -fiv
 }
 
 build() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   ./configure \
     --prefix=/usr \
     --sbindir=/usr/bin \
@@ -55,12 +45,10 @@ build() {
 }
 
 package() {
-  pushd $pkgname-$pkgver
+  pushd $pkgname
   make DESTDIR="$pkgdir" install
   python -m installer --destdir="$pkgdir" py/dist/*.whl
   popd
   # basic safe firewall config
   install -Dm644 nftables.conf "$pkgdir/etc/nftables.conf"
 }
-
-# vim:set ts=2 sw=2 et:
