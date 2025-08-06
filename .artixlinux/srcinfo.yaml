@@ -1,0 +1,36 @@
+---
+version: 3.2.2-6
+pkgbase:
+  name: python-pyenchant
+  pkgdesc: Python bindings for the Enchant spellchecker
+  pkgver: 3.2.2
+  pkgrel: 6
+  url: https://pyenchant.github.io/pyenchant/
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - hunspell
+    - hunspell-en_us
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-sphinx_rtd_theme
+    - python-wheel
+  depends:
+    - enchant
+    - python
+  source:
+    - git+https://github.com/pyenchant/pyenchant.git#tag=v3.2.2
+  b2sums:
+    - 2e60d31bd6a409d1d90609383dcad00873809b300de15e052d6c39904770b53ce5f83d6d31546bc144530bbe1293f244b9cbb3aa57fb3e0a36669aacc3997178
+pkgname:
+  - name: python-pyenchant
+  - name: python-pyenchant-docs
+    pkgdesc: Developer documentation for python-pyenchant
+    depends: []
+# generated with artixpkg 0.36.4-1-any
