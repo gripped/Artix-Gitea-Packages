@@ -1,0 +1,26 @@
+---
+version: 1.616.0-1
+pkgbase:
+  name: lib32-directx-headers
+  pkgdesc: DirectX headers for using D3D12 (32-bit)
+  pkgver: 1.616.0
+  pkgrel: 1
+  url: https://github.com/microsoft/DirectX-Headers
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - meson
+  depends:
+    - directx-headers
+  options:
+    - '!lto'
+  source:
+    - directx-headers::git+https://github.com/microsoft/DirectX-Headers#tag=v1.616.0
+  b2sums:
+    - 74d3e2e51a1442a83c86e90f2e9f85c3a4197507e0d25ca99e77a5550ddc924e5b1f10023d540014d438764b4ed443341ca5a48c8cd2bfac79e2c9285f4d8e60
+pkgname:
+  - name: lib32-directx-headers
+# generated with artixpkg 0.36.4-1-any
