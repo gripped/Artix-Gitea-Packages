@@ -1,0 +1,37 @@
+---
+version: 2.1.19-4
+pkgbase:
+  name: python-faust-cchardet
+  pkgdesc: Fork of the original cChardet
+  pkgver: 2.1.19
+  pkgrel: 4
+  url: https://github.com/faust-streaming/cChardet
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only OR LGPL-2.1-only OR MPL-1.1
+  makedepends:
+    - cython
+    - git
+    - python-build
+    - python-installer
+    - python-pkgconfig
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  provides:
+    - python-cchardet=2.1.19
+  conflicts:
+    - python-cchardet
+  source:
+    - faust-cchardet::git+https://github.com/faust-streaming/cChardet#tag=v2.1.19
+    - pyyoshi-uchardet::git+https://github.com/PyYoshi/uchardet
+  b2sums:
+    - e4dcee1147eaa0247db5d3d75b805337819bb372c10e7e1b6d93195fe73f8a88a0db73c8fc5769b7ddbc4deff5eba424c07835c49bd7ebb5ff6cfafb551f15e4
+    - SKIP
+pkgname:
+  - name: python-faust-cchardet
+# generated with artixpkg 0.36.4-1-any
