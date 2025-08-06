@@ -1,0 +1,38 @@
+---
+version: 1.28.3-1
+pkgbase:
+  name: mate-notification-daemon
+  pkgdesc: Notification daemon for MATE
+  pkgver: 1.28.3
+  pkgrel: 1
+  url: https://mate-desktop.org
+  arch:
+    - x86_64
+  groups:
+    - mate
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - autoconf-archive
+    - glib2-devel
+    - mate-common
+    - python
+  depends:
+    - libcanberra
+    - libwnck3
+    - libnotify
+    - gettext
+    - mate-panel
+  provides:
+    - notification-daemon
+  conflicts:
+    - mate-notification-daemon-gtk3
+  replaces:
+    - mate-notification-daemon-gtk3
+  source:
+    - mate-notification-daemon-1.28.3.tar.gz::https://github.com/mate-desktop/mate-notification-daemon/archive/refs/tags/v1.28.3.tar.gz
+  sha256sums:
+    - a3571ffad533b64fcdac7f275364ff0706eba9f8af20817ad7477834270c3266
+pkgname:
+  - name: mate-notification-daemon
+# generated with artixpkg 0.36.4-1-any
