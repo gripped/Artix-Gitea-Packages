@@ -1,0 +1,36 @@
+---
+version: 5.1.0-1
+pkgbase:
+  name: python-geoip2
+  pkgdesc: MaxMind GeoIP2 API
+  pkgver: 5.1.0
+  pkgrel: 1
+  url: https://github.com/maxmind/GeoIP2-python
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-pytest
+    - python-pytest-httpserver
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-aiohttp
+    - python-maxminddb
+    - python-requests
+    - python-setuptools
+  source:
+    - git+https://github.com/maxmind/GeoIP2-python.git#tag=v5.1.0
+    - git+https://github.com/maxmind/MaxMind-DB.git
+  sha512sums:
+    - 7148ae01ab01920a39ba0b167955ad93f756cd52d8da243b38006f06b0661a176bbe7aee41af5dceaf37ac19c7b65bf1bde14f6a04c74ff5a84c096e7a31134b
+    - SKIP
+pkgname:
+  - name: python-geoip2
+# generated with artixpkg 0.36.4-1-any
