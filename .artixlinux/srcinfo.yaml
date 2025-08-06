@@ -1,0 +1,29 @@
+---
+version: 3.2.3-1
+pkgbase:
+  name: python-greenlet
+  pkgdesc: Lightweight in-process concurrent programming
+  pkgver: 3.2.3
+  pkgrel: 1
+  url: https://pypi.org/project/greenlet/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-objgraph
+    - python-psutil
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/g/greenlet/greenlet-3.2.3.tar.gz
+  sha512sums:
+    - 3153123855b4900387454fa1d4223b321980e3462e1e139b9f90b4eb2d0772102e06375055c6eb612530d7037169ff6e28166f95efe09073ea331db76284d39d
+pkgname:
+  - name: python-greenlet
+# generated with artixpkg 0.36.4-1-any
