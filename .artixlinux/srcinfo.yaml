@@ -1,0 +1,52 @@
+---
+version: 1.28.2-1
+pkgbase:
+  name: atril
+  pkgdesc: A document viewer for MATE
+  pkgver: 1.28.2
+  pkgrel: 1
+  url: https://mate-desktop.org
+  arch:
+    - x86_64
+  groups:
+    - mate-extra
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - autoconf-archive
+    - caja
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - itstool
+    - mate-common
+    - texlive-bin
+    - python-packaging
+    - yelp-tools
+  depends:
+    - djvulibre
+    - libspectre
+    - libgxps
+    - mathjax2
+    - gettext
+    - poppler-glib
+    - cairo>=1.14.0
+    - webkit2gtk-4.1>=2.6.0
+    - libsynctex
+    - mate-desktop
+  optdepends:
+    - 'caja: Document Properties extension'
+    - 'texlive-bin: DVI support'
+  conflicts:
+    - atril-gtk3
+  replaces:
+    - atril-gtk3
+  source:
+    - git+https://github.com/mate-desktop/atril.git#tag=v1.28.2
+    - git+https://github.com/mate-desktop/mate-submodules.git
+  sha256sums:
+    - 873ae0cbcecc12519e54e0ab9bdebf13f3c8cf9bdddb4236f820d27002c67f8e
+    - SKIP
+pkgname:
+  - name: atril
+# generated with artixpkg 0.36.4-1-any
