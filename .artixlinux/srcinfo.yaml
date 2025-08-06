@@ -1,0 +1,29 @@
+---
+version: 6.1.0-1
+pkgbase:
+  name: python-cachetools
+  pkgdesc: Extensible memoizing collections and decorators
+  pkgver: 6.1.0
+  pkgrel: 1
+  url: https://github.com/tkem/cachetools
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/tkem/cachetools.git#tag=v6.1.0
+  sha512sums:
+    - 969cca638362cefefce67f595273f8eecb9e543b03374ae43296f96c17ad5bf6c024901c5798a2e39211093bee4fd76e97e94a432c978bd46fbf6067938f6bd0
+pkgname:
+  - name: python-cachetools
+# generated with artixpkg 0.36.4-1-any
