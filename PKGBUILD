@@ -20,6 +20,8 @@ sha512sums=('92b73ae829595e22de8291672bb4108565ab9065421eaf3dd87efa8f42d855c85a7
 build() {
   cd OpenSC
 
+  CFLAGS+=" -WNO-error=unterminated-string-initialization"
+
   _sheetdir=(/usr/share/xml/docbook/xsl-stylesheets-*-nons)
 
   ./bootstrap
