@@ -1,0 +1,30 @@
+---
+version: 0.8.29-1
+pkgbase:
+  name: python-scrypt
+  pkgdesc: Bindings for the scrypt key derivation function library
+  pkgver: 0.8.29
+  pkgrel: 1
+  url: https://github.com/holgern/py-scrypt
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - glibc
+    - openssl
+  source:
+    - https://github.com/holgern/py-scrypt/archive/v0.8.29/python-scrypt-0.8.29.tar.gz
+  sha512sums:
+    - a985e31289011d56486d89b2b16a93a4e26d9be2316e9f84909b695b8f497664eee678aaaf830ad0912eb0372549fdacee30e707e77a80db4321d5632359806b
+  b2sums:
+    - d662acf6181656fae6489674576099d167581ed2697988d1cf444cdc4225f5c906b8c590c0db0b62811e3d7867edbccdadbfb9bf9aa344860f922dd2ce4ecbd0
+pkgname:
+  - name: python-scrypt
+# generated with artixpkg 0.36.4-1-any
