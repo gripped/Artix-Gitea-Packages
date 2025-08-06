@@ -42,9 +42,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 3.2.18-1
+    version: 3.2.20-1
     packages:
-      - lib32-sdl3-3.2.18-1-x86_64.pkg.tar.zst
+      - lib32-sdl3-3.2.20-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
