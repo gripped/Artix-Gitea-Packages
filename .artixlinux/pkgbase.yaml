@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.134.0-1
+    version: 1.135.0-1
     packages:
-      - matrix-synapse-1.134.0-1-x86_64.pkg.tar.zst
+      - matrix-synapse-1.135.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.132.0-1
