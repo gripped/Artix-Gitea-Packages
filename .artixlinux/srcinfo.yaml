@@ -1,0 +1,35 @@
+---
+version: 2.17.0-1
+pkgbase:
+  name: python-time-machine
+  pkgdesc: Travel through time in your tests
+  pkgver: 2.17.0
+  pkgrel: 1
+  url: https://github.com/adamchainz/time-machine
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-randomly
+    - python-tokenize-rt
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-dateutil
+  optdepends:
+    - 'python-pytest: for pytest plugin'
+    - 'python-tokenize-rt: for the migration tool'
+  source:
+    - python-time-machine::git+https://github.com/adamchainz/time-machine#tag=2.17.0
+  b2sums:
+    - 1b8b9810558e5cc310134ba05fece8d1ae51aa16aef0e4901b8d4ddf8b5f261a990d23a414f0b56b743f8f91fe2ec91c14f84e4d10ac8497956a6f352ea70cd7
+pkgname:
+  - name: python-time-machine
+# generated with artixpkg 0.36.4-1-any
