@@ -1,10 +1,10 @@
 ---
-version: 5.8.1-1
+version: 5.8.1-2
 pkgbase:
   name: maim
   pkgdesc: Utility to take a screenshot using imlib2
   pkgver: 5.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/naelstrof/maim
   arch:
     - x86_64
