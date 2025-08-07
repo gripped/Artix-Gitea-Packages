@@ -1,10 +1,10 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,8 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.2025.0805-1
+    packages:
+      - ruby-mime-types-data-3.2025.0805-1-any.pkg.tar.zst
     debug: []
   world:
     version: 3.2025.0729-1
