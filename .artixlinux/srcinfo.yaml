@@ -1,9 +1,9 @@
 ---
-version: 6.4.3-1
+version: 6.4.4-1
 pkgbase:
   name: plasma-desktop
   pkgdesc: KDE Plasma Desktop
-  pkgver: 6.4.3
+  pkgver: 6.4.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -101,15 +101,15 @@ pkgbase:
     - 'plasma-pa: Audio volume applet'
     - 'scim: kimpanel SCIM support'
   source:
-    - https://download.kde.org/stable/plasma/6.4.3/plasma-desktop-6.4.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.3/plasma-desktop-6.4.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.4/plasma-desktop-6.4.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.4/plasma-desktop-6.4.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 190a3f558f6b3fa92164c3f269e70ffd1e981e352dd718a43a4cb007245aa525
+    - 4d70b9bf99f59b3bdea7b8240a0b7df803bd16c0ae9cc534ca3617a9f9c54013
     - SKIP
 pkgname:
   - name: plasma-desktop
