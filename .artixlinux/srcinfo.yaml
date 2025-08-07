@@ -1,9 +1,9 @@
 ---
-version: 6.4.3-1
+version: 6.4.4-1
 pkgbase:
   name: plasma-nm
   pkgdesc: Plasma applet written in QML for managing network connections
-  pkgver: 6.4.3
+  pkgver: 6.4.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -52,15 +52,15 @@ pkgbase:
     - 'openconnect: Cisco AnyConnect VPN plugin'
     - 'qt6-webengine: Cisco AnyConnect VPN plugin'
   source:
-    - https://download.kde.org/stable/plasma/6.4.3/plasma-nm-6.4.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.3/plasma-nm-6.4.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.4/plasma-nm-6.4.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.4/plasma-nm-6.4.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 67c38e3c0a54e90ae1237991142b9206463d43c2ead8edf5dd5bb7a16a46a13e
+    - 850638d1f4cc3b0a1012f049af5e1203ef57a1ef1fc21e5082c82bdf13bcb657
     - SKIP
 pkgname:
   - name: plasma-nm
