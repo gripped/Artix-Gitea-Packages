@@ -1,9 +1,9 @@
 ---
-version: 6.4.3-1
+version: 6.4.4-1
 pkgbase:
   name: flatpak-kcm
   pkgdesc: Flatpak Permissions Management KCM
-  pkgver: 6.4.3
+  pkgver: 6.4.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -28,15 +28,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.4.3/flatpak-kcm-6.4.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.3/flatpak-kcm-6.4.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.4/flatpak-kcm-6.4.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.4/flatpak-kcm-6.4.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 2b854759fd1125e47061cdad3aa164e3fec8bc101d4b6d3d1fa2d490774d2139
+    - b4ac5f4c64e2dcd80b610b1cab42f5d1cc96bbcbc14aa3e366b257407387c8f8
     - SKIP
 pkgname:
   - name: flatpak-kcm
