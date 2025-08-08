@@ -1,9 +1,9 @@
 ---
-version: 3.0.8.1-1
+version: 3.0.9.0-1
 pkgbase:
   name: openimageio
   pkgdesc: A library for reading and writing images, including classes, utilities, and applications
-  pkgver: 3.0.8.1
+  pkgver: 3.0.9.0
   pkgrel: 1
   url: http://www.openimageio.org/
   arch:
@@ -40,9 +40,9 @@ pkgbase:
     - 'qt5-base: iv image viewer'
     - 'python: bindings support'
   source:
-    - openimageio-3.0.8.1.tar.gz::https://github.com/OpenImageIO/oiio/archive/refs/tags/v3.0.8.1.tar.gz
+    - openimageio-3.0.9.0.tar.gz::https://github.com/OpenImageIO/oiio/archive/refs/tags/v3.0.9.0.tar.gz
   sha512sums:
-    - f99511c5815b3dd510dcddbf828f32e92c05d433880442e621e9d87ace6d68ed6230132fef9377a8e706ddd44824963b65b6294b7e389bacb2628a256b61bd0e
+    - fdf411b7035367020b8f3056979c6f25800cdbfa545d844485ddb2ab41148c5b471b75a40bfa1f8ba52bafa8fe8459b221391ff3ddfdf891b4169444141cf75c
 pkgname:
   - name: openimageio
 # generated with artixpkg 0.36.4-1-any
