@@ -1,0 +1,23 @@
+---
+version: 1.2.0-1
+pkgbase:
+  name: tl-expected
+  pkgdesc: C++11/14/17 std::expected with functional-style extensions
+  pkgver: 1.2.0
+  pkgrel: 1
+  url: https://github.com/TartanLlama/expected
+  arch:
+    - any
+  license:
+    - CC0-1.0
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  source:
+    - expected-v1.2.0.tar.gz::https://github.com/TartanLlama/expected/archive/v1.2.0.tar.gz
+  sha256sums:
+    - f5424f5fc74e79157b9981ba2578a28e0285ac6ec2a8f075e86c41226fe33386
+pkgname:
+  - name: tl-expected
+# generated with artixpkg 0.36.4-1-any
