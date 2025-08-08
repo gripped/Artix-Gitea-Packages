@@ -11,7 +11,7 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=11.8.2
+pkgver=11.8.3
 pkgrel=1
 arch=('x86_64')
 license=('GPL-2.0-only')
@@ -28,7 +28,7 @@ source=("mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-${pkgver
         'git+https://github.com/mariadb-corporation/mariadb-columnstore-engine.git'
         '0001-arch-specific.patch'
 'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
-sha256sums=('3c6c8dc3de8c716315c8380fbc7a54bd233b21becea54513d27db596390a0ad7'
+sha256sums=('c27a5d127bb262021f9d134fd0e304c7cf426074c732f99084850fd54951c4ca'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -113,9 +113,6 @@ build() {
     -DWITH_SYSTEMD=no
     -DWITH_UNIT_TESTS=OFF
     -DWITH_ZLIB=system
-
-    # fix build with cmake 4.0
-    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   )
 
   # this uses malloc_usable_size, which is incompatible with fortification level 3
@@ -214,6 +211,7 @@ package_mariadb() {
            'coreutils'
            'libxml2' 'libxml2.so'
            'lz4' 'liblz4.so'
+           
            'zstd' 'libzstd.so')
   optdepends=('cracklib: for cracklib plugin'
               'curl: for ha_s3 plugin'
