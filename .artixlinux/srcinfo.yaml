@@ -1,10 +1,10 @@
 ---
-version: 0.1.5-1
+version: 0.1.5-2
 pkgbase:
   name: hyprgraphics
   pkgdesc: hyprland graphics resources and utilities
   pkgver: 0.1.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprgraphics
   arch:
     - x86_64
@@ -26,8 +26,7 @@ pkgbase:
     - libjxl
     - libjxl.so
     - libjxl_threads.so
-    - libspng
-    - libspng.so
+    - libpng
     - libwebp
     - libwebp.so
     - pixman
