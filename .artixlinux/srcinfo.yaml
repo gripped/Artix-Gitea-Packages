@@ -1,0 +1,38 @@
+---
+version: 1.33.2-1
+pkgbase:
+  name: lib32-mpg123
+  pkgdesc: Console based real time MPEG Audio Player for Layer 1, 2 and 3 (32-bit)
+  pkgver: 1.33.2
+  pkgrel: 1
+  url: https://mpg123.de/
+  arch:
+    - x86_64
+  license:
+    - LGPL2.1
+  makedepends:
+    - lib32-sdl2
+    - lib32-jack2
+    - lib32-libpulse
+  depends:
+    - lib32-alsa-lib
+    - mpg123
+  optdepends:
+    - 'lib32-sdl2: for sdl audio support'
+    - 'lib32-jack: for jack audio support'
+    - 'lib32-libpulse: for pulse audio support'
+  provides:
+    - libmpg123.so
+    - libout123.so
+    - libsyn123.so
+  source:
+    - https://downloads.sourceforge.net/sourceforge/mpg123/mpg123-1.33.2.tar.bz2
+    - https://downloads.sourceforge.net/sourceforge/mpg123/mpg123-1.33.2.tar.bz2.sig
+  validpgpkeys:
+    - D021FF8ECF4BE09719D61A27231C4CBC60D5CAFE
+  sha512sums:
+    - 9e9a4d6433e9073470c4cee909dfbfcd4717b1f1534eefeee453870993967026155f913c12b6ca187fb96059e73d9184e71df8a62736b43092d3842b9814c980
+    - SKIP
+pkgname:
+  - name: lib32-mpg123
+# generated with artixpkg 0.36.4-1-any
