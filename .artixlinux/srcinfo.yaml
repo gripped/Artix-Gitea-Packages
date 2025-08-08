@@ -1,0 +1,35 @@
+---
+version: 2.2.5-1
+pkgbase:
+  name: zlib-ng
+  pkgdesc: zlib replacement with optimizations for next generation systems
+  pkgver: 2.2.5
+  pkgrel: 1
+  url: https://github.com/zlib-ng/zlib-ng
+  arch:
+    - x86_64
+  license:
+    - Zlib
+  makedepends:
+    - cmake
+    - ninja
+  depends:
+    - glibc
+  source:
+    - https://github.com/zlib-ng/zlib-ng/archive/refs/tags/2.2.5/zlib-ng-2.2.5.tar.gz
+  sha256sums:
+    - 5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18
+  b2sums:
+    - 7d2907595b6e57f2739f4acea11cb317a35c4f63208d3f44b65cca0ea1ffbef89311bc839327e037b3aea78de1407d3ff025567f6768013277d0fd61e0a40210
+pkgname:
+  - name: zlib-ng
+    provides:
+      - libz-ng.so
+  - name: zlib-ng-compat
+    pkgdesc: zlib replacement with optimizations for next generation systems (zlib compat)
+    provides:
+      - zlib
+      - libz.so
+    conflicts:
+      - zlib
+# generated with artixpkg 0.36.4-1-any
