@@ -46,7 +46,7 @@ optdepends=('clang: improved C/C++ language support'
 replaces=(zed-editor)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('5425645ddf55f1e01ed6bde3953c40195e0890c944296db5d8b9925e24cf6104')
+sha256sums=('461bd66c9d04d799c91ab97638f699e05f895488fda54208c492c8b021286813')
 
 _binname=zeditor
 _appid=dev.zed.Zed

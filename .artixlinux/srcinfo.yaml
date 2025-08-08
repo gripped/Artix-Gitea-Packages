@@ -56,7 +56,7 @@ pkgbase:
   source:
     - https://github.com/zed-industries/zed/archive/v0.198.3/zed-0.198.3.tar.gz
   sha256sums:
-    - 5425645ddf55f1e01ed6bde3953c40195e0890c944296db5d8b9925e24cf6104
+    - 461bd66c9d04d799c91ab97638f699e05f895488fda54208c492c8b021286813
 pkgname:
   - name: zed
 # generated with artixpkg 0.36.4-1-any
