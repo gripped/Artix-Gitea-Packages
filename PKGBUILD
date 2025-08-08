@@ -40,7 +40,7 @@ depends=(alembic # libAlembic.so
 makedepends=(cmake help2man boost git fmt cuda)
 source=("git+https://github.com/PixarAnimationStudios/OpenUSD.git#tag=v${pkgver//.a/a}"
         https://openusd.org/images/USDLogoUnsized.svg
-        usd-embree4.patch::https://github.com/PixarAnimationStudios/OpenUSD/pull/3635.patch
+        usd-embree4-2.patch::https://github.com/PixarAnimationStudios/OpenUSD/pull/3635.patch
         usd-find-dependency-OpenGL.patch
         "org.openusd.usdview.desktop")
 sha256sums=('923399af1b37092f7f4d8b9101f0919604a32ec84cf8a2144624dd46e4a9b659'
@@ -56,7 +56,7 @@ prepare() {
 
   _pyver=$(python -c 'import sys; print(".".join(map(str, sys.version_info[:2])))')
 
-  patch -Np1 -i "$srcdir/usd-embree4.patch"
+  patch -Np1 -i "$srcdir/usd-embree4-2.patch"
   patch -Np1 -i "$srcdir/usd-find-dependency-OpenGL.patch"
 
   # Change directories to standard
