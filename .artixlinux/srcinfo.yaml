@@ -1,0 +1,30 @@
+---
+version: 3.9.1-1
+pkgbase:
+  name: catch2
+  pkgdesc: Modern, C++-native, header-only, test framework for unit-tests, TDD and BDD
+  pkgver: 3.9.1
+  pkgrel: 1
+  url: https://github.com/catchorg/catch2
+  arch:
+    - x86_64
+  license:
+    - BSL-1.0
+  makedepends:
+    - git
+    - cmake
+    - python
+  conflicts:
+    - catch2-v2
+  options:
+    - '!lto'
+  source:
+    - catch2::git+https://github.com/catchorg/Catch2#tag=v3.9.1?signed
+  validpgpkeys:
+    - FC5D2FD9051354DBF834F9FD56FB686C9DFC8E2C
+    - E29C46F3B8A7502860793B7DECC9C20E314B2360
+  sha512sums:
+    - ba34eadb107cf2fb7e83d667a7f327042feed7f7c99c04cc9d2829d74a143afc5e89338fa8820ea1fcd097530616318db0be69a9de19b019ccb57abecc6f26db
+pkgname:
+  - name: catch2
+# generated with artixpkg 0.36.4-1-any
