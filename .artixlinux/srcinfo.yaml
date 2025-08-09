@@ -1,0 +1,65 @@
+---
+version: 2.10.2-8
+pkgbase:
+  name: adios2
+  pkgdesc: The Adaptable Input/Output System version 2
+  pkgver: 2.10.2
+  pkgrel: 8
+  url: https://adios2.readthedocs.io/en/latest/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+    - cuda
+    - gcc-fortran
+    - gtest
+    - ninja
+    - nlohmann-json
+    - pybind11
+    - python-mpi4py
+    - python-numpy
+  depends:
+    - blosc2
+    - bzip2
+    - libbz2.so
+    - gcc-libs
+    - glibc
+    - hdf5
+    - libfabric
+    - libpng
+    - libpng16.so
+    - libsodium
+    - libsodium.so
+    - mgard
+    - openmpi
+    - libmpi.so
+    - openucx
+    - libucp.so
+    - libucs.so
+    - paraview-catalyst
+    - pugixml
+    - python
+    - python-yaml
+    - sqlite
+    - libsqlite3.so
+    - sz
+    - yaml-cpp
+    - libyaml-cpp.so
+    - zeromq
+    - libzmq.so
+    - zfp
+    - zlib
+    - libz.so
+  optdepends:
+    - 'python-numpy: for Python bindings'
+  source:
+    - https://github.com/ornladios/ADIOS2/archive/v2.10.2/adios2-2.10.2.tar.gz
+    - fix-destdir-installation.patch
+  sha256sums:
+    - 14cf0bcd94772194bce0f2c0e74dba187965d1cffd12d45f801c32929158579e
+    - 601dccc582f957b19bbe5e980ed37fcaeec85b66f63fbb357735345ac0a16d60
+pkgname:
+  - name: adios2
+# generated with artixpkg 0.36.4-1-any
