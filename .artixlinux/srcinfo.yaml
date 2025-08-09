@@ -1,0 +1,103 @@
+---
+version: 1.10.0-1
+pkgbase:
+  name: handbrake
+  pkgver: 1.10.0
+  pkgrel: 1
+  url: https://handbrake.fr/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - python
+    - nasm
+    - wget
+    - cmake
+    - meson
+    - git
+    - libxml2
+    - libass
+    - libvorbis
+    - opus
+    - speex
+    - libtheora
+    - lame
+    - x264
+    - jansson
+    - libvpx
+    - libva
+    - numactl
+    - bzip2
+    - gcc-libs
+    - zlib
+    - xz
+    - libjpeg-turbo
+    - gst-plugins-base
+    - gtk4
+    - librsvg
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/HandBrake/HandBrake.git?signed#tag=1.10.0
+  validpgpkeys:
+    - 1629C061B3DDE7EB4AE34B81021DB8B44E4A8645
+    - D57F6026431D68DFFB942F0D5759C8A0D1C34D47
+  sha256sums:
+    - 9388dd6c287a4d29424b06118460f92b0564b3446d08b28f013bcba4f9e355fa
+pkgname:
+  - name: handbrake
+    pkgdesc: Multithreaded video transcoder
+    depends:
+      - desktop-file-utils
+      - hicolor-icon-theme
+      - libxml2
+      - libass
+      - libvorbis
+      - opus
+      - speex
+      - libtheora
+      - lame
+      - x264
+      - jansson
+      - libvpx
+      - libva
+      - numactl
+      - bzip2
+      - gcc-libs
+      - zlib
+      - xz
+      - libjpeg-turbo
+      - gst-plugins-base
+      - gtk4
+      - librsvg
+    optdepends:
+      - 'gst-plugins-good: for video previews'
+      - 'gst-libav: for video previews'
+      - 'gvfs: for CD/DVD drive access'
+      - 'intel-media-sdk: Intel QuickSync support'
+      - 'libdvdcss: for decoding encrypted DVDs'
+  - name: handbrake-cli
+    pkgdesc: Multithreaded video transcoder (CLI)
+    depends:
+      - libxml2
+      - libass
+      - libvorbis
+      - opus
+      - speex
+      - libtheora
+      - lame
+      - x264
+      - jansson
+      - libvpx
+      - libva
+      - numactl
+      - bzip2
+      - gcc-libs
+      - zlib
+      - xz
+      - libjpeg-turbo
+    optdepends:
+      - 'intel-media-sdk: Intel QuickSync support'
+      - 'libdvdcss: for decoding encrypted DVDs'
+# generated with artixpkg 0.36.4-1-any
