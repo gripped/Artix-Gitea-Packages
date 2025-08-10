@@ -1,9 +1,9 @@
 ---
-version: 1.17.2-1
+version: 1.18.0-1
 pkgbase:
   name: memray
   pkgdesc: A memory profiler for Python
-  pkgver: 1.17.2
+  pkgver: 1.18.0
   pkgrel: 1
   url: https://github.com/bloomberg/memray
   arch:
@@ -32,11 +32,11 @@ pkgbase:
     - ipython
     - python-textual
   source:
-    - git+https://github.com/bloomberg/memray.git#tag=v1.17.2?signed
+    - git+https://github.com/bloomberg/memray.git#tag=v1.18.0?signed
   validpgpkeys:
     - A035C8C19219BA821ECEA86B64E628F8D684696D
   sha512sums:
-    - f919aed67e384fc0c42b3e878996df95d7715e59ee213df210387e7b3126935fd52b3f1919cb31b3b2e4e2b7305a6e0846ff572335000092dd8093f6d87fecbd
+    - 3552ee6ad9f5e2a45c3cfa5da0ce7b1ec4ce9073038cc5573452e910740243013f61efa135736363850ea58213ba21f86e63403385c39f88c8e3673ffeedcd47
 pkgname:
   - name: memray
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
