@@ -1,0 +1,33 @@
+---
+version: 2.7-1
+pkgbase:
+  name: python-soupsieve
+  pkgdesc: A CSS4 selector implementation for Beautiful Soup
+  pkgver: 2.7
+  pkgrel: 1
+  url: https://github.com/facelessuser/soupsieve
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-html5lib
+    - python-lxml
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+  depends:
+    - python
+    - python-beautifulsoup4
+  source:
+    - python-soupsieve::git+https://github.com/facelessuser/soupsieve#tag=2.7
+  sha512sums:
+    - bb69c96099ae070b7c86bd9831c57c4a10e9019f6e7c436c595e43c41b9ea1b8e97db665f49c38f4ba293cd3f120625a359640b4a631abf8fc858cd56329327a
+  b2sums:
+    - 5c0bcd0a113d76abac8405cad735b02f6aca6abb67ba4aabc889df462269ffe6df3ae533e722ce2cbfb6f5721e655698586e2097a3869cdeca06ab35ad4b92ec
+pkgname:
+  - name: python-soupsieve
+# generated with artixpkg 0.36.4-1-any
