@@ -1,0 +1,33 @@
+---
+version: 4.3.8-1
+pkgbase:
+  name: python-platformdirs
+  pkgdesc: A library to determine platform-specific system directories
+  pkgver: 4.3.8
+  pkgrel: 1
+  url: https://github.com/tox-dev/platformdirs
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-mock
+    - python-appdirs
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python
+  source:
+    - python-platformdirs::git+https://github.com/tox-dev/platformdirs#tag=4.3.8
+  sha512sums:
+    - b353217c92335f249bc7b1dab6ad356a8cba4a137a32f4541dd9faa72d1bbabb7e9d9b371b861e5e242f099597eb9e4364604187fd6629c4a51aa337f824c4ba
+  b2sums:
+    - e2265c6f4d699d00023ab765d863dc64485b928d0539d2391c844c6a9d6dd4d82ac696e4283b25310cee944b03132ba3d97245071d50a679b4bb348722d725b4
+pkgname:
+  - name: python-platformdirs
+# generated with artixpkg 0.36.4-1-any
