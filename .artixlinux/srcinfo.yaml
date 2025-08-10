@@ -1,0 +1,33 @@
+---
+version: 7.5.0-1
+pkgbase:
+  name: python-pynetbox
+  pkgdesc: NetBox API client library
+  pkgver: 7.5.0
+  pkgrel: 1
+  url: https://github.com/netbox-community/pynetbox
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-pyyaml
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-packaging
+    - python-requests
+  source:
+    - python-pynetbox-7.5.0.tar.gz::https://github.com/netbox-community/pynetbox/archive/refs/tags/v7.5.0.tar.gz
+  sha512sums:
+    - da5139a8054d5854fbc3f5294503b7474aeec1df72cfe0bca3b24fb43dc77fce5d2a02f0a0059c370425bb66cdc190939c7db650a3a4804c55271afca3fbcf31
+  b2sums:
+    - 5bc20f33bda9de5881893355070b13454ccdae0a1a73212d95a9e4261208016b7bbb3c2dab2a16d10887d119de6ecfa44a51b6b3ac7d9a67cb8ab44b53409967
+pkgname:
+  - name: python-pynetbox
+# generated with artixpkg 0.36.4-1-any
