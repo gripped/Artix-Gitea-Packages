@@ -1,6 +1,6 @@
 # Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 pkgname=hipify-clang
-pkgver=6.4.2
+pkgver=6.4.3
 pkgrel=1
 pkgdesc='Convert CUDA to Portable C++ Code'
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=('glibc' 'gcc-libs' 'ncurses' 'bash' 'perl' 'zstd' 'zlib'
 makedepends=('cmake')
 _git='https://github.com/ROCm/HIPIFY'
 source=("${pkgname}-${pkgver}.tar.gz::$_git/archive/rocm-$pkgver.tar.gz")
-sha256sums=('b20623789fcdd21d3fb9d935b8c4c51c12f9b3e444e7e02f29e2869899db2531')
+sha256sums=('00156b62bfe3e8c848fb7e4573e55253ec0c86e663a226e794ff314934060182')
 options=(!lto)
 _dirname="$(basename "$_git")-$(basename "${source[0]}" .tar.gz)"
 
