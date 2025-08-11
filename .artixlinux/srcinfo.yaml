@@ -1,9 +1,9 @@
 ---
-version: 6.16.0-1
+version: 6.17.0-1
 pkgbase:
   name: kio
   pkgdesc: Resource and network access abstraction
-  pkgver: 6.16.0
+  pkgver: 6.17.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -53,14 +53,14 @@ pkgbase:
     - 'kio-fuse: to mount remote filesystems via FUSE'
     - 'switcheroo-control: hybrid GPU support'
   source:
-    - https://download.kde.org/stable/frameworks/6.16/kio-6.16.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.16/kio-6.16.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.17/kio-6.17.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.17/kio-6.17.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 675ebf8a0c72bfdfd434ef73530cb7ae92127aeff0968896d67cc5aa22333e8c
+    - d00d4952198f8e9ff44335b340714615e0124857edbd67c4964b50e0c913d62d
     - SKIP
 pkgname:
   - name: kio
