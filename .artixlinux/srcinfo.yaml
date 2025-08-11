@@ -1,10 +1,10 @@
 ---
-version: 1.4.4-2
+version: 1.4.4-3
 pkgbase:
   name: openucc
   pkgdesc: Unified Collective Communication Library
   pkgver: 1.4.4
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/openucx/ucc
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 4df2fd7cbdc908d89fd86ee818a7fa34cb3012338906bc7c186dd7779297de1a1d386775796935191049cf41f437d8aa1117e7c4628b41ce84a0b8459cb9a753
 pkgname:
   - name: openucc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
