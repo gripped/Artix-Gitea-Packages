@@ -3,37 +3,37 @@
 # https://gitlab.manjaro.org/packages/extra/pamac
 
 ENABLE_FAKE_GNOME_SOFTWARE=0
-_cli_ver=11.6.0
+_cli_ver=11.7.3
 
 pkgname=pamac
-pkgver=11.7.1
+pkgver=11.7.3
 pkgrel=1
 pkgdesc="A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstream support"
 arch=('x86_64')
-url="https://gitlab.manjaro.org/applications/pamac"
+url="https://github.com/manjaro/pamac"
 license=('GPL-3.0-only')
 depends=(
-    'glibc'
-    'glib2'
     'gdk-pixbuf2'
+    'glib2'
+    'glibc'
     'gtk3'
-    'libnotify'
-    'libadwaita'
     'gtk4'
+    'libadwaita'
+    'libnotify'
     'libpamac'
 )
 makedepends=(
+    'asciidoc'
+    'desktop-file-utils'
     'gettext'
-    'itstool'
-    'vala'
-    'meson'
+    'git'
     'gnutls'
     'gobject-introspection'
+    'itstool'
     'libhandy'
-    'desktop-file-utils'
+    'meson'
+    'vala'
     'xorgproto'
-    'asciidoc'
-    'git'
 )
 optdepends=(
     'polkit-gnome: needed for authentification in Cinnamon, Gnome'
@@ -44,11 +44,11 @@ provides=('pamac-cli' 'libpamac-gtk.so')
 options=(!lto)
 install=pamac.install
 source=(
-    "git+https://gitlab.manjaro.org/applications/pamac.git#tag=$pkgver"
-    "git+https://gitlab.manjaro.org/applications/pamac-cli.git#tag=$_cli_ver"
+    "git+https://github.com/manjaro/pamac.git#tag=v$pkgver"
+    "git+https://github.com/manjaro/pamac-cli.git#tag=$_cli_ver"
 )
-sha256sums=('4e9d1beebe05135c5a7972aeff12c39594b16edd02cec6aff7191a4ad301c031'
-            '5e045f7661066cdcbfca3c397097a6ea6e12c257c26a9edb28ae1109165392e2')
+sha256sums=('d9df19c697a000de65514617545323ed7e7ada162aaceed6d91827d0775b9d56'
+            '972b882440f6ebbc948fe965eb4bfe638f735adfcc260f6349aa3e1d560621a7')
 
 _meson_options=()
 if (( ENABLE_FAKE_GNOME_SOFTWARE )); then

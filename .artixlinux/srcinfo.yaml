@@ -1,0 +1,54 @@
+---
+version: 11.7.3-1
+pkgbase:
+  name: pamac
+  pkgdesc: A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstream support
+  pkgver: 11.7.3
+  pkgrel: 1
+  url: https://github.com/manjaro/pamac
+  install: pamac.install
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - asciidoc
+    - desktop-file-utils
+    - gettext
+    - git
+    - gnutls
+    - gobject-introspection
+    - itstool
+    - libhandy
+    - meson
+    - vala
+    - xorgproto
+  depends:
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - gtk4
+    - libadwaita
+    - libnotify
+    - libpamac
+  optdepends:
+    - 'polkit-gnome: needed for authentification in Cinnamon, Gnome'
+    - 'lxsession: needed for authentification in Xfce, LXDE etc.'
+  provides:
+    - pamac-cli
+    - libpamac-gtk.so
+  conflicts:
+    - pamac-tray-appindicator
+    - pamac-cli
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/manjaro/pamac.git#tag=v11.7.3
+    - git+https://github.com/manjaro/pamac-cli.git#tag=11.7.3
+  sha256sums:
+    - d9df19c697a000de65514617545323ed7e7ada162aaceed6d91827d0775b9d56
+    - 972b882440f6ebbc948fe965eb4bfe638f735adfcc260f6349aa3e1d560621a7
+pkgname:
+  - name: pamac
+# generated with artixpkg 0.36.4-1-any
