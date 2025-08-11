@@ -1,0 +1,33 @@
+---
+version: 1.11.0-1
+pkgbase:
+  name: ruby-debug
+  pkgdesc: Debugging functionality for Ruby
+  pkgver: 1.11.0
+  pkgrel: 1
+  url: https://github.com/ruby/debug
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - ruby-bundler
+    - ruby-rake
+    - ruby-test-unit
+    - ruby-test-unit-rr
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-irb
+    - ruby-reline
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-debug::git+https://github.com/ruby/debug#tag=v1.11.0
+  sha512sums:
+    - 61256a99f0d5a637cc1ea2ee83e13d8359104b3cd7af5ba3de043866118bc975e9b2dbe7356582cad2a08b07e5bde593b62bb8adb733866cea0cbb5b4b6c1225
+pkgname:
+  - name: ruby-debug
+# generated with artixpkg 0.36.4-1-any
