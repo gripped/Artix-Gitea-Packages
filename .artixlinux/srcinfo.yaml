@@ -1,9 +1,9 @@
 ---
-version: 6.16.0-1
+version: 6.17.0-1
 pkgbase:
   name: kdesu
   pkgdesc: Integration with su for elevated privileges
-  pkgver: 6.16.0
+  pkgver: 6.17.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -27,14 +27,14 @@ pkgbase:
     - libx11
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.16/kdesu-6.16.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.16/kdesu-6.16.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.17/kdesu-6.17.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.17/kdesu-6.17.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - f9cbfae88596cfd00b269744c89a042dfbc048273e35f1c7e158429db55c8d68
+    - 666899ad546b7bd002e3fc1697032f8920ce7261df2ef519e81d4aae91971123
     - SKIP
 pkgname:
   - name: kdesu
