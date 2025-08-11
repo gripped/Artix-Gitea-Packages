@@ -1,9 +1,9 @@
 ---
-version: 11.8.3-1
+version: 12.0.2-1
 pkgbase:
   name: mariadb
   pkgdesc: Fast SQL database server, derived from MySQL
-  pkgver: 11.8.3
+  pkgver: 12.0.2
   pkgrel: 1
   url: https://mariadb.org/
   arch:
@@ -30,7 +30,7 @@ pkgbase:
     - zstd
     - xz
   source:
-    - mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-11.8.3?signed
+    - mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-12.0.2?signed
     - git+https://github.com/MariaDB/mariadb-connector-c.git
     - git+https://github.com/facebook/rocksdb.git
     - git+https://github.com/codership/wsrep-lib.git
@@ -43,7 +43,7 @@ pkgbase:
   validpgpkeys:
     - 177F4010FE56CA3336300305F1656F24C74CD1D8
   sha256sums:
-    - c27a5d127bb262021f9d134fd0e304c7cf426074c732f99084850fd54951c4ca
+    - 226cd30171976f76d7a0d4587f3d53d1f551414d2fc14c36a383209119fc0123
     - SKIP
     - SKIP
     - SKIP
@@ -86,19 +86,19 @@ pkgname:
   - name: mariadb-clients
     pkgdesc: MariaDB client tools
     depends:
-      - mariadb-libs=11.8.3
+      - mariadb-libs=12.0.2
       - jemalloc
       - ncurses
       - libncursesw.so
     provides:
-      - mysql-clients=11.8.3
+      - mysql-clients=12.0.2
     conflicts:
       - mysql-clients
   - name: mariadb
     pkgdesc: Fast SQL database server, derived from MySQL
     install: mariadb.install
     depends:
-      - mariadb-clients=11.8.3
+      - mariadb-clients=12.0.2
       - bzip2
       - libbz2.so
       - coreutils
@@ -117,8 +117,8 @@ pkgname:
       - 'python-mysqlclient: for myrocks_hotbackup'
       - 'xz: lzma provider'
     provides:
-      - mariadb-server=11.8.3
-      - mysql=11.8.3
+      - mariadb-server=12.0.2
+      - mysql=12.0.2
     conflicts:
       - mysql
     options:
