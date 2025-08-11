@@ -1,0 +1,36 @@
+--- a/modules/ECMAddAndroidApk.cmake	2025-08-11 15:42:50.330338358 +0200
++++ b/modules/ECMAddAndroidApk.cmake	2025-08-11 15:40:58.596931534 +0200
+@@ -39,7 +39,7 @@
+ 
+ The following variables impact the behavior:
+ ``ECM_ADDITIONAL_FIND_ROOT_PATH``
+-    See documentation in the Android toolchain file.
++See documentation in the Android toolchain file.
+ 
+ ``ECM_APK_STAGING_ROOT_PATH``
+     For use with Craft's image directory. If set this is used as the source
+@@ -52,18 +52,18 @@
+ file which defines the following variables:
+ ``ecmVersionName``: Set to ``PROJECT_VERSION``
+ ``ecmVersionCode``: Derived from the current time in local builds, and from ``CI_PIPELINE_CREATED_AT``
+-    in builds from Gitlab pipelines. This ensures a strictly increasing version code as well as
+-    synchronized version codes for APKs of multiple architectures when build in a Gitlab pipeline.
++in builds from Gitlab pipelines. This ensures a strictly increasing version code as well as
++synchronized version codes for APKs of multiple architectures when build in a Gitlab pipeline.
+ 
+ This can be included by calling ``apply from: '../ecm-version.gradle'`` in the project's ``build.gradle``
+ file and is typically used in manifest placeholders:
+ 
+ ```
+ defaultConfig {
+-    versionName ecmVersionName
+-    versionCode ecmVersionCode
+-    manifestPlaceholders = [versionName: ecmVersionName, versionCode: ecmVersionCode]
+-    ...
++versionName ecmVersionName
++versionCode ecmVersionCode
++manifestPlaceholders = [versionName: ecmVersionName, versionCode: ecmVersionCode]
++...
+ }
+ ```
+
