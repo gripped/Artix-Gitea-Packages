@@ -26,10 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.4.2-1
+    version: 6.4.3-1
     packages:
-      - hip-runtime-amd-6.4.2-1-x86_64.pkg.tar.zst
-      - hip-runtime-nvidia-6.4.2-1-x86_64.pkg.tar.zst
+      - hip-runtime-amd-6.4.3-1-x86_64.pkg.tar.zst
+      - hip-runtime-nvidia-6.4.3-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.4.1-1

@@ -1,8 +1,8 @@
 ---
-version: 6.4.2-1
+version: 6.4.3-1
 pkgbase:
   name: hip-runtime
-  pkgver: 6.4.2
+  pkgver: 6.4.3
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/HIP/en/latest/
   arch:
@@ -28,10 +28,10 @@ pkgbase:
     - rocprofiler-register
     - cuda
   source:
-    - hip-runtime::git+https://github.com/ROCm/HIP#tag=rocm-6.4.2
-    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.2
-    - hip-runtime-clr::git+https://github.com/ROCm/clr#tag=rocm-6.4.2
-    - hip-runtime-hipother::git+https://github.com/ROcm/hipother#tag=rocm-6.4.2
+    - hip-runtime::git+https://github.com/ROCm/HIP#tag=rocm-6.4.3
+    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.3
+    - hip-runtime-clr::git+https://github.com/ROCm/clr#tag=rocm-6.4.3
+    - hip-runtime-hipother::git+https://github.com/ROcm/hipother#tag=rocm-6.4.3
   sha256sums:
     - d8f5461685917c41c229e9f2449339c32f261d51455fb4d508576fa58801f3e1
     - 9e4f250e3e294112c49ea7aab722475f5061d997651b1dc9e1a0df0b902c1170
@@ -57,7 +57,7 @@ pkgname:
       - 'inetutils: Print hostname in hipconfig'
       - 'cuda: Cross compile for nvidia'
     provides:
-      - hip=6.4.2
+      - hip=6.4.3
     replaces:
       - hip
   - name: hip-runtime-nvidia
