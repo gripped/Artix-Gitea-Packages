@@ -18,12 +18,10 @@ optdepends=('python-pyxdg: to generate fastlane metadata for Android apps'
             'python-yaml: to generate fastlane metadata for Android apps')
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
-        artix.patch
-        ecm.patch)
+        artix.patch)
 sha256sums=('dfecb17d0238f4de1dd3485b92a6606137d4a9c67b9e4ce40407fe0f2aec0a40'
             'SKIP'
-            '65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f'
-            '59fca0bd69c5af49dc66adc1fd11481ba0f7665d12a0367d167be95abdb2e7d6')
+            '65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f')
             
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
               E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
@@ -33,7 +31,6 @@ validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.
 prepare() {
   # Artix stuff - don't delete it!
   patch -d $pkgname-$pkgver -Np1 -i ../artix.patch
-  patch -d $pkgname-$pkgver -Np1 -i ../ecm.patch
 }
 
 build() {

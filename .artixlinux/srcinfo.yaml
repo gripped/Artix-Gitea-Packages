@@ -26,7 +26,6 @@ pkgbase:
     - https://download.kde.org/stable/frameworks/6.17/extra-cmake-modules-6.17.0.tar.xz
     - https://download.kde.org/stable/frameworks/6.17/extra-cmake-modules-6.17.0.tar.xz.sig
     - artix.patch
-    - ecm.patch
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
@@ -35,7 +34,6 @@ pkgbase:
     - dfecb17d0238f4de1dd3485b92a6606137d4a9c67b9e4ce40407fe0f2aec0a40
     - SKIP
     - 65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f
-    - 59fca0bd69c5af49dc66adc1fd11481ba0f7665d12a0367d167be95abdb2e7d6
 pkgname:
   - name: extra-cmake-modules
 # generated with artixpkg 0.36.4-1-any

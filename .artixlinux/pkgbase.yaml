@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,9 +30,9 @@ repos:
       - extra-cmake-modules-6.17.0-1-any.pkg.tar.zst
     debug: []
   world:
-    version: 6.16.0-1
+    version: 6.17.0-1
     packages:
-      - extra-cmake-modules-6.16.0-1-any.pkg.tar.zst
+      - extra-cmake-modules-6.17.0-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
