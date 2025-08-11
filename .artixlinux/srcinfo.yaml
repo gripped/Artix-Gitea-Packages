@@ -1,9 +1,9 @@
 ---
-version: 0.78-1
+version: 0.79-1
 pkgbase:
   name: ell
   pkgdesc: Embedded Linux library
-  pkgver: 0.78
+  pkgver: 0.79
   pkgrel: 1
   url: https://git.kernel.org/pub/scm/libs/ell/ell.git/
   arch:
@@ -18,13 +18,13 @@ pkgbase:
     - gcc-libs
     - glibc
   source:
-    - https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.78.tar.xz
-    - https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.78.tar.sign
+    - https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.79.tar.xz
+    - https://mirrors.edge.kernel.org/pub/linux/libs/ell/ell-0.79.tar.sign
   validpgpkeys:
     - E932D120BC2AEC444E558F0106CA9F5D1DCF2659
   sha256sums:
-    - 28ee1a586b4891c96e68667a424684e64ad35120f345e89d6705bd4023d2d40a
+    - 28dabdb1966fd2e47363c44e041de507e9420411b846947efa01b4cb0cda0d6b
     - SKIP
 pkgname:
   - name: ell
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
