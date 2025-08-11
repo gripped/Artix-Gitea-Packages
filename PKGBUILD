@@ -4,35 +4,35 @@
 # Contributor: Zeph <zeph33@gmail.com>
 
 pkgname=libpamac
-pkgver=11.6.4
-pkgrel=4
+pkgver=11.7.3
+pkgrel=1
 pkgdesc="Pamac package manager library based on libalpm"
 arch=('x86_64')
-url="https://gitlab.manjaro.org/applications/libpamac"
+url="https://github.com/manjaro/libpamac"
 license=('GPL-3.0-only')
 depends=(
-    'glibc'
+    'appstream'
+    'bash'
     'glib2'
+    'glibc'
     'json-glib'
     'libsoup3'
-    'polkit'
     'pacman' 'libalpm.so'
-    'bash'
-    'appstream'
+    'polkit'
 )
 makedepends=(
-    'gettext'
-    'itstool'
-    'vala'
-    'asciidoc'
-    'meson'
-    'gobject-introspection'
-    'git'
-    'dbus-glib'
-    'vte3'
     'appstream-glib'
+    'asciidoc'
+    'dbus-glib'
+    'gettext'
+    'git'
     'gnutls'
+    'gobject-introspection'
+    'itstool'
     'libnotify'
+    'meson'
+    'vala'
+    'vte3'
 )
 provides=(
     'libpamac-appstream.so'
@@ -47,7 +47,7 @@ source=(
     fix-appstream-data.sh
     fix-appstream-data.hook
 )
-sha256sums=('13a3304b018330470ce20c6408134cd8a22bde5bddfc907a8f7f913d492d1ffe'
+sha256sums=('7a0e6abfa5f1ea1f1530301566aacb0acffaf95d93d36a6811dcd874460ca57d'
             '6e0c25f0fcb0076ce78845b037e32925fcc3f1cd1670062c48ed35f564a10244'
             'b5236af02c25cd7de4b2c9c2d0f064dac3c2f54da5cc72bf72fc6236a34bd9c4')
 
