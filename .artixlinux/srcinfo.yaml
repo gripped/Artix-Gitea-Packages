@@ -13,7 +13,7 @@ pkgbase:
   license:
     - LGPL
   makedepends:
-    - python-docutils
+    - python-myst-parser
     - python-requests
     - python-sphinx
     - qt6-tools
