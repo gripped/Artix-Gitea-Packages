@@ -1,8 +1,8 @@
 ---
-version: 6.4.2-1
+version: 6.4.3-1
 pkgbase:
   name: rocm-llvm
-  pkgver: 6.4.2
+  pkgver: 6.4.3
   pkgrel: 1
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
@@ -27,7 +27,7 @@ pkgbase:
     - staticlibs
     - '!lto'
   source:
-    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.2
+    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.3
     - rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
     - rocm-llvm-6.4-fix-array-assert.patch
     - rocm-llvm-6.4-fix-glibc-2.42-termio-removal.patch
