@@ -10,8 +10,7 @@ arch=(any)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
 depends=(cmake)
-makedepends=(python-myst-parser
-             python-requests
+makedepends=(python-requests
              python-sphinx
              qt6-tools)
 optdepends=('python-pyxdg: to generate fastlane metadata for Android apps'
@@ -37,7 +36,7 @@ prepare() {
 build() {
   cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DBUILD_HTML_DOCS=ON \
+    -DBUILD_HTML_DOCS=OFF \
     -DBUILD_QTHELP_DOCS=ON \
     -DBUILD_TESTING=OFF
   cmake --build build
