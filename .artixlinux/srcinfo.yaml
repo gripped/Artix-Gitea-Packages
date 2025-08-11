@@ -151,22 +151,4 @@ pkgname:
       - Zlib
     depends:
       - pahole
-  - name: linux-rt-docs
-    pkgdesc: Documentation for the Linux RT kernel
-    license:
-      - BSD-3-Clause
-      - GFDL-1.1-no-invariants-or-later
-      - GPL-2.0-only
-      - GPL-2.0-only OR BSD-2-Clause
-      - GPL-2.0-only OR BSD-3-Clause
-      - GPL-2.0-only OR GFDL-1.1-no-invariants-or-later
-      - GPL-2.0-only OR GFDL-1.2-no-invariants-only
-      - GPL-2.0-only OR MIT
-      - GPL-2.0-or-later
-      - GPL-2.0-or-later OR BSD-2-Clause
-      - GPL-2.0-or-later OR CC-BY-4.0
-      - GPL-2.0-or-later OR MIT
-      - GPL-2.0-or-later OR X11
-      - LGPL-2.1-only OR BSD-2-Clause
-      - MIT
 # generated with artixpkg 0.36.4-1-any
