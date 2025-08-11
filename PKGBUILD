@@ -36,8 +36,8 @@ prepare() {
 build() {
   cmake -B build -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DBUILD_HTML_DOCS=OFF \
-    -DBUILD_QTHELP_DOCS=ON \
+    -DBUILD_HTML_DOCS=ON \
+    -DBUILD_QTHELP_DOCS=OFF \
     -DBUILD_TESTING=OFF
   cmake --build build
 }
