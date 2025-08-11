@@ -10,7 +10,8 @@ arch=(any)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
 depends=(cmake)
-makedepends=(python-requests
+makedepends=(python-docutils
+             python-requests
              python-sphinx
              qt6-tools)
 optdepends=('python-pyxdg: to generate fastlane metadata for Android apps'
