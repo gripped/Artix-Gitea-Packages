@@ -1,0 +1,45 @@
+---
+version: 1.0.12-1
+pkgbase:
+  name: lua-mpack
+  pkgdesc: libmpack lua binding
+  pkgver: 1.0.12
+  pkgrel: 1
+  url: https://github.com/libmpack/libmpack-lua
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - lua51
+    - lua52
+    - lua53
+    - lua
+  depends:
+    - libmpack
+  source:
+    - libmpack-lua-1.0.12.tar.gz::https://github.com/libmpack/libmpack-lua/archive/1.0.12.tar.gz
+  sha256sums:
+    - 7c3f0a5fcd0d7c169fd7bc95978412628d8f59eb9da1d32cf3e8a864b741ec92
+pkgname:
+  - name: lua51-mpack
+    pkgdesc: Simple implementation of msgpack in C Lua 5.1
+    depends:
+      - libmpack
+      - lua51
+  - name: lua52-mpack
+    pkgdesc: Simple implementation of msgpack in C Lua 5.2
+    depends:
+      - libmpack
+      - lua52
+  - name: lua53-mpack
+    pkgdesc: Simple implementation of msgpack in C Lua 5.3
+    depends:
+      - libmpack
+      - lua53
+  - name: lua-mpack
+    pkgdesc: Simple implementation of msgpack in C Lua 5.4
+    depends:
+      - libmpack
+      - lua
+# generated with artixpkg 0.36.4-1-any
