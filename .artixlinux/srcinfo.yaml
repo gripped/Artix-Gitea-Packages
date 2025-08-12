@@ -1,0 +1,37 @@
+---
+version: 0.193-4
+pkgbase:
+  name: lib32-libelf
+  pkgdesc: Handle ELF object files and DWARF debugging information (libraries, 32-bit)
+  pkgver: 0.193
+  pkgrel: 4
+  url: https://sourceware.org/elfutils/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later OR LGPL-3.0-or-later
+  makedepends:
+    - git
+    - lib32-libarchive
+    - lib32-gcc-libs
+  depends:
+    - libelf=0.193
+    - lib32-bzip2
+    - lib32-curl
+    - lib32-glibc
+    - lib32-json-c
+    - lib32-xz
+    - lib32-zlib
+    - lib32-zstd
+  source:
+    - git+https://sourceware.org/git/elfutils.git?signed#tag=elfutils-0.193
+  validpgpkeys:
+    - EC3CFE88F6CA0788774F5C1D1AA44BE649DE760A
+    - 6C2B631563B8D330578D3CB474FD3FA2779E7073
+  sha512sums:
+    - 44e60727d96c9eb969b0056cb5eb0dff91b2763f8e835404ab4485914b346f93f56756a6f5ea3af706ff15c4052eae77c5ea6544bcd0cf78b3dc9b2dd33bb884
+  b2sums:
+    - 7f8386a37452d46c40b7428d841c43afedf24055390ddd8881410cd96928ccfc979628a1d8dbd7e9a0dd3098cc1d826f238f33c995902fc22e175899ea7d8086
+pkgname:
+  - name: lib32-libelf
+# generated with artixpkg 0.36.4-1-any
