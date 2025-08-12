@@ -1,10 +1,10 @@
 ---
-version: 1.0.0-1
+version: 1.0.0-2
 pkgbase:
   name: dinit-user-spawn
   pkgdesc: Launches a user process dinit for you on login
   pkgver: 1.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/initMayday/dinit-user-spawn
   install: dinit-user-spawn.install
   arch:
