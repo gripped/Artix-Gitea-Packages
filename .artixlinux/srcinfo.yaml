@@ -1,10 +1,10 @@
 ---
-version: 0.18.2-1
+version: 0.18.2-2
 pkgbase:
   name: wlroots0.18
   pkgdesc: Modular Wayland compositor library
   pkgver: 0.18.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/wlroots/wlroots
   arch:
     - x86_64
@@ -54,4 +54,4 @@ pkgbase:
     - 570224bf7293f6d57e713f5acbf17a64ddf6daa41112f14ea028dd9ba7a82814
 pkgname:
   - name: wlroots0.18
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
