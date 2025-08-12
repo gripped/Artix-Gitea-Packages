@@ -1,0 +1,26 @@
+---
+version: 2.1-1
+pkgbase:
+  name: sbc
+  pkgdesc: Bluetooth Subband Codec (SBC) library
+  pkgver: 2.1
+  pkgrel: 1
+  url: https://git.kernel.org/pub/scm/bluetooth/sbc.git
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+  depends:
+    - glibc
+  provides:
+    - libsbc.so
+  source:
+    - git+https://git.kernel.org/pub/scm/bluetooth/sbc.git#tag=2.1
+  b2sums:
+    - b40f82ead849cb047c1a95d76f42be8d03756bc0e400282a840543cd9c0fad2fa49229b64915f6e2e13123511e19cb009dd3e09144e4f6e413403873cafb624f
+pkgname:
+  - name: sbc
+# generated with artixpkg 0.36.4-1-any
