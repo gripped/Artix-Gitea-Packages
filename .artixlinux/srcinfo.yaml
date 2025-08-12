@@ -1,0 +1,34 @@
+---
+version: 0.11.1-1
+pkgbase:
+  name: multipath-tools
+  pkgdesc: Multipath tools for Linux (including kpartx)
+  pkgver: 0.11.1
+  pkgrel: 1
+  url: https://github.com/opensvc/multipath-tools
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - GPL-3.0-or-later
+    - LGPL-2.0-or-later
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - udev
+  depends:
+    - glibc
+    - gcc-libs
+    - libaio
+    - device-mapper
+    - json-c
+    - liburcu
+    - libudev
+    - util-linux-libs
+  source:
+    - multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=0.11.1
+  sha256sums:
+    - 8d21fe887366b7c300e3d13db5354f82e08ac3f696e91d0138ee5fa7c583b0ae
+pkgname:
+  - name: multipath-tools
+# generated with artixpkg 0.36.4-1-any
