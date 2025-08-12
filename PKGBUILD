@@ -3,7 +3,7 @@
 # Maintainer: Tom Gundersen <teg@jklm.no>
 
 _pkgbase=systemd
-_tag='257.7'
+_tag='257.8'
 
 pkgname=lib32-udev
 pkgver="${_tag/[-~]/}"
@@ -46,7 +46,7 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
               '5C251B5FC54EB2F80F407AAAC54CA336CFEB557E') # Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-artix-standalone-install.patch)
-sha512sums=('94c4f1fa540395653594d25a9633a47d2ce3053f0511b041b0ec73ddbb0db7877a50563be6c3ac3c9c5d1f5964b88a7de17f5fbd843e1391123ee6f0227fbd02'
+sha512sums=('ff06b4a7854b67e36079fd2ba4c1fc9e772b8227606521cae641eb6633c872fa0f528e0a9c0b13b3b47741243b1735c7500261a8f7c714b5383cd89746d2181f'
             'c2d1b85f3cd5948333edca36b590dad19d5045424f0145b64fe9abdf6fe7e2c3a0fca6c1901e9bfaa26b4e6fc98ff0ec8d9c825845f778fe77d681075cc47eb2')
 
 _backports=(
