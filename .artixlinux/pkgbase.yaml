@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,9 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 0.193-4
+    packages:
+      - elfutils-0.193-4-x86_64.pkg.tar.zst
+      - libelf-0.193-4-x86_64.pkg.tar.zst
+      - debuginfod-0.193-4-x86_64.pkg.tar.zst
+    debug:
+      - elfutils-debug-0.193-4-x86_64.pkg.tar.zst
   system:
     version: 0.193-3
     packages:
