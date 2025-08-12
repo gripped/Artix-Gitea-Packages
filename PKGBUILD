@@ -9,7 +9,7 @@
 
 pkgname=tp_smapi
 pkgver=0.45
-pkgrel=8
+pkgrel=10
 pkgdesc="Modules for ThinkPad's SMAPI functionality"
 url='https://github.com/evgeni/tp_smapi'
 arch=(x86_64)
@@ -43,6 +43,9 @@ package() {
   cd tp_smapi
 
   find . -name "*.ko" -exec install -Dt "$pkgdir$extradir" {} +
+
+  # Manually strip and compress kernel module.
+  # TODO: Replace with zipkmod option once supported by makepkg.
   find "$pkgdir" -name "*.ko" -exec strip --strip-debug {} +
   find "$pkgdir" -name '*.ko' -exec zstd --rm -19 {} +
 
