@@ -1,9 +1,9 @@
 ---
-version: 20250512-1
+version: 20250812-1
 pkgbase:
   name: intel-ucode
   pkgdesc: Microcode update files for Intel CPUs
-  pkgver: 20250512
+  pkgver: 20250812
   pkgrel: 1
   url: https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   replaces:
     - microcode_ctl
   source:
-    - https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/archive/refs/tags/microcode-20250512.tar.gz
+    - https://github.com/intel/Intel-Linux-Processor-Microcode-Data-Files/archive/refs/tags/microcode-20250812.tar.gz
   sha256sums:
-    - 041af7d2f5791a47c1e914abd7d6255de4d4fc61b0f8e49ada6ee7014bcc3614
+    - a8358422c68cc4d15c26db1ef682fbce332c3f46c4e087a79c132c437ec5f407
 pkgname:
   - name: intel-ucode
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
