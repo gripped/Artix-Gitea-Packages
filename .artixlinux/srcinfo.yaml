@@ -1,0 +1,86 @@
+---
+version: 46.7-2
+pkgbase:
+  name: mutter46
+  pkgdesc: Window manager and compositor for Elementary
+  pkgver: 46.7
+  pkgrel: 2
+  url: https://gitlab.gnome.org/GNOME/mutter
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - egl-wayland
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - sysprof
+    - wayland-protocols
+  depends:
+    - at-spi2-core
+    - cairo
+    - colord
+    - dconf
+    - fontconfig
+    - fribidi
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-desktop-4
+    - gnome-settings-daemon
+    - graphene
+    - gsettings-desktop-schemas
+    - gtk4
+    - harfbuzz
+    - iio-sensor-proxy
+    - lcms2
+    - libcanberra
+    - libcolord
+    - libdisplay-info
+    - libdrm
+    - libei
+    - libglvnd
+    - libgudev
+    - libice
+    - libinput
+    - libpipewire
+    - libsm
+    - libsysprof-capture
+    - libwacom
+    - libx11
+    - libxau
+    - libxcb
+    - libxcomposite
+    - libxcursor
+    - libxdamage
+    - libxext
+    - libxfixes
+    - libxi
+    - libxinerama
+    - libxkbcommon
+    - libxkbcommon-x11
+    - libxkbfile
+    - libxrandr
+    - libxtst
+    - mesa
+    - pango
+    - pipewire
+    - pixman
+    - python
+    - startup-notification
+    - wayland
+    - xorg-xwayland
+  provides:
+    - libmutter-14.so
+  conflicts:
+    - mutter
+  source:
+    - git+https://gitlab.gnome.org/GNOME/mutter.git#tag=46.7
+  b2sums:
+    - 1663b4635a3eb26599d5dad9b2e0ea707af21ef1b3c0326c504f24a37222da463a5d11b505a2bde6c0543e01aeb7f1c6dd244bfaa725d82f774049f2ef348950
+pkgname:
+  - name: mutter46
+# generated with artixpkg 0.36.4-1-any
