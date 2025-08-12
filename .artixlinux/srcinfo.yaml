@@ -1,9 +1,9 @@
 ---
-version: 575.64.05-1
+version: 575.64.05-2
 pkgbase:
   name: nvidia-utils
   pkgver: 575.64.05
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.nvidia.com/
   arch:
     - x86_64
