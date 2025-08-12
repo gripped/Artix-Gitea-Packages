@@ -1,0 +1,36 @@
+---
+version: 3.5.0-1
+pkgbase:
+  name: python-jose
+  pkgdesc: A JOSE implementation in Python
+  pkgver: 3.5.0
+  pkgrel: 1
+  url: https://github.com/mpdavis/python-jose
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-cryptography
+    - python-pycryptodome
+    - python-pytest
+  makedepends:
+    - git
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python-ecdsa
+    - python-pyasn1
+    - python-rsa
+  optdepends:
+    - 'python-cryptography: one option for better performance'
+    - 'python-pycryptodome: one option for better performance'
+  source:
+    - git+https://github.com/mpdavis/python-jose.git#tag=3.5.0
+  sha512sums:
+    - 1cb4d1768aa39e556312b4952a09ea51287a920cf941f477a56679c55c3ec06f7e54787e4579915d16a0c3e6744c220e0f2c0495cf5a53c17285ffde7ad964cb
+pkgname:
+  - name: python-jose
+# generated with artixpkg 0.36.4-1-any
