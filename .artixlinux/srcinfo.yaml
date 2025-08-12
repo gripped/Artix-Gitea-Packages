@@ -1,0 +1,32 @@
+---
+version: 1.25.0-1
+pkgbase:
+  name: python-dunamai
+  pkgdesc: A library for producing dynamic version strings, derived from VCS tags
+  pkgver: 1.25.0
+  pkgrel: 1
+  url: https://github.com/mtkennerly/dunamai
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-setuptools
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-packaging
+  source:
+    - python-dunamai::git+https://github.com/mtkennerly/dunamai#tag=v1.25.0
+  sha512sums:
+    - 826f6c4adcb76a79f25ab8ff2f0ed7fccc579687baaa73b9053708eed36674f1bd1a62dae84fc6bd4e4f3b927088962900e1d5e0123fe3a609ff4714498d5c38
+  b2sums:
+    - bad2f992467e78c6c6c50926561c514363043f8f34f6bf71a4123e9034c5400260309200b7d78f42640fbe79735f0faa88e2e33032ee89f69f39b41390304819
+pkgname:
+  - name: python-dunamai
+# generated with artixpkg 0.36.4-1-any
