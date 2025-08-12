@@ -1,0 +1,24 @@
+---
+version: 1.6-1
+pkgbase:
+  name: slock
+  pkgdesc: A simple screen locker for X
+  pkgver: 1.6
+  pkgrel: 1
+  url: https://tools.suckless.org/slock
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+  depends:
+    - libxext
+    - libxrandr
+  source:
+    - git+https://git.suckless.org/slock#tag=1.6
+  sha256sums:
+    - a389473b5166d3cb3ecc04fdc4e954b9b0adcdd979af9a2ecbfb6f062c674ce6
+pkgname:
+  - name: slock
+# generated with artixpkg 0.36.4-1-any
