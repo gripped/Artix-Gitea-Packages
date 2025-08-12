@@ -1,0 +1,30 @@
+---
+version: 0.20-1
+pkgbase:
+  name: python-fasteners
+  pkgdesc: A python package that provides useful locks.
+  pkgver: 0.20
+  pkgrel: 1
+  url: https://github.com/harlowja/fasteners
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-eventlet
+    - python-more-itertools
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-fasteners-0.20.tar.gz::https://github.com/harlowja/fasteners/archive/0.20.tar.gz
+  sha512sums:
+    - 539ce5b16f70a73fe6b7296a1bab3b751eff7b7385b980eba3e4d6e42eb263448fd074f325529a30d982e1c366a122aef46bc359578a370ef1278225c09a5f71
+pkgname:
+  - name: python-fasteners
+# generated with artixpkg 0.36.4-1-any
