@@ -1,0 +1,33 @@
+---
+version: 25.01-1
+pkgbase:
+  name: 7zip
+  pkgdesc: File archiver for extremely high compression
+  pkgver: 25.01
+  pkgrel: 1
+  url: https://www.7-zip.org
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+    - BSD-3-Clause
+    - LicenseRef-UnRAR
+  makedepends:
+    - uasm
+  depends:
+    - glibc
+    - gcc-libs
+    - sh
+  provides:
+    - p7zip
+  conflicts:
+    - p7zip
+  replaces:
+    - p7zip
+  source:
+    - https://7-zip.org/a/7z2501-src.tar.xz
+  sha256sums:
+    - ed087f83ee789c1ea5f39c464c55a5c9d4008deb0efe900814f2df262b82c36e
+pkgname:
+  - name: 7zip
+# generated with artixpkg 0.36.4-1-any
