@@ -1,0 +1,35 @@
+---
+version: 0.16-1
+pkgbase:
+  name: python-ini2toml
+  pkgdesc: Automatically conversion of .ini/.cfg files to TOML equivalents
+  pkgver: 0.16
+  pkgrel: 1
+  url: https://github.com/abravalheri/ini2toml
+  arch:
+    - any
+  license:
+    - MPL
+  checkdepends:
+    - python-pytest-randomly
+    - python-tomli-w
+    - python-validate-pyproject
+    - python-tomli
+  makedepends:
+    - git
+    - python-setuptools-scm
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python-packaging
+    - python-setuptools
+    - python-configupdater
+    - python-tomlkit
+  source:
+    - git+https://github.com/abravalheri/ini2toml.git#tag=v0.16
+  sha512sums:
+    - fe406bf6aadf3a9aff661f4a9acc7f9501c63d7aa9db23cd99d0e9b59f959ba8d90a5d445ec55e90b11abcdf8852f9b611302824347ccef20f89ba73ce9d8571
+pkgname:
+  - name: python-ini2toml
+# generated with artixpkg 0.36.4-1-any
