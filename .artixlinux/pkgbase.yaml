@@ -1,12 +1,12 @@
 ---
-team: world
+team: system
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -18,8 +18,9 @@ repos:
     packages: []
     debug: []
   system:
-    version: null
-    packages: []
+    version: 1.0.0-2
+    packages:
+      - dinit-user-spawn-1.0.0-2-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
@@ -30,9 +31,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.0.0-2
-    packages:
-      - dinit-user-spawn-1.0.0-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
