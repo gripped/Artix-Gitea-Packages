@@ -1,0 +1,30 @@
+---
+version: 20250814-1
+pkgbase:
+  name: syncthing-dinit
+  pkgdesc: dinit service scripts for syncthing
+  pkgver: 20250814
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - syncthing
+    - dinit
+  provides:
+    - init-syncthing
+  conflicts:
+    - init-syncthing
+  backup:
+    - etc/dinit.d/syncthing
+  source:
+    - syncthing
+  sha256sums:
+    - bf4ce8c25251e267515bac6a435aaa2687487566f1c707f0c81c694937be0d21
+pkgname:
+  - name: syncthing-dinit
+# generated with artixpkg 0.36.4-1-any
