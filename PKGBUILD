@@ -4,7 +4,7 @@
 
 pkgname=libxfce4windowing
 pkgver=4.20.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Windowing concept abstraction library for X11 and Wayland"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4windowing/start"
