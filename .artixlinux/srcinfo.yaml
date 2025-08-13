@@ -1,0 +1,23 @@
+---
+version: 319-1
+pkgbase:
+  name: libretro-overlays
+  pkgdesc: Collection of overlays for libretro
+  pkgver: 319
+  pkgrel: 1
+  url: https://github.com/libretro/common-overlays
+  arch:
+    - any
+  groups:
+    - libretro
+  license:
+    - CCPL
+  makedepends:
+    - git
+  source:
+    - libretro-overlays::git+https://github.com/libretro/common-overlays.git#commit=5fb4ae75d81202b3eca5545cfa21bd813ff405b5
+  sha256sums:
+    - e274f38185923c0e0640a007ab8b68d9314c0c1e5889edd1c1c518a365a5c2ad
+pkgname:
+  - name: libretro-overlays
+# generated with artixpkg 0.36.4-1-any
