@@ -1,0 +1,53 @@
+---
+version: 33059-1
+pkgbase:
+  name: libretro-dolphin
+  pkgdesc: Nintendo GC/Wii core
+  pkgver: 33059
+  pkgrel: 1
+  url: https://github.com/libretro/dolphin
+  arch:
+    - x86_64
+  groups:
+    - libretro
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - clang
+    - cmake
+    - git
+    - libglvnd
+    - mesa
+    - ninja
+    - python
+  depends:
+    - alsa-lib
+    - bluez-libs
+    - bzip2
+    - enet
+    - fmt
+    - gcc-libs
+    - glibc
+    - hidapi
+    - libevdev
+    - libgl
+    - libretro-core-info
+    - libusb
+    - libx11
+    - libxi
+    - libxrandr
+    - lzo
+    - sfml
+    - libudev.so
+    - xz
+    - zlib
+    - zstd
+  source:
+    - libretro-dolphin::git+https://github.com/libretro/dolphin.git#commit=83438f9b1a2c832319876a1fda130a5e33d4ef87
+    - fmt-10.patch
+  b2sums:
+    - 1307455835872b063ba87df95c7258b544a4e2e691a38aaa9b2b620e492f437fb05d6a759572dbce861ba56bbf8e5af186b992f64e534ee9767e1ea304632801
+    - e669c2497beaa42e5bde4033ebac00b85bb4f28ebff910c952dc4354de174267fcf2a1d27d6ca8b421c5c1e81591f7375150b0954d92c172d144e7a89a884186
+pkgname:
+  - name: libretro-dolphin
+# generated with artixpkg 0.36.4-1-any
