@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: libretro-mgba
-  version: 9298-2
-  arch:
-    - x86_64
-  pkgname:
-    - libretro-mgba
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 9298-2
+    version: 9839-1
     packages:
-      - libretro-mgba-9298-2-x86_64.pkg.tar.zst
+      - libretro-mgba-9839-1-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
