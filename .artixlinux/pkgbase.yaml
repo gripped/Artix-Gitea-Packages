@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20250813-1
+    packages:
+      - dbus-dinit-20250813-1-any.pkg.tar.zst
+      - dbus-dinit-user-20250813-1-any.pkg.tar.zst
     debug: []
   system:
     version: 20240610-2
@@ -27,10 +29,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20250813-1
-    packages:
-      - dbus-dinit-20250813-1-any.pkg.tar.zst
-      - dbus-dinit-user-20250813-1-any.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: null
