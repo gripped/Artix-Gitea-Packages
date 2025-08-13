@@ -1,0 +1,56 @@
+---
+version: 0.17.4-4
+pkgbase:
+  name: wlroots0.17
+  pkgdesc: Modular Wayland compositor library
+  pkgver: 0.17.4
+  pkgrel: 4
+  url: https://gitlab.freedesktop.org/wlroots/wlroots
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - glslang
+    - meson
+    - ninja
+    - vulkan-headers
+    - wayland-protocols
+    - xorg-xwayland
+  depends:
+    - libdisplay-info.so
+    - libglvnd
+    - libinput
+    - libpixman-1.so
+    - libseat.so
+    - libudev.so
+    - libvulkan.so
+    - libwayland-client.so
+    - libwayland-server.so
+    - libxcb
+    - libxkbcommon.so
+    - opengl-driver
+    - xcb-util-errors
+    - xcb-util-renderutil
+    - xcb-util-wm
+  optdepends:
+    - 'xorg-xwayland: Xwayland support'
+  provides:
+    - libwlroots.so
+  conflicts:
+    - wlroots<0.18
+  source:
+    - https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.17.4/downloads/wlroots-0.17.4.tar.gz
+    - https://gitlab.freedesktop.org/wlroots/wlroots/-/releases/0.17.4/downloads/wlroots-0.17.4.tar.gz.sig
+    - Revert-layer-shell-error-on-0-dimension-without-anch.patch
+  validpgpkeys:
+    - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
+    - 9DDA3B9FA5D58DD5392C78E652CB6609B22DA89A
+    - 4100929B33EEB0FD1DB852797BC79407090047CA
+  sha256sums:
+    - d3190d19d03446955e68a92c77d4c74af78384b0db39a85a0b1582adc80f36d1
+    - SKIP
+    - 1c05f0500a96a3721317d01619aa42d8ad696905a378249e8405968c4e16a065
+pkgname:
+  - name: wlroots0.17
+# generated with artixpkg 0.36.4-1-any
