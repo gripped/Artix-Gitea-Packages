@@ -2,8 +2,8 @@
 
 pkgbase=dbus-dinit
 pkgname=('dbus-dinit' 'dbus-dinit-user')
-pkgver=20240610
-pkgrel=2
+pkgver=20250813
+pkgrel=1
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
@@ -37,7 +37,10 @@ package_dbus-dinit() {
 
 package_dbus-dinit-user() {
     pkgdesc="dinit user service scripts for dbus"
-    depends+=('turnstile' 'dinit-base')
+    # swap turnstile for dinit-user-spawn
+    # if we want to have both, we could add a "dinit-user-svc" provided in both
+    # and make it dpend here
+    depends+=('dinit-user-spawn' 'dinit-base')
     groups=('dinit-user-services')
     install -Dm644 dbus.user        "$pkgdir/etc/dinit.d/user/dbus"
     install -Dm755 dbus.user.script "$pkgdir/usr/lib/dinit/user/dbus"
