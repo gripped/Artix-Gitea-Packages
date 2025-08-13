@@ -1,0 +1,23 @@
+---
+version: 20250813-1
+pkgbase:
+  name: wireplumber-dinit
+  pkgdesc: dinit user service script for wireplumber
+  pkgver: 20250813
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-user-services
+  license:
+    - BSD
+  depends:
+    - pipewire-dinit
+  source:
+    - wireplumber.user
+  sha256sums:
+    - 0bcb623d1282ea79b160f2a59900536698b191301a7980642f4f99b8c5470451
+pkgname:
+  - name: wireplumber-dinit
+# generated with artixpkg 0.36.4-1-any
