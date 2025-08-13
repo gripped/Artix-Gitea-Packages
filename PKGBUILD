@@ -3,11 +3,11 @@
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
-groups=('dinit-world')
+groups=('dinit-system')
 license=(
     AGPL-3.0-or-later
 )
