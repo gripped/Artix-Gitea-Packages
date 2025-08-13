@@ -1,0 +1,30 @@
+---
+version: 20250813-1
+pkgbase:
+  name: syncthing-relaysrv-s6
+  pkgdesc: s6-rc service scripts for syncthing-relaysrv
+  pkgver: 20250813
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-services
+  arch:
+    - any
+  groups:
+    - s6-world
+  makedepends:
+    - git
+  depends:
+    - syncthing-relaysrv
+    - s6-base
+  provides:
+    - init-syncthing-relaysrv
+  conflicts:
+    - init-syncthing-relaysrv
+  backup:
+    - etc/s6/config/syncthing-relaysrv.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=9b135a47a3a94917b36d2545c7d7ea30e650cba6
+  sha256sums:
+    - 5178be4d2fe11108470ce4d39b61b5f38025009f643367aad920e0b229b73d53
+pkgname:
+  - name: syncthing-relaysrv-s6
+# generated with artixpkg 0.36.4-1-any
