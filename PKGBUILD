@@ -3,7 +3,7 @@
 
 pkgname=cmatrix
 pkgver=2.0
-pkgrel=4
+pkgrel=4.1
 pkgdesc="A curses-based scrolling 'Matrix'-like screen"
 arch=('x86_64')
 url="https://www.asty.org/cmatrix/"

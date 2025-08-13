@@ -1,10 +1,10 @@
 ---
-version: 2.0-4
+version: 2.0-4.1
 pkgbase:
   name: cmatrix
   pkgdesc: A curses-based scrolling 'Matrix'-like screen
   pkgver: 2.0
-  pkgrel: 4
+  pkgrel: 4.1
   url: https://www.asty.org/cmatrix/
   arch:
     - x86_64
