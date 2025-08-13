@@ -3,7 +3,7 @@
 
 pkgname=ddcutil
 pkgver=2.2.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Query and change Linux monitor settings using DDC/CI and USB.'
 url='http://ddcutil.com/'
 arch=('x86_64')
