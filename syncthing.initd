@@ -15,7 +15,7 @@ description="Syncthing is an open, trustworthy and decentralized cloud storage s
 pidfile="/run/syncthing.pid"
 supervisor=supervise-daemon
 command="/usr/bin/syncthing"
-command_args="-no-browser -home=${SYNCTHING_HOMEDIR} ${SYNCTHING_OPTS}"
+command_args="--no-browser --home=${SYNCTHING_HOMEDIR} ${SYNCTHING_OPTS}"
 command_user="${SYNCTHING_USER}:${SYNCTHING_GROUP}"
 output_log="$SYNCTHING_LOGFILE"
 error_log="$output_log"
@@ -30,8 +30,8 @@ depend() {
 
 start_pre() {
   if [ ! -d "$SYNCTHING_HOMEDIR" ]; then
-  	install -d "$SYNCTHING_HOMEDIR"
-	chown "$command_user" "$SYNCTHING_HOMEDIR"
+    install -d "$SYNCTHING_HOMEDIR"
+    chown "$command_user" "$SYNCTHING_HOMEDIR"
   fi
 
   checkpath -d -o "$command_user" "$SYNCTHING_LOGDIR"
