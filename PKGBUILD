@@ -19,7 +19,7 @@ conflicts=('init-syncthing')
 source=("syncthing.run"
         "logsyncthing.run"
         "syncthing.conf")
-sha256sums=('937c1c910f583e38bedf911d0ef522b6fc16998302d6d9cd4e313bdec65cad83'
+sha256sums=('9539c154ac402f29e4e1c465af3eab97e63f514a5461df7ba6c1bed7c3bf56eb'
             'cc524d6e190a19a70ca34b66520abec2060e08041589b34a3a1048b63e6bf4a4'
             '9af1ce2cf531c758a0a84f7e683172cac24081fbb2001d6e3125e512a214f03e')
 
