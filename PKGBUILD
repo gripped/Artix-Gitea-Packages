@@ -16,7 +16,7 @@ pkgname=(
 )
 epoch=1
 pkgver=1.89.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Systems programming language focused on safety, speed and concurrency"
 url=https://www.rust-lang.org/
 arch=(x86_64)
@@ -130,7 +130,7 @@ download-ci-llvm = false
 link-shared = true
 
 [build]
-description = "Arch Linux $pkgbase $epoch:$pkgver-$pkgrel"
+description = "Artix Linux $pkgbase $epoch:$pkgver-$pkgrel"
 target = [
   "x86_64-unknown-linux-gnu",
   "i686-unknown-linux-gnu",

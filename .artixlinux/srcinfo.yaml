@@ -1,10 +1,10 @@
 ---
-version: 1:1.89.0-1
+version: 1:1.89.0-1.1
 pkgbase:
   name: rust
   pkgdesc: Systems programming language focused on safety, speed and concurrency
   pkgver: 1.89.0
-  pkgrel: 1
+  pkgrel: 1.1
   epoch: 1
   url: https://www.rust-lang.org/
   arch:
