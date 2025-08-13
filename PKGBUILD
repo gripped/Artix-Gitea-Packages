@@ -3,8 +3,8 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=syncthing-runit
-pkgver=20190202
-pkgrel=4
+pkgver=20250813
+pkgrel=1
 pkgdesc="Runit service script for syncthing"
 arch=('any')
 url="https://artixlinux.org"
