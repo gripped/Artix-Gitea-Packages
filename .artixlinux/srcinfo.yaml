@@ -1,10 +1,10 @@
 ---
-version: 48.0-6
+version: 48.0-7
 pkgbase:
   name: sysprof
   pkgdesc: Kernel based performance profiler
   pkgver: 48.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://apps.gnome.org/Sysprof/
   arch:
     - x86_64
