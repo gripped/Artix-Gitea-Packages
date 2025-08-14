@@ -1,15 +1,15 @@
 ---
-version: 4.4.6-1
+version: 4.4.6-2
 pkgbase:
   name: ffmpeg4.4
   pkgdesc: Complete solution to record, convert and stream audio and video
   pkgver: 4.4.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://ffmpeg.org/
   arch:
     - x86_64
   license:
-    - GPL3
+    - GPL-3.0-only
   makedepends:
     - amf-headers
     - avisynthplus
@@ -20,8 +20,11 @@ pkgbase:
     - alsa-lib
     - aom
     - bzip2
+    - cairo
     - fontconfig
     - fribidi
+    - glib2
+    - glibc
     - gmp
     - gnutls
     - gsm
@@ -93,4 +96,4 @@ pkgbase:
     - b656a17dd3996c6871d322ba1fcf25410ed580d9600348cda087d705660601d06070492300d31c12d54b0e9914cb92bb9d997e51462c0577e1a90539bf0b76ee
 pkgname:
   - name: ffmpeg4.4
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.4-1-any
