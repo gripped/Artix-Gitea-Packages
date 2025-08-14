@@ -5,7 +5,7 @@
 pkgbase=linux-rt
 pkgver=6.14.0.rt3.artix1
 archpkgver=6.14.0.rt3.arch1
-pkgrel=2
+pkgrel=3
 pkgdesc='Linux RT'
 arch=(x86_64)
 url="https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt"
@@ -107,7 +107,7 @@ build() {
   cd $_srcname
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  # make htmldocs
+  make htmldocs
 }
 
 _package() {
@@ -367,7 +367,7 @@ _package-docs() {
 pkgname=(
   "$pkgbase"
   "$pkgbase-headers"
-  # "$pkgbase-docs"
+  "$pkgbase-docs"
 )
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
