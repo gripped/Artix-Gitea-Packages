@@ -1,10 +1,10 @@
 ---
-version: 6.6.87.rt54.artix1-2
+version: 6.6.87.rt54.artix1-3
 pkgbase:
   name: linux-rt-lts
   pkgdesc: Linux RT LTS
   pkgver: 6.6.87.rt54.artix1
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts
   arch:
     - x86_64
@@ -152,4 +152,22 @@ pkgname:
       - Zlib
     depends:
       - pahole
+  - name: linux-rt-lts-docs
+    pkgdesc: Documentation for the Linux RT LTS kernel
+    license:
+      - BSD-3-Clause
+      - GFDL-1.1-no-invariants-or-later
+      - GPL-2.0-only
+      - GPL-2.0-only OR BSD-2-Clause
+      - GPL-2.0-only OR BSD-3-Clause
+      - GPL-2.0-only OR GFDL-1.1-no-invariants-or-later
+      - GPL-2.0-only OR GFDL-1.2-no-invariants-only
+      - GPL-2.0-only OR MIT
+      - GPL-2.0-or-later
+      - GPL-2.0-or-later OR BSD-2-Clause
+      - GPL-2.0-or-later OR CC-BY-4.0
+      - GPL-2.0-or-later OR MIT
+      - GPL-2.0-or-later OR X11
+      - LGPL-2.1-only OR BSD-2-Clause
+      - MIT
 # generated with artixpkg 0.36.4-1-any
