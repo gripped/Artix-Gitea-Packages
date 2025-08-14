@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,9 +13,11 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 2.5.4+r62+g6389dce8-1
+    packages:
+      - libtool-2.5.4+r62+g6389dce8-1-x86_64.pkg.tar.zst
+    debug:
+      - libtool-debug-2.5.4+r62+g6389dce8-1-x86_64.pkg.tar.zst
   system:
     version: 2.5.4+r23+g5b582aed-2
     packages:
