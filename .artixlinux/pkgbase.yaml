@@ -13,13 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 0.193-4
+    version: 0.193-5
     packages:
-      - elfutils-0.193-4-x86_64.pkg.tar.zst
-      - libelf-0.193-4-x86_64.pkg.tar.zst
-      - debuginfod-0.193-4-x86_64.pkg.tar.zst
+      - elfutils-0.193-5-x86_64.pkg.tar.zst
+      - libelf-0.193-5-x86_64.pkg.tar.zst
+      - debuginfod-0.193-5-x86_64.pkg.tar.zst
     debug:
-      - elfutils-debug-0.193-4-x86_64.pkg.tar.zst
+      - elfutils-debug-0.193-5-x86_64.pkg.tar.zst
   system:
     version: 0.193-3
     packages:

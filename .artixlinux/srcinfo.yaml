@@ -1,10 +1,10 @@
 ---
-version: 0.193-4
+version: 0.193-5
 pkgbase:
   name: elfutils
   pkgdesc: Handle ELF object files and DWARF debugging information
   pkgver: 0.193
-  pkgrel: 4
+  pkgrel: 5
   url: https://sourceware.org/elfutils/
   arch:
     - x86_64
