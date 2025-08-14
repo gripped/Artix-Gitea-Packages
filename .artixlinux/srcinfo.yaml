@@ -1,0 +1,31 @@
+---
+version: 5.9.2-1
+pkgbase:
+  name: python-pyfakefs
+  pkgdesc: pyfakefs implements a fake file system that mocks the Python file system modules
+  pkgver: 5.9.2
+  pkgrel: 1
+  url: https://github.com/jmcgeheeiv/pyfakefs/
+  arch:
+    - any
+  license:
+    - APACHE
+  checkdepends:
+    - python-pandas
+    - python-xlrd
+    - python-openpyxl
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-pytest
+  source:
+    - git+https://github.com/jmcgeheeiv/pyfakefs.git#tag=f2daf3e4de68a4742437c11610033d62a00717c6
+  b2sums:
+    - 3a0c708503deab7b81b0f0fead7880b2da186e06ecabb86eb3fbd7260254c27fe457318c3efd61e621f6a70815abda24cd22179f2e04e04afb389525e99e72de
+pkgname:
+  - name: python-pyfakefs
+# generated with artixpkg 0.36.4-1-any
