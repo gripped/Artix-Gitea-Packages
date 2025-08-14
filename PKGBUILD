@@ -2,8 +2,8 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=rpcbind
-pkgver=1.2.7
-pkgrel=2
+pkgver=1.2.8
+pkgrel=1
 pkgdesc="portmap replacement which supports RPC over various protocols"
 arch=(x86_64)
 url="http://rpcbind.sourceforge.net"
@@ -18,12 +18,12 @@ source=(https://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.
         tmpfiles.d
         sysusers.d
         CVE-2017-8779.diff)
-sha1sums=('7457d744b3f7d250aed0852ea01f4d563ab75b75'
+sha1sums=('2f733aba26075ca91fda3787890232da3d07c06e'
           '1b997ce76f9727efc8c72fc5f97189591c9a60e2'
           'eb8b7375a4ca31b3f61fa726f387884d5e4ca7a3'
           'b81b2d3798fc88359aaa0f08b2d3c2f809a19fc1'
           '38044ce8f3376a0b69da8e078e988fd1645bd435')
-sha256sums=('f6edf8cdf562aedd5d53b8bf93962d61623292bfc4d47eedd3f427d84d06f37e'
+sha256sums=('964132c389918e8964d7334936b6dd10ef025b300c6b29e693ba0f29550e3de5'
             '7a32111c74e708ad431b7114580c60d7405c591273e6cc00baf5baff05952573'
             '08b04f4da12b34d66cc8fefa0a6dcac239019b0de0090e08d61cb18cc36a6045'
             '392ee0af235f58b48bca068ea71a29aad912001e57d68184a03bf6c15bc2587e'
