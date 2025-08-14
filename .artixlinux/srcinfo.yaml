@@ -1,0 +1,39 @@
+---
+version: 0.5.6-2
+pkgbase:
+  name: bamf
+  pkgdesc: Application matching framework
+  pkgver: 0.5.6
+  pkgrel: 2
+  url: https://launchpad.net/bamf
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+    - LGPL-2.1-only
+    - LGPL-3.0-only
+  makedepends:
+    - git
+    - glib2-devel
+    - gnome-common
+    - gobject-introspection
+    - vala
+  depends:
+    - bash
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - libgtop
+    - libwnck3
+    - libx11
+    - startup-notification
+  source:
+    - git+https://git.launchpad.net/bamf?signed#tag=17aef81f0500cbc4333f1f327126adf653826466
+  validpgpkeys:
+    - D4C501DA48EB797A081750939449C2F50996635F
+  b2sums:
+    - SKIP
+pkgname:
+  - name: bamf
+# generated with artixpkg 0.36.4-1-any
