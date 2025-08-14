@@ -1,0 +1,35 @@
+---
+version: 0.9.5-1
+pkgbase:
+  name: neatvnc
+  pkgdesc: Fast and neat VNC server library
+  pkgver: 0.9.5
+  pkgrel: 1
+  url: https://github.com/any1/neatvnc
+  arch:
+    - x86_64
+  license:
+    - custom:ISC
+  makedepends:
+    - git
+    - meson
+    - ninja
+  depends:
+    - glibc
+    - gnutls
+    - libaml.so
+    - libavcodec.so
+    - libdrm
+    - libpixman-1.so
+    - libturbojpeg.so
+    - mesa
+    - zlib
+  provides:
+    - libneatvnc.so
+  source:
+    - git+https://github.com/any1/neatvnc.git#tag=36ef59a83291368d72f471700702a8b6a76f763b
+  b2sums:
+    - 8ab4ba7b8a66182c3c63296b7066c856644041b18aff35bf40f1e948ea3ab97eec6388e4567692bcc61d4a46c6ca89c9db4031592d89eed512d3839280bc89f6
+pkgname:
+  - name: neatvnc
+# generated with artixpkg 0.36.4-1-any
