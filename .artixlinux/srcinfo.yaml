@@ -1,0 +1,28 @@
+---
+version: 33-2
+pkgbase:
+  name: nsxiv
+  pkgdesc: Neo (or New or Not) Simple (or Small or Suckless) X Image Viewer
+  pkgver: 33
+  pkgrel: 2
+  url: https://nsxiv.codeberg.page/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - glibc
+    - imlib2
+    - libx11
+    - libxft
+    - fontconfig
+    - freetype2
+    - libexif
+    - hicolor-icon-theme
+  source:
+    - nsxiv-33.tar.gz::https://codeberg.org/nsxiv/nsxiv/archive/v33.tar.gz
+  sha256sums:
+    - 7562af026024c28a93f5ca0cefd170c6b139cf2974165bcd695932d2cd9345c5
+pkgname:
+  - name: nsxiv
+# generated with artixpkg 0.36.4-1-any
