@@ -1,10 +1,10 @@
 ---
-version: 20250815-1
+version: 20250815-2
 pkgbase:
   name: pipewire-dinit
   pkgdesc: dinit user service script for pipewire
   pkgver: 20250815
-  pkgrel: 1
+  pkgrel: 2
   url: https://artixlinux.org
   arch:
     - any
@@ -13,7 +13,7 @@ pkgbase:
   license:
     - BSD-2-Clause
   depends:
-    - dinit-rc
+    - dinit
   source:
     - pipewire.user
     - pipewire-pulse.user
@@ -25,7 +25,7 @@ pkgbase:
 pkgname:
   - name: pipewire-dinit
     depends:
-      - dinit-rc
+      - dinit
       - pipewire
   - name: pipewire-pulse-dinit
     pkgdesc: dinit user service script for pipewire-pulse

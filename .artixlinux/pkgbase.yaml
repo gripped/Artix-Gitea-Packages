@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20250815-1
+    version: 20250815-2
     packages:
-      - pipewire-dinit-20250815-1-any.pkg.tar.zst
-      - pipewire-pulse-dinit-20250815-1-any.pkg.tar.zst
+      - pipewire-dinit-20250815-2-any.pkg.tar.zst
+      - pipewire-pulse-dinit-20250815-2-any.pkg.tar.zst
     debug: []
   world:
     version: 20240528-1
