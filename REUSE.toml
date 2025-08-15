@@ -23,6 +23,8 @@ path = [
     "nvidia.rules",
     "systemd-homed-override.conf",
     "systemd-suspend-override.conf",
+    "gsk-renderer.sh",
+    "10-gsk.conf",
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
