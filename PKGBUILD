@@ -4,7 +4,7 @@
 
 pkgname=kotlin
 pkgver=2.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Statically typed programming language with multiplatform support'
 arch=(any)
 url='https://kotlinlang.org/'
