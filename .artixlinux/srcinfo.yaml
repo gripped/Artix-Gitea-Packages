@@ -1,10 +1,10 @@
 ---
-version: 20240815-1
+version: 20240815-2
 pkgbase:
   name: mpd-dinit
   pkgdesc: dinit service scripts for mpd
   pkgver: 20240815
-  pkgrel: 1
+  pkgrel: 2
   url: https://artixlinux.org
   arch:
     - any
@@ -14,7 +14,7 @@ pkgbase:
     - BSD-2-Clause
   depends:
     - mpd
-    - dinit-rc
+    - dinit
   provides:
     - init-mpd
     - mpd-dinit-user

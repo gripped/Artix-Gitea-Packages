@@ -1,10 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
-# pkgbase=mpd-dinit
-# pkgname=('mpd-dinit' 'mpd-dinit-user')
 pkgname=mpd-dinit
 pkgver=20240815
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for mpd"
 arch=('any')
 url="https://artixlinux.org"
@@ -12,7 +10,7 @@ license=('BSD-2-Clause')
 groups=('dinit-galaxy')
 depends=(
     'mpd'
-    'dinit-rc'
+    'dinit'
 )
 provides=(
     'init-mpd'
