@@ -1,0 +1,48 @@
+---
+version: 4.20.3-1
+pkgbase:
+  name: xfce4-session
+  pkgdesc: Xfce's session manager
+  pkgver: 4.20.3
+  pkgrel: 1
+  url: https://docs.xfce.org/xfce/xfce4-session/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - xfce4-dev-tools
+  depends:
+    - libxfce4ui
+    - libwnck3
+    - libxfce4windowing
+    - xfconf
+    - libsm
+    - polkit
+    - gtk-layer-shell
+    - xorg-iceauth
+    - xorg-xinit
+    - xorg-xrdb
+    - polkit-gnome
+    - hicolor-icon-theme
+  optdepends:
+    - 'gnome-keyring: for keyring support when GNOME compatibility is enabled'
+    - 'xfce4-screensaver: for locking screen with xflock4'
+    - 'xscreensaver: for locking screen with xflock4'
+    - 'light-locker: for locking screen with xflock4'
+    - 'labwc: recommended compositor for the experimental Wayland session'
+  source:
+    - git+https://gitlab.xfce.org/xfce/xfce4-session.git#tag=xfce4-session-4.20.3
+    - source-system-xinitrc-scripts.patch
+    - xfce-polkit-gnome-authentication-agent-1.desktop
+  sha256sums:
+    - 02276e99def85723bf2f73c344b4df93eeaf52da18d5f8360028ded6256b820f
+    - 26b198b55f283bece4d435549cafa84a556ef2a2fef96d1b93b73c1b91cba59d
+    - 74c94c5f7893d714e04ec7d8b8520c978a5748757a0cdcf5128492f09f31b643
+pkgname:
+  - name: xfce4-session
+# generated with artixpkg 0.36.4-1-any
