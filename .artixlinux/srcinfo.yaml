@@ -1,11 +1,11 @@
 ---
-version: 1.100.0-3
+version: 1.100.0-7
 pkgbase:
   name: avogadrolibs
   pkgdesc: Libraries that provide 3D rendering, visualization, analysis and data processing useful in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas
   pkgver: 1.100.0
-  pkgrel: 3
-  url: https://www.openchemistry.org/
+  pkgrel: 7
+  url: https://two.avogadro.cc/
   arch:
     - x86_64
   license:
@@ -26,8 +26,8 @@ pkgbase:
     - openmpi
     - pybind11
     - python
-    - qt5-svg
-    - qt5-tools
+    - qt6-svg
+    - qt6-tools
     - spglib
     - tbb
     - utf8cpp
@@ -52,9 +52,9 @@ pkgname:
       - spglib
       - verdict
     optdepends:
-      - 'avogadrolibs-qt5: For the VTK and Qt plugins'
-  - name: avogadrolibs-qt5
-    pkgdesc: Qt 5 modules for Avogadro
+      - 'avogadrolibs-qt: For the VTK and Qt plugins'
+  - name: avogadrolibs-qt
+    pkgdesc: Qt modules for Avogadro
     depends:
       - avogadrolibs
       - fmt
@@ -66,7 +66,9 @@ pkgname:
       - libmsym
       - libxcursor
       - openmpi
-      - qt5-base
-      - qt5-svg
+      - qt6-base
+      - qt6-svg
       - vtk
+    conflicts:
+      - avogadrolibs-qt5
 # generated with artixpkg 0.36.4-1-any
