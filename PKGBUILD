@@ -2,7 +2,7 @@
 
 pkgname=mpd-dinit
 pkgver=20240815
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for mpd"
 arch=('any')
 url="https://artixlinux.org"
@@ -10,7 +10,7 @@ license=('BSD-2-Clause')
 groups=('dinit-galaxy')
 depends=(
     'mpd'
-    'dinit'
+    'dbus-dinit'
 )
 provides=(
     'init-mpd'
