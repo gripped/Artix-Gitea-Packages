@@ -3,7 +3,7 @@
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
@@ -23,7 +23,6 @@ depends=(
 )
 source=("git+$url.git#tag=v${pkgver}")
 sha256sums=('f8f311afcdcd73567f52188508df7724a92489f205351d40973d3b17025ca0e7')
-install='dinit-user-spawn.install'
 
 build() {
     artix-meson "$pkgname" build
