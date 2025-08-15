@@ -1,22 +1,26 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 # Contributor: Artoo <artoo@artixlinux.org>
 
-_alpm=2.2
+_alpm=2.3
 
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.19.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
 license=('Apache-2.0')
-makedepends=('git' 'gcc-libs' 'glibc')
+makedepends=(
+    'git'
+    'gcc-libs'
+    'glibc'
+)
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
         "dinit-init")
 sha256sums=('ddccc3a3214ccbdefe8f0ec46a0f14e65905e29be007e4c6823f576b914167b9'
-            'f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25'
+            '135a4df3c384cc79feed39d265a80ca0e5a8278bd4367d34b90f174f41384e1e'
             'e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b')
 
 build() {
@@ -25,7 +29,10 @@ build() {
 
 package_dinit-base() {
     pkgdesc='Service monitoring/init system -- base package'
-    depends=('glibc' 'gcc-libs')
+    depends=(
+        'glibc'
+        'gcc-libs'
+    )
     install=dinit.install
 
     make -C "dinit" DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=no install
@@ -33,9 +40,19 @@ package_dinit-base() {
 
 package_dinit() {
     pkgdesc='Service monitoring/init system -- init package'
-    depends=('dinit-base' 'dinit-rc' 'gcc-libs' 'glibc' 'sh')
-    provides=('svc-manager')
-    conflicts=('svc-manager')
+    depends=(
+        'dinit-base'
+        'dinit-rc'
+        'gcc-libs'
+        'glibc'
+        'sh'
+    )
+    provides=(
+        'svc-manager'
+    )
+    conflicts=(
+        'svc-manager'
+    )
 
     make -C "$pkgname" DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=yes install
 
