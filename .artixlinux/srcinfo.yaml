@@ -1,24 +1,26 @@
 ---
-version: 0.19.4-1
+version: 0.19.4-2
 pkgbase:
   name: dinit
   pkgdesc: Service monitoring/init system
   pkgver: 0.19.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/davmac314/dinit
   arch:
     - x86_64
   license:
-    - Apache
+    - Apache-2.0
   makedepends:
     - git
+    - gcc-libs
+    - glibc
   source:
-    - https://github.com/davmac314/dinit/releases/download/v0.19.4/dinit-0.19.4.tar.xz
-    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=29cd296aa4635fe6f7b53bda2f2cb1648bdc0782
+    - git+https://github.com/davmac314/dinit.git#tag=v0.19.4
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.2
     - dinit-init
   sha256sums:
-    - a7d472186c9e8b19a8b88019a99c64c417c59abee244b1893b6c2ae03024df1e
-    - f02a0da232ba3b4fcd91f02ad8cde1ebd117dc21cf8d2c827576887cfa9d1521
+    - ddccc3a3214ccbdefe8f0ec46a0f14e65905e29be007e4c6823f576b914167b9
+    - f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25
     - e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b
 pkgname:
   - name: dinit
@@ -26,6 +28,9 @@ pkgname:
     depends:
       - dinit-base
       - dinit-rc
+      - gcc-libs
+      - glibc
+      - sh
     provides:
       - svc-manager
     conflicts:
@@ -33,4 +38,7 @@ pkgname:
   - name: dinit-base
     pkgdesc: Service monitoring/init system -- base package
     install: dinit.install
-# generated with artixpkg 0.36.2-1-any
+    depends:
+      - glibc
+      - gcc-libs
+# generated with artixpkg 0.36.4-1-any
