@@ -4,14 +4,14 @@
 pkgbase=pipewire-dinit
 pkgname=('pipewire-dinit' 'pipewire-pulse-dinit')
 pkgver=20250815
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit user service script for pipewire"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD-2-Clause')
 groups=('dinit-world')
 depends=(
-    'dinit'
+    'dbus-dinit'
 )
 source=(
     "pipewire.user"
@@ -23,7 +23,9 @@ sha256sums=('6351f1d3dd9530d1174b3649811d170483475d444f871898cce3a73639e8a187'
             'a5a440e8b046dc1351b650eabb6e1947a4a2ad502780e1cf105916ed8aca48ff')
 
 package_pipewire-dinit() {
-    depends+=("pipewire")
+    depends+=(
+        "pipewire"
+    )
 
     install -Dm644 pipewire.user "$pkgdir/etc/dinit.d/user/pipewire"
 
