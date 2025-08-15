@@ -1,0 +1,24 @@
+---
+version: 1.4.0-1
+pkgbase:
+  name: python-unidecode
+  pkgdesc: ASCII transliterations of Unicode text
+  pkgver: 1.4.0
+  pkgrel: 1
+  url: https://github.com/avian2/unidecode
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - git+https://github.com/avian2/unidecode.git#tag=8d83b7c70c39678c2b95cb0caf3d3c4425cb2cc2
+  sha256sums:
+    - a33c1751226d4cca24d0b3cf457a31932ee496f161713d654cfc07c10ef13c28
+pkgname:
+  - name: python-unidecode
+# generated with artixpkg 0.36.4-1-any
