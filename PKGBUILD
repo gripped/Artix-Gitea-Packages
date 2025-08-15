@@ -3,7 +3,7 @@
 pkgbase=mpd-dinit
 pkgname=('mpd-dinit' 'mpd-dinit-user')
 pkgver=20240610
-pkgrel=1
+pkgrel=2
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
@@ -25,7 +25,7 @@ package_mpd-dinit() {
 
 package_mpd-dinit-user() {
     pkgdesc="dinit user service script for mpd"
-    depends+=('dinit-base' 'turnstile')
+    depends+=('dinit-base' 'dinit-user-spawn')
     groups=('dinit-user-services')
     install -Dm644 mpd.user "$pkgdir/etc/dinit.d/user/mpd"
 }
