@@ -1,13 +1,13 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=bluez-dinit
-pkgver=20211026
-pkgrel=3
+pkgver=20250815
+pkgrel=1
 pkgdesc="dinit service scripts for bluez"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD')
-depends=('bluez' 'init-dbus' 'dinit-rc')
+license=('BSD-2-Clause')
+depends=('bluez' 'dbus-dinit')
 groups=('dinit-world')
 provides=('init-bluez')
 conflicts=('init-bluez')

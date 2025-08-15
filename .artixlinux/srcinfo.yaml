@@ -1,0 +1,28 @@
+---
+version: 20250815-1
+pkgbase:
+  name: bluez-dinit
+  pkgdesc: dinit service scripts for bluez
+  pkgver: 20250815
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD-2-Clause
+  depends:
+    - bluez
+    - dbus-dinit
+  provides:
+    - init-bluez
+  conflicts:
+    - init-bluez
+  source:
+    - bluetoothd
+  sha256sums:
+    - dee82518b2c994963e76ff279d5f33aa82ee9a1b2d9c02de6ba4332e46248dfd
+pkgname:
+  - name: bluez-dinit
+# generated with artixpkg 0.36.5-1-any
