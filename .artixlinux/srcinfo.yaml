@@ -1,10 +1,10 @@
 ---
-version: 9.5.0-6
+version: 9.5.0-7
 pkgbase:
   name: vtk
   pkgdesc: Software system for 3D computer graphics, image processing, and visualization
   pkgver: 9.5.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.vtk.org
   arch:
     - x86_64
@@ -17,9 +17,9 @@ pkgbase:
     - python
     - python-matplotlib
     - python-mpi4py
-    - qt5-base
-    - qt5-declarative
-    - qt5-tools
+    - qt6-base
+    - qt6-declarative
+    - qt6-tools
     - tk
     - openmpi
     - libx11
@@ -84,7 +84,7 @@ pkgbase:
     - 'python: python bindings'
     - 'python-matplotlib: for Matplotlib rendering'
     - 'python-mpi4py: OpenMPI python support'
-    - 'qt5-declarative: QML plugin'
+    - 'qt6-declarative: QML plugin'
     - 'tk: tcl bindings'
     - 'libx11: rendering'
     - 'libxcursor: rendering'
