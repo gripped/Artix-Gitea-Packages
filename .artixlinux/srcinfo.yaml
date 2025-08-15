@@ -1,10 +1,10 @@
 ---
-version: 1:2503-3
+version: 1:2506a-1
 pkgbase:
   name: dolphin-emu
   pkgdesc: A Gamecube and Wii emulator
-  pkgver: 2503
-  pkgrel: 3
+  pkgver: 2506a
+  pkgrel: 1
   epoch: 1
   url: https://dolphin-emu.org
   arch:
@@ -23,6 +23,7 @@ pkgbase:
     - python
     - qt6-base
     - qt6-svg
+    - sfml
     - vulkan-headers
   depends:
     - bluez-libs
@@ -36,6 +37,8 @@ pkgbase:
     - libavutil.so
     - libcurl.so
     - libgl
+    - libsfml-network.so
+    - libsfml-system.so
     - libspng.so
     - libswscale.so
     - libusb-1.0.so
@@ -57,7 +60,7 @@ pkgbase:
     - '!emptydirs'
     - '!lto'
   source:
-    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=9763c0a1e2b9db0c3861d25bc2f5a0ace6a15ee3
+    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=9843115ad8414970312c954d83145300d7cdbec3
     - git+https://github.com/mozilla/cubeb.git
     - git+https://github.com/epezent/implot.git
     - git+https://github.com/fmtlib/fmt.git
@@ -70,7 +73,7 @@ pkgbase:
     - git+https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
     - git+https://github.com/zlib-ng/zlib-ng.git
   b2sums:
-    - 33965c02b34ad449f16e267d853e4b9869902a4c74d169d3b34eb762b07167228e13df5c5dba632acf49183066bd62f947f045e83be927896bb0259adf9e7c6f
+    - 03f747ff20d7e0e4ff00c91cb1a86d6d8d70a108b55c689dddf9be58fc6ead2ff9965470975308109e95bda0f8059bc52a58d3bfbe80a001852ab6b2a375fd96
     - SKIP
     - SKIP
     - SKIP
@@ -96,6 +99,8 @@ pkgname:
       - libavutil.so
       - libcurl.so
       - libgl
+      - libsfml-network.so
+      - libsfml-system.so
       - libspng.so
       - libswscale.so
       - libusb-1.0.so
@@ -132,6 +137,8 @@ pkgname:
       - libavutil.so
       - libcurl.so
       - libgl
+      - libsfml-network.so
+      - libsfml-system.so
       - libspng.so
       - libswscale.so
       - libusb-1.0.so
