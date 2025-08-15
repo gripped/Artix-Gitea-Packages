@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-goblins
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -51,8 +51,9 @@ repos:
       - libxfce4windowing-4.20.3-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 4.20.4-1
+    packages:
+      - libxfce4windowing-4.20.4-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 4.20.3-1
