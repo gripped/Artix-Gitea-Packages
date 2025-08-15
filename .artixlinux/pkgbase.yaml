@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 3.25.1-2
+    version: 3.25.1-3
     packages:
-      - valgrind-3.25.1-2-x86_64.pkg.tar.zst
+      - valgrind-3.25.1-3-x86_64.pkg.tar.zst
     debug:
-      - valgrind-debug-3.25.1-2-x86_64.pkg.tar.zst
+      - valgrind-debug-3.25.1-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

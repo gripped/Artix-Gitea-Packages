@@ -14,7 +14,7 @@
 
 pkgname=valgrind
 pkgver=3.25.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Tool to help find memory-management problems in programs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -29,14 +29,7 @@ optdepends=(
 )
 provides=('valgrind-multilib')
 replaces=('valgrind-multilib')
-# options=(
-#   '!emptydirs'
-#   '!strip'
-# )
-options=(
-  debug
-  !lto # https://bugs.kde.org/show_bug.cgi?id=338252
-)
+# options=('!emptydirs' '!strip')
 source=(https://sourceware.org/pub/valgrind/valgrind-${pkgver}.tar.bz2{,.asc}
         valgrind-3.7.0-respect-flags.patch)
 validpgpkeys=(
@@ -49,6 +42,7 @@ sha512sums=('6a474d58730274c57d6ca012ffd3226d393d6507cd57bf46c3b26c87a0cba84e3c8
 b2sums=('5337096c846b62899017589fbb242ca601741ebb353834cd788efb60f951f2380c5904ba5102a17b26fa9561c2fa58912570d477e5fcc901612d6e5c14ff9b97'
         'SKIP'
         'af556fdf3c02e37892bfe9afebc954cf2f1b2fa9b75c1caacfa9f3b456ebc02bf078475f9ee30079b3af5d150d41415a947c3d04235c1ea8412cf92b959c484a')
+options=(!lto debug) # https://bugs.kde.org/show_bug.cgi?id=338252
 
 prepare() {
   cd valgrind-${pkgver}
