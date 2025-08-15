@@ -49,10 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 20240610-2
+    version: 20240815-1
     packages:
-      - mpd-dinit-20240610-2-any.pkg.tar.zst
-      - mpd-dinit-user-20240610-2-any.pkg.tar.zst
+      - mpd-dinit-20240815-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 20240610-1

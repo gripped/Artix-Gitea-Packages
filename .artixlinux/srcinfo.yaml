@@ -1,16 +1,28 @@
 ---
-version: 20240610-2
+version: 20240815-1
 pkgbase:
   name: mpd-dinit
-  pkgver: 20240610
-  pkgrel: 2
+  pkgdesc: dinit service scripts for mpd
+  pkgver: 20240815
+  pkgrel: 1
   url: https://artixlinux.org
   arch:
     - any
+  groups:
+    - dinit-galaxy
   license:
-    - BSD
+    - BSD-2-Clause
   depends:
     - mpd
+    - dinit-rc
+  provides:
+    - init-mpd
+    - mpd-dinit-user
+  conflicts:
+    - init-mpd
+    - mpd-dinit-user
+  replaces:
+    - mpd-dinit-user
   source:
     - mpd
     - mpd-pre
@@ -21,22 +33,4 @@ pkgbase:
     - 1dabe47e4c6a8087d32f6def99785dc87f01c0aebe32fb5f19253f7549c876a9
 pkgname:
   - name: mpd-dinit
-    pkgdesc: dinit service scripts for mpd
-    groups:
-      - dinit-galaxy
-    depends:
-      - mpd
-      - dinit
-    provides:
-      - init-mpd
-    conflicts:
-      - init-mpd
-  - name: mpd-dinit-user
-    pkgdesc: dinit user service script for mpd
-    groups:
-      - dinit-user-services
-    depends:
-      - mpd
-      - dinit-base
-      - dinit-user-spawn
 # generated with artixpkg 0.36.4-1-any
