@@ -1,9 +1,9 @@
 ---
-version: 3.13.6-1
+version: 3.13.7-1
 pkgbase:
   name: python
   pkgdesc: The Python programming language
-  pkgver: 3.13.6
+  pkgver: 3.13.7
   pkgrel: 1
   url: https://www.python.org/
   arch:
@@ -30,8 +30,8 @@ pkgbase:
     - tzdata
     - mpdecimal
   source:
-    - https://www.python.org/ftp/python/3.13.6/Python-3.13.6.tar.xz
-    - https://www.python.org/ftp/python/3.13.6/Python-3.13.6.tar.xz.asc
+    - https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tar.xz
+    - https://www.python.org/ftp/python/3.13.7/Python-3.13.7.tar.xz.asc
     - EXTERNALLY-MANAGED
   validpgpkeys:
     - 0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D
@@ -39,7 +39,7 @@ pkgbase:
     - A035C8C19219BA821ECEA86B64E628F8D684696D
     - 7169605F62C751356D054A26A821E680E5FA6305
   sha512sums:
-    - fca724dbb4f3fed889d0b51c86ee0559c70ee2c7aba1d8b089b08538d82411ec9e6bc9c7a39c1dc4bb4f13b5cf0d9a332f7759412fa540a1940477cb47052316
+    - 73fa04db860e8b98c204f84d403598fcb802b19bfc8f2675df2fddb6b153b1643daf081746a043f57c8fa71b950a439581aa5204c2bfadb8cfd8864ca4f42f0d
     - SKIP
     - 62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0
 pkgname:
