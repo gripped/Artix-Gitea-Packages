@@ -1,49 +1,52 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+# Contributor: Artoo <artoo@artixlinux.org>
+
+_alpm=2.2
+
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.19.4
-_commit=29cd296aa4635fe6f7b53bda2f2cb1648bdc0782
-pkgrel=1
+pkgrel=2
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
-license=('Apache')
-makedepends=('git')
-source=("$url/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz"
-        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit"
+license=('Apache-2.0')
+makedepends=('git' 'gcc-libs' 'glibc')
+source=("git+$url.git#tag=v${pkgver}"
+        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
         "dinit-init")
-sha256sums=('a7d472186c9e8b19a8b88019a99c64c417c59abee244b1893b6c2ae03024df1e'
-            'f02a0da232ba3b4fcd91f02ad8cde1ebd117dc21cf8d2c827576887cfa9d1521'
+sha256sums=('ddccc3a3214ccbdefe8f0ec46a0f14e65905e29be007e4c6823f576b914167b9'
+            'f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25'
             'e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b')
 
 build() {
-	cd "$pkgname-$pkgver"
-	make
+    make -C "$pkgname"
 }
 
 package_dinit-base() {
-	pkgdesc='Service monitoring/init system -- base package'
-	install=dinit.install
-	cd "$pkgbase-$pkgver"
-	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=no install
+    pkgdesc='Service monitoring/init system -- base package'
+    depends=('glibc' 'gcc-libs')
+    install=dinit.install
+
+    make -C "dinit" DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=no install
 }
 
 package_dinit() {
-	pkgdesc='Service monitoring/init system -- init package'
-	depends=('dinit-base' 'dinit-rc')
-	provides=('svc-manager')
-	conflicts=('svc-manager')
-	cd "$pkgbase-$pkgver"
-	make DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=yes install
+    pkgdesc='Service monitoring/init system -- init package'
+    depends=('dinit-base' 'dinit-rc' 'gcc-libs' 'glibc' 'sh')
+    provides=('svc-manager')
+    conflicts=('svc-manager')
 
-	# remove dinit-base pkgs
-	rm -f "$pkgdir/usr/bin/"{dinit,dinitcheck,dinitctl,dinit-monitor}
-	rm -rf "$pkgdir/usr/share/man/man5"
-	rm -f "$pkgdir/usr/share/man/man8/"{dinit,dinitcheck,dinitctl,dinit-monitor}.8
+    make -C "$pkgname" DESTDIR="$pkgdir/" SBINDIR=/usr/bin BUILD_SHUTDOWN=yes install
 
-	# dinit-init symlink
-	install -Dm755 "$srcdir/dinit-init" "$pkgdir/usr/bin/dinit-init"
+    # remove dinit-base pkgs
+    rm -f "$pkgdir/usr/bin/"{dinit,dinitcheck,dinitctl,dinit-monitor}
+    rm -rf "$pkgdir/usr/share/man/man5"
+    rm -f "$pkgdir/usr/share/man/man8/"{dinit,dinitcheck,dinitctl,dinit-monitor}.8
 
-	cd "$srcdir/alpm-hooks"
-	make DESTDIR="$pkgdir/" install_dinit
+    # alpm hooks
+    make -C alpm-hooks  DESTDIR="$pkgdir/" install_dinit
+
+    # dinit-init symlink
+    install -Dm755 "$srcdir"/dinit-init "$pkgdir"/usr/bin/dinit-init
 }
