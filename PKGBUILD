@@ -2,7 +2,7 @@
 # Maintainer: Peter Jung <ptr1337@archlinux.org>
 
 pkgname=nvidia-open
-pkgver=575.64.05
+pkgver=580.76.05
 pkgrel=4
 pkgdesc="NVIDIA open kernel modules"
 arch=('x86_64')
