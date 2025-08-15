@@ -1,15 +1,15 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=hdparm-dinit
-pkgver=20211029
-pkgrel=3
+pkgver=20250815
+pkgrel=1
 pkgdesc="dinit stage1 script for hdparm"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('dinit-system')
 provides=('init-hdparm')
-depends=('hdparm' 'dinit-rc')
+depends=('hdparm' 'dinit')
 conflicts=('init-hdparm')
 backup=('etc/dinit.d/config/hdparm.conf')
 source=('hdparm' 'hdparm.script' 'hdparm.conf')
