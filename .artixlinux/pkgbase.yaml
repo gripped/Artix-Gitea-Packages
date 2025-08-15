@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -17,9 +17,9 @@ repos:
     packages: []
     debug: []
   system:
-    version: 20211029-3
+    version: 20250815-1
     packages:
-      - hdparm-dinit-20211029-3-any.pkg.tar.zst
+      - hdparm-dinit-20250815-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
@@ -30,9 +30,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 20250815-1
-    packages:
-      - hdparm-dinit-20250815-1-any.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
