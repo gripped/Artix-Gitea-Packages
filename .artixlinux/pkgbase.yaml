@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 5.0.2.1613-2
+    version: 5.0.3-1
     packages:
-      - libfbclient-5.0.2.1613-2-x86_64.pkg.tar.zst
+      - libfbclient-5.0.3-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
