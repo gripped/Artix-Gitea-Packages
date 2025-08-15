@@ -1,0 +1,43 @@
+---
+version: 2:2.61.0-1
+pkgbase:
+  name: lib32-librsvg
+  pkgdesc: SVG rendering library (32-bit)
+  pkgver: 2.61.0
+  pkgrel: 1
+  epoch: 2
+  url: https://wiki.gnome.org/Projects/LibRsvg
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - ttf-dejavu
+  makedepends:
+    - cargo-c
+    - git
+    - gobject-introspection
+    - lib32-rust-libs
+    - llvm
+    - meson
+    - rust
+  depends:
+    - lib32-cairo
+    - lib32-freetype2
+    - lib32-gcc-libs
+    - lib32-gdk-pixbuf2
+    - lib32-glib2
+    - lib32-glibc
+    - lib32-harfbuzz
+    - lib32-libxml2
+    - lib32-pango
+    - librsvg
+  source:
+    - git+https://gitlab.gnome.org/GNOME/librsvg.git#tag=2.61.0
+  b2sums:
+    - 3e45a4b573aaa0cb6151180da5f4f3029b11446dae36846cecd567d889d0b8658470e70ea8dfbaa8c0260c97eed6886533d4633342b790aa098275d2e9516a45
+pkgname:
+  - name: lib32-librsvg
+    provides:
+      - librsvg-2.so
+# generated with artixpkg 0.36.4-1-any
