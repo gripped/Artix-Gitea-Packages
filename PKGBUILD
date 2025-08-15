@@ -22,7 +22,7 @@ depends=(
     tomlplusplus
 )
 source=("git+$url.git#tag=v${pkgver}")
-sha256sums=('f8f311afcdcd73567f52188508df7724a92489f205351d40973d3b17025ca0e7')
+sha256sums=('ef739d7084dca2bc81af3e3ce53de5af3b02e2d868d8e8c906ac233cf7441909')
 
 build() {
     artix-meson "$pkgname" build
