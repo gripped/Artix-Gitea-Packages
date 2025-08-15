@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20250813-1
+    version: 20250815-1
     packages:
-      - wireplumber-dinit-20250813-1-any.pkg.tar.zst
+      - wireplumber-dinit-20250815-1-any.pkg.tar.zst
     debug: []
   world:
     version: 20240528-2
