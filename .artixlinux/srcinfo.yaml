@@ -1,10 +1,10 @@
 ---
-version: 0.19.4-2
+version: 0.19.4-3
 pkgbase:
   name: dinit
   pkgdesc: Service monitoring/init system
   pkgver: 0.19.4
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/davmac314/dinit
   arch:
     - x86_64
@@ -16,11 +16,11 @@ pkgbase:
     - glibc
   source:
     - git+https://github.com/davmac314/dinit.git#tag=v0.19.4
-    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.2
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.3
     - dinit-init
   sha256sums:
     - ddccc3a3214ccbdefe8f0ec46a0f14e65905e29be007e4c6823f576b914167b9
-    - f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25
+    - 135a4df3c384cc79feed39d265a80ca0e5a8278bd4367d34b90f174f41384e1e
     - e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b
 pkgname:
   - name: dinit
