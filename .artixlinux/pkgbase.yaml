@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 20250815-2
+    version: 20250815-3
     packages:
-      - dbus-dinit-20250815-2-any.pkg.tar.zst
+      - dbus-dinit-20250815-3-any.pkg.tar.zst
     debug: []
   system:
     version: 20240610-2

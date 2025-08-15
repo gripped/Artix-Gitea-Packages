@@ -1,10 +1,10 @@
 ---
-version: 20250815-2
+version: 20250815-3
 pkgbase:
   name: dbus-dinit
   pkgdesc: dinit service scripts for dbus
   pkgver: 20250815
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitea.artixlinux.org/packages/dbus-dinit
   arch:
     - any
@@ -16,7 +16,7 @@ pkgbase:
     - git
   depends:
     - dbus
-    - dinit-rc
+    - dinit
     - sh
   provides:
     - init-dbus

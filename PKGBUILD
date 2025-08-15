@@ -5,7 +5,7 @@ _alpm=2.3
 
 pkgname=dbus-dinit
 pkgver=20250815
-pkgrel=2
+pkgrel=3
 pkgdesc="dinit service scripts for dbus"
 arch=('any')
 url="https://gitea.artixlinux.org/packages/dbus-dinit"
@@ -13,7 +13,7 @@ license=('BSD-2-Clause')
 groups=('dinit-system')
 depends=(
     'dbus'
-    'dinit-rc'
+    'dinit'
     'sh'
 )
 provides=(
