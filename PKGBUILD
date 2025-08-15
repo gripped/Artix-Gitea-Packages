@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=6.15.9
+_ver=6.16.1
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -50,16 +50,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('e94f3af85492302f7a819441458f80bca0ad9912e5a4c83c699ff3c63c52957d'
+sha256sums=('ea43491bc7ace1e414b3b2d957f8cf96e7049155123f0acce798accf8da1acba'
             'SKIP'
-            'ca64ed4a15e0cedb39713b09dd7f113986e799f58d0240a5c9381a8a0b13eaf2'
+            'b357773b9ed7e0f2265a04d53306d3d85d3b705ff32abe1f399b126685e1511d'
             'SKIP'
-            '0b69722ea96f7ce6cd5a354fa3bb87b728e7d2cd8ac99535ff536e9df19d1d17')
-b2sums=('9818201a76f2e4cdde00a67245764cd971b0cc17ca7c6147cd53d7397eaf54036ec606a86d64b467e8973fa9650cfc83b8389de828b06860f2ee3b0164b2942e'
+            '995bc325d3df9b3fe3b91763222d4f942072037c2b5d2265fc57ad1312c3dbca')
+b2sums=('280386f483f3f181fd0e45789815621f6f6bed208b7c10b05a7e2c2eed102d53928ce3f0e28cdd58d1e3c69f9977f60f7b6e832c3a00c0f4524aa45f83ec9491'
         'SKIP'
-        'd4e0bb27c1b3dd7ec989bedd15ec97e234d61d5df6658b1610a495e75ff482830ad977a97badeb2541f488b92aa0aed0147a586f24335b701fd6c3dcdc77f0af'
+        'e8572bedf0dfe7c4e997f03b37242752e2326372839ac152584f4bdcb91430b205ea036b3f952e7e4bde982a9e5d6c79172303d87cfa487ba3aa334ea274d5c7'
         'SKIP'
-        'a4aaacc5cb4aa2d2583b08e1ef0d3d29c9e98cbeab3e5b8d62cd19db4e8fc4464719c3f6efbf62a5c4a1b520d1ff284222c823ee26b90126e9fd4ef50ca74056')
+        '34be62628cb74d06e0c73494393cd73dee3d7895e5ea5d76089eac96aa066d4a7f4268e900255286199d61eb8bd0824240c1468d4509e39bf92ad1a76e0a6804')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -96,7 +96,7 @@ build() {
   cd $_srcname
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  make htmldocs
+  make htmldocs SPHINXOPTS=-QT
 }
 
 _package() {
