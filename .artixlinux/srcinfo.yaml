@@ -1,0 +1,30 @@
+---
+version: 3.0.4-1
+pkgbase:
+  name: python-pydot
+  pkgdesc: Python interface to Graphviz's Dot
+  pkgver: 3.0.4
+  pkgrel: 1
+  url: https://github.com/erocarrera/pydot
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-chardet
+    - python-parameterized
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-pyparsing
+    - graphviz
+  source:
+    - python-pydot-3.0.4.tar.gz::https://github.com/erocarrera/pydot/archive/v3.0.4.tar.gz
+  sha512sums:
+    - 9e8a3f7cce095cd50bb665e0f798c22589ea1caa783012afb1b9542924c39fb20968b8c123d33ee7ce86e307f5389d8c08cc491d7efcd62f8e34621a3a7e4abe
+pkgname:
+  - name: python-pydot
+# generated with artixpkg 0.36.4-1-any
