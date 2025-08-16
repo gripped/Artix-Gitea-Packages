@@ -2,8 +2,8 @@
 # Contributor: Artoo <artoo@artixlinux.org>
 
 pkgname=dinit-rc
-pkgver=0.6.0
-pkgrel=3
+pkgver=0.6.2
+pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/dinit-rc"
@@ -12,7 +12,7 @@ depends=(
     'artix-cgroups'
     'bash'
     'dbus' # dbus dep is for dbus-wait-for
-    'dinit-user-spawn'
+    'dinit-user-spawn>1.0.0-5'
     'glibc'
     'udev'
 )
@@ -42,7 +42,7 @@ source=(
     "git+${url}.git#tag=$pkgver"
     rc.{local,shutdown}
 )
-sha256sums=('92deb5abf4eead4ba81f17b0ba1affffe0bfe66ba4cd312ee0bc61213000fba1'
+sha256sums=('246bacbb811a8f50e3930b105823204c5d19f08e9af5f3404175872f4a3c7923'
             '1a7cc77e88cc15b4cbbdc8543a34a445fb386c41b1fb57bae94548dda19972f8'
             '1a7cc77e88cc15b4cbbdc8543a34a445fb386c41b1fb57bae94548dda19972f8')
 
