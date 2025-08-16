@@ -1,12 +1,12 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 # Contributor: Artoo <artoo@artixlinux.org>
 
-_alpm=2.4
+_alpm=2.4.1
 
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.19.4
-pkgrel=6
+pkgrel=7
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
@@ -20,7 +20,7 @@ source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
         "dinit-init")
 sha256sums=('ddccc3a3214ccbdefe8f0ec46a0f14e65905e29be007e4c6823f576b914167b9'
-            'a27225858f95f75f5f5b7fe5c2e2f877f6ebc0e7ba1826371161a57645793831'
+            'd5d67b2aecf366a1c83bee41156f298c7a1ffc5a400d3efb6ed4a0ef70ab0310'
             'e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b')
 
 build() {
