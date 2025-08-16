@@ -1,10 +1,10 @@
 ---
-version: 20250816-1
+version: 20250816-2
 pkgbase:
   name: artix-branding-base
   pkgdesc: Base branding for Artix ISOs
   pkgver: 20250816
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/artix-branding
   arch:
     - any
@@ -16,10 +16,12 @@ pkgbase:
     - git
   optdepends:
     - fastfetch
+  backup:
+    - etc/rc.local
   source:
-    - git+https://gitea.artixlinux.org/artix/artix-branding.git#commit=01116064d83f4e8f120ae65dfec544755cc9a0ff
+    - git+https://gitea.artixlinux.org/artix/artix-branding.git#commit=4573639aadefeacd4b48ded9c17df84674b40318
   sha256sums:
-    - c5283eae57c96d432604550c61b0061df01f855791a9c0563337155cc1ade323
+    - b7f4fb004b06217be7b0f71b35e5ac6fae1a132277968ac247cd719665afc885
 pkgname:
   - name: artix-branding-base
 # generated with artixpkg 0.36.4-1-any
