@@ -1,6 +1,6 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=syncthing-dinit
-pkgver=20250814
+pkgver=20250816
 pkgrel=1
 pkgdesc="dinit service scripts for syncthing"
 arch=('any')
@@ -11,9 +11,13 @@ depends=('syncthing' 'dinit')
 conflicts=('init-syncthing')
 provides=('init-syncthing')
 backup=('etc/dinit.d/syncthing')
-source=("syncthing")
-sha256sums=('bf4ce8c25251e267515bac6a435aaa2687487566f1c707f0c81c694937be0d21')
+source=("syncthing" "syncthing.user")
+sha256sums=('cbeeef7b9a153225d2719014214a0a51add7ab8e100740736be0edd67eb4bbc0'
+            '187a44748b99647187bc92594c336c9fbcc64b63897a66dd81e72343c0a4db95')
+optdepends=('turnstile: automatically create a dinit user session')
+install=syncthing-dinit.install
 
 package() {
+    install -Dm644 syncthing.user "$pkgdir/etc/dinit.d/user/syncthing"
     install -Dm644 syncthing      "$pkgdir/etc/dinit.d/syncthing"
 }
