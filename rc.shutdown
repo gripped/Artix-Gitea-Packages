@@ -1,1 +1,3 @@
-#! /bin/sh
+#!/bin/sh
+# rc.shutdown for Artix -- enter your commands here
+# it should be run when stopping local.target service
