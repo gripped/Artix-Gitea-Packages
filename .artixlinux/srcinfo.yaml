@@ -1,9 +1,9 @@
 ---
-version: 6.15-3
+version: 6.16-1
 pkgbase:
   name: linux-tools
-  pkgver: 6.15
-  pkgrel: 3
+  pkgver: 6.16
+  pkgrel: 1
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -48,13 +48,13 @@ pkgbase:
     - '!strip'
     - '!lto'
   source:
-    - git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v6.15?signed
+    - git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v6.16?signed
     - cpupower.default
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 007254a9b13fc80821f0f3e15a06979ede090ad572b35be0564610c0ac2ea354
+    - 4d79d7d2dd34c3265fa284161983d9e2b21b8256063022107900d71f159f5ad9
     - 4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f
 pkgname:
   - name: bootconfig
@@ -161,4 +161,4 @@ pkgname:
     pkgdesc: Read or write MSR_IA32_ENERGY_PERF_BIAS
     depends:
       - glibc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
