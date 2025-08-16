@@ -1,0 +1,28 @@
+---
+version: 1.6.7-1
+pkgbase:
+  name: ephoto
+  pkgdesc: A light image viewer based on EFL
+  pkgver: 1.6.7
+  pkgrel: 1
+  url: http://www.enlightenment.org
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - git
+    - meson>=0.47.0
+  depends:
+    - efl>=1.26.0
+  provides:
+    - ephoto=1.6.7
+  conflicts:
+    - ephoto-git
+  source:
+    - git+https://github.com/rbtylee/ephoto.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: ephoto
+# generated with artixpkg 0.36.4-1-any
