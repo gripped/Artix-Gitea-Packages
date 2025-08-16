@@ -4,7 +4,7 @@
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=6
+pkgrel=7
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
