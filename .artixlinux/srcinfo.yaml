@@ -1,0 +1,28 @@
+---
+version: 1.17.3-1
+pkgbase:
+  name: python-wrapt
+  pkgdesc: A Python module for decorators, wrappers and monkey patching
+  pkgver: 1.17.3
+  pkgrel: 1
+  url: https://pypi.python.org/pypi/wrapt
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-wrapt-1.17.3.tar.gz::https://github.com/GrahamDumpleton/wrapt/archive/refs/tags/1.17.3.tar.gz
+  sha512sums:
+    - 1a1f7419f20faa461a9e23ad09cc98d381ef2c48b3b24ed1dfe98d42d16857a958252301e78dd41b7fa8ef37eea379f9244cace2b396b49718c44cbc701308a3
+pkgname:
+  - name: python-wrapt
+# generated with artixpkg 0.36.4-1-any
