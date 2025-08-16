@@ -1,0 +1,29 @@
+---
+version: 20240525-2
+pkgbase:
+  name: ipset-dinit
+  pkgdesc: dinit service scripts for ipset
+  pkgver: 20240525
+  pkgrel: 2
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - ipset
+    - dinit
+    - iptables-dinit
+  provides:
+    - init-ipset
+  conflicts:
+    - init-ipset
+  source:
+    - ipset
+  sha256sums:
+    - 9a69e39fd6260e57a31287088e3f27ffc9343211d8b8254c7f6aeec0bbe79a6e
+pkgname:
+  - name: ipset-dinit
+# generated with artixpkg 0.36.5-1-any
