@@ -1,9 +1,10 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: initMayday <initMayday@protonmail.com>
+# Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
@@ -30,5 +31,4 @@ build() {
 
 package() {
     meson install -C build --destdir="$pkgdir"
-    install -Dm644 "$pkgname"/dinit-user-spawn.service "$pkgdir"/usr/lib/dinit.d/dinit-user-spawn
 }
