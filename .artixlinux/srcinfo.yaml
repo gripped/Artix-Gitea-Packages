@@ -1,10 +1,10 @@
 ---
-version: 20250816-1
+version: 20250816-2
 pkgbase:
   name: syncthing-dinit
   pkgdesc: dinit service scripts for syncthing
   pkgver: 20250816
-  pkgrel: 1
+  pkgrel: 2
   url: https://artixlinux.org
   install: syncthing-dinit.install
   arch:
@@ -16,8 +16,6 @@ pkgbase:
   depends:
     - syncthing
     - dinit
-  optdepends:
-    - 'turnstile: automatically create a dinit user session'
   provides:
     - init-syncthing
   conflicts:
@@ -32,4 +30,4 @@ pkgbase:
     - 187a44748b99647187bc92594c336c9fbcc64b63897a66dd81e72343c0a4db95
 pkgname:
   - name: syncthing-dinit
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any

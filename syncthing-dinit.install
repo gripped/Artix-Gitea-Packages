@@ -1,9 +1,9 @@
 post_upgrade()
 {
-    if [[ $(vercmp 20250816-1 < $2) < 1 ]]; then
-        echo "==> Since version 2.0.0, Syncthing client daemon is user-services only."
-        echo "    You will need to have a dinit user instance running. Either roll your"
-        echo "    own, or you can leverage turnstile to automatically make it on boot."
+    if [[ $(vercmp 20250816-2 < $2) < 1 ]]; then
+        echo "==> Since version 2.0.0, Syncthing client daemon is for user services."
+        echo "    You will need to have a dinit user instance running. dinit-user-spawn"
+        echo "    should handle it if you have latest dinit-rc."
         echo "==> /etc/dinit.d/syncthing is DEPRECATED and will be REMOVED on future"
         echo "    release, please use the user version instead."
     fi
@@ -12,5 +12,6 @@ post_upgrade()
 post_install()
 {
     echo "==> /etc/dinit.d/syncthing is DEPRECATED and will be REMOVED on future"
-    echo "    release, please use the user version instead."
+    echo "    release, please use /etc/dinit.d/user/syncthing instead and run the service"
+    echo "    as your own user."
 }
