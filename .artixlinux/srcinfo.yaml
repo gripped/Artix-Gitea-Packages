@@ -1,0 +1,35 @@
+---
+version: 0.5.0a0-1
+pkgbase:
+  name: python-sphinxcontrib-towncrier
+  pkgdesc: A RST directive for injecting a Towncrier-generated changelog draft containing fragments for the unreleased (next) project version
+  pkgver: 0.5.0a0
+  pkgrel: 1
+  url: https://github.com/sphinx-contrib/sphinxcontrib-towncrier
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-xdist
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-sphinx
+    - towncrier
+  source:
+    - python-sphinxcontrib-towncrier::git+https://github.com/sphinx-contrib/sphinxcontrib-towncrier#tag=v0.5.0a0
+  sha512sums:
+    - 3fad2bd259155fd2c2051ca12bf1c84322bb2186063b544e9e784b3162061971af573a726d25f88db82b95f3a1434f44b54698a28406217dbba3dddc27216d6c
+  b2sums:
+    - 2cd0596a51e12281b8750f5eacff6d86d8d70383efa3c372d63d0c17dd144ce5bf6ac3186ab7897bffe7485d22160e1175a3b56db2beb76b8f9f63a4ca30a341
+pkgname:
+  - name: python-sphinxcontrib-towncrier
+# generated with artixpkg 0.36.4-1-any
