@@ -17,7 +17,7 @@ pkgbase:
     - artix-cgroups
     - bash
     - dbus
-    - dinit-user-spawn>1.0.0-5
+    - dinit-user-spawn>=1.0.0-6
     - glibc
     - udev
   optdepends:

@@ -12,7 +12,7 @@ depends=(
     'artix-cgroups'
     'bash'
     'dbus' # dbus dep is for dbus-wait-for
-    'dinit-user-spawn>1.0.0-5'
+    'dinit-user-spawn>=1.0.0-6'
     'glibc'
     'udev'
 )
