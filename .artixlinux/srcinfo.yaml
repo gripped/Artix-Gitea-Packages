@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: kamoso
   pkgdesc: A webcam recorder from KDE community
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/kamoso/
   arch:
@@ -16,36 +16,36 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
     - glib2-devel
-    - kdoctools5
+    - kdoctools
     - python
   depends:
     - gcc-libs
     - glib2
     - glibc
+    - gst-plugin-qml6
     - gst-plugins-bad
     - gst-plugins-base-libs
     - gst-plugins-good
     - gstreamer
-    - kconfig5
-    - kcoreaddons5
-    - ki18n5
-    - kio5
-    - kirigami2
-    - kitemviews5
-    - knotifications5
-    - purpose5
-    - qt5-base
-    - qt5-declarative
-    - qt5-graphicaleffects
+    - kconfig
+    - kcoreaddons
+    - ki18n
+    - kio
+    - kirigami
+    - kitemviews
+    - knotifications
+    - purpose
+    - qt6-base
+    - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/kamoso-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/kamoso-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/kamoso-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/kamoso-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 27cb36ac810434514e4f870c64d8ca851e868dd49fca1396dcb5be97a9727477
+    - 32dc14864fa4b634ce057bf29647cad7bfdac15a282ba2ca98f4230b28142160
     - SKIP
 pkgname:
   - name: kamoso
