@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: rocs
   pkgdesc: Graph Theory IDE
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/rocs/
   arch:
@@ -41,14 +41,14 @@ pkgbase:
     - qt5-script
     - qt5-xmlpatterns
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/rocs-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/rocs-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/rocs-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/rocs-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 7aa095b6605dbd9075250b070d388b78fc2d739f483b404a41182c7bfb705a99
+    - b4e8e702303767269463473707cf4b24a3d99f5f9433cc7c2ce2e5e40df31c89
     - SKIP
 pkgname:
   - name: rocs
