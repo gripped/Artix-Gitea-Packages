@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: kaccounts-providers
   pkgdesc: Online account providers for the KAccounts system
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -27,14 +27,14 @@ pkgbase:
     - qt6-declarative
     - qt6-webengine
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/kaccounts-providers-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/kaccounts-providers-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/kaccounts-providers-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/kaccounts-providers-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - a8d8245157f4b867190671432acf15a0f3f658654992f69ab3b9e0f7666177b3
+    - 3f1434e7381635f2d0e31b7d81099fcd326aebb90fc9e01e513c865c05ed1c47
     - SKIP
 pkgname:
   - name: kaccounts-providers
