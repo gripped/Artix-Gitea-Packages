@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: mbox-importer
   pkgdesc: Import mbox files to KMail
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - mailimporter
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/mbox-importer-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/mbox-importer-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/mbox-importer-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/mbox-importer-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 116992fe3927a74f272fa9b8ab1bb2f494dcdba062d045d9d1e56d248a52d3f3
+    - 98fca7d6940d41de21d7bd8b399596a13686d95fdd466b2dd3ddbaf40552487b
     - SKIP
 pkgname:
   - name: mbox-importer
