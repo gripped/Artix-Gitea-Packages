@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: ark
   pkgdesc: Archiving Tool
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/ark/
   arch:
@@ -40,7 +40,6 @@ pkgbase:
     - libarchive
     - libzip
     - qt6-base
-    - sh
     - zlib
   optdepends:
     - 'arj: ARJ format support'
@@ -50,14 +49,14 @@ pkgbase:
     - 'unarchiver: RAR format support'
     - 'unrar: RAR decompression support'
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/ark-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/ark-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/ark-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/ark-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - f93a428c88226d61e5a632e0660391189731f80adb574825108015a07bb1051c
+    - 391fae7a08757dd5cc2b0081251c513859345e49d30ce7f10c3da5f4ce4ba3a0
     - SKIP
 pkgname:
   - name: ark
