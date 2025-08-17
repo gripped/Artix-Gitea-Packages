@@ -1,0 +1,33 @@
+---
+version: 0.7.1-1
+pkgbase:
+  name: python-fire
+  pkgdesc: A library for automatically generating command line interfaces
+  pkgver: 0.7.1
+  pkgrel: 1
+  url: https://github.com/google/python-fire
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-hypothesis
+    - python-levenshtein
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-termcolor
+  source:
+    - python-fire-0.7.1.tar.gz::https://github.com/google/python-fire/archive/refs/tags/v0.7.1.tar.gz
+  sha512sums:
+    - 5a54cb86b4a75560132b36507047530aab95666102095410f0e26d4341799d2809c1959f3edb963cf7f78d774c8be097cc2d4761e845fe101e9a369677c1e84c
+  b2sums:
+    - 207afbb87a838d9def4f88f8e030d39b7f457018f8ff13ff661763d6bc8b70d62a95ba8ca2cf149e95e9b1134adfd7367b356bd63fc3b4012682961184df0f2e
+pkgname:
+  - name: python-fire
+# generated with artixpkg 0.36.4-1-any
