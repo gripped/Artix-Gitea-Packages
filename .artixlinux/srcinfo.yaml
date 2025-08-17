@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: kunifiedpush
   pkgdesc: UnifiedPush client components
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://www.kde.org
   arch:
@@ -16,20 +16,23 @@ pkgbase:
     - gcc-libs
     - glibc
     - kcmutils
+    - ki18n
     - kcoreaddons
     - kservice
+    - openssl
     - qt6-base
     - qt6-declarative
     - qt6-websockets
+    - solid
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/kunifiedpush-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/kunifiedpush-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/kunifiedpush-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/kunifiedpush-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - a16ffe4117b14baa02f3b8ae7de9e509a17359c1b67dcd851aef4f3c3661a1df
+    - 846db6ffc7d93f6afea7ce0d5a9f10b52792157ceb593856542279f4197f3518
     - SKIP
 pkgname:
   - name: kunifiedpush
