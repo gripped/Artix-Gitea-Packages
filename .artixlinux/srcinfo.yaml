@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: koko
   pkgdesc: Image gallery application
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/koko/
   arch:
@@ -43,21 +43,15 @@ pkgbase:
     - qt6-positioning
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/koko-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/koko-25.04.3.tar.xz.sig
-    - https://sources.archlinux.org/other/packages/koko/cities1000-2023-11-14.zip
-    - https://sources.archlinux.org/other/packages/koko/admin1CodesASCII-2023-11-14.txt
-    - https://sources.archlinux.org/other/packages/koko/admin2Codes-2023-11-14.txt
+    - https://download.kde.org/stable/release-service/25.08.0/src/koko-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/koko-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ceeb30bec0a1846758349e13b519cf98050c44c4fc437cb137383c07fad98123
+    - 4fdb14b1d03e74d65634eef47925fd21216bb4019d189232a9831fabbcdf4fe5
     - SKIP
-    - 68e71c0790b37ac1e102c49d5ed4bb28a8ef3106d92fd03764538db623167259
-    - 14e12e9d94edac5c97bbc02869c051b2188b2ec2b4c7af18597a7b36167f211e
-    - 25a34f94da79abe10272bacd0ed870a13a17b179bc08a7d975c5afd8e1b7b0dd
 pkgname:
   - name: koko
 # generated with artixpkg 0.36.4-1-any
