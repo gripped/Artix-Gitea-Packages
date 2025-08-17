@@ -1,0 +1,45 @@
+---
+version: 2025.08-1
+pkgbase:
+  name: artix-live
+  pkgdesc: Artix live session
+  pkgver: 2025.08
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/artix-live
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+    - bash
+    - artools-base
+  source:
+    - git+https://gitea.artixlinux.org/artix/artix-live.git#commit=53a7e308f6d4b26103ddbc4831197487f30d7e8d
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-live-base
+    pkgdesc: Artix live base scripts
+    depends:
+      - artools-base
+      - bash
+  - name: artix-live-openrc
+    pkgdesc: Artix live openrc init scripts
+    depends:
+      - artix-live-base
+  - name: artix-live-runit
+    pkgdesc: Artix live runit init scripts
+    depends:
+      - artix-live-base
+  - name: artix-live-s6
+    pkgdesc: Artix live s6 init scripts
+    depends:
+      - artix-live-base
+  - name: artix-live-dinit
+    pkgdesc: Artix live dinit init scripts
+    depends:
+      - artix-live-base
+  - name: artix-grub-live
+    pkgdesc: Artix grub live
+# generated with artixpkg 0.36.5-1-any
