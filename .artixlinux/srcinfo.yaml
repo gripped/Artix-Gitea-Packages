@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: korganizer
   pkgdesc: Calendar and scheduling Program
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/korganizer/
   arch:
@@ -39,14 +39,12 @@ pkgbase:
     - kholidays
     - ki18n
     - kiconthemes
-    - kidentitymanagement
     - kio
     - kitemmodels
     - kitemviews
     - kjobwidgets
     - kmailtransport
     - kmime
-    - knewstuff
     - kontactinterface
     - kparts
     - kuserfeedback
@@ -60,14 +58,14 @@ pkgbase:
   optdepends:
     - 'kdepim-addons: additional plugins'
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/korganizer-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/korganizer-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/korganizer-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/korganizer-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - dd18b2c26bb1af4ccd4ee66a4a203c8c6ab59f639bc6f5a09a3b4c8d1bf55cee
+    - 74c7d57be2ecd00920c5cc1b079d33e849d7b36f02fe45259cad337da5b4f78b
     - SKIP
 pkgname:
   - name: korganizer
