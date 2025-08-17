@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: kdepim-runtime
   pkgdesc: Extends the functionality of kdepim
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -26,7 +26,6 @@ pkgbase:
     - kcalendarcore
     - kcmutils
     - kcodecs
-    - kcompletion
     - kconfig
     - kconfigwidgets
     - kcontacts
@@ -62,14 +61,14 @@ pkgbase:
   optdepends:
     - 'libetebase: EteSync resource'
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/kdepim-runtime-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/kdepim-runtime-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/kdepim-runtime-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/kdepim-runtime-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 133dcf8c314c36ecc8b4775d9eb6d929bbbbd5355dddf29441abaf00fe9a1a89
+    - 42ba99c3ec9f4be19abe66b2c1933cda4afba7e2643248b2f741565df7bf5706
     - SKIP
 pkgname:
   - name: kdepim-runtime
