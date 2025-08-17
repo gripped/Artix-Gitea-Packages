@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: krfb
   pkgdesc: Desktop Sharing
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/krfb/
   arch:
@@ -45,14 +45,14 @@ pkgbase:
     - xcb-util-image
     - xdg-desktop-portal
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/krfb-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/krfb-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/krfb-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/krfb-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - f6db99cf945a2073336ed6dd8dd03101a815742a0cecc560a357fe39b3760707
+    - f353c6603046fe97fd0808497d47a3eb18bbd7811e43d08c965414214496845a
     - SKIP
 pkgname:
   - name: krfb
