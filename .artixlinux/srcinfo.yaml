@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: artikulate
   pkgdesc: Improve your pronunciation by listening to native speakers
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/artikulate/
   arch:
@@ -16,30 +16,32 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
-    - kdoctools5
+    - kdoctools
   depends:
     - gcc-libs
     - glibc
-    - karchive5
-    - kconfig5
-    - kcoreaddons5
-    - kcrash5
-    - ki18n5
-    - kirigami2
-    - knewstuff5
-    - qt5-base
-    - qt5-declarative
-    - qt5-multimedia
-    - qt5-xmlpatterns
+    - karchive
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - ki18n
+    - kirigami
+    - kirigami-addons
+    - kitemmodels
+    - knewstuff
+    - libxml2
+    - qt6-base
+    - qt6-declarative
+    - qt6-multimedia
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/artikulate-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/artikulate-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/artikulate-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/artikulate-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 428ce49b04e8403ae952757dd883821b0e235170b9cfa0e7ba58b867bfaab404
+    - 92703da756d380e2f8cb73c9192769fc18d92aea3f8db8e1c6e97b9b4c8bbda9
     - SKIP
 pkgname:
   - name: artikulate
