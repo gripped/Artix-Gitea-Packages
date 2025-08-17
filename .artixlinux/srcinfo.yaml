@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: ktuberling
   pkgdesc: A simple constructor game suitable for children and adults alike
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/ktuberling/
   arch:
@@ -35,14 +35,14 @@ pkgbase:
     - qt6-multimedia
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/ktuberling-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/ktuberling-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/ktuberling-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/ktuberling-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 51f5c51330e825ea7717d0b5e895669eb02e5a7a579e0a55926c9e4ed56d8d16
+    - fc30d68a9b4168a751085b09252cdbd547c6305dd505d61f1adf6afadb38f996
     - SKIP
 pkgname:
   - name: ktuberling
