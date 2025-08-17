@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: kpimtextedit
   pkgdesc: A textedit with PIM-specific features
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -19,7 +19,6 @@ pkgbase:
     - gcc-libs
     - glibc
     - kcodecs
-    - kcolorscheme
     - kconfig
     - kcoreaddons
     - ki18n
@@ -31,14 +30,14 @@ pkgbase:
     - sonnet
     - syntax-highlighting
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/kpimtextedit-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/kpimtextedit-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/kpimtextedit-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/kpimtextedit-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 4a107ca02a4535fdc08f7b65886cc99cdf9da642a67363bcbab4cba338bc6c32
+    - 9dc08e3251b371cb6c1b8980d2dc0cbc0dab9fc115d0844894bf8dbd0f4d1437
     - SKIP
 pkgname:
   - name: kpimtextedit
