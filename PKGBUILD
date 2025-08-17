@@ -1,12 +1,14 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 # Maintainer: nous <nous@artixlinux.org>
 
+_artix_url=https://gitea.artixlinux.org/artix/calamares
+
 pkgname=calamares
 pkgver=3.3.14
-pkgrel=2
+pkgrel=3
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
-url="https://github.com/calamares/calamares"
+url="https://codeberg.org/Calamares/calamares"
 license=(
     'BSD-2-Clause'
     'CC-BY-4.0'
@@ -26,23 +28,24 @@ makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-translations' 'git')
 provides=('libcalamares.so' 'libcalamaresui.so')
 optdepends=('calamares-extensions: Artix extensions and branding')
 source=(
-        "git+https://github.com/calamares/calamares.git#tag=v$pkgver"
-        # "$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v${pkgver}.tar.gz"
+        "git+${url}.git#tag=v$pkgver"
         0001-packagechooser-customize-qrc.patch
         0002-if-license.patch
         0003-packagechooser-add-if-png.patch
-
-        )
+        0001-btrfs-fix-crc32c-module-loading.patch
+)
 sha256sums=('e06f8d5d185120ce3c02ea94137eb51e84a76bb8f5b09be7e9f6e9129c0f81af'
             '893e55d56557bc422cab095f9d303863240d883797e3920ff5a165b3618bb29d'
             'f95255cd446a8887d41698c6da7d3d5147afa98ba775930f1cce64c21300b7ba'
-            '9cc8e5172171681eec810ce7d259995a9e3bcabe9ef46772c8f1c35040f8f5fd')
+            '9cc8e5172171681eec810ce7d259995a9e3bcabe9ef46772c8f1c35040f8f5fd'
+            'ddf42142a1127af099313134912cb5a5c1b1e6afe1469cb5eb14f864cd779cb1')
 
 prepare() {
     cd $pkgname
     git apply ../0001-packagechooser-customize-qrc.patch
     git apply ../0002-if-license.patch
     git apply ../0003-packagechooser-add-if-png.patch
+    git apply ../0001-btrfs-fix-crc32c-module-loading.patch
 }
 
 build() {
