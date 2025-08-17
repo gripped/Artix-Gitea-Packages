@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: skladnik
   pkgdesc: An implementation of the Japanese warehouse keeper game Sokoban
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/skladnik/
   arch:
@@ -33,14 +33,14 @@ pkgbase:
     - libkdegames
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/skladnik-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/skladnik-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/skladnik-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/skladnik-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9dc7bc2e7148d9d0551a67bd56b6a8fac34fc17ccf11baf04075b8b39af27dfc
+    - 530256e6e7c4fa65a21f1cbb367a2a638daef34ddcc2a51180de223fb1ba694d
     - SKIP
 pkgname:
   - name: skladnik
