@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: angelfish
   pkgdesc: Web browser for Plasma Mobile
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/angelfish/
   arch:
@@ -23,6 +23,7 @@ pkgbase:
     - glibc
     - kconfig
     - kcoreaddons
+    - kcrash
     - kdbusaddons
     - ki18n
     - kirigami
@@ -39,14 +40,14 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/angelfish-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/angelfish-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/angelfish-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/angelfish-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - e224dca697b97d6c0370b10f1305bb60336a4e1c8e5648c90af57696646cbfc0
+    - 0926325a19f2cc72e4a54fdacec5eb7cb15044e6129d28d1a959a706ad1c2d7c
     - SKIP
 pkgname:
   - name: angelfish
