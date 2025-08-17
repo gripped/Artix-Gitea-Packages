@@ -1,9 +1,9 @@
 ---
-version: 1:25.04.3-1
+version: 1:25.08.0-1
 pkgbase:
   name: k3b
   pkgdesc: Feature-rich and easy to handle CD burning application
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   epoch: 1
   url: https://apps.kde.org/k3b/
@@ -62,14 +62,14 @@ pkgbase:
     - 'emovix: for bootable multimedia CD/DVD support'
     - 'vcdimager: for VCD burning support'
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/k3b-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/k3b-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/k3b-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/k3b-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - a24b72a42bde0eb4f0501fee66030fe728636afaceeb5c8acdb224bb8eb7a3b5
+    - ebe967543a9256ef07cfdef03766b10ba39cb43fc0bc05cd53fc0d8d8bb3fb7b
     - SKIP
 pkgname:
   - name: k3b
