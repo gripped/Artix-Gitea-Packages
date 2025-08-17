@@ -1,0 +1,47 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+
+pkgname=htmlq
+pkgver=0.4.0
+pkgrel=2
+pkgdesc='Like jq, but for HTML'
+arch=('x86_64')
+url='https://github.com/mgdm/htmlq'
+license=('MIT')
+depends=('gcc-libs')
+makedepends=('git' 'rust')
+options=('!lto')
+source=("git+$url.git#tag=v$pkgver")
+b2sums=('2cb83ed964c7c97993d6eec419109c20672dfeefaebc1725e2d887f8939f9a3a2d9f41a4de36e2d2e8defaeed6e945047132adc266cb247f0ff057bfae820cce')
+
+prepare() {
+  cd "$pkgname"
+
+  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+}
+
+build() {
+  cd "$pkgname"
+
+  cargo build --frozen --release
+}
+
+check() {
+  cd "$pkgname"
+
+  cargo test --frozen --release
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" target/release/htmlq
+
+  # documentation
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.md
+}
