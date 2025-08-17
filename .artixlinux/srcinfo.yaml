@@ -1,0 +1,38 @@
+---
+version: 1.4.3-1
+pkgbase:
+  name: python-django-ninja
+  pkgdesc: Fast, Async-ready, Openapi, type hints based framework for building APIs
+  pkgver: 1.4.3
+  pkgrel: 1
+  url: https://github.com/vitalik/django-ninja
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+    - python-pytest-cov
+    - python-pytest-django
+    - python-psycopg2
+  makedepends:
+    - python-build
+    - python-flit-core
+    - python-installer
+  depends:
+    - python
+    - python-asgiref
+    - python-django
+    - python-pydantic
+    - python-pydantic-core
+    - python-typing_extensions
+  source:
+    - python-django-ninja-1.4.3.tar.gz::https://github.com/vitalik/django-ninja/archive/refs/tags/v1.4.3.tar.gz
+  sha512sums:
+    - f573e9a48aef6e620a048d8724e09087ac5e166d4319bd037120e329a215d71dd3a7785059ac765956d8b93b2c61a375d57d145a135b9a90da668f200cc80fa9
+  b2sums:
+    - 76a3dbe1a1f32681bcb773e435bf78f4c30a5a3a28f4258b96d6faf83e21378ee73d50dc7b8b3879d209207c44c14be8e2eaa6a1e911167706eb1bd537eaf743
+pkgname:
+  - name: python-django-ninja
+# generated with artixpkg 0.36.4-1-any
