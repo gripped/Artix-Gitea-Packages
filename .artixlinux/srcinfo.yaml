@@ -1,0 +1,34 @@
+---
+version: 2.1.0-1
+pkgbase:
+  name: python-josepy
+  pkgdesc: JOSE protocol implementation in Python
+  pkgver: 2.1.0
+  pkgrel: 1
+  url: https://github.com/certbot/josepy
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-cryptography
+  source:
+    - python-josepy::git+https://github.com/certbot/josepy#tag=v2.1.0
+    - no-thanks-poetry.patch
+  sha512sums:
+    - 1900e4e2e8f9371faccb484cf28a3a611b9ce215b2131c7825fe6077d0c9bb7f2553dadea16f641f779fca412cbe93a117df8094f5226188644d146054ccd6ab
+    - 5fc9682dbb93a3af76bb07653ec873c40a2acad24484ce64babde7d342390439efad018d5b5fda88df7338b562ba88d4254a32bda77bd1e981a0b312218e9bc8
+  b2sums:
+    - a7b352c3a58e86a7713e16d72f43edbc518d608d8d8077c46628af91c5ea0a447fbdd90f12d34315045e246b127321eebc06d83a8f7dcebb907d14f1af129304
+    - b7bf362e953247424fadea853b3c7be9977021b7d109d240ced847b9271c739e6dfcf8025efbdd9bb746dc42e21905cb1c9c93982d4e39dab60354ab06c6e76a
+pkgname:
+  - name: python-josepy
+# generated with artixpkg 0.36.4-1-any
