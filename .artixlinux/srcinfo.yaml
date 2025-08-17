@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: minuet
   pkgdesc: A KDE Software for Music Education
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/minuet/
   arch:
@@ -16,27 +16,26 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
-    - kdoctools5
+    - kdoctools
   depends:
     - gcc-libs
     - glibc
-    - kcoreaddons5
-    - kcrash5
-    - ki18n5
+    - kcoreaddons
+    - kcrash
+    - ki18n
     - fluidsynth
-    - qt5-base
-    - qt5-declarative
-    - qt5-quickcontrols2
-    - qt5-svg
+    - qt6-base
+    - qt6-declarative
+    - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/minuet-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/minuet-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/minuet-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/minuet-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8d8bd7e3891622432c52a9b9d0bf4bc1a93ace9fdd19fd434bb787239e117057
+    - 838ad92f54058ac84b8cb3411922f3a848910e3b87f3b0faebeee2591ba97744
     - SKIP
 pkgname:
   - name: minuet
