@@ -3,7 +3,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kmail-account-wizard
-pkgver=25.04.3
+pkgver=25.08.0
 pkgrel=1
 pkgdesc='KMail account wizard'
 arch=(x86_64)
@@ -32,7 +32,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0b4629ee1bf919e7a8496c644162591afc7ebfa36439555c1fbdeb9226e905fd'
+sha256sums=('6b7b78fbc370024308193024b276066bac2b5957dcca5ac54c2a5f60fdfd9c44'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
