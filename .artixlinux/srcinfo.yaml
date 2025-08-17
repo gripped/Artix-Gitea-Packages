@@ -1,9 +1,9 @@
 ---
-version: 25.04.3-1
+version: 25.08.0-1
 pkgbase:
   name: neochat
   pkgdesc: A client for matrix, the decentralized communication protocol
-  pkgver: 25.04.3
+  pkgver: 25.08.0
   pkgrel: 1
   url: https://apps.kde.org/neochat/
   arch:
@@ -18,6 +18,7 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
     - python
+    - qcoro
   depends:
     - cmark
     - gcc-libs
@@ -44,26 +45,26 @@ pkgbase:
     - libquotient
     - prison
     - purpose
-    - qcoro
     - qqc2-desktop-style
     - qt6-base
     - qt6-declarative
     - qt6-location
     - qt6-multimedia
     - qt6-positioning
+    - qt6-speech
     - qt6-webview
     - qtkeychain-qt6
     - sonnet
     - syntax-highlighting
   source:
-    - https://download.kde.org/stable/release-service/25.04.3/src/neochat-25.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.04.3/src/neochat-25.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.0/src/neochat-25.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.0/src/neochat-25.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ad44385ffdd78f813443fac8702003ee16d36afeded0bdf02fd4c928c487c53c
+    - 960f05a676cbed9a063bf9cdf53f63f4d817f07a0acf52edd40185320d3248e6
     - SKIP
 pkgname:
   - name: neochat
