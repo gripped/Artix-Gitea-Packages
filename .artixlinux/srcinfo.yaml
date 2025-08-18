@@ -1,9 +1,9 @@
 ---
-version: 1.11.608-1
+version: 1.11.628-1
 pkgbase:
   name: aws-sdk-cpp
   pkgdesc: AWS SDK for C++
-  pkgver: 1.11.608
+  pkgver: 1.11.628
   pkgrel: 1
   url: https://github.com/aws/aws-sdk-cpp
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - libpulse
     - zlib
   source:
-    - aws-sdk-cpp-1.11.608.tar.gz::https://github.com/aws/aws-sdk-cpp/archive/1.11.608.tar.gz
+    - aws-sdk-cpp-1.11.628.tar.gz::https://github.com/aws/aws-sdk-cpp/archive/1.11.628.tar.gz
   sha256sums:
-    - d3da45bf18809960708fc4aec28c3ee35b1430b1ca52b47fd2c334b566170a0f
+    - b127cc8e5810f1da7284909880397f58f8897488bad8cffd91b97e04ed4d3819
 pkgname:
   - name: aws-sdk-cpp
     depends:
@@ -95,4 +95,4 @@ pkgname:
       - aws-sdk-cpp-core
       - gcc-libs
       - glibc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
