@@ -13,7 +13,7 @@ pkgname=(
   rabbitmq
   rabbitmqadmin
 )
-pkgver=4.1.2
+pkgver=4.1.3
 pkgrel=1
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
@@ -48,16 +48,15 @@ makedepends=(
   'util-linux'
   'xmlto'
 )
-_commit=0fa5c106f69daf6bda3feb6610fb85ceae6a813f
 source=(
-  "git+https://github.com/rabbitmq/rabbitmq-server.git#commit=${_commit}?signed"
+  "git+https://github.com/rabbitmq/rabbitmq-server.git#tag=v$pkgver"
   rabbitmq-devendor-rebar3.patch
   rabbitmq-env.conf
   rabbitmq.sysusers
   rabbitmq.tmpfiles
   rabbitmq.logrotate
 )
-sha512sums=('84691d957b202510f0ea89a2303f2872f3b16c6c39d3b85bc5de4aca60b296cb791472d64dba2f27dd2896a3357cb645a8f667c1f2eeb372fceb4267ed59a3b2'
+sha512sums=('c4fcb7286e662349824817f6dc0db0f785c21d82c9b8354f24c93f9da76e9d2366840b6a97a723ef4fad60e352c3d88bbd2948520da75b6e1c1a1a00c6d156ef'
             'a13f9c9d6fbff3b5356a2bf10f85cc9d44f991c8f145b57825f39119e65db7e06341d52f19f209d4968c33bed37b193996b321a0727364b79e7127fb70c74bd5'
             '8b841e28fa0a1424dd9e57c0988e015f3cd4cccef0f73ccdb7c7b66d11ca62ba8ef3a59c7ca5e5f0c9c9d8003ac72bf53785985d98aae867961787003286e179'
             '33c6af8810d8cbc479c63ed535de0a27b2e90eeed8fc9b39255683028478529a7e8953aa992f615d4101c6aefdc066f95c98fb9fb5bf1faf0ea327364101914c'
