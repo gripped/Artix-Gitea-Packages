@@ -10,7 +10,7 @@ pkgname=(
   colord-docs
 )
 pkgver=1.4.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc="System daemon for managing color devices"
 url="https://www.freedesktop.org/software/colord/"
 arch=(x86_64)
@@ -42,14 +42,19 @@ makedepends=(
   vala
 )
 options=(!emptydirs)
-source=("git+https://github.com/hughsie/colord?signed#tag=$pkgver")
-b2sums=('451c9571241278fb3347dd928370f3e350645c1cb2736beda37e7e5d3c1d374d49626298f0ab96d457de6ec3633fda1057d992aa833bf4f8042e29fcc4162a66')
+source=(
+    "git+https://github.com/hughsie/colord?signed#tag=$pkgver"
+    0001-install-sysusers-and-tmpfiles.patch
+)
+b2sums=('451c9571241278fb3347dd928370f3e350645c1cb2736beda37e7e5d3c1d374d49626298f0ab96d457de6ec3633fda1057d992aa833bf4f8042e29fcc4162a66'
+        'd3d0cbd22544b0289ca3531f0011883ea4ea19178179a0dfc7be5f115cb6086be04715beb2f25712c9b4c0904cdb204c4dda828c811858d9e184f279c158b591')
 validpgpkeys=(
   163EB50119225DB3DF8F49EA17ACBA8DFA970E17 # Richard Hughes <richard@hughsie.com>
 )
 
 prepare() {
   cd colord
+  git apply ../0001-install-sysusers-and-tmpfiles.patch
 }
 
 build() {

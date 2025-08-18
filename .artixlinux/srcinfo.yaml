@@ -1,10 +1,10 @@
 ---
-version: 1.4.8-1
+version: 1.4.8-1.1
 pkgbase:
   name: colord
   pkgdesc: System daemon for managing color devices
   pkgver: 1.4.8
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.freedesktop.org/software/colord/
   arch:
     - x86_64
@@ -38,10 +38,12 @@ pkgbase:
     - '!emptydirs'
   source:
     - git+https://github.com/hughsie/colord?signed#tag=1.4.8
+    - 0001-install-sysusers-and-tmpfiles.patch
   validpgpkeys:
     - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
   b2sums:
     - 451c9571241278fb3347dd928370f3e350645c1cb2736beda37e7e5d3c1d374d49626298f0ab96d457de6ec3633fda1057d992aa833bf4f8042e29fcc4162a66
+    - d3d0cbd22544b0289ca3531f0011883ea4ea19178179a0dfc7be5f115cb6086be04715beb2f25712c9b4c0904cdb204c4dda828c811858d9e184f279c158b591
 pkgname:
   - name: colord
     depends:
@@ -57,7 +59,7 @@ pkgname:
       - shared-mime-info
       - sqlite
       - libudev
-      - libcolord=1.4.8-1
+      - libcolord=1.4.8-1.1
     optdepends:
       - 'argyllcms: color profiling'
       - 'colord-sane: SANE support'
@@ -78,8 +80,8 @@ pkgname:
   - name: colord-sane
     pkgdesc: System daemon for managing color devices (SANE support)
     depends:
-      - colord=1.4.8-1
-      - libcolord=1.4.8-1
+      - colord=1.4.8-1.1
+      - libcolord=1.4.8-1.1
       - dbus
       - gcc-libs
       - glib2
@@ -89,4 +91,4 @@ pkgname:
   - name: colord-docs
     pkgdesc: System daemon for managing color devices (API documentation)
     depends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
