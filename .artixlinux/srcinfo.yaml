@@ -1,0 +1,32 @@
+---
+version: 7.1-1
+pkgbase:
+  name: python-zope-schema
+  pkgdesc: zope.interface extension for defining data schemas
+  pkgver: 7.1
+  pkgrel: 1
+  url: https://github.com/zopefoundation/zope.schema
+  arch:
+    - any
+  license:
+    - ZPL-2.1
+  checkdepends:
+    - python-zope-i18nmessageid
+    - python-zope-testing
+    - python-zope-testrunner
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-zope-event
+    - python-zope-interface
+  source:
+    - python-zope-schema-7.1.tar.gz::https://github.com/zopefoundation/zope.schema/archive/7.1.tar.gz
+  sha512sums:
+    - 598f00b81325673ec975d1e399c7194f5796d427a2b1df2f0144ba3f2590dd1ec31c9a2f95bd8266b5ada870c63b9432549d3b4056e94a86452b3a85729ab619
+pkgname:
+  - name: python-zope-schema
+# generated with artixpkg 0.36.5-1-any
