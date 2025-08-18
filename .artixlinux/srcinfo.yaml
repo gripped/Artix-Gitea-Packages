@@ -1,0 +1,31 @@
+---
+version: 3.1.1-1
+pkgbase:
+  name: ruby-mixlib-config
+  pkgdesc: A class based configuration library
+  pkgver: 3.1.1
+  pkgrel: 1
+  url: https://github.com/chef/mixlib-config
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  makedepends:
+    - git
+    - ruby-rdoc
+    - ruby-rake
+    - ruby-bundler
+    - ruby-rspec
+  depends:
+    - ruby-tomlrb
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-mixlib-config::git+https://github.com/chef/mixlib-config#tag=v3.1.1
+  sha512sums:
+    - 1bfd64cd1ca2831199aa0ddd286ec021fe0607b16dfb0a5313284c5b3ec4f4a17915c8f823f24226ab59912c2e62c895505fe6a51347f11cd9413d5fffcecd80
+  b2sums:
+    - 52e480b530fe923a0c39a3f83a87d39e47fbc4a18de0a6a35681e6e9dfcdeb66b73e8371c3dc44c0afabc82c3e270552f5c8283ff022530bc8261372633e676c
+pkgname:
+  - name: ruby-mixlib-config
+# generated with artixpkg 0.36.4-1-any
