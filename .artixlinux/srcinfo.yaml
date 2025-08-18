@@ -1,0 +1,268 @@
+---
+version: 25.08-1
+pkgbase:
+  name: kde-applications-meta
+  pkgver: 25.08
+  pkgrel: 1
+  url: https://www.archlinux.org/
+  arch:
+    - any
+  license:
+    - None
+pkgname:
+  - name: kde-applications-meta
+    pkgdesc: Meta package for KDE Applications
+    depends:
+      - kde-accessibility-meta
+      - kde-education-meta
+      - kde-games-meta
+      - kde-graphics-meta
+      - kde-multimedia-meta
+      - kde-network-meta
+      - kde-office-meta
+      - kde-pim-meta
+      - kde-sdk-meta
+      - kde-system-meta
+      - kde-utilities-meta
+      - kdevelop-meta
+  - name: kde-accessibility-meta
+    pkgdesc: Meta package for KDE accessibility applications
+    depends:
+      - accessibility-inspector
+      - kmag
+      - kmousetool
+      - kmouth
+      - kontrast
+    replaces:
+      - kdeaccessibility-meta
+  - name: kde-education-meta
+    pkgdesc: Meta package for KDE education applications
+    depends:
+      - artikulate
+      - blinken
+      - cantor
+      - kalgebra
+      - kalzium
+      - kanagram
+      - kbruch
+      - kgeography
+      - khangman
+      - kig
+      - kiten
+      - klettres
+      - kmplot
+      - ktouch
+      - kturtle
+      - kwordquiz
+      - marble
+      - minuet
+      - parley
+      - rocs
+      - step
+    replaces:
+      - kdeedu-meta
+  - name: kde-games-meta
+    pkgdesc: Meta package for KDE games
+    depends:
+      - bomber
+      - bovo
+      - granatier
+      - kajongg
+      - kapman
+      - katomic
+      - kblackbox
+      - kblocks
+      - kbounce
+      - kbreakout
+      - kdiamond
+      - kfourinline
+      - kgoldrunner
+      - kigo
+      - killbots
+      - kiriki
+      - kjumpingcube
+      - klines
+      - klickety
+      - kmahjongg
+      - kmines
+      - knavalbattle
+      - knetwalk
+      - knights
+      - kolf
+      - kollision
+      - konquest
+      - kpat
+      - kreversi
+      - kshisen
+      - ksirk
+      - ksnakeduel
+      - kspaceduel
+      - ksquares
+      - ksudoku
+      - ktuberling
+      - kubrick
+      - lskat
+      - palapeli
+      - picmi
+      - skladnik
+    replaces:
+      - kdegames-meta
+  - name: kde-graphics-meta
+    pkgdesc: Meta package for KDE graphics applications
+    depends:
+      - arianna
+      - colord-kde
+      - gwenview
+      - kamera
+      - kcolorchooser
+      - kgraphviewer
+      - kimagemapeditor
+      - koko
+      - kolourpaint
+      - kruler
+      - okular
+      - skanlite
+      - svgpart
+      - kdegraphics-thumbnailers
+    replaces:
+      - kdegraphics-meta
+      - kdewebdev-meta
+  - name: kde-multimedia-meta
+    pkgdesc: Meta package for KDE multimedia applications
+    depends:
+      - audex
+      - audiocd-kio
+      - audiotube
+      - dragon
+      - elisa
+      - ffmpegthumbs
+      - juk
+      - k3b
+      - kamoso
+      - kasts
+      - kdenlive
+      - kmix
+      - kwave
+      - plasmatube
+    replaces:
+      - kdemultimedia-meta
+  - name: kde-network-meta
+    pkgdesc: Meta package for KDE network applications
+    depends:
+      - alligator
+      - angelfish
+      - falkon
+      - kdeconnect
+      - kdenetwork-filesharing
+      - kget
+      - kio-extras
+      - kio-gdrive
+      - kio-zeroconf
+      - konqueror
+      - konversation
+      - krdc
+      - krfb
+      - ktorrent
+      - neochat
+      - tokodon
+    replaces:
+      - kdenetwork-meta
+  - name: kde-office-meta
+    pkgdesc: Meta package for KDE office applications
+    depends:
+      - calligra
+      - ghostwriter
+  - name: kde-pim-meta
+    pkgdesc: Meta package for KDE PIM applications
+    depends:
+      - akonadiconsole
+      - akregator
+      - akonadi-calendar-tools
+      - grantlee-editor
+      - itinerary
+      - kaddressbook
+      - kalarm
+      - kleopatra
+      - kmail
+      - kontact
+      - korganizer
+      - kdepim-addons
+      - merkuro
+      - zanshin
+    replaces:
+      - kdepim-meta
+  - name: kde-sdk-meta
+    pkgdesc: Meta package for KDE SDK applications
+    depends:
+      - dolphin-plugins
+      - kde-dev-scripts
+      - kde-dev-utils
+      - kapptemplate
+      - kcachegrind
+      - kdesdk-kio
+      - kirigami-gallery
+      - kompare
+      - lokalize
+      - massif-visualizer
+      - poxml
+      - kdesdk-thumbnailers
+      - umbrello
+    replaces:
+      - kdesdk-meta
+  - name: kde-system-meta
+    pkgdesc: Meta package for KDE system applications
+    depends:
+      - dolphin
+      - kcron
+      - kde-inotify-survey
+      - khelpcenter
+      - kio-admin
+      - ksystemlog
+      - partitionmanager
+    replaces:
+      - kdeadmin-meta
+      - kdebase-meta
+  - name: kde-utilities-meta
+    pkgdesc: Meta package for KDE utilities applications
+    depends:
+      - ark
+      - filelight
+      - francis
+      - isoimagewriter
+      - kalk
+      - kalm
+      - kate
+      - kbackup
+      - kcalc
+      - kcharselect
+      - kclock
+      - kdebugsettings
+      - kdf
+      - kdialog
+      - keditbookmarks
+      - keysmith
+      - kfind
+      - kgpg
+      - kongress
+      - konsole
+      - krecorder
+      - kteatime
+      - ktimer
+      - ktrip
+      - kwalletmanager
+      - kweather
+      - markdownpart
+      - qrca
+      - skanpage
+      - sweeper
+      - telly-skout
+      - yakuake
+    replaces:
+      - kdeutils-meta
+  - name: kdevelop-meta
+    pkgdesc: Meta package for KDevelop
+    depends:
+      - kdevelop
+      - kdevelop-php
+      - kdevelop-python
+# generated with artixpkg 0.36.4-1-any

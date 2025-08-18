@@ -18,7 +18,7 @@ pkgname=(kde-applications-meta
          kde-system-meta
          kde-utilities-meta
          kdevelop-meta)
-pkgver=25.04
+pkgver=25.08
 pkgrel=1
 arch=(any)
 license=(None)
@@ -209,8 +209,7 @@ package_kde-pim-meta() {
 package_kde-sdk-meta() {
   pkgdesc='Meta package for KDE SDK applications'
   replaces=(kdesdk-meta)
-  depends=(cervisia
-           dolphin-plugins
+  depends=(dolphin-plugins
            kde-dev-scripts
            kde-dev-utils
            kapptemplate
