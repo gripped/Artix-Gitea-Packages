@@ -1,9 +1,9 @@
 ---
-version: 0.5.5-1
+version: 0.5.6-1
 pkgbase:
   name: aws-c-event-stream
   pkgdesc: C99 implementation of the vnd.amazon.eventstream content-type
-  pkgver: 0.5.5
+  pkgver: 0.5.6
   pkgrel: 1
   url: https://github.com/awslabs/aws-c-event-stream
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - aws-checksums
     - glibc
   source:
-    - aws-c-event-stream-0.5.5.tar.gz::https://github.com/awslabs/aws-c-event-stream/archive/v0.5.5.tar.gz
+    - aws-c-event-stream-0.5.6.tar.gz::https://github.com/awslabs/aws-c-event-stream/archive/v0.5.6.tar.gz
   sha256sums:
-    - f6e55c8fd6afd7f904e08d36c3210e199ece5dc838f0f8457b43b72ec4d818e9
+    - e94a8172e7d198d11bc7aa769c5334f1a8518f2b5bd4446d37d18fb5683623fd
 pkgname:
   - name: aws-c-event-stream
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
