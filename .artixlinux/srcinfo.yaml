@@ -1,0 +1,32 @@
+---
+version: 3.1.5-1
+pkgbase:
+  name: ruby-unicode-display_width
+  pkgdesc: Determines the monospace display width of a string in Ruby
+  pkgver: 3.1.5
+  pkgrel: 1
+  url: https://github.com/janlelis/unicode-display_width
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-rake
+    - ruby-rspec
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-unicode-emoji
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-unicode-display_width::git+https://github.com/janlelis/unicode-display_width#tag=v3.1.5
+  sha512sums:
+    - 2593d3203c6ca185d7c8ce6b1a249649ba86a147f1a0e752ddd84c0f008bd9f6f6c6910e410ea3321673f5db6b464c429b01ffed162b7ddce888328e39ece11d
+  b2sums:
+    - f1292c7390bdeee30dee1eaa1e496507050edd62d9adc7cd5f4a2c260c097d642cc133ad3d2016f0ef3c543c0565a126b883f6fb836329d74be93a2127172e05
+pkgname:
+  - name: ruby-unicode-display_width
+# generated with artixpkg 0.36.4-1-any
