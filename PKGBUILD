@@ -8,8 +8,8 @@
 
 pkgname=lxc
 epoch=1
-pkgver=6.0.4
-pkgrel=2
+pkgver=6.0.5
+pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
 url="https://linuxcontainers.org"
@@ -25,19 +25,18 @@ backup=('etc/lxc/default.conf'
 	'etc/default/lxc')
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67')
 source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.asc}
-	"$pkgname-fix-dumpable.patch::https://github.com/lxc/lxc/commit/2663712e8fa8f37e0bb873185e2d4526dc644764.patch"
-	"lxc.tmpfiles.d"
+#	"$pkgname-fix-dumpable.patch::https://github.com/lxc/lxc/commit/2663712e8fa8f37e0bb873185e2d4526dc644764.patch"
+	"lxc.tmpfiles"
 )
-sha256sums=('872d26ce8512b9f993d194816e336bf9f3ad8326f22dc24ef0f01f85599fa8b9'
+sha256sums=('2e540c60b9dd49e7ee1a4efa5e9c743b05df911b81b375ed5043d9dd7ee0b48a'
             'SKIP'
-            '762bad26fb0b8fda4a7ccd610c87bb7a1887e0af9f1eb775be8aa94e3df356d7'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
 
 prepare() {
   cd "$pkgname-${pkgver/_/-}"
   sed -i "s|if sanitize == 'none'|if false|g" src/lxc/cmd/meson.build
-  patch -Np1 < "$srcdir/lxc-fix-dumpable.patch"
+#  patch -Np1 < "$srcdir/lxc-fix-dumpable.patch"
 }
 
 build() {
@@ -56,7 +55,7 @@ package() {
 
   install -d -m755 "$pkgdir/var/lib/lxc"
   install -d -m755 "$pkgdir/usr/lib/lxc/rootfs/dev"
-  install -D -m644 "$srcdir"/lxc.tmpfiles.d "$pkgdir"/usr/lib/tmpfiles.d/lxc.conf
+  install -D -m644 "$srcdir"/lxc.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/lxc.conf
 
   cd doc
   find . -type f -name '*.1' -exec install -D -m644 "{}" "$pkgdir/usr/share/man/man1/{}" \;
