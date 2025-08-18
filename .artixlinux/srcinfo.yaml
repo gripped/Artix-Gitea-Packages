@@ -1,0 +1,35 @@
+---
+version: 1.13.0-1
+pkgbase:
+  name: python-sphinxcontrib-doxylink
+  pkgdesc: A Sphinx extension to link to external Doxygen API documentation
+  pkgver: 1.13.0
+  pkgrel: 1
+  url: https://github.com/sphinx-contrib/doxylink
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - doxygen
+    - python-pytest
+    - python-testfixtures
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-wheel
+  depends:
+    - python
+    - python-dateutil
+    - python-docutils
+    - python-pyparsing
+    - python-requests
+    - python-sphinx
+  source:
+    - https://github.com/sphinx-contrib/doxylink/archive/1.13.0/python-sphinxcontrib-doxylink-1.13.0.tar.gz
+  sha256sums:
+    - 047f8f4b9dbd104c004cfe24211af38b7a21fd707a103b214b6a5c5af3c4790c
+pkgname:
+  - name: python-sphinxcontrib-doxylink
+# generated with artixpkg 0.36.5-1-any
