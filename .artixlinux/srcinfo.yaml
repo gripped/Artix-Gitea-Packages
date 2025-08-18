@@ -1,9 +1,9 @@
 ---
-version: 0.3.2-1
+version: 0.3.5-1
 pkgbase:
   name: python-fastbencode
   pkgdesc: Implementation of bencode with optional fast C extensions
-  pkgver: 0.3.2
+  pkgver: 0.3.5
   pkgrel: 1
   url: https://github.com/breezy-team/fastbencode
   arch:
@@ -14,15 +14,16 @@ pkgbase:
     - cython
     - python-build
     - python-installer
-    - python-setuptools
+    - python-setuptools-rust
     - python-wheel
   depends:
+    - gcc-libs
     - glibc
     - python
   source:
-    - python-fastbencode-0.3.2.tar.gz::https://github.com/breezy-team/fastbencode/archive/v0.3.2.tar.gz
+    - python-fastbencode-0.3.5.tar.gz::https://github.com/breezy-team/fastbencode/archive/v0.3.5.tar.gz
   sha256sums:
-    - 98c5152ea30f103fc4b3d7b62a3e510cb87bf899a54775b619719a967749e295
+    - 6320746099f5a1ed4037e8c4498254012ab62b5f5518a5aeb5160f5528f7984e
 pkgname:
   - name: python-fastbencode
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.5-1-any
