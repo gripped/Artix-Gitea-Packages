@@ -1,0 +1,30 @@
+---
+version: 1.5.0-1
+pkgbase:
+  name: ruby-unicode-version
+  pkgdesc: Returns Unicode/Emoji versions of current and previous Rubies
+  pkgver: 1.5.0
+  pkgrel: 1
+  url: https://github.com/janlelis/unicode-version
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-rake
+    - ruby-minitest
+  makedepends:
+    - git
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-unicode-version::git+https://github.com/janlelis/unicode-version#tag=v1.5.0
+  sha512sums:
+    - 35c943ca3f15ec79c31434a22fb1a4c982e16eeb7376599c408682ae71ee335fd96c53e0ce8a2554947ff9ae29eced7b623d14cdad447a05c819cb4e061a4700
+  b2sums:
+    - dbde315662beeaa92950660cfde90881df717af3d776af9d6b10dccabdc50ae9142fd573614e1d0b84d582d0be1a7cccd4d9b9d11052382fe213577b49193a3b
+pkgname:
+  - name: ruby-unicode-version
+# generated with artixpkg 0.36.4-1-any
