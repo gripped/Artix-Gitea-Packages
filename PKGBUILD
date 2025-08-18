@@ -3,7 +3,7 @@
 
 pkgname=netavark
 pkgver=1.16.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Container network stack"
 arch=(x86_64)
 url="https://github.com/containers/netavark"
