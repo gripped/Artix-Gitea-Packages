@@ -1,9 +1,9 @@
 ---
-version: 1.39.9-1
+version: 1.40.11-1
 pkgbase:
   name: python-botocore
   pkgdesc: A low-level interface to a growing number of Amazon Web Services
-  pkgver: 1.39.9
+  pkgver: 1.40.11
   pkgrel: 1
   url: https://github.com/boto/botocore
   arch:
@@ -30,9 +30,9 @@ pkgbase:
   optdepends:
     - 'python-awscrt: use AWS Common Runtime'
   source:
-    - https://github.com/boto/botocore/archive/1.39.9/python-botocore-1.39.9.tar.gz
+    - https://github.com/boto/botocore/archive/1.40.11/python-botocore-1.40.11.tar.gz
   sha256sums:
-    - 3b6dccf4f53b053c5328a372c27ac22d6d8acc960c602dace607a6135738865e
+    - 79b7d98921c95f5c29ce142c3152e499372431e5171a442ab8ebcb2396ae5cfd
 pkgname:
   - name: python-botocore
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
