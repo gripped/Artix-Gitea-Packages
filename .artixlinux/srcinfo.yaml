@@ -1,10 +1,10 @@
 ---
-version: 6.17.0-1
+version: 6.17.0-2
 pkgbase:
   name: kfilemetadata
   pkgdesc: A library for extracting file metadata
   pkgver: 6.17.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
