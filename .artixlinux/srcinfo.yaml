@@ -1,9 +1,9 @@
 ---
-version: 6.5.11-1
+version: 6.6.0-1
 pkgbase:
   name: waterfox
   pkgdesc: Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.
-  pkgver: 6.5.11
+  pkgver: 6.6.0
   pkgrel: 1
   url: https://www.waterfox.net/
   arch:
@@ -12,17 +12,24 @@ pkgbase:
     - GPL-2.1
   makedepends:
     - cbindgen
-    - libxml2-legacy
+    - clang
     - diffutils
     - imake
     - inetutils
     - lld
+    - llvm
     - mesa
+    - nasm
     - nodejs
     - python
-    - rustup
+    - rust
     - unzip
+    - wasi-compiler-rt
+    - wasi-libc
+    - wasi-libc++
+    - wasi-libc++abi
     - xorg-server-xvfb
+    - yasm
     - zip
   depends:
     - cairo
@@ -47,12 +54,16 @@ pkgbase:
     - libxss
     - libxt
     - mime-types
+    - nspr
+    - nss
     - pango
     - ttf-font
   optdepends:
     - 'libnotify: Notification integration'
     - 'speech-dispatcher: Text-to-Speech'
     - 'hunspell-en_US: Spell checking, American English'
+  conflicts:
+    - waterfox
   noextract:
     - l10.zip
   options:
@@ -62,7 +73,7 @@ pkgbase:
     - '!lto'
     - '!debug'
   source:
-    - waterfox-6.5.11.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.5.11.tar.gz
+    - waterfox-6.6.0.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.6.0.tar.gz
     - l10n.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main
     - waterfox.desktop
     - policies.json
@@ -71,8 +82,8 @@ pkgbase:
     - 9003.rebind_screenshot_key_to_ctrl_alt_s.patch
     - license.html
   b2sums:
-    - 7ae58dc10aacb8792cf8a50678b1940db6395c9a4060c6bf77b380e9c76193a6a40ab251cbde90fa065ecdd7356e050a7fe0ea403a57f759cea891acac1d25f8
-    - SKIP
+    - ebebcbc15d8371040d607b107e391c80e72a23c499b012fd89057f8db2b32e35f0551a83ef671c661d8b9dd0f7478ef41942f8baded4676cecd29d23e2a13100
+    - 1cde17001aa2538a8b0d58c13195292e906a4077a7accee0f515f937f464cdc8e65a97127f25f29cc8f0b43d944424e9cb3eeeae13e07ef96d117f9aa3c83e78
     - 0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978
     - 164844bacff82d9c6431c55ab078725e8e23ff0dc67bf079d56a5696f70b54ca81ec27e5a37acb336b52048c956cd39db087ac060414a1863d8ef3c47120df67
     - 3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4

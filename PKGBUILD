@@ -1,11 +1,10 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=waterfox
-pkgver=6.5.11
+pkgver=6.6.0
 pkgrel=1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
-_disable_pgo=true
 license=(GPL-2.1)
 url='https://www.waterfox.net/'
 source=("$pkgname-$pkgver.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/$pkgver.tar.gz"
@@ -17,6 +16,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive
 	9003.rebind_screenshot_key_to_ctrl_alt_s.patch
 	license.html)
 noextract=(l10.zip)
+conflicts=(waterfox)
 depends=(
 	cairo
 	dbus
@@ -40,29 +40,31 @@ depends=(
 	libxss
 	libxt
 	mime-types
+	nspr
+	nss
 	pango
 	ttf-font
 )
 makedepends=(
 	cbindgen
-        libxml2-legacy
+	clang
 	diffutils
 	imake
 	inetutils
 	lld
-	#llvm
+	llvm
 	mesa
-	#nasm
+	nasm
 	nodejs
 	python
-	rustup
+	rust
 	unzip
-	#wasi-compiler-rt
-	#wasi-libc
-	#wasi-libc++
-	#wasi-libc++abi
+	wasi-compiler-rt
+	wasi-libc
+	wasi-libc++
+	wasi-libc++abi
 	xorg-server-xvfb
-	#yasm
+	yasm
 	zip
 )
 optdepends=(
@@ -83,7 +85,6 @@ prepare() {
         sed -i -e "s/^/$pkgver-/" browser/config/version_display.txt
 
 	cat >../mozconfig <<END
-ac_add_options --enable-elf-hack
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
 ac_add_options --enable-rust-simd
@@ -104,7 +105,7 @@ ac_add_options --enable-install-strip
 ac_add_options --enable-jxl
 ac_add_options --enable-linker=lld
 ac_add_options --enable-strip
-ac_add_options --enable-bootstrap
+ac_add_options --disable-bootstrap
 # ac_add_options --enable-unverified-updates
 
 ac_add_options --target=x86_64-pc-linux-gnu
@@ -122,14 +123,16 @@ export MOZ_TELEMETRY_REPORTING=
 
 ac_add_options --enable-pulseaudio
 ac_add_options --enable-alsa
-ac_add_options --without-sysroot
 ac_add_options --enable-jack
 
-ac_add_options --disable-jprof
+#ac_add_options --disable-jprof   # artist: not known by WF 6.6.0
 ac_add_options --disable-updater
 
 ac_add_options --prefix=/usr
 ac_add_options --enable-hardening
+ac_add_options --with-system-nspr
+ac_add_options --with-system-nss
+ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 
 mk_add_options MOZ_OBJDIR=./obj-"$(uname -s)"-"$(uname -m)"
 
@@ -140,7 +143,6 @@ END
 build() {
 	cd "$pkgname-$pkgver"
 
-        export RUSTUP_TOOLCHAIN=1.86
 	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
 	export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
 	export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
@@ -154,6 +156,7 @@ build() {
 	CXXFLAGS+=" -w"
 
 	ulimit -n 4096
+
 	if [[ -z $_disable_pgo ]]; then
 	# Do 3-tier PGO
 	echo; echo "----- Building instrumented browser -----"; echo
@@ -186,7 +189,7 @@ END
 
 	echo; echo "----- Building optimized browser -----"; echo
 	cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto=cross,thin
+ac_add_options --enable-lto=cross
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
@@ -195,6 +198,7 @@ END
 	else
 	echo; echo "----- Building browser without PGO -----"; echo
 	cat >.mozconfig ../mozconfig - <<END
+ac_add_options --enable-lto
 END
 	fi
 
@@ -281,8 +285,8 @@ EOT
         fi
 }
 
-b2sums=('7ae58dc10aacb8792cf8a50678b1940db6395c9a4060c6bf77b380e9c76193a6a40ab251cbde90fa065ecdd7356e050a7fe0ea403a57f759cea891acac1d25f8'
-        'SKIP'
+b2sums=('ebebcbc15d8371040d607b107e391c80e72a23c499b012fd89057f8db2b32e35f0551a83ef671c661d8b9dd0f7478ef41942f8baded4676cecd29d23e2a13100'
+        '1cde17001aa2538a8b0d58c13195292e906a4077a7accee0f515f937f464cdc8e65a97127f25f29cc8f0b43d944424e9cb3eeeae13e07ef96d117f9aa3c83e78'
         '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
         '164844bacff82d9c6431c55ab078725e8e23ff0dc67bf079d56a5696f70b54ca81ec27e5a37acb336b52048c956cd39db087ac060414a1863d8ef3c47120df67'
         '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
