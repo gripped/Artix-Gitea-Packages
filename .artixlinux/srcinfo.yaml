@@ -19,11 +19,15 @@ pkgbase:
     - gcc-libs
     - glibc
     - tomlplusplus
-    - dinit-base
+    - dinit-base>=0.19.4-8
+  conflicts:
+    - dinit<=0.19.4-7
   source:
     - git+https://github.com/initMayday/dinit-user-spawn.git#tag=v1.0.0
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.2
   sha256sums:
     - ef739d7084dca2bc81af3e3ce53de5af3b02e2d868d8e8c906ac233cf7441909
+    - 3fcb8e642f8219ec9ce774032a746c07722bb48cd8e5f989806ad73d9eefb505
 pkgname:
   - name: dinit-user-spawn
 # generated with artixpkg 0.36.5-1-any
