@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20250310
+pkgver=20250819
 pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
@@ -13,9 +13,11 @@ depends=(
 )
 provides=(
     'init-dbus'
+    'init-user-dbus'
 )
 conflicts=(
     'init-dbus'
+    'init-user-dbus'
 )
 source=(
     dbus{,.user}.initd
