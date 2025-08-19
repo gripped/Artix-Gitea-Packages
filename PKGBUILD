@@ -1,37 +1,42 @@
-pkgname=proxytunnel
-pkgver=1.12.2
-pkgrel=1.1
-pkgdesc="Stealth tunneling through HTTP(S) proxies."
-arch=("x86_64")
-url="https://proxytunnel.sourceforge.io"
-## File: https://github.com/proxytunnel/proxytunnel/blob/master/CHANGES
-changelog=Changelog.txt
-license=("GPL2")
-depends=(
-	"openssl"
-)
-makedepends=(
-	"gcc"
-	"make"
-	"pkgconf"
-	"asciidoc"
-	"xmlto"
-)
-source=(
-	"https://github.com/proxytunnel/$pkgname/archive/refs/tags/v$pkgver.tar.gz"
-)
-sha256sums=(
-	"edb33a74ba49e745b55b790f123366c8336729947225f4b5d816f1f90551ecfe"
-)
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: George Rawlinson <george@archlinux.org>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Georg Grabler (STiAT) <ggrabler@gmail.com>
 
+pkgname=proxytunnel
+pkgver=1.12.3
+pkgrel=1
+pkgdesc="Creates tunnels through HTTP(S) proxies for any TCP based protocol"
+arch=('x86_64')
+url="https://github.com/proxytunnel/proxytunnel"
+license=('GPL-2.0-only WITH cryptsetup-OpenSSL-exception' 'BSD-3-Clause')
+depends=('glibc' 'openssl')
+makedepends=('git' 'asciidoc' 'xmlto')
+source=("$pkgname::git+$url#tag=v$pkgver")
+sha512sums=('808b3eac785785b6ef0cac38b3f39fec5e6a8cf2a7370b0c51a78c94999d9eb36369b262ef7be5b2294c67578a23014626f0f96aebb6ebdf3764580a1060a7b2')
+b2sums=('adf9c97299941a5b6683834f81caef840a878314da929a8e82932b727ab06322c475849c69a26943c603acb050ba6c28dd8793c32428f0190f4c72579fca0325')
+
+prepare() {
+  cd "$pkgname"
+  # append -DOPENSSL11 to CFLAGS via SSL-specific OPTFLAGS: See ptstream.c
+  sed -i '/^OPTFLAGS += -DUSE_SSL$/ s/$/ -DOPENSSL11/' Makefile
+  # fixup modes otherwise strip fails
+  sed -i 's|555|755|g' Makefile
+}
 
 build() {
-	cd "$pkgname-$pkgver"
-	make
+  cd "$pkgname"
+  CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+  make prefix=/usr
 }
 
 package() {
-	cd "$pkgname-$pkgver"
-	make install prefix=/usr DESTDIR="$pkgdir"
-	install -Dm 644 LICENSE.txt "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  cd "$pkgname"
+  make prefix=/usr DESTDIR="$pkgdir" install
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.txt
 }
+
+# vim: ts=2 sw=2 et:
