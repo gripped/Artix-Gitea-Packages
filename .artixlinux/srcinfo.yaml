@@ -36,4 +36,4 @@ pkgbase:
     - af2f90e7fc88ad4a67b6e81349a7608cb1d89cea2b30b5eb91fba3e5cb80c280
 pkgname:
   - name: mkdocs-material
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
