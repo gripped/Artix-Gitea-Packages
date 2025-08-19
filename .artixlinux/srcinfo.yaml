@@ -1,0 +1,37 @@
+---
+version: 1.29.0-1
+pkgbase:
+  name: libinput
+  pkgdesc: Input device management and event handling library
+  pkgver: 1.29.0
+  pkgrel: 1
+  url: https://gitlab.freedesktop.org/libinput/libinput
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - gtk4
+    - meson
+    - wayland-protocols
+    - check
+  depends:
+    - mtdev
+    - libevdev
+    - libwacom
+    - udev
+    - glibc
+  optdepends:
+    - 'gtk4: libinput debug-gui'
+    - 'python-pyudev: libinput measure'
+    - 'python-libevdev: libinput measure'
+    - 'python-yaml: used by various tools'
+  source:
+    - https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.29.0/libinput-1.29.0.tar.bz2
+  sha256sums:
+    - 7160c16c409c9ea4f7da9d91923ae0a92df7f3453a292bf684bed071acd7b4ff
+pkgname:
+  - name: libinput
+# generated with artixpkg 0.36.5-1-any
