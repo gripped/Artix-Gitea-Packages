@@ -1,10 +1,10 @@
 ---
-version: 1.0.0-7
+version: 1.0.0-8
 pkgbase:
   name: dinit-user-spawn
   pkgdesc: Launches a user process dinit for you on login
   pkgver: 1.0.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/initMayday/dinit-user-spawn
   arch:
     - x86_64
@@ -19,6 +19,7 @@ pkgbase:
     - gcc-libs
     - glibc
     - tomlplusplus
+    - dinit-base
   source:
     - git+https://github.com/initMayday/dinit-user-spawn.git#tag=v1.0.0
   sha256sums:
