@@ -4,7 +4,7 @@
 pkgbase=pipewire-dinit
 pkgname=('pipewire-dinit' 'pipewire-pulse-dinit')
 pkgver=20250815
-pkgrel=4
+pkgrel=5
 pkgdesc="dinit user service script for pipewire"
 arch=('any')
 url="https://artixlinux.org"

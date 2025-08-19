@@ -1,10 +1,10 @@
 ---
-version: 20250815-4
+version: 20250815-5
 pkgbase:
   name: pipewire-dinit
   pkgdesc: dinit user service script for pipewire
   pkgver: 20250815
-  pkgrel: 4
+  pkgrel: 5
   url: https://artixlinux.org
   arch:
     - any
