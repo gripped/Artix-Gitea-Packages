@@ -1,0 +1,48 @@
+---
+version: 3.6.0-1
+pkgbase:
+  name: opensips
+  pkgdesc: An Open Source SIP Server able to act as a SIP proxy, registrar, location server, redirect server ...
+  pkgver: 3.6.0
+  pkgrel: 1
+  url: https://www.opensips.org
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - libldap
+    - libmariadbclient
+    - libmicrohttpd
+    - libxml2
+    - libxslt
+    - lynx
+    - openssl
+    - postgresql-libs
+    - unixodbc
+  depends:
+    - gcc-libs
+  optdepends:
+    - 'curl: db_http module'
+    - 'libldap: ldap module'
+    - 'libmicrohttpd: httpd module'
+    - 'libxml2: presence module'
+    - 'mariadb-libs: db_mysql module'
+    - 'openssl: tls_openssl module'
+    - postgresql-libs
+    - 'unixodbc: db_unixodbc module'
+  options:
+    - '!emptydirs'
+    - '!makeflags'
+  backup:
+    - etc/opensips/opensips.cfg
+    - etc/opensips/osipsconsolerc
+    - etc/opensips/opensipsctlrc
+  source:
+    - https://opensips.org/pub/opensips/3.6.0/opensips-3.6.0.tar.gz
+  sha256sums:
+    - 9841d6ff36c25ce0445dd49b6129e7020944e56d4fb0e5368bc5f734403a0c31
+    - c2fec4be085b108db10834fa9832e98d696c2de6408f85f96cf89c13bf6be819
+pkgname:
+  - name: opensips
+# generated with artixpkg 0.36.5-1-any
