@@ -5,7 +5,7 @@
 pkgbase=zabbix
 pkgname=('zabbix-common' 'zabbix-server' 'zabbix-frontend-php' 'zabbix-web-service' 'zabbix-proxy' 'zabbix-agent' 'zabbix-agent2')
 pkgver=7.4.1
-pkgrel=2
+pkgrel=4
 pkgdesc="The universal, open-source observability solution for IT & OT"
 url="https://www.zabbix.com"
 arch=('x86_64')
@@ -20,7 +20,8 @@ source=("git+https://git.zabbix.com/scm/zbx/zabbix.git#tag=${pkgver}"
         'zabbix-agent.tmpfiles'
         'zabbix-agent2.tmpfiles'
         'write_log_to_syslog.patch'
-        'set_socket_paths.patch')
+        'set_socket_paths.patch'
+        'reproducible_build.patch')
 sha512sums=('e9d22d5a0dd8ba4996d2b64a57e32fe7b4fff87a3eec35bd276858e019d38ca7ac298fb99d5a58074e7261acd8f5cfdfee0182e3ea35f55880ea0d7361a19d78'
             '0c3e974c6f8366d46e7156f6669e42b76a184cd9727e2474abc9253064d42f806bd7c2dd31d214dd083f039eac48d14a79bd8e16935a3a43a45b880dce15bbc1'
             '7c39d1cb1d269e8a2a22c634612c7d110e9e67c170f32add33312f97bc2e7f8f19bf5bb1d1c71df43afc893043472069b9f828dfc5a9f2946606798ed54c73a0'
@@ -30,7 +31,8 @@ sha512sums=('e9d22d5a0dd8ba4996d2b64a57e32fe7b4fff87a3eec35bd276858e019d38ca7ac2
             '02c2107d37221ce1a987d4aaea3673008df2553f00a6a0b044e3f4bb39a52b2ff68477575cc968209fd397ecfe27a21bf89a0d3ca2010e7c942c2d9546df4d8d'
             '0f8d0db314f8e0ed1cfc1bc1951aaa81455f52ea3012f2eb54bed37056d7d89ad1dd22af18039f1ce9c96430050b2b30e4d24ff8606f3f364f1596838435252b'
             '49a197a97536745818664593cf597540eb51e1f0c2429efea6be9ab85ee57f2a4b6e72a197bf02440c9b49a80a7ea0417f9b5a23bef003dc3337d7f08792cbf5'
-            '55dec0ef08d54e7972421e3958119cb7df9e0ef10ff6c58836306d4ad6e3724fb902e819070d76e4a5fa24428610d838db7eb0425f05b19493b5e2c9b5919931')
+            '55dec0ef08d54e7972421e3958119cb7df9e0ef10ff6c58836306d4ad6e3724fb902e819070d76e4a5fa24428610d838db7eb0425f05b19493b5e2c9b5919931'
+            '71aaf2cdf6885547931c212fa312b4d684af1b765be78f7ad4cded4700305d81602d76fae859338357ef9dda8c7fe265c829ed1a4a964e67591f4390def1b23b')
 
 prepare() {
 	cd "${pkgbase}"
@@ -42,6 +44,9 @@ prepare() {
 
 	# Set socket paths to `/run/zabbix`
 	patch -Np1 -i "${srcdir}/set_socket_paths.patch"
+
+	# Honor SDE for reproducible builds
+	patch -Np1 -i "${srcdir}/reproducible_build.patch"
 
 	autoreconf -fiv
 
