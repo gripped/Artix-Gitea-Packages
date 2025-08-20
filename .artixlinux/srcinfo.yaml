@@ -1,0 +1,46 @@
+---
+version: 1.24.0-1
+pkgbase:
+  name: wayland
+  pkgdesc: A computer display server protocol
+  pkgver: 1.24.0
+  pkgrel: 1
+  url: https://wayland.freedesktop.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - meson
+    - libxslt
+    - doxygen
+    - xmlto
+    - graphviz
+    - docbook-xsl
+  depends:
+    - glibc
+    - libffi
+    - expat
+    - libxml2
+    - default-cursors
+  source:
+    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.24.0/downloads/wayland-1.24.0.tar.xz
+    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.24.0/downloads/wayland-1.24.0.tar.xz.sig
+  validpgpkeys:
+    - C7223EBE4EF66513B892598911A30156E0E67611
+    - C0066D7DB8E9AC6844D728715E54498E697F11D7
+    - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
+  sha256sums:
+    - 82892487a01ad67b334eca83b54317a7c86a03a89cfadacfef5211f11a5d0536
+    - SKIP
+pkgname:
+  - name: wayland
+    provides:
+      - libwayland-client.so
+      - libwayland-cursor.so
+      - libwayland-egl.so
+      - libwayland-server.so
+  - name: wayland-docs
+    pkgdesc: A computer display server protocol (documentation)
+    depends: []
+# generated with artixpkg 0.37.0-1-any
