@@ -1,7 +1,7 @@
 # Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
 # Maintainer: Frederik Schwan <freswa@archlinux.org>
 pkgname=dracut
-pkgver=107
+pkgver=108
 pkgrel=1
 pkgdesc="An event driven initramfs infrastructure"
 arch=('x86_64')
@@ -23,7 +23,7 @@ depends=(
   'util-linux'
 )
 makedepends=(
-  'asciidoc'
+  'asciidoctor'
   'bash-completion'
   'git'
   'rust'
@@ -50,7 +50,7 @@ optdepends=(
   'lvm2: support Logical Volume Manager'
   'lzop: lzop compression'
   'mdadm: support MD devices, also known as software RAID devices'
-  'multipath-tools: dmraid dracut module support'
+  'memstrack: memstrack module support'
   'nbd: support network block devices'
   'ndctl: NVDIMM support'
   'networkmanager: networkmanager support'
@@ -78,14 +78,14 @@ source=(
   dracut-{install,remove}.script
   90-dracut-install.hook
   60-dracut-remove.hook)
-sha512sums=('fadc8aba143cec154372ae4709a0cb6db9999a4f143bdf79c7307680baf500922b3e5e5ba659e4346a032949bf5b6a00f891421fbc517573dd3d1c9b5a034d56'
+sha512sums=('c9ffe67819c704d225efca3617b0dec79359ab049f826f5545d5ed5548943633f67e5c57831ce4fde1a294139d3e40d7df8f6b5a616415a8293fede1faba88a1'
             'cdb3aa63d834b0b3a1eb73b7579b2e36c188d66bc8534947830a2358aa6c59bdf4d02119015085ee1208c845945ebf99bb86a0b64a06591eb569aad49f778555'
             '1ac0ffd15f02e09744db273e5fcd1d7159fcd00bb3093aeb7149c78f2ae3b5a00e2f0179bc37a9ba5ef761db3263c5a6897fc05af535f0251542137afdeef8db'
             '80d22d68a29062fdd97256cdd15b1363045667b1de2168806e14bd77a65e58900c9ce06fa322364ac6a0f45e819e3abc300670cb19cbbcf8dcdfa213d1d9d7b7'
             'ac82fa81a8bcb7388890580786c3ca98e09a3314e478f204a9e140a3af235d97e5ba8407fbd27385a482e04714f46a299fb498035b19527e6b867da4a088a8c1'
             '8333619d495e6694f795a1f05492f11686da68c08763a8d285a78eb6d5e895af7925687297bf8cbd03ed2e88b89efc71976631fb4da8069230fd1ccf40b7ed9c'
             '5065a022c4f65fdec44ad0febb06273b73f397af0dfdf5ddb34ad9a08b60c61aa0450551b6c394e41d894a5552fff3daef846199a45da22cf8750e5553285664')
-b2sums=('e7c65799816b743bbca8fa28e50fafb640192f60967de529a9163fc01552b34b4e8b82e3892e3dac10aca1fccfd67129867d1ba3fdf822811549df97b3345281'
+b2sums=('0188ecf5d3c7bc182dd30df570ce41b1cd20b5957ac056edfa6968ee5885298f046385bdbc63f36fa5ccc11aa66cb801e9043c9b6c570d3ca0448d5f35d07699'
         'd2fc5ca844264ecf345f926c77f00ce3f38e44337efe053e588eeb82da36c595f1b4b6157593d90a14910f8422e36ed7f9664952e00c35120b636bc612790a6b'
         'd9a2f674ee22d8f3a46065220b97f4312b646edeb2efcdd081966edbeafd13d058c6133b808140c8e263d0583d1c804a33a61aafc117385527efe6c4fc937b4a'
         '8bb8fd1f29cb97da17ef6f9cfedfedd3b2c20e009a9fa1f22d029134c069b01087f716aaac2598d1187d251ac19d2f3aa72324fc9d657246df98217ae3c59da7'
