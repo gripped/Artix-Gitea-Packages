@@ -1,9 +1,9 @@
 ---
-version: 2025.07.1-1
+version: 2025.08.0-1
 pkgbase:
   name: python-xarray
   pkgdesc: N-D labeled arrays and datasets in Python
-  pkgver: 2025.07.1
+  pkgver: 2025.08.0
   pkgrel: 1
   url: https://xarray.pydata.org/
   arch:
@@ -17,6 +17,7 @@ pkgbase:
     - python-dask
     - python-distributed
     - python-fsspec
+    - python-h5netcdf
     - python-h5py
     - python-hypothesis
     - python-matplotlib
@@ -25,6 +26,7 @@ pkgbase:
     - python-pint
     - python-pyarrow
     - python-pytest
+    - python-pytest-asyncio
     - python-pytest-xdist
     - python-scipy
     - python-seaborn
@@ -41,6 +43,7 @@ pkgbase:
     - python-pandas
   optdepends:
     - 'python-netcdf4: netCDF4 support'
+    - 'python-h5netcdf: alternative for netCDF4 support'
     - 'python-scipy: interpolation features & fallback for netCDF3 support'
     - 'python-cftime: datetimes support for non-standard calendars or distant dates'
     - 'python-bottleneck: faster NaN-skipping and rolling window aggregations'
@@ -50,9 +53,9 @@ pkgbase:
     - 'python-seaborn: better color palettes for plots'
     - 'python-pint: units of measure support'
   source:
-    - https://github.com/pydata/xarray/archive/v2025.07.1/python-xarray-2025.07.1.tar.gz
+    - https://github.com/pydata/xarray/archive/v2025.08.0/python-xarray-2025.08.0.tar.gz
   sha256sums:
-    - 51198ab129d8584ab8be453e33a746f646b1af1d8e0b71d3c6c953c6e32c770c
+    - 8417bf0cdc6d64bb923feec08eedd5f4f8b777e51f8f1a49516fc50093743cd7
 pkgname:
   - name: python-xarray
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
