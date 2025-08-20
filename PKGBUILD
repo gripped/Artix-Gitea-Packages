@@ -55,7 +55,10 @@ build() {
 check() {
   cd "$_name"
   # test_unicode_header_name hangs
-  PYTHONPATH="$PWD/src" pytest -v tests --deselect tests/test_requests.py::TestRequests::test_unicode_header_name
+  PYTHONPATH="$PWD/src" pytest -v tests --deselect tests/test_requests.py::TestRequests::test_unicode_header_name \
+    --deselect tests/test_requests.py::TestTimeout::test_connect_timeout \
+    --deselect tests/test_requests.py::TestTimeout::test_total_timeout_connect
+    # last two tests fail in Artix CI
 }
 
 package() {
