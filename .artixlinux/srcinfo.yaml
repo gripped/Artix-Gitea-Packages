@@ -1,9 +1,9 @@
 ---
-version: 4.59.0-1
+version: 4.59.1-1
 pkgbase:
   name: python-fonttools
   pkgdesc: A library to manipulate font files from Python
-  pkgver: 4.59.0
+  pkgver: 4.59.1
   pkgrel: 1
   url: https://github.com/fonttools/fonttools
   arch:
@@ -37,9 +37,9 @@ pkgbase:
     - 'python-unicodedata2: for displaying the Unicode character names when dumping the cmap table with ttx'
     - 'python-zopfli: faster backend fom WOFF 1.0 web fonts compression'
   source:
-    - https://github.com/fonttools/fonttools/archive/4.59.0/fonttools-4.59.0.tar.gz
+    - https://github.com/fonttools/fonttools/archive/4.59.1/fonttools-4.59.1.tar.gz
   sha256sums:
-    - cf7d72742235f72485e0fe5bfa839902e7275fbe3e6f203f3c63b38bd8880f56
+    - b417a3fed4d2e2b3b8377f9c8c8c3a77fe6b2717db9767f2f58de61cd8f046e4
 pkgname:
   - name: python-fonttools
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
