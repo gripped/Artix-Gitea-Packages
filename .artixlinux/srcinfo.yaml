@@ -1,0 +1,39 @@
+---
+version: 0.27.1-1
+pkgbase:
+  name: python-levenshtein
+  pkgdesc: Python extension for computing string edit distances and similarities
+  pkgver: 0.27.1
+  pkgrel: 1
+  url: https://github.com/rapidfuzz/Levenshtein
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-scikit-build-core
+    - cython
+    - rapidfuzz-cpp
+  depends:
+    - glibc
+    - gcc-libs
+    - python
+    - python-rapidfuzz
+  source:
+    - python-levenshtein::git+https://github.com/rapidfuzz/Levenshtein#tag=v0.27.1
+    - remove-version-constraints.patch
+  sha512sums:
+    - 28f9dd11e65c2b630c6655c6da356aaa9704be8744998e002b38b45b0634c30dc126f0241f40ec7018418083d2b62914393245f60093a31a0997376510c9284f
+    - 2bad306f521bc98d68b081452525495b4636adb279a5000079087d367fc51d0338791adc22e263fe1c28409b7b71f2826999b760131904168c5466b9c73d321b
+  b2sums:
+    - a29191627d57e36bc4324fb5ed9f9cd896d3e0efb4e9283abe1919af1758c636bc758d549a8cfb7258419e0eea17708df9e5e927f91706447fc68e04bde7d075
+    - 956a77dcb66a4da7ab8ed51474b989b1246ac888151cef2b14ac1a47ad743421e2d60ed5ddd8554e232ccf1e421aa51c94c4688a6289edcdf838bc4c3ae857c9
+pkgname:
+  - name: python-levenshtein
+# generated with artixpkg 0.36.5-1-any
