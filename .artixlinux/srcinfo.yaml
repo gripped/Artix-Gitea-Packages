@@ -1,0 +1,44 @@
+---
+version: 3.13.0-1
+pkgbase:
+  name: python-rapidfuzz
+  pkgdesc: Rapid fuzzy string matching in Python using various string metrics
+  pkgver: 3.13.0
+  pkgrel: 1
+  url: https://github.com/rapidfuzz/RapidFuzz
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-hypothesis
+    - python-pandas
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - cython
+    - python-scikit-build-core
+    - rapidfuzz-cpp
+  depends:
+    - glibc
+    - gcc-libs
+    - python
+  optdepends:
+    - python-numpy
+  source:
+    - python-rapidfuzz::git+https://github.com/rapidfuzz/RapidFuzz#tag=v3.13.0
+    - github.com-taskflow-taskflow::git+https://github.com/taskflow/taskflow
+    - remove-version-constraints.patch
+  sha512sums:
+    - 024f084879018e6ac6a165a776405e7bd6b5265c8842e77119c8f9b139580500a603c754e504b080d7311ba59721193ead6a61e125f5a45027ce3da90da59b8e
+    - SKIP
+    - 48d6f5d903b7aad221d518f1e9133b11736dd1a83dd5a7246f612c9caeb41673c8a7b3ae16bad112ef4506f94470cedcd23d94167def914f284ca73edf43614f
+  b2sums:
+    - f5aeff8827d52327220ab91a896c0085c84fd214cb4079f8140681d7bb82a019e8316aaf4596464fcfd6fcead5d6ef20b27cb16717ca9cf6e96128f9f45ee244
+    - SKIP
+    - 74d5f512da462245c146d2f26efce13e80781a2d5b78bd0ad77b6730882b26bd2c0a9587a4fa0ded7920e4fa595264c64bcc54d5fe6780ff33d3ab8d238d8401
+pkgname:
+  - name: python-rapidfuzz
+# generated with artixpkg 0.36.5-1-any
