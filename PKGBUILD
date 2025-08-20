@@ -28,13 +28,14 @@ optdepends=(
   'xorg-xwininfo: See https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal'
 )
 _commit="60d07dee6b76769d8c487a40639fb7b5a1a7bc85"
-source=("git+https://github.com/dylanaraps/neofetch.git#commit=${_commit}?signed"
+#source=("git+https://github.com/dylanaraps/neofetch.git#commit=${_commit}"
+source=("git+https://github.com/dylanaraps/neofetch.git"
         neofetch-xlibre-display.patch)
-validpgpkeys=("7C20ADCD35D9797789B6BCC046D62DD9F1DE636E") # Dylan Araps
-sha256sums=('f49787cfa84478c528237bbfb930772abae8d125827ea86014751f2d04d283db'
+sha256sums=('SKIP'
             'e69261e4e9bcdeae34dddfc8c49ff04a3de3e8cf937cca5d366c07d21ed2c729')
 
 prepare() {
+  cd "${pkgname}"
   patch -Np1 -i ../neofetch-xlibre-display.patch
 }
 
@@ -43,3 +44,4 @@ package() {
   make DESTDIR="$pkgdir" install
   install -Dm644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }
+
