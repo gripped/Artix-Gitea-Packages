@@ -1,10 +1,10 @@
 ---
-version: 3.0.21-27
+version: 3.0.21-28
 pkgbase:
   name: vlc
   pkgdesc: Free and open source cross-platform multimedia player and framework
   pkgver: 3.0.21
-  pkgrel: 27
+  pkgrel: 28
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
@@ -991,4 +991,4 @@ pkgname:
       - libvlccore.so
       - projectm
       - ttf-dejavu
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
