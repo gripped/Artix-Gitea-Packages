@@ -1,11 +1,11 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 # Maintainer: nous <nous@artixlinux.org>
 
-_commit=3db91dec6aff0d01cfbba4528991464a1255efb8
+_commit=a163c7d62d8858f85854a28e345d1ab0ea670e8f
 
 pkgname=calamares-extensions
 pkgver=0.16
-pkgrel=2
+pkgrel=3
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(
