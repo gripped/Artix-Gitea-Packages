@@ -1,0 +1,30 @@
+---
+version: 1.1.1-1
+pkgbase:
+  name: python-expandvars
+  pkgdesc: Expand system variables Unix-style
+  pkgver: 1.1.1
+  pkgrel: 1
+  url: https://github.com/sayanarijit/expandvars
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+  depends:
+    - python
+  source:
+    - python-expandvars::git+https://github.com/sayanarijit/expandvars#tag=v1.1.1
+  sha512sums:
+    - f357227482616e808840ba835c451beaabee0a70ffca7792f02d9d3c361a7da0ed186d0a551d4320ad91fec2e2562fcd0f662b4a7f6be42ba08b309b5d27accb
+  b2sums:
+    - aa008823eec46320696ee928a70023d45b49140c366e983226e3affe18aa2cdb7b3ec3a741a11ba8d8fff9adb1ac6991dd46a6bdb88207a7be11be41d294595b
+pkgname:
+  - name: python-expandvars
+# generated with artixpkg 0.36.5-1-any
