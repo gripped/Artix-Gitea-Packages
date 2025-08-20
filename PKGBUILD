@@ -1,14 +1,16 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Dylan Araps <dylan.araps@gmail.com>
 
 pkgname=neofetch
 pkgver=7.1.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A CLI system information tool written in BASH that supports displaying images."
 arch=('any')
 url="https://github.com/dylanaraps/neofetch"
 license=('MIT')
 depends=('bash')
+makedepends=('git')
 backup=('etc/neofetch/config.conf')
 optdepends=(
   'catimg: Display Images'
@@ -25,11 +27,19 @@ optdepends=(
   'xorg-xrandr: Resolution detection (Multi Monitor + Refresh rates)'
   'xorg-xwininfo: See https://github.com/dylanaraps/neofetch/wiki/Images-in-the-terminal'
 )
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/dylanaraps/neofetch/archive/${pkgver}.tar.gz")
-sha256sums=('58a95e6b714e41efc804eca389a223309169b2def35e57fa934482a6b47c27e7')
+_commit="60d07dee6b76769d8c487a40639fb7b5a1a7bc85"
+source=("git+https://github.com/dylanaraps/neofetch.git#commit=${_commit}?signed"
+        neofetch-xlibre-display.patch)
+validpgpkeys=("7C20ADCD35D9797789B6BCC046D62DD9F1DE636E") # Dylan Araps
+sha256sums=('f49787cfa84478c528237bbfb930772abae8d125827ea86014751f2d04d283db'
+            'e69261e4e9bcdeae34dddfc8c49ff04a3de3e8cf937cca5d366c07d21ed2c729')
+
+prepare() {
+  patch -Np1 -i ../neofetch-xlibre-display.patch
+}
 
 package() {
-  cd "${pkgname}-${pkgver}/"
+  cd "${pkgname}"
   make DESTDIR="$pkgdir" install
   install -Dm644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.md"
 }

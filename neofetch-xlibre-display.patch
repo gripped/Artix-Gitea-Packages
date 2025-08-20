@@ -1,0 +1,35 @@
+From c463e788b95a3d2f13b3faa82ea6132817898346 Mon Sep 17 00:00:00 2001
+From: aequabit <contact@aequabit.de>
+Date: Wed, 20 Aug 2025 04:08:44 +0200
+Subject: [PATCH] Show display server next to DE
+
+---
+ neofetch | 14 ++++++++++----
+ 1 file changed, 10 insertions(+), 4 deletions(-)
+
+diff --git a/neofetch b/neofetch
+index 48b96d215..fb9e89588 100755
+--- a/neofetch
++++ b/neofetch
+@@ -1880,11 +1880,17 @@ get_de() {
+         de+=" $de_ver"
+     fi
+ 
+-    # TODO:
+-    #  - New config option + flag: --de_display_server on/off ?
+-    #  - Add display of X11, Arcan and anything else relevant.
+-    [[ $de && $WAYLAND_DISPLAY ]] &&
++    if [[ $de && $WAYLAND_DISPLAY ]]; then
+         de+=" (Wayland)"
++    else
++        if [[ $de && "$XDG_SESSION_TYPE" = "x11" ]]; then
++            if [[ $(xdpyinfo | grep 'vendor string') == *"XLibre"* ]]; then
++                de+=" (XLibre)"
++            else
++                de+=" (Xorg)"
++            fi
++        fi
++    fi
+ 
+     de_run=1
+ }

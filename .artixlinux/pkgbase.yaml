@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 7.1.0-2.1
+    packages:
+      - neofetch-7.1.0-2.1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 7.1.0-2
