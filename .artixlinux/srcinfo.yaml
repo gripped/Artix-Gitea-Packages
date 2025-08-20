@@ -1,0 +1,32 @@
+---
+version: 0.3.0-1
+pkgbase:
+  name: python-nh3
+  pkgdesc: Ammonia HTML sanitizer Python binding
+  pkgver: 0.3.0
+  pkgrel: 1
+  url: https://github.com/messense/nh3
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-maturin
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  source:
+    - python-nh3::git+https://github.com/messense/nh3#tag=v0.3.0
+  sha512sums:
+    - 7ca2cd86b18aea73e72a3f8fd9f7c39c83114efc5af5f20e5165700c3ecbf0aa3fc53308def3fcfefb88bd9c38ca9f317474082b0b4bc9f75f6e9dd6aa145f8a
+  b2sums:
+    - a6ff35e85c628d03f814cba37c9df4cef9e88901c2aca692c710fe072654417e6255a96adb5ea27fb325ba27d3f2eccff62e996277f9f646be4d8661beae5e21
+pkgname:
+  - name: python-nh3
+# generated with artixpkg 0.36.5-1-any
