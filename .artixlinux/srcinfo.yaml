@@ -1,10 +1,10 @@
 ---
-version: 21.0.0-3
+version: 21.0.0-4
 pkgbase:
   name: arrow
   pkgdesc: Columnar in-memory analytics layer for big data.
   pkgver: 21.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://arrow.apache.org
   arch:
     - x86_64
@@ -65,4 +65,4 @@ pkgbase:
     - 444838ecf5f0ec22fb748632e16b67f29d7730050bc91c54a97455150caa77abe1006d8aa11536c15cc6b939d009f978262213dc3ae14c96d1983934e262dc1b
 pkgname:
   - name: arrow
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
