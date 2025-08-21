@@ -1,10 +1,10 @@
 ---
-version: 25.08.0-1
+version: 25.08.0-2
 pkgbase:
   name: kosmindoormap
   pkgdesc: OSM multi-floor indoor map renderer
   pkgver: 25.08.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kde.org
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kosmindoormap
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
