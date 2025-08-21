@@ -1,10 +1,10 @@
 ---
-version: 1:9.0.12-1
+version: 1:9.0.12-2
 pkgbase:
   name: libphonenumber
   pkgdesc: Google's common library for parsing, formatting, and validating international phone numbers
   pkgver: 9.0.12
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/googlei18n/libphonenumber
   arch:
@@ -44,4 +44,4 @@ pkgname:
     provides:
       - libgeocoding.so
       - libphonenumber.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
