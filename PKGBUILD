@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.16.zen1
+pkgver=6.16.2.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -45,16 +45,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('1a4be2fe6b5246aa4ac8987a8a4af34c42a8dd7d08b46ab48516bcc1befbcd83'
+sha256sums=('b760a6fa793d774fbd3b7fa0bea3efd5c4f5294dfb98ef1bd5f6d5f7cef4f06d'
             'SKIP'
-            '53ca3e1c5d0e4b4a70da3e5946beb92987100105c19fee0934ae12f99755df60'
+            'd3fc5792effb17211d9b00f2ad734771174115b92aab3659a5c4b51cb1a6ae1f'
             'SKIP'
-            '9dc92df04e25263d4b711c3ae3513f6c67e98629c7c43afcec009f7ba921a6dd')
-b2sums=('87bc4da7e89cc8265aebffea7ec6c09f711be24fee87cb1c03a264c03fd5a538d66aa806640835aa5103926e612cdfbc52d7c861d7f7065f1a8bb11d893b0921'
+            '9d84dd40de5db6f76f81def79ff92668ade2205f4edabf7e9eed0900179e07c2')
+b2sums=('9585d9abd085707cf5b7f3917ee41ff234083b941863fc5fa9eb7e81ed486da5fc58cd756020359f8784d29fcdac96720cc1dec2c10bef9a5c061cd2222f1680'
         'SKIP'
-        '48ac300a860ea50199afa6651467a08d5d4ac83b1eea417c91f2b3e128894b21bbc519c4aa5c0b80dd76bd4f20597779bcde207126cb52422989386f2ab7e00e'
+        'd57dd79d207cbb115f6d95ae66f71c89afcf2038024beaeef53f7170ff16d69b7f9d42d43c9dfaf1b75f974c58db5e256fcbc995492d0bc47d358e121bb061c3'
         'SKIP'
-        'bcf8163ec93105faaacca0fc8a8e7ca8d99aa8dd5e893e8e7b46a14b718c48e44bd487aacbb055152e0383c8ee05f3e1ba6c7ea3b21af27531714d038836cbef')
+        '9392cee0eace18dcec31eece0e804f09493ca4f3564a3c7a2d9597ff0ec2cf55d475aafe0d0e59214d07bdee3a765a520853b973c90d721a568395b79c778748')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -90,7 +90,7 @@ build() {
   cd $_srcname
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-#  make htmldocs  SPHINXOPTS=-QT
+  make htmldocs SPHINXOPTS=-QT
 }
 
 _package() {
@@ -247,7 +247,7 @@ _package-docs() {
 pkgname=(
   "$pkgbase"
   "$pkgbase-headers"
-#  "$pkgbase-docs"
+  "$pkgbase-docs"
 )
 for _p in "${pkgname[@]}"; do
   eval "package_$_p() {
