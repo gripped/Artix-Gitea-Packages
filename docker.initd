@@ -19,7 +19,7 @@ retry="${DOCKER_RETRY:-TERM/60/KILL/10}"
 
 depend() {
 	need containerd
-	use net
+	use net dns
 }
 
 start_pre() {
