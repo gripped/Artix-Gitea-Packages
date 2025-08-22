@@ -6,7 +6,7 @@ _alpm=2.4.2
 pkgbase=dbus-dinit
 pkgname=('dbus-dinit' 'dbus-dinit-user')
 pkgver=20250819
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for dbus"
 arch=('any')
 url="https://gitea.artixlinux.org/packages/dbus-dinit"
@@ -50,7 +50,7 @@ package_dbus-dinit() {
 }
 
 package_dbus-dinit-user() {
-    depends+=('dinit-base')
+    depends+=('dinit-base' 'dinit-user-spawn')
     provides=('init-user-dbus')
     conficts=('init-user-dbus')
     install -Dm644 dbus.user        "$pkgdir"/etc/dinit.d/user/dbus
