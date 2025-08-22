@@ -1,9 +1,9 @@
 ---
-version: 4.14.0-1
+version: 4.14.1-1
 pkgbase:
   name: python-pymongo
   pkgdesc: The official MongoDB Python driver
-  pkgver: 4.14.0
+  pkgver: 4.14.1
   pkgrel: 1
   url: https://github.com/mongodb/mongo-python-driver
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - 'python-snappy: for [snappy]'
     - 'python-zstandard: for [zstd]'
   source:
-    - python-pymongo-4.14.0.tar.gz::https://github.com/mongodb/mongo-python-driver/archive/4.14.0/4.14.0.tar.gz
+    - python-pymongo-4.14.1.tar.gz::https://github.com/mongodb/mongo-python-driver/archive/4.14.1/4.14.1.tar.gz
   sha256sums:
-    - 20ea9bf8d2bef46e3d0e7bddd8dbd4641326b25a7f298506f2d61e612571da0a
+    - 698b0fb7df1c223e2237e48540e38d9cdd4c5b5e18756eb72a8f8530264f45ff
 pkgname:
   - name: python-pymongo
 # generated with artixpkg 0.36.5-1-any
