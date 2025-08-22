@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.8.1-1
+    version: 25.8.2-1
     packages:
-      - ansible-lint-25.8.1-1-any.pkg.tar.zst
+      - ansible-lint-25.8.2-1-any.pkg.tar.zst
     debug: []
   world:
     version: 25.8.1-1
