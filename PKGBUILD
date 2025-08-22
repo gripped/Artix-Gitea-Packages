@@ -6,7 +6,7 @@ _alpm=2.4.2
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=8
+pkgrel=9
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
@@ -26,6 +26,11 @@ depends=(
 )
 conflicts=(
     'dinit<=0.19.4-7' # dbus hook
+    'turnstile-dinit'
+    'dinit-user-services'
+)
+provides=(
+    'dinit-user-services'
 )
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm")
@@ -39,5 +44,6 @@ build() {
 
 package() {
     meson install -C build --destdir="$pkgdir"
+    install -Dm644 $pkgname/dinit-user-spawn.service "$pkgdir/etc/dinit.d/dinit-user-spawn"
     make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user
 }
