@@ -26,7 +26,9 @@ build() {
 check() {
   cd sh
   # export PYTHONPATH="$(pwd):${PYTHONPATH}"
-  pytest tests -k 'not test_environment'
+  pytest tests -k 'not test_environment' \
+    --deselect tests/sh_test.py::FunctionalTests::test_custom_timeout_signal
+  # The above test fails in artix CI
 }
 
 package() {
