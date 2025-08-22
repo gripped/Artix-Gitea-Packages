@@ -1,9 +1,9 @@
 ---
-version: 2.11.0-1
+version: 2.11.1-1
 pkgbase:
   name: librdkafka
   pkgdesc: The Apache Kafka C/C++ library
-  pkgver: 2.11.0
+  pkgver: 2.11.1
   pkgrel: 1
   url: https://github.com/confluentinc/librdkafka
   arch:
@@ -30,11 +30,9 @@ pkgbase:
   provides:
     - librdkafka.so
   source:
-    - librdkafka-2.11.0.tar.gz::https://github.com/confluentinc/librdkafka/archive/v2.11.0.tar.gz
-    - remove-failing-tests.patch
+    - librdkafka-2.11.1.tar.gz::https://github.com/confluentinc/librdkafka/archive/v2.11.1.tar.gz
   sha256sums:
-    - 592a823dc7c09ad4ded1bc8f700da6d4e0c88ffaf267815c6f25e7450b9395ca
-    - 23c8d030179724d13a91f13cf566b045b195d64a3219eb2c5122d06e1e1c6fd1
+    - a2c87186b081e2705bb7d5338d5a01bc88d43273619b372ccb7bb0d264d0ca9f
 pkgname:
   - name: librdkafka
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
