@@ -1,0 +1,35 @@
+---
+version: 0.1.10-2
+pkgbase:
+  name: turnstile
+  pkgdesc: Work-in-progress session/login tracker as a logind alternative
+  pkgver: 0.1.10
+  pkgrel: 2
+  url: https://github.com/chimera-linux/turnstile
+  arch:
+    - x86_64
+  groups:
+    - turnstile-experimental
+  license:
+    - BSD
+  makedepends:
+    - meson
+    - scdoc
+  depends:
+    - pam
+    - dinit-base
+  source:
+    - turnstile-0.1.10.tar.gz::https://github.com/chimera-linux/turnstile/archive/refs/tags/v0.1.10.tar.gz
+  sha256sums:
+    - 186adf1402f3c63eecdbed241145cb029b7b1268c701a87381522d5b64583f2d
+pkgname:
+  - name: turnstile
+  - name: turnstile-dinit
+    pkgdesc: dinit service scripts for turnstile
+    depends:
+      - turnstile
+      - dinit
+    provides:
+      - init-turnstile
+      - dinit-user-services
+# generated with artixpkg 0.36.5-1-any
