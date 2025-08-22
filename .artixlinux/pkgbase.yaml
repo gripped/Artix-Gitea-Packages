@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 25.31.34666.3-1
+    packages:
+      - intel-compute-runtime-25.31.34666.3-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.27.34303.5-1
