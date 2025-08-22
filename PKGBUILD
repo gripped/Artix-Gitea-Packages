@@ -2,7 +2,7 @@
 # Contributor: Artoo <artoo@artixlinux.org>
 
 pkgname=dinit-rc
-pkgver=0.6.3
+pkgver=0.6.4
 pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
@@ -12,7 +12,6 @@ depends=(
     'artix-cgroups'
     'bash'
     'dbus' # dbus dep is for dbus-wait-for
-    'dinit-user-spawn>=1.0.0-6'
     'glibc'
     'udev'
 )
@@ -24,6 +23,8 @@ optdepends=(
     'cryptsetup-dinit: Encrypted disks support'
     'lvm2-dinit: LVM support'
     'mdadm-dinit: MD devices support'
+    'turnstile-dinit: manage dinit user services'
+    'dinit-user-spawn: manage dinit user services'
 )
 provides=(
     'init-udev'
