@@ -1,9 +1,9 @@
 ---
-version: 6.16.1.artix1-1
+version: 6.16.2.artix1-1
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 6.16.1.artix1
+  pkgver: 6.16.2.artix1
   pkgrel: 1
   url: https://github.com/archlinux/linux
   arch:
@@ -32,27 +32,27 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.1.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.1.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v6.16.1-arch1/linux-v6.16.1-arch1.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v6.16.1-arch1/linux-v6.16.1-arch1.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.2.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.2.tar.sign
+    - https://github.com/archlinux/linux/releases/download/v6.16.2-arch1/linux-v6.16.2-arch1.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v6.16.2-arch1/linux-v6.16.2-arch1.patch.zst.sig
     - config
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - ea43491bc7ace1e414b3b2d957f8cf96e7049155123f0acce798accf8da1acba
+    - b760a6fa793d774fbd3b7fa0bea3efd5c4f5294dfb98ef1bd5f6d5f7cef4f06d
     - SKIP
-    - b357773b9ed7e0f2265a04d53306d3d85d3b705ff32abe1f399b126685e1511d
+    - a3390acd1b5690bc2e1ab69f05b8088b45638f3169a81562611322e2010d2f90
     - SKIP
-    - 995bc325d3df9b3fe3b91763222d4f942072037c2b5d2265fc57ad1312c3dbca
+    - a4c989d86e6476d26323f2f1342f34d30dbe8d1ffb950e354e86afe2fcc38144
   b2sums:
-    - 280386f483f3f181fd0e45789815621f6f6bed208b7c10b05a7e2c2eed102d53928ce3f0e28cdd58d1e3c69f9977f60f7b6e832c3a00c0f4524aa45f83ec9491
+    - 9585d9abd085707cf5b7f3917ee41ff234083b941863fc5fa9eb7e81ed486da5fc58cd756020359f8784d29fcdac96720cc1dec2c10bef9a5c061cd2222f1680
     - SKIP
-    - e8572bedf0dfe7c4e997f03b37242752e2326372839ac152584f4bdcb91430b205ea036b3f952e7e4bde982a9e5d6c79172303d87cfa487ba3aa334ea274d5c7
+    - 1c467a5e417063e7de24de81dc67d3879144cf58365f5e616402c7b8f3a439bd82b1808875ef16006817433c03d56331d932fc829a46f48b8380b4e7fe4e0dcc
     - SKIP
-    - 34be62628cb74d06e0c73494393cd73dee3d7895e5ea5d76089eac96aa066d4a7f4268e900255286199d61eb8bd0824240c1468d4509e39bf92ad1a76e0a6804
+    - ce6356df4c0c6bc3797d3db6d06c693f905282793d831dae018e4143532ada394be5e0217f6530c9a2160d5bd1f0478fc454b5729192d3861522935f91c003a8
 pkgname:
   - name: linux
     pkgdesc: The Linux kernel and modules
@@ -78,4 +78,4 @@ pkgname:
       - pahole
   - name: linux-docs
     pkgdesc: Documentation for the Linux kernel
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.0-1-any
