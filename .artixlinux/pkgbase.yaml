@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,14 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025.08-5
+    packages:
+      - artix-live-base-2025.08-5-any.pkg.tar.zst
+      - artix-live-openrc-2025.08-5-any.pkg.tar.zst
+      - artix-live-runit-2025.08-5-any.pkg.tar.zst
+      - artix-live-s6-2025.08-5-any.pkg.tar.zst
+      - artix-live-dinit-2025.08-5-any.pkg.tar.zst
+      - artix-grub-live-2025.08-5-any.pkg.tar.zst
     debug: []
   world:
     version: 2025.08-4

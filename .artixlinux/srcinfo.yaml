@@ -1,10 +1,10 @@
 ---
-version: 2025.08-4
+version: 2025.08-5
 pkgbase:
   name: artix-live
   pkgdesc: Artix live session
   pkgver: 2025.08
-  pkgrel: 4
+  pkgrel: 5
   url: https://gitea.artixlinux.org/artix/artix-live
   arch:
     - any
@@ -15,9 +15,9 @@ pkgbase:
     - bash
     - artools-base
   source:
-    - git+https://gitea.artixlinux.org/artix/artix-live.git#commit=1db120e8dc69c2c75f4a9327eff4e7dc56919b15
+    - git+https://gitea.artixlinux.org/artix/artix-live.git#tag=0.14.0
   sha256sums:
-    - SKIP
+    - 99828c04eada8d01f19a85dee9a274bca257d62a3856b24907602398bb36f7bb
 pkgname:
   - name: artix-live-base
     pkgdesc: Artix live base scripts
@@ -42,4 +42,4 @@ pkgname:
       - artix-live-base
   - name: artix-grub-live
     pkgdesc: Artix grub live
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.1-1-any
