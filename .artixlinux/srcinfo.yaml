@@ -1,0 +1,58 @@
+---
+version: 1.0.6-1
+pkgbase:
+  name: appstream
+  pkgdesc: Provides a standard for creating app stores across distributions
+  pkgver: 1.0.6
+  pkgrel: 1
+  url: https://distributions.freedesktop.org/wiki/AppStream
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gperf
+    - itstool
+    - meson
+    - qt6-tools
+    - vala
+    - xmlto
+  depends:
+    - cairo
+    - curl
+    - fontconfig
+    - freetype2
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - librsvg
+    - libstemmer
+    - libxml2
+    - libxmlb
+    - libyaml
+    - pango
+    - zstd
+  source:
+    - git+https://github.com/ximion/appstream#tag=v1.0.6?signed
+    - update-appstream-cache.hook
+  validpgpkeys:
+    - D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB
+  sha256sums:
+    - c643c0789bb9235f21078d8c2fb01247ebda7a0fa2840e83577a083832528e3b
+    - edc632e4a76ebe5efc76a56fe5f797e5c981cca6f2f0111c7ce0170d1330c788
+pkgname:
+  - name: appstream
+  - name: appstream-qt
+    pkgdesc: Qt6 interface for AppStream
+    depends:
+      - appstream
+      - gcc-libs
+      - glib2
+      - glibc
+      - qt6-base
+# generated with artixpkg 0.37.0-1-any
