@@ -1,10 +1,10 @@
 ---
-version: 10.05.1-2
+version: 10.05.1-3
 pkgbase:
   name: ghostscript
   pkgdesc: An interpreter for the PostScript language
   pkgver: 10.05.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.ghostscript.com/
   arch:
     - x86_64
@@ -54,4 +54,4 @@ pkgbase:
     - 248ff8c61f8988286705aec0931b891287546db5d0e60564fa6878198490b0b7b8922d61ef9a1d059aade200e1a3c856b8d39cde04f9f67ec076a616d868aeac
 pkgname:
   - name: ghostscript
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.36.4-1-any
