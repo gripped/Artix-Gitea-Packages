@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: László Várady <laszlo.varady93@gmail.com>
 # Contributor: Snaipe
 
 pkgname=criterion
 _pkgname=Criterion
 pkgver=2.4.2
-pkgrel=6
+pkgrel=7
 pkgdesc="A cross-platform C and C++ unit testing framework for the 21st century"
 arch=(x86_64)
 url="https://github.com/Snaipe/Criterion"
@@ -37,10 +36,14 @@ prepare() {
   # Download of nanopb produces an error as it does not contain a meson.build
   # file. A meson.build file is not necessary, so ignore the error.
   meson subprojects download || :
+
+  # Fix FTBS
+  sed -i '/#ifdef __cplusplus/a # include <cstdint>' include/criterion/alloc.h
 }
 
 build() {
   cd $_pkgname-$pkgver
+  export CMAKE_POLICY_VERSION_MINIMUM=3.5
   artix-meson build
   meson compile -C build
 }
