@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 11.4.3-1
+    packages:
+      - harfbuzz-11.4.3-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-11.4.3-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-11.4.3-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-11.4.3-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-11.4.3-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 11.4.2-1
