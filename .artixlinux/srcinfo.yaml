@@ -1,0 +1,106 @@
+---
+version: 2025.2-2
+pkgbase:
+  name: texlive-bin
+  pkgver: 2025.2
+  pkgrel: 2
+  url: https://tug.org/texlive/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - bash
+    - cairo
+    - clisp
+    - ffcall
+    - fontconfig
+    - freetype2
+    - gcc-libs
+    - gd
+    - git
+    - glibc
+    - gmp
+    - graphite
+    - harfbuzz
+    - icu
+    - libjpeg-turbo
+    - libpaper
+    - libpng
+    - libsigsegv
+    - libunistring
+    - libx11
+    - libxaw
+    - libxcrypt
+    - libxmu
+    - libxpm
+    - libxt
+    - mpfr
+    - ncurses
+    - perl
+    - pixman
+    - potrace
+    - readline
+    - subversion
+    - zlib
+    - zziplib
+  source:
+    - git+https://github.com/Tex-Live/texlive-source.git#commit=8115c4d97aa0e68da1f957a56bca780449d1be59
+    - ptex-debug-print.patch
+    - lua-root.patch
+  sha256sums:
+    - 842fc0a45cb4d363253eefcaae1f88be7b8446def80d78cce251dad32d3802ec
+    - aa838f09003c62c2efb5770a8de66f99b409df049fbd65098d80fd1957d06c50
+    - c2d6a8b14dd8197874c1d894e70df80ad076f28ee4d1cff81e3b7811d9264fb9
+pkgname:
+  - name: texlive-bin
+    pkgdesc: TeX Live binaries
+    depends:
+      - bash
+      - cairo
+      - ffcall
+      - fontconfig
+      - freetype2
+      - gcc-libs
+      - gd
+      - glibc
+      - gmp
+      - graphite
+      - harfbuzz
+      - icu
+      - libpaper
+      - libpng
+      - libsigsegv
+      - libsynctex
+      - libunistring
+      - libx11
+      - libxaw
+      - libxcrypt
+      - libxmu
+      - libxpm
+      - libxt
+      - mpfr
+      - ncurses
+      - perl
+      - pixman
+      - potrace
+      - readline
+      - zlib
+      - zziplib
+    optdepends:
+      - 'psutils: to manipulate the output of dvips'
+    provides:
+      - lcdf-typetools
+      - libptexenc.so
+      - libtexlua53.so
+      - libtexluajit.so
+      - kpathsea
+      - xindy
+  - name: libsynctex
+    pkgdesc: Library for synchronization between TeX files and resulting file
+    depends:
+      - glibc
+      - zlib
+    provides:
+      - libsynctex.so
+# generated with artixpkg 0.36.4-1-any
