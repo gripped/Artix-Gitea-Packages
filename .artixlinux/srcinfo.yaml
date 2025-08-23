@@ -1,10 +1,10 @@
 ---
-version: 0.1.10-2
+version: 0.1.10-3
 pkgbase:
   name: turnstile
   pkgdesc: Work-in-progress session/login tracker as a logind alternative
   pkgver: 0.1.10
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/chimera-linux/turnstile
   arch:
     - x86_64
@@ -32,4 +32,5 @@ pkgname:
     provides:
       - init-turnstile
       - dinit-user-services
+      - dinit-user-spawn
 # generated with artixpkg 0.36.5-1-any

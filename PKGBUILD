@@ -2,7 +2,7 @@
 pkgbase=turnstile
 pkgname=('turnstile' 'turnstile-dinit')
 pkgver=0.1.10
-pkgrel=2
+pkgrel=3
 pkgdesc="Work-in-progress session/login tracker as a logind alternative"
 arch=("x86_64")
 url="https://github.com/chimera-linux/turnstile"
@@ -36,7 +36,7 @@ package_turnstile() {
 package_turnstile-dinit() {
     pkgdesc="dinit service scripts for turnstile"
     depends=('turnstile' 'dinit')
-    provides=('init-turnstile' 'dinit-user-services')
+    provides=('init-turnstile' 'dinit-user-services' 'dinit-user-spawn')
     conficts=('init-turnstile' 'dinit-user-services' 'dinit-user-spawn')
     install -Dm644 "$pkgbase-$pkgver/data/dinit/turnstiled" "$pkgdir/etc/dinit.d/turnstiled"
 }
