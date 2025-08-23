@@ -1,0 +1,28 @@
+---
+version: 0.14.0-1
+pkgbase:
+  name: python-moddb
+  pkgdesc: A Python scraper to access ModDB mods, games and more as objects
+  pkgver: 0.14.0
+  pkgrel: 1
+  url: https://github.com/ClementJ18/moddb
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-beautifulsoup4
+    - python-requests
+  source:
+    - git+https://github.com/ClementJ18/moddb.git#tag=00827d38571ca0f7569f839e3096aa33468fd51b
+  b2sums:
+    - c5dd9e41d702092e05fa9ea18c9a21b78314f46b597740127549dcd1bcb71ff0b29402296b390a420ca93355b6cb071db45cd8a237db94d5f20fea27fdbe4eca
+pkgname:
+  - name: python-moddb
+# generated with artixpkg 0.36.5-1-any
