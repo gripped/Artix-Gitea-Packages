@@ -1,9 +1,9 @@
 ---
-version: 1.70.3-1
+version: 1.71.0-1
 pkgbase:
   name: rclone
   pkgdesc: Sync files to and from Google Drive, S3, Swift, Cloudfiles, Dropbox and Google Cloud Storage
-  pkgver: 1.70.3
+  pkgver: 1.71.0
   pkgrel: 1
   url: https://github.com/rclone/rclone
   arch:
@@ -22,11 +22,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/rclone/rclone.git#tag=v1.70.3?signed
+    - git+https://github.com/rclone/rclone.git#tag=v1.71.0?signed
   validpgpkeys:
     - E3B358DC858FB307F48170B9CB0DBEBC5F32C81D
   sha512sums:
-    - 29ff79151486eabaccec273b06aa0cf49f782d7925d8ca16adfddbdff174fe7c79d2516f89ef828a93cc3265dfa5e2a6784dc3e24a31b2c6652577b5b67d76d4
+    - 603202e804a2d4428a7bb18714e212fb2af62b7b84e4228b43f288735b7ef15e125ac2a5a4ad68d2da596b081ccd03cc5baacd483153d0c0c7ecbfa051a6ecd3
 pkgname:
   - name: rclone
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
