@@ -1,0 +1,49 @@
+---
+version: 0.6.3-2
+pkgbase:
+  name: spotify-launcher
+  pkgdesc: Client for spotify's apt repository in Rust for Arch Linux
+  pkgver: 0.6.3
+  pkgrel: 2
+  url: https://github.com/kpcyrd/spotify-launcher
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+    - MIT
+  makedepends:
+    - cargo
+  depends:
+    - alsa-lib>=1.0.14
+    - at-spi2-atk
+    - gcc-libs
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libayatana-appindicator
+    - libcurl-gnutls
+    - libsm
+    - libxss
+    - nss
+    - sequoia-sqv
+    - xz
+    - liblzma.so
+    - zenity
+  options:
+    - '!lto'
+  backup:
+    - etc/spotify-launcher.conf
+  source:
+    - https://github.com/kpcyrd/spotify-launcher/archive/v0.6.3/spotify-launcher-0.6.3.tar.gz
+    - https://github.com/kpcyrd/spotify-launcher/releases/download/v0.6.3/spotify-launcher-0.6.3.tar.gz.asc
+  validpgpkeys:
+    - 64B13F7117D6E07D661BBCE0FE763A64F5E54FD6
+  sha256sums:
+    - 2f94319ecd59d6129b2124262a1155a56a40601c452b5099a5b59bf17c7b1c27
+    - SKIP
+  b2sums:
+    - 4db34a37e3ef93f85f07b1ad6572835206fe07bc66933af773556bd40511adbd26b5014b876789ef9a1102fd0972c500aaa92f18b230b478351118ac3d32897a
+    - SKIP
+pkgname:
+  - name: spotify-launcher
+# generated with artixpkg 0.36.5-1-any
