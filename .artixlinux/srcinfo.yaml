@@ -1,10 +1,10 @@
 ---
-version: 20250819-2
+version: 20250819-3
 pkgbase:
   name: dbus-dinit
   pkgdesc: dinit service scripts for dbus
   pkgver: 20250819
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitea.artixlinux.org/packages/dbus-dinit
   arch:
     - any
@@ -50,7 +50,6 @@ pkgname:
       - dbus
       - sh
       - dinit-base
-      - dinit-user-spawn
     provides:
       - init-user-dbus
 # generated with artixpkg 0.36.5-1-any
