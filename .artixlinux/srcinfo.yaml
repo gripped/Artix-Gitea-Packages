@@ -1,9 +1,9 @@
 ---
-version: 3.50.2-1
+version: 3.50.4-1
 pkgbase:
   name: lib32-sqlite
   pkgdesc: A C library that implements an SQL database engine (32-bit)
-  pkgver: 3.50.2
+  pkgver: 3.50.4
   pkgrel: 1
   url: https://www.sqlite.org/
   arch:
@@ -17,10 +17,10 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://www.sqlite.org/2025/sqlite-src-3500200.zip
+    - https://www.sqlite.org/2025/sqlite-src-3500400.zip
     - license.txt
   sha256sums:
-    - 091eeec3ae2ccb91aac21d0e9a4a58944fb2cb112fa67bffc3e08c2eca2d85c8
+    - b7b4dc060f36053902fb65b344bbbed592e64b2291a26ac06fe77eec097850e9
     - 4e57d9ac979f1c9872e69799c2597eeef4c6ce7224f3ede0bf9dc8d217b1e65d
 pkgname:
   - name: lib32-sqlite
@@ -30,4 +30,4 @@ pkgname:
       - sqlite
     provides:
       - libsqlite3.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.36.5-1-any
