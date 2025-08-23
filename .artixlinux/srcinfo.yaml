@@ -35,4 +35,4 @@ pkgname:
       - oniguruma
       - zlib
       - libgit2.so
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.36.5-1-any
