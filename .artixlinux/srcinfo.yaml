@@ -1,0 +1,36 @@
+---
+version: 0.3.23-1
+pkgbase:
+  name: libxmlb
+  pkgdesc: Library to help create and query binary XML blobs
+  pkgver: 0.3.23
+  pkgrel: 1
+  url: https://github.com/hughsie/libxmlb
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  checkdepends:
+    - shared-mime-info
+  makedepends:
+    - meson
+    - gobject-introspection
+    - gtk-doc
+  depends:
+    - gcc-libs
+    - glibc
+    - glib2
+    - libstemmer
+    - xz
+    - zstd
+  source:
+    - https://github.com/hughsie/libxmlb/releases/download/0.3.23/libxmlb-0.3.23.tar.xz
+    - https://github.com/hughsie/libxmlb/releases/download/0.3.23/libxmlb-0.3.23.tar.xz.asc
+  validpgpkeys:
+    - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
+  sha256sums:
+    - ab86eb2073592448a4e0263ab56e222de092c0a3964b66a8d696cac071c8ee3c
+    - SKIP
+pkgname:
+  - name: libxmlb
+# generated with artixpkg 0.36.4-1-any
