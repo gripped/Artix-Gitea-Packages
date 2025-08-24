@@ -1,0 +1,59 @@
+---
+version: 4.1.0-1
+pkgbase:
+  name: python-falcon
+  pkgdesc: Web API framework for fast and reliable microservices, proxies, and app backends
+  pkgver: 4.1.0
+  pkgrel: 1
+  url: https://falconframework.org/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - gunicorn
+    - hypercorn
+    - python-aiofiles
+    - python-cbor2
+    - python-httpx
+    - python-jsonschema
+    - python-mimeparse
+    - python-msgpack
+    - python-mujson
+    - python-orjson
+    - python-pecan
+    - python-pytest
+    - python-pytest-asyncio
+    - python-pyyaml
+    - python-rapidjson
+    - python-requests
+    - python-testtools
+    - python-ujson
+    - python-websockets
+    - uvicorn
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+  optdepends:
+    - 'python-bottle: for falcon-bench'
+    - 'python-django: for falcon-bench'
+    - 'python-flask: for falcon-bench'
+    - 'python-jsonschema: for JSON schema validation'
+    - 'python-msgpack: for MessagePackHandler'
+    - 'python-pecan: for falcon-bench'
+    - 'python-pprofile: for falcon-bench'
+  source:
+    - falcon-4.1.0.tar.gz::https://github.com/falconry/falcon/archive/refs/tags/4.1.0.tar.gz
+  sha512sums:
+    - 847c6537d0afe8d0ed26531763fc7c09f74cd4f76c3463abac30de850015b8526e67cc57a1a81aba607cc4905309fe0f09466749d3810e0894657cf62eebbaa3
+  b2sums:
+    - 383285c6fc03ad9fbb30b890535f3f98c8a9aa39977804caee4f0a4d4c4923fa2206bb9ac2a216926e81d6681f24beceeb0c7e313cadccfbf2e78fa7f2354e5b
+pkgname:
+  - name: python-falcon
+# generated with artixpkg 0.37.1-1-any
