@@ -1,0 +1,32 @@
+---
+version: 1:0.8.5-1
+pkgbase:
+  name: python-parso
+  pkgdesc: Python parser that supports error recovery and round-trip parsing for different Python versions
+  pkgver: 0.8.5
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/davidhalter/parso
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-sphinx
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://github.com/davidhalter/parso/archive/v0.8.5/parso-0.8.5.tar.gz
+  sha512sums:
+    - 9f24e13d0c4c1ddd818dc86414623f02beb4a2ee7e6df82fa014756f3ea2f7b7202a655250511e29d66b8bf32170780dfeda1b95ef30c051fad832240b40430a
+  b2sums:
+    - 38a0036954fec71b2878aeb2a32f437a9f787b51ab27cd773289d728371dc2cae556b8d19559dfb3cf001350d15f7256e1b2c1fcc0d0736249905a85b4b469f0
+pkgname:
+  - name: python-parso
+# generated with artixpkg 0.37.1-1-any
