@@ -1,0 +1,29 @@
+---
+version: 0.12.1-1
+pkgbase:
+  name: python-json5
+  pkgdesc: A Python implementation of the JSON5 data format
+  pkgver: 0.12.1
+  pkgrel: 1
+  url: https://pypi.org/project/json5/
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/dpranke/pyjson5#tag=v0.12.1
+  sha256sums:
+    - f92e9ed4832d9cd5d9da239db50ea21c2d9c5e3d736e9bb86b0619033dae7b6f
+pkgname:
+  - name: python-json5
+# generated with artixpkg 0.37.1-1-any
