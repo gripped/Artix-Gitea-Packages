@@ -1,10 +1,10 @@
 ---
-version: 2.7.10-3
+version: 2.7.10-4
 pkgbase:
   name: keepassxc
   pkgdesc: Cross-platform community-driven port of Keepass password manager
   pkgver: 2.7.10
-  pkgrel: 3
+  pkgrel: 4
   url: https://keepassxc.org/
   arch:
     - x86_64
