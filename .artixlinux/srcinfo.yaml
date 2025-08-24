@@ -1,10 +1,10 @@
 ---
-version: 1.8.8-2
+version: 1.8.8-3
 pkgbase:
   name: alembic
   pkgdesc: An open framework for storing and sharing scene data
   pkgver: 1.8.8
-  pkgrel: 2
+  pkgrel: 3
   url: http://www.alembic.io/
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 02b7bf5782e83efb08a8653f130b02565fa997e857dbd8d0523e1b218ff58d929fbf9690db0980e8101a31f01a67341b6000af8794538890ef7d759fe0289e2f
 pkgname:
   - name: alembic
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
