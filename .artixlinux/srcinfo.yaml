@@ -1,0 +1,97 @@
+---
+version: 2025.2-2
+pkgbase:
+  name: texlive-texmf
+  pkgdesc: TeX Live -
+  pkgver: 2025.2
+  pkgrel: 2
+  url: https://tug.org/texlive/
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - subversion
+  depends:
+    - texlive-bin
+  options:
+    - '!strip'
+  source:
+    - svn://tug.org/texlive/tags/texlive-2025.2/Master/texmf-dist#revision=74725
+    - svn://tug.org/texlive/tags/texlive-2025.2/Master/tlpkg#revision=74725
+    - svn://tug.org/texlive/tags/texlive-2025.2/Master/bin/x86_64-linux#revision=74725
+    - 09-texlive-fonts.conf
+    - texmf.cnf.patch
+    - texmfcnf.lua.patch
+    - 70-mktexlsr.hook
+    - 71-texlive-language.hook
+    - texlive-language.script
+    - 72-texlive-fmtutil.hook
+    - texlive-fmtutil.script
+    - 73-texlive-updmap.hook
+    - texlive-updmap.script
+    - 80-mtxrun.hook
+    - mtxrun.script
+    - https://gitlab.com/git-latexdiff/git-latexdiff/-/commit/a0aa6bad.patch
+  sha256sums:
+    - SKIP
+    - SKIP
+    - SKIP
+    - 5e79c40cf3ab93348fc89e97890198601767ea2c8fea89ea76088c17a2b35962
+    - 04fe1843336ee0707794497a7179abc31d5fc5148119e5b9b5f6c5de0962fa59
+    - 758c6593be7d0ee7e50095d08401a9fd3ea16db2f6b8bf22a8682fa82334a24f
+    - 95f6540c49b11f1ece8010d76b53ca90efd61e1831530562bfcde4350f6c1db1
+    - e6d399faee55ba461cf7e617f2369f5c516de292b28afc6665c9e3fe2b821973
+    - c64c2a6371e94b0f67799c0ac84ea74d8edbc181b26672aa15b8132ec5fbabc3
+    - 9b99f197c71149b03355f7c24ee1e07f54a1262bb030756fe660b9aa715a184f
+    - f96e9f815fa0a4b85e677f2a9215d9106b8abe46eceb3f3e36a6c76eda3e4a85
+    - 2141c0842668fb937fd21ca2fae39b642c9665656e404a0d4ee7bdc477bf51fe
+    - ee6e76192a5ad880a2152cd7900b86c8465239fb228045a2f8360b0d7a449f4a
+    - f6bb67db32d37ca15eba88bd15d8b9882c61915f98bc8d7c3c21a66c8cf8f019
+    - 98b730e917281227e29077ba5689ad78baee0af3859b55966b2604c6a85f1305
+    - e6b754b49563531ec737891ae7c9ad3d2e5bc716e0718ae7bfda298463af48f1
+pkgname:
+  - name: texlive-doc
+    pkgdesc: TeX Live - documentation
+  - name: texlive-meta
+    pkgdesc: Metapackage to install Tex Live
+  - name: texlive-basic
+  - name: texlive-bibtexextra
+  - name: texlive-binextra
+  - name: texlive-context
+  - name: texlive-fontsextra
+  - name: texlive-fontsrecommended
+  - name: texlive-fontutils
+  - name: texlive-formatsextra
+  - name: texlive-games
+  - name: texlive-humanities
+  - name: texlive-langarabic
+  - name: texlive-langchinese
+  - name: texlive-langcjk
+  - name: texlive-langcyrillic
+  - name: texlive-langczechslovak
+  - name: texlive-langenglish
+  - name: texlive-langeuropean
+  - name: texlive-langfrench
+  - name: texlive-langgerman
+  - name: texlive-langgreek
+  - name: texlive-langitalian
+  - name: texlive-langjapanese
+  - name: texlive-langkorean
+  - name: texlive-langother
+  - name: texlive-langpolish
+  - name: texlive-langportuguese
+  - name: texlive-langspanish
+  - name: texlive-latex
+  - name: texlive-latexextra
+  - name: texlive-latexrecommended
+  - name: texlive-luatex
+  - name: texlive-mathscience
+  - name: texlive-metapost
+  - name: texlive-music
+  - name: texlive-pictures
+  - name: texlive-plaingeneric
+  - name: texlive-pstricks
+  - name: texlive-publishers
+  - name: texlive-xetex
+# generated with artixpkg 0.36.4-1-any
