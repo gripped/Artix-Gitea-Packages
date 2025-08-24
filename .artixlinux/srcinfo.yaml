@@ -1,0 +1,34 @@
+---
+version: 3.2.8-1
+pkgbase:
+  name: python-scs
+  pkgdesc: Splitting Conic Solver
+  pkgver: 3.2.8
+  pkgrel: 1
+  url: https://github.com/bodono/scs-python
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - meson-python
+    - python-build
+    - python-installer
+  depends:
+    - blas
+    - glibc
+    - lapack
+    - python
+    - python-scipy
+  source:
+    - git+https://github.com/bodono/scs-python#tag=3.2.8
+    - git+https://github.com/cvxgrp/scs
+  sha256sums:
+    - e2755b510b387851823eefbf19266b31aa0e0e9872ade87c7e39c9eb08b6b849
+    - SKIP
+pkgname:
+  - name: python-scs
+# generated with artixpkg 0.37.1-1-any
