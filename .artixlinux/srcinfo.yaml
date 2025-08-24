@@ -1,9 +1,9 @@
 ---
-version: 33.0.0-1
+version: 34.0.0-1
 pkgbase:
   name: python-gherkin
   pkgdesc: A parser and compiler for the Gherkin language
-  pkgver: 33.0.0
+  pkgver: 34.0.0
   pkgrel: 1
   url: https://github.com/cucumber/gherkin
   arch:
@@ -15,15 +15,15 @@ pkgbase:
   makedepends:
     - python-build
     - python-installer
-    - python-setuptools
+    - python-uv-build
     - python-wheel
   depends:
     - python
     - python-typing_extensions
   source:
-    - https://github.com/cucumber/gherkin/archive/v33.0.0/python-gherkin-33.0.0.tar.gz
+    - https://github.com/cucumber/gherkin/archive/v34.0.0/python-gherkin-34.0.0.tar.gz
   sha256sums:
-    - c9ac8ed3e7cb8dc1e93097841a338c4100b337c55a8ab3a6da95d5831095b9fc
+    - d846a7916974a4a390ee1cd32b2b52a571b32731be1fa780197064b2333c62b3
 pkgname:
   - name: python-gherkin
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
