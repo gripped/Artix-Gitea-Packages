@@ -1,10 +1,10 @@
 ---
-version: 257.8-1
+version: 257.8-2
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 257.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -92,4 +92,4 @@ pkgname:
       - acl
       - libacl.so
       - libcap.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
