@@ -1,10 +1,10 @@
 ---
-version: 12.1.0-1
+version: 12.1.0-2
 pkgbase:
   name: openvdb
   pkgdesc: A large suite of tools for the efficient storage and manipulation of sparse volumetric data discretized on three-dimensional grids
   pkgver: 12.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/AcademySoftwareFoundation/openvdb
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgbase:
     - 8668ba827657ee648ea3897987a99ab625af6a2d36d919a9287e5a78325ae0c7713e29d88225661a099d28d1bb379ba40754bdaad077855e9119fe6a525f732f
 pkgname:
   - name: openvdb
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
