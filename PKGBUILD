@@ -1,9 +1,10 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
-# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+# Contributor: Jakub Klinkovský <lahwaacz at archlinux dot org>
 
 pkgname=mgard
 pkgver=1.5.2
-pkgrel=10
+pkgrel=11
 pkgdesc="MultiGrid Adaptive Reduction of Data"
 arch=(x86_64)
 url="https://github.com/CODARcode/MGARD"
