@@ -1,9 +1,9 @@
 ---
-version: 20250529-1
+version: 20250825-1
 pkgbase:
   name: artixlinux-appstream-data
   pkgdesc: Artix Linux application database for AppStream-based software centers
-  pkgver: 20250529
+  pkgver: 20250825
   pkgrel: 1
   url: https://www.artixlinux.org
   arch:
@@ -11,52 +11,52 @@ pkgbase:
   license:
     - GPL
   noextract:
-    - system-icons-48x48-20250529.tar.gz
-    - system-icons-64x64-20250529.tar.gz
-    - system-icons-128x128-20250529.tar.gz
-    - world-icons-48x48-20250529.tar.gz
-    - world-icons-64x64-20250529.tar.gz
-    - world-icons-128x128-20250529.tar.gz
-    - lib32-icons-48x48-20250529.tar.gz
-    - lib32-icons-64x64-20250529.tar.gz
-    - lib32-icons-128x128-20250529.tar.gz
-    - galaxy-icons-48x48-20250529.tar.gz
-    - galaxy-icons-64x64-20250529.tar.gz
-    - galaxy-icons-128x128-20250529.tar.gz
+    - system-icons-48x48-20250825.tar.gz
+    - system-icons-64x64-20250825.tar.gz
+    - system-icons-128x128-20250825.tar.gz
+    - world-icons-48x48-20250825.tar.gz
+    - world-icons-64x64-20250825.tar.gz
+    - world-icons-128x128-20250825.tar.gz
+    - lib32-icons-48x48-20250825.tar.gz
+    - lib32-icons-64x64-20250825.tar.gz
+    - lib32-icons-128x128-20250825.tar.gz
+    - galaxy-icons-48x48-20250825.tar.gz
+    - galaxy-icons-64x64-20250825.tar.gz
+    - galaxy-icons-128x128-20250825.tar.gz
   source:
-    - system-20250529.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/core/Components-x86_64.xml.gz
-    - system-icons-48x48-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/core/icons-48x48.tar.gz
-    - system-icons-64x64-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/core/icons-64x64.tar.gz
-    - system-icons-128x128-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/core/icons-128x128.tar.gz
-    - world-20250529.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/Components-x86_64.xml.gz
-    - world-icons-48x48-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/icons-48x48.tar.gz
-    - world-icons-64x64-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/icons-64x64.tar.gz
-    - world-icons-128x128-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/icons-128x128.tar.gz
-    - lib32-20250529.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/multilib/Components-x86_64.xml.gz
-    - lib32-icons-48x48-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/multilib/icons-48x48.tar.gz
-    - lib32-icons-64x64-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/multilib/icons-64x64.tar.gz
-    - lib32-icons-128x128-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/multilib/icons-128x128.tar.gz
-    - galaxy-20250529.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/Components-x86_64.xml.gz
-    - galaxy-icons-48x48-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/icons-48x48.tar.gz
-    - galaxy-icons-64x64-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/icons-64x64.tar.gz
-    - galaxy-icons-128x128-20250529.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250529/extra/icons-128x128.tar.gz
+    - system-20250825.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/core/Components-x86_64.xml.gz
+    - system-icons-48x48-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/core/icons-48x48.tar.gz
+    - system-icons-64x64-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/core/icons-64x64.tar.gz
+    - system-icons-128x128-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/core/icons-128x128.tar.gz
+    - world-20250825.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/Components-x86_64.xml.gz
+    - world-icons-48x48-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/icons-48x48.tar.gz
+    - world-icons-64x64-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/icons-64x64.tar.gz
+    - world-icons-128x128-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/icons-128x128.tar.gz
+    - lib32-20250825.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/multilib/Components-x86_64.xml.gz
+    - lib32-icons-48x48-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/multilib/icons-48x48.tar.gz
+    - lib32-icons-64x64-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/multilib/icons-64x64.tar.gz
+    - lib32-icons-128x128-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/multilib/icons-128x128.tar.gz
+    - galaxy-20250825.xml.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/Components-x86_64.xml.gz
+    - galaxy-icons-48x48-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/icons-48x48.tar.gz
+    - galaxy-icons-64x64-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/icons-64x64.tar.gz
+    - galaxy-icons-128x128-20250825.tar.gz::https://sources.archlinux.org/other/packages/archlinux-appstream-data/20250825/extra/icons-128x128.tar.gz
   sha256sums:
-    - 7731ef8fdcf5030c7b3aecebecc62a35d27cbb9fdaa3526a061fe986e899cc7e
+    - aa8a8cafe0a719886d43a86179ad4f48b5f5c69ed9bd3a7fdb6e16709cacaba5
     - 7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c
-    - 3805ad9f1a730cfc75c885b01fe3695929dfb2ae19fdf154a5f6dbe37239b90e
+    - effeb272d34fadcf64089d54e3a5aa910def4cb9f3d76722c6cd9a1bc25fe914
     - 7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c
-    - 011d0096cac9cf01c08a940b1566034b816d7e1fcfe6ef3f882de49428b2d030
-    - 0bb31a4f92404194d3420c17b2eb57bb71c3f7684248ebf46c254e64cd6a8a89
-    - 8686e2c03c0baafa882703d9c63f3ba8926c1005e1f11128ccea127265a4fea4
-    - 9597a3ef8c3995d4a5fb59c68bb6f3e7da58a0e346b9544425f0269400531f81
-    - 8a7d8c2d5c6e02e4f56910d0db94a630783dbd69e55ba45b4dd68c3ddfe1c5f1
-    - 8d7594d875aa9024199519d24e6a840020c51739ae5136e8edc41ffe1ffac03f
-    - 04194deea42a79ce241830ca00163d6c62d88321980fd95daa8fe975e9a1c780
-    - 29926298584952dd24518147ab9075b60850ce559c36d9b3051f2be2cbc1c8b7
-    - 011d0096cac9cf01c08a940b1566034b816d7e1fcfe6ef3f882de49428b2d030
-    - 0bb31a4f92404194d3420c17b2eb57bb71c3f7684248ebf46c254e64cd6a8a89
-    - 8686e2c03c0baafa882703d9c63f3ba8926c1005e1f11128ccea127265a4fea4
-    - 9597a3ef8c3995d4a5fb59c68bb6f3e7da58a0e346b9544425f0269400531f81
+    - ad02feba82734f10ee136203173b51a25e026af4cee66e0458b6d989a110526a
+    - ee86ba9cafc988815fd67949f648a8f031f22f6e2a52677b5357ccef604c9205
+    - 3f9e825dc9f10f4d01b8e4a709d1c54c9c5f804a39321c82da84f2ff9033808d
+    - c51af203f3e2b843b91bfeabe436c764dfdd3e028deecfe6387320161981920c
+    - 3db7854df15ee9f6d2ea5e37b4e36298f3016d51e52e5aa1fbd3aa9e29c071b5
+    - da8fbf96266d8b662f44b7e8711cfee5fc1330bfeee7b9dba25f03cc9c4e773f
+    - eff4cd46db55087386121242c94634ca66e172f17057c91ec2276d03632e0c27
+    - 048d1b9c252dcdc549dc4326eac99f1e110b6f65088c79c72c648fc357d6b665
+    - ad02feba82734f10ee136203173b51a25e026af4cee66e0458b6d989a110526a
+    - ee86ba9cafc988815fd67949f648a8f031f22f6e2a52677b5357ccef604c9205
+    - 3f9e825dc9f10f4d01b8e4a709d1c54c9c5f804a39321c82da84f2ff9033808d
+    - c51af203f3e2b843b91bfeabe436c764dfdd3e028deecfe6387320161981920c
 pkgname:
   - name: artixlinux-appstream-data
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
