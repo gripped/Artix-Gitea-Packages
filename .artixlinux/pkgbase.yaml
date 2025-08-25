@@ -14,9 +14,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 1.0.0-10
+    version: 1.0.0-11
     packages:
-      - dinit-user-spawn-1.0.0-10-x86_64.pkg.tar.zst
+      - dinit-user-spawn-1.0.0-11-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 1.0.0-9

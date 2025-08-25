@@ -6,7 +6,7 @@ _alpm=2.4.3
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=10
+pkgrel=11
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
@@ -44,6 +44,7 @@ build() {
 
 package() {
     meson install -C build --destdir="$pkgdir"
-    install -Dm644 $pkgname/dinit-user-spawn.service "$pkgdir/etc/dinit.d/dinit-user-spawn"
+    #install -Dm644 $pkgname/dinit-user-spawn.service "$pkgdir"/etc/dinit.d/dinit-user-spawn
     make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user install_dinit_user_spawn
+    install -Dm644 "$pkgname"/dinit-user-spawn.service "$pkgdir"/usr/lib/dinit.d/dinit-user-spawn
 }
