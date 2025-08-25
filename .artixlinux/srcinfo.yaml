@@ -1,10 +1,10 @@
 ---
-version: 25.08.0-1
+version: 25.08.0-2
 pkgbase:
   name: kdenlive
   pkgdesc: A non-linear video editor for Linux using the MLT video framework
   pkgver: 25.08.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kdenlive/
   arch:
     - x86_64
@@ -60,7 +60,6 @@ pkgbase:
     - 'bigsh0t: VR360 effects'
     - 'dvgrab: for firewire capture'
     - 'kimageformats: support for dds, xcf, exr, psd, and more image formats'
-    - 'mediainfo: for technical clip information'
     - 'noise-suppression-for-voice: noise suppression effect'
     - 'opencv: for motion tracking'
     - 'plasma-desktop: theme configuration'
@@ -81,4 +80,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kdenlive
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
