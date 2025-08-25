@@ -34,13 +34,15 @@ optdepends=(
 source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
 sha512sums=('ab0ae1e7b750d81f155dc990180b3ac9a7e2328df2889a4d3e69450f2203486745fad93f9b66f6828793c2390f27ceadcab90c32eaf3c0393dfcdb77aef253a8'
-            'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
+            '56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
+   git -C "${pkgname}" apply ../artix-cmake.patch
   cd $pkgname
+  #git apply ../artix-cmake.patch
   git cherry-pick -n a869b79c5921412c91fb71a761748ae5f7d3fb23 # Fix FindHDF5 for HDF5 built with cmake
-  git apply ../artix-cmake.patch
+#   git apply ../artix-cmake.patch
 }
 
 build() {

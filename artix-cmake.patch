@@ -2,15 +2,15 @@
  1 file changed, 2 insertions(+)
 
 diff --git a/Modules/GNUInstallDirs.cmake b/Modules/GNUInstallDirs.cmake
-index 97968549dc..c1b201b904 100644
+index ff9c11a9d7..e0372e673d 100644
 --- a/Modules/GNUInstallDirs.cmake
 +++ b/Modules/GNUInstallDirs.cmake
-@@ -268,6 +268,8 @@ if(NOT DEFINED CMAKE_INSTALL_LIBDIR OR (_libdir_set
-         set(__system_type_for_install "alpine")
-       elseif (EXISTS "/etc/arch-release")
-         set(__system_type_for_install "arch linux")
-+      elseif (EXISTS "/etc/artix-release")
-+        set(__system_type_for_install "arch linux")
-       elseif (EXISTS "/etc/debian_version")
-         set(__system_type_for_install "debian")
-       endif()
+@@ -343,6 +343,8 @@ function(_GNUInstallDirs_get_system_type_for_install out_var)
+       set(${out_var} "alpine")
+     elseif (EXISTS "/etc/arch-release")
+       set(${out_var} "arch linux")
++    elseif (EXISTS "/etc/artix-release")
++      set(${out_var} "artix linux")
+     elseif (EXISTS "/etc/debian_version")
+       set(${out_var} "debian")
+     endif()
