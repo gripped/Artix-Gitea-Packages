@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=4.0.3
+pkgver=4.1.0
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -33,14 +33,14 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('19bbc12717eecf60225c085e1c5bd7cfb22ef52e939584ee912eb6f685bdeadff5eb320c1b267a167c8fee6323955f24df3eb27bbb728a25fbb86b71f0b2b6d3'
+sha512sums=('ab0ae1e7b750d81f155dc990180b3ac9a7e2328df2889a4d3e69450f2203486745fad93f9b66f6828793c2390f27ceadcab90c32eaf3c0393dfcdb77aef253a8'
             'b9dc162136cb3038c63ae2235c665167ac6f7770927fe6c2bf4a4a86b0a995efa1d42e80bee762c77bc690115060b635ea5028a4b3ce4428d24ea851e94b34f6')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
-  git -C "${pkgname}" apply ../artix-cmake.patch
   cd $pkgname
   git cherry-pick -n a869b79c5921412c91fb71a761748ae5f7d3fb23 # Fix FindHDF5 for HDF5 built with cmake
+  git apply ../artix-cmake.patch
 }
 
 build() {
