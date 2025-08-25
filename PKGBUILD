@@ -1,5 +1,6 @@
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 # Contributor: tobias <tobias@archlinux.org>
 # Contributor: red_over_blue
@@ -8,7 +9,7 @@
 pkgname=povray
 epoch=2
 pkgver=3.7.0.10
-pkgrel=17
+pkgrel=18
 _v=${pkgver%.*.*} # 3.7
 pkgdesc='Script based raytracer for creating 3D graphics'
 arch=(x86_64)
