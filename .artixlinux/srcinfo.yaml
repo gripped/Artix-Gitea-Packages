@@ -1,10 +1,10 @@
 ---
-version: 3.0.9.1-1
+version: 3.0.9.1-2
 pkgbase:
   name: openimageio
   pkgdesc: A library for reading and writing images, including classes, utilities, and applications
   pkgver: 3.0.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.openimageio.org/
   arch:
     - x86_64
@@ -45,4 +45,4 @@ pkgbase:
     - cee6ddfbd825022a45a46b041c894a18718a474a32da8715fe08f918c7387505e81f3220c0ad79d3ec160b9c224bdeafbbb8a2b67a47cd845dca492582607c22
 pkgname:
   - name: openimageio
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
