@@ -1,10 +1,10 @@
 ---
-version: 1.14.7.0-1
+version: 1.14.7.0-2
 pkgbase:
   name: openshadinglanguage
   pkgdesc: Advanced shading language for production GI renderers
   pkgver: 1.14.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/imageworks/OpenShadingLanguage
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgbase:
     - b92b64d2120980a330ba19d957e2d1b400684f7779ee60ca80241ab3c3f3df46e07fa1fbbfd7810b6f8f3e2e8775cd105137b7e8c4a28efde39656363b977521
 pkgname:
   - name: openshadinglanguage
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
