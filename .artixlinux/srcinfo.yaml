@@ -1,10 +1,10 @@
 ---
-version: 23.08.5-2
+version: 23.08.5-3
 pkgbase:
   name: okularpart5
   pkgdesc: Qt5 Okular KPart
   pkgver: 23.08.5
-  pkgrel: 2
+  pkgrel: 3
   url: https://apps.kde.org/okular/
   arch:
     - x86_64
@@ -13,7 +13,6 @@ pkgbase:
     - LGPL
     - FDL
   makedepends:
-    - ebook-tools
     - extra-cmake-modules
     - kactivities5
   depends:
@@ -40,21 +39,15 @@ pkgbase:
     - kwidgetsaddons5
     - kxmlgui5
     - libjpeg-turbo
-    - libkexiv2-qt5
     - libspectre
     - libtiff
     - poppler-qt5
-    - purpose5
     - qt5-base
     - qt5-declarative
     - qt5-speech
     - qt5-svg
     - threadweaver5
     - zlib
-  optdepends:
-    - 'ebook-tools: mobi and epub support'
-    - 'unarchiver: Comic Book Archive support (alternative)'
-    - 'unrar: Comic Book Archive support'
   conflicts:
     - okular<24
   source:
@@ -69,4 +62,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: okularpart5
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
