@@ -1,25 +1,26 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: BlackIkeEagle < ike DOT devolder AT gmail DOT com >
+# Contributor: Maxim Baz <$pkgname at maximbaz dot com>
+# Contributor: Batou <batou at cryptolab net>
+# Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
 
 pkgname=copyq
-pkgver=10.0.0
+pkgver=11.0.0
 pkgrel=1
 pkgdesc="Clipboard manager with searchable and editable history"
 url="https://github.com/hluk/${pkgname}"
-depends=('hicolor-icon-theme' 'qt6-svg' 'qt6-wayland' 'knotifications' 'kstatusnotifieritem')
-makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-base' 'qt6-declarative')
+depends=('hicolor-icon-theme' 'qt5-svg' 'qt5-wayland' 'knotifications5')
+makedepends=('extra-cmake-modules' 'qt5-tools')
 license=('GPL3')
 arch=('x86_64')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-sha256sums=('ffbae7a71c55cd89dfd88a6d184c7a5c7a8c4c948e9df11c10640c246d9c5f53')
+sha256sums=('57b58d66f3b8784e34b8ab986529f19197862f77c8d66be83b44341e0bc17e9d')
 
 build() {
     cmake -B build -S CopyQ-$pkgver \
-      -DCMAKE_INSTALL_PREFIX=/usr \
-      -DWITH_QT6=ON
+      -DCMAKE_INSTALL_PREFIX=/usr
     cmake --build build
 }
 
 package() {
     DESTDIR="${pkgdir}" cmake --install build
 }
-
