@@ -2,11 +2,11 @@
 # Contributor: initMayday <initMayday@protonmail.com>
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_alpm=2.4.2
+_alpm=2.4.3
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.0
-pkgrel=9
+pkgrel=10
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
@@ -35,7 +35,7 @@ provides=(
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm")
 sha256sums=('ef739d7084dca2bc81af3e3ce53de5af3b02e2d868d8e8c906ac233cf7441909'
-            '3fcb8e642f8219ec9ce774032a746c07722bb48cd8e5f989806ad73d9eefb505')
+            '251fd0c4049b09fbfbc212c614240f801692bc23a6148e4d5797cddc85bfe693')
 
 build() {
     artix-meson "$pkgname" build
@@ -45,5 +45,5 @@ build() {
 package() {
     meson install -C build --destdir="$pkgdir"
     install -Dm644 $pkgname/dinit-user-spawn.service "$pkgdir/etc/dinit.d/dinit-user-spawn"
-    make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user
+    make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user install_dinit_user_spawn
 }
