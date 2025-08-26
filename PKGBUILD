@@ -1,11 +1,11 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 # Maintainer: nous <nous@artixlinux.org>
 
-_commit=f7cf5a8e880a70b9f3983a5e532fc14c1e555762
+_commit=0ba7b17bfaa7a22faa6d45d1d1f3899817d68aab
 
 pkgname=iso-profiles
 pkgver=2025.08
-pkgrel=2
+pkgrel=3
 pkgdesc='Artix iso profiles'
 arch=('any')
 license=('GPL')
