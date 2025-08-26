@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.6.0-2
+    version: 3.6.1-1
     packages:
-      - gmic-3.6.0-2-x86_64.pkg.tar.zst
-      - gimp-plugin-gmic-3.6.0-2-x86_64.pkg.tar.zst
+      - gmic-3.6.1-1-x86_64.pkg.tar.zst
+      - gimp-plugin-gmic-3.6.1-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

@@ -1,9 +1,9 @@
 ---
-version: 3.6.0-2
+version: 3.6.1-1
 pkgbase:
   name: gmic
-  pkgver: 3.6.0
-  pkgrel: 2
+  pkgver: 3.6.1
+  pkgrel: 1
   url: https://gmic.eu/
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
     - qt6-base
     - qt6-tools
   source:
-    - https://gmic.eu/files/source/gmic_3.6.0.tar.gz
+    - https://gmic.eu/files/source/gmic_3.6.1.tar.gz
   sha256sums:
-    - 64c32e1a58e9d7de3f84220183bab06423bd9823afacee9a9c7b23768b8edc33
+    - 4cf36b7af48013651e40e2c17be646b748cffdd400a90562588a35af731f6c9e
 pkgname:
   - name: gmic
     pkgdesc:
