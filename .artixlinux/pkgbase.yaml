@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.26.4-1
+    version: 1.26.4-1.1
     packages:
-      - python-pymupdf-1.26.4-1-x86_64.pkg.tar.zst
+      - python-pymupdf-1.26.4-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.26.3-3
