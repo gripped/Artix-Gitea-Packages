@@ -1,9 +1,9 @@
 ---
-version: 1.26.5-1
+version: 1.26.7-1
 pkgbase:
   name: mupdf
   pkgdesc: Lightweight PDF and XPS viewer
-  pkgver: 1.26.5
+  pkgver: 1.26.7
   pkgrel: 1
   url: https://mupdf.com
   arch:
@@ -38,7 +38,7 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - git+https://github.com/ArtifexSoftware/mupdf.git#tag=1.26.5
+    - git+https://github.com/ArtifexSoftware/mupdf.git#tag=1.26.7
     - git+https://github.com/ArtifexSoftware/mujs.git
     - git+https://github.com/ArtifexSoftware/thirdparty-lcms2.git
     - git+https://github.com/ArtifexSoftware/extract.git
@@ -48,7 +48,7 @@ pkgbase:
     - mupdf-1.23.9-cpp_ldflags.patch
     - mupdf-1.23.9-install_targets.patch
   sha256sums:
-    - 3a9193c648951a68592f7d3d0f212620b57680511f332a405e84fe00d782a5d4
+    - 358df2283223ead2e5197adcf0e270f9c439a5b41e25aae886a88eedd4b7885d
     - SKIP
     - SKIP
     - SKIP
@@ -91,7 +91,7 @@ pkgname:
       - libmupdf
       - openssl
     provides:
-      - mupdf=1.26.5
+      - mupdf=1.26.7
     conflicts:
       - mupdf
   - name: mupdf-tools
@@ -109,4 +109,4 @@ pkgname:
       - glibc
       - libmupdf
       - python
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.1-1-any
