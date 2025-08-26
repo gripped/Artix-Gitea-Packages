@@ -1,10 +1,10 @@
 ---
-version: 6.9.1-5
+version: 6.9.2-1
 pkgbase:
   name: qt6-base
   pkgdesc: A cross-platform application and UI framework
-  pkgver: 6.9.1
-  pkgrel: 5
+  pkgver: 6.9.2
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -86,11 +86,11 @@ pkgbase:
     - 'qt6-wayland: to run Qt6 applications in a Wayland session'
     - 'unixodbc: ODBC driver'
   source:
-    - git+https://code.qt.io/qt/qtbase#tag=v6.9.1
+    - git+https://code.qt.io/qt/qtbase#tag=v6.9.2
     - qt6-base-cflags.patch
     - qt6-base-nostrip.patch
   sha256sums:
-    - 7fd870a6390c89540385969cc757364dbf3a658e3f1b56dd848a592976f61848
+    - 4660524959f547a58839ff56c695994e061dc3fa3646b06cca951a7ef1748aae
     - 5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78
     - 4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094
 pkgname:
@@ -144,6 +144,6 @@ pkgname:
     pkgdesc: Private headers for Qt6 Xcb
     groups: []
     depends:
-      - qt6-base=6.9.1
+      - qt6-base=6.9.2
     optdepends: []
 # generated with artixpkg 0.36.4-1-any
