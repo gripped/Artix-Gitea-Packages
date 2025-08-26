@@ -1,9 +1,9 @@
 ---
-version: 9.6.15-1
+version: 9.6.18-1
 pkgbase:
   name: mkdocs-material
   pkgdesc: Documentation that simply works
-  pkgver: 9.6.15
+  pkgver: 9.6.18
   pkgrel: 1
   url: https://github.com/squidfunk/mkdocs-material
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - 'python-cairosvg: for image processing'
     - 'python-pillow: for image processing'
   source:
-    - mkdocs-material-9.6.15.tar.gz::https://github.com/squidfunk/mkdocs-material/archive/9.6.15.tar.gz
+    - mkdocs-material-9.6.18.tar.gz::https://github.com/squidfunk/mkdocs-material/archive/9.6.18.tar.gz
   sha256sums:
-    - af2f90e7fc88ad4a67b6e81349a7608cb1d89cea2b30b5eb91fba3e5cb80c280
+    - 8f2d7647223442a5cca2286d497a821035cfeef87d801dc40137f9a6928fe0af
 pkgname:
   - name: mkdocs-material
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.1-1-any
