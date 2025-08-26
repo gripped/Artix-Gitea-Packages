@@ -1,10 +1,10 @@
 ---
-version: 2025.08-5
+version: 2025.08-6
 pkgbase:
   name: artix-live
   pkgdesc: Artix live session
   pkgver: 2025.08
-  pkgrel: 5
+  pkgrel: 6
   url: https://gitea.artixlinux.org/artix/artix-live
   arch:
     - any
@@ -28,18 +28,34 @@ pkgname:
     pkgdesc: Artix live openrc init scripts
     depends:
       - artix-live-base
+    provides:
+      - init-artix-live
+    conflicts:
+      - init-artix-live
   - name: artix-live-runit
     pkgdesc: Artix live runit init scripts
     depends:
       - artix-live-base
+    provides:
+      - init-artix-live
+    conflicts:
+      - init-artix-live
   - name: artix-live-s6
     pkgdesc: Artix live s6 init scripts
     depends:
       - artix-live-base
+    provides:
+      - init-artix-live
+    conflicts:
+      - init-artix-live
   - name: artix-live-dinit
     pkgdesc: Artix live dinit init scripts
     depends:
       - artix-live-base
+    provides:
+      - init-artix-live
+    conflicts:
+      - init-artix-live
   - name: artix-grub-live
     pkgdesc: Artix grub live
 # generated with artixpkg 0.37.1-1-any

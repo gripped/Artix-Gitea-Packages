@@ -13,7 +13,7 @@ pkgname=('artix-live-base'
         'artix-live-dinit'
         'artix-grub-live')
 pkgver=2025.08
-pkgrel=5
+pkgrel=6
 pkgdesc='Artix live session'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artix-live"
@@ -43,6 +43,8 @@ package_artix-live-base() {
 package_artix-live-openrc() {
     pkgdesc='Artix live openrc init scripts'
     depends=('artix-live-base')
+    provides=('init-artix-live')
+    conflicts=('init-artix-live')
 
     make -C "${pkgbase}" DESTDIR=${pkgdir} install_rc
 
@@ -54,6 +56,8 @@ package_artix-live-openrc() {
 package_artix-live-runit() {
     pkgdesc='Artix live runit init scripts'
     depends=('artix-live-base')
+    provides=('init-artix-live')
+    conflicts=('init-artix-live')
 
     make -C "${pkgbase}" DESTDIR=${pkgdir} install_runit
 
@@ -64,6 +68,8 @@ package_artix-live-runit() {
 package_artix-live-s6() {
     pkgdesc='Artix live s6 init scripts'
     depends=('artix-live-base')
+    provides=('init-artix-live')
+    conflicts=('init-artix-live')
 
     make -C "${pkgbase}" DESTDIR=${pkgdir} install_s6
 }
@@ -71,6 +77,8 @@ package_artix-live-s6() {
 package_artix-live-dinit() {
     pkgdesc='Artix live dinit init scripts'
     depends=('artix-live-base')
+    provides=('init-artix-live')
+    conflicts=('init-artix-live')
 
     make -C "${pkgbase}" DESTDIR=${pkgdir} install_dinit
 }
