@@ -1,9 +1,9 @@
 ---
-version: 6.9.1-1
+version: 6.9.2-1
 pkgbase:
   name: qt6-websockets
   pkgdesc: Provides WebSocket communication compliant with RFC 6455
-  pkgver: 6.9.1
+  pkgver: 6.9.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtwebsockets#tag=v6.9.1
+    - git+https://code.qt.io/qt/qtwebsockets#tag=v6.9.2
   sha256sums:
-    - e195a1817452427c3bfa3e55a88ddcb29336ffeb70228e0553e901d46f9b14ea
+    - f610035da991b577c9e771c454a16d762dc344f13b2059b54dcf034cc5dc733c
 pkgname:
   - name: qt6-websockets
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
