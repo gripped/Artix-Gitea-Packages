@@ -1,10 +1,10 @@
 ---
-version: 6.9.1-2
+version: 6.9.2-1
 pkgbase:
   name: qt6-tools
   pkgdesc: A cross-platform application and UI framework (Development Tools, QtHelp)
-  pkgver: 6.9.1
-  pkgrel: 2
+  pkgver: 6.9.2
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -34,11 +34,11 @@ pkgbase:
     - 'litehtml: for assistant'
     - 'qt6-declarative: for qdistancefieldgenerator, qdoc and lupdate'
   source:
-    - git+https://code.qt.io/qt/qttools#tag=v6.9.1
+    - git+https://code.qt.io/qt/qttools#tag=v6.9.2
     - git+https://code.qt.io/playground/qlitehtml
   sha256sums:
-    - 7bc25a2a68017566823384df67e1caf1a13c35d2e5ff0801cc9f29bdce096c25
+    - dbbbcd067eb34c733187e7df4c2b2fec922555e13646c41616e3b2b9ab9a7a6b
     - SKIP
 pkgname:
   - name: qt6-tools
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
