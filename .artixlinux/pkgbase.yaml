@@ -1,12 +1,5 @@
 ---
 team: world
-pkgbase:
-  name: stb
-  version: r2205.f056911-1
-  arch:
-    - any
-  pkgname:
-    - stb
 actions:
   addRepo: world
   removeRepo: null
@@ -19,37 +12,49 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: r2205.f056911-1
+    version: r2210.f58f558-1
     packages:
-      - stb-r2205.f056911-1-any.pkg.tar.zst
+      - stb-r2210.f58f558-1-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
