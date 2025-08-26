@@ -3,7 +3,7 @@
 pkgbase=hip-runtime
 pkgname=(hip-runtime-amd hip-runtime-nvidia)
 pkgver=6.4.3
-pkgrel=1
+pkgrel=2
 _pkgdesc="Heterogeneous Interface for Portability"
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/HIP/en/latest/'
@@ -30,6 +30,8 @@ sha256sums=('d8f5461685917c41c229e9f2449339c32f261d51455fb4d508576fa58801f3e1'
             '9e4f250e3e294112c49ea7aab722475f5061d997651b1dc9e1a0df0b902c1170'
             '6fc07b8291e5af1866ae8858850712c134dbdf2893fabd336b077f3d4413fdab'
             'bfafb0a2e359557a86778aa33fe6e4ab458c4395b24cd58e06d6f2ed72e44899')
+
+options=(!lto)
 
 build() {
   local hipcc_common_args=(

@@ -1,9 +1,9 @@
 ---
-version: 6.4.3-1
+version: 6.4.3-2
 pkgbase:
   name: hip-runtime
   pkgver: 6.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/HIP/en/latest/
   arch:
     - x86_64
@@ -27,6 +27,8 @@ pkgbase:
     - libelf
     - rocprofiler-register
     - cuda
+  options:
+    - '!lto'
   source:
     - hip-runtime::git+https://github.com/ROCm/HIP#tag=rocm-6.4.3
     - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-6.4.3
