@@ -1,0 +1,44 @@
+---
+version: 5.1.0-1
+pkgbase:
+  name: virt-manager
+  pkgver: 5.1.0
+  pkgrel: 1
+  url: https://virt-manager.org/
+  arch:
+    - any
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - meson
+    - python-docutils
+  optdepends:
+    - 'libayatana-appindicator: tray icon'
+    - 'x11-ssh-askpass: provide password for remote machines connected via ssh tunnel'
+  source:
+    - git+https://github.com/virt-manager/virt-manager.git#tag=v5.1.0
+  b2sums:
+    - f4f0a51662eed1431ec00ab4bd8820ab1f44aac2ade9b3ab4f95bf6bad6151d575519337b155eb1f0f1463ca3461c7cf4193c2ee6a3bce95cd3dd89295787b88
+pkgname:
+  - name: virt-install
+    pkgdesc: Command line tool for creating new KVM , Xen, or Linux container guests using the libvirt hypervisor
+    depends:
+      - cpio
+      - libisoburn
+      - libosinfo
+      - libvirt-python
+      - python-gobject
+      - python-requests
+  - name: virt-manager
+    pkgdesc: Desktop user interface for managing virtual machines
+    depends:
+      - virt-install=5.1.0
+      - gtk-update-icon-cache
+      - gtk-vnc
+      - libvirt-glib
+      - spice-gtk
+      - vte3
+      - python-cairo
+      - gtksourceview4
+# generated with artixpkg 0.36.4-1-any
