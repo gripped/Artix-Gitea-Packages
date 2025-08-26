@@ -1,10 +1,10 @@
 ---
-version: 1.8.0-2
+version: 1.9.0-1
 pkgbase:
   name: timew
   pkgdesc: Timewarrior, A command line time tracking application
-  pkgver: 1.8.0
-  pkgrel: 2
+  pkgver: 1.9.0
+  pkgrel: 1
   url: https://timewarrior.net/
   install: timew.install
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - 'task: Taskwarrior integration'
     - 'python: Holiday refresh script'
   source:
-    - https://github.com/GothenburgBitFactory/timewarrior/releases/download/v1.8.0/timew-1.8.0.tar.gz
+    - https://github.com/GothenburgBitFactory/timewarrior/releases/download/v1.9.0/timew-1.9.0.tar.gz
   sha256sums:
-    - 1ea54302dcefa4aa658f89b6b825f0e8b49c04f15cf153a2e7d8bce5525920b4
+    - 24365dc1537aa7b0b8c33877df9933a5b8b86e86a25858a5126b1eb4f3bc0b08
 pkgname:
   - name: timew
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.1-1-any
