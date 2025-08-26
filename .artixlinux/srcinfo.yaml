@@ -1,9 +1,9 @@
 ---
-version: 6.9.1-1
+version: 6.9.2-1
 pkgbase:
   name: qt6-wayland
   pkgdesc: Provides APIs for Wayland
-  pkgver: 6.9.1
+  pkgver: 6.9.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -30,9 +30,9 @@ pkgbase:
     - qt6-svg
     - wayland
   source:
-    - git+https://code.qt.io/qt/qtwayland#tag=v6.9.1
+    - git+https://code.qt.io/qt/qtwayland#tag=v6.9.2
   sha256sums:
-    - 4b1c5f703a3ad9a516d75b9753742871b51df298324d68fc457ac18e7186a5de
+    - a1717e5bf742307ae1154812ad6131316f53bb1feeea0260e721033f19ff851b
 pkgname:
   - name: qt6-wayland
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
