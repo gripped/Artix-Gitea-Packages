@@ -1,10 +1,10 @@
 ---
-version: 6.9.1-1
+version: 6.9.1-2
 pkgbase:
   name: pyqt6
   pkgdesc: A set of Python bindings for the Qt6 toolkit
   pkgver: 6.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
     - x86_64
@@ -63,4 +63,4 @@ pkgbase:
     - 50642be03fb40f1c2111a09a1f5a0f79813e039c15e78267e6faaf8a96c1c3a6
 pkgname:
   - name: python-pyqt6
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.36.4-1-any
