@@ -1,0 +1,47 @@
+---
+version: 2.9.7-2
+pkgbase:
+  name: ueberzugpp
+  pkgdesc: Command line utility which allows to display images in the terminal, written in C++
+  pkgver: 2.9.7
+  pkgrel: 2
+  url: https://github.com/jstkdng/ueberzugpp
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cmake
+    - cli11
+    - nlohmann-json
+    - wayland-protocols
+    - extra-cmake-modules
+    - range-v3
+  depends:
+    - opencv
+    - libvips
+    - glib2
+    - libxcb
+    - xcb-util-image
+    - libsixel
+    - openssl
+    - spdlog
+    - libglvnd
+    - fmt
+    - chafa
+    - wayland
+    - onetbb
+    - glibc
+    - gcc-libs
+    - xcb-util-errors
+  provides:
+    - ueberzug
+  conflicts:
+    - ueberzug
+  source:
+    - ueberzugpp-2.9.7.tar.gz::https://github.com/jstkdng/ueberzugpp/archive/v2.9.7.tar.gz
+  sha256sums:
+    - fcf4b35e2a38a42a9ea6665f2168a1f778008424b14817bcd381dbb7b5cc54b7
+pkgname:
+  - name: ueberzugpp
+# generated with artixpkg 0.37.2-1-any
