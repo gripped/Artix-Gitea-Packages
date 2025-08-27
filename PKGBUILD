@@ -71,3 +71,4 @@ build() {
 package() {
   make -C build DESTDIR="$pkgdir" install
 }
+
