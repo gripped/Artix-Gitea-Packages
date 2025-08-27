@@ -11,7 +11,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.5.0
-pkgrel=8
+pkgrel=9
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -176,6 +176,7 @@ build() {
     -DCMAKE_SKIP_INSTALL_RPATH=ON \
     -DBUILD_SHARED_LIBS=ON \
     -DVTK_BUILD_ALL_MODULES=ON \
+    -DVTK_ENABLE_CATALYST=ON \
     -DVTK_INSTALL_TCL_DIR=/usr/lib/tcl${_tkver}/vtk/ \
     -DVTK_LEGACY_REMOVE=ON \
     -DVTK_SMP_ENABLE_OPENMP=ON \
@@ -196,6 +197,7 @@ build() {
     -DVTK_MODULE_USE_EXTERNAL_VTK_token=OFF \
     -DVTK_MODULE_ENABLE_VTK_DomainsMicroscopy=NO \
     -DVTK_MODULE_ENABLE_VTK_FiltersOpenTURNS=NO \
+    -DVTK_MODULE_ENABLE_VTK_IOCatalystConduit=YES \
     -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON \
     -DHDF5_C_COMPILER_EXECUTABLE=h5hlcc \
     -DHDF5_CXX_COMPILER_EXECUTABLE=h5hlc++ \
