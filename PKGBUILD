@@ -7,7 +7,7 @@
 
 pkgname=iperf3
 pkgver=3.19.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='TCP, UDP, and SCTP network bandwidth measurement tool'
 url='https://github.com/esnet/iperf'
 arch=(x86_64)
@@ -41,9 +41,6 @@ package() {
   install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
   install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dm 644 examples/*{.am,.in,.c} -t "${pkgdir}/usr/share/doc/${pkgname}/examples"
-
-  # Remove systemd stuff (Artix)
-  rm -rvf "${pkgdir}/lib/systemd/"
 }
 
 # vim: ts=2 sw=2 et:
