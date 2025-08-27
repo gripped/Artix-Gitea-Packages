@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: lib32-ladspa
-  version: 1.17-3
-  arch:
-    - x86_64
-  pkgname:
-    - lib32-ladspa
 actions:
   addRepo: lib32
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
-    version: 1.17-3
+    version: 1.17-4
     packages:
-      - lib32-ladspa-1.17-3-x86_64.pkg.tar.zst
+      - lib32-ladspa-1.17-4-x86_64.pkg.tar.zst
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: lib32
