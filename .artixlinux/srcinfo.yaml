@@ -1,10 +1,10 @@
 ---
-version: 2025.08-3
+version: 2025.08-4
 pkgbase:
   name: iso-profiles
   pkgdesc: Artix iso profiles
   pkgver: 2025.08
-  pkgrel: 3
+  pkgrel: 4
   url: https://gitea.artixlinux.org/artix/iso-profiles
   arch:
     - any
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - git
   source:
-    - git+https://gitea.artixlinux.org/artix/iso-profiles.git#commit=0ba7b17bfaa7a22faa6d45d1d1f3899817d68aab
+    - git+https://gitea.artixlinux.org/artix/iso-profiles.git#commit=9d5d76446d7e42a3b04fdb33d364361bdff8c102
   sha256sums:
     - SKIP
 pkgname:
   - name: iso-profiles
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.2-1-any
