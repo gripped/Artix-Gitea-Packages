@@ -1,5 +1,5 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Imanol Celaya <ornitorrincos@archlinux-es.org>
 # Contributor: Lukas Jirkovsky <l.jirkovsky@gmail.com>
 # Contributor: Dan Vratil <progdan@progdansoft.com>
@@ -10,7 +10,7 @@ pkgbase=qtcreator
 pkgname=(qtcreator
          qtcreator-devel)
 pkgver=17.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
@@ -68,6 +68,9 @@ prepare() {
 
 # Fix doc build with system litehtml
   rm src/libs/qlitehtml/src/3rdparty/qt_attribution.json
+
+# Fix build with Qt 6.9.2
+  git cherry-pick -n 04e6e631b2689f07a91bd753911d67a90d36e18c
 }
 
 build() {
