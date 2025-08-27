@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.8.9-1
+    version: 2.8.12-1
     packages:
-      - xapp-2.8.9-1-x86_64.pkg.tar.zst
+      - xapp-2.8.12-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
