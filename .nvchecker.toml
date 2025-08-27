@@ -1,4 +1,4 @@
 ["dvd+rw-tools"]
 source = "regex"
-url = "https://fy.chalmers.se/~appro/linux/DVD+RW/tools/"
+url = "https://ftp2.osuosl.org/pub/blfs/conglomeration/dvd+rw-tools/"
 regex = "dvd\\+rw-tools-([^\"]*).tar.gz"
