@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 0.git30.62321fd-2
     packages:
       - libtg_owt-0.git30.62321fd-2-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 0.git30.62321fd-1
-    packages:
-      - libtg_owt-0.git30.62321fd-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
