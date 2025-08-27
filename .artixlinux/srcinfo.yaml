@@ -1,0 +1,29 @@
+---
+version: 1.19.0-1
+pkgbase:
+  name: python-sphinx-argparse-cli
+  pkgdesc: Render CLI arguments (sub-commands friendly) defined by argparse module
+  pkgver: 1.19.0
+  pkgrel: 1
+  url: https://github.com/tox-dev/sphinx-argparse-cli
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python
+    - python-sphinx
+  source:
+    - python-sphinx-argparse-cli-1.19.0.tar.gz::https://github.com/tox-dev/sphinx-argparse-cli/archive/1.19.0.tar.gz
+  sha512sums:
+    - 23698bb2b9383610b5f8218cd67f03f241f3d9281848d1cfccfa39420ec2aec460de933e5e8401e83322dea2295ca9b19e90e9d0f6bbad0ed1e149c394fd63a2
+pkgname:
+  - name: python-sphinx-argparse-cli
+# generated with artixpkg 0.37.2-1-any
