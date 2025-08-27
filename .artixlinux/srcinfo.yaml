@@ -1,0 +1,77 @@
+---
+version: 1:0.9rc2-1
+pkgbase:
+  name: avahi
+  pkgdesc: Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)
+  pkgver: 0.9rc2
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/avahi/avahi
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - doxygen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - graphviz
+    - gtk3
+    - libevent
+    - python-dbus
+    - python-gobject
+    - elogind
+    - xmltoman
+  depends:
+    - bash
+    - dbus
+    - expat
+    - gdbm
+    - glib2
+    - glibc
+    - libcap
+    - libdaemon
+    - libelogind
+  optdepends:
+    - 'gtk3: avahi-discover, avahi-discover-standalone, bshell, bssh, bvnc'
+    - 'libevent: libevent bindings'
+    - 'nss-mdns: NSS support for mDNS'
+    - 'python-dbus: avahi-bookmarks, avahi-discover'
+    - 'python-gobject: avahi-bookmarks, avahi-discover'
+    - 'python-twisted: avahi-bookmarks'
+  provides:
+    - libavahi-client.so
+    - libavahi-common.so
+    - libavahi-core.so
+    - libavahi-glib.so
+    - libavahi-gobject.so
+    - libavahi-libevent.so
+    - libavahi-ui-gtk3.so
+    - libdns_sd.so
+  backup:
+    - etc/avahi/hosts
+    - etc/avahi/avahi-daemon.conf
+    - etc/avahi/avahi-autoipd.action
+    - etc/avahi/avahi-dnsconfd.action
+    - usr/lib/avahi/service-types.db
+  source:
+    - git+https://github.com/avahi/avahi#tag=v0.9-rc2
+    - 0001-HACK-Install-fixes.patch
+  b2sums:
+    - 2513fcc933cc6010888d1b43254846b1bbc91fc83d257055c82006010b393339b4dcf4cba2cc514827d764b9d7f820bec5c0a266c253ad2c58698746e3f46709
+    - a15b00c05cce3b6a1479d88b1393cd955a80c669fed03be5f624a8e8701f22fe327bbd42f7563a532ae8ebc39408f3aedfc982c42a2b6141ccc22af96f16293c
+pkgname:
+  - name: avahi
+    depends:
+      - bash
+      - dbus
+      - expat
+      - gdbm
+      - glib2
+      - glibc
+      - libcap
+      - libdaemon
+      - libelogind
+      - libdbus-1.so
+# generated with artixpkg 0.37.2-1-any
