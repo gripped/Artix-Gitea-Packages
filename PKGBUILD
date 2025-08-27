@@ -1,49 +1,32 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Christian Hesse <mail@eworm.de>
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgbase=packagekit-qt
-pkgname=(packagekit-qt5
-         packagekit-qt6)
-pkgver=1.1.2
-pkgrel=1
+pkgname=(packagekit-qt6)
+pkgdesc='Qt bindings for PackageKit'
+pkgver=1.1.3
+pkgrel=2
 arch=(x86_64)
 url='http://www.packagekit.org/'
 license=(LGPL-2.1-only)
 depends=(gcc-libs
          glibc
-         packagekit)
+         packagekit
+         qt6-base)
 makedepends=(cmake
-             git
-             qt5-base
-             qt6-base)
+             git)
 source=(git+https://github.com/PackageKit/PackageKit-Qt#tag=v$pkgver?signed)
-sha256sums=('b3f004d03d3ccc9798e6f4fb19c8f3ebe1d47862df197aa3a497a1b3632a94fa')
+sha256sums=('a1e6577a73e6976156a4fe94e155e3ae0ee0721c8917dc1ba03fedb21fb4ae18')
 validpgpkeys=('163EB50119225DB3DF8F49EA17ACBA8DFA970E17'  # Richard Hughes <richard@hughsie.com>
               'D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB'  # Matthias Klumpp <matthias@tenstral.net>
               '70C26659D184ABC01FFAF45228DDEDC6E4480AD0') # Daniel Nicoletti <dantti12@gmail.com>
 
 build() {
-  cmake -B build-qt5 -S PackageKit-Qt \
+  cmake -B build -S PackageKit-Qt \
     -DCMAKE_INSTALL_PREFIX=/usr
-  cmake --build build-qt5
-
-  cmake -B build-qt6 -S PackageKit-Qt \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DBUILD_WITH_QT6=ON
-  cmake --build build-qt6
-}
-
-package_packagekit-qt5() {
-  pkgdesc='Qt5 bindings for PackageKit'
-  depends+=(qt5-base)
-
-  DESTDIR="$pkgdir" cmake --install build-qt5
+  cmake --build build
 }
 
 package_packagekit-qt6() {
-  pkgdesc='Qt6 bindings for PackageKit'
-  depends+=(qt6-base)
-
-  DESTDIR="$pkgdir" cmake --install build-qt6
+  DESTDIR="$pkgdir" cmake --install build
 }
