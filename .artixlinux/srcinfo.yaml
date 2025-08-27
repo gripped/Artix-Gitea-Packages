@@ -1,0 +1,40 @@
+---
+version: 6.4.1-1
+pkgbase:
+  name: cinnamon-screensaver
+  pkgdesc: Screensaver designed to integrate well with the Cinnamon desktop.
+  pkgver: 6.4.1
+  pkgrel: 1
+  url: https://github.com/linuxmint/cinnamon-screensaver
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - gobject-introspection
+    - meson
+    - samurai
+    - glib2-devel
+  depends:
+    - accountsservice
+    - cinnamon-desktop
+    - libgnomekbd
+    - python-cairo
+    - python-gobject
+    - python-setproctitle
+    - python-xapp
+    - xapp
+    - xdotool
+  optdepends:
+    - 'cinnamon-translations: i18n'
+  backup:
+    - etc/pam.d/cinnamon-screensaver
+  source:
+    - https://github.com/linuxmint/cinnamon-screensaver/archive/6.4.1/cinnamon-screensaver-6.4.1.tar.gz
+  sha512sums:
+    - 62125b6c8a0cfa8b969acd2be5f4ce0ae8f092565c45807b7ccedcf626a2c9bb2208838872eeea3ef2c418d902e55a58fab54e7f57cf2e6da00bbf19fd440783
+  b2sums:
+    - 83a9fda11bc0e1a809b43a2b7c3c4b6b540b0c6415faaa21f31534c550b956b4c67bd67108f2d1c8b66780dbedecf6f726dd9e3e29779ede9a496fce9a59237a
+pkgname:
+  - name: cinnamon-screensaver
+# generated with artixpkg 0.36.4-1-any
