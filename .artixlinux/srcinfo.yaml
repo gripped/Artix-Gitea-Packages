@@ -1,10 +1,10 @@
 ---
-version: 5.2.1-1
+version: 5.2.1-2
 pkgbase:
   name: kmymoney
   pkgdesc: Personal finance manager for KDE which operates similarly to MS-Money or Quicken
   pkgver: 5.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://kmymoney.org/
   changelog: kmymoney.changelog
   arch:
@@ -65,4 +65,4 @@ pkgbase:
     - a92ed7427764bbff9e043b45a38280a1e752ef70413605d34957acb3caaa9761
 pkgname:
   - name: kmymoney
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.1-1-any
