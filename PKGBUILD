@@ -2,7 +2,7 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=pacman-contrib
-pkgver=1.12.0
+pkgver=1.13.0
 pkgrel=1
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=(x86_64)
@@ -26,7 +26,7 @@ optdepends=(
 )
 source=("git+$url.git#tag=v$pkgver"
         pacman-contrib-artix.patch)
-b2sums=('1c278a80a13d6e074056cff440a9f9792161c7f9987ea68f23849d849916a7a8b65b16137ce5f61bcf47d63783f84b743c42ef5130dd21e5d65a73f914f1b48d'
+b2sums=('9082d473deb2eef42132ea6c2817cc56704b41d6cdba378dc3d7ea4dbe7cee629012c8f3249c1a613094490f186b1c1e883281da88e86871982ccce71f89679a'
         'e7ec0e49e94c9d1ad2ddfd748966431759b57181e96bea93e60ae6451556fc7d258ed1d1b10f40f123adf442839f2b5b4306e3cf23a7383ae7fcae8930a01157')
 validpgpkeys=(04DC3FB1445FECA813C27EFAEA4F7B321A906AD9 44A62127789A949F2F082ED429C71CE612B57264) # Daniel M. Capella <polyzen@archlinux.org>
 #             5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5)  # Johannes Löthberg <johannes@kyriasis.com>
