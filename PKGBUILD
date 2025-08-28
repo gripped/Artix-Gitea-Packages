@@ -65,6 +65,7 @@ source=(https://archive.mozilla.org/pub/thunderbird/releases/${pkgver}/source/th
         mozconfig.cfg
         metainfo.patch
         org.mozilla.Thunderbird.desktop
+        0022-bmo-1982569-allocator-api2-fix-unsafe-autoref-lint-error.patch
 )
 validpgpkeys=(
   14F26682D0916CDD81E37B6D61B7B526D98F0353 # Mozilla Software Releases <release@mozilla.com>
@@ -268,6 +269,7 @@ sha512sums=('9a871846fc395c69688310dbf4a4569b75d3b2952a34ba1f7dc9ef5a60a34bd7400
             '3a6957380243716065e9dff66cbbee8c5aa6b34b5b19bc6193a23407d33f6e4c23bfca55b929bee4739bdd2c47838cc0fd6667b188de066b795ab55e3bf275a6'
             '7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290'
             'fffeb73e2055408c5598439b0214b3cb3bb4e53dac3090b880a55f64afcbc56ba5d32d1187829a08ef06d592513d158ced1fde2f20e2f01e967b5fbd3b2fafd4'
+            '1570bc8dcd33cdcda5c06827fac1377f1a7c2bd4398671c7270c1d595f2bd0f1e81428aea4e392370097aaa409907e318ac3002ea34ac5734fd94b438b4588cb'
             'dca154063ab5feb2018187f14386146d25bbc52293b1a90e9d2454a378f9f2a32dc43fd0e08ebdb5e564f6c3ffba6dcbe488512a57fae1a993256990ec2bbff6'
             '63e08103bfec7e8bceed9e857c3aacbc5b6e6341cfb05c69ba7e0840a5bd26fef66918eb93ae4d7037f930460c5146ce36cabb291592df862fd669e73cd98a1b'
             '2762983f30129ef2ba50a2e70e0b282dd61b5c95b1801fcc10456b6497104bbc1160392bbbdd0cab71c48a1f81ce3ccaa29d679f66b88e9acf374c99c5d4e94d'
