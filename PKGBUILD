@@ -11,8 +11,8 @@ pkgname=(
   sysprof
   libsysprof-capture
 )
-pkgver=48.0
-pkgrel=7
+pkgver=48.1
+pkgrel=2
 pkgdesc="Kernel based performance profiler"
 url="https://apps.gnome.org/Sysprof/"
 license=(GPL-3.0-or-later)
@@ -42,8 +42,10 @@ makedepends=(
 )
 source=(
   "git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=${pkgver/[a-z]/.&}"
+  0001-libsysprof-capture-Disallow-unloading-the-capture-li.patch
 )
-b2sums=('87dd3a47350b0e2d2d15072fcaef53578e4614b9c14a1f4ac3ff83233538adbc3486b5550500231b91ce267e99c0f0a96820878dadf280909fe0bfc8e311a3a8')
+b2sums=('725decd5bfc4c5313040308b7ea3f18d4f34ae347b793d7af00644464520db1481fc6f348ad291d1a8e51f6a1d4ff994a6dc5ad2c430ccfd4eb27c24bcdac512'
+        'b3a96786b28fb9c563f811610c7dafb739a4757b203b41aa3e7c1651deb62a3b3ce7c3373c242148dedb0de20a77a5909487b35fba37623971c8ab7f88958905')
 
 prepare() {
   cd sysprof
@@ -67,6 +69,10 @@ prepare() {
   # Add D-Bus service file
   # https://gitlab.gnome.org/GNOME/sysprof/-/merge_requests/138
   git cherry-pick -n 300bf1a13b1ab13330152307454cdbcb52c7178d
+
+  # Fix mesa crashes
+  # https://gitlab.freedesktop.org/mesa/mesa/-/issues/13571
+  git apply -3 ../0001-libsysprof-capture-Disallow-unloading-the-capture-li.patch
 }
 
 build() {

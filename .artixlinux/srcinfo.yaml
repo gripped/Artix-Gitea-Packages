@@ -1,10 +1,10 @@
 ---
-version: 48.0-7
+version: 48.1-2
 pkgbase:
   name: sysprof
   pkgdesc: Kernel based performance profiler
-  pkgver: 48.0
-  pkgrel: 7
+  pkgver: 48.1
+  pkgrel: 2
   url: https://apps.gnome.org/Sysprof/
   arch:
     - x86_64
@@ -32,9 +32,11 @@ pkgbase:
     - pango
     - polkit
   source:
-    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=48.0
+    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=48.1
+    - 0001-libsysprof-capture-Disallow-unloading-the-capture-li.patch
   b2sums:
-    - 87dd3a47350b0e2d2d15072fcaef53578e4614b9c14a1f4ac3ff83233538adbc3486b5550500231b91ce267e99c0f0a96820878dadf280909fe0bfc8e311a3a8
+    - 725decd5bfc4c5313040308b7ea3f18d4f34ae347b793d7af00644464520db1481fc6f348ad291d1a8e51f6a1d4ff994a6dc5ad2c430ccfd4eb27c24bcdac512
+    - b3a96786b28fb9c563f811610c7dafb739a4757b203b41aa3e7c1651deb62a3b3ce7c3373c242148dedb0de20a77a5909487b35fba37623971c8ab7f88958905
 pkgname:
   - name: sysprof
     groups:
@@ -61,4 +63,4 @@ pkgname:
     license:
       - BSD-2-Clause-Patent
     depends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.3-1-any
