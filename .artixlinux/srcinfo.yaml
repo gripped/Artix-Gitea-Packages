@@ -1,9 +1,9 @@
 ---
-version: 3.6.1-1
+version: 3.7.0-1
 pkgbase:
   name: python-bitarray
   pkgdesc: Efficient arrays of booleans for Python
-  pkgver: 3.6.1
+  pkgver: 3.7.0
   pkgrel: 1
   url: https://github.com/ilanschnell/bitarray
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - https://github.com/ilanschnell/bitarray/archive/3.6.1/bitarray-3.6.1.tar.gz
+    - https://github.com/ilanschnell/bitarray/archive/3.7.0/bitarray-3.7.0.tar.gz
   sha256sums:
-    - fa2a929c24fb3930335e8274546983d412f4de681f0430caf4a22133ba6fa3a4
+    - e4dc2f59156295bfc95e289278dd4b48e322c662a5c1bb07eb1f3664f0faae4a
 pkgname:
   - name: python-bitarray
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.2-1-any
