@@ -1,10 +1,10 @@
 ---
-version: 6.4.4-1
+version: 6.4.4-4
 pkgbase:
   name: kwin
   pkgdesc: An easy to use, but flexible, Wayland compositor
   pkgver: 6.4.4
-  pkgrel: 1
+  pkgrel: 4
   url: https://kde.org/plasma-desktop/
   install: kwin.install
   arch:
@@ -85,6 +85,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/plasma/6.4.4/kwin-6.4.4.tar.xz
     - https://download.kde.org/stable/plasma/6.4.4/kwin-6.4.4.tar.xz.sig
+    - https://invent.kde.org/plasma/kwin/-/commit/7d36003c.patch
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
@@ -94,6 +95,7 @@ pkgbase:
   sha256sums:
     - b0742a12133b052519cb5af09132114ebf4d96b44e320015cc0d2d0bf055dae6
     - SKIP
+    - 1c8e3913f20fd8dc168dbb80086ee60d44b557785edb34fe2903bf2c36fd1a6a
 pkgname:
   - name: kwin
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.3-1-any
