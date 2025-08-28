@@ -1,12 +1,11 @@
 ---
-version: 0.14.3-1
+version: 0.14.3-2
 pkgbase:
   name: vifm
   pkgdesc: A file manager with curses interface, which provides Vi[m]-like environment
   pkgver: 0.14.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://vifm.info/
-  changelog: vifm.changelog
   arch:
     - x86_64
   license:
@@ -29,4 +28,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: vifm
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.3-1-any
