@@ -1,9 +1,9 @@
 ---
-version: 0.27.2-1
+version: 0.28.0-1
 pkgbase:
   name: python-inline-snapshot
   pkgdesc: Create and update inline snapshots in your python tests
-  pkgver: 0.27.2
+  pkgver: 0.28.0
   pkgrel: 1
   url: https://github.com/15r10nk/inline-snapshot
   arch:
@@ -33,9 +33,9 @@ pkgbase:
     - python-rich
     - python-typing_extensions
   source:
-    - python-inline-snapshot-0.27.2.tar.gz::https://github.com/15r10nk/inline-snapshot/archive/v0.27.2.tar.gz
+    - python-inline-snapshot-0.28.0.tar.gz::https://github.com/15r10nk/inline-snapshot/archive/v0.28.0.tar.gz
   sha256sums:
-    - 0bc3cd8aa874713a8a83d2a15fe3b413bdeee966307c7179fc7b19e0e098c5b3
+    - 073a14d560acec4a7ed0f1d4b5f3bf73c9ff7645e0a7d706f458599b72de4992
 pkgname:
   - name: python-inline-snapshot
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.2-1-any
