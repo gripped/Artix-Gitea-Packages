@@ -45,7 +45,7 @@ build() {
     -Dreproducible=true \
     -Dsigners-libsodium=enabled \
     -Dsnmp=enabled \
-    -Dsystemd-service=enabled \
+    -Dsystemd-service=disabled \
     -Dunit-tests=true \
     -Dsigners-libcrypto-path=/usr # workaround for https://github.com/PowerDNS/pdns/issues/14084
   meson compile -C build
