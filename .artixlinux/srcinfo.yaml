@@ -1,10 +1,10 @@
 ---
-version: 1:25.2.1-2
+version: 1:25.2.1-4
 pkgbase:
   name: mesa
   pkgdesc: Open-source OpenGL drivers
   pkgver: 25.2.1
-  pkgrel: 2
+  pkgrel: 4
   epoch: 1
   url: https://www.mesa3d.org/
   arch:
@@ -55,6 +55,7 @@ pkgbase:
     - rust-bindgen
     - wayland-protocols
     - xorgproto
+    - libsysprof-capture
     - valgrind
     - python-sphinx
     - python-sphinx-hawkmoth
@@ -180,9 +181,9 @@ pkgname:
     optdepends:
       - 'opengl-man-pages: for the OpenGL API man pages'
     provides:
-      - libva-mesa-driver=1:25.2.1-2
-      - mesa-libgl=1:25.2.1-2
-      - mesa-vdpau=1:25.2.1-2
+      - libva-mesa-driver=1:25.2.1-4
+      - mesa-libgl=1:25.2.1-4
+      - mesa-vdpau=1:25.2.1-4
       - libva-driver
       - opengl-driver
       - vdpau-driver
@@ -378,4 +379,4 @@ pkgname:
       - vulkan-mesa-layer
   - name: mesa-docs
     pkgdesc: Mesa's documentation
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.1-1-any

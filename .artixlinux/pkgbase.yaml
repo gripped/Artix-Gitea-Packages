@@ -29,19 +29,19 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:25.2.1-2
+    version: 1:25.2.1-4
     packages:
-      - mesa-1:25.2.1-2-x86_64.pkg.tar.zst
-      - opencl-mesa-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-dzn-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-gfxstream-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-intel-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-nouveau-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-radeon-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-swrast-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-virtio-1:25.2.1-2-x86_64.pkg.tar.zst
-      - vulkan-mesa-layers-1:25.2.1-2-x86_64.pkg.tar.zst
-      - mesa-docs-1:25.2.1-2-x86_64.pkg.tar.zst
+      - mesa-1:25.2.1-4-x86_64.pkg.tar.zst
+      - opencl-mesa-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-dzn-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-gfxstream-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-intel-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-nouveau-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:25.2.1-4-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:25.2.1-4-x86_64.pkg.tar.zst
+      - mesa-docs-1:25.2.1-4-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
