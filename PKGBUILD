@@ -6,20 +6,20 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=feh
-pkgver=3.10.3
+pkgver=3.11
 pkgrel=1
 pkgdesc='Fast and light imlib2-based image viewer'
 url='https://feh.finalrewind.org/'
-license=('custom:MIT')
+license=('MIT')
 arch=('x86_64')
-depends=('curl' 'file' 'imlib2' 'libexif' 'libxinerama')
+depends=('curl' 'file' 'hicolor-icon-theme' 'imlib2' 'libexif' 'libxinerama')
 optdepends=('imagemagick: support more file formats'
             'jpegexiforient: set exif rotation tag')
 makedepends=('libxt')
 validpgpkeys=('781BB7071C6BF648EAEB08A1100D5BFB5166E005'  # Daniel Friesel <derf@finalrewind.org> 
               '64FE6EC055560F9EF13A304419E6E524EBB177BA') # Derf Null <derf@ccc.de>
 source=("${url}${pkgname}-${pkgver}.tar.bz2"{,.asc})
-sha256sums=('5426e2799770217af1e01c2e8c182d9ca8687d84613321d8ab4a66fe4041e9c8'
+sha256sums=('e35597564fd7ad6106127fbbf2f2bb92ea264e75b0fcbffc054db43c933dbd2a'
             'SKIP')
 
 build() {
