@@ -1,0 +1,123 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Ali H. Caliskan <ali.h.caliskan AT gmail DOT com>
+# Contributor: Ryan Coyner <rcoyner@gmail.com>
+# Contributor: Stefan Husmann <stefan-husmann@t-online.de>
+
+pkgname=mixxx
+pkgver=2.5.2
+pkgrel=1
+pkgdesc="Free, open source software for digital DJing"
+arch=(x86_64)
+url="https://www.mixxx.org"
+_url="https://github.com/mixxxdj/mixxx"
+license=(GPL-2.0-or-later)
+groups=(pro-audio)
+# TODO: package libshout-idjc
+depends=(
+  gcc-libs
+  glibc
+  hicolor-icon-theme
+  hidapi
+  lame
+  libebur128
+  libkeyfinder
+  libmad
+  libmodplug
+  libx11
+  openssl
+  opus
+  opusfile
+  qt6-5compat
+  qt6-base
+  qt6-declarative
+  qt6-svg
+  qtkeychain-qt6
+  soundtouch
+  speex
+  sqlite
+  taglib1
+  upower
+  wavpack
+)
+makedepends=(
+  benchmark
+  chromaprint
+  cmake
+  faad2
+  ffmpeg
+  flac
+  glib2
+  glu
+  gperftools
+  gtest
+  libid3tag
+  libogg
+  libsndfile
+  libusb
+  libvorbis
+  lilv
+  lv2
+  microsoft-gsl
+  qt6-shadertools
+  qt6-tools
+  portaudio
+  portmidi
+  protobuf
+  rubberband
+)
+source=(
+  $_url/archive/$pkgver/$pkgname-$pkgver.tar.gz
+  $_url/commit/2189621b6d09a352a9ec16f84a4106f66d1dbc29.patch
+)
+sha512sums=('3ea8faef80c5a8b28ffd1bd6384d2b60b318da6b77dc34d1a68a626e48756e235fe854cb5a7b1bbfab1f8c2b8be2489dd238c11f072b08d0fde86618ddd55c0f'
+            '1bfeb329924c178bde5497edeb5d702abbd7e4bbbedc7a495e67ff9b5cd7f17704fea3deb7401ef46b908b524ad673cad49e4f9953247fe3adffac73dae7a211')
+b2sums=('f9ff48c45af4092ef8fcba5220d31d80b639d06b2803573b433b307d0062d6295337cde490b50ca1d9dfcab91d34ed9a6e299ffc9e84dfa39df3c15cc40006ef'
+        '8a4c02659761f031cb2b38568065086b7ebb50a9b19fce37b64a322bc39d3e6755e8d2707df60da974e8e8659dcaf1aa7ff9dcd94f4ff3ccf75b8af4dfd08937')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  patch -p1 -i ../2189621b6d09a352a9ec16f84a4106f66d1dbc29.patch
+}
+
+build() {
+  local cmake_options=(
+    -B build
+    -D CMAKE_BUILD_TYPE=Release
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -S $pkgname-$pkgver
+    -W no-dev
+  )
+
+  export PKG_CONFIG_PATH=/usr/lib/taglib1/pkgconfig
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
+}
+
+check() {
+  ctest --test-dir build --output-on-failure
+}
+
+package() {
+  depends+=(
+    chromaprint libchromaprint.so
+    flac libFLAC.so
+    ffmpeg libavcodec.so libavformat.so libavutil.so
+    glib2 libgobject-2.0.so
+    libglvnd libOpenGL.so
+    libid3tag libid3tag.so
+    libogg libogg.so
+    libsndfile libsndfile.so
+    libusb libusb-1.0.so
+    libvorbis libvorbis.so libvorbisenc.so libvorbisfile.so
+    lilv liblilv-0.so
+    portaudio libportaudio.so
+    portmidi libportmidi.so
+    protobuf libprotobuf-lite.so
+    rubberband librubberband.so
+    zlib libz.so
+  )
+
+  DESTDIR="$pkgdir" cmake --install build
+}
