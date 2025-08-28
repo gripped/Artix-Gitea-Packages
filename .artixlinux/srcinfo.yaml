@@ -1,9 +1,9 @@
 ---
-version: 1.4.2-1
+version: 1.4.3-1
 pkgbase:
   name: mkdocs-autorefs
   pkgdesc: Automatically link across pages in MkDocs
-  pkgver: 1.4.2
+  pkgver: 1.4.3
   pkgrel: 1
   url: https://github.com/mkdocstrings/autorefs
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - python-markdown
     - python-markupsafe
   source:
-    - mkdocs-autorefs-1.4.2.tar.gz::https://github.com/mkdocstrings/autorefs/archive/1.4.2.tar.gz
+    - mkdocs-autorefs-1.4.3.tar.gz::https://github.com/mkdocstrings/autorefs/archive/1.4.3.tar.gz
   sha256sums:
-    - 313ad61701c1f68e2b0345038ae81402beb7ecb96c1656bc088e3527d5be0d60
+    - 1d454000f0e412e8c488f95adfded91d9476433c7f697a89866a2c61e13faa00
 pkgname:
   - name: mkdocs-autorefs
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.3-1-any
