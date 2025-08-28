@@ -1,10 +1,10 @@
 ---
-version: 17.0.0-2
+version: 17.0.1-1
 pkgbase:
   name: qtcreator
   pkgdesc: Lightweight, cross-platform integrated development environment
-  pkgver: 17.0.0
-  pkgrel: 2
+  pkgver: 17.0.1
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -52,11 +52,11 @@ pkgbase:
   options:
     - docs
   source:
-    - git+https://code.qt.io/qt-creator/qt-creator#tag=v17.0.0
+    - git+https://code.qt.io/qt-creator/qt-creator#tag=v17.0.1
     - git+https://code.qt.io/qt-creator/perfparser
     - git+https://code.qt.io/playground/qlitehtml
   sha256sums:
-    - 724ed21d2d48406bd3d3d925c537183efc480aa9edb991f0f9e5363612be3137
+    - b52fd7010f0fe3b5be68eba06ff063a4740da4b8ba4720f181349a0661e3dbcf
     - SKIP
     - SKIP
 pkgname:

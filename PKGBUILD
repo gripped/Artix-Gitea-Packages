@@ -9,8 +9,8 @@
 pkgbase=qtcreator
 pkgname=(qtcreator
          qtcreator-devel)
-pkgver=17.0.0
-pkgrel=2
+pkgver=17.0.1
+pkgrel=1
 pkgdesc='Lightweight, cross-platform integrated development environment'
 arch=(x86_64)
 url='https://www.qt.io'
@@ -55,7 +55,7 @@ optdepends=('qt6-doc: integrated Qt documentation'
 source=(git+https://code.qt.io/qt-creator/qt-creator#tag=v$pkgver
         git+https://code.qt.io/qt-creator/perfparser
         git+https://code.qt.io/playground/qlitehtml)
-sha256sums=('724ed21d2d48406bd3d3d925c537183efc480aa9edb991f0f9e5363612be3137'
+sha256sums=('b52fd7010f0fe3b5be68eba06ff063a4740da4b8ba4720f181349a0661e3dbcf'
             'SKIP'
             'SKIP')
 options=(docs)
@@ -68,9 +68,6 @@ prepare() {
 
 # Fix doc build with system litehtml
   rm src/libs/qlitehtml/src/3rdparty/qt_attribution.json
-
-# Fix build with Qt 6.9.2
-  git cherry-pick -n 04e6e631b2689f07a91bd753911d67a90d36e18c
 }
 
 build() {
