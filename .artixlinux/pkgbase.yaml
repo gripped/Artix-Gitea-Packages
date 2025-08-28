@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.34.2-1
+    version: 1.36.0-1
     packages:
-      - asio-1.34.2-1-any.pkg.tar.zst
+      - asio-1.36.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
