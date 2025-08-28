@@ -1,10 +1,10 @@
 ---
-version: 6.4.4-1
+version: 6.4.4-3
 pkgbase:
   name: layer-shell-qt
   pkgdesc: Qt component to allow applications to make use of the Wayland wl-layer-shell protocol
   pkgver: 6.4.4
-  pkgrel: 1
+  pkgrel: 3
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: layer-shell-qt
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.3-1-any

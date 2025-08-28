@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=layer-shell-qt
 pkgver=6.4.4
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 pkgdesc='Qt component to allow applications to make use of the Wayland wl-layer-shell protocol'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
