@@ -1,10 +1,10 @@
 ---
-version: 580.76.05-5
+version: 580.76.05-7
 pkgbase:
   name: nvidia
   pkgdesc: NVIDIA kernel modules
   pkgver: 580.76.05
-  pkgrel: 5
+  pkgrel: 7
   url: https://www.nvidia.com/
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgname:
       - linux
       - nvidia-utils=580.76.05
       - libglvnd
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.3-1-any
