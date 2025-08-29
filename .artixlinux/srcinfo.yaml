@@ -1,10 +1,10 @@
 ---
-version: 1.4.2-2
+version: 1.4.2-2.1
 pkgbase:
   name: xf86-input-void
   pkgdesc: X.org void input driver
   pkgver: 1.4.2
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://xorg.freedesktop.org/
   arch:
     - x86_64
@@ -19,6 +19,7 @@ pkgbase:
   depends:
     - glibc
   conflicts:
+    - xlibre-xf86-input-void
     - xorg-server<21.1.1
     - X-ABI-XINPUT_VERSION<24
     - X-ABI-XINPUT_VERSION>=25
