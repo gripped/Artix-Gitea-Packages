@@ -4,7 +4,7 @@
 
 pkgname=xf86-video-ati
 pkgver=22.0.0
-pkgrel=2.1
+pkgrel=2.2
 epoch=1
 pkgdesc="X.org ati video driver"
 arch=('x86_64')
@@ -12,7 +12,7 @@ url="https://xorg.freedesktop.org/"
 license=('MIT')
 depends=('libudev' 'mesa' 'libpciaccess' 'libdrm' 'glibc')
 makedepends=('xorg-server-devel' 'udev' 'X-ABI-VIDEODRV_VERSION=25.2') # 'git')
-conflicts=('xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
+conflicts=('xlibre-xf86-video-ati' 'xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
 groups=('xorg-drivers')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
 sha512sums=('fba9ffc7b0eeb0c369eb1a6f8ef0bb3061cfeca26bc269baf6e3d16dcd943fbf4092f1e37adfb1bc71051cee0b7a0e6fb253f0b8bcd210732ccaf99e8f2356fe'
