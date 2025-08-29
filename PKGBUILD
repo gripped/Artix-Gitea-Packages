@@ -5,7 +5,7 @@ pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-common' 'xorg-server-devel')
 pkgver=21.1.18
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause' 
@@ -95,6 +95,7 @@ _install() {
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
   depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
+  conflicts=('xlibre-xserver-common')
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
   _install fakeinstall/usr/share/man/man1/Xserver.1
@@ -113,7 +114,7 @@ package_xorg-server() {
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
   provides=('X-ABI-VIDEODRV_VERSION=25.2' 'X-ABI-XINPUT_VERSION=24.4' 'X-ABI-EXTENSION_VERSION=10.0' 'x-server')
-  conflicts=('nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting')
+  conflicts=('xlibre-xserver' 'nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting')
   replaces=('glamor-egl' 'xf86-video-modesetting')
   install=xorg-server.install
 
@@ -138,6 +139,7 @@ package_xorg-server-xephyr() {
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc
            xcb-util libxdmcp libx11 libxau libxshmfence glibc)
+  conflicts=('xlibre-xserver-xephyr')
 
   _install fakeinstall/usr/bin/Xephyr
   _install fakeinstall/usr/share/man/man1/Xephyr.1
@@ -153,6 +155,7 @@ package_xorg-server-xvfb() {
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
            libgl nettle libtirpc libelogind
            libxdmcp sh glibc libxau)
+  conflicts=('xlibre-xserver-xvfb')
 
   _install fakeinstall/usr/bin/Xvfb
   _install fakeinstall/usr/share/man/man1/Xvfb.1
@@ -169,6 +172,7 @@ package_xorg-server-xnest() {
   depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle
            libtirpc libelogind
            libxdmcp glibc libx11 libxau)
+  conflicts=('xlibre-xserver-xnest')
 
   _install fakeinstall/usr/bin/Xnest
   _install fakeinstall/usr/share/man/man1/Xnest.1
@@ -182,6 +186,7 @@ package_xorg-server-devel() {
   depends=('xorgproto' 'mesa' 'libpciaccess' 'pixman'
            # not technically required but almost every Xorg pkg needs it to build
            'xorg-util-macros')
+  conflicts=('xlibre-xserver-devel')
 
   _install fakeinstall/usr/include/xorg/*
   _install fakeinstall/usr/lib/pkgconfig/xorg-server.pc

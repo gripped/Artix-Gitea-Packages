@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -55,8 +55,14 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 21.1.18-2.1
+    packages:
+      - xorg-server-21.1.18-2.1-x86_64.pkg.tar.zst
+      - xorg-server-xephyr-21.1.18-2.1-x86_64.pkg.tar.zst
+      - xorg-server-xvfb-21.1.18-2.1-x86_64.pkg.tar.zst
+      - xorg-server-xnest-21.1.18-2.1-x86_64.pkg.tar.zst
+      - xorg-server-common-21.1.18-2.1-x86_64.pkg.tar.zst
+      - xorg-server-devel-21.1.18-2.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null

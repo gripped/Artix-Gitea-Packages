@@ -1,9 +1,9 @@
 ---
-version: 21.1.18-2
+version: 21.1.18-2.1
 pkgbase:
   name: xorg-server
   pkgver: 21.1.18
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://xorg.freedesktop.org
   arch:
     - x86_64
@@ -100,6 +100,7 @@ pkgname:
       - X-ABI-EXTENSION_VERSION=10.0
       - x-server
     conflicts:
+      - xlibre-xserver
       - nvidia-utils<=331.20
       - glamor-egl
       - xf86-video-modesetting
@@ -128,6 +129,8 @@ pkgname:
       - libxau
       - libxshmfence
       - glibc
+    conflicts:
+      - xlibre-xserver-xephyr
   - name: xorg-server-xvfb
     pkgdesc: Virtual framebuffer X server
     license:
@@ -147,6 +150,8 @@ pkgname:
       - sh
       - glibc
       - libxau
+    conflicts:
+      - xlibre-xserver-xvfb
   - name: xorg-server-xnest
     pkgdesc: A nested X server that runs as an X application
     depends:
@@ -162,12 +167,16 @@ pkgname:
       - glibc
       - libx11
       - libxau
+    conflicts:
+      - xlibre-xserver-xnest
   - name: xorg-server-common
     pkgdesc: Xorg server common files
     depends:
       - xkeyboard-config
       - xorg-xkbcomp
       - xorg-setxkbmap
+    conflicts:
+      - xlibre-xserver-common
   - name: xorg-server-devel
     pkgdesc: Development files for the X.Org X server
     depends:
@@ -176,4 +185,6 @@ pkgname:
       - libpciaccess
       - pixman
       - xorg-util-macros
+    conflicts:
+      - xlibre-xserver-devel
 # generated with artixpkg 0.36.4-1-any
