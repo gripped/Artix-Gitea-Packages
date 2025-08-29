@@ -160,13 +160,12 @@ pkgbase:
     - '!lto'
   source:
     - https://archive.mozilla.org/pub/thunderbird/releases/142.0/source/thunderbird-142.0.source.tar.xz
-    - https://archive.mozilla.org/pub/thunderbird/releases/142.0/source/thunderbird-142.0.source.tar.xz.asc
     - vendor-prefs.js
     - distribution.ini
     - mozconfig.cfg
     - metainfo.patch
     - org.mozilla.Thunderbird.desktop
-    - 0022-bmo-1982569-allocator-api2-fix-unsafe-autoref-lint-error.patch
+    - artist-bmo-1982569-allocator-api2-fix-unsafe-autoref-lint-error.patch
     - thunderbird-i18n-142.0-af.xpi::https://archive.mozilla.org/pub/thunderbird/releases/142.0/linux-x86_64/xpi/af.xpi
     - thunderbird-i18n-142.0-ar.xpi::https://archive.mozilla.org/pub/thunderbird/releases/142.0/linux-x86_64/xpi/ar.xpi
     - thunderbird-i18n-142.0-ast.xpi::https://archive.mozilla.org/pub/thunderbird/releases/142.0/linux-x86_64/xpi/ast.xpi
@@ -230,18 +229,14 @@ pkgbase:
     - thunderbird-i18n-142.0-vi.xpi::https://archive.mozilla.org/pub/thunderbird/releases/142.0/linux-x86_64/xpi/vi.xpi
     - thunderbird-i18n-142.0-zh-CN.xpi::https://archive.mozilla.org/pub/thunderbird/releases/142.0/linux-x86_64/xpi/zh-CN.xpi
     - thunderbird-i18n-142.0-zh-TW.xpi::https://archive.mozilla.org/pub/thunderbird/releases/142.0/linux-x86_64/xpi/zh-TW.xpi
-  validpgpkeys:
-    - 14F26682D0916CDD81E37B6D61B7B526D98F0353
-    - 4360FE2109C49763186F8E21EBE41E90F6F12F6D
   sha512sums:
     - 9a871846fc395c69688310dbf4a4569b75d3b2952a34ba1f7dc9ef5a60a34bd740087b4abb2a1a4d522dfa9d6640f2f4fcc9972a2b72160d1ed3e0df71c2901c
-    - SKIP
     - 6918c0de63deeddc6f53b9ba331390556c12e0d649cf54587dfaabb98b32d6a597b63cf02809c7c58b15501720455a724d527375a8fb9d757ccca57460320734
     - 5cd3ac4c94ef6dcce72fba02bc18b771a2f67906ff795e0e3d71ce7db6d8a41165bd5443908470915bdbdb98dddd9cf3f837c4ba3a36413f55ec570e6efdbb9f
     - 3a6957380243716065e9dff66cbbee8c5aa6b34b5b19bc6193a23407d33f6e4c23bfca55b929bee4739bdd2c47838cc0fd6667b188de066b795ab55e3bf275a6
     - 7e43b1f25827ddae615ad43fc1e11c6ba439d6c2049477dfe60e00188a70c0a76160c59a97cc01d1fd99c476f261c7cecb57628b5be48874be7cf991c22db290
     - fffeb73e2055408c5598439b0214b3cb3bb4e53dac3090b880a55f64afcbc56ba5d32d1187829a08ef06d592513d158ced1fde2f20e2f01e967b5fbd3b2fafd4
-    - f70948eaccb733a0d84b993e56f70a4c733babd796d97e1f927ea68a4a375bfcde9d4c7e13c4171adf935f8e51a1d65e6739bc7144eba9e0d0cedca014798d22
+    - 67b61534f92b9872c103bec80fe011a498a3a15ac93e0e3a5cc6391e7090da93cd8c30b32c9cea15ebdde7a9132b8b2cb6afa774b6f19ac2a7403c8e86b93c28
     - dca154063ab5feb2018187f14386146d25bbc52293b1a90e9d2454a378f9f2a32dc43fd0e08ebdb5e564f6c3ffba6dcbe488512a57fae1a993256990ec2bbff6
     - 63e08103bfec7e8bceed9e857c3aacbc5b6e6341cfb05c69ba7e0840a5bd26fef66918eb93ae4d7037f930460c5146ce36cabb291592df862fd669e73cd98a1b
     - 2762983f30129ef2ba50a2e70e0b282dd61b5c95b1801fcc10456b6497104bbc1160392bbbdd0cab71c48a1f81ce3ccaa29d679f66b88e9acf374c99c5d4e94d
