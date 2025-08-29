@@ -10,6 +10,9 @@ repos:
     debug: []
   world-gremlins:
     debug: []
+    version: 0.1.6-2.1
+    packages:
+      - xf86-video-qxl-0.1.6-2.1-x86_64.pkg.tar.zst
   world:
     debug: []
     version: 0.1.6-2
@@ -25,16 +28,15 @@ repos:
     debug: []
   galaxy-gremlins:
     debug: []
-    version: 0.1.6-2.1
-    packages:
-      - xf86-video-qxl-0.1.6-2.1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
   galaxy:
     debug: []
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
