@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,8 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.2.3-1.2
+    packages:
+      - xf86-input-wacom-1.2.3-1.2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
