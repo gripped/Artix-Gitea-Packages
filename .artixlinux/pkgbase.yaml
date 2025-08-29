@@ -25,10 +25,13 @@ repos:
     debug: []
   galaxy-gremlins:
     debug: []
+    version: 0.1.6-2.1
+    packages:
+      - xf86-video-qxl-0.1.6-2.1-x86_64.pkg.tar.zst
   galaxy:
     debug: []
 actions:
-  addRepo: world
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false

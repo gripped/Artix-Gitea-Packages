@@ -5,7 +5,7 @@
 
 pkgname=xf86-video-qxl
 pkgver=0.1.6
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Xorg X11 qxl video driver'
 arch=('x86_64')
 url='https://www.x.org'
@@ -15,7 +15,7 @@ depends=('spice' 'libudev' 'libxfont2' 'glibc')
 optdepends=('python: for Xspice')
 makedepends=('xorg-server-devel' 'X-ABI-VIDEODRV_VERSION=25.2' 'spice-protocol'
     'xorgproto' 'git' 'libcacard')
-conflicts=('xf86-video-qxl-git' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
+conflicts=('xlibre-xf86-video-qxl' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
 validpgpkeys=('94A9F75661F77A6168649B23A9D8C21429AC6C82')
 source=("https://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.xz"{,.sig})
 sha256sums=('2ad39558db47a8fcc036e290e0b084671e58d43344a57b279abd870c4c67965f'
