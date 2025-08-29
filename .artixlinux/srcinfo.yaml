@@ -1,10 +1,10 @@
 ---
-version: 9.5.0-9
+version: 9.5.1-1
 pkgbase:
   name: vtk
   pkgdesc: Software system for 3D computer graphics, image processing, and visualization
-  pkgver: 9.5.0
-  pkgrel: 9
+  pkgver: 9.5.1
+  pkgrel: 1
   url: https://www.vtk.org
   arch:
     - x86_64
@@ -21,9 +21,9 @@ pkgbase:
     - qt6-declarative
     - qt6-tools
     - tk
+    - freetype2
     - openmpi
     - libx11
-    - freetype2
     - libxcursor
     - hdf5
     - netcdf
@@ -31,6 +31,7 @@ pkgbase:
     - viskores
     - adios2
     - cgns
+    - paraview-catalyst
     - gdal
     - gl2ps
     - proj
@@ -113,6 +114,7 @@ pkgbase:
     - 'netcdf: IO module'
     - 'opencascade: IO module'
     - 'openvdb: IO module'
+    - 'paraview-catalyst: IO module'
     - 'pdal: IO module'
     - 'postgresql-libs: IO module'
     - 'proj: IO module'
@@ -124,11 +126,11 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - https://www.vtk.org/files/release/9.5/VTK-9.5.0.tar.gz
+    - https://www.vtk.org/files/release/9.5/VTK-9.5.1.tar.gz
   sha256sums:
-    - 04ae86246b9557c6b61afbc534a6df099244fbc8f3937f82e6bc0570953af87d
+    - 14443661c7b095d05b4e376fb3f40613f173e34fc9d4658234e9ec1d624a618f
   b2sums:
-    - bac57522dac980d1f258ca41e40ea898cc2153b03a779f7a52285e5dc59780b6826f622ceba22e5ff80f046fc7a020acaa5c40128065bbb6af2d4f1bd004b930
+    - 1487571bee9a8af7ccacf28bdc96518bdf2029b7b1f78edc443beca42cf62a4f74efd13f26cdb446a4dc09d942ff1a6a5435678007e68754cf56e4b953fa4947
 pkgname:
   - name: vtk
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.3-1-any
