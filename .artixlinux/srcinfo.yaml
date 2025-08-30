@@ -1,0 +1,33 @@
+---
+version: 7.0.0-1
+pkgbase:
+  name: python-pbr
+  pkgdesc: Python Build Reasonableness
+  pkgver: 7.0.0
+  pkgrel: 1
+  url: https://pypi.python.org/pypi/pbr
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-stestr
+    - python-testresources
+    - python-testscenarios
+    - python-testtools
+    - python-virtualenv
+    - python-sphinx
+    - python-testrepository
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+  depends:
+    - python-setuptools
+  source:
+    - git+https://github.com/openstack-dev/pbr.git#tag=7.0.0
+  sha512sums:
+    - c8cc712df1c301a5964460b537efe66ea9c9b81fe8d4b07b4b8ba1f062a262fc0a0de73a379bfbc66cb0775d655da7d94b70df4c859747531f321056ccd64105
+pkgname:
+  - name: python-pbr
+# generated with artixpkg 0.37.3-1-any
