@@ -4,40 +4,41 @@
 # Contributor: Ralf Schmitt <ralf@systemexit.de>
 
 pkgname=python-gevent
-pkgver=25.5.1
+pkgver=25.8.2
 pkgrel=1
 pkgdesc='Python network library that uses greenlet and libenv for easy and scalable concurrency'
-arch=('x86_64')
+arch=(x86_64)
 url='http://www.gevent.org'
-license=('MIT')
+license=(MIT)
 depends=(
-  'c-ares'
-  'libev'
-  'python-greenlet'
-  'python-setuptools'
-  'python-zope-event'
-  'python-zope-interface'
+  glibc
+  c-ares
+  libev
+  libuv
+  python-greenlet
+  python-setuptools
+  python-zope-event
+  python-zope-interface
 )
 makedepends=(
-  'git'
-  'python-build'
-  'python-installer'
-  'python-setuptools'
-  'python-wheel'
-  'cython'
-  'python-cffi'
-  'libuv'
+  git
+  python-build
+  python-installer
+  python-setuptools
+  python-wheel
+  cython
+  python-cffi
 )
 checkdepends=(
-  'lsof'
-  'python-perf'
-  'python-objgraph'
-  'python-dnspython'
-  'python-requests'
+  lsof
+  python-perf
+  python-objgraph
+  python-dnspython
+  python-requests
 )
 source=("$pkgname::git+https://github.com/gevent/gevent#tag=$pkgver")
-sha512sums=('5d66c25fefa8bb1fd9cac447375449a8731646d217293f4447bd2d815c8b4ab9d997bffc471f7fcba9498c80fc697dcd5f72317da9736ccdacc7e5c31b10177e')
-b2sums=('93a9e57a0e2d444472493d829507877d0f5ce8608513a4701f8807b249ae10ff58c36caf95e3ffc30b8ac133fbbda0848d9bf6a2e30c3a383a255acc3d9f48ca')
+sha512sums=('e834500be4462495649f88dc55e6dceb8bd15bed53f0db118cc5316d202284ace269d04412e21deaa0713330b1ff73508a6c5d93e5cae385fdc7a1581f34ba77')
+b2sums=('2e113f96088353aa5e5feef4a82c7f2d17dfa2e10a067959a69ee406d555a57a4cc6ad7a965d941e552af5b863a41c6a3e971f415f74a720417510f72aafa32f')
 
 build() {
   cd "$pkgname"
