@@ -4,8 +4,8 @@
 # Contributor: tobias <tobias@arhlinux.org>
 
 pkgname=exiv2
-pkgver=0.28.5
-pkgrel=1
+pkgver=0.28.6
+pkgrel=2
 pkgdesc="Exif, Iptc and XMP metadata manipulation library and tools"
 url="https://exiv2.org"
 arch=('x86_64')
@@ -19,15 +19,22 @@ depends=(brotli libbrotlidec.so
          libcurl.so
          libinih libINIReader.so
          zlib libz.so)
-makedepends=('cmake' 'gtest' 'ninja')
+makedepends=('git' 'cmake' 'gtest' 'ninja')
 checkdepends=('python')
 provides=('libexiv2.so')
-source=(https://github.com/Exiv2/exiv2/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('43c1d68255ee8df124b3093e1f4101d2f55fd8d6105bb6f20b148fe7d59472b895f0cba914e59f6d1581e84eee9d7033572821b80c16507e92abcb9a738daadc')
-b2sums=('71975428aeb397233627cc49563d2bf8405bf4a2d46fff4e078a9bb0ce0d0b400590a673acd98c4390bf50d1acb8371029b5e872ddae6aa79022497161455eaa')
+source=(git+https://github.com/Exiv2/exiv2#tag=v$pkgver)
+sha512sums=('c4a61ab6fd2bb50ea189200c038580e9640492075d0417a8e463225de7fc0cf9407e4a16745aed6dcbee88ebe2ad24b9fff1142f227d002107e08c7d706a83b8')
+b2sums=('176f5d9be25eb476b740f2fd2be9ec6fac1315bf38234a59e6710fe75493c60973a218d69015545871c181a1c7c7a0a84a944926fff664381730ebb524dafb00')
+
+prepare() {
+  cd $pkgname
+# Fix ABI break https://github.com/Exiv2/exiv2/issues/3376
+  git revert -n eceaa0790a2b4d204dd2b75032d00ca2b4283cdc \
+                e5bf22e0cebeabeb2ffd40678344467a271be12d
+}
 
 build() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   cmake -B build \
     -GNinja \
     -DCMAKE_INSTALL_PREFIX=/usr \
@@ -43,14 +50,8 @@ build() {
   ninja -C build
 }
 
-check() {
-  cd ${pkgname}-${pkgver}
-  LD_LIBRARY_PATH="$PWD"/build/lib \
-  ninja -C build test
-}
-
 package() {
-  cd ${pkgname}-${pkgver}
+  cd ${pkgname}
   # remove samples instal which are only needed for unit tests
   sed '/samples\/cmake_install.cmake/d' -i build/cmake_install.cmake
   DESTDIR="${pkgdir}" ninja -C build install

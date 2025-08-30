@@ -1,0 +1,44 @@
+---
+version: 0.28.6-2
+pkgbase:
+  name: exiv2
+  pkgdesc: Exif, Iptc and XMP metadata manipulation library and tools
+  pkgver: 0.28.6
+  pkgrel: 2
+  url: https://exiv2.org
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  checkdepends:
+    - python
+  makedepends:
+    - git
+    - cmake
+    - gtest
+    - ninja
+  depends:
+    - brotli
+    - libbrotlidec.so
+    - curl
+    - expat
+    - libexpat.so
+    - gcc-libs
+    - gettext
+    - glibc
+    - libcurl.so
+    - libinih
+    - libINIReader.so
+    - zlib
+    - libz.so
+  provides:
+    - libexiv2.so
+  source:
+    - git+https://github.com/Exiv2/exiv2#tag=v0.28.6
+  sha512sums:
+    - c4a61ab6fd2bb50ea189200c038580e9640492075d0417a8e463225de7fc0cf9407e4a16745aed6dcbee88ebe2ad24b9fff1142f227d002107e08c7d706a83b8
+  b2sums:
+    - 176f5d9be25eb476b740f2fd2be9ec6fac1315bf38234a59e6710fe75493c60973a218d69015545871c181a1c7c7a0a84a944926fff664381730ebb524dafb00
+pkgname:
+  - name: exiv2
+# generated with artixpkg 0.37.4-1-any
