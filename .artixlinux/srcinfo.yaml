@@ -1,10 +1,10 @@
 ---
-version: 1:25.2.1-4
+version: 1:25.2.1-5
 pkgbase:
   name: mesa
   pkgdesc: Open-source OpenGL drivers
   pkgver: 25.2.1
-  pkgrel: 4
+  pkgrel: 5
   epoch: 1
   url: https://www.mesa3d.org/
   arch:
@@ -181,9 +181,9 @@ pkgname:
     optdepends:
       - 'opengl-man-pages: for the OpenGL API man pages'
     provides:
-      - libva-mesa-driver=1:25.2.1-4
-      - mesa-libgl=1:25.2.1-4
-      - mesa-vdpau=1:25.2.1-4
+      - libva-mesa-driver=1:25.2.1-5
+      - mesa-libgl=1:25.2.1-5
+      - mesa-vdpau=1:25.2.1-5
       - libva-driver
       - opengl-driver
       - vdpau-driver
@@ -220,8 +220,48 @@ pkgname:
     replaces:
       - opencl-clover-mesa<=1:25.0.5-1
       - opencl-rusticl-mesa<=1:25.0.5-1
+  - name: vulkan-asahi
+    pkgdesc: Open-source Vulkan driver for Apple GPUs
+    depends:
+      - expat
+      - gcc-libs
+      - glibc
+      - libdrm
+      - libx11
+      - libxcb
+      - libxshmfence
+      - spirv-tools
+      - vulkan-icd-loader
+      - wayland
+      - xcb-util-keysyms
+      - zlib
+      - zstd
+    optdepends:
+      - 'vulkan-mesa-layers: additional vulkan layers'
+    provides:
+      - vulkan-driver
   - name: vulkan-dzn
     pkgdesc: Open-source Vulkan driver for D3D12
+    depends:
+      - expat
+      - gcc-libs
+      - glibc
+      - libdrm
+      - libx11
+      - libxcb
+      - libxshmfence
+      - spirv-tools
+      - vulkan-icd-loader
+      - wayland
+      - xcb-util-keysyms
+      - zlib
+      - zstd
+    optdepends:
+      - 'vulkan-mesa-layers: additional vulkan layers'
+    provides:
+      - vulkan-driver
+  - name: vulkan-freedreno
+    pkgdesc: Open-source Vulkan driver for Adreno GPUs
     depends:
       - expat
       - gcc-libs
