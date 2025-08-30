@@ -133,4 +133,4 @@ pkgbase:
     - 1487571bee9a8af7ccacf28bdc96518bdf2029b7b1f78edc443beca42cf62a4f74efd13f26cdb446a4dc09d942ff1a6a5435678007e68754cf56e4b953fa4947
 pkgname:
   - name: vtk
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
