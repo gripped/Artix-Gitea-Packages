@@ -1,11 +1,11 @@
 ---
-version: 5.2.6-3.1
+version: 5.2.8-1
 pkgbase:
   name: kvirc
   pkgdesc: Qt based IRC client
-  pkgver: 5.2.6
-  pkgrel: 3.1
-  url: http://kvirc.net/
+  pkgver: 5.2.8
+  pkgrel: 1
+  url: https://www.kvirc.net/
   arch:
     - x86_64
   license:
@@ -18,20 +18,17 @@ pkgbase:
     - enchant
     - hicolor-icon-theme
     - qt6-multimedia
-    - qt6-svg
     - qt6-webengine
     - qt6-5compat
   optdepends:
     - 'perl: scripting support'
     - 'python: scripting support'
   source:
-    - https://github.com/kvirc/KVIrc/archive/5.2.6/kvirc-5.2.6.tar.gz
-    - kvirc.appdata.xml
-    - qt-6.9.patch
+    - https://github.com/kvirc/KVIrc/archive/5.2.8/kvirc-5.2.8.tar.gz
+    - kvirc.metainfo.xml
   sha256sums:
-    - e8de989b5df8d9286da3e26146682a349fe496864dc2e7d7eae8dc27167fdd25
-    - 433c6b2d36479ae2c4a0342dc9750ba79ffd9f4fa479f28740cd1c4303bc71da
-    - 979a4da7d8610b242b4ea67c0ff19264bf2c76091dbe6c63103e60b8d2e78676
+    - 914a8cd0b88d2576450798d5c51973c1cf3ee40a45baaf2151630c9daf46615d
+    - 5f90d6161f3ed9527375d210ba30dde5f2d8e68b7c9bef9419d145b3bbbe1d24
 pkgname:
   - name: kvirc
 # generated with artixpkg 0.36.4-1-any
