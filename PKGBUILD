@@ -7,7 +7,7 @@ pkgname=(qt6-multimedia
          qt6-multimedia-gstreamer)
 _pkgver=6.9.2
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -68,8 +68,10 @@ package_qt6-multimedia-gstreamer() {
   depends=(gcc-libs
            glib2
            glibc
+           gst-libav
            gst-plugins-bad-libs
            gst-plugins-base
+           gst-plugins-good
            gstreamer
            libglvnd
            libpulse
@@ -77,10 +79,8 @@ package_qt6-multimedia-gstreamer() {
            qt6-multimedia)
   provides=(qt6-multimedia-backend)
   groups=()
-  optdepends=('gst-plugins-good: camera support, additional plugins'
-              'gst-plugins-bad: camera support, additional plugins'
-              'gst-plugins-ugly: additional plugins'
-              'gst-libav: additional plugins')
+  optdepends=('gst-plugins-bad: camera support, additional plugins'
+              'gst-plugins-ugly: additional plugins')
   
   DESTDIR="$pkgdir" cmake --install build/src/plugins/multimedia/gstreamer    
 }

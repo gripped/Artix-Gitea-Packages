@@ -1,10 +1,10 @@
 ---
-version: 6.9.2-1
+version: 6.9.2-3
 pkgbase:
   name: qt6-multimedia
   pkgdesc: Classes for audio, video, radio and camera functionality
   pkgver: 6.9.2
-  pkgrel: 1
+  pkgrel: 3
   url: https://www.qt.io
   arch:
     - x86_64
@@ -71,18 +71,18 @@ pkgname:
       - gcc-libs
       - glib2
       - glibc
+      - gst-libav
       - gst-plugins-bad-libs
       - gst-plugins-base
+      - gst-plugins-good
       - gstreamer
       - libglvnd
       - libpulse
       - qt6-base
       - qt6-multimedia
     optdepends:
-      - 'gst-plugins-good: camera support, additional plugins'
       - 'gst-plugins-bad: camera support, additional plugins'
       - 'gst-plugins-ugly: additional plugins'
-      - 'gst-libav: additional plugins'
     provides:
       - qt6-multimedia-backend
 # generated with artixpkg 0.36.4-1-any
