@@ -1,0 +1,66 @@
+---
+version: 0.10.0-1
+pkgbase:
+  name: wayfire
+  pkgdesc: 3D wayland compositor
+  pkgver: 0.10.0
+  pkgrel: 1
+  url: https://github.com/WayfireWM/wayfire
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - meson
+    - ninja
+    - cmake
+    - vulkan-headers
+    - doctest
+    - pkgconf
+    - wayland-protocols
+    - nlohmann-json
+    - libxml2
+  depends:
+    - cairo
+    - pango
+    - libdrm
+    - libevdev
+    - libglvnd
+    - libjpeg
+    - libpng
+    - libxkbcommon
+    - pixman
+    - polkit
+    - seatd
+    - xorg-xwayland
+    - wayland
+    - wf-config
+    - glm
+    - glslang
+    - libinput
+    - libdisplay-info
+    - libxcb
+    - opengl-driver
+    - xcb-util-errors
+    - xcb-util-renderutil
+    - xcb-util-wm
+    - libpixman-1.so
+    - libseat.so
+    - libudev.so
+    - libvulkan.so
+    - libwayland-client.so
+    - libwayland-server.so
+    - libxkbcommon.so
+  optdepends:
+    - xorg-xeyes
+  source:
+    - https://github.com/WayfireWM/wayfire/releases/download/v0.10.0/wayfire-0.10.0.tar.xz
+    - decor_title_font_scale.patch
+    - add-session-lock-config.patch
+  sha256sums:
+    - 83f98d67479f41f3a4dcf30b414495bb8df2353daa7601159f4012a120827a16
+    - 93f5d78348618acf95dfba9490d1e529fb3a281b5ab61edb923dc5fdcbc14e70
+    - 5608b9c7d4e2dcd662b3553e1c50b5ce88a7848e29018c9446f47c28257f862c
+pkgname:
+  - name: wayfire
+# generated with artixpkg 0.36.4-1-any

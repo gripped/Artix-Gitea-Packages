@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=wayfire
-pkgver=0.9.0
-pkgrel=3
+pkgver=0.10.0
+pkgrel=1
 pkgdesc="3D wayland compositor"
 arch=('x86_64')
 url="https://github.com/WayfireWM/wayfire"
@@ -47,7 +47,7 @@ package() {
   install -Dm644 "LICENSE" \
   "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-sha256sums=('dd0c9c08b8a72a2d8c3317c8be6c42b17a493c25abab1d02ac09c24eaa95229d'
+sha256sums=('83f98d67479f41f3a4dcf30b414495bb8df2353daa7601159f4012a120827a16'
             '93f5d78348618acf95dfba9490d1e529fb3a281b5ab61edb923dc5fdcbc14e70'
             '5608b9c7d4e2dcd662b3553e1c50b5ce88a7848e29018c9446f47c28257f862c')
 
