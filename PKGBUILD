@@ -19,14 +19,10 @@ makedepends=('meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
 )
 optdepends=('xorg-xeyes')
 
-source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz"
-        'decor_title_font_scale.patch'
-        'add-session-lock-config.patch')
+source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
 
 build() {
   cd "${pkgname}-${pkgver}"
-  patch -Np1 -i ../decor_title_font_scale.patch
-  patch -Np1 -i ../add-session-lock-config.patch
   artix-meson \
     --buildtype=release \
     -Dxwayland=auto \
@@ -47,7 +43,5 @@ package() {
   install -Dm644 "LICENSE" \
   "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-sha256sums=('83f98d67479f41f3a4dcf30b414495bb8df2353daa7601159f4012a120827a16'
-            '93f5d78348618acf95dfba9490d1e529fb3a281b5ab61edb923dc5fdcbc14e70'
-            '5608b9c7d4e2dcd662b3553e1c50b5ce88a7848e29018c9446f47c28257f862c')
+sha256sums=('83f98d67479f41f3a4dcf30b414495bb8df2353daa7601159f4012a120827a16')
 
