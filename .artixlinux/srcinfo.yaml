@@ -1,9 +1,9 @@
 ---
-version: 6.4-1
+version: 6.5-1
 pkgbase:
   name: lxd
   pkgdesc: Daemon based on liblxc offering a REST API to manage containers
-  pkgver: 6.4
+  pkgver: 6.5
   pkgrel: 1
   url: https://ubuntu.com/lxd
   arch:
@@ -39,16 +39,16 @@ pkgbase:
     - 'libudev: unix device hotplug support'
     - 'apparmor: apparmor support'
   source:
-    - https://github.com/canonical/lxd/releases/download/lxd-6.4/lxd-6.4.tar.gz
-    - https://github.com/canonical/lxd/releases/download/lxd-6.4/lxd-6.4.tar.gz.asc
+    - https://github.com/canonical/lxd/releases/download/lxd-6.5/lxd-6.5.tar.gz
+    - https://github.com/canonical/lxd/releases/download/lxd-6.5/lxd-6.5.tar.gz.asc
     - lxd.sysusers
   validpgpkeys:
     - 602F567663E593BCBD14F338C638974D64792D67
     - ED1CA1E7A6F80E22E5CB2DA84ACE106615754614
   sha256sums:
-    - 69fb7aead2325c7a5eede6dcb1a943a0f6544892929e6ae394729582abdd9aa7
+    - f5a0b8a4eb6cb259497bc5587c09d080193cc908a2696d54e071863d2a14c9cc
     - SKIP
     - d0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4
 pkgname:
   - name: lxd
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
