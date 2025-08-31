@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,8 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.5.0-2
+    packages:
+      - openucc-1.5.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 1.5.0-1
