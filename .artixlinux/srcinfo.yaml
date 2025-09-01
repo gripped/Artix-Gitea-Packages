@@ -1,9 +1,9 @@
 ---
-version: 6.4.3-1
+version: 6.4.3-2
 pkgbase:
   name: rocm-llvm
   pkgver: 6.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
     - x86_64
@@ -70,4 +70,4 @@ pkgname:
       - rocm-core
       - rocm-llvm
       - rocm-device-libs
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
