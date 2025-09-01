@@ -4,7 +4,7 @@
 _name=ucx
 pkgname=openucx
 pkgver=1.19.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Communication framework for data-centric and high-performance applications"
 arch=(x86_64)
 url="https://openucx.org/"

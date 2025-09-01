@@ -1,10 +1,10 @@
 ---
-version: 1.19.0-1
+version: 1.19.0-2
 pkgbase:
   name: openucx
   pkgdesc: Communication framework for data-centric and high-performance applications
   pkgver: 1.19.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://openucx.org/
   arch:
     - x86_64
@@ -38,4 +38,4 @@ pkgbase:
     - 2b3b4575ce64b947ecc42c9055934bcd7e5feb30031c6504f8cc3057cfc138b28c2826a6cc55be56d186e09e20c6201dacfc308647d9b62a5d33688348d15a68
 pkgname:
   - name: openucx
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
