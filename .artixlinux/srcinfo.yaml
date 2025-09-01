@@ -1,10 +1,10 @@
 ---
-version: 0.4.1-2.1
+version: 0.4.1-2.2
 pkgbase:
   name: xf86-video-dummy
   pkgdesc: X.org dummy video driver
   pkgver: 0.4.1
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://xorg.freedesktop.org/
   arch:
     - x86_64
@@ -18,8 +18,9 @@ pkgbase:
     - xorgproto
   depends:
     - glibc
+  provides:
+    - x11win-video-dummy
   conflicts:
-    - xlibre-xf86-video-dummy
     - xorg-server<21.1.1
     - X-ABI-VIDEODRV_VERSION<25
     - X-ABI-VIDEODRV_VERSION>=26
