@@ -1,10 +1,10 @@
 ---
-version: 0.1.6-2.1
+version: 0.1.6-2.2
 pkgbase:
   name: xf86-video-qxl
   pkgdesc: Xorg X11 qxl video driver
   pkgver: 0.1.6
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://www.x.org
   arch:
     - x86_64
@@ -27,7 +27,6 @@ pkgbase:
   optdepends:
     - 'python: for Xspice'
   conflicts:
-    - xlibre-xf86-video-qxl
     - X-ABI-VIDEODRV_VERSION<25
     - X-ABI-VIDEODRV_VERSION>=26
   source:
