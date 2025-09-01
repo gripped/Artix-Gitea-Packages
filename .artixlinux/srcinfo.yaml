@@ -1,0 +1,27 @@
+---
+version: 1.0.7-1
+pkgbase:
+  name: ruby-test-unit-ruby-core
+  pkgdesc: Additional test assertions for Ruby standard libraries
+  pkgver: 1.0.7
+  pkgrel: 1
+  url: https://github.com/ruby/test-unit-ruby-core
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+    - Ruby
+  makedepends:
+    - ruby-rake
+    - ruby-rdoc
+  depends:
+    - ruby
+  source:
+    - test-unit-ruby-core-1.0.7.tar.gz::https://github.com/ruby/test-unit-ruby-core/archive/refs/tags/v1.0.7.tar.gz
+  sha512sums:
+    - 5899f195bc83d7fd7ece40e0dca9efa92868abf3f9a370d9f426df8e969d3ead10fffce5d65baaac3925879ef31a57117ce4e21448e6af2088dc8332794dbc98
+  b2sums:
+    - 51710f4d4997e2afbf46fe616943f47952485a655ea650d005175be5129a64fa910de29a258dad40990e88351f71dfa11f1b047aeac85ed6248ab87e23d3b573
+pkgname:
+  - name: ruby-test-unit-ruby-core
+# generated with artixpkg 0.37.4-1-any
