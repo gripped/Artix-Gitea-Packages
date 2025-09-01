@@ -41,11 +41,11 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 11.4.4-1
+    version: 11.4.5-1
     packages:
-      - lib32-harfbuzz-11.4.4-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-cairo-11.4.4-1-x86_64.pkg.tar.zst
-      - lib32-harfbuzz-icu-11.4.4-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-11.4.5-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-cairo-11.4.5-1-x86_64.pkg.tar.zst
+      - lib32-harfbuzz-icu-11.4.5-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
