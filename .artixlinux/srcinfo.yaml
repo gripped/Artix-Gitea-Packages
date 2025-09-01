@@ -1,10 +1,10 @@
 ---
-version: 2.10.2-10
+version: 2.10.2-11
 pkgbase:
   name: adios2
   pkgdesc: The Adaptable Input/Output System version 2
   pkgver: 2.10.2
-  pkgrel: 10
+  pkgrel: 11
   url: https://adios2.readthedocs.io/en/latest/
   arch:
     - x86_64
@@ -57,9 +57,11 @@ pkgbase:
   source:
     - https://github.com/ornladios/ADIOS2/archive/v2.10.2/adios2-2.10.2.tar.gz
     - fix-destdir-installation.patch
+    - fix-cuda-std-17.patch
   sha256sums:
     - 14cf0bcd94772194bce0f2c0e74dba187965d1cffd12d45f801c32929158579e
     - 601dccc582f957b19bbe5e980ed37fcaeec85b66f63fbb357735345ac0a16d60
+    - 6f7804a60ad2f40adceaf291aff610a641e440ff69b88606452062b21653b5aa
 pkgname:
   - name: adios2
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
