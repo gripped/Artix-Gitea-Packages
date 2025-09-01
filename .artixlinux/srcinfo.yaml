@@ -1,0 +1,37 @@
+---
+version: 0.25.0-1
+pkgbase:
+  name: ruby-decode
+  pkgdesc: Code analysis for documentation generation
+  pkgver: 0.25.0
+  pkgrel: 1
+  url: https://github.com/socketry/decode
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-build-files
+    - ruby-bundler
+    - ruby-covered
+    - ruby-sus
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-parser
+    - ruby-rbs
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/decode/archive/v0.25.0/ruby-decode-0.25.0.tar.gz
+  sha512sums:
+    - 6ab289bd54c90f0dcd799f9014227cf255f0f276c2b2385298e11359c3a4061a8db7c11e9fdb7f89ea023a2a7ee92bf5638c4979c362a30999313e58899710ca
+  b2sums:
+    - 377c83933556e3d9df579f2bc4d75ddb407db9c89b8f48c78bc36306f866f5119306025e6ae7835cabbd0c193f79f6a46ac69df2be97ef146fee0cd0c2a3ad33
+pkgname:
+  - name: ruby-decode
+# generated with artixpkg 0.37.4-1-any
