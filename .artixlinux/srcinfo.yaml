@@ -1,10 +1,10 @@
 ---
-version: 0.7.1-11
+version: 0.7.1-12
 pkgbase:
   name: gnu-netcat
   pkgdesc: GNU rewrite of netcat, the network piping application
   pkgver: 0.7.1
-  pkgrel: 11
+  pkgrel: 12
   url: http://netcat.sourceforge.net/
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - b55af0bbdf5acc02d1eb6ab18da2acd77a400bafd074489003f3df09676332bb
 pkgname:
   - name: gnu-netcat
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.2-1-any
