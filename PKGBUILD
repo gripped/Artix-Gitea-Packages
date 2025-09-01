@@ -1,11 +1,12 @@
-# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Brian Galey <bkgaley at gmail dot com>
 # Contributor: Pietro Zambelli <peter.zamb at gmail dot com>
 
 pkgname=libspatialite
 pkgver=5.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="SQLite extension to support spatial data types and operations"
 arch=(x86_64)
 url="https://www.gaia-gis.it/fossil/libspatialite"
@@ -14,9 +15,14 @@ depends=(geos libfreexl librttopo libxml2 minizip proj sqlite)
 source=(https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-$pkgver.tar.gz)
 sha256sums=('43be2dd349daffe016dd1400c5d11285828c22fea35ca5109f21f3ed50605080')
 
+prepare() {
+  cd $pkgname-$pkgver
+  autoreconf -fiv
+}
+
 build() {
   cd $pkgname-$pkgver
-  ./configure --prefix=/usr --enable-freexl=no
+  ./configure --prefix=/usr
   make
 }
 
