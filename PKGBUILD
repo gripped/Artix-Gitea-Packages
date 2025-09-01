@@ -5,7 +5,7 @@
 
 _gemname=hoe
 pkgname=ruby-${_gemname}
-pkgver=4.2.4
+pkgver=4.3.0
 pkgrel=1
 pkgdesc='Hoe is a rake/rubygems helper for project Rakefiles'
 url='https://www.zenspider.com/projects/hoe.html'
