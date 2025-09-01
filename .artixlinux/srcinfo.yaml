@@ -1,0 +1,31 @@
+---
+version: 0.47.1-1
+pkgbase:
+  name: rlwrap
+  pkgdesc: Adds readline-style editing and history to programs
+  pkgver: 0.47.1
+  pkgrel: 1
+  url: https://github.com/hanslub42/rlwrap
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+  depends:
+    - glibc
+    - readline
+    - ncurses
+    - perl
+    - python
+    - python-pexpect
+    - libptytty
+  source:
+    - rlwrap::git+https://github.com/hanslub42/rlwrap#tag=v0.47.1
+  sha512sums:
+    - f2d7b9b9b52b503390859508f9511d1e03b5ce313d2695bc238e23bd72570d0d0ab09701623fee8ad2effee0d40a1e16ba5d05bb0a7cf03347bb1d065f8bcf6e
+  b2sums:
+    - c08511b7e33de33ee154ec606faec56da549fd3856d9704b83fe8ce6e292177ae0b4290e428ee98775573cec85b5cab7bb0f6bfb8c70835fd7ab5d868e4ef99e
+pkgname:
+  - name: rlwrap
+# generated with artixpkg 0.37.2-1-any
