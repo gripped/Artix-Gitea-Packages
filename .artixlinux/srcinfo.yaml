@@ -1,10 +1,10 @@
 ---
-version: 0.16-1
+version: 0.16-3
 pkgbase:
   name: libnova
   pkgdesc: A general purpose, double precision, celestial mechanics, astrometry and astrodynamics library.
   pkgver: 0.16
-  pkgrel: 1
+  pkgrel: 3
   url: http://libnova.sourceforge.net/
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 783fcc8668b5c62fe90ab08c00b6c4ef57386febff3c532bfba9743bb4d1e64aa5dbe5d5bc6b71fb5608adce718585b1fc3eeab593ce833408a622613347e87f
 pkgname:
   - name: libnova
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.2-1-any
