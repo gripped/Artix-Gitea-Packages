@@ -3,14 +3,14 @@
 
 pkgname=xf86-video-fbdev
 pkgver=0.5.1
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="X.org framebuffer video driver"
 arch=(x86_64)
 license=('X11')
 url="https://xorg.freedesktop.org/"
 depends=('glibc')
 makedepends=('xorg-server-devel' 'X-ABI-VIDEODRV_VERSION=25.2') # git)
-conflicts=('xlibre-xf86-video-fbdev' 'xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
+conflicts=('xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
 groups=('xorg-drivers')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
 sha512sums=('ab345d796fb6a404c44a5caec31497fd36dce8882befad644b3f6fac1969c0a4ba9243e911e86a29a149ee7b0847ba676a28a49e15f1789238f2726b9dcea1a8'
