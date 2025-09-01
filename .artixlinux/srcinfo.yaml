@@ -1,10 +1,10 @@
 ---
-version: 2.6.0-2.1
+version: 2.6.0-2.2
 pkgbase:
   name: xf86-video-vesa
   pkgdesc: X.org vesa video driver
   pkgver: 2.6.0
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://xorg.freedesktop.org/
   arch:
     - x86_64
@@ -19,7 +19,6 @@ pkgbase:
   depends:
     - glibc
   conflicts:
-    - xlibre-xf86-video-vesa
     - xorg-server<21.1.1
     - X-ABI-VIDEODRV_VERSION<25
     - X-ABI-VIDEODRV_VERSION>=26
