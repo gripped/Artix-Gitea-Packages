@@ -1,0 +1,24 @@
+---
+version: 2.06-1
+pkgbase:
+  name: cloc
+  pkgdesc: Count lines of code
+  pkgver: 2.06
+  pkgrel: 1
+  url: https://github.com/AlDanial/cloc
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - perl
+    - perl-algorithm-diff
+    - perl-regexp-common
+    - perl-parallel-forkmanager
+  source:
+    - https://github.com/AlDanial/cloc/releases/download/v2.06/cloc-2.06.tar.gz
+  sha256sums:
+    - 27b6b007a5d482e5f50b23984cbe10f6a9f26e1052e9c7e010edfdcf879dc554
+pkgname:
+  - name: cloc
+# generated with artixpkg 0.37.2-1-any
