@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sus-fixtures-async-http
-pkgver=0.11.0
+pkgver=0.12.0
 pkgrel=1
 pkgdesc='Test fixtures for running in Async::HTTP'
 arch=(any)
@@ -28,7 +28,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=("git+${url}.git#tag=v${pkgver}")
-sha256sums=('8f7a38c9aefbabbef0d336f893029a4973edcf15a98ae08096f042c1e3c2a727')
+sha256sums=('9b3ec45738988d4ec7311a20da9f18895a2ba4c6776f64037b57d16a5e429b36')
 
 prepare() {
   cd sus-fixtures-async-http
