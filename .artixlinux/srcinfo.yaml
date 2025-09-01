@@ -1,10 +1,10 @@
 ---
-version: 1.10.0-1.1
+version: 1.10.0-1.2
 pkgbase:
   name: xf86-input-synaptics
   pkgdesc: Synaptics driver for notebook touchpads
   pkgver: 1.10.0
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://xorg.freedesktop.org/
   install: xf86-input-synaptics.install
   arch:
@@ -26,7 +26,6 @@ pkgbase:
   provides:
     - synaptics
   conflicts:
-    - xlibre-xf86-input-synaptics
     - xorg-server<21.1.2
     - X-ABI-XINPUT_VERSION<24
     - X-ABI-XINPUT_VERSION>=25
