@@ -1,10 +1,10 @@
 ---
-version: 1.5.0-1.1
+version: 1.5.0-1.2
 pkgbase:
   name: xf86-input-libinput
   pkgdesc: Generic input driver for the X.Org server based on libinput
   pkgver: 1.5.0
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: http://xorg.freedesktop.org/
   arch:
     - x86_64
@@ -21,8 +21,9 @@ pkgbase:
   depends:
     - libinput
     - glibc
+  provides:
+    - x11win-input-libinput
   conflicts:
-    - xlibre-xf86-input-libinput
     - xorg-server<1.19.0
     - X-ABI-XINPUT_VERSION<24
     - X-ABI-XINPUT_VERSION>=25
