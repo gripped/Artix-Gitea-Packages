@@ -1,0 +1,50 @@
+---
+version: 1.45-1
+pkgbase:
+  name: connman
+  pkgdesc: Intel's modular network connection manager
+  pkgver: 1.45
+  pkgrel: 1
+  url: https://01.org/connman
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - bluez
+    - iwd
+    - openconnect
+    - openvpn
+    - ppp
+    - wpa_supplicant
+  depends:
+    - dbus
+    - gcc-libs
+    - glib2
+    - glibc
+    - gnutls
+    - iptables
+    - libmnl
+    - readline
+  optdepends:
+    - 'bluez: Support for Bluetooth devices'
+    - 'iwd: for WiFi devices'
+    - 'openconnect: for VPN Support'
+    - 'openvpn: for VPN Support'
+    - 'pptpclient: for ppp support'
+    - 'wpa_supplicant: for WiFi devices'
+  backup:
+    - etc/connman/main.conf
+  source:
+    - connman-1.45.tar.xz::https://www.kernel.org/pub/linux/network/connman/connman-1.45.tar.xz
+    - connman-1.45.tar.sign::https://www.kernel.org/pub/linux/network/connman/connman-1.45.tar.sign
+    - allow_group_network.diff
+  validpgpkeys:
+    - E932D120BC2AEC444E558F0106CA9F5D1DCF2659
+  sha512sums:
+    - 174a7201e6b68db44efddc6d200b5bedb70078ddddaab5037dccc1036e255cafe61a7c0cebc4492e3d6c1be1dc7372051302bbd4ac3312a64fd518a51b8cb814
+    - SKIP
+    - 06dd5867d460f1c3cf6c359e650ca2ef24495493a99cd03dbd17f23e587e9066d9bc98758d85d5c690d1ae21fa77ad8da5e2fa83d0b52c95d7a535784c5c4964
+pkgname:
+  - name: connman
+# generated with artixpkg 0.37.2-1-any
