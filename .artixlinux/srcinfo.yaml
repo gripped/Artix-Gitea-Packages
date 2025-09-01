@@ -15,6 +15,7 @@ pkgbase:
   depends:
     - glibc
     - minizip
+    - expat
   source:
     - https://www.gaia-gis.it/gaia-sins/freexl-2.0.0.tar.gz
   sha256sums:
