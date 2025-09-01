@@ -1,0 +1,25 @@
+---
+version: 20250809.0-1
+pkgbase:
+  name: perl-ipc-run
+  pkgdesc: IPC::Run - system() and background procs w/ piping, redirs, ptys
+  pkgver: 20250809.0
+  pkgrel: 1
+  url: https://search.cpan.org/dist/IPC-Run
+  arch:
+    - any
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl
+    - perl-io-tty
+  options:
+    - '!emptydirs'
+  source:
+    - https://cpan.metacpan.org/authors/id/N/NJ/NJM/IPC-Run-20250809.0.tar.gz
+  sha256sums:
+    - b1e85a30405786ed8378b68dd57159315ad7ddc0a55e432aa9eeca6166ca53fe
+pkgname:
+  - name: perl-ipc-run
+# generated with artixpkg 0.37.2-1-any
