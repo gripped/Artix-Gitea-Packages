@@ -3,7 +3,7 @@
 pkgname=wacomtablet
 pkgver=6.4.4
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='GUI for Wacom Linux drivers that supports different button/pen layout profiles'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -31,7 +31,8 @@ depends=(gcc-libs
          plasma5support
          qt6-base
          qt6-declarative
-         xf86-input-wacom)
+         x11win-input-wacom)
+         #xf86-input-wacom)
 makedepends=(extra-cmake-modules
              kdoctools)
 conflicts=(kcm-wacomtablet)
