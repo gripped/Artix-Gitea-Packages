@@ -55,7 +55,8 @@ build() {
   cmake --build build
 
   cmake -B build5 -S $pkgname-$pkgver \
-        -DCMAKE_INSTALL_PREFIX=/usr
+        -DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build5/src/greeter
   cmake --build build5/components
 }
