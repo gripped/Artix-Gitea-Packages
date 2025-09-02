@@ -33,7 +33,7 @@ source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
 sha256sums=('38755082ff0f7123616b98de5f032de76d0cc5837b5204cf5c88ee6c52a77bf6')
 
 build() {
-	CXXFLAGS+=' -Wno-implicit-function-declaration -Wno-int-conversion'
+        # Removed -DENABLE_SYSTEM_YYJSON='ON' to prevent build error with v2.51.1
 	cmake -B build -S "${pkgname}-${pkgver}" \
 		-DCMAKE_BUILD_TYPE='RelWithDebInfo' \
 		-DCMAKE_INSTALL_PREFIX='/usr' \
@@ -42,7 +42,6 @@ build() {
 		-DENABLE_SQLITE3='ON' \
 		-DENABLE_RPM='OFF' \
 		-DENABLE_IMAGEMAGICK6='OFF' \
-		-DENABLE_SYSTEM_YYJSON='ON' \
 		-DPACKAGES_DISABLE_APK='ON' \
 		-DPACKAGES_DISABLE_DPKG='ON' \
 		-DPACKAGES_DISABLE_EMERGE='ON' \
