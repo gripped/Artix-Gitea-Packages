@@ -1,10 +1,10 @@
 ---
-version: 0.21.0-6
+version: 0.21.0-6.1
 pkgbase:
   name: sddm
   pkgdesc: QML based X11 and Wayland display manager
   pkgver: 0.21.0
-  pkgrel: 6
+  pkgrel: 6.1
   url: https://github.com/sddm/sddm
   arch:
     - x86_64
