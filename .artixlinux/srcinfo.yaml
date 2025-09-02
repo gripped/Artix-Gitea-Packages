@@ -1,10 +1,10 @@
 ---
-version: 5.1.1-1
+version: 5.2.0-2
 pkgbase:
   name: persepolis
-  pkgdesc: Qt front-end for aria2 download manager
-  pkgver: 5.1.1
-  pkgrel: 1
+  pkgdesc: Download manager written in Python
+  pkgver: 5.2.0
+  pkgrel: 2
   url: https://persepolisdm.github.io/
   arch:
     - any
@@ -13,20 +13,23 @@ pkgbase:
   makedepends:
     - meson
   depends:
-    - ffmpeg
-    - libnotify
-    - libpulse
-    - python-psutil
+    - hicolor-icon-theme
     - pyside6
+    - python-dasbus
+    - python-psutil
+    - python-pysocks
     - python-requests
     - python-setproctitle
+    - python-urllib3
+    - qt6-multimedia
     - qt6-svg
-    - sound-theme-freedesktop
-    - yt-dlp
+  optdepends:
+    - 'ffmpeg: Download videos from YouTube'
+    - 'yt-dlp: Download videos from YouTube'
   source:
-    - https://github.com/persepolisdm/persepolis/archive/5.1.1/persepolis-5.1.1.tar.gz
+    - https://github.com/persepolisdm/persepolis/archive/5.2.0/persepolis-5.2.0.tar.gz
   sha256sums:
-    - d787b4a45b3a38513f1e80e025c4059918f1390b815944c6a541bd07eeb0ccae
+    - 8d002e369955fd77e5353714185ce3edb98463b7117a26583b72f4db4e51b2c8
 pkgname:
   - name: persepolis
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
