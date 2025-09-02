@@ -57,4 +57,4 @@ pkgbase:
     - 38755082ff0f7123616b98de5f032de76d0cc5837b5204cf5c88ee6c52a77bf6
 pkgname:
   - name: fastfetch
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

@@ -33,6 +33,7 @@ source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz"
 sha256sums=('38755082ff0f7123616b98de5f032de76d0cc5837b5204cf5c88ee6c52a77bf6')
 
 build() {
+	CFLAGS+=' -Wno-implicit-function-declaration -Wno-int-conversion'
 	cmake -B build -S "${pkgname}-${pkgver}" \
 		-DCMAKE_BUILD_TYPE='RelWithDebInfo' \
 		-DCMAKE_INSTALL_PREFIX='/usr' \
