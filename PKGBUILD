@@ -3,7 +3,7 @@
 
 pkgname=lxqt-config
 pkgver=2.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="LXQt system configuration."
 arch=("x86_64")
 groups=("lxqt")
@@ -13,7 +13,7 @@ license=("LGPL2.1")
 depends=("glibc" "gcc-libs"
          "qt6-base" "qt6-svg" "libkscreen"
          "libQt6Xdg.so" "liblxqt" "lxqt-themes" "lxqt-menu-data"
-         "libx11" "libxcb" "libxcursor" "libxfixes" "libxi" "xf86-input-libinput"
+         "libx11" "libxcb" "libxcursor" "libxfixes" "libxi" "x11win-input-libinput"
          "libudev.so" "zlib")
 makedepends=("lxqt-build-tools")
 optdepends=(
