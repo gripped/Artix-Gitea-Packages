@@ -1,0 +1,65 @@
+---
+version: 0.5.3-8.1
+pkgbase:
+  name: lxdm
+  pkgdesc: Lightweight X11 Display Manager
+  pkgver: 0.5.3
+  pkgrel: 8.1
+  url: https://lxde.org/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - intltool
+    - iso-codes
+  depends:
+    - gtk2
+    - gtk3
+    - lightdm-slick-greeter
+  optdepends:
+    - 'iso-codes: show language names in language chooser'
+  backup:
+    - etc/lxdm/lxdm.conf
+    - etc/pam.d/lxdm
+    - etc/lxdm/Xsession
+    - etc/lxdm/PreLogin
+    - etc/lxdm/LoginReady
+    - etc/lxdm/PostLogin
+    - etc/lxdm/PostLogout
+    - etc/lxdm/PreReboot
+    - etc/lxdm/PreShutdown
+  source:
+    - https://downloads.sourceforge.net/lxde/lxdm-0.5.3.tar.xz
+    - set-path.patch
+    - git-fixes.patch
+    - default-config.patch
+    - lxdm.pam
+    - Xsession
+  sha256sums:
+    - 4891efee81c72a400cc6703e40aa76f3f3853833d048b72ec805da0f93567f2f
+    - 328f766c4d2ee899fc37a26f6e8666d40ebeaa3bd4c7d5a474ebb5415351a440
+    - ca3b225fb85a4e87ebb48e2b1a20f4bab86bf619a9ad927f08fdc819bc435bb4
+    - ea5fbe021b98ec58de8f2ba9a3575f748024bad2a9b911179a44bf94577f869b
+    - e8c4c5fd3b801a390d201166fd1fb9730e78a5c62928768103b870b6bd980ea0
+    - a02f547e1c36f1c7dd2a1f942b620fe76445d561f7835e7fef434aa4c12c6967
+pkgname:
+  - name: lxdm
+    groups:
+      - lxde
+    depends:
+      - gtk2
+      - xorg-server
+    optdepends:
+      - 'iso-codes: show language names in language chooser'
+      - 'gnome-themes-standard: default GTK+ theme'
+  - name: lxdm-gtk3
+    pkgdesc: Lightweight X11 Display Manager (GTK+ 3 version)
+    groups:
+      - lxde-gtk3
+    depends:
+      - gtk3
+      - xorg-server
+    conflicts:
+      - lxdm
+# generated with artixpkg 0.37.4-1-any

@@ -6,12 +6,12 @@
 pkgbase=lxdm
 pkgname=(lxdm lxdm-gtk3)
 pkgver=0.5.3
-pkgrel=8
+pkgrel=8.1
 pkgdesc='Lightweight X11 Display Manager'
 arch=('x86_64')
 url="https://lxde.org/"
 license=('GPL')
-depends=('gtk2' 'gtk3' 'xorg-server')
+depends=('gtk2' 'gtk3' 'lightdm-slick-greeter')
 makedepends=('intltool' 'iso-codes')
 optdepends=('iso-codes: show language names in language chooser')
 backup=('etc/lxdm/lxdm.conf' 'etc/pam.d/lxdm' 'etc/lxdm/Xsession'
