@@ -1,0 +1,32 @@
+---
+version: 2.2.1-1
+pkgbase:
+  name: python-executing
+  pkgdesc: Get the currently executing AST node of a frame, and other information
+  pkgver: 2.2.1
+  pkgrel: 1
+  url: https://github.com/alexmojaki/executing
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ipython
+    - python-asttokens
+    - python-littleutils
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/alexmojaki/executing.git#tag=v2.2.1
+  b2sums:
+    - 8091e99fe2f30841c5d54ec302c3eb3498b791c59e2f098412c4f13dec991fb2401758d1b95f8fb7677227bcac4be3ff997d913bd20f678810ea97f954785748
+pkgname:
+  - name: python-executing
+# generated with artixpkg 0.37.4-1-any
