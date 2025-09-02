@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.1
-pkgrel=23.4
+pkgrel=23.5
 _commit="afc09c5e44a7dc94bbd7f38d7ef5f2517624379f"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -63,7 +63,7 @@ check() {
 
 package_moksha() {
   depends=('efl>=1.27.0' 'terminology' 'moksha-menu' 'moksha-arandr' 'moksha-help' 'desktop-file-utils'
-           'xorg-server' 'xorg-xinit' 'xsel' 'xclip' 'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy'
+           'x11win-server' 'xorg-xinit' 'xsel' 'xclip' 'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy'
            'xcb-util-keysyms' 'openssl-1.1' 'rrdtool')
   optdepends=('moksha-module-mixer: Moksha pulse audio mixer'
               'moksha-extra-modules: additional modules for Moksha'
