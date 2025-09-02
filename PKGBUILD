@@ -50,7 +50,8 @@ build() {
         -DBUILD_MAN_PAGES=ON \
         -DUSE_ELOGIND=yes \
         -DNO_SYSTEMD=yes \
-        -DUID_MAX=60513
+        -DUID_MAX=60513 \
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build
 
   cmake -B build5 -S $pkgname-$pkgver \
