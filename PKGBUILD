@@ -3,13 +3,13 @@
 
 pkgname=xpra
 pkgver=6.2.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="multi-platform screen and application forwarding system screen for X11"
 arch=('x86_64')
 url='https://www.xpra.org'
 license=('GPL2')
 depends=('gtk3' 'python' 'libxtst' 'python-cairo' 'python-gobject' 'python-pillow' 'python-lz4'
-         'ffmpeg' 'libvpx' 'xf86-video-dummy' 'libxkbfile' 'libxres'
+         'ffmpeg' 'libvpx' 'x11win-video-dummy' 'libxkbfile' 'libxres'
          'python-netifaces' 'python-rencode' 'python-opengl'
          'python-lz4')
 optdepends=('x264: Codec' 'python-dbus: dbus features'
