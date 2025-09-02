@@ -1,0 +1,36 @@
+---
+version: 5.91.0-1
+pkgbase:
+  name: ruby-sequel
+  pkgdesc:
+    Sequel: The Database Toolkit for Ruby
+  pkgver: 5.91.0
+  pkgrel: 1
+  url: https://github.com/jeremyevans/sequel
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-minitest
+    - ruby-minitest-global_expectations
+    - ruby-minitest-hooks
+    - ruby-rake
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-bigdecimal
+    - ruby-csv
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/jeremyevans/sequel.git#tag=5.91.0
+  sha512sums:
+    - 08026ec1cad1c8e6366ea96371cc4eb706e3bb113aefe8b1f80c10bf9a33bdd7d9c86e6be2741ed6b40115ec15197dc3667c360cd0a61d04de40c3210704a28c
+  b2sums:
+    - 5594402710724de523012aa0146a6ec72057effb1d4c4013db676e2e449c2ccd8964363e881c8b3637437cd9a6e7ae11dbdf7cf41b43265294a3f799a72690b1
+pkgname:
+  - name: ruby-sequel
+# generated with artixpkg 0.37.4-1-any
