@@ -1,0 +1,53 @@
+---
+version: 0.21.0-6
+pkgbase:
+  name: sddm
+  pkgdesc: QML based X11 and Wayland display manager
+  pkgver: 0.21.0
+  pkgrel: 6
+  url: https://github.com/sddm/sddm
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - extra-cmake-modules
+    - python-docutils
+    - qt5-base
+    - qt5-declarative
+    - qt5-tools
+    - qt6-tools
+  depends:
+    - bash
+    - gcc-libs
+    - glibc
+    - libelogind
+    - libxau
+    - libxcb
+    - pam
+    - qt6-base
+    - qt6-declarative
+    - ttf-font
+    - x11win-server
+    - xorg-xauth
+  optdepends:
+    - 'qt5-declarative: for using Qt5 themes'
+  provides:
+    - display-manager
+  backup:
+    - usr/share/sddm/scripts/Xsetup
+    - usr/share/sddm/scripts/Xstop
+    - etc/pam.d/sddm
+    - etc/pam.d/sddm-autologin
+    - etc/pam.d/sddm-greeter
+  source:
+    - https://github.com/sddm/sddm/archive/v0.21.0/sddm-0.21.0.tar.gz
+    - sddm.tmpfiles
+    - sddm.sysusers
+  sha256sums:
+    - f895de2683627e969e4849dbfbbb2b500787481ca5ba0de6d6dfdae5f1549abf
+    - db625f2a3649d6d203e1e1b187a054d5c6263cadf7edd824774d8ace52219677
+    - 9fce66f325d170c61caed57816f4bc72e9591df083e89da114a3bb16b0a0e60f
+pkgname:
+  - name: sddm
+# generated with artixpkg 0.37.2-1-any

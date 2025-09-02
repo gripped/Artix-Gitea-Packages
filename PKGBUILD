@@ -19,7 +19,7 @@ depends=(bash
          qt6-base
          qt6-declarative
          ttf-font
-         xorg-server
+         x11win-server
          xorg-xauth)
 makedepends=(extra-cmake-modules
              python-docutils
