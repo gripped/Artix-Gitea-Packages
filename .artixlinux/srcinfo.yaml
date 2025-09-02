@@ -1,0 +1,33 @@
+---
+version: 0.5.4-1
+pkgbase:
+  name: gom
+  pkgdesc: GObject to SQLite object mapper library
+  pkgver: 0.5.4
+  pkgrel: 1
+  url: https://wiki.gnome.org/Projects/Gom
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gdk-pixbuf2
+    - gi-docgen
+    - git
+    - gobject-introspection
+    - meson
+    - python-gobject
+  depends:
+    - glib2
+    - glibc
+    - sqlite
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gom.git#tag=0.5.4
+  b2sums:
+    - b59748bd2dacb4980fdc850d3ef98e27130654ac59423f0d27e22b8b3b9d9ab02ba19e086c4229c7fe9d02f8600d1cf01bd9cf90ec7d613f3cd09c27b5b8cae6
+pkgname:
+  - name: gom
+  - name: gom-docs
+    pkgdesc: GObject to SQLite object mapper library - documentation
+    depends: []
+# generated with artixpkg 0.37.3-1-any
