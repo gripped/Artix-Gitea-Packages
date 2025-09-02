@@ -1,65 +1,77 @@
 ---
-version: 3.44.1-3
+version: 3.44.2-2
 pkgbase:
   name: qgis
   pkgdesc: Geographic Information System (GIS) that supports vector, raster & database formats
-  pkgver: 3.44.1
-  pkgrel: 3
+  pkgver: 3.44.2
+  pkgrel: 2
   url: https://qgis.org/
   arch:
     - x86_64
   license:
-    - GPL
+    - GPL-2.0-or-later
   makedepends:
     - cmake
+    - fcgi
     - ninja
     - opencl-clhpp
-    - fcgi
+    - pyqt-builder
     - qt5-tools
     - sip
-    - pyqt-builder
   depends:
-    - ocl-icd
-    - proj
-    - geos
-    - gdal
-    - expat
-    - spatialindex
-    - qwt
-    - libzip
-    - sqlite3
-    - protobuf
-    - zlib
+    - abseil-cpp
+    - draco
     - exiv2
-    - postgresql-libs
-    - libspatialite
-    - zstd
-    - pdal
-    - qt5-base
-    - qt5-svg
-    - qt5-serialport
-    - qt5-location
-    - qt5-3d
-    - qt5-declarative
-    - qt5-multimedia
-    - qt5-webengine
-    - qscintilla-qt5
-    - qtkeychain-qt5
-    - qca-qt5
+    - expat
+    - gcc-libs
+    - gdal
+    - geos
+    - glibc
     - gsl
+    - hdf5
+    - hicolor-icon-theme
+    - libspatialindex
+    - libspatialite
+    - libxml2
+    - libzip
+    - netcdf
+    - ocl-icd
+    - pdal
+    - postgresql-libs
+    - proj
+    - protobuf
+    - python
+    - python-gdal
+    - python-jinja
+    - python-numpy
+    - python-owslib
+    - python-packaging
+    - python-psycopg2
     - python-pyqt5
     - python-qscintilla-qt5
-    - hdf5
-    - netcdf
-    - libxml2
-    - draco
+    - python-yaml
+    - qca-qt5
+    - qscintilla-qt5
+    - qt5-3d
+    - qt5-base
+    - qt5-declarative
+    - qt5-imageformats
+    - qt5-location
+    - qt5-multimedia
+    - qt5-serialport
+    - qt5-svg
+    - qtkeychain-qt5
+    - qwt
+    - sqlite
+    - zlib
+    - zstd
   optdepends:
     - 'fcgi: Map server'
     - 'gpsbabel: GPS Tools plugin'
   source:
-    - https://qgis.org/downloads/qgis-3.44.1.tar.bz2
+    - https://qgis.org/downloads/qgis-3.44.2.tar.bz2
   sha256sums:
-    - b228ef7093da0e9f7a594b93a57ef737cdefd8c07b84ccff251da1f7d2bb6f4b
+    - 21f789e1b61384cf03432af306bc977b42d8c77c55ad48562ea1e914a5495961
 pkgname:
   - name: qgis
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
