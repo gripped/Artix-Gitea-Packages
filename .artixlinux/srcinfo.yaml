@@ -1,0 +1,39 @@
+---
+version: 1.5.0-1
+pkgbase:
+  name: ruby-localhost
+  pkgdesc: Manage a local certificate authority for self-signed localhost development servers
+  pkgver: 1.5.0
+  pkgrel: 1
+  url: https://github.com/socketry/localhost
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-io-endpoint
+    - ruby-sus
+    - ruby-sus-fixtures-async
+    - ruby-sus-fixtures-async-http
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/socketry/localhost.git#tag=v1.5.0
+  sha512sums:
+    - c20f6caa401ccb7b69bcf51241124e2537c291d9e34db6998ea15a722368851615ebe18a2ebf694d351839bee0f0f4edd8614eb3b6b82b3470f3b6787b311913
+  b2sums:
+    - 254372c748dde22001fac3aae64de86d613471a72b6e0a9e9e123e07435fa140cae58e3ab2f182c68b31d9b3749aead39290328fed4bf7c098242859728dee8b
+pkgname:
+  - name: ruby-localhost
+# generated with artixpkg 0.37.4-1-any
