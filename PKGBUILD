@@ -4,14 +4,14 @@
 
 pkgbase=virtualbox
 pkgname=('virtualbox'
-         'virtualbox-sdk'
-         'virtualbox-host-dkms'
+         'virtualbox-ext-vnc'
          'virtualbox-guest-utils'
          'virtualbox-guest-utils-nox'
-         'virtualbox-ext-vnc')
+         'virtualbox-host-dkms'
+         'virtualbox-sdk')
 pkgver=7.2.0
 _tarver=${pkgver}
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL-3.0-only AND (GPL-3.0-only OR CDDL-1.0)')
@@ -69,7 +69,8 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '013-support-building-from-dkms.patch'
         '018-upate-xclient-script.patch'
         '020-python-3-12.patch'
-        '021-python-3-13.patch')
+        '021-python-3-13.patch'
+        '022-FE-Qt-VBox-Manager-Create-destroy-notification-center.patch')
 sha256sums=('4f2804ff27848ea772aee6b637bb1e10ee74ec2da117c257413e2d2c4f670ba0'
             'f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04'
             '07fe5c8b313cd7f01505eb9721357269a288ccd0c04e6467afb954038d6f46df'
@@ -87,7 +88,8 @@ sha256sums=('4f2804ff27848ea772aee6b637bb1e10ee74ec2da117c257413e2d2c4f670ba0'
             '00f68b86d32a1fada900c2da8dad2ab4215106cd58004f049bded99727cda2ff'
             '2540381de895fabbcc68d820c1f72ba644ef566ff5dab0f60be055c7b45cc06f'
             'ddb2092a5a000aa6ef854796f39dcdf86e72c06d53b24bac3835350571182df6'
-            'a8e53afe996c3de401824261ac4228eb8960af0832de2a8f101e9aa6ddb442f8')
+            'a8e53afe996c3de401824261ac4228eb8960af0832de2a8f101e9aa6ddb442f8'
+            '98c0b249d8b97b8d374f104fbc531ddc71f0b3b67b28261cf950c1f93ca248af')
 
 prepare() {
     cd "VirtualBox-${pkgver}"
@@ -227,54 +229,20 @@ package_virtualbox() {
     install -D -m0644 virtualbox.modprobe "${pkgdir}/usr/lib/modprobe.d/virtualbox.conf"
 }
 
-package_virtualbox-sdk() {
-    pkgdesc='VirtualBox Software Developer Kit (SDK)'
-    depends=('python')
-
-    install -d -m0755 "${pkgdir}/usr/lib/virtualbox"
+package_virtualbox-ext-vnc() {
+    pkgdesc='VirtualBox VNC extension pack'
+    depends=('virtualbox' 'libvncserver')
+    optdepends=('tigervnc: vnc client')
+    install=virtualbox-ext-vnc.install
 
     source "VirtualBox-${pkgver}/env.sh"
-    cd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/bin"
-
-    install -D -m0755 vboxshell.py "${pkgdir}/usr/lib/virtualbox/vboxshell.py"
-    # python sdk
-    pushd sdk/installer/python
-    VBOX_INSTALL_PATH="/usr/lib/virtualbox" python vboxapisetup.py install --root "${pkgdir}"
-    popd
-    cp -r sdk "${pkgdir}/usr/lib/virtualbox"
-    rm -r "${pkgdir}/usr/lib/virtualbox/sdk/installer"
+    cd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/packages"
+    install -D -m0644 VNC-*.vbox-extpack "${pkgdir}/usr/share/virtualbox/extensions/VNC-${pkgver}.vbox-extpack"
     # licence
     install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING" \
         "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING.CDDL" \
         "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
-}
-
-package_virtualbox-host-dkms() {
-    pkgdesc='VirtualBox Host kernel modules sources'
-    depends=('dkms' 'gcc' 'make')
-    replaces=('virtualbox-source'
-              'virtualbox-host-source')
-    conflicts=('virtualbox-source' 'virtualbox-host-source')
-    provides=('VIRTUALBOX-HOST-MODULES')
-
-    install -d -m0755 "${pkgdir}/usr/src"
-    source "VirtualBox-${pkgver}/env.sh"
-    cd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/bin"
-    cp -r src "${pkgdir}/usr/src/vboxhost-${pkgver}_OSE"
-    # licence
-    install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING" \
-        "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-    install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING.CDDL" \
-        "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
-    # module loading
-    local _p="${pkgdir}/usr/lib/modules-load.d/${pkgname}.conf"
-    install -D -m0644 /dev/null "${_p}"
-    printf "vboxdrv\nvboxnetadp\nvboxnetflt\n" > "${_p}"
-    # starting vbox 5.1, dkms.conf file was dropped
-    local _p="${pkgdir}/usr/src/vboxhost-${pkgver}_OSE/dkms.conf"
-    install -D -m0644 "${srcdir}/${pkgname}.conf" "${_p}"
-    sed -i "s,@VERSION@,${pkgver}," "${_p}"
 }
 
 package_virtualbox-guest-utils() {
@@ -331,15 +299,47 @@ package_virtualbox-guest-utils-nox() {
         "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
 }
 
-package_virtualbox-ext-vnc() {
-    pkgdesc='VirtualBox VNC extension pack'
-    depends=('virtualbox' 'libvncserver')
-    optdepends=('tigervnc: vnc client')
-    install=virtualbox-ext-vnc.install
+package_virtualbox-host-dkms() {
+    pkgdesc='VirtualBox Host kernel modules sources'
+    depends=('dkms' 'gcc' 'make')
+    replaces=('virtualbox-source'
+              'virtualbox-host-source')
+    conflicts=('virtualbox-source' 'virtualbox-host-source')
+    provides=('VIRTUALBOX-HOST-MODULES')
+
+    install -d -m0755 "${pkgdir}/usr/src"
+    source "VirtualBox-${pkgver}/env.sh"
+    cd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/bin"
+    cp -r src "${pkgdir}/usr/src/vboxhost-${pkgver}_OSE"
+    # licence
+    install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING" \
+        "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING.CDDL" \
+        "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
+    # udev module loading
+    printf '%s\n' vboxdrv vboxnetadp vboxnetflt |
+      install -D -m0644 /dev/stdin "${pkgdir}/usr/lib/modules-load.d/${pkgname}.conf"
+    # dkms configuration file
+    sed "s,@VERSION@,${pkgver}," < "${srcdir}/${pkgname}.conf" |
+      install -D -m0644 /dev/stdin "${pkgdir}/usr/src/vboxhost-${pkgver}_OSE/dkms.conf"
+}
+
+package_virtualbox-sdk() {
+    pkgdesc='VirtualBox Software Developer Kit (SDK)'
+    depends=('python')
+
+    install -d -m0755 "${pkgdir}/usr/lib/virtualbox"
 
     source "VirtualBox-${pkgver}/env.sh"
-    cd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/packages"
-    install -D -m0644 VNC-*.vbox-extpack "${pkgdir}/usr/share/virtualbox/extensions/VNC-${pkgver}.vbox-extpack"
+    cd "VirtualBox-${pkgver}/out/linux.${BUILD_PLATFORM_ARCH}/release/bin"
+
+    install -D -m0755 vboxshell.py "${pkgdir}/usr/lib/virtualbox/vboxshell.py"
+    # python sdk
+    pushd sdk/installer/python
+    VBOX_INSTALL_PATH="/usr/lib/virtualbox" python vboxapisetup.py install --root "${pkgdir}"
+    popd
+    cp -r sdk "${pkgdir}/usr/lib/virtualbox"
+    rm -r "${pkgdir}/usr/lib/virtualbox/sdk/installer"
     # licence
     install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING" \
         "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"

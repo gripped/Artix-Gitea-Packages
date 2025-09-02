@@ -1,9 +1,9 @@
 ---
-version: 7.2.0-1
+version: 7.2.0-2
 pkgbase:
   name: virtualbox
   pkgver: 7.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://virtualbox.org/
   arch:
     - x86_64
@@ -66,6 +66,7 @@ pkgbase:
     - 018-upate-xclient-script.patch
     - 020-python-3-12.patch
     - 021-python-3-13.patch
+    - 022-FE-Qt-VBox-Manager-Create-destroy-notification-center.patch
   sha256sums:
     - 4f2804ff27848ea772aee6b637bb1e10ee74ec2da117c257413e2d2c4f670ba0
     - f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04
@@ -85,6 +86,7 @@ pkgbase:
     - 2540381de895fabbcc68d820c1f72ba644ef566ff5dab0f60be055c7b45cc06f
     - ddb2092a5a000aa6ef854796f39dcdf86e72c06d53b24bac3835350571182df6
     - a8e53afe996c3de401824261ac4228eb8960af0832de2a8f101e9aa6ddb442f8
+    - 98c0b249d8b97b8d374f104fbc531ddc71f0b3b67b28261cf950c1f93ca248af
 pkgname:
   - name: virtualbox
     pkgdesc: Powerful x86 virtualization for enterprise as well as home use
@@ -124,24 +126,14 @@ pkgname:
       - virtualbox-ose
     backup:
       - etc/vbox/vbox.cfg
-  - name: virtualbox-sdk
-    pkgdesc: VirtualBox Software Developer Kit (SDK)
+  - name: virtualbox-ext-vnc
+    pkgdesc: VirtualBox VNC extension pack
+    install: virtualbox-ext-vnc.install
     depends:
-      - python
-  - name: virtualbox-host-dkms
-    pkgdesc: VirtualBox Host kernel modules sources
-    depends:
-      - dkms
-      - gcc
-      - make
-    provides:
-      - VIRTUALBOX-HOST-MODULES
-    conflicts:
-      - virtualbox-source
-      - virtualbox-host-source
-    replaces:
-      - virtualbox-source
-      - virtualbox-host-source
+      - virtualbox
+      - libvncserver
+    optdepends:
+      - 'tigervnc: vnc client'
   - name: virtualbox-guest-utils
     pkgdesc: VirtualBox Guest userspace utilities
     depends:
@@ -176,12 +168,22 @@ pkgname:
       - virtualbox-guest-dkms
     replaces:
       - virtualbox-guest-dkms
-  - name: virtualbox-ext-vnc
-    pkgdesc: VirtualBox VNC extension pack
-    install: virtualbox-ext-vnc.install
+  - name: virtualbox-host-dkms
+    pkgdesc: VirtualBox Host kernel modules sources
     depends:
-      - virtualbox
-      - libvncserver
-    optdepends:
-      - 'tigervnc: vnc client'
-# generated with artixpkg 0.36.5-1-any
+      - dkms
+      - gcc
+      - make
+    provides:
+      - VIRTUALBOX-HOST-MODULES
+    conflicts:
+      - virtualbox-source
+      - virtualbox-host-source
+    replaces:
+      - virtualbox-source
+      - virtualbox-host-source
+  - name: virtualbox-sdk
+    pkgdesc: VirtualBox Software Developer Kit (SDK)
+    depends:
+      - python
+# generated with artixpkg 0.36.4-1-any
