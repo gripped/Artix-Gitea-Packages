@@ -1,9 +1,9 @@
 ---
-version: 1.7.9.1-1
+version: 2.0.0-1
 pkgbase:
   name: rofi
   pkgdesc: A window switcher, application launcher and dmenu replacement
-  pkgver: 1.7.9.1
+  pkgver: 2.0.0
   pkgrel: 1
   url: https://davatorium.github.io/rofi
   arch:
@@ -15,6 +15,7 @@ pkgbase:
     - git
     - meson
     - pandoc
+    - wayland-protocols
   depends:
     - bash
     - cairo
@@ -27,21 +28,26 @@ pkgbase:
     - libxkbcommon-x11
     - pango
     - startup-notification
+    - wayland
     - xcb-imdkit
     - xcb-util
     - xcb-util-cursor
     - xcb-util-keysyms
     - xcb-util-wm
+  provides:
+    - rofi-wayland
+  replaces:
+    - rofi-wayland
   source:
-    - git+https://github.com/davatorium/rofi.git#tag=1.7.9.1
+    - git+https://github.com/davatorium/rofi.git#tag=2.0.0
     - git+https://github.com/sardemff7/libgwater.git
     - git+https://github.com/sardemff7/libnkutils.git
     - fix_xfce4-terminal_binary_name.patch
   sha256sums:
-    - 068f0644da4c9a786ddc318733560c73239db6660d5c0df25f371a12e9ba5ebe
+    - 3ad746f25b373bfa2e49db20c5009ffd4d959dd113e47281e98e7132f7314ac8
     - SKIP
     - SKIP
-    - 2e49b4b5785cc6245c9eb9d8036b166b217051826609350d67fa2deeb5728564
+    - 0cd6f1360580f49647ceb7d169ab015f4998e778fd750ce3ad2e861f333824e3
 pkgname:
   - name: rofi
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
