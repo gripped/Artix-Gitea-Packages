@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.9.3-2
+    version: 0.9.4-2
     packages:
-      - aquamarine-0.9.3-2-x86_64.pkg.tar.zst
+      - aquamarine-0.9.4-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
