@@ -1,0 +1,37 @@
+---
+version: 3.0.2-1
+pkgbase:
+  name: python-webtest
+  pkgdesc: Helper to test WSGI applications
+  pkgver: 3.0.2
+  pkgrel: 1
+  url: https://docs.pylonsproject.org/projects/webtest/en/latest/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pyquery
+    - python-pastedeploy
+    - python-wsgiproxy2
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-webob
+    - python-beautifulsoup4
+    - python-waitress
+  optdepends:
+    - 'python-pyquery: for response.pyquery'
+    - 'python-lxml: for response.lxml'
+  source:
+    - git+https://github.com/Pylons/webtest.git#tag=3.0.2
+  sha512sums:
+    - e3e6648eec3fec7667d16772b0ffb15da00cc4e5e2387727e0e62e2c88c4558d41ed1afad07a47ce8946405ce5ce913e2eccb0de5620daf68a644bee58199a79
+pkgname:
+  - name: python-webtest
+# generated with artixpkg 0.37.4-1-any
