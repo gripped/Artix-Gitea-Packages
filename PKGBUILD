@@ -2,7 +2,7 @@
 
 pkgname=booster
 pkgver=0.12
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Fast and secure initramfs generator'
 arch=(x86_64)
 url='https://github.com/anatol/booster'
@@ -13,12 +13,19 @@ makedepends=(go ruby-ronn-ng)
 optdepends=(
   'busybox: to enable emergency shell at the boot time'
   'yubikey-personalization: for clevis Yubikey challenge-response support'
-  'libfido2: for udev with FIDO2'
+  'libfido2: for systemd-enroll with FIDO2'
 )
 backup=(etc/booster.yaml)
 provides=(initramfs)
-source=(booster-$pkgver.zip::https://github.com/anatol/booster/archive/$pkgver.zip)
-sha512sums=('c66f783b5c7569e18cb2bf3d66c089e129fb835e250feccb63e6772614e78144b2e422649a9744bf5cf42fbeb13d2004939d098974f446244b8b2ceca928776b')
+source=(booster-$pkgver.zip::https://github.com/anatol/booster/archive/$pkgver.zip
+        universal-img.patch)
+sha512sums=('c66f783b5c7569e18cb2bf3d66c089e129fb835e250feccb63e6772614e78144b2e422649a9744bf5cf42fbeb13d2004939d098974f446244b8b2ceca928776b'
+            '5bc0eb9c1273d1e5f0392abc1e7bee09b80ee528787798576bea9ad484dd11db0f48645cd158b7d2a8313bef24a28412eac7a42c6ea7cb35fc608d0df3b8ab2f')
+
+prepare() {
+  cd booster-$pkgver
+  patch -Np1 -i ../universal-img.patch
+}
 
 build() {
   cd booster-$pkgver
@@ -56,6 +63,7 @@ package() {
   install -Dp -m644 docs/manpage.1 "$pkgdir/usr/share/man/man1/booster.1"
   install -Dp -m755 init/init "$pkgdir/usr/lib/booster/init"
   install -Dp -m755 packaging/arch/regenerate_images "$pkgdir/usr/lib/booster/regenerate_images"
+  install -Dp -m755 packaging/arch/regenerate_uki "$pkgdir/usr/lib/booster/regenerate_uki"
 
   install -Dp -m644 packaging/arch/90-booster-install.hook "$pkgdir/usr/share/libalpm/hooks/90-booster-install.hook"
   install -Dp -m755 packaging/arch/booster-install "$pkgdir/usr/share/libalpm/scripts/booster-install"
