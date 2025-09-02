@@ -1,9 +1,9 @@
 ---
-version: 3.6.1-1
+version: 3.6.1-2
 pkgbase:
   name: gmic
   pkgver: 3.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gmic.eu/
   arch:
     - x86_64
@@ -59,4 +59,4 @@ pkgname:
       - libx11
       - qt6-base
       - zlib
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.3-1-any
