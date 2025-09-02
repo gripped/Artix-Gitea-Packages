@@ -1,0 +1,47 @@
+---
+version: 2.8.0-1
+pkgbase:
+  name: geoclue
+  pkgdesc: Modular geoinformation service built on the D-Bus messaging system
+  pkgver: 2.8.0
+  pkgrel: 1
+  url: https://gitlab.freedesktop.org/geoclue/geoclue/-/wikis/home
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - libnotify
+    - meson
+    - udev
+    - vala
+  depends:
+    - avahi
+    - gcc-libs
+    - glib2
+    - glibc
+    - json-glib
+    - libmm-glib
+    - libsoup3
+  optdepends:
+    - 'libnotify: Demo Agent'
+  provides:
+    - geoclue2=2.8.0-1
+  conflicts:
+    - geoclue2
+  replaces:
+    - geoclue2
+  backup:
+    - etc/geoclue/geoclue.conf
+  source:
+    - git+https://gitlab.freedesktop.org/geoclue/geoclue.git#tag=2.8.0
+  b2sums:
+    - 5995fad62e62c270622f32e9fa9ec089c78647c9d77ac173424dc00cb9c281bc6aac7f0f8a4851abac5fe341285fda9a8502d0444589074f2ddf25dd1ced71e1
+pkgname:
+  - name: geoclue
+# generated with artixpkg 0.37.3-1-any

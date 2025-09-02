@@ -2,7 +2,7 @@
 # Contributor: György Balló <ballogy@freestart.hu>
 
 pkgname=geoclue
-pkgver=2.7.2
+pkgver=2.8.0
 pkgrel=1
 pkgdesc="Modular geoinformation service built on the D-Bus messaging system"
 url="https://gitlab.freedesktop.org/geoclue/geoclue/-/wikis/home"
@@ -38,7 +38,7 @@ backup=(etc/geoclue/geoclue.conf)
 source=(
   "git+https://gitlab.freedesktop.org/geoclue/geoclue.git#tag=$pkgver"
 )
-b2sums=('e77c32743762d346e4decdf4893a9299db56f9ef98f7b17633464788ec04dda2d2cfe740192bfbce67acc2e207943ee1af6c723214d8d850cd849e380867e126')
+b2sums=('5995fad62e62c270622f32e9fa9ec089c78647c9d77ac173424dc00cb9c281bc6aac7f0f8a4851abac5fe341285fda9a8502d0444589074f2ddf25dd1ced71e1')
 
 
 prepare() {
@@ -49,6 +49,7 @@ build() {
   local meson_options=(
     -D dbus-sys-dir=/usr/share/dbus-1/system.d
     -D dbus-srv-user=geoclue
+    -D default-wifi-url="https://www.googleapis.com/geolocation/v1/geolocate?key=$_google_api_key"
   )
 
   artix-meson geoclue build "${meson_options[@]}"
@@ -61,9 +62,6 @@ check() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
-
-  echo 'u geoclue - "Geoinformation service" /var/lib/geoclue' |
-    install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/geoclue.conf"
 
   echo 'd /var/lib/geoclue 0755 geoclue geoclue' |
     install -Dm644 /dev/stdin "$pkgdir/usr/lib/tmpfiles.d/geoclue.conf"
