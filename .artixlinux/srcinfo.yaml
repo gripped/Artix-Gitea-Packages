@@ -1,10 +1,10 @@
 ---
-version: 3.6.1-1
+version: 3.6.1-2
 pkgbase:
   name: opensubdiv
   pkgdesc: An Open-Source subdivision surface library
   pkgver: 3.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://graphics.pixar.com/opensubdiv
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - afc30951642d978c7fd82549f0b03eae7dbf4f28642cf7e42e4a09ac550e111555c391f21dee239d5ee5522b758038d2cc7553fe2db818dad6dcf2ab5fd22358
 pkgname:
   - name: opensubdiv
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
