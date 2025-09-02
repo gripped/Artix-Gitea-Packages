@@ -3,13 +3,13 @@
 pkgname=lightdm-slick-greeter
 _pkgname=slick-greeter
 pkgver=2.2.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A slick-looking LightDM greeter'
 arch=('x86_64')
 url="https://github.com/linuxmint/slick-greeter"
 license=('GPL3')
 depends=('cairo' 'freetype2' 'gtk3' 'libcanberra' 'libxext' 'lightdm' 'pixman'
-         'python' 'xorg-server' 'xapp')
+         'python' 'x11win-server' 'xapp')
 optdepends=('numlockx: enable numerical keypad on supported keyboard')
 makedepends=('meson' 'intltool' 'vala' 'gnome-common')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/${pkgver}.tar.gz")

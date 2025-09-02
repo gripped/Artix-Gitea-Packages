@@ -1,10 +1,10 @@
 ---
-version: 2.2.2-1
+version: 2.2.2-1.1
 pkgbase:
   name: lightdm-slick-greeter
   pkgdesc: A slick-looking LightDM greeter
   pkgver: 2.2.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/linuxmint/slick-greeter
   arch:
     - x86_64
@@ -24,7 +24,7 @@ pkgbase:
     - lightdm
     - pixman
     - python
-    - xorg-server
+    - x11win-server
     - xapp
   optdepends:
     - 'numlockx: enable numerical keypad on supported keyboard'
@@ -36,4 +36,4 @@ pkgbase:
     - b4afe74dee3f0081778444f01eb9fca32baef91c09938e6783f5e8b9f2a4f991ebd6b876577e4ba8e1941b30268ebc013bae10fd169544ae657092cbd43140e3
 pkgname:
   - name: lightdm-slick-greeter
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
