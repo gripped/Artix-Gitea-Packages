@@ -1,10 +1,10 @@
 ---
-version: 0.4.1-23.4
+version: 0.4.1-23.5
 pkgbase:
   name: moksha
   pkgdesc: Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17
   pkgver: 0.4.1
-  pkgrel: 23.4
+  pkgrel: 23.5
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
@@ -71,7 +71,7 @@ pkgname:
       - moksha-arandr
       - moksha-help
       - desktop-file-utils
-      - xorg-server
+      - x11win-server
       - xorg-xinit
       - xsel
       - xclip
@@ -99,4 +99,4 @@ pkgname:
     depends:
       - moksha
       - pulseaudio
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
