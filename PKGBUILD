@@ -25,12 +25,6 @@ source=("git+https://github.com/seattlerb/hoe#tag=v${pkgver}")
 sha512sums=('5968deeb6a132625c02edf71823b5ae50f40fbd930193236b2d93af8e1c134add82041edd9a73b3d47448f9fa01b4cc6b2d3e7fb32bb1a9e0a267a8fdee51ed1')
 b2sums=('4fb2619bee7e08979a436c7b596ff2e9db2eda8a51eb288489ffcb1a76a484822f4d13510e874d4ef5fac9f2c0c27fcb01f143279fc4f16fd812b629f0e40177')
 
-pkgver() {
-  cd ${_gemname}
-
-  grep 'VERSION = "' lib/hoe.rb | sed --regexp-extended 's|.*"(.+)"|\1|'
-}
-
 build() {
   cd ${_gemname}
 
