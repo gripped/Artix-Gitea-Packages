@@ -1,0 +1,30 @@
+---
+version: 1.8.0-1
+pkgbase:
+  name: cni-plugins
+  pkgdesc: Some standard networking plugins, maintained by the CNI team
+  pkgver: 1.8.0
+  pkgrel: 1
+  url: https://github.com/containernetworking/plugins
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - go
+  depends:
+    - glibc
+  provides:
+    - container-network-stack=1
+  options:
+    - '!lto'
+    - emptydirs
+  source:
+    - https://github.com/containernetworking/plugins/archive/v1.8.0/plugins-v1.8.0.tar.gz
+  sha512sums:
+    - a2bf1bd2b87e2fda60329982aea4ccc4e80aff9e41de48501e72a09476e9c97132c77cf737b4c3b668383f398b9dee5f7574d2f300bfef10f15d7545cc06ab79
+  b2sums:
+    - 4d6192edd7613f61661d9216b2dd9a4277efceee0beaebb5116f7fd792e78a309cb87b96a638cb0f3735971e2a999b77cbf304bb22f9db2e07e31d6f4d7fe94f
+pkgname:
+  - name: cni-plugins
+# generated with artixpkg 0.37.4-1-any
