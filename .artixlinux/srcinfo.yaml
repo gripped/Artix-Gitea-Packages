@@ -1,0 +1,32 @@
+---
+version: 45-1
+pkgbase:
+  name: ngspice
+  pkgdesc: Mixed-level/Mixed-signal circuit simulator based on Spice3f5, Ciber1b1, and Xspice
+  pkgver: 45
+  pkgrel: 1
+  url: https://ngspice.sourceforge.net
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  depends:
+    - glibc
+    - libxt
+    - libx11
+    - ncurses
+    - gcc-libs
+    - readline
+    - libxaw
+  source:
+    - ngspice-45.tar.gz::https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/45/ngspice-45.tar.gz
+    - https://sourceforge.net/projects/ngspice/files/ng-spice-rework/45/ngspice-45-manual.pdf
+  sha512sums:
+    - a23f41e84d6662aeb33e025693ebf5d77fc430ef39a9c8221fabb825b9163a48815edc5de7aa22ec7a0222d00ba34da1e827a2ba74e88329df6d0bb192a57d17
+    - 425d9320a01d409c7baab83d111f92643cae7df62a109e06d7e4fd366262441f4fdd62532db63fb4d4af4cb98e478b4f9fca5bd6c63fb89507dba685220f34ab
+  b2sums:
+    - 3865a0da33c0aa245cf32c7e96157e80736d068a03711d1fb61ce0c869b59fdf0931e91de6640bc4cfd139188fcb9d4893ab0095b54d5fb87b77e5cdf7aff961
+    - d5163652c6e7e088d3d3a95494a088f394f0c8efd71e80f15ac0f1d3dd238f17b7104be45390de39bf9aa2d41f1677ea7979685471cf9deaafc934c2a531c67a
+pkgname:
+  - name: ngspice
+# generated with artixpkg 0.37.4-1-any
