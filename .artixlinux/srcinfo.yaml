@@ -1,0 +1,40 @@
+---
+version: 12.1.1-1
+pkgbase:
+  name: grafana
+  pkgdesc: Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB
+  pkgver: 12.1.1
+  pkgrel: 1
+  url: https://grafana.com/
+  install: grafana.install
+  arch:
+    - x86_64
+  license:
+    - AGPL
+    - Apache
+  makedepends:
+    - git
+    - go
+    - npm
+    - grunt-cli
+    - python
+    - nodejs-lts-jod
+    - yarn
+  depends:
+    - glibc
+    - freetype2
+    - fontconfig
+    - gsfonts
+  backup:
+    - etc/grafana.ini
+  source:
+    - git+https://github.com/grafana/grafana.git#tag=v12.1.1
+    - grafana.sysusers
+    - grafana.tmpfiles
+  sha512sums:
+    - d6052e269f1d2bae5b765a7e3b65dc283e7af30eb7e225029fccb25baecc3ac045de5ce1fb82fe556089bf2be79dcb4c1e5290a3f2fa6d411e9034a670d62773
+    - 38b46d953837a7afa5a654dfeef163b210d56cad57d937018531d00cd63b5341d6f9cd777299bdc7a994d0cb7df09b8157aad0f166e76ad47564e1ad6d5441d4
+    - c1724bfc7cbd6a406f17acb661efca0f1e57e2c30cc1841f4cb7ccfc420adc40cc61cb1c023d00444827b2c40e9caa4c2fefbfd503419848c74a0b455b2375ab
+pkgname:
+  - name: grafana
+# generated with artixpkg 0.37.4-1-any
