@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 5.91.0-1
+    version: 5.92.0-1
     packages:
-      - ruby-sequel-5.91.0-1-any.pkg.tar.zst
+      - ruby-sequel-5.92.0-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
