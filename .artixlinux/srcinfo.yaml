@@ -1,0 +1,32 @@
+---
+version: 3.6.1-1
+pkgbase:
+  name: ruby-redcarpet
+  pkgdesc: A fast, safe and extensible Markdown to (X)HTML parser
+  pkgver: 3.6.1
+  pkgrel: 1
+  url: https://github.com/vmg/redcarpet
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - tidy
+  makedepends:
+    - git
+    - ruby-rake
+    - ruby-rake-compiler
+    - ruby-rdoc
+    - ruby-test-unit
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/vmg/redcarpet.git#tag=v3.6.1
+  sha256sums:
+    - cf924803dcc2571e4a31ad684a5a290ef5e29e46fdaf291fe6caeadcacc6c440
+pkgname:
+  - name: ruby-redcarpet
+# generated with artixpkg 0.37.4-1-any
