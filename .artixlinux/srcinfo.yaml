@@ -1,10 +1,10 @@
 ---
-version: 2025.1.1-1
+version: 2025.1.1-2
 pkgbase:
   name: python-pycuda
   pkgdesc: Python wrapper for Nvidia CUDA
   pkgver: 2025.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://documen.tician.de/pycuda/
   arch:
     - x86_64
@@ -38,10 +38,13 @@ pkgbase:
     - pycuda-headers
   source:
     - pycuda-2025.1.1.tar.gz::https://github.com/inducer/pycuda/archive/refs/tags/v2025.1.1.tar.gz
+    - fix-cuda-13.patch
   sha512sums:
     - fb1710ea9a77ea70c9e6955e6db0a7cfea1f52db28fa0f48b17717d4fe3222d61d324879297cb34059a7c943bfb1faa02ebb935f4c8ffb800c7c8110088107db
+    - 2313c2a3c37dbac021fc9b16bc16b2469a6cc9c9c9401b9f826db1427dd8fe8c7081abef1bd4c6d3e309606adb322915a9c6c57b15dd76c481dce1195225477b
   b2sums:
     - 99c74e5d06b2917385beb64a594b95b5996aee90c585eb0c5f8640aac42a4a7e2e61840b4bd3820c980b05007b84f93f3c391928d449ea0d848365d28c754eb1
+    - 39a0e802b40e4e59f9099aa7abd6551f0d4308c4d3aad0d219f55a9ee8bfc2f1649be75ea0b1df80c4b6ea5ed4b155c5fe3159feb4bd98faa79fea2a5fd85a39
 pkgname:
   - name: python-pycuda
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
