@@ -1,0 +1,29 @@
+---
+version: 0.14.2-1
+pkgbase:
+  name: python-pytest-subtests
+  pkgdesc: unittest subTest() support and subtests fixture
+  pkgver: 0.14.2
+  pkgrel: 1
+  url: https://github.com/pytest-dev/pytest-subtests
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python-attrs
+    - python-pytest
+  source:
+    - git+https://github.com/pytest-dev/pytest-subtests.git#tag=v0.14.2
+  sha512sums:
+    - 6f1f8ac38e8f85619ac99538ca684a7344200f7394463a22245eb2b8ced750e5e9b749a64e367aeb933cf9905dd3ed86c357ad498419a9bf261cd9dd2af0b15e
+pkgname:
+  - name: python-pytest-subtests
+# generated with artixpkg 0.37.4-1-any
