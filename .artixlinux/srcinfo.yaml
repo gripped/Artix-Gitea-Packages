@@ -1,0 +1,38 @@
+---
+version: 3.4-14
+pkgbase:
+  name: distcc
+  pkgdesc: Distributed compilation service for C, C++ and Objective-C
+  pkgver: 3.4
+  pkgrel: 14
+  url: https://github.com/distcc/distcc
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - gtk3
+    - python-setuptools
+  depends:
+    - avahi
+    - popt
+    - python
+  optdepends:
+    - 'gtk3: for distccmon'
+  backup:
+    - etc/conf.d/distccd
+    - etc/distcc/hosts
+  source:
+    - git+https://github.com/distcc/distcc?signed#tag=v3.4
+    - distccd.conf.d
+    - sysusers.conf
+  validpgpkeys:
+    - 30782E2BE4EB9FD5B293D3DA6D100BF096B8A005
+  b2sums:
+    - 8843f1d2ad3cb8d761644ffd19fa2868843c2f0c6b3dc5471c88ed34de0425b78193a3f01539c5c581eaf7c947a39e87f2bace80571cc54e7e0201ad5004e3cc
+    - 60982843dc2dd42f0a461edda7df6966e5d7cae0088a942ecb473a8a47db65879d5b6025f5b1da621b1c43c92902dd29b9fa9e799853058e897d0e143e8b3537
+    - 69971bcf3577e1da86613e0f57d4923be627d2cc6227cd86fef3be4bbd2e688570005816e8ed2b909a4d3ff0a77fdccebaa3f74d000d65d67cd97ccd0a74a3bd
+pkgname:
+  - name: distcc
+# generated with artixpkg 0.37.4-1-any
