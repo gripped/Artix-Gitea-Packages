@@ -1,9 +1,9 @@
 ---
-version: 1:11.6.0-1
+version: 1:11.7.0-1
 pkgbase:
   name: libvirt
   pkgdesc: API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)
-  pkgver: 11.6.0
+  pkgver: 11.7.0
   pkgrel: 1
   epoch: 1
   url: https://libvirt.org/
@@ -118,13 +118,13 @@ pkgbase:
     - etc/logrotate.d/libvirtd.qemu
     - etc/sasl2/libvirt.conf
   source:
-    - git+https://gitlab.com/libvirt/libvirt.git#tag=v11.6.0
+    - git+https://gitlab.com/libvirt/libvirt.git#tag=v11.7.0
   sha256sums:
-    - 04665cf4965e1d28aec18b332b4675ec45c5762c7842c1254ff266cabd1a23f0
+    - 859b3b5a0a6e57b5d973fbf77c2683898b778a9745ab2b5c8fb2a8009a1373bc
 pkgname:
   - name: libvirt
     provides:
-      - libvirt=11.6.0
+      - libvirt=11.7.0
       - libvirt.so
       - libvirt-admin.so
       - libvirt-lxc.so
@@ -132,7 +132,7 @@ pkgname:
   - name: libvirt-storage-gluster
     pkgdesc: Libvirt Gluster storage backend
     depends:
-      - libvirt=11.6.0
+      - libvirt=11.7.0
       - gcc-libs
       - glib2
       - glibc
@@ -142,11 +142,11 @@ pkgname:
   - name: libvirt-storage-iscsi-direct
     pkgdesc: Libvirt iSCSI-direct storage backend
     depends:
-      - libvirt=11.6.0
+      - libvirt=11.7.0
       - gcc-libs
       - glib2
       - glibc
       - libiscsi
     optdepends: []
     backup: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
