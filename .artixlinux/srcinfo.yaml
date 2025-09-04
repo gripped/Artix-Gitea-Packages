@@ -1,0 +1,40 @@
+---
+version: 0.28.0-1
+pkgbase:
+  name: ruby-covered
+  pkgdesc: A modern approach to code coverage
+  pkgver: 0.28.0
+  pkgrel: 1
+  url: https://github.com/socketry/covered
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-decode
+    - ruby-minitest
+    - ruby-rspec
+    - ruby-sus
+    - ruby-xrb
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-console
+    - ruby-msgpack
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/socketry/covered.git#tag=v0.28.0
+  sha512sums:
+    - 2f3cbd60799dfbac6766e062ff9f1968ea4694f596e9450bbeb44264a9e05f60e0d6f507435a776d0f25af681d634e12be329cd667b527623bcf806a2e8e9aa8
+  b2sums:
+    - 3aef0da8f2f125d8ba36ed188f2f75710f65ef5072864f6485d50ee6759ffd3ab8010df82e1e3c94a1b0a4c0eec2bdb4280abd24384a3c47ca2eacc8277e7d4f
+pkgname:
+  - name: ruby-covered
+# generated with artixpkg 0.37.4-1-any
