@@ -59,4 +59,4 @@ pkgbase:
     - 21646ea5900340c1b0a69c79fc72b0d3e360d56e04dc0daf7947024a420d214a931365e684e8f7cfd37c959327e6909ad4c0d6c3a8186153bca870f508dad486
 pkgname:
   - name: sssd
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
