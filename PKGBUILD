@@ -26,12 +26,10 @@ optdepends=('curl: for REST'
 options=('!makeflags')
 validpgpkeys=('BF2384EC6938B9744B03E2A620E37C25995B4F85') # FreeRADIUS - Package Signing [...] <packages@freeradius.org>
 source=("https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${pkgver//./_}/freeradius-server-${pkgver}.tar.bz2"{,.sig}
-        'freeradius.service'
         'freeradius.sysusers'
         'freeradius.tmpfiles')
 sha256sums=('2c6483baeba65f939734473fafa31c4f727e8e139dd884563121412b6aba681b'
             'SKIP'
-            'ff9e31232122d2982fae5466969f45f9f46396c307754aa10b582e5cab19758f'
             '717e0cbf090d023dde5f8aba6850ce9b25da29aa28dd6b5b4f98535b5872f14f'
             'f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc')
 
