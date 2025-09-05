@@ -1,10 +1,10 @@
 ---
-version: 0.42.2-1
+version: 0.42.2-1.1
 pkgbase:
   name: kitty
   pkgdesc: Modern, hackable, featureful, OpenGL based terminal emulator
   pkgver: 0.42.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://sw.kovidgoyal.net/kitty/
   arch:
     - x86_64
@@ -90,4 +90,4 @@ pkgname:
       - ncurses
   - name: kitty-shell-integration
     pkgdesc: Shell integration scripts for kitty, an OpenGL-based terminal emulator
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

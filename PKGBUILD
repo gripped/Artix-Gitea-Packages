@@ -3,7 +3,7 @@
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
 pkgver=0.42.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Modern, hackable, featureful, OpenGL based terminal emulator"
 arch=(x86_64)
 url="https://sw.kovidgoyal.net/kitty/"
@@ -29,7 +29,7 @@ build() {
   export CGO_LDFLAGS="${LDFLAGS}"
   export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
 
-  python3 setup.py linux-package --update-check-interval=0 --systemd-library="/usr/lib/libelogind.so.0.30.0"
+  python3 setup.py linux-package --update-check-interval=0 --systemd-library="/usr/lib/libelogind.so"
 }
 
 package_kitty() {
