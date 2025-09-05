@@ -2,13 +2,13 @@
 
 pkgname=fvwm3
 pkgver=1.1.3
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="A highly customizable virtual desktop window manager with small memory footprint."
 arch=('x86_64')
 url="https://www.fvwm.org"
 license=('GPL' 'custom')
 depends=('x11win-server' 'xorg-xauth' 'xorg-xinit' 'libxcursor' 'libevent' 'libx11' 'libxft' 
-         'libxrender' 'libxt' 'python-xdg' 'libxrandr' 'libxpm'
+         'libxrender' 'libxt' 'python-xdg' 'libxrandr' 'libxpm' 'imagemagick'
          'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
 makedepends=('meson' 'cmake' 'go' 'xtrans' 'asciidoctor')
 optdepends=('asciidoctor: An implementation of AsciiDoc in Ruby'
