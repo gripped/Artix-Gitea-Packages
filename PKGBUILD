@@ -2,7 +2,7 @@
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=fastfetch
-pkgver=2.51.1
+pkgver=2.52.0
 pkgrel=1
 pkgdesc="A feature-rich and performance oriented neofetch like system information tool"
 url="https://github.com/fastfetch-cli/fastfetch"
@@ -30,7 +30,7 @@ optdepends=('chafa: Image output as ascii art'
             'xfconf: Needed for XFWM theme and XFCE Terminal font'
             'zlib: Faster image output when using kitty graphics protocol')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('38755082ff0f7123616b98de5f032de76d0cc5837b5204cf5c88ee6c52a77bf6')
+sha256sums=('6199c4cacc0b411fde7ec6c66d12829459284c6cdfb4bacce7b535190d5cd94c')
 
 build() {
         # Removed -DENABLE_SYSTEM_YYJSON='ON' to prevent build error with v2.51.1
