@@ -2,26 +2,18 @@
 
 pkgname=fvwm3
 pkgver=1.1.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A highly customizable virtual desktop window manager with small memory footprint."
 arch=('x86_64')
 url="https://www.fvwm.org"
 license=('GPL' 'custom')
-depends=('libevent' 'libx11' 'libxft' 'libxrender' 'libxt' 'python' 'libxrandr' 'libxpm'
+depends=('x11win-server' 'xorg-xauth' 'xorg-xinit' 'libxcursor' 'libevent' 'libx11' 'libxft' 
+         'libxrender' 'libxt' 'python' 'libxrandr' 'libxpm'
          'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
-makedepends=('meson' 'cmake' 'go' 'xtrans' 'librsvg' 'libxcursor' 'asciidoctor')
-optdepends=('freetype2: Font rasterization library'
-            'asciidoctor: An implementation of AsciiDoc in Ruby'
+makedepends=('meson' 'cmake' 'go' 'xtrans' 'asciidoctor')
+optdepends=('asciidoctor: An implementation of AsciiDoc in Ruby'
             'fribidi: A Free Implementation of the Unicode Bidirectional Algorithm'
-            'ncurses: System V Release 4.0 curses emulation library'
-            'libpng: A collection of routines used to create PNG format graphics files'
-            'readline: GNU readline library'
-            'librsvg: SVG rendering library'
-            'libsm: X11 Session Management library'
-            'libxcursor: X cursor management library'
-            'libxext: X11 miscellaneous extensions library'
             'libxi: X11 Input extension library'
-            'libxpm: X11 pixmap library'
             'sharutils: Makes so-called shell archives out of many files')
 options=('!emptydirs' '!makeflags')
 source=("https://github.com/fvwmorg/${pkgname}/archive/refs/tags/${pkgver}.tar.gz"
