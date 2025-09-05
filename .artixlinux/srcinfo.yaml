@@ -1,0 +1,31 @@
+---
+version: 0.15.0-1
+pkgbase:
+  name: python-xmltodict
+  pkgdesc: Python module that makes working with XML feel like you are working with JSON
+  pkgver: 0.15.0
+  pkgrel: 1
+  url: https://github.com/martinblech/xmltodict
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-nose
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-xmltodict::git+https://github.com/martinblech/xmltodict#tag=v0.15.0
+  sha512sums:
+    - 418f408573a9f8e80d973eb1ccbbbbc57653149e7ea45ac1089fdbd7b3b2385caec374a3810090b58d565ff9ec8fab1abc081ed2fd19c9410d5a10fddda5603a
+  b2sums:
+    - 2752607ecb9404e68c1a0aa169e72877497d7539cb56d0ecdfb2198fb3d85b813e1ec69cace713b0548af2b43057a52daa8c93bedbf9d5064843912921de36af
+pkgname:
+  - name: python-xmltodict
+# generated with artixpkg 0.37.4-1-any
