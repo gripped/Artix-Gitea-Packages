@@ -1,12 +1,13 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 
 pkgname=calligra
 pkgdesc='A set of applications for productivity and creative usage'
 pkgver=25.08.0
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url='https://www.calligra-suite.org/'
 license=(GPL-2.0-only)
