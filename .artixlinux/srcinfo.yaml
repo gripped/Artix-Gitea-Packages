@@ -1,0 +1,28 @@
+---
+version: 0.5.3-1
+pkgbase:
+  name: python-sqlparse
+  pkgdesc: Non-validating SQL parser for Python
+  pkgver: 0.5.3
+  pkgrel: 1
+  url: https://github.com/andialbrecht/sqlparse
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - python-setuptools
+    - python-flit-core
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-hatchling
+  depends:
+    - python
+  source:
+    - python-sqlparse-0.5.3.tar.gz::https://github.com/andialbrecht/sqlparse/archive/0.5.3.tar.gz
+  sha256sums:
+    - 86434381e1144b72a8b22860e00db95efaba34ebfeb07922686128c6a3bb652f
+pkgname:
+  - name: python-sqlparse
+# generated with artixpkg 0.37.4-1-any
