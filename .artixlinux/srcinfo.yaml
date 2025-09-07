@@ -1,9 +1,9 @@
 ---
-version: 25.8.1-1
+version: 25.8.1-2
 pkgbase:
   name: libreoffice-fresh
   pkgver: 25.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -162,6 +162,7 @@ pkgbase:
     - https://dev-www.libreoffice.org/extern/odfvalidator-1.2.0-incubating-SNAPSHOT-jar-with-dependencies-971c54fd38a968f5860014b44301872706f9e540.jar
     - https://dev-www.libreoffice.org/extern/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
     - libreoffice-24.8.4.2-icu76_fixes-1.patch
+    - fix_build_with_poppler_25.09.patch
     - soffice-template.desktop.in
     - libreoffice-fresh.sh
     - libreoffice-fresh.csh
@@ -195,6 +196,7 @@ pkgbase:
     - 984f2a479df79e27e7b01a5815ac53ae64e07746b882262d8a64566494515504
     - f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140
     - 5c67449d7f7d43b66063780650ebf8954e59164c38b36883078e36c11fde82de
+    - c20599b39a06e1c9aaf75a0cffdbcdbadf0d04f3df1f49fcfd35c2a3b5c81659
     - d0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879
     - 9fb33dbc3ffeb6af2ea7341b58242142d4eca903584c21c5f4b44ff27fbf5b5f
     - 512355b5ef646791089da8c2b35cf8b019673c0c8a58685962af3b5d9eb5d6bb
