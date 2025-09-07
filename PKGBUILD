@@ -13,7 +13,7 @@ pkgname=(
   rabbitmq
   rabbitmqadmin
 )
-pkgver=4.1.3
+pkgver=4.1.4
 pkgrel=1
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
@@ -56,7 +56,7 @@ source=(
   rabbitmq.tmpfiles
   rabbitmq.logrotate
 )
-sha512sums=('c4fcb7286e662349824817f6dc0db0f785c21d82c9b8354f24c93f9da76e9d2366840b6a97a723ef4fad60e352c3d88bbd2948520da75b6e1c1a1a00c6d156ef'
+sha512sums=('ad58c87bed59a1493fc125087706a2c68e19f6a5c53f7e515a61c194fa33b1dd369ff6d576cf6f9f631a4a499198a337c87cca3c2b52058f1acd9e1f6d99aab8'
             'a13f9c9d6fbff3b5356a2bf10f85cc9d44f991c8f145b57825f39119e65db7e06341d52f19f209d4968c33bed37b193996b321a0727364b79e7127fb70c74bd5'
             '8b841e28fa0a1424dd9e57c0988e015f3cd4cccef0f73ccdb7c7b66d11ca62ba8ef3a59c7ca5e5f0c9c9d8003ac72bf53785985d98aae867961787003286e179'
             '33c6af8810d8cbc479c63ed535de0a27b2e90eeed8fc9b39255683028478529a7e8953aa992f615d4101c6aefdc066f95c98fb9fb5bf1faf0ea327364101914c'
@@ -103,7 +103,6 @@ check() {
     metadata_store_phase1
     peer_discovery_dns
     peer_discovery_tmp_hidden_node
-    rabbit_access_control
     rabbit_confirms
     rabbit_cuttlefish
     rabbit_direct_reply_to_prop
