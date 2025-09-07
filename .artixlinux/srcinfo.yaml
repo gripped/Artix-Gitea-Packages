@@ -1,0 +1,32 @@
+---
+version: 0.6.0-1
+pkgbase:
+  name: python-pynvim
+  pkgdesc: Python client for Neovim
+  pkgver: 0.6.0
+  pkgrel: 1
+  url: https://github.com/neovim/pynvim
+  arch:
+    - any
+  license:
+    - Apache
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-wheel
+    - python-installer
+  depends:
+    - python
+    - python-msgpack
+    - python-greenlet
+  provides:
+    - python-neovim
+  replaces:
+    - python-neovim
+  source:
+    - python-pynvim-0.6.0.tar.gz::https://github.com/neovim/pynvim/archive/0.6.0.tar.gz
+  sha256sums:
+    - 6649d630ce4a94007fe69a8debb010c7b185057f36d61576d2542c90f3c8db99
+pkgname:
+  - name: python-pynvim
+# generated with artixpkg 0.37.4-1-any
