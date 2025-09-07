@@ -1,0 +1,34 @@
+---
+version: 2.2-2
+pkgbase:
+  name: python-copr
+  pkgdesc: Python interface for Copr
+  pkgver: 2.2
+  pkgrel: 2
+  url: https://github.com/fedora-copr/copr
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-filelock
+    - python-munch
+    - python-requests
+    - python-requests-gssapi
+    - python-requests-toolbelt
+  source:
+    - git+https://github.com/fedora-copr/copr.git#tag=copr-cli-2.2-1
+  sha512sums:
+    - 8778a4ddf16d187c4d8f8a66482ff5bf991af190b50ef00d6b35a5961308092b2f963bfd2554805fa5ac6d2c1b0aeea20fa15a481c9a12f05fcdc5483d3bb367
+pkgname:
+  - name: python-copr
+# generated with artixpkg 0.37.4-1-any
