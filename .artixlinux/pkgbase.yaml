@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  addRepo: lib32
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.67.0-1
+    version: 1.67.0-1.1
     packages:
-      - lib32-libnghttp2-1.67.0-1-x86_64.pkg.tar.zst
+      - lib32-libnghttp2-1.67.0-1.1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
