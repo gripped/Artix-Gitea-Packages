@@ -1,0 +1,35 @@
+---
+version: 1.10.0-1
+pkgbase:
+  name: python-gssapi
+  pkgdesc: Provides both low-level and high level wrappers around the GSSAPI C libraries
+  pkgver: 1.10.0
+  pkgrel: 1
+  url: https://github.com/pythongssapi/python-gssapi
+  arch:
+    - x86_64
+  license:
+    - ISC
+  checkdepends:
+    - python-k5test
+    - python-parameterized
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - krb5
+    - python
+    - python-decorator
+  source:
+    - https://github.com/pythongssapi/python-gssapi/archive/v1.10.0/python-gssapi-1.10.0.tar.gz
+  sha512sums:
+    - 6d4e400c675d441c9f5f203e7883a31ecc6bdc004743eb8fb437f55e6fb93be55c197dc2af6b85b515cb8458e6ba5f7af090659a8df7e336e9256a2dc8fa0a56
+  b2sums:
+    - c5c1e6b0972e0ea92ee6a98a7f1ea5833da125117c5c4ebba7c3123623679fe391d03e54bfdda559db2bab2e551a4644eddf108d142791f6097030341ce5b165
+pkgname:
+  - name: python-gssapi
+# generated with artixpkg 0.37.4-1-any
