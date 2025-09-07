@@ -1,9 +1,9 @@
 ---
-version: 1.3.1-1
+version: 1.3.2-1
 pkgbase:
   name: python-joserfc
   pkgdesc: Implementations of JOSE RFCs in Python
-  pkgver: 1.3.1
+  pkgver: 1.3.2
   pkgrel: 1
   url: https://github.com/authlib/joserfc
   arch:
@@ -25,11 +25,11 @@ pkgbase:
   optdepends:
     - 'python-pycryptodome: for draft RFCs'
   source:
-    - git+https://github.com/authlib/joserfc?signed#commit=1.3.1
+    - git+https://github.com/authlib/joserfc?signed#commit=1.3.2
   validpgpkeys:
     - 72F8E895A70CEBDF4F2ADFE07E55E3E0118B2B4C
   sha256sums:
-    - 2c92f9508e56d83eee34460f7a96c7bc4382e384c25322610bd2d20bc9917888
+    - 6835c907e5b113a58791399c0015d5b1c2a65c8e04573dedb10d2d3a9452e229
 pkgname:
   - name: python-joserfc
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
