@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.16-5
+    version: 0.16-6
     packages:
-      - calamares-extensions-0.16-5-x86_64.pkg.tar.zst
+      - calamares-extensions-0.16-6-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.16-4
