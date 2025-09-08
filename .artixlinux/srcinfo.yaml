@@ -1,9 +1,9 @@
 ---
-version: 2:2.12.r292.g73d1c959-1
+version: 2:2.12.r359.g19c698d12-1
 pkgbase:
   name: grub
   pkgdesc: GNU GRand Unified Bootloader (2)
-  pkgver: 2.12.r292.g73d1c959
+  pkgver: 2.12.r359.g19c698d12
   pkgrel: 1
   epoch: 2
   url: https://www.gnu.org/software/grub/
@@ -20,8 +20,10 @@ pkgbase:
     - gettext
     - git
     - help2man
+    - libusb
     - python
     - rsync
+    - sdl
     - texinfo
     - ttf-dejavu
     - xz
@@ -36,9 +38,11 @@ pkgbase:
     - 'freetype2: For grub-mkfont usage'
     - 'fuse3: For grub-mount usage'
     - 'libisoburn: Provides xorriso for generating grub rescue iso using grub-mkrescue'
+    - 'libusb: For grub-emu USB support'
     - 'lzop: For grub-mkrescue LZO support'
     - 'mtools: For grub-mkrescue FAT FS support'
     - 'os-prober: To detect other OSes when generating grub.cfg in BIOS systems'
+    - 'sdl: For grub-emu SDL support'
   provides:
     - grub-bios
     - grub-common
@@ -55,19 +59,18 @@ pkgbase:
     - grub-bios
     - grub-emu
     - grub-efi-x86_64
-  options:
-    - '!makeflags'
   backup:
     - etc/default/grub
     - etc/grub.d/40_custom
   source:
     - git+https://git.savannah.gnu.org/git/grub.git#tag=grub-2.12?signed
     - git+https://git.savannah.gnu.org/git/gnulib.git
-    - https://ftp.gnu.org/gnu/unifont/unifont-16.0.03/unifont-16.0.03.bdf.gz
-    - https://ftp.gnu.org/gnu/unifont/unifont-16.0.03/unifont-16.0.03.bdf.gz.sig
+    - https://ftp.gnu.org/gnu/unifont/unifont-16.0.04/unifont-16.0.04.bdf.gz
+    - https://ftp.gnu.org/gnu/unifont/unifont-16.0.04/unifont-16.0.04.bdf.gz.sig
     - 0001-00_header-add-GRUB_COLOR_-variables.patch
     - 0002-10_linux-detect-archlinux-initramfs.patch
     - 0003-support-dropins-for-default-configuration.patch
+    - 0004-po-Update-Translations-to-Build-with-Gettext-0.26.patch
     - grub.default
     - sbat.csv
   validpgpkeys:
@@ -77,13 +80,14 @@ pkgbase:
   b2sums:
     - a6cec7271c3ea54a99f02ee6bc0a5825c8be657af68ba9a32b39a5fe8bcb571fb1ba39210426f6bf6a48d913e6e00df37dc2123ea1b39330f4c47bd9dbac9ae3
     - SKIP
-    - b67b0b1fe896ed403b23ec34d929d95324ffb710467ffcd2f2292dedb652c097b941337d18621fa6a7f955e1331d552e14b3f71353f523b3846f433a645f9bcb
+    - b245a15d9dfab7f4e63bb32281909164d71d66e25c1ece2ceccbee5b2c1b00a46004c478a1b048c1b3efefd212a0b3f1a35a482fb12ef4489e7b7e09effd375a
     - SKIP
     - 992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b
     - b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3
     - a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c
+    - 7f41bb41548acae5283969f04ef5311d55de5343ee95ffcc903751d5e25cf5b187c8940de010dd53123086e76e147ba770173b03c36da97a413e9853c1a42ffe
     - cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc
     - e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a
 pkgname:
   - name: grub
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
