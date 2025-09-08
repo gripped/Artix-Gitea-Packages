@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: world
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,8 +51,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.17-1
+    packages:
+      - perl-cgi-fast-2.17-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 2.16-6

@@ -24,4 +24,4 @@ pkgbase:
     - 52c361eef4c730f787aacdafaebab71a7e4bca387c4b041f91d582a108609e5038fb38b98e4078228233d59a6b3cccf01cffd8efe8022f3f09bfdde7f37d40da
 pkgname:
   - name: perl-cgi-fast
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
