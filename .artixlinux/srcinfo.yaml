@@ -1,0 +1,27 @@
+---
+version: 2.048-1
+pkgbase:
+  name: perl-pdf-api2
+  pkgdesc: Faciliates the creation and modification of PDF files
+  pkgver: 2.048
+  pkgrel: 1
+  url: https://metacpan.org/release/PDF-API2
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - perl-test-exception
+    - perl-test-memory-cycle
+  depends:
+    - perl
+    - perl-font-ttf
+  options:
+    - '!emptydirs'
+  source:
+    - https://www.cpan.org/modules/by-module/PDF/PDF-API2-2.048.tar.gz
+  sha256sums:
+    - 369de1a4a5652899a39a45598326248d9c72f02c16812a50e868b7401f634d89
+pkgname:
+  - name: perl-pdf-api2
+# generated with artixpkg 0.37.4-1-any
