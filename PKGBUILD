@@ -17,11 +17,11 @@
 
 pkgname=go
 epoch=2
-pkgver=1.25.0
-pkgrel=1
+pkgver=1.25.1
+pkgrel=2
 pkgdesc='Core compiler tools for the Go programming language'
 arch=(x86_64)
-url='https://golang.org/'
+url='https://go.dev/'
 license=(BSD-3-Clause)
 makedepends=(git go)
 replaces=(go-pie)
@@ -29,7 +29,7 @@ provides=(go-pie)
 options=(!strip staticlibs)
 source=("https://go.dev/dl/go${pkgver}.src.tar.gz"{,.asc})
 validpgpkeys=('EB4C1BFD4F042F6DDDCCEC917721F63BD38B4796')
-sha256sums=('4bd01e91297207bfa450ea40d4d5a93b1b531a5e438473b2a06e18e077227225'
+sha256sums=('d010c109cee94d80efe681eab46bdea491ac906bf46583c32e9f0dbb0bd1a594'
             'SKIP')
 
 prepare() {
@@ -44,6 +44,9 @@ build() {
   export GOROOT_FINAL=/usr/lib/go
   export GOROOT_BOOTSTRAP=/usr/lib/go
 
+  # Disable dwarf5 until debugedit catches up
+  export GOEXPERIMENT=nodwarf5
+
   cd "$pkgname/src"
   ./make.bash -v
 }
@@ -52,7 +55,9 @@ check() {
   export GO_TEST_TIMEOUT_SCALE=3
 
   cd $pkgname/src
-  ./run.bash --no-rebuild -v -v -v -k
+  # TODO: Disable LSAN tests as it's crashing and we don't want to wait for upstream.
+  #       See: https://github.com/golang/go/issues/74476
+  ./run.bash --no-rebuild -v -v -v -k -run "!cmd/cgo/internal/testsanitizers"
 }
 
 package() {
