@@ -5,7 +5,7 @@
 
 pkgname=convertlit
 pkgver=1.8
-pkgrel=12
+pkgrel=13
 pkgdesc='An extractor/converter for .LIT eBooks'
 arch=(x86_64)
 url='http://www.convertlit.com/'
@@ -15,11 +15,13 @@ depends=(glibc
 source=(http://www.convertlit.com/clit18src.zip
         Wformat-security.patch)
 sha256sums=('d70a85f5b945104340d56f48ec17bcf544e3bb3c35b1b3d58d230be699e557ba'
-            '5875f296ba0316023a3281166683f99225c1ac8d0f94cd029cdec4772568c2a1')
+            '79c587cda8d7639f362d83756508af15f8e7b24c9388eebca2df6e3956544e3a')
 
 prepare() {
 # Fix build with -Wformat-security (Gentoo)
-  patch --binary -p1 < Wformat-security.patch
+  patch -p1 < Wformat-security.patch
+# Fix OOB array access
+  sed -e 's|\(dir_program\[MAX_PATH\)\(] = \)|\1-1\2|' -i clit18/clit.c
 # Link to shared libtommath and use system LDFLAGS
   sed -e 's|../libtommath-0.30/libtommath.a|/usr/lib/libtommath.so ${LDFLAGS}|' -i clit18/Makefile
 # Use system CFLAGS
