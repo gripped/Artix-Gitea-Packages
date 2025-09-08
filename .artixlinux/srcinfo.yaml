@@ -1,0 +1,30 @@
+---
+version: 3.20.2-1
+pkgbase:
+  name: dune
+  pkgdesc: A composable build system for OCaml (formerly jbuilder)
+  pkgver: 3.20.2
+  pkgrel: 1
+  url: https://github.com/ocaml/dune
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - ocaml
+    - ocaml-compiler-libs
+    - ocaml-csexp
+    - ocaml-pp
+    - ocaml-findlib
+  depends:
+    - glibc
+  optdepends:
+    - 'ocaml: Dune standard library'
+  source:
+    - git+https://github.com/ocaml/dune.git#tag=3.20.2
+  b2sums:
+    - e42172e2ba896bb034630604a1523836e74bb3c4d766039f0f07986ca58da2c29d30954d653fdbb501117c020645c0115664458047dc9de7e7413b455d3d5e95
+pkgname:
+  - name: dune
+# generated with artixpkg 0.37.4-1-any
