@@ -1,10 +1,10 @@
 ---
-version: 0.16-4
+version: 0.16-5
 pkgbase:
   name: calamares-extensions
   pkgdesc: Distribution-independent installer framework extensions
   pkgver: 0.16
-  pkgrel: 4
+  pkgrel: 5
   url: https://gitea.artixlinux.org/artix/calamares-extensions
   arch:
     - x86_64
@@ -27,7 +27,7 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - git+https://gitea.artixlinux.org/artix/calamares-extensions.git#commit=91712d4f3b8ae81e3c5bfe51b92a7a1241746258
+    - git+https://gitea.artixlinux.org/artix/calamares-extensions.git#commit=1286782422912df3ff1efeca7c5f6582384398e7
   sha256sums:
     - SKIP
 pkgname:
@@ -41,4 +41,4 @@ pkgname:
       - qt6-declarative
       - calamares
       - kdialog
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
