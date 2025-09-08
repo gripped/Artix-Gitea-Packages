@@ -24,7 +24,7 @@ source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver/archi
         "${pkgname}.profile.gz"
         "${pkgname}.hook"
         "${pkgname}.install"
-        "2a5d4c8.patch"::"https://github.com/dbeaver/dbeaver/commit/2a5d4c8dbdbdf8a85bd47265f29642519ad6b25e.diff"
+        "2a5d4c8-nocache.patch"::"https://github.com/dbeaver/dbeaver/commit/2a5d4c8dbdbdf8a85bd47265f29642519ad6b25e.diff"
         "c15e81f.patch"::"https://github.com/dbeaver/dbeaver/commit/c15e81f007bcd9f3b2355728d0eaf7906d4ef125.diff")
 sha256sums=('90b470e819b723b4461ddac395bba74dedd53103f5dd534cf6bb35b862c7cc10'
             '1015f173777a094ea4afef6cfd8ddee76910a0599d7e036019563e402a6eb785'
@@ -52,7 +52,7 @@ prepare() {
   cd "${srcdir}/${pkgname}-${pkgver}"
 
   # Backport fixes
-  patch -p1 -i "${srcdir}/2a5d4c8.patch"
+  patch -p1 -i "${srcdir}/2a5d4c8-nocache.patch"
   patch -p1 -i "${srcdir}/c15e81f.patch"
   # Download dependencies during prepare FS#55873
   # https://bugs.archlinux.org/task/55873
