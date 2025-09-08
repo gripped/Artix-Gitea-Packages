@@ -1,10 +1,10 @@
 ---
-version: 6.16.0-1
+version: 6.16.0-2
 pkgbase:
   name: xfsprogs
   pkgdesc: XFS filesystem utilities
   pkgver: 6.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://xfs.wiki.kernel.org
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 47052924eba71ee438a1bdbcfd031627d7477a6f9133893053545231b772c27b5221bc324d93171eefcb2e0ce8f1d86bd7183e0763a259b8269dee86db281c48
 pkgname:
   - name: xfsprogs
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
