@@ -23,7 +23,7 @@ SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
 path = [
-    "0001-meson-Build-fixes.patch",
+    "*.patch",
 ]
-SPDX-FileCopyrightText = "libxml2-legacy contributors"
+SPDX-FileCopyrightText = "libxml2 contributors"
 SPDX-License-Identifier = "MIT"
