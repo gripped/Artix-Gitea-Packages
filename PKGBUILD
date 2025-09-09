@@ -6,7 +6,7 @@
 pkgname=libxmlrpc
 # latest release from https://sourceforge.net/projects/xmlrpc-c/files/Xmlrpc-c%20Super%20Stable/
 pkgver=1.59.03
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc='XML-RPC for C and C++'
 arch=(x86_64)
@@ -29,6 +29,7 @@ prepare() {
   cd xmlrpc-c-$pkgver
 
   patch -p1 -i ../xmlrpc-c-1.59.03-use-system-expat.patch
+  patch -p1 -i ../xmlrpc-c-1.51.06-pkg-config-libxml2.patch
 }
 
 build() {
@@ -39,7 +40,7 @@ build() {
     --disable-libwww-client \
     --disable-wininet-client \
     --enable-cplusplus \
-    --disable-libxml2-backend \
+    --enable-libxml2-backend \
     --mandir=/usr/share/man \
     --prefix=/usr
 
@@ -63,4 +64,3 @@ package() {
   # Custom license
   install -Dm644 doc/COPYING "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-

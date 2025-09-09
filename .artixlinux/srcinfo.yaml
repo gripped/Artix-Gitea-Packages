@@ -1,10 +1,10 @@
 ---
-version: 1:1.59.03-3
+version: 1:1.59.03-4
 pkgbase:
   name: libxmlrpc
   pkgdesc: XML-RPC for C and C++
   pkgver: 1.59.03
-  pkgrel: 3
+  pkgrel: 4
   epoch: 1
   url: https://xmlrpc-c.sourceforge.net/
   arch:
@@ -36,4 +36,4 @@ pkgbase:
     - 498c4654bf5733b2457d5c156f46504dcadaa1befa4e4ff51bd014c4a529f2d3ea76ccc3dc5f0b30f7b6ff32f827148ae9827eca4041c07d8a8b71316cecae27
 pkgname:
   - name: libxmlrpc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
