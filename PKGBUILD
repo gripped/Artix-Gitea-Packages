@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=ttf-roboto-mono
@@ -39,3 +38,4 @@ package() {
 	install -Dm0644 -t "$pkgdir/usr/share/fonts/TTF/" "$srcdir/"*.ttf
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" OFL.txt
 }
+

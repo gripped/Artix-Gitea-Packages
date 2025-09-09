@@ -36,4 +36,4 @@ pkgbase:
     - 78b05d06047962c6ba4cb6a8301acca3986ca7d51e4d34a67e4fd82e6e515617
 pkgname:
   - name: ttf-roboto-mono
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
