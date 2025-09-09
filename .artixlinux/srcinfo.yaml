@@ -1,10 +1,10 @@
 ---
-version: 5.2.11-2
+version: 5.2.11-2.1
 pkgbase:
   name: krita
   pkgdesc: Edit and paint images
   pkgver: 5.2.11
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://krita.org
   arch:
     - x86_64
@@ -89,4 +89,4 @@ pkgbase:
     - bb3b503993030bb98a99c6a0376c65ee74d0c32c1e8932110698682eed1e3d3c
 pkgname:
   - name: krita
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
