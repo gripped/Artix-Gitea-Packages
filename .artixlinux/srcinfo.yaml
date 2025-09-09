@@ -1,10 +1,10 @@
 ---
-version: 5.15.17+kde+r123-1
+version: 5.15.17+kde+r123-2
 pkgbase:
   name: qt5-base
   pkgdesc: A cross-platform application and UI framework
   pkgver: 5.15.17+kde+r123
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -33,6 +33,7 @@ pkgbase:
     - xcb-util-renderutil
     - libgl
     - fontconfig
+    - harfbuzz
     - xdg-utils
     - shared-mime-info
     - xcb-util-wm
@@ -77,6 +78,7 @@ pkgname:
       - xcb-util-renderutil
       - libgl
       - fontconfig
+      - harfbuzz
       - xdg-utils
       - shared-mime-info
       - xcb-util-wm
@@ -100,4 +102,4 @@ pkgname:
       - qt5-base=5.15.17+kde+r123
     optdepends: []
     conflicts: []
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
