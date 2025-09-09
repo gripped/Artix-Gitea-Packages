@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.11-1
+    version: 2.11-2
     packages:
-      - fop-2.11-1-any.pkg.tar.zst
+      - fop-2.11-2-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
