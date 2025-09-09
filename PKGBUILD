@@ -2,11 +2,11 @@
 # Contributor: Markus Näther <naether.markus@gmail.com>
 # Contributor: Lubosz Sarnecki <lubosz@gmail.com>
 pkgname=rocblas
-pkgver=6.4.1
-pkgrel=1
+pkgver=6.4.3
+pkgrel=3
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
-url='https://rocblas.readthedocs.io/en/latest'
+url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
 license=('MIT')
 depends=(
   'rocm-core'
@@ -36,9 +36,9 @@ _rocblas='https://github.com/ROCm/rocBLAS'
 _tensile='https://github.com/ROCm/Tensile'
 source=("$pkgname-$pkgver.tar.gz::$_rocblas/archive/refs/tags/rocm-$pkgver.tar.gz"
         "$pkgname-tensile-$pkgver.tar.gz::$_tensile/archive/refs/tags/rocm-$pkgver.tar.gz")
-sha256sums=('517950ff6b3715dee8b2bcfbdd3968c65e1910e4b8e353e148574ae08aa6dc73'
-            'f96fe39fbb0d43e39b258b21d66234abf3248f8cfa6954f922618d4bb7d04c74')
-options=(!lto)
+sha256sums=('754dcc88b30468a2293d2406d7fe40f78dc92dd77c193758f937532217ecdad3'
+            '0190bfc7050c6ea73fb20ce4d35a056644e129f792f3b016b079ee6cc237a598')
+options=(!strip)
 _dirname="$(basename "$_rocblas")-$(basename "${source[0]}" ".tar.gz")"
 _tensile_dir="$(basename "$_tensile")-$(basename "${source[1]}" ".tar.gz")"
 
@@ -53,7 +53,7 @@ build() {
     -Wno-dev
     -S "$_dirname"
     -B build
-    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_BUILD_TYPE=RelWithDebInfo
     -D CMAKE_C_COMPILER=/opt/rocm/lib/llvm/bin/amdclang
     -D CMAKE_CXX_COMPILER=/opt/rocm/lib/llvm/bin/amdclang++
     -D CMAKE_TOOLCHAIN_FILE=toolchain-linux.cmake
