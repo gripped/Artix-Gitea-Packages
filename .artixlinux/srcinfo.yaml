@@ -1,9 +1,9 @@
 ---
-version: 4.0.27-1
+version: 5.0.0-1
 pkgbase:
   name: groovy
   pkgdesc: Programming language for the Java platform, inspired by Python, Ruby and Smalltalk
-  pkgver: 4.0.27
+  pkgver: 5.0.0
   pkgrel: 1
   url: https://groovy-lang.org/
   arch:
@@ -17,16 +17,16 @@ pkgbase:
   optdepends:
     - 'groovy-docs: html and pdf documentation for Groovy'
   source:
-    - https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-4.0.27.zip
-    - https://downloads.apache.org/groovy/4.0.27/distribution/apache-groovy-binary-4.0.27.zip.asc
+    - https://groovy.jfrog.io/artifactory/dist-release-local/groovy-zips/apache-groovy-binary-5.0.0.zip
+    - https://downloads.apache.org/groovy/5.0.0/distribution/apache-groovy-binary-5.0.0.zip.asc
   validpgpkeys:
     - 34441E504A937F43EB0DAEF96A65176A0FB1CD0B
   sha256sums:
-    - bc917c8bb01b2832f124a7bd63a3c72ba5e83ef7f056650dfd9a2f7944960685
+    - 7cacb815c96252494ca4b9a6889936fe59680a3c2ee1569b252546a991a9855c
     - SKIP
   b2sums:
-    - b232857ee040cfe7effd99a337ad877485e19d7dc4c530cf48d5819dd24b417d2d250ff5598deea79edcd89f483eb577993c234d1f2f8d5a25193269bfe1b714
+    - 51d0abfee17304ea01168553d113f2c90c2cdb534c7564af59c9e039834dbd8deba420c98f020ab7f36be57517f4f0f4d0e5e16fef5c602a9e22050ab6be5458
     - SKIP
 pkgname:
   - name: groovy
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
