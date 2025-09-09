@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 3.1.1-1
+    version: 3.1.2-1
     packages:
-      - lib32-libjpeg-turbo-3.1.1-1-x86_64.pkg.tar.zst
+      - lib32-libjpeg-turbo-3.1.2-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
