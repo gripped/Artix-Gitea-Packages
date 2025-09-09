@@ -1,0 +1,65 @@
+---
+version: 1.12.2-3
+pkgbase:
+  name: vigra
+  pkgdesc: Computer vision library
+  pkgver: 1.12.2
+  pkgrel: 3
+  url: https://ukoethe.github.io/vigra
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-nose
+  makedepends:
+    - boost
+    - cmake
+    - fftw
+    - hdf5
+    - imath
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - openexr
+    - python-h5py
+    - python-matplotlib
+    - python-numpy
+    - python-scipy
+    - zlib
+  source:
+    - https://github.com/ukoethe/vigra/archive/Version-1-12-2/vigra-Version-1-12-2.tar.gz
+    - vigra-openexr3.patch
+  sha256sums:
+    - e927477a8a0bcdabcaab914e425782f7eba82711dbaca02538dfda79476f6b7e
+    - 2572717e39f916c7c463b8f49306b683c5923906be2721f7da181c58b3a2b34b
+pkgname:
+  - name: vigra
+    depends:
+      - gcc-libs
+      - glibc
+      - hdf5
+      - imath
+      - libjpeg-turbo
+      - libpng
+      - libtiff
+      - openexr
+      - zlib
+    optdepends:
+      - 'python: for vigra-config'
+      - 'python-vigra: for Python bindings'
+  - name: python-vigra
+    pkgdesc: Computer vision library - Python bindings
+    depends:
+      - boost-libs
+      - fftw
+      - gcc-libs
+      - glibc
+      - hdf5
+      - python
+      - python-h5py
+      - python-matplotlib
+      - python-numpy
+      - python-scipy
+      - vigra
+# generated with artixpkg 0.37.4-1-any
