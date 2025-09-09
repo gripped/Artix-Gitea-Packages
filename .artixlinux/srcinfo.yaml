@@ -1,9 +1,9 @@
 ---
-version: 6.4.1-1
+version: 6.4.3-1
 pkgbase:
   name: python-tensile
   pkgdesc: benchmark-driven backend libraries for general matrix-matrix multiplications
-  pkgver: 6.4.1
+  pkgver: 6.4.3
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/Tensile/en/latest/
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - python-pyaml
     - python-joblib
   source:
-    - python-tensile-6.4.1.tar.gz::https://github.com/ROCm/Tensile/archive/refs/tags/rocm-6.4.1.tar.gz
+    - python-tensile-6.4.3.tar.gz::https://github.com/ROCm/Tensile/archive/refs/tags/rocm-6.4.3.tar.gz
   sha256sums:
-    - f96fe39fbb0d43e39b258b21d66234abf3248f8cfa6954f922618d4bb7d04c74
+    - 0190bfc7050c6ea73fb20ce4d35a056644e129f792f3b016b079ee6cc237a598
 pkgname:
   - name: python-tensile
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
