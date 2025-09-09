@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.051-4
+    version: 0.052-1
     packages:
-      - perl-glib-object-introspection-0.051-4-x86_64.pkg.tar.zst
+      - perl-glib-object-introspection-0.052-1-x86_64.pkg.tar.zst
     debug: []
