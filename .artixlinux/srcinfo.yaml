@@ -1,10 +1,10 @@
 ---
-version: 0.202.8-1
+version: 0.202.8-2
 pkgbase:
   name: zed
   pkgdesc: A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
   pkgver: 0.202.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://zed.dev
   arch:
     - x86_64
@@ -33,6 +33,7 @@ pkgbase:
     - libxkbcommon-x11
     - nodejs>=18
     - netcat
+    - npm
     - openssl
     - libcrypto.so
     - libssl.so
