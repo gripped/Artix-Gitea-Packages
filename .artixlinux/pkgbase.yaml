@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 0.5.10-1
+    version: 0.5.11-1
     packages:
-      - lib32-libproxy-0.5.10-1-x86_64.pkg.tar.zst
+      - lib32-libproxy-0.5.11-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
