@@ -15,7 +15,7 @@ pkgbase:
   depends:
     - sh
   source:
-    - git+https://github.com/danielrobbins/keychain#tag=2.9.6
+    - keychain2::git+https://github.com/danielrobbins/keychain#tag=2.9.6
   sha256sums:
     - ecdef486ba0a1d976dcdad7b4e0f088ff4675b7518294bf9d595eb8446b76729
 pkgname:

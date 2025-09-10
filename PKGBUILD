@@ -10,16 +10,16 @@ url='https://www.funtoo.org/Keychain'
 license=(GPL-2.0-only)
 depends=(sh)
 makedepends=(git)
-source=(git+https://github.com/danielrobbins/keychain#tag=$pkgver)
+source=(keychain2::git+https://github.com/danielrobbins/keychain#tag=$pkgver)
 sha256sums=('ecdef486ba0a1d976dcdad7b4e0f088ff4675b7518294bf9d595eb8446b76729')
 
 build() {
-  cd $pkgname
+  cd keychain2
   make
 }
 
 package() {
-  cd $pkgname
+  cd keychain2
   install -Dm755 keychain "$pkgdir"/usr/bin/keychain
   install -Dm644 keychain.1 "$pkgdir"/usr/share/man/man1/keychain.1
 }
