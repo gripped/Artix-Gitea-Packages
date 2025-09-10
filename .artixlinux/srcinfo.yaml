@@ -1,15 +1,15 @@
 ---
-version: 0.7.6.121130-4
+version: 0.7.6.121130-5
 pkgbase:
   name: gts
   pkgdesc: Provides useful functions to deal with 3D surfaces meshed with interconnected triangles
   pkgver: 0.7.6.121130
-  pkgrel: 4
+  pkgrel: 5
   url: http://gts.sourceforge.net/
   arch:
     - x86_64
   license:
-    - LGPL
+    - LGPL-3.0-or-later
   depends:
     - glib2
     - netpbm
