@@ -1,55 +1,61 @@
 ---
-pkgbase:
-  name: syslinux
-  version: 6.04.pre3.r3.g05ac953c-3
-  arch:
-    - x86_64
-  pkgname:
-    - syslinux
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 6.04.pre3.r3.g05ac953c-4
+    packages:
+      - syslinux-6.04.pre3.r3.g05ac953c-4-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 6.04.pre3.r3.g05ac953c-3
     packages:
       - syslinux-6.04.pre3.r3.g05ac953c-3-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: system
