@@ -1,0 +1,28 @@
+---
+version: 1:6.15-1
+pkgbase:
+  name: ethtool
+  pkgdesc: Utility for controlling network drivers and hardware
+  pkgver: 6.15
+  pkgrel: 1
+  epoch: 1
+  url: https://www.kernel.org/pub/software/network/ethtool/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  depends:
+    - glibc
+    - libmnl
+  source:
+    - https://www.kernel.org/pub/software/network/ethtool/ethtool-6.15.tar.xz
+    - https://www.kernel.org/pub/software/network/ethtool/ethtool-6.15.tar.sign
+  validpgpkeys:
+    - CE4A4D080F0D304F23B9EBDD972D5BF4DC613806
+    - D2CB120AB45957B721CD9596F4554567B91DE934
+  sha256sums:
+    - 9477c365114d910120aaec5336a1d16196c833d8486f7c6da67bedef57880ade
+    - SKIP
+pkgname:
+  - name: ethtool
+# generated with artixpkg 0.37.4-1-any
