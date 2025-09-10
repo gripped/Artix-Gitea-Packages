@@ -6,7 +6,7 @@ pkgbase=lib32-p11-kit
 pkgname=(
   lib32-p11-kit
 )
-pkgver=0.25.5
+pkgver=0.25.6
 pkgrel=1
 pkgdesc="Loads and enumerates PKCS#11 modules (32-bit library)"
 url="https://p11-glue.freedesktop.org"
@@ -19,16 +19,17 @@ depends=(
   libp11-kit
 )
 makedepends=(
+  git
   meson
-
 )
 checkdepends=(
   lib32-gnutls
 )
 source=(
-  https://github.com/p11-glue/p11-kit/releases/download/$pkgver/p11-kit-$pkgver.tar.xz{,.sig}
+  "git+https://github.com/p11-glue/p11-kit?signed#tag=$pkgver"
+  git+https://github.com/p11-glue/pkcs11-json
 )
-b2sums=('96d6a9c2807586abafae4da4df89f566672733963997d6a83e00aaf83a7a0c0e2995638f505e98fb87a90c60bde28814f1e8b7d5071bf0af96bb0467105a1ddc'
+b2sums=('ef27c6dd2cd60881b185e1d05a46a9799cda8ebb86407ae9264d7173b2b686c757de91e3463babfeda5307adcb452d7e67e22b5c1a8df1613a5e176d0a2ee913'
   'SKIP')
 validpgpkeys=(
   C0F67099B808FB063E2C81117BFB1108D92765AF # Stef Walter <stef@thewalter.net>
@@ -37,7 +38,11 @@ validpgpkeys=(
 )
 
 prepare() {
-  cd p11-kit-$pkgver
+  cd p11-kit
+
+  git submodule init
+  git submodule set-url subprojects/pkcs11-json "$srcdir/pkcs11-json"
+  git -c protocol.file.allow=always -c protocol.allow=never submodule update
 }
 
 build() {
@@ -48,7 +53,7 @@ build() {
     -D trust_paths=/etc/ca-certificates/trust-source:/usr/share/ca-certificates/trust-source
   )
 
-  artix-meson p11-kit-$pkgver build "${meson_options[@]}"
+  artix-meson p11-kit build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -63,7 +68,7 @@ package_lib32-p11-kit() {
 
   rm -r "$pkgdir"/{etc,usr/{bin,include,lib,share}}
 
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 p11-kit-$pkgver/COPYING
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 p11-kit/COPYING
 }
 
 # vim:set sw=2 sts=-1 et:
