@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: baloo-widgets
   pkgdesc: Widgets for Baloo
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -26,15 +26,15 @@ pkgbase:
     - kwidgetsaddons
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/baloo-widgets-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/baloo-widgets-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/baloo-widgets-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/baloo-widgets-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - c77e3a761db3cfc13c96a1436bf6d733965142bad30e89001c979119bb8ebb24
+    - 864d76546dad21cefb68f761504dc89bbfe2b24fc403ed3589fa609ba87655f1
     - SKIP
 pkgname:
   - name: baloo-widgets
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
