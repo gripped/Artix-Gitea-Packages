@@ -1,0 +1,43 @@
+---
+version: 4.2.8-1
+pkgbase:
+  name: jasper
+  pkgdesc: Software-based implementation of the codec specified in the emerging JPEG-2000 Part-1 standard
+  pkgver: 4.2.8
+  pkgrel: 1
+  url: https://www.ece.uvic.ca/~frodo/jasper/
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-JasPer2.0
+  makedepends:
+    - cmake
+    - doxygen
+    - freeglut
+    - glibc
+    - glu
+    - libjpeg-turbo
+    - libxmu
+  source:
+    - https://github.com/mdadams/jasper/archive/version-4.2.8/jasper-4.2.8.tar.gz
+  sha512sums:
+    - 57d33b988f92a0aa2b30af983280c2210f4ed9548dc8a38ed34fce76698489ed37d05b11b1aa92d9c4d0223deb306fbbb11900b696ba080926d4aaf2b62b2740
+  b2sums:
+    - 3862776b942caebb3048f3404a7bee8d55779da3bf958c742dd7eeb4be2f4a14fa2f7cd78131101595ae096b83dd90fdcff5afa5141271a95524a632a753a15b
+pkgname:
+  - name: jasper
+    depends:
+      - freeglut
+      - glibc
+      - glu
+      - libglvnd
+      - libjpeg-turbo
+    optdepends:
+      - 'jasper-doc: documentation'
+    provides:
+      - libjasper.so
+  - name: jasper-doc
+    pkgdesc: Software-based implementation of the codec specified in the emerging JPEG-2000 Part-1 standard (documentation)
+    optdepends:
+      - jasper
+# generated with artixpkg 0.37.4-1-any
