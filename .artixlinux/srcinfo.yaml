@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: incidenceeditor
   pkgdesc: KDE PIM incidence editor
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -47,15 +47,15 @@ pkgbase:
     - pimcommon
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/incidenceeditor-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/incidenceeditor-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/incidenceeditor-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/incidenceeditor-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - b2bd46fa8138da29d61810f4e283ff9a436c96e7e87acf52491112486d328b25
+    - e15675399975b73617af51b7ad5ca07f105908d2abeda8627e7ec1bdc3e40bd5
     - SKIP
 pkgname:
   - name: incidenceeditor
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
