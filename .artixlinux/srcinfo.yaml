@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: libkexiv2
   pkgdesc: A library to manipulate pictures metadata
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -20,14 +20,14 @@ pkgbase:
     - glibc
     - exiv2
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/libkexiv2-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/libkexiv2-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/libkexiv2-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/libkexiv2-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9bb4e5858f35d0dba813ade3c0ff6e7fe750b0930d60a7f4609b48c9563d45eb
+    - 950b39d142bdfdcf34c399ec936fb9930eec4b86223d7ee17c10313597746b8a
     - SKIP
 pkgname:
   - name: libkexiv2
@@ -44,4 +44,4 @@ pkgname:
       - qt5-base
     conflicts:
       - libkexiv2<24
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
