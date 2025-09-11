@@ -28,4 +28,4 @@ pkgbase:
     - 72a160498f97565d694c740901fbfa320f6fad7db4a8e946ccd5352c9472c556
 pkgname:
   - name: s2n-tls
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.1-1-any
