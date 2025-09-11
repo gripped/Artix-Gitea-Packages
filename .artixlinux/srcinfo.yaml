@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: grantleetheme
   pkgdesc: Library for Grantlee theming support
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -30,15 +30,15 @@ pkgbase:
     - kxmlgui
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/grantleetheme-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/grantleetheme-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/grantleetheme-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/grantleetheme-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - e2b457a7d408be3dc56a7db0dc970937d4509acc3234928dc355142a6bab4fd9
+    - f19d9ae2c4ba23a330a3dceac72ab7f18566534b40879e543c5ec6c72ad7e7f1
     - SKIP
 pkgname:
   - name: grantleetheme
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
