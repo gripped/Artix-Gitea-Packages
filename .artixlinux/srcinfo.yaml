@@ -35,4 +35,4 @@ pkgbase:
     - 18b206958a945e47aa88e3097dfbc3ec960d163a26e4f23f2b239e58f2f4f71841b5e8cd5bac646e4adb8d37e60b232580edcc8a91bcc44b4a1f9a15ebfa2872
 pkgname:
   - name: calf
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.1-1-any
