@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=waterfox
-pkgver=6.6.2
+pkgver=6.6.3
 pkgrel=1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
@@ -285,7 +285,7 @@ EOT
         fi
 }
 
-b2sums=('1eb5b323dbf8250e97c2657a1a3256e17ba790d2af49617e465fad537645da1b7f488ba9cc86f4a2c0384ae0999fdaf903c0d6f4c73053ecd2474d75c3fe7e6e'
+b2sums=('0cff64f9ae50e011f7a5226c20f647c80f063e84ccdeb3656e931d4d1037d3f56896de01f53d9465fca217ce8da827f28b1bf0cd74d0b49c55c79426c53213cf'
         'ada6eb3e1bcff08170852b011648cbf934c98362b505e139986c675da2499785da60ecaedaf933fc413703ac985bd12ea67e35acc74297de447265e9832d1f4b'
         '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
         '164844bacff82d9c6431c55ab078725e8e23ff0dc67bf079d56a5696f70b54ca81ec27e5a37acb336b52048c956cd39db087ac060414a1863d8ef3c47120df67'
