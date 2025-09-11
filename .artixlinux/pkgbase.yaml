@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: par2cmdline
-  version: 1.0.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - par2cmdline
 actions:
   addRepo: world
   removeRepo: null
@@ -18,38 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.0.0-1
+    version: 1.0.0-2
     packages:
-      - par2cmdline-1.0.0-1-x86_64.pkg.tar.zst
+      - par2cmdline-1.0.0-2-x86_64.pkg.tar.zst
+    debug:
+      - par2cmdline-debug-1.0.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
