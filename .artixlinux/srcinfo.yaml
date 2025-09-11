@@ -22,4 +22,4 @@ pkgbase:
     - 610a38a5e59192063f5f581ce0c3c1869971c458ea11b58dfe00d1c8269e255d
 pkgname:
   - name: yyjson
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.1-1-any
