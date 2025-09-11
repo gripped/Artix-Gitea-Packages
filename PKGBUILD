@@ -2,7 +2,7 @@
 
 pkgname=libxmlb
 pkgver=0.3.24
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Library to help create and query binary XML blobs"
 arch=(x86_64)
 url="https://github.com/hughsie/libxmlb"
