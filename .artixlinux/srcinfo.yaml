@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: kompare
   pkgdesc: Graphical file differences tool
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://apps.kde.org/kompare/
   arch:
@@ -34,15 +34,15 @@ pkgbase:
     - libkomparediff2
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/kompare-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/kompare-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/kompare-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/kompare-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 2b2f67eb9a31093b1d1e295724f0f0b0cd13275cacdfb864590d5fcce8b4c872
+    - 55fb17f8337df779cecec9f4a85b6e225c630414c657df51f5b25e158e23e017
     - SKIP
 pkgname:
   - name: kompare
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
