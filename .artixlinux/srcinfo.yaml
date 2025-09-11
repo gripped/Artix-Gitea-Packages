@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: kfourinline
   pkgdesc: A four-in-a-row game
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://apps.kde.org/kfourinline/
   arch:
@@ -34,15 +34,15 @@ pkgbase:
     - qt6-base
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/kfourinline-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/kfourinline-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/kfourinline-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/kfourinline-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9c613dc7bb2ed9b33ba996b7e7e18a60c944877ae1dc9472237248735c014521
+    - 1a1d709012533f3eb74b7cd54821c5227d05484b1f0ef8cb6a0a48c257d20241
     - SKIP
 pkgname:
   - name: kfourinline
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
