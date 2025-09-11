@@ -1,10 +1,10 @@
 ---
-version: 2.1.5.1-1
+version: 2.1.5.1-2
 pkgbase:
   name: libindi
   pkgdesc: A distributed control protocol designed to operate astronomical instrumentation
   pkgver: 2.1.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.indilib.org/index.php?title=Main_Page
   arch:
     - x86_64
