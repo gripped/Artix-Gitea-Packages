@@ -1,0 +1,43 @@
+---
+version: 2.14.1-1
+pkgbase:
+  name: lib32-freetype2
+  pkgdesc: Font rasterization library (32-bit)
+  pkgver: 2.14.1
+  pkgrel: 1
+  url: https://www.freetype.org/
+  arch:
+    - x86_64
+  license:
+    - FTL OR GPL-2.0-or-later
+  makedepends:
+    - lib32-harfbuzz
+    - meson
+  depends:
+    - freetype2
+    - lib32-brotli
+    - lib32-bzip2
+    - lib32-glibc
+    - lib32-libpng
+    - lib32-zlib
+  source:
+    - https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.14.1.tar.xz
+    - https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.14.1.tar.xz.sig
+    - 0001-Enable-table-validation-modules.patch
+    - 0002-Enable-subpixel-rendering.patch
+    - 0003-Enable-long-PCF-family-names.patch
+  validpgpkeys:
+    - E30674707856409FF1948010BE6C3AAC63AD8E3F
+  b2sums:
+    - 1dc62d337a93ca94f93496e60bdf9cbabed5867d66bb2f07669f1b5f81ef16f6cc57c401f51bb62d919680316f73902fafb6a167c45183872faaf984840b5ec7
+    - SKIP
+    - f45ec7d03193b446d8b46c8d981f330843a1ab2c83a91a5011cb328b26b4fc4c4b5729f32f3270018cf5ba8a162712bd0ebc2cd67f97b906e46ce293aeda466f
+    - b9481bfe770104b181a59be8cf30c90d329447d3ba04bd7dc641a54057cf2a9024c1a881d096b7ff940e9b467960ff3e08e611686d9a01136523fbb34299d057
+    - 1ced8e4ef522b111759953f6b4b38864b1a705e5b6705222282b0e6857a4ee7ac8bdcec35248f53dd8b628fabb8861ee82c4ac957f4c71229bac94d8aaf82984
+pkgname:
+  - name: lib32-freetype2
+    optdepends:
+      - 'lib32-harfbuzz: Improved autohinting'
+    provides:
+      - libfreetype.so
+# generated with artixpkg 0.37.1-1-any
