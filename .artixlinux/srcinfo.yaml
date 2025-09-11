@@ -1,0 +1,64 @@
+---
+version: 4.2.9.9-4
+pkgbase:
+  name: fcitx
+  pkgdesc: Flexible Context-aware Input Tool with eXtension
+  pkgver: 4.2.9.9
+  pkgrel: 4
+  url: https://fcitx-im.org
+  arch:
+    - x86_64
+  groups:
+    - fcitx-im
+  license:
+    - GPL
+    - LGPL
+  makedepends:
+    - extra-cmake-modules
+    - doxygen
+    - gtk2
+    - gtk3
+    - mesa
+    - opencc
+    - iso-codes
+    - gobject-introspection
+    - enchant
+    - python
+    - glib2-devel
+  depends:
+    - pango
+    - libxinerama
+    - gtk-update-icon-cache
+    - shared-mime-info
+    - hicolor-icon-theme
+    - desktop-file-utils
+    - libxkbfile
+    - libxfixes
+    - dbus
+    - icu
+    - libxkbcommon
+  optdepends:
+    - 'enchant: for word predication support'
+    - 'opencc: optional engine to do chinese convert'
+    - 'gettext: for fcitx-po-parser'
+    - 'fcitx-configtool: for configuration (GTK based)'
+  provides:
+    - fcitx-gtk2
+    - fcitx-gtk3
+  conflicts:
+    - fcitx-gtk2
+    - fcitx-gtk3
+  replaces:
+    - fcitx-gtk2
+    - fcitx-gtk3
+  source:
+    - https://download.fcitx-im.org/fcitx/fcitx-4.2.9.9_dict.tar.xz
+    - https://download.fcitx-im.org/fcitx/fcitx-4.2.9.9_dict.tar.xz.sig
+  validpgpkeys:
+    - 2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9
+  sha512sums:
+    - d871df84ebb3514b6474000b693246c8e5b198121e9a5a0ca18d478e54cd4144f8dfb58922a004952d26ab3bcfc1f417c446c22d30994ef40875fc2ee3cda441
+    - SKIP
+pkgname:
+  - name: fcitx
+# generated with artixpkg 0.37.4-1-any
