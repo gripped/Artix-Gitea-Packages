@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: kdenetwork-filesharing
   pkgdesc: Properties dialog plugin to share a directory with the local network
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://apps.kde.org/kdenetwork_filesharing/
   arch:
@@ -30,15 +30,15 @@ pkgbase:
     - qt6-declarative
     - samba
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/kdenetwork-filesharing-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/kdenetwork-filesharing-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/kdenetwork-filesharing-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/kdenetwork-filesharing-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8609f1aaf957db01c1352e5bfa2898770c2b08b0a52d739308713b09c8743e68
+    - a63ac269ab8d1363d88a0df0830e39b74bc06f0a60fd126062b6abdbdfcedaef
     - SKIP
 pkgname:
   - name: kdenetwork-filesharing
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
