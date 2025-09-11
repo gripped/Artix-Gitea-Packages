@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: neochat
   pkgdesc: A client for matrix, the decentralized communication protocol
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://apps.kde.org/neochat/
   arch:
@@ -57,15 +57,15 @@ pkgbase:
     - sonnet
     - syntax-highlighting
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/neochat-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/neochat-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/neochat-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/neochat-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 960f05a676cbed9a063bf9cdf53f63f4d817f07a0acf52edd40185320d3248e6
+    - 9ad75d279b7f28538e81a1ec25d1bb867c4409c4636d9d3facbfed219ef5e9b6
     - SKIP
 pkgname:
   - name: neochat
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
