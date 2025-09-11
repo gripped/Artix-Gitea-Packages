@@ -1,9 +1,9 @@
 ---
-version: 25.08.0-1
+version: 25.08.1-1
 pkgbase:
   name: skanpage
   pkgdesc: Utility to scan images and multi-page documents
-  pkgver: 25.08.0
+  pkgver: 25.08.1
   pkgrel: 1
   url: https://apps.kde.org/skanpage/
   arch:
@@ -35,15 +35,15 @@ pkgbase:
     - qt6-webengine
     - tesseract
   source:
-    - https://download.kde.org/stable/release-service/25.08.0/src/skanpage-25.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.0/src/skanpage-25.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.1/src/skanpage-25.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.1/src/skanpage-25.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - b7756010c98d507b62b8a5fa43dee50a585f2be78cf342996a4e805a78319d03
+    - 5131221c6fe48ad37637958cebf6f267631963ce377eeae60bb65bf9891fbba0
     - SKIP
 pkgname:
   - name: skanpage
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
