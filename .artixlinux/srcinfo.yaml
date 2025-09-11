@@ -1,0 +1,42 @@
+---
+version: 17.0.0-1
+pkgbase:
+  name: gucharmap
+  pkgdesc: Unicode Character Map
+  pkgver: 17.0.0
+  pkgrel: 1
+  url: https://wiki.gnome.org/Apps/Gucharmap
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - unicode-character-database>=17.0.0
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - meson
+    - unzip
+    - vala
+    - yelp-tools
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - glib2
+    - glibc
+    - gtk3
+    - pango
+    - pcre2
+  provides:
+    - libgucharmap_2_90.so
+  options:
+    - '!lto'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gucharmap.git#tag=17.0.0
+  b2sums:
+    - 6e4446d63cffff39a3b8bcbecaee304238069c18ccd758c0afa60132a2ec346830754cad45ee62b39efede3862d7cebe897f599de80dc06f354c87464cbd6605
+pkgname:
+  - name: gucharmap
+# generated with artixpkg 0.37.4-1-any
