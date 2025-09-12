@@ -1,9 +1,9 @@
 ---
-version: 6.4.4-1
+version: 6.4.5-1
 pkgbase:
   name: kglobalacceld
   pkgdesc: Daemon providing Global Keyboard Shortcut (Accelerator) functionality
-  pkgver: 6.4.4
+  pkgver: 6.4.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -31,16 +31,16 @@ pkgbase:
     - qt6-base
     - xcb-util-keysyms
   source:
-    - https://download.kde.org/stable/plasma/6.4.4/kglobalacceld-6.4.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.4/kglobalacceld-6.4.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.5/kglobalacceld-6.4.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.5/kglobalacceld-6.4.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 89f72bbfb520b0dc8dfc6cbc81bdcfcf3b74217551b3ca81d0b96d9d35a09bcf
+    - a712d1f7a86960292feb6979fe2c92f2e7d5cfbcd107f4efe3979e1a4c32cd73
     - SKIP
 pkgname:
   - name: kglobalacceld
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
