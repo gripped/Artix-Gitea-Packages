@@ -1,10 +1,10 @@
 ---
-version: 1.26.4-1.1
+version: 1.26.4-2
 pkgbase:
   name: python-pymupdf
   pkgdesc: Python bindings for MuPDF's rendering library
   pkgver: 1.26.4
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/pymupdf/PyMuPDF
   arch:
     - x86_64
@@ -44,4 +44,4 @@ pkgbase:
     - 3aa763d6b203a04eafdfaa0b89d89411af8b9d7b9631f4ad46c6f88a8310b683e8ff20f6c8cd03c2ab42dc3fcc6f21bf937ee0db9037ac54aa2442291e2fe332
 pkgname:
   - name: python-pymupdf
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
