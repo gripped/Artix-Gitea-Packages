@@ -1,10 +1,10 @@
 ---
-version: 580.82.07-3
+version: 580.82.09-1
 pkgbase:
   name: nvidia-open
   pkgdesc: NVIDIA open kernel modules
-  pkgver: 580.82.07
-  pkgrel: 3
+  pkgver: 580.82.09
+  pkgrel: 1
   url: https://github.com/NVIDIA/open-gpu-kernel-modules
   arch:
     - x86_64
@@ -12,9 +12,9 @@ pkgbase:
     - MIT AND GPL-2.0-only
   makedepends:
     - linux-headers
-    - nvidia-open-dkms=580.82.07
+    - nvidia-open-dkms=580.82.09
   depends:
-    - nvidia-utils=580.82.07
+    - nvidia-utils=580.82.09
     - libglvnd
   provides:
     - NVIDIA-MODULE
@@ -27,6 +27,6 @@ pkgname:
   - name: nvidia-open
     depends:
       - linux
-      - nvidia-utils=580.82.07
+      - nvidia-utils=580.82.09
       - libglvnd
 # generated with artixpkg 0.37.4-1-any
