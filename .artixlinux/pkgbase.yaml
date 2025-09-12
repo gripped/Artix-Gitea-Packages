@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - kwin-6.4.4-11-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.4.5-3
+    packages:
+      - kwin-6.4.5-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.4.4-10
