@@ -1,10 +1,10 @@
 ---
-version: 0.4.4-22
+version: 0.4.4-23
 pkgbase:
   name: zathura-pdf-mupdf
   pkgdesc: PDF support for Zathura (MuPDF backend) (Supports PDF, ePub, and OpenXPS)
   pkgver: 0.4.4
-  pkgrel: 22
+  pkgrel: 23
   url: https://pwmt.org/projects/zathura-pdf-mupdf/
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgbase:
     - 53f76de2e857a8f57ed9da00e7d0d4c647c38c1a3cb318b27427a1201d7290654aaa3271088e6839f989c7b0ac2a29d353b8bc01561c82e38f33bdb8aba6208c
 pkgname:
   - name: zathura-pdf-mupdf
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
