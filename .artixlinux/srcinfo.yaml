@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-3
+version: 6.4.5-3.1
 pkgbase:
   name: kwin-x11
   pkgdesc: An easy to use, but flexible, X Window Manager
   pkgver: 6.4.5
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
