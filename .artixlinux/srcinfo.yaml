@@ -1,9 +1,9 @@
 ---
-version: 6.4.4-1
+version: 6.4.5-1
 pkgbase:
   name: libksysguard
   pkgdesc: Library to retrieve information on the current status of computer hardware
-  pkgver: 6.4.4
+  pkgver: 6.4.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   install: libksysguard.install
@@ -39,16 +39,16 @@ pkgbase:
     - qt6-declarative
     - solid
   source:
-    - https://download.kde.org/stable/plasma/6.4.4/libksysguard-6.4.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.4/libksysguard-6.4.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.5/libksysguard-6.4.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.5/libksysguard-6.4.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - f12fd2e11d2d504d57556cb520a442ed9660f59c7d4b1fbbb17bee02eba0fb2f
+    - c7cf8cd2f0a1e519201dc62889f1135967a850f932c252fd26ea3d88c6564a0f
     - SKIP
 pkgname:
   - name: libksysguard
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
