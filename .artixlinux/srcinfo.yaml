@@ -1,9 +1,9 @@
 ---
-version: 6.4.4-1
+version: 6.4.5-1
 pkgbase:
   name: plasma-firewall
   pkgdesc: Control Panel for your system firewall
-  pkgver: 6.4.4
+  pkgver: 6.4.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -33,16 +33,16 @@ pkgbase:
     - 'python: ufw backend'
     - 'ufw: ufw backend'
   source:
-    - https://download.kde.org/stable/plasma/6.4.4/plasma-firewall-6.4.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.4/plasma-firewall-6.4.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.5/plasma-firewall-6.4.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.5/plasma-firewall-6.4.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 6b7b29043d8b0979da99f92ed7f9db9074b8da42d025c3ed497f2df862898842
+    - 85c8f289ce0390d560c99fd9f4a5c50bc9fab6f7d043f5aa310b85229b1d834c
     - SKIP
 pkgname:
   - name: plasma-firewall
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
