@@ -1,9 +1,9 @@
 ---
-version: 6.4.4-1
+version: 6.4.5-1
 pkgbase:
   name: plasma-activities
   pkgdesc: Core components for KDE Activities
-  pkgver: 6.4.4
+  pkgver: 6.4.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -32,16 +32,16 @@ pkgbase:
   replaces:
     - kactivities
   source:
-    - https://download.kde.org/stable/plasma/6.4.4/plasma-activities-6.4.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.4/plasma-activities-6.4.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.5/plasma-activities-6.4.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.5/plasma-activities-6.4.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - ab810aa594ed3386f6a8564705ea2a46cc62ec367de2039625e030f6af955fe8
+    - 30ad23846e97bf3c2ed6d3af25de0ae1d981ea871608492fcc16155efd0c8169
     - SKIP
 pkgname:
   - name: plasma-activities
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
