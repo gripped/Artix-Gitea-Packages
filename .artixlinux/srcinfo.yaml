@@ -1,9 +1,9 @@
 ---
-version: 6.4.4-1
+version: 6.4.5-1
 pkgbase:
   name: breeze-plymouth
   pkgdesc: Plymouth theme for the Breeze visual style for the Plasma Desktop
-  pkgver: 6.4.4
+  pkgver: 6.4.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -18,16 +18,16 @@ pkgbase:
     - glibc
     - plymouth
   source:
-    - https://download.kde.org/stable/plasma/6.4.4/breeze-plymouth-6.4.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.4/breeze-plymouth-6.4.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.4.5/breeze-plymouth-6.4.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.4.5/breeze-plymouth-6.4.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 4e0f47ba0f1ea25c698fccacbd270af6002dbd545cbf2b91f76df2cfa50d4884
+    - 0e1b83923f093821ddef6fd5b11b56db0571b4109f4f260214801fb1c6df7004
     - SKIP
 pkgname:
   - name: breeze-plymouth
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
