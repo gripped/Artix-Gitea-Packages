@@ -1,9 +1,9 @@
 ---
-version: 0.10.3-1
+version: 0.11.0-1
 pkgbase:
   name: swww
   pkgdesc: A Solution to your Wayland Wallpaper Woes
-  pkgver: 0.10.3
+  pkgver: 0.11.0
   pkgrel: 1
   url: https://github.com/LGFae/swww
   arch:
@@ -16,15 +16,16 @@ pkgbase:
     - wayland
     - wayland-protocols
   depends:
+    - dav1d
     - gcc-libs
     - glibc
     - lz4
   options:
     - '!lto'
   source:
-    - https://github.com/LGFae/swww/archive/v0.10.3/swww-0.10.3.tar.gz
+    - https://github.com/LGFae/swww/archive/v0.11.0/swww-0.11.0.tar.gz
   sha256sums:
-    - 8a86fe633c54e1d4278644cb728deea5decd0d4b1630506f4925a65ccf8a67e5
+    - 4853a4b0f846f8656063de6886d11c968cfd0d92ef3e8691c7ad4bd2be2a4436
 pkgname:
   - name: swww
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
