@@ -1,9 +1,9 @@
 ---
-version: 6.17.0-1
+version: 6.18.0-1
 pkgbase:
   name: kauth
   pkgdesc: Abstraction to system policy and authentication features
-  pkgver: 6.17.0
+  pkgver: 6.18.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -25,15 +25,15 @@ pkgbase:
     - polkit-qt6
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.17/kauth-6.17.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.17/kauth-6.17.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.18/kauth-6.18.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.18/kauth-6.18.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - a563ccaaa615c1f1dbdf4b45ad1da2739e40fd9490bc5906afd5ab5dae35f932
+    - 8c6fee69482e7a3dfcf7eacca9cb6a191ec5d1b09e0a539e1f7d5d76d08403e9
     - SKIP
 pkgname:
   - name: kauth
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
