@@ -1,9 +1,9 @@
 ---
-version: 6.17.0-1
+version: 6.18.0-1
 pkgbase:
   name: krunner
   pkgdesc: Framework for providing different actions given a string query
-  pkgver: 6.17.0
+  pkgver: 6.18.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -28,15 +28,15 @@ pkgbase:
     - kwindowsystem
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.17/krunner-6.17.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.17/krunner-6.17.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.18/krunner-6.18.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.18/krunner-6.18.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 9d4a5c0c74b0cfa9e35c31de762633ddec0439c50fa44bc85bec28ada0106912
+    - 69a20b4e554d8763ef4a52978e46056b598efb8ec584ac7be5bf06ca318db51c
     - SKIP
 pkgname:
   - name: krunner
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
