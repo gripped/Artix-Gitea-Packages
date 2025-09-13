@@ -1,9 +1,9 @@
 ---
-version: 6.17.0-1
+version: 6.18.0-1
 pkgbase:
   name: kquickcharts
   pkgdesc: A QtQuick plugin providing high-performance charts
-  pkgver: 6.17.0
+  pkgver: 6.18.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -24,15 +24,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/frameworks/6.17/kquickcharts-6.17.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.17/kquickcharts-6.17.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.18/kquickcharts-6.18.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.18/kquickcharts-6.18.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 1e206a9684d882ce2c147e436392dc3ef6cda79e4bc2ddf5aa0398d2e2ddc5a4
+    - 941ead378d02e0581b706639c7cf474339818f6cd48d918646782f71bc7f74cb
     - SKIP
 pkgname:
   - name: kquickcharts
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
