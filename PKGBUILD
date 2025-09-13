@@ -4,8 +4,8 @@
 # Contributor: Alexander Baldeck <alexander@archlinux.org>
 
 pkgname=xterm
-pkgver=401
-pkgrel=1.1
+pkgver=402
+pkgrel=1
 pkgdesc="X Terminal Emulator"
 arch=('x86_64')
 url="https://invisible-island.net/xterm/"
@@ -31,7 +31,7 @@ depends=(
 makedepends=('git')
 optdepends=('xorg-mkfontscale: font scaling')
 source=("$pkgname::git+https://github.com/ThomasDickey/xterm-snapshots.git?signed#tag=xterm-$pkgver")
-sha256sums=('43ca2fb0dc37fd05d601c1c6e3f53f06e1337f8fb029eb59f719f36cc2a5a836')
+sha256sums=('23fdcd9537ed66fa28c351c757c2fe964932035108887e48c98b4501902d013a')
 #validpgpkeys=('C52048C0C0748FEE227D47A2702353E0F7E48EDB') # "Thomas Dickey <dickey@invisible-island.net>"
 validpgpkeys=('19882D92DDA4C400C22C0D56CC2AF4472167BE03') # "Thomas E. Dickey (self-signed w/o SHA1) <dickey@invisible-island.net>"
 
@@ -82,4 +82,3 @@ package() {
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
   install -vDm644 -t "$pkgdir/usr/share/applications" {xterm,uxterm}.desktop
 }
-
