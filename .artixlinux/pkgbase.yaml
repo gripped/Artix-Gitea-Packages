@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.16-1
+    version: 1.17-1
     packages:
-      - lib32-vkd3d-1.16-1-x86_64.pkg.tar.zst
+      - lib32-vkd3d-1.17-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
