@@ -1,0 +1,31 @@
+---
+version: 0.10.6-1
+pkgbase:
+  name: cava
+  pkgdesc: Console-based Audio Visualizer with support for multiple backends
+  pkgver: 0.10.6
+  pkgrel: 1
+  url: https://github.com/karlstav/cava
+  arch:
+    - x86_64
+  license:
+    - MIT
+  depends:
+    - fftw
+    - glibc
+    - iniparser
+    - alsa-lib
+    - jack
+    - libpipewire
+    - libpulse
+    - portaudio
+    - sndio
+    - ncurses
+    - sdl2
+  source:
+    - https://github.com/karlstav/cava/archive/0.10.6/cava-0.10.6.tar.gz
+  sha512sums:
+    - 597bf2d7f5a18d1643ca989c2f0b08bad922d7fe84e33513c6842ac820afa8811c8293f5e796e0b40a59c7e34a0e8b653f15d2253fc424db005c166975c5c50a
+pkgname:
+  - name: cava
+# generated with artixpkg 0.37.4-1-any
