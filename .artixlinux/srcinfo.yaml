@@ -1,10 +1,10 @@
 ---
-version: 6.16.0-2
+version: 6.16.0-3
 pkgbase:
   name: xfsprogs
   pkgdesc: XFS filesystem utilities
   pkgver: 6.16.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://xfs.wiki.kernel.org
   arch:
     - x86_64
@@ -23,7 +23,7 @@ pkgbase:
     - util-linux-libs
   optdepends:
     - 'icu: for xfs_scrub'
-    - 'python: for xfs_scrub_all script'
+    - 'python-dbus: for xfs_scrub_all script'
     - 'smtp-forwarder: for xfs_scrub_fail script'
   source:
     - git+https://git.kernel.org/pub/scm/fs/xfs/xfsprogs-dev.git?signed#tag=v6.16.0
