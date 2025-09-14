@@ -1,0 +1,36 @@
+---
+version: 25-1
+pkgbase:
+  name: pkgfile
+  pkgdesc: A tool to search for files in official repository packages
+  pkgver: 25
+  pkgrel: 1
+  url: https://github.com/falconindy/pkgfile/
+  install: pkgfile.install
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - gtest
+    - python
+  makedepends:
+    - git
+    - meson
+  depends:
+    - curl
+    - gcc-libs
+    - glibc
+    - libarchive
+    - libelogind
+    - pacman
+    - pcre
+  source:
+    - git+https://github.com/falconindy/pkgfile.git#tag=v25?signed
+  validpgpkeys:
+    - 487EACC08557AD082088DABA1EB2638FF56C0C53
+  sha256sums:
+    - 3b247c9e0647ddf93682b7b9fedee5822004b9b4b57af37be82351f1cdca3b81
+pkgname:
+  - name: pkgfile
+# generated with artixpkg 0.37.4-1-any
