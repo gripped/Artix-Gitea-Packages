@@ -3,7 +3,7 @@
 _name=pytest-run-parallel
 pkgname=python-pytest-run-parallel
 pkgver=0.6.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A simple pytest plugin to run tests concurrently"
 arch=(any)
 url="https://github.com/Quansight-Labs/pytest-run-parallel"
