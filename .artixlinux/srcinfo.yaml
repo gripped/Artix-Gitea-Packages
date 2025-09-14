@@ -1,10 +1,10 @@
 ---
-version: 2.57.0-2
+version: 2.58.0-1
 pkgbase:
   name: i2pd
   pkgdesc: A full-featured C++ implementation of the I2P router
-  pkgver: 2.57.0
-  pkgrel: 2
+  pkgver: 2.58.0
+  pkgrel: 1
   url: https://i2pd.website/
   arch:
     - x86_64
@@ -28,25 +28,21 @@ pkgbase:
     - etc/i2pd/tunnels.conf
     - etc/logrotate.d/i2pd
   source:
-    - https://github.com/PurpleI2P/i2pd/archive/2.57.0/i2pd-2.57.0.tar.gz
-    - 005-i2pd-tests-use-arch-flags.conf
+    - https://github.com/PurpleI2P/i2pd/archive/2.58.0/i2pd-2.58.0.tar.gz
+    - 005-i2pd-tests-use-arch-flags.patch
     - 010-i2pd-config.patch
     - 020-i2pd-do-not-override-config.patch
     - 040-i2pd-tunnels-d-readme.patch
-    - 050-i2pd-fix-test-base-64.patch::https://github.com/PurpleI2P/i2pd/commit/37fd4b4422cc0c1fbe8321d4de9fcaaff2220cdc.patch
-    - 060-i2pd-fix-test-http-res.patch::https://github.com/PurpleI2P/i2pd/commit/6ad6a2501eac86623db303bceee70a1989e538e6.patch
     - i2pd.sysusers
     - i2pd.tmpfiles
   sha256sums:
-    - e2327f816d92a369eaaf9fd1661bc8b350495199e2f2cb4bfd4680107cd1d4b4
+    - 5ff650c6da8fda3522c10ec22889a7fd1c6b5d1af42c24531d84c36f6cc49019
     - 2ddf15f1c1cdf5d747a0af667145238023fd126ab00c65f2897cacae935015b1
     - ed1bde650139731921bf3c8091b3332620404e7700fb9c486a4a806fe34e2d3b
     - 3168e9bc1b15885b1658fac6efcd0741f7f82b571798380ecffa54eaa84aadde
     - cfcb6b07b67aff3e3af12767f4649d88b9320dc71907b6c01b465e5c138cdaa3
-    - be18e499e2c6773de242d43a868a4719a44f3f5ce2806ffadb66d6d9028732c9
-    - 48afbf1f54e877d2cb0aa51b9f5214800e4f43b8134de87b0aca884331af6347
     - 2f91fd455ea801df9a9bcc5f3f83def231d9149eec8b206588c8be21654e5b7c
     - fe8cc2ec83cb5b5c2b2ec8cce9a989e0cb6fd347e00b84e03a17b12efd152fac
 pkgname:
   - name: i2pd
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
