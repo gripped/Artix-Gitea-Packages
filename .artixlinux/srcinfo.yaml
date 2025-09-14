@@ -1,0 +1,34 @@
+---
+version: 6.4.0-1
+pkgbase:
+  name: cinnamon-session
+  pkgdesc: The Cinnamon Session Handler
+  pkgver: 6.4.0
+  pkgrel: 1
+  url: https://github.com/linuxmint/cinnamon-session
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - LGPL
+  makedepends:
+    - meson
+    - samurai
+    - xtrans
+    - glib2-devel
+  depends:
+    - cinnamon-desktop
+    - libsm
+    - libcanberra
+    - xapps
+  optdepends:
+    - 'cinnamon-translations: i18n'
+  source:
+    - cinnamon-session-6.4.0.tar.gz::https://github.com/linuxmint/cinnamon-session/archive/6.4.0.tar.gz
+  sha256sums:
+    - 464075d920df360b5ad94f72395a09b5fbf8b14f0190406ec76055a17659e243
+  b2sums:
+    - 13bed1e5cec912f679c13c9ef8e4bbca8c267c37663910ba0a82e78074c77405c259020dffb86c843f2e080792e836a567d120eb5c80459e870a29a959f7f4a3
+pkgname:
+  - name: cinnamon-session
+# generated with artixpkg 0.37.4-1-any
