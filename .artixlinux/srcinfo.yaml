@@ -1,10 +1,10 @@
 ---
-version: 1.44.1-1
+version: 1.44.1-2
 pkgbase:
   name: ruby-tins
   pkgdesc: All the stuff that is not good/big enough for a real library
   pkgver: 1.44.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/flori/tins
   arch:
     - any
@@ -17,6 +17,7 @@ pkgbase:
     - ruby
     - ruby-bigdecimal
     - ruby-sync
+    - ruby-mize
   options:
     - '!emptydirs'
   source:
