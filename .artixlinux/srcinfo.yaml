@@ -36,4 +36,4 @@ pkgbase:
     - 93ee95d2066ee3d127f37b480d9159c323a7875497db25fce520b875bcd377ff72f2220bdb22682b45a4e77afe880ddf1d57290ba3c7b69bc52de48c53d1af35
 pkgname:
   - name: xapp
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

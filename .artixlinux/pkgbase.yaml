@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.8.12-1
+    packages:
+      - xapp-2.8.12-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 2.8.12-1
