@@ -1,10 +1,10 @@
 ---
-version: 3.50.4-1
+version: 3.50.4-2
 pkgbase:
   name: sqlite
   pkgdesc: A C library that implements an SQL database engine
   pkgver: 3.50.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.sqlite.org/
   arch:
     - x86_64
@@ -64,4 +64,4 @@ pkgname:
       - sqlite3-doc=3.50.4
     replaces:
       - sqlite3-doc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
