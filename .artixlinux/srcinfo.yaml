@@ -1,9 +1,9 @@
 ---
-version: 1.1.28-1
+version: 1.1.28-2
 pkgbase:
   name: doublecmd
   pkgver: 1.1.28
-  pkgrel: 1
+  pkgrel: 2
   url: http://doublecmd.sourceforge.net/
   arch:
     - x86_64
@@ -62,4 +62,4 @@ pkgname:
     conflicts:
       - doublecmd-gtk2
       - doublecmd-qt5
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
