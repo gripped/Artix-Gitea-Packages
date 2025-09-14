@@ -1,10 +1,10 @@
 ---
-version: 48.5-1
+version: 48.5-2
 pkgbase:
   name: mutter
   pkgdesc: Window manager and compositor for GNOME
   pkgver: 48.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/mutter
   arch:
     - x86_64
