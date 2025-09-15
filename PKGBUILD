@@ -5,7 +5,7 @@
 
 pkgname=xapp
 pkgver=2.8.13
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Common library for X-Apps project"
 arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
