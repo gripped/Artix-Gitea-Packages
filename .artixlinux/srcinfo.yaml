@@ -1,9 +1,9 @@
 ---
-version: 7.2.0-2
+version: 7.2.2-1
 pkgbase:
   name: virtualbox
-  pkgver: 7.2.0
-  pkgrel: 2
+  pkgver: 7.2.2
+  pkgrel: 1
   url: https://virtualbox.org/
   arch:
     - x86_64
@@ -48,7 +48,7 @@ pkgbase:
     - xorg-server-devel
     - yasm
   source:
-    - https://download.virtualbox.org/virtualbox/7.2.0/VirtualBox-7.2.0.tar.bz2
+    - https://download.virtualbox.org/virtualbox/7.2.2/VirtualBox-7.2.2.tar.bz2
     - virtualbox-host-dkms.conf
     - virtualbox.modprobe
     - virtualbox.sysusers
@@ -65,10 +65,9 @@ pkgbase:
     - 013-support-building-from-dkms.patch
     - 018-upate-xclient-script.patch
     - 020-python-3-12.patch
-    - 021-python-3-13.patch
-    - 022-FE-Qt-VBox-Manager-Create-destroy-notification-center.patch
+    - 021-curl_proxytype-to-long.patch
   sha256sums:
-    - 4f2804ff27848ea772aee6b637bb1e10ee74ec2da117c257413e2d2c4f670ba0
+    - b0e63bfb855327aecf1122cda33390c33734e5ffed72f123f5edf786a8ce1393
     - f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04
     - 07fe5c8b313cd7f01505eb9721357269a288ccd0c04e6467afb954038d6f46df
     - 2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c
@@ -85,8 +84,7 @@ pkgbase:
     - 00f68b86d32a1fada900c2da8dad2ab4215106cd58004f049bded99727cda2ff
     - 2540381de895fabbcc68d820c1f72ba644ef566ff5dab0f60be055c7b45cc06f
     - ddb2092a5a000aa6ef854796f39dcdf86e72c06d53b24bac3835350571182df6
-    - a8e53afe996c3de401824261ac4228eb8960af0832de2a8f101e9aa6ddb442f8
-    - 98c0b249d8b97b8d374f104fbc531ddc71f0b3b67b28261cf950c1f93ca248af
+    - c52d5950570f5b48e28f7fa9564b279df1a1ca1ef87149272dbc8a0d075db621
 pkgname:
   - name: virtualbox
     pkgdesc: Powerful x86 virtualization for enterprise as well as home use
@@ -186,4 +184,4 @@ pkgname:
     pkgdesc: VirtualBox Software Developer Kit (SDK)
     depends:
       - python
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
