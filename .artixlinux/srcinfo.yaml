@@ -1,10 +1,10 @@
 ---
-version: 4.1.4-1
+version: 4.1.4-2
 pkgbase:
   name: rabbitmq
   pkgdesc: Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP
   pkgver: 4.1.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://rabbitmq.com
   arch:
     - any
@@ -81,7 +81,7 @@ pkgname:
       - etc/rabbitmq/rabbitmq-env.conf
   - name: rabbitmqadmin
     pkgdesc: Command-line tool for managing RabbitMQ server (requires "management" plugin)
-    url: https://www.rabbitmq.com/management-cli
+    url: https://www.rabbitmq.com/docs/management-cli
     depends:
       - python
 # generated with artixpkg 0.37.4-1-any
