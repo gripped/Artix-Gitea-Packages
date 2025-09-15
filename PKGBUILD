@@ -25,7 +25,7 @@ prepare() {
 build() {
     cd $pkgname-build
     CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
-    cmake "$srcdir/$pkgname-$pkgver" -DCMAKE_INSTALL_PREFIX="/usr"
+    cmake "$srcdir/$pkgname-$pkgver" -DCMAKE_INSTALL_PREFIX="/usr" -DCMAKE_POLICY_VERSION_MINIMUM=3.5
     make
 }
 
