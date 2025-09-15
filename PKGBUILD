@@ -1,15 +1,15 @@
-# Maintainer: 
+# Maintainer:
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=apache
-pkgver=2.4.63
+pkgver=2.4.65
 pkgrel=3
 pkgdesc='A high performance Unix-based HTTP server'
 arch=('x86_64')
 url='https://www.apache.org/dist/httpd'
-license=('APACHE')
+license=('Apache-2.0')
 backup=(
     etc/httpd/conf/httpd.conf
     etc/httpd/conf/extra/httpd-{autoindex,dav,default,info,languages}.conf
@@ -37,11 +37,11 @@ optdepends=(
 )
 source=(
     https://www.apache.org/dist/httpd/httpd-${pkgver}.tar.bz2{,.asc}
-    apache.tmpfiles.conf
+    apache.tmpfiles
     httpd.logrotate
     artix.layout
 )
-sha256sums=('88fc236ab99b2864b248de7d49a008ec2afd7551e64dce8b95f58f32f94c46ab'
+sha256sums=('58b8be97d9940ec17f7656c0c6b9f41b618aac468b894b534148e3296c53b8b3'
             'SKIP'
             '63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf'
             '0bbbfae23a917b2fce0bf8f900f60319b50769224a96314e9301a75ccd078e16'
@@ -68,30 +68,49 @@ prepare() {
 build() {
   cd httpd-${pkgver}
 
-  ./configure --sbindir=/usr/bin \
+  ./configure \
+      --sbindir=/usr/bin \
+      --enable-authnz-fcgi \
+      --enable-authnz-ldap \
+      --enable-brotli \
+      --enable-cache \
+      --enable-cern-meta \
+      --enable-cgi \
+      --enable-cgid \
+      --enable-dbd \
+      --enable-deflate \
+      --enable-disk-cache \
+      --enable-file-cache \
+      --enable-http2 \
+      --enable-ident \
+      --enable-imagemap \
       --enable-layout=Artix \
-      --enable-mpms-shared=all \
-      --enable-modules=all \
+      --enable-ldap \
+      --enable-lua \
+      --enable-md \
+      --enable-mem-cache \
       --enable-mods-shared=all \
+      --enable-modules=all \
+      --enable-mpms-shared=all \
+      --enable-proxy \
+      --enable-proxy-connect \
+      --enable-proxy-ftp \
+      --enable-proxy-http \
+      --enable-proxy-http2 \
       --enable-so \
+      --enable-ssl \
       --enable-suexec \
-      --with-suexec-caller=http \
-      --with-suexec-docroot=/srv/http \
-      --with-suexec-logfile=/var/log/httpd/suexec.log \
-      --with-suexec-bin=/usr/bin/suexec \
-      --with-suexec-uidmin=99 --with-suexec-gidmin=99 \
-      --enable-ldap --enable-authnz-ldap --enable-authnz-fcgi \
-      --enable-cache --enable-disk-cache --enable-mem-cache --enable-file-cache \
-      --enable-ssl --with-ssl \
-      --enable-deflate --enable-cgi --enable-cgid \
-      --enable-proxy --enable-proxy-connect \
-      --enable-proxy-http --enable-proxy-ftp \
-      --enable-dbd --enable-imagemap --enable-ident --enable-cern-meta \
-      --enable-lua --enable-xml2enc --enable-http2 \
-      --enable-proxy-http2 --enable-md --enable-brotli \
+      --enable-xml2enc \
       --with-apr=/usr/bin/apr-1-config \
       --with-apr-util=/usr/bin/apu-1-config \
-      --with-pcre2
+      --with-pcre2\
+      --with-ssl \
+      --with-suexec-bin=/usr/bin/suexec \
+      --with-suexec-caller=http \
+      --with-suexec-docroot=/srv/http \
+      --with-suexec-gidmin=99 \
+      --with-suexec-logfile=/var/log/httpd/suexec.log \
+      --with-suexec-uidmin=99
 
   make
 }
@@ -100,9 +119,9 @@ package() {
   cd httpd-${pkgver}
 
   make DESTDIR="${pkgdir}" install
-   
+
   install -D -m644 "${srcdir}/httpd.logrotate" "${pkgdir}/etc/logrotate.d/httpd"
-  install -D -m644 "${srcdir}/apache.tmpfiles.conf" "${pkgdir}/usr/lib/tmpfiles.d/apache.conf"
+  install -D -m644 "${srcdir}/apache.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/apache.conf"
   install -D -m644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
   # symlinks for /etc/httpd

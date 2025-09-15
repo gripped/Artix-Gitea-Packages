@@ -1,0 +1,81 @@
+---
+version: 2.4.65-3
+pkgbase:
+  name: apache
+  pkgdesc: A high performance Unix-based HTTP server
+  pkgver: 2.4.65
+  pkgrel: 3
+  url: https://www.apache.org/dist/httpd
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - libxml2
+    - lua
+    - curl
+    - brotli
+    - jansson
+    - db
+  depends:
+    - zlib
+    - apr-util
+    - pcre2
+    - libnghttp2
+    - openssl
+    - libxcrypt
+  optdepends:
+    - 'lua: for mod_lua module'
+    - 'libxml2: for mod_proxy_html, mod_xml2enc modules'
+    - 'curl: for mod_md module'
+    - 'jansson: for mod_md module'
+    - 'brotli: for mod_brotli module'
+    - 'uwsgi: for mod_proxy_uwsgi module'
+    - 'lynx: apachectl status'
+    - 'perl: for apxs and dbmmanage'
+    - 'logrotate: for rotating logs'
+  provides:
+    - mod_proxy_uwsgi
+  conflicts:
+    - mod_proxy_uwsgi
+  replaces:
+    - mod_proxy_uwsgi
+  backup:
+    - etc/httpd/conf/httpd.conf
+    - etc/httpd/conf/extra/httpd-autoindex.conf
+    - etc/httpd/conf/extra/httpd-dav.conf
+    - etc/httpd/conf/extra/httpd-default.conf
+    - etc/httpd/conf/extra/httpd-info.conf
+    - etc/httpd/conf/extra/httpd-languages.conf
+    - etc/httpd/conf/extra/httpd-manual.conf
+    - etc/httpd/conf/extra/httpd-mpm.conf
+    - etc/httpd/conf/extra/httpd-multilang-errordoc.conf
+    - etc/httpd/conf/extra/httpd-ssl.conf
+    - etc/httpd/conf/extra/httpd-userdir.conf
+    - etc/httpd/conf/extra/httpd-vhosts.conf
+    - etc/httpd/conf/extra/proxy-html.conf
+    - etc/httpd/conf/mime.types
+    - etc/httpd/conf/magic
+    - etc/logrotate.d/httpd
+  source:
+    - https://www.apache.org/dist/httpd/httpd-2.4.65.tar.bz2
+    - https://www.apache.org/dist/httpd/httpd-2.4.65.tar.bz2.asc
+    - apache.tmpfiles
+    - httpd.logrotate
+    - artix.layout
+  validpgpkeys:
+    - A93D62ECC3C8EA12DB220EC934EA76E6791485A8
+    - B9E8213AEFB861AF35A41F2C995E35221AD84DFF
+    - C55AB7B9139EB2263CD1AABC19B033D1760C227B
+    - 26F51EF9A82F4ACB43F1903ED377C9E7D1944C66
+    - E3480043595621FE56105F112AB12A7ADC55C003
+    - 65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA
+  sha256sums:
+    - 58b8be97d9940ec17f7656c0c6b9f41b618aac468b894b534148e3296c53b8b3
+    - SKIP
+    - 63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf
+    - 0bbbfae23a917b2fce0bf8f900f60319b50769224a96314e9301a75ccd078e16
+    - ad1304d19d2e91e236d2a980ff4ee5affe9bce79011cc987e2aee6227d9604a7
+pkgname:
+  - name: apache
+# generated with artixpkg 0.37.4-1-any
