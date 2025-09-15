@@ -1,0 +1,62 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Harry Jeffery <harry|@|exec64|.|co|.|uk>
+# Contributor: Alex Jordan <alexander3223098@gmail.com>
+
+pkgname=zerotier-one
+pkgver=1.16.0
+pkgrel=2
+pkgdesc='Creates virtual Ethernet networks of almost unlimited size.'
+arch=('x86_64')
+url='https://www.zerotier.com/'
+license=('custom:BSL')
+depends=('glibc'
+         'openssl' 'libcrypto.so' 'libssl.so'
+         'gcc-libs'
+         'libnatpmp'
+         'miniupnpc' 'libminiupnpc.so')
+makedepends=('rust')
+options=('!lto')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/zerotier/ZeroTierOne/archive/refs/tags/$pkgver.tar.gz"
+        '0001-miniupnpc.patch'
+        'zerotier-one.sysusers')
+sha512sums=('158ab83059ea1dcdfab073429404d6e9ef812c40e4be6b718c48e4eb9f7a9ab45f71ffdd9cf9179e6b5864a302201cbf96ee1441659ebf8a8293de57dc13a2b7'
+            '552526633470e8bf7b5464b1c4ffb3102c62d05c9370b042bfa8447ccae213678f156e88604e8b9b01f1ee2197f62a7b7e4263279bf028eaa6471443bf67bdf3'
+            '9499251dcd5cfb415e7cbfae33f17f40a1b9f94547df5edea9d94d6ecfa4b97e49eda1397d70968422e13b902ce0e591bd081bbec57c81465ff84bf5848851dd')
+
+prepare() {
+  cd "ZeroTierOne-${pkgver}"
+
+  # remove bundled miniupnpc code, and build with package headers
+  # also fix for MINIUPNPC_API_VERSION 18
+  rm -rf ext/miniupnpc/
+  patch -Np1 < ../0001-miniupnpc.patch
+
+  sed \
+    -e 's/sbin/bin/' \
+    -e 's/LDFLAGS=/LDFLAGS?=/' \
+    -e 's/RUSTFLAGS=/RUSTFLAGS?=/' \
+    -e 's/cargo build $(RUSTFLAGS)/cargo build --release/' \
+    -i make-linux.mk debian/zerotier-one.service
+}
+
+build() {
+  cd "ZeroTierOne-${pkgver}"
+
+  make V=1
+}
+
+check() {
+  cd "ZeroTierOne-${pkgver}"
+
+  make selftest
+  ./zerotier-selftest
+}
+
+package() {
+  cd "ZeroTierOne-${pkgver}"
+
+  make DESTDIR="$pkgdir" install
+
+  install -D -m0644 "$srcdir"/zerotier-one.sysusers "$pkgdir"/usr/lib/sysusers.d/"$pkgname".conf
+}
