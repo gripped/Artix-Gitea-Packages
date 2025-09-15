@@ -1,10 +1,10 @@
 ---
-version: 1.7.2-3
+version: 1.8.0-1
 pkgbase:
   name: python-isal
   pkgdesc: Faster zlib and gzip compatible compression and decompression by providing python bindings for the isa-l library
-  pkgver: 1.7.2
-  pkgrel: 3
+  pkgver: 1.8.0
+  pkgrel: 1
   url: https://github.com/pycompression/python-isal
   arch:
     - x86_64
@@ -20,18 +20,18 @@ pkgbase:
     - python-build
     - python-installer
     - python-setuptools
-    - python-versioningit
+    - python-setuptools-scm
     - python-wheel
   depends:
     - glibc
     - isa-l
     - python
   source:
-    - git+https://github.com/pycompression/python-isal.git#tag=v1.7.2
+    - git+https://github.com/pycompression/python-isal.git#tag=v1.8.0
     - git+https://github.com/intel/isa-l.git
   sha256sums:
-    - c4765892ecbfc2dafb4619c9fa5af7867515c8251227cb11802e2f710b50b555
+    - 33408c552fae7a31f7e7c71f63a26935a6a694c623a278daa976c66cb72ca299
     - SKIP
 pkgname:
   - name: python-isal
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
