@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=avogadro-molecules
-pkgver=1.100.0
+pkgver=1.101.0
 pkgrel=1
 pkgdesc='Common molecule fragments for visualization in Avogadro'
 arch=(any)
