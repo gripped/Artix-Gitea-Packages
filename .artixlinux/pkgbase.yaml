@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 22.0.0-1
+    version: 23.0.0-1
     packages:
-      - ruby-cucumber-compatibility-kit-22.0.0-1-any.pkg.tar.zst
+      - ruby-cucumber-compatibility-kit-23.0.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 20.1.0-1

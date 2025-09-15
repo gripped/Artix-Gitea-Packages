@@ -1,9 +1,9 @@
 ---
-version: 22.0.0-1
+version: 23.0.0-1
 pkgbase:
   name: ruby-cucumber-compatibility-kit
   pkgdesc: Kit to check compatibility with official cucumber implementation
-  pkgver: 22.0.0
+  pkgver: 23.0.0
   pkgrel: 1
   url: https://github.com/cucumber/compatibility-kit
   arch:
@@ -14,6 +14,7 @@ pkgbase:
     - ruby-bundler
     - ruby-rspec
   makedepends:
+    - git
     - npm
   depends:
     - ruby
@@ -21,11 +22,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://github.com/cucumber/compatibility-kit/archive/v22.0.0/ruby-cucumber-compatibility-kit-22.0.0.tar.gz
+    - git+https://github.com/cucumber/compatibility-kit.git#tag=v23.0.0
   sha512sums:
-    - b06a2ac92f9dcd37d534bc83d41a81977860bd86c8cdfd7007dad8a3dcffa8642e9673efca298cba6e725707860be2dec157953d4c0b7df76de1bf8d3ab546b2
+    - 9e9143f371894643511928d717c1adc1547b2d9f3f74ab0b5913348b4a12a6aa5f71fe53a572847d1bb9652674af8e9629fb67527051149aedefe3686e607b5f
   b2sums:
-    - 625eca281c0d928bd6ae45299cf951a21e0bdf0336df34bd799b9111a58c497a193e5a87666e512992b1f4b2c97e11b6ca11bdc9ba8e2425e318d18332214853
+    - 1b43553d129e1a16c17a9bab2cf0332c1de530cc24ad76b94c4a2a0a2667033d16a004c08004f8250e84ef51228736e0cbe479b274cabd6bdae2c35adb12f27b
 pkgname:
   - name: ruby-cucumber-compatibility-kit
 # generated with artixpkg 0.37.4-1-any

@@ -3,7 +3,7 @@
 # Contributor: Bert Peters <bertptrs@archlinux.org>
 
 pkgname=ruby-cucumber-compatibility-kit
-pkgver=22.0.0
+pkgver=23.0.0
 pkgrel=1
 pkgdesc="Kit to check compatibility with official cucumber implementation"
 arch=(any)
@@ -14,6 +14,7 @@ depends=(
   ruby-cucumber-messages
 )
 makedepends=(
+  git
   npm
 )
 checkdepends=(
@@ -21,19 +22,19 @@ checkdepends=(
   ruby-rspec
 )
 options=(!emptydirs)
-source=(https://github.com/cucumber/compatibility-kit/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha512sums=('b06a2ac92f9dcd37d534bc83d41a81977860bd86c8cdfd7007dad8a3dcffa8642e9673efca298cba6e725707860be2dec157953d4c0b7df76de1bf8d3ab546b2')
-b2sums=('625eca281c0d928bd6ae45299cf951a21e0bdf0336df34bd799b9111a58c497a193e5a87666e512992b1f4b2c97e11b6ca11bdc9ba8e2425e318d18332214853')
+source=(git+https://github.com/cucumber/compatibility-kit.git#tag=v$pkgver)
+sha512sums=('9e9143f371894643511928d717c1adc1547b2d9f3f74ab0b5913348b4a12a6aa5f71fe53a572847d1bb9652674af8e9629fb67527051149aedefe3686e607b5f')
+b2sums=('1b43553d129e1a16c17a9bab2cf0332c1de530cc24ad76b94c4a2a0a2667033d16a004c08004f8250e84ef51228736e0cbe479b274cabd6bdae2c35adb12f27b')
 
 prepare() {
-  cd compatibility-kit-$pkgver/ruby
+  cd compatibility-kit/ruby
   sed -i 's|~>|>=|' cucumber-compatibility-kit.gemspec
   sed -i "s/, '< 25'//" cucumber-compatibility-kit.gemspec
 }
 
 build() {
   local _gemdir="$(gem env gemdir)"
-  cd compatibility-kit-$pkgver/devkit
+  cd compatibility-kit/devkit
   npm install
   npm run copy-to:ruby
   cd ../ruby
@@ -62,11 +63,11 @@ build() {
 
 check() {
   local _gemdir="$(gem env gemdir)"
-  cd compatibility-kit-$pkgver/ruby
+  cd compatibility-kit/ruby
   GEM_HOME="tmp_install/$_gemdir" rspec
 }
 
 package() {
-  cd compatibility-kit-$pkgver/ruby
+  cd compatibility-kit/ruby
   cp -a tmp_install/* "$pkgdir"/
 }
