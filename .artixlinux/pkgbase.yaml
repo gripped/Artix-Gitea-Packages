@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.39.3-1
+    version: 1.39.4-1
     packages:
-      - materialx-1.39.3-1-x86_64.pkg.tar.zst
+      - materialx-1.39.4-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
