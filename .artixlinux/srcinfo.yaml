@@ -1,9 +1,9 @@
 ---
-version: 0.8.15-1
+version: 0.8.17-1
 pkgbase:
   name: uv
   pkgdesc: An extremely fast Python package installer and resolver written in Rust
-  pkgver: 0.8.15
+  pkgver: 0.8.17
   pkgrel: 1
   url: https://github.com/astral-sh/uv
   arch:
@@ -30,14 +30,14 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/astral-sh/uv.git#tag=0.8.15
+    - git+https://github.com/astral-sh/uv.git#tag=0.8.17
   sha256sums:
-    - 0d6759e70e5e8821776b36db0d10a539a17af24c83a9b0d83085b111f767d8f1
+    - dbb90e7430c8870602f249925ba8b537d0d9e2a73c1fb80807f79b09cb52e579
 pkgname:
   - name: uv
   - name: python-uv
     depends:
       - python
-      - uv=0.8.15
+      - uv=0.8.17
   - name: python-uv-build
 # generated with artixpkg 0.37.4-1-any
