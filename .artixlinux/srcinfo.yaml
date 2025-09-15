@@ -1,0 +1,33 @@
+---
+version: 4.6.2-1
+pkgbase:
+  name: netcdf-fortran
+  pkgdesc: NetCDF fortran bindings
+  pkgver: 4.6.2
+  pkgrel: 1
+  url: https://github.com/Unidata/netcdf-fortran
+  arch:
+    - x86_64
+  license:
+    - custom
+  checkdepends:
+    - valgrind
+  makedepends:
+    - cmake
+    - gcc-fortran
+    - git
+    - doxygen
+  depends:
+    - gcc-libs
+    - netcdf
+    - curl
+  options:
+    - '!makeflags'
+    - staticlibs
+  source:
+    - git+https://github.com/Unidata/netcdf-fortran#tag=v4.6.2
+  sha256sums:
+    - fce90dea1f796f359634c9550515f3c5139be472f4aa016f845607a17c91edab
+pkgname:
+  - name: netcdf-fortran
+# generated with artixpkg 0.37.1-1-any
