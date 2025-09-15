@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 34.0.0-1
+    version: 35.0.0-1
     packages:
-      - ruby-cucumber-gherkin-34.0.0-1-any.pkg.tar.zst
+      - ruby-cucumber-gherkin-35.0.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 33.1.0-1
