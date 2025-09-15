@@ -1,0 +1,33 @@
+---
+version: 1.6.0-1
+pkgbase:
+  name: python-pynacl
+  pkgdesc: Python binding to the Networking and Cryptography (NaCl) library
+  pkgver: 1.6.0
+  pkgrel: 1
+  url: https://github.com/pyca/pynacl
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-hypothesis
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-pycparser
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - libsodium
+    - python
+    - python-cffi
+  source:
+    - https://github.com/pyca/pynacl/archive/1.6.0/python-pynacl-1.6.0.tar.gz
+  sha512sums:
+    - b068fb5877fd084d927471233c0678d04582f49cdcd1a298d38f39c2a775bbf83011a6279df894c6c92732dc947a467e4f628449f5f8419b254886c2b789e17e
+pkgname:
+  - name: python-pynacl
+# generated with artixpkg 0.37.4-1-any
