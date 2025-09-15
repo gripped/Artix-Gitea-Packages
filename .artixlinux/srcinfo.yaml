@@ -1,8 +1,8 @@
 ---
-version: 16.0.6.4-1
+version: 16.0.6.5-1
 pkgbase:
   name: llvm-julia
-  pkgver: 16.0.6.4
+  pkgver: 16.0.6.5
   pkgrel: 1
   url: https://julialang.org/
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - llvm-julia::git+https://github.com/JuliaLang/llvm-project#tag=julia-16.0.6-4
+    - llvm-julia::git+https://github.com/JuliaLang/llvm-project#tag=julia-16.0.6-5
   sha256sums:
-    - e8efe08078c7b7a6bece28f74876688726bb5907ddffe9552996ee8d74b82f26
+    - 163acd3fca128fae89f7772caa7fbe4f088c0e7179e0f902fcba60e52c569f93
 pkgname:
   - name: llvm-julia
     pkgdesc: Compiler infrastructure - Julia fork
