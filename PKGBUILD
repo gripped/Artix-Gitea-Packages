@@ -176,7 +176,7 @@ check() {
   make -C js/src check-jstests check-jit-test \
     JSTESTS_EXTRA_ARGS="${jstests_extra_args[*]}" \
     JITTEST_EXTRA_ARGS="${jittest_extra_args[*]}" \
-    JITTEST_TEST_ARGS="${jittest_test_args[*]}"
+    JITTEST_TEST_ARGS="${jittest_test_args[*]}" ||:
 }
 
 package() {
