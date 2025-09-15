@@ -1,0 +1,41 @@
+---
+version: 0.14.5-1
+pkgbase:
+  name: python-statsmodels
+  pkgdesc: Statistical computations and models for use with SciPy
+  pkgver: 0.14.5
+  pkgrel: 1
+  url: https://www.statsmodels.org/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-xdist
+    - python-joblib
+    - python-matplotlib
+  makedepends:
+    - python-setuptools-scm
+    - python-wheel
+    - python-build
+    - python-installer
+    - cython
+    - git
+  depends:
+    - python-numpy
+    - python-scipy
+    - python-pandas
+    - python-patsy
+  optdepends:
+    - 'jupyter-notebook: needed to run the notebooks'
+    - 'python-cvxopt: regularized fitting of some models'
+    - 'python-joblib: accelerate distributed estimation for certain models'
+    - 'python-matplotlib: plotting functions'
+  source:
+    - git+https://github.com/statsmodels/statsmodels#tag=v0.14.5
+  sha256sums:
+    - 7b19f05e3ad46c6e576683574be6d3ddb8044fd5f1171692061ef20b318a27db
+pkgname:
+  - name: python-statsmodels
+# generated with artixpkg 0.37.4-1-any
