@@ -1,11 +1,11 @@
 # Maintainer: Chris Cromer <cromer@artixlinux.org>
 
 pkgname=mint-themes-legacy
-pkgver=1.9.2
+pkgver=2.0.2
 pkgrel=1
 pkgdesc='A collection of legacy mint themes.'
 arch=('any')
-url="http://packages.linuxmint.com/pool/main/m/${pkgname}"
+url="https://github.com/linuxmint/mint-l-theme"
 license=(GPL3)
 depends=(
     ttf-ubuntu-font-family
@@ -21,8 +21,8 @@ optdepends=(
     mint-y-icons
     mint-x-icons
 )
-source=("${pkgname}_${pkgver}.tar.xz::${url}/${pkgname}_${pkgver}.tar.xz")
-sha256sums=('165699ef2569d3b1c315be0b2056f4edcbc05e33ec6d5c072e147a80adf7ea63')
+source=("${pkgname}_${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('a575a8dce6b6346cccabfc7bdd2049f0ead9339844802e1e06480da8196a2c3c')
 
 build() {
 	cd "${pkgname}"

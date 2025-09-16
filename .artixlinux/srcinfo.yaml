@@ -1,0 +1,30 @@
+---
+version: 2.0.2-1
+pkgbase:
+  name: mint-themes-legacy
+  pkgdesc: A collection of legacy mint themes.
+  pkgver: 2.0.2
+  pkgrel: 1
+  url: https://github.com/linuxmint/mint-l-theme
+  arch:
+    - any
+  license:
+    - GPL3
+  makedepends:
+    - gtk3
+    - inkscape
+    - optipng
+    - python
+    - sassc
+  depends:
+    - ttf-ubuntu-font-family
+  optdepends:
+    - mint-y-icons
+    - mint-x-icons
+  source:
+    - mint-themes-legacy_2.0.2.tar.gz::https://github.com/linuxmint/mint-l-theme/archive/refs/tags/2.0.2.tar.gz
+  sha256sums:
+    - a575a8dce6b6346cccabfc7bdd2049f0ead9339844802e1e06480da8196a2c3c
+pkgname:
+  - name: mint-themes-legacy
+# generated with artixpkg 0.37.4-1-any

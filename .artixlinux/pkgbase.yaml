@@ -1,54 +1,60 @@
 ---
-pkgbase:
-  name: mint-themes-legacy
-  version: 1.9.2-1
-  arch:
-    - any
-  pkgname:
-    - mint-themes-legacy
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 1.9.2-1
+    version: 2.0.2-1
     packages:
-      - mint-themes-legacy-1.9.2-1-any.pkg.tar.zst
+      - mint-themes-legacy-2.0.2-1-any.pkg.tar.zst
+    debug: []
+team: galaxy
