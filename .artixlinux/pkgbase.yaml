@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: lib32
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,12 +41,12 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.26.5-1
+    version: 1.26.6-1
     packages:
-      - lib32-gstreamer-1.26.5-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-base-libs-1.26.5-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-base-1.26.5-1-x86_64.pkg.tar.zst
-      - lib32-gst-plugins-good-1.26.5-1-x86_64.pkg.tar.zst
+      - lib32-gstreamer-1.26.6-1-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-base-libs-1.26.6-1-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-base-1.26.6-1-x86_64.pkg.tar.zst
+      - lib32-gst-plugins-good-1.26.6-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
