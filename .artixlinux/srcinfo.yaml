@@ -1,10 +1,10 @@
 ---
-version: 580.82.09-1
+version: 580.82.09-2
 pkgbase:
   name: nvidia-open
   pkgdesc: NVIDIA open kernel modules
   pkgver: 580.82.09
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/NVIDIA/open-gpu-kernel-modules
   arch:
     - x86_64
