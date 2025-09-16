@@ -11,7 +11,7 @@ url="https://github.com/intel/metee/"
 license=(Apache-2.0)
 makedepends=(cmake doxygen graphviz)
 source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('cf604756f78da6f66a79f6ae7a1c2fa6833495316036a97824bce40483fee9f4')
+sha256sums=('702bd3c17bc5876be85fada658a142c4ba514812779fe839e130c1dc0a64a7d9')
 
 build() {
   # fix error: "_FORTIFY_SOURCE" redefined [-Werror]
