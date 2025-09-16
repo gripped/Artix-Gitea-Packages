@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:2.048-1
+    version: 1:2.051-1
     packages:
-      - noto-fonts-emoji-1:2.048-1-any.pkg.tar.zst
+      - noto-fonts-emoji-1:2.051-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
