@@ -8,15 +8,15 @@
 
 pkgname=sqlitebrowser
 pkgver=3.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A light GUI editor for SQLite databases, built on top of Qt"
 url="https://sqlitebrowser.org"
 arch=('x86_64')
 license=('GPL-3.0-only')
-depends=('glibc' 'gcc-libs' 'qt5-base' 'hicolor-icon-theme' 'sqlcipher'
+depends=('glibc' 'gcc-libs' 'qt5-base' 'qt5-svg' 'hicolor-icon-theme' 'sqlcipher'
          'qcustomplot' 'qhexedit2' 'qscintilla-qt5' 'libqcustomplot.so' 'libqhexedit.so')
 makedepends=('git' 'cmake' 'ninja' 'qt5-tools')
-source=("git+https://github.com/sqlitebrowser/sqlitebrowser#tag=v${pkgver}")
+source=("git+https://github.com/sqlitebrowser/sqlitebrowser#tag=v${pkgver}?signed")
 sha256sums=('75739f9667624004259242d64c9ebcc0452e870155afde73b9619a5ef117fcbb')
 validpgpkeys=('05E463FDB5802C3D00257F9C79EAD0AB3BD7DD2C'  # Justin Clift (OpenPGP key for signing git commits) <justin@postgresql.org>
               '17ABC291B166F699409851AA9503B162E0416CE3') # SeongTae Jeong (OpenPGP key for signing git commits) <seongtaejg@gmail.com>

@@ -1,12 +1,5 @@
 ---
 team: galaxy
-pkgbase:
-  name: sqlitebrowser
-  version: 3.13.1-1
-  arch:
-    - x86_64
-  pkgname:
-    - sqlitebrowser
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,37 +12,49 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 3.13.1-1
+    version: 3.13.1-2
     packages:
-      - sqlitebrowser-3.13.1-1-x86_64.pkg.tar.zst
+      - sqlitebrowser-3.13.1-2-x86_64.pkg.tar.zst
+    debug: []
