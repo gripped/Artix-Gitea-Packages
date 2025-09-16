@@ -8,7 +8,7 @@ pkgname=(
   libnautilus-extension
   libnautilus-extension-docs
 )
-pkgver=48.3
+pkgver=49.0
 pkgrel=1
 pkgdesc="Default file manager for GNOME"
 url="https://apps.gnome.org/Nautilus/"
@@ -29,6 +29,7 @@ depends=(
   gtk4
   gvfs
   hicolor-icon-theme
+  icu
   libadwaita
   libcloudproviders
   libgexiv2
@@ -49,11 +50,14 @@ makedepends=(
   gobject-introspection
   meson
 )
-checkdepends=(python-gobject)
+checkdepends=(
+  python-gobject
+  weston
+)
 source=(
   "git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=${pkgver/[a-z]/.&}"
 )
-b2sums=('01e845a0e03e0fc6604e6285f68facd79e2de2d0a3a19198b1dc85d4cf3a3eedd58a51d67091f864da80e1309b0e8f02b4a650cd2cd5ba1a3abb76fe8a666f62')
+b2sums=('5deb16a0d803794717630f22ccb31154577894710ef8c5153b3bbafe0c903be1a9f763b733f150acab5166ce269b7db7ee2acdfb4fb94f16efa2de6f783718c2')
 validpgpkeys=(
   6B211753AC950672287226800538577822AE4B17 # António Fernandes <antoniof@gnome.org>
   550660707A6F40376B9B9F8D504A78811E6160CC # Corey Berla <corey@berla.me>
@@ -73,9 +77,26 @@ build() {
   meson compile -C build
 }
 
-check() {
+check() (
+  export XDG_RUNTIME_DIR="$PWD/runtime-dir"
+  mkdir -p -m 700 "$XDG_RUNTIME_DIR"
+
+  export WAYLAND_DISPLAY=wl-$pkgname-$RANDOM
+  weston --backend=headless --socket=$WAYLAND_DISPLAY --idle-time=0 &
+  _w=$!
+
+  trap "kill $_w; wait" EXIT
+
+  # Make tests actually notice bwrap is broken
+  install -D /dev/stdin path/bwrap <<END
+#!/bin/sh
+exit 1
+END
+  export PATH="$PWD/path:$PATH"
+
+  export NO_AT_BRIDGE=1 GTK_A11Y=none
   meson test -C build --print-errorlogs
-}
+)
 
 _pick() {
   local p="$1" f d; shift
