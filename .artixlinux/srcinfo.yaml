@@ -1,9 +1,9 @@
 ---
-version: 0.5.0-1
+version: 0.5.1-1
 pkgbase:
   name: tree-sitter-markdown
   pkgdesc: Markdown grammar for tree-sitter
-  pkgver: 0.5.0
+  pkgver: 0.5.1
   pkgrel: 1
   url: https://github.com/tree-sitter-grammars/tree-sitter-markdown
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - libtree-sitter-markdown.so
     - libtree-sitter-markdown-inline.so
   source:
-    - git+https://github.com/tree-sitter-grammars/tree-sitter-markdown.git#commit=v0.5.0
+    - git+https://github.com/tree-sitter-grammars/tree-sitter-markdown.git#commit=v0.5.1
   b2sums:
-    - 3e64a5e8478d10c069c97f549f3a5b62573c081bfef39ce699187bf286c16dca1964e2b5f2d6d7c83faf0df45b7f0930c8324a9822fd5e59c81bb69bacb3659d
+    - e72cefd58567a1e76356cceaa2f670286dd1f8eab8df79a58ab885d8dc813b61dde55413b1d1bc6bdfb33e1b98e32014d4e33dd7b47d6c5f494950195a4ddb23
 pkgname:
   - name: tree-sitter-markdown
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
