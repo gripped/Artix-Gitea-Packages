@@ -9,7 +9,7 @@
 
 pkgname=julia
 epoch=2
-pkgver=1.11.6
+pkgver=1.11.7
 pkgrel=1
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
@@ -44,7 +44,7 @@ source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$
         julia-metainfo.patch
         julia-curl-1.10.patch)
 backup=(etc/julia/startup.jl)
-sha256sums=('b268def41adc17496c3e0e7dcb5e27b2cbe6a1c61c78f6463544c5f4c734168a'
+sha256sums=('a6e96ecbd60057c91dc7a99fc1b37517b361a2df8fd1c46ffdad1d9bce89967d'
             'SKIP'
             'fc94d316bd56902f1720da55c331d43d315ce487d6b4cc7e5ffcb207cf9a8299'
             '2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367'
@@ -118,12 +118,13 @@ _make() {
     LIBBLASNAME=libblas64
     LIBLAPACK=-llapack64
     LIBLAPACKNAME=liblapack64
-    MARCH=x86-64
-    JULIA_CPU_TARGET="generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)"
     VERBOSE=1
     JLDFLAGS="$LDFLAGS -lLLVM-16jl"
     LLVM_CONFIG=/usr/lib/llvm-julia/bin/llvm-config
   )
+
+  [[ ${CARCH} == 'aarch64' ]] && make_options+=(MARCH=armv8.2-a JULIA_CPU_TARGET="generic;armv8.2-a,crypto,fullfp16,lse,rdm")
+  [[ ${CARCH} == 'x86_64' ]] &&  make_options+=(MARCH=x86-64 JULIA_CPU_TARGET="generic;sandybridge,-xsaveopt,clone_all;haswell,-rdrnd,base(1)")
 
   export CMAKE_POLICY_VERSION_MINIMUM=3.5 # Fix build with cmake 4
   LD_LIBRARY_PATH="/usr/lib/mbedtls2" make "${make_options[@]}" "$@"

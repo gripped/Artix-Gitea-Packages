@@ -1,9 +1,9 @@
 ---
-version: 2:1.11.6-1
+version: 2:1.11.7-1
 pkgbase:
   name: julia
   pkgdesc: High-level, high-performance, dynamic programming language
-  pkgver: 1.11.6
+  pkgver: 1.11.7
   pkgrel: 1
   epoch: 2
   url: https://julialang.org/
@@ -39,8 +39,8 @@ pkgbase:
   backup:
     - etc/julia/startup.jl
   source:
-    - https://github.com/JuliaLang/julia/releases/download/v1.11.6/julia-1.11.6-full.tar.gz
-    - https://github.com/JuliaLang/julia/releases/download/v1.11.6/julia-1.11.6-full.tar.gz.asc
+    - https://github.com/JuliaLang/julia/releases/download/v1.11.7/julia-1.11.7-full.tar.gz
+    - https://github.com/JuliaLang/julia/releases/download/v1.11.7/julia-1.11.7-full.tar.gz.asc
     - localhost.patch
     - c12e8515.patch
     - julia-hardcoded-libs.patch
@@ -51,7 +51,7 @@ pkgbase:
   validpgpkeys:
     - 3673DF529D9049477F76B37566E3C7DC03D6E495
   sha256sums:
-    - b268def41adc17496c3e0e7dcb5e27b2cbe6a1c61c78f6463544c5f4c734168a
+    - a6e96ecbd60057c91dc7a99fc1b37517b361a2df8fd1c46ffdad1d9bce89967d
     - SKIP
     - fc94d316bd56902f1720da55c331d43d315ce487d6b4cc7e5ffcb207cf9a8299
     - 2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367
@@ -62,4 +62,4 @@ pkgbase:
     - f9953782524471c5a8ce819bf00bd47f8272cea17058d15f24522d01b5e827e5
 pkgname:
   - name: julia
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
