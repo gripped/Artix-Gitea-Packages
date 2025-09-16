@@ -1,9 +1,9 @@
 ---
-version: 3.5.2-1
+version: 3.5.3-1
 pkgbase:
   name: openssl
   pkgdesc: The Open Source toolkit for Secure Sockets Layer and Transport Layer Security
-  pkgver: 3.5.2
+  pkgver: 3.5.3
   pkgrel: 1
   url: https://www.openssl.org
   arch:
@@ -26,16 +26,16 @@ pkgbase:
   backup:
     - etc/ssl/openssl.cnf
   source:
-    - https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz
-    - https://github.com/openssl/openssl/releases/download/openssl-3.5.2/openssl-3.5.2.tar.gz.asc
+    - https://github.com/openssl/openssl/releases/download/openssl-3.5.3/openssl-3.5.3.tar.gz
+    - https://github.com/openssl/openssl/releases/download/openssl-3.5.3/openssl-3.5.3.tar.gz.asc
     - ca-dir.patch
   validpgpkeys:
     - EFC0A467D613CB83C7ED6D30D894E2CE8B3D79F5
     - BA5473A2B0587B07FB27CF2D216094DFD0CB81EF
   sha256sums:
-    - c53a47e5e441c930c3928cf7bf6fb00e5d129b630e0aa873b08258656e7345ec
+    - c9489d2abcf943cdc8329a57092331c598a402938054dc3a22218aea8a8ec3bf
     - SKIP
     - 0a32d9ca68e8d985ce0bfef6a4c20b46675e06178cc2d0bf6d91bd6865d648b7
 pkgname:
   - name: openssl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
