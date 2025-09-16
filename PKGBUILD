@@ -1,4 +1,5 @@
-# Maintainer: Kyle Keen <keenerd@gmail.com>
+# Maintainer: kenobi kenobi@artixlinux.org
+# Contributor: Kyle Keen <keenerd@gmail.com>
 # Contributor: LaraCraft304 <lara@craft.net.br>
 # Contributor: Mateusz Herych <heniekk@gmail.com>
 
