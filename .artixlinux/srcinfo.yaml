@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-7
+version: 7.2.2-1
 pkgbase:
   name: virtualbox-host-modules-artix
   pkgdesc: Virtualbox host kernel modules for Artix Kernel
-  pkgver: 7.2.0
-  pkgrel: 7
+  pkgver: 7.2.2
+  pkgrel: 1
   url: https://virtualbox.org/
   arch:
     - x86_64
@@ -12,7 +12,7 @@ pkgbase:
     - GPL
   makedepends:
     - linux-headers
-    - virtualbox-host-dkms=7.2.0
+    - virtualbox-host-dkms=7.2.2
   provides:
     - VIRTUALBOX-HOST-MODULES
   conflicts:
