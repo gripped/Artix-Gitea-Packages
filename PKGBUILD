@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=firefox
-pkgver=142.0.1
+pkgver=143.0
 pkgrel=1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
@@ -87,7 +87,7 @@ validpgpkeys=(
   # https://blog.mozilla.org/security/2023/05/11/updated-gpg-key-for-signing-firefox-releases/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
-sha256sums=('b0adb44ed4c3383e752a5947adbfb0d03f24172cb468831bd49978de25e810c0'
+sha256sums=('6c45ca38091820c2c9925a85c80c04120de0ced98589065358c34d257e1edf83'
             'SKIP'
             'a9b8b4a0a1f4a7b4af77d5fc70c2686d624038909263c795ecc81e0aec7711e9'
             '71fe797430198ac8c00b538dce537284cf526e48be0496698cf5a980d70c16da'
@@ -96,7 +96,7 @@ sha256sums=('b0adb44ed4c3383e752a5947adbfb0d03f24172cb468831bd49978de25e810c0'
             '1069cd9b866c5348cbb60196aab1837c2d544dc3b48c9a23c141773671635608'
             '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2'
             '7802a6e1c6fb2d117041671b7853d376cebc5e7d76001159ed960fc557d2a0f5')
-b2sums=('ec132591ade9a8c8a4bfcede9a0764ae5f505ed47bc49a905c1222646052873ce1cea975bf21e885f618a505f763e1461318bb90ebe1dc9b205b242734fb1c26'
+b2sums=('3e71ba1d711c2f48efb693738efac3dbede6625c2c3a038c777128635ea39e39836569c205540561e5f65a26eb460f3aa84a60d70df4ff728add043e10d62fde'
         'SKIP'
         '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34'
         '2c7936949ef922307fb593bd0480a13bde2eab8ae24fc89071d809d6659384705f9b7838b1ae8bc46b98a152ba01fcffad606d4c84796ad9bfaaf20166f0a0fd'
