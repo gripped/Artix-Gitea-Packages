@@ -30,15 +30,15 @@ repos:
     packages: []
     debug: []
   world:
-    version: 6.4.1-1
+    version: 6.4.3-1
     packages:
-      - rocm-hip-sdk-6.4.1-1-any.pkg.tar.zst
-      - rocm-hip-libraries-6.4.1-1-any.pkg.tar.zst
-      - rocm-opencl-sdk-6.4.1-1-any.pkg.tar.zst
-      - rocm-hip-runtime-6.4.1-1-any.pkg.tar.zst
-      - rocm-language-runtime-6.4.1-1-any.pkg.tar.zst
-      - rocm-ml-sdk-6.4.1-1-any.pkg.tar.zst
-      - rocm-ml-libraries-6.4.1-1-any.pkg.tar.zst
+      - rocm-hip-sdk-6.4.3-1-any.pkg.tar.zst
+      - rocm-hip-libraries-6.4.3-1-any.pkg.tar.zst
+      - rocm-opencl-sdk-6.4.3-1-any.pkg.tar.zst
+      - rocm-hip-runtime-6.4.3-1-any.pkg.tar.zst
+      - rocm-language-runtime-6.4.3-1-any.pkg.tar.zst
+      - rocm-ml-sdk-6.4.3-1-any.pkg.tar.zst
+      - rocm-ml-libraries-6.4.3-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
