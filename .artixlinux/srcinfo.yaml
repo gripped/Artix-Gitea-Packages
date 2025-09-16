@@ -1,9 +1,9 @@
 ---
-version: 1:48.1-1
+version: 1:49.0.2-1
 pkgbase:
   name: gnome-music
   pkgdesc: Music player and management application
-  pkgver: 48.1
+  pkgver: 49.0.2
   pkgrel: 1
   epoch: 1
   url: https://apps.gnome.org/Music/
@@ -46,9 +46,9 @@ pkgbase:
     - 'gst-plugins-bad: Extra media codecs'
     - 'gst-plugins-ugly: Extra media codecs'
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-music.git#tag=48.1
+    - git+https://gitlab.gnome.org/GNOME/gnome-music.git#tag=49.0.2
   b2sums:
-    - 64ac90c898b222bfbcc35c6c6f2cd1f11ae1ef57beaea16448f46635710c79d1164361c3952994bc8b813434ba319217eeb30f0a2d72ffc0b821d29a49477d58
+    - a67d2161201190e1e74d34ad22dd21c86f7edc100b27aa618385e0fad9c009bab4f1972742bef41d254d5f5f69a3af0a2e3e8092b98d12e45e8a9ba97829b46a
 pkgname:
   - name: gnome-music
-# generated with artixpkg 0.37.0-1-any
+# generated with artixpkg 0.37.4-1-any
