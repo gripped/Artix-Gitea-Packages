@@ -1,0 +1,31 @@
+---
+version: 0.13.0-14
+pkgbase:
+  name: python-pymacaroons
+  pkgdesc: Python implementation of Macaroons. They’re better than cookies!
+  pkgver: 0.13.0
+  pkgrel: 14
+  url: https://github.com/ecordell/pymacaroons
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-pynacl
+  conflicts:
+    - python-pymacaroons-pynacl
+  source:
+    - pymacaroons-0.13.0.tar.gz::https://github.com/ecordell/pymacaroons/archive/v0.13.0.tar.gz
+    - pymacaroons-drop-python2-mock-six.patch::https://github.com/ecordell/pymacaroons/commit/68e096119d5aceee33fb817fd9ee5434c5857a78.patch
+  sha256sums:
+    - 780c67643126afe56f57fdc0f82b952d08e01a4df7eefaa929766dfb6edf6580
+    - a720c58d679149601bfdb38f519313dd4fc7bb07433e170a2c99237136b75bf7
+pkgname:
+  - name: python-pymacaroons
+# generated with artixpkg 0.37.4-1-any
