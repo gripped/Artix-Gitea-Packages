@@ -1,8 +1,9 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: kenobi <kenobi@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgname=openvkl
 pkgver=2.0.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Intel® Open Volume Kernel Library"
 arch=(x86_64)
 url="https://www.openvkl.org/"
