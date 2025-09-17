@@ -1,10 +1,10 @@
 ---
-version: 1:80.9.0-1
+version: 1:80.9.0-2
 pkgbase:
   name: python-setuptools
   pkgdesc: Easily download, build, install, upgrade, and uninstall Python packages
   pkgver: 80.9.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://pypi.org/project/setuptools/
   arch:
@@ -29,6 +29,8 @@ pkgbase:
     - python-wheel
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-setuptools
   depends:
     - python
@@ -51,4 +53,4 @@ pkgbase:
     - ff0caf384def8ba8aa1c7fbb29077f2bc14c42935f7f81b6c4993ebe835053207b6773865158ad3143147234b311b95033b266f9b4c34a78a67f0b7e83bb5537
 pkgname:
   - name: python-setuptools
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
