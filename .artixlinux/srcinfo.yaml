@@ -1,0 +1,30 @@
+---
+version: 3.7.2-1
+pkgbase:
+  name: python-jaraco.path
+  pkgdesc: Miscellaneous path functions
+  pkgver: 3.7.2
+  pkgrel: 1
+  url: https://github.com/jaraco/jaraco.path
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest-enabler
+    - python-pytest-mypy
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/jaraco/jaraco.path.git#tag=v3.7.2
+  sha512sums:
+    - 700d744d012754d82b465d7f9cd05e86b6690f651dbf4e1e8e6f00aab5847b9b776a07c2f7dc7407a3f59673a5c18c2c43f82f40760e6ed56862ce66e1831050
+pkgname:
+  - name: python-jaraco.path
+# generated with artixpkg 0.37.4-1-any
