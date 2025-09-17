@@ -1,0 +1,62 @@
+---
+version: 2.2.0-1
+pkgbase:
+  name: python-poetry
+  pkgdesc: Python dependency management and packaging made easy
+  pkgver: 2.2.0
+  pkgrel: 1
+  url: https://python-poetry.org
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-deepdiff
+    - python-psutil
+    - python-httpretty
+    - python-pip
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-randomly
+    - python-pytest-xdist
+  depends:
+    - python
+    - python-build
+    - python-cachecontrol
+    - python-cachy
+    - python-cleo
+    - python-dulwich
+    - python-fastjsonschema
+    - python-filelock
+    - python-findpython
+    - python-html5lib
+    - python-installer
+    - python-jsonschema
+    - python-keyring
+    - python-lockfile
+    - python-packaging
+    - python-pbs-installer
+    - python-pexpect
+    - python-pkginfo
+    - python-platformdirs
+    - python-poetry-core
+    - python-poetry-plugin-export
+    - python-pyproject-hooks
+    - python-requests
+    - python-requests-toolbelt
+    - python-shellingham
+    - python-tomlkit
+    - python-trove-classifiers
+    - python-urllib3
+    - python-virtualenv
+  optdepends:
+    - 'python-pip: to use pip with virtual environments'
+  provides:
+    - poetry
+  source:
+    - https://github.com/python-poetry/poetry/archive/2.2.0/poetry-2.2.0.tar.gz
+  sha256sums:
+    - 5931caf0af9315d6dd96bd07abdb2e81e1e84f200f03b003e7f2f37b032d7be9
+pkgname:
+  - name: python-poetry
+# generated with artixpkg 0.37.4-1-any
