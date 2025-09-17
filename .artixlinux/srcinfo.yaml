@@ -1,10 +1,10 @@
 ---
-version: 0.7.7-1
+version: 0.7.7-2
 pkgbase:
   name: restinio
   pkgdesc: Header-only C++14 library that gives you an embedded HTTP/Websocket server
   pkgver: 0.7.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://stiffstream.com/en/products/restinio.html
   arch:
     - any
