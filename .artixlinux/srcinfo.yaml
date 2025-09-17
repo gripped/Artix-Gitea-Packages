@@ -28,7 +28,7 @@ pkgbase:
     - libqcustomplot.so
     - libqhexedit.so
   source:
-    - git+https://github.com/sqlitebrowser/sqlitebrowser#tag=v3.13.1?signed
+    - git+https://github.com/sqlitebrowser/sqlitebrowser#tag=v3.13.1
   validpgpkeys:
     - 05E463FDB5802C3D00257F9C79EAD0AB3BD7DD2C
     - 17ABC291B166F699409851AA9503B162E0416CE3
