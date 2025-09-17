@@ -25,12 +25,12 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2:4.23.0-1
+    version: 2:4.23.0-2
     packages:
-      - libwbclient-2:4.23.0-1-x86_64.pkg.tar.zst
-      - ldb-2:4.23.0-1-x86_64.pkg.tar.zst
-      - smbclient-2:4.23.0-1-x86_64.pkg.tar.zst
-      - samba-2:4.23.0-1-x86_64.pkg.tar.zst
+      - libwbclient-2:4.23.0-2-x86_64.pkg.tar.zst
+      - ldb-2:4.23.0-2-x86_64.pkg.tar.zst
+      - smbclient-2:4.23.0-2-x86_64.pkg.tar.zst
+      - samba-2:4.23.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2:4.22.4-1
