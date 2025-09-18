@@ -1,10 +1,10 @@
 ---
-version: 3.10.4-1
+version: 3.10.4-2
 pkgbase:
   name: postfix
   pkgdesc: Fast, easy to administer, secure mail server
   pkgver: 3.10.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.postfix.org/
   arch:
     - x86_64
@@ -148,4 +148,4 @@ pkgname:
       - postfix
       - sqlite
       - libsqlite3.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
