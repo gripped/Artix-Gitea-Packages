@@ -1,8 +1,8 @@
-# Maintainer: Anatol Pomozov
+# Maintainer: artist for Artix Linux
 
 pkgname=booster
 pkgver=0.12
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Fast and secure initramfs generator'
 arch=(x86_64)
 url='https://github.com/anatol/booster'
@@ -13,7 +13,7 @@ makedepends=(go ruby-ronn-ng)
 optdepends=(
   'busybox: to enable emergency shell at the boot time'
   'yubikey-personalization: for clevis Yubikey challenge-response support'
-  'libfido2: for systemd-enroll with FIDO2'
+  'libfido2: for enroll with FIDO2'
 )
 backup=(etc/booster.yaml)
 provides=(initramfs)
