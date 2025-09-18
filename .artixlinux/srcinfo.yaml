@@ -1,9 +1,9 @@
 ---
-version: 20250808-1
+version: 20250917-1
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
-  pkgver: 20250808
+  pkgver: 20250917
   pkgrel: 1
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
@@ -19,11 +19,11 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20250808
+    - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20250917
   validpgpkeys:
     - 4CDE8575E547BF835FE15807A31B6BD72486CFD6
   b2sums:
-    - 32f5d1f42ff8bb9929fb5906fc3e212d1bf1dcafe376824b369e6290271ecd796d9acd450ea3f84047e663fbd74629a574075363607f32f71ec19b5160e2f846
+    - 0fedea00778cba31ed19169f40cacbb0566792c93dfdb416a702a3f12a2d76f73d22d05736b2997f3424269cbb13239f3f50bdf55294caa0827e20dc5634efe3
 pkgname:
   - name: linux-firmware
     pkgdesc: Firmware files for Linux - Default set
@@ -169,4 +169,4 @@ pkgname:
       - LicenseRef-realtek
     depends:
       - linux-firmware-whence
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
