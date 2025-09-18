@@ -1,10 +1,10 @@
 ---
-version: 3.6.0-1
+version: 3.6.0-2
 pkgbase:
   name: namcap
   pkgdesc: A Pacman package analyzer
   pkgver: 3.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.archlinux.org/pacman/namcap
   arch:
     - any
@@ -12,7 +12,6 @@ pkgbase:
     - GPL-2.0-or-later
   checkdepends:
     - python-pytest
-    - python-six
     - elogind
   makedepends:
     - python-build
@@ -38,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: namcap
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
