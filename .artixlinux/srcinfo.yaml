@@ -1,0 +1,34 @@
+---
+version: 0.12.7-1
+pkgbase:
+  name: python-mitmproxy-rs
+  pkgdesc: Python bindings for mitmproxy's Rust code
+  pkgver: 0.12.7
+  pkgrel: 1
+  url: https://github.com/mitmproxy/mitmproxy_rs
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - bpf-linker
+    - rustup
+    - maturin
+    - python-installer
+    - rust-src
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  options:
+    - '!lto'
+  source:
+    - python-mitmproxy-rs::git+https://github.com/mitmproxy/mitmproxy_rs#tag=v0.12.7
+  sha512sums:
+    - 19ac6d648235218e328e762c9f7ddbf1a6b18fc099dd427cea9f3c9e3c30fb35fd06fe895b1af9fc83f5a7bc34a7af30e5bffce4904af2127171d7b589fa9d3b
+  b2sums:
+    - 2eb423332f30b40755c0485d9332f540c9ec3ddb9dfb9532526097b24f9cc9e55cfa0d3ca57cbee17ef61452482ae7216e6dab5d67bc85627d7c2aad74d00021
+pkgname:
+  - name: python-mitmproxy-rs
+# generated with artixpkg 0.37.4-1-any
