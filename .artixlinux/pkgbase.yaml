@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.204.1-1
+    version: 0.204.3-1
     packages:
-      - zed-0.204.1-1-x86_64.pkg.tar.zst
+      - zed-0.204.3-1-x86_64.pkg.tar.zst
     debug: []
