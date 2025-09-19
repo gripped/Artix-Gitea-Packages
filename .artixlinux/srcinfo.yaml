@@ -1,9 +1,9 @@
 ---
-version: 0.25.8-1
+version: 0.25.9-1
 pkgbase:
   name: p11-kit
   pkgdesc: Loads and enumerates PKCS#11 modules
-  pkgver: 0.25.8
+  pkgver: 0.25.9
   pkgrel: 1
   url: https://p11-glue.freedesktop.org
   arch:
@@ -23,14 +23,14 @@ pkgbase:
     - glibc
     - libtasn1
   source:
-    - git+https://github.com/p11-glue/p11-kit?signed#tag=0.25.8
+    - git+https://github.com/p11-glue/p11-kit#tag=0.25.9
     - git+https://github.com/p11-glue/pkcs11-json
   validpgpkeys:
     - C0F67099B808FB063E2C81117BFB1108D92765AF
     - 462225C3B46F34879FC8496CD605848ED7E69871
     - 5D46CB0F763405A7053556F47A75A648B3F9220C
   b2sums:
-    - 608c0edbdf654faf26d8c0d508ec1735b731347f880a8248fee77ff71fcb34e4a4f08d53cb2a698a62a080bb7efb3cb0171d7fa5d2449f3492257326b9a21325
+    - 02475cbc1edfcb75b3ebd8cc9a519f44dc4ebcf6fd8828238a7d45306459a21e0dd2cdcf82c17d58695641e0510166342ba20e592de555c7dd9f7bc5c585199b
     - SKIP
 pkgname:
   - name: p11-kit
@@ -38,7 +38,7 @@ pkgname:
       - coreutils
       - glibc
       - libtasn1
-      - libp11-kit=0.25.8-1
+      - libp11-kit=0.25.9-1
       - libp11-kit.so
   - name: libp11-kit
     pkgdesc: Loads and enumerates PKCS#11 modules (library)
