@@ -1,0 +1,67 @@
+---
+version: 0.18.4.2-1
+pkgbase:
+  name: monero-gui
+  pkgdesc:
+    Qt GUI wallet for Monero: the secure, private, untraceable peer-to-peer currency
+  pkgver: 0.18.4.2
+  pkgrel: 1
+  url: https://getmonero.org/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - boost
+    - cmake
+    - git
+    - python
+    - qt5-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - hicolor-icon-theme
+    - libboost_program_options.so
+    - libgcrypt
+    - libhidapi-libusb.so
+    - libsodium.so
+    - libssl.so
+    - libunbound.so
+    - libunwind
+    - libusb
+    - libx11
+    - monero
+    - pcsclite
+    - qt5-base
+    - qt5-declarative
+    - qt5-graphicaleffects
+    - qt5-quickcontrols
+    - qt5-quickcontrols2
+    - qt5-svg
+    - qt5-xmlpatterns
+  source:
+    - git+https://github.com/monero-project/monero-gui?signed#tag=v0.18.4.2
+    - git+https://github.com/monero-project/monero
+    - git+https://github.com/dlbeer/quirc.git
+    - git+https://github.com/miniupnp/miniupnp.git
+    - git+https://github.com/Tencent/rapidjson.git
+    - git+https://github.com/trezor/trezor-common.git
+    - git+https://github.com/tevador/RandomX.git
+    - git+https://github.com/monero-project/supercop.git
+    - monero-gui.desktop
+  validpgpkeys:
+    - 8777AB8F778EE89487A2F8E7F4ACA0183641E010
+    - 487277A8BD0A209C16B700F3C64552D877C32479
+  sha512sums:
+    - 539d1a9d3cf63675812f37a01369008dc67fe6db5e5dbb1d173639ebbc631020042d83841513699417489a9c936c2d125da0be44d17b051c75fbc4e2a1f62961
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - 98b67aec60e492f0a220a156a110baf96862343d3802ec34347c70c7af671a1ae49ccaec218f2e8f81e153c433e9145ad2f55b8613ce6999fc2c87fbd81fd8e1
+pkgname:
+  - name: monero-gui
+# generated with artixpkg 0.37.4-1-any
