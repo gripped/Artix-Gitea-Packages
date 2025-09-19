@@ -1,0 +1,33 @@
+---
+version: 1.9.1-1
+pkgbase:
+  name: python-nodeenv
+  pkgdesc: Node.js virtual environment builder
+  pkgver: 1.9.1
+  pkgrel: 1
+  url: https://github.com/ekalinin/nodeenv
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - nodejs
+    - python-pytest
+    - python-coverage
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python-setuptools
+    - make
+  optdepends:
+    - 'nodejs: for --node=system'
+  source:
+    - python-nodeenv-1.9.1.tar.gz::https://github.com/ekalinin/nodeenv/archive/1.9.1.tar.gz
+  sha512sums:
+    - 28fa814b57323dd996764d754f9c614c9dfd668c85ab21c23d0f9aeebb669ba3933f7b0b9ccbf0c808b5f15783eb3afdf3801f293952f3c4945729dee6ecb20b
+pkgname:
+  - name: python-nodeenv
+# generated with artixpkg 0.37.4-1-any
