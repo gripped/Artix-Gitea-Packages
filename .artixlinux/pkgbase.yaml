@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 46.0.1-1
+    version: 46.0.1-1.1
     packages:
-      - python-cryptography-46.0.1-1-x86_64.pkg.tar.zst
+      - python-cryptography-46.0.1-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 45.0.7-1

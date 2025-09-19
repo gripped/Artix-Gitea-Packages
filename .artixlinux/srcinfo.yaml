@@ -1,10 +1,10 @@
 ---
-version: 46.0.1-1
+version: 46.0.1-1.1
 pkgbase:
   name: python-cryptography
   pkgdesc: A package designed to expose cryptographic recipes and primitives to Python developers
   pkgver: 46.0.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/pyca/cryptography
   arch:
     - x86_64
