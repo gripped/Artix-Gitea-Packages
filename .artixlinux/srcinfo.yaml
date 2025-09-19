@@ -1,0 +1,37 @@
+---
+version: 1.86.0-1
+pkgbase:
+  name: leptonica
+  pkgdesc: Software that is broadly useful for image processing and image analysis applications
+  pkgver: 1.86.0
+  pkgrel: 1
+  url: http://www.leptonica.com
+  arch:
+    - x86_64
+  license:
+    - custom
+  depends:
+    - giflib
+    - libgif.so
+    - libjpeg-turbo
+    - libjpeg.so
+    - libpng
+    - libpng16.so
+    - libtiff
+    - libtiff.so
+    - libtiff
+    - libtiff.so
+    - libwebp
+    - libwebp.so
+    - libwebpmux.so
+    - libsharpyuv.so
+    - openjpeg2
+    - zlib
+    - libz.so
+  source:
+    - https://github.com/DanBloomberg/leptonica/archive/1.86.0/leptonica-1.86.0.tar.gz
+  sha256sums:
+    - b4447faf61a8786a9b211d58d4103d85d47fd3a5dd418d5a6bc525d41db54ccc
+pkgname:
+  - name: leptonica
+# generated with artixpkg 0.37.4-1-any
