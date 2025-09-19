@@ -5,8 +5,8 @@
 
 _pkgbase=systemd
 
-_alpm=2.2
-_tag='257.9'
+_alpm=2.4.4
+_tag='258'
 
 pkgbase=udev
 pkgname=('udev' 'libudev' 'esysusers' 'etmpfiles')
@@ -49,10 +49,10 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-artix-standalone-install.patch
 )
-sha512sums=('27daa6035ef853ec802f8423c9d8d90810c2b0f71af2ec7d21d468905eacc109497e2186d15834856c006fea71cf9b96278d26a20e48bb212b7c049eac9fdd08'
-            '3b0c46459666137ff164bedb4b64c30a9713e8e236cf2675afca413ee25a1f2c0b9f0a65eab798e51fda70be84ab1bc84a3e3b137b776bf64133f2007e56ae84'
-            '78065bde708118b7d6e4ed492e096c763e4679a1c54bd98750d5d609d8cc2f1373023f308880f14fc923ae7f9fea34824917ef884c0f996b1f43d08ef022c0fb'
-            'c2d1b85f3cd5948333edca36b590dad19d5045424f0145b64fe9abdf6fe7e2c3a0fca6c1901e9bfaa26b4e6fc98ff0ec8d9c825845f778fe77d681075cc47eb2')
+sha512sums=('4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e0499294b8c7f9bbb7946147e9379db7b277d1c277a08ee00f92f8d0eff33330'
+            '1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417'
+            'beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377'
+            'aba57dfcdffdb8c9c01209e289a6fca684eb403757984b7733b5060ef8057699c41eb9c4c9598c9ecf473f25fd2eb655faccab22a07ed65822bb3f3c8321ce42')
 
 _backports=(
 )
@@ -166,7 +166,6 @@ build() {
         -Dmachined=false
         -Dmicrohttpd=disabled
         -Dnetworkd=false
-        -Dnscd=false
         -Dnss-myhostname=false
         -Dnss-resolve=disabled
         -Dnss-systemd=false
@@ -215,6 +214,7 @@ build() {
         -Dnss-mymachines=disabled
         -Dukify=disabled
         -Dtpm2=disabled
+        -Dshellprofiledir=no
     )
 
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
@@ -322,7 +322,7 @@ package_udev() {
     backup=(etc/udev/iocost.conf
             etc/udev/udev.conf)
 
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags udev,udev-devel
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags udev,udev-devel,hwdb
 
     for m in udev.conf.5 iocost.conf.5 udev.7 udevadm.8 systemd-hwdb.8; do
         _inst_man "$m"
