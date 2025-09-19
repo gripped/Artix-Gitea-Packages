@@ -1,9 +1,9 @@
 ---
-version: 2.18-1
+version: 2.19-1
 pkgbase:
   name: nvchecker
   pkgdesc: New version checker for software releases
-  pkgver: 2.18
+  pkgver: 2.19
   pkgrel: 1
   url: https://github.com/lilydjwg/nvchecker
   arch:
@@ -19,6 +19,7 @@ pkgbase:
     - python-awesomeversion
     - python-lxml
     - python-jq
+    - python-zstandard
     - git
   makedepends:
     - git
@@ -44,6 +45,7 @@ pkgbase:
     - 'python-lxml: for the htmlparser source'
     - 'python-packaging: for the pypi source'
     - 'python-jq: for the jq source'
+    - 'python-zstandard: for the rpmrepo source'
     - 'python-toml: for nvchecker-ini2toml script'
     - 'python-aiohttp: alternative HTTP backend'
     - 'python-httpx: alternative HTTP backend'
@@ -51,11 +53,11 @@ pkgbase:
     - 'python-gobject: for nvchecker-notify'
     - 'libnotify: for nvchecker-notify'
   source:
-    - git+https://github.com/lilydjwg/nvchecker.git?signed#tag=v2.18
+    - git+https://github.com/lilydjwg/nvchecker.git?signed#tag=v2.19
   validpgpkeys:
     - 356690A1E7404E30D0E902B2E64D049594A54F54
   sha512sums:
-    - 5cc26a7880a2ad75bae9a070756c0c1e1eda915eeaac635a4c141cb6c5ec1add36fde506cbf81cb1ffb776c44b20ea761b0bb4113ad92f1099c70258ed8a1bbc
+    - 539d791d5912859a7bbea561b3c750099547382e9f08efd624cb482efa98fe0518c132ad552936ceb09ab23373c06ea3e73f49aa298427e21c3b9dbf26985db9
 pkgname:
   - name: nvchecker
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
