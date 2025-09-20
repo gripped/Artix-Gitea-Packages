@@ -12,7 +12,7 @@ pkgbase=udev
 pkgname=('udev' 'libudev' 'esysusers' 'etmpfiles')
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -48,7 +48,6 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=${_alpm}"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-artix-standalone-install.patch
-#         fix-link-udev-shared-option.patch::https://github.com/systemd/systemd/commit/9736f634c8b61343be966114ce1c9eddaf0fa742.patch
 )
 sha512sums=('4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e0499294b8c7f9bbb7946147e9379db7b277d1c277a08ee00f92f8d0eff33330'
             '1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417'
@@ -56,7 +55,7 @@ sha512sums=('4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e04
             'ed87cc4c5addd9dc74a5a15253f48593f72c613862696ebeaae922b7c1f224f42f450b2579fb4bcd45ea828eeb797af5ad2cfc707809fd326b48bf14bf90d9c9')
 
 _backports=(
-9736f634c8b61343be966114ce1c9eddaf0fa742
+    9736f634c8b61343be966114ce1c9eddaf0fa742 # fix-link-udev-shared-option
 )
 
 _reverts=(
@@ -111,13 +110,6 @@ build() {
         -Dtests=true
 
         -D link-udev-shared=false
-#         -D link-journalctl-shared=false
-#         -D link-timesyncd-shared=false
-#         -D link-networkd-shared=false
-#         -D link-systemctl-shared=false
-#         -D link-boot-shared=false
-#         -D link-portabled-shared=false
-        -D static-libsystemd=true
 
         -Ddefault-keymap='us'
 
@@ -229,7 +221,7 @@ build() {
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
 
     _targets+=(
-        #udev:shared_library
+        udev:shared_library
         src/libudev/libudev.pc
 
         udevadm

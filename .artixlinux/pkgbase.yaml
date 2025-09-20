@@ -13,12 +13,12 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 258-2
+    version: 258-3
     packages:
-      - udev-258-2-x86_64.pkg.tar.zst
-      - libudev-258-2-x86_64.pkg.tar.zst
-      - esysusers-258-2-x86_64.pkg.tar.zst
-      - etmpfiles-258-2-x86_64.pkg.tar.zst
+      - udev-258-3-x86_64.pkg.tar.zst
+      - libudev-258-3-x86_64.pkg.tar.zst
+      - esysusers-258-3-x86_64.pkg.tar.zst
+      - etmpfiles-258-3-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 257.9-1
