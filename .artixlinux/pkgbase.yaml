@@ -1,24 +1,24 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-goblins
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
-    debug: []
-  system-gremlins:
     version: 258-1
     packages:
       - udev-258-1-x86_64.pkg.tar.zst
       - libudev-258-1-x86_64.pkg.tar.zst
       - esysusers-258-1-x86_64.pkg.tar.zst
       - etmpfiles-258-1-x86_64.pkg.tar.zst
+    debug: []
+  system-gremlins:
+    version: null
+    packages: []
     debug: []
   system:
     version: 257.9-1
