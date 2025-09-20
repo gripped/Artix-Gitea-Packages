@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,20 +41,21 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1:25.2.2-2
+    version: 1:25.2.3-2
     packages:
-      - lib32-mesa-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-opencl-mesa-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-asahi-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-dzn-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-freedreno-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-gfxstream-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-intel-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-nouveau-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-radeon-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-swrast-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-virtio-1:25.2.2-2-x86_64.pkg.tar.zst
-      - lib32-vulkan-mesa-layers-1:25.2.2-2-x86_64.pkg.tar.zst
+      - lib32-mesa-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-opencl-mesa-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-asahi-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-dzn-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-freedreno-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-gfxstream-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-intel-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-nouveau-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-radeon-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-swrast-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-virtio-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-mesa-device-select-1:25.2.3-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-mesa-layers-1:25.2.3-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
