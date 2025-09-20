@@ -4,11 +4,11 @@
 
 _url=https://gitea.artixlinux.org/artix
 _extra=1.3
-_alpm=2.2
+_alpm=2.4.4
 
 pkgbase=openrc
 pkgname=('openrc' 'libeinfo')
-pkgver=0.62.9
+pkgver=0.62.10
 pkgrel=1
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
@@ -26,14 +26,14 @@ source=(
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
     "openrc-agetty-meson-conf-d.patch::https://github.com/OpenRC/openrc/pull/850/commits/e3961a81809ed8d0e594402b012ee685e4ad970f.patch"
 )
-sha256sums=('2d4c11b3aa3172b611cc047101064f2db96cd4f7303a058ad80e284e0e388775'
+sha256sums=('8ee7d001355f4e4cb14ab39b1c3cbe5b3cc4380ecb79f12a10967226f54833ca'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
             '0cb9b79b2e044c3641b20ec701a396dd5575bb5b1c48586ab57de9c2b7d24308'
             'e83f678c3e3d03067d0e5602bad82382cf74c8dc4fd7a1c18f3a3ceb3a21f0be'
-            'f29110a8222b2d67a31918869ae8261bdf35d3404cd1effbb3f9fcfa97cdbb25'
+            'e33444dba1b0a185eead8460a77f763bc99bca8cb072dbb90e90a29393d4f865'
             '0a2aead8c5257cca191e8a3a57c080d4deb4ba5fae89df4709843584eef53534')
 
 prepare() {
