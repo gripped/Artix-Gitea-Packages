@@ -21,6 +21,7 @@ prepare() {
 
 	cp "${srcdir}/config.h" .
 	sed -i 's/CFLAGS =/CFLAGS +=/' config.mk
+	sed -i '/TERMINFO/Id' "Makefile"
 }
 
 build() {
