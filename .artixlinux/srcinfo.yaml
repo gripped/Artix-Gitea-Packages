@@ -1,10 +1,10 @@
 ---
-version: 2025.09-1
+version: 2025.09-2
 pkgbase:
   name: iso-profiles
   pkgdesc: Artix iso profiles
   pkgver: 2025.09
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/iso-profiles
   arch:
     - any
