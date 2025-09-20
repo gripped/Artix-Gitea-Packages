@@ -4,7 +4,7 @@
 
 pkgname=libtiff
 pkgver=4.7.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Library for manipulation of TIFF images'
 url='http://www.simplesystems.org/libtiff/'
 arch=(x86_64)
@@ -42,9 +42,9 @@ validpgpkeys=(
 
 build() {
   cmake -B build -S $pkgname \
-  -DCMAKE_INSTALL_PREFIX=/usr \
-  -DCMAKE_BUILD_TYPE=None \
-  -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
   cmake --build build
 }
