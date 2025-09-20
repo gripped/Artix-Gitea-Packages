@@ -6,7 +6,7 @@ pkgbase=lib32-p11-kit
 pkgname=(
   lib32-p11-kit
 )
-pkgver=0.25.8
+pkgver=0.25.9
 pkgrel=1
 pkgdesc="Loads and enumerates PKCS#11 modules (32-bit library)"
 url="https://p11-glue.freedesktop.org"
@@ -26,10 +26,11 @@ checkdepends=(
   lib32-gnutls
 )
 source=(
-  "git+https://github.com/p11-glue/p11-kit?signed#tag=$pkgver"
+  # https://github.com/p11-glue/p11-kit/issues/721
+  "git+https://github.com/p11-glue/p11-kit#tag=$pkgver"
   git+https://github.com/p11-glue/pkcs11-json
 )
-b2sums=('608c0edbdf654faf26d8c0d508ec1735b731347f880a8248fee77ff71fcb34e4a4f08d53cb2a698a62a080bb7efb3cb0171d7fa5d2449f3492257326b9a21325'
+b2sums=('02475cbc1edfcb75b3ebd8cc9a519f44dc4ebcf6fd8828238a7d45306459a21e0dd2cdcf82c17d58695641e0510166342ba20e592de555c7dd9f7bc5c585199b'
         'SKIP')
 validpgpkeys=(
   C0F67099B808FB063E2C81117BFB1108D92765AF  # Stef Walter <stef@thewalter.net>
