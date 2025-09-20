@@ -7,7 +7,7 @@ _tag='258'
 
 pkgname=lib32-udev
 pkgver="${_tag/[-~]/}"
-pkgrel=1
+pkgrel=2
 pkgdesc='Userspace device file manager (32-bit)'
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
@@ -47,7 +47,7 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-artix-standalone-install.patch)
 sha512sums=('4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e0499294b8c7f9bbb7946147e9379db7b277d1c277a08ee00f92f8d0eff33330'
-            'aba57dfcdffdb8c9c01209e289a6fca684eb403757984b7733b5060ef8057699c41eb9c4c9598c9ecf473f25fd2eb655faccab22a07ed65822bb3f3c8321ce42')
+            'ed87cc4c5addd9dc74a5a15253f48593f72c613862696ebeaae922b7c1f224f42f450b2579fb4bcd45ea828eeb797af5ad2cfc707809fd326b48bf14bf90d9c9')
 
 _backports=(
 )
