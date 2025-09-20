@@ -1,10 +1,10 @@
 ---
-version: 258-1
+version: 258-2
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 258
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -44,7 +44,7 @@ pkgbase:
     - 4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e0499294b8c7f9bbb7946147e9379db7b277d1c277a08ee00f92f8d0eff33330
     - 1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417
     - beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377
-    - aba57dfcdffdb8c9c01209e289a6fca684eb403757984b7733b5060ef8057699c41eb9c4c9598c9ecf473f25fd2eb655faccab22a07ed65822bb3f3c8321ce42
+    - ed87cc4c5addd9dc74a5a15253f48593f72c613862696ebeaae922b7c1f224f42f450b2579fb4bcd45ea828eeb797af5ad2cfc707809fd326b48bf14bf90d9c9
 pkgname:
   - name: udev
     pkgdesc: Userspace device file manager
