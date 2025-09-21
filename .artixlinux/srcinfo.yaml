@@ -1,10 +1,10 @@
 ---
-version: 25.9.0-1
+version: 25.9.0-2
 pkgbase:
   name: python-black
   pkgdesc: Uncompromising Python code formatter
   pkgver: 25.9.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/psf/black
   arch:
     - any
@@ -16,7 +16,6 @@ pkgbase:
     - python-parameterized
     - python-pytest
     - python-tokenize-rt
-    - python-pytokens
   makedepends:
     - git
     - python-build
@@ -31,6 +30,7 @@ pkgbase:
     - python-packaging
     - python-pathspec
     - python-platformdirs
+    - python-pytokens
   optdepends:
     - 'ipython: for Jupyter notebook support'
     - 'python-tokenize-rt: for Jupyter notebook support'
