@@ -4,7 +4,7 @@
 
 pkgname=jami-daemon
 pkgver=20250912
-pkgrel=1
+pkgrel=2
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)"
 arch=(x86_64)
 url="https://jami.net"
@@ -21,7 +21,7 @@ _pjprojectver=37130c943d59f25a71935803ea2d84515074a237
 _dhtnetver=6c5ee3a21556d668d047cdedb5c4b746c3c6bdb2
 source=(git+https://git.jami.net/savoirfairelinux/${pkgname}.git#commit=${_commit}
         https://github.com/savoirfairelinux/pjproject/archive/${_pjprojectver}/pjproject-${_pjprojectver}.tar.gz
-        dhtnet-$_dhtnetver.tar.gz::https://review.jami.net/plugins/gitiles/dhtnet/+archive/$_dhtnetver.tar.gz
+        dhtnet-$_dhtnetver.tar.gz::https://github.com/savoirfairelinux/opendht/archive/$_dhtnetver.tar.gz
         ffmpeg-7.patch)
 noextract=(pjproject-${_pjprojectver}.tar.gz
            dhtnet-${_dhtnetver}.tar.gz)

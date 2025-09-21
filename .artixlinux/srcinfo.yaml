@@ -1,10 +1,10 @@
 ---
-version: 20250912-1
+version: 20250912-2
 pkgbase:
   name: jami-daemon
   pkgdesc: Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)
   pkgver: 20250912
-  pkgrel: 1
+  pkgrel: 2
   url: https://jami.net
   arch:
     - x86_64
@@ -53,7 +53,7 @@ pkgbase:
   source:
     - git+https://git.jami.net/savoirfairelinux/jami-daemon.git#commit=ce82bdbbf38e7f7ac9d675bfc959e4d7f7ac387
     - https://github.com/savoirfairelinux/pjproject/archive/37130c943d59f25a71935803ea2d84515074a237/pjproject-37130c943d59f25a71935803ea2d84515074a237.tar.gz
-    - dhtnet-6c5ee3a21556d668d047cdedb5c4b746c3c6bdb2.tar.gz::https://review.jami.net/plugins/gitiles/dhtnet/+archive/6c5ee3a21556d668d047cdedb5c4b746c3c6bdb2.tar.gz
+    - dhtnet-6c5ee3a21556d668d047cdedb5c4b746c3c6bdb2.tar.gz::https://github.com/savoirfairelinux/opendht/archive/6c5ee3a21556d668d047cdedb5c4b746c3c6bdb2.tar.gz
     - ffmpeg-7.patch
   sha512sums:
     - 91d9ff98033f4fd889d1c68fcc1a7b59923627178576a831dde2ddcd5f588c74cab0fec8c3e4c6893e7ceedf66275dd7c50acef28fa8e63602895f689e34ced8
