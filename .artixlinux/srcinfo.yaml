@@ -1,10 +1,10 @@
 ---
-version: 1.6.0-1
+version: 1.6.0-2
 pkgbase:
   name: mgard
   pkgdesc: MultiGrid Adaptive Reduction of Data
   pkgver: 1.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/CODARcode/MGARD
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - ca88641cfe2f1b1f72c8bbb35078925a96c426ff2918f7b564c0ad5c7bb49e68a145cec74cf269b3ee208ef5bd41f0c4ab7ce1376c5ff4a1f8ce7b2a268a1ca2
 pkgname:
   - name: mgard
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
