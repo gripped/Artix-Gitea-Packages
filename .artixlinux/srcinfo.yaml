@@ -1,0 +1,35 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gsettings-desktop-schemas
+  pkgdesc: GSettings schemas for GNOME
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - adwaita-fonts
+    - dconf
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas.git#tag=49.0
+  b2sums:
+    - 2c253f280677c5cc52a5d11eb68a41d1b1a172b8c5f23c33fc536147c851e4b41370fcf89b2f75ced557e10ee3ae679d446885bf8a36ccbee4152a967606718a
+pkgname:
+  - name: gsettings-desktop-schemas
+    pkgdesc: GSettings schemas for GNOME desktop components
+    depends:
+      - gsettings-system-schemas=49.0-1
+      - adwaita-fonts
+      - dconf
+  - name: gsettings-system-schemas
+    pkgdesc: GSettings schemas for GNOME system components
+    depends:
+      - dconf
+# generated with artixpkg 0.37.4-1-any
