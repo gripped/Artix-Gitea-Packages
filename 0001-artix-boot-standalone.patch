@@ -1,4 +1,4 @@
-From def2c82aea8ec0f2bf1be3d537b22707ae7c2206 Mon Sep 17 00:00:00 2001
+From 72b885757b34408e9f0d405e0336b5d0cc28835b Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
 Date: Mon, 22 Sep 2025 15:17:59 +0200
 Subject: [PATCH 1/1] artix boot standalone
@@ -10,8 +10,7 @@ Subject: [PATCH 1/1] artix boot standalone
  src/boot/meson.build           |  8 ++++----
  src/bootctl/meson.build        |  3 +++
  src/kernel-install/meson.build | 16 +++++++++++++++-
- tmpfiles.d/meson.build         |  1 -
- 7 files changed, 34 insertions(+), 9 deletions(-)
+ 6 files changed, 34 insertions(+), 8 deletions(-)
 
 diff --git a/meson.build b/meson.build
 index 2014e1e8ee..6c0d5e78a1 100644
@@ -197,18 +196,6 @@ index 716fffb46b..91ea52a80c 100644
          endif
  endif
  
-diff --git a/tmpfiles.d/meson.build b/tmpfiles.d/meson.build
-index 12f4f3e539..0c689008e9 100644
---- a/tmpfiles.d/meson.build
-+++ b/tmpfiles.d/meson.build
-@@ -31,7 +31,6 @@ in_files = [
-         ['20-systemd-shell-extra.conf',   'LINK_SHELL_EXTRA_DROPIN'],
-         ['20-systemd-osc-context.conf',   'LINK_OSC_CONTEXT_DROPIN'],
-         ['20-systemd-ssh-generator.conf', 'ENABLE_SSH_PROXY_CONFIG'],
--        ['20-systemd-stub.conf',          'ENABLE_EFI'],
-         ['20-systemd-userdb.conf',        'ENABLE_SSH_USERDB_CONFIG'],
-         ['etc.conf'],
-         ['legacy.conf'],
 -- 
 2.51.0
 

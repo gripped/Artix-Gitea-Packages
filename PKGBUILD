@@ -19,7 +19,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -62,8 +62,8 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
 sha512sums=('4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e0499294b8c7f9bbb7946147e9379db7b277d1c277a08ee00f92f8d0eff33330'
             '1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417'
             'beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377'
-            'ed87cc4c5addd9dc74a5a15253f48593f72c613862696ebeaae922b7c1f224f42f450b2579fb4bcd45ea828eeb797af5ad2cfc707809fd326b48bf14bf90d9c9'
-            '45f90c5d6aa096c048abb724decf4039e76f36e0f61258ac3dfba08223627b309b062036524cfed3a0f4ada2a8e61f2427a64f7d0c34618f6aad168ba9a96b62')
+            '1a000d32abe0ae275ee1fad8fd511de7d6683f5bf163859f9856f3f508b2db593d3a49509bfbd02e44f78785c453ae235a86ddffebfa1d40f7e299734da3378f'
+            '829f87749b6fdbab3622e83d96bb27a952d7f448fbf64aa3e41e08f67873a4a7c9dba33e6cf2fbc469d551b55e7e0d37c65787c1a5a6739896c9aab6d2edae4d')
 
 _backports=(
     9736f634c8b61343be966114ce1c9eddaf0fa742 # fix-link-udev-shared-option
@@ -341,7 +341,10 @@ _inst_man() {
     install -d "${pkgdir}"/usr/share/man/man"$y"
     case "$x" in
         *sysusers*|*tmpfiles*) man=${x/systemd-/e} ;;
-        *) man=${x/systemd/udev} ;;
+        *systemd-hwdb*) man=${x/systemd/udev} ;;
+        *systemd-boot*) man=${x/systemd-/egummi} ;;
+        *systemd-bless-boot-generator*) man=${x/systemd-/e} ;;
+        *) man=${x/systemd-/e} ;;
     esac
     install -vm644 build/man/"$x" "${pkgdir}"/usr/share/man/man"$y/$man"
 }
@@ -417,6 +420,7 @@ package_etmpfiles() {
 
 package_egummiboot() {
     pkgdesc='the gummiboot bootloader'
+    provides=('gummiboot')
     depends+=(
         'util-linux' 'libblkid.so' 'libmount.so'
         'libcap.so'
@@ -425,20 +429,24 @@ package_egummiboot() {
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags eboot,kernel-install,ebless
 
-    _inst_man "bootctl.1"
-    _inst_man "kernel-install.8"
-    _inst_man "systemd-boot.7"
-    _inst_man "systemd-bless-boot-generator.8"
+    for m in bootctl.1 kernel-install.8 systemd-boot.7 systemd-bless-boot-generator.8; do
+        _inst_man "$m"
+    done
 }
 
 package_eukify() {
     pkgdesc='Combine kernel and initrd into a signed Unified Kernel Image'
+    provides=('ukify')
     depends+=(
         'binutils'
         'python'
         'python-cryptography'
         'python-pefile'
         'python-pillow'
+    )
+    optdepends=(
+        'python-pillow: Show the size of splash image'
+        'sbsigntools: Sign the embedded kernel'
     )
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags eukify
