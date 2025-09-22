@@ -1,0 +1,50 @@
+---
+version: 1.5.0.1-1
+pkgbase:
+  name: libshumate
+  pkgdesc: Map widget for GTK 4
+  pkgver: 1.5.0.1
+  pkgrel: 1
+  url: https://wiki.gnome.org/Projects/libshumate
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gperf
+    - meson
+    - vala
+  depends:
+    - cairo
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - graphene
+    - gtk4
+    - json-glib
+    - libsoup3
+    - libsysprof-capture
+    - pango
+    - protobuf-c
+    - sqlite
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libshumate.git?signed#tag=1.5.0.1
+  validpgpkeys:
+    - 7448F128A4B18AB2EF87F092FA6624580A420D5D
+  b2sums:
+    - 93051756da3802b178376e259522bdb7b8fc391388d9ba2db03ee8786aab27e66af9e6898946f144fd7f9310556e7cdc77adf9b8041d01b7642699ac31d3307f
+pkgname:
+  - name: libshumate
+    provides:
+      - libshumate-1.0.so
+  - name: libshumate-docs
+    pkgdesc: Map widget for GTK 4 (documentation)
+    depends: []
+# generated with artixpkg 0.37.4-1-any
