@@ -1,0 +1,46 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-system-monitor
+  pkgdesc: View current processes and monitor system state
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/SystemMonitor
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - appstream
+    - catch2
+    - git
+    - glib2-devel
+    - meson
+    - yelp-tools
+  depends:
+    - cairo
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - glibmm-2.68
+    - graphene
+    - gtk4
+    - gtkmm-4.0
+    - hicolor-icon-theme
+    - libadwaita
+    - libgtop
+    - librsvg
+    - libsigc++-3.0
+    - pango
+    - polkit
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-system-monitor.git#tag=49.0
+  b2sums:
+    - a97fc7ef126c6822aeed70d6e698e8e079137c9b92cf8998fb5c98d1544e4a3a98578d7092494b7f452c802840f886d22220a7aed51e118921ac45bc8bc4ff1a
+pkgname:
+  - name: gnome-system-monitor
+# generated with artixpkg 0.37.4-1-any
