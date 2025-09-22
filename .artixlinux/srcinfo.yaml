@@ -1,0 +1,54 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-remote-desktop
+  pkgdesc: GNOME Remote Desktop server
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-remote-desktop
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - asciidoc
+    - ffnvcodec-headers
+    - git
+    - glib2-devel
+    - meson
+    - vulkan-headers
+  depends:
+    - cairo
+    - dconf
+    - freerdp
+    - fuse3
+    - gcc-libs
+    - glib2
+    - glibc
+    - libdrm
+    - libei
+    - libepoxy
+    - libfdk-aac
+    - libnotify
+    - libpipewire
+    - libsecret
+    - libva
+    - libvncserver
+    - libxkbcommon
+    - opus
+    - pipewire
+    - polkit
+    - tpm2-tss
+    - vulkan-icd-loader
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=49.0
+  validpgpkeys:
+    - 8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A
+    - E60DADB5546D3F01AF35B87289F540EAB24513E2
+  b2sums:
+    - 1634f0643ed4486bdc9c3c2b7e8e0471800a37917c4e2425c91eca86a489bc19d060a74c50d36b479bb59fc99522c2118316276fc6b82fed6ddd9fe1b991e12a
+pkgname:
+  - name: gnome-remote-desktop
+# generated with artixpkg 0.37.4-1-any
