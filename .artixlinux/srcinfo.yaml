@@ -1,10 +1,10 @@
 ---
-version: 258-3
+version: 258-4
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 258
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -26,6 +26,8 @@ pkgbase:
     - python-jinja
     - rsync
     - bash-completion
+    - python-pyelftools
+    - python-pefile
   depends:
     - gcc-libs
     - glibc
@@ -35,6 +37,7 @@ pkgbase:
     - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.4
     - 0001-Use-Arch-Linux-device-access-groups.patch
     - 0001-artix-standalone-install.patch
+    - 0001-artix-boot-standalone.patch
   validpgpkeys:
     - 63CDA1E5D3FC22B998D20DD6327F26951A015CC4
     - A9EA9081724FFAE0484C35A1A81CEA22BC8C7E2E
@@ -45,6 +48,7 @@ pkgbase:
     - 1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417
     - beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377
     - ed87cc4c5addd9dc74a5a15253f48593f72c613862696ebeaae922b7c1f224f42f450b2579fb4bcd45ea828eeb797af5ad2cfc707809fd326b48bf14bf90d9c9
+    - 45f90c5d6aa096c048abb724decf4039e76f36e0f61258ac3dfba08223627b309b062036524cfed3a0f4ada2a8e61f2427a64f7d0c34618f6aad168ba9a96b62
 pkgname:
   - name: udev
     pkgdesc: Userspace device file manager
@@ -92,4 +96,26 @@ pkgname:
       - acl
       - libacl.so
       - libcap.so
+  - name: egummiboot
+    pkgdesc: the gummiboot bootloader
+    depends:
+      - gcc-libs
+      - glibc
+      - libcap
+      - util-linux
+      - libblkid.so
+      - libmount.so
+      - libcap.so
+      - sh
+  - name: eukify
+    pkgdesc: Combine kernel and initrd into a signed Unified Kernel Image
+    depends:
+      - gcc-libs
+      - glibc
+      - libcap
+      - binutils
+      - python
+      - python-cryptography
+      - python-pefile
+      - python-pillow
 # generated with artixpkg 0.37.4-1-any
