@@ -1,0 +1,69 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-settings-daemon
+  pkgdesc: GNOME Settings Daemon
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-settings-daemon
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.0-or-later
+  checkdepends:
+    - python-dbusmock
+    - python-gobject
+  makedepends:
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - libxslt
+    - meson
+    - python
+    - usbguard
+  depends:
+    - alsa-lib
+    - bash
+    - dconf
+    - fontconfig
+    - gcc-libs
+    - gcr-4
+    - geoclue
+    - geocode-glib-2
+    - glib2
+    - glibc
+    - gnome-desktop-4
+    - gsettings-desktop-schemas
+    - gtk4
+    - libcanberra-pulse
+    - libcolord
+    - libcups
+    - libgudev
+    - libgweather-4
+    - libmm-glib
+    - libnm
+    - libnotify
+    - libp11-kit
+    - libpulse
+    - libx11
+    - libxfixes
+    - polkit
+    - pulse-native-provider
+    - libelogind
+    - upower
+  optdepends:
+    - 'usbguard: USB protection support'
+  backup:
+    - etc/xdg/Xwayland-session.d/00-xrdb
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#tag=49.0
+    - git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
+  b2sums:
+    - 87acacd2b77f527811384665a2a29d3ab67656dd9e800c37168dab4db478825afe967442ebbbe146f4f9c54f9c256d1c9e2f8010a49b8bc0ec1b5f655a96d41d
+    - SKIP
+pkgname:
+  - name: gnome-settings-daemon
+# generated with artixpkg 0.37.4-1-any
