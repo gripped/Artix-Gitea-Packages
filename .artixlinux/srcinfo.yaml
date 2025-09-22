@@ -1,0 +1,34 @@
+---
+version: 49.0-1
+pkgbase:
+  name: tecla
+  pkgdesc: Keyboard layout viewer
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/tecla
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - meson
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libxkbcommon
+    - pango
+    - wayland
+  source:
+    - git+https://gitlab.gnome.org/GNOME/tecla.git#tag=49.0
+  b2sums:
+    - 932bfc9d6a8b09efbc41c83ec0dd04832b58117895e55d6a7b2558d288bfeb63954c73f1b24150fb9cd82917eb31a637a145a05e71d2f20ede0b2efdbc40c4a7
+pkgname:
+  - name: tecla
+# generated with artixpkg 0.37.4-1-any
