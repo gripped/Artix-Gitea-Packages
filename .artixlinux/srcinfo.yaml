@@ -1,10 +1,10 @@
 ---
-version: 6.9.2-1
+version: 6.9.2-2
 pkgbase:
   name: qt6-grpc
   pkgdesc: Provides the modules QtGrpc and QtProtobuf
   pkgver: 6.9.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 1879ecfbc8f8bece82c0bbd174a747b1822d834d168e1627425fb377ac55c961
 pkgname:
   - name: qt6-grpc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
