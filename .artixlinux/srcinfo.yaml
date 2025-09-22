@@ -1,9 +1,9 @@
 ---
-version: 48.1-1
+version: 49.0-1
 pkgbase:
   name: adwaita-icon-theme
   pkgdesc: GNOME standard icons
-  pkgver: 48.1
+  pkgver: 49.0
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/adwaita-icon-theme
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - adwaita-icon-theme-legacy
     - hicolor-icon-theme
   source:
-    - git+https://gitlab.gnome.org/GNOME/adwaita-icon-theme.git#tag=48.1
+    - git+https://gitlab.gnome.org/GNOME/adwaita-icon-theme.git#tag=49.0
   b2sums:
-    - 6618ffb8b5fa9687c2526697f84de53ee09d559b14dec3480fa2bc745b11172a5975b150e6ebbb96c143a25826440ff9d1ce59883277d4d44398f3ba0dac7538
+    - aef30129fdfb8aa74cdd3de6662f0b10dfb6b87141a794f7b51d0c67834a0a863cb7e22a8b89388243296d77c0fa6b24cad3a6cc73d10c7a76e76c617c42be2f
 pkgname:
   - name: adwaita-icon-theme
     depends:
@@ -30,4 +30,4 @@ pkgname:
   - name: adwaita-cursors
     pkgdesc: GNOME standard cursors
     depends: []
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
