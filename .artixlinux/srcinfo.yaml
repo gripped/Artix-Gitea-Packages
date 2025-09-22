@@ -1,10 +1,10 @@
 ---
-version: 4.1.99-2
+version: 4.2.0-1
 pkgbase:
   name: zenity
   pkgdesc: Display graphical dialog boxes from shell scripts
-  pkgver: 4.1.99
-  pkgrel: 2
+  pkgver: 4.2.0
+  pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/zenity
   arch:
     - x86_64
@@ -26,11 +26,11 @@ pkgbase:
     - libadwaita
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/zenity.git?signed#tag=4.1.99
+    - git+https://gitlab.gnome.org/GNOME/zenity.git?signed#tag=4.2.0
   validpgpkeys:
     - 98FF7532A4639119B8FB4F15E520923A38618D6C
   b2sums:
-    - 7148aa3934d06cb90878bc052ef25b0c481ba9f30720cf0310fee280fa6b59b5dc59ba81fcdd1abd47c71bc2dcfa81c9e395ba8865fae940a823290b0855befc
+    - 9f477379d80e050c71d13738c9d931dd8e0aea5eeb3f98475187208b266a990585c129e56adb26356e819e9a9e32c280bdd788aeebfbd9925b7d0b96f806977b
 pkgname:
   - name: zenity
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
