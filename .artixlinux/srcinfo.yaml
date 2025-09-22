@@ -1,0 +1,55 @@
+---
+version: 49.0-1
+pkgbase:
+  name: xdg-desktop-portal-gnome
+  pkgdesc: Backend implementation for xdg-desktop-portal for the GNOME desktop environment
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+  depends:
+    - cairo
+    - dconf
+    - fontconfig
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-desktop-4
+    - graphene
+    - gtk4
+    - libadwaita
+    - libx11
+    - nautilus
+    - wayland
+    - xdg-desktop-portal
+    - xdg-desktop-portal-gtk>=1.10.0-2
+  optdepends:
+    - 'evince: Print previews'
+  provides:
+    - xdg-desktop-portal-impl
+  conflicts:
+    - xdg-desktop-portal-gtk<1.10.0-2
+  replaces:
+    - xdg-desktop-portal-gtk<1.10.0-2
+  source:
+    - git+https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome.git?signed#tag=49.0
+    - git+https://gitlab.gnome.org/GNOME/libgxdp.git#commit=e68375c7aced97705953b8e3b30af9f17991153b
+  validpgpkeys:
+    - 8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A
+    - 9038F70CA72FAC9D10C6327B89AFE307C861D158
+  b2sums:
+    - 62b628dec8dcef38af914144a5da48d62887eadf0ddf6702200827717f1098aae3fdf692333f4a7f37ad53d5c9e58a0683ab14c9b416cc0da451e43209eb0d4f
+    - 09bd02a627afffa49c11e4baec961878060d7710e852628c0e0d009d5bdc37eaa3cd1d5bbeea316f197197b9d88436ecf157ebaef41e01b66ad102e1f1c69fb2
+pkgname:
+  - name: xdg-desktop-portal-gnome
+# generated with artixpkg 0.37.4-1-any
