@@ -1,10 +1,10 @@
 ---
-version: 0.80.3-1
+version: 0.82.0-2
 pkgbase:
   name: vte3
   pkgdesc: Virtual Terminal Emulator widget
-  pkgver: 0.80.3
-  pkgrel: 1
+  pkgver: 0.82.0
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Terminal/VTE
   arch:
     - x86_64
@@ -13,12 +13,14 @@ pkgbase:
     - GPL-3.0-or-later
   makedepends:
     - at-spi2-core
-    - gi-docgen
     - fast_float
+    - fmt
+    - gi-docgen
     - git
     - glib2-devel
     - gobject-introspection
     - gperf
+    - graphene
     - gtk3
     - gtk4
     - meson
@@ -27,11 +29,9 @@ pkgbase:
     - cairo
     - fribidi
     - gcc-libs
-    - gdk-pixbuf2
     - glib2
     - glibc
     - gnutls
-    - graphene
     - icu
     - lz4
     - pango
@@ -39,9 +39,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://gitlab.gnome.org/GNOME/vte.git#tag=0.80.3
+    - git+https://gitlab.gnome.org/GNOME/vte.git#tag=0.82.0
+    - git+https://github.com/simdutf/simdutf.git#tag=v6.4.0
   b2sums:
-    - 2c9da14397e88df05a6e7479a3baf2745f0c3071e800a80926f69d52df00569e11e4437c74bb24beadd06baa1b468ff88a2df7b94cfd636109fcfa7abd5fe3e2
+    - 59ffcc20365ec6a89c6ae7c89b3e5bbebe7e525cb3608d1056c49faa7015f1c066e35d98bbd50051390731a090186006101bfbc490cbb7d86a409ec614d7887d
+    - 32939601b78402d5b69d620798c9df14df8ce639d9ba9d5cfe1b0bc05417fa743a5acd97ede0f4a715efeebea1920e91fa8f583c6531851917fadf701d4e3ea5
 pkgname:
   - name: vte-common
     pkgdesc: Virtual Terminal Emulator widget (common files)
@@ -55,11 +57,9 @@ pkgname:
       - cairo
       - fribidi
       - gcc-libs
-      - gdk-pixbuf2
       - glib2
       - glibc
       - gnutls
-      - graphene
       - icu
       - lz4
       - pango
@@ -90,15 +90,14 @@ pkgname:
       - cairo
       - fribidi
       - gcc-libs
-      - gdk-pixbuf2
       - glib2
       - glibc
       - gnutls
-      - graphene
       - icu
       - lz4
       - pango
       - pcre2
+      - graphene
       - gtk4
       - vte-common
     provides:
@@ -119,4 +118,4 @@ pkgname:
   - name: vte-docs
     pkgdesc: Virtual Terminal Emulator widget (documentation)
     depends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
