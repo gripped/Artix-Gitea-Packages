@@ -84,8 +84,6 @@ package_at-spi2-core() {
 
   mkdir -p doc/usr/share
   mv {"$pkgdir",doc}/usr/share/doc
-
-  rm -r $pkgdir/usr/lib/systemd
 }
 
 package_at-spi2-core-docs() {
