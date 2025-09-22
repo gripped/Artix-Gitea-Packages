@@ -1,0 +1,164 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=js140
+pkgver=140.3.0
+pkgrel=1
+pkgdesc="JavaScript interpreter and libraries - Version 140"
+url="https://spidermonkey.dev/"
+arch=(x86_64)
+license=(MPL-2.0)
+depends=(
+  gcc-libs
+  glibc
+  readline
+  sh
+  zlib
+)
+makedepends=(
+  cbindgen
+  clang
+  lld
+  llvm
+  python
+  rust
+  zip
+)
+checkdepends=(
+  git
+  mercurial
+)
+options=(
+  !lto
+)
+_relver=${pkgver}esr
+source=(
+  https://archive.mozilla.org/pub/firefox/releases/$_relver/source/firefox-$_relver.source.tar.xz{,.asc}
+  0001-Bug-1973994-mozjs-140.pc-does-not-contain-DXP_UNIX-o.patch
+)
+validpgpkeys=(
+  # Mozilla Software Releases <release@mozilla.com>
+  # https://blog.mozilla.org/security/2025/04/01/updated-gpg-key-for-signing-firefox-releases-2/
+  14F26682D0916CDD81E37B6D61B7B526D98F0353
+)
+sha256sums=('efc6eb3c93756311bd2f9db3796c0bbee6e3f182975d857284168b3dec672316'
+            'SKIP'
+            'b5178a7b8a603b645cbae61467f3fa1fef6e9f34c90e4a22faf4ea2152a50fba')
+b2sums=('ec39c0409535aed81b90fbe6bedbbae25f2c2962f36317e433688c8699dd6f6d792f260757b46d1e42c40c48d6ebba4bdeb3e3093bc837768cafe794020224ff'
+        'SKIP'
+        '89f39bd3ef2ca4894d98f860c2296b2afa58e4fe8c68ddb816a0684cc0db3a8e0deec71af5d214fb3ae40f6ad963aefef02d6b71071c41b9b55752c7cf791a9c')
+
+# Make sure the duplication between bin and lib is found
+COMPRESSZST+=(--long)
+
+prepare() {
+  mkdir mozbuild
+  cd firefox-$pkgver
+
+  # https://discourse.gnome.org/t/gnome-49-to-depend-on-spidermonkey-140/30470
+  patch -Np1 -i ../0001-Bug-1973994-mozjs-140.pc-does-not-contain-DXP_UNIX-o.patch
+
+  cat >../mozconfig <<END
+ac_add_options --enable-application=js
+mk_add_options MOZ_OBJDIR=${PWD@Q}/obj
+
+ac_add_options --prefix=/usr
+ac_add_options --enable-release
+ac_add_options --enable-hardening
+ac_add_options --enable-optimize
+ac_add_options --enable-rust-simd
+ac_add_options --enable-linker=lld
+ac_add_options --disable-bootstrap
+ac_add_options --disable-debug
+ac_add_options --disable-jemalloc
+ac_add_options --disable-strip
+
+# System libraries
+ac_add_options --with-system-zlib
+ac_add_options --without-system-icu
+
+# Features
+ac_add_options --enable-readline
+ac_add_options --enable-shared-js
+ac_add_options --enable-tests
+ac_add_options --with-intl-api
+END
+}
+
+build() {
+  cd firefox-$pkgver
+
+  export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
+  export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
+  export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
+  export MOZ_NOSPAM=1
+
+  # malloc_usable_size is used in various parts of the codebase
+  CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+  CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
+  # Do 3-tier PGO
+  echo "Building instrumented JS..."
+  cat >.mozconfig ../mozconfig - <<END
+ac_add_options --enable-profile-generate=cross
+END
+  ./mach build --priority normal
+
+  echo "Profiling instrumented JS..."
+  (
+    local js="$PWD/obj/dist/bin/js"
+    export LLVM_PROFILE_FILE="$PWD/js-%p-%m.profraw"
+
+    cd js/src/octane
+    "$js" run.js
+
+    cd ../../../third_party/webkit/PerformanceTests/ARES-6
+    "$js" cli.js
+
+    cd ../SunSpider/sunspider-0.9.1
+    "$js" sunspider-standalone-driver.js
+  )
+
+  llvm-profdata merge -o merged.profdata *.profraw
+
+  stat -c "Profile data found (%s bytes)" merged.profdata
+  test -s merged.profdata
+
+  echo "Removing instrumented JS..."
+  ./mach clobber objdir
+
+  echo "Building optimized JS..."
+  cat >.mozconfig ../mozconfig - <<END
+ac_add_options --enable-lto=cross,full
+ac_add_options --enable-profile-use=cross
+ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
+END
+  ./mach build --priority normal
+}
+
+check() {
+  local jstests_extra_args=(
+    --format=none
+    --exclude-random
+    --wpt=disabled
+  ) jittest_extra_args=(
+    --format=none
+    --timeout 300
+  ) jittest_test_args=(
+    basic
+  )
+
+  cd firefox-$pkgver/obj
+  make -C js/src check-jstests check-jit-test \
+    JSTESTS_EXTRA_ARGS="${jstests_extra_args[*]}" \
+    JITTEST_EXTRA_ARGS="${jittest_extra_args[*]}" \
+    JITTEST_TEST_ARGS="${jittest_test_args[*]}"
+}
+
+package() {
+  cd firefox-$pkgver/obj
+  make DESTDIR="$pkgdir" install
+  rm "$pkgdir"/usr/lib/*.ajs
+  find "$pkgdir"/usr/{lib/pkgconfig,include} -type f -exec chmod -c a-x {} +
+}
+
+# vim:set sw=2 sts=-1 et:
