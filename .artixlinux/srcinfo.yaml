@@ -1,0 +1,47 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-session
+  pkgdesc: The GNOME Session Handler
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-session
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - libxslt
+    - meson
+    - xmlto
+  depends:
+    - dconf
+    - gcc-libs
+    - glib2
+    - glibc
+    - gnome-desktop-4
+    - gsettings-desktop-schemas
+    - gtk4
+    - json-glib
+    - libelogind
+    - xdg-desktop-portal-gnome
+  provides:
+    - gnome-mimeapps
+  conflicts:
+    - gnome-mimeapps
+  replaces:
+    - gnome-mimeapps
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-session.git#tag=49.0
+    - 0001-meson-add-logind-provider-option.patch
+  b2sums:
+    - b8f4494818e8943dae6a13f2af42de47e672068530e67c1a718753cf2fb29e5eb7fe57b5b13093e1cd68ee8b75501d2a81dced4319f4fed05969091d83165edf
+    - 016b4861e92f75c2a880f5479d6c05970949955b4682474f327356520d1198fc96f20fccfd34a65261a97de70f47e62996df9d4884f9a5704ff73f2b9f14e8d7
+pkgname:
+  - name: gnome-session
+# generated with artixpkg 0.37.4-1-any
