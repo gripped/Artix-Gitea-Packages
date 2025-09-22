@@ -1,0 +1,43 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-weather
+  pkgdesc: Access current weather conditions and forecasts
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/Weather
+  arch:
+    - any
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - appstream
+    - git
+    - gobject-introspection
+    - meson
+    - typescript
+  depends:
+    - dconf
+    - geoclue
+    - gjs
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libgweather-4
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-weather.git#tag=49.0
+    - git+https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions.git
+    - 0001-Allow-to-configure-automatic-location-setting.patch
+    - 0002-Various-fixes-for-the-search-provider.patch
+    - 0003-Raise-existing-window-instead-of-opening-new-one-on-.patch
+  b2sums:
+    - 15830e1b1750167cc2d73760ef30777cc5165201230e916bebfe644a547c17fba5cd2fc04d88ffcacf908ffce1d256d9bd4acbf79590902f89edb2b6d84e6f7d
+    - SKIP
+    - 14ead85f7b34e71c7cb057f2892644661200325037e1e21cc202c1d962c1e4ba592469f4631a63d7e5db27d3bf7bd5761d62fbfc4618486c7f2ba33218d98961
+    - 7781cedc70dc1badfe3b12143f4483b86fef41271e7a8625bf6008c35815c02c70ceef74ee6f8277abaf70492b9713f8450fd34e629e8fe265d3af266e6f77d7
+    - 1c607b5c65fb8dc935054a93986b37cd299a1e1c877a816404c43a7b4410f809ebc2bc276e38525e0e42fc7aadcc3aa0229da9ef5f0b97c66f379741d5f0d804
+pkgname:
+  - name: gnome-weather
+# generated with artixpkg 0.37.4-1-any
