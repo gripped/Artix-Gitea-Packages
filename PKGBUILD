@@ -1,0 +1,90 @@
+# Maintainer: kenobi <kenobi@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Andrew Rabert <ar@nullsum.net>
+# Contributor: Stefan Tatschner <stefan@rumpelsepp.org>
+# Contributor: Ian Beringer <ian@ianberinger.com>
+# Contributor: Stefan Husmann <stefan-husmann@t-online.de>
+
+pkgname=lf
+pkgver=38
+pkgrel=1
+pkgdesc='A terminal file manager inspired by ranger'
+arch=('x86_64')
+url='https://github.com/gokcehan/lf'
+license=('MIT')
+depends=('glibc')
+makedepends=('git' 'go')
+options=('!lto')
+source=("$pkgname::git+$url#tag=r$pkgver")
+sha512sums=('f945054b40d6a522d4430eae24280acbb8c1185d2f063970fccc6f088757cf4052fc54945bf471979e3a86ef6cf3a9cd3a59a4c103c31f9388bc72a7020935e2')
+b2sums=('017317b995551f7db73cde99008453e278e615788f0b6000921a9965aed9e506c040c08b827908ccc44469330bbf4a7630bae9061a192849733ae4b52021e330')
+
+prepare() {
+  cd "$pkgname"
+
+  # create directory for build output
+  mkdir build
+
+  # download dependencies
+  export GOPATH="${srcdir}"
+  go mod download
+}
+
+build() {
+  cd "$pkgname"
+
+  # set Go flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOPATH="${srcdir}"
+
+  go build -v \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-compressdwarf=false \
+    -linkmode external \
+    -extldflags '${LDFLAGS}' \
+    -X main.gVersion=$pkgver" \
+    -o build \
+    .
+}
+
+check() {
+  cd "$pkgname"
+
+  go test -v ./...
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" build/lf
+
+  # man page
+  install -vDm644 -t "$pkgdir/usr/share/man/man1" lf.1
+
+  # documentation
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md etc/lfrc.example
+
+  # desktop file
+  install -vDm644 -t "$pkgdir/usr/share/applications" lf.desktop
+
+  # vim integration
+  install -vDm644 -t "$pkgdir/usr/share/vim/vimfiles/syntax" etc/lf.vim
+  install -vDm644 -t "$pkgdir/usr/share/vim/vimfiles/ftdetect" etc/lf.vim
+
+  # shell integrations
+  install -vDm644 -t "$pkgdir/etc/profile.d" etc/*.{sh,csh}
+  install -vDm644 -t "$pkgdir/usr/share/fish/vendor_functions.d" etc/lfcd.fish
+
+  # shell completions
+  install -vDm644 etc/lf.bash "$pkgdir/usr/share/bash-completion/completions/lf"
+  install -vDm644 etc/lf.fish "$pkgdir/usr/share/fish/vendor_completions.d/lf.fish"
+  install -vDm644 etc/lf.zsh "$pkgdir/usr/share/zsh/site-functions/_lf"
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
