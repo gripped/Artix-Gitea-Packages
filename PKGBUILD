@@ -7,7 +7,7 @@
 
 pkgname=mixxx
 pkgver=2.5.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Free, open source software for digital DJing"
 arch=(x86_64)
 url="https://www.mixxx.org"
