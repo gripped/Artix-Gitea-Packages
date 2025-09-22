@@ -1,0 +1,40 @@
+---
+version: 49.0.1-1
+pkgbase:
+  name: gnome-mahjongg
+  pkgdesc: Disassemble a pile of tiles by removing matching pairs
+  pkgver: 49.0.1
+  pkgrel: 1
+  url: https://apps.gnome.org/Mahjongg/
+  arch:
+    - x86_64
+  groups:
+    - gnome-extra
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - appstream
+    - git
+    - gobject-introspection
+    - meson
+    - vala
+    - yelp-tools
+  depends:
+    - cairo
+    - dconf
+    - glib2
+    - glibc
+    - graphene
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - librsvg
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-mahjongg.git?signed#tag=49.0.1
+  validpgpkeys:
+    - FAE80BEA85C476AF1BACC2A77B274B850A9296D4
+  b2sums:
+    - a0c88a364c0f1d46f446b356aa5f8329e2076d7ecfea6ab7827d01a1a2a13a47b12bbb10e5d6e661fd75d0b17fca9ec35888f0376901d8b786c7e82dfb5eb0c8
+pkgname:
+  - name: gnome-mahjongg
+# generated with artixpkg 0.37.4-1-any
