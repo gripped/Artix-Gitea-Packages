@@ -1,0 +1,34 @@
+---
+version: 49.1-1
+pkgbase:
+  name: d-spy
+  pkgdesc: D-Bus debugger for GNOME
+  pkgver: 49.1
+  pkgrel: 1
+  url: https://apps.gnome.org/Dspy/
+  arch:
+    - x86_64
+  groups:
+    - gnome-extra
+  license:
+    - GPL-3.0-or-later
+    - LGPL-3.0-or-later
+  makedepends:
+    - git
+    - meson
+  depends:
+    - dconf
+    - gcc-libs
+    - glib2
+    - glibc
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libdex
+  source:
+    - git+https://gitlab.gnome.org/GNOME/d-spy.git#tag=49.1
+  b2sums:
+    - dc4d57e41612aa7cc428e1f4196c2e641d4545ce401a8b1f35a8229c74dc91d6f287ef100f3a0a3aebea962eee8bfe8181c3756fa775543a583951b46d12ecca
+pkgname:
+  - name: d-spy
+# generated with artixpkg 0.37.4-1-any
