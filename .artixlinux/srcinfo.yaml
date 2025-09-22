@@ -1,0 +1,41 @@
+---
+version: 4.4.1-1
+pkgbase:
+  name: gnome-nibbles
+  pkgdesc: Guide a worm around a maze
+  pkgver: 4.4.1
+  pkgrel: 1
+  url: https://wiki.gnome.org/Apps/Nibbles
+  arch:
+    - x86_64
+  groups:
+    - gnome-extra
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - appstream
+    - git
+    - gobject-introspection
+    - meson
+    - vala
+    - yelp-tools
+  depends:
+    - dconf
+    - glib2
+    - glibc
+    - gsound
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libgee
+    - pango
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-nibbles.git?signed#tag=4.4.1
+  validpgpkeys:
+    - 31F449AE968CBE194119A3AD1F1DC770CE79E68B
+    - 9CE6D700965C6A1D6F7B4A1C18B04BB8340E3EC5
+  b2sums:
+    - 0f46f2b2c66fae468ba8523d13a7c6c3a277c7f98526dc0282ea13bd003fb6c0ca5331d6b9bccb57dcb24fc5eec89f32a7653ee9db278d8ef0d254aea9b4994a
+pkgname:
+  - name: gnome-nibbles
+# generated with artixpkg 0.37.4-1-any
