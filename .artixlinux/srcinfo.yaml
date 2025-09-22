@@ -1,9 +1,9 @@
 ---
-version: 0.14.1-1
+version: 0.14.2-1
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
-  pkgver: 0.14.1
+  pkgver: 0.14.2
   pkgrel: 1
   url: https://gstreamer.freedesktop.org/
   arch:
@@ -37,18 +37,17 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.14.1
+    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.14.2
   validpgpkeys:
     - 7F4BC7CC3CA06F97336BBFEB0668CC1486C2D7B5
   b2sums:
-    - 74b3d5449bb56c0672e4f647df5a4612dae39d66b04583503cbc722d4149935fc1b1d52caaf752a53f89a9e2bfcfb24acfbdb2b94f182df9a272b0ba487103d5
+    - 6a11d128b8022a84300eaf02a05031bc326799f9716dad36267922722d7cd31c58b78bf7fc61fe7b863f9474cfee626b4a158f95395c86fc204c8224f9ad41b7
 pkgname:
   - name: gst-webrtc-signalling-server
     pkgdesc: Multimedia graph framework - webrtc signalling server
     depends:
       - gcc-libs
       - glibc
-      - openssl
   - name: gst-plugin-aws
     pkgdesc: Multimedia graph framework - aws plugin
     depends:
@@ -56,7 +55,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-hlssink3=0.14.1-1
+      - gst-plugin-hlssink3=0.14.2-1
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -99,7 +98,6 @@ pkgname:
       - glibc
       - gstreamer
       - gst-plugins-base-libs
-      - openssl
   - name: gst-plugin-fallbackswitch
     pkgdesc: Multimedia graph framework - fallbackswitch plugin
     depends:
@@ -246,12 +244,6 @@ pkgname:
     pkgdesc: Multimedia graph framework - reqwest plugin
     license:
       - MIT OR Apache-2.0
-    depends:
-      - gcc-libs
-      - glib2
-      - glibc
-      - gstreamer
-      - openssl
   - name: gst-plugin-rsaudiofx
     pkgdesc: Multimedia graph framework - rsaudiofx plugin
     depends:
@@ -267,7 +259,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-textwrap=0.14.1-1
+      - gst-plugin-textwrap=0.14.2-1
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -335,12 +327,6 @@ pkgname:
       - gst-plugins-good
   - name: gst-plugin-rstracers
     pkgdesc: Multimedia graph framework - rstracers plugin
-    depends:
-      - gcc-libs
-      - glib2
-      - glibc
-      - gstreamer
-      - openssl
   - name: gst-plugin-rsvideofx
     pkgdesc: Multimedia graph framework - rsvideofx plugin
     depends:
@@ -366,11 +352,10 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-rsrtp=0.14.1-1
+      - gst-plugin-rsrtp=0.14.2-1
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
-      - openssl
   - name: gst-plugin-skia
     pkgdesc: Multimedia graph framework - skia plugin
     depends:
@@ -399,7 +384,6 @@ pkgname:
       - glibc
       - gstreamer
       - gst-plugins-base-libs
-      - openssl
   - name: gst-plugin-spotify
     pkgdesc: Multimedia graph framework - spotify plugin
   - name: gst-plugin-streamgrouper
@@ -438,5 +422,4 @@ pkgname:
       - gst-plugins-bad
       - gst-plugins-bad-libs
       - gst-plugins-base-libs
-      - openssl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
