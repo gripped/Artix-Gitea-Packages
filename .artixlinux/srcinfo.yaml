@@ -1,0 +1,40 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-console
+  pkgdesc: A simple user-friendly terminal emulator for the GNOME desktop
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/Console/
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - dbus
+    - mutter
+  makedepends:
+    - appstream
+    - git
+    - glib2-devel
+    - meson
+  depends:
+    - dconf
+    - gcc-libs
+    - gtk4
+    - glib2
+    - glibc
+    - hicolor-icon-theme
+    - libadwaita
+    - libgtop
+    - pango
+    - vte4
+  source:
+    - gnome-console::git+https://gitlab.gnome.org/GNOME/console.git#tag=49.0
+  b2sums:
+    - 8bd98c73ee08f91b094e23e8ff590cb52d6990b12b2eb03f56301302e36e32e75acb77188f1fd49a3e151c7a4b5d435d46fd32f1b64fdebe4830e368240b8076
+pkgname:
+  - name: gnome-console
+# generated with artixpkg 0.37.4-1-any
