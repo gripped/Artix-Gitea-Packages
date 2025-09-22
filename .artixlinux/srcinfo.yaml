@@ -1,11 +1,11 @@
 ---
-version: 1.2.3-1
+version: 2.0.0-3
 pkgbase:
   name: glycin
   pkgdesc: Sandboxed and extendable image decoding
-  pkgver: 1.2.3
-  pkgrel: 1
-  url: https://gitlab.gnome.org/sophie-h/glycin
+  pkgver: 2.0.0
+  pkgrel: 3
+  url: https://gitlab.gnome.org/GNOME/glycin
   arch:
     - x86_64
   license:
@@ -18,6 +18,7 @@ pkgbase:
   makedepends:
     - clang
     - git
+    - gtk4
     - gobject-introspection
     - libheif
     - meson
@@ -30,22 +31,33 @@ pkgbase:
     - gcc-libs
     - glib2
     - glibc
-    - gtk4
     - lcms2
     - libjxl
     - librsvg
     - libseccomp
-  optdepends:
-    - 'libheif: heif/heic file support'
-  provides:
-    - libglycin-1.so
-    - libglycin-gtk4-1.so
   source:
-    - git+https://gitlab.gnome.org/sophie-h/glycin.git#tag=1.2.3
+    - git+https://gitlab.gnome.org/GNOME/glycin.git#tag=2.0.0
     - git+https://gitlab.gnome.org/sophie-h/test-images.git
   b2sums:
-    - 431b24ef3104d6d1b6b04a9ea975ef5b4dd568765e8c24a493ea8fb171c01751f4376a1480b836491586c7fdc135b63fa455004c223754be3b6630a0db52cdf5
+    - 31820d0b77ddc0f9151d033a82cb0b2def318915674983ca8e98f95676ed7c43072594989567fad14fbb2f2b0a9bb4fb2e9077acd62aabd7a49fccd7b9da6163
     - SKIP
 pkgname:
   - name: glycin
-# generated with artixpkg 0.36.4-1-any
+    optdepends:
+      - 'libheif: Load .avif, .heic and .heif'
+    provides:
+      - libglycin-2.so
+  - name: glycin-gtk4
+    pkgdesc: Sandboxed and extendable image decoding - GTK4 integration
+    depends:
+      - fontconfig
+      - gcc-libs
+      - glib2
+      - glibc
+      - glycin
+      - gtk4
+      - lcms2
+      - libseccomp
+    provides:
+      - libglycin-gtk4-2.so
+# generated with artixpkg 0.37.4-1-any
