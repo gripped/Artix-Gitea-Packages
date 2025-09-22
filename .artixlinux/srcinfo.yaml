@@ -1,9 +1,9 @@
 ---
-version: 48.2-1
+version: 49.0-1
 pkgbase:
   name: gnome-user-docs
   pkgdesc: User documentation for GNOME
-  pkgver: 48.2
+  pkgver: 49.0
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gnome-user-docs
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   depends:
     - yelp
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-user-docs.git#tag=48.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-user-docs.git#tag=49.0
   b2sums:
-    - 423e288edd9bbb3c048ba065233e2cd15a1db71dd368cdeb19add9132258eabd798c87c3b449beec387b064ecb234dbaca20f002084f9bc10eb860fef9e0df6d
+    - 4835202592892d3fde194a2c346c8c90663c9b1caf27c095de3acdb57e6fa1ffa34c8a5c8a980050ca25bcf88ce46a53fe34d4e40247de17848fe38b6e3af067
 pkgname:
   - name: gnome-user-docs
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
