@@ -1,0 +1,68 @@
+---
+version: 4.20.0-1
+pkgbase:
+  name: gtkmm-4.0
+  pkgdesc: C++ bindings for GTK 4
+  pkgver: 4.20.0
+  pkgrel: 1
+  url: https://www.gtkmm.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - cairomm-1.16-docs
+    - git
+    - glibmm-2.68-docs
+    - libsigc++-3.0-docs
+    - meson
+    - mm-common
+    - pangomm-2.48-docs
+  depends:
+    - cairo
+    - cairomm-1.16
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - glibmm-2.68
+    - graphene
+    - gtk4
+    - libsigc++-3.0
+    - pangomm-2.48
+    - vulkan-icd-loader
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gtkmm.git#tag=4.20.0
+  b2sums:
+    - d88d3aab26af90aebf2285d4f5f0a8f1fae8c28785595fcc9fb1f0cdcb483a34b5f13210bbb074ab81cf30c9cc23ff179ffde16ab0316895191b221e444bbf95
+pkgname:
+  - name: gtkmm-4.0
+    depends:
+      - cairo
+      - cairomm-1.16
+      - gcc-libs
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - glibmm-2.68
+      - graphene
+      - gtk4
+      - libsigc++-3.0
+      - pangomm-2.48
+      - vulkan-icd-loader
+      - libcairomm-1.16.so
+      - libglibmm-2.68.so
+      - libpangomm-2.48.so
+      - libsigc-3.0.so
+    provides:
+      - libgtkmm-4.0.so
+  - name: gtkmm-4.0-docs
+    pkgdesc: C++ bindings for GTK 4 (documentation)
+    depends: []
+    options:
+      - '!strip'
+# generated with artixpkg 0.37.4-1-any
