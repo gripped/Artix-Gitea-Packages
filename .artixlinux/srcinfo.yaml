@@ -1,0 +1,49 @@
+---
+version: 49.0-1
+pkgbase:
+  name: snapshot
+  pkgdesc: Take pictures and videos
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/Snapshot
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - meson
+    - rust
+  depends:
+    - dconf
+    - fontconfig
+    - gcc-libs
+    - glib2
+    - glibc
+    - glycin
+    - graphene
+    - gst-plugin-gtk4
+    - gst-plugin-pipewire
+    - gst-plugins-bad-libs
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - gtk4
+    - hicolor-icon-theme
+    - lcms2
+    - libadwaita
+    - libseccomp
+    - pango
+  source:
+    - git+https://gitlab.gnome.org/GNOME/snapshot.git#tag=49.0
+  validpgpkeys:
+    - 3475CBA8D3483594C889B470D64A8D747F6FE706
+    - D25626D42D675B9C5EAF57DF7F3B4AADE28427AE
+  b2sums:
+    - e356b4feec61028cab59635c3a548679ed21031a62a25fb4396a7d08c6f188afc0714135ce0d90536b062967e28458256a24e5aff267173c3f40160ce0a9371b
+pkgname:
+  - name: snapshot
+# generated with artixpkg 0.37.4-1-any
