@@ -1,10 +1,11 @@
 ---
-version: 48.1-1
+version: 1:48.1-1
 pkgbase:
   name: evince
   pkgdesc: Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt)
   pkgver: 48.1
   pkgrel: 1
+  epoch: 1
   url: https://apps.gnome.org/Evince
   arch:
     - x86_64
@@ -56,8 +57,6 @@ pkgbase:
     - 11f4b758c97251804dbd3eb0e8b3716b6340292186730e3e4e6ac5fe758524be7912ca5e32cd0fce932be67a1c6394bcaf3dcdc05eb0aa06f7158ae31673d55c
 pkgname:
   - name: evince
-    groups:
-      - gnome
     optdepends:
       - 'texlive-bin: DVI support'
     provides:
@@ -66,4 +65,4 @@ pkgname:
   - name: evince-lib-docs
     pkgdesc: Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt) (library API documentation)
     depends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
