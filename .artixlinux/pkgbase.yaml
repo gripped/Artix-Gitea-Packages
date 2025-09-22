@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.86.0-1
+    packages:
+      - gobject-introspection-1.86.0-1-x86_64.pkg.tar.zst
+      - gobject-introspection-runtime-1.86.0-1-x86_64.pkg.tar.zst
+      - libgirepository-1.86.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.84.0-2
