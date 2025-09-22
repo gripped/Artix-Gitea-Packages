@@ -1,0 +1,60 @@
+---
+version: 2:1.86.0-1
+pkgbase:
+  name: gjs
+  pkgdesc: Javascript Bindings for GNOME
+  pkgver: 1.86.0
+  pkgrel: 1
+  epoch: 2
+  url: https://wiki.gnome.org/Projects/Gjs
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  checkdepends:
+    - gtk3
+    - gtk4
+    - xorg-server-xvfb
+  makedepends:
+    - dbus
+    - git
+    - gobject-introspection
+    - meson
+  depends:
+    - cairo
+    - dconf
+    - gcc-libs
+    - glib2
+    - glibc
+    - gobject-introspection-runtime
+    - js140
+    - libffi
+    - libsysprof-capture
+    - libx11
+    - readline
+  provides:
+    - libgjs.so
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gjs.git#tag=1.86.0
+    - git+https://gitlab.gnome.org/GNOME/gobject-introspection-tests.git
+  validpgpkeys:
+    - 53C0524AD3AE115F69C47D2D0E9D857756977391
+  b2sums:
+    - c4875a14a5c0c2edf70f469af90a938baf87740b8a1d542cc2d3640e802efa420d7ecff2a807ca80b7bd4e65da0e393f7a9b708b653f906e77460671ebe3e8b4
+    - SKIP
+pkgname:
+  - name: gjs
+    depends:
+      - cairo
+      - dconf
+      - gcc-libs
+      - glib2
+      - glibc
+      - gobject-introspection-runtime
+      - js140
+      - libffi
+      - libsysprof-capture
+      - libx11
+      - readline
+      - libreadline.so
+# generated with artixpkg 0.37.4-1-any
