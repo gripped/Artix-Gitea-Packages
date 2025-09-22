@@ -1,10 +1,10 @@
 ---
-version: 1:1.18.0-4
+version: 1:1.18.0-5
 pkgbase:
   name: onnx
   pkgdesc: Open standard for machine learning interoperability
   pkgver: 1.18.0
-  pkgrel: 4
+  pkgrel: 5
   epoch: 1
   url: https://onnx.ai
   arch:
@@ -43,4 +43,4 @@ pkgname:
       - protobuf
       - python-protobuf
       - python-numpy
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
