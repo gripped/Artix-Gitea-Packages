@@ -1,0 +1,43 @@
+---
+version: 49.0-1
+pkgbase:
+  name: simple-scan
+  pkgdesc: Simple scanning utility
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/SimpleScan/
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - meson
+    - vala
+    - yelp-tools
+  depends:
+    - cairo
+    - colord-sane
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libcolord
+    - libgusb
+    - libwebp
+    - sane
+    - zlib
+  source:
+    - git+https://gitlab.gnome.org/GNOME/simple-scan.git#tag=49.0
+  validpgpkeys:
+    - 4D0BE12F0E4776D8AACE9696E66C775AEBFE6C7D
+  b2sums:
+    - 3bb82d99fd15b4a6e0a88eeeeee6970aed56c8518cf3ff80030460ef778b7e7e8e8b202ebb3a518f090e8e07624eec096d9b9fb0ebbc067cd04b31031a5da6c8
+pkgname:
+  - name: simple-scan
+# generated with artixpkg 0.37.4-1-any
