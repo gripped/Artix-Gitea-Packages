@@ -1,0 +1,28 @@
+---
+version: 2.58.0-1
+pkgbase:
+  name: pyatspi
+  pkgdesc: Python bindings for D-Bus AT-SPI
+  pkgver: 2.58.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/pyatspi2
+  arch:
+    - any
+  license:
+    - LGPL-2.0-only
+  makedepends:
+    - git
+    - meson
+    - python-dbus
+  depends:
+    - at-spi2-core
+    - glib2
+    - python
+    - python-gobject
+  source:
+    - git+https://gitlab.gnome.org/GNOME/pyatspi2.git#tag=2.58.0
+  b2sums:
+    - 8eea640ae1fdc8a06a652def26e05842cf0e927e0334d40d75e98c72fda11476663230feb20bec55d1e34d291b3ba6214a62a62da415ab1f37cad5c28bb5a997
+pkgname:
+  - name: python-atspi
+# generated with artixpkg 0.37.4-1-any
