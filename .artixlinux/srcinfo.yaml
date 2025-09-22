@@ -1,0 +1,40 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gnome-characters
+  pkgdesc: A character map application
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/Characters/
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - BSD-3-Clause AND GPL-2.0-or-later
+  checkdepends:
+    - weston
+  makedepends:
+    - appstream
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gperf
+    - meson
+  depends:
+    - dconf
+    - emoji-font
+    - gjs
+    - glib2
+    - glibc
+    - gnome-desktop-4
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-characters.git#tag=49.0
+  b2sums:
+    - 7ffa0db593db329c382f05389fa59ac4b0cfd7964fa1703be49e7a4d245d60aeffe592311cc16dccffa8995ce677a66624448d553bfbc72d1cefa7aee05bdc21
+pkgname:
+  - name: gnome-characters
+# generated with artixpkg 0.37.4-1-any
