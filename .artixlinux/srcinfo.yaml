@@ -1,0 +1,35 @@
+---
+version: 3.38.0-2
+pkgbase:
+  name: template-glib
+  pkgdesc: Templating library for GLib
+  pkgver: 3.38.0
+  pkgrel: 2
+  url: https://gitlab.gnome.org/GNOME/template-glib
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - vala
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+  source:
+    - git+https://gitlab.gnome.org/GNOME/template-glib.git#tag=3.38.0
+  b2sums:
+    - 16621a53ba2d07631e371007d897e38f9f0d726d25c039dcbd6a94cc5b7671aec8a2e0ffb0c3109c4af11aab23defb8301cd5fc9498ad6317e2281ebef658cfe
+pkgname:
+  - name: template-glib
+    provides:
+      - libtemplate_glib-1.0.so
+  - name: template-glib-docs
+    pkgdesc: Templating library for GLib (documentation)
+    depends: []
+# generated with artixpkg 0.37.4-1-any
