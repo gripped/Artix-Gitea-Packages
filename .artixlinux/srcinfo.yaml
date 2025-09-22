@@ -1,0 +1,46 @@
+---
+version: 49.0-1
+pkgbase:
+  name: decibels
+  pkgdesc: Audio player for GNOME
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://apps.gnome.org/Decibels/
+  arch:
+    - any
+  groups:
+    - gnome
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - appstream
+    - blueprint-compiler
+    - git
+    - meson
+    - typescript
+  depends:
+    - dconf
+    - gjs
+    - glib2
+    - graphene
+    - gst-plugins-bad-libs
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+  optdepends:
+    - 'gst-libav: Extra media codecs'
+    - 'gst-plugins-bad: Extra media codecs'
+    - 'gst-plugins-ugly: Extra media codecs'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/decibels.git#tag=49.0
+    - git+https://gitlab.gnome.org/BrainBlasted/gi-typescript-definitions.git
+  b2sums:
+    - 330e92db065cdcb78738fe4dd25a6d7efb47274ef4b8590f69c72ad7e0c744fea07b3485949c6b15e1e0b0196b1f977a76ab6b6d28b4a76501c4a55f0c273209
+    - SKIP
+pkgname:
+  - name: decibels
+# generated with artixpkg 0.37.4-1-any
