@@ -1,10 +1,10 @@
 ---
-version: 3.1.6-5
+version: 3.1.6-6
 pkgbase:
   name: bear
   pkgdesc: A tool to generate compilation database for clang tooling
   pkgver: 3.1.6
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/rizsotto/Bear
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgbase:
     - 9bc603ac82c4b2c8bf1263e7d24205f7445b265da16c21935f58c651c5ed78fdb81d00565a3f2b81415831564b81384cd71c799f58c85bce0445ecdf67b7c3b8
 pkgname:
   - name: bear
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
