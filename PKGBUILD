@@ -29,7 +29,6 @@ depends=(
   libxmlb
   pango
   polkit
-  systemd
 )
 makedepends=(
   docbook-xsl

@@ -43,7 +43,6 @@ pkgbase:
     - libxmlb
     - pango
     - polkit
-    - systemd
   optdepends:
     - 'flatpak: Flatpak support plugin'
     - 'fwupd: fwupd support plugin'
