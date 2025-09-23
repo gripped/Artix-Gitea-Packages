@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -27,11 +27,8 @@ repos:
       - mutter-docs-48.5-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: 49.0-3
-    packages:
-      - mutter-49.0-3-x86_64.pkg.tar.zst
-      - mutter-devkit-49.0-3-x86_64.pkg.tar.zst
-      - mutter-docs-49.0-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: 48.5-1
