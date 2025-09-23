@@ -5,7 +5,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=coreutils
-pkgver=9.7
+pkgver=9.8
 pkgrel=1
 pkgdesc='The basic file, shell and text manipulation utilities of the GNU operating system'
 arch=('x86_64')
@@ -35,7 +35,8 @@ source=(
 validpgpkeys=(
  6C37DC12121A5006BC1DB804DF6FD971306037D9 # Pádraig Brady
 )
-b2sums=('9c18801f93853f6f78919f79ce84256260e9f5fa5f496e73ac8b9e2c66106cdcd808fe971f6c064cf4f9a97aae4dd4afc97126a8ac89b59497557f89a3734bab'
+options=(!lto)
+b2sums=('3fff447c84c776069c8e83a1e95391c840812cd8361042d0fc639ee4a193582784f7424f1bd8d71d191933145b2a6fa396b38f871a3308741cd75ff9c3e8bdd6'
         'SKIP')
 
 prepare() {
