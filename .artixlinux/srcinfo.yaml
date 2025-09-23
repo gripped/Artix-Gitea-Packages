@@ -1,9 +1,9 @@
 ---
-version: 2.41.1-1
+version: 2.41.2-1
 pkgbase:
   name: util-linux
   pkgdesc: Miscellaneous system utilities for Linux
-  pkgver: 2.41.1
+  pkgver: 2.41.2
   pkgrel: 1
   url: https://github.com/util-linux/util-linux
   arch:
@@ -34,20 +34,20 @@ pkgbase:
   options:
     - strip
   source:
-    - git+https://github.com/util-linux/util-linux#tag=v2.41.1?signed
+    - git+https://github.com/util-linux/util-linux#tag=v2.41.2?signed
     - util-linux-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
-    - pam-login
-    - pam-common
-    - pam-remote
-    - pam-runuser
-    - pam-su
+    - login.pam
+    - common.pam
+    - remote.pam
+    - runuser.pam
+    - su.pam
     - util-linux.sysusers
     - 60-rfkill.rules
     - 0001-util-linux-no-systemd.patch
   validpgpkeys:
     - B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284
   sha256sums:
-    - 1995919a5c3e8a2cff213bd3ab8a421ee209aff99cbe5da4536cccd57de9267b
+    - d7fec66283cce093f54aaf0f30dcb6adfea7c7c170abf8cdf24df3c409397f87
     - 6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a
     - ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275
     - 57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af
@@ -60,7 +60,7 @@ pkgbase:
 pkgname:
   - name: util-linux
     depends:
-      - util-linux-libs=2.41.1
+      - util-linux-libs=2.41.2
       - coreutils
       - file
       - libmagic.so
@@ -114,4 +114,4 @@ pkgname:
       - libutil-linux
     replaces:
       - libutil-linux
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
