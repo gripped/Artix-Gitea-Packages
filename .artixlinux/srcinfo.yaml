@@ -1,8 +1,8 @@
 ---
-version: 5.83-1
+version: 5.84-1
 pkgbase:
   name: bluez
-  pkgver: 5.83
+  pkgver: 5.84
   pkgrel: 1
   url: http://www.bluez.org/
   arch:
@@ -19,13 +19,13 @@ pkgbase:
     - python-pygments
     - cups
   source:
-    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.83.tar.xz
-    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.83.tar.sign
+    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.84.tar.xz
+    - https://www.kernel.org/pub/linux/bluetooth/bluez-5.84.tar.sign
     - bluetooth.modprobe
   validpgpkeys:
     - E932D120BC2AEC444E558F0106CA9F5D1DCF2659
   sha256sums:
-    - 108522d909d220581399bfec93daab62035539ceef3dda3e79970785c63bd24c
+    - 5ba73d030f7b00087d67800b0e321601aec0f892827c72e5a2c8390d8c886b11
     - SKIP
     - 46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4
 pkgname:
@@ -97,4 +97,4 @@ pkgname:
       - dbus
       - readline
       - glibc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
