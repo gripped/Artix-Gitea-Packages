@@ -19,7 +19,6 @@ depends=(
   libx11
   libxinerama
   libxrandr
-  elogind
 )
 makedepends=(
   git
@@ -55,8 +54,6 @@ build() {
     --sysconfdir=/etc \
     --localstatedir=/var \
     --sbindir=/usr/bin \
-    --with-session-info=systemd \
-    --with-init-script=systemd
   make
 }
 
