@@ -1,10 +1,10 @@
 ---
-version: 2:5.2.1-2
+version: 2:5.2.1-3
 pkgbase:
   name: darktable
   pkgdesc: Utility to organize and develop raw images
   pkgver: 5.2.1
-  pkgrel: 2
+  pkgrel: 3
   epoch: 2
   url: https://darktable.org
   arch:
@@ -60,4 +60,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: darktable
-# generated with artixpkg 0.37.0-1-any
+# generated with artixpkg 0.37.4-1-any
