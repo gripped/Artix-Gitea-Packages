@@ -49,6 +49,7 @@ makedepends=(
   libxslt
   meson
   python
+  udev
   usbguard
 )
 checkdepends=(
