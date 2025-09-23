@@ -1,10 +1,10 @@
 ---
-version: 0.23.2-1
+version: 0.23.2-2
 pkgbase:
   name: libdatachannel
   pkgdesc: C/C++ WebRTC network library featuring Data Channels, Media Transport, and WebSockets
   pkgver: 0.23.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/paullouisageneau/libdatachannel
   arch:
     - x86_64
