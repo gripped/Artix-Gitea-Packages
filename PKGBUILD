@@ -53,7 +53,7 @@ prepare() {
 }
 
 build() {
-  artix-meson $pkgname build -Dsystemd=false \
+  artix-meson $pkgname build \
     -D webkitgtk=disabled
   meson compile -C build
 }
