@@ -1,0 +1,46 @@
+---
+version: 1.7.2-2
+pkgbase:
+  name: cronie
+  pkgdesc: Daemon that runs specified programs at scheduled times and related tools
+  pkgver: 1.7.2
+  pkgrel: 2
+  url: https://github.com/cronie-crond/cronie/
+  arch:
+    - x86_64
+  license:
+    - custom:BSD
+  makedepends:
+    - git
+  depends:
+    - pam
+    - bash
+    - run-parts
+  optdepends:
+    - 'smtp-server: send job output via email'
+    - 'smtp-forwarder: forward job output to email server'
+  provides:
+    - cron
+  conflicts:
+    - cron
+  backup:
+    - etc/anacrontab
+    - etc/cron.d/0hourly
+    - etc/cron.deny
+    - etc/crontab
+    - etc/default/anacron
+    - etc/pam.d/crond
+    - etc/sysconfig/crond
+  source:
+    - git+https://github.com/cronie-crond/cronie.git#tag=cronie-1.7.2
+    - cron-deny
+    - crontab
+    - default-anacron
+  sha256sums:
+    - c649a60150409a6bd4e74a27697256a6dba8f77c7ffba355e02b726fd8175fe7
+    - ae6e533ecdfc1bd2dd80a9e25acb0260cbe9f00c4e4abee93d552b3660f263fc
+    - 64d517a8d011b5cfa6b2433d528498e80fa8d0748c91f1b73e6ded70e776dc35
+    - c5772fd0df22d807ed6b62edf4052db529aafb626b1bfe8961229fb864039a5c
+pkgname:
+  - name: cronie
+# generated with artixpkg 0.37.4-1-any
