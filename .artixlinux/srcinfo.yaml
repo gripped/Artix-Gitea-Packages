@@ -1,10 +1,10 @@
 ---
-version: 3.6.5-29
+version: 3.6.5-30
 pkgbase:
   name: openscenegraph
   pkgdesc: Open Source, high performance real-time graphics toolkit
   pkgver: 3.6.5
-  pkgrel: 29
+  pkgrel: 30
   url: http://www.openscenegraph.org
   arch:
     - x86_64
@@ -57,4 +57,4 @@ pkgbase:
     - 9c6d63d3e38a4045b891ccf2f0a2876a52ce8b033214ef9a24072e2ebcde4d1ce12be6d420a37e3b2cb0bdbd5d7d5a808c45d3b207c20a54cfa1114dcfcd1ada
 pkgname:
   - name: openscenegraph
-# generated with artixpkg 0.37.0-1-any
+# generated with artixpkg 0.37.4-1-any
