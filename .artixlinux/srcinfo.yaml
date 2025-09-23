@@ -1,10 +1,10 @@
 ---
-version: 3.0.4-4
+version: 3.0.4-5
 pkgbase:
   name: gimp
   pkgdesc: GNU Image Manipulation Program
   pkgver: 3.0.4
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.gimp.org/
   install: gimp.install
   arch:
@@ -89,4 +89,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: gimp
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
