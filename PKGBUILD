@@ -2,7 +2,7 @@
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=fastfetch
-pkgver=2.52.0
+pkgver=2.53.0
 pkgrel=1
 pkgdesc="A feature-rich and performance oriented neofetch like system information tool"
 url="https://github.com/fastfetch-cli/fastfetch"
@@ -27,13 +27,11 @@ optdepends=('chafa: Image output as ascii art'
             'python: Needed for zsh and fish completions'
             'sqlite: Needed for Sqlite integration and Soar packages count'
             'vulkan-icd-loader: Vulkan module & fallback for GPU output'
-            'xfconf: Needed for XFWM theme and XFCE Terminal font'
             'zlib: Faster image output when using kitty graphics protocol')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('6199c4cacc0b411fde7ec6c66d12829459284c6cdfb4bacce7b535190d5cd94c')
+sha256sums=('1488d9b738474e8ef8e8d78e2463722bf706e435857c849b3f480354ad62366e')
 
 build() {
-        # Removed -DENABLE_SYSTEM_YYJSON='ON' to prevent build error with v2.51.1
 	cmake -B build -S "${pkgname}-${pkgver}" \
 		-DCMAKE_BUILD_TYPE='RelWithDebInfo' \
 		-DCMAKE_INSTALL_PREFIX='/usr' \
@@ -42,6 +40,7 @@ build() {
 		-DENABLE_SQLITE3='ON' \
 		-DENABLE_RPM='OFF' \
 		-DENABLE_IMAGEMAGICK6='OFF' \
+		-DENABLE_SYSTEM_YYJSON='ON' \
 		-DPACKAGES_DISABLE_APK='ON' \
 		-DPACKAGES_DISABLE_DPKG='ON' \
 		-DPACKAGES_DISABLE_EMERGE='ON' \
