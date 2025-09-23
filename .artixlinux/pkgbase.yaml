@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.0.0-3
+    version: 2.0.0-4
     packages:
-      - glycin-2.0.0-3-x86_64.pkg.tar.zst
-      - glycin-gtk4-2.0.0-3-x86_64.pkg.tar.zst
+      - glycin-2.0.0-4-x86_64.pkg.tar.zst
+      - glycin-gtk4-2.0.0-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.2.3-1
