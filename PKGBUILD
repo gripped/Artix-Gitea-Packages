@@ -19,7 +19,7 @@ depends=(
   libx11
   libxinerama
   libxrandr
-  systemd-libs
+  libelogind
 )
 makedepends=(
   git

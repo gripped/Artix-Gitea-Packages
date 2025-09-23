@@ -26,7 +26,7 @@ pkgbase:
     - libx11
     - libxinerama
     - libxrandr
-    - systemd-libs
+    - libelogind
   backup:
     - etc/conf.d/spice-vdagentd
   source:
