@@ -1,10 +1,10 @@
 ---
-version: 2.44.1-3
+version: 2.44.1-4
 pkgbase:
   name: gdk-pixbuf2
   pkgdesc: An image loading library
   pkgver: 2.44.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://wiki.gnome.org/Projects/GdkPixbuf
   arch:
     - x86_64
@@ -20,9 +20,7 @@ pkgbase:
   depends:
     - glib2
     - glibc
-    - libjpeg-turbo
-    - libpng
-    - libtiff
+    - glycin
     - shared-mime-info
   source:
     - git+https://gitlab.gnome.org/GNOME/gdk-pixbuf.git#tag=2.44.1
@@ -35,11 +33,8 @@ pkgname:
     install: gdk-pixbuf2.install
     optdepends:
       - 'libheif: Load .avif, .heic and .heif'
-      - 'libjxl: Load .jxl'
       - 'libopenraw: Load .arw, .cr2, .crw, .dng, .erf, .mrw, .nef, .orf, .pef and .raf'
-      - 'librsvg: Load .svg, .svgz and .svg.gz'
       - 'libwmf: Load .apm and .wmf'
-      - 'webp-pixbuf-loader: Load .webp'
     provides:
       - libgdk_pixbuf-2.0.so
   - name: gdk-pixbuf2-docs
