@@ -1,10 +1,10 @@
 ---
-version: 8.17.1-1
+version: 8.17.1-2
 pkgbase:
   name: libvips
   pkgdesc: A fast image processing library with low memory needs
   pkgver: 8.17.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://libvips.github.io/libvips/
   arch:
     - x86_64
@@ -51,4 +51,4 @@ pkgbase:
     - 04962e7d3fb8956c986f3aed7a10c4927195bc555a22c805a5b190c257e9e8b0fe97eddd0eb44e0e7d9047ba5671e96ac88f50a2597caa4f78c84ce1091541ff
 pkgname:
   - name: libvips
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
