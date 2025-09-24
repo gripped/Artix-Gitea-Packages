@@ -29,13 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 11.5.0-1
+    version: 11.5.1-1
     packages:
-      - harfbuzz-11.5.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-cairo-11.5.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-icu-11.5.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-utils-11.5.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-docs-11.5.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-11.5.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-11.5.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-11.5.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-11.5.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-11.5.1-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
