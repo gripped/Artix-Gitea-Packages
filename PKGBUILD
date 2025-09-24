@@ -4,10 +4,10 @@
 
 pkgname=(cuda cuda-tools)
 pkgbase=cuda
-pkgver=13.0.0
+pkgver=13.0.1
 # Before upgrading, make sure that we ship at least this version of
 # nvidia-utils as otherwise we'll get stuff such as #7.
-_driverver=580.65.06
+_driverver=580.82.07
 pkgrel=1
 pkgdesc="NVIDIA's GPU programming toolkit"
 arch=(x86_64)
@@ -55,7 +55,7 @@ source=(https://developer.download.nvidia.com/compute/cuda/${pkgver}/local_insta
         nsight-systems.desktop
         fix-glibc242.patch
 )
-sha512sums=('1d09fd6f966e009c5ec461f72839bc70305cda99850ed58c446e4abffb25d9b88e50c0f03a23af13e90245be4b633592a50404cc7dd92cca42e21b8f8d790984'
+sha512sums=('ec45bdbf883114092058a03f3efd03355d0d612597ce5baef812305a889e90d1faf8db805190ff19aa431b4c9b9454d8901bb38dcbec84278887d27ea10e965e'
             '0a8eb5f01cf3bf5cce22b7bcffec825ad926ee46ecfd9b266749045736cb8e3decb0158f14e6bee0e07ead8a88495d29a778de2e71c7b255b67500a049b2d52b'
             '3ef1d31adef59aaac464441aa1b8d92e706323492347e8ffec4ba1419576d3889791c8c13e8903dd79ceefc164cf473aef650105d1927cdb6676c936b66b2e45'
             'a4b3b03682801a98a1d8c1d14c084fd35efd384d92d497e230e3a28e0bd97b1fa48a93ccb2150f892f0b4154ca4ea2d66f5484a6a59b5c9b49963de42ecf1736'
