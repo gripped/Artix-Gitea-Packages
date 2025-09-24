@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,8 +21,19 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.58.0-2
+    packages:
+      - gvfs-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-afc-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-dnssd-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-goa-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-google-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-onedrive-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-smb-1.58.0-2-x86_64.pkg.tar.zst
+      - gvfs-wsdd-1.58.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
