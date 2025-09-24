@@ -27,7 +27,7 @@ pkgbase:
   source:
     - git+https://gitlab.com/libeigen/eigen#tag=5.0.0
   sha256sums:
-    - d4b3442472e29429cce723408a1358ab2b1e357888ffda5bcba335f71937d0c9
+    - 11808f4e26d9b2aef890c8354f6de43320008776a173c1ddbd05622e70dbbf1f
 pkgname:
   - name: eigen
 # generated with artixpkg 0.37.4-1-any
