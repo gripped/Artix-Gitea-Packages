@@ -1,10 +1,10 @@
 ---
-version: 258-5
+version: 258-6
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 258
-  pkgrel: 5
+  pkgrel: 6
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -38,6 +38,8 @@ pkgbase:
     - 0001-Use-Arch-Linux-device-access-groups.patch
     - 0001-artix-standalone-install.patch
     - 0001-artix-boot-standalone.patch
+    - artix.conf
+    - loader.conf
   validpgpkeys:
     - 63CDA1E5D3FC22B998D20DD6327F26951A015CC4
     - A9EA9081724FFAE0484C35A1A81CEA22BC8C7E2E
@@ -48,7 +50,9 @@ pkgbase:
     - 1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417
     - beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377
     - 1a000d32abe0ae275ee1fad8fd511de7d6683f5bf163859f9856f3f508b2db593d3a49509bfbd02e44f78785c453ae235a86ddffebfa1d40f7e299734da3378f
-    - 829f87749b6fdbab3622e83d96bb27a952d7f448fbf64aa3e41e08f67873a4a7c9dba33e6cf2fbc469d551b55e7e0d37c65787c1a5a6739896c9aab6d2edae4d
+    - e8acc127c0468019ca163edb2119e43ac0b0b539350cbdbb605d657dd1519203af89799044ed4cc0ee36158e305a13483047f16975e1b09f42fc036ec7115313
+    - 982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5
+    - ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58
 pkgname:
   - name: udev
     pkgdesc: Userspace device file manager
@@ -119,7 +123,6 @@ pkgname:
       - python
       - python-cryptography
       - python-pefile
-      - python-pillow
     optdepends:
       - 'python-pillow: Show the size of splash image'
       - 'sbsigntools: Sign the embedded kernel'
