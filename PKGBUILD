@@ -12,7 +12,7 @@ pkgname=(
   nm-cloud-setup
   networkmanager-docs
 )
-pkgver=1.54.0
+pkgver=1.54.1
 pkgrel=1
 pkgdesc="Network connection manager and user applications"
 url="https://networkmanager.dev/"
@@ -24,7 +24,6 @@ makedepends=(
   curl
   dhcpcd
   dnsmasq
-  elogind
   gcc-libs
   git
   glib2
@@ -54,6 +53,8 @@ makedepends=(
   ppp
   python-gobject
   readline
+  elogind
+  vala
   vala
   wpa_supplicant
 )
@@ -64,7 +65,7 @@ checkdepends=(
 source=(
   "git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git?signed#tag=${pkgver/[a-z]/-&}"
 )
-b2sums=('b0bb870e19216ac15b9902007502c16a7bf3d72620f76479fc8ff43acfeb5bceb1b7822293603975a99d42ab05b3b522b87a184af154a0b382423639804d1b76')
+b2sums=('8f658aba51dca1af831908b7219cff7e9b83c32465e1fc1489ae2bc132d7caf82f930169365ee81dfac280973d067462dde9625d29c6dd8bf127534e405a7f0d')
 validpgpkeys=(
   3D10AD045AB4AAFF8E8F36AF9B980AC2FB874FEB # Ana Cabral <acabral@redhat.com>
   F07F7C1EABD382F81CBFBA3B998D4828CD7E1656 # Beniamino Galvani <bgalvani@redhat.com>
@@ -142,7 +143,6 @@ package_networkmanager() {
   depends=(
     audit
     curl
-    elogind
     gcc-libs
     glib2
     glibc
@@ -156,6 +156,7 @@ package_networkmanager() {
     libpsl
     libteam
     mobile-broadband-provider-info
+    elogind
     nspr
     nss
     readline
@@ -190,9 +191,6 @@ package_networkmanager() {
   install -m644 /dev/stdin etc/NetworkManager/NetworkManager.conf <<END
 # Configuration file for NetworkManager.
 # See "man 5 NetworkManager.conf" for details.
-[main]
-plugins=keyfile
-hostname-mode=none
 END
 
   # packaged configuration
@@ -216,7 +214,6 @@ END
   _pick cloud usr/share/man/*/nm-cloud-setup*
 
   # Not actually packaged (https://bugs.archlinux.org/task/69138)
-  # _pick ovs usr/lib/systemd/system/NetworkManager.service.d/NetworkManager-ovs.conf
 
   # Restore empty dir
   install -d usr/lib/NetworkManager/dispatcher.d/no-wait.d
@@ -230,8 +227,8 @@ package_libnm() {
     glibc
     nspr
     nss
-    libelogind
     util-linux-libs
+    libelogind
   )
   provides=(libnm.so)
 
