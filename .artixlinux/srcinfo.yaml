@@ -68,4 +68,4 @@ pkgname:
       - libgmodule-2.0.so
       - libgobject-2.0.so
       - libgthread-2.0.so
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
