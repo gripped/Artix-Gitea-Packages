@@ -1,0 +1,29 @@
+---
+version: 3.36.0-4
+pkgbase:
+  name: gnome-menus
+  pkgdesc: GNOME menu specifications
+  pkgver: 3.36.0
+  pkgrel: 4
+  url: https://gitlab.gnome.org/GNOME/gnome-menus
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL
+    - LGPL
+  makedepends:
+    - gobject-introspection
+    - git
+  depends:
+    - glib2
+  provides:
+    - libgnome-menu-3.so
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-menus.git#commit=66ac7579856968d3f4b76c04d55327c60b37f2fb
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: gnome-menus
+# generated with artixpkg 0.37.4-1-any
