@@ -1,10 +1,10 @@
 ---
-version: 1.0.16-1
+version: 1.0.16-2
 pkgbase:
   name: libde265
   pkgdesc: Open h.265 video codec implementation
   pkgver: 1.0.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/strukturag/libde265
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 103ad98bbfbee5e93011c5197c9106ce849e2479e3ce2a49edf5882b15654015
 pkgname:
   - name: libde265
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any
