@@ -6,8 +6,8 @@ pkgbase=lib32-gdk-pixbuf2
 pkgname=(
   lib32-gdk-pixbuf2
 )
-pkgver=2.42.12
-pkgrel=2
+pkgver=2.44.2
+pkgrel=1
 pkgdesc="An image loading library (32-bit)"
 url="https://wiki.gnome.org/Projects/GdkPixbuf"
 arch=(x86_64)
@@ -26,14 +26,11 @@ makedepends=(
   glib2-devel
   meson
 )
-optdepends=(
-  "lib32-librsvg: Load .svg, .svgz, and .svg.gz"
-)
 source=(
   "git+https://gitlab.gnome.org/GNOME/gdk-pixbuf.git#tag=$pkgver"
   gdk-pixbuf-query-loaders-32.hook
 )
-b2sums=('f44a114c98aba2a3ff0e7435dd85e8e3bde579e96cb059ead733ed2e8b28b857e8c66e72360b40ca07237c98fa9904948886bf78980c6deccf58b29e48988790'
+b2sums=('e57d41ade667bfbc8ee550704f2287b59e8c03b1fbedbb04d7c05e7e615b4f1d455feea89ab1df41088eff502be0907cfb3a85d21afacb88c5590faa277b78ce'
         '0b432bdeb31acdd66c8a861551cabf4f83efd3c441614dbb64b7ac11fdbb97c76412b5706bb18ff1ed890de0a4c51bf02bb531eb4693e6d68021b5372cb5897a')
 
 prepare() {
@@ -43,12 +40,20 @@ prepare() {
 build() {
   local meson_options=(
     --cross-file lib32
+    -D android=disabled
     -D builtin_loaders=all
+    -D documentation=false
+    -D gif=enabled
+    -D glycin=disabled
     -D gtk_doc=false
     -D installed_tests=false
     -D introspection=disabled
+    -D jpeg=enabled
     -D man=false
     -D others=enabled
+    -D png=enabled
+    -D thumbnailer=disabled
+    -D tiff=enabled
   )
 
   artix-meson gdk-pixbuf build "${meson_options[@]}"
@@ -60,6 +65,9 @@ check() {
 }
 
 package() {
+  optdepends=(
+    "lib32-librsvg: Load .svg, .svgz and .svg.gz"
+  )
   provides=(libgdk_pixbuf-2.0.so)
   install=lib32-gdk-pixbuf2.install
 
