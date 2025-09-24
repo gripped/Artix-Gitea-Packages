@@ -1,9 +1,9 @@
 ---
-version: 1.10.2-2
+version: 1.10.2-4
 pkgbase:
   name: handbrake
   pkgver: 1.10.2
-  pkgrel: 2
+  pkgrel: 4
   url: https://handbrake.fr/
   arch:
     - x86_64
