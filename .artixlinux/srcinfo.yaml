@@ -1,11 +1,11 @@
 ---
-version: 1.45-1
+version: 1.45-2
 pkgbase:
   name: connman
   pkgdesc: Intel's modular network connection manager
   pkgver: 1.45
-  pkgrel: 1
-  url: https://01.org/connman
+  pkgrel: 2
+  url: https://git.kernel.org/pub/scm/network/connman/connman.git/
   arch:
     - x86_64
   license:
@@ -47,4 +47,4 @@ pkgbase:
     - 06dd5867d460f1c3cf6c359e650ca2ef24495493a99cd03dbd17f23e587e9066d9bc98758d85d5c690d1ae21fa77ad8da5e2fa83d0b52c95d7a535784c5c4964
 pkgname:
   - name: connman
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
