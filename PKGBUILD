@@ -1,8 +1,8 @@
 # Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=stalonetray
-pkgver=0.8.5
-pkgrel=2
+pkgver=0.9.0
+pkgrel=1
 pkgdesc="STAnd-aLONE sysTRAY. It has minimal build and run-time dependencies: the Xlib only."
 arch=('x86_64')
 url="https://github.com/kolbusa/stalonetray"
