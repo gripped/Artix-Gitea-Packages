@@ -1,10 +1,10 @@
 ---
-version: 2:3.17.2-1
+version: 2:3.17.2-2
 pkgbase:
   name: freerdp
   pkgdesc: Free implementation of the Remote Desktop Protocol (RDP)
   pkgver: 3.17.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://www.freerdp.com/
   arch:
