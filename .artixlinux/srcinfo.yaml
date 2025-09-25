@@ -1,0 +1,52 @@
+---
+version: 1.24.3-2
+pkgbase:
+  name: openal
+  pkgdesc: Cross-platform 3D audio library, software implementation
+  pkgver: 1.24.3
+  pkgrel: 2
+  url: https://github.com/kcat/openal-soft
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - alsa-lib
+    - cmake
+    - ffmpeg
+    - fluidsynth
+    - git
+    - jack
+    - libmysofa
+    - libpulse
+    - libsndfile
+    - ninja
+    - pipewire
+    - portaudio
+    - qt5-base
+    - sdl3
+  depends:
+    - gcc-libs
+    - glibc
+  source:
+    - git+https://github.com/kcat/openal-soft#tag=1.24.3
+  b2sums:
+    - 57c685f1978ab961e90df74e667bb5fcb114fbac37ba59874619800e85a2c05c877fcc26eaf0a204138357f2bb4e6fa185e7ea4bef0e8dab3dd583486f8eaf69
+pkgname:
+  - name: openal
+    optdepends:
+      - 'qt5-base: alsoft-config GUI Configurator'
+      - 'fluidsynth: MIDI rendering'
+      - 'libmysofa: makemhr tool'
+    provides:
+      - libopenal.so
+  - name: openal-examples
+    pkgdesc: Cross-platform 3D audio library, software implementation (example programs)
+    depends:
+      - gcc-libs
+      - glibc
+      - openal=1.24.3-2
+      - ffmpeg
+      - libsndfile
+      - sdl3
+# generated with artixpkg 0.37.4-1-any
