@@ -4,7 +4,7 @@
 
 pkgname=obs-studio
 pkgver=31.1.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
@@ -22,11 +22,16 @@ optdepends=('libfdk-aac: FDK AAC codec support'
             'sndio: Sndio input client'
             'qrcodegencpp-cmake: websocket support'
             'v4l2loopback-dkms: virtual camera support')
-source=($pkgname-$pkgver.tar.gz::https://github.com/obsproject/obs-studio/releases/download/$pkgver/OBS-Studio-$pkgver-Sources.tar.gz)
-sha256sums=('5d66d4fb0d3ea91bb16aed58843bf652cf5b0aa692480b3d37eb878333b74f97')
+source=($pkgname-$pkgver.tar.gz::https://github.com/obsproject/obs-studio/releases/download/$pkgver/OBS-Studio-$pkgver-Sources.tar.gz
+        https://github.com/obsproject/obs-studio/commit/69162b12ecadb3edaca0529b34da93b4df606c11.patch)
+sha256sums=('5d66d4fb0d3ea91bb16aed58843bf652cf5b0aa692480b3d37eb878333b74f97'
+            '6f5aeaa0f2e6d78b9cef156a46c3c013a001f338b841f735ac258fb989ef698e')
 
 prepare() {
   cd $pkgname-$pkgver-sources
+
+  # Build fix for ffmpeg 8
+  patch -p1 -i ../69162b12ecadb3edaca0529b34da93b4df606c11.patch
 }
 
 build() {
