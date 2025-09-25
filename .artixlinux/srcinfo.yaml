@@ -1,11 +1,11 @@
 ---
-version: 1.30.5-1
+version: 1.30.5-2
 pkgbase:
   name: mongo-c-driver
   pkgdesc: A client library written in C for MongoDB
   pkgver: 1.30.5
-  pkgrel: 1
-  url: https://www.mongodb.org/display/DOCS/C+Language+Center
+  pkgrel: 2
+  url: https://github.com/mongodb/mongo-c-driver
   arch:
     - x86_64
   license:
@@ -35,4 +35,4 @@ pkgbase:
     - acb16b3a287a440cb79e2bedbad829feb00e4cf2279123cce5c602480765b7ed
 pkgname:
   - name: mongo-c-driver
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
