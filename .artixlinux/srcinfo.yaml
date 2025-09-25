@@ -1,10 +1,10 @@
 ---
-version: 2025.88-1
+version: 2025.88-2
 pkgbase:
   name: dropbear
   pkgdesc: Lightweight SSH server
   pkgver: 2025.88
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mkj/dropbear
   arch:
     - x86_64
@@ -12,6 +12,8 @@ pkgbase:
     - MIT
   makedepends:
     - git
+  depends:
+    - glibc
   options:
     - emptydirs
   source:
@@ -25,6 +27,7 @@ pkgbase:
 pkgname:
   - name: dropbear
     depends:
+      - glibc
       - libxcrypt
       - zlib
   - name: dropbear-scp
@@ -33,4 +36,4 @@ pkgname:
       - scp
     conflicts:
       - openssh
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any
