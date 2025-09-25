@@ -1,10 +1,10 @@
 ---
-version: 6.9.2-3
+version: 6.9.2-4
 pkgbase:
   name: qt6-multimedia
   pkgdesc: Classes for audio, video, radio and camera functionality
   pkgver: 6.9.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.qt.io
   arch:
     - x86_64
@@ -85,4 +85,4 @@ pkgname:
       - 'gst-plugins-ugly: additional plugins'
     provides:
       - qt6-multimedia-backend
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
