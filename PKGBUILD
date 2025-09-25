@@ -8,7 +8,7 @@ pkgname=(
   p11-kit-docs
 )
 pkgver=0.25.10
-pkgrel=1
+pkgrel=2
 pkgdesc="Loads and enumerates PKCS#11 modules"
 url="https://p11-glue.freedesktop.org"
 arch=(x86_64)
@@ -29,8 +29,7 @@ checkdepends=(
   gnutls
 )
 source=(
-  # https://github.com/p11-glue/p11-kit/issues/721
-  "git+https://github.com/p11-glue/p11-kit#tag=$pkgver"
+  "git+https://github.com/p11-glue/p11-kit?signed#tag=$pkgver"
   git+https://github.com/p11-glue/pkcs11-json
 )
 b2sums=('47408bf6bded1f5de38d168a67fcfae460685fc6ee56627db99d9e2148c2f3dfeab0fce94f31026ca423b980b3df283a920cc5f87dc366699451f0e18d3b6497'
