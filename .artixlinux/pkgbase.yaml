@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 9.8-1
+    version: 9.8-2
     packages:
-      - coreutils-9.8-1-x86_64.pkg.tar.zst
+      - coreutils-9.8-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 9.7-1
