@@ -2,7 +2,7 @@
 # Contributor: Zerial <fernando@zerial.org>
 
 pkgname=unrealircd
-pkgver=6.1.10
+pkgver=6.2.0.2
 pkgrel=1
 pkgdesc="Open Source IRC Server"
 arch=('x86_64')
@@ -14,11 +14,12 @@ conflicts=('ircd')
 provides=('ircd')
 backup=('etc/unrealircd/unrealircd.conf')
 install=unrealircd.install
-validpgpkeys=('1D2D2B03A0B68ED11D68A24BA7A21B0A108FF4A9')
+validpgpkeys=('1D2D2B03A0B68ED11D68A24BA7A21B0A108FF4A9'
+	          '36E6F65706E36B0937280299101001DAF48BB56D')
 source=(https://www.unrealircd.org/unrealircd4/unrealircd-$pkgver.tar.gz{,.asc}
-	unrealircd.tmpfiles.d
-	unrealircd.sysusers.d)
-sha256sums=('SKIP'
+        unrealircd.tmpfiles
+        unrealircd.sysusers)
+sha256sums=('91f77990d4b287a53ee8239334720f560d6791624389be76d9f7b4516c623e0a'
             'SKIP'
             '91b5e1d623b51ffd4734d73e35cead09be596460c41b9440406f92c9e2b4b9b1'
             'c9a6ee91098f23d050c73f3d079ea5edf05e885bf148a154000d1768f551307b')
@@ -69,6 +70,6 @@ package() {
 
   chrpath -d "$pkgdir"/usr/bin/{unrealircd,unrealircdctl}
 
-  install -Dm0644 "$srcdir"/unrealircd.tmpfiles.d "$pkgdir"/usr/lib/tmpfiles.d/unrealircd.conf
-  install -Dm0644 "$srcdir"/unrealircd.sysusers.d "$pkgdir"/usr/lib/sysusers.d/unrealircd.conf
+  install -Dm0644 "$srcdir"/unrealircd.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/unrealircd.conf
+  install -Dm0644 "$srcdir"/unrealircd.sysusers "$pkgdir"/usr/lib/sysusers.d/unrealircd.conf
 }
