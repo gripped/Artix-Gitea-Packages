@@ -1,9 +1,9 @@
 ---
-version: 13.35-1
+version: 13.36-1
 pkgbase:
   name: perl-image-exiftool
   pkgdesc: Reader and rewriter of EXIF information that supports raw files
-  pkgver: 13.35
+  pkgver: 13.36
   pkgrel: 1
   url: https://exiftool.org/
   arch:
@@ -19,15 +19,15 @@ pkgbase:
     - 'perl-io-compress-brotli: Support for brotli-compressed metadata'
   provides:
     - exiftool
-    - perl-exiftool=13.35
+    - perl-exiftool=13.36
   replaces:
     - perl-exiftool
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/exiftool/exiftool.git#tag=13.35
+    - git+https://github.com/exiftool/exiftool.git#tag=13.36
   sha256sums:
-    - 2f5393c07cb7b00e424ba0105fffd71a532d747227be477a08f29ace8c42e281
+    - c06e8cdb6d092fecf8a08cc053e7618265de2e06137861e7c8af4aff6db09f69
 pkgname:
   - name: perl-image-exiftool
 # generated with artixpkg 0.37.4-1-any
