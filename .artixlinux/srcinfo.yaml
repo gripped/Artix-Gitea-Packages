@@ -1,10 +1,10 @@
 ---
-version: 0.56.18-4
+version: 0.56.18-5
 pkgbase:
   name: vala
   pkgdesc: Compiler for the GObject type system
   pkgver: 0.56.18
-  pkgrel: 4
+  pkgrel: 5
   url: https://wiki.gnome.org/Projects/Vala
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - f824e8c0a67a5bc93730d9c50a9d880eae86da9e2a04575f91912355085d36c09bef12ce1f0f5556e3917f07d13bc49d819c61ee025f8b9078263c102c07e74c
 pkgname:
   - name: vala
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
