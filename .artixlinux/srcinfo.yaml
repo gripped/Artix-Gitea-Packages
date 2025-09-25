@@ -1,9 +1,9 @@
 ---
-version: 8.4.6_6-1
+version: 8.4.6_6-2
 pkgbase:
   name: percona-server
   pkgver: 8.4.6_6
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.percona.com/software/mysql-database/percona-server
   arch:
     - x86_64
