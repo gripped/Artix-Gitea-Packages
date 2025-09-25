@@ -6,7 +6,7 @@
 
 pkgname=at
 pkgver=3.2.5
-pkgrel=4
+pkgrel=5
 pkgdesc='AT and batch delayed command scheduling utility and daemon'
 arch=('x86_64')
 url='https://salsa.debian.org/debian/at'
@@ -23,6 +23,12 @@ source=("git+https://salsa.debian.org/debian/at.git?signed#tag=release/${pkgver}
 sha256sums=('dc055b0afe2c60483525b7b7ea3ab4fb9fdbc7bb51070cb2705b598b5c69ebb2'
             '663cd2f7c5abf56d1ea3f38dfac8d3e64896f1384ca5e97b7ec6d26fd6afafef')
 
+prepare() {
+  cd "$pkgname"
+
+  autoreconf -fvi
+}
+
 build() {
   cd "$pkgname"
 
@@ -38,7 +44,7 @@ build() {
 package() {
   make -C "$pkgname" IROOT="$pkgdir" docdir=/usr/share/doc install
 
-  install -D -m0644 pam.conf "$pkgdir"/etc/pam.d/atd
+  install -D -m0644 atd.pam "$pkgdir"/etc/pam.d/atd
 }
 
 # vim:set ts=2 sw=2 et:
