@@ -63,6 +63,7 @@ build() {
 		-DCMAKE_BUILD_TYPE=RELEASE \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DSYSCONFDIR=/etc \
+		-DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
 		-DGENERATE_DOC=OFF \
 		-DLUA_LIBRARY=/usr/lib/liblua5.3.so \
 		-DLUA_INCLUDE_DIR=/usr/include/lua5.3
