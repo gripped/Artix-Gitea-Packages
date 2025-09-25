@@ -1,10 +1,10 @@
 ---
-version: 0.24.5-1
+version: 0.24.5-2
 pkgbase:
   name: mpd
   pkgdesc: Flexible, powerful, server-side application for playing music
   pkgver: 0.24.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.musicpd.org/
   arch:
     - x86_64
@@ -188,4 +188,4 @@ pkgname:
       - libsqlite3.so
       - twolame
       - libtwolame.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
