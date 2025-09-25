@@ -4,7 +4,7 @@
 
 pkgname=gegl
 pkgver=0.4.62
-pkgrel=3
+pkgrel=4
 pkgdesc='Graph based image processing framework'
 arch=('x86_64')
 url='https://www.gegl.org/'
@@ -23,6 +23,13 @@ sha256sums=('0b69ef3f1daf85f235967521140051fac26cb0849afe1a602fa058ebf9ba8ab8')
 pkgver() {
   cd "${pkgname}"
   git describe --tags | sed 's/^GEGL_//;s/_$//;s/_/./g;s/-/+/g'
+}
+
+prepare() {
+  cd "${pkgname}"
+
+  # Build fix for ffmpeg 8
+  git cherry-pick -n eda8ba51786f197b72265eafcdab407d91ec9c70
 }
 
 build() {
