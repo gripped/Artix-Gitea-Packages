@@ -1,10 +1,10 @@
 ---
-version: 3.11.2-1
+version: 3.11.2-2
 pkgbase:
   name: feh
   pkgdesc: Fast and light imlib2-based image viewer
   pkgver: 3.11.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://feh.finalrewind.org/
   arch:
     - x86_64
@@ -21,7 +21,6 @@ pkgbase:
     - libxinerama
   optdepends:
     - 'imagemagick: support more file formats'
-    - 'jpegexiforient: set exif rotation tag'
   source:
     - https://feh.finalrewind.org/feh-3.11.2.tar.bz2
     - https://feh.finalrewind.org/feh-3.11.2.tar.bz2.asc
