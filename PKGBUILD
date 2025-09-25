@@ -7,11 +7,12 @@
 
 pkgname=openbox
 pkgver=3.6.1
-pkgrel=11.1
+pkgrel=13
 pkgdesc='Highly configurable and lightweight X11 window manager'
 arch=('x86_64')
 url='http://openbox.org'
-license=('GPL')
+# http://git.openbox.org/?p=mikachu/openbox.git;a=blob;f=README;hb=release-3.6.1#l14
+license=('GPL-2.0-or-later')
 provides=(libobrender.so)
 depends=('startup-notification' 'libxml2' 'libxinerama' 'libxrandr'
          'libxcursor' 'pango' 'imlib2' 'librsvg' 'libsm')
