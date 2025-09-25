@@ -1,10 +1,10 @@
 ---
-version: 3.0.21-29
+version: 3.0.21-30
 pkgbase:
   name: vlc
   pkgdesc: Free and open source cross-platform multimedia player and framework
   pkgver: 3.0.21
-  pkgrel: 29
+  pkgrel: 30
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
