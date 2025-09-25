@@ -1,10 +1,10 @@
 ---
-version: 3.2.8-1
+version: 3.2.8-2
 pkgbase:
   name: freeradius
   pkgdesc: The premier open source RADIUS server
   pkgver: 3.2.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://freeradius.org/
   arch:
     - x86_64
