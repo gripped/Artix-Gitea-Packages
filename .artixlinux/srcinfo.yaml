@@ -1,10 +1,10 @@
 ---
-version: 0.16.1-2
+version: 0.16.1-3
 pkgbase:
   name: toxic
   pkgdesc: CLI Tox client
   pkgver: 0.16.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/JFreegman/toxic
   arch:
     - x86_64
@@ -33,4 +33,4 @@ pkgbase:
     - 19ff76357be3dbde72bc406cc64dd63ad359640aae381f8b07d9fdb6cb4e14ca692748fa0a0ab5f192047dd8fae2f3957c41ffdd597e66bebf993987ee57a018
 pkgname:
   - name: toxic
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
