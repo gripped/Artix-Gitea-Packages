@@ -19,7 +19,7 @@ backup=('etc/at.deny'
 options=('!makeflags')
 validpgpkeys=('464BC7CD439FEE5E8B4098A0348A778D6885EF8F') # Jose M Calhariz (Técnico) <jose.calhariz@tecnico.ulisboa.pt>
 source=("git+https://salsa.debian.org/debian/at.git?signed#tag=release/${pkgver}"
-        'pam.conf')
+        'atd.pam')
 sha256sums=('dc055b0afe2c60483525b7b7ea3ab4fb9fdbc7bb51070cb2705b598b5c69ebb2'
             '663cd2f7c5abf56d1ea3f38dfac8d3e64896f1384ca5e97b7ec6d26fd6afafef')
 
