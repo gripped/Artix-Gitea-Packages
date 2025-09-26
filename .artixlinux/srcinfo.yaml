@@ -1,10 +1,10 @@
 ---
-version: 1:25.08.1-1
+version: 1:25.08.1-2
 pkgbase:
   name: k3b
   pkgdesc: Feature-rich and easy to handle CD burning application
   pkgver: 25.08.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://apps.kde.org/k3b/
   arch:
@@ -64,6 +64,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/release-service/25.08.1/src/k3b-25.08.1.tar.xz
     - https://download.kde.org/stable/release-service/25.08.1/src/k3b-25.08.1.tar.xz.sig
+    - https://invent.kde.org/multimedia/k3b/-/commit/c10b680b.patch
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
@@ -71,6 +72,7 @@ pkgbase:
   sha256sums:
     - 87cce056225f0a1ad33c2648c93a0d1af3510de9f6dad06357c1d97fd7721536
     - SKIP
+    - c3554de917386b27ae34c798db7a517bf1a32ca02bda063fb4ad3c17470efaf7
 pkgname:
   - name: k3b
 # generated with artixpkg 0.37.4-1-any
