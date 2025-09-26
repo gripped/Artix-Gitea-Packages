@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.7.1-1
+    version: 1.7.2-1
     packages:
-      - opensnitch-1.7.1-1-x86_64.pkg.tar.zst
+      - opensnitch-1.7.2-1-x86_64.pkg.tar.zst
     debug: []
