@@ -1,0 +1,60 @@
+---
+version: 2.13.2-5
+pkgbase:
+  name: pqiv
+  pkgdesc: Powerful image viewer with minimal UI
+  pkgver: 2.13.2
+  pkgrel: 5
+  url: https://github.com/phillipberndt/pqiv
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - ffmpeg
+    - imagemagick
+    - libarchive
+    - libspectre
+    - libwebp
+    - poppler-glib
+  depends:
+    - at-spi2-core
+    - libatk-1.0.so
+    - cairo
+    - libcairo.so
+    - libcairo-gobject.so
+    - gdk-pixbuf2
+    - libgdk_pixbuf-2.0.so
+    - glib2
+    - libgio-2.0.so
+    - libglib-2.0.so
+    - libgobject-2.0.so
+    - libgmodule-2.0.so
+    - glibc
+    - gtk3
+    - libgdk-3.so
+    - libgtk-3.so
+    - harfbuzz
+    - libharfbuzz.so
+    - libx11
+    - pango
+    - libpango-1.0.so
+    - libpangocairo-1.0.so
+    - zlib
+    - libz.so
+  optdepends:
+    - 'ffmpeg: rudimentary video support'
+    - 'imagemagick: support for various images formats like PSD'
+    - 'libarchive: archives and cbX comic book support'
+    - 'libspectre: PS/EPS support'
+    - 'libwebp: WebP support'
+    - 'poppler-glib: rudimentary PDF support'
+  source:
+    - https://github.com/phillipberndt/pqiv/archive/2.13.2/pqiv-2.13.2.tar.gz
+    - https://github.com/phillipberndt/pqiv/commit/a36571549a32d2ec41d6f523d443de74e0fb1276.patch
+  sha256sums:
+    - 154cbbe0a62be12cee23b0a46a86b2305d8128fd19924308ad5e9d22fa5ad4f7
+    - 1e2e4d2ad03639b5b58552a055ce45f2f227de51db36b3eefb8c115e337e22aa
+pkgname:
+  - name: pqiv
+# generated with artixpkg 0.37.4-1-any
