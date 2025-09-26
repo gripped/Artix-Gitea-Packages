@@ -1,10 +1,10 @@
 ---
-version: 12.1-1
+version: 12.1-2
 pkgbase:
   name: fractal
   pkgdesc: Matrix group messaging app
   pkgver: 12.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/World/fractal
   arch:
     - x86_64
@@ -25,7 +25,7 @@ pkgbase:
     - gdk-pixbuf2
     - glib2
     - glibc
-    - glycin
+    - glycin1
     - graphene
     - gst-plugins-bad-libs
     - gst-plugins-base-libs
@@ -51,4 +51,4 @@ pkgbase:
     - 62180f229af221221a32aa1ac866b0ae8e66d43e0de1dd1993702a2cda607ccb3a5590fade4c235e21afee5b9725534b15e23796b4742e557aa5163b74e183b8
 pkgname:
   - name: fractal
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
