@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.4.3-2
+    version: 1.5.0-1
     packages:
-      - libdvdcss-1.4.3-2-x86_64.pkg.tar.zst
+      - libdvdcss-1.5.0-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
