@@ -1,10 +1,10 @@
 ---
-version: 25.08.1-1
+version: 25.08.1-2
 pkgbase:
   name: dragon
   pkgdesc: A multimedia player where the focus is on simplicity, instead of features
   pkgver: 25.08.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/dragonplayer/
   arch:
     - x86_64
