@@ -1,10 +1,10 @@
 ---
-version: 25.08.1-1
+version: 25.08.1-2
 pkgbase:
   name: ffmpegthumbs
   pkgdesc: FFmpeg-based thumbnail creator for video files
   pkgver: 25.08.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/ffmpegthumbs/
   arch:
     - x86_64
