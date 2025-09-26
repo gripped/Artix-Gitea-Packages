@@ -1,10 +1,10 @@
 ---
-version: 1.15.0-3
+version: 1.15.0-4
 pkgbase:
   name: tigervnc
   pkgdesc: Suite of VNC servers and clients based on the VNC 4 branch of TightVNC
   pkgver: 1.15.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.tigervnc.org
   arch:
     - x86_64
@@ -82,4 +82,4 @@ pkgbase:
     - cda4a1b96296377b573b7ad79caa8ed6e32ae56a00ef24725a59eefa937cd64a
 pkgname:
   - name: tigervnc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
