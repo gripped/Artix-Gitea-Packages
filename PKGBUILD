@@ -4,18 +4,18 @@
 # Contributor: Jonny Gerold <jonny@fsk141.com>
 
 pkgname=s3fs-fuse
-pkgver=1.93
-pkgrel=2
+pkgver=1.94
+pkgrel=1
 pkgdesc="FUSE-based file system backed by Amazon S3"
 arch=('x86_64')
 url="https://github.com/s3fs-fuse/s3fs-fuse/wiki"
-license=('GPL2')
+license=('GPL-2.0-or-later')
 depends=('fuse2' 'curl' 'libxml2')
 conflicts=('s3fs')
 provides=('s3fs')
 replaces=('s3fs')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/s3fs-fuse/s3fs-fuse/archive/v$pkgver.tar.gz")
-sha512sums=('613ad713ac426236b471aa4b2f8292ee0558017f149bfe51aa7fad1bacd60fccf00c31404ebc14b692787e524704e9cd9111b84540f1309ba99900d42d03dc5d')
+sha512sums=('1a29d4f0b73f844ea1d4ad6e0b36d601fb7ab5818af0a90564b77182564c04fbef308362a9a749038b17f28f07f79b6debb661610f69c039a405b931361abe9c')
 
 build() {
   cd "$srcdir/$pkgname-$pkgver"
