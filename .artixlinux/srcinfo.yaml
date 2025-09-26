@@ -1,10 +1,10 @@
 ---
-version: 25.08.1-1
+version: 25.08.1-2
 pkgbase:
   name: kdenlive
   pkgdesc: A non-linear video editor for Linux using the MLT video framework
   pkgver: 25.08.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kdenlive/
   arch:
     - x86_64
