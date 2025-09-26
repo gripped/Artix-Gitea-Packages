@@ -1,0 +1,60 @@
+---
+version: 0.10.5-2
+pkgbase:
+  name: mgba
+  pkgdesc: A Nintendo Gameboy Advance Emulator focusing on speed and accuracy
+  pkgver: 0.10.5
+  pkgrel: 2
+  url: http://mgba.io
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0
+  makedepends:
+    - cmake
+    - desktop-file-utils
+    - ffmpeg
+    - libedit
+    - libpng
+    - libzip
+    - lua
+    - qt5-multimedia
+    - qt5-tools
+    - sdl2
+    - zlib
+  optdepends:
+    - 'lua: scripting support'
+  source:
+    - mgba-0.10.5.tar.gz::https://github.com/mgba-emu/mgba/archive/0.10.5.tar.gz
+  sha256sums:
+    - 91d6fbd32abcbdf030d58d3f562de25ebbc9d56040d513ff8e5c19bee9dacf14
+pkgname:
+  - name: libmgba
+    pkgdesc: A Nintendo Gameboy Advance Emulator focusing on speed and accuracy (shared library)
+    depends:
+      - ffmpeg
+      - glibc
+      - libedit
+      - libelf
+      - libglvnd
+      - libpng
+      - libzip
+      - sqlite
+      - zlib
+  - name: mgba-sdl
+    depends:
+      - glibc
+      - libmgba
+      - sdl2
+  - name: mgba-qt
+    pkgdesc: A Nintendo Gameboy Advance Emulator focusing on speed and accuracy (Qt5 UI)
+    depends:
+      - ffmpeg
+      - gcc-libs
+      - glibc
+      - libglvnd
+      - libmgba
+      - qt5-base
+      - qt5-multimedia
+      - sdl2
+# generated with artixpkg 0.37.4-1-any
