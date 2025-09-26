@@ -1,10 +1,10 @@
 ---
-version: 2.4.65-3
+version: 2.4.65-4
 pkgbase:
   name: apache
   pkgdesc: A high performance Unix-based HTTP server
   pkgver: 2.4.65
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.apache.org/dist/httpd
   arch:
     - x86_64
