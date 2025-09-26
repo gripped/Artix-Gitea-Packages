@@ -74,7 +74,7 @@ optdepends=('darktable: RAW import'
             'qt6-imageformats: support for additional image formats (WEBP, TIFF)'
             'rawtherapee: RAW import')
 source=(https://download.kde.org/stable/$pkgname/${_pkgver%-*}/digiKam-$_pkgver.tar.xz{,.sig}
-        https://invent.kde.org/graphics/digikam/-/commit/afe5772b.patch
+        afe5772b-2.patch::https://invent.kde.org/graphics/digikam/-/commit/afe5772b.patch
         https://invent.kde.org/graphics/digikam/-/commit/b9a5754b.patch)
 sha256sums=('79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f'
             'SKIP'
@@ -83,7 +83,7 @@ sha256sums=('79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f'
 validpgpkeys=(D1CF2444A7858C5F2FB095B74A77747BC2386E50) # digiKam.org (digiKam project) <digikamdeveloper@gmail.com>
 
 prepare() {
-  patch -d $pkgname-$_pkgver -p1 < afe5772b.patch # Fix face recognition with openCV 4.12
+  patch -d $pkgname-$_pkgver -p1 < afe5772b-2.patch # Fix face recognition with openCV 4.12
   patch -d $pkgname-$_pkgver -p1 < b9a5754b.patch # Fix build with Qt 6.9.2
 }
 

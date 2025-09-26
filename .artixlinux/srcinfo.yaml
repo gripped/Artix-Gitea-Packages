@@ -77,7 +77,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz
     - https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz.sig
-    - https://invent.kde.org/graphics/digikam/-/commit/afe5772b.patch
+    - afe5772b-2.patch::https://invent.kde.org/graphics/digikam/-/commit/afe5772b.patch
     - https://invent.kde.org/graphics/digikam/-/commit/b9a5754b.patch
   validpgpkeys:
     - D1CF2444A7858C5F2FB095B74A77747BC2386E50
