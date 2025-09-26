@@ -1,9 +1,10 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Adam Fontenot <fontenot@ucla.edu>
 
 pkgname=libheif
 pkgver=1.20.2
-pkgrel=1
+pkgrel=2
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
 url='https://github.com/strukturag/libheif'
