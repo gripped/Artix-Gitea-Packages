@@ -1,10 +1,10 @@
 ---
-version: 2.5.3-2
+version: 2.5.3-3
 pkgbase:
   name: mixxx
   pkgdesc: Free, open source software for digital DJing
   pkgver: 2.5.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.mixxx.org
   arch:
     - x86_64
