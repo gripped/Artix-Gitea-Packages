@@ -1,10 +1,10 @@
 ---
-version: 3.9.7-1
+version: 3.9.7-2
 pkgbase:
   name: kid3
   pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor
   pkgver: 3.9.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://kid3.kde.org/
   changelog: kid3.changelog
   arch:
@@ -62,4 +62,4 @@ pkgname:
       - qt6-declarative
       - qt6-multimedia
       - kio
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
