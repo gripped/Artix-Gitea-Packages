@@ -1,10 +1,10 @@
 ---
-version: 0.2.10-5
+version: 0.2.10-6
 pkgbase:
   name: zathura-djvu
   pkgdesc: DjVu support for Zathura
   pkgver: 0.2.10
-  pkgrel: 5
+  pkgrel: 6
   url: https://pwmt.org/projects/zathura-djvu/
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 427ccefb0e808d978b69de8e2b2ce1c3a2f30a58a88639b6226da2793d211a722146df6bed248000244f32fe0f4555c013ea9c02c9da5640811921a8e89c9576
 pkgname:
   - name: zathura-djvu
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
