@@ -1,10 +1,10 @@
 ---
-version: 1:2506a-1
+version: 1:2506a-2
 pkgbase:
   name: dolphin-emu
   pkgdesc: A Gamecube and Wii emulator
   pkgver: 2506a
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://dolphin-emu.org
   arch:
@@ -159,4 +159,4 @@ pkgname:
       - libpulse
       - libudev.so
       - qt6-base
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
