@@ -1,0 +1,41 @@
+---
+version: 8.0-1
+pkgbase:
+  name: python-zope-security
+  pkgdesc: Zope Security Framework
+  pkgver: 8.0
+  pkgrel: 1
+  url: https://github.com/zopefoundation/zope.security
+  arch:
+    - x86_64
+  license:
+    - ZPL-2.1
+  checkdepends:
+    - python-btrees
+    - python-zope-configuration
+    - python-zope-testing
+    - python-zope-testrunner
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+    - python-zope-component
+    - python-zope-i18nmessageid
+    - python-zope-interface
+    - python-zope-location
+    - python-zope-proxy
+    - python-zope-schema
+  optdepends:
+    - 'python-zope-configuration: for ZCML support'
+  source:
+    - git+https://github.com/zopefoundation/zope.security.git#tag=8.0
+  sha512sums:
+    - 3f3bfe6f62e026513a39aaf0299790518363bc9169360f61b26649feda551831573f7696fc1fdca990c005b5cfdfbae4b59aa1d7c48b8c8e5cdba3b2123d743c
+pkgname:
+  - name: python-zope-security
+# generated with artixpkg 0.37.4-1-any
