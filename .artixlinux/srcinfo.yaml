@@ -16,13 +16,18 @@ pkgbase:
     - docbook-xsl
     - doxygen
     - imagemagick
+    - ldoc
     - ttf-font
     - xmlto
   depends:
+    - bash
     - cairo
     - dbus
     - gdk-pixbuf2
-    - imlib2
+    - glib2
+    - glibc
+    - libx11
+    - libxcb
     - libxdg-basedir
     - libxkbcommon
     - libxkbcommon-x11
@@ -30,11 +35,11 @@ pkgbase:
     - lua53-lgi
     - pango
     - startup-notification
+    - xcb-util
     - xcb-util-cursor
     - xcb-util-keysyms
     - xcb-util-wm
     - xcb-util-xrm
-    - xorg-xmessage
   optdepends:
     - 'rlwrap: readline support for awesome-client'
     - 'dex: autostart your desktop files'
