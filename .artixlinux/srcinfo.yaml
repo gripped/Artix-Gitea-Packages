@@ -1,10 +1,10 @@
 ---
-version: 1.14-2
+version: 1.14-3
 pkgbase:
   name: python-pygraphviz
   pkgdesc: Python interface to Graphviz
   pkgver: 1.14
-  pkgrel: 2
+  pkgrel: 3
   url: https://pygraphviz.github.io
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - e7b968f9d32aa7cee8aa33e51401a20ca69ebd9b81c441975c8ffdfa99ee0024354a7ebc0cd0b49c3fd2eb67bb390270156314b9914b95823a4043ede67e2c6f
 pkgname:
   - name: python-pygraphviz
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
