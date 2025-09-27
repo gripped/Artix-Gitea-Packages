@@ -1,4 +1,5 @@
-# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: loqs
 # Contributor: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Vesa Kaihlavirta <vesa@archlinux.org>
@@ -43,7 +44,7 @@ pkgname=(
   erlang-wx
   erlang-xmerl
 )
-pkgver=28.0.4
+pkgver=28.1
 pkgrel=1
 pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
 arch=(x86_64)
@@ -75,7 +76,7 @@ source=(
   "git+https://github.com/erlang/otp#tag=OTP-$pkgver"
   epmd.conf
 )
-b2sums=('b6beae32c4cd29171186758c7aa6e338756b32f79319e30fc77d25bf201c656f6f3d0dd9209ca214c3e87645aaf5a6a32f0df9ee6c419e896f7515e342700806'
+b2sums=('516e1173011e9fb22886767ee2aefb322e158b4c3fc14010dd17061d94e641c02d906b3c5aa5d3dedb39ca292c95aa5f9123e0c58c70061a90c5ca2877bddb0f'
         '1675ac9bf948ab19e8b63077d870ccf356fcdbce14de2777f00b3488aa1ce34a5e0a5cdc0428707f744dee5940b12653a44e0ded0554de95ebb31bce4676ff87')
 
 prepare() {
