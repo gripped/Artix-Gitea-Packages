@@ -16,7 +16,6 @@ pkgbase:
     - docbook-xsl
     - doxygen
     - imagemagick
-    - ldoc
     - ttf-font
     - xmlto
   depends:
