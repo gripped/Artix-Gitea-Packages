@@ -1,10 +1,10 @@
 ---
-version: 4.4.2-5
+version: 4.5.1-1
 pkgbase:
   name: audacious-plugins
   pkgdesc: Plugins for Audacious
-  pkgver: 4.4.2
-  pkgrel: 5
+  pkgver: 4.5.1
+  pkgrel: 1
   url: https://audacious-media-player.org/
   arch:
     - x86_64
@@ -12,7 +12,7 @@ pkgbase:
     - BSD
     - GPL
   makedepends:
-    - audacious>=4.4.2
+    - audacious>=4.5.1
     - meson
     - glib2-devel
   depends:
@@ -44,10 +44,10 @@ pkgbase:
     - opusfile
     - libpipewire
   source:
-    - https://distfiles.audacious-media-player.org/audacious-plugins-4.4.2.tar.bz2
+    - https://distfiles.audacious-media-player.org/audacious-plugins-4.5.1.tar.bz2
     - sidplay-rom-paths.patch
   sha256sums:
-    - 50f494693b6b316380fa718c667c128aa353c01e954cd77a65c9d8aedf18d4bd
+    - f4feedc32776acfa9d24701d3b794fc97822f76da6991e91e627e70e561fdd3b
     - c32cd36f75dd18db082f9b9447f1c0982279703b9d648f5695295ff25c9b678d
 pkgname:
   - name: audacious-plugins
