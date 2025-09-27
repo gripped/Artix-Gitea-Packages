@@ -1,0 +1,46 @@
+---
+version: 1.14.0-1
+pkgbase:
+  name: penlight
+  pkgdesc: Lua libraries focusing on input data handling
+  pkgver: 1.14.0
+  pkgrel: 1
+  url: https://github.com/lunarmodules/Penlight
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - busted
+    - lua51-busted
+    - lua51-filesystem
+    - lua52-busted
+    - lua52-filesystem
+    - lua53-busted
+    - lua53-filesystem
+    - lua-busted
+    - lua-filesystem
+  makedepends:
+    - luarocks
+    - lua51
+    - lua52
+    - lua53
+    - lua
+  source:
+    - https://github.com/lunarmodules/Penlight/archive/1.14.0/lua-penlight-1.14.0.tar.gz
+  sha256sums:
+    - 2387431c0e83c4189cccb35b989141a3280d735cb5d42bacf3451af9869bebf7
+pkgname:
+  - name: lua-penlight
+    depends:
+      - lua-filesystem
+  - name: lua53-penlight
+    depends:
+      - lua53-filesystem
+  - name: lua52-penlight
+    depends:
+      - lua52-filesystem
+  - name: lua51-penlight
+    depends:
+      - lua51-filesystem
+# generated with artixpkg 0.37.4-1-any
