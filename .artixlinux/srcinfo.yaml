@@ -1,0 +1,29 @@
+---
+version: 3.4.0-1
+pkgbase:
+  name: python-daiquiri
+  pkgdesc: Library to configure Python logging easily
+  pkgver: 3.4.0
+  pkgrel: 1
+  url: https://github.com/Mergifyio/daiquiri
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+  depends:
+    - python-json-logger
+  source:
+    - git+https://github.com/Mergifyio/daiquiri.git#tag=3.4.0
+  sha512sums:
+    - 26703419f4ffc693656b1c00b815432977ca8c756d61022054d30d1531723912e7ff503fd3b5581b57e40c85a39aca0014adfdd612f6061720251a2ed6b4d65b
+pkgname:
+  - name: python-daiquiri
+# generated with artixpkg 0.37.4-1-any
