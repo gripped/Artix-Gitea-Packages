@@ -1,0 +1,31 @@
+---
+version: 25.9.23-1
+pkgbase:
+  name: flatbuffers
+  pkgdesc: An efficient cross platform serialization library for C++, with support for Java, C# and Go
+  pkgver: 25.9.23
+  pkgrel: 1
+  url: https://google.github.io/flatbuffers/
+  arch:
+    - x86_64
+  license:
+    - Apache
+  makedepends:
+    - cmake
+    - python-setuptools
+    - python-numpy
+  depends:
+    - gcc-libs
+  source:
+    - https://github.com/google/flatbuffers/archive/v25.9.23/flatbuffers-25.9.23.tar.gz
+  sha256sums:
+    - 9102253214dea6ae10c2ac966ea1ed2155d22202390b532d1dea64935c518ada
+pkgname:
+  - name: flatbuffers
+  - name: python-flatbuffers
+    pkgdesc: An efficient cross platform serialization library for Python
+    depends:
+      - python
+    optdepends:
+      - 'python-numpy: support for Numpy arrays'
+# generated with artixpkg 0.37.4-1-any
