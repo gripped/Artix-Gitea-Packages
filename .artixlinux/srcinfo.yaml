@@ -1,0 +1,39 @@
+---
+version: 4.5.1-1
+pkgbase:
+  name: audacious
+  pkgdesc: Lightweight, advanced audio player focused on audio quality
+  pkgver: 4.5.1
+  pkgrel: 1
+  url: https://audacious-media-player.org/
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - meson
+    - glib2-devel
+  depends:
+    - qt6-base
+    - qt6-svg
+    - qt6-imageformats
+    - glib2
+    - hicolor-icon-theme
+    - desktop-file-utils
+  optdepends:
+    - 'unzip: zipped skins support'
+  source:
+    - https://distfiles.audacious-media-player.org/audacious-4.5.1.tar.bz2
+  sha256sums:
+    - 7194743a0a41b1d8f582c071488b77f7b917be47ca5e142dd76af5d81d36f9cd
+pkgname:
+  - name: audacious
+    depends:
+      - qt6-base
+      - qt6-svg
+      - qt6-imageformats
+      - glib2
+      - hicolor-icon-theme
+      - desktop-file-utils
+      - audacious-plugins
+# generated with artixpkg 0.37.4-1-any
