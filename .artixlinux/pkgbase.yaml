@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 0.25-1
+    version: 0.26-1
     packages:
-      - lib32-gettext-0.25-1-x86_64.pkg.tar.zst
+      - lib32-gettext-0.26-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
