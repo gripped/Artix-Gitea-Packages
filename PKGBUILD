@@ -20,10 +20,7 @@ makedepends=('boost' 'mariadb' 'meson' 'postgresql' 'python' 'python-sphinx' 'py
 checkdepends=('procps-ng')
 source=("https://ftp.isc.org/isc/${pkgbase}/${pkgver}/${pkgbase}-${pkgver}.tar.xz"{,.asc}
         'tmpfiles-kea.conf'
-        'kea-dhcp4.service'
-        'kea-dhcp6.service'
-        'kea-dhcp-ddns.service'
-        'kea-ctrl-agent.service')
+        )
 b2sums=('7fc66680ddfd6805cb8eb7480d552c8fbd29416175cb2b81e0ef68436e1a2ed9c94c50e0a7037402e02620ef047a66c8dcafb3d89a6a0d7d552c5d5da04f5755'
         'SKIP'
         '89422802e78e958113165864d171c6cb0818949089b1ba7426c71814455be76c35a5814e9d828af578b27004e4352371f1b5aa12fdf1d8cfa437b89ff5a993d5'
@@ -77,10 +74,6 @@ package_kea() {
 	meson install -C build --destdir "${pkgdir}"
 
 	install -Dm 644 tmpfiles-kea.conf "${pkgdir}/usr/lib/tmpfiles.d/${pkgbase}.conf"
-	install -Dm 644 kea-dhcp4.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp4.service"
-	install -Dm 644 kea-dhcp6.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp6.service"
-	install -Dm 644 kea-dhcp-ddns.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp-ddns.service"
-	install -Dm 644 kea-ctrl-agent.service "${pkgdir}/usr/lib/systemd/system/kea-ctrl-agent.service"
 
 	# Do not package /run & /var/run
 	rm -rf "${pkgdir}"{/run,/var/run}
