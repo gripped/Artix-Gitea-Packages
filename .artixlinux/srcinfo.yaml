@@ -35,6 +35,7 @@ pkgbase:
     - libsodium
     - polkit
     - protobuf
+    - dbus-glib
   provides:
     - libusbguard.so
   backup:

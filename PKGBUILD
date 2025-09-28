@@ -27,6 +27,7 @@ depends=(
   libsodium
   polkit
   protobuf
+  dbus-glib
 )
 makedepends=(
   asciidoc
