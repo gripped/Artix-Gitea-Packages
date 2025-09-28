@@ -1,0 +1,117 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
+# Contributor: nfnty
+
+pkgbase=kea
+pkgname=("${pkgbase}" "${pkgbase}-docs")
+pkgver=3.0.1
+pkgrel=3
+epoch=1
+pkgdesc="High-performance, extensible DHCP server engine from ISC, supporting both DHCPv4 and DHCPv6"
+url="https://kea.isc.org"
+arch=('x86_64')
+license=('MPL-2.0')
+makedepends=('boost' 'mariadb' 'meson' 'postgresql' 'python' 'python-sphinx' 'python-sphinx_rtd_theme' 'doxygen' 'graphviz' 'gtest'
+             'log4cplus' 'mariadb-libs' 'openssl' 'postgresql-libs' 'texlive-bibtexextra' 'texlive-basic' 'texlive-fontsextra'
+             'texlive-formatsextra' 'texlive-games' 'texlive-humanities' 'texlive-latexextra' 'texlive-music' 'texlive-pictures'
+             'texlive-pstricks' 'texlive-publishers' 'texlive-science')
+checkdepends=('procps-ng')
+source=("https://ftp.isc.org/isc/${pkgbase}/${pkgver}/${pkgbase}-${pkgver}.tar.xz"{,.asc}
+        'tmpfiles-kea.conf'
+        'kea-dhcp4.service'
+        'kea-dhcp6.service'
+        'kea-dhcp-ddns.service'
+        'kea-ctrl-agent.service')
+b2sums=('7fc66680ddfd6805cb8eb7480d552c8fbd29416175cb2b81e0ef68436e1a2ed9c94c50e0a7037402e02620ef047a66c8dcafb3d89a6a0d7d552c5d5da04f5755'
+        'SKIP'
+        '89422802e78e958113165864d171c6cb0818949089b1ba7426c71814455be76c35a5814e9d828af578b27004e4352371f1b5aa12fdf1d8cfa437b89ff5a993d5'
+        '59bdb3eb99ba583573b317654ae4a1083db786b35fe09d763a1d221a62913bb93b76eb7ff91b97935799e83c136d5ddc65b85ffb52c639f4669890b954c1781e'
+        '47271d37fee91d86cfa057ecd5ef6325d98e9ad1694837cb3bffb4fa8bb2fd33e382cc0ae3390b49ab551fa0f9a0f816ef4bfaaaa94189b9b4d127d647a43282'
+        '839606df26af73f320634e55e580a1ecf00b52dbd7aff3b3971b8873d817c23dd8057e8d736c11a9267b686ef3912c00dd71f009d4ca1588134c2f43a740d19c'
+        'f19563724fd869c43691980586bc46313e537c543a3026c0fc33164eae24f7c58d2cb42705a5f2a5fc6f39a0792a7bae154a4d09453b1932d0a73e83a76b199a')
+validpgpkeys=('BE0E9748B718253A28BB89FFF1B11BF05CF02E57'  # Internet Systems Consortium, Inc. (Signing key, 2017-2018) <codesign@isc.org>
+              'AE3FAC796711EC59FC007AA474BB6B9A4CBB3D38'  # Internet Systems Consortium, Inc. (Signing key, 2019-2020) <codesign@isc.org>
+              '7E1C91AC8030A5A59D1EFAB9750F3C87723E4012'  # Internet Systems Consortium, Inc. (Signing key, 2021-2022) <codesign@isc.org>
+              '090A2A07923F925B5767803A42E5DF78C83271DB'  # Marcin Godzina (Code-Signing Key) <mgodzina@isc.org>
+              'DA6A3508E672A49DD382AFD95B8F4D91B88ED909'  # Andrei Pavel (Code-Signing Key) <andrei@isc.org>
+              '0259A33B5F5A3A4466CF345C7A5E084CACA51884') # Wlodek Wencel (Code-Signing Key) <wlodek@isc.org>
+
+build() {
+	artix-meson "${pkgbase}-${pkgver}" build -D netconf=disabled -D tests=enabled
+	meson compile -C build
+	meson compile -C build devel doc
+}
+
+check() {
+	# Ignore tests that require live DBs
+	meson test -C build $(meson test -C build --list | \
+		grep -v 'kea / kea-mysql-tests' | \
+		grep -v 'kea / kea-pgsql-tests' | \
+		grep -v 'kea / kea-dhcp-tests' | \
+		grep -v 'kea / dhcp-mysql-lib-tests' | \
+		grep -v 'kea / dhcp-pgsql-lib-tests' | \
+		grep -v 'kea / dhcp-forensic-log-libloadtests' | \
+		grep -v 'kea / dhcp-lease-query-tests' | \
+		grep -v 'kea / kea-dhcp4-tests' | \
+		grep -v 'kea / kea-dhcp6-tests' | \
+		grep -v 'kea:shell-tests / kea_admin_mysql_tests.sh' | \
+		grep -v 'kea:shell-tests / kea_admin_pgsql_tests.sh' | \
+		awk '{print $NF}')
+}
+
+package_kea() {
+	depends=('log4cplus' 'mariadb-libs' 'openssl' 'postgresql-libs')
+	optdepends=('mariadb: lease information database'
+	            'postgresql: lease information database'
+	            'python: to use kea-shell'
+	            'krb5: Kerberos support'
+	            'kea-docs: user and developer documentation')
+	backup=('etc/kea/kea-dhcp4.conf'
+	        'etc/kea/kea-dhcp6.conf'
+	        'etc/kea/kea-dhcp-ddns.conf'
+	        'etc/kea/keactrl.conf'
+	        'etc/kea/kea-ctrl-agent.conf')
+
+	meson install -C build --destdir "${pkgdir}"
+
+	install -Dm 644 tmpfiles-kea.conf "${pkgdir}/usr/lib/tmpfiles.d/${pkgbase}.conf"
+	install -Dm 644 kea-dhcp4.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp4.service"
+	install -Dm 644 kea-dhcp6.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp6.service"
+	install -Dm 644 kea-dhcp-ddns.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp-ddns.service"
+	install -Dm 644 kea-ctrl-agent.service "${pkgdir}/usr/lib/systemd/system/kea-ctrl-agent.service"
+
+	# Do not package /run & /var/run
+	rm -rf "${pkgdir}"{/run,/var/run}
+
+	# Split docs in a separate package
+	rm -rf "${pkgdir}/usr/share/"{doc,man}
+
+	# Upstream changed the default permissions of all directories to 750 to address [CVE-2025-32803]
+	# To avoid pacman warning notices about top level directories' permissions differing between the package and the filesystem,
+	# yet comply with upstream change regarding [CVE-2025-32803], we are switching back filesystem's directory tree to 755
+	# but leave kea's directories in 750
+	for dir in etc \
+		   usr{,/bin,/share,/include,/lib{,/pkgconfig,/python3.13{,/site-packages}}} \
+		   var{,/lib,/log}
+	do
+		chmod 755 "${pkgdir}/${dir}"
+	done
+}
+
+package_kea-docs() {
+	pkgdesc="${pkgdesc} (user and developer documentation)"
+	provides=('kea-devel-docs')
+	replaces=('kea-devel-docs')
+
+	install -d "${pkgdir}/usr/share/doc/${pkgbase}/"
+
+	cp -r build/doc/devel/html "${pkgdir}/usr/share/doc/${pkgbase}/devel"
+	cp -r build/doc/sphinx/_build/html "${pkgdir}/usr/share/doc/${pkgbase}/html"
+	cp -r "${pkgbase}-${pkgver}/doc/examples" "${pkgdir}/usr/share/doc/${pkgbase}/examples"
+	rm -f "${pkgdir}/usr/share/doc/kea/devel/doxygen"{,-error}.log
+
+	install -Dm 644 build/doc/sphinx/_build/man/*.1 -t "${pkgdir}/usr/share/man/man1/"
+	install -Dm 644 build/doc/sphinx/_build/man/*.8 -t "${pkgdir}/usr/share/man/man8/"
+}
