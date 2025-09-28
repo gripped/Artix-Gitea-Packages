@@ -1,31 +1,4 @@
 ---
-pkgbase:
-  name: man-pages-l10n
-  version: 4.26.0-1
-  arch:
-    - any
-  pkgname:
-    - man-pages-cs
-    - man-pages-da
-    - man-pages-de
-    - man-pages-el
-    - man-pages-es
-    - man-pages-fi
-    - man-pages-fr
-    - man-pages-hu
-    - man-pages-id
-    - man-pages-it
-    - man-pages-mk
-    - man-pages-nb
-    - man-pages-nl
-    - man-pages-pl
-    - man-pages-pt_br
-    - man-pages-ro
-    - man-pages-ru
-    - man-pages-sv
-    - man-pages-sr
-    - man-pages-uk
-    - man-pages-vi
 actions:
   addRepo: world
   removeRepo: null
@@ -38,58 +11,70 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 4.26.0-1
+    version: 4.28.0-1
     packages:
-      - man-pages-cs-4.26.0-1-any.pkg.tar.zst
-      - man-pages-da-4.26.0-1-any.pkg.tar.zst
-      - man-pages-de-4.26.0-1-any.pkg.tar.zst
-      - man-pages-el-4.26.0-1-any.pkg.tar.zst
-      - man-pages-es-4.26.0-1-any.pkg.tar.zst
-      - man-pages-fi-4.26.0-1-any.pkg.tar.zst
-      - man-pages-fr-4.26.0-1-any.pkg.tar.zst
-      - man-pages-hu-4.26.0-1-any.pkg.tar.zst
-      - man-pages-id-4.26.0-1-any.pkg.tar.zst
-      - man-pages-it-4.26.0-1-any.pkg.tar.zst
-      - man-pages-mk-4.26.0-1-any.pkg.tar.zst
-      - man-pages-nb-4.26.0-1-any.pkg.tar.zst
-      - man-pages-nl-4.26.0-1-any.pkg.tar.zst
-      - man-pages-pl-4.26.0-1-any.pkg.tar.zst
-      - man-pages-pt_br-4.26.0-1-any.pkg.tar.zst
-      - man-pages-ro-4.26.0-1-any.pkg.tar.zst
-      - man-pages-ru-4.26.0-1-any.pkg.tar.zst
-      - man-pages-sv-4.26.0-1-any.pkg.tar.zst
-      - man-pages-sr-4.26.0-1-any.pkg.tar.zst
-      - man-pages-uk-4.26.0-1-any.pkg.tar.zst
-      - man-pages-vi-4.26.0-1-any.pkg.tar.zst
+      - man-pages-cs-4.28.0-1-any.pkg.tar.zst
+      - man-pages-da-4.28.0-1-any.pkg.tar.zst
+      - man-pages-de-4.28.0-1-any.pkg.tar.zst
+      - man-pages-el-4.28.0-1-any.pkg.tar.zst
+      - man-pages-es-4.28.0-1-any.pkg.tar.zst
+      - man-pages-fi-4.28.0-1-any.pkg.tar.zst
+      - man-pages-fr-4.28.0-1-any.pkg.tar.zst
+      - man-pages-hu-4.28.0-1-any.pkg.tar.zst
+      - man-pages-id-4.28.0-1-any.pkg.tar.zst
+      - man-pages-it-4.28.0-1-any.pkg.tar.zst
+      - man-pages-mk-4.28.0-1-any.pkg.tar.zst
+      - man-pages-nb-4.28.0-1-any.pkg.tar.zst
+      - man-pages-nl-4.28.0-1-any.pkg.tar.zst
+      - man-pages-pl-4.28.0-1-any.pkg.tar.zst
+      - man-pages-pt_br-4.28.0-1-any.pkg.tar.zst
+      - man-pages-ro-4.28.0-1-any.pkg.tar.zst
+      - man-pages-ru-4.28.0-1-any.pkg.tar.zst
+      - man-pages-sv-4.28.0-1-any.pkg.tar.zst
+      - man-pages-sr-4.28.0-1-any.pkg.tar.zst
+      - man-pages-uk-4.28.0-1-any.pkg.tar.zst
+      - man-pages-vi-4.28.0-1-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world

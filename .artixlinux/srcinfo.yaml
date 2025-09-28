@@ -1,0 +1,109 @@
+---
+version: 4.28.0-1
+pkgbase:
+  name: man-pages-l10n
+  pkgdesc: Translation of man pages
+  pkgver: 4.28.0
+  pkgrel: 1
+  url: https://salsa.debian.org/manpages-l10n-team/manpages-l10n
+  changelog: man-pages-l10n.changelog
+  arch:
+    - any
+  license:
+    - GPL3
+  makedepends:
+    - po4a
+  depends:
+    - man
+  options:
+    - '!emptydirs'
+  source:
+    - https://salsa.debian.org/manpages-l10n-team/manpages-l10n/-/archive/4.28.0/manpages-l10n-4.28.0.tar.bz2
+  sha256sums:
+    - 165cb14a9d9f7c38605fe343e07435e6c608f8e1a2e75a2b8f14b36e991bfe86
+pkgname:
+  - name: man-pages-cs
+    pkgdesc: Czech man pages
+    depends:
+      - man
+  - name: man-pages-da
+    pkgdesc: Danish man pages
+    depends:
+      - man
+  - name: man-pages-de
+    pkgdesc: German man pages
+    depends:
+      - man
+  - name: man-pages-el
+    pkgdesc: Greek man pages
+    depends:
+      - man
+  - name: man-pages-es
+    pkgdesc: Spanish man pages
+    depends:
+      - man
+  - name: man-pages-fi
+    pkgdesc: Finnish man pages
+    depends:
+      - man
+  - name: man-pages-fr
+    pkgdesc: French man pages
+    depends:
+      - man
+  - name: man-pages-hu
+    pkgdesc: Hungarian man pages
+    depends:
+      - man
+  - name: man-pages-id
+    pkgdesc: Indonesian man pages
+    depends:
+      - man
+  - name: man-pages-it
+    pkgdesc: Italian man pages
+    depends:
+      - man
+  - name: man-pages-mk
+    pkgdesc: Macedonian man pages
+    depends:
+      - man
+  - name: man-pages-nb
+    pkgdesc: Norwegian bokmål man pages
+    depends:
+      - man
+  - name: man-pages-nl
+    pkgdesc: Dutch man pages
+    depends:
+      - man
+  - name: man-pages-pl
+    pkgdesc: Polish man pages
+    depends:
+      - man
+  - name: man-pages-pt_br
+    pkgdesc: Brazilian Portuguese man pages
+    depends:
+      - man
+  - name: man-pages-ro
+    pkgdesc: Romanian man pages
+    depends:
+      - man
+  - name: man-pages-ru
+    pkgdesc: Russian man pages
+    depends:
+      - man
+  - name: man-pages-sv
+    pkgdesc: Swedish man pages
+    depends:
+      - man
+  - name: man-pages-sr
+    pkgdesc: Serbian man pages
+    depends:
+      - man
+  - name: man-pages-uk
+    pkgdesc: Ukrainian man pages
+    depends:
+      - man
+  - name: man-pages-vi
+    pkgdesc: Vietnamese man pages
+    depends:
+      - man
+# generated with artixpkg 0.37.4-1-any
