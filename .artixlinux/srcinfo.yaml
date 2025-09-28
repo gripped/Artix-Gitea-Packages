@@ -1,10 +1,10 @@
 ---
-version: 0.9.5-1
+version: 0.9.5-2
 pkgbase:
   name: neatvnc
   pkgdesc: Fast and neat VNC server library
   pkgver: 0.9.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/any1/neatvnc
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 8ab4ba7b8a66182c3c63296b7066c856644041b18aff35bf40f1e948ea3ab97eec6388e4567692bcc61d4a46c6ca89c9db4031592d89eed512d3839280bc89f6
 pkgname:
   - name: neatvnc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
