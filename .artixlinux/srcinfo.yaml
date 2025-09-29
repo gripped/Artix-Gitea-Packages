@@ -1,10 +1,10 @@
 ---
-version: 4.16-2
+version: 4.17-1
 pkgbase:
   name: highlight
   pkgdesc: Fast and flexible source code highlighter
-  pkgver: 4.16
-  pkgrel: 2
+  pkgver: 4.17
+  pkgrel: 1
   url: http://www.andre-simon.de/doku/highlight/highlight.html
   arch:
     - x86_64
@@ -16,13 +16,13 @@ pkgbase:
     - boost
     - swig
   source:
-    - http://www.andre-simon.de/zip/highlight-4.16.tar.bz2
-    - http://www.andre-simon.de/zip/highlight-4.16.tar.bz2.asc
+    - http://www.andre-simon.de/zip/highlight-4.17.tar.bz2
+    - http://www.andre-simon.de/zip/highlight-4.17.tar.bz2.asc
     - use_gcc.patch
   validpgpkeys:
     - B8C55574187F49180EDC763750FE0279D805A7C7
   sha256sums:
-    - 92261ff5c27c73e7a5c85ab65ada2a2edf8aa3dbe9c9c3d8e82e062088e60e5a
+    - d4f7baa98bd162d8f15642793bd7b8671cfa47ad5100707ac609be3ed486ff94
     - SKIP
     - 5aaacca96f1f4307bbe9cfb5b0f67a98edb0b5d653270990176e20840196ab50
 pkgname:
@@ -43,4 +43,4 @@ pkgname:
       - qt5-base
       - highlight
       - hicolor-icon-theme
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
