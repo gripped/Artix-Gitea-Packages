@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 17.5-5
+    version: 17.6-1
     packages:
-      - postgresql-17.5-5-x86_64.pkg.tar.zst
-      - postgresql-libs-17.5-5-x86_64.pkg.tar.zst
-      - postgresql-docs-17.5-5-x86_64.pkg.tar.zst
+      - postgresql-17.6-1-x86_64.pkg.tar.zst
+      - postgresql-libs-17.6-1-x86_64.pkg.tar.zst
+      - postgresql-docs-17.6-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
