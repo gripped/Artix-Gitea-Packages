@@ -4,7 +4,7 @@
 _url=https://gitea.artixlinux.org/artix/qt-sudo
 
 pkgname=qt-sudo
-pkgver=2.0.1
+pkgver=2.2.0
 pkgrel=1
 pkgdesc='A clone of LXQt sudo tool, without LXQt libs '
 arch=('x86_64')
@@ -24,7 +24,7 @@ source=(
     "git+$url.git#tag=v$pkgver"
     "$pkgname-cmake.patch::$_url/commit/ab4e3dd18ee028791218e3b8551728a0fb115c92.patch"
 )
-sha256sums=('da9ffd35c06a91c21319af4019a82ce5e4e2d80b738b251398b7b314a596dac7'
+sha256sums=('4bceaba9eda795b504263377be880954b57e9416bf8cae3abea7b2674733fbe0'
             'f0dff2b306d853edf2e66546813bf4263c332a7390c08a2edb47fea96da49ae3')
 
 prepare() {
