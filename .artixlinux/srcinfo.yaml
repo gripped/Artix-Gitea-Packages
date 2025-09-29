@@ -1,15 +1,15 @@
 ---
-version: 5.0.1-1
+version: 5.0.2-1
 pkgbase:
   name: openfire
   pkgdesc: High performance XMPP (Jabber) server.
-  pkgver: 5.0.1
+  pkgver: 5.0.2
   pkgrel: 1
   url: https://www.igniterealtime.org/projects/openfire/
   arch:
     - any
   license:
-    - APACHE-2.0
+    - Apache-2.0
   makedepends:
     - maven
     - java-environment=17
@@ -23,17 +23,17 @@ pkgbase:
     - etc/openfire/security/client.truststore
     - etc/openfire/security/keystore
   source:
-    - openfire-5.0.1.tar.gz::https://github.com/igniterealtime/Openfire/archive/refs/tags/v5.0.1.tar.gz
+    - openfire-5.0.2.tar.gz::https://github.com/igniterealtime/Openfire/archive/refs/tags/v5.0.2.tar.gz
     - openfire.sh
     - user.conf
     - tmpfile.conf
     - force-java17.patch
   sha256sums:
-    - cd29305ff1bc9ee544aaa60fb11f32f5c6783a433069b589e9cb82d556a67c76
+    - 54bafb098995414d17ef6378f35d46928ae54f727cc82195061a7b5957b9cee4
     - c850f376d53134ccc8d1035322dea792ba9145a5ab37f1801598c60bc70d0ed1
     - ea08e0c4d4b51b2a1adca71decfa1a856826898f00fb8ef857844f6326277e1e
     - c63396991984a067d05e21094a664255d6aed2bf294bddd3885a7da75472b886
     - f7104310b0921f2b5d088dc76e619f3b06f642f66402083a936419755b15232e
 pkgname:
   - name: openfire
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

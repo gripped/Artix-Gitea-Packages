@@ -3,12 +3,12 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=openfire
-pkgver=5.0.1
+pkgver=5.0.2
 pkgrel=1
 pkgdesc="High performance XMPP (Jabber) server."
 arch=('any')
 url='https://www.igniterealtime.org/projects/openfire/'
-license=('APACHE-2.0')
+license=('Apache-2.0')
 depends=('java-runtime-headless>=17')
 makedepends=('maven' 'java-environment=17')
 backup=(
@@ -23,7 +23,7 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/igniterealtime/Openfire/arc
         'user.conf'
         'tmpfile.conf'
         'force-java17.patch')
-sha256sums=('cd29305ff1bc9ee544aaa60fb11f32f5c6783a433069b589e9cb82d556a67c76'
+sha256sums=('54bafb098995414d17ef6378f35d46928ae54f727cc82195061a7b5957b9cee4'
             'c850f376d53134ccc8d1035322dea792ba9145a5ab37f1801598c60bc70d0ed1'
             'ea08e0c4d4b51b2a1adca71decfa1a856826898f00fb8ef857844f6326277e1e'
             'c63396991984a067d05e21094a664255d6aed2bf294bddd3885a7da75472b886'
