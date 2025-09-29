@@ -17,10 +17,9 @@ makedepends=(
   docbook-xsl
   git
   meson
-  systemd
+ 
 )
 backup=(etc/xdg/user-dirs.{conf,defaults})
-install=xdg-user-dirs.install
 source=("git+https://gitlab.freedesktop.org/xdg/xdg-user-dirs.git#tag=v$pkgver")
 b2sums=('4da6b371454d37dae6f273ea90ff2b9f528b7dfbc87433a13d38aa286ac43bc93dbc06e0a3e96a5649f99979f96d7f2d04a551f0d67258d2fc825803203ea7a4')
 
