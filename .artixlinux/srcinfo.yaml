@@ -1,10 +1,10 @@
 ---
-version: 3.25.1-1
+version: 3.25.1-2
 pkgbase:
   name: rebar3
   pkgdesc: Erlang build tool that makes it easy to compile and test Erlang applications and releases
   pkgver: 3.25.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/erlang/rebar3
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 458d6ceaf7822dd7682288354ab3ba74e14b3ed11cc5b551af9eb312de894106
 pkgname:
   - name: rebar3
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
