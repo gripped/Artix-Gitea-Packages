@@ -1,9 +1,9 @@
 ---
-version: 4.2-2
+version: 4.2-4
 pkgbase:
   name: lazarus
   pkgver: 4.2
-  pkgrel: 2
+  pkgrel: 4
   url: http://www.lazarus.freepascal.org/
   arch:
     - x86_64
@@ -14,7 +14,6 @@ pkgbase:
   makedepends:
     - fpc
     - fpc-src
-    - gtk3
     - qt5pas
     - qt6pas
     - rsync
@@ -36,21 +35,8 @@ pkgname:
       - gdb
     optdepends:
       - 'perl: to run some scripts in the tools directory'
-      - 'gtk3: to compile GTK3 apps'
       - 'qt5pas: to compile Qt5 apps'
       - 'qt6pas: to compile Qt6 apps'
-  - name: lazarus-gtk3
-    pkgdesc: Delphi-like IDE for FreePascal GTK3 version (alpha quality)
-    depends:
-      - lazarus
-      - desktop-file-utils
-      - gtk3
-    conflicts:
-      - lazarus-gtk2
-      - lazarus-qt5
-      - lazarus-qt6
-    replaces:
-      - lazarus-gtk2
   - name: lazarus-qt5
     pkgdesc: Delphi-like IDE for FreePascal Qt5 version
     depends:
@@ -72,4 +58,6 @@ pkgname:
       - lazarus-gtk2
       - lazarus-gtk3
       - lazarus-qt5
+    replaces:
+      - lazarus-gtk3
 # generated with artixpkg 0.37.4-1-any
