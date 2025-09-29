@@ -1,11 +1,11 @@
 ---
-version: 1.50-2
+version: 1.53-1
 pkgbase:
   name: perl-net-dns
   pkgdesc:
     Perl Module: Interface to the DNS resolver
-  pkgver: 1.50
-  pkgrel: 2
+  pkgver: 1.53
+  pkgrel: 1
   url: https://search.cpan.org/dist/Net-DNS/
   arch:
     - any
@@ -26,9 +26,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.50.tar.gz
+    - https://cpan.metacpan.org/authors/id/N/NL/NLNETLABS/Net-DNS-1.53.tar.gz
   sha512sums:
-    - b1e947999e9b43380b5e68cfe4f968532306f26bb8510bdfda926a6bc61d848908eb197fcc9b661a1a11ea647e5123dff1e742105854ff07b22be5c69d97dc53
+    - 226db1c8e1c170ee4ae331c1a77ab3993f02e423276697f4c4ad6ce54fd9a37db2e84eae7d0e04ab0410e4c730a673557b8aa77ccf4c50c004a6cf711149e001
 pkgname:
   - name: perl-net-dns
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
