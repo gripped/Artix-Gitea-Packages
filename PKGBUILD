@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=4.1.1
+pkgver=4.1.2
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -33,7 +33,7 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('7e9a8c7073c81af7593362a1ef1f087d50dd544853b2c225e27e61e50ec55d7431172d131875835db4cfc4353df992d28d694c051cf0bd10656b412c74d065dc'
+sha512sums=('c180a36f14ae074d6a94e498341b3706e38ff9400cef976b0c0a5976cbf7bceebdc3115d71e2cdec4d22b8199d91bab44ed4e6c669c586c957efe72fd280676a'
             '56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
