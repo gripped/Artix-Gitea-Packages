@@ -1,10 +1,10 @@
 ---
-version: 25.07-2
+version: 25.07-2.1
 pkgbase:
   name: libmediainfo
   pkgdesc: Shared library for MediaInfo
   pkgver: 25.07
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://mediaarea.net
   arch:
     - x86_64
