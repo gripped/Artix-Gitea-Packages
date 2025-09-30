@@ -7,7 +7,7 @@
 
 pkgname=openssh
 pkgver=10.0p1
-pkgrel=5
+pkgrel=6
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=(x86_64)
 url='https://www.openssh.com/portable.html'
