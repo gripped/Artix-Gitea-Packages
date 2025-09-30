@@ -1,0 +1,72 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Contributor: Carlos Aznarán <caznaranl@uni.pe>
+
+pkgname=nanobind
+pkgdesc="Tiny and efficient C++/Python bindings"
+pkgver=2.9.2
+pkgrel=1
+arch=(any)
+url="https://github.com/wjakob/nanobind"
+license=(BSD-3-Clause)
+depends=(python)
+makedepends=(
+  cmake
+  eigen
+  git
+  python-build
+  python-installer
+  python-scikit-build-core
+  python-wheel
+)
+checkdepends=(
+  python-pytest
+  python-pytorch
+  python-scipy
+  python-tensorflow
+  python-tests
+)
+source=(
+  "$pkgname-$pkgver::git+$url.git#tag=v$pkgver"
+  "git+https://github.com/Tessil/robin-map.git"
+)
+sha512sums=('9c1f762948100c9f88beea1a21672ee8141dc2e5d8a053ded65b2a1d7b9aedaa3f679fac7e8e8772b56f6ce9a36669b467b50009cdc6bf3e17cef525111e0187'
+            'SKIP')
+
+prepare() {
+  cd $pkgname-$pkgver
+  git submodule init
+  git config submodule.libs/ext/robin_map.url "$srcdir/robin_map"
+  git -c protocol.file.allow=always submodule update
+}
+
+build() {
+  cd $pkgname-$pkgver
+  python -m build --wheel --no-isolation
+  cmake -S . -B build \
+    -DCMAKE_BUILD_TYPE=None \
+    -DNB_TEST_STABLE_ABI=ON \
+    -DNB_TEST_SHARED_BUILD=ON \
+    -Wno-dev
+  cmake --build build
+}
+
+check() {
+  cd $pkgname-$pkgver
+  pytest build
+}
+
+package() {
+  cd $pkgname-$pkgver
+  python -m installer --destdir="$pkgdir" dist/*.whl
+
+  local python_version=$(python -c "import sys; print(sys.version[:4])")
+  install -vdm755 "$pkgdir/usr/include"
+  ln -vs "../lib/python$python_version/site-packages/nanobind/include/nanobind" \
+    "$pkgdir/usr/include/nanobind"
+  install -dm755 "$pkgdir/usr/lib/cmake"
+  ln -vs "../../lib/python$python_version/site-packages/nanobind/cmake" \
+    "$pkgdir/usr/lib/cmake/nanobind"
+
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
