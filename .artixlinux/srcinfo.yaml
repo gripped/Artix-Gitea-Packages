@@ -1,0 +1,104 @@
+---
+version: 3.10.0-1
+pkgbase:
+  name: localsearch
+  pkgdesc: Filesystem indexer and metadata extractor
+  pkgver: 3.10.0
+  pkgrel: 1
+  url: https://gnome.pages.gitlab.gnome.org/localsearch/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - asciidoc
+    - bash
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - python
+    - python-dbusmock
+    - python-gobject
+  depends:
+    - dconf
+    - exempi
+    - ffmpeg
+    - gcc-libs
+    - giflib
+    - glib2
+    - glibc
+    - gst-plugins-base-libs
+    - gstreamer
+    - gupnp-dlna
+    - icu
+    - libcue
+    - libexif
+    - libgexiv2
+    - libgsf
+    - libgudev
+    - libgxps
+    - libiptcdata
+    - libjpeg-turbo
+    - libosinfo
+    - libpng
+    - libseccomp
+    - libtiff
+    - libwebp
+    - libxml2
+    - poppler-glib
+    - tinysparql
+    - totem-plparser
+    - upower
+  source:
+    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.10.0
+  b2sums:
+    - 2a41545bedc9afd25f47d812b53b975744b78fe24a2bd6827b4fee1009c0307b0bf35762317bd9d9b3f9fea3b552622aeb62d5d454a7a2bbf5efe8d71020488a
+pkgname:
+  - name: localsearch
+    depends:
+      - dconf
+      - exempi
+      - ffmpeg
+      - gcc-libs
+      - giflib
+      - glib2
+      - glibc
+      - gst-plugins-base-libs
+      - gstreamer
+      - gupnp-dlna
+      - icu
+      - libcue
+      - libexif
+      - libgexiv2
+      - libgsf
+      - libgudev
+      - libgxps
+      - libiptcdata
+      - libjpeg-turbo
+      - libosinfo
+      - libpng
+      - libseccomp
+      - libtiff
+      - libwebp
+      - libxml2
+      - poppler-glib
+      - tinysparql
+      - totem-plparser
+      - upower
+      - libtinysparql-3.0.so
+    provides:
+      - tracker3-miners=3.10.0
+    conflicts:
+      - tracker3-miners<=3.7.3-2
+    replaces:
+      - tracker3-miners<=3.7.3-2
+  - name: localsearch-testutils
+    pkgdesc: Filesystem indexer and metadata extractor (test utilities)
+    depends:
+      - bash
+      - glib2
+      - python
+      - python-gobject
+      - tinysparql
+# generated with artixpkg 0.37.4-1-any
