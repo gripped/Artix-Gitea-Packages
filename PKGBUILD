@@ -12,7 +12,10 @@ url="http://www.unixodbc.org/"
 backup=('etc/odbc.ini' 'etc/odbcinst.ini')
 depends=('readline' 'libltdl' 'glibc')
 provides=('libodbc.so' 'libodbccr.so' 'libodbcinst.so')
-source=(ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$pkgver.tar.gz)
+source=(
+    https://www.unixodbc.org/unixODBC-$pkgver.tar.gz
+    #ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$pkgver.tar.gz
+)
 sha256sums=('119afef5f4cb04e780ca6cf763265b9fb2b99c4c11349a3f9cab14069d2c7c2b')
 
 prepare() {
