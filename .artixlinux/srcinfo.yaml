@@ -1,10 +1,10 @@
 ---
-version: 3.5.0-1
+version: 3.5.0-2
 pkgbase:
   name: couchdb
   pkgdesc: Document-oriented database that can be queried and indexed in a MapReduce fashion using JSON
   pkgver: 3.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://couchdb.apache.org
   arch:
     - x86_64
@@ -54,4 +54,4 @@ pkgbase:
     - 7331b9675e3668c5f0d632bee5d154c061cc3e60d451bef3dc0d0ab2dadfa006
 pkgname:
   - name: couchdb
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any
