@@ -4,8 +4,8 @@
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 
 pkgname=motion
-pkgver=4.7.0
-pkgrel=2
+pkgver=4.7.1
+pkgrel=1
 pkgdesc="Monitor and record video signals from many types of cameras"
 arch=('x86_64')
 license=('GPL')
@@ -16,7 +16,7 @@ backup=('etc/motion/motion.conf')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Motion-Project/motion/archive/release-$pkgver.tar.gz"
   'motion.sysusers'
   'motion.tmpfiles')
-sha512sums=('121be986ef0d4a2dd4f8147ee9a6513d1fe373852f351953d12a914a832c31fa83365b2a285f1449de3f1f6156ad84b36f2fe90fe9dff966e27c793b1753fafc'
+sha512sums=('77f6f18d7313db5643bf0162f57e2f5ac5ecafb245c55a8a94bb96105b295b3c81ef1482731a01cfadd3479ce1926cff1a61d7fad2d82aa644c22c310d15fd86'
   '6223040c71d5d8e1a67ad99276342cb43549554191fba6492803f6d7069ea87afd378fec7a4c5332821a366d5a669fbd21f2aa16bb8911eabb45f44a18a65de5'
   'cae88686417c31984c56d0df6625fb4ee62c2910d7f45b0e46dc1de6775b1a7b5463efc3ad1299e44746317332100c6afb6526b68fa6abea23e86b62d897460b')
 
