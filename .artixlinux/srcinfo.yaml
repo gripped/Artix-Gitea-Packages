@@ -1,0 +1,49 @@
+---
+version: 11.0.0-1
+pkgbase:
+  name: python-cheroot
+  pkgdesc: Highly-optimized, pure-python HTTP server
+  pkgver: 11.0.0
+  pkgrel: 1
+  url: https://github.com/cherrypy/cheroot
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-chardet
+    - python-colorama
+    - python-jaraco.context
+    - python-portend
+    - python-pyopenssl
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-rerunfailures
+    - python-pytest-sugar
+    - python-pytest-xdist
+    - python-requests-toolbelt
+    - python-requests-unixsocket
+    - python-trustme
+    - python-urllib3
+    - python-watchdog
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-jaraco.functools
+    - python-more-itertools
+  optdepends:
+    - 'python-pyopenssl: for SSL and certificate handling within cheroot'
+  source:
+    - https://github.com/cherrypy/cheroot/archive/v11.0.0/python-cheroot-11.0.0.tar.gz
+  sha512sums:
+    - 8d63c88177b12badf613b9cbfecada9c5eeff38857046fb24dae31efca88e811fd103df8929739028dcf16d492f651bb976a9db81c9dce94d21d362efa63cfe3
+  b2sums:
+    - 8ff226f7bdd74f90de1dbf66649b48a7b1f094c49df7e611251ff23a7040d22b77f6ef281e702f0137992f30931f19aa798fc31ccb6444a1566d55821c757ae2
+pkgname:
+  - name: python-cheroot
+# generated with artixpkg 0.37.4-1-any
