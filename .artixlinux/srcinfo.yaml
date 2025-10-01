@@ -1,9 +1,9 @@
 ---
-version: 2.14.1-1
+version: 2.14.2-1
 pkgbase:
   name: python-cloudflare
   pkgdesc: Python wrapper for the Cloudflare v4 API
-  pkgver: 2.14.1
+  pkgver: 2.14.2
   pkgrel: 1
   url: https://github.com/cloudflare/python-cloudflare
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - python-requests
     - python-yaml
   source:
-    - git+https://github.com/cloudflare/python-cloudflare.git#tag=2.14.1
+    - git+https://github.com/cloudflare/python-cloudflare.git#tag=2.14.2
   sha512sums:
-    - 86ba039024f17ebd57e4744c65f850cf6352923f554452a3ba6e99bc3850de55457890bca8da899e6e2e3b0cae89de5b82372b7d38d57957e8aa2f66eaa6c1af
+    - a6d36175322f04df267f5ccce3be4344d4a39111a6c525306c47090d00d8758a99bc7f7966eb8764c46854ff4494102178d8f30f990bcaef3b8df0de7f4b8921
 pkgname:
   - name: python-cloudflare
 # generated with artixpkg 0.37.4-1-any
