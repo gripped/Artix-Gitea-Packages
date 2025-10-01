@@ -1,0 +1,27 @@
+---
+version: 6.0-1
+pkgbase:
+  name: python-zope-testing
+  pkgdesc: Zope testing helpers
+  pkgver: 6.0
+  pkgrel: 1
+  url: https://github.com/zopefoundation/zope.testing
+  arch:
+    - any
+  license:
+    - ZPL-2.1
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-zope-testrunner
+  source:
+    - python-zope-testing-6.0.tar.gz::https://github.com/zopefoundation/zope.testing/archive/6.0.tar.gz
+  sha512sums:
+    - 6e28e0589bc7b2c62973047d8fd2ab53fca0c304bcb84a057769238792b2c834e15ecf4d4d03c06fed1744d0f0deb7a9e81b4f37155d247b45801020a89fcd89
+pkgname:
+  - name: python-zope-testing
+# generated with artixpkg 0.37.4-1-any
