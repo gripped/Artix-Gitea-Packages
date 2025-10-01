@@ -1,0 +1,47 @@
+---
+version: 7.0-1
+pkgbase:
+  name: python-zope-component
+  pkgdesc: Represents the core of the Zope Component Architecture
+  pkgver: 7.0
+  pkgrel: 1
+  url: https://github.com/zopefoundation/zope.component
+  arch:
+    - any
+  license:
+    - ZPL-2.1
+  checkdepends:
+    - python-persistent
+    - python-pytest
+    - python-zope-configuration
+    - python-zope-i18nmessageid
+    - python-zope-location
+    - python-zope-proxy
+    - python-zope-security
+    - python-zope-testrunner
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-setuptools
+    - python-zope-event
+    - python-zope-hookable
+    - python-zope-interface
+  optdepends:
+    - 'python-persistent: for persistent registry'
+    - 'python-zope-configuration: for zcml'
+    - 'python-zope-i18nmessageid: for zcml'
+    - 'python-zope-location: for security'
+    - 'python-zope-proxy: for security'
+    - 'python-zope-security: for security'
+  source:
+    - https://github.com/zopefoundation/zope.component/archive/7.0/python-zope-component-7.0.tar.gz
+  sha512sums:
+    - 1bdd8715c928e3bbb6fe29e7e74368f5146ea5e8496f383427809a9c2f95b2d2db1960abdc2e89037b903a870ae19772b78b76a30b968d936e702bc65f6cad2a
+  b2sums:
+    - 8ac389513d5891d13b50e0a0374ea46dfe9cdcd4a4c6ce533603236e587f193d7bdcc143106a7fc04605ef250ee6c6a6657351350bcca507ce665de42f5a3738
+pkgname:
+  - name: python-zope-component
+# generated with artixpkg 0.37.4-1-any
