@@ -1,9 +1,9 @@
 ---
-version: 2.4.125-1
+version: 2.4.126-1
 pkgbase:
   name: libdrm
   pkgdesc: Userspace interface to kernel DRM services
-  pkgver: 2.4.125
+  pkgver: 2.4.126
   pkgrel: 1
   url: https://dri.freedesktop.org/
   arch:
@@ -24,15 +24,15 @@ pkgbase:
     - libdrm-new
     - libdrm-nouveau
   source:
-    - https://dri.freedesktop.org/libdrm/libdrm-2.4.125.tar.xz
-    - https://dri.freedesktop.org/libdrm/libdrm-2.4.125.tar.xz.sig
+    - https://dri.freedesktop.org/libdrm/libdrm-2.4.126.tar.xz
+    - https://dri.freedesktop.org/libdrm/libdrm-2.4.126.tar.xz.sig
     - COPYING
   validpgpkeys:
     - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
   sha512sums:
-    - faad141f48a49915c0312eb635df76968f0f4d41bb6851be625a7ae0e24826e7283b5ec9ec3b09ead9a96297bf42221c411288f9b000c3dbc159ed8dde93a7e4
+    - 7cf2e2904025165562f0bf56faa57f3c3cca6f739c2afc299952bcb7bb1dcb86554c8060a7dbe070f2100d036b0ece615e0a55d9df00885679ae30b7e6ef0f0b
     - SKIP
     - b0ca349b882a4326b19f81f22804fabdb6fb7aef31cdc7b16b0a7ae191bfbb50c7daddb2fc4e6c33f1136af06d060a273de36f6f3412ea326f16fa4309fda660
 pkgname:
   - name: libdrm
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
