@@ -1,0 +1,35 @@
+---
+version: 2.1.0-1
+pkgbase:
+  name: python-pyftpdlib
+  pkgdesc: Extremely fast and scalable Python FTP server library
+  pkgver: 2.1.0
+  pkgrel: 1
+  url: https://github.com/giampaolo/pyftpdlib
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-psutil
+    - python-pyopenssl
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-pyasynchat
+    - python-pyasyncore
+  optdepends:
+    - 'python-pyopenssl: FTPS support'
+    - 'python-psutil: to keep track of FTP server memory usage'
+  source:
+    - https://github.com/giampaolo/pyftpdlib/archive/release-2.1.0/python-pyftpdlib-release-2.1.0.tar.gz
+  sha256sums:
+    - 22ef6dc8fa4a8ca66c4de413721239ed0dfb4d7b7a8ee26f40ebf084bbfd1532
+pkgname:
+  - name: python-pyftpdlib
+# generated with artixpkg 0.37.4-1-any
