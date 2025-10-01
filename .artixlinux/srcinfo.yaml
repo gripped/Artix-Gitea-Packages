@@ -1,0 +1,30 @@
+---
+version: 6.0-1
+pkgbase:
+  name: python-zope-exceptions
+  pkgdesc: Generic exceptions and implementations for Zope
+  pkgver: 6.0
+  pkgrel: 1
+  url: https://github.com/zopefoundation/zope.exceptions
+  arch:
+    - any
+  license:
+    - ZPL-2.1
+  checkdepends:
+    - python-zope-testrunner
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-zope-interface
+  source:
+    - git+https://github.com/zopefoundation/zope.exceptions.git#tag=6.0
+  sha512sums:
+    - 48e1154fc367d20b159b4f22720b99a2108386d8af03229c0d5f60efe754c673598816b6188457f77d49d5245cb953362dc3afbf447d5cda81e30352545608a2
+pkgname:
+  - name: python-zope-exceptions
+# generated with artixpkg 0.37.4-1-any
