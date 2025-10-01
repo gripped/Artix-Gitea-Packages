@@ -1,0 +1,33 @@
+---
+version: 1.8.0-1
+pkgbase:
+  name: python-pipx
+  pkgdesc: Install and Run Python Applications in Isolated Environments
+  pkgver: 1.8.0
+  pkgrel: 1
+  url: https://github.com/pypa/pipx
+  arch:
+    - any
+  license:
+    - MIT
+    - BSD
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-wheel
+    - python-hatch-vcs
+  depends:
+    - python
+    - python-userpath
+    - python-argcomplete
+    - python-packaging
+    - python-platformdirs
+  source:
+    - git+https://github.com/pypa/pipx.git#tag=1.8.0
+  sha512sums:
+    - e3d42b2e486318ac56205aa2770c0a636866d2d4a6f195a6a510777b18ae8f3152f626c3dd7377247d08375603a33342a4b4e220a53108fa80aa15bd7c02dea3
+pkgname:
+  - name: python-pipx
+# generated with artixpkg 0.37.4-1-any
