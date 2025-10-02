@@ -2,8 +2,8 @@
 # Contributor: Ray Powell <ray_al@xphoniexx.net>
 
 pkgname=mcomix
-pkgver=3.1.0
-pkgrel=2.2
+pkgver=3.1.1
+pkgrel=1
 pkgdesc="GTK comic book viewer"
 arch=('any')
 url="https://sourceforge.net/p/mcomix/wiki/Home/"
