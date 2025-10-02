@@ -1,10 +1,10 @@
 ---
-version: 2.50.0-1
+version: 2.50.0-2
 pkgbase:
   name: wpewebkit
   pkgdesc: Embeddable web content engine
   pkgver: 2.50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://wpewebkit.org
   arch:
     - x86_64
@@ -85,6 +85,7 @@ pkgbase:
     - mesa
     - openjpeg2
     - sqlite
+    - ttf-font
     - wayland
     - woff2
     - wpebackend-fdo
@@ -141,6 +142,7 @@ pkgname:
       - mesa
       - openjpeg2
       - sqlite
+      - ttf-font
       - wayland
       - woff2
       - wpebackend-fdo
