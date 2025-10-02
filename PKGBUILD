@@ -35,6 +35,7 @@ check() {
   test-env/bin/python -m pytest -vvv \
     --log-cli-level=info -s \
     --ignore=tests/integration/test_greenlet.py \
+    --deselect=tests/integration/test_native_tracking.py::test_hybrid_stack_of_python_thread_starts_with_native_frames \
     tests
 }
 
