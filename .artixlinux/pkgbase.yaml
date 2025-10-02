@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,6 +45,10 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
+    version: null
+    packages: []
+    debug: []
+  galaxy-gremlins:
     version: 143.0.1-2
     packages:
       - thunderbird-143.0.1-2-x86_64.pkg.tar.zst
@@ -111,10 +115,6 @@ repos:
       - thunderbird-i18n-vi-143.0.1-2-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-cn-143.0.1-2-x86_64.pkg.tar.zst
       - thunderbird-i18n-zh-tw-143.0.1-2-x86_64.pkg.tar.zst
-    debug: []
-  galaxy-gremlins:
-    version: null
-    packages: []
     debug: []
   galaxy:
     version: 143.0.1-1
