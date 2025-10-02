@@ -1,10 +1,10 @@
 ---
-version: 4.9.0-4
+version: 4.10.1-1
 pkgbase:
   name: syslog-ng
   pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities
-  pkgver: 4.9.0
-  pkgrel: 4
+  pkgver: 4.10.1
+  pkgrel: 1
   url: https://github.com/syslog-ng/syslog-ng
   install: syslog-ng.install
   arch:
@@ -92,7 +92,7 @@ pkgbase:
     - etc/logrotate.d/syslog-ng
     - etc/default/syslog-ng@default
   source:
-    - git+https://github.com/syslog-ng/syslog-ng.git#tag=syslog-ng-4.9.0
+    - git+https://github.com/syslog-ng/syslog-ng.git#tag=syslog-ng-4.10.1
     - git+https://github.com/balabit/ivykis.git
     - git+https://github.com/open-telemetry/opentelemetry-proto.git
     - git+https://github.com/Thalhammer/jwt-cpp.git
@@ -100,7 +100,7 @@ pkgbase:
     - syslog-ng-do-not-install-python-venv.patch
     - syslog-ng-config.patch
   sha256sums:
-    - 6686927a4ddd8e4d7b6554d0f8b7d9165c01adafc74c1c19e70265112760134b
+    - 79906a4bacc30369172bea3297cee3dd180b1cbedb2b0879a32d9a590e9fba79
     - SKIP
     - SKIP
     - SKIP
