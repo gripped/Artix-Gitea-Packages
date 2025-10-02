@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 6.9.2-1
+    version: 6.9.3-1
     packages:
-      - pyside6-6.9.2-1-x86_64.pkg.tar.zst
-      - pyside6-tools-6.9.2-1-x86_64.pkg.tar.zst
-      - shiboken6-6.9.2-1-x86_64.pkg.tar.zst
+      - pyside6-6.9.3-1-x86_64.pkg.tar.zst
+      - pyside6-tools-6.9.3-1-x86_64.pkg.tar.zst
+      - shiboken6-6.9.3-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null

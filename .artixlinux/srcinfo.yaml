@@ -1,8 +1,8 @@
 ---
-version: 6.9.2-1
+version: 6.9.3-1
 pkgbase:
   name: pyside6
-  pkgver: 6.9.2
+  pkgver: 6.9.3
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -41,10 +41,10 @@ pkgbase:
     - qt6-webengine
     - qt6-websockets
   source:
-    - git+https://code.qt.io/pyside/pyside-setup#tag=v6.9.2
+    - git+https://code.qt.io/pyside/pyside-setup#tag=v6.9.3
     - fix-build.patch
   sha256sums:
-    - b4bd678dafed047381c28b3ae503cdb361baeb2dfd6215958ec6251fc8e8482d
+    - 472ee2fa315d4e1f71ecc29a23bfcfc0dbea43b91a5efcfdd3738d4575225184
     - 77b83cb164ea87d826259864f6a81fb33199510e1948d6daaf5c8d5ab55735a7
 pkgname:
   - name: pyside6
