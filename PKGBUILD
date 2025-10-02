@@ -23,7 +23,7 @@ source=(
   "https://downloads.sourceforge.net/project/${pkgname}/MComix-${pkgver}/${pkgname}-${pkgver}.tar.gz"
   0001-Move-multiprocessing-initialization-out-of-functions.patch
 )
-sha256sums=('f9286eba7ffbc3ce9528135a9939823c425f3bbe9f74a639f8706fcc28b4c427'
+sha256sums=('a10aaaed7bc07deb74efde93bf9a8a27e1bcbf1824a0519b264cfee582becef8'
             '28981cb58be8de3d81bc6178a7f4c830bcf670d15a3e837e61fed32fddfbc6ed')
 
 prepare() {
