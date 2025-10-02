@@ -92,9 +92,7 @@ check() {
     --ignore=tests/pytest/test_fixtures.py # ::test_given_fails_if_already_decorated_with_fixture
 
     # Fails in Artix CI
-    --ignore=tests/nocover/test_argument_validation.py::test_consistent_with_api_guide_on_kwonly_args[arrays]
-    --ignore=tests/nocover/test_argument_validation.py::test_consistent_with_api_guide_on_kwonly_args[unsigned_integer_dtypes]
-    --ignore=tests/nocover/test_argument_validation.py::test_consistent_with_api_guide_on_kwonly_args[complex_dtypes]
+    --ignore=tests/nocover/test_argument_validation.py # ::test_consistent_with_api_guide_on_kwonly_args[arrays]
 
     -W=ignore::DeprecationWarning
   )
