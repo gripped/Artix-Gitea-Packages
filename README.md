@@ -1,0 +1,2 @@
+# python-hatch-regex-commit
+
