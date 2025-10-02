@@ -1,0 +1,41 @@
+---
+version: 1.35.0-1
+pkgbase:
+  name: gtk-doc
+  pkgdesc: Documentation tool for public library API
+  pkgver: 1.35.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gtk-doc
+  arch:
+    - any
+  license:
+    - GFDL-1.1-or-later
+    - GPL-2.0-or-later
+  checkdepends:
+    - bc
+    - gtk3
+    - python-parameterized
+  makedepends:
+    - dblatex
+    - git
+    - meson
+    - yelp-tools
+  depends:
+    - docbook-xml
+    - docbook-xsl
+    - glib2-docs
+    - python
+    - python-lxml
+    - python-pygments
+    - sh
+  optdepends:
+    - 'dblatex: PDF support'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gtk-doc.git#tag=1.35.0
+    - 0001-Fix-tests.patch
+  b2sums:
+    - 4a6aac0c0977750517d8b7ccde155cdf8854da6682d734707c9c1e3819652dc31783a93d7d8322d530ca2aeedbc7fbbc8337e30a2f17b26b8cf1330a6b61d8ef
+    - 0c099517bb57130cf2b0f941ad52fc0414a7c96e0c887b7efee6539e17b065c0bd6cf8f56eadd2407fba17d0d1b5bb9182c4f033b7f3cab9aa7a9cfb32702927
+pkgname:
+  - name: gtk-doc
+# generated with artixpkg 0.37.4-1-any
