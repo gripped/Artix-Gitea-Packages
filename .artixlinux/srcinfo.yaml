@@ -1,10 +1,10 @@
 ---
-version: 0.45-24
+version: 0.45-25
 pkgbase:
   name: tp_smapi
   pkgdesc: Modules for ThinkPad's SMAPI functionality
   pkgver: 0.45
-  pkgrel: 24
+  pkgrel: 25
   url: https://github.com/evgeni/tp_smapi
   arch:
     - x86_64
