@@ -1,0 +1,96 @@
+---
+version: 1:1.8.11-3
+pkgbase:
+  name: iptables
+  pkgdesc: Linux kernel packet control tool
+  pkgver: 1.8.11
+  pkgrel: 3
+  epoch: 1
+  url: https://www.netfilter.org/projects/iptables/index.html
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - linux-api-headers
+  depends:
+    - bash
+    - glibc
+    - libmnl
+    - libnetfilter_conntrack
+    - libnfnetlink
+    - libnftnl
+    - libpcap
+    - nftables
+  source:
+    - git+https://git.netfilter.org/iptables?signed#tag=v1.8.11
+    - 0001-fix-iptables-apply-FS-75401.patch
+    - empty.rules
+    - empty-filter.rules
+    - empty-mangle.rules
+    - empty-nat.rules
+    - empty-raw.rules
+    - empty-security.rules
+    - simple_firewall.rules
+  validpgpkeys:
+    - C09DB2063F1D7034BA6152ADAB4655A126D292E4
+    - 37D964ACC04981C75500FB9BD55D978A8A1420E4
+    - 8C5F7146A1757A65E2422A94D70D1A666ACF2B21
+  b2sums:
+    - 4f42734ab3f4103720ffd5486032dac53d20958305d6e4803efcf1261d5112c464dad7ae2616a30e228590a5de907bc463e7a980fc517639b0168a6b194b6fde
+    - 7008ad93b252e1410273e0474f1a571c861cfe7d5bdedf89eb0e59fe714e85b6a9cec6c711937718bce6c3c18eaeec5b6db9e40ee71d43c15472bfff6de92054
+    - d51b50c72db275ffc32e45d06000d6a273be56ccea9c89b34b297879fbe44cdea4dd9c7926fb14247992f4e6aefd33acc351fbbbcb012366ac73ec590ecb1b28
+    - 0b42fb260ed23d823eeff23d8f56ed1388ca85cf0edd6bceedebc915f7c455bdd99cd2a213074bad02e90e977ead9c42206579cde2d6ef0dcaef33a574dd4445
+    - 5597df63731a5c00516f90dcc7419501b5b3da8c8d3c30ed26b01bfe8e14dd61bb554a5a71f4f80b244600476e7af170a80d4ba575814e4bf6fd7ce2a2f14a57
+    - 0c4115c5737a151ce7b0d23fcd95aaa44fdfcbc94442e1766a03223fe90c832ebed36108c7d31a46d86814408ed1cab2c752ec186bec58bc920f583ae50815c3
+    - 3a118ce145df7ee7309586a2065976eb236fac3ef0384f1b246eccc5fa2091f2c5ec70ad004c4cd5703acc0b84af96e80e7afba091782484186ca4c3ece56e8c
+    - d070e613278486e9d8bdab23b14d81d0719a0310950199ad6bd552bb39f834a60448b6d724962ea7ebed4d91d8dc081a3fdeaad3372228334d1e4dc09f4cc14c
+    - 6d3b50deb8e58b46b0b9cf33da88eb6f7ad20df28b8ae70af4f22c65309a73666a52af44e8bec45fa8428f0228130d868fb3a2b0d28e91e26b62725be17bccd4
+pkgname:
+  - name: iptables
+    pkgdesc: Linux kernel packet control tool (using nft interface)
+    provides:
+      - iptables-nft
+      - libip4tc.so
+      - libip6tc.so
+      - libipq.so
+      - libxtables.so
+      - arptables
+      - ebtables
+    conflicts:
+      - arptables
+      - ebtables
+    replaces:
+      - iptables-nft<=1:1.8.11-2
+    backup:
+      - etc/ethertypes
+      - etc/iptables/iptables.rules
+      - etc/iptables/ip6tables.rules
+      - etc/arptables.conf
+      - etc/ebtables.conf
+  - name: iptables-legacy
+    pkgdesc: Linux kernel packet control tool (using legacy interface)
+    depends:
+      - bash
+      - glibc
+      - libmnl
+      - libnetfilter_conntrack
+      - libnfnetlink
+      - libnftnl
+      - libpcap
+    provides:
+      - iptables
+      - libip4tc.so
+      - libip6tc.so
+      - libipq.so
+      - libxtables.so
+    conflicts:
+      - iptables
+    replaces:
+      - iptables<=1:1.8.11-2
+    backup:
+      - etc/ethertypes
+      - etc/iptables/iptables.rules
+      - etc/iptables/ip6tables.rules
+# generated with artixpkg 0.37.4-1-any
