@@ -1,10 +1,10 @@
 ---
-version: 1:4.20.2-1
+version: 1:4.20.2-2
 pkgbase:
   name: gtk4
   pkgdesc: GObject-based multi-platform GUI toolkit
   pkgver: 4.20.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.gtk.org/
   arch:
@@ -30,6 +30,7 @@ pkgbase:
     - adwaita-fonts
     - adwaita-icon-theme
     - at-spi2-core
+    - bash
     - cairo
     - dconf
     - desktop-file-utils
@@ -38,8 +39,12 @@ pkgbase:
     - gcc-libs
     - gdk-pixbuf2
     - glib2
+    - glibc
     - graphene
     - gst-plugins-bad-libs
+    - gst-plugins-base-libs
+    - gstreamer
+    - gtk-update-icon-cache
     - harfbuzz
     - iso-codes
     - libcloudproviders
@@ -65,7 +70,9 @@ pkgbase:
     - pango
     - shared-mime-info
     - tinysparql
+    - vulkan-icd-loader
     - wayland
+    - xdg-desktop-portal-gtk
   source:
     - git+https://gitlab.gnome.org/GNOME/gtk.git#tag=4.20.2
     - gtk-update-icon-cache.hook
@@ -82,52 +89,6 @@ pkgbase:
     - 4db5571be715561f56ecc58c23dad422be42923ef293e5636088c75761e7cffd3fc2fc5585cfbd2980d15faa7984ce23c4d0a8a486df4b380e7f3b96d0bba98d
 pkgname:
   - name: gtk4
-    depends:
-      - adwaita-fonts
-      - adwaita-icon-theme
-      - at-spi2-core
-      - cairo
-      - dconf
-      - desktop-file-utils
-      - fontconfig
-      - fribidi
-      - gcc-libs
-      - gdk-pixbuf2
-      - glib2
-      - graphene
-      - gst-plugins-bad-libs
-      - harfbuzz
-      - iso-codes
-      - libcloudproviders
-      - libcolord
-      - libcups
-      - libegl
-      - libepoxy
-      - libgl
-      - libjpeg-turbo
-      - libpng
-      - librsvg
-      - libtiff
-      - libx11
-      - libxcursor
-      - libxdamage
-      - libxext
-      - libxfixes
-      - libxi
-      - libxinerama
-      - libxkbcommon
-      - libxrandr
-      - libxrender
-      - pango
-      - shared-mime-info
-      - tinysparql
-      - wayland
-      - bash
-      - glibc
-      - gst-plugins-base-libs
-      - gstreamer
-      - gtk-update-icon-cache
-      - vulkan-icd-loader
     optdepends:
       - 'evince: Default print preview command'
     provides:
