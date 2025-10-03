@@ -1,10 +1,10 @@
 ---
-version: 580.82.09-6
+version: 580.82.09-7
 pkgbase:
   name: nvidia
   pkgdesc: NVIDIA kernel modules
   pkgver: 580.82.09
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.nvidia.com/
   arch:
     - x86_64
