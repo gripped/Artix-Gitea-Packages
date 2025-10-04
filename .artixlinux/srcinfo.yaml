@@ -1,11 +1,11 @@
 ---
-version: 0.9.0-1.1
+version: 0.9.0-2
 pkgbase:
   name: stalonetray
   pkgdesc:
     STAnd-aLONE sysTRAY. It has minimal build and run-time dependencies: the Xlib only.
   pkgver: 0.9.0
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/d3adb5/stalonetray
   arch:
     - x86_64
@@ -17,6 +17,7 @@ pkgbase:
   depends:
     - libx11
     - libxpm
+    - libxinerama
   source:
     - stalonetray-0.9.0.tar.gz::https://github.com/d3adb5/stalonetray/archive/0.9.0.tar.gz
   sha512sums:
