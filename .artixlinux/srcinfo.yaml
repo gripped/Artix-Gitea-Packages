@@ -1,10 +1,10 @@
 ---
-version: 2.2.15-1
+version: 2.2.15-1.1
 pkgbase:
   name: mutt
   pkgdesc: Small but very powerful text-based mail client
   pkgver: 2.2.15
-  pkgrel: 1
+  pkgrel: 1.1
   url: http://www.mutt.org/
   arch:
     - x86_64
