@@ -1,0 +1,27 @@
+---
+version: 1.8-1
+pkgbase:
+  name: fwupd-efi
+  pkgdesc: EFI Application used by uefi-capsule plugin in fwupd
+  pkgver: 1.8
+  pkgrel: 1
+  url: https://github.com/fwupd/fwupd-efi
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - gnu-efi
+    - meson
+    - python-pefile
+  source:
+    - git+https://github.com/fwupd/fwupd-efi.git#tag=1.8?signed
+  validpgpkeys:
+    - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
+    - 0B0B6E494E9D5EFB39180D9A2D192CA624770276
+  sha256sums:
+    - 57d0a5e54179150fb923fcf86fd2c84fa7fb52fcdafbac1c9881954650afb0dd
+pkgname:
+  - name: fwupd-efi
+# generated with artixpkg 0.37.4-1-any
