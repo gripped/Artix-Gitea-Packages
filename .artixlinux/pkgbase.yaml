@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.19-1
+    version: 0.19-2
     packages:
-      - xdg-user-dirs-0.19-1-x86_64.pkg.tar.zst
+      - xdg-user-dirs-0.19-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.18-2.1
