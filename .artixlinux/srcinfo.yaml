@@ -1,0 +1,26 @@
+---
+version: 0.12.10-1
+pkgbase:
+  name: editorconfig-core-c
+  pkgdesc: EditorConfig core code written in C (for use by plugins supporting EditorConfig parsing)
+  pkgver: 0.12.10
+  pkgrel: 1
+  url: https://github.com/editorconfig/editorconfig-core-c
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - doxygen
+    - git
+  depends:
+    - glibc
+    - pcre2
+  source:
+    - git+https://github.com/editorconfig/editorconfig-core-c#tag=v0.12.10
+  sha256sums:
+    - ecbf28494e61fbf9e4cb70bf4af4ee38a5e4a3d1fb7e81e5a3b6d777cae3a9ac
+pkgname:
+  - name: editorconfig-core-c
+# generated with artixpkg 0.37.4-1-any
