@@ -1,10 +1,10 @@
 ---
-version: 1.20.3-1
+version: 1.20.3-2
 pkgbase:
   name: xdg-desktop-portal
   pkgdesc: Desktop integration portals for sandboxed apps
   pkgver: 1.20.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://flatpak.github.io/xdg-desktop-portal/
   arch:
     - x86_64
@@ -57,4 +57,4 @@ pkgbase:
     - 38a0bf62af4af9c14172079f121d975c0cf32657304ee8cd1fd65b762d548de7620bfe227843725f16345dd1f2b6090ff9e408fa6761ceef81c55a866caec64e
 pkgname:
   - name: xdg-desktop-portal
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
