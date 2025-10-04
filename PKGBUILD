@@ -89,5 +89,4 @@ package() {
   install -Dm644 "$srcdir"/valkey.sysusers "$pkgdir"/usr/lib/sysusers.d/valkey.conf
   install -Dm644 "$srcdir"/valkey.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/valkey.conf
 
-  cd "$pkgdir"/usr/lib/systemd/system/
 }
