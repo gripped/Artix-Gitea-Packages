@@ -1,10 +1,10 @@
 ---
-version: 0.9.5-3
+version: 0.9.5-4
 pkgbase:
   name: aquamarine
   pkgdesc: a very light linux rendering backend library
   pkgver: 0.9.5
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/hyprwm/aquamarine
   arch:
     - x86_64
