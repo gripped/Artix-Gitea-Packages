@@ -1,9 +1,9 @@
 ---
-version: 6.4.3-1
+version: 6.4.4-1
 pkgbase:
   name: rocm-opencl-runtime
   pkgdesc: OpenCL implementation for AMD
-  pkgver: 6.4.3
+  pkgver: 6.4.4
   pkgrel: 1
   url: https://github.com/ROCm/clr
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   provides:
     - opencl-driver
   source:
-    - rocm-opencl-runtime-6.4.3.tar.gz::https://github.com/ROCm/clr/archive/rocm-6.4.3.tar.gz
+    - rocm-opencl-runtime-6.4.4.tar.gz::https://github.com/ROCm/clr/archive/rocm-6.4.4.tar.gz
   sha256sums:
-    - aa7c9d9d7da3b5fc944b17ca7c032e8924a8dc327ec79eb8cb7f0c9df6fa76dc
+    - 7e5a7f82a55993acdf5bead15c29047659a6816e4580f530aeb916563e386ec3
 pkgname:
   - name: rocm-opencl-runtime
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
