@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-1
+version: 0.14.0-2
 pkgbase:
   name: waybar
   pkgdesc: Highly customizable Wayland bar for Sway and Wlroots based compositors
   pkgver: 0.14.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Alexays/Waybar/
   arch:
     - x86_64
@@ -98,4 +98,4 @@ pkgname:
       - libspdlog.so
       - libudev.so
       - libupower-glib.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
