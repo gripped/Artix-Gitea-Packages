@@ -6,7 +6,7 @@ _name=FreeRDP
 pkgname=freerdp
 pkgver=3.17.2
 _libver=${pkgver/.*/}
-pkgrel=2
+pkgrel=3
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -78,17 +78,21 @@ build() {
     -B build
     -D CHANNEL_RDPECAM_CLIENT=ON
     -D CHANNEL_URBDRC_CLIENT=ON
-    -D CMAKE_INSTALL_PREFIX=/usr
-    -D CMAKE_INSTALL_LIBDIR=lib
     -D CMAKE_BUILD_TYPE=Release
+    -D CMAKE_INSTALL_LIBDIR=lib
+    -D CMAKE_INSTALL_PREFIX=/usr
     -D CMAKE_SKIP_INSTALL_RPATH=ON
     -D PROXY_PLUGINDIR=/usr/lib/$pkgname/server/proxy/plugins
     -D RDTK_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
     -D UWAC_FORCE_STATIC_BUILD=ON  # prevent file conflicts with freerdp2
+    -D WINPR_UTILS_IMAGE_JPEG=ON
+    -D WINPR_UTILS_IMAGE_PNG=ON
+    -D WINPR_UTILS_IMAGE_WEBP=ON
     -D WITH_ALSA=ON
     -D WITH_BINARY_VERSIONING=ON  # prevent file conflicts with freerdp2
     -D WITH_CHANNELS=ON
     -D WITH_CLIENT_CHANNELS=ON
+    -D WITH_CLIENT_SDL3=OFF
     -D WITH_CUPS=ON
     -D WITH_DSP_FFMPEG=ON
     -D WITH_FFMPEG=ON
@@ -99,16 +103,13 @@ build() {
     -D WITH_PULSE=ON
     -D WITH_SERVER=ON
     -D WITH_SERVER_CHANNELS=ON
-    -D WITH_SYSTEMD=OFF
     -D WITH_SWSCALE=ON
-    -D WITH_WAYLAND=ON
+    -D WITH_SYSTEMD=OFF
+    -D WITH_VAAPI=ON
     -D WITH_VERBOSE_WINPR_ASSERT=OFF
+    -D WITH_WAYLAND=ON
     -D WITH_WINPR_TOOLS=ON
     -D WITH_X11=ON
-    -D WINPR_UTILS_IMAGE_PNG=ON
-    -D WINPR_UTILS_IMAGE_JPEG=ON
-    -D WINPR_UTILS_IMAGE_WEBP=ON
-    -D WITH_CLIENT_SDL3=OFF
     -S $_name-$pkgver
     -W no-dev
   )
