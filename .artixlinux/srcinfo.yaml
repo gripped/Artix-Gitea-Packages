@@ -1,0 +1,56 @@
+---
+version: 0.9.2-2
+pkgbase:
+  name: hyprlock
+  pkgdesc: hyprland’s GPU-accelerated screen locking utility
+  pkgver: 0.9.2
+  pkgrel: 2
+  url: https://github.com/hyprwm/hyprlock
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+  depends:
+    - cairo
+    - gcc-libs
+    - glib2
+    - libgobject-2.0.so
+    - libglib-2.0.so
+    - glibc
+    - hyprgraphics
+    - libhyprgraphics.so
+    - hyprlang
+    - libhyprlang.so
+    - hyprutils
+    - libhyprutils.so
+    - hyprwayland-scanner
+    - libdrm
+    - libglvnd
+    - libOpenGL.so
+    - libEGL.so
+    - libxkbcommon
+    - libxkbcommon.so
+    - mesa
+    - pam
+    - libpam.so
+    - pango
+    - libpango-1.0.so
+    - libpangocairo-1.0.so
+    - sdbus-cpp
+    - libsdbus-c++.so
+    - wayland
+    - libwayland-client.so
+    - libwayland-egl.so
+    - wayland-protocols
+  backup:
+    - etc/pam.d/hyprlock
+  source:
+    - https://github.com/hyprwm/hyprlock/archive/v0.9.2/hyprlock-0.9.2.tar.gz
+  sha256sums:
+    - d4a8ef9115232b3545dd517e96f1251f91022765eb272b5e7057c20e3e7e8837
+pkgname:
+  - name: hyprlock
+# generated with artixpkg 0.37.4-1-any
