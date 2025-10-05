@@ -1,10 +1,10 @@
 ---
-version: 32.0.1-1
+version: 32.0.1-2
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
   pkgver: 32.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://obsproject.com
   arch:
     - x86_64
@@ -22,7 +22,6 @@ pkgbase:
     - ffnvcodec-headers
     - websocketpp
     - asio
-    - qrcodegencpp-cmake
     - extra-cmake-modules
   depends:
     - ffmpeg
@@ -41,6 +40,7 @@ pkgbase:
     - libdatachannel
     - uthash
     - simde
+    - qrcodegencpp-cmake
   optdepends:
     - 'libfdk-aac: FDK AAC codec support'
     - 'libva-intel-driver: hardware encoding'
@@ -48,7 +48,6 @@ pkgbase:
     - 'luajit: scripting support'
     - 'python: scripting support'
     - 'sndio: Sndio input client'
-    - 'qrcodegencpp-cmake: websocket support'
     - 'v4l2loopback-dkms: virtual camera support'
   source:
     - obs-studio-32.0.1.tar.gz::https://github.com/obsproject/obs-studio/releases/download/32.0.1/OBS-Studio-32.0.1-Sources.tar.gz
