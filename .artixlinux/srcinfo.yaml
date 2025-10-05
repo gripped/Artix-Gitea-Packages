@@ -1,10 +1,10 @@
 ---
-version: 1:1.8.11-3
+version: 1:1.8.11-4
 pkgbase:
   name: iptables
   pkgdesc: Linux kernel packet control tool
   pkgver: 1.8.11
-  pkgrel: 3
+  pkgrel: 4
   epoch: 1
   url: https://www.netfilter.org/projects/iptables/index.html
   arch:
@@ -62,7 +62,7 @@ pkgname:
       - arptables
       - ebtables
     replaces:
-      - iptables-nft<=1:1.8.11-2
+      - iptables-nft
     backup:
       - etc/ethertypes
       - etc/iptables/iptables.rules
@@ -87,8 +87,6 @@ pkgname:
       - libxtables.so
     conflicts:
       - iptables
-    replaces:
-      - iptables<=1:1.8.11-2
     backup:
       - etc/ethertypes
       - etc/iptables/iptables.rules

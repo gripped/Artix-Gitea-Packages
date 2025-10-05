@@ -7,7 +7,7 @@ pkgname=(
   iptables-legacy
 )
 pkgver=1.8.11
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc='Linux kernel packet control tool'
 url='https://www.netfilter.org/projects/iptables/index.html'
@@ -86,7 +86,7 @@ package_iptables() {
     {arp,eb}tables
   )
   conflicts=({arp,eb}tables)
-  replaces=('iptables-nft<=1:1.8.11-2')
+  replaces=('iptables-nft')
   backup=(
     etc/ethertypes
     etc/iptables/{ip,ip6}tables.rules
@@ -114,7 +114,6 @@ package_iptables-legacy() {
     lib{ip4tc,ip6tc,ipq,xtables}.so
   )
   conflicts=(iptables)
-  replaces=('iptables<=1:1.8.11-2')
   backup=(
     etc/ethertypes
     etc/iptables/{ip,ip6}tables.rules
