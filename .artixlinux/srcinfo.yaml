@@ -1,10 +1,10 @@
 ---
-version: 2.1-1
+version: 2.1-2
 pkgbase:
   name: python-geographiclib
   pkgdesc: Python implementation of the geodesic routines in GeographicLib
   pkgver: 2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/geographiclib/geographiclib-python
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 3a2e86ca0ac58286ff3801d346e731c00eb7617b963084e3b7c4f8cfc4321d6058ccb0e33de4bc3db12ed4872cf6dab665889efbe23aef03612462316948d178
 pkgname:
   - name: python-geographiclib
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
