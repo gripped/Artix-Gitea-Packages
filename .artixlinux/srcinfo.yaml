@@ -1,0 +1,39 @@
+---
+version: 24.11.3-1
+pkgbase:
+  name: dpdk
+  pkgdesc: A set of libraries and drivers for fast packet processing
+  pkgver: 24.11.3
+  pkgrel: 1
+  url: https://dpdk.org
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - linux-headers
+    - meson
+    - ninja
+    - python-pyelftools
+  depends:
+    - bash
+    - dtc
+    - gcc-libs
+    - glibc
+    - jansson
+    - libarchive
+    - libbsd
+    - libelf
+    - libpcap
+    - numactl
+    - openssl
+    - zlib
+  source:
+    - git+https://dpdk.org/git/dpdk-stable#tag=v24.11.3
+  sha256sums:
+    - abbb3971ba13ef3dfd678fc61888a7d87a50ec5f56dfe364418d5b0cda558df0
+pkgname:
+  - name: dpdk
+# generated with artixpkg 0.37.4-1-any
