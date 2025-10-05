@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:4.0.4-1
+    version: 1:4.0.7-1
     packages:
-      - simdjson-1:4.0.4-1-x86_64.pkg.tar.zst
+      - simdjson-1:4.0.7-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:4.0.3-1
