@@ -1,0 +1,34 @@
+---
+version: 1.6.0-1
+pkgbase:
+  name: python-svglib
+  pkgdesc: Read SVG files and convert them to other formats
+  pkgver: 1.6.0
+  pkgrel: 1
+  url: https://github.com/deeplook/svglib
+  arch:
+    - any
+  license:
+    - LGPL-3.0-only
+  checkdepends:
+    - python-pillow
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-lxml
+    - python-reportlab
+    - python-tinycss2
+    - python-cssselect2
+  source:
+    - python-svglib-1.6.0.tar.gz::https://github.com/deeplook/svglib/archive/refs/tags/v1.6.0.tar.gz
+  sha512sums:
+    - 089e867e04256282d2e7b2877fb49b9713f39449dd1df3d38eba25ae4f12e8ac6884da0826c7ca658425482a42940b9ee88112d7a7ac9b6e9d7aa2ef519fbb14
+  b2sums:
+    - ca71c83bc803dd582849d5a0db07345fced468873d09818e08ac77f0baaa4168f0fbeaa6a6e39288e716ce9de5e6a761ecb96a205cf29194d6026e5e0be0c77d
+pkgname:
+  - name: python-svglib
+# generated with artixpkg 0.37.4-1-any
