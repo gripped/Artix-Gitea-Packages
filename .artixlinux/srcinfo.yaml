@@ -1,9 +1,9 @@
 ---
-version: 6.6.1-1
+version: 6.6.3-1
 pkgbase:
   name: aqbanking
   pkgdesc: A library for online banking and financial applications
-  pkgver: 6.6.1
+  pkgver: 6.6.3
   pkgrel: 1
   url: https://www.aquamaniac.de/rdm/projects/aqbanking
   arch:
@@ -15,13 +15,13 @@ pkgbase:
   options:
     - '!makeflags'
   source:
-    - https://www.aquamaniac.de/rdm/attachments/download/535/aqbanking-6.6.1.tar.gz
-    - https://www.aquamaniac.de/rdm/attachments/download/534/aqbanking-6.6.1.tar.gz.asc
+    - https://www.aquamaniac.de/rdm/attachments/download/543/aqbanking-6.6.3.tar.gz
+    - https://www.aquamaniac.de/rdm/attachments/download/542/aqbanking-6.6.3.tar.gz.asc
   validpgpkeys:
     - 42400AF5EB2A17F0A69BB551E9899D784A977416
   sha256sums:
-    - 3250fa6d893f816d29c19af35fe5fccb74c080e21753fd9e52579a792dd48567
+    - 792a04d384089daf643eed5bffafadabaef0ecd55c66554e5822c433cb93b610
     - SKIP
 pkgname:
   - name: aqbanking
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
