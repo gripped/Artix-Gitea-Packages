@@ -4,7 +4,7 @@
 pkgname=hiprt
 pkgver=2.5.a21e075
 _libver=02005
-pkgrel=3
+pkgrel=4
 pkgdesc="Ray Tracing Library for HIP"
 arch=('x86_64')
 url="https://gpuopen.com/hiprt/"
