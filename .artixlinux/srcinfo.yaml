@@ -1,10 +1,10 @@
 ---
-version: 33059-1
+version: 33059-2
 pkgbase:
   name: libretro-dolphin
   pkgdesc: Nintendo GC/Wii core
   pkgver: 33059
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/libretro/dolphin
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgbase:
     - e669c2497beaa42e5bde4033ebac00b85bb4f28ebff910c952dc4354de174267fcf2a1d27d6ca8b421c5c1e81591f7375150b0954d92c172d144e7a89a884186
 pkgname:
   - name: libretro-dolphin
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
