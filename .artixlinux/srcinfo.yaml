@@ -1,10 +1,10 @@
 ---
-version: 3.0.4-5
+version: 3.0.6-1
 pkgbase:
   name: gimp
   pkgdesc: GNU Image Manipulation Program
-  pkgver: 3.0.4
-  pkgrel: 5
+  pkgver: 3.0.6
+  pkgrel: 1
   url: https://www.gimp.org/
   install: gimp.install
   arch:
@@ -82,10 +82,10 @@ pkgbase:
     - 'gutenprint: for sophisticated printing only as gimp has built-in cups print support'
     - 'gvfs: for HTTP/S support (and many other schemes)'
   source:
-    - git+https://gitlab.gnome.org/GNOME/gimp.git#tag=GIMP_3_0_4
+    - git+https://gitlab.gnome.org/GNOME/gimp.git#tag=GIMP_3_0_6
     - git+https://gitlab.gnome.org/GNOME/gimp-data.git
   sha256sums:
-    - f4c2c753d4966dceea2136848af2fddd6b2b2fcfc5e36613175b17accbdadce7
+    - 207318f002baa3703197d24bc45267c00564505b0307cd312a2279424ca4d7e2
     - SKIP
 pkgname:
   - name: gimp
