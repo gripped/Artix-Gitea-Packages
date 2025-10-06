@@ -1,10 +1,10 @@
 ---
-version: 7.1.2.3-2
+version: 7.1.2.4-1
 pkgbase:
   name: imagemagick
   pkgdesc: An image viewing/manipulation program
-  pkgver: 7.1.2.3
-  pkgrel: 2
+  pkgver: 7.1.2.4
+  pkgrel: 1
   url: https://www.imagemagick.org/
   arch:
     - x86_64
@@ -17,6 +17,7 @@ pkgbase:
     - chrpath
     - djvulibre
     - ghostscript
+    - git
     - glu
     - jbigkit
     - libheif
@@ -76,24 +77,22 @@ pkgbase:
     - '!emptydirs'
     - libtool
   backup:
-    - etc/ImageMagick-7/colors.xml
-    - etc/ImageMagick-7/delegates.xml
-    - etc/ImageMagick-7/log.xml
-    - etc/ImageMagick-7/mime.xml
-    - etc/ImageMagick-7/policy.xml
-    - etc/ImageMagick-7/quantization-table.xml
-    - etc/ImageMagick-7/thresholds.xml
-    - etc/ImageMagick-7/type.xml
-    - etc/ImageMagick-7/type-dejavu.xml
-    - etc/ImageMagick-7/type-ghostscript.xml
+    - etc//colors.xml
+    - etc//delegates.xml
+    - etc//log.xml
+    - etc//mime.xml
+    - etc//policy.xml
+    - etc//quantization-table.xml
+    - etc//thresholds.xml
+    - etc//type.xml
+    - etc//type-dejavu.xml
+    - etc//type-ghostscript.xml
   source:
-    - https://imagemagick.org/archive/ImageMagick-7.1.2-3.tar.xz
-    - https://imagemagick.org/archive/ImageMagick-7.1.2-3.tar.xz.asc
+    - git+https://github.com/ImageMagick/ImageMagick#tag=7.1.2-4
   validpgpkeys:
-    - D8272EF51DA223E4D05B466989AB63D48277377A
+    - C305FEBD4C4081119CB3C12CE640E67B2C7F96AA
   sha256sums:
-    - 2943d26f9ac4875aacf16c8f717f4d32ac985fe6a0c0a8e48c24c5cbb3161050
-    - SKIP
+    - 7b14d6013830f0ca29b320f39a1e135929d5e0f1babaae9ed87d4751f7e8b146
 pkgname:
   - name: imagemagick
 # generated with artixpkg 0.37.4-1-any
