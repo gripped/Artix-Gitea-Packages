@@ -39,7 +39,7 @@ pkgbase:
   sha256sums:
     - d0a704a6a030edb5b4f5d6b99c32bc4e46e1a6ab527dfde9089e11094b6b1a92
     - SKIP
-    - f9ff7fdc2b066c39fb442517369eb132e413d1ae08dc28ac85ff53ee2b8903fb
+    - c0fe48afdacc33212d4d1d66611746b4f805bcfed332f3a417be1b33221137f0
 pkgname:
   - name: kpipewire
 # generated with artixpkg 0.37.4-1-any

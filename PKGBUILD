@@ -26,7 +26,7 @@ source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{
         https://invent.kde.org/plasma/kpipewire/-/commit/6dc69b06.patch)
 sha256sums=('d0a704a6a030edb5b4f5d6b99c32bc4e46e1a6ab527dfde9089e11094b6b1a92'
             'SKIP'
-            'f9ff7fdc2b066c39fb442517369eb132e413d1ae08dc28ac85ff53ee2b8903fb')
+            'c0fe48afdacc33212d4d1d66611746b4f805bcfed332f3a417be1b33221137f0')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
