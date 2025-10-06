@@ -1,9 +1,9 @@
 ---
-version: 6.2.0-1
+version: 7.0.0-1
 pkgbase:
   name: ruby-cucumber-tag-expressions
   pkgdesc: Cucumber tag expressions for ruby
-  pkgver: 6.2.0
+  pkgver: 7.0.0
   pkgrel: 1
   url: https://github.com/cucumber/tag-expressions
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://github.com/cucumber/tag-expressions/archive/v6.2.0/ruby-cucumber-tag-expressions-6.2.0.tar.gz
+    - https://github.com/cucumber/tag-expressions/archive/v7.0.0/ruby-cucumber-tag-expressions-7.0.0.tar.gz
   sha256sums:
-    - 05f0fcb1bdbaad21d8645eb99205b8481716afa8a76e778e90b192e6118298b9
+    - 9d9bf4b97b86d6e22f25953af54f445c87d3f5011ee0909ac6e718e9ec28df8f
 pkgname:
   - name: ruby-cucumber-tag-expressions
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
