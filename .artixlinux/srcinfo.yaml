@@ -1,9 +1,9 @@
 ---
-version: 5.14.0-1
+version: 5.15.0-1
 pkgbase:
   name: libblastrampoline
   pkgdesc: Using PLT trampolines to provide a BLAS and LAPACK demuxing library
-  pkgver: 5.14.0
+  pkgver: 5.15.0
   pkgrel: 1
   url: https://github.com/JuliaLinearAlgebra/libblastrampoline
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/JuliaLinearAlgebra/libblastrampoline#tag=v5.14.0
+    - git+https://github.com/JuliaLinearAlgebra/libblastrampoline#tag=v5.15.0
   sha256sums:
-    - 24faedc40767d4e9a3e3297d27b5feb80afb305b10f8e2a68ca5a12ca2f7984e
+    - 6d12971e452413a4b60c2810002b76f2489afa079a3dd72e761ae09ba0ec3edb
 pkgname:
   - name: libblastrampoline
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
