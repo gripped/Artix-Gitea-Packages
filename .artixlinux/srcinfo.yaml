@@ -1,10 +1,10 @@
 ---
-version: 1.14.7.0-3
+version: 1.14.7.0-4
 pkgbase:
   name: openshadinglanguage
   pkgdesc: Advanced shading language for production GI renderers
   pkgver: 1.14.7.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/imageworks/OpenShadingLanguage
   arch:
     - x86_64
