@@ -5,7 +5,7 @@
 
 pkgname=shaderc
 pkgver=2025.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Collection of tools, libraries and tests for shader compilation'
 url='https://github.com/google/shaderc'
 arch=('x86_64')
