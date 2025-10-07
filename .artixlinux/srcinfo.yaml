@@ -1,45 +1,46 @@
 ---
-version: 6.4.3-3
+version: 6.4.4-1
 pkgbase:
   name: rocblas
   pkgdesc: Next generation BLAS implementation for ROCm platform
-  pkgver: 6.4.3
-  pkgrel: 3
+  pkgver: 6.4.4
+  pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html
   arch:
     - x86_64
   license:
     - MIT
   makedepends:
-    - git
     - cmake
-    - rocm-cmake
-    - python
-    - python-virtualenv
-    - python-pyaml
-    - python-wheel
-    - python-tensile
-    - python-msgpack
-    - python-joblib
-    - perl-file-which
-    - msgpack-cxx
     - gcc-fortran
+    - git
+    - msgpack-cxx
+    - perl-file-which
+    - python
+    - python-joblib
+    - python-msgpack
+    - python-pyaml
+    - python-tensile
+    - python-virtualenv
+    - python-wheel
+    - rocm-cmake
+    - rocm-toolchain
   depends:
-    - rocm-core
-    - hip-runtime-amd
-    - roctracer
-    - glibc
-    - gcc-libs
-    - openmp
     - cblas
+    - gcc-libs
+    - glibc
+    - hip-runtime-amd
+    - openmp
+    - rocm-core
+    - roctracer
   options:
     - '!strip'
   source:
-    - rocblas-6.4.3.tar.gz::https://github.com/ROCm/rocBLAS/archive/refs/tags/rocm-6.4.3.tar.gz
-    - rocblas-tensile-6.4.3.tar.gz::https://github.com/ROCm/Tensile/archive/refs/tags/rocm-6.4.3.tar.gz
+    - rocblas-6.4.4.tar.gz::https://github.com/ROCm/rocBLAS/archive/refs/tags/rocm-6.4.4.tar.gz
+    - rocblas-tensile-6.4.4.tar.gz::https://github.com/ROCm/Tensile/archive/refs/tags/rocm-6.4.4.tar.gz
   sha256sums:
-    - 754dcc88b30468a2293d2406d7fe40f78dc92dd77c193758f937532217ecdad3
-    - 0190bfc7050c6ea73fb20ce4d35a056644e129f792f3b016b079ee6cc237a598
+    - bc374b57579fa8458132f73d9a152517af63b9f411a2176b72829f4a1d6021c1
+    - 48ee6a9b33631625c7613e1fb8872290cb7c70977506c4f8b7ed102f293fdf38
 pkgname:
   - name: rocblas
 # generated with artixpkg 0.37.4-1-any
