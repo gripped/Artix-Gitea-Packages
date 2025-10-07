@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.351.0-2
+    version: 7.351.0-3
     packages:
-      - libplacebo-7.351.0-2-x86_64.pkg.tar.zst
+      - libplacebo-7.351.0-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.351.0-2.1
