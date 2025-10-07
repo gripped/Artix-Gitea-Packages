@@ -1,10 +1,10 @@
 ---
-version: 1.14.0-1
+version: 1.14.0-2
 pkgbase:
   name: doxygen
   pkgdesc: Documentation system for C++, C, Java, IDL and PHP
   pkgver: 1.14.0
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.doxygen.nl
   arch:
     - x86_64
@@ -58,4 +58,4 @@ pkgname:
       - 'texlive-plaingeneric: for generating LaTeX, Postscript and PDF output'
   - name: doxygen-docs
     pkgdesc: Developer documentation for doxygen
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
