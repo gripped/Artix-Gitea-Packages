@@ -2,7 +2,7 @@
 
 pkgname=libscfg
 pkgver=0.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A C library for scfg"
 arch=(x86_64)
 url="https://codeberg.org/emersion/libscfg"

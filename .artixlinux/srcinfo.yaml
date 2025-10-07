@@ -1,10 +1,10 @@
 ---
-version: 0.2.0-1
+version: 0.2.0-1.1
 pkgbase:
   name: libscfg
   pkgdesc: A C library for scfg
   pkgver: 0.2.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://codeberg.org/emersion/libscfg
   arch:
     - x86_64
