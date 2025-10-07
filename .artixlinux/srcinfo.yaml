@@ -59,4 +59,4 @@ pkgname:
       - liblcms2.so
       - libshaderc_shared.so
       - libvulkan.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
