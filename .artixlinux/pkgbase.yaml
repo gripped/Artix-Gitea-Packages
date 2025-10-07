@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 35.0.2-20
+    version: 35.0.2-21
     packages:
-      - android-tools-35.0.2-20-x86_64.pkg.tar.zst
+      - android-tools-35.0.2-21-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 35.0.2-19

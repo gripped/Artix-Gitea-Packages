@@ -1,10 +1,10 @@
 ---
-version: 35.0.2-20
+version: 35.0.2-21
 pkgbase:
   name: android-tools
   pkgdesc: Android platform tools
   pkgver: 35.0.2
-  pkgrel: 20
+  pkgrel: 21
   url: http://tools.android.com/
   arch:
     - x86_64
@@ -22,10 +22,10 @@ pkgbase:
     - protobuf
     - brotli
     - zstd
-    - android-udev
     - pcre2
   optdepends:
     - 'python: {mk,unpack_,repack_}bootimg and mkdtboimg support'
+    - 'android-udev: optional additional device udev rules'
   source:
     - https://github.com/nmeum/android-tools/releases/download/35.0.2/android-tools-35.0.2.tar.xz
     - android-tools-35.0.2-fix-protobuf-30.0-compilation.patch
