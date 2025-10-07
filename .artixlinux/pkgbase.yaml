@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.3-1
+    version: 2025.4-2
     packages:
-      - shaderc-2025.3-1-x86_64.pkg.tar.zst
+      - shaderc-2025.4-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2025.3-1.1
