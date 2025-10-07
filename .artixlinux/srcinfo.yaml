@@ -31,4 +31,4 @@ pkgbase:
     - 34db72bf52efbd8e26e0dd18c20cea5e97b3fb6399b20bd90e68e1ea2d774080305dd3d6458a3d4f57de8244b123cf27a1c24a1bd300f09c82eeab025eb2ad2f
 pkgname:
   - name: shaderc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
