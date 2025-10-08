@@ -1,9 +1,9 @@
 ---
-version: 6.9.2-1
+version: 6.10.0-1
 pkgbase:
   name: qt6-scxml
   pkgdesc: Static and runtime integration of SCXML models into Qt6 code
-  pkgver: 6.9.2
+  pkgver: 6.10.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtscxml#tag=v6.9.2
+    - git+https://code.qt.io/qt/qtscxml#tag=v6.10.0
   sha256sums:
-    - dcfc567f4bbda7a291994df6724e41ffcdc35436bf2c00e084e57289d067c419
+    - 20eee37aae93c1a4fdaac8ab9b22dd1d3f81a6cef361620d9ab0513b6154f7ae
 pkgname:
   - name: qt6-scxml
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
