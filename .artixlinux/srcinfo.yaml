@@ -1,9 +1,9 @@
 ---
-version: 6.9.2-1
+version: 6.10.0-1
 pkgbase:
   name: qt6-3d
   pkgdesc: C++ and QML APIs for easy inclusion of 3D graphics
-  pkgver: 6.9.2
+  pkgver: 6.10.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -22,6 +22,9 @@ pkgbase:
     - ninja
     - qt6-declarative
     - qt6-shadertools
+    - shaderc
+    - vulkan-headers
+    - vulkan-icd-loader
   depends:
     - gcc-libs
     - glibc
@@ -31,11 +34,11 @@ pkgbase:
     - 'qt6-declarative: QML bindings'
     - 'qt6-shadertools: RHI renderer'
   source:
-    - git+https://code.qt.io/qt/qt3d#tag=v6.9.2
+    - git+https://code.qt.io/qt/qt3d#tag=v6.10.0
     - assimp-6.patch
   sha256sums:
-    - b70dc1007a439ed5971aaecfa9707d3250498dd373dede7c07ddd4cfde192d72
+    - 7e783a3f7c1e88f4005559c44179e33494fc649766255b87b329a4818a33dbde
     - 244589b0a353da757d61ce6b86d4fcf2fc8c11e9c0d9c5b109180cec9273055a
 pkgname:
   - name: qt6-3d
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
