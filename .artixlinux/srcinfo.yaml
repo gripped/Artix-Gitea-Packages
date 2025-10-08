@@ -1,9 +1,9 @@
 ---
-version: 6.9.2-1
+version: 6.10.0-1
 pkgbase:
   name: qt6-quick3d
   pkgdesc: Qt module and API for defining 3D content in Qt Quick
-  pkgver: 6.9.2
+  pkgver: 6.10.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -33,11 +33,11 @@ pkgbase:
   optdepends:
     - 'assimp: assimp import plugin'
   source:
-    - git+https://code.qt.io/qt/qtquick3d#tag=v6.9.2
+    - git+https://code.qt.io/qt/qtquick3d#tag=v6.10.0
     - assimp-6.patch
   sha256sums:
-    - 89afdd631d89a3be17adef93638f4406be374bbc2da438be741a28211f3f211c
+    - 86b647b0b728558888a92427de506f473aef63c379818662eb3395cd6ca7cddf
     - 573f00cdad90d77786fba80066d61d5ee97fc56a8b11d0896949acd16bda8e91
 pkgname:
   - name: qt6-quick3d
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
