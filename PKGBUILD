@@ -56,7 +56,7 @@ depends=(alsa-lib
          qt6-webchannel
          re2
          snappy
-         systemd-libs
+         libudev
          ttf-font
          zlib)
        # pciutils

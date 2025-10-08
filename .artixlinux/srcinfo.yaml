@@ -75,7 +75,7 @@ pkgbase:
     - qt6-webchannel
     - re2
     - snappy
-    - systemd-libs
+    - libudev
     - ttf-font
     - zlib
   optdepends:
