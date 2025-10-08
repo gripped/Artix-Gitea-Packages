@@ -1,10 +1,10 @@
 ---
-version: 6.9.2-2
+version: 6.10.0-1
 pkgbase:
   name: qt6-grpc
   pkgdesc: Provides the modules QtGrpc and QtProtobuf
-  pkgver: 6.9.2
-  pkgrel: 2
+  pkgver: 6.10.0
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -30,9 +30,9 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtgrpc#tag=v6.9.2
+    - git+https://code.qt.io/qt/qtgrpc#tag=v6.10.0
   sha256sums:
-    - 1879ecfbc8f8bece82c0bbd174a747b1822d834d168e1627425fb377ac55c961
+    - c67578ce5468b36e1491d8a557b6e157469601d4a0c52a132d425222ac2aebfb
 pkgname:
   - name: qt6-grpc
 # generated with artixpkg 0.37.4-1-any
