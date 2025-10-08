@@ -1,0 +1,71 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+
+pkgname=jami-qt
+pkgver=20250912.0
+pkgrel=2
+pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (Qt client)"
+arch=(x86_64)
+url="https://jami.net"
+license=(GPL3)
+groups=(jami)
+depends=(jami-daemon glib2 gdk-pixbuf2 libnm libnotify qrencode
+         qt6-declarative qt6-multimedia qt6-svg qt6-5compat qt6-webengine
+         qt6-webchannel qt6-shadertools hunspell tidy md4c)
+makedepends=(git cmake python qt6-networkauth qt6-tools)
+replaces=(jami-gnome jami-libclient)
+conflicts=(jami-gnome jami-libclient)
+_sfpmcommit=a2a0c72e4db38e1c5478bd3e0f67ff99fae11f00
+_md4ccommit=ad8d41127b94e2f0633ad14b3787f0bc4613a689
+_tidycommit=d08ddc2860aa95ba8e301343a30837f157977cba
+source=(git+https://git.jami.net/savoirfairelinux/jami-client-qt.git#tag=stable/$pkgver
+        jami-qt-SortFilterProxyModel::git+https://github.com/atraczyk/SortFilterProxyModel
+        jami-qt-zxing-cpp::git+https://github.com/nu-book/zxing-cpp
+        drop-qt-version-check.patch
+        qt-6.6.patch
+        fix-link.patch)
+sha256sums=('c5b14ea2a62db8e1660e2cbe58d0be6a7b589e01d4ce2945beb79535bf9ab69e'
+            'SKIP'
+            'SKIP'
+            'e64eb0e5abf1be8245aea7eb705659d225b0c711c286166e28541fc66532a220'
+            '61d7ca804ed18650274f233cd60a811518859b4c6739ecc246414c35c4b8d906'
+            '08d1950475835d9cf0b8cc37bca5946c9182c1e15d32b8b7efc657e3d38117f2')
+
+#pkgver() {
+#  cd jami-client-qt
+#  TZ=UTC git show -s --pretty=%cd --date=format-local:%Y%m%d HEAD
+#}
+
+prepare() {
+  # Drop strict Qt version check. Qt is ABI stable and jami is not using any private API
+  patch -p1 -d jami-client-qt < drop-qt-version-check.patch
+  # Workaround for running with Qt 6.6 https://git.jami.net/savoirfairelinux/jami-client-qt/-/issues/1397
+  patch -p1 -d jami-client-qt < qt-6.6.patch
+  # Fix linking
+  patch -p1 -d jami-client-qt < fix-link.patch
+
+  cd jami-client-qt
+  git submodule init
+  for _submodule in SortFilterProxyModel zxing-cpp; do
+    git submodule set-url 3rdparty/$_submodule "$srcdir"/jami-qt-$_submodule
+    git -c protocol.file.allow=always submodule update 3rdparty/$_submodule
+  done
+}
+
+build() {
+  CXXFLAGS+=" -I/usr/include/jami" \
+  LDFLAGS+=" -ljami" \
+  cmake -B build -S jami-client-qt \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None \
+    -DENABLE_LIBWRAP=ON \
+    -DJAMICORE_AS_SUBDIR=OFF \
+    -DWITH_DAEMON_SUBMODULE=OFF \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
+    -Wno-dev
+  make -C build VERBOSE=1
+}
+
+package() {
+  make -C build DESTDIR="${pkgdir}" install
+}
