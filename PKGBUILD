@@ -4,7 +4,7 @@
 
 pkgname=cherrytree
 pkgver=1.6.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Hierarchical note-taking application"
 arch=('x86_64')
 url="https://www.giuspen.com/cherrytree/"
