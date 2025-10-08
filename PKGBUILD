@@ -2,7 +2,7 @@
 
 pkgname=firefox
 pkgver=143.0.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -13,7 +13,7 @@ depends=(
   bash
   cairo
   dbus
-  ffmpeg
+  ffmpeg4.4
   fontconfig
   freetype2
   gcc-libs

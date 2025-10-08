@@ -1,10 +1,10 @@
 ---
-version: 143.0.4-1
+version: 143.0.4-1.1
 pkgbase:
   name: firefox
   pkgdesc: Fast, Private & Safe Web Browser
   pkgver: 143.0.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.mozilla.org/firefox/
   arch:
     - x86_64
@@ -37,7 +37,7 @@ pkgbase:
     - bash
     - cairo
     - dbus
-    - ffmpeg
+    - ffmpeg4.4
     - fontconfig
     - freetype2
     - gcc-libs
