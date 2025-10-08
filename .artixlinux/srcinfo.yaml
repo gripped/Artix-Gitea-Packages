@@ -1,8 +1,8 @@
 ---
-version: 6.9.2-1
+version: 6.10.0-1
 pkgbase:
   name: qt6-doc
-  pkgver: 6.9.2
+  pkgver: 6.10.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -36,9 +36,9 @@ pkgbase:
     - unixodbc
     - vulkan-headers
   source:
-    - https://download.qt.io/official_releases/qt/6.9/6.9.2/single/qt-everywhere-src-6.9.2.tar.xz
+    - https://download.qt.io/official_releases/qt/6.10/6.10.0/single/qt-everywhere-src-6.10.0.tar.xz
   sha256sums:
-    - 643f1fe35a739e2bf5e1a092cfe83dbee61ff6683684e957351c599767ca279c
+    - 81895fb038a9c3d6c6f698d7611339a189eb45c3d91746c7789b0b77a5981aa3
 pkgname:
   - name: qt6-doc
     pkgdesc: A cross-platform application and UI framework (Documentation)
@@ -46,4 +46,4 @@ pkgname:
     pkgdesc: Examples and demos from qt6 documentation
     depends:
       - qt6-doc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
