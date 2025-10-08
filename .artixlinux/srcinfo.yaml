@@ -1,9 +1,9 @@
 ---
-version: 6.9.2-1
+version: 6.10.0-1
 pkgbase:
   name: qt6-lottie
   pkgdesc: A family of player software for a certain json-based file format for describing 2d vector graphics animations
-  pkgver: 6.9.2
+  pkgver: 6.10.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -20,6 +20,7 @@ pkgbase:
     - git
     - ninja
     - qt6-declarative
+    - qt6-svg
   depends:
     - gcc-libs
     - glibc
@@ -27,9 +28,9 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtlottie#tag=v6.9.2
+    - git+https://code.qt.io/qt/qtlottie#tag=v6.10.0
   sha256sums:
-    - 46f1d1523deb9943e82fcc2ea84622483923808885c69bc361d6f3d8a5fcefac
+    - b38f3d8f5ca6ad1861e402209b320d91bc4162332b503f1ba183dd2ab79c1d74
 pkgname:
   - name: qt6-lottie
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
