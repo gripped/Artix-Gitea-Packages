@@ -1,9 +1,9 @@
 ---
-version: 6.9.2-1
+version: 6.10.0-1
 pkgbase:
   name: qt6-base
   pkgdesc: A cross-platform application and UI framework
-  pkgver: 6.9.2
+  pkgver: 6.10.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -23,11 +23,13 @@ pkgbase:
     - git
     - gst-plugins-base-libs
     - gtk3
+    - jemalloc
     - libfbclient
     - libpulse
     - mariadb-libs
     - ninja
     - postgresql
+    - renderdoc
     - unixodbc
     - vulkan-headers
     - xmlstarlet
@@ -66,6 +68,7 @@ pkgbase:
     - sqlite
     - libelogind
     - tslib
+    - wayland
     - xcb-util-cursor
     - xcb-util-image
     - xcb-util-keysyms
@@ -83,14 +86,13 @@ pkgbase:
     - 'pango: GTK platform plugin'
     - 'perl: for syncqt'
     - 'postgresql-libs: PostgreSQL driver'
-    - 'qt6-wayland: to run Qt6 applications in a Wayland session'
     - 'unixodbc: ODBC driver'
   source:
-    - git+https://code.qt.io/qt/qtbase#tag=v6.9.2
+    - git+https://code.qt.io/qt/qtbase#tag=v6.10.0
     - qt6-base-cflags.patch
     - qt6-base-nostrip.patch
   sha256sums:
-    - 4660524959f547a58839ff56c695994e061dc3fa3646b06cca951a7ef1748aae
+    - be60bf981a67824c2a27155d794eb30d10a6daa71db37695668a8a703acff929
     - 5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78
     - 4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094
 pkgname:
@@ -131,6 +133,7 @@ pkgname:
       - sqlite
       - libelogind
       - tslib
+      - wayland
       - xcb-util-cursor
       - xcb-util-image
       - xcb-util-keysyms
@@ -144,6 +147,6 @@ pkgname:
     pkgdesc: Private headers for Qt6 Xcb
     groups: []
     depends:
-      - qt6-base=6.9.2
+      - qt6-base=6.10.0
     optdepends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
