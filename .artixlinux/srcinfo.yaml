@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: discover
   pkgdesc: KDE and Plasma resources management GUI
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/discover/
   arch:
     - x86_64
