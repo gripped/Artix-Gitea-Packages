@@ -1,0 +1,38 @@
+---
+version: 3.2-3
+pkgbase:
+  name: j4-dmenu-desktop
+  pkgdesc: Find .desktop files and offer you a menu to start an application using dmenu
+  pkgver: 3.2
+  pkgrel: 3
+  url: https://github.com/enkore/j4-dmenu-desktop
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - catch2
+    - cmake
+    - meson
+  depends:
+    - fmt
+    - gcc-libs
+    - glibc
+    - spdlog
+  optdepends:
+    - 'dmenu: The default backend'
+    - 'bemenu: An alternative backend'
+    - 'wmenu: An alternative backend'
+  source:
+    - j4-dmenu-desktop-3.2.tar.gz::https://github.com/enkore/j4-dmenu-desktop/archive/r3.2.tar.gz
+    - j4-dmenu-desktop-3.2.tar.gz.sig::https://github.com/enkore/j4-dmenu-desktop/releases/download/r3.2/r3.2.tar.gz.sig
+  validpgpkeys:
+    - 7B0F58A5E0F1A2EA11578A731A14CB3464CBE5BF
+  sha256sums:
+    - 99e2f394570f8fb0b1a2cde2926980fd9685ce60e1500b575057f8424c9ad555
+    - SKIP
+pkgname:
+  - name: j4-dmenu-desktop
+# generated with artixpkg 0.37.4-1-any
