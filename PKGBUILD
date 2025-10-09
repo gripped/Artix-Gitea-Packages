@@ -3,7 +3,7 @@
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
 
 pkgname=certbot
-pkgver=5.0.0
+pkgver=5.1.0
 pkgrel=1
 pkgdesc='An ACME client'
 arch=(any)
@@ -44,9 +44,9 @@ source=(
   "$_repo::git+https://github.com/certbot/certbot#tag=v$pkgver"
   tmpfiles.conf
 )
-sha512sums=('4a5cd2709290ae26f5c5a85a1f619cd39efcdd09297af69efd753d801b37ddd76c112c9cb6137d4631ad24defd806d37fc0b87995c35cae05873987b96ee0963'
+sha512sums=('c0b5488922c6e13d7d5bb2852130486f3d4d652b7bb16c69ac307dd6f1d09a28f988e26823d8e47ee2aa17ab3e213b3b18e0cc6bfc57f89ff7d894cbbbbf36cd'
             'fbb7bb4591876aeb2e118c3f3fc8ff507b6a3127de0f921c689e1d74c70320b4f2b8bf05b488ec4f714259701f1ac54e64a9f6181475da6bd6d1e3da3a602217')
-b2sums=('5fd1ad0803c76b1449ba763bbebedc099191d51b01d6771e0b8c2a888bf0019bc92e585d44dfd8472157deb10ac07e1bcdc742d20822fd82e2f10fffacd08553'
+b2sums=('547e18cd6df2229a06dc5c188d8f6fa62d3f672ba28d3b39ccf5b9a4a8a3a533f9d3565f439c1ec4e5b2e2d900c05c8ad30cd4d8ad88db07a96136eb0c814481'
         '7d2c26a9953d3b5a899053bdd7bd77051c67abe6480af2bfaaee06f20a399b0b4ccccc0af35cfe9e6d2b1fc833dbff928ba46771a9127720073dda29aef9a2e0')
 
 build() {
