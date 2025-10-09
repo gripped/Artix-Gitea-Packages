@@ -1,10 +1,10 @@
 ---
-version: 3.0.6-1
+version: 3.0.6-2
 pkgbase:
   name: gimp
   pkgdesc: GNU Image Manipulation Program
   pkgver: 3.0.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gimp.org/
   install: gimp.install
   arch:
@@ -13,7 +13,6 @@ pkgbase:
     - GPL-3.0-or-later
   makedepends:
     - alsa-lib
-    - appstream
     - cfitsio
     - ghostscript
     - gi-docgen
@@ -28,7 +27,7 @@ pkgbase:
     - qoi
     - vala
   depends:
-    - appstream-glib
+    - appstream
     - babl
     - cairo
     - fontconfig
