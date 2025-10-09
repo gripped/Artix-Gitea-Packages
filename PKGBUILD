@@ -2,7 +2,7 @@
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=vulkan-headers
-pkgver=1.4.328.0
+pkgver=1.4.328.1
 pkgrel=1
 epoch=1
 pkgdesc="Vulkan header files and API registry"
@@ -25,7 +25,7 @@ source=(
   "git+https://github.com/KhronosGroup/Vulkan-Headers#tag=vulkan-sdk-$pkgver"
   0001-Remove-Werror.patch
 )
-b2sums=('12425947d1ce7e3cd5d364394d0c8ab74e440e24df93ec5997ec5ca2b9731fcc693b9adc2857f2ad5f61c8b04147ecc6cb092f31aded8e970f379be93a787bb9'
+b2sums=('3055d45fe4d276a771b148a24149275ee67cb844ec1a2853cc07bc5bb8cd847b3c1563c87929dcd5cee55c797f2e529dd50c57d2d31d04b05cb4de05d774a63b'
         'f40a6ca5aa9d80b598b0d04ae9171062152ede95d663189ae2617bf86a23a6885cc8bcf2923e3b75fa1eb8f9c8403eb79a6d9b33019a10261abc6707b76f0c29')
 
 prepare() {
