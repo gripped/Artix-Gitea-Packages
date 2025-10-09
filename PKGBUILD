@@ -5,7 +5,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=spirv-headers
-pkgver=1.4.328.0
+pkgver=1.4.328.1
 pkgrel=1
 epoch=1
 pkgdesc="SPIR-V header files and registry"
