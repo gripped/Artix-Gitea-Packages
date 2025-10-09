@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: kde-gtk-config
   pkgdesc: Syncs KDE settings to GTK applications
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -30,6 +30,7 @@ pkgbase:
     - qt6-base
     - qt6-svg
     - sh
+    - xdg-desktop-portal-gtk
     - xsettingsd
   optdepends:
     - 'gtk3: GTK3 apps support'

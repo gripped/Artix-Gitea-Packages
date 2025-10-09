@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kde-gtk-config
 pkgver=6.4.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Syncs KDE settings to GTK applications'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -24,6 +23,7 @@ depends=(gcc-libs
          qt6-base
          qt6-svg
          sh
+         xdg-desktop-portal-gtk
          xsettingsd)
 makedepends=(extra-cmake-modules
              gtk3
