@@ -1,10 +1,10 @@
 ---
-version: 4.2.8.p18-4
+version: 4.2.8.p18-5
 pkgbase:
   name: ntp
   pkgdesc: Network Time Protocol reference implementation
   pkgver: 4.2.8.p18
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.ntp.org/
   arch:
     - x86_64
