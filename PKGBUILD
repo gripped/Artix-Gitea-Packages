@@ -26,7 +26,7 @@ pkgname=(
   linux-firmware-realtek
 )
 pkgver=20250917
-pkgrel=1
+pkgrel=2
 pkgdesc="Firmware files for Linux"
 url="https://gitlab.com/kernel-firmware/linux-firmware"
 license=(LicenseRef-WHENCE)
@@ -51,6 +51,7 @@ _backports=(
 )
 
 _reverts=(
+  ba41835c21ebbbba92fce71d30f747490313eaf6
 )
 
 prepare() {

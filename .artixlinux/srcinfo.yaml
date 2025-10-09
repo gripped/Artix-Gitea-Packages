@@ -1,10 +1,10 @@
 ---
-version: 20250917-1
+version: 20250917-2
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
   pkgver: 20250917
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
     - any
