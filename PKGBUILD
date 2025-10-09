@@ -3,7 +3,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=unixodbc
-pkgver=2.3.13
+pkgver=2.3.14
 pkgrel=1
 pkgdesc="ODBC is an open specification for providing application developers with a predictable API with which to access Data Sources"
 arch=('x86_64')
@@ -12,11 +12,9 @@ url="http://www.unixodbc.org/"
 backup=('etc/odbc.ini' 'etc/odbcinst.ini')
 depends=('readline' 'libltdl' 'glibc')
 provides=('libodbc.so' 'libodbccr.so' 'libodbcinst.so')
-source=(
-    https://www.unixodbc.org/unixODBC-$pkgver.tar.gz
-    #ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$pkgver.tar.gz
-)
-sha256sums=('119afef5f4cb04e780ca6cf763265b9fb2b99c4c11349a3f9cab14069d2c7c2b')
+source=(#ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$pkgver.tar.gz
+        https://github.com/lurcher/unixODBC/releases/download/v${pkgver}/unixODBC-${pkgver}.tar.gz)
+sha256sums=('4e2814de3e01fc30b0b9f75e83bb5aba91ab0384ee951286504bb70205524771')
 
 prepare() {
     cd unixODBC-${pkgver}
