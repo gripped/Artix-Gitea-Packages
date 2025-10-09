@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.85-1
+version: 1.0.0.85-1.1
 pkgbase:
   name: steam
   pkgdesc: Valve's digital software delivery system
   pkgver: 1.0.0.85
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://steampowered.com/
   arch:
     - x86_64
