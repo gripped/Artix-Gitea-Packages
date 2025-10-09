@@ -3,7 +3,7 @@
 # Contributor: Bartosz Taudul <wolf@nereid.pl>
 
 pkgname=lib32-vulkan-utility-libraries
-pkgver=1.4.328.0
+pkgver=1.4.328.1
 pkgrel=1
 pkgdesc="Vulkan Utility Libraries (32-bit)"
 url="https://www.vulkan.org/"
