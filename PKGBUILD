@@ -2,7 +2,7 @@
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=lib32-vulkan-icd-loader
-pkgver=1.4.328.0
+pkgver=1.4.328.1
 pkgrel=1
 pkgdesc="Vulkan Installable Client Driver (ICD) Loader (32-bit)"
 url="https://www.vulkan.org/"
