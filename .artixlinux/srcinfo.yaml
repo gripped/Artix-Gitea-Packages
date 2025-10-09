@@ -1,0 +1,45 @@
+---
+version: 0.22.0-1
+pkgbase:
+  name: thrift
+  pkgdesc: Scalable cross-language services framework for IPC/RPC
+  pkgver: 0.22.0
+  pkgrel: 1
+  url: https://thrift.apache.org
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - boost
+    - emacs-nox
+    - git
+    - libevent
+    - qt5-base
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - openssl
+    - zlib
+  optdepends:
+    - 'qt5-base: TQTcpServer (Qt5) support'
+  provides:
+    - libthrift-0.22.0.so
+    - libthrift_c_glib.so
+    - libthriftnb-0.22.0.so
+    - libthriftqt5-0.22.0.so
+    - libthriftz-0.22.0.so
+  source:
+    - git+https://github.com/apache/thrift.git#tag=v0.22.0?signed
+    - thrift-THRIFT-5680-accept-failing-tests.patch
+    - thrift-remove-tests-with-compilation-error.patch
+  validpgpkeys:
+    - 8CD87F186F06E958EFCA963D76BD340FC4B75865
+  sha512sums:
+    - 844c1c50d024c29fd76a5f3b7cf5f903656d5d80c95d621c7c52bb48653ca6c1bd5a861c04689cfd624b5e1fea36018ef3044fea1476f9f3aefe577cdb380643
+    - 6651272168138690d3b33e4f97c1ef1e5063e88fd9f586c89cfd9f98eaff3320a0ca09f7bc462c3dc5d01f2da4f77b9154b3edf86cfbdec824d2d43bd60fe97d
+    - c0afceff4a03ebbda4c3d6ecf017fde19e1354c75772d2f992bc9253f05c06c145be2e1ff0d2f7ec87501954201231dbd057aaf56432ea86af08daf905475b84
+pkgname:
+  - name: thrift
+# generated with artixpkg 0.37.4-1-any

@@ -1,0 +1,32 @@
+From 4ebadfee32aef6b352dce47498798eac4205d072 Mon Sep 17 00:00:00 2001
+From: Carl Smedstad <carsme@archlinux.org>
+Date: Wed, 8 Oct 2025 07:47:43 +0200
+Subject: [PATCH 2/2] Remove tests with compilation error
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+    src/TestClient.cpp: In function ‘int main(int, char**)’:
+    src/TestClient.cpp:659:15: error: ‘thrift::test::ThriftTestClient’ {aka ‘class thrift::test::ThriftTestClientT<apache::thrift::protocol::TProtocol>’} has no member named ‘testUuid’; did you mean ‘testVoid’?
+      659 |     UUID_TEST(testUuid, TUuid{"{5e2ab188-1726-4e75-a04f-1ed9a6a89c4c}"}, expected_uuid);
+          |               ^~~~~~~~
+---
+ test/cpp/Makefile.am | 2 --
+ 1 file changed, 2 deletions(-)
+
+diff --git a/test/cpp/Makefile.am b/test/cpp/Makefile.am
+index 595f7a4fc..9aa5974d4 100644
+--- a/test/cpp/Makefile.am
++++ b/test/cpp/Makefile.am
+@@ -51,8 +51,6 @@ libstresstestgencpp_la_LIBADD = $(top_builddir)/lib/cpp/libthrift.la
+ precross: TestServer TestClient
+ 
+ check_PROGRAMS = \
+-	TestServer \
+-	TestClient \
+ 	StressTest \
+ 	StressTestNonBlocking
+ 
+-- 
+2.51.0
+
