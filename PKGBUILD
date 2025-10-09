@@ -2,7 +2,7 @@
 # Maintainer: Laurent Carlier <lordheavym@gmail.com>
 
 pkgname=vulkan-validation-layers
-pkgver=1.4.328.0
+pkgver=1.4.328.1
 pkgrel=1
 pkgdesc="Vulkan Validation Layers"
 url="https://www.vulkan.org/"
@@ -31,7 +31,7 @@ options=(
 )
 groups=(vulkan-devel)
 source=("git+https://github.com/KhronosGroup/Vulkan-ValidationLayers#tag=vulkan-sdk-$pkgver")
-b2sums=('7d043dfd061078127b3bae65785415c283d0741df86544199787cc2364a19d320399f3076e105df0e19c8fb6e76ac83d0fa7220785609a81abc2dba2e62b6abb')
+b2sums=('a2e928bb2483511dc37b093428ce07b1db6eee0e4740673570e2a558d2a34c496c127813b88df3cdcaa05f86bdb6a768c028fd4389d6b19d1b09e56010836276')
 
 build() {
   local cmake_options=(
