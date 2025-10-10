@@ -9,7 +9,7 @@
 
 pkgname=julia
 epoch=2
-pkgver=1.11.7
+pkgver=1.12.0
 pkgrel=1
 arch=(x86_64)
 pkgdesc='High-level, high-performance, dynamic programming language'
@@ -19,12 +19,13 @@ depends=(blas64-openblas
          fftw
          libblastrampoline
          libgit2
+         libnghttp2
          libunwind
          libutf8proc
          lld
          llvm-julia-libs
-         mbedtls2
          openlibm
+         openssl
          7zip
          pcre2
          suitesparse)
@@ -36,50 +37,23 @@ makedepends=(cmake
              python)
 optdepends=('gnuplot: If using the Gaston Package from julia')
 source=(https://github.com/JuliaLang/julia/releases/download/v$pkgver/$pkgname-$pkgver-full.tar.gz{,.asc}
-        localhost.patch
         c12e8515.patch
-        julia-hardcoded-libs.patch
-        julia-libgit2-1.8.patch
-        julia-libgit2-1.9.patch
-        julia-metainfo.patch
-        julia-curl-1.10.patch)
+        julia-hardcoded-libs.patch)
 backup=(etc/julia/startup.jl)
-sha256sums=('a6e96ecbd60057c91dc7a99fc1b37517b361a2df8fd1c46ffdad1d9bce89967d'
+sha256sums=('2dba42b3f143564f96c60948d1100db0902aa3cb98ebf89c156b4091f05d9b89'
             'SKIP'
-            'fc94d316bd56902f1720da55c331d43d315ce487d6b4cc7e5ffcb207cf9a8299'
             '2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367'
-            'e981ce26bb2394333c83512a607e8aa48ae0d66ec40e0f0b6d97ec70b6baa39f'
-            '3ba9a85464e874c8ac4caeba155a217e34c3e78e85eccaeb3c2a331ed83882b3'
-            '6b4a88fdfddd4c78c23cd8c26f5db1ca89ed6f1ae5558cf458a40482f6c64f98'
-            '074690d913b9544bef11468454fbf5f52005b2a12160123340cfacc91d4daf9f'
-            'f9953782524471c5a8ce819bf00bd47f8272cea17058d15f24522d01b5e827e5')
+            '120c3b77a1aecfdb045ac64902164210ea8dd139d2fb8e8b098155b344a8e1fb')
 validpgpkeys=('3673DF529D9049477F76B37566E3C7DC03D6E495') # Julia (Binary signing key) <buildbot@julialang.org>
 options=(!lto)
 
 prepare() {
   cd $pkgname-$pkgver
 
-# Update metadata install path
-  patch -p1 -i ../julia-metainfo.patch
 # Revert test that depends on patched gmp
   patch -Rp1 -i ../c12e8515.patch
-# libgit2 1.8 compatibility
-  patch -p1 -i ../julia-libgit2-1.8.patch
-# libgit2 1.9 compatibility
-  patch -p1 -i ../julia-libgit2-1.9.patch
 # Don't hardcode library names
   patch -p1 -i ../julia-hardcoded-libs.patch
-# Fix test that fails in Artix's build pipeline
-  patch -p1 -i ../localhost.patch
-# Fix segfaults with curl 1.10
-  cd stdlib/srccache
-  _SAsha=89d3c7dded535a77551e763a437a6d31e4d9bf84
-  tar -xzf Downloads-$_SAsha.tar.gz
-  patch -d JuliaLang-Downloads.jl-${_SAsha:0:7} -p1 < "$srcdir"/julia-curl-1.10.patch
-  rm Downloads-$_SAsha.tar.gz
-  tar -czf Downloads-$_SAsha.tar.gz JuliaLang-Downloads.jl-${_SAsha:0:7}
-  md5sum Downloads-$_SAsha.tar.gz | cut -d ' ' -f 1 > ../../deps/checksums/Downloads-$_SAsha.tar.gz/md5
-  sha512sum Downloads-$_SAsha.tar.gz | cut -d ' ' -f 1 > ../../deps/checksums/Downloads-$_SAsha.tar.gz/sha512
 }
 
 _make() {
@@ -107,8 +81,9 @@ _make() {
     USE_SYSTEM_UTF8PROC=1
     USE_SYSTEM_LIBGIT2=1
     USE_SYSTEM_LIBSSH2=1
-    USE_SYSTEM_MBEDTLS=1
-    USE_SYSTEM_CURL=0
+    USE_SYSTEM_OPENSSL=1
+    USE_SYSTEM_NGHTTP2=1
+    USE_SYSTEM_CURL=1
     USE_SYSTEM_PATCHELF=1
     USE_SYSTEM_ZLIB=1
     USE_SYSTEM_P7ZIP=1
@@ -119,7 +94,7 @@ _make() {
     LIBLAPACK=-llapack64
     LIBLAPACKNAME=liblapack64
     VERBOSE=1
-    JLDFLAGS="$LDFLAGS -lLLVM-16jl"
+    JLDFLAGS="$LDFLAGS -lLLVM-18jl"
     LLVM_CONFIG=/usr/lib/llvm-julia/bin/llvm-config
   )
 
@@ -145,12 +120,13 @@ check() {
     --skip errorshow \
     --skip Downloads \
     --skip Sockets \
+    --skip Profile \
     --skip channels \
     --skip nghttp2_jll \
     --skip GMP_jll \
     --skip LibCURL \
     --skip LibSSH2_jll \
-    --skip MbedTLS_jll \
+    --skip OpenSSL_jll \
     --skip MPFR_jll \
     --skip OpenBLAS_jll \
     --skip SuiteSparse_jll \
