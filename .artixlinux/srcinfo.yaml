@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-2
+version: 6.4.5-4
 pkgbase:
   name: plasma-desktop
   pkgdesc: KDE Plasma Desktop
   pkgver: 6.4.5
-  pkgrel: 2
+  pkgrel: 4
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -81,7 +81,6 @@ pkgbase:
     - qt6-5compat
     - qt6-base
     - qt6-declarative
-    - qt6-wayland
     - sdl2
     - solid
     - sonnet
