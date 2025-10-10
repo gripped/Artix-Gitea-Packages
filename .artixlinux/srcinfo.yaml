@@ -35,4 +35,4 @@ pkgbase:
     - 5085b155531670bbc019bb7a29eebc333f26e5f8076ef6c2593b22a25daccccf
 pkgname:
   - name: qt5-tools
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
