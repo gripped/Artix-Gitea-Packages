@@ -3,7 +3,7 @@
 
 pkgname=('llvm' 'llvm-libs')
 pkgver=21.1.3
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://llvm.org/"
 license=('Apache-2.0 WITH LLVM-exception')
@@ -141,6 +141,7 @@ package_llvm() {
 package_llvm-libs() {
   pkgdesc="LLVM runtime libraries"
   depends=('gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'libxml2')
+  depends+=('llvm20-libs') # help bootstrapping crystal/ldc/rust (remove me!)
   provides=('libLLVM.so' 'libLTO.so' 'libRemarks.so')
 
   install -d "$pkgdir/usr/lib"
