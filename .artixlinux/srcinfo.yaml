@@ -1,10 +1,10 @@
 ---
-version: 0.1.0-8
+version: 0.1.0-9
 pkgbase:
   name: hyprland-qt-support
   pkgdesc: QML style provider for Hypr* QT apps
   pkgver: 0.1.0
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/hyprwm/hyprland-qt-support
   arch:
     - x86_64
@@ -20,7 +20,6 @@ pkgbase:
     - libhyprlang.so
     - qt6-base
     - qt6-declarative
-    - qt6-wayland
   provides:
     - libhyprland-quick-style-impl.so
     - libhyprland-quick-style.so
