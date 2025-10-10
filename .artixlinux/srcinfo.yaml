@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: libplasma
   pkgdesc: Plasma library and runtime components
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -43,7 +43,6 @@ pkgbase:
     - qt6-5compat
     - qt6-base
     - qt6-declarative
-    - qt6-wayland
     - wayland
   conflicts:
     - plasma-framework
