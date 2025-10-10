@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: kscreen
   pkgdesc: KDE screen management software
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -37,7 +37,6 @@ pkgbase:
     - qt6-base
     - qt6-declarative
     - qt6-sensors
-    - qt6-wayland
     - wayland
   source:
     - https://download.kde.org/stable/plasma/6.4.5/kscreen-6.4.5.tar.xz
