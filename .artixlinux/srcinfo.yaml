@@ -1,10 +1,10 @@
 ---
-version: 1:6.4.5-1.1
+version: 1:6.4.5-2
 pkgbase:
   name: spectacle
   pkgdesc: KDE screenshot capture utility
   pkgver: 6.4.5
-  pkgrel: 1.1
+  pkgrel: 2
   epoch: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -47,7 +47,6 @@ pkgbase:
     - qt6-declarative
     - qt6-imageformats
     - qt6-multimedia
-    - qt6-wayland
     - wayland
     - xcb-util
     - xcb-util-cursor
