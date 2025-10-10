@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: kwayland
   pkgdesc: Qt-style Client and Server library wrapper for the Wayland libraries
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -23,7 +23,6 @@ pkgbase:
     - gcc-libs
     - glibc
     - qt6-base
-    - qt6-wayland
     - wayland
   source:
     - https://download.kde.org/stable/plasma/6.4.5/kwayland-6.4.5.tar.xz

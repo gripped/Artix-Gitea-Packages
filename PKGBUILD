@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kwayland
 pkgver=6.4.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Qt-style Client and Server library wrapper for the Wayland libraries'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -14,7 +13,6 @@ license=(LGPL-2.0-or-later)
 depends=(gcc-libs
          glibc
          qt6-base
-         qt6-wayland
          wayland)
 makedepends=(doxygen
              extra-cmake-modules
