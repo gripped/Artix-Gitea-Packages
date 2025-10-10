@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=xdg-desktop-portal-kde
 pkgver=6.4.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='A backend implementation for xdg-desktop-portal using Qt/KF5'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -33,7 +32,6 @@ depends=(gcc-libs
          plasma-workspace
          qt6-base
          qt6-declarative
-         qt6-wayland
          wayland
          xdg-desktop-portal)
 makedepends=(extra-cmake-modules
