@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-3
+version: 6.4.5-4
 pkgbase:
   name: plasma-integration
   pkgdesc: Qt Platform Theme integration plugins for the Plasma workspaces
   pkgver: 6.4.5
-  pkgrel: 3
+  pkgrel: 4
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -51,7 +51,6 @@ pkgbase:
     - qqc2-desktop-style
     - qt6-base
     - qt6-declarative
-    - qt6-wayland
     - wayland
   source:
     - https://download.kde.org/stable/plasma/6.4.5/plasma-integration-6.4.5.tar.xz
@@ -89,7 +88,6 @@ pkgname:
       - qqc2-desktop-style
       - qt6-base
       - qt6-declarative
-      - qt6-wayland
       - wayland
       - noto-fonts
       - ttf-hack
