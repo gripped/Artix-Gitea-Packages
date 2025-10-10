@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: powerdevil
   pkgdesc: Manages the power consumption settings of a Plasma Shell
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -44,7 +44,6 @@ pkgbase:
     - qcoro
     - qt6-base
     - qt6-declarative
-    - qt6-wayland
     - solid
     - libelogind
     - wayland
