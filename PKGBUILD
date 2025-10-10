@@ -6,7 +6,7 @@ pkgname=(pyside6
          pyside6-tools
          shiboken6)
 pkgver=6.10.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -43,15 +43,14 @@ makedepends=(clang
              qt6-webchannel
              qt6-webengine
              qt6-websockets)
-source=(git+https://code.qt.io/pyside/pyside-setup#tag=v$pkgver
-        fix-header-install-dir.patch)
-sha256sums=('e662a37c7f3f416d896501df07ad99103df5758a07c19f0c5493f96c199046d7'
-            '3bc87409ea3dc41847f1d5d7612fd97931b67f1b40510b465543a8ef5c9764ff')
+source=(git+https://code.qt.io/pyside/pyside-setup#tag=v$pkgver)
+#        fix-header-install-dir.patch)
+sha256sums=('e662a37c7f3f416d896501df07ad99103df5758a07c19f0c5493f96c199046d7')
 
 prepare() {
   cd pyside-setup
-  git revert -n 05e328476f2d6ef8a0f3f44aca1e5b1cdb7499fc # Revert broken cmake files
-  patch -p1 -i ../fix-header-install-dir.patch # Revert broken header install dir
+#  git revert -n 05e328476f2d6ef8a0f3f44aca1e5b1cdb7499fc # Revert broken cmake files
+#  patch -p1 -i ../fix-header-install-dir.patch # Revert broken header install dir
 }
 
 build() {
