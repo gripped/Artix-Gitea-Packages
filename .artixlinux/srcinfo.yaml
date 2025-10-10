@@ -1,10 +1,10 @@
 ---
-version: 5.1.10-3
+version: 5.1.10-4
 pkgbase:
   name: fcitx5-qt
   pkgdesc: Fcitx5 Qt Library (Qt5 & Qt6 integrations)
   pkgver: 5.1.10
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/fcitx/fcitx5-qt
   arch:
     - x86_64
@@ -24,7 +24,6 @@ pkgbase:
     - libxkbcommon
     - fcitx5
     - qt6-base
-    - qt6-wayland
     - wayland
   source:
     - git+https://github.com/fcitx/fcitx5-qt.git#tag=5.1.10?signed
