@@ -1,0 +1,37 @@
+---
+version: 0.2.13-1
+pkgbase:
+  name: libmanette
+  pkgdesc: Simple GObject game controller library
+  pkgver: 0.2.13
+  pkgrel: 1
+  url: https://gnome.pages.gitlab.gnome.org/libmanette/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - gobject-introspection
+    - meson
+    - vala
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - hidapi
+    - libevdev
+    - libgudev
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libmanette.git#tag=0.2.13
+  b2sums:
+    - ba0faf503bc96520ab94e74ea7eebc60f2679dba9ba132883259f23246f51ba920aa0bcb8d17af5dbd8f745e392f13d715e520af6f9d7d294acc79a1f910573c
+pkgname:
+  - name: libmanette
+    provides:
+      - libmanette-0.2.so
+  - name: libmanette-docs
+    pkgdesc: Simple GObject game controller library (documentation)
+    depends: []
+# generated with artixpkg 0.37.4-1-any
