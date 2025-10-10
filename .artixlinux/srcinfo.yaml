@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-1
+version: 6.4.5-2
 pkgbase:
   name: krdp
   pkgdesc: Library and examples for creating an RDP server
   pkgver: 6.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -30,7 +30,6 @@ pkgbase:
     - libxkbcommon
     - qt6-base
     - qt6-declarative
-    - qt6-wayland
     - qtkeychain-qt6
     - wayland
   source:

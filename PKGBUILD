@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=krdp
 pkgver=6.4.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=2
 pkgdesc='Library and examples for creating an RDP server'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -23,7 +22,6 @@ depends=(freerdp
          libxkbcommon
          qt6-base
          qt6-declarative
-         qt6-wayland
          qtkeychain-qt6
          wayland)
 makedepends=(extra-cmake-modules
