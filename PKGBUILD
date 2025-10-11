@@ -10,12 +10,11 @@ license=('Apache-2.0 WITH LLVM-exception')
 arch=('any')
 depends=('wasi-libc' 'wasi-compiler-rt')
 makedepends=('cmake' 'ninja' 'python' 'clang' 'llvm' 'lld' 'util-linux')
-source=("https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver/llvm-project-$pkgver.src.tar.xz"{,.sig}
+source=("https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver/llvm-project-$pkgver.src.tar.xz"
         no-normalize-triple.diff
         WASI.cmake
         wasi-sdk.cmake)
 b2sums=('ad9ee083584cb72fea3722feb518f6c933c3a34ba91b1ca8b724f461aa744475a783512dd6f0ab60d533c73b37e42b32a06f905d4869f770a68180649656df44'
-        'SKIP'
         'cdf8d39eb9c11ba363159f995bb7236a11fa5c42d2bc92f7253fb3429e552020902f54afe8a93782b004d55387100eaf84d651809e7d171b2a19c7f086ba119e'
         'c829d807c257921fddb8c4d3752ad2291a2beb116d414dd31e34b7f6b01599d8c4807db87ef9930456ed8c9f30e8648e77028fa0b903c3a5ea840514f6022cf4'
         '9f20eaa64069d20510a5ba6acdedfa4bbf723e1da13792bbbdfc57cc20d232962f5603a56c9723879624ab65e18f3770fda509dc76e3f099c3744acbfeabafc2')
