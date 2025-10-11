@@ -31,8 +31,8 @@ repos:
   world:
     version: 20.1.6-2
     packages:
-      - wasi-libc++-20.1.6-2-any.pkg.tar.zst
-      - wasi-libc++abi-20.1.6-2-any.pkg.tar.zst
+      - wasi-libc++-20.1.6-2.1-any.pkg.tar.zst
+      - wasi-libc++abi-20.1.6-2.1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
