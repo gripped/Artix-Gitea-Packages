@@ -45,7 +45,7 @@ pkgname:
     depends:
       - wasi-libc
       - wasi-compiler-rt
-      - wasi-libc++abi=20.1.6-2
+      - wasi-libc++abi=20.1.6-2.1
   - name: wasi-libc++abi
     pkgdesc: Low level support for the WASI LLVM C++ standard library
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
