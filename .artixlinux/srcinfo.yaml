@@ -1,11 +1,11 @@
 ---
-version: 1.17.0-1
+version: 1.17.0-2
 pkgbase:
   name: seabios
   pkgdesc: Open-source legacy BIOS implementation
   pkgver: 1.17.0
-  pkgrel: 1
-  url: https://www.seabios.org/SeaBIOS
+  pkgrel: 2
+  url: https://www.seabios.org/
   arch:
     - any
   license:
@@ -75,4 +75,4 @@ pkgname:
       - 'seabios-docs: for documentation'
   - name: seabios-docs
     pkgdesc: Open-source legacy BIOS implementation - documentation
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
