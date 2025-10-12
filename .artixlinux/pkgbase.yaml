@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-goblins
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,17 +21,17 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.16-2
+    packages:
+      - clazy-1.16-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
     packages: []
     debug: []
   world:
-    version: 1.16-2
-    packages:
-      - clazy-1.16-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
