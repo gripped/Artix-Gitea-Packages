@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.12.0-1
+    version: 1.12.0-2
     packages:
-      - libxkbcommon-1.12.0-1-x86_64.pkg.tar.zst
-      - libxkbcommon-x11-1.12.0-1-x86_64.pkg.tar.zst
-      - libxkbcommon-doc-1.12.0-1-x86_64.pkg.tar.zst
+      - libxkbcommon-1.12.0-2-x86_64.pkg.tar.zst
+      - libxkbcommon-x11-1.12.0-2-x86_64.pkg.tar.zst
+      - libxkbcommon-doc-1.12.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.11.0-1

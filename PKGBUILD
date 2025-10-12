@@ -9,7 +9,7 @@ pkgname=(
   libxkbcommon-doc
 )
 pkgver=1.12.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Keymap handling library for toolkits and window systems'
 url='https://xkbcommon.org/'
 arch=(x86_64)
@@ -32,11 +32,18 @@ checkdepends=(
   libgl
   xorg-server-xvfb
 )
-source=("git+https://github.com/xkbcommon/libxkbcommon#tag=xkbcommon-$pkgver")
-b2sums=('222651ee962dd7ae13c3c1269540c4a9ef80663292554304c3d6701b110ff04a774ded729db5b0a34568a72b74921bc97e6b8d222ed57f2f69f2fc121586974c')
+source=(
+  "git+https://github.com/xkbcommon/libxkbcommon#tag=xkbcommon-$pkgver"
+  0001-interactive-wayland-Prevent-buffer-use-after-free.patch
+)
+b2sums=('222651ee962dd7ae13c3c1269540c4a9ef80663292554304c3d6701b110ff04a774ded729db5b0a34568a72b74921bc97e6b8d222ed57f2f69f2fc121586974c'
+        'f303406da00bbc8235854e57982de25fcad462e91b15a30e5bc925f858a543a260640c5b88204f86f84450b7de4b61e98498eba2702bf348636f81cc5dd088d8')
 
 prepare() {
   cd libxkbcommon
+
+  # Fix crash of xkbcli interactive-wayland
+  git apply -3 ../0001-interactive-wayland-Prevent-buffer-use-after-free.patch
 }
 
 build() {

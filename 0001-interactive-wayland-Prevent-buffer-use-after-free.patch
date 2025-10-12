@@ -1,0 +1,28 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: "Jan Alexander Steffens (heftig)" <heftig@archlinux.org>
+Date: Sat, 11 Oct 2025 19:13:11 +0200
+Subject: [PATCH] interactive-wayland: Prevent buffer use after free
+
+The tool would crash on the second call to `buffer_create` calling
+`wl_buffer_destroy` on a dangling `inter->buf`.
+
+Fixes: e13faebb2a5a2b250a9c320515942edc1e652649
+---
+ tools/interactive-wayland.c | 3 +++
+ 1 file changed, 3 insertions(+)
+
+diff --git a/tools/interactive-wayland.c b/tools/interactive-wayland.c
+index e8ac2f641f30..fc8bd9c82a23 100644
+--- a/tools/interactive-wayland.c
++++ b/tools/interactive-wayland.c
+@@ -238,7 +238,10 @@ os_create_anonymous_file(off_t size)
+ static void
+ buffer_release(void *data, struct wl_buffer *buffer)
+ {
++    struct interactive_dpy *inter = data;
++
+     wl_buffer_destroy(buffer);
++    inter->buf = NULL;
+ }
+ 
+ static const struct wl_buffer_listener buffer_listener = {
