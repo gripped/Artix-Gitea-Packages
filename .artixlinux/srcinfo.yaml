@@ -1,9 +1,9 @@
 ---
-version: 7.7.2-1
+version: 7.7.3-1
 pkgbase:
   name: semver
   pkgdesc: The semantic version parser used by npm
-  pkgver: 7.7.2
+  pkgver: 7.7.3
   pkgrel: 1
   url: https://github.com/npm/node-semver
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   depends:
     - nodejs
   source:
-    - git+https://github.com/npm/node-semver.git#tag=v7.7.2
+    - git+https://github.com/npm/node-semver.git#tag=v7.7.3
   b2sums:
-    - d4f6eeca5ea3dc1fb12a38a50d34fb56f7986eaac10a328bbd74ef2119f4ec0d4aba7d9f7f9b62258a26683cef0b2ce95b136bebba70f4e6525e3694c4e7df62
+    - c7b71714f5d28f15d91858fcb5e339e1a6068efec1e9293088e13d2e857012fcc6c943c321862c705a0c974c04d36d6c5fbf7d48fe918bb4afaf17eccaa3542d
 pkgname:
   - name: semver
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
