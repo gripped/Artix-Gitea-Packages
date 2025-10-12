@@ -1,0 +1,33 @@
+---
+version: 2.2.1-1
+pkgbase:
+  name: python-invoke
+  pkgdesc: Pythonic task execution
+  pkgver: 2.2.1
+  pkgrel: 1
+  url: https://github.com/pyinvoke/invoke
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-icecream
+    - python-pytest
+    - python-pytest-relaxed
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-fluidity
+    - python-lexicon
+    - python-yaml
+  source:
+    - https://github.com/pyinvoke/invoke/archive/2.2.1/invoke-2.2.1.tar.gz
+  sha512sums:
+    - 7ef1bd311c89446667fb56f6de6308fb5ffec545178bb069a1a367006b7a15ab131388c52f20b90b3b128f2a31c1c819647aa39560df75e845f33b3be51f4aee
+pkgname:
+  - name: python-invoke
+# generated with artixpkg 0.37.4-1-any

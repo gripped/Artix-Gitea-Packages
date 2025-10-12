@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-invoke
-pkgver=2.2.0
-pkgrel=4
+pkgver=2.2.1
+pkgrel=1
 pkgdesc="Pythonic task execution"
 arch=('any')
 url="https://github.com/pyinvoke/invoke"
@@ -26,7 +26,7 @@ checkdepends=(
   'python-pytest-relaxed'
 )
 source=("$url/archive/$pkgver/${pkgname#python-}-$pkgver.tar.gz")
-sha512sums=('3d0adabec4825fb45524d3ab4f2a790d31245a89e038c08c770fc9f33c81ed182769e8f17d3d6f33a913b431cba475b975826ddfd533a945d481b52deba759a2')
+sha512sums=('7ef1bd311c89446667fb56f6de6308fb5ffec545178bb069a1a367006b7a15ab131388c52f20b90b3b128f2a31c1c819647aa39560df75e845f33b3be51f4aee')
 
 prepare() {
   cd ${pkgname#python-}-$pkgver
@@ -42,16 +42,11 @@ check() {
   cd ${pkgname#python-}-$pkgver
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  # The `Runner` tests are skipped because they fail on CI.
   test-env/bin/python -m pytest -s \
     --deselect tests/runners.py::Local_::env::uses_execve_for_pty_True \
     --deselect tests/runners.py::Local_::pty \
     --deselect tests/runners.py::Local_::shell::defaults_to_bash_or_cmdexe_when_pty_True \
-    --deselect tests/runners.py::Local_::shell::may_be_overridden_when_pty_True \
-    --deselect tests/runners.py::Runner_::character_buffered_stdin::setcbreak_called_on_tty_stdins \
-    --deselect tests/runners.py::Runner_::character_buffered_stdin::setcbreak_not_called_if_process_not_foregrounded \
-    --deselect tests/runners.py::Runner_::character_buffered_stdin::tty_stdins_have_settings_restored_by_default \
-    --deselect tests/runners.py::Runner_::character_buffered_stdin::tty_stdins_have_settings_restored_on_KeyboardInterrupt
+    --deselect tests/runners.py::Local_::shell::may_be_overridden_when_pty_True
 }
 
 package() {
