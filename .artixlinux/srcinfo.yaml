@@ -1,0 +1,31 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: python-os-client-config
+  pkgdesc: OpenStack Client Configuation Library
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/openstack/os-client-config
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-stestr
+    - python-oslotest
+    - python-jsonschema
+    - python-glanceclient
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+  depends:
+    - python-pbr
+    - python-openstacksdk
+  source:
+    - git+https://github.com/openstack/os-client-config.git#tag=2.3.0
+  sha512sums:
+    - 4e2ab21bf10661d6d0969ff82c4ba7be0318387ae6e143e8c023a84614047ffd8f1322de1f8fcf0976179f7dcb4553e96a126e8b323de19875178fb72817906f
+pkgname:
+  - name: python-os-client-config
+# generated with artixpkg 0.37.4-1-any
