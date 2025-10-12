@@ -1,9 +1,9 @@
 ---
-version: 0.22.0-1
+version: 0.23.1-1
 pkgbase:
   name: aws-c-io
   pkgdesc: AWS SDK module to handle all IO and TLS work for application protocols
-  pkgver: 0.22.0
+  pkgver: 0.23.1
   pkgrel: 1
   url: https://github.com/awslabs/aws-c-io
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - glibc
     - s2n-tls
   source:
-    - aws-c-io-0.22.0.tar.gz::https://github.com/awslabs/aws-c-io/archive/v0.22.0.tar.gz
+    - aws-c-io-0.23.1.tar.gz::https://github.com/awslabs/aws-c-io/archive/v0.23.1.tar.gz
   sha256sums:
-    - 07b0ac7271e482e1f5f1e84fcf33ec23fb8a2c12e7a7f331455a5f1d38b9fbfd
+    - 95dd09c53773fb094973c4df3d89ab376a7f2d490c1b45bba41734079355d891
 pkgname:
   - name: aws-c-io
 # generated with artixpkg 0.37.4-1-any
