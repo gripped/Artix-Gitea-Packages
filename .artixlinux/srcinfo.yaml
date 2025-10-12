@@ -1,9 +1,9 @@
 ---
-version: 1.21.1-1
+version: 1.22.0-1
 pkgbase:
   name: python-yarl
   pkgdesc: Yet another URL library
-  pkgver: 1.21.1
+  pkgver: 1.22.0
   pkgrel: 1
   url: https://github.com/aio-libs/yarl/
   arch:
@@ -27,11 +27,11 @@ pkgbase:
     - python-multidict
     - python-propcache
   source:
-    - https://github.com/aio-libs/yarl//archive/v1.21.1/python-yarl-1.21.1.tar.gz
+    - https://github.com/aio-libs/yarl//archive/v1.22.0/python-yarl-1.22.0.tar.gz
   sha512sums:
-    - 1ca4b36e76d788e53795be27befeb4cc729e5d0c20e50b58d1a9a83ecac3bc32803882275ca060f93c49d374db8e8a1d7bb9e62a79bb7fb4c9bca864c0bd4cce
+    - 58ed8255314c8fb10b32de850f32426d27e0b2df2431d14327320382a304bc6d313f472603233f8e8a3f31f81d65ba693cf83b1058695de6f9eb53caaa83aa09
   b2sums:
-    - 482e20581c3df118d5161d154d57b19bb364b2e4e31c6d8016b3f497ac56548d027aca1b7c761c14bd92285109a0b3e7488b0a221331ad9a010039ba153d69dd
+    - 54cc94967be2453000d696421a91e3bc185d4816131475e9775147c8dbe13e7ccfb1596032a131d85a1dcbadc6731e6b5607ebba78eafc98f0adf14b412f39d9
 pkgname:
   - name: python-yarl
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
