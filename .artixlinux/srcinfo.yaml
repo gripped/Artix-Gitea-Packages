@@ -1,11 +1,11 @@
 ---
-version: 7.1.0-1
+version: 7.2.0-1
 pkgbase:
   name: python-oslo-log
   pkgdesc: Oslo Logging Library
-  pkgver: 7.1.0
+  pkgver: 7.2.0
   pkgrel: 1
-  url: https://pypi.python.org/pypi/oslo.log/7.1.0
+  url: https://pypi.python.org/pypi/oslo.log/7.2.0
   arch:
     - any
   license:
@@ -17,7 +17,8 @@ pkgbase:
     - python-eventlet
   makedepends:
     - git
-    - python-setuptools
+    - python-build
+    - python-installer
   depends:
     - python-pbr
     - python-oslo-config
@@ -29,9 +30,9 @@ pkgbase:
     - python-pyinotify
     - python-dateutil
   source:
-    - git+https://github.com/openstack/oslo.log.git#tag=7.1.0
+    - git+https://github.com/openstack/oslo.log.git#tag=7.2.0
   sha512sums:
-    - 541526f0ccc3f4f4a8bf45449b6737956a01cfe4f15fa04980fb60532fab6a06fcb440b8f1be8971b7b68e36c8ad25f53a75b4797d6a3ae5bcd22ed912ad94b8
+    - d1d18d1fcf595b3138d4a103f0586b5b6df987c0595e9e663651224c022c7326436f2814b6f8f0d8e3f220331fb89a383fe26d8be81c6c128cf4394cdeedf6db
 pkgname:
   - name: python-oslo-log
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
