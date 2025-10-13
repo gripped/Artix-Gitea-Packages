@@ -18,7 +18,7 @@ depends=(gcc-libs
 makedepends=(extra-cmake-modules
              qt5-base
              qt6-base)
-source=(https://download.kde.org/25.08.2/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('1b8aea78736662af17d6ae0391345933754f98cffca1535204813eb27eff6222'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
