@@ -1,9 +1,9 @@
 ---
-version: 25.08.1-1
+version: 25.08.2-1
 pkgbase:
   name: kmime
   pkgdesc: Library for handling mail messages and newsgroup articles
-  pkgver: 25.08.1
+  pkgver: 25.08.2
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -21,14 +21,14 @@ pkgbase:
     - kcodecs
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.1/src/kmime-25.08.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.1/src/kmime-25.08.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.2/src/kmime-25.08.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.2/src/kmime-25.08.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 3ced311cc5eba781d207730d999642468dade70250b221c9e00b3fa275e45f59
+    - f7d2ba55b3aa12e904892209ad9fe271cd5a3a58c29c38a26dd21003aa550eaf
     - SKIP
 pkgname:
   - name: kmime
