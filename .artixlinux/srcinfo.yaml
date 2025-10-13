@@ -1,9 +1,9 @@
 ---
-version: 6.18.0-1
+version: 6.19.0-1
 pkgbase:
   name: kparts
   pkgdesc: Document centric plugin system
-  pkgver: 6.18.0
+  pkgver: 6.19.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -28,14 +28,14 @@ pkgbase:
     - kxmlgui
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.18/kparts-6.18.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.18/kparts-6.18.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.19/kparts-6.19.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.19/kparts-6.19.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 846e522e6aff2a219064a52e9baeefdfbcbea71dadb1810b9c58cb9c41821604
+    - cddc3b6a4fc0a3f41fa5791997c9ddf4ca98855839be465ebe5d0c3cefe350d8
     - SKIP
 pkgname:
   - name: kparts
