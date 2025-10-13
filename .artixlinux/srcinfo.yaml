@@ -1,10 +1,10 @@
 ---
-version: 49.0-1
+version: 49.0-2
 pkgbase:
   name: gnome-builder
   pkgdesc: An IDE for writing GNOME-based software
   pkgver: 49.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Builder/
   arch:
     - x86_64
