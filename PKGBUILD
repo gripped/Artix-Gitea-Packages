@@ -4,8 +4,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=gwenview
-pkgver=25.08.1
-pkgrel=1
+pkgver=25.08.2
+pkgrel=4
 pkgdesc='A fast and easy to use image viewer'
 url='https://apps.kde.org/gwenview/'
 arch=(x86_64)
@@ -45,7 +45,6 @@ depends=(baloo
          qt6-base
          qt6-multimedia
          qt6-svg
-         qt6-wayland
          solid
          wayland)
 optdepends=('kamera: import pictures from gphoto2 cameras'
@@ -57,7 +56,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-graphics)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('4d92eef8fd543930cff6810062bc1d9ff103394247516bfef1edcd1bd67ad67c'
+sha256sums=('c189967a0e21f0753560e8d87381e888f3d943701db4c1f21bed8b5bb8af1e5a'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
