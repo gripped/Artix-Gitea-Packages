@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=pimcommon
-pkgver=25.08.1
-pkgrel=1
+pkgver=25.08.2
+pkgrel=2
 pkgdesc='Common libraries for KDE PIM'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -39,7 +39,7 @@ makedepends=(doxygen
              qt6-doc
              qt6-tools)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('48176c84b6ed9afcce383510bb17c69ea6350c2893136ebd96a28d59fd739141'
+sha256sums=('de341499406f317dafe9fa3e5eeb600bbd0ec69f34e28e8e0bb8ffdabe8e950b'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
