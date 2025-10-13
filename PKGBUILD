@@ -14,7 +14,7 @@ license=(GPL-2.0-or-later
 depends=(hicolor-icon-theme)
 makedepends=(extra-cmake-modules
              qt6-base)
-source=(https://download.kde.org/25.08.2/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('b138e9a55d9013cec98683d59a5d010f9d3193d8ce163f59d5a6126b9f01fa6f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
