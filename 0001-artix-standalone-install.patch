@@ -1,4 +1,4 @@
-From 11b055590cefe49826653a5e32e7c36b59bf26ea Mon Sep 17 00:00:00 2001
+From 80b7bbd6b17cc913e1764767f8269f68313113ab Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
 Date: Fri, 19 Sep 2025 17:39:14 +0200
 Subject: [PATCH 1/1] artix standalone install
@@ -19,8 +19,8 @@ Subject: [PATCH 1/1] artix standalone install
  sysusers.d/meson.build            |  4 ++--
  test/meson.build                  |  6 ++---
  tmpfiles.d/legacy.conf.in         |  3 ---
- tmpfiles.d/meson.build            |  8 +++----
- 16 files changed, 51 insertions(+), 98 deletions(-)
+ tmpfiles.d/meson.build            |  9 +++----
+ 16 files changed, 51 insertions(+), 99 deletions(-)
 
 diff --git a/factory/templates/meson.build b/factory/templates/meson.build
 index 3db9f255b9..e54c0c3f3b 100644
@@ -414,7 +414,7 @@ index cdef21fa9b..03798c953e 100644
  {% if HAVE_SYSV_COMPAT %}
  # /run/lock/subsys is used for serializing SysV service execution, and
 diff --git a/tmpfiles.d/meson.build b/tmpfiles.d/meson.build
-index 203eb7bb55..12f4f3e539 100644
+index 203eb7bb55..0c689008e9 100644
 --- a/tmpfiles.d/meson.build
 +++ b/tmpfiles.d/meson.build
 @@ -6,14 +6,12 @@ endif
@@ -441,7 +441,12 @@ index 203eb7bb55..12f4f3e539 100644
          else
                  message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
                          .format(f[0], f[1], conf.get(f[1], 0)))
-@@ -38,7 +36,6 @@ in_files = [
+@@ -33,12 +31,10 @@ in_files = [
+         ['20-systemd-shell-extra.conf',   'LINK_SHELL_EXTRA_DROPIN'],
+         ['20-systemd-osc-context.conf',   'LINK_OSC_CONTEXT_DROPIN'],
+         ['20-systemd-ssh-generator.conf', 'ENABLE_SSH_PROXY_CONFIG'],
+-        ['20-systemd-stub.conf',          'ENABLE_EFI'],
+         ['20-systemd-userdb.conf',        'ENABLE_SSH_USERDB_CONFIG'],
          ['etc.conf'],
          ['legacy.conf'],
          ['static-nodes-permissions.conf'],
@@ -449,7 +454,7 @@ index 203eb7bb55..12f4f3e539 100644
          ['var.conf'],
  ]
  
-@@ -49,6 +46,7 @@ foreach f : in_files
+@@ -49,6 +45,7 @@ foreach f : in_files
                          output: f[0],
                          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
                          install : true,
@@ -457,7 +462,7 @@ index 203eb7bb55..12f4f3e539 100644
                          install_dir : tmpfilesdir)
          else
                  message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
-@@ -57,5 +55,5 @@ foreach f : in_files
+@@ -57,5 +54,5 @@ foreach f : in_files
  endforeach
  
  if install_sysconfdir
