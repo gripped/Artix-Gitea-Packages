@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.4
-_tag='258'
+_tag='258.1'
 
 pkgbase=udev
 pkgname=(
@@ -19,7 +19,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=6
+pkgrel=1
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -60,25 +60,18 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-artix-boot-standalone.patch
         artix.conf
         loader.conf
+        splash-artix.bmp
 )
-sha512sums=('4703b54464ae42acb9e8b2a123f9e76cbe94b03c416292a95b9a8eb282eb2908e0499294b8c7f9bbb7946147e9379db7b277d1c277a08ee00f92f8d0eff33330'
+sha512sums=('fa8330f7f5e3a97309399703c784a12a975c139d01882d1cd089c9b102467f7edd01845ddef765b3f06812b270bb77b6b6564f9a2af81081079d27d2ee9d1b43'
             '1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417'
             'beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377'
             '1a000d32abe0ae275ee1fad8fd511de7d6683f5bf163859f9856f3f508b2db593d3a49509bfbd02e44f78785c453ae235a86ddffebfa1d40f7e299734da3378f'
             'e8acc127c0468019ca163edb2119e43ac0b0b539350cbdbb605d657dd1519203af89799044ed4cc0ee36158e305a13483047f16975e1b09f42fc036ec7115313'
             '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
-            'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58')
+            'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
+            'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
 
 _backports=(
-    # fix-link-udev-shared-option
-    '9736f634c8b61343be966114ce1c9eddaf0fa742'
-    # basic/efivars: read EFI variables using one read(), not two #38864
-    # https://github.com/systemd/systemd/pull/38864
-    '9db9d6806e398465a6366dfc5bdde2e24338ac29~1..4125e0c3db9fd8a2102781674db7aae263714aec'
-    # udev,login: update ACL on static device nodes #39071
-    '41c4a69653f7ca48a449de172e73acd43eda81a4~1..2c762d90cfe7d67f10af87986ed2e6f0005eabfb'
-    # measure: strip tpm 1.x remnants and make GetActivePcrBanks() work #39089
-    '496489c2a70b1675af679c1d33cee035fe7c9aff~1..b388fa20c735add38080a746fd831273820c93ac'
 )
 
 _reverts=(
@@ -444,7 +437,7 @@ package_egummiboot() {
     # add example bootctl configuration
     install -D -m0644 artix.conf "$pkgdir"/usr/share/egummiboot/bootctl/artix.conf
     install -D -m0644 loader.conf "$pkgdir"/usr/share/egummiboot/bootctl/loader.conf
-    # install -D -m0644 splash-artix.bmp "$pkgdir"/usr/share/egummiboot/bootctl/splash-artix.bmp
+    install -D -m0644 splash-artix.bmp "$pkgdir"/usr/share/egummiboot/bootctl/splash-artix.bmp
 
     for m in bootctl.1 kernel-install.8 systemd-boot.7 systemd-bless-boot-generator.8; do
         _inst_man "$m"
