@@ -1,9 +1,9 @@
 ---
-version: 7.1.2.5-1
+version: 7.1.2.6-1
 pkgbase:
   name: imagemagick
   pkgdesc: An image viewing/manipulation program
-  pkgver: 7.1.2.5
+  pkgver: 7.1.2.6
   pkgrel: 1
   url: https://www.imagemagick.org/
   arch:
@@ -88,11 +88,11 @@ pkgbase:
     - etc/ImageMagick-7/type-dejavu.xml
     - etc/ImageMagick-7/type-ghostscript.xml
   source:
-    - git+https://github.com/ImageMagick/ImageMagick#tag=7.1.2-5
+    - git+https://github.com/ImageMagick/ImageMagick#tag=7.1.2-6
   validpgpkeys:
     - C305FEBD4C4081119CB3C12CE640E67B2C7F96AA
   sha256sums:
-    - 5dcfddd4770b9c9d463324655e78bdec02c370ef00d9ca28863418f03f3561db
+    - 8ed703814f94ecfff1699cf7ae490103a7887c2fe1ca5d85a497ecc1e885ca92
 pkgname:
   - name: imagemagick
 # generated with artixpkg 0.37.4-1-any
