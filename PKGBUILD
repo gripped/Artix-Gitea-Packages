@@ -1,0 +1,92 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Heusel <christian@heusel.eu>
+# Contributor: Frederik “Freso” S. Olesen <archlinux@freso.dk>
+# Contributor: Luke Huckman (Darkpelz) <lukeh@outlook.my>
+# Contributor: Fabio 'Lolix' Loli <fabio.loli@disroot.org> -> https://github.com/FabioLolix
+# Contributor: fossdd <fossdd@tutanota.com>
+# Contributor: Ong Yong Xin <ongyongxin2020+github AT gmail DOT com>
+# Contributor: Bernhard Landauer <oberon@manjaro.org>
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgname=tenacity
+pkgver=1.3.4
+pkgrel=4
+pkgdesc="An easy-to-use multi-track audio editor and recorder, forked from Audacity"
+arch=(x86_64)
+url="https://tenacityaudio.org"
+license=("GPL-2.0-or-later")
+groups=(pro-audio)
+depends=(
+    flac
+    gtk3
+    jack
+    libebml
+    libid3tag
+    libmad
+    libmatroska
+    libsoxr
+    lilv
+    lv2
+    portaudio
+    portmidi
+    portsmf
+    soundtouch
+    suil
+    twolame
+    vamp-plugin-sdk
+    wxwidgets-common
+    wxwidgets-gtk3
+)
+makedepends=(
+    chrpath
+    clang
+    cmake
+    ffmpeg
+    git
+    gst-plugins-bad-libs
+    gstreamer
+    libnotify
+    nasm
+    python
+    sdl2
+)
+source=("git+https://codeberg.org/tenacityteam/tenacity.git#tag=v${pkgver}"
+        "git+https://codeberg.org/tenacityteam/libnyquist")
+b2sums=('241f1d3eea9c2a288d9bc1fa046bb5c84bb7f9620008605eb712ce4da2298893da53ab528c25fa7c148dd413be165b80a6639d39a444b681df5274f41ba668b8'
+        'SKIP')
+
+prepare() {
+  cd $pkgname
+
+  # disable the vcpkg submodule by only initing the other one
+  git submodule init lib-src/libnyquist
+  git config submodule.lib-src/libnyquist.url "$srcdir/libnyquist"
+  git -c protocol.file.allow=always submodule update --no-fetch
+}
+
+build() {
+  cd $pkgname
+  local cmake_options=(
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D VCPKG=Off
+    -B build
+    -W no-dev
+  )
+
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
+}
+
+package() {
+  cd tenacity
+  DESTDIR="$pkgdir" cmake --install build
+
+  test -f ${pkgdir}/usr/tenacity && rm ${pkgdir}/usr/tenacity # remove unused launch script
+
+  mv "${pkgdir}/usr/share/pixmaps/gnome-mime-application-x-audacity-project.xpm" \
+     "${pkgdir}/usr/share/pixmaps/gnome-mime-application-x-tenacity-project.xpm"
+
+  chrpath --delete "${pkgdir}"/usr/lib/tenacity/*.so
+  chrpath --delete "${pkgdir}"/usr/lib/tenacity/modules/*.so
+}
