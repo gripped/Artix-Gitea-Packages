@@ -1,9 +1,9 @@
 ---
-version: 25.08.1-1
+version: 25.08.2-1
 pkgbase:
   name: kongress
   pkgdesc: Companion application for conferences
-  pkgver: 25.08.1
+  pkgver: 25.08.2
   pkgrel: 1
   url: https://apps.kde.org/kongress/
   arch:
@@ -37,14 +37,14 @@ pkgbase:
     - qt6-location
     - qt6-positioning
   source:
-    - https://download.kde.org/stable/release-service/25.08.1/src/kongress-25.08.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.1/src/kongress-25.08.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.2/src/kongress-25.08.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.2/src/kongress-25.08.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - e5abd4f5f68633cd0e1feb3467e79e2d3ff173c81c83d6b565904b1eb742f760
+    - 1c2a34903e38e257216276f4bc38732f9d16bddd0baa4ec6def4f9904135b6d7
     - SKIP
 pkgname:
   - name: kongress
