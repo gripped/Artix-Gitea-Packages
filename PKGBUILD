@@ -22,7 +22,7 @@ makedepends=(doxygen
              intltool)
 optdepends=('gnuplot: for plotting support')
 source=(git+https://github.com/Qalculate/libqalculate#tag=v$pkgver)
-sha256sums=('541c0e2048b01b8d5ece9d34ef11e197c7292a3958a4e33d5918aed3ffc5867b')
+sha256sums=('7c06c45ac18d752db0a4d9a14dc2c23067943fe7fe431fc4cf2aefca070dc1e7')
 
 prepare() {
   cd $pkgname
