@@ -355,7 +355,7 @@ package_mesa() {
     _pick vklayer usr/bin/mesa-*-control.py
     _pick vklayer usr/share/vulkan/explicit_layer.d
 
-    _pick docs usr/share/doc
+#    _pick docs usr/share/doc
 
     # indirect rendering
     ln -sr $libdir/libGLX_{mesa,indirect}.so.0
