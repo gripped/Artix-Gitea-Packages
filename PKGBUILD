@@ -236,7 +236,7 @@ build() {
     -D gallium-mediafoundation=disabled
     -D gallium-rusticl=true
     -D gles1=disabled
-    -D html-docs=enabled
+    -D html-docs=false
     -D intel-rt=enabled
     -D libunwind=disabled
     -D microsoft-clc=disabled
