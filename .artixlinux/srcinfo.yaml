@@ -1,10 +1,10 @@
 ---
-version: 3.2.2-1
+version: 3.2.3-2
 pkgbase:
   name: ruby-rack
   pkgdesc: Minimal, modular, and adaptable interface for developing web applications
-  pkgver: 3.2.2
-  pkgrel: 1
+  pkgver: 3.2.3
+  pkgrel: 2
   url: https://rack.github.io/
   arch:
     - any
@@ -23,11 +23,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://github.com/rack/rack/archive/v3.2.2/ruby-rack-3.2.2.tar.gz
+    - https://github.com/rack/rack/archive/v3.2.3/ruby-rack-3.2.3.tar.gz
   sha512sums:
-    - ea9f239c04c0e2561e08d15196768cec2155bc6376ad3fa0b413d8412a617c9275dfb37e1eedbc1a96818fa76356d279a7a28341b30a9fe7ead0116a4daeb130
+    - 9456a2a743d2539cc7df2538b612cd6225ae640df2b820ee39ad503456e416b651cb8e61d5835fa7b81300229bb6f5777e02587f2efb17d58656eb1f8c0a9a67
   b2sums:
-    - 76612b0132d901b1c782c84da43bcebfe228276f8e0788e705d3a549a9836375be2aa224705323b71be9ae1ec72ab489170eb1c170e1df32b25bd4b3794c43fe
+    - fffbdb59881eb4e89285a56cfc4d3105fb6a9637cca3c11c5d19b701094a248da05e4fd747a38b2dc6a7b9b2a8aa0d837e2345bbbbcb25e4fcc6e23483a4d6db
 pkgname:
   - name: ruby-rack
 # generated with artixpkg 0.37.4-1-any
