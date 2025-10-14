@@ -3,11 +3,11 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=filesystem
-pkgver=2025.05.03
+pkgver=2025.10.12
 pkgrel=1
 pkgdesc='Base Artix Linux files'
 arch=('any')
-license=('GPL-3.0-or-later')
+license=('0BSD')
 url='https://artixlinux.org'
 depends=('iana-etc')
 backup=(
@@ -30,6 +30,7 @@ backup=(
   'etc/subuid'
 )
 source=(
+  'LICENSE'
   'artix-release'
   'artixlinux-logo.png'
   'artixlinux-logo.svg'
@@ -58,7 +59,8 @@ source=(
   'subgid'
   'subuid'
 )
-sha256sums=('01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
+sha256sums=('7056c04df17a4e0f0bac9f787f347c9cd892cee6323d1c89528090afd0b934a3'
+            '01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
             '5e18ee2e133c8129648af0e4e276a04722f6443977d2b1b552560e10d6e95b1e'
             '901f30173e8044f489b6224dde41fb6d15244968abad17c37763b5c063834a4e'
             '4dce805a82da31f3fd7f58356b8661dd4f8eba00a2308b4d8d1a2c9b4b55a6bd'
@@ -81,7 +83,7 @@ sha256sums=('01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b'
             '6e13705ac4d6f69cdba118c6b70c722346fd3c45224133e6bbfe28aca719563c'
             'ec289c03aa0d150e90e8287f001c8e6552ab9dd54f450bdb5c2d2254e477965b'
             '923c7e4dba489af0bd3a61b99470768287804841a791c975dd37b8560615f391'
-            '7a278856af667f4e8902502453c008ceb16ddfb4a7c3e553de8e4d1afde00156'
+            '2400dbab070d9f7d14d9fae2fc89a39af613191dff52ea571a8a226f219ac247'
             'd562ee1b146104fc699084c3d6ba654ed0ab42dee41f662b30b1ba98a67783d6'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
             'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')
@@ -239,6 +241,8 @@ package() {
 
     install -vDm "$mode" -o "$user" -g "$group" "$srcdir/$source_file" "$target_file"
   done
+
+  install -vDm 644 "$srcdir/LICENSE" -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
 # vim:set ts=2 sw=2 et:
