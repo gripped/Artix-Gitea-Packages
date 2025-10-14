@@ -1,28 +1,45 @@
 ---
-version: 1.17-1
+version: 1.17-2
 pkgbase:
   name: vkd3d
   pkgdesc: Direct3D 12 to Vulkan translation library By WineHQ
   pkgver: 1.17
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.winehq.org/Vkd3d
   arch:
     - x86_64
   license:
-    - LGPL
+    - LGPL-2.1-or-later
   makedepends:
+    - doxygen
+    - git
+    - graphviz
+    - mesa
+    - perl
+    - perl-json
     - spirv-headers
     - vulkan-headers
+    - vulkan-icd-loader
+    - wine
     - xcb-util-keysyms
     - xorgproto
   depends:
+    - glibc
+    - ncurses
     - spirv-tools
-    - vulkan-icd-loader
-    - perl-json
   source:
-    - https://dl.winehq.org/vkd3d/source/vkd3d-1.17.tar.xz
-  sha512sums:
-    - 580b8bf0985a92ee40e25b777ad5439ef98bb6da952f51bc76de060e9117b50062807bc65f9252039eb6e18dd6162a7c92c5e2e29afc0dbf2494052fcc9364ea
+    - git+https://gitlab.winehq.org/wine/vkd3d.git?signed#tag=vkd3d-1.17
+  validpgpkeys:
+    - 277EB71D1BEBFC86E0E14983C380B588AA8A1D1C
+  b2sums:
+    - 7048523f3b0e0f29c9fcafeab433482bdaf89f364c96bc94f561160ef49ff0e5c6dd4e09cb5106cd926ce533078c4184788990c457b67687a416d98c978f913d
 pkgname:
   - name: vkd3d
-# generated with artixpkg 0.37.1-1-any
+    provides:
+      - libvkd3d.so
+      - libvkd3d-shader.so
+      - libvkd3d-utils.so
+  - name: vkd3d-docs
+    pkgdesc: Direct3D 12 to Vulkan translation library By WineHQ - API documentation
+    depends: []
+# generated with artixpkg 0.37.4-1-any
