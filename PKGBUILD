@@ -5,7 +5,7 @@
 _gemname='rubocop-performance'
 pkgname="ruby-${_gemname}"
 pkgver=1.26.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An extension of RuboCop focused on code performance checks'
 arch=('any')
 url='https://docs.rubocop.org/rubocop-performance/'

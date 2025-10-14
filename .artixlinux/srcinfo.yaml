@@ -1,10 +1,10 @@
 ---
-version: 1.26.0-1
+version: 1.26.0-2
 pkgbase:
   name: ruby-rubocop-performance
   pkgdesc: An extension of RuboCop focused on code performance checks
   pkgver: 1.26.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.rubocop.org/rubocop-performance/
   arch:
     - any
