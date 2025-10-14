@@ -4,13 +4,13 @@
 
 pkgname=('lib32-llvm' 'lib32-llvm-libs')
 pkgver=21.1.3
-pkgrel=1
+pkgrel=2
 epoch=1
 arch=('x86_64')
 url="https://llvm.org/"
 license=('Apache-2.0 WITH LLVM-exception')
-makedepends=('cmake' 'ninja' 'lib32-libffi' 'lib32-zlib' 'lib32-zstd' 'python'
-             'gcc-multilib' 'lib32-libxml2')
+makedepends=('cmake' 'ninja' 'lib32-zlib' 'lib32-zstd' 'lib32-libffi'
+             'lib32-libxml2' 'python')
 options=('staticlibs' '!lto') # tools/llvm-shlib/typeids.test fails with LTO
 _source_base=https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver
 source=($_source_base/llvm-$pkgver.src.tar.xz{,.sig}
@@ -42,9 +42,12 @@ _get_distribution_components() {
       # libraries needed for clang-tblgen
       LLVMDemangle|LLVMSupport|LLVMTableGen)
         ;;
+      # used by lldb
+      LLVMDebuginfod)
+        ;;
       # testing libraries
       LLVMTestingAnnotations|LLVMTestingSupport)
-      	;;
+        ;;
       # exclude static libraries
       LLVM*)
         continue
@@ -57,6 +60,7 @@ _get_distribution_components() {
     echo $target
   done
 }
+
 prepare() {
   rename -v -- "-$pkgver.src" '' {cmake,third-party}-$pkgver.src
   cd llvm-$pkgver.src
@@ -69,24 +73,23 @@ prepare() {
 build() {
   cd llvm-$pkgver.src/build
 
-  export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
-
   # Build only minimal debug info to reduce size
-  CFLAGS+=' -g1'
-  CXXFLAGS+=' -g1'
+  CFLAGS=${CFLAGS/-g /-g1 }
+  CXXFLAGS=${CXXFLAGS/-g /-g1 }
 
   local cmake_args=(
     -G Ninja
     -DCMAKE_BUILD_TYPE=Release
-    -DCMAKE_CXX_FLAGS:STRING=-m32
-    -DCMAKE_C_FLAGS:STRING=-m32
+    -DCMAKE_INSTALL_DOCDIR=share/doc
     -DCMAKE_INSTALL_PREFIX=/usr
     -DCMAKE_SKIP_RPATH=ON
     -DLLVM_BINUTILS_INCDIR=/usr/include
     -DLLVM_BUILD_DOCS=OFF
     -DLLVM_BUILD_LLVM_DYLIB=ON
+    -DLLVM_BUILD_TESTS=OFF
     -DLLVM_DEFAULT_TARGET_TRIPLE="i686-pc-linux-gnu"
     -DLLVM_ENABLE_BINDINGS=OFF
+    -DLLVM_ENABLE_CURL=OFF
     -DLLVM_ENABLE_FFI=ON
     -DLLVM_ENABLE_RTTI=ON
     -DLLVM_ENABLE_SPHINX=OFF
@@ -97,7 +100,12 @@ build() {
     -DLLVM_LINK_LLVM_DYLIB=ON
     -DLLVM_TARGET_ARCH:STRING=i686
     -DLLVM_USE_PERF=ON
+    -DPACKAGE_BUGREPORT=https://gitlab.archlinux.org/archlinux/packaging/packages/lib32-llvm/-/issues
   )
+
+  export CFLAGS+=" -m32"
+  export CXXFLAGS+=" -m32"
+  export PKG_CONFIG="i686-pc-linux-gnu-pkg-config"
 
   cmake .. "${cmake_args[@]}"
   local distribution_components=$(_get_distribution_components | paste -sd\;)
@@ -120,26 +128,20 @@ package_lib32-llvm() {
   mv "$pkgdir"/usr/lib32/lib{LLVM,LTO,Remarks}*.so* "$srcdir"
   mv -f "$pkgdir"/usr/lib32/LLVMgold.so "$srcdir"
 
-  # Fix permissions of static libs
-  chmod -x "$pkgdir"/usr/lib32/*.a
 
-  mv "$pkgdir/usr/bin/llvm-config" "$pkgdir/usr/lib32/llvm-config"
-
-  rm -rf "$pkgdir"/usr/{bin,include,share/{doc,man,llvm,opt-viewer}}
-
-  mkdir "$pkgdir"/usr/bin
-  mv "$pkgdir/usr/lib32/llvm-config" "$pkgdir/usr/bin/llvm-config32"
+  rm -rf "$pkgdir"/usr/{include,share/{doc,man,llvm,opt-viewer}}
+  find "$pkgdir/usr/bin" -mindepth 1 -not -name llvm-config -delete
+  mv "$pkgdir"/usr/bin/llvm-config{,32}
 
   install -Dm644 ../LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
 
 package_lib32-llvm-libs() {
   pkgdesc="LLVM runtime libraries (32-bit) "
-  depends=('lib32-libffi' 'lib32-zlib' 'lib32-zstd' 'lib32-ncurses'
-           'lib32-libxml2' 'lib32-gcc-libs')
+  depends=('lib32-gcc-libs' 'lib32-zlib' 'lib32-zstd' 'lib32-libffi'
+           'lib32-ncurses' 'lib32-libxml2')
 
   install -d "$pkgdir/usr/lib32"
-
   cp -P \
     "$srcdir"/lib{LLVM,LTO,Remarks}*.so* \
     "$srcdir"/LLVMgold.so \
@@ -150,5 +152,8 @@ package_lib32-llvm-libs() {
   install -d "$pkgdir/usr/lib32/bfd-plugins"
   ln -s ../LLVMgold.so "$pkgdir/usr/lib32/bfd-plugins/LLVMgold.so"
 
-  install -Dm644 llvm-$pkgver.src/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$srcdir/llvm-$pkgver.src/LICENSE.TXT" \
+    "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+
+# vim:set ts=2 sw=2 et:

@@ -1,9 +1,9 @@
 ---
-version: 1:21.1.3-1
+version: 1:21.1.3-2
 pkgbase:
   name: lib32-llvm
   pkgver: 21.1.3
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://llvm.org/
   arch:
@@ -13,12 +13,11 @@ pkgbase:
   makedepends:
     - cmake
     - ninja
-    - lib32-libffi
     - lib32-zlib
     - lib32-zstd
-    - python
-    - gcc-multilib
+    - lib32-libffi
     - lib32-libxml2
+    - python
   options:
     - staticlibs
     - '!lto'
@@ -49,10 +48,10 @@ pkgname:
   - name: lib32-llvm-libs
     pkgdesc: LLVM runtime libraries (32-bit)
     depends:
-      - lib32-libffi
+      - lib32-gcc-libs
       - lib32-zlib
       - lib32-zstd
+      - lib32-libffi
       - lib32-ncurses
       - lib32-libxml2
-      - lib32-gcc-libs
 # generated with artixpkg 0.37.4-1-any
