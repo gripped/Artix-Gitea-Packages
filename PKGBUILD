@@ -6,7 +6,7 @@
 
 pkgname=dhcpcd
 pkgver=10.2.4
-pkgrel=1
+pkgrel=2
 pkgdesc="DHCP/ IPv4LL/ IPv6RA/ DHCPv6 client"
 url="https://roy.marples.name/projects/dhcpcd/"
 arch=(x86_64)
@@ -29,11 +29,11 @@ source=(
 )
 sha256sums=('6721e606609226dbf4d864a78802a9e96beec0ee034a1bd84138b3e037bba7d9'
             'SKIP'
-            '06788ad9f5f7ccb5d2a2da6f0322ff5771f8de82cfbe8b9ad954f2c38265e21b'
+            '32cecb466f491d73aec546f72f37048ee3042b00c35df3d2dde43296e7505c9e'
             '1ca593a91d537766d073e71cfab87881e6f6a2ccb5236a45531d5520b3af7a31')
 b2sums=('cdc5c345c58f24852ecf7e6655446f9385c860d9095cca8fa40eaae27a1d05dfad667e1e39af6ace2bd73acaa799210d6345462c90a88f89839912416263fdef'
         'SKIP'
-        '1f4ad7d27a33ea9d317b95817898bc853bda8ef6bf1b09d86b7a5b25a0dae89c246fdb919c62b677d25148c8b4cf8c02e99cf3fa583c3a63bd04d1817bf47872'
+        'f9b6e9f9a9f6ca781c3993d9dbccbb2a5a7f9c471c4b736b4b21511ce28a0e44c23e60ef6b74cbe7141942cde55115feb9e78df5ab389af7e064685521e40916'
         'fab9f56a694b2bcaa26ebd4040984778ea4a3cccd57f17a0eb724a9fc4750157d97d9d0db747932c3b386938fe2bf1d6a4ba609cc5cc3a6b0e1ae39404ba21be')
 validpgpkeys=('A785ED2755955D9E93EA59F6597F97EA9AD45549')  # Roy Marples (NetBSD) <roy@NetBSD.org>
 
