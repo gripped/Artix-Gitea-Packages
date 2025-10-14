@@ -1,10 +1,10 @@
 ---
-version: 2:3.17.2-3
+version: 2:3.17.2-4
 pkgbase:
   name: freerdp
   pkgdesc: Free implementation of the Remote Desktop Protocol (RDP)
   pkgver: 3.17.2
-  pkgrel: 3
+  pkgrel: 4
   epoch: 2
   url: https://www.freerdp.com/
   arch:
@@ -14,8 +14,8 @@ pkgbase:
   makedepends:
     - alsa-lib
     - cmake
-    - e2fsprogs
     - ffmpeg
+    - git
     - icu
     - json-c
     - krb5
@@ -25,6 +25,7 @@ pkgbase:
     - libpulse
     - libusb
     - libwebp
+    - ninja
     - openssl
     - pam
     - pkcs11-helper
@@ -60,11 +61,13 @@ pkgbase:
     - libwinpr-tools3.so
     - libwinpr3.so
   source:
-    - https://github.com/freerdp/freerdp/archive/3.17.2/freerdp-3.17.2.tar.gz
+    - git+https://github.com/freerdp/freerdp?signed#tag=3.17.2
+  validpgpkeys:
+    - 7703B333420E0AEF995EB4B3A49454A3FC909FD5
   sha512sums:
-    - 644a22f011fd31f2d91e73e26f0b4cfc1e9f8cf862440b08a9a81a5a94e921aeeb1dde2be24d6a9395e355d0ccbe89fd369b0cf7bb45582c2eb6f741036da775
+    - 598bb7bb424ebd85c46780019a7264dc979a02f3189d314ffab967c9478e7f04c64c60aeeb1a6938e2796950b97d8a547236109f2539a411d0f828b719ee9436
   b2sums:
-    - 985bc9aeae7488e205cf04361d36ac40e030ce80577183eac2dcf99c6a4c3a69f0dbfe2944bb29e037ce755df9d89313b7720ebf657316e6ab6b5531aae43a36
+    - 5e83fda70de09191a8bf4300019793fe3b299cc06c8d0baca8393f847e95840dca5bb024c02bde8c2cec21c023703c6fd48dfce671936c1dcad86b061c00b42b
 pkgname:
   - name: freerdp
     depends:
@@ -89,8 +92,6 @@ pkgname:
       - wayland
       - alsa-lib
       - libasound.so
-      - e2fsprogs
-      - libcom_err.so
       - ffmpeg
       - libavcodec.so
       - libavutil.so

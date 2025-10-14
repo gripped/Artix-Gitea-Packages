@@ -2,11 +2,10 @@
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Stijn Segers <francesco dot borromini at gmail dot com>
 
-_name=FreeRDP
 pkgname=freerdp
 pkgver=3.17.2
 _libver=${pkgver/.*/}
-pkgrel=3
+pkgrel=4
 epoch=2
 pkgdesc="Free implementation of the Remote Desktop Protocol (RDP)"
 arch=(x86_64)
@@ -36,8 +35,8 @@ depends=(
 makedepends=(
   alsa-lib
   cmake
-  e2fsprogs
   ffmpeg
+  git
   icu
   json-c
   krb5
@@ -47,6 +46,7 @@ makedepends=(
   libpulse
   libusb
   libwebp
+  ninja
   openssl
   pam
   pkcs11-helper
@@ -64,10 +64,19 @@ provides=(
   libwinpr$_libver.so
 )
 source=(
-  https://github.com/$pkgname/$pkgname/archive/$pkgver/$pkgname-$pkgver.tar.gz
+  "git+https://github.com/$pkgname/$pkgname?signed#tag=$pkgver"
 )
-sha512sums=('644a22f011fd31f2d91e73e26f0b4cfc1e9f8cf862440b08a9a81a5a94e921aeeb1dde2be24d6a9395e355d0ccbe89fd369b0cf7bb45582c2eb6f741036da775')
-b2sums=('985bc9aeae7488e205cf04361d36ac40e030ce80577183eac2dcf99c6a4c3a69f0dbfe2944bb29e037ce755df9d89313b7720ebf657316e6ab6b5531aae43a36')
+sha512sums=('598bb7bb424ebd85c46780019a7264dc979a02f3189d314ffab967c9478e7f04c64c60aeeb1a6938e2796950b97d8a547236109f2539a411d0f828b719ee9436')
+b2sums=('5e83fda70de09191a8bf4300019793fe3b299cc06c8d0baca8393f847e95840dca5bb024c02bde8c2cec21c023703c6fd48dfce671936c1dcad86b061c00b42b')
+validpgpkeys=(
+  7703B333420E0AEF995EB4B3A49454A3FC909FD5 # akallabeth <akallabeth@posteo.net>
+)
+
+prepare() {
+  # Fix building downstream packages
+  # https://github.com/FreeRDP/FreeRDP/pull/11876
+  git -C $pkgname cherry-pick -n 74a3a7695cdd09cf020acdeb09480ac8ee92ccbe
+}
 
 build() {
   # gcc14 buildfix
@@ -110,7 +119,8 @@ build() {
     -D WITH_WAYLAND=ON
     -D WITH_WINPR_TOOLS=ON
     -D WITH_X11=ON
-    -S $_name-$pkgver
+    -G Ninja
+    -S $pkgname
     -W no-dev
   )
 
@@ -119,13 +129,12 @@ build() {
 }
 
 check() {
-  ctest --test-dir build --output-on-failure
+  ctest --test-dir build --output-on-failure --stop-on-failure -j$(nproc)
 }
 
 package() {
   depends+=(
     alsa-lib libasound.so
-    e2fsprogs libcom_err.so
     ffmpeg libavcodec.so libavutil.so libswresample.so libswscale.so
     icu libicuuc.so
     json-c libjson-c.so
@@ -141,5 +150,5 @@ package() {
   )
 
   DESTDIR="$pkgdir" cmake --install build
-  install -vDm 644 $_name-$pkgver/{ChangeLog,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 $pkgname/{ChangeLog,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
 }
