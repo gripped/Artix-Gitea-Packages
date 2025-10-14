@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 21.1.1-1
+    version: 21.1.1-3
     packages:
-      - spirv-llvm-translator-21.1.1-1-x86_64.pkg.tar.zst
+      - spirv-llvm-translator-21.1.1-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

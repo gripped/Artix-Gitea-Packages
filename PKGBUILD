@@ -1,50 +1,76 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Maintainer: Daniel Bermond <dbermond@archlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
-_srcname=SPIRV-LLVM-Translator
-pkgname=${_srcname,,}
+pkgname=spirv-llvm-translator
 pkgver=21.1.1
-pkgrel=1
-pkgdesc="Tool and a library for bi-directional translation between SPIR-V and LLVM IR"
+pkgrel=3
+pkgdesc="LLVM <-> SPIR-V converter for compilers targeting SPIR-V"
+url="https://www.khronos.org/spirv/"
 arch=(x86_64)
-url="https://github.com/KhronosGroup/SPIRV-LLVM-Translator"
-license=(LicenseRef-custom)
-depends=(gcc-libs glibc llvm-libs)
-makedepends=(git cmake llvm spirv-headers spirv-tools)
-checkdepends=(python clang)
-source=(git+${url}.git#tag=v$pkgver
-        '010-spirv-llvm-translator-fix-UniformId-test.patch'::'https://github.com/KhronosGroup/SPIRV-LLVM-Translator/commit/fc5873ee760c333738c9e8e8d8c2eb906f0c40f5.patch')
-sha256sums=('2fb81ad0fb976874fa7437834d5e2aba49b58208e0724b950e8e3415e43e92d8'
-            '7ae8f00bbe49fd6e12bfb7f8d78152d6fcff2f665ef2e3a400d12272cd924fd1')
+license=(NCSA)
+depends=(
+  gcc-libs
+  glibc
+  llvm-libs
+  spirv-tools
+)
+makedepends=(
+  cmake
+  git
+  llvm
+  ninja
+  spirv-headers
+)
+checkdepends=(
+  clang
+  python
+)
+source=(
+  git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator#tag=v$pkgver
+  0001-fixes-a-new-validation-failure-in-a-UniformId-test-3.patch
+)
+b2sums=('b68cbb40de22d7a2f6263e3514bad57ba41194081bf189f697fc412edffec6ddadb6faf18c0187914f7c52e93e1e09c673998c9f64405d37822fa9c6a74410b4'
+        '72582c18a18eaee813a262777ae638c36333e516d2b50493dae1e106abe8e7db851419c9fe358a0b80600aa24bd2a87acf0a77d9297836976322ba6109777657')
 
 prepare() {
-  patch -d "$_srcname" -Np1 -i "${srcdir}/010-spirv-llvm-translator-fix-UniformId-test.patch"
-}
+  cd SPIRV-LLVM-Translator
 
-pkgver() {
-  git -C ${_srcname} describe --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./;s/-/+/'
+  # Fix tests
+  git apply -3 ../0001-fixes-a-new-validation-failure-in-a-UniformId-test-3.patch
 }
 
 build() {
-  cmake -B build -S ${_srcname} \
-    -G 'Unix Makefiles' \
-    -DBUILD_SHARED_LIBS=ON \
-    -DCMAKE_BUILD_TYPE=Release \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_POSITION_INDEPENDENT_CODE=ON \
-    -DCMAKE_SKIP_RPATH=ON \
-    -DLLVM_INCLUDE_TESTS=ON \
-    -DLLVM_EXTERNAL_LIT=/usr/bin/lit \
-    -DLLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/spirv/ \
-    -Wno-dev
+  local cmake_options=(
+    -D BUILD_SHARED_LIBS=ON
+    -D CMAKE_BUILD_TYPE=Release
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -D CMAKE_INSTALL_SYSCONFDIR=/etc
+    -D CMAKE_POSITION_INDEPENDENT_CODE=ON
+    -D CMAKE_SKIP_RPATH=ON
+    -D LLVM_CONFIG=llvm-config
+    -D LLVM_EXTERNAL_LIT=/usr/bin/lit
+    -D LLVM_EXTERNAL_SPIRV_HEADERS_SOURCE_DIR=/usr/include/spirv
+    -D LLVM_LIBDIR_SUFFIX=
+    -D LLVM_SPIRV_ENABLE_LIBSPIRV_DIS=ON
+    -D LLVM_SPIRV_INCLUDE_TESTS=ON
+    -W no-dev
+  )
+
+  cmake -S SPIRV-LLVM-Translator -B build -G Ninja "${cmake_options[@]}"
   cmake --build build
 }
 
 check() {
-  make -C build test
+  # Does not use ctest-compatible targets
+  cmake --build build --target test
 }
 
 package() {
-  DESTDIR="${pkgdir}" cmake --install build
-  install -Dm644 ${_srcname}/LICENSE.TXT -t "${pkgdir}"/usr/share/licenses/${pkgname}/
+  DESTDIR="$pkgdir" cmake --install build
+
+  install -Dm644 SPIRV-LLVM-Translator/LICENSE.TXT \
+    -t "$pkgdir/usr/share/licenses/$pkgname"
 }
+
+# vim:set sw=2 sts=-1 et:
