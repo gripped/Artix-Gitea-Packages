@@ -32,9 +32,9 @@ makedepends=(
   xorgproto
 )
 source=(
-  "git+https://gitlab.winehq.org/wine/vkd3d.git?signed#tag=vkd3d-$pkgver"
+  "git+https://gitlab.winehq.org/wine/vkd3d.git#tag=vkd3d-$pkgver"
 )
-b2sums=('7048523f3b0e0f29c9fcafeab433482bdaf89f364c96bc94f561160ef49ff0e5c6dd4e09cb5106cd926ce533078c4184788990c457b67687a416d98c978f913d')
+b2sums=('SKIP')
 validpgpkeys=(
   277EB71D1BEBFC86E0E14983C380B588AA8A1D1C # Henri Verbeet <hverbeet@locutus.nl>
 )
