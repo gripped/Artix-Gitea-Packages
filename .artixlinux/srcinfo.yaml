@@ -1,10 +1,10 @@
 ---
-version: 0.23.1-1
+version: 0.23.1-2
 pkgbase:
   name: vc-intrinsics
   pkgdesc: Set of new intrinsics on top of core LLVM IR instructions that represent SIMD semantics of a program targeting GPU
   pkgver: 0.23.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/intel/vc-intrinsics
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - b05cabc364c71450738b999906df5ffae683c3501760a3edaa71f113b3cbc1a0
 pkgname:
   - name: vc-intrinsics
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
