@@ -1,9 +1,9 @@
 ---
-version: 25.8.2-1
+version: 25.8.2-3
 pkgbase:
   name: libreoffice-fresh
   pkgver: 25.8.2
-  pkgrel: 1
+  pkgrel: 3
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -135,12 +135,12 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-25.8.2.1.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-25.8.2.1.tar.xz.asc
-    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-help-25.8.2.1.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-help-25.8.2.1.tar.xz.asc
-    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-translations-25.8.2.1.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-translations-25.8.2.1.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-25.8.2.2.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-25.8.2.2.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-help-25.8.2.2.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-help-25.8.2.2.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-translations-25.8.2.2.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/25.8.2/libreoffice-translations-25.8.2.2.tar.xz.asc
     - https://dev-www.libreoffice.org/src/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
     - https://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
     - https://dev-www.libreoffice.org/src/language-subtag-registry-2021-03-05.tar.bz2
@@ -163,17 +163,18 @@ pkgbase:
     - https://dev-www.libreoffice.org/extern/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
     - libreoffice-24.8.4.2-icu76_fixes-1.patch
     - orcus-0.21.0.patch
+    - poppler-25.10.patch
     - soffice-template.desktop.in
     - libreoffice-fresh.sh
     - libreoffice-fresh.csh
   validpgpkeys:
     - C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3
   sha256sums:
-    - e892de832fc29e2740939bc0790381d94b762609b4c898ac3219fc37f8724075
+    - 002ca2eec3df818d3655bc5ab5702263194febc0212f02e12df1eee11bd7c15e
     - SKIP
-    - 8fa119f87f5c2104e25a05310618a2057ccebd3271deee77cc27e80f5bc5e46b
+    - bb9fde2c035c757581f49545ccbfb046fc31f72968b53b28d0987f1c5547eb5f
     - SKIP
-    - 3a5ab042b9542e10e4ac26c20700210bec9053fa191b95f49fa40367d988f455
+    - fb01188fd7258b4da36782618d790e4073769097c0597e103eb814963e272830
     - SKIP
     - 75823776fb51a9c526af904f1503a7afaaab900fba83eda64f8a41073724c870
     - 983941d31ee8d366085cadf28db75eb1f5cb03ba1e5853b98f12f7f51c63b776
@@ -197,6 +198,7 @@ pkgbase:
     - f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140
     - 5c67449d7f7d43b66063780650ebf8954e59164c38b36883078e36c11fde82de
     - 76896e6d3a8f52650ea2c8184b001cdb6f5eb7792803835dfc664e7ba23df923
+    - 28cb230ed4511fc572fc55da570c54a345b0d743c2134b0af3e64bd096b69094
     - d0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879
     - 9fb33dbc3ffeb6af2ea7341b58242142d4eca903584c21c5f4b44ff27fbf5b5f
     - 512355b5ef646791089da8c2b35cf8b019673c0c8a58685962af3b5d9eb5d6bb
