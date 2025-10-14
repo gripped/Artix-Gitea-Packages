@@ -1,0 +1,33 @@
+---
+version: 1.47.1-1
+pkgbase:
+  name: ruby-rubocop-ast
+  pkgdesc: RuboCop's AST extensions and NodePattern functionality
+  pkgver: 1.47.1
+  pkgrel: 1
+  url: https://github.com/rubocop/rubocop-ast
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-oedipus_lex
+    - ruby-rake
+    - ruby-rspec
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-parser
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/rubocop/rubocop-ast/archive/v1.47.1/ruby-rubocop-ast-1.47.1.tar.gz
+  sha512sums:
+    - 04227d1a23e5775664977927cb8cf63283e362f667a117263dc960e0dc7cb9ac0f151d54b774b3ac3cf20657e7e73e4e5f149ca04472ad77b8b400d7a39204e7
+  b2sums:
+    - 1bf5700a40af14b990becb620f9b3ebf4bc33d63dc8704bc44628dcdfed08098067fbea5ee8eda08f038a41927f2b625fc0ba0e0f389445bff9f3d5f6b79dc5d
+pkgname:
+  - name: ruby-rubocop-ast
+# generated with artixpkg 0.37.4-1-any
