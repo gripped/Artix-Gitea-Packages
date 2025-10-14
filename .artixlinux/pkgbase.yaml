@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 20250912.0-2
+    version: 20251003.0-1
     packages:
-      - jami-qt-20250912.0-2-x86_64.pkg.tar.zst
+      - jami-qt-20251003.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
