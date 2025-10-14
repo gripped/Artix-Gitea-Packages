@@ -1,0 +1,38 @@
+---
+version: 3.7.0-1
+pkgbase:
+  name: ruby-rubocop-rspec
+  pkgdesc: Code style checking for RSpec files. A plugin for the RuboCop code style enforcing & linting tool
+  pkgver: 3.7.0
+  pkgrel: 1
+  url: https://github.com/rubocop/rubocop-rspec
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-parallel
+    - ruby-rack
+    - ruby-rake
+    - ruby-rspec
+    - ruby-rubocop-performance
+    - ruby-rubocop-rake
+    - ruby-yard
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - rubocop
+    - ruby-lint_roller
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/rubocop/rubocop-rspec/archive/v3.7.0/ruby-rubocop-rspec-3.7.0.tar.gz
+  sha512sums:
+    - 42faafa352a72d43ef2ca231a9452e73dd85fe40abf122460bf3bb977495bc90f86409dea35b5928567fe55a4b6dabe95b9796bbd6d7da9e3f133379157c1da0
+  b2sums:
+    - 1fda534ff711557246bb5180171d9e2997458cf9708fa210b88c88b832bba52e69001a2c967a92c62c8d952ac302a8b20bbd8f2333815cc7f3af633af83c495a
+pkgname:
+  - name: ruby-rubocop-rspec
+# generated with artixpkg 0.37.4-1-any
