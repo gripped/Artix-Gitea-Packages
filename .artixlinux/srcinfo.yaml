@@ -1,0 +1,54 @@
+---
+version: 1.81.1-1
+pkgbase:
+  name: rubocop
+  pkgdesc: A Ruby code style checking and code formatting tool
+  pkgver: 1.81.1
+  pkgrel: 1
+  url: https://rubocop.org/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - asciidoctor
+    - procps-ng
+    - ruby-bundler
+    - ruby-irb
+    - ruby-lsp
+    - ruby-memory_profiler
+    - ruby-rake
+    - ruby-rspec
+    - ruby-rubocop-performance
+    - ruby-rubocop-rake
+    - ruby-rubocop-rspec
+    - ruby-stackprof
+    - ruby-test-queue
+    - ruby-webmock
+    - ruby-yard
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-language_server-protocol
+    - ruby-lint_roller
+    - ruby-parallel
+    - ruby-parser
+    - ruby-rainbow
+    - ruby-regexp_parser
+    - ruby-rubocop-ast
+    - ruby-ruby-progressbar
+    - ruby-unicode-display_width
+  provides:
+    - ruby-rubocop
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/rubocop/rubocop/archive/v1.81.1/rubocop-1.81.1.tar.gz
+  sha512sums:
+    - 84afe8ad1f7ee8050658402ffaa88714ffbf85c742c23c8928c4ab09ec8ed485c8c1e4c283fc76c8d0a43f67317c8030bbba7e7c7220088894da2be06f9de61e
+  b2sums:
+    - e3386971a4b816f140e07e78c85589a6a1b59d932ac89ca0a8370abe25388b7fbb2716c7707d604c3dd0ad68cffdf21b569a61e5d83ef0397def521bb1abaa05
+pkgname:
+  - name: rubocop
+# generated with artixpkg 0.37.4-1-any
