@@ -1,0 +1,44 @@
+---
+version: 4.20.1-1
+pkgbase:
+  name: tumbler
+  pkgdesc: Thumbnail service implementing the thumbnail management D-Bus specification
+  pkgver: 4.20.1
+  pkgrel: 1
+  url: https://docs.xfce.org/xfce/tumbler/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - python
+    - ffmpegthumbnailer
+    - poppler-glib
+    - libgsf
+    - libgepub
+    - libopenraw
+    - freetype2
+    - xfce4-dev-tools
+  depends:
+    - libxfce4util
+    - gdk-pixbuf2
+  optdepends:
+    - 'ffmpegthumbnailer: video thumbnails'
+    - 'poppler-glib: PDF thumbnails'
+    - 'libgsf: ODF thumbnails'
+    - 'libgepub: EPUB thumbnails'
+    - 'libopenraw: RAW thumbnails'
+    - 'freetype2: font thumbnails'
+  backup:
+    - etc/xdg/tumbler/tumbler.rc
+  source:
+    - git+https://gitlab.xfce.org/xfce/tumbler.git#tag=tumbler-4.20.1
+  sha256sums:
+    - 6757a8acc992f67fb64e1a3b9f045d6bba5370bbc47b07a57bb0e28d0370ca92
+pkgname:
+  - name: tumbler
+# generated with artixpkg 0.37.4-1-any
