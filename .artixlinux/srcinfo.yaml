@@ -1,0 +1,44 @@
+---
+version: 8.0.3-1
+pkgbase:
+  name: ruby-activesupport
+  pkgdesc: A collection of utility classes and standard library extensions
+  pkgver: 8.0.3
+  pkgrel: 1
+  url: https://github.com/rails/rails/tree/master/activesupport
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-base64
+    - ruby-benchmark
+    - ruby-bigdecimal
+    - ruby-concurrent
+    - ruby-connection_pool
+    - ruby-drb
+    - ruby-logger
+    - ruby-i18n
+    - ruby-minitest
+    - ruby-securerandom
+    - ruby-tzinfo
+    - ruby-uri
+    - ruby-zeitwerk
+  options:
+    - '!emptydirs'
+  source:
+    - ruby-activesupport::git+https://github.com/rails/rails#tag=v8.0.3?signed
+  validpgpkeys:
+    - 54FE550EA35E26D7C75362C1FC23B6D0F1EEE948
+    - 4CE91B75A79828E86B1AA8BB953170BCB4FFAFC6
+  sha512sums:
+    - 84cecddbc471ef96c99c54de94874d95c059aed595418071dde671b76c45a206f09c55ff45192aec8fedfff2a2861e6c0a0c16dc2d3df40f085e6341993985af
+  b2sums:
+    - 1d65c5396075107fc4491a0904e33851131ba46c651c313f96d838c9d2428682a711e3478e3cd79bbfe1890c14d551f65834ab9d2809f06f143fc4d8144541a0
+pkgname:
+  - name: ruby-activesupport
+# generated with artixpkg 0.37.4-1-any
