@@ -1,0 +1,29 @@
+---
+version: 5.26.0-1
+pkgbase:
+  name: ruby-minitest
+  pkgdesc: Complete suite of testing facilities supporting TDD, BDD, mocking, and benchmarking
+  pkgver: 5.26.0
+  pkgrel: 1
+  url: https://github.com/minitest/minitest
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - ruby-hoe
+    - ruby-rake
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/minitest/minitest/archive/v5.26.0/ruby-minitest-5.26.0.tar.gz
+  sha512sums:
+    - 61066749b9373d20d5a5a13150d9c483879fff5aa8ab335659fcb4318a85236d37ad6634efdfb284fce88613fc37576b80b5fd1c90cb1eb36feaa198daea10cc
+  b2sums:
+    - 638c6c14d009a62f13ed6899db8d3959735c9daabfc307292351c92620c7db51d628d9b156da806a8cf382011bd9030b71fcba354f2e38072f79182dc85c46f1
+pkgname:
+  - name: ruby-minitest
+# generated with artixpkg 0.37.4-1-any
