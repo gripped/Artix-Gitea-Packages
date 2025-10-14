@@ -666,7 +666,7 @@ package_vulkan-mesa-layers() {
 package_mesa-docs() {
   pkgdesc="Mesa's documentation"
 
-  mv docs/* "$pkgdir"
+#  mv docs/* "$pkgdir"
 
   install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
