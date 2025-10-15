@@ -1,0 +1,186 @@
+---
+version: 17.0+r88+geee0e8f22-1
+pkgbase:
+  name: pulseaudio
+  pkgdesc: A featureful, general-purpose sound server
+  pkgver: 17.0+r88+geee0e8f22
+  pkgrel: 1
+  url: https://www.freedesktop.org/wiki/Software/PulseAudio/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - alsa-lib
+    - attr
+    - avahi
+    - bash
+    - bluez
+    - bluez-libs
+    - check
+    - dbus
+    - doxygen
+    - fftw
+    - gcc-libs
+    - git
+    - glib2
+    - glibc
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - gtk3
+    - jack2
+    - libasyncns
+    - libcap
+    - libice
+    - libltdl
+    - libsm
+    - libsndfile
+    - libsoxr
+    - libx11
+    - libxcb
+    - libxtst
+    - lirc
+    - meson
+    - openssl
+    - orc
+    - python
+    - python-dbus
+    - python-pyqt5
+    - rtkit
+    - sbc
+    - speexdsp
+    - elogind
+    - tdb
+    - valgrind
+    - webrtc-audio-processing-1
+    - xmltoman
+  source:
+    - git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=eee0e8f22fdcb2fd4fbfa4311df7e5070239d435
+    - 0001-alsa-ucm-Fix-segfault-from-recursion-due-to-too-many.patch
+  b2sums:
+    - 17981ec59730676b45fc1a0b36ee7d19fe099428e13a71ea904c4b3691a274d47846d71238bd29f8090e478ce59ef48b0b1ee2b1ab02ac67aa7b12a94b5c035d
+    - 73f93801069b2c5b09646870269c0f42cefc2183a73b47c78fd160c978a841c11c5146b98351a11be24d4785181f361a455534e6f6ca2d977cf585044836f8ed
+pkgname:
+  - name: pulseaudio
+    depends:
+      - libpulse=17.0+r88+geee0e8f22-1
+      - alsa-lib
+      - bash
+      - dbus
+      - fftw
+      - gcc-libs
+      - glib2
+      - glibc
+      - libcap
+      - libice
+      - libltdl
+      - libsm
+      - libsndfile
+      - libsoxr
+      - libx11
+      - libxcb
+      - libxtst
+      - orc
+      - rtkit
+      - speexdsp
+      - elogind
+      - tdb
+      - webrtc-audio-processing-1
+    optdepends:
+      - 'pulseaudio-alsa: ALSA configuration (recommended)'
+      - 'pulseaudio-bluetooth: Bluetooth support'
+      - 'pulseaudio-equalizer: Graphical equalizer'
+      - 'pulseaudio-jack: Jack support'
+      - 'pulseaudio-lirc: IR (lirc) support'
+      - 'pulseaudio-rtp: RTP and RAOP support'
+      - 'pulseaudio-zeroconf: Zeroconf support'
+    provides:
+      - pulse-native-provider
+    conflicts:
+      - pipewire-pulse
+    replaces:
+      - pulseaudio-gconf<=11.1
+      - pulseaudio-xen<=9.0
+    backup:
+      - etc/pulse/daemon.conf
+      - etc/pulse/default.pa
+      - etc/pulse/system.pa
+  - name: libpulse
+    pkgdesc: A featureful, general-purpose sound server (client library)
+    depends:
+      - bash
+      - dbus
+      - glib2
+      - glibc
+      - libasyncns
+      - libsndfile
+      - libxcb
+    optdepends:
+      - 'pulse-native-provider: PulseAudio backend'
+    provides:
+      - libpulse-mainloop-glib.so
+      - libpulse-simple.so
+      - libpulse.so
+    backup:
+      - etc/pulse/client.conf
+  - name: pulseaudio-zeroconf
+    pkgdesc: Zeroconf support for PulseAudio
+    depends:
+      - libpulse=17.0+r88+geee0e8f22-1
+      - pulseaudio=17.0+r88+geee0e8f22-1
+      - avahi
+      - dbus
+      - glibc
+  - name: pulseaudio-lirc
+    pkgdesc: IR (lirc) support for PulseAudio
+    depends:
+      - pulseaudio=17.0+r88+geee0e8f22-1
+      - glibc
+      - lirc
+  - name: pulseaudio-jack
+    pkgdesc: Jack support for PulseAudio
+    depends:
+      - pulseaudio=17.0+r88+geee0e8f22-1
+      - dbus
+      - glibc
+      - jack
+  - name: pulseaudio-bluetooth
+    pkgdesc: Bluetooth support for PulseAudio
+    depends:
+      - libpulse=17.0+r88+geee0e8f22-1
+      - pulseaudio=17.0+r88+geee0e8f22-1
+      - bluez
+      - bluez-libs
+      - dbus
+      - glib2
+      - glibc
+      - gst-plugins-base-libs
+      - gstreamer
+      - sbc
+    optdepends:
+      - 'gst-plugins-bad: AptX and LDAC support'
+  - name: pulseaudio-equalizer
+    pkgdesc: Graphical equalizer for PulseAudio
+    depends:
+      - pulseaudio=17.0+r88+geee0e8f22-1
+      - dbus
+      - fftw
+      - glibc
+      - python
+      - python-dbus
+      - python-pyqt5
+  - name: pulseaudio-rtp
+    pkgdesc: RTP and RAOP support for PulseAudio
+    depends:
+      - libpulse=17.0+r88+geee0e8f22-1
+      - pulseaudio=17.0+r88+geee0e8f22-1
+      - glib2
+      - glibc
+      - gst-plugins-base
+      - gst-plugins-base-libs
+      - gst-plugins-good
+      - gstreamer
+      - openssl
+# generated with artixpkg 0.37.4-1-any
