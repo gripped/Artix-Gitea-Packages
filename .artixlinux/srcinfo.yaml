@@ -1,9 +1,9 @@
 ---
-version: 4.1.1-1
+version: 4.2.0-1
 pkgbase:
   name: libressl
   pkgdesc: Free version of the TLS/crypto stack forked from OpenSSL
-  pkgver: 4.1.1
+  pkgver: 4.2.0
   pkgrel: 1
   url: https://www.libressl.org/
   arch:
@@ -18,12 +18,12 @@ pkgbase:
   backup:
     - etc/libressl/openssl.cnf
   source:
-    - https://cdn.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.1.1.tar.gz
-    - https://cdn.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.1.1.tar.gz.asc
+    - https://cdn.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.2.0.tar.gz
+    - https://cdn.openbsd.org/pub/OpenBSD/LibreSSL/libressl-4.2.0.tar.gz.asc
   validpgpkeys:
     - A1EB079B8D3EB92B4EBD3139663AF51BD5E4D8D5
   sha256sums:
-    - c7ff7a7d675d5f57730940e5ccff1dbe2dcd5b7405b5397e0f7ffd66a5ed5679
+    - 0f7dba44d7cb8df8d53f2cfbf1955254bc128e0089595f1aba2facfaee8408b2
     - SKIP
 pkgname:
   - name: libressl
