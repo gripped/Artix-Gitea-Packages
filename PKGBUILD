@@ -61,7 +61,7 @@ sha512sums=('f881cac48fcb421fc07a435cd7a1acdf0b0c13aebf997af3100ecaca276e595a7dd
 b2sums=('c49494ce91200f54a194554c19067f6533587fe3caebaf54e71d99548dcb956545ae709a775e09fad33a84702043b4e311626103c42b7d72190d1304bc45bdb3')
 
 build() {
-  artix-meson $pkgname-$pkgver build
+  artix-meson $pkgname-$pkgver build -Dinit_system=sysvinit_openrc
   meson compile -C build
 }
 
