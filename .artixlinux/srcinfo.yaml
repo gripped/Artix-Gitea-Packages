@@ -1,10 +1,10 @@
 ---
-version: 0.git30.62321fd-2
+version: 0.git31.5c5c712-1
 pkgbase:
   name: libtg_owt
   pkgdesc: WebRTC library
-  pkgver: 0.git30.62321fd
-  pkgrel: 2
+  pkgver: 0.git31.5c5c712
+  pkgrel: 1
   url: https://github.com/desktop-app/tg_owt
   arch:
     - x86_64
@@ -34,14 +34,14 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - git+https://github.com/desktop-app/tg_owt.git#commit=62321fd7128ab2650b459d4195781af8185e46b5
+    - git+https://github.com/desktop-app/tg_owt.git#commit=5c5c71258777d0196dbb3a09cc37d2f56ead28ab
     - 0001-Replace-absl-template-nullability-annotations.patch
     - git+https://chromium.googlesource.com/libyuv/libyuv/
     - git+https://github.com/google/crc32c
     - git+https://github.com/abseil/abseil-cpp
     - git+https://github.com/cisco/libsrtp
   b2sums:
-    - 73232699174a27e794efbdd51926d2ef515384f0a95eb498f1f6f41b5c3ee986fd964f5f5017f7f5368a784aafc11433910b6a9e412ecf6c21be8e8ceae8deaf
+    - 921942c33425ee7efb6a0d982f89251dfeb9098a459fe71c8d6b8c934b4fbf812a3c6b320f0e5c0c49e9279ce2cd72dcbaf524c62bd44dcaf35ae7b1afe270f9
     - b7505db537f72da43fdc648d181387a550a683e204a12df593d68ff51ae2f2a924352adf11ad2fa794e5de87ed96d0d698257b442ca0fd2fbb5fb09ac627a7b6
     - SKIP
     - SKIP
@@ -49,4 +49,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libtg_owt
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
