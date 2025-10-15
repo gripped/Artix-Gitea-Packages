@@ -1,12 +1,11 @@
 ---
-version: 4.10.1-1
+version: 4.10.2-2
 pkgbase:
   name: syslog-ng
   pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities
-  pkgver: 4.10.1
-  pkgrel: 1
+  pkgver: 4.10.2
+  pkgrel: 2
   url: https://github.com/syslog-ng/syslog-ng
-  install: syslog-ng.install
   arch:
     - x86_64
   license:
@@ -18,18 +17,32 @@ pkgbase:
     - python-pytest
     - python-pytest-mock
   makedepends:
+    - abseil-cpp
     - autoconf-archive
+    - bash
+    - curl
     - docbook-xsl
+    - gawk
+    - gcc-libs
     - git
+    - glib2
+    - glibc
+    - grpc
     - hiredis
+    - json-c
+    - libcap
     - libdbi
     - libesmtp
     - libmaxminddb
+    - libnet
     - librabbitmq-c
     - librdkafka
     - libxslt
     - mongo-c-driver
     - net-snmp
+    - openssl
+    - pcre2
+    - protobuf
     - python
     - python-boto3
     - python-botocore
@@ -49,50 +62,11 @@ pkgbase:
     - python-requests-oauthlib
     - python-rsa
     - python-setuptools
-    - python-six
     - python-urllib3
     - python-websocket-client
-  depends:
-    - abseil-cpp
-    - bash
-    - curl
-    - gawk
-    - gcc-libs
-    - glib2
-    - glibc
-    - grpc
-    - json-c
-    - libcap
-    - libnet
-    - openssl
-    - pcre2
-    - protobuf
-  optdepends:
-    - 'hiredis: for the Redis plugin'
-    - 'libdbi: for the SQL plugin'
-    - 'libesmtp: for the SMTP plugin'
-    - 'libmaxminddb: for the GeoIP2 plugin'
-    - 'librabbitmq-c: for the AMQP plugin'
-    - 'librdkafka: for the Kafka C plugin'
-    - 'logrotate: for rotating log files'
-    - 'mongo-c-driver: for the MongoDB plugin'
-    - 'net-snmp: for the SNMP plugin'
-    - 'python-boto3: for Python S3 module'
-    - 'python-botocore: for Python S3 module'
-    - 'python-kubernetes: for Python Kubernetes module'
-    - 'python-ply: for debugger CLI'
-    - 'python-requests: for Python hypr module'
-    - 'python: for Python-based plugins'
-  conflicts:
-    - eventlog
-  replaces:
-    - eventlog
-  backup:
-    - etc/syslog-ng/syslog-ng.conf
-    - etc/logrotate.d/syslog-ng
-    - etc/default/syslog-ng@default
+    - zlib
   source:
-    - git+https://github.com/syslog-ng/syslog-ng.git#tag=syslog-ng-4.10.1
+    - git+https://github.com/syslog-ng/syslog-ng.git#tag=syslog-ng-4.10.2
     - git+https://github.com/balabit/ivykis.git
     - git+https://github.com/open-telemetry/opentelemetry-proto.git
     - git+https://github.com/Thalhammer/jwt-cpp.git
@@ -100,7 +74,7 @@ pkgbase:
     - syslog-ng-do-not-install-python-venv.patch
     - syslog-ng-config.patch
   sha256sums:
-    - 79906a4bacc30369172bea3297cee3dd180b1cbedb2b0879a32d9a590e9fba79
+    - 8542b1347942602bbf7a084ff82a08779fcbb9d0116636f0fb77b4c53a4687b4
     - SKIP
     - SKIP
     - SKIP
@@ -109,4 +83,119 @@ pkgbase:
     - 1039550b091df1a50e8d30b624d52a7fd56c29d0ceec596b4b029a7cc92a3825
 pkgname:
   - name: syslog-ng
+    install: syslog-ng.install
+    depends:
+      - abseil-cpp
+      - bash
+      - curl
+      - gawk
+      - gcc-libs
+      - glib2
+      - glibc
+      - grpc
+      - json-c
+      - libcap
+      - libnet
+      - openssl
+      - pcre2
+      - protobuf
+      - zlib
+    optdepends:
+      - 'logrotate: for rotating log files'
+    conflicts:
+      - eventlog
+    replaces:
+      - eventlog
+    backup:
+      - etc/syslog-ng/syslog-ng.conf
+      - etc/logrotate.d/syslog-ng
+      - etc/default/syslog-ng@default
+  - name: syslog-ng-python
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (Python modules)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - python
+      - syslog-ng
+    optdepends:
+      - 'python-boto3: for S3 module'
+      - 'python-botocore: for S3 module'
+      - 'python-kubernetes: for Kubernetes module'
+      - 'python-ply: for debugger CLI'
+      - 'python-requests: for hypr module'
+  - name: syslog-ng-amqp
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (AMQP module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - librabbitmq-c
+      - syslog-ng
+  - name: syslog-ng-geoip2
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (GeoIP2 module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - libmaxminddb
+      - syslog-ng
+  - name: syslog-ng-kafka
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (Kafka module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - librdkafka
+      - syslog-ng
+  - name: syslog-ng-mongodb
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (MongoDB module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - mongo-c-driver
+      - syslog-ng
+  - name: syslog-ng-redis
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (Redis module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - hiredis
+      - syslog-ng
+  - name: syslog-ng-smtp
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (SMTP module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - libesmtp
+      - syslog-ng
+  - name: syslog-ng-snmp
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (SNMP module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - net-snmp
+      - syslog-ng
+  - name: syslog-ng-sql
+    pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities (SQL module)
+    groups:
+      - syslog-ng-modules
+    depends:
+      - glib2
+      - glibc
+      - libdbi
+      - openssl
+      - syslog-ng
 # generated with artixpkg 0.37.4-1-any
