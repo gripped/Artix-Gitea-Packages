@@ -1,25 +1,48 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Contributor: Lex Black <autumn-wind@web.de>
 
 pkgname=labwc
-pkgver=0.9.1
+pkgver=0.9.2
 pkgrel=1
-pkgdesc='wlroots-based window-stacking compositor for wayland'
+pkgdesc='stacking wayland compositor with look and feel from openbox'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
 license=('GPL-2.0-only')
-depends=(cairo glib2 glibc libinput libpng librsvg libsfdo libwlroots-0.19.so
-         libxcb libxkbcommon libxml2 pango pixman ttf-font wayland xorg-xwayland)
-makedepends=('meson' 'cmake' 'scdoc' 'wayland-protocols')
-provides=(wayland-compositor)
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('bf7a245d5fc5665329b3f5c9cb589eb33e658b8eb638cf4f4c9ad68f4b5979f0')
+depends=(
+  cairo
+  glib2
+  glibc
+  libinput
+  libpng
+  librsvg
+  libsfdo
+  libwlroots-0.19.so
+  libxcb
+  libxkbcommon
+  libxml2
+  pango
+  pixman
+  seatd
+  ttf-font
+  wayland
+  xorg-xwayland
+)
+makedepends=(
+  git
+  meson
+  scdoc
+  wayland-protocols
+)
+optdepends=("bemenu: default launcher via Alt+F3")
+source=("git+https://github.com/labwc/labwc#tag=${pkgver}")
+b2sums=('a668d8ccc5f044a036c1a550d8b096bd32916446ec01dc587dd2014181f43c62c437bec8e5dcd2bedb1d3abd6bc2c04ffa9afc4afd2f3683a2abdabdc4048c80')
+
 
 build() {
-  artix-meson -Dman-pages=enabled "${pkgname}-${pkgver}" build
+  artix-meson -Dman-pages=enabled "$pkgname" build
   meson compile -C build
 }
 
 package() {
   meson install -C build --destdir "$pkgdir"
 }
-
