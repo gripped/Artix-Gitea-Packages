@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-async-container
-pkgver=0.27.0
+pkgver=0.27.1
 pkgrel=1
 pkgdesc='Abstract container-based parallelism using threads and processes where appropriate'
 arch=(any)
@@ -11,6 +11,9 @@ license=(MIT)
 depends=(
   ruby
   ruby-async
+)
+makedepends=(
+  git
 )
 checkdepends=(
   ruby-bake
@@ -22,11 +25,11 @@ checkdepends=(
   ruby-sus
 )
 options=(!emptydirs)
-source=(https://github.com/socketry/async-container/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('7d19749f4b70da548903f9f488deced779deb38d7d12d81ae3c3414aecdf0c9e')
+source=(git+https://github.com/socketry/async-container.git#tag=v$pkgver)
+sha256sums=('12156ecf210f3bf61ef8553c6b1fb6d1f81904d07c3b2e140a49ad391be0c220')
 
 prepare() {
-  cd async-container-$pkgver
+  cd async-container
 
   sed -r \
     -e 's|~>|>=|g' \
@@ -41,7 +44,7 @@ prepare() {
 
 build() {
   local _gemdir="$(gem env gemdir)"
-  cd async-container-$pkgver
+  cd async-container
   gem build async-container.gemspec
   gem install \
     --local \
@@ -67,11 +70,11 @@ build() {
 
 check() {
   local _gemdir="$(gem env gemdir)"
-  cd async-container-$pkgver
+  cd async-container
   GEM_HOME="tmp_install/$_gemdir" bake test
 }
 
 package() {
-  cd async-container-$pkgver
+  cd async-container
   cp -a tmp_install/* "$pkgdir"/
 }
