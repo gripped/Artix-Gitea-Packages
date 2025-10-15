@@ -23,8 +23,9 @@ SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
 path = [
-    "thrift-THRIFT-5680-accept-failing-tests.patch",
-    "thrift-remove-tests-with-compilation-error.patch",
+    "thrift-python-adapt-tests-to-python3.patch",
+    "thrift-python-add-TType-UUID.patch",
+    "thrift-python-disable-failing-tests.patch",
 ]
 SPDX-FileCopyrightText = "thrift contributors"
 SPDX-License-Identifier = "Apache-2.0"

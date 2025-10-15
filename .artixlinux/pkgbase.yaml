@@ -25,9 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.22.0-1
+    version: 0.22.0-4
     packages:
-      - thrift-0.22.0-1-x86_64.pkg.tar.zst
+      - thrift-0.22.0-4-x86_64.pkg.tar.zst
+      - python-thrift-0.22.0-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.21.0-1.1
