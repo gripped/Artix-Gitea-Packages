@@ -1,10 +1,10 @@
 ---
-version: 0.15.2-1
+version: 0.15.2-2
 pkgbase:
   name: zig
   pkgdesc: a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software
   pkgver: 0.15.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://ziglang.org/
   arch:
     - x86_64
@@ -14,11 +14,11 @@ pkgbase:
     - lib32-glibc
   makedepends:
     - cmake
-    - llvm
+    - llvm20
   depends:
-    - clang
-    - lld
-    - llvm-libs
+    - clang20
+    - lld20
+    - llvm20-libs
   options:
     - '!lto'
   source:
