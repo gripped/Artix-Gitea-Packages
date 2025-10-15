@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Brett Cornwall <ainola@archlinux.org>
+# Contributor: eNV25
+
+pkgname=keyd
+pkgver=2.5.0
+pkgrel=1
+pkgdesc="A key remapping daemon for linux"
+arch=(x86_64)
+url="https://github.com/rvaiya/keyd"
+license=('MIT')
+optdepends=(
+    "python: Required for use with keyd-application-mapper utility"
+    "perl: For using the optional dump-xkb-config script"
+)
+source=(
+    "$pkgname-$pkgver::https://github.com/rvaiya/keyd/archive/refs/tags/v$pkgver.tar.gz"
+    keyd.sysusers
+)
+sha256sums=('93ec6c153ef673a7a8b4d8b686494dee11d182513f4531c71dce15a8db7f6c1c'
+            'b3fa546c31f61be824a84a33af5c723692e2cedd4e5f87ff655e90f33227395d')
+
+build() {
+    cd "$pkgname-$pkgver"
+    # https://github.com/rvaiya/keyd/issues/801
+    make PREFIX=/usr
+}
+
+# TODO: Work with upstream to make tests more suitable for PKGBUILDS
+
+package() {
+    cd "$pkgname-$pkgver"
+    make PREFIX=/usr DESTDIR="$pkgdir/" install
+
+    install -Dm644 ../keyd.sysusers "$pkgdir/usr/lib/sysusers.d/keyd.conf"
+    install -Dm755 scripts/dump-xkb-config -t "$pkgdir/usr/share/keyd/"
+    install -Dm755 scripts/generate_xcompose -t "$pkgdir/usr/share/keyd/"
+
+    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/keyd"
+    install -Dm644 README.md -t "$pkgdir/usr/share/doc/keyd/"
+}
