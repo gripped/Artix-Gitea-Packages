@@ -1,10 +1,10 @@
 ---
-version: 1.24.2-2
+version: 1.24.2-3
 pkgbase:
   name: level-zero
   pkgdesc: API for accessing low level interfaces in oneAPI platform devices
   pkgver: 1.24.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/oneapi-src/level-zero/
   arch:
     - x86_64
