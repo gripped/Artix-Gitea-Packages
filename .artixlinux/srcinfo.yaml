@@ -1,0 +1,28 @@
+---
+version: 1.0.0-4
+pkgbase:
+  name: xfdashboard
+  pkgdesc: Maybe a Gnome shell like dashboard for Xfce
+  pkgver: 1.0.0
+  pkgrel: 4
+  url: https://docs.xfce.org/apps/xfdashboard/start
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - xfce4-dev-tools
+    - intltool
+  depends:
+    - libwnck3
+    - clutter
+    - garcon
+  source:
+    - git+https://gitlab.xfce.org/apps/xfdashboard.git#tag=1.0.0
+  sha256sums:
+    - 9a5292d4f34db19068c99e696e61b4fc2fd20465e357f82100070e1ec261d10f
+pkgname:
+  - name: xfdashboard
+# generated with artixpkg 0.37.4-1-any
