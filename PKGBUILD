@@ -66,7 +66,7 @@ optdepends=(
   'python-pint: units of measure support'
 )
 source=("https://github.com/pydata/xarray/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('62349a879cd05adb7a1b179a0c3e1f6617c576519df9908c2274a7e00a630bec')
+sha256sums=('e58bda3433b02087f00b752f82b8fbfeff66f1fadd824b1e38b34e53feb56814')
 
 build() {
   cd ${pkgname#python-}-$pkgver

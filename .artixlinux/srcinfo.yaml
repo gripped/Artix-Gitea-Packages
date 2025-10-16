@@ -55,7 +55,7 @@ pkgbase:
   source:
     - https://github.com/pydata/xarray/archive/v2025.10.1/python-xarray-2025.10.1.tar.gz
   sha256sums:
-    - 62349a879cd05adb7a1b179a0c3e1f6617c576519df9908c2274a7e00a630bec
+    - e58bda3433b02087f00b752f82b8fbfeff66f1fadd824b1e38b34e53feb56814
 pkgname:
   - name: python-xarray
 # generated with artixpkg 0.37.4-1-any
