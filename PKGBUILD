@@ -3,7 +3,7 @@
 
 _pyname=ipykernel
 pkgname=python-$_pyname
-pkgver=6.30.1
+pkgver=7.0.1
 pkgrel=1
 pkgdesc='The ipython kernel for Jupyter'
 arch=(any)
@@ -24,19 +24,16 @@ makedepends=(git
              python-build
              python-hatchling
              python-installer)
-checkdepends=(python-flaky
+checkdepends=(python-debugpy
+              python-flaky
               python-ipyparallel
               python-matplotlib
               python-pytest-asyncio
+              python-pytest-cov
               python-pytest-timeout)
 optdepends=('python-debugpy: debugger support')
 source=(git+https://github.com/ipython/ipykernel#tag=v$pkgver)
-sha256sums=('7e649edc5cc1ba9acee4bfd3b1334f3fa9232e465c1c75a89e017e20b62c5833')
-
-prepare() {
-  cd $_pyname
-  git cherry-pick -n b47db6f082ea61e9688b4eca4e92529c1e0e6c45 # Fix deprecation warnings with Python 3.13
-}
+sha256sums=('46b8da396ff56bacc8d217c4b6b6d7077fb6a606535ca142a0519dae0a63cd55')
 
 build() {
   cd $_pyname
@@ -45,7 +42,8 @@ build() {
 
 check() {
   cd $_pyname
-  pytest -v
+  PYTHONPATH="$PWD"/src \
+  pytest -v -W ignore::ResourceWarning
 }
 
 package() {
