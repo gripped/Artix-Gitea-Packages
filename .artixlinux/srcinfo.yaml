@@ -1,0 +1,40 @@
+---
+version: 2.3.0-5
+pkgbase:
+  name: python-hvac
+  pkgdesc: Python client for HashiCorp Vault
+  pkgver: 2.3.0
+  pkgrel: 5
+  url: https://python-hvac.org/
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-authlib
+    - python-flask
+    - python-flask-sqlalchemy
+    - python-parameterized
+    - python-requests-mock
+    - python-werkzeug
+    - python-jwcrypto
+    - python-pytest-mock
+    - python-pytest-xdist
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-pyhcl
+  depends:
+    - python
+    - python-requests
+  optdepends:
+    - 'python-pyhcl: for HCL parser'
+  source:
+    - https://github.com/hvac/hvac/archive/v2.3.0/hvac-2.3.0.tar.gz
+  sha512sums:
+    - d08f7228ab57cd33428f530b14942dcf64b6efebe7589959f4ca3fc021f5da39af6441746417f80f7474d6a7bfb7a0ac94006a64ecf37967d4983698e95241f1
+pkgname:
+  - name: python-hvac
+# generated with artixpkg 0.37.4-1-any
