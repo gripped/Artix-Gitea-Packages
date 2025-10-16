@@ -7,7 +7,7 @@
 pkgname=vokoscreen
 _pkgname=vokoscreenNG
 pkgver=4.6.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Easy to use screencast creator'
 arch=('x86_64')
 url='https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html'

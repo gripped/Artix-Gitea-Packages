@@ -1,10 +1,10 @@
 ---
-version: 4.6.1-1
+version: 4.6.1-1.1
 pkgbase:
   name: vokoscreen
   pkgdesc: Easy to use screencast creator
   pkgver: 4.6.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - b40fdfaf0166e1735be00a08bc55091176df758af7aff6585be4122423c73dda
 pkgname:
   - name: vokoscreen
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
