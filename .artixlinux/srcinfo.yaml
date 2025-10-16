@@ -44,10 +44,8 @@ pkgbase:
     - 'python-defusedxml: for reading XMP tags'
   source:
     - python-pillow::git+https://github.com/python-pillow/Pillow#tag=12.0.0
-  sha512sums:
-    - 07a8a60878926e866552b59d2623839ff1546bb9c99859492484d9a4900150704976b4096c4c9da004aac232eb03993d1aba9ae24b7504d44647da8a6a870f54
-  b2sums:
-    - 9c9f116a48ddbc9b01a956ae44da23a4c3adf4a7060d39cb586a344fbcbecb9ac92a36c67eff7169d9bd4a8cb0dc6870f0cadd10b3bc5a66cf24c27dbfe236db
+  sha256sums:
+    - SKIP
 pkgname:
   - name: python-pillow
 # generated with artixpkg 0.37.4-1-any
