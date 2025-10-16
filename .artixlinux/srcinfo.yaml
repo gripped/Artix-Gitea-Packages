@@ -1,10 +1,10 @@
 ---
-version: 3.9.0-2
+version: 3.9.0-4
 pkgbase:
   name: icewm
   pkgdesc: Window Manager designed for speed, usability, and consistency
   pkgver: 3.9.0
-  pkgrel: 2
+  pkgrel: 4
   url: https://ice-wm.org/
   arch:
     - x86_64
@@ -29,8 +29,10 @@ pkgbase:
     - 'perl: for icewm-menu-xrandr'
   source:
     - icewm-3.9.0.tar.gz::https://github.com/ice-wm/icewm/archive/refs/tags/3.9.0.tar.gz
+    - static-position.patch
   sha256sums:
     - ca755cb024459ade86518f89202b8a92d3cb9957b9a5e17abdbf824f708ad8de
+    - 829e5b02ddc7d9679512f5ce2f20990c48276d7e2f400dff40f89b0c62a1c7b3
 pkgname:
   - name: icewm
 # generated with artixpkg 0.37.4-1-any
