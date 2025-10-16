@@ -1,0 +1,31 @@
+---
+version: 1.2.2-1
+pkgbase:
+  name: python-rcssmin
+  pkgdesc: Fast CSS minifier for Python
+  pkgver: 1.2.2
+  pkgrel: 1
+  url: https://github.com/ndparker/rcssmin
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+  source:
+    - rcssmin-1.2.2.tar.gz::https://github.com/ndparker/rcssmin/archive/refs/tags/1.2.2.tar.gz
+  sha512sums:
+    - ff76b866cc0a8e2cbbb03f2bc78177ff20d80e27cf5848b89fb5d927d6222525ac11bf000c0a8795da014e8b7a2d94aa41aa1b04fa0148d9c886eaaa2bcfe9a3
+  b2sums:
+    - 5f45db463dc29b008a196b4c3f8d59910fbd90d5da52f5aa4d055a4540e484a37aede62e25b430be36db9c34ebce9c004fe0af8a5fd3d0fb22b8229458bb5c9d
+pkgname:
+  - name: python-rcssmin
+# generated with artixpkg 0.37.4-1-any
