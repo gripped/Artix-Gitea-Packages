@@ -1,9 +1,9 @@
 ---
-version: 3.4.1-1
+version: 3.4.2-1
 pkgbase:
   name: openexr
   pkgdesc: A high dynamic-range image file format library
-  pkgver: 3.4.1
+  pkgver: 3.4.2
   pkgrel: 1
   url: https://www.openexr.com/
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - imath
     - libdeflate
   source:
-    - git+https://github.com/openexr/openexr#tag=v3.4.1
+    - git+https://github.com/openexr/openexr#tag=v3.4.2
   sha256sums:
-    - 37cf1a1878f3836b44a83700eb066080a528f47ce2af5c75febd62fc4d515815
+    - fe371d2acade8d8b81a76951bf80172780fd79bb887de0d4d63d5705b4228f75
 pkgname:
   - name: openexr
 # generated with artixpkg 0.37.4-1-any
