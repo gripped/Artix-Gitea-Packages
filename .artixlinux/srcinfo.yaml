@@ -1,0 +1,35 @@
+---
+version: 1.8.9-1
+pkgbase:
+  name: python-webob
+  pkgdesc: WSGI request and response object
+  pkgver: 1.8.9
+  pkgrel: 1
+  url: https://webob.org/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-setuptools
+    - python-sphinx
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-legacy-cgi
+  optdepends:
+    - 'python-webob-docs: documentation'
+  source:
+    - git+https://github.com/Pylons/webob.git#tag=1.8.9
+  sha512sums:
+    - 50934d79bd31a1b0472649f4b150ad2105357a6310d06d3ee741bc88e47b8d9d64e98b77225bf77fb3ac22cf525ab2182004d1c4168ba659053b05849d1fd823
+pkgname:
+  - name: python-webob
+  - name: python-webob-docs
+    optdepends: []
+# generated with artixpkg 0.37.4-1-any

@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: python-webob
-  version: 1.8.8-1
-  arch:
-    - any
-  pkgname:
-    - python-webob
-    - python-webob-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -14,44 +6,56 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.8.8-1
+    version: 1.8.9-1
     packages:
-      - python-webob-1.8.8-1-any.pkg.tar.zst
-      - python-webob-docs-1.8.8-1-any.pkg.tar.zst
+      - python-webob-1.8.9-1-any.pkg.tar.zst
+      - python-webob-docs-1.8.9-1-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
