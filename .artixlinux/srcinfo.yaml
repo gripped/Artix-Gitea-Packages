@@ -1,0 +1,32 @@
+---
+version: 2.7.1.post0-1
+pkgbase:
+  name: python-crc32c
+  pkgdesc: A python package implementing the crc32c algorithm in hardware and software
+  pkgver: 2.7.1.post0
+  pkgrel: 1
+  url: https://github.com/ICRAR/crc32c
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+  source:
+    - crc32c-2.7.1.post0.tar.gz::https://github.com/ICRAR/crc32c/archive/refs/tags/v2.7.1.post0.tar.gz
+  sha512sums:
+    - 22fe3324c6e5acccfe00f849ddb32c5ed77addd3a0759ded49a52a35888b810b73c419e1719b88856317b4d92b0b15c54650900cafe914c42a0db841c4600ae8
+  b2sums:
+    - aa772f260e041fb10757954c6542b5b550031b21ef5174daf3b238c9220c827ac6ab62e10f27efa2fd1c4be07e5b0ca05548343be9810ea544e89c15e22b9030
+pkgname:
+  - name: python-crc32c
+# generated with artixpkg 0.37.4-1-any
