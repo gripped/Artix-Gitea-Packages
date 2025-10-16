@@ -1,0 +1,40 @@
+---
+version: 0.18.0-1
+pkgbase:
+  name: python-unearth
+  pkgdesc: A utility to fetch and download python packages
+  pkgver: 0.18.0
+  pkgrel: 1
+  url: https://github.com/frostming/unearth
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-flask
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-httpserver
+    - python-requests-wsgi-adapter
+    - python-trustme
+  makedepends:
+    - python-build
+    - python-installer
+    - python-pdm-backend
+    - python-wheel
+  depends:
+    - python
+    - python-packaging
+    - python-httpx
+  optdepends:
+    - 'python-keyring: use keyring for authentication'
+    - 'python-requests: use legacy facilities for download'
+  source:
+    - python-unearth-0.18.0.tar.gz::https://github.com/frostming/unearth/archive/refs/tags/0.18.0.tar.gz
+  sha512sums:
+    - 76c8521cce24b9f7d3a1618d4e4eeccdae7b87f28c3fe385044f7d5be51494552f06a54977cddbd8b48b7c483e981408ca213564283685a6aa6e21a8c60c37b1
+  b2sums:
+    - e619f32704ea87a3373bddb88c09f17972e11922795501c56bac31bbfab0d5eba40359d6e897705721c4e0ebf9a25f4cd0a874b572b3d3867bfa48948f9bcb96
+pkgname:
+  - name: python-unearth
+# generated with artixpkg 0.37.4-1-any
