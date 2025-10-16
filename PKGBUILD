@@ -63,3 +63,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.BSD
 }
+
