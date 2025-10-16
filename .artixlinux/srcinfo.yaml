@@ -1,9 +1,9 @@
 ---
-version: 1.6.4-1
+version: 1.7.0-1
 pkgbase:
   name: python-h5netcdf
   pkgdesc: Pythonic interface to netCDF4 via h5py
-  pkgver: 1.6.4
+  pkgver: 1.7.0
   pkgrel: 1
   url: https://github.com/h5netcdf/h5netcdf
   arch:
@@ -25,11 +25,11 @@ pkgbase:
     - python-numpy
     - python-packaging
   source:
-    - https://github.com/h5netcdf/h5netcdf/archive/v1.6.4/python-h5netcdf-1.6.4.tar.gz
+    - https://github.com/h5netcdf/h5netcdf/archive/v1.7.0/python-h5netcdf-1.7.0.tar.gz
     - python-h5netcdf-exclude-tests.patch
   sha256sums:
-    - c8ffcc59751ffc6e31c263f6581c583a90f7e7465884aa1cae7cb8cc3e621aeb
+    - e99c5d741b780ed03cdb46069a84a2108b34de4ea21dce49624d75ee813835fa
     - 9d8580e5fed17e7ff8f1032d28ca0e307eeec2fc979f13e9017540e66e402695
 pkgname:
   - name: python-h5netcdf
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any

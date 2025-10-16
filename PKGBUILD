@@ -1,7 +1,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-h5netcdf
-pkgver=1.6.4
+pkgver=1.7.0
 pkgrel=1
 pkgdesc="Pythonic interface to netCDF4 via h5py"
 arch=('any')
@@ -28,7 +28,7 @@ source=(
   "$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
   "$pkgname-exclude-tests.patch"
 )
-sha256sums=('c8ffcc59751ffc6e31c263f6581c583a90f7e7465884aa1cae7cb8cc3e621aeb'
+sha256sums=('e99c5d741b780ed03cdb46069a84a2108b34de4ea21dce49624d75ee813835fa'
             '9d8580e5fed17e7ff8f1032d28ca0e307eeec2fc979f13e9017540e66e402695')
 
 prepare() {
