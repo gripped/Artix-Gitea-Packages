@@ -1,0 +1,32 @@
+---
+version: 1:2.0.11-5
+pkgbase:
+  name: libtorrent-rasterbar
+  pkgdesc: An efficient and feature complete C++ BitTorrent library implementation
+  pkgver: 2.0.11
+  pkgrel: 5
+  epoch: 1
+  url: https://www.rasterbar.com/products/libtorrent/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - boost
+    - cmake
+    - python
+    - python-setuptools
+  depends:
+    - boost-libs
+    - gcc-libs
+    - glibc
+    - openssl
+  source:
+    - https://github.com/arvidn/libtorrent/releases/download/v2.0.11/libtorrent-rasterbar-2.0.11.tar.gz
+    - 010-libtorrent-rasterbar-fix-for-fortify-source-3.patch
+  sha512sums:
+    - 756fb24c44b5dcf22d0bbc06a812abc28be7388a409e577c71fb02b1ca3005040947244c0ae83bd3388264dd518119736b869397fedd7bdbcd60699b04a19969
+    - 9f18a2e71b3924897f88b1c4148d3afe3bb29d1fe41a3166f0e3dfb64f1641f50ac25551e942241c7207e6692e4765df53e160ea9d3a8eca30879d6e299e9e1d
+pkgname:
+  - name: libtorrent-rasterbar
+# generated with artixpkg 0.37.4-1-any
