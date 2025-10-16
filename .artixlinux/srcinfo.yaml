@@ -1,0 +1,53 @@
+---
+version: 1.1.1-1
+pkgbase:
+  name: python-geopandas
+  pkgdesc: Python tools for geographic data
+  pkgver: 1.1.1
+  pkgrel: 1
+  url: https://geopandas.org
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-fsspec
+    - python-pyogrio
+    - python-rtree
+    - python-matplotlib
+    - python-scipy
+    - python-geopy
+    - python-sqlalchemy
+    - python-psycopg2
+    - libspatialite
+    - python-pyarrow
+    - postgis
+    - ghostscript
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gdal
+    - python-fiona
+    - python-numpy
+    - python-packaging
+    - python-pandas
+    - python-pyproj
+    - python-shapely
+  optdepends:
+    - 'python-pyogrio: vectorized IO for GDAL/OGR'
+    - 'python-rtree: spatial access methods'
+    - 'python-psycopg2: PostGIS access'
+    - 'python-sqlalchemy: other geodatabase access'
+    - 'python-geopy: geocoding'
+    - 'python-matplotlib: plotting'
+  source:
+    - https://github.com/geopandas/geopandas/archive/refs/tags/v1.1.1/python-geopandas-1.1.1.tar.gz
+  sha256sums:
+    - 542a62be47cf7931a457b007ae4adcc5f3e20086c0247f166beed3fc2fb86307
+pkgname:
+  - name: python-geopandas
+# generated with artixpkg 0.37.4-1-any
