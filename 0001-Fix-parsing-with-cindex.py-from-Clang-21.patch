@@ -1,0 +1,33 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: "Jan Alexander Steffens (heftig)" <heftig@archlinux.org>
+Date: Mon, 13 Oct 2025 01:41:42 +0200
+Subject: [PATCH] Fix parsing with cindex.py from Clang 21
+
+cindex.py from Clang 21 will throw an exception accessing any property
+of a null cursor.
+
+    File "hawkmoth/parser.py", line 169, in _comment_extract
+      if token_cursor.kind in [CursorKind.INVALID_FILE,
+         ^^^^^^^^^^^^^^^^^
+    File "clang/cindex.py", line 1578, in inner
+      raise Exception("Tried calling method on a null-cursor.")
+---
+ src/hawkmoth/parser.py | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/src/hawkmoth/parser.py b/src/hawkmoth/parser.py
+index bb2b80a0ec55..3df0c70a9238 100644
+--- a/src/hawkmoth/parser.py
++++ b/src/hawkmoth/parser.py
+@@ -164,6 +164,11 @@ def _comment_extract(tu):
+         # instead of accessing the `cursor` property multiple times.
+         token_cursor = token.cursor
+ 
++        # Guard against null cursors. cindex.py from Clang 21 will throw
++        # an exception accessing any property of a null cursor.
++        if not token_cursor or getattr(token_cursor, "is_null", lambda: False)():
++            continue
++
+         # Cursors that are 1) never documented themselves, and 2) allowed
+         # between the comment and the actual cursor being documented.
+         if token_cursor.kind in [CursorKind.INVALID_FILE,
