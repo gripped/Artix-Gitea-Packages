@@ -1,0 +1,47 @@
+---
+version: 8.6.3-4
+pkgbase:
+  name: python-jupyter-client
+  pkgdesc: Jupyter protocol implementation and client libraries
+  pkgver: 8.6.3
+  pkgrel: 4
+  url: https://pypi.python.org/pypi/jupyter_client
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - iproute2
+    - net-tools
+    - openssh
+    - python-ipykernel
+    - python-pytest-jupyter
+    - python-pytest-timeout
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - ipython
+    - python
+    - python-dateutil
+    - python-importlib-metadata
+    - python-jupyter-core
+    - python-pexpect
+    - python-pyzmq
+    - python-tornado
+    - python-traitlets
+  provides:
+    - python-jupyter_client
+  conflicts:
+    - python-jupyter_client
+  replaces:
+    - python-jupyter_client
+  source:
+    - git+https://github.com/jupyter/jupyter_client#tag=v8.6.3
+  sha256sums:
+    - aa4854b7ecfc06a1340267f8c6da71ceb9ac1a8f7b42d212b5c4ae278e6acd7e
+pkgname:
+  - name: python-jupyter-client
+# generated with artixpkg 0.37.4-1-any
