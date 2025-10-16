@@ -1,0 +1,81 @@
+---
+version: 3.3.10-6
+pkgbase:
+  name: mailman3
+  pkgdesc: The GNU mailing list manager
+  pkgver: 3.3.10
+  pkgrel: 6
+  url: https://www.list.org/
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - python-nose2
+    - python-psycopg2
+    - python-pymysql
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-pdm-backend
+  depends:
+    - gunicorn
+    - python
+    - python-aiosmtpd
+    - python-alembic
+    - python-atpublic
+    - python-authheaders
+    - python-authres
+    - python-click
+    - python-dateutil
+    - python-dnspython
+    - python-falcon
+    - python-flufl.bounce
+    - python-flufl.i18n
+    - python-flufl-lock
+    - python-lazr.config
+    - python-passlib
+    - python-requests
+    - python-sqlalchemy>=1.4
+    - python-zope-component
+    - python-zope-configuration
+    - python-zope-event
+    - python-zope-interface
+    - python-nntplib
+  optdepends:
+    - 'hyperkitty: for local archive and list interaction'
+    - 'lynx: for the default HTML to plaintext conversion'
+    - 'mailman3-hyperkitty: for archiving mails with an instance of hyperkitty'
+    - 'postorius: for local configuration interaction'
+    - 'python-mailmanclient: for programmatically interfacing the mailman REST API locally'
+    - 'python-psycopg2: for PostgreSQL support'
+    - 'python-pymysql: for MySQL support'
+    - 'smtp-server: for using a local mail server'
+  conflicts:
+    - mailman
+  replaces:
+    - mailman-core
+  backup:
+    - etc/mailman.cfg
+  source:
+    - mailman3::git+https://gitlab.com/mailman/mailman?signed#tag=v3.3.10
+    - mailman3-3.3.10-stop-modifying-cc-header.patch
+    - mailman3.sysusers
+    - mailman3.tmpfiles
+  validpgpkeys:
+    - 541EA0448453394FF77A0ECC9D9B2BA061D0A67C
+  sha512sums:
+    - 923ae08b99657bf0ea626afc81e97e96e9ccc5b437a9f71a0d91549a3eac2544dfcb60c5a89ce22f2ce251c1a9bcbff6743610ad137d33ace9b4a06999739ce3
+    - 63f636acc93cf9605db16e92e6bb6836075109ae746953cbed40a64758cb6b2802d3e8948deac512d7cccc2cd4bd793f53da9477fc23d666860bc793058cb07d
+    - e65090ac5988feb6ec28293f7ee4762e9d4ea9784d69554a0d4a65b24a079dc3b3faec537c0070f7e055c0fa03309f067d26e347190a41b21afc48847ef64379
+    - 6f4b51fd5eb34ac974b3312c34eb1437d9435cfd50f0cb89db02b94ce514bceca2c6dc7cb172b79b2d6a23d68e7ea391ec58dbd9899938c0fe88c03c67c521b9
+  b2sums:
+    - 513404b857ee26d19f8f4c3883cf9eb9d1494377f4c33b88302b7d5ec9f522901481ee0137a036bac2adbee88c66a866757495774a3fe8e388eba7fec50f000e
+    - 2faa6486e6cd040e442378c377a316ebfc691ab3d209ac6f3c949693b8af51834fcb78086c403c5516874530d15b0fabe5adba8e3011673bba21f5b93b5d5437
+    - 4443bbcdb1f0ae5a223139bfdf5f9434293dd21436c28c172b0588728a92db7120e96cddf75c56af0b02b874640e49e4777c8c8c371ad330c866939805dc309f
+    - 461dce577696405011ed89f7fc109caaf27f4183b4d315baa8ad03db0f12015ebc447cbe9c0b8c5bcba38b63fcaf45adcfcb3e5bf5afb7eb0bd87a2e1b0301e5
+pkgname:
+  - name: mailman3
+# generated with artixpkg 0.37.4-1-any
