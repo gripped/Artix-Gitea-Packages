@@ -2,7 +2,7 @@
 
 pkgname=libcmis
 pkgver=0.6.2
-pkgrel=6
+pkgrel=6.1
 pkgdesc="a C/C++ client library for the CMIS protocol"
 arch=('x86_64')
 url="https://github.com/tdf/libcmis"
@@ -42,3 +42,4 @@ package() {
   cd "$pkgname-$pkgver"
   make DESTDIR="$pkgdir/" install
 }
+

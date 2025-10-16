@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy-goblins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,9 +45,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 0.6.2-6
+    version: 0.6.2-6.1
     packages:
-      - libcmis-0.6.2-6-x86_64.pkg.tar.zst
+      - libcmis-0.6.2-6.1-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
