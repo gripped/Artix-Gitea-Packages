@@ -1,9 +1,9 @@
 ---
-version: 2.13.1-1
+version: 2.14.1-1
 pkgbase:
   name: python-numexpr
   pkgdesc: Fast numerical array expression evaluator for Python, NumPy, PyTables, pandas
-  pkgver: 2.13.1
+  pkgver: 2.14.1
   pkgrel: 1
   url: https://github.com/pydata/numexpr
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - python
     - python-numpy
   source:
-    - https://github.com/pydata/numexpr/archive/v2.13.1/python-numexpr-2.13.1.tar.gz
+    - https://github.com/pydata/numexpr/archive/v2.14.1/python-numexpr-2.14.1.tar.gz
   sha256sums:
-    - 11ed30449f53647d02ae18fef8521ddcf28dc914650bd9289eecb6c687200b78
+    - 7cb4c2d5d686f366e1121c287f48c3964ae3ec2ecc559d64a12bb315beebbf9a
 pkgname:
   - name: python-numexpr
 # generated with artixpkg 0.37.4-1-any
