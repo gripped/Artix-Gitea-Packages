@@ -59,7 +59,7 @@ optdepends=(
   'python-brotli: for Brotli transfer-encodings support'
 )
 source=("$pkgname::git+https://github.com/aio-libs/aiohttp#tag=v$pkgver")
-b2sums=('ec21e12baeee07daa52adac76370e43cc7c60dbcccc30e59269c0d759621ab6c07d64b3b2d9c35fa11c4b9d13e472f60d46b742e5c180ad59f5297bf85c23fa7')
+b2sums=('2938d64043bdbad2540c04249ece84927e41ff7d08d1ff01307850da594028c4781833129d2f35ea524af51cd1fd0e2fcf647c8a67b186ad20cf0a8fd784305f')
 
 prepare() {
   cd $pkgname
@@ -112,4 +112,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
 
-# vim: ts=2 sw=2 et:
