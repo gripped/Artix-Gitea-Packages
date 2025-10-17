@@ -1,0 +1,30 @@
+---
+version: 1.4.0-1
+pkgbase:
+  name: python-requests-gssapi
+  pkgdesc: GSSAPI (HTTP Negotiate) authentication for Python-Requests
+  pkgver: 1.4.0
+  pkgrel: 1
+  url: https://github.com/pythongssapi/requests-gssapi
+  arch:
+    - any
+  license:
+    - ISC
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-gssapi
+    - python-requests
+  source:
+    - https://github.com/pythongssapi/requests-gssapi/archive/v1.4.0/python-requests-gssapi-1.4.0.tar.gz
+  sha256sums:
+    - e4d3f5ad36d309239e2e7659e55f208981b97ee6da2433f69749fd71bcb16a16
+pkgname:
+  - name: python-requests-gssapi
+# generated with artixpkg 0.37.4-1-any
