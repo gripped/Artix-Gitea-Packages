@@ -1,24 +1,30 @@
 ---
-version: 0.2.1-1
+version: 0.2.1-2
 pkgbase:
   name: python-pwdlib
   pkgdesc: Modern password hashing for Python
   pkgver: 0.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://frankie567.github.io/pwdlib
   arch:
     - any
   license:
     - MIT
+  checkdepends:
+    - python-argon2-cffi
+    - python-bcrypt
+    - python-pytest
   makedepends:
     - git
     - python-build
-    - python-hatch
+    - python-hatchling
     - python-hatch-regex-commit
     - python-installer
-    - python-wheel
   depends:
     - python
+  optdepends:
+    - 'python-argon2-cffi: for argon2 support'
+    - 'python-bcrypt: for bcrypt support'
   source:
     - git+https://github.com/frankie567/pwdlib#tag=v0.2.1?signed
   validpgpkeys:
