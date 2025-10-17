@@ -1,0 +1,38 @@
+---
+version: 1.3.2-1
+pkgbase:
+  name: sshuttle
+  pkgdesc: Transparent proxy server that forwards all TCP packets over ssh
+  pkgver: 1.3.2
+  pkgrel: 1
+  url: https://github.com/sshuttle/sshuttle
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-sphinx
+    - python-build
+    - python-installer
+    - python-hatchling
+  depends:
+    - iptables
+    - openssh
+    - net-tools
+  backup:
+    - etc/sshuttle/tunnel.conf
+    - etc/sshuttle/prefixes.conf
+  source:
+    - git+https://github.com/sshuttle/sshuttle.git#tag=v1.3.2
+    - prefixes.conf
+    - tunnel.conf
+  sha256sums:
+    - e7152302cda6f134f9a30e9042a1d3d2d94ed430b4ce4aae3c9bc8ae05870616
+    - 70b1e64b8cfd335355f156e141378887bcb5a6a2d9f1eb84e5b81853bcfbfc68
+    - 72ce201e53b575a2d68c44ae7c5fec8d5d134036c63f59fcded3977b375a05e2
+pkgname:
+  - name: sshuttle
+# generated with artixpkg 0.37.4-1-any
