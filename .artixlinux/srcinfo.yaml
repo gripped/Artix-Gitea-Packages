@@ -1,10 +1,10 @@
 ---
-version: 1.12.2-4
+version: 1.12.2-5
 pkgbase:
   name: vigra
   pkgdesc: Computer vision library
   pkgver: 1.12.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://ukoethe.github.io/vigra
   arch:
     - x86_64
