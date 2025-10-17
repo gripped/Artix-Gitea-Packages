@@ -1,0 +1,113 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: Pierre Le Marre <dev@wismill.eu>
+Date: Thu, 16 Oct 2025 15:08:14 +0200
+Subject: [PATCH] x11: Never drop X11 mandatory key types
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+There are 4 mandatory key types in the XKB protocol:
+- `ONE_LEVEL`
+- `TWO_LEVEL`
+- `ALPHABETIC`
+- `KEYPAD`
+
+They are always present in the keymap generated from xkeyboard-config.
+But since 31900860c65b88e4d10ad7dd00377e2815cca0f6 we drop unused key
+types by default, which may happen for the types above with e.g. 4+
+level layouts like `es`.
+
+In theory these types are automatically filled by libX11 if missing,
+but there are some bugs in the X11 ecosystem that prevents the keymap
+to be properly uploaded in the server, leading to errors when retrieving
+it with libxkbcommon-x11. See:
+https://gitlab.archlinux.org/archlinux/packaging/packages/libxkbcommon/-/issues/3
+
+The following fixes were sent to fix the issues:
+
+- https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/292
+- https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/2082
+- https://github.com/xkbcommon/libxkbcommon/pull/871
+
+However it’s not clear when new versions of libX11 and xserver will be
+released. So this commit is a hack to ensure that we do not drop the
+special XKB key types, as an effort to reduce breakage.
+
+WARNING: contrary to `xkbcomp`, we do not supply these types if they
+are missing, because a keymap that uses them (explicitly `type="…"` or
+implicitly with automatic types) without providing them is considered
+buggy.
+---
+ .../+keep-mandatory-x11-key-types.bugfix.md   |  5 ++++
+ src/xkbcomp/types.c                           | 27 +++++++++++++++++++
+ 2 files changed, 32 insertions(+)
+ create mode 100644 changes/api/+keep-mandatory-x11-key-types.bugfix.md
+
+diff --git a/changes/api/+keep-mandatory-x11-key-types.bugfix.md b/changes/api/+keep-mandatory-x11-key-types.bugfix.md
+new file mode 100644
+index 000000000000..1798236238ac
+--- /dev/null
++++ b/changes/api/+keep-mandatory-x11-key-types.bugfix.md
+@@ -0,0 +1,5 @@
++X11: Added a fix to circumvent libX11 and xserver improperly handling key types
++in the following cases:
++- missing XKB mandatory key types;
++- missing level names in key types.
++The fix prevents triggering an error when retrieving such keymap using libxkbcommon-x11.
+diff --git a/src/xkbcomp/types.c b/src/xkbcomp/types.c
+index 9a231732b4c6..b5c9aab9cd41 100644
+--- a/src/xkbcomp/types.c
++++ b/src/xkbcomp/types.c
+@@ -7,6 +7,7 @@
+ 
+ #include <limits.h>
+ 
++#include "utils.h"
+ #include "xkbcommon/xkbcommon.h"
+ #include "xkbcomp-priv.h"
+ #include "text.h"
+@@ -747,18 +748,44 @@ CopyKeyTypesToKeymap(struct xkb_keymap *keymap, KeyTypesInfo *info)
+         type->required = false;
+     }
+     else {
++        /*
++         * HACK: The following types are mandatory in the XKB protocol and should
++         * be supplied by X11 if missing, but the implementation is buggy, so
++         * until there is a release of libX11 and xserver with the patches we
++         * ensure to not drop these key types if unused. See:
++         *
++         * - https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/292
++         * - https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/2082
++         */
++        const xkb_atom_t x11_types[] = {
++            xkb_atom_intern_literal(keymap->ctx, "ONE_LEVEL"),
++            xkb_atom_intern_literal(keymap->ctx, "TWO_LEVEL"),
++            xkb_atom_intern_literal(keymap->ctx, "ALPHABETIC"),
++            xkb_atom_intern_literal(keymap->ctx, "KEYPAD"),
++        };
++
+         for (darray_size_t i = 0; i < num_types; i++) {
+             KeyTypeInfo *def = &darray_item(info->types, i);
+             struct xkb_key_type *type = &types[i];
+ 
+             type->name = def->name;
+             type->mods.mods = def->mods;
+             type->num_levels = def->num_levels;
+             type->num_level_names =
+                 (xkb_level_index_t) darray_size(def->level_names);
+             darray_steal(def->level_names, &type->level_names, NULL);
+             darray_steal(def->entries, &type->entries, &type->num_entries);
+             type->required = false;
++
++            /* HACK: Never drop special X11 key types (see comment above) */
++            if (type->num_levels <= 2) {
++                for (uint8_t t = 0; t < (uint8_t) ARRAY_SIZE(x11_types); t++) {
++                    if (type->name == x11_types[t]) {
++                        type->required = true;
++                        break;
++                    }
++                }
++            }
+         }
+     }
+ 
