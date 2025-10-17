@@ -1,10 +1,10 @@
 ---
-version: 3.4.3-1
+version: 3.4.3-2
 pkgbase:
   name: tldr
   pkgdesc: Command line client for tldr, a collection of simplified man pages.
   pkgver: 3.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tldr-pages/tldr-python-client
   arch:
     - any
@@ -15,10 +15,10 @@ pkgbase:
   makedepends:
     - python-build
     - python-installer
-    - python-hatch
+    - python-hatchling
     - python-sphinx-argparse
-    - python-wheel
   depends:
+    - python
     - python-shtab
     - python-colorama
     - python-termcolor
