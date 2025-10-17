@@ -1,0 +1,25 @@
+---
+version: 15.0.0-1
+pkgbase:
+  name: ripgrep
+  pkgdesc: A search tool that combines the usability of ag with the raw speed of grep
+  pkgver: 15.0.0
+  pkgrel: 1
+  url: https://github.com/BurntSushi/ripgrep
+  arch:
+    - x86_64
+  license:
+    - MIT OR Unlicense
+  makedepends:
+    - rust
+  depends:
+    - gcc-libs
+    - glibc
+    - pcre2
+  source:
+    - https://github.com/BurntSushi/ripgrep/archive/15.0.0/ripgrep-15.0.0.tar.gz
+  sha512sums:
+    - 7c05fc205b540cc2f40686c0619adf362002e898e2cf4bc4a90fb694c91681d0b16cc7755fdf7d2221cda1b27f959818897ad85803a7676b87e43aba4374e376
+pkgname:
+  - name: ripgrep
+# generated with artixpkg 0.37.4-1-any
