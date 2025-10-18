@@ -1,10 +1,10 @@
 ---
-version: 6.10.0-1
+version: 6.10.0-2
 pkgbase:
   name: qt6-multimedia
   pkgdesc: Classes for audio, video, radio and camera functionality
   pkgver: 6.10.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -32,6 +32,7 @@ pkgbase:
     - gcc-libs
     - glibc
     - libpulse
+    - pipewire
     - qt6-base
   source:
     - git+https://code.qt.io/qt/qtmultimedia#tag=v6.10.0
@@ -43,6 +44,7 @@ pkgname:
       - gcc-libs
       - glibc
       - libpulse
+      - pipewire
       - qt6-base
       - qt6-multimedia-backend
     optdepends:
