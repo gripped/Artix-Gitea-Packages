@@ -2,7 +2,7 @@
 # Contributor: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=python-py-partiql-parser
-pkgver=0.6.2
+pkgver=0.6.3
 pkgrel=1
 pkgdesc='Python Parser for PartiQL'
 arch=(any)
@@ -19,7 +19,7 @@ makedepends=(
 )
 checkdepends=(python-pytest)
 source=("git+$url#tag=$pkgver")
-sha256sums=('46ef122656a6fd6edc435b65abca98be9a6cd2d4b2a47e9ca661c97f94fa551e')
+sha256sums=('724c16fd615917869332d2964bb0db238ffa4fdadb6485384fd0b79481a99781')
 
 build() {
   cd ${pkgname#python-}

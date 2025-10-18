@@ -1,9 +1,9 @@
 ---
-version: 0.6.2-1
+version: 0.6.3-1
 pkgbase:
   name: python-py-partiql-parser
   pkgdesc: Python Parser for PartiQL
-  pkgver: 0.6.2
+  pkgver: 0.6.3
   pkgrel: 1
   url: https://github.com/getmoto/py-partiql-parser
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/getmoto/py-partiql-parser#tag=0.6.2
+    - git+https://github.com/getmoto/py-partiql-parser#tag=0.6.3
   sha256sums:
-    - 46ef122656a6fd6edc435b65abca98be9a6cd2d4b2a47e9ca661c97f94fa551e
+    - 724c16fd615917869332d2964bb0db238ffa4fdadb6485384fd0b79481a99781
 pkgname:
   - name: python-py-partiql-parser
 # generated with artixpkg 0.37.4-1-any

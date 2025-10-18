@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.6.2-1
+    version: 0.6.3-1
     packages:
-      - python-py-partiql-parser-0.6.2-1-any.pkg.tar.zst
+      - python-py-partiql-parser-0.6.3-1-any.pkg.tar.zst
     debug: []
   world:
     version: 0.6.1-1
