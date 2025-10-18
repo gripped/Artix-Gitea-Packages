@@ -4,7 +4,7 @@
 
 pkgname=yyjson
 pkgver=0.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A high performance JSON library written in ANSI C"
 arch=('x86_64')
 url="https://ibireme.github.io/yyjson"
