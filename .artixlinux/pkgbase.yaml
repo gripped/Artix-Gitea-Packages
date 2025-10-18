@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.10.0-2
+    version: 6.10.0-3
     packages:
-      - pyside6-6.10.0-2-x86_64.pkg.tar.zst
-      - pyside6-tools-6.10.0-2-x86_64.pkg.tar.zst
-      - shiboken6-6.10.0-2-x86_64.pkg.tar.zst
+      - pyside6-6.10.0-3-x86_64.pkg.tar.zst
+      - pyside6-tools-6.10.0-3-x86_64.pkg.tar.zst
+      - shiboken6-6.10.0-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.10.0-1
