@@ -1,10 +1,10 @@
 ---
-version: 1.14.0-2
+version: 1.14.0-4
 pkgbase:
   name: doxygen
   pkgdesc: Documentation system for C++, C, Java, IDL and PHP
   pkgver: 1.14.0
-  pkgrel: 2
+  pkgrel: 4
   url: http://www.doxygen.nl
   arch:
     - x86_64
