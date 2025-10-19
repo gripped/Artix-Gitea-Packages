@@ -1,0 +1,54 @@
+---
+version: 2.1.4-1
+pkgbase:
+  name: unicorn
+  pkgdesc: Lightweight, multi-platform, multi-architecture CPU emulator framework based on QEMU
+  pkgver: 2.1.4
+  pkgrel: 1
+  url: https://www.unicorn-engine.org
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  checkdepends:
+    - cmocka
+    - python-pytest
+  makedepends:
+    - cmake
+    - git
+    - python
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-versioningit
+    - python-wheel
+    - ruby
+    - ruby-rdoc
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/unicorn-engine/unicorn.git#tag=v2.1.4
+  sha512sums:
+    - 4472ae44de5631a3babfd966b0d84910dd512b9e6b3ea8c079eb76b3370c4d13daef5d51741d5cdff6727ee7d1949762999681e83d803df48b37770dff44cd10
+  b2sums:
+    - f9b20fa1beb88bd58ea36b417c8f23568cded70952a1cd5bbf7860ca73f3ed1220a038313730c8f48a11a8110c034e2651a15bc870791b35972d8c5618a2caa6
+pkgname:
+  - name: unicorn
+    depends:
+      - glibc
+    provides:
+      - libunicorn.so
+  - name: python-unicorn
+    depends:
+      - unicorn
+      - python
+      - python-setuptools
+  - name: ruby-unicorn-engine
+    depends:
+      - glibc
+      - unicorn
+      - ruby
+    replaces:
+      - ruby-unicorn
+# generated with artixpkg 0.37.4-1-any
