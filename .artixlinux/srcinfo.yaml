@@ -1,9 +1,9 @@
 ---
-version: 0.8.1-1
+version: 0.9.0-1
 pkgbase:
   name: python-python-pkcs11
   pkgdesc: PKCS#11/Cryptoki support for Python
-  pkgver: 0.8.1
+  pkgver: 0.9.0
   pkgrel: 1
   url: https://github.com/pyauth/python-pkcs11
   arch:
@@ -29,11 +29,11 @@ pkgbase:
     - python
     - python-asn1crypto
   source:
-    - python-python-pkcs11::git+https://github.com/pyauth/python-pkcs11#tag=v0.8.1
+    - python-python-pkcs11::git+https://github.com/pyauth/python-pkcs11#tag=v0.9.0
   sha512sums:
-    - 1eaae39e7836177b3f2fcb4620bde263bdc402b9d1a18badf6e1e3bc9ac22cfffd119787724bda59e649ec505a2c99768a5f6e961a5bfa7ae852c6a9f01e1594
+    - 4552f626a3b2efabfc15ae4405e569f83e6e2a6d6021e4a47d78bee444cc4b6d519905c70c304f031c7253f3396d1a0d455e156002db554ec57ae5c7cdb14c03
   b2sums:
-    - 416e29e2d04350defd24f30b621bb569708d80751251df34dbd082e37cf33bf94f64d85bc5e25b8b126d1c3b3356c23cbc3da3b8973d337550435fde41c1edb5
+    - fdbc0c7995d27413818108fa330039eb42a068146df34aeee427b6c710c314b0fb1294dc24703646f50fe10701e8fcc7d6fa8ccc82eb247cd439681c61b6928a
 pkgname:
   - name: python-python-pkcs11
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
