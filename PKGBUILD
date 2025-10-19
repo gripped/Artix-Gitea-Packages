@@ -1,4 +1,5 @@
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: kenobi <kenobi@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
@@ -47,9 +48,11 @@ optdepends=('rlwrap: readline support for awesome-client'
 provides=(notification-daemon)
 backup=('etc/xdg/awesome/rc.lua')
 _archive="$pkgname-$pkgver"
-source=("https://github.com/awesomeWM/awesome/releases/download/v$pkgver/$_archive.tar.xz"{,.asc})
+source=("https://github.com/awesomeWM/awesome/releases/download/v$pkgver/$_archive.tar.xz"{,.asc}
+		"https://patch-diff.githubusercontent.com/raw/awesomeWM/awesome/pull/4030.patch")
 sha512sums=('c5ef1e8dc593e7783b895d22143154aea8f211beeda24672a7ee4ed5112b4f4284043f848a151f3d3c4f569e91308670367a4353f705b20511b36495b22fa3f5'
-            'SKIP')
+            'SKIP'
+            '1176649021d2df966c767f79fb9f60d72fa184d5c1ac1f227821bd31d3a9529a98c99e9fe5766175dfb8b72eef94fd2022ac94015b1947c04884f97256bfad2f')
 validpgpkeys=('2BB32F88FF3D1E76E682303F22E428EBCB8FCB06') # Uli Schlachter <psychon@znc.in>
 
 prepare() {
@@ -64,6 +67,9 @@ prepare() {
 	    -e 's/Gio\.UnixInputStream/GioUnix\.InputStream/g' \
 	    -e 's/Gio\.UnixOutputStream/GioUnix\.OutputStream/g' \
 	    -i lib/awful/spawn.lua tests/_client.lua tests/test-spawn.lua
+
+	# CMake 4 check-examples patch
+	patch -Np1 -i ../4030.patch
 }
 
 build() {

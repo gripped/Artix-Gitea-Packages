@@ -50,11 +50,13 @@ pkgbase:
   source:
     - https://github.com/awesomeWM/awesome/releases/download/v4.3/awesome-4.3.tar.xz
     - https://github.com/awesomeWM/awesome/releases/download/v4.3/awesome-4.3.tar.xz.asc
+    - https://patch-diff.githubusercontent.com/raw/awesomeWM/awesome/pull/4030.patch
   validpgpkeys:
     - 2BB32F88FF3D1E76E682303F22E428EBCB8FCB06
   sha512sums:
     - c5ef1e8dc593e7783b895d22143154aea8f211beeda24672a7ee4ed5112b4f4284043f848a151f3d3c4f569e91308670367a4353f705b20511b36495b22fa3f5
     - SKIP
+    - 1176649021d2df966c767f79fb9f60d72fa184d5c1ac1f227821bd31d3a9529a98c99e9fe5766175dfb8b72eef94fd2022ac94015b1947c04884f97256bfad2f
 pkgname:
   - name: awesome
 # generated with artixpkg 0.37.4-1-any
