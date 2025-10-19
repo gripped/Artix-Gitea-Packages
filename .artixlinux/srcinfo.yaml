@@ -1,10 +1,10 @@
 ---
-version: 2.5.0-1
+version: 2.5.0-2
 pkgbase:
   name: python-urllib3
   pkgdesc: HTTP library with thread-safe connection pooling and file post support
   pkgver: 2.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/urllib3/urllib3
   arch:
     - any
@@ -48,4 +48,4 @@ pkgbase:
     - 62d6787d88a2e716f0ac04fc49f6cdc586e473a660ee754ff66961922ae78bcc75d1f78b091e78557dd60f006e8e480114738c7b4ff71beac804e4fc9603240b
 pkgname:
   - name: python-urllib3
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
