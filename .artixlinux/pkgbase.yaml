@@ -29,10 +29,10 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.11.1-4
+    version: 0.11.1-5
     packages:
-      - libjxl-0.11.1-4-x86_64.pkg.tar.zst
-      - libjxl-doc-0.11.1-4-x86_64.pkg.tar.zst
+      - libjxl-0.11.1-5-x86_64.pkg.tar.zst
+      - libjxl-doc-0.11.1-5-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null

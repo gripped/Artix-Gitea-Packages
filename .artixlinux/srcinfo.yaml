@@ -1,21 +1,21 @@
 ---
-version: 0.11.1-4
+version: 0.11.1-5
 pkgbase:
   name: libjxl
   pkgdesc: JPEG XL image format reference implementation
   pkgver: 0.11.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://jpeg.org/jpegxl/
   arch:
     - x86_64
   license:
     - BSD-3-Clause
   makedepends:
+    - add-determinism
     - asciidoc
     - brotli
     - cmake
     - doxygen
-    - gdk-pixbuf2
     - giflib
     - git
     - gperftools
@@ -53,7 +53,6 @@ pkgname:
       - libjpeg-turbo
       - libpng
     optdepends:
-      - 'gdk-pixbuf2: for gdk-pixbuf loader'
       - 'java-runtime: for JNI bindings'
     provides:
       - libjxl.so
@@ -61,4 +60,4 @@ pkgname:
       - libjxl_threads.so
   - name: libjxl-doc
     pkgdesc: JPEG XL image format reference implementation (documentation)
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
