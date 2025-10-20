@@ -1,9 +1,9 @@
 ---
-version: 49.0-1
+version: 49.1-1
 pkgbase:
   name: gnome-console
   pkgdesc: A simple user-friendly terminal emulator for the GNOME desktop
-  pkgver: 49.0
+  pkgver: 49.1
   pkgrel: 1
   url: https://apps.gnome.org/Console/
   arch:
@@ -15,6 +15,7 @@ pkgbase:
   checkdepends:
     - dbus
     - mutter
+    - vulkan-swrast
   makedepends:
     - appstream
     - git
@@ -32,9 +33,9 @@ pkgbase:
     - pango
     - vte4
   source:
-    - gnome-console::git+https://gitlab.gnome.org/GNOME/console.git#tag=49.0
+    - gnome-console::git+https://gitlab.gnome.org/GNOME/console.git#tag=49.1
   b2sums:
-    - 8bd98c73ee08f91b094e23e8ff590cb52d6990b12b2eb03f56301302e36e32e75acb77188f1fd49a3e151c7a4b5d435d46fd32f1b64fdebe4830e368240b8076
+    - 63789e7406fc08fe213338186c7f3c27896fc7a4842b5bcd479401dd974c754f762b707719c0949da4664beca1e96d041e244cbe2fab6a053b5119dc5c4cd0d0
 pkgname:
   - name: gnome-console
 # generated with artixpkg 0.37.4-1-any
