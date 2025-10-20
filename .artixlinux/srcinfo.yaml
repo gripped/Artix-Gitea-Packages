@@ -1,0 +1,70 @@
+---
+version: 44.6-1
+pkgbase:
+  name: file-roller
+  pkgdesc: Create and modify archives
+  pkgver: 44.6
+  pkgrel: 1
+  url: https://wiki.gnome.org/Apps/FileRoller
+  arch:
+    - x86_64
+  groups:
+    - gnome-extra
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - 7zip
+    - arj
+    - binutils
+    - bzip3
+    - cdrtools
+    - cpio
+    - dpkg
+    - git
+    - glib2-devel
+    - lhasa
+    - lrzip
+    - meson
+    - python
+    - rpmextract
+    - squashfs-tools
+    - unace
+    - unrar
+    - unzip
+    - yelp-tools
+    - zip
+  depends:
+    - dconf
+    - gcc-libs
+    - glib2
+    - glibc
+    - gtk4
+    - hicolor-icon-theme
+    - json-glib
+    - libadwaita
+    - libarchive
+    - libnautilus-extension
+    - pango
+  optdepends:
+    - '7zip: 7z archive support'
+    - 'arj: arj archive support'
+    - 'binutils: ar archive support'
+    - 'bzip3: bzip3 compression support'
+    - 'cdrtools: ISO image support'
+    - 'cpio: cpio archive support'
+    - 'dpkg: deb archive support'
+    - 'lhasa: LHA/LZA archive support'
+    - 'lrzip: lrzip compression support'
+    - 'rpmextract: rpm archive support'
+    - 'squashfs-tools: squashfs image support'
+    - 'unace: ACE archive support'
+    - 'unrar: better RAR archive support'
+    - 'unzip: better ZIP archive support'
+    - 'zip: better ZIP archive support'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/file-roller.git#tag=44.6
+  b2sums:
+    - 5fb870628b5e35b0ebef613119df6d63a81e4c5f3a064b2b489b54a588dc4a3f46ffcd41a207ffaf23e223604bef82e133b683a0665be1661a54f708bf6f1db7
+pkgname:
+  - name: file-roller
+# generated with artixpkg 0.37.4-1-any
