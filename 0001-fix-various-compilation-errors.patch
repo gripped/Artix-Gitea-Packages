@@ -1,0 +1,54 @@
+From d429b8553ea44a5f2cb1813b8f18d2efa423c17a Mon Sep 17 00:00:00 2001
+From: Dudemanguy <dudemanguy@artixlinux.org>
+Date: Mon, 20 Oct 2025 10:26:28 -0500
+Subject: [PATCH] fix various compilation errors
+
+---
+ source/base/all/all.h             | 3 ++-
+ source/base/all/extract/extract.c | 4 ----
+ source/base/all/uninorm/uninorm.h | 1 +
+ 3 files changed, 3 insertions(+), 5 deletions(-)
+
+diff --git a/source/base/all/all.h b/source/base/all/all.h
+index 39a955a..75a210f 100644
+--- a/source/base/all/all.h
++++ b/source/base/all/all.h
+@@ -3,9 +3,10 @@
+ 
+ #if defined(__MACOSX__) || defined(__sun__)
+ #include <sys/types.h>
+-#include <unistd.h>
+ #endif
+ 
++#include <unistd.h>
++
+ #define SETALIGNMENT
+ #include "base/all/packprag.h"
+ 
+diff --git a/source/base/all/extract/extract.c b/source/base/all/extract/extract.c
+index e4c9d5b..7a304b3 100644
+--- a/source/base/all/extract/extract.c
++++ b/source/base/all/extract/extract.c
+@@ -221,10 +221,6 @@ UINT	  NTFSSecuritySize;
+ 
+     BASE_FUNCS.DidNotCopyAll |= BASE_ERROR.DidFailCRCCheck;
+ 
+-    BASE_STATE_EXTERN_IsCRCOkSet(&IsCRCOk,
+-                                 BASE_ARCBLK.Header.File.HEAD_FLAGS
+-                                   & BASE_ACESTRUC_FLAG_PASSWORD);
+-
+     BASE_STATE_OutputCRCOk(IsCRCOk);
+   }
+ 
+diff --git a/source/base/all/uninorm/uninorm.h b/source/base/all/uninorm/uninorm.h
+index 5b9ec60..466152c 100644
+--- a/source/base/all/uninorm/uninorm.h
++++ b/source/base/all/uninorm/uninorm.h
+@@ -1,3 +1,4 @@
+ 
+ INT BASE_UNINORM_CP850ToUTF8NFD(UCHAR *cp1252String, INT len);
+ INT BASE_UNINORM_CP850ToUTF8NFC(UCHAR *cp1252String, INT len);
++INT BASE_UNINORM_CP850ToANSI(UCHAR *cp850String, INT len);
+-- 
+2.51.1.dirty
+
