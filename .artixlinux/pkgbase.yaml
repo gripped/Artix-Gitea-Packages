@@ -49,10 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.2.8-1
+    version: 0.2.8-2
     packages:
-      - lxlauncher-0.2.8-1-x86_64.pkg.tar.zst
-      - lxlauncher-gtk3-0.2.8-1-x86_64.pkg.tar.zst
+      - lxlauncher-0.2.8-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.2.8-1
