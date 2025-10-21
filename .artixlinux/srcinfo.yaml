@@ -1,10 +1,10 @@
 ---
-version: 2:3.7.0.10-19
+version: 2:3.7.0.10-20
 pkgbase:
   name: povray
   pkgdesc: Script based raytracer for creating 3D graphics
   pkgver: 3.7.0.10
-  pkgrel: 19
+  pkgrel: 20
   epoch: 2
   url: https://www.povray.org/
   arch:

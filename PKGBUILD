@@ -9,7 +9,7 @@
 pkgname=povray
 epoch=2
 pkgver=3.7.0.10
-pkgrel=19
+pkgrel=20
 _v=${pkgver%.*.*} # 3.7
 pkgdesc='Script based raytracer for creating 3D graphics'
 arch=(x86_64)
@@ -39,8 +39,8 @@ build() {
     --prefix=/usr \
     --sysconfdir=/etc \
     COMPILED_BY='Artix Linux' \
-    LIBS="-lboost_system -lboost_thread"
-  make CXXFLAGS+='-std=c++11 -lboost_system -lboost_thread -DBOOST_BIND_GLOBAL_PLACEHOLDERS=1 -w'
+    LIBS="-lboost_thread"
+  make CXXFLAGS+='-std=c++11 -lboost_thread -DBOOST_BIND_GLOBAL_PLACEHOLDERS=1 -w'
 }
 
 package() {
