@@ -1,8 +1,8 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Anatol Pomozov
 
 pkgname=booster
 pkgver=0.12
-pkgrel=1.2
+pkgrel=2
 pkgdesc='Fast and secure initramfs generator'
 arch=(x86_64)
 url='https://github.com/anatol/booster'
@@ -13,19 +13,12 @@ makedepends=(go ruby-ronn-ng)
 optdepends=(
   'busybox: to enable emergency shell at the boot time'
   'yubikey-personalization: for clevis Yubikey challenge-response support'
-  'libfido2: for enroll with FIDO2'
+  'libfido2: for systemd-enroll with FIDO2'
 )
 backup=(etc/booster.yaml)
 provides=(initramfs)
-source=(booster-$pkgver.zip::https://github.com/anatol/booster/archive/$pkgver.zip
-        universal-img.patch)
-sha512sums=('c66f783b5c7569e18cb2bf3d66c089e129fb835e250feccb63e6772614e78144b2e422649a9744bf5cf42fbeb13d2004939d098974f446244b8b2ceca928776b'
-            '5bc0eb9c1273d1e5f0392abc1e7bee09b80ee528787798576bea9ad484dd11db0f48645cd158b7d2a8313bef24a28412eac7a42c6ea7cb35fc608d0df3b8ab2f')
-
-prepare() {
-  cd booster-$pkgver
-  patch -Np1 -i ../universal-img.patch
-}
+source=(booster-$pkgver.zip::https://github.com/anatol/booster/archive/$pkgver.zip)
+sha512sums=('c66f783b5c7569e18cb2bf3d66c089e129fb835e250feccb63e6772614e78144b2e422649a9744bf5cf42fbeb13d2004939d098974f446244b8b2ceca928776b')
 
 build() {
   cd booster-$pkgver
@@ -36,7 +29,7 @@ build() {
       -buildmode=pie \
       -mod=readonly \
       -modcacherw \
-      -ldflags "-linkmode external -extldflags \"${LDFLAGS}\""
+      -ldflags "-linkmode external -buildid='' -extldflags \"${LDFLAGS}\""
 
   cd ../init
   CGO_ENABLED=0 go build -trimpath -mod=readonly -modcacherw
