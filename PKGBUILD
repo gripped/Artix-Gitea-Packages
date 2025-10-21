@@ -5,7 +5,7 @@
 
 pkgname=lxsession
 pkgver=0.5.6
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc='Lightweight X11 session manager'
 arch=(x86_64)
