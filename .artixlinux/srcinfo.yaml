@@ -1,0 +1,34 @@
+---
+version: 0.99.3-1
+pkgbase:
+  name: lxde-common
+  pkgdesc: Common files of the LXDE Desktop
+  pkgver: 0.99.3
+  pkgrel: 1
+  url: https://lxde.org/
+  arch:
+    - any
+  groups:
+    - lxde
+    - lxde-gtk3
+  license:
+    - GPL2
+  makedepends:
+    - intltool
+  optdepends:
+    - 'gnome-themes-standard: default GTK+ theme'
+    - 'lxde-icon-theme: default icon theme'
+  backup:
+    - etc/xdg/lxsession/LXDE/desktop.conf
+    - etc/xdg/lxsession/LXDE/autostart
+  source:
+    - https://github.com/lxde/lxde-common/archive/0.99.3/lxde-common-0.99.3.tar.gz
+    - dbus-update-environment.patch
+    - default-config.patch
+  sha256sums:
+    - e55ac4b4406f7538ed5994677c6488c6a0dd9a4b34a0969402aaa4f04b52b26f
+    - 87f1413f5bb371de45451fc7f82f9f80a23c90f5799bed173ec31589824c03bb
+    - 6a31a706d0fd1cb168b495806bb4a646c019e3b9c4f6bc13aae9edb8b0372d9d
+pkgname:
+  - name: lxde-common
+# generated with artixpkg 0.37.4-1-any
