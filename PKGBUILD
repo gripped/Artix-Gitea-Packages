@@ -8,7 +8,7 @@ arch=('x86_64')
 url="https://github.com/d3adb5/stalonetray"
 license=('GPL')
 depends=('libx11' 'libxpm' 'libxinerama')
-makedepends=('libxslt' 'docbook-xsl')
+makedepends=('libxslt' 'docbook-xsl' 'meson')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/d3adb5/stalonetray/archive/$pkgver.tar.gz")
 sha512sums=('aba0b010ad761ad710ed7314cd5ac8a42acceb6ba4d75ca616253b94aa13b4542b321dfc3ac41cc7c65344f9911e01931525e49982dcbbb7e3466ebba55310a2')
 
