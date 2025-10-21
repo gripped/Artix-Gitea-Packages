@@ -12,7 +12,7 @@ pkgbase=qbittorrent
 pkgname=(qbittorrent
          qbittorrent-nox)
 pkgver=5.1.2
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qbittorrent.org'
 license=(GPL-2.0-or-later
@@ -30,8 +30,8 @@ makedepends=(boost
              qt6-tools)
 optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver
-        sysusers.conf
-        tmpfiles.conf)
+        qbittorrent.sysusers
+        qbittorrent.tmpfiles)
 sha256sums=('72749b5be5a430a506a26e9a5126917f28c29e12cbd37c1d4ced7da05849a79e'
             '0f148c97cc5fae83fc5022b5f2da374b60a1e2f62a4faf01265e73a9f208825a'
             '8bd2274ba9a6d414cd0170c8855cd6823fa026158ce7ed5eb74d661f21457238')
@@ -71,7 +71,6 @@ package_qbittorrent-nox() {
   DESTDIR="$pkgdir" cmake --install build-nox
   install -Dm644 qBittorrent/COPYING -t "$pkgdir"/usr/share/licenses/$pkgname
 
-  install -Dm644 sysusers.conf "$pkgdir/usr/lib/sysusers.d/qbittorrent.conf"
-  install -Dm644 tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/qbittorrent.conf"
+  install -Dm644 qbittorrent.sysusers "$pkgdir/usr/lib/sysusers.d/qbittorrent.conf"
+  install -Dm644 qbittorrent.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/qbittorrent.conf"
 }
-
