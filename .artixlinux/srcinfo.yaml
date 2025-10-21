@@ -1,27 +1,27 @@
 ---
-version: 1.13.1-1
+version: 1.13.1-2
 pkgbase:
   name: ninja
   pkgdesc: Small build system with a focus on speed
   pkgver: 1.13.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://ninja-build.org/
   arch:
     - x86_64
   license:
     - Apache-2.0
-  checkdepends:
-    - gtest
   makedepends:
     - cmake
+    - gtest
     - python
     - re2c
   depends:
     - gcc-libs
+    - glibc
   source:
-    - ninja-1.13.1.zip::https://github.com/ninja-build/ninja/archive/v1.13.1.zip
+    - https://github.com/ninja-build/ninja/archive/v1.13.1/ninja-1.13.1.tar.gz
   sha256sums:
-    - 5bfe6e147f39347f53777fce2fff324811297f12f4199623a9e3d5a9dc431d69
+    - f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23
 pkgname:
   - name: ninja
 # generated with artixpkg 0.37.4-1-any

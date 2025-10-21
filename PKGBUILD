@@ -1,46 +1,53 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Filip Brcic <brcha@gna.org>
 # Contributor: Mika Fischer <mika.fischer@zoopnet.de>
 # Contributor: Gergely Imreh <imrehgATgmailDOTcom>
 
 pkgname=ninja
 pkgver=1.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Small build system with a focus on speed'
 arch=(x86_64)
 url='https://ninja-build.org/'
 license=(Apache-2.0)
-depends=(gcc-libs)
-makedepends=(cmake python re2c)
-checkdepends=(gtest)
-source=($pkgname-$pkgver.zip::https://github.com/ninja-build/ninja/archive/v$pkgver.zip)
-sha256sums=('5bfe6e147f39347f53777fce2fff324811297f12f4199623a9e3d5a9dc431d69')
+depends=(
+  gcc-libs
+  glibc
+)
+makedepends=(
+  cmake
+  gtest
+  python
+  re2c
+)
+source=("https://github.com/ninja-build/ninja/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('f0055ad0369bf2e372955ba55128d000cfcc21777057806015b45e4accbebf23')
 
 build() {
-  cmake -B build -S ninja-$pkgver \
-      -DCMAKE_BUILD_TYPE=None \
-      -DCMAKE_INSTALL_PREFIX=/usr \
-      -Wno-dev
+  cmake -B build -S $pkgname-$pkgver \
+    -DCMAKE_BUILD_TYPE=None \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -Wno-dev
   cmake --build build
 }
 
 check() {
-  ./build/ninja_test
+  ctest --test-dir build --output-on-failure
 }
 
 package() {
+  DESTDIR="$pkgdir" cmake --install build
 
+  cd $pkgname-$pkgver
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" doc/manual.asciidoc
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
+
+  install -vDm644 -t "$pkgdir/usr/share/vim/vimfiles/syntax" misc/ninja.vim
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  install -vDm644 -t "$pkgdir/$site_packages" misc/ninja_syntax.py
 
-  install -m755 -D build/ninja "$pkgdir/usr/bin/ninja"
-  cd ninja-$pkgver
-  install -m644 -D doc/manual.asciidoc "$pkgdir/usr/share/doc/ninja/manual.asciidoc"
-  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
-
-  install -m644 -D misc/ninja.vim "$pkgdir/usr/share/vim/vimfiles/syntax/ninja.vim"
-  install -m644 -D misc/ninja_syntax.py "$pkgdir/$site_packages/ninja_syntax.py"
-
-  install -m644 -D misc/bash-completion "$pkgdir/usr/share/bash-completion/completions/ninja"
-  install -m644 -D misc/zsh-completion "$pkgdir/usr/share/zsh/site-functions/_ninja"
+  install -vDm644 misc/bash-completion "$pkgdir/usr/share/bash-completion/completions/ninja"
+  install -vDm644 misc/zsh-completion "$pkgdir/usr/share/zsh/site-functions/_ninja"
 }
