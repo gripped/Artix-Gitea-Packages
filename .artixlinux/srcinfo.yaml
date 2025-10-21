@@ -1,40 +1,36 @@
 ---
-version: 0.1.2-1
+version: 0.1.2-2
 pkgbase:
   name: lxhotkey
   pkgdesc: Keyboard shortcuts configurator (part of LXDE)
   pkgver: 0.1.2
-  pkgrel: 1
-  url: https://lxde.org/
+  pkgrel: 2
+  url: https://github.com/lxde/lxhotkey
   arch:
     - x86_64
+  groups:
+    - lxde
   license:
-    - GPL2
+    - GPL-2.0-or-later
   makedepends:
+    - git
     - intltool
   depends:
-    - gtk2
+    - glib2
+    - glibc
     - gtk3
     - libfm
+    - libfm-extra
+    - libunistring
+    - libx11
+  conflicts:
+    - lxhotkey-gtk3
+  replaces:
+    - lxhotkey-gtk3
   source:
-    - https://github.com/lxde/lxhotkey/archive/0.1.2/lxhotkey-0.1.2.tar.gz
-  sha256sums:
-    - f32686d298d86ae1e97c9e3d27ba1f01b6a0f17dbbbbd67dfbf82e7c0080c592
+    - git+https://github.com/lxde/lxhotkey.git#tag=0.1.2
+  b2sums:
+    - aea9a58096f46bd24eeae1e9cf592d37e929d36fac7b61a7aecaf47be3f7934e008d7b9ad467c5dc74c46593f64add84eb84774f8729f3a5e6252e849b1d303e
 pkgname:
   - name: lxhotkey
-    groups:
-      - lxde
-    depends:
-      - gtk2
-      - libfm
-  - name: lxhotkey-gtk3
-    pkgdesc: Keyboard shortcuts configurator (part of LXDE) (GTK+ 3 version)
-    groups:
-      - lxde-gtk3
-    depends:
-      - gtk3
-      - libfm
-      - libunistring
-    conflicts:
-      - lxhotkey
 # generated with artixpkg 0.37.4-1-any

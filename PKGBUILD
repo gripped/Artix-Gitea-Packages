@@ -1,52 +1,48 @@
 # Maintainer: Balló György <ballogyor+arch at gmail dot com>
 
-pkgbase=lxhotkey
-pkgname=(lxhotkey lxhotkey-gtk3)
+pkgname=lxhotkey
 pkgver=0.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Keyboard shortcuts configurator (part of LXDE)'
-arch=('x86_64')
-license=('GPL2')
-url='https://lxde.org/'
-depends=('gtk2' 'gtk3' 'libfm')
-makedepends=('intltool')
-source=(https://github.com/lxde/lxhotkey/archive/$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('f32686d298d86ae1e97c9e3d27ba1f01b6a0f17dbbbbd67dfbf82e7c0080c592')
+arch=(x86_64)
+license=(GPL-2.0-or-later)
+url='https://github.com/lxde/lxhotkey'
+depends=(
+  glib2
+  glibc
+  gtk3
+  libfm
+  libfm-extra
+  libunistring
+  libx11
+)
+makedepends=(
+  git
+  intltool
+)
+conflicts=(lxhotkey-gtk3)
+replaces=(lxhotkey-gtk3)
+groups=(lxde)
+source=("git+https://github.com/lxde/lxhotkey.git#tag=$pkgver")
+b2sums=(aea9a58096f46bd24eeae1e9cf592d37e929d36fac7b61a7aecaf47be3f7934e008d7b9ad467c5dc74c46593f64add84eb84774f8729f3a5e6252e849b1d303e)
 
 prepare() {
-  cd $pkgbase-$pkgver
-  ./autogen.sh
+  cd $pkgname
+  autoreconf -fi
 }
 
 build() {
-  # GTK+ 2 version
-  [ -d gtk2 ] || cp -r $pkgbase-$pkgver gtk2
-  cd gtk2
-  ./configure --sysconfdir=/etc --prefix=/usr --with-gtk=2
-  make
-
-  cd "$srcdir"
-  # GTK+ 3 version
-  [ -d gtk3 ] || cp -r $pkgbase-$pkgver gtk3
-  cd gtk3
-  ./configure --sysconfdir=/etc --prefix=/usr --with-gtk=3
+  cd $pkgname
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --with-gtk=3
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
 package_lxhotkey() {
-  groups=('lxde')
-  depends=('gtk2' 'libfm')
-
-  cd gtk2
-  make DESTDIR="$pkgdir" install
-}
-
-package_lxhotkey-gtk3() {
-  groups=('lxde-gtk3')
-  pkgdesc+=' (GTK+ 3 version)'
-  depends=('gtk3' 'libfm' 'libunistring')
-  conflicts=('lxhotkey')
-
-  cd gtk3
+  cd $pkgname
   make DESTDIR="$pkgdir" install
 }
