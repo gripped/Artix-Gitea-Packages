@@ -1,0 +1,52 @@
+---
+version: 0.2.8-1
+pkgbase:
+  name: lxlauncher
+  pkgdesc: Open source clone of the Asus launcher for EeePC
+  pkgver: 0.2.8
+  pkgrel: 1
+  url: https://lxde.org/
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - git
+    - intltool
+  depends:
+    - gtk2
+    - gtk3
+    - startup-notification
+    - lxmenu-data
+    - menu-cache
+  backup:
+    - etc/xdg/lxlauncher/gtk.css
+    - etc/xdg/lxlauncher/gtkrc
+    - etc/xdg/lxlauncher/settings.conf
+  source:
+    - git+https://github.com/lxde/lxlauncher.git#tag=0.2.8
+    - fix-invisible-icons.patch
+  sha256sums:
+    - 3d8b998cc318bdf77c64df6f52e7f4cfb909de30ca2b3170dbb5ac1ffd450e37
+    - 34fd1774d962965795eac8002d77a17078a967e2812ebae3e71d35533e1b3799
+pkgname:
+  - name: lxlauncher
+    groups:
+      - lxde
+    depends:
+      - gtk2
+      - startup-notification
+      - lxmenu-data
+      - menu-cache
+  - name: lxlauncher-gtk3
+    pkgdesc: Open source clone of the Asus launcher for EeePC (GTK+ 3 version)
+    groups:
+      - lxde-gtk3
+    depends:
+      - gtk3
+      - startup-notification
+      - lxmenu-data
+      - menu-cache
+    conflicts:
+      - lxlauncher
+# generated with artixpkg 0.37.4-1-any
