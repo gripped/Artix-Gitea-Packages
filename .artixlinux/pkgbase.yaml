@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.0.1-1
+    version: 5.0.2-1
     packages:
-      - bleachbit-5.0.1-1-any.pkg.tar.zst
+      - bleachbit-5.0.2-1-any.pkg.tar.zst
     debug: []
