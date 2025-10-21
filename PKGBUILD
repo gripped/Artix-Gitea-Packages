@@ -14,14 +14,13 @@ sha512sums=('aba0b010ad761ad710ed7314cd5ac8a42acceb6ba4d75ca616253b94aa13b4542b3
 
 build() {
   cd "$srcdir"/$pkgname-$pkgver
-  test -x configure || aclocal && autoheader && autoconf && automake --add-missing
-  ./configure --prefix=/usr
-  make
+  artix-meson . build
+  meson compile -C build
 }
 
 package() {
   cd "$srcdir"/$pkgname-$pkgver
-  make DESTDIR="$pkgdir" install
-  install -D -m644 stalonetrayrc.sample.in "$pkgdir"/etc/stalonetrayrc # FIXME
+  meson install -C build --destdir "$pkgdir"
+  install -D -m644 stalonetrayrc.sample "$pkgdir"/etc/stalonetrayrc # FIXME
 }
 
