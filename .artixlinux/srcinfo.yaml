@@ -1,10 +1,10 @@
 ---
-version: 0.1.2-2
+version: 0.1.2-2.1
 pkgbase:
   name: lxhotkey
   pkgdesc: Keyboard shortcuts configurator (part of LXDE)
   pkgver: 0.1.2
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/lxde/lxhotkey
   arch:
     - x86_64

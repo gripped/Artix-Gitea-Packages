@@ -2,7 +2,7 @@
 
 pkgname=lxhotkey
 pkgver=0.1.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Keyboard shortcuts configurator (part of LXDE)'
 arch=(x86_64)
 license=(GPL-2.0-or-later)
