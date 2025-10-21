@@ -11,7 +11,7 @@
 
 pkgname=i2pd
 pkgver=2.58.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A full-featured C++ implementation of the I2P router'
 arch=('x86_64')
 url='https://i2pd.website/'
@@ -36,6 +36,7 @@ source=("https://github.com/PurpleI2P/i2pd/archive/${pkgver}/${pkgname}-${pkgver
         '010-i2pd-config.patch'
         '020-i2pd-do-not-override-config.patch'
         '040-i2pd-tunnels-d-readme.patch'
+        'boost-1.89.patch'
         'i2pd.sysusers'
         'i2pd.tmpfiles')
 sha256sums=('5ff650c6da8fda3522c10ec22889a7fd1c6b5d1af42c24531d84c36f6cc49019'
@@ -43,6 +44,7 @@ sha256sums=('5ff650c6da8fda3522c10ec22889a7fd1c6b5d1af42c24531d84c36f6cc49019'
             'ed1bde650139731921bf3c8091b3332620404e7700fb9c486a4a806fe34e2d3b'
             '3168e9bc1b15885b1658fac6efcd0741f7f82b571798380ecffa54eaa84aadde'
             'cfcb6b07b67aff3e3af12767f4649d88b9320dc71907b6c01b465e5c138cdaa3'
+            'b302566db25dea6bf2f7011f8af2ee9fc6bf0f70298c4c27416ddf9beef3fcff'
             '2f91fd455ea801df9a9bcc5f3f83def231d9149eec8b206588c8be21654e5b7c'
             'fe8cc2ec83cb5b5c2b2ec8cce9a989e0cb6fd347e00b84e03a17b12efd152fac')
 
@@ -51,6 +53,7 @@ prepare() {
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/010-i2pd-config.patch"
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/020-i2pd-do-not-override-config.patch"
     patch -d "${pkgname}-${pkgver}" -Np1 -i "${srcdir}/040-i2pd-tunnels-d-readme.patch"
+    patch -d "${pkgname}-${pkgver}" -Np1 -i ../boost-1.89.patch
 }
 
 build() {
