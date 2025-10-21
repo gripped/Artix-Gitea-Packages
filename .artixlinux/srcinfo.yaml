@@ -1,10 +1,10 @@
 ---
-version: 5.3.0-1
+version: 5.3.0-2
 pkgbase:
   name: powerdns-recursor
   pkgdesc: Resolving DNS server
   pkgver: 5.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.powerdns.com/
   arch:
     - x86_64
@@ -51,4 +51,4 @@ pkgbase:
     - 7aada0f186bc1cd6af9a4af598511e7f517f0c103973397d260796c8e83c789d720990579d6ccba53e4aa4a8a6c5b2107f4d32d09ce9a72118ae5030b03bb6ab
 pkgname:
   - name: powerdns-recursor
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
