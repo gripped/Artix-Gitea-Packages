@@ -1,10 +1,10 @@
 ---
-version: 8.7.0-4
+version: 8.8.0-2
 pkgbase:
   name: digikam
   pkgdesc: An advanced digital photo management application
-  pkgver: 8.7.0
-  pkgrel: 4
+  pkgver: 8.8.0
+  pkgrel: 2
   url: https://www.digikam.org/
   arch:
     - x86_64
@@ -75,17 +75,13 @@ pkgbase:
     - 'qt6-imageformats: support for additional image formats (WEBP, TIFF)'
     - 'rawtherapee: RAW import'
   source:
-    - https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz
-    - https://download.kde.org/stable/digikam/8.7.0/digiKam-8.7.0.tar.xz.sig
-    - afe5772b-2.patch::https://invent.kde.org/graphics/digikam/-/commit/afe5772b.patch
-    - https://invent.kde.org/graphics/digikam/-/commit/b9a5754b.patch
+    - https://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz
+    - https://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz.sig
   validpgpkeys:
     - D1CF2444A7858C5F2FB095B74A77747BC2386E50
   sha256sums:
-    - 79e35ec20a43934cf8322d47c9c0540b0b8b727fa7d9aceb90f710fcfe9da02f
+    - db3a1b6e3c73f903e3dff8003f52455dd2ecd198cb66534fee4abbd0bdeb6b9a
     - SKIP
-    - 65bc3d2bc3ac541f595aa4d41b4d9c4b745b302a65bc3ded30a53463bf428eed
-    - 45fd24b1b46f968fb10a205e9d09d1cec65eb7b07393fd0fecbcc70f5d7da4fe
 pkgname:
   - name: digikam
 # generated with artixpkg 0.37.4-1-any
