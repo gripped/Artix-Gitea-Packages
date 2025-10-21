@@ -24,3 +24,4 @@ package() {
   make DESTDIR="$pkgdir" install
   install -D -m644 stalonetrayrc.sample.in "$pkgdir"/etc/stalonetrayrc # FIXME
 }
+
