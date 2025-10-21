@@ -1,24 +1,25 @@
 ---
-version: 0.5.2-1
+version: 0.5.2-2
 pkgbase:
   name: lxde-icon-theme
   pkgdesc: LXDE default icon theme based on nuoveXT2
   pkgver: 0.5.2
-  pkgrel: 1
-  url: https://lxde.org/
+  pkgrel: 2
+  url: https://github.com/lxde/lxde-icon-theme
   arch:
     - any
   groups:
     - lxde
-    - lxde-gtk3
   license:
-    - GPL
-  depends:
-    - gtk-update-icon-cache
+    - LGPL-3.0-or-later
+  makedepends:
+    - git
   source:
-    - https://github.com/lxde/lxde-icon-theme/archive/0.5.2/lxde-icon-theme-0.5.2.tar.gz
-  sha256sums:
-    - 5b71da247ba25ddcd991a3a184ca5ac92f40b7676766e1e59437067a20f7ecf7
+    - git+https://github.com/lxde/lxde-icon-theme.git#tag=0.5.2
+    - lxde-icon-theme-adwaita-inherit.patch
+  b2sums:
+    - 4257a8eae1f5c8fb5c8e7c0ed5c4a568ef1488b86ded9640ef09c5eb6ec2cde1077f4a10eb25bc8d038ce362b2f0ed8cb5a4ee49e2a5879a28d348eb4d70753c
+    - 1a28dd101456a0f285f60041c905f70153231e4c7bd3b178a486c731fc13e6a43b7f3d55d928a8b2b674dd8af06aa5b9e5448ddd56f77cfd83affd002ac7baf5
 pkgname:
   - name: lxde-icon-theme
 # generated with artixpkg 0.37.4-1-any
