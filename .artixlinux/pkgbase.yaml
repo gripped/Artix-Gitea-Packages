@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.1.6-1
+    version: 0.1.6-2
     packages:
-      - lxmenu-data-0.1.6-1-any.pkg.tar.zst
+      - lxmenu-data-0.1.6-2-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.1.6-1
