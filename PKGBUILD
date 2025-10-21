@@ -5,7 +5,7 @@
 
 pkgname=lxtask
 pkgver=0.1.12
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Task manager of the LXDE Desktop'
 arch=(x86_64)
 url='https://github.com/lxde/lxtask'

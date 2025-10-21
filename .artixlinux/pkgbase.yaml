@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.1.12-2
+    version: 0.1.12-2.1
     packages:
-      - lxtask-0.1.12-2-x86_64.pkg.tar.zst
+      - lxtask-0.1.12-2.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.1.12-2

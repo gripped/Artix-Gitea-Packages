@@ -1,10 +1,10 @@
 ---
-version: 0.1.12-2
+version: 0.1.12-2.1
 pkgbase:
   name: lxtask
   pkgdesc: Task manager of the LXDE Desktop
   pkgver: 0.1.12
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/lxde/lxtask
   arch:
     - x86_64
