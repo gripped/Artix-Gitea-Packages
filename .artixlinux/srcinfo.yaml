@@ -1,0 +1,32 @@
+---
+version: 0.4.8-1
+pkgbase:
+  name: lxmusic
+  pkgdesc: Lightweight music player (XMMS2 client)
+  pkgver: 0.4.8
+  pkgrel: 1
+  url: https://lxde.org/
+  arch:
+    - x86_64
+  groups:
+    - lxde
+  license:
+    - GPL2
+  makedepends:
+    - git
+    - intltool
+  depends:
+    - gtk3
+    - libnotify
+    - xmms2
+  replaces:
+    - lxmusic-gtk3
+  source:
+    - git+https://github.com/lxde/lxmusic.git#tag=0.4.8
+    - lxmusic.appdata.xml
+  sha256sums:
+    - 7a8d8cf3a9bf7e26b774f1106c1bab297fef052bd23c44208e5a40c561f4df9e
+    - 0093885fe76bda60a1b319970bd8d148903a3adb674690d3d9cf9262e053b05b
+pkgname:
+  - name: lxmusic
+# generated with artixpkg 0.37.4-1-any
