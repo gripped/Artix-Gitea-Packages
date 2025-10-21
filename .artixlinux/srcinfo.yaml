@@ -1,10 +1,10 @@
 ---
-version: 0.2.8-2
+version: 0.2.8-2.1
 pkgbase:
   name: lxlauncher
   pkgdesc: Clone of the Asus launcher for EeePC
   pkgver: 0.2.8
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/lxde/lxlauncher
   arch:
     - x86_64

@@ -5,7 +5,7 @@
 
 pkgname=lxlauncher
 pkgver=0.2.8
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Clone of the Asus launcher for EeePC'
 arch=(x86_64)
 url='https://github.com/lxde/lxlauncher'
