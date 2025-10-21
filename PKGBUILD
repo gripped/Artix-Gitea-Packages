@@ -44,7 +44,7 @@ pkgname=(
   erlang-wx
   erlang-xmerl
 )
-pkgver=28.1
+pkgver=28.1.1
 pkgrel=1
 pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
 arch=(x86_64)
@@ -76,7 +76,7 @@ source=(
   "git+https://github.com/erlang/otp#tag=OTP-$pkgver"
   epmd.conf
 )
-b2sums=('516e1173011e9fb22886767ee2aefb322e158b4c3fc14010dd17061d94e641c02d906b3c5aa5d3dedb39ca292c95aa5f9123e0c58c70061a90c5ca2877bddb0f'
+b2sums=('6bebc1d52bd108ec410669e599c2cfa5387ab436e315624ec955b74fc51244bd71b69399e33011ddbdb781760ce4fc8d26a201af69a370bd7cce3826cafbbd08'
         '1675ac9bf948ab19e8b63077d870ccf356fcdbce14de2777f00b3488aa1ce34a5e0a5cdc0428707f744dee5940b12653a44e0ded0554de95ebb31bce4676ff87')
 
 prepare() {
