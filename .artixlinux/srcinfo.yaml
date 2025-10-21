@@ -1,37 +1,48 @@
 ---
-version: 0.11.1-2.1
+version: 0.11.1-3
 pkgbase:
   name: lxpanel
   pkgdesc: Lightweight X11 desktop panel for LXDE
   pkgver: 0.11.1
-  pkgrel: 2.1
-  url: https://lxde.org/
+  pkgrel: 3
+  url: https://github.com/lxde/lxpanel
   arch:
     - x86_64
   groups:
     - lxde
   license:
-    - GPL2
+    - GPL-2.0-or-later
   makedepends:
     - git
     - intltool
-    - docbook-xml
-    - docbook-xsl
     - wireless_tools
   depends:
     - alsa-lib
+    - cairo
     - curl
-    - menu-cache
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - libfm
+    - libfm-gtk3
+    - libkeybinder3
+    - libwnck3
+    - libx11
+    - libxml2
     - lxmenu-data
-    - libwnck
-    - libfm-gtk2
-    - libkeybinder2
+    - menu-cache
+    - pango
   optdepends:
     - 'wireless_tools: netstat plugin'
+  conflicts:
+    - lxpanel-gtk3
+  replaces:
+    - lxpanel-gtk3
   source:
     - git+https://github.com/lxde/lxpanel.git#tag=0.11.1
-  sha256sums:
-    - 262d261e14a13e6df1bb1a0406afee1e69f6da0891269a3e0a865507d04d5a95
+  b2sums:
+    - 9ae8710140db2e41091d22f42585c14186213a359cc0f48dc06dcf779d9cfa8ac57694d75efbd3ba080c4d276306bb6e278f0bad1bfd43f97c2cf9f7101ad6ad
 pkgname:
   - name: lxpanel
 # generated with artixpkg 0.37.4-1-any
