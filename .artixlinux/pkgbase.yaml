@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.4.1-1
+    version: 0.4.1-2
     packages:
-      - lxterminal-0.4.1-1-x86_64.pkg.tar.zst
+      - lxterminal-0.4.1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.4.1-1
