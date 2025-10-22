@@ -40,7 +40,8 @@ depends=(gcc-libs
          xcb-util-keysyms)
 makedepends=(extra-cmake-modules
              kcmutils
-             kdoctools)
+             kdoctools
+             plasma-kactivities)
 optdepends=('kcmutils: configuration module')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
