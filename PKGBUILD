@@ -3,7 +3,7 @@
 pkgbase=wasi-libc++
 pkgname=(wasi-libc++ wasi-libc++abi)
 pkgver=21.1.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="WASI LLVM C++ standard library"
 url="https://libcxx.llvm.org/"
 license=('Apache-2.0 WITH LLVM-exception')
