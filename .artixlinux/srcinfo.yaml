@@ -1,10 +1,10 @@
 ---
-version: 6.4-4.1
+version: 6.5-1
 pkgbase:
   name: plasma-meta
   pkgdesc: Meta package to install KDE Plasma
-  pkgver: 6.4
-  pkgrel: 4.1
+  pkgver: 6.5
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - any
@@ -16,6 +16,7 @@ pkgbase:
     - breeze
     - breeze-gtk
     - discover
+    - flatpak-kcm
     - kactivitymanagerd
     - kde-cli-tools
     - kde-gtk-config
@@ -24,6 +25,7 @@ pkgbase:
     - kglobalacceld
     - kinfocenter
     - kmenuedit
+    - knighttime
     - kpipewire
     - krdp
     - kscreen
@@ -68,7 +70,6 @@ pkgbase:
   optdepends:
     - 'breeze-grub: Breeze theme for GRUB'
     - 'breeze-plymouth: Breeze theme for Plymouth'
-    - 'flatpak-kcm: Manage Flatpak applications from systemsettings'
     - 'kgamma: Adjust gamma settings on X'
     - 'plasma-x11-session: Plasma X11 session'
     - 'plymouth-kcm: Configure Plymouth from systemsettings'
@@ -76,4 +77,4 @@ pkgbase:
     - 'wacomtablet: Drawing tablet settings on X'
 pkgname:
   - name: plasma-meta
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

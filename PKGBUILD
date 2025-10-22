@@ -2,8 +2,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=plasma-meta
-pkgver=6.4
-pkgrel=4.1
+pkgver=6.5
+pkgrel=1
 pkgdesc='Meta package to install KDE Plasma'
 arch=(any)
 license=(None)
@@ -13,6 +13,7 @@ depends=(aurorae
          breeze
          breeze-gtk
          discover
+         flatpak-kcm
          kactivitymanagerd
          kde-cli-tools
          kde-gtk-config
@@ -21,6 +22,7 @@ depends=(aurorae
          kglobalacceld
          kinfocenter
          kmenuedit
+         knighttime
          kpipewire
          krdp
          kscreen
@@ -65,9 +67,8 @@ depends=(aurorae
 )
 optdepends=('breeze-grub: Breeze theme for GRUB'
             'breeze-plymouth: Breeze theme for Plymouth'
-            'flatpak-kcm: Manage Flatpak applications from systemsettings'
             'kgamma: Adjust gamma settings on X'
-            #'kwin-x11: X11 window manager'
+            # 'kwin-x11: X11 window manager'
             'plasma-x11-session: Plasma X11 session'
             'plymouth-kcm: Configure Plymouth from systemsettings'
             'plasma-sdk: Development tools'
