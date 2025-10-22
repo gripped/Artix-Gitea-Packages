@@ -1,10 +1,10 @@
 ---
-version: 2:2.61.2-1
+version: 2:2.61.2-2
 pkgbase:
   name: librsvg
   pkgdesc: SVG rendering library
   pkgver: 2.61.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://wiki.gnome.org/Projects/LibRsvg
   arch:
@@ -28,6 +28,7 @@ pkgbase:
     - dav1d
     - freetype2
     - gcc-libs
+    - gdk-pixbuf2
     - glib2
     - glibc
     - harfbuzz

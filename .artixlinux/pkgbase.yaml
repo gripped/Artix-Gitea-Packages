@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2:2.61.2-1
+    version: 2:2.61.2-2
     packages:
-      - librsvg-2:2.61.2-1-x86_64.pkg.tar.zst
-      - librsvg-docs-2:2.61.2-1-x86_64.pkg.tar.zst
+      - librsvg-2:2.61.2-2-x86_64.pkg.tar.zst
+      - librsvg-docs-2:2.61.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2:2.61.1-1
