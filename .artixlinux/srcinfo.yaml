@@ -1,0 +1,51 @@
+---
+version: 0.5.4.26-1
+pkgbase:
+  name: xarchiver
+  pkgdesc: GTK frontend to various command line archivers
+  pkgver: 0.5.4.26
+  pkgrel: 1
+  url: https://github.com/ib/xarchiver
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - docbook-xsl
+    - git
+    - intltool
+  depends:
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+  optdepends:
+    - 'arj: ARJ support'
+    - 'binutils: deb support'
+    - 'bzip2: bzip2 support'
+    - 'cpio: RPM support'
+    - 'gzip: gzip support'
+    - 'lha: LHA support'
+    - 'lrzip: lrzip support'
+    - 'lz4: LZ4 support'
+    - 'lzip: lzip support'
+    - 'lzop: LZOP support'
+    - 'p7zip: 7z support'
+    - 'tar: tar support'
+    - 'unarj: ARJ support'
+    - 'unrar: RAR support'
+    - 'unzip: ZIP support'
+    - 'xdg-utils: recognize more file types to open'
+    - 'xz: xz support'
+    - 'zip: ZIP support'
+    - 'zstd: zstd support'
+  source:
+    - git+https://github.com/ib/xarchiver.git#tag=0.5.4.26
+    - xarchiver.appdata.xml
+  b2sums:
+    - f0aeb6d086c09e56ca87d121300f5c35f2391ace4add66cede5be6d39dfc921ea786a4de9f127efaa10ab8cf37305ae1f309a4e56deaf20ac6ecc2b643544f81
+    - 56293e379fe0663e3c76836d6c87710fcd6cec9f44de539a48b75e253b100ea46d29dc734e215f44e2955171e1ea0de7076e6129c96d4660ba46ebaff4ab2a8a
+pkgname:
+  - name: xarchiver
+# generated with artixpkg 0.37.4-1-any
