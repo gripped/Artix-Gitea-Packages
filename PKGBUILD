@@ -1,0 +1,45 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler@archlinux.org>
+pkgname=functional-plus
+pkgver=0.2.25
+pkgrel=1
+pkgdesc='Functional Programming Library for C++'
+arch=('any')
+url='https://www.editgym.com/fplus-api-search/'
+license=('BSL-1.0')
+makedepends=('cmake' 'python')
+checkdepends=('doctest')
+_git='https://github.com/Dobiasd/FunctionalPlus'
+source=("$pkgname-$pkgver.tar.gz::$_git/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('9b5e24bbc92f43b977dc83efbc173bcf07dbe07f8718fc2670093655b56fcee3')
+_dirname="$(basename "$_git")-$pkgver"
+
+build() {
+	local cmake_args=(
+		-S "$_dirname"
+		-B build
+		-Wno-dev
+		-DCMAKE_BUILD_TYPE=None
+		-DCMAKE_INSTALL_PREFIX=/usr)
+	cmake "${cmake_args[@]}"
+	cmake --build build
+}
+
+check() {
+	local cmake_test_args=(
+		-S "$_dirname/test"
+		-B build-test
+		-DCMAKE_PREFIX_PATH="$srcdir/build"
+		-Wno-dev)
+	# Silence the bogus error with GCC 13:
+	# error: 'void* __builtin_memmove(void*, const void*, long unsigned int)' forming offset 8 is out of the bounds [0, 8]
+	CXXFLAGS+=' -Wno-array-bounds'
+	cmake "${cmake_test_args[@]}"
+	cmake --build build-test
+	cd build-test && ctest
+}
+
+package() {
+	DESTDIR="$pkgdir" cmake --install build
+	install -Dm644 "$_dirname/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+}

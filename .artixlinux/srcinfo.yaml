@@ -1,0 +1,24 @@
+---
+version: 0.2.25-1
+pkgbase:
+  name: functional-plus
+  pkgdesc: Functional Programming Library for C++
+  pkgver: 0.2.25
+  pkgrel: 1
+  url: https://www.editgym.com/fplus-api-search/
+  arch:
+    - any
+  license:
+    - BSL-1.0
+  checkdepends:
+    - doctest
+  makedepends:
+    - cmake
+    - python
+  source:
+    - functional-plus-0.2.25.tar.gz::https://github.com/Dobiasd/FunctionalPlus/archive/refs/tags/v0.2.25.tar.gz
+  sha256sums:
+    - 9b5e24bbc92f43b977dc83efbc173bcf07dbe07f8718fc2670093655b56fcee3
+pkgname:
+  - name: functional-plus
+# generated with artixpkg 0.37.4-1-any
