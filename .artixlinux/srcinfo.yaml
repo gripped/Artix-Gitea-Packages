@@ -1,10 +1,10 @@
 ---
-version: 8.2.10-1
+version: 8.2.10-2
 pkgbase:
   name: gc
   pkgdesc: A garbage collector for C and C++
   pkgver: 8.2.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.hboehm.info/gc/
   arch:
     - x86_64
