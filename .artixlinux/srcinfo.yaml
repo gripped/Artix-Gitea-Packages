@@ -12,9 +12,7 @@ pkgbase:
     - BSD-3-Clause
   checkdepends:
     - python-pytest
-    - python-pytorch
     - python-scipy
-    - python-tensorflow
     - python-tests
   makedepends:
     - cmake
