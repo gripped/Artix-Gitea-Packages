@@ -16,7 +16,7 @@ pkgbase:
     - extra-cmake-modules
     - kcmutils
     - kdoctools
-    - plasma-kactivities
+    - plasma-activities
   depends:
     - gcc-libs
     - glibc
