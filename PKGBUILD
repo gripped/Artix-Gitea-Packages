@@ -3,7 +3,7 @@
 
 pkgname=mkdocs-material
 pkgver=9.6.22
-pkgrel=1
+pkgrel=2
 pkgdesc="Documentation that simply works"
 arch=(any)
 url="https://github.com/squidfunk/mkdocs-material"
