@@ -3,7 +3,7 @@
 
 pkgname=compiler-rt
 pkgver=21.1.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Compiler runtime libraries for clang"
 arch=('x86_64')
 url="https://compiler-rt.llvm.org/"
