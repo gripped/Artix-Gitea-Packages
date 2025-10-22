@@ -1,8 +1,8 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgbase=turnstile
 pkgname=('turnstile' 'turnstile-dinit')
-pkgver=0.1.10
-pkgrel=3
+pkgver=0.1.11
+pkgrel=1
 pkgdesc="Work-in-progress session/login tracker as a logind alternative"
 arch=("x86_64")
 url="https://github.com/chimera-linux/turnstile"
@@ -11,7 +11,7 @@ depends=("pam" "dinit-base")
 groups=('turnstile-experimental')
 makedepends=("meson" "scdoc")
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-sha256sums=('186adf1402f3c63eecdbed241145cb029b7b1268c701a87381522d5b64583f2d')
+sha256sums=('04904eff68a726bed281820b3497e018ede55a5d745f31ceb9a502f905d0ed56')
 
 prepare() {
     cd "$pkgname-$pkgver"
