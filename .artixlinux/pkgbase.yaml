@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,14 +29,14 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.75.1-1
+    version: 1.75.1-2
     packages:
-      - grpc-1.75.1-1-x86_64.pkg.tar.zst
-      - python-grpcio-1.75.1-1-x86_64.pkg.tar.zst
-      - python-grpcio-tools-1.75.1-1-x86_64.pkg.tar.zst
-      - php-grpc-1.75.1-1-x86_64.pkg.tar.zst
-      - php-legacy-grpc-1.75.1-1-x86_64.pkg.tar.zst
-      - grpc-cli-1.75.1-1-x86_64.pkg.tar.zst
+      - grpc-1.75.1-2-x86_64.pkg.tar.zst
+      - python-grpcio-1.75.1-2-x86_64.pkg.tar.zst
+      - python-grpcio-tools-1.75.1-2-x86_64.pkg.tar.zst
+      - php-grpc-1.75.1-2-x86_64.pkg.tar.zst
+      - php-legacy-grpc-1.75.1-2-x86_64.pkg.tar.zst
+      - grpc-cli-1.75.1-2-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
