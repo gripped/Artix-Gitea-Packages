@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-2
+version: 6.5.0-1
 pkgbase:
   name: krdp
   pkgdesc: Library and examples for creating an RDP server
-  pkgver: 6.4.5
-  pkgrel: 2
+  pkgver: 6.5.0
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -23,25 +23,25 @@ pkgbase:
     - kconfig
     - kcoreaddons
     - kcrash
+    - kguiaddons
     - ki18n
-    - kirigami
     - kpipewire
     - kstatusnotifieritem
     - libxkbcommon
+    - pam
     - qt6-base
-    - qt6-declarative
     - qtkeychain-qt6
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.4.5/krdp-6.4.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.5/krdp-6.4.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.0/krdp-6.5.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.0/krdp-6.5.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 381c2c025db6b62d2d71655582c4c9272ae04d4225aea5f8a0307619bf990a45
+    - 71065cb742aeadd36ae24e29c5bf1e883cd084d30fb2394215c589274012b58b
     - SKIP
 pkgname:
   - name: krdp
