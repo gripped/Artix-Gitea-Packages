@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-2
+version: 6.5.0-1
 pkgbase:
   name: kpipewire
   pkgdesc: Components relating to pipewire use in Plasma
-  pkgver: 6.4.5
-  pkgrel: 2
+  pkgver: 6.5.0
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -28,18 +28,16 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.4.5/kpipewire-6.4.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.5/kpipewire-6.4.5.tar.xz.sig
-    - https://invent.kde.org/plasma/kpipewire/-/commit/6dc69b06.patch
+    - https://download.kde.org/stable/plasma/6.5.0/kpipewire-6.5.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.0/kpipewire-6.5.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - d0a704a6a030edb5b4f5d6b99c32bc4e46e1a6ab527dfde9089e11094b6b1a92
+    - 0651b8ea3862ffe3ea4f08a24431ab46725740221f052c4328033362be220ba7
     - SKIP
-    - c0fe48afdacc33212d4d1d66611746b4f805bcfed332f3a417be1b33221137f0
 pkgname:
   - name: kpipewire
 # generated with artixpkg 0.37.4-1-any
