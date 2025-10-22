@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.5.0-1
+    version: 6.5.0-1.1
     packages:
-      - plasma-activities-stats-6.5.0-1-x86_64.pkg.tar.zst
+      - plasma-activities-stats-6.5.0-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.4.5-1
