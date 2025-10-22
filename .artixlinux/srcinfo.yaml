@@ -1,10 +1,10 @@
 ---
-version: 6.4.5-2
+version: 6.5.0-1
 pkgbase:
   name: libkscreen
   pkgdesc: KDE screen management software
-  pkgver: 6.4.5
-  pkgrel: 2
+  pkgver: 6.5.0
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -13,10 +13,8 @@ pkgbase:
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - plasma-wayland-protocols
-    - qt6-doc
     - qt6-tools
   depends:
     - gcc-libs
@@ -25,15 +23,15 @@ pkgbase:
     - qt6-base
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.4.5/libkscreen-6.4.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.4.5/libkscreen-6.4.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.0/libkscreen-6.5.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.0/libkscreen-6.5.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 68d26e27656b450f15a78f44784c50a22034e57c14f96a402019d52bc5b3e2b4
+    - 9c42577faa9bbaa481978284709afddc310f52acc97b6613ba3c6cee9161cc2c
     - SKIP
 pkgname:
   - name: libkscreen
