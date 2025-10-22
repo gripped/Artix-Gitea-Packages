@@ -12,7 +12,7 @@ _unifont_ver=17.0.01
 # the pkgver for git master is generated with:
 # git describe --abbrev=8 | sed 's|grub-||;s|-|.r|;s|-|.|'
 pkgver=2.12.r418.g6b5c671d
-pkgrel=1
+pkgrel=2
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
@@ -85,7 +85,6 @@ source=(
   0001-00_header-add-GRUB_COLOR_-variables.patch
   0002-10_linux-detect-archlinux-initramfs.patch
   0003-support-dropins-for-default-configuration.patch
-  0004-po-Update-Translations-to-Build-with-Gettext-0.26.patch
   grub.default
   sbat.csv
 )
@@ -96,13 +95,12 @@ b2sums=('a6cec7271c3ea54a99f02ee6bc0a5825c8be657af68ba9a32b39a5fe8bcb571fb1ba392
         '992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b'
         'b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3'
         'a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c'
-        '7f41bb41548acae5283969f04ef5311d55de5343ee95ffcc903751d5e25cf5b187c8940de010dd53123086e76e147ba770173b03c36da97a413e9853c1a42ffe'
         'cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc'
         'e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a')
 _backports=(
   # current git master for loads of security fixes
   # https://lists.gnu.org/archive/html/grub-devel/2025-02/msg00024.html
-  "grub-${_pkgver}..19c698d123ae46d7a8fbf425067aff2d10dac8ca"
+  "grub-${_pkgver}..6b5c671d35b1b84468da1fef2b9bd8e05682f7e6"
 )
 
 prepare() {
@@ -133,9 +131,6 @@ prepare() {
 
   echo "Patch to support dropins for default configuration..."
   patch -Np1 -i "${srcdir}/0003-support-dropins-for-default-configuration.patch"
-
-  echo "Patch to support building with gettext-0.26..."
-  patch -Np1 -i "${srcdir}/0004-po-Update-Translations-to-Build-with-Gettext-0.26.patch"
 
   echo "Fix DejaVuSans.ttf location so that grub-mkfont can create *.pf2 files for starfield theme..."
   sed 's|/usr/share/fonts/dejavu|/usr/share/fonts/dejavu /usr/share/fonts/TTF|g' -i "configure.ac"

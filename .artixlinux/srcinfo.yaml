@@ -1,10 +1,10 @@
 ---
-version: 2:2.12.r418.g6b5c671d-1
+version: 2:2.12.r418.g6b5c671d-2
 pkgbase:
   name: grub
   pkgdesc: GNU GRand Unified Bootloader (2)
   pkgver: 2.12.r418.g6b5c671d
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://www.gnu.org/software/grub/
   install: grub.install
@@ -70,7 +70,6 @@ pkgbase:
     - 0001-00_header-add-GRUB_COLOR_-variables.patch
     - 0002-10_linux-detect-archlinux-initramfs.patch
     - 0003-support-dropins-for-default-configuration.patch
-    - 0004-po-Update-Translations-to-Build-with-Gettext-0.26.patch
     - grub.default
     - sbat.csv
   validpgpkeys:
@@ -85,7 +84,6 @@ pkgbase:
     - 992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b
     - b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3
     - a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c
-    - 7f41bb41548acae5283969f04ef5311d55de5343ee95ffcc903751d5e25cf5b187c8940de010dd53123086e76e147ba770173b03c36da97a413e9853c1a42ffe
     - cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc
     - e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a
 pkgname:
