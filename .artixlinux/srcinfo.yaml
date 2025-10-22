@@ -1,10 +1,10 @@
 ---
-version: 3.1.9-16
+version: 3.1.9-16.1
 pkgbase:
   name: source-highlight
   pkgdesc: Convert source code to syntax highlighted document
   pkgver: 3.1.9
-  pkgrel: 16
+  pkgrel: 16.1
   url: https://www.gnu.org/software/src-highlite/
   arch:
     - x86_64
