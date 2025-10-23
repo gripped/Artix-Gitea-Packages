@@ -9,7 +9,7 @@ pkgname=(
   libxkbcommon-doc
 )
 pkgver=1.12.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Keymap handling library for toolkits and window systems'
 url='https://xkbcommon.org/'
 arch=(x86_64)
