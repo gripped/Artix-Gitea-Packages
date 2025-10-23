@@ -1,0 +1,30 @@
+---
+version: 3.2.0-1
+pkgbase:
+  name: python-tblib
+  pkgdesc: Python traceback fiddling library
+  pkgver: 3.2.0
+  pkgrel: 1
+  url: https://github.com/ionelmc/python-tblib
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://github.com/ionelmc/python-tblib/archive/v3.2.0/python-tblib-3.2.0.tar.gz
+  sha512sums:
+    - b9dbd7aad8eab0ad7170ee4b97f048b2ce7413bf83dd13ffe4e0c20900ad879514150c61e85ab4be8a9da36b3302d149b01bd9b37e7f016113041462d1aa3491
+  b2sums:
+    - affd50e047c37b23687653574f75d3223509db0aaacf7ed76cfe9f2cbda19ca9651bd625291a60c29501b4c0858a960966dcdafbd619a9ba793636bd82a9dbe7
+pkgname:
+  - name: python-tblib
+# generated with artixpkg 0.37.4-1-any
