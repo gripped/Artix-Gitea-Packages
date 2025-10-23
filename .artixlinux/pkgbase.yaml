@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.12-2.1
+    version: 0.12-2.2
     packages:
-      - booster-0.12-2.1-x86_64.pkg.tar.zst
+      - booster-0.12-2.2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.12-2
