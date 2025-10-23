@@ -1,0 +1,36 @@
+---
+version: 3.4.2-1
+pkgbase:
+  name: task
+  pkgdesc: Taskwarrior, a command-line todo list manager
+  pkgver: 3.4.2
+  pkgrel: 1
+  url: https://taskwarrior.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+    - cargo
+  depends:
+    - util-linux
+    - gnutls
+  optdepends:
+    - 'bash-completion: for bash completion'
+    - 'python: for python export addon'
+    - 'ruby: for ruby export addon'
+    - 'perl: for perl export addon'
+    - 'perl-json: for perl export addon'
+  options:
+    - '!lto'
+  source:
+    - task::git+https://github.com/GothenburgBitFactory/taskwarrior.git#commit=48fb891c30fd7c572db3a4cff46e3435c75a1b6c
+    - task-libshared::git+https://github.com/GothenburgBitFactory/libshared.git
+  sha256sums:
+    - 0cd9765bc9c12a81c0d33a44f97afecf3977653d7a73ac70524b9472a1b48705
+    - SKIP
+pkgname:
+  - name: task
+# generated with artixpkg 0.37.4-1-any
