@@ -9,7 +9,7 @@ pkgname=(
   lib32-libxkbcommon-x11
 )
 pkgver=1.12.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Keymap handling library for toolkits and window systems (32-bit)'
 url='https://xkbcommon.org/'
 arch=(x86_64)
@@ -45,7 +45,7 @@ build() {
     -D enable-tools=false
   )
 
-  arch-meson libxkbcommon build "${meson_options[@]}"
+  artix-meson libxkbcommon build "${meson_options[@]}"
   meson compile -C build
 }
 
