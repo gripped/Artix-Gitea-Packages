@@ -1,0 +1,55 @@
+---
+version: 2.28.0-1
+pkgbase:
+  name: python-jupyterlab-server
+  pkgdesc: Launch an application built using JupyterLab
+  pkgver: 2.28.0
+  pkgrel: 1
+  url: https://jupyter.org/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-jupyter-server-terminals
+    - python-openapi-core
+    - python-parse
+    - python-pytest
+    - python-pytest-jupyter
+    - python-pytest-timeout
+    - python-pytest-tornasync
+    - python-requests-mock
+    - python-strict-rfc3339
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - jupyter-server
+    - python
+    - python-babel
+    - python-importlib-metadata
+    - python-json5
+    - python-jsonschema
+    - python-jupyter-core
+    - python-packaging
+    - python-requests
+    - python-ruamel-yaml
+    - python-tornado
+    - python-traitlets
+  provides:
+    - python-jupyterlab_server
+  conflicts:
+    - jupyterlab_server
+    - python-jupyterlab_server
+  replaces:
+    - jupyterlab_server
+    - python-jupyterlab_server
+  source:
+    - git+https://github.com/jupyterlab/jupyterlab_server#tag=v2.28.0
+  sha256sums:
+    - 647061d6f86246390c421be7085fbcb75dbe0218c6a26e29f61559ece10d2301
+pkgname:
+  - name: python-jupyterlab-server
+# generated with artixpkg 0.37.4-1-any
