@@ -1,9 +1,9 @@
 ---
-version: 4.4.9-1
+version: 4.4.10-1
 pkgbase:
   name: jupyterlab
   pkgdesc: JupyterLab computational environment
-  pkgver: 4.4.9
+  pkgver: 4.4.10
   pkgrel: 1
   url: https://github.com/jupyterlab/jupyterlab
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - 'jupyterlab-widgets: ipywidgets support'
     - 'npm: to install extensions'
   source:
-    - git+https://github.com/jupyterlab/jupyterlab#tag=v4.4.9
+    - git+https://github.com/jupyterlab/jupyterlab#tag=v4.4.10
   sha256sums:
-    - 463d901178e7fdce594ffe095a848f91128e3eb0c1753e38f59c629e939ac00b
+    - f9c81aeb387edf81fff11b4b655287e4f1e87ae58788c823ca768f4bf4ae571e
 pkgname:
   - name: jupyterlab
 # generated with artixpkg 0.37.4-1-any
