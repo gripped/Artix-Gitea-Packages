@@ -1,0 +1,30 @@
+---
+version: 0.3.2-1
+pkgbase:
+  name: python-aiomysql
+  pkgdesc: Library for accessing a MySQL database from the asyncio
+  pkgver: 0.3.2
+  pkgrel: 1
+  url: https://github.com/aio-libs/aiomysql
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-pymysql
+  optdepends:
+    - 'python-sqlalchemy: SQLAlchemy support'
+  source:
+    - https://github.com/aio-libs/aiomysql/archive/v0.3.2/python-aiomysql-0.3.2.tar.gz
+  sha256sums:
+    - f9c218491e7356ffb2d9f2f1c19c86147f20f88cac5b86962e84e40e2a6d5260
+pkgname:
+  - name: python-aiomysql
+# generated with artixpkg 0.37.4-1-any
