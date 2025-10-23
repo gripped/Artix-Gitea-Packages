@@ -45,7 +45,7 @@ build() {
     -D enable-tools=false
   )
 
-  artix-meson libxkbcommon build "${meson_options[@]}"
+  arch-meson libxkbcommon build "${meson_options[@]}"
   meson compile -C build
 }
 
