@@ -1,9 +1,9 @@
 ---
-version: 0.30.0-1
+version: 0.30.1-1
 pkgbase:
   name: python-inline-snapshot
   pkgdesc: Create and update inline snapshots in your python tests
-  pkgver: 0.30.0
+  pkgver: 0.30.1
   pkgrel: 1
   url: https://github.com/15r10nk/inline-snapshot
   arch:
@@ -11,6 +11,7 @@ pkgbase:
   license:
     - MIT
   checkdepends:
+    - python-black
     - python-dirty-equals
     - python-hypothesis
     - python-pydantic
@@ -27,15 +28,16 @@ pkgbase:
   depends:
     - python
     - python-asttokens
-    - python-black
     - python-executing
     - python-pytest
     - python-rich
-    - python-typing_extensions
+  optdepends:
+    - 'python-black: retains black formatting'
+    - 'python-dirty-equals: snapshot comparison using dirty-equals'
   source:
-    - python-inline-snapshot-0.30.0.tar.gz::https://github.com/15r10nk/inline-snapshot/archive/v0.30.0.tar.gz
+    - https://github.com/15r10nk/inline-snapshot/archive/v0.30.1/python-inline-snapshot-0.30.1.tar.gz
   sha256sums:
-    - 9c8e5cb4f905bd91b09b356245cb58bba2d0daf2eb72673689bfbcec6edd79a6
+    - 3dcd7d256f771cf9f7da588e2c81f0645b2561b02d8a64c62dc6ed20fc2c023f
 pkgname:
   - name: python-inline-snapshot
 # generated with artixpkg 0.37.4-1-any
