@@ -1,8 +1,8 @@
-# Maintainer: Anatol Pomozov
+# Maintainer: artist for Artix Linux
 
 pkgname=booster
 pkgver=0.12
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Fast and secure initramfs generator'
 arch=(x86_64)
 url='https://github.com/anatol/booster'
