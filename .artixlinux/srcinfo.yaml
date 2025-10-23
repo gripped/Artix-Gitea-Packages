@@ -1,0 +1,31 @@
+---
+version: 6.10.0-1
+pkgbase:
+  name: pyqt6-webengine
+  pkgdesc: Python bindings for QtWebEngine
+  pkgver: 6.10.0
+  pkgrel: 1
+  url: https://www.riverbankcomputing.com/software/pyqtwebengine/intro
+  arch:
+    - x86_64
+  groups:
+    - pyqt6
+  license:
+    - GPL3
+  makedepends:
+    - pyqt-builder
+    - sip
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+    - python-pyqt6
+    - qt6-base
+    - qt6-webengine
+  source:
+    - https://pypi.python.org/packages/source/P/PyQt6-WebEngine/pyqt6_webengine-6.10.0.tar.gz
+  sha256sums:
+    - 267d27275d0c79ae270bca4b03520a41fa7e85c2a4d9632da8cb9cc233a55ad1
+pkgname:
+  - name: python-pyqt6-webengine
+# generated with artixpkg 0.37.4-1-any
