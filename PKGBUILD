@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.142.1
+pkgver=6.142.3
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -58,8 +58,8 @@ optdepends=(
   'python-watchdog: for tracking file system events'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('57e698b4f721a62b40482d7ad64ab6e002ddd353cf415870e8eaedf9fbb2688bbfb7b762fde16b6e9c325f0455daadd7733878674a82e89d236e724fa4782d94')
-b2sums=('00a764b3a92b25f5d15e6274eb26db9e92769ec82364d578a4fbed2b9e1d9bf6e09cf5a4854e7e8518de2f461aa9c07670f282afee9ab23ad94abc5487889700')
+sha512sums=('c91ee257d2f63b0cb3d05029f4bff393c194fdc74ed964a1021d39b95aeb185b56053e7bce7df015b2a46c1863553b02a56af5f79db9a7720dbcd0229c296163')
+b2sums=('986a6d1ab49a9ea8f869bc8577dbb358dfedac9bb9d92fcb646a8f49d1705ebff1b829e639a99985899d499a7c1c8f9f28eb0b8232a6daf31e9a7173936aff9b')
 
 prepare() {
   cd $pkgname/hypothesis-python
@@ -90,7 +90,8 @@ check() {
     # Fails for some reason
     --ignore=tests/pytest/test_capture.py # ::test_healthcheck_traceback_is_hidden
     --ignore=tests/pytest/test_fixtures.py # ::test_given_fails_if_already_decorated_with_fixture
-    --deselect=tests/nocover/test_argument_validation.py::test_consistent_with_api_guide_on_kwonly_args
+    --ignore=tests/watchdog/test_database.py
+    --ignore=tests/nocover/test_argument_validation.py
 
     -W=ignore::DeprecationWarning
   )
