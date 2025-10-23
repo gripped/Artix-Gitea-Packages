@@ -1,0 +1,28 @@
+---
+version: 3.11-1
+pkgbase:
+  name: python-idna
+  pkgdesc: Internationalized Domain Names in Applications (IDNA)
+  pkgver: 3.11
+  pkgrel: 1
+  url: https://github.com/kjd/idna
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-flit-core
+  depends:
+    - python
+  source:
+    - git+https://github.com/kjd/idna.git#tag=v3.11
+  sha512sums:
+    - abe8aaf9d19326701e749fb13eaabe9f2562ed7e7e8e1a5efeec01e402a956ed2951aa79059196ee585ee1cca127bd4aa91f8cd8b6e1458aaddd01d2ab9ecd9d
+pkgname:
+  - name: python-idna
+# generated with artixpkg 0.37.4-1-any
