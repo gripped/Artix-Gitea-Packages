@@ -1,9 +1,9 @@
 ---
-version: 4.0.1-1
+version: 4.0.2-1
 pkgbase:
   name: python-pylint
   pkgdesc: Analyzes Python code looking for bugs and signs of poor quality
-  pkgver: 4.0.1
+  pkgver: 4.0.2
   pkgrel: 1
   url: https://pylint.pycqa.org
   arch:
@@ -37,9 +37,9 @@ pkgbase:
   optdepends:
     - 'graphviz: Enable output formats other than dot or vcg'
   source:
-    - https://github.com/PyCQA/pylint/archive/v4.0.1/pylint-4.0.1.tar.gz
+    - https://github.com/PyCQA/pylint/archive/v4.0.2/pylint-4.0.2.tar.gz
   sha256sums:
-    - a8055e3fb85147cd85a3451d1cb997d646be9a07d294ce37e558f0d71f5f3f13
+    - 854093b5044593b040f9db1e7577edc5c2a72542bdb7ecaa50a4b4e5e4e0fa6b
 pkgname:
   - name: python-pylint
 # generated with artixpkg 0.37.4-1-any
