@@ -2,54 +2,60 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Filipp "Scorp" Andjelo <scorp@mailueberfall.de>
 
-pkgbase=lxinput
-pkgname=(lxinput lxinput-gtk3)
+pkgname=lxinput
 pkgver=0.3.6
-pkgrel=1
-pkgdesc="Small program to configure keyboard and mouse for LXDE"
-arch=('x86_64')
-url="https://lxde.org/"
-license=('GPL')
-groups=('lxde')
-depends=('gtk2' 'gtk3')
-makedepends=('intltool')
-source=(https://github.com/lxde/lxinput/archive/$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('2f15c2a17f970afb152cbd024503da26c1e15135e76e9f516e0ca97e909d6c37')
+pkgrel=2
+pkgdesc='Small program to configure keyboard and mouse for LXDE'
+arch=(x86_64)
+url='https://github.com/lxde/lxinput'
+license=(GPL-2.0-or-later)
+groups=(lxde)
+depends=(
+  glib2
+  glibc
+  gtk3
+  libx11
+)
+makedepends=(
+  git
+  intltool
+)
+conflicts=(lxinput-gtk3)
+replaces=(lxinput-gtk3)
+source=(
+  "git+https://github.com/lxde/lxinput.git#tag=$pkgver"
+  lxinput-notshowin.patch
+  lxinput-x11-only.patch
+)
+b2sums=(
+  35f17ab642d2da3099fa5593592ae2b96aaaba19f746328e6a271ca9d8689b5f1f5cb925e9ca92b86600719966601b1be969e84d6afce2034fe8da6a64a2db13
+  dc2db0560bb6a66629dbc78f44b0daf45c33f102723ccc9a9df9c140510a473fdd432ca182f8a9b0a68df9f52a1d9c418e658b4ff4e7f9f74f9a87efc3238875
+  4f2cd26de3dfb69f16f8283035a3aa43bd64ec8841941dff24eb9be190c780e4f6b84acafb176831807c4a5be8d87353b096ceb80bfaea959b4f41bee960748f
+)
 
 prepare() {
-  cd $pkgbase-$pkgver
-  autoreconf -vif
+  cd $pkgname
+
+  # https://github.com/lxde/lxinput/pull/3
+  git apply -3 ../lxinput-notshowin.patch
+
+  # https://github.com/lxde/lxinput/pull/4
+  git apply -3 ../lxinput-x11-only.patch
+
+  autoreconf -fi
 }
 
 build() {
-  # GTK+ 2 version
-  [ -d gtk2 ] || cp -r $pkgbase-$pkgver gtk2
-  cd gtk2
-  ./configure --prefix=/usr
-  make
-
-  cd "$srcdir"
-  # GTK+ 3 version
-  [ -d gtk3 ] || cp -r $pkgbase-$pkgver gtk3
-  cd gtk3
-  ./configure --prefix=/usr --enable-gtk3
+  cd $pkgname
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --enable-gtk3
   make
 }
 
-package_lxinput() {
-  groups=('lxde')
-  depends=('gtk2')
-
-  cd gtk2
-  make DESTDIR="$pkgdir" install
-}
-
-package_lxinput-gtk3() {
-  groups=('lxde-gtk3')
-  pkgdesc+=' (GTK+ 3 version)'
-  depends=('gtk3')
-  conflicts=('lxinput')
-
-  cd gtk3
+package() {
+  cd $pkgname
   make DESTDIR="$pkgdir" install
 }
