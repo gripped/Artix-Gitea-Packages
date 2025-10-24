@@ -1,10 +1,10 @@
 ---
-version: 49.1-1
+version: 49.1-2
 pkgbase:
   name: nautilus
   pkgdesc: Default file manager for GNOME
   pkgver: 49.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Nautilus/
   arch:
     - x86_64
