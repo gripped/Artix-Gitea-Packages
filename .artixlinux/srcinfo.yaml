@@ -1,0 +1,29 @@
+---
+version: 0.2.13-1
+pkgbase:
+  name: act-runner
+  pkgdesc: A runner for Gitea Actions based on GitHub's Act
+  pkgver: 0.2.13
+  pkgrel: 1
+  url: https://gitea.com/gitea/act_runner
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - go
+  depends:
+    - glibc
+  provides:
+    - act_runner
+  backup:
+    - etc/act_runner/act_runner.yaml
+  source:
+    - act_runner-0.2.13.tar.gz::https://gitea.com/gitea/act_runner/archive/v0.2.13.tar.gz
+    - act_runner.yaml
+  sha256sums:
+    - 69e6fe36ad9e9be188bf6dfe5fd55697eb92ef1aed6396c9a44c1d8e24611176
+    - c7daf8870a1b8ac67358b912e0511be1f815345a6b7bd9643050e9c3a48f83e9
+pkgname:
+  - name: act-runner
+# generated with artixpkg 0.37.4-1-any
