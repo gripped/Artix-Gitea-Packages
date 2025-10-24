@@ -1,0 +1,45 @@
+---
+version: 1:0.30+r2+gc0620e4-6
+pkgbase:
+  name: libcanberra
+  pkgdesc: A small and lightweight implementation of the XDG Sound Theme Specification
+  pkgver: 0.30+r2+gc0620e4
+  pkgrel: 6
+  epoch: 1
+  url: https://0pointer.net/lennart/projects/libcanberra/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gtk-doc
+    - gtk3
+    - git
+  depends:
+    - libvorbis
+    - libltdl
+    - alsa-lib
+    - libpulse
+    - tdb
+    - sound-theme-freedesktop
+  optdepends:
+    - 'gtk3: canberra-gtk-play'
+  provides:
+    - libcanberra-pulse
+    - libcanberra.so
+    - libcanberra-gtk3.so
+  replaces:
+    - libcanberra-pulse<0.30+2+gc0620e4-4
+  options:
+    - libtool
+  source:
+    - git+https://git.0pointer.net/clone/libcanberra.git#commit=c0620e432650e81062c1967cc669829dbd29b310
+    - 40-libcanberra-gtk-module.sh
+    - libcanberra-multi-backend.patch
+  sha256sums:
+    - SKIP
+    - a0d0b135d3fea5c703a5f84208b79d66f671b082ae85f67b629ee2568a7ddc30
+    - de146cae3e40a16b38c8edb4f1a3a423c64eb9c5000e36c316b677e9909c9b06
+pkgname:
+  - name: libcanberra
+# generated with artixpkg 0.37.4-1-any

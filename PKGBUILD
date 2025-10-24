@@ -3,16 +3,16 @@
 
 pkgname=libcanberra
 pkgver=0.30+r2+gc0620e4
-pkgrel=4
+pkgrel=6
 epoch=1
 pkgdesc="A small and lightweight implementation of the XDG Sound Theme Specification"
 url="https://0pointer.net/lennart/projects/libcanberra/"
 arch=(x86_64)
-license=(LGPL)
+license=(LGPL-2.1-or-later)
 depends=(libvorbis libltdl alsa-lib libpulse tdb sound-theme-freedesktop)
-makedepends=(gtk-doc gtk2 gtk3 git)
+makedepends=(gtk-doc gtk3 git)
 optdepends=('gtk3: canberra-gtk-play')
-provides=(libcanberra-pulse libcanberra{,-gtk,-gtk3}.so)
+provides=(libcanberra-pulse libcanberra{,-gtk3}.so)
 replaces=("libcanberra-pulse<0.30+2+gc0620e4-4")
 options=(libtool)
 _commit=c0620e432650e81062c1967cc669829dbd29b310  # master
@@ -43,7 +43,7 @@ build() {
   ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
       --disable-static --with-builtin=dso --enable-null --disable-oss \
       --enable-alsa --enable-pulse \
-      --with-systemdsystemunitdir=no --enable-gtk-doc
+      --with-systemdsystemunitdir=/usr/lib/systemd/system --enable-gtk-doc
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
@@ -54,7 +54,7 @@ package() {
   make -j1 DESTDIR="$pkgdir" install
 
   rm "$pkgdir"/usr/lib/*.la
-  rm "$pkgdir"/usr/lib/gtk-{2,3}.0/modules/*.la
+  rm "$pkgdir"/usr/lib/gtk-3.0/modules/*.la
 
   # FS#52370: Remove login, logout and system-ready sounds.
   # We have no sound themes that include these so do not play them.
