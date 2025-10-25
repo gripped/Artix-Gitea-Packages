@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio-extras
 pkgver=25.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Additional components to increase the functionality of KIO'
 arch=(x86_64)
 url='https://www.kde.org/'
