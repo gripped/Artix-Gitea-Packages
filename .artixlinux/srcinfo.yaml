@@ -1,10 +1,10 @@
 ---
-version: 17.0.2-3
+version: 17.0.2-3.1
 pkgbase:
   name: qtcreator
   pkgdesc: Lightweight, cross-platform integrated development environment
   pkgver: 17.0.2
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://www.qt.io
   arch:
     - x86_64
