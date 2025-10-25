@@ -1,10 +1,10 @@
 ---
-version: 1.16-2
+version: 1.16-2.1
 pkgbase:
   name: clazy
   pkgdesc: Qt oriented code checker based on clang framework
   pkgver: 1.16
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://www.kdab.com/
   arch:
     - x86_64
