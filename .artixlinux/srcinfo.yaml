@@ -1,10 +1,10 @@
 ---
-version: 12.0.1-3
+version: 13.0.0-1
 pkgbase:
   name: copyq
   pkgdesc: Clipboard manager with searchable and editable history
-  pkgver: 12.0.1
-  pkgrel: 3
+  pkgver: 13.0.0
+  pkgrel: 1
   url: https://github.com/hluk/copyq
   arch:
     - x86_64
@@ -13,18 +13,20 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
     - qt6-tools
+    - vulkan-headers
   depends:
     - hicolor-icon-theme
     - qt6-svg
     - knotifications
     - kstatusnotifieritem
+    - kguiaddons
     - libxtst
   source:
-    - copyq-12.0.1.tar.gz::https://github.com/hluk/copyq/archive/v12.0.1.tar.gz
-    - https://github.com/hluk/CopyQ/pull/3243.patch
+    - copyq-13.0.0.tar.gz::https://github.com/hluk/copyq/archive/v13.0.0.tar.gz
+    - https://github.com/hluk/CopyQ/pull/3268.patch
   sha256sums:
-    - 452cd2acbe9d70e0b93bef413620dfece363f0595b19788d71035c8455d6097f
-    - 5a1b9faecdd14cd30ddf8122a610ff6ae2f39586234343b1b4e3f7952850672d
+    - c7e0c9aa95b5653dee547f168d58cf5aae4f66ad5f94856a61741ebe9527ad72
+    - efac74b7dabc5b69d72d679bb23ed679feef945576c3ec6a4a46d4d3846e4beb
 pkgname:
   - name: copyq
 # generated with artixpkg 0.37.4-1-any
