@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=avogadro-fragments
-pkgver=1.101.0
+pkgver=1.102.0
 pkgrel=1
 pkgdesc='Molecular fragments and inorganic ligands for rapidly building structures'
 arch=(any)
