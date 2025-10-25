@@ -1,0 +1,61 @@
+---
+version: 1.4.0-2
+pkgbase:
+  name: libfm
+  pkgdesc: Library for file management
+  pkgver: 1.4.0
+  pkgrel: 2
+  url: https://github.com/lxde/libfm
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later OR GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - gtk-doc
+    - intltool
+    - vala
+  depends:
+    - at-spi2-core
+    - cairo
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - libexif
+    - menu-cache
+    - pango
+  source:
+    - git+https://github.com/lxde/libfm.git#tag=1.4.0
+  b2sums:
+    - 199c769ea44f8a8ded33a53b358e1fb3462d5545d05919957eb345311ef5e1f2f3aba097b8a04e2d04ba800eccfeb917b6b066b8c0de1860e4fa02b99b7e84da
+pkgname:
+  - name: libfm
+    depends:
+      - glib2
+      - glibc
+      - libexif
+      - libfm-extra=1.4.0
+      - menu-cache
+  - name: libfm-extra
+    pkgdesc: Extra library for file management
+    depends:
+      - glib2
+      - glibc
+  - name: libfm-gtk3
+    pkgdesc: GTK library for file management
+    depends:
+      - at-spi2-core
+      - cairo
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - gtk3
+      - libfm=1.4.0
+      - menu-cache
+      - pango
+    conflicts:
+      - libfm-gtk2
+      - lxshortcut
+# generated with artixpkg 0.37.4-1-any
