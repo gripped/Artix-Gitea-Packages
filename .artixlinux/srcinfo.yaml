@@ -1,0 +1,31 @@
+---
+version: 3.9.2-1
+pkgbase:
+  name: onednn
+  pkgdesc: oneAPI Deep Neural Network Library (oneDNN)
+  pkgver: 3.9.2
+  pkgrel: 1
+  url: https://github.com/oneapi-src/oneDNN
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+    - ninja
+  depends:
+    - gcc-libs
+    - glibc
+  provides:
+    - intel-dnnl
+    - mkl-dnn
+  replaces:
+    - intel-dnnl
+    - mkl-dnn
+  source:
+    - onednn-3.9.2.tar.gz::https://github.com/oneapi-src/oneDNN/archive/v3.9.2.tar.gz
+  sha256sums:
+    - 2a4495e7070a8fcb4366b5a82ff1ca098d8526a6f127ae864aa1ca4bebeae125
+pkgname:
+  - name: onednn
+# generated with artixpkg 0.37.4-1-any
