@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.08.2-3
+    version: 25.08.2-4
     packages:
-      - okular-25.08.2-3-x86_64.pkg.tar.zst
+      - okular-25.08.2-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.08.1-1
