@@ -21,7 +21,8 @@ pkgname=(
   lib32-vulkan-mesa-layers
 )
 pkgver=25.2.5
-pkgrel=1
+_pkgver=${pkgver/[a-z]/-&}
+pkgrel=2
 epoch=1
 pkgdesc="Open-source OpenGL drivers - 32-bit"
 url="https://www.mesa3d.org/"
@@ -82,7 +83,11 @@ options=(
   !lto
 )
 source=(
-  "https://archive.mesa3d.org/mesa-$pkgver.tar.xz"{,.sig}
+  "https://archive.mesa3d.org/mesa-$_pkgver.tar.xz"{,.sig}
+
+  # Fix DotA 2 hangs
+  # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/38017
+  0001-anv-fix-FS-output-attachment-map-building.patch
 )
 validpgpkeys=(
   946D09B5E4C9845E63075FF1D961C596A7203456 # Andres Gomez <tanty@igalia.com>
@@ -140,6 +145,7 @@ done
 
 b2sums=('375237d23918e09b7dab4f4abd2c3b24a046521d6e247043c5fbeb7d8a33d71471b23572d254f0ad489a2533094568ef6f067a57977a7ccc1805aa735c3f8b7d'
         'SKIP'
+        'ee9be38d036aad299b3ecd32b2ca3fca5534c6ab329bb0d9f841ce5911d5f6a0fcdab2219b7a3a849f585863c313465ea3160e201b23ce3a80a2bfeaaabd06bc'
         '431439d31632d177aeb15f910b4f546efa76d54fc74fc8e140399dc5e54eca33fd606f11dbfb48fa83067c8474ee512e62751895d5948367b65ab08b984284e5'
         'a6d47c903be6094423d89b8ec3ca899d0a84df6dbd6e76632bb6c9b9f40ad9c216f8fa400310753d392f85072756b43ac3892e0a2c4d55f87ab6463002554823'
         '9a73962e1e38b84131ab2350b69a1f5d611c549533eec73e898c394a9b9442f357bb5d5f59e1be12270dd29bdf237dc2d21786c0c2210736e224ef5d48300dcf'
@@ -171,6 +177,7 @@ b2sums=('375237d23918e09b7dab4f4abd2c3b24a046521d6e247043c5fbeb7d8a33d71471b2357
 # https://docs.mesa3d.org/relnotes.html
 sha256sums=('bb6243e7a6f525febfa1e6ab50827ca4d4bfdad73812377b0ca9b6c50998b03e'
             'SKIP'
+            '58e81f7d5f38c837f6414f4eb8ba150b21309d02a2060559556e47a3c67cc2fe'
             '67914ab451f3bfd2e69e5e9d2ef3858484e7074d63f204fd166ec391b54de21d'
             'ed646292ffc8188ef8ea4d1e0e0150fb15a5c2e12ad9b8fc191ae7a8a7f3c4b9'
             '7f9f832470494906d1fca5329f8ab5791cc60beb230c74815dff541cbd2b5ca0'
@@ -200,7 +207,7 @@ sha256sums=('bb6243e7a6f525febfa1e6ab50827ca4d4bfdad73812377b0ca9b6c50998b03e'
             '25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d')
 
 prepare() {
-  cd mesa-$pkgver
+  cd mesa-$_pkgver
 
   local src
   for src in "${source[@]}"; do
@@ -215,7 +222,7 @@ prepare() {
   # Include package release in version string so Chromium invalidates
   # its GPU cache; otherwise it can cause pages to render incorrectly.
   # https://bugs.launchpad.net/ubuntu/+source/chromium-browser/+bug/2020604
-  echo "$pkgver-arch$epoch.$pkgrel" >VERSION
+  echo "$_pkgver-arch$epoch.$pkgrel" >VERSION
 }
 
 build() {
@@ -246,7 +253,7 @@ build() {
   # Inject subproject packages
   export MESON_PACKAGE_CACHE_DIR="$srcdir"
 
-  artix-meson mesa-$pkgver build "${meson_options[@]}"
+  artix-meson mesa-$_pkgver build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -349,7 +356,7 @@ package_lib32-mesa() {
     ln -sr $libdir/libGLX_{mesa,indirect}.so.0
   )
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-opencl-mesa() {
@@ -382,7 +389,7 @@ package_lib32-opencl-mesa() {
 
   mv opencl/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-asahi() {
@@ -410,7 +417,7 @@ package_lib32-vulkan-asahi() {
 
   mv vkasahi/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-dzn() {
@@ -438,7 +445,7 @@ package_lib32-vulkan-dzn() {
 
   mv vkd3d12/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-freedreno() {
@@ -466,7 +473,7 @@ package_lib32-vulkan-freedreno() {
 
   mv vkfdreno/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-gfxstream() {
@@ -491,7 +498,7 @@ package_lib32-vulkan-gfxstream() {
 
   mv vkgfxstr/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-intel() {
@@ -519,7 +526,7 @@ package_lib32-vulkan-intel() {
 
   mv vkintel/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-nouveau() {
@@ -547,7 +554,7 @@ package_lib32-vulkan-nouveau() {
 
   mv vknvidia/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-radeon() {
@@ -577,7 +584,7 @@ package_lib32-vulkan-radeon() {
 
   mv vkradeon/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-swrast() {
@@ -608,7 +615,7 @@ package_lib32-vulkan-swrast() {
 
   mv vkswrast/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-virtio() {
@@ -635,7 +642,7 @@ package_lib32-vulkan-virtio() {
 
   mv vkvirtio/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-mesa-device-select() {
@@ -651,7 +658,7 @@ package_lib32-vulkan-mesa-device-select() {
 
   mv vkdevice/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 package_lib32-vulkan-mesa-layers() {
@@ -666,9 +673,9 @@ package_lib32-vulkan-mesa-layers() {
   conflicts=(lib32-vulkan-mesa-layer)
   replaces=(lib32-vulkan-mesa-layer)
 
-#  mv vklayer/* "$pkgdir"
+  mv vklayer/* "$pkgdir"
 
-  install -Dm644 mesa-$pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
 # vim:set sw=2 sts=-1 et:
