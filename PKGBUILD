@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux,org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux,org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=konqueror
 pkgver=25.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE File Manager & Web Browser'
 arch=(x86_64)
 url='https://apps.kde.org/konqueror/'
