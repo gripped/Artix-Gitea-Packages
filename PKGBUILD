@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=pimcommon
 pkgver=25.08.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Common libraries for KDE PIM'
 arch=(x86_64)
 url='https://kontact.kde.org'
