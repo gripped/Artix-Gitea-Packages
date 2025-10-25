@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=avogadro-crystals
-pkgver=1.101.0
+pkgver=1.102.0
 pkgrel=1
 pkgdesc='Crystallographic files of common materials, elements, oxides, for visualization in Avogadro'
 arch=(any)
