@@ -35,6 +35,7 @@ makedepends=(
   bash-completion
   meson
 #  netplan
+  udev
 )
 checkdepends=(
   procps-ng

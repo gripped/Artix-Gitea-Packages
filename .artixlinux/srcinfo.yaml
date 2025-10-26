@@ -20,6 +20,7 @@ pkgbase:
   makedepends:
     - bash-completion
     - meson
+    - udev
   depends:
     - bash
     - dhcp-client
