@@ -1,0 +1,27 @@
+---
+version: 0.2.6-4
+pkgbase:
+  name: jupyter-server-mathjax
+  pkgdesc: MathJax resources as a Jupyter Server Extension
+  pkgver: 0.2.6
+  pkgrel: 4
+  url: https://jupyter.org/
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - python-build
+    - python-installer
+    - python-jupyter_packaging
+    - python-setuptools
+  depends:
+    - jupyter-server
+    - mathjax2
+  source:
+    - https://pypi.io/packages/source/j/jupyter_server_mathjax/jupyter_server_mathjax-0.2.6.tar.gz
+  sha256sums:
+    - bb1e6b6dc0686c1fe386a22b5886163db548893a99c2810c36399e9c4ca23943
+pkgname:
+  - name: jupyter-server-mathjax
+# generated with artixpkg 0.37.4-1-any
