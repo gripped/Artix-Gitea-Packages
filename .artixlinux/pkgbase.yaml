@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,13 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 25.u36-1
+    version: 25.0.1.u8-1
     packages:
-      - jdk-openjdk-25.u36-1-x86_64.pkg.tar.zst
-      - jre-openjdk-25.u36-1-x86_64.pkg.tar.zst
-      - jre-openjdk-headless-25.u36-1-x86_64.pkg.tar.zst
-      - openjdk-doc-25.u36-1-x86_64.pkg.tar.zst
-      - openjdk-src-25.u36-1-x86_64.pkg.tar.zst
+      - jdk-openjdk-25.0.1.u8-1-x86_64.pkg.tar.zst
+      - jre-openjdk-25.0.1.u8-1-x86_64.pkg.tar.zst
+      - jre-openjdk-headless-25.0.1.u8-1-x86_64.pkg.tar.zst
+      - openjdk-doc-25.0.1.u8-1-x86_64.pkg.tar.zst
+      - openjdk-src-25.0.1.u8-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
