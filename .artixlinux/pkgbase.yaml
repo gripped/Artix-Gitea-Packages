@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system
+  removeRepo: system-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,6 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 20251021-1
     packages:
       - linux-firmware-20251021-1-any.pkg.tar.zst
@@ -34,29 +38,6 @@ repos:
       - linux-firmware-qlogic-20251021-1-any.pkg.tar.zst
       - linux-firmware-radeon-20251021-1-any.pkg.tar.zst
       - linux-firmware-realtek-20251021-1-any.pkg.tar.zst
-    debug: []
-  system:
-    version: 20251011-1
-    packages:
-      - linux-firmware-20251011-1-any.pkg.tar.zst
-      - linux-firmware-whence-20251011-1-any.pkg.tar.zst
-      - linux-firmware-other-20251011-1-any.pkg.tar.zst
-      - amd-ucode-20251011-1-any.pkg.tar.zst
-      - linux-firmware-amdgpu-20251011-1-any.pkg.tar.zst
-      - linux-firmware-atheros-20251011-1-any.pkg.tar.zst
-      - linux-firmware-broadcom-20251011-1-any.pkg.tar.zst
-      - linux-firmware-cirrus-20251011-1-any.pkg.tar.zst
-      - linux-firmware-intel-20251011-1-any.pkg.tar.zst
-      - linux-firmware-liquidio-20251011-1-any.pkg.tar.zst
-      - linux-firmware-marvell-20251011-1-any.pkg.tar.zst
-      - linux-firmware-mediatek-20251011-1-any.pkg.tar.zst
-      - linux-firmware-mellanox-20251011-1-any.pkg.tar.zst
-      - linux-firmware-nfp-20251011-1-any.pkg.tar.zst
-      - linux-firmware-nvidia-20251011-1-any.pkg.tar.zst
-      - linux-firmware-qcom-20251011-1-any.pkg.tar.zst
-      - linux-firmware-qlogic-20251011-1-any.pkg.tar.zst
-      - linux-firmware-radeon-20251011-1-any.pkg.tar.zst
-      - linux-firmware-realtek-20251011-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
