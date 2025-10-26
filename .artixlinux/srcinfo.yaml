@@ -1,0 +1,30 @@
+---
+version: 3.2.7-1
+pkgbase:
+  name: python-psycopg-pool
+  pkgdesc: Connection pool for psycopg
+  pkgver: 3.2.7
+  pkgrel: 1
+  url: https://www.psycopg.org/psycopg3/
+  arch:
+    - any
+  license:
+    - LGPL-3.0-only
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - python-psycopg
+  source:
+    - python-psycopg::git+https://github.com/psycopg/psycopg.git#tag=pool-3.2.7
+  sha512sums:
+    - 08e3bff4db176e0900927dd0cd080478819671614109fe36d3ef052af878463a524ff2223aebc1afdf67e9d4983d14bc8b19675ab918b0d344c820928e97e081
+  b2sums:
+    - 739956eebad5e0635207315a14b5062539e8c0b6f3ae3fed2315076f6ccd1a831965f24fcc124576d227b1f9214397e81e6ae4438b9780af6e4ea1e2eb0164fa
+pkgname:
+  - name: python-psycopg-pool
+# generated with artixpkg 0.37.4-1-any
