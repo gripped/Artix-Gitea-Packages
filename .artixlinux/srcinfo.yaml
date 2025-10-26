@@ -1,9 +1,9 @@
 ---
-version: 0.10.5-1
+version: 0.10.6-1
 pkgbase:
   name: aws-c-http
   pkgdesc: C99 implementation of the HTTP/1.1 and HTTP/2 specifications
-  pkgver: 0.10.5
+  pkgver: 0.10.6
   pkgrel: 1
   url: https://github.com/awslabs/aws-c-http
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - aws-c-io
     - glibc
   source:
-    - aws-c-http-0.10.5.tar.gz::https://github.com/awslabs/aws-c-http/archive/v0.10.5.tar.gz
+    - aws-c-http-0.10.6.tar.gz::https://github.com/awslabs/aws-c-http/archive/v0.10.6.tar.gz
   sha256sums:
-    - 02e8e67f5f03fa6458f8921232dc7a9076792d2822ad86f19c3f984fc1a073a8
+    - 0e513d25bc49a7f583d9bb246dabbe64d23d8a2bd105026a8f914d05aa1df147
 pkgname:
   - name: aws-c-http
 # generated with artixpkg 0.37.4-1-any
