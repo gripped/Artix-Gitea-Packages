@@ -2,16 +2,14 @@
 
 pkgname=corepack
 pkgver=0.34.1
-pkgrel=5
+pkgrel=2
 pkgdesc='Zero-runtime-dependency Node.js script'
 arch=(any)
 url=https://github.com/nodejs/corepack
 license=(MIT)
-depends=(nodejs)
 makedepends=(
-  corepack
   git
-  python
+  nodejs-lts
 )
 source=("git+$url.git#tag=v$pkgver")
 b2sums=('5136fb09d7d616b7abd70dfc56adc3ed04d120229d065ef4100fed86eaea1988c55355b3c33765068f2e668cb77fb01b0df544a0e9a427733aceaab6b0d83d42')
