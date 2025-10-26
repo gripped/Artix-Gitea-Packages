@@ -1,9 +1,9 @@
 ---
-version: 9.5.0-1
+version: 9.6.0-1
 pkgbase:
   name: ipython
   pkgdesc: Enhanced Interactive Python shell
-  pkgver: 9.5.0
+  pkgver: 9.6.0
   pkgrel: 1
   url: https://ipython.org
   arch:
@@ -46,14 +46,14 @@ pkgbase:
     - 'python-pickleshare: for the ip.db database'
     - 'yapf: to auto format with YAPF'
   source:
-    - git+https://github.com/ipython/ipython.git#tag=9.5.0?signed
+    - git+https://github.com/ipython/ipython.git#tag=9.6.0?signed
     - IPython-icon.png::https://www.packal.org/sites/default/files/public/styles/icon_large/public/workflow-files/nkeimipynbworkflow/icon/icon.png
   validpgpkeys:
     - 99B17F64FD5C94692E9EF8064968B2CC0208DCC8
-    - AB847D919065B1F4FF01AF30238E6384AF95AE6F
+    - 4D9D285A538F7C2E16D13ACE57982D11F0EA2247
   b2sums:
-    - 883fed602c5a9cee020cf6f1e10bdf3ac6451e688ccf132c5ba2f8f05c2559d937eb63a661ef3d8ef454c62d440f5f2eb920c0618f51e1fa5e08ebadb360ce93
+    - 2531c4d84a292a37d990672ecd9674963d54a33f5fa6969f743947587a6ce573d73fe47b9c0c137354ca9d0358868db52d4f9e54289fc460e6c2b896a412d218
     - d445e2bc7a037db8715ea103611720e965987e155c32e445b0ef783e519fca8a0301b16c5763fd9a5d8d169c3b0d7b4db6c0bd0f9772842258b135dcb1d6d5a2
 pkgname:
   - name: ipython
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
