@@ -45,8 +45,9 @@ check() {
     --deselect "$relative_site_packages/psutil/tests/test_linux.py::TestSystemNetIfAddrs::test_ips" \
     --deselect "$relative_site_packages/psutil/tests/test_system.py::TestNetAPIs::test_net_if_addrs" \
     --deselect "$relative_site_packages/psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_disk_partitions_mocked" \
-    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestDiskAPIs::test_disk_partitions"
-    # The last two are Artix CI specific failures
+    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestDiskAPIs::test_disk_partitions" \
+    --deselect "$relative_site_packages/psutil/tests/test_process_all.py::TestFetchAllProcesses::test_all"
+    # The last three are Artix CI specific failures
 
 }
 
