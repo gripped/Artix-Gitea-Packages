@@ -2,7 +2,7 @@
 
 pkgname=corepack
 pkgver=0.34.1
-pkgrel=3
+pkgrel=5
 pkgdesc='Zero-runtime-dependency Node.js script'
 arch=(any)
 url=https://github.com/nodejs/corepack
