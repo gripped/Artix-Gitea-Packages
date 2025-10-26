@@ -1,0 +1,10 @@
+--- a/meson.build	2025-10-26 22:24:11.301023236 +0000
++++ b/meson.build	2025-10-26 22:24:26.610004851 +0000
+@@ -160,7 +160,6 @@
+     install_tag: 'systemd',
+   )
+ elif init_system == 'sysvinit_openrc'
+-  openrc = dependency('openrc')
+   udev = dependency('udev')
+   udev_dir = udev.get_variable(pkgconfig: 'udevdir')
+   install_data(

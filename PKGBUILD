@@ -56,9 +56,16 @@ backup=(
 )
 source=(
   $_url/archive/$pkgver/$pkgname-$pkgver.tar.gz
+  $pkgname-25.3-skip_openrc_check.patch
 )
-sha512sums=('f881cac48fcb421fc07a435cd7a1acdf0b0c13aebf997af3100ecaca276e595a7ddaf778cff817c385a6b0103a36e326a5eeb8e281e8ef270ba2a4508d91168d')
-b2sums=('c49494ce91200f54a194554c19067f6533587fe3caebaf54e71d99548dcb956545ae709a775e09fad33a84702043b4e311626103c42b7d72190d1304bc45bdb3')
+sha512sums=('f881cac48fcb421fc07a435cd7a1acdf0b0c13aebf997af3100ecaca276e595a7ddaf778cff817c385a6b0103a36e326a5eeb8e281e8ef270ba2a4508d91168d'
+            '64a49d8359fe7d51a5cf8449abab792b00d1bc910ab7928201af6f2fec87486a3658ee6d06e13c789b40618428bf209be56cd5c79dbdf3736f99ef85db08783c')
+b2sums=('c49494ce91200f54a194554c19067f6533587fe3caebaf54e71d99548dcb956545ae709a775e09fad33a84702043b4e311626103c42b7d72190d1304bc45bdb3'
+        'b4805b7842bae79105d8963776f635067d4b0c9aab5a5c9ac311f6d754082923f2ab1faa9a867e4bcbc91923d0512d38f21527712a5b25b3ad431a189ca60c07')
+
+prepare() {
+  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-25.3-skip_openrc_check.patch
+}
 
 build() {
   artix-meson $pkgname-$pkgver build -Dinit_system=sysvinit_openrc
