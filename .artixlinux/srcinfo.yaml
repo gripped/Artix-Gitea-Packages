@@ -1,9 +1,9 @@
 ---
-version: 1.2.2-1
+version: 1.3.0-1
 pkgbase:
   name: thin-provisioning-tools
   pkgdesc: Suite of tools for manipulating the metadata of the dm-thin device-mapper target
-  pkgver: 1.2.2
+  pkgver: 1.3.0
   pkgrel: 1
   url: https://github.com/jthornber/thin-provisioning-tools
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   depends:
     - gcc-libs
   source:
-    - git+https://github.com/jthornber/thin-provisioning-tools#tag=v1.2.2
+    - git+https://github.com/jthornber/thin-provisioning-tools#tag=v1.3.0
   sha256sums:
-    - bffe7435e43740f05ed9f894ff85bca49a1903d3d9975d501a5deb7ea2267eb8
+    - 74fcc8397242fc96d01a8dcf1a0e4b253e0073812ef5a96963c52ab791dc683a
 pkgname:
   - name: thin-provisioning-tools
 # generated with artixpkg 0.37.4-1-any
