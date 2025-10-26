@@ -1,9 +1,9 @@
 ---
-version: 1.1.1-1
+version: 1.2.1-1
 pkgbase:
   name: python-dotenv
   pkgdesc: Get and set values in your .env file in local and production servers
-  pkgver: 1.1.1
+  pkgver: 1.2.1
   pkgrel: 1
   url: https://github.com/theskumar/python-dotenv/
   arch:
@@ -12,14 +12,17 @@ pkgbase:
     - BSD
   makedepends:
     - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-click
   optdepends:
     - 'ipython: ipython support'
   source:
-    - python-dotenv-1.1.1.tar.gz::https://github.com/theskumar/python-dotenv/archive/v1.1.1.tar.gz
+    - python-dotenv-1.2.1.tar.gz::https://github.com/theskumar/python-dotenv/archive/v1.2.1.tar.gz
   b2sums:
-    - ff9b1cb1f719eb5d703fcccba5f89c6692d47768823ec115166d7ec40e5c3c3674dfd7de6cf58fd8d1bbf80affe1dd644161f2340213615a0a8c8123b26f1f75
+    - a9109c1a2d5376502732aea45b28ff864b50fcc17d2b6083535ab7e96a6176f35a15cde0725bd58496d9e4f5899c0638184c4e2a7dc6cedf0240b2cc0074a20e
 pkgname:
   - name: python-dotenv
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
