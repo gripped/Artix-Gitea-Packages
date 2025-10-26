@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.12.52
+pkgver=6.12.55
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
@@ -35,6 +35,7 @@ source=(
   0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
   0002-Default-to-maximum-amount-of-ASLR-bits.patch
   0003-skip-simpledrm-if-nvidia-drm.modeset\=1-is.patch
+  0004-handle_the_obsolescensce_of_docutils.ErrorString.patch
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -42,18 +43,20 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('b4850cf670a032c70f38b713a27d62046c5f747caf028c5f50b18f98606a9eb1'
+sha256sums=('328f8f4608a653063a5fd82d29b17163faab2825fa419fa85b961740a342fb9f'
             'SKIP'
             '3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c'
             '423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e'
             '596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1'
-            'e1d0a9a2b28771203014900e2e1f4b8bc562a59e320a11dccecbf6bb7f6149e1')
-b2sums=('d3dddd1e92399770312bd831fd1540d0bc4f589d040ed1672a26b6705193bf68bd1897cf5fb67dbb1450959ea221468c12e7bfea7ecefc400404c968b1e498b9'
+            '5faebcb2af26ad129bf8c544ba2795ac1b4781eba3bafe1bbad85dbef5e9e79f'
+            'b1705af4f9da58134b83f6191066bddf3675c44b8982bc3827c8087a3ddc9f48')
+b2sums=('dc1e6872f28dac711ea9005a9742586590de27656825f88fa3e12ea35357619309267c46a4bcf914d26c5fa4b0c7bb69809b27bec8dea66e020cbae80d0d3a98'
         'SKIP'
         'b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918'
         '01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5'
         '410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea'
-        'c2d92a1b27d042208795834faf1be57f5870ab96c097356d74d1fb4f74ed41ca3d48938cf8e42f2892c3f6f1788e4e6ace4690c82b0771e6021e8bb082f474d5')
+        'ad33c6a3b9a6e61efe6136b8df93f4e614e1d32a18ab1b9fd2ea6eabaf02b971fbc8cfd7f9f202c6fca42693a41a73ba9992b65052afa22021446a4d1e0a4104'
+        '91fae7ccfa0535247fbfb1ea5a605fad3fba1e0efa801f2ad4d13896fd79f59d1caeb0b0a9c03bdb9acbdfd11744aacceff98e52b79f20c432ae918a8644ee4e')
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
