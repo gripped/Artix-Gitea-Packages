@@ -1,9 +1,9 @@
 ---
-version: 24.9.0-1
+version: 25.0.0-1
 pkgbase:
   name: nodejs
   pkgdesc: Evented I/O for V8 javascript ("Current" release)
-  pkgver: 24.9.0
+  pkgver: 25.0.0
   pkgrel: 1
   url: https://nodejs.org/
   arch:
@@ -30,7 +30,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/nodejs/node.git#tag=v24.9.0?signed
+    - git+https://github.com/nodejs/node.git#tag=v25.0.0?signed
   validpgpkeys:
     - 8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600
     - 890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4
@@ -38,7 +38,7 @@ pkgbase:
     - C0D6248439F1D5604AAFFB4021D900FFDB233756
     - 5BE8A3F6C8A5C01D106C0AD820B1A390B168D356
   sha512sums:
-    - 22a1ea6082434da9ad5769d5b194cb147251921e43fc4ea0926c903fbd1ed0e3c0c7363e4bbd91361bb1920eb66ba9b472699175834cede6f84a8180ac126408
+    - 1cc74927dec9958c579b64a414de64167ac5375af3e1c9fc956199bd10fa3ad373bc6d1d1b264fc69811989e9eaad4a9b3539e4ee340fc882cd8d701b99b752d
 pkgname:
   - name: nodejs
 # generated with artixpkg 0.37.4-1-any
