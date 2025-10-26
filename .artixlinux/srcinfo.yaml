@@ -1,9 +1,9 @@
 ---
-version: 1.5.1-1
+version: 1.6.0-1
 pkgbase:
   name: leancrypto
   pkgdesc: Lean cryptographic library usable for bare-metal environments
-  pkgver: 1.5.1
+  pkgver: 1.6.0
   pkgrel: 1
   url: https://leancrypto.org
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - leancrypto-1.5.1.tar.gz::https://github.com/smuellerDD/leancrypto/archive/refs/tags/v1.5.1.tar.gz
+    - leancrypto-1.6.0.tar.gz::https://github.com/smuellerDD/leancrypto/archive/refs/tags/v1.6.0.tar.gz
   sha256sums:
-    - 9c14639ea047554598a99d6a8cf2598b3cd89be0608df8cc06d80dd66087e2da
+    - b5057cfb990108c4a9f21832f1f35f3d98115012d1628e00650558e6b49e8285
 pkgname:
   - name: leancrypto
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
