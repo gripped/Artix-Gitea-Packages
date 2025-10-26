@@ -1,0 +1,40 @@
+---
+version: 0.36.0-1
+pkgbase:
+  name: python-libvcs
+  pkgdesc: Lite, typed, pythonic utilities for git, svn, mercurial, etc
+  pkgver: 0.36.0
+  pkgrel: 1
+  url: https://libvcs.git-pull.com/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - git
+    - python-gp-libs
+    - mercurial
+    - python-hatchling
+    - python-pytest
+    - python-pytest-mock
+    - python-pytest-rerunfailures
+    - subversion
+  makedepends:
+    - python-build
+    - python-installer
+  depends:
+    - python
+  optdepends:
+    - 'git: for git repository support'
+    - 'mercurial: for mercurial repository support'
+    - 'subversion: for subversion repository support'
+    - 'python-pytest: for pytest plugin'
+  source:
+    - https://github.com/vcs-python/libvcs/archive/v0.36.0/python-libvcs-0.36.0.tar.gz
+  sha512sums:
+    - 7fa284b07fcd77f634b43a60057ef264b3960c56b052561c06ca1a9db733a0b07af85a3f2e50f502d9e3a93a306161cdab4bf59e14cf592491101a9309585881
+  b2sums:
+    - d75d18ff0b3d0a1cb93a91e6da9b59ff9b2401fcd30c8b0ef70e1e62e125975e725896bff4677a82665e48b10c8054edc203a818505a3d0afc4d9b05ac32e15f
+pkgname:
+  - name: python-libvcs
+# generated with artixpkg 0.37.4-1-any
