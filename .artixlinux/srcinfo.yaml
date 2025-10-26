@@ -1,10 +1,10 @@
 ---
-version: 7.0.1-1
+version: 7.0.1-2
 pkgbase:
   name: python-ipykernel
   pkgdesc: The ipython kernel for Jupyter
   pkgver: 7.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/ipykernel/
   arch:
     - any
