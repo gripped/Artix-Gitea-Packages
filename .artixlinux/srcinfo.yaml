@@ -1,18 +1,21 @@
 ---
-version: 0.34.1-2
+version: 0.34.1-3
 pkgbase:
   name: corepack
   pkgdesc: Zero-runtime-dependency Node.js script
   pkgver: 0.34.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/nodejs/corepack
   arch:
     - any
   license:
     - MIT
   makedepends:
+    - corepack
     - git
-    - nodejs-lts-iron
+    - python
+  depends:
+    - nodejs
   source:
     - git+https://github.com/nodejs/corepack.git#tag=v0.34.1
   b2sums:

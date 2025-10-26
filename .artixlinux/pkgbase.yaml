@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.34.1-2
+    version: 0.34.1-3
     packages:
-      - corepack-0.34.1-2-any.pkg.tar.zst
+      - corepack-0.34.1-3-any.pkg.tar.zst
     debug: []
   world:
     version: 0.34.1-5
