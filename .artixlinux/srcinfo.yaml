@@ -10,8 +10,6 @@ pkgbase:
     - x86_64
   license:
     - GPL-2.0-only
-  makedepends:
-    - systemd
   depends:
     - glibc
     - lm_sensors

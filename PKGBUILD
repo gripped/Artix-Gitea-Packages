@@ -16,7 +16,6 @@ depends=(
   'glibc'
   'lm_sensors'
 )
-makedepends=('systemd')
 optdepends=(
   'tk: to use isag'
   'gnuplot: to use isag'
