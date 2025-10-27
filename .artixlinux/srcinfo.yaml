@@ -1,9 +1,9 @@
 ---
-version: 5.8.0-1
+version: 5.8.1-1
 pkgbase:
   name: qalculate-qt
   pkgdesc: Qt frontend for libqalculate
-  pkgver: 5.8.0
+  pkgver: 5.8.1
   pkgrel: 1
   url: https://qalculate.github.io/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - qt6-base
     - qt6-svg
   source:
-    - git+https://github.com/Qalculate/qalculate-qt#tag=v5.8.0
+    - git+https://github.com/Qalculate/qalculate-qt#tag=v5.8.1
   sha256sums:
-    - 96dc607081eefc36f509c9faf11dd8007528dc102d6879c292bf0c5a8c2e2540
+    - 6b1eb68148a022fce873a0a8acc88b775ec08b7f93f1b2f4d7da9f716995a55b
 pkgname:
   - name: qalculate-qt
 # generated with artixpkg 0.37.4-1-any
