@@ -44,3 +44,4 @@ package() {
 		"${pkgdir}/usr/lib/pkgconfig/QtColorWidgets.pc"
 	rmdir "${pkgdir}/usr/include/" "${pkgdir}/usr/lib/"{cmake,pkgconfig,}
 }
+
