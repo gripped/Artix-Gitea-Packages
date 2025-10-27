@@ -3,7 +3,7 @@
 
 pkgbase=onnx
 pkgname=(onnx python-onnx)
-pkgver=1.19.0
+pkgver=1.19.1
 pkgrel=1
 epoch=1
 pkgdesc='Open standard for machine learning interoperability'
@@ -23,8 +23,10 @@ makedepends=(
   python-setuptools
   python-wheel
 )
-source=("${pkgname}::git+https://github.com/onnx/onnx.git#tag=v${pkgver}")
-sha512sums=('35991abcc8bd0c054497f4e304e06141872e2f0c51dca9e6014195f5745f84abc64b0d2c9e6f872c83dcfda3074f05c5bb4aa5d51ca1f637b33b3afdb60d60dd')
+source=("${pkgname}::git+https://github.com/onnx/onnx.git#tag=v${pkgver}"
+        "fix-protobuf-32.1-build.patch")
+sha512sums=('8c2bbca029376797251a02c9e1d2aadd13396a94edc1bf465a4f4a5745768162db13a9dc4751e5324564eb53083afc1544fbc8753127093155995504df07b24f'
+            'a5a4baa20ca110341562f98816134ace03d26e864a10d1ae79ec3c457263238a235e742407e6737686415b02732b234669c91406c5b3e6ba1a9095415239426b')
 
 
 prepare() {
@@ -32,6 +34,10 @@ prepare() {
   # Remove cmake and protobuf dependencies since we don't want to pull the
   # corresponding packages from PyPI
   sed -i 's/requires = .*/requires = ["setuptools"]/' pyproject.toml
+
+  # Fix this issue https://github.com/onnx/onnx/issues/6579#issuecomment-3341916229
+  # with this commit https://github.com/onnx/onnx/pull/7087
+  patch -Np1 -i ../fix-protobuf-32.1-build.patch
 }
 
 build() {
