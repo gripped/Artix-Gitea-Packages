@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 4.6.1-1.1
+    version: 4.7.0-1
     packages:
-      - vokoscreen-4.6.1-1.1-x86_64.pkg.tar.zst
+      - vokoscreen-4.7.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
