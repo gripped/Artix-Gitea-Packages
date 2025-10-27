@@ -26,7 +26,7 @@ pkgbase:
   source:
     - https://github.com/flameshot-org/flameshot/archive/v13.2.0/flameshot-13.2.0.tar.gz
   sha256sums:
-    - 720288696562535140ebb0f74debe27fe20028e473afff00c46e40fc8879e174
+    - 2dabb2f05c1011e691030e4dbbbe24fa0c60250b5c1e99620dcaf72701cb3fe7
 pkgname:
   - name: flameshot
 # generated with artixpkg 0.37.4-1-any
