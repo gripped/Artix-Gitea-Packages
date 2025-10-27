@@ -7,7 +7,7 @@
 
 pkgname=wine-staging
 pkgver=10.17
-pkgrel=1
+pkgrel=2
 
 _pkgbasever=${pkgver/rc/-rc}
 _winever=$_pkgbasever
@@ -17,12 +17,14 @@ source=("git+https://gitlab.winehq.org/wine/wine.git?signed#tag=wine-$_pkgbaseve
         "git+https://gitlab.winehq.org/wine/wine-staging.git#tag=v$_pkgbasever"
         30-win32-aliases.conf
         wine-binfmt.conf
-        ntsync.conf)
+        ntsync.conf
+        0001-ntdll-Call-cache_inproc_sync-inside-the-lock.patch)
 sha512sums=('5454ec119dbd12eab8308e96df1289ec34eaa0febb43cf0042eba6c30ece1e60303b5905b70a63bb84a969239e270fd91dead606842c4256a5afa2441ceba5ec'
             'd0e3bab13d1e8c86dd1ba45cc3a011880408ce5e22c4c14675d2510487ec6592fd9597836012c369ab3bb0993d2deb29d5ec4b0c90e8126e9eac7f3ae1b768d1'
             '6e54ece7ec7022b3c9d94ad64bdf1017338da16c618966e8baf398e6f18f80f7b0576edf1d1da47ed77b96d577e4cbb2bb0156b0b11c183a0accf22654b0a2bb'
             'bdde7ae015d8a98ba55e84b86dc05aca1d4f8de85be7e4bd6187054bfe4ac83b5a20538945b63fb073caab78022141e9545685e4e3698c97ff173cf30859e285'
-            'ac2bd634838ffe6b90f2637e229013f0993fc1013271dbeefd216dc262a8bb79e4a5ce15a75cbfcb0c3b521d32f4ebe1ed25a6b066b99cc327b60bd6d7212e6f')
+            'ac2bd634838ffe6b90f2637e229013f0993fc1013271dbeefd216dc262a8bb79e4a5ce15a75cbfcb0c3b521d32f4ebe1ed25a6b066b99cc327b60bd6d7212e6f'
+            'a0c53fb04e9dcc3b1b73789a7fcb0ead87bd21c39c366988d3de2e816a972aabdb58f7998397d5c12c62282a3d2c570d1088a2996432d4f8c0bf294434872ca7')
 validpgpkeys=(5AC1A08B03BD7A313E0A955AF5E6E9EEB9461DD7
               DA23579A74D4AD9AF9D3F945CEFAC8EAAF17519D)
 
@@ -118,6 +120,9 @@ prepare() {
   cd wine
   # apply wine-staging patchset
   ../wine-staging/staging/patchinstall.py --backend=git-apply --all
+
+  # https://gitlab.winehq.org/wine/wine/-/commit/62090d6b26225aeab520ee80d14b8c5dda9e2a67
+  patch -Np1 < ${srcdir}/0001-ntdll-Call-cache_inproc_sync-inside-the-lock.patch
 }
 
 build() {

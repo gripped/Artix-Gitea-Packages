@@ -21,3 +21,10 @@ path = [
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
+
+[[annotations]]
+path = [
+    "0001-ntdll-Call-cache_inproc_sync-inside-the-lock.patch",
+]
+SPDX-FileCopyrightText = "wine contributors"
+SPDX-License-Identifier = "LGPL-2.1-or-later"
