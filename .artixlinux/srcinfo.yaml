@@ -1,0 +1,34 @@
+---
+version: 3.17.4-1
+pkgbase:
+  name: fuse3
+  pkgdesc: Interface for userspace programs to export a filesystem to the Linux kernel
+  pkgver: 3.17.4
+  pkgrel: 1
+  url: https://github.com/libfuse/libfuse
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - pkg-config
+    - meson
+    - udev
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/libfuse/libfuse/releases/download/fuse-3.17.4/fuse-3.17.4.tar.gz
+  validpgpkeys:
+    - ED31791B2C5C1613AF388B8AD113FCAC3C4E599F
+  sha256sums:
+    - df9e40ae927b73dc702d0bce7925c0c618af47ad0b13204fbf2be66e54d8528b
+pkgname:
+  - name: fuse-common
+    pkgdesc: Common files for fuse2/3 packages
+    backup:
+      - etc/fuse.conf
+  - name: fuse3
+    depends:
+      - fuse-common
+      - glibc
+# generated with artixpkg 0.37.4-1-any
