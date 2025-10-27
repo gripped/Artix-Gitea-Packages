@@ -1,6 +1,7 @@
 # Maintainer: Thore Bödecker <foxxx0@archlinux.org>
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: Pierre Neidhardt <ambrevar@gmail.com>
 # Contributor: Hermann Zahnweh (eigengrau)
 # Contributor: Andy Weidenbaum <archbaum@gmail.com>
@@ -8,7 +9,7 @@
 # Contributor: jebaum <jebaum at ucla dot edu>
 
 pkgname=fzf
-pkgver=0.65.2
+pkgver=0.66.1
 pkgrel=1
 pkgdesc='Command-line fuzzy finder'
 arch=('x86_64')
@@ -23,7 +24,7 @@ optdepends=('fish: fish keybindings'
 options=(!lto)
 source=("git+https://github.com/junegunn/fzf.git#tag=v${pkgver}?signed")
 validpgpkeys=('B5FB4AB5F32EC1A0C9DE9637254BC280FEF9C627') # Junegunn Choi <junegunn.c@gmail.com>
-sha512sums=('4ebb2d712c305c9558125e382a809d57c15fad6e081f5fd69429edf6f1b2e7681afbc16e549d018a41f213b26b51284b5221abda4f544e11c53c2dcebdb3f359')
+sha512sums=('3f470b56f07034f41c55c2ec3566d2b468c6ab190c2a78359aba97aefcb184e3967b641fa4edc79a97796517c57f4be46eadd083751d7bd9d136c39927dea6b7')
 
 prepare() {
 	cd "${pkgname}"
