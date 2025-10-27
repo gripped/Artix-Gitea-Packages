@@ -1,7 +1,4 @@
-# Maintainer: Jiachen YANG <farseerfc@archlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
-# Maintainer: Robin Candau <antiz@archlinux.org>
-# Contributor: xyzzy <628208@gmail.com>
+# Maintainer: artist for Artix Linux
 
 pkgname=flameshot
 pkgver=13.2.0
@@ -16,8 +13,8 @@ optdepends=('gnome-shell-extension-appindicator: for system tray icon if you are
             'grim: for wlroots wayland support'
             'xdg-desktop-portal: for wayland support, you will need the implementation for your wayland desktop environment'
             'qt6-imageformats: for additional export image formats (e.g. tiff, webp, and more)')
-source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('SKIP')
+source=("${url}/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('720288696562535140ebb0f74debe27fe20028e473afff00c46e40fc8879e174')
 
 build() {
 	cmake -B build -S "${pkgname}-${pkgver}" \
@@ -44,4 +41,3 @@ package() {
 		"${pkgdir}/usr/lib/pkgconfig/QtColorWidgets.pc"
 	rmdir "${pkgdir}/usr/include/" "${pkgdir}/usr/lib/"{cmake,pkgconfig,}
 }
-
