@@ -1,25 +1,20 @@
 ---
-version: 2.14.14-3
+version: 2.14.14-4
 pkgbase:
   name: pidgin
   pkgver: 2.14.14
-  pkgrel: 3
+  pkgrel: 4
   url: https://pidgin.im/
   arch:
     - x86_64
   license:
     - GPL
   makedepends:
-    - startup-notification
-    - gtkspell
-    - libxss
     - nss
     - libsasl
-    - libsm
     - libidn
     - libgadu
     - python
-    - hicolor-icon-theme
     - farstream
     - tk
     - libnsl
@@ -41,19 +36,6 @@ pkgbase:
     - 0ffc9994def10260f98a55cd132deefa8dc4a9835451cc0e982747bd458e2356
     - SKIP
 pkgname:
-  - name: pidgin
-    pkgdesc: Multi-protocol instant messaging client
-    depends:
-      - libpurple
-      - startup-notification
-      - gtkspell
-      - libxss
-      - libsm
-      - gst-plugins-base
-      - gst-plugins-good
-      - hicolor-icon-theme
-    optdepends:
-      - 'aspell: for spelling correction'
   - name: libpurple
     pkgdesc: IM library extracted from Pidgin
     depends:
@@ -72,9 +54,9 @@ pkgname:
       - 'python-dbus: for purple-remote and purple-url-handler'
       - 'tk: Tcl/Tk scripting support'
   - name: finch
-    pkgdesc: A ncurses-based messaging client
+    pkgdesc: ncurses-based messaging client
     depends:
       - libpurple
       - libgnt
       - libx11
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
