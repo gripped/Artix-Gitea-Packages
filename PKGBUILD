@@ -3,7 +3,7 @@
 # Contributor: David Anderson <dave@natulte.net>
 
 pkgname=tailscale
-pkgver=1.88.3
+pkgver=1.90.2
 pkgrel=1
 pkgdesc="A mesh VPN that makes it easy to connect your devices, wherever they are."
 arch=("x86_64")
@@ -15,7 +15,7 @@ backup=("etc/default/tailscaled")
 # Important: Check if the version has been published before updating
 # pkgctl version check
 source=("git+https://github.com/tailscale/tailscale.git#tag=v${pkgver}")
-sha256sums=('842a80bbf1d5d39313826976da14b429a1ef257dc4d0681c03ae58acd86828ff')
+sha256sums=('999dab96a13679ab4841256ffb62633eb79c38fd780d92ff4ca24b72cd32c2cf')
 
 options=(!lto)
 
@@ -36,6 +36,7 @@ build() {
         -X tailscale.com/version.longStamp=${pkgver} \
         -X tailscale.com/version.shortStamp=$(cut -d+ -f1 <<< "${pkgver}") \
         -X tailscale.com/version.gitCommitStamp=$(git rev-parse v"${pkgver}")"
+
     for cmd in ./cmd/tailscale ./cmd/tailscaled; do
         go build -v -tags xversion -ldflags "$GO_LDFLAGS" "$cmd"
     done
@@ -53,7 +54,7 @@ package() {
     install -Dm644 cmd/tailscaled/tailscaled.defaults "$pkgdir/etc/default/tailscaled"
     install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 
-  "$pkgdir/usr/bin/tailscale" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/tailscale"
-  "$pkgdir/usr/bin/tailscale" completion zsh | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_tailscale"
-  "$pkgdir/usr/bin/tailscale" completion fish | install -Dm644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/tailscale.fish"
+    "$pkgdir/usr/bin/tailscale" completion bash | install -Dm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/tailscale"
+    "$pkgdir/usr/bin/tailscale" completion zsh | install -Dm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_tailscale"
+    "$pkgdir/usr/bin/tailscale" completion fish | install -Dm644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/tailscale.fish"
 }
