@@ -1,9 +1,9 @@
 ---
-version: 5.8.0-1
+version: 5.8.1-1
 pkgbase:
   name: libqalculate
   pkgdesc: Multi-purpose desktop calculator
-  pkgver: 5.8.0
+  pkgver: 5.8.1
   pkgrel: 1
   url: https://qalculate.github.io/
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   optdepends:
     - 'gnuplot: for plotting support'
   source:
-    - git+https://github.com/Qalculate/libqalculate#tag=v5.8.0
+    - git+https://github.com/Qalculate/libqalculate#tag=v5.8.1
   sha256sums:
-    - 7c06c45ac18d752db0a4d9a14dc2c23067943fe7fe431fc4cf2aefca070dc1e7
+    - dbac0bac5f71b2580ecc344230c22b5bdeb568753bab5122ced9d181004a731f
 pkgname:
   - name: libqalculate
 # generated with artixpkg 0.37.4-1-any
