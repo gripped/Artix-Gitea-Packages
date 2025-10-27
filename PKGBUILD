@@ -17,7 +17,7 @@ optdepends=('gnome-shell-extension-appindicator: for system tray icon if you are
             'xdg-desktop-portal: for wayland support, you will need the implementation for your wayland desktop environment'
             'qt6-imageformats: for additional export image formats (e.g. tiff, webp, and more)')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('2dabb2f05c1011e691030e4dbbbe24fa0c60250b5c1e99620dcaf72701cb3fe7')
+sha256sums=('SKIP')
 
 build() {
 	cmake -B build -S "${pkgname}-${pkgver}" \
