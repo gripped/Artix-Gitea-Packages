@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.1.11-7
+    version: 0.1.12-1
     packages:
-      - zathura-cb-0.1.11-7-x86_64.pkg.tar.zst
+      - zathura-cb-0.1.12-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.1.11-6
