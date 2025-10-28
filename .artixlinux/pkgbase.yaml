@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 40.1-10
+    version: 40.2-1
     packages:
-      - gnome-notes-40.1-10-x86_64.pkg.tar.zst
+      - gnome-notes-40.2-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
