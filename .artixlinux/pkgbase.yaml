@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.2.10-7
+    version: 0.2.11-1
     packages:
-      - zathura-djvu-0.2.10-7-x86_64.pkg.tar.zst
+      - zathura-djvu-0.2.11-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.2.10-6
