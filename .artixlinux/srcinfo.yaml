@@ -1,0 +1,32 @@
+---
+version: 1.42-1
+pkgbase:
+  name: python-serpent
+  pkgdesc: Serializer for literal Python expressions
+  pkgver: 1.42
+  pkgrel: 1
+  url: https://github.com/irmen/Serpent
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-attrs
+    - python-pytz
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-serpent::git+https://github.com/irmen/Serpent#tag=serpent-1.42
+  sha512sums:
+    - 1d2ded16b73a1b22f491edbdc995deaa7790a6bded290a9966601b99aa5de0826ee8db63faca64b852f4fe0d07b6efff499cd286804327ce686da50a0b8d6dac
+  b2sums:
+    - 2ade945a56d2646fe75ee79bc7ac0bedd03310d1747c00bcffac84347b742d1d5b45beb58681d87c0996748dc48ca93068f7993dad9e10be86d51e64e5752e45
+pkgname:
+  - name: python-serpent
+# generated with artixpkg 0.37.4-1-any
