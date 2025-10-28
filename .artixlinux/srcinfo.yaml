@@ -1,0 +1,31 @@
+---
+version: 3.28+r6+g45b1d457-4
+pkgbase:
+  name: gnome-themes-extra
+  pkgdesc: Extra Themes for GNOME Applications
+  pkgver: 3.28+r6+g45b1d457
+  pkgrel: 4
+  url: https://gitlab.gnome.org/GNOME/gnome-themes-extra
+  arch:
+    - any
+  license:
+    - LGPL2.1
+  makedepends:
+    - intltool
+    - gtk3
+    - git
+  provides:
+    - gnome-themes-standard=3.28+r6+g45b1d457
+  conflicts:
+    - gnome-themes-standard
+  replaces:
+    - gnome-themes-standard<3.27.92
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-themes-extra.git#commit=45b1d457c63b1c7f6c8dcb7fe29b23ec7cd63a14
+  sha256sums:
+    - 80722bc5cafa1e58b416f752d1cd03b04bc0a7b7f2b9a17f8486b6068f550d73
+pkgname:
+  - name: gnome-themes-extra
+# generated with artixpkg 0.37.4-1-any
