@@ -6,7 +6,7 @@
 
 pkgname=zathura-pdf-poppler
 pkgver=0.3.3
-pkgrel=6
+pkgrel=7
 pkgdesc="Adds pdf support to zathura by using the poppler engine"
 url="https://pwmt.org/projects/zathura-pdf-poppler/"
 arch=('x86_64')
