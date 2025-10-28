@@ -1,10 +1,10 @@
 ---
-version: 0.1.11-6
+version: 0.1.11-7
 pkgbase:
   name: zathura-cb
   pkgdesc: Adds comic book support to zathura
   pkgver: 0.1.11
-  pkgrel: 6
+  pkgrel: 7
   url: https://pwmt.org/projects/zathura-cb/
   arch:
     - x86_64
