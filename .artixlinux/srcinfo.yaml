@@ -1,10 +1,10 @@
 ---
-version: 24.004.60-11
+version: 24.004.60-12
 pkgbase:
   name: plymouth
   pkgdesc: Graphical boot splash screen
   pkgver: 24.004.60
-  pkgrel: 11
+  pkgrel: 12
   url: https://www.freedesktop.org/wiki/Software/Plymouth/
   install: plymouth.install
   arch:
@@ -17,9 +17,9 @@ pkgbase:
     - gtk3
     - meson
   depends:
+    - adwaita-fonts
     - bash
     - cairo
-    - cantarell-fonts
     - filesystem
     - fontconfig
     - freetype2
@@ -51,4 +51,4 @@ pkgbase:
     - 7bb910b7402ad4372f1918be763421308534044c46d42e77af0aadcb7cbe13a99633805b36fa841f8ea1006ddb204ecea3031b96b05ec4e8d16150b2c7864629
 pkgname:
   - name: plymouth
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
