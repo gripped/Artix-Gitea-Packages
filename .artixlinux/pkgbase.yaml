@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.2.8-8
+    version: 0.2.9-1
     packages:
-      - zathura-ps-0.2.8-8-x86_64.pkg.tar.zst
+      - zathura-ps-0.2.9-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.2.8-7
