@@ -1,0 +1,43 @@
+---
+version: 0.13.3-1
+pkgbase:
+  name: python-bottle
+  pkgdesc: A fast and simple micro-framework for small web-applications
+  pkgver: 0.13.3
+  pkgrel: 1
+  url: https://bottlepy.org
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-mako
+    - python-jinja
+    - python-cherrypy
+    - python-twisted
+    - python-tornado
+    - python-paste
+    - python-gevent
+    - python-eventlet
+    - gunicorn
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-waitress: Waitress WSGI server'
+    - 'python-cherrypy: Cherrypy WSGI server'
+    - 'python-eventlet: Eventlet server support'
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/defnull/bottle.git#tag=0.13.3
+  sha512sums:
+    - 0b871cbf78b7cce4eeea173ee5a59d55713cea769d192d7f6c752331e777a8576fd5dfd57ac0d0ddc683ad2b17c9c51117d2b948425f9549ec94c5631bcd55f8
+pkgname:
+  - name: python-bottle
+# generated with artixpkg 0.37.4-1-any
