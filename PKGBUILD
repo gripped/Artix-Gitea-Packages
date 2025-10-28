@@ -4,8 +4,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=nodejs-lts-jod
-pkgver=22.21.0
-pkgrel=3
+pkgver=22.21.1
+pkgrel=1
 pkgdesc='Evented I/O for V8 javascript (LTS release: Jod)'
 arch=(x86_64)
 url=https://nodejs.org/
@@ -18,7 +18,7 @@ conflicts=(nodejs)
 options=(!lto)
 source=("https://nodejs.org/dist/v${pkgver}/node-v${pkgver}.tar.xz")
 # https://nodejs.org/download/release/latest-jod/SHASUMS256.txt.asc
-sha256sums=('791b18e969ea22cc952108ee8eaafbb12cddfd973bbbb0b7fc116395c0d9a81c')
+sha256sums=('487d73fd4db00dc2420d659a8221b181a7937fbc5bc73f31c30b1680ad6ded6a')
 
 _set_flags() {
   # /usr/lib/libnode.so uses malloc_usable_size, which is incompatible with fortification level 3
