@@ -52,6 +52,7 @@ pkgbase:
     - libwayland-server.so
     - libxkbcommon.so
     - yyjson
+    - lcms2
   optdepends:
     - xorg-xeyes
   source:
