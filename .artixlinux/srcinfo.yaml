@@ -1,10 +1,10 @@
 ---
-version: 4.2.8.p18-5
+version: 4.2.8.p18-6
 pkgbase:
   name: ntp
   pkgdesc: Network Time Protocol reference implementation
   pkgver: 4.2.8.p18
-  pkgrel: 5
+  pkgrel: 6
   url: https://www.ntp.org/
   arch:
     - x86_64
@@ -28,7 +28,7 @@ pkgbase:
     - cf84c5f3fb1a295284942624d823fffa634144e096cfc4f9969ac98ef5f468e5
     - 9c4afa0daed5fd3cc9544ec808b2bb1dd959e5d40c4cae307b7025b16885903c
     - abccefe0b3a65cd375d5071ce780be8d2d205439aa6d34bcd3c56de6e80ba821
-    - f839a3b6d8e64fcd9332274131b4d5aa0b2c272db072dc310af1735ef286746a
+    - e2684bd1ea1a4eec164619c93eaaed78b1cc5a882c7044436800f9c7cec86636
 pkgname:
   - name: ntp
 # generated with artixpkg 0.37.4-1-any

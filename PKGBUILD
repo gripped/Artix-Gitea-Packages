@@ -8,7 +8,7 @@ pkgname=ntp
 _pkgname=ntp #-dev
 _pkgver=4.2.8p18
 pkgver=${_pkgver/p/.p}
-pkgrel=5
+pkgrel=6
 pkgdesc='Network Time Protocol reference implementation'
 url='https://www.ntp.org/'
 license=('custom')
@@ -22,7 +22,7 @@ source=("https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/${_pkgname}-${_p
 sha256sums=('cf84c5f3fb1a295284942624d823fffa634144e096cfc4f9969ac98ef5f468e5'
             '9c4afa0daed5fd3cc9544ec808b2bb1dd959e5d40c4cae307b7025b16885903c'
             'abccefe0b3a65cd375d5071ce780be8d2d205439aa6d34bcd3c56de6e80ba821'
-            'f839a3b6d8e64fcd9332274131b4d5aa0b2c272db072dc310af1735ef286746a')
+            'e2684bd1ea1a4eec164619c93eaaed78b1cc5a882c7044436800f9c7cec86636')
 options=('!emptydirs')
 
 prepare() {
