@@ -36,7 +36,7 @@ depends=(aha
          qt6-declarative
          sh
          solid
-         systemd-libs
+         libelogind
          systemsettings
          vulkan-tools
          wayland-utils
