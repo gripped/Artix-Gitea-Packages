@@ -1,9 +1,9 @@
 ---
-version: 1.10.2-1
+version: 1.10.3-1
 pkgbase:
   name: libpanel
   pkgdesc: Dock/panel library for GTK 4
-  pkgver: 1.10.2
+  pkgver: 1.10.3
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/libpanel
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - hicolor-icon-theme
     - libadwaita
   source:
-    - git+https://gitlab.gnome.org/GNOME/libpanel.git#tag=1.10.2
+    - git+https://gitlab.gnome.org/GNOME/libpanel.git#tag=1.10.3
   b2sums:
-    - 85c8bef25cf6f7b33c94632c0a3e33e7d3b4c2720d9812e8d980833ca64d8b8b2202a381cc83644aaf2932948324092be1958ee4241974576184dc0253d6f2e5
+    - 36ec65afe96f2378e3c5498ebcf505eeca7e06f292869964101f99671aee1f3518dc29c3bfdec2491920717ba52c2a5cdc43f39b1cddd42da4c0be95f7197190
 pkgname:
   - name: libpanel
     provides:
