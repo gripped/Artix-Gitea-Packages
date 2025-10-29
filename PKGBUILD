@@ -2,7 +2,7 @@
 
 pkgname=wayfire
 pkgver=0.10.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="3D wayland compositor"
 arch=('x86_64')
 url="https://github.com/WayfireWM/wayfire"
@@ -10,7 +10,7 @@ license=(MIT)
 depends=(
   'cairo' 'pango' 'libdrm' 'libevdev' 'libglvnd' 'libjpeg' 'libpng' 'libxkbcommon'
   'pixman' 'polkit' 'seatd' 'xorg-xwayland' 'wayland' 'wf-config'
-  'glm' 'glslang' 'libinput' 'libdisplay-info' 'libxcb' 'opengl-driver'
+  'glm' 'glslang' 'libinput' 'libdisplay-info.so' 'libxcb' 'opengl-driver'
   'xcb-util-errors' 'xcb-util-renderutil' 'xcb-util-wm' 'libpixman-1.so' 'libseat.so'
   'libudev.so' 'libvulkan.so' 'libwayland-client.so' 'libwayland-server.so' 'libxkbcommon.so'
 )

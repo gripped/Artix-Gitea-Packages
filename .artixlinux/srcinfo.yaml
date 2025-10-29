@@ -1,10 +1,10 @@
 ---
-version: 0.10.0-1
+version: 0.10.0-1.1
 pkgbase:
   name: wayfire
   pkgdesc: 3D wayland compositor
   pkgver: 0.10.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/WayfireWM/wayfire
   arch:
     - x86_64
@@ -38,7 +38,7 @@ pkgbase:
     - glm
     - glslang
     - libinput
-    - libdisplay-info
+    - libdisplay-info.so
     - libxcb
     - opengl-driver
     - xcb-util-errors
@@ -59,4 +59,4 @@ pkgbase:
     - 83f98d67479f41f3a4dcf30b414495bb8df2353daa7601159f4012a120827a16
 pkgname:
   - name: wayfire
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
