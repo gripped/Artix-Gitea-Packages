@@ -53,6 +53,7 @@ pkgbase:
     - libxkbcommon.so
     - yyjson
     - lcms2
+    - libliftoff
   optdepends:
     - xorg-xeyes
   source:

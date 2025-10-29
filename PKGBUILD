@@ -13,7 +13,7 @@ depends=(
   'glm' 'glslang' 'libinput' 'libdisplay-info.so' 'libxcb' 'opengl-driver'
   'xcb-util-errors' 'xcb-util-renderutil' 'xcb-util-wm' 'libpixman-1.so' 'libseat.so'
   'libudev.so' 'libvulkan.so' 'libwayland-client.so' 'libwayland-server.so' 'libxkbcommon.so'
-  'yyjson' 'lcms2'
+  'yyjson' 'lcms2' 'libliftoff'
 )
 makedepends=('meson' 'ninja' 'cmake' 'vulkan-headers' 'doctest'
              'pkgconf' 'wayland-protocols' 'nlohmann-json' 'libxml2'
