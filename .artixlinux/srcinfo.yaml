@@ -18,8 +18,8 @@ pkgbase:
     - doctest
     - pkgconf
     - wayland-protocols
-    - nlohmann-json
     - libxml2
+    - git
   depends:
     - cairo
     - pango
@@ -34,33 +34,37 @@ pkgbase:
     - seatd
     - xorg-xwayland
     - wayland
-    - wf-config
-    - glm
-    - glslang
+    - yyjson
     - libinput
-    - libdisplay-info.so
+    - glib2
+    - libelogind
     - libxcb
-    - opengl-driver
+    - glm
+    - pkgconf
     - xcb-util-errors
     - xcb-util-renderutil
     - xcb-util-wm
-    - libpixman-1.so
-    - libseat.so
-    - libudev.so
-    - libvulkan.so
-    - libwayland-client.so
-    - libwayland-server.so
-    - libxkbcommon.so
-    - yyjson
-    - lcms2
-    - libliftoff
-    - wf-config
+    - wayland
+    - wayland-protocols
+    - libdisplay-info
+    - wlroots0.19
   optdepends:
     - xorg-xeyes
+  provides:
+    - wayland-compositor
+    - wf-config=0.7
+  conflicts:
+    - wf-config
   source:
-    - https://github.com/WayfireWM/wayfire/releases/download/v0.10.0/wayfire-0.10.0.tar.xz
+    - git+https://github.com/WayfireWM/wayfire#commit=9229cef3b65b12d5eb10697deb66b304358d99e4
+    - git+https://github.com/WayfireWM/wf-config
+    - git+https://github.com/WayfireWM/wf-touch
+    - git+https://github.com/WayfireWM/wf-utils
   sha256sums:
-    - 83f98d67479f41f3a4dcf30b414495bb8df2353daa7601159f4012a120827a16
+    - ceddf00fad33242b8f8236410fa4e0709197bf156b2023df8ec2a3b1a88d2aee
+    - SKIP
+    - SKIP
+    - SKIP
 pkgname:
   - name: wayfire
 # generated with artixpkg 0.37.4-1-any
