@@ -51,6 +51,7 @@ pkgbase:
     - libwayland-client.so
     - libwayland-server.so
     - libxkbcommon.so
+    - yyjson
   optdepends:
     - xorg-xeyes
   source:
