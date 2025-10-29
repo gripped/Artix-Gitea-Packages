@@ -10,7 +10,7 @@
 
 pkgbase='protobuf'
 pkgname=('protobuf' 'python-protobuf' 'ruby-google-protobuf')
-pkgver=32.1
+pkgver=33.0
 pkgrel=1
 pkgdesc="Protocol Buffers - Google's data interchange format"
 arch=('x86_64')
@@ -45,7 +45,7 @@ source=(
   git+https://github.com/protocolbuffers/protobuf.git#tag=v$pkgver
   protobuf-fix-build-type-none.patch
 )
-sha512sums=('fc81fd22415e12bf78825b66e11ff4e327c7b89bcea4d9a140da61f50a94a4f9dba25aac9519ec084646aaecea556f391133a52cb141d944df1c92a46533f141'
+sha512sums=('9685e4de1b6195f3880739303076d04bfb6f8bd9bbe7a9c9ca1a2b6d0f7e4f3e94c1dde75a5a0ca59c9deee21578b31aadae21a3d9c28af19f0ee6460e8cc159'
             '18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd')
 
 options=(!lto)
