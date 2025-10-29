@@ -54,6 +54,7 @@ pkgbase:
     - yyjson
     - lcms2
     - libliftoff
+    - wf-config
   optdepends:
     - xorg-xeyes
   source:
