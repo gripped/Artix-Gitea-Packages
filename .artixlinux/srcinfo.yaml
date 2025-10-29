@@ -1,0 +1,82 @@
+---
+version: 1.63-1
+pkgbase:
+  name: snes9x
+  pkgdesc: Portable Super Nintendo Entertainment System (TM) emulator
+  pkgver: 1.63
+  pkgrel: 1
+  url: http://www.snes9x.com/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - alsa-lib
+    - cairo
+    - clang
+    - cmake
+    - gdk-pixbuf2
+    - git
+    - glib2
+    - glslang
+    - gtk3
+    - gtkmm3
+    - intltool
+    - libepoxy
+    - libpng
+    - libpulse
+    - libx11
+    - libxext
+    - libxml2
+    - libxrandr
+    - libxv
+    - minizip
+    - nasm
+    - ninja
+    - portaudio
+    - python
+    - sdl2
+    - zlib
+  source:
+    - git+https://github.com/snes9xgit/snes9x.git#tag=e53e2b43e6cd83ba98d77478955f547cbf1eab14
+    - git+https://github.com/KhronosGroup/glslang.git
+    - git+https://github.com/KhronosGroup/SPIRV-Cross.git
+    - git+https://github.com/KhronosGroup/Vulkan-Headers.git
+  b2sums:
+    - 56819bc7c717701e816fa765fb065f21cf5909b065f6e02f2cf2c6f2419ca63c87c2935858c9db6181873a94fda5f73b6826380ee21d7448bfe19d537368b3f7
+    - SKIP
+    - SKIP
+    - SKIP
+pkgname:
+  - name: snes9x
+    depends:
+      - alsa-lib
+      - libpng
+      - libx11
+      - libxext
+      - libxinerama
+      - libxv
+      - minizip
+      - zlib
+  - name: snes9x-gtk
+    depends:
+      - alsa-lib
+      - cairo
+      - gdk-pixbuf2
+      - glib2
+      - gtk3
+      - gtkmm3
+      - hicolor-icon-theme
+      - libepoxy
+      - libpng
+      - libpulse
+      - libx11
+      - libxext
+      - libxml2
+      - libxrandr
+      - libxv
+      - minizip
+      - portaudio
+      - sdl2
+      - zlib
+# generated with artixpkg 0.37.4-1-any
