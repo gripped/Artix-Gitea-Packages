@@ -1,0 +1,46 @@
+---
+version: 3.3.2-8
+pkgbase:
+  name: ziproxy
+  pkgdesc: forwarding, non-caching, compressing HTTP proxy server
+  pkgver: 3.3.2
+  pkgrel: 8
+  url: http://ziproxy.sourceforge.net/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - giflib
+    - glibc
+    - libpng
+    - libjpeg-turbo
+    - zlib
+    - jasper
+    - libsasl
+  backup:
+    - etc/ziproxy/ziproxy.conf
+    - etc/ziproxy/bo_exception.list
+    - etc/ziproxy/http.passwd
+    - etc/ziproxy/noprocess.list
+    - etc/ziproxy/replace.list
+    - var/lib/ziproxy/error/400.html
+    - var/lib/ziproxy/error/404.html
+    - var/lib/ziproxy/error/407.html
+    - var/lib/ziproxy/error/408.html
+    - var/lib/ziproxy/error/409.html
+    - var/lib/ziproxy/error/500.html
+    - var/lib/ziproxy/error/503.html
+  source:
+    - https://downloads.sourceforge.net/project/ziproxy/ziproxy/ziproxy-3.3.2/ziproxy-3.3.2.tar.bz2
+    - ziproxy.logrotate
+    - ziproxy.sysusers
+    - ziproxy.tmpfiles
+  sha256sums:
+    - 76a1fc62c76dfa1a8d0784193aba20a96e214dd615b7927b497ceee5059699f1
+    - 6087c75dc9a9d493365bb599bf4dcb72fab95da54ea9b75418616cf0cd9be5e3
+    - 1d6f31690dd50ee148a1baa9695c66abf48e6c76ef26b469acf64ea877d2d40c
+    - 03bb3a7f5e1c1126c2c59b650f767b54ab011b0a8165efd5db85cbc52080cc0a
+pkgname:
+  - name: ziproxy
+# generated with artixpkg 0.37.4-1-any
