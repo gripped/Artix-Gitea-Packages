@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: world-gremlins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 144.0.2-1
     packages:
       - firefox-144.0.2-1-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 144.0-1
-    packages:
-      - firefox-144.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
