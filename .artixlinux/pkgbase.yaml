@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 144.0.2-1
-    packages:
-      - firefox-144.0.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: null
@@ -50,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 144.0.2-1
+    packages:
+      - firefox-144.0.2-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 144.0-1
