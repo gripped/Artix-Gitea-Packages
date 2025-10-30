@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.5.2-7
+    version: 1.5.2-7.1
     packages:
-      - protobuf-c-1.5.2-7-x86_64.pkg.tar.zst
+      - protobuf-c-1.5.2-7.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
