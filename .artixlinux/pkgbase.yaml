@@ -49,10 +49,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 20251027-2
+    version: 20251027-3
     packages:
-      - archlinux-keyring-20251027-2-any.pkg.tar.zst
-      - voa-verifiers-arch-20251027-2-any.pkg.tar.zst
+      - archlinux-keyring-20251027-3-any.pkg.tar.zst
+      - voa-verifiers-arch-20251027-3-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 20251027-1

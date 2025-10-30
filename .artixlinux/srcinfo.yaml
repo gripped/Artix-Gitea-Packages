@@ -1,10 +1,10 @@
 ---
-version: 20251027-2
+version: 20251027-3
 pkgbase:
   name: archlinux-keyring
   pkgdesc: Arch Linux PGP keyring
   pkgver: 20251027
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitlab.archlinux.org/archlinux/archlinux-keyring/
   arch:
     - any

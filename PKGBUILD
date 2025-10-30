@@ -5,7 +5,7 @@ pkgbase=archlinux-keyring
 pkgname=(archlinux-keyring
          voa-verifiers-arch)
 pkgver=20251027
-pkgrel=2
+pkgrel=3
 pkgdesc='Arch Linux PGP keyring'
 arch=('any')
 url='https://gitlab.archlinux.org/archlinux/archlinux-keyring/'
@@ -22,6 +22,12 @@ validpgpkeys=('02FD1C7A934E614545849F19A6234074498E9CEE'  # Christian Hesse <ewo
               'E240B57E2C4630BA768E2F26FC1B547C8D8172C8'  # Levente Polyak <anthraxx@archlinux.org>
               'C100346676634E80C940FB9E9C02FF419FECBE16') # Morten Linderud <foxboron@archlinux.org>
 
+prepare() {
+  cd archlinux-keyring/
+
+  git cherry-pick -n \
+    'a2fe1630ead0a49ea66fe4fd208a330f1e2cbcda'
+}
 build() {
   cd archlinux-keyring/
 
