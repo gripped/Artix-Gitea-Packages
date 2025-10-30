@@ -21,11 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 33.0-1
+    version: 33.0-2
     packages:
-      - protobuf-33.0-1-x86_64.pkg.tar.zst
-      - python-protobuf-33.0-1-x86_64.pkg.tar.zst
-      - ruby-google-protobuf-33.0-1-x86_64.pkg.tar.zst
+      - protobuf-33.0-2-x86_64.pkg.tar.zst
+      - python-protobuf-33.0-2-x86_64.pkg.tar.zst
+      - ruby-google-protobuf-33.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
