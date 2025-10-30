@@ -1,0 +1,23 @@
+---
+version: 1.43.0-1
+pkgbase:
+  name: just
+  pkgdesc: A handy way to save and run project-specific commands
+  pkgver: 1.43.0
+  pkgrel: 1
+  url: https://github.com/casey/just
+  arch:
+    - x86_64
+  license:
+    - custom:CC0
+  makedepends:
+    - cargo
+  depends:
+    - gcc-libs
+  source:
+    - just-1.43.0.tar.gz::https://github.com/casey/just/archive/1.43.0.tar.gz
+  sha256sums:
+    - 03904d6380344dbe10e25f04cd1677b441b439940257d3cc9d8c5f09d91e3065
+pkgname:
+  - name: just
+# generated with artixpkg 0.37.4-1-any
