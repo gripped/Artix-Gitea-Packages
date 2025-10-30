@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-10-28
+## Generated on 2025-10-30
 ##
 
 # Artix mirrors
@@ -47,8 +47,9 @@ Server = https://mirror.infirium.ru/artixlinux/$repo/os/$arch
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
 # Switzerland
 Server = https://artix.kurdy.org/$repo/os/$arch
+# The Netherlands
+Server = https://artist.artixlinux.org/repos/$repo/os/$arch
 # United Kingdom
-Server = http://artist.artixlinux.org/repos/$repo/os/$arch
 Server = https://mirror.vinehost.net/artix-linux/$repo/os/$arch
 
 ## North America
