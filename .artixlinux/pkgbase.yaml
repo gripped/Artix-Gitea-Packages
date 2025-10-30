@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2023_07_R2-8
+    packages:
+      - kismet-2023_07_R2-8-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
