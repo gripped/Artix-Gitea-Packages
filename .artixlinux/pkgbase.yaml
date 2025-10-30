@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,6 +25,30 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
+    version: null
+    packages: []
+    debug: []
+  lib32-goblins:
+    version: null
+    packages: []
+    debug: []
+  lib32-gremlins:
+    version: null
+    packages: []
+    debug: []
+  lib32:
+    version: null
+    packages: []
+    debug: []
+  galaxy-goblins:
+    version: null
+    packages: []
+    debug: []
+  galaxy-gremlins:
     version: 144.0.2-1
     packages:
       - firefox-i18n-ach-144.0.2-1-any.pkg.tar.zst
@@ -130,30 +154,6 @@ repos:
       - firefox-i18n-xh-144.0.2-1-any.pkg.tar.zst
       - firefox-i18n-zh-cn-144.0.2-1-any.pkg.tar.zst
       - firefox-i18n-zh-tw-144.0.2-1-any.pkg.tar.zst
-    debug: []
-  world:
-    version: null
-    packages: []
-    debug: []
-  lib32-goblins:
-    version: null
-    packages: []
-    debug: []
-  lib32-gremlins:
-    version: null
-    packages: []
-    debug: []
-  lib32:
-    version: null
-    packages: []
-    debug: []
-  galaxy-goblins:
-    version: null
-    packages: []
-    debug: []
-  galaxy-gremlins:
-    version: null
-    packages: []
     debug: []
   galaxy:
     version: 144.0-1
