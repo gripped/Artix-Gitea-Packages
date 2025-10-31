@@ -1,10 +1,10 @@
 ---
-version: 1.5.1-1
+version: 1.5.1-2
 pkgbase:
   name: openucc
   pkgdesc: Unified Collective Communication Library
   pkgver: 1.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openucx/ucc
   arch:
     - x86_64
