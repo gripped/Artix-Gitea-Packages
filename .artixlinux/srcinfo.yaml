@@ -18,7 +18,6 @@ pkgbase:
     - libxcrypt
     - openssl
     - pam
-    - systemd
     - zlib
   optdepends:
     - 'opensmtpd-filter-rspamd: rspamd integration'
