@@ -1,0 +1,32 @@
+---
+version: 1.2.0-1
+pkgbase:
+  name: virglrenderer
+  pkgdesc: A virtual 3D GPU library, that allows the guest operating system to use the host GPU to accelerate 3D rendering
+  pkgver: 1.2.0
+  pkgrel: 1
+  url: https://virgil3d.github.io/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - check
+  makedepends:
+    - python
+    - meson
+    - ninja
+    - vulkan-headers
+    - python-yaml
+  depends:
+    - libepoxy
+    - mesa
+    - libva
+    - vulkan-icd-loader
+  source:
+    - virglrenderer-1.2.0.tar.bz2::https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/virglrenderer-1.2.0/virglrenderer-virglrenderer-1.2.0.tar.bz2
+  sha256sums:
+    - 47a64189492a754685a430c713ac6700f4b1c3e7b871e87889ddb96e4d65e8ab
+pkgname:
+  - name: virglrenderer
+# generated with artixpkg 0.37.4-1-any
