@@ -1,22 +1,19 @@
 ---
-version: 0.9.5-7
+version: 0.9.6-1
 pkgbase:
   name: xmms2
   pkgdesc: X-platform Music Multiplexing System 2
-  pkgver: 0.9.5
-  pkgrel: 7
+  pkgver: 0.9.6
+  pkgrel: 1
   url: https://github.com/xmms2/wiki/wiki
   arch:
     - x86_64
   license:
-    - GPL-2.0-only
-    - LGPL-2.1-only
+    - GPL-2.0-or-later AND LGPL-2.1-or-later
   makedepends:
     - alsa-lib
     - avahi
-    - boost
     - curl
-    - cython
     - faad2
     - ffmpeg
     - fftw
@@ -31,30 +28,34 @@ pkgbase:
     - libmms
     - libmodplug
     - libmpcdec
-    - libofa
+    - libpulse
     - libsamplerate
     - libshout
+    - libsndfile
     - libvorbis
     - libxml2
-    - mac
     - mpg123
     - opusfile
     - perl
+    - python
     - ruby
     - smbclient
     - speex
     - sqlite
     - wavpack
+    - boost
+    - cython
     - git
-    - libpulse
     - perl-pod-parser
     - waf
+  depends:
+    - glib2
+    - glibc
+    - readline
   optdepends:
     - 'alsa-lib: ALSA output'
     - 'avahi: announce xmms2d via bonjour/mDNS/zeroconf'
-    - 'boost: C++ bindings'
     - 'curl: play HTTP streams'
-    - 'cython: Python bindings'
     - 'faad2: AAC support'
     - 'ffmpeg: WMA, avcodec & avformat support'
     - 'fftw: visualization'
@@ -69,31 +70,35 @@ pkgbase:
     - 'libmms: play MMS streams'
     - 'libmodplug: MOD support'
     - 'libmpcdec: Musepack support'
-    - 'libofa: MusicDNS fingerprinting'
+    - 'libpulse: PulseAudio output'
     - 'libsamplerate: vocoder support'
     - 'libshout: Icecast output'
+    - 'libsndfile: sampled sound support'
     - 'libvorbis: Ogg Vorbis support'
     - 'libxml2: XSPF and podcast support'
-    - 'mac: APE support'
     - 'mpg123: alternative MP3 support'
     - 'opusfile: Opus support'
     - 'perl: Perl bindings'
+    - 'python: Python bindings'
     - 'ruby: Ruby bindings'
     - 'smbclient: direct CIFS/SMB access'
     - 'speex: Speex support'
     - 'sqlite: for sqlite2s4'
     - 'wavpack: WavPack support'
-    - 'pulseaudio: PulseAudio output'
   source:
-    - https://github.com/xmms2/xmms2-devel/releases/download/0.9.5/xmms2-0.9.5.tar.xz
-    - https://github.com/xmms2/xmms2-devel/commit/62d4d4d85bceebcdb37a73d311283d604e930df7.patch
+    - xmms2::git+https://github.com/xmms2/xmms2-devel.git?signed#tag=0.9.6
+    - git+https://github.com/xmms2/xmms2-tutorial.git
+    - git+https://github.com/xmms2/s4.git
     - tmpfiles.conf
     - sysusers.conf
-  sha256sums:
-    - 695f2305e4085e9d7a07cabc6c5669a00a55745fe7d6013651dd21fa1f621333
-    - 1b5799c339a47669a3ff930933c391282fa0b04f2a2f425d554ca652844fe266
-    - 13e3e2720e21d048d776156f8ab17c40d05b70437823da00b3c4cc2e7f7ecf7f
-    - a37e35dedd48fb8fbc2c97d79be8a3d3c3b00191826f6046f730f649cd67812a
+  validpgpkeys:
+    - 62197C11C7C25A61C448E95644FE231F3F3926E4
+  b2sums:
+    - 265d1090260e50c49b0f54f9e108f4da7449c85f33b048806e0cf661f89d8a5253f44e741e59f9a0f4d8702f4fca8b7b0c9c7b60fa98fc7a1a083da20e53e1d0
+    - SKIP
+    - SKIP
+    - 2042a966321a8581efbd981edcaf680054c8f91df6b8373e117e51cd4d1d208ba43da723f33995dee941b7e3fc44c46f76b4dcd7a70dc07f9a2eb7a27a159639
+    - 58e3d33add4dae998dfe034267f216745467005fc44e646bbb228ac6885f6cf77c5964da299c050a695fb260700aafa988be26ce6dea96580ab8f1fda45de593
 pkgname:
   - name: xmms2
 # generated with artixpkg 0.37.4-1-any
