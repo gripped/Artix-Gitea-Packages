@@ -6,12 +6,12 @@
 
 pkgname=opensmtpd
 pkgver=7.7.0p0
-pkgrel=3
+pkgrel=4
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
 url="https://www.opensmtpd.org"
 license=(custom)
-depends=(libevent libxcrypt openssl pam zlib)
+depends=(libevent libxcrypt openssl pam systemd zlib)
 optdepends=('opensmtpd-filter-rspamd: rspamd integration')
 makedepends=(git)
 provides=(smtp-server smtp-forwarder)
@@ -19,14 +19,18 @@ conflicts=(smtp-server smtp-forwarder)
 backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
 source=("git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=${pkgver}"
-	opensmtpd.sysusers)
+        CVE-2025-62875.patch
+        opensmtpd.sysusers
+)
 sha256sums=('fcde39c6fae690e8abc8e2dfc908dae4b7c0d3b64a7bd846f892c08d9a067e9c'
+            '8b797798c23cbd34788391d110c61a7b5d9101cdf49187b3699dd30e180b1a86'
             '955e25043dbbc266a496db10c5d5f25f70d5342bba0550915932c04068a4ca01')
 install="${pkgname}.install"
 
 prepare() {
   cd OpenSMTPD
   sed -ri 's,/etc/mail,/etc/smtpd,g' usr.sbin/smtpd/smtpd.conf
+  patch -Np1 -i ../CVE-2025-62875.patch
   autoreconf -vfi
 }
 
