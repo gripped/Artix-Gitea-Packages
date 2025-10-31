@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=rdma-core
-pkgver=59.0
-pkgrel=1
+pkgver=60.0
+pkgrel=2
 pkgdesc="RDMA core userspace libraries and daemons"
 arch=(x86_64)
 url="https://github.com/linux-rdma/rdma-core"
@@ -62,11 +62,11 @@ conflicts=("${_provides[@]}")
 replaces=("${_provides[@]}")
 backup=(etc/rdma/{rdma.conf,mlx4.conf})
 source=("https://github.com/linux-rdma/rdma-core/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('05f9d8b18475a25d0cd5a8a12174af01ef0275db43dd9d71ec2813283a4d33a63c2262372a0530ebbebb85d06d3b2bc0cf0661b98e1a7c417f41da71ed243cd1')
+sha512sums=('30ff9db3218b8c50ba7c17820717ab06b5fcf0248ede228997dcdfa38402f900c1294834382f22cc986622bc8f797615ebce7c89977d68c4d72367f9ff55a2ec')
 
 prepare() {
     cd $pkgname-$pkgver
-    find redhat -type f -exec sed --in-place \
+    find kernel-boot/dracut redhat -type f -exec sed --in-place \
         --expression='s|/usr/libexec|/usr/lib/rdma|g' \
         --expression='s|/usr/sbin|/usr/bin|g' \
         --expression='s|/sbin|/usr/bin|g' \
@@ -111,9 +111,9 @@ package() {
     install -D --mode=0755 rdma.mlx4-setup.sh "$pkgdir"/usr/lib/rdma/mlx4-setup.sh
     install -D --mode=0644 rdma.mlx4.conf "$pkgdir"/etc/rdma/mlx4.conf
     install -D --mode=0644 rdma.mlx4.sys.modprobe "$pkgdir"/usr/lib/modprobe.d/libmlx4.conf
-    install -D --mode=0755 rdma.modules-setup.sh "$pkgdir"/usr/lib/dracut/modules.d/05rdma/module-setup.sh
 
     cd "$srcdir"/$pkgname-$pkgver
+    install -vDm 755 kernel-boot/dracut/50rdma/module-setup.sh "$pkgdir"/usr/lib/dracut/modules.d/50rdma/module-setup.sh
     install -vDm 644 COPYING.md -t "$pkgdir"/usr/share/licenses/$pkgname/
     install -vDm 644 COPYING.BSD_MIT -t "$pkgdir"/usr/share/licenses/$pkgname/
     install -vDm 644 COPYING.BSD_FB -t "$pkgdir"/usr/share/licenses/$pkgname/
