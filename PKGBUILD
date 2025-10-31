@@ -14,9 +14,8 @@
 #   +dovecot-fts-xapian
 
 pkgname=dovecot
-pkgver=2.4.1
-_pkgver=$pkgver-4
-pkgrel=7
+pkgver=2.4.2
+pkgrel=3
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -62,29 +61,26 @@ backup=(
   'etc/dovecot/dovecot.conf'
   'etc/pam.d/dovecot'
 )
+install="${pkgname}.install"
 options=('!emptydirs')
 _json_lua_ver='0.1.2'
 source=(
-  "https://dovecot.org/releases/2.4/${pkgname}-${_pkgver}.tar.gz"{,.sig}
-  'https://github.com/dovecot/core/commit/8dd2ec82f63ba1bf9ddf1b74243e00185ebba9b1.patch'
-  'https://github.com/dovecot/core/commit/473532fb9b5d00aa0900331f463d404a672e3b8f.patch'
-  'https://github.com/dovecot/core/commit/9240e3a4386808789d593537a8ebe3e873e89683.patch'
+  "https://dovecot.org/releases/2.4/${pkgname}-${pkgver}.tar.gz"{,.sig}
   "json-v$_json_lua_ver.lua::https://raw.githubusercontent.com/rxi/json.lua/v$_json_lua_ver/json.lua"
   'dovecot.sysusers'
   'dovecot.tmpfiles'
   'dovecot.ld.so.conf'
   'dovecot.pam'
+  'dovecot.install'
 )
-sha256sums=('fb188603f419ed7aaa07794a8692098c3ec2660bb9c67d0efe24948cbb32ae00'
+sha256sums=('2cd62e4d22b9fc1c80bd38649739950f0dbda34fbc3e62624fb6842264e93c6e'
             'SKIP'
-            'SKIP'
-            '30319697bbff2c0fc5509c1b64df4a62288f07a4ab99aa15c278dd8e7457a7a1'
-            '1a0c5e497e652f2838ead55b4d619b0e0ab44cf14c8a3bac04ef739dc47c211a'
             'b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87'
             '068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc'
             '0b0625b1e66ca6a95d506fd00d6a68e70620c8ea28606e2528953ffb1806b08e'
             'a457a1691cfa82495fc0503bfa4b61e54b149e63400fe0f568dff2c24a3f7858'
-            'ad9245f5e916480edd67139603cbe52e7a868233075f900ab63a0ce58f03741a')
+            'ad9245f5e916480edd67139603cbe52e7a868233075f900ab63a0ce58f03741a'
+            '2cfaade95b24639558b28c781687b32029d6566ce3ccc3999b1ff81d94674d6c')
 validpgpkeys=(
   'E643F0BDFDCD04D9FFCB6279C948525140558AC9' # Timo Sirainen <tss@iki.fi>
   '2BE74AAB3EE754DFB9C80D3318A348AEED409DA1' # Dovecot Community Edition
@@ -92,16 +88,7 @@ validpgpkeys=(
 )
 
 prepare() {
-  cd "${pkgname}-${_pkgver}"
-
-  # Fix build: Drop support for old iconv()
-  patch -Np1 -f < ../8dd2ec82f63ba1bf9ddf1b74243e00185ebba9b1.patch || :
-  # Backport fix for GSSAPI:
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/dovecot/-/issues/5
-  patch -Np1 -f < ../473532fb9b5d00aa0900331f463d404a672e3b8f.patch
-  # Backport fix for crash when config reloaded & logging to syslog
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/dovecot/-/issues/8
-  patch -Np1 -f < ../9240e3a4386808789d593537a8ebe3e873e89683.patch
+  cd "${pkgname}-${pkgver}"
 
   # Fix path in helper script
   sed -i 's:OPENSSLCONFIG=${OPENSSLCONFIG-dovecot-openssl.cnf}:OPENSSLCONFIG=${OPENSSLCONFIG-/etc/ssl/dovecot-openssl.cnf}:' doc/mkcert.sh
@@ -113,7 +100,7 @@ prepare() {
 }
 
 build() {
-  cd "${pkgname}-${_pkgver}"
+  cd "${pkgname}-${pkgver}"
 
   # This uses malloc_usable_size, which is incompatible with fortification
   # level 3
@@ -156,7 +143,7 @@ build() {
 }
 
 check() {
-  cd "${pkgname}-${_pkgver}"
+  cd "${pkgname}-${pkgver}"
   make check
 }
 
@@ -164,7 +151,7 @@ package() {
   # system user/group dovenull - 74
   # system user/group dovecot  - 76
 
-  cd "${pkgname}-${_pkgver}"
+  cd "${pkgname}-${pkgver}"
   make DESTDIR="$pkgdir" install
   install -vDm644 "${srcdir}/dovecot.sysusers" \
     "${pkgdir}/usr/lib/sysusers.d/dovecot.conf"
