@@ -1,10 +1,10 @@
 ---
-version: 1.1.4-1
+version: 1.1.4-2
 pkgbase:
   name: usbguard
   pkgdesc: Software framework for implementing USB device authorization policies
   pkgver: 1.1.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/USBGuard/usbguard
   arch:
     - x86_64
