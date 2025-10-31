@@ -1,9 +1,9 @@
 ---
-version: 0.14.2-1
+version: 0.14.3-1
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
-  pkgver: 0.14.2
+  pkgver: 0.14.3
   pkgrel: 1
   url: https://gstreamer.freedesktop.org/
   arch:
@@ -37,11 +37,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.14.2
+    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.14.3
   validpgpkeys:
     - 7F4BC7CC3CA06F97336BBFEB0668CC1486C2D7B5
   b2sums:
-    - 6a11d128b8022a84300eaf02a05031bc326799f9716dad36267922722d7cd31c58b78bf7fc61fe7b863f9474cfee626b4a158f95395c86fc204c8224f9ad41b7
+    - 4f6774854ce761337d31832fd45f7d01710667fc3c578c4edc6981fcbc910ef382a5a09ba69f647ff7e2021720a5021a6db267d7af8ac63fedcc367eca7b67be
 pkgname:
   - name: gst-webrtc-signalling-server
     pkgdesc: Multimedia graph framework - webrtc signalling server
@@ -55,7 +55,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-hlssink3=0.14.2-1
+      - gst-plugin-hlssink3=0.14.3-1
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -259,7 +259,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-textwrap=0.14.2-1
+      - gst-plugin-textwrap=0.14.3-1
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -352,7 +352,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-rsrtp=0.14.2-1
+      - gst-plugin-rsrtp=0.14.3-1
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
