@@ -8,14 +8,14 @@
 # This must be built against the version of dovecot being used,
 # else mail delivery will fail.
 # Specify the version of dovecot to be used here:
-_dcpkgver=2.4.1
+_dcpkgver=2.4.2
 # Make sure to bump pkgrel if changing this.
 
 _dcmajor="$(awk -F'.' '{printf "%d.%d", $1, $2}' <<< "${_dcpkgver}")"
 
 pkgname=pigeonhole
-pkgver=2.4.1
-pkgrel=1
+pkgver=2.4.2
+pkgrel=2
 
 pkgdesc='Sieve implementation for Dovecot'
 url='https://pigeonhole.dovecot.org/'
@@ -26,11 +26,9 @@ depends=("dovecot=${_dcpkgver}")
 
 conflicts=('dovecot-sieve' 'pigeonhole-hg')
 
-# NOTE: Why is there a -4 after pkgver? It's not documented upstream at all.
-_unknown_version_string='-4'
-source=("https://pigeonhole.dovecot.org/releases/${_dcmajor}/dovecot-pigeonhole-${pkgver}${_unknown_version_string}.tar.gz"{,.sig})
+source=("https://pigeonhole.dovecot.org/releases/${_dcmajor}/dovecot-pigeonhole-${pkgver}.tar.gz"{,.sig})
 
-sha256sums=('b016b79503543f1d6047e7bc93ef6d2fb5bfc3d697cab1418c5dc488b1974e0e'
+sha256sums=('c2f90cf2a0154f94842ce0d8cafc81f282d0f98dfc3b51c3b7c2385c53316f97'
             'SKIP')
 validpgpkeys=(
   '42F3CD50D4F25A41833BEE3704D62B1E3DFBB4F4' # Stephan Bosch <stephan@rename-it.nl>
@@ -40,7 +38,7 @@ validpgpkeys=(
 
 
 prepare() {
-  cd "dovecot-pigeonhole-${pkgver}${_unknown_version_string}"
+  cd "dovecot-pigeonhole-${pkgver}"
 
   local filename
   for filename in "${source[@]}"; do
@@ -51,7 +49,7 @@ prepare() {
 }
 
 build() {
-  cd "dovecot-pigeonhole-${pkgver}${_unknown_version_string}"
+  cd "dovecot-pigeonhole-${pkgver}"
 
   ./configure \
     --prefix=/usr \
@@ -62,12 +60,12 @@ build() {
 }
 
 check() {
-  cd "dovecot-pigeonhole-${pkgver}${_unknown_version_string}"
+  cd "dovecot-pigeonhole-${pkgver}"
   make check
 }
 
 package() {
-  cd "dovecot-pigeonhole-${pkgver}${_unknown_version_string}"
+  cd "dovecot-pigeonhole-${pkgver}"
 
   make DESTDIR="$pkgdir" install
 }
