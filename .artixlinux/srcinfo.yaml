@@ -1,9 +1,9 @@
 ---
-version: 48.1-1
+version: 48.2-1
 pkgbase:
   name: ghex
   pkgdesc: Hex editor for the GNOME desktop
-  pkgver: 48.1
+  pkgver: 48.2
   pkgrel: 1
   url: https://wiki.gnome.org/Apps/Ghex
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - libadwaita
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/ghex.git#tag=48.1
+    - git+https://gitlab.gnome.org/GNOME/ghex.git#tag=48.2
   b2sums:
-    - 226ba9e46adaf443a987562a6efc68710243ecc99de04e2d832bca6dc90e77219c73172a447846de11a9f08070d056c4af5aa8d7f8f55acd99fdfa8056ac0003
+    - 8ff2b8306ee854d93de96be8da69207b7fbc2b9c20d123a0aa50872f61e4ac94c19039e4875437483dd1c18ed21ac65e711f3d35210b53276eb601de80701fb3
 pkgname:
   - name: ghex
     groups:
@@ -39,4 +39,4 @@ pkgname:
   - name: ghex-docs
     pkgdesc: Hex editor for the GNOME desktop (documentation)
     depends: []
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
