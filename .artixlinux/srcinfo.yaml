@@ -1,0 +1,45 @@
+---
+version: 2.16.2-5
+pkgbase:
+  name: hexchat
+  pkgdesc: A popular and easy to use graphical IRC (chat) client
+  pkgver: 2.16.2
+  pkgrel: 5
+  url: https://hexchat.github.io/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - intltool
+    - iso-codes
+    - lua
+    - meson
+    - perl
+    - python-cffi
+    - python-setuptools
+  depends:
+    - dbus-glib
+    - desktop-file-utils
+    - gdk-pixbuf2
+    - glib2
+    - gtk2
+    - libcanberra
+    - openssl
+    - pango
+    - pciutils
+  optdepends:
+    - 'enchant: Spell check'
+    - 'iso-codes: Display language names instead of codes'
+    - 'lua: Lua plugin'
+    - 'perl: Perl plugin'
+    - 'python-cffi: Python plugin'
+  source:
+    - git+https://github.com/hexchat/hexchat.git#tag=v2.16.2
+  sha256sums:
+    - 5d9e457ba10ac756b96561db098bbb2bc7e63de4e1552be570f1b5175eddf313
+pkgname:
+  - name: hexchat
+# generated with artixpkg 0.37.4-1-any
