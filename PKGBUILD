@@ -101,3 +101,4 @@ package_qtcreator-devel() {
 
   DESTDIR="$pkgdir" cmake --install build --component Devel
 }
+
