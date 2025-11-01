@@ -1,10 +1,10 @@
 ---
-version: 2.10.0-1
+version: 2.10.0-2
 pkgbase:
   name: xfce4-whiskermenu-plugin
   pkgdesc: Menu for Xfce4
   pkgver: 2.10.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/panel-plugins/xfce4-whiskermenu-plugin/start
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - 1e870594f5da764ec65ad0df62ce71403f5b0541adcd960fe268b87d8ba4e601
 pkgname:
   - name: xfce4-whiskermenu-plugin
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
