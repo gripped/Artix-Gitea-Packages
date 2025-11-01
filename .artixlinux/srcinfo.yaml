@@ -1,10 +1,10 @@
 ---
-version: 4.20.5-1
+version: 4.20.5-2
 pkgbase:
   name: xfce4-panel
   pkgdesc: Panel for the Xfce desktop environment
   pkgver: 4.20.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/xfce/xfce4-panel/start
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 11a7f04d2d71c99a6298ab5c70bf3e54dfc868a3aabd5a0601bedf3f144bba7b
 pkgname:
   - name: xfce4-panel
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
