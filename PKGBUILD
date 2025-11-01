@@ -19,13 +19,9 @@ conflicts=(smtp-server smtp-forwarder)
 backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
 source=("git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=${pkgver}"
-        opensmtpd.sysusers
-        smtpd.service
-        smtpd.socket)
+        opensmtpd.sysusers)
 sha256sums=('10131c5cc2dfce51d520e6847cb43d08e0043d87fafeb74b3531ca617ab4aced'
-            '955e25043dbbc266a496db10c5d5f25f70d5342bba0550915932c04068a4ca01'
-            'abf5baeb2a87c60d668ad18ea41cc08cab7a4f76339dd6df05de15cdaadaf922'
-            '32d46de5562d01de445d04c93bcc9f94bf103539b676e449c32e3603a3866cf8')
+            '955e25043dbbc266a496db10c5d5f25f70d5342bba0550915932c04068a4ca01')
 install="${pkgname}.install"
 
 prepare() {
