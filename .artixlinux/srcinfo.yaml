@@ -1,0 +1,35 @@
+---
+version: 4.20.1-2
+pkgbase:
+  name: xfdesktop
+  pkgdesc: Xfce's desktop manager
+  pkgver: 4.20.1
+  pkgrel: 2
+  url: https://docs.xfce.org/xfce/xfdesktop/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - xfce4-dev-tools
+  depends:
+    - libxfce4ui
+    - libxfce4windowing
+    - libwnck3
+    - libyaml
+    - gtk-layer-shell
+    - exo
+    - thunar
+    - garcon
+    - hicolor-icon-theme
+  source:
+    - git+https://gitlab.xfce.org/xfce/xfdesktop.git#tag=xfdesktop-4.20.1
+  sha256sums:
+    - f19dca4adf0c82975b3c8ae58e8745e8d07b0328c603413ebf199e1e0ad37b99
+pkgname:
+  - name: xfdesktop
+# generated with artixpkg 0.37.4-1-any
