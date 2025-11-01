@@ -1,10 +1,10 @@
 ---
-version: 4.20.3-1
+version: 4.20.3-2
 pkgbase:
   name: xfce4-session
   pkgdesc: Xfce's session manager
   pkgver: 4.20.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/xfce/xfce4-session/start
   arch:
     - x86_64
@@ -45,4 +45,4 @@ pkgbase:
     - 74c94c5f7893d714e04ec7d8b8520c978a5748757a0cdcf5128492f09f31b643
 pkgname:
   - name: xfce4-session
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
