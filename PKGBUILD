@@ -2,7 +2,7 @@
 # Contributor: Kyle Keen <keenerd@gmail.com>
 
 pkgname=python-cwcwidth
-pkgver=0.1.10
+pkgver=0.1.11
 pkgrel=1
 pkgdesc="Python bindings for wc(s)width"
 arch=('x86_64')
@@ -18,7 +18,7 @@ makedepends=(
 )
 checkdepends=('python-pytest')
 source=("$url/archive/v$pkgver/${pkgname#python-}-$pkgver.tar.gz")
-sha256sums=('e397913df5eb7902488f609161584c51f3f545336d59d141007a9c2a23be520c')
+sha256sums=('d438e21e9f5ce4c690725134185a7cc244026c013ee306e2ff1cd2477a89ded0')
 
 build() {
   cd ${pkgname#python-}-$pkgver

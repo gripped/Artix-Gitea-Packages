@@ -1,0 +1,29 @@
+---
+version: 0.1.11-1
+pkgbase:
+  name: python-cwcwidth
+  pkgdesc: Python bindings for wc(s)width
+  pkgver: 0.1.11
+  pkgrel: 1
+  url: https://github.com/sebastinas/cwcwidth
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+  source:
+    - https://github.com/sebastinas/cwcwidth/archive/v0.1.11/cwcwidth-0.1.11.tar.gz
+  sha256sums:
+    - d438e21e9f5ce4c690725134185a7cc244026c013ee306e2ff1cd2477a89ded0
+pkgname:
+  - name: python-cwcwidth
+# generated with artixpkg 0.37.4-1-any
