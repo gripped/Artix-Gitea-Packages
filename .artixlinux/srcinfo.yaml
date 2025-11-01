@@ -1,9 +1,9 @@
 ---
-version: 2.3.0-1
+version: 2.3.1-1
 pkgbase:
   name: python-pyscard
   pkgdesc: Framework for building smart card aware applications in Python
-  pkgver: 2.3.0
+  pkgver: 2.3.1
   pkgrel: 1
   url: https://pyscard.sourceforge.io/
   arch:
@@ -17,14 +17,14 @@ pkgbase:
     - python
     - pcsclite
   source:
-    - https://downloads.sourceforge.net/project/pyscard/pyscard/pyscard%202.3.0/pyscard-2.3.0.tar.gz
-    - https://downloads.sourceforge.net/project/pyscard/pyscard/pyscard%202.3.0/pyscard-2.3.0.tar.gz.asc
+    - https://downloads.sourceforge.net/project/pyscard/pyscard/pyscard%202.3.1/pyscard-2.3.1.tar.gz
+    - https://downloads.sourceforge.net/project/pyscard/pyscard/pyscard%202.3.1/pyscard-2.3.1.tar.gz.asc
   validpgpkeys:
     - 535E3696356979F4932CB7443F4A8A8FE07F1CF9
     - F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E
   sha256sums:
-    - 621928e217e3b1d3c791086bf0c9f307fc4ae004a9b1a430536acc1a6eb50003
+    - a24356f57a0a950740b6e54f51f819edd5296ee8892a6625b0da04724e9e6c13
     - SKIP
 pkgname:
   - name: python-pyscard
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
