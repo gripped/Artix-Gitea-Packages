@@ -1,0 +1,53 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Kevin Piche <kevin@archlinux.org>
+# Contributor: Eddie Lozon <almostlucky@attbi.com>
+
+pkgname=pekwm
+pkgver=0.3.2
+pkgrel=3
+pkgdesc='Tabbed X11 window manager'
+arch=(x86_64)
+license=(GPL-2.0-or-later)
+url='https://github.com/pekdon/pekwm'
+makedepends=(cmake gendesk git)
+depends=(libjpeg-turbo libpng libxft libxinerama libxpm libxrandr)
+optdepends=('lxappearance: feature-rich GTK+ theme switcher'
+            'nitrogen: background browser and setter'
+            'tint2: basic, good-looking task manager')
+backup=(etc/pekwm/autoproperties
+        etc/pekwm/autoproperties_typerules
+        etc/pekwm/config
+        etc/pekwm/config_system
+        etc/pekwm/keys
+        etc/pekwm/menu
+        etc/pekwm/mouse
+        etc/pekwm/mouse_click
+        etc/pekwm/mouse_sloppy
+        etc/pekwm/mouse_system
+        etc/pekwm/start
+        etc/pekwm/vars)
+source=("git+$url#tag=release-$pkgver")
+b2sums=('34d543aef4ad8c78dfd3cf915fae14fbba0d7cc4294f754554c1fe677f12ef94b1cd4cac837cb2bc05fcaf25ac3516e225f819acb454a7eabbdca4c3e9f77543')
+
+prepare() {
+  gendesk -f -n --pkgname $pkgname --pkgdesc "$pkgdesc" --name PekWM
+  gendesk -f -n -wm --pkgname ${pkgname}_kdm --exec $pkgname --name PekWM
+}
+
+build() {
+  cmake \
+    -B build \
+    -D CMAKE_BUILD_TYPE=Release \
+    -D CMAKE_INSTALL_LIBDIR=lib \
+    -D CMAKE_INSTALL_PREFIX=/usr \
+    -S $pkgname \
+    -W no-dev
+  make -C build
+}
+
+package() {
+  DESTDIR="$pkgdir" make -C build install
+  install -Dm644 -t "$pkgdir/usr/share/xsessions" $pkgname.desktop
+  install -Dm644 -t "$pkgdir/usr/share/apps/kdm/sessions" ${pkgname}_kdm.desktop
+}
