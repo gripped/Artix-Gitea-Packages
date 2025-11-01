@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.142.4-1
+    version: 6.142.5-1
     packages:
-      - python-hypothesis-6.142.4-1-any.pkg.tar.zst
+      - python-hypothesis-6.142.5-1-any.pkg.tar.zst
     debug: []
   world:
     version: 6.142.3-1
