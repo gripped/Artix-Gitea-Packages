@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-5
+version: 2.4.0-1
 pkgbase:
   name: python-hvac
   pkgdesc: Python client for HashiCorp Vault
-  pkgver: 2.3.0
-  pkgrel: 5
+  pkgver: 2.4.0
+  pkgrel: 1
   url: https://python-hvac.org/
   arch:
     - any
@@ -32,9 +32,9 @@ pkgbase:
   optdepends:
     - 'python-pyhcl: for HCL parser'
   source:
-    - https://github.com/hvac/hvac/archive/v2.3.0/hvac-2.3.0.tar.gz
+    - https://github.com/hvac/hvac/archive/v2.4.0/hvac-2.4.0.tar.gz
   sha512sums:
-    - d08f7228ab57cd33428f530b14942dcf64b6efebe7589959f4ca3fc021f5da39af6441746417f80f7474d6a7bfb7a0ac94006a64ecf37967d4983698e95241f1
+    - 396759e83eab0a9a104720746418e052716e790a1515f4b25c2a0ceacad5592e33907076360e64aff8870e580f1b318b726f27e7ff3ff7f4b30a5ac8fb9babb6
 pkgname:
   - name: python-hvac
 # generated with artixpkg 0.37.4-1-any
