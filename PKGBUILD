@@ -5,7 +5,7 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=6.15.11.hardened1
+pkgver=6.16.12.hardened1
 pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
@@ -49,16 +49,16 @@ validpgpkeys=(
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('89ab469fc35bd9cbc6c5bf4e5cb802581806d5cbc14fb47e5c9edcc477e65d93'
+sha256sums=('7ca4debc5ca912ebb8a76944a5c118afd5d09e31ef43c494adb14273da29a26e'
             'SKIP'
-            'c08d876c103fc0e3742c0a2d163bc1a55567d2fd536ea8c5ad6618a17990d6f0'
+            '547063b6148d59e8463f7069e8304a1ddebf58a3ad49f460303cdbd502fcc8a6'
             'SKIP'
-            '57712bdf703b92a8072fcc88024a19cbce4468179e93a81f3bf30599d6ebfd44')
-b2sums=('8b2d96a3d76dbb0359c68b045d92f92274ec86df7bfc8c553a62194d9967e61995eed45c6765c0beae44df066c80b42ed1ec6ffee8aa89367864dadf50a43e43'
+            '4f548abc9fb6e0c5613ed7145542ac7676561ddba6974b6a7b6e77506738d7af')
+b2sums=('86d30cc03b13e13291c4f5e2da1087c5e6e4ef75513b26f89a1e2a4ed63c4d25fdb406b887ba1222a446f62b16fe2cccf7f4fa98778d5741e069b03a0d88d1fd'
         'SKIP'
-        '2322a8aeedeebd94543720b661d0db7887b1fe8dd619c587fefb3757ee612f67ed62d10746548530e9107a068504c5002f0f85b943c35fd575b02ee420978376'
+        'edb03015ed0dc2928b089ea1c45d9fe56a6b36c51fea442822a7342a8c3243c289961db03b0dbc98fc08cfc4c7bc4b25bbb10496aec3e5973f9dfaa04fef59b9'
         'SKIP'
-        '4f056ba0742bb2f4f157e8112c76503ba834b947403db5719c465be88e613989aae123171a11abc0c5019b35119b2b0c652928fd452dec47ceb9e030b92735ea')
+        '7a070cc75691b1a94afd53d5f45d8fe41c9f5c95b8fb89aa7a78ced609864bb3a2528c3a1506e9e0e757c171a17c39f6b70d73b9ad632b93d6784c84d74315b5')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
