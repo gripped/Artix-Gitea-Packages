@@ -1,9 +1,9 @@
 ---
-version: 2.25.0-1
+version: 2.25.1-1
 pkgbase:
   name: python-aiobotocore
   pkgdesc: asyncio support for botocore library using aiohttp
-  pkgver: 2.25.0
+  pkgver: 2.25.1
   pkgrel: 1
   url: https://github.com/aio-libs/aiobotocore
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - python-multidict
     - python-wrapt
   source:
-    - git+https://github.com/aio-libs/aiobotocore.git#tag=2.25.0
+    - git+https://github.com/aio-libs/aiobotocore.git#tag=2.25.1
   sha256sums:
-    - 7a1948bc5f179db7d4405aed9ae6fb981e19b6425507261ddc654579601a5677
+    - a4d87d8eeeb159c7198f00e453d55f35475a325410ec83ca7ef0cfb5c6a4e760
 pkgname:
   - name: python-aiobotocore
 # generated with artixpkg 0.37.4-1-any
