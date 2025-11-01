@@ -1,0 +1,29 @@
+---
+version: 2.0.2-1
+pkgbase:
+  name: lowdown
+  pkgdesc: A simple Markdown translator
+  pkgver: 2.0.2
+  pkgrel: 1
+  url: https://kristaps.bsd.lv/lowdown
+  arch:
+    - x86_64
+  license:
+    - ISC
+  makedepends:
+    - git
+    - bmake
+  depends:
+    - glibc
+    - libmd
+  provides:
+    - liblowdown.so
+  source:
+    - lowdown::git+https://github.com/kristapsdz/lowdown#tag=VERSION_2_0_2
+  sha512sums:
+    - 286a3dc516bc8049ba1a6cf90fe3c78ed9a053617148010947238dd47ac7812f97b96a4ee2dc7ae5d9898138d4df0c6a18e01962f9e9e2628f7156dfecc9814a
+  b2sums:
+    - 9891f9ffdf78922811f61620a7fcf9dd71d546026002d0bf5e9f179efff8fc63dfc002ce2dc7e02a053cb0c5225b91f16f2d950a995e84453311e4e2cd759064
+pkgname:
+  - name: lowdown
+# generated with artixpkg 0.37.4-1-any
