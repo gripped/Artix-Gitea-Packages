@@ -1,0 +1,29 @@
+---
+version: 0.6.4-2
+pkgbase:
+  name: lxappearance-gtk2
+  pkgdesc: Feature-rich GTK+ theme switcher of the LXDE Desktop, GTK2 version
+  pkgver: 0.6.4
+  pkgrel: 2
+  url: https://wiki.lxde.org/en/LXAppearance
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - git
+    - intltool
+    - dbus-glib
+  depends:
+    - gtk2
+  provides:
+    - lxappearance
+  conflicts:
+    - lxappearance
+  source:
+    - git+https://github.com/lxde/lxappearance.git#tag=0.6.4
+  sha256sums:
+    - 94e0a5b3e362c3b0323df3c6a672f5546eca6acd896dbe9708e16042df10fc24
+pkgname:
+  - name: lxappearance-gtk2
+# generated with artixpkg 0.37.4-1-any
