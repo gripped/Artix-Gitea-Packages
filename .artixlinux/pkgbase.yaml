@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.3.2-3
+    version: 0.3.3-1
     packages:
-      - lxrandr-gtk2-0.3.2-3-x86_64.pkg.tar.zst
+      - lxrandr-gtk2-0.3.3-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null

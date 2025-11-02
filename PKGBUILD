@@ -4,8 +4,8 @@
 
 _pkgname=lxrandr
 pkgname=$_pkgname-gtk2
-pkgver=0.3.2
-pkgrel=3
+pkgver=0.3.3
+pkgrel=1
 pkgdesc="Monitor configuration tool (part of LXDE), GTK2 version"
 arch=('x86_64')
 license=('GPL2')
