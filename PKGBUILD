@@ -44,5 +44,5 @@ build() {
 package() {
   cd $_pkgname
   make DESTDIR="$pkgdir" install
-  install -Dm644 ../$pkgname.appdata.xml "$pkgdir/usr/share/metainfo/$pkgname.appdata.xml"
+  install -Dm644 ../$_pkgname.appdata.xml "$pkgdir/usr/share/metainfo/$_pkgname.appdata.xml"
 }
