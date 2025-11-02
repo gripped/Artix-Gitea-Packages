@@ -5,33 +5,31 @@
 _name=knotifications
 pkgname=${_name}5
 pkgver=5.116.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Abstraction for system notifications'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
 depends=(libcanberra libdbusmenu-qt5 kwindowsystem5 kconfig5 kcoreaddons5 qt5-speech libxtst)
-makedepends=(extra-cmake-modules qt5-tools qt5-doc doxygen qt5-declarative)
+makedepends=(extra-cmake-modules qt5-declarative qt5-tools)
 optdepends=('qt5-declarative: QML bindings')
 conflicts=("$_name<5.111")
 replaces=("$_name<5.111")
 groups=(kf5)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$_name-$pkgver.tar.xz{,.sig}
-        knotifications5-nosni.patch::https://invent.kde.org/frameworks/knotifications/-/commit/1683edad6907bcce8a233acb09241ab33f5ce429.patch)
+        https://invent.kde.org/frameworks/knotifications/-/commit/1683edad.patch)
 sha256sums=('485930001af56d647825cb5b99a7693b70a3270b1b270b32224a5f81dc69b44b'
             'SKIP'
             'e6c78181c178d2d6395bc8175daf60a22276cfb956a3d092124eaa4f78f520cd')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB) # David Faure <faure@kde.org>
 
 prepare() {
-  cd $_name-$pkgver
-  patch -Np1 -i ../knotifications5-nosni.patch  # https://invent.kde.org/frameworks/knotifications/-/commit/1683edad6907bcce8a233acb09241ab33f5ce429
+  patch -d $_name-$pkgver -p1 < 1683edad.patch # Do not crash if KDE platform integration is loaded but SNI is unavailable
 }
 
 build() {
   cmake -B build -S $_name-$pkgver \
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_TESTING=OFF
   cmake --build build
 }
 
