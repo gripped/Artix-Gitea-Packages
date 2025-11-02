@@ -1,10 +1,10 @@
 ---
-version: 5.116.0-3
+version: 5.116.0-5
 pkgbase:
   name: kwallet5
   pkgdesc: Secure and unified container for user passwords
   pkgver: 5.116.0
-  pkgrel: 3
+  pkgrel: 5
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -14,17 +14,14 @@ pkgbase:
     - LGPL
   makedepends:
     - extra-cmake-modules
-    - kdoctools5
-    - boost
-    - doxygen
-    - qt5-tools
-    - qt5-doc
+    - kcoreaddons5
+    - ki18n5
   depends:
-    - knotifications5
-    - kservice5
-    - kconfigwidgets5
-    - gpgme
-    - qca-qt5
+    - gcc-libs
+    - glibc
+    - kconfig5
+    - kwindowsystem5
+    - qt5-base
   optdepends:
     - 'kwalletmanager: Configuration GUI'
   conflicts:
@@ -42,4 +39,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kwallet5
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
