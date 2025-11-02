@@ -1,10 +1,10 @@
 ---
-version: 6.5.1-1
+version: 6.5.1-2
 pkgbase:
   name: libplasma
   pkgdesc: Plasma library and runtime components
   pkgver: 6.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -13,12 +13,9 @@ pkgbase:
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - kdoctools
     - plasma-wayland-protocols
-    - qt6-doc
-    - qt6-tools
   depends:
     - gcc-libs
     - glibc
