@@ -3,7 +3,7 @@
 # Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
 
 _pkgname=lxrandr
-pkgname=$pkgname-gtk2
+pkgname=$_pkgname-gtk2
 pkgver=0.3.2
 pkgrel=3
 pkgdesc="Monitor configuration tool (part of LXDE), GTK2 version"
