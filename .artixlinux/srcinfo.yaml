@@ -1,10 +1,10 @@
 ---
-version: 0.4.8-1
+version: 0.4.8-1.1
 pkgbase:
   name: lxmusic-gtk2
   pkgdesc: Lightweight music player (XMMS2 client), GTK2 version
   pkgver: 0.4.8
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://lxde.org/
   arch:
     - x86_64

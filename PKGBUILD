@@ -6,7 +6,7 @@
 _pkgname=lxmusic
 pkgname=$_pkgname-gtk2
 pkgver=0.4.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Lightweight music player (XMMS2 client), GTK2 version'
 arch=('x86_64')
 url='https://lxde.org/'
@@ -58,5 +58,5 @@ build() {
 package() {
   cd $_pkgname
   make DESTDIR="$pkgdir" install
-  install -Dm644 ../$_pkgname.appdata.xml "$pkgdir/usr/share/metainfo/$pkgname.appdata.xml"
+  install -Dm644 ../$_pkgname.appdata.xml "$pkgdir/usr/share/metainfo/$_pkgname.appdata.xml"
 }
