@@ -1,0 +1,45 @@
+---
+version: 5.116.0-2
+pkgbase:
+  name: sonnet5
+  pkgdesc: Spelling framework for Qt5
+  pkgver: 5.116.0
+  pkgrel: 2
+  url: https://community.kde.org/Frameworks
+  arch:
+    - x86_64
+  groups:
+    - kf5
+  license:
+    - LGPL
+  makedepends:
+    - extra-cmake-modules
+    - qt5-declarative
+    - qt5-tools
+    - hunspell
+    - aspell
+    - hspell
+    - libvoikko
+  depends:
+    - qt5-base
+  optdepends:
+    - 'hunspell: spell checking via hunspell'
+    - 'aspell: spell checking via aspell'
+    - 'hspell: spell checking for Hebrew'
+    - 'libvoikko: Finnish support via Voikko'
+    - 'qt5-declarative: QML bindings'
+  conflicts:
+    - sonnet<5.111
+  replaces:
+    - sonnet<5.111
+  source:
+    - https://download.kde.org/stable/frameworks/5.116/sonnet-5.116.0.tar.xz
+    - https://download.kde.org/stable/frameworks/5.116/sonnet-5.116.0.tar.xz.sig
+  validpgpkeys:
+    - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
+  sha256sums:
+    - 98417080e742829794584a794995c4a08900d22e11b879cb8cc240323b1f4a4a
+    - SKIP
+pkgname:
+  - name: sonnet5
+# generated with artixpkg 0.37.4-1-any
