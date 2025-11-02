@@ -1,10 +1,10 @@
 ---
-version: 5.116.0-1.1
+version: 5.116.0-2
 pkgbase:
   name: kcrash5
   pkgdesc: Support for application crash analysis and bug report from apps
   pkgver: 5.116.0
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -14,12 +14,11 @@ pkgbase:
     - LGPL
   makedepends:
     - extra-cmake-modules
-    - doxygen
-    - qt5-tools
-    - qt5-doc
   depends:
     - kcoreaddons5
     - kwindowsystem5
+  optdepends:
+    - 'drkonqi: KDE crash handler application'
   conflicts:
     - kcrash<5.111
   replaces:
@@ -34,4 +33,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kcrash5
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
