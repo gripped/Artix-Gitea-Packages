@@ -1,0 +1,30 @@
+---
+version: 0.1.1-2.1
+pkgbase:
+  name: lxhotkey-gtk2
+  pkgdesc: Keyboard shortcuts configurator (part of LXDE), GTK2 version
+  pkgver: 0.1.1
+  pkgrel: 2.1
+  url: https://github.com/lxde/lxhotkey
+  arch:
+    - x86_64
+  groups:
+    - lxde-gtk2
+  license:
+    - GPL2
+  makedepends:
+    - intltool
+  depends:
+    - gtk2
+    - libfm
+  provides:
+    - lxhotkey
+  conflicts:
+    - lxhotkey
+  source:
+    - git+https://github.com/lxde/lxhotkey.git#tag=0.1.1
+  sha256sums:
+    - 24e60672c5baccfa0680469c95c905ff6edd7c1d7dcf91fe830a96d0c039e141
+pkgname:
+  - name: lxhotkey-gtk2
+# generated with artixpkg 0.37.4-1-any
