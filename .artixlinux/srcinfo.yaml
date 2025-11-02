@@ -1,10 +1,10 @@
 ---
-version: 6.5.1-1
+version: 6.5.1-2
 pkgbase:
   name: plasma5support
   pkgdesc: Support components for porting from KF5/Qt5 to KF6/Qt6
   pkgver: 6.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -13,12 +13,10 @@ pkgbase:
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - gpsd
     - networkmanager-qt
     - plasma-activities
-    - qt6-tools
   depends:
     - gcc-libs
     - glibc
