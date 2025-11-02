@@ -1,4 +1,4 @@
-# Maintainer: nous
+# Maintainer: nous at artixlinux
 # Maintainer: Nathan <ndowens@artixlinux.org>
 # Contributor: Bartłomiej Piotrowski <nospam@bpiotrowski.pl>
 # Contributor: Marcus Schulderinsky <mmaacceess at gmail dot com>
