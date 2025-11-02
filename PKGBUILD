@@ -10,7 +10,7 @@
 
 pkgname=blender
 pkgver=4.5.3
-pkgrel=6
+pkgrel=9
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -139,6 +139,9 @@ prepare() {
   git cherry-pick -n \
     ebfad2c071d712d126a5c3d93ebed8a226821feb \
     f5f30131131025a24be93eced7d04f9d96cf5cbf
+
+  # Fix build with opencolorio 2.5.0
+  git cherry-pick -n 98e400c3ae2fef75d2550a5fc1370d6e97ec9560
 }
 
 _get_pyver() {
