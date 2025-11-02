@@ -18,6 +18,7 @@ pkgbase:
     - kio5
     - kpackage5
     - libepoxy
+    - knotifications5
   conflicts:
     - kdeclarative<5.111
   replaces:
