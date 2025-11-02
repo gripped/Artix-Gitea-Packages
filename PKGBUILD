@@ -17,19 +17,17 @@ source=("git+https://github.com/lxde/lxhotkey.git#tag=$pkgver")
 sha256sums=('24e60672c5baccfa0680469c95c905ff6edd7c1d7dcf91fe830a96d0c039e141')
 
 prepare() {
-  cd $pkgbase-$pkgver
+  cd $_pkgname
   ./autogen.sh
 }
 
 build() {
-  # GTK+ 2 version
-  [ -d gtk2 ] || cp -r $pkgbase-$pkgver gtk2
-  cd gtk2
+  cd $_pkgname
   ./configure --sysconfdir=/etc --prefix=/usr --with-gtk=2
   make
 }
 
 package() {
-  cd gtk2
+  cd $_pkgname
   make DESTDIR="$pkgdir" install
 }
