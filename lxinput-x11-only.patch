@@ -37,3 +37,4 @@ index ee62cc8..84d7cae 100644
 +
      /* build the UI */
      builder = gtk_builder_new();
+ 
