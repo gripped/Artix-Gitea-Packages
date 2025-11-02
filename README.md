@@ -1,2 +1,2 @@
-# xarchiver-gtk2
+# xarchiver
 
