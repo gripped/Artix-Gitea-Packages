@@ -3,7 +3,7 @@
 # Contributor: Sébastien Luttringer
 
 pkgname=python-psutil
-pkgver=7.1.2
+pkgver=7.1.3
 pkgrel=1
 arch=('x86_64')
 pkgdesc='A cross-platform process and system utilities module for Python'
@@ -25,7 +25,7 @@ checkdepends=(
   'python-pytest'
 )
 source=("$url/archive/release-$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('5aac35506ca6a2794d5c27eed6717dfc1efe87fe4cad031a0249fa9a2dd27c14aef0a3568ff15dd4d077989c6afe34191f9ec466492a7d7ef9e3e7a92c374fcf')
+sha512sums=('5116dc812f701fd2d0eb7232f8c050d4c880d2a98e204c7bca33656241c48eb62e11a5604da62a122058d9cbdb8c46e6f2a59835630ddb7449c3594e011b5026')
 
 build() {
   cd psutil-release-$pkgver
