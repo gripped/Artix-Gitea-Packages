@@ -5,15 +5,14 @@
 _name=kio
 pkgname=${_name}5
 pkgver=5.116.0
-pkgrel=2
+pkgrel=4
 pkgdesc='Resource and network access abstraction'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
 license=(LGPL)
 depends=(solid5 kjobwidgets5 kbookmarks5 libxslt kwallet5 ktextwidgets5 kded5)
-makedepends=(extra-cmake-modules kdoctools5 doxygen qt5-tools qt5-doc)
+makedepends=(extra-cmake-modules qt5-tools)
 optdepends=('kio5-extras: extra protocols support (sftp, fish and more)'
-            'kdoctools5: for the help kioslave'
             'switcheroo-control: hybrid GPU support')
 conflicts=("$_name<5.111")
 replaces=("$_name<5.111")
@@ -27,8 +26,7 @@ build() {
   cmake -B build -S $_name-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DKF6_COMPAT_BUILD=ON \
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_TESTING=OFF
   cmake --build build
 }
 
