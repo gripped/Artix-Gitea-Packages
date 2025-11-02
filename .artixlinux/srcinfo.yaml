@@ -1,10 +1,10 @@
 ---
-version: 5.15.17+kde+r2-1
+version: 5.15.18+kde+r2-1
 pkgbase:
   name: qt5-imageformats
   pkgdesc:
     Plugins for additional image formats: TIFF, MNG, TGA, WBMP
-  pkgver: 5.15.17+kde+r2
+  pkgver: 5.15.18+kde+r2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - libmng
     - libwebp
   source:
-    - kde-qtimageformats::git+https://invent.kde.org/qt/qt/qtimageformats#commit=f86afca95741b9c06202fd13c2b8c01d922a0e24
+    - kde-qtimageformats::git+https://invent.kde.org/qt/qt/qtimageformats#commit=c91e4c63c1eaf1e23806d9df10e3d5a9ae353c1d
   sha256sums:
-    - 352195862b006c2843afe853652798cda6b89320cfa4b495acb2199893ec1e8a
+    - 546bf7cb83be9c369ac358cc9019227b47c515098e362284b1e02e9a8608b63b
 pkgname:
   - name: qt5-imageformats
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
