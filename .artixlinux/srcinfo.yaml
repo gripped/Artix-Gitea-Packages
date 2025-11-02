@@ -1,0 +1,28 @@
+---
+version: 20251102-1
+pkgbase:
+  name: lxdm-openrc
+  pkgdesc: OpenRC lxdm init script
+  pkgver: 20251102
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artixlinux/packages-openrc
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  depends:
+    - lxdm
+    - openrc
+  provides:
+    - init-displaymanager
+  conflicts:
+    - init-displaymanager
+  source:
+    - lxdm.initd
+  sha256sums:
+    - 57ec70f482e606961971978565fc268fba9388b277ce751c2d0a16f44d081e42
+pkgname:
+  - name: lxdm-openrc
+# generated with artixpkg 0.37.4-1-any
