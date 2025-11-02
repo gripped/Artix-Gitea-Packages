@@ -13,6 +13,7 @@ pkgbase:
   license:
     - GPL2
   makedepends:
+    - git
     - intltool
   depends:
     - gtk2

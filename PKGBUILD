@@ -10,7 +10,7 @@ license=('GPL2')
 groups=('lxde-gtk2')
 url='https://github.com/lxde/lxhotkey'
 depends=('gtk2' 'libfm')
-makedepends=('intltool')
+makedepends=('git' 'intltool')
 conflicts=($_pkgname)
 provides=($_pkgname)
 source=("git+https://github.com/lxde/lxhotkey.git#tag=$pkgver")
