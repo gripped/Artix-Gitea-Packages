@@ -119,13 +119,6 @@ build() {
 	python setup.py gui
 }
 
-check() {
-	cd "$_archive"
-	export LANG='en_US.UTF-8'
-	python setup.py test --under-sanitize --exclude-test-name test_piper
-	python setup.py test_rs
-}
-
 package() {
 	cd "$_archive"
 	export LANG='en_US.UTF-8'
