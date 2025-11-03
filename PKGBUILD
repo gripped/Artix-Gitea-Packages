@@ -3,7 +3,7 @@
 
 pkgname=ktextaddons
 pkgver=1.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Various text handling addons'
 arch=(x86_64)
 license=(GPL-2.0-or-later)
@@ -24,9 +24,7 @@ depends=(gcc-libs
          qtkeychain-qt6
          sonnet
          syntax-highlighting)
-makedepends=(doxygen
-             extra-cmake-modules
-             qt6-doc
+makedepends=(extra-cmake-modules
              qt6-tools)
 optdepends=('languagetool: Grammar checking'
             'grammalecte: French grammar checking'
@@ -39,8 +37,7 @@ validpgpkeys=(90A774939A973FF1ECC827788FFE4352ED54BB8A) # laurent Montel <montel
 build() {
   cmake -B build -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DBUILD_DESIGNERPLUGIN=ON \
-    -DBUILD_QCH=ON
+    -DBUILD_DESIGNERPLUGIN=ON
   cmake --build build
 }
 
