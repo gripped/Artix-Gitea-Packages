@@ -1,0 +1,36 @@
+---
+version: 5.4.0-1
+pkgbase:
+  name: ocaml
+  pkgdesc: A functional language with OO extensions
+  pkgver: 5.4.0
+  pkgrel: 1
+  url: https://caml.inria.fr/
+  arch:
+    - x86_64
+  license:
+    - LGPL2.1
+    - 'custom: QPL-1.0'
+  makedepends:
+    - ncurses>=5.6-7
+  optdepends:
+    - 'ncurses: advanced ncurses features'
+    - 'tk: advanced tk features'
+  options:
+    - '!makeflags'
+    - '!emptydirs'
+    - staticlibs
+  source:
+    - https://github.com/ocaml/ocaml/releases/download/5.4.0/ocaml-5.4.0.tar.gz
+  sha256sums:
+    - 6fcf1b192e389e54c4f5cb51306ab2baee2a54a25b1770366de5a8b42695996e
+pkgname:
+  - name: ocaml
+  - name: ocaml-compiler-libs
+    pkgdesc: Several modules used internally by the OCaml compiler
+    license:
+      - 'custom: QPL-1.0'
+    depends:
+      - ocaml
+    optdepends: []
+# generated with artixpkg 0.37.4-1-any
