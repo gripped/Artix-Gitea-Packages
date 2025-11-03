@@ -3,7 +3,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=consul
-pkgver=1.21.5
+pkgver=1.22.0
 pkgrel=1
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
@@ -11,7 +11,7 @@ url="https://www.consul.io"
 license=('BUSL-1.1')
 depends=('glibc')
 makedepends=('git' 'go' 'gox' 'go-tools')
-makedepends+=('procps-ng' 'zip' 'yarn' 'nodejs-lts-iron' 'npm')  # makedepends for the UI
+makedepends+=('procps-ng' 'zip' 'yarn' 'nodejs-lts-iron' 'pnpm')  # makedepends for the UI
 source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
         'consul.default'
         'consul.sysusers'
@@ -19,7 +19,7 @@ source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
         )
 install=consul.install
 backup=('etc/default/consul')
-sha512sums=('b6a64818909030a96d9c56690604ba0b8aaa0b99b21f947c1f16b9ee8b54eca1d885b122cf9b9b06895dc1ee81e0890c9984060d39c5e7404de6d94516b5c07e'
+sha512sums=('e25df49d2668f7fbc84d3b23cc9dd5ef5c9f7357406993b12b95809c1ea2e90fac3facae9e52044ed640ace29a3eff9a142689a1a1327f9ed647b77f674da5dc'
             'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
             'ef872aedb2bc022a29292b7972a792b22e684c1ccb904a2b2cfec6d8966c28fb19be1452ce060821c419f1b646b236ba2e783175595e4bb6926d164c27a15c87'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348')
