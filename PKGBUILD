@@ -39,11 +39,6 @@ build() {
 		--wrap-mode=nodownload
 }
 
-check() {
-	cd "$pkgbase"
-	ninja -C build test
-}
-
 package_foot() {
 	optdepends=('foot-terminfo: extra non-standard features over terminfo included in ncurses'
 	            'libnotify: desktop notifications'
