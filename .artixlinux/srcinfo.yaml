@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-3
+version: 0.14.0-4
 pkgbase:
   name: waybar
   pkgdesc: Highly customizable Wayland bar for Sway and Wlroots based compositors
   pkgver: 0.14.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/Alexays/Waybar/
   arch:
     - x86_64
