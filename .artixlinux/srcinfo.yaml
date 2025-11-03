@@ -1,10 +1,10 @@
 ---
-version: 3.20.2-1
+version: 3.20.2-2
 pkgbase:
   name: dune
   pkgdesc: A composable build system for OCaml (formerly jbuilder)
   pkgver: 3.20.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ocaml/dune
   arch:
     - x86_64
