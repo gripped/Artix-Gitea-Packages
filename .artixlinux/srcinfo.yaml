@@ -1,0 +1,28 @@
+---
+version: 1.0.3-1
+pkgbase:
+  name: python-inflate64
+  pkgdesc: decompression of deflate64, enhanced deflate and compression algorithm
+  pkgver: 1.0.3
+  pkgrel: 1
+  url: https://codeberg.org/miurahr/inflate64
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/i/inflate64/inflate64-1.0.3.tar.gz
+  sha256sums:
+    - a89edd416c36eda0c3a5d32f31ff1555db2c5a3884aa8df95e8679f8203e12ee
+pkgname:
+  - name: python-inflate64
+# generated with artixpkg 0.37.4-1-any
