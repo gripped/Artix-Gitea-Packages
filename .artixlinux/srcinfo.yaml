@@ -1,0 +1,85 @@
+---
+version: 1.2.3-2
+pkgbase:
+  name: ghostty
+  pkgdesc: Fast, native, feature-rich terminal emulator pushing modern features
+  pkgver: 1.2.3
+  pkgrel: 2
+  url: https://github.com/ghostty-org/ghostty
+  arch:
+    - x86_64
+    - aarch64
+    - i686
+  license:
+    - MIT
+  makedepends:
+    - blueprint-compiler
+    - pandoc-cli
+    - zig0.14
+  depends:
+    - bzip2
+    - fontconfig
+    - libfontconfig.so
+    - freetype2
+    - libfreetype.so
+    - gcc-libs
+    - glibc
+    - glib2
+    - libglib-2.0.so
+    - libgio-2.0.so
+    - libgobject-2.0.so
+    - gtk4
+    - libgtk-4.so
+    - gtk4-layer-shell
+    - libx11
+    - harfbuzz
+    - libharfbuzz.so
+    - libadwaita
+    - libadwaita-1.so
+    - libpng
+    - oniguruma
+    - pixman
+    - wayland
+    - libwayland-client.so
+    - zlib
+  source:
+    - https://github.com/ghostty-org/ghostty/archive/v1.2.3/ghostty-1.2.3.tar.gz
+  sha256sums:
+    - e17d39482fc70fba3d72f5f25c12e9d9a72b87dd45a61a854d9928e98b69edd8
+pkgname:
+  - name: ghostty
+    depends:
+      - bzip2
+      - fontconfig
+      - libfontconfig.so
+      - freetype2
+      - libfreetype.so
+      - gcc-libs
+      - glibc
+      - glib2
+      - libglib-2.0.so
+      - libgio-2.0.so
+      - libgobject-2.0.so
+      - gtk4
+      - libgtk-4.so
+      - gtk4-layer-shell
+      - libx11
+      - harfbuzz
+      - libharfbuzz.so
+      - libadwaita
+      - libadwaita-1.so
+      - libpng
+      - oniguruma
+      - pixman
+      - wayland
+      - libwayland-client.so
+      - zlib
+      - ghostty-shell-integration
+      - ghostty-terminfo
+  - name: ghostty-shell-integration
+    pkgdesc: Shell integration scripts for ghostty
+    depends: []
+  - name: ghostty-terminfo
+    pkgdesc: Terminfo for ghostty
+    depends: []
+# generated with artixpkg 0.37.4-1-any
