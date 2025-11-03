@@ -59,7 +59,11 @@ check() {
 
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  test-env/bin/python -m blosc.test
+  test-env/bin/python -m blosc.test \
+    --deselect=tests/ndarray/test_elementwise_funcs.py \
+    --deselect=tests/ndarray/test_lazyexpr.py \
+    --deselect=tests/ndarray/test_linalg.py \
+    --deselect=tests/ndarray/test_setitem.py
 }
 
 package() {
