@@ -1,0 +1,29 @@
+---
+version: 0.2.3-9
+pkgbase:
+  name: python-multivolumefile
+  pkgdesc: Multi volume file wrapper library
+  pkgver: 0.2.3
+  pkgrel: 9
+  url: https://github.com/miurahr/multivolume
+  arch:
+    - any
+  license:
+    - LGPL
+  checkdepends:
+    - python-pytest
+    - python-hypothesis
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/m/multivolumefile/multivolumefile-0.2.3.tar.gz
+  sha256sums:
+    - a0648d0aafbc96e59198d5c17e9acad7eb531abea51035d08ce8060dcad709d6
+pkgname:
+  - name: python-multivolumefile
+# generated with artixpkg 0.37.4-1-any
