@@ -3,7 +3,7 @@
 
 pkgname=kitinerary
 pkgver=25.08.2
-pkgrel=6
+pkgrel=6.1
 pkgdesc='Data model and extraction system for travel reservation information'
 arch=(x86_64)
 url='https://kontact.kde.org'

@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 25.08.2-4
+    version: 25.08.2-6.1
     packages:
-      - kitinerary-25.08.2-4-x86_64.pkg.tar.zst
+      - kitinerary-25.08.2-6.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
