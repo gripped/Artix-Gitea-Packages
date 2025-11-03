@@ -3,7 +3,7 @@
 
 pkgname=kmbox
 pkgver=25.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for accessing mail storages in MBox format'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -12,10 +12,7 @@ depends=(gcc-libs
          glibc
          kmime
          qt6-base)
-makedepends=(doxygen
-             extra-cmake-modules
-             qt6-doc
-             qt6-tools)
+makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('2889b033804b9bbbc4ce89c91263f1d661e65195fd3e7cb029ccdaeaf2e1b92b'
             'SKIP')
@@ -25,8 +22,7 @@ validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aac
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
-    -DBUILD_TESTING=OFF \
-    -DBUILD_QCH=ON
+    -DBUILD_TESTING=OFF
   cmake --build build
 }
 
