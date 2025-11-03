@@ -1,0 +1,45 @@
+---
+version: 1.28.0-4
+pkgbase:
+  name: caja
+  pkgdesc: File manager for the MATE desktop
+  pkgver: 1.28.0
+  pkgrel: 4
+  url: https://mate-desktop.org
+  arch:
+    - x86_64
+  groups:
+    - mate
+  license:
+    - GPL-2.0-or-later AND LGPL-2.0-or-later
+  makedepends:
+    - autoconf-archive
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - intltool
+    - mate-common
+    - python-packaging
+  depends:
+    - exempi
+    - gvfs
+    - libexif
+    - libsm
+    - mate-desktop
+    - libnotify
+    - gtk-layer-shell
+  optdepends:
+    - 'gstreamer: automatic media playback when mouseover'
+  conflicts:
+    - caja-gtk3
+  replaces:
+    - caja-gtk3
+  source:
+    - git+https://github.com/mate-desktop/caja.git#tag=v1.28.0
+    - git+https://github.com/mate-desktop/mate-submodules.git
+  sha256sums:
+    - 1d3387cdf0acc9d7c01a563143ab91e097e8201a183a0fcece37beb03e0009f6
+    - SKIP
+pkgname:
+  - name: caja
+# generated with artixpkg 0.37.4-1-any
