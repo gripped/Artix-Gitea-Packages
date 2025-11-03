@@ -1,21 +1,17 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: akonadi-mime
   pkgdesc: Libraries and daemons to implement basic email handling
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://kontact.kde.org
   arch:
     - x86_64
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
-    - kdoctools5
-    - qt6-doc
-    - qt6-tools
   depends:
     - gcc-libs
     - glibc
