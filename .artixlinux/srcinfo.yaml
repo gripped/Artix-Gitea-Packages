@@ -1,9 +1,9 @@
 ---
-version: 0.14.0-1
+version: 0.14.3-1
 pkgbase:
   name: ruff
   pkgdesc: An extremely fast Python linter, written in Rust
-  pkgver: 0.14.0
+  pkgver: 0.14.3
   pkgrel: 1
   url: https://github.com/astral-sh/ruff
   arch:
@@ -21,11 +21,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/astral-sh/ruff.git#tag=0.14.0
+    - git+https://github.com/astral-sh/ruff.git#tag=0.14.3
   sha512sums:
-    - e5d9afc212c5a15317fc858f5ab3943b187a5d9b577c59774e117a0ab67555a4a9e4b901def66b7acb26f9acd2a295afb028355e4da4d883eef301d099a410a9
+    - 5472efc0b9b9e2612ec32b03de764805929355598d2101b49c5a2c213a05acb8ef5cf0ab2e8663f411b8d33997d27b2d036fd21d641c8bda9d6f4d0d215c7654
   b2sums:
-    - 9a16d3419df8cf8de4d8782271d475db2d02a94f4d7ba7649891ec3d3bae3366005a93eed6227b5d156a83fc16aa81cb8b9a0e97d08346f9307953fb48ee27e6
+    - 5a6d23f3f14f78905ada26e26267d4e5e33675358b6e08f36799190a55c74636925948203943f502fe0070a0d49af9a04d78b2ccc285e3ce51d092e17af4de57
 pkgname:
   - name: ruff
   - name: python-ruff
