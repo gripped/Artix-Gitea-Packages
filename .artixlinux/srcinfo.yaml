@@ -1,0 +1,43 @@
+---
+version: 1.0.0-1
+pkgbase:
+  name: python-py7zr
+  pkgdesc: Pure python 7-zip library
+  pkgver: 1.0.0
+  pkgrel: 1
+  url: https://github.com/miurahr/py7zr
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - p7zip
+    - python-requests
+    - python-py-cpuinfo
+    - python-pytest-benchmark
+    - python-pytest-httpserver
+    - python-pytest-timeout
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python
+    - python-brotli
+    - python-brotlicffi
+    - python-psutil
+    - python-multivolumefile
+    - python-pybcj
+    - python-pycryptodomex
+    - python-pyppmd
+    - python-pyzstd
+    - python-texttable
+    - python-inflate64
+  source:
+    - https://files.pythonhosted.org/packages/source/p/py7zr/py7zr-1.0.0.tar.gz
+  sha256sums:
+    - f6bfee81637c9032f6a9f0eb045a4bfc7a7ff4138becfc42d7cb89b54ffbfef1
+pkgname:
+  - name: python-py7zr
+# generated with artixpkg 0.37.4-1-any
