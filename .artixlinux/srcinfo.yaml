@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: rocs
   pkgdesc: Graph Theory IDE
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/rocs/
   arch:
     - x86_64
@@ -17,7 +17,6 @@ pkgbase:
   makedepends:
     - boost
     - extra-cmake-modules
-    - kdoctools5
   depends:
     - gcc-libs
     - glibc
