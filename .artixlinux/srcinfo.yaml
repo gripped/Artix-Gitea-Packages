@@ -1,21 +1,19 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: kpublictransport
   pkgdesc: Library to assist with accessing public transport timetables and other data
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kde.org
   arch:
     - x86_64
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - kirigami-addons
     - protobuf
-    - qt6-tools
   depends:
     - gcc-libs
     - glibc
