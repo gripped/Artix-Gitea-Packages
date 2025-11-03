@@ -1,0 +1,45 @@
+---
+version: 1.5.2-1
+pkgbase:
+  name: dav1d
+  pkgdesc: AV1 cross-platform decoder focused on speed and correctness
+  pkgver: 1.5.2
+  pkgrel: 1
+  url: https://code.videolan.org/videolan/dav1d
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  makedepends:
+    - doxygen
+    - glibc
+    - graphviz
+    - meson
+    - nasm
+    - ninja
+    - xxhash
+  source:
+    - https://downloads.videolan.org/pub/videolan/dav1d/1.5.2/dav1d-1.5.2.tar.xz
+    - https://downloads.videolan.org/pub/videolan/dav1d/1.5.2/dav1d-1.5.2.tar.xz.asc
+    - https://code.videolan.org/videolan/dav1d-test-data/-/archive/1.5.2/dav1d-test-data-1.5.2.tar.gz
+  validpgpkeys:
+    - 65F7C6B4206BD057A7EB73787180713BE58D1ADC
+  sha512sums:
+    - c648425994bf77d6916ec34f2b5dfa6c596138984ca186d723c5dee3d183bbe034c144088c048506582aaaf537f3b730ab1b531364c3b4a5c980f6bd3e454daf
+    - SKIP
+    - 2e577eef19954845d7174dc05c1e29e58f80313f43044f8db15d171772d43bf9cf85f1f70a957a525d977f6ac803aff54cb8243f54e17c1cc4e40dcd9f9fb8b3
+  b2sums:
+    - 1a7aef083622f5d0fae1d4e16c9e2cf142fd00c072fb891c4790b9166c7e9f184e5cca8718eb0eacf70e86b63a1cc9fdadb1e66bf14b42a3b291485612d3c38b
+    - SKIP
+    - a59e705ecac035862bd74500c40a9d6263b984ea5f7959cbe85041df5d666a9d0a7ccd1e2643fe4bf5261dceb78dc6016020bcd3f60532f5a076f354e270a70c
+pkgname:
+  - name: dav1d
+    depends:
+      - glibc
+    optdepends:
+      - 'dav1d-doc: HTML documentation'
+    provides:
+      - libdav1d.so
+  - name: dav1d-doc
+    pkgdesc: AV1 cross-platform decoder focused on speed and correctness (documentation)
+# generated with artixpkg 0.37.4-1-any
