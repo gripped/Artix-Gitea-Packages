@@ -5,7 +5,7 @@
 # Contributor: Francois Boulogne <fboulogne at april dot org>
 
 pkgname=glances
-pkgver=4.3.3
+pkgver=4.4.0
 pkgrel=1
 pkgdesc="CLI curses-based monitoring tool"
 url="https://nicolargo.github.io/glances"
@@ -26,9 +26,9 @@ optdepends=('hddtemp: HDD temperature monitoring support'
 backup=("etc/${pkgname}/${pkgname}.conf")
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz"
         'disable_update_check.patch')
-sha512sums=('8783d06002e0560e54f77a0cc239dc31382d640ca0ceb99ba025fe7a9b6c103475c44e1992b977aa33a0c4d1ac1568373bcf23732938f3edef20a91e1fb25add'
+sha512sums=('4cfc6bb86e4e6cb36190f9e4034c461d595bae4b102f3c51757691d2e5db3e1852952644f19eabe6e4c78fdf4a10e88feef1e73f4cbde4ed2186a2f609afcde5'
             'debe0bdd62fae124d17e559476327db22f916e5f0b3186b0ba0bc6254437617285b455ead961edb5c9654d42236db56c302a0c750dce4a8446611b8a3fe2c175')
-b2sums=('7d5a28c6b2200b54f0e97062463f253efd99ce45dc50e22caf5d866d7d5bb94707e164bf9308a72565caf3a6da1f47a4b12a6eef7de299d2b9da5cda57a0cd11'
+b2sums=('5723c2bb81fbdeb439915c5d10756a3992621a4fc2c4efb7f13d62056a867cf59e65a0eff38e5eaa5837859ad6018cda00f718224286b36db12b21c15d28b383'
         '574d49f96729e698de77868d74812f0efd9861043f25a8f473431440654481f60fcce9f1c457f1900651b157d94f67835c67b548a4bc1957c9123d41e0a9b0a1')
 
 prepare() {
