@@ -1,0 +1,33 @@
+---
+version: 1.3.0-1
+pkgbase:
+  name: gtk4-layer-shell
+  pkgdesc: Library to create panels and other desktop components for Wayland
+  pkgver: 1.3.0
+  pkgrel: 1
+  url: https://github.com/wmww/gtk4-layer-shell
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - lua51-lgi
+  makedepends:
+    - gtk-doc
+    - gobject-introspection
+    - meson
+    - ninja
+    - valabind
+    - python
+    - luajit
+    - wayland-protocols
+  depends:
+    - gtk4
+    - wayland
+  source:
+    - gtk4-layer-shell-1.3.0.tar.gz::https://github.com/wmww/gtk4-layer-shell/archive/v1.3.0.tar.gz
+  sha256sums:
+    - 1ebb01ab14e98afd1727f68f64981c37bd23305b1f131f5667c02b94cf593192
+pkgname:
+  - name: gtk4-layer-shell
+# generated with artixpkg 0.37.4-1-any
