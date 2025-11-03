@@ -1,0 +1,34 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Yen Chi Hsuan <yan12125 at gmail.com>
+# Contributor: rich_o <rich_o@lavabit.com>
+# Contributor: Jason St. John <jstjohn .. purdue . edu>
+# Contributor: Daniel YC Lin <dlin.tw at gmail>
+
+pkgname=python-texttable
+pkgver=1.7.0
+pkgrel=3
+pkgdesc="Generate a formatted text table using ASCII characters"
+arch=('any')
+url="https://pypi.python.org/pypi/texttable/"
+license=('LGPL')
+depends=('python')
+optdepends=('python-cjkwrap: for better CJK support')
+makedepends=('python-cjkwrap' 'python-setuptools')
+checkdepends=('python-pytest')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/foutaise/texttable/archive/v$pkgver.tar.gz")
+sha512sums=('30b99abe0448fd4ab7a0ef70f5762a388978c2c09acd843e0a669a7870b6b73df8bc638e94853d77186df104bfa2d689f8b72d11df90b6844355ae0b38f6e549')
+
+build() {
+  cd texttable-$pkgver
+  python setup.py build
+}
+
+check() {
+  cd texttable-$pkgver
+  pytest tests.py
+}
+
+package() {
+  cd texttable-$pkgver
+  python setup.py install --root="$pkgdir" --optimize=1
+}
