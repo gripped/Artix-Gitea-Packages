@@ -1,0 +1,29 @@
+---
+version: 1.0.6-1
+pkgbase:
+  name: python-pybcj
+  pkgdesc: BCJ (Branch-Call-Jump) filter for python
+  pkgver: 1.0.6
+  pkgrel: 1
+  url: https://codeberg.org/miurahr/pybcj
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  checkdepends:
+    - python-pytest
+    - python-hypothesis
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/p/pybcj/pybcj-1.0.6.tar.gz
+  sha256sums:
+    - 70bbe2dc185993351955bfe8f61395038f96f5de92bb3a436acb01505781f8f2
+pkgname:
+  - name: python-pybcj
+# generated with artixpkg 0.37.4-1-any
