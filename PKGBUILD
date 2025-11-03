@@ -5,7 +5,7 @@
 
 pkgname=grub-btrfs
 pkgver=4.14
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Include btrfs snapshots in GRUB boot options'
 arch=('any')
 url="https://github.com/Antynea/${pkgname}"
@@ -22,6 +22,6 @@ b2sums=('361fabb41e603f84af096925db7498e24ff68436b9f32cc6d1fe81dd4db58826d020521
 package() {
     cd "${pkgname}-${pkgver}"
     make DESTDIR="${pkgdir}" INITCPIO=true install
+    rm -rf "../../pkg/grub-btrfs/usr/lib/systemd"
 }
-
 # vim:set ts=4 sw=4 et:
