@@ -1,0 +1,29 @@
+---
+version: 1.5-15
+pkgbase:
+  name: ocaml-result
+  pkgdesc: Compatibility Result module
+  pkgver: 1.5
+  pkgrel: 15
+  url: https://github.com/janestreet/result
+  arch:
+    - i686
+    - x86_64
+    - armv7h
+  license:
+    - BSD
+  makedepends:
+    - ocaml-findlib
+    - dune
+  depends:
+    - ocaml
+  options:
+    - '!strip'
+    - '!debug'
+  source:
+    - https://github.com/janestreet/result/archive/1.5.tar.gz
+  sha256sums:
+    - 1072a8b0b35bd6df939c0670add33027f981e4f69a53233cb006b442fa12af30
+pkgname:
+  - name: ocaml-result
+# generated with artixpkg 0.37.4-1-any
