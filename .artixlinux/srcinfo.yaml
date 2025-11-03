@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: kdenlive
   pkgdesc: A non-linear video editor for Linux using the MLT video framework
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kdenlive/
   arch:
     - x86_64
@@ -14,11 +14,9 @@ pkgbase:
   license:
     - GPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - imath
     - kdoctools
-    - qt6-tools
   depends:
     - ffmpeg
     - frei0r-plugins
