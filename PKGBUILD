@@ -12,7 +12,7 @@ license=(GPL-2.0-only)
 depends=(sh)
 makedepends=(git)
 source=(git+https://github.com/danielrobbins/keychain#tag=$pkgver)
-sha256sums=('890c2dd5236eb4f25921bc2e371cbb5ff2a227e72481cf2fdc72599a8c744443')
+sha256sums=('5cf08d62acfc08a8213d7a94a28beecf6204db67d57d36c2dfda08fdd944a5a8')
 
 build() {
   cd $pkgname
