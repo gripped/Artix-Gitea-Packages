@@ -1,0 +1,99 @@
+---
+version: 8.7.0-4
+pkgbase:
+  name: calibre
+  pkgdesc: Ebook management application
+  pkgver: 8.7.0
+  pkgrel: 4
+  url: https://calibre-ebook.com
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  checkdepends:
+    - poppler
+    - python-fonttools
+    - speech-dispatcher
+    - tk
+  makedepends:
+    - cmake
+    - pyqt-builder
+    - rapydscript-ng
+    - sip
+    - xdg-utils
+  depends:
+    - hunspell
+    - hyphen
+    - icu
+    - jxrlib
+    - libmtp
+    - libstemmer
+    - libusb
+    - libwmf
+    - mtdev
+    - optipng
+    - podofo
+    - python-apsw
+    - python-beautifulsoup4
+    - python-css-parser
+    - python-cssselect
+    - python-dateutil
+    - python-dnspython
+    - python-faust-cchardet
+    - python-feedparser
+    - python-html2text
+    - python-html5-parser
+    - python-jeepney
+    - python-lxml
+    - python-lxml-html-clean
+    - python-markdown
+    - python-mechanize
+    - python-msgpack
+    - python-netifaces
+    - python-pdftotext
+    - python-pillow
+    - python-psutil
+    - python-py7zr
+    - python-pychm
+    - python-pycryptodome
+    - python-pygments
+    - python-pykakasi
+    - python-pyqt6
+    - python-pyqt6-webengine
+    - python-regex
+    - python-unrardll
+    - python-xxhash
+    - python-zeroconf
+    - python-zstandard
+    - qt6-imageformats
+    - qt6-multimedia
+    - qt6-speech
+    - qt6-svg
+    - qt6-webengine
+    - ttf-liberation
+    - uchardet
+    - udisks2
+    - zstd
+  optdepends:
+    - 'poppler: required for converting pdf to html'
+    - 'python-fonttools: required for font subset feature in epub editor'
+    - 'speech-dispatcher: TTS support in the viewer'
+  conflicts:
+    - calibre-common
+    - calibre-python3
+  replaces:
+    - calibre-common
+    - calibre-python3
+  source:
+    - https://download.calibre-ebook.com/8.7.0/calibre-8.7.0.tar.xz
+    - https://calibre-ebook.com/signatures/calibre-8.7.0.tar.xz.sig
+    - qt-6.10.patch
+  validpgpkeys:
+    - 3CE1780F78DD88DF45194FD706BC317B515ACE7C
+  sha256sums:
+    - 2cfe587e3773d8607fe8bbefbcd77b5cfb816124cac89e491353deb8f2fa9324
+    - SKIP
+    - 5b1b0b0d60400727136e929b941bac0b32125c9636600c2f9ec1a1d7fd74db64
+pkgname:
+  - name: calibre
+# generated with artixpkg 0.37.4-1-any
