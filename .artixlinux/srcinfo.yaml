@@ -1,10 +1,10 @@
 ---
-version: 0.16.1-3
+version: 0.16.1-4
 pkgbase:
   name: ocamlbuild
   pkgdesc: Build tool that has built-in rules for building OCaml libraries and programs
   pkgver: 0.16.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/ocaml/ocamlbuild
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - ffd0dbe8421e3ec5eabb3e6ee3844c3ad22d77d4eb0d5e34dd7a8be722b78c146fc5762c16047b7050d9ce547815a58cec6091a15e783e157b1d38c2c3787b5f
 pkgname:
   - name: ocamlbuild
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
