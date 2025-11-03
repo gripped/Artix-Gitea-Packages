@@ -1,10 +1,10 @@
 ---
-version: 5.116.0-4
+version: 5.116.0-5
 pkgbase:
   name: kio5
   pkgdesc: Resource and network access abstraction
   pkgver: 5.116.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -19,10 +19,10 @@ pkgbase:
     - solid5
     - kjobwidgets5
     - kbookmarks5
-    - libxslt
     - kwallet5
     - ktextwidgets5
     - kded5
+    - knotifications5
   optdepends:
     - 'kio5-extras: extra protocols support (sftp, fish and more)'
     - 'switcheroo-control: hybrid GPU support'
