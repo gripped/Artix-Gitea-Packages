@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: umbrello
   pkgdesc: UML modeller
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/umbrello/
   arch:
     - x86_64
@@ -14,9 +14,7 @@ pkgbase:
   license:
     - GPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
-    - kdoctools5
   depends:
     - gcc-libs
     - glibc
