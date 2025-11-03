@@ -1,0 +1,26 @@
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Erik Reider <erik.reider@protonmail.com>
+
+pkgname=swaync
+_pkgname=SwayNotificationCenter
+pkgver=0.12.2
+pkgrel=2
+pkgdesc="A simple GTK based notification daemon for Sway"
+url="https://github.com/ErikReider/SwayNotificationCenter"
+arch=('x86_64')
+license=('GPL-3.0-only')
+depends=('gtk4' 'gtk4-layer-shell' 'libadwaita' 'glib2' 'libgee' 'json-glib' 'libpulse' 'granite7')
+makedepends=('vala' 'meson' 'git' 'scdoc' 'sassc' 'gobject-introspection' 'blueprint-compiler')
+optdepends=('gvfs: Get album art in MPRIS widget')
+source=("${_pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
+sha256sums=('c440223f199b4f0d28e2434f879a2ad2103cb6aaac670313434b05926707535e')
+
+build() {
+	artix-meson "${_pkgname}-${pkgver}" build -Dscripting=true
+	ninja -C build
+}
+
+package() {
+	DESTDIR="${pkgdir}" ninja -C build install
+	install -Dm 644 "${_pkgname}-${pkgver}/README.md" "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+}

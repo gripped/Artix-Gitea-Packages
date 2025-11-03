@@ -1,0 +1,38 @@
+---
+version: 0.12.2-2
+pkgbase:
+  name: swaync
+  pkgdesc: A simple GTK based notification daemon for Sway
+  pkgver: 0.12.2
+  pkgrel: 2
+  url: https://github.com/ErikReider/SwayNotificationCenter
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - vala
+    - meson
+    - git
+    - scdoc
+    - sassc
+    - gobject-introspection
+    - blueprint-compiler
+  depends:
+    - gtk4
+    - gtk4-layer-shell
+    - libadwaita
+    - glib2
+    - libgee
+    - json-glib
+    - libpulse
+    - granite7
+  optdepends:
+    - 'gvfs: Get album art in MPRIS widget'
+  source:
+    - SwayNotificationCenter-0.12.2.tar.gz::https://github.com/ErikReider/SwayNotificationCenter/archive/v0.12.2.tar.gz
+  sha256sums:
+    - c440223f199b4f0d28e2434f879a2ad2103cb6aaac670313434b05926707535e
+pkgname:
+  - name: swaync
+# generated with artixpkg 0.37.4-1-any
