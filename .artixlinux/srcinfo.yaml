@@ -1,10 +1,10 @@
 ---
-version: 1:0.26.24-1
+version: 1:0.26.24-2
 pkgbase:
   name: okteta
   pkgdesc: KDE hex editor for viewing and editing the raw data of files
   pkgver: 0.26.24
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://apps.kde.org/okteta/
   arch:
@@ -14,7 +14,6 @@ pkgbase:
     - LGPL-3.0-only
   makedepends:
     - extra-cmake-modules
-    - kdoctools5
     - qt5-tools
   depends:
     - gcc-libs
