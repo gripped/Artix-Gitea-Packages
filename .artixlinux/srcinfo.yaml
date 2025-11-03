@@ -1,26 +1,24 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: akonadi
   pkgdesc: PIM layer, which provides an asynchronous API to access all kind of PIM data
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://kontact.kde.org
   arch:
     - x86_64
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - postgresql
-    - qt6-doc
-    - qt6-tools
     - kaccounts-integration
     - kconfigwidgets
     - kiconthemes
     - kitemmodels
     - kxmlgui
+    - qt6-tools
   depends:
     - gcc-libs
     - glibc
