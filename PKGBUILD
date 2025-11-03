@@ -4,7 +4,7 @@
 pkgname=krita
 _pkgver=5.2.13
 pkgver=${_pkgver/-/}
-pkgrel=2
+pkgrel=3
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
@@ -51,7 +51,6 @@ makedepends=(boost
              eigen
              extra-cmake-modules
              immer
-             kdoctools5
              kseexpr
              lager
              libheif
