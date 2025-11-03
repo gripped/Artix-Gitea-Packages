@@ -4,7 +4,7 @@
 
 pkgname=just
 pkgver=1.43.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A handy way to save and run project-specific commands"
 arch=("x86_64")
 url="https://github.com/casey/just"
