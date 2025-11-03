@@ -1,0 +1,32 @@
+---
+version: 0.23.0-3
+pkgbase:
+  name: ocaml-ctypes
+  pkgdesc: Library for binding to C libraries using pure OCaml
+  pkgver: 0.23.0
+  pkgrel: 3
+  url: https://github.com/ocamllabs/ocaml-ctypes
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - ocaml-findlib
+    - ocaml-compiler-libs
+    - dune
+  depends:
+    - ocaml
+    - libffi
+    - ocaml-integers
+    - ocaml-bigarray-compat
+  options:
+    - '!strip'
+    - '!makeflags'
+    - '!debug'
+  source:
+    - ocaml-ctypes-0.23.0.tar.gz::https://github.com/yallop/ocaml-ctypes/archive/refs/tags/0.23.0.tar.gz
+  sha512sums:
+    - 0c287cd3162d092b37bd6d4b24c196d41c93b792c4aa77938fde60f5dbc7eedde588097493a645af9bffc0ed722eadd0fa90e04b04d5e36e78e6467ae9e4baf8
+pkgname:
+  - name: ocaml-ctypes
+# generated with artixpkg 0.37.4-1-any
