@@ -1,0 +1,33 @@
+---
+version: 0.4.0-2
+pkgbase:
+  name: kdsoap-ws-discovery-client
+  pkgdesc: WS-Discovery client library based on KDSoap
+  pkgver: 0.4.0
+  pkgrel: 2
+  url: https://caspermeijn.gitlab.io/kdsoap-ws-discovery-client/
+  arch:
+    - x86_64
+  license:
+    - CC0-1.0
+    - GPL-3.0-or-later
+  makedepends:
+    - doxygen
+    - extra-cmake-modules
+    - qt6-tools
+  depends:
+    - gcc-libs
+    - glibc
+    - kdsoap-qt6
+    - qt6-base
+  source:
+    - https://download.kde.org/stable/kdsoap-ws-discovery-client/kdsoap-ws-discovery-client-0.4.0.tar.xz
+    - https://download.kde.org/stable/kdsoap-ws-discovery-client/kdsoap-ws-discovery-client-0.4.0.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+  sha256sums:
+    - 2cd247c013e75f410659bac372aff93d22d71c5a54c059e137b9444af8b3427a
+    - SKIP
+pkgname:
+  - name: kdsoap-ws-discovery-client
+# generated with artixpkg 0.37.4-1-any
