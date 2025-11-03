@@ -1,0 +1,34 @@
+---
+version: 0.14.1-2
+pkgbase:
+  name: zig0.14
+  pkgdesc: a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software
+  pkgver: 0.14.1
+  pkgrel: 2
+  url: https://ziglang.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - lib32-glibc
+  makedepends:
+    - cmake
+    - llvm19
+  depends:
+    - clang19
+    - lld19
+    - llvm19-libs
+  conflicts:
+    - zig
+  options:
+    - '!lto'
+  source:
+    - https://ziglang.org/download/0.14.1/zig-0.14.1.tar.xz
+    - skip-localhost-test.patch
+  sha256sums:
+    - 237f8abcc8c3fd68c70c66cdbf63dce4fb5ad4a2e6225ac925e3d5b4c388f203
+    - eeb5f0f72035c52bf558ffc77a171a3ddf93eac7d663ef0c82826007763717a8
+pkgname:
+  - name: zig0.14
+# generated with artixpkg 0.37.4-1-any
