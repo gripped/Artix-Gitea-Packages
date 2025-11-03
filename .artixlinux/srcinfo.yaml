@@ -1,21 +1,18 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: kidentitymanagement
   pkgdesc: Library to assist in handling user identities
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://kontact.kde.org
   arch:
     - x86_64
   license:
     - LGPL-2.0-or-later
   makedepends:
-    - doxygen
     - extra-cmake-modules
     - kirigami-addons
-    - qt6-doc
-    - qt6-tools
   depends:
     - gcc-libs
     - glibc
