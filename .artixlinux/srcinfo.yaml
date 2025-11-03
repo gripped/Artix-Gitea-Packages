@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-1
+version: 25.08.2-2
 pkgbase:
   name: akonadi-search
   pkgdesc: Libraries and daemons to implement searching in Akonadi
   pkgver: 25.08.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://kontact.kde.org
   arch:
     - x86_64
@@ -13,10 +13,7 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - corrosion
-    - doxygen
     - extra-cmake-modules
-    - qt6-doc
-    - qt6-tools
   depends:
     - akonadi-mime
     - gcc-libs
