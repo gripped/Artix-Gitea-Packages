@@ -1,0 +1,26 @@
+---
+version: 1.1.1-2
+pkgbase:
+  name: menu-cache
+  pkgdesc: Caching mechanism for freedesktop.org compliant menus
+  pkgver: 1.1.1
+  pkgrel: 2
+  url: https://github.com/lxde/menu-cache
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - gtk-doc
+  depends:
+    - glib2
+    - glibc
+    - libfm-extra
+  source:
+    - git+https://github.com/lxde/menu-cache.git#tag=1.1.1
+  b2sums:
+    - bf9b2f53b4bd519b25536f4167c764a39ddd851de203c062b7bb2bd2cb5a01f8df6e99987dd856107e0e4aca2ce82eef4892c8a893cf87dfb7c08e1d5bba049a
+pkgname:
+  - name: menu-cache
+# generated with artixpkg 0.37.4-1-any
