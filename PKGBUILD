@@ -3,7 +3,7 @@
 
 pkgname=libe-book
 pkgver=0.1.3
-pkgrel=18.1
+pkgrel=19
 pkgdesc="Library for import of reflowable e-book formats."
 arch=('x86_64')
 url="https://sourceforge.net/projects/libebook/"
@@ -21,6 +21,7 @@ sha256sums=('7e8d8ff34f27831aca3bc6f9cc532c2f90d2057c778963b884ff3d1e34dfe1f9'
 prepare() {
   cd "${pkgname}"-${pkgver}
   patch -Np0 -i ../icu68.patch
+  autoreconf -vfi
 }
 
 build() {
