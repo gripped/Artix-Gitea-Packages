@@ -1,0 +1,34 @@
+---
+version: 0.1.4-18
+pkgbase:
+  name: libmspub
+  pkgdesc: Microsoft Publisher file format parser library (latest snapshot)
+  pkgver: 0.1.4
+  pkgrel: 18
+  url: https://wiki.documentfoundation.org/DLP/Libraries/libmspub
+  arch:
+    - x86_64
+  license:
+    - MPL-2.0
+  makedepends:
+    - libwpg
+    - boost
+    - doxygen
+  depends:
+    - libwpd
+    - icu
+    - librevenge
+    - zlib
+    - gcc-libs
+    - glibc
+  source:
+    - https://dev-www.libreoffice.org/src/libmspub/libmspub-0.1.4.tar.xz
+    - buildfix.diff
+    - includes.patch
+  sha256sums:
+    - ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba
+    - be1a871f9ebfb15d989605137d5de0c5dc67a3e383e0e1178037f8a9bdfc89dc
+    - a075c4592392a1df559ceac5b5d310707626ec474a906f92ed0f6b7ccd036938
+pkgname:
+  - name: libmspub
+# generated with artixpkg 0.37.4-1-any
