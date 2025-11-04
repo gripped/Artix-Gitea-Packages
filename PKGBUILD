@@ -10,7 +10,7 @@ pkgname=(
   libxml2-docs
 )
 pkgver=2.15.1
-pkgrel=1
+pkgrel=2
 pkgdesc="XML C parser and toolkit"
 url="https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home"
 arch=(x86_64)
@@ -18,7 +18,7 @@ license=(MIT)
 depends=(
   bash
   glibc
-  icu
+  #icu
   readline
   zlib
 )
@@ -45,7 +45,7 @@ prepare() {
 
 build() {
   local meson_options=(
-    -D icu=enabled
+    -D icu=disabled
     -D legacy=enabled
   )
 
