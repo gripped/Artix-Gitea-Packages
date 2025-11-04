@@ -1,10 +1,10 @@
 ---
-version: 5.15.18+kde+r109-1
+version: 5.15.18+kde+r109-2
 pkgbase:
   name: qt5-base
   pkgdesc: A cross-platform application and UI framework
   pkgver: 5.15.18+kde+r109
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
