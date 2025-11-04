@@ -1,0 +1,40 @@
+---
+version: 1.37-7
+pkgbase:
+  name: postgrey
+  pkgdesc: a Postfix policy server implementing greylisting
+  pkgver: 1.37
+  pkgrel: 7
+  url: https://postgrey.schweikert.ch/
+  arch:
+    - any
+  license:
+    - GPL
+  depends:
+    - perl
+    - perl-berkeleydb
+    - perl-io-multiplex
+    - perl-net-server
+    - perl-netaddr-ip
+  optdepends:
+    - 'postfix: the recommended MTA for use with postgrey'
+    - 'exim: an alternative MTA'
+    - 'perl-net-dns: for postgreyreport tool'
+  options:
+    - emptydirs
+  backup:
+    - etc/postfix/postgrey_whitelist_recipients
+    - etc/postfix/postgrey_whitelist_clients
+  source:
+    - https://postgrey.schweikert.ch//pub/postgrey-1.37.tar.gz
+    - postgrey.sysusers
+    - postgrey.tmpfiles
+    - untaint.patch
+  sha256sums:
+    - ff4d9543f8f5cb0356c30ffe22255d942ac6128da734c376de211c02630fa5f7
+    - ec45fc69a301ed69290a4b779ad66062e5dbc7ab868609c552dc729d7292254c
+    - 089a597a8faa92c9f910c00398f0ecb77b6573307fdb7c1989138d9af7c95ed0
+    - e5f80653c02681b54f28051104f1ce45991b014a86965610611b1b4921284bd7
+pkgname:
+  - name: postgrey
+# generated with artixpkg 0.37.4-1-any
