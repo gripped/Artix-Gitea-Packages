@@ -1,10 +1,10 @@
 ---
-version: 5.15.18+kde+r7-1
+version: 5.15.18+kde+r7-2
 pkgbase:
   name: qt5-location
   pkgdesc: Provides access to position, satellite and area monitoring classes
   pkgver: 5.15.18+kde+r7
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
