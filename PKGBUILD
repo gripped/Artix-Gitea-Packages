@@ -6,12 +6,9 @@
 pkgname=grub
 pkgdesc='GNU GRand Unified Bootloader (2)'
 epoch=2
-_pkgver=2.12
-_unifont_ver=17.0.01
-#pkgver=${_pkgver/-/}
-# the pkgver for git master is generated with:
-# git describe --abbrev=8 | sed 's|grub-||;s|-|.r|;s|-|.|'
-pkgver=2.12.r418.g6b5c671d
+_pkgver=2.14-rc1
+_unifont_ver=17.0.03
+pkgver=${_pkgver/-/}
 pkgrel=2
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
@@ -88,19 +85,20 @@ source=(
   grub.default
   sbat.csv
 )
-b2sums=('a6cec7271c3ea54a99f02ee6bc0a5825c8be657af68ba9a32b39a5fe8bcb571fb1ba39210426f6bf6a48d913e6e00df37dc2123ea1b39330f4c47bd9dbac9ae3'
+b2sums=('576ced94c759e6eecf8a35caff1375b5dbff62c2f956e29a3e035a138b0bbc1a6df22928b92207848045d7779300993f1252f2eaebee35f48c5a02a062742ef9'
         'SKIP'
-        'a57d4d749f88af67c4e59eb8f95e0350f395e950db1670667be15adae2e22471af44e4f2a2dd2375b63dc4a37660812ee1a1fb2ef80cfdda51f74dda17ad14d5'
+        'b824e469522adeb5780a2976f45b262c335fdfb142b638f915bdc309e932c7a0f7bfbdd8731cf84b5e19b5e0cae2a5ca1754a580e8dae7603f907f94bceec397'
         'SKIP'
         '992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b'
         'b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3'
         'a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c'
         'cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc'
         'e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a')
+
 _backports=(
-  # current git master for loads of security fixes
-  # https://lists.gnu.org/archive/html/grub-devel/2025-02/msg00024.html
-  "grub-${_pkgver}..6b5c671d35b1b84468da1fef2b9bd8e05682f7e6"
+)
+
+_reverts=(
 )
 
 prepare() {
