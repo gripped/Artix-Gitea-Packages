@@ -4,7 +4,7 @@
 
 pkgname=python-cheroot
 pkgdesc="Highly-optimized, pure-python HTTP server"
-pkgver=11.1.0
+pkgver=11.1.1
 pkgrel=1
 arch=(any)
 url="https://github.com/cherrypy/cheroot"
@@ -40,8 +40,8 @@ checkdepends=(
 )
 optdepends=('python-pyopenssl: for SSL and certificate handling within cheroot')
 source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('f353547d15864aeec4b0a260f0a49151e9c44d1b8f071b6252c54368693edc2fef9841729ec64adc542760219393205890434f877f7840136a7a5bcc185396b2')
-b2sums=('64ac38f30358729101549ea373a0cdbd12ae7c969dc716e573cf54d1e415ef48915937cc850620ebf80112672f6b2192a45651a2045b3f4fe881d42e60bb87de')
+sha512sums=('59599d2f260397875d4ae077991c5c490014cd6e9cfde95e93c1c110492fae988b53497009313d46beb609f14e5297d33865bd07666cde05c43fa44ca57e8daf')
+b2sums=('f5ac4679ce38114c656a442ffbb544638dca7852aaa76ebe1b213a6029c26c449d38e8ca9a094778b10b83a1e80cc08b0153d57abb703b028e0e07d95d52e491')
 
 build() {
   cd ${pkgname#python-}-$pkgver
