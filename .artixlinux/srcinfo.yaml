@@ -1,10 +1,10 @@
 ---
-version: 0.14.3-1
+version: 0.14.3-2
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
   pkgver: 0.14.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://gstreamer.freedesktop.org/
   arch:
     - x86_64
@@ -55,7 +55,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-hlssink3=0.14.3-1
+      - gst-plugin-hlssink3=0.14.3-2
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -259,7 +259,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-textwrap=0.14.3-1
+      - gst-plugin-textwrap=0.14.3-2
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -352,7 +352,7 @@ pkgname:
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-rsrtp=0.14.3-1
+      - gst-plugin-rsrtp=0.14.3-2
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
