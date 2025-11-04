@@ -1,16 +1,17 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 6.17.0-2
+    packages:
+      - xfsprogs-6.17.0-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null

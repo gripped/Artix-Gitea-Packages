@@ -1,10 +1,10 @@
 ---
-version: 6.17.0-1
+version: 6.17.0-2
 pkgbase:
   name: xfsprogs
   pkgdesc: XFS filesystem utilities
   pkgver: 6.17.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://xfs.wiki.kernel.org
   arch:
     - x86_64
