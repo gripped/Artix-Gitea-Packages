@@ -1,0 +1,35 @@
+---
+version: 3.0.20-3
+pkgbase:
+  name: libical
+  pkgdesc: An open source reference implementation of the icalendar data type and serialization format
+  pkgver: 3.0.20
+  pkgrel: 3
+  url: https://github.com/libical/libical
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+    - MPL-2.0
+  checkdepends:
+    - python-gobject
+  makedepends:
+    - cmake
+    - ninja
+    - gtk-doc
+    - doxygen
+    - vala
+    - gobject-introspection
+  depends:
+    - glibc
+    - gcc-libs
+    - glib2
+    - icu
+    - libxml2
+  source:
+    - libical-3.0.20.tar.gz::https://github.com/libical/libical/archive/v3.0.20.tar.gz
+  sha512sums:
+    - 2506320240ba0e4287b6ef1b90b653eacd51105d392b91f8c772f3b0745fecbf55eecfe81f89413cc56106b71ccca780754df31f5190ffce6c372126e27bf1da
+pkgname:
+  - name: libical
+# generated with artixpkg 0.37.4-1-any
