@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.50.1-2
+    packages:
+      - webkitgtk-6.0-2.50.1-2-x86_64.pkg.tar.zst
+      - webkitgtk-6.0-docs-2.50.1-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
