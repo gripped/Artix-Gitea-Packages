@@ -1,9 +1,9 @@
 ---
-version: 2025.2-2
+version: 2025.2-3
 pkgbase:
   name: texlive-bin
   pkgver: 2025.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://tug.org/texlive/
   arch:
     - x86_64
@@ -103,4 +103,4 @@ pkgname:
       - zlib
     provides:
       - libsynctex.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
