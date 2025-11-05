@@ -1,10 +1,10 @@
 ---
-version: 1:46.0-6
+version: 1:46.0-7
 pkgbase:
   name: geary
   pkgdesc: A lightweight email client for the GNOME desktop
   pkgver: 46.0
-  pkgrel: 6
+  pkgrel: 7
   epoch: 1
   url: https://wiki.gnome.org/Apps/Geary
   arch:
@@ -63,4 +63,4 @@ pkgbase:
     - 7e424cc2f5964390881aefdc6becf527a1e7e05f4edaac373149a73a20b22605d907bb465a0da7456431b2bd6dbb4e1dfe85dccbb5fc8a50e2cee2ea3f335e32
 pkgname:
   - name: geary
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
