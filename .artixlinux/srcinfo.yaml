@@ -1,10 +1,10 @@
 ---
-version: a27.1-4
+version: a27.1-5
 pkgbase:
   name: 0ad
   pkgdesc: Cross-platform, 3D and historically-based real-time strategy game
   pkgver: a27.1
-  pkgrel: 4
+  pkgrel: 5
   url: http://play0ad.com/
   arch:
     - x86_64
