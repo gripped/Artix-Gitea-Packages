@@ -1,10 +1,10 @@
 ---
-version: 0.1.10-1
+version: 0.1.10-2
 pkgbase:
   name: libvisio
   pkgdesc: Library providing ability to interpret and import visio diagrams
   pkgver: 0.1.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.documentfoundation.org/DLP/Libraries/libvisio
   arch:
     - x86_64
