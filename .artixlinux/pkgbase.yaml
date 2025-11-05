@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.0.0.20170311-49
+    version: 5.0.0.20170311-50
     packages:
-      - qt5-styleplugins-5.0.0.20170311-49-x86_64.pkg.tar.zst
+      - qt5-styleplugins-5.0.0.20170311-50-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
