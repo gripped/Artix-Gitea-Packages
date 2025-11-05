@@ -1,10 +1,10 @@
 ---
-version: 2.50.1-1
+version: 2.50.1-2
 pkgbase:
   name: webkit2gtk
   pkgdesc: Web content engine for GTK
   pkgver: 2.50.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://webkitgtk.org
   arch:
     - x86_64
