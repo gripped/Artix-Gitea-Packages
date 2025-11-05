@@ -1,10 +1,10 @@
 ---
-version: 0.82.1-1
+version: 0.82.1-2
 pkgbase:
   name: vte3
   pkgdesc: Virtual Terminal Emulator widget
   pkgver: 0.82.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Terminal/VTE
   arch:
     - x86_64
