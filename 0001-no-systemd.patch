@@ -1,66 +1,27 @@
-From 472974cd8b0949c9d955592527b6e3490cc701f3 Mon Sep 17 00:00:00 2001
+From c1621a30348fcf15647ad4c29f549667cfe5d6c3 Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Sun, 5 May 2024 15:34:35 +0200
-Subject: [PATCH 1/1] no systemd patch
+Date: Wed, 5 Nov 2025 17:54:49 +0100
+Subject: [PATCH 1/1] no systemd
 
 ---
- Makefile            |  13 +---
- hooks/resume        |   7 --
- hooks/udev          |   6 +-
- init_functions      |  10 ---
- install/lvm2        |   6 +-
- install/mdadm_udev  |   3 -
- install/resume      |   7 --
- install/sd-encrypt  |  66 -----------------
- install/sd-shutdown |  19 -----
- install/sd-vconsole | 119 ------------------------------
- install/systemd     | 176 --------------------------------------------
- install/udev        |   4 +-
- mkinitcpio          |   2 +-
- 13 files changed, 8 insertions(+), 430 deletions(-)
- delete mode 100644 install/sd-encrypt
+ hooks/resume              |   7 ---
+ init_functions            |  10 ----
+ install/lvm2              |   6 +-
+ install/mdadm_udev        |   3 -
+ install/resume            |   7 ---
+ install/sd-encrypt-opensc |  48 ---------------
+ install/sd-shutdown       |  19 ------
+ install/sd-vconsole       | 119 --------------------------------------
+ install/sd-verity         |  38 ------------
+ install/sd-volatile       |  22 -------
+ mkinitcpio                |   7 ++-
+ 11 files changed, 7 insertions(+), 279 deletions(-)
+ delete mode 100644 install/sd-encrypt-opensc
  delete mode 100644 install/sd-shutdown
  delete mode 100644 install/sd-vconsole
- delete mode 100644 install/systemd
+ delete mode 100644 install/sd-verity
+ delete mode 100644 install/sd-volatile
 
-diff --git a/Makefile b/Makefile
-index 0feb3a3..48dac8e 100644
---- a/Makefile
-+++ b/Makefile
-@@ -26,12 +26,6 @@ DIRS = \
- 	/usr/share/libalpm/hooks \
- 	/usr/share/libalpm/scripts
- 
--SHUTDOWN_DIRS = \
--	/usr/lib/systemd/system/poweroff.target.wants \
--	/usr/lib/systemd/system/halt.target.wants \
--	/usr/lib/systemd/system/reboot.target.wants \
--	/usr/lib/systemd/system/kexec.target.wants
--
- ALL_SCRIPTS=$(shell grep -rIlE '^#! */.+[ /](bash|ash|sh|bats)' --exclude-dir=".git" ./)
- 
- all: doc
-@@ -42,7 +36,7 @@ MANPAGES = \
- 	man/lsinitcpio.1
- 
- prepare:
--	install -dm755 $(addprefix $(DESTDIR),$(DIRS)) $(addprefix $(DESTDIR),$(SHUTDOWN_DIRS))
-+	install -dm755 $(addprefix $(DESTDIR),$(DIRS))
- 
- 	sed -e 's|\(^_f_config\)=.*|\1=/etc/mkinitcpio.conf|' \
- 	    -e 's|\(^_f_functions\)=.*|\1=/usr/lib/initcpio/functions|' \
-@@ -75,11 +69,6 @@ install-generator: all prepare
- 	cp -at $(DESTDIR)/usr/lib/initcpio hooks install
- 	install -m644 -t $(DESTDIR)/usr/share/mkinitcpio mkinitcpio.d/*
- 
--	install -m644 systemd/mkinitcpio-generate-shutdown-ramfs.service \
--		$(DESTDIR)/usr/lib/systemd/system/mkinitcpio-generate-shutdown-ramfs.service
--	for target in $(addprefix $(DESTDIR),$(SHUTDOWN_DIRS)); do \
--		ln -s ../mkinitcpio-generate-shutdown-ramfs.service -t $$target || exit; \
--	done
- 	install -m644 tmpfiles/mkinitcpio.conf $(DESTDIR)/usr/lib/tmpfiles.d/mkinitcpio.conf
- 
- 	install -m755 kernel-install/50-mkinitcpio.install $(DESTDIR)/usr/lib/kernel/install.d/50-mkinitcpio.install
 diff --git a/hooks/resume b/hooks/resume
 index 2a58c4f..6a63a96 100644
 --- a/hooks/resume
@@ -79,26 +40,6 @@ index 2a58c4f..6a63a96 100644
      resume="$(getarg resume)"
      if [ -z "$resume" ]; then
          err 'resume: no device specified for hibernation'
-diff --git a/hooks/udev b/hooks/udev
-index c6760fc..72ef811 100644
---- a/hooks/udev
-+++ b/hooks/udev
-@@ -3,12 +3,12 @@
- run_earlyhook() {
-     local quiet
-     kmod static-nodes --format=tmpfiles --output=/run/tmpfiles.d/kmod.conf
--    systemd-tmpfiles --prefix=/dev --create --boot
-+    etmpfiles --prefix=/dev --create --boot
-     quiet="$(getarg quiet)"
-     if [ "${quiet}" = "y" ]; then
--        /usr/lib/systemd/systemd-udevd --daemon --resolve-names=never >/dev/null 2>&1
-+        /usr/bin/udevd --daemon --resolve-names=never >/dev/null 2>&1
-     else
--        /usr/lib/systemd/systemd-udevd --daemon --resolve-names=never
-+        /usr/bin/udevd --daemon --resolve-names=never
-     fi
-     # used externally by poll_device()
-     # shellcheck disable=SC2034
 diff --git a/init_functions b/init_functions
 index 1260f84..e4456c7 100644
 --- a/init_functions
@@ -121,11 +62,11 @@ index 1260f84..e4456c7 100644
  }
  
 diff --git a/install/lvm2 b/install/lvm2
-index e900f09..8a34cd0 100644
+index 0c2e456..90d7ceb 100644
 --- a/install/lvm2
 +++ b/install/lvm2
-@@ -35,11 +35,7 @@ build() {
-         '/usr/lib/initcpio/udev/11-dm-initramfs.rules'
+@@ -34,11 +34,7 @@ build() {
+         '95-dm-notify.rules'
  
      # this udev rule is specific for systemd and non-systemd systems
 -    if declare -F add_systemd_unit &>/dev/null; then
@@ -152,7 +93,7 @@ index 1b4e45d..7c2b1a8 100644
  
  help() {
 diff --git a/install/resume b/install/resume
-index 0dcd6a3..97fb9ec 100644
+index 4d9622e..97fb9ec 100644
 --- a/install/resume
 +++ b/install/resume
 @@ -6,13 +6,6 @@ build() {
@@ -160,7 +101,7 @@ index 0dcd6a3..97fb9ec 100644
      map add_module 'crypto-lzo' 'crypto-lz4'
  
 -    if command -v systemctl &>/dev/null; then
--        IFS=' .-~^' read -r _ systemd_ver _ < <(systemctl --version)
+-        IFS=' .-~^' read -r _ systemd_ver _ < <(SYSTEMD_COLORS=0 systemctl --version)
 -        if (( systemd_ver >= 255 )); then
 -            add_binary /usr/lib/systemd/systemd-hibernate-resume
 -        fi
@@ -169,53 +110,18 @@ index 0dcd6a3..97fb9ec 100644
      add_runscript
  }
  
-diff --git a/install/sd-encrypt b/install/sd-encrypt
+diff --git a/install/sd-encrypt-opensc b/install/sd-encrypt-opensc
 deleted file mode 100644
-index 5bdcbbf..0000000
---- a/install/sd-encrypt
+index 5177f2d..0000000
+--- a/install/sd-encrypt-opensc
 +++ /dev/null
-@@ -1,66 +0,0 @@
--#!/bin/bash
+@@ -1,48 +0,0 @@
+-#!/usr/bin/bash
 -
 -build() {
--    local mod
+-    add_binary '/usr/lib/cryptsetup/libcryptsetup-token-systemd-pkcs11.so'
 -
--    map add_module 'dm-crypt' 'dm-integrity' 'hid-generic?'
--    if [[ -n "$CRYPTO_MODULES" ]]; then
--        for mod in $CRYPTO_MODULES; do
--            add_module "$mod"
--        done
--    else
--        add_all_modules '/crypto/'
--    fi
--    add_checked_modules '/drivers/char/tpm/'
--
--    map add_udev_rule \
--        '10-dm.rules' \
--        '13-dm-disk.rules' \
--        '60-fido-id.rules' \
--        '95-dm-notify.rules' \
--        '/usr/lib/initcpio/udev/11-dm-initramfs.rules'
--
--    map add_systemd_unit 'cryptsetup.target' \
--        'systemd-ask-password-console.path' \
--        'systemd-ask-password-console.service'
--    map add_binary \
--        '/usr/lib/systemd/system-generators/systemd-cryptsetup-generator' \
--        '/usr/lib/systemd/systemd-cryptsetup' \
--        '/usr/lib/systemd/systemd-makefs' \
--        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-fido2.so' \
--        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-pkcs11.so' \
--        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-tpm2.so'
--
--    # cryptsetup calls pthread_create(), which dlopen()s libgcc_s.so.1
--    add_binary '/usr/lib/libgcc_s.so.1'
--
--    # cryptsetup loads the legacy provider which is required for whirlpool
--    add_binary '/usr/lib/ossl-modules/legacy.so'
--
--    # add libraries dlopen()ed by systemd-cryptsetup
--    LC_ALL=C.UTF-8 find /usr/lib/ -maxdepth 1 -name "libfido2.so*" | while read -r FILE; do
+-    for FILE in /usr/lib/libp11-kit.so* /usr/lib/libpcsclite.so* /usr/lib/libpcsclite_real.so*; do
 -        if [[ -L "${FILE}" ]]; then
 -            add_symlink "${FILE}"
 -        else
@@ -223,24 +129,41 @@ index 5bdcbbf..0000000
 -        fi
 -    done
 -
--    # add mkswap for creating swap space on the fly (see 'swap' in crypttab(5))
--    add_binary 'mkswap'
+-    printf 'module: opensc-pkcs11.so\n' | add_file - '/usr/share/p11-kit/modules/opensc.module' 644
 -
--    [[ -f /etc/crypttab.initramfs ]] && add_file '/etc/crypttab.initramfs' '/etc/crypttab'
+-    add_binary '/usr/lib/pkcs11/opensc-pkcs11.so'
+-
+-    add_systemd_unit 'pcscd.service'
+-    printf '%s\n' \
+-        '[Unit]' \
+-        'DefaultDependencies=no' \
+-        '[Service]' \
+-        'ExecStart=' \
+-        'ExecStart=/usr/bin/pcscd --foreground --disable-polkit' \
+-    | add_systemd_drop_in 'pcscd.service' 'mkinitcpio'
+-
+-    add_systemd_unit 'pcscd.socket'
+-    printf '[Unit]\nDefaultDependencies=no\n' | add_systemd_drop_in 'pcscd.socket' 'mkinitcpio'
+-
+-    # pcscd.socket -> cryptsetup-pre.target -> systemd-cryptsetup@.service -> cryptsetup.target
+-    add_systemd_unit 'cryptsetup-pre.target'
+-    add_symlink '/usr/lib/systemd/system/cryptsetup-pre.target.wants/pcscd.socket' '/usr/lib/systemd/system/pcscd.socket'
+-    add_symlink '/usr/lib/systemd/system/cryptsetup.target.wants/cryptsetup-pre.target' '/usr/lib/systemd/system/cryptsetup-pre.target'
+-
+-    add_file '/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist'
+-    add_binary '/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Linux/libccid.so'
 -}
 -
 -help() {
 -    cat <<HELPEOF
--This hook allows for an encrypted root device with systemd initramfs.
+-This hook allows systemd to unlock LUKS2 volumes with the OpenSC PKCS#11 module and CCID driver.
 -
--See the manpage of systemd-cryptsetup-generator(8) for available kernel
--command line options. Alternatively, if the file /etc/crypttab.initramfs
--exists, it will be added to the initramfs as /etc/crypttab. See the
--crypttab(5) manpage for more information on crypttab syntax.
+-The full list of supported devices is available on [1], but be aware that the device may require a different PC/SC driver. Information about some drivers is available on [2].
+-
+-[1] https://github.com/OpenSC/OpenSC/wiki/Supported-hardware-%28smart-cards-and-USB-tokens%29
+-[2] https://github.com/OpenSC/OpenSC/wiki/Smart-card-readers-%28Linux-and-Mac-OS-X%29
 -HELPEOF
 -}
--
--# vim: set ft=sh ts=4 sw=4 et:
 diff --git a/install/sd-shutdown b/install/sd-shutdown
 deleted file mode 100644
 index f8aad2e..0000000
@@ -391,217 +314,96 @@ index 8291329..0000000
 -}
 -
 -# vim: set ft=sh ts=4 sw=4 et:
-diff --git a/install/systemd b/install/systemd
+diff --git a/install/sd-verity b/install/sd-verity
 deleted file mode 100644
-index 98f78b5..0000000
---- a/install/systemd
+index e944137..0000000
+--- a/install/sd-verity
 +++ /dev/null
-@@ -1,176 +0,0 @@
+@@ -1,38 +0,0 @@
 -#!/bin/bash
 -
--add_systemd_unit() {
--    # Add a systemd unit file to the initcpio image. Hard dependencies on binaries
--    # and other unit files will be discovered and added.
--    #   $1: path to rules file (or name of rules file)
--
--    local unit key dep
--
--    unit=$(PATH=/usr/lib/systemd/system:/lib/systemd/system type -P "$1")
--    if [[ -z $unit ]]; then
--        # complain about not found unit file
--        return 1
--    fi
--
--    add_file "$unit"
--
--    while IFS='=' read -r key values; do
--        read -ra values <<< "$values"
--
--        case $key in
--            Requires|OnFailure)
--                # only add hard dependencies (not Wants)
--                map add_systemd_unit "${values[@]}"
--                ;;
--            Exec*)
--                # do not add binaries unless they are required,
--                # strip special executable prefixes
--                case ${values[0]} in
--                    -*)  ;;
--                    !!*) add_binary "${values[0]#!!}" ;;
--                    *)   add_binary "${values[0]#[@!:+]}" ;;
--                esac
--                ;;
--        esac
--
--    done <"$unit"
--
--    # preserve reverse soft dependency
--    for dep in {/usr,}/lib/systemd/system/*.wants/"${unit##*/}"; do
--        if [[ -L $dep ]]; then
--            add_symlink "$dep"
--        fi
--    done
--
--    # add hard dependencies
--    if [[ -d $unit.requires ]]; then
--        for dep in "$unit".requires/*; do
--            add_systemd_unit "${dep##*/}"
--        done
--    fi
--}
--
--add_systemd_drop_in() {
--    local unit="$1" dropin_name="$2"
--
--    add_file - "/etc/systemd/system/${unit}.d/${dropin_name}.conf" 644
--}
--
 -build() {
--    local rules unit
+-    local mod
 -
--    map add_module 'crypto-lzo' 'crypto-lz4'
+-    map add_module 'dm-verity' 'sha256' 'sha512'
 -
--    add_binary /usr/bin/kmod /usr/bin/modprobe
--    add_binary /usr/bin/mount
--    add_binary /usr/bin/sulogin
--    add_binary /usr/bin/umount
--    add_binary /usr/lib/systemd/systemd /init
+-    map add_udev_rule \
+-        '10-dm.rules' \
+-        '13-dm-disk.rules' \
+-        '95-dm-notify.rules'
 -
--    map add_binary \
--        /usr/bin/journalctl \
--        /usr/bin/systemd-tmpfiles \
--        /usr/lib/systemd/systemd-executor \
--        /usr/lib/systemd/systemd-hibernate-resume \
--        /usr/lib/systemd/systemd-shutdown \
--        /usr/lib/systemd/systemd-sulogin-shell \
--        /usr/lib/systemd/system-generators/systemd-fstab-generator \
--        /usr/lib/systemd/system-generators/systemd-gpt-auto-generator \
--        /usr/lib/systemd/system-generators/systemd-hibernate-resume-generator
+-    map add_systemd_unit 'veritysetup-pre.target' \
+-        'veritysetup.target' \
+-        'systemd-veritysetup@.service'
 -
--    # udev rules
--    map add_udev_rule "$rules" \
--        50-udev-default.rules \
--        60-persistent-storage.rules \
--        64-btrfs.rules \
--        80-drivers.rules \
--        99-systemd.rules
+-    # Add systemd verity-related binaries
+-    map add_binary '/usr/lib/systemd/system-generators/systemd-veritysetup-generator' \
+-        '/usr/lib/systemd/systemd-veritysetup'
 -
--    # systemd units
--    map add_systemd_unit \
--        initrd-cleanup.service \
--        initrd-fs.target \
--        initrd-parse-etc.service \
--        initrd-root-fs.target \
--        initrd-root-device.target \
--        initrd-switch-root.service \
--        initrd-switch-root.target \
--        initrd-udevadm-cleanup-db.service \
--        initrd.target \
--        kmod-static-nodes.service \
--        local-fs.target \
--        local-fs-pre.target \
--        paths.target \
--        reboot.target \
--        slices.target \
--        sockets.target \
--        swap.target \
--        systemd-battery-check.service \
--        systemd-bsod.service \
--        systemd-fsck@.service \
--        systemd-hibernate-resume.service \
--        systemd-journald-audit.socket \
--        systemd-journald-dev-log.socket \
--        systemd-journald.service \
--        systemd-modules-load.service \
--        systemd-pcrphase-initrd.service \
--        systemd-tmpfiles-setup-dev.service \
--        systemd-udevd-control.socket \
--        systemd-udevd-kernel.socket \
--        systemd-udevd.service \
--        systemd-udev-trigger.service \
--        timers.target \
--        rescue.target \
--        emergency.target
+-    # Add veritysetup binary from cryptsetup package
+-    add_binary '/usr/bin/veritysetup'
 -
--    # add libraries dlopen()ed (hard and optional dependencies):
--    #  tss2-*   -> tpm2-util
--    #  kmod     -> systemd-shared
--    #  qrencode -> bsod
--    for LIB in kmod tss2-{esys,rc,mu,tcti-'*'} qrencode; do
--        LC_ALL=C.UTF-8 find /usr/lib/ -maxdepth 1 -name "lib${LIB}.so*" | while read -r FILE; do
--            if [[ -L "${FILE}" ]]; then
--                add_symlink "${FILE}"
--            else
--                add_binary "${FILE}"
--            fi
--        done
--    done
--
--    add_symlink "/usr/lib/systemd/system/default.target" "initrd.target"
--    add_symlink "/usr/lib/systemd/system/ctrl-alt-del.target" "reboot.target"
--
--    printf '%s\n' \
--        'passwd: files' \
--        'group: files' \
--        'shadow: files' \
--        | add_file - '/etc/nsswitch.conf' 0644
--
--    printf 'root:x:0:0:root:/root:/bin/sh\n' | add_file - '/etc/passwd' 0644
--    printf 'root:*:::::::\n' | add_file - '/etc/shadow' 0400
--    getent group root audio disk input kmem kvm lp optical render sgx storage tty uucp video | awk -F: ' { print $1 ":x:" $3 ":" }' | add_file - '/etc/group' 0644
--
--    add_dir "/etc/modules-load.d"
--    (
--      # FIXME: this should be a function in mkinitcpio
--      # shellcheck disable=SC1091,SC2154 source=mkinitcpio.conf
--      . "$_f_config"
--      set -f
--      printf '%s\n' "${MODULES[@]}" | add_file - '/etc/modules-load.d/MODULES.conf' 644
--    )
--
--    [[ -f /etc/fstab.initramfs ]] && add_file "/etc/fstab.initramfs" "/etc/fstab"
+-    # Add veritytab if present
+-    [[ -f /etc/veritytab.initramfs ]] && add_file '/etc/veritytab.initramfs' '/etc/veritytab'
 -}
 -
 -help() {
 -    cat <<HELPEOF
--This will install a basic systemd setup in your initramfs, and is meant to
--replace the 'base', 'usr', 'udev' and 'resume' hooks. Other hooks with runtime
--components will need to be ported, and will not work as intended. You also may
--wish to still include the 'base' hook (before this hook) to ensure that a
--rescue shell exists on your initramfs.
+-This hook sets up dm-verity in the initramfs environment.
+-
+-Ensure your kernel command line contains valid parameters for dm-verity.
+-If /etc/veritytab.initramfs exists, it will be included in the initramfs as
+-/etc/veritytab. See veritytab(5) for details.
 -HELPEOF
 -}
 -
 -# vim: set ft=sh ts=4 sw=4 et:
-diff --git a/install/udev b/install/udev
-index 8b51f44..9aa9ca8 100644
---- a/install/udev
-+++ b/install/udev
-@@ -2,9 +2,9 @@
- 
- build() {
-     map add_binary \
--        '/usr/lib/systemd/systemd-udevd' \
-+        '/usr/bin/udevd' \
-         '/usr/bin/udevadm' \
--        '/usr/bin/systemd-tmpfiles' \
-+        '/usr/bin/etmpfiles' \
-         '/usr/lib/udev/ata_id' \
-         '/usr/lib/udev/scsi_id'
- 
+diff --git a/install/sd-volatile b/install/sd-volatile
+deleted file mode 100644
+index 134443e..0000000
+--- a/install/sd-volatile
++++ /dev/null
+@@ -1,22 +0,0 @@
+-#!/bin/bash
+-
+-build() {
+-    local mod
+-
+-    map add_module 'overlay'
+-
+-    map add_systemd_unit 'systemd-volatile-root.service'
+-
+-    # Add systemd volatile binary
+-    map add_binary '/usr/lib/systemd/systemd-volatile-root'
+-}
+-
+-help() {
+-    cat <<HELPEOF
+-This hook sets up systemd-volatile in the initramfs environment.
+-
+-Ensure your kernel command line contains valid parameters for it.
+-HELPEOF
+-}
+-
+-# vim: set ft=sh ts=4 sw=4 et:
 diff --git a/mkinitcpio b/mkinitcpio
-index df8ead5..e376354 100755
+index 0f4a90a..3b4dc12 100755
 --- a/mkinitcpio
 +++ b/mkinitcpio
-@@ -497,7 +497,7 @@ uki_init() {
-                 uefiarch="$cpuarch"
-                 ;;
-         esac
--        for stub in /usr/lib/{systemd/boot/efi,gummiboot}/"linux${uefiarch}.efi.stub"; do
-+        for stub in /usr/lib/{{systemd,elogind}/boot/efi,gummiboot}/"linux${uefiarch}.efi.stub"; do
-             if [[ -f "$stub" ]]; then
-                 uefistub="$stub"
-                 quiet "Using UEFI stub: '%s'" "$uefistub"
+@@ -779,7 +779,12 @@ preload_builtin_modules() {
+         while IFS=.= read -rd '' modname field value; do
+             _addedmodules[${modname//-/_}]=2
+             case "$field" in
+-                alias)
++                alias)if command -v systemctl &>/dev/null; then
++        IFS=' .-~^' read -r _ systemd_ver _ < <(SYSTEMD_COLORS=0 systemctl --version)
++        if (( systemd_ver >= 255 )); then
++            add_binary /usr/lib/systemd/systemd-hibernate-resume
++        fi
++    fi
+                     _addedmodules["${value//-/_}"]=2
+                     ;;
+             esac
 -- 
-2.45.0
+2.51.2
 

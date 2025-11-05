@@ -1,0 +1,43 @@
+ meson.build | 9 ++-------
+ 1 file changed, 2 insertions(+), 7 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index db60ff0..17d3bb7 100644
+--- a/meson.build
++++ b/meson.build
+@@ -66,14 +66,14 @@ else
+ endif
+
+ udevd = find_program('systemd-udevd', 'udevd', dirs: udevd_dirs, required: true)
+-tmpfiles = find_program('systemd-tmpfiles', required: want_systemd)
++tmpfiles = find_program('etmpfiles', required: false)
+ shellcheck = find_program('shellcheck', required: false)
+
+ conf_data.set('UDEVD_PATH', udevd.full_path())
+ if want_systemd.enabled()
+     conf_data.set('TMPFILES_PATH', tmpfiles.full_path())
+ else
+-    conf_data.set('TMPFILES_PATH', '')
++    conf_data.set('TMPFILES_PATH', tmpfiles.full_path())
+ endif
+
+ configure_file(
+@@ -166,10 +166,6 @@ shellcheck_files = [
+     'install/microcode',
+     'install/modconf',
+     'install/resume',
+-    'install/sd-encrypt',
+-    'install/sd-encrypt-opensc',
+-    'install/sd-shutdown',
+-    'install/sd-vconsole',
+     'install/shutdown',
+     'install/sleep',
+     'install/strip',
+@@ -216,7 +212,6 @@ subdir('libalpm')
+ subdir('man')
+ subdir('mkinitcpio.d')
+ subdir('shell')
+-subdir('systemd')
+ subdir('test')
+ subdir('tmpfiles')
+ subdir('udev')
