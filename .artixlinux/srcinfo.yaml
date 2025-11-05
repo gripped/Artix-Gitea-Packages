@@ -1,9 +1,9 @@
 ---
-version: 2.03.36-1
+version: 2.03.36-2
 pkgbase:
   name: lvm2
   pkgver: 2.03.36
-  pkgrel: 1
+  pkgrel: 2
   url: https://sourceware.org/lvm2/
   arch:
     - x86_64
@@ -17,15 +17,11 @@ pkgbase:
     - thin-provisioning-tools
   source:
     - git+https://gitlab.com/lvmteam/lvm2.git#tag=v2_03_36?signed
-    - 11-dm-initramfs.rules
-    - 0001-lvm2-autoactivate.patch
   validpgpkeys:
     - 88437EF5C077BD113D3B7224228191C1567E2C17
     - D501A478440AE2FD130A1BE8B9112431E509039F
   sha256sums:
     - 847f864411614e5ec8f2ab8d5e8d91e8d10e430a1b4f2277efa6386a3f7af81c
-    - e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0
-    - 6aff2a85c16cf9bee3ecde708423a640fc82252cbd8e6ffdfd3aaf8accb308ce
 pkgname:
   - name: lvm2
     pkgdesc: Logical Volume Manager 2 utilities

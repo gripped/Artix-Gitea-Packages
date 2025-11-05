@@ -4,19 +4,15 @@
 pkgbase=lvm2
 pkgname=('lvm2' 'device-mapper')
 pkgver=2.03.36
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL-2.0-only' 'LGPL-2.1-only')
 makedepends=('git' 'udev' 'libaio' 'thin-provisioning-tools')
 validpgpkeys=('88437EF5C077BD113D3B7224228191C1567E2C17'  # Alasdair G Kergon <agk@redhat.com>
               'D501A478440AE2FD130A1BE8B9112431E509039F') # Marian Csontos <marian.csontos@gmail.com>
-source=("git+https://gitlab.com/lvmteam/lvm2.git#tag=v${pkgver//./_}?signed"
-        '11-dm-initramfs.rules'
-        '0001-lvm2-autoactivate.patch')
-sha256sums=('847f864411614e5ec8f2ab8d5e8d91e8d10e430a1b4f2277efa6386a3f7af81c'
-            'e10f24b57582d6e2da71f7c80732a62e0ee2e3b867fe84591ccdb53e80fa92e0'
-            '6aff2a85c16cf9bee3ecde708423a640fc82252cbd8e6ffdfd3aaf8accb308ce')
+source=("git+https://gitlab.com/lvmteam/lvm2.git#tag=v${pkgver//./_}?signed")
+sha256sums=('847f864411614e5ec8f2ab8d5e8d91e8d10e430a1b4f2277efa6386a3f7af81c')
 
 _backports=(
 )
@@ -30,8 +26,6 @@ prepare() {
     git show "${_c}" -- ':(exclude)WHATS_NEW' | git apply
   done
 
-  # prepare for non-systemd initcpio
-  patch -Np1  --output='udev/69-dm-lvm-initcpio.rules.in' -i ../0001-lvm2-autoactivate.patch
 }
 
 build() {
@@ -66,8 +60,6 @@ build() {
     --with-thin=internal \
     --with-udev-prefix=/usr
   make
-
-  make -C udev/ 69-dm-lvm-initcpio.rules
 }
 
 package_device-mapper() {
@@ -80,8 +72,6 @@ package_device-mapper() {
   cd lvm2/
 
   make DESTDIR="${pkgdir}" install_device-mapper
-  # extra udev rule for device-mapper in initramfs
-  install -D -m0644 "${srcdir}/11-dm-initramfs.rules" "${pkgdir}/usr/lib/initcpio/udev/11-dm-initramfs.rules"
 }
 
 package_lvm2() {
@@ -98,6 +88,5 @@ package_lvm2() {
   make DESTDIR="${pkgdir}" install_lvm2
   # /etc directories
   install -d "${pkgdir}"/etc/lvm/{archive,backup}
-  # extra udev rule for non-systemd initramfs
-  install -D -m0644 udev/69-dm-lvm-initcpio.rules "${pkgdir}/usr/lib/initcpio/udev/69-dm-lvm.rules"
+
 }
