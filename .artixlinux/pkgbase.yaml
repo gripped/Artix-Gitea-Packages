@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.8.1-1
+    version: 5.8.1-2
     packages:
-      - libqalculate-5.8.1-1-x86_64.pkg.tar.zst
+      - libqalculate-5.8.1-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
