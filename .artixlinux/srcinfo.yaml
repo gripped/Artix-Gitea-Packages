@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-4
+version: 25.08.3-1
 pkgbase:
   name: okular
   pkgdesc: Document Viewer
-  pkgver: 25.08.2
-  pkgrel: 4
+  pkgver: 25.08.3
+  pkgrel: 1
   url: https://apps.kde.org/okular/
   arch:
     - x86_64
@@ -65,14 +65,14 @@ pkgbase:
   options:
     - '!zipman'
   source:
-    - https://download.kde.org/stable/release-service/25.08.2/src/okular-25.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.2/src/okular-25.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.3/src/okular-25.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.3/src/okular-25.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - de401cd34376d678a16a361473514844f78800b398e3b0db6bde85a09e635392
+    - 032e3de8fc546796141859691188e6f802c6de498b65cccbce60aa60d865714f
     - SKIP
 pkgname:
   - name: okular
