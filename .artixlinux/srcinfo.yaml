@@ -1,0 +1,30 @@
+---
+version: 1.9.0-1
+pkgbase:
+  name: swayidle
+  pkgdesc: Idle management daemon for Wayland
+  pkgver: 1.9.0
+  pkgrel: 1
+  url: https://github.com/swaywm/swayidle
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - meson
+    - scdoc
+    - wayland-protocols
+  depends:
+    - wayland
+    - elogind
+  source:
+    - git+https://github.com/swaywm/swayidle.git#tag=v1.9.0?signed
+  validpgpkeys:
+    - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
+    - 9DDA3B9FA5D58DD5392C78E652CB6609B22DA89A
+  sha256sums:
+    - 8451569ab48eb24286281c5f5e124a6d68ed1008b7911426b0f5521df03adf29
+pkgname:
+  - name: swayidle
+# generated with artixpkg 0.37.4-1-any
