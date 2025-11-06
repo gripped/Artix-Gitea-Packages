@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.25.0-1
+    version: 1.25.1-1
     packages:
-      - gitea-1.25.0-1-x86_64.pkg.tar.zst
+      - gitea-1.25.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.24.7-1
