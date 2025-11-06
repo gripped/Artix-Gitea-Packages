@@ -1,10 +1,10 @@
 ---
-version: 12.2.0-1
+version: 12.2.0-2
 pkgbase:
   name: lib32-harfbuzz
   pkgdesc: OpenType text shaping engine - 32-bit
   pkgver: 12.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://harfbuzz.github.io/
   arch:
     - x86_64
