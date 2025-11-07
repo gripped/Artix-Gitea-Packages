@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-2
+version: 25.08.3-1
 pkgbase:
   name: dragon
   pkgdesc: A multimedia player where the focus is on simplicity, instead of features
-  pkgver: 25.08.2
-  pkgrel: 2
+  pkgver: 25.08.3
+  pkgrel: 1
   url: https://apps.kde.org/dragonplayer/
   arch:
     - x86_64
@@ -32,19 +32,19 @@ pkgbase:
     - qt6-multimedia
     - qt6-multimedia-ffmpeg
   source:
-    - https://download.kde.org/stable/release-service/25.08.2/src/dragon-25.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.2/src/dragon-25.08.2.tar.xz.sig
-    - https://invent.kde.org/multimedia/dragon/-/commit/f7344d27.patch
-    - https://invent.kde.org/multimedia/dragon/-/commit/eb42aa21.patch
+    - https://download.kde.org/stable/release-service/25.08.3/src/dragon-25.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.3/src/dragon-25.08.3.tar.xz.sig
+    - https://invent.kde.org/multimedia/dragon/-/commit/1ffaa540.patch
+    - https://invent.kde.org/multimedia/dragon/-/commit/110a39d6.patch
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 01434359e9c6fe4a97f1f9203e517b382aa923746b47ce6b252b36df0b818ae8
+    - 9e1d2fe93018166418cbfc82fc2f9384d1c5c99bc1b500c69072c8fe2cf9d038
     - SKIP
-    - 2bbcd65c3aaa122f54ef1fc8a4199913e5ab89d393b54ef7119ad6cf84abc7aa
-    - fd462b96481c2b2b13867f6bfad0fd84e222ed3c62d612486a7c2f96b0af96f6
+    - f7423616074e817f1004427d4c4dcc1383df17b83e1045a0d6f48cccaef0a176
+    - 4c34ec361918454ecd62ae563d35c61fea014a1b1df455dcad056af271324bc0
 pkgname:
   - name: dragon
 # generated with artixpkg 0.37.4-1-any
