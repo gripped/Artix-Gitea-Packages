@@ -1,10 +1,10 @@
 ---
-version: 1.1.4-11
+version: 1.1.4-11.1
 pkgbase:
   name: facile
   pkgdesc: A Functional Constraint Library
   pkgver: 1.1.4
-  pkgrel: 11
+  pkgrel: 11.1
   url: http://www.recherche.enac.fr/opti/facile/
   arch:
     - x86_64

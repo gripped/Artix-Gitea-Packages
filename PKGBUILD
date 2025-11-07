@@ -3,7 +3,7 @@
 
 pkgname=facile
 pkgver=1.1.4
-pkgrel=11
+pkgrel=11.1
 pkgdesc="A Functional Constraint Library"
 arch=(x86_64)
 url="http://www.recherche.enac.fr/opti/facile/"
