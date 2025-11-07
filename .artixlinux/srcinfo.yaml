@@ -1,0 +1,53 @@
+---
+version: 0.2.3-1
+pkgbase:
+  name: hyprtoolkit
+  pkgdesc: A modern C++ Wayland-native GUI toolkit
+  pkgver: 0.2.3
+  pkgrel: 1
+  url: https://github.com/hyprwm/hyprtoolkit
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+  depends:
+    - gcc-libs
+    - aquamarine
+    - libaquamarine.so
+    - cairo
+    - libcairo.so
+    - glib2
+    - libglib-2.0.so
+    - glibc
+    - hyprgraphics
+    - libhyprgraphics.so
+    - hyprlang
+    - libhyprlang.so
+    - hyprutils
+    - libhyprutils.so
+    - iniparser
+    - libiniparser.so
+    - libdrm
+    - libglvnd
+    - libEGL.so
+    - libOpenGL.so
+    - libxkbcommon
+    - libxkbcommon.so
+    - mesa
+    - pango
+    - libpango-1.0.so
+    - pixman
+    - libpixman-1.so
+    - wayland
+    - libwayland-client.so
+  provides:
+    - libhyprtoolkit.so
+  source:
+    - https://github.com/hyprwm/hyprtoolkit/archive/v0.2.3/hyprtoolkit-0.2.3.tar.gz
+  sha256sums:
+    - 75345531db45e64e830e4d555095db0c02cf1bdce9b868f8792cb4d71d7d8ff2
+pkgname:
+  - name: hyprtoolkit
+# generated with artixpkg 0.37.4-1-any
