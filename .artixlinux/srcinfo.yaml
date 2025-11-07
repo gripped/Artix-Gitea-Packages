@@ -1,9 +1,9 @@
 ---
-version: 25.08.2-1
+version: 25.08.3-1
 pkgbase:
   name: kiten
   pkgdesc: Japanese Reference/Study Tool
-  pkgver: 25.08.2
+  pkgver: 25.08.3
   pkgrel: 1
   url: https://apps.kde.org/kiten/
   arch:
@@ -33,14 +33,14 @@ pkgbase:
     - kxmlgui
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.2/src/kiten-25.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.2/src/kiten-25.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.3/src/kiten-25.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.3/src/kiten-25.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 61ecada96b77c66bd62500622289a8d7701a868ef7d7bd30fa62081fb8836572
+    - ee953071b7dbcc290c837d8a1e517764210ba5d5898a6f15700813176f0bbc54
     - SKIP
 pkgname:
   - name: kiten
