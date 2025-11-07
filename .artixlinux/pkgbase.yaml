@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,8 +22,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.4.9-2
+    packages:
+      - libspelling-0.4.9-2-x86_64.pkg.tar.zst
+      - libspelling-docs-0.4.9-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
