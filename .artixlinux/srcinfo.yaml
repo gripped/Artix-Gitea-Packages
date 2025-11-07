@@ -1,10 +1,10 @@
 ---
-version: 25.08.2-2
+version: 25.08.3-1
 pkgbase:
   name: mailcommon
   pkgdesc: KDE PIM library providing support for mail applications
-  pkgver: 25.08.2
-  pkgrel: 2
+  pkgver: 25.08.3
+  pkgrel: 1
   url: https://kontact.kde.org
   arch:
     - x86_64
@@ -48,14 +48,14 @@ pkgbase:
     - qt6-multimedia
     - syntax-highlighting
   source:
-    - https://download.kde.org/stable/release-service/25.08.2/src/mailcommon-25.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.2/src/mailcommon-25.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.3/src/mailcommon-25.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.3/src/mailcommon-25.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ea68b250e3ba3e3b22c21bc40ce4ed401502d1e59e8edcf70c5b1fc9d4b34dc7
+    - 3c4686f873940e00b7525993facd5a53e2c7f2d94408c6f68a76aa13b11743fa
     - SKIP
 pkgname:
   - name: mailcommon
