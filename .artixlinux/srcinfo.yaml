@@ -1,10 +1,10 @@
 ---
-version: 0.2.0-2
+version: 0.3.0-1
 pkgbase:
   name: hyprgraphics
   pkgdesc: hyprland graphics resources and utilities
-  pkgver: 0.2.0
-  pkgrel: 2
+  pkgver: 0.3.0
+  pkgrel: 1
   url: https://github.com/hyprwm/hyprgraphics
   arch:
     - x86_64
@@ -36,9 +36,9 @@ pkgbase:
   provides:
     - libhyprgraphics.so
   source:
-    - https://github.com/hyprwm/hyprgraphics/archive/v0.2.0/hyprgraphics-0.2.0.tar.gz
+    - https://github.com/hyprwm/hyprgraphics/archive/v0.3.0/hyprgraphics-0.3.0.tar.gz
   sha256sums:
-    - c66239113504426fc8ba31aa57b971dfc29c3a62490ecba48ec20fba19b64fd9
+    - 01ccac9fdb269be7990358e14eccfda07e641885ba6a14fbafa1dfa7617d16ff
 pkgname:
   - name: hyprgraphics
 # generated with artixpkg 0.37.4-1-any
