@@ -5,7 +5,7 @@
 
 pkgname=retroarch
 pkgver=1.21.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Reference frontend for the libretro API'
 arch=(x86_64)
 url=http://www.libretro.com/
