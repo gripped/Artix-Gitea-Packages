@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 25.08.2-2
+    version: 25.08.3-2
     packages:
-      - neochat-25.08.2-2-x86_64.pkg.tar.zst
+      - neochat-25.08.3-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 25.08.3-1
