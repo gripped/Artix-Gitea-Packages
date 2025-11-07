@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.08.2-1
+    version: 25.08.3-1
     packages:
-      - parley-25.08.2-1-x86_64.pkg.tar.zst
+      - parley-25.08.3-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.08.2-1
