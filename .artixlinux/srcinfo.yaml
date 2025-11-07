@@ -1,9 +1,9 @@
 ---
-version: 25.08.2-1
+version: 25.08.3-1
 pkgbase:
   name: step
   pkgdesc: Interactive Physical Simulator
-  pkgver: 25.08.2
+  pkgver: 25.08.3
   pkgrel: 1
   url: https://apps.kde.org/step/
   arch:
@@ -40,14 +40,14 @@ pkgbase:
     - libqalculate
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.2/src/step-25.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.2/src/step-25.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.08.3/src/step-25.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.08.3/src/step-25.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - c00d24fff1645eb2496a615e8e4736544ee35fd38cc1b84b735e5a251ac82c33
+    - b1ddce4f52a0b75188616c062be4fa7ad5d3d7725c211ec011719a9ad27e86f9
     - SKIP
 pkgname:
   - name: step
