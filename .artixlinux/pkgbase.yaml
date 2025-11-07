@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -49,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.11.3-1
+    packages:
+      - xfce4-screenshooter-1.11.3-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 1.11.2-1
