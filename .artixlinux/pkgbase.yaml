@@ -1,10 +1,10 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,8 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.93.3-1
+    packages:
+      - ruby-sass-embedded-1.93.3-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.93.2-1
