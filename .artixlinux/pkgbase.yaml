@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.08.3-1
-    packages:
-      - pimcommon-25.08.3-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: 25.08.3-1
