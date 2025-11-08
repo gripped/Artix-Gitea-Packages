@@ -7,7 +7,7 @@ pkgname=(
   postgresql-old-upgrade
 )
 pkgver=17.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Older PostgreSQL for migrating major versions with pg_upgrade"
 url="https://www.postgresql.org/"
 arch=(x86_64)
@@ -55,6 +55,7 @@ prepare() {
 
 build() {
   local configure_options=(
+    --without-systemd
     --prefix=/opt/pgsql-${pkgver%%.*}
     --disable-rpath
     --disable-nls
@@ -72,7 +73,6 @@ build() {
     --with-python
     --without-readline
     --with-system-tzdata=/usr/share/zoneinfo
-    --without-systemd
     --with-tcl
     --with-uuid=e2fs
     --with-zstd
