@@ -1,0 +1,32 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-notifications
+  pkgdesc: Layer Shell notifications daemon which integrates with COSMIC
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-notifications
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - git
+    - just
+    - lld
+  depends:
+    - cosmic-icon-theme
+    - gcc-libs
+    - glibc
+    - libxkbcommon
+    - wayland
+  source:
+    - git+https://github.com/pop-os/cosmic-notifications.git#tag=epoch-1.0.0-beta.5
+  b2sums:
+    - 7d963202e101c846ae0a27e5379cbf084b06a9e168bc131e0fc08e1a89e40fd124ac1198065849d88e45a837db45db23993edd966fbd61ac0cfe6caabe58ab8c
+pkgname:
+  - name: cosmic-notifications
+# generated with artixpkg 0.37.4-1-any
