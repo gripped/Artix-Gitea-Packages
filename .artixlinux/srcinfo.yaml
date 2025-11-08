@@ -1,0 +1,36 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-player
+  pkgdesc: WIP COSMIC media player
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-player
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cargo
+    - clang
+    - git
+    - just
+    - lld
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - libxkbcommon
+  source:
+    - git+https://github.com/pop-os/cosmic-player.git#tag=epoch-1.0.0-beta.5
+  sha256sums:
+    - 45c4039f4276a2ccaede9c82667820b2584d505fd463cf2c1fdbd182c4d51c78
+pkgname:
+  - name: cosmic-player
+# generated with artixpkg 0.37.4-1-any
