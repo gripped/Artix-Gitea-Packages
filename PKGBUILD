@@ -2,7 +2,7 @@
 
 pkgname=cosmic-store
 pkgver=1.0.0.beta.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Cosmic App Store'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-store
