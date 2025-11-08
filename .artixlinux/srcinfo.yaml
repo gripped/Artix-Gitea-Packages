@@ -1,9 +1,9 @@
 ---
-version: 8.2.29-1
+version: 8.2.29-2
 pkgbase:
   name: php-legacy
   pkgver: 8.2.29
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.php.net/
   arch:
     - x86_64
@@ -199,4 +199,4 @@ pkgname:
       - libxslt
     provides:
       - php-xsl-interpreter=8.2
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

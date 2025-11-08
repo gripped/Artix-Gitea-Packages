@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,25 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 8.2.29-2
+    packages:
+      - php-legacy-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-cgi-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-apache-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-fpm-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-embed-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-phpdbg-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-dblib-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-enchant-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-gd-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-sodium-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-odbc-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-pgsql-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-pspell-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-snmp-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-sqlite-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-tidy-8.2.29-2-x86_64.pkg.tar.zst
+      - php-legacy-xsl-8.2.29-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
