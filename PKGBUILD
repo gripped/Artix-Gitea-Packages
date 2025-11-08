@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=cosmic-session
-pkgver=1.0.0.beta.4
+pkgver=1.0.0.beta.5
 pkgrel=1
 pkgdesc='Session manager for the COSMIC desktop environment'
 arch=(x86_64)
