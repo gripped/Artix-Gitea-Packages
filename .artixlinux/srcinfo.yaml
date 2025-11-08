@@ -1,9 +1,9 @@
 ---
-version: 0.2.3-1
+version: 0.2.4-1
 pkgbase:
   name: hyprtoolkit
   pkgdesc: A modern C++ Wayland-native GUI toolkit
-  pkgver: 0.2.3
+  pkgver: 0.2.4
   pkgrel: 1
   url: https://github.com/hyprwm/hyprtoolkit
   arch:
@@ -45,9 +45,9 @@ pkgbase:
   provides:
     - libhyprtoolkit.so
   source:
-    - https://github.com/hyprwm/hyprtoolkit/archive/v0.2.3/hyprtoolkit-0.2.3.tar.gz
+    - https://github.com/hyprwm/hyprtoolkit/archive/v0.2.4/hyprtoolkit-0.2.4.tar.gz
   sha256sums:
-    - 75345531db45e64e830e4d555095db0c02cf1bdce9b868f8792cb4d71d7d8ff2
+    - 5b3df44738d9204773a4f1152895c58979ec037494314c07a7fc5f7ff7a2e22c
 pkgname:
   - name: hyprtoolkit
 # generated with artixpkg 0.37.4-1-any
