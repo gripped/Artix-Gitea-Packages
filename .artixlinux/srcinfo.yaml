@@ -1,0 +1,31 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-app-library
+  pkgdesc: Cosmic App Library
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-applibrary
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - git
+    - just
+    - lld
+  depends:
+    - cosmic-icon-theme
+    - gcc-libs
+    - glibc
+    - libxkbcommon
+  source:
+    - git+https://github.com/pop-os/cosmic-applibrary.git#tag=epoch-1.0.0-beta.5
+  b2sums:
+    - 408c9505da81f4483cc59e45e286c5cabc98c2120a7e9215311a3b8a6398054af90995739101dfb3d090fe79c2d3d0a2387e489642a8d4ebffc5c7a463474d03
+pkgname:
+  - name: cosmic-app-library
+# generated with artixpkg 0.37.4-1-any
