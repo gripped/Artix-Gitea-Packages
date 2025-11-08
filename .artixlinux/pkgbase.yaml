@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1:1.0.0.beta.4-1
+    version: 1:1.0.0.beta.5-1
     packages:
-      - cosmic-workspaces-1:1.0.0.beta.4-1-x86_64.pkg.tar.zst
+      - cosmic-workspaces-1:1.0.0.beta.5-1-x86_64.pkg.tar.zst
     debug: []
