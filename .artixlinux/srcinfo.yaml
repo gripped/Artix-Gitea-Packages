@@ -1,0 +1,38 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-comp
+  pkgdesc: Compositor for the COSMIC desktop environment
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-comp
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - git
+    - lld
+  depends:
+    - fontconfig
+    - gcc-libs
+    - glibc
+    - libdisplay-info
+    - libseat.so
+    - libinput
+    - libxcb
+    - libxkbcommon
+    - mesa
+    - pixman
+    - libelogind
+    - wayland
+  source:
+    - git+https://github.com/pop-os/cosmic-comp.git#tag=epoch-1.0.0-beta.5
+  b2sums:
+    - bb3d4962969ea975a5cc8164e5d3fd8175e60fbe015c1fa7ccf76c98dbf1395ba427bc4ba61db78141a9d9d09ec71d2a19ecdc23a87976f7f342979a4f17e3ec
+pkgname:
+  - name: cosmic-comp
+# generated with artixpkg 0.37.4-1-any

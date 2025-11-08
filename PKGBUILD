@@ -1,0 +1,54 @@
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Contributor: soloturn <soloturn@gmail.com>
+# Contributor: Mark Wagie <mark.wagie@proton.me>
+
+pkgname=cosmic-comp
+pkgver=1.0.0.beta.5
+pkgrel=1
+pkgdesc='Compositor for the COSMIC desktop environment'
+arch=(x86_64)
+url='https://github.com/pop-os/cosmic-comp'
+license=(GPL-3.0-only)
+groups=(cosmic)
+depends=(
+  fontconfig
+  gcc-libs
+  glibc
+  libdisplay-info
+  libseat.so
+  libinput
+  libxcb
+  libxkbcommon
+  mesa
+  pixman
+  libelogind
+  wayland
+)
+makedepends=(
+  cargo
+  git
+  lld
+)
+source=(git+https://github.com/pop-os/cosmic-comp.git#tag=epoch-${pkgver/.beta./-beta.})
+b2sums=('bb3d4962969ea975a5cc8164e5d3fd8175e60fbe015c1fa7ccf76c98dbf1395ba427bc4ba61db78141a9d9d09ec71d2a19ecdc23a87976f7f342979a4f17e3ec')
+
+prepare() {
+  cd cosmic-comp
+
+  cargo fetch --locked
+  sed 's/lto = "fat"/lto = "thin"/' -i Cargo.toml
+}
+
+build() {
+  cd cosmic-comp
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
+  make ARGS+=" --frozen --release"
+}
+
+package() {
+  cd cosmic-comp
+  make prefix='/usr' libexecdir='/usr/lib' DESTDIR="${pkgdir}" install
+}
+
+# vim: ts=2 sw=2 et:
