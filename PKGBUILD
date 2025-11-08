@@ -15,7 +15,7 @@
 
 pkgname=dovecot
 pkgver=2.4.2
-pkgrel=3
+pkgrel=4
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -107,7 +107,7 @@ build() {
   export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
-  ./configure \
+  ./configure --with-systemdsystemunitdir=no \
     --prefix=/usr \
     --sbindir=/usr/bin \
     --sysconfdir=/etc \
@@ -115,7 +115,6 @@ build() {
     --libexecdir=/usr/lib \
     --with-rundir=/run/dovecot \
     --with-moduledir=/usr/lib/dovecot/modules \
-    --with-systemdsystemunitdir=no \
     --disable-static \
     --with-pam \
     --with-sqlite \
