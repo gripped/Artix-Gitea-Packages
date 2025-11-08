@@ -1,10 +1,10 @@
 ---
-version: 6.5.0-1
+version: 6.5.0-2
 pkgbase:
   name: python-textual
   pkgdesc: Modern Text User Interface framework
   pkgver: 6.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Textualize/textual
   arch:
     - any
@@ -26,10 +26,6 @@ pkgbase:
     - python-markdown-it-py
     - python-typing_extensions
     - python-platformdirs
-  optdepends:
-    - 'python-tree-sitter: for syntax highlighting support'
-    - 'python-tree-sitter-languages: for custom languages support'
-    - 'python-textual-dev: tools for developers'
   source:
     - textual-6.5.0.tar.gz::https://github.com/Textualize/textual/archive/v6.5.0.tar.gz
   sha512sums:
