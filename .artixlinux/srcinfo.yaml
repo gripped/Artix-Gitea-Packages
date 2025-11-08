@@ -1,0 +1,31 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-panel
+  pkgdesc: XDG Shell Wrapper Panel for Cosmic
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-panel
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - git
+    - just
+    - lld
+  depends:
+    - gcc-libs
+    - glibc
+    - libxkbcommon
+    - wayland
+  source:
+    - git+https://github.com/pop-os/cosmic-panel.git#tag=epoch-1.0.0-beta.5
+  b2sums:
+    - 1c5efc7d5dbe544ecb58f883ab49fe0294c4efecc69c1861518ded3879221dbefb4310437d1f439dd7bd8e3de7917554413411498c031eaaea233a6c44a52a95
+pkgname:
+  - name: cosmic-panel
+# generated with artixpkg 0.37.4-1-any
