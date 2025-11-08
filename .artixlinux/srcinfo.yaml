@@ -1,9 +1,9 @@
 ---
-version: 1.0.0.beta.4-1
+version: 1.0.0.beta.5-1
 pkgbase:
   name: xdg-desktop-portal-cosmic
   pkgdesc: A backend implementation for xdg-desktop-portal for the COSMIC desktop environment
-  pkgver: 1.0.0.beta.4
+  pkgver: 1.0.0.beta.5
   pkgrel: 1
   url: https://github.com/pop-os/xdg-desktop-portal-cosmic
   arch:
@@ -29,9 +29,9 @@ pkgbase:
   provides:
     - xdg-desktop-portal-impl
   source:
-    - git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git#tag=463d1a79dabd4ba36675b7136dc89b18f8ab3444
+    - git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git#tag=epoch-1.0.0-beta.5
   b2sums:
-    - 8232f622cc4f538cc8cb5de7558583a5d35c90338ac34248ce733de84ef1c9c4330a63cd3dea72c5d8841e8ebb05f4c88b77ae9f4b51d40bb408408097e3f5bc
+    - 5b104336bfc26621f6444a7d9e502ddbaddccdc0624ce430e2e522bfd158f27b7a007d26fffefb65c62d007cf06349954c6b39df4f14a7574be25ec1bbaddc75
 pkgname:
   - name: xdg-desktop-portal-cosmic
 # generated with artixpkg 0.37.4-1-any
