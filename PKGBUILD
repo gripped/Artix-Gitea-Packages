@@ -1,0 +1,59 @@
+# Maintainer: artist for Artix Linux
+
+pkgname=cosmic-store
+pkgver=1.0.0.beta.5
+pkgrel=1
+pkgdesc='Cosmic App Store'
+arch=(x86_64)
+url=https://github.com/pop-os/cosmic-store
+license=(GPL-3.0-only)
+groups=(cosmic)
+depends=(
+  archlinux-appstream-data
+  cosmic-icon-theme
+  gcc-libs
+  glib2
+  glibc
+  libxkbcommon
+  openssl
+  packagekit
+  wayland
+)
+makedepends=(
+  cargo
+  flatpak
+  git
+  just
+  lld
+)
+optdepends=('packagekit: Native packages support')
+_tag=9027f22989ed023a06464e2d7922514c6a7bad27
+source=(
+  git+https://github.com/pop-os/cosmic-store.git#tag=${_tag}
+  cosmic-store-lto.patch
+)
+b2sums=('93ebb3c12937f06014700e3da63fd9cfa30e2ebcac5ca381c61d07bf0cb6ad24b1a82460163472ee71aa6141163c77b9a8da1542cb1b4bb6a0e0ecd3d1840c82'
+        'ed4089dd1ded4a87307c50f38af03ff3742bfc54053a668416f713c9b27eb591e608166ce14f2f50f8303aaf06533963fd821d00522b77e7f965827035a7ff11')
+
+prepare() {
+  cd cosmic-store
+  patch -Np1 -i ../cosmic-store-lto.patch
+  cargo fetch --locked
+}
+
+pkgver() {
+  cd cosmic-store
+  git describe --tags | sed 's/^epoch-//; s/-/./g'
+}
+
+build() {
+  cd cosmic-store
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
+  just build-release --frozen
+}
+
+package() {
+  cd cosmic-store
+  just rootdir="${pkgdir}" install
+}
+
