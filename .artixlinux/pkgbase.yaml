@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,8 +30,13 @@ repos:
       - harfbuzz-docs-12.1.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 12.2.0-1
+    packages:
+      - harfbuzz-12.2.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-12.2.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-12.2.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-12.2.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-12.2.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 12.1.0-1
