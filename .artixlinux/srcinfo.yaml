@@ -1,0 +1,38 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-applets
+  pkgdesc: Applets for COSMIC Panel
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-applets
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - clang
+    - git
+    - just
+    - lld
+  depends:
+    - cosmic-icon-theme
+    - dbus
+    - gcc-libs
+    - glibc
+    - libinput
+    - libpipewire
+    - libpulse
+    - libxkbcommon
+    - libelogind
+    - util-linux
+  source:
+    - git+https://github.com/pop-os/cosmic-applets.git#tag=epoch-1.0.0-beta.5
+  b2sums:
+    - 9a5381cae15c8a5280d8a8f6a871477d4990447e7cbae9238d6e4ba70b63b5329da15388cd0fcdc07f22ec73ac1da20f9f7e938b16e94a0a0a7113710c43b805
+pkgname:
+  - name: cosmic-applets
+# generated with artixpkg 0.37.4-1-any
