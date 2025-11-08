@@ -113,6 +113,12 @@ check() {
     # AssertionError: Regex pattern did not match.
     --deselect distributed/tests/test_queues.py::test_set_cancelled_future
     --deselect distributed/tests/test_scheduler.py::test_restart_not_all_workers_return
+
+    # Broken tests in Artix Linux CI environment
+    --deselect distributed/tests/test_scheduler.py::test_dashboard_host[None-expect0-tcp://0.0.0.0]
+    --deselect distributed/tests/test_scheduler.py::test_dashboard_host[None-expect0-tcp://127.0.0.1]
+    --deselect distributed/tests/test_scheduler.py::test_dashboard_host[None-expect0-tcp://127.0.0.1:38275]
+
   )
 
   cd $_name-$pkgver
