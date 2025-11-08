@@ -1,11 +1,11 @@
 ---
-version: 22.21.1-1
+version: 22.21.1-2
 pkgbase:
   name: nodejs-lts-jod
   pkgdesc:
     Evented I/O for V8 javascript (LTS release: Jod)
   pkgver: 22.21.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://nodejs.org/
   arch:
     - x86_64
