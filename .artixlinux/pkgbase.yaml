@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,6 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
     version: 8.2.29-2
     packages:
       - php-legacy-8.2.29-2-x86_64.pkg.tar.zst
@@ -40,10 +44,6 @@ repos:
       - php-legacy-sqlite-8.2.29-2-x86_64.pkg.tar.zst
       - php-legacy-tidy-8.2.29-2-x86_64.pkg.tar.zst
       - php-legacy-xsl-8.2.29-2-x86_64.pkg.tar.zst
-    debug: []
-  world-gremlins:
-    version: null
-    packages: []
     debug: []
   world:
     version: 8.2.29-1
