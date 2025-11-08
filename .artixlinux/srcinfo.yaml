@@ -1,9 +1,9 @@
 ---
-version: 6.16.9.zen1-1
+version: 6.17.7.zen1-1
 pkgbase:
   name: linux-zen
   pkgdesc: Linux ZEN
-  pkgver: 6.16.9.zen1
+  pkgver: 6.17.7.zen1
   pkgrel: 1
   url: https://github.com/zen-kernel/zen-kernel
   arch:
@@ -32,27 +32,27 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.9.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.9.tar.sign
-    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.16.9-zen1/linux-v6.16.9-zen1.patch.zst
-    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.16.9-zen1/linux-v6.16.9-zen1.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.7.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.7.tar.sign
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.17.7-zen1/linux-v6.17.7-zen1.patch.zst
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v6.17.7-zen1/linux-v6.17.7-zen1.patch.zst.sig
     - config
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - 7ac8c8a3cf05476375deaaa85dfcee095a826ffe557b437f43774fc3b64ce58d
+    - ddf2ea0d4439e1d57136be3623102af9458f601f5b1cb77e83246e88aea09d0e
     - SKIP
-    - 70a7b77e59c4a6c0ea0adfb6f361e969f1c296171111992dda1b739982baf195
+    - 3235d798b431db953303fe321c87fcde1d3402b40222750f2640e85d2e601f5c
     - SKIP
-    - e41be3b96fa42abc1af62fa893abd7b5e6d32ab62651d5706658b6982a6de93a
+    - f11c35c4db7bb49af3985f8cdedd064383ffa0e3caf540d3dd9add019c6537df
   b2sums:
-    - b511b1be8668ff8d07cd0b87416b8acb496d23cf448cb270db7380444a8f02d36ef3df732dfbf893c60d9e8f260891e47d2befa789f9f161034cc6daf615a523
+    - 7338c33e209a87d2acdc80cb30066b719a1924ac38db0ac4087c4cb2ae6d510d75fbc97eeadac9bbc070afe09f29e65fd7ab18383fe677adcf993c17d4407535
     - SKIP
-    - 38f00d39073d1b3eb3be12644f8d6211a85da4426d9080bcd9623a46e12c0f739ad0437578440d7d0a556b72a480e70cbe2b2dec50ec4754236d051c7a544751
+    - 34a2a566797071e12665adc462f67bfe173ad663d8211acc41d12a6b3dd7e9d84dc4b463a6b63af77e2833a12e6aef34f32a2897f0c68d207d93735e6a2d5708
     - SKIP
-    - f2130b088a0682327a27e616d387c41db15d5ad0a0b7e4817e538dddb6238027dc9576b87b43d5bc25a4ac6dbab3440da143fb18b6b384e45ba830cd881169c3
+    - 7810058e690c958fda2c7f888b5cd8e33afedb7dab693615ad222b859485b684ffc6345791537cc73ecca01769f5c37038733776913de7093dc5cf626e56e316
 pkgname:
   - name: linux-zen
     pkgdesc: The Linux ZEN kernel and modules
