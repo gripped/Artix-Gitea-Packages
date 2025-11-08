@@ -1,11 +1,11 @@
 ---
-version: 1.10.8-5
+version: 1.10.8-6
 pkgbase:
   name: unarchiver
   pkgdesc:
     unar and lsar: Objective-C tools for uncompressing archive files
   pkgver: 1.10.8
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/MacPaw/XADMaster
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 7592fb0f689e588ad9a6caee522eabe8bc64659eb71bb8629239856e79d3c757
 pkgname:
   - name: unarchiver
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
