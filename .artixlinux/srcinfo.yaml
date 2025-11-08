@@ -1,0 +1,35 @@
+---
+version: 1.0.0.beta.5-1
+pkgbase:
+  name: cosmic-bg
+  pkgdesc: COSMIC session service which applies backgrounds to displays
+  pkgver: 1.0.0.beta.5
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-bg
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - MPL-2.0
+  makedepends:
+    - clang
+    - cargo
+    - git
+    - just
+    - lld
+    - nasm
+  depends:
+    - cosmic-icon-theme
+    - gcc-libs
+    - glibc
+    - libxkbcommon
+  source:
+    - git+https://github.com/pop-os/cosmic-bg.git#tag=epoch-1.0.0-beta.5
+    - cosmic-bg-lto.patch
+  b2sums:
+    - 52f232bef4b4ef94077c243043213030df7187ad395451b6cee1067af46ac3bc6f8f53c0e3faf4a4569c11603df721cd18ebd81a64aa3d8bf566b66aeacd9d76
+    - 425c8b386f69d6b4b7883235f822089bb8b596043b1ef5616ff13768ab7afa5a0db55b0cff9c64f264abc60dd6c11f137069c0c8273135b8203054db3ff87c83
+pkgname:
+  - name: cosmic-bg
+# generated with artixpkg 0.37.4-1-any
