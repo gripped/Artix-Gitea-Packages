@@ -10,7 +10,7 @@ pkgname=(
   postfix-{cdb,ldap,lmdb,mongodb,mysql,pcre,pgsql,sqlite}
 )
 pkgver=3.10.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
 url="https://www.postfix.org/"
@@ -177,6 +177,7 @@ package_postfix() {
   install -vDm 644 auxiliary/collate/README* -t "$pkgdir/usr/share/doc/$pkgname/collate/"
   # licenses
   install -vDm 644 LICENSE COPYRIGHT -t "$pkgdir/usr/share/licenses/$pkgname/"
+  # systemd service
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   # tmpfiles.d
