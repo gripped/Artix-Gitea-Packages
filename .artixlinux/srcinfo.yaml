@@ -1,10 +1,10 @@
 ---
-version: 5.5.1-1
+version: 5.5.1-2
 pkgbase:
   name: tesseract
   pkgdesc: An OCR program
   pkgver: 5.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tesseract-ocr/tesseract
   arch:
     - x86_64
@@ -163,4 +163,4 @@ pkgname:
       - leptonica
       - tessdata
       - tesseract-data-osd
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
