@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.5.1-2
+    version: 6.5.2-2
     packages:
-      - plasma-workspace-6.5.1-2-x86_64.pkg.tar.zst
-      - plasma-x11-session-6.5.1-2-x86_64.pkg.tar.zst
+      - plasma-workspace-6.5.2-2-x86_64.pkg.tar.zst
+      - plasma-x11-session-6.5.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
