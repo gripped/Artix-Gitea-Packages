@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,8 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.10.1-6
+    packages:
+      - ncmpcpp-0.10.1-6-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 0.10.1-6
