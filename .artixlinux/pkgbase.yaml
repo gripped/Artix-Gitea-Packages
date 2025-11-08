@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,10 @@ repos:
       - plasma-x11-session-6.5.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.5.2-1
+    packages:
+      - plasma-workspace-6.5.2-1-x86_64.pkg.tar.zst
+      - plasma-x11-session-6.5.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.5.1-1
