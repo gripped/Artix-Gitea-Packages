@@ -1,10 +1,10 @@
 ---
-version: 25.5.0-1
+version: 25.5.0-2
 pkgbase:
   name: python-structlog
   pkgdesc: Structured Logging for Python
   pkgver: 25.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.structlog.org
   arch:
     - any
