@@ -1,10 +1,10 @@
 ---
-version: 7.7-1
+version: 7.7-2
 pkgbase:
   name: slop
   pkgdesc: Utility to query the user for a selection and print the region to stdout
   pkgver: 7.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/naelstrof/slop
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - a69a6e5c41d7fff1c6aa35b367a5c5a6dc98e621fa9a1908808d6308c2b40f4e
 pkgname:
   - name: slop
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
