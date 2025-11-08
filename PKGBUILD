@@ -64,4 +64,3 @@ package() {
   install -Dm 644 "${srcdir}"/com.system76.CosmicGreeter -t "${pkgdir}"/usr/share/dbus-1/services/
 }
 
-# vim: ts=2 sw=2 et:
