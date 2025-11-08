@@ -21,12 +21,12 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2:4.23.2-2
+    version: 2:4.23.3-2
     packages:
-      - libwbclient-2:4.23.2-2-x86_64.pkg.tar.zst
-      - ldb-2:4.23.2-2-x86_64.pkg.tar.zst
-      - smbclient-2:4.23.2-2-x86_64.pkg.tar.zst
-      - samba-2:4.23.2-2-x86_64.pkg.tar.zst
+      - libwbclient-2:4.23.3-2-x86_64.pkg.tar.zst
+      - ldb-2:4.23.3-2-x86_64.pkg.tar.zst
+      - smbclient-2:4.23.3-2-x86_64.pkg.tar.zst
+      - samba-2:4.23.3-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
