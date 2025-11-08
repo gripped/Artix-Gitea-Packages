@@ -1,9 +1,9 @@
 ---
-version: 2025.10.0-1
+version: 2025.11.0-1
 pkgbase:
   name: python-distributed
   pkgdesc: Distributed task scheduler for Dask
-  pkgver: 2025.10.0
+  pkgver: 2025.11.0
   pkgrel: 1
   url: https://distributed.dask.org/
   arch:
@@ -39,7 +39,7 @@ pkgbase:
     - python-build
     - python-installer
     - python-setuptools
-    - python-versioneer
+    - python-setuptools-scm
     - python-wheel
   depends:
     - python
@@ -59,9 +59,9 @@ pkgbase:
     - python-yaml
     - python-zict
   source:
-    - https://github.com/dask/distributed/archive/2025.10.0/python-distributed-2025.10.0.tar.gz
+    - https://github.com/dask/distributed/archive/2025.11.0/python-distributed-2025.11.0.tar.gz
   b2sums:
-    - cd805b95b97d0b18f9e297db7c69acb3d98ba8ad4cf7ab3ec83b971ed63c46cebcb4da62521dc2913fb8f5cbca6ffdeb190dccf58f98ec2417550ae907ec88da
+    - 0316e7671bc5257528444fc04302ebec9b58b7ea65fcde0fa9f6065b16bf92221dd1ce2e348dad1cfb34e6cb837e6382e786908b050fc309c11b608b4d21e87e
 pkgname:
   - name: python-distributed
 # generated with artixpkg 0.37.4-1-any
