@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 11.1.1-1
+    version: 11.1.2-1
     packages:
-      - python-cheroot-11.1.1-1-any.pkg.tar.zst
+      - python-cheroot-11.1.2-1-any.pkg.tar.zst
     debug: []
   world:
     version: 11.1.0-1
