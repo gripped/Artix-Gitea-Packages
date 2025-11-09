@@ -1,10 +1,10 @@
 ---
-version: 0.6.0-1
+version: 0.6.0-2
 pkgbase:
   name: xfce4-smartbookmark-plugin
   pkgdesc: Allows you to send requests directly to your browser and perform a custom search
   pkgver: 0.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/panel-plugins/xfce4-smartbookmark-plugin/start
   arch:
     - x86_64
@@ -24,7 +24,7 @@ pkgbase:
     - xfce4-smartbookmark-plugin-archlinux.patch
   sha256sums:
     - f136fcfbb529aed8f15ac00a68b4567d5ed27245ea0b35b5984bc6d7ad5e3c24
-    - 07f0e70bcdf371f7d4302cecf82c59845cf7b6b77ff87befff3603feca29903d
+    - 56eaad2bbe83e8b2e1b28389aa24c56d80f0abdd1afaf339f4426a96ba678026
 pkgname:
   - name: xfce4-smartbookmark-plugin
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any

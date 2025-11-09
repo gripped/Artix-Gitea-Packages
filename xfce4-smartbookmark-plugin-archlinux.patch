@@ -7,8 +7,8 @@ diff -upr xfce4-smartbookmark-plugin-0.5.2.orig/src/smartbookmark.c xfce4-smartb
      /* default options */
 -    search->url = "https://bugs.debian.org/";
 -    search->label_text = "BTS";
-+    search->url = "https://forum.artixlinux.org/";
-+    search->label_text = "Artix Forum";
++    search->url = "https://packages.artixlinux.org/packages/?q=";
++    search->label_text = "Artix Pkg";
      search->size = 5;
      search->hide_label = FALSE;
      /* read config file options */
@@ -18,8 +18,8 @@ diff -upr xfce4-smartbookmark-plugin-0.5.2.orig/src/smartbookmark.c xfce4-smartb
          xfce_rc_set_group(rcfile, NULL);
 -        search->url = g_strdup(xfce_rc_read_entry(rcfile,"url","https://bugs.debian.org/"));
 -        search->label_text = g_strdup(xfce_rc_read_entry(rcfile,"value","DBS"));
-+        search->url = g_strdup(xfce_rc_read_entry(rcfile,"url","https://forum.artixlinux.org/"));
-+        search->label_text = g_strdup(xfce_rc_read_entry(rcfile,"value","Artix Forum"));
++        search->url = g_strdup(xfce_rc_read_entry(rcfile,"url","https://packages.artixlinux.org/packages/?q="));
++        search->label_text = g_strdup(xfce_rc_read_entry(rcfile,"value","Artix Pkg"));
          search->size = xfce_rc_read_int_entry(rcfile, "size", 5);
          search->hide_label = xfce_rc_read_bool_entry(rcfile, "hidelabel", FALSE);
      }
