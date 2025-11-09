@@ -1,10 +1,10 @@
 ---
-version: 6.5.2-1
+version: 6.5.2-2.1
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
   pkgver: 6.5.2
-  pkgrel: 1
+  pkgrel: 2.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
