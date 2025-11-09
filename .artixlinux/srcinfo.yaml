@@ -1,10 +1,10 @@
 ---
-version: 6.5.2-2
+version: 6.5.2-2.1
 pkgbase:
   name: kdeplasma-addons
   pkgdesc: All kind of addons to improve your Plasma experience
   pkgver: 6.5.2
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
