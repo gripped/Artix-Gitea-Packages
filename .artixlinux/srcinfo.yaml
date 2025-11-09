@@ -1,9 +1,9 @@
 ---
-version: 3.2.2-1
+version: 3.3.0-1
 pkgbase:
   name: dkms
   pkgdesc: Dynamic Kernel Modules System
-  pkgver: 3.2.2
+  pkgver: 3.3.0
   pkgrel: 1
   url: https://github.com/dell/dkms
   install: dkms.install
@@ -30,13 +30,13 @@ pkgbase:
   backup:
     - etc/dkms/framework.conf
   source:
-    - git+https://github.com/dell/dkms.git#tag=v3.2.2
+    - git+https://github.com/dell/dkms.git#tag=v3.3.0
     - hook.install
     - hook.remove
     - hook.upgrade
     - hook.sh
   sha256sums:
-    - e7846fb655ec08f1849f64ecd7e554c59ce1b29fd7d4ec894c4560acc05a1ea7
+    - 27af2579e5270ab1f789d3bb6279c8d9717ed39cc67df8e7a6756a55724c1ee2
     - da2dd53bdb427c3ffbe793fd05f898d8a0545e6dbd346c85fad1717b0f838c62
     - 497422e72b2f10a71caae40c44a07b215425d393acb365700e38944e09f9a554
     - cc04280e8eb095f4950f5e3c6b2997fbc8d5862d79c5ae29d5943b8ac204d0d4
