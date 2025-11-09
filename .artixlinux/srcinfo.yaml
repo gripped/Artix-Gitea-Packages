@@ -1,10 +1,10 @@
 ---
-version: 3.5.0-1
+version: 3.5.0-2
 pkgbase:
   name: python-aiodns
   pkgdesc: Simple DNS resolver for asyncio
   pkgver: 3.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/saghul/aiodns
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 86503334ff9b0f3c60b7b18ba2200d9ee7144fd49c79651376822635f941e0e70cedb1ca6191404b8fb63c0b7426088232b43ff108cb7c5f923ad482840054fb
 pkgname:
   - name: python-aiodns
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
