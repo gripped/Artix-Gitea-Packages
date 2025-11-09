@@ -1,10 +1,10 @@
 ---
-version: 9.7.0-1
+version: 9.7.0-2
 pkgbase:
   name: ipython
   pkgdesc: Enhanced Interactive Python shell
   pkgver: 9.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://ipython.org
   arch:
     - any
