@@ -1,0 +1,29 @@
+---
+version: 1.1.2-1
+pkgbase:
+  name: python-msgpack
+  pkgdesc: MessagePack serializer implementation for Python
+  pkgver: 1.1.2
+  pkgrel: 1
+  url: https://github.com/msgpack/msgpack-python
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - msgpack-python-1.1.2.tar.gz::https://github.com/msgpack/msgpack-python/archive/v1.1.2.tar.gz
+  sha512sums:
+    - bd5bc3498875fd17fcfaeb1a79c49e61313976341950c385cacbe3c6cf85bf1acfc9ccf06046ddeb1848f52929f1d71aac6b67bac41479c1333e42bd1d461542
+pkgname:
+  - name: python-msgpack
+# generated with artixpkg 0.37.4-1-any
