@@ -4,7 +4,7 @@
 pkgname=qt6-webengine
 _pkgver=6.10.0
 pkgver=${_pkgver/-/}
-pkgrel=3
+pkgrel=1.1
 _chromium=
 arch=(x86_64)
 url='https://www.qt.io'
