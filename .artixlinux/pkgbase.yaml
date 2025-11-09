@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 3.50.4-1
+    version: 3.51.0-1
     packages:
-      - lib32-sqlite-3.50.4-1-x86_64.pkg.tar.zst
+      - lib32-sqlite-3.51.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
