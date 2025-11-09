@@ -1,0 +1,33 @@
+---
+version: 0.2.1-1
+pkgbase:
+  name: python-google-auth-httplib2
+  pkgdesc:
+    Google Authentication Library: httplib2 transport
+  pkgver: 0.2.1
+  pkgrel: 1
+  url: https://github.com/googleapis/google-auth-library-python-httplib2
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-flask
+    - python-pytest-localserver
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-google-auth
+    - python-httplib2
+  source:
+    - git+https://github.com/googleapis/google-auth-library-python-httplib2.git#tag=v0.2.1
+  sha512sums:
+    - 7c8b101a0722006721d1e39eb0dd13dd4a363dd2c3b36c921ec1291a08f00ba2ece06a191128dfbbf1e5c2ee4428258a1d92cea3e611dbcfc3b5a0eaa10478bf
+pkgname:
+  - name: python-google-auth-httplib2
+# generated with artixpkg 0.37.4-1-any
