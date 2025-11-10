@@ -1,9 +1,9 @@
 ---
-version: 2.2.2-1
+version: 2.3.0-1
 pkgbase:
   name: lxqt-panel
   pkgdesc: The LXQt desktop panel
-  pkgver: 2.2.2
+  pkgver: 2.3.0
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-panel
   arch:
@@ -24,6 +24,7 @@ pkgbase:
   depends:
     - libdbusmenu-lxqt
     - lxqt-menu-data
+    - lxqt-themes
     - libxtst
     - lxqt-globalkeys
     - solid
@@ -37,15 +38,15 @@ pkgbase:
     - 'libsysstat: System Statistics plugin'
     - 'lm_sensors: Sensors plugin'
   source:
-    - https://github.com/lxqt/lxqt-panel/releases/download/2.2.2/lxqt-panel-2.2.2.tar.xz
-    - https://github.com/lxqt/lxqt-panel/releases/download/2.2.2/lxqt-panel-2.2.2.tar.xz.asc
+    - https://github.com/lxqt/lxqt-panel/releases/download/2.3.0/lxqt-panel-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-panel/releases/download/2.3.0/lxqt-panel-2.3.0.tar.xz.asc
   validpgpkeys:
     - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - 5d150e7a4e8818715b8f4eec7f4bb26c98f740cd56f972199b35fc7c81da1969
+    - 556c8300a04affb68b14273ddd237c57f21f5493db089165fc7f4e3768f5ab7d
     - SKIP
 pkgname:
   - name: lxqt-panel
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
