@@ -1,7 +1,7 @@
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=lxqt-archiver
-pkgver=1.2.0
+pkgver=1.3.0
 pkgrel=1
 pkgdesc="A simple & lightweight desktop-agnostic Qt file archiver"
 arch=("x86_64")
@@ -16,7 +16,7 @@ optdepends=(
   'p7zip: 7Z support'
 )
 source=("https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('53e4121369e3dc72c74e3ae2323ff277072550c83622486b94ad77b26a993ac6'
+sha256sums=('8efd3236b0118808de0a686744cad48a705b14f00efc9794866b4691b49462f9'
             'SKIP')
 validpgpkeys=(
   "19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # Pedram Pourang <tsujan2000@gmail.com>
