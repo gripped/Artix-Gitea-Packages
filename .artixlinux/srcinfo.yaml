@@ -1,9 +1,9 @@
 ---
-version: 0.2.1-1
+version: 0.3.0-1
 pkgbase:
   name: lxqt-wayland-session
   pkgdesc: Files needed for the LXQt Wayland Session
-  pkgver: 0.2.1
+  pkgver: 0.3.0
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-wayland-session
   arch:
@@ -34,11 +34,11 @@ pkgbase:
     - river
     - sway
   source:
-    - git+https://github.com/lxqt/lxqt-wayland-session.git?signed#tag=0.2.1
+    - git+https://github.com/lxqt/lxqt-wayland-session.git?signed#tag=0.3.0
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - b879bd2dea02b90eb218e0b81b03feff4c7658954a1406efeae8a8d2d3083022
+    - ee4bbb4cd97e10be1b636e51a17ccef08d01bf72cb0f415939cdb6b1da4cd544
 pkgname:
   - name: lxqt-wayland-session
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
