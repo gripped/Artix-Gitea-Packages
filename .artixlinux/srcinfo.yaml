@@ -1,0 +1,46 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: lxqt-session
+  pkgdesc: The LXQt session manager
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-session
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL2.1
+  makedepends:
+    - cmake
+    - lxqt-build-tools
+  depends:
+    - liblxqt
+    - qtxdg-tools
+    - xdg-user-dirs
+    - libx11
+    - udev
+    - kwindowsystem
+    - libQt6Xdg.so
+    - procps-ng
+    - libproc2.so
+    - layer-shell-qt
+    - ttf-font
+    - breeze-icons
+  optdepends:
+    - 'oxygen-icons: Alternative icon theme'
+    - 'sddm: The recommended display manager'
+  source:
+    - https://github.com/lxqt/lxqt-session/releases/download/2.3.0/lxqt-session-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-session/releases/download/2.3.0/lxqt-session-2.3.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - ce11297a587e09f118f2a5b5decd6829e98dcb0c72b805400bd42bdcb39f728f
+    - SKIP
+pkgname:
+  - name: lxqt-session
+# generated with artixpkg 0.37.4-1-any

@@ -2,7 +2,7 @@
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=lxqt-session
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc="The LXQt session manager"
 arch=("x86_64")
@@ -10,17 +10,20 @@ groups=("lxqt")
 url="https://github.com/lxqt/$pkgname"
 license=("LGPL2.1")
 depends=("liblxqt" "qtxdg-tools" "xdg-user-dirs"  "libx11" "udev" "kwindowsystem" "libQt6Xdg.so" "procps-ng" "libproc2.so" "layer-shell-qt"
-         "ttf-font")
+         "ttf-font"
+        # Put the default icon theme as a mandatory dependency to improve out-of-box user experience
+        # https://github.com/lxqt/lxqt-session/blob/2.3.0/config/lxqt.conf#L3
+        # See https://github.com/lxqt/lxqt.github.io/pull/178#issuecomment-3501920534
+         "breeze-icons")
 makedepends=("cmake" "lxqt-build-tools")
 optdepends=(
-	"breeze-icons: Default icon theme"
 	"oxygen-icons: Alternative icon theme"
 	"sddm: The recommended display manager"
 )
 source=(
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc}
 )
-sha256sums=('27bc2613b516af503511f15f38216ef9650bc8f65ae6154990b76b1a20d3898a'
+sha256sums=('ce11297a587e09f118f2a5b5decd6829e98dcb0c72b805400bd42bdcb39f728f'
             'SKIP')
 validpgpkeys=(
 	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
