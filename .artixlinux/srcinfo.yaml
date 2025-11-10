@@ -1,0 +1,32 @@
+---
+version: 4.3.0-1
+pkgbase:
+  name: qtxdg-tools
+  pkgdesc: libqtxdg user tools
+  pkgver: 4.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/qtxdg-tools
+  arch:
+    - x86_64
+  license:
+    - LGPL2.1
+  makedepends:
+    - cmake
+    - qt6-tools
+    - lxqt-build-tools
+  depends:
+    - qt6-base
+    - libqtxdg
+  conflicts:
+    - libqtxdg<3.9.1
+  source:
+    - https://github.com/lxqt/qtxdg-tools/releases/download/4.3.0/qtxdg-tools-4.3.0.tar.xz
+    - https://github.com/lxqt/qtxdg-tools/releases/download/4.3.0/qtxdg-tools-4.3.0.tar.xz.asc
+  validpgpkeys:
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 6d84dc5016464741a6fbc466b94120267ea5333ebe037b9b0e1799846165ef96
+    - SKIP
+pkgname:
+  - name: qtxdg-tools
+# generated with artixpkg 0.37.4-1-any
