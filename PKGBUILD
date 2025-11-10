@@ -5,7 +5,7 @@
 
 pkgname=python-pillow
 pkgver=12.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Python Imaging Library (PIL) fork'
 arch=(x86_64)
 url='https://pillow.readthedocs.io'
@@ -49,16 +49,8 @@ optdepends=(
 source=(
   "$pkgname::git+https://github.com/python-pillow/Pillow#tag=$pkgver"
 )
-
-prepare() {
-  cd "$pkgname"
-
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/python-pillow/-/issues/3
-  # Added has_feature_version
-  git cherry-pick -n 54f4a346ef89e33eec0f889569a6d280eca70656
-  # Updated tests for FreeType 2.14.1
-  git cherry-pick -n 92e671d7970b8f96c50424c0c47efd0a1c95bc51
-}
+sha512sums=('9e3521adf5ac68dd9533062c6e91b4118fa582ff318bd58850fbde0562cffe51d21a29cfe2c50f62b0fa0533e090c98cd0c448be7c22a0b46f54c010ceb6a3eb')
+b2sums=('8e6318ca96671c59e1825f9d1d6ea82b4b50a53d9ab9efb5cb2ecff341adbf7bd989f1fd77b2126b3a9bddadc1a436839226c5862cdfa3cbb9f2d9cd5ea54df3')
 
 build() {
   cd "$pkgname"
@@ -86,4 +78,3 @@ package() {
   # license
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
-sha256sums=('SKIP')
