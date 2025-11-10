@@ -1,0 +1,23 @@
+---
+version: 4.1-1
+pkgbase:
+  name: iso-initcpio
+  pkgdesc: Development tools for Artix (ISO initcpio)
+  pkgver: 4.1
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/iso-initcpio
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - mkinitcpio
+  source:
+    - git+https://gitea.artixlinux.org/artix/iso-initcpio.git#tag=4.1
+  sha256sums:
+    - 1b6f268c324e3aa63def466b9415e23b9bd9c187cb00f65cf71be318df962b25
+pkgname:
+  - name: iso-initcpio
+# generated with artixpkg 0.37.4-1-any
