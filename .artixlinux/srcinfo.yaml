@@ -1,0 +1,44 @@
+---
+version: 0.20.0-2
+pkgbase:
+  name: python-quart
+  pkgdesc: A Python ASGI web microframework with the same API as Flask
+  pkgver: 0.20.0
+  pkgrel: 2
+  url: https://github.com/pallets/quart
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-dotenv
+    - python-hypothesis
+    - python-pytest
+    - python-pytest-asyncio
+  makedepends:
+    - git
+    - python-build
+    - python-flit-core
+    - python-installer
+    - python-wheel
+  depends:
+    - hypercorn
+    - python
+    - python-aiofiles
+    - python-blinker
+    - python-click
+    - python-flask
+    - python-importlib-metadata
+    - python-itsdangerous
+    - python-jinja
+    - python-markupsafe
+    - python-werkzeug
+  optdepends:
+    - 'python-dotenv: support for .env files'
+  source:
+    - git+https://github.com/pallets/quart.git#tag=22aa3859884ee3d670c68e48d1945bc65af51a1a
+  sha256sums:
+    - 3995aecbf78b1a8ee25bc1c2c086cd971c599e31b5114d69ef4404fb3a50b3fa
+pkgname:
+  - name: python-quart
+# generated with artixpkg 0.37.4-1-any
