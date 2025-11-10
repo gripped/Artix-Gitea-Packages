@@ -1,0 +1,110 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas 'Segaja' Schleifer <segaja at archlinux dot org>
+
+_gemname='memory'
+pkgname="ruby-${_gemname}"
+pkgver=0.11.1
+pkgrel=1
+pkgdesc='Memory profiling routines for Ruby 2.3+'
+arch=('any')
+url="https://github.com/socketry/${_gemname}"
+license=('MIT')
+depends=(
+  ruby
+  ruby-bake
+  ruby-console
+  ruby-msgpack
+)
+makedepends=(
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-bake-test
+  ruby-bake-test-external
+  ruby-bundler
+  ruby-covered
+  ruby-decode
+  ruby-sus
+)
+options=('!emptydirs')
+source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha512sums=('acc9fb3cb1dad4038c2d2fceb6f5073aed44d5689d466c661a73cc48d3eafd18fcc95028fe57c4c62a03d57d1b5df950d5ee0fe2b6e762dd243a7b9446b53437')
+b2sums=('1f8028c80f2c2fddbcad77327462ee27ac0c17bf7f1acbea89ad6bc8351fe1668d2bcd62fa93609ac26763abcc8420a4673e0a191c37833b0d2092d91e00695d')
+
+prepare() {
+  cd "${_gemname}-${pkgver}"
+
+  # update gemspec/Gemfile to allow newer version of the dependencies
+  sed --in-place --regexp-extended \
+    --expression 's|~>|>=|g' \
+    --expression '/signing_key/d' \
+    "${_gemname}.gemspec"
+
+  sed --in-place \
+    --expression '/group :maintenance/,/end/d' \
+    --expression '/agent-context/d' \
+    --expression '/rubocop/d' \
+    gems.rb
+}
+
+build() {
+  cd "${_gemname}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  gem build --verbose "${_gemname}.gemspec"
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install${_gemdir}" \
+    --bindir "tmp_install/usr/bin" \
+    "${_gemname}-${pkgver}.gem"
+
+  # remove unreproducible files
+  rm --force --recursive --verbose \
+    "tmp_install${_gemdir}/cache/" \
+    "tmp_install${_gemdir}/gems/${_gemname}-${pkgver}/vendor/" \
+    "tmp_install${_gemdir}/doc/${_gemname}-${pkgver}/ri/ext/"
+
+  find "tmp_install${_gemdir}/gems/" \
+    -type f \
+    \( \
+      -iname "*.o" -o \
+      -iname "*.c" -o \
+      -iname "*.so" -o \
+      -iname "*.time" -o \
+      -iname "gem.build_complete" -o \
+      -iname "Makefile" \
+    \) \
+    -delete
+
+  find "tmp_install${_gemdir}/extensions/" \
+    -type f \
+    \( \
+      -iname "mkmf.log" -o \
+      -iname "gem_make.out" \
+    \) \
+    -delete
+}
+
+check() {
+  cd "${_gemname}-${pkgver}"
+
+  local _gemdir="$(gem env gemdir)"
+
+  GEM_HOME="tmp_install${_gemdir}" bake test
+}
+
+package() {
+  cd "${_gemname}-${pkgver}"
+
+  cp --archive --verbose tmp_install/* "${pkgdir}"
+
+  install --verbose -D --mode=0644 license.md --target-directory "${pkgdir}/usr/share/licenses/${pkgname}"
+  install --verbose -D --mode=0644 *.md --target-directory "${pkgdir}/usr/share/doc/${pkgname}"
+}
+
+# vim: tabstop=2 shiftwidth=2 expandtab:
