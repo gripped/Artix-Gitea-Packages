@@ -1,10 +1,10 @@
 ---
-version: 2.2.0-2
+version: 2.3.0-1
 pkgbase:
   name: lximage-qt
   pkgdesc: The LXQt image viewer and screenshot tool
-  pkgver: 2.2.0
-  pkgrel: 2
+  pkgver: 2.3.0
+  pkgrel: 1
   url: https://github.com/lxqt/lximage-qt
   arch:
     - x86_64
@@ -25,15 +25,15 @@ pkgbase:
     - 'qt6-imageformats: support for additional image formats (WEBP, TIFF, etc.)'
     - 'kimageformats: support for additional image formats (PCX, XCF, HEIF, etc.)'
   source:
-    - https://github.com/lxqt/lximage-qt/releases/download/2.2.0/lximage-qt-2.2.0.tar.xz
-    - https://github.com/lxqt/lximage-qt/releases/download/2.2.0/lximage-qt-2.2.0.tar.xz.asc
+    - https://github.com/lxqt/lximage-qt/releases/download/2.3.0/lximage-qt-2.3.0.tar.xz
+    - https://github.com/lxqt/lximage-qt/releases/download/2.3.0/lximage-qt-2.3.0.tar.xz.asc
   validpgpkeys:
     - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - cc2ebfef3a7e2901114e71c2e15a9d1a382fe2d8a2b1468bade67fe0b68f99ea
+    - 9376d492945917a5ee2ec6a69bb8f6aeadf89d0f14c38d73a2eac5407b34b641
     - SKIP
 pkgname:
   - name: lximage-qt
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
