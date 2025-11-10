@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.08.3-2
+    version: 25.08.3-2.1
     packages:
-      - konsole-25.08.3-2-x86_64.pkg.tar.zst
+      - konsole-25.08.3-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.08.2-1

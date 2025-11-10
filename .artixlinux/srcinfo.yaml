@@ -1,10 +1,10 @@
 ---
-version: 25.08.3-2
+version: 25.08.3-2.1
 pkgbase:
   name: konsole
   pkgdesc: KDE terminal emulator
   pkgver: 25.08.3
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://apps.kde.org/konsole/
   arch:
     - x86_64
