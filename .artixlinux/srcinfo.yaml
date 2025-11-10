@@ -1,9 +1,9 @@
 ---
-version: 2.2.1-1
+version: 2.3.0-1
 pkgbase:
   name: lxqt-powermanagement
   pkgdesc: LXQt power management daemon
-  pkgver: 2.2.1
+  pkgver: 2.3.0
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-powermanagement
   arch:
@@ -23,15 +23,15 @@ pkgbase:
     - hicolor-icon-theme
     - lxqt-globalkeys
   source:
-    - https://github.com/lxqt/lxqt-powermanagement/releases/download/2.2.1/lxqt-powermanagement-2.2.1.tar.xz
-    - https://github.com/lxqt/lxqt-powermanagement/releases/download/2.2.1/lxqt-powermanagement-2.2.1.tar.xz.asc
+    - https://github.com/lxqt/lxqt-powermanagement/releases/download/2.3.0/lxqt-powermanagement-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-powermanagement/releases/download/2.3.0/lxqt-powermanagement-2.3.0.tar.xz.asc
   validpgpkeys:
     - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - 7d4de8bbab4dd05ae95ad53592380928047ca8958a5983d0dc733271b441badd
+    - 57a45c18f229112c5b10e700258fd14c0363a9d5023f967ab1f35dd503599e76
     - SKIP
 pkgname:
   - name: lxqt-powermanagement
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
