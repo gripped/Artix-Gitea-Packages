@@ -1,10 +1,10 @@
 ---
-version: 0.10.4-1
+version: 0.10.4-2
 pkgbase:
   name: python-truststore
   pkgdesc: Verify certificates using OS trust stores
   pkgver: 0.10.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sethmlarson/truststore
   arch:
     - any
@@ -38,4 +38,4 @@ pkgbase:
     - 0fe52c60dcd627c06eafae4a40946b14e81e2cbaf3a3c5c65b75a17c4a749688448813f353fce1f1836c30810552102402e44539d0ed5c4223c22458b7fe1f0a
 pkgname:
   - name: python-truststore
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
