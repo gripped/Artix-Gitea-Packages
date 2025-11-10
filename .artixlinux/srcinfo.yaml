@@ -1,0 +1,38 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: lxqt-notificationd
+  pkgdesc: LXQt notification daemon and library.
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-notificationd
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - lxqt-build-tools
+  depends:
+    - qt6-base
+    - liblxqt
+    - kwindowsystem
+    - libQt6Xdg.so
+    - layer-shell-qt
+  provides:
+    - notification-daemon
+  source:
+    - https://github.com/lxqt/lxqt-notificationd/releases/download/2.3.0/lxqt-notificationd-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-notificationd/releases/download/2.3.0/lxqt-notificationd-2.3.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha512sums:
+    - bda9f9dbbc5ce13a12d411554fe8f084358d5ae6879949da90c3e5b8029b59af2aefe0adf262c977dcd2dd0e1e2e6862e4754db0f9d301f208b1cc7e49560d98
+    - SKIP
+pkgname:
+  - name: lxqt-notificationd
+# generated with artixpkg 0.37.4-1-any
