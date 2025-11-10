@@ -1,0 +1,34 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: lxqt-runner
+  pkgdesc: The LXQt application launcher
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-runner
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL2.1
+  makedepends:
+    - lxqt-build-tools
+  depends:
+    - lxqt-globalkeys
+    - muparser
+    - libQt6Xdg.so
+    - layer-shell-qt
+  source:
+    - https://github.com/lxqt/lxqt-runner/releases/download/2.3.0/lxqt-runner-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-runner/releases/download/2.3.0/lxqt-runner-2.3.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 6d2fdd8d5a4395a3f5ec6cd27f6455d1a140f8a7e4ee81ac98af1b3f5989d5db
+    - SKIP
+pkgname:
+  - name: lxqt-runner
+# generated with artixpkg 0.37.4-1-any
