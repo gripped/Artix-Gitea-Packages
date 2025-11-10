@@ -1,6 +1,6 @@
-From 80b7bbd6b17cc913e1764767f8269f68313113ab Mon Sep 17 00:00:00 2001
+From 1b6f23440c6f3e5888cce8874a388bad5a002a7c Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Fri, 19 Sep 2025 17:39:14 +0200
+Date: Mon, 10 Nov 2025 15:19:15 +0100
 Subject: [PATCH 1/1] artix standalone install
 
 ---
@@ -8,7 +8,7 @@ Subject: [PATCH 1/1] artix standalone install
  meson.build                       | 22 +++++++++++++----
  rules.d/meson.build               |  3 +--
  shell-completion/bash/meson.build | 39 ++-----------------------------
- shell-completion/zsh/meson.build  | 30 ++----------------------
+ shell-completion/zsh/meson.build  | 31 ++----------------------
  src/core/meson.build              |  5 ----
  src/hwdb/meson.build              |  2 +-
  src/libudev/meson.build           |  9 ++++++-
@@ -20,7 +20,7 @@ Subject: [PATCH 1/1] artix standalone install
  test/meson.build                  |  6 ++---
  tmpfiles.d/legacy.conf.in         |  3 ---
  tmpfiles.d/meson.build            |  9 +++----
- 16 files changed, 51 insertions(+), 99 deletions(-)
+ 16 files changed, 51 insertions(+), 100 deletions(-)
 
 diff --git a/factory/templates/meson.build b/factory/templates/meson.build
 index 3db9f255b9..e54c0c3f3b 100644
@@ -172,10 +172,10 @@ index 6a547a5e69..67ef541aae 100644
          endif
  endforeach
 diff --git a/shell-completion/zsh/meson.build b/shell-completion/zsh/meson.build
-index e4252c7097..63ad624af5 100644
+index 4de28388ce..63ad624af5 100644
 --- a/shell-completion/zsh/meson.build
 +++ b/shell-completion/zsh/meson.build
-@@ -12,38 +12,12 @@ custom_target(
+@@ -12,39 +12,12 @@ custom_target(
          install : zshcompletiondir != 'no',
          install_dir : zshcompletiondir)
  
@@ -191,6 +191,7 @@ index e4252c7097..63ad624af5 100644
 -         ['_udevadm',                  ''],
 -         ['_varlinkctl',               ''],
 -         ['_kernel-install',           'ENABLE_KERNEL_INSTALL'],
+-         ['_sd_bus_address',           ''],
 -         ['_sd_hosts_or_user_at_host', ''],
 -         ['_sd_outputmodes',           ''],
 -         ['_sd_unit_files',            ''],
@@ -305,10 +306,10 @@ index a973d16f5c..195b0f7456 100644
                          libc_wrapper_static,
                          libbasic_static,
 diff --git a/src/udev/meson.build b/src/udev/meson.build
-index dc54d4e688..209c783268 100644
+index 908bec8b1d..d6fa6529d8 100644
 --- a/src/udev/meson.build
 +++ b/src/udev/meson.build
-@@ -256,9 +256,9 @@ executables += [
+@@ -257,9 +257,9 @@ executables += [
          },
  ]
  
@@ -321,7 +322,7 @@ index dc54d4e688..209c783268 100644
                  install_tag : 'udev')
  
  if install_sysconfdir_samples
-@@ -275,7 +275,7 @@ udev_pc = custom_target(
+@@ -276,7 +276,7 @@ udev_pc = custom_target(
          output : 'udev.pc',
          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
          install : pkgconfigdatadir != 'no',
@@ -470,5 +471,5 @@ index 203eb7bb55..0c689008e9 100644
 +        install_emptydir(sysconfdir / 'tmpfiles.d', install_tag : 'etmpfiles')
  endif
 -- 
-2.51.0
+2.51.2
 
