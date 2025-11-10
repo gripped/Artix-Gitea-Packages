@@ -6,7 +6,7 @@
 _base=textual
 pkgname=python-${_base}
 pkgver=6.5.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Modern Text User Interface framework"
 arch=(any)
 url="https://github.com/Textualize/${_base}"
