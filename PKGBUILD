@@ -2,7 +2,7 @@
 pkgname=python-django-ninja
 _name="${pkgname#python-}"
 pkgver=1.4.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, Async-ready, Openapi, type hints based framework for building APIs"
 arch=(any)
 url="https://github.com/vitalik/django-ninja"

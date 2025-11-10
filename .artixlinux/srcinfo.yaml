@@ -1,10 +1,10 @@
 ---
-version: 1.4.5-1
+version: 1.4.5-2
 pkgbase:
   name: python-django-ninja
   pkgdesc: Fast, Async-ready, Openapi, type hints based framework for building APIs
   pkgver: 1.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/vitalik/django-ninja
   arch:
     - any
