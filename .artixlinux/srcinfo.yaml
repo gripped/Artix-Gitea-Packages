@@ -1,10 +1,10 @@
 ---
-version: 2.32.1-1
+version: 2.32.1-2
 pkgbase:
   name: python-fakeredis
   pkgdesc: Fake implementation of redis API (redis-py) for testing purposes
   pkgver: 2.32.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/dsoftwareinc/fakeredis-py
   arch:
     - any
