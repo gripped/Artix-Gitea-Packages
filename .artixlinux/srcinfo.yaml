@@ -1,10 +1,10 @@
 ---
-version: 6.10.0-1.1
+version: 6.10.0-3.1
 pkgbase:
   name: qt6-webengine
   pkgdesc: Provides support for web applications using the Chromium browser project
   pkgver: 6.10.0
-  pkgrel: 1.1
+  pkgrel: 3.1
   url: https://www.qt.io
   arch:
     - x86_64
