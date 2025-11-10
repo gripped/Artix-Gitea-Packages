@@ -1,0 +1,32 @@
+---
+version: 0.3.1-4
+pkgbase:
+  name: python-noiseprotocol
+  pkgdesc: A Python implementation of Noise Protocol Framework
+  pkgver: 0.3.1
+  pkgrel: 4
+  url: https://github.com/plizonczyk/noiseprotocol
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-aiohttp
+    - python-pytest-asyncio
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-pypandoc
+    - python-setuptools
+  depends:
+    - python
+    - python-cryptography
+  source:
+    - https://github.com/plizonczyk/noiseprotocol/archive/v0.3.1/noiseprotocol-0.3.1.tar.gz
+  sha256sums:
+    - e3ac8ed99ceb929b03de9589355a2d20e9e44c74242384e38bb5a1699a351bd2
+pkgname:
+  - name: python-noiseprotocol
+# generated with artixpkg 0.37.4-1-any
