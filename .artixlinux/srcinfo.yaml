@@ -1,0 +1,22 @@
+---
+version: 4.19.0-1
+pkgbase:
+  name: iso-codes
+  pkgdesc: Lists of the country, language, and currency names
+  pkgver: 4.19.0
+  pkgrel: 1
+  url: https://salsa.debian.org/iso-codes-team/iso-codes
+  arch:
+    - any
+  license:
+    - LGPL-2.1-only
+  makedepends:
+    - git
+    - python
+  source:
+    - git+https://salsa.debian.org/iso-codes-team/iso-codes#tag=v4.19.0
+  sha256sums:
+    - 0e9e11574ed12838403cd41384057a2d31d829e621517c19cacfc4e951bc56bf
+pkgname:
+  - name: iso-codes
+# generated with artixpkg 0.37.4-1-any
