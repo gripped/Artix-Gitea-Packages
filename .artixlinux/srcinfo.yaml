@@ -1,10 +1,10 @@
 ---
-version: 3.20.0-1
+version: 3.20.0-2
 pkgbase:
   name: python-filelock
   pkgdesc: A platform independent file lock
   pkgver: 3.20.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/benediktschmitt/py-filelock
   arch:
     - any
