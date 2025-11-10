@@ -3,7 +3,7 @@
 _name=aiosmtpd
 pkgname=python-aiosmtpd
 pkgver=1.4.6
-pkgrel=2
+pkgrel=3
 pkgdesc="An asyncio based SMTP server"
 arch=(any)
 url="https://github.com/aio-libs/aiosmtpd"
@@ -48,6 +48,9 @@ check() {
     -vv
     -o addopts=""
     --deselect aiosmtpd/qa/test_0packaging.py::TestVersion::test_ge_master
+    # Fixes test failure due to usage of deprecated setuptools API
+    # pkg_resources.
+    -W "ignore::UserWarning"
   )
 
   cd $_name-$pkgver
