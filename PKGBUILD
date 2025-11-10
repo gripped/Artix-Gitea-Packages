@@ -20,17 +20,9 @@ makedepends=('git' 'boost' 'mariadb' 'meson' 'postgresql' 'python' 'python-sphin
 checkdepends=('procps-ng')
 source=("git+https://gitlab.isc.org/isc-projects/kea.git#tag=Kea-${pkgver}?signed"
         'tmpfiles-kea.conf'
-        'kea-dhcp4.service'
-        'kea-dhcp6.service'
-        'kea-dhcp-ddns.service'
-        'kea-ctrl-agent.service'
         'fix-build-with-boost-1.89.patch')
 b2sums=('52a62ecc91ef51c49f302f6ee33f61ed13e560cff40b913d7f4c4af50f0f7eba52d17eb4c33a5d013370bb332d663a5e7735c69d81a61543addd9a4937eff5d2'
         '89422802e78e958113165864d171c6cb0818949089b1ba7426c71814455be76c35a5814e9d828af578b27004e4352371f1b5aa12fdf1d8cfa437b89ff5a993d5'
-        '59bdb3eb99ba583573b317654ae4a1083db786b35fe09d763a1d221a62913bb93b76eb7ff91b97935799e83c136d5ddc65b85ffb52c639f4669890b954c1781e'
-        '47271d37fee91d86cfa057ecd5ef6325d98e9ad1694837cb3bffb4fa8bb2fd33e382cc0ae3390b49ab551fa0f9a0f816ef4bfaaaa94189b9b4d127d647a43282'
-        '839606df26af73f320634e55e580a1ecf00b52dbd7aff3b3971b8873d817c23dd8057e8d736c11a9267b686ef3912c00dd71f009d4ca1588134c2f43a740d19c'
-        'f19563724fd869c43691980586bc46313e537c543a3026c0fc33164eae24f7c58d2cb42705a5f2a5fc6f39a0792a7bae154a4d09453b1932d0a73e83a76b199a'
         '4cfe04b61d7884ed492c3f7f06cf3ea68ec231063a8ba868221bbeb17ab94315d80e05243db89a12b29d0b2b1e35e1c7a86f33a42874ddc85661420ea9347e07')
 validpgpkeys=('BE0E9748B718253A28BB89FFF1B11BF05CF02E57'  # Internet Systems Consortium, Inc. (Signing key, 2017-2018) <codesign@isc.org>
               'AE3FAC796711EC59FC007AA474BB6B9A4CBB3D38'  # Internet Systems Consortium, Inc. (Signing key, 2019-2020) <codesign@isc.org>
@@ -85,10 +77,6 @@ package_kea() {
 	meson install -C build --destdir "${pkgdir}"
 
 	install -Dm 644 tmpfiles-kea.conf "${pkgdir}/usr/lib/tmpfiles.d/${pkgbase}.conf"
-	install -Dm 644 kea-dhcp4.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp4.service"
-	install -Dm 644 kea-dhcp6.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp6.service"
-	install -Dm 644 kea-dhcp-ddns.service "${pkgdir}/usr/lib/systemd/system/kea-dhcp-ddns.service"
-	install -Dm 644 kea-ctrl-agent.service "${pkgdir}/usr/lib/systemd/system/kea-ctrl-agent.service"
 
 	# Do not package /run & /var/run
 	rm -rf "${pkgdir}"{/run,/var/run}
