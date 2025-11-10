@@ -2,8 +2,8 @@
 # Co-Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=libqtxdg
-pkgver=4.2.0
-pkgrel=5
+pkgver=4.3.0
+pkgrel=1
 pkgdesc="Library providing freedesktop.org XDG specs implementations for Qt"
 arch=("x86_64")
 url="https://github.com/lxqt/$pkgname"
@@ -20,9 +20,9 @@ source=(
   "https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
    qt-6.10.patch
 )
-sha256sums=('a5d430218550d66fa806debce7c418db41268286b17bdab46b8ce3a58f0fe82a'
+sha256sums=('846cb8a35ab55ea3d513a860b6bb5fdf45e2de95a037afb73538b316908efa55'
             'SKIP'
-            'd8d8cbe338cb5058709d13efa10ce5fab3a2ba03550b2860ba00fa052a5872ff')
+            '4f83fe973c705e5440a8077b65cc814703674bc56f7d96d08d4303680e42a328')
 validpgpkeys=(
   "169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
   "7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3"  # Alf Gaida <agaida@siduction.org>
