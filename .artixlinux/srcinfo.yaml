@@ -1,10 +1,10 @@
 ---
-version: 9.2.0-1
+version: 9.2.0-2
 pkgbase:
   name: python-elasticsearch
   pkgdesc: Official Python client for Elasticsearch
   pkgver: 9.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/elastic/elasticsearch-py
   arch:
     - any
