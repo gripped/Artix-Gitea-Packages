@@ -4,7 +4,7 @@
 
 pkgname=python-reactivex
 pkgver=4.0.4
-pkgrel=7
+pkgrel=8
 pkgdesc='Reactive Extensions for Python'
 arch=(any)
 url=http://reactivex.io

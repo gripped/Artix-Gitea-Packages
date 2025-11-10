@@ -1,0 +1,30 @@
+---
+version: 4.0.4-8
+pkgbase:
+  name: python-reactivex
+  pkgdesc: Reactive Extensions for Python
+  pkgver: 4.0.4
+  pkgrel: 8
+  url: http://reactivex.io
+  arch:
+    - any
+  license:
+    - APACHE
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+  makedepends:
+    - git
+    - python-build
+    - python-poetry-core
+    - python-installer
+  depends:
+    - python
+    - python-typing_extensions
+  source:
+    - git+https://github.com/ReactiveX/RxPY.git#tag=7187453c1a829c3f7ceeadae722f2d1d13f6b51e
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: python-reactivex
+# generated with artixpkg 0.37.4-1-any
