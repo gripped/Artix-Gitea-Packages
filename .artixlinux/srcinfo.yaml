@@ -1,10 +1,10 @@
 ---
-version: 9.2.0-1
+version: 9.2.0-2
 pkgbase:
   name: python-elastic-transport
   pkgdesc: Transport classes and utilities shared among Python Elastic client libraries
   pkgver: 9.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/elastic/elastic-transport-python
   arch:
     - any
