@@ -1,0 +1,30 @@
+---
+version: 7.0.2-1
+pkgbase:
+  name: ruby-haml
+  pkgdesc: HTML Abstraction Markup Language - A Markup Haiku
+  pkgver: 7.0.2
+  pkgrel: 1
+  url: https://haml.info
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-temple
+    - ruby-thor
+    - ruby-tilt
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/haml/haml/archive/v7.0.2/ruby-haml-7.0.2.tar.gz
+  sha512sums:
+    - 2a4982e6bfc92e7769f55ea5409ba3714eb345d90185327fe5916ed99de8f37a78edceb29b8c7b135216cbd74515889eb87d693a075717e9c8738bee104476f1
+  b2sums:
+    - 8d5517d36ed8472fe4af7289bf6c976a755a04941c2176714134234c90264ec79d687e2a7f0b9fc79f43ed4da7421f053b9b272edb4b751b21b0c7c50d65870e
+pkgname:
+  - name: ruby-haml
+# generated with artixpkg 0.37.4-1-any
