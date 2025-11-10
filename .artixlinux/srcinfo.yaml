@@ -1,0 +1,40 @@
+---
+version: 4.67.1-3
+pkgbase:
+  name: python-tqdm
+  pkgdesc: Fast, Extensible Progress Meter
+  pkgver: 4.67.1
+  pkgrel: 3
+  url: https://github.com/tqdm/tqdm
+  arch:
+    - any
+  license:
+    - MIT
+    - MPL-2.0
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+    - python-pytest-timeout
+    - python-numpy
+    - python-pandas
+    - python-rich
+    - python-dask
+    - tk
+  makedepends:
+    - git
+    - python-setuptools-scm
+    - python-toml
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-requests: telegram'
+  source:
+    - git+https://github.com/tqdm/tqdm.git#commit=v4.67.1
+  sha512sums:
+    - be7467509c82c6eca11caf70bd95a1fa41c761158b97c649f02ebeda3fae64337742c8bdc4110ea000fba39322888387cdb8630463630809c016f75764250667
+pkgname:
+  - name: python-tqdm
+# generated with artixpkg 0.37.4-1-any
