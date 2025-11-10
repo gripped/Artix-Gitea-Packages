@@ -1,0 +1,30 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: lxqt-themes
+  pkgdesc: LXQt themes, graphics and icons.
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-themes
+  arch:
+    - any
+  groups:
+    - lxqt
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - lxqt-build-tools
+  depends:
+    - hicolor-icon-theme
+  replaces:
+    - lxqt-common
+  source:
+    - git+https://github.com/lxqt/lxqt-themes.git#tag=2.3.0
+  validpgpkeys:
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 75ad93ecc145b68bc8eef95ae8164e70a3c591f4999b7351c4e557f1c2ca0b8a
+pkgname:
+  - name: lxqt-themes
+# generated with artixpkg 0.37.4-1-any
