@@ -1,10 +1,10 @@
 ---
-version: 5.14.3-1
+version: 5.14.3-2
 pkgbase:
   name: python-socketio
   pkgdesc: Python implementation of the Socket.IO realtime server
   pkgver: 5.14.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/miguelgrinberg/python-socketio
   arch:
     - any
