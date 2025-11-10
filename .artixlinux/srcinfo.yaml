@@ -1,0 +1,33 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: lxqt-policykit
+  pkgdesc: The LXQt policykit authentication agent
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-policykit
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL2.1
+  makedepends:
+    - cmake
+    - lxqt-build-tools
+  depends:
+    - liblxqt
+    - polkit-qt6
+  source:
+    - https://github.com/lxqt/lxqt-policykit/releases/download/2.3.0/lxqt-policykit-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-policykit/releases/download/2.3.0/lxqt-policykit-2.3.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 7ccf2547aa980eac6c4002acdea2c07b38ae017913a54f29d2221d18ee352cdf
+    - SKIP
+pkgname:
+  - name: lxqt-policykit
+# generated with artixpkg 0.37.4-1-any
