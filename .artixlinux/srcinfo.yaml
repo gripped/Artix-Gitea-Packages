@@ -1,10 +1,10 @@
 ---
-version: 2.43.0-1.1
+version: 2.43.0-2
 pkgbase:
   name: python-google-auth
   pkgdesc: Google Authentication Library
   pkgver: 2.43.0
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/GoogleCloudPlatform/google-auth-library-python
   arch:
     - any
