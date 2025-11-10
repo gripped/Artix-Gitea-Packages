@@ -2,7 +2,7 @@
 
 pkgname=python-blockbuster
 pkgver=1.5.25
-pkgrel=1
+pkgrel=2
 pkgdesc='Utility to detect blocking calls in the async event loop'
 arch=(any)
 url=https://github.com/cbornet/blockbuster
