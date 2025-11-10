@@ -1,0 +1,32 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: liblxqt
+  pkgdesc: Common base library for LXQt components
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/liblxqt
+  arch:
+    - x86_64
+  license:
+    - LGPL2.1
+  makedepends:
+    - lxqt-build-tools
+  depends:
+    - kwindowsystem
+    - libxss
+    - polkit-qt6
+    - libQt6Xdg.so
+  source:
+    - https://github.com/lxqt/liblxqt/releases/download/2.3.0/liblxqt-2.3.0.tar.xz
+    - https://github.com/lxqt/liblxqt/releases/download/2.3.0/liblxqt-2.3.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha256sums:
+    - 2b5c619d2f166e56ed899a856fbad419d80d85d8b3ffdd08909b596cf886e4dc
+    - SKIP
+pkgname:
+  - name: liblxqt
+# generated with artixpkg 0.37.4-1-any
