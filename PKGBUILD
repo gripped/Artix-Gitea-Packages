@@ -2,7 +2,7 @@
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=pcmanfm-qt
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc="The LXQt file manager, Qt port of PCManFM"
 arch=("x86_64")
@@ -22,7 +22,7 @@ source=(
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
 )
-sha256sums=('a5eeeafa8d02c9ada1b4660c238f95fde08fa13278c9ea5e191ea3bdfba1be8f'
+sha256sums=('30ab4cc0f36aedd3f454cec2468d7b8a5820f12de1dd9e69d2e65d7299716d09'
             'SKIP')
 validpgpkeys=(
 	"169704C6FB490C6892C7F23C37E0AF1FDA48F373"  # Jerome Leclanche <jerome@leclan.ch>
