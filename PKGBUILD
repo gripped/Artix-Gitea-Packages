@@ -3,7 +3,7 @@
 
 pkgname=python-python-socks
 pkgver=2.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Core proxy client (SOCKS4, SOCKS5, HTTP) functionality for Python'
 arch=('any')
 url='https://github.com/romis2012/python-socks'
@@ -44,10 +44,10 @@ build() {
   python -m build --wheel --no-isolation
 }
 
-# check() {
-#   cd "${pkgname#python-}"
-#   pytest
-# }
+check() {
+  cd "${pkgname#python-}"
+  pytest
+}
 
 package() {
   cd "${pkgname#python-}"
