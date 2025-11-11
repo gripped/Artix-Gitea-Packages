@@ -21,7 +21,7 @@ pkgbase:
     - git
     - python-sphinx
     - python-sphinx_rtd_theme
-    - systemd
+    - udev
   depends:
     - glib2
     - libevdev

@@ -10,7 +10,7 @@ url='https://github.com/libratbag/libratbag'
 license=('MIT')
 depends=('glib2' 'libevdev' 'libudev.so' 'libunistring' 'json-glib' 'python' 'python-evdev' 'python-gobject')
 optdepends=('linux: Linux 5.2 is required for Logitech wireless devices')
-makedepends=('meson' 'swig' 'git' 'python-sphinx' 'python-sphinx_rtd_theme' 'systemd')
+makedepends=('meson' 'swig' 'git' 'python-sphinx' 'python-sphinx_rtd_theme' 'udev')
 checkdepends=('check' 'valgrind' 'python-gobject' 'python-lxml')
 validpgpkeys=('3DCE51D60930EBA47858BA4146F633CBB0EB4BF2'  # Filipe Laíns (FFY00) <lains@riseup.net>
               '3C2C43D9447D5938EF4551EBE23B7E70B467F0BF'  # Peter Hutterer (Who-T) <office@who-t.net>
@@ -26,7 +26,7 @@ build() {
   cd $pkgname/build
 
   artix-meson .. \
-  	-Dsystemd-unit-dir=/usr/lib/systemd/system \
+  	-Dsystemd-unit-dir="" \
   	-Ddocumentation=true
 
   ninja
