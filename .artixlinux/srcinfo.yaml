@@ -1,0 +1,18 @@
+---
+version: 5.40.2-1
+pkgbase:
+  name: pod2man
+  pkgdesc: Make pod2man easily accessible
+  pkgver: 5.40.2
+  pkgrel: 1
+  url: https://perl.org/
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - PerlArtistic
+  depends:
+    - perl=5.40.2
+pkgname:
+  - name: pod2man
+# generated with artixpkg 0.37.4-1-any
