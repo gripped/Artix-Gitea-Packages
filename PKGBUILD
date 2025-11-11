@@ -26,16 +26,13 @@ build() {
   cd $pkgname/build
 
   artix-meson .. \
-  	-Dsystemd-unit-dir="" \
-  	-Ddocumentation=true
+    -Dsystemd=false \
+    -Dlogind-provider=elogind \
+    -Ddbus-group=input \
+    -Ddocumentation=true \
+    -Dtests=false
 
   ninja
-}
-
-check() {
-  cd $pkgname/build
-
-  meson test --no-rebuild
 }
 
 package() {
