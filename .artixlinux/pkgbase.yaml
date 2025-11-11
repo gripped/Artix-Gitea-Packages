@@ -1,8 +1,8 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -50,11 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 2.7.18-12
     packages:
       - python2-2.7.18-12-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: null
-    packages: []
     debug: []
