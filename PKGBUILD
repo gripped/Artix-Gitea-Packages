@@ -2,7 +2,7 @@
 
 pkgname=lxqt-archiver
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A simple & lightweight desktop-agnostic Qt file archiver"
 arch=("x86_64")
 groups=("lxqt")
@@ -16,7 +16,7 @@ optdepends=(
   'p7zip: 7Z support'
 )
 source=("https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('SKIP'
+sha256sums=('948655705e8e6a9c4c57f2d09b1134b4b23739c8cac0c39b09b04fb15d5375ef'
             'SKIP')
 validpgpkeys=(
   "19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # Pedram Pourang <tsujan2000@gmail.com>
