@@ -30,7 +30,6 @@ makedepends=(boost
              qt6-tools)
 optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver
-        qbittorrent-nox.service
         qbittorrent.sysusers
         qbittorrent.tmpfiles)
 sha256sums=('0f6f3f39425199775f89782d377bcf640a5721ec9bc22c0c6b53ccf89502c9b2'
@@ -75,5 +74,4 @@ package_qbittorrent-nox() {
 
   install -Dm644 qbittorrent.sysusers "$pkgdir/usr/lib/sysusers.d/qbittorrent.conf"
   install -Dm644 qbittorrent.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/qbittorrent.conf"
-  install -Dm644 qbittorrent-nox.service "$pkgdir/usr/lib/systemd/system/qbittorrent-nox.service"
 }
