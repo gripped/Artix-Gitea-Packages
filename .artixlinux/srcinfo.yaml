@@ -1,9 +1,9 @@
 ---
-version: 17.0+r88+geee0e8f22-1
+version: 17.0+r93+gbe2efb69b-1
 pkgbase:
   name: pulseaudio
   pkgdesc: A featureful, general-purpose sound server
-  pkgver: 17.0+r88+geee0e8f22
+  pkgver: 17.0+r93+gbe2efb69b
   pkgrel: 1
   url: https://www.freedesktop.org/wiki/Software/PulseAudio/
   arch:
@@ -57,15 +57,15 @@ pkgbase:
     - webrtc-audio-processing-1
     - xmltoman
   source:
-    - git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=eee0e8f22fdcb2fd4fbfa4311df7e5070239d435
+    - git+https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git#commit=be2efb69b97ee49ba81094d49a1b8d7be0c588c2
     - 0001-alsa-ucm-Fix-segfault-from-recursion-due-to-too-many.patch
   b2sums:
-    - 17981ec59730676b45fc1a0b36ee7d19fe099428e13a71ea904c4b3691a274d47846d71238bd29f8090e478ce59ef48b0b1ee2b1ab02ac67aa7b12a94b5c035d
+    - a8925757686c824fef914b7ee99f867f019c7cc194382edc3f7ecef98341eb1d0cf76d58223c7eb3622032e21ef8669a866a9172b64c1d0813dcb67ee8ed1468
     - 73f93801069b2c5b09646870269c0f42cefc2183a73b47c78fd160c978a841c11c5146b98351a11be24d4785181f361a455534e6f6ca2d977cf585044836f8ed
 pkgname:
   - name: pulseaudio
     depends:
-      - libpulse=17.0+r88+geee0e8f22-1
+      - libpulse=17.0+r93+gbe2efb69b-1
       - alsa-lib
       - bash
       - dbus
@@ -128,29 +128,29 @@ pkgname:
   - name: pulseaudio-zeroconf
     pkgdesc: Zeroconf support for PulseAudio
     depends:
-      - libpulse=17.0+r88+geee0e8f22-1
-      - pulseaudio=17.0+r88+geee0e8f22-1
+      - libpulse=17.0+r93+gbe2efb69b-1
+      - pulseaudio=17.0+r93+gbe2efb69b-1
       - avahi
       - dbus
       - glibc
   - name: pulseaudio-lirc
     pkgdesc: IR (lirc) support for PulseAudio
     depends:
-      - pulseaudio=17.0+r88+geee0e8f22-1
+      - pulseaudio=17.0+r93+gbe2efb69b-1
       - glibc
       - lirc
   - name: pulseaudio-jack
     pkgdesc: Jack support for PulseAudio
     depends:
-      - pulseaudio=17.0+r88+geee0e8f22-1
+      - pulseaudio=17.0+r93+gbe2efb69b-1
       - dbus
       - glibc
       - jack
   - name: pulseaudio-bluetooth
     pkgdesc: Bluetooth support for PulseAudio
     depends:
-      - libpulse=17.0+r88+geee0e8f22-1
-      - pulseaudio=17.0+r88+geee0e8f22-1
+      - libpulse=17.0+r93+gbe2efb69b-1
+      - pulseaudio=17.0+r93+gbe2efb69b-1
       - bluez
       - bluez-libs
       - dbus
@@ -164,7 +164,7 @@ pkgname:
   - name: pulseaudio-equalizer
     pkgdesc: Graphical equalizer for PulseAudio
     depends:
-      - pulseaudio=17.0+r88+geee0e8f22-1
+      - pulseaudio=17.0+r93+gbe2efb69b-1
       - dbus
       - fftw
       - glibc
@@ -174,8 +174,8 @@ pkgname:
   - name: pulseaudio-rtp
     pkgdesc: RTP and RAOP support for PulseAudio
     depends:
-      - libpulse=17.0+r88+geee0e8f22-1
-      - pulseaudio=17.0+r88+geee0e8f22-1
+      - libpulse=17.0+r93+gbe2efb69b-1
+      - pulseaudio=17.0+r93+gbe2efb69b-1
       - glib2
       - glibc
       - gst-plugins-base
