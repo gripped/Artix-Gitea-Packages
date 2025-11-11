@@ -2,8 +2,9 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=138.0
+pkgver=144.0.2
 pkgrel=1
+_pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
 arch=(x86_64 aarch64)
@@ -18,7 +19,7 @@ depends=(
   at-spi2-core
   bash
   cairo
-  ffmpeg
+  ffmpeg4.4
   fontconfig
   freetype2
   gcc-libs
@@ -86,13 +87,13 @@ options=(
 
 install='librewolf.install'
 source=(
-  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${pkgrel}.source.tar.gz
+  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${_pkgrel}.source.tar.gz
   # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
 )
 
-sha256sums=('e254c58f4b0809c097ba1e204da65df87802ff81edb4d439f42486cf861c4798'
+sha256sums=('32b9f75aa2ca8688be3051d1090b78db8e570cb87bb720a2c97dc9321e7f16ad'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
 
@@ -104,7 +105,7 @@ _build_profiled_x86_64=true
 
 prepare() {
   mkdir -p mozbuild
-  cd librewolf-$pkgver-$pkgrel
+  cd librewolf-$pkgver-$_pkgrel
 
   mv mozconfig ../mozconfig
 
@@ -178,7 +179,7 @@ fi
 
 
 build() {
-  cd librewolf-$pkgver-$pkgrel
+  cd librewolf-$pkgver-$_pkgrel
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -268,7 +269,7 @@ END
 }
 
 package() {
-  cd librewolf-$pkgver-$pkgrel
+  cd librewolf-$pkgver-$_pkgrel
   DESTDIR="$pkgdir" ./mach install
 
   # mv ${pkgdir}/usr/local/lib ${pkgdir}/usr/lib/
