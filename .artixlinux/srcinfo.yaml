@@ -1,0 +1,35 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: lxqt-admin
+  pkgdesc: LXQt system administration tool.
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/lxqt/lxqt-admin
+  arch:
+    - x86_64
+  groups:
+    - lxqt
+  license:
+    - LGPL2.1
+  makedepends:
+    - cmake
+    - qt6-tools
+    - lxqt-build-tools
+  depends:
+    - qt6-base
+    - liblxqt
+    - polkit-qt6
+  source:
+    - https://github.com/lxqt/lxqt-admin/releases/download/2.3.0/lxqt-admin-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-admin/releases/download/2.3.0/lxqt-admin-2.3.0.tar.xz.asc
+  validpgpkeys:
+    - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
+    - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
+    - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+  sha512sums:
+    - f8f044bb738d750cd6acb7f22be540f04cb65681d1a6e4cc49e3609e52247707a4d7e4583f8ef9577fc84988501033934b884cd579a65c7a3505e3d93ab82a9f
+    - SKIP
+pkgname:
+  - name: lxqt-admin
+# generated with artixpkg 0.37.4-1-any
