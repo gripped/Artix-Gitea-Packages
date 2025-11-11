@@ -12,7 +12,7 @@ pkgbase:
     - GPL
     - PerlArtistic
   depends:
-    - perl=5.40.2
+    - perl
 pkgname:
   - name: pod2man
 # generated with artixpkg 0.37.4-1-any

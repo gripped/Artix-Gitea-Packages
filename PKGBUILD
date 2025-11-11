@@ -8,7 +8,7 @@ pkgdesc='Make pod2man easily accessible'
 arch=(x86_64)
 license=(GPL PerlArtistic)
 url='https://perl.org/'
-depends=(perl=$pkgver)
+depends=(perl)
 
 package() {
   # perl 5 places pod2man in /usr/bin/core_perl instead of /usr/bin,
