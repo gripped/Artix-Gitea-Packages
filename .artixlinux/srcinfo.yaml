@@ -1,0 +1,52 @@
+---
+version: 0.18-1
+pkgbase:
+  name: libratbag
+  pkgdesc: A DBus daemon to configure gaming mice
+  pkgver: 0.18
+  pkgrel: 1
+  url: https://github.com/libratbag/libratbag
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - check
+    - valgrind
+    - python-gobject
+    - python-lxml
+  makedepends:
+    - meson
+    - swig
+    - git
+    - python-sphinx
+    - python-sphinx_rtd_theme
+    - systemd
+  depends:
+    - glib2
+    - libevdev
+    - libudev.so
+    - libunistring
+    - json-glib
+    - python
+    - python-evdev
+    - python-gobject
+  optdepends:
+    - 'linux: Linux 5.2 is required for Logitech wireless devices'
+  provides:
+    - ratbagd
+    - liblur
+  conflicts:
+    - ratbagd
+    - liblur
+  source:
+    - git+https://github.com/libratbag/libratbag#tag=v0.18?signed
+  validpgpkeys:
+    - 3DCE51D60930EBA47858BA4146F633CBB0EB4BF2
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+    - 4F60BCD32573AB28D84FD0C4CCF75EB2BBF8F69C
+  sha512sums:
+    - 027b63457db98a19565d3ddfe38f61af3da0def272f213f1bda0b41b201f4496b95f4ab4ea2042a4455cdb8f9e1c9a1a328cf23bab6178073242668f46f9eab8
+pkgname:
+  - name: libratbag
+# generated with artixpkg 0.37.4-1-any
