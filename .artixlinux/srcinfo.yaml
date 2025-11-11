@@ -1,0 +1,33 @@
+---
+version: 3.3.10-1
+pkgbase:
+  name: nicotine+
+  pkgdesc: Soulseek music-sharing client, written in python
+  pkgver: 3.3.10
+  pkgrel: 1
+  url: https://github.com/Nicotine-Plus/nicotine-plus
+  arch:
+    - any
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - gdk-pixbuf2
+    - glib2
+    - gtk4
+    - gobject-introspection-runtime
+    - pango
+    - python
+    - python-gobject
+  source:
+    - git+https://github.com/Nicotine-Plus/nicotine-plus#tag=3.3.10
+  sha256sums:
+    - 07d1544e1360d4c2d1b13e1c747525547ba1e8a39e697c8a4154dd87a17fdc8b
+pkgname:
+  - name: nicotine+
+# generated with artixpkg 0.37.4-1-any
