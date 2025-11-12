@@ -1,3 +1,4 @@
+# Packager: nous@artixlinux.org
 # Maintainer:  Dimitris Kiziridis <ragouel at outlook dot com>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Sarah Hay <sarahhay@mb.sympatico.ca>
