@@ -1,10 +1,10 @@
 ---
-version: 4.20.2-1
+version: 4.20.2-2
 pkgbase:
   name: xfce4-settings
   pkgdesc: Xfce's Configuration System
   pkgver: 4.20.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/xfce/xfce4-settings/start
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - 008da8cae0251864d1bf34e2649674e0566475a423becf81e8e3f5c6acb3877d
 pkgname:
   - name: xfce4-settings
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
