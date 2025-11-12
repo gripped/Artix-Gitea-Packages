@@ -2,8 +2,8 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgname=haproxy
-pkgver=3.2.7
-pkgrel=1
+pkgver=3.2.8
+pkgrel=2
 
 # Each release serie has its own repository. This is handled automatically in
 # PKGBUILD, but nvchecker configuration needs to be updated on bump!
@@ -28,7 +28,7 @@ source=("git+https://git.haproxy.org/git/haproxy-${pkgver%.*}.git#tag=v${pkgver}
         'haproxy.sysusers'
         '0001-Use-CFLAGS-and-LDFLAGS-when-building-admin.patch')
 
-sha256sums=('0ceabfc68c222b8b4067a035b7b3dc0361a9e55289c00ad1940896612ed7d404'
+sha256sums=('7ed984557fbf4189b6d539de5833967ab1e816fd210b473d5e60894d5965d049'
             'f6babef513b99a3fa0e50f2b144c73c980f1b78b119874ffa2580af1e651e7a9'
             'c6e716ea59272a8e871af53703726dd2a75b56c82dacf097d4bf08ac5e841a0d'
             'a1e3a1c2923465081383eb431bae55ff9841d89909469311cdba4b394ec4a998')
@@ -54,14 +54,15 @@ build() {
     USE_OPENSSL=1 \
     USE_PCRE2=1 USE_PCRE2_JIT=1 \
     USE_PROMEX=1 \
+    USE_QUIC=1 \
     USE_ZLIB=1
 
-    make \
-      SBINDIR=/usr/bin \
-      OPTIMIZE= \
-      CFLAGS="$CFLAGS" \
-      LDFLAGS="$LDFLAGS" \
-      admin/{halog/halog,iprange/ip{,6}range}
+  make \
+    SBINDIR=/usr/bin \
+    OPTIMIZE= \
+    CFLAGS="$CFLAGS" \
+    LDFLAGS="$LDFLAGS" \
+    admin/{halog/halog,iprange/ip{,6}range}
 }
 
 package() {
