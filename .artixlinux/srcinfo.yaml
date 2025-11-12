@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-1
+version: 4.4.0-2
 pkgbase:
   name: glances
   pkgdesc: CLI curses-based monitoring tool
   pkgver: 4.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://nicolargo.github.io/glances
   arch:
     - any
@@ -22,10 +22,11 @@ pkgbase:
     - python-orjson
     - python-pydantic
     - python-packaging
+    - python-jinja
+    - python-shtab
   optdepends:
     - 'hddtemp: HDD temperature monitoring support'
     - 'uvicorn: for WebUI / RestFull API'
-    - 'python-jinja: for WebUI / RestFull API'
     - 'python-fastapi: for WebUI / RestFull API'
     - 'python-docker: for the Docker monitoring support'
     - 'python-matplotlib: for graphical/chart support'
