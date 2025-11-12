@@ -5,7 +5,7 @@
 # Contributor: Francois Boulogne <fboulogne at april dot org>
 
 pkgname=glances
-pkgver=4.4.0
+pkgver=4.4.1
 pkgrel=2
 pkgdesc="CLI curses-based monitoring tool"
 url="https://nicolargo.github.io/glances"
