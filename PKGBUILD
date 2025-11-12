@@ -36,5 +36,3 @@ build() {
 package() {
   DESTDIR="${pkgdir}" ninja -C build install
 }
-
-# vim: ts=2 sw=2 et:
