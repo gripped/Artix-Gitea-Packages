@@ -22,7 +22,7 @@ pkgbase:
     - hicolor-icon-theme
     - libx11
     - pango
-    - vte3
+    - vte-legacy
   provides:
     - lxterminal
   conflicts:

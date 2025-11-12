@@ -1,4 +1,4 @@
-# Maintainer: nous
+# Maintainer: nous@artixlinux.org
 # Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org> 
@@ -20,7 +20,7 @@ depends=(
   hicolor-icon-theme
   libx11
   pango
-  vte3
+  vte-legacy
 )
 makedepends=('git' 'intltool')
 conflicts=($_pkgname)

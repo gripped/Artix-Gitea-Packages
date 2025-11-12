@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -55,6 +55,7 @@ repos:
       - lxterminal-gtk2-0.4.1-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 0.4.1-1
+    packages:
+      - lxterminal-gtk2-0.4.1-1-x86_64.pkg.tar.zst
     debug: []
