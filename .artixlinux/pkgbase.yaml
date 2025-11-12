@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.7.2-2
+    version: 2.7.3-1
     packages:
-      - python-python-socks-2.7.2-2-any.pkg.tar.zst
+      - python-python-socks-2.7.3-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

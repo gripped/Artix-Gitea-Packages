@@ -1,10 +1,10 @@
 ---
-version: 2.7.2-2
+version: 2.7.3-1
 pkgbase:
   name: python-python-socks
   pkgdesc: Core proxy client (SOCKS4, SOCKS5, HTTP) functionality for Python
-  pkgver: 2.7.2
-  pkgrel: 2
+  pkgver: 2.7.3
+  pkgrel: 1
   url: https://github.com/romis2012/python-socks
   arch:
     - any
@@ -38,11 +38,11 @@ pkgbase:
   replaces:
     - python-python_socks
   source:
-    - git+https://github.com/romis2012/python-socks.git?signed#tag=v2.7.2
+    - git+https://github.com/romis2012/python-socks.git?signed#tag=v2.7.3
   validpgpkeys:
     - 706A8935FED55F3BFB7C188B5EEAD7400A5D80ED
   sha512sums:
-    - 36813194fe7306781c452635008adc88cc456ec8d859d36690b721bad86109bce22a5af65c08fff9ab93f9c95bc466098fb1f610c30939655f1d6c2a1d64c09e
+    - dd76cdacc2efab73ef05308e64dea5d4fc7fcebbd67e65487f98badd692663153c8b34b3f30146255a8abf8237bf2307fea21942d987e07e618a49cbfe1e0fc1
 pkgname:
   - name: python-python-socks
 # generated with artixpkg 0.37.4-1-any
