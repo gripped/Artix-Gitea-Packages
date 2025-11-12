@@ -1,0 +1,2 @@
+# python2-gobject2
+
