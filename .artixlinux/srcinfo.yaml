@@ -1,10 +1,10 @@
 ---
-version: 2.16.2-5
+version: 2.16.2-6
 pkgbase:
   name: hexchat
   pkgdesc: A popular and easy to use graphical IRC (chat) client
   pkgver: 2.16.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://hexchat.github.io/
   arch:
     - x86_64
