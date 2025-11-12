@@ -1,0 +1,38 @@
+---
+version: 0.10.2-1
+pkgbase:
+  name: python-aiohttp-socks
+  pkgdesc: SOCKS proxy connector for aiohttp. SOCKS4(a) and SOCKS5 are supported.
+  pkgver: 0.10.2
+  pkgrel: 1
+  url: https://github.com/romis2012/aiohttp-socks
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-anyio
+    - python-flask
+    - python-pytest
+    - python-pytest-asyncio
+    - python-tiny-proxy
+    - python-trustme
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-aiohttp
+    - python-python-socks
+  source:
+    - git+https://github.com/romis2012/aiohttp-socks.git?signed#tag=v0.10.2
+  validpgpkeys:
+    - 706A8935FED55F3BFB7C188B5EEAD7400A5D80ED
+  b2sums:
+    - 7a1c16c5fa0264f345e762b09661b6800cd03dce45f59a04bdd140e76784873f10d0f32d8ca49990d88dad2979af679b800940ba113850aa9e7b16b4fca38ddc
+pkgname:
+  - name: python-aiohttp-socks
+# generated with artixpkg 0.37.4-1-any
