@@ -1,0 +1,20 @@
+diff -Npr a/src/reaper.c b/src/reaper.c
+*** a/src/reaper.c	2011-08-17 00:52:48.000000000 +0300
+--- b/src/reaper.c	2025-11-08 15:49:50.807668091 +0200
+*************** vte_reaper_constructor (GType
+*** 82,88 ****
+                          GObjectConstructParam *construct_properties)
+  {
+    if (singleton_reaper) {
+! 	  return g_object_ref (singleton_reaper);
+    } else {
+  	  GObject *obj;
+  	  obj = G_OBJECT_CLASS (vte_reaper_parent_class)->constructor (type, n_construct_properties, construct_properties);
+--- 82,88 ----
+                          GObjectConstructParam *construct_properties)
+  {
+    if (singleton_reaper) {
+! 	  return (GObject *) g_object_ref (G_OBJECT (singleton_reaper));
+    } else {
+  	  GObject *obj;
+  	  obj = G_OBJECT_CLASS (vte_reaper_parent_class)->constructor (type, n_construct_properties, construct_properties);
