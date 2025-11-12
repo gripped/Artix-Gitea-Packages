@@ -14,7 +14,7 @@ options=('!emptydirs')
 groups=('gtk2')
 provides=('vte')
 conflicts=('vte')
-depends=('gtk2' 'vte-common')
+depends=('gtk2' 'vte-common' 'glib2-devel')
 makedepends=('pygtk' 'intltool' 'gobject-introspection' 'gettext')
 source=(https://ftp.gnome.org/pub/GNOME/sources/vte/0.28/vte-$pkgver.tar.xz
         make_alt_work.patch
