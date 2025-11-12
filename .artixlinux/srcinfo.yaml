@@ -1,9 +1,9 @@
 ---
-version: 2.1.1762386122-1
+version: 2.1.1762795099-1
 pkgbase:
   name: luajit
   pkgdesc: Just-in-time compiler and drop-in replacement for Lua 5.1
-  pkgver: 2.1.1762386122
+  pkgver: 2.1.1762795099
   pkgrel: 1
   url: https://luajit.org/
   arch:
@@ -13,11 +13,11 @@ pkgbase:
   depends:
     - gcc-libs
   source:
-    - LuaJIT-68354f444728ef99bb51bb4d86e8f1b40853a898.tar.gz::https://github.com/LuaJIT/LuaJIT/archive/68354f444728ef99bb51bb4d86e8f1b40853a898.tar.gz
+    - LuaJIT-eba91fceb67a0a0163a9222869bf254c988c48c4.tar.gz::https://github.com/LuaJIT/LuaJIT/archive/eba91fceb67a0a0163a9222869bf254c988c48c4.tar.gz
   sha256sums:
-    - 94486eaed3ba6467a7ffce9e88a01d1c84b167f0d72750d0bf89856a8e766d33
+    - 979a7692c173bea8c29b71b69b87e47acf9c892a077c93294364e570e12c6023
   b2sums:
-    - c047b8bf326c3f35229a1b0af2c133a87f4c6fe2742ebbcc95f22b9fd281c69d0c8d412ea8dffafee33122bc5d02c837b9804ff3edf5ec655ea6cee07afbb9c1
+    - 13485cbc7ec3798c1407028be27db254b823f93096980615f6dc202f0c3c3b5f8e2e415c8f77be44edfa932dbc49d62137861761b3cff2cca8ff0465f093f03d
 pkgname:
   - name: luajit
 # generated with artixpkg 0.37.4-1-any
