@@ -1,0 +1,32 @@
+---
+version: 1.7.5-1
+pkgbase:
+  name: python-lmdb
+  pkgdesc: Universal Python binding for the LMDB Lightning Database
+  pkgver: 1.7.5
+  pkgrel: 1
+  url: https://github.com/jnwatson/py-lmdb/
+  arch:
+    - x86_64
+  license:
+    - OLDAP-2.8
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-patch-ng
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - lmdb
+    - python
+    - python-cffi
+  source:
+    - https://github.com/jnwatson/py-lmdb/archive/py-lmdb_1.7.5/python-lmdb-1.7.5.tar.gz
+  sha256sums:
+    - 715a642f6d8df1dbd2ad47d30a567982350213388ab4559fb418be4c1eb3a320
+pkgname:
+  - name: python-lmdb
+# generated with artixpkg 0.37.4-1-any
