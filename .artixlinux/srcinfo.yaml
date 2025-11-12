@@ -1,10 +1,10 @@
 ---
-version: 25.40.35563.4-1
+version: 25.40.35563.4-2
 pkgbase:
   name: intel-compute-runtime
   pkgdesc: Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
   pkgver: 25.40.35563.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/intel/compute-runtime/
   arch:
     - x86_64
@@ -21,13 +21,12 @@ pkgbase:
     - intel-gmmlib
     - intel-graphics-compiler
   optdepends:
-    - 'libva: for cl_intel_va_api_media_sharing'
-    - 'libdrm: for cl_intel_va_api_media_sharing'
+    - 'igsc: for discrete GPU firmware enumeration through Level Zero'
+    - 'libdrm: for cl_intel_va_api_media_sharing OpenCL extension'
+    - 'libva: for cl_intel_va_api_media_sharing OpenCL extension'
   provides:
-    - opencl-driver
     - level-zero-driver
-  options:
-    - '!lto'
+    - opencl-driver
   source:
     - https://github.com/intel/compute-runtime/archive/25.40.35563.4/intel-compute-runtime-25.40.35563.4.tar.gz
     - 010-intel-compute-runtime-disable-werror.patch
