@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.28.7-7
+    version: 2.28.7-7.1
     packages:
-      - python2-gobject2-2.28.7-7-x86_64.pkg.tar.zst
+      - python2-gobject2-2.28.7-7.1-x86_64.pkg.tar.zst
     debug: []
