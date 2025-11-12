@@ -1,3 +1,4 @@
+# Packager: nous@artixlinux.org
 # Maintainer: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gtk-engines

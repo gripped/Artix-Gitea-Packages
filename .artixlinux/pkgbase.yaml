@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,7 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 2.21.0-6
+    packages:
+      - gtk-engines-2.21.0-6-x86_64.pkg.tar.zst
     debug: []
 team: world
