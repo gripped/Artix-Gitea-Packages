@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.7.1-2
+    version: 2.7.2-1
     packages:
-      - python-openai-2.7.1-2-any.pkg.tar.zst
+      - python-openai-2.7.2-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
