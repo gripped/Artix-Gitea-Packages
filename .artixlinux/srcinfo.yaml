@@ -1,0 +1,39 @@
+---
+version: 0.5.15-4
+pkgbase:
+  name: osdlyrics
+  pkgdesc: A lyric show compatible with various media players
+  pkgver: 0.5.15
+  pkgrel: 4
+  url: https://github.com/osdlyrics/osdlyrics
+  arch:
+    - x86_64
+  groups:
+    - gtk2
+  license:
+    - GPL3
+  makedepends:
+    - intltool
+  depends:
+    - gtk2
+    - dbus-glib
+    - curl
+    - libnotify
+    - libmpd
+    - xmms2
+    - desktop-file-utils
+    - hicolor-icon-theme
+    - sqlite
+    - python
+    - python-pycurl
+    - python-dbus
+    - python-chardet
+    - python-gobject
+    - libappindicator-gtk2
+  source:
+    - osdlyrics-0.5.15.tar.gz::https://github.com/osdlyrics/osdlyrics/archive/0.5.15.tar.gz
+  sha256sums:
+    - 5948dc45fa2f01e9acfe3fb4144cd3acd2babb420c3d6f216b05597821bc316b
+pkgname:
+  - name: osdlyrics
+# generated with artixpkg 0.37.4-1-any
