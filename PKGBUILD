@@ -3,7 +3,7 @@
 
 pkgname=pcmanfm-qt
 pkgver=2.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="The LXQt file manager, Qt port of PCManFM"
 arch=("x86_64")
 groups=("lxqt")
@@ -29,6 +29,14 @@ validpgpkeys=(
 	"7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3"  # Alf Gaida <agaida@siduction.org>
 	"19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # Pedram Pourang <tsujan2000@gmail.com>
 )
+
+prepare() {
+	cd "$srcdir/$pkgname-$pkgver"
+
+	# Show desktop preferences only in LXQt
+	# https://github.com/lxqt/pcmanfm-qt/pull/2110
+	echo 'OnlyShowIn=LXQt;' >> pcmanfm/pcmanfm-qt-desktop-pref.desktop.in
+}
 
 build() {
 	cmake -B build -S "$srcdir/$pkgname-$pkgver" \

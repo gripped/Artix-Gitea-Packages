@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-1
+version: 2.3.0-2
 pkgbase:
   name: pcmanfm-qt
   pkgdesc: The LXQt file manager, Qt port of PCManFM
   pkgver: 2.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/pcmanfm-qt
   arch:
     - x86_64
