@@ -1,10 +1,10 @@
 ---
-version: 1.43.0-1.1
+version: 1.43.1-1
 pkgbase:
   name: just
   pkgdesc: A handy way to save and run project-specific commands
-  pkgver: 1.43.0
-  pkgrel: 1.1
+  pkgver: 1.43.1
+  pkgrel: 1
   url: https://github.com/casey/just
   arch:
     - x86_64
@@ -15,9 +15,9 @@ pkgbase:
   depends:
     - gcc-libs
   source:
-    - just-1.43.0.tar.gz::https://github.com/casey/just/archive/1.43.0.tar.gz
+    - just-1.43.1.tar.gz::https://github.com/casey/just/archive/1.43.1.tar.gz
   sha256sums:
-    - 03904d6380344dbe10e25f04cd1677b441b439940257d3cc9d8c5f09d91e3065
+    - 741b5c6743501dc4dbd23050dd798f571d873d042b67bcea113d622b0c37d180
 pkgname:
   - name: just
 # generated with artixpkg 0.37.4-1-any
