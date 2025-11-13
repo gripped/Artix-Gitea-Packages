@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 4.38-1
+    version: 4.38.2-1
     packages:
-      - nspr-4.38-1-x86_64.pkg.tar.zst
+      - nspr-4.38.2-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 4.37-1
