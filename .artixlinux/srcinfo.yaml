@@ -1,0 +1,28 @@
+---
+version: 1.0.1-1
+pkgbase:
+  name: waylandpp
+  pkgdesc: Wayland C++ bindings
+  pkgver: 1.0.1
+  pkgrel: 1
+  url: https://github.com/NilsBrause/waylandpp
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - GPL3
+  makedepends:
+    - cmake
+    - egl-wayland
+  depends:
+    - wayland
+    - pugixml
+  conflicts:
+    - waylandpp-git
+  source:
+    - https://github.com/NilsBrause/waylandpp/archive/1.0.1.zip
+  sha512sums:
+    - 25ab779121e079f8d193b2ffaff9f8d069a269dfea609f4938c28de8e48a8d97cf5816b3ed3f0beac894f2a6979d3393e32b696510d9193b7beb78833a6252df
+pkgname:
+  - name: waylandpp
+# generated with artixpkg 0.37.4-1-any
