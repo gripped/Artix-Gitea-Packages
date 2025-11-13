@@ -31,7 +31,8 @@ build() {
   ./configure \
     --prefix=/usr \
     --enable-animation \
-    --enable-animationrtl
+    --enable-animationrtl \
+    CFLAGS="$CFLAGS -Wno-error=implicit-function-declaration"
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
