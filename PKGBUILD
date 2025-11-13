@@ -1,36 +1,34 @@
-# Maintainer: Roshless <pkg@roshless.com>
+# Maintainer: marzosh <marzosh@artixlinux.org>
+# Maintainer: artist for Artix Linux
+# Contributor: Roshless <pkg@roshless.com>
 
 pkgname=lagrange
 pkgrel=1
 pkgver=1.19.3
 pkgdesc="Beautiful Gemini Client"
 url="https://git.skyjake.fi/skyjake/lagrange"
-arch=('x86_64' 'i686' 'aarch64' 'armv7h')
-license=("BSD")
-install="$pkgname.install"
-source=(
-    "https://git.skyjake.fi/skyjake/$pkgname/releases/download/v$pkgver/lagrange-$pkgver.tar.gz"
-)
-
+arch=('x86_64')
+license=("BSD-2-Clause")
 depends=(
     "fribidi"
     "harfbuzz"
     "hicolor-icon-theme"
     "libunistring"
+    "mpg123"
     "openssl"
     "pcre"
     "sdl2"
     "zlib"
-    "mpg123"
 )
 makedepends=(
     "cmake"
     "zip"
 )
 optdepends=(
-    "libwebp: Webp decode support"
     "libjxl: JPEG XL image decoding"
+    "libwebp: Webp decode support"
 )
+source=("${url}/releases/download/v$pkgver/${pkgname}-${pkgver}.tar.gz")
 
 build() {
     cmake -B build -S "$pkgname-${pkgver}" \
