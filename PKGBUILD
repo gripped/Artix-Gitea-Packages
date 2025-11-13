@@ -4,7 +4,7 @@
 
 pkgname=xdg-desktop-portal-lxqt
 pkgver=1.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A backend implementation for xdg-desktop-portal using Qt/KDE Frameworks/libfm-qt'
 arch=(x86_64)
 groups=(lxqt)
@@ -15,12 +15,28 @@ license=('LGPL-2.1-or-later')
 depends=(qt6-base kwindowsystem xdg-desktop-portal libfm-qt)
 makedepends=(cmake)
 provides=(xdg-desktop-portal-impl)
-source=("https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc})
+source=("https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"{,.asc}
+        xdg-desktop-portal-lxqt-modal-dialog.patch
+        xdg-desktop-portal-lxqt-wayland-parent.patch)
 sha256sums=('daa49490600ef3a3dbd9d1ccd94e72870f6c099ae425a1c2982e014555509775'
-            'SKIP')
+            'SKIP'
+            'e27455c673c546688bc1f902eefcfaf7502553635504f38be94966e11782a94b'
+            '787317905987b22d6e9001a0bddc66008c8b352de6104b329b62529520623b7e')
 validpgpkeys=(
   "19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # Pedram Pourang <tsujan2000@gmail.com>
 )
+
+prepare() {
+  cd $pkgname-$pkgver
+
+  # Make dialog as modal only for the window
+  # https://github.com/lxqt/xdg-desktop-portal-lxqt/pull/52
+  patch -Np1 -i ../xdg-desktop-portal-lxqt-modal-dialog.patch
+
+  # Add support for setting parent window on Wayland
+  # https://github.com/lxqt/xdg-desktop-portal-lxqt/pull/53
+  patch -Np1 -i ../xdg-desktop-portal-lxqt-wayland-parent.patch
+}
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
