@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 18.1-1
+    packages:
+      - postgresql-18.1-1-x86_64.pkg.tar.zst
+      - postgresql-libs-18.1-1-x86_64.pkg.tar.zst
+      - postgresql-docs-18.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 18.0-2
