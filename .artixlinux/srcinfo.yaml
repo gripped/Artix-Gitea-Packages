@@ -1,17 +1,17 @@
 ---
-version: 2.3.0-1
+version: 2.3.0-2
 pkgbase:
   name: lxqt-session
   pkgdesc: The LXQt session manager
   pkgver: 2.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/lxqt-session
   arch:
     - x86_64
   groups:
     - lxqt
   license:
-    - LGPL2.1
+    - LGPL-2.1-or-later
   makedepends:
     - cmake
     - lxqt-build-tools
@@ -34,6 +34,7 @@ pkgbase:
   source:
     - https://github.com/lxqt/lxqt-session/releases/download/2.3.0/lxqt-session-2.3.0.tar.xz
     - https://github.com/lxqt/lxqt-session/releases/download/2.3.0/lxqt-session-2.3.0.tar.xz.asc
+    - lxqt-session-import-environment.patch
   validpgpkeys:
     - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
@@ -41,6 +42,7 @@ pkgbase:
   sha256sums:
     - ce11297a587e09f118f2a5b5decd6829e98dcb0c72b805400bd42bdcb39f728f
     - SKIP
+    - 5654521092d75536bf0a80cfa62dad124ae203a52488e41182004ff95ffb65ae
 pkgname:
   - name: lxqt-session
 # generated with artixpkg 0.37.4-1-any
