@@ -1,0 +1,33 @@
+---
+version: 0.6.0-1
+pkgbase:
+  name: kquickimageeditor
+  pkgdesc: QML image editing components
+  pkgver: 0.6.0
+  pkgrel: 1
+  url: https://invent.kde.org/libraries/kquickimageeditor
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - extra-cmake-modules
+  depends:
+    - gcc-libs
+    - glibc
+    - kconfig
+    - kirigami
+    - opencv
+    - qt6-base
+    - qt6-declarative
+  source:
+    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.6.0.tar.xz
+    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.6.0.tar.xz.sig
+  validpgpkeys:
+    - 39FFA93CAE9C6AFC212AD00202325448204E452A
+  sha256sums:
+    - 11ed4ce1c164a8b6d50bbc1548b5849ab75d5fb837619b90f2cea51ed122547a
+    - SKIP
+pkgname:
+  - name: kquickimageeditor
+# generated with artixpkg 0.37.4-1-any
