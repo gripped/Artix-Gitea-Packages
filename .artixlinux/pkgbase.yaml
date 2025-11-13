@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.40.35563.4-2
+    version: 25.40.35563.4-3
     packages:
-      - intel-compute-runtime-25.40.35563.4-2-x86_64.pkg.tar.zst
+      - intel-compute-runtime-25.40.35563.4-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.40.35563.4-1

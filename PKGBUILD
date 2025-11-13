@@ -4,7 +4,7 @@
 
 pkgname=intel-compute-runtime
 pkgver=25.40.35563.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver'
 arch=('x86_64')
 url='https://github.com/intel/compute-runtime/'
@@ -50,7 +50,6 @@ build() {
     local _opencl_headers_dir="${srcdir}/compute-runtime-${pkgver}/third_party/opencl_headers"
     export CXXFLAGS+=" -isystem${_opencl_headers_dir}"
     
-    # tests currently disabled because of https://github.com/intel/compute-runtime/issues/599
     cmake -B build -S compute-runtime-${pkgver} \
         -G 'Unix Makefiles' \
         -DCMAKE_BUILD_TYPE='Release' \
@@ -63,7 +62,6 @@ build() {
         -DNEO_VERSION_BUILD="$(printf "$pkgver" | cut -d . -f3)" \
         -DKHRONOS_GL_HEADERS_DIR='/usr/include' \
         -DKHRONOS_HEADERS_DIR="$_opencl_headers_dir" \
-        -DSKIP_UNIT_TESTS='ON' \
         -Wno-dev
     cmake --build build
 }
