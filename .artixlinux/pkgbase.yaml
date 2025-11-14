@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 6.17-1
     packages:
       - linux-api-headers-6.17-1-x86_64.pkg.tar.zst
-    debug: []
-  system:
-    version: 6.16-2
-    packages:
-      - linux-api-headers-6.16-2-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
