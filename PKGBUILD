@@ -3,7 +3,7 @@
 
 pkgname=nvchecker
 pkgver=2.19
-pkgrel=1
+pkgrel=2
 pkgdesc="New version checker for software releases"
 arch=('any')
 url="https://github.com/lilydjwg/nvchecker"
@@ -42,6 +42,8 @@ validpgpkeys=(
 _backports=(
   # update tests
   ab4fc7d2e5a0d7ed7bf7a5850e56c1af5d34c459
+  # Update version check in test_rpmrepo.py
+  b02ddd38d6b9703b6114567c65038a56af9b3def
 )
 
 prepare() {
@@ -66,6 +68,12 @@ build() {
   make -C docs man
 }
 
+check() {
+  cd nvchecker
+  # https://github.com/lilydjwg/nvchecker/issues/310
+  pytest --deselect tests/test_container.py::test_container_with_tag
+}
+
 package() {
   cd nvchecker
   python -m installer --destdir="$pkgdir" dist/*.whl
@@ -78,3 +86,4 @@ package() {
   install -Dm644 docs/_build/man/nvchecker.1 -t "$pkgdir"/usr/share/man/man1/
 }
 
+# vim:set ts=2 sw=2 et:

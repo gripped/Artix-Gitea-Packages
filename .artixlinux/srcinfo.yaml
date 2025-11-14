@@ -1,10 +1,10 @@
 ---
-version: 2.19-1
+version: 2.19-2
 pkgbase:
   name: nvchecker
   pkgdesc: New version checker for software releases
   pkgver: 2.19
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lilydjwg/nvchecker
   arch:
     - any
