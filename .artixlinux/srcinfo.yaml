@@ -1,10 +1,10 @@
 ---
-version: 8.17.0-1
+version: 8.17.0-2
 pkgbase:
   name: curl
   pkgdesc: command line tool and library for transferring data with URLs
   pkgver: 8.17.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://curl.se/
   arch:
     - x86_64
