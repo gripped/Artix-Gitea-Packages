@@ -1,10 +1,10 @@
 ---
-version: 0.3.2-3
+version: 0.4.0-1
 pkgbase:
   name: pekwm
   pkgdesc: Tabbed X11 window manager
-  pkgver: 0.3.2
-  pkgrel: 3
+  pkgver: 0.4.0
+  pkgrel: 1
   url: https://github.com/pekdon/pekwm
   arch:
     - x86_64
@@ -39,9 +39,9 @@ pkgbase:
     - etc/pekwm/start
     - etc/pekwm/vars
   source:
-    - git+https://github.com/pekdon/pekwm#tag=release-0.3.2
+    - git+https://github.com/pekdon/pekwm#tag=release-0.4.0
   b2sums:
-    - 34d543aef4ad8c78dfd3cf915fae14fbba0d7cc4294f754554c1fe677f12ef94b1cd4cac837cb2bc05fcaf25ac3516e225f819acb454a7eabbdca4c3e9f77543
+    - 6e00da607e75df9457b39e9698949c44a705b6f53ba5da4ba5881d508112de4b16f7a6e06713575b267125e4bcec4a2eeec0423a3a2612ee2d7ee25b78bd59e0
 pkgname:
   - name: pekwm
 # generated with artixpkg 0.37.4-1-any
