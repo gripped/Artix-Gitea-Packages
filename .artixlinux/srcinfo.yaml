@@ -1,10 +1,10 @@
 ---
-version: 0.52.1-2
+version: 0.52.1-3
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
   pkgver: 0.52.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
