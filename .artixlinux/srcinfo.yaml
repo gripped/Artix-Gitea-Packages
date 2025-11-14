@@ -1,10 +1,10 @@
 ---
-version: 6.10.0-2
+version: 6.10.0-3
 pkgbase:
   name: qt6-multimedia
   pkgdesc: Classes for audio, video, radio and camera functionality
   pkgver: 6.10.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.qt.io
   arch:
     - x86_64
