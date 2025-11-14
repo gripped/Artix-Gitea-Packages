@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,17 +13,15 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 2.45.1-1
     packages:
       - binutils-2.45.1-1-x86_64.pkg.tar.zst
     debug:
       - binutils-debug-2.45.1-1-x86_64.pkg.tar.zst
-  system:
-    version: 2.45+r29+g2b2e51a31ec7-1
-    packages:
-      - binutils-2.45+r29+g2b2e51a31ec7-1-x86_64.pkg.tar.zst
-    debug:
-      - binutils-debug-2.45+r29+g2b2e51a31ec7-1-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
