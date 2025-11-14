@@ -1,10 +1,10 @@
 ---
-version: 1.16-2
+version: 1.16.1-1
 pkgbase:
   name: libnvme
   pkgdesc: C Library for NVM Express on Linux
-  pkgver: 1.16
-  pkgrel: 2
+  pkgver: 1.16.1
+  pkgrel: 1
   url: https://github.com/linux-nvme/libnvme
   arch:
     - x86_64
@@ -25,9 +25,9 @@ pkgbase:
     - liburing
     - openssl
   source:
-    - libnvme-1.16.tar.gz::https://github.com/linux-nvme/libnvme/archive/v1.16.tar.gz
+    - libnvme-1.16.1.tar.gz::https://github.com/linux-nvme/libnvme/archive/v1.16.1.tar.gz
   sha256sums:
-    - 5bb24139a113f350708fe54073e799f454d509218758060c398144b91811d176
+    - ce1d9d393feb84c4e82ca096db2bdb7dd4a5fd1997d711cc1904796944f2c579
 pkgname:
   - name: libnvme
 # generated with artixpkg 0.37.4-1-any
