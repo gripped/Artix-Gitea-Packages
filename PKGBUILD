@@ -21,13 +21,13 @@ backup=('etc/xrdp/sesman.ini'
 install="${pkgname}.install"
 options=('!debug')
 source=("https://github.com/neutrinolabs/xrdp/releases/download/v${pkgver//_/-}/xrdp-${pkgver//_/-}.tar.gz"
-	"arch-config.diff")
+	"artix-config.diff")
 sha256sums=('52eadf3e86c57be0de0b9d5c184b52a7946a070746d3eb04b5089dd6d42f8f5f'
-            'e0ffce5b1a436990281fe2cc4a3cd9c2840a1dad99740aeaea866ccd9ef56db0')
+            '7f4d1aa2962366057999ce7376549044f433a7e69c98b7a50848e5be884f6897')
 
 prepare() {
   cd "${pkgname}-${pkgver//_/-}"
-  patch -Np2 -b -z .orig <../arch-config.diff
+  patch -Np2 -b -z .orig <../artix-config.diff
   ./bootstrap
 }
 
