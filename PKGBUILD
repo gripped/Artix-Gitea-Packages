@@ -72,3 +72,4 @@ package() {
   install -Dm644 COPYING "$pkgdir"/usr/share/licenses/$pkgname/COPYING
   install -Dm644 instfiles/default/xrdp "$pkgdir"/etc/default/xrdp
 }
+
