@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: schuay <jakob.gruber@gmail.com>
+# Contributor: sezanzeb for the 4.0.0 PKGBUILD.
+# Contributor: Stefan Husmann <stefan-husmann@t-online.de>
+# Contributor: Andrea Scarpino <andrea@archlinux.org>
+
+pkgname=soundconverter
+pkgver=4.1.1
+pkgrel=1
+pkgdesc='A simple sound converter application for GNOME'
+arch=(any)
+license=(GPL-3.0-only)
+url=https://soundconverter.org
+_url="https://github.com/kassoulet/$pkgname"
+depends=(desktop-file-utils
+         gst-plugins-good
+         gst-plugins-ugly
+         gst-python
+         python-gobject
+         python-setuptools) # https://bugs.archlinux.org/task/71201
+makedepends=(python-{build,installer,wheel}
+             python-distutils-extra)
+#depends=(gst-plugins-base gst-plugins-good gtk3 libnotify python-gobject)
+#makedepends=(intltool python-distutils-extra)
+_archive="$pkgname-$pkgver"
+source=("$_url/archive/refs/tags/$pkgver/$_archive.tar.gz")
+sha256sums=('8ac117e8e7668179b5dd88eb761976221cee63995d87d68b89b0059d5597a02a')
+
+build() {
+  cd "$_archive"
+  python -m build -wn
+}
+
+package() {
+  cd "$_archive"
+  python -m installer -d "$pkgdir" dist/*.whl
+  # pacman will compile schemas via a hook once placed into /usr,
+  # don't let the setup.py script do it.
+  rm "$pkgdir/usr/share/glib-2.0/schemas/gschemas.compiled"
+}

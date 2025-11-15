@@ -1,0 +1,31 @@
+---
+version: 4.1.1-1
+pkgbase:
+  name: soundconverter
+  pkgdesc: A simple sound converter application for GNOME
+  pkgver: 4.1.1
+  pkgrel: 1
+  url: https://soundconverter.org
+  arch:
+    - any
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-distutils-extra
+  depends:
+    - desktop-file-utils
+    - gst-plugins-good
+    - gst-plugins-ugly
+    - gst-python
+    - python-gobject
+    - python-setuptools
+  source:
+    - https://github.com/kassoulet/soundconverter/archive/refs/tags/4.1.1/soundconverter-4.1.1.tar.gz
+  sha256sums:
+    - 8ac117e8e7668179b5dd88eb761976221cee63995d87d68b89b0059d5597a02a
+pkgname:
+  - name: soundconverter
+# generated with artixpkg 0.37.4-1-any
