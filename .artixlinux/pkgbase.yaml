@@ -1,11 +1,11 @@
 ---
 team: lib32
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -42,8 +42,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: null
-    packages: []
+    version: 0.3.0-1
+    packages:
+      - lib32-libdisplay-info-0.3.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
