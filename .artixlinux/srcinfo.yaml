@@ -1,0 +1,52 @@
+---
+version: 0.10.4.1-2
+pkgbase:
+  name: xrdp
+  pkgdesc: An open source remote desktop protocol (RDP) server
+  pkgver: 0.10.4.1
+  pkgrel: 2
+  url: https://github.com/neutrinolabs/xrdp
+  install: xrdp.install
+  arch:
+    - i686
+    - x86_64
+    - armv6h
+    - armv7l
+    - aarch64
+  license:
+    - Apache-2.0
+  checkdepends:
+    - check
+  makedepends:
+    - nasm
+    - cmocka
+  depends:
+    - libxrandr
+    - libfdk-aac
+    - ffmpeg
+    - imlib2
+    - fuse3
+    - x264
+  optdepends:
+    - tigervnc
+    - tightvnc
+    - realvnc-vnc-server
+  options:
+    - '!debug'
+  backup:
+    - etc/xrdp/sesman.ini
+    - etc/xrdp/xrdp.ini
+    - etc/xrdp/cert.pem
+    - etc/xrdp/key.pem
+    - etc/xrdp/startwm.sh
+    - etc/xrdp/reconnectwm.sh
+    - etc/default/xrdp
+  source:
+    - https://github.com/neutrinolabs/xrdp/releases/download/v0.10.4.1/xrdp-0.10.4.1.tar.gz
+    - arch-config.diff
+  sha256sums:
+    - 52eadf3e86c57be0de0b9d5c184b52a7946a070746d3eb04b5089dd6d42f8f5f
+    - e0ffce5b1a436990281fe2cc4a3cd9c2840a1dad99740aeaea866ccd9ef56db0
+pkgname:
+  - name: xrdp
+# generated with artixpkg 0.37.4-1-any
