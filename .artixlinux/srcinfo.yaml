@@ -1,9 +1,9 @@
 ---
-version: 1.26.7-1
+version: 1.26.8-1
 pkgbase:
   name: lib32-gstreamer
   pkgdesc: Multimedia graph framework (32-bit)
-  pkgver: 1.26.7
+  pkgver: 1.26.8
   pkgrel: 1
   url: https://gstreamer.freedesktop.org/
   arch:
@@ -73,13 +73,13 @@ pkgbase:
     - meson
     - wayland-protocols
   source:
-    - git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=1.26.7
+    - git+https://gitlab.freedesktop.org/gstreamer/gstreamer.git?signed#tag=1.26.8
     - 0001-HACK-meson-Disable-broken-tests.patch
   validpgpkeys:
     - D637032E45B8C6585B9456565D2EEE6F6F349D7C
   b2sums:
-    - 59f488fea5412583e7ccb76e544c2cf99d9a2a96ae2e46bb28c86f44aeb743280a74e72f0cc7129d6dbbf14bdbdfa04d819c7cd568349b11313c9693dcfba23b
-    - c84dcf24b0ddba95ec9b06663ac53a232552e5f684c13a2da851eefc843eaede42966c73856d2b40bcc8f8d313a309e2aae8ed20312d28da8e43601011153486
+    - 71db8565d00e3f5b94687fce22aed66274d12a6fcee10d962348222c211b751765684c64ff710ed2892a752d96014b4c04244f7ff424fbbe28e39b37199040f3
+    - 7c7064c8c9906f1e1d73d7516e69bf938d02259eb825053e9c33733f0403f70f5d9802a537a1780f25bf6354c5b3e5237dc712991e78e652706abbc77348d579
 pkgname:
   - name: lib32-gstreamer
     pkgdesc: Multimedia graph framework (32-bit) - core
@@ -96,7 +96,7 @@ pkgname:
   - name: lib32-gst-plugins-base-libs
     pkgdesc: Multimedia graph framework (32-bit) - base
     depends:
-      - lib32-gstreamer=1.26.7-1
+      - lib32-gstreamer=1.26.8-1
       - gst-plugins-base-libs
       - lib32-gcc-libs
       - lib32-glib2
@@ -118,8 +118,8 @@ pkgname:
   - name: lib32-gst-plugins-base
     pkgdesc: Multimedia graph framework (32-bit) - base plugins
     depends:
-      - lib32-gst-plugins-base-libs=1.26.7-1
-      - lib32-gstreamer=1.26.7-1
+      - lib32-gst-plugins-base-libs=1.26.8-1
+      - lib32-gstreamer=1.26.8-1
       - gst-plugins-base
       - lib32-alsa-lib
       - lib32-cairo
@@ -134,8 +134,8 @@ pkgname:
   - name: lib32-gst-plugins-good
     pkgdesc: Multimedia graph framework (32-bit) - good plugins
     depends:
-      - lib32-gst-plugins-base-libs=1.26.7-1
-      - lib32-gstreamer=1.26.7-1
+      - lib32-gst-plugins-base-libs=1.26.8-1
+      - lib32-gstreamer=1.26.8-1
       - gst-plugins-good
       - lib32-aalib
       - lib32-bzip2
