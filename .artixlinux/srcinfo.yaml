@@ -1,11 +1,11 @@
 ---
-version: 1.3.0-8
+version: 1.3.0-9
 pkgbase:
   name: yasm
   pkgdesc: A rewrite of NASM to allow for multiple syntax supported (NASM, TASM, GAS, etc.)
   pkgver: 1.3.0
-  pkgrel: 8
-  url: https://www.tortall.net/projects/yasm/
+  pkgrel: 9
+  url: https://github.com/yasm/yasm
   arch:
     - x86_64
   license:
@@ -31,4 +31,4 @@ pkgbase:
     - f7afb2be3c15d6695142baf2836dfe974e91dac9b00395bfab8504014243f631ced6dca2a058071592cd5beb23588cc1ecbeccd3a4b1da6403b115d36d82b7b1
 pkgname:
   - name: yasm
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.37.4-1-any
