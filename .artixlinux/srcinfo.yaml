@@ -1,0 +1,35 @@
+---
+version: 3.2.7-2
+pkgbase:
+  name: cdemu-daemon
+  pkgdesc: CD/DVD-ROM device emulator daemon
+  pkgver: 3.2.7
+  pkgrel: 2
+  url: https://cdemu.sourceforge.io/
+  install: cdemu-daemon.install
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+    - git
+    - intltool
+    - ninja
+  depends:
+    - VHBA-MODULE
+    - dbus
+    - glib2
+    - glibc
+    - libao
+    - libmirage
+  optdepends:
+    - 'alsa-lib: to enable the ALSA audio driver'
+    - 'pulse-native-provider: to enable the PA audio driver'
+  source:
+    - cdemu-code::git+https://git.code.sf.net/p/cdemu/code#tag=cdemu-daemon-3.2.7
+  b2sums:
+    - abbf18c8a03fe09b1896194d1f10ddd7c9a6c75145e390efea2c9b8cdcfd01bf19b4ffaeb0dc618ed597f8fbd33bfc33e50b375bcef12c4c781dc28bcd75df73
+pkgname:
+  - name: cdemu-daemon
+# generated with artixpkg 0.37.4-1-any
