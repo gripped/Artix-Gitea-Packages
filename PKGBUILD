@@ -8,7 +8,7 @@ pkgname=(
   at-spi2-core-docs
 )
 pkgver=2.58.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Protocol definitions and daemon for D-Bus at-spi"
 url="https://gitlab.gnome.org/GNOME/at-spi2-core"
 arch=(x86_64)
@@ -53,6 +53,7 @@ build() {
     -D use_systemd=false
     -D default_bus=dbus-daemon
     -D docs=true
+    -D gtk2_atk_adaptor=false
   )
 
   artix-meson at-spi2-core build "${meson_options[@]}"
