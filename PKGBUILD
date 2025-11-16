@@ -2,7 +2,7 @@
 
 pkgname=firefox
 pkgver=145.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -78,6 +78,7 @@ source=(
   $pkgname.desktop
   org.mozilla.$pkgname.metainfo.xml
   0001-Install-under-remoting-name.patch
+  0002-Bug-1995035-Allow-F_DUPFD_QUERY-in-the-Linux-sandbox.patch
   policies.json
   preferences.patch
   preferences2.patch
@@ -93,6 +94,7 @@ sha256sums=('eb0828db0e942ad345c725e2cbf2ed3b90d23771b054b6db0ded57cfa10b8c9c'
             '71fe797430198ac8c00b538dce537284cf526e48be0496698cf5a980d70c16da'
             '23f557fa7989adcae03cc9458d94716981dbcf0e9d6d52a289a2426e50b4b785'
             '883ca2fa723a7572269d18559d5b82412782ad63e5dd3820eeb0540e3fe34314'
+            '3b8bae25a05e6075c7025be387ee8e1a2dc57c19d89d3028b457128530f6c24b'
             '1069cd9b866c5348cbb60196aab1837c2d544dc3b48c9a23c141773671635608'
             '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2'
             '7802a6e1c6fb2d117041671b7853d376cebc5e7d76001159ed960fc557d2a0f5')
@@ -102,6 +104,7 @@ b2sums=('a8007d06dce77197dfb40ab9a759287b6bcff4e56d1b2c7acfed9475aaa2f936948534d
         '2c7936949ef922307fb593bd0480a13bde2eab8ae24fc89071d809d6659384705f9b7838b1ae8bc46b98a152ba01fcffad606d4c84796ad9bfaaf20166f0a0fd'
         '1a7fc030b1051df00df1b2f5b247b8c658de6cdfba0788041c830da3aaaa6ac974ab684e05feb80672aa2d2c22294cacfa93a71dc664b3e60becdd65e879fcee'
         '8a894b01e405b628877483e40e9b018647977cb053b6af02afc901ed24d6e1f767f3db8c321070e33aea4a05ba16f1eb47ae600e5299b5f9caad03d20ba38cf5'
+        'e97f22602666465d418cbbb260cf8de936ca101b2c800247b45a63444c36fadee2c0dc8b93ee203409e27fb99a82e24d8c7bd20a7e53eddc979cd21b7cdaedde'
         '1e09e05d8fb8661872737d2ac1dc1de1a198253e7563ddd412838f23a162a7aca51c70be6c99825281ae0b0b305225d4a8bc53c685a5b8984754ca06625af1da'
         '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
         'e4c6d14fbfde0237da9fad63289c2dc55084378e1edc805e39c207595dc71c12e731934b83fbf0286635f520832774c6c33398a47b11288dd4c34e431e8f6ffd')
@@ -113,6 +116,9 @@ prepare() {
 
   # Make different channels installable in parallel
   patch -Np1 -i ../0001-Install-under-remoting-name.patch
+
+  # Fix RDD crashes with Mesa 25.3
+  patch -Np1 -i ../0002-Bug-1995035-Allow-F_DUPFD_QUERY-in-the-Linux-sandbox.patch
 
   echo -n "$_google_api_key" >google-api-key
 
