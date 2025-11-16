@@ -96,3 +96,4 @@ package_lact-libadwaita() {
   install -Dvm755 "target/release/$pkgbase-adw" "$pkgdir/usr/bin/$pkgbase"
   install -Dvm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgbase/"
 }
+
