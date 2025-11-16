@@ -1,10 +1,10 @@
 ---
-version: 6.16.12.hardened1-2
+version: 6.17.8.hardened1-1
 pkgbase:
   name: linux-hardened
   pkgdesc: Security-Hardened Linux
-  pkgver: 6.16.12.hardened1
-  pkgrel: 2
+  pkgver: 6.17.8.hardened1
+  pkgrel: 1
   url: https://github.com/anthraxx/linux-hardened
   arch:
     - x86_64
@@ -32,30 +32,27 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.12.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.16.12.tar.sign
-    - https://github.com/anthraxx/linux-hardened/releases/download/v6.16.12-hardened1/linux-hardened-v6.16.12-hardened1.patch
-    - https://github.com/anthraxx/linux-hardened/releases/download/v6.16.12-hardened1/linux-hardened-v6.16.12-hardened1.patch.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.8.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.17.8.tar.sign
+    - https://github.com/anthraxx/linux-hardened/releases/download/v6.17.8-hardened1/linux-hardened-v6.17.8-hardened1.patch
+    - https://github.com/anthraxx/linux-hardened/releases/download/v6.17.8-hardened1/linux-hardened-v6.17.8-hardened1.patch.sig
     - config
-    - fix-sphinx-error.patch::https://github.com/archlinux/linux/commit/c7dd449e808fbd0a2a070bde516450f92a0790fe.patch
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - E240B57E2C4630BA768E2F26FC1B547C8D8172C8
   sha256sums:
-    - 7ca4debc5ca912ebb8a76944a5c118afd5d09e31ef43c494adb14273da29a26e
+    - 5a8de64a75fca706c01c6c0a77cf75a74618439db195e25f1f0268af6b2fb1da
     - SKIP
-    - 547063b6148d59e8463f7069e8304a1ddebf58a3ad49f460303cdbd502fcc8a6
+    - 06505cc7fc519ed6c2ae052d7b88d5e371da258068514d3e03d55a3dd23c7dd8
     - SKIP
-    - 4f548abc9fb6e0c5613ed7145542ac7676561ddba6974b6a7b6e77506738d7af
-    - 65c714437facf2001a980a1c2749ba2b516698a1ab0a9abde4f2f318f5884947
+    - 99469e2b8737c958714185107ddee86a52e1533a3997fdb10af51d952eccdcfc
   b2sums:
-    - 86d30cc03b13e13291c4f5e2da1087c5e6e4ef75513b26f89a1e2a4ed63c4d25fdb406b887ba1222a446f62b16fe2cccf7f4fa98778d5741e069b03a0d88d1fd
+    - 1476969a9ad9252f97c16edb3c9fb37d75de3c00280af42057a2704666aa4945ac50d458e61d1e2b751e224ec38c99789b80f23636bc93f79f5b5e51a163980b
     - SKIP
-    - edb03015ed0dc2928b089ea1c45d9fe56a6b36c51fea442822a7342a8c3243c289961db03b0dbc98fc08cfc4c7bc4b25bbb10496aec3e5973f9dfaa04fef59b9
+    - 0dc8d42a9f98d8b8b2e39f0fa1232770fa041a360518ec711770c72c9dcf21b29f691351115edac3c7af1beab70b06d92374ce8f24c35002ee419700c9f8ec9a
     - SKIP
-    - 7a070cc75691b1a94afd53d5f45d8fe41c9f5c95b8fb89aa7a78ced609864bb3a2528c3a1506e9e0e757c171a17c39f6b70d73b9ad632b93d6784c84d74315b5
-    - b3539217b05686fd7062cbde174593b9b14a640594590ecbdaea37f59a85aeccd2d6d0f3ac37f25a3ed3a87e9f36bf70f1becea28781f1b445c6d79fb7c64698
+    - 93cb687989bcdcf148680ba03182f63745b1c3e97b774e84bfa7fcc8f75f7a07d840fad606c4ad8e0131cdd2a0cab3bba7940e69a91a57b8a63c36f3f7fbb4dd
 pkgname:
   - name: linux-hardened
     pkgdesc: The Security-Hardened Linux kernel and modules
