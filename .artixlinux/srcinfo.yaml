@@ -1,10 +1,10 @@
 ---
-version: 1.4.2-10
+version: 1.4.2-11
 pkgbase:
   name: inkscape
   pkgdesc: Professional vector graphics editor
   pkgver: 1.4.2
-  pkgrel: 10
+  pkgrel: 11
   url: https://inkscape.org/
   arch:
     - x86_64
@@ -18,44 +18,74 @@ pkgbase:
     - glib2-devel
   depends:
     - atkmm
+    - libatkmm-1.6.so
     - boost-libs
     - cairo
+    - libcairo.so
+    - libcairo-gobject.so
     - cairomm
+    - libcairomm-1.0.so
     - double-conversion
     - fontconfig
+    - libfontconfig.so
     - freetype2
+    - libfreetype.so
     - gc
     - gcc-libs
     - gdk-pixbuf2
+    - libgdk_pixbuf-2.0.so
     - glib2
+    - libglib-2.0.so
+    - libgmodule-2.0.so
     - glibc
     - glibmm
+    - libglibmm-2.4.so
     - gobject-introspection-runtime
     - graphicsmagick
     - gsl
     - gspell
+    - libgspell-1.so
     - gtk3
+    - libgdk-3.so
+    - libgtk-3.so
     - gtkmm3
+    - libgdkmm-3.0.so
+    - libgtkmm-3.0.so
     - gtksourceview4
+    - libgtksourceview-4.so
     - harfbuzz
+    - libharfbuzz.so
     - hicolor-icon-theme
     - lcms2
+    - liblcms2.so
     - lib2geom
     - libcdr
     - libepoxy
+    - libepoxy.so
     - libjpeg-turbo
+    - libjpeg.so
     - libpng
+    - libpng16.so
     - librevenge
     - libsigc++
+    - libsigc-2.0.so
     - libvisio
     - libwpg
     - libx11
     - libxml2
+    - libxml2.so
     - libxslt
+    - libxslt.so
     - pango
+    - libpango-1.0.so
+    - libpangocairo-1.0.so
+    - libpangoft2-1.0.so
     - pangomm
+    - libpangomm-1.4.so
     - poppler
+    - libpoppler.so
     - poppler-glib
+    - libpoppler-glib.so
     - potrace
     - python
     - python-appdirs
@@ -80,9 +110,11 @@ pkgbase:
     - python-urllib3
     - python-zstandard
     - readline
+    - libreadline.so
     - scour
     - ttf-font
     - zlib
+    - libz.so
   optdepends:
     - 'fig2dev: xfig input'
     - 'gvfs: import clip art'
