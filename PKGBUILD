@@ -1,0 +1,98 @@
+# Maintainer: Leonidas Spyropoulos <artafinde@archlinux.org>
+# Contributor: Ilya Zlobintsev <ilya.zl@protonmail.com>
+
+pkgname=('lact' 'lact-libadwaita')
+pkgbase=lact
+pkgver=0.8.2
+pkgrel=1.1
+pkgdesc="Linux GPU Configuration Tool"
+arch=('x86_64')
+url="https://github.com/ilya-zlobintsev/LACT"
+license=('MIT')
+depends=(
+  hwdata
+  gcc-libs
+  glibc
+  gtk4
+  vulkan-tools
+  ocl-icd
+)
+makedepends=(
+  cargo
+  clang
+  libadwaita
+  git
+)
+checkdepends=(
+  fuse3
+)
+install="$pkgbase.install"
+source=("git+https://github.com/ilya-zlobintsev/LACT.git#tag=v$pkgver")
+sha256sums=('56f7206a4e47b4a15382150fff547eca1cc01ad32e1905d01cc086fb6342dc99')
+b2sums=('2769586ff6db4f491a89d22abb69e5a99f14e783f8dde6dd5d1dbbf996dec5741dd25127e868d26cea711f136dfbd4348b80780366578cfd5661dbc8a74683ab')
+
+_backports=(
+)
+
+_reverts=(
+)
+
+prepare() {
+  cd "LACT"
+  local _c
+  for _c in "${_backports[@]}"; do
+    if [[ $_c == *..* ]]; then
+      git log --oneline --reverse "${_c}"
+    else
+      git log --oneline -1 "${_c}"
+    fi
+    git cherry-pick -n -m1 "${_c}"
+  done
+  for _c in "${_reverts[@]}"; do
+    git log --oneline -1 "${_c}"
+    git revert -n "${_c}"
+  done
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "LACT"
+  CFLAGS+=' -ffat-lto-objects'
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+
+  # Libadwaita
+  cargo build -p "$pkgbase" --frozen --release --features=adw
+  mv "target/release/$pkgbase" "target/release/$pkgbase-adw"
+
+  # Gtk 4
+  cargo build -p "$pkgbase" --frozen --release
+}
+
+check() {
+  cd "LACT"
+  CFLAGS+=' -ffat-lto-objects'
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen --all --all-features --verbose
+}
+
+package_lact() {
+  cd "LACT"
+  make PREFIX=/usr DESTDIR="$pkgdir/" install
+
+  install -Dvm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgbase/"
+}
+
+package_lact-libadwaita() {
+  pkgdesc+=" (libadwaita edition)"
+  provides=("$pkgbase")
+  conflicts=("$pkgbase")
+  depends+=('libadwaita')
+
+  cd "LACT"
+  make PREFIX=/usr DESTDIR="$pkgdir/" install
+
+  install -Dvm755 "target/release/$pkgbase-adw" "$pkgdir/usr/bin/$pkgbase"
+  install -Dvm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgbase/"
+}
