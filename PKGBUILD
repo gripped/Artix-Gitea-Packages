@@ -1,0 +1,88 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
+
+pkgname=gum
+pkgver=0.17.0
+pkgrel=1
+pkgdesc='A tool for glamorous shell scripts'
+arch=('x86_64')
+url='https://github.com/charmbracelet/gum'
+license=('MIT')
+depends=('glibc')
+makedepends=('git' 'go')
+options=('!lto')
+source=("$pkgname::git+$url#tag=v$pkgver")
+b2sums=('e3788f933932d968f9fffc553abc3e33545298a404146c8d560d68cf2ee7d49b74dd554b38540d2114c675b47b553a768fd475bed330fe82995c924b36793a04')
+
+prepare() {
+  cd "$pkgname"
+
+  # create directory for build output
+  mkdir build
+
+  # download dependencies
+  export GOPATH="${srcdir}"
+  go mod download
+}
+
+build() {
+  cd "$pkgname"
+
+  # set Go flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOPATH="${srcdir}"
+
+  # commit date for binary & man page
+  local _commit_date=$(git show --no-patch --format=%cd --date=format:%Y-%m-%d)
+
+  go build -v \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-compressdwarf=false \
+    -linkmode external \
+    -extldflags \"${LDFLAGS}\" \
+    -X main.Version=$pkgver \
+    -X main.CommitSHA=$(git rev-parse HEAD) \
+    -X main.CommitDate=$_commit_date" \
+    -o build \
+    .
+
+  # man page
+  ./build/gum man > build/gum.1
+
+  # i'm not 100% sure where the man sub-command gets the date from, i assume
+  # it uses $TODAYS_DATE, so this should make the man page reproducible
+  sed \
+    -i build/gum.1 \
+    -e "s/\"[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}\"/\"$_commit_date\"/"
+
+  # completions
+  for shell in bash fish zsh; do
+    ./build/gum completion "$shell" > "build/$shell-completion"
+  done
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" build/gum
+
+  # documentation
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
+
+  # man pages
+  install -vDm644 -t "$pkgdir/usr/share/man/man1" build/gum.1
+
+  # completions
+  install -vDm644 build/bash-completion "$pkgdir/usr/share/bash-completion/completions/gum"
+  install -vDm644 build/fish-completion "$pkgdir/usr/share/fish/vendor_completions.d/gum.fish"
+  install -vDm644 build/zsh-completion "$pkgdir/usr/share/zsh/site-functions/_gum"
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}

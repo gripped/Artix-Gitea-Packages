@@ -1,0 +1,26 @@
+---
+version: 0.17.0-1
+pkgbase:
+  name: gum
+  pkgdesc: A tool for glamorous shell scripts
+  pkgver: 0.17.0
+  pkgrel: 1
+  url: https://github.com/charmbracelet/gum
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - go
+  depends:
+    - glibc
+  options:
+    - '!lto'
+  source:
+    - gum::git+https://github.com/charmbracelet/gum#tag=v0.17.0
+  b2sums:
+    - e3788f933932d968f9fffc553abc3e33545298a404146c8d560d68cf2ee7d49b74dd554b38540d2114c675b47b553a768fd475bed330fe82995c924b36793a04
+pkgname:
+  - name: gum
+# generated with artixpkg 0.37.4-1-any
