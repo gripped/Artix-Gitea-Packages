@@ -1,0 +1,50 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Mateusz Herych <heniekk@gmail.com>
+# Contributor: Charles Lindsay <charles@chaoslizard.org>
+
+pkgname=cdemu-client
+pkgver=3.2.5
+pkgrel=2
+pkgdesc="Simple command-line client for controlling cdemu-daemon"
+url="https://cdemu.sourceforge.io/"
+arch=(any)
+license=(GPL-2.0-or-later)
+depends=(
+  cdemu-daemon
+  glib2
+  python
+  python-gobject
+)
+makedepends=(
+  bash-completion
+  cmake
+  git
+  intltool
+  ninja
+)
+conflicts=(cdemu)
+source=("cdemu-code::git+https://git.code.sf.net/p/cdemu/code#tag=$pkgname-$pkgver")
+b2sums=('8e87b6468d2d3fe005f42c58287d4d510cdbe27efe97c45cd03e039fb90264ee7a38da729db197c2536e8f8292a2ca2bb90d75688fa6e50f84b5c6fd69a20c3f')
+
+prepare() {
+  cd cdemu-code/$pkgname
+}
+
+build() {
+  local cmake_options=(
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_PREFIX=/usr
+  )
+
+  cmake -S cdemu-code/$pkgname -B build -G Ninja "${cmake_options[@]}"
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+
+  install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 cdemu-code/$pkgname/README
+}
+
+# vim:set sw=2 sts=-1 et:
