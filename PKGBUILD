@@ -6,7 +6,7 @@
 
 pkgname=cdemu-daemon
 pkgver=3.2.7
-pkgrel=2
+pkgrel=2.1
 pkgdesc="CD/DVD-ROM device emulator daemon"
 url="https://cdemu.sourceforge.io/"
 arch=(x86_64)
@@ -51,10 +51,7 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 
   install -Dt "$pkgdir/usr/share/doc/$pkgname" -m644 cdemu-code/$pkgname/README
-  install -Dt "$pkgdir/usr/lib/systemd/user" -m644 \
-    cdemu-code/$pkgname/service-example/cdemu-daemon.service
-  install -Dt "$pkgdir/usr/share/dbus-1/services" -m644 \
-    cdemu-code/$pkgname/service-example/net.sf.cdemu.CDEmuDaemon.service
+  install -Dt "$pkgdir/usr/share/dbus-1/services" -m644 cdemu-code/$pkgname/service-example/net.sf.cdemu.CDEmuDaemon.service
 
   echo vhba | install -Dm644 /dev/stdin "$pkgdir/usr/lib/modules-load.d/cdemu.conf"
   echo 'g cdemu - -' | install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/cdemu.conf"

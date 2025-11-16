@@ -1,10 +1,10 @@
 ---
-version: 3.2.7-2
+version: 3.2.7-2.1
 pkgbase:
   name: cdemu-daemon
   pkgdesc: CD/DVD-ROM device emulator daemon
   pkgver: 3.2.7
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://cdemu.sourceforge.io/
   install: cdemu-daemon.install
   arch:
