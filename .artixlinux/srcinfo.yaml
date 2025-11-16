@@ -1,10 +1,10 @@
 ---
-version: 0.6.4-3
+version: 0.6.5-1
 pkgbase:
   name: hyprlang
   pkgdesc: implementation library for the hypr config language
-  pkgver: 0.6.4
-  pkgrel: 3
+  pkgver: 0.6.5
+  pkgrel: 1
   url: https://github.com/hyprwm/hyprlang
   arch:
     - x86_64
@@ -21,9 +21,9 @@ pkgbase:
   provides:
     - libhyprlang.so
   source:
-    - https://github.com/hyprwm/hyprlang/archive/v0.6.4/hyprlang-0.6.4.tar.gz
+    - https://github.com/hyprwm/hyprlang/archive/v0.6.5/hyprlang-0.6.5.tar.gz
   sha256sums:
-    - cd7395eaeb1eee90ebeba9c1330a7635709dd0900ebbe349a7aa5702ba4d613f
+    - 2bac16a734c72be72b9e43d28d195d59ecd7dfbbdd63c888864992093e14c6db
 pkgname:
   - name: hyprlang
 # generated with artixpkg 0.37.4-1-any
