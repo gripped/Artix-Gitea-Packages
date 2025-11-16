@@ -1,0 +1,58 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ray Rashif <schiv@archlinux.org>
+# Contributor: Mateusz Herych <heniekk@gmail.com>
+# Contributor: Charles Lindsay <charles@chaoslizard.org>
+
+pkgbase=vhba-module
+pkgname=(
+  vhba-module
+  vhba-module-dkms
+)
+pkgver=20250329
+pkgrel=51
+pkgdesc="Kernel module that emulates SCSI devices"
+url="https://cdemu.sourceforge.io/"
+arch=(x86_64)
+license=(GPL-2.0-or-later)
+makedepends=(
+  git
+  linux-headers
+)
+source=(
+  "cdemu-code::git+https://git.code.sf.net/p/cdemu/code#tag=$pkgbase-$pkgver"
+  dkms.conf
+)
+b2sums=('14276567e02f0d832fbf7fa5d337a74ece381812b11f89fb72346bb33a8ad19b463142fc7495f3485cd65490a5b42c8dcadce3c21e0f1f07259fb2a1f917604c'
+        'f1f3d97fc450de4a0257fa4c864eb7245f6c9657472eec67949b1335681ba86a40273b7fb11d023e406f792709252d80e635791674bdf79153f53161b4c5d871')
+
+prepare() {
+  cd cdemu-code
+}
+
+build() {
+  cd cdemu-code/$pkgbase
+  make KERNELRELEASE="$(</usr/src/linux/version)"
+}
+
+package_vhba-module() {
+  depends=(linux)
+  provides=(VHBA-MODULE)
+
+  local extradir="/usr/lib/modules/$(</usr/src/linux/version)/extramodules"
+  install -Dt "$pkgdir$extradir" -m644 cdemu-code/$pkgbase/*.ko
+
+  # compress kernel modules
+  find "${pkgdir}" -name '*.ko' -exec zstd --rm -19 {} +
+}
+
+package_vhba-module-dkms() {
+  depends=(dkms)
+  provides=(VHBA-MODULE)
+  conflicts=(vhba-module)
+
+  install -Dt "$pkgdir/usr/src/$pkgbase-$pkgver" -m644 \
+    dkms.conf cdemu-code/$pkgbase/{Makefile,vhba.c}
+}
+
+# vim:set sw=2 sts=-1 et:
