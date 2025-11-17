@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-1
+version: 2.3.0-1.1
 pkgbase:
   name: lxqt-config
   pkgdesc: LXQt system configuration.
   pkgver: 2.3.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/lxqt/lxqt-config
   arch:
     - x86_64
@@ -29,7 +29,7 @@ pkgbase:
     - libxcursor
     - libxfixes
     - libxi
-    - xf86-input-libinput
+    - xlibre-input-libinput
     - libudev.so
     - zlib
   optdepends:
