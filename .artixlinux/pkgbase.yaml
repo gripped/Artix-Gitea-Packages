@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:11.9.0-1
+    packages:
+      - libvirt-1:11.9.0-1-x86_64.pkg.tar.zst
+      - libvirt-storage-gluster-1:11.9.0-1-x86_64.pkg.tar.zst
+      - libvirt-storage-iscsi-direct-1:11.9.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:11.8.0-1
