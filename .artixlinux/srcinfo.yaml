@@ -1,10 +1,10 @@
 ---
-version: 1:25.3.0-1
+version: 1:25.3.0-2
 pkgbase:
   name: lib32-mesa
   pkgdesc: Open-source OpenGL drivers - 32-bit
   pkgver: 25.3.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.mesa3d.org/
   arch:
@@ -178,8 +178,8 @@ pkgname:
     optdepends:
       - 'opengl-man-pages: for the OpenGL API man pages'
     provides:
-      - lib32-libva-mesa-driver=1:25.3.0-1
-      - lib32-mesa-libgl=1:25.3.0-1
+      - lib32-libva-mesa-driver=1:25.3.0-2
+      - lib32-mesa-libgl=1:25.3.0-2
       - lib32-libva-driver
       - lib32-opengl-driver
     conflicts:
@@ -226,7 +226,7 @@ pkgname:
       - lib32-libxshmfence
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -249,7 +249,7 @@ pkgname:
       - lib32-libxshmfence
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -272,7 +272,7 @@ pkgname:
       - lib32-libxshmfence
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -294,7 +294,7 @@ pkgname:
       - lib32-libxcb
       - lib32-libxshmfence
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - vulkan-gfxstream
@@ -315,7 +315,7 @@ pkgname:
       - lib32-libxshmfence
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -338,7 +338,7 @@ pkgname:
       - lib32-libxshmfence
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -363,7 +363,7 @@ pkgname:
       - lib32-llvm-libs
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -389,7 +389,7 @@ pkgname:
       - lib32-llvm-libs
       - lib32-spirv-tools
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -415,7 +415,7 @@ pkgname:
       - lib32-libxcb
       - lib32-libxshmfence
       - lib32-vulkan-icd-loader
-      - lib32-vulkan-mesa-device-select
+      - lib32-vulkan-mesa-implicit-layers
       - lib32-wayland
       - lib32-xcb-util-keysyms
       - lib32-zlib
@@ -425,16 +425,21 @@ pkgname:
       - 'lib32-vulkan-mesa-layers: additional vulkan layers'
     provides:
       - lib32-vulkan-driver
-  - name: lib32-vulkan-mesa-device-select
-    pkgdesc: Mesa's Vulkan Device Select layer - 32-bit
+  - name: lib32-vulkan-mesa-implicit-layers
+    pkgdesc: Mesa's implicit Vulkan layers - 32-bit
     depends:
+      - lib32-gcc-libs
       - lib32-glibc
       - lib32-libdrm
       - lib32-libxcb
       - lib32-wayland
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
+    conflicts:
+      - lib32-vulkan-mesa-device-select
+    replaces:
+      - lib32-vulkan-mesa-device-select
   - name: lib32-vulkan-mesa-layers
-    pkgdesc: Mesa's Vulkan layers - 32-bit
+    pkgdesc: Mesa's explicit Vulkan layers - 32-bit
     depends:
       - lib32-gcc-libs
       - lib32-glibc

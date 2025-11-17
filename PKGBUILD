@@ -17,12 +17,12 @@ pkgname=(
   lib32-vulkan-radeon
   lib32-vulkan-swrast
   lib32-vulkan-virtio
-  lib32-vulkan-mesa-device-select
+  lib32-vulkan-mesa-implicit-layers
   lib32-vulkan-mesa-layers
 )
 pkgver=25.3.0
 _pkgver=${pkgver/[a-z]/-&}
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Open-source OpenGL drivers - 32-bit"
 url="https://www.mesa3d.org/"
@@ -236,8 +236,8 @@ build() {
     -D sysprof=false
     -D valgrind=disabled
     -D video-codecs=all
-    -D vulkan-drivers=amd,gfxstream,intel,intel_hasvk,nouveau,swrast,virtio,microsoft-experimental,asahi,freedreno
-    -D vulkan-layers=device-select,intel-nullhw,overlay,screenshot,vram-report-limit
+    -D vulkan-drivers=amd,freedreno,intel,intel_hasvk,swrast,virtio,microsoft-experimental,nouveau,asahi,gfxstream
+    -D vulkan-layers=device-select,intel-nullhw,overlay,screenshot,anti-lag,vram-report-limit
   )
 
   # Build only minimal debug info to reduce size
@@ -336,6 +336,7 @@ package_lib32-mesa() {
     _pick vkvirtio $icddir/virtio_icd.*.json
     _pick vkvirtio $libdir/libvulkan_virtio.so
 
+    _pick vkdevice $libdir/libVkLayer_MESA_anti_lag.so
     _pick vkdevice $libdir/libVkLayer_MESA_device_select.so
 
     _pick vklayer $libdir/libVkLayer_*.so
@@ -395,7 +396,7 @@ package_lib32-vulkan-asahi() {
     lib32-libxshmfence
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -424,7 +425,7 @@ package_lib32-vulkan-dzn() {
     lib32-libxshmfence
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -453,7 +454,7 @@ package_lib32-vulkan-freedreno() {
     lib32-libxshmfence
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -481,7 +482,7 @@ package_lib32-vulkan-gfxstream() {
     lib32-libxcb
     lib32-libxshmfence
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
 
@@ -508,7 +509,7 @@ package_lib32-vulkan-intel() {
     lib32-libxshmfence
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -537,7 +538,7 @@ package_lib32-vulkan-nouveau() {
     lib32-libxshmfence
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -568,7 +569,7 @@ package_lib32-vulkan-radeon() {
     lib32-llvm-libs
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -599,7 +600,7 @@ package_lib32-vulkan-swrast() {
     lib32-llvm-libs
     lib32-spirv-tools
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -629,7 +630,7 @@ package_lib32-vulkan-virtio() {
     lib32-libxcb
     lib32-libxshmfence
     lib32-vulkan-icd-loader
-    lib32-vulkan-mesa-device-select
+    lib32-vulkan-mesa-implicit-layers
     lib32-wayland
     lib32-xcb-util-keysyms
     lib32-zlib
@@ -645,16 +646,19 @@ package_lib32-vulkan-virtio() {
   install -Dm644 mesa-$_pkgver/docs/license.rst -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
-package_lib32-vulkan-mesa-device-select() {
-  pkgdesc="Mesa's Vulkan Device Select layer - 32-bit"
+package_lib32-vulkan-mesa-implicit-layers() {
+  pkgdesc="Mesa's implicit Vulkan layers - 32-bit"
   depends=(
+    lib32-gcc-libs
     lib32-glibc
     lib32-libdrm
     lib32-libxcb
     lib32-wayland
 
-    vulkan-mesa-device-select
+    vulkan-mesa-implicit-layers
   )
+  conflicts=(lib32-vulkan-mesa-device-select)
+  replaces=(lib32-vulkan-mesa-device-select)
 
   mv vkdevice/* "$pkgdir"
 
@@ -662,7 +666,7 @@ package_lib32-vulkan-mesa-device-select() {
 }
 
 package_lib32-vulkan-mesa-layers() {
-  pkgdesc="Mesa's Vulkan layers - 32-bit"
+  pkgdesc="Mesa's explicit Vulkan layers - 32-bit"
   depends=(
     lib32-gcc-libs
     lib32-glibc
