@@ -1,10 +1,10 @@
 ---
-version: 2.58.1-1
+version: 2.58.1-2
 pkgbase:
   name: lib32-at-spi2-core
   pkgdesc: Protocol definitions and daemon for D-Bus at-spi (32-bit)
   pkgver: 2.58.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/at-spi2-core
   arch:
     - x86_64
@@ -36,8 +36,8 @@ pkgbase:
 pkgname:
   - name: lib32-at-spi2-core
     provides:
-      - lib32-at-spi2-atk=2.58.1-1
-      - lib32-atk=2.58.1-1
+      - lib32-at-spi2-atk=2.58.1-2
+      - lib32-atk=2.58.1-2
       - libatk-1.0.so
       - libatk-bridge-2.0.so
       - libatspi.so
