@@ -2,8 +2,8 @@
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=lxqt-config
-pkgver=2.3.0
-pkgrel=1.1
+pkgver=2.2.0
+pkgrel=1.2
 pkgdesc="LXQt system configuration."
 arch=("x86_64")
 groups=("lxqt")
@@ -13,7 +13,7 @@ license=("LGPL2.1")
 depends=("glibc" "gcc-libs"
          "qt6-base" "qt6-svg" "libkscreen"
          "libQt6Xdg.so" "liblxqt" "lxqt-themes" "lxqt-menu-data"
-         "libx11" "libxcb" "libxcursor" "libxfixes" "libxi" "xlibre-input-libinput"
+         "libx11" "libxcb" "libxcursor" "libxfixes" "libxi" "x11win-input-libinput"
          "libudev.so" "zlib")
 makedepends=("lxqt-build-tools")
 optdepends=(
@@ -23,7 +23,7 @@ source=(
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz"
 	"https://github.com/lxqt/$pkgname/releases/download/$pkgver/$pkgname-$pkgver.tar.xz.asc"
 )
-sha256sums=('69b8acf50ebedfe3c3808f7dad853e9f5a5e74c8d17693a15180654fcb7f4b0c'
+sha256sums=('527b0b39e8156450f8f69bd6e516d10193b07e492a8945761036de46990f331e'
             'SKIP')
 validpgpkeys=(
 	"19DFDF3A579BD509DBB572D8BE793007AD22DF7E"  # https://github.com/tsujan.gpg
