@@ -17,8 +17,7 @@ build () {
   export PKG_CONFIG_PATH=/usr/lib/wlroots0.17/pkgconfig
   artix-meson "${pkgname}" build \
     --auto-features=disabled \
-    -Dwf_shell=enabled \
-    -Denable_wdisplays=true
+    -Dwf_shell=enabled
   ninja -C build
 }
 
