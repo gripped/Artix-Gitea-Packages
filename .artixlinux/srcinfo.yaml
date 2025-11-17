@@ -1,10 +1,10 @@
 ---
-version: 25.08.3-1
+version: 25.08.3-2
 pkgbase:
   name: step
   pkgdesc: Interactive Physical Simulator
   pkgver: 25.08.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/step/
   arch:
     - x86_64
@@ -15,7 +15,7 @@ pkgbase:
     - GPL-2.0-or-later
     - LGPL-2.0-or-later
   makedepends:
-    - eigen3
+    - eigen
     - extra-cmake-modules
     - kdoctools
     - python
@@ -42,6 +42,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/release-service/25.08.3/src/step-25.08.3.tar.xz
     - https://download.kde.org/stable/release-service/25.08.3/src/step-25.08.3.tar.xz.sig
+    - https://invent.kde.org/education/step/-/commit/3131205d.patch
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
@@ -49,6 +50,7 @@ pkgbase:
   sha256sums:
     - b1ddce4f52a0b75188616c062be4fa7ad5d3d7725c211ec011719a9ad27e86f9
     - SKIP
+    - 501efee07aad0fcce44863fa5e5d5612a36526abc5cef7d8218b0ecffdcffe61
 pkgname:
   - name: step
 # generated with artixpkg 0.37.4-1-any
