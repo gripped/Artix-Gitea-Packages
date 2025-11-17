@@ -1,9 +1,9 @@
 ---
-version: 1:3.25.6-1
+version: 1:3.25.8-1
 pkgbase:
   name: hplip
   pkgdesc: Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet
-  pkgver: 3.25.6
+  pkgver: 3.25.8
   pkgrel: 1
   epoch: 1
   url: https://hplipopensource.com
@@ -58,7 +58,7 @@ pkgbase:
     - etc/hp/hplip.conf
     - etc/sane.d/dll.d/hpaio
   source:
-    - https://downloads.sourceforge.net/hplip/hplip-3.25.6.tar.gz
+    - https://downloads.sourceforge.net/hplip/hplip-3.25.8.tar.gz
     - disable_upgrade.patch
     - 0003-models.dat-Re-add-drivers-missing-from-3.19.1.patch
     - 0018-Allow-non-JPEG-scanning-on-the-HP-DeskJet-3520-All-i.patch
@@ -73,7 +73,7 @@ pkgbase:
     - hplip-pserror-gcc14.patch
     - hplip-gcc15-stdc23.patch
   sha512sums:
-    - 8dff2cc623877e47a2bcab11daa7e44a81904046cf3b895677d5b55068403b16863f040be23b7689e1ad6f91e35f8784c0da38572773266a15fe9068d47e8c83
+    - 64ff2cc79088a874caa10d3e248a023461afb648e6363f542329cb70c537b594cace49b305c5c87c71daa82a7e03d4a6986497a50f73fc53714bb59336c3bc46
     - a12aaeece5285ffb86bdbc24871bf512fbc1f29da44ae51ded314378032662074a42b8aca23bebb378bf78ed15bb7f99da59bfb4cd456f3458e7a5ef42a900f8
     - f79b3f09d022178099f38b9eae1792396e730eb5352a03d088e6610d92b3895f3f65bb92089ce7f5b21d794f9716ceb176d29ca7283e8a48bb04cf6aba305a2f
     - 93e29a9ef893636b2b84443e75525c4ed42531d6e68a182dfbb725c3919c77b966b5e7d9381a34d3b5853423995a7b15efb69ce3e500ec72b25b65b2ad6bd64c
@@ -89,4 +89,4 @@ pkgbase:
     - cd014441b4e47042ddd6b316aa094d6db88131d10a1096f27e6d90a7f871b25dcc0c3f5b7f24a9371661f786841365aa8b0be097bdfdb29c9cb71893a5bb9173
 pkgname:
   - name: hplip
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
