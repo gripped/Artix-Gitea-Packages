@@ -1,10 +1,10 @@
 ---
-version: 2.2.0-1.2
+version: 2.3.0-2.1
 pkgbase:
   name: lxqt-config
   pkgdesc: LXQt system configuration.
-  pkgver: 2.2.0
-  pkgrel: 1.2
+  pkgver: 2.3.0
+  pkgrel: 2.1
   url: https://github.com/lxqt/lxqt-config
   arch:
     - x86_64
@@ -35,12 +35,12 @@ pkgbase:
   optdepends:
     - 'xsettingsd: help GTK applications apply themes on the fly'
   source:
-    - https://github.com/lxqt/lxqt-config/releases/download/2.2.0/lxqt-config-2.2.0.tar.xz
-    - https://github.com/lxqt/lxqt-config/releases/download/2.2.0/lxqt-config-2.2.0.tar.xz.asc
+    - https://github.com/lxqt/lxqt-config/releases/download/2.3.0/lxqt-config-2.3.0.tar.xz
+    - https://github.com/lxqt/lxqt-config/releases/download/2.3.0/lxqt-config-2.3.0.tar.xz.asc
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - 527b0b39e8156450f8f69bd6e516d10193b07e492a8945761036de46990f331e
+    - 69b8acf50ebedfe3c3808f7dad853e9f5a5e74c8d17693a15180654fcb7f4b0c
     - SKIP
 pkgname:
   - name: lxqt-config
