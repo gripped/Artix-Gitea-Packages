@@ -1,10 +1,10 @@
 ---
-version: 2.9.2-1
+version: 2.9.2-2
 pkgbase:
   name: pdal
   pkgdesc: A C++ library for translating and manipulating point cloud data
   pkgver: 2.9.2
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.pdal.io
   arch:
     - x86_64
