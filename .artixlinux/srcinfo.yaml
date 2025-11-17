@@ -1,0 +1,25 @@
+---
+version: 0.3.beta15.54-5
+pkgbase:
+  name: hddtemp
+  pkgdesc: Gives you the temperature of your hard drive by reading S.M.A.R.T. information
+  pkgver: 0.3.beta15.54
+  pkgrel: 5
+  url: https://savannah.nongnu.org/projects/hddtemp/
+  arch:
+    - x86_64
+    - aarch64
+    - riscv
+  license:
+    - GPL
+  backup:
+    - etc/hddtemp.db
+  source:
+    - https://download.savannah.gnu.org/releases/hddtemp/hddtemp-0.3-beta15.tar.bz2
+    - https://deb.debian.org/debian/pool/main/h/hddtemp/hddtemp_0.3-beta15-54.diff.gz
+  sha256sums:
+    - 618541584054093d53be8a2d9e81c97174f30f00af91cb8700a97e442d79ef5b
+    - 9164a2de2e91310bf98d1f88cc25cb10ec83db5219e1958793492b1eb003733c
+pkgname:
+  - name: hddtemp
+# generated with artixpkg 0.37.4-1-any
