@@ -1,10 +1,10 @@
 ---
-version: 1:25.3.0-1
+version: 1:25.3.0-2
 pkgbase:
   name: mesa
   pkgdesc: Open-source OpenGL drivers
   pkgver: 25.3.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.mesa3d.org/
   arch:
@@ -181,8 +181,8 @@ pkgname:
     optdepends:
       - 'opengl-man-pages: for the OpenGL API man pages'
     provides:
-      - libva-mesa-driver=1:25.3.0-1
-      - mesa-libgl=1:25.3.0-1
+      - libva-mesa-driver=1:25.3.0-2
+      - mesa-libgl=1:25.3.0-2
       - libva-driver
       - opengl-driver
     conflicts:
@@ -229,7 +229,7 @@ pkgname:
       - libxshmfence
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -251,7 +251,7 @@ pkgname:
       - libxshmfence
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -273,7 +273,7 @@ pkgname:
       - libxshmfence
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -294,7 +294,7 @@ pkgname:
       - libxcb
       - libxshmfence
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
     optdepends:
@@ -314,7 +314,7 @@ pkgname:
       - libxshmfence
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -336,7 +336,7 @@ pkgname:
       - libxshmfence
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -360,7 +360,7 @@ pkgname:
       - llvm-libs
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -385,7 +385,7 @@ pkgname:
       - llvm-libs
       - spirv-tools
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -410,7 +410,7 @@ pkgname:
       - libxcb
       - libxshmfence
       - vulkan-icd-loader
-      - vulkan-mesa-device-select
+      - vulkan-mesa-implicit-layers
       - wayland
       - xcb-util-keysyms
       - zlib
@@ -419,15 +419,19 @@ pkgname:
       - 'vulkan-mesa-layers: additional vulkan layers'
     provides:
       - vulkan-driver
-  - name: vulkan-mesa-device-select
-    pkgdesc: Mesa's Vulkan Device Select layer
+  - name: vulkan-mesa-implicit-layers
+    pkgdesc: Mesa's implicit Vulkan layers
     depends:
       - glibc
       - libdrm
       - libxcb
       - wayland
+    conflicts:
+      - vulkan-mesa-device-select
+    replaces:
+      - vulkan-mesa-device-select
   - name: vulkan-mesa-layers
-    pkgdesc: Mesa's Vulkan layers
+    pkgdesc: Mesa's explicit Vulkan layers
     depends:
       - gcc-libs
       - glibc
