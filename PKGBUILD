@@ -1,0 +1,70 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: peeweep <peeweep at 0x0 dot ee>
+
+pkgname=neovide
+pkgver=0.15.2
+pkgrel=2
+pkgdesc='No Nonsense Neovim Client in Rust'
+arch=(x86_64)
+url="https://github.com/$pkgname/$pkgname"
+license=(MIT)
+depends=(gcc-libs
+         fontconfig libfontconfig.so
+         freetype2 libfreetype.so
+         glibc
+         hicolor-icon-theme
+         libglvnd
+         libjpeg-turbo libjpeg.so
+         libxkbcommon
+         neovim
+         sndio
+         libpng libpng16.so
+         harfbuzz libharfbuzz.so
+         icu libicuuc.so
+         expat libexpat.so
+         zlib libz.so)
+makedepends=(cargo
+             cmake
+             python
+             gn
+             git
+             ninja
+             clang)
+optdepends=('vulkan-intel: vulkan support for intel'
+            'libxkbcommon-x11: run on X11 (not needed for wayland)')
+options=(!lto)
+_archive=("$pkgname-$pkgver")
+source=("$url/archive/$pkgver/$_archive.tar.gz")
+sha256sums=('a8179c461d41277b41692edcae64af6d1c80454aafff608af0268c5abca95b5c')
+
+prepare() {
+	cd "$_archive"
+	sed -r -i -e '/^incremental/a opt-level = 3' Cargo.toml
+	cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+	cd "$_archive"
+	# this uses malloc_usable_size, which is incompatible with fortification level 3
+	# upstream tracking issue https://github.com/neovide/neovide/issues/2040
+	export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+	export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+	CFLAGS+=' -ffat-lto-objects'
+	export SKIA_USE_SYSTEM_LIBRARIES=true
+	export FORCE_SKIA_BUILD=true
+	export SKIA_GN_COMMAND=gn
+	export SKIA_NINJA_COMMAND=ninja
+	cargo build --frozen --release --features embed-fonts
+}
+
+package() {
+	cd "$_archive"
+	install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+	install -Dm0644 -t "$pkgdir/usr/share/applications/" "assets/$pkgname.desktop"
+	for px in 16 32 48 256; do
+		install -Dm0644 "assets/$pkgname-${px}x${px}.png" \
+			"$pkgdir/usr/share/icons/hicolor/${px}x${px}/apps/$pkgname.png"
+	done
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}

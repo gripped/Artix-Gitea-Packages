@@ -1,0 +1,56 @@
+---
+version: 0.15.2-2
+pkgbase:
+  name: neovide
+  pkgdesc: No Nonsense Neovim Client in Rust
+  pkgver: 0.15.2
+  pkgrel: 2
+  url: https://github.com/neovide/neovide
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cargo
+    - cmake
+    - python
+    - gn
+    - git
+    - ninja
+    - clang
+  depends:
+    - gcc-libs
+    - fontconfig
+    - libfontconfig.so
+    - freetype2
+    - libfreetype.so
+    - glibc
+    - hicolor-icon-theme
+    - libglvnd
+    - libjpeg-turbo
+    - libjpeg.so
+    - libxkbcommon
+    - neovim
+    - sndio
+    - libpng
+    - libpng16.so
+    - harfbuzz
+    - libharfbuzz.so
+    - icu
+    - libicuuc.so
+    - expat
+    - libexpat.so
+    - zlib
+    - libz.so
+  optdepends:
+    - 'vulkan-intel: vulkan support for intel'
+    - 'libxkbcommon-x11: run on X11 (not needed for wayland)'
+  options:
+    - '!lto'
+  source:
+    - https://github.com/neovide/neovide/archive/0.15.2/neovide-0.15.2.tar.gz
+  sha256sums:
+    - a8179c461d41277b41692edcae64af6d1c80454aafff608af0268c5abca95b5c
+pkgname:
+  - name: neovide
+# generated with artixpkg 0.37.4-1-any
