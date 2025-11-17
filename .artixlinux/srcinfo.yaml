@@ -1,0 +1,21 @@
+---
+version: 4.15-3
+pkgbase:
+  name: obsidian-icon-theme
+  pkgdesc: Obsidian icon theme
+  pkgver: 4.15
+  pkgrel: 3
+  url: https://github.com/madmaxms/iconpack-obsidian
+  arch:
+    - any
+  license:
+    - GPL
+  options:
+    - '!strip'
+  source:
+    - obsidian-4.15.tar.gz::https://github.com/madmaxms/iconpack-obsidian/archive/v4.15.tar.gz
+  sha256sums:
+    - 54cdd9887db3b35305af5b1ee6d60b94740a61239b890eb32909baddea17731e
+pkgname:
+  - name: obsidian-icon-theme
+# generated with artixpkg 0.37.4-1-any
