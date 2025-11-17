@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=wcm
-pkgver=0.9.0
-pkgrel=2
+pkgver=0.10.0
+pkgrel=1
 pkgdesc='Wayfire Config Manager'
 url=https://wayfire.org
 arch=(x86_64)
@@ -26,5 +26,5 @@ package () {
   DESTDIR="${pkgdir}" ninja -C build install
 }
 
-sha256sums=('cd77a6b46b831ccda6859ae90fdd4fe6c0087abe9ea7fb045a8c421df251444b')
+sha256sums=('aa3bcacd4d4314b5a61738de66bee541f50d086f20882ad4f0597ea8846dec88')
 
