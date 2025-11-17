@@ -1,12 +1,12 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=hexer-hobu
 pkgver=1.4.0
-pkgrel=14
+pkgrel=15
 pkgdesc="LAS and OGR hexagonal density and boundary surface generation"
 arch=('x86_64')
 url="https://github.com/hobu/hexer"
-license=(LGPL)
+license=("LGPL-2.1-only")
 depends=(gdal)
 makedepends=(cmake)
 source=("$pkgname-$pkgver.tar.gz::https://github.com/hobu/hexer/archive/${pkgver}.tar.gz"
