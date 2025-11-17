@@ -1,0 +1,39 @@
+---
+version: 4.4-3
+pkgbase:
+  name: i2c-tools
+  pkgdesc: Heterogeneous set of I2C tools for Linux that used to be part of lm-sensors
+  pkgver: 4.4
+  pkgrel: 3
+  url: https://i2c.wiki.kernel.org/index.php/I2C_Tools
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - perl
+  optdepends:
+    - 'read-edid: for decode-edid script'
+    - 'python: for smbus module'
+  source:
+    - https://www.kernel.org/pub/software/utils/i2c-tools/i2c-tools-4.4.tar.xz
+    - https://www.kernel.org/pub/software/utils/i2c-tools/i2c-tools-4.4.tar.sign
+    - i2c-tools.sysusers
+    - 45-i2c-tools.rules
+    - i2c-tools.conf
+  validpgpkeys:
+    - 7CA69F4460F1BDC41FD2C858A5526B9BB3CD4E6A
+  sha256sums:
+    - 8b15f0a880ab87280c40cfd7235cfff28134bf14d5646c07518b1ff6642a2473
+    - SKIP
+    - bf5ee4f9876505628c5ce84e84e918c70d66be70b766d62bb138e294608ffbae
+    - af9dbdc771023cd04f5b0c638c30356e6a824b32f0c04ea61fe929c71122bccd
+    - b5a53d747422f8b594e3e9615e238457d696732efce94050cdd72182a8645ef2
+pkgname:
+  - name: i2c-tools
+# generated with artixpkg 0.37.4-1-any
