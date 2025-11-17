@@ -1,10 +1,10 @@
 ---
-version: 4.5.1-1
+version: 4.4.1-1.1
 pkgbase:
   name: libgig
   pkgdesc: C++ library for loading, modifying and creating .gig, .ksf, .kmp, .sf2 and DLS files
-  pkgver: 4.5.1
-  pkgrel: 1
+  pkgver: 4.4.1
+  pkgrel: 1.1
   url: https://www.linuxsampler.org/libgig/
   arch:
     - x86_64
@@ -21,13 +21,13 @@ pkgbase:
   provides:
     - libgig.so
   source:
-    - https://download.linuxsampler.org/packages/libgig-4.5.1.tar.bz2
+    - https://download.linuxsampler.org/packages/libgig-4.4.1.tar.bz2
     - libgig-4.3.0-libdir.patch
   sha512sums:
-    - 65fca4398f77c864fc73b556333a9d3e81568bdc748bf01366626d4b5fbcd6ba82862962cd2e4af1407c9a61b74ded41773c38770469757a44b1938d209c9aca
+    - 7844d31acba4bd2f2a499511c3f45ec0a883336193a1422d6d0cd1a8d0c2e97f9f89230176969e5a80b483890914d424eb778338afd583197fdea8bee3c08627
     - 7bc339ff8fddc7e35ab8a58a591038bc06b8fb3acc895b471968e8731608e1524d74c3e58f6e5cff06ca1a4fd0c09de85e6ffedff0336df31270aeaf5aef6f81
   b2sums:
-    - c35396aa55725b101a074e58506384ae071b1af2fd8005ea6b7bb19ad4b761b149135345308d8bccd08f49878078f94885d857cf8e32f1ca7c944900dda16be4
+    - 7b59256c48d810cf93c7f7ee2ade45df01334a935ed71d16e4f3776f13176cf47d497bbcb2c95f303a08bc3ad97df2d08833d52035732b81f5a5c48cfb7199dc
     - 67790271997b476b4fdd6eb82c69d889de3a2d0f419d5338fa552d8ebdaef37f12596307fc1831af3e2bae1e270e714f41358a71f518d912bed2200917957c74
 pkgname:
   - name: libgig
