@@ -1,10 +1,10 @@
 ---
-version: 1.3.45-5
+version: 1.3.46-1
 pkgbase:
   name: graphicsmagick
   pkgdesc: Image processing system
-  pkgver: 1.3.45
-  pkgrel: 5
+  pkgver: 1.3.46
+  pkgrel: 1
   url: http://www.graphicsmagick.org/
   arch:
     - x86_64
@@ -36,17 +36,17 @@ pkgbase:
     - 'libheif: heic module'
     - 'libjxl: jpeg-xl module'
   provides:
-    - Magick.so
     - libGraphicsMagickWand.so
     - libGraphicsMagick.so
+    - libGraphicsMagick++.so
     - libGraphicsMagick++-Q16.so
   options:
     - '!emptydirs'
     - libtool
   source:
-    - https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.45/GraphicsMagick-1.3.45.tar.xz
+    - https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.46/GraphicsMagick-1.3.46.tar.xz
   sha256sums:
-    - dcea5167414f7c805557de2d7a47a9b3147bcbf617b91f5f0f4afe5e6543026b
+    - c7c706a505e9c6c3764156bb94a0c9644d79131785df15a89c9f8721d1abd061
 pkgname:
   - name: graphicsmagick
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
