@@ -1,0 +1,7 @@
+post_upgrade()
+{
+    if [[ $(vercmp 20251115-1 < $2) < 1 ]]; then
+        echo "==> /etc/dinit.d/config/tailscaled will not be read anymore."
+        echo "    Consider copying its configurations to /etc/default/tailscaled"
+    fi
+}

@@ -1,0 +1,29 @@
+---
+version: 20251115-1
+pkgbase:
+  name: tailscale-dinit
+  pkgdesc: dinit service scripts for tailscale
+  pkgver: 20251115
+  pkgrel: 1
+  url: https://artixlinux.org
+  install: tailscale-dinit.install
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - tailscale
+    - dinit
+  provides:
+    - init-tailscale
+  conflicts:
+    - init-tailscale
+  source:
+    - tailscaled
+  sha256sums:
+    - b5ec5fd1c18245cd038f5090ce472e7ec8f0f7852cb96224a0338633717dffd4
+pkgname:
+  - name: tailscale-dinit
+# generated with artixpkg 0.37.4-1-any

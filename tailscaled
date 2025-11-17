@@ -1,6 +1,6 @@
-type            = process
-command         = /usr/lib/dinit/tailscaled
-smooth-recovery = true
-logfile         = /var/log/dinit/tailscaled.log
-depends-on      = network.target
-before          = login.target
+type     = process
+command  = /usr/bin/tailscaled
+logfile  = /var/log/dinit/tailscaled.log
+env-file = /etc/default/tailscaled
+depends-on: network.target
+before: login.target
