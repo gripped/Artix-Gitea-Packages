@@ -1,15 +1,15 @@
 ---
-version: 4.15.7-1
+version: 4.15.7-2
 pkgbase:
   name: a2ps
   pkgdesc: An Any to PostScript filter
   pkgver: 4.15.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/a2ps
   arch:
     - x86_64
   license:
-    - GPL3
+    - GPL-3.0-or-later
   makedepends:
     - gperf
   depends:
@@ -33,4 +33,4 @@ pkgbase:
     - 305ba7b9a44e7d6480a23098efb27aab5daedde71defcfe2f1b01b70d025e3db
 pkgname:
   - name: a2ps
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
