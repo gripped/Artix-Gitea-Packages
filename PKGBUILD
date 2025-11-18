@@ -3,7 +3,7 @@
 
 pkgname=pop-launcher
 pkgver=1.2.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Modular IPC-based desktop launcher service'
 arch=(x86_64)
 url=https://github.com/pop-os/launcher
