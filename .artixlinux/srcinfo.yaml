@@ -1,9 +1,9 @@
 ---
-version: 6.5.2-1
+version: 6.5.3-1
 pkgbase:
   name: knighttime
   pkgdesc: Helpers for scheduling the dark-light cycle
-  pkgver: 6.5.2
+  pkgver: 6.5.3
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -26,15 +26,15 @@ pkgbase:
     - qt6-base
     - qt6-positioning
   source:
-    - https://download.kde.org/stable/plasma/6.5.2/knighttime-6.5.2.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.2/knighttime-6.5.2.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.3/knighttime-6.5.3.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.3/knighttime-6.5.3.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - cffccfa45bb3014e5e027ddaa9f9549c8840847a0653942cec42114bc5cf9f0d
+    - 1aefb76dc7e10f722bac6c0c42985a8e8c22dc40ece1ea86d12c44d6d6956b99
     - SKIP
 pkgname:
   - name: knighttime
