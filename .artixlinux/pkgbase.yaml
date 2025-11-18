@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.3-2
+    version: 1.29.0-1
     packages:
-      - mate-notification-daemon-1.28.3-2-x86_64.pkg.tar.zst
+      - mate-notification-daemon-1.29.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
