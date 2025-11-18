@@ -1,10 +1,10 @@
 ---
-version: 0.9.0-2
+version: 0.10.0-1
 pkgbase:
   name: expected-lite
   pkgdesc: Expected objects in C++11 and later in a single-file header-only library
-  pkgver: 0.9.0
-  pkgrel: 2
+  pkgver: 0.10.0
+  pkgrel: 1
   url: https://github.com/martinmoene/expected-lite
   arch:
     - any
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - cmake
   source:
-    - expected-lite-0.9.0.tar.gz::https://github.com/martinmoene/expected-lite/archive/refs/tags/v0.9.0.tar.gz
+    - expected-lite-0.10.0.tar.gz::https://github.com/martinmoene/expected-lite/archive/refs/tags/v0.10.0.tar.gz
   sha256sums:
-    - e1b3ac812295ef8512c015d8271204105a71957323f8ab4e75f6856d71b8868d
+    - cfe082e4ffedeeedac47763504102646a39c080599c7c1fe99299d6a1f99af92
 pkgname:
   - name: expected-lite
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
