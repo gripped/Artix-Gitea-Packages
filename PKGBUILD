@@ -31,6 +31,7 @@ source=(
   git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-${pkgver/.beta./-beta.}
   cosmic-greeter-display-manager.patch
   cosmic-greeter-lto.patch
+  com.system76.CosmicGreeter
 )
 b2sums=('acebe0d24152cd300e5ac4ce1543969bd356d8af40f6352038428066c2f2db2ee508e2c699faf674d7df440deee4a9751524a54cf9fafdc45fecbccc93b93cae'
         '8b5c32a991e31cf102b1b07e06d37e979f19106b82e8cab7dc8df81789ab6b24587605aa3387254057732a268368c4074f92461f6f5125bc1cba4e62e18cef27'
