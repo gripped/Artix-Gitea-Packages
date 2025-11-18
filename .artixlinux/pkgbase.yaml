@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -55,6 +55,7 @@ repos:
       - cosmic-launcher-1.0.0.beta.6-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.0.0.beta.6-1.1
+    packages:
+      - cosmic-launcher-1.0.0.beta.6-1.1-x86_64.pkg.tar.zst
     debug: []

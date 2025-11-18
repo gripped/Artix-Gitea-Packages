@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.beta.6-1
+version: 1.0.0.beta.6-1.1
 pkgbase:
   name: cosmic-launcher
   pkgdesc: Layer Shell frontend for Pop Launcher
   pkgver: 1.0.0.beta.6
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/pop-os/cosmic-launcher
   arch:
     - x86_64

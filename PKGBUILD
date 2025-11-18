@@ -4,7 +4,7 @@
 
 pkgname=cosmic-launcher
 pkgver=1.0.0.beta.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Layer Shell frontend for Pop Launcher'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-launcher
