@@ -2,11 +2,11 @@
 team: galaxy
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1.0.0.beta.5-1
+    version: 1.0.0.beta.6-1
     packages:
-      - cosmic-settings-daemon-1.0.0.beta.5-1-x86_64.pkg.tar.zst
+      - cosmic-settings-daemon-1.0.0.beta.6-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
