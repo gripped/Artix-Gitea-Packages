@@ -1,9 +1,9 @@
 ---
-version: 6.14.0-1
+version: 6.16.0-1
 pkgbase:
   name: freecell-solver
   pkgdesc: A program that automatically solves layouts of Freecell and similar variants of Card Solitaire
-  pkgver: 6.14.0
+  pkgver: 6.16.0
   pkgrel: 1
   url: https://fc-solve.shlomifish.org
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - 'python-pysol_cards: for the Python interface'
     - 'python-six: for the Python interface'
   source:
-    - https://fc-solve.shlomifish.org/downloads/fc-solve/freecell-solver-6.14.0.tar.xz
+    - https://fc-solve.shlomifish.org/downloads/fc-solve/freecell-solver-6.16.0.tar.xz
   sha256sums:
-    - 1d1125d85422bcd521102d7cb1e7c84b76863fe445dd21879f9779dc6b2ce7dc
+    - 71b8882e68f1be62529069018d0c732b75078669077c96348279575849f34313
 pkgname:
   - name: freecell-solver
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
