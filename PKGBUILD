@@ -11,7 +11,8 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-pkgver=12.0.2
+# Note: Please update nvchecker configuration on feature update!
+pkgver=12.1.2
 pkgrel=1
 arch=('x86_64')
 license=('GPL-2.0-only')
@@ -28,14 +29,14 @@ source=("mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-${pkgver
         'git+https://github.com/mariadb-corporation/mariadb-columnstore-engine.git'
         '0001-arch-specific.patch'
 'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
-sha256sums=('226cd30171976f76d7a0d4587f3d53d1f551414d2fc14c36a383209119fc0123'
+sha256sums=('307cd1f1ee54424dc11724de074fbac57f02fc04d9836fc6f139931668cd9879'
             'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
             'SKIP'
-            'cb22088c50f6deea0b3858180514cad905304794e4f1e5752f03702eae10c353'
+            'dd5e4846f6173097130e44d60cdd880c7d1b98bf5177baaca67c0ab9e5134516'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
 
@@ -73,6 +74,7 @@ build() {
     -DINSTALL_SYSCONFDIR=/etc
     -DINSTALL_SYSCONF2DIR=/etc/my.cnf.d
     # /run
+    -DINSTALL_RUNDATADIR=/run/mariadb
     -DINSTALL_UNIX_ADDRDIR=/run/mysqld/mysqld.sock
     # /usr
     -DCMAKE_INSTALL_PREFIX=/usr
