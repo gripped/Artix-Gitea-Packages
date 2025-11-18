@@ -4,7 +4,7 @@
 
 pkgname=cosmic-session
 pkgver=1.0.0.beta.6
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Session manager for the COSMIC desktop environment'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-session
