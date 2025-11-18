@@ -1,9 +1,9 @@
 ---
-version: 1.0.0.beta.5-1
+version: 1.0.0.beta.6-1
 pkgbase:
   name: cosmic-session
   pkgdesc: Session manager for the COSMIC desktop environment
-  pkgver: 1.0.0.beta.5
+  pkgver: 1.0.0.beta.6
   pkgrel: 1
   url: https://github.com/pop-os/cosmic-session
   arch:
@@ -55,7 +55,7 @@ pkgbase:
     - 'gnome-keyring: Start gnome keyring components if the daemon is active'
     - 'system-config-printer: printer settings'
   source:
-    - git+https://github.com/pop-os/cosmic-session.git#tag=epoch-1.0.0-beta.5
+    - git+https://github.com/pop-os/cosmic-session.git#tag=epoch-1.0.0-beta.6
     - cosmic-session-lto.patch
   b2sums:
     - fb6b9a606eeda2756ea4ce7efa4af8f4574cd8f00c495e08087c859699c89e977f4935475122f03849496e5a886042e84c0b1302af808364595bfe6e61dd94aa

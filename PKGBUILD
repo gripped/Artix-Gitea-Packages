@@ -1,7 +1,9 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-session
-pkgver=1.0.0.beta.5
+pkgver=1.0.0.beta.6
 pkgrel=1
 pkgdesc='Session manager for the COSMIC desktop environment'
 arch=(x86_64)
@@ -53,7 +55,6 @@ optdepends=(
   'gnome-keyring: Start gnome keyring components if the daemon is active'
   'system-config-printer: printer settings'
 )
-_tag=d8ec361e3ccfc9a02bffc893ab0c08c204a275f2
 source=(
   git+https://github.com/pop-os/cosmic-session.git#tag=epoch-${pkgver/.beta./-beta.}
   cosmic-session-lto.patch
@@ -71,7 +72,7 @@ prepare() {
 build() {
   cd cosmic-session
   RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
-  cargo build --release --features autostart --frozen
+  cargo build --release --frozen
 }
 
 package() {
@@ -80,3 +81,4 @@ package() {
   install -Dm644 data/dconf/profile/cosmic -t "$pkgdir/usr/share/dconf/profile/"
 }
 
+# vim: ts=2 sw=2 et:
