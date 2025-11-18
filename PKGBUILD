@@ -3,7 +3,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-greeter
-pkgver=1.0.0.beta.5
+pkgver=1.0.0.beta.6
 pkgrel=1
 pkgdesc='COSMIC greeter for greetd'
 arch=(x86_64)
@@ -31,12 +31,10 @@ source=(
   git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-${pkgver/.beta./-beta.}
   cosmic-greeter-display-manager.patch
   cosmic-greeter-lto.patch
-  com.system76.CosmicGreeter
 )
-b2sums=('30017cc0d56295e7733ef0408b6509613c62887170156446d887a87b3a3abd7008f8657ec326588f400b9484c9157d8f7eacdee3b4d4882ffb78e1978e26d0f7'
+b2sums=('acebe0d24152cd300e5ac4ce1543969bd356d8af40f6352038428066c2f2db2ee508e2c699faf674d7df440deee4a9751524a54cf9fafdc45fecbccc93b93cae'
         '8b5c32a991e31cf102b1b07e06d37e979f19106b82e8cab7dc8df81789ab6b24587605aa3387254057732a268368c4074f92461f6f5125bc1cba4e62e18cef27'
-        '89ca262c95713e773662fb81e379bc2b63d2c93072b909f8f1eaaafee5289359fd729a476eb66568f893986a53e9c689dccfc4aeeeef62cb736cff466c463f7d'
-        '2d95dac0ff6cab589b19de9341a4a75156a6ce45bf70d69d8b9d51cf28ee458d96bb53933fb93e2bcd56dbab7ad0479043e0b986e0520e3caeef421b049e7a21')
+        '89ca262c95713e773662fb81e379bc2b63d2c93072b909f8f1eaaafee5289359fd729a476eb66568f893986a53e9c689dccfc4aeeeef62cb736cff466c463f7d')
 
 prepare() {
   cd cosmic-greeter
@@ -64,3 +62,4 @@ package() {
   install -Dm 644 "${srcdir}"/com.system76.CosmicGreeter -t "${pkgdir}"/usr/share/dbus-1/services/
 }
 
+# vim: ts=2 sw=2 et:
