@@ -5,7 +5,7 @@
 
 pkgname=fd
 pkgver=10.3.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Simple, fast and user-friendly alternative to find'
 arch=('x86_64')
 url=https://github.com/sharkdp/fd
