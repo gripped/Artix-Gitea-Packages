@@ -1,8 +1,10 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-store
-pkgver=1.0.0.beta.5
-pkgrel=1.1
+pkgver=1.0.0.beta.6
+pkgrel=1
 pkgdesc='Cosmic App Store'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-store
@@ -11,27 +13,27 @@ groups=(cosmic)
 depends=(
   archlinux-appstream-data
   cosmic-icon-theme
+  packagekit
   gcc-libs
   glib2
   glibc
   libxkbcommon
   openssl
-  packagekit
   wayland
 )
 makedepends=(
   cargo
-  flatpak
   git
   just
   lld
+  flatpak
 )
 optdepends=('packagekit: Native packages support')
 source=(
   git+https://github.com/pop-os/cosmic-store.git#tag=epoch-${pkgver/.beta./-beta.}
   cosmic-store-lto.patch
 )
-b2sums=('7913e89755aba696e53b1d2c2f6c3447da8859cc51190806b89a25c37e508ae1a02f41f997fa9ee29ef431cefb8a1963292c49929ef71141c5740ded97e71dd7'
+b2sums=('5b479b335f85fd347e2231e0655b14bbe867e76fcbab73f3a5aefa746d575373cc69f7a5ada71fefc918b87f691a02bcca092bb6183e8d4bbc6351fd003fe7fd'
         'ed4089dd1ded4a87307c50f38af03ff3742bfc54053a668416f713c9b27eb591e608166ce14f2f50f8303aaf06533963fd821d00522b77e7f965827035a7ff11')
 
 prepare() {
@@ -51,3 +53,4 @@ package() {
   just rootdir="${pkgdir}" install
 }
 
+# vim: ts=2 sw=2 et:
