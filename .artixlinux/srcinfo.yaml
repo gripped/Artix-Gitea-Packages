@@ -1,10 +1,10 @@
 ---
-version: 2022.3.0-1
+version: 2022.3.0-2
 pkgbase:
   name: onetbb
   pkgdesc: oneAPI Threading Building Blocks - a high level abstract threading library
   pkgver: 2022.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://uxlfoundation.github.io/oneTBB/
   arch:
     - x86_64
