@@ -3,7 +3,7 @@
 # Contributor: Thayne McCombs <astrothayne@gmail.com>
 
 pkgname=dart-sass
-pkgver=1.94.0
+pkgver=1.94.1
 pkgrel=1
 pkgdesc='Sass makes CSS fun again'
 arch=('x86_64')
@@ -19,9 +19,9 @@ source=(
   "$pkgname::git+https://github.com/sass/dart-sass.git#tag=$pkgver"
   "github.com-sass-sass::git+https://github.com/sass/sass.git#tag=embedded-protocol-$_sass_version"
 )
-sha512sums=('41a85ceff5bc37e000348b3226f9cc5570b96f673f1f6c52d5f187861356f34f0ffa2f2fad67b637c4540f3ef52674545c9b87c4c4bc2e78dca3a30ecb00c34f'
+sha512sums=('b047285b80afad3d0b93cfb3392f3532bca3ca28fefe297be33cc39c6ebf6d5b8195498f8c8d4522e1efbd242a4ff7098b0b2a03dcf189da7911bed2563d6150'
             '59f44a01c64abb47ee60133650ec0abb943f82461dd472a2e8f50cb32b54429487f20455b4f77e5e3475c2ddac2b2d3dbc8f5987ccdfdf6648be429215fc5867')
-b2sums=('9f6f5c7c598565a8886abf3ea15ac927625647e86c2d846a0cea530a4ee1870c90c4414c615586638632abd54724ceab416fd11571c1e12d7def45c302f656d8'
+b2sums=('b7d36e804112109f1d7bbc38921fcd37245be751927093c8ea039e60f539440dd4748270b1edaed41df4a4fefb1e5588ab604097c4a359ff91ba4b73864a8ccb'
         'f6fd79b9da32ab7c350689c5bea32b26919fff46adb8a685a7b1f2683d986e7b738da099c7d86b87ffa3fb59a21cc521d38b26cd1e37ba1fce0a3a11a91c0810')
 
 prepare() {
