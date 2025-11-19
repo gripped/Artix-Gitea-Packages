@@ -1,10 +1,10 @@
 ---
-version: 2.15.1-2
+version: 2.15.1-4
 pkgbase:
   name: lib32-libxml2
   pkgdesc: XML C parser and toolkit (32-bit)
   pkgver: 2.15.1
-  pkgrel: 2
+  pkgrel: 4
   url: https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
   arch:
     - x86_64
@@ -27,6 +27,12 @@ pkgbase:
     - 63a47bc69278ef510cd0b3779aed729e1b309e30efa0015d28ed051cc03f9dfddb447ab57b07b3393e8f47393d15473b0e199c34cb1f5f746b15ddfaa55670be
 pkgname:
   - name: lib32-libxml2
+    depends:
+      - lib32-glibc
+      - lib32-icu
+      - lib32-zlib
+      - libxml2
+      - libicuuc.so
     provides:
       - libxml2.so
 # generated with artixpkg 0.37.4-1-any
