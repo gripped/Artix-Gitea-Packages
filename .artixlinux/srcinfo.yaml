@@ -1,10 +1,10 @@
 ---
-version: 2.15.1-3
+version: 2.15.1-4
 pkgbase:
   name: libxml2
   pkgdesc: XML C parser and toolkit
   pkgver: 2.15.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
   arch:
     - x86_64
@@ -30,6 +30,13 @@ pkgbase:
     - 63a47bc69278ef510cd0b3779aed729e1b309e30efa0015d28ed051cc03f9dfddb447ab57b07b3393e8f47393d15473b0e199c34cb1f5f746b15ddfaa55670be
 pkgname:
   - name: libxml2
+    depends:
+      - bash
+      - glibc
+      - icu
+      - readline
+      - zlib
+      - libicuuc.so
     optdepends:
       - 'python: Python bindings'
     provides:
