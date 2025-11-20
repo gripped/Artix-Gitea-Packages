@@ -9,8 +9,8 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs
-pkgver=25.1.0
-pkgrel=4
+pkgver=25.2.1
+pkgrel=1
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
 url='https://nodejs.org/'
@@ -38,8 +38,9 @@ makedepends=(
 )
 optdepends=('npm: nodejs package manager')
 options=('!lto')
-source=("git+https://github.com/nodejs/node.git#tag=v$pkgver?signed")
-sha512sums=('18eb545b1c4833becd767b3f8575b8d881a9e4e276880f1cf01f97731f625d7b0e4080c0a7f851395f995796439b6ead789c23dc3e3f4f1bf3f7e1839a88cbbc')
+source=("git+https://github.com/nodejs/node.git#tag=v$pkgver?signed" "update-icu-tests.patch")
+sha512sums=('05daa204450bc968b2cfc473050bff4cbe1c8d3d8d80721244338a40e51357eb4a7be23eab27573419658c6a5d73a26ff3087503622cb4df586e07c9be0de2eb'
+            'ab2edd1d99a6bb53f8f1f2cef8a3155dd1a44dda181040543ded1aef8775461676bba24470e8f2f9ffc5c36a6acdc77ecb2ea8492eda6bad382c9e0a06dca446')
 validpgpkeys=(
   '8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600' # Michaël Zasso (Targos) <targos@protonmail.com>
   '890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4' # RafaelGSS <rafael.nunu@hotmail.com>
@@ -56,8 +57,8 @@ _set_flags() {
 
 prepare() {
   cd node
-  # Update ICU test data
-  git cherry-pick --no-commit 5afe4cd716cbf7699f6abc99338f44db3b1424d5
+  # Update ICU tests https://github.com/nodejs/node/pull/60523
+  patch -Np1 -i ${srcdir}/update-icu-tests.patch
 }
 
 build() {
