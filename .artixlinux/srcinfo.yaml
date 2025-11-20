@@ -23,7 +23,7 @@ pkgbase:
   source:
     - git+https://github.com/microsoft/playwright-pytest#tag=v0.7.2
   sha256sums:
-    - 94f85cebdfd09f61fa2132952460f22db68e2fdc5c9c82ece7cb783a8dde029b
+    - 2b531c2e784ef141b65cfc2267854152e91304627597afcb1a4aba23dc7c737c
 pkgname:
   - name: python-pytest-playwright
 # generated with artixpkg 0.37.4-1-any

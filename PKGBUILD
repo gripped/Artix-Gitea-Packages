@@ -17,7 +17,7 @@ makedepends=(git
              python-setuptools-scm
              python-wheel)
 source=(git+https://github.com/microsoft/$_name#tag=v$pkgver)
-sha256sums=('94f85cebdfd09f61fa2132952460f22db68e2fdc5c9c82ece7cb783a8dde029b')
+sha256sums=('2b531c2e784ef141b65cfc2267854152e91304627597afcb1a4aba23dc7c737c')
 
 build() {
   cd $_name/pytest-playwright
