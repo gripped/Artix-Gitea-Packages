@@ -1,0 +1,43 @@
+---
+version: 4.3.2-2
+pkgbase:
+  name: python-zeep
+  pkgdesc: A fast and modern Python SOAP client
+  pkgver: 4.3.2
+  pkgrel: 2
+  url: https://docs.python-zeep.org
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-freezegun
+    - python-pretend
+    - python-requests-mock
+    - python-pytest-httpx
+    - python-pytest-asyncio
+    - python-aiohttp
+    - python-aioresponses
+    - python-xmlsec
+  makedepends:
+    - python-setuptools
+    - python-wheel
+    - python-build
+    - python-installer
+  depends:
+    - python-attrs
+    - python-isodate
+    - python-lxml
+    - python-platformdirs
+    - python-requests
+    - python-requests-toolbelt
+    - python-requests-file
+    - python-pytz
+  source:
+    - https://github.com/mvantellingen/python-zeep/archive/4.3.2/python-zeep-4.3.2.tar.gz
+  sha512sums:
+    - 371e3905f849fa9544b749ad2d6f84fcbb1fa1aabed8e6c17d2c17555de4fd0b70ab7c750aa14a01134492e7bfc954207f1c4646f7dcf3a9fa8d574da2909e60
+pkgname:
+  - name: python-zeep
+# generated with artixpkg 0.37.4-1-any
