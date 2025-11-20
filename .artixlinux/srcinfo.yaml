@@ -1,0 +1,27 @@
+---
+version: 1.1.0-1
+pkgbase:
+  name: python-omemo-dr
+  pkgdesc: OMEMO Crypto Library
+  pkgver: 1.1.0
+  pkgrel: 1
+  url: https://dev.gajim.org/gajim/omemo-dr
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python-cryptography
+    - python-protobuf
+  source:
+    - https://dev.gajim.org/gajim/omemo-dr/-/archive/v1.1.0/omemo-dr-v1.1.0.tar.gz
+  sha256sums:
+    - 007ea394c801c48119164b8c383d0689afb47554d9605c63ceadd2f70de1bca5
+pkgname:
+  - name: python-omemo-dr
+# generated with artixpkg 0.37.4-1-any
