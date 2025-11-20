@@ -3,7 +3,7 @@
 # Contributor: Marcell Pardavi <marcell.pardavi@gmail.com>
 
 pkgname=zed
-pkgver=0.212.7
+pkgver=0.213.3
 pkgrel=1
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
@@ -47,7 +47,7 @@ optdepends=('clang: improved C/C++ language support'
 replaces=(zed-editor)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('dbb889281977b3338de38f30f28b6c76226d8d4a8bbede42b2c646fa434327b4')
+sha256sums=('ad3ab6ddb794f51a20ea1cbd4f2aaee70d462a65e1feab024fe3911d4186739f')
 
 _binname=zeditor
 _appid=dev.zed.Zed
