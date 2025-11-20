@@ -1,0 +1,39 @@
+---
+version: 7.0.0-2
+pkgbase:
+  name: python-vcrpy
+  pkgdesc: Automatically mock your HTTP interactions to simplify and speed up testing
+  pkgver: 7.0.0
+  pkgrel: 2
+  url: https://github.com/kevin1024/vcrpy
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-aiohttp
+    - python-boto3
+    - python-httpx
+    - python-pytest
+    - python-pytest-aiohttp
+    - python-pytest-asyncio
+    - python-pytest-httpbin
+    - python-requests
+    - python-tornado
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-pyyaml
+    - python-wrapt
+    - python-yarl
+  source:
+    - https://github.com/kevin1024/vcrpy/archive/v7.0.0/python-vcrpy-7.0.0.tar.gz
+  sha512sums:
+    - 6e82f56adddc5b5e3d56c261e612af5a66daed6a3485dfc082be235e95901ceaae9aa83bab96cef19d8fbe35c27953b4b101fea702fd3a44cbe578c926990d87
+pkgname:
+  - name: python-vcrpy
+# generated with artixpkg 0.37.4-1-any
