@@ -2,7 +2,7 @@
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=python-time-machine
-pkgver=2.19.0
+pkgver=3.0.0
 pkgrel=1
 pkgdesc='Travel through time in your tests'
 arch=('x86_64')
@@ -29,7 +29,7 @@ optdepends=(
   'python-tokenize-rt: for the migration tool'
 )
 source=("$pkgname::git+$url#tag=$pkgver")
-b2sums=('146e5dcc6b76116aa272b20fd652dd225a7e6d9a847d26c2f5e741cf728756c3919361706c6d028254a276e8f5a078dc07048dd854d45f594686a3b85a59f781')
+b2sums=('5cb4e0f362a2dc3832ac0f62d296a1239a8d36db9abbad09771e7d8feecc41df1cf66c8f908f68e9f0010b5b2e5b448ff002c0f45a63e0fa5f3f64c76ce22490')
 
 build() {
   cd "$pkgname"
