@@ -1,10 +1,10 @@
 ---
-version: 1.5.0-1
+version: 1.5.0-2
 pkgbase:
   name: python-aiounittest
   pkgdesc: Test asyncio code more easily
   pkgver: 1.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/kwarunek/aiounittest
   arch:
     - any
@@ -14,6 +14,8 @@ pkgbase:
     - python-pytest
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-setuptools
   depends:
     - python-wrapt
