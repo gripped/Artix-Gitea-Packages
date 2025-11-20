@@ -1,9 +1,9 @@
 ---
-version: 0.18.0-1
+version: 0.18.1-1
 pkgbase:
   name: python-pythran
   pkgdesc: Ahead of Time compiler for numeric kernels
-  pkgver: 0.18.0
+  pkgver: 0.18.1
   pkgrel: 1
   url: https://pythran.readthedocs.io/
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - python-setuptools
     - xsimd
   source:
-    - git+https://github.com/serge-sans-paille/pythran#tag=0.18.0
+    - git+https://github.com/serge-sans-paille/pythran#tag=0.18.1
   sha256sums:
-    - 3cd04b21d0d4f2305ce864d75c1f2bf251b265d1b3a7d69eba3aab503b64f3b1
+    - c1cdee986285c45326c1c2bfd8289c16b4d37e1c58cc8b621007ec6872b03c0a
 pkgname:
   - name: python-pythran
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.37.4-1-any
