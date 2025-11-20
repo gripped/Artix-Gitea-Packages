@@ -29,12 +29,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:4.20.2-3
+    version: 1:4.20.3-1
     packages:
-      - gtk4-1:4.20.2-3-x86_64.pkg.tar.zst
-      - gtk4-demos-1:4.20.2-3-x86_64.pkg.tar.zst
-      - gtk4-docs-1:4.20.2-3-x86_64.pkg.tar.zst
-      - gtk-update-icon-cache-1:4.20.2-3-x86_64.pkg.tar.zst
+      - gtk4-1:4.20.3-1-x86_64.pkg.tar.zst
+      - gtk4-demos-1:4.20.3-1-x86_64.pkg.tar.zst
+      - gtk4-docs-1:4.20.3-1-x86_64.pkg.tar.zst
+      - gtk-update-icon-cache-1:4.20.3-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
