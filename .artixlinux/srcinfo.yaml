@@ -1,10 +1,10 @@
 ---
-version: 24.4.2-3.1
+version: 25.10.2-1
 pkgbase:
   name: python-autobahn
   pkgdesc: Real-time framework for Web, Mobile & Internet of Things
-  pkgver: 24.4.2
-  pkgrel: 3.1
+  pkgver: 25.10.2
+  pkgrel: 1
   url: https://github.com/crossbario/autobahn-python/
   arch:
     - x86_64
@@ -31,12 +31,14 @@ pkgbase:
     - python-ujson
     - python-qrcode
     - python-pyopenssl
+    - python-ecdsa
     - python-snappy
     - python-click
     - python-txtorcon
   depends:
     - glibc
     - python
+    - python-base58
     - python-cffi
     - python-twisted
     - python-txaio
@@ -57,13 +59,14 @@ pkgbase:
     - 'python-pytrie: WAMP-cryptobox support'
     - 'python-qrcode: support QR codes in WAMP'
     - 'python-pyopenssl: SSL/TLS support'
-    - 'python-snappy: snappy compression suppport for WebSocket messages'
+    - 'python-ecdsa: ECDSA signatures'
+    - 'python-snappy: snappy compression support for WebSocket messages'
     - 'python-click: for text highlights'
     - 'python-txtorcon: connections to Tor Onion services'
   source:
-    - git+https://github.com/crossbario/autobahn-python.git#tag=v24.4.2
+    - git+https://github.com/crossbario/autobahn-python.git#tag=v25.10.2
   sha256sums:
-    - 2850e7a45ce0c466a460b09433e23d3a6bba5914fa3596428ca7233ef6815204
+    - 68e263cf4c8210dafd0368485ea6831620fea9dba2ae62a417638cdd12fa9e9a
 pkgname:
   - name: python-autobahn
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
