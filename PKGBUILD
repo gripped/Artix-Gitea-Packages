@@ -25,6 +25,8 @@ check() {
     # we don't want to download the internet
     --ignore tests/integration
     -m 'not online'
+    # The following test fails in Artix CI with broken pipe error
+    --deselect=tests/unit/test_stubs.py::TestVCRConnection::test_body_consumed_once_stream
   )
 
   cd $_name-$pkgver
