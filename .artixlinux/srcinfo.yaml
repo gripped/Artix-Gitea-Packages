@@ -1,10 +1,10 @@
 ---
-version: 2023-3
+version: 2023-3.1
 pkgbase:
   name: reflector
   pkgdesc: A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
   pkgver: 2023
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://xyne.dev/projects/reflector
   arch:
     - any
