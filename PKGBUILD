@@ -3,7 +3,7 @@
 
 pkgname=opensnitch
 pkgver=1.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A GNU/Linux application firewall'
 arch=(x86_64)
 url=https://github.com/evilsocket/opensnitch
@@ -45,13 +45,13 @@ optdepends=(
 )
 replaces=(opensnitch-ebpf-module) # from the AUR
 backup=(
+  etc/logrotate.d/opensnitch
   etc/opensnitchd/default-config.json
   etc/opensnitchd/system-fw.json
 )
 options=(!lto)
 source=(
   "$pkgname::git+$url#tag=v${pkgver}?signed"
-  fix-systemd-service.patch
   fix-setup.py.patch
   add-generated-protobuf-files.patch
   use-system-python-packages.patch
@@ -60,7 +60,6 @@ source=(
   tmpfiles.conf
 )
 sha512sums=('77b0731b2c6fb21991fcedff3f281c02d0c19652892623178b13c33d36a24eced5af8f2e638a53222d31c4fed89bbe3872f19bcc820046297e23223166a5aec7'
-            '05a0565346917491da3592fb23859a05b0a963932238754b07db7e1e0878437a99802f4e1ea7730ad19ab66207dd191c30d1f14f54c28e9ae842fe740b926d94'
             '3cd3c82c046646426793dbbb8197f40d8a155c78607c65e5cf0a645a93202119b0cc686b555463e013d5032c82ee804a2bd743197fe67236e26ff4cdb04d971b'
             'fd5dd3ecce1d9a4b9f692f77e92697e67c7c70984d6b5f8ac93625a36f46dcf3b273bc6196c706b4b0b0de322ff8a14dd218fbe0f20a03119bda2bf221a7c409'
             '88d154a05fe0cc294f1c0ea1c3e6714f9d26259432b82cb610f16de9f3c0a2037540f8d2ba96a6bf3dd196964b16b5754cfe44f65c2de46f4ac0d1c71b3a4d20'
@@ -68,7 +67,6 @@ sha512sums=('77b0731b2c6fb21991fcedff3f281c02d0c19652892623178b13c33d36a24eced5a
             '155833e51da7bdae4120bce81152cda1b22dd0327d96d11d0b96c8fc7e210643c9071c54461bcb04af42484de94559e83d4b45a2b181e7e7f86ca8d3f4f6fc60'
             '11c20c25693bb5a41114e1a37ca159a6c89db70ecfdcc8b4ff0f4d1f1af1fd4fecf5315508261fa860663da4742f4115e10734ce42da2891db4df57e9c1ac79b')
 b2sums=('e4fc0bd98468595a0d8781ad787562946d678c0b8b142655b52870faa4c442563e9aa7549598b9f9c81cab7ffd74496d8fddda39ab88bb2ca0f0c0b8b031b4a4'
-        'a632dc8cc86a96e569a990ae1f869c3d03766828d7bfd672f2376bc0a5e8eacea8c09e3e889307ccc6138485dbde8a3e154103646cbaa80ffa4d9010abcc426d'
         '0d36bd5aa6ffe769172107134c098aa996c9123e42e8de35391f02dc0ab08b4d43b1a0145ffb33ce40bdc44c55ab7f82396757ff9ba4bba4bc989a4207d4eadb'
         'a6b1364eb46897478979e6dc05219cdcb188221608d02825da05aa686095782f5991053e59b4292277941e84a09f23e30b85de62c3d23976cbb54a2737cbea73'
         '063934b33ae0aeb7c8627aacedcb12fa2c6abb626752c7a475537e57094ad737ea942b4872096b44f577426ad344d247548b6dd5a942fb9bb81a8f8e21c17691'
@@ -97,10 +95,6 @@ prepare() {
   # add generated translation files
   # required for reproducible builds
   git apply "$srcdir/add-translations.patch"
-
-  # TODO file an upstream bug
-  # fix a couple of issues with the systemd service
-  patch -p1 -i "$srcdir/fix-systemd-service.patch"
 
   # version strings are currently out of date
   # template-ify version strings for easier sed invocation (1/2)
@@ -177,9 +171,6 @@ package() {
 
   # daemon
   install -vDm755 -t "$pkgdir/usr/bin" daemon/opensnitchd
-
-  # systemd integration
-  install -vDm644 "$srcdir/tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
 
   # configuration
   install -vDm644 -t "$pkgdir/etc/opensnitchd" daemon/{default-config,system-fw}.json
