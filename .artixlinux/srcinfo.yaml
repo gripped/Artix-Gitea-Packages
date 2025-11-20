@@ -1,10 +1,10 @@
 ---
-version: 25.9.23-1
+version: 25.9.23-2
 pkgbase:
   name: flatbuffers
   pkgdesc: An efficient cross platform serialization library for C++, with support for Java, C# and Go
   pkgver: 25.9.23
-  pkgrel: 1
+  pkgrel: 2
   url: https://google.github.io/flatbuffers/
   arch:
     - x86_64
@@ -12,8 +12,10 @@ pkgbase:
     - Apache
   makedepends:
     - cmake
-    - python-setuptools
+    - python-build
+    - python-installer
     - python-numpy
+    - python-setuptools
   depends:
     - gcc-libs
   source:
