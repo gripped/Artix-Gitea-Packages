@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-1
+version: 4.4.0-2
 pkgbase:
   name: pre-commit
   pkgdesc: A framework for managing and maintaining multi-language pre-commit hooks
   pkgver: 4.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pre-commit/pre-commit
   arch:
     - any
@@ -24,7 +24,9 @@ pkgbase:
     - rubygems
     - rust
   makedepends:
-    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-cfgv
     - python-identify
