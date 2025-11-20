@@ -3,7 +3,7 @@
 
 pkgname=python-xarray
 pkgver=2025.10.1
-pkgrel=1
+pkgrel=2
 pkgdesc="N-D labeled arrays and datasets in Python"
 arch=(any)
 url="https://xarray.pydata.org/"
@@ -66,7 +66,7 @@ optdepends=(
   'python-pint: units of measure support'
 )
 source=("https://github.com/pydata/xarray/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('e58bda3433b02087f00b752f82b8fbfeff66f1fadd824b1e38b34e53feb56814')
+sha512sums=('79e1e72277c022abc4d8461df58880e1d21633b505e8ba51785b5707c53c076ac2889fff106c1d9095eb03abdd16c1418aede18ee6d43dd82151d95cd6f9ca5a')
 
 build() {
   cd ${pkgname#python-}-$pkgver
@@ -91,6 +91,10 @@ check() {
     # Fails with:
     # E       Failed: DID NOT RAISE <class 'ValueError'>
     --deselect=xarray/tests/test_groupby.py::test_dask_da_groupby_quantile
+
+    # Fails with:
+    # pandas/_libs/arrays.pyx:103: NotImplementedError
+    --deselect=xarray/tests/test_duck_array_ops.py::test_extension_array_attr
   )
   pytest "${pytest_args[@]}"
 }
