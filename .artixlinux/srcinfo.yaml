@@ -1,10 +1,10 @@
 ---
-version: 2.15.0-1
+version: 2.15.0-2
 pkgbase:
   name: python-aws-xray-sdk
   pkgdesc: AWS X-Ray SDK for Python
   pkgver: 2.15.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/aws/aws-xray-sdk-python
   arch:
     - any
@@ -29,7 +29,7 @@ pkgbase:
     - python-aws-xray-sdk-pytest-asyncio-compat.patch
   sha256sums:
     - 98db847bce19d2ee82095c28425451397dbcdd0c16f87494fc6157b69c0d7d07
-    - c323fbba14f13f81bb64127411e0bf9e84fbf91420ce03d56fd9acc1fcd87327
+    - 9c0fab3fd7b94e22807913f4b0051a4485c0bf7bbe47baed4be2a1ca3b475a9f
 pkgname:
   - name: python-aws-xray-sdk
 # generated with artixpkg 0.37.4-1-any
