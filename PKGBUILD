@@ -5,7 +5,7 @@
 
 pkgname=python-zope-interface
 _pkgname=zope.interface
-pkgver=8.1
+pkgver=8.1.1
 pkgrel=1
 pkgdesc='Zope Interfaces for Python 3.x'
 arch=('x86_64')
@@ -26,7 +26,7 @@ checkdepends=(
   'python-zope-testing'
 )
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('337354d4d749db25a71b1c8ff1e5642783c259b16f70f2acd86e9d33946389434c1d2e4792eba82b998b24b8cd979923a602af58ac03434e3db1e45e1243cb68')
+sha512sums=('58d7f23f6a0bdeb3cfdf8a4788440cffa3e265707f15b745eafb2d3706d3599be32f0d82ecfd0529b4d36640250abbcdb72596cd5c536a6dea59923aa9681728')
 
 build() {
   cd $_pkgname-$pkgver
