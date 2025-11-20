@@ -1,9 +1,9 @@
 ---
-version: 1.3.2-1
+version: 1.3.3-1
 pkgbase:
   name: python-pytest-lazy-fixtures
   pkgdesc: Use fixtures in @pytest.mark.parametrize
-  pkgver: 1.3.2
+  pkgver: 1.3.3
   pkgrel: 1
   url: https://github.com/dev-petrov/pytest-lazy-fixtures
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - python
     - python-pytest
   source:
-    - git+https://github.com/dev-petrov/pytest-lazy-fixtures.git#tag=1.3.2
+    - git+https://github.com/dev-petrov/pytest-lazy-fixtures.git#tag=1.3.3
   sha256sums:
-    - 630967b561d2405f3263fed61ae62838ed67564b0d4b67393435afe33c1a6e10
+    - b07c77ada855c836e34768c2e59c32028c2fe2c409bdb73f0cd75c69cf4ccca1
 pkgname:
   - name: python-pytest-lazy-fixtures
 # generated with artixpkg 0.37.4-1-any
