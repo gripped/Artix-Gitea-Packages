@@ -1,0 +1,42 @@
+---
+version: 0.32.6-1
+pkgbase:
+  name: serd
+  pkgdesc: Lightweight C library for RDF syntax supporting reading/ writing Turtle and NTriples
+  pkgver: 0.32.6
+  pkgrel: 1
+  url: https://drobilla.net/software/serd.html
+  arch:
+    - x86_64
+  license:
+    - 0BSD OR ISC
+    - BSD-3-Clause
+    - ISC
+  makedepends:
+    - doxygen
+    - mandoc
+    - meson
+    - python-sphinx
+    - python-sphinxygen
+  source:
+    - https://download.drobilla.net/serd-0.32.6.tar.xz
+    - https://download.drobilla.net/serd-0.32.6.tar.xz.sig
+  validpgpkeys:
+    - 907D226E7E13FA337F014A083672782A9BF368F3
+  sha512sums:
+    - 8ca85d7c4d20aabd63dfe8e578cf315305a9501c402edfa3d6a26b14d2872aeb3ed11e9839bdf169ae329c8a07b43aa058c1dbbd01aa931ca4623a2849ef6d00
+    - SKIP
+  b2sums:
+    - 093ff03aeb64048d9a88618151a7ef6578cb436dc9d36782a1e320d7a33851b359b200d2f7c507eb9cf20051932ebdf543fe1386243e318e0e1e02e99a44bacc
+    - SKIP
+pkgname:
+  - name: serd
+    depends:
+      - glibc
+    optdepends:
+      - 'serd-docs: for developer documentation'
+    provides:
+      - libserd-0.so
+  - name: serd-docs
+    pkgdesc: Lightweight C library for RDF syntax supporting reading/ writing Turtle and NTriples - documentation
+# generated with artixpkg 0.37.4-1-any
