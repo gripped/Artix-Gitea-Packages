@@ -1,0 +1,29 @@
+---
+version: 1.5.5-8
+pkgbase:
+  name: python-pkgconfig
+  pkgdesc: Python module to interface with the pkg-config command line tool
+  pkgver: 1.5.5
+  pkgrel: 8
+  url: https://github.com/matze/pkgconfig
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-setuptools
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+  source:
+    - git+https://github.com/matze/pkgconfig#tag=v1.5.5
+  sha256sums:
+    - bd84e39169a35fe299c4de616c2a6da0287ee88a5a08080645c7175a4685e639
+pkgname:
+  - name: python-pkgconfig
+# generated with artixpkg 0.37.4-1-any
