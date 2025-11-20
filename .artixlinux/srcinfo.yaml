@@ -1,18 +1,20 @@
 ---
-version: 1.9.0-1
+version: 1.9.0-2
 pkgbase:
   name: python-websocket-client
   pkgdesc: WebSocket client library for Python
   pkgver: 1.9.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/websocket-client/websocket-client
   arch:
     - any
   license:
-    - LGPL
+    - Apache-2.0
   checkdepends:
     - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
   depends:
     - python
