@@ -1,9 +1,9 @@
 ---
-version: 20250720-1
+version: 20251121-1
 pkgbase:
   name: artix-qt-presets
   pkgdesc: Artix Qt presets (KDE Plasma and LXQt)
-  pkgver: 20250720
+  pkgver: 20251121
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/desktop-presets
   arch:
@@ -34,4 +34,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: artix-qt-presets
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

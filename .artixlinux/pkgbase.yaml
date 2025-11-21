@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20250720-1
+    version: 20251121-1
     packages:
-      - artix-qt-presets-20250720-1-any.pkg.tar.zst
+      - artix-qt-presets-20251121-1-any.pkg.tar.zst
     debug: []
 team: galaxy
