@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,16 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 5.85-1
+    packages:
+      - bluez-5.85-1-x86_64.pkg.tar.zst
+      - bluez-utils-5.85-1-x86_64.pkg.tar.zst
+      - bluez-libs-5.85-1-x86_64.pkg.tar.zst
+      - bluez-cups-5.85-1-x86_64.pkg.tar.zst
+      - bluez-deprecated-tools-5.85-1-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.85-1-x86_64.pkg.tar.zst
+      - bluez-mesh-5.85-1-x86_64.pkg.tar.zst
+      - bluez-obex-5.85-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 5.84-2
