@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-1
+version: 2.3.0-2
 pkgbase:
   name: libfm-qt
   pkgdesc: Core library of PCManFM-Qt (Qt binding for libfm)
   pkgver: 2.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/libfm-qt
   arch:
     - x86_64
