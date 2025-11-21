@@ -9,14 +9,14 @@
 _pkgname=libfm
 pkgname=libfm-gtk2
 pkgver=1.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='GTK+ 2 library for file management'
 url='https://lxde.org/'
 arch=('x86_64')
 license=('GPL')
 groups=('lxde-gtk2')
 depends=('gtk2' 'menu-cache' "libfm=$pkgver")
-conflicts=("$_pkgname" "${_pkgname}-gtk3")
+conflicts=("${_pkgname}-gtk3")
 makedepends=('intltool' 'gtk-doc' 'vala' 'glib2-devel')
 source=(https://github.com/lxde/libfm/archive/$pkgver/$pkgname-$pkgver.tar.gz)
 sha256sums=('7d7b616411992389a4b7f35796109d605f30bc2ceab84d4081d1665254ebbf82')
