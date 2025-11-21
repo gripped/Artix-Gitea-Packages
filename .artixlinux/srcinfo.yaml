@@ -1,9 +1,9 @@
 ---
-version: 6.10.0-1
+version: 6.10.1-1
 pkgbase:
   name: qt6-quickeffectmaker
   pkgdesc: Qt Quick Effect Maker (QQEM) for creating and editing custom shader effects
-  pkgver: 6.10.0
+  pkgver: 6.10.1
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - qt6-quick3d
     - qt6-shadertools
   source:
-    - git+https://code.qt.io/qt/qtquickeffectmaker#tag=v6.10.0
+    - git+https://code.qt.io/qt/qtquickeffectmaker#tag=v6.10.1
   sha256sums:
-    - 353c8dde186ab89fea9ccfa1ecea159bb1f69af5d4d41cb1fc20a5634879c553
+    - 3c2ec4be8aabfd5b027e7ef6a3a9e1467ad6e68c11928e779bdb0fa5a79d3658
 pkgname:
   - name: qt6-quickeffectmaker
 # generated with artixpkg 0.37.4-1-any
