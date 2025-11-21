@@ -3,7 +3,7 @@
 _pkgname=lxappearance
 pkgname=$_pkgname-gtk2
 pkgver=0.6.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Feature-rich GTK+ theme switcher of the LXDE Desktop, GTK2 version'
 arch=('x86_64')
 license=('GPL2')
@@ -12,7 +12,7 @@ depends=('gtk2')
 makedepends=('git' 'intltool' 'dbus-glib')
 conflicts=($_pkgname)
 provides=($_pkgname)
-proups=('lxde-gtk2')
+groups=('lxde-gtk2')
 source=(git+https://github.com/lxde/lxappearance.git#tag=${pkgver})
 sha256sums=('94e0a5b3e362c3b0323df3c6a672f5546eca6acd896dbe9708e16042df10fc24')
 
