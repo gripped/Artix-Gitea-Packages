@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1:0.5.6-2.2
+    version: 1:0.5.6-3
     packages:
-      - lxsession-gtk2-1:0.5.6-2.2-x86_64.pkg.tar.zst
+      - lxsession-gtk2-1:0.5.6-3-x86_64.pkg.tar.zst
     debug: []

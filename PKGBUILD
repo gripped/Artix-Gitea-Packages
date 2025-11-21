@@ -3,7 +3,7 @@
 _pkgname=lxsession
 pkgname=$_pkgname-gtk2
 pkgver=0.5.6
-pkgrel=2.2
+pkgrel=3
 epoch=1
 pkgdesc='Lightweight X11 session manager, GTK2 version'
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('gtk2' 'polkit')
 makedepends=('intltool' 'docbook-xsl' 'vala' 'git')
 conflicts=($_pkgname 'lxpolkit')
 provides=($_pkgname)
-groups=('lxdei-gtk2')
+groups=('lxde-gtk2')
 source=("git+https://github.com/lxde/$_pkgname.git#tag=$pkgver")
 sha256sums=('552d9331d30c0349b28699ec51de201b23586b209ffb5ac6e32372117dc44557')
 
@@ -39,4 +39,3 @@ package() {
   cd $_pkgname
   make DESTDIR="$pkgdir" install
 }
-
