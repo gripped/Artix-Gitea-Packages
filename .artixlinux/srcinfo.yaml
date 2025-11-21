@@ -1,10 +1,10 @@
 ---
-version: 6.10.0-2
+version: 6.10.1-1
 pkgbase:
   name: qt6-declarative
   pkgdesc: Classes for QML and JavaScript languages
-  pkgver: 6.10.0
-  pkgrel: 2
+  pkgver: 6.10.1
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -31,9 +31,9 @@ pkgbase:
   optdepends:
     - 'qt6-svg: for QtQuickVectorImage and svgtoqml'
   source:
-    - git+https://code.qt.io/qt/qtdeclarative#tag=v6.10.0
+    - git+https://code.qt.io/qt/qtdeclarative#tag=v6.10.1
   sha256sums:
-    - 03795bb958cd321a7b8450ad4fdd0ccecad7669afe657539f7d5a8b59eaa1a96
+    - 814050edddb87c37b118fcdff1c2f287917597c853258f5fd0e15e9b646b9a0b
 pkgname:
   - name: qt6-declarative
 # generated with artixpkg 0.37.4-1-any
