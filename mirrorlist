@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-10-30
+## Generated on 2025-11-21
 ##
 
 # Artix mirrors
@@ -32,6 +32,8 @@ Server = https://mirror.pascalpuffke.de/artix-linux/$repo/os/$arch
 Server = https://ftp.uni-bayreuth.de/linux/artix-linux/$repo/os/$arch
 Server = https://ftp.halifax.rwth-aachen.de/artixlinux/$repo/os/$arch
 Server = https://artix.unixpeople.org/repos/$repo/os/$arch
+Server = https://artix.unixpeople.org/repos/$repo/os/$arch
+https://artix.unixpeople.org/repos/
 Server = https://mirror2.artixlinux.org/$repo/os/$arch
 Server = https://mirror3.artixlinux.org/repos/$repo/os/$arch
 Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
@@ -67,9 +69,6 @@ Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
 Server = https://artix-linux.mirrors.prairievoice.ca/$repo/os/$arch
 
 ## South America
-# Chile
-Server = https://mirror1.cl.netactuate.com/artix/repos/$repo/os/$arch
-
 ## Asia
 # China
 Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch
