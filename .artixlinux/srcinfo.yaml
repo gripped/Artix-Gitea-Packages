@@ -1,10 +1,10 @@
 ---
-version: 12.2.0-1
+version: 12.2.0-3
 pkgbase:
   name: mitmproxy
   pkgdesc: SSL-capable man-in-the-middle HTTP proxy
   pkgver: 12.2.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://mitmproxy.org
   arch:
     - any
@@ -37,7 +37,6 @@ pkgbase:
     - python-ldap3
     - python-mitmproxy-rs
     - python-msgpack
-    - python-passlib
     - python-publicsuffix2
     - python-pyopenssl
     - python-pyparsing

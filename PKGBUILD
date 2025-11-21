@@ -6,7 +6,7 @@
 
 pkgname=mitmproxy
 pkgver=12.2.0
-pkgrel=1
+pkgrel=3
 pkgdesc='SSL-capable man-in-the-middle HTTP proxy'
 arch=(any)
 url='https://mitmproxy.org'
@@ -27,7 +27,6 @@ depends=(
   python-ldap3
   python-mitmproxy-rs
   python-msgpack
-  python-passlib
   python-publicsuffix2
   python-pyopenssl
   python-pyparsing
@@ -80,6 +79,7 @@ check() {
   local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv "${pytest_opts[@]}"
 }
+
 
 package() {
   cd "$pkgname"
