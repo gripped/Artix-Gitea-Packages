@@ -1,9 +1,9 @@
 ---
-version: 6.10.0-1
+version: 6.10.1-1
 pkgbase:
   name: qt6-networkauth
   pkgdesc: Network authentication module
-  pkgver: 6.10.0
+  pkgver: 6.10.1
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - glibc
     - qt6-base
   source:
-    - git+https://code.qt.io/qt/qtnetworkauth#tag=v6.10.0
+    - git+https://code.qt.io/qt/qtnetworkauth#tag=v6.10.1
   sha256sums:
-    - cfc00473641a7202b91fee0eec45d1554244cfa2a31e434f68a7723f2c555bad
+    - dfff85999fde8cc487dc2bec61e3383dc9826f6f2343b3983c5dd24e0bc8c979
 pkgname:
   - name: qt6-networkauth
 # generated with artixpkg 0.37.4-1-any
