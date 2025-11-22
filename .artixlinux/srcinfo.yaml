@@ -1,0 +1,34 @@
+---
+version: 0.74-1
+pkgbase:
+  name: po4a
+  pkgdesc: Tools for helping translation of documentation
+  pkgver: 0.74
+  pkgrel: 1
+  url: https://po4a.org/
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - perl-text-wrapi18n
+    - perl-locale-gettext
+    - perl-term-readkey
+    - perl-sgmls
+    - perl-module-build
+    - perl-pod-parser
+    - docbook-xsl
+  depends:
+    - perl
+    - gettext
+    - perl-yaml-tiny
+    - perl-unicode-linebreak
+  options:
+    - '!emptydirs'
+  source:
+    - po4a-0.74.tar.gz::https://github.com/mquinson/po4a/archive/v0.74.tar.gz
+  sha256sums:
+    - 6e390eb7707501a86f2e648d78fddb0d211d1e8699aa1ee201176e9f966a798b
+pkgname:
+  - name: po4a
+# generated with artixpkg 0.37.4-1-any
