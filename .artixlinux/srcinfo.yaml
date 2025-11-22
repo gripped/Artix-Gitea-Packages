@@ -1,9 +1,9 @@
 ---
-version: 3.2.1-1
+version: 3.3.1-1
 pkgbase:
   name: python-jupyter-ydoc
   pkgdesc: Document structures for collaborative editing using Ypy
-  pkgver: 3.2.1
+  pkgver: 3.3.1
   pkgrel: 1
   url: https://jupyter.org/
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - python
     - python-pycrdt
   source:
-    - git+https://github.com/jupyter-server/jupyter_ydoc#tag=v3.2.1
+    - git+https://github.com/jupyter-server/jupyter_ydoc#tag=v3.3.1
   sha256sums:
-    - 282858093e0bc26cb463288e7ae614c04558398625f6e26efa529d34fd7b006a
+    - 43e8d3687bfc5d9dd663554275adc2300fff55926cc541d3fbfe186922699a63
 pkgname:
   - name: python-jupyter-ydoc
 # generated with artixpkg 0.37.4-1-any
