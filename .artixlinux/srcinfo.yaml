@@ -1,9 +1,9 @@
 ---
-version: 4.48.2-1
+version: 4.49.1-1
 pkgbase:
   name: go-yq
   pkgdesc: Portable command-line YAML processor
-  pkgver: 4.48.2
+  pkgver: 4.49.1
   pkgrel: 1
   url: https://github.com/mikefarah/yq
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   conflicts:
     - yq
   source:
-    - git+https://github.com/mikefarah/yq.git#tag=v4.48.2
+    - git+https://github.com/mikefarah/yq.git#tag=v4.49.1
   b2sums:
-    - 97380232a97b5d146d69786e4870eade7f22b082b52d3893da6d84b2da8900445f46ab84ec2448b48d163cb33908c2ee83963911cdf21124dda5480909aca2b1
+    - a8f6a115969a456837bbfdf519cbd24efc6455ea5c223f18161ffd97b47765ccbb36b58340193d0432b746dda7a64029772a6755f2f7741d922a92f32fcf2c5f
 pkgname:
   - name: go-yq
 # generated with artixpkg 0.37.4-1-any
