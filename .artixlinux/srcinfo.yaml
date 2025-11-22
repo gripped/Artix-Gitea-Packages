@@ -1,9 +1,9 @@
 ---
-version: 1.3.0-1
+version: 1.3.1-1
 pkgbase:
   name: python-exceptiongroup
   pkgdesc: Backport of PEP 654 (exception groups)
-  pkgver: 1.3.0
+  pkgver: 1.3.1
   pkgrel: 1
   url: https://github.com/agronholm/exceptiongroup
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://github.com/agronholm/exceptiongroup/archive/1.3.0/exceptiongroup-1.3.0.tar.gz
+    - https://github.com/agronholm/exceptiongroup/archive/1.3.1/exceptiongroup-1.3.1.tar.gz
   sha256sums:
-    - 7af03131ce1ad5177a6e449b7dc36aa9148bb9103654542a7217f5842a4df551
+    - b98b46162280ca444c7b440993f96b8c7c61c8200835c6e825be3586f3830703
 pkgname:
   - name: python-exceptiongroup
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any
