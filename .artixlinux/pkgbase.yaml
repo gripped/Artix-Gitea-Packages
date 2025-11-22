@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.2.12-2
+    version: 3.2.13-1
     packages:
-      - python-psycopg-3.2.12-2-x86_64.pkg.tar.zst
+      - python-psycopg-3.2.13-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

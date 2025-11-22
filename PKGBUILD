@@ -2,8 +2,8 @@
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 
 pkgname=python-psycopg
-pkgver=3.2.12
-pkgrel=2
+pkgver=3.2.13
+pkgrel=1
 pkgdesc='PostgreSQL database adapter for Python'
 arch=(x86_64)
 url='https://www.psycopg.org/psycopg3/'
@@ -22,16 +22,8 @@ makedepends=(
 )
 checkdepends=(python-pytest python-pytest-asyncio)
 source=("$pkgname::git+https://github.com/psycopg/psycopg.git#tag=$pkgver")
-sha512sums=('28f6649ed86d1ab9ea7e7019f00a77afd2084abc7323361f982b3cd3ae6e482936fdbe65a29be256b7af84c98433ff8e31482fe66db1fa7d613fb8cb45ab127a')
-b2sums=('1cce9aa7dff26673de4fa3237849d9d0c2952598214f5ba72cb09ab502e0cc06ecb21e3c01b6d577f88debcada24de27df927ea5b988cbbd8b2e69a4848756e5')
-
-prepare() {
-  cd "$pkgname"
-
-  # fix error revealed by Cython 3.2+
-  # https://github.com/psycopg/psycopg/commit/70cc1d1b14ab99be2a066032dc353e7c7aa77b20
-  git cherry-pick --no-commit 70cc1d1b14ab99be2a066032dc353e7c7aa77b20
-}
+sha512sums=('13b7a547840241e11e91a2a2cf4c76230070f87145219d3f4f24804acd3e4c5c33a1faffb36cd1a5a76925d000f9f9fa333179075c352231aa5a8b6c1ba42735')
+b2sums=('487a624ec3fd7bad76d0f9cc6c9bbd2503b8d851158a5ed63ea95835612fa68145c2453d4928aea74b6e4e5c9c2213dac9af123fa7a4aa0bc090dc9f12635cec')
 
 build(){
   cd "$pkgname"
