@@ -1,9 +1,9 @@
 ---
-version: 21.1.20-1
+version: 21.1.20-2
 pkgbase:
   name: xorg-server
   pkgver: 21.1.20
-  pkgrel: 1
+  pkgrel: 2
   url: https://xorg.freedesktop.org
   arch:
     - x86_64
@@ -177,4 +177,6 @@ pkgname:
       - libpciaccess
       - pixman
       - xorg-util-macros
+  - name: xorg-server-src
+    pkgdesc: Source files of the X.Org X server
 # generated with artixpkg 0.37.4-1-any

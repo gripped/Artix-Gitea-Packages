@@ -3,9 +3,9 @@
 
 pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
-         'xorg-server-common' 'xorg-server-devel')
+         'xorg-server-common' 'xorg-server-devel' 'xorg-server-src')
 pkgver=21.1.20
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause' 
@@ -54,6 +54,13 @@ build() {
   export CFLAGS=${CFLAGS/-fno-plt}
   export CXXFLAGS=${CXXFLAGS/-fno-plt}
   export LDFLAGS=${LDFLAGS/-Wl,-z,now}
+
+  # save tree for source package after prepare() may have applied patches
+  tar czf ${pkgbase}-${pkgver}.tar.gz \
+    --exclude='.git*' \
+    --exclude=.appveyor.yml \
+    --exclude=.travis.yml \
+    ${pkgbase}
 
   artix-meson ${pkgbase} build \
     -D ipv6=true \
@@ -192,4 +199,14 @@ package_xorg-server-devel() {
 
   # make sure there are no files left to install
   find fakeinstall -depth -print0 | xargs -0 rmdir
+}
+
+package_xorg-server-src() {
+  pkgdesc="Source files of the X.Org X server"
+
+  install -d "${pkgdir}"/usr/src/
+  cd "${pkgdir}"/usr/src/
+  tar xvf "${srcdir}/${pkgbase}-${pkgver}.tar.gz"
+  chown root:root --recursive ${pkgbase}
+  install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" "${pkgbase}"/COPYING
 }
