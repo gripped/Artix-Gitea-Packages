@@ -4,7 +4,7 @@
 
 pkgname=intel-compute-runtime
 pkgver=25.40.35563.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver'
 arch=('x86_64')
 url='https://github.com/intel/compute-runtime/'
@@ -27,12 +27,18 @@ provides=(
     'level-zero-driver'
     'opencl-driver')
 source=("https://github.com/intel/compute-runtime/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
-        '010-intel-compute-runtime-disable-werror.patch')
+        '010-intel-compute-runtime-disable-werror.patch'
+        '020-intel-compute-runtime-lto-warning-fix-part001.patch'::'https://github.com/intel/compute-runtime/commit/133421a5e9c8f26120413a8b770125c86e5e68d2.patch'
+        '030-intel-compute-runtime-lto-warning-fix-part002.patch'::'https://github.com/intel/compute-runtime/commit/7660b29bbbdcf05df14a1a4fe71ebea180a851cd.patch')
 sha256sums=('fda80f91e246c7d54452b37bd85dfd41e5a5174040a8efd37f87d3d92ce53dbf'
-            'f4250e78397c492c0cf36f45d179e4351473392a69051adab5838bf64d77a43b')
+            'f4250e78397c492c0cf36f45d179e4351473392a69051adab5838bf64d77a43b'
+            'e06ff6281a1a3173cf60e8e3ea10a2f3c45141cb639a361b6ca8917079ac39d9'
+            '8b343e12469750a8096614366e77b7986c1485a77b1e4961af3931e1b25a0ca6')
 
 prepare() {
-    patch -d compute-runtime-${pkgver} -Np1 -i "${srcdir}/010-intel-compute-runtime-disable-werror.patch"
+    patch -d "compute-runtime-${pkgver}" -Np1 -i "${srcdir}/010-intel-compute-runtime-disable-werror.patch"
+    patch -d "compute-runtime-${pkgver}" -Np1 -i "${srcdir}/020-intel-compute-runtime-lto-warning-fix-part001.patch"
+    patch -d "compute-runtime-${pkgver}" -Np1 -i "${srcdir}/030-intel-compute-runtime-lto-warning-fix-part002.patch"
 }
 
 build() {
