@@ -3,28 +3,29 @@
 
 pkgname=igsc
 pkgver=0.9.5
-pkgrel=7
-pkgdesc="Intel graphics system controller firmware update library"
-arch=(x86_64)
-url="https://github.com/intel/igsc/"
-license=(Apache-2.0)
-depends=(glibc intel-metee libudev)
-makedepends=(cmake udev)
-source=(${url}/archive/V${pkgver}/${pkgname}-${pkgver}.tar.gz)
+pkgrel=8
+pkgdesc='Intel graphics system controller firmware update library'
+arch=('x86_64')
+url='https://github.com/intel/igsc/'
+license=('Apache-2.0')
+depends=(
+    'glibc'
+    'intel-metee')
+makedepends=(
+    'cmake')
+source=("https://github.com/intel/igsc/archive/V${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('516a099239ad0541598be87025556c878c0d11c6d43e09115d2bb2e24508b6ec')
 
 build() {
-  cmake -B build -S ${pkgname}-${pkgver} \
-    -G 'Unix Makefiles' \
-    -DCMAKE_BUILD_TYPE=None \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_PREFIX_PATH=/usr \
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-    -DENABLE_WERROR=OFF \
-    -Wno-dev
-  cmake --build build
+    cmake -B build -S "${pkgname}-${pkgver}" \
+        -G 'Unix Makefiles' \
+        -DCMAKE_BUILD_TYPE='None '\
+        -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DENABLE_WERROR='OFF' \
+        -Wno-dev
+    cmake --build build
 }
 
 package() {
-  DESTDIR="${pkgdir}" cmake --install build
+    DESTDIR="$pkgdir" cmake --install build
 }
