@@ -33,4 +33,4 @@ package() {
   install -Dm644 "${srcdir}"/${_pkgname}-xlibre-${_pkgname}-${pkgver}/COPYING "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
 
-sha256sums=('acdea470f57d33c27a4b1bbb18568a950ac344230e5a9a2ee57ad99f09acc97a')
+sha256sums=('0373f8a290ef6c2c7b4430008af15564502d93808ea19c00f27a549f3d159c03')

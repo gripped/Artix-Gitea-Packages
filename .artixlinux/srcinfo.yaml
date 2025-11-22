@@ -30,7 +30,7 @@ pkgbase:
   source:
     - https://github.com/X11Libre/xf86-video-voodoo/archive/refs/tags/xlibre-xf86-video-voodoo-1.2.6.3.tar.gz
   sha256sums:
-    - acdea470f57d33c27a4b1bbb18568a950ac344230e5a9a2ee57ad99f09acc97a
+    - 0373f8a290ef6c2c7b4430008af15564502d93808ea19c00f27a549f3d159c03
 pkgname:
   - name: xlibre-video-voodoo
 # generated with artixpkg 0.37.4-1-any
