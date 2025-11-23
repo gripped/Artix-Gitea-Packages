@@ -1,9 +1,9 @@
 ---
-version: 5.1.16-1
+version: 5.1.17-1
 pkgbase:
   name: python-moto
   pkgdesc: Moto is a library to mock out the boto library.
-  pkgver: 5.1.16
+  pkgver: 5.1.17
   pkgrel: 1
   url: https://github.com/spulec/moto
   arch:
@@ -68,9 +68,9 @@ pkgbase:
     - 'python-jsonpath-ng: for events, stepfunctions'
     - 'python-jsonschema: for quicksight'
   source:
-    - git+https://github.com/getmoto/moto#tag=5.1.16
+    - git+https://github.com/getmoto/moto#tag=5.1.17
   sha256sums:
-    - 3def8270189af53ad876d2fca8c1f47103bb4f5abe739e13638a9b4a3a3e6706
+    - 1a643008f34d8048a6c5d8e7ed11c21d7bc69ee47dc3f581a0ce79d88bd60514
 pkgname:
   - name: python-moto
 # generated with artixpkg 0.37.4-1-any
