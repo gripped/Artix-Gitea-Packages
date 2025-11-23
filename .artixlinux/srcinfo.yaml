@@ -1,9 +1,9 @@
 ---
-version: 3.2.1-1
+version: 3.4.0-1
 pkgbase:
   name: ttf-input-nerd
   pkgdesc: Patched font Input containing nerd font symbols
-  pkgver: 3.2.1
+  pkgver: 3.4.0
   pkgrel: 1
   url: https://input.djr.com/
   arch:
@@ -17,10 +17,10 @@ pkgbase:
     - ttf-font
   source:
     - https://sources.archlinux.org/other/packages/ttf-input/Input_Fonts_20220502.zip
-    - nerd-fonts-patcher-3.2.1.zip::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FontPatcher.zip
+    - nerd-fonts-patcher-3.4.0.zip::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/FontPatcher.zip
   sha256sums:
     - bc314ea9026fba5134cd2a7ba93a4ec48607f341d32e4eb3dfae20d141cb91b3
-    - 7825c0507457437facecad6216ade1a1bffd9f24b9f5c59e5e84958dbb31f2d6
+    - a8f11e511ed7c69e96680858c06b50a643ea7752e26d5cd13dd5e5cc53ab1760
 pkgname:
   - name: ttf-input-nerd
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
