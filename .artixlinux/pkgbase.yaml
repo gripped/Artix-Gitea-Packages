@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.0.0-4
+    version: 1.1.0-1
     packages:
-      - xfdashboard-1.0.0-4-x86_64.pkg.tar.zst
+      - xfdashboard-1.1.0-1-x86_64.pkg.tar.zst
     debug: []
