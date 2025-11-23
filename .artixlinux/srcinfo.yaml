@@ -1,9 +1,9 @@
 ---
-version: 3.2.0-1
+version: 3.3.2-1
 pkgbase:
   name: manifold
   pkgdesc: Geometry library for topological robustness
-  pkgver: 3.2.0
+  pkgver: 3.3.2
   pkgrel: 1
   url: https://github.com/elalish/manifold
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - pybind11
     - onetbb
   source:
-    - https://github.com/elalish/manifold/releases/download/v3.2.0/manifold-3.2.0.tar.gz
+    - https://github.com/elalish/manifold/releases/download/v3.3.2/manifold-3.3.2.tar.gz
   sha256sums:
-    - 0bca30f38ebf88a9954a90e521905d5ed36fe66b220fe4ca1cada66c2835f604
+    - efdae7cd75aabab20fa2673603a9ac263d5b48912559664dde37f5d9e85eced8
 pkgname:
   - name: manifold
     depends:
@@ -34,4 +34,4 @@ pkgname:
       - glibc
       - gcc-libs
       - manifold
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
