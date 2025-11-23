@@ -1,9 +1,9 @@
 ---
-version: 0.14.0-1
+version: 0.15.0-1
 pkgbase:
   name: python-s3transfer
   pkgdesc: Amazon S3 Transfer Manager for Python
-  pkgver: 0.14.0
+  pkgver: 0.15.0
   pkgrel: 1
   url: https://github.com/boto/s3transfer
   arch:
@@ -24,9 +24,9 @@ pkgbase:
   optdepends:
     - 'python-awscrt: use AWS Common Runtime'
   source:
-    - https://github.com/boto/s3transfer/archive/0.14.0/python-s3transfer-0.14.0.tar.gz
+    - https://github.com/boto/s3transfer/archive/0.15.0/python-s3transfer-0.15.0.tar.gz
   sha256sums:
-    - 6441111dbbedb02f3ccbce6b6faff90d509155e6cd52f34293c375e41903f951
+    - b9e29ad509a7459df9bb9f9a55e24f0c035111033cd21797d54acc173a72fd3f
 pkgname:
   - name: python-s3transfer
 # generated with artixpkg 0.37.4-1-any
