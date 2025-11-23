@@ -3,7 +3,7 @@
 
 pkgname=falkon
 pkgver=25.08.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Cross-platform QtWebEngine browser'
 arch=(x86_64)
 url='https://www.falkon.org/'
