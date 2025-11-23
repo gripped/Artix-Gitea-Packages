@@ -1,10 +1,10 @@
 ---
-version: 2:3.17.2-5
+version: 2:3.17.2-6
 pkgbase:
   name: freerdp
   pkgdesc: Free implementation of the Remote Desktop Protocol (RDP)
   pkgver: 3.17.2
-  pkgrel: 5
+  pkgrel: 6
   epoch: 2
   url: https://www.freerdp.com/
   arch:
@@ -48,8 +48,8 @@ pkgbase:
     - libxrandr
     - libxrender
     - libxtst
-    - sdl2
-    - sdl2_ttf
+    - sdl3
+    - sdl3_ttf
     - wayland
   provides:
     - libfreerdp-client3.so
@@ -87,8 +87,8 @@ pkgname:
       - libxrandr
       - libxrender
       - libxtst
-      - sdl2
-      - sdl2_ttf
+      - sdl3
+      - sdl3_ttf
       - wayland
       - alsa-lib
       - libasound.so
