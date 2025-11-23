@@ -1,10 +1,10 @@
 ---
-version: 0.9.10-1
+version: 0.9.11-1
 pkgbase:
   name: aws-c-cal
   pkgdesc:
     AWS Crypto Abstraction Layer: Cross-Platform, C99 wrapper for cryptography primitives
-  pkgver: 0.9.10
+  pkgver: 0.9.11
   pkgrel: 1
   url: https://github.com/awslabs/aws-c-cal
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - glibc
     - openssl
   source:
-    - aws-c-cal-0.9.10.tar.gz::https://github.com/awslabs/aws-c-cal/archive/v0.9.10.tar.gz
+    - aws-c-cal-0.9.11.tar.gz::https://github.com/awslabs/aws-c-cal/archive/v0.9.11.tar.gz
   sha256sums:
-    - a41b389e942fadd599a6a0f692b75480d663f1e702c0301177f00f365e0c9b94
+    - 319720ca46f2d23c3b5e44f4b48a1d468c49983bd0970d09cf0ddee4f4450d39
 pkgname:
   - name: aws-c-cal
 # generated with artixpkg 0.37.4-1-any
