@@ -2,8 +2,8 @@
 # Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=bftpd
-pkgver=6.1
-pkgrel=4
+pkgver=6.3
+pkgrel=1
 pkgdesc='Small, easy-to-configure FTP server'
 url='http://bftpd.sourceforge.net/'
 arch=('x86_64')
@@ -18,7 +18,7 @@ source=(https://downloads.sourceforge.net/sourceforge/bftpd/bftpd-${pkgver}.tar.
         bftpd.pam
         bftpd.tmpfiles
         bftpd-4.9-Makefile.patch)
-sha512sums=('12af9be4c8995988c9fccfe0d26d928faa551b0b3a58a433a42453a768e28e7fd2711228c8944242483368b5bf4ec6e3adea293e1118b9afeb612d03e4863b42'
+sha512sums=('d557dad39a694f2a0880575dc8c9e98b369afb4ce990396b4276e95e13074e21273fa288faf3b7a564baf94e9cf5ee34717fb28dd06f73f1291edc8bfc56701d'
             '50faec3cf93a4702945bb8aee5b2e9b227183ec098fe93c729ca14d02c9432ccf4b25bc86f9b4b1ae40c9a9820b6b5a9e83a1dde78085a36a2c84b69690262b6'
             '1e6183ab0eb812b3ef687ac2c26ce78f7cb30540f606d20023669ac00ba04075487fb72e4dc89cc05dab0269ff6aca98fc1167cc75669c225b88b592482fbf67'
             '92650582747a34a29631b1755d2eb14d124a9632888c39cf2dbe5c2834f5b4c5f6506588ef0106cc643397587ffbe9a2240787030452bf29b17b7aacf1632cc1'
