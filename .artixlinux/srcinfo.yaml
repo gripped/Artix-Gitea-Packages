@@ -1,9 +1,9 @@
 ---
-version: 12.2.1-1
+version: 12.3.0-1
 pkgbase:
   name: grafana
   pkgdesc: Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB
-  pkgver: 12.2.1
+  pkgver: 12.3.0
   pkgrel: 1
   url: https://grafana.com/
   install: grafana.install
@@ -28,11 +28,11 @@ pkgbase:
   backup:
     - etc/grafana.ini
   source:
-    - git+https://github.com/grafana/grafana.git#tag=v12.2.1
+    - git+https://github.com/grafana/grafana.git#tag=v12.3.0
     - grafana.sysusers
     - grafana.tmpfiles
   sha512sums:
-    - 7a4db9b86b4347deb549822185044e8c8311cd4bdf476fc2a7d5a8bf057bececc47c0288f77b53dd1d31e886e57eedcd7223b02425921ecfade6706a810ef8c0
+    - b36879335c4109d9894b55e9092540424dfaf6f833229c3c557d8dfca5420e139bca0cdb7222ee6a624bac658331570f65d2ae0bb7c196603862991d0c2ea581
     - 38b46d953837a7afa5a654dfeef163b210d56cad57d937018531d00cd63b5341d6f9cd777299bdc7a994d0cb7df09b8157aad0f166e76ad47564e1ad6d5441d4
     - c1724bfc7cbd6a406f17acb661efca0f1e57e2c30cc1841f4cb7ccfc420adc40cc61cb1c023d00444827b2c40e9caa4c2fefbfd503419848c74a0b455b2375ab
 pkgname:
