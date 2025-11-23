@@ -144,3 +144,4 @@ package_pyside6-tools() {
   echo "exec designer6 \$@" >> pyside6-designer
   install -Dm755 pyside6-designer -t "$pkgdir"/usr/bin
 }
+
