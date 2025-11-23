@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.14.3-2
+    version: 5.15.0-1
     packages:
-      - python-socketio-5.14.3-2-any.pkg.tar.zst
+      - python-socketio-5.15.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
