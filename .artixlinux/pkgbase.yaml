@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2025.10.1-2
+    version: 2025.11.0-1
     packages:
-      - python-xarray-2025.10.1-2-any.pkg.tar.zst
+      - python-xarray-2025.11.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

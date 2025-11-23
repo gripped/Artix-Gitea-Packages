@@ -2,8 +2,8 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-xarray
-pkgver=2025.10.1
-pkgrel=2
+pkgver=2025.11.0
+pkgrel=1
 pkgdesc="N-D labeled arrays and datasets in Python"
 arch=(any)
 url="https://xarray.pydata.org/"
@@ -66,7 +66,7 @@ optdepends=(
   'python-pint: units of measure support'
 )
 source=("https://github.com/pydata/xarray/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('79e1e72277c022abc4d8461df58880e1d21633b505e8ba51785b5707c53c076ac2889fff106c1d9095eb03abdd16c1418aede18ee6d43dd82151d95cd6f9ca5a')
+sha512sums=('76ba8a1555139f6d92ea5158bc57855893bb2f5be4842f23f7588429f5c6653e90579553b5ad165badb032b3e953ee4eeab81771f5ff1fc13e5e11df72bfec17')
 
 build() {
   cd ${pkgname#python-}-$pkgver
