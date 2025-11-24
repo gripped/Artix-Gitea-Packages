@@ -1,9 +1,9 @@
 ---
-version: 3.8.10-1
+version: 3.8.11-1
 pkgbase:
   name: lib32-gnutls
   pkgdesc: A library which provides a secure layer over a reliable transport layer (32-bit)
-  pkgver: 3.8.10
+  pkgver: 3.8.11
   pkgrel: 1
   url: https://gnutls.org/
   arch:
@@ -27,14 +27,14 @@ pkgbase:
     - libgnutls.so
     - libgnutlsxx.so
   source:
-    - https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz
-    - https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.10.tar.xz.sig
+    - https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.11.tar.xz
+    - https://www.gnupg.org/ftp/gcrypt/gnutls/v3.8/gnutls-3.8.11.tar.xz.sig
   validpgpkeys:
     - 462225C3B46F34879FC8496CD605848ED7E69871
     - 5D46CB0F763405A7053556F47A75A648B3F9220C
   sha256sums:
-    - db7fab7cce791e7727ebbef2334301c821d79a550ec55c9ef096b610b03eb6b7
+    - 91bd23c4a86ebc6152e81303d20cf6ceaeb97bc8f84266d0faec6e29f17baa20
     - SKIP
 pkgname:
   - name: lib32-gnutls
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
