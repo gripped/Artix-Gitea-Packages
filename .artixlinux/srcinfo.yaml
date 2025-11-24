@@ -1,9 +1,9 @@
 ---
-version: 20250804-1
+version: 20251111-1
 pkgbase:
   name: bmake
   pkgdesc: Portable version of the NetBSD make build tool
-  pkgver: 20250804
+  pkgver: 20251111
   pkgrel: 1
   url: https://www.crufty.net/help/sjg/bmake.html
   arch:
@@ -15,13 +15,13 @@ pkgbase:
   optdepends:
     - 'python: for meta2deps.py script'
   source:
-    - https://www.crufty.net/ftp/pub/sjg/bmake-20250804.tar.gz
-    - https://www.crufty.net/ftp/pub/sjg/bmake-20250804.tar.gz.asc
+    - https://www.crufty.net/ftp/pub/sjg/bmake-20251111.tar.gz
+    - https://www.crufty.net/ftp/pub/sjg/bmake-20251111.tar.gz.asc
   validpgpkeys:
     - 7E228507C26D8DC164F531BFBA54C8AF755A2A99
   sha256sums:
-    - 0b49037644b253206d2e710d46e32859e62dfe2c6c8e7218ae439f2ef50de8ad
+    - 45a3f8515677ba8f3933d8213f4bb611a5c3c88380be2e46222fa44709506060
     - SKIP
 pkgname:
   - name: bmake
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
