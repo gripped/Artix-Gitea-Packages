@@ -1,10 +1,10 @@
 ---
-version: 49.1-3
+version: 49.2-1
 pkgbase:
   name: nautilus
   pkgdesc: Default file manager for GNOME
-  pkgver: 49.1
-  pkgrel: 3
+  pkgver: 49.2
+  pkgrel: 1
   url: https://apps.gnome.org/Nautilus/
   arch:
     - x86_64
@@ -48,12 +48,12 @@ pkgbase:
     - wayland
     - xdg-user-dirs-gtk
   source:
-    - git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=49.1
+    - git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=49.2
   validpgpkeys:
     - 6B211753AC950672287226800538577822AE4B17
     - 550660707A6F40376B9B9F8D504A78811E6160CC
   b2sums:
-    - 16f2b67f8041553db2f179a4a5eea1d38503f1388dabedda36037706bfe7faf3aa9aadcd792a5a2652a5d44f56626c17bb8000e307e5fbcc31ca33531a0a3b93
+    - 22147928d601778408d0fc98ac093eaf520bc7c61d0d3cda3f8db1b35b029a8cccd29bc3a93eb14887f9dd6e9c7351eb04ae74d93902b5e6a92f071ccf80fc6d
 pkgname:
   - name: nautilus
     groups:
