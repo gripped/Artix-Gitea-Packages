@@ -1,0 +1,29 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+# Contributor: Quentin Bouvet <qbouvet at outlook dot com>
+
+pkgname=bash-preexec
+pkgver=0.6.0
+pkgrel=1
+pkgdesc="preexec and precmd functions for Bash just like Zsh"
+arch=('any')
+url="https://github.com/rcaloras/bash-preexec"
+license=('MIT')
+makedepends=('bats' 'coreutils')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+install=$pkgname.install
+sha256sums=('1a987c0ef0e9cfa0391389327c5aef30166325b32666adde3daa9b809850cdd1')
+
+check() {
+  cd "$pkgname-$pkgver/test"
+  bats --jobs "$(nproc)" .
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm 755 "${pkgname}.sh" -t "$pkgdir/usr/share/$pkgname"
+  install -Dm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
+  install -Dm 644 LICENSE.md -t "$pkgdir/usr/share/licenses/$pkgname"
+}
+
+# vim:set ts=2 sw=2 et:
