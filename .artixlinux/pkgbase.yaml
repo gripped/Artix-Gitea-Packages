@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1.0.0.beta.6-1
+    version: 1.0.0.beta.7-1
     packages:
-      - cosmic-comp-1.0.0.beta.6-1-x86_64.pkg.tar.zst
+      - cosmic-comp-1.0.0.beta.7-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
