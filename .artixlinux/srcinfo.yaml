@@ -1,9 +1,9 @@
 ---
-version: 144.0.2-1
+version: 145.0.1-1
 pkgbase:
   name: librewolf
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom.
-  pkgver: 144.0.2
+  pkgver: 145.0.1
   pkgrel: 1
   url: https://librewolf.net/
   install: librewolf.install
@@ -83,13 +83,13 @@ pkgbase:
     - usr/lib/librewolf/librewolf.cfg
     - usr/lib/librewolf/distribution/policies.json
   source:
-    - https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/144.0.2-1/librewolf-144.0.2-1.source.tar.gz
+    - https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/145.0.1-1/librewolf-145.0.1-1.source.tar.gz
     - librewolf.desktop
     - default192x192.png
   validpgpkeys:
     - 034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3
   sha256sums:
-    - 32b9f75aa2ca8688be3051d1090b78db8e570cb87bb720a2c97dc9321e7f16ad
+    - 839c12e1f092997f2a457e3ee3dd925b037d4e3a5ba202d55009fe6ceeede9f3
     - 7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d
     - 959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1
 pkgname:
