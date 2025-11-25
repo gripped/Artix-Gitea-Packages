@@ -1,0 +1,27 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: contact@tiotrom.com
+# Contributor: nsz32 <nszabo2 at gmail dot com>, bittin
+
+pkgname=xfce4-docklike-plugin
+pkgver=0.5.0
+pkgrel=2
+pkgdesc="A modern, docklike, minimalist taskbar for XFCE"
+arch=('x86_64')
+url="https://docs.xfce.org/panel-plugins/xfce4-docklike-plugin/start"
+license=('GPL-3.0-or-later')
+depends=('xfce4-panel' 'libxfce4windowing' 'libxfce4ui' 'gtk3' 'cairo' 'glib2' 'exo')
+makedepends=('git' 'meson' 'xfce4-dev-tools')
+source=("git+https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git#tag=$pkgname-$pkgver")
+sha256sums=('dd1b3d5da92346fcb1705b0e5767e0163e3cdd0ca0b3fc9c736d27f725f237d8')
+
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set ts=2 sw=2 et:
