@@ -25,15 +25,15 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 21.1.20-2
+    version: 21.1.21-2
     packages:
-      - xorg-server-21.1.20-2-x86_64.pkg.tar.zst
-      - xorg-server-xephyr-21.1.20-2-x86_64.pkg.tar.zst
-      - xorg-server-xvfb-21.1.20-2-x86_64.pkg.tar.zst
-      - xorg-server-xnest-21.1.20-2-x86_64.pkg.tar.zst
-      - xorg-server-common-21.1.20-2-x86_64.pkg.tar.zst
-      - xorg-server-devel-21.1.20-2-x86_64.pkg.tar.zst
-      - xorg-server-src-21.1.20-2-x86_64.pkg.tar.zst
+      - xorg-server-21.1.21-2-x86_64.pkg.tar.zst
+      - xorg-server-xephyr-21.1.21-2-x86_64.pkg.tar.zst
+      - xorg-server-xvfb-21.1.21-2-x86_64.pkg.tar.zst
+      - xorg-server-xnest-21.1.21-2-x86_64.pkg.tar.zst
+      - xorg-server-common-21.1.21-2-x86_64.pkg.tar.zst
+      - xorg-server-devel-21.1.21-2-x86_64.pkg.tar.zst
+      - xorg-server-src-21.1.21-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 21.1.20-1
