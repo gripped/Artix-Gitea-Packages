@@ -1,0 +1,50 @@
+---
+version: 3.2.0-1
+pkgbase:
+  name: gaphor
+  pkgdesc: Simple UML and SysML modeling tool
+  pkgver: 3.2.0
+  pkgrel: 1
+  url: https://apps.gnome.org/Gaphor/
+  arch:
+    - any
+  groups:
+    - gnome-circle
+  license:
+    - Apache-2.0
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-sphinx-intl
+    - python-wheel
+  depends:
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - gtk4
+    - gtksourceview5
+    - hicolor-icon-theme
+    - libadwaita
+    - pango
+    - python
+    - python-babel
+    - python-better-exceptions
+    - python-cairo
+    - python-defusedxml
+    - python-dulwich
+    - python-gaphas
+    - python-generic
+    - python-gobject
+    - python-jedi
+    - python-pillow
+    - python-pydot
+    - python-tinycss2
+  source:
+    - git+https://github.com/gaphor/gaphor.git#tag=3.2.0
+  b2sums:
+    - 71917795b58fe87af7302bb34b1294e5b4efe99196b474954ec9e9da2915a6120252d38b02ffd6883685d5e3cd9ab6a52230ae2d2d65ce0486df637e2faca13c
+pkgname:
+  - name: gaphor
+# generated with artixpkg 0.37.4-1-any
