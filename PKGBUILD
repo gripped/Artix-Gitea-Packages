@@ -3,7 +3,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-greeter
-pkgver=1.0.0.beta.6
+pkgver=1.0.0.beta.7
 pkgrel=1
 pkgdesc='COSMIC greeter for greetd'
 arch=(x86_64)
@@ -31,9 +31,8 @@ source=(
   git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-${pkgver/.beta./-beta.}
   cosmic-greeter-display-manager.patch
   cosmic-greeter-lto.patch
-  com.system76.CosmicGreeter
 )
-b2sums=('acebe0d24152cd300e5ac4ce1543969bd356d8af40f6352038428066c2f2db2ee508e2c699faf674d7df440deee4a9751524a54cf9fafdc45fecbccc93b93cae'
+b2sums=('b0b0349b29d330b2504ed41b29dd216ee4eafbf77892c47dd8f664b418829c927b960cb2a73e1ff7515d2e1e55f72ef17803e3de3093b97759458adf42d2b4d8'
         '8b5c32a991e31cf102b1b07e06d37e979f19106b82e8cab7dc8df81789ab6b24587605aa3387254057732a268368c4074f92461f6f5125bc1cba4e62e18cef27'
         '89ca262c95713e773662fb81e379bc2b63d2c93072b909f8f1eaaafee5289359fd729a476eb66568f893986a53e9c689dccfc4aeeeef62cb736cff466c463f7d')
 
@@ -60,7 +59,7 @@ package() {
   cd cosmic-greeter
   just rootdir="${pkgdir}" install
   install -Dm 644 cosmic-greeter.toml -t "${pkgdir}"/etc/greetd/
-  install -Dm 644 "${srcdir}"/com.system76.CosmicGreeter -t "${pkgdir}"/usr/share/dbus-1/services/
+  install -Dm 644 debian/cosmic-greeter{.service,-daemon.service} -t "${pkgdir}"/usr/lib/systemd/system/
 }
 
 # vim: ts=2 sw=2 et:
