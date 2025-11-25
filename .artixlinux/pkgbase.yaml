@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:29.0.2-1
+    version: 1:29.0.4-1
     packages:
-      - docker-1:29.0.2-1-x86_64.pkg.tar.zst
+      - docker-1:29.0.4-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:28.5.2-1
