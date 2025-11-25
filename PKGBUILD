@@ -7,7 +7,7 @@
 pkgbase=brltty
 pkgname=(brltty brltty-udev-generic)
 pkgver=6.8
-pkgrel=4
+pkgrel=5
 pkgdesc="Braille display driver for Linux/Unix"
 arch=(x86_64)
 url="https://brltty.app"
@@ -51,15 +51,18 @@ source=(
   0001-brlapi-use-elogind-instead-of-systemd.patch
   $pkgname-6.8-lock-brltty-user.patch
   $pkgname-6.4-x11_autostart.patch
+  $pkgname-6.8-udev-tty-perms.rules
 )
 sha512sums=('a7f49850722e65640a3f9690a391d429b3d8658ee55141d9cffc636813ffeedd9eaa1acfa451a0120a9eefcd9b84c6b640eb99aa26357aac9ffda3d48b4fc520'
             'f0f99df714ceb7b9b1c57cc9c3a1c47b360fc0ff23bb7b183d8e57015d00801bbb4c6ec4395f0b06fd386d7047c9b16e16161d700655fe17cf324aaaf6c3b2d8'
             '2f1dba4fa5495913837972030fbcf1c265c90d481d9e0f96ff89c6cab082f7a6b0594c5c7ca6ea446eb76c8f483c7ed57ede58480898ae003261e6373440862c'
-            '4871512affefbc178f4204a1b285fc2b5a05ea2d181163195d695b760e9729b3d2d00b5f052abd71379df609c3859d7cbd64128bdefd16e898bbc4368500a9a0')
+            '4871512affefbc178f4204a1b285fc2b5a05ea2d181163195d695b760e9729b3d2d00b5f052abd71379df609c3859d7cbd64128bdefd16e898bbc4368500a9a0'
+            'dd210599e467a073f891554c7d3991dce90fa0506a7aef28c43a1543d94073e8d561d36c909511778d4bfcc198cac04f146966edf4462d5e553224a72864f6f3')
 b2sums=('e75b2d0d977f88b61f294226f4e7728ffe0a18592a2b331e63c1d486be909a9e5237c6618151a789b9518f327d8fc2a80a975178201318d9284a399fc0571d42'
         '8868137c75067087e8da6ce46ad2d75e30da9e6e2bc3a965d5003af9f3c06358413d706efea9810ba50db90ffc7d8a41ce5aa5a653e49365592e3e6fa77c3a88'
         '76fd46571dab803c39a1663e52293c7e1ee9232b6241528e708bca072c7f9bd270c1961b960bece7f91331a259042b8dfc9a8e77f7dc463944b305700fe0c8f6'
-        '4ebc07a725ef8362233a83118e93901e78943e8dae08f9358b668ff13ab88a65eb9e87c49d106a8c3d87eb62007b230e199107eacb01f92dc683335076c01309')
+        '4ebc07a725ef8362233a83118e93901e78943e8dae08f9358b668ff13ab88a65eb9e87c49d106a8c3d87eb62007b230e199107eacb01f92dc683335076c01309'
+        '7110448b42799195abbc6f9711ebe25cdbc95056833764332c343a2d6e1201c8b590644db46a2d6612fa96740cb7da8cc7f72bb329127ae3bb6c8351efcde260')
 
 prepare() {
   cd $pkgbase-${pkgbase^^}-$pkgver
@@ -149,6 +152,7 @@ package_brltty() {
 
   # move generic udev rule, as it applies too broadly
   mv -v "$pkgdir/usr/lib/udev/rules.d/90-brltty-usb-generic.rules" ../
+  install -vDm 644 ../brltty-6.8-udev-tty-perms.rules "$pkgdir/usr/lib/udev/rules.d/90-brltty-tty-perms.rules"
 }
 
 package_brltty-udev-generic() {
