@@ -1,0 +1,28 @@
+---
+version: 1.14.2-1
+pkgbase:
+  name: terminology
+  pkgdesc: EFL based terminal emulator
+  pkgver: 1.14.2
+  pkgrel: 1
+  url: http://www.enlightenment.org/p.php?p=about/terminology
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - git
+    - meson
+    - cmake
+  depends:
+    - efl>=1.26
+    - openssl-1.1
+    - libsndfile
+    - libpulse
+  source:
+    - git+http://git.enlightenment.org/enlightenment/terminology.git#commit=915e60c0184495c56b5de38b5d35ec14031ebade
+  sha256sums:
+    - 9d5d85350728134a57e5f91eb42c1b43bdd8b2b9dbf5e9dc8f372e7109129305
+pkgname:
+  - name: terminology
+# generated with artixpkg 0.37.4-1-any
