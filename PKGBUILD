@@ -5,7 +5,7 @@
 
 pkgname=cosmic-comp
 pkgver=1.0.0.beta.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Compositor for the COSMIC desktop environment'
 arch=(x86_64)
 url='https://github.com/pop-os/cosmic-comp'
@@ -22,7 +22,7 @@ depends=(
   libxkbcommon
   mesa
   pixman
-  systemd-libs
+  libelogind
   wayland
 )
 makedepends=(
