@@ -4,7 +4,7 @@
 
 pkgname=cosmic-settings-daemon
 pkgver=1.0.0.beta.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Cosmic settings daemon'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-settings-daemon
@@ -21,7 +21,7 @@ depends=(
   libpulse
   playerctl
   pop-sound-theme
-  systemd-libs
+  libelogind
   wireplumber
   xdg-utils
 )
