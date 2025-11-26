@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -17,9 +17,9 @@ repos:
     packages: []
     debug: []
   system:
-    version: 1.12.0-1
+    version: 1.13.1-1
     packages:
-      - libnghttp3-1.12.0-1-x86_64.pkg.tar.zst
+      - libnghttp3-1.13.1-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
