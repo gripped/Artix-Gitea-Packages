@@ -1,0 +1,30 @@
+---
+version: 5.11.0-1
+pkgbase:
+  name: python-ujson
+  pkgdesc: Ultra fast JSON encoder and decoder for Python
+  pkgver: 5.11.0
+  pkgrel: 1
+  url: https://github.com/ultrajson/ultrajson
+  arch:
+    - x86_64
+  license:
+    - BSD
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-setuptools-scm
+    - python-wheel
+    - python-build
+    - python-installer
+  depends:
+    - python
+  source:
+    - https://github.com/ultrajson/ultrajson/archive/5.11.0/python-ujson-5.11.0.tar.gz
+  sha512sums:
+    - 908e72720ba3692a7bbc852c21bfd8b6013eb9047f3412beca3ac13656350eb995bd6355f9be288f30d1b878bf4378362b4a0d0500f655d7d4e9698966666b35
+  b2sums:
+    - 66ad0cfc08288ea9bcfc5cae9903139af4be9d8d5b7fc37ec1965e653b9e820055a79456e34b1c2fed36690cee3a952819a1afb0170a3559eba4303044fc1a04
+pkgname:
+  - name: python-ujson
+# generated with artixpkg 0.37.4-1-any
