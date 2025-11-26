@@ -4,7 +4,7 @@
 
 pkgname=cosmic-osd
 pkgver=1.0.0.beta.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='COSMIC On-Screen Display'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-osd
@@ -18,7 +18,7 @@ depends=(
   libpulse
   libxkbcommon
   sound-theme-freedesktop
-  systemd-libs
+  libelogind
   wayland
 )
 makedepends=(

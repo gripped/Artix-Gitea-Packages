@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.beta.7-1
+version: 1.0.0.beta.7-1.1
 pkgbase:
   name: cosmic-osd
   pkgdesc: COSMIC On-Screen Display
   pkgver: 1.0.0.beta.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/pop-os/cosmic-osd
   arch:
     - x86_64
@@ -25,7 +25,7 @@ pkgbase:
     - libpulse
     - libxkbcommon
     - sound-theme-freedesktop
-    - systemd-libs
+    - libelogind
     - wayland
   source:
     - git+https://github.com/pop-os/cosmic-osd.git#tag=epoch-1.0.0-beta.7
