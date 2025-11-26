@@ -5,7 +5,7 @@
 
 pkgname=cosmic-settings
 pkgver=1.0.0.beta.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='The settings application for the COSMIC desktop environment'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-settings
@@ -27,7 +27,7 @@ depends=(
   networkmanager
   nm-connection-editor
   pipewire-pulse
-  systemd-libs
+  libelogind
   ttf-opensans
   wayland
 )

@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.beta.7-1
+version: 1.0.0.beta.7-1.1
 pkgbase:
   name: cosmic-settings
   pkgdesc: The settings application for the COSMIC desktop environment
   pkgver: 1.0.0.beta.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/pop-os/cosmic-settings
   arch:
     - x86_64
@@ -34,7 +34,7 @@ pkgbase:
     - networkmanager
     - nm-connection-editor
     - pipewire-pulse
-    - systemd-libs
+    - libelogind
     - ttf-opensans
     - wayland
   optdepends:
