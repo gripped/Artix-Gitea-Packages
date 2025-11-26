@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.beta.7-1
+version: 1.0.0.beta.7-1.1
 pkgbase:
   name: cosmic-applets
   pkgdesc: Applets for COSMIC Panel
   pkgver: 1.0.0.beta.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/pop-os/cosmic-applets
   arch:
     - x86_64
@@ -27,7 +27,7 @@ pkgbase:
     - libpipewire
     - libpulse
     - libxkbcommon
-    - systemd-libs
+    - libelogind
     - util-linux
   source:
     - git+https://github.com/pop-os/cosmic-applets.git#tag=epoch-1.0.0-beta.7

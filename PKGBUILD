@@ -5,7 +5,7 @@
 
 pkgname=cosmic-applets
 pkgver=1.0.0.beta.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Applets for COSMIC Panel'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-applets
@@ -20,7 +20,7 @@ depends=(
   libpipewire
   libpulse
   libxkbcommon
-  systemd-libs
+  libelogind
   util-linux
 )
 makedepends=(
