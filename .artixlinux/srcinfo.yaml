@@ -1,10 +1,10 @@
 ---
-version: 0.26.0-1
+version: 0.26.0-2
 pkgbase:
   name: bat
   pkgdesc: Cat clone with syntax highlighting and git integration
   pkgver: 0.26.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sharkdp/bat
   arch:
     - x86_64
@@ -23,7 +23,7 @@ pkgbase:
     - oniguruma
     - zlib
   source:
-    - git+https://github.com/sharkdp/bat#tag=v0.26.0
+    - git+https://github.com/sharkdp/bat.git#tag=v0.26.0
   b2sums:
     - 950a37efb986ddec37c815b94d4bac89d4140d6efcbf44f470ad9d7ea54eac4e68f7b48cfd3b65735dccd641e9a1ff2ce93759aac13c8b066880990c4ff348e8
 pkgname:

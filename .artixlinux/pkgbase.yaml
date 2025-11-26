@@ -1,5 +1,5 @@
 ---
-team: world
+team: galaxy
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -55,7 +55,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.26.0-1
+    version: 0.26.0-2
     packages:
-      - bat-0.26.0-1-x86_64.pkg.tar.zst
+      - bat-0.26.0-2-x86_64.pkg.tar.zst
     debug: []
