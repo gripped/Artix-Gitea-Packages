@@ -4,7 +4,7 @@
 
 pkgname=cosmic-session
 pkgver=1.0.0.beta.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Session manager for the COSMIC desktop environment'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-session
@@ -72,7 +72,7 @@ prepare() {
 build() {
   cd cosmic-session
   RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
-  cargo build --release --frozen
+  cargo build --release --frozen --features autostart
 }
 
 package() {
