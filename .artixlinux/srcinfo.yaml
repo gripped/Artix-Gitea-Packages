@@ -1,9 +1,9 @@
 ---
-version: 11.62-1
+version: 11.88-1
 pkgbase:
   name: mac
   pkgdesc: APE codec and decompressor
-  pkgver: 11.62
+  pkgver: 11.88
   pkgrel: 1
   url: https://www.monkeysaudio.com/index.html
   arch:
@@ -17,14 +17,14 @@ pkgbase:
     - glibc
     - gcc-libs
   source:
-    - mac-11.62.zip::https://monkeysaudio.com/files/MAC_1162_SDK.zip
-    - mac-11.62-license.html::https://www.monkeysaudio.com/license.html
+    - mac-11.88.zip::https://monkeysaudio.com/files/MAC_1188_SDK.zip
+    - mac-11.88-license.html::https://www.monkeysaudio.com/license.html
   sha512sums:
-    - 81045cb2a0321f4328bf26a79e855ddc3e268635885a022413f9870e5a70abedf215d793be4eb1617979d431fea9912280bd4118d994028d38f793087d1ef281
-    - 986318c72718b8c82bc6c53ad873211a27e034ba93cfebd38a991d532301990c3ed6862c65ddb37525323f830690ad70e39a14d2f82e78e38c41b7730cbf132c
+    - 3d7c9d08d6d0e820888c00ceba6cface2f7cd13aa90b84a15896ed879481667b94ae7bc75a915757b6b3b9ad884813cfe70d023a2f660c95265a574ed166474c
+    - 058cc796121e8d14b3862a63fa7c9afec728b57817a585cf194365f4a21e2f300b39666036a6ddf9fb6a245867e74d06fb3a6fd5d460abe9a10700ea4a493ce7
   b2sums:
-    - 2537cbfaacc4c28d10d9d6c46edb30af05daa20ed891c6d24d200d8ae450b979f9d3c6e85bf9ed60f3414efbc0ba6378a7e9f9abcb6956feeb63d99416d1a316
-    - 52aa32ab396fbf0896c2b39fa4ecb25e6893923dbbf7498df45e16eaff1fee04cb2d05ae6cbe65867f58f92b2ed978a068aba17a7e707f3a023a377a2916828e
+    - e6ad54c52b08f48d670743e4fc88861c6c2ed95792a2935cf037a64fa4a8c607bd4d9216007ddc3e05e5f402b445eeb7067aa487a090812250a2694bafd2d86f
+    - 1cc1d61e4f64ce30a0de198133251b3da8b77087020c1a7cfd4716a5a7ffdc738e05a0665ea215126950be30f0d8ecac2d54770a16f4492d70731191fc79f702
 pkgname:
   - name: mac
 # generated with artixpkg 0.37.4-1-any
