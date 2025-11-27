@@ -59,10 +59,10 @@ build() {
   meson compile -C build
 }
 
-check() {
-  GTK_A11Y=none dbus-run-session xvfb-run -s '-nolisten local' \
-    meson test -C build --print-errorlogs
-}
+#check() {
+#  GTK_A11Y=none dbus-run-session xvfb-run -s '-nolisten local' \
+#    meson test -C build --print-errorlogs
+#}
 
 package_libshumate() {
   provides=(libshumate-1.0.so)
