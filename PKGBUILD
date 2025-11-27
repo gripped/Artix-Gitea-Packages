@@ -3,7 +3,7 @@
 
 pkgname=pacman-contrib
 pkgver=1.13.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Contributed scripts and tools for pacman systems'
 arch=(x86_64)
 url=https://gitlab.archlinux.org/pacman/pacman-contrib

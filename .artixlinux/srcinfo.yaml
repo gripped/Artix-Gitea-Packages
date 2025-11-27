@@ -1,10 +1,10 @@
 ---
-version: 1.13.0-1
+version: 1.13.0-2
 pkgbase:
   name: pacman-contrib
   pkgdesc: Contributed scripts and tools for pacman systems
   pkgver: 1.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.archlinux.org/pacman/pacman-contrib
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - e7ec0e49e94c9d1ad2ddfd748966431759b57181e96bea93e60ae6451556fc7d258ed1d1b10f40f123adf442839f2b5b4306e3cf23a7383ae7fcae8930a01157
 pkgname:
   - name: pacman-contrib
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
