@@ -1,17 +1,18 @@
 ---
 team: system
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 18-1
+    packages:
+      - libmakepkg-dropins-18-1-any.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
