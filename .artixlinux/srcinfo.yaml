@@ -1,10 +1,10 @@
 ---
-version: 0.18.1-1
+version: 0.18.1-2
 pkgbase:
   name: octopi
   pkgdesc: This is Octopi, a powerful Pacman frontend using Qt libs
   pkgver: 0.18.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://tintaescura.com/projects/octopi/
   arch:
     - x86_64
