@@ -1,0 +1,2 @@
+# b43legacy-firmware
+
