@@ -33,7 +33,6 @@ Server = https://ftp.uni-bayreuth.de/linux/artix-linux/$repo/os/$arch
 Server = https://ftp.halifax.rwth-aachen.de/artixlinux/$repo/os/$arch
 Server = https://artix.unixpeople.org/repos/$repo/os/$arch
 Server = https://artix.unixpeople.org/repos/$repo/os/$arch
-https://artix.unixpeople.org/repos/
 Server = https://mirror2.artixlinux.org/$repo/os/$arch
 Server = https://mirror3.artixlinux.org/repos/$repo/os/$arch
 Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch

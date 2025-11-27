@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 20251121-1
+    version: 20251127-1
     packages:
-      - artix-mirrorlist-20251121-1-any.pkg.tar.zst
+      - artix-mirrorlist-20251127-1-any.pkg.tar.zst
     debug: []
   system:
     version: 20251030-1
