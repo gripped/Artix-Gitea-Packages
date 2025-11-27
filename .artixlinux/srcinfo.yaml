@@ -1,10 +1,10 @@
 ---
-version: 0.git32.ec53225-1
+version: 0.git32.ec53225-2
 pkgbase:
   name: libtg_owt
   pkgdesc: WebRTC library
   pkgver: 0.git32.ec53225
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/desktop-app/tg_owt
   arch:
     - x86_64
