@@ -1,0 +1,28 @@
+---
+version: 5.100.138-1
+pkgbase:
+  name: b43-firmware-classic
+  pkgdesc: Firmware for Broadcom B43 wireless networking chips - trusted release
+  pkgver: 5.100.138
+  pkgrel: 1
+  url: https://wireless.wiki.kernel.org/en/users/Drivers/b43
+  install: b43-firmware-classic.install
+  arch:
+    - any
+  license:
+    - unknown
+  makedepends:
+    - b43-fwcutter>=015
+  depends:
+    - linux>=3.2
+  conflicts:
+    - b43-firmware
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/minios-linux/b43-firmware/releases/download/b43-firmware/broadcom-wl-5.100.138.tar.bz2
+  sha256sums:
+    - f1e7067aac5b62b67b8b6e4c517990277804339ac16065eb13c731ff909ae46f
+pkgname:
+  - name: b43-firmware-classic
+# generated with artixpkg 0.37.4-1-any
