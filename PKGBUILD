@@ -2,11 +2,11 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=pacman
-pkgver=7.0.0.r6.gc685ae6
-pkgrel=6
+pkgver=7.1.0.r1.g2df7c40
+pkgrel=1
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
-_git_tag=7.0.0
-_git_patch_level_commit=c685ae6412af04cae1eaa5d6bda8c277c7ffb8c8
+_git_tag=7.1.0
+_git_patch_level_commit=2df7c407e852543e5c9e135f4bda5ce2d3a21b70
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
@@ -24,6 +24,7 @@ depends=(
   libarchive libarchive.so
   openssl libcrypto.so
   artix-mirrorlist
+  libmakepkg-dropins
 )
 makedepends=(
   asciidoc
@@ -42,22 +43,28 @@ optdepends=(
 provides=('libalpm.so')
 backup=(etc/pacman.conf
         etc/makepkg.conf
+        etc/makepkg.conf.d/fortran.conf
         etc/makepkg.conf.d/rust.conf)
 validpgpkeys=('6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD'  # Allan McRae <allan@archlinux.org>
               'B8151B117037781095514CA7BBDFFC92306B1121') # Andrew Gregory (pacman) <andrew@archlinux.org>
 source=("git+https://gitlab.archlinux.org/pacman/pacman.git#tag=v${_git_tag}?signed"
-        revertme-makepkg-remove-libdepends-and-libprovides.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/354a300cd26bb1c7e6551473596be5ecced921de.patch
+        "revertme-makepkg-remove-libdepends-and-libprovides.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/354a300cd26bb1c7e6551473596be5ecced921de.patch"
+        "patch-reproducible-builds.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/f4bdb77470528019aaba4d8b8f947e918c6db17d.patch"
         pacman.conf
         makepkg.conf
         alpm.sysusers
+        fortran.conf
         rust.conf
         extracolors.patch
-        repo-remove-r.patch)
-sha256sums=('06d082c3ce6f0811ca728515aa82d69d372800bd3ada99f5c445ef9429b6e3a6'
+        repo-remove-r.patch
+)
+sha256sums=('74cfd4b6d2b10c742f5a4a7cdaeffb01405ab897b11b80681a9063245113a308'
             'b3bce9d662e189e8e49013b818f255d08494a57e13fc264625f852f087d3def2'
+            'de428b496a825772ef49ec5555a386a4b23ffa10b9dfd9907f0671d5c1dc2178'
             '03b3165fde80c3a5889ea5f9d3de190704825a262478f64a0b5d12a50deda9f3'
             '06ec1332f835a33de2b26ae4517ffc00fbabe3abf311bd0c0d86e8f7c99575dd'
             'c8760d7ebb6c9817d508c691c67084be251cd9c8811ee1ccf92c1278bad74c1c'
+            '933b0b878fa611bf24b92f655040a3bcb4a1b67841d929013802abbb09b2ccf4'
             '6fe03e6ea3f69d99d59a48847a8ae97c2160fca847c7aedf7b89d05e4aa9386d'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
             'f563c81338d462f3c3bbcc182b4eb4139abf078acb119c0bc730e4e777b9eb2e')
@@ -78,9 +85,6 @@ prepare() {
     fi
     git rebase "${_git_patch_level_commit}"
   fi
-
-  # Initialise callback event fields
-  git cherry-pick -n '0d37c1daa0990766d12d0060a353c829bf8616eb'
 
   # handle patches
   local -a patches
@@ -131,6 +135,7 @@ package() {
   install -m644 "$srcdir/pacman.conf" "$pkgdir/etc"
   install -m644 "$srcdir/makepkg.conf" "$pkgdir/etc"
   install -D -m644 "$srcdir/alpm.sysusers" "${pkgdir}"/usr/lib/sysusers.d/alpm.conf
+  install -m644 "$srcdir/fortran.conf" "$pkgdir/etc/makepkg.conf.d"
   install -m644 "$srcdir/rust.conf" "$pkgdir/etc/makepkg.conf.d"
 
 }
