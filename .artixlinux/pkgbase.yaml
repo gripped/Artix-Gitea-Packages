@@ -1,10 +1,10 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 6.3.4-1
     packages:
       - telegram-desktop-6.3.4-1-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 6.3.3-1
-    packages:
-      - telegram-desktop-6.3.3-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
