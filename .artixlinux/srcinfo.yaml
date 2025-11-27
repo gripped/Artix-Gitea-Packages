@@ -1,10 +1,10 @@
 ---
-version: 6.3.4-2
+version: 6.3.4-2.1
 pkgbase:
   name: telegram-desktop
   pkgdesc: Official Telegram Desktop client
   pkgver: 6.3.4
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://desktop.telegram.org/
   arch:
     - x86_64
