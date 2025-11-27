@@ -1,0 +1,28 @@
+---
+version: 6.30.163.46-1
+pkgbase:
+  name: b43-firmware
+  pkgdesc: Firmware for Broadcom B43 wireless networking chips - latest release
+  pkgver: 6.30.163.46
+  pkgrel: 1
+  url: https://wireless.wiki.kernel.org/en/users/Drivers/b43
+  install: b43-firmware.install
+  arch:
+    - any
+  license:
+    - unknown
+  makedepends:
+    - b43-fwcutter>=018
+  depends:
+    - linux>=3.2
+  conflicts:
+    - b43-firmware-classic
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/minios-linux/b43-firmware/releases/download/b43-firmware/broadcom-wl-6.30.163.46.tar.bz2
+  sha256sums:
+    - a07c3b6b277833c7dbe61daa511f908cd66c5e2763eb7a0859abc36cd9335c2d
+pkgname:
+  - name: b43-firmware
+# generated with artixpkg 0.37.4-1-any
