@@ -1,0 +1,2 @@
+# libmakepkg-dropins
+
