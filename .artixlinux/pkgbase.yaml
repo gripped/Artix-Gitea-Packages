@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.5.1-1
+    packages:
+      - libshumate-1.5.1-1-x86_64.pkg.tar.zst
+      - libshumate-docs-1.5.1-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
