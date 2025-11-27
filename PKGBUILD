@@ -1,6 +1,6 @@
 pkgname=libmakepkg-dropins
 pkgver=18
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Features that can be dropped into libmakepkg to extend the functionality of makepkg"
 url="https://gitlab.archlinux.org/pacman/libmakepkg-dropins"
 arch=(any)
@@ -34,9 +34,6 @@ package() {
     cp -ra "${dir}" --target-directory="$pkgdir/usr/share/makepkg"
   done
   install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
-
-  # wtf? How did this escape the arch devs?
-  rm -v "$pkgdir"/usr/share/makepkg/reproducible/python.sh
 }
 
 # vim: set ts=2 sw=2 et:

@@ -10,9 +10,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 18-1.1
+    version: 18-1.2
     packages:
-      - libmakepkg-dropins-18-1.1-any.pkg.tar.zst
+      - libmakepkg-dropins-18-1.2-any.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
