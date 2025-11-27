@@ -96,7 +96,7 @@ makedepends=(extra-cmake-modules
              xf86-input-libinput
              xorg-server-devel)
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-6.5.3.tar.xz{,.sig})
 sha256sums=('bb764a2c97747f9e3027429427046754fb3ac7dff6ac82171511c716faa4d0b7'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
