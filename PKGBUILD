@@ -2,7 +2,7 @@
 
 pkgname=liboctopi
 pkgver=1.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Alpm utils for Octopi (alpm_octopi_utils fork)"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/liboctopi"

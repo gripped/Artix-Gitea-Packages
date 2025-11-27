@@ -1,0 +1,37 @@
+---
+version: 1.0.1-2
+pkgbase:
+  name: liboctopi
+  pkgdesc: Alpm utils for Octopi (alpm_octopi_utils fork)
+  pkgver: 1.0.1
+  pkgrel: 2
+  url: https://gitea.artixlinux.org/artix/liboctopi
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cmake
+    - git
+    - vala
+  depends:
+    - glibc
+    - glib2
+    - pacman
+  provides:
+    - liboctopi.so
+    - alpm_octopi_utils
+    - alpm-octopi-utils
+  conflicts:
+    - alpm_octopi_utils
+    - alpm-octopi-utils
+  replaces:
+    - alpm_octopi_utils
+    - alpm-octopi-utils
+  source:
+    - git+https://gitea.artixlinux.org/artix/liboctopi.git#tag=1.0.1
+  sha256sums:
+    - 6976f79a0796398b46cff03b34d46018c99a2add42ffa02c6d7ecc8d5bf51697
+pkgname:
+  - name: liboctopi
+# generated with artixpkg 0.37.4-1-any
