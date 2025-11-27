@@ -7,7 +7,7 @@ pkgname=(
   vkd3d-docs
 )
 pkgver=1.18
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Direct3D 12 to Vulkan translation library By WineHQ"
 url="https://wiki.winehq.org/Vkd3d"
 arch=(x86_64)
