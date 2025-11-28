@@ -19,3 +19,4 @@ package() {
 }
 
 sha256sums=('7dba610b1d96dd14e901bcbce14cd6ecd1b1ac6f5c0035b0d6b6dc46a7c3ef90')
+
