@@ -1,10 +1,10 @@
 ---
-version: 4.10.2-3
+version: 4.10.2-4
 pkgbase:
   name: syslog-ng
   pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities
   pkgver: 4.10.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/syslog-ng/syslog-ng
   arch:
     - x86_64
