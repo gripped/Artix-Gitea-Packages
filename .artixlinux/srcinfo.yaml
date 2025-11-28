@@ -1,0 +1,35 @@
+---
+version: 2.2.2-1
+pkgbase:
+  name: python-gmpy2
+  pkgdesc: Provides C-coded Python modules for fast multiple-precision arithmetic
+  pkgver: 2.2.2
+  pkgrel: 1
+  url: https://github.com/aleaxit/gmpy
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  checkdepends:
+    - python-hypothesis
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - gmp
+    - libmpc
+    - mpfr
+    - python
+    - python-packaging
+  source:
+    - git+https://github.com/aleaxit/gmpy#tag=v2.2.2
+  sha256sums:
+    - 75869c26cad60e9f53d0e1605e4f1108552d065e778f837e028257f73344cbca
+pkgname:
+  - name: python-gmpy2
+# generated with artixpkg 0.37.4-1-any
