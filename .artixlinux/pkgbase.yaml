@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-gremlins
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,6 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
     version: 3.0.21-32
     packages:
       - vlc-3.0.21-32-x86_64.pkg.tar.zst
@@ -106,10 +110,6 @@ repos:
       - vlc-plugins-extra-3.0.21-32-x86_64.pkg.tar.zst
       - vlc-plugins-video-output-3.0.21-32-x86_64.pkg.tar.zst
       - vlc-plugins-visualization-3.0.21-32-x86_64.pkg.tar.zst
-    debug: []
-  world-gremlins:
-    version: null
-    packages: []
     debug: []
   world:
     version: 3.0.21-31
