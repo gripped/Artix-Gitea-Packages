@@ -1,9 +1,9 @@
 ---
-version: 1:29.0.4-1
+version: 1:29.1.1-1
 pkgbase:
   name: docker
   pkgdesc: Pack, ship and run any application as a lightweight container
-  pkgver: 29.0.4
+  pkgver: 29.1.1
   pkgrel: 1
   epoch: 1
   url: https://www.docker.com/
@@ -38,13 +38,13 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/docker/cli.git#tag=v29.0.4
-    - git+https://github.com/moby/moby.git#tag=docker-v29.0.4
+    - git+https://github.com/docker/cli.git#tag=v29.1.1
+    - git+https://github.com/moby/moby.git#tag=docker-v29.1.1
     - git+https://github.com/krallin/tini.git#commit=de40ad007797e0dcd8b7126f27bb87401d224240
     - docker.sysusers
   sha256sums:
-    - 59808078877ca3d06ed495e9bd2378f6953be9a474fbabdb2ecbbd30fd19e784
-    - 2d7a29d4992db1427fcf4e5efd4d5a8ba31f01f478cc96db28b19611e88db624
+    - fe71544bc9695bd6f89495c1669f64b9fb66410c83c761c2139691a9336f4b45
+    - 1437732d41b4e3eac370340125b68539177d280ca5e33c16ec4b66520bd2bb5c
     - 28a6641d508f60d47315efb3c85d97360188750a45bd6d3c8737d3f1a2b44121
     - 541826011a9836d05a2f42293d5f1beadf2ca8d89fb604487d61a013505678eb
 pkgname:
