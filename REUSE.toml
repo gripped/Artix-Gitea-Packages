@@ -1,0 +1,19 @@
+version = 1
+
+[[annotations]]
+path = [
+    "PKGBUILD",
+    "README.md",
+    "keys/**",
+    ".SRCINFO",
+    ".nvchecker.toml",
+]
+SPDX-FileCopyrightText = "Arch Linux contributors"
+SPDX-License-Identifier = "0BSD"
+
+[[annotations]]
+path = [
+    "cheetah.1",
+]
+SPDX-FileCopyrightText = "python-cheetah3 contributors"
+SPDX-License-Identifier = "CC-PDDC"
