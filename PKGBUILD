@@ -2,7 +2,7 @@
 
 pkgname=artix-checkupdates
 pkgver=0.10.8
-pkgrel=2
+pkgrel=3
 pkgdesc="Tool to check on updates between Artix and Arch"
 arch=(x86_64)
 url="https://gitea.artixlinux.org/artix/artix-checkupdates"
