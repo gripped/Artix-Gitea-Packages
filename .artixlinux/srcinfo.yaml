@@ -1,0 +1,33 @@
+---
+version: 2.4.15-1
+pkgbase:
+  name: lib32-libcups
+  pkgdesc: The CUPS Printing System - client libraries (32-bit)
+  pkgver: 2.4.15
+  pkgrel: 1
+  url: https://www.cups.org/
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 WITH LLVM-exception AND BSD-3-Clause AND Zlib AND BSD-2-Clause
+  depends:
+    - lib32-krb5
+    - lib32-libtiff
+    - lib32-libpng
+    - lib32-gnutls
+    - libcups
+  source:
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.15/cups-2.4.15-source.tar.gz
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.15/cups-2.4.15-source.tar.gz.sig
+    - cups-freebind.patch
+    - guid.patch
+  validpgpkeys:
+    - 7082A0A50A2E92640F3880E0E4522DCC9B246FF7
+  sha256sums:
+    - eff0bbd48ff1abcbb8e46e28e85aefaffa391a1d9c4d8dc92ab3822a13008d7f
+    - SKIP
+    - 3385047b9ac8a7b13aeb8f0ca55d15f793ce7283516db0155fe28a67923c592d
+    - 0bf6a75ba1b051771f155d9a5d36b307a6d40c6857d645b250fe93f3fb713474
+pkgname:
+  - name: lib32-libcups
+# generated with artixpkg 0.37.4-1-any
