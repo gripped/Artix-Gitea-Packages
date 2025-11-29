@@ -1,10 +1,11 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Chocobo1 <chocobo1 AT archlinux DOT net>
 # Contributor: Jacek Szafarkiewicz <szafar at linux dot pl>
 
 pkgbase=zlib-ng
 pkgname=(zlib-ng zlib-ng-compat)
-pkgver=2.2.5
+pkgver=2.3.1
 pkgrel=1
 pkgdesc='zlib replacement with optimizations for next generation systems'
 url='https://github.com/zlib-ng/zlib-ng'
@@ -14,16 +15,17 @@ depends=(
   glibc
 )
 makedepends=(
+  git
   cmake
   ninja
 )
-source=("${url}/archive/refs/tags/$pkgver/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('5b3b022489f3ced82384f06db1e13ba148cbce38c7941e424d6cb414416acd18')
-b2sums=('7d2907595b6e57f2739f4acea11cb317a35c4f63208d3f44b65cca0ea1ffbef89311bc839327e037b3aea78de1407d3ff025567f6768013277d0fd61e0a40210')
+source=("git+https://github.com/zlib-ng/zlib-ng#tag=${pkgver}")
+sha256sums=('00a9045fbfe68d032f37c834ee3afbe7be09984567bbf80bdff188ddf0f4c714')
+b2sums=('6da200f1773c68b35302e6123d6542922bb55b43f5f5d1e6a9cb35aae5415b0ebc1d8b98143ff90017bc7b5247ef6570f060dbb2d7f37796178c1b1738369078')
 
 
 build() {
-  cd "${pkgbase}-${pkgver}"
+  cd "${pkgbase}"
 
   local _options=(
     -G Ninja
@@ -48,7 +50,8 @@ build() {
 }
 
 check() {
-  cd "${pkgbase}-${pkgver}"
+  cd "${pkgbase}"
+
   echo "Checking zlib-ng"
   ctest --output-on-failure --test-dir build
   echo "Checking zlib-ng-compat"
@@ -58,7 +61,8 @@ check() {
 package_zlib-ng() {
   provides=(libz-ng.so)
 
-  cd "${pkgbase}-${pkgver}"
+  cd "${pkgbase}"
+
   DESTDIR="${pkgdir}" cmake --install build
   install -Dm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
   install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
@@ -69,7 +73,8 @@ package_zlib-ng-compat() {
   provides=(zlib libz.so)
   conflicts=(zlib)
 
-  cd "${pkgbase}-${pkgver}"
+  cd "${pkgbase}"
+
   DESTDIR="${pkgdir}" cmake --install build-compat
   install -Dm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
   install -Dm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
