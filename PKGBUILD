@@ -1,0 +1,39 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: 0b100100 <0b100100 at protonmail dot ch>
+
+pkgname=orage
+pkgver=4.20.2
+pkgrel=1
+pkgdesc="A simple calendar application with reminders for Xfce"
+arch=('x86_64')
+url="https://docs.xfce.org/apps/orage/start"
+license=('GPL-2.0-or-later')
+depends=('glib2' 'libxfce4ui' 'libnotify' 'libical')
+makedepends=('git' 'xfce4-dev-tools')
+source=("git+https://gitlab.xfce.org/apps/orage.git#tag=$pkgname-$pkgver")
+sha256sums=('fd6aff3eaae88a0cda0363ffc6bfd2d7f3d2f1f285a81b521ae9d950a2afa0f8')
+
+prepare() {
+  cd $pkgname
+  NOCONFIGURE=1 ./autogen.sh
+}
+
+build() {
+  cd $pkgname
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --libexecdir=/usr/lib/xfce4 \
+    --localstatedir=/var \
+    --disable-static \
+    --disable-debug
+  make
+}
+
+package() {
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
+}
+
+# vim:set ts=2 sw=2 et:
