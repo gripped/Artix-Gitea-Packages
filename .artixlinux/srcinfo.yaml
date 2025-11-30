@@ -1,10 +1,10 @@
 ---
-version: 4.8.6-1
+version: 4.8.6-2
 pkgbase:
   name: rssguard
   pkgdesc: Simple (yet powerful) Qt feed reader
   pkgver: 4.8.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/martinrotter/rssguard
   arch:
     - x86_64
@@ -30,8 +30,10 @@ pkgbase:
     - 'mariadb-libs: Support for MariaDB-based data storage'
   source:
     - git+https://github.com/martinrotter/rssguard#tag=4.8.6
+    - fix-adblock.patch
   sha256sums:
     - 5ade476e36a2e00191ec54d913dd6ab865406f0e62eba994b4fb1e4fcb37b783
+    - ba1a676527d45a1deaa062f06f2819a94b4bca6a07c88e20eef47e093bf3d1b8
 pkgname:
   - name: rssguard
     depends:
