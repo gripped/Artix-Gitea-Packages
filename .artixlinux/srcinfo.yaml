@@ -1,10 +1,10 @@
 ---
-version: 2.0.31-1
+version: 2.0.31-2
 pkgbase:
   name: uwsgi
   pkgdesc: A full stack for building hosting services
   pkgver: 2.0.31
-  pkgrel: 1
+  pkgrel: 2
   url: https://uwsgi-docs.readthedocs.io/en/latest/
   arch:
     - x86_64
