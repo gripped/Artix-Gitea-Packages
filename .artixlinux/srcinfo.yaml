@@ -1,10 +1,10 @@
 ---
-version: 2.2.8-1
+version: 2.2.8-1.1
 pkgbase:
   name: libkeyfinder
   pkgdesc: Musical key detection for digital audio
   pkgver: 2.2.8
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://mixxxdj.github.io/libkeyfinder/
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 9341a6d93742516ba213503414c359123b2313134a603ed621a6c7e99e77dbd6f38ad986758d9736c7083fec505c6a1495541a38d825c0d0015e86fa9baa3b3c
 pkgname:
   - name: libkeyfinder
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any

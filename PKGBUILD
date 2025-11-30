@@ -4,7 +4,7 @@
 
 pkgname=libkeyfinder
 pkgver=2.2.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Musical key detection for digital audio"
 arch=(x86_64)
 url="https://mixxxdj.github.io/libkeyfinder/"
