@@ -1,9 +1,9 @@
 ---
-version: 0.4.5.2-1.2
+version: 0.4.5.3-1
 pkgbase:
   name: xcursor-vanilla-dmz
-  pkgver: 0.4.5.2
-  pkgrel: 1.2
+  pkgver: 0.4.5.3
+  pkgrel: 1
   url: http://jimmac.musichall.cz/
   arch:
     - any
@@ -12,12 +12,12 @@ pkgbase:
   makedepends:
     - xorg-xcursorgen
   source:
-    - https://ftp.debian.org/debian/pool/main/d/dmz-cursor-theme/dmz-cursor-theme_0.4.5.2.tar.xz
+    - https://ftp.debian.org/debian/pool/main/d/dmz-cursor-theme/dmz-cursor-theme_0.4.5.3.tar.xz
   sha256sums:
-    - 75ecbc5ddb1f8295472ca9f8e048f8d799a3102debc87020009bb11240110e4e
+    - bdf2f68e0da6697dd092e0c0c92129e5cedeffc49fc97804cbf0f29f3dbaa560
 pkgname:
   - name: xcursor-vanilla-dmz
     pkgdesc: Vanilla DMZ cursor theme
   - name: xcursor-vanilla-dmz-aa
     pkgdesc: Vanilla DMZ AA cursor theme
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
