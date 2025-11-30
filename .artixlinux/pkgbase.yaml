@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.19.3-1
+    version: 1.19.4-1
     packages:
-      - lagrange-1.19.3-1-x86_64.pkg.tar.zst
+      - lagrange-1.19.4-1-x86_64.pkg.tar.zst
     debug: []
