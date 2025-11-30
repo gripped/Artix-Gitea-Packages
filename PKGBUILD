@@ -46,4 +46,4 @@ package() {
     make DESTDIR="$pkgdir" install
 }
 
-sha256sums=('65025f37804634330cfc5442145169f2cc27bd52f26bc58d6b33683aa12a2d6b')
+sha256sums=('a51e7519f0dfa2cfc2918d6b498a6aca6a966702ae0f8d2c94f02f4287b2ffd7')
