@@ -1,8 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=grilo-plugins
-pkgver=0.3.16+r46+gea3afa8c
-pkgrel=2
+pkgver=0.3.18
+pkgrel=1
 epoch=1
 pkgdesc="A collection of plugins for the Grilo framework"
 url="https://gitlab.gnome.org/GNOME/grilo-plugins"
@@ -24,6 +24,7 @@ depends=(
   libgoa
   libmediaart
   liboauth
+  librest
   libxml2
   lua
   sqlite
@@ -48,20 +49,14 @@ optdepends=(
   'tracker3-miners: Tracker plugin'
 )
 groups=(gnome)
-_commit=ea3afa8c45c654d16413910c58f5c872b41a44c9  # master
 source=(
-  "git+https://gitlab.gnome.org/GNOME/grilo-plugins.git#commit=$_commit"
+  "git+https://gitlab.gnome.org/GNOME/grilo-plugins.git#tag=grilo-plugins-$pkgver"
   0001-HACK-Disable-Tracker-tests.patch
   0002-lua-xml-Fix-lua-tests.patch
 )
-b2sums=('540b65a21e9c9a178f994639e926bafe04751c38a3a1ad33fb75eb5868301b46f6d045cc42642e5f4fece39c4652f5ae24ade9490015a683532276f09280eb81'
+b2sums=('0f1f453078c1122c5cf100ac0cd3e057b910de06fd4eccfd9698cd437879680076ac6a8a8d9b39730dea2cf6357d83350a2dd619ba1b055e8137f9190687a8df'
         '2548c6f1077275d44b04637fcbb041157e6302ad0ab28a7d396176b73cdfffad318bdb9c7e924994586452c26776fc33ccf84fdc05f1ddfdd3c58f2408cf947f'
         'f07b2d4438a9c750d45d6539cf7854f5d3681855e1cad36b15e2d802cd4ad10302598a0f3d2a8d19f1d405bbff9582987fcab75eab8f2da848b5f1103c42ec5d')
-
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/^grilo-plugins-//;s/[^-]*-g/r&/;s/-/+/g'
-}
 
 prepare() {
   cd $pkgname
@@ -89,6 +84,7 @@ check() {
 
 package() {
   depends+=(libgr{ilo,lnet,lpls}-0.3.so)
+
   meson install -C build --destdir "$pkgdir"
 }
 
