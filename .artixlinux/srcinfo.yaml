@@ -1,0 +1,31 @@
+---
+version: 20251130-1
+pkgbase:
+  name: dnsmasq-s6
+  pkgdesc: s6-rc service scripts for dnsmasq
+  pkgver: 20251130
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-services
+  arch:
+    - any
+  groups:
+    - s6-world
+  makedepends:
+    - git
+  depends:
+    - dnsmasq
+    - dbus-s6
+    - s6-rc
+  provides:
+    - init-dnsmasq
+  conflicts:
+    - init-dnsmasq
+  backup:
+    - etc/s6/config/dnsmasq.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=c091756a78411060fdb377ba5e3f6177706f99d0
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: dnsmasq-s6
+# generated with artixpkg 0.37.4-1-any
