@@ -1,0 +1,55 @@
+---
+version: 2025.3.2.474-1
+pkgbase:
+  name: nsight-systems
+  pkgdesc: System-wide statistical sampling profiler with tracing features
+  pkgver: 2025.3.2.474
+  pkgrel: 1
+  url: https://developer.nvidia.com/nsight-systems
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-NVIDIA-SLA
+  depends:
+    - dbus
+    - expat
+    - fontconfig
+    - glib2
+    - glibc
+    - libdrm
+    - libglvnd
+    - libx11
+    - libxcb
+    - libxcomposite
+    - libxdamage
+    - libxext
+    - libxfixes
+    - libxi
+    - libxkbcommon
+    - libxkbcommon-x11
+    - libxkbfile
+    - libxrandr
+    - libxrender
+    - libxshmfence
+    - libxtst
+    - nspr
+    - nss
+    - wayland
+    - xcb-util-cursor
+    - xcb-util-image
+    - xcb-util-keysyms
+    - xcb-util-renderutil
+  optdepends:
+    - 'cuda: for GPU profiling on the local system'
+  options:
+    - '!debug'
+    - '!strip'
+  source:
+    - https://developer.download.nvidia.com/compute/cuda/redist/nsight_systems/linux-x86_64/nsight_systems-linux-x86_64-2025.3.2.474-archive.tar.xz
+    - nsight-systems.desktop
+  b2sums:
+    - 2e43f866a6ea76b1956e89449e4ec6f99c8e0ea63211c64980f5cc627b1339e9791bd5500ab70061990190f716ed315f7f9018d2199fa9632ba845a1d59f3c36
+    - d77257e4507ec44c729a314d6c264e1aa7359b5e1bb9576133731705ed5202c1ab588195c239a3a636021965408b284204e7d1d6082b7e3e89199cdc2c56fa4a
+pkgname:
+  - name: nsight-systems
+# generated with artixpkg 0.37.4-1-any
