@@ -2,7 +2,7 @@
 # Contributor: Orhun Parmaksız <orhun@archlinux.org>
 
 pkgname=cargo-about
-pkgver=0.8.2
+pkgver=0.8.3
 pkgrel=1
 pkgdesc="Cargo plugin to generate list of all licenses for a crate"
 arch=('x86_64')
@@ -10,7 +10,7 @@ url="https://github.com/EmbarkStudios/cargo-about"
 license=('Apache-2.0' 'MIT')
 depends=('cargo' 'gcc-libs')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('f12d67fb4ed585ee3406e73eebb9c5f11823fd9f00627e407e74636789201d93')
+sha256sums=('1108776e0423408f3d0b76862bd01bb92711a5f74f656f4bec8ecfaf1d67e7d5')
 options=('!lto')
 
 prepare() {
