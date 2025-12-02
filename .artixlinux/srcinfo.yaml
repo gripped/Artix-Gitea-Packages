@@ -1,10 +1,10 @@
 ---
-version: 3.0.6-6
+version: 3.0.6-7
 pkgbase:
   name: etherwall
   pkgdesc: Ethereum GUI Wallet (Qt5)
   pkgver: 3.0.6
-  pkgrel: 6
+  pkgrel: 7
   url: https://etherwall.com
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 82ecee1f1d7a6fe7014b928e3ab79ed507c3c5795ac3e832e0be1aca8fc5659212c5a4323d5dec4571b9e9255c5c46615bd9865dc03eba85d8be9b969b534d57
 pkgname:
   - name: etherwall
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any

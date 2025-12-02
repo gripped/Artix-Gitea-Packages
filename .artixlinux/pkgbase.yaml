@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.0.6-6
+    version: 3.0.6-7
     packages:
-      - etherwall-3.0.6-6-x86_64.pkg.tar.zst
+      - etherwall-3.0.6-7-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
