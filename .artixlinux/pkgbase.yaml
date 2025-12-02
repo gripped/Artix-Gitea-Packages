@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - arrow-22.0.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 22.0.0-3
+    packages:
+      - arrow-22.0.0-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 22.0.0-1
