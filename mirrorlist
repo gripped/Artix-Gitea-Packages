@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-11-30
+## Generated on 2025-12-02
 ##
 
 # Artix mirrors
@@ -66,6 +66,9 @@ Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
 Server = https://artix-linux.mirrors.prairievoice.ca/$repo/os/$arch
 
 ## South America
+# Brazil
+Server = https://slackjeff.com.br/artixlinux/$repo/os/$arch
+
 ## Asia
 # China
 Server = https://mirrors.tuna.tsinghua.edu.cn/artixlinux/$repo/os/$arch
@@ -79,7 +82,7 @@ Server = https://www.miraa.jp/artix-linux/$repo/os/$arch
 Server = https://mirror.funami.tech/artix/$repo/os/$arch
 # Singapore
 Server = https://mirror.freedif.org/Artix/$repo/os/$arch
-# Taiwan	# Up, not syncing
+# Taiwan
 Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
 # Vietnam
 Server = https://mirrors.nguyenhoang.cloud/artix-linux/$repo/os/$arch
@@ -88,3 +91,4 @@ Server = https://mirror.meowsmp.net/artixlinux/$repo/os/$arch
 ## Oceania
 # Australia
 Server = https://mirror.aarnet.edu.au/pub/artix/$repo/os/$arch
+5;36M
