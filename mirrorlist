@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-12-02
+## Generated on 2025-12-03
 ##
 
 # Artix mirrors
@@ -42,6 +42,8 @@ Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
 Server = https://qontinuum.space/mirror/artixlinux/$repo/os/$arch
 # Poland
 Server = https://artix.sakamoto.pl/$repo/os/$arch
+# Russia
+Server = https://mirrors.yuruyuri.fun/artix-linux/repos/$repo/os/$arch
 # Sweden
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
 # Switzerland
