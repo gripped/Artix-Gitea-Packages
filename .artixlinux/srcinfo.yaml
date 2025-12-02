@@ -1,8 +1,8 @@
 ---
-version: 7.1.0-1
+version: 7.1.1-1
 pkgbase:
   name: hip-runtime
-  pkgver: 7.1.0
+  pkgver: 7.1.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/HIP/en/latest/
   arch:
@@ -30,11 +30,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rocm-7.1.0.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/rocm-7.1.0.tar.gz
-    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-7.1.0
+    - rocm-7.1.1.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/rocm-7.1.1.tar.gz
+    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-7.1.1
   sha256sums:
-    - a700912d102b35c9336b7352d09d56b9d19e4957daf53779983c3d00ce744c9d
-    - a39ba16e480b6282834fc5d11e5320ad4a1bd6b2ae38ce4e7f0834a6897b78dd
+    - 3abbc89eb9c23d4ca51a4fc15db08acf0dfca48255f72bcb2cde94e99b4dc22a
+    - fed80645f307dff71c2bf54ae19133b87a2d90ad812ae86a9bc0203ffc7b09d5
 pkgname:
   - name: hip-runtime-amd
     pkgdesc: Heterogeneous Interface for Portability (AMD runtime)
@@ -55,7 +55,7 @@ pkgname:
       - 'inetutils: Print hostname in hipconfig'
       - 'cuda: Cross compile for nvidia'
     provides:
-      - hip=7.1.0
+      - hip=7.1.1
     replaces:
       - hip
   - name: hip-runtime-nvidia

@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 7.1.1-1
+    packages:
+      - hip-runtime-amd-7.1.1-1-x86_64.pkg.tar.zst
+      - hip-runtime-nvidia-7.1.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.1.0-1
