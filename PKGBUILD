@@ -4,7 +4,7 @@
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.25.1
+pkgver=1.25.2
 pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
 url="https://gitea.io"
@@ -25,7 +25,7 @@ backup=("etc/${pkgname}/app.ini")
 source=("git+https://github.com/go-gitea/gitea.git#tag=v${pkgver}?signed"
         "${pkgname}.tmpfiles"
         "${pkgname}.sysusers")
-sha256sums=('ca6871926d3dba088fb04dfbc323794354a7d8ca9be0363ec424b8b99fc82c51'
+sha256sums=('97d9e90f04a1ed66e31e783550a9ee05d9d566c4c690c79b2ca33a590acafb7e'
             '1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba'
             'e29dcc74b2f52e32d3931103d03f202d1cafe18e7eb9a271da0f50ef61dc8446')
 validpgpkeys=(B56E3C7437A49E136862F5DE9D8A57ADAA232E95  # Matti Ranta <matti@mdranta.net>, retrieved from https://github.com/techknowlogick.gpg
