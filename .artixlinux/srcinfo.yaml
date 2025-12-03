@@ -1,0 +1,36 @@
+---
+version: 1.1.43-2
+pkgbase:
+  name: lib32-libxslt
+  pkgdesc: XML stylesheet transformation library (32-bit)
+  pkgver: 1.1.43
+  pkgrel: 2
+  url: https://gitlab.gnome.org/GNOME/libxslt/-/wikis/home
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - docbook-xml
+    - python
+  makedepends:
+    - git
+  depends:
+    - lib32-gcc-libs
+    - lib32-glibc
+    - lib32-libgcrypt
+    - lib32-libxml2
+    - lib32-xz
+    - libxslt
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libxslt.git#tag=v1.1.43
+    - 0001-runtest-Print-output-causing-failure.patch
+  b2sums:
+    - c6a0dd9c21046586e823f837e685c6feced6359cfc9c9eab0465ddc0aab84499e2f02055e395d2d18623e5edfba84db8df7018c2463c768a3237921d7c98a683
+    - 077eb61fac59fc34615685695af84d131a7aaafda08cd61657d2381d639311d6858a3fcca612ff8755e2cb9b77fa2606582044ca987ff4e23131a94e58f3f751
+pkgname:
+  - name: lib32-libxslt
+    provides:
+      - libxslt.so
+      - libexslt.so
+# generated with artixpkg 0.37.4-1-any
