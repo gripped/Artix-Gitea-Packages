@@ -1,9 +1,9 @@
 ---
-version: 1.0.0.beta.7-1
+version: 1.0.0.beta.9-1
 pkgbase:
   name: cosmic-files
   pkgdesc: File manager for the COSMIC desktop environment
-  pkgver: 1.0.0.beta.7
+  pkgver: 1.0.0.beta.9
   pkgrel: 1
   url: https://github.com/pop-os/cosmic-files
   arch:
@@ -27,10 +27,10 @@ pkgbase:
     - libxkbcommon
     - xdg-utils
   source:
-    - git+https://github.com/pop-os/cosmic-files.git#tag=epoch-1.0.0-beta.7
+    - git+https://github.com/pop-os/cosmic-files.git#tag=epoch-1.0.0-beta.9
     - cosmic-files-lto.patch
   b2sums:
-    - 3e2ac16275caace871cf6b77b39b211e2783467e25513f32c77df4c22df2db85e19e35499a07de52453db4d06766999ebc431a9db5f2820e9b11cd45d0105931
+    - 9605fdbed80d97561582f001252e14869eaa0aab7e13e2156739bb50e7274ec357ce9c355cde6d3f6d4de044a08d2ef81c12b562436b5446e4d95941106695cd
     - 105231f886affb3274d18bbe95d0fc27ba33cb557245ca567caccc9b0f5fbae0b7d92a81c0b2784130659e81b73e374ac735f8ad9b06adad18b4e4fd227164b5
 pkgname:
   - name: cosmic-files
