@@ -3,12 +3,12 @@
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-mail-box
-pkgver=3.010
+pkgver=3.012
 pkgrel=1
 pkgdesc="Mail folder manager and MUA backend"
 arch=(any)
 url="https://search.cpan.org/dist/Mail-Box"
-license=('GPL' 'PerlArtistic')
+license=('Artistic-1.0-Perl' 'GPL-1.0-or-later')
 depends=('perl-timedate' 'perl-digest-hmac' 'perl-file-remove>=0.20'
 	 'perl-io-stringy' 'perl-mime-types>=1.004' 'perl-mailtools'
 	 'perl-object-realize-later>=0.14' 'perl-uri>=1.23'
@@ -16,7 +16,7 @@ depends=('perl-timedate' 'perl-digest-hmac' 'perl-file-remove>=0.20'
 	 'perl-mail-message')
 options=('!emptydirs')
 source=(https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-$pkgver.tar.gz)
-sha256sums=('ae194fa250c545c9b9153e3fb5103cab29f79cf2acd4e9fd75cec532201a9564')
+sha256sums=('c46be7efcc96149750f650261d20af057aba4bbf0180fcac0115fb639214ed29')
 
 prepare() {
   cd  "$srcdir"/Mail-Box-$pkgver
