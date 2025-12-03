@@ -1,9 +1,9 @@
 ---
-version: 1.19.3-1
+version: 1.19.4-1
 pkgbase:
   name: elixir
   pkgdesc: A dynamic, functional language for building scalable and maintainable applications
-  pkgver: 1.19.3
+  pkgver: 1.19.4
   pkgrel: 1
   url: https://elixir-lang.org
   arch:
@@ -13,7 +13,6 @@ pkgbase:
   checkdepends:
     - erlang-dialyzer
     - erlang-eunit
-    - git
     - rebar3
   makedepends:
     - erlang-compiler
@@ -27,12 +26,13 @@ pkgbase:
     - erlang-stdlib
     - erlang-tools
     - erlang-xmerl
+    - git
   depends:
     - erlang-core
   source:
-    - elixir-1.19.3.tar.gz::https://github.com/elixir-lang/elixir/archive/v1.19.3.tar.gz
-  sha256sums:
-    - a76299ec8d14b43a84a03b3b700b9f912a64912f03ced8e024ae267b7e40c26d
+    - git+https://github.com/elixir-lang/elixir.git#tag=v1.19.4
+  sha512sums:
+    - e50912fd912a197487c9edaebb0c1db3f2b1afd65053f8312c0d9efea0072715ba8b7447b6b443a7989a888097470ea1b90546d62dc25c830709dec74d57361f
 pkgname:
   - name: elixir
 # generated with artixpkg 0.37.4-1-any
