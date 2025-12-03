@@ -1,0 +1,95 @@
+---
+version: 2-3
+pkgbase:
+  name: moksha-artix
+  pkgdesc: Programs and Themes for Moksha Desktop on Artix Linux
+  pkgver: 2
+  pkgrel: 3
+  url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
+  arch:
+    - x86_64
+  license:
+    - GPL
+  depends:
+    - edi
+    - efl
+    - elementary-icon-theme
+    - entice
+    - ephoto
+    - equate
+    - espionage
+    - evince
+    - evisum
+    - faenza-icon-theme
+    - mint-x-icons
+    - moksha
+    - moksha-arandr
+    - moksha-background-artix-classic
+    - moksha-help
+    - moksha-menu
+    - moksha-module-alarm
+    - moksha-module-calendar
+    - moksha-module-compton
+    - moksha-module-cpu
+    - moksha-module-deskshow
+    - moksha-module-desktitle
+    - moksha-module-dictionary
+    - moksha-module-diskio
+    - moksha-module-emprint
+    - moksha-module-engage
+    - moksha-module-extramenu
+    - moksha-module-flame
+    - moksha-module-forecasts
+    - moksha-module-mail
+    - moksha-module-mem
+    - moksha-module-net
+    - moksha-module-news
+    - moksha-module-penguins
+    - moksha-module-photo
+    - moksha-module-productivity
+    - moksha-module-rain
+    - moksha-module-screenshot
+    - moksha-module-slideshow
+    - moksha-module-snow
+    - moksha-module-spellchecker
+    - moksha-module-stickynotes
+    - moksha-module-tclock
+    - moksha-module-trash
+    - moksha-module-wincontrol
+    - moksha-module-winlist-ng
+    - moksha-module-winselector
+    - moksha-theme-arc
+    - moksha-theme-arc-dark
+    - moksha-theme-arc-green
+    - moksha-theme-blingbling
+    - moksha-theme-blueelectric
+    - moksha-theme-crema
+    - moksha-theme-detour
+    - moksha-theme-dimensions
+    - moksha-theme-e17gtk
+    - moksha-theme-forum
+    - moksha-theme-green
+    - moksha-theme-ice
+    - moksha-theme-japan
+    - moksha-theme-kl4k
+    - moksha-theme-moonlight
+    - moksha-theme-passion
+    - moksha-theme-pink
+    - moksha-theme-radiance
+    - moksha-theme-seven
+    - moksha-theme-sunshine
+    - moksha-theme-viceversa
+    - moksha-theme-wood-grey
+    - moksha-theme-zenithal
+    - numix-icon-theme
+    - pacifica-icon-theme
+    - papirus-icon-theme
+    - python-efl
+    - rlottie
+    - sdcv
+    - terminology
+  options:
+    - '!debug'
+pkgname:
+  - name: moksha-artix
+# generated with artixpkg 0.37.4-1-any
