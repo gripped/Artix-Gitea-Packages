@@ -4,8 +4,8 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-applets
-pkgver=1.0.0.beta.7
-pkgrel=1.1
+pkgver=1.0.0.beta.9
+pkgrel=2
 pkgdesc='Applets for COSMIC Panel'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-applets
@@ -28,10 +28,10 @@ makedepends=(
   clang
   git
   just
-  lld
+  mold
 )
 source=(git+https://github.com/pop-os/cosmic-applets.git#tag=epoch-${pkgver/.beta./-beta.})
-b2sums=('962abf6018285dcba1d2e2b4a083317149ee224c1d1a40b9301ffb2c7dd294179b279cea236f6be1d21f3f57ce4c0428e4fb7348ec9083aacc67287e0a902e22')
+b2sums=('f3af1621eb12772657109980910ac60d022b79b7a1c169e524c86b3ce3273a3deb849b4c6b2a7732531b0c1b441619715361911cfe203cba00dd1d25a022c120')
 
 prepare() {
   cd cosmic-applets
@@ -41,7 +41,7 @@ prepare() {
 
 build() {
   cd cosmic-applets
-  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=mold"
   just build-release --frozen
 }
 
