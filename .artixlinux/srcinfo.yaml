@@ -1,10 +1,10 @@
 ---
-version: 2.1.4-1
+version: 2.1.4-2
 pkgbase:
   name: php-mongodb
   pkgdesc: MongoDB driver for PHP
   pkgver: 2.1.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://pecl.php.net/package/mongodb
   arch:
     - x86_64
