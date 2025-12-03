@@ -1,0 +1,44 @@
+---
+version: 3.4.0-1
+pkgbase:
+  name: php-memcached
+  pkgdesc: PHP extension for interfacing with memcached via libmemcached library
+  pkgver: 3.4.0
+  pkgrel: 1
+  url: https://github.com/php-memcached-dev/php-memcached
+  arch:
+    - x86_64
+  license:
+    - PHP
+  makedepends:
+    - php
+    - php-legacy
+    - git
+    - php-igbinary
+    - php-legacy-igbinary
+  depends:
+    - libmemcached
+    - zstd
+  source:
+    - git+https://github.com/php-memcached-dev/php-memcached.git#tag=v3.4.0
+  sha256sums:
+    - c31f09a009c9ab69710c1292bdb6ecf6dafc6bae28c1c90304ec191d59f17cc7
+pkgname:
+  - name: php-memcached
+    depends:
+      - libmemcached
+      - zstd
+      - php
+      - php-igbinary
+    backup:
+      - etc/php/conf.d/memcached.ini
+  - name: php-legacy-memcached
+    pkgdesc: PHP Legacy extension for interfacing with memcached via libmemcached library
+    depends:
+      - libmemcached
+      - zstd
+      - php-legacy
+      - php-legacy-igbinary
+    backup:
+      - etc/php-legacy/conf.d/memcached.ini
+# generated with artixpkg 0.37.4-1-any
