@@ -3,8 +3,8 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-settings-daemon
-pkgver=1.0.0.beta.7
-pkgrel=1.1
+pkgver=1.0.0.beta.9
+pkgrel=1.2
 pkgdesc='Cosmic settings daemon'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-settings-daemon
