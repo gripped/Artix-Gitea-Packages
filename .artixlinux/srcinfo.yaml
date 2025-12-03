@@ -1,0 +1,32 @@
+---
+version: 2.1.2-1
+pkgbase:
+  name: python-execnet
+  pkgdesc: Rapid multi-Python deployment
+  pkgver: 2.1.2
+  pkgrel: 1
+  url: https://codespeak.net/execnet
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - openssh
+    - procps-ng
+    - python-pytest
+    - python-pytest-timeout
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python
+  source:
+    - git+https://github.com/pytest-dev/execnet.git#tag=v2.1.2
+  sha512sums:
+    - ff72f8c46ac57bcc8387783ba07ca8fb0569f125199345c3ca124af148bb3739717ce0b7ab793638c81b381ff27d582a1cc823d9e6839b4e5a37d58c6a96e78f
+pkgname:
+  - name: python-execnet
+# generated with artixpkg 0.37.4-1-any
