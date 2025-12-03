@@ -1,9 +1,9 @@
 ---
-version: 3.8.3-1
+version: 3.8.4-1
 pkgbase:
   name: lib32-libarchive
   pkgdesc: Multi-format archive and compression library - 32bit
-  pkgver: 3.8.3
+  pkgver: 3.8.4
   pkgrel: 1
   url: https://libarchive.org
   arch:
@@ -15,7 +15,7 @@ pkgbase:
   makedepends:
     - git
   depends:
-    - libarchive=3.8.3
+    - libarchive=3.8.4
     - lib32-acl
     - lib32-bzip2
     - lib32-glibc
@@ -28,12 +28,12 @@ pkgbase:
   provides:
     - libarchive.so
   source:
-    - libarchive::git+https://github.com/libarchive/libarchive.git?signed#tag=v3.8.3
+    - libarchive::git+https://github.com/libarchive/libarchive.git?signed#tag=v3.8.4
   validpgpkeys:
     - DB2C7CF1B4C265FAEF56E3FC5848A18B8F14184B
     - 659C84C0E23EA1FA97E0B58CC040B508D63D2B36
   sha256sums:
-    - 71b66df2d975004d7b6ba76cb174298cc866beb5d39c1d63c1bb1bad3dcb8bc5
+    - 326487a6bbd7575e53f6302231d7c9ea189bc5147b2fc92d3b45d0bafd7e9868
 pkgname:
   - name: lib32-libarchive
 # generated with artixpkg 0.37.4-1-any
