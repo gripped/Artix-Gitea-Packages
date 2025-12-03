@@ -4,21 +4,30 @@
 # Contributor: Yuki Takagi <takagiy.4dev@gmail.com>
 
 pkgname=immer
-pkgver=0.8.1
+pkgver=0.9.0
 pkgrel=1
 pkgdesc='Postmodern immutable and persistent data structures for C++'
 arch=(any)
 url='https://sinusoid.es/immer'
-license=(Boost)
+license=(BSL-1.0)
 makedepends=(catch2
-             cmake)
-source=(https://github.com/arximboldi/immer/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha256sums=('de8411c84830864604bb685dc8f2e3c0dbdc40b95b2f6726092f7dcc85e75209')
+             cmake
+             git)
+checkdepends=(boost
+              fmt)
+source=(git+https://github.com/arximboldi/immer#tag=v$pkgver)
+sha256sums=('ff78b15c7398254d250d2da6f3dccff8d97f5c88410982087c64f180d3258191')
 
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname \
     -DCMAKE_INSTALL_PREFIX=/usr
   cmake --build build
+}
+
+check() {
+  cmake --build build --target check
+  ctest --test-dir build \
+        --output-on-failure
 }
 
 package() {
