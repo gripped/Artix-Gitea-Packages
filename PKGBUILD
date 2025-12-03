@@ -3,8 +3,8 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-osd
-pkgver=1.0.0.beta.7
-pkgrel=1.1
+pkgver=1.0.0.beta.9
+pkgrel=1
 pkgdesc='COSMIC On-Screen Display'
 arch=(x86_64)
 url=https://github.com/pop-os/cosmic-osd
@@ -25,28 +25,28 @@ makedepends=(
   cargo
   clang
   git
+  just
   lld
 )
 source=(
   git+https://github.com/pop-os/cosmic-osd.git#tag=epoch-${pkgver/.beta./-beta.}
 )
-b2sums=('519be0b51f93d4ea5b0d7a2de7cedcf0ec9dc8f2f5c1b6510336545a53d4131c06cbb542399dfc8d2b47e5a3b06ff514740a7aa33ce3def7a873ec267c8ceb2a')
+b2sums=('faa46557cf7f6622a64d73142f387864d1b531c9c97c6951cd6657e7a59595b6bcf01eff309eadc39a5f05dda893016e49e17415e72e069f2cd1e9a8ce3ac722')
 
 prepare() {
   cd cosmic-osd
   cargo fetch --locked
-  sed 's|libexec|lib/polkit-1|g' -i Makefile src/subscriptions/polkit_agent_helper.rs
 }
 
 build() {
   cd cosmic-osd
-  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
-  make ARGS+=" --frozen --release"
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld" \
+  just polkit-agent-helper-1="/usr/lib/polkit-1/polkit-agent-helper-1" build-release
 }
 
 package() {
   cd cosmic-osd
-  make prefix='/usr' DESTDIR="${pkgdir}" install
+  just rootdir="${pkgdir}" install
 }
 
 # vim: ts=2 sw=2 et:
