@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-12-03
+## Generated on 2025-12-04
 ##
 
 # Artix mirrors
@@ -93,4 +93,3 @@ Server = https://mirror.meowsmp.net/artixlinux/$repo/os/$arch
 ## Oceania
 # Australia
 Server = https://mirror.aarnet.edu.au/pub/artix/$repo/os/$arch
-5;36M
