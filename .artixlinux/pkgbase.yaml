@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,24 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 8.5.0-1
+    packages:
+      - php-8.5.0-1-x86_64.pkg.tar.zst
+      - php-cgi-8.5.0-1-x86_64.pkg.tar.zst
+      - php-apache-8.5.0-1-x86_64.pkg.tar.zst
+      - php-fpm-8.5.0-1-x86_64.pkg.tar.zst
+      - php-embed-8.5.0-1-x86_64.pkg.tar.zst
+      - php-phpdbg-8.5.0-1-x86_64.pkg.tar.zst
+      - php-dblib-8.5.0-1-x86_64.pkg.tar.zst
+      - php-enchant-8.5.0-1-x86_64.pkg.tar.zst
+      - php-gd-8.5.0-1-x86_64.pkg.tar.zst
+      - php-sodium-8.5.0-1-x86_64.pkg.tar.zst
+      - php-odbc-8.5.0-1-x86_64.pkg.tar.zst
+      - php-pgsql-8.5.0-1-x86_64.pkg.tar.zst
+      - php-snmp-8.5.0-1-x86_64.pkg.tar.zst
+      - php-sqlite-8.5.0-1-x86_64.pkg.tar.zst
+      - php-tidy-8.5.0-1-x86_64.pkg.tar.zst
+      - php-xsl-8.5.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 8.4.15-1
