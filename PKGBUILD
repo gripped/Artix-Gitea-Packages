@@ -7,7 +7,7 @@ _cli_ver=11.7.3
 
 pkgname=pamac
 pkgver=11.7.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstream support"
 arch=('x86_64')
 url="https://github.com/manjaro/pamac"
