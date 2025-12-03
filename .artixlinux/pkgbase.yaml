@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,8 +51,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 20251122-1
+    packages:
+      - parallel-20251122-1-any.pkg.tar.zst
+      - parallel-docs-20251122-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: null
