@@ -1,0 +1,41 @@
+---
+version: 0.8.0-1
+pkgbase:
+  name: zix
+  pkgdesc: A lightweight C99 portability and data structure library
+  pkgver: 0.8.0
+  pkgrel: 1
+  url: https://gitlab.com/drobilla/zix
+  arch:
+    - x86_64
+  license:
+    - 0BSD OR ISC
+  makedepends:
+    - doxygen
+    - glibc
+    - meson
+    - python-sphinx
+    - python-sphinx-lv2-theme
+    - python-sphinxygen
+  source:
+    - https://download.drobilla.net/zix-0.8.0.tar.xz
+    - https://download.drobilla.net/zix-0.8.0.tar.xz.sig
+  validpgpkeys:
+    - 907D226E7E13FA337F014A083672782A9BF368F3
+  sha512sums:
+    - fccb3e3b05c4d28e7fa6ed94537681167e2ee22a23dd4e1b4f3e5474da8dce3fe682cc6ccda219d140b956014c444a6f721d7272f3dba52df3a07e13b594f963
+    - SKIP
+  b2sums:
+    - c800585d7fcfd55a7f241c38fa8cfca5f58795bf78189371dd15c77a17f56221266749f1bc9a74fc7ff2b17991ddc05d4960649943706ed108e062447fe20c6c
+    - SKIP
+pkgname:
+  - name: zix
+    depends:
+      - glibc
+    optdepends:
+      - 'zix-docs: for developer documentation'
+    provides:
+      - libzix-0.so
+  - name: zix-docs
+    pkgdesc: A lightweight C99 portability and data structure library - documentation
+# generated with artixpkg 0.37.4-1-any
