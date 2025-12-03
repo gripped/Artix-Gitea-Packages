@@ -1,10 +1,10 @@
 ---
-version: 6.30.223.271-662
+version: 6.30.223.271-663
 pkgbase:
   name: broadcom-wl
   pkgdesc: Broadcom 802.11 Linux STA wireless driver
   pkgver: 6.30.223.271
-  pkgrel: 662
+  pkgrel: 663
   url: https://www.broadcom.com/support/download-search/?pf=Wireless+LAN+Infrastructure
   arch:
     - x86_64
