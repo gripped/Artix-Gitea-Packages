@@ -1,0 +1,38 @@
+---
+version: 8.2-6
+pkgbase:
+  name: php-memcache
+  pkgdesc: Memcache module for PHP
+  pkgver: 8.2
+  pkgrel: 6
+  url: https://pecl.php.net/package/memcache
+  arch:
+    - x86_64
+  license:
+    - PHP-3.01
+  checkdepends:
+    - memcached
+  makedepends:
+    - php
+    - php-legacy
+  source:
+    - https://pecl.php.net/get/memcache-8.2.tgz
+    - php-8.5.patch
+  sha256sums:
+    - b3f0640eacdeb9046c6c86a1546d7fb8a4e9f219e5d9a36a287e59b2dd8208e5
+    - 88cbbafbf6339ca67103795ea45cdf3b5728d4c593c7f69bf2efec5d9f9ad3e9
+pkgname:
+  - name: php-memcache
+    install: php-memcache.install
+    depends:
+      - php
+    backup:
+      - etc/php/conf.d/memcache.ini
+  - name: php-legacy-memcache
+    pkgdesc: Memcache module for PHP Legacy
+    install: php-legacy-memcache.install
+    depends:
+      - php-legacy
+    backup:
+      - etc/php-legacy/conf.d/memcache.ini
+# generated with artixpkg 0.37.4-1-any
