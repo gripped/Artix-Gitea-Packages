@@ -1,10 +1,10 @@
 ---
-version: 580.105.08-5
+version: 580.105.08-6
 pkgbase:
   name: nvidia-open
   pkgdesc: NVIDIA open kernel modules
   pkgver: 580.105.08
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/NVIDIA/open-gpu-kernel-modules
   arch:
     - x86_64
