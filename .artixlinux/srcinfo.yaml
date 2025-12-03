@@ -1,9 +1,9 @@
 ---
-version: 8.2.29-2
+version: 8.3.28-1
 pkgbase:
   name: php-legacy
-  pkgver: 8.2.29
-  pkgrel: 2
+  pkgver: 8.3.28
+  pkgrel: 1
   url: https://www.php.net/
   arch:
     - x86_64
@@ -14,7 +14,6 @@ pkgbase:
   makedepends:
     - apache
     - aspell
-    - gdbm
     - enchant
     - gd
     - gmp
@@ -32,15 +31,14 @@ pkgbase:
     - postfix
     - freetds
     - pcre2
-    - libnsl
     - oniguruma
     - patchelf
     - argon2
   options:
     - '!lto'
   source:
-    - https://php.net/distributions/php-8.2.29.tar.xz
-    - https://php.net/distributions/php-8.2.29.tar.xz.asc
+    - https://php.net/distributions/php-8.3.28.tar.xz
+    - https://php.net/distributions/php-8.3.28.tar.xz.asc
     - apache.conf
     - php-fpm.tmpfiles
     - apache.patch
@@ -49,16 +47,16 @@ pkgbase:
     - php-legacy.patch
   validpgpkeys:
     - 1198C0117593497A5EC5C199286AF1F9897469DC
-    - 39B641343D8C104B2B146DC3F9C39DC0B9698544
-    - E60913E4DF209907D8E30D96659A97C9CF2A795A
+    - AFD8691FDAEDF03BDF6E460563F15A9B715376CA
+    - C28D937575603EB4ABB725861C0779DC5C0A9DE4
   sha256sums:
-    - 475f991afd2d5b901fb410be407d929bc00c46285d3f439a02c59e8b6fe3589c
+    - 25e3860f30198a386242891c0bf9e2955931f7b666b96c3e3103d36a2a322326
     - SKIP
     - 2173046ac22ac50c7a6721306d3f79b2086f66a7a6ff5d8af249a474763197a1
     - f3236ca866095d5e42e51e3fa600082ccd0afcfb7f1aecbeb286ef9d4f0dd564
     - 702b163c66c65af92dcad8d79f41bda84bcd5d863235fcf1497c33a86db9e4ca
     - b23547fb1fcdd47a1dab1082c921485c7306af23734c66c7203d33a1d0cfaf41
-    - 770eb5232d24749f8399bf649998bb3adda51b49985c61db66f3af82f9d81805
+    - e8690b0e74234cb17d94b04989d8fca3d320a7d22ccb87e8b7f1f67c5d4119af
     - a1859005c9fad835079470e6fb3c0721b9bd024c8f3ae1f34cb082ec41c63194
 pkgname:
   - name: php-legacy
@@ -70,10 +68,9 @@ pkgname:
       - pcre2
       - argon2
       - oniguruma
-      - gdbm
     provides:
-      - php-interpreter=8.2
-      - php-legacy-intl=8.2.29
+      - php-interpreter=8.3
+      - php-legacy-intl=8.3.28
     conflicts:
       - php-legacy-intl
     replaces:
@@ -85,14 +82,14 @@ pkgname:
     depends:
       - php-legacy
     provides:
-      - php-cgi-interpreter=8.2
+      - php-cgi-interpreter=8.3
   - name: php-legacy-apache
     pkgdesc: Apache SAPI for PHP
     depends:
       - php-legacy
       - apache
     provides:
-      - php-apache-interpreter=8.2
+      - php-apache-interpreter=8.3
     backup:
       - etc/httpd/conf/extra/php-legacy_module.conf
   - name: php-legacy-fpm
@@ -100,7 +97,7 @@ pkgname:
     depends:
       - php-legacy
     provides:
-      - php-fpm-interpreter=8.2
+      - php-fpm-interpreter=8.3
     options:
       - '!emptydirs'
     backup:
@@ -111,7 +108,7 @@ pkgname:
     depends:
       - php-legacy
     provides:
-      - php-embed-interpreter=8.2
+      - php-embed-interpreter=8.3
     options:
       - '!emptydirs'
   - name: php-legacy-phpdbg
@@ -119,7 +116,7 @@ pkgname:
     depends:
       - php-legacy
     provides:
-      - php-phpdbg-interpreter=8.2
+      - php-phpdbg-interpreter=8.3
     options:
       - '!emptydirs'
   - name: php-legacy-dblib
@@ -128,75 +125,75 @@ pkgname:
       - php-legacy
       - freetds
     provides:
-      - php-dblib-interpreter=8.2
+      - php-dblib-interpreter=8.3
   - name: php-legacy-enchant
     pkgdesc: enchant module for PHP
     depends:
       - php-legacy
       - enchant
     provides:
-      - php-enchant-interpreter=8.2
+      - php-enchant-interpreter=8.3
   - name: php-legacy-gd
     pkgdesc: gd module for PHP
     depends:
       - php-legacy
       - gd
     provides:
-      - php-gd-interpreter=8.2
+      - php-gd-interpreter=8.3
   - name: php-legacy-sodium
     pkgdesc: sodium module for PHP
     depends:
       - php-legacy
       - libsodium
     provides:
-      - php-sodium-interpreter=8.2
+      - php-sodium-interpreter=8.3
   - name: php-legacy-odbc
     pkgdesc: ODBC modules for PHP
     depends:
       - php-legacy
       - unixodbc
     provides:
-      - php-odbc-interpreter=8.2
+      - php-odbc-interpreter=8.3
   - name: php-legacy-pgsql
     pkgdesc: PostgreSQL modules for PHP
     depends:
       - php-legacy
       - postgresql-libs
     provides:
-      - php-pgsql-interpreter=8.2
+      - php-pgsql-interpreter=8.3
   - name: php-legacy-pspell
     pkgdesc: pspell module for PHP
     depends:
       - php-legacy
       - aspell
     provides:
-      - php-pspell-interpreter=8.2
+      - php-pspell-interpreter=8.3
   - name: php-legacy-snmp
     pkgdesc: snmp module for PHP
     depends:
       - php-legacy
       - net-snmp
     provides:
-      - php-snmp-interpreter=8.2
+      - php-snmp-interpreter=8.3
   - name: php-legacy-sqlite
     pkgdesc: sqlite module for PHP
     depends:
       - php-legacy
       - sqlite
     provides:
-      - php-sqlite-interpreter=8.2
+      - php-sqlite-interpreter=8.3
   - name: php-legacy-tidy
     pkgdesc: tidy module for PHP
     depends:
       - php-legacy
       - tidy
     provides:
-      - php-tidy-interpreter=8.2
+      - php-tidy-interpreter=8.3
   - name: php-legacy-xsl
     pkgdesc: xsl module for PHP
     depends:
       - php-legacy
       - libxslt
     provides:
-      - php-xsl-interpreter=8.2
+      - php-xsl-interpreter=8.3
 # generated with artixpkg 0.37.4-1-any
