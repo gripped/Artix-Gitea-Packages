@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.1.1-1
+    version: 7.1.1-2
     packages:
-      - hsa-rocr-7.1.1-1-x86_64.pkg.tar.zst
+      - hsa-rocr-7.1.1-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.1.0-1
