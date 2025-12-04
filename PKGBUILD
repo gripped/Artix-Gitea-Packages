@@ -2,17 +2,17 @@
 
 pkgbase="cups"
 pkgname=('libcups' 'cups')
-pkgver=2.4.15
-pkgrel=3
+pkgver=2.4.16
+pkgrel=1
 epoch=2
 arch=('x86_64')
 license=('Apache-2.0 WITH LLVM-exception AND BSD-3-Clause AND Zlib AND BSD-2-Clause')
 url="https://openprinting.github.io/cups/"
 makedepends=('acl' 'pam' 'gnutls' 'cups-filters' 'colord' 
-             'libusb' 'avahi'  'libpaper' 'git')
+             'libusb' 'avahi' 'libpaper') # 'git')
 #checkdepends=('valgrind')
-source=(#https://github.com/OpenPrinting/cups/releases/download/v${pkgver}/cups-${pkgver}-source.tar.gz{,.sig}
-        "git+https://github.com/OpenPrinting/cups.git#tag=v$pkgver"
+source=(https://github.com/OpenPrinting/cups/releases/download/v${pkgver}/cups-${pkgver}-source.tar.gz{,.sig}
+        #"git+https://github.com/OpenPrinting/cups.git#tag=v$pkgver"
         cups.logrotate
         cups.pam
         cups.sysusers
@@ -20,31 +20,24 @@ source=(#https://github.com/OpenPrinting/cups/releases/download/v${pkgver}/cups-
         # bugfixes
         cups-freebind.patch
         guid.patch
-        0001-Fix_an_infinite_loop_issue_in_GTK.patch
 )
-sha256sums=('69c0d6ad8629aff633f4e4a510761ecc61263ca917d5a6ddc64e82ee7785a746'
+sha256sums=('0339587204b4f9428dd0592eb301dec0bf9ea6ea8dce5d9690d56be585aba92d'
+            'SKIP'
             'd87fa0f0b5ec677aae34668f260333db17ce303aa1a752cba5f8e72623d9acf9'
             '57dfd072fd7ef0018c6b0a798367aac1abb5979060ff3f9df22d1048bb71c0d5'
             '5324bd933385713e0dfd0b20cf5f861d1401bdeb693c5be7edc3ca4404e78e2b'
             'f0b15192952c151b1843742c87850ff3a7d0f3ba5dd236ed16623ef908472ad7'
             '3385047b9ac8a7b13aeb8f0ca55d15f793ce7283516db0155fe28a67923c592d'
-            '8becc2ad17787ef755fb77f83a87cf52f1a38154c5dde0f4a0051e06a0583fb9'
-            'c4412d808b2c045db21cdeba925da26ecf9de59e803c87176751f93866514cbc')
+            '8becc2ad17787ef755fb77f83a87cf52f1a38154c5dde0f4a0051e06a0583fb9')
 #validpgpkeys=('3737FD0D0E63B30172440D2DDBA3A7AB08D76223') # CUPS.org (CUPS.org PGP key) <security@cups.org>
 #validpgpkeys+=('45D083946E3035282B3CCA9AF434104235DA97EB') # "CUPS.org <security@cups.org>"
 #validpgpkeys+=('845464660B686AAB36540B6F999559A027815955') # "Michael R Sweet <michael.r.sweet@gmail.com>"
 #validpgpkeys=('7ADB58203CA5F046F28025B215AA6A7F4D4227D7') # "Zdenek Dohnal (Associate Software Engineer) <zdohnal@redhat.com>"
-# validpgpkeys=('7082A0A50A2E92640F3880E0E4522DCC9B246FF7') # Zdenek Dohnal (The old 4D4227D7 key revoked) <zdohnal@redhat.com>
+validpgpkeys=('7082A0A50A2E92640F3880E0E4522DCC9B246FF7') # Zdenek Dohnal (The old 4D4227D7 key revoked) <zdohnal@redhat.com>
 #options=(!makeflags)
 
 prepare() {
-  cd "${pkgbase}" #-${pkgver}
-
-  # reverts
-  # https://github.com/OpenPrinting/cups/issues/1429
-  # git revert -n 5d414f1f91bdca118413301b148f0b188eb1cdc6
-  # git cherry-pick -n 2dc021f33a3ea358c9f5c5c54643adc4c46a84a1
-  patch -Np1 -i ../0001-Fix_an_infinite_loop_issue_in_GTK.patch
+  cd "${pkgbase}"-${pkgver}
 
   # move /var/run -> /run for pid file
   patch -Np1 -i "${srcdir}"/cups-2.4.0-statedir.patch
@@ -64,12 +57,12 @@ prepare() {
 }
 
 build() {
-  cd "${pkgbase}" #-${pkgver}
+  cd "${pkgbase}"-${pkgver}
 
   # The build system uses only DSOFLAGS but not LDFLAGS to build some libraries.
   export DSOFLAGS=${LDFLAGS}
 
-  # use fixed cups user (id 209) since adds "lp" group without a fixed id
+  # use fixed cups user (id 209) since systemd adds "lp" group without a fixed id
   ./configure --disable-systemd --prefix=/usr \
      --sysconfdir=/etc \
      --localstatedir=/var \
@@ -103,12 +96,11 @@ package_libcups() {
 pkgdesc="OpenPrinting CUPS - client libraries and headers"
 depends=('gnutls' 'avahi' 'glibc' 'zlib' 'sh')
 
-  cd ${pkgbase} #-${pkgver}
+  cd ${pkgbase}-${pkgver}
   make BUILDROOT="${pkgdir}" install-headers install-libs
   # put this into the libs pkg to make other software find the libs(no pkg-config file included)
   mkdir -p "${pkgdir}"/usr/bin
-  # install -m755 "${srcdir}"/"${pkgbase}"-${pkgver}/cups-config "${pkgdir}"/usr/bin/cups-config
-  install -m755 "${srcdir}"/"${pkgbase}"/cups-config "${pkgdir}"/usr/bin/cups-config
+  install -m755 "${srcdir}"/"${pkgbase}"-${pkgver}/cups-config "${pkgdir}"/usr/bin/cups-config
 
   # add license + exception
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" {LICENSE,NOTICE}
@@ -135,7 +127,7 @@ optdepends=('cups-browsed: to browse the network for remote CUPS queues and IPP 
             'colord: for ICC color profile support'
             'logrotate: for logfile rotation support')
 
-  cd "${pkgbase}" #-${pkgver}
+  cd "${pkgbase}"-${pkgver}
   make BUILDROOT="${pkgdir}" install-data install-exec
 
   # this one we ship in the libcups pkg

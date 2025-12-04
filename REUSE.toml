@@ -26,7 +26,6 @@ SPDX-License-Identifier = "0BSD"
 path = [
     "cups-2.4.0-statedir.patch",
     "cups-freebind.patch",
-    "0001-Fix_an_infinite_loop_issue_in_GTK.patch",
 ]
 SPDX-FileCopyrightText = "cups contributors"
 SPDX-License-Identifier = "Apache-2.0"
