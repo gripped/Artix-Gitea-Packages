@@ -4,7 +4,7 @@
 # Contributor: Zeph <zeph33@gmail.com>
 
 pkgname=libpamac
-pkgver=11.7.3
+pkgver=11.7.4
 pkgrel=1
 pkgdesc="Pamac package manager library based on libalpm"
 arch=('x86_64')
@@ -47,7 +47,7 @@ source=(
     fix-appstream-data.sh
     fix-appstream-data.hook
 )
-sha256sums=('7a0e6abfa5f1ea1f1530301566aacb0acffaf95d93d36a6811dcd874460ca57d'
+sha256sums=('13f531db76921740e7d5b2478cc774d29757313ff4a85befe5c683c6b0cd0d47'
             '6e0c25f0fcb0076ce78845b037e32925fcc3f1cd1670062c48ed35f564a10244'
             'b5236af02c25cd7de4b2c9c2d0f064dac3c2f54da5cc72bf72fc6236a34bd9c4')
 
