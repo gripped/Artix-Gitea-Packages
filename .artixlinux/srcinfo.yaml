@@ -1,9 +1,9 @@
 ---
-version: 0.30.1-1
+version: 1.0.0-1
 pkgbase:
   name: mkdocstrings
   pkgdesc: Automatic documentation from sources, for MkDocs
-  pkgver: 0.30.1
+  pkgver: 1.0.0
   pkgrel: 1
   url: https://github.com/mkdocstrings/mkdocstrings
   arch:
@@ -30,9 +30,9 @@ pkgbase:
     - python-pymdown-extensions
     - python-yaml
   source:
-    - mkdocstrings-0.30.1.tar.gz::https://github.com/mkdocstrings/mkdocstrings/archive/0.30.1.tar.gz
+    - mkdocstrings-1.0.0.tar.gz::https://github.com/mkdocstrings/mkdocstrings/archive/1.0.0.tar.gz
   sha256sums:
-    - d3c0991cbc2c38f490eeb8ae37a9b02a352b21667ff2419aa2d8b93090875245
+    - 9e4fd1201cbc3c37379bec2e85420de14f14cfc90567bc8e304ee54c6e6f7866
 pkgname:
   - name: mkdocstrings
 # generated with artixpkg 0.37.4-1-any
