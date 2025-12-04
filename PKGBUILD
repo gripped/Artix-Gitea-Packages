@@ -3,11 +3,11 @@
 # https://gitlab.manjaro.org/packages/extra/pamac
 
 ENABLE_FAKE_GNOME_SOFTWARE=0
-_cli_ver=11.7.3
+_cli_ver=11.7.4
 
 pkgname=pamac
-pkgver=11.7.3
-pkgrel=1.1
+pkgver=11.7.4
+pkgrel=1
 pkgdesc="A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstream support"
 arch=('x86_64')
 url="https://github.com/manjaro/pamac"
@@ -47,8 +47,8 @@ source=(
     "git+https://github.com/manjaro/pamac.git#tag=v$pkgver"
     "git+https://github.com/manjaro/pamac-cli.git#tag=$_cli_ver"
 )
-sha256sums=('d9df19c697a000de65514617545323ed7e7ada162aaceed6d91827d0775b9d56'
-            '972b882440f6ebbc948fe965eb4bfe638f735adfcc260f6349aa3e1d560621a7')
+sha256sums=('465f0bfa3aa0ac536c9838ffc934f2ee9bbf0ee403ed202fa86ce2ecfd601707'
+            'a347066c47a3e6ad8d32f6b947f4568592bd1bf038ea9b72a387b6f81a95c0ee')
 
 _meson_options=()
 if (( ENABLE_FAKE_GNOME_SOFTWARE )); then

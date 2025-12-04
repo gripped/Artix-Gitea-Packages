@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
       - pamac-11.7.3-1.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 11.7.3-1
+    version: 11.7.4-1
     packages:
-      - pamac-11.7.3-1-x86_64.pkg.tar.zst
+      - pamac-11.7.4-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
