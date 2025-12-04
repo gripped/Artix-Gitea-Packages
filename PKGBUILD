@@ -5,7 +5,7 @@
 
 pkgname=libpamac
 pkgver=11.7.4
-pkgrel=2
+pkgrel=3
 pkgdesc="Pamac package manager library based on libalpm"
 arch=('x86_64')
 url="https://github.com/manjaro/libpamac"
@@ -17,7 +17,7 @@ depends=(
     'glibc'
     'json-glib'
     'libsoup3'
-    'pacman' 'libalpm.so'
+    'pacman>=7.0.0' 'libalpm.so'
     'polkit'
 )
 makedepends=(
@@ -50,6 +50,12 @@ source=(
 sha256sums=('13f531db76921740e7d5b2478cc774d29757313ff4a85befe5c683c6b0cd0d47'
             '6e0c25f0fcb0076ce78845b037e32925fcc3f1cd1670062c48ed35f564a10244'
             'b5236af02c25cd7de4b2c9c2d0f064dac3c2f54da5cc72bf72fc6236a34bd9c4')
+
+prepare() {
+    cd "$srcdir/$pkgname"
+    sed -E -i 's/\balpm_option_set_disable_sandbox\(/alpm_option_set_disable_sandbox_syscalls(/g' \
+        libpamac/src/alpm_config.vala
+}
 
 build() {
     local _meson_options=()
