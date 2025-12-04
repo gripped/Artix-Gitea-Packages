@@ -1,10 +1,10 @@
 ---
-version: 20251001-2
+version: 20251001-3
 pkgbase:
   name: aspell-pt
   pkgdesc: Portuguese and Brazilian Portuguese dictionary for aspell
   pkgver: 20251001
-  pkgrel: 2
+  pkgrel: 3
   url: http://aspell.net/
   arch:
     - x86_64
