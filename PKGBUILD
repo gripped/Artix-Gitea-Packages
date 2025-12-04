@@ -3,7 +3,7 @@
 pkgbase="cups"
 pkgname=('libcups' 'cups')
 pkgver=2.4.15
-pkgrel=2
+pkgrel=3
 epoch=2
 arch=('x86_64')
 license=('Apache-2.0 WITH LLVM-exception AND BSD-3-Clause AND Zlib AND BSD-2-Clause')
@@ -20,6 +20,7 @@ source=(#https://github.com/OpenPrinting/cups/releases/download/v${pkgver}/cups-
         # bugfixes
         cups-freebind.patch
         guid.patch
+        0001-Fix_an_infinite_loop_issue_in_GTK.patch
 )
 sha256sums=('69c0d6ad8629aff633f4e4a510761ecc61263ca917d5a6ddc64e82ee7785a746'
             'd87fa0f0b5ec677aae34668f260333db17ce303aa1a752cba5f8e72623d9acf9'
@@ -27,7 +28,8 @@ sha256sums=('69c0d6ad8629aff633f4e4a510761ecc61263ca917d5a6ddc64e82ee7785a746'
             '5324bd933385713e0dfd0b20cf5f861d1401bdeb693c5be7edc3ca4404e78e2b'
             'f0b15192952c151b1843742c87850ff3a7d0f3ba5dd236ed16623ef908472ad7'
             '3385047b9ac8a7b13aeb8f0ca55d15f793ce7283516db0155fe28a67923c592d'
-            '8becc2ad17787ef755fb77f83a87cf52f1a38154c5dde0f4a0051e06a0583fb9')
+            '8becc2ad17787ef755fb77f83a87cf52f1a38154c5dde0f4a0051e06a0583fb9'
+            'c4412d808b2c045db21cdeba925da26ecf9de59e803c87176751f93866514cbc')
 #validpgpkeys=('3737FD0D0E63B30172440D2DDBA3A7AB08D76223') # CUPS.org (CUPS.org PGP key) <security@cups.org>
 #validpgpkeys+=('45D083946E3035282B3CCA9AF434104235DA97EB') # "CUPS.org <security@cups.org>"
 #validpgpkeys+=('845464660B686AAB36540B6F999559A027815955') # "Michael R Sweet <michael.r.sweet@gmail.com>"
@@ -40,7 +42,9 @@ prepare() {
 
   # reverts
   # https://github.com/OpenPrinting/cups/issues/1429
-  git revert -n 5d414f1f91bdca118413301b148f0b188eb1cdc6
+  # git revert -n 5d414f1f91bdca118413301b148f0b188eb1cdc6
+  # git cherry-pick -n 2dc021f33a3ea358c9f5c5c54643adc4c46a84a1
+  patch -Np1 -i ../0001-Fix_an_infinite_loop_issue_in_GTK.patch
 
   # move /var/run -> /run for pid file
   patch -Np1 -i "${srcdir}"/cups-2.4.0-statedir.patch

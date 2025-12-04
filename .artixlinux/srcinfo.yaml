@@ -1,9 +1,9 @@
 ---
-version: 2:2.4.15-2
+version: 2:2.4.15-3
 pkgbase:
   name: cups
   pkgver: 2.4.15
-  pkgrel: 2
+  pkgrel: 3
   epoch: 2
   url: https://openprinting.github.io/cups/
   arch:
@@ -28,6 +28,7 @@ pkgbase:
     - cups-2.4.0-statedir.patch
     - cups-freebind.patch
     - guid.patch
+    - 0001-Fix_an_infinite_loop_issue_in_GTK.patch
   sha256sums:
     - 69c0d6ad8629aff633f4e4a510761ecc61263ca917d5a6ddc64e82ee7785a746
     - d87fa0f0b5ec677aae34668f260333db17ce303aa1a752cba5f8e72623d9acf9
@@ -36,6 +37,7 @@ pkgbase:
     - f0b15192952c151b1843742c87850ff3a7d0f3ba5dd236ed16623ef908472ad7
     - 3385047b9ac8a7b13aeb8f0ca55d15f793ce7283516db0155fe28a67923c592d
     - 8becc2ad17787ef755fb77f83a87cf52f1a38154c5dde0f4a0051e06a0583fb9
+    - c4412d808b2c045db21cdeba925da26ecf9de59e803c87176751f93866514cbc
 pkgname:
   - name: libcups
     pkgdesc: OpenPrinting CUPS - client libraries and headers
