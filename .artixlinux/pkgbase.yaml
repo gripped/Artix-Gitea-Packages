@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 2.4.15-1
+    version: 2.4.16-1
     packages:
-      - lib32-libcups-2.4.15-1-x86_64.pkg.tar.zst
+      - lib32-libcups-2.4.16-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
