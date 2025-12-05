@@ -55,7 +55,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.26.0-2
+    version: 0.26.1-1
     packages:
-      - bat-0.26.0-2-x86_64.pkg.tar.zst
+      - bat-0.26.1-1-x86_64.pkg.tar.zst
     debug: []
