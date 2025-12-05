@@ -7,7 +7,7 @@
 
 pkgname=docbook-utils
 pkgver=0.6.15
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Shell scripts to manage DocBook documents'
 arch=('any')
 # url="https://www.sourceware.org/docbook-tools/"
