@@ -26,8 +26,8 @@ source=(#https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/${pkgname}-
         support_source_date_epoch.patch)
 sha256sums=('154b120dd897d6411a55e5a2833044807eaf31a61412df601384be6fd101ed8f'
             '10b9c29ad659cce5036871a6e85598fd33cc52c0c38cf059eeb485382a5d90d7'
-            'ddf0ddca0a540fd4f34f38b7b9090f96746e37da12b4e2bf8f4174c5ad61f54a'
-            '749099d57e2693856030c8f2036dd25c55720f2d836da3ec0e49105c13cc6625'
+            'bf5f4f359af93f23062fc189261b60c0a59ef1c9d579dcf7b8733603fbf2ab50'
+            '0cf7d37d374a21acbb85ac0a52be32e5bc9c52e10a7e4b4a05f97aa6dcbb4787'
             '185d076375d6c69bc2df5853097da9f536bed355e0bf8eee134e613b3571ccdf')
 
 prepare() {
