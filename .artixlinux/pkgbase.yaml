@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: elementary-icon-theme
-  version: 8.1.0-1
-  arch:
-    - any
-  pkgname:
-    - elementary-icon-theme
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 8.1.0-1
+    version: 8.2.0-1
     packages:
-      - elementary-icon-theme-8.1.0-1-any.pkg.tar.zst
+      - elementary-icon-theme-8.2.0-1-any.pkg.tar.zst
+    debug: []
 team: galaxy
