@@ -1,0 +1,38 @@
+---
+version: 0.6.15-1
+pkgbase:
+  name: docbook-utils
+  pkgdesc: Shell scripts to manage DocBook documents
+  pkgver: 0.6.15
+  pkgrel: 1
+  url: https://github.com/devexp-db/docbook-utils
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - perl-sgmls
+  depends:
+    - openjade
+    - docbook-dsssl
+    - docbook-sgml31
+    - sh
+  optdepends:
+    - 'perl-sgmls: for conversion to man and texinfo'
+    - 'lynx: for conversion to txt'
+    - 'texlive-htmlxml: for conversion to pdf'
+  source:
+    - https://github.com/devexp-db/docbook-utils/releases/download/v0.6.15/docbook-utils-0.6.15.tar.xz
+    - db2html
+    - docbook-utils-0.6.15-grep_fix-1.patch
+    - bug_214982.patch
+    - support_source_date_epoch.patch
+  sha256sums:
+    - 154b120dd897d6411a55e5a2833044807eaf31a61412df601384be6fd101ed8f
+    - 10b9c29ad659cce5036871a6e85598fd33cc52c0c38cf059eeb485382a5d90d7
+    - ddf0ddca0a540fd4f34f38b7b9090f96746e37da12b4e2bf8f4174c5ad61f54a
+    - 749099d57e2693856030c8f2036dd25c55720f2d836da3ec0e49105c13cc6625
+    - 185d076375d6c69bc2df5853097da9f536bed355e0bf8eee134e613b3571ccdf
+pkgname:
+  - name: docbook-utils
+# generated with artixpkg 0.37.4-1-any
