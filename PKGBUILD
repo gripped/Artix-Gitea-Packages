@@ -1,0 +1,42 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Eric Bélanger <eric@archlinux.org>
+
+pkgname=qalculate-gtk
+pkgver=5.8.2
+pkgrel=1
+pkgdesc='GTK frontend for libqalculate'
+arch=(x86_64)
+url='https://qalculate.github.io/'
+license=(GPL-2.0-only)
+depends=(cairo
+         gcc-libs
+         gdk-pixbuf2
+         glib2
+         glibc
+         gtk3
+         libqalculate
+         pango)
+makedepends=(intltool
+             git
+             glib2-devel)
+source=(git+https://github.com/Qalculate/qalculate-gtk#tag=v$pkgver)
+sha256sums=('6789f78e1e65725774043120cca81c14cb80741301c266467f5024fe6f547e0b')
+
+prepare() {
+  cd $pkgname
+  autoreconf -vif -I /usr/share/gettext/m4
+}
+
+build() {
+  cd $pkgname
+  ./configure \
+    --prefix=/usr \
+    --libexecdir=/usr/lib
+  make
+}
+
+package() {
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
+}

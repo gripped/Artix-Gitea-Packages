@@ -1,0 +1,32 @@
+---
+version: 5.8.2-1
+pkgbase:
+  name: qalculate-gtk
+  pkgdesc: GTK frontend for libqalculate
+  pkgver: 5.8.2
+  pkgrel: 1
+  url: https://qalculate.github.io/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - intltool
+    - git
+    - glib2-devel
+  depends:
+    - cairo
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - libqalculate
+    - pango
+  source:
+    - git+https://github.com/Qalculate/qalculate-gtk#tag=v5.8.2
+  sha256sums:
+    - 6789f78e1e65725774043120cca81c14cb80741301c266467f5024fe6f547e0b
+pkgname:
+  - name: qalculate-gtk
+# generated with artixpkg 0.37.4-1-any
