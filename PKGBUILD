@@ -1,4 +1,5 @@
-# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 # Contributor: Chris Severance aur.severach aATt spamgourmet dott com
 # Contributor: Andreas B. Wagner <AndreasBWagner@pointfree.net>
@@ -21,18 +22,15 @@ source=(#https://sourceware.org/ftp/docbook-tools/new-trials/SOURCES/${pkgname}-
         #ftp://sources.redhat.com/pub/docbook-tools/new-trials/SOURCES/${pkgname}-${pkgver}.tar.gz
         https://github.com/devexp-db/docbook-utils/releases/download/v${pkgver}/docbook-utils-${pkgver}.tar.xz
         db2html # script taken from Fedora
-        docbook-utils-0.6.15-grep_fix-1.patch
         bug_214982.patch
         support_source_date_epoch.patch)
 sha256sums=('154b120dd897d6411a55e5a2833044807eaf31a61412df601384be6fd101ed8f'
             '10b9c29ad659cce5036871a6e85598fd33cc52c0c38cf059eeb485382a5d90d7'
-            'bf5f4f359af93f23062fc189261b60c0a59ef1c9d579dcf7b8733603fbf2ab50'
-            '0cf7d37d374a21acbb85ac0a52be32e5bc9c52e10a7e4b4a05f97aa6dcbb4787'
+            '749099d57e2693856030c8f2036dd25c55720f2d836da3ec0e49105c13cc6625'
             '185d076375d6c69bc2df5853097da9f536bed355e0bf8eee134e613b3571ccdf')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
-  patch -Np1 -i "${srcdir}"/docbook-utils-0.6.15-grep_fix-1.patch
 
   # Support SOURCE_DATE_EPOCH; patches from Debian
   patch -Np1 -i "${srcdir}"/bug_214982.patch
