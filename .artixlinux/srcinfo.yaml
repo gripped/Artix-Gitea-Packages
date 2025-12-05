@@ -1,9 +1,9 @@
 ---
-version: 25.2.7-3
+version: 25.2.7-4
 pkgbase:
   name: libreoffice-still
   pkgver: 25.2.7
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.libreoffice.org/
   arch:
     - x86_64
