@@ -1,0 +1,76 @@
+---
+version: 9.0.11.sdk112-1
+pkgbase:
+  name: dotnet-core-9.0
+  pkgver: 9.0.11.sdk112
+  pkgrel: 1
+  url: https://dotnet.microsoft.com
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - bash
+    - clang20
+    - cmake
+    - git
+    - icu
+    - krb5
+    - libgit2
+    - libunwind
+    - libxml2
+    - lldb
+    - llvm20
+    - lttng-ust2.12
+    - nodejs
+    - openssl
+    - udev
+    - zlib
+  optdepends:
+    - 'bash-completion: Bash completion support'
+  options:
+    - '!lto'
+    - staticlibs
+  source:
+    - git+https://github.com/dotnet/dotnet.git#tag=191254d6485c508af3f6f8ff5f20e91fa63ee39c
+  b2sums:
+    - 02b5f9181cd15f264762cf6bf6d96b38da593e3e03f88c15ce476a8015357e8ffc38fe6e682736d2f742152f75bff73f31a7656343773c89f931ed67c40ae009
+pkgname:
+  - name: dotnet-runtime-9.0
+    pkgdesc: The .NET Core runtime
+    depends:
+      - dotnet-host
+      - gcc-libs
+      - glibc
+      - icu
+      - krb5
+      - libunwind
+      - zlib
+      - openssl
+    optdepends:
+      - 'lttng-ust2.12: CoreCLR tracing'
+  - name: aspnet-runtime-9.0
+    pkgdesc: The ASP.NET Core runtime
+    depends:
+      - dotnet-runtime-9.0
+  - name: dotnet-sdk-9.0
+    pkgdesc: The .NET Core SDK
+    depends:
+      - dotnet-runtime-9.0
+      - dotnet-targeting-pack-9.0
+      - glibc
+      - gcc-libs
+      - netstandard-targeting-pack
+    optdepends:
+      - 'aspnet-targeting-pack: Build ASP.NET Core applications'
+  - name: dotnet-targeting-pack-9.0
+    pkgdesc: The .NET Core targeting pack
+    depends:
+      - netstandard-targeting-pack
+  - name: aspnet-targeting-pack-9.0
+    pkgdesc: The ASP.NET Core targeting pack
+    depends:
+      - dotnet-targeting-pack-9.0
+  - name: dotnet-source-built-artifacts-9.0
+    pkgdesc: Internal package for building the .NET Core SDK
+# generated with artixpkg 0.37.4-1-any
