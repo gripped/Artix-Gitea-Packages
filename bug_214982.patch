@@ -18,10 +18,10 @@ Author: Simon Paillard <simon.paillard@resel.enst-bretagne.fr>
 Forwarded: not-needed
 Bug-Debian: http://bugs.debian.org/214982
 
-Index: docbook-utils-0.6.14/helpers/docbook2man-spec.pl
+Index: docbook-utils-0.6.15/helpers/docbook2man-spec.pl
 ===================================================================
---- docbook-utils-0.6.14.orig/helpers/docbook2man-spec.pl	2012-05-09 18:27:28.000000000 +0200
-+++ docbook-utils-0.6.14/helpers/docbook2man-spec.pl	2012-05-09 18:55:53.276783163 +0200
+--- docbook-utils-0.6.15.orig/helpers/docbook2man-spec.pl	2012-05-09 18:27:28.000000000 +0200
++++ docbook-utils-0.6.15/helpers/docbook2man-spec.pl	2012-05-09 18:55:53.276783163 +0200
 @@ -278,8 +278,9 @@
  .\\" etc. to Steve Cheng <steve\@ggi-project.org>.
  _END_BANNER
