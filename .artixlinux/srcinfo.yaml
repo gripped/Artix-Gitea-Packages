@@ -1,0 +1,24 @@
+---
+version: 2.16.0.0-1
+pkgbase:
+  name: calc
+  pkgdesc: Arbitrary precision console calculator
+  pkgver: 2.16.0.0
+  pkgrel: 1
+  url: http://www.isthe.com/chongo/tech/comp/calc/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - chrpath
+    - man
+  depends:
+    - readline
+  source:
+    - http://www.isthe.com/chongo/src/calc/calc-2.16.0.0.tar.bz2
+  b2sums:
+    - a6c12437fdd8a25a10174bd873eaa79c1577ce4babfd3e6909f66fbe64496ea9386fabbcdbe8748ad729912f180ea18d1ef970d11e9c42f7819b58de172df366
+pkgname:
+  - name: calc
+# generated with artixpkg 0.37.4-1-any
