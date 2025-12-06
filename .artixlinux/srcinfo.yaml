@@ -1,10 +1,10 @@
 ---
-version: 0.1.13-2
+version: 0.1.13-3
 pkgbase:
   name: hyprcursor
   pkgdesc: The hyprland cursor format, library and utilities
   pkgver: 0.1.13
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hyprwm/hyprcursor
   arch:
     - x86_64
