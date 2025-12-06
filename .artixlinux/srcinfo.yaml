@@ -1,10 +1,10 @@
 ---
-version: 1.5.1-1
+version: 1.5.1-1.1
 pkgbase:
   name: libshumate
   pkgdesc: Map widget for GTK 4
   pkgver: 1.5.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://wiki.gnome.org/Projects/libshumate
   arch:
     - x86_64

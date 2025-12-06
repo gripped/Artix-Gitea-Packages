@@ -7,7 +7,7 @@ pkgname=(
   libshumate-docs
 )
 pkgver=1.5.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Map widget for GTK 4"
 url="https://wiki.gnome.org/Projects/libshumate"
 license=(LGPL-2.1-or-later)
