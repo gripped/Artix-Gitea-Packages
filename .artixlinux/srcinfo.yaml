@@ -1,10 +1,10 @@
 ---
-version: 0.4.5-7
+version: 0.4.5-8
 pkgbase:
   name: hyprpicker
   pkgdesc: A wlroots-compatible Wayland color picker that does not suck
   pkgver: 0.4.5
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/hyprwm/hyprpicker
   arch:
     - x86_64
