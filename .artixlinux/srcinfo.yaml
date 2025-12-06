@@ -1,10 +1,10 @@
 ---
-version: 0.52.2-1
+version: 0.52.2-2
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
   pkgver: 0.52.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -92,6 +92,7 @@ pkgbase:
     - 'glaze: to build and install plugins using hyprpm'
     - 'hyprland-protocols: to build and install plugins using hyprpm'
     - 'meson: to build and install plugins using hyprpm'
+    - 'xdg-desktop-portal-hyprland: xdg-desktop-portal backend for hyprland'
   provides:
     - wayland-compositor
   source:
