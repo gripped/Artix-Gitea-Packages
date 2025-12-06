@@ -1,10 +1,10 @@
 ---
-version: 0.2.0-1
+version: 0.2.0-2
 pkgbase:
   name: hyprland-guiutils
   pkgdesc: Hyprland GUI utilities
   pkgver: 0.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprland-guiutils
   arch:
     - x86_64
