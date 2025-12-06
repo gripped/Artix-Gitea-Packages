@@ -1,0 +1,38 @@
+---
+version: 7.7.0-1
+pkgbase:
+  name: granite7
+  pkgdesc: Library that extends Gtk+
+  pkgver: 7.7.0
+  pkgrel: 1
+  url: https://github.com/elementary/granite
+  arch:
+    - x86_64
+  groups:
+    - pantheon
+  license:
+    - LGPL3
+  makedepends:
+    - cmake
+    - git
+    - gobject-introspection
+    - libshumate
+    - meson
+    - sassc
+    - vala
+  depends:
+    - cairo
+    - gdk-pixbuf2
+    - glib2
+    - gtk4
+    - libgee
+    - pango
+  provides:
+    - libgranite-7.so
+  source:
+    - git+https://github.com/elementary/granite.git#tag=ae94e9123bbf1dea8db38bedd8a925dbd5a8f812
+  sha256sums:
+    - 8dd5f6584ac62f1d3b86de76f4eb13c21f59e19b7e6e3e30f88ddf1a89fbba10
+pkgname:
+  - name: granite7
+# generated with artixpkg 0.37.4-1-any
