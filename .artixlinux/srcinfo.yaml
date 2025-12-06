@@ -1,9 +1,9 @@
 ---
-version: 1.25-1
+version: 1.25.1-1
 pkgbase:
   name: crun
   pkgdesc: A fast and lightweight fully featured OCI runtime and C library for running containers
-  pkgver: 1.25
+  pkgver: 1.25.1
   pkgrel: 1
   url: https://github.com/containers/crun
   arch:
@@ -22,14 +22,15 @@ pkgbase:
     - libcap
     - libseccomp
     - criu
+    - libkrun
   provides:
     - oci-runtime
   source:
-    - git+https://github.com/containers/crun.git#tag=1.25?signed
+    - git+https://github.com/containers/crun.git#tag=1.25.1?signed
   validpgpkeys:
     - AC404C1C0BF735C63FF4D562263D6DF2E163E1EA
   sha256sums:
-    - bfa43678d3de3f38d00b0011d819e45b8f6ad25fdaf175eae39380cb35703ded
+    - 67cc3ea1c28bcbd978fd0d81c6727598d4ad644fe9bf22f85e502f2c42b135c5
 pkgname:
   - name: crun
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
