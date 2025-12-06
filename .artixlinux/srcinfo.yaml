@@ -1,9 +1,9 @@
 ---
-version: 3.10.1-1
+version: 3.10.2-1
 pkgbase:
   name: onednn
   pkgdesc: oneAPI Deep Neural Network Library (oneDNN)
-  pkgver: 3.10.1
+  pkgver: 3.10.2
   pkgrel: 1
   url: https://github.com/oneapi-src/oneDNN
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - intel-dnnl
     - mkl-dnn
   source:
-    - onednn-3.10.1.tar.gz::https://github.com/oneapi-src/oneDNN/archive/v3.10.1.tar.gz
+    - onednn-3.10.2.tar.gz::https://github.com/oneapi-src/oneDNN/archive/v3.10.2.tar.gz
   sha256sums:
-    - d89998bfae2f33c209e216e3d3a8d280ed6eb65a57971dfb4dcfa56beac9571b
+    - 58a7399c86789bf3756117072ed946d764ba59dd1480f0e42efd4f9b6b7b9a64
 pkgname:
   - name: onednn
 # generated with artixpkg 0.37.4-1-any
