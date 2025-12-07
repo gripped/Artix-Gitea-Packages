@@ -25,10 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.9.0-1
+    version: 1.9.0-2
     packages:
-      - tlp-1.9.0-1-any.pkg.tar.zst
-      - tlp-rdw-1.9.0-1-any.pkg.tar.zst
+      - tlp-1.9.0-2-any.pkg.tar.zst
+      - tlp-pd-1.9.0-2-any.pkg.tar.zst
+      - tlp-rdw-1.9.0-2-any.pkg.tar.zst
     debug: []
   world:
     version: 1.8.0-1

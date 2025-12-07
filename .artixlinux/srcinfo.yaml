@@ -1,15 +1,15 @@
 ---
-version: 1.9.0-1
+version: 1.9.0-2
 pkgbase:
   name: tlp
   pkgver: 1.9.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://linrunner.de/en/tlp/tlp.html
   install: tlp.install
   arch:
     - any
   license:
-    - GPL2
+    - GPL-2.0-only
   makedepends:
     - git
   source:
@@ -20,27 +20,40 @@ pkgname:
   - name: tlp
     pkgdesc: Linux Advanced Power Management
     depends:
+      - bash
       - hdparm
       - iw
       - pciutils
       - perl
       - rfkill
       - usbutils
-      - util-linux
     optdepends:
       - 'bash-completion: Bash completion'
       - 'ethtool: Disable Wake On Lan'
       - 'smartmontools: Display S.M.A.R.T. data in tlp-stat'
       - 'tp_smapi: Older ThinkPad battery functions (before Sandy Bridge)'
     conflicts:
-      - laptop-mode-tools
-      - pm-utils
-      - power-profiles-daemon
+      - tuned
     backup:
       - etc/tlp.conf
+  - name: tlp-pd
+    pkgdesc: Linux Advanced Power Management - Power Profiles Daemon
+    depends:
+      - glib2
+      - python
+      - python-dbus
+      - python-gobject
+      - python-shtab
+      - tlp
+    provides:
+      - power-profiles-daemon
+    conflicts:
+      - power-profiles-daemon
+      - tuned-ppd
   - name: tlp-rdw
     pkgdesc: Linux Advanced Power Management - Radio Device Wizard
     depends:
+      - bash
       - networkmanager
       - tlp
 # generated with artixpkg 0.37.4-1-any
