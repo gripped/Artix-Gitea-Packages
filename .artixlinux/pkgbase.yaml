@@ -1,7 +1,7 @@
 ---
 team: lib32
 actions:
-  addRepo: lib32
+  addRepo: lib32-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -38,8 +38,9 @@ repos:
     packages: []
     debug: []
   lib32-gremlins:
-    version: null
-    packages: []
+    version: 3.2.28-1
+    packages:
+      - lib32-sdl3-3.2.28-1-x86_64.pkg.tar.zst
     debug: []
   lib32:
     version: 3.2.26-1
