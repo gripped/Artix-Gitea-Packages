@@ -4,6 +4,7 @@
 # Contributor: paterbrown <paterbrown@silberhelme.de>
 # Contributor: Josip <josipponjavic@gmail.com>
 
+
 pkgname=elementary-icon-theme
 pkgver=8.2.0
 pkgrel=1
