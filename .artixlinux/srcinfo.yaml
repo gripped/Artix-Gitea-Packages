@@ -1,9 +1,9 @@
 ---
-version: 1.41.0-1
+version: 1.42.0-1
 pkgbase:
   name: python-cfn-lint
   pkgdesc: CloudFormation Linter
-  pkgver: 1.41.0
+  pkgver: 1.42.0
   pkgrel: 1
   url: https://github.com/aws-cloudformation/cfn-lint
   arch:
@@ -40,9 +40,9 @@ pkgbase:
     - 'python-jschema-to-python: for sarif formatter'
     - 'python-sarif-om: for sarif formatter'
   source:
-    - git+https://github.com/aws-cloudformation/cfn-lint.git#tag=v1.41.0
+    - git+https://github.com/aws-cloudformation/cfn-lint.git#tag=v1.42.0
   sha256sums:
-    - 88f593a46d48e4600668aee875d72fbaaaf45fd2a12aed5003a7679aaa73a484
+    - 4e6104eac039f49d9caebd322ec1ab383946a50a4e3f0d8c1e2fae81089b30d8
 pkgname:
   - name: python-cfn-lint
 # generated with artixpkg 0.37.4-1-any
