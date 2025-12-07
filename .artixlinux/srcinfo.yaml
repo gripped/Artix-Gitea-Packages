@@ -1,9 +1,9 @@
 ---
-version: 1.18.2-1
+version: 1.18.4-1
 pkgbase:
   name: dqlite
   pkgdesc: Distributed SQLite
-  pkgver: 1.18.2
+  pkgver: 1.18.4
   pkgrel: 1
   url: https://github.com/CanonicalLtd/dqlite
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   options:
     - strip
   source:
-    - dqlite-1.18.2.tar.gz::https://github.com/canonical/dqlite/archive/v1.18.2.tar.gz
+    - dqlite-1.18.4.tar.gz::https://github.com/canonical/dqlite/archive/v1.18.4.tar.gz
   sha256sums:
-    - ce569a30958b6f673cbb7f8632706bc6868bc5b82ae4b04e0f63f3ad24125aaf
+    - b554f8bd54db2c653a6671fb82698f5697d97f6d01063a65b8af00bb54fe08ce
 pkgname:
   - name: dqlite
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
