@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.28.1-4
+    version: 0.28.1-6
     packages:
-      - python-httpx-0.28.1-4-any.pkg.tar.zst
+      - python-httpx-0.28.1-6-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
