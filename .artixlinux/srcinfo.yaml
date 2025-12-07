@@ -1,10 +1,10 @@
 ---
-version: 10.20-1
+version: 10.20-2
 pkgbase:
   name: wine
   pkgdesc: A compatibility layer for running Windows programs
   pkgver: 10.20
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.winehq.org
   install: wine.install
   arch:
@@ -76,6 +76,7 @@ pkgbase:
     - wine-mono
   options:
     - '!lto'
+    - pestrip
   source:
     - git+https://gitlab.winehq.org/wine/wine.git?signed#tag=wine-10.20
     - 30-win32-aliases.conf
