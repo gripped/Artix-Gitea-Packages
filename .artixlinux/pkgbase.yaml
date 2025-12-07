@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 24.1.0-3
+    version: 25.1.0-1
     packages:
-      - python-aiofiles-24.1.0-3-any.pkg.tar.zst
+      - python-aiofiles-25.1.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
