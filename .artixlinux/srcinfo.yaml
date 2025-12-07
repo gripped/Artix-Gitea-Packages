@@ -1,10 +1,10 @@
 ---
-version: 25.08.3-3
+version: 25.08.3-4
 pkgbase:
   name: kitinerary
   pkgdesc: Data model and extraction system for travel reservation information
   pkgver: 25.08.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://kontact.kde.org
   arch:
     - x86_64
