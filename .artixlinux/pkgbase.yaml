@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.5.25-2
+    version: 1.5.26-1
     packages:
-      - python-blockbuster-1.5.25-2-any.pkg.tar.zst
+      - python-blockbuster-1.5.26-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

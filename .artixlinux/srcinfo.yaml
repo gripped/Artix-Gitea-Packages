@@ -1,10 +1,10 @@
 ---
-version: 1.5.25-2
+version: 1.5.26-1
 pkgbase:
   name: python-blockbuster
   pkgdesc: Utility to detect blocking calls in the async event loop
-  pkgver: 1.5.25
-  pkgrel: 2
+  pkgver: 1.5.26
+  pkgrel: 1
   url: https://github.com/cbornet/blockbuster
   arch:
     - any
@@ -24,9 +24,9 @@ pkgbase:
     - python
     - python-forbiddenfruit
   source:
-    - git+https://github.com/cbornet/blockbuster.git#tag=v1.5.25
+    - git+https://github.com/cbornet/blockbuster.git#tag=v1.5.26
   sha256sums:
-    - 112a5b57f70f62447fe9b8463018dcde80d23beff4e16f94f1e8bc64273ea2ff
+    - d58d4de1299b0864c3f3b7ad77caea9a8f8e4eb45af81db5cf70dd7fbb0f114d
 pkgname:
   - name: python-blockbuster
 # generated with artixpkg 0.37.4-1-any
