@@ -1,9 +1,9 @@
 ---
-version: 4.7.0-1
+version: 4.7.2-1
 pkgbase:
   name: vokoscreen
   pkgdesc: Easy to use screencast creator
-  pkgver: 4.7.0
+  pkgver: 4.7.2
   pkgrel: 1
   url: https://linuxecke.volkoh.de/vokoscreen/vokoscreen.html
   arch:
@@ -18,10 +18,10 @@ pkgbase:
     - gst-plugins-good
     - qt6-multimedia
   source:
-    - vokoscreen-4.7.0.tar.gz::https://github.com/vkohaupt/vokoscreenNG/archive/4.7.0.tar.gz
+    - vokoscreen-4.7.2.tar.gz::https://github.com/vkohaupt/vokoscreenNG/archive/4.7.2.tar.gz
     - vokoscreenNG.appdata.xml
   sha256sums:
-    - cf2115ebd9616192ef80b32a30a7858c3551139e7f121e4c15375237db6d97a0
+    - 1bc7e4d1bd59b7aaa616e3648da3ae9f147e4c786b6059ce348731eced2d2802
     - b40fdfaf0166e1735be00a08bc55091176df758af7aff6585be4122423c73dda
 pkgname:
   - name: vokoscreen

@@ -7,7 +7,7 @@
 
 pkgname=vokoscreen
 _pkgname=vokoscreenNG
-pkgver=4.7.0
+pkgver=4.7.2
 pkgrel=1
 pkgdesc="Easy to use screencast creator"
 arch=('x86_64')
@@ -17,7 +17,7 @@ depends=('gst-plugins-bad' 'gst-plugins-base' 'gst-plugins-good' 'qt6-multimedia
 makedepends=('qt6-tools')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/vkohaupt/${_pkgname}/archive/${pkgver}.tar.gz"
 	"vokoscreenNG.appdata.xml")
-sha256sums=('cf2115ebd9616192ef80b32a30a7858c3551139e7f121e4c15375237db6d97a0'
+sha256sums=('1bc7e4d1bd59b7aaa616e3648da3ae9f147e4c786b6059ce348731eced2d2802'
             'b40fdfaf0166e1735be00a08bc55091176df758af7aff6585be4122423c73dda')
 
 build() {
