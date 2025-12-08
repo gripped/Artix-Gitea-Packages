@@ -1,9 +1,9 @@
 ---
-version: 7.1.0-1
+version: 7.1.1-1
 pkgbase:
   name: rccl
   pkgdesc: ROCm Communication Collectives Library
-  pkgver: 7.1.0
+  pkgver: 7.1.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rccl/en/latest/index.html
   arch:
@@ -25,11 +25,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rccl::git+https://github.com/ROCm/rccl#tag=rocm-7.1.0
+    - rccl::git+https://github.com/ROCm/rccl#tag=rocm-7.1.1
     - rccl-json::git+https://github.com/nlohmann/json.git
     - rccl-mscclpp::git+https://github.com/microsoft/mscclpp.git
   sha256sums:
-    - 59468d4651b84d3529e1536bce7df7cb892654abebebc4af9982e47ad3cbe641
+    - 7da1096165934e4c678f3c48b07b573f07784699a0eac156d181a88648a3801c
     - SKIP
     - SKIP
 pkgname:
