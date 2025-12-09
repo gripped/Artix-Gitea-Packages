@@ -1,10 +1,10 @@
 ---
-version: 2:8.0.1-1
+version: 2:8.0.1-2
 pkgbase:
   name: ffmpeg
   pkgdesc: Complete solution to record, convert and stream audio and video
   pkgver: 8.0.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://ffmpeg.org
   arch:
