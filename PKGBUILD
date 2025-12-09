@@ -14,7 +14,7 @@ pkgname=(
  dotnet-source-built-artifacts-9.0
 )
 pkgver=9.0.11.sdk112
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64)
 url=https://dotnet.microsoft.com
 license=(MIT)

@@ -1,9 +1,9 @@
 ---
-version: 9.0.11.sdk112-1
+version: 9.0.11.sdk112-1.1
 pkgbase:
   name: dotnet-core-9.0
   pkgver: 9.0.11.sdk112
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://dotnet.microsoft.com
   arch:
     - x86_64
