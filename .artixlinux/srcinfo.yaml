@@ -1,9 +1,9 @@
 ---
-version: 6.5.3-1
+version: 6.5.4-1
 pkgbase:
   name: kinfocenter
   pkgdesc: A utility that provides information about a computer system
-  pkgver: 6.5.3
+  pkgver: 6.5.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -53,15 +53,15 @@ pkgbase:
     - 'fwupd: firmware security module'
     - 'plasma-disks: SMART devices health monitor'
   source:
-    - https://download.kde.org/stable/plasma/6.5.3/kinfocenter-6.5.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.3/kinfocenter-6.5.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.4/kinfocenter-6.5.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.4/kinfocenter-6.5.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - c2b464ed580a0823d8d171fb2d1a533a6aa2da1b88b4142d360453c152834304
+    - a854669fac8315bec205cd17ad79b03cb41f9f9c0f7af3a7823d6411c68c33ca
     - SKIP
 pkgname:
   - name: kinfocenter
