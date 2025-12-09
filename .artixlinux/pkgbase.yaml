@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2777-1
+    version: 2785-1
     packages:
-      - libretro-beetle-psx-2777-1-x86_64.pkg.tar.zst
-      - libretro-beetle-psx-hw-2777-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-2785-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-hw-2785-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
