@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.4.0-1
+    version: 3.4.0-2
     packages:
-      - ttf-input-nerd-3.4.0-1-any.pkg.tar.zst
+      - ttf-input-nerd-3.4.0-2-any.pkg.tar.zst
     debug: []

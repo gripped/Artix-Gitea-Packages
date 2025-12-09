@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-1
+version: 3.4.0-2
 pkgbase:
   name: ttf-input-nerd
   pkgdesc: Patched font Input containing nerd font symbols
   pkgver: 3.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://input.djr.com/
   arch:
     - any
