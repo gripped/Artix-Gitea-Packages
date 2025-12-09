@@ -1,9 +1,9 @@
 ---
-version: 6.5.3-1
+version: 6.5.4-1
 pkgbase:
   name: libplasma
   pkgdesc: Plasma library and runtime components
-  pkgver: 6.5.3
+  pkgver: 6.5.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -46,15 +46,15 @@ pkgbase:
   replaces:
     - plasma-framework
   source:
-    - https://download.kde.org/stable/plasma/6.5.3/libplasma-6.5.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.3/libplasma-6.5.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.4/libplasma-6.5.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.4/libplasma-6.5.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 1fe40f488501078dc700f3ca018e4ff5d4c5d344fbcd4adb76ace86269c7a9f5
+    - 1ee9f37a6f1c26bec035360d09d81b44d7b6ed8c3f60a155d8b864c3a65006ee
     - SKIP
 pkgname:
   - name: libplasma
