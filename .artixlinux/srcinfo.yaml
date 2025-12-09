@@ -1,9 +1,9 @@
 ---
-version: 6.5.3-1
+version: 6.5.4-1
 pkgbase:
   name: kmenuedit
   pkgdesc: KDE menu editor
-  pkgver: 6.5.3
+  pkgver: 6.5.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -36,15 +36,15 @@ pkgbase:
     - qt6-base
     - sonnet
   source:
-    - https://download.kde.org/stable/plasma/6.5.3/kmenuedit-6.5.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.3/kmenuedit-6.5.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.4/kmenuedit-6.5.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.4/kmenuedit-6.5.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - e50034d091635486f52e8d437bbba383d0df0185a4166d197d31f8765e5b0ae7
+    - e57d76b4231e56f237957c9cd7d8a6881a42638cede400d1e42a6bb48a1896a9
     - SKIP
 pkgname:
   - name: kmenuedit
