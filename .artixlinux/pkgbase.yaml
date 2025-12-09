@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 8555-1
+    version: 8625-1
     packages:
-      - libretro-play-8555-1-x86_64.pkg.tar.zst
+      - libretro-play-8625-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

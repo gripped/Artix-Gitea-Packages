@@ -1,9 +1,9 @@
 ---
-version: 8555-1
+version: 8625-1
 pkgbase:
   name: libretro-play
   pkgdesc: Sony PlayStation 2 core
-  pkgver: 8555
+  pkgver: 8625
   pkgrel: 1
   url: https://github.com/jpd002/Play-
   arch:
@@ -26,7 +26,7 @@ pkgbase:
     - libretro-core-info
     - zlib
   source:
-    - libretro-play::git+https://github.com/jpd002/Play-.git#commit=c7e327b5b86bfeaf13e89440a319ee5b0c039a3d
+    - libretro-play::git+https://github.com/jpd002/Play-.git#commit=63a35e28d102e482daaa5454a68c07192b4d3210
     - play-CodeGen::git+https://github.com/jpd002/Play--CodeGen.git
     - play-Dependencies::git+https://github.com/jpd002/Play-Dependencies.git
     - git+https://github.com/gulrak/filesystem.git
@@ -37,7 +37,7 @@ pkgbase:
     - git+https://github.com/Cyan4973/xxHash.git
     - git+https://github.com/facebook/zstd.git
   b2sums:
-    - 46e7bab9c3dff746e2e7bed259b2f26c42878df03b5c7cc7a0d3ddb34e57b8c69574141f802e2c743f1796f693fabee4699a99232323ba40ead39214fc68a290
+    - 0ae6517de500da0f3e7c7a20cc84034ebdacd9b0757fdda6c5b8d405807d3403aa9e45df679733edb00003640c5b34a00f1c66f7526f91243a8613bd3ae02fc6
     - SKIP
     - SKIP
     - SKIP
@@ -49,4 +49,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libretro-play
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
