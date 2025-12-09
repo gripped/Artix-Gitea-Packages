@@ -1,0 +1,57 @@
+---
+version: 3:20251122-1
+pkgbase:
+  name: foomatic-db
+  pkgver: 20251122
+  pkgrel: 1
+  epoch: 3
+  url: http://www.linuxprinting.org/foomatic.html
+  arch:
+    - any
+  makedepends:
+    - cups
+    - perl
+    - libxml2
+    - enscript
+    - perl
+    - net-snmp
+    - bash
+    - git
+  options:
+    - '!emptydirs'
+  source:
+    - foomatic-db::git+https://github.com/OpenPrinting/foomatic-db#commit=d4774d0c39bcdf970ccb335452f48d9241ec1f71
+    - foomatic-db-nonfree::git+https://github.com/OpenPrinting/foomatic-db-nonfree#commit=6ddae02ac89240c019f8b5026cfe70e30fd2b3db
+  sha256sums:
+    - SKIP
+    - SKIP
+pkgname:
+  - name: foomatic-db
+    pkgdesc: Foomatic - The collected knowledge about printers, drivers, and driver options in XML files, used by foomatic-db-engine to generate PPD files.
+    license:
+      - GPL-2.0-or-later
+      - MIT
+    optdepends:
+      - 'foomatic-db-ppds: PostScript PPD files'
+    provides:
+      - foomatic-db-foo2zjs
+    conflicts:
+      - foomatic-db-foo2zjs
+    replaces:
+      - foomatic-db-foo2zjs
+  - name: foomatic-db-ppds
+    pkgdesc: Foomatic - PPDs from printer manufacturers
+    license:
+      - GPL-2.0-or-later
+      - MIT
+  - name: foomatic-db-nonfree
+    pkgdesc: Foomatic - database extension consisting of manufacturer-supplied PPD files released under non-free licenses
+    license:
+      - LicenseRef-foomatic-db-nonfree
+    optdepends:
+      - 'foomatic-db-nonfree-ppds: nonfree PPD files'
+  - name: foomatic-db-nonfree-ppds
+    pkgdesc: Foomatic - non-free PPDs from printer manufacturers
+    license:
+      - LicenseRef-foomatic-db-nonfree-ppds
+# generated with artixpkg 0.37.4-1-any
