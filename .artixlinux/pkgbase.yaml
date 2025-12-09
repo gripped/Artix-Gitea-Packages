@@ -30,16 +30,15 @@ repos:
     packages: []
     debug: []
   world:
-    version: 9.0.9.sdk110-1
+    version: 10.0.0.sdk100-1
     packages:
-      - dotnet-host-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - netstandard-targeting-pack-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-9.0.9.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-9.0.9.sdk110-1-x86_64.pkg.tar.zst
+      - dotnet-host-10.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-10.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-10.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-10.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-10.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-10.0.0.sdk100-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-10.0.0.sdk100-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
