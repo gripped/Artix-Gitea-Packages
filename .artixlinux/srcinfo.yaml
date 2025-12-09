@@ -1,9 +1,9 @@
 ---
-version: 6.5.3-1
+version: 6.5.4-1
 pkgbase:
   name: krdp
   pkgdesc: Library and examples for creating an RDP server
-  pkgver: 6.5.3
+  pkgver: 6.5.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -33,15 +33,15 @@ pkgbase:
     - qtkeychain-qt6
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.5.3/krdp-6.5.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.3/krdp-6.5.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.4/krdp-6.5.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.4/krdp-6.5.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 5becfb7cd88f756df52d4f20d3f232b645303c6e132d6d7edf75b66e1342d2ba
+    - 5427ee47ffe2f6c9d0d64693a10f00edf4245a135a93dd327385bb7d19053089
     - SKIP
 pkgname:
   - name: krdp
