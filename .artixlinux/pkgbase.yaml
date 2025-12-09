@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 319-1
+    version: 332-1
     packages:
-      - libretro-overlays-319-1-any.pkg.tar.zst
+      - libretro-overlays-332-1-any.pkg.tar.zst
     debug: []
 team: galaxy
