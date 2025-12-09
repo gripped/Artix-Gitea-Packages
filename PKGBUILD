@@ -3,9 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=plasma-desktop
-pkgver=6.5.3.1
-_pkgver=6.5.3
-_dirver=$(echo $_pkgver | cut -d. -f1-3)
+pkgver=6.5.4
+_dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='KDE Plasma Desktop'
 arch=(x86_64)
@@ -97,8 +96,8 @@ makedepends=(extra-cmake-modules
              xf86-input-libinput
              xorg-server-devel)
 groups=(plasma)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$_pkgver.tar.xz{,.sig})
-sha256sums=('bb764a2c97747f9e3027429427046754fb3ac7dff6ac82171511c716faa4d0b7'
+source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('e08d1841adfa374af1001c86604a4bf2f0d5a2230fe1f2c925db61cd984b8c0c'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
@@ -106,7 +105,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 build() {
-  cmake -B build  -S $pkgname-$_pkgver \
+  cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
   cmake --build build
