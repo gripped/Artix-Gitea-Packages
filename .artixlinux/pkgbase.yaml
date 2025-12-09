@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1681-1
+    version: 1759-1
     packages:
-      - libretro-shaders-slang-1681-1-any.pkg.tar.zst
+      - libretro-shaders-slang-1759-1-any.pkg.tar.zst
     debug: []
 team: galaxy

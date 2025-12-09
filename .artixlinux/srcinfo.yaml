@@ -1,9 +1,9 @@
 ---
-version: 1681-1
+version: 1759-1
 pkgbase:
   name: libretro-shaders-slang
   pkgdesc: Collection of shaders for libretro
-  pkgver: 1681
+  pkgver: 1759
   pkgrel: 1
   url: https://www.libretro.com/
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   provides:
     - libretro-shaders
   source:
-    - libretro-shaders-slang::git+https://github.com/libretro/slang-shaders.git#commit=30d6497f045179342afd5199039b62ceab7ff0ab
+    - libretro-shaders-slang::git+https://github.com/libretro/slang-shaders.git#commit=cf5c768ffda2520d4938df68d33fd63fff276c0c
   sha256sums:
-    - b9f761eb155277bd21603c29a9df0b4b16d0b78f3dd11bd5279a7c16a12172a0
+    - a68e4b430804555a7f4595dd0ca846961454c4a098f5759062dd1640e1ed3f6f
 pkgname:
   - name: libretro-shaders-slang
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
