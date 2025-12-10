@@ -1,0 +1,40 @@
+# Maintainer: kenobi <kenobi@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: hexchain <arch at hexchain.org>
+pkgname=libkrun
+pkgver=1.16.0
+pkgrel=5
+pkgdesc="A dynamic library providing Virtualization-based process isolation capabilities"
+url='https://github.com/containers/libkrun'
+arch=('x86_64')
+license=('Apache-2.0')
+makedepends=('cargo' 'patchelf' 'clang')
+depends=('glibc' 'gcc-libs' 'libkrunfw' 'pipewire' 'virglrenderer')
+source=("https://github.com/containers/libkrun/archive/refs/tags/v$pkgver/$pkgname-$pkgver.tar.gz"
+        libkrun-410.patch::https://patch-diff.githubusercontent.com/raw/containers/libkrun/pull/410.patch)
+sha256sums=('04b6f01f44e263d168757ebcd9bc037d7c5836c1987a547c6b2fa5837abe1ab1'
+            '26728282f3699ac3c661a7cbeb492206d0b73755fc727505432639e41bc20158')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+
+  # Fix for libkrunfw 5.x
+  patch -Np1 -i "$srcdir"/libkrun-410.patch
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+
+  export ZSTD_SYS_USE_PKG_CONFIG=1
+  make BLK=1 NET=1 EFI=0 GPU=1 SND=1 INPUT=1 VERBOSE=1
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  make DESTDIR="$pkgdir" PREFIX=/usr LIBDIR_Linux=lib install
+
+  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+}
