@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,9 +22,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.4.335.0-1
+    packages:
+      - vulkan-utility-libraries-1.4.335.0-1-x86_64.pkg.tar.zst
+    debug:
+      - vulkan-utility-libraries-debug-1.4.335.0-1-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
