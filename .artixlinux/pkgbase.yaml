@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: double-conversion
-  version: 3.3.1-1
-  arch:
-    - x86_64
-  pkgname:
-    - double-conversion
 actions:
   addRepo: world
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 3.3.1-1
+    version: 3.4.0-1
     packages:
-      - double-conversion-3.3.1-1-x86_64.pkg.tar.zst
+      - double-conversion-3.4.0-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
