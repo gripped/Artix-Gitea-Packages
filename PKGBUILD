@@ -3,7 +3,7 @@
 pkgname=knighttime
 pkgver=6.5.4
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Helpers for scheduling the dark-light cycle'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
