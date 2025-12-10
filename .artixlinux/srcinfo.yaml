@@ -1,9 +1,9 @@
 ---
-version: 1.4.328.1-1
+version: 1.4.335.0-1
 pkgbase:
   name: lib32-vulkan-validation-layers
   pkgdesc: Vulkan Validation Layers (32-bit)
-  pkgver: 1.4.328.1
+  pkgver: 1.4.335.0
   pkgrel: 1
   url: https://www.vulkan.org/
   arch:
@@ -28,9 +28,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/KhronosGroup/Vulkan-ValidationLayers#tag=vulkan-sdk-1.4.328.1
+    - git+https://github.com/KhronosGroup/Vulkan-ValidationLayers#tag=vulkan-sdk-1.4.335.0
   b2sums:
-    - a2e928bb2483511dc37b093428ce07b1db6eee0e4740673570e2a558d2a34c496c127813b88df3cdcaa05f86bdb6a768c028fd4389d6b19d1b09e56010836276
+    - 3af448fe26b1e3039b98463b16a0580154c9b6dbac16881e15549ec41beb7bcc923952d139b0d9cde8f6a235bceb0721556947b9e3d474307e06f89975372da9
 pkgname:
   - name: lib32-vulkan-validation-layers
 # generated with artixpkg 0.37.4-1-any
