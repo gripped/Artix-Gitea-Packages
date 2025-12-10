@@ -1,0 +1,38 @@
+# Maintainer: kenobi <kenobi@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: hexchain <arch at hexchain.org>
+pkgname=libkrunfw
+# Check https://github.com/containers/libkrunfw/blob/main/Makefile#L1 for kernel version
+_kver=6.12.34
+pkgver=5.0.0
+pkgrel=1
+pkgdesc="A dynamic library bundling the guest payload consumed by libkrun"
+url="https://github.com/containers/libkrunfw"
+arch=('x86_64')
+license=('GPL-2.0-only' 'LGPL-2.1-only')
+depends=('glibc')
+makedepends=('bc' 'python-pyelftools' 'cpio')
+source=("https://github.com/containers/libkrunfw/archive/refs/tags/v$pkgver/$pkgname-$pkgver.tar.gz"
+        "https://cdn.kernel.org/pub/linux/kernel/v${_kver%%.*}.x/linux-${_kver}.tar.xz")
+noextract=("linux-${_kver}.tar.xz")
+options=(!debug)  # suppress empty debug package
+sha256sums=('8718d6dcb0239999a1a462be63539ff8141d97d68d750c181f6fccdb5853a0a4'
+            'a7f3fe381f67eca4172e9b63efb61a14bd7f9e1278e03603d0ff5a93f270c24d')
+
+build() {
+  cd "$pkgname-$pkgver"
+
+  mkdir tarballs
+  cp -s "$srcdir/linux-${_kver}.tar.xz" tarballs/
+
+  make
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  make DESTDIR="$pkgdir" PREFIX=/usr LIBDIR_Linux=lib install
+
+  install -Dm644 LICENSE-GPL-2.0-only "$pkgdir"/usr/share/licenses/$pkgname/LICENSE-GPL-2.0-only
+  install -Dm644 LICENSE-LGPL-2.1-only "$pkgdir"/usr/share/licenses/$pkgname/LICENSE-LGPL-2.1-only
+}
