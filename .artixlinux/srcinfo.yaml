@@ -1,10 +1,10 @@
 ---
-version: 1.25.1-1
+version: 1.25.1-2
 pkgbase:
   name: crun
   pkgdesc: A fast and lightweight fully featured OCI runtime and C library for running containers
   pkgver: 1.25.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/containers/crun
   arch:
     - x86_64
