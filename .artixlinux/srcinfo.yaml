@@ -1,9 +1,9 @@
 ---
-version: 4.0.4-1
+version: 4.0.5-1
 pkgbase:
   name: smb4k
   pkgdesc: A KDE program that browses samba shares
-  pkgver: 4.0.4
+  pkgver: 4.0.5
   pkgrel: 1
   url: https://smb4k.sourceforge.net/
   arch:
@@ -44,9 +44,9 @@ pkgbase:
     - smbclient
     - solid
   source:
-    - https://downloads.sourceforge.net/project/smb4k/4.0.4/smb4k-4.0.4.tar.xz
+    - https://downloads.sourceforge.net/project/smb4k/4.0.5/smb4k-4.0.5.tar.xz
   sha256sums:
-    - b7c3f69c80cea5dacaf667e96f68f4c4d99dd6f8eef2b90d7a9afea82fe2ca99
+    - 7172cfb48b073ceac6c712066233be640938e935e27057e129882f935a81b9e9
 pkgname:
   - name: smb4k
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
