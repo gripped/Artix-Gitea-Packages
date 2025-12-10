@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025_12_09.c3f1ba7-1
+    packages:
+      - passt-2025_12_09.c3f1ba7-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2025_09_19.623dbf6-1
