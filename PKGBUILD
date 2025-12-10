@@ -4,7 +4,7 @@
 
 pkgname=nanobind
 pkgdesc="Tiny and efficient C++/Python bindings"
-pkgver=2.9.2
+pkgver=2.10.1
 pkgrel=1
 arch=(any)
 url="https://github.com/wjakob/nanobind"
@@ -21,16 +21,16 @@ makedepends=(
 )
 checkdepends=(
   python-pytest
-  #python-pytorch
+  python-pytorch
   python-scipy
-  #python-tensorflow
+  python-tensorflow
   python-tests
 )
 source=(
   "$pkgname-$pkgver::git+$url.git#tag=v$pkgver"
   "git+https://github.com/Tessil/robin-map.git"
 )
-sha512sums=('9c1f762948100c9f88beea1a21672ee8141dc2e5d8a053ded65b2a1d7b9aedaa3f679fac7e8e8772b56f6ce9a36669b467b50009cdc6bf3e17cef525111e0187'
+sha512sums=('c96d9c24c165dec33566e6ff6039bb4d0cb1ea29a6233cb04cfdbbf98aaf08697222d77f1496800a586cb5fda6e06937dcbd7678af84c29f0f4c46f94c65e765'
             'SKIP')
 
 prepare() {
