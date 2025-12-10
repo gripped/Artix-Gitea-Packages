@@ -1,0 +1,31 @@
+---
+version: 2.6.2.20251207-1
+pkgbase:
+  name: usb_modeswitch
+  pkgdesc: Activating switchable USB devices on Linux.
+  pkgver: 2.6.2.20251207
+  pkgrel: 1
+  url: http://www.draisberghof.de/usb_modeswitch/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - gcc
+    - make
+  depends:
+    - libusb
+    - tcl
+  backup:
+    - etc/usb_modeswitch.conf
+  source:
+    - http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-2.6.2.tar.bz2
+    - http://www.draisberghof.de/usb_modeswitch/usb-modeswitch-data-20251207.tar.bz2
+    - usb-modeswitch-2.6.2-device_reference.txt::http://www.draisberghof.de/usb_modeswitch/device_reference.txt
+  sha256sums:
+    - f7abd337784a9d1bd39cb8a587518aff6f2a43d916145eafd80b1b8b7146db66
+    - 0bb12d64aee5e467c31af61a53fb828ff7aa59c54a82ca85eeede4c5690bfa66
+    - 846b45a82a31c9755ab86d9c051e706aff445e1e793575b7ae195a4edeb4d594
+pkgname:
+  - name: usb_modeswitch
+# generated with artixpkg 0.37.5-10-any
