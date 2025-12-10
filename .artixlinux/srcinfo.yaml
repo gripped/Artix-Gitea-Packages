@@ -1,10 +1,10 @@
 ---
-version: 2025.11.12-2
+version: 2025.12.08-1
 pkgbase:
   name: yt-dlp
   pkgdesc: A youtube-dl fork with additional features and fixes
-  pkgver: 2025.11.12
-  pkgrel: 2
+  pkgver: 2025.12.08
+  pkgrel: 1
   url: https://github.com/yt-dlp/yt-dlp
   arch:
     - any
@@ -38,9 +38,9 @@ pkgbase:
     - 'python-secretstorage: For -cookies-from-browser to access the GNOME keyring while decrypting cookies of Chromium-based browsers'
     - 'yt-dlp-ejs: non-deprecated YouTube support'
   source:
-    - yt-dlp-2025.11.12.tar.gz::https://github.com/yt-dlp/yt-dlp/releases/download/2025.11.12/yt-dlp.tar.gz
+    - yt-dlp-2025.12.08.tar.gz::https://github.com/yt-dlp/yt-dlp/releases/download/2025.12.08/yt-dlp.tar.gz
   sha256sums:
-    - 561ead2e2991f11789d3cd9f9b5a2eee2641a587e2cfc1ee9631c7c1d851c0ec
+    - 9814ae7dd4118a80a6104399d4984e355d2a71f78e6bbc48137a5b299eddcbaf
 pkgname:
   - name: yt-dlp
 # generated with artixpkg 0.37.4-1-any
