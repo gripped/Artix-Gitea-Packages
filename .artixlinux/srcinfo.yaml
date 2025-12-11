@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: konqueror
   pkgdesc: KDE File Manager & Web Browser
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://apps.kde.org/konqueror/
   arch:
@@ -53,14 +53,14 @@ pkgbase:
   optdepends:
     - 'kdesu: shell command plugin'
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/konqueror-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/konqueror-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/konqueror-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/konqueror-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 3cf255797c8987692eabefe94b86e26e94aeac907f65930848e07f61044c4264
+    - 32e5f62709bfac77ce041fcfefea3cc952af0ba6b832b28b4c6f652001c338a0
     - SKIP
 pkgname:
   - name: konqueror
