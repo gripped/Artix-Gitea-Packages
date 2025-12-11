@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: kpkpass
   pkgdesc: Apple Wallet Pass reader
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -12,20 +12,23 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
+    - qt6-declarative
   depends:
     - gcc-libs
     - glibc
     - karchive
     - qt6-base
+  optdepends:
+    - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/kpkpass-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/kpkpass-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/kpkpass-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/kpkpass-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 3802a6f23edd901be975c03b3eb63e478e9384386d883b2289fb598edf3e758b
+    - 592cfa16e8f7c7ab69c7498c0facde972c5d98e9cf3e199d9f5d3da99b3f53f6
     - SKIP
 pkgname:
   - name: kpkpass
