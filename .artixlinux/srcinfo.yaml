@@ -1,0 +1,44 @@
+---
+version: 6.6.0-1
+pkgbase:
+  name: muffin
+  pkgdesc: Cinnamon window manager based on Mutter
+  pkgver: 6.6.0
+  pkgrel: 1
+  url: https://github.com/linuxmint/muffin
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - git
+    - meson
+    - intltool
+    - json-glib
+    - gobject-introspection
+    - wayland-protocols
+    - glib2-devel
+    - egl-wayland
+  depends:
+    - cinnamon-desktop
+    - gobject-introspection-runtime
+    - libcanberra
+    - libinput
+    - libsm
+    - libxkbcommon-x11
+    - startup-notification
+    - zenity
+    - graphene
+    - pipewire
+    - xorg-xwayland
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/linuxmint/muffin#tag=6.6.0
+  sha256sums:
+    - 501c947d642f3bdf685f770f720dc53cf193c196fe5492af9801a1f727e522b3
+  b2sums:
+    - 8b37b81e4287926234adab6d01953a87df164bce3ce8d99ef9de86492dd77fadf18576af7226e222cbef8376c9b4830b44a16d6b9a1755861031d0e06c2816e4
+pkgname:
+  - name: muffin
+# generated with artixpkg 0.37.4-1-any
