@@ -1,0 +1,44 @@
+---
+version: 2.4.0-1
+pkgbase:
+  name: kddockwidgets
+  pkgdesc: Dock Widgets Library by KDAB for Qt6
+  pkgver: 2.4.0
+  pkgrel: 1
+  url: https://github.com/KDAB/KDDockWidgets
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+    - GPL-3.0-only
+  makedepends:
+    - cmake
+    - nlohmann-json
+    - qt6-tools
+  depends:
+    - fmt
+    - gcc-libs
+    - glibc
+    - qt6-base
+    - qt6-declarative
+    - spdlog
+  source:
+    - https://github.com/KDAB/KDDockWidgets/releases/download/v2.4.0/kddockwidgets-2.4.0.tar.gz
+    - https://github.com/KDAB/KDDockWidgets/releases/download/v2.4.0/kddockwidgets-2.4.0.tar.gz.asc
+  validpgpkeys:
+    - E86C000370B1B9E2A9191AD53DBFB6882C9358FB
+  sha256sums:
+    - 51dbf24fe72e43dd7cb9a289d3cab47112010f1a2ed69b6fc8ac0dff31991ed2
+    - SKIP
+pkgname:
+  - name: kddockwidgets
+    depends:
+      - fmt
+      - gcc-libs
+      - glibc
+      - qt6-base
+      - qt6-declarative
+      - spdlog
+      - libfmt.so
+      - libspdlog.so
+# generated with artixpkg 0.37.4-1-any
