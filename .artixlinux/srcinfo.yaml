@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: umbrello
   pkgdesc: UML modeller
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://apps.kde.org/umbrello/
   arch:
@@ -15,36 +15,35 @@ pkgbase:
     - GPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
+    - kdoctools
   depends:
     - gcc-libs
     - glibc
-    - karchive5
-    - kcompletion5
-    - kconfig5
-    - kconfigwidgets5
-    - kcoreaddons5
-    - kcrash5
-    - ki18n5
-    - kiconthemes5
-    - kio5
-    - kjobwidgets5
-    - ktexteditor5
-    - ktextwidgets5
-    - kwidgetsaddons5
-    - kxmlgui5
+    - karchive
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - ki18n
+    - kiconthemes
+    - kio
+    - ktexteditor
+    - kwidgetsaddons
+    - kxmlgui
     - libxml2
     - libxslt
-    - qt5-base
-    - qt5-svg
+    - qt6-base
+    - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/umbrello-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/umbrello-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/umbrello-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/umbrello-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9048a6159c8486248a95b956ed08c1954ac21708b89a81fe6a3b0aa7a5207a2c
+    - 1b6264dea2c92ae4420c38567d47a0b9f0c6163ea7eff66f8354f9d1982793f7
     - SKIP
 pkgname:
   - name: umbrello
