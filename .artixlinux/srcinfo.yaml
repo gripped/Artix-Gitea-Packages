@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: libkexiv2
   pkgdesc: A library to manipulate pictures metadata
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -13,35 +13,21 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
-    - qt5-base
-    - qt6-base
   depends:
     - gcc-libs
     - glibc
     - exiv2
+    - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/libkexiv2-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/libkexiv2-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/libkexiv2-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/libkexiv2-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 0806898554b62a6f834d33bb481923d82bde91b1692ba7b146fec94b9a503d03
+    - 1deb0fa6f270b588aa3ddd946c42b00a974f79d2fc079f1125ccc8ff0e99b996
     - SKIP
 pkgname:
   - name: libkexiv2
-    depends:
-      - gcc-libs
-      - glibc
-      - exiv2
-      - qt6-base
-  - name: libkexiv2-qt5
-    depends:
-      - gcc-libs
-      - glibc
-      - exiv2
-      - qt5-base
-    conflicts:
-      - libkexiv2<24
 # generated with artixpkg 0.37.4-1-any
