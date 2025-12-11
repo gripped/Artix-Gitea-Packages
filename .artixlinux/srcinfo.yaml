@@ -1,0 +1,45 @@
+---
+version: 6.6.1-1
+pkgbase:
+  name: cinnamon-settings-daemon
+  pkgdesc: The Cinnamon Settings daemon
+  pkgver: 6.6.1
+  pkgrel: 1
+  url: https://github.com/linuxmint/cinnamon-settings-daemon
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - git
+    - meson
+    - xf86-input-wacom
+    - glib2-devel
+  depends:
+    - cinnamon-desktop
+    - colord
+    - dbus-glib
+    - libcanberra-pulse
+    - libcups
+    - libgnomekbd
+    - libgudev
+    - libnotify
+    - librsvg
+    - libwacom
+    - nss
+    - polkit
+    - pulse-native-provider
+    - upower
+  optdepends:
+    - 'cinnamon-translations: i18n'
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/linuxmint/cinnamon-settings-daemon#tag=6.6.1
+  sha512sums:
+    - 4a45dc85289bb27d68c90820ff972a8bad4c3b21708efeeba86b794781ac8d439097617a514c0197f98bf7f413fcb35ecf82e13f2d5e704419a8c81bcceb7ac6
+  b2sums:
+    - fb694bda874f9f9d0d6851ea72339fd2bd5c902e49fb9a14af13a6a085722f72fe60622543f0e83e1ab13ec382aa7ea0f60b4f9a9b06792ac5b1132f952bbfa9
+pkgname:
+  - name: cinnamon-settings-daemon
+# generated with artixpkg 0.37.4-1-any
