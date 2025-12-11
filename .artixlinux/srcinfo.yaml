@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: kdeedu-data
   pkgdesc: Common data for KDE Edu applications
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://kde.org/
   arch:
@@ -17,14 +17,14 @@ pkgbase:
   depends:
     - hicolor-icon-theme
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/kdeedu-data-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/kdeedu-data-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/kdeedu-data-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/kdeedu-data-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 71f8572b57d0edb073429e2f394145911c08368b20caa3685cf64cadbc6fa2aa
+    - 1408da5d3133145b3b022c134347620985011ca0815d99f6c805b1fc2448ae1e
     - SKIP
 pkgname:
   - name: kdeedu-data
