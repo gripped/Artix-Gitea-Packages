@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: kdepim-runtime
   pkgdesc: Extends the functionality of kdepim
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -35,7 +35,6 @@ pkgbase:
     - kidentitymanagement
     - kimap
     - kio
-    - kjobwidgets
     - kldap
     - kmailtransport
     - kmime
@@ -61,17 +60,15 @@ pkgbase:
   optdepends:
     - 'libetebase: EteSync resource'
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/kdepim-runtime-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/kdepim-runtime-25.08.3.tar.xz.sig
-    - boost-1.89.patch
+    - https://download.kde.org/stable/release-service/25.12.0/src/kdepim-runtime-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/kdepim-runtime-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 98b7acf07271658d3d9169a511676513be0659b73f5cb1fb4630aeb54fa65f85
+    - 1759e8ce2610597ae447c6da64f02b793b0a7702babb4127a1ed716a9e0e4148
     - SKIP
-    - 6b0caaa2f3eb8c9da04cbc6f4a2c8b137ed9eb8d7a25dae0ebdcbd9584004358
 pkgname:
   - name: kdepim-runtime
 # generated with artixpkg 0.37.4-1-any
