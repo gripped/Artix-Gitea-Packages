@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: kde-dev-scripts
   pkgdesc: Scripts and setting files useful during development of KDE software
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -22,14 +22,14 @@ pkgbase:
     - python
     - sh
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/kde-dev-scripts-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/kde-dev-scripts-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/kde-dev-scripts-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/kde-dev-scripts-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - f09e76b3ded5cc76b99c26bcb0275538d590267f08c921b5240c084a3cbbe47d
+    - 71db3b06379e98efa76561f08c5cd8ca780a5d64465e46d5508a299f2f76049c
     - SKIP
 pkgname:
   - name: kde-dev-scripts
