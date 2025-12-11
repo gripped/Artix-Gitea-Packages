@@ -3,32 +3,26 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xed
-pkgver=3.6.3
-pkgrel=1.1
+pkgver=3.8.5
+pkgrel=1
 pkgdesc="A small and lightweight text editor. X-Apps Project."
 arch=(x86_64)
 url="https://github.com/linuxmint/${pkgname}"
 license=(GPL)
 groups=(x-apps)
 depends=(gspell gtksourceview4 libpeas xapp)
-makedepends=(meson samurai gobject-introspection intltool itstool glib2-devel)
+makedepends=(git meson gobject-introspection intltool itstool glib2-devel python-gobject)
 optdepends=('python: required for some plugins')
-source=(${url}/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz
-        libxml-2.12.patch)
-sha256sums=('26c6810968c53d56d8d620483edc4c3e06c5e1c23a2f9cc93cb88a1f3d5884a0'
-            'ed19b6f419a4f703d290d8c97ed5d904c88a90fc475c738a0e65f7ab31697c40')
-b2sums=('ebe714e7744562910bb84d3e935fd408b54c4b83128a49e23dbf99fb84109b5fc4167eb9c843b481bba3c1b0138247ff84fc43b250b5c9f8aeee9749ffdeea79'
-        'bd3f1c73b5873b05db1a734d2b42025d460f6862dbb13813e3fc97602c43e6758e2857f2e2db14e739780a7d58fdb48e87186cfde4393b7799070def14750353')
-
-prepare() {
-  patch -d $pkgname-$pkgver -p1 < libxml-2.12.patch
-}
+source=(git+${url}#tag=$pkgver)
+sha256sums=('d9b92857975f0e0b2ccad2cd27bf94839111655f4d12996d07e3e8519b39124b')
+b2sums=('35e30c5b58273572f817853aaefb5721f64e811e034121199fcb41e9a8c2aa79356848e4ca60b7780ec5a66cfd23189e68052a8ac5a181bf094dc02b1961d486')
 
 build() {
-  artix-meson ${pkgname}-${pkgver} build
-  samu -C build
+  artix-meson ${pkgname} build
+  meson compile -C build
 }
 
 package(){
-  DESTDIR="${pkgdir}" samu -C build install
+  meson install -C build --destdir="$pkgdir"
 }
+
