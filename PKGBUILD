@@ -2,7 +2,7 @@
 
 pkgname=xapp-symbolic-icons
 pkgver=1.0.6
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="A set of symbolic icons for Gtk applications and projects"
 arch=(any)
 url="https://github.com/xapp-project/xapp-symbolic-icons"
