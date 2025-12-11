@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: filelight
   pkgdesc: View disk usage information
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://apps.kde.org/filelight/
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/filelight-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/filelight-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/filelight-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/filelight-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8a3a825c5a1c4f3662d7b786f75bf8faef6ac9f6723c8e8cd29e6cf15bda8080
+    - 355386cc10e88808eebf76fbc84094bc24b90d76afe28a9bda41b6b49381a5ab
     - SKIP
 pkgname:
   - name: filelight
