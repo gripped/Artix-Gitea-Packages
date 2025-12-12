@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: system-gremlins
-  removeRepo: system-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 7.1.0.r1.g2df7c40-1
+    version: 7.1.0.r7.gb9f7d4a-1
     packages:
-      - pacman-7.1.0.r1.g2df7c40-1-x86_64.pkg.tar.zst
+      - pacman-7.1.0.r7.gb9f7d4a-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 7.0.0.r6.gc685ae6-6

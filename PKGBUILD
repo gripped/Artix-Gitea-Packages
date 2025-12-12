@@ -2,11 +2,11 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=pacman
-pkgver=7.1.0.r1.g2df7c40
+pkgver=7.1.0.r7.gb9f7d4a
 pkgrel=1
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
 _git_tag=7.1.0
-_git_patch_level_commit=2df7c407e852543e5c9e135f4bda5ce2d3a21b70
+_git_patch_level_commit=b9f7d4a5b0bea75953f5892621a2caecc5672de5
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
@@ -61,8 +61,8 @@ source=("git+https://gitlab.archlinux.org/pacman/pacman.git#tag=v${_git_tag}?sig
 sha256sums=('74cfd4b6d2b10c742f5a4a7cdaeffb01405ab897b11b80681a9063245113a308'
             'b3bce9d662e189e8e49013b818f255d08494a57e13fc264625f852f087d3def2'
             'de428b496a825772ef49ec5555a386a4b23ffa10b9dfd9907f0671d5c1dc2178'
-            '03b3165fde80c3a5889ea5f9d3de190704825a262478f64a0b5d12a50deda9f3'
-            '06ec1332f835a33de2b26ae4517ffc00fbabe3abf311bd0c0d86e8f7c99575dd'
+            '3489d68d56fd453fd13cc456cb21014c6dd4fcb1075fe82d3f2f5fa09e729cf6'
+            '77dbd360964f3c3c86d0a777ca2a6a61ba3f6113578172434cd63515694c708c'
             'c8760d7ebb6c9817d508c691c67084be251cd9c8811ee1ccf92c1278bad74c1c'
             '933b0b878fa611bf24b92f655040a3bcb4a1b67841d929013802abbb09b2ccf4'
             '6fe03e6ea3f69d99d59a48847a8ae97c2160fca847c7aedf7b89d05e4aa9386d'
@@ -137,7 +137,6 @@ package() {
   install -D -m644 "$srcdir/alpm.sysusers" "${pkgdir}"/usr/lib/sysusers.d/alpm.conf
   install -m644 "$srcdir/fortran.conf" "$pkgdir/etc/makepkg.conf.d"
   install -m644 "$srcdir/rust.conf" "$pkgdir/etc/makepkg.conf.d"
-
 }
 
 # vim: set ts=2 sw=2 et:
