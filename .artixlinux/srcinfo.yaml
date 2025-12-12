@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: isoimagewriter
   pkgdesc: Program to write hybrid ISO files onto USB disks
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://apps.kde.org/isoimagewriter/
   arch:
@@ -29,14 +29,14 @@ pkgbase:
     - qt6-base
     - solid
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/isoimagewriter-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/isoimagewriter-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/isoimagewriter-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/isoimagewriter-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8610b4b789a8d750c6f4f28e1d2b5f984effd7eb8228325e673ad4f422512e2e
+    - baaa8c619747cbf7a65b6e83ea450921a137fe3e374289a80b7cc9da8e75f3b9
     - SKIP
 pkgname:
   - name: isoimagewriter
