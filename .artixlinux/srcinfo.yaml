@@ -1,10 +1,10 @@
 ---
-version: 258.2-2
+version: 258.3-1
 pkgbase:
   name: lib32-udev
   pkgdesc: Userspace device file manager (32-bit)
-  pkgver: 258.2
-  pkgrel: 2
+  pkgver: 258.3
+  pkgrel: 1
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -36,7 +36,7 @@ pkgbase:
   options:
     - strip
   source:
-    - git+https://github.com/systemd/systemd#tag=v258.2?signed
+    - git+https://github.com/systemd/systemd#tag=v258.3?signed
     - 0001-artix-standalone-install.patch
   validpgpkeys:
     - 63CDA1E5D3FC22B998D20DD6327F26951A015CC4
@@ -44,8 +44,8 @@ pkgbase:
     - 9A774DB5DB996C154EBBFBFDA0099A18E29326E1
     - 5C251B5FC54EB2F80F407AAAC54CA336CFEB557E
   sha512sums:
-    - b1c75dca0e8da6b965b53b37ed0fceedc8d9b328aac0dae8dc025a50dc62cdb8f989c466057ee5ee94f19b3fb46ccbd334780193b70b25f706e21c1afc56b372
-    - 0571f451b6e8dede6bad537d67d33d81020c7d67d9143e861aa20a77f6176c70b322e86c589cdcea52ca57fec420310d162eb4e1c378827d27ba2b8b380effeb
+    - 5176b59b638a09a1ffc5523059420c6e48d6f776f7450ec055074bf09c755fac71bdd38d10f08febe98f992087ec6e7f61fcb6556639c789aa917e3e4e59c495
+    - bb956ac16825d084e6a94fd647ca4add8df45cd6508ada5c9a7775dc98fa835760d97883a7c2be60eb913a0afeb4bf596206e5a98913e0009d803f4932957b4b
 pkgname:
   - name: lib32-udev
 # generated with artixpkg 0.37.4-1-any
