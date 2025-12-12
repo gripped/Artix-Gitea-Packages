@@ -1,0 +1,39 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Sanpi <sanpi+aur@homecomputing.fr>
+
+pkgname=jaq
+pkgver=2.3.0
+pkgrel=1
+pkgdesc='A jq clone focussed on correctness, speed, and simplicity'
+url="https://github.com/01mf02/$pkgname"
+arch=(x86_64)
+license=(MIT)
+depends=(gcc-libs
+         glibc)
+makedepends=(cargo)
+_archive="$pkgname-$pkgver"
+source=("$url/archive/v$pkgver/$_archive.tar.gz")
+sha256sums=('80fae7c5bbbc244580ca77d3e5a4fc6e9c3ea08a5526d562e3c5300edd44fe8b')
+
+prepare() {
+	cd "$_archive"
+	cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+	cd "$_archive"
+	CFLAGS+=' -ffat-lto-objects'
+	cargo build --frozen --release
+}
+
+check() {
+	cd "$_archive"
+	cargo test --frozen
+}
+
+package() {
+	cd "$_archive"
+	install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE-MIT
+}
