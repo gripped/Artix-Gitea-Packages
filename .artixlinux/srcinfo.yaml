@@ -1,10 +1,10 @@
 ---
-version: 1.13.0-2
+version: 1.13.1-1
 pkgbase:
   name: pacman-contrib
   pkgdesc: Contributed scripts and tools for pacman systems
-  pkgver: 1.13.0
-  pkgrel: 2
+  pkgver: 1.13.1
+  pkgrel: 1
   url: https://gitlab.archlinux.org/pacman/pacman-contrib
   arch:
     - x86_64
@@ -26,13 +26,13 @@ pkgbase:
     - 'vim: default diff program for pacdiff'
     - 'neovim: default diff program for pacdiff if EDITOR=nvim'
   source:
-    - git+https://gitlab.archlinux.org/pacman/pacman-contrib.git#tag=v1.13.0
+    - git+https://gitlab.archlinux.org/pacman/pacman-contrib.git#tag=v1.13.1
     - pacman-contrib-artix.patch
   validpgpkeys:
     - 04DC3FB1445FECA813C27EFAEA4F7B321A906AD9
     - 44A62127789A949F2F082ED429C71CE612B57264
   b2sums:
-    - 9082d473deb2eef42132ea6c2817cc56704b41d6cdba378dc3d7ea4dbe7cee629012c8f3249c1a613094490f186b1c1e883281da88e86871982ccce71f89679a
+    - cf1396aa108c6742d74a369456dfdf6a83286c0e8996b730ed16fa8907d0253ebb49ddcd6b548959d5df8d30af223d7883bbabda9e1dfb006d175400e37a105f
     - e7ec0e49e94c9d1ad2ddfd748966431759b57181e96bea93e60ae6451556fc7d258ed1d1b10f40f123adf442839f2b5b4306e3cf23a7383ae7fcae8930a01157
 pkgname:
   - name: pacman-contrib
