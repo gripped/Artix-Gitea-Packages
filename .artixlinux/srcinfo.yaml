@@ -1,0 +1,32 @@
+---
+version: 2025c-1
+pkgbase:
+  name: tzdata
+  pkgdesc: Sources for time zone and daylight saving time data
+  pkgver: 2025c
+  pkgrel: 1
+  url: https://www.iana.org/time-zones
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-tz
+  optdepends:
+    - 'bash: for tzselect'
+    - 'glibc: for zdump, zic'
+  options:
+    - '!emptydirs'
+  source:
+    - https://www.iana.org/time-zones/repository/releases/tzcode2025c.tar.gz
+    - https://www.iana.org/time-zones/repository/releases/tzcode2025c.tar.gz.asc
+    - https://www.iana.org/time-zones/repository/releases/tzdata2025c.tar.gz
+    - https://www.iana.org/time-zones/repository/releases/tzdata2025c.tar.gz.asc
+  validpgpkeys:
+    - 7E3792A9D8ACF7D633BC1588ED97E90E62AA7E34
+  sha512sums:
+    - d14bc0680b9cb33d6526a2c0e483f2abafc2593cfe5fbfe7dcab940aafdc1baaec065dbaa1bb58b03586a8631ffdf43ebb22ff5a70503298b6ea2cf061d82c16
+    - SKIP
+    - 1e33f7212fd0ae2ad3c16e68f0c1fc7a6ad26a126b8406c379a5768d79604c6a816054bd0fe3a63228d70cd6a1fc2b1bae2a9f8014e102d3727eb9d21affa1f1
+    - SKIP
+pkgname:
+  - name: tzdata
+# generated with artixpkg 0.37.4-1-any
