@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=koko
-pkgver=25.08.3
+pkgver=25.12.0
 pkgrel=1
 pkgdesc='Image gallery application'
 url='https://apps.kde.org/koko/'
@@ -17,7 +17,6 @@ depends=(exiv2
          kdbusaddons
          kdeclarative
          kfilemetadata
-         kguiaddons
          ki18n
          kio
          kirigami
@@ -37,7 +36,7 @@ makedepends=(extra-cmake-modules)
 groups=(kde-applications
         kde-graphics)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('cd67043b969c9469d9e9c1067cf42c2ea3e22e0227abef3a77620d8fcd259757'
+sha256sums=('5d6c0082b63f862a6effb499633b2da4fd49dd6d6510eae7af211838b4ba8f9f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
