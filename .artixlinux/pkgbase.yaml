@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025_12_09.c3f1ba7-1
+    version: 2025_12_10.d04c480-1
     packages:
-      - passt-2025_12_09.c3f1ba7-1-x86_64.pkg.tar.zst
+      - passt-2025_12_10.d04c480-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2025_09_19.623dbf6-1
