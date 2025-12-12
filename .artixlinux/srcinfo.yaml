@@ -1,10 +1,10 @@
 ---
-version: 11.7.4-1
+version: 11.7.4-4
 pkgbase:
   name: pamac
   pkgdesc: A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstream support
   pkgver: 11.7.4
-  pkgrel: 1
+  pkgrel: 4
   url: https://github.com/manjaro/pamac
   install: pamac.install
   arch:
