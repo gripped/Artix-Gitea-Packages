@@ -1,10 +1,10 @@
 ---
-version: 11.7.4-3
+version: 11.7.4-4
 pkgbase:
   name: libpamac
   pkgdesc: Pamac package manager library based on libalpm
   pkgver: 11.7.4
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/manjaro/libpamac
   install: pamac.install
   arch:

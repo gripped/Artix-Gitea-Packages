@@ -5,7 +5,7 @@
 
 pkgname=libpamac
 pkgver=11.7.4
-pkgrel=3
+pkgrel=4
 pkgdesc="Pamac package manager library based on libalpm"
 arch=('x86_64')
 url="https://github.com/manjaro/libpamac"
