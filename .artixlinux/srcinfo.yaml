@@ -1,10 +1,10 @@
 ---
-version: 2.4.8-3
+version: 2.4.8-4
 pkgbase:
   name: gnupg
   pkgdesc: Complete and free implementation of the OpenPGP standard
   pkgver: 2.4.8
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.gnupg.org/
   install: gnupg.install
   arch:
@@ -73,6 +73,7 @@ pkgbase:
     - 0021-Add-keyboxd-systemd-support.patch
     - 0022-Support-large-RSA-keygen-in-non-batch-mode.patch
     - 0023-gpg-Verify-Text-mode-Signatures-over-binary-Literal-.patch
+    - gnupg-2.4.8-fix-gpg-agent-memory-leak.patch
   validpgpkeys:
     - 5B80C5754298F0CB55D8ED6ABCEF7E294B092E28
     - 6DAA6E64A76D2840571B4902528897B826403ADA
@@ -104,6 +105,7 @@ pkgbase:
     - 5ad3252991b975080154971b235c493c91f21242ccd47aa8a43f57d62eac79e6
     - 9bb1ea61b1f2885e4e82cf743e065c67ee60ce8a8c135ae6b4a56536a49bcec6
     - fe879074384037f818c5287c668d2e655bc3628299ce1ab33f8999967c88321d
+    - 848266985543a65c0beec1bac16db7e0b7eb6b494a2759c690ece57a1d579511
   b2sums:
     - 2b0b212f01e96ed04340437d71986473a088d6935e6ef0cde2ce983667037e18bcc519e316dce3789f952ca08cb7f1cbf6312d460619f686ec247a5403d85a57
     - 5e4fed3c54785fc0140a1cfe970c6ed6a61c0041961999a9777dfcb0050d45e2b9231b3e5e97e025cefe1461614b599bc7129eea931d1996f4849cd83f546abc
@@ -130,6 +132,7 @@ pkgbase:
     - d8c5b45c361b252b712ba931e1f64fb90eb1781f2a3204f673f268fda97e610253f3f584629e99353006ed8c8e1061693a02b6aa0088ff7bf47fd1a62a1aa627
     - da8bf0888fd44e2beb23128adced17225ace1ff5e31bf04b2f99c24b4ffd0c8f05c4e0d63490b20983f237ffd96ca8681c1cf10de6bdd1ad4463c239ba680a30
     - 88d8d3bc31bb071b3b66a6276d5cb5ee0c0add168e26c7b89f62589b9290cfaaeef31ec60e376a1c027ec972bf1419653c1ffddd11a6a7f328e1533ae3f36810
+    - 4730e1183c013a7f8ef8072f216b41530fec3a712a58eeb2f920c12fee1a871a72d59dc34c3fc1a35c6cac4f25407879176fd3a547141137b560efe7fbb9d4aa
 pkgname:
   - name: gnupg
     depends:
