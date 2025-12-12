@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: kclock
   pkgdesc: Clock app for Plasma Mobile
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://apps.kde.org/kclock/
   arch:
@@ -16,6 +16,7 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
+    - wayland-protocols
   depends:
     - gcc-libs
     - glibc
@@ -39,15 +40,16 @@ pkgbase:
     - qt6-declarative
     - qt6-multimedia
     - qt6-svg
+    - wayland
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/kclock-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/kclock-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/kclock-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/kclock-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - d8acfcaa36ff8dd424de82ae1636badd9aa2f50a6c4e3e35788ed5cc396276e2
+    - 8947a4a9510e2d9fae49238cc267c015cc1b1c91e02cd072f02da7f02052af23
     - SKIP
 pkgname:
   - name: kclock
