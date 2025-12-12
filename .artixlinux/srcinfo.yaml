@@ -1,9 +1,9 @@
 ---
-version: 25.08.3-1
+version: 25.12.0-1
 pkgbase:
   name: kdevelop-python
   pkgdesc: Python language and documentation plugin for KDevelop
-  pkgver: 25.08.3
+  pkgver: 25.12.0
   pkgrel: 1
   url: https://www.kdevelop.org/
   arch:
@@ -32,14 +32,14 @@ pkgbase:
   optdepends:
     - 'python-pycodestyle: for Python style checking'
   source:
-    - https://download.kde.org/stable/release-service/25.08.3/src/kdev-python-25.08.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.08.3/src/kdev-python-25.08.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.0/src/kdev-python-25.12.0.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.0/src/kdev-python-25.12.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 56ba13a7e1721ae17a015138649ef6ef4970e99d7ff47322f296a69f1734fb3e
+    - fb37b36855648336466ecdc948b371eb0dabe30b12e313137ca2f69db602b91d
     - SKIP
 pkgname:
   - name: kdevelop-python
