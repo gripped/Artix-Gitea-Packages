@@ -52,9 +52,9 @@ sha256sums=('13f531db76921740e7d5b2478cc774d29757313ff4a85befe5c683c6b0cd0d47'
             'b5236af02c25cd7de4b2c9c2d0f064dac3c2f54da5cc72bf72fc6236a34bd9c4')
 
 prepare() {
-    cd "$srcdir/$pkgname"
-    sed -E -i 's/\balpm_option_set_disable_sandbox\(/alpm_option_set_disable_sandbox_syscalls(/g' \
-        libpamac/src/alpm_config.vala
+    #cd "$pkgname"
+    sed -e 's/alpm_option_set_disable_sandbox/alpm_option_set_disable_sandbox_syscalls/' \
+        -i "$pkgname"/vapi/libalpm.vapi
 }
 
 build() {
