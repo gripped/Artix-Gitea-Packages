@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.2.1-1
+    version: 5.2.2-1
     packages:
-      - certbot-apache-5.2.1-1-any.pkg.tar.zst
+      - certbot-apache-5.2.2-1-any.pkg.tar.zst
     debug: []
 team: galaxy
