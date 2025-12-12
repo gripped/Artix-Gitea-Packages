@@ -7,20 +7,20 @@
 # Contributor: Robert Orzanna <orschiro at gmail dot com>
 
 pkgname=timeshift
-pkgver=25.07.7
-pkgrel=1
+pkgver=25.12.0
+pkgrel=2
 pkgdesc="A system restore utility for Linux"
 url="https://github.com/linuxmint/timeshift"
 arch=('x86_64')
 license=('GPL-2.0-or-later')
-depends=('libgee' 'json-glib' 'gtk3' 'vte3' 'rsync' 'xapp' 'cronie' 'which')
+depends=('libgee' 'json-glib' 'gtk3' 'vte3' 'rsync' 'xapp' 'cronie')
 makedepends=('help2man' 'meson' 'vala')
 optdepends=('btrfs-progs: For BTRFS support'
             'grub-btrfs: For BTRFS snapshots in GRUB'
             'xorg-xhost: For authorization on Wayland')
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('c4de584ac4ab29d17edae35d372fc64fd3a92e6d15efb5eb8ea458b315c6d52f')
+sha256sums=('1a73465c0d45083fc1338f2098bd01c4983f080896a5777b45b8e9c8e83abce4')
 
 build() {
 	artix-meson "${pkgname}-${pkgver}" build

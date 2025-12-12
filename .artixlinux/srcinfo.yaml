@@ -1,10 +1,10 @@
 ---
-version: 25.07.7-1
+version: 25.12.0-2
 pkgbase:
   name: timeshift
   pkgdesc: A system restore utility for Linux
-  pkgver: 25.07.7
-  pkgrel: 1
+  pkgver: 25.12.0
+  pkgrel: 2
   url: https://github.com/linuxmint/timeshift
   install: timeshift.install
   arch:
@@ -23,15 +23,14 @@ pkgbase:
     - rsync
     - xapp
     - cronie
-    - which
   optdepends:
     - 'btrfs-progs: For BTRFS support'
     - 'grub-btrfs: For BTRFS snapshots in GRUB'
     - 'xorg-xhost: For authorization on Wayland'
   source:
-    - timeshift-25.07.7.tar.gz::https://github.com/linuxmint/timeshift/archive/refs/tags/25.07.7.tar.gz
+    - timeshift-25.12.0.tar.gz::https://github.com/linuxmint/timeshift/archive/refs/tags/25.12.0.tar.gz
   sha256sums:
-    - c4de584ac4ab29d17edae35d372fc64fd3a92e6d15efb5eb8ea458b315c6d52f
+    - 1a73465c0d45083fc1338f2098bd01c4983f080896a5777b45b8e9c8e83abce4
 pkgname:
   - name: timeshift
 # generated with artixpkg 0.37.4-1-any
