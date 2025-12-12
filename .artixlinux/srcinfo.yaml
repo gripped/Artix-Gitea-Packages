@@ -1,10 +1,10 @@
 ---
-version: 258.2-2
+version: 258.3-1
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
-  pkgver: 258.2
-  pkgrel: 2
+  pkgver: 258.3
+  pkgrel: 1
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -33,7 +33,7 @@ pkgbase:
     - glibc
     - libcap
   source:
-    - git+https://github.com/systemd/systemd#tag=v258.2?signed
+    - git+https://github.com/systemd/systemd#tag=v258.3?signed
     - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.4
     - 0001-Use-Arch-Linux-device-access-groups.patch
     - 0001-artix-standalone-install.patch
@@ -47,10 +47,10 @@ pkgbase:
     - 9A774DB5DB996C154EBBFBFDA0099A18E29326E1
     - 5C251B5FC54EB2F80F407AAAC54CA336CFEB557E
   sha512sums:
-    - b1c75dca0e8da6b965b53b37ed0fceedc8d9b328aac0dae8dc025a50dc62cdb8f989c466057ee5ee94f19b3fb46ccbd334780193b70b25f706e21c1afc56b372
+    - 5176b59b638a09a1ffc5523059420c6e48d6f776f7450ec055074bf09c755fac71bdd38d10f08febe98f992087ec6e7f61fcb6556639c789aa917e3e4e59c495
     - 1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417
     - beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377
-    - 0571f451b6e8dede6bad537d67d33d81020c7d67d9143e861aa20a77f6176c70b322e86c589cdcea52ca57fec420310d162eb4e1c378827d27ba2b8b380effeb
+    - bb956ac16825d084e6a94fd647ca4add8df45cd6508ada5c9a7775dc98fa835760d97883a7c2be60eb913a0afeb4bf596206e5a98913e0009d803f4932957b4b
     - e8acc127c0468019ca163edb2119e43ac0b0b539350cbdbb605d657dd1519203af89799044ed4cc0ee36158e305a13483047f16975e1b09f42fc036ec7115313
     - 982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5
     - ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58

@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,14 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 258.3-1
+    packages:
+      - udev-258.3-1-x86_64.pkg.tar.zst
+      - libudev-258.3-1-x86_64.pkg.tar.zst
+      - esysusers-258.3-1-x86_64.pkg.tar.zst
+      - etmpfiles-258.3-1-x86_64.pkg.tar.zst
+      - egummiboot-258.3-1-x86_64.pkg.tar.zst
+      - eukify-258.3-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 258.2-2

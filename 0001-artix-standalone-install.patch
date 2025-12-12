@@ -1,17 +1,17 @@
-From 1b6f23440c6f3e5888cce8874a388bad5a002a7c Mon Sep 17 00:00:00 2001
+From d212fb2d96dca53bb47f39f2b1d71a9707c5a80e Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Mon, 10 Nov 2025 15:19:15 +0100
-Subject: [PATCH 1/1] artix standalone install
+Date: Fri, 12 Dec 2025 22:37:42 +0100
+Subject: [PATCH 1/1] merge
 
 ---
  factory/templates/meson.build     |  2 ++
- meson.build                       | 22 +++++++++++++----
+ meson.build                       | 22 ++++++++++++++----
  rules.d/meson.build               |  3 +--
- shell-completion/bash/meson.build | 39 ++-----------------------------
- shell-completion/zsh/meson.build  | 31 ++----------------------
+ shell-completion/bash/meson.build | 38 +------------------------------
+ shell-completion/zsh/meson.build  | 29 +----------------------
  src/core/meson.build              |  5 ----
  src/hwdb/meson.build              |  2 +-
- src/libudev/meson.build           |  9 ++++++-
+ src/libudev/meson.build           |  9 +++++++-
  src/sysusers/meson.build          |  3 ++-
  src/tmpfiles/meson.build          |  3 ++-
  src/udev/meson.build              |  8 +++----
@@ -19,11 +19,11 @@ Subject: [PATCH 1/1] artix standalone install
  sysusers.d/meson.build            |  4 ++--
  test/meson.build                  |  6 ++---
  tmpfiles.d/legacy.conf.in         |  3 ---
- tmpfiles.d/meson.build            |  9 +++----
- 16 files changed, 51 insertions(+), 100 deletions(-)
+ tmpfiles.d/meson.build            |  9 +++-----
+ 16 files changed, 49 insertions(+), 99 deletions(-)
 
 diff --git a/factory/templates/meson.build b/factory/templates/meson.build
-index 3db9f255b9..e54c0c3f3b 100644
+index 0f53217a48..071cfc9547 100644
 --- a/factory/templates/meson.build
 +++ b/factory/templates/meson.build
 @@ -7,6 +7,7 @@ custom_target(
@@ -34,14 +34,16 @@ index 3db9f255b9..e54c0c3f3b 100644
          install_dir : factory_etc_dir)
  
  custom_target(
-@@ -14,4 +15,5 @@ custom_target(
+@@ -14,6 +15,7 @@ custom_target(
          output : 'vconsole.conf',
          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
          install : true,
 +        install_tag : 'etmpfiles',
          install_dir : factory_etc_dir)
+ 
+ if conf.get('ENABLE_NSS') == 1
 diff --git a/meson.build b/meson.build
-index 238b935372..2014e1e8ee 100644
+index 3fbab32730..ef858c1fc9 100644
 --- a/meson.build
 +++ b/meson.build
 @@ -132,7 +132,7 @@ includedir = prefixdir / get_option('includedir')
@@ -53,7 +55,7 @@ index 238b935372..2014e1e8ee 100644
  libexecdir_to_bin = '../../bin/'
  pkglibdir = libdir / 'systemd'
  
-@@ -2769,7 +2769,6 @@ subdir('shell-completion/zsh')
+@@ -2772,7 +2772,6 @@ subdir('shell-completion/zsh')
  subdir('sysctl.d')
  subdir('sysusers.d')
  subdir('tmpfiles.d')
@@ -61,7 +63,7 @@ index 238b935372..2014e1e8ee 100644
  
  install_subdir('factory/etc',
                 install_dir : factorydir)
-@@ -2791,6 +2790,21 @@ install_data('LICENSE.GPL2',
+@@ -2794,6 +2793,21 @@ install_data('LICENSE.GPL2',
  install_subdir('LICENSES',
                 install_dir : docdir)
  
@@ -83,7 +85,7 @@ index 238b935372..2014e1e8ee 100644
  install_emptydir(systemdstatedir)
  
  #####################################################################
-@@ -2946,10 +2960,10 @@ udev_targets = []
+@@ -2949,10 +2963,10 @@ udev_targets = []
  foreach bin : udev_binaries
          udev_targets += executables_by_name.get(bin, [])
  endforeach
@@ -118,100 +120,99 @@ index 933a84859a..8e190a834a 100644
          ['70-uaccess.rules',   conf.get('ENABLE_LOGIND') == 1 and conf.get('HAVE_ACL') == 1],
          ['71-seat.rules',      conf.get('ENABLE_LOGIND') == 1],
 diff --git a/shell-completion/bash/meson.build b/shell-completion/bash/meson.build
-index 6a547a5e69..67ef541aae 100644
+index 178986e171..9492becac9 100644
 --- a/shell-completion/bash/meson.build
 +++ b/shell-completion/bash/meson.build
-@@ -17,47 +17,12 @@ custom_target(
-         install : bashcompletiondir != 'no',
+@@ -20,48 +20,12 @@ custom_target(
          install_dir : bashcompletiondir)
  
--items = [['busctl',              ''],
--         ['journalctl',          ''],
--         ['systemd-analyze',     ''],
--         ['systemd-cat',         ''],
--         ['systemd-cgls',        ''],
--         ['systemd-cgtop',       ''],
--         ['systemd-creds',       ''],
--         ['systemd-delta',       ''],
--         ['systemd-detect-virt', ''],
--         ['systemd-id128',       ''],
--         ['systemd-nspawn',      'ENABLE_NSPAWN'],
--         ['systemd-path',        ''],
--         ['systemd-run',         ''],
--         ['systemd-vpick',       ''],
--         ['udevadm',             ''],
--         ['bootctl',             ''],
--         ['run0',                ''],
--         ['coredumpctl',         'ENABLE_COREDUMP'],
--         ['homectl',             'ENABLE_HOMED'],
--         ['hostnamectl',         'ENABLE_HOSTNAMED'],
--         ['importctl',           'ENABLE_IMPORTD'],
--         ['kernel-install',      'ENABLE_KERNEL_INSTALL'],
--         ['localectl',           'ENABLE_LOCALED'],
--         ['loginctl',            'ENABLE_LOGIND'],
--         ['machinectl',          'ENABLE_MACHINED'],
--         ['networkctl',          'ENABLE_NETWORKD'],
--         ['oomctl',              'ENABLE_OOMD'],
--         ['portablectl',         'ENABLE_PORTABLED'],
--         ['resolvectl',          'ENABLE_RESOLVE'],
--         ['systemd-cryptenroll', 'HAVE_LIBCRYPTSETUP'],
--         ['systemd-confext',     'ENABLE_SYSEXT'],
--         ['systemd-dissect',     'HAVE_BLKID'],
--         ['systemd-resolve',     'ENABLE_RESOLVE'],
--         ['systemd-sysext',      'ENABLE_SYSEXT'],
--         ['systemd-vmspawn',     'ENABLE_VMSPAWN'],
--         ['timedatectl',         'ENABLE_TIMEDATED'],
--         ['userdbctl',           'ENABLE_USERDB']]
-+items = [['udevadm',             '']]
+ foreach item : [
+-        ['bootctl',             ''],
+-        ['busctl',              ''],
+-        ['coredumpctl',         'ENABLE_COREDUMP'],
+-        ['homectl',             'ENABLE_HOMED'],
+-        ['hostnamectl',         'ENABLE_HOSTNAMED'],
+-        ['importctl',           'ENABLE_IMPORTD'],
+-        ['journalctl',          ''],
+-        ['kernel-install',      'ENABLE_KERNEL_INSTALL'],
+-        ['localectl',           'ENABLE_LOCALED'],
+-        ['loginctl',            'ENABLE_LOGIND'],
+-        ['machinectl',          'ENABLE_MACHINED'],
+-        ['networkctl',          'ENABLE_NETWORKD'],
+-        ['oomctl',              'ENABLE_OOMD'],
+-        ['portablectl',         'ENABLE_PORTABLED'],
+-        ['resolvectl',          'ENABLE_RESOLVE'],
+-        ['run0',                ''],
+-        ['systemd-analyze',     ''],
+-        ['systemd-cat',         ''],
+-        ['systemd-cgls',        ''],
+-        ['systemd-cgtop',       ''],
+-        ['systemd-confext',     'ENABLE_SYSEXT'],
+-        ['systemd-creds',       ''],
+-        ['systemd-cryptenroll', 'HAVE_LIBCRYPTSETUP'],
+-        ['systemd-delta',       ''],
+-        ['systemd-detect-virt', ''],
+-        ['systemd-dissect',     'HAVE_BLKID'],
+-        ['systemd-id128',       ''],
+-        ['systemd-nspawn',      'ENABLE_NSPAWN'],
+-        ['systemd-path',        ''],
+-        ['systemd-resolve',     'ENABLE_RESOLVE'],
+-        ['systemd-run',         ''],
+-        ['systemd-sysext',      'ENABLE_SYSEXT'],
+-        ['systemd-vmspawn',     'ENABLE_VMSPAWN'],
+-        ['systemd-vpick',       ''],
+-        ['timedatectl',         'ENABLE_TIMEDATED'],
+         ['udevadm',             ''],
+-        ['userdbctl',           'ENABLE_USERDB'],
+-        ['varlinkctl',          ''],
+ ]
  
- foreach item : items
-         if bashcompletiondir != 'no' and (item[1] == '' or conf.get(item[1]) == 1)
+         if item[1] == '' or conf.get(item[1]) == 1
                  install_data(item[0],
 +                        install_tag : 'udev',
                               install_dir : bashcompletiondir)
          endif
  endforeach
 diff --git a/shell-completion/zsh/meson.build b/shell-completion/zsh/meson.build
-index 4de28388ce..63ad624af5 100644
+index 221c30627f..e4cf6c45dd 100644
 --- a/shell-completion/zsh/meson.build
 +++ b/shell-completion/zsh/meson.build
-@@ -12,39 +12,12 @@ custom_target(
-         install : zshcompletiondir != 'no',
+@@ -15,39 +15,12 @@ custom_target(
          install_dir : zshcompletiondir)
  
--items = [['_busctl',                   ''],
--         ['_journalctl',               ''],
--         ['_systemd-analyze',          ''],
--         ['_systemd-delta',            ''],
--         ['_systemd-nspawn',           ''],
--         ['_systemd',                  ''],
--         ['_systemd-path',             ''],
--         ['_systemd-run',              ''],
--         ['_run0',                     ''],
--         ['_udevadm',                  ''],
--         ['_varlinkctl',               ''],
--         ['_kernel-install',           'ENABLE_KERNEL_INSTALL'],
--         ['_sd_bus_address',           ''],
--         ['_sd_hosts_or_user_at_host', ''],
--         ['_sd_outputmodes',           ''],
--         ['_sd_unit_files',            ''],
--         ['_sd_machines',              ''],
--         ['_bootctl',                  ''],
--         ['_coredumpctl',              'ENABLE_COREDUMP'],
--         ['_hostnamectl',              'ENABLE_HOSTNAMED'],
--         ['_localectl',                'ENABLE_LOCALED'],
--         ['_loginctl',                 'ENABLE_LOGIND'],
--         ['_machinectl',               'ENABLE_MACHINED'],
--         ['_networkctl',               'ENABLE_NETWORKD'],
--         ['_oomctl',                   'ENABLE_OOMD'],
--         ['_systemd-inhibit',          'ENABLE_LOGIND'],
--         ['_resolvectl',               'ENABLE_RESOLVE'],
--         ['_systemd-tmpfiles',         'ENABLE_TMPFILES'],
--         ['_timedatectl',              'ENABLE_TIMEDATED']]
-+items = [['_udevadm',                  '']]
+ foreach item : [
+-        ['_bootctl',                  ''],
+-        ['_busctl',                   ''],
+-        ['_coredumpctl',              'ENABLE_COREDUMP'],
+-        ['_hostnamectl',              'ENABLE_HOSTNAMED'],
+-        ['_journalctl',               ''],
+-        ['_kernel-install',           'ENABLE_KERNEL_INSTALL'],
+-        ['_localectl',                'ENABLE_LOCALED'],
+-        ['_loginctl',                 'ENABLE_LOGIND'],
+-        ['_machinectl',               'ENABLE_MACHINED'],
+-        ['_networkctl',               'ENABLE_NETWORKD'],
+-        ['_oomctl',                   'ENABLE_OOMD'],
+-        ['_resolvectl',               'ENABLE_RESOLVE'],
+-        ['_run0',                     ''],
+-        ['_sd_bus_address',           ''],
+-        ['_sd_hosts_or_user_at_host', ''],
+-        ['_sd_machines',              ''],
+-        ['_sd_outputmodes',           ''],
+-        ['_sd_unit_files',            ''],
+-        ['_systemd',                  ''],
+-        ['_systemd-analyze',          ''],
+-        ['_systemd-delta',            ''],
+-        ['_systemd-inhibit',          'ENABLE_LOGIND'],
+-        ['_systemd-nspawn',           ''],
+-        ['_systemd-path',             ''],
+-        ['_systemd-run',              ''],
+-        ['_systemd-tmpfiles',         'ENABLE_TMPFILES'],
+-        ['_timedatectl',              'ENABLE_TIMEDATED'],
+         ['_udevadm',                  ''],
+-        ['_varlinkctl',               ''],
+ ]
  
- foreach item : items
-         if zshcompletiondir != 'no' and (item[1] == '' or conf.get(item[1]) == 1)
+         if item[1] == '' or conf.get(item[1]) == 1
                  install_data(item[0],
 +                        install_tag : 'udev',
                               install_dir : zshcompletiondir)
@@ -471,5 +472,5 @@ index 203eb7bb55..0c689008e9 100644
 +        install_emptydir(sysconfdir / 'tmpfiles.d', install_tag : 'etmpfiles')
  endif
 -- 
-2.51.2
+2.52.0
 
