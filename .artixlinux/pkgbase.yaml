@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.5.0-2
+    version: 1.5.1-2
     packages:
-      - python-django-ninja-1.5.0-2-any.pkg.tar.zst
+      - python-django-ninja-1.5.1-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
