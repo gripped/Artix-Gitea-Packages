@@ -1,9 +1,9 @@
 ---
-version: 9.2.0-1
+version: 10.0.0-1
 pkgbase:
   name: python-testfixtures
   pkgdesc: A collection of helpers and mock objects that are useful when writing unit tests or doc tests
-  pkgver: 9.2.0
+  pkgver: 10.0.0
   pkgrel: 1
   url: https://github.com/Simplistix/testfixtures
   arch:
@@ -23,9 +23,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/Simplistix/testfixtures.git#tag=9.2.0
+    - git+https://github.com/Simplistix/testfixtures.git#tag=10.0.0
   sha512sums:
-    - cfee61446a8704d4542ebf88076d3c761388de5ccfebd32b2bcaa201e2815397a84a96fed9d8f48d02391b7b73787963e9c2f55cf48bf805f78a40bc593dd6f3
+    - 7b129d876b8f22aae5c8152e82231bea8d0dd2417b4ed86f6f4a22f35b21b08d712898a552ebdd437b76ff9cde275e5190766a35959d0daee129963da9bc7713
 pkgname:
   - name: python-testfixtures
 # generated with artixpkg 0.37.4-1-any
