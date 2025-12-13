@@ -1,9 +1,9 @@
 ---
-version: 2.9.0-1
+version: 2.11.0-1
 pkgbase:
   name: python-openai
   pkgdesc: Python client library for the OpenAI API
-  pkgver: 2.9.0
+  pkgver: 2.11.0
   pkgrel: 1
   url: https://github.com/openai/openai-python
   arch:
@@ -47,11 +47,11 @@ pkgbase:
     - 'python-pandas: Datalib support'
     - 'python-websockets: Realtime support'
   source:
-    - openai-python-2.9.0.tar.gz::https://github.com/openai/openai-python/archive/v2.9.0.tar.gz
-    - https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-fe8a79e6fd407e6c9afec60971f03076b65f711ccd6ea16457933b0e24fb1f6d.yml
-  sha512sums:
-    - 3cc3c992f3d1c29290c127221c86af65d2cf028d6484671aa365f417737a8f86361aba9365d3c1782b2f3bcce734f71798c51c38e2ed01cf437391a21c74a543
-    - c65a8f594b38e0fdc805f6559a137e5691473914dfa42a2fc7af3a9dd2c1738e8fffe9965bcf6c321c0bea153aa63301c599f58b43f3de83e3f089682b1ec2f1
+    - https://github.com/openai/openai-python/archive/v2.11.0/python-openai-2.11.0.tar.gz
+    - https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-41f98da99f44ebe6204fce5c1dc9940f85f3472779e797b674c4fdc20306c77d.yml
+  b2sums:
+    - 8ed3806593bcf0de99289f282477f430c69ff2fa065b97e7e9eb65657cc4c5f525a78c46dc18c18a01d87a80fc45f08b3fbd3b5de69d733729503e3bdbbce0af
+    - 5c68f2ad04f5d2250aeb31d95a6bfab2f1e91f12a3a43591272ecedd67fcb8af3dc35885fce28cf2065525bd8f5bcd13faf5c49c260e8dcac77c33b7384169a8
 pkgname:
   - name: python-openai
 # generated with artixpkg 0.37.4-1-any
