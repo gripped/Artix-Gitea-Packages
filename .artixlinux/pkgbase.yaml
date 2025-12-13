@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.0.4-8
+    version: 4.1.0-1
     packages:
-      - python-reactivex-4.0.4-8-any.pkg.tar.zst
+      - python-reactivex-4.1.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
