@@ -1,0 +1,24 @@
+---
+version: 3.4.0-1
+pkgbase:
+  name: python-django-picklefield
+  pkgdesc: A pickled object field for Django
+  pkgver: 3.4.0
+  pkgrel: 1
+  url: https://github.com/gintas/django-picklefield
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-django
+  source:
+    - git+https://github.com/gintas/django-picklefield.git#tag=b8b24bead3ff2a62449e094b56a539232e124b87
+  sha256sums:
+    - de1871b5b5070675cfd6a95094031f6b4ca4f86f6be6f2dcd1e86426ff587b43
+pkgname:
+  - name: python-django-picklefield
+# generated with artixpkg 0.37.4-1-any
