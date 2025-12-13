@@ -1,0 +1,30 @@
+---
+version: 3.2.4-1
+pkgbase:
+  name: python-wheezy-template
+  pkgdesc: A lightweight template library
+  pkgver: 3.2.4
+  pkgrel: 1
+  url: https://github.com/akornatskyy/wheezy.template
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+  source:
+    - python-wheezy-template-3.2.4.tar.gz::https://github.com/akornatskyy/wheezy.template/archive/3.2.4.tar.gz
+  sha256sums:
+    - 9b41c32eb45eb253b48e1ec3c9732786527181146c76d386945fd1064572452c
+pkgname:
+  - name: python-wheezy-template
+# generated with artixpkg 0.37.4-1-any
