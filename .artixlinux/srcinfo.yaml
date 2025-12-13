@@ -1,10 +1,10 @@
 ---
-version: 3.0.6.3-1
+version: 3.0.6.3-2
 pkgbase:
   name: duplicity
   pkgdesc: A utility for encrypted, bandwidth-efficient backups using the rsync algorithm
   pkgver: 3.0.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://duplicity.gitlab.io/
   arch:
     - x86_64
@@ -21,6 +21,7 @@ pkgbase:
     - gnupg
     - librsync
     - python-fasteners
+    - python-pexpect
   optdepends:
     - 'lftp: backend for ftp, ftps, fish'
     - 'ncftp: alternative backend for ftp'
@@ -30,7 +31,6 @@ pkgbase:
     - 'python-gobject: GIO backend'
     - 'gvfs: GIO backend'
     - 'python-paramiko: SSH paramiko backend'
-    - 'python-pexpect: SSH pexpect backend'
     - 'python-pydrive2: Google Drive backend'
     - 'python-mediafire: Mediafire backend'
     - 'python-requests-oauthlib: OneDrive backend'
