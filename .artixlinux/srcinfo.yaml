@@ -1,9 +1,9 @@
 ---
-version: 2.1.14-1
+version: 2.1.15-1
 pkgbase:
   name: dnscrypt-proxy
   pkgdesc: A flexible DNS proxy, with support for encrypted DNS protocols
-  pkgver: 2.1.14
+  pkgver: 2.1.15
   pkgrel: 1
   url: https://github.com/DNSCrypt/dnscrypt-proxy
   arch:
@@ -29,19 +29,19 @@ pkgbase:
     - etc/dnscrypt-proxy/cloaking-rules.txt
     - etc/dnscrypt-proxy/forwarding-rules.txt
   source:
-    - git+https://github.com/DNSCrypt/dnscrypt-proxy#tag=2.1.14?signed
+    - git+https://github.com/DNSCrypt/dnscrypt-proxy#tag=2.1.15?signed
     - 0001-Make-configuration-file-hierarchy-compliant.patch
     - tmpfiles.d
     - sysusers.d
   validpgpkeys:
     - 54A2B8892CC3D6A597B92B6C210627AABA709FE1
   sha512sums:
-    - ea8199c3e973c9be7ac6389305b77322b54e3407a17ee531b7539719174059cbc2e6a70bc0ba4a46d4ca4019796676995290c274df873857c3307c048a2a72c5
+    - 024ce8f04cd4f2c2f2ba1d2ab87f5e83b2db75fa815e80c3d67e5c7b03c7e8be80bdf35a8830e842c18f143f3af73b10a7333877ab02879b4cb032248f4405a1
     - 2684f4f9f6e308dde4186ce15c8b14de2eb4d289d039ed9e10c04985c809165cc995b56cc9a2c22c5b8c80413ea2eb41a13ae589874ae6b6056195da85b323ad
     - 005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151
     - 888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8
   b2sums:
-    - 4e0a8e72e6a4bb1affcc83577a0b162c5746da19acc754625859bba61ddfcf0c6a8fa7160835c32e6b39ce7a4463e142bda87f5ab2d5439f35cc7f1584c25a1f
+    - ba2ee39fd4beaab57e8399d9290cde6192aec779dfd64d344de786472f98bc407d9c076bd83d807844b88f08e0a1ce770f5ac0de553f025250b93926dbceddbd
     - 4e41d1486584d95e02e009750f496f7d332ccaf4c60cfa82910ea1359861476b73bd1eda9d0b855deb97a732237bd9cfb30913bb2a2992c79bfec40530b68c66
     - 2c83832dd8ce63608e4a948deb0a55f2857a7e3f53b3fb8ea67a4c807f7dc7245305bf63fdb35009089df90a070cd95cb6a8f31f79e243d8c97a442554aeb428
     - 6340a1f5011145642ce2352e8be4bfa50cdf74889e608471519934d814ca64b03461bc21e347feafe98256d7b8b281c1034dd0b8890e1155bdc3dd044ae18e80
