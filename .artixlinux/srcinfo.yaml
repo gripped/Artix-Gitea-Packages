@@ -1,0 +1,27 @@
+---
+version: 7.0.0-1
+pkgbase:
+  name: python-pylast
+  pkgdesc: A Python interface to Last.fm and Libre.fm
+  pkgver: 7.0.0
+  pkgrel: 1
+  url: https://github.com/pylast/pylast
+  arch:
+    - any
+  license:
+    - Apache
+  makedepends:
+    - git
+    - python-build
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+  depends:
+    - python-httpx
+  source:
+    - git+https://github.com/pylast/pylast.git#tag=b95a694b6af9cc8f8279e03c5b859cc0bd5dff52
+  b2sums:
+    - 1bc52fd97ebfefe07b8269eb6fcc5790133880436f6e16a299dff076d782f5b97ce028dc88394ad14dc1641617d456559d1b66d6322ac48f89f2c36d40d8353c
+pkgname:
+  - name: python-pylast
+# generated with artixpkg 0.37.4-1-any
