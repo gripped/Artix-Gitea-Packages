@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.10.2-1
+    version: 0.11.0-1
     packages:
-      - python-aiohttp-socks-0.10.2-1-any.pkg.tar.zst
+      - python-aiohttp-socks-0.11.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
