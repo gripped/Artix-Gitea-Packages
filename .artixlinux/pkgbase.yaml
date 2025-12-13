@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 65.13.0-2
+    version: 65.13.1-2
     packages:
-      - python-django-allauth-65.13.0-2-any.pkg.tar.zst
+      - python-django-allauth-65.13.1-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
