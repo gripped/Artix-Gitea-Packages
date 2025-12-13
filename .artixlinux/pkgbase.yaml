@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,10 +26,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 8.2-6
-    packages:
-      - php-memcache-8.2-6-x86_64.pkg.tar.zst
-      - php-legacy-memcache-8.2-6-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: 8.2-5
