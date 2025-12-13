@@ -2,7 +2,7 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=netavark
-pkgver=1.17.0
+pkgver=1.17.1
 pkgrel=1
 pkgdesc="Container network stack"
 arch=(x86_64)
@@ -16,13 +16,13 @@ depends=(
 makedepends=(
   cargo
   git
-  mandown
+  go-md2man
   protobuf
 )
 provides=(container-network-stack=2)
 source=(git+$url#tag=v$pkgver)
-sha512sums=('7a19a3bb8a952a07c7bb98907a86d60a93e00e637289186fc3291f8157fb7ac82eefacccb6021ff078140c928c4eafb8a17f3bd18253bd42b853179def2b3ab8')
-b2sums=('98285968af880cb9b959ba5160a116710f57e5a350eab481a2317c4baa19b400f33b373a5f94f5d425257220b3328424e3013a66816f8f34322580249fd835fd')
+sha512sums=('1afbb2a336318eb27a2d64b4d147474062d7ae68dc949582349752ff780294b988ae6518d752ef02f06cb21d0befa70665a63c738e71da8cdba0fb4da6e919b8')
+b2sums=('e239b18efb5006130a575d16f6226f8cdbebd46825835e9166cda52e004650de20992386c377b32d6525b5af2545531e84c7e3907b65395d2278bdfad9166f8f')
 
 prepare() {
   cd $pkgname
@@ -31,8 +31,7 @@ prepare() {
 
 build() {
   cd $pkgname
-  # generate man page directly as docs target is broken: https://github.com/containers/netavark/issues/524
-  mandown docs/$pkgname.1.md > $pkgname.1
+  make -C docs
   cargo build --frozen --release --all-features
 }
 
@@ -44,6 +43,7 @@ check() {
 package() {
   cd $pkgname
   install -vDm 755 target/release/$pkgname -t "$pkgdir/usr/lib/podman/"
-  install -vDm 644 $pkgname.1 -t "$pkgdir/usr/share/man/man1/"
+  install -vDm 644 docs/*.1 -t "$pkgdir/usr/share/man/man1/"
+  install -vDm 644 docs/*.7 -t "$pkgdir/usr/share/man/man7/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
