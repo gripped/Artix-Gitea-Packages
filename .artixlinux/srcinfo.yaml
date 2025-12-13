@@ -1,9 +1,9 @@
 ---
-version: 1.8.17-1
+version: 1.8.18-1
 pkgbase:
   name: python-debugpy
   pkgdesc: An implementation of the Debug Adapter Protocol for Python
-  pkgver: 1.8.17
+  pkgver: 1.8.18
   pkgrel: 1
   url: https://aka.ms/debugpy
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - git+https://github.com/microsoft/debugpy#tag=v1.8.17
+    - git+https://github.com/microsoft/debugpy#tag=v1.8.18
   sha256sums:
-    - 82591ff5fa7fb55178348c2d024ffdf5fd7f11af98640602da6334bd36ff2da9
+    - 6d6c485a22647931e3f378cfed7a19d51701237f3988a21e73d938d3730cca5c
 pkgname:
   - name: python-debugpy
 # generated with artixpkg 0.37.4-1-any
