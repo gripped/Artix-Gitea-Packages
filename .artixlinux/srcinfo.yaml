@@ -1,10 +1,10 @@
 ---
-version: 3.12.0-2
+version: 3.12.0-3
 pkgbase:
   name: gdal
   pkgdesc: A translator library for raster and vector geospatial data formats
   pkgver: 3.12.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://gdal.org/
   changelog: gdal.changelog
   arch:
