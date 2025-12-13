@@ -1,9 +1,9 @@
 ---
-version: 1.2.7-1
+version: 1.3.0-1
 pkgbase:
   name: xournalpp
   pkgdesc: Handwriting notetaking software with PDF annotation support
-  pkgver: 1.2.7
+  pkgver: 1.3.0
   pkgrel: 1
   url: https://github.com/xournalpp/xournalpp
   arch:
@@ -13,8 +13,9 @@ pkgbase:
   makedepends:
     - git
     - cmake
-    - doxygen
-    - graphviz
+    - ninja
+    - help2man
+    - gtest
   depends:
     - gtk3
     - poppler-glib
@@ -23,14 +24,14 @@ pkgbase:
     - libsndfile
     - lua
     - libzip
+    - gtksourceview4
+    - qpdf
   optdepends:
     - 'texlive-latexextra: LaTeX package'
-  replaces:
-    - xournal
   source:
-    - git+https://github.com/xournalpp/xournalpp.git#tag=v1.2.7
+    - git+https://github.com/xournalpp/xournalpp.git#tag=v1.3.0
   sha256sums:
-    - 0da98fb32c06704d74116c25bd265e5d34f7f537b5b4662ae9368160284751ab
+    - f7c801218138e7fedf04f5ca5eaaa00052aedcfba83017056050addec391e799
 pkgname:
   - name: xournalpp
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.5-10-any
