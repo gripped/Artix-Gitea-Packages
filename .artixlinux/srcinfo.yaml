@@ -1,9 +1,9 @@
 ---
-version: 2025.0.4-1
+version: 2026.0.2-1
 pkgbase:
   name: python-pipenv
   pkgdesc: Sacred Marriage of Pipfile, Pip, & Virtualenv.
-  pkgver: 2025.0.4
+  pkgver: 2026.0.2
   pkgrel: 1
   url: https://pipenv.pypa.io
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - python-virtualenv-clone
     - python-virtualenv
   source:
-    - python-pipenv-2025.0.4.tar.gz::https://github.com/pypa/pipenv/archive/v2025.0.4.tar.gz
+    - python-pipenv-2026.0.2.tar.gz::https://github.com/pypa/pipenv/archive/v2026.0.2.tar.gz
   b2sums:
-    - 648aab748af7b3147c5a2c940e2965799e1cb1f7a1b52cec81a5f7be4d955d6ddf57b2ed28c067077a39d48038b0348d060f4296f787c6e5b60ac90e132b8edb
+    - 04c8e63e5134f19a4e8b4c2f4f2e15fa3d105c9717196f5fdc2c53169d1af7bb293c7fe95f91c2525d6195a2718b4c97ad8d22ee8c0da71ba4275c9ea4f78c24
 pkgname:
   - name: python-pipenv
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
