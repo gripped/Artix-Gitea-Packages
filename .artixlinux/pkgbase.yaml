@@ -2,8 +2,8 @@
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.0.0-2
+    version: 2.0.0-3
     packages:
-      - hdf5-2.0.0-2-x86_64.pkg.tar.zst
-      - hdf5-openmpi-2.0.0-2-x86_64.pkg.tar.zst
+      - hdf5-2.0.0-3-x86_64.pkg.tar.zst
+      - hdf5-openmpi-2.0.0-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

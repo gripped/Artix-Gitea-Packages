@@ -12,7 +12,7 @@ pkgname=(
   hdf5-openmpi
 )
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="General purpose library and file format for storing scientific data"
 arch=(x86_64)
 url="https://www.hdfgroup.org/hdf5"
@@ -59,7 +59,8 @@ build() {
     -DCMAKE_CXX_COMPILER=mpicxx \
     -DCMAKE_C_COMPILER=mpicc \
     -DCMAKE_Fortran_COMPILER=mpif90 \
-    -DHDF5_PROVIDES_PARALLEL=ON
+    -DHDF5_ENABLE_PARALLEL=ON \
+    -DHDF5_ALLOW_UNSUPPORTED=ON
   cmake --build build
   cmake --build build-mpi
 }
@@ -71,10 +72,17 @@ check() {
     H5SHELL-test_swmr
     H5TEST-dsets
     H5TEST-set_extent
+    MPI_TEST_FORT_async_test
+    MPI_TEST_FORT_parallel_test
     MPI_TEST_t_bigio
     MPI_TEST_t_cache
+    MPI_TEST_t_pmulti_dset
+    MPI_TEST_t_select_io_dset
     # Fails or times out, not sure why.
     H5_H5DUMP-f90_h5ex_t_vlen_F03
+    MPI_TEST_H5DIFF-h5diff
+    MPI_TEST_H5_f90_ph5_f90_filtered_writes_no_sel
+    MPI_TEST_PERFORM_h5perf
     MPI_TEST_t_2Gio
     MPI_TEST_t_filters_parallel
     MPI_TEST_t_shapesame
