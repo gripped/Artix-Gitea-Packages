@@ -1,10 +1,10 @@
 ---
-version: 2.11.0-1
+version: 2.11.0-2
 pkgbase:
   name: adios2
   pkgdesc: The Adaptable Input/Output System version 2
   pkgver: 2.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://adios2.readthedocs.io/en/latest/
   arch:
     - x86_64
