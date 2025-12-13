@@ -8,7 +8,7 @@
 
 pkgbase=mupdf
 pkgname=('libmupdf' 'mupdf' 'mupdf-gl' 'mupdf-tools' 'python-mupdf')
-pkgver=1.26.12
+pkgver=1.27.0
 pkgrel=1
 pkgdesc="Lightweight PDF and XPS viewer"
 url="https://mupdf.com"
@@ -25,9 +25,8 @@ source=("git+https://github.com/ArtifexSoftware/mupdf.git#tag=${pkgver}"
         "${pkgbase}.xpm"
         "${pkgbase}.pc"
         "${pkgbase}-1.23.9-cpp_ldflags.patch"
-        "${pkgbase}-1.23.9-install_targets.patch"
-        "fix_build_with_clang21.patch")
-sha256sums=('48796a3f7fc460166edf05b2af3bf90e031cd267875ed125b20f73cd60e3b719'
+        "${pkgbase}-1.23.9-install_targets.patch")
+sha256sums=('1e8fc3ee3ced726660b4ac0c7ebae1dd40fb7cfbc7b6b5dec6f5cd70640ec5d0'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -35,8 +34,7 @@ sha256sums=('48796a3f7fc460166edf05b2af3bf90e031cd267875ed125b20f73cd60e3b719'
             'a435f44425f5432c074dee745d8fbaeb879038ec1f1ec64f037c74662f09aca8'
             'bb797ac84edc9856fa828f87e9be684714b7ab2c8bca3372a81fbfa0da018ac4'
             '782745085168ebb7f06bf6330ff49897dbeae7d20a9e242fe98bf434f7eb82f0'
-            '16a193a735e44fefca7d7fbea97823840cfead6b9123898e7ee486c7e08f1528'
-            'a66d2a9d7a8aa7b9232f490b3663ec5b3157d748842c20cd475163ffb7a192d5')
+            '16a193a735e44fefca7d7fbea97823840cfead6b9123898e7ee486c7e08f1528')
 
 prepare() {
 	# Upstream does not provide a pkg-config integration
@@ -48,9 +46,6 @@ prepare() {
 	# Alter install-shared-* targets to not call one another (which fails on installing headers twice) and install libmupdfcpp.so
 	# with soname postfix
 	patch -Np1 -i "${srcdir}/${pkgbase}-1.23.9-install_targets.patch"
-	# Fix build with clang21
-	# https://src.fedoraproject.org/rpms/mupdf/c/29e29d055620ca689689f749aac575526e01d8e7?branch=rawhide
-	patch -Np1 -i "${srcdir}/fix_build_with_clang21.patch"
 
 	# Init submodules and disable the ones we don't need, we want our system libraries instead
 	git submodule init
