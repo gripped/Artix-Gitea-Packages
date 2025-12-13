@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.2.6-2
+    version: 3.2.7-1
     packages:
-      - python-graphql-core-3.2.6-2-any.pkg.tar.zst
+      - python-graphql-core-3.2.7-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
