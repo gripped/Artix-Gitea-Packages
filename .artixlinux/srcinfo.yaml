@@ -1,0 +1,27 @@
+---
+version: 0.22.0-1
+pkgbase:
+  name: python-aiosqlite
+  pkgdesc: Asyncio bridge to the standard sqlite3 module
+  pkgver: 0.22.0
+  pkgrel: 1
+  url: https://github.com/omnilib/aiosqlite
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-aiounittest
+  makedepends:
+    - python-build
+    - python-flit-core
+    - python-installer
+  depends:
+    - python
+  source:
+    - python-aiosqlite-0.22.0.tar.gz::https://github.com/omnilib/aiosqlite/archive/v0.22.0.tar.gz
+  sha256sums:
+    - 80559e2304d6f30f4a3e9a5e8d11eb706468ac723bd4b84c6f3f2771e8e13912
+pkgname:
+  - name: python-aiosqlite
+# generated with artixpkg 0.37.4-1-any
