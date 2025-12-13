@@ -1,0 +1,25 @@
+---
+version: 3.0.0-1
+pkgbase:
+  name: python-xapp
+  pkgdesc: Python Xapp Library
+  pkgver: 3.0.0
+  pkgrel: 1
+  url: https://github.com/linuxmint/python3-xapp
+  arch:
+    - any
+  license:
+    - LGPL
+  makedepends:
+    - git
+    - meson
+  depends:
+    - python
+    - python-psutil
+  source:
+    - git+https://github.com/linuxmint/python3-xapp#tag=3.0.0
+  sha512sums:
+    - f19fd5bd1a1e9da656dc712fa8e34fa58438b6d9a872e74a2128aa572ab2b89720af996d524fbe9c02cdd89d1d61eeffc9d0fd8f00849555e27769e6bce75454
+pkgname:
+  - name: python-xapp
+# generated with artixpkg 0.37.4-1-any
