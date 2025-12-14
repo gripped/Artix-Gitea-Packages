@@ -1,10 +1,10 @@
 ---
-version: 0.049-3
+version: 0.049-4
 pkgbase:
   name: perl-ipc-run3
   pkgdesc: run a subprocess with input/ouput redirection
   pkgver: 0.049
-  pkgrel: 3
+  pkgrel: 4
   url: https://search.cpan.org/dist/IPC-Run3
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 19dbf902666ccb56bfdb02c0c4e9ef585d773e1b8b53d4627367a3c0344d08a6358a733786b8de97e615b6916b716c4e66e73ae263986a2cacf50ab155539c55
 pkgname:
   - name: perl-ipc-run3
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
