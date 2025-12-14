@@ -1,10 +1,10 @@
 ---
-version: 0.28-3
+version: 0.28-4
 pkgbase:
   name: perl-b-hooks-endofscope
   pkgdesc: Execute code after a scope finished compilation
   pkgver: 0.28
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/dist/B-Hooks-EndOfScope
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - edac77a17fc36620c8324cc194ce1fad2f02e9fcbe72d08ad0b2c47f0c7fd8ef
 pkgname:
   - name: perl-b-hooks-endofscope
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
