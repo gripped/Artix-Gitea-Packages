@@ -1,21 +1,23 @@
 ---
-version: 3.00-1
+version: 4.00-2
 pkgbase:
   name: perl-user-identity
   pkgdesc:
     Perl/CPAN Module User::Identity: Define a person
-  pkgver: 3.00
-  pkgrel: 1
+  pkgver: 4.00
+  pkgrel: 2
   url: https://search.cpan.org/~markov/User-Identity/
   arch:
     - any
   license:
     - GPL
     - PerlArtistic
+  options:
+    - '!emptydirs'
   source:
-    - https://www.cpan.org/authors/id/M/MA/MARKOV/User-Identity-3.00.tar.gz
+    - https://www.cpan.org/authors/id/M/MA/MARKOV/User-Identity-4.00.tar.gz
   sha256sums:
-    - 105f8e2b44ea9ca3ddd373a5aeea945045ce8f7743b4e798b41011c2250e97af
+    - 46ec55c4b2c158fb9e3bd5c63aaa10695fee8508ef4ec958774dd8eaccab3847
 pkgname:
   - name: perl-user-identity
 # generated with artixpkg 0.37.4-1-any
