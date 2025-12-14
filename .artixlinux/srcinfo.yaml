@@ -1,10 +1,10 @@
 ---
-version: 0.88-7
+version: 0.88-8
 pkgbase:
   name: perl-archive-extract
   pkgdesc: Generic archive extracting mechanism
   pkgver: 0.88
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/Archive-Extract
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 6fcb6a49e59fac5340663e5d906978af390f4ba66da6c4f02e6b2db666da68440af59ec93a687d13316089b07237b2213df55d8ebb940c4fa9eadd09d1bacc86
 pkgname:
   - name: perl-archive-extract
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
