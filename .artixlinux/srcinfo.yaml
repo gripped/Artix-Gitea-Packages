@@ -1,10 +1,10 @@
 ---
-version: 1.21-5
+version: 1.21-6
 pkgbase:
   name: perl-module-install
   pkgdesc: Module::Install - Standalone, extensible Perl module installer
   pkgver: 1.21
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/Module-Install
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - f3dd1dfcae81704f1aa9ac409abd22c9e0d5d66c048adac13da19ab88559d717427b5471b7a065db8312d4d44e829afea52567cd0993e4016df0e10c760ada85
 pkgname:
   - name: perl-module-install
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
