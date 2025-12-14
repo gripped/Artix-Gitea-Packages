@@ -1,10 +1,10 @@
 ---
-version: 6.81-1
+version: 6.81-2
 pkgbase:
   name: perl-libwww
   pkgdesc: The World-Wide Web library for Perl
   pkgver: 6.81
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/libwww-perl
   arch:
     - any
