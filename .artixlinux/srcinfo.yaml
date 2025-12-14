@@ -1,10 +1,10 @@
 ---
-version: 0.002-13
+version: 0.002-14
 pkgbase:
   name: perl-sub-info
   pkgdesc: Tool for inspecting subroutines.
   pkgver: 0.002
-  pkgrel: 13
+  pkgrel: 14
   url: https://search.cpan.org/dist/Sub-Info
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - ea3056d696bdeff21a99d340d5570887d39a8cc47bff23adfc82df6758cdd0ea
 pkgname:
   - name: perl-sub-info
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
