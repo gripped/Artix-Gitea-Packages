@@ -1,10 +1,10 @@
 ---
-version: 0.101083-5
+version: 0.101083-6
 pkgbase:
   name: perl-test-minimumversion
   pkgdesc: Does your code require newer perl than you think?
   pkgver: 0.101083
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/Test-MinimumVersion
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - f35dcb6f902d36bf4244955d7e73e9cb6182aef716aeeff9d090de0e070e2c363ce9c8d7548a897a834d983facfbb3226122bc96e8105e19b7555ee89eb31acb
 pkgname:
   - name: perl-test-minimumversion
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
