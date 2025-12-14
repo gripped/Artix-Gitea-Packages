@@ -1,10 +1,10 @@
 ---
-version: 1.118-7
+version: 1.118-8
 pkgbase:
   name: perl-file-sharedir
   pkgdesc: Locate per-dist and per-module shared files
   pkgver: 1.118
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/dist/File-ShareDir
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - bdb2c2d786efda84567d56611fdfbf027665e6d0df21a1e4bcd92824dfa32ac9272cf4b2fb0eb2260317957af150df8a6919027bc664c594ac931ad48cec3f0d
 pkgname:
   - name: perl-file-sharedir
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
