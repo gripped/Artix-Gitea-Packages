@@ -1,10 +1,10 @@
 ---
-version: 0.50-6
+version: 0.50-7
 pkgbase:
   name: perl-term-ui
   pkgdesc: User interfaces via Term::ReadLine made easy
   pkgver: 0.50
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/Term-UI
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 338f564a5405804d3f34840dbd26309911b0dfa6de346fc11c0fb4e33e0e2d42915a26b3f9569ccf95333a8cf20bded9830c923c69df48aa72670cdabe05fc98
 pkgname:
   - name: perl-term-ui
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
