@@ -1,10 +1,10 @@
 ---
-version: 2.008004-1
+version: 2.008004-2
 pkgbase:
   name: perl-type-tiny
   pkgdesc: Tiny, yet Moo(se)-compatible type constraint
   pkgver: 2.008004
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Type-Tiny
   arch:
     - any
