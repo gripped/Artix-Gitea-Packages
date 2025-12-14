@@ -1,10 +1,10 @@
 ---
-version: 1.16-14
+version: 1.16-15
 pkgbase:
   name: perl-extutils-pkgconfig
   pkgdesc: The Perl Pkgconfig module
   pkgver: 1.16
-  pkgrel: 14
+  pkgrel: 15
   url: http://gtk2-perl.sourceforge.net/
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - bbeaced995d7d8d10cfc51a3a5a66da41ceb2bc04fedcab50e10e6300e801c6e
 pkgname:
   - name: perl-extutils-pkgconfig
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
