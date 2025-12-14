@@ -1,10 +1,10 @@
 ---
-version: 2.15-5
+version: 2.15-6
 pkgbase:
   name: perl-class-method-modifiers
   pkgdesc: provides Moose-like method modifiers
   pkgver: 2.15
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/Class-Method-Modifiers
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 427d21418516ff296b5a536a2d1f13b81b92d36f1c17c2366bc65fd2f05bf6afc7d02a4257033f53ee14d806b43e8d4322c6eac256d1c0e892926c4e7f878995
 pkgname:
   - name: perl-class-method-modifiers
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
