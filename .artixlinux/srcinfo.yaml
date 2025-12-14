@@ -1,11 +1,11 @@
 ---
-version: 1.05-2
+version: 1.05-3
 pkgbase:
   name: perl-digest-hmac
   pkgdesc:
     Perl Module: Keyed-Hashing for Message Authentication.
   pkgver: 1.05
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/Digest-HMAC/
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 1ee8b30810aa4cfefd5c7ef2049e846946ca1535683e27cbf2d344719b7d2444e88014f68adda4d19ce65af42a413461fd46a7835aefa4e09907fe345b1cd1ac
 pkgname:
   - name: perl-digest-hmac
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
