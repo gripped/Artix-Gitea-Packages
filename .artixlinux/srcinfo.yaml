@@ -1,10 +1,10 @@
 ---
-version: 1.07-10
+version: 1.07-11
 pkgbase:
   name: perl-test-yaml
   pkgdesc: Testing Module for YAML Implementations
   pkgver: 1.07
-  pkgrel: 10
+  pkgrel: 11
   url: https://search.cpan.org/dist/Test-YAML/
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - fe169d351e3c3e41c04d4429bc698f0aa49c7572e1681d4d72d5610d56234642093a31ed7ee5a972cac3e714ff481aa31e69bf12807ec446dd6f927e854d5606
 pkgname:
   - name: perl-test-yaml
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
