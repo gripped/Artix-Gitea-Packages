@@ -1,10 +1,10 @@
 ---
-version: 0.20-9
+version: 0.20-10
 pkgbase:
   name: perl-inline-filters
   pkgdesc: Common source code filters for Inline Modules
   pkgver: 0.20
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Inline-Filters
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - d1f26682ab7a05bbc1951e87efe94c82b6420633f7f3ce7605e40a4272756a44998ec92c078c1b31dd9e25550c813d19e9829770ad16ae6774cdaf8a85eba620
 pkgname:
   - name: perl-inline-filters
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
