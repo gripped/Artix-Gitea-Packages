@@ -1,10 +1,10 @@
 ---
-version: 0.27-12
+version: 0.27-13
 pkgbase:
   name: perl-namespace-clean
   pkgdesc: Keep imports and functions out of your namespace
   pkgver: 0.27
-  pkgrel: 12
+  pkgrel: 13
   url: https://search.cpan.org/dist/namespace-clean
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 8a10a83c3e183dc78f9e7b7aa4d09b47c11fb4e7d3a33b9a12912fd22e31af9d
 pkgname:
   - name: perl-namespace-clean
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
