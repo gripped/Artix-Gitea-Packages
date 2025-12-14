@@ -1,10 +1,10 @@
 ---
-version: 0.59-5
+version: 0.59-6
 pkgbase:
   name: perl-list-someutils
   pkgdesc: Perl package that combines List::Util and List::MoreUtils in one bite-sized package
   pkgver: 0.59
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/List-SomeUtils
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - fab30372e4c67bf5a46062da38d1d0c8756279feada866eb439fa29571a2dc7b
 pkgname:
   - name: perl-list-someutils
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
