@@ -1,10 +1,10 @@
 ---
-version: 0.091-1
+version: 0.091-2
 pkgbase:
   name: perl-ppix-regexp
   pkgdesc: Parse regular expressions
   pkgver: 0.091
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/PPIx-Regexp
   arch:
     - any
