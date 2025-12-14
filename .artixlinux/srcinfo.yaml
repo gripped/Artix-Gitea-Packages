@@ -1,10 +1,10 @@
 ---
-version: 0.10-11
+version: 0.10-12
 pkgbase:
   name: perl-archive-cpio
   pkgdesc: module for manipulations of cpio archives
   pkgver: 0.10
-  pkgrel: 11
+  pkgrel: 12
   url: https://metacpan.org/pod/Archive::Cpio
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - c828f6f199de0efd7c7fbe2c3d4c5304df3c714720d91dd9a7d76e2c8d16bab1b92fc93a0b8afe78bd89b043ce7684c31d54b13c4e840f68ee040ca7bff43c3d
 pkgname:
   - name: perl-archive-cpio
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
