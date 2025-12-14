@@ -1,10 +1,10 @@
 ---
-version: 1.16-6
+version: 1.16-7
 pkgbase:
   name: perl-file-find-rule-perl
   pkgdesc: Common rules for searching for Perl things
   pkgver: 1.16
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/File-Find-Rule-Perl
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 750e59c2aed55e7a73f9dbc67654d7f9de39b744967caa31510f9234bb71437cdd821babf7b80f435d6a968e9d4a49df503449683e866e090c7f120c56e20a47
 pkgname:
   - name: perl-file-find-rule-perl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
