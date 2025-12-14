@@ -1,10 +1,10 @@
 ---
-version: 0.10-1
+version: 0.10-2
 pkgbase:
   name: perl-alien-cmake3
   pkgdesc: Find or download or build cmake 3 or better
   pkgver: 0.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Alien-cmake3
   arch:
     - any
