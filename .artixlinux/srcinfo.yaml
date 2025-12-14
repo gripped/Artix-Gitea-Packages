@@ -1,10 +1,10 @@
 ---
-version: 0.02-12
+version: 0.02-13
 pkgbase:
   name: perl-digest-bubblebabble
   pkgdesc: Create bubble-babble fingerprints
   pkgver: 0.02
-  pkgrel: 12
+  pkgrel: 13
   url: https://search.cpan.org/dist/Digest-BubbleBabble
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 7f5d7519184eed07e3b3ce302b7dd10980acf34af91f7ec8a317c2b7faf4a8a35dd4dadecf643c611456554ae7bfa82699afd80af195e801502047b243653ed5
 pkgname:
   - name: perl-digest-bubblebabble
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
