@@ -1,10 +1,10 @@
 ---
-version: 0.10-12
+version: 0.10-13
 pkgbase:
   name: perl-log-message-simple
   pkgdesc: Simplified interface to Log::Message
   pkgver: 0.10
-  pkgrel: 12
+  pkgrel: 13
   url: https://metacpan.org/release/Log-Message-Simple
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 7915f19dabae801da08e230d846faa6da8f82dd8ac90ed9aedbab9022c45ef0464c1fb511d5ac074c7a77d59eab2a8b549da686cc79ed9a8c40a8eb9d12fb418
 pkgname:
   - name: perl-log-message-simple
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
