@@ -1,10 +1,10 @@
 ---
-version: 0.010-2
+version: 0.010-3
 pkgbase:
   name: perl-extutils-config
   pkgdesc: ExtUtils::Config - A wrapper for perl's configuration
   pkgver: 0.010
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/ExtUtils-Config/
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 64fdbe069388c4ae080622ea06ed6b3d8bd2d71e1af91dcdb53e9a99337212071d7758f9d1a1d4e032afdf5efa26b83374919c6d6a7bbc26bde75dcb7b81046a
 pkgname:
   - name: perl-extutils-config
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
