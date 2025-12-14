@@ -1,10 +1,10 @@
 ---
-version: 0.14-5
+version: 0.14-6
 pkgbase:
   name: perl-file-sharedir-install
   pkgdesc: File::ShareDir::Install - Install read-only data files from a distribution
   pkgver: 0.14
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/File-ShareDir-Install
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 8f9533b198f2d4a9a5288cbc7d224f7679ad05a7a8573745599789428bc5aea0
 pkgname:
   - name: perl-file-sharedir-install
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
