@@ -1,10 +1,10 @@
 ---
-version: 6.01-15
+version: 6.01-16
 pkgbase:
   name: perl-http-negotiate
   pkgdesc: Choose a variant to serve
   pkgver: 6.01
-  pkgrel: 15
+  pkgrel: 16
   url: https://search.cpan.org/dist/HTTP-Negotiate
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 1c729c1ea63100e878405cda7d66f9adfd3ed4f1d6cacaca0ee9152df728e016
 pkgname:
   - name: perl-http-negotiate
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
