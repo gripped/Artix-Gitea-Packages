@@ -1,10 +1,10 @@
 ---
-version: 1.25-7
+version: 1.25-8
 pkgbase:
   name: perl-data-dump
   pkgdesc: Pretty printing of data structures
   pkgver: 1.25
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/Data-Dump
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - a4aa6e0ddbf39d5ad49bddfe0f89d9da864e3bc00f627125d1bc580472f53fbd
 pkgname:
   - name: perl-data-dump
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
