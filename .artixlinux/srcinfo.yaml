@@ -1,10 +1,10 @@
 ---
-version: 0.31-2
+version: 0.31-3
 pkgbase:
   name: perl-namespace-autoclean
   pkgdesc: Keep imports out of your namespace
   pkgver: 0.31
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/namespace-autoclean
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 16f1d473ed87d196812867306996284d1f6817603399e1d67273c2e1c58ba2ba811c84c5e1762675526bfcb808aeece7e3180de189ca9ba951c6b9ff2023d802
 pkgname:
   - name: perl-namespace-autoclean
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
