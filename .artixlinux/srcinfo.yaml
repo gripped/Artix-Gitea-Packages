@@ -1,10 +1,10 @@
 ---
-version: 2013.0912-12
+version: 2013.0912-13
 pkgbase:
   name: perl-time-modules
   pkgdesc: Perl time related modules
   pkgver: 2013.0912
-  pkgrel: 12
+  pkgrel: 13
   url: https://search.cpan.org/~muir/Time-modules/
   arch:
     - any
@@ -19,4 +19,4 @@ pkgbase:
     - 45bcab023e1853d27e53c6a214bc860a4026c65ec16c422a757235e836fb648c
 pkgname:
   - name: perl-time-modules
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
