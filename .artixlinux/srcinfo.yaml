@@ -1,10 +1,10 @@
 ---
-version: 0.114-5
+version: 0.114-7
 pkgbase:
   name: perl-data-optlist
   pkgdesc: Parse and validate simple name/value option pairs
   pkgver: 0.114
-  pkgrel: 5
+  pkgrel: 7
   url: https://metacpan.org/release/Data-OptList
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 72f60ad7d9a6d87ffecfbc0f6f6d48dad2816dd4431d7e82e8ab834e0852da27420fd52fb2a1138254d80bf8b98b94b9fa25b878e1bb155221543a78219ee16a
 pkgname:
   - name: perl-data-optlist
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
