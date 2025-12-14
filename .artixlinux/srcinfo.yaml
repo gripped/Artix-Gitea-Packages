@@ -29,6 +29,8 @@ pkgbase:
     - zlib
     - tzdata
     - mpdecimal
+  options:
+    - debug
   source:
     - https://www.python.org/ftp/python/3.13.11/Python-3.13.11.tar.xz
     - https://www.python.org/ftp/python/3.13.11/Python-3.13.11.tar.xz.asc

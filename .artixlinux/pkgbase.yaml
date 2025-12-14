@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -17,7 +17,8 @@ repos:
     packages:
       - python-3.13.11-1-x86_64.pkg.tar.zst
       - python-tests-3.13.11-1-x86_64.pkg.tar.zst
-    debug: []
+    debug:
+      - python-debug-3.13.11-1-x86_64.pkg.tar.zst
   system:
     version: 3.13.7-1
     packages:
