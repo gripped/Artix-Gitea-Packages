@@ -1,10 +1,10 @@
 ---
-version: 0.11-9
+version: 0.11-10
 pkgbase:
   name: perl-test-exit
   pkgdesc: Test whether code exits without terminating testing.
   pkgver: 0.11
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Test-Exit
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - cd2ebb191f1d0c64017df9c4de50539985b96251222d88c644dafeb64b7373afdf28cd84d1c58caa78ee5704650f94efdd0e2971bbba962c1aeb799e812f26e4
 pkgname:
   - name: perl-test-exit
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
