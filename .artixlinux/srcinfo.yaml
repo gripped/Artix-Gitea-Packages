@@ -1,10 +1,10 @@
 ---
-version: 0.29-14
+version: 0.29-15
 pkgbase:
   name: perl-bytes-random-secure
   pkgdesc: Perl extension to generate cryptographically-secure random bytes.
   pkgver: 0.29
-  pkgrel: 14
+  pkgrel: 15
   url: https://metacpan.org/release/Bytes-Random-Secure
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 72faf9e9fff1cc9641845d47b8dd1efb39861b4015246b169167d4f6050998e91d30b53d6a3e08daf91a838fcf29a05042073064204270de05b2f2ca9990fe64
 pkgname:
   - name: perl-bytes-random-secure
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
