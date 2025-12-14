@@ -1,10 +1,10 @@
 ---
-version: 0.11-13
+version: 0.11-14
 pkgbase:
   name: perl-text-glob
   pkgdesc: match globbing patterns against text
   pkgver: 0.11
-  pkgrel: 13
+  pkgrel: 14
   url: https://search.mcpan.org/dist/Text-Glob
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 20322fee3f56ee7e65f0f8e5371d9dbbe89895d8b9c9207486e7934e29bd883fb557c9765e406f85f56b67019293d82a0318ded83a9387b164cb5e8f58bef0cb
 pkgname:
   - name: perl-text-glob
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
