@@ -1,10 +1,10 @@
 ---
-version: 1.036-2
+version: 1.036-3
 pkgbase:
   name: perl-test-output
   pkgdesc: Utilities to test STDOUT and STDERR messages
   pkgver: 1.036
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/Test-Output
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - b0ede8079146644bac23f772c8f842e0b9b518817327d0d3583b7a04233a6c545137ce85246d24fbe19ee627894c8d3f7d8158e3708f324a5c2c2a13ed1cc0ca
 pkgname:
   - name: perl-test-output
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
