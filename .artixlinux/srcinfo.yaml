@@ -1,10 +1,10 @@
 ---
-version: 1.29-1
+version: 1.29-2
 pkgbase:
   name: perl-b-keywords
   pkgdesc: Lists of reserved barewords and symbol names
   pkgver: 1.29
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/B-Keywords
   arch:
     - any
