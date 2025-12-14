@@ -1,10 +1,10 @@
 ---
-version: 1.01-5
+version: 1.01-6
 pkgbase:
   name: perl-types-serialiser
   pkgdesc: simple data types for common serialisation formats
   pkgver: 1.01
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/Types-Serialiser
   arch:
     - any
@@ -13,10 +13,12 @@ pkgbase:
     - GPL
   depends:
     - perl-common-sense
+  options:
+    - '!emptydirs'
   source:
     - https://search.cpan.org/CPAN/authors/id/M/ML/MLEHMANN/Types-Serialiser-1.01.tar.gz
   sha256sums:
     - f8c7173b0914d0e3d957282077b366f0c8c70256715eaef3298ff32b92388a80
 pkgname:
   - name: perl-types-serialiser
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
