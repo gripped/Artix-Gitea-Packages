@@ -3,7 +3,7 @@
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-mail-box
-pkgver=3.012
+pkgver=4.01
 pkgrel=1
 pkgdesc="Mail folder manager and MUA backend"
 arch=(any)
@@ -16,7 +16,7 @@ depends=('perl-timedate' 'perl-digest-hmac' 'perl-file-remove>=0.20'
 	 'perl-mail-message')
 options=('!emptydirs')
 source=(https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-$pkgver.tar.gz)
-sha256sums=('c46be7efcc96149750f650261d20af057aba4bbf0180fcac0115fb639214ed29')
+sha256sums=('ad66807dd830371278c7fc31f3df9048c16ce9d01430d5fb4414feae05f1fe0d')
 
 prepare() {
   cd  "$srcdir"/Mail-Box-$pkgver

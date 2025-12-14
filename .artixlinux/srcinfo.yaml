@@ -1,9 +1,9 @@
 ---
-version: 3.012-1
+version: 4.01-1
 pkgbase:
   name: perl-mail-box
   pkgdesc: Mail folder manager and MUA backend
-  pkgver: 3.012
+  pkgver: 4.01
   pkgrel: 1
   url: https://search.cpan.org/dist/Mail-Box
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-3.012.tar.gz
+    - https://cpan.metacpan.org/authors/id/M/MA/MARKOV/Mail-Box-4.01.tar.gz
   sha256sums:
-    - c46be7efcc96149750f650261d20af057aba4bbf0180fcac0115fb639214ed29
+    - ad66807dd830371278c7fc31f3df9048c16ce9d01430d5fb4414feae05f1fe0d
 pkgname:
   - name: perl-mail-box
 # generated with artixpkg 0.37.4-1-any
