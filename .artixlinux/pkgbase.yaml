@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:0.53.0-1
+    version: 1:0.53.1-1
     packages:
-      - libfilezilla-1:0.53.0-1-x86_64.pkg.tar.zst
+      - libfilezilla-1:0.53.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:0.52.0-1
