@@ -1,10 +1,10 @@
 ---
-version: 1.36-9
+version: 1.36-10
 pkgbase:
   name: perl-class-inspector
   pkgdesc: Get information about a class and its structure
   pkgver: 1.36
-  pkgrel: 9
+  pkgrel: 10
   url: https://search.cpan.org/dist/Class-Inspector
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 488fcdbc9d135ed833331b0d5feb452997f35400b185341be69996438c278961eeb543648a629940765e779ca5cc87c5c3aa2c61a7fac12d2ecf6c599b68715a
 pkgname:
   - name: perl-class-inspector
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
