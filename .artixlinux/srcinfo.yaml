@@ -1,10 +1,10 @@
 ---
-version: 5.34-1
+version: 5.34-2
 pkgbase:
   name: perl-uri
   pkgdesc: Uniform Resource Identifiers (absolute and relative)
   pkgver: 5.34
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/URI/
   arch:
     - any
