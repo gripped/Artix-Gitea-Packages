@@ -1,10 +1,10 @@
 ---
-version: 0.03-12
+version: 0.03-13
 pkgbase:
   name: perl-crypt-random-seed
   pkgdesc: Provide strong randomness for seeding
   pkgver: 0.03
-  pkgrel: 12
+  pkgrel: 13
   url: https://metacpan.org/release/Crypt-Random-Seed
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 5ee6ea67c325aa9693c96ef650e3888a599d3d7e25316f869808dc6e06b9dd86f1c200c9097939f74511e2ed59e48df1b28cc96e5f7988076d9f7f5d840a894e
 pkgname:
   - name: perl-crypt-random-seed
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
