@@ -1,10 +1,10 @@
 ---
-version: 0.03-9
+version: 0.03-10
 pkgbase:
   name: perl-probe-perl
   pkgdesc: Information about the currently running perl
   pkgver: 0.03
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Probe-Perl
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 739bdb9d1a74eb77ab885a5aca861a1915cadbb1002bb4cb0d21fc6940ae6b3aa64ee52951ac8b2dca41c9e8fe188e17ae5f3c848c4a1caaf66fec5d25bef49c
 pkgname:
   - name: perl-probe-perl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
