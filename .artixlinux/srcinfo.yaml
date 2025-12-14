@@ -1,10 +1,10 @@
 ---
-version: 0.008-10
+version: 0.008-11
 pkgbase:
   name: perl-test-failwarnings
   pkgdesc: Add test failures if warnings are caught
   pkgver: 0.008
-  pkgrel: 10
+  pkgrel: 11
   url: https://metacpan.org/release/Test-FailWarnings
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 7bffcc18191326095d99ad01be6426f4d9d927f769a156318f9abfea67da6adfecb657bad89390740c9f531fe69c717afa1d250258eed63d127bf10cbbf2bd51
 pkgname:
   - name: perl-test-failwarnings
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
