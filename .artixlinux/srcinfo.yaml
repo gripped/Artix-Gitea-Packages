@@ -1,10 +1,10 @@
 ---
-version: 1.44-4
+version: 1.44-5
 pkgbase:
   name: perl-image-info
   pkgdesc: Extract meta information from image files
   pkgver: 1.44
-  pkgrel: 4
+  pkgrel: 5
   url: https://search.cpan.org/dist/Image-Info
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - cb7fc65dd1effe01eb47c1c79a52dd1654f428e3a97db1ef23b126ce01636f0d
 pkgname:
   - name: perl-image-info
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

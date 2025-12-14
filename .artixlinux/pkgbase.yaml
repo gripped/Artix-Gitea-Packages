@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.44-4
+    version: 1.44-5
     packages:
-      - perl-image-info-1.44-4-any.pkg.tar.zst
+      - perl-image-info-1.44-5-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
