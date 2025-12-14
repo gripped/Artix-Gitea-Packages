@@ -1,10 +1,10 @@
 ---
-version: 0.07-6
+version: 0.07-7
 pkgbase:
   name: perl-test2-tools-process
   pkgdesc: Unit tests for code that calls exit, exec, system or qx()
   pkgver: 0.07
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/Test2-Tools-Process
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - f6ec30289fbdec85bdc24227fab270b50d25cc45cd91dbcf61229bcc1494ba585f3d79fecde359bd25a7e222c34d81fb5cff78533cec57d035da0ba22d2ad544
 pkgname:
   - name: perl-test2-tools-process
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
