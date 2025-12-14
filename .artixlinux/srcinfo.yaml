@@ -1,10 +1,10 @@
 ---
-version: 3.75-9
+version: 3.75-10
 pkgbase:
   name: perl-common-sense
   pkgdesc: Implements some sane defaults for Perl programs
   pkgver: 3.75
-  pkgrel: 9
+  pkgrel: 10
   url: https://search.cpan.org/dist/common-sense
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 4e8d0edd1156c07dcdf82160ad1c38b70c8b45aa8a7bb865fccb59dab39fbc0e2fe073074d1f08fe560145f94176cc6010fc48b3f9b06c4a04136ae396b8a9f4
 pkgname:
   - name: perl-common-sense
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
