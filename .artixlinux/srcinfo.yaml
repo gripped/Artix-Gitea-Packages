@@ -1,10 +1,10 @@
 ---
-version: 0.08-9
+version: 0.08-10
 pkgbase:
   name: perl-test-object
   pkgdesc: Thoroughly testing objects via registered handlers
   pkgver: 0.08
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Test-Object
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - c528ee4d8eebb26cc336344765f1c5d402f020dae42f658164a5b2954c48975ccf33dafa768228bddff7583af5cd219959a82d037408c250cf162d59ab3a90d1
 pkgname:
   - name: perl-test-object
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
