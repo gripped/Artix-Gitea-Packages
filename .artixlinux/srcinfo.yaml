@@ -1,10 +1,10 @@
 ---
-version: 1.013.1-5
+version: 1.013.1-6
 pkgbase:
   name: perl-mime-charset
   pkgdesc: Charset Information for MIME
   pkgver: 1.013.1
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/MIME-Charset
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 1bb7a6e0c0d251f23d6e60bf84c9adefc5b74eec58475bfee4d39107e60870f0
 pkgname:
   - name: perl-mime-charset
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
