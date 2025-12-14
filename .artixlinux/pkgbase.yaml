@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: lib32-gremlins
-  removeRepo: lib32-goblins
+  addRepo: lib32
+  removeRepo: lib32-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -37,16 +37,15 @@ repos:
     packages: []
     debug: []
   lib32-gremlins:
+    version: null
+    packages: []
+    debug: []
+  lib32:
     version: 1.4.335.0-1
     packages:
       - lib32-vulkan-validation-layers-1.4.335.0-1-x86_64.pkg.tar.zst
     debug:
       - lib32-vulkan-validation-layers-debug-1.4.335.0-1-x86_64.pkg.tar.zst
-  lib32:
-    version: 1.4.328.1-1
-    packages:
-      - lib32-vulkan-validation-layers-1.4.328.1-1-x86_64.pkg.tar.zst
-    debug: []
   galaxy-goblins:
     version: null
     packages: []
