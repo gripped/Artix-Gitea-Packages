@@ -1,10 +1,10 @@
 ---
-version: 0.15-6
+version: 0.15-7
 pkgbase:
   name: perl-crypt-openssl-guess
   pkgdesc: Guess OpenSSL include path
   pkgver: 0.15
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/Crypt-OpenSSL-Guess
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - d7527be1f07847fbafc10b30c00c43e7fdcd4db27535b16cac98c5b6507d138c14cebcdb3c4ef07dc3016a93fea95155548cc7d83a0309fbc13b7d3b9607bf5d
 pkgname:
   - name: perl-crypt-openssl-guess
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
