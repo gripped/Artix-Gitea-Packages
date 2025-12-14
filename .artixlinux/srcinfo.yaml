@@ -1,10 +1,10 @@
 ---
-version: 0.150-1
+version: 0.150-2
 pkgbase:
   name: perl-path-tiny
   pkgdesc: File path utility
   pkgver: 0.150
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/dagolden/Path-Tiny
   arch:
     - any
@@ -14,6 +14,8 @@ pkgbase:
     - git
   depends:
     - perl
+  options:
+    - '!emptydirs'
   source:
     - perl-path-tiny::git+https://github.com/dagolden/Path-Tiny#tag=release-0.150
   sha512sums:
@@ -22,4 +24,4 @@ pkgbase:
     - 0f2febb51efea18e7c624cda04f45a2687e4a0caa1d7aa914599518603b2144f597adf7bf6a34b9d2cefa5322f160551d5366036790454d16f0028dcd025bd84
 pkgname:
   - name: perl-path-tiny
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
