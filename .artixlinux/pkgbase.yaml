@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.0.0.beta.9-2
+    version: 1:1.0.0-2
     packages:
-      - cosmic-applets-1.0.0.beta.9-2-x86_64.pkg.tar.zst
+      - cosmic-applets-1:1.0.0-2-x86_64.pkg.tar.zst
     debug: []
