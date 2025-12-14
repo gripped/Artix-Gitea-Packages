@@ -1,10 +1,10 @@
 ---
-version: 2024.001-2
+version: 2024.001-3
 pkgbase:
   name: perl-text-tabs-wrap
   pkgdesc: Format tabs & lines in documents
   pkgver: 2024.001
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/dist/Text-Tabs+Wrap
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 40dc8aa855d922ae52228784d15d6989fccd63aa31dc02b29d2fccb3b5e8babbda5d0559e60ecb0788d3c49f8dbee1f5cc3f0a24e81181443a365204b69a6144
 pkgname:
   - name: perl-text-tabs-wrap
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
