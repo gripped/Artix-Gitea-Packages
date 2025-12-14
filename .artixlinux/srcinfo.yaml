@@ -1,10 +1,10 @@
 ---
-version: 1.18-9
+version: 1.18-10
 pkgbase:
   name: perl-string-format
   pkgdesc: sprintf-like string formatting capabilities with arbitrary format definitions
   pkgver: 1.18
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/String-Format
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 34eb3991a9bea931f59ca1683ba72d8b07244ed4c2a9409be0626346526b4eb2ab07acdd5c4eabf44a767867a4991e97d89835eb0e4c3c43b413de75eb3c0d5d
 pkgname:
   - name: perl-string-format
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
