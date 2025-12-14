@@ -1,10 +1,10 @@
 ---
-version: 2.002004-7
+version: 2.002004-8
 pkgbase:
   name: perl-role-tiny
   pkgdesc: Roles. Like a nouvelle cuisine portion size slice of Moose.
   pkgver: 2.002004
-  pkgrel: 7
+  pkgrel: 8
   url: https://search.cpan.org/dist/Role-Tiny/
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - d7bdee9e138a4f83aa52d0a981625644bda87ff16642dfa845dcb44d9a242b45
 pkgname:
   - name: perl-role-tiny
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
