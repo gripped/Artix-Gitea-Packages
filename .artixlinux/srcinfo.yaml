@@ -1,10 +1,10 @@
 ---
-version: 2.73-6
+version: 2.73-7
 pkgbase:
   name: perl-io-socket-inet6
   pkgdesc: Object interface for AF_INET|AF_INET6 domain sockets
   pkgver: 2.73
-  pkgrel: 6
+  pkgrel: 7
   url: https://search.cpan.org/dist/IO-Socket-INET6
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 8d71b1fcb78b4338eb1973a2f9d1ccc539d6a6d83190b818df8ebcc43e978d7404eefedb51a7d6e0a64aa02375503325e8cd8723c7fec6dfdb277519b5a16b4b
 pkgname:
   - name: perl-io-socket-inet6
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
