@@ -3,8 +3,8 @@
 # Contributor: Fredy García <frealgagu at gmail dot com>
 
 pkgname=just
-pkgver=1.44.0
-pkgrel=1.1
+pkgver=1.45.0
+pkgrel=1.2
 pkgdesc="A handy way to save and run project-specific commands"
 arch=("x86_64")
 url="https://github.com/casey/just"
@@ -12,7 +12,7 @@ license=("custom:CC0")
 depends=("gcc-libs")
 makedepends=("cargo")
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/casey/${pkgname}/archive/${pkgver}.tar.gz")
-sha256sums=('450ab569b76053ec34c2ae0616cdf50114a4dce0c2e8dfba2d79bdfb60081a04')
+sha256sums=('e43dfa0f541fd8a115fb61de7c30d949d2f169d155fb1776abeaba9be7eb0e07')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
