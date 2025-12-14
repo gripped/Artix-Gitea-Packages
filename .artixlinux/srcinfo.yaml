@@ -1,10 +1,10 @@
 ---
-version: 0.15-5
+version: 0.15-6
 pkgbase:
   name: perl-mro-compat
   pkgdesc: mro::* interface compatibility for Perls < 5.9.5
   pkgver: 0.15
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/MRO-Compat
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 0d4535f88e43babd84ab604866215fc4d04398bd4db7b21852d4a31b1c15ef61
 pkgname:
   - name: perl-mro-compat
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
