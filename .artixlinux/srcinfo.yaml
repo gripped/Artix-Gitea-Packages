@@ -1,10 +1,10 @@
 ---
-version: 0.018-5
+version: 0.018-6
 pkgbase:
   name: perl-cpan-meta-check
   pkgdesc: Verify requirements in a CPAN::Meta object
   pkgver: 0.018
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/CPAN-Meta-Check
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - ea340287e4f14a5ea00f7fe0decc424ff3ac1af9615cf41905e36be37b1b5f3401d3d44d4aef1d0f4a253f46f0170e1a1607b669ab975ba78d7c1497f0583169
 pkgname:
   - name: perl-cpan-meta-check
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
