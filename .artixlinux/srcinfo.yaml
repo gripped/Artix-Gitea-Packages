@@ -1,10 +1,10 @@
 ---
-version: 1.27-7
+version: 1.27-8
 pkgbase:
   name: perl-file-which
   pkgdesc: Portable implementation of which
   pkgver: 1.27
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/dist/File-Which
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 9252da514e45eac03bc415a0c5eede6731f0cd05df0a7894b975edccdac338e711f7793da75a94419e1ae737034c612f595a312d20a59244b2f6572eda2822cb
 pkgname:
   - name: perl-file-which
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

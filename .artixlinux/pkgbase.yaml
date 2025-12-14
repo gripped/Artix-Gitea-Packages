@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.27-7
+    version: 1.27-8
     packages:
-      - perl-file-which-1.27-7-any.pkg.tar.zst
+      - perl-file-which-1.27-8-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
