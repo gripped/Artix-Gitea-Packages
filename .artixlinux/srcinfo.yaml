@@ -1,10 +1,10 @@
 ---
-version: 0.004-2
+version: 0.004-3
 pkgbase:
   name: perl-ppix-utils
   pkgdesc: Utility functions for PPI
   pkgver: 0.004
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/PPIx-Utils
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 2245df7aff9b23dd478eb8d0242428e2f02a29cccc17217f141213745cc9c112b14ea047f7200bd7bcdd05260f5325981eb45cfc4c93f552fbc1ae25d5ddc158
 pkgname:
   - name: perl-ppix-utils
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
