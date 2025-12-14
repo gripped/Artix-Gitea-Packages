@@ -1,11 +1,11 @@
 ---
-version: 1.26-15
+version: 1.26-16
 pkgbase:
   name: perl-net-ip
   pkgdesc:
     Perl Module: Easy manipulation of IPv4 and IPv6 addresses
   pkgver: 1.26
-  pkgrel: 15
+  pkgrel: 16
   url: https://search.cpan.org/dist/Net-IP/
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 040f16f3066647d761b724a3b70754d28cbd1e6fe5ea01c63ed1cd857117d639
 pkgname:
   - name: perl-net-ip
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
