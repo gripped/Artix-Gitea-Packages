@@ -1,10 +1,10 @@
 ---
-version: 0.80-9
+version: 0.80-10
 pkgbase:
   name: perl-inline-cpp
   pkgdesc: Write Perl subroutines and classes in C++
   pkgver: 0.80
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Inline-CPP
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 7c86d712131306483e04b87eafcee86fea178dc791d85341cfb1c727718a3679d93f935abce5de5ef32adb627d802bbb391bc8842bcf0a1c38c688dc9182a73f
 pkgname:
   - name: perl-inline-cpp
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
