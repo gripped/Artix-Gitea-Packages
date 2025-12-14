@@ -1,10 +1,10 @@
 ---
-version: 0.11-12
+version: 0.11-13
 pkgbase:
   name: perl-dist-checkconflicts
   pkgdesc: Declare version conflicts for your dist
   pkgver: 0.11
-  pkgrel: 12
+  pkgrel: 13
   url: https://metacpan.org/release/Dist-CheckConflicts
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - ea844b9686c94d666d9d444321d764490b2cde2f985c4165b4c2c77665caedc4
 pkgname:
   - name: perl-dist-checkconflicts
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
