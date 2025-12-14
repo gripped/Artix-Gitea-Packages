@@ -1,10 +1,10 @@
 ---
-version: 0.430-7
+version: 0.430-8
 pkgbase:
   name: perl-list-moreutils
   pkgdesc: Provide the stuff missing in List::Util
   pkgver: 0.430
-  pkgrel: 7
+  pkgrel: 8
   url: https://search.cpan.org/dist/List-MoreUtils
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - bc9ff033c12251a6f0899a96da0ec8fc314ddb8d6cdf18c37fe1fdcfc38a4c95ed6f8e006bb124e77d07241ae6754f429bc2041f7772b4acfce9378a21283469
 pkgname:
   - name: perl-list-moreutils
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
