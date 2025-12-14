@@ -1,10 +1,10 @@
 ---
-version: 0.21-9
+version: 0.21-10
 pkgbase:
   name: perl-scope-guard
   pkgdesc: Lexically-scoped resource management
   pkgver: 0.21
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Scope-Guard
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 65492e08ab79dc323649166e83ffc13c6f1fffaa9c60d581d8854dfe427a54a3c3c5e4d8b90308d4b1a31a1a54c7977b4e1d36fc9005c6e716c2361ce187fc9f
 pkgname:
   - name: perl-scope-guard
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
