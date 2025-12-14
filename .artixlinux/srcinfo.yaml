@@ -1,10 +1,10 @@
 ---
-version: 0.038-2
+version: 0.038-3
 pkgbase:
   name: perl-test-warnings
   pkgdesc: Test for warnings and the lack of them
   pkgver: 0.038
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.mcpan.org/dist/Test-Warnings
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 3da27e003a3c3cafed3c09b42be05cf9bdbff0bee5c8590a731b02853880a273
 pkgname:
   - name: perl-test-warnings
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
