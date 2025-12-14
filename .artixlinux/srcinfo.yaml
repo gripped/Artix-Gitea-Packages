@@ -1,10 +1,10 @@
 ---
-version: 2.20250709-2
+version: 2.20250709-3
 pkgbase:
   name: perl-mail-authenticationresults
   pkgdesc: Object Oriented Authentication-Results Headers
   pkgver: 2.20250709
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/Mail-AuthenticationResults
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 6c2bdf6bf7021bae059b07813ffae85d7b2d65ff6d2473651fb3210d210290bc2f18edccc64ea576f802355c8fff9d16ebe577c0571fa7e173438c011e1d5b79
 pkgname:
   - name: perl-mail-authenticationresults
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
