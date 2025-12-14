@@ -1,10 +1,10 @@
 ---
-version: 1.20190531-9
+version: 1.20190531-10
 pkgbase:
   name: perl-super
   pkgdesc: Control superclass method dispatch
   pkgver: 1.20190531
-  pkgrel: 9
+  pkgrel: 10
   url: https://search.cpan.org/dist/SUPER
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - fb1072c76aa9d82edb39ec75f0e14c0fa41837b36b7d2ec24482a20338484cba867646f5e3ceb12ff4f8e1a6f333f5243900c2114d772a29d6c0380feabd3565
 pkgname:
   - name: perl-super
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
