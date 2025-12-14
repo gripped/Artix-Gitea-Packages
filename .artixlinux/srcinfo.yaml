@@ -1,10 +1,10 @@
 ---
-version: 0.023-5
+version: 0.023-6
 pkgbase:
   name: perl-ppix-quotelike
   pkgdesc: Parse Perl string literals and string-literal-like things
   pkgver: 0.023
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/PPIx-QuoteLike
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 63a14b7d3337162ba2a4ac60195a45eb0a00084d77eb07fa98bd3c848e098279d7ad0f2dc08694dea40fe23006e2e0ded970d602b2a940009d29d47c604c45cd
 pkgname:
   - name: perl-ppix-quotelike
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
