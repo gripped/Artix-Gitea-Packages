@@ -1,10 +1,10 @@
 ---
-version: 0.014-5
+version: 0.014-6
 pkgbase:
   name: perl-hash-ordered
   pkgdesc: A fast, pure-Perl ordered hash class
   pkgver: 0.014
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/dagolden/Hash-Ordered
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 8dc36cd79155ae37ab8a3de5fd9120ffba9a31e409258c28529ec5251c59747b
 pkgname:
   - name: perl-hash-ordered
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
