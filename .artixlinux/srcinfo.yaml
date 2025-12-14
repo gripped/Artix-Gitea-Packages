@@ -1,10 +1,10 @@
 ---
-version: 0.17030-2
+version: 0.17030-3
 pkgbase:
   name: perl-error
   pkgdesc: Perl/CPAN Error module - Error/exception handling in an OO-ish way
   pkgver: 0.17030
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/Error/
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 842e33fbc2f2bd6eaf03459263070311fde9ae06105438baf8920826ca26d3f46c18d0d49bfe85a3eb25dfe94e671db0e7d1f30a143b8d82bea47410bfbf7f01
 pkgname:
   - name: perl-error
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
