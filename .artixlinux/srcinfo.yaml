@@ -1,10 +1,10 @@
 ---
-version: 2.04-1
+version: 2.04-2
 pkgbase:
   name: perl-parallel-forkmanager
   pkgdesc: A simple parallel processing fork manager
   pkgver: 2.04
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Parallel-ForkManager
   arch:
     - any
