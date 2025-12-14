@@ -1,10 +1,10 @@
 ---
-version: 1.156-2
+version: 1.156-3
 pkgbase:
   name: perl-perl-critic
   pkgdesc: Critique Perl source code for best-practices
   pkgver: 1.156
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/Perl-Critic
   arch:
     - any
@@ -37,4 +37,4 @@ pkgbase:
     - c5aa84e6dca89f2af3e1afff920bd36a71ac69e1c5b5f3260e1a50b6cb6e6b88cecae28200e54d9ff98540a97ad6a7755c6e1b468d1a1d642d73b6e05e468c34
 pkgname:
   - name: perl-perl-critic
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
