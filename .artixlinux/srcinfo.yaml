@@ -1,10 +1,10 @@
 ---
-version: 0.12-5
+version: 0.12-6
 pkgbase:
   name: perl-list-utilsby
   pkgdesc: Higher-order list utility functions
   pkgver: 0.12
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/~pevans/List-UtilsBy
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - fff1281fd469fe982b1a58044becfd970f313bff3a26e1c7b2b3f4c0a5ed71e0
 pkgname:
   - name: perl-list-utilsby
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
