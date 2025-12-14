@@ -1,10 +1,10 @@
 ---
-version: 0.08-7
+version: 0.08-8
 pkgbase:
   name: perl-return-multilevel
   pkgdesc: Return across multiple call levels
   pkgver: 0.08
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/Return-MultiLevel
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 1ea0da034df794c87b8a2225863194e0ac4c42794bfc59bbbd7e65d755ab2a66d341ea82f99b714220536d980a039b2eab65293180205b4b1ec0f4d56bbfd0d8
 pkgname:
   - name: perl-return-multilevel
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
