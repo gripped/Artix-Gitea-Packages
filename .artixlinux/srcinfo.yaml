@@ -1,10 +1,10 @@
 ---
-version: 0.10-2
+version: 0.10-3
 pkgbase:
   name: perl-shell-guess
   pkgdesc: Make an educated guess about the shell in use
   pkgver: 0.10
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/Shell-Guess
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 060caba58126e4eb7f1f87ce62760d580a2d8b395ddba0bbdce6d96a73b2eab170ab4148f2560b47cda60fa57ff34c6ac5a80dfb8c56cb040ea4c0469fd5489b
 pkgname:
   - name: perl-shell-guess
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
