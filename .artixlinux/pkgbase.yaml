@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.69.5-2
+    version: 3.69.5-3
     packages:
-      - filezilla-3.69.5-2-x86_64.pkg.tar.zst
+      - filezilla-3.69.5-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.69.5-1
