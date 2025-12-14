@@ -1,10 +1,10 @@
 ---
-version: 6.02-15
+version: 6.02-16
 pkgbase:
   name: perl-www-robotrules
   pkgdesc: Database of robots.txt-derived permissions
   pkgver: 6.02
-  pkgrel: 15
+  pkgrel: 16
   url: https://metacpan.org/release/WWW-RobotRules
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 46b502e7a288d559429891eeb5d979461dd3ecc6a5c491ead85d165b6e03a51e
 pkgname:
   - name: perl-www-robotrules
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
