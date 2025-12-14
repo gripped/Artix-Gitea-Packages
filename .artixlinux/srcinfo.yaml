@@ -1,9 +1,9 @@
 ---
-version: 6.20.0-1
+version: 6.21.0-1
 pkgbase:
   name: kapidox
   pkgdesc: Frameworks API Documentation Tools
-  pkgver: 6.20.0
+  pkgver: 6.21.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -22,14 +22,14 @@ pkgbase:
     - python-jinja
     - python-yaml
   source:
-    - https://download.kde.org/stable/frameworks/6.20/kapidox-6.20.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.20/kapidox-6.20.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.21/kapidox-6.21.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.21/kapidox-6.21.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - ecaf24b84b92453eda0822d5aef18e047e62848f80b019c30832ec57282fabd3
+    - 6e4db8f419da35e562dca1fa7576185375f7bf2efb4ef068d7e93b880f32085f
     - SKIP
 pkgname:
   - name: kapidox
