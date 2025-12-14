@@ -1,10 +1,10 @@
 ---
-version: 1:2.006009-1
+version: 1:2.006009-2
 pkgbase:
   name: perl-sub-quote
   pkgdesc: efficient generation of subroutines via string eval
   pkgver: 2.006009
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://search.cpan.org/dist/Sub-Quote
   arch:
@@ -24,4 +24,4 @@ pkgbase:
     - 967282d54d2d51b198c67935594f93e4dea3e54d1e5bced158c94e29be868a4b
 pkgname:
   - name: perl-sub-quote
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
