@@ -1,10 +1,10 @@
 ---
-version: 0.37-12
+version: 0.37-13
 pkgbase:
   name: perl-path-class
   pkgdesc: Cross-platform path specification manipulation
   pkgver: 0.37
-  pkgrel: 12
+  pkgrel: 13
   url: https://search.cpan.org/dist/Path-Class
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 654781948602386f2cb2e4473a739f17dc6953d92aabc2498a4ca2561bc248ce
 pkgname:
   - name: perl-path-class
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
