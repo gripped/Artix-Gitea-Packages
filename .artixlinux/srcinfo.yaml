@@ -1,10 +1,10 @@
 ---
-version: 1.20240923-2
+version: 1.20240923-3
 pkgbase:
   name: perl-mail-dkim
   pkgdesc: Signs/verifies Internet mail with DKIM/DomainKey signatures
   pkgver: 1.20240923
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/Mail-DKIM
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - e2602e1c8987438a84acefcb648800a7da06a8ed5b92a4b63a97f5f0af99c1f0dd32106433464c22ddabcab1165b7d8ec33758fe232816dfc694eac7b7ab6642
 pkgname:
   - name: perl-mail-dkim
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
