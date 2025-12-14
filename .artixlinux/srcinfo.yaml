@@ -1,10 +1,10 @@
 ---
-version: 2024080801-3
+version: 2024080801-4
 pkgbase:
   name: perl-regexp-common
   pkgdesc: Commonly requested regular expressions
   pkgver: 2024080801
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/release/Regexp-Common
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 0677afaec8e1300cefe246b4d809e75cdf55e2cc0f77c486d13073b69ab4fbdd
 pkgname:
   - name: perl-regexp-common
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
