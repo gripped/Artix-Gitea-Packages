@@ -1,9 +1,9 @@
 ---
-version: 6.20.0-1
+version: 6.21.0-1
 pkgbase:
   name: ki18n
   pkgdesc: Advanced internationalization framework
-  pkgver: 6.20.0
+  pkgver: 6.21.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -28,14 +28,14 @@ pkgbase:
     - 'python: to compile .ts files'
     - 'qt6-declarative: ktranscript plugin and QML bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.20/ki18n-6.20.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.20/ki18n-6.20.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.21/ki18n-6.21.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.21/ki18n-6.21.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - f29c805137af9cee6abab424b380fea964a59b089f90fb909601d9fc78df5f73
+    - d5b23045a4e989c7286e86696544180ec76ac5fd057b50c35bd007b279694d8f
     - SKIP
 pkgname:
   - name: ki18n
