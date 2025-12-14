@@ -1,10 +1,10 @@
 ---
-version: 0.31-7
+version: 0.31-8
 pkgbase:
   name: perl-ffi-checklib
   pkgdesc: Check that a library is available for FFI
   pkgver: 0.31
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/FFI-CheckLib
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 25dd359cbec5417baa2c3d6a1152fb8a50b9d1423f8adb1c9ebe4422aefaed6e3b9b73015c6960c5d69dbc151df50ecb5a8e365192a2108013b501433c52e1e2
 pkgname:
   - name: perl-ffi-checklib
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
