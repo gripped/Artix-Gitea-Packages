@@ -1,10 +1,10 @@
 ---
-version: 0.015-1
+version: 0.015-2
 pkgbase:
   name: perl-extutils-installpaths
   pkgdesc: ExtUtils::InstallPaths - Build.PL install path logic made easy
   pkgver: 0.015
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/ExtUtils-InstallPaths/
   arch:
     - any
