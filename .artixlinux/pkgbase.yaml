@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 3.17.1-1
+    version: 3.17.3-1
     packages:
-      - openresolv-3.17.1-1-any.pkg.tar.zst
+      - openresolv-3.17.3-1-any.pkg.tar.zst
     debug:
-      - openresolv-debug-3.17.1-1-any.pkg.tar.zst
+      - openresolv-debug-3.17.3-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
