@@ -1,10 +1,10 @@
 ---
-version: 1.002005-12
+version: 1.002005-13
 pkgbase:
   name: perl-import-into
   pkgdesc: Import packages into other packages
   pkgver: 1.002005
-  pkgrel: 12
+  pkgrel: 13
   url: https://search.cpan.org/dist/Import-Into
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 387fb6302417bda94fffe7215e22774d9345af0f2df9f39dc089abcf4a0e164521d2223ddaeed7179a341720e1ae399ada6ff02b5aef75c9a00a74e2cf752005
 pkgname:
   - name: perl-import-into
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
