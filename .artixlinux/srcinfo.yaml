@@ -1,10 +1,10 @@
 ---
-version: 0.018-1
+version: 0.018-2
 pkgbase:
   name: perl-test-fatal
   pkgdesc: Incredibly simple helpers for testing code with exceptions
   pkgver: 0.018
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rjbs/Test-Fatal
   arch:
     - any
