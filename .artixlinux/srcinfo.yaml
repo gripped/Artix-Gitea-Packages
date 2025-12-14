@@ -1,10 +1,10 @@
 ---
-version: 0.320-6
+version: 0.320-7
 pkgbase:
   name: perl-config-autoconf
   pkgdesc: A module to implement some of AutoConf macros in pure perl.
   pkgver: 0.320
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/Config-AutoConf
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - bb57a958ef49d3f7162276dae14a7bd5af43fd1d8513231af35d665459454023
 pkgname:
   - name: perl-config-autoconf
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
