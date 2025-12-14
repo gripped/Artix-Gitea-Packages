@@ -1,10 +1,10 @@
 ---
-version: 1.1105-8
+version: 1.1105-9
 pkgbase:
   name: perl-io-captureoutput
   pkgdesc: capture STDOUT and STDERR from Perl code, subprocesses or XS
   pkgver: 1.1105
-  pkgrel: 8
+  pkgrel: 9
   url: https://search.cpan.org/dist/IO-CaptureOutput
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 8ca9485982d6bfae08ec322c28efd8f673f2a6705421ac5d680c228c436e7a5c8e18a16ff9712062631c35a91e6d19d9518263135db469c47083ce30814cf064
 pkgname:
   - name: perl-io-captureoutput
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
