@@ -1,10 +1,10 @@
 ---
-version: 0.12-2
+version: 0.12-3
 pkgbase:
   name: perl-sub-override
   pkgdesc: Perl extension for easily overriding subroutines
   pkgver: 0.12
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/dist/Sub-Override
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 1c07187ad909261c18a5f973d489918cb986b040377a4011821f7a6a0966ad03ba81796a35173ef43ac81778e1fb4601bf71423744187d9594f0907f65056d7f
 pkgname:
   - name: perl-sub-override
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
