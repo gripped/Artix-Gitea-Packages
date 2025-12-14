@@ -1,10 +1,10 @@
 ---
-version: 1.001000-9
+version: 1.001000-10
 pkgbase:
   name: perl-ppix-utilities
   pkgdesc: Extensions to L<PPI|PPI>
   pkgver: 1.001000
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/PPIx-Utilities
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 46b900b4152e83e7a37b3fb6036051079aed677f0a33affa07f50e33a3a45bc220c899ecb99a1ab259a934aa9801582e804fe3be2980188c6442774de9b0f6de
 pkgname:
   - name: perl-ppix-utilities
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
