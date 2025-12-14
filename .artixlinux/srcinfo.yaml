@@ -1,10 +1,10 @@
 ---
-version: 7.01-1
+version: 7.01-2
 pkgbase:
   name: perl-http-message
   pkgdesc: HTTP style messages
   pkgver: 7.01
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/HTTP-Message
   arch:
     - any
