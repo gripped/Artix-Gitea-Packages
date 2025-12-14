@@ -1,10 +1,10 @@
 ---
-version: 0.014-5
+version: 0.014-6
 pkgbase:
   name: perl-file-slurper
   pkgdesc: A simple, sane and efficient module to slurp a file
   pkgver: 0.014
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/File-Slurper
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - d5a36487339888c3cd758e648160ee1d70eb4153cacbaff57846dbcefb344b0c
 pkgname:
   - name: perl-file-slurper
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
