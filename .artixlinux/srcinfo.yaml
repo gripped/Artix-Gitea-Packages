@@ -1,10 +1,10 @@
 ---
-version: 0.08-12
+version: 0.08-13
 pkgbase:
   name: perl-log-message
   pkgdesc: Powerful and flexible message logging mechanism
   pkgver: 0.08
-  pkgrel: 12
+  pkgrel: 13
   url: https://metacpan.org/release/Log-Message
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 7dffaa66bae132a958b08948369761b1871af4fb0f719f1b39f9978131034444ab02db62cb5ca3ee89607640070e410b020e23ebfd4d3d8d9ca8b01ffed2ced8
 pkgname:
   - name: perl-log-message
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
