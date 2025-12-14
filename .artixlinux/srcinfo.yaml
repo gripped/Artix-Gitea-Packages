@@ -1,10 +1,10 @@
 ---
-version: 1:1.1-13
+version: 1:1.1-14
 pkgbase:
   name: perl-sgmls
   pkgdesc: A Post-Processor for SGMLS and NSGMLS
   pkgver: 1.1
-  pkgrel: 13
+  pkgrel: 14
   epoch: 1
   url: https://search.cpan.org/dist/SGMLSpm
   arch:
@@ -23,4 +23,4 @@ pkgbase:
     - 550c9245291c8df2242f7e88f7921a0f636c7eec92c644418e7d89cfea70b2bd
 pkgname:
   - name: perl-sgmls
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
