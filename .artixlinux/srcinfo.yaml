@@ -1,11 +1,11 @@
 ---
-version: 1.31-3
+version: 1.31-4
 pkgbase:
   name: perl-yaml
   pkgdesc:
     Perl/CPAN Module YAML: YAML Aint Markup Language
   pkgver: 1.31
-  pkgrel: 3
+  pkgrel: 4
   url: https://search.cpan.org/dist/YAML/
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 7f6af46348c4288541b611cb0d0f6d63a3d671417cadb3e9d60fed1c2c7664b35202b3ee8d15ef68400758604a3b2cb8a04c11b3e9badfd6f9222cf24f4a9edc
 pkgname:
   - name: perl-yaml
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
