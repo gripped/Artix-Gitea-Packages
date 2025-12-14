@@ -1,10 +1,10 @@
 ---
-version: 0.991-3
+version: 0.991-4
 pkgbase:
   name: perl-sub-exporter
   pkgdesc: A sophisticated exporter for custom-built routines
   pkgver: 0.991
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/release/Sub-Exporter
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 7829bbca1eb332156ba33dd0cbde7f57c178ad56cc03e76c1b7d5327c94ce15bb5172894eeef011e12e472071a7d7a07f514a1121535d96ae05ed0ef6734b329
 pkgname:
   - name: perl-sub-exporter
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
