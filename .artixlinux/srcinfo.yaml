@@ -1,10 +1,10 @@
 ---
-version: 0.07-13
+version: 0.07-14
 pkgbase:
   name: perl-devel-checkcompiler
   pkgdesc: Check the compiler's availability
   pkgver: 0.07
-  pkgrel: 13
+  pkgrel: 14
   url: https://search.cpan.org/dist/Devel-CheckCompiler
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 147fbdab382ff40bf1402d2d6be1143fe77403cd2444e854fdf11eb02e8acdcab8cb6bbdd7f3aef01cc64fac2862efaa044c5148c7770b84b464f7360c399d7a
 pkgname:
   - name: perl-devel-checkcompiler
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
