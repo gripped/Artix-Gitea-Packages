@@ -1,10 +1,10 @@
 ---
-version: 1.45-6
+version: 1.45-7
 pkgbase:
   name: perl-exception-class
   pkgdesc: A module that allows you to declare real exception classes in Perl
   pkgver: 1.45
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/Exception-Class
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 5482a77ef027ca1f9f39e1f48c558356e954936fc8fbbdee6c811c512701b249
 pkgname:
   - name: perl-exception-class
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
