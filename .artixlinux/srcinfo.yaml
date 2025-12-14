@@ -1,10 +1,10 @@
 ---
-version: 1.000010-2
+version: 1.000010-3
 pkgbase:
   name: perl-safe-isa
   pkgdesc: Call isa, can, does and DOES safely on things that may not be objects
   pkgver: 1.000010
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/dist/Safe-Isa
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 121288c7c59d97f4e48c1e50795d835cac0638a1edb1116876813cc2fe955efced9916222f6b16e4c1dbd5149c9d68c19bc77584f999c411e4c22e2f28ea1838
 pkgname:
   - name: perl-safe-isa
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
