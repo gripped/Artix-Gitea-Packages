@@ -1,10 +1,10 @@
 ---
-version: 0.09-6
+version: 0.09-7
 pkgbase:
   name: perl-fcgi-client
   pkgdesc: client library for fastcgi protocol
   pkgver: 0.09
-  pkgrel: 6
+  pkgrel: 7
   url: https://metacpan.org/release/FCGI-Client
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 962166f10cd79f99a67a94002b4cff7324fced3aca6448cd485d07c489e6fbb25a090b964622aa178a20c8f930f916c5aac10525392ace45cfcb908733675079
 pkgname:
   - name: perl-fcgi-client
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
