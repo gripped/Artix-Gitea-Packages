@@ -7,8 +7,8 @@
 # Contributor: Robert Orzanna <orschiro at gmail dot com>
 
 pkgname=timeshift
-pkgver=25.12.0
-pkgrel=2
+pkgver=25.12.1
+pkgrel=1
 pkgdesc="A system restore utility for Linux"
 url="https://github.com/linuxmint/timeshift"
 arch=('x86_64')
@@ -20,7 +20,7 @@ optdepends=('btrfs-progs: For BTRFS support'
             'xorg-xhost: For authorization on Wayland')
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('1a73465c0d45083fc1338f2098bd01c4983f080896a5777b45b8e9c8e83abce4')
+sha256sums=('d49f5cefbb12c214038d40c36f5a93f78fdea810dc9b57a7a08c3734346b0162')
 
 build() {
 	artix-meson "${pkgname}-${pkgver}" build
