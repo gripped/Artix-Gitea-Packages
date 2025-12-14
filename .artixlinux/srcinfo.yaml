@@ -1,10 +1,10 @@
 ---
-version: 0.32-3
+version: 0.32-4
 pkgbase:
   name: perl-try-tiny
   pkgdesc: Minimal try/catch with proper localization of $@
   pkgver: 0.32
-  pkgrel: 3
+  pkgrel: 4
   url: https://search.cpan.org/dist/Try-Tiny
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 18610525e1b754760f41a5d9a836a4e78c22ba1b008f7ac16b2796916ef688b03c7cc3002cfc61b274492455a906e75dbe0e2a06ead4e08b33e1c6a0a8569c4e
 pkgname:
   - name: perl-try-tiny
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
