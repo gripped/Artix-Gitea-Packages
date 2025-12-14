@@ -1,10 +1,10 @@
 ---
-version: 6.24-1
+version: 6.24-2
 pkgbase:
   name: perl-net-http
   pkgdesc: Low-level HTTP connection (client)
   pkgver: 6.24
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Net-HTTP
   arch:
     - any
