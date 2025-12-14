@@ -1,10 +1,10 @@
 ---
-version: 2.05-3
+version: 2.05-4
 pkgbase:
   name: perl-devel-stacktrace
   pkgdesc: An object representing a stack trace
   pkgver: 2.05
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/release/Devel-StackTrace
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 63cb6196e986a7e578c4d28b3c780e7194835bfc78b68eeb8f00599d4444888c
 pkgname:
   - name: perl-devel-stacktrace
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
