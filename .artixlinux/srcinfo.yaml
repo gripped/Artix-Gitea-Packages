@@ -1,10 +1,10 @@
 ---
-version: 1.6.2-1.1
+version: 1.6.3-1.2
 pkgbase:
   name: s2n-tls
   pkgdesc: A C99 implementation of the TLS/SSL protocols that is designed to be simple, small, fast, and with security as a priority
-  pkgver: 1.6.2
-  pkgrel: 1.1
+  pkgver: 1.6.3
+  pkgrel: 1.2
   url: https://github.com/aws/s2n-tls
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
   replaces:
     - s2n
   source:
-    - s2n-tls-1.6.2.tar.gz::https://github.com/aws/s2n-tls/archive/v1.6.2.tar.gz
+    - s2n-tls-1.6.3.tar.gz::https://github.com/aws/s2n-tls/archive/v1.6.3.tar.gz
   sha256sums:
-    - b62c52ededd0b42e58fea660727141728cfb853c564083dbfc6fd027a1564582
+    - 84f52b3c841a110931442022d05b53b00353e64b03128dd24006438935e1cc32
 pkgname:
   - name: s2n-tls
 # generated with artixpkg 0.37.4-1-any
