@@ -1,10 +1,10 @@
 ---
-version: 1.52-11
+version: 1.52-12
 pkgbase:
   name: perl-test-pod
   pkgdesc: Check for POD errors in files
   pkgver: 1.52
-  pkgrel: 11
+  pkgrel: 12
   url: https://search.cpan.org/dist/Test-Pod/
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 9b078488e1da8b907f5f3a46452aa9bfd49db61f1539d076dccebf9a8b476eaf0f539f00badc9c500b1e732a8827331b2286375924986efb990367767eeb8365
 pkgname:
   - name: perl-test-pod
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
