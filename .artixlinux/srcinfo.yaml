@@ -1,10 +1,10 @@
 ---
-version: 0.39.0-2
+version: 0.39.0-3
 pkgbase:
   name: perl-yaml-pp
   pkgdesc: Simple configuration automation
   pkgver: 0.39.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/YAML-PP
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 348a4c2e7efdaa407fb46d2a632c381d3655fe9b1eb4e557cc66eea8346e2e24013d2ff94601f25b47dfdd96b14b7f3fe7338f74668230a82f87495a756adf3c
 pkgname:
   - name: perl-yaml-pp
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
