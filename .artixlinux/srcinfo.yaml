@@ -1,10 +1,10 @@
 ---
-version: 2.06-2
+version: 2.06-3
 pkgbase:
   name: perl-text-csv
   pkgdesc: Comma-separated values manipulator
   pkgver: 2.06
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/dist/Text-CSV
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - f7b319e489d863c4526cf270d132db25b6f8d4ddb59d33df59106f3f72a53a967a4073ec1c1924a5637d84ee16a3eedb985ddf6c97dd2334e35f0736d19f9dcb
 pkgname:
   - name: perl-text-csv
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
