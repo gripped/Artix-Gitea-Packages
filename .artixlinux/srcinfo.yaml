@@ -1,10 +1,10 @@
 ---
-version: 0.75-7
+version: 0.75-8
 pkgbase:
   name: perl-pegex
   pkgdesc: Acmeist PEG Parser Framework
   pkgver: 0.75
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/Pegex
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 4dc8d335de80b25247cdb3f946f0d10d9ba0b3c34b0ed7d00316fd068fd05edc
 pkgname:
   - name: perl-pegex
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
