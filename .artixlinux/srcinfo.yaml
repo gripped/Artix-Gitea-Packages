@@ -1,10 +1,10 @@
 ---
-version: 0.204-5
+version: 0.204-6
 pkgbase:
   name: perl-ref-util
   pkgdesc: Utility functions for checking references
   pkgver: 0.204
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/Ref-Util
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 12834e13de5578232e40ba308e97786c60fcec4da9dc0b2922506d42645e8b3c3234663cf3b9c1dc374772107de953ed49ba8b52a2bac79183e3860338c0b288
 pkgname:
   - name: perl-ref-util
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
