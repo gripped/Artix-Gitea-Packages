@@ -1,10 +1,10 @@
 ---
-version: 13.36-1
+version: 13.36-3
 pkgbase:
   name: perl-image-exiftool
-  pkgdesc: Reader and rewriter of EXIF information that supports raw files
+  pkgdesc: Read and write EXIF information
   pkgver: 13.36
-  pkgrel: 1
+  pkgrel: 3
   url: https://exiftool.org/
   arch:
     - any
