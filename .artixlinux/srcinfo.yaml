@@ -1,10 +1,10 @@
 ---
-version: 1.31-1
+version: 1.31-2
 pkgbase:
   name: perl-test-script
   pkgdesc: Basic cross-platform tests for scripts
   pkgver: 1.31
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Test-Script
   arch:
     - any
