@@ -1,10 +1,10 @@
 ---
-version: 6.16-5
+version: 6.16-6
 pkgbase:
   name: perl-http-daemon
   pkgdesc: Simple http server class
   pkgver: 6.16
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/pod/HTTP::Daemon
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - b38d092725e6fa4e0c4dc2a47e157070491bafa0dbe16c78a358e806aa7e173d
 pkgname:
   - name: perl-http-daemon
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
