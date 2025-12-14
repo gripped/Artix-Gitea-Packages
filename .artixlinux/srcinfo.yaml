@@ -1,10 +1,10 @@
 ---
-version: 1.004-13
+version: 1.004-14
 pkgbase:
   name: perl-math-random-isaac
   pkgdesc: Perl interface to the ISAAC PRNG algorithm
   pkgver: 1.004
-  pkgrel: 13
+  pkgrel: 14
   url: https://search.cpan.org/dist/Math-Random-ISAAC/
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 2773f02fbf207e9745e76a037df08bf5a8cc987ed23c57040ce7f7b1561f2b7c
 pkgname:
   - name: perl-math-random-isaac
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
