@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.0.0.beta.9-1
+    version: 1:1.0.0-1
     packages:
-      - cosmic-idle-1.0.0.beta.9-1-x86_64.pkg.tar.zst
+      - cosmic-idle-1:1.0.0-1-x86_64.pkg.tar.zst
     debug: []
