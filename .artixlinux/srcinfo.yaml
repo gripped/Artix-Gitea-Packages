@@ -1,10 +1,10 @@
 ---
-version: 2013-9
+version: 2013-11
 pkgbase:
   name: perl-canary-stability
   pkgdesc: CPAN/Canary-Stability - canary to check perl compatability for schmorp's modules
   pkgver: 2013
-  pkgrel: 9
+  pkgrel: 11
   url: https://metacpan.org/release/Canary-Stability
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - a5c91c62cf95fcb868f60eab5c832908f6905221013fea2bce3ff57046d7b6ea
 pkgname:
   - name: perl-canary-stability
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
