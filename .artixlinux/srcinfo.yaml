@@ -1,10 +1,10 @@
 ---
-version: 2.014-5
+version: 2.014-6
 pkgbase:
   name: perl-net-server
   pkgdesc: Extensible, general Perl server engine
   pkgver: 2.014
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/Net-Server
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 6b1bbfeed13af5f9dba76873899e162497234b5cc8fc08bf749fd86e0377bd9184a9807df61f27645634d0ff8d8e6c8c14b700b3d283fbbb7d1d844e6608c9c2
 pkgname:
   - name: perl-net-server
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
