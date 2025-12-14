@@ -1,10 +1,10 @@
 ---
-version: 0.028-2
+version: 0.028-3
 pkgbase:
   name: perl-extutils-helpers
   pkgdesc: ExtUtils::Helpers - Various portability utilities for module builders
   pkgver: 0.028
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/ExtUtils-Helpers/
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 8a14258aadcce0e64a212637fb2275cad7ba771415f42eefe407f00f22f3f5c0d21ca5d33f0b19b865492e71a623373fa25b6bee69920824f8ab75646764745e
 pkgname:
   - name: perl-extutils-helpers
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
