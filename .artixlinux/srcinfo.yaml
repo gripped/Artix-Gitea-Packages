@@ -1,10 +1,10 @@
 ---
-version: 0.27-3
+version: 0.27-4
 pkgbase:
   name: perl-extutils-cppguess
   pkgdesc: Guess C++ compiler and flags
   pkgver: 0.27
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/release/ExtUtils-CppGuess
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 289e38f3033b3072ff40dffdea8cb60bc9f91e426ff927de2e8499724cecb03f76c4740b2f868d6c55bf019c9e6eb1a5de20111591c7292e60765f65a249e60c
 pkgname:
   - name: perl-extutils-cppguess
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
