@@ -1,10 +1,10 @@
 ---
-version: 0.11-8
+version: 0.11-9
 pkgbase:
   name: perl-test-requires
   pkgdesc: Checks to see if the module can be loaded
   pkgver: 0.11
-  pkgrel: 8
+  pkgrel: 9
   url: https://search.cpan.org/dist/Test-Requires
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 770ea2469e386296fe1ded3630fa9b7f30ee22acd3522fb83ad95171ccb96812ef2fc5fa30d658a405dc1c435d35b6d476cc054021d74e04b419b517f6f898fa
 pkgname:
   - name: perl-test-requires
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
