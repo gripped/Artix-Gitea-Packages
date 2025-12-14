@@ -1,10 +1,10 @@
 ---
-version: 1.67-3
+version: 1.67-4
 pkgbase:
   name: perl-pod-parser
   pkgdesc: Modules for parsing/translating POD format documents
   pkgver: 1.67
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/release/Pod-Parser
   arch:
     - any
@@ -20,4 +20,4 @@ pkgbase:
     - 62cfbb9da1f4ccb224fb3e3d3f952f6c1579728ad7dcd7f2ef0b0393dabe8caa06cd5e259a875b58066fe0a519b3db1d26a40ae5aa23d1eff06e20547cac1e33
 pkgname:
   - name: perl-pod-parser
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
