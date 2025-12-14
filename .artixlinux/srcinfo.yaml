@@ -1,10 +1,10 @@
 ---
-version: 6.06-4
+version: 6.06-5
 pkgbase:
   name: perl-http-date
   pkgdesc: Date conversion routines
   pkgver: 6.06
-  pkgrel: 4
+  pkgrel: 5
   url: https://search.cpan.org/dist/HTTP-Date
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 7b685191c6acc3e773d1fc02c95ee1f9fae94f77783175f5e78c181cc92d2b52
 pkgname:
   - name: perl-http-date
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
