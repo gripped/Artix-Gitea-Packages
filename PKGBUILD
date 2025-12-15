@@ -4,7 +4,7 @@
 
 pkgname=dillo
 pkgver=3.2.0
-pkgrel=6
+pkgrel=6.1
 pkgdesc="A small, fast graphical web browser built on FLTK"
 arch=(x86_64)
 url="https://dillo-browser.org/"
