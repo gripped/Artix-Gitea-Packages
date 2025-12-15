@@ -1,0 +1,32 @@
+---
+version: 3.2.5-1
+pkgbase:
+  name: easy-rsa
+  pkgdesc: Simple shell based CA utility
+  pkgver: 3.2.5
+  pkgrel: 1
+  url: https://github.com/OpenVPN/easy-rsa
+  arch:
+    - any
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+  depends:
+    - bc
+    - openssl
+    - sh
+    - grep
+  backup:
+    - etc/easy-rsa/openssl-easyrsa.cnf
+    - etc/easy-rsa/vars
+  source:
+    - git+https://github.com/OpenVPN/easy-rsa.git#tag=v3.2.5
+  validpgpkeys:
+    - 65FF3F24AA08E882CB444C94D731D97A606FD463
+    - 6F4056821152F03B6B24F2FCF8489F839D7367F3
+  sha256sums:
+    - 4e04cb867779f7f9e6172e5b3ad626d4971935b74b693fa2df34b8fb73409b88
+pkgname:
+  - name: easy-rsa
+# generated with artixpkg 0.37.4-1-any
