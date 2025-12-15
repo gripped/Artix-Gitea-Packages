@@ -1,9 +1,9 @@
 ---
-version: 20250606-1
+version: 20251212-1
 pkgbase:
   name: osinfo-db
   pkgdesc: Osinfo database of information about operating systems for virtualization provisioning tools
-  pkgver: 20250606
+  pkgver: 20251212
   pkgrel: 1
   url: https://libosinfo.org/
   arch:
@@ -17,13 +17,14 @@ pkgbase:
     - git
     - osinfo-db-tools
   source:
-    - git+https://gitlab.com/libosinfo/osinfo-db.git?signed#tag=v20250606
+    - git+https://gitlab.com/libosinfo/osinfo-db.git?signed#tag=v20251212
   validpgpkeys:
     - DAF3A6FDB26B62912D0E8E3FBE86EBB415104FDF
     - 09B9C8FF223EF113AFA06A39EE926C2BDACC177B
     - 206D3B352F566F3B0E6572E997D9123DE37A484F
+    - 4252D86A52041137C291CADFC85C5E957062A701
   b2sums:
-    - cc311d4791fabbd6abd5728d27ea7bb3d768af9c25c638bfea28340aefcc80377341f527d205cd5a90e280b50a6a1eac01fe15a8385c89d2a0076824a5ac5460
+    - 82334fe94d4e89e10b1adde643c4e47bcab3412b854d3527b2c5aa29a951a241448e85f3804960d1fe76598b2a0bed5da0112b102b6ccf31932499b788cbed01
 pkgname:
   - name: osinfo-db
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
