@@ -1,16 +1,18 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: system-goblins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 3.14.2-1
+    packages:
+      - python-3.14.2-1-x86_64.pkg.tar.zst
+      - python-tests-3.14.2-1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
