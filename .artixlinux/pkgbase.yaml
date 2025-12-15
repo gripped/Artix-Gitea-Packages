@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,15 +29,15 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:1.91.1-2
+    version: 1:1.92.0-1
     packages:
-      - rust-1:1.91.1-2-x86_64.pkg.tar.zst
-      - lib32-rust-libs-1:1.91.1-2-x86_64.pkg.tar.zst
-      - rust-musl-1:1.91.1-2-x86_64.pkg.tar.zst
-      - rust-aarch64-gnu-1:1.91.1-2-x86_64.pkg.tar.zst
-      - rust-aarch64-musl-1:1.91.1-2-x86_64.pkg.tar.zst
-      - rust-wasm-1:1.91.1-2-x86_64.pkg.tar.zst
-      - rust-src-1:1.91.1-2-x86_64.pkg.tar.zst
+      - rust-1:1.92.0-1-x86_64.pkg.tar.zst
+      - lib32-rust-libs-1:1.92.0-1-x86_64.pkg.tar.zst
+      - rust-musl-1:1.92.0-1-x86_64.pkg.tar.zst
+      - rust-aarch64-gnu-1:1.92.0-1-x86_64.pkg.tar.zst
+      - rust-aarch64-musl-1:1.92.0-1-x86_64.pkg.tar.zst
+      - rust-wasm-1:1.92.0-1-x86_64.pkg.tar.zst
+      - rust-src-1:1.92.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
