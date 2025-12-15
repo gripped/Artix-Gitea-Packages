@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.1.4-2
+    version: 1.1.4-3
     packages:
-      - libaec-1.1.4-2-x86_64.pkg.tar.zst
+      - libaec-1.1.4-3-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
