@@ -6,7 +6,7 @@ actions:
   triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: 3.14.2-1

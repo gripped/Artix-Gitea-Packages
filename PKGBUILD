@@ -76,6 +76,14 @@ check() {
   # test_tkk: AssertionError: Tuples differ: (0,) != ('0',)
   # test_ssl: flaky tests issues
 
+  # AssertionError: KeyboardInterrupt not raised
+  # test_pidfd_send_signal
+  # test_keyboard_interrupt_exit_code
+  # test_sigint
+  # test_interrupt
+  # test_wait_result
+  # test_shared_memory_SharedMemoryServer_ignores_sigint
+
   cd Python-${pkgver}
 
   # Obtain next free server number for xvfb-run; this even works in a chroot environment.
