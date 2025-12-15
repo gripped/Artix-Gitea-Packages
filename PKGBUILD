@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Balló György <ballogyor+arch at gmail dot com>
-# Contributor: Bruno Pagani <archange@archlinux.org
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Maintainer: Bruno Pagani <archange@archlinux.org
 # Contributor: Doug Newgard <scimmia at archlinux dot org>
 # Contributor: XavierCLL <xavier.corredor.llano (a) gmail.com>
 # Contributor: SaultDon <sault.don gmail>
@@ -12,7 +11,7 @@
 
 pkgname=qgis
 pkgver=3.44.4
-pkgrel=3
+pkgrel=4
 pkgdesc='Geographic Information System (GIS) that supports vector, raster & database formats'
 arch=(x86_64)
 url='https://qgis.org/'
