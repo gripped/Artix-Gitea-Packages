@@ -1,10 +1,10 @@
 ---
-version: 2.7200-7
+version: 2.7200-8
 pkgbase:
   name: perl-acme-alien-dontpanic
   pkgdesc: Test Module for Alien::Base
   pkgver: 2.7200
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/Acme-Alien-DontPanic
   arch:
     - any
