@@ -1,9 +1,9 @@
 ---
-version: 1.0.3-1
+version: 1.0.4-1
 pkgbase:
   name: python-inflate64
   pkgdesc: decompression of deflate64, enhanced deflate and compression algorithm
-  pkgver: 1.0.3
+  pkgver: 1.0.4
   pkgrel: 1
   url: https://codeberg.org/miurahr/inflate64
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://files.pythonhosted.org/packages/source/i/inflate64/inflate64-1.0.3.tar.gz
+    - https://files.pythonhosted.org/packages/source/i/inflate64/inflate64-1.0.4.tar.gz
   sha256sums:
-    - a89edd416c36eda0c3a5d32f31ff1555db2c5a3884aa8df95e8679f8203e12ee
+    - b398c686960c029777afc0ed281a86f66adb956cfc3fbf6667cc6453f7b407ce
 pkgname:
   - name: python-inflate64
 # generated with artixpkg 0.37.4-1-any
