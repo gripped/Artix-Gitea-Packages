@@ -1,0 +1,15 @@
+ Lib/test/libregrtest/pgo.py | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/Lib/test/libregrtest/pgo.py b/Lib/test/libregrtest/pgo.py
+index 04803ddf644..b2cd14e8f85 100644
+--- a/Lib/test/libregrtest/pgo.py
++++ b/Lib/test/libregrtest/pgo.py
+@@ -22,7 +22,6 @@
+     'test_float',
+     'test_fstring',
+     'test_functools',
+-    'test_generators',
+     'test_hashlib',
+     'test_heapq',
+     'test_int',
