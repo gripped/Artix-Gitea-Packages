@@ -1,10 +1,10 @@
 ---
-version: 2.15.1-4
+version: 2.15.1-5
 pkgbase:
   name: libxml2
   pkgdesc: XML C parser and toolkit
   pkgver: 2.15.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://gitlab.gnome.org/GNOME/libxml2/-/wikis/home
   arch:
     - x86_64
