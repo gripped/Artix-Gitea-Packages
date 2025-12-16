@@ -1,10 +1,10 @@
 ---
-version: 3.11-1
+version: 3.11-2
 pkgbase:
   name: python-idna
   pkgdesc: Internationalized Domain Names in Applications (IDNA)
   pkgver: 3.11
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/kjd/idna
   arch:
     - any
