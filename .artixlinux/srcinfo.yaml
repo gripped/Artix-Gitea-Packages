@@ -1,0 +1,33 @@
+---
+version: 20.11.0-6
+pkgbase:
+  name: python-isoduration
+  pkgdesc: Operations with ISO 8601 durations
+  pkgver: 20.11.0
+  pkgrel: 6
+  url: https://github.com/bolsote/isoduration
+  arch:
+    - any
+  license:
+    - ISC
+  checkdepends:
+    - python-pytest
+    - python-pytest-benchmark
+    - python-isodate
+    - python-hypothesis
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - python-arrow
+  source:
+    - python-isoduration::git+https://github.com/bolsote/isoduration#commit=f7316c5dad4d087d823795feaa401653906ac340
+  b2sums:
+    - SKIP
+pkgname:
+  - name: python-isoduration
+# generated with artixpkg 0.37.4-1-any
