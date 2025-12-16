@@ -3,7 +3,7 @@
 
 pkgname=python-joserfc
 pkgver=1.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Implementations of JOSE RFCs in Python'
 arch=(any)
 url='https://github.com/authlib/joserfc'
