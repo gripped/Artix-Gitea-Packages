@@ -1,10 +1,10 @@
 ---
-version: 1.9.2-1
+version: 1.9.2-2
 pkgbase:
   name: python-evdev
   pkgdesc: Python bindings for the Linux input subsystem
   pkgver: 1.9.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://python-evdev.readthedocs.io/en/latest/
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 0b8949b3ad9c7664ca8fae2dd30e26e5c4f3a83bd549bba62c97cccef60f0e1f3b11e7c1d511640e940d3e4061ff6236f68ed630f35e39adfd1a3ede4e070779
 pkgname:
   - name: python-evdev
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
