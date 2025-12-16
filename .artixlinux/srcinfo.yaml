@@ -1,10 +1,10 @@
 ---
-version: 0.5.5-1
+version: 0.5.5-2
 pkgbase:
   name: python-gnupg
   pkgdesc: A wrapper for the Gnu Privacy Guard (GPG or GnuPG)
   pkgver: 0.5.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.red-dove.com/python-gnupg
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-gnupg
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
