@@ -2,13 +2,13 @@
 
 pkgname=python-adblock
 pkgver=0.6.0
-pkgrel=4.1
+pkgrel=5
 pkgdesc="Brave's adblock library in Python"
 arch=("x86_64")
 url="https://github.com/ArniDagur/python-adblock"
 license=("MIT")
 depends=()
-makedepends=("python-setuptools" "python-pip" "rust" "maturin")
+makedepends=("python-setuptools" "rust" "maturin")
 checkdepends=("python-pytest" "python-pip" "python-toml")
 source=("$pkgname-$pkgver.tar.gz::https://github.com/ArniDagur/${pkgname}/archive/refs/tags/${pkgver}.tar.gz" "pep-621-compatibility.patch")
 sha256sums=('cdde5db640f1d9205785641665b79e6edb7c51092a68536bc4907560c71136b2'
