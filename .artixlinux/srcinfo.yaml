@@ -1,10 +1,10 @@
 ---
-version: 6.0-1
+version: 6.0-3
 pkgbase:
   name: python-zope-location
   pkgdesc: Special objects that have a structural location
   pkgver: 6.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/zopefoundation/zope.location
   arch:
     - any
