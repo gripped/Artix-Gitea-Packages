@@ -1,10 +1,10 @@
 ---
-version: 1.6.0-1
+version: 1.6.0-2
 pkgbase:
   name: python-svglib
   pkgdesc: Read SVG files and convert them to other formats
   pkgver: 1.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/deeplook/svglib
   arch:
     - any
