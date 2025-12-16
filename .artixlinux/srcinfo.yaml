@@ -1,10 +1,10 @@
 ---
-version: 1.17.3-1
+version: 1.17.3-2
 pkgbase:
   name: python-wrapt
   pkgdesc: A Python module for decorators, wrappers and monkey patching
   pkgver: 1.17.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/wrapt
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 1a1f7419f20faa461a9e23ad09cc98d381ef2c48b3b24ed1dfe98d42d16857a958252301e78dd41b7fa8ef37eea379f9244cace2b396b49718c44cbc701308a3
 pkgname:
   - name: python-wrapt
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
