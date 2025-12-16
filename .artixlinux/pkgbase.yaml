@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 30.4.4-2
+    packages:
+      - python-license-expression-30.4.4-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

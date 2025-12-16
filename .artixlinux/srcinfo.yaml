@@ -1,10 +1,10 @@
 ---
-version: 30.4.4-1
+version: 30.4.4-2
 pkgbase:
   name: python-license-expression
   pkgdesc: Utility to parse, normalize and compare license expressions
   pkgver: 30.4.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/nexB/license-expression
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - 3f32009c391d162c037c521b36abf8669f519a5299f2ce9ca2eccb6d8aa155a81a8ac727127d9781db3fb82963830ce39e35e0f07b4472c6964353559bb2c06d
 pkgname:
   - name: python-license-expression
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
