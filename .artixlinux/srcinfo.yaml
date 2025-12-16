@@ -1,0 +1,27 @@
+---
+version: 1.7.0-7
+pkgbase:
+  name: python-flit-scm
+  pkgdesc: A PEP 518 backend using setuptools_scm to generate a version file, then flit to build
+  pkgver: 1.7.0
+  pkgrel: 7
+  url: https://gitlab.com/WillDaSilva/flit_scm
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-flit-core
+    - python-setuptools-scm
+  source:
+    - flit_scm-1.7.0.tar.gz::https://gitlab.com/WillDaSilva/flit_scm/-/archive/1.7.0/flit_scm-1.7.0.tar.gz
+  sha256sums:
+    - 05a267d77f6f8ca50a053786fe3c1a74f7222f2955292f2e6c03d2d064a141dc
+pkgname:
+  - name: python-flit-scm
+# generated with artixpkg 0.37.4-1-any
