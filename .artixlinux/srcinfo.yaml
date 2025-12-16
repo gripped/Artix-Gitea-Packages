@@ -1,10 +1,10 @@
 ---
-version: 1:0.8.5-1
+version: 1:0.8.5-2
 pkgbase:
   name: python-parso
   pkgdesc: Python parser that supports error recovery and round-trip parsing for different Python versions
   pkgver: 0.8.5
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/davidhalter/parso
   arch:
@@ -29,4 +29,4 @@ pkgbase:
     - 38a0036954fec71b2878aeb2a32f437a9f787b51ab27cd773289d728371dc2cae556b8d19559dfb3cf001350d15f7256e1b2c1fcc0d0736249905a85b4b469f0
 pkgname:
   - name: python-parso
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
