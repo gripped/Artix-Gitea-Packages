@@ -1,10 +1,10 @@
 ---
-version: 3:2.41.5-1
+version: 3:2.41.5-2
 pkgbase:
   name: python-pydantic-core
   pkgdesc: Core validation logic for pydantic written in rust
   pkgver: 2.41.5
-  pkgrel: 1
+  pkgrel: 2
   epoch: 3
   url: https://github.com/pydantic/pydantic-core
   arch:
