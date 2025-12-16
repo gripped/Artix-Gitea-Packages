@@ -1,10 +1,10 @@
 ---
-version: 3.20.2-1
+version: 3.20.2-2
 pkgbase:
   name: python-simplejson
   pkgdesc: Simple, fast and extensible JSON decoder/encoder
   pkgver: 3.20.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/simplejson/simplejson
   arch:
     - x86_64
