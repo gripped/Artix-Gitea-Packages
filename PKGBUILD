@@ -1,12 +1,12 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 
 pkgname=python-pasta
 pkgver=0.2.0
-pkgrel=9
+pkgrel=10
 pkgdesc='Library to refactor python code through AST manipulation'
 url='https://github.com/google/pasta'
 arch=('any')
-license=('Apache')
+license=('Apache-2.0')
 depends=('python')
 makedepends=('python-setuptools')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/google/pasta/archive/v${pkgver}.tar.gz")
