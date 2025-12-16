@@ -1,0 +1,25 @@
+---
+version: 0.9.1-4
+pkgbase:
+  name: python-sphinxext-opengraph
+  pkgdesc: Sphinx extension to generate unique OpenGraph metadata
+  pkgver: 0.9.1
+  pkgrel: 4
+  url: https://sphinxext-opengraph.readthedocs.io/
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - python-setuptools
+    - python-setuptools-scm
+  depends:
+    - python-sphinx
+    - python-matplotlib
+  source:
+    - https://files.pythonhosted.org/packages/source/s/sphinxext-opengraph/sphinxext-opengraph-0.9.1.tar.gz
+  sha256sums:
+    - dd2868a1e7c9497977fbbf44cc0844a42af39ca65fe1bb0272518af225d06fc5
+pkgname:
+  - name: python-sphinxext-opengraph
+# generated with artixpkg 0.37.4-1-any
