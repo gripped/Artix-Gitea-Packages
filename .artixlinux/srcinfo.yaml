@@ -1,10 +1,10 @@
 ---
-version: 1.6.4-11
+version: 1.6.4-12
 pkgbase:
   name: scribus
   pkgdesc: Desktop publishing software
   pkgver: 1.6.4
-  pkgrel: 11
+  pkgrel: 12
   url: https://www.scribus.net/
   arch:
     - x86_64
