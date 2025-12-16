@@ -1,10 +1,10 @@
 ---
-version: 1.16.1-1
+version: 1.16.1-2
 pkgbase:
   name: python-alembic
   pkgdesc: Lightweight database migration tool for usage with SQLAlchemy
   pkgver: 1.16.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sqlalchemy/alembic
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - e384bdb31d735763fdff59b19c3926babf8db913e3edb0d57e07830633cb35966eb9dfbedcef35907726fc4fad84bced8296303afb80a2e0442ab8162ef84a3e
 pkgname:
   - name: python-alembic
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
