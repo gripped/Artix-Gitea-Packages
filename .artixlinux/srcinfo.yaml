@@ -1,10 +1,10 @@
 ---
-version: 0.18.1-1
+version: 0.18.1-2
 pkgbase:
   name: python-ufolib2
   pkgdesc: A library to deal with UFO font sources
   pkgver: 0.18.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/fonttools/ufoLib2
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 7de0efcc361c573f2537ee7ceabdb3bc64b19b61304cfa25e828caa7db8ae1a4
 pkgname:
   - name: python-ufolib2
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
