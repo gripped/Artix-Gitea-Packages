@@ -1,10 +1,10 @@
 ---
-version: 1.2.0-1
+version: 1.2.0-2
 pkgbase:
   name: python-pytest-asyncio
   pkgdesc: Pytest support for asyncio.
   pkgver: 1.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-asyncio
   arch:
     - any
