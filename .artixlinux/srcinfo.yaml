@@ -1,0 +1,30 @@
+---
+version: 3.0.4-2
+pkgbase:
+  name: python-semver
+  pkgdesc: Python helper for Semantic Versioning
+  pkgver: 3.0.4
+  pkgrel: 2
+  url: https://github.com/python-semver/python-semver
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/python-semver/python-semver.git#tag=3.0.4
+  sha512sums:
+    - f8dfb0f49e0f6e1ceea7aa684f4656b2ebea5ba5629722ebfdfc9483c1ba67ca968a6bb9abb91d8e3e2aa7fe0da84311c11f66994b949b4e7365eee173b94db4
+pkgname:
+  - name: python-semver
+# generated with artixpkg 0.37.4-1-any
