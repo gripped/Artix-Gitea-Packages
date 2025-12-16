@@ -1,10 +1,10 @@
 ---
-version: 2.1.4-1
+version: 2.1.4-2
 pkgbase:
   name: python-furl
   pkgdesc: A small Python library that makes parsing and manipulating URLs easy
   pkgver: 2.1.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/gruns/furl
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 4b984fa3c51f21034ccea22e12ac839028b4e2d8e80469867e1a1a40925978dcd2d91dd8d53a8764091dc2dc5d8500a1f7a37e227527a3a9015798c9a722dc92
 pkgname:
   - name: python-furl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
