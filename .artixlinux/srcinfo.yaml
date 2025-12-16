@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.29-1
+version: 1:1.4.29-2
 pkgbase:
   name: python-xapian
   pkgdesc: Python bindings for Xapian
   pkgver: 1.4.29
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://xapian.org/docs/bindings/python/
   arch:
@@ -37,4 +37,4 @@ pkgname:
       - python
       - xapian-core
       - libxapian.so
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
