@@ -1,10 +1,10 @@
 ---
-version: 1.42-1
+version: 1.42-2
 pkgbase:
   name: python-serpent
   pkgdesc: Serializer for literal Python expressions
   pkgver: 1.42
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/irmen/Serpent
   arch:
     - any
