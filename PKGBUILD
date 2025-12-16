@@ -8,7 +8,7 @@
 
 pkgname=python-matplotlib
 pkgver=3.10.8
-pkgrel=1
+pkgrel=2
 _mpl_images_ver=3.10.0
 _mpl_images_ftver=2.13.1
 pkgdesc="A python plotting library, making publication quality plots"
