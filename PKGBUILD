@@ -8,7 +8,7 @@
 
 pkgname=python-aiohttp
 pkgver=3.13.2
-pkgrel=1
+pkgrel=2
 pkgdesc='HTTP client/server for asyncio'
 arch=(x86_64)
 url=https://aiohttp.readthedocs.io
@@ -97,11 +97,6 @@ check() {
     --ignore=tests/test_benchmarks_cookiejar.py
     --ignore=tests/test_benchmarks_http_websocket.py
     --ignore=tests/test_benchmarks_http_writer.py
-
-    # Artix CI
-    --deselect=tests/test_connector.py
-    --deselect=tests/test_proxy_functional.py::test_proxy_http_connection_error[pyloop]
-    --deselect=tests/test_proxy_functional.py::test_proxy_https_connection_error[pyloop]
 
     # Tests freeze and timeout when running serialized, no idea why
     -n auto
