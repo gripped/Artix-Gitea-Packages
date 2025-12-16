@@ -1,10 +1,10 @@
 ---
-version: 2023.04.21-4
+version: 2023.04.21-5
 pkgbase:
   name: python-sphinx-inline-tabs
   pkgdesc: Add inline tabbed content to your Sphinx documentation
   pkgver: 2023.04.21
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/pradyunsg/sphinx-inline-tabs
   arch:
     - any
