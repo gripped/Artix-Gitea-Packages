@@ -1,10 +1,10 @@
 ---
-version: 0.3.2-2
+version: 0.3.2-3
 pkgbase:
   name: python-aiomysql
   pkgdesc: Library for accessing a MySQL database from the asyncio
   pkgver: 0.3.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/aio-libs/aiomysql
   arch:
     - any
