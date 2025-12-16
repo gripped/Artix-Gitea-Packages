@@ -1,0 +1,28 @@
+---
+version: 0.5.0-2
+pkgbase:
+  name: python-pytest-instafail
+  pkgdesc: py.test plugin to show failures instantly
+  pkgver: 0.5.0
+  pkgrel: 2
+  url: https://github.com/pytest-dev/pytest-instafail
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-pytest
+  source:
+    - git+https://github.com/pytest-dev/pytest-instafail.git#tag=v0.5.0
+  sha256sums:
+    - 2631c20de63da4d97536b99ad6932a0dbf0632fd21e5160dfd25e8984b813276
+pkgname:
+  - name: python-pytest-instafail
+# generated with artixpkg 0.37.4-1-any
