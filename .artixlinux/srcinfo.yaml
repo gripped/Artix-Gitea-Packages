@@ -1,0 +1,26 @@
+---
+version: 0.4.3.3-3
+pkgbase:
+  name: python-jsonrpclib-pelix
+  pkgdesc: A Python JSON-RPC over HTTP that mirrors xmlrpclib syntax
+  pkgver: 0.4.3.3
+  pkgrel: 3
+  url: https://github.com/tcalmant/jsonrpclib
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://pypi.io/packages/source/j/jsonrpclib-pelix/jsonrpclib-pelix-0.4.3.3.tar.gz
+  sha256sums:
+    - c494fe7100b1139b1311469c28bc32d1cb92e4ff1f4511fb71d6807205dc3773
+pkgname:
+  - name: python-jsonrpclib-pelix
+# generated with artixpkg 0.37.4-1-any
