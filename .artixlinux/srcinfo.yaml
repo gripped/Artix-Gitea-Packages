@@ -1,0 +1,33 @@
+---
+version: 2024.10.03-3
+pkgbase:
+  name: python-sphinx-autobuild
+  pkgdesc: Rebuild Sphinx documentation on changes, with live-reload in the browser
+  pkgver: 2024.10.03
+  pkgrel: 3
+  url: https://github.com/executablebooks/sphinx-autobuild
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-pytest
+    - python-httpx
+  makedepends:
+    - python-build
+    - python-installer
+    - python-flit-core
+  depends:
+    - python
+    - python-sphinx
+    - python-colorama
+    - python-watchfiles
+    - uvicorn
+    - python-starlette
+  source:
+    - python-sphinx-autobuild-2024.10.03.tar.gz::https://github.com/executablebooks/sphinx-autobuild/archive/2024.10.03.tar.gz
+  sha512sums:
+    - 5b919dd376cc0c2afc5d8623868e95fa7d0b9a693ea374c9ba7a6511d3bdfbfb5c0960e84d2cc64205588ad2651f80d1183260831f70144796abe17f4c2c87cc
+pkgname:
+  - name: python-sphinx-autobuild
+# generated with artixpkg 0.37.4-1-any
