@@ -1,10 +1,10 @@
 ---
-version: 25.4.16-1
+version: 25.4.16-2
 pkgbase:
   name: python-automat
   pkgdesc: Self-service finite-state machines for the programmer on the go.
   pkgver: 25.4.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/glyph/automat
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - 13280875ec0bc7d8e7296cf4f5a8aee687521dde5ec59e370f05fc648a6c344e1d8c956bf63136b4181ae0863285ccf7e5a06edb17d2272ec089783dba9656b5
 pkgname:
   - name: python-automat
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
