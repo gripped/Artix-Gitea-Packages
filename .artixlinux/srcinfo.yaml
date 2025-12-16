@@ -1,10 +1,10 @@
 ---
-version: 6.148.7-1
+version: 6.148.7-2
 pkgbase:
   name: python-hypothesis
   pkgdesc: Advanced Quickcheck style testing library for Python
   pkgver: 6.148.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://hypothesis.readthedocs.org
   arch:
     - any

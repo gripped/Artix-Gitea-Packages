@@ -5,7 +5,7 @@
 
 pkgname=python-hypothesis
 pkgver=6.148.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
 license=(MPL-2.0)
