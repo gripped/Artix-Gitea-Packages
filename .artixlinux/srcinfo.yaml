@@ -1,0 +1,29 @@
+---
+version: 4.2.2-6
+pkgbase:
+  name: python-reportlab
+  pkgdesc: A proven industry-strength PDF generating solution
+  pkgver: 4.2.2
+  pkgrel: 6
+  url: https://www.reportlab.com/
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - mercurial
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-chardet
+    - python-pillow
+  source:
+    - https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-4.2.2.tar.gz
+  sha256sums:
+    - 765eecbdd68491c56947e29c38b8b69b834ee5dbbdd2fb7409f08ebdebf04428
+pkgname:
+  - name: python-reportlab
+# generated with artixpkg 0.37.4-1-any
