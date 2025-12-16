@@ -1,0 +1,24 @@
+---
+version: 0.7.1-9
+pkgbase:
+  name: python-musicbrainzngs
+  pkgdesc: Python bindings for Musicbrainz' NGS webservice
+  pkgver: 0.7.1
+  pkgrel: 9
+  url: https://github.com/alastair/python-musicbrainzngs
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - git+https://github.com/alastair/python-musicbrainzngs.git#tag=e4bca39720c7c0a1de38b1663faa3475cf5b7eff
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: python-musicbrainzngs
+# generated with artixpkg 0.37.4-1-any

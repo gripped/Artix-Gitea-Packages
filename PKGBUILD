@@ -3,7 +3,7 @@
 
 pkgname=python-musicbrainzngs
 pkgver=0.7.1
-pkgrel=8
+pkgrel=9
 pkgdesc="Python bindings for Musicbrainz' NGS webservice"
 arch=(any)
 url=https://github.com/alastair/python-musicbrainzngs
