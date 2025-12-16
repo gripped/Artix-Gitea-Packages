@@ -1,10 +1,10 @@
 ---
-version: 0.20.0-1
+version: 0.20.0-2
 pkgbase:
   name: xonsh
   pkgdesc: A python-powered shell. Full-featured and cross-platform.
   pkgver: 0.20.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://xon.sh/
   install: xonsh.install
   arch:
