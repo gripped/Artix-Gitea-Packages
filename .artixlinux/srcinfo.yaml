@@ -1,0 +1,29 @@
+---
+version: 0.2.3-3
+pkgbase:
+  name: python-pure-eval
+  pkgdesc: Safely evaluate AST nodes without side effects
+  pkgver: 0.2.3
+  pkgrel: 3
+  url: https://github.com/alexmojaki/pure_eval
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/alexmojaki/pure_eval.git#tag=v0.2.3
+  b2sums:
+    - 5cffdd110b19a677bfa655c309fa1afe730b628e2eec13969d9313e1bdd735e99c7df874d2f8d15d37ac46b39cedb5e421d0999a06e1b9e0968a516bbfe3b4cb
+pkgname:
+  - name: python-pure-eval
+# generated with artixpkg 0.37.4-1-any
