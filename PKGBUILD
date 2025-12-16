@@ -6,7 +6,7 @@
 pkgdesc="A python library used to interact with Git repositories"
 pkgname=python-gitpython
 pkgver=3.1.45
-pkgrel=1
+pkgrel=2
 url="https://github.com/gitpython-developers/gitpython"
 license=(BSD-3-Clause)
 arch=(any)
@@ -56,6 +56,8 @@ check() {
   cd "$pkgname"
 
   export TRAVIS="VERY CONVENIENT"
+  # avoid `error: could not lock config file /dev/null: Permission denied` from git
+  export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
   git config --global user.name "Test User"
   git config --global user.email "test@user.org"
   ./init-tests-after-clone.sh

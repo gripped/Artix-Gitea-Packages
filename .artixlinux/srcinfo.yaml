@@ -1,10 +1,10 @@
 ---
-version: 3.1.45-1
+version: 3.1.45-2
 pkgbase:
   name: python-gitpython
   pkgdesc: A python library used to interact with Git repositories
   pkgver: 3.1.45
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/gitpython-developers/gitpython
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - da00071dc47441c318c261d3890c678ae65774de7111a42ac134c1779beeb920503224491239dcb9c51632ae75a5cdd561f14a5deaa673c37bb953166a522292
 pkgname:
   - name: python-gitpython
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
