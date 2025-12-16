@@ -2,7 +2,7 @@
 
 pkgname=python-constantly
 pkgver=23.10.4
-pkgrel=2.1
+pkgrel=3
 pkgdesc='Symbolic constants in Python'
 arch=('any')
 license=('MIT')

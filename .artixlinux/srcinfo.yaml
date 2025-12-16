@@ -1,0 +1,30 @@
+---
+version: 23.10.4-3
+pkgbase:
+  name: python-constantly
+  pkgdesc: Symbolic constants in Python
+  pkgver: 23.10.4
+  pkgrel: 3
+  url: https://github.com/twisted/constantly
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-twisted
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - python-versioneer
+  depends:
+    - python
+  source:
+    - https://github.com/twisted/constantly/archive/23.10.4/python-constantly-23.10.4.tar.gz
+  sha512sums:
+    - 41672b4b9292a6860fa3bad815170cb7da934cc12091ed4a2b85896370c7f7bbd18d363e40ba8aef08c113082de7b06662eaf7fb500f9b4bf7a6db50cfc035c9
+pkgname:
+  - name: python-constantly
+# generated with artixpkg 0.37.4-1-any
