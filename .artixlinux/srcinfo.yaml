@@ -1,10 +1,10 @@
 ---
-version: 8.2-1
+version: 8.2-2
 pkgbase:
   name: python-qrcode
   pkgdesc: Python library to generate QR codes
   pkgver: 8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lincolnloop/python-qrcode
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 79a783d49872c13fb4ca71cfb9d4892f9d9c1c04035f2afe312ad1bf7c94d00994457749ed1924eb0ca67e3060e89404ffd908563f464137e5e0c78164d8af72
 pkgname:
   - name: python-qrcode
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.37.4-1-any
