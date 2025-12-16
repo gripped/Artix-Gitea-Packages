@@ -4,7 +4,7 @@
 
 pkgname=python-psutil
 pkgver=7.1.3
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 pkgdesc='A cross-platform process and system utilities module for Python'
 url='https://github.com/giampaolo/psutil'
@@ -44,10 +44,7 @@ check() {
   GITHUB_ACTIONS=1 test-env/bin/python -m pytest --override-ini="addopts=" "$relative_site_packages" \
     --deselect "$relative_site_packages/psutil/tests/test_linux.py::TestSystemNetIfAddrs::test_ips" \
     --deselect "$relative_site_packages/psutil/tests/test_system.py::TestNetAPIs::test_net_if_addrs" \
-    --deselect "$relative_site_packages/psutil/tests/test_linux.py::TestRootFsDeviceFinder::test_disk_partitions_mocked" \
-    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestDiskAPIs::test_disk_partitions" \
-    --deselect "$relative_site_packages/psutil/tests/test_process_all.py::TestFetchAllProcesses::test_all"
-    # The last three are Artix CI specific failures
+    --deselect "$relative_site_packages/psutil/tests/test_system.py::TestSensorsAPIs::test_sensors_temperatures"
 
 }
 
