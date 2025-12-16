@@ -1,10 +1,10 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Konstantin Gizdov <arch at kge dot pw>
 # Contributor: Oliver Harley <oliver.r.harley+aur (at) gmail.com>
 _pkgname=Keras_Applications
 pkgname=python-keras-applications
 pkgver=1.0.8
-pkgrel=11
+pkgrel=12
 pkgdesc="Applications module of the Keras deep learning library"
 arch=('any')
 url="https://pypi.org/project/Keras-Applications/"
