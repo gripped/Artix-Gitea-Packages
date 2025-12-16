@@ -2,7 +2,7 @@
 
 pkgname=python-pymdown-extensions
 pkgver=10.19
-pkgrel=1
+pkgrel=2
 pkgdesc="Extensions for Python Markdown"
 arch=(any)
 url="https://github.com/facelessuser/pymdown-extensions"
