@@ -1,10 +1,10 @@
 ---
-version: 0.28.3-1
+version: 0.28.3-2
 pkgbase:
   name: python-validators
   pkgdesc: Python Data Validation for Humans
   pkgver: 0.28.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://python-validators.github.io/validators
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 366933ef679195d65bf2ef2aa1d6c0ac4df11dd4f0b4a1b4228cba90993e2efc1343edaec6a11bf24b8cba0750e7d3d408d76ab7cffd96a0232f0b8e1aa8e3ea
 pkgname:
   - name: python-validators
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
