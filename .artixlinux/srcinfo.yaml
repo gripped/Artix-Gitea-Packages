@@ -1,10 +1,10 @@
 ---
-version: 8.2.1-1
+version: 8.2.1-2
 pkgbase:
   name: python-click
   pkgdesc: Simple wrapper around optparse for powerful command line utilities
   pkgver: 8.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://click.palletsprojects.com/
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 420ba1989410af0949317f9651c6b292da68605b86b4cf0e2382eaba1defbc9eb4b9d97e0a71e5cdb51a61a1f578e81fd864e1abb0cdcd0a8ee26a899c802afe
 pkgname:
   - name: python-click
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
