@@ -1,10 +1,10 @@
 ---
-version: 2.1.19-4
+version: 2.1.19-5
 pkgbase:
   name: python-faust-cchardet
   pkgdesc: Fork of the original cChardet
   pkgver: 2.1.19
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/faust-streaming/cChardet
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-faust-cchardet
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
