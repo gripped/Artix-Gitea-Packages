@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-1
+version: 0.4.2-2
 pkgbase:
   name: python-pyasn1-modules
   pkgdesc: A collection of ASN.1-based protocols modules
   pkgver: 0.4.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pyasn1/pyasn1-modules
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 7c4feab23a8c5ab72549387586894d1d53a3ad8b9d12cc5774b1d1f5192873f87da2e3525059fdda5b5884a52908ce79df274e3b75ee1f42af32e83ceb3f9167
 pkgname:
   - name: python-pyasn1-modules
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
