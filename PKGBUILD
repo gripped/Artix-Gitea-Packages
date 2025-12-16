@@ -5,7 +5,7 @@
 
 pkgname=python-websockets
 pkgver=15.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Python implementation of the WebSocket Protocol (RFC 6455)'
 arch=('x86_64')
 url='https://github.com/aaugustin/websockets'
@@ -32,9 +32,9 @@ build() {
 
 check() {
   cd ${pkgname#python-}-${pkgver}
-#  python -m venv --system-site-packages test-env
-#  test-env/bin/python -m installer dist/*.whl
-#  test-env/bin/python -m unittest discover -v
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m unittest discover -v
 }
 
 package() {
