@@ -1,10 +1,10 @@
 ---
-version: 6.1-1
+version: 6.1-2
 pkgbase:
   name: python-zope-event
   pkgdesc: Provides a simple event system
   pkgver: 6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/zope.event
   arch:
     - any
