@@ -1,10 +1,10 @@
 ---
-version: 3.3.2-1
+version: 3.3.2-2
 pkgbase:
   name: python-psycopg
   pkgdesc: PostgreSQL database adapter for Python
   pkgver: 3.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.psycopg.org/psycopg3/
   arch:
     - x86_64
