@@ -1,10 +1,10 @@
 ---
-version: 2025.04.01-1
+version: 2025.04.01-2
 pkgbase:
   name: python-calver
   pkgdesc: Setuptools extension for CalVer package versions
   pkgver: 2025.04.01
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/di/calver
   arch:
     - any
