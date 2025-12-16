@@ -1,10 +1,10 @@
 ---
-version: 1.19.0-1
+version: 1.19.0-2
 pkgbase:
   name: python-pygit2
   pkgdesc: Python bindings for libgit2
   pkgver: 1.19.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/libgit2/pygit2
   arch:
     - x86_64
