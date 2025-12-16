@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: python-moreorless
   pkgdesc: Python diff wrapper
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/thatch/moreorless
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 25bcd94c9614acb24b7d14402f2264db06514699196f97073ebe6f83672e2d0a9685bf5c3c6b8a43f6ecd8ff4ec7878ad5c1764ed565dbe073ecdd43cdca142c
 pkgname:
   - name: python-moreorless
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.37.4-1-any
