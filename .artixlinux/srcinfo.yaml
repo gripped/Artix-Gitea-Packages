@@ -1,10 +1,10 @@
 ---
-version: 2.2.2-1
+version: 2.2.2-2
 pkgbase:
   name: python-gmpy2
   pkgdesc: Provides C-coded Python modules for fast multiple-precision arithmetic
   pkgver: 2.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/aleaxit/gmpy
   arch:
     - x86_64
