@@ -1,10 +1,10 @@
 ---
-version: 6.6.0-1
+version: 6.6.0-3
 pkgbase:
   name: cinnamon
   pkgdesc: Linux desktop which provides advanced innovative features and a traditional user experience
   pkgver: 6.6.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/linuxmint/cinnamon
   arch:
     - x86_64
@@ -19,7 +19,6 @@ pkgbase:
     - python-libsass
   depends:
     - accountsservice
-    - caribou
     - cinnamon-control-center
     - cinnamon-desktop
     - cinnamon-menus
@@ -34,6 +33,7 @@ pkgbase:
     - gsound
     - gstreamer
     - gtk3
+    - libibus
     - libgnomekbd
     - libkeybinder3
     - librsvg
@@ -67,6 +67,8 @@ pkgbase:
     - 'gnome-terminal: X terminal emulator'
     - 'touchegg: touch gestures'
     - 'switcheroo-control: GPU offloading'
+  conflicts:
+    - caribou<=0.4.21+75+g8ad9883-8
   options:
     - '!emptydirs'
   source:
