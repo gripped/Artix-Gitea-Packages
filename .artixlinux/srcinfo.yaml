@@ -1,10 +1,10 @@
 ---
-version: 25.3.0-1
+version: 25.3.0-2
 pkgbase:
   name: python-cattrs
   pkgdesc: Complex custom class converters for attrs
   pkgver: 25.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://catt.rs
   arch:
     - any
