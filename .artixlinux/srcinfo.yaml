@@ -1,0 +1,29 @@
+---
+version: 2.7.4-14
+pkgbase:
+  name: python-whoosh
+  pkgdesc: Fast, pure-Python full text indexing, search, and spell checking library
+  pkgver: 2.7.4
+  pkgrel: 14
+  url: https://github.com/mchaput/whoosh
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+    - git
+  depends:
+    - python
+  source:
+    - git+https://github.com/mchaput/whoosh#tag=v2.7.4
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: python-whoosh
+# generated with artixpkg 0.37.4-1-any
