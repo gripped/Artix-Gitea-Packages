@@ -1,10 +1,10 @@
 ---
-version: 14.2.0-1
+version: 14.2.0-2
 pkgbase:
   name: python-rich
   pkgdesc: Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal
   pkgver: 14.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/willmcgugan/rich
   arch:
     - any
