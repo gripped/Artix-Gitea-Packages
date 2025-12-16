@@ -1,10 +1,10 @@
 ---
-version: 6.0.12-1
+version: 6.0.12-2
 pkgbase:
   name: python-feedparser
   pkgdesc: Parse RSS and Atom feeds in Python
   pkgver: 6.0.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/kurtmckee/feedparser
   arch:
     - any
