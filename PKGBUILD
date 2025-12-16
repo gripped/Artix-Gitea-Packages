@@ -3,7 +3,7 @@
 _name=ifaddr
 pkgname=python-ifaddr
 pkgver=0.2.0
-pkgrel=6
+pkgrel=7
 pkgdesc="Enumerates all IP addresses on all network adapters of the system"
 arch=('any')
 url="https://github.com/pydron/ifaddr"
@@ -32,4 +32,3 @@ check() {
 }
 
 # vim:set ts=2 sw=2 et:
-
