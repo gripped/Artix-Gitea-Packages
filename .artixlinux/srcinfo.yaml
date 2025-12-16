@@ -1,10 +1,10 @@
 ---
-version: 25.10.0-1
+version: 25.10.0-2
 pkgbase:
   name: python-webcolors
   pkgdesc: A library for working with the color formats defined by HTML and CSS
   pkgver: 25.10.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ubernostrum/webcolors
   arch:
     - any
