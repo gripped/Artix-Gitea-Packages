@@ -1,0 +1,30 @@
+---
+version: 1.5.1-3
+pkgbase:
+  name: python-libcst
+  pkgdesc: A concrete syntax tree parser and serializer library for Python that preserves many aspects of Python's abstract syntax tree
+  pkgver: 1.5.1
+  pkgrel: 3
+  url: https://github.com/Instagram/LibCST
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools-rust
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - glibc
+    - gcc-libs
+    - python
+    - python-pyyaml
+  source:
+    - python-libcst-1.5.1.tar.gz::https://github.com/Instagram/LibCST/archive/v1.5.1.tar.gz
+  sha512sums:
+    - cd400126ad2c1d4d41866ea9306de153790391c589bd1f07acb326be728b7a9fa0a545e2b2b8c19c33c8a59375003f92030ce07b04bee7dc201632ffd1c34cd3
+pkgname:
+  - name: python-libcst
+# generated with artixpkg 0.37.4-1-any
