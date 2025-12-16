@@ -1,0 +1,30 @@
+---
+version: 5.2.0-7
+pkgbase:
+  name: python-chardet
+  pkgdesc: Python3 module for character encoding auto-detection
+  pkgver: 5.2.0
+  pkgrel: 7
+  url: https://github.com/chardet/chardet
+  arch:
+    - any
+  license:
+    - LGPL
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://pypi.io/packages/source/c/chardet/chardet-5.2.0.tar.gz
+  sha256sums:
+    - 1b3b6ff479a8c414bc3fa2c0852995695c4a026dcd6d0633b2dd092ca39c1cf7
+  b2sums:
+    - 931653d176edd6045ce5f850018bd7bee70e29bcbec2313aaaa786974d1001deaa00402e22f0e7a14f662d3193da35ab97d65eba3fda68338c9a67131b2706fe
+pkgname:
+  - name: python-chardet
+# generated with artixpkg 0.37.4-1-any
