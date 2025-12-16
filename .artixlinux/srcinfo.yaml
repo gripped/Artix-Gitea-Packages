@@ -1,10 +1,10 @@
 ---
-version: 1.1.2-1
+version: 1.1.2-2
 pkgbase:
   name: python-precis_i18n
   pkgdesc: PRECIS framework (RFC 8264, RFC 8265, RFC 8266)
   pkgver: 1.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/byllyfish/precis_i18n
   arch:
     - any
