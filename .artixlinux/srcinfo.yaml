@@ -1,9 +1,9 @@
 ---
-version: 2.45-1
+version: 2.45.1-1
 pkgbase:
   name: mingw-w64-binutils
   pkgdesc: Cross binutils for the MinGW-w64 cross-compiler
-  pkgver: 2.45
+  pkgver: 2.45.1
   pkgrel: 1
   url: http://www.gnu.org/software/binutils
   arch:
@@ -26,13 +26,14 @@ pkgbase:
     - '!libtool'
     - '!emptydirs'
   source:
-    - https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.gz
-    - https://ftp.gnu.org/gnu/binutils/binutils-2.45.tar.gz.sig
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.gz
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.45.1.tar.gz.sig
   validpgpkeys:
     - 3A24BC1E8FB409FA9F14371813FCEF89DD9E3C4F
+    - 5EF3A41171BB77E6110ED2D01F3D03348DB1A3E2
   sha512sums:
-    - 5c71ec80884c0b4c0f7a4f8600946f1f6feebe584261b63185b0942cba4062d5b6cf2337539132d0ca03505c0a74f3c2760bc62ed08843c3b7db03df7f5798ad
+    - c31d2e16a14dce0e6d4c18c31f9512bdeb5023b4f56796bbd089c6f789a98ec7282ab307a81a264b475f2851d6618738fd41d57821309d0afe3c1079b50c1f6b
     - SKIP
 pkgname:
   - name: mingw-w64-binutils
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
