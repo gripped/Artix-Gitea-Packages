@@ -1,0 +1,29 @@
+---
+version: 2.3.1-5
+pkgbase:
+  name: python-sphobjinv
+  pkgdesc: Manipulate and inspect Sphinx objects.inv files
+  pkgver: 2.3.1
+  pkgrel: 5
+  url: https://github.com/bskinn/sphobjinv
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+    - python-attrs
+    - python-certifi
+    - python-jsonschema
+  source:
+    - https://github.com/bskinn/sphobjinv/archive/v2.3.1/sphobjinv-2.3.1.tar.gz
+  sha256sums:
+    - dab4abb840c8d2a5b3532da4318243c70ab0d18f6a87596eae16c3ef178265b1
+pkgname:
+  - name: python-sphobjinv
+# generated with artixpkg 0.37.4-1-any
