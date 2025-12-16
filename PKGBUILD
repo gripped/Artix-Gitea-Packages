@@ -4,7 +4,7 @@
 
 pkgname=python-flask-compress
 pkgver=1.23
-pkgrel=1
+pkgrel=2
 pkgdesc='Compress responses in your Flask app'
 url='https://github.com/colour-science/flask-compress'
 arch=('any')
