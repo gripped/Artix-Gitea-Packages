@@ -1,10 +1,10 @@
 ---
-version: 2.1.0-1
+version: 2.1.0-2
 pkgbase:
   name: python-pyftpdlib
   pkgdesc: Extremely fast and scalable Python FTP server library
   pkgver: 2.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/giampaolo/pyftpdlib
   arch:
     - any
