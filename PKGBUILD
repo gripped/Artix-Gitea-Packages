@@ -4,7 +4,7 @@
 
 pkgname=python-requests-file
 pkgver=2.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='File transport adapter for Requests'
 arch=('any')
 url='https://github.com/dashea/requests-file'
@@ -26,6 +26,11 @@ build() {
   cd "$pkgname"
 
   python -m build --wheel --no-isolation
+}
+
+check() {
+  cd "$pkgname"
+  python -m unittest discover -vs tests
 }
 
 package() {
