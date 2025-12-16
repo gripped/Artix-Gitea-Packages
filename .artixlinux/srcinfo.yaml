@@ -1,10 +1,10 @@
 ---
-version: 1.19.0-1
+version: 1.19.0-2
 pkgbase:
   name: python-patch-ng
   pkgdesc: Python library to parse and apply unified diffs (new generation)
   pkgver: 1.19.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/conan-io/python-patch-ng/
   arch:
     - any
