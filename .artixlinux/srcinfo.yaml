@@ -1,10 +1,10 @@
 ---
-version: 1.3.0-1
+version: 1.3.0-2
 pkgbase:
   name: python-multipart
   pkgdesc: Parser for multipart/form-data
   pkgver: 1.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/defnull/multipart
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 87d187a564323aa8cc802aafba168e2adefe021bc2cc61695cfe66e933b16dd460770c3c2de31412aeed1040ce602fa5bb9003b26461157b726348cd4788f0e2
 pkgname:
   - name: python-multipart
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
