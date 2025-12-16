@@ -1,10 +1,10 @@
 ---
-version: 7.0.0-1
+version: 7.0.0-2
 pkgbase:
   name: python-nbxmpp
   pkgdesc: A Python library to use Jabber/XMPP networks in a non-blocking way
   pkgver: 7.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://dev.gajim.org/gajim/python-nbxmpp/
   arch:
     - any
