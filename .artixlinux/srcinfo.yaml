@@ -1,10 +1,10 @@
 ---
-version: 2.15.0-1
+version: 2.15.0-2
 pkgbase:
   name: python-emoji
   pkgdesc: Emoji for Python
   pkgver: 2.15.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/carpedm20/emoji
   arch:
     - any
