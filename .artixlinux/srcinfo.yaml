@@ -1,10 +1,10 @@
 ---
-version: 25.8.0-1
+version: 25.8.0-2
 pkgbase:
   name: python-awesomeversion
   pkgdesc: One version package to rule them all.
   pkgver: 25.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ludeeus/awesomeversion
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 63d31615890ed05e375249acc1f837c904ba93295b541cf9f36d6be25e66f48df3a7d09330a0b14c0ccfd12c559d40b592503a8aec906b12dd30759bd1c9512a
 pkgname:
   - name: python-awesomeversion
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
