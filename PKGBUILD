@@ -3,7 +3,7 @@
 pkgname=python-anyio
 # https://github.com/agronholm/anyio/blob/master/docs/versionhistory.rst
 pkgver=4.12.0
-pkgrel=1
+pkgrel=2
 pkgdesc='High level compatibility layer for multiple asynchronous event loop implementations'
 arch=(any)
 url='https://github.com/agronholm/anyio'
@@ -42,9 +42,7 @@ check() {
   # its pytest plugin
   pyver=$(python -c "import sys; print('{}.{}'.format(*sys.version_info[:2]))")
   python -m installer --destdir="$PWD/tmp_install" dist/*.whl
-  PYTHONPATH="$PWD/tmp_install/usr/lib/python$pyver/site-packages" pytest \
-  --deselect=tests/test_sockets.py::TestTCPListener::test_tcp_listener_same_port
-  # Artix CI: failed with "address already in use" error
+  PYTHONPATH="$PWD/tmp_install/usr/lib/python$pyver/site-packages" pytest
 }
 
 package() {
