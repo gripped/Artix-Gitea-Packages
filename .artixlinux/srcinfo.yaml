@@ -1,10 +1,10 @@
 ---
-version: 2.1.0-1
+version: 2.1.0-2
 pkgbase:
   name: python-confuse
   pkgdesc: Painless YAML config files for Python
   pkgver: 2.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/beetbox/confuse
   arch:
     - any
