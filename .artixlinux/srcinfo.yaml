@@ -1,10 +1,10 @@
 ---
-version: 0.25.0-1
+version: 0.25.0-2
 pkgbase:
   name: python-zstandard
   pkgdesc: Python bindings to the Zstandard (zstd) compression library
   pkgver: 0.25.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/indygreg/python-zstandard
   arch:
     - x86_64
