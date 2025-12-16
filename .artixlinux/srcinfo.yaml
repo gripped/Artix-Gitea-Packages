@@ -1,0 +1,24 @@
+---
+version: 3.0.1-5
+pkgbase:
+  name: python-railroad-diagrams
+  pkgdesc: Generate SVG railroad syntax diagrams, like on JSON.org.
+  pkgver: 3.0.1
+  pkgrel: 5
+  url: https://github.com/tabatkins/railroad-diagrams
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - git+https://github.com/tabatkins/railroad-diagrams.git#commit=c3a16b9dcb06f5d0ae2260f8414136917871d4c5
+  sha512sums:
+    - SKIP
+pkgname:
+  - name: python-railroad-diagrams
+# generated with artixpkg 0.37.4-1-any
