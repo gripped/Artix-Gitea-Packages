@@ -1,10 +1,10 @@
 ---
-version: 25.3-1
+version: 25.3-2
 pkgbase:
   name: python-pip
   pkgdesc: The PyPA recommended tool for installing Python packages
   pkgver: 25.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://pip.pypa.io/
   arch:
     - any
