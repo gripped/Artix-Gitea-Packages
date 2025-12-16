@@ -1,0 +1,26 @@
+---
+version: 6.9.0-2
+pkgbase:
+  name: python-colorlog
+  pkgdesc: A colored formatter for the python logging module
+  pkgver: 6.9.0
+  pkgrel: 2
+  url: https://github.com/borntyping/python-colorlog
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-colorlog-6.9.0.tar.gz::https://github.com/borntyping/python-colorlog/archive/v6.9.0.tar.gz
+  sha512sums:
+    - 9959252ae980422b09e5ad2a7e42aac6291a73ad792971aa15a343dd382b7c5b2e12fc9ccf55c16c23e81f6aba37a538d27614819c05b94bb16393bed971868b
+pkgname:
+  - name: python-colorlog
+# generated with artixpkg 0.37.4-1-any
