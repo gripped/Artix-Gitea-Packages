@@ -1,10 +1,10 @@
 ---
-version: 0.13.0-1
+version: 0.13.0-2
 pkgbase:
   name: python-aioitertools
   pkgdesc: Implementation of itertools, builtins, and more for AsyncIO and mixed-type iterables
   pkgver: 0.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/omnilib/aioitertools
   arch:
     - any
