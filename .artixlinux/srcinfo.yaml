@@ -1,0 +1,31 @@
+---
+version: 0.8.0-6
+pkgbase:
+  name: python-vistir
+  pkgdesc: Miscellaneous utilities for dealing with filesystems, paths, projects, subprocesses, and more
+  pkgver: 0.8.0
+  pkgrel: 6
+  url: https://github.com/sarugaku/vistir
+  arch:
+    - any
+  license:
+    - ISC
+  checkdepends:
+    - python-pytest
+    - python-hypothesis-fspaths
+    - python-pytest-timeout
+    - python-requests
+  makedepends:
+    - python-setuptools
+    - python-wheel
+    - python-build
+    - python-installer
+  depends:
+    - python-colorama
+  source:
+    - python-vistir-0.8.0.tar.gz::https://github.com/sarugaku/vistir/archive/v0.8.0.tar.gz
+  sha512sums:
+    - e417b4e43b71679c4e74ccca2156ff2bdff5180479f8af22a70a359e0e864ba80c0cb2e7bae1a1766280c84b8c02f06be79ae090a3ae8883cc73891bd3f77b44
+pkgname:
+  - name: python-vistir
+# generated with artixpkg 0.37.4-1-any
