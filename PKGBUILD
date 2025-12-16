@@ -1,11 +1,11 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
-_bootstrap=0
-_bootstrap_version=3.13.0
+_bootstrap=1
+_bootstrap_version=3.14.0
 pkgname=python-packaging
 _name=${pkgname#python-}
 pkgver=25.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Core utilities for Python packages"
 arch=('any')
 url="https://github.com/pypa/packaging"
@@ -35,7 +35,14 @@ else
     python-setuptools::git+https://github.com/pypa/setuptools.git
   )
 fi
-sha512sums=('fb8419f81f0f817440c0b297fc6e963832e219e7a324bf4e0321f1e131a4822f17a19f2eb033a8d4adb622ccb16db59776ec44906a0c0b34f2877b59b9558c18')
+sha512sums=('a71bffda21bf944dd0d62dc801ae6b719ba4a54538b7a03cc84c3ff930ca1b91eaecf226d8089a09a707eaf9892f7cce31e7e167008af64ac918870079f3f65f'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
 
 prepare() {
   if (( _bootstrap == 0 )); then
