@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.7.0-10
+    version: 0.7.0-11
     packages:
-      - python-installer-0.7.0-10-any.pkg.tar.zst
+      - python-installer-0.7.0-11-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
