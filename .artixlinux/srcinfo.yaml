@@ -1,10 +1,10 @@
 ---
-version: 0.24.0-1
+version: 0.24.0-2
 pkgbase:
   name: python-pysol_cards
   pkgdesc: Deal PySol FC Cards
   pkgver: 0.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/pysol-cards/
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - a985492da81aa1588dfc056d9a7c6ca83f66254c0b90f25afc682a70713d4d4b
 pkgname:
   - name: python-pysol_cards
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
