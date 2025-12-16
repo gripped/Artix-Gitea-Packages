@@ -1,0 +1,28 @@
+---
+version: 1.3.0-5
+pkgbase:
+  name: python-uri-template
+  pkgdesc: An implementation of RFC 6570 URI Templates
+  pkgver: 1.3.0
+  pkgrel: 5
+  url: https://github.com/plinss/uri_template
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+    - python-setuptools-scm
+  depends:
+    - python
+  source:
+    - python-uri-template::git+https://github.com/plinss/uri_template#commit=00135e0f819b6e5542ce60627dd7b20bdc5706c4
+  b2sums:
+    - SKIP
+pkgname:
+  - name: python-uri-template
+# generated with artixpkg 0.37.4-1-any
