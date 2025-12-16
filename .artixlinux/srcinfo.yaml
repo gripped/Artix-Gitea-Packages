@@ -1,10 +1,10 @@
 ---
-version: 1.9.0-3
+version: 1.9.0-4
 pkgbase:
   name: python-blinker
   pkgdesc: Fast, simple object-to-object and broadcast signaling
   pkgver: 1.9.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://blinker.readthedocs.io
   arch:
     - any
