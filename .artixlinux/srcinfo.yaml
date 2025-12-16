@@ -1,0 +1,28 @@
+---
+version: 4.2.1-2
+pkgbase:
+  name: python-immutabledict
+  pkgdesc: Immutable wrapper around dictionaries (a fork of frozendict)
+  pkgver: 4.2.1
+  pkgrel: 2
+  url: https://github.com/corenting/immutabledict
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-poetry-core
+  depends:
+    - python
+  source:
+    - python-immutabledict-4.2.1.tar.gz::https://github.com/corenting/immutabledict/archive/refs/tags/v4.2.1.tar.gz
+  sha512sums:
+    - 4e8da859dae471bb6865190c7cd9ac0665a5d46be7dc8ca53511f79d4777e35842ba678c102e519e502e002d9f49ddec4e99b5adcb5a00f12f970de0fd1e0329
+pkgname:
+  - name: python-immutabledict
+# generated with artixpkg 0.37.4-1-any
