@@ -5,7 +5,7 @@
 
 pkgname=python-joblib
 pkgver=1.5.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Set of tools to provide lightweight pipelining in Python"
 arch=('any')
 url="https://joblib.readthedocs.io/"

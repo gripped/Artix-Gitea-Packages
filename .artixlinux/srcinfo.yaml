@@ -1,10 +1,10 @@
 ---
-version: 1.5.2-2
+version: 1.5.2-3
 pkgbase:
   name: python-joblib
   pkgdesc: Set of tools to provide lightweight pipelining in Python
   pkgver: 1.5.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://joblib.readthedocs.io/
   arch:
     - any
