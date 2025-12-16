@@ -1,10 +1,10 @@
 ---
-version: 3.2.9-1
+version: 3.2.9-2
 pkgbase:
   name: python-xlsxwriter
   pkgdesc: A Python module for creating Excel XLSX files
   pkgver: 3.2.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jmcnamara/XlsxWriter
   arch:
     - any
