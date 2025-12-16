@@ -1,10 +1,10 @@
 ---
-version: 25.3.0-1
+version: 25.3.0-2
 pkgbase:
   name: python-pyopenssl
   pkgdesc: Python wrapper around the OpenSSL library
   pkgver: 25.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pyopenssl.org/
   arch:
     - any
