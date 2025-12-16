@@ -1,0 +1,30 @@
+---
+version: 1.0.1-3
+pkgbase:
+  name: python-pytest-xprocess
+  pkgdesc: Pytest plugin to manage external processes across test runs.
+  pkgver: 1.0.1
+  pkgrel: 3
+  url: https://github.com/pytest-dev/pytest-xprocess
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-psutil
+    - python-pytest
+  source:
+    - pytest-xprocess-1.0.1.tar.gz::https://github.com/pytest-dev/pytest-xprocess/archive/refs/tags/1.0.1.tar.gz
+  sha512sums:
+    - 44c0c496fd3c52134b4a208c61cae3e8e0620091e356eddc2b5105b85a5ca9201e54a985c9fbef2a486701dcd42616a02a5e0f86cc3c25857b874f04850613b2
+  b2sums:
+    - b38f822ccb1f903d6e9ec4150484537ffbe20116d631a874252c731e3002d01e88e254d4e4ede8965a929b1f46b2c4fcec9a00dafb7ed242e065a70cadbc35fa
+pkgname:
+  - name: python-pytest-xprocess
+# generated with artixpkg 0.37.4-1-any
