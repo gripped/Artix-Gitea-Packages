@@ -1,10 +1,10 @@
 ---
-version: 3.5-1
+version: 3.5-2
 pkgbase:
   name: python-networkx
   pkgdesc: Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
   pkgver: 3.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://networkx.org/
   arch:
     - any
@@ -37,4 +37,4 @@ pkgbase:
     - d1544694d4485242d2c971175b350ac6b2ce176472d15c7b8c5a63b541a837839bd1405aae4cecd9cac4a536d19f1eb91bcdbb19a85173ba3e02c2835f6e6f0d
 pkgname:
   - name: python-networkx
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
