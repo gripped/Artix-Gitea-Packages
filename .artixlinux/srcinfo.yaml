@@ -1,10 +1,10 @@
 ---
-version: 0.21-1
+version: 0.21-2
 pkgbase:
   name: python-graphviz
   pkgdesc: Simple Python interface for Graphviz
   pkgver: 0.21
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/xflr6/graphviz
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - ecebb8275fdd3eace1c16d11a6db976877ed976e6c3a228c2cf946c34ef9001c
 pkgname:
   - name: python-graphviz
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
