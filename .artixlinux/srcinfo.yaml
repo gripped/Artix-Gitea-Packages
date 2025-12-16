@@ -1,10 +1,10 @@
 ---
-version: 27.1.0-1
+version: 27.1.0-2
 pkgbase:
   name: python-pyzmq
   pkgdesc: Python bindings for ZeroMQ
   pkgver: 27.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://zeromq.org/languages/python/
   arch:
     - x86_64
