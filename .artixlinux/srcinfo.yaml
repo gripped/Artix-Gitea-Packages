@@ -1,10 +1,10 @@
 ---
-version: 2.2.2-1
+version: 2.2.2-2
 pkgbase:
   name: python-pytest-services
   pkgdesc: Services plugin for pytest testing framework
   pkgver: 2.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-services
   arch:
     - any
@@ -36,4 +36,4 @@ pkgbase:
     - f17e4f544a2a72c597290a94adbd86acf6b5110de126e3d43f99b96e924978893249fb90a83e23f814377cd86126bbdcd395f3cce0da935f783cee1cb473eece
 pkgname:
   - name: python-pytest-services
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
