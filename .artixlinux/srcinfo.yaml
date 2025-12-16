@@ -1,10 +1,10 @@
 ---
-version: 8.3-1
+version: 8.3-2
 pkgbase:
   name: python-zope-security
   pkgdesc: Zope Security Framework
   pkgver: 8.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/zope.security
   arch:
     - x86_64
