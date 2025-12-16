@@ -1,10 +1,10 @@
 ---
-version: 20.35.4-1
+version: 20.35.4-2
 pkgbase:
   name: python-virtualenv
   pkgdesc: Virtual Python Environment builder
   pkgver: 20.35.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://virtualenv.pypa.io
   arch:
     - any
