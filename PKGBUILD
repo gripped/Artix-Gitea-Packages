@@ -1,0 +1,55 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Orhun Parmaksız <orhun@archlinux.org>
+# Contributor: Yigit Sever <yigit at yigitsever dot com>
+
+pkgname=ouch
+pkgver=0.6.1
+pkgrel=1
+pkgdesc="A command line utility for easily compressing and decompressing files and directories"
+arch=('x86_64')
+url="https://github.com/ouch-org/ouch"
+license=('MIT')
+depends=('xz' 'bzip2' 'zlib')
+makedepends=('cargo' 'clang')
+checkdepends=('git')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
+sha256sums=('e6265071affab228ba7d3ca85f2206029445038b3a3d96036e9bf02b795ad651')
+options=('!lto')
+
+prepare() {
+  cd "$srcdir/$pkgname-$pkgver"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+  cd "$srcdir/$pkgname-$pkgver"
+  OUCH_ARTIFACTS_FOLDER=artifacts cargo build --frozen --release --all-features
+}
+
+check() {
+  cd "$srcdir/$pkgname-$pkgver"
+  cargo test --frozen --all-features
+}
+
+package() {
+  cd "$srcdir/$pkgname-$pkgver"
+
+  install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
+  install -Dm0644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm0644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+
+  cd "$srcdir/$pkgname-$pkgver/artifacts"
+
+  # install manpages
+  install -Dm0644 "${pkgname}.1" -t "${pkgdir}/usr/share/man/man1"
+  install -Dm0644 "${pkgname}-compress.1" -t "${pkgdir}/usr/share/man/man1"
+  install -Dm0644 "${pkgname}-decompress.1" -t "${pkgdir}/usr/share/man/man1"
+  install -Dm0644 "${pkgname}-list.1" -t "${pkgdir}/usr/share/man/man1"
+
+  # install shell completions
+  install -Dm0644 "${pkgname}.bash" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+  install -Dm0644 "${pkgname}.fish" "${pkgdir}/usr/share/fish/vendor_completions.d/${pkgname}.fish"
+  install -Dm0644 "_${pkgname}" "${pkgdir}/usr/share/zsh/site-functions/_${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:
