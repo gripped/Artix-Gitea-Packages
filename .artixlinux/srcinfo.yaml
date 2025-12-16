@@ -1,10 +1,10 @@
 ---
-version: 2.17.0-1
+version: 2.17.0-2
 pkgbase:
   name: python-babel
   pkgdesc: A collection of tools for internationalizing Python applications
   pkgver: 2.17.0
-  pkgrel: 1
+  pkgrel: 2
   url: http://babel.pocoo.org/
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - fbce9c2275862ad26668fb34783fe6c339f3d92ddfeb5a10a1775fb58181a15d
 pkgname:
   - name: python-babel
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.37.4-1-any
