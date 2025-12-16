@@ -1,0 +1,28 @@
+---
+version: 24.6.1-5
+pkgbase:
+  name: python-pycountry
+  pkgdesc: ISO country, subdivision, language, currency and script definitions and their translations
+  pkgver: 24.6.1
+  pkgrel: 5
+  url: https://pypi.org/project/pycountry/
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-pytest
+    - python-importlib-metadata
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+  source:
+    - https://pypi.io/packages/source/p/pycountry/pycountry-24.6.1.tar.gz
+  sha512sums:
+    - 36d8f68b830d74259a5f9ac1c9c97c1b228b0072613229e6f579ea5af587ab1cd25f0637a2cdd1dbf2ae8225e2aa2958d25f1e6df42d577da821d85c4c49ae93
+pkgname:
+  - name: python-pycountry
+# generated with artixpkg 0.37.4-1-any
