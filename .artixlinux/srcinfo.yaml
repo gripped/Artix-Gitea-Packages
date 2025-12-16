@@ -1,10 +1,10 @@
 ---
-version: 0.30.0-1
+version: 0.30.0-2
 pkgbase:
   name: python-awscrt
   pkgdesc: A common runtime for AWS Python projects
   pkgver: 0.30.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/awslabs/aws-crt-python
   arch:
     - x86_64
