@@ -1,10 +1,10 @@
 ---
-version: 3.1.2-1
+version: 3.1.2-2
 pkgbase:
   name: python-flask
   pkgdesc: Micro webdevelopment framework for Python
   pkgver: 3.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://flask.palletsprojects.com/
   arch:
     - any
@@ -36,4 +36,4 @@ pkgbase:
     - 87fcb2c73531eca0151286204034e433130f74ae365e62600f3973fbd0f11d0cdead62b07a9f4cbaaca2a1b2c149063be091c00addeba1f9ba6b7f2f2e0572c2
 pkgname:
   - name: python-flask
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
