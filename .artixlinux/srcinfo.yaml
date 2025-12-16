@@ -1,10 +1,10 @@
 ---
-version: 1.6.1-1
+version: 1.6.1-2
 pkgbase:
   name: python-pynacl
   pkgdesc: Python binding to the Networking and Cryptography (NaCl) library
   pkgver: 1.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pyca/pynacl
   arch:
     - x86_64
