@@ -1,0 +1,31 @@
+---
+version: 2.9.0-2
+pkgbase:
+  name: python-perf
+  pkgdesc: Toolkit to run Python benchmarks
+  pkgver: 2.9.0
+  pkgrel: 2
+  url: https://github.com/psf/pyperf
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-psutil
+  provides:
+    - python-pyperf
+  source:
+    - https://github.com/psf/pyperf/archive/2.9.0/pyperf-2.9.0.tar.gz
+  sha512sums:
+    - b8e54d974ea8b4a5ad0f0d343767f7ddb0eb43689f4e11ada8641a1258cf3feeb2d479797c94af62682dd4ffcae11452fb311c4b8b1e0dbfe8a965898050a3e6
+  b2sums:
+    - d9166c8c861dc845c0970c177af8046854fa62174c41ba4237bb8936994028ceb7e8e8ae5a13cd9fb6397c31c34ae0b80c0e82d9b6d0d33e9c6fbf4507599d61
+pkgname:
+  - name: python-perf
+# generated with artixpkg 0.37.4-1-any
