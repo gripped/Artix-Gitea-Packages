@@ -1,10 +1,10 @@
 ---
-version: 3.8.0-1
+version: 3.8.0-2
 pkgbase:
   name: python-pytest-xdist
   pkgdesc: py.test xdist plugin for distributed testing and loop-on-failing modes
   pkgver: 3.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-xdist
   arch:
     - any
@@ -22,6 +22,9 @@ pkgbase:
   depends:
     - python-execnet
     - python-pytest
+  optdepends:
+    - 'python-psutil: to use psutil for detection of the number of CPUs available'
+    - 'python-setproctitle: to update the process title'
   source:
     - git+https://github.com/pytest-dev/pytest-xdist.git#tag=v3.8.0
   sha512sums:
