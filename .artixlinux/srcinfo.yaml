@@ -1,0 +1,31 @@
+---
+version: 0.31.3-2
+pkgbase:
+  name: python-argh
+  pkgdesc: An unobtrusive argparse wrapper with natural syntax
+  pkgver: 0.31.3
+  pkgrel: 2
+  url: https://pypi.python.org/pypi/argh
+  arch:
+    - any
+  license:
+    - LGPL3
+  checkdepends:
+    - python-pytest
+    - python-argcomplete
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-flit-core
+  depends:
+    - python
+  optdepends:
+    - 'python-argcomplete: for completion'
+  source:
+    - git+https://github.com/neithere/argh.git#commit=21528aefc839458322f70aac7bf0949f82e60780
+  sha256sums:
+    - 188c1a0ebb69c2362ec18fa8f3911582b1012cc9f67cd3f134cb86ae2975cbd3
+pkgname:
+  - name: python-argh
+# generated with artixpkg 0.37.4-1-any
