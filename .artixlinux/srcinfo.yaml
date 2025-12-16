@@ -1,0 +1,28 @@
+---
+version: 0.19.1-2
+pkgbase:
+  name: python-ecdsa
+  pkgdesc: Implementation of ECDSA in Python
+  pkgver: 0.19.1
+  pkgrel: 2
+  url: https://github.com/tlsfuzzer/python-ecdsa
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-hypothesis
+  makedepends:
+    - python-setuptools
+  depends:
+    - python-six
+  options:
+    - '!emptydirs'
+  source:
+    - https://files.pythonhosted.org/packages/source/e/ecdsa/ecdsa-0.19.1.tar.gz
+  sha512sums:
+    - 2a5526d1caf2e8e3a86b5f7bb0263249c8983734a8a0af7d7bbbc6be7fdb36f73ed9bf22f9741257971bc6a184960e1003036f75c966adae6dc58a0df0073b32
+pkgname:
+  - name: python-ecdsa
+# generated with artixpkg 0.37.4-1-any
