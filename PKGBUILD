@@ -3,7 +3,7 @@
 _name=python3-saml
 pkgname=python-saml
 pkgver=1.16.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Python SAML Toolkit"
 arch=(any)
 url="https://github.com/SAML-Toolkits/python3-saml"
@@ -63,4 +63,3 @@ package() {
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
-
