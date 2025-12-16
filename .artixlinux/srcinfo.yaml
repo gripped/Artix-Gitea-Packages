@@ -1,10 +1,10 @@
 ---
-version: 0.19.1-1
+version: 0.19.1-2
 pkgbase:
   name: python-pyzstd
   pkgdesc: Python bindings to Zstandard (zstd) compression library
   pkgver: 0.19.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/pyzstd
   arch:
     - x86_64
