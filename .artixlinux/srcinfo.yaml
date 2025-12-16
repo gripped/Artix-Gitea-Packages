@@ -1,10 +1,10 @@
 ---
-version: 3.2.1-1
+version: 3.2.1-2
 pkgbase:
   name: python-portend
   pkgdesc: Use portend to monitor TCP ports for bound or unbound states.
   pkgver: 3.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jaraco/portend
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 053bcd4d588f6ed0e48d5e384ff5cee23f6e9dbd2f17cecafa8d4e5240924a4476e699815b70e3cf175188a573dc9d3e4cf503b54f3a10bf3912e7cad480910e
 pkgname:
   - name: python-portend
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
