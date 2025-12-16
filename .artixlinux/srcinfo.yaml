@@ -1,0 +1,29 @@
+---
+version: 2.0.0-8
+pkgbase:
+  name: python-priority
+  pkgdesc: A pure-Python implementation of the HTTP/2 priority tree
+  pkgver: 2.0.0
+  pkgrel: 8
+  url: https://github.com/python-hyper/priority
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-hypothesis
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://github.com/python-hyper/priority/archive/v2.0.0/python-priority-2.0.0.tar.gz
+  sha512sums:
+    - be22788a76049a8822f5a307f2b00948ac0555d0b6dd629686de90de482295806d071d1731bcdbfdc0f98abbb5aba7d2e947f478b479b72580e7ce1d19d684bb
+pkgname:
+  - name: python-priority
+# generated with artixpkg 0.37.4-1-any
