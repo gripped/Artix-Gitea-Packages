@@ -1,10 +1,10 @@
 ---
-version: 0.20250521.0-1
+version: 0.20250521.0-2
 pkgbase:
   name: python-pypng
   pkgdesc: Pure Python library for PNG image encoding/decoding
   pkgver: 0.20250521.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/drj11/pypng
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 237753f8c1b60f32857223d307fcb0dee57e1aadab4dd60175dd497d9462d2bb99d41e8cf76a1a7cc211ca6427f6a8b53c5293ba8444d83bcda827144452606a
 pkgname:
   - name: python-pypng
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
