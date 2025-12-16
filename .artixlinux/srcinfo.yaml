@@ -1,0 +1,31 @@
+---
+version: 1:5.3.1-2
+pkgbase:
+  name: python-tzlocal
+  pkgdesc: Tzinfo object for the local timezone
+  pkgver: 5.3.1
+  pkgrel: 2
+  epoch: 1
+  url: https://github.com/regebro/tzlocal
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-mock
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/regebro/tzlocal.git#tag=5.3.1
+  b2sums:
+    - c67272ea16b95fc8c479f5033072bdf06f6ecb1960869f0afda795d7a77f94521e4fc9765a07d705fbbb830da6771fded7d18b0bb4bda56bb987672421f18188
+pkgname:
+  - name: python-tzlocal
+# generated with artixpkg 0.37.4-1-any
