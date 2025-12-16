@@ -1,0 +1,28 @@
+---
+version: 2.5.0-4
+pkgbase:
+  name: python-pytest-regressions
+  pkgdesc: Pytest plugin for regression testing
+  pkgver: 2.5.0
+  pkgrel: 4
+  url: https://github.com/ESSS/pytest-regressions
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python-pytest
+    - python-pytest-datadir
+    - python-yaml
+  source:
+    - python-pytest-regressions-2.5.0.tar.gz::https://github.com/ESSS/pytest-regressions/archive/2.5.0.tar.gz
+  sha512sums:
+    - e2cb432d02584fbae099d4c84a1464a179dfe829845bb5e1d91f3082db8a4fdcc36b0ae985fe9ce3dae772527b985a00c9887f291df7ab6b79d1a428a78c4554
+pkgname:
+  - name: python-pytest-regressions
+# generated with artixpkg 0.37.4-1-any
