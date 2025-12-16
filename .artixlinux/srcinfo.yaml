@@ -1,10 +1,10 @@
 ---
-version: 2.2.1-8
+version: 2.2.1-9
 pkgbase:
   name: python-i3ipc
   pkgdesc: An improved Python library to control i3wm
   pkgver: 2.2.1
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/altdesktop/i3ipc-python
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - 19d62ad3cf5a3b2081cff9e193aef64d5108b9e2b304862d3bff60e11140873d8190d287e6ca89566602fc5300d80101576dc2d837b6f1e75d30adeb3772667e
 pkgname:
   - name: python-i3ipc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
