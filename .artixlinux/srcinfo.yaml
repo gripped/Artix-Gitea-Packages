@@ -1,10 +1,10 @@
 ---
-version: 2.0.3-1
+version: 2.0.3-2
 pkgbase:
   name: python-arpeggio
   pkgdesc: Packrat parser interpreter
   pkgver: 2.0.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/textX/Arpeggio
   arch:
     - any
