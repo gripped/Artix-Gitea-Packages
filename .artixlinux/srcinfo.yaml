@@ -1,10 +1,10 @@
 ---
-version: 1.2.5-1
+version: 1.2.5-2
 pkgbase:
   name: python-rjsmin
   pkgdesc: Fast javascript minifier for Python
   pkgver: 1.2.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ndparker/rjsmin
   arch:
     - x86_64
