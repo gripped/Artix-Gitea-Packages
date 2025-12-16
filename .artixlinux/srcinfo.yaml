@@ -1,10 +1,10 @@
 ---
-version: 2.0.2-1
+version: 2.0.2-2
 pkgbase:
   name: python-smartypants
   pkgdesc: Python with the SmartyPants
   pkgver: 2.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/justinmayer/smartypants.py
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 6cdb1574145f4c15984550c2b10bc95b7a86baf067f6465d53e60696347a650e6afb978f623f2344d82e03281ecb28a1f94cdb759fd2db613dc13fada1b25485
 pkgname:
   - name: python-smartypants
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
