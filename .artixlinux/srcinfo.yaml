@@ -1,10 +1,10 @@
 ---
-version: 2.3.1-1
+version: 2.3.1-2
 pkgbase:
   name: python-pyscard
   pkgdesc: Framework for building smart card aware applications in Python
   pkgver: 2.3.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pyscard.sourceforge.io/
   arch:
     - x86_64
