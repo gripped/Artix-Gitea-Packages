@@ -1,10 +1,10 @@
 ---
-version: 2.1.2-1
+version: 2.1.2-2
 pkgbase:
   name: python-execnet
   pkgdesc: Rapid multi-Python deployment
   pkgver: 2.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://codespeak.net/execnet
   arch:
     - any
