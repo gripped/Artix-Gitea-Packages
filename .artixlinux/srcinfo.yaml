@@ -1,10 +1,10 @@
 ---
-version: 0.2.3-1
+version: 0.2.3-2
 pkgbase:
   name: python-comm
   pkgdesc: Python Comm implementation for the Jupyter kernel protocol
   pkgver: 0.2.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/comm/
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 940e51d2c3564ef4e9f485430efd009344d2075d622896a9700fd7b048b57593
 pkgname:
   - name: python-comm
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
