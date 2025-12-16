@@ -1,10 +1,10 @@
 ---
-version: 0.52.1-1
+version: 0.52.1-2
 pkgbase:
   name: python-libtmux
   pkgdesc: Python api for tmux
   pkgver: 0.52.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://libtmux.git-pull.com/
   arch:
     - any
