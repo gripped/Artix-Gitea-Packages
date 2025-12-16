@@ -3,7 +3,7 @@
 pkgname=python-iso8601
 _libname=iso8601
 pkgver=2.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Simple module to parse ISO 8601 dates"
 arch=(any)
 url="https://pyiso8601.readthedocs.io/en/latest/"
@@ -30,4 +30,3 @@ package() {
     install -m0644 -D "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
     find "$pkgdir" -type f -name test_iso8601.py -delete
 }
-
