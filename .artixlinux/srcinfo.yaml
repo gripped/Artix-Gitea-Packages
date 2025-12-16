@@ -1,10 +1,10 @@
 ---
-version: 2.9.0.20251115-1
+version: 2.9.0.20251115-2
 pkgbase:
   name: python-types-python-dateutil
   pkgdesc: Typing stubs for python-dateutil
   pkgver: 2.9.0.20251115
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/types-python-dateutil/
   arch:
     - any
