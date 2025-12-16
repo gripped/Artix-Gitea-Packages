@@ -1,10 +1,10 @@
 ---
-version: 3.51.1.0-1
+version: 3.51.1.0-2
 pkgbase:
   name: python-apsw
   pkgdesc: Python wrapper for SQLite
   pkgver: 3.51.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rogerbinns/apsw
   arch:
     - x86_64
