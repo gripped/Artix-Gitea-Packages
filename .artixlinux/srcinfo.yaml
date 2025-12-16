@@ -1,0 +1,32 @@
+---
+version: 3.3.9-2
+pkgbase:
+  name: python-stone
+  pkgdesc: The Official API Spec Language for Dropbox API V2
+  pkgver: 3.3.9
+  pkgrel: 2
+  url: https://github.com/dropbox/stone
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-packaging
+    - python-ply
+    - python-six
+  source:
+    - git+https://github.com/dropbox/stone#tag=v3.3.9
+  sha256sums:
+    - c964f72c4a4da6c88924cadc864121422eeb9a676e72c14d87c4ba1948e5a915
+pkgname:
+  - name: python-stone
+# generated with artixpkg 0.37.4-1-any
