@@ -1,0 +1,29 @@
+---
+version: 1.6.4-3
+pkgbase:
+  name: python-cftime
+  pkgdesc: Time-handling functionality from python-netcdf4
+  pkgver: 1.6.4
+  pkgrel: 3
+  url: https://unidata.github.io/cftime
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-numpy
+  source:
+    - https://github.com/Unidata/cftime/archive/v1.6.4rel/python-cftime-1.6.4.tar.gz
+  sha256sums:
+    - 38970aa0d0ed9ed6b1d90f2cff2301b7299ae62d38e39a540400ab00edb4d2ce
+pkgname:
+  - name: python-cftime
+# generated with artixpkg 0.37.4-1-any
