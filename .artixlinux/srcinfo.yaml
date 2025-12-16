@@ -1,10 +1,10 @@
 ---
-version: 2.2.1-1
+version: 2.2.1-2
 pkgbase:
   name: python-tomli
   pkgdesc: A lil' TOML parser
   pkgver: 2.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hukkin/tomli
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 6bd2600b06b9d41f45ae34172380d3ec162d0e25a7602e8e77ee37bbe165674ff17afc39c4d1f87c9cec9bd1f02003ba5ebaa313a60efca64ef5124f77a2c887
 pkgname:
   - name: python-tomli
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
