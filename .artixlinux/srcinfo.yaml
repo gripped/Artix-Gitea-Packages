@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-1
+version: 1.1.0-2
 pkgbase:
   name: python-toolz
   pkgdesc: A functional standard library for Python
   pkgver: 1.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytoolz/toolz
   arch:
     - any
