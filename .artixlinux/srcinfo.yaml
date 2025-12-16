@@ -1,0 +1,48 @@
+---
+version: 0.45.1-2
+pkgbase:
+  name: python-wheel
+  pkgdesc: A built-package format for Python
+  pkgver: 0.45.1
+  pkgrel: 2
+  url: https://pypi.python.org/pypi/wheel
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-jsonschema
+    - python-pytest
+    - python-keyring
+    - python-keyrings-alt
+    - python-xdg
+    - python-setuptools
+  makedepends:
+    - git
+  depends:
+    - python
+  optdepends:
+    - 'python-keyring: for wheel.signatures'
+    - 'python-xdg: for wheel.signatures'
+    - 'python-setuptools: for legacy bdist_wheel subcommand'
+  source:
+    - python-bootstrap::git+https://gitlab.archlinux.org/archlinux/python-bootstrap.git#tag=3.14.0
+    - python-build::git+https://github.com/pypa/build.git
+    - python-flit::git+https://github.com/pypa/flit.git
+    - python-installer::git+https://github.com/pypa/installer.git
+    - python-wheel::git+https://github.com/pypa/wheel.git
+    - python-packaging::git+https://github.com/pypa/packaging
+    - python-pyproject-hooks::git+https://github.com/pypa/pyproject-hooks
+    - python-setuptools::git+https://github.com/pypa/setuptools.git
+  sha512sums:
+    - a71bffda21bf944dd0d62dc801ae6b719ba4a54538b7a03cc84c3ff930ca1b91eaecf226d8089a09a707eaf9892f7cce31e7e167008af64ac918870079f3f65f
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+pkgname:
+  - name: python-wheel
+# generated with artixpkg 0.37.4-1-any
