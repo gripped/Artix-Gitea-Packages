@@ -1,10 +1,10 @@
 ---
-version: 3.11-15
+version: 3.11-16
 pkgbase:
   name: python-ply
   pkgdesc: Implementation of lex and yacc parsing tools
   pkgver: 3.11
-  pkgrel: 15
+  pkgrel: 16
   url: https://www.dabeaz.com/ply/
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 5cea085a23ed260afc9084380c1d59e3942c2385089a8eb2391a89c85cde4df2ceb7eed21bb8c4d0cad5b78e59742da69e4c5c78fd0e223f5c99c56e9296a075
 pkgname:
   - name: python-ply
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
