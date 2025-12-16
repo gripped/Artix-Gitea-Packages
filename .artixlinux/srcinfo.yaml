@@ -1,0 +1,30 @@
+---
+version: 1.2.18-2
+pkgbase:
+  name: python-deprecated
+  pkgdesc: Python @deprecated decorator to deprecate old python classes, functions or methods
+  pkgver: 1.2.18
+  pkgrel: 2
+  url: https://github.com/tantale/deprecated
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-wrapt
+  source:
+    - git+https://github.com/tantale/deprecated.git#tag=v1.2.18
+  sha512sums:
+    - b20a75bea1ff5f3236d7eb84879a4bd15b569aeee03759b110bde624dd5935740784301bd78a168a70a1af2ba54aa19545eb40bbb318071fae02f369d64fef78
+pkgname:
+  - name: python-deprecated
+# generated with artixpkg 0.37.4-1-any
