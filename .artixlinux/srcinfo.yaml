@@ -1,10 +1,10 @@
 ---
-version: 2.14.3-1
+version: 2.14.3-2
 pkgbase:
   name: python-cloudflare
   pkgdesc: Python wrapper for the Cloudflare v4 API
   pkgver: 2.14.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/cloudflare/python-cloudflare
   arch:
     - any
