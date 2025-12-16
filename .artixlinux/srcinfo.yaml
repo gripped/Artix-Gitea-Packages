@@ -1,0 +1,28 @@
+---
+version: 1.0.7-2
+pkgbase:
+  name: python-whatthepatch
+  pkgdesc: A Python patch parsing library
+  pkgver: 1.0.7
+  pkgrel: 2
+  url: https://github.com/cscorley/whatthepatch
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/w/whatthepatch/whatthepatch-1.0.7.tar.gz
+  sha256sums:
+    - 9eefb4ebea5200408e02d413d2b4bc28daea6b78bb4b4d53431af7245f7d7edf
+pkgname:
+  - name: python-whatthepatch
+# generated with artixpkg 0.37.4-1-any
