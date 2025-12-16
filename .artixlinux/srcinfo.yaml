@@ -1,10 +1,10 @@
 ---
-version: 0.6.6-1
+version: 0.6.6-2
 pkgbase:
   name: python-parse-type
   pkgdesc: Simplifies to build parse types based on the parse module
   pkgver: 0.6.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jenisys/parse_type
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - abef14f38045913287fd41a19c6fab90d3771cea223bf26f543dfcf9f67b404a659a0f24d5ac71c3bc7c1490b1773ed63a85363734594e7cce4d4b4dc646ee75
 pkgname:
   - name: python-parse-type
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
