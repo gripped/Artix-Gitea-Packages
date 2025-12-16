@@ -1,10 +1,10 @@
 ---
-version: 0.25.2-1
+version: 0.25.2-2
 pkgbase:
   name: python-pint
   pkgdesc: A unit library for Python
   pkgver: 0.25.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pint.readthedocs.org
   arch:
     - any
