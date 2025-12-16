@@ -1,0 +1,35 @@
+---
+version: 0.24.3-3
+pkgbase:
+  name: python-pyudev
+  pkgdesc: Python bindings to libudev
+  pkgver: 0.24.3
+  pkgrel: 3
+  url: https://github.com/pyudev/pyudev
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-pytest
+    - python-docutils
+    - python-hypothesis
+    - python-pip
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - python-sphinx
+  depends:
+    - udev
+  optdepends:
+    - 'python-pyqt5: PyQt integration'
+    - 'python-wxpython: WX integration'
+  source:
+    - pyudev-0.24.3.tar.gz::https://github.com/pyudev/pyudev/archive/v0.24.3.tar.gz
+  sha512sums:
+    - 9075437f6fdba0fc1921e252c0a49e1a5eeed8c5cf598856a32aa9f9fcb8885dc0727258d2965241b2e044acfdf70561d5aa3f1380b84e013afc7cb8dcbfce2b
+pkgname:
+  - name: python-pyudev
+# generated with artixpkg 0.37.4-1-any
