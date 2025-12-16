@@ -1,10 +1,10 @@
 ---
-version: 4.6.3-1
+version: 4.6.3-2
 pkgbase:
   name: python-ovirt-engine-sdk
   pkgdesc: Python access to the oVirt Engine API
   pkgver: 4.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: http://ovirt.org/develop/release-management/features/infra/python-sdk
   arch:
     - x86_64
