@@ -6,7 +6,7 @@
 
 pkgname=python-peewee
 pkgver=3.18.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A small, expressive orm"
 arch=('x86_64')
 url="https://github.com/coleifer/peewee"
