@@ -1,10 +1,10 @@
 ---
-version: 3.3.0-1
+version: 3.3.0-2
 pkgbase:
   name: python-greenlet
   pkgdesc: Lightweight in-process concurrent programming
   pkgver: 3.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/greenlet/
   arch:
     - x86_64
