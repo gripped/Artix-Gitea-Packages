@@ -1,0 +1,34 @@
+---
+version: 1.5.1-3
+pkgbase:
+  name: python-xkbcommon
+  pkgdesc: Python bindings for libxkbcommon using cffi
+  pkgver: 1.5.1
+  pkgrel: 3
+  url: https://github.com/sde1000/python-xkbcommon
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - libx11
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - python
+    - python-cffi
+    - libxkbcommon
+  source:
+    - python-xkbcommon-1.5.1.tar.gz::https://github.com/sde1000/python-xkbcommon/archive/refs/tags/v1.5.1.tar.gz
+  sha512sums:
+    - 783706e822fce99c20f8c994a09a1e340aca65482c9ad63d0d0badbb74585811d23fd7ae6429e439b904afb7b45c78a90f6cc2a982992df684ba587b43f7b40d
+  b2sums:
+    - b2a35eac9d3628217c6e664ab0b86c8e409ce663731c5d2f5764d9e450d40ac1eae9ecb23908f2b6beecba4209a8e25028ce045620fe218bb5746f48dc6f5ff8
+pkgname:
+  - name: python-xkbcommon
+# generated with artixpkg 0.37.4-1-any
