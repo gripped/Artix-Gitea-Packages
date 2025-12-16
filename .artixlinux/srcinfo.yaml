@@ -1,10 +1,10 @@
 ---
-version: 24.8.0-1
+version: 24.8.0-2
 pkgbase:
   name: python-txtorcon
   pkgdesc: A Twisted-based Python asynchronous controller library for Tor
   pkgver: 24.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://txtorcon.readthedocs.org/
   arch:
     - any
@@ -38,4 +38,4 @@ pkgbase:
     - 8103ec01c72361b09116b495c3b086ed37831e4fc15e619f882100bd4e547eca7711b35496b06d787a4a76acc561dd53c220a2272b81ac906c3f77ddff004ba2
 pkgname:
   - name: python-txtorcon
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
