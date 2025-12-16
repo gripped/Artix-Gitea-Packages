@@ -1,0 +1,28 @@
+---
+version: 1.20.2-3
+pkgbase:
+  name: python-parse
+  pkgdesc: Parse strings using a specification based on the Python format() syntax.
+  pkgver: 1.20.2
+  pkgrel: 3
+  url: https://pypi.python.org/pypi/parse
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - python-parse-1.20.2.tar.gz::https://github.com/r1chardj0n3s/parse/archive/refs/tags/1.20.2.tar.gz
+  sha256sums:
+    - 3bfd59c6a3c45fe1a8730ad11374724906b66614d35fd261b8d4c36c266da6a0
+pkgname:
+  - name: python-parse
+# generated with artixpkg 0.37.4-1-any
