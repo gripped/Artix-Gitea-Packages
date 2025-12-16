@@ -1,10 +1,10 @@
 ---
-version: 10.0.0-1
+version: 10.0.0-2
 pkgbase:
   name: python-diff-cover
   pkgdesc: Automatically find diff lines that need test coverage
   pkgver: 10.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Bachmann1234/diff_cover
   arch:
     - any

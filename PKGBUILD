@@ -4,7 +4,7 @@
 pkgname=python-diff-cover
 _pkgname=diff_cover
 pkgver=10.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Automatically find diff lines that need test coverage"
 arch=(any)
 url="https://github.com/Bachmann1234/diff_cover"
