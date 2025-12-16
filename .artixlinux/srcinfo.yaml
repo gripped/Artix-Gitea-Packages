@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-1
+version: 3.4.0-2
 pkgbase:
   name: python-pytest-enabler
   pkgdesc: Enable installed pytest plugins
   pkgver: 3.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jaraco/pytest-enabler
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - cbfb9ec2360276d15365915add07bb656f16266cdc8770e8f15236e76465a5a0
 pkgname:
   - name: python-pytest-enabler
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
