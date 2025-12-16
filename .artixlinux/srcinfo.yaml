@@ -1,10 +1,10 @@
 ---
-version: 8.1-1
+version: 8.1-2
 pkgbase:
   name: python-zope-testrunner
   pkgdesc: Zope testrunner script
   pkgver: 8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/zope.testrunner
   arch:
     - any

@@ -4,7 +4,7 @@
 pkgname=python-zope-testrunner
 _pkgname=zope.testrunner
 pkgver=8.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Zope testrunner script"
 arch=('any')
 url="https://github.com/zopefoundation/zope.testrunner"
