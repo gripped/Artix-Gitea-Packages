@@ -1,10 +1,10 @@
 ---
-version: 25.1.0-1
+version: 25.1.0-2
 pkgbase:
   name: python-argon2-cffi-bindings
   pkgdesc: Low-level CFFI bindings for Argon2
   pkgver: 25.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hynek/argon2-cffi-bindings
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 204ac0e36e4f4fe97c7fa07b2ce1e5587633999786b055d1372cb27bb0402d4c
 pkgname:
   - name: python-argon2-cffi-bindings
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
