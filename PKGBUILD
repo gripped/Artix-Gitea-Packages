@@ -6,7 +6,7 @@
 pkgname=python-mistune
 _pkgname=mistune
 pkgver=3.1.4
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="A fast yet powerful Python Markdown parser with renderers and plugins"
 url="https://mistune.lepture.com"
