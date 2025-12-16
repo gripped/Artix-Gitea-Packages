@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2025.04.01-2
+    version: 2025.04.01-3
     packages:
-      - python-calver-2025.04.01-2-any.pkg.tar.zst
+      - python-calver-2025.04.01-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
