@@ -3,7 +3,7 @@
 
 pkgname=python-phonenumbers
 pkgver=9.0.20
-pkgrel=1
+pkgrel=2
 pkgdesc='Python library for parsing, formatting, storing and validating phone numbers'
 arch=(any)
 url='https://github.com/daviddrysdale/python-phonenumbers'
