@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.0.1-2
+    version: 6.0.1-2.1
     packages:
-      - python-jaraco.context-6.0.1-2-any.pkg.tar.zst
+      - python-jaraco.context-6.0.1-2.1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
