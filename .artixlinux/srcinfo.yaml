@@ -1,10 +1,10 @@
 ---
-version: 1.2.0-1
+version: 1.2.0-2
 pkgbase:
   name: python-pytest-env
   pkgdesc: pytest plugin to set environment variables in pytest.ini or pyproject.toml file
   pkgver: 1.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-env
   arch:
     - any
