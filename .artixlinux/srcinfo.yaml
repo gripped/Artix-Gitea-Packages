@@ -1,0 +1,32 @@
+---
+version: 0.24.1-2
+pkgbase:
+  name: python-validate-pyproject
+  pkgdesc: Validation library and CLI tool for checking on 'pyproject.toml' files using JSON Schema
+  pkgver: 0.24.1
+  pkgrel: 2
+  url: https://github.com/abravalheri/validate-pyproject
+  arch:
+    - any
+  license:
+    - MPL-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python
+    - python-fastjsonschema
+    - python-packaging
+    - python-trove-classifiers
+  source:
+    - git+https://github.com/abravalheri/validate-pyproject.git#tag=v0.24.1
+  sha512sums:
+    - 91b80c489819804d3b1cd01b481c71153c81ffacb9b15e92d9c5919596199fe5a579f4fd6722b93398a1fd02a53b14457473d766674a1130be6e9d56e80f6522
+pkgname:
+  - name: python-validate-pyproject
+# generated with artixpkg 0.37.4-1-any
