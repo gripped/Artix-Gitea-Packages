@@ -1,10 +1,10 @@
 ---
-version: 2.0.2-5
+version: 2.0.2-6
 pkgbase:
   name: python-pam
   pkgdesc: Pure Python interface to the Pluggable Authentication Modules system
   pkgver: 2.0.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/FirefighterBlu3/python-pam
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - c3c33b9c1a5779bd5c98bb498fb79d750aeb747206aa554427606f232eb4f95b5b4aebf88796f3b1140f9b6ecb1aff183cecbb7488c73cb6ad4b572e39b55f2b
 pkgname:
   - name: python-pam
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
