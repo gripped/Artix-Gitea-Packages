@@ -1,0 +1,32 @@
+---
+version: 2.2.1-3
+pkgbase:
+  name: python-jsondiff
+  pkgdesc: Diff JSON and JSON-like structures in Python
+  pkgver: 2.2.1
+  pkgrel: 3
+  url: https://github.com/xlwings/jsondiff
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-hypothesis
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python
+    - python-yaml
+  source:
+    - git+https://github.com/xlwings/jsondiff.git#tag=2.2.1
+  sha256sums:
+    - a8a5e6340365f0e1268096e32c5c602ab7100778d0d3dc3ac6fc705102994308
+pkgname:
+  - name: python-jsondiff
+# generated with artixpkg 0.37.4-1-any
