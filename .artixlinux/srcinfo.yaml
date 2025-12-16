@@ -1,11 +1,11 @@
 ---
-version: 1.4.1-1
+version: 1.4.1-2
 pkgbase:
   name: python-rtree
   pkgdesc:
     Rtree: spatial index for Python GIS
   pkgver: 1.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://rtree.readthedocs.io/en/latest/
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - fd72fdcf63af6c5cf613d4bc9b7cb7de07fa9a654d692d7936b82ba6291cc7ce
 pkgname:
   - name: python-rtree
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
