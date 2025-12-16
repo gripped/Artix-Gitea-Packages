@@ -3,7 +3,7 @@
 _pyname=iterable-io
 pkgname=python-$_pyname
 pkgver=1.0.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Adapt generators and other iterables to a file-like interface'
 arch=(any)
 url='https://github.com/pR0Ps/iterable-io'
@@ -31,4 +31,3 @@ package() {
 	cd "$_archive"
 	python -m installer -d "$pkgdir" dist/*.whl
 }
-
