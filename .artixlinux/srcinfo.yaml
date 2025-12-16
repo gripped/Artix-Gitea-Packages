@@ -1,10 +1,10 @@
 ---
-version: 2.0.0-1
+version: 2.0.0-2
 pkgbase:
   name: python-fido2
   pkgdesc: Library for FIDO 2.0, including communication with a device over USBA
   pkgver: 2.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Yubico/python-fido2
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 03a544ab5539355394ae4de237fc1890f1875e8319a3fec54249c254928fd41c
 pkgname:
   - name: python-fido2
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
