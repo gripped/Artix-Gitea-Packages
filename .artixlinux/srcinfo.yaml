@@ -1,0 +1,37 @@
+---
+version: 3.21.0-3
+pkgbase:
+  name: python-zipp
+  pkgdesc: Pathlib-compatible object wrapper for zip files
+  pkgver: 3.21.0
+  pkgrel: 3
+  url: https://github.com/jaraco/zipp
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-big-o
+    - python-jaraco.functools
+    - python-jaraco.itertools
+    - python-jaraco.test
+    - python-more-itertools
+    - python-pytest
+    - python-pytest-enabler
+    - python-pytest-ignore-flaky
+    - python-tests
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/jaraco/zipp.git#tag=v3.21.0
+  sha512sums:
+    - 2ad4d7889b84896d879ca0ffd350dd421bc2712b0027c69ac90713c6c89fc0d3c1033fc2cf9b40a9429c7258a47d4fd5ff8002ebc394a6ccbee9b54a45940a99
+pkgname:
+  - name: python-zipp
+# generated with artixpkg 0.37.4-1-any
