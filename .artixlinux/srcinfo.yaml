@@ -1,0 +1,30 @@
+---
+version: 0.6.3-2
+pkgbase:
+  name: python-openapi-schema-validator
+  pkgdesc: OpenAPI schema validation for Python
+  pkgver: 0.6.3
+  pkgrel: 2
+  url: https://github.com/p1c2u/openapi-schema-validator
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-jsonschema
+    - python-jsonschema-specifications
+    - python-rfc3339-validator
+  source:
+    - https://github.com/p1c2u/openapi-schema-validator/archive/0.6.3/python-openapi-schema-validator-0.6.3.tar.gz
+  sha256sums:
+    - 2eb4b57884c7da6c47a2f7be3fed348f0ddd61c136dad900d1c01b2fee1250d9
+pkgname:
+  - name: python-openapi-schema-validator
+# generated with artixpkg 0.37.4-1-any
