@@ -1,10 +1,10 @@
 ---
-version: 25.1.0-1
+version: 25.1.0-2
 pkgbase:
   name: python-hatch-fancy-pypi-readme
   pkgdesc: Fancy PyPI READMEs with Hatch
   pkgver: 25.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hynek/hatch-fancy-pypi-readme
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - bea01ed03a54c8973e831f2ff156aa38396e13448300af21f7e837b47f2bb900618c0e16830618c88ed97235497ee7fa4e571c00ee5dddd24c2037f2661170df
 pkgname:
   - name: python-hatch-fancy-pypi-readme
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.37.4-1-any
