@@ -1,10 +1,10 @@
 ---
-version: 1.9.17.p2-1
+version: 1.9.17.p2-2
 pkgbase:
   name: sudo
   pkgdesc: Give certain users the ability to run some commands as root
   pkgver: 1.9.17.p2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.sudo.ws/sudo/
   install: sudo.install
   arch:
@@ -42,4 +42,4 @@ pkgname:
       - zlib
       - libcrypto.so
       - libssl.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
