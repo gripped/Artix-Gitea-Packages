@@ -1,10 +1,10 @@
 ---
-version: 2025.2-1
+version: 2025.2-2
 pkgbase:
   name: python-pytz
   pkgdesc: Cross platform time zone library for Python
   pkgver: 2025.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/pytz
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 3cbd497313c3049a2ae04298118aefb6dfa9ec4626078c665c95c13a78ae944b33a68813aea0c53b02b0532b64221cca4a0cd2153bd91b3760916bc3c0f6df8f
 pkgname:
   - name: python-pytz
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.37.4-1-any
