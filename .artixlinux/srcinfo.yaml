@@ -1,10 +1,10 @@
 ---
-version: 0.11.6-1
+version: 0.11.6-2
 pkgbase:
   name: python-scikit-build-core
   pkgdesc: Next generation Python CMake adaptor and Python API for plugins
   pkgver: 0.11.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/scikit-build/scikit-build-core
   arch:
     - any
@@ -39,4 +39,4 @@ pkgbase:
     - f70925b07f5b62df6b70696b3641f173b9d6087a3636db6419716802c3da7faf6ac49feb98da9b065f0ddec74398e5d61f4a66888205db9bac28764c43b1eb0f
 pkgname:
   - name: python-scikit-build-core
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
