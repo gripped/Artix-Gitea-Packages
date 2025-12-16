@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-1
+version: 3.4.0-2
 pkgbase:
   name: python-pyflakes
   pkgdesc: A lint-like tool for Python to identify common errors quickly without executing code
   pkgver: 3.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/PyCQA/pyflakes
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 4ba4a7c725a8c0de1597c3ad99f3888c39f797ed28d00188e7eed34f7763be6e52515431c98a3f1d9a658227eab788434964cde1f97fbd081a83a6e614c0f340
 pkgname:
   - name: python-pyflakes
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
