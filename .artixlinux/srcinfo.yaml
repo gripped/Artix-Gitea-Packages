@@ -1,10 +1,10 @@
 ---
-version: 1.2.0.0-1
+version: 1.2.0.0-2
 pkgbase:
   name: python-brotlicffi
   pkgdesc: Python bindings to the Brotli compression library
   pkgver: 1.2.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/python-hyper/brotlicffi
   arch:
     - x86_64

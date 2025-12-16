@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.2.0.0-2
+    packages:
+      - python-brotlicffi-1.2.0.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
