@@ -1,0 +1,33 @@
+---
+version: 3.1.1-6
+pkgbase:
+  name: python-flask-sqlalchemy
+  pkgdesc: Adds SQLAlchemy support to your Flask application
+  pkgver: 3.1.1
+  pkgrel: 6
+  url: https://github.com/pallets-eco/flask-sqlalchemy
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-blinker
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-flit-core
+    - python-installer
+    - python-pallets-sphinx-themes
+    - python-sphinx
+    - python-sphinx-issues
+  depends:
+    - python
+    - python-flask
+    - python-sqlalchemy
+  source:
+    - https://github.com/pallets-eco/flask-sqlalchemy/archive/3.1.1/flask-sqlalchemy-3.1.1.tar.gz
+  sha512sums:
+    - 67d78b5109b0397f95308d74f6926aa418a4dd7f3a52f91a3e159396fbd71bd048e4403a65182113cc0c0f1e348e2fd8d765ca46de5cae10af204dcf1101563a
+pkgname:
+  - name: python-flask-sqlalchemy
+# generated with artixpkg 0.37.4-1-any
