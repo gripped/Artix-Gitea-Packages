@@ -1,10 +1,10 @@
 ---
-version: 2.2.0-1
+version: 2.2.0-2
 pkgbase:
   name: python-josepy
   pkgdesc: JOSE protocol implementation in Python
   pkgver: 2.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/certbot/josepy
   arch:
     - any
