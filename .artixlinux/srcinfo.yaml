@@ -1,10 +1,10 @@
 ---
-version: 3.23.0-1
+version: 3.23.0-2
 pkgbase:
   name: python-pycryptodome
   pkgdesc: Collection of cryptographic algorithms and protocols, implemented for use from Python 3.
   pkgver: 3.23.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.pycryptodome.org/
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - 3036a75e27a4898b49991707ded20551ba28d9d41b5624bd2421cb684dcdb933f025ae0b867e66df31b0fd21393e79ab50aac21970f74035ef06aff7d9a6750d
 pkgname:
   - name: python-pycryptodome
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
