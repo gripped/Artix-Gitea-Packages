@@ -1,10 +1,10 @@
 ---
-version: 2025.10.22-1
+version: 2025.10.22-2
 pkgbase:
   name: python-cmarkgfm
   pkgdesc: Minimal bindings to GitHub's fork of cmark
   pkgver: 2025.10.22
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/theacodes/cmarkgfm
   arch:
     - x86_64
