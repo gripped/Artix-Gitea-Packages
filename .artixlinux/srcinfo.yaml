@@ -1,10 +1,10 @@
 ---
-version: 25.1.0-1
+version: 25.1.0-2
 pkgbase:
   name: python-argon2-cffi
   pkgdesc: Secure password hashing algorithm for Python
   pkgver: 25.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hynek/argon2-cffi
   arch:
     - any
@@ -34,4 +34,4 @@ pkgbase:
     - f1b010d1a201d9b4a358dbf9ee828ac63be6914c31c159d894a51522de34d264
 pkgname:
   - name: python-argon2-cffi
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
