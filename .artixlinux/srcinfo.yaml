@@ -1,10 +1,10 @@
 ---
-version: 1.9.1-1
+version: 1.9.1-2
 pkgbase:
   name: python-jq
   pkgdesc: Python bindings for jq
   pkgver: 1.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mwilliamson/jq.py
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 3fec451d3c10092345986acf52b7ece78e22c2363837059054b3f3b0b7b96bef0fee7e62e2cab507dad213b12c5a671ee8f8127df173c92feeb013bd4d889db9
 pkgname:
   - name: python-jq
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
