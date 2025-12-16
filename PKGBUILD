@@ -5,7 +5,7 @@
 
 pkgname=python-pandas
 pkgver=2.3.1
-pkgrel=2
+pkgrel=3
 pkgdesc='High-performance, easy-to-use data structures and data analysis tools for Python'
 arch=(x86_64)
 url="https://pandas.pydata.org/"
