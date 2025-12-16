@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.4.0-2
+    packages:
+      - libimobiledevice-1.4.0-2-x86_64.pkg.tar.zst
+    debug:
+      - libimobiledevice-debug-1.4.0-2-x86_64.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
