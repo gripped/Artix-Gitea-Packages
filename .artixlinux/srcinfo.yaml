@@ -1,0 +1,30 @@
+---
+version: 0.9.1-6
+pkgbase:
+  name: python-hatch-jupyter-builder
+  pkgdesc: A hatch plugin to help build Jupyter packages
+  pkgver: 0.9.1
+  pkgrel: 6
+  url: https://jupyter.org/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-mock
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+  depends:
+    - python
+    - python-hatchling
+    - python-packaging
+  source:
+    - git+https://github.com/jupyterlab/hatch-jupyter-builder#tag=v0.9.1
+  sha256sums:
+    - ad1d12e0619c72338e59be001fd2065fa25557a4a551fb41dff3f12c949c1f67
+pkgname:
+  - name: python-hatch-jupyter-builder
+# generated with artixpkg 0.37.4-1-any
