@@ -1,10 +1,10 @@
 ---
-version: 6.0-1
+version: 6.0-2
 pkgbase:
   name: python-zope-testing
   pkgdesc: Zope testing helpers
   pkgver: 6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/zope.testing
   arch:
     - any
