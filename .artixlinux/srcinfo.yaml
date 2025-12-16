@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: python-interpreters-pep-734
   pkgdesc: Pure-Python implementation of PEP 734, along with several other backports
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ericsnowcurrently/interpreters
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 96c02f9a7cccf44dd25a93ef9e20ef9122c1f6de9c58b6541ca76e6dbee2879d
 pkgname:
   - name: python-interpreters-pep-734
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.37.4-1-any
