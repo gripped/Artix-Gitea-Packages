@@ -1,10 +1,10 @@
 ---
-version: 3.0.2-1
+version: 3.0.2-2
 pkgbase:
   name: python-markupsafe
   pkgdesc: Implements a XML/HTML/XHTML Markup safe string for Python
   pkgver: 3.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/MarkupSafe
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 4e2fb5b69fd993784c965804037a62963cc64729d20c473c941e2ed238fe6ae5e7a2610d2678db908bf3e2b05c334d17e79d2476c3e147541b38f3270622f77f
 pkgname:
   - name: python-markupsafe
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
