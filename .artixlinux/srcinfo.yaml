@@ -1,10 +1,10 @@
 ---
-version: 6.0.2-1
+version: 6.0.2-2
 pkgbase:
   name: python-lxml
   pkgdesc: Python binding for the libxml2 and libxslt libraries
   pkgver: 6.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://lxml.de/
   arch:
     - x86_64
