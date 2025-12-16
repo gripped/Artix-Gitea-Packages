@@ -1,10 +1,10 @@
 ---
-version: 1:2.4.6-2
+version: 1:2.4.6-3
 pkgbase:
   name: python-frozendict
   pkgdesc: An immutable dictionary
   pkgver: 2.4.6
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://pypi.python.org/pypi/frozendict/
   arch:
@@ -28,4 +28,4 @@ pkgbase:
     - fafd946ccb11b0d2a8428adba2da35ba625117be351e1fc3412e904355c85f2ff320633be726d33e9246f8e194bb7656c67e08de8dd0493a80f4333ea5b1a2d2
 pkgname:
   - name: python-frozendict
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
