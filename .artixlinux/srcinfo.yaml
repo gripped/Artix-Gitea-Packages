@@ -1,10 +1,10 @@
 ---
-version: 1.2.0-1
+version: 1.2.0-2
 pkgbase:
   name: python-django-appconf
   pkgdesc: An app to handle configuration defaults of packaged Django apps gracefully
   pkgver: 1.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/django-compressor/django-appconf
   arch:
     - any
