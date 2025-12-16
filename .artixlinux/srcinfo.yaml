@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-10
+version: 1.1.0-11
 pkgbase:
   name: python-augeas
   pkgdesc: Python bindings for Augeas
   pkgver: 1.1.0
-  pkgrel: 10
+  pkgrel: 11
   url: https://augeas.net
   arch:
     - any
