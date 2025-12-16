@@ -1,14 +1,7 @@
 ---
 team: world
-pkgbase:
-  name: python-ruff-api
-  version: 0.1.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - python-ruff-api
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,37 +12,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.0-2
+    packages:
+      - python-ruff-api-0.1.0-2-x86_64.pkg.tar.zst
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: 0.1.0-1
     packages:
       - python-ruff-api-0.1.0-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
