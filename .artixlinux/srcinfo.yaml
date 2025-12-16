@@ -1,10 +1,10 @@
 ---
-version: 0.4.9-1
+version: 0.4.9-2
 pkgbase:
   name: python-pytest-freezer
   pkgdesc: Pytest plugin providing a fixture interface for freezegun
   pkgver: 0.4.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-freezer
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - ea2441aa43a2eeacc47cd6ee2048bc5f5169355d0073251591b2b2142276f5ac774855cd4f7b44f5dba8eab84a314faaae9fb61111e910901017a5ffcaaa30c9
 pkgname:
   - name: python-pytest-freezer
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
