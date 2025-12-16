@@ -1,10 +1,10 @@
 ---
-version: 3.1.0-1
+version: 3.1.0-2
 pkgbase:
   name: python-ulid
   pkgdesc: ULID implementation for Python
   pkgver: 3.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mdomke/python-ulid
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - 25189f057898a535f0d134ceb377e36816d7a0f238c1e0b683742b039cde20e59dfca2a6dfe67a4104e2d77817c352b69b597b2fee183414b9aaee0d68248cf6
 pkgname:
   - name: python-ulid
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
