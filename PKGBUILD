@@ -3,7 +3,7 @@
 
 pkgname=python-cffi
 pkgver=2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Foreign Function Interface for Python calling C code"
 arch=('x86_64')
 url="https://cffi.readthedocs.org/"
@@ -29,6 +29,9 @@ check() {
 
 package() {
   cd cffi-$pkgver
+
+  # remove files created during check() for reproducible SOURCES.txt
+  rm -r testing/cffi{0,1}/__pycache__/
 
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
