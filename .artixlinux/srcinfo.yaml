@@ -1,10 +1,10 @@
 ---
-version: 25.9.1-1
+version: 25.9.1-2
 pkgbase:
   name: python-gevent
   pkgdesc: Python network library that uses greenlet and libenv for easy and scalable concurrency
   pkgver: 25.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.gevent.org
   arch:
     - x86_64
