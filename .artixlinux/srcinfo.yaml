@@ -1,10 +1,10 @@
 ---
-version: 0.34.1-1
+version: 0.34.1-2
 pkgbase:
   name: python-owslib
   pkgdesc: Python package for client programming with Open Geospatial Consortium (OGC) web service interface standards, and their related content models
   pkgver: 0.34.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://geopython.github.io/OWSLib/
   arch:
     - any
