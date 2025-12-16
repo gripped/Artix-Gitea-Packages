@@ -1,0 +1,60 @@
+---
+version: 8.2.3-2
+pkgbase:
+  name: python-sphinx
+  pkgdesc: Python documentation generator
+  pkgver: 8.2.3
+  pkgrel: 2
+  url: http://www.sphinx-doc.org/
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - cython
+    - imagemagick
+    - librsvg
+    - python-defusedxml
+    - python-psutil
+    - python-pytest
+    - python-pytest-xdist
+    - python-setuptools
+    - python-typing_extensions
+    - texlive-fontsextra
+    - texlive-fontsrecommended
+    - texlive-latexextra
+    - texlive-luatex
+    - texlive-xetex
+  makedepends:
+    - git
+    - python-build
+    - python-flit-core
+    - python-installer
+  depends:
+    - python-babel
+    - python-docutils
+    - python-imagesize
+    - python-jinja
+    - python-packaging
+    - python-pygments
+    - python-requests
+    - python-roman-numerals-py
+    - python-snowballstemmer
+    - python-sphinx-alabaster-theme
+    - python-sphinxcontrib-applehelp
+    - python-sphinxcontrib-devhelp
+    - python-sphinxcontrib-htmlhelp
+    - python-sphinxcontrib-jsmath
+    - python-sphinxcontrib-qthelp
+    - python-sphinxcontrib-serializinghtml
+  optdepends:
+    - 'imagemagick: for ext.imgconverter'
+    - 'texlive-fontsextra: for the default admonition title icons in PDF output'
+    - 'texlive-latexextra: for generation of PDF documentation'
+  source:
+    - git+https://github.com/sphinx-doc/sphinx.git#tag=v8.2.3
+  b2sums:
+    - f567b7278d1df03bc08436a6bab6af35735ef1c528bf47c7028f6645d530cc6bdf9b2580880161cf3104aed0315da7daa1696297937f8741a5bcde71528bdd19
+pkgname:
+  - name: python-sphinx
+# generated with artixpkg 0.37.4-1-any
