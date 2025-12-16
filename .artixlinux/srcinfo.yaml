@@ -1,10 +1,10 @@
 ---
-version: 1.4.11-1
+version: 1.4.11-2
 pkgbase:
   name: python-txredisapi
   pkgdesc: Non-blocking redis client for python
   pkgver: 1.4.11
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/txredisapi/
   arch:
     - any
