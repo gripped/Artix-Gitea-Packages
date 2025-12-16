@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: python-beniget
   pkgdesc: A static analyzer for Python code
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/serge-sans-paille/beniget
   arch:
     - any
