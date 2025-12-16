@@ -1,10 +1,10 @@
 ---
-version: 1.1.1-1
+version: 1.1.1-2
 pkgbase:
   name: python-pytest-sugar
   pkgdesc: A plugin for py.test that changes the default look and feel of py.test
   pkgver: 1.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Teemu/pytest-sugar
   arch:
     - any
