@@ -1,10 +1,10 @@
 ---
-version: 2.47.0-1
+version: 2.47.0-2
 pkgbase:
   name: python-sentry_sdk
   pkgdesc: The official Python SDK for Sentry.io
   pkgver: 2.47.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://sentry.io/for/python
   arch:
     - any
