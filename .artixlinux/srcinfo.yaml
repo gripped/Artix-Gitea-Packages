@@ -1,10 +1,10 @@
 ---
-version: 2025.4.0.12-1
+version: 2025.4.0.12-2
 pkgbase:
   name: nsight-compute
   pkgdesc: Interactive profiler for NVIDIA CUDA and OptiX
   pkgver: 2025.4.0.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.nvidia.com/nsight-compute
   arch:
     - x86_64
