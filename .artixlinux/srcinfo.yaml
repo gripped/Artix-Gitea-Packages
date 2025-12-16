@@ -1,10 +1,10 @@
 ---
-version: 1.7.5-1
+version: 1.7.5-2
 pkgbase:
   name: python-lmdb
   pkgdesc: Universal Python binding for the LMDB Lightning Database
   pkgver: 1.7.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jnwatson/py-lmdb/
   arch:
     - x86_64
