@@ -18,7 +18,6 @@ pkgbase:
     - python-hatchling
     - python-installer
     - python-setuptools
-    - python-sphinx
     - python-wcag-contrast-ratio
     - python-wheel
   depends:

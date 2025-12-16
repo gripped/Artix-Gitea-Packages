@@ -15,7 +15,6 @@ makedepends=(
   'python-hatchling'
   'python-installer'
   'python-setuptools'
-  'python-sphinx'
   'python-wcag-contrast-ratio'
   'python-wheel'
 )
@@ -32,7 +31,7 @@ sha256sums=('542e317dffd5287585b7bc4327969fe2f8d4b7ccec0b46045a83ef45dc840ed9')
 build() {
   cd ${pkgname#python-}-$pkgver
   python -m build --wheel --no-isolation
-  make -C doc html
+  #make -C doc html
 }
 
 check() {
@@ -48,7 +47,7 @@ package() {
   install -vDm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 
   mkdir -vp "$pkgdir/usr/share/doc"
-  cp -vrT doc/_build/html "$pkgdir/usr/share/doc/$pkgname"
+  #cp -vrT doc/_build/html "$pkgdir/usr/share/doc/$pkgname"
   install -vDm644 doc/pygmentize.1 -t "$pkgdir/usr/share/man/man1"
   install -vDm644 external/pygments.bashcomp \
     "$pkgdir/usr/share/bash-completion/completions/pygmentize"
