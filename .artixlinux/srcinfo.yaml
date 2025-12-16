@@ -1,10 +1,10 @@
 ---
-version: 5.0-1
+version: 5.0-2
 pkgbase:
   name: python-boolean.py
   pkgdesc: Implements boolean algebra in one module
   pkgver: 5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/bastikr/boolean.py
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - c9de2ba5b0b72c09f885377d4db7888e49518c14800db495c1bfa74c2b7d696156e0fd7c6e62c6187ae79a9bf779de4a567070c5a2276a3dae7f32cef69d870e
 pkgname:
   - name: python-boolean.py
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any
