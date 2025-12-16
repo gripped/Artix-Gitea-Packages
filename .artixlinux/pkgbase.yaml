@@ -29,10 +29,10 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.50.3-1
+    version: 2.50.4-1
     packages:
-      - webkit2gtk-4.1-2.50.3-1-x86_64.pkg.tar.zst
-      - webkit2gtk-4.1-docs-2.50.3-1-x86_64.pkg.tar.zst
+      - webkit2gtk-4.1-2.50.4-1-x86_64.pkg.tar.zst
+      - webkit2gtk-4.1-docs-2.50.4-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
