@@ -1,9 +1,9 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Oliver Harley <oliver.r.harley+aur (at) gmail.com>
 _pkgname=Keras_Preprocessing
 pkgname=python-keras-preprocessing
 pkgver=1.1.2
-pkgrel=9
+pkgrel=10
 pkgdesc="Preprocessing module of the Keras deep learning library"
 arch=('any')
 url="https://pypi.org/project/Keras-Preprocessing/"
