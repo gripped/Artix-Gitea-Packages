@@ -1,10 +1,10 @@
 ---
-version: 2.0.1-1
+version: 2.0.1-2
 pkgbase:
   name: python-nethsm-sdk-py
   pkgdesc: Client-side Python SDK for NetHSM
   pkgver: 2.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Nitrokey/nethsm-sdk-py
   arch:
     - any
