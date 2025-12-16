@@ -1,10 +1,10 @@
 ---
-version: 2.2-12
+version: 2.2-13
 pkgbase:
   name: python-cjkwrap
   pkgdesc: A library for wrapping and filling CJK text.
   pkgver: 2.2
-  pkgrel: 12
+  pkgrel: 13
   url: https://github.com/fgallaire/cjkwrap
   arch:
     - any
