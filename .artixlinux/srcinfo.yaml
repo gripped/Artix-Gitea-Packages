@@ -1,0 +1,33 @@
+---
+version: 2.1.1-2
+pkgbase:
+  name: python-lazr.delegates
+  pkgdesc: Easily write objects that delegate behavior
+  pkgver: 2.1.1
+  pkgrel: 2
+  url: https://launchpad.net/lazr.delegates
+  arch:
+    - any
+  license:
+    - LGPL-3.0-only
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-importlib-metadata
+    - python-setuptools
+    - python-zope-interface
+  source:
+    - git+https://git.launchpad.net/lazr.delegates#tag=2.1.1
+  sha512sums:
+    - 6c9aad011b6a7c6d338543a4c710eb82a5907785c4e059c6b1235b52a0ca6437d1b0bda6dc15e3895516bbb0b0cdea0978c5307a140c08e12bfbdcd19e487aea
+  b2sums:
+    - 580c3bba7805a1a79b8ee0a632d845aeaa35c0744217d75f184e8b80cd7323c38be79fe25b690594f582200d244f56daf8977b4859e377e358f4341708fcd00d
+pkgname:
+  - name: python-lazr.delegates
+# generated with artixpkg 0.37.4-1-any
