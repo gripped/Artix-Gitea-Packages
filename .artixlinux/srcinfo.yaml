@@ -1,10 +1,10 @@
 ---
-version: 0.12.8-1
+version: 0.12.8-2
 pkgbase:
   name: python-mitmproxy-rs
   pkgdesc: Python bindings for mitmproxy's Rust code
   pkgver: 0.12.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mitmproxy/mitmproxy_rs
   arch:
     - x86_64
