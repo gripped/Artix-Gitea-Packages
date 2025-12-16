@@ -1,10 +1,10 @@
 ---
-version: 1.2.0-3
+version: 1.2.0-4
 pkgbase:
   name: python-backports-zstd
   pkgdesc: Backport of compression.zstd
   pkgver: 1.2.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/rogdham/backports.zstd
   arch:
     - x86_64
