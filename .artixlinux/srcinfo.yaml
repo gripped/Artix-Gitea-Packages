@@ -1,10 +1,10 @@
 ---
-version: 4.0.2-1
+version: 4.0.2-2
 pkgbase:
   name: python-astroid
   pkgdesc: A common base representation of python source code
   pkgver: 4.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pylint-dev/astroid
   arch:
     - any
