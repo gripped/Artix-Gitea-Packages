@@ -1,10 +1,10 @@
 ---
-version: 3.14.3-1
+version: 3.14.3-2
 pkgbase:
   name: python-rapidfuzz
   pkgdesc: Rapid fuzzy string matching in Python using various string metrics
   pkgver: 3.14.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rapidfuzz/RapidFuzz
   arch:
     - x86_64
