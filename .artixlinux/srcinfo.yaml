@@ -1,10 +1,10 @@
 ---
-version: 0.7.8-1
+version: 0.7.8-2
 pkgbase:
   name: python-schema
   pkgdesc: Schema validation just got Pythonic
   pkgver: 0.7.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/keleshev/schema
   arch:
     - any
