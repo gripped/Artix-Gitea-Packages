@@ -1,10 +1,10 @@
 ---
-version: 2.12.5-1
+version: 2.12.5-2
 pkgbase:
   name: python-pydantic
   pkgdesc: Data parsing and validation using Python type hints
   pkgver: 2.12.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pydantic/pydantic
   arch:
     - any
