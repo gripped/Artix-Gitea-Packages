@@ -1,10 +1,10 @@
 ---
-version: 6.1.0-1
+version: 6.1.0-2
 pkgbase:
   name: python-sybil
   pkgdesc: Automated testing for the examples in your documentation.
   pkgver: 6.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/simplistix/sybil
   arch:
     - any
