@@ -1,10 +1,10 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Antoine Pierlot-Garcin <antoine at bokbox dot com>
 
 pkgname=python-pykka
 pkgver=4.0.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Easy to use concurrency abstractions for Python using the actor model"
 arch=('any')
 url="http://pykka.readthedocs.org/"
