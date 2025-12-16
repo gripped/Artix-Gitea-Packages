@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.335.0-1
+version: 1:1.4.335.0-2
 pkgbase:
   name: vulkan-headers
   pkgdesc: Vulkan header files and API registry
   pkgver: 1.4.335.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.vulkan.org/
   arch:
