@@ -1,0 +1,31 @@
+---
+version: 0.3.0-3
+pkgbase:
+  name: python-pixelmatch
+  pkgdesc: A pixel-level image comparison library
+  pkgver: 0.3.0
+  pkgrel: 3
+  url: https://github.com/whtsky/pixelmatch-py
+  arch:
+    - any
+  license:
+    - ISC
+  checkdepends:
+    - libpng
+    - python-pytest
+    - python-pytest-benchmark
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-pillow
+  source:
+    - git+https://github.com/whtsky/pixelmatch-py#tag=v0.3.0
+  sha256sums:
+    - 832dc1eb189890f47b7ad8d5997190455366544a1c45769641fbdee15ca28af9
+pkgname:
+  - name: python-pixelmatch
+# generated with artixpkg 0.37.4-1-any
