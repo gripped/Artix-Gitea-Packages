@@ -1,10 +1,10 @@
 ---
-version: 6.2.0-1
+version: 6.2.0-2
 pkgbase:
   name: python-tokenize-rt
   pkgdesc: Wrapper around the stdlib tokenize which roundtrips
   pkgver: 6.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/asottile/tokenize-rt
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 19a4c93a069b8bdccc7391c62fa57fc2112b2eb29fd9f16ecd3c937817a3712b4b86f403f0a61b9e7818b0b30a04706d7136adbf12dca5fe8157de8e664d9111
 pkgname:
   - name: python-tokenize-rt
-# generated with artixpkg 0.36.2-2-any
+# generated with artixpkg 0.37.4-1-any
