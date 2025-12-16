@@ -1,0 +1,27 @@
+---
+version: 0.2-14
+pkgbase:
+  name: python-fastpbkdf2
+  pkgdesc: A faster implementation of PBKDF2
+  pkgver: 0.2
+  pkgrel: 14
+  url: https://github.com/Ayrx/python-fastpbkdf2
+  arch:
+    - x86_64
+  license:
+    - Apache
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-setuptools
+    - git
+  depends:
+    - python-cffi
+    - python-six
+  source:
+    - git+https://github.com/Ayrx/python-fastpbkdf2.git#tag=v0.2
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: python-fastpbkdf2
+# generated with artixpkg 0.37.4-1-any
