@@ -1,10 +1,10 @@
 ---
-version: 2024.1.6-1
+version: 2024.1.6-2
 pkgbase:
   name: python-pytools
   pkgdesc: A collection of tools for Python
   pkgver: 2024.1.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/inducer/pytools
   arch:
     - any
