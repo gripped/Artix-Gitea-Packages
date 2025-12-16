@@ -1,10 +1,10 @@
 ---
-version: 4.4.4-1
+version: 4.4.4-2
 pkgbase:
   name: python-typeguard
   pkgdesc: Run-time type checker for Python
   pkgver: 4.4.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/agronholm/typeguard
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 9dc6abe5b3a510955fbfab0b89eacf6f00c8d6c967eb19180d135b161c9eefedc465ca41eaa275e6f2ebb0fc7736f1f836de18ae985fc24a9deb5993939cd54b
 pkgname:
   - name: python-typeguard
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
