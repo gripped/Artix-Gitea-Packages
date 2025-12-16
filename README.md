@@ -13,7 +13,7 @@ Use `git clone --single-branch`:
 
 Do a partial clone of this repository (`git clone --depth=1`) and add branches selectively:
 
-    $ git clone --depth=1 https://github.com/gripped/Artix-Gitea-Packages; cd aur
+    $ git clone --depth=1 https://github.com/gripped/Artix-Gitea-Packages; cd Artix-Gitea-Packages
     $ git remote set-branches --add origin package_name
     $ git fetch
     $ git switch package_name
