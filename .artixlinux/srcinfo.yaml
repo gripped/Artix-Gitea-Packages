@@ -1,10 +1,10 @@
 ---
-version: 1.3.0-1
+version: 1.3.0-2
 pkgbase:
   name: python-discid
   pkgdesc: Python binding of MusicBrainz libdiscid
   pkgver: 1.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/JonnyJD/python-discid
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - ca51b5c40babc4f13ac849e2570a104de55cfc30fbf83ebcc2693dae182ae61285d4579aa7a8417f0cabe8beba7dfa78c5bd4e3da2fdda7fae6152a5715a5350
 pkgname:
   - name: python-discid
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
