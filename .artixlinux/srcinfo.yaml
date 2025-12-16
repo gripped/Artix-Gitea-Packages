@@ -1,0 +1,33 @@
+---
+version: 0.8.1-5
+pkgbase:
+  name: python-pytest-localserver
+  pkgdesc: py.test plugin to test server connections locally
+  pkgver: 0.8.1
+  pkgrel: 5
+  url: https://github.com/pytest-dev/pytest-localserver
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-requests
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python-pytest
+    - python-werkzeug
+  optdepends:
+    - 'python-aiosmtpd: for smtp'
+  source:
+    - git+https://github.com/pytest-dev/pytest-localserver.git#commit=cb062902403e30b0f1b96402f0ba829711da9e55
+  sha512sums:
+    - SKIP
+pkgname:
+  - name: python-pytest-localserver
+# generated with artixpkg 0.37.4-1-any
