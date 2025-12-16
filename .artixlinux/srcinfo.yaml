@@ -1,0 +1,31 @@
+---
+version: 1.15-2
+pkgbase:
+  name: python-pypandoc
+  pkgdesc: Thin wrapper for pandoc
+  pkgver: 1.15
+  pkgrel: 2
+  url: https://github.com/JessicaTegner/pypandoc
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - texlive-basic
+    - texlive-latexextra
+    - texlive-fontsrecommended
+    - python-pandocfilters
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-wheel
+  depends:
+    - pandoc
+  source:
+    - https://github.com/JessicaTegner/pypandoc/archive/v1.15/python-pypandoc-1.15.tar.gz
+  sha512sums:
+    - c6127aa085c27f2e82148689647f7861c8bdb37feacc6b5fdf017947c7e1c18eaf7c17ec26b7c2881d4ae40bb20dcaaf86aa52f989315d19df92e491bf07efb8
+pkgname:
+  - name: python-pypandoc
+# generated with artixpkg 0.37.4-1-any
