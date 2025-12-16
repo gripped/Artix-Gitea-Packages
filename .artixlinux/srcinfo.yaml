@@ -1,10 +1,10 @@
 ---
-version: 8.2-1
+version: 8.2-2
 pkgbase:
   name: python-zope-i18nmessageid
   pkgdesc: Message Identifiers for internationalization
   pkgver: 8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/zope.i18nmessageid
   arch:
     - x86_64
