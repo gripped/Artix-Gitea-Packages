@@ -1,10 +1,10 @@
 ---
-version: 25.1.0-1
+version: 25.1.0-2
 pkgbase:
   name: python-aiofiles
   pkgdesc: File support for asyncio
   pkgver: 25.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Tinche/aiofiles
   arch:
     - any
