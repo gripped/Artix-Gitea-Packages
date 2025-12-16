@@ -1,10 +1,10 @@
 ---
-version: 10.1-1
+version: 10.1-2
 pkgbase:
   name: python-wcmatch
   pkgdesc: Wilcard File Name matching library
   pkgver: 10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/facelessuser/wcmatch
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 4cb96a5305f55527e98ec695b1dc66ac89b2609768e7abe1719d4127f14f60ca79f7c9fd8db5bf18e04c411b7db7733525303336d14cc2056851aa9538e46573
 pkgname:
   - name: python-wcmatch
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
