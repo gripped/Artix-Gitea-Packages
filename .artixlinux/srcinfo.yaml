@@ -1,10 +1,10 @@
 ---
-version: 6.21.0-1
+version: 6.21.0-2
 pkgbase:
   name: kirigami
   pkgdesc: A QtQuick based components set
   pkgver: 6.21.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -27,6 +27,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/frameworks/6.21/kirigami-6.21.0.tar.xz
     - https://download.kde.org/stable/frameworks/6.21/kirigami-6.21.0.tar.xz.sig
+    - https://invent.kde.org/frameworks/kirigami/-/commit/19127672.patch
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
@@ -34,6 +35,7 @@ pkgbase:
   sha256sums:
     - ebe0ea75d121e2f450849ce93942d46e3f06a3e241d00ca3b3bda01ddc980bd9
     - SKIP
+    - adf16335171434f6316953aa5cfa24462451eaecf41323c75aefa8843fccf89b
 pkgname:
   - name: kirigami
 # generated with artixpkg 0.37.4-1-any
