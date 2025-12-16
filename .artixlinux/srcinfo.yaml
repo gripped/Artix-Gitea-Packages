@@ -1,10 +1,10 @@
 ---
-version: 2.41.3-1
+version: 2.41.3-2
 pkgbase:
   name: util-linux
   pkgdesc: Miscellaneous system utilities for Linux
   pkgver: 2.41.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/util-linux/util-linux
   arch:
     - x86_64
