@@ -7,7 +7,7 @@ pkgname=(
   python-maturin
 )
 pkgver=1.10.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Build and publish crates with pyo3, rust-cpython and cffi bindings"
 url="https://github.com/PyO3/maturin"
 arch=(x86_64)
@@ -39,7 +39,7 @@ b2sums=('d2f8966b3c691855ca09cd2f14f6bbe45ae24a557a8176caf2729a99422053e10369c50
 
 prepare() {
   cd $pkgbase
-  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
 }
 
 build() {
