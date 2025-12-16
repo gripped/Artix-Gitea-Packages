@@ -1,10 +1,10 @@
 ---
-version: 2.21.2-1
+version: 2.21.2-2
 pkgbase:
   name: python-fastjsonschema
   pkgdesc: Fast JSON schema validator for Python
   pkgver: 2.21.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/horejsek/python-fastjsonschema
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - ea93dfbac75cdf35e74dea627e680742351c4647fc8b18141dacd296e314eb698cd7a0a3ad05ecaa01f4b518c1372a77bcabd10a6bdc62d12e200c16f6de1762
 pkgname:
   - name: python-fastjsonschema
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
