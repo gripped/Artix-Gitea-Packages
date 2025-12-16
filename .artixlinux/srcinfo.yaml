@@ -1,10 +1,10 @@
 ---
-version: 4.3-1
+version: 4.3-2
 pkgbase:
   name: python-zodbpickle
   pkgdesc: Fork of Python's pickle module to work with ZODB
   pkgver: 4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/zodbpickle
   arch:
     - x86_64
