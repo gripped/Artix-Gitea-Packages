@@ -1,0 +1,33 @@
+---
+version: 2.9.0-7
+pkgbase:
+  name: python-dateutil
+  pkgdesc: Provides powerful extensions to the standard datetime module
+  pkgver: 2.9.0
+  pkgrel: 7
+  url: https://github.com/dateutil/dateutil
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+    - Apache-2.0
+  checkdepends:
+    - python-freezegun
+    - python-hypothesis
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+    - python-six
+    - git
+  depends:
+    - python-six
+  source:
+    - git+https://github.com/dateutil/dateutil.git#commit=2.9.0
+  sha256sums:
+    - db84e1759eb51252204597504409cafee32ea9a9616e64d82d8ec769048ff00e
+pkgname:
+  - name: python-dateutil
+# generated with artixpkg 0.37.4-1-any
