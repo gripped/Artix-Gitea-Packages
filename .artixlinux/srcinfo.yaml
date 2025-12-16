@@ -1,10 +1,10 @@
 ---
-version: 0.0.16-1
+version: 0.0.16-2
 pkgbase:
   name: python-merge3
   pkgdesc: Python implementation of 3-way merge
   pkgver: 0.0.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/breezy-team/merge3
   arch:
     - any
