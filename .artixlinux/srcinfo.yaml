@@ -1,10 +1,10 @@
 ---
-version: 0.3.2-1
+version: 0.3.2-2
 pkgbase:
   name: python-nh3
   pkgdesc: Ammonia HTML sanitizer Python binding
   pkgver: 0.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/messense/nh3
   arch:
     - x86_64
