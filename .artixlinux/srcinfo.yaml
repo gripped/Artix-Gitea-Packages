@@ -1,10 +1,10 @@
 ---
-version: 12.0.0-2
+version: 12.0.0-3
 pkgbase:
   name: python-pillow
   pkgdesc: Python Imaging Library (PIL) fork
   pkgver: 12.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://pillow.readthedocs.io
   arch:
     - x86_64

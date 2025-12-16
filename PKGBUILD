@@ -5,7 +5,7 @@
 
 pkgname=python-pillow
 pkgver=12.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Python Imaging Library (PIL) fork'
 arch=(x86_64)
 url='https://pillow.readthedocs.io'
