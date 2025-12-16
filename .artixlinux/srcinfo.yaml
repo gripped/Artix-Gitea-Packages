@@ -1,10 +1,10 @@
 ---
-version: 2.6.15-1
+version: 2.6.15-2
 pkgbase:
   name: python-identify
   pkgdesc: File identification library for Python
   pkgver: 2.6.15
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pre-commit/identify
   arch:
     - any
