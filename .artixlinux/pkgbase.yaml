@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,8 +21,12 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.39-3
+    packages:
+      - notmuch-0.39-3-x86_64.pkg.tar.zst
+      - notmuch-vim-0.39-3-x86_64.pkg.tar.zst
+      - notmuch-mutt-0.39-3-x86_64.pkg.tar.zst
+      - notmuch-runtime-0.39-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
