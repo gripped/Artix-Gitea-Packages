@@ -1,10 +1,10 @@
 ---
-version: 7.13.0-1
+version: 7.13.0-2
 pkgbase:
   name: python-coverage
   pkgdesc: A tool for measuring code coverage of Python programs
   pkgver: 7.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://coverage.readthedocs.io/en/latest/
   arch:
     - x86_64
