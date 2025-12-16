@@ -1,10 +1,10 @@
 ---
-version: 3.2.1-1
+version: 3.2.1-2
 pkgbase:
   name: python-tappy
   pkgdesc: Test Anything Protocol (TAP) tools for Python
   pkgver: 3.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/tap.py
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - d03c9e6af0a56fad994f1c69f14041e676811d73eeeef20bf4077c43d621d608
 pkgname:
   - name: python-tappy
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
