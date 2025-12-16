@@ -1,10 +1,10 @@
 ---
-version: 1.0.1-1
+version: 1.0.1-2
 pkgbase:
   name: python-pytest-mypy
   pkgdesc: Mypy static type checker plugin for Pytest
   pkgver: 1.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/dbader/pytest-mypy
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 9294a2c3bace6f298443a5d9e25004acbd3f5d24186931d4878c067fe0a21d9a65a618167124936289317aa7e1d37b40e305125078f2cf619eae5ae972e31e85
 pkgname:
   - name: python-pytest-mypy
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
