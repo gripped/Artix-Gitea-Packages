@@ -1,10 +1,10 @@
 ---
-version: 2.6.2-1
+version: 2.6.2-2
 pkgbase:
   name: python-cmd2
   pkgdesc: A tool for building interactive command line apps
   pkgver: 2.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/python-cmd2/cmd2
   arch:
     - any
