@@ -1,10 +1,10 @@
 ---
-version: 1.29.0-1
+version: 1.29.0-2
 pkgbase:
   name: python-cairo
   pkgdesc: Python bindings for the cairo graphics library
   pkgver: 1.29.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pycairo.readthedocs.io/en/latest/
   arch:
     - x86_64
