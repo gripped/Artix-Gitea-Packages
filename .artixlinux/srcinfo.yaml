@@ -1,10 +1,10 @@
 ---
-version: 0.1.12-1
+version: 0.1.12-2
 pkgbase:
   name: python-cwcwidth
   pkgdesc: Python bindings for wc(s)width
   pkgver: 0.1.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sebastinas/cwcwidth
   arch:
     - x86_64
