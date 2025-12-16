@@ -1,10 +1,10 @@
 ---
-version: 1.5.1-1
+version: 1.5.1-2
 pkgbase:
   name: python-mistletoe
   pkgdesc: A fast, extensible Markdown parser in pure Python
   pkgver: 1.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/miyuchina/mistletoe
   arch:
     - any
