@@ -1,10 +1,10 @@
 ---
-version: 1.1.1-1
+version: 1.1.1-2
 pkgbase:
   name: python-sentinels
   pkgdesc: Various objects to denote special meanings in python
   pkgver: 1.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/vmalloc/sentinels
   arch:
     - any
