@@ -1,10 +1,10 @@
 ---
-version: 6.2.2-1
+version: 6.2.2-2
 pkgbase:
   name: python-cachetools
   pkgdesc: Extensible memoizing collections and decorators
   pkgver: 6.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tkem/cachetools
   arch:
     - any
