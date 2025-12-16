@@ -1,0 +1,40 @@
+---
+version: 2.6.0-4
+pkgbase:
+  name: python-cookiecutter
+  pkgdesc: A command-line utility that creates projects from project templates
+  pkgver: 2.6.0
+  pkgrel: 4
+  url: https://github.com/cookiecutter/cookiecutter
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-freezegun
+    - python-pytest
+    - python-pytest-mock
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-arrow
+    - python-binaryornot
+    - python-click
+    - python-jinja
+    - python-pyyaml
+    - python-requests
+    - python-rich
+    - python-slugify
+  source:
+    - https://github.com/cookiecutter/cookiecutter/archive/2.6.0/cookiecutter-2.6.0.tar.gz
+  sha512sums:
+    - 619be103bb831cbe9c50c4fa5114d6151a462a29a233f8999305403dda449f90a5900940a2b9d98433a8cdd3dbad421afe6feded42f4bcb6ee83523570ed2c1e
+  b2sums:
+    - 967264bdf2b7f7ec7d2466d530e9ab6f689f88bb8537f833f76b952f4cbec07cfdf8c17c3f9690023f3687a8aab66ecb5dfe609e58ed933f1fcd2fc2174938f2
+pkgname:
+  - name: python-cookiecutter
+# generated with artixpkg 0.37.4-1-any
