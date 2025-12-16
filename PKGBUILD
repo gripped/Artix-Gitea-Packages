@@ -3,7 +3,7 @@
 
 pkgname=python-requests-toolbelt
 pkgver=1.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="A toolbelt of useful classes and functions to be used with python-requests."
 arch=('any')
 url="https://github.com/requests/toolbelt"
