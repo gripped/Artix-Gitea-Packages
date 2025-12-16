@@ -1,0 +1,26 @@
+---
+version: 0.18.10-2
+pkgbase:
+  name: python-ruamel-yaml
+  pkgdesc: YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order
+  pkgver: 0.18.10
+  pkgrel: 2
+  url: https://sourceforge.net/projects/ruamel-yaml/
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-ruamel.yaml.clib
+  source:
+    - https://files.pythonhosted.org/packages/source/r/ruamel.yaml/ruamel.yaml-0.18.10.tar.gz
+  sha512sums:
+    - fe3c85c55d344f33d4ca7a7b85381258bbd8b6d32249ac93b529dab7d68f84b536c531fcefd77d5c4fec5cab92595896414022ff8a53666de99502d89feaa74a
+pkgname:
+  - name: python-ruamel-yaml
+# generated with artixpkg 0.37.4-1-any
