@@ -1,10 +1,10 @@
 ---
-version: 0.6.1-1
+version: 0.6.1-2
 pkgbase:
   name: python-pyasn1
   pkgdesc: ASN.1 library for Python 3
   pkgver: 0.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pyasn1/pyasn1
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - a7f995413643d4f9283a9878a1bc3c8d606d018a31209309e4eeda42461eee89efcedd7af4c75fd9e8c9d7e628d86229afbbd0c1bf3862982e45524845c7a833
 pkgname:
   - name: python-pyasn1
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
