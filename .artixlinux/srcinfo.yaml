@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: python-mdit_py_plugins
   pkgdesc: Collection of core plugins for markdown-it-py
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/executablebooks/mdit-py-plugins
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 2da41e32000ba735466969cc890e0d8f07d6e5ef6cb604b9cf7c02cf4187849fcd9734cef38807afcdd492c7a43795386798fbb86885b2e7ea522bc28b3d0796
 pkgname:
   - name: python-mdit_py_plugins
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
