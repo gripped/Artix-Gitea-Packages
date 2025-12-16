@@ -1,10 +1,10 @@
 ---
-version: 6.0-1
+version: 6.0-3
 pkgbase:
   name: python-zope-copy
   pkgdesc: Pluggable object copying mechanism
   pkgver: 6.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/zopefoundation/zope.copy
   arch:
     - any
