@@ -1,12 +1,12 @@
 # Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
 # Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
-_bootstrap=1
+_bootstrap=0
 _bootstrap_version=3.14.0
 _pkgname=build
 pkgname=python-$_pkgname
 pkgver=1.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A simple, correct Python build frontend'
 arch=(any)
 url='https://github.com/pypa/build'
@@ -64,14 +64,7 @@ validpgpkeys=(
 #  3DCE51D60930EBA47858BA4146F633CBB0EB4BF2 # Filipe Laíns (FFY00) <lains@archlinux.org>
   2FDEC9863E5E14C7BC429F27B9D0E45146A241E8 # Henry Schreiner <henryschreineriii@gmail.com>
 )
-b2sums=('77a00054d250153d5e73a9ecd9ea4350cea5eee1bbb9d2ef086527df3f0a5adb4558f8e4a8fcbae6591786bb80803f87013266dcf08112e519eff9305a5fd2b2'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP'
-        'SKIP')
+b2sums=('2e5108d3a5eb27605d0b444d092bf5e996973b6abd8d13cdb48b09f9887bc4cdf01b03175091a0da0ca2e030711089a120df5eda962d6366618ab36ac76a9cc7')
 
 prepare() {
   if (( _bootstrap == 0 )); then
