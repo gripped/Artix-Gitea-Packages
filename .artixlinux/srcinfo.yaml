@@ -1,0 +1,30 @@
+---
+version: 1.7.0-2
+pkgbase:
+  name: python-jsonpath-ng
+  pkgdesc: JSONPath for Python that aims to be standard compliant
+  pkgver: 1.7.0
+  pkgrel: 2
+  url: https://github.com/h2non/jsonpath-ng
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-ply
+  source:
+    - git+https://github.com/h2non/jsonpath-ng.git#tag=v1.7.0
+  sha256sums:
+    - 322858dff5cbbcc2b1ac02ecadd94ed85e3847daaf4cba9df92e286108e69b07
+pkgname:
+  - name: python-jsonpath-ng
+# generated with artixpkg 0.37.4-1-any
