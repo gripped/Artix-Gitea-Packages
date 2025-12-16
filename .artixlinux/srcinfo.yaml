@@ -1,10 +1,10 @@
 ---
-version: 0.17-1
+version: 0.17-2
 pkgbase:
   name: python-docstring-to-markdown
   pkgdesc: On the fly conversion of Python docstrings to markdown
   pkgver: 0.17
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/python-lsp/docstring-to-markdown
   arch:
     - any
