@@ -1,10 +1,10 @@
 ---
-version: 4.25.1-1
+version: 4.25.1-3
 pkgbase:
   name: python-jsonschema
   pkgdesc: An implementation of JSON Schema validation for Python
   pkgver: 4.25.1
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/python-jsonschema/jsonschema
   arch:
     - any
@@ -52,4 +52,4 @@ pkgbase:
     - 75f6818875929eba7e18f11f35b522defe90208b5ed561da305f24c3ea6021c4a4e7a33948889204bd5e423e0e61fb65eaeb98a359d6324f7565c507eb090337
 pkgname:
   - name: python-jsonschema
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
