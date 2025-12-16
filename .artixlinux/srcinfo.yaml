@@ -1,10 +1,10 @@
 ---
-version: 3.14.0-3
+version: 3.14.0-5
 pkgbase:
   name: python-pytest-mock
   pkgdesc: Thin-wrapper around the mock package for easier use with py.test
   pkgver: 3.14.0
-  pkgrel: 3
+  pkgrel: 5
   url: https://github.com/pytest-dev/pytest-mock/
   arch:
     - any
