@@ -1,10 +1,10 @@
 ---
-version: 0.9.4-1
+version: 0.9.4-2
 pkgbase:
   name: python-scrypt
   pkgdesc: Bindings for the scrypt key derivation function library
   pkgver: 0.9.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/holgern/py-scrypt
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 819230b4b7b47221d2ba3e89ebb2e6401256ffbb735c514d4e8e68df55d388e02fffa2b434b60b5ab71fc759c28952492eb85c54fb3fb3244e4b6172a5248e38
 pkgname:
   - name: python-scrypt
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
