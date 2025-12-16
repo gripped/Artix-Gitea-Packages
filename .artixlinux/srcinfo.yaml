@@ -1,10 +1,10 @@
 ---
-version: 0.16.0-1
+version: 0.16.0-2
 pkgbase:
   name: python-s3transfer
   pkgdesc: Amazon S3 Transfer Manager for Python
   pkgver: 0.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/boto/s3transfer
   arch:
     - any
