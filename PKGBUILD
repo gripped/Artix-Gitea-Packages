@@ -2,7 +2,7 @@
 
 pkgname=python-curio
 pkgver=1.6
-pkgrel=5
+pkgrel=6
 pkgdesc='Concurrent I/O'
 arch=(any)
 url=https://github.com/dabeaz/curio
@@ -18,6 +18,7 @@ makedepends=(
 checkdepends=(
   python-pytest
   python-sphinx
+  python-standard-telnetlib
 )
 provides=(python-multio-provider)
 _tag=5d8ecb2333761b4fd629e14d940f3807d143c0ed
