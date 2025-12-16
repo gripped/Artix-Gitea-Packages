@@ -1,10 +1,10 @@
 ---
-version: 3.3.0-1
+version: 3.3.0-2
 pkgbase:
   name: python-hiredis
   pkgdesc: Non-blocking redis client for python
   pkgver: 3.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/hiredis/
   arch:
     - x86_64
