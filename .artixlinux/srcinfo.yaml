@@ -1,10 +1,10 @@
 ---
-version: 0.4.0-1
+version: 0.4.0-2
 pkgbase:
   name: python-hatch-nodejs-version
   pkgdesc: Hatch plugin for versioning from a package.json file
   pkgver: 0.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/agoose77/hatch-nodejs-version
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - c48b44fb67efa2c1e82f31ac9b5fd1b8213578510d541599a4c55ff4c7f372d5
 pkgname:
   - name: python-hatch-nodejs-version
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
