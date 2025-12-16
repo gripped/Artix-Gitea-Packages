@@ -1,10 +1,10 @@
 ---
-version: 1.5.26-1
+version: 1.5.26-2
 pkgbase:
   name: python-blockbuster
   pkgdesc: Utility to detect blocking calls in the async event loop
   pkgver: 1.5.26
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/cbornet/blockbuster
   arch:
     - any

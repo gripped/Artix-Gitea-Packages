@@ -2,7 +2,7 @@
 
 pkgname=python-blockbuster
 pkgver=1.5.26
-pkgrel=1
+pkgrel=2
 pkgdesc='Utility to detect blocking calls in the async event loop'
 arch=(any)
 url=https://github.com/cbornet/blockbuster
@@ -33,10 +33,7 @@ build() {
 
 check() {
   cd ${pkgname#python-}
-  pytest \
-    --deselect tests/test_blockbuster.py::test_socket_send \
-    --deselect tests/test_blockbuster.py::test_socket_send_non_blocking
-  # The above tests fail in artix CI
+  pytest
 }
 
 package() {
