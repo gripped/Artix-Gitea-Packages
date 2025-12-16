@@ -1,10 +1,10 @@
 ---
-version: 1:8.4.2-1
+version: 1:8.4.2-2
 pkgbase:
   name: python-pytest
   pkgdesc: Simple powerful testing with Python
   pkgver: 8.4.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://docs.pytest.org
   arch:
