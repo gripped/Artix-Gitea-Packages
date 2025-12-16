@@ -1,10 +1,10 @@
 ---
-version: 0.1.16-1
+version: 0.1.16-2
 pkgbase:
   name: python-setuptools-gettext
   pkgdesc: Setuptools plugin for building .mo files
   pkgver: 0.1.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/breezy-team/setuptools-gettext
   arch:
     - any
