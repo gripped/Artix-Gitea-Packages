@@ -1,10 +1,10 @@
 ---
-version: 3.6.0-1
+version: 3.6.0-2
 pkgbase:
   name: python-xxhash
   pkgdesc: Python binding for xxHash
   pkgver: 3.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ifduyue/python-xxhash
   arch:
     - x86_64
