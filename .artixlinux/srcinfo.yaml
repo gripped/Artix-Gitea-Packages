@@ -1,10 +1,10 @@
 ---
-version: 1.5.3-3
+version: 1.5.3-4
 pkgbase:
   name: python-pytest-subprocess
   pkgdesc: Pytest plugin to fake subprocess
   pkgver: 1.5.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/aklajnert/pytest-subprocess
   arch:
     - any
