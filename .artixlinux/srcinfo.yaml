@@ -1,10 +1,10 @@
 ---
-version: 1.1.2-1
+version: 1.1.2-2
 pkgbase:
   name: python-pymysql
   pkgdesc: Pure Python MySQL Client
   pkgver: 1.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/PyMySQL/PyMySQL/
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - 51b0c5f9127ceb850f0241244ab9ccf8eebe26e34df1116f5679bc90a071247a865540b37b190bd88273a6b019c1feb6c429b8102daa45255a0f88932a52836e
 pkgname:
   - name: python-pymysql
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
