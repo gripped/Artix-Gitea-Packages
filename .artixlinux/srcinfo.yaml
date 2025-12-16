@@ -1,0 +1,29 @@
+---
+version: 1.5.1-5
+pkgbase:
+  name: python-fqdn
+  pkgdesc: RFC-compliant FQDN validation and manipulation for Python
+  pkgver: 1.5.1
+  pkgrel: 5
+  url: https://github.com/ypcrts/fqdn
+  arch:
+    - any
+  license:
+    - MPL2
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - python-fqdn::git+https://github.com/ypcrts/fqdn#commit=3a4feda3414bde7b3386e995ed1d2ed36607d4cf
+  b2sums:
+    - SKIP
+pkgname:
+  - name: python-fqdn
+# generated with artixpkg 0.37.4-1-any
