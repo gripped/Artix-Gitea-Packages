@@ -1,10 +1,10 @@
 ---
-version: 1.7.1-1
+version: 1.7.1-2
 pkgbase:
   name: python-cairocffi
   pkgdesc: cffi-based cairo bindings for Python
   pkgver: 1.7.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://doc.courtbouillon.org/cairocffi
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 56349a9be1539d1d780decdced803017f351cbbc18617a00b3328b0df6623e202f243d932163b9d3b37a34f4b6f1c619d1fc2f10f502a3cd915ed1904f10092d
 pkgname:
   - name: python-cairocffi
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
