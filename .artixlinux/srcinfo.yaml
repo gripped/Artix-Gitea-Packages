@@ -1,10 +1,10 @@
 ---
-version: 3.2.0-1
+version: 3.2.0-2
 pkgbase:
   name: python-termcolor
   pkgdesc: ANSI Color formatting for output in terminal
   pkgver: 3.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/termcolor/termcolor
   arch:
     - any
