@@ -1,10 +1,10 @@
 ---
-version: 0.8.3-1
+version: 0.8.3-2
 pkgbase:
   name: python-clevercsv
   pkgdesc: A Python package for handling messy CSV files
   pkgver: 0.8.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/alan-turing-institute/CleverCSV
   arch:
     - x86_64
@@ -38,4 +38,4 @@ pkgbase:
     - eeaf9fddf0f8d2924f22bbf616747f920a208ece49ba5c233d4789d0871e5aa17cf6b6d54790e35a686a4c1bcafc0f7e2719958599fa338bdfc6f1c2f75831ee
 pkgname:
   - name: python-clevercsv
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
