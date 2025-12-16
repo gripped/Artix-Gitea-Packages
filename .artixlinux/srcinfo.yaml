@@ -1,0 +1,28 @@
+---
+version: 5.0.0-3
+pkgbase:
+  name: python-sphinx-issues
+  pkgdesc: Sphinx extension for linking to your project's issue tracker
+  pkgver: 5.0.0
+  pkgrel: 3
+  url: https://github.com/sloria/sphinx-issues
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-flit-core
+  depends:
+    - python
+    - python-sphinx
+  source:
+    - https://github.com/sloria/sphinx-issues/archive/5.0.0/sphinx-issues-5.0.0.tar.gz
+  sha512sums:
+    - fbe39e27b0df0e8e07b04030cc08b3aed7c51bd91dab145af5cd184c88180e20c472578821bdaaf047c6ecf9ca58523bc3e63aeba6e683b81ae0914b4b8f45af
+pkgname:
+  - name: python-sphinx-issues
+# generated with artixpkg 0.37.4-1-any
