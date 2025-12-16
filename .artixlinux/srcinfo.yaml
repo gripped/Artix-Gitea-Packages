@@ -1,10 +1,10 @@
 ---
-version: 0.8.6-10
+version: 0.8.6-11
 pkgbase:
   name: python-pychm
   pkgdesc: Python bindings for chmlib
   pkgver: 0.8.6
-  pkgrel: 10
+  pkgrel: 11
   url: https://github.com/dottedmag/pychm
   arch:
     - x86_64
