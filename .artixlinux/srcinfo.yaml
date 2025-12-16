@@ -1,10 +1,10 @@
 ---
-version: 1.6.0-1
+version: 1.6.0-2
 pkgbase:
   name: python-pluggy
   pkgdesc: Plugin and hook calling mechanisms for python
   pkgver: 1.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pluggy
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 4164457975bae12c798ba87fca38ef776468cb3b879c95696be8525778b9bc83fe9947f6ec707b478f79e93f6d4ddd9cb669d6bbc59929e107c447c4237f61f5
 pkgname:
   - name: python-pluggy
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
