@@ -1,10 +1,10 @@
 ---
-version: 0.2.3-9
+version: 0.2.3-10
 pkgbase:
   name: python-multivolumefile
   pkgdesc: Multi volume file wrapper library
   pkgver: 0.2.3
-  pkgrel: 9
+  pkgrel: 10
   url: https://github.com/miurahr/multivolume
   arch:
     - any
