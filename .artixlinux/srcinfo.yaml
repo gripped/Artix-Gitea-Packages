@@ -1,10 +1,10 @@
 ---
-version: 4.9.1-1
+version: 4.9.1-2
 pkgbase:
   name: python-rsa
   pkgdesc: Pure-Python RSA implementation
   pkgver: 4.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sybrenstuvel/python-rsa/
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - e7bdbfdb5497da4c07dfd35530e1a902659db6ff241e39d9953cad06ebd0ae75
 pkgname:
   - name: python-rsa
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
