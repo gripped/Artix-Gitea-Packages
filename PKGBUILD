@@ -3,7 +3,7 @@
 _pkgname=dkimpy
 pkgname=python-dkim
 pkgver=1.1.8
-pkgrel=2
+pkgrel=3
 pkgdesc='Python library that implements DKIM and ARC email signing and verification'
 arch=(any)
 url=https://launchpad.net/dkimpy
@@ -48,4 +48,3 @@ package() {
   ln -s "$site_packages"/$_pkgname-$pkgver.dist-info/LICENSE \
     "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
-
