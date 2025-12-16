@@ -1,0 +1,60 @@
+---
+version: 0.21.0-1
+pkgbase:
+  name: python-openapi-core
+  pkgdesc: Client-side and server-side support for the OpenAPI Specification v3
+  pkgver: 0.21.0
+  pkgrel: 1
+  url: https://github.com/p1c2u/openapi-core
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-aiohttp
+    - python-pytest-asyncio
+    - python-aiohttp
+    - python-aioitertools
+    - python-django
+    - python-django-rest-framework
+    - python-falcon
+    - python-fastapi
+    - python-flask
+    - python-httpx
+    - python-multidict
+    - python-requests
+    - python-responses
+    - python-starlette
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-isodate
+    - python-jsonschema
+    - python-jsonschema-path
+    - python-more-itertools
+    - python-openapi-schema-validator
+    - python-openapi-spec-validator
+    - python-parse
+    - python-werkzeug
+  optdepends:
+    - python-aiohttp
+    - python-aioitertools
+    - python-django
+    - python-falcon
+    - python-fastapi
+    - python-flask
+    - python-multidict
+    - python-requests
+    - python-starlette
+  source:
+    - git+https://github.com/python-openapi/openapi-core#tag=0.21.0
+  sha256sums:
+    - 9284f919d94af0cb0e8f8773eb3815826a225dc76c8f140568eec1f32522f619
+pkgname:
+  - name: python-openapi-core
+# generated with artixpkg 0.37.4-1-any
