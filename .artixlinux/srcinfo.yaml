@@ -1,0 +1,30 @@
+---
+version: 2.10.1-2
+pkgbase:
+  name: python-pyjwt
+  pkgdesc: JSON Web Token implementation in Python
+  pkgver: 2.10.1
+  pkgrel: 2
+  url: https://github.com/jpadilla/pyjwt
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-cryptography
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/jpadilla/pyjwt.git#tag=3ebbb22f30f2b1b41727b269a08b427e9a85d6bb
+  b2sums:
+    - 729bd24956fdae22be95c9d19be89a801dc9b3c20967a9c3ff737530040f68c20a3fa304b5337ad2046562a957fd4b17fba98587d03471c4f310f4da2b53fb14
+pkgname:
+  - name: python-pyjwt
+# generated with artixpkg 0.37.4-1-any
