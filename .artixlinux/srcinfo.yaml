@@ -1,10 +1,10 @@
 ---
-version: 8.7.0-1
+version: 8.7.0-2
 pkgbase:
   name: python-importlib-metadata
   pkgdesc: Read metadata from Python packages
   pkgver: 8.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://importlib-metadata.readthedocs.io
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 2577eabc2920d2e0d7658f2eee695a172540d2a9bcfbfa1d975f2b38af99cccd74ed87b2faa8ec37be1c48ff2d8c169b622b5463ccff1de52a82355a717766ea
 pkgname:
   - name: python-importlib-metadata
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any

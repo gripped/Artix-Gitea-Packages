@@ -2,7 +2,7 @@
 
 pkgname=python-importlib-metadata
 pkgver=8.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Read metadata from Python packages"
 url="https://importlib-metadata.readthedocs.io"
 license=('Apache-2.0')
