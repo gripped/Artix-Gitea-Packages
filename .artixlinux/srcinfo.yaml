@@ -1,10 +1,10 @@
 ---
-version: 0.1.6-1
+version: 0.1.6-2
 pkgbase:
   name: python-sphinx-reredirects
   pkgdesc: Handles redirects for moved pages in Sphinx documentation projects
   pkgver: 0.1.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/documatt/sphinx-reredirects
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - d1f9cafbf38b2f1aea7c6c172f9dfeda6f50b47d7084d1188f018c24916674c4
 pkgname:
   - name: python-sphinx-reredirects
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.37.4-1-any
