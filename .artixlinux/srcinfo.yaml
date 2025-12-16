@@ -1,0 +1,26 @@
+---
+version: 0.9-7
+pkgbase:
+  name: python-wcag-contrast-ratio
+  pkgdesc: Library for computing contrast ratios, as required by WCAG 2.0
+  pkgver: 0.9
+  pkgrel: 7
+  url: https://github.com/gsnedders/wcag-contrast-ratio
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-hypothesis
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - https://github.com/gsnedders/wcag-contrast-ratio/archive/0.9/python-wcag-contrast-ratio-0.9.tar.gz
+  sha256sums:
+    - 5263b7b2d0f5a8de2eb409421284947df6229b67bca0055fa10da38153835815
+pkgname:
+  - name: python-wcag-contrast-ratio
+# generated with artixpkg 0.37.4-1-any
