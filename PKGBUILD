@@ -5,7 +5,7 @@
 pkgbase='python-webob'
 pkgname=('python-webob' 'python-webob-docs')
 pkgver=1.8.9
-pkgrel=1
+pkgrel=2
 pkgdesc="WSGI request and response object"
 arch=('any')
 url="https://webob.org/"
