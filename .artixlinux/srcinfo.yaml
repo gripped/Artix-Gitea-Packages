@@ -1,10 +1,10 @@
 ---
-version: 0.0.5-2
+version: 0.0.5-3
 pkgbase:
   name: python-accessible-pygments
   pkgdesc: Collection of accessible pygments styles
   pkgver: 0.0.5
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/Quansight-Labs/accessible-pygments
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - cf3ff417835adbff4e4323ccb796d5d7313b62ace76d7c780fcccad7f5d49b70faf926b81a8e7a48ec6dc46049d3ccffd365d957903c11f6206a58a3505f5444
 pkgname:
   - name: python-accessible-pygments
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
