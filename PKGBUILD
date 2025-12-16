@@ -3,7 +3,7 @@
 pkgname=python-pycares
 _name=${pkgname#python-}
 pkgver=4.11.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Python interface for c-ares'
 arch=(x86_64)
 url=https://github.com/saghul/pycares
@@ -39,8 +39,6 @@ check() {
     --deselect tests/test_all.py::DNSTest::test_gethostbyaddr6
     --deselect tests/test_all.py::DNSTest::test_getnameinfo
     --deselect tests/test_all.py::DNSTest::test_query_txt_chunked
-    # Fails in Artix CI
-    --deselect tests/test_all.py::DNSTest::test_getaddrinfo4
   )
 
   cd "$_name"
