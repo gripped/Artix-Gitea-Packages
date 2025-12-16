@@ -1,0 +1,38 @@
+---
+version: 5.1.1-2
+pkgbase:
+  name: python-fastnumbers
+  pkgdesc: Super-fast and clean conversions to numbers
+  pkgver: 5.1.1
+  pkgrel: 2
+  url: https://github.com/SethMMorton/fastnumbers
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-hypothesis
+    - python-numpy
+    - python-pytest
+    - python-typing_extensions
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+  optdepends:
+    - 'python-numpy: for conversion to numpy arrays'
+  source:
+    - fastnumbers-5.1.1.tar.gz::https://github.com/SethMMorton/fastnumbers/archive/refs/tags/5.1.1.tar.gz
+  sha512sums:
+    - ba84a0a03c9ddce24c6aac195d98ca1dd4e68b8d37cb0dd27fe81fd954d00f4763ac51c2a31645ce374cdfee3a185fece86a2e88753a9e5f556ec75a9012165c
+  b2sums:
+    - 909dac4205587f575ebed12d8d8ab8f235eb40bde1d581674f8e30d297632411e56fac13b81f25a9a4c8a0d94b8ddf98004b8e41c77ea09810e2bfebb69aaafa
+pkgname:
+  - name: python-fastnumbers
+# generated with artixpkg 0.37.4-1-any
