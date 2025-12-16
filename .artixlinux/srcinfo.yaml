@@ -1,10 +1,10 @@
 ---
-version: 1.22.0-1
+version: 1.22.0-2
 pkgbase:
   name: python-yarl
   pkgdesc: Yet another URL library
   pkgver: 1.22.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/aio-libs/yarl/
   arch:
     - x86_64
