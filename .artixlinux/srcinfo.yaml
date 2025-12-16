@@ -1,0 +1,27 @@
+---
+version: 0.4-7
+pkgbase:
+  name: python-entrypoints
+  pkgdesc: Discover and load entry points from installed packages.
+  pkgver: 0.4
+  pkgrel: 7
+  url: https://github.com/takluyver/entrypoints
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-flit-core
+  depends:
+    - python
+  source:
+    - https://github.com/takluyver/entrypoints/archive/0.4/python-entrypoints-0.4.tar.gz
+  sha256sums:
+    - d2197a94aa73e70a7f60600e654ac9918ca2a0ee5480eb875296c42220a02272
+pkgname:
+  - name: python-entrypoints
+# generated with artixpkg 0.37.4-1-any
