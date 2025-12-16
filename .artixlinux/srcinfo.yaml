@@ -1,10 +1,10 @@
 ---
-version: 3.11.0-1
+version: 3.11.0-2
 pkgbase:
   name: python-pysolr
   pkgdesc: Python Solr client
   pkgver: 3.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/django-haystack/pysolr
   arch:
     - any
