@@ -1,10 +1,10 @@
 ---
-version: 0.15.2-1
+version: 0.15.2-2
 pkgbase:
   name: python-voluptuous
   pkgdesc: A Python data validation library
   pkgver: 0.15.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/alecthomas/voluptuous
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 4a6f6ffb7db63bd901863dd431827144a2b51c0634e58cee2fe9ce0357cb792de1a40ccdfce7c22f3ed2115fbcd36686f9a46add77ed849bca9a9ea703403a18
 pkgname:
   - name: python-voluptuous
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
