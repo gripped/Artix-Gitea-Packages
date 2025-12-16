@@ -1,10 +1,10 @@
 ---
-version: 3.2.2-1
+version: 3.2.2-2
 pkgbase:
   name: python-tblib
   pkgdesc: Python traceback fiddling library
   pkgver: 3.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ionelmc/python-tblib
   arch:
     - any
