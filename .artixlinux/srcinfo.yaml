@@ -1,10 +1,10 @@
 ---
-version: 0.4.3-1.1
+version: 0.4.3-2
 pkgbase:
   name: python-lxml-html-clean
   pkgdesc: HTML cleaner from lxml project
   pkgver: 0.4.3
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://lxml-html-clean.readthedocs.io/
   arch:
     - any
