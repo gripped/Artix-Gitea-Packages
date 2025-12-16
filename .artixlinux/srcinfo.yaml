@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-1
+version: 0.14.0-2
 pkgbase:
   name: python-moddb
   pkgdesc: A Python scraper to access ModDB mods, games and more as objects
   pkgver: 0.14.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ClementJ18/moddb
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - c5dd9e41d702092e05fa9ea18c9a21b78314f46b597740127549dcd1bcb71ff0b29402296b390a420ca93355b6cb071db45cd8a237db94d5f20fea27fdbe4eca
 pkgname:
   - name: python-moddb
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
