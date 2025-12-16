@@ -1,0 +1,24 @@
+---
+version: 0.6.0-13
+pkgbase:
+  name: python-pydbus
+  pkgdesc: Pythonic D-Bus library
+  pkgver: 0.6.0
+  pkgrel: 13
+  url: https://github.com/LEW21/pydbus
+  arch:
+    - any
+  license:
+    - LGPL
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+    - python-gobject
+  source:
+    - pydbus-0.6.0.tar.gz::https://github.com/LEW21/pydbus/archive/v0.6.0.tar.gz
+  sha256sums:
+    - dacdf0498a831c8b43a4f3d985d64f99f3093a8aaf4e2ea99981c30fdf1a42da
+pkgname:
+  - name: python-pydbus
+# generated with artixpkg 0.37.4-1-any
