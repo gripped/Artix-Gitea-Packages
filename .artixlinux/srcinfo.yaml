@@ -1,10 +1,10 @@
 ---
-version: 0.9-1
+version: 0.9-2
 pkgbase:
   name: python-spake2
   pkgdesc: Pure-python implementation of the SPAKE2 Password-Authenticated Key
   pkgver: 0.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/warner/python-spake2
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 557b17b8e28214b9c2cd0362c991ac0f61996812fd747e66397c48fdbbb314eb4e9acba9670ca41d0924f4b688931f2b32a7e9ba947ee1db3df00e9e9670d497
 pkgname:
   - name: python-spake2
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
