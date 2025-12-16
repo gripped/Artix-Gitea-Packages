@@ -1,0 +1,29 @@
+---
+version: 3.3.0-2
+pkgbase:
+  name: python-json-logger
+  pkgdesc: A python library adding a json log formatter
+  pkgver: 3.3.0
+  pkgrel: 2
+  url: https://github.com/nhairs/python-json-logger
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-freezegun
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - git+https://github.com/nhairs/python-json-logger.git#tag=v3.3.0
+  sha512sums:
+    - cdcf92436386ab9d2edac2709ff089363818b1a5980309e8b0e9fbf955e991b62148d7238b35f2f2d537d55bcf4d7670e5404610a11c56d65c304b14c9ec6e5f
+pkgname:
+  - name: python-json-logger
+# generated with artixpkg 0.37.4-1-any
