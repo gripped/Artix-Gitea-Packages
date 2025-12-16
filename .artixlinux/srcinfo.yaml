@@ -1,10 +1,10 @@
 ---
-version: 0.1.4-1
+version: 0.1.4-2
 pkgbase:
   name: python-forbiddenfruit
   pkgdesc: Patch built-in python objects
   pkgver: 0.1.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/clarete/forbiddenfruit
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - a31dd14b64f39234239d1f0567798a92d5cf8ed0b32fdd2a20c29bd759aaab44
 pkgname:
   - name: python-forbiddenfruit
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
