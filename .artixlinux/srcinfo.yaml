@@ -1,10 +1,10 @@
 ---
-version: 0.4.1-1
+version: 0.4.1-2
 pkgbase:
   name: python-requests-unixsocket
   pkgdesc: Use requests to talk HTTP via a UNIX domain socket
   pkgver: 0.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/msabramo/requests-unixsocket
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - b20ba95f7c08452895583c913e456de06eb950762f32af9f32d208a7f30cb339660e268806f5e127f8fc3b9e8f6cd2dc6e0ce9e4ef472d0b07e8368c5a9f45c1
 pkgname:
   - name: python-requests-unixsocket
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
