@@ -1,0 +1,32 @@
+---
+version: 1.0.5-3
+pkgbase:
+  name: python-click-aliases
+  pkgdesc: Enable aliases for click
+  pkgver: 1.0.5
+  pkgrel: 3
+  url: https://github.com/click-contrib/click-aliases
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-wheel
+  depends:
+    - python
+    - python-click
+  source:
+    - git+https://github.com/click-contrib/click-aliases.git#tag=v1.0.5
+  sha512sums:
+    - 389246e5cb8d07af6b6379d8d585cfdf127dc4aeba67882cfe30b338459296a2d943be09c2d0bcdf3a0a7658391b6b07724a37e46f71f30c0871873e889a6486
+  b2sums:
+    - 47ece35e62a391996a9847abe3cf4cd225fd999a610802aff96e8e4dad7b5a4c28f4e93b7f6dd60597f854c536968d354839e69306745008c302ae2ccca3a7cd
+pkgname:
+  - name: python-click-aliases
+# generated with artixpkg 0.37.4-1-any
