@@ -1,0 +1,38 @@
+---
+version: 1.8.2-5
+pkgbase:
+  name: python-pooch
+  pkgdesc: Python library for fetching and caching data files
+  pkgver: 1.8.2
+  pkgrel: 5
+  url: https://www.fatiando.org/pooch/latest/
+  arch:
+    - any
+  license:
+    - LicenseRef-pooch
+  checkdepends:
+    - python-pytest
+    - python-pytest-httpserver
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-packaging
+    - python-platformdirs
+    - python-requests
+  optdepends:
+    - 'python-paramiko: for SFTP downloads'
+    - 'python-tqdm: for printing a download progress bar'
+  source:
+    - git+https://github.com/fatiando/pooch#tag=v1.8.2
+    - https://github.com/fatiando/pooch/commit/96bd5437.patch
+  sha256sums:
+    - f297312c457a5201ba95afbe47e4ac848d04460a61fa631cae412dd0ce3cb41a
+    - ae8db79fa3c5fec2e7321691df7fb5fcdd045d50eaa4a856b2e1e0fea430c964
+pkgname:
+  - name: python-pooch
+# generated with artixpkg 0.37.4-1-any
