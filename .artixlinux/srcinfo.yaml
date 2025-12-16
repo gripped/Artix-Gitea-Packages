@@ -1,10 +1,10 @@
 ---
-version: 4.1.0-1
+version: 4.1.0-3
 pkgbase:
   name: python-hpack
   pkgdesc: Pure-Python HPACK header compression
   pkgver: 4.1.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://hyper.rtfd.org/
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 8720b30e65ce48b2d085699d172b14d362f19e9d85aab20c6bed47a3665f2f371e09e093f9cca58e443d735a54765596a32daf918cc121624b5c2f209b62d457
 pkgname:
   - name: python-hpack
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
