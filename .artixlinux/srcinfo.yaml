@@ -1,0 +1,41 @@
+---
+version: 2.3.1-3
+pkgbase:
+  name: python-flask-caching
+  pkgdesc: A caching extension for Flask
+  pkgver: 2.3.1
+  pkgrel: 3
+  url: https://github.com/pallets-eco/flask-caching
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - memcached
+    - python-asgiref
+    - python-pylibmc
+    - python-pytest
+    - python-pytest-xprocess
+    - python-redis
+    - valkey
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-cachelib
+    - python-flask
+    - python-jinja
+    - python-werkzeug
+  optdepends:
+    - 'python-pylibmc: for memcached backend'
+    - 'python-redis: for Redis backend'
+  source:
+    - python-flask-caching-2.3.1.tar.gz::https://github.com/pallets-eco/flask-caching/archive/e59bc040cd47cd2b43e501d636d43d442c50b3ff.tar.gz
+  sha512sums:
+    - 5b324227b26dd9566dc866ffcadcac56a6fdca3f0bb2e7e93c4f2e282de1d320bb33eeff8689b3c6c762ae455a9e2f2ef9d49c5de7193ef2105595993d5bf4ae
+pkgname:
+  - name: python-flask-caching
+# generated with artixpkg 0.37.4-1-any
