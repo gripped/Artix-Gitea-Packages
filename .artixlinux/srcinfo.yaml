@@ -1,10 +1,10 @@
 ---
-version: 1.25.0-1
+version: 1.25.0-2
 pkgbase:
   name: python-dunamai
   pkgdesc: A library for producing dynamic version strings, derived from VCS tags
   pkgver: 1.25.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mtkennerly/dunamai
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - bad2f992467e78c6c6c50926561c514363043f8f34f6bf71a4123e9034c5400260309200b7d78f42640fbe79735f0faa88e2e33032ee89f69f39b41390304819
 pkgname:
   - name: python-dunamai
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
