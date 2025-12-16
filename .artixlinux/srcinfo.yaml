@@ -1,10 +1,10 @@
 ---
-version: 0.10-1
+version: 0.10-2
 pkgbase:
   name: python-durationpy
   pkgdesc: Module for converting between datetime.timedelta and Go's time.Duration strings
   pkgver: 0.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/icholy/durationpy
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 973f70c2b689ef9f8311f6b3cb4a91ffc33f606463b143a41be3e7738a0ca4df
 pkgname:
   - name: python-durationpy
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
