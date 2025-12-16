@@ -1,10 +1,10 @@
 ---
-version: 2.0.0-1
+version: 2.0.0-2
 pkgbase:
   name: python-gpgme
   pkgdesc: Python bindings for GPGME
   pkgver: 2.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gnupg.org/software/gpgme/index.html
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - d63332dd713eef8b94974a4cdc01c0863fef6abc2f3e7e246c9d0d1693cff13a
 pkgname:
   - name: python-gpgme
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
