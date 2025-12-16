@@ -1,10 +1,10 @@
 ---
-version: 0.3-15
+version: 0.3-16
 pkgbase:
   name: python-speg
   pkgdesc: A PEG-based parser interpreter with memoization
   pkgver: 0.3
-  pkgrel: 15
+  pkgrel: 16
   url: https://pypi.org/project/speg/
   arch:
     - any
@@ -22,4 +22,4 @@ pkgbase:
     - 37d897f62a4324d8d2f313d7d1b98cd26f872d2ae598b7eb9a69b1c129bcc135
 pkgname:
   - name: python-speg
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
