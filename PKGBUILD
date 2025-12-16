@@ -3,7 +3,7 @@
 _base=pytest-textual-snapshot
 pkgname=python-${_base}
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A pytest plugin for snapshot testing Textual applications"
 arch=(any)
 url="https://github.com/Textualize/${_base}"
