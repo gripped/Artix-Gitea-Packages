@@ -1,0 +1,30 @@
+---
+version: 1.1.5-2
+pkgbase:
+  name: python-generic
+  pkgdesc: Generic programming library for Python
+  pkgver: 1.1.5
+  pkgrel: 2
+  url: https://github.com/gaphor/generic
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-sphinx-furo
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/gaphor/generic.git#tag=1.1.5
+  b2sums:
+    - 6ebaa4aeb375ebac41206ce3ed919f635e4bcd38cba0fd102d1a726cf5a5872827bebae88c04f7cd29e10504a900b281995f13790484ce991172250c2700188f
+pkgname:
+  - name: python-generic
+# generated with artixpkg 0.37.4-1-any
