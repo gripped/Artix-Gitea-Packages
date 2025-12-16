@@ -1,10 +1,10 @@
 ---
-version: 1.9.1-1
+version: 1.9.1-2
 pkgbase:
   name: python-nodeenv
   pkgdesc: Node.js virtual environment builder
   pkgver: 1.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ekalinin/nodeenv
   arch:
     - any
