@@ -1,0 +1,38 @@
+---
+version: 0.13.0-4
+pkgbase:
+  name: python-cachelib
+  pkgdesc: A collection of cache libraries in the same API interface. Extracted from werkzeug
+  pkgver: 0.13.0
+  pkgrel: 4
+  url: https://github.com/pallets/cachelib
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - memcached
+    - python-boto3
+    - python-pylibmc
+    - python-pytest-xprocess
+    - python-redis
+    - valkey
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  optdepends:
+    - 'python-boto3: for S3 backend'
+    - 'python-pylibmc: for memcached backend'
+    - 'python-pymongo: for MongoDB backend'
+    - 'python-redis: for Redis backend'
+  source:
+    - python-cachelib-0.13.0.tar.gz::https://github.com/pallets/cachelib/archive/0.13.0.tar.gz
+  sha256sums:
+    - b981bdb6ed477ae037f88a9fea90bf14e6137c9b2c54a5d56b9783404a9f9b4c
+pkgname:
+  - name: python-cachelib
+# generated with artixpkg 0.37.4-1-any
