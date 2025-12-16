@@ -1,10 +1,10 @@
 ---
-version: 7.0.0-1
+version: 7.0.0-2
 pkgbase:
   name: python-isort
   pkgdesc: A Python utility / library to sort Python imports
   pkgver: 7.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/PyCQA/isort
   arch:
     - any
