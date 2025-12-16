@@ -13,7 +13,7 @@ arch=('x86_64')
 pkgdesc="A Cython interface to the hidapi from signal11/hidapi"
 url="https://github.com/trezor/cython-hidapi"
 depends=('python' 'hidapi')
-makedepends=('cython' 'python-setuptools' 'udev')
+makedepends=('cython' 'python-setuptools' 'udev' 'python-pip')
 license=('custom')
 source=("https://pypi.org/packages/source/${_pipname:0:1}/$_pipname/$_pipname-$_pkgver.tar.gz"
          https://github.com/trezor/cython-hidapi/commit/89aaf081.patch
