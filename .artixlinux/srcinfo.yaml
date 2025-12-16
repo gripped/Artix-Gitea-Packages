@@ -1,10 +1,10 @@
 ---
-version: 4.0.4-1
+version: 4.0.4-2
 pkgbase:
   name: python-pylint
   pkgdesc: Analyzes Python code looking for bugs and signs of poor quality
   pkgver: 4.0.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://pylint.pycqa.org
   arch:
     - any
