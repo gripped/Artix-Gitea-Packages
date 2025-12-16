@@ -1,10 +1,10 @@
 ---
-version: 25.4.0-1
+version: 25.4.0-3
 pkgbase:
   name: python-attrs
   pkgdesc: Attributes without boilerplate.
   pkgver: 25.4.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://www.attrs.org
   arch:
     - any
