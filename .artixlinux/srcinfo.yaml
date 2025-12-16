@@ -1,10 +1,10 @@
 ---
-version: 3.3.0-1
+version: 3.3.0-2
 pkgbase:
   name: python-psycopg-pool
   pkgdesc: Connection pool for psycopg
   pkgver: 3.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.psycopg.org/psycopg3/
   arch:
     - any
