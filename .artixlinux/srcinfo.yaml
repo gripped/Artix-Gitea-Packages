@@ -1,10 +1,10 @@
 ---
-version: 3.5.2-1
+version: 3.5.2-2
 pkgbase:
   name: python-sphinx-autodoc-typehints
   pkgdesc: Type hints support for the Sphinx autodoc extension
   pkgver: 3.5.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tox-dev/sphinx-autodoc-typehints
   arch:
     - any
