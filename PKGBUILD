@@ -2,7 +2,7 @@
 
 pkgname=python-betamax
 pkgver=0.9.0
-pkgrel=4
+pkgrel=5
 pkgdesc="A VCR imitation for python-requests"
 arch=('any')
 license=('Apache-2.0')
