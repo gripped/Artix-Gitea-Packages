@@ -1,10 +1,10 @@
 ---
-version: 1.5.5-1
+version: 1.5.5-2
 pkgbase:
   name: python-freezegun
   pkgdesc: Let your Python tests travel through time
   pkgver: 1.5.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/spulec/freezegun
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - a1f03fab4f384de154798c6524e4a229e7c411c7fc1bb33fe99b0ad42fb584942147b3603f6cc81105d8fc386c2b9c4694bbef2189911c0bb9ee7d934eeda5b8
 pkgname:
   - name: python-freezegun
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
