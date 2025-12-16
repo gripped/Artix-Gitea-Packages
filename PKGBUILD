@@ -3,7 +3,7 @@
 _pkg=helpdev
 pkgname=python-${_pkg}
 pkgver=0.7.1
-pkgrel=9
+pkgrel=10
 pkgdesc="Helping users and developers to get information about the environment to report bugs"
 arch=(any)
 url="https://gitlab.com/dpizetta/helpdev"
@@ -31,4 +31,3 @@ package() {
   python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
   install -Dm644 LICENSE.rst -t "${pkgdir}"/usr/share/licenses/${pkgname}
 }
-
