@@ -1,10 +1,10 @@
 ---
-version: 2.6.2-1
+version: 2.6.2-2
 pkgbase:
   name: python-maxminddb
   pkgdesc: Reader for the MaxMind DB format
   pkgver: 2.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/maxmind/MaxMind-DB-Reader-python
   arch:
     - x86_64
