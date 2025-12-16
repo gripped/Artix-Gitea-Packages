@@ -5,7 +5,7 @@
 
 pkgname=python-dnspython
 pkgver=2.8.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="A DNS toolkit for Python"
 arch=('any')
