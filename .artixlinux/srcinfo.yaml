@@ -1,10 +1,10 @@
 ---
-version: 4.7-1
+version: 4.7-2
 pkgbase:
   name: python-argparse-manpage
   pkgdesc: Automatically build man-pages for your Python project
   pkgver: 4.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/praiskup/argparse-manpage
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 88c2e0e0747f5950b131d5456b1bc153e64d11ca41d87e3c995d91f7ffb662685a5c58f7ea99f011151aa72e45a5bcab98ac6729e20a19d086a7798d9c783452
 pkgname:
   - name: python-argparse-manpage
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
