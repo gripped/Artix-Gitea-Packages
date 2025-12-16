@@ -1,10 +1,10 @@
 ---
-version: 1.12.1.2-1
+version: 1.12.1.2-2
 pkgbase:
   name: python-pkginfo
   pkgdesc: Query metadata from sdists / bdists / installed packages
   pkgver: 1.12.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/pkginfo
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - 8023dac51913ebcca02310b0f58511962dabb860ae4588b239f55824c59855924f47975cfdad6092244fabb3f48660496d38d333cee296ba899467c820aa57ed
 pkgname:
   - name: python-pkginfo
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
