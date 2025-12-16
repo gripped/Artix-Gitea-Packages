@@ -1,10 +1,10 @@
 ---
-version: 3.2.3-1
+version: 3.2.3-2
 pkgbase:
   name: python-uncertainties
   pkgdesc: Transparent calculations with uncertainties on the quantities involved (aka error propagation); fast calculation of derivatives.
   pkgver: 3.2.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lmfit/uncertainties
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - 85588db20a9a9954bcbc883a39551565821d59c51edee0c41359f9432e9006e5815f53f1d0dbd1576bdfeef7dfb7b80a384c6503cc9ac6daf0c9ae26a5a72a8f
 pkgname:
   - name: python-uncertainties
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
