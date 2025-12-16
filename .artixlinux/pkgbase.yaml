@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2025.12.1.14-2
+    version: 2025.12.1.14-3
     packages:
-      - python-trove-classifiers-2025.12.1.14-2-any.pkg.tar.zst
+      - python-trove-classifiers-2025.12.1.14-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
