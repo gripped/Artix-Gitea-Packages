@@ -1,10 +1,10 @@
 ---
-version: 7.5.0-1
+version: 7.5.0-2
 pkgbase:
   name: python-pynetbox
   pkgdesc: NetBox API client library
   pkgver: 7.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/netbox-community/pynetbox
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - 5bc20f33bda9de5881893355070b13454ccdae0a1a73212d95a9e4261208016b7bbb3c2dab2a16d10887d119de6ecfa44a51b6b3ac7d9a67cb8ab44b53409967
 pkgname:
   - name: python-pynetbox
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
