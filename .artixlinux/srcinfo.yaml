@@ -1,10 +1,10 @@
 ---
-version: 5.0.0-1
+version: 5.0.0-2
 pkgbase:
   name: python-bcrypt
   pkgdesc: Modern password hashing for your software and your servers
   pkgver: 5.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pyca/bcrypt
   arch:
     - x86_64
