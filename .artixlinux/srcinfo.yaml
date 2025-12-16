@@ -1,10 +1,10 @@
 ---
-version: 2.2.2-1
+version: 2.2.2-2
 pkgbase:
   name: python-sh
   pkgdesc: Subprocess interface that allows you to call any program as if it were a function
   pkgver: 2.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/amoffat/sh
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - e3d436d851dc7ec5286dbc6514810be733a9776f13dc5a8c5f0a5c4b481c0debdfa647022e0c2e83bb45165f2898ceecc1b2a554521260d6f6a390a9930a8d21
 pkgname:
   - name: python-sh
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any

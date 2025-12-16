@@ -5,7 +5,7 @@
 
 pkgname=python-sh
 pkgver=2.2.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Subprocess interface that allows you to call any program as if it were a function'
 arch=('any')
 url='https://github.com/amoffat/sh'
@@ -26,9 +26,7 @@ build() {
 check() {
   cd sh
   # export PYTHONPATH="$(pwd):${PYTHONPATH}"
-  pytest tests -k 'not test_environment' \
-    --deselect tests/sh_test.py::FunctionalTests::test_custom_timeout_signal
-  # The above test fails in artix CI
+  pytest tests -k 'not test_environment'
 }
 
 package() {
