@@ -1,10 +1,10 @@
 ---
-version: 0.5.2-1
+version: 0.5.2-2
 pkgbase:
   name: python-dep-logic
   pkgdesc: Python dependency specifications supporting logical operations
   pkgver: 0.5.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pdm-project/dep-logic
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 48ddb93848d83f88eebc40c4a7d53c5723f5dba5263135361bc03c53f48e9ec13d9ccd349faf3db758f68c4a4cd1bc46a46d514eea035066268e078e4ab613ab
 pkgname:
   - name: python-dep-logic
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
