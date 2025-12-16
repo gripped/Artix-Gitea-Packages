@@ -2,7 +2,7 @@
 
 pkgname=python-ubjson
 pkgver=0.16.1
-pkgrel=8
+pkgrel=9
 pkgdesc='Universal Binary JSON draft-12 serializer for Python'
 arch=(x86_64)
 url='https://github.com/Iotic-Labs/py-ubjson'
