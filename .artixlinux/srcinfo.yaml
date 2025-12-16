@@ -1,0 +1,35 @@
+---
+version: 1.2.0-3
+pkgbase:
+  name: python-aioquic
+  pkgdesc: QUIC and HTTP/3 implementation in Python
+  pkgver: 1.2.0
+  pkgrel: 3
+  url: https://github.com/aiortc/aioquic
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - glibc
+    - openssl
+    - python
+    - python-certifi
+    - python-cryptography
+    - python-pylsqpack
+    - python-pyopenssl
+    - python-service-identity
+  source:
+    - https://files.pythonhosted.org/packages/source/a/aioquic/aioquic-1.2.0.tar.gz
+  sha256sums:
+    - f91263bb3f71948c5c8915b4d50ee370004f20a416f67fab3dcc90556c7e7199
+  b2sums:
+    - fcf7821a93c166c98cdb7e6e2eb3b80df65c1faa484268faa0fc1386bb59bdfffdf801a8de23c2a2d9dec826640ad75717b068b558081959089e9be7d414bca3
+pkgname:
+  - name: python-aioquic
+# generated with artixpkg 0.37.4-1-any
