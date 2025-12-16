@@ -1,9 +1,9 @@
 ---
-version: 7.0.0-1
+version: 7.0.0-2
 pkgbase:
   name: python-atpublic
   pkgver: 7.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/warsaw/public
   arch:
     - any
