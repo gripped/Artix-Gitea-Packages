@@ -1,10 +1,10 @@
 ---
-version: 2.6-1
+version: 2.6-2
 pkgbase:
   name: python-bracex
   pkgdesc: Bash style brace expansion for Python
   pkgver: 2.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/facelessuser/bracex
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - cd7d1b1f2483d2c793fd90e9d8619373bb5c71b9ce8c2528a86c81fb68c83960387dec5717743d3947e09b8fe27e113c1f5678c4478339f0da4e51f39fe5ac3c
 pkgname:
   - name: python-bracex
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
