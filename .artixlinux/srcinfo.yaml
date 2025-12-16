@@ -1,10 +1,10 @@
 ---
-version: 0.2.3-7
+version: 0.2.3-8
 pkgbase:
   name: python-dbus-next
   pkgdesc: The next great DBus library for Python with asyncio support
   pkgver: 0.2.3
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/altdesktop/python-dbus-next
   arch:
     - any
