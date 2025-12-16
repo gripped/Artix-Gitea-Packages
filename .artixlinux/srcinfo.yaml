@@ -1,10 +1,10 @@
 ---
-version: 2025.2.post0-1
+version: 2025.2.post0-2
 pkgbase:
   name: python-tzdata
   pkgdesc: Provider of IANA time zone data
   pkgver: 2025.2.post0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/python/tzdata
   arch:
     - any
