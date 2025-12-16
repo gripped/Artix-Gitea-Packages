@@ -1,0 +1,28 @@
+---
+version: 0.0.20-2
+pkgbase:
+  name: python-python-multipart
+  pkgdesc: streaming multipart parser for Python
+  pkgver: 0.0.20
+  pkgrel: 2
+  url: https://multipart.fastapiexpert.com
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-yaml
+  makedepends:
+    - python-build
+    - python-installer
+    - python-hatchling
+  depends:
+    - python
+  source:
+    - python-python-multipart-0.0.20.tar.gz::https://github.com/kludex/python-multipart/archive/0.0.20.tar.gz
+  sha512sums:
+    - 9e59fc38413da38429e9fab15105d20103da820437a059082dfed588423fb4a2ec10abd7742e65c3778e7e5e5aba346936900d9dbe49c73518eaa30b24842203
+pkgname:
+  - name: python-python-multipart
+# generated with artixpkg 0.37.4-1-any
