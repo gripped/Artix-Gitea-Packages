@@ -6,7 +6,7 @@
 pkgname=python-requests
 _name=${pkgname#python-}
 pkgver=2.32.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Python HTTP for Humans'
 arch=(any)
 url=https://requests.readthedocs.io/
@@ -55,11 +55,7 @@ build() {
 check() {
   cd "$_name"
   # test_unicode_header_name hangs
-  PYTHONPATH="$PWD/src" pytest -v tests --deselect tests/test_requests.py::TestRequests::test_unicode_header_name \
-    --deselect tests/test_requests.py::TestTimeout::test_connect_timeout \
-    --deselect tests/test_requests.py::TestTimeout::test_total_timeout_connect \
-    --deselect tests/test_lowlevel.py::test_fragment_not_sent_with_request
-    # last 3 tests fail in Artix CI
+  PYTHONPATH="$PWD/src" pytest -v tests --deselect tests/test_requests.py::TestRequests::test_unicode_header_name
 }
 
 package() {
