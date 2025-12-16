@@ -1,0 +1,31 @@
+---
+version: 0.1.1-4
+pkgbase:
+  name: python-pytest-pacman
+  pkgdesc: pacman db pytest fixture
+  pkgver: 0.1.1
+  pkgrel: 4
+  url: https://gitlab.archlinux.org/archlinux/pytest-pacman
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-flit-core
+    - git
+  depends:
+    - python
+    - python-pytest
+    - python-setuptools
+  source:
+    - git+https://gitlab.archlinux.org/archlinux/pytest-pacman.git?signed#tag=v0.1.1
+  validpgpkeys:
+    - E499C79F53C96A54E572FEE1C06086337C50773E
+  sha512sums:
+    - SKIP
+pkgname:
+  - name: python-pytest-pacman
+# generated with artixpkg 0.37.4-1-any
