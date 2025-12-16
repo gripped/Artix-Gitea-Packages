@@ -1,10 +1,10 @@
 ---
-version: 13.10.3-1
+version: 13.10.3-2
 pkgbase:
   name: python-pyqt6-sip
   pkgdesc: The sip module support for PyQt6
   pkgver: 13.10.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
     - x86_64
