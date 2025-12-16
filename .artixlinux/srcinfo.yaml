@@ -1,0 +1,28 @@
+---
+version: 3.1.0-3
+pkgbase:
+  name: python-yaspin
+  pkgdesc: Yet Another Terminal Spinner
+  pkgver: 3.1.0
+  pkgrel: 3
+  url: https://github.com/pavdmyt/yaspin
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python-termcolor
+  source:
+    - git+https://github.com/pavdmyt/yaspin.git#tag=v3.1.0
+  sha512sums:
+    - be885c628c42951c5303572cc229b91d45df3214575bbd42ff921987093a6e927194550b8db45b75763a0bbc7d6a5366d8ee24baab474091c806678e03197c91
+pkgname:
+  - name: python-yaspin
+# generated with artixpkg 0.37.4-1-any
