@@ -1,10 +1,10 @@
 ---
-version: 10.1.0-1
+version: 10.1.0-2
 pkgbase:
   name: python-mss
   pkgdesc: Ultra fast cross-platform multiple screenshots module
   pkgver: 10.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/BoboTiG/python-mss
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - 47e2b8e507c1ef34ceb568bdc007f48319eb1ea13e3a5b21d842df92ef57a36f
 pkgname:
   - name: python-mss
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
