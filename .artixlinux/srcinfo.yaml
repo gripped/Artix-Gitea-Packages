@@ -1,10 +1,10 @@
 ---
-version: 2.19.2-3
+version: 2.19.2-2
 pkgbase:
   name: python-pygments
   pkgdesc: Python syntax highlighter
   pkgver: 2.19.2
-  pkgrel: 3
+  pkgrel: 2
   url: https://pygments.org/
   arch:
     - any
