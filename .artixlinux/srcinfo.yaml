@@ -1,10 +1,10 @@
 ---
-version: 4.14.0-1
+version: 4.14.0-2
 pkgbase:
   name: python-humanize
   pkgdesc: Common humanization utilities for Python
   pkgver: 4.14.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/python-humanize/humanize
   arch:
     - any
