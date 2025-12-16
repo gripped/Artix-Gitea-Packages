@@ -3,7 +3,7 @@
 
 pkgname=python-pyhamcrest
 pkgver=2.1.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Hamcrest framework for matcher objects"
 arch=('any')
 license=('BSD-2-Clause')
