@@ -1,10 +1,10 @@
 ---
-version: 1.11.0-1
+version: 1.11.0-2
 pkgbase:
   name: python-pyperclip
   pkgdesc: A cross-platform clipboard module for Python
   pkgver: 1.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/asweigart/pyperclip
   arch:
     - any
