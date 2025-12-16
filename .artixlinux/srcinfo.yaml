@@ -1,10 +1,10 @@
 ---
-version: 1.1.45-1
+version: 1.1.45-2
 pkgbase:
   name: libxslt
   pkgdesc: XML stylesheet transformation library
   pkgver: 1.1.45
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/libxslt/-/wikis/home
   arch:
     - x86_64
