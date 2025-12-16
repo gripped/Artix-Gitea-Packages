@@ -1,10 +1,10 @@
 ---
-version: 0.15.0-1
+version: 0.15.0-2
 pkgbase:
   name: python-pytest-subtests
   pkgdesc: unittest subTest() support and subtests fixture
   pkgver: 0.15.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-subtests
   arch:
     - any
