@@ -1,10 +1,10 @@
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Fernando Jiménez Solano <fjim@sdfeu.org>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 
 pkgname=python-pyacoustid
 pkgver=1.3.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Bindings for Chromaprint acoustic fingerprinting and the Acoustid API'
 arch=(any)
 url=https://github.com/beetbox/pyacoustid
