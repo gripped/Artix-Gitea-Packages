@@ -1,10 +1,10 @@
 ---
-version: 4.0.0-1
+version: 4.0.0-2
 pkgbase:
   name: python-markdown-it-py
   pkgdesc: Python port of markdown-it. Markdown parsing, done right!
   pkgver: 4.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/executablebooks/markdown-it-py
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - 617927d7038e2918b395c720d4b8d8327342c266c75b6fd5957961944c2bed51a8e2f01a9c184e5d85dfc4fd8b28e07f3cc1d677aa29192e1a8e54f29d6a0829
 pkgname:
   - name: python-markdown-it-py
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
