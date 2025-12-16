@@ -1,10 +1,10 @@
 ---
-version: 3.8.0-1
+version: 3.8.0-2
 pkgbase:
   name: python-bitarray
   pkgdesc: Efficient arrays of booleans for Python
   pkgver: 3.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ilanschnell/bitarray
   arch:
     - x86_64
