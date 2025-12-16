@@ -1,10 +1,10 @@
 ---
-version: 0.3.7-1
+version: 0.3.7-2
 pkgbase:
   name: python-fastbencode
   pkgdesc: Implementation of bencode with optional fast C extensions
   pkgver: 0.3.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/breezy-team/fastbencode
   arch:
     - x86_64
