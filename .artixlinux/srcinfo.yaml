@@ -1,10 +1,10 @@
 ---
-version: 0.12.44-1
+version: 0.12.44-2
 pkgbase:
   name: python-pycrdt
   pkgdesc: CRDTs based on Yrs
   pkgver: 0.12.44
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jupyter-server/pycrdt
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
     - python-pytest
     - python-pytest-mypy-testing
     - python-trio
-    - python-y-py
   makedepends:
     - git
     - python-build
