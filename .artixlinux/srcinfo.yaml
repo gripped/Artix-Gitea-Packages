@@ -1,0 +1,36 @@
+---
+version: 3.2.0-10
+pkgbase:
+  name: python-openid
+  pkgdesc: Python 3 port of the python2-openid library
+  pkgver: 3.2.0
+  pkgrel: 10
+  url: https://github.com/necaris/python3-openid
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-django
+    - python-httplib2
+    - python-mysqlclient
+    - python-psycopg2
+    - python-pycurl
+    - python-pytest
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-defusedxml
+  source:
+    - python-openid-3.2.0.tar.gz::https://github.com/necaris/python3-openid/archive/refs/tags/v3.2.0.tar.gz
+  sha512sums:
+    - 9fe9ffe1fe833b22bfb1f362bc5b03a4660126dad5ca29c1e4850f28d6e2e4067d98ce837b89f96c8c3ae939078d3720e06e4132a5e2e0fc162874f3a9ee1a73
+  b2sums:
+    - 27a621c0d8c2cf1bf814a7f5c4e37e866dfea014c4d185b4fb54dd1c271b5ae80610a3d9451bbbee43ffe4f87352add57b8c2d4cb93899d062936ff5480e3266
+pkgname:
+  - name: python-openid
+# generated with artixpkg 0.37.4-1-any
