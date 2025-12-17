@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2025.12.0-1
+    packages:
+      - python-distributed-2025.12.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
