@@ -1,0 +1,31 @@
+---
+version: 0.12.2-2
+pkgbase:
+  name: python-flexmock
+  pkgdesc: Mock/Stub/Spy library for Python
+  pkgver: 0.12.2
+  pkgrel: 2
+  url: https://flexmock.readthedocs.io
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+    - python-teamcity-messages
+    - python-testtools
+    - python-twisted
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+  source:
+    - git+https://github.com/flexmock/flexmock.git#tag=v0.12.2
+  sha512sums:
+    - 86b1890a65ebf04c47155cd9bf2fff3449c92e7ac8a3e22605f05c9dd990b0089e37bb1ea9e980134035f0ff09cc878c239693e359008b62ff4e80d91d3e212d
+pkgname:
+  - name: python-flexmock
+# generated with artixpkg 0.37.4-1-any
