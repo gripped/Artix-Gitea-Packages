@@ -1,10 +1,10 @@
 ---
-version: 7.1.2-1
+version: 7.1.2-2
 pkgbase:
   name: mercurial
   pkgdesc: A scalable distributed SCM tool
   pkgver: 7.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.mercurial-scm.org/
   arch:
     - x86_64
