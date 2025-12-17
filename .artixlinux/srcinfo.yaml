@@ -1,10 +1,10 @@
 ---
-version: 1.10.1-1
+version: 1.10.1-2
 pkgbase:
   name: python-ndindex
   pkgdesc: Library for manipulating indices of ndarrays
   pkgver: 1.10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://quansight-labs.github.io/ndindex/
   arch:
     - x86_64
