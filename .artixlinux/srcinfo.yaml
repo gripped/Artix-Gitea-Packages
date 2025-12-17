@@ -1,10 +1,10 @@
 ---
-version: 7.1.0-3
+version: 7.1.0-4
 pkgbase:
   name: python-ipykernel
   pkgdesc: The ipython kernel for Jupyter
   pkgver: 7.1.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://pypi.org/project/ipykernel/
   arch:
     - any
@@ -29,7 +29,6 @@ pkgbase:
     - python-comm
     - python-jupyter-client
     - python-jupyter-core
-    - python-nest-asyncio
     - python-packaging
     - python-psutil
     - python-pyzmq
