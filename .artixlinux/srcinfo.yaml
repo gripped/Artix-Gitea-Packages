@@ -1,0 +1,36 @@
+---
+version: 8.1.0-3
+pkgbase:
+  name: python-pytest-bdd
+  pkgdesc: BDD library for the pytest runner
+  pkgver: 8.1.0
+  pkgrel: 3
+  url: https://github.com/pytest-dev/pytest-bdd
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-setuptools
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-gherkin
+    - python-mako
+    - python-packaging
+    - python-parse
+    - python-parse-type
+    - python-pluggy
+    - python-pytest
+    - python-typing_extensions
+  source:
+    - git+https://github.com/pytest-dev/pytest-bdd.git#tag=8.1.0
+  sha512sums:
+    - a8b22b0b9e34469fb927c9a748214cf96b009c14a91de5afed623c7f8286f23011e2c2425a7fb98ccbc466c67eb21af21918d79d2da3bf2a7ae270410f121510
+pkgname:
+  - name: python-pytest-bdd
+# generated with artixpkg 0.37.4-1-any
