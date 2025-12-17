@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.17.0-1
+    version: 3.17.0-2
     packages:
-      - python-prettytable-3.17.0-1-any.pkg.tar.zst
+      - python-prettytable-3.17.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
