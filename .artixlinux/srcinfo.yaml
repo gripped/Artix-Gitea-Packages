@@ -1,10 +1,10 @@
 ---
-version: 3.36.0-1
+version: 3.36.0-2
 pkgbase:
   name: liblouis
   pkgdesc: Braille translator and back-translator library
   pkgver: 3.36.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://liblouis.io/
   arch:
     - x86_64
