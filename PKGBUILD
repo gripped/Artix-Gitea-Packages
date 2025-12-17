@@ -5,7 +5,7 @@
 
 pkgname=python-html5lib
 pkgver=1.1
-pkgrel=15
+pkgrel=16
 arch=('any')
 url="https://github.com/html5lib"
 license=('MIT')
@@ -22,12 +22,14 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/html5lib/html5lib-python/ar
         "https://github.com/html5lib/html5lib-python/commit/2c19b9899ab3a3e8bd0ca35e5d78544334204169.patch"
         "https://github.com/html5lib/html5lib-tests/archive/${_test_commit}.tar.gz"
         'html5lib_pytest74.patch::https://github.com/html5lib/html5lib-python/pull/570/commits/51cd4b9d331da8b167d0d0a77deb62357b42a1b7.patch'
-        'html5lib-mock-stdlib.patch::https://github.com/html5lib/html5lib-python/commit/5ec6e5e614679ee938545704fad958a3491c678b.patch')
+        'html5lib-mock-stdlib.patch::https://github.com/html5lib/html5lib-python/commit/5ec6e5e614679ee938545704fad958a3491c678b.patch'
+	'python-3.14-compatibility.patch')
 sha256sums=('66e9e24a53c10c27abb6be8a3cf2cf55824c6ea1cef8570a633cb223ec46e894'
             '6f37b33667e35ea138279be9842f012792821b1497b81ae4b108a74180cfe249'
             'c866f5e4ae9ef34313e2b61fcb74849b6f8aef970bf8249956b6a5d142197087'
             '12921399944e191a01a93c26f684b780bc17182b8b642f39591446fd52ae5a34'
-            '084aeb6fe430a82e482bae01e7f962308f77107d97c42316e512efb7045f7030')
+            '084aeb6fe430a82e482bae01e7f962308f77107d97c42316e512efb7045f7030'
+            '4e1646d275e1402aaff36a116fbecd1018e3db2df5758f84a620a6a3d9005ba4')
 
 prepare() {
     cd html5lib-python-${pkgver}
@@ -37,6 +39,7 @@ prepare() {
 
     patch -p1 -i ../html5lib_pytest74.patch
     patch -p1 -i ../html5lib-mock-stdlib.patch
+    patch -p1 -i ../python-3.14-compatibility.patch
 
     rmdir html5lib/tests/testdata
     ln -sfT ../../../html5lib-tests-${_test_commit} html5lib/tests/testdata
