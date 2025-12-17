@@ -1,10 +1,10 @@
 ---
-version: 0.16-1
+version: 0.16-2
 pkgbase:
   name: python-ini2toml
   pkgdesc: Automatically conversion of .ini/.cfg files to TOML equivalents
   pkgver: 0.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/abravalheri/ini2toml
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - fe406bf6aadf3a9aff661f4a9acc7f9501c63d7aa9db23cd99d0e9b59f959ba8d90a5d445ec55e90b11abcdf8852f9b611302824347ccef20f89ba73ce9d8571
 pkgname:
   - name: python-ini2toml
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
