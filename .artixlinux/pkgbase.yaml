@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.10.2-2
+    version: 1.10.2-3
     packages:
-      - maturin-1.10.2-2-x86_64.pkg.tar.zst
-      - python-maturin-1.10.2-2-x86_64.pkg.tar.zst
+      - maturin-1.10.2-3-x86_64.pkg.tar.zst
+      - python-maturin-1.10.2-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

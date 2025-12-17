@@ -1,10 +1,10 @@
 ---
-version: 1.10.2-2
+version: 1.10.2-3
 pkgbase:
   name: maturin
   pkgdesc: Build and publish crates with pyo3, rust-cpython and cffi bindings
   pkgver: 1.10.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/PyO3/maturin
   arch:
     - x86_64

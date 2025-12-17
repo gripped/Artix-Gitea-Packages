@@ -7,7 +7,7 @@ pkgname=(
   python-maturin
 )
 pkgver=1.10.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Build and publish crates with pyo3, rust-cpython and cffi bindings"
 url="https://github.com/PyO3/maturin"
 arch=(x86_64)
