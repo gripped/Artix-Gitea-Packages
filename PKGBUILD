@@ -99,3 +99,4 @@ package() {
   ln -s "$site_packages/${pkgname#python-}-$pkgver.dist-info/licenses/LICENSE" \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+
