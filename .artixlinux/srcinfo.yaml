@@ -1,10 +1,10 @@
 ---
-version: 5.0.4-1
+version: 5.0.4-2
 pkgbase:
   name: python-elementpath
   pkgdesc: XPath 1.0/2.0 parsers and selectors for ElementTree and lxml
   pkgver: 5.0.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sissaschool/elementpath
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - 4eefdb6fcba8bfe567e17e9ec84a44105d9122834c1bc0b9bbb444d0b50b7c6edd9d150931fe0c6e91b749caec1ad7086cffdb92d1dc171c328c6fd4ceea9301
 pkgname:
   - name: python-elementpath
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
