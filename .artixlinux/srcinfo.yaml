@@ -1,11 +1,11 @@
 ---
-version: 1:7.3.0-1
+version: 1:7.3.0-2
 pkgbase:
   name: python-flake8
   pkgdesc:
     The modular source code checker: pep8, pyflakes and co
   pkgver: 7.3.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://flake8.pycqa.org
   arch:
@@ -38,4 +38,4 @@ pkgbase:
     - 0a956766198c911d886b6130aebef62f8297d89270fed7ab0e7f6851e547333f5d1a489562ea976103466253349dbef6707c0db6c8f39ccd604b840a4aa8c164
 pkgname:
   - name: python-flake8
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
