@@ -1,10 +1,10 @@
 ---
-version: 6.1.0-1
+version: 6.1.0-2
 pkgbase:
   name: python-django-debug-toolbar
   pkgdesc: A configurable set of panels that display various debug information about the current request/response.
   pkgver: 6.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jazzband/django-debug-toolbar
   arch:
     - any
