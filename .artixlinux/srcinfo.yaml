@@ -1,10 +1,10 @@
 ---
-version: 5.9.1-1
+version: 5.9.1-2
 pkgbase:
   name: python-jupyter-core
   pkgdesc: Jupyter core package. A base package on which Jupyter projects rely
   pkgver: 5.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/jupyter_core
   arch:
     - any
