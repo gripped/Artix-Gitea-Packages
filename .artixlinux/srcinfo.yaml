@@ -1,10 +1,10 @@
 ---
-version: 32.0.2-2
+version: 32.0.2-3
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
   pkgver: 32.0.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://obsproject.com
   arch:
     - x86_64
