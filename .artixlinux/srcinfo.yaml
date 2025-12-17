@@ -1,10 +1,10 @@
 ---
-version: 2.3.1-1
+version: 2.3.1-2
 pkgbase:
   name: python-sphinx-intl
   pkgdesc: A Sphinx utility that make it easy to translate and to apply translations
   pkgver: 2.3.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sphinx-doc/sphinx-intl
   arch:
     - any
