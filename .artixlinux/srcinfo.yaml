@@ -1,10 +1,10 @@
 ---
-version: 1.6.4-12
+version: 1.6.5-2
 pkgbase:
   name: scribus
   pkgdesc: Desktop publishing software
-  pkgver: 1.6.4
-  pkgrel: 12
+  pkgver: 1.6.5
+  pkgrel: 2
   url: https://www.scribus.net/
   arch:
     - x86_64
@@ -51,21 +51,15 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://downloads.sourceforge.net/scribus/scribus-1.6.4.tar.xz
-    - https://downloads.sourceforge.net/scribus/scribus-1.6.4.tar.xz.asc
-    - fix_build_with_poppler_25.07.0.patch
-    - fix_build_with_poppler_25.09.0.patch
-    - fix_build_with_poppler_25.10.0.patch
+    - https://downloads.sourceforge.net/scribus/scribus-1.6.5.tar.xz
+    - https://downloads.sourceforge.net/scribus/scribus-1.6.5.tar.xz.asc
   validpgpkeys:
     - 5086B8D68E70FDDF4C40045AEF7B95E7F60166DA
     - 757F5E9B13DD648887AD50092D47C099E782504E
     - 6558BE84D27273A438A151198BEA48118AEBEE64
   sha256sums:
-    - 533be7af03acfaa736ec5f7a3fc2562abd200fef5ca2a7cdee02b5f44d61829e
+    - 09bdb736a8ff8a437191458a36d847cc0adeca0fc059cf696474e0ba6f59ac6a
     - SKIP
-    - f7dc5ba74cf0c6045bb1da4c3a910544e49e3858445a87aebf88575b0788daca
-    - b43f500c919cd7d93fa3ef1bbeec36c87640971d520286eaad307259a19c377d
-    - 940fb08464740a3b99819bdac063b534c7572f973fabacf237aa2f0c8a2bfe95
 pkgname:
   - name: scribus
 # generated with artixpkg 0.37.4-1-any
