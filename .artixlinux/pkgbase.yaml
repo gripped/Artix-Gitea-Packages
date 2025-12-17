@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 4.3.3-1
+    version: 4.3.3-2
     packages:
-      - libvoikko-4.3.3-1-x86_64.pkg.tar.zst
+      - libvoikko-4.3.3-2-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
