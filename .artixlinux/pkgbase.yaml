@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
-    debug: []
+    version: 0.10.2-6
+    packages:
+      - httpbin-0.10.2-6-any.pkg.tar.zst
+    debug:
+      - httpbin-debug-0.10.2-6-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

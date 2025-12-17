@@ -1,10 +1,10 @@
 ---
-version: 0.10.2-5
+version: 0.10.2-6
 pkgbase:
   name: httpbin
   pkgdesc: HTTP Request and Response Service
   pkgver: 0.10.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/psf/httpbin
   arch:
     - any
@@ -34,4 +34,4 @@ pkgbase:
     - 61e128cc367bdf323957b313391619edcaeb229cbc08d7591d8bad1904bacfac6c09d9fa63e6c2c13b1325c3b4934c2bdc29480acdcf5fd44b050fbc5ff34460
 pkgname:
   - name: httpbin
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
