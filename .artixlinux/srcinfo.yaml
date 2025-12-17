@@ -1,10 +1,10 @@
 ---
-version: 0.50.0-1
+version: 0.50.0-2
 pkgbase:
   name: python-starlette
   pkgdesc: The little ASGI framework that shines
   pkgver: 0.50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/encode/starlette
   arch:
     - any
