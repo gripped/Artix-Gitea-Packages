@@ -50,3 +50,4 @@ package() {
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
   install -Dm644 jupyter-notebook.desktop -t "$pkgdir"/usr/share/applications
 }
+
