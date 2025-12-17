@@ -1,10 +1,10 @@
 ---
-version: 5.8.0-1
+version: 5.8.0-2
 pkgbase:
   name: python-oslo-serialization
   pkgdesc: Oslo Serialization library
   pkgver: 5.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.openstack.org/developer/oslo.serialization
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - a9478cb7d04dc89dad158ce58a079ef2eb3b68d5d89ed80f850be329e218c3b1280a8a057bf7d8bd7514334a3f02277aae97a70c5f54554fef5d70c1dc21735a
 pkgname:
   - name: python-oslo-serialization
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
