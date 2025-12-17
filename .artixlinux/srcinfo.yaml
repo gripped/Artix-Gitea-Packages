@@ -1,10 +1,10 @@
 ---
-version: 1.4.3-1
+version: 1.4.3-2
 pkgbase:
   name: mkdocs-autorefs
   pkgdesc: Automatically link across pages in MkDocs
   pkgver: 1.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mkdocstrings/autorefs
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 1d454000f0e412e8c488f95adfded91d9476433c7f697a89866a2c61e13faa00
 pkgname:
   - name: mkdocs-autorefs
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
