@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.0.20-2
+    version: 0.0.21-1
     packages:
-      - python-python-multipart-0.0.20-2-any.pkg.tar.zst
+      - python-python-multipart-0.0.21-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
