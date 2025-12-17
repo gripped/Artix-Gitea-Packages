@@ -1,8 +1,8 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=python-numba
-pkgver=0.61.0
-pkgrel=1
+pkgver=0.63.1
+pkgrel=2
 pkgdesc="JIT compiler that translates a subset of Python and NumPy code into fast machine code"
 url="https://numba.pydata.org/"
 arch=(x86_64)
@@ -51,12 +51,7 @@ checkdepends=(
   python-scipy
 )
 source=(git+https://github.com/numba/numba#tag=$pkgver)
-sha256sums=('893d8faf62cd5c612d0da8492db3c8a795713e67a734665b4bb4cb87d5ccb80c')
-
-prepare() {
-  cd numba
-  git revert -n 5e917b96ae7033e994f185cb37329a07e56d51b6 # Drop numpy version constraint
-}
+sha256sums=('55b7c20aaa5a3ce79d7011312c7a657c81477d75d110d154ba1be32fe94df07e')
 
 build() {
   cd numba
