@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,9 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.37.1-2
+    packages:
+      - yamllint-1.37.1-2-any.pkg.tar.zst
+    debug:
+      - yamllint-debug-1.37.1-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []

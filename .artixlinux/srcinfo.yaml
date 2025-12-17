@@ -1,10 +1,10 @@
 ---
-version: 1.37.1-1
+version: 1.37.1-2
 pkgbase:
   name: yamllint
   pkgdesc: Linter for YAML files
   pkgver: 1.37.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/adrienverge/yamllint
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 7db7914a20888f3079bdaf97f4869baa54b3066c32c426c9edd841242570ad123424dbf18e401f736b352dfe354c955101739b1e57db3ec6f4245c2715a1e6c6
 pkgname:
   - name: yamllint
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.37.4-1-any
