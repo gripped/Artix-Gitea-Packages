@@ -1,10 +1,10 @@
 ---
-version: 9.0.2-1
+version: 9.0.2-2
 pkgbase:
   name: python-ipyparallel
   pkgdesc: Interactive Parallel Computing in Python
   pkgver: 9.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.org/project/ipyparallel/
   arch:
     - any
