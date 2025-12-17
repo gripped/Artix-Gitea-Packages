@@ -1,0 +1,59 @@
+---
+version: 7.16.6-2
+pkgbase:
+  name: jupyter-nbconvert
+  pkgdesc: Jupyter Notebook Conversion
+  pkgver: 7.16.6
+  pkgrel: 2
+  url: https://pypi.python.org/pypi/nbconvert
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - inkscape
+    - pandoc
+    - python-flaky
+    - python-ipywidgets
+    - python-playwright
+    - python-pytest
+    - texlive-fontsrecommended
+    - texlive-latexextra
+    - texlive-plaingeneric
+    - texlive-xetex
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - ipython
+    - jupyter-nbclient
+    - jupyter-nbformat
+    - jupyterlab-pygments
+    - python
+    - python-beautifulsoup4
+    - python-bleach
+    - python-defusedxml
+    - python-importlib-metadata
+    - python-jinja
+    - python-jupyter-client
+    - python-jupyter-core
+    - python-markupsafe
+    - python-mistune
+    - python-packaging
+    - python-pandocfilters
+    - python-pygments
+    - python-tinycss2
+    - python-tornado
+    - python-traitlets
+  optdepends:
+    - 'pandoc: non-html conversion output'
+    - 'python-playwright: for webPDF conversion support'
+  source:
+    - git+https://github.com/jupyter/nbconvert#tag=v7.16.6
+  sha256sums:
+    - 81dfead8fb51a748ee31477d14d26b787463222aae174f7e47708efc65fa5a06
+pkgname:
+  - name: jupyter-nbconvert
+# generated with artixpkg 0.37.4-1-any
