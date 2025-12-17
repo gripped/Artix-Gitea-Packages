@@ -5,8 +5,8 @@
 
 _base=textual
 pkgname=python-${_base}
-pkgver=6.9.0
-pkgrel=2
+pkgver=6.10.0
+pkgrel=1
 pkgdesc="Modern Text User Interface framework"
 arch=(any)
 url="https://github.com/Textualize/${_base}"
@@ -15,7 +15,7 @@ depends=(python python-rich python-markdown-it-py python-typing_extensions pytho
 makedepends=(python-build python-installer python-poetry-core)
 checkdepends=(python-pytest-asyncio python-time-machine python-linkify-it-py python-pytest-xdist python-pytest-textual-snapshot)
 source=(${_base}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)
-sha512sums=('ca469e10d094fd4298d32f65ad628d883e05e9932d39622eafaec6e8ea7ae5b8254a1ec60edd7cdf76f08dfb5f6d6a951e82dfede2e0ce38f7d1af6899c2af94')
+sha512sums=('d887af34f44368359241a24b7ee9fce68844a93ec61cae351c841284e67260c98f68801e63c1d0a3d670c3d2e32c8ad7b385119e638231bfd942047cddea0ef9')
 
 build() {
   cd ${_base}-${pkgver}
