@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-1
+version: 0.14.0-2
 pkgbase:
   name: mat2
   pkgdesc: Metadata removal tool, supporting a wide range of commonly used file formats
   pkgver: 0.14.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jvoisin/mat2
   arch:
     - any
