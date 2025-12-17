@@ -1,10 +1,10 @@
 ---
-version: 3.11.5-1
+version: 3.11.5-2
 pkgbase:
   name: python-orjson
   pkgdesc: Fast, correct Python JSON library supporting dataclasses and datetimes
   pkgver: 3.11.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ijl/orjson
   arch:
     - x86_64
