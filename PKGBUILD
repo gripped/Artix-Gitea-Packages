@@ -1,9 +1,9 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.com>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 _pyname=pycrdt-websocket
 pkgname=python-$_pyname
 pkgver=0.16.0
-pkgrel=1
+pkgrel=2
 pkgdesc='CRDTs based on Yrs'
 arch=(any)
 url='https://github.com/y-crdt/pycrdt-websocket'
