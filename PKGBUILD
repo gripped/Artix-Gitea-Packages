@@ -3,7 +3,7 @@
 _pyname=httpx-ws
 pkgname=python-$_pyname
 pkgver=0.8.2
-pkgrel=1
+pkgrel=2
 pkgdesc='WebSocket support for HTTPX'
 arch=(any)
 url='https://frankie567.github.io/httpx-ws/'
@@ -41,9 +41,7 @@ check() {
   cd $_pyname
   pytest -v \
     --deselect tests/test_api.py::TestReceive::test_receive \
-    --deselect tests/test_api.py::test_receive_close \
-    --deselect tests/test_api.py::TestSend::test_send_json[asyncio-wsproto-binary]
-    # The last test fails in Artix CI
+    --deselect tests/test_api.py::test_receive_close
 }
 
 package() {
