@@ -3,7 +3,7 @@
 _pkg=EasyProcess
 pkgname=python-${_pkg,,}
 pkgver=1.1
-pkgrel=5
+pkgrel=6
 pkgdesc="Easy to use python subprocess interface"
 arch=(any)
 url="https://github.com/ponty/EasyProcess"

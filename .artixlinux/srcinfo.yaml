@@ -1,0 +1,32 @@
+---
+version: 1.1-6
+pkgbase:
+  name: python-easyprocess
+  pkgdesc: Easy to use python subprocess interface
+  pkgver: 1.1
+  pkgrel: 6
+  url: https://github.com/ponty/EasyProcess
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-pytest
+    - python-pytest-timeout
+    - python-entrypoint2
+    - python-pillow
+    - python-pyvirtualdisplay
+    - imagemagick
+    - iputils
+    - xorg-server-xvfb
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/E/EasyProcess/EasyProcess-1.1.tar.gz
+  sha256sums:
+    - 885898302a57aab948973e8b5d32a4229392b9fb2d986ab1d4ffd590e5ba90ec
+pkgname:
+  - name: python-easyprocess
+# generated with artixpkg 0.37.4-1-any
