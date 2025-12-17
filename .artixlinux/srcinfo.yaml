@@ -1,0 +1,26 @@
+---
+version: 1.4.5-13
+pkgbase:
+  name: pyprof2calltree
+  pkgdesc: Help visualize profiling data from cProfile with kcachegrind
+  pkgver: 1.4.5
+  pkgrel: 13
+  url: https://github.com/pwaller/pyprof2calltree
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - pyprof2calltree-1.4.5.tar.gz::https://github.com/pwaller/pyprof2calltree/archive/refs/tags/v1.4.5.tar.gz
+  sha512sums:
+    - 2fcda74ae67dc3a8abb5dc153864ef59f96cc62b1c9359d02be12e83966c17738f5aa4a3d1c6e2ff81614dc963fc4b2faf375bbbb1ad15650a6817e493cdde39
+pkgname:
+  - name: pyprof2calltree
+# generated with artixpkg 0.37.4-1-any
