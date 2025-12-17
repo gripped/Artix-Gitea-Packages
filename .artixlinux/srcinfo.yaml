@@ -1,0 +1,43 @@
+---
+version: 9.5.0-2
+pkgbase:
+  name: python-oslo-config
+  pkgdesc: parsing command line arguments and .ini style configuration files
+  pkgver: 9.5.0
+  pkgrel: 2
+  url: https://pypi.python.org/pypi/oslo.config/9.5.0
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-testscenarios
+    - python-stestr
+    - python-testtools
+    - python-oslotest
+    - python-oslo-log
+    - python-requests-mock
+    - python-sphinx
+  makedepends:
+    - git
+    - python-pbr
+    - python-setuptools
+  depends:
+    - python-debtcollector
+    - python-netaddr
+    - python-stevedore
+    - python-oslo-i18n
+    - python-rfc3986
+    - python-yaml
+    - python-requests
+  optdepends:
+    - 'python-sphinx: for rst-generator'
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/openstack/oslo.config.git#tag=9.5.0
+  sha512sums:
+    - 500683bcda10983bceba038711169da5e1d24bfa3d85b2a0f0c22d50d48ac8e1ca7e6290192a5022dee2975d565f6a80c4c8096115e7940d4ecb1bbeb7e8a7eb
+pkgname:
+  - name: python-oslo-config
+# generated with artixpkg 0.37.4-1-any
