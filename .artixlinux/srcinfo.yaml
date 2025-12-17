@@ -1,10 +1,10 @@
 ---
-version: 2.4-1
+version: 2.4-2
 pkgbase:
   name: python-copr
   pkgdesc: Python interface for Copr
   pkgver: 2.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/fedora-copr/copr
   arch:
     - any
