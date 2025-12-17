@@ -3,7 +3,7 @@
 pkgname=mkdocs-autorefs
 _pkgname=autorefs
 pkgver=1.4.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Automatically link across pages in MkDocs"
 arch=(any)
 url="https://github.com/mkdocstrings/autorefs"
