@@ -1,10 +1,10 @@
 ---
-version: 2.28.0-1
+version: 2.28.0-2
 pkgbase:
   name: python-jupyterlab-server
   pkgdesc: Launch an application built using JupyterLab
   pkgver: 2.28.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://jupyter.org/
   arch:
     - any
