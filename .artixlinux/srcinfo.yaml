@@ -1,10 +1,10 @@
 ---
-version: 0.0.9-6
+version: 0.0.9-7
 pkgbase:
   name: mailman-web
   pkgdesc: The web interface for Mailman 3
   pkgver: 0.0.9
-  pkgrel: 6
+  pkgrel: 7
   url: https://gitlab.com/mailman/mailman-web
   arch:
     - any
