@@ -1,10 +1,10 @@
 ---
-version: 1:49.1-1
+version: 1:49.1-2
 pkgbase:
   name: gnome-music
   pkgdesc: Music player and management application
   pkgver: 49.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://apps.gnome.org/Music/
   arch:
