@@ -2,7 +2,7 @@
 
 pkgname=python-os-client-config
 pkgver=2.3.0
-pkgrel=1
+pkgrel=2
 arch=('any')
 pkgdesc='OpenStack Client Configuation Library'
 url='https://github.com/openstack/os-client-config'
