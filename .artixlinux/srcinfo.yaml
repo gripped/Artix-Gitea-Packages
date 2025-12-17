@@ -1,0 +1,38 @@
+---
+version: 1.8.1-2
+pkgbase:
+  name: python-logbook
+  pkgdesc: Logging sytem for Python that replaces the standard library’s logging module
+  pkgver: 1.8.1
+  pkgrel: 2
+  url: https://logbook.readthedocs.io/en/stable/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - valkey
+    - python-pytest
+    - python-sqlalchemy
+    - python-redis
+    - python-pyzmq
+    - python-execnet
+    - python-jinja
+    - python-brotli
+    - pifpaf
+  makedepends:
+    - git
+    - python-setuptools
+    - cython
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/mitsuhiko/logbook.git#tag=1.8.1
+  sha512sums:
+    - a3f45347d4f228d019f7bc8077524e1ab20eb83165be5ee4ce655e2ccfbe50331fad235175124d1993212e00c6f8620cb8d8dba9adac6d5b2e25fa27e0f183b8
+pkgname:
+  - name: python-logbook
+# generated with artixpkg 0.37.4-1-any
