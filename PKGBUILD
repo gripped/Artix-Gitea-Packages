@@ -3,7 +3,7 @@
 
 pkgname=libpwquality
 pkgver=1.4.5
-pkgrel=6
+pkgrel=7
 pkgdesc='Library for password quality checking and generating random passwords'
 arch=(x86_64)
 url='https://github.com/libpwquality/libpwquality'
