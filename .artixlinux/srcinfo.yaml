@@ -1,0 +1,35 @@
+---
+version: 4.8.0-2
+pkgbase:
+  name: python-cliff
+  pkgdesc: Command Line Interface Formulation Framework
+  pkgver: 4.8.0
+  pkgrel: 2
+  url: https://docs.openstack.org/cliff/latest/
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-stestr
+    - python-sphinx
+    - python-testscenarios
+  makedepends:
+    - git
+    - python-setuptools
+    - python-pbr
+  depends:
+    - python-autopage
+    - python-cmd2
+    - python-prettytable
+    - python-stevedore
+    - python-yaml
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/openstack/cliff.git#commit=4826a43b991fcb1c4e24d129c800f22f4dc52fa1
+  sha512sums:
+    - c6d63c3ded4008e4215b26fab8e2cd6d686b9712c2021960e33fd58cdbefe3a5ad12f2934d8f14e3a86b54e68d44359a5bd0a17e6a48aeec12ecbd7da56ada61
+pkgname:
+  - name: python-cliff
+# generated with artixpkg 0.37.4-1-any
