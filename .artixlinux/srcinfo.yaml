@@ -1,0 +1,38 @@
+---
+version: 7.1.0-4
+pkgbase:
+  name: python-oslo-utils
+  pkgdesc: Oslo Utility library
+  pkgver: 7.1.0
+  pkgrel: 4
+  url: https://pypi.python.org/pypi/oslo.utils/7.1.0
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-eventlet
+    - python-testscenarios
+    - python-testtools
+    - python-oslotest
+    - python-ddt
+    - python-stestr
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-iso8601
+    - python-oslo-i18n
+    - python-netaddr
+    - python-netifaces
+    - python-debtcollector
+    - python-pyparsing
+    - python-packaging
+    - python-yaml
+  source:
+    - git+https://github.com/openstack/oslo.utils.git#commit=17581b50bd98628d8c1aef17fbfd6eb45114169c
+  sha512sums:
+    - SKIP
+pkgname:
+  - name: python-oslo-utils
+# generated with artixpkg 0.37.4-1-any
