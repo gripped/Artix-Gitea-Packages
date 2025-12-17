@@ -1,10 +1,10 @@
 ---
-version: 5.0.1-1
+version: 5.0.1-2
 pkgbase:
   name: python-oslotest
   pkgdesc: Oslo test framework
   pkgver: 5.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openstack/oslotest
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 42c05950e4aded6df20939783422c3d2feb819182da27b77845d21471ef6f05783f4f4a5633663a7827672e337b1f7c9f170101982778b1cbb60c9c07dddf63e
 pkgname:
   - name: python-oslotest
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
