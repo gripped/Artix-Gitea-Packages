@@ -6,16 +6,16 @@
 
 pkgbase=pyopengl
 pkgname=('python-opengl')
-pkgver=3.1.9
+pkgver=3.1.10
 pkgrel=1
 pkgdesc="The cross platform Python binding to OpenGL and related APIs"
-url="http://pyopengl.sourceforge.net/"
+url="https://github.com/mcfletch/pyopengl"
 license=('BSD-3-Clause')
 arch=('any')
 depends=('python' 'freeglut')
 makedepends=('python-setuptools')
 source=("https://pypi.python.org/packages/source/P/PyOpenGL/pyopengl-${pkgver}.tar.gz")
-sha512sums=('b0fae0031cf0c47899d3cef6a334ee885595b4bc7d3da5055cd12240e6612b2ade1dc75afe1b1f6fe8e4572b994b88c4ec557d893e6606353f4700111cb6f161')
+sha512sums=('f11c94e442e0954453974900de5c1ef984d19f92ffc152fcc904a81aedc39ed294f4c51a6f1247e85499224f60422c4567e52516c156079d4efabbdd437e8f7d')
 
 package_python-opengl() {
   cd pyopengl-${pkgver}
