@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.19.2-2
+    version: 2.19.2-3
     packages:
-      - python-pygments-2.19.2-2-any.pkg.tar.zst
+      - python-pygments-2.19.2-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
