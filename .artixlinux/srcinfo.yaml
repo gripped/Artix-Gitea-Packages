@@ -1,0 +1,29 @@
+---
+version: 0.2.0-5
+pkgbase:
+  name: python-ipython-genutils
+  pkgdesc: Vestigial utilities from IPython
+  pkgver: 0.2.0
+  pkgrel: 5
+  url: http://ipython.org/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-nose
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+  source:
+    - git+https://github.com/ipython/ipython_genutils#tag=0.2.0
+  sha256sums:
+    - 30652fe4cffe207eb85a25b45ad2ea6ce536be8e1d29d67fef2cb02af097a61b
+pkgname:
+  - name: python-ipython-genutils
+# generated with artixpkg 0.37.4-1-any
