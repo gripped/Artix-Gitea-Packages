@@ -1,10 +1,10 @@
 ---
-version: 1.28.2-3
+version: 1.28.2-4
 pkgbase:
   name: rustup
   pkgdesc: The Rust toolchain installer
   pkgver: 1.28.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/rust-lang/rustup.rs
   install: post.install
   arch:
@@ -44,9 +44,11 @@ pkgbase:
   source:
     - rustup-1.28.2.tar.gz::https://github.com/rust-lang/rustup.rs/archive/1.28.2.tar.gz
     - rustup-profile.sh
+    - rustup-profile.fish
   sha512sums:
     - dc85f4551e9d3d9d105e4a5c8a7544b6944c82ca4db167a6993e1e0cea498221471b891cefc15e7f634a8528678bb8438dbddadb80a8afe19fbc69bb74817049
     - 18d5b4ab9a032cb43fd0b59fb553a878068981534e549935c5ff4a12dc2f74849ce36367eb59e670d674a19a7d4bc0056d0694d7f87ede187416c2ffcbb20355
+    - 01477110cc630b2fbd60b45e53d5fddea1b96d56c7dd318c9dcd0fcb3401778df0f2ffaeda09ed57c3d09723e7e7b9080028ccde7ebd7774c7098e6fc7900669
 pkgname:
   - name: rustup
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
