@@ -1,10 +1,10 @@
 ---
-version: 0.7.8-1
+version: 0.7.8-2
 pkgbase:
   name: python-aioresponses
   pkgdesc: A helper to mock/fake web requests in python aiohttp package.
   pkgver: 0.7.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pnuckowski/aioresponses
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - 45999ec847ea402d51a50b7849dc0f99792414e524709a3ef58182d955e36e3f9aeb0ade573347dc7858bbb550ed7239de943e0a7c22ea45dc796bfe8ca5d4ad
 pkgname:
   - name: python-aioresponses
-# generated with artixpkg 0.36.0-1-any
+# generated with artixpkg 0.37.4-1-any
