@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-1
+version: 7.2.0-2
 pkgbase:
   name: python-oslo-log
   pkgdesc: Oslo Logging Library
   pkgver: 7.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/oslo.log/7.2.0
   arch:
     - any
