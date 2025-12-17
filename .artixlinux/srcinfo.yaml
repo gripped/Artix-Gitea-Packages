@@ -1,10 +1,10 @@
 ---
-version: 49.5-1
+version: 49.5-2
 pkgbase:
   name: orca
   pkgdesc: Screen reader for individuals who are blind or visually impaired
   pkgver: 49.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://orca.gnome.org/
   arch:
     - any
