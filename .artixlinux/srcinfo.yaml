@@ -1,10 +1,10 @@
 ---
-version: 3.40.0+r31+g1b15f940-3
+version: 3.40.0+r31+g1b15f940-4
 pkgbase:
   name: glade
   pkgdesc: User Interface Builder for GTK 3 applications
   pkgver: 3.40.0+r31+g1b15f940
-  pkgrel: 3
+  pkgrel: 4
   url: https://glade.gnome.org/
   arch:
     - x86_64
@@ -49,4 +49,4 @@ pkgbase:
     - 967112d89a69565827c16db114a77ead80f279624e4c4f8a605520db64833085
 pkgname:
   - name: glade
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
