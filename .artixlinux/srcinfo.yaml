@@ -1,10 +1,10 @@
 ---
-version: 2.2.1-1
+version: 2.2.1-3
 pkgbase:
   name: python-executing
   pkgdesc: Get the currently executing AST node of a frame, and other information
   pkgver: 2.2.1
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/alexmojaki/executing
   arch:
     - any
