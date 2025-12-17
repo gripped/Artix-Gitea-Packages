@@ -1,0 +1,42 @@
+---
+version: 1.0.9-3
+pkgbase:
+  name: python-httpcore
+  pkgdesc: A minimal HTTP client
+  pkgver: 1.0.9
+  pkgrel: 3
+  url: https://github.com/encode/httpcore
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest-httpbin
+    - python-pytest-trio
+  makedepends:
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-fancy-pypi-readme
+    - python-h2
+    - python-socksio
+    - python-trio
+    - python-anyio
+    - python-sniffio
+  depends:
+    - python
+    - python-h11
+    - python-certifi
+  optdepends:
+    - 'python-h2: for HTTP/2 support'
+    - 'python-socksio: for SOCKS support'
+    - 'python-anyio: for asyncio backend'
+    - 'python-trio: for trio backend'
+    - 'python-sniffio: for async support'
+  source:
+    - python-httpcore-1.0.9.tar.gz::https://github.com/encode/httpcore/archive/1.0.9.tar.gz
+  sha512sums:
+    - 0a1300d9c887dda66b4ac0739406daacd274c1137163b79dd8997a5928438c5b4b130a347e08016a2554bef73aad14225cd5786ff13e932e8d2fb48a4e7245ae
+pkgname:
+  - name: python-httpcore
+# generated with artixpkg 0.37.4-1-any
