@@ -1,10 +1,10 @@
 ---
-version: 2025.5-1
+version: 2025.5-2
 pkgbase:
   name: gi-docgen
   pkgdesc: Documentation generator for GObject-based libraries
   pkgver: 2025.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://gnome.pages.gitlab.gnome.org/gi-docgen/
   arch:
     - any
