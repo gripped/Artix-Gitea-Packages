@@ -5,7 +5,7 @@
 
 pkgname=python-memcached
 pkgver=1.62
-pkgrel=3
+pkgrel=4
 url='https://github.com/linsomniac/python-memcached'
 arch=('any')
 license=('PSF-2.0')
@@ -29,4 +29,3 @@ check() {
 
 # getver: raw.githubusercontent.com/linsomniac/python-memcached/master/ChangeLog
 # vim:set ts=2 sw=2 et:
-

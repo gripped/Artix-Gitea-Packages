@@ -1,0 +1,28 @@
+---
+version: 1.62-4
+pkgbase:
+  name: python-memcached
+  pkgdesc: Python interface to memcached
+  pkgver: 1.62
+  pkgrel: 4
+  url: https://github.com/linsomniac/python-memcached
+  arch:
+    - any
+  license:
+    - PSF-2.0
+  checkdepends:
+    - memcached
+    - pifpaf
+    - python-pytest
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - git+https://github.com/linsomniac/python-memcached#tag=1.62
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: python-memcached
+# generated with artixpkg 0.37.4-1-any
