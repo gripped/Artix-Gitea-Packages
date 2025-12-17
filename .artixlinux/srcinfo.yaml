@@ -1,10 +1,10 @@
 ---
-version: 0.10.12-2
+version: 0.10.12-3
 pkgbase:
   name: pyalpm
   pkgdesc: Python 3 bindings for libalpm
   pkgver: 0.10.12
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitlab.archlinux.org/archlinux/pyalpm
   arch:
     - x86_64
