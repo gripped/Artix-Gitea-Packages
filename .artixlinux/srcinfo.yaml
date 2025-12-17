@@ -1,10 +1,10 @@
 ---
-version: 0.28.1-6
+version: 0.28.1-7
 pkgbase:
   name: python-httpx
   pkgdesc: A next generation HTTP client for Python
   pkgver: 0.28.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/encode/httpx
   arch:
     - any
