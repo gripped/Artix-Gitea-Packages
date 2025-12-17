@@ -1,10 +1,10 @@
 ---
-version: 9.7.0-1
+version: 9.7.0-2
 pkgbase:
   name: mkdocs-material
   pkgdesc: Documentation that simply works
   pkgver: 9.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/squidfunk/mkdocs-material
   arch:
     - any
