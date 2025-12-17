@@ -1,10 +1,10 @@
 ---
-version: 0.124.4-1
+version: 0.124.4-2
 pkgbase:
   name: python-fastapi
   pkgdesc: FastAPI framework, high performance, easy to learn, fast to code, ready for production
   pkgver: 0.124.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/fastapi/fastapi
   arch:
     - any
