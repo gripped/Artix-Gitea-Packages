@@ -1,10 +1,10 @@
 ---
-version: 4.2.0-1
+version: 4.2.0-2
 pkgbase:
   name: python-falcon
   pkgdesc: Web API framework for fast and reliable microservices, proxies, and app backends
   pkgver: 4.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://falconframework.org/
   arch:
     - x86_64
