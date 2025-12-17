@@ -1,10 +1,10 @@
 ---
-version: 3.6.0-2
+version: 3.6.0-3
 pkgbase:
   name: namcap
   pkgdesc: A Pacman package analyzer
   pkgver: 3.6.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitlab.archlinux.org/pacman/namcap
   arch:
     - any
