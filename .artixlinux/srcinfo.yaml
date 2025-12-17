@@ -1,10 +1,10 @@
 ---
-version: 0.7.2-1
+version: 0.7.2-2
 pkgbase:
   name: python-pytest-playwright
   pkgdesc: Pytest plugin to write end-to-end browser tests with Playwright
   pkgver: 0.7.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/microsoft/playwright-pytest
   arch:
     - any
