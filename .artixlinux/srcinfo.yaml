@@ -1,10 +1,10 @@
 ---
-version: 0.11.0-2
+version: 0.11.0-3
 pkgbase:
   name: python-pytest-jupyter
   pkgdesc: A pytest plugin for testing Jupyter core libraries and extensions
   pkgver: 0.11.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/jupyter-server/pytest-jupyter
   arch:
     - any
