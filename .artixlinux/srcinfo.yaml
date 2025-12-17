@@ -1,10 +1,10 @@
 ---
-version: 1:4.2.0-1
+version: 1:4.2.0-2
 pkgbase:
   name: python-xmlschema
   pkgdesc: An XML Schema validator and decoder
   pkgver: 4.2.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/sissaschool/xmlschema
   arch:
