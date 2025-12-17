@@ -4,7 +4,7 @@
 
 pkgname=python-pbr
 pkgver=7.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Python Build Reasonableness"
 arch=('any')
 url='https://pypi.python.org/pypi/pbr'

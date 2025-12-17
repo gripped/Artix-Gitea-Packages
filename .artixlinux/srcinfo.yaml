@@ -1,10 +1,10 @@
 ---
-version: 7.0.3-1
+version: 7.0.3-2
 pkgbase:
   name: python-pbr
   pkgdesc: Python Build Reasonableness
   pkgver: 7.0.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/pbr
   arch:
     - any
