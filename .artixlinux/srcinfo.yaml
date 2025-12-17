@@ -1,10 +1,10 @@
 ---
-version: 5.10.2-1
+version: 5.10.2-2
 pkgbase:
   name: python-pyfakefs
   pkgdesc: pyfakefs implements a fake file system that mocks the Python file system modules
   pkgver: 5.10.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jmcgeheeiv/pyfakefs/
   arch:
     - any
