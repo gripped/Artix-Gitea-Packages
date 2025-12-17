@@ -1,0 +1,33 @@
+---
+version: 0.2.1-6
+pkgbase:
+  name: python-tiny-proxy
+  pkgdesc: Simple proxy (SOCKS4(a), SOCKS5(h), HTTP tunnel) server built with anyio
+  pkgver: 0.2.1
+  pkgrel: 6
+  url: https://github.com/romis2012/tiny-proxy
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-pytest
+    - python-trustme
+    - python-aiohttp
+    - python-httpx
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-anyio
+  source:
+    - python-tiny-proxy::git+https://github.com/romis2012/tiny-proxy#commit=296712db1275ec1aa150298ca9a1e292ae0fe1e6
+  b2sums:
+    - SKIP
+pkgname:
+  - name: python-tiny-proxy
+# generated with artixpkg 0.37.4-1-any
