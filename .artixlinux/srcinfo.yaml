@@ -1,0 +1,37 @@
+---
+version: 3.22.3-2
+pkgbase:
+  name: meld
+  pkgdesc: Compare files, directories and working copies
+  pkgver: 3.22.3
+  pkgrel: 2
+  url: https://meldmerge.org/
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - appstream-glib
+  makedepends:
+    - git
+    - meson
+    - yelp-tools
+  depends:
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - gsettings-desktop-schemas
+    - gtk3
+    - gtksourceview4
+    - hicolor-icon-theme
+    - pango
+    - python
+    - python-cairo
+    - python-gobject
+  source:
+    - git+https://gitlab.gnome.org/GNOME/meld.git#tag=3.22.3
+  b2sums:
+    - 7f6b807b841ef34a09cc04dc045ea11f5c3909ecce5fd238b07625d5c9fd4465cb300a5a5158ac9f66d7487828b88acd16b81270eed01fca97b17fe8c15d84ca
+pkgname:
+  - name: meld
+# generated with artixpkg 0.37.4-1-any
