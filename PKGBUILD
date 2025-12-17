@@ -2,7 +2,7 @@
 
 pkgname=python-pytest-trio
 pkgver=0.8.0
-pkgrel=9
+pkgrel=10
 pkgdesc='Pytest plugin for Trio'
 arch=(any)
 url=https://github.com/python-trio/pytest-trio
