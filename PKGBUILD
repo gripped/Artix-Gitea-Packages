@@ -3,7 +3,7 @@
 pkgname=python-flufl.bounce
 _name="${pkgname#python-}"
 pkgver=4.0
-pkgrel=6
+pkgrel=7
 pkgdesc="Email bounce detectors"
 arch=(any)
 url="https://gitlab.com/warsaw/flufl.bounce"
@@ -50,4 +50,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 README.rst -t "$pkgdir/usr/share/doc/$pkgname/"
 }
-
