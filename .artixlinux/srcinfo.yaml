@@ -1,10 +1,10 @@
 ---
-version: 0.0.3-4
+version: 0.0.3-5
 pkgbase:
   name: python-changelog-chug
   pkgdesc: Parser for project Change Log documents
   pkgver: 0.0.3
-  pkgrel: 4
+  pkgrel: 5
   url: https://git.sr.ht/~bignose/changelog-chug
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 0777bacb46df129120d813ab198419735acb43870cdc32dae181c57e37eafaa7
 pkgname:
   - name: python-changelog-chug
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
