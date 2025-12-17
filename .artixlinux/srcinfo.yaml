@@ -1,0 +1,29 @@
+---
+version: 1.6.0-6
+pkgbase:
+  name: python-pytest-forked
+  pkgdesc: run tests in isolated forked subprocesses
+  pkgver: 1.6.0
+  pkgrel: 6
+  url: https://github.com/pytest-dev/pytest-forked
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-setuptools-scm
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python-py
+    - python-pytest
+  source:
+    - git+https://github.com/pytest-dev/pytest-forked.git#commit=ec46db382116f82d36ebc4ceba453b903be7174b
+  sha512sums:
+    - SKIP
+pkgname:
+  - name: python-pytest-forked
+# generated with artixpkg 0.37.4-1-any
