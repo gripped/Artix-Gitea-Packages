@@ -1,0 +1,40 @@
+---
+version: 2.0.8-3
+pkgbase:
+  name: glad
+  pkgdesc: Multi-Language Vulkan/GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs
+  pkgver: 2.0.8
+  pkgrel: 3
+  url: https://github.com/Dav1dde/glad
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - xorgproto
+    - libx11
+    - glfw-x11
+    - xorg-server-xvfb
+    - rust
+    - libxinerama
+    - libxcursor
+    - libxi
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-jinja
+    - python-lxml
+    - python-setuptools
+  source:
+    - https://github.com/Dav1dde/glad/archive/refs/tags/v2.0.8/glad-2.0.8.tar.gz
+  sha512sums:
+    - ec964d0080c9714803f0464492b237039d2bede805d21aa9e487f3bf910447fd6440eeca59f3795dc4d5dd3b3df35101714fa21ea19eb29f6a021864a2310acd
+  b2sums:
+    - cceee457246dd6edf03da895dc7fd8e7a8e9ab616b88e9703377a5749f827476d743b80a6a3753276b69ffa7987be523e6590d14c756e8d2afc799fdf01d655b
+pkgname:
+  - name: glad
+# generated with artixpkg 0.37.4-1-any
