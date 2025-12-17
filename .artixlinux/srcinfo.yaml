@@ -1,0 +1,48 @@
+---
+version: 4.0.1-2
+pkgbase:
+  name: python-openstacksdk
+  pkgdesc: An SDK for building applications to work with OpenStack
+  pkgver: 4.0.1
+  pkgrel: 2
+  url: https://developer.openstack.org/sdks/python/openstacksdk
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-ddt
+    - python-fixtures
+    - python-hacking
+    - python-jsonschema
+    - python-oslo-config
+    - python-oslotest
+    - python-prometheus_client
+    - python-requests-mock
+    - python-stestr
+    - python-testscenarios
+    - python-testtools
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-cryptography
+    - python-decorator
+    - python-dogpile.cache
+    - python-iso8601
+    - python-jmespath
+    - python-jsonpatch
+    - python-keystoneauth1
+    - python-netifaces
+    - python-os-service-types
+    - python-pbr
+    - python-platformdirs
+    - python-yaml
+    - python-requestsexceptions
+  source:
+    - git+https://github.com/openstack/openstacksdk.git#tag=4.0.1
+  sha512sums:
+    - ae20f97e65104b13186c739dd0f6ca718fa9c73cd2c73055869445293c0cbd63b04cf7a5e5e4122d37a490d188039524ee33bae271be0ad45898c83ed63757c2
+pkgname:
+  - name: python-openstacksdk
+# generated with artixpkg 0.37.4-1-any
