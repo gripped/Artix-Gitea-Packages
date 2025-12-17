@@ -1,10 +1,10 @@
 ---
-version: 1.10.1-1
+version: 1.10.1-2
 pkgbase:
   name: python-gssapi
   pkgdesc: Provides both low-level and high level wrappers around the GSSAPI C libraries
   pkgver: 1.10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pythongssapi/python-gssapi
   arch:
     - x86_64
