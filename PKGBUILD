@@ -3,7 +3,7 @@
 
 pkgname=jupyter-nbclient
 pkgver=0.10.2
-pkgrel=2
+pkgrel=4
 pkgdesc='A tool for running Jupyter Notebooks in different execution contexts'
 arch=(any)
 url='https://github.com/jupyter/nbclient'
