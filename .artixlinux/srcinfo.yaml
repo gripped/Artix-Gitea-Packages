@@ -1,0 +1,33 @@
+---
+version: 0.3.0-4
+pkgbase:
+  name: jupyterlab-pygments
+  pkgdesc: Pygments theme using JupyterLab CSS variables
+  pkgver: 0.3.0
+  pkgrel: 4
+  url: https://github.com/jupyterlab/jupyterlab_pygments
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - python-build
+    - python-hatch-jupyter-builder
+    - python-hatch-nodejs-version
+    - python-hatchling
+    - python-installer
+  depends:
+    - python-pygments
+  provides:
+    - jupyterlab_pygments
+  conflicts:
+    - jupyterlab_pygments
+  replaces:
+    - jupyterlab_pygments
+  source:
+    - https://pypi.io/packages/source/j/jupyterlab_pygments/jupyterlab_pygments-0.3.0.tar.gz
+  sha256sums:
+    - 721aca4d9029252b11cfa9d185e5b5af4d54772bb8072f9b7036f4170054d35d
+pkgname:
+  - name: jupyterlab-pygments
+# generated with artixpkg 0.37.4-1-any
