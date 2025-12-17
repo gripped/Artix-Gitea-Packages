@@ -1,10 +1,10 @@
 ---
-version: 25.7.0-1
+version: 25.7.0-2
 pkgbase:
   name: python-keyring
   pkgdesc: Store and access your passwords safely
   pkgver: 25.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jaraco/keyring
   arch:
     - any
