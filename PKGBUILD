@@ -31,7 +31,8 @@ package() {
   cd cffi-$pkgver
 
   # remove files created during check() for reproducible SOURCES.txt
-  rm -r testing/cffi{0,1}/__pycache__/
+  # artist : not; breaks build
+  #rm -r testing/cffi{0,1}/__pycache__/
 
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
