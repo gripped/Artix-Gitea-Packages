@@ -22,6 +22,7 @@ makedepends=(
   'python-build'
   'python-installer'
   'python-pathspec'
+  'python-tomli'
 )
 checkdepends=(
   'libxcrypt-compat'

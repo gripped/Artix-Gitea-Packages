@@ -25,6 +25,7 @@ pkgbase:
     - python-build
     - python-installer
     - python-pathspec
+    - python-tomli
   depends:
     - python
     - python-editables
