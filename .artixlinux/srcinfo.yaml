@@ -1,10 +1,10 @@
 ---
-version: 0.5.5-1
+version: 0.5.5-2
 pkgbase:
   name: gom
   pkgdesc: GObject to SQLite object mapper library
   pkgver: 0.5.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Projects/Gom
   arch:
     - x86_64
