@@ -1,10 +1,10 @@
 ---
-version: 37.0.0-1
+version: 37.0.0-2
 pkgbase:
   name: python-gherkin
   pkgdesc: A parser and compiler for the Gherkin language
   pkgver: 37.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/cucumber/gherkin
   arch:
     - any
