@@ -24,6 +24,7 @@ pkgbase:
   makedepends:
     - python-build
     - python-installer
+    - python-pathspec
   depends:
     - python
     - python-editables

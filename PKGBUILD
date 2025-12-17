@@ -21,6 +21,7 @@ depends=(
 makedepends=(
   'python-build'
   'python-installer'
+  'python-pathspec'
 )
 checkdepends=(
   'libxcrypt-compat'
