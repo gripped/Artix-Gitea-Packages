@@ -7,7 +7,7 @@
 pkgname=radicale
 _name=Radicale
 pkgver=3.5.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Simple calendar (CalDAV) and contact (CardDAV) server"
 arch=(any)
 url="https://radicale.org/"

@@ -1,10 +1,10 @@
 ---
-version: 3.5.9-1
+version: 3.5.9-2
 pkgbase:
   name: radicale
   pkgdesc: Simple calendar (CalDAV) and contact (CardDAV) server
   pkgver: 3.5.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://radicale.org/
   install: radicale.install
   arch:
