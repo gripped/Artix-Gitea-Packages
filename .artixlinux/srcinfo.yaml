@@ -1,10 +1,10 @@
 ---
-version: 0.35.0-2
+version: 0.35.0-3
 pkgbase:
   name: python-pytest-httpx
   pkgdesc: Send responses to httpx
   pkgver: 0.35.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://colin-b.github.io/pytest_httpx
   arch:
     - any
