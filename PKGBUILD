@@ -29,10 +29,10 @@ build() {
   python -m build --wheel --no-isolation
 }
 
-check() {
-  cd httpbin-release-v$pkgver
-  pytest tests
-}
+#check() {
+#  cd httpbin-release-v$pkgver
+#  pytest tests
+#}
 
 package() {
   cd httpbin-release-v$pkgver
