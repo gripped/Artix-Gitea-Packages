@@ -1,10 +1,10 @@
 ---
-version: 0.2.6-4
+version: 0.2.6-5
 pkgbase:
   name: jupyter-server-mathjax
   pkgdesc: MathJax resources as a Jupyter Server Extension
   pkgver: 0.2.6
-  pkgrel: 4
+  pkgrel: 5
   url: https://jupyter.org/
   arch:
     - any
