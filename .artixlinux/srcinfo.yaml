@@ -1,10 +1,10 @@
 ---
-version: 5.15.11-3
+version: 5.15.11-5
 pkgbase:
   name: pyqt5
   pkgdesc: A set of Python bindings for the Qt5 toolkit
   pkgver: 5.15.11
-  pkgrel: 3
+  pkgrel: 5
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
     - x86_64
