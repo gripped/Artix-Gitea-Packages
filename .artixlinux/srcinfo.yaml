@@ -1,10 +1,10 @@
 ---
-version: 0.20.0-2
+version: 0.20.0-3
 pkgbase:
   name: python-quart
   pkgdesc: A Python ASGI web microframework with the same API as Flask
   pkgver: 0.20.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/pallets/quart
   arch:
     - any
