@@ -1,10 +1,10 @@
 ---
-version: 6.6.0-1
+version: 6.6.0-2
 pkgbase:
   name: python-oslo-i18n
   pkgdesc: Oslo i18n library
   pkgver: 6.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/oslo.i18n/6.6.0
   arch:
     - any
@@ -29,4 +29,4 @@ pkgbase:
     - 445b03985fafef0e4db856afe54772bb8b23b328f0a0166277c5aba9e899e2c6596737c45c11f0581fa3093853048134eac1c894227e88be463a4d0affe849e8
 pkgname:
   - name: python-oslo-i18n
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.37.4-1-any
