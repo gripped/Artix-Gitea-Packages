@@ -1,9 +1,9 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.com>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 _pyname=sqlite-anyio
 pkgname=python-$_pyname
 pkgver=0.2.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Asynchronous client for SQLite using AnyIO'
 arch=(any)
 url='https://github.com/davidbrochart/sqlite-anyio'
