@@ -1,10 +1,10 @@
 ---
-version: 2.11.0-1
+version: 2.11.0-2
 pkgbase:
   name: python-openai
   pkgdesc: Python client library for the OpenAI API
   pkgver: 2.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openai/openai-python
   arch:
     - any
