@@ -2,7 +2,7 @@
 
 pkgname=mkdocstrings
 pkgver=1.0.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Automatic documentation from sources, for MkDocs"
 arch=(any)
 url="https://github.com/mkdocstrings/mkdocstrings"
