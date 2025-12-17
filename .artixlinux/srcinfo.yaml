@@ -1,10 +1,10 @@
 ---
-version: 0.21.0-1
+version: 0.21.0-2
 pkgbase:
   name: python-openapi-core
   pkgdesc: Client-side and server-side support for the OpenAPI Specification v3
   pkgver: 0.21.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/p1c2u/openapi-core
   arch:
     - any
