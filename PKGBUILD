@@ -6,7 +6,7 @@
 
 pkgname=mypy
 pkgver=1.19.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Optional static typing for Python (PEP484)'
 arch=('any')
 url="http://www.mypy-lang.org/"
@@ -31,6 +31,7 @@ checkdepends=(
   'python-psutil'
   'python-pytest'
   'python-pytest-xdist'
+  'python-tests'
 )
 optdepends=(
   'python-lxml: for reports'
