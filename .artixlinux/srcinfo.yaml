@@ -1,10 +1,10 @@
 ---
-version: 3.10.0-1
+version: 3.10.0-2
 pkgbase:
   name: botan
   pkgdesc: Crypto library written in C++
   pkgver: 3.10.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://botan.randombit.net/
   arch:
     - x86_64
