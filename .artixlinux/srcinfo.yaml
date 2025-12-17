@@ -1,10 +1,10 @@
 ---
-version: 0.11.0-1
+version: 0.11.0-2
 pkgbase:
   name: python-dirty-equals
   pkgdesc: Doing dirty (but extremely useful) things with equals
   pkgver: 0.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/samuelcolvin/dirty-equals
   arch:
     - any
