@@ -1,10 +1,10 @@
 ---
-version: 1:2.6.16-1
+version: 1:2.6.16-2
 pkgbase:
   name: pyenv
   pkgdesc: Easily switch between multiple versions of Python
   pkgver: 2.6.16
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/pyenv/pyenv
   arch:
