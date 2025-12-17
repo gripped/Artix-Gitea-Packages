@@ -4,7 +4,7 @@
 
 pkgname=python-aiogram
 pkgver=3.23.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A modern and fully asynchronous framework for Telegram Bot API"
 arch=('any')
 url="https://github.com/aiogram/aiogram"
