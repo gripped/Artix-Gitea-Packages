@@ -1,10 +1,10 @@
 ---
-version: 2.1.0-1
+version: 2.1.0-2
 pkgbase:
   name: python-warlock
   pkgdesc: Python object model built on JSON schema and JSON patch.
   pkgver: 2.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/bcwaldon/warlock
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 854bf5e841f97e878b876519f321b528b92ab4c6d7b786c056d9ee8d32b971b73e1a55e3f49f7ff07acaaec595bd4355295485d67be5afc8b8b3c3f193076d9d
 pkgname:
   - name: python-warlock
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
