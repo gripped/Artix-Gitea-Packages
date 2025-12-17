@@ -1,0 +1,61 @@
+---
+version: 1.12.2-2
+pkgbase:
+  name: python-lsp-server
+  pkgdesc: Fork of the python-language-server project, maintained by the Spyder IDE team and the community
+  pkgver: 1.12.2
+  pkgrel: 2
+  url: https://github.com/python-lsp/python-lsp-server
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-flaky
+    - python-mccabe
+    - python-pycodestyle
+    - python-pydocstyle
+    - python-pyflakes
+    - python-pylint
+    - python-rope
+    - autopep8
+    - flake8
+    - yapf
+    - python-whatthepatch
+    - python-matplotlib
+    - python-numpy
+    - python-pandas
+    - python-pyqt5
+    - python-appdirs
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python-jedi
+    - python-lsp-jsonrpc
+    - python-pluggy
+    - python-ujson
+    - python-websockets
+    - python-docstring-to-markdown
+  optdepends:
+    - 'python-mccabe: complexity checking'
+    - 'python-pycodestyle: linter - style checking'
+    - 'python-pydocstyle: linter - docstring style checking'
+    - 'python-pyflakes: linter to detect various errors'
+    - 'python-pylint: code linting'
+    - 'python-rope: for completions and renaming'
+    - 'autopep8: code formatting'
+    - 'flake8: error checking'
+    - 'yapf: code formatting (preferred)'
+    - 'python-whatthepatch: required for yapf support'
+  source:
+    - https://github.com/python-lsp/python-lsp-server/archive/v1.12.2/python-lsp-server-1.12.2.tar.gz
+  sha256sums:
+    - 6619b497fc7cbdd92558827757c6443b7a7e98d57853e943b312aa0121835e19
+pkgname:
+  - name: python-lsp-server
+# generated with artixpkg 0.37.4-1-any
