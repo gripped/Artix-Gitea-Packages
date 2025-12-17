@@ -3,7 +3,7 @@
 
 pkgname=python-tiktoken
 _name=${pkgname#python-}
-pkgver=0.11.0
+pkgver=0.12.0
 pkgrel=1
 pkgdesc="A fast BPE tokeniser for use with OpenAI's models"
 arch=(x86_64)
@@ -32,7 +32,7 @@ optdepends=(
 )
 
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz")
-sha256sums=('a9b489f53e867e789fcbc019b9f98acdfeaa9108a3e13d8bf0ddd25e56a9eddc')
+sha256sums=('2e1ad31b47086480b168460c3c5794e868544bfcd7c781343599f72179794cbe')
 
 _archive="$_name-$pkgver"
 
@@ -48,10 +48,7 @@ check() {
   rm -r tiktoken tiktoken.egg-info tiktoken_ext
   local python_version
   python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
-  PYTHONPATH="build/lib.linux-$CARCH-cpython-$python_version" python -m pytest \
-    --deselect tests/test_encoding.py::test_hyp_roundtrip[r50k_base] \
-    --deselect tests/test_encoding.py::test_hyp_roundtrip[cl100k_base]
-    # These two tests fail in Artix CI
+  PYTHONPATH="build/lib.linux-$CARCH-cpython-$python_version" python -m pytest
 }
 
 package() {
