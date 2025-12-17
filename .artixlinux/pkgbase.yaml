@@ -1,13 +1,13 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -22,8 +22,24 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.13.0-4
+    packages:
+      - python-standard-aifc-3.13.0-4-any.pkg.tar.zst
+      - python-standard-asynchat-3.13.0-4-any.pkg.tar.zst
+      - python-standard-asyncore-3.13.0-4-any.pkg.tar.zst
+      - python-standard-cgi-3.13.0-4-any.pkg.tar.zst
+      - python-standard-cgitb-3.13.0-4-any.pkg.tar.zst
+      - python-standard-chunk-3.13.0-4-any.pkg.tar.zst
+      - python-standard-imghdr-3.13.0-4-any.pkg.tar.zst
+      - python-standard-mailcap-3.13.0-4-any.pkg.tar.zst
+      - python-standard-nntplib-3.13.0-4-any.pkg.tar.zst
+      - python-standard-pipes-3.13.0-4-any.pkg.tar.zst
+      - python-standard-smtpd-3.13.0-4-any.pkg.tar.zst
+      - python-standard-sndhdr-3.13.0-4-any.pkg.tar.zst
+      - python-standard-sunau-3.13.0-4-any.pkg.tar.zst
+      - python-standard-telnetlib-3.13.0-4-any.pkg.tar.zst
+      - python-standard-uu-3.13.0-4-any.pkg.tar.zst
+      - python-standard-xdrlib-3.13.0-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
