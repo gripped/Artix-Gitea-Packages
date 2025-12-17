@@ -1,0 +1,45 @@
+---
+version: 12.3.2-5
+pkgbase:
+  name: python-oslo-db
+  pkgdesc: OpenStack Database Pattern Library
+  pkgver: 12.3.2
+  pkgrel: 5
+  url: https://pypi.python.org/pypi/oslo.db/12.3.2
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-testresources
+    - python-testscenarios
+    - python-eventlet
+    - python-oslotest
+    - python-oslo-context
+    - python-stestr
+    - python-testtools
+    - pifpaf
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-pbr
+    - python-alembic
+    - python-debtcollector
+    - python-oslo-i18n
+    - python-oslo-config
+    - python-oslo-utils
+    - python-sqlalchemy1.4
+    - python-stevedore
+  optdepends:
+    - 'python-testresources: for sqlalchemy test fixtures'
+    - 'python-testscenarios: for sqlalchemy test fixtures'
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/openstack/oslo.db.git#commit=62aff14693373842cd7a28a737ccbbf9bbdb1218
+  sha512sums:
+    - SKIP
+pkgname:
+  - name: python-oslo-db
+# generated with artixpkg 0.37.4-1-any
