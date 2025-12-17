@@ -1,10 +1,10 @@
 ---
-version: 0.6.0-1
+version: 0.6.0-2
 pkgbase:
   name: python-sphinxcontrib-apidoc
   pkgdesc: A Sphinx extension for running sphinx-apidoc on each build
   pkgver: 0.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sphinx-contrib/apidoc
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 47b6ac829b02181f1003078917d5e175da5351b0b7d098eb8861c691b143fbd0fc75bb50282c64544a11498a471b25eb19693df1d18ea540cca22fe7da8c6acc
 pkgname:
   - name: python-sphinxcontrib-apidoc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
