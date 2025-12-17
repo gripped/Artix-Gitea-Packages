@@ -1,10 +1,10 @@
 ---
-version: 0.31.0-1
+version: 0.31.0-2
 pkgbase:
   name: python-httplib2
   pkgdesc: Comprehensive HTTP client library, supporting many features
   pkgver: 0.31.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/httplib2/httplib2
   arch:
     - any
