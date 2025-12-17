@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 10.0.2-2
+    version: 10.0.3-2
     packages:
-      - python-pikepdf-10.0.2-2-x86_64.pkg.tar.zst
+      - python-pikepdf-10.0.3-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
