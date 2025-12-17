@@ -1,10 +1,10 @@
 ---
-version: 4.2.0-1
+version: 4.2.0-2
 pkgbase:
   name: python-stestr
   pkgdesc: A test runner runner similar to testrepository
   pkgver: 4.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://stestr.readthedocs.io/en/latest/
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 232aba1b37f42c13695e586023207259292fc546712d539857095a5819da6091059ec8c1d1262287e2d7f8c7ef6771c5533a730ef5539efdd7f30207b205853e
 pkgname:
   - name: python-stestr
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
