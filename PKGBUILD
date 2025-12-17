@@ -2,7 +2,7 @@
 
 pkgname=python-jaconv
 pkgver=0.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Japanese character interconverter for Hiragana, Katakana, Hankaku, and Zenkaku'
 url='https://ikegami-yukino.github.io/jaconv/jaconv.html'
 license=(MIT)

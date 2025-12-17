@@ -1,10 +1,10 @@
 ---
-version: 0.4.1-1
+version: 0.4.1-2
 pkgbase:
   name: python-jaconv
   pkgdesc: Japanese character interconverter for Hiragana, Katakana, Hankaku, and Zenkaku
   pkgver: 0.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://ikegami-yukino.github.io/jaconv/jaconv.html
   arch:
     - any
