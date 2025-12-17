@@ -1,10 +1,10 @@
 ---
-version: 0.2.1-1
+version: 0.2.1-2
 pkgbase:
   name: python-matplotlib-inline
   pkgdesc: Inline Matplotlib backend for Jupyter
   pkgver: 0.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ipython/matplotlib-inline
   arch:
     - any
