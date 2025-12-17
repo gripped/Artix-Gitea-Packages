@@ -1,10 +1,10 @@
 ---
-version: 6.1.0-1
+version: 6.1.0-2
 pkgbase:
   name: python-oslo-context
   pkgdesc: OpenStack Context library
   pkgver: 6.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/oslo.context/6.1.0
   arch:
     - any
