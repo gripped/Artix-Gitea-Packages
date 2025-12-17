@@ -1,10 +1,10 @@
 ---
-version: 2.2.0-1
+version: 2.2.0-2
 pkgbase:
   name: libpeas-2
   pkgdesc: GObject Plugin System
   pkgver: 2.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Projects/Libpeas
   arch:
     - x86_64
