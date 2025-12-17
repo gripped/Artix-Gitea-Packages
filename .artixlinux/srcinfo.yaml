@@ -1,10 +1,10 @@
 ---
-version: 0.18.0-1
+version: 0.18.0-2
 pkgbase:
   name: blueprint-compiler
   pkgdesc: Markup language and compiler for GTK 4 user interfaces
   pkgver: 0.18.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gnome.pages.gitlab.gnome.org/blueprint-compiler/
   arch:
     - any
@@ -27,4 +27,4 @@ pkgbase:
     - fb981b48a3f7cc14a72ed6f744fd11364ecf69715e88b2fd50248fac8dc42bf1351be8b109c2ccc8a269367853e9f69838852ebddfdd44dfd91be8c1c3de595b
 pkgname:
   - name: blueprint-compiler
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
