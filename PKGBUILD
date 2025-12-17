@@ -3,7 +3,7 @@
 
 pkgname=python-fixtures
 pkgver=4.2.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Python fixtures for testing / resource management"
 arch=('any')
 url="https://github.com/testing-cabal/fixtures"
@@ -17,8 +17,14 @@ makedepends=(
   'python-wheel'
 )
 checkdepends=('python-testtools')
-source=("$url/archive/$pkgver/${pkgname#python-}-$pkgver.tar.gz")
-sha512sums=('22e14a5035797aa006556ae8eb302ad43cc77a74414d529882e95289c3df20f7d1b2c375e5e8be47e76b56dce8166c1f58f2faabe74aa17c19478a5f392e29f0')
+source=("$url/archive/$pkgver/${pkgname#python-}-$pkgver.tar.gz" "removed-testskipped.patch")
+sha512sums=('22e14a5035797aa006556ae8eb302ad43cc77a74414d529882e95289c3df20f7d1b2c375e5e8be47e76b56dce8166c1f58f2faabe74aa17c19478a5f392e29f0'
+            'eaa0ac7bb97b745be2af06b250db8cbb237d56cf6d8b5bba58e04009baf4ab706a573e0082cbbc33f27bf388df74d78fa701ecb649ac5c970748078888be2053')
+
+prepare() {
+  cd ${pkgname#python-}-$pkgver
+  patch -Np1 -i ${srcdir}/removed-testskipped.patch
+}
 
 build() {
   cd ${pkgname#python-}-$pkgver

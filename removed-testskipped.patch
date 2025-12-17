@@ -1,0 +1,35 @@
+From 3ae990ff04ea19c9f0cac58667e5e06d9d297ca1 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jakub=20Kul=C3=ADk?= <kulikjak@gmail.com>
+Date: Fri, 5 Dec 2025 12:42:39 +0100
+Subject: [PATCH] don't use removed testtools.testcase.TestSkipped
+
+---
+ fixtures/tests/_fixtures/test_timeout.py | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/fixtures/tests/_fixtures/test_timeout.py b/fixtures/tests/_fixtures/test_timeout.py
+index 600d03f..1b1d190 100644
+--- a/fixtures/tests/_fixtures/test_timeout.py
++++ b/fixtures/tests/_fixtures/test_timeout.py
+@@ -15,11 +15,9 @@
+ 
+ import signal
+ import time
++from unittest import SkipTest
+ 
+ import testtools
+-from testtools.testcase import (
+-    TestSkipped,
+-)
+ from testtools.matchers import raises
+ 
+ import fixtures
+@@ -43,7 +41,7 @@ def sample_long_delay_with_harsh_timeout():
+ class TestTimeout(testtools.TestCase, fixtures.TestWithFixtures):
+     def requireUnix(self):
+         if getattr(signal, "alarm", None) is None:
+-            raise TestSkipped("no alarm() function")
++            raise SkipTest("no alarm() function")
+ 
+     def test_timeout_passes(self):
+         # This can pass even on Windows - the test is skipped.
