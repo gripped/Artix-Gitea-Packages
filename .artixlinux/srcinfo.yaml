@@ -1,10 +1,10 @@
 ---
-version: 20251009-2.1
+version: 20251009-3
 pkgbase:
   name: fontforge
   pkgdesc: Outline and bitmap font editor
   pkgver: 20251009
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://fontforge.github.io/
   arch:
     - x86_64
