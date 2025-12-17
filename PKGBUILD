@@ -4,7 +4,7 @@
 _pyname=jupyter_client
 pkgname=python-${_pyname/_/-}
 pkgver=8.7.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Jupyter protocol implementation and client libraries'
 arch=(any)
 url='https://pypi.python.org/pypi/jupyter_client'
