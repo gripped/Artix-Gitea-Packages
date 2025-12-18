@@ -1,0 +1,39 @@
+---
+version: 1.4.2-2
+pkgbase:
+  name: python-partd
+  pkgdesc: Concurrent appendable key-value storage
+  pkgver: 1.4.2
+  pkgrel: 2
+  url: https://github.com/dask/partd
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-blosc
+    - python-numpy
+    - python-pandas
+    - python-pyzmq
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-versioneer
+  depends:
+    - python
+    - python-locket
+    - python-toolz
+  optdepends:
+    - python-blosc
+    - python-numpy
+    - python-pandas
+    - python-pyzmq
+  source:
+    - partd-1.4.2.tar.gz::https://github.com/dask/partd/archive/refs/tags/1.4.2.tar.gz
+  b2sums:
+    - 046aeead247c57060c2e4f366151af1058852953b97a943df2df7e1fefa68d0a70489b5fccc813223de0e143788b8d4f1a99ae74867064963da28448653e786b
+pkgname:
+  - name: python-partd
+# generated with artixpkg 0.37.4-1-any
