@@ -1,30 +1,30 @@
-From 949df9e1b0b30b627e64a83026125ccc997588d9 Mon Sep 17 00:00:00 2001
+From bbccdbb56bccd70fd9e73d5fce28ec01260eda9e Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Mon, 22 Sep 2025 15:17:59 +0200
+Date: Thu, 18 Dec 2025 17:03:55 +0100
 Subject: [PATCH 1/1] artix boot standalone
 
 ---
  meson.build                    |  7 +++++++
  meson_options.txt              |  3 +++
  src/bless-boot/meson.build     | 10 +++++++---
- src/boot/meson.build           |  8 ++++----
+ src/boot/meson.build           | 10 +++++-----
  src/bootctl/meson.build        |  3 +++
  src/kernel-install/meson.build | 16 +++++++++++++++-
- 6 files changed, 39 insertions(+), 8 deletions(-)
+ 6 files changed, 40 insertions(+), 9 deletions(-)
 
 diff --git a/meson.build b/meson.build
-index 2014e1e8ee..1b1350aa2a 100644
+index fd2b335ce5..9c662ddf8c 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -2701,6 +2701,7 @@ ukify = custom_target(
+@@ -2767,6 +2767,7 @@ ukify = custom_target(
+         output : 'ukify',
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
          install : want_ukify,
++        install_tag: 'eukify',
          install_mode : 'rwxr-xr-x',
          depends : ukify_depends,
-+        install_tag: 'eukify',
          install_dir : bindir)
- if want_ukify
-         public_programs += ukify
-@@ -2805,6 +2806,11 @@ install_data('LICENSE.GPL2',
+@@ -2873,6 +2874,11 @@ install_data('LICENSE.GPL2',
               install_tag : 'esysusers',
               install_dir : datadir / 'doc/esysusers')
  
@@ -36,7 +36,7 @@ index 2014e1e8ee..1b1350aa2a 100644
  install_emptydir(systemdstatedir)
  
  #####################################################################
-@@ -3163,6 +3169,7 @@ foreach tuple : [
+@@ -3247,6 +3253,7 @@ foreach tuple : [
          ['link-journalctl-shared', get_option('link-journalctl-shared')],
          ['link-boot-shared',       get_option('link-boot-shared')],
          ['link-portabled-shared',  get_option('link-portabled-shared')],
@@ -45,10 +45,10 @@ index 2014e1e8ee..1b1350aa2a 100644
          ['fexecve'],
          ['standalone-binaries',    get_option('standalone-binaries')],
 diff --git a/meson_options.txt b/meson_options.txt
-index d8dec33ec4..6e3e5fc298 100644
+index 4ce3c7faca..c4e6d40ab8 100644
 --- a/meson_options.txt
 +++ b/meson_options.txt
-@@ -552,3 +552,6 @@ option('vmlinux-h-path', type : 'string', value : '',
+@@ -563,3 +563,6 @@ option('vmlinux-h-path', type : 'string', value : '',
  
  option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
         description : 'controls whether mountfsd should apply a relaxed policy on DDIs in system DDI directories')
@@ -56,7 +56,7 @@ index d8dec33ec4..6e3e5fc298 100644
 +option('link-kernel-install-shared', type: 'boolean',
 +       description : 'link kernel-install against libsystemd-shared.so')
 diff --git a/src/bless-boot/meson.build b/src/bless-boot/meson.build
-index 003f110664..412a879e74 100644
+index ae814f1b29..9706c0a08d 100644
 --- a/src/bless-boot/meson.build
 +++ b/src/bless-boot/meson.build
 @@ -11,7 +11,7 @@ endif
@@ -68,10 +68,10 @@ index 003f110664..412a879e74 100644
                  'public' : true,
                  'conditions' : [
                          'HAVE_BLKID',
-@@ -20,18 +20,22 @@ executables += [
+@@ -19,18 +19,22 @@ executables += [
+                 ],
                  'sources' : files('bless-boot.c'),
                  'link_with' : boot_link_with,
-                 'dependencies' : libblkid,
 +                'install_tag' : 'ebless',
 +                'install_dir' : bindir,
          },
@@ -94,10 +94,19 @@ index 003f110664..412a879e74 100644
          },
  ]
 diff --git a/src/boot/meson.build b/src/boot/meson.build
-index ba0b309acf..e12e0ffc9e 100644
+index 3d1f66a658..bd109cf01f 100644
 --- a/src/boot/meson.build
 +++ b/src/boot/meson.build
-@@ -406,7 +406,7 @@ foreach archspec : efi_archspecs
+@@ -195,7 +195,7 @@ efi_c_ld_args = [
+ 
+         # These flags should be passed by -static-pie, but for whatever reason the flag translation
+         # is not enabled on all architectures. Not passing `-static` would just allow the linker to
+-        # use dynamic libraries, (which we can't/don't use anyway). But if `-pie` is missing and the
++        # use dynamic libraries, (which we can't/dsystemd-on't use anyway). But if `-pie` is missing and the
+         # gcc build does not default to `-pie` we get a regular (no-pie) binary that will be
+         # rightfully rejected by elf2efi. Note that meson also passes `-pie` to the linker driver,
+         # but it is overridden by our `-static-pie`. We also need to pass these directly to the
+@@ -414,7 +414,7 @@ foreach archspec : efi_archspecs
          }
  
          efi_elf_binaries += executable(
@@ -106,7 +115,7 @@ index ba0b309acf..e12e0ffc9e 100644
                  sources : [systemd_boot_sources, version_h],
                  link_with : libefi,
                  name_suffix : 'elf',
-@@ -428,7 +428,7 @@ endforeach
+@@ -436,7 +436,7 @@ endforeach
  
  foreach efi_elf_binary : efi_elf_binaries
          name = efi_elf_binary.name()
@@ -115,7 +124,7 @@ index ba0b309acf..e12e0ffc9e 100644
  
          # For the addon, given it's empty, we need to explicitly reserve space in the header to account for
          # the sections that ukify will add.
-@@ -445,7 +445,7 @@ foreach efi_elf_binary : efi_elf_binaries
+@@ -453,7 +453,7 @@ foreach efi_elf_binary : efi_elf_binaries
                  input : efi_elf_binary,
                  install : true,
                  install_dir : bootlibdir,
@@ -123,28 +132,28 @@ index ba0b309acf..e12e0ffc9e 100644
 +                install_tag : 'eboot',
                  command : [
                          elf2efi_py,
-                         '--version-major=' + project_major_version,
-@@ -474,4 +474,4 @@ foreach efi_elf_binary : efi_elf_binaries
+                         f'--version-major=@project_major_version@',
+@@ -482,4 +482,4 @@ foreach efi_elf_binary : efi_elf_binaries
               suite : 'boot')
  endforeach
  
 -alias_target('systemd-boot', boot_targets)
 +alias_target('eboot', boot_targets)
 diff --git a/src/bootctl/meson.build b/src/bootctl/meson.build
-index ae1f32292b..d3c9ced9a8 100644
+index 7522cd10a9..8de5e7fd28 100644
 --- a/src/bootctl/meson.build
 +++ b/src/bootctl/meson.build
 @@ -21,5 +21,8 @@ executables += [
                  'sources' : bootctl_sources,
                  'link_with' : boot_link_with,
-                 'dependencies' : [libblkid, libopenssl],
+                 'dependencies' : [libopenssl],
 +                'install' : true,
 +                'install_tag' : 'eboot',
 +                'install_dir' : bindir,
          },
  ]
 diff --git a/src/kernel-install/meson.build b/src/kernel-install/meson.build
-index 716fffb46b..91ea52a80c 100644
+index 716fffb46b..d16fa467d5 100644
 --- a/src/kernel-install/meson.build
 +++ b/src/kernel-install/meson.build
 @@ -2,12 +2,21 @@
@@ -162,8 +171,8 @@ index 716fffb46b..91ea52a80c 100644
                  'name' : 'kernel-install',
                  'public' : true,
                  'conditions' : ['ENABLE_KERNEL_INSTALL'],
-+                'link_with' : kernel_install_link_with,
                  'sources' : files('kernel-install.c'),
++                'link_with' : kernel_install_link_with,
 +                'install_tag' : 'kernel-install',
 +                'install_dir' : bindir
          },
@@ -204,10 +213,10 @@ index 716fffb46b..91ea52a80c 100644
  
          if install_sysconfdir
 -                install_emptydir(sysconfdir / 'kernel/install.d')
-+                install_emptydir(sysconfdir / 'kernel/install.d', install_tag : 'kernel-install')
++                install_emptydir(sysconfdir / 'kernel/install.d', install_tag: 'kernel-install')
          endif
  endif
  
 -- 
-2.51.0
+2.52.0
 

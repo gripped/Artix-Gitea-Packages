@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.4
-_tag='258.3'
+_tag='259'
 
 pkgbase=udev
 pkgname=(
@@ -62,18 +62,16 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         loader.conf
         splash-artix.bmp
 )
-sha512sums=('5176b59b638a09a1ffc5523059420c6e48d6f776f7450ec055074bf09c755fac71bdd38d10f08febe98f992087ec6e7f61fcb6556639c789aa917e3e4e59c495'
+sha512sums=('b7a0a2da92af8cc55ddb11e73e4bb635d359f0768d0b10c38ea696683dc6605202125541a2d271e9c1ae5aa79753c7b1f0d07e7aa1e2d29d986666056c42e619'
             '1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417'
-            'beb15210d8afe69e1e47c99a81da5967428ccc64ece85b8a843333cb741eda061ae7a91a79cec8a1136a624e93e63140013986499589bf10edcc52d865729377'
-            'bb956ac16825d084e6a94fd647ca4add8df45cd6508ada5c9a7775dc98fa835760d97883a7c2be60eb913a0afeb4bf596206e5a98913e0009d803f4932957b4b'
-            'e8acc127c0468019ca163edb2119e43ac0b0b539350cbdbb605d657dd1519203af89799044ed4cc0ee36158e305a13483047f16975e1b09f42fc036ec7115313'
+            'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
+            'bb5879ba8eeb3833d6e8529ccd2355b68221bf16cd8b1b833e2b5f7ca6b1fa1eec8b90116e63d9eda76bf1cb76beaf3b25707b440889786ee1abc4d6af0f883b'
+            '063033fc7e95dff0397fe53f6692bee66717700683725d8bfebad03e9c6f7009726820aaca69aa040b78f810b921bd3690e49b7f2448c5dd63a8866e437a90a5'
             '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
             'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
             'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
 
 _backports=(
-    # core: assign TTY to PAM context when TTYPath= is specified
-    'f0fdb69a8d83b543841e5ae1879241619959d881'
 )
 
 _reverts=(
@@ -359,14 +357,15 @@ _inst_man() {
 package_udev() {
     pkgdesc='Userspace device file manager'
     depends+=(
-        'acl' 'libacl.so'
+        'acl' #'libacl.so'
         'bash'
         'hwdata'
         'kbd'
         'kmod'
-        'libcap.so'
+        'libcap'
+       # 'libcap.so'
         'libudev'
-        'util-linux' 'libblkid.so'
+        'util-linux' #'libblkid.so'
     )
     backup=(etc/udev/iocost.conf
             etc/udev/udev.conf)
@@ -384,7 +383,8 @@ package_udev() {
 package_libudev() {
     pkgdesc='udev library for enumerating and introspecting local devices'
     depends+=(
-        'libcap.so'
+        #'libcap.so'
+        'libcap'
     )
     provides=('libudev.so')
 
@@ -396,8 +396,9 @@ package_libudev() {
 package_esysusers() {
     pkgdesc='the sysusers.d binary'
     depends+=(
-        'libcap.so'
-        'libxcrypt' 'libcrypt.so'
+        #'libcap.so'
+        'libcap'
+        'libxcrypt' #'libcrypt.so'
     )
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags esysusers
@@ -412,8 +413,9 @@ package_esysusers() {
 package_etmpfiles() {
     pkgdesc='the tmpfiles.d binary'
     depends+=(
-        'acl' 'libacl.so'
-        'libcap.so'
+        'acl' #'libacl.so'
+        'libcap'
+        #'libcap.so'
     )
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags etmpfiles
@@ -429,8 +431,9 @@ package_egummiboot() {
     pkgdesc='the gummiboot bootloader'
     provides=('gummiboot')
     depends+=(
-        'util-linux' 'libblkid.so' 'libmount.so'
-        'libcap.so'
+        'util-linux' #'libblkid.so' 'libmount.so'
+        #'libcap.so'
+        'libcap'
         'sh'
     )
 
