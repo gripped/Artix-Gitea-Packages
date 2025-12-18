@@ -1,0 +1,26 @@
+---
+version: 2.11-2
+pkgbase:
+  name: libbytesize
+  pkgdesc: A tiny library providing a C "class" for working with arbitrary big sizes in bytes
+  pkgver: 2.11
+  pkgrel: 2
+  url: https://github.com/storaged-project/libbytesize
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  checkdepends:
+    - python-polib
+  makedepends:
+    - python
+  depends:
+    - mpfr
+    - pcre2
+  source:
+    - libbytesize-2.11.tar.gz::https://github.com/rhinstaller/libbytesize/archive/2.11.tar.gz
+  sha512sums:
+    - 57f6515b25e22819339dccbb23b1f9863592c5d82f20decaae1178d2fc5c56f46367cf4ea2efca7e41eefd8ea33df1a1b1001e254eda6209751518a3120db9f5
+pkgname:
+  - name: libbytesize
+# generated with artixpkg 0.37.4-1-any
