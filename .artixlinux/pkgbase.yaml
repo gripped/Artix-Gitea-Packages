@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,10 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1:0.15.1-2
+    packages:
+      - profanity-1:0.15.1-2-x86_64.pkg.tar.zst
+      - profanity-gtk-1:0.15.1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
