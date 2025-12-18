@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,24 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 1:25.3.2-1
+    packages:
+      - mesa-1:25.3.2-1-x86_64.pkg.tar.zst
+      - opencl-mesa-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-asahi-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-dzn-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-freedreno-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-gfxstream-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-intel-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-nouveau-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-mesa-implicit-layers-1:25.3.2-1-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:25.3.2-1-x86_64.pkg.tar.zst
+      - mesa-docs-1:25.3.2-1-x86_64.pkg.tar.zst
+    debug:
+      - mesa-debug-1:25.3.2-1-x86_64.pkg.tar.zst
   world:
     version: 1:25.3.1-2.2
     packages:
