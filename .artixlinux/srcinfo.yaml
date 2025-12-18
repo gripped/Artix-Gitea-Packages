@@ -1,15 +1,15 @@
 ---
-version: 3.2.2-1
+version: 3.2.2-3
 pkgbase:
   name: sdl3_ttf
   pkgdesc: A library that allows you to use TrueType fonts in your SDL applications (Version 3)
   pkgver: 3.2.2
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/libsdl-org/SDL_ttf
   arch:
     - x86_64
   license:
-    - MIT
+    - Zlib
   makedepends:
     - cmake
   depends:
