@@ -1,10 +1,10 @@
 ---
-version: 2.86.3-1
+version: 2.86.3-2
 pkgbase:
   name: glib2
   pkgdesc: Low level core library
   pkgver: 2.86.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/glib
   arch:
     - x86_64
