@@ -1,10 +1,10 @@
 ---
-version: 0.38.0-1
+version: 0.38.0-2
 pkgbase:
   name: uvicorn
   pkgdesc: The lightning-fast ASGI server
   pkgver: 0.38.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/encode/uvicorn
   arch:
     - any
