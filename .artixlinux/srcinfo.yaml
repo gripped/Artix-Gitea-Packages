@@ -1,10 +1,10 @@
 ---
-version: 1.10.0-3
+version: 1.10.0-4
 pkgbase:
   name: meson
   pkgdesc: High productivity build system
   pkgver: 1.10.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://mesonbuild.com/
   arch:
     - any
