@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 18.1.0-1
+    version: 22.0.0-2
     packages:
-      - python-pyarrow-18.1.0-1-x86_64.pkg.tar.zst
+      - python-pyarrow-22.0.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
