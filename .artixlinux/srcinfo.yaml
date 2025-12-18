@@ -1,10 +1,10 @@
 ---
-version: 3.6.3-1
+version: 3.6.3-2
 pkgbase:
   name: qutebrowser
   pkgdesc: A keyboard-driven, vim-like browser based on Python and Qt
   pkgver: 3.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qutebrowser.org/
   arch:
     - any
