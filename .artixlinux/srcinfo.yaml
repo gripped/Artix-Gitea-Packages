@@ -1,10 +1,10 @@
 ---
-version: 1.5-14
+version: 1.5-15
 pkgbase:
   name: transmageddon
   pkgdesc: Simple python application for transcoding video into formats supported by GStreamer
   pkgver: 1.5
-  pkgrel: 14
+  pkgrel: 15
   url: http://www.linuxrising.org/
   arch:
     - any
@@ -53,4 +53,4 @@ pkgbase:
     - ec2e2474fb07540ddab6c310666a1f44636d47204973f80a735e3e3b1624ad855881c844eb607fe595e6baaf819e2d4f9dec6e6b92a4d4ddc3872c89ed976284
 pkgname:
   - name: transmageddon
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
