@@ -1,10 +1,10 @@
 ---
-version: 0.9.6-1
+version: 0.9.6-2
 pkgbase:
   name: python-pysmt
   pkgdesc: Solver-agnostic library for SMT Formulae manipulation and solving
   pkgver: 0.9.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pysmt/pysmt
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - 3ccfc4264acb1a5958c2cccbf77fcdc31b1b4eb22a0d3bafa9666a3edc2d22d6ae0f6ed74aaa79d5a2816c40cfea7a54f170202aa02980cf4f23770085d9cb3a
 pkgname:
   - name: python-pysmt
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
