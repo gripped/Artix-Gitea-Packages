@@ -2,7 +2,7 @@
 #Maintainer: Xyne <gro xunilhcra enyx, backwards>
 pkgname=reflector
 pkgver=2023
-pkgrel=3.3
+pkgrel=4
 pkgdesc='A Python 3 module and script to retrieve and filter the latest Pacman mirror list.'
 arch=(any)
 license=(GPL2)
@@ -22,7 +22,7 @@ validpgpkeys=('D89FAAEB4CECAFD199A2F5E612C6F735F7A9A519')
 build() {
   cd $pkgname-$pkgver
   sed -e "s|https://archlinux.org|https://status.artixlinux.org|g" \
-      -e "s|Arch Linux|Artix Linux|g" \
+      -e "s|Arch Linux|Artix Linux|g"  \
       -e "s|extra/os/x86_64/extra.db|system/os/x86_64/system.db|g" \
       -i Reflector.py
   python -m build --wheel --no-isolation
