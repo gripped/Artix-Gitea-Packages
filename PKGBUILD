@@ -6,7 +6,7 @@ _name=pydantic
 pkgname=python-$_name
 # WARNING: upstream pins pydantic-core down to the patch-level and using other versions breaks tests! only update in lock-step with python-pydantic-core!
 pkgver=2.12.5
-pkgrel=2
+pkgrel=3
 pkgdesc='Data parsing and validation using Python type hints'
 arch=(any)
 url="https://github.com/pydantic/pydantic"
@@ -52,9 +52,17 @@ optdepends=(
   'python-email-validator: for email validation'
   'python-hypothesis: for hypothesis plugin when using legacy v1'
 )
-source=($url/archive/v$pkgver/$_name-v$pkgver.tar.gz)
-sha512sums=('92e8c43e207e827d4eaad7cd8a09b3e796e8a150aa4dfe193f8ddf29df4826d4e6e6bba4c98ccdfa77ae12e07d7da4bc6567cd16ee8106e06231e0513b3dde37')
-b2sums=('1a5c38795b65c07f3f17ea262bffe2b9e8cb18e0a304b3c73619a7cbd5a95d5966a1e5ad0e44c8135c8cdba228cce2d54d3d6de09f1e581e868c1e15fbd7d3a3')
+source=($url/archive/v$pkgver/$_name-v$pkgver.tar.gz
+        https://github.com/pydantic/pydantic/commit/53cb5f83.patch)
+sha512sums=('92e8c43e207e827d4eaad7cd8a09b3e796e8a150aa4dfe193f8ddf29df4826d4e6e6bba4c98ccdfa77ae12e07d7da4bc6567cd16ee8106e06231e0513b3dde37'
+            'a5e9e89b6329a1506586c1145b1da6456df7ad43ec8870ffe0280a6ff0959eea95c49ca0c1fa0efbfbbe0b930de4f9cecd9c335f8b0cb82bc9df8776a3054300')
+b2sums=('1a5c38795b65c07f3f17ea262bffe2b9e8cb18e0a304b3c73619a7cbd5a95d5966a1e5ad0e44c8135c8cdba228cce2d54d3d6de09f1e581e868c1e15fbd7d3a3'
+        'e33e10356e7c3d56d7513ae38c2ee7e17e66904347581888360749784000cf06352c4fa6f0715a04103276d7b55e1af848a8db567a4e4784756f3f83aa954e38')
+
+prepare() {
+  cd $_name-$pkgver
+  patch -p1 -i ../53cb5f83.patch # Fix tests with Python 3.14
+}
 
 build() {
   cd $_name-$pkgver
