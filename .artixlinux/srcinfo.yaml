@@ -1,10 +1,10 @@
 ---
-version: 3.1.2-4
+version: 3.1.2-5
 pkgbase:
   name: python-daemon
   pkgdesc: Python library to implement a well-behaved Unix daemon process
   pkgver: 3.1.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://pagure.io/python-daemon/
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - f7b04335adc473de877f5117e26d5f1142f4c9f7cd765408f0877757be5afbf4
 pkgname:
   - name: python-daemon
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any

@@ -6,7 +6,7 @@
 
 pkgname=python-daemon
 pkgver=3.1.2
-pkgrel=4
+pkgrel=5
 pkgdesc="Python library to implement a well-behaved Unix daemon process"
 url="https://pagure.io/python-daemon/"
 arch=('any')
