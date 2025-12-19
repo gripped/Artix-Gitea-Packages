@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,10 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 3.9.11-1
+    version: 3.9.12-1
     packages:
-      - maven-3.9.11-1-any.pkg.tar.zst
-    debug: []
+      - maven-3.9.12-1-any.pkg.tar.zst
+    debug:
+      - maven-debug-3.9.12-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
