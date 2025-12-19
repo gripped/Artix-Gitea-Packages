@@ -1,0 +1,30 @@
+---
+version: 1.8.12-2
+pkgbase:
+  name: libx11
+  pkgdesc: X11 client-side library
+  pkgver: 1.8.12
+  pkgrel: 2
+  url: https://gitlab.freedesktop.org/xorg/lib/libx11
+  arch:
+    - x86_64
+  license:
+    - MIT AND X11
+  makedepends:
+    - xorg-util-macros
+    - xtrans
+  depends:
+    - libxcb
+    - glibc
+    - xorgproto
+  source:
+    - https://xorg.freedesktop.org//releases/individual/lib/libX11-1.8.12.tar.xz
+    - https://xorg.freedesktop.org//releases/individual/lib/libX11-1.8.12.tar.xz.sig
+  validpgpkeys:
+    - 4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E
+  sha512sums:
+    - cb7a284d9081a8b67f7d8568d56dc403a4b787e46ac497b07768d236084c01f80f4ea2ebd814f950ac9738adc3baea3912932fc333858195c4f8217744b6f730
+    - SKIP
+pkgname:
+  - name: libx11
+# generated with artixpkg 0.37.4-1-any
