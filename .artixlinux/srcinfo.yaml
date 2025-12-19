@@ -1,10 +1,10 @@
 ---
-version: 0.4.3-1
+version: 0.4.3-2
 pkgbase:
   name: libkate
   pkgdesc: A karaoke and text codec for embedding in ogg
   pkgver: 0.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.xiph.org/xiph/kate
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 52c26664dc8aa284aa39b82cf32e54739207ed10077a6ceb574ee5e2de2bf14335b8a4099bb1a973a881d98ab1630328725d70b54e0b59ca88ae9c03466b2cc6
 pkgname:
   - name: libkate
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
