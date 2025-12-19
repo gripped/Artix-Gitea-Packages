@@ -1,10 +1,10 @@
 ---
-version: 2025.0.1-1
+version: 2025.0.1-2
 pkgbase:
   name: hugin
   pkgdesc: Panorama photo stitcher
   pkgver: 2025.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://hugin.sourceforge.net/
   arch:
     - x86_64

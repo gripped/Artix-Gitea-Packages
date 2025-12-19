@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2025.0.1-2
+    packages:
+      - hugin-2025.0.1-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
@@ -58,4 +59,4 @@ repos:
     packages:
       - hugin-2025.0.1-1-x86_64.pkg.tar.zst
     debug: []
-team: world
+team: galaxy
