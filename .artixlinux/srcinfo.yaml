@@ -1,9 +1,9 @@
 ---
-version: 5.1.0-1
+version: 5.1.0-2
 pkgbase:
   name: virt-manager
   pkgver: 5.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://virt-manager.org/
   arch:
     - any
@@ -41,4 +41,4 @@ pkgname:
       - vte3
       - python-cairo
       - gtksourceview4
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
