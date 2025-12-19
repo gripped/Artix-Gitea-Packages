@@ -1,9 +1,9 @@
 ---
-version: 1.11.3-2
+version: 1.11.4-2
 pkgbase:
   name: python-ytmusicapi
   pkgdesc: Unofficial API for YouTube Music
-  pkgver: 1.11.3
+  pkgver: 1.11.4
   pkgrel: 2
   url: https://github.com/sigma67/ytmusicapi
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - python
     - python-requests
   source:
-    - git+https://github.com/sigma67/ytmusicapi#tag=1.11.3
+    - git+https://github.com/sigma67/ytmusicapi#tag=1.11.4
   sha256sums:
-    - 31d277918fbd5ecb6f7d31e363d36ebf02284945517959f44d152c8d277e2cde
+    - 417b168a1ca30e752dc406dec76637d1a23a24716947ccef1841237d630b98b4
 pkgname:
   - name: python-ytmusicapi
 # generated with artixpkg 0.37.4-1-any
