@@ -1,10 +1,10 @@
 ---
-version: 3.3.10-6
+version: 3.3.10-7
 pkgbase:
   name: mailman3
   pkgdesc: The GNU mailing list manager
   pkgver: 3.3.10
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.list.org/
   arch:
     - any
