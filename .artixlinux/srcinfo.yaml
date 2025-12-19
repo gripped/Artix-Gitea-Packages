@@ -1,10 +1,10 @@
 ---
-version: 0.3.12-11
+version: 0.3.12-12
 pkgbase:
   name: volume_key
   pkgdesc: A library for manipulating storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases
   pkgver: 0.3.12
-  pkgrel: 11
+  pkgrel: 12
   url: https://pagure.io/volume_key
   arch:
     - x86_64
@@ -47,4 +47,4 @@ pkgname:
       - nss
       - python
       - volume_key=0.3.12
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
