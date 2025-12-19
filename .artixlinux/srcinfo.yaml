@@ -1,10 +1,10 @@
 ---
-version: 7.0.0-2
+version: 7.0.0-3
 pkgbase:
   name: python-vcrpy
   pkgdesc: Automatically mock your HTTP interactions to simplify and speed up testing
   pkgver: 7.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/kevin1024/vcrpy
   arch:
     - any
