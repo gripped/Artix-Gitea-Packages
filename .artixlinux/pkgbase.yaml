@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3:2.41.5-2
+    version: 3:2.41.5-3
     packages:
-      - python-pydantic-core-3:2.41.5-2-x86_64.pkg.tar.zst
+      - python-pydantic-core-3:2.41.5-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
