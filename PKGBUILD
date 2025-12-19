@@ -3,7 +3,7 @@
 
 pkgname=nvchecker
 pkgver=2.19
-pkgrel=2
+pkgrel=3
 pkgdesc="New version checker for software releases"
 arch=('any')
 url="https://github.com/lilydjwg/nvchecker"
@@ -44,6 +44,10 @@ _backports=(
   ab4fc7d2e5a0d7ed7bf7a5850e56c1af5d34c459
   # Update version check in test_rpmrepo.py
   b02ddd38d6b9703b6114567c65038a56af9b3def
+  # update versions for test_aur and test_cran
+  248c69e336d12a8cd00845113783bfae935afc1b
+  # test_alpmfiles: update for pacman 7.1
+  783bd73e0ce60449dce777a6f660196b252111de
 )
 
 prepare() {
@@ -71,7 +75,7 @@ build() {
 check() {
   cd nvchecker
   # https://github.com/lilydjwg/nvchecker/issues/310
-  pytest --deselect tests/test_container.py::test_container_with_tag||:
+  pytest --deselect tests/test_container.py::test_container_with_tag
 }
 
 package() {
