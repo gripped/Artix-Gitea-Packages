@@ -2,7 +2,7 @@
 
 pkgname=yapf
 pkgver=0.40.2
-pkgrel=3
+pkgrel=4
 pkgdesc="Python style guide checker"
 arch=('any')
 url="https://github.com/google/yapf"
@@ -34,4 +34,3 @@ package() {
   cd yapf-$pkgver
   python -m installer -d "$pkgdir" dist/*.whl
 }
-
