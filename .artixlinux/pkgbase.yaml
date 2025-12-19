@@ -1,13 +1,5 @@
 ---
 team: world
-pkgbase:
-  name: lib3mf
-  version: 2.3.2-3
-  arch:
-    - x86_64
-  pkgname:
-    - lib3mf
-    - python-lib3mf
 actions:
   addRepo: world
   removeRepo: null
@@ -20,38 +12,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 2.3.2-3
+    version: 2.4.1-1
     packages:
-      - lib3mf-2.3.2-3-x86_64.pkg.tar.zst
-      - python-lib3mf-2.3.2-3-x86_64.pkg.tar.zst
+      - lib3mf-2.4.1-1-x86_64.pkg.tar.zst
+      - python-lib3mf-2.4.1-1-x86_64.pkg.tar.zst
+    debug:
+      - lib3mf-debug-2.4.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
