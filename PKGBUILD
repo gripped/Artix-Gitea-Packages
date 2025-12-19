@@ -1,4 +1,4 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@gmail.com>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: David Runge <dvzrv@archlinux.org>
@@ -8,7 +8,7 @@
 
 pkgname=s3cmd
 pkgver=2.4.0
-pkgrel=4
+pkgrel=5
 pkgdesc="A command line client for Amazon S3"
 arch=('any')
 url='https://s3tools.org/s3cmd'
