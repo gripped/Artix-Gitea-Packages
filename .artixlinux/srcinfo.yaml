@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-1
+version: 2.3.0-2
 pkgbase:
   name: qtermwidget
   pkgdesc: A terminal widget for Qt, used by QTerminal
   pkgver: 2.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/qtermwidget
   arch:
     - x86_64
