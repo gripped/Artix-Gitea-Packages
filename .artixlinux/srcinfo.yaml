@@ -1,10 +1,10 @@
 ---
-version: 2.4.6-1.1
+version: 2.4.6-2
 pkgbase:
   name: blueman
   pkgdesc: GTK+ Bluetooth Manager
   pkgver: 2.4.6
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/blueman-project/blueman
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 22a86288030a200e864b82caa88a0661b1c4cc5a06c625b40dcc69c2bc4825dc
 pkgname:
   - name: blueman
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
