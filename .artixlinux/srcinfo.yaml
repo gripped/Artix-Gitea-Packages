@@ -1,0 +1,33 @@
+---
+version: 1.1.0-2
+pkgbase:
+  name: python-cytoolz
+  pkgdesc:
+    Cython implementation of Toolz: High performance functional utilities
+  pkgver: 1.1.0
+  pkgrel: 2
+  url: https://github.com/pytoolz/cytoolz/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - cython
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-setuptools-git-versioning
+    - python-wheel
+  depends:
+    - glibc
+    - python
+    - python-toolz
+  source:
+    - cytoolz-1.1.0.tar.gz::https://github.com/pytoolz/cytoolz//archive/refs/tags/1.1.0.tar.gz
+  b2sums:
+    - 21628828012aae90d3a73a298b3415c461072be85cb510ad121ffcbfda3bc4c9dcbb7a32a0c04806e5700d6afdb264677d714bc61183f1278838ab415e02df62
+pkgname:
+  - name: python-cytoolz
+# generated with artixpkg 0.37.4-1-any
