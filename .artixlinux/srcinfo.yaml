@@ -1,10 +1,10 @@
 ---
-version: 6.5.4-1
+version: 6.5.4-2
 pkgbase:
   name: plasma-firewall
   pkgdesc: Control Panel for your system firewall
   pkgver: 6.5.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
