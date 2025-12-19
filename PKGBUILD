@@ -4,7 +4,7 @@
 
 pkgname=lightdm-gtk-greeter-settings
 pkgver=1.2.3
-pkgrel=3.1
+pkgrel=4
 pkgdesc='Settings editor for the LightDM GTK+ Greeter'
 arch=(any)
 url=https://github.com/xubuntu/lightdm-gtk-greeter-settings
@@ -43,3 +43,4 @@ package() {
   python setup.py install --root="${pkgdir}" --optimize=1 --xfce-integration
 }
 
+# vim: ts=2 sw=2 et:
