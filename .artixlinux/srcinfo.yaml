@@ -1,10 +1,10 @@
 ---
-version: 9.2.160-1
+version: 9.2.160-2
 pkgbase:
   name: python-claripy
   pkgdesc: Abstraction layer for constraint solvers
   pkgver: 9.2.160
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/angr/claripy
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 7060d03e881a3b65bc53b0b220067e9ede5d08c380af6ac8bf54e6664d7d7914397994f3472866b1973f570241231253eecedcd55122f7b524e2aafa7fa92b7a
 pkgname:
   - name: python-claripy
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
