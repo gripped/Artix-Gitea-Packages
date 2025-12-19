@@ -1,10 +1,10 @@
 ---
-version: 1.13.13-1
+version: 1.13.13-2
 pkgbase:
   name: ropper
   pkgdesc: Show information about binary files and find gadgets to build rop chains for different architectures
   pkgver: 1.13.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sashs/Ropper
   arch:
     - any
@@ -41,4 +41,4 @@ pkgbase:
     - 94e1c25346c219665318cd320cd98762450811cca146dcbc4740eed550f453e10c11d1b85356c8ee06df9a2b798ec93ca831bbe2170d6a73512ecc0cf53b2d2c
 pkgname:
   - name: ropper
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any

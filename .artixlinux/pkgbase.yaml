@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.13.13-2
+    packages:
+      - ropper-1.13.13-2-any.pkg.tar.zst
+    debug:
+      - ropper-debug-1.13.13-2-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
