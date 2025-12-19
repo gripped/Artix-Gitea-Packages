@@ -1,15 +1,19 @@
 ---
-version: 2.7.0-1
+version: 2.7.0-3
 pkgbase:
   name: xmldiff
   pkgdesc: A python tool that figures out the differences between two similar XML files, in the same way the diff utility does it
   pkgver: 2.7.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/Shoobx/xmldiff
   arch:
     - x86_64
   license:
-    - GPL2
+    - GPL-2.0-only
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python
     - libxslt
