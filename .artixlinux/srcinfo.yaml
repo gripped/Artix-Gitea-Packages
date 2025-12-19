@@ -1,0 +1,30 @@
+---
+version: 20240207.1615ec32-2
+pkgbase:
+  name: gyp
+  pkgdesc: Generate Your Projects meta-build system
+  pkgver: 20240207.1615ec32
+  pkgrel: 2
+  url: https://gyp.gsrc.io/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - ninja
+    - python
+  source:
+    - git+https://chromium.googlesource.com/external/gyp#commit=1615ec326858f8c2bd8f30b3a86ea71830409ce4
+    - 0001-Fix-Python-compat-and-remove-six.patch
+  b2sums:
+    - 011245ee2d08baf1cd9731b184e4206640e42087c35c24388e2636fcb2dfd9b345dadca1bf57c0a2e228debb76ce1b8654a338dd7e8e3810fe5616446d91aab9
+    - 5110f87d01089cc954923c9323b8edd4490615a6709523db7232e0a1a82e7ac5a65aa4740376f5cf771ebdc3cd123744634356263b116d337310e4de55070671
+pkgname:
+  - name: gyp
+# generated with artixpkg 0.37.4-1-any
