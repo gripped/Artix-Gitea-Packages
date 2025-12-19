@@ -1,10 +1,10 @@
 ---
-version: 6.15.0-2
+version: 6.15.0-4
 pkgbase:
   name: sip
   pkgdesc: A tool that makes it easy to create Python bindings for C and C++ libraries
   pkgver: 6.15.0
-  pkgrel: 2
+  pkgrel: 4
   url: https://www.riverbankcomputing.com/
   arch:
     - any
