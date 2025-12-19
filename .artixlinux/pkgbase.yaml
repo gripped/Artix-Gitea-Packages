@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.5.0-1
+    version: 0.6.0-1
     packages:
-      - voa-0.5.0-1-x86_64.pkg.tar.zst
+      - voa-0.6.0-1-x86_64.pkg.tar.zst
     debug: []
