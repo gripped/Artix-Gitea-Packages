@@ -4,7 +4,7 @@
 
 pkgname=vdirsyncer
 pkgver=0.20.0
-pkgrel=2
+pkgrel=4
 pkgdesc='Synchronize CalDAV and CardDAV'
 arch=(any)
 url=https://vdirsyncer.pimutils.org/en/stable/
@@ -63,6 +63,8 @@ package() {
 
   cd $pkgname
   python -m installer --destdir="$pkgdir" dist/*.whl
+  # systemd
+  install -vDm 644 contrib/$pkgname.{service,timer} -t "$pkgdir"/usr/lib/systemd/user
   # man page
   install -vDm 644 build/$pkgname.1 -t "$pkgdir"/usr/share/man/man1
   # docs

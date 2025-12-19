@@ -1,10 +1,10 @@
 ---
-version: 0.20.0-2
+version: 0.20.0-4
 pkgbase:
   name: vdirsyncer
   pkgdesc: Synchronize CalDAV and CardDAV
   pkgver: 0.20.0
-  pkgrel: 2
+  pkgrel: 4
   url: https://vdirsyncer.pimutils.org/en/stable/
   arch:
     - any
