@@ -1,0 +1,40 @@
+---
+version: 0.6.1-2
+pkgbase:
+  name: img2pdf
+  pkgdesc: Losslessly convert raster images to PDF
+  pkgver: 0.6.1
+  pkgrel: 2
+  url: https://gitlab.mister-muffin.de/josch/img2pdf
+  arch:
+    - any
+  license:
+    - LGPL3
+  checkdepends:
+    - python-pytest
+    - python-numpy
+    - python-scipy
+    - python-lxml
+    - colord
+    - ghostscript
+    - imagemagick
+    - mupdf-tools
+    - openjpeg2
+    - poppler
+    - perl-image-exiftool
+    - netpbm
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-pillow
+    - python-pikepdf
+  source:
+    - https://files.pythonhosted.org/packages/source/i/img2pdf/img2pdf-0.6.1.tar.gz
+  sha256sums:
+    - 306e279eb832bc159d7d6294b697a9fbd11b4be1f799b14b3b2174fb506af289
+pkgname:
+  - name: img2pdf
+# generated with artixpkg 0.37.4-1-any
