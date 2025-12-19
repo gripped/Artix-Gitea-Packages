@@ -1,10 +1,10 @@
 ---
-version: 3.0.0-9
+version: 3.0.0-10
 pkgbase:
   name: goocanvas
   pkgdesc: Cairo canvas widget for GTK
   pkgver: 3.0.0
-  pkgrel: 9
+  pkgrel: 10
   url: https://wiki.gnome.org/Projects/GooCanvas
   arch:
     - x86_64
