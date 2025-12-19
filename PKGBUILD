@@ -3,7 +3,7 @@
 
 pkgname=python-fastparquet
 pkgver=2024.11.0
-pkgrel=3
+pkgrel=4
 pkgdesc="A Python implementation of the Parquet columnar file format"
 arch=(x86_64)
 url="https://github.com/dask/fastparquet"

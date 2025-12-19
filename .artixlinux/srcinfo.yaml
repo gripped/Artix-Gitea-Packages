@@ -1,10 +1,10 @@
 ---
-version: 2024.11.0-3
+version: 2024.11.0-4
 pkgbase:
   name: python-fastparquet
   pkgdesc: A Python implementation of the Parquet columnar file format
   pkgver: 2024.11.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/dask/fastparquet
   arch:
     - x86_64
