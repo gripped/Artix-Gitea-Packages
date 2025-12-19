@@ -1,10 +1,10 @@
 ---
-version: 5.2.2-1
+version: 5.2.2-2
 pkgbase:
   name: certbot
   pkgdesc: An ACME client
   pkgver: 5.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://certbot.eff.org
   arch:
     - any
