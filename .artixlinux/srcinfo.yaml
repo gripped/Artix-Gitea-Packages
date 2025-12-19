@@ -1,10 +1,10 @@
 ---
-version: 1.7.3-1
+version: 1.7.3-2
 pkgbase:
   name: python-h5netcdf
   pkgdesc: Pythonic interface to netCDF4 via h5py
   pkgver: 1.7.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/h5netcdf/h5netcdf
   arch:
     - any
