@@ -1,10 +1,10 @@
 ---
-version: 0.14.6-1
+version: 0.14.6-2
 pkgbase:
   name: libgexiv2
   pkgdesc: GObject-based wrapper around the Exiv2 library
   pkgver: 0.14.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gexiv2
   arch:
     - x86_64
@@ -41,4 +41,4 @@ pkgname:
       - libexiv2.so
     provides:
       - libgexiv2.so
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
