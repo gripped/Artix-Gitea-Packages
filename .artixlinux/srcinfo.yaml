@@ -1,9 +1,9 @@
 ---
-version: 6.10.0-1
+version: 6.11.0-1
 pkgbase:
   name: python-textual
   pkgdesc: Modern Text User Interface framework
-  pkgver: 6.10.0
+  pkgver: 6.11.0
   pkgrel: 1
   url: https://github.com/Textualize/textual
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - python-typing_extensions
     - python-platformdirs
   source:
-    - textual-6.10.0.tar.gz::https://github.com/Textualize/textual/archive/v6.10.0.tar.gz
+    - textual-6.11.0.tar.gz::https://github.com/Textualize/textual/archive/v6.11.0.tar.gz
   sha512sums:
-    - d887af34f44368359241a24b7ee9fce68844a93ec61cae351c841284e67260c98f68801e63c1d0a3d670c3d2e32c8ad7b385119e638231bfd942047cddea0ef9
+    - 5df69d036a95d299916006ad75a312a6d40572fd0fd381d95a5d4a92bea7af45c615c6192b5387de0f6d2af508920529842d0a061e23951b8ff337c25a26c637
 pkgname:
   - name: python-textual
 # generated with artixpkg 0.37.4-1-any
