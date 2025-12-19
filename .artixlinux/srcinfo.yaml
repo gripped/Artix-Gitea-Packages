@@ -1,15 +1,15 @@
 ---
-version: 5.2.0-2
+version: 5.2.0-3
 pkgbase:
   name: persepolis
   pkgdesc: Download manager written in Python
   pkgver: 5.2.0
-  pkgrel: 2
-  url: https://persepolisdm.github.io/
+  pkgrel: 3
+  url: https://persepolisdm.github.io
   arch:
     - any
   license:
-    - GPL3
+    - GPL-3.0-or-later
   makedepends:
     - meson
   depends:
