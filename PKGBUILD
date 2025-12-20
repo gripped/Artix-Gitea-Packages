@@ -27,3 +27,4 @@ package() {
   cd WSGIProxy2-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
