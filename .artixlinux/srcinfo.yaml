@@ -1,10 +1,10 @@
 ---
-version: 34.1.0-1
+version: 34.1.0-2
 pkgbase:
   name: python-kubernetes
   pkgdesc: Python client for the kubernetes API
   pkgver: 34.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/kubernetes-client/python
   arch:
     - any
