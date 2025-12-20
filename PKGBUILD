@@ -5,7 +5,7 @@
 
 pkgname=libffado
 pkgver=2.4.9
-pkgrel=4
+pkgrel=5
 pkgdesc="Driver for FireWire audio devices"
 arch=(x86_64)
 url="https://www.ffado.org/"
