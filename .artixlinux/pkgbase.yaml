@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.8.0-3
+    version: 5.8.0-4
     packages:
-      - python-oslo-serialization-5.8.0-3-any.pkg.tar.zst
+      - python-oslo-serialization-5.8.0-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
