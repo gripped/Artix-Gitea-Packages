@@ -1,10 +1,10 @@
 ---
-version: 2.26.2-1
+version: 2.26.2-2
 pkgbase:
   name: volatility3
   pkgdesc: Advanced memory forensics framework
   pkgver: 2.26.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/volatilityfoundation/volatility3
   arch:
     - any
