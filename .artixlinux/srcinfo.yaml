@@ -1,11 +1,11 @@
 ---
-version: 0.2.1-1
+version: 0.2.1-2
 pkgbase:
   name: python-google-auth-httplib2
   pkgdesc:
     Google Authentication Library: httplib2 transport
   pkgver: 0.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/googleapis/google-auth-library-python-httplib2
   arch:
     - any
