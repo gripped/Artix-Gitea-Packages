@@ -1,10 +1,10 @@
 ---
-version: 1.4.6-3
+version: 1.4.6-4
 pkgbase:
   name: python-aiosmtpd
   pkgdesc: An asyncio based SMTP server
   pkgver: 1.4.6
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/aio-libs/aiosmtpd
   arch:
     - any
