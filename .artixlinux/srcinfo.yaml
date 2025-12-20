@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.41-1
+version: 1:1.4.41-2
 pkgbase:
   name: remmina
   pkgdesc: Remote desktop client written in GTK+
   pkgver: 1.4.41
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.remmina.org
   arch:
@@ -63,4 +63,4 @@ pkgbase:
     - 60d582d9e31e568158c05d5afbe1b368661980ec1b8b293e078361f652a393cfeb5d4233e4568827d9faf12fedb313db0e59a60e49b3598bd8c2920ef4c83094
 pkgname:
   - name: remmina
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
