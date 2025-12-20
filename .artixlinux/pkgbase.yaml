@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2025_12_10.d04c480-1
+    version: 2025_12_15.b40f5cd-1
     packages:
-      - passt-2025_12_10.d04c480-1-x86_64.pkg.tar.zst
+      - passt-2025_12_15.b40f5cd-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
