@@ -100,3 +100,4 @@ package() {
   rm -rfv "$pkgdir$site_packages"/$_pkgname/include/
   ln -sTv /usr/include/arrow/ "$pkgdir$site_packages"/$_pkgname/include
 }
+ 
