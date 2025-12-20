@@ -4,7 +4,7 @@
 pkgname=python-dulwich
 _name=${pkgname#python-}
 pkgver=0.24.10
-pkgrel=1
+pkgrel=2
 pkgdesc='Pure-Python implementation of the Git file formats and protocols'
 arch=(x86_64)
 url=https://www.dulwich.io
@@ -49,9 +49,6 @@ check() {
     -v
     --ignore tests/contrib/test_swift_smoke.py
     --deselect tests/test_porcelain.py::AddTests::test_add_symlink_absolute_to_system
-
-    # fails in artix CI
-    --deselect tests/contrib/test_paramiko_vendor.py::ParamikoSSHVendorRealServerTests::test_connection_errors
   )
 
   cd "$_name"
