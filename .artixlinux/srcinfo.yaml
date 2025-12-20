@@ -1,10 +1,10 @@
 ---
-version: 25.12.0-1
+version: 25.12.0-2
 pkgbase:
   name: ansible-creator
   pkgdesc: A CLI tool for scaffolding all your Ansible Content
   pkgver: 25.12.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ansible/ansible-creator
   arch:
     - any
