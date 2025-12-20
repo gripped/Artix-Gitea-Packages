@@ -1,10 +1,10 @@
 ---
-version: 5.2.2-1
+version: 5.2.2-2
 pkgbase:
   name: certbot-dns-dnsimple
   pkgdesc: DNSimple DNS Authenticator plugin for Certbot
   pkgver: 5.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/certbot-dns-dnsimple
   arch:
     - any
