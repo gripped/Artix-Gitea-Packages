@@ -41,10 +41,11 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 17.0+r93+gbe2efb69b-1
+    version: 17.0+r98+gb096704c0-1
     packages:
-      - lib32-libpulse-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-    debug: []
+      - lib32-libpulse-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+    debug:
+      - lib32-libpulse-debug-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
   galaxy-goblins:
     version: null
     packages: []
