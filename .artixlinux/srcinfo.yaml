@@ -1,0 +1,73 @@
+---
+version: 17.1-1
+pkgbase:
+  name: gdb
+  pkgdesc: The GNU Debugger
+  pkgver: 17.1
+  pkgrel: 1
+  url: https://www.gnu.org/software/gdb/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+    - LGPL-3.0-or-later
+  makedepends:
+    - bash
+    - boost
+    - expat
+    - gcc-libs
+    - glibc
+    - gmp
+    - guile
+    - mpfr
+    - ncurses
+    - python
+    - readline
+    - source-highlight
+    - texinfo
+    - xxhash
+    - xz
+    - zstd
+  source:
+    - https://ftp.gnu.org/gnu/gdb/gdb-17.1.tar.xz
+    - https://ftp.gnu.org/gnu/gdb/gdb-17.1.tar.xz.sig
+  validpgpkeys:
+    - F40ADB902B24264AA42E50BF92EDB04BFF325CF3
+  sha1sums:
+    - c99a59a9f480afb094bc0fbb19ceacdfe3658933
+    - SKIP
+  b2sums:
+    - 35de074a50c747e6ed42faee8a87b3898b57d33e9667c9001eaf8b54c8cce555f7b16642d1583c1b4aabb45fc5e5db8c33d9f5786351e736f2db2f90d28a07ed
+    - SKIP
+pkgname:
+  - name: gdb
+    depends:
+      - bash
+      - expat
+      - gcc-libs
+      - gdb-common=17.1
+      - glibc
+      - gmp
+      - guile
+      - libelf
+      - liblzma.so
+      - libmpfr.so
+      - libncursesw.so
+      - libreadline.so
+      - libxxhash.so
+      - libzstd.so
+      - mpfr
+      - ncurses
+      - python
+      - readline
+      - source-highlight
+      - xxhash
+      - xz
+      - zstd
+    backup:
+      - etc/gdb/gdbinit
+  - name: gdb-common
+    depends:
+      - python
+      - guile
+# generated with artixpkg 0.37.4-1-any
