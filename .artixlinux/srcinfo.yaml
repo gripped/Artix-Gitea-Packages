@@ -1,9 +1,9 @@
 ---
-version: 0.2.6-19
+version: 0.2.6-20
 pkgbase:
   name: marisa
   pkgver: 0.2.6
-  pkgrel: 19
+  pkgrel: 20
   url: https://github.com/s-yata/marisa-trie
   arch:
     - x86_64
@@ -42,4 +42,4 @@ pkgname:
     depends:
       - ruby
       - marisa
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
