@@ -36,3 +36,4 @@ package() {
   ln -s "$site_packages"/WebTest-$pkgver.dist-info/LICENSE.rst \
     "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.rst
 }
+ 
