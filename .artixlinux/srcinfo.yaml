@@ -1,10 +1,10 @@
 ---
-version: 10.2.2-1
+version: 10.2.2-2
 pkgbase:
   name: python-pytest-testinfra
   pkgdesc: Testinfra test your infrastructures
   pkgver: 10.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-testinfra
   arch:
     - any
@@ -44,4 +44,4 @@ pkgbase:
     - 0f4d8fb9164d02315f0cf3477d5d0c9d72e7475292a05b0aab4bfdef89034c1c948f9e158d63f6693bec301d5a8e528eba10794ccd0acdeb442bef817a027a70
 pkgname:
   - name: python-pytest-testinfra
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
