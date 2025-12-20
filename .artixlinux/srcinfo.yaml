@@ -1,10 +1,10 @@
 ---
-version: 2.1.5-1
+version: 2.1.5-2
 pkgbase:
   name: terminator
   pkgdesc: Terminal emulator that supports tabs and grids
   pkgver: 2.1.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/gnome-terminator/terminator
   arch:
     - any
@@ -45,4 +45,4 @@ pkgbase:
     - 7cde90cefde34346ef20b50ebd5b930cb47df650c649e199adbb1b6235db0b40c0c2ad2b0e30bc764d52469357ce0b0424648f70da93b10d39ed0793cbbfe648
 pkgname:
   - name: terminator
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
