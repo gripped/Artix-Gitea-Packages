@@ -1,10 +1,10 @@
 ---
-version: 0.4.3-1
+version: 0.4.3-2
 pkgbase:
   name: python-curtsies
   pkgdesc: Curses-like terminal wrapper with a display based on compositing 2d arrays of text
   pkgver: 0.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/bpython/curtsies
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 16a27151e6083bac70b8a87bd3d7c46f00559b74043b1ed4c261a727d8a33745589722fdebb4099a9017a58de137cba84b13401e61e2b60f1b6e2e6f1d2b2e67
 pkgname:
   - name: python-curtsies
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
