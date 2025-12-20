@@ -1,17 +1,17 @@
 ---
-version: 4.18-1
+version: 4.18-2
 pkgbase:
   name: highlight
   pkgdesc: Fast and flexible source code highlighter
   pkgver: 4.18
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.andre-simon.de/doku/highlight/highlight.html
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later
   makedepends:
-    - qt5-base
+    - qt6-base
     - lua
     - boost
     - swig
@@ -40,7 +40,7 @@ pkgname:
   - name: highlight-gui
     pkgdesc: Fast and flexible source code highlighter - QT GUI version
     depends:
-      - qt5-base
+      - qt6-base
       - highlight
       - hicolor-icon-theme
 # generated with artixpkg 0.37.4-1-any
