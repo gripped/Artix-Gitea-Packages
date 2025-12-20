@@ -44,3 +44,4 @@ package() {
   install -m644 demos/* "$pkgdir"/usr/share/doc/$pkgname/demos
   chmod 755 "$pkgdir"/usr/share/doc/$pkgname/demos/*.py
 }
+ 
