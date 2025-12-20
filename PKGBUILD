@@ -4,7 +4,7 @@
 pkgname=python-flask-socketio
 _pkgname=Flask-SocketIO
 pkgver=5.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Socket.IO integration for Flask applications'
 url='https://github.com/miguelgrinberg/Flask-SocketIO'
 arch=('any')

@@ -1,0 +1,37 @@
+---
+version: 5.5.1-2
+pkgbase:
+  name: python-flask-socketio
+  pkgdesc: Socket.IO integration for Flask applications
+  pkgver: 5.5.1
+  pkgrel: 2
+  url: https://github.com/miguelgrinberg/Flask-SocketIO
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-redis
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-sphinx
+    - python-wheel
+  depends:
+    - python
+    - python-eventlet
+    - python-flask
+    - python-simple-websocket
+    - python-socketio
+    - python-werkzeug
+  source:
+    - https://github.com/miguelgrinberg/Flask-SocketIO/archive/v5.5.1/python-flask-socketio-5.5.1.tar.gz
+  sha512sums:
+    - 3118a70fedeb66a88af17446e8527f9b34a5b7b0f1c062622d5ea89821837b0af84e41a34ff954de9f9fb50fd1c82d1bf99889a13cfbd8ec909c5fc81c1ccb5c
+  b2sums:
+    - 05a018794ee371fc0ced2365d14a395556b321c76f7fd0d91c3475d25fccd18287bd4d495d376c0537d128348b00848c6a86fd9812af0c19d708f00089708cbe
+pkgname:
+  - name: python-flask-socketio
+# generated with artixpkg 0.37.4-1-any
