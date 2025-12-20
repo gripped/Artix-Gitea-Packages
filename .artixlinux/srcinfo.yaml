@@ -1,10 +1,10 @@
 ---
-version: 3.3.14-1
+version: 3.3.14-2
 pkgbase:
   name: psutils
   pkgdesc: A set of postscript utilities
   pkgver: 3.3.14
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rrthomas/psutils
   arch:
     - any
