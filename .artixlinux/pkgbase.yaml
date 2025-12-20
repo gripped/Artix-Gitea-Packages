@@ -1,55 +1,61 @@
 ---
-pkgbase:
-  name: python-pt
-  version: r20240401.114.50227bd-2
-  arch:
-    - any
-  pkgname:
-    - python-pt
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: r20240401.114.50227bd-3
+    packages:
+      - python-pt-r20240401.114.50227bd-3-any.pkg.tar.zst
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: r20240401.114.50227bd-2
     packages:
       - python-pt-r20240401.114.50227bd-2-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
