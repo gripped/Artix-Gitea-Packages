@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.5-2
+    version: 6.5-3
     packages:
-      - python-persistent-6.5-2-x86_64.pkg.tar.zst
+      - python-persistent-6.5-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

@@ -2,12 +2,12 @@
 
 pkgname=python-persistent
 pkgver=6.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Translucent persistent objects"
 arch=('x86_64')
 license=('ZPL-2.1')
 url="https://github.com/zopefoundation/persistent/"
-depends=('python-cffi' 'python-zope-interface')
+depends=('python-cffi' 'python-zope-interface' 'python-zope-deferredimport')
 makedepends=('git' 'python-setuptools')
 checkdepends=('python-zope-testrunner' 'python-manuel')
 source=("git+https://github.com/zopefoundation/persistent.git#tag=$pkgver")
