@@ -1,0 +1,37 @@
+---
+version: 2025.1-1
+pkgbase:
+  name: xorgproto
+  pkgdesc: combined X.Org X11 Protocol headers
+  pkgver: 2025.1
+  pkgrel: 1
+  url: https://xorg.freedesktop.org/
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+    - HPND
+    - HPND-sell-variant
+    - ICU
+    - MIT
+    - MIT-open-group
+    - SGI-B-2.0
+    - SMLNJ
+    - X11
+    - X11-distribute-modifications-variant
+  checkdepends:
+    - python-libevdev
+  makedepends:
+    - xorg-util-macros
+    - meson
+  source:
+    - https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2025.1.tar.xz
+    - https://xorg.freedesktop.org/archive/individual/proto/xorgproto-2025.1.tar.xz.sig
+  validpgpkeys:
+    - 67DC86F2623FC5FD4BB5225D14706DBE1E4B4540
+  sha512sums:
+    - dbbee3aa1bc62721d64309e1d98807d403609d8129944b2e23e48f95d30c6448718c2842362994d67647908645bafc757c710070c5dcdca96d191fd2689d023a
+    - SKIP
+pkgname:
+  - name: xorgproto
+# generated with artixpkg 0.37.4-1-any
