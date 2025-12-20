@@ -4,7 +4,7 @@
 
 pkgname=python-blosc
 pkgver=1.11.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Python wrapper for the extremely fast Blosc compression library'
 arch=('x86_64')
 url='https://www.blosc.org/python-blosc/python-blosc.html'
@@ -59,11 +59,7 @@ check() {
 
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  test-env/bin/python -m blosc.test \
-    --deselect=tests/ndarray/test_elementwise_funcs.py \
-    --deselect=tests/ndarray/test_lazyexpr.py \
-    --deselect=tests/ndarray/test_linalg.py \
-    --deselect=tests/ndarray/test_setitem.py
+  test-env/bin/python -m blosc.test
 }
 
 package() {
@@ -74,3 +70,4 @@ package() {
   # license
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.txt
 }
+ 
