@@ -1,10 +1,10 @@
 ---
-version: 0.121-3
+version: 0.121-4
 pkgbase:
   name: sugar-datastore
   pkgdesc: Sugar datastore service
   pkgver: 0.121
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/sugarlabs/sugar-datastore
   arch:
     - x86_64
