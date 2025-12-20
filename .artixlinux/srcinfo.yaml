@@ -1,10 +1,10 @@
 ---
-version: 17.1-1
+version: 17.1-2
 pkgbase:
   name: gdb
   pkgdesc: The GNU Debugger
   pkgver: 17.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/gdb/
   arch:
     - x86_64
