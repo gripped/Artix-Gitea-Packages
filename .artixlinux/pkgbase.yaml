@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.8.0-10
+    version: 0.8.0-11
     packages:
-      - python-pytest-trio-0.8.0-10-any.pkg.tar.zst
+      - python-pytest-trio-0.8.0-11-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

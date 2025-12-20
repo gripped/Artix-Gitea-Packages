@@ -1,17 +1,17 @@
 ---
-version: 0.8.0-10
+version: 0.8.0-11
 pkgbase:
   name: python-pytest-trio
   pkgdesc: Pytest plugin for Trio
   pkgver: 0.8.0
-  pkgrel: 10
+  pkgrel: 11
   url: https://github.com/python-trio/pytest-trio
   arch:
     - any
   license:
     - Apache-2.0 OR MIT
   checkdepends:
-    - python-trio-asyncio
+    - python-pytest
   makedepends:
     - git
     - python-build
