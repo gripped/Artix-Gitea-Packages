@@ -7,7 +7,7 @@
 pkgname=python-sphinx
 _name=${pkgname#python-}
 pkgver=8.2.3
-pkgrel=2
+pkgrel=4
 pkgdesc='Python documentation generator'
 arch=(any)
 url=http://www.sphinx-doc.org/
@@ -50,6 +50,10 @@ optdepends=(
 )
 source=("git+https://github.com/$_name-doc/$_name.git#tag=v$pkgver")
 b2sums=('f567b7278d1df03bc08436a6bab6af35735ef1c528bf47c7028f6645d530cc6bdf9b2580880161cf3104aed0315da7daa1696297937f8741a5bcde71528bdd19')
+
+prepare() {
+  sed -e 's|,<0.22||' -i $_name/pyproject.toml # Remove docutils version constraint
+}
 
 build() {
   cd "$_name"

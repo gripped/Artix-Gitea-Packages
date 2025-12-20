@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 8.2.3-2
+    version: 8.2.3-4
     packages:
-      - python-sphinx-8.2.3-2-any.pkg.tar.zst
+      - python-sphinx-8.2.3-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
