@@ -29,17 +29,18 @@ repos:
     packages: []
     debug: []
   world:
-    version: 17.0+r93+gbe2efb69b-1
+    version: 17.0+r98+gb096704c0-1
     packages:
-      - pulseaudio-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - libpulse-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - pulseaudio-zeroconf-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - pulseaudio-lirc-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - pulseaudio-jack-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - pulseaudio-bluetooth-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - pulseaudio-equalizer-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-      - pulseaudio-rtp-17.0+r93+gbe2efb69b-1-x86_64.pkg.tar.zst
-    debug: []
+      - pulseaudio-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - libpulse-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - pulseaudio-zeroconf-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - pulseaudio-lirc-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - pulseaudio-jack-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - pulseaudio-bluetooth-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - pulseaudio-equalizer-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+      - pulseaudio-rtp-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
+    debug:
+      - pulseaudio-debug-17.0+r98+gb096704c0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
