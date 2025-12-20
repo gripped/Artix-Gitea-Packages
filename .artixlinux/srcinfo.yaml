@@ -1,0 +1,51 @@
+---
+version: 1.5.18-6
+pkgbase:
+  name: system-config-printer
+  pkgdesc: A CUPS printer configuration tool and status applet
+  pkgver: 1.5.18
+  pkgrel: 6
+  url: https://github.com/OpenPrinting/system-config-printer
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - xmlto
+    - docbook-xsl
+    - desktop-file-utils
+    - libsecret
+    - python-setuptools
+    - autoconf-archive
+  depends:
+    - python-pycups
+    - python-dbus
+    - libnotify
+    - python-gobject
+    - gtk3
+    - python-cairo
+    - libusb
+    - pango
+    - glib2
+    - libcups
+    - libudev
+    - glibc
+    - gdk-pixbuf2
+    - sh
+  optdepends:
+    - 'libsecret: password management'
+    - 'python-pysmbc: SMB browser support'
+    - 'cups-pk-helper: PolicyKit helper to configure cups with fine-grained privileges'
+  source:
+    - https://github.com/OpenPrinting/system-config-printer/releases/download/v1.5.18/system-config-printer-1.5.18.tar.xz
+    - https://github.com/OpenPrinting/system-config-printer/releases/download/v1.5.18/system-config-printer-1.5.18.tar.xz.asc
+    - makefile-am-fix-setup-py-install.patch
+  validpgpkeys:
+    - 7082A0A50A2E92640F3880E0E4522DCC9B246FF7
+  sha256sums:
+    - b1a69e1b4ec2add569a87aeca811a37c5361ee6ae327ec852b79e64223e34bee
+    - SKIP
+    - 7576c1ada53a9eec6a4aea92c2d1050e0f12c68c0928c9b6db28e6a85dc8b31f
+pkgname:
+  - name: system-config-printer
+# generated with artixpkg 0.37.4-1-any
