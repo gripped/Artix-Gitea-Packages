@@ -5,7 +5,7 @@
 
 pkgname=python-scikit-build
 pkgver=0.18.1
-pkgrel=5
+pkgrel=6
 pkgdesc="Improved build system generator for CPython C, C++, Cython and Fortran extensions"
 arch=(any)
 url="https://scikit-build.readthedocs.io/"
@@ -48,3 +48,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
+ 

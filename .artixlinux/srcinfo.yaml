@@ -1,10 +1,10 @@
 ---
-version: 0.18.1-5
+version: 0.18.1-6
 pkgbase:
   name: python-scikit-build
   pkgdesc: Improved build system generator for CPython C, C++, Cython and Fortran extensions
   pkgver: 0.18.1
-  pkgrel: 5
+  pkgrel: 6
   url: https://scikit-build.readthedocs.io/
   arch:
     - any
@@ -42,4 +42,4 @@ pkgbase:
     - cd413fdbc831255205f55bcfbe5a6badeb0d2f3bb3d63be79d8a6c855e1e08cc
 pkgname:
   - name: python-scikit-build
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
