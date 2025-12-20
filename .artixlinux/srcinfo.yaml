@@ -1,10 +1,10 @@
 ---
-version: 7.98-3
+version: 7.98-4
 pkgbase:
   name: nmap
   pkgdesc: Utility for network discovery and security auditing
   pkgver: 7.98
-  pkgrel: 3
+  pkgrel: 4
   url: https://nmap.org/
   arch:
     - x86_64
