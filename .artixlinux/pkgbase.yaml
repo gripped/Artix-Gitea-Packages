@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.10.1-2
+    packages:
+      - scons-4.10.1-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
