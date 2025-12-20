@@ -2,7 +2,7 @@
 
 pkgname=python-librt
 pkgver=0.7.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Mypyc runtime library'
 arch=('x86_64')
 url="https://github.com/mypyc/librt"

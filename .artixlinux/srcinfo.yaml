@@ -1,10 +1,10 @@
 ---
-version: 0.7.3-1
+version: 0.7.3-2
 pkgbase:
   name: python-librt
   pkgdesc: Mypyc runtime library
   pkgver: 0.7.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mypyc/librt
   arch:
     - x86_64
