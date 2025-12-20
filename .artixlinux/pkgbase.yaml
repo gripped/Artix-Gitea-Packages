@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.8-2
+    version: 2.8.1-2
     packages:
-      - python-soupsieve-2.8-2-any.pkg.tar.zst
+      - python-soupsieve-2.8.1-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
