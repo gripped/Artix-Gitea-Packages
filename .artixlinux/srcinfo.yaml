@@ -1,10 +1,10 @@
 ---
-version: 25.08-5
+version: 25.10-1
 pkgbase:
   name: ejabberd
   pkgdesc: Jabber server written in Erlang
-  pkgver: 25.08
-  pkgrel: 5
+  pkgver: 25.10
+  pkgrel: 1
   url: https://www.ejabberd.im/
   arch:
     - x86_64
@@ -52,7 +52,7 @@ pkgbase:
     - etc/ejabberd/ejabberdctl.cfg
     - etc/logrotate.d/ejabberd
   source:
-    - ejabberd-25.08.tar.gz::https://github.com/processone/ejabberd/archive/25.08.tar.gz
+    - ejabberd-25.10.tar.gz::https://github.com/processone/ejabberd/archive/25.10.tar.gz
     - ejabberd.patch
     - erlang-idna::git+https://github.com/benoitc/erlang-idna
     - jiffy::git+https://github.com/davisp/jiffy
@@ -86,7 +86,7 @@ pkgbase:
     - ejabberd.logrotate
     - ejabberd.sysusers
   sha256sums:
-    - edc95cff239d74bfb16e437f7cf84f0e86144e5fe764d7ee7dc248b2d59778f1
+    - f676b71e7dbf143291728bc0247673afb256e75917da89520795c01df1154598
     - a8e1be2d9daf8dd2dfedc11736a9677f3ed5c520c0f2ddf183689d2182b9151a
     - SKIP
     - SKIP
