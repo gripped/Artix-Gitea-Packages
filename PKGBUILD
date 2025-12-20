@@ -45,3 +45,4 @@ package() {
   ln -s "$site_packages"/pyquery-$pkgver.dist-info/LICENSE.txt \
     "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
 }
+ 
