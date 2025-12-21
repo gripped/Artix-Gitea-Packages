@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Carlos Aznarán <caznaranl@uni.pe>
 
 pkgname=nanobind
 pkgdesc="Tiny and efficient C++/Python bindings"
-pkgver=2.10.1
-pkgrel=1
+pkgver=2.10.2
+pkgrel=2
 arch=(any)
 url="https://github.com/wjakob/nanobind"
 license=(BSD-3-Clause)
@@ -30,7 +29,7 @@ source=(
   "$pkgname-$pkgver::git+$url.git#tag=v$pkgver"
   "git+https://github.com/Tessil/robin-map.git"
 )
-sha512sums=('c96d9c24c165dec33566e6ff6039bb4d0cb1ea29a6233cb04cfdbbf98aaf08697222d77f1496800a586cb5fda6e06937dcbd7678af84c29f0f4c46f94c65e765'
+sha512sums=('abad80ac86f9b686f02b5df19527d217ce512d520b0fadb1dbea2c5af8cb8737f6b0593694b1e25938a4d2bccaba3e3932d9062168fb9118a11fcb42157ed700'
             'SKIP')
 
 prepare() {
@@ -53,7 +52,9 @@ build() {
 
 check() {
   cd $pkgname-$pkgver
-  pytest build
+  # one test requires running pytest from the build directory
+  cd build
+  python -m pytest
 }
 
 package() {
@@ -70,3 +71,4 @@ package() {
 
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
+ 
