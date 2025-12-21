@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.40.2-4
+    version: 0.43.0-2
     packages:
-      - yapf-0.40.2-4-any.pkg.tar.zst
+      - yapf-0.43.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
