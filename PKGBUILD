@@ -49,3 +49,4 @@ package() {
   install -vDm 644 LICENSE.txt -t "${pkgdir}/usr/share/licenses/${pkgname}"
   rm -frv "$pkgdir/$_site_packages/$_name/tests"
 }
+ 
