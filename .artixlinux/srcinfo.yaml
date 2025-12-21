@@ -1,10 +1,10 @@
 ---
-version: 6.0-2
+version: 6.0-3
 pkgbase:
   name: python-zope-exceptions
   pkgdesc: Generic exceptions and implementations for Zope
   pkgver: 6.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/zopefoundation/zope.exceptions
   arch:
     - any
