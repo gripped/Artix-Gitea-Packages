@@ -1,10 +1,10 @@
 ---
-version: 0.5.17-1
+version: 0.5.17-2
 pkgbase:
   name: incron-next
   pkgdesc: Like the regular cron but is driven by filesystem events instead of time periods
   pkgver: 0.5.17
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/dpvpro/incron-next
   arch:
     - x86_64

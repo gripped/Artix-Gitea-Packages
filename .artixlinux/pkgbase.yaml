@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.5.17-1
+    version: 0.5.17-2
     packages:
-      - incron-next-0.5.17-1-x86_64.pkg.tar.zst
+      - incron-next-0.5.17-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null

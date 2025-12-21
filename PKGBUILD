@@ -3,7 +3,7 @@
 
 pkgname=incron-next
 pkgver=0.5.17
-pkgrel=1
+pkgrel=2
 pkgdesc="Like the regular cron but is driven by filesystem events instead of time periods"
 arch=('x86_64')
 url="https://github.com/dpvpro/incron-next"
