@@ -1,10 +1,10 @@
 ---
-version: 2025.6-1
+version: 2025.6-2
 pkgbase:
   name: python-crispy-bootstrap4
   pkgdesc: Bootstrap4 template pack for django-crispy-forms
   pkgver: 2025.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/django-crispy-forms/crispy-bootstrap4
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - a239fba7c9d93d6455526d2dc577d6f1ce9bbe3d2ca5076d8376ad60bbaa1f56e7de103cd791ff9d16ffb4b81a4ff59a6fba8071f1098b1f1e10b7b7856cbb8b
 pkgname:
   - name: python-crispy-bootstrap4
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
