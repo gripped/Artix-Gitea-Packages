@@ -1,8 +1,8 @@
 ---
-version: 2:4.23.3-2
+version: 2:4.23.4-2
 pkgbase:
   name: samba
-  pkgver: 4.23.3
+  pkgver: 4.23.4
   pkgrel: 2
   epoch: 2
   url: https://www.samba.org
@@ -44,15 +44,15 @@ pkgbase:
     - 'python-markdown: for samba-tool domain schemeupgrade'
     - 'glusterfs: for vfs_glusterfs support'
   source:
-    - https://download.samba.org/samba/ftp/stable/samba-4.23.3.tar.gz
-    - https://download.samba.org/samba/ftp/stable/samba-4.23.3.tar.asc
+    - https://download.samba.org/samba/ftp/stable/samba-4.23.4.tar.gz
+    - https://download.samba.org/samba/ftp/stable/samba-4.23.4.tar.asc
     - samba.logrotate
     - samba.pam
     - samba.tmpfiles
   validpgpkeys:
     - 81F5E2832BD2545A1897B713AA99442FB680B620
   b2sums:
-    - 3d242217f5fec94dd680bc6f3aa932ea8273bff5333f53e5009351a7fcb8e3d11524f53aad1fe7d9dfd04c8bd6fbadb458953e59fab77e5ce19dc7c7c56c0847
+    - 27cbd6491ce60a1fec8497a16c2681f1e16bc5766053752a16cb454edf62d2c145fd6a9d5986bf1d55bf5b7f9359ae8fecca44027a765fb1d6323c763deea933
     - SKIP
     - 72ecb413ca3499af984a0bb391f96e678a24a19d8e5c96050ba227878f0770f03466ac7a0ee328416e08204e92e9d16ec22d63ef25b53c20d957a17221cd3a98
     - 3eab84d332d96678fe6e435ee243c8f1a82b838f601d61d3604d11e918aed7a62202edca5e476c4b9031ed284570e6fcd6c659cfdbd9624aa0019d3233755f81
@@ -117,7 +117,7 @@ pkgname:
       - libwbclient
       - popt
       - python
-      - smbclient>=4.23.3
+      - smbclient>=4.23.4
       - talloc
       - tdb
     optdepends:
