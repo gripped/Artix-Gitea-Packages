@@ -3,7 +3,7 @@
 _name=mailmanclient
 pkgname=python-mailmanclient
 pkgver=3.3.5
-pkgrel=9
+pkgrel=10
 pkgdesc="Official Python bindings for the GNU Mailman 3 REST API"
 arch=(any)
 url="https://gitlab.com/mailman/mailmanclient"
@@ -58,3 +58,4 @@ package() {
   find "$pkgdir/$site_packages/" -type f -iname "*conftest.py" -delete
   install -vDm 644 README.rst -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
+ 

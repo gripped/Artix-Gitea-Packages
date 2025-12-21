@@ -1,10 +1,10 @@
 ---
-version: 3.3.5-9
+version: 3.3.5-10
 pkgbase:
   name: python-mailmanclient
   pkgdesc: Official Python bindings for the GNU Mailman 3 REST API
   pkgver: 3.3.5
-  pkgrel: 9
+  pkgrel: 10
   url: https://gitlab.com/mailman/mailmanclient
   arch:
     - any
