@@ -7,7 +7,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.41-2
+    version: 1.42-1
     packages:
-      - renderdoc-1.41-2-x86_64.pkg.tar.zst
+      - renderdoc-1.42-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
