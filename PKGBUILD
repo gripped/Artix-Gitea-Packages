@@ -3,7 +3,7 @@
 _name=pdm
 pkgname=python-pdm
 pkgver=2.26.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A modern Python package and dependency manager supporting the latest PEP standards"
 arch=(any)
 url="https://github.com/pdm-project/pdm"
@@ -60,9 +60,17 @@ optdepends=(
   'python-setuptools: for parsing setup.py files'
   'python-uv: use uv as installer and resolver'
 )
-source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('5a80cda7151a49cd23c49121d1607fb7dec6a6b373a3278ec525cbf16e7dfda388ca82a45f2b68661877f3819da477733ac93c3a5b4d40c87a2b0f70cf43b6fe')
-b2sums=('d04f66cc15d63a5acde2f872354ca74b13dae83be6ad77997edea8bdf8ba36d8a80e912ef26dadda596cc08a45d77449e74957946ea6b25879b6656be96c5a40')
+source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz
+        hishel-1.0.patch)
+sha512sums=('5a80cda7151a49cd23c49121d1607fb7dec6a6b373a3278ec525cbf16e7dfda388ca82a45f2b68661877f3819da477733ac93c3a5b4d40c87a2b0f70cf43b6fe'
+            'fbefaf1042731feb07b5db73df40fbfd9b8c6298a8e52595a099a93556709b9c17ab41bb3f336639434cd925d57737d1a978152076aeda0c3e83b805def2faa1')
+b2sums=('d04f66cc15d63a5acde2f872354ca74b13dae83be6ad77997edea8bdf8ba36d8a80e912ef26dadda596cc08a45d77449e74957946ea6b25879b6656be96c5a40'
+        '1e6ed4765939963727548d154585640f5249f57c3e627776ba1cc0c7e245a74559a45af8fb22db50b0c4290b7553511fb15e7a100c41a847691792be0aa9b747')
+
+prepare() {
+  cd $_name-$pkgver
+  patch -p1 -i ../hishel-1.0.patch
+}
 
 build() {
   cd $_name-$pkgver
@@ -86,9 +94,6 @@ check() {
     --deselect tests/resolver/test_uv_resolver.py::test_resolve_with_python_requires
     --deselect tests/resolver/test_uv_resolver.py::test_resolve_dependencies_with_nested_extras
     --deselect tests/resolver/test_uv_resolver.py::test_resolve_dependencies_with_overrides
-
-    # fails with permission error (ARTIX CI)
-    --deselect tests/cli/test_python.py::test_find_python
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
