@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.8.6-11
+    version: 0.8.6-11.1
     packages:
-      - python-pychm-0.8.6-11-x86_64.pkg.tar.zst
+      - python-pychm-0.8.6-11.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

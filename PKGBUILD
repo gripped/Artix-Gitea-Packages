@@ -8,7 +8,7 @@
 
 pkgname=python-pychm
 pkgver=0.8.6
-pkgrel=11
+pkgrel=11.1
 pkgdesc='Python bindings for chmlib'
 arch=(x86_64)
 url='https://github.com/dottedmag/pychm'
