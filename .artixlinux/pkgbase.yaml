@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.10.2-4
+    version: 0.10.3-2
     packages:
-      - jupyter-nbclient-0.10.2-4-any.pkg.tar.zst
+      - jupyter-nbclient-0.10.3-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
