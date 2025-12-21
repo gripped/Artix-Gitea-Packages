@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,11 +22,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.9.18-2
+    version: 0.9.18-3
     packages:
-      - uv-0.9.18-2-x86_64.pkg.tar.zst
-      - python-uv-0.9.18-2-x86_64.pkg.tar.zst
-      - python-uv-build-0.9.18-2-x86_64.pkg.tar.zst
+      - uv-0.9.18-3-x86_64.pkg.tar.zst
+      - python-uv-0.9.18-3-x86_64.pkg.tar.zst
+      - python-uv-build-0.9.18-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
