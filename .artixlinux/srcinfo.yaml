@@ -1,0 +1,31 @@
+---
+version: 0.4.1-3
+pkgbase:
+  name: python-pytest-ruff
+  pkgdesc: Pytest plugin to check ruff requirements
+  pkgver: 0.4.1
+  pkgrel: 3
+  url: https://github.com/businho/pytest-ruff
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest-mock
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+    - python-poetry-dynamic-versioning
+  depends:
+    - python
+    - python-pytest
+    - python-ruff
+  source:
+    - git+https://github.com/businho/pytest-ruff.git#tag=v0.4.1
+  sha512sums:
+    - 0e98174c7a1680330258adb42650d74cb2549685f88471178b2d98088f09e5f462cd2e3e09c4749f6e7916d828668cf4201ccf87a62875d81c5a3f516969da58
+pkgname:
+  - name: python-pytest-ruff
+# generated with artixpkg 0.37.4-1-any
