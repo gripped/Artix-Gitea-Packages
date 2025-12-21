@@ -6,7 +6,7 @@
 pkgname=python-mongoengine
 _pkgname=${pkgname#python-}
 pkgver=0.29.1
-pkgrel=2
+pkgrel=3
 pkgdesc="A Python Object-Document-Mapper for working with MongoDB"
 url="https://github.com/MongoEngine/mongoengine"
 license=('MIT')
@@ -71,3 +71,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
+ 
