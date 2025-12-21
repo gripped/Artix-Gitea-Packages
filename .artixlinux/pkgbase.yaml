@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 38.3.0-2
+    version: 39.0.0-2
     packages:
-      - python-faker-38.3.0-2-any.pkg.tar.zst
+      - python-faker-39.0.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
