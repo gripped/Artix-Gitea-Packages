@@ -10,8 +10,8 @@ url="https://github.com/dpvpro/incron-next"
 license=('GPL-3.0-or-later')
 depends=('gcc-libs' 'bash')
 makedepends=('git')
-replaces=incron
-conflicts=incron
+replaces=(incron)
+conflicts=(incron)
 options=('emptydirs')
 source=("git+https://github.com/dpvpro/incron-next"
         "incron.sysusers"
