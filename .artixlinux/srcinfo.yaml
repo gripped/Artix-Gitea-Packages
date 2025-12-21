@@ -1,10 +1,10 @@
 ---
-version: 25.2-1
+version: 25.2-2
 pkgbase:
   name: python-django-filter
   pkgdesc: A generic system for filtering Django QuerySets based on user selections
   pkgver: 25.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/carltongibson/django-filter
   arch:
     - any
