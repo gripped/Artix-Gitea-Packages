@@ -2,8 +2,8 @@
 # Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=nvchecker
-pkgver=2.19
-pkgrel=3
+pkgver=2.20
+pkgrel=2
 pkgdesc="New version checker for software releases"
 arch=('any')
 url="https://github.com/lilydjwg/nvchecker"
@@ -15,14 +15,13 @@ makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python
              # optional deps
              'python-gobject' 'python-toml' 'python-aiohttp' 'python-httpx')
 checkdepends=('python-pytest' 'python-pytest-asyncio' 'python-pytest-httpbin' 'python-pytest-rerunfailures'
-              'pyalpm' 'python-awesomeversion' 'python-lxml' 'python-jq' 'python-zstandard' 'git')
+              'pyalpm' 'python-awesomeversion' 'python-lxml' 'python-jq' 'git')
 optdepends=(
   'pyalpm: for using "sort_version_key = vercmp" in configuration files and the alpm source'
   'python-awesomeversion: for using "sort_version_key = awesomeversion" in configuration files'
   'python-lxml: for the htmlparser source'
   'python-packaging: for the pypi source'
   'python-jq: for the jq source'
-  'python-zstandard: for the rpmrepo source'
   'python-toml: for nvchecker-ini2toml script'
   'python-aiohttp: alternative HTTP backend'
   'python-httpx: alternative HTTP backend'
@@ -31,7 +30,7 @@ optdepends=(
   'libnotify: for nvchecker-notify'
 )
 source=("git+https://github.com/lilydjwg/nvchecker.git?signed#tag=v$pkgver")
-sha512sums=('539d791d5912859a7bbea561b3c750099547382e9f08efd624cb482efa98fe0518c132ad552936ceb09ab23373c06ea3e73f49aa298427e21c3b9dbf26985db9')
+sha512sums=('30fa78d200079e313a8c3acb5168b6f9ec321476b159121fb2dcbb1fa6365efc1740e908e1fd78d6d5e0feb605bb2ad3a535e3c42a8583187e3c5918c49ed7ca')
 validpgpkeys=(
   # No direct trust chain. Some related stuffs:
   # https://api.github.com/users/lilydjwg/gpg_keys
@@ -40,14 +39,6 @@ validpgpkeys=(
 )
 
 _backports=(
-  # update tests
-  ab4fc7d2e5a0d7ed7bf7a5850e56c1af5d34c459
-  # Update version check in test_rpmrepo.py
-  b02ddd38d6b9703b6114567c65038a56af9b3def
-  # update versions for test_aur and test_cran
-  248c69e336d12a8cd00845113783bfae935afc1b
-  # test_alpmfiles: update for pacman 7.1
-  783bd73e0ce60449dce777a6f660196b252111de
 )
 
 prepare() {

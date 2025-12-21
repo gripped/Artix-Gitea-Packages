@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.19-3
+    version: 2.20-2
     packages:
-      - nvchecker-2.19-3-any.pkg.tar.zst
+      - nvchecker-2.20-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
