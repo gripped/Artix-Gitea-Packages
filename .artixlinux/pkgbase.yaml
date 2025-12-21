@@ -1,13 +1,13 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -22,8 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.3.7-3
+    packages:
+      - python-pdm-build-locked-0.3.7-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
