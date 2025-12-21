@@ -1,10 +1,10 @@
 ---
-version: 4.6-1
+version: 4.6-2
 pkgbase:
   name: python-django-compressor
   pkgdesc: Compresses linked and inline javascript or CSS into a single cached file
   pkgver: 4.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/django-compressor/django-compressor
   arch:
     - any
