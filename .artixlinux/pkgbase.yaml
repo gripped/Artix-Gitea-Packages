@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.2.0-2
+    packages:
+      - python-django-guardian-3.2.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
