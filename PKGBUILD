@@ -35,3 +35,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 README.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
+ 
