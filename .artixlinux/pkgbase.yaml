@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.0.1-1
+    version: 4.0.2-1
     packages:
-      - ruby-bundler-4.0.1-1-any.pkg.tar.zst
+      - ruby-bundler-4.0.2-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.7.2-1
