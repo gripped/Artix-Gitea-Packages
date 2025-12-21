@@ -1,10 +1,10 @@
 ---
-version: 0.27.3-1
+version: 0.27.3-2
 pkgbase:
   name: python-levenshtein
   pkgdesc: Python extension for computing string edit distances and similarities
   pkgver: 0.27.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rapidfuzz/Levenshtein
   arch:
     - x86_64
