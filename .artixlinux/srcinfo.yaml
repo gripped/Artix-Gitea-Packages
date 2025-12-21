@@ -1,10 +1,10 @@
 ---
-version: 0.17.4-3
+version: 0.17.4-4
 pkgbase:
   name: hotdoc
   pkgdesc: The tastiest API documentation system
   pkgver: 0.17.4
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/hotdoc/hotdoc
   arch:
     - x86_64
@@ -53,4 +53,4 @@ pkgbase:
     - 865812a0c5a66822ece814e898b4b3ca46553ba51190adc944bb4f01c0db6cf0
 pkgname:
   - name: hotdoc
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.37.4-1-any
