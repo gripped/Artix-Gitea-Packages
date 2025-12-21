@@ -1,10 +1,10 @@
 ---
-version: 3.4.1-1
+version: 3.4.1-2
 pkgbase:
   name: pysolfc
   pkgdesc: PySol (Fan Club edition) is an exciting collection of more than 1000 solitaire games
   pkgver: 3.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://pysolfc.sourceforge.net/
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 3b9bfb91f8f75b7cb9cc836424606975c5a0868c7b50c6917e51367a7c82e6cb
 pkgname:
   - name: pysolfc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
