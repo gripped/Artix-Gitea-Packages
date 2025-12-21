@@ -1,0 +1,23 @@
+---
+version: 4.2.1-1
+pkgbase:
+  name: microsoft-gsl
+  pkgdesc: C++ Core Guidelines Support Library
+  pkgver: 4.2.1
+  pkgrel: 1
+  url: https://github.com/Microsoft/GSL
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  source:
+    - microsoft-gsl-4.2.1.tar.gz::https://github.com/Microsoft/GSL/archive/v4.2.1.tar.gz
+  sha256sums:
+    - d959f1cb8bbb9c94f033ae5db60eaf5f416be1baa744493c32585adca066fe1f
+pkgname:
+  - name: microsoft-gsl
+# generated with artixpkg 0.37.4-1-any
