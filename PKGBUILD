@@ -58,3 +58,4 @@ package() {
   # license
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
 }
+ 
