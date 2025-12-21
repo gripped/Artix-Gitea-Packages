@@ -5,7 +5,7 @@
 
 pkgname=bpython
 pkgver=0.26
-pkgrel=1
+pkgrel=2
 pkgdesc='Fancy ncurses interface to the Python interpreter'
 arch=('any')
 url='https://bpython-interpreter.org/'
@@ -54,3 +54,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/bpython/LICENSE"
 }
+ 
