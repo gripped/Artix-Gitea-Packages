@@ -3,7 +3,7 @@
 
 pkgname=python-soupsieve
 pkgver=2.8.1
-pkgrel=2
+pkgrel=3
 pkgdesc='A CSS4 selector implementation for Beautiful Soup'
 arch=(any)
 url='https://github.com/facelessuser/soupsieve'
@@ -50,4 +50,3 @@ package() {
   ln -s "$site_packages/${pkgname#python-}-$pkgver.dist-info/licenses/LICENSE.md" \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE.md"
 }
- 
