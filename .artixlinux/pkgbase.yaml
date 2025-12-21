@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.58.2-2
+    packages:
+      - at-spi2-core-2.58.2-2-x86_64.pkg.tar.zst
+      - at-spi2-core-docs-2.58.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
