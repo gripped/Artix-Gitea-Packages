@@ -44,3 +44,4 @@ package() {
   install -vDm 644 LICENCE.rst -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 # vim:set ts=2 sw=2 et:
+ 
