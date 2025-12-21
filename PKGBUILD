@@ -3,7 +3,7 @@
 _name=optree
 pkgname=python-"${_name}"
 pkgver=0.18.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Optimized PyTree Utilities"
 arch=(any)
 url="https://github.com/metaopt/optree"
@@ -31,3 +31,4 @@ package() {
 	python -m installer --destdir="$pkgdir" dist/*.whl
 	install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
+ 
