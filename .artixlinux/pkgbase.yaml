@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.15.0-4
+    version: 6.15.1-2
     packages:
-      - sip-6.15.0-4-any.pkg.tar.zst
+      - sip-6.15.1-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
