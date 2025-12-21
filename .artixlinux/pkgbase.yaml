@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.14.0-2
+    version: 4.15.0-2
     packages:
-      - python-humanize-4.14.0-2-any.pkg.tar.zst
+      - python-humanize-4.15.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
