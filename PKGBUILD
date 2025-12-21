@@ -12,6 +12,7 @@ depends=('gcc-libs' 'bash')
 makedepends=('git')
 replaces=(incron)
 conflicts=(incron)
+provides=(incron)
 options=('emptydirs')
 source=("git+https://github.com/dpvpro/incron-next"
         "incron.sysusers"
