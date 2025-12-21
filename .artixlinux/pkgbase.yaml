@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 4.0.0-1
+    version: 4.1.0-1
     packages:
-      - mathjax-4.0.0-1-any.pkg.tar.zst
+      - mathjax-4.1.0-1-any.pkg.tar.zst
     debug: []
