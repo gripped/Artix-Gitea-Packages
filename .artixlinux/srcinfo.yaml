@@ -19,7 +19,7 @@ pkgbase:
     - python
     - python-setuptools
     - python-yaml
-    - systemd
+    - udev
   depends:
     - alsa-lib
     - libx11
