@@ -50,3 +50,4 @@ package() {
   ln -s "$site_packages/${pkgname#python-}-$pkgver.dist-info/licenses/LICENSE.md" \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE.md"
 }
+ 
