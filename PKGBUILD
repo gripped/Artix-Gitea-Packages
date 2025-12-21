@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgbase=pyqt6-3d
-pkgname=(python-pyqt6-3d)
+pkgname=python-pyqt6-3d
 pkgver=6.10.0
 pkgrel=2
 pkgdesc='Python bindings for Qt3D'
