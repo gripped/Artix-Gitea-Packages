@@ -1,0 +1,39 @@
+---
+version: 1.5-8
+pkgbase:
+  name: libftdi
+  pkgdesc: A library to talk to FTDI chips, optional python bindings.
+  pkgver: 1.5
+  pkgrel: 8
+  url: https://www.intra2net.com/en/developer/libftdi/download.php
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+    - LGPL-2.1-only
+  makedepends:
+    - boost
+    - cmake
+    - python
+    - swig
+    - python-setuptools
+  depends:
+    - libusb
+    - confuse
+  optdepends:
+    - 'python: library bindings'
+  source:
+    - https://www.intra2net.com/en/developer/libftdi/download/libftdi1-1.5.tar.bz2
+    - https://www.intra2net.com/en/developer/libftdi/download/libftdi1-1.5.tar.bz2.sig
+    - fix_includes_path.patch
+    - https://src.fedoraproject.org/rpms/libftdi/raw/rawhide/f/libftdi-1.5-swig-4.3.patch
+  validpgpkeys:
+    - 3CEA9B8868BC3852618EB5B4707F91A424F006F5
+  sha256sums:
+    - 7c7091e9c86196148bd41177b4590dccb1510bfe6cea5bf7407ff194482eb049
+    - SKIP
+    - 065a157326f28c61d1ec470a3064b0cb2fd3c13497a9b496ca76a9dac573de07
+    - 78d434d4aa1d38ab6b71f7cbd60b9be44afa59bf434a57be556ef820bfa13c3d
+pkgname:
+  - name: libftdi
+# generated with artixpkg 0.37.4-1-any

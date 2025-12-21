@@ -2,11 +2,11 @@
 
 pkgname=libftdi
 pkgver=1.5
-pkgrel=7
+pkgrel=8
 pkgdesc="A library to talk to FTDI chips, optional python bindings."
 arch=('x86_64')
 url="https://www.intra2net.com/en/developer/libftdi/download.php"
-license=('GPL2' 'LGPL2.1')
+license=('GPL-2.0-only' 'LGPL-2.1-only')
 depends=('libusb' 'confuse')
 optdepends=('python: library bindings')
 makedepends=('boost' 'cmake' 'python' 'swig' 'python-setuptools')
@@ -35,7 +35,7 @@ build() {
   cd build
   cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_SKIP_BUILD_RPATH=ON \
     -DCMAKE_BUILD_TYPE=Release -DEXAMPLES=OFF -DFTDI_EEPROM=ON \
-    -DFTDIPP=ON -DPYTHON_BINDINGS=ON -DLINK_PYTHON_LIBRARY=ON
+    -DFTDIPP=ON -DPYTHON_BINDINGS=ON -DLINK_PYTHON_LIBRARY=ON -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   make
 }
 
