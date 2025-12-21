@@ -40,3 +40,4 @@ package() {
   cd py-filelock
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
