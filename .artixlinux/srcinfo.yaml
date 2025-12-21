@@ -1,10 +1,10 @@
 ---
-version: 6.10.0-1
+version: 6.10.0-2
 pkgbase:
   name: pyqt6-3d
   pkgdesc: Python bindings for Qt3D
   pkgver: 6.10.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.riverbankcomputing.com/software/pyqt3d/intro
   arch:
     - x86_64
