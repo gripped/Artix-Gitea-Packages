@@ -32,3 +32,4 @@ package() {
 
   install -Dm644 docs/license.txt -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
+ 
