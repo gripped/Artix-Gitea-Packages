@@ -2,7 +2,7 @@
 
 pkgname=python-pybreaker
 pkgver=1.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Python implementation of the Circuit Breaker pattern'
 arch=(any)
 url='https://github.com/danielfm/pybreaker'
@@ -53,3 +53,4 @@ package() {
   # license
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
+ 
