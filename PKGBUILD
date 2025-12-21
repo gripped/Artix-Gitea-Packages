@@ -91,3 +91,4 @@ package() {
 	install -vDm 644 $_pkgname.zsh "$pkgdir/usr/share/zsh/site-functions/_$_pkgname"
 	install -vDm 644 $_pkgname.fish -t "$pkgdir/usr/share/fish/vendor_completions.d/"
 }
+ 
