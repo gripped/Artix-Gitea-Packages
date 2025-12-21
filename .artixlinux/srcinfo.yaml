@@ -1,0 +1,38 @@
+---
+version: 3.0-7
+pkgbase:
+  name: python-pyvirtualdisplay
+  pkgdesc: Python wrapper for Xvfb, Xephyr and Xvnc
+  pkgver: 3.0
+  pkgrel: 7
+  url: https://github.com/ponty/PyVirtualDisplay
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-pytest
+    - python-pytest-xdist
+    - python-pyscreenshot
+    - python-pillow
+    - python-easyprocess
+    - python-entrypoint2
+    - python-path
+    - python-psutil
+    - xorg-server-xvfb
+    - xorg-server-xephyr
+    - xorg-xmessage
+    - xorg-xdpyinfo
+    - scrot
+    - vncdotool
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - https://files.pythonhosted.org/packages/source/P/PyVirtualDisplay/PyVirtualDisplay-3.0.tar.gz
+  sha256sums:
+    - 09755bc3ceb6eb725fb07eca5425f43f2358d3bf08e00d2a9b792a1aedd16159
+pkgname:
+  - name: python-pyvirtualdisplay
+# generated with artixpkg 0.37.4-1-any

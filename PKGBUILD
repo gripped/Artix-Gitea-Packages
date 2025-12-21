@@ -3,7 +3,7 @@
 _pkg=PyVirtualDisplay
 pkgname=python-${_pkg,,}
 pkgver=3.0
-pkgrel=6
+pkgrel=7
 pkgdesc="Python wrapper for Xvfb, Xephyr and Xvnc"
 arch=(any)
 url="https://github.com/ponty/PyVirtualDisplay"
@@ -36,3 +36,4 @@ package() {
   python setup.py install --prefix=/usr --root="${pkgdir}" --skip-build --optimize=1
   install -Dm644 LICENSE.txt -t "${pkgdir}"/usr/share/licenses/${pkgname}
 }
+ 
