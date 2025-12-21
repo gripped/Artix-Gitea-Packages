@@ -3,7 +3,7 @@
 _pkg=pyscreenshot
 pkgname=python-${_pkg}
 pkgver=3.1
-pkgrel=6
+pkgrel=7
 pkgdesc="Copy the contents of the screen to a PIL or Pillow image memory"
 arch=(any)
 url="https://github.com/ponty/pyscreenshot"
@@ -39,3 +39,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE.txt -t "${pkgdir}"/usr/share/licenses/${pkgname}
 }
+ 
