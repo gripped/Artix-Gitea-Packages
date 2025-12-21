@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.4.0-3
+    version: 3.4.0-4
     packages:
-      - python-cheetah3-3.4.0-3-x86_64.pkg.tar.zst
-      - python-cheetah3-docs-3.4.0-3-x86_64.pkg.tar.zst
+      - python-cheetah3-3.4.0-4-x86_64.pkg.tar.zst
+      - python-cheetah3-docs-3.4.0-4-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
