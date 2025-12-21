@@ -5,7 +5,7 @@
 pkgname=python-autobahn
 # https://github.com/crossbario/autobahn-python/blob/master/docs/changelog.rst
 pkgver=25.10.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Real-time framework for Web, Mobile & Internet of Things'
 arch=(x86_64)
 url='https://github.com/crossbario/autobahn-python/'
@@ -71,3 +71,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
+ 
