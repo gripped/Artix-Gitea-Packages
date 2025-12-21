@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 2.8.2-1
+    version: 2.8.3-1
     packages:
-      - cryptsetup-2.8.2-1-x86_64.pkg.tar.zst
+      - cryptsetup-2.8.3-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 2.8.1-1
