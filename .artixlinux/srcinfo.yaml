@@ -1,0 +1,31 @@
+---
+version: 1.2.7-7
+pkgbase:
+  name: python-adal
+  pkgdesc: ADAL for Python
+  pkgver: 1.2.7
+  pkgrel: 7
+  url: https://github.com/AzureAD/azure-activedirectory-library-for-python
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-httpretty
+  makedepends:
+    - fakeroot
+    - python-setuptools
+  depends:
+    - python-cryptography
+    - python-dateutil
+    - python-pyjwt
+    - python-requests
+  source:
+    - python-adal-1.2.7.tar.gz::https://github.com/AzureAD/azure-activedirectory-library-for-python/archive/1.2.7.tar.gz
+    - fix-broken-mex-test.patch
+  sha256sums:
+    - 26ccdb8981bb804ba4e64fa26693ae647642b6a54335ce2440edc6681119d563
+    - 29a9354028a9420ba883cb494688a0ecbf238d8e46fc011c4a309515a1444faa
+pkgname:
+  - name: python-adal
+# generated with artixpkg 0.37.4-1-any
