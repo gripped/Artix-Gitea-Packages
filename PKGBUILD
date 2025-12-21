@@ -110,4 +110,3 @@ package_pyopencl-headers() {
     install -Dm644 $_name/cl/*.cl -t "${pkgdir}"/usr/include/$_name
     install -vDm644 ../*.txt -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
- 
