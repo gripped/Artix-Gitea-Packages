@@ -23,7 +23,7 @@ makedepends=(
 )
 checkdepends=(python-pytest)
 source=($_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz)
-b2sums=('21628828012aae90d3a73a298b3415c461072be85cb510ad121ffcbfda3bc4c9dcbb7a32a0c04806e5700d6afdb264677d714bc61183f1278838ab415e02df62')
+b2sums=('b8de868393eab35433e55e249294a9a36bcc305f5cb664a73242f6405a7cbc68452bd99d1d75d4e1c14b5d1ac0693ad8d1e2cd864a395d8fbd38a6b7aad3582b')
 
 build() {
   cd $_name-$pkgver
