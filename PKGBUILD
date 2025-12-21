@@ -57,3 +57,4 @@ package() {
   # remove test files: https://github.com/google/python-fire/issues/422
   rm -frv "$pkgdir/$_site_packages/$_name/"{testutils,*_test}.py
 }
+ 
