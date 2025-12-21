@@ -1,0 +1,31 @@
+---
+version: 7.5.0-2
+pkgbase:
+  name: python-rdflib
+  pkgdesc: A Python library for working with RDF, a simple yet powerful language for representing information
+  pkgver: 7.5.0
+  pkgrel: 2
+  url: https://github.com/RDFLib/rdflib
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-networkx
+    - python-lxml
+    - python-orjson
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python-pyparsing
+  source:
+    - git+https://github.com/RDFLib/rdflib.git#tag=7.5.0
+  sha512sums:
+    - f1ef6dab06dcc9aab465f661e3e552160af970ab255e742718ccad2e1a8e5ee6e7df38f636881e14c95f7b8cd73eb2f2df37652bd204741eaec60615d61f64e4
+pkgname:
+  - name: python-rdflib
+# generated with artixpkg 0.37.4-1-any

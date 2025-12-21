@@ -3,8 +3,8 @@
 # Contributor: Leif Warner <abimelech@gmail.com>
 
 pkgname=python-rdflib
-pkgver=7.1.2
-pkgrel=1
+pkgver=7.5.0
+pkgrel=2
 pkgdesc="A Python library for working with RDF, a simple yet powerful language for representing information"
 arch=('any')
 url="https://github.com/RDFLib/rdflib"
@@ -13,7 +13,7 @@ depends=('python-pyparsing')
 makedepends=('git' 'python-build' 'python-installer' 'python-poetry-core')
 checkdepends=('python-pytest' 'python-networkx' 'python-lxml' 'python-orjson')
 source=(git+https://github.com/RDFLib/rdflib.git#tag=$pkgver)
-sha512sums=('e726105357a10eeb788e0ad4364667bdb2a5dc6a45f50eec2fb64d6727aa0f0fa654720ce98421bda129066efdcc3b999d3f5e959c6016bc4ac5f49e8a0454b8')
+sha512sums=('f1ef6dab06dcc9aab465f661e3e552160af970ab255e742718ccad2e1a8e5ee6e7df38f636881e14c95f7b8cd73eb2f2df37652bd204741eaec60615d61f64e4')
 
 build() {
   cd rdflib
