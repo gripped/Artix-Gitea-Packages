@@ -1,10 +1,10 @@
 ---
-version: 1.9.1-1
+version: 1.9.1-2
 pkgbase:
   name: python-poetry-dynamic-versioning
   pkgdesc: Plugin for Poetry to enable dynamic versioning based on VCS tags
   pkgver: 1.9.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mtkennerly/poetry-dynamic-versioning
   arch:
     - any
@@ -34,4 +34,4 @@ pkgbase:
     - ba22ddf1640a5005e10f6ee5f0f609bfea9a2679f5ccd9683f1f03b896ef96d5ea9eec193011503f2e206d744742dd851ec5bf4e7276acc01ed7af1dde867616
 pkgname:
   - name: python-poetry-dynamic-versioning
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.37.4-1-any
