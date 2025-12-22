@@ -3,7 +3,7 @@
 
 pkgname=chess-tui
 pkgver=2.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Play chess in your terminal"
 arch=('x86_64')
 url="https://github.com/thomas-mauran/chess-tui"

@@ -1,10 +1,10 @@
 ---
-version: 2.2.0-1
+version: 2.2.0-2
 pkgbase:
   name: chess-tui
   pkgdesc: Play chess in your terminal
   pkgver: 2.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/thomas-mauran/chess-tui
   arch:
     - x86_64
