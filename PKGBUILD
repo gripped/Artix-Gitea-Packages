@@ -4,7 +4,7 @@
 pkgname=python-aws-sam-translator
 _pkgname=serverless-application-model
 pkgver=1.105.0
-pkgrel=1
+pkgrel=2
 pkgdesc='AWS Serverless Application Model (AWS SAM) prescribes rules for expressing Serverless applications on AWS'
 arch=(any)
 url='https://github.com/aws/serverless-application-model'
@@ -47,12 +47,18 @@ build() {
 }
 
 check() {
+  local pytest_options=(
+    -vv
+    -W ignore::UserWarning
+    -n auto
+    --override-ini="addopts="
+  )
   cd $_pkgname-$pkgver
-  AWS_DEFAULT_REGION=us-east-1 PYTHONPATH="$PWD" pytest tests \
-    -n auto --override-ini="addopts="
+  AWS_DEFAULT_REGION=us-east-1 PYTHONPATH="$PWD" pytest "${pytest_options[@]}" tests
 }
 
 package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
