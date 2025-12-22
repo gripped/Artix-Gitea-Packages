@@ -1,10 +1,10 @@
 ---
-version: 6.2.1-3
+version: 6.4-2
 pkgbase:
   name: xpra
   pkgdesc: multi-platform screen and application forwarding system screen for X11
-  pkgver: 6.2.1
-  pkgrel: 3
+  pkgver: 6.4
+  pkgrel: 2
   url: https://www.xpra.org
   arch:
     - x86_64
@@ -27,7 +27,7 @@ pkgbase:
     - python-lz4
     - ffmpeg
     - libvpx
-    - x11win-video-dummy
+    - xf86-video-dummy
     - libxkbfile
     - libxres
     - python-netifaces
@@ -61,18 +61,18 @@ pkgbase:
     - etc/xpra/conf.d/65_proxy.conf
     - etc/pam.d/xpra
   source:
-    - xpra-6.2.1.tar.xz::https://www.xpra.org/src/xpra-6.2.1.tar.xz
-    - xpra-6.2.1.tar.xz.asc::https://www.xpra.org/src/xpra-6.2.1.tar.xz.gpg
+    - xpra-6.4.tar.xz::https://www.xpra.org/src/xpra-6.4.tar.xz
+    - xpra-6.4.tar.xz.asc::https://www.xpra.org/src/xpra-6.4.tar.xz.gpg
   validpgpkeys:
     - B4993B57323148E37977E5D873254CAD17978FAF
   md5sums:
-    - a54901753bdd9bb00ed68fdb0afdde8c
+    - 4ef585487c4eda99bcfa08203c24c1fe
     - SKIP
   sha1sums:
-    - 5e50170b035309c3aa5bb8acd66502c992e7b760
+    - 95f5eed8b169c7de20f93dde22c1f40515db1652
     - SKIP
   sha256sums:
-    - 538d2e9413de9342ecec9f73c51bf9021fbbad0ac5b2abcd3fb35baa6037cd9b
+    - 3cf2d025bfdbec1cfc56dcd3f66e799991d2b58f0f9a259a23b4a63836df35b2
     - SKIP
 pkgname:
   - name: xpra

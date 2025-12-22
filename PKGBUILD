@@ -2,14 +2,14 @@
 # Contributor: Bug <bug2000@gmail.com>
 
 pkgname=xpra
-pkgver=6.2.1
-pkgrel=3
+pkgver=6.4
+pkgrel=2
 pkgdesc="multi-platform screen and application forwarding system screen for X11"
 arch=('x86_64')
 url='https://www.xpra.org'
 license=(GPL-2.0-or-later)
 depends=('gtk3' 'python' 'libxtst' 'python-cairo' 'python-gobject' 'python-pillow' 'python-lz4'
-         'ffmpeg' 'libvpx' 'x11win-video-dummy' 'libxkbfile' 'libxres'
+         'ffmpeg' 'libvpx' 'xf86-video-dummy' 'libxkbfile' 'libxres'
          'python-netifaces' 'python-rencode' 'python-opengl'
          'python-lz4')
 optdepends=('x264: Codec' 'python-dbus: dbus features'
@@ -38,11 +38,11 @@ backup=('etc/xpra/xpra.conf' 'etc/xpra/xorg.conf'
 source=($pkgname-$pkgver.tar.xz::$url/src/$pkgname-$pkgver.tar.xz
         $pkgname-$pkgver.tar.xz.asc::$url/src/$pkgname-$pkgver.tar.xz.gpg)
 
-md5sums=('a54901753bdd9bb00ed68fdb0afdde8c'
+md5sums=('4ef585487c4eda99bcfa08203c24c1fe'
          'SKIP')
-sha1sums=('5e50170b035309c3aa5bb8acd66502c992e7b760'
+sha1sums=('95f5eed8b169c7de20f93dde22c1f40515db1652'
           'SKIP')
-sha256sums=('538d2e9413de9342ecec9f73c51bf9021fbbad0ac5b2abcd3fb35baa6037cd9b'
+sha256sums=('3cf2d025bfdbec1cfc56dcd3f66e799991d2b58f0f9a259a23b4a63836df35b2'
             'SKIP')
 validpgpkeys=('B4993B57323148E37977E5D873254CAD17978FAF') # Xpra <xpra@xpra.org>
 
@@ -67,3 +67,4 @@ package() {
   #Fix for FS#69804
   chmod +x "${pkgdir}"/usr/bin/*
 }
+ 
