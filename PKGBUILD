@@ -6,7 +6,7 @@
 pkgname=mpv
 epoch=1
 pkgver=0.41.0
-pkgrel=1
+pkgrel=2
 pkgdesc='a free, open source, and cross-platform media player'
 arch=('x86_64')
 license=('GPL-2.0-or-later AND LGPL-2.1-or-later')
@@ -24,22 +24,8 @@ optdepends=('yt-dlp: for video-sharing websites playback')
 provides=('libmpv.so')
 options=('!emptydirs')
 validpgpkeys=('145077D82501AA20152CACCE8D769208D5E31419') # sfan5 <sfan5@live.de>
-source=("git+https://github.com/mpv-player/mpv.git#tag=v${pkgver}?signed"
-        'fix_wayland_clipboard_high_cpu_usage.patch')
-sha256sums=('6d591780b86f20397697d8847e30b9bf864798b62615fa995395b7ce03a1e4f2'
-            '610227f044853fe88888d2317ead0e29c84ccffbdb7f712c3671187778b5b60e')
-
-prepare() {
-  cd "${pkgname}"
-
-  # Fix high CPU usage with Wayland clipboard
-  # See https://github.com/mpv-player/mpv/issues/16139
-  # and https://github.com/mpv-player/mpv/commit/d20ded876d27497d3fe6a9494add8106b507a45c
-  patch -Np1 -i "${srcdir}/fix_wayland_clipboard_high_cpu_usage.patch"
-
-  # Fix build with ffmpeg 8
-  git cherry-pick -n 26b29fba02a2782f68e2906f837d21201fc6f1b9
-}
+source=("git+https://github.com/mpv-player/mpv.git#tag=v${pkgver}?signed")
+sha256sums=('6d591780b86f20397697d8847e30b9bf864798b62615fa995395b7ce03a1e4f2')
 
 build() {
   local _meson_options=(

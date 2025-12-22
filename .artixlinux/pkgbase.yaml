@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:0.41.0-1
+    version: 1:0.41.0-2
     packages:
-      - mpv-1:0.41.0-1-x86_64.pkg.tar.zst
+      - mpv-1:0.41.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:0.40.0-7
