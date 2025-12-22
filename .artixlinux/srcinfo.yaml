@@ -1,10 +1,10 @@
 ---
-version: 2:5.2.1-4
+version: 2:5.4.0-1
 pkgbase:
   name: darktable
   pkgdesc: Utility to organize and develop raw images
-  pkgver: 5.2.1
-  pkgrel: 4
+  pkgver: 5.4.0
+  pkgrel: 1
   epoch: 2
   url: https://darktable.org
   arch:
@@ -50,16 +50,14 @@ pkgbase:
     - 'portmidi: game and midi controller input devices'
     - 'gnuplot: noise profile script'
   source:
-    - https://github.com/darktable-org/darktable/releases/download/release-5.2.1/darktable-5.2.1.tar.xz
-    - https://github.com/darktable-org/darktable/releases/download/release-5.2.1/darktable-5.2.1.tar.xz.asc
-    - 0001-Fix-build-with-clang-21.patch
+    - https://github.com/darktable-org/darktable/releases/download/release-5.4.0/darktable-5.4.0.tar.xz
+    - https://github.com/darktable-org/darktable/releases/download/release-5.4.0/darktable-5.4.0.tar.xz.asc
   validpgpkeys:
     - C4CBC150699956E2A3268EF5BB5CC8295B1779C9
     - F10F9686652B0E949FCD94C318DCA123F949BD3B
   sha256sums:
-    - 02f1aa9ae93949e7bc54c34eeb5ff92c2b87f95d2547865df55c60467564ee11
+    - 2bf0baea78d27945cf09c33d8804f179e03a83ee19d2e927fd660ea46aca3b16
     - SKIP
-    - ff199cbd3964a109b76d029ca46d52aecda7f67cfcfde8c00099f7931c1b75ae
 pkgname:
   - name: darktable
 # generated with artixpkg 0.37.4-1-any
