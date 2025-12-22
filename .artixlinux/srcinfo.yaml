@@ -18,6 +18,7 @@ pkgbase:
   license:
     - MIT
   makedepends:
+    - git
     - go>=1.22
   depends:
     - glibc
