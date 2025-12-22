@@ -5,8 +5,8 @@
 
 pkgname=mpv
 epoch=1
-pkgver=0.40.0
-pkgrel=7
+pkgver=0.41.0
+pkgrel=1
 pkgdesc='a free, open source, and cross-platform media player'
 arch=('x86_64')
 license=('GPL-2.0-or-later AND LGPL-2.1-or-later')
@@ -26,7 +26,7 @@ options=('!emptydirs')
 validpgpkeys=('145077D82501AA20152CACCE8D769208D5E31419') # sfan5 <sfan5@live.de>
 source=("git+https://github.com/mpv-player/mpv.git#tag=v${pkgver}?signed"
         'fix_wayland_clipboard_high_cpu_usage.patch')
-sha256sums=('754d045dba7143b51dd6eb2d32ab3a9a483e6a337e685b581a876bc2e20eddf1'
+sha256sums=('6d591780b86f20397697d8847e30b9bf864798b62615fa995395b7ce03a1e4f2'
             '610227f044853fe88888d2317ead0e29c84ccffbdb7f712c3671187778b5b60e')
 
 prepare() {
@@ -54,7 +54,6 @@ build() {
     -Ddvdnav=enabled
     -Dlibarchive=enabled
     -Dopenal=enabled
-    -Dsdl2=enabled
     -Dsdl2-audio=enabled
     -Dsdl2-video=enabled
     -Dsdl2-gamepad=enabled
