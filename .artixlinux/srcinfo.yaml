@@ -1,10 +1,10 @@
 ---
-version: 2.4.131-1
+version: 2.4.131-1.1
 pkgbase:
   name: libdrm
   pkgdesc: Userspace interface to kernel DRM services
   pkgver: 2.4.131
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://dri.freedesktop.org/
   arch:
     - x86_64
