@@ -1,10 +1,10 @@
 ---
-version: 6.0.3-1.1
+version: 6.0.4-1
 pkgbase:
   name: gnuplot
   pkgdesc: Plotting package which outputs to X11, PostScript, PNG, GIF, and others
-  pkgver: 6.0.3
-  pkgrel: 1.1
+  pkgver: 6.0.4
+  pkgrel: 1
   url: http://www.gnuplot.info
   arch:
     - x86_64
@@ -35,10 +35,10 @@ pkgbase:
     - wxwidgets-common
     - wxwidgets-gtk3
   source:
-    - git+https://git.code.sf.net/p/gnuplot/gnuplot-main#tag=6.0.3
+    - git+https://git.code.sf.net/p/gnuplot/gnuplot-main#tag=6.0.4
     - lua53_compat.patch
   sha256sums:
-    - 0477bb969ee2ca7038ef02e3e473d337132105b52953eb460649ac581b883981
+    - e3b6c9564a58b86309acc35a5e77463cbdcb2d8c59bca9e6adfe7b80b338a0e7
     - bfd8a61abbf4491c74225cb9fd252619d4fc29751838bcb4c0639ffe05a00695
 pkgname:
   - name: gnuplot
@@ -46,4 +46,4 @@ pkgname:
     pkgdesc: Demos for gnuplot
     depends:
       - gnuplot
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any
