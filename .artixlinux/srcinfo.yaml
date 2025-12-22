@@ -1,10 +1,10 @@
 ---
-version: 0.8.7-1
+version: 0.8.7-2
 pkgbase:
   name: libnotify
   pkgdesc: Library for sending desktop notifications
   pkgver: 0.8.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/libnotify
   arch:
     - x86_64
