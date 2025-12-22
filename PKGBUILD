@@ -34,8 +34,6 @@ package() {
   install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
   install -Dm644 etc/firewalld/services/* -t "$pkgdir/usr/lib/firewalld/services"
   install -Dm644 man/wsdd.8 -t "$pkgdir/usr/share/man/man8"
-
-  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set sw=2 sts=-1 et:
