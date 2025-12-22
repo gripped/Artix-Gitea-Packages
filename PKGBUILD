@@ -4,7 +4,7 @@
 
 pkgname=wsdd
 pkgver=0.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Web Services Dynamic Discovery daemon for Windows discovery and discoverability"
 url="https://github.com/christgau/wsdd"
 arch=(any)
@@ -17,17 +17,14 @@ makedepends=(git)
 backup=(etc/conf.d/wsdd)
 source=(
   "git+$url?signed#tag=v$pkgver"
-  0001-Modify-systemd-service-for-Arch.patch
 )
-b2sums=('7ab80fa6b00eed0f4ca56fbf1a4b4fd4d749811d12ca7b021cba713145891a4e446168f1868c570b7e1b301f7f2c2defdc228436b7c9bcb9a1bf0d0c0235f325'
-        '1cb42e2805dea2381749728e5bc2f86a96c58f22ccc3892fdcd93c0a0ba0c65fd04a66ef9e895f8830ad8bcea43ff5cbff495f94af4533d67e3dca613ab55113')
+b2sums=('7ab80fa6b00eed0f4ca56fbf1a4b4fd4d749811d12ca7b021cba713145891a4e446168f1868c570b7e1b301f7f2c2defdc228436b7c9bcb9a1bf0d0c0235f325')
 validpgpkeys=(
   55147D9E2AD7D45CC252F1C530462C9368BAB499 # Steffen Christgau <mail@s14u.de>
 )
 
 prepare() {
   cd wsdd
-  git apply -3 ../0001-Modify-systemd-service-for-Arch.patch
 }
 
 package() {
@@ -36,8 +33,6 @@ package() {
   install -Dm644 AUTHORS README.md -t "$pkgdir/usr/share/doc/$pkgname"
   install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
   install -Dm644 etc/firewalld/services/* -t "$pkgdir/usr/lib/firewalld/services"
-  install -Dm644 etc/systemd/wsdd.conf "$pkgdir/etc/conf.d/wsdd"
-  install -Dm644 etc/systemd/*.{service,socket} -t "$pkgdir/usr/lib/systemd/system"
   install -Dm644 man/wsdd.8 -t "$pkgdir/usr/share/man/man8"
 
   rm -r $pkgdir/usr/lib/systemd
