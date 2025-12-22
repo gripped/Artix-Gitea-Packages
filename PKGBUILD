@@ -3,7 +3,7 @@
 
 pkgname=ansible
 pkgver=13.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Official assortment of Ansible collections'
 arch=('any')
 url='https://pypi.org/project/ansible/'
@@ -15,7 +15,6 @@ optdepends=('python-argcomplete: shell completions'
             'python-dnspython: for dig lookup'
             'python-ovirt-engine-sdk: ovirt support'
             'python-boto3: aws_s3 module'
-            'python-ldap: ldap support'
             'python-proxmoxer: proxmox modules'
             'python-openstacksdk: OpenStack module'
             'python-pynetbox: NetBox module'
