@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.127.0-1
+    version: 0.127.0-2
     packages:
-      - python-fastapi-0.127.0-1-any.pkg.tar.zst
+      - python-fastapi-0.127.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 0.124.4-1
