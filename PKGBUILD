@@ -5,7 +5,7 @@
 _name=starlette
 pkgname=python-$_name
 pkgver=0.50.0
-pkgrel=2
+pkgrel=4
 pkgdesc='The little ASGI framework that shines'
 arch=(any)
 url="https://github.com/encode/starlette"
@@ -22,7 +22,6 @@ makedepends=(
 )
 checkdepends=(
   python-aiosqlite
-  python-databases
   python-pytest
   python-trio
 
@@ -74,3 +73,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE.md -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
+ 

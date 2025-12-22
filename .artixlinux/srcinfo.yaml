@@ -1,10 +1,10 @@
 ---
-version: 0.50.0-2
+version: 0.50.0-4
 pkgbase:
   name: python-starlette
   pkgdesc: The little ASGI framework that shines
   pkgver: 0.50.0
-  pkgrel: 2
+  pkgrel: 4
   url: https://github.com/encode/starlette
   arch:
     - any
@@ -12,7 +12,6 @@ pkgbase:
     - BSD-3-Clause
   checkdepends:
     - python-aiosqlite
-    - python-databases
     - python-pytest
     - python-trio
     - python-itsdangerous

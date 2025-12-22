@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.50.0-2
+    version: 0.50.0-4
     packages:
-      - python-starlette-0.50.0-2-any.pkg.tar.zst
+      - python-starlette-0.50.0-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
