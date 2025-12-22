@@ -29,12 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.4.0-2
+    version: 1.4.1-1
     packages:
-      - libfm-1.4.0-2-x86_64.pkg.tar.zst
-      - libfm-extra-1.4.0-2-x86_64.pkg.tar.zst
-      - libfm-gtk3-1.4.0-2-x86_64.pkg.tar.zst
-    debug: []
+      - libfm-1.4.1-1-x86_64.pkg.tar.zst
+      - libfm-extra-1.4.1-1-x86_64.pkg.tar.zst
+      - libfm-gtk3-1.4.1-1-x86_64.pkg.tar.zst
+    debug:
+      - libfm-debug-1.4.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
