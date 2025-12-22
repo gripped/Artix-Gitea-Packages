@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.2.1-13
+    version: 0.2.1-13.1
     packages:
-      - ccze-0.2.1-13-x86_64.pkg.tar.zst
+      - ccze-0.2.1-13.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
