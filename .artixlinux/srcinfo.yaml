@@ -1,9 +1,9 @@
 ---
-version: 25.8.4-1
+version: 25.8.4-2
 pkgbase:
   name: libreoffice-fresh
   pkgver: 25.8.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.libreoffice.org/
   arch:
     - x86_64
