@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -46,8 +46,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 3.4.1-2
+    packages:
+      - pysolfc-3.4.1-2-any.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null

@@ -55,4 +55,3 @@ package() {
   cd PySolFC-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
- 
