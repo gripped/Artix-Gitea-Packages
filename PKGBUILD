@@ -4,7 +4,7 @@
 
 pkgname=cosmic-session
 pkgver=1.0.0
-pkgrel=1.1
+pkgrel=1.2
 epoch=1
 pkgdesc='Session manager for the COSMIC desktop environment'
 arch=(x86_64)
