@@ -30,10 +30,12 @@ makedepends=(
 )
 source=(
   git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-${pkgver}
+  com.system76.CosmicGreeter
   cosmic-greeter-display-manager.patch
   cosmic-greeter-lto.patch
 )
 b2sums=('716132cd7ecb77f02106f42d729492e9a73b970ea03ca7bcc8b89a1cd28906a2e174ef0cb3cd4be0e16a4a7e391056b5e698e6f74583c5fac425d9e717e4632c'
+        '2d95dac0ff6cab589b19de9341a4a75156a6ce45bf70d69d8b9d51cf28ee458d96bb53933fb93e2bcd56dbab7ad0479043e0b986e0520e3caeef421b049e7a21'
         '8b5c32a991e31cf102b1b07e06d37e979f19106b82e8cab7dc8df81789ab6b24587605aa3387254057732a268368c4074f92461f6f5125bc1cba4e62e18cef27'
         '89ca262c95713e773662fb81e379bc2b63d2c93072b909f8f1eaaafee5289359fd729a476eb66568f893986a53e9c689dccfc4aeeeef62cb736cff466c463f7d')
 
