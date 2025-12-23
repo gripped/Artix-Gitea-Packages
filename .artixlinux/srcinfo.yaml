@@ -1,10 +1,10 @@
 ---
-version: 1:1.0.0-1.2
+version: 1:1.0.0-1.3
 pkgbase:
   name: cosmic-session
   pkgdesc: Session manager for the COSMIC desktop environment
   pkgver: 1.0.0
-  pkgrel: 1.2
+  pkgrel: 1.3
   epoch: 1
   url: https://github.com/pop-os/cosmic-session
   arch:
@@ -58,9 +58,11 @@ pkgbase:
   source:
     - git+https://github.com/pop-os/cosmic-session.git#tag=epoch-1.0.0
     - cosmic-session-lto.patch
+    - no_journald-systemctl.patch
   b2sums:
     - 2464a7a5db8ee04883257f81c78a9cdcf6a6110c157a6a201cf062f7e29b6107116a37b19e0df7d3d385f20b6a845762e2b9ac42b1e08d3a12c2f6f056aaf117
     - 8b1a6ba7e159831e24d4e2abe1ee82c3b9a1f7c34af982a0ec20f5941c816922213cbc6bda3a7c2419ace2adf5cdfea131fab76045454b6ad800e18df0368307
+    - a409a5ee7f3fd6bdcde7422266af30ed0b897ab054d914d674ea15600c814bf03ca0e93dc03143fd7f856c6041de2b8dea2981658281b56a9a102254537ca9cc
 pkgname:
   - name: cosmic-session
 # generated with artixpkg 0.37.4-1-any
