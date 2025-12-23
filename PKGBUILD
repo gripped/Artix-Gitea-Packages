@@ -2,7 +2,7 @@
 
 _author=syohex
 pkgname=fu-perl
-pkgver=0.1
+pkgver=0.9
 pkgrel=1
 pkgdesc="A simple perl script to query commandlinefu.com"
 arch=('any')

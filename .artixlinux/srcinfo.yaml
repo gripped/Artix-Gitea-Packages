@@ -1,9 +1,9 @@
 ---
-version: 0.1-1
+version: 0.9-1
 pkgbase:
   name: fu-perl
   pkgdesc: A simple perl script to query commandlinefu.com
-  pkgver: 0.1
+  pkgver: 0.9
   pkgrel: 1
   url: https://syohex.hatenablog.com/entry/20110123/1295778589
   arch:
