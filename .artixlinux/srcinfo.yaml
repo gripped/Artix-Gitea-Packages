@@ -1,0 +1,30 @@
+---
+version: 1.12.2-1.4
+pkgbase:
+  name: package-query
+  pkgdesc: Query ALPM and AUR
+  pkgver: 1.12.2
+  pkgrel: 1.4
+  url: https://github.com/archlinuxfr/package-query
+  arch:
+    - i686
+    - x86_64
+    - mips64el
+    - armv6h
+    - armv7h
+    - arm
+    - aarch64
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - pacman>=6.0
+    - yajl>=2.0
+  source:
+    - git+https://gitea.artixlinux.org/nous/package-query.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: package-query
+# generated with artixpkg 0.37.4-1-any
