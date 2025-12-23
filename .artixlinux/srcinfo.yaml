@@ -1,0 +1,25 @@
+---
+version: 0.1-1
+pkgbase:
+  name: fu-perl
+  pkgdesc: A simple perl script to query commandlinefu.com
+  pkgver: 0.1
+  pkgrel: 1
+  url: https://syohex.hatenablog.com/entry/20110123/1295778589
+  arch:
+    - any
+  license:
+    - PerlArtistic
+  depends:
+    - perl>=5.10.0
+    - perl-json-xs
+    - perl-mouse
+  options:
+    - '!emptydirs'
+  source:
+    - fu.pl
+  sha256sums:
+    - 7999a60a979110051fb542ab3934a0f76174add48a0dceb8bfa4b83fec2de51c
+pkgname:
+  - name: fu-perl
+# generated with artixpkg 0.37.4-1-any
