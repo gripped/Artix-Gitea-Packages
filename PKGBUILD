@@ -9,7 +9,7 @@
 
 _gemname='bundler'
 pkgname="ruby-${_gemname}"
-pkgver=4.0.2
+pkgver=4.0.3
 pkgrel=1
 pkgdesc="Manages an application's dependencies through its entire life, across many machines, systematically and repeatably"
 arch=('any')
@@ -29,8 +29,8 @@ makedepends=(
 # )
 options=('!emptydirs')
 source=("https://github.com/rubygems/rubygems/archive/bundler-v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('e9ed127cf799e07cfec7868db59ce2bedf5438a028a7551397ebc8d50617d9085a2c51dcd04e89b8f1370cb4b87b213e86f1a29ecb4e528848924e453765c9a2')
-b2sums=('f78f736744a757abf72e22f177b6950de2f040d3be58c6d3e2315ab8747dec01f728d520ec2f2f4ad09fefb64a674319f441fcf50625a689bf269bc1a39f6953')
+sha512sums=('2b9fe9a95e1c0483e6606693296212bc743c1312c06384bca28cbb3d41098094229bd4262d5d9d8670b48000baf8ce6984b008e1d2e4df78cfd8525103e55ba0')
+b2sums=('5bb3ac7997e8c546199fd8b212c86037540ab334fbc04612cd0cc4b26e65f1417000104be8694cd433c7ca0008f2a0fbc5ffed60b73a329fdbe7784583701731')
 
 prepare() {
   cd "rubygems-${_gemname}-v${pkgver}/${_gemname}"
