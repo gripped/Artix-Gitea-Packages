@@ -1,9 +1,9 @@
 ---
-version: 1.1.1-1
+version: 1.1.2-1
 pkgbase:
   name: python-geopandas
   pkgdesc: Python tools for geographic data
-  pkgver: 1.1.1
+  pkgver: 1.1.2
   pkgrel: 1
   url: https://geopandas.org
   arch:
@@ -45,9 +45,9 @@ pkgbase:
     - 'python-geopy: geocoding'
     - 'python-matplotlib: plotting'
   source:
-    - https://github.com/geopandas/geopandas/archive/refs/tags/v1.1.1/python-geopandas-1.1.1.tar.gz
+    - https://github.com/geopandas/geopandas/archive/refs/tags/v1.1.2/python-geopandas-1.1.2.tar.gz
   sha256sums:
-    - 542a62be47cf7931a457b007ae4adcc5f3e20086c0247f166beed3fc2fb86307
+    - 5974ecba6e08d89698d8a85496183d2591b00aa5ce75c08e1bfa8d884f5efc80
 pkgname:
   - name: python-geopandas
 # generated with artixpkg 0.37.4-1-any
