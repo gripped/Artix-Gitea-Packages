@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.24.3-2
+    version: 1.25.0-1
     packages:
-      - openal-1.24.3-2-x86_64.pkg.tar.zst
-      - openal-examples-1.24.3-2-x86_64.pkg.tar.zst
-    debug: []
+      - openal-1.25.0-1-x86_64.pkg.tar.zst
+      - openal-examples-1.25.0-1-x86_64.pkg.tar.zst
+    debug:
+      - openal-debug-1.25.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
