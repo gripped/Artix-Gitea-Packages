@@ -1,0 +1,37 @@
+---
+version: 1.25.0-1
+pkgbase:
+  name: lib32-openal
+  pkgdesc: Cross-platform 3D audio library, software implementation (32-bit)
+  pkgver: 1.25.0
+  pkgrel: 1
+  url: https://github.com/kcat/openal-soft
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - cmake
+    - git
+    - lib32-alsa-lib
+    - lib32-fluidsynth
+    - lib32-jack
+    - lib32-libpulse
+    - lib32-pipewire
+    - lib32-portaudio
+    - ninja
+  depends:
+    - lib32-gcc-libs
+    - lib32-glibc
+    - openal
+  source:
+    - git+https://github.com/kcat/openal-soft#tag=1.25.0
+  b2sums:
+    - 3dff86afc1e8950b82adf27f723166a986699d881ba5cff3069a63f6aecf44a539b38295e59507d13666c4dc52a808c05de2ce1898d54d44348ba80a9e8adbb4
+pkgname:
+  - name: lib32-openal
+    optdepends:
+      - 'lib32-fluidsynth: MIDI rendering'
+    provides:
+      - libopenal.so
+# generated with artixpkg 0.37.4-1-any
