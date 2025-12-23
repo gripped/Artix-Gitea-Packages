@@ -1,10 +1,10 @@
 ---
-version: 2025.1.2-4
+version: 2025.1.2-5
 pkgbase:
   name: python-pycuda
   pkgdesc: Python wrapper for Nvidia CUDA
   pkgver: 2025.1.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://documen.tician.de/pycuda/
   arch:
     - x86_64

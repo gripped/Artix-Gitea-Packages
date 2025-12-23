@@ -6,7 +6,7 @@
 _name=pycuda
 pkgname=python-pycuda
 pkgver=2025.1.2
-pkgrel=4
+pkgrel=5
 pkgdesc="Python wrapper for Nvidia CUDA"
 arch=(x86_64)
 url="https://documen.tician.de/pycuda/"
@@ -93,3 +93,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
+ 
