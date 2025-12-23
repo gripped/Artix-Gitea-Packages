@@ -4,7 +4,7 @@
 
 pkgname=cosmic-greeter
 pkgver=1.0.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='COSMIC greeter for greetd'
 arch=(x86_64)
@@ -60,7 +60,7 @@ package() {
   cd cosmic-greeter
   just rootdir="${pkgdir}" install
   install -Dm 644 cosmic-greeter.toml -t "${pkgdir}"/etc/greetd/
-  install -Dm 644 debian/cosmic-greeter{.service,-daemon.service} -t "${pkgdir}"/usr/lib/systemd/system/
+  install -Dm 644 "${srcdir}"/com.system76.CosmicGreeter -t "${pkgdir}"/usr/share/dbus-1/services/
 }
 
 # vim: ts=2 sw=2 et:

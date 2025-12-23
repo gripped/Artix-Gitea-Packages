@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1:1.0.0-1
+    version: 1:1.0.0-1.1
     packages:
-      - cosmic-greeter-1:1.0.0-1-x86_64.pkg.tar.zst
+      - cosmic-greeter-1:1.0.0-1.1-x86_64.pkg.tar.zst
     debug: []
