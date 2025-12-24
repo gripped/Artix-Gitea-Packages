@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,8 +22,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 14.3.1+r416+g44d5743651c4-2
+    packages:
+      - gcc14-14.3.1+r416+g44d5743651c4-2-x86_64.pkg.tar.zst
+      - gcc14-libs-14.3.1+r416+g44d5743651c4-2-x86_64.pkg.tar.zst
+      - gcc14-fortran-14.3.1+r416+g44d5743651c4-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
