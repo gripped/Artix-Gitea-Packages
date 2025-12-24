@@ -1,0 +1,31 @@
+---
+version: 1.6.0-2
+pkgbase:
+  name: python-bottleneck
+  pkgdesc: Fast NumPy array functions written in Cython
+  pkgver: 1.6.0
+  pkgrel: 2
+  url: https://github.com/kwgoodman/bottleneck
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-versioneer
+  depends:
+    - glibc
+    - python
+    - python-numpy
+  source:
+    - python-bottleneck-1.6.0.tar.gz::https://github.com/kwgoodman/bottleneck/archive/refs/tags/v1.6.0.tar.gz
+  sha256sums:
+    - f3ebfd2342f25e04dab7fac3db4190595fa9c47a2357eff6e18ce2e74a0dcc97
+pkgname:
+  - name: python-bottleneck
+# generated with artixpkg 0.37.4-1-any

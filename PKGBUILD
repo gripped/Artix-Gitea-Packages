@@ -1,27 +1,20 @@
-# Maintainer: Andrzej Giniewicz <gginiu@gmail.com>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Andrzej Giniewicz <gginiu@gmail.com>
 # Contributor: Michael Schubert <mschu.dev at gmail>
 # Contributor: Panagiotis Mavrogiorgos (pmav99) <> (gmail)
 
 pkgname=python-bottleneck
-pkgver=1.4.2
-pkgrel=1
+pkgver=1.6.0
+pkgrel=2
 pkgdesc="Fast NumPy array functions written in Cython"
 arch=(x86_64)
 url="https://github.com/kwgoodman/bottleneck"
 license=(BSD-2-Clause)
-depends=(python-numpy)
+depends=(glibc python python-numpy)
 makedepends=(python-setuptools python-build python-installer python-wheel python-versioneer)
 checkdepends=(python-pytest)
-#source=(${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-source=($pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz) # https://bugs.archlinux.org/task/77683
-sha256sums=('17296943478bdf9b4f9ff46a98713e80419525acfe96aca09fb28cac31aa18fc')
-
-prepare() {
-  cd bottleneck-${pkgver}
-  # Drop build requirement on oldest-supported-numpy
-  sed -i '/oldest-supported-numpy/d' pyproject.toml
-}
+source=($pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz)
+sha256sums=('f3ebfd2342f25e04dab7fac3db4190595fa9c47a2357eff6e18ce2e74a0dcc97')
 
 build() {
   cd bottleneck-${pkgver}
@@ -29,10 +22,9 @@ build() {
 }
 
 check() {
-  cd bottleneck-${pkgver}
   python -m venv --system-site-packages test-env
-  test-env/bin/python setup.py install --skip-build
-  test-env/bin/python /usr/bin/pytest -vv --color=yes --pyargs bottleneck
+  test-env/bin/python -m installer bottleneck-$pkgver/dist/*.whl
+  test-env/bin/python -m pytest -vv --color=yes --pyargs bottleneck
 }
 
 package() {
@@ -40,3 +32,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "${pkgdir}"/usr/share/licenses/${pkgname}/
 }
+ 
