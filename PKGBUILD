@@ -1,10 +1,9 @@
-# Maintainer: kenobi <kenobi@artixlinux.org>
-# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Contributor: hexchian <i at hexchain dot org>
 
 pkgname=crun
-pkgver=1.25.1
-pkgrel=2
+pkgver=1.26
+pkgrel=1
 pkgdesc="A fast and lightweight fully featured OCI runtime and C library for running containers"
 url="https://github.com/containers/crun"
 license=('LGPL-2.1-or-later')
@@ -14,7 +13,7 @@ depends=('yajl' 'libudev' 'libcap' 'libseccomp' 'criu' 'libkrun')
 makedepends=('libtool' 'python' 'go-md2man' 'udev' 'git')
 source=("git+https://github.com/containers/crun.git#tag=$pkgver?signed")
 validpgpkeys=('AC404C1C0BF735C63FF4D562263D6DF2E163E1EA')
-sha256sums=('67cc3ea1c28bcbd978fd0d81c6727598d4ad644fe9bf22f85e502f2c42b135c5')
+sha256sums=('c42d4baf9a8f2e337b3b54f8659357fcd2697ef36f32bf6d41e8d0c91613632c')
 
 build() {
     cd "$pkgname"
