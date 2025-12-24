@@ -3,7 +3,7 @@
 _name='libvcs'
 pkgname="python-${_name}"
 pkgver=0.37.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Lite, typed, pythonic utilities for git, svn, mercurial, etc'
 arch=('any')
 url='https://libvcs.git-pull.com/'
@@ -44,6 +44,10 @@ build() {
 check() {
   cd  "${_name}-${pkgver}"
 
+  export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
+  git config --global user.email "custom_email@testemail.com"
+  git config --global user.name "Your Name"
+
   local _site_packages="$(python -c "import site; print(site.getsitepackages()[0])")"
 
   python -m installer --destdir=test_dir dist/*.whl
@@ -63,3 +67,4 @@ package() {
 }
 
 # vim: tabstop=2 shiftwidth=2 expandtab:
+ 

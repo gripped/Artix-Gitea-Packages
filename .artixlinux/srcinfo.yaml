@@ -1,10 +1,10 @@
 ---
-version: 0.37.0-1
+version: 0.37.0-2
 pkgbase:
   name: python-libvcs
   pkgdesc: Lite, typed, pythonic utilities for git, svn, mercurial, etc
   pkgver: 0.37.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://libvcs.git-pull.com/
   arch:
     - any
