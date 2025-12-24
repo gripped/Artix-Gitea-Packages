@@ -3,7 +3,7 @@
 
 pkgname=python-cfn-lint
 pkgver=1.42.1
-pkgrel=1
+pkgrel=2
 pkgdesc='CloudFormation Linter'
 arch=(any)
 url='https://github.com/aws-cloudformation/cfn-lint'
@@ -65,3 +65,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
+ 
