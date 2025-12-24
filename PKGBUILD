@@ -1,8 +1,8 @@
 # Maintainer:
 
 pkgname=xapp-symbolic-icons
-pkgver=1.0.6
-pkgrel=1.3
+pkgver=1.0.7
+pkgrel=1
 pkgdesc="A set of symbolic icons for Gtk applications and projects"
 arch=(any)
 url="https://github.com/xapp-project/xapp-symbolic-icons"
@@ -12,7 +12,7 @@ depends=()
 makedepends=(git
              meson)
 source=(git+https://github.com/xapp-project/xapp-symbolic-icons#tag=$pkgver)
-sha256sums=('8c1eec8216f9de641de52499940635a8b7fa136410098f83e2d0f1a6b8a96257')
+sha256sums=('a0cd8e79c361b320d97ceaa283e46a58824cfebad54a067a3a72237b7a11d537')
 
 build() {
   meson setup $pkgname build \
@@ -23,4 +23,3 @@ build() {
 package(){
   meson install -C build --destdir="$pkgdir"
 }
-
