@@ -4,7 +4,7 @@
 
 pkgname=python-moto
 pkgver=5.1.18
-pkgrel=1
+pkgrel=2
 pkgdesc='Moto is a library to mock out the boto library.'
 arch=(any)
 url='https://github.com/spulec/moto'
@@ -93,10 +93,6 @@ check() {
     -m 'not requires_docker'
     # Fails for some reason
     --deselect=tests/test_awslambda/test_lambda.py::test_delete_function
-    # Skip broken tests, probably because of CI environment.
-    --deselect tests/test_s3/test_multiple_accounts_server.py::TestAccountIdResolution::test_with_custom_request_header
-    --deselect tests/test_s3/test_server.py::test_s3_server_post_cors_multiple_origins
-    --deselect tests/test_s3/test_s3_select.py
   )
   TZ=UTC pytest tests "${pytest_args[@]}"
 }
@@ -105,3 +101,4 @@ package() {
   cd ${pkgname#python-}
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
