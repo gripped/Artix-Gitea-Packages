@@ -1,9 +1,9 @@
 ---
-version: 1.2.15-1
+version: 1.2.15.1-1
 pkgbase:
   name: lib32-alsa-lib
   pkgdesc: An alternative implementation of Linux sound support (32 bit)
-  pkgver: 1.2.15
+  pkgver: 1.2.15.1
   pkgrel: 1
   url: https://www.alsa-project.org
   arch:
@@ -13,20 +13,20 @@ pkgbase:
   depends:
     - lib32-gcc-libs
     - lib32-glibc
-    - alsa-lib=1.2.15
+    - alsa-lib=1.2.15.1
   provides:
     - libasound.so
     - libatopology.so
   source:
-    - https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.15.tar.bz2
-    - https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.15.tar.bz2.sig
+    - https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.15.1.tar.bz2
+    - https://www.alsa-project.org/files/pub/lib/alsa-lib-1.2.15.1.tar.bz2.sig
   validpgpkeys:
     - F04DF50737AC1A884C4B3D718380596DA6E59C91
   sha512sums:
-    - 6cea9059265ef353a07f1b442004506f0f13883692ea35f03090282ca80db88055f470d2dca5bb54394fef0012711f0e9502d2d0f7fb66b27aa334bffb811559
+    - 36d79055537cf516dd435db56559ee59f3efbbea72ae0dbe5244191cfba4e181ed13100d908eb51bfd3a3be70aa87081df9b56921e7d24c3b3728e4374507236
     - SKIP
   b2sums:
-    - ff5af357cd661df25e024150927e2f34a0e0d34cd1fff7b4af95489f3b2da2021db415bad98fbd33bd5ec862aa889a5bfbb05a216694776bf85eb8c95c66c7de
+    - 96910ecadafdf5bd12d98c765598f06f7dda94cdfb554e972663b77dc19646700962d6984a228a652f0fb3339e8dc44565d3695aa06971e084f5b951793679e1
     - SKIP
 pkgname:
   - name: lib32-alsa-lib
