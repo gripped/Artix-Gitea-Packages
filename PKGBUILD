@@ -1,5 +1,4 @@
-# Maintainer : kenobi <kenobi@artixlinux.org>
-# Contributor: Christian Rebischke <Chris.Rebischke@archlinux.org>
+# Maintainer : Christian Rebischke <Chris.Rebischke@archlinux.org>
 # Contributor: dkorzhevin <dkorzhevin at gmail dot com>
 # Contributor: Thermi <noel [at] familie-kuntze dot de>
 # Contributor: nikicat <develniks at gmail dot com>
@@ -12,7 +11,7 @@
 
 pkgname=strongswan
 pkgver=6.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Open source IPsec implementation'
 url='https://www.strongswan.org'
 license=('GPL-2.0-only')
