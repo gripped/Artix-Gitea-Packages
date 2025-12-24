@@ -1,10 +1,10 @@
 ---
-version: 2.4.0-2
+version: 2.4.1-3
 pkgbase:
   name: gajim
   pkgdesc: Full featured and easy to use XMPP (Jabber) client
-  pkgver: 2.4.0
-  pkgrel: 2
+  pkgver: 2.4.1
+  pkgrel: 3
   url: https://gajim.org/
   arch:
     - any
@@ -64,11 +64,14 @@ pkgbase:
     - 'emoji-font: for emojis support'
     - 'webp-pixbuf-loader: for WebP images support'
   source:
-    - https://dev.gajim.org/gajim/gajim/-/archive/2.4.0/gajim-2.4.0.tar.gz
+    - https://dev.gajim.org/gajim/gajim/-/archive/2.4.1/gajim-2.4.1.tar.gz
+    - fix_missing_gst.patch::https://dev.gajim.org/gajim/gajim/-/commit/e4d3fd7dcce3c3261a13eaaa2b75cb5a2d86130f.patch
   sha512sums:
-    - d8f3b01ab68294bd2515ee5b9c3e7b899df89bf2b61eec0a65f2be5cebead5baefd89d7ddae23db16b041cd8c2521f546cc73a76473d631fe7a038bc87fe0ff0
+    - 9b6806a106b6a66bc3663563e43e38cd33e7d0950edee189f452e3f3a540e90a4ac1890d55bd2bd614a778f451c6514ea84f24f5ca8fb9b7c0104bc6448ff797
+    - 576de87aa477223414eb9db50ec0a23479371605f7f562ed1eb2ab7e642a48841737c03543f8d6d5804d09638325a489bc4efe583f29526fe6e9b19b809ce99f
   b2sums:
-    - 0bd0af98fb34de522e728f1d99a1b73bb360440d2481de6c139dfb41234cfa17fce1bfffa4099aec195bf330ca7e3cc9322e8df96b94535cf541796e7661c592
+    - 6d2817987f0e1af4f03936496ba0d036cc8f16d8f1b38edd53d4761c92f25fcb1744d5b3e1a460e4067e3033b0f7ea6e74f8e805b188aa97b4d36c18edcc1705
+    - 3c64e7d8d8535735c0c004dbccf6a9735768f35734184646440e5024dd0cf088aecc31e789b268ffce838f2b1f481a58ba5a0cae6d402bf769706ef81dbe18de
 pkgname:
   - name: gajim
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
