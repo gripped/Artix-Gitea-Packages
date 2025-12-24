@@ -30,12 +30,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.4.1-1
+    version: 2.4.1-2
     packages:
-      - lib3mf-2.4.1-1-x86_64.pkg.tar.zst
-      - python-lib3mf-2.4.1-1-x86_64.pkg.tar.zst
+      - lib3mf-2.4.1-2-x86_64.pkg.tar.zst
+      - python-lib3mf-2.4.1-2-x86_64.pkg.tar.zst
     debug:
-      - lib3mf-debug-2.4.1-1-x86_64.pkg.tar.zst
+      - lib3mf-debug-2.4.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
