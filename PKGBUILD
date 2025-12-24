@@ -3,8 +3,8 @@
 
 pkgname=python-sqlmodel
 _pkgname=${pkgname#python-}
-pkgver=0.0.27
-pkgrel=2
+pkgver=0.0.29
+pkgrel=1
 pkgdesc="SQL databases in Python, designed for simplicity, compatibility, and robustness"
 url="https://sqlmodel.tiangolo.com"
 license=('MIT')
@@ -13,7 +13,7 @@ depends=('python' 'python-pydantic' 'python-sqlalchemy' 'python-fastapi' 'pre-co
 makedepends=('python-build' 'python-installer' 'python-wheel' 'python-pdm-backend')
 checkdepends=('python-pytest' 'python-httpx' 'python-dirty-equals')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/fastapi/sqlmodel/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('8080ab14626f7dc997617f4564b4ce72cfdf784681c777ce6fdbc4e4f154d785')
+sha256sums=('c88fdf90c7d578ed18b6a6491e8a035492ee04804ede8663a842451f70089beb')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
@@ -37,3 +37,4 @@ package() {
 	python -m installer --destdir="${pkgdir}" dist/*.whl
 	install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
+ 

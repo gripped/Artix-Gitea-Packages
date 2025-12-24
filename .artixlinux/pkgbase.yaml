@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.0.27-2
+    version: 0.0.29-1
     packages:
-      - python-sqlmodel-0.0.27-2-any.pkg.tar.zst
+      - python-sqlmodel-0.0.29-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
