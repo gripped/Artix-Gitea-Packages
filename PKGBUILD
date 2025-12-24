@@ -2,7 +2,7 @@
 
 pkgname=python-numba
 pkgver=0.63.1
-pkgrel=2
+pkgrel=3
 pkgdesc="JIT compiler that translates a subset of Python and NumPy code into fast machine code"
 url="https://numba.pydata.org/"
 arch=(x86_64)
@@ -50,8 +50,14 @@ checkdepends=(
   python-pyyaml
   python-scipy
 )
-source=(git+https://github.com/numba/numba#tag=$pkgver)
-sha256sums=('55b7c20aaa5a3ce79d7011312c7a657c81477d75d110d154ba1be32fe94df07e')
+source=(git+https://github.com/numba/numba#tag=$pkgver
+        numpy-2.4.patch)
+sha256sums=('55b7c20aaa5a3ce79d7011312c7a657c81477d75d110d154ba1be32fe94df07e'
+            'ee0195be5d22683f1546ccd8aac2cb9232e5cc96f9c210f0590dd666701d212a')
+
+prepare() {
+  patch -d numba -p1 < numpy-2.4.patch
+}
 
 build() {
   cd numba
@@ -61,7 +67,7 @@ build() {
 check() {
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer numba/dist/*.whl
-  test-env/bin/python -m numba.runtests -b -v -m 64 -- numba.tests || true # numpy 1.25 support incomplete
+  test-env/bin/python -m numba.runtests -b -v -m 64 -- numba.tests
 }
 
 package() {
@@ -69,3 +75,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
+ 
