@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.2.15-1
+    version: 1.2.15.1-1
     packages:
-      - alsa-ucm-conf-1.2.15-1-any.pkg.tar.zst
+      - alsa-ucm-conf-1.2.15.1-1-any.pkg.tar.zst
     debug:
-      - alsa-ucm-conf-debug-1.2.15-1-any.pkg.tar.zst
+      - alsa-ucm-conf-debug-1.2.15.1-1-any.pkg.tar.zst
   world:
     version: 1.2.14-2
     packages:
