@@ -1,0 +1,42 @@
+---
+version: 1.8.3-4
+pkgbase:
+  name: python-stem
+  pkgdesc: Python controller library for Tor
+  pkgver: 1.8.3
+  pkgrel: 4
+  url: https://stem.torproject.org/
+  arch:
+    - any
+  license:
+    - LGPL-3.0-only
+  checkdepends:
+    - tor
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+    - git
+  depends:
+    - procps-ng
+    - python
+    - python-cryptography
+    - python-pynacl
+  optdepends:
+    - 'tor: tor-server to talk to'
+  provides:
+    - stem
+  replaces:
+    - stem
+  source:
+    - https://github.com/torproject/stem/archive/1.8.3/python-stem-1.8.3.tar.gz
+    - fix-build-cryptography.patch
+    - 9f1fa4ac.patch
+  sha256sums:
+    - 789e591d30b5682ef65dd463ca80bfeb4a8bf69348b77c4733a701449bc837f4
+    - 453877455a4368d445ad2a0011f31500ed553d69a785d7795be33437d004af6e
+    - da98f979ebab18df470b4d94da06626edf203561d853ddad9444d995b693df90
+pkgname:
+  - name: python-stem
+# generated with artixpkg 0.37.4-1-any
