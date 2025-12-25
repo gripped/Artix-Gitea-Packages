@@ -1,0 +1,41 @@
+---
+version: 0.4.3-6
+pkgbase:
+  name: mugshot
+  pkgdesc: User Management Utility for Linux
+  pkgver: 0.4.3
+  pkgrel: 6
+  url: https://github.com/bluesabre/mugshot
+  arch:
+    - any
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-distutils-extra
+    - intltool
+  depends:
+    - gtk3
+    - python
+    - python-pexpect
+    - python-cairo
+    - python-gobject
+    - accountsservice
+    - hicolor-icon-theme
+    - which
+  optdepends:
+    - 'cheese: webcam support'
+    - 'pidgin: update buddy icon'
+    - 'gnome-control-center: collection of stock face icons'
+  source:
+    - git+https://github.com/bluesabre/mugshot.git#tag=mugshot-0.4.3?signed
+  validpgpkeys:
+    - 21D00B5001E804E5DE6E4BF876E6FEEC95FC5E22
+  sha256sums:
+    - 18162cb0bbd5f852612e233cb53975a132635c03533f019a95e9017b473287a2
+pkgname:
+  - name: mugshot
+# generated with artixpkg 0.37.4-1-any

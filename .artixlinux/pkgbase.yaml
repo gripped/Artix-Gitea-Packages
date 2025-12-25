@@ -1,14 +1,7 @@
 ---
 team: galaxy
-pkgbase:
-  name: mugshot
-  version: 0.4.3-5
-  arch:
-    - any
-  pkgname:
-    - mugshot
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,37 +12,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.4.3-6
+    packages:
+      - mugshot-0.4.3-6-any.pkg.tar.zst
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: 0.4.3-5
     packages:
       - mugshot-0.4.3-5-any.pkg.tar.zst
+    debug: []
