@@ -3,7 +3,7 @@
 
 pkgname=kopeninghours
 pkgver=25.12.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for parsing and evaluating OSM opening hours expressions'
 arch=(x86_64)
 url='https://www.kde.org'
