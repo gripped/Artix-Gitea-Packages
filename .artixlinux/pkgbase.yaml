@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2024.10.03-3
+    version: 2024.10.03-4
     packages:
-      - python-sphinx-autobuild-2024.10.03-3-any.pkg.tar.zst
+      - python-sphinx-autobuild-2024.10.03-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

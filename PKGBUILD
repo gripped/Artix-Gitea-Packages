@@ -3,7 +3,7 @@
 _pkgname=sphinx-autobuild
 pkgname=python-$_pkgname
 pkgver=2024.10.03
-pkgrel=3
+pkgrel=4
 pkgdesc='Rebuild Sphinx documentation on changes, with live-reload in the browser'
 arch=('any')
 url='https://github.com/executablebooks/sphinx-autobuild'
@@ -35,3 +35,4 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
+ 
