@@ -1,0 +1,56 @@
+---
+version: 2.3.0-4
+pkgbase:
+  name: python-tpm2-pytss
+  pkgdesc: Python bindings for tpm2-tss
+  pkgver: 2.3.0
+  pkgrel: 4
+  url: https://github.com/tpm2-software/tpm2-pytss
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+    - swtpm
+    - tpm2-tools
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-pkgconfig
+    - python-setuptools
+    - python-setuptools-scm
+    - python-wheel
+    - tpm2-tss
+  depends:
+    - glibc
+    - python
+    - python-asn1crypto
+    - python-cffi
+    - python-cryptography
+    - python-packaging
+    - python-yaml
+  source:
+    - git+https://github.com/tpm2-software/tpm2-pytss.git#tag=2.3.0
+    - adjust-tpm-pt-revision-to-fix-test.patch
+  sha512sums:
+    - ca6013685b5f0e251a691086a48476f87fde6a74166bd499a12105d1bce8648b2b35e4a3c0f49f894b5b5a09b60ecc771b709c75a5bb806d20f4676911f13281
+    - 5be9f4944b080910ef082feb73f408ab3b3443a5aa7a84544016e20cbc5b3ee07276e770005d75d589a4177c34289996ef4d10757e5299af180d004846b49fec
+pkgname:
+  - name: python-tpm2-pytss
+    depends:
+      - glibc
+      - python
+      - python-asn1crypto
+      - python-cffi
+      - python-cryptography
+      - python-packaging
+      - python-yaml
+      - tpm2-tss
+      - libtss2-esys.so
+      - libtss2-fapi.so
+      - libtss2-mu.so
+      - libtss2-rc.so
+      - libtss2-tctildr.so
+# generated with artixpkg 0.37.4-1-any
