@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -45,9 +45,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 6.6.2-2
+    version: 6.6.3-2
     packages:
-      - cinnamon-6.6.2-2-x86_64.pkg.tar.zst
+      - cinnamon-6.6.3-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
