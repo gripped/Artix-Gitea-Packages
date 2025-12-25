@@ -1,10 +1,10 @@
 ---
-version: 1.12.2-8
+version: 1.12.3-2
 pkgbase:
   name: vigra
   pkgdesc: Computer vision library
-  pkgver: 1.12.2
-  pkgrel: 8
+  pkgver: 1.12.3
+  pkgrel: 2
   url: https://ukoethe.github.io/vigra
   arch:
     - x86_64
@@ -28,10 +28,10 @@ pkgbase:
     - python-scipy
     - zlib
   source:
-    - https://github.com/ukoethe/vigra/archive/Version-1-12-2/vigra-Version-1-12-2.tar.gz
+    - https://github.com/ukoethe/vigra/archive/Version-1-12-3/vigra-Version-1-12-3.tar.gz
     - vigra-openexr3.patch
   sha256sums:
-    - e927477a8a0bcdabcaab914e425782f7eba82711dbaca02538dfda79476f6b7e
+    - 04bd9bcf3d5fd694c8fd25d651a56376f2b8bc2623d41b1805fc84ac5bad0512
     - 2572717e39f916c7c463b8f49306b683c5923906be2721f7da181c58b3a2b34b
 pkgname:
   - name: vigra

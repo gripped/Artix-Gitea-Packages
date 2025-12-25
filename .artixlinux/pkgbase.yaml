@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.12.2-8
+    version: 1.12.3-2
     packages:
-      - vigra-1.12.2-8-x86_64.pkg.tar.zst
-      - python-vigra-1.12.2-8-x86_64.pkg.tar.zst
+      - vigra-1.12.3-2-x86_64.pkg.tar.zst
+      - python-vigra-1.12.3-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 1.12.2-6
