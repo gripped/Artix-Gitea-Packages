@@ -3,7 +3,7 @@
 
 pkgname=spglib
 pkgver=2.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc='C library for finding and handling crystal symmetries'
 arch=(x86_64)
 url='https://spglib.readthedocs.io/en/latest/'
