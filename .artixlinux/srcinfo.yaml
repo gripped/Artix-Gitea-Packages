@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-2
+version: 1.1.0-4
 pkgbase:
   name: python-pytest-textual-snapshot
   pkgdesc: A pytest plugin for snapshot testing Textual applications
   pkgver: 1.1.0
-  pkgrel: 2
+  pkgrel: 4
   url: https://github.com/Textualize/pytest-textual-snapshot
   arch:
     - any

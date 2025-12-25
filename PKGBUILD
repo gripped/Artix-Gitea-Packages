@@ -3,7 +3,7 @@
 _base=pytest-textual-snapshot
 pkgname=python-${_base}
 pkgver=1.1.0
-pkgrel=2
+pkgrel=4
 pkgdesc="A pytest plugin for snapshot testing Textual applications"
 arch=(any)
 url="https://github.com/Textualize/${_base}"
@@ -25,6 +25,13 @@ makedepends=(
 source=("git+$url.git#tag=v${pkgver}")
 sha512sums=('0612f85fb5b729581e7ffd388285b5e1bb895a0a7af4548bccf69e662f381e2815fd2ad9ae1e9500fb5308b02f14c01dfb34d7b108cca79515cca43c5e2492a1')
 
+prepare() {
+  cd ${_base}
+  sed -i \
+    's#"resources\/\*\*\/\*"#{ path = "resources\/\*\*\/\*", format = ["sdist", "wheel"] }#' \
+    pyproject.toml
+}
+
 build() {
   cd ${_base}
   python -m build --wheel --no-isolation
@@ -37,3 +44,4 @@ package() {
 }
 
 # vim: ts=2 sw=2 et:
+ 
