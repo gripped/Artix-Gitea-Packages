@@ -1,10 +1,10 @@
 ---
-version: 1.76.0-3
+version: 1.76.0-4
 pkgbase:
   name: grpc
   pkgdesc: High performance, open source, general RPC framework that puts mobile and HTTP/2 first.
   pkgver: 1.76.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://grpc.io
   arch:
     - x86_64
