@@ -3,7 +3,7 @@
 
 pkgname=python-aiobotocore
 pkgver=3.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='asyncio support for botocore library using aiohttp'
 arch=(any)
 url='https://github.com/aio-libs/aiobotocore'
@@ -60,9 +60,6 @@ check() {
     # Fails for some reason.
     --deselect='tests/botocore_tests/unit/test_signers.py::test_signers_generate_db_auth_token[aiohttp-aws_auth0]'
     --deselect='tests/test_sns.py::test_topic_attributes[aiohttp]'
-
-    # Fails in Artix CI
-    --deselect tests/test_basic_s3.py::test_fail_proxy_request
   )
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
@@ -73,3 +70,4 @@ package() {
   cd ${pkgname#python-}
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
