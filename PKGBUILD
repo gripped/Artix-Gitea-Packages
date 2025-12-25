@@ -3,7 +3,7 @@
 
 pkgname=python-blosc2
 pkgver=3.12.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Wrapper for the blosc2 compressor'
 arch=(x86_64)
 url='https://github.com/Blosc/python-blosc2'
@@ -49,7 +49,9 @@ check() {
   python -m venv venv-test --system-site-packages
   ./venv-test/bin/python -m installer dist/*.whl
   # Deselect tests failing since v3.4.0, not sure why
+  # test_expand_dims: sys.getrefcount() behavior changed in Python 3.14
   ./venv-test/bin/python -m pytest \
+    --deselect tests/ndarray/test_resize.py::test_expand_dims \
     --deselect tests/ndarray/test_lazyexpr.py::test_broadcasting \
     --deselect tests/ndarray/test_lazyexpr.py::test_chain_expressions \
     --deselect tests/ndarray/test_lazyexpr.py::test_chain_persistentexpressions \
@@ -58,12 +60,7 @@ check() {
     --deselect tests/ndarray/test_reductions.py::test_save_version1 \
     --deselect tests/ndarray/test_reductions.py::test_save_version2 \
     --deselect tests/ndarray/test_reductions.py::test_save_version3 \
-    --deselect tests/ndarray/test_reductions.py::test_save_version4 \
-    --ignore=tests/ndarray/test_elementwise_funcs.py \
-    --ignore=tests/ndarray/test_lazyexpr.py \
-    --ignore=tests/ndarray/test_linalg.py \
-    --ignore=tests/ndarray/test_setitem.py
-    # the last 4 are Artix CI specific failures. no torch to blame here.
+    --deselect tests/ndarray/test_reductions.py::test_save_version4
 }
 
 package() {
@@ -71,3 +68,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.txt
 }
+ 
