@@ -2,7 +2,7 @@
 
 pkgname=python-sphinx-book-theme
 pkgver=1.1.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A clean book theme for scientific explanations and documentation with Sphinx'
 arch=('any')
 url="https://github.com/executablebooks/sphinx-book-theme"
@@ -45,3 +45,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
+ 
