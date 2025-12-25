@@ -1,10 +1,10 @@
 ---
-version: 2.4.0-1
+version: 2.4.0-2
 pkgbase:
   name: python-hvac
   pkgdesc: Python client for HashiCorp Vault
   pkgver: 2.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://python-hvac.org/
   arch:
     - any

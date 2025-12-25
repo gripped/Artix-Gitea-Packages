@@ -5,7 +5,7 @@
 _pkgname=hvac
 pkgname=python-$_pkgname
 pkgver=2.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Python client for HashiCorp Vault'
 url='https://python-hvac.org/'
 # The license defined at https://github.com/hvac/hvac/blob/main/pyproject.toml#L17
@@ -38,3 +38,4 @@ package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
