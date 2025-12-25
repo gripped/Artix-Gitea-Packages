@@ -1,9 +1,9 @@
 ---
-version: 1.1.53-1
+version: 1.1.54-1
 pkgbase:
   name: openxr
   pkgdesc: An open standard for virtual reality and augmented reality platforms and devices
-  pkgver: 1.1.53
+  pkgver: 1.1.54
   pkgrel: 1
   url: https://www.khronos.org/openxr/
   arch:
@@ -25,12 +25,12 @@ pkgbase:
     - libxrandr
     - libxxf86vm
   source:
-    - https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-1.1.53/OpenXR-SDK-Source-release-1.1.53.tar.gz
-    - https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-1.1.53/OpenXR-SDK-Source-release-1.1.53.tar.gz.asc
+    - https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-1.1.54/OpenXR-SDK-Source-release-1.1.54.tar.gz
+    - https://github.com/KhronosGroup/OpenXR-SDK-Source/releases/download/release-1.1.54/OpenXR-SDK-Source-release-1.1.54.tar.gz.asc
   validpgpkeys:
     - 45207B2B1E53E1F2755FF63CC5A2D593A61DBC9D
   sha512sums:
-    - 8e933f6d3cc4e539eea4faa6208dca9037ee844d6f3abd3acf23d18d725ffee75bb61521ebf2bfd3199611c703ba098379aeca53a6bb867f40887fa7a83a4107
+    - be99658ff3d27bd8674dceb8b5d50bfbbfaf2f3667a8c38d6afb0cdb2701881c945a4c423ce68e4591cc468a9a499803ffb05a9a610f52a1c47fca97d73e13d8
     - SKIP
 pkgname:
   - name: openxr
