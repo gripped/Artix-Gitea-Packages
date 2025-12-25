@@ -1,10 +1,10 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Alexandre Petitjean <alpetitjean at gmail dot com>
 
 pkgname=mopidy
 pkgver=4.0.0a2
-pkgrel=1
+pkgrel=2
 pkgdesc="An extensible music server written in Python"
 arch=('any')
 url="https://www.mopidy.com"
