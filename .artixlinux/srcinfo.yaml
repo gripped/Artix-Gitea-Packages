@@ -1,10 +1,10 @@
 ---
-version: 0.1.0-1
+version: 0.1.0-2
 pkgbase:
   name: python-electrum-aionostr
   pkgdesc: Asyncio nostr client for Python
   pkgver: 0.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/spesmilo/electrum-aionostr
   arch:
     - any
