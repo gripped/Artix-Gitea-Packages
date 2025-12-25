@@ -6,7 +6,7 @@
 pkgname=python-pytables
 _pkgname=PyTables
 pkgver=3.10.2
-pkgrel=6
+pkgrel=7
 pkgdesc="A Python package to manage extremely large amounts of data"
 arch=(x86_64)
 url="https://www.pytables.org"
@@ -70,3 +70,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.txt
 }
+ 
