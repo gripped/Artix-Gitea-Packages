@@ -1,0 +1,39 @@
+---
+version: 3.1.0-3
+pkgbase:
+  name: python-osc-lib
+  pkgdesc: OpenStackClient Library
+  pkgver: 3.1.0
+  pkgrel: 3
+  url: https://docs.openstack.org/osc-lib/latest/
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-oslotest
+    - python-requests-mock
+    - python-stestr
+    - python-testrepository
+    - python-testtools
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-pbr
+    - python-cliff
+    - python-keystoneauth1
+    - python-openstacksdk
+    - python-oslo-i18n
+    - python-oslo-utils
+    - python-requests
+    - python-stevedore
+  source:
+    - git+https://github.com/openstack/osc-lib.git#tag=3.1.0
+    - fix-tests.patch
+  sha512sums:
+    - 528b7120fce3214899db6c5ae171f44e9bc44fd2df3a41323ec44075bbe93327784f48816b96c68d98a9703ea14ff458aa9952df342e3552698909a49a4be7a7
+    - e8525265efe6ff590e0c7be385dd64adc6fa39d27bf68183969069d1a5c01a6aabc65d60594b8590e21d03c0681e81322078a2aa50a85b7c8a341b4f01020610
+pkgname:
+  - name: python-osc-lib
+# generated with artixpkg 0.37.4-1-any
