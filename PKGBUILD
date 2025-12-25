@@ -4,7 +4,7 @@
 _name=catalyst
 pkgname=paraview-catalyst
 pkgver=2.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc="API specification developed for simulations (and other scientific data producers) to analyze and visualize data in situ"
 arch=(x86_64)
 url="https://gitlab.kitware.com/paraview/catalyst"
@@ -43,15 +43,18 @@ EOF
 }
 
 build() {
-  local cmake_flags=(
-    -B build -S $_name-v$pkgver -G Ninja
+  local cmake_options=(
+    -B build
+    -S $_name-v$pkgver
+    -G Ninja
+    -W no-dev
+    -DCMAKE_BUILD_TYPE=None
     -DCMAKE_INSTALL_PREFIX=/usr
     -DCATALYST_USE_MPI=ON
     -DCATALYST_WRAP_PYTHON=ON
     -DCATALYST_WRAP_FORTRAN=ON
-    -Wno-dev
   )
-  cmake "${cmake_flags[@]}"
+  cmake "${cmake_options[@]}"
   cmake --build build
 }
 
