@@ -1,10 +1,10 @@
 ---
-version: 6.6.1-1.7
+version: 6.6.1-2
 pkgbase:
   name: cinnamon-desktop
   pkgdesc: Library with common API for various Cinnamon modules
   pkgver: 6.6.1
-  pkgrel: 1.7
+  pkgrel: 2
   url: https://github.com/linuxmint/cinnamon-desktop
   arch:
     - x86_64
