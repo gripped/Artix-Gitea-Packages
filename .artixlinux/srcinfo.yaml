@@ -1,37 +1,52 @@
 ---
-version: 6.6.0-1
+version: 6.6.0-2
 pkgbase:
   name: cinnamon-control-center
-  pkgdesc: The Control Center for Cinnamon
+  pkgdesc: A collection of configuration plugins used in cinnamon-settings
   pkgver: 6.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/linuxmint/cinnamon-control-center
   arch:
     - x86_64
   license:
-    - GPL
+    - GPL-2.0-or-later
   makedepends:
-    - git
-    - meson
-    - gnome-online-accounts
-    - glib2-devel
-  depends:
-    - cinnamon-settings-daemon
     - cinnamon-menus
+    - git
+    - glib2-devel
+    - meson
+  depends:
+    - at-spi2-core
+    - cairo
+    - cinnamon-desktop
+    - cinnamon-settings-daemon
     - colord
-    - libgnomekbd
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gnome-color-manager
+    - gtk3
+    - hicolor-icon-theme
+    - libcolord
+    - libgudev
     - libmm-glib
+    - libnm
+    - libnma
+    - libwacom
+    - libx11
+    - libxi
     - nm-connection-editor
+    - pango
+    - polkit
+    - upower
   optdepends:
     - 'cinnamon-translations: i18n'
-    - 'gnome-color-manager: for color management tasks'
-    - 'gnome-online-accounts: for the online accounts module'
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/linuxmint/cinnamon-control-center#tag=6.6.0
-  sha256sums:
-    - f3d14e4e30d473f7284314ccdb207bb970c8c8ceed1ac27c8cc7647c5ab04c8c
+    - git+https://github.com/linuxmint/cinnamon-control-center.git#tag=6.6.0
   b2sums:
     - 0521be583a47061f35d76474308269c821e7c5c5e7bcbf6fee7fd6e8b6ff0ef9d0ffd79ed2d397d3af1509ec284e3a2700430a41d2233568aac52b33446e5262
 pkgname:
