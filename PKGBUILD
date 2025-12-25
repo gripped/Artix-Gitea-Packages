@@ -6,7 +6,7 @@
 pkgname=python-pwntools
 _pyname=pwntools
 pkgver=4.15.0
-pkgrel=1
+pkgrel=2
 pkgdesc='CTF framework and exploit development library'
 url='https://github.com/Gallopsled/pwntools'
 arch=('any')
@@ -79,3 +79,4 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
+ 
