@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.0.4-2
+    version: 3.0.4-4
     packages:
-      - python-urwid-3.0.4-2-any.pkg.tar.zst
+      - python-urwid-3.0.4-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
