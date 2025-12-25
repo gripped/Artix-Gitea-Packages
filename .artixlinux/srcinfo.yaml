@@ -1,0 +1,28 @@
+---
+version: 0.4.0-9
+pkgbase:
+  name: python-pytrie
+  pkgdesc: A pure Python implementation of the trie data structure.
+  pkgver: 0.4.0
+  pkgrel: 9
+  url: https://github.com/gsakkis/pytrie/
+  arch:
+    - any
+  license:
+    - BSD
+  checkdepends:
+    - python-tests
+  makedepends:
+    - python-setuptools
+  depends:
+    - python
+    - python-sortedcontainers
+  source:
+    - https://files.pythonhosted.org/packages/source/P/PyTrie/PyTrie-0.4.0.tar.gz
+    - python-3.14.patch
+  sha256sums:
+    - 8f4488f402d3465993fb6b6efa09866849ed8cda7903b50647b7d0342b805379
+    - f0cec45ff6c28e9f7f63fbda6c1563bc155b1ea62ef457d19754662deddd3207
+pkgname:
+  - name: python-pytrie
+# generated with artixpkg 0.37.4-1-any
