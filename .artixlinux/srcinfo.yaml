@@ -1,10 +1,10 @@
 ---
-version: 2024.10.03-4
+version: 2024.10.03-5
 pkgbase:
   name: python-sphinx-autobuild
   pkgdesc: Rebuild Sphinx documentation on changes, with live-reload in the browser
   pkgver: 2024.10.03
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/executablebooks/sphinx-autobuild
   arch:
     - any
