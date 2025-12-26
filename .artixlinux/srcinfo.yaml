@@ -10,6 +10,8 @@ pkgbase:
     - x86_64
   license:
     - ISC
+  makedepends:
+    - execline
   depends:
     - skalibs
   source:

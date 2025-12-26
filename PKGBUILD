@@ -7,6 +7,7 @@ arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-utils/'
 license=('ISC')
 depends=('skalibs')
+makedepends=('execline')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('cc727f70d5e8780433a497acb7cb3100656b3126589ab02e9d2042006c794cf2')
 build() {
