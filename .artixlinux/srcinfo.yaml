@@ -1,0 +1,37 @@
+---
+version: 25.0.0-3
+pkgbase:
+  name: xlibre-input-libinput
+  pkgdesc: XLibre fork of the generic input driver for the X.Org server based on libinput
+  pkgver: 25.0.0
+  pkgrel: 3
+  url: https://github.com/X11Libre/xf86-input-libinput
+  install: xlibre-input-libinput.install
+  arch:
+    - x86_64
+  groups:
+    - xlibre-drivers
+  license:
+    - MIT
+  makedepends:
+    - xlibre-xserver-devel>=25.0
+    - xorgproto
+    - libxi
+    - libx11
+    - libxfont2
+    - meson
+  depends:
+    - xlibre-xserver>=25.0
+    - glibc
+    - libinput
+  provides:
+    - xf86-input-libinput
+  conflicts:
+    - xf86-input-libinput
+  source:
+    - https://github.com/X11Libre/xf86-input-libinput/archive/refs/tags/xlibre-xf86-input-libinput-25.0.0.tar.gz
+  sha256sums:
+    - aa7369a0a3834876ba11659cc663105a1511651d7ac2be2338e5d195283fbd00
+pkgname:
+  - name: xlibre-input-libinput
+# generated with artixpkg 0.37.4-1-any
