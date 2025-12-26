@@ -1,10 +1,10 @@
 ---
-version: 1:2.8.0-2
+version: 1:2.8.0-3
 pkgbase:
   name: python-dnspython
   pkgdesc: A DNS toolkit for Python
   pkgver: 2.8.0
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: http://www.dnspython.org
   arch:
