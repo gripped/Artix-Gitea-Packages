@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mdevd
-pkgver=0.1.7.0
+pkgver=0.1.8.0
 pkgrel=1
 pkgdesc='A Linux kernel event manager daemon (like udevd) that understands the mdev configuration file format and does not fork.'
 arch=('x86_64')
@@ -8,7 +8,7 @@ url='https://skarnet.org/software/mdevd'
 license=('ISC')
 depends=('skalibs' 'execline')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('ec966eec39879f33c785343373021c44f887c836a08fcaf1d63412e3bdbfca32')
+sha256sums=('745243f68b4696ba17ea3b19475e5e0f9283e187f7d6506f7b7c3e64c10d7b38')
 
 build() {
   cd ${pkgname}-${pkgver}
