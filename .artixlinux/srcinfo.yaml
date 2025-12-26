@@ -1,0 +1,39 @@
+---
+version: 4.2.1-2
+pkgbase:
+  name: jrnl
+  pkgdesc: Collect your thoughts and notes without leaving the command line
+  pkgver: 4.2.1
+  pkgrel: 2
+  url: https://jrnl.sh/
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  checkdepends:
+    - python-pytest
+    - python-pytest-bdd
+    - python-pytest-xdist
+    - python-toml
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-colorama
+    - python-cryptography
+    - python-dateutil
+    - python-keyring
+    - python-parsedatetime
+    - python-pyxdg
+    - python-rich
+    - python-ruamel-yaml
+    - python-tzlocal
+  source:
+    - https://github.com/jrnl-org/jrnl/archive/v4.2.1/jrnl-4.2.1.tar.gz
+  sha512sums:
+    - dd2a1aebb336f1457415bbb43a8338357db3c70a1f021486af4d8e567c6384f3e8c0c815e7bf713db9d0d61cf230d67528d4d03ce1aec692b7a8c963728c2ce8
+pkgname:
+  - name: jrnl
+# generated with artixpkg 0.37.4-1-any
