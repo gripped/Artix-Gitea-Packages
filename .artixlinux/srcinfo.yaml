@@ -1,10 +1,10 @@
 ---
-version: 2.0.0-4
+version: 2.0.0-5
 pkgbase:
   name: python-sphinxcontrib-qthelp
   pkgdesc: Sphinx extension which outputs QtHelp document
   pkgver: 2.0.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/sphinx-doc/sphinxcontrib-qthelp
   arch:
     - any
