@@ -1,10 +1,10 @@
 ---
-version: 3.21.0-3
+version: 3.21.0-4
 pkgbase:
   name: python-zipp
   pkgdesc: Pathlib-compatible object wrapper for zip files
   pkgver: 3.21.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/jaraco/zipp
   arch:
     - any
