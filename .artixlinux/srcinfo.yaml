@@ -1,10 +1,10 @@
 ---
-version: 2.9.0-7
+version: 2.9.0-8
 pkgbase:
   name: python-dateutil
   pkgdesc: Provides powerful extensions to the standard datetime module
   pkgver: 2.9.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/dateutil/dateutil
   arch:
     - any
