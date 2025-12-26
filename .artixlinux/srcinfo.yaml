@@ -1,0 +1,31 @@
+---
+version: 25.0.0-3
+pkgbase:
+  name: xlibre-video-r128
+  pkgdesc: XLibre fork of r128 video driver
+  pkgver: 25.0.0
+  pkgrel: 3
+  url: https://github.com/X11Libre/xf86-video-r128
+  arch:
+    - x86_64
+  groups:
+    - xlibre-drivers
+  license:
+    - X11
+  makedepends:
+    - xlibre-xserver-devel>=25.0
+    - xorgproto
+  depends:
+    - xlibre-xserver>=25.0
+    - glibc
+  provides:
+    - xf86-video-r128
+  conflicts:
+    - xf86-video-r128
+  source:
+    - https://github.com/X11Libre/xf86-video-r128/archive/refs/tags/xlibre-xf86-video-r128-25.0.0.tar.gz
+  sha256sums:
+    - 5b8eea711b3ee12aff67401bb1a7d0546bc8c1466571998a47eed5c1b9c154eb
+pkgname:
+  - name: xlibre-video-r128
+# generated with artixpkg 0.37.4-1-any
