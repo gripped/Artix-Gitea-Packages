@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.16.1-9
+    version: 0.16.1-10
     packages:
-      - python-ubjson-0.16.1-9-x86_64.pkg.tar.zst
+      - python-ubjson-0.16.1-10-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
