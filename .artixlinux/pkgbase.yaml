@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.8.0-2
+    version: 4.8.0-3
     packages:
-      - python-cliff-4.8.0-2-any.pkg.tar.zst
+      - python-cliff-4.8.0-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

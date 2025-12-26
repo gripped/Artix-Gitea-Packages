@@ -4,7 +4,7 @@
 pkgname=python-cliff
 pkgver=4.8.0
 _commit=4826a43b991fcb1c4e24d129c800f22f4dc52fa1
-pkgrel=2
+pkgrel=3
 pkgdesc="Command Line Interface Formulation Framework"
 arch=('any')
 url="https://docs.openstack.org/cliff/latest/"
@@ -13,8 +13,15 @@ depends=('python-autopage' 'python-cmd2' 'python-prettytable' 'python-stevedore'
 makedepends=('git' 'python-setuptools' 'python-pbr')
 checkdepends=('python-stestr' 'python-sphinx' 'python-testscenarios')
 options=('!emptydirs')
-source=("git+https://github.com/openstack/cliff.git#commit=$_commit")
-sha512sums=('c6d63c3ded4008e4215b26fab8e2cd6d686b9712c2021960e33fd58cdbefe3a5ad12f2934d8f14e3a86b54e68d44359a5bd0a17e6a48aeec12ecbd7da56ada61')
+source=("git+https://github.com/openstack/cliff.git#commit=$_commit"
+         python-3.14.patch)
+sha512sums=('c6d63c3ded4008e4215b26fab8e2cd6d686b9712c2021960e33fd58cdbefe3a5ad12f2934d8f14e3a86b54e68d44359a5bd0a17e6a48aeec12ecbd7da56ada61'
+            '1e54f20b56e495177e42a37b74d4e495f3bb9dbb91d2662dcdafd87464214c466ebb8ba1be32313e4b1312dc26b5ea59d8e99f5e227422bac03231310e42ddbf')
+
+prepare() {
+  cd cliff
+  patch -p1 -i ../python-3.14.patch # Fix tests
+}
 
 build() {
   cd cliff
