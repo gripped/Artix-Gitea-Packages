@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.0-2
+    version: 6.1-1
     packages:
-      - python-zope-testing-6.0-2-any.pkg.tar.zst
+      - python-zope-testing-6.1-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
