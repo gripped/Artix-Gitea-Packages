@@ -1,10 +1,10 @@
 ---
-version: 6.7.0-4
+version: 6.7.0-5
 pkgbase:
   name: python-multidict
   pkgdesc: Asyncio-based multidict implementation for Python
   pkgver: 6.7.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/aio-libs/multidict
   arch:
     - x86_64

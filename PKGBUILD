@@ -4,7 +4,7 @@
 
 pkgname=python-multidict
 pkgver=6.7.0
-pkgrel=4
+pkgrel=5
 pkgdesc='Asyncio-based multidict implementation for Python'
 arch=('x86_64')
 url='https://github.com/aio-libs/multidict'
@@ -50,4 +50,3 @@ package() {
 }
 
 # vim: ts=2 sw=2 et:
- 
