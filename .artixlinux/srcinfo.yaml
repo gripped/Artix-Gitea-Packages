@@ -1,10 +1,10 @@
 ---
-version: 7.45.7-2
+version: 7.45.7-3
 pkgbase:
   name: python-pycurl
   pkgdesc: A Python 3.x interface to libcurl
   pkgver: 7.45.7
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/pycurl/pycurl
   arch:
     - x86_64
