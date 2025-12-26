@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 25.10.2-2
+    version: 25.10.2-3
     packages:
-      - python-autobahn-25.10.2-2-x86_64.pkg.tar.zst
+      - python-autobahn-25.10.2-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
