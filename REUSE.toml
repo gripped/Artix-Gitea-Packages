@@ -23,7 +23,8 @@ SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
 path = [
-    "python-typing_inspect-support-py39-generic-types.patch",
+    "5bc59c61.patch",
+    "ebc6f92d.patch",
 ]
 SPDX-FileCopyrightText = "python-typing_inspect contributors"
 SPDX-License-Identifier = "MIT"

@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.9.0-5
+    version: 0.9.0-6
     packages:
-      - python-typing_inspect-0.9.0-5-any.pkg.tar.zst
+      - python-typing_inspect-0.9.0-6-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
