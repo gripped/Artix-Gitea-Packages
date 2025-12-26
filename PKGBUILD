@@ -11,7 +11,7 @@ pkgname=(
   python-libcamera
 )
 pkgver=0.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A complex camera support library for Linux, Android, and ChromeOS"
 arch=(x86_64)
 url="https://libcamera.org/"
@@ -73,6 +73,18 @@ build() {
 
   artix-meson $pkgbase build "${meson_options[@]}"
   meson compile -C build
+}
+
+check() {
+  # Skip tests failing due to requiring CLONE_NEWUSER/CLONE_NEWNET
+  local tests=$(
+    meson test -C build --list | awk '{print $3}' \
+      | grep -v single_stream_test \
+      | grep -v multi_stream_test \
+      | grep -v memory_lifetime_test \
+  )
+  # shellcheck disable=SC2068
+  meson test -C build ${tests[@]}
 }
 
 package_libcamera() {
