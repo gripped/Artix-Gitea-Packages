@@ -1,9 +1,9 @@
 ---
-version: 0.25.10-1
+version: 0.25.10-3
 pkgbase:
   name: tree-sitter
   pkgver: 0.25.10
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/tree-sitter/tree-sitter
   arch:
     - x86_64

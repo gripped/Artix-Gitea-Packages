@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.25.10-3
+    packages:
+      - tree-sitter-0.25.10-3-x86_64.pkg.tar.zst
+      - tree-sitter-cli-0.25.10-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
