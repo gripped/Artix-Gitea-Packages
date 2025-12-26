@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.1.0-10
+    version: 3.2.0-2
     packages:
-      - python-intervaltree-3.1.0-10-any.pkg.tar.zst
+      - python-intervaltree-3.2.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
