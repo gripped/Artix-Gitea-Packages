@@ -2,7 +2,7 @@
 
 pkgname=python-curio
 pkgver=1.6
-pkgrel=6
+pkgrel=7
 pkgdesc='Concurrent I/O'
 arch=(any)
 url=https://github.com/dabeaz/curio
@@ -46,7 +46,8 @@ build() {
 
 check() {
   cd curio
-  PYTHONPATH=$PWD/build/lib pytest
+  PYTHONPATH=$PWD/build/lib pytest \
+    -k 'not test_cpu' # https://github.com/dabeaz/curio/issues/368
 }
 
 package() {
