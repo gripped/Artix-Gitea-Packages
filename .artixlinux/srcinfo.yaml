@@ -1,9 +1,9 @@
 ---
-version: 0.0.29-1
+version: 0.0.30-1
 pkgbase:
   name: python-sqlmodel
   pkgdesc: SQL databases in Python, designed for simplicity, compatibility, and robustness
-  pkgver: 0.0.29
+  pkgver: 0.0.30
   pkgrel: 1
   url: https://sqlmodel.tiangolo.com
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - python-fastapi
     - pre-commit
   source:
-    - python-sqlmodel-0.0.29.tar.gz::https://github.com/fastapi/sqlmodel/archive/refs/tags/0.0.29.tar.gz
+    - python-sqlmodel-0.0.30.tar.gz::https://github.com/fastapi/sqlmodel/archive/refs/tags/0.0.30.tar.gz
   sha256sums:
-    - c88fdf90c7d578ed18b6a6491e8a035492ee04804ede8663a842451f70089beb
+    - 29f9c1120a5f0f493e647dc71c20a98b2364aaba71beba3f733f7fdfe3d1e37f
 pkgname:
   - name: python-sqlmodel
 # generated with artixpkg 0.37.4-1-any
