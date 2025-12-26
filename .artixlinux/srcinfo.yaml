@@ -1,0 +1,55 @@
+---
+version: 3.25-8
+pkgbase:
+  name: bullet
+  pkgdesc: A 3D Collision Detection and Rigid Body Dynamics Library for games and animation
+  pkgver: 3.25
+  pkgrel: 8
+  url: http://www.bulletphysics.com/Bullet/
+  arch:
+    - x86_64
+  license:
+    - custom:zlib
+  makedepends:
+    - cmake
+    - doxygen
+    - graphviz
+    - ttf-dejavu
+    - mesa
+    - glu
+    - python
+    - python-numpy
+    - python-setuptools
+    - ninja
+  source:
+    - bullet-3.25.tar.gz::https://github.com/bulletphysics/bullet3/archive/refs/tags/3.25.tar.gz
+    - bullet3_examplebrowser.sh
+  sha512sums:
+    - 7086e5fcf69635801bb311261173cb8d173b712ca1bd78be03df48fad884674e85512861190e45a1a62d5627aaad65cde08c175c44a3be9afa410d3dfd5358d4
+    - 8741ad94b6c46c226d89aebc8ab06d8a11bac3c04d3f0a2bf7a7524792a3375aa7bf7d295410b16fbeb4c348a31057b4570acdebe9bbaea251f44daca8d9fe81
+pkgname:
+  - name: bullet
+    optdepends:
+      - 'glu: for the example browser'
+      - 'python: python bindings'
+      - 'python-numpy: python bindings'
+      - 'bullet-docs: documentation'
+  - name: bullet-dp
+    pkgdesc: A 3D Collision Detection and Rigid Body Dynamics Library for games and animation (double precision)
+    optdepends:
+      - 'glu: for the example browser'
+      - 'python: python bindings'
+      - 'python-numpy: python bindings'
+      - 'bullet-docs: documentation'
+    provides:
+      - bullet
+    conflicts:
+      - bullet
+  - name: bullet-docs
+    pkgdesc: Documentation for bullet
+  - name: python-pybullet
+    pkgdesc: Bullet Python bindings
+    depends:
+      - bullet
+      - gcc-libs
+# generated with artixpkg 0.37.4-1-any
