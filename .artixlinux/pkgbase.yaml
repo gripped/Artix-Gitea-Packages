@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.4.6-3
+    version: 2.4.6-4
     packages:
-      - python-pdm-backend-2.4.6-3-any.pkg.tar.zst
+      - python-pdm-backend-2.4.6-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

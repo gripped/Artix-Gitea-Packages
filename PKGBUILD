@@ -5,7 +5,7 @@ _devendored=1
 _name=pdm-backend
 pkgname=python-pdm-backend
 pkgver=2.4.6
-pkgrel=3
+pkgrel=4
 pkgdesc="The build backend used by PDM that supports latest packaging standards"
 arch=(any)
 url="https://github.com/pdm-project/pdm-backend"
@@ -82,4 +82,3 @@ package() {
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
- 

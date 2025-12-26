@@ -1,10 +1,10 @@
 ---
-version: 2.4.6-3
+version: 2.4.6-4
 pkgbase:
   name: python-pdm-backend
   pkgdesc: The build backend used by PDM that supports latest packaging standards
   pkgver: 2.4.6
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/pdm-project/pdm-backend
   arch:
     - any
