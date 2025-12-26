@@ -1,0 +1,31 @@
+---
+version: 25.0.0-3
+pkgbase:
+  name: xlibre-video-geode
+  pkgdesc: XLibre fork of geode video driver
+  pkgver: 25.0.0
+  pkgrel: 3
+  url: https://github.com/X11Libre/xf86-video-geode
+  arch:
+    - x86_64
+  groups:
+    - xlibre-drivers
+  license:
+    - X11
+  makedepends:
+    - xlibre-xserver-devel>=25.0
+    - xorgproto
+  depends:
+    - xlibre-xserver>=25.0
+    - glibc
+  provides:
+    - xf86-video-geode
+  conflicts:
+    - xf86-video-geode
+  source:
+    - https://github.com/X11Libre/xf86-video-geode/archive/refs/tags/xlibre-xf86-video-geode-25.0.0.tar.gz
+  sha256sums:
+    - 860696a73edf0bb17f0a823f9b7d2b8d4139ffd19b471aea1708489155c9d072
+pkgname:
+  - name: xlibre-video-geode
+# generated with artixpkg 0.37.4-1-any
