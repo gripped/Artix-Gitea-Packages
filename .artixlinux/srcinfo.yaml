@@ -1,10 +1,10 @@
 ---
-version: 4.0.0-3
+version: 4.0.0-4
 pkgbase:
   name: python-jaraco.text
   pkgdesc: Module for text manipulation
   pkgver: 4.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/jaraco/jaraco.text
   arch:
     - any
