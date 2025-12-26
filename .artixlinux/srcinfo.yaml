@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-3
+version: 25.0.0-4
 pkgbase:
   name: xlibre-video-ati
   pkgdesc: XLibre fork of X.Org ati video driver
   pkgver: 25.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/X11Libre/xf86-video-ati
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
   depends:
     - xlibre-xserver>=25.0
     - glibc
-    - libudev
     - mesa
     - libpciaccess
     - libdrm
