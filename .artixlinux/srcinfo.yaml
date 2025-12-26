@@ -1,10 +1,10 @@
 ---
-version: 7.57-2
+version: 7.57-1
 pkgbase:
   name: reaper
   pkgdesc: A complete digital audio production application for computers
   pkgver: 7.57
-  pkgrel: 2
+  pkgrel: 1
   url: https://reaper.fm
   arch:
     - aarch64
