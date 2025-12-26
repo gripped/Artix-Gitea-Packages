@@ -1,10 +1,10 @@
 ---
-version: 3.0.0-4
+version: 3.0.0-5
 pkgbase:
   name: python-debtcollector
   pkgdesc: A collection of Python deprecation patterns and strategies that help you collect your technical debt in a non-destructive manner.
   pkgver: 3.0.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://docs.openstack.org/developer/debtcollector
   arch:
     - any
