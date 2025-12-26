@@ -5,7 +5,7 @@ pkgname=python-mako
 _pkgname=${pkgname#python-}
 pkgver=1.3.10
 _pkgver=rel_${pkgver//./_}
-pkgrel=3
+pkgrel=4
 pkgdesc="A template library written in Python"
 arch=(any)
 url="https://github.com/sqlalchemy/mako"
@@ -53,4 +53,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
- 
