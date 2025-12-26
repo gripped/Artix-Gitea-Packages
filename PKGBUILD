@@ -5,7 +5,7 @@
 _name=fastapi
 pkgname=python-$_name
 pkgver=0.127.0
-pkgrel=2
+pkgrel=3
 pkgdesc='FastAPI framework, high performance, easy to learn, fast to code, ready for production'
 arch=(any)
 url="https://github.com/fastapi/fastapi"
@@ -105,4 +105,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
- 
