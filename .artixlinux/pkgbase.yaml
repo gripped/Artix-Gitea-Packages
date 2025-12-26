@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 20.35.4-2
+    version: 20.35.4-3
     packages:
-      - python-virtualenv-20.35.4-2-any.pkg.tar.zst
+      - python-virtualenv-20.35.4-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

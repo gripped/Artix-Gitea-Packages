@@ -5,7 +5,7 @@
 
 pkgname=python-virtualenv
 pkgver=20.35.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Virtual Python Environment builder'
 arch=('any')
 url='https://virtualenv.pypa.io'
@@ -99,4 +99,3 @@ package() {
   ln -s "$site_packages/${pkgname#python-}-$pkgver.dist-info/licenses/LICENSE" \
     "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-
