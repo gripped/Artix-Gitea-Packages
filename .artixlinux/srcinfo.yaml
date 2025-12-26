@@ -1,0 +1,33 @@
+---
+version: 25.0.0-3
+pkgbase:
+  name: xlibre-video-nouveau
+  pkgdesc: XLibre fork of X.Org Open Source 3D acceleration driver for nVidia cards
+  pkgver: 25.0.0
+  pkgrel: 3
+  url: https://github.com/X11Libre/xf86-video-nouveau
+  arch:
+    - x86_64
+  groups:
+    - xlibre-drivers
+  license:
+    - MIT
+  makedepends:
+    - xlibre-xserver-devel>=25.0
+    - xorgproto
+  depends:
+    - xlibre-xserver>=25.0
+    - glibc
+    - mesa
+    - libdrm
+  provides:
+    - xf86-video-nouveau
+  conflicts:
+    - xf86-video-nouveau
+  source:
+    - https://github.com/X11Libre/xf86-video-nouveau/archive/refs/tags/xlibre-xf86-video-nouveau-25.0.0.tar.gz
+  sha256sums:
+    - bc56f320ba6ce4d068351ac259cdb87571a05e03402afad02352bcb62be7b040
+pkgname:
+  - name: xlibre-video-nouveau
+# generated with artixpkg 0.37.4-1-any
