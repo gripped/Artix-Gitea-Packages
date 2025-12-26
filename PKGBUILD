@@ -2,7 +2,7 @@
 
 pkgname=xlibre-input-vmmouse
 pkgver=25.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="XLibre fork of X.Org VMWare Mouse input driver"
 arch=(x86_64)
 license=('custom')
@@ -14,7 +14,6 @@ conflicts=("${_pkgname}")
 provides=("${_pkgname}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
-depends+=('libelogind')
 
 build() {
   cd ${_pkgname}-xlibre-${_pkgname}-${pkgver}
