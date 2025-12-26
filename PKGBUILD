@@ -4,7 +4,7 @@
 pkgname=python-aws-sam-translator
 _pkgname=serverless-application-model
 pkgver=1.105.0
-pkgrel=2
+pkgrel=3
 pkgdesc='AWS Serverless Application Model (AWS SAM) prescribes rules for expressing Serverless applications on AWS'
 arch=(any)
 url='https://github.com/aws/serverless-application-model'
@@ -61,4 +61,3 @@ package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
- 

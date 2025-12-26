@@ -1,10 +1,10 @@
 ---
-version: 1.105.0-2
+version: 1.105.0-3
 pkgbase:
   name: python-aws-sam-translator
   pkgdesc: AWS Serverless Application Model (AWS SAM) prescribes rules for expressing Serverless applications on AWS
   pkgver: 1.105.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/aws/serverless-application-model
   arch:
     - any
