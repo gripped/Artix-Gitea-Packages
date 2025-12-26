@@ -13,7 +13,6 @@ conflicts=(resolvconf)
 depends=(bash)
 makedepends=(
   git
-  systemd
 )
 backup=(etc/resolvconf.conf)
 source=("git+https://github.com/NetworkConfiguration/openresolv?signed#tag=v$pkgver")

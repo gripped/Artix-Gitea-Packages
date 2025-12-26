@@ -12,7 +12,6 @@ pkgbase:
     - BSD-2-Clause
   makedepends:
     - git
-    - systemd
   depends:
     - bash
   provides:
