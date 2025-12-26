@@ -1,10 +1,10 @@
 ---
-version: 3.23.0-2
+version: 3.23.0-3
 pkgbase:
   name: python-aiogram
   pkgdesc: A modern and fully asynchronous framework for Telegram Bot API
   pkgver: 3.23.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/aiogram/aiogram
   arch:
     - any
