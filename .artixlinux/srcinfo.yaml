@@ -1,10 +1,10 @@
 ---
-version: 2.4.2-2
+version: 2.4.2-3
 pkgbase:
   name: ansible-runner
   pkgdesc: A tool and python library that helps when interfacing with Ansible
   pkgver: 2.4.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/ansible/ansible-runner
   arch:
     - any
