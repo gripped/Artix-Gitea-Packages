@@ -1,0 +1,35 @@
+---
+version: 1.1.0-2
+pkgbase:
+  name: usort
+  pkgdesc: Safe, minimal import sorting for Python projects
+  pkgver: 1.1.0
+  pkgrel: 2
+  url: https://github.com/facebookexperimental/usort
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-volatile
+  makedepends:
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python-attrs
+    - python-click
+    - python-libcst
+    - python-moreorless
+    - python-stdlibs
+    - python-toml
+    - python-trailrunner
+  source:
+    - usort-1.1.0.tar.gz::https://github.com/facebookexperimental/usort/archive/v1.1.0.tar.gz
+  sha512sums:
+    - 56737b154b6c35a8a11c1ba5631647d44f26073f8064cf17c5a2a125412a5cc6339b24f6738d2fddefe1a9c80ae2f19d26e0d74b8118c36151e0d6c173f531fa
+pkgname:
+  - name: usort
+# generated with artixpkg 0.37.4-1-any
