@@ -1,10 +1,10 @@
 ---
-version: 2.58.0-1
+version: 2.58.0-2
 pkgbase:
   name: pyatspi
   pkgdesc: Python bindings for D-Bus AT-SPI
   pkgver: 2.58.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/pyatspi2
   arch:
     - any
