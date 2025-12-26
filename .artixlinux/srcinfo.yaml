@@ -1,0 +1,47 @@
+---
+version: 6.5.1-2
+pkgbase:
+  name: sonic-silver-theme
+  pkgdesc: Highly customizable binary Window Decoration, Application Style and Global Theme plugin for the Sonic Desktop.
+  pkgver: 6.5.1
+  pkgrel: 2
+  url: https://github.com/Sonic-DE/silver-theme
+  arch:
+    - x86_64
+  groups:
+    - sonicde
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+  depends:
+    - breeze-icons
+    - hicolor-icon-theme
+    - frameworkintegration
+    - gcc-libs
+    - glibc
+    - kcmutils
+    - kcolorscheme
+    - kconfig
+    - kcoreaddons
+    - kdecoration
+    - kguiaddons
+    - ki18n
+    - kiconthemes
+    - kirigami
+    - kwidgetsaddons
+    - kwindowsystem
+    - qt6-base
+    - qt6-declarative
+    - qt6-svg
+    - xdg-utils
+  replaces:
+    - classik
+    - klassy
+  source:
+    - silver-theme-6.5.1.tar.gz::https://github.com/Sonic-DE/silver-theme/archive/refs/tags/6.5.1.tar.gz
+  sha256sums:
+    - c99c93f5e80fdc02c5de7922eeeef395b5bb7ff83d585686f5ad30bd953c94e4
+pkgname:
+  - name: sonic-silver-theme
+# generated with artixpkg 0.37.4-1-any
