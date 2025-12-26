@@ -1,10 +1,10 @@
 ---
-version: 3.4.2-2
+version: 3.4.2-3
 pkgbase:
   name: python-jsonpickle
   pkgdesc: Python library for serializing any arbitrary object graph into JSON
   pkgver: 3.4.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://jsonpickle.github.io/
   arch:
     - any
