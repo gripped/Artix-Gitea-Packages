@@ -7,7 +7,7 @@
 
 pkgname=python-pyparsing
 pkgver=3.3.1
-pkgrel=2
+pkgrel=3
 pkgdesc='General parsing module for Python'
 arch=(any)
 url='https://github.com/pyparsing/pyparsing/'
@@ -53,4 +53,3 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
- 
