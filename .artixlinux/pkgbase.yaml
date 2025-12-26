@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 6.148.7-2
+    version: 6.148.8-1
     packages:
-      - python-hypothesis-6.148.7-2-any.pkg.tar.zst
+      - python-hypothesis-6.148.8-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

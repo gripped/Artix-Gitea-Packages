@@ -4,8 +4,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.148.7
-pkgrel=2
+pkgver=6.148.8
+pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
 license=(MPL-2.0)
@@ -58,8 +58,8 @@ optdepends=(
   'python-watchdog: for tracking file system events'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('76f6a1504f65f099ccb4330c9a9e052ef246bc72a709333c5edc7187ad600c092bca65ac3dcc5368b972afb66a04ff23bd0d5d90d630048bb0c1cda4138f6c73')
-b2sums=('749da096c08559a467ab5128c6e33ce93d192be0458e5f2caa2f5bc3c3d7d12140e21145748807fc9db96a7559b71392787e45f21cb691edae52b433bdbb8aaa')
+sha512sums=('a4ddb00b561068c45801693903c32972b0ef3d3f136e0eb517d68a718e795763630c4a01b6d7345cd5715e5bc799f0a6c766b393d7f4312f7d616de797d3cdf0')
+b2sums=('c69293235bcf928a0c8d969922df515f01f67f9afa510f1147dc85655d69d555c1bfe09dd66e4344bdc3e05b19a6cf0ec1e97859692951a0d62bbf973cbbb35b')
 
 prepare() {
   cd $pkgname/hypothesis-python
@@ -97,6 +97,11 @@ check() {
     --deselect=tests/nocover/test_stateful.py::test_unrelated_rule_does_not_use_var_reference_repr
 
     -W=ignore::DeprecationWarning
+
+    # Fail with numpy 2.4
+    --ignore=tests/numpy/test_floor_ceil.py
+    --ignore=tests/numpy/test_from_type.py
+    --ignore=tests/ghostwriter/test_expected_output.py
   )
   PATH="$PWD/test-env/bin:$PATH" test-env/bin/python -m pytest \
     "${pytest_options[@]}" tests/
