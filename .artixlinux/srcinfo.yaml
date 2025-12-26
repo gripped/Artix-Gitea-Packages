@@ -1,0 +1,59 @@
+---
+version: 1.4.1-13
+pkgbase:
+  name: onboard
+  pkgdesc: On-screen keyboard useful on tablet PCs or for mobility impaired users
+  pkgver: 1.4.1
+  pkgrel: 13
+  url: https://launchpad.net/onboard
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - python-build
+    - python-distutils-extra
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hunspell
+    - iso-codes
+    - libcanberra
+    - libx11
+    - libxi
+    - libxkbfile
+    - libxtst
+    - pango
+    - python
+    - python-cairo
+    - python-dbus
+    - python-gobject
+    - systemd-libs
+  optdepends:
+    - 'mousetweaks: hover click with mouse'
+  source:
+    - https://launchpad.net/onboard/1.4/1.4.1/+download/onboard-1.4.1.tar.gz
+    - https://launchpad.net/onboard/1.4/1.4.1/+download/onboard-1.4.1.tar.gz.asc
+    - onboard-python-3-12.patch
+    - onboard-thread-state.patch
+    - onboard-replace-custom-bool-typedef-with-stdbool-header.patch
+  validpgpkeys:
+    - BCFE9B5A71A0B0F860521CF963087078B67DCFED
+  b2sums:
+    - 9833cda373b4df28a8e4a0c9ae81069633903ec04ad22208390f3cc21b5540ae225aae553ef1b934832b6ba7ab1ba76e6e1c2c5d10cdc16b06dc2f5ac8d152b8
+    - SKIP
+    - e5f237344241a3e077e016205dd3a7dba25f7c6f59941c46f663ba32885f89bc982db1bc84799faad44ca6e1da94564a617c7c8179b687756e1f10a1e26f2439
+    - 95a215f3173ef1798176394005c8d5c82c027689072e508271b70f07b28b653afb6bce2f129233e3adbe88e1e86b3afdee246c002a0bf1cbce8ff0b2885a8fc6
+    - ccc05356c5b2000fe851a37dc8780b0a01e0ae0cb7a8ee3ebd6e3ea8f1225e0d37216c9c0b8fab5397ca5e33c07b6ad0ce5f8cb2145e86499254305cfd19d591
+pkgname:
+  - name: onboard
+# generated with artixpkg 0.37.4-1-any
