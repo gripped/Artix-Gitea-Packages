@@ -1,10 +1,10 @@
 ---
-version: 2.1.0-4
+version: 2.1.0-5
 pkgbase:
   name: python-pyhamcrest
   pkgdesc: Hamcrest framework for matcher objects
   pkgver: 2.1.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/hamcrest/PyHamcrest
   arch:
     - any
