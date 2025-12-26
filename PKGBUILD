@@ -2,7 +2,7 @@
 
 pkgname=python-importlib-metadata
 pkgver=8.7.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Read metadata from Python packages"
 url="https://importlib-metadata.readthedocs.io"
 license=(Apache-2.0)
@@ -60,4 +60,3 @@ package() {
 
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
- 
