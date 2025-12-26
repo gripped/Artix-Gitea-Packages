@@ -1,0 +1,43 @@
+---
+version: 2.2-2
+pkgbase:
+  name: intel-gpu-tools
+  pkgdesc: Tools for development and testing of the Intel DRM driver
+  pkgver: 2.2
+  pkgrel: 2
+  url: https://gitlab.freedesktop.org/drm/igt-gpu-tools
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - python-docutils
+    - swig
+    - xorg-util-macros
+    - xorgproto
+    - meson
+  depends:
+    - libdrm
+    - libpciaccess
+    - cairo
+    - python
+    - xorg-xrandr
+    - libprocps
+    - kmod
+    - libxv
+    - libunwind
+    - peg
+    - systemd
+  source:
+    - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.2.tar.xz
+    - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.2.tar.xz.sig
+  validpgpkeys:
+    - 775965B85650195ACE77E18D7370055DB74C2475
+    - E1996E8A119F43C4BA2BE889D8C620766EA3F69D
+    - 4CF7FC248DC2CE8F34BBE48FC304C4A3104005E9
+  sha512sums:
+    - 20032b90e397ca73f9f8f5b453034fffc09e28372adddebd1a71b1323235e3e379bf452d5a4dd76b895e4c47df67595051c16b8a1488249e5aae946f6a35258c
+    - SKIP
+pkgname:
+  - name: intel-gpu-tools
+# generated with artixpkg 0.37.4-1-any
