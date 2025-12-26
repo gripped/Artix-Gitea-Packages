@@ -3,7 +3,7 @@
 
 pkgname=python-magic-wormhole-transit-relay
 pkgver=0.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc="transit Relay server for Magic-Wormhole"
 arch=(any)
 url="https://github.com/magic-wormhole/magic-wormhole-transit-relay"
@@ -41,3 +41,4 @@ package() {
 	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
 	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname" docs/*.md
 }
+ 
