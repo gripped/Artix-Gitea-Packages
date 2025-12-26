@@ -8,7 +8,7 @@
 
 pkgname=python-aiohttp
 pkgver=3.13.2
-pkgrel=2
+pkgrel=3
 pkgdesc='HTTP client/server for asyncio'
 arch=(x86_64)
 url=https://aiohttp.readthedocs.io
@@ -100,6 +100,8 @@ check() {
 
     # Tests freeze and timeout when running serialized, no idea why
     -n auto
+
+    -W ignore::DeprecationWarning
   )
 
   cd $pkgname
