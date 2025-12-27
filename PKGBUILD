@@ -61,3 +61,4 @@ package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
