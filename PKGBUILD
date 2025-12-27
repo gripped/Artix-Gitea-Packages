@@ -64,3 +64,4 @@ package() {
   cd "$_name"
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
