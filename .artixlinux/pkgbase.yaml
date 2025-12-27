@@ -21,11 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.44.0-2
+    version: 0.45.0-2
     packages:
-      - kitty-0.44.0-2-x86_64.pkg.tar.zst
-      - kitty-terminfo-0.44.0-2-x86_64.pkg.tar.zst
-      - kitty-shell-integration-0.44.0-2-x86_64.pkg.tar.zst
+      - kitty-0.45.0-2-x86_64.pkg.tar.zst
+      - kitty-terminfo-0.45.0-2-x86_64.pkg.tar.zst
+      - kitty-shell-integration-0.45.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
