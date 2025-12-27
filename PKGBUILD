@@ -4,8 +4,8 @@
 
 _name=fastapi
 pkgname=python-$_name
-pkgver=0.127.0
-pkgrel=3
+pkgver=0.127.1
+pkgrel=2
 pkgdesc='FastAPI framework, high performance, easy to learn, fast to code, ready for production'
 arch=(any)
 url="https://github.com/fastapi/fastapi"
@@ -48,6 +48,7 @@ checkdepends=(
   python-orjson
   python-python-multipart
   python-pyyaml
+  python-strawberry-graphql
   python-ujson
   uvicorn
 
@@ -66,12 +67,13 @@ optdepends=(
   'python-python-multipart: for form parsing support'
   'python-pyyaml: for starlette SchemaGenerator support'
   'python-httpx: for TestClient support'
+  'python-strawberry-graphql: for GraphQL support'
   'python-ujson: for faster JSON parsing and UJSONResponse'
   'uvicorn: for Uvicorn as ASGI server'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-sha512sums=('a35f4c4c617c00982a450cec68006f4abd76c319d383a89b64fec6415defcfef00f564d2cd8abaafa70e20a61168c9d0a7924bce8b3559913c345b2aaaf11719')
-b2sums=('0fb37a667de352b121f22d9871c489dd2149a60a90348fb93fdc90ea98369b50e34c41851b09ce33ab2a4724148da09ea2a3a0714510f3813d1a9d410fcecdd0')
+sha512sums=('56c65a0afbb385a54e15cf5ca49ffab82ba7c8e6ed42977995aece41c4954893c8ca8ddd0d993c2ea35fd21c93fe3e638046dfc3dfb1b3bda1189e3c03edd8bd')
+b2sums=('88d09703067a41185a066791ac058b106f6714820c4fb1f0cc795e0ce994032920cc93f49f9d54aabc7f58fb8c56166ec868c0f268e4ee678f86dbf1db16a3f5')
 
 prepare() {
   cd $_name-$pkgver
