@@ -52,3 +52,4 @@ package() {
 
   install -Dm644 LICENSE.MIT -t "$pkgdir"/usr/share/licenses/$pkgname
 }
+ 
