@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -54,6 +54,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 510.108.03-6
+    packages:
+      - nvidia-510xx-utils-510.108.03-6-x86_64.pkg.tar.zst
+      - opencl-510xx-nvidia-510.108.03-6-x86_64.pkg.tar.zst
+      - nvidia-510xx-dkms-510.108.03-6-x86_64.pkg.tar.zst
     debug: []
