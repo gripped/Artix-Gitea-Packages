@@ -1,6 +1,6 @@
 # ---> ArtixLinuxPackages
 *.tar
-*.tar.*
+!*.tar.*
 *.jar
 *.exe
 *.msi

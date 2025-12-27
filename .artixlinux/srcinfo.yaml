@@ -1,0 +1,150 @@
+---
+version: 2.610-1
+pkgbase:
+  name: webmin
+  pkgdesc: A web-based administration interface for Unix systems
+  pkgver: 2.610
+  pkgrel: 1
+  url: http://www.webmin.com/
+  install: webmin.install
+  arch:
+    - any
+  license:
+    - custom:webmin
+  depends:
+    - perl
+    - perl-net-ssleay
+    - perl-authen-pam
+    - perl-encode-detect
+    - openssl
+  optdepends:
+    - 'perl-socket6: For IPv6 support'
+    - 'perl-io-tty: For xterm module'
+  options:
+    - '!strip'
+    - '!zipman'
+  backup:
+    - etc/webmin/miniserv.conf
+    - etc/webmin/miniserv.users
+    - etc/webmin/config
+    - etc/webmin/webmin.acl
+    - etc/webmin/acl/config
+    - etc/webmin/adsl-client/config
+    - etc/webmin/apache/config
+    - etc/webmin/at/config
+    - etc/webmin/backup-config/config
+    - etc/webmin/bacula-backup/config
+    - etc/webmin/bandwidth/config
+    - etc/webmin/bind8/config
+    - etc/webmin/change-user/config
+    - etc/webmin/cluster-copy/config
+    - etc/webmin/cluster-cron/config
+    - etc/webmin/cluster-passwd/config
+    - etc/webmin/cluster-shell/config
+    - etc/webmin/cluster-software/config
+    - etc/webmin/cluster-useradmin/config
+    - etc/webmin/cluster-usermin/config
+    - etc/webmin/cluster-webmin/config
+    - etc/webmin/cron/config
+    - etc/webmin/custom/config
+    - etc/webmin/dhcpd/config
+    - etc/webmin/dovecot/config
+    - etc/webmin/exim/config
+    - etc/webmin/exports/config
+    - etc/webmin/fail2ban/config
+    - etc/webmin/fdisk/config
+    - etc/webmin/fetchmail/config
+    - etc/webmin/filemin/config
+    - etc/webmin/filter/config
+    - etc/webmin/firewall/config
+    - etc/webmin/firewall6/config
+    - etc/webmin/firewalld/config
+    - etc/webmin/fsdump/config
+    - etc/webmin/heartbeat/config
+    - etc/webmin/htaccess-htpasswd/config
+    - etc/webmin/idmapd/config
+    - etc/webmin/init/config
+    - etc/webmin/inittab/config
+    - etc/webmin/ipsec/config
+    - etc/webmin/iscsi-client/config
+    - etc/webmin/iscsi-server/config
+    - etc/webmin/iscsi-target/config
+    - etc/webmin/iscsi-tgtd/config
+    - etc/webmin/krb5/config
+    - etc/webmin/ldap-client/config
+    - etc/webmin/ldap-server/config
+    - etc/webmin/ldap-useradmin/config
+    - etc/webmin/logrotate/config
+    - etc/webmin/lpadmin/config
+    - etc/webmin/lvm/config
+    - etc/webmin/mailboxes/config
+    - etc/webmin/mailcap/config
+    - etc/webmin/man/config
+    - etc/webmin/mount/config
+    - etc/webmin/mysql/config
+    - etc/webmin/net/config
+    - etc/webmin/nis/config
+    - etc/webmin/openslp/config
+    - etc/webmin/pam/config
+    - etc/webmin/pap/config
+    - etc/webmin/passwd/config
+    - etc/webmin/phpini/config
+    - etc/webmin/postfix/config
+    - etc/webmin/postgresql/config
+    - etc/webmin/ppp-client/config
+    - etc/webmin/pptp-client/config
+    - etc/webmin/pptp-server/config
+    - etc/webmin/proc/config
+    - etc/webmin/procmail/config
+    - etc/webmin/proftpd/config
+    - etc/webmin/qmailadmin/config
+    - etc/webmin/quota/config
+    - etc/webmin/raid/config
+    - etc/webmin/samba/config
+    - etc/webmin/sarg/config
+    - etc/webmin/sendmail/config
+    - etc/webmin/servers/config
+    - etc/webmin/shell/config
+    - etc/webmin/shorewall/config
+    - etc/webmin/shorewall6/config
+    - etc/webmin/smart-status/config
+    - etc/webmin/spam/config
+    - etc/webmin/squid/config
+    - etc/webmin/sshd/config
+    - etc/webmin/status/config
+    - etc/webmin/stunnel/config
+    - etc/webmin/syslog/config
+    - etc/webmin/system-status/config
+    - etc/webmin/tcpwrappers/config
+    - etc/webmin/time/config
+    - etc/webmin/tunnel/config
+    - etc/webmin/updown/config
+    - etc/webmin/useradmin/config
+    - etc/webmin/usermin/config
+    - etc/webmin/webalizer/config
+    - etc/webmin/webmin/config
+    - etc/webmin/webmincron/config
+    - etc/webmin/webminlog/config
+    - etc/webmin/xinetd/config
+    - etc/webmin/xterm/config
+    - etc/logrotate.d/webmin
+    - etc/pam.d/webmin
+  source:
+    - https://github.com/webmin/webmin/releases/download/2.610/webmin-2.610.tar.gz
+    - setup-pre.sh
+    - setup-post.sh
+    - webmin-config.tar.bz2
+    - webmin.pam
+    - webmin.logrotate
+    - webmin.tmpfiles
+  sha256sums:
+    - a6fab4652fc1703ba413a31f5bfd17e50b98dba86cd8d5908ca6360541cbcb8f
+    - 3c27a52679607c73cdaa00c0735bea04cf66cf92ca4af6a7ac906eaed537b910
+    - cb860a79ea652f7c4f3c5ac2093bcfad5d29e2f246f10ef408e7909adc143174
+    - 4e8268aa038434aa520d93c84ea2c6c54cc76fe279e9496debf4acad93cedc31
+    - a979e236681c6a06906937cf0f012e976347af5d6d7e7ae04a11acb01cc2689d
+    - 9babd7f1e7e24ba4aeb5587a3cb46aa1e92904226cad84a4cbee5f9aaa408802
+    - 075c8156471d0fb4825a51b6411636102d2cf61d4eb5c7c097330e53cd9323b0
+pkgname:
+  - name: webmin
+# generated with artixpkg 0.37.4-1-any
