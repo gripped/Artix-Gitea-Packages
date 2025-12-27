@@ -1,0 +1,45 @@
+---
+version: 0.10.4-4
+pkgbase:
+  name: xlibre-xorgxrdp
+  pkgdesc: XLibre drivers for xrdp
+  pkgver: 0.10.4
+  pkgrel: 4
+  url: https://github.com/neutrinolabs/xorgxrdp
+  arch:
+    - aarch64
+    - i686
+    - x86_64
+  license:
+    - X11
+  makedepends:
+    - libdrm
+    - libxfont2
+    - nasm
+    - xlibre-xserver-devel
+    - xrdp
+  depends:
+    - glibc
+    - xlibre-xserver
+  provides:
+    - xorgxrdp
+  conflicts:
+    - xorgxrdp
+  options:
+    - staticlibs
+    - '!debug'
+  source:
+    - https://github.com/neutrinolabs/xorgxrdp/releases/download/v0.10.4/xorgxrdp-0.10.4.tar.gz
+    - https://github.com/neutrinolabs/xorgxrdp/releases/download/v0.10.4/xorgxrdp-0.10.4.tar.gz.asc
+    - configure_ac.patch
+    - xrdpkeyb_rdpKeyboard_c.patch
+  validpgpkeys:
+    - 61ECEABBF2BB40E3A35DF30A9F72CDBC01BF10EB
+  sha256sums:
+    - c2585c73916d68123320c3b3d077d3596c50d71466dbd59e780ca247f9124f14
+    - SKIP
+    - dead2ecd59e2a58f05c3b5df65cdc97a2423098f55d8df2129be6221c1b0f158
+    - bcb7a8bfe940eb18d6b12f80eb31406319008df4f3c134dc6c0dbd29c37b0002
+pkgname:
+  - name: xlibre-xorgxrdp
+# generated with artixpkg 0.37.4-1-any
