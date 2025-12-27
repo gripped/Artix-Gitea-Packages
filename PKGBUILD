@@ -8,7 +8,7 @@
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
 pkgver=0.45.0
-pkgrel=2
+pkgrel=1
 pkgdesc="A modern, hackable, featureful, OpenGL-based terminal emulator"
 arch=('x86_64')
 url="https://github.com/kovidgoyal/kitty"
