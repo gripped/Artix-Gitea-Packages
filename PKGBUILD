@@ -111,3 +111,4 @@ package() {
   cd $pkgname/hypothesis-python
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
