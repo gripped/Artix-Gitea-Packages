@@ -1,10 +1,10 @@
 ---
-version: 1.3.13-4
+version: 1.3.13-5
 pkgbase:
   name: postorius
   pkgdesc: The New Mailman Web UI
   pkgver: 1.3.13
-  pkgrel: 4
+  pkgrel: 5
   url: https://gitlab.com/mailman/postorius
   install: postorius.install
   arch:
@@ -67,4 +67,4 @@ pkgbase:
     - a29664104e1ee73ca0aee1d633e9095d92a57c92787f8d8740bdb7211ba3205782ed8677f539bdb8cae3dd75a3694be3132e185fa3fc4b3f401e1f88eb776101
 pkgname:
   - name: postorius
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
