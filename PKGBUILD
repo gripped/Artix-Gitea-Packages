@@ -5,7 +5,7 @@
 
 pkgname=duplicity
 pkgver=3.0.6.3
-pkgrel=2
+pkgrel=3
 pkgdesc='A utility for encrypted, bandwidth-efficient backups using the rsync algorithm'
 arch=(x86_64)
 url='https://duplicity.gitlab.io/'
