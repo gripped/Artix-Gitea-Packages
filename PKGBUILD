@@ -6,7 +6,7 @@
 
 pkgname=aws-cli
 pkgver=1.43.15
-pkgrel=1
+pkgrel=2
 pkgdesc='Universal Command Line Interface for Amazon Web Services'
 arch=('any')
 url="https://github.com/aws/aws-cli"
