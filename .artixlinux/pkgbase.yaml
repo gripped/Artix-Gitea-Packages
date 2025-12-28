@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,8 +22,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 3.3.2-2
+    packages:
+      - manifold-3.3.2-2-x86_64.pkg.tar.zst
+      - python-manifold3d-3.3.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

@@ -1,10 +1,10 @@
 ---
-version: 3.3.2-1
+version: 3.3.2-2
 pkgbase:
   name: manifold
   pkgdesc: Geometry library for topological robustness
   pkgver: 3.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/elalish/manifold
   arch:
     - x86_64
