@@ -33,4 +33,3 @@ build(){
 package() {
   meson install -C build --destdir="$pkgdir"
 }
- 
