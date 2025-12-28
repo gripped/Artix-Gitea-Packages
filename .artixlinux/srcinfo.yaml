@@ -1,9 +1,9 @@
 ---
-version: 25.9.23-2
+version: 25.12.19-2
 pkgbase:
   name: flatbuffers
   pkgdesc: An efficient cross platform serialization library for C++, with support for Java, C# and Go
-  pkgver: 25.9.23
+  pkgver: 25.12.19
   pkgrel: 2
   url: https://google.github.io/flatbuffers/
   arch:
@@ -19,9 +19,9 @@ pkgbase:
   depends:
     - gcc-libs
   source:
-    - https://github.com/google/flatbuffers/archive/v25.9.23/flatbuffers-25.9.23.tar.gz
+    - https://github.com/google/flatbuffers/archive/v25.12.19/flatbuffers-25.12.19.tar.gz
   sha256sums:
-    - 9102253214dea6ae10c2ac966ea1ed2155d22202390b532d1dea64935c518ada
+    - f81c3162b1046fe8b84b9a0dbdd383e24fdbcf88583b9cb6028f90d04d90696a
 pkgname:
   - name: flatbuffers
   - name: python-flatbuffers
