@@ -1,9 +1,9 @@
 ---
-version: 5.0.2-1
+version: 5.0.3-1
 pkgbase:
   name: openfire
   pkgdesc: High performance XMPP (Jabber) server.
-  pkgver: 5.0.2
+  pkgver: 5.0.3
   pkgrel: 1
   url: https://www.igniterealtime.org/projects/openfire/
   arch:
@@ -23,13 +23,13 @@ pkgbase:
     - etc/openfire/security/client.truststore
     - etc/openfire/security/keystore
   source:
-    - openfire-5.0.2.tar.gz::https://github.com/igniterealtime/Openfire/archive/refs/tags/v5.0.2.tar.gz
+    - openfire-5.0.3.tar.gz::https://github.com/igniterealtime/Openfire/archive/refs/tags/v5.0.3.tar.gz
     - openfire.sh
     - user.conf
     - tmpfile.conf
     - force-java17.patch
   sha256sums:
-    - 54bafb098995414d17ef6378f35d46928ae54f727cc82195061a7b5957b9cee4
+    - 8fb538b04b3a437216499f4b2b4071d843822c1f870c4bb9dc198509ff32e3fa
     - c850f376d53134ccc8d1035322dea792ba9145a5ab37f1801598c60bc70d0ed1
     - ea08e0c4d4b51b2a1adca71decfa1a856826898f00fb8ef857844f6326277e1e
     - c63396991984a067d05e21094a664255d6aed2bf294bddd3885a7da75472b886
