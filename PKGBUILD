@@ -2,7 +2,7 @@
 
 pkgname=ly
 pkgver=1.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Lightweight TUI (ncurses-like) display manager"
 arch=(x86_64)
 url="https://codeberg.org/AnErrupTion/ly"
@@ -24,6 +24,7 @@ prepare() {
   sed -i 's|restart_cmd = /sbin/shutdown -r now|restart_cmd = /usr/bin/loginctl reboot|' res/config.ini
   sed -i 's|shutdown_cmd = /sbin/shutdown $PLATFORM_SHUTDOWN_ARG now|shutdown_cmd = /usr/bin/loginctl poweroff|' res/config.ini
   sed -i 's|sleep_cmd = null|sleep_cmd = /usr/bin/loginctl suspend|' res/config.ini
+  git cherry-pick -n ced8f9bee35ad97c1e59ef1e182e064c04eb76a7
 }
 
 build() {
