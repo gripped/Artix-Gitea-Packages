@@ -1,10 +1,10 @@
 ---
-version: 25.3-1
+version: 25.3-2
 pkgbase:
   name: cloud-init
   pkgdesc: Cloud instance initialization
   pkgver: 25.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://cloud-init.io
   arch:
     - any
