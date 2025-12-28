@@ -1,10 +1,10 @@
 ---
-version: 25.12.0-1
+version: 25.12.0-2
 pkgbase:
   name: ansible-navigator
   pkgdesc: A text-based user interface (TUI) for Ansible
   pkgver: 25.12.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ansible/ansible-navigator
   arch:
     - any
@@ -29,7 +29,7 @@ pkgbase:
   source:
     - ansible-navigator-25.12.0.tar.gz::https://github.com/ansible/ansible-navigator/archive/refs/tags/v25.12.0.tar.gz
   sha256sums:
-    - 50509e617e7e7feee72668e73d410137ab02e2c9fce8324f2b44dcf2dbab51a1
+    - 83250e66a0477281b28f8dd8c9c34cb0429f9855327e3218e8346986c60875c2
 pkgname:
   - name: ansible-navigator
 # generated with artixpkg 0.37.4-1-any
