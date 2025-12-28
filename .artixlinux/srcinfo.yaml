@@ -1,10 +1,10 @@
 ---
-version: 1:1.1.6-1
+version: 1:1.1.6-2
 pkgbase:
   name: nftables
   pkgdesc: Netfilter tables userspace tools
   pkgver: 1.1.6
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://netfilter.org/projects/nftables/
   install: nftables.install
