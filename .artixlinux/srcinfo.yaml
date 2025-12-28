@@ -1,10 +1,10 @@
 ---
-version: 5.8.0-3
+version: 5.8.0-4
 pkgbase:
   name: python-keystoneauth1
   pkgdesc: Authentication Library for OpenStack Identity
   pkgver: 5.8.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://docs.openstack.org/developer/keystoneauth
   arch:
     - any
