@@ -1,10 +1,10 @@
 ---
-version: 0.17.3-6
+version: 0.18.0-2
 pkgbase:
   name: hypercorn
   pkgdesc: An ASGI Server based on Hyper libraries and inspired by Gunicorn
-  pkgver: 0.17.3
-  pkgrel: 6
+  pkgver: 0.18.0
+  pkgrel: 2
   url: https://github.com/pgjones/hypercorn
   arch:
     - any
@@ -23,7 +23,7 @@ pkgbase:
     - git
     - python-build
     - python-installer
-    - python-poetry-core
+    - python-pdm-backend
   depends:
     - python
     - python-h11
@@ -33,9 +33,9 @@ pkgbase:
   optdepends:
     - 'python-trio: trio support'
   source:
-    - git+https://github.com/pgjones/hypercorn.git#tag=c405deafb22d66587ea0aff4f8fa4f5688b74351
+    - git+https://github.com/pgjones/hypercorn.git#tag=0e2311f1ad2ae587aaa590f3824f59aa5dc0e770
   sha256sums:
-    - 8702202c855ae5e8978a36eee7d6bc3cb5fdeb795351e53672a4f3d4445152f7
+    - 5a54f5fc031a32c7a22bc80754fb87fa1fccf3d92a30b6ba4411d9a1dd5439bf
 pkgname:
   - name: hypercorn
 # generated with artixpkg 0.37.4-1-any
