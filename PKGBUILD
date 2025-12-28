@@ -8,7 +8,7 @@ pkgname=(
   deluge-gtk
 )
 pkgver=2.2.0
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc="BitTorrent client with multiple user interfaces in a client/server model"
 url="https://deluge-torrent.org/"

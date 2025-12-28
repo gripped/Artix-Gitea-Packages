@@ -1,10 +1,10 @@
 ---
-version: 1:2.2.0-2
+version: 1:2.2.0-2.1
 pkgbase:
   name: deluge
   pkgdesc: BitTorrent client with multiple user interfaces in a client/server model
   pkgver: 2.2.0
-  pkgrel: 2
+  pkgrel: 2.1
   epoch: 1
   url: https://deluge-torrent.org/
   arch:
@@ -71,7 +71,7 @@ pkgname:
       - python-cairo
       - python-gobject
       - xdg-utils
-      - deluge=1:2.2.0-2
+      - deluge=1:2.2.0-2.1
       - python
       - python-rencode
       - python-setproctitle

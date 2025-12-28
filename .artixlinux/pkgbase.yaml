@@ -21,12 +21,12 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:2.2.0-2
+    version: 1:2.2.0-2.1
     packages:
-      - deluge-1:2.2.0-2-any.pkg.tar.zst
-      - deluge-gtk-1:2.2.0-2-any.pkg.tar.zst
+      - deluge-1:2.2.0-2.1-any.pkg.tar.zst
+      - deluge-gtk-1:2.2.0-2.1-any.pkg.tar.zst
     debug:
-      - deluge-debug-1:2.2.0-2-any.pkg.tar.zst
+      - deluge-debug-1:2.2.0-2.1-any.pkg.tar.zst
   world-gremlins:
     version: null
     packages: []
