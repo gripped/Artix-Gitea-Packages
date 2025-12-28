@@ -1,10 +1,10 @@
 ---
-version: 25.12.0-1
+version: 25.12.0-2
 pkgbase:
   name: cantor
   pkgdesc: KDE Frontend to Mathematical Software
   pkgver: 25.12.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/cantor/
   arch:
     - x86_64
