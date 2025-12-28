@@ -2,7 +2,7 @@
 
 pkgname='pre-commit'
 pkgver=4.4.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A framework for managing and maintaining multi-language pre-commit hooks"
 url="https://github.com/pre-commit/pre-commit"
 license=('MIT')

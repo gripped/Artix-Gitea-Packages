@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-2
+version: 4.4.0-3
 pkgbase:
   name: pre-commit
   pkgdesc: A framework for managing and maintaining multi-language pre-commit hooks
   pkgver: 4.4.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/pre-commit/pre-commit
   arch:
     - any
