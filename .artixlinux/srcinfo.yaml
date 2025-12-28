@@ -1,10 +1,10 @@
 ---
-version: 1.3.12-6
+version: 1.3.12-7
 pkgbase:
   name: hyperkitty
   pkgdesc: A web interface to access GNU Mailman v3 archives
   pkgver: 1.3.12
-  pkgrel: 6
+  pkgrel: 7
   url: https://gitlab.com/mailman/hyperkitty
   install: hyperkitty.install
   arch:
@@ -84,4 +84,4 @@ pkgbase:
     - a29664104e1ee73ca0aee1d633e9095d92a57c92787f8d8740bdb7211ba3205782ed8677f539bdb8cae3dd75a3694be3132e185fa3fc4b3f401e1f88eb776101
 pkgname:
   - name: hyperkitty
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.4-1-any
