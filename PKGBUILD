@@ -4,7 +4,7 @@
 pkgname=containers-common
 _upstream=container-libs
 pkgver=0.66.1
-pkgrel=1
+pkgrel=2
 epoch=1
 _podman_pkgver=5.7.0
 _shortnames_pkgver=2025.03.19
@@ -54,6 +54,8 @@ b2sums=('0723908d2aef422a8c574e520af2819fd73d4997a1defb9df54d462ae93d7dbe0a7c350
 prepare() {
   sed -r 's/(GOMD2MAN = ).*/\1 go-md2man/' -i $_src_dir/storage/docs/Makefile
   patch -Np1 -d $_src_dir/common -i ../../$pkgname-0.48.0-init_path.patch
+  # systemd >= 259 no longer supports iptables, so we switch from the implicit default on iptables to nftables:
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/containers-common/-/issues/7
   mkdir -vp build/{man1,man5}
 }
 
