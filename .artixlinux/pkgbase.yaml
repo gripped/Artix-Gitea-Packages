@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,25 +29,25 @@ repos:
     packages: []
     debug: []
   world:
-    version: 8.3.28-1
+    version: 8.3.29-1
     packages:
-      - php-legacy-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-cgi-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-apache-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-fpm-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-embed-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-phpdbg-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-dblib-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-enchant-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-gd-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-sodium-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-odbc-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-pgsql-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-pspell-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-snmp-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-sqlite-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-tidy-8.3.28-1-x86_64.pkg.tar.zst
-      - php-legacy-xsl-8.3.28-1-x86_64.pkg.tar.zst
+      - php-legacy-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-cgi-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-apache-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-fpm-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-embed-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-phpdbg-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-dblib-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-enchant-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-gd-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-sodium-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-odbc-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-pgsql-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-pspell-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-snmp-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-sqlite-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-tidy-8.3.29-1-x86_64.pkg.tar.zst
+      - php-legacy-xsl-8.3.29-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
