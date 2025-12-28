@@ -2,7 +2,7 @@
 
 pkgname=python-numba
 pkgver=0.63.1
-pkgrel=3
+pkgrel=5
 pkgdesc="JIT compiler that translates a subset of Python and NumPy code into fast machine code"
 url="https://numba.pydata.org/"
 arch=(x86_64)
@@ -75,4 +75,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 }
- 
