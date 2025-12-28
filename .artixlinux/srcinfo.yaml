@@ -1,10 +1,10 @@
 ---
-version: 2.10.6-1
+version: 2.10.6-2
 pkgbase:
   name: python-pydantic-extra-types
   pkgdesc: Extra pydantic types
   pkgver: 2.10.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pydantic/pydantic-extra-types
   arch:
     - any
