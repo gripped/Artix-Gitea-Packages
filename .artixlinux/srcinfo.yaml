@@ -1,9 +1,9 @@
 ---
-version: 2.2.4-1
+version: 2.3.0-1
 pkgbase:
   name: ffmpegthumbnailer
   pkgdesc: Lightweight video thumbnailer that can be used by file managers
-  pkgver: 2.2.4
+  pkgver: 2.3.0
   pkgrel: 1
   url: https://github.com/dirkvdb/ffmpegthumbnailer
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   optdepends:
     - 'gvfs: support for gio uris'
   source:
-    - git+https://github.com/dirkvdb/ffmpegthumbnailer#tag=v2.2.4
+    - git+https://github.com/dirkvdb/ffmpegthumbnailer#tag=v2.3.0
   sha256sums:
-    - 52f57cee6963e99e2a367ff60a55ec542643688b69f4bf2d6b941fd679e6fac0
+    - 36790613cfbc8dc0dbd125c9cd4ce9813925c1c9b5c88a1aa735f63bf13b8240
 pkgname:
   - name: ffmpegthumbnailer
 # generated with artixpkg 0.37.4-1-any
