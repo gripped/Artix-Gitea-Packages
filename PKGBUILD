@@ -4,7 +4,7 @@
 
 pkgname=podman-compose
 pkgver=1.5.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A script to run docker-compose.yml using podman'
 arch=(any)
 url='https://github.com/containers/podman-compose'
