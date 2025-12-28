@@ -1,0 +1,33 @@
+---
+version: 3.4.4-4
+pkgbase:
+  name: python-ldap
+  pkgdesc: LDAP client API for Python
+  pkgver: 3.4.4
+  pkgrel: 4
+  url: https://python-ldap.readthedocs.io/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - openldap
+    - python-pyasn1
+    - python-pyasn1-modules
+    - python-pytest
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - python-pyasn1
+    - python-pyasn1-modules
+    - libldap
+  source:
+    - python-ldap-3.4.4.tar.gz::https://github.com/python-ldap/python-ldap/archive/python-ldap-3.4.4.tar.gz
+  sha256sums:
+    - 98c03c14724636351964606a307bf946fa6248630c2d6b89938a6911b6b84c99
+pkgname:
+  - name: python-ldap
+# generated with artixpkg 0.37.4-1-any
