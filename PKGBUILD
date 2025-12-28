@@ -2,7 +2,7 @@
 
 pkgname=python-pytest-xdist
 pkgver=3.8.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc='py.test xdist plugin for distributed testing and loop-on-failing modes'
 arch=('any')
 license=('MIT')
@@ -38,4 +38,3 @@ package() {
 }
 
 # vim:set ts=2 sw=2 et:
- 
