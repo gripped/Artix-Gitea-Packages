@@ -1,9 +1,9 @@
 ---
-version: 0.10.3-2
+version: 0.10.4-2
 pkgbase:
   name: jupyter-nbclient
   pkgdesc: A tool for running Jupyter Notebooks in different execution contexts
-  pkgver: 0.10.3
+  pkgver: 0.10.4
   pkgrel: 2
   url: https://github.com/jupyter/nbclient
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - python-jupyter-core
     - python-traitlets
   source:
-    - git+https://github.com/jupyter/nbclient#tag=v0.10.3
+    - git+https://github.com/jupyter/nbclient#tag=v0.10.4
   sha256sums:
-    - 9e53516890d71777ab43ded2b3adde58b64c632f5413c1a1ce4c354a430a10e8
+    - 7939623ac9d73353f7d3370ed917dfd8d74ab216ae7c10ba86a725ddc8cf02e6
 pkgname:
   - name: jupyter-nbclient
 # generated with artixpkg 0.37.4-1-any
