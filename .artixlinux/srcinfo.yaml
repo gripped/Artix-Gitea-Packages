@@ -1,10 +1,10 @@
 ---
-version: 18.3.1-4
+version: 18.3.1-5
 pkgbase:
   name: ueberzug
   pkgdesc: Command line util which allows to display images in combination with X11
   pkgver: 18.3.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/ueber-devel/ueberzug
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 879f4dd7898a569cf70200fb683d6220bd410b7738963527030e504c59ef9095a28c4380c695ae8034ac2cd1d841df044ad4cad34f72c3ad24b8ef32c9473f7e
 pkgname:
   - name: ueberzug
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any
