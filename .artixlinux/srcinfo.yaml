@@ -1,0 +1,30 @@
+---
+version: 2.4.1-2
+pkgbase:
+  name: codespell
+  pkgdesc: check code for common misspellings
+  pkgver: 2.4.1
+  pkgrel: 2
+  url: https://github.com/codespell-project/codespell
+  arch:
+    - any
+  license:
+    - GPL-2.0-only
+  checkdepends:
+    - python-pytest-dependency
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools-scm
+  depends:
+    - python-chardet
+  source:
+    - https://pypi.io/packages/source/c/codespell/codespell-2.4.1.tar.gz
+    - remove-check-test_command.patch
+  sha256sums:
+    - 299fcdcb09d23e81e35a671bbe746d5ad7e8385972e65dbb833a2eaac33c01e5
+    - 17a5390c0123480c794d293e0a6b95a9f941ea9d5d9168649746dd55faf0b833
+pkgname:
+  - name: codespell
+# generated with artixpkg 0.37.4-1-any
