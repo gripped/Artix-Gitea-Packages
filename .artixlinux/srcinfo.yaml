@@ -1,10 +1,10 @@
 ---
-version: 0.22.0-1
+version: 0.22.0-2
 pkgbase:
   name: python-sphinx-hawkmoth
   pkgdesc: Sphinx autodoc C extension
   pkgver: 0.22.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jnikula/hawkmoth
   arch:
     - x86_64
