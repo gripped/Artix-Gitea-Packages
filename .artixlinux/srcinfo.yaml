@@ -1,10 +1,10 @@
 ---
-version: 4.15.1-1
+version: 4.15.1-2
 pkgbase:
   name: z3
   pkgdesc: High-performance theorem prover
   pkgver: 4.15.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Z3Prover/z3
   arch:
     - x86_64
@@ -44,4 +44,4 @@ pkgname:
       - python-z3
     replaces:
       - python-z3
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
