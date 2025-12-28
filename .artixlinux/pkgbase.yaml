@@ -1,55 +1,61 @@
 ---
-pkgbase:
-  name: torbrowser-launcher
-  version: 0.3.7-3
-  arch:
-    - any
-  pkgname:
-    - torbrowser-launcher
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.3.7-4
+    packages:
+      - torbrowser-launcher-0.3.7-4-any.pkg.tar.zst
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: 0.3.7-3
     packages:
       - torbrowser-launcher-0.3.7-3-any.pkg.tar.zst
+    debug: []
 team: galaxy
