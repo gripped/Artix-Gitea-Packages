@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.6.39-1
+    version: 1.6.40-1
     packages:
-      - memcached-1.6.39-1-x86_64.pkg.tar.zst
+      - memcached-1.6.40-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
