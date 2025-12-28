@@ -1,11 +1,12 @@
-# Maintainer: Filipe Laíns (FFY00) <lains@archlinux.org>
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Frederik “Freso” S. Olesen <freso.dk@gmail.com>
 
 pkgname=lutris
 pkgver=0.5.19
-pkgrel=6
+pkgrel=7
 pkgdesc='Open Gaming Platform'
 arch=(any)
 url=https://lutris.net
