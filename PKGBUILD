@@ -4,7 +4,7 @@
 pkgname=python-xapp
 _pkgname=python3-xapp
 pkgver=3.0.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Python Xapp Library'
 arch=(any)
 url='https://github.com/linuxmint/python3-xapp'
@@ -33,4 +33,3 @@ build(){
 package() {
   meson install -C build --destdir="$pkgdir"
 }
- 
