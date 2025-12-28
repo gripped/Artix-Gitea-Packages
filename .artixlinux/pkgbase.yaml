@@ -1,7 +1,7 @@
 ---
 actions:
   addRepo: null
-  removeRepo: world
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -21,9 +21,8 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.0.1-2.1
-    packages:
-      - python-xapp-3.0.1-2.1-any.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world-gremlins:
     version: null
