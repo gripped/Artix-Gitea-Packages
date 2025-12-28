@@ -9,7 +9,7 @@
 
 pkgname=bleachbit
 pkgver=5.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Deletes unneeded files to free disk space and maintain privacy'
 arch=(any)
 url='https://www.bleachbit.org/'

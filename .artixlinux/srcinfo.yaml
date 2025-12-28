@@ -1,10 +1,10 @@
 ---
-version: 5.0.2-1
+version: 5.0.2-2
 pkgbase:
   name: bleachbit
   pkgdesc: Deletes unneeded files to free disk space and maintain privacy
   pkgver: 5.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.bleachbit.org/
   arch:
     - any
