@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-1
+version: 2.4.0-2
 pkgbase:
   name: firewalld
   pkgver: 2.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://firewalld.org
   arch:
     - any
