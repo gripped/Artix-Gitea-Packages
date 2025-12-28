@@ -1,9 +1,9 @@
 ---
-version: 3.3.2-1
+version: 3.3.3-1
 pkgbase:
   name: fcft
   pkgdesc: Simple library for font loading and glyph rasterization
-  pkgver: 3.3.2
+  pkgver: 3.3.3
   pkgrel: 1
   url: https://codeberg.org/dnkl/fcft
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   provides:
     - libfcft.so
   source:
-    - fcft-3.3.2.tar.gz::https://codeberg.org/dnkl/fcft/archive/3.3.2.tar.gz
+    - fcft-3.3.3.tar.gz::https://codeberg.org/dnkl/fcft/archive/3.3.3.tar.gz
   sha256sums:
-    - 79e52aaafc0b57fa2b68ed6127de13e98318050399a939691b8ca30d44d48591
+    - c0d8d485b45b1af829f73101d6588f404a32bf3c7543236b1a4707d44be81b60
 pkgname:
   - name: fcft
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
