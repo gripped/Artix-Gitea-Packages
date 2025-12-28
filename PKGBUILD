@@ -4,7 +4,7 @@
 _name=pydantic-settings
 pkgname=python-pydantic-settings
 pkgver=2.12.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Settings management using pydantic"
 arch=(any)
 url="https://github.com/pydantic/pydantic-settings"
@@ -72,4 +72,3 @@ package() {
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
- 
