@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.15.2-1
+    version: 2.16.0-1
     packages:
-      - libsidplayfp-2.15.2-1-x86_64.pkg.tar.zst
+      - libsidplayfp-2.16.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
