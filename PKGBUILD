@@ -4,7 +4,7 @@
 
 _name=fastapi
 pkgname=python-$_name
-pkgver=0.127.1
+pkgver=0.128.0
 pkgrel=2
 pkgdesc='FastAPI framework, high performance, easy to learn, fast to code, ready for production'
 arch=(any)
@@ -72,8 +72,8 @@ optdepends=(
   'uvicorn: for Uvicorn as ASGI server'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-sha512sums=('56c65a0afbb385a54e15cf5ca49ffab82ba7c8e6ed42977995aece41c4954893c8ca8ddd0d993c2ea35fd21c93fe3e638046dfc3dfb1b3bda1189e3c03edd8bd')
-b2sums=('88d09703067a41185a066791ac058b106f6714820c4fb1f0cc795e0ce994032920cc93f49f9d54aabc7f58fb8c56166ec868c0f268e4ee678f86dbf1db16a3f5')
+sha512sums=('fae6d993f3b6c9fcc4b1cd9994d0b3bd7869356310c7185264a6f26c1eee2e9a8067f697972ea19151b7b2deab3275764afb5256bcbda8b886844cfb1230fdb4')
+b2sums=('99746df19482a6be2a6fb2e68348bb0ea79af745b5448ec81e5af1fcca1b0df64cbbd2e69491cde29fe28bd7f507b31892d3421c612778212567e804b78a0b54')
 
 prepare() {
   cd $_name-$pkgver
@@ -107,4 +107,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
- 
