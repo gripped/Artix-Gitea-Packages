@@ -1,17 +1,20 @@
 ---
-version: 3.1.10-1
+version: 3.1.10-3
 pkgbase:
   name: pyopengl
   pkgdesc: The cross platform Python binding to OpenGL and related APIs
   pkgver: 3.1.10
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/mcfletch/pyopengl
   arch:
     - any
   license:
     - BSD-3-Clause
   makedepends:
+    - python-build
     - python-setuptools
+    - python-installer
+    - python-wheel
   depends:
     - python
     - freeglut
