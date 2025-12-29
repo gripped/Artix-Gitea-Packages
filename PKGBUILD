@@ -1,8 +1,8 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=xlibre-input-libinput
 pkgver=25.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="XLibre fork of the generic input driver for the X.Org server based on libinput"
 arch=('x86_64')
 license=('MIT')
@@ -19,7 +19,7 @@ makedepends+=('libxi' 'libx11' 'libxfont2' 'meson')
 install=$pkgname.install
 
 build() {
-  artix-meson ${_pkgname}-xlibre-${_pkgname}-${pkgver} build \
+  arch-meson ${_pkgname}-xlibre-${_pkgname}-${pkgver} build \
     -D xorg-conf-dir=/usr/share/X11/xorg.conf.d/ 
 
   meson configure build
