@@ -1,0 +1,32 @@
+---
+version: 1.0.8-1
+pkgbase:
+  name: xorg-xdriinfo
+  pkgdesc: Query configuration information of DRI drivers
+  pkgver: 1.0.8
+  pkgrel: 1
+  url: https://xorg.freedesktop.org/
+  arch:
+    - x86_64
+  groups:
+    - xorg-apps
+    - xorg
+  license:
+    - custom
+  makedepends:
+    - xorg-util-macros
+    - xorgproto
+  depends:
+    - libx11
+    - libgl
+  source:
+    - https://xorg.freedesktop.org/archive/individual/app/xdriinfo-1.0.8.tar.xz
+    - https://xorg.freedesktop.org/archive/individual/app/xdriinfo-1.0.8.tar.xz.sig
+  validpgpkeys:
+    - 3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2
+  sha512sums:
+    - 36ea6a453b7f3ec7caa028282c701c98dfb45886dc833e31931d3ed6333a96a5bf7d3816bf5db51b3c359297f25e242c913eae4dd01be5de557475b4cd98d458
+    - SKIP
+pkgname:
+  - name: xorg-xdriinfo
+# generated with artixpkg 0.37.4-1-any
