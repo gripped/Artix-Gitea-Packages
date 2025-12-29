@@ -1,0 +1,41 @@
+---
+version: 4.7.0-3
+pkgbase:
+  name: python-glanceclient
+  pkgdesc: OpenStack Image API Client Library
+  pkgver: 4.7.0
+  pkgrel: 3
+  url: https://docs.openstack.org/developer/python-glanceclient
+  arch:
+    - any
+  license:
+    - Apache
+  checkdepends:
+    - python-stestr
+    - python-ddt
+    - python-requests-mock
+    - python-testscenarios
+  makedepends:
+    - git
+    - python-setuptools
+  depends:
+    - python-pbr
+    - python-prettytable
+    - python-keystoneauth1
+    - python-requests
+    - python-warlock
+    - python-oslo-utils
+    - python-oslo-i18n
+    - python-wrapt
+    - python-pyopenssl
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/openstack/python-glanceclient.git#tag=4.7.0
+    - python-3.13.patch
+  sha512sums:
+    - 84176ec7c067d22b9c838dc153fdaa122dda669d4aa90f0303e9a0c47f271aee5355cb8567f176af039c48ce87059a2a1b5b6918ad11c3d9a21e23e8a70eb05e
+    - cd699eacd600df4aabdb67ec7017419023d48bbdef25909326bd722c0b8a8b4291edc71090ae32b2207e8fb1f2b0a2dd2c6de46dda50ddad11e40c510d1dd87e
+pkgname:
+  - name: python-glanceclient
+# generated with artixpkg 0.37.4-1-any
