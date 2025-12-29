@@ -13,7 +13,7 @@ conflicts=("${_pkgname}")
 provides=("${_pkgname}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
-depends+=('libudev' 'mesa' 'libpciaccess' 'libdrm')
+depends+=('mesa' 'libpciaccess' 'libdrm')
 
 build() {
   cd ${_pkgname}-xlibre-${_pkgname}-${pkgver}

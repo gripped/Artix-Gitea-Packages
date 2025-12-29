@@ -16,7 +16,6 @@ pkgbase:
   depends:
     - xlibre-xserver>=25.0
     - glibc
-    - libudev
     - mesa
     - libpciaccess
     - libdrm
