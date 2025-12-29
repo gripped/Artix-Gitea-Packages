@@ -14,6 +14,7 @@ url='https://www.fail2ban.org/'
 license=('GPL-2.0-or-later')
 depends=(
   'python-pyinotify'
+  'python-systemd'
   'sqlite'
   'whois'
 )
@@ -51,6 +52,9 @@ prepare() {
   # openssh 9.8 compatibility
   git cherry-pick -n 2fed408c05ac5206b490368d94599869bd6a056d
 
+  # fix tests
+  git cherry-pick -n 5b6c13f0aae79a23d94570bacd1b5796e57f088d
+
   # restore directories no longer installed after switch to PEP 517
   patch --forward --strip=1 --input=../extend-tmpfiles.patch
 
@@ -73,6 +77,8 @@ package() {
   cd $pkgname
   python -m installer --destdir="$pkgdir" dist/*.whl
 
+  install -Dm644 build/fail2ban.service \
+    "$pkgdir"/usr/lib/systemd/system/$pkgname.service
   install -Dm644 files/fail2ban-tmpfiles.conf \
     "$pkgdir"/usr/lib/tmpfiles.d/$pkgname.conf
   install -Dm644 files/fail2ban-logrotate \
