@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-freedreno
 pkgver=25.0.0
-pkgrel=4
+pkgrel=5
 pkgdesc="XLibre fork of freedreno video driver"
 arch=(x86_64)
 license=('X11')
@@ -14,7 +14,7 @@ conflicts=("${_pkgname}")
 provides=("${_pkgname}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
-makedepends+=('libdrm' 'udev')
+makedepends+=('libdrm')
 
 build() {
   cd ${_pkgname}-xlibre-${_pkgname}-${pkgver}
