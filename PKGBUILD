@@ -38,4 +38,3 @@ package() {
   install -Dm644 license.md "$pkgdir/usr/share/licenses/$pkgname/WTFPL"
 }
 
-
