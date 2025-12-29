@@ -1,10 +1,10 @@
 ---
-version: 0.52.2-2
+version: 0.53.0-1
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
-  pkgver: 0.52.2
-  pkgrel: 2
+  pkgver: 0.53.0
+  pkgrel: 1
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -38,6 +38,8 @@ pkgbase:
     - hyprutils
     - libhyprutils.so
     - hyprwayland-scanner
+    - hyprwire
+    - libhyprwire.so
     - libdisplay-info
     - libdisplay-info.so
     - libdrm
@@ -57,6 +59,7 @@ pkgbase:
     - libxkbcommon.so
     - libxrender
     - mesa
+    - muparser
     - opengl-driver
     - pango
     - libpango-1.0.so
@@ -96,9 +99,9 @@ pkgbase:
   provides:
     - wayland-compositor
   source:
-    - Hyprland-0.52.2.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.52.2/source-v0.52.2.tar.gz
+    - Hyprland-0.53.0.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.53.0/source-v0.53.0.tar.gz
   sha256sums:
-    - 57b4db99896cad8388482b945b119b206fd7ea94638793b550210be08274d7dd
+    - 43ed210eca530c8d65a072936640764b38e216f7da8c86be44185bb8fe7e4f3c
 pkgname:
   - name: hyprland
 # generated with artixpkg 0.37.4-1-any
