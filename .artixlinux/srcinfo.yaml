@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-3
+version: 25.0.0-4
 pkgbase:
   name: xlibre-input-synaptics
   pkgdesc: XLibre fork of X.Org Synaptics driver for notebook touchpads
   pkgver: 25.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/X11Libre/xf86-input-synaptics
   install: xlibre-input-synaptics.install
   arch:
