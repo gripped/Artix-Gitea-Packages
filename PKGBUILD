@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-ati
 pkgver=25.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc="XLibre fork of X.Org ati video driver"
 arch=('x86_64')
 _pkgname="${pkgname//xlibre/xf86}"
