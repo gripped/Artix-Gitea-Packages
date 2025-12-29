@@ -1,15 +1,15 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=xlibre-video-omap
 pkgver=25.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="XLibre fork of omap video driver"
 arch=(x86_64)
 license=('X11')
 _pkgname="${pkgname//xlibre/xf86}"
 url="https://github.com/X11Libre/${_pkgname}"
 depends=("xlibre-xserver>=${pkgver%.*}" 'glibc')
-makedepends=("xlibre-xserver-devel>=${pkgver%.*}" 'xorgproto')
+makedepends=("xlibre-xserver-devel>=${pkgver%.*}" 'xorgproto' 'libdrm')
 conflicts=("${_pkgname}")
 provides=("${_pkgname}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
@@ -20,9 +20,12 @@ build() {
   export CFLAGS=${CFLAGS/-fno-plt}
   export CXXFLAGS=${CXXFLAGS/-fno-plt}
   export LDFLAGS=${LDFLAGS/-Wl,-z,now}
+  export CFLAGS+=" -I/usr/include/omap"
 
   ./autogen.sh
-  ./configure --prefix=/usr
+  ./configure \
+      --prefix=/usr \
+      --with-xorg-module-dir="/usr/lib/xorg/modules/xlibre-${pkgver%%.*}/"
   make
 }
 
