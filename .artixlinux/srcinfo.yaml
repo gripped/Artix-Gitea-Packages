@@ -1,9 +1,9 @@
 ---
-version: 2.41-1
+version: 2.42-1
 pkgbase:
   name: newsboat
   pkgdesc: RSS/Atom feed reader for text terminals
-  pkgver: 2.41
+  pkgver: 2.42
   pkgrel: 1
   url: https://newsboat.org/
   arch:
@@ -34,11 +34,11 @@ pkgbase:
     - '!makeflags'
     - '!lto'
   source:
-    - git+https://github.com/newsboat/newsboat.git?signed#tag=r2.41
+    - git+https://github.com/newsboat/newsboat.git?signed#tag=r2.42
   validpgpkeys:
     - B8B1756A0DDBF0760CE67CCF4ED6CD61932B9EBE
   sha256sums:
-    - dea60add2e3e31d92a56dde8530c91c9f0f2affad7e208be05f4dde6b07e807d
+    - d346e65abaf4b2ccf952380938393b12d140bca3c6838b6f369ccea0913f8827
 pkgname:
   - name: newsboat
 # generated with artixpkg 0.37.4-1-any
