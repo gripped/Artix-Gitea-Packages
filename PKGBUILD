@@ -1,8 +1,8 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=xlibre-video-freedreno
 pkgver=25.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="XLibre fork of freedreno video driver"
 arch=(x86_64)
 license=('X11')
@@ -14,15 +14,19 @@ conflicts=("${_pkgname}")
 provides=("${_pkgname}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
+makedepends+=('libdrm' 'udev')
 
 build() {
   cd ${_pkgname}-xlibre-${_pkgname}-${pkgver}
   export CFLAGS=${CFLAGS/-fno-plt}
   export CXXFLAGS=${CXXFLAGS/-fno-plt}
   export LDFLAGS=${LDFLAGS/-Wl,-z,now}
+  export CFLAGS+=" -I/usr/include/freedreno"
 
   ./autogen.sh
-  ./configure --prefix=/usr
+  ./configure \
+      --prefix=/usr \
+      --with-xorg-module-dir="/usr/lib/xorg/modules/xlibre-${pkgver%%.*}/"
   make
 }
 
