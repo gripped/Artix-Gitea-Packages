@@ -1,10 +1,10 @@
 ---
-version: 3.13.1-1
+version: 3.13.1-2
 pkgbase:
   name: aom
   pkgdesc: Alliance for Open Media video codec
   pkgver: 3.13.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://aomedia.org/
   arch:
     - x86_64
