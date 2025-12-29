@@ -18,7 +18,6 @@ pkgbase:
     - python-wheel
   depends:
     - python-pyinotify
-    - python-systemd
     - sqlite
     - whois
   optdepends:

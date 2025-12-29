@@ -14,7 +14,6 @@ url='https://www.fail2ban.org/'
 license=('GPL-2.0-or-later')
 depends=(
   'python-pyinotify'
-  'python-systemd'
   'sqlite'
   'whois'
 )
@@ -77,8 +76,6 @@ package() {
   cd $pkgname
   python -m installer --destdir="$pkgdir" dist/*.whl
 
-  install -Dm644 build/fail2ban.service \
-    "$pkgdir"/usr/lib/systemd/system/$pkgname.service
   install -Dm644 files/fail2ban-tmpfiles.conf \
     "$pkgdir"/usr/lib/tmpfiles.d/$pkgname.conf
   install -Dm644 files/fail2ban-logrotate \
