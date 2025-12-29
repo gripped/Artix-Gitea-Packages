@@ -1,10 +1,10 @@
 ---
-version: 2.8.0-2
+version: 2.8.0-3
 pkgbase:
   name: ufmt
   pkgdesc: Safe, atomic formatting with black and µsort
   pkgver: 2.8.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/omnilib/ufmt
   arch:
     - any
@@ -13,6 +13,7 @@ pkgbase:
   checkdepends:
     - python-pygls
     - python-ruff-api
+    - python-pytest
   makedepends:
     - python-build
     - python-installer
