@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 25.12.1-2
+    version: 25.12.2-1
     packages:
-      - ansible-lint-25.12.1-2-any.pkg.tar.zst
+      - ansible-lint-25.12.2-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
