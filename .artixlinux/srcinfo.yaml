@@ -1,10 +1,10 @@
 ---
-version: 1.28.0-4
+version: 1.28.1-1
 pkgbase:
   name: nginx
   pkgdesc: Lightweight HTTP server and IMAP/POP3 proxy server
-  pkgver: 1.28.0
-  pkgrel: 4
+  pkgver: 1.28.1
+  pkgrel: 1
   url: https://nginx.org
   arch:
     - x86_64
@@ -35,7 +35,7 @@ pkgbase:
     - rsync
     - zlib
   source:
-    - git+https://github.com/nginx/nginx.git#tag=release-1.28.0
+    - git+https://github.com/nginx/nginx.git#tag=release-1.28.1
     - git+https://github.com/nginx/nginx-tests.git#commit=17c6a06e7b692351f4af53ca6511b919e9e510b8
     - logrotate
   validpgpkeys:
@@ -44,7 +44,7 @@ pkgbase:
     - D6786CE303D9A9022998DC6CC8464D549AF75C0A
     - 13C82A63B603576156E30A4EA0EA981B66B0D967
   sha512sums:
-    - 1e1e5b029fcd2bf9af1a6d7910751b7d6a7f4e42fd1014139b4ad2bcf6be06acd999844a295357923d6936c3ad165406df172c129f668e76566585cd4db4548c
+    - 7d6ca544a89e3290b13774d7786520370969b68672cf28e1212959aaf972029a984618ade18fc9ad6b398c8d3ba837ef324880e0cc0228df33bec00c2f2ffa4d
     - 5a3b2673e485f7e40094ee11e3f80319f8555f6cac05ea4a40139faa1b218f6124d67f8715e56d894a4f4f5c9bc89987e175b7a5772938207861d9f9a57cacf1
     - 2f4dfcfa711b8bcbc5918ba635f5e430ef7132e66276261ade62bb1cba016967432c8dce7f84352cb8b07dc7c6b18f09177aa3eb92c8e358b2a106c8ca142fe9
 pkgname:
@@ -76,7 +76,7 @@ pkgname:
   - name: nginx-mod-geoip
     pkgdesc: GeoIP module for nginx
     depends:
-      - nginx=1.28.0
+      - nginx=1.28.1
       - glibc
       - geoip
     backup:
@@ -84,7 +84,7 @@ pkgname:
   - name: nginx-mod-image-filter
     pkgdesc: Module for nginx that transforms images in JPEG, GIF, PNG, and WebP formats
     depends:
-      - nginx=1.28.0
+      - nginx=1.28.1
       - glibc
       - gd
     backup:
@@ -92,14 +92,14 @@ pkgname:
   - name: nginx-mod-mail
     pkgdesc: Mail module for nginx to proxy IMAP, POP3 and SMTP protocols
     depends:
-      - nginx=1.28.0
+      - nginx=1.28.1
       - glibc
     backup:
       - etc/nginx/modules.d/20-mail.conf
   - name: nginx-mod-perl
     pkgdesc: Module for nginx to implement location and variable handlers in Perl
     depends:
-      - nginx=1.28.0
+      - nginx=1.28.1
       - glibc
       - perl
     backup:
@@ -107,22 +107,22 @@ pkgname:
   - name: nginx-mod-stream
     pkgdesc: Module for nginx to proxy TCP and UDP data streams
     depends:
-      - nginx=1.28.0
+      - nginx=1.28.1
       - glibc
     backup:
       - etc/nginx/modules.d/10-stream.conf
   - name: nginx-mod-xslt
     pkgdesc: Module for nginx to transform XML responses with XSLT stylesheets
     depends:
-      - nginx=1.28.0
+      - nginx=1.28.1
       - glibc
       - libxml2
       - libxslt
     backup:
       - etc/nginx/modules.d/20-xslt.conf
   - name: nginx-src
-    pkgdesc: Source code of nginx 1.28.0, useful for building modules
+    pkgdesc: Source code of nginx 1.28.1, useful for building modules
     depends:
       - bash
       - perl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
