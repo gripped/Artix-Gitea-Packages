@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2025_12_15.b40f5cd-1
+    version: 2025_12_23.2ba9fd5-1
     packages:
-      - passt-2025_12_15.b40f5cd-1-x86_64.pkg.tar.zst
+      - passt-2025_12_23.2ba9fd5-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
