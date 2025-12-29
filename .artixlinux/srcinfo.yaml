@@ -1,10 +1,10 @@
 ---
-version: 1.4.2-12
+version: 1.4.3-1
 pkgbase:
   name: inkscape
   pkgdesc: Professional vector graphics editor
-  pkgver: 1.4.2
-  pkgrel: 12
+  pkgver: 1.4.3
+  pkgrel: 1
   url: https://inkscape.org/
   arch:
     - x86_64
@@ -121,7 +121,7 @@ pkgbase:
     - 'pstoedit: latex formulas'
     - 'texlive-pstricks: latex formulas'
   source:
-    - git+https://gitlab.com/inkscape/inkscape.git#tag=INKSCAPE_1_4_2
+    - git+https://gitlab.com/inkscape/inkscape.git#tag=INKSCAPE_1_4_3
     - inkscape-extensions::git+https://gitlab.com/inkscape/extensions.git
     - inkscape-libcroco::git+https://gitlab.com/inkscape/libcroco.git
     - inkscape-themes::git+https://gitlab.com/inkscape/themes.git
@@ -131,9 +131,8 @@ pkgbase:
     - inkscape-extras-extension-xaml::git+https://gitlab.com/inkscape/extras/extension-xaml.git
     - inkscape-extras-extension-afdesign::git+https://gitlab.com/inkscape/extras/extension-afdesign.git
     - inkscape-extras-extension-curve::git+https://gitlab.com/inkscape/extras/extension-curve.git
-    - fix-build-with-poppler-25.10.0.patch
   sha256sums:
-    - 05d245daf42766edfbae0acc2c2f9ff9ae2228d352bf3817b7893fbf9c4ea55c
+    - 312548aa33fff38c1a54bd4093c494051c55ed8b20cf8650499620236c1d3471
     - SKIP
     - SKIP
     - SKIP
@@ -143,7 +142,6 @@ pkgbase:
     - SKIP
     - SKIP
     - SKIP
-    - 7660a158f203932b39c940087886803190d465ce35b2cfec4d3b9c72f3e7aeac
 pkgname:
   - name: inkscape
 # generated with artixpkg 0.37.4-1-any
