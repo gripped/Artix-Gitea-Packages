@@ -2,7 +2,7 @@
 
 pkgname=xlibre-input-libinput
 pkgver=25.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc="XLibre fork of the generic input driver for the X.Org server based on libinput"
 arch=('x86_64')
 license=('MIT')
@@ -15,7 +15,7 @@ provides=("${_pkgname}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
 depends+=('libinput')
-makedepends+=('libxi' 'libx11' 'libxfont2' 'meson')
+makedepends+=('libxi' 'libx11' 'libxfont2' 'meson>=0.50.0')
 install=$pkgname.install
 
 build() {
