@@ -1,8 +1,8 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=xlibre-input-joystick
 pkgver=25.0.0
-pkgrel=3
+pkgrel=4
 pkgdesc="XLibre fork of X.Org joystick input driver for the XLibre X server"
 arch=(x86_64)
 license=('custom')
