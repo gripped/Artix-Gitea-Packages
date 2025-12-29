@@ -1,10 +1,10 @@
 ---
-version: 3.0.3.a1525e7-1
+version: 3.0.3.a1525e7-2
 pkgbase:
   name: hiprt
   pkgdesc: Ray Tracing Library for HIP
   pkgver: 3.0.3.a1525e7
-  pkgrel: 1
+  pkgrel: 2
   url: https://gpuopen.com/hiprt/
   arch:
     - x86_64
