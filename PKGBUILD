@@ -1,0 +1,29 @@
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=xorg-xkbutils
+pkgver=1.0.6
+pkgrel=1
+pkgdesc="XKB utility demos"
+arch=('x86_64')
+url="https://gitlab.freedesktop.org/xorg/app/xkbutils"
+license=('LicenseRef-xkbutils')
+depends=('libxaw' 'libxt' 'libx11' 'glibc')
+makedepends=('xorg-util-macros' 'xorgproto')
+groups=('xorg-apps' 'xorg')
+source=(https://xorg.freedesktop.org/archive/individual/app/xkbutils-${pkgver}.tar.xz{,.sig})
+sha512sums=('78fb7ab4ef6642040992529444944080aca7a2ec4118f9a64c45dacc37e4041181df7bcd1f4270e11b9fbc8bd60a131b4702d2aa95741d89c54582ff8a8f896e'
+            'SKIP')
+validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # Alan Coopersmith <alan.coopersmith@oracle.com>
+
+build() {
+  cd xkbutils-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd xkbutils-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}
