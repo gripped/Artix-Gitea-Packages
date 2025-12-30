@@ -1,10 +1,10 @@
 ---
-version: 1.8.0-2
+version: 1.9.0-1
 pkgbase:
   name: python-django-q2
   pkgdesc: A multiprocessing distributed task queue for Django
-  pkgver: 1.8.0
-  pkgrel: 2
+  pkgver: 1.9.0
+  pkgrel: 1
   url: https://github.com/django-q2/django-q2
   arch:
     - any
@@ -31,9 +31,9 @@ pkgbase:
   replaces:
     - python-django-q
   source:
-    - python-django-q2-1.8.0.tar.gz::https://github.com/django-q2/django-q2/archive/refs/tags/v1.8.0.tar.gz
+    - python-django-q2-1.9.0.tar.gz::https://github.com/django-q2/django-q2/archive/refs/tags/v1.9.0.tar.gz
   sha256sums:
-    - 3f35acadb506ee653d4137cdd27bfd301392922c0c943c373de11962f310a268
+    - c2d2df923dd40c300060c41efe544a638fb67ab0135c4a16826ea21c5913e2cb
 pkgname:
   - name: python-django-q2
 # generated with artixpkg 0.37.4-1-any
