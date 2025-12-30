@@ -1,10 +1,10 @@
 ---
-version: 6.6.2-1
+version: 6.6.2-2
 pkgbase:
   name: nemo
   pkgdesc: File manager for Cinnamon (Nautilus fork)
   pkgver: 6.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/linuxmint/nemo
   arch:
     - x86_64
