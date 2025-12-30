@@ -2,9 +2,9 @@
 
 pkgname=xlibre-video-suncg6
 pkgver=25.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc="XLibre fork of suncg6 video driver"
-arch=(x86_64)
+arch=(x86_64 aarch64)
 license=('X11')
 _pkgname="${pkgname//xlibre/xf86}"
 url="https://github.com/X11Libre/${_pkgname}"
