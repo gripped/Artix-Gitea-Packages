@@ -1,10 +1,10 @@
 ---
-version: 0.19.2-1
+version: 0.19.2-2
 pkgbase:
   name: wlroots0.19
   pkgdesc: Modular Wayland compositor library
   pkgver: 0.19.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/wlroots/wlroots
   arch:
     - x86_64
@@ -38,6 +38,7 @@ pkgbase:
     - xcb-util-wm
   optdepends:
     - 'xorg-xwayland: Xwayland support'
+    - 'vulkan-validation-layers: validation layers for the experimental vulkan renderer backend'
   provides:
     - libwlroots-0.19.so
   source:
