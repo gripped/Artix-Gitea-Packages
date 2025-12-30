@@ -3,12 +3,11 @@
 pkgname=sonic-silver-theme
 _pkgname=silver-theme
 pkgver=6.5.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Highly customizable binary Window Decoration, Application Style and Global Theme plugin for the Sonic Desktop.'
 arch=(x86_64)
 url="https://github.com/Sonic-DE/silver-theme"
 license=('LGPL-2.0-or-later')
-replaces=(classik klassy)
 depends=(breeze-icons
          hicolor-icon-theme
          frameworkintegration

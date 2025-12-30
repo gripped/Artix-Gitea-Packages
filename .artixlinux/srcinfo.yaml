@@ -1,10 +1,10 @@
 ---
-version: 6.5.1-2
+version: 6.5.1-3
 pkgbase:
   name: sonic-silver-theme
   pkgdesc: Highly customizable binary Window Decoration, Application Style and Global Theme plugin for the Sonic Desktop.
   pkgver: 6.5.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/Sonic-DE/silver-theme
   arch:
     - x86_64
@@ -35,9 +35,6 @@ pkgbase:
     - qt6-declarative
     - qt6-svg
     - xdg-utils
-  replaces:
-    - classik
-    - klassy
   source:
     - silver-theme-6.5.1.tar.gz::https://github.com/Sonic-DE/silver-theme/archive/refs/tags/6.5.1.tar.gz
   sha256sums:
