@@ -1,13 +1,14 @@
 ---
-version: 25.0.0-5
+version: 25.0.0-6
 pkgbase:
   name: xlibre-video-apm
   pkgdesc: XLibre fork of X.Org SVGA server for Alliance Promotion graphics chipsets
   pkgver: 25.0.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/X11Libre/xf86-video-apm
   arch:
     - x86_64
+    - aarch64
   groups:
     - xlibre-drivers
   license:
