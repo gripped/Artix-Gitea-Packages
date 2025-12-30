@@ -1,13 +1,14 @@
 ---
-version: 25.0.0-5
+version: 25.0.0-6
 pkgbase:
   name: xlibre-video-siliconmotion
   pkgdesc: XLibre fork of siliconmotion video driver
   pkgver: 25.0.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/X11Libre/xf86-video-siliconmotion
   arch:
     - x86_64
+    - aarch64
   groups:
     - xlibre-drivers
   license:
