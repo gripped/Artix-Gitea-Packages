@@ -3,25 +3,26 @@
 # Contributor: Frederik “Freso” S. Olesen <freso.dk@gmail.com>
 
 pkgname=python-mediafile
-pkgver=0.13.0
+pkgver=0.14.0
 pkgrel=2
 pkgdesc='Elegant audio file tagging'
 arch=(any)
-url=https://github.com/beetbox/mediafile
+url='https://github.com/beetbox/mediafile'
 license=(MIT)
 depends=(
+  python
   python-mutagen
   python-filetype
 )
 makedepends=(
   git
   python-build
-  python-flit-core
+  python-poetry-core
   python-installer
 )
 source=("$pkgname::git+https://github.com/beetbox/mediafile#tag=v$pkgver")
-sha512sums=('a600afb0b8378506578895d99193fe202ce6f76d531c72fd14b81adea6b9b1cd7063afe86997e78d06306cade981cf0172dca6d004d8057009d38cfb44d93045')
-b2sums=('97a4cdf2c2ec0228caf0838d3d495cd0d0ec8f6dbd68aa50d7286fcf3bc099e72194e03c5c421fdef49b6f5cd091f3d656a05d4cf3034c851ed7a35cf53634e6')
+sha512sums=('5c6e2f462b121eee241ca5883e245c90c44777c1362271b18a03460e76f3ff7ce460aeb85f2ab7919aa69be09fb133a61cd043e1cdcc925b1804668f3bfb6b6e')
+b2sums=('a72e18cc94dd393b245c2bb966d7e2f370a091575920027949a7f4973b189deb036032b19dee6027fde7a28e66ab7e183e248ed7a8da91c26544a9e8b19da8fb')
 
 build() {
   cd "$pkgname"
@@ -45,4 +46,3 @@ package() {
 }
 
 # vim: ts=2 sw=2 et:
- 
