@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.8.0-3
+    version: 4.13.1-1
     packages:
-      - python-cliff-4.8.0-3-any.pkg.tar.zst
+      - python-cliff-4.13.1-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
