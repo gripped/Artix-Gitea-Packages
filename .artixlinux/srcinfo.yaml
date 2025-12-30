@@ -1,10 +1,10 @@
 ---
-version: 0.21.1-1
+version: 0.21.1-2
 pkgbase:
   name: magic-wormhole
   pkgdesc: Securely transfer data between computers
   pkgver: 0.21.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/magic-wormhole/magic-wormhole
   arch:
     - any
