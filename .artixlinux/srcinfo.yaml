@@ -1,0 +1,30 @@
+---
+version: 25.0.0-1
+pkgbase:
+  name: xlibre-video-openchrome
+  pkgdesc: XLibre fork of X.Org OpenChrome DDX drivers
+  pkgver: 25.0.0
+  pkgrel: 1
+  url: https://github.com/X11Libre/xf86-video-openchrome
+  arch:
+    - x86_64
+    - aarch64
+  groups:
+    - xlibre-drivers
+  makedepends:
+    - xlibre-xserver-devel>=25.0
+    - xorgproto
+  depends:
+    - xlibre-xserver>=25.0
+    - glibc
+  provides:
+    - xf86-video-openchrome
+  conflicts:
+    - xf86-video-openchrome
+  source:
+    - https://github.com/X11Libre/xf86-video-openchrome/archive/refs/tags/xlibre-xf86-video-openchrome-25.0.0.tar.gz
+  sha256sums:
+    - 8e14401a2160c6a7174b09875b4f87d2ad92cecad51e4762fc8739a536cb835a
+pkgname:
+  - name: xlibre-video-openchrome
+# generated with artixpkg 0.37.4-1-any
