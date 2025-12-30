@@ -1,14 +1,15 @@
 ---
-version: 25.0.0-7
+version: 25.0.0-8
 pkgbase:
   name: xlibre-input-libinput
   pkgdesc: XLibre fork of the generic input driver for the X.Org server based on libinput
   pkgver: 25.0.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/X11Libre/xf86-input-libinput
   install: xlibre-input-libinput.install
   arch:
     - x86_64
+    - aarch64
   groups:
     - xlibre-drivers
   license:

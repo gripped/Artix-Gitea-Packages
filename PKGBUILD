@@ -2,9 +2,9 @@
 
 pkgname=xlibre-input-libinput
 pkgver=25.0.0
-pkgrel=7
+pkgrel=8
 pkgdesc="XLibre fork of the generic input driver for the X.Org server based on libinput"
-arch=('x86_64')
+arch=(x86_64 aarch64)
 license=('MIT')
 _pkgname="${pkgname//xlibre/xf86}"
 url="https://github.com/X11Libre/${_pkgname}"
