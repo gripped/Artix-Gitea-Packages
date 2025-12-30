@@ -6,7 +6,7 @@
 pkgbase=profanity
 pkgname=('profanity' 'profanity-gtk')
 pkgver=0.15.1
-pkgrel=2
+pkgrel=1.1
 epoch=1
 pkgdesc='Console based XMPP client'
 url='http://www.profanity.im'
@@ -50,6 +50,7 @@ build() {
       --enable-plugins \
       --enable-otr \
       --enable-omemo \
+      --enable-omemo-qrcode \
       --enable-pgp
     sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
     make
@@ -66,6 +67,7 @@ build() {
       --enable-plugins \
       --enable-otr \
       --enable-omemo \
+      --enable-omemo-qrcode \
       --enable-pgp
     sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
     make
