@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-5
 pkgbase:
   name: xlibre-video-ast
   pkgdesc: XLibre fork of X.Org aspeed video driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 5
   url: https://github.com/X11Libre/xf86-video-ast
   arch:
     - x86_64
