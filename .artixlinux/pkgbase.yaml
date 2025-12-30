@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20251224-2
+    version: 20251230-1
     packages:
-      - artix-dark-theme-20251224-2-any.pkg.tar.zst
+      - artix-dark-theme-20251230-1-any.pkg.tar.zst
     debug: []
 team: galaxy
