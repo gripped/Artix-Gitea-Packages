@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-freedreno
 pkgver=25.0.0
-pkgrel=5
+pkgrel=6
 pkgdesc="XLibre fork of freedreno video driver"
 arch=(x86_64)
 license=('X11')
