@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.19.2-3
+    version: 0.19.2-4
     packages:
-      - python-jedi-0.19.2-3-any.pkg.tar.zst
+      - python-jedi-0.19.2-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
