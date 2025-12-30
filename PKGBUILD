@@ -4,8 +4,8 @@
 # Contributor: Evine Deng <evinedeng@hotmail.com>
 
 pkgname=yazi
-pkgver=25.5.31
-pkgrel=2
+pkgver=25.12.29
+pkgrel=1
 pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
 url="https://github.com/sxyazi/yazi"
 arch=("x86_64")
@@ -29,23 +29,22 @@ optdepends=(
 )
 makedepends=('cargo' 'imagemagick')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/sxyazi/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('4d005e7c3f32b5574d51ab105597f3da3a4be2f7b5cd1bcb284143ad38253ed4')
+sha256sums=('95d426eb933837bc499d3cddadaf845b919586d0105ffb831dcd5e085f73fd6c')
 options=('!lto')
 
 prepare() {
   cd "$pkgname-$pkgver"
-  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
 }
 
 build() {
   cd "$pkgname-$pkgver"
   VERGEN_GIT_SHA="Arch Linux" YAZI_GEN_COMPLETIONS=true cargo build --release --frozen --no-default-features
-  YAZI_GEN_COMPLETIONS=true cargo build --release -p "$pkgname-cli"
 }
 
 check() {
   cd "$pkgname"-$pkgver
-  cargo test --frozen
+  cargo test --frozen --workspace
 }
 
 package() {
