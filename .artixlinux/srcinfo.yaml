@@ -1,10 +1,10 @@
 ---
-version: 3.12.8.2-1
+version: 3.12.8.2-2
 pkgbase:
   name: gthumb
   pkgdesc: Image browser and viewer for the GNOME Desktop
   pkgver: 3.12.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Gthumb
   arch:
     - x86_64
@@ -16,14 +16,11 @@ pkgbase:
     - docbook-xsl
     - git
     - glib2-devel
-    - libchamplain
     - libraw
     - meson
     - yelp-tools
   depends:
     - cairo
-    - clutter
-    - clutter-gtk
     - dconf
     - exiv2
     - gcc-libs
@@ -50,7 +47,6 @@ pkgbase:
     - zlib
   optdepends:
     - 'brasero: burn discs'
-    - 'libchamplain: map viewer'
     - 'libraw: read RAW files'
   source:
     - git+https://gitlab.gnome.org/GNOME/gthumb.git#tag=3.12.8.2
