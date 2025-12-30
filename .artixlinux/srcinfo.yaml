@@ -1,9 +1,9 @@
 ---
-version: 4.6.0-1
+version: 4.6.1-1
 pkgbase:
   name: xreader
-  pkgdesc: Document viewer for files like PDF and Postscript. X-Apps Project.
-  pkgver: 4.6.0
+  pkgdesc: Document viewer for files like PDF and Postscript
+  pkgver: 4.6.1
   pkgrel: 1
   url: https://github.com/linuxmint/xreader
   arch:
@@ -13,20 +13,37 @@ pkgbase:
   license:
     - GPL-2.0-or-later
   makedepends:
-    - meson
-    - intltool
-    - itstool
-    - gobject-introspection
     - djvulibre
     - git
+    - glib2-devel
+    - gobject-introspection
+    - intltool
+    - itstool
     - libgxps
     - libspectre
+    - meson
     - texlive-bin
-    - glib2-devel
   depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libarchive
+    - libice
+    - libsm
+    - libtiff
+    - libx11
+    - libxml2
+    - pango
     - poppler-glib
     - webkit2gtk-4.1
     - xapp
+    - zlib
   optdepends:
     - 'djvulibre: support for djvu files'
     - 'libgxps: support for xps files'
@@ -34,11 +51,9 @@ pkgbase:
     - 'mathjax2: support for math in epub files'
     - 'texlive-bin: support for dvi files'
   source:
-    - git+https://github.com/linuxmint/xreader.git#tag=4.6.0
-  sha256sums:
-    - 486281f9afe2edfd78f601c8ae169333511db098e8320cd77f87d37854f66659
+    - git+https://github.com/linuxmint/xreader.git#tag=4.6.1
   b2sums:
-    - 5b5d10782bbc5346f774483e4f3f8e14ad8cf007d790fdcf54519e2eff5bcf9972d67b540e9db55c9b06ca846a7d28d569f763baea8ca03a030783f384c96617
+    - 9fadfa533d7113522fc9f10166a3b6ea7f8cd2276c812e4714de829da32d4baf3c1ab56857d401eca62f6902f4bfebf38a1f00d2a7aa50e9155d11857b481040
 pkgname:
   - name: xreader
 # generated with artixpkg 0.37.4-1-any
