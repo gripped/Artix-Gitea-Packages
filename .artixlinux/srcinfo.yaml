@@ -1,9 +1,9 @@
 ---
-version: 1.24.1-1
+version: 1.24.2-1
 pkgbase:
   name: starship
   pkgdesc: The cross-shell prompt for astronauts
-  pkgver: 1.24.1
+  pkgver: 1.24.2
   pkgrel: 1
   url: https://starship.rs/
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   optdepends:
     - 'ttf-font-nerd: Nerd Font Symbols preset'
   source:
-    - git+https://github.com/starship/starship.git#tag=v1.24.1
+    - git+https://github.com/starship/starship.git#tag=v1.24.2
   sha256sums:
-    - 73832165f00339e0a0dddde3fe4eb43fd46fd0d8bb19aaec4e4df3ef07e8e13d
+    - 2f29d62da7901ba2f411e8dfe70035dd2d2d3f72fc20014b3f18ebd240a52b7c
 pkgname:
   - name: starship
 # generated with artixpkg 0.37.4-1-any

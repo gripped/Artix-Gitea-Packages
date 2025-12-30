@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.24.1-1
+    version: 1.24.2-1
     packages:
-      - starship-1.24.1-1-x86_64.pkg.tar.zst
+      - starship-1.24.2-1-x86_64.pkg.tar.zst
     debug: []
