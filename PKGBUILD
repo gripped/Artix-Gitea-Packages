@@ -6,7 +6,7 @@
 pkgbase=profanity
 pkgname=('profanity' 'profanity-gtk')
 pkgver=0.15.1
-pkgrel=1.1
+pkgrel=2.1
 epoch=1
 pkgdesc='Console based XMPP client'
 url='http://www.profanity.im'
