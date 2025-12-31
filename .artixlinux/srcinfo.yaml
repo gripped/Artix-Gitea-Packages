@@ -1,10 +1,10 @@
 ---
-version: 17:5.0.1-1
+version: 17:5.0.1-2
 pkgbase:
   name: blender
   pkgdesc: A fully integrated 3D graphics creation suite
   pkgver: 5.0.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 17
   url: https://www.blender.org
   arch:
@@ -106,6 +106,7 @@ pkgbase:
   optdepends:
     - 'cuda: Cycles renderer CUDA support'
     - 'intel-compute-runtime: Cycles renderer Intel OneAPI support'
+    - 'intel-level-zero-raytracing-support: Cycles renderer Intel OneAPI Raytracing Support'
     - 'hip-runtime-amd: Cycles renderer AMD ROCm support'
     - 'hiprt: Ray tracing AMD ROCm support'
     - 'libdecor: wayland support'
