@@ -1,10 +1,10 @@
 ---
-version: 0.1.1-6.1
+version: 0.1.1-7
 pkgbase:
   name: moksha-module-net
   pkgdesc: =Network interface monitor.
   pkgver: 0.1.1
-  pkgrel: 6.1
+  pkgrel: 7
   url: http://mokshadesktop.org
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: moksha-module-net
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any

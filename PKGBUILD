@@ -3,7 +3,7 @@
 _module='net'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=6.1
+pkgrel=7
 pkgdesc="=Network interface monitor."
 _group=('moksha-modules-extra')
 arch=('x86_64')
