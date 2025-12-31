@@ -1,10 +1,10 @@
 ---
-version: 1.17.11-1
+version: 1.17.10-2
 pkgbase:
   name: moksha-theme-green
   pkgdesc: Moksha Green theme
-  pkgver: 1.17.11
-  pkgrel: 1
+  pkgver: 1.17.10
+  pkgrel: 2
   url: https://github.com/thewaiter
   arch:
     - any

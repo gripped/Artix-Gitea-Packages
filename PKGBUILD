@@ -1,11 +1,11 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-green
-pkgver=1.17.11
+pkgver=1.17.10
 _pkgname2=MokshaGreen
 _pkgname3=$_pkgname2
 _pkgname4=Icons-Moksha-Green
-pkgrel=1
+pkgrel=2
 pkgdesc="Moksha Green theme"
 arch=('any')
 url="https://github.com/thewaiter"
