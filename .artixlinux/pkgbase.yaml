@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.0.2-1
+    version: 0.0.1-12
     packages:
-      - moksha-theme-ice-0.0.2-1-any.pkg.tar.zst
+      - moksha-theme-ice-0.0.1-12-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.0.1-11
