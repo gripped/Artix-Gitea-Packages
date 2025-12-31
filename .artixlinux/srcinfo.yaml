@@ -1,10 +1,10 @@
 ---
-version: 3.16.19-2
+version: 3.16.19-3
 pkgbase:
   name: gamescope
   pkgdesc: SteamOS session compositing window manager
   pkgver: 3.16.19
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/ValveSoftware/gamescope
   arch:
     - x86_64
