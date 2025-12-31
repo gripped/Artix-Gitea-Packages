@@ -3,7 +3,7 @@
 _module='wallscape'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=1.2
+pkgrel=2
 pkgdesc="Alternative module for changing Moksha wallpapers."
 _group=('moksha-modules-extra')
 arch=('x86_64')

@@ -1,10 +1,10 @@
 ---
-version: 0.1.1-1.2
+version: 0.1.1-2
 pkgbase:
   name: moksha-module-wallscape
   pkgdesc: Alternative module for changing Moksha wallpapers.
   pkgver: 0.1.1
-  pkgrel: 1.2
+  pkgrel: 2
   url: http://mokshadesktop.org
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: moksha-module-wallscape
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.4-1-any
