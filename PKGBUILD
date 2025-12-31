@@ -1,10 +1,10 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-ice
-pkgver=0.0.1
+pkgver=0.0.2
 _pkgname2=MokshaIce
 _pkgname3=ice
-pkgrel=11
+pkgrel=1
 pkgdesc="Moksha Ice theme"
 arch=('any')
 url="https://github.com/thewaiter"
