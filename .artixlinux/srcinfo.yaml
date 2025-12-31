@@ -1,10 +1,10 @@
 ---
-version: 0.3.8-10
+version: 0.3.8-11
 pkgbase:
   name: moksha-theme-kl4k
   pkgdesc: Moksha KL4K theme
   pkgver: 0.3.8
-  pkgrel: 10
+  pkgrel: 11
   url: https://github.com/thewaiter
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - 18359b7ae6cbeb62a546c445a419b7647ff81c06b4f0dd2520af19a32492f122
 pkgname:
   - name: moksha-theme-kl4k
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
