@@ -1,0 +1,26 @@
+---
+version: 0.4.0-11
+pkgbase:
+  name: moksha-theme-japan
+  pkgdesc: Moksha Japan theme
+  pkgver: 0.4.0
+  pkgrel: 11
+  url: https://github.com/thewaiter
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - efl
+  options:
+    - '!strip'
+  source:
+    - git+https://github.com/thewaiter/MokshaJapan.git
+    - artix-icon.png
+  sha256sums:
+    - SKIP
+    - d3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95
+pkgname:
+  - name: moksha-theme-japan
+# generated with artixpkg 0.37.4-1-any
