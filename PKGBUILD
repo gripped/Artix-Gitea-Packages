@@ -3,7 +3,7 @@
 _pkg=geopandas
 pkgname=python-${_pkg}
 pkgver=1.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Python tools for geographic data"
 arch=(any)
 url="https://geopandas.org"
@@ -72,4 +72,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE.txt -t "${pkgdir}"/usr/share/licenses/${pkgname}
 }
- 
