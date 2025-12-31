@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.0.3-1
+    version: 0.0.2-3
     packages:
-      - moksha-theme-zenithal-0.0.3-1-any.pkg.tar.zst
+      - moksha-theme-zenithal-0.0.2-3-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.0.2-2
