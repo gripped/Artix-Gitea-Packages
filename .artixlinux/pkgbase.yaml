@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 17:5.0.0-1
+    version: 17:5.0.1-1
     packages:
-      - blender-17:5.0.0-1-x86_64.pkg.tar.zst
+      - blender-17:5.0.1-1-x86_64.pkg.tar.zst
     debug: []
