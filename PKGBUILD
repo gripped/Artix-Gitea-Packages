@@ -3,7 +3,7 @@
 pkgname=moksha-theme-seven
 pkgver=0.3.9
 _pkgname2=MokshaSeven
-pkgrel=8
+pkgrel=9
 pkgdesc="Moksha Seven theme"
 arch=('any')
 url="https://github.com/thewaiter"
