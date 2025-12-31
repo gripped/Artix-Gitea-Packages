@@ -5,7 +5,7 @@
 
 pkgname=yazi
 pkgver=25.12.29
-pkgrel=1
+pkgrel=2
 pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
 url="https://github.com/sxyazi/yazi"
 arch=("x86_64")
@@ -26,6 +26,7 @@ optdepends=(
 	'xsel: for X11 clipboard support'
 	'wl-clipboard: for Wayland clipboard support'
 	'chafa: for ASCII image preview as fallback'
+	'git: for Yazi package management'
 )
 makedepends=('cargo' 'imagemagick')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/sxyazi/$pkgname/archive/v$pkgver.tar.gz")

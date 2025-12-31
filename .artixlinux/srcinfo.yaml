@@ -1,10 +1,10 @@
 ---
-version: 25.12.29-1
+version: 25.12.29-2
 pkgbase:
   name: yazi
   pkgdesc: Blazing fast terminal file manager written in Rust, based on async I/O
   pkgver: 25.12.29
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sxyazi/yazi
   arch:
     - x86_64
@@ -31,6 +31,7 @@ pkgbase:
     - 'xsel: for X11 clipboard support'
     - 'wl-clipboard: for Wayland clipboard support'
     - 'chafa: for ASCII image preview as fallback'
+    - 'git: for Yazi package management'
   options:
     - '!lto'
   source:
