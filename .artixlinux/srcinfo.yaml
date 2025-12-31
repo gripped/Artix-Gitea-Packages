@@ -1,10 +1,10 @@
 ---
-version: 2.6.18-1
+version: 2.6.18-2
 pkgbase:
   name: moksha-theme-passion
   pkgdesc: Moksha Passion theme
   pkgver: 2.6.18
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/thewaiter
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: moksha-theme-passion
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
