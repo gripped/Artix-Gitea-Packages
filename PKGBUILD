@@ -3,8 +3,8 @@
 _module='forecasts'
 _fullmodule='bodhi-weather'
 pkgname="moksha-module-${_module}"
-pkgver=0.1.2
-pkgrel=1
+pkgver=0.1.1
+pkgrel=8
 pkgdesc="The forecasts gadget will display the current weather conditions plus a few days forecast."
 _group=('moksha-modules-extra')
 arch=('x86_64')
