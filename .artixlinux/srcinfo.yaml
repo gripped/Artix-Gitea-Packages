@@ -1,10 +1,10 @@
 ---
-version: 0.0.3-2
+version: 0.0.3-1
 pkgbase:
   name: moksha-theme-zenithal
   pkgdesc: Moksha Zenithal theme
   pkgver: 0.0.3
-  pkgrel: 2
+  pkgrel: 1
   url: https://github.com/thewaiter
   arch:
     - any
