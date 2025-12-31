@@ -1,0 +1,26 @@
+---
+version: 0.10.0.8-2
+pkgbase:
+  name: moksha-theme-blingbling
+  pkgdesc: Moksha Bling theme
+  pkgver: 0.10.0.8
+  pkgrel: 2
+  url: https://github.com/thewaiter
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - efl
+  options:
+    - '!strip'
+  source:
+    - git+https://github.com/thewaiter/etheme-blingbling-e20.git
+    - LICENSE
+  sha256sums:
+    - SKIP
+    - c7937410c48066984c66bd41f01066cda3429e03808868a48a1d8f6348a41f87
+pkgname:
+  - name: moksha-theme-blingbling
+# generated with artixpkg 0.37.4-1-any
