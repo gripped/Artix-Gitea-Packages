@@ -1,10 +1,10 @@
 ---
-version: 0.10.0-10
+version: 0.10.0-11
 pkgbase:
   name: moksha-theme-crema
   pkgdesc: Moksha Crema theme
   pkgver: 0.10.0
-  pkgrel: 10
+  pkgrel: 11
   url: https://github.com/thewaiter
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - d3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95
 pkgname:
   - name: moksha-theme-crema
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
