@@ -1,0 +1,24 @@
+---
+version: 0.3.1-1.19
+pkgbase:
+  name: moksha-theme-arc
+  pkgdesc: Moksha Arc theme
+  pkgver: 0.3.1
+  pkgrel: 1.19
+  url: https://github.com/thewaiter
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - git
+    - efl
+  options:
+    - '!strip'
+  source:
+    - git+https://github.com/thewaiter/enlightenment-arc-theme.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: moksha-theme-arc
+# generated with artixpkg 0.37.4-1-any
