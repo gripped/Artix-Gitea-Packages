@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=moksha-theme-zenithal
-pkgver=0.0.2
+pkgver=0.0.3
 _pkgname2=zenithal
 _pkgname3=MokshaZenithal
 _pkgname4=Delft
@@ -12,12 +12,8 @@ arch=('any')
 url="https://github.com/thewaiter"
 license=('BSD')
 makedepends=('git' 'efl')
-source=("git+${url}/${_pkgname2}.git"
-         changelog.gz
-         copyright)
-sha256sums=('SKIP'
-            'a93597a61bc073686a77a5a5c5684bf6ffc153538a5e680a088a5b638b41a70b'
-            '5203c7cd8679babde472ec78648911570a7204e3ba0d9f7a9101beaf596de7b2')
+source=("git+${url}/${_pkgname2}.git")
+sha256sums=('SKIP')
 options=("!strip")
 
 build() {
