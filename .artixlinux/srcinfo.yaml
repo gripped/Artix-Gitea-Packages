@@ -1,10 +1,10 @@
 ---
-version: 0.5.18-1
+version: 0.5.18-2
 pkgbase:
   name: moksha-theme-blueelectric
   pkgdesc: Moksha Blue Electric theme
   pkgver: 0.5.18
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/thewaiter
   arch:
     - any
@@ -23,4 +23,4 @@ pkgbase:
     - d3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95
 pkgname:
   - name: moksha-theme-blueelectric
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.4-1-any
