@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.7.1-2
+    version: 5.8.0-2
     packages:
-      - python-cbor2-5.7.1-2-x86_64.pkg.tar.zst
+      - python-cbor2-5.8.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
