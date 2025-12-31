@@ -1,0 +1,40 @@
+---
+version: 7.5.4-2
+pkgbase:
+  name: python-pysaml2
+  pkgdesc: Python implementation of SAML Version 2
+  pkgver: 7.5.4
+  pkgrel: 2
+  url: https://github.com/IdentityPython/pysaml2
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pyasn1
+    - python-pymongo
+    - python-pytest
+    - python-responses
+  makedepends:
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+    - python-cryptography
+    - python-dateutil
+    - python-defusedxml
+    - python-pyopenssl
+    - python-requests
+    - python-xmlschema
+    - xmlsec
+  optdepends:
+    - 'python-paste: for paste integration'
+    - 'python-zope-interface: for zope integration'
+  source:
+    - https://github.com/IdentityPython/pysaml2/archive/v7.5.4/python-pysaml2-7.5.4.tar.gz
+  b2sums:
+    - 411039c943a72649677133b21390dbb55add533ba67302bea60b64b2ebe820e6fab3cdeb442accff6d2966e72bb93f115a0b8c3766b67c8091bce26aa16c2bf5
+pkgname:
+  - name: python-pysaml2
+# generated with artixpkg 0.37.4-1-any
