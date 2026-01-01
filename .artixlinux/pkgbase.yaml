@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.4.0-9
+    version: 0.4.0-10
     packages:
-      - python-pytrie-0.4.0-9-any.pkg.tar.zst
+      - python-pytrie-0.4.0-10-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
