@@ -1,10 +1,10 @@
 ---
-version: 0.148.0-1
+version: 0.148.0-2
 pkgbase:
   name: python-zeroconf
   pkgdesc: A pure python implementation of multicast DNS service discovery
   pkgver: 0.148.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jstasiak/python-zeroconf
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - LGPL-2.1-or-later
   checkdepends:
     - python-pytest
+    - python-pytest-asyncio
   makedepends:
     - python-setuptools
     - python-build
