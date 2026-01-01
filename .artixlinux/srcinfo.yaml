@@ -1,15 +1,15 @@
 ---
-version: 7.0.0-2
+version: 7.0.0-3
 pkgbase:
   name: python-oslo-concurrency
   pkgdesc: OpenStack library for all concurrency-related code
   pkgver: 7.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://pypi.python.org/pypi/oslo.concurrency/7.0.0
   arch:
     - any
   license:
-    - Apache
+    - Apache-2.0
   checkdepends:
     - python-oslotest
     - python-stestr
@@ -25,8 +25,10 @@ pkgbase:
     - python-fasteners
   source:
     - git+https://github.com/openstack/oslo.concurrency.git#tag=7.0.0
+    - python-oslo-concurrency-python-3.14.patch
   sha512sums:
     - 22c9f841cda714b91eb5fd2832b27f7080953157ddff4775e585cfebfc89da1e5b4e50bd4017a30ca99ee2346786c0b4062ff3f0ebb21c8a5f3b41e70a3a2882
+    - 031c3afbc17f5bc3a8f91275d81fec22c1a70f09a9187bd7e46fae2147edeaba31d51f23d3a10f86121be60a01fa88049a79cf4a1a32efbf5b98ea2d9be9109b
 pkgname:
   - name: python-oslo-concurrency
 # generated with artixpkg 0.37.4-1-any
