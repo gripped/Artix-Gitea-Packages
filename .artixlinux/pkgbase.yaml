@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.3.2-18
+    version: 1.3.2-19
     packages:
-      - python-geoip-1.3.2-18-x86_64.pkg.tar.zst
+      - python-geoip-1.3.2-19-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
