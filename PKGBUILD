@@ -75,4 +75,3 @@ package() {
   install -m0644 "${srcdir}"/99-artix.rules "${pkgdir}"/etc/polkit-1/rules.d; rm -r $pkgdir/usr/lib/systemd
 }
 
-# vim:set sw=2 sts=-1 et:
