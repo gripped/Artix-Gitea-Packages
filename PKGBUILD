@@ -34,3 +34,4 @@ package() {
   cd os-client-config
   python -m installer --destdir "$pkgdir" dist/*.whl
 }
+ 
