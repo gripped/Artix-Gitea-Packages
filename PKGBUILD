@@ -49,7 +49,7 @@ prepare() {
   cd polkit
   git apply -3 ../turnstile.patch
   git apply -3 ../0001-meson-Support-explicit-GID.patch
-  git apply -3 ../0002-meson-Detect-Arch-Linux-and-set-the-UID-and-GID.patch
+  git apply -3 ../0002-meson-Detect-Artix-Linux-and-set-the-UID-and-GID.patch
   git apply -3 ../0003-meson-elogind-build-fix.patch
 }
 
