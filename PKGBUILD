@@ -5,14 +5,13 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=nvidia-utils
-pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-dkms' 'nvidia-open-dkms')
-pkgver=580.105.08
-pkgrel=5
+pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-open-dkms')
+pkgver=590.48.01
+pkgrel=1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
 options=('!strip')
-makedepends=('patchelf')
 _pkg="NVIDIA-Linux-x86_64-${pkgver}"
 _pkg_open="NVIDIA-kernel-module-source-${pkgver}"
 source=('nvidia-drm-outputclass.conf'
@@ -22,19 +21,15 @@ source=('nvidia-drm-outputclass.conf'
         "https://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/${_pkg}.run"
         "https://download.nvidia.com/XFree86/NVIDIA-kernel-module-source/${_pkg_open}.tar.xz"
         0001-Enable-atomic-kernel-modesetting-by-default.patch
-        0002-Add-IBT-support.patch
-        0003-Revert-a-change-related-to-the-display-stack-in-580..patch
-        0004-nvidia-uvm-Remove-unused-get_devmap_page-parameter.patch)
+        0002-Add-IBT-support.patch)
 sha512sums=('de7116c09f282a27920a1382df84aa86f559e537664bb30689605177ce37dc5067748acf9afd66a3269a6e323461356592fdfc624c86523bf105ff8fe47d3770'
             '1bcf2c6ee71686c0d32625e746ec8c0f7cf42fc63c76c3076ff2526b2661e8b9e9f76eaa2c4b213c7cc437a6f06006cc07672c4974d7f4515b2de2fd7c47a891'
             'f8f071f5a46c1a5ce5188e104b017808d752e61c0c20de1466feb5d693c0b55a5586314411e78cc2ab9c0e16e2c67afdd358da94c0c75df1f8233f54c280762c'
             'c7fea39d11565f05a507d3aded4e9ea506ef9dbebf313e0fc8d6ebc526af3f9d6dec78af9d6c4456c056310f98911c638706bccdd9926d07f492615569430455'
-            '4aa4e456801507d161fbefc66338a0289e2fc1e501bb17772adca721f02772b2ad7e2ac1b7da7aafc2496c96a64de9f057df7c5b562056c18805589c411b5837'
-            'a36ebe0ffd4f3fc6320f60be2b94b04bb8c2ce7c14faca791aca0d1b7973b282f64a02197b6f01f263d6a836aafc83261018bfdef32ba7e7c313f850fef4fc67'
+            '31fd82af707dbe9a6d3848766925386f5e91c5fae0a605819450eb8e5a5a52eaab3ae5cff50b4dd36bc5c32fe1aabc29a6a79438d6614988c7b08f509ef0da6d'
+            '6fe32d5d1a84df0baeaaecd4a847ba73a89bcd1b51d5f9c7525efd2af891f6d5512c1ac97c8b766ba1d1103312c53e5406653589e22684df9260fd75977591a6'
             '98ff06b32bac4297b4ca68e069750114ab5caf41d2a58f945488b52acf97c34dd3b64a6af609f8972e688bd646fe3ee598e699534001230d6f0154cebe6ff5d1'
-            '3c4d87686cc79f09feca29df1a8c1973412b48077870b0d3424d575500234e9522b93df53bb6ecd72afd8dc69ecb4a8e7bd3e206080348d30a48c00e62f42943'
-            '55b9e5073ebf04fb050ca73b22c86d343f8b3a95e938e89c8f2efd65f40d75438a7c8f448860941e3d790b8a299383b1f55880bb9a51041124064dc1a1570e71'
-            'b38297a6fc1eb7200802a8c3b1000139aa5519fd3eca50ee8de1bc2e17ada077f68a54b7432c093ed1c86604a47c60d12729c0001eb485f28a01ece1f03ccfac')
+            '3c4d87686cc79f09feca29df1a8c1973412b48077870b0d3424d575500234e9522b93df53bb6ecd72afd8dc69ecb4a8e7bd3e206080348d30a48c00e62f42943')
 
 
 create_links() {
@@ -61,8 +56,6 @@ prepare() {
     # Kernel-open
     patch -Np1 -i "${srcdir}/0001-Enable-atomic-kernel-modesetting-by-default.patch" -d "${srcdir}/${_pkg_open}"
     patch -Np1 -i "${srcdir}/0002-Add-IBT-support.patch" -d "${srcdir}/${_pkg_open}"
-    patch -Np1 -i "${srcdir}/0003-Revert-a-change-related-to-the-display-stack-in-580..patch" -d "${srcdir}/${_pkg_open}"
-    patch -Np1 -i "${srcdir}/0004-nvidia-uvm-Remove-unused-get_devmap_page-parameter.patch" -d "${srcdir}/${_pkg_open}"
 
     # Attempt to make builds reproducible
     sed -i "s/^  HOSTNAME.*/  HOSTNAME = echo archlinux/" "${srcdir}/${_pkg_open}/utils.mk"
@@ -117,23 +110,9 @@ package_opencl-nvidia() {
     ln -s nvidia-utils "${pkgdir}/usr/share/licenses/opencl-nvidia"
 }
 
-package_nvidia-dkms() {
-    pkgdesc="NVIDIA kernel modules - module sources"
-    depends=('dkms' "nvidia-utils=$pkgver" 'libglvnd')
-    provides=('NVIDIA-MODULE' 'nvidia')
-    conflicts=('NVIDIA-MODULE' 'nvidia')
-
-    cd ${_pkg}
-
-    install -dm 755 "${pkgdir}/usr/src"
-    cp -dr --no-preserve='ownership' kernel "${pkgdir}/usr/src/nvidia-${pkgver}"
-
-    install -Dm644 "${srcdir}/${_pkg}/LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-}
-
 package_nvidia-utils() {
     pkgdesc="NVIDIA drivers utilities"
-    depends=('libglvnd' 'egl-wayland' 'egl-gbm' 'egl-x11')
+    depends=('libglvnd' 'egl-wayland' 'egl-wayland2' 'egl-gbm' 'egl-x11')
     optdepends=('nvidia-settings: configuration tool'
                 'xorg-server: Xorg support'
                 'xorg-server-devel: nvidia-xconfig'
@@ -240,6 +219,9 @@ package_nvidia-utils() {
     # Present Helper
     install -Dm755 "libnvidia-present.so.${pkgver}" "${pkgdir}/usr/lib/libnvidia-present.so.${pkgver}"
 
+    # https://github.com/microsoft/TileIR
+    install -Dm755 "libnvidia-tileiras.so.${pkgver}" "${pkgdir}/usr/lib/libnvidia-tileiras.so.${pkgver}"
+
     # Debug
     install -Dm755 nvidia-debugdump "${pkgdir}/usr/bin/nvidia-debugdump"
 
@@ -314,7 +296,8 @@ package_nvidia-open-dkms() {
   depends+=('dkms' "nvidia-utils=$pkgver")
   license=('MIT AND GPL-2.0-only')
   conflicts=('nvidia-open' 'NVIDIA-MODULE')
-  provides=('nvidia-open' 'NVIDIA-MODULE')
+  provides=('nvidia-open' 'NVIDIA-MODULE' 'nvidia-dkms')
+  replaces=('nvidia-dkms')
 
   install -dm 755 "${pkgdir}/usr/src"
   cp -dr --no-preserve='ownership' "${srcdir}/${_pkg_open}" "${pkgdir}/usr/src/nvidia-$pkgver"
