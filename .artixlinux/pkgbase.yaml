@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.82-5
+    version: 4.82-6
     packages:
-      - python-pyro-4.82-5-any.pkg.tar.zst
+      - python-pyro-4.82-6-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
