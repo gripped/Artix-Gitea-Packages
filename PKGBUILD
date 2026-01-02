@@ -5,8 +5,8 @@
 
 _base=textual
 pkgname=python-${_base}
-pkgver=6.11.0
-pkgrel=1
+pkgver=6.12.0
+pkgrel=2
 pkgdesc="Modern Text User Interface framework"
 arch=(any)
 url="https://github.com/Textualize/${_base}"
@@ -15,7 +15,7 @@ depends=(python python-rich python-markdown-it-py python-typing_extensions pytho
 makedepends=(python-build python-installer python-poetry-core)
 checkdepends=(python-pytest-asyncio python-time-machine python-linkify-it-py python-pytest-xdist python-pytest-textual-snapshot)
 source=(${_base}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)
-sha512sums=('5df69d036a95d299916006ad75a312a6d40572fd0fd381d95a5d4a92bea7af45c615c6192b5387de0f6d2af508920529842d0a061e23951b8ff337c25a26c637')
+sha512sums=('c172812da66087acf7a99ec667a05d8c7781123f0015e1e3ce9985d2b8a49d81405ed475a01fa3b7de46f412c03353826820df006d34fd3a85c19333df229554')
 
 build() {
   cd ${_base}-${pkgver}
@@ -47,3 +47,4 @@ package() {
   ln -s "${site_packages}/${_base}-${pkgver}.dist-info/LICENSE" \
     "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
+ 
