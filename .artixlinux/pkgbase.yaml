@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.3.0-6
+    version: 1.3.0-7
     packages:
-      - python-pyacoustid-1.3.0-6-any.pkg.tar.zst
+      - python-pyacoustid-1.3.0-7-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
