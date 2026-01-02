@@ -1,4 +1,3 @@
-# Maintainer : Christian Hesse <mail@eworm.de>
 # Maintainer : Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Keshav Amburay <(the ddoott ridikulus ddoott rat) (aatt) (gemmaeiil) (ddoott) (ccoomm)>
@@ -8,7 +7,10 @@ pkgdesc='GNU GRand Unified Bootloader (2)'
 epoch=2
 _pkgver=2.14-rc1
 _unifont_ver=17.0.03
-pkgver=${_pkgver/-/}
+#pkgver=${_pkgver/-/}
+# the pkgver for git master is generated with:
+# git describe --abbrev=8 | sed 's|-rc|rc|;s|grub-||;s|-|.r|;s|-|.|'
+pkgver=2.14rc1.r54.g29f3131a
 pkgrel=2
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
@@ -51,6 +53,7 @@ makedepends=(
   sdl
   texinfo
   ttf-dejavu
+  wget
   xz
 )
 depends=(
@@ -92,13 +95,17 @@ b2sums=('576ced94c759e6eecf8a35caff1375b5dbff62c2f956e29a3e035a138b0bbc1a6df2292
         '992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b'
         'b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3'
         'a7820bfe9bddc34af49de63222b3d2a9788367083e29db13b33120269adbfa1619ac421d8597f662f756592889f5cc5538544a17d9936d1420bd5742282c710c'
-        'cc37eb36944fc2d61a6f07f9957e2092288d6e5aceb317bd61d2ed3234b8fb479a5bf41570cebded2ba565bb8c9ed3743982bc108748d8e2de1aae8f287b49fc'
-        'e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a')
+        '5e42db2161e8f594b82005b26e590a20a0e8d32b01119bdd7b1a7f7c4b0f3360e8730a3ecdd5912a4dc7af5bd9aed1c3e780965ad6747d831b470158da19388d'
+        'ce9b3904ce4bd00463c226ab1c97d3af94c6151c408bcd6483a0dd07ae4c343ee135907ad887c1d93525ec95d87409ef703ac7278698d49e99342332e483c436')
 
 _backports=(
+  # current git master for security fixes
+  "grub-${_pkgver}..29f3131a3632c70129a29d924fcb8ac98f08ee2b"
 )
 
 _reverts=(
+  # configure: Check linker for --image-base support
+  '1a5417f39a0ccefcdd5440f2a67f84d2d2e26960'
 )
 
 prepare() {
@@ -138,9 +145,6 @@ prepare() {
 
   echo "Fix OS naming FS#33393..."
   sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
-
-  echo "Pull in latest language files..."
-  ./linguas.sh
 
   echo "Avoid problem with unifont during compile of grub..."
   # http://savannah.gnu.org/bugs/?40330 and https://bugs.archlinux.org/task/37847
