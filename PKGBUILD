@@ -5,14 +5,13 @@
 
 pkgname=python-hatch
 pkgver=1.16.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A modern project, package, and virtual env manager"
 arch=('any')
 url="https://github.com/pypa/hatch"
 license=('MIT')
 depends=(
   'python'
-  'python-backports-zstd'
   'python-click'
   'python-hatchling'
   'python-httpx'
@@ -87,3 +86,4 @@ package() {
   install -vDm644 completion.fish "$pkgdir/usr/share/fish/vendor_completions.d/hatch.fish"
   install -vDm644 completion.zsh "$pkgdir/usr/share/zsh/site-functions/_hatch"
 }
+ 

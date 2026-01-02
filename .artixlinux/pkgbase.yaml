@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.16.2-2
+    version: 1.16.2-3
     packages:
-      - python-hatch-1.16.2-2-any.pkg.tar.zst
+      - python-hatch-1.16.2-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 1.16.2-1
