@@ -1,9 +1,9 @@
 ---
-version: 6.12.62-1
+version: 6.12.63-1
 pkgbase:
   name: linux-lts
   pkgdesc: LTS Linux
-  pkgver: 6.12.62
+  pkgver: 6.12.63
   pkgrel: 1
   url: https://www.kernel.org
   arch:
@@ -27,8 +27,8 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.62.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.62.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.63.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.63.tar.sign
     - 0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
     - 0002-Default-to-maximum-amount-of-ASLR-bits.patch
     - 0003-skip-simpledrm-if-nvidia-drm.modeset=1-is.patch
@@ -37,19 +37,19 @@ pkgbase:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 13e2c685ac8fab5dd992dd105732554dae514aef350c2a8c7418e7b74eb62c13
+    - 9502c5ffe4b894383c97abfccf74430a84732f04ee476b9c0d87635b29df7db3
     - SKIP
     - 3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c
     - 423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e
     - 596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1
-    - 8e4f6bfeace7ed009fb3beb6e2f84b163723189e1313854c95a57e85d4cfaf18
+    - c7063f4c393377c8377e491d091692ebd8d769a0b3105f5b9947ca7962a9db1e
   b2sums:
-    - 79cfb4974c278218386070bdbf7bcde69c6d6b76df87ee69d064b6b4f6321173be1413eb34e84f55bb1b9b5cffc2b6483eb91ac83dd02ddefd2baf03e0744a16
+    - 8f24d8efe88f1b5e6fde5fba6833798e5b3d5aa8bbdb7e031ac0f8333f7ffb5fa19a9b0d028641729971cb63e147c6cd6d79b5cd97fb9851471d3efe832119e5
     - SKIP
     - b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918
     - 01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5
     - 410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea
-    - 5940050fcbf58e6e30d920aa589ade73f946d457894ef36779f92141d78c0ef0032e5e9c4c948d740ebe68f40530972a581c0b35915593650c9a27a46831cd41
+    - 40a4872d67dc83594284d941f848aea51d1f4524b68cbd9c494f8835450ce8ced55314c027c85b99160b0a84722bc5a4103111fa54b9287f8b0c4dfea3f2936d
 pkgname:
   - name: linux-lts
     pkgdesc: The LTS Linux kernel and modules
