@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.8.0-4
+    version: 2.8.0-5
     packages:
-      - python-u-msgpack-2.8.0-4-any.pkg.tar.zst
+      - python-u-msgpack-2.8.0-5-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
