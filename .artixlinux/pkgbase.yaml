@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.10.0-8
+    version: 2.10.0-9
     packages:
-      - python-semantic-version-2.10.0-8-any.pkg.tar.zst
+      - python-semantic-version-2.10.0-9-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
