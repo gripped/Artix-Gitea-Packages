@@ -4,14 +4,13 @@
 
 pkgname=python-flask-compress
 pkgver=1.23
-pkgrel=2
+pkgrel=3
 pkgdesc='Compress responses in your Flask app'
 url='https://github.com/colour-science/flask-compress'
 arch=('any')
 license=('MIT')
 depends=(
   'python'
-  'python-backports-zstd'
   'python-brotli'
   'python-flask'
 )
@@ -49,3 +48,4 @@ package() {
 }
 
 # vim: ts=2 sw=2 et:
+ 

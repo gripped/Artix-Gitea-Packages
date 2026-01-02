@@ -1,10 +1,10 @@
 ---
-version: 1.23-2
+version: 1.23-3
 pkgbase:
   name: python-flask-compress
   pkgdesc: Compress responses in your Flask app
   pkgver: 1.23
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/colour-science/flask-compress
   arch:
     - any
@@ -21,7 +21,6 @@ pkgbase:
     - python-wheel
   depends:
     - python
-    - python-backports-zstd
     - python-brotli
     - python-flask
   source:

@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.23-2
+    version: 1.23-3
     packages:
-      - python-flask-compress-1.23-2-any.pkg.tar.zst
+      - python-flask-compress-1.23-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
