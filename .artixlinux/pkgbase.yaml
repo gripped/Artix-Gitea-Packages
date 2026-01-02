@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.8.9-2
+    version: 1.8.9-3
     packages:
-      - python-webob-1.8.9-2-any.pkg.tar.zst
-      - python-webob-docs-1.8.9-2-any.pkg.tar.zst
+      - python-webob-1.8.9-3-any.pkg.tar.zst
+      - python-webob-docs-1.8.9-3-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
