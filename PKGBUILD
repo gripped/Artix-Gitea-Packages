@@ -16,7 +16,7 @@ _majorver=8
 _minorver=472
 _updatever=08
 pkgver=${_majorver}.${_minorver}.u${_updatever}
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://openjdk.java.net/'
 license=('LicenseRef-Java')
@@ -30,6 +30,7 @@ makedepends=(
   java-environment=8
   libcups
   libxrender
+  libxt
   libxtst
   unzip
   zip

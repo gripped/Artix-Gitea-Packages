@@ -1,9 +1,9 @@
 ---
-version: 8.472.u08-1
+version: 8.472.u08-2
 pkgbase:
   name: java8-openjdk
   pkgver: 8.472.u08
-  pkgrel: 1
+  pkgrel: 2
   url: https://openjdk.java.net/
   arch:
     - x86_64
@@ -19,6 +19,7 @@ pkgbase:
     - java-environment=8
     - libcups
     - libxrender
+    - libxt
     - libxtst
     - unzip
     - zip
@@ -50,7 +51,7 @@ pkgname:
     pkgdesc: OpenJDK Java 8 full runtime environment
     install: install_jre8-openjdk.sh
     depends:
-      - jre8-openjdk-headless=8.472.u08-1
+      - jre8-openjdk-headless=8.472.u08-2
       - giflib
       - hicolor-icon-theme
       - xdg-utils
@@ -68,7 +69,7 @@ pkgname:
     pkgdesc: OpenJDK Java 8 development kit
     install: install_jdk8-openjdk.sh
     depends:
-      - jre8-openjdk=8.472.u08-1
+      - jre8-openjdk=8.472.u08-2
       - java-environment-common
     provides:
       - java-environment=8
