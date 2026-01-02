@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 12.0.0-3
+    version: 12.1.0-2
     packages:
-      - python-pillow-12.0.0-3-x86_64.pkg.tar.zst
+      - python-pillow-12.1.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
