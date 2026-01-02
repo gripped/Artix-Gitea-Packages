@@ -38,3 +38,4 @@ package() {
   cd python-glanceclient
   python setup.py install --root="$pkgdir" --optimize=1
 }
+ 
