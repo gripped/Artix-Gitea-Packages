@@ -1,2 +1,2 @@
-u! jenkins 444 "Jenkins CI" /var/lib/jenkins
-g jenkins 444
+u! jenkins - "Jenkins CI" /var/lib/jenkins
+g jenkins -
