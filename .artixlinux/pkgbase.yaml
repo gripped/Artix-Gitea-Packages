@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,42 +29,42 @@ repos:
     packages: []
     debug: []
   world:
-    version: 28.2-1
+    version: 28.3-4
     packages:
-      - erlang-28.2-1-x86_64.pkg.tar.zst
-      - erlang-headless-28.2-1-x86_64.pkg.tar.zst
-      - erlang-core-28.2-1-x86_64.pkg.tar.zst
-      - erlang-asn1-28.2-1-x86_64.pkg.tar.zst
-      - erlang-common_test-28.2-1-x86_64.pkg.tar.zst
-      - erlang-debugger-28.2-1-x86_64.pkg.tar.zst
-      - erlang-dialyzer-28.2-1-x86_64.pkg.tar.zst
-      - erlang-diameter-28.2-1-x86_64.pkg.tar.zst
-      - erlang-edoc-28.2-1-x86_64.pkg.tar.zst
-      - erlang-eldap-28.2-1-x86_64.pkg.tar.zst
-      - erlang-erl_interface-28.2-1-x86_64.pkg.tar.zst
-      - erlang-et-28.2-1-x86_64.pkg.tar.zst
-      - erlang-eunit-28.2-1-x86_64.pkg.tar.zst
-      - erlang-ftp-28.2-1-x86_64.pkg.tar.zst
-      - erlang-inets-28.2-1-x86_64.pkg.tar.zst
-      - erlang-jinterface-28.2-1-x86_64.pkg.tar.zst
-      - erlang-megaco-28.2-1-x86_64.pkg.tar.zst
-      - erlang-mnesia-28.2-1-x86_64.pkg.tar.zst
-      - erlang-observer-28.2-1-x86_64.pkg.tar.zst
-      - erlang-odbc-28.2-1-x86_64.pkg.tar.zst
-      - erlang-os_mon-28.2-1-x86_64.pkg.tar.zst
-      - erlang-parsetools-28.2-1-x86_64.pkg.tar.zst
-      - erlang-public_key-28.2-1-x86_64.pkg.tar.zst
-      - erlang-reltool-28.2-1-x86_64.pkg.tar.zst
-      - erlang-runtime_tools-28.2-1-x86_64.pkg.tar.zst
-      - erlang-sasl-28.2-1-x86_64.pkg.tar.zst
-      - erlang-snmp-28.2-1-x86_64.pkg.tar.zst
-      - erlang-ssh-28.2-1-x86_64.pkg.tar.zst
-      - erlang-ssl-28.2-1-x86_64.pkg.tar.zst
-      - erlang-syntax_tools-28.2-1-x86_64.pkg.tar.zst
-      - erlang-tftp-28.2-1-x86_64.pkg.tar.zst
-      - erlang-tools-28.2-1-x86_64.pkg.tar.zst
-      - erlang-wx-28.2-1-x86_64.pkg.tar.zst
-      - erlang-xmerl-28.2-1-x86_64.pkg.tar.zst
+      - erlang-28.3-4-x86_64.pkg.tar.zst
+      - erlang-headless-28.3-4-x86_64.pkg.tar.zst
+      - erlang-core-28.3-4-x86_64.pkg.tar.zst
+      - erlang-asn1-28.3-4-x86_64.pkg.tar.zst
+      - erlang-common_test-28.3-4-x86_64.pkg.tar.zst
+      - erlang-debugger-28.3-4-x86_64.pkg.tar.zst
+      - erlang-dialyzer-28.3-4-x86_64.pkg.tar.zst
+      - erlang-diameter-28.3-4-x86_64.pkg.tar.zst
+      - erlang-edoc-28.3-4-x86_64.pkg.tar.zst
+      - erlang-eldap-28.3-4-x86_64.pkg.tar.zst
+      - erlang-erl_interface-28.3-4-x86_64.pkg.tar.zst
+      - erlang-et-28.3-4-x86_64.pkg.tar.zst
+      - erlang-eunit-28.3-4-x86_64.pkg.tar.zst
+      - erlang-ftp-28.3-4-x86_64.pkg.tar.zst
+      - erlang-inets-28.3-4-x86_64.pkg.tar.zst
+      - erlang-jinterface-28.3-4-x86_64.pkg.tar.zst
+      - erlang-megaco-28.3-4-x86_64.pkg.tar.zst
+      - erlang-mnesia-28.3-4-x86_64.pkg.tar.zst
+      - erlang-observer-28.3-4-x86_64.pkg.tar.zst
+      - erlang-odbc-28.3-4-x86_64.pkg.tar.zst
+      - erlang-os_mon-28.3-4-x86_64.pkg.tar.zst
+      - erlang-parsetools-28.3-4-x86_64.pkg.tar.zst
+      - erlang-public_key-28.3-4-x86_64.pkg.tar.zst
+      - erlang-reltool-28.3-4-x86_64.pkg.tar.zst
+      - erlang-runtime_tools-28.3-4-x86_64.pkg.tar.zst
+      - erlang-sasl-28.3-4-x86_64.pkg.tar.zst
+      - erlang-snmp-28.3-4-x86_64.pkg.tar.zst
+      - erlang-ssh-28.3-4-x86_64.pkg.tar.zst
+      - erlang-ssl-28.3-4-x86_64.pkg.tar.zst
+      - erlang-syntax_tools-28.3-4-x86_64.pkg.tar.zst
+      - erlang-tftp-28.3-4-x86_64.pkg.tar.zst
+      - erlang-tools-28.3-4-x86_64.pkg.tar.zst
+      - erlang-wx-28.3-4-x86_64.pkg.tar.zst
+      - erlang-xmerl-28.3-4-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null

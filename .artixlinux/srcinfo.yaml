@@ -1,10 +1,10 @@
 ---
-version: 28.2-1
+version: 28.3-4
 pkgbase:
   name: erlang
   pkgdesc: General-purpose concurrent functional programming language developed by Ericsson
-  pkgver: 28.2
-  pkgrel: 1
+  pkgver: 28.3
+  pkgrel: 4
   url: https://erlang.org/
   arch:
     - x86_64
@@ -34,10 +34,10 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - git+https://github.com/erlang/otp#tag=OTP-28.2
+    - git+https://github.com/erlang/otp#tag=OTP-28.3
     - epmd.conf
   b2sums:
-    - 0fc85d9375e704520482deb100f70249ae12f9cbf23b17058bcca0c65408a7381564ac331bb323e8b66ed7ca5f98e6191f3e7c331675867031b874f42fc6fdaf
+    - 2a0045d47d97b137ca40815dc48403a74fb1bea708b1eb3960b68c36a0c4e87e0e547628bf1dcf53e4e91d8732baecb6b67c95568bd2f16c5ef4bad82877305e
     - 1675ac9bf948ab19e8b63077d870ccf356fcdbce14de2777f00b3488aa1ce34a5e0a5cdc0428707f744dee5940b12653a44e0ded0554de95ebb31bce4676ff87
 pkgname:
   - name: erlang
@@ -78,7 +78,9 @@ pkgname:
     pkgdesc: General-purpose concurrent functional programming language developed by Ericsson (headless, replaces erlang-nox)
     depends:
       - erlang-asn1
+      - erlang-common_test
       - erlang-core
+      - erlang-dialyzer
       - erlang-diameter
       - erlang-edoc
       - erlang-eldap
@@ -126,9 +128,7 @@ pkgname:
     pkgdesc: A portable framework for automatic testing
     depends:
       - erlang-core
-      - erlang-debugger
       - erlang-inets
-      - erlang-observer
       - erlang-runtime_tools
       - erlang-sasl
       - erlang-snmp
@@ -137,6 +137,9 @@ pkgname:
       - erlang-tools
       - erlang-xmerl
       - glibc
+    optdepends:
+      - 'erlang-debugger: for ct:break/1 interactive debugging'
+      - 'erlang-observer: for observer integration'
   - name: erlang-debugger
     pkgdesc: A debugger for debugging and testing of Erlang programs
     depends:
@@ -147,7 +150,6 @@ pkgname:
     depends:
       - erlang-core
       - erlang-syntax_tools
-      - erlang-wx
   - name: erlang-diameter
     pkgdesc: Diameter (RFC 3588) library
     depends:
