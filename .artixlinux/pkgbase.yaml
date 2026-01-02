@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,20 +29,20 @@ repos:
     packages: []
     debug: []
   world:
-    version: 6.17-2
+    version: 6.18-1
     packages:
-      - bootconfig-6.17-2-x86_64.pkg.tar.zst
-      - bpf-6.17-2-x86_64.pkg.tar.zst
-      - cpupower-6.17-2-x86_64.pkg.tar.zst
-      - hyperv-6.17-2-x86_64.pkg.tar.zst
-      - intel-speed-select-6.17-2-x86_64.pkg.tar.zst
-      - kcpuid-6.17-2-x86_64.pkg.tar.zst
-      - linux-tools-meta-6.17-2-x86_64.pkg.tar.zst
-      - perf-6.17-2-x86_64.pkg.tar.zst
-      - tmon-6.17-2-x86_64.pkg.tar.zst
-      - turbostat-6.17-2-x86_64.pkg.tar.zst
-      - usbip-6.17-2-x86_64.pkg.tar.zst
-      - x86_energy_perf_policy-6.17-2-x86_64.pkg.tar.zst
+      - bootconfig-6.18-1-x86_64.pkg.tar.zst
+      - bpf-6.18-1-x86_64.pkg.tar.zst
+      - cpupower-6.18-1-x86_64.pkg.tar.zst
+      - hyperv-6.18-1-x86_64.pkg.tar.zst
+      - intel-speed-select-6.18-1-x86_64.pkg.tar.zst
+      - kcpuid-6.18-1-x86_64.pkg.tar.zst
+      - linux-tools-meta-6.18-1-x86_64.pkg.tar.zst
+      - perf-6.18-1-x86_64.pkg.tar.zst
+      - tmon-6.18-1-x86_64.pkg.tar.zst
+      - turbostat-6.18-1-x86_64.pkg.tar.zst
+      - usbip-6.18-1-x86_64.pkg.tar.zst
+      - x86_energy_perf_policy-6.18-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
