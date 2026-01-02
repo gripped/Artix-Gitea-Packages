@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=ly
-pkgver=1.3.0
-pkgrel=3.1
+pkgver=1.3.1
+pkgrel=1
 pkgdesc="Lightweight TUI (ncurses-like) display manager"
 arch=(x86_64)
 url="https://codeberg.org/AnErrupTion/ly"
@@ -16,7 +16,7 @@ optdepends=('brightnessctl: for controling brightness'
 backup=(etc/$pkgname/{config.ini,setup.sh}
         etc/pam.d/ly)
 source=("git+$url.git#tag=v${pkgver}")
-b2sums=('102f0065a135f2757a5aa58d92de41af8eea2c92875a52061279bed18459dffee272f7db89fa09cb2066473c4210d4747ec0961928301f45fb145ed5292a04b1')
+b2sums=('94e57276a9d0c9b27774f94522ad8684ef5a227b62ef5e3710ae49233612b063c8924a4e2967362ed331d7ba4950b242f8ef4f828703a058fde97e49e376a252')
 
 prepare() {
   cd "$pkgname"
