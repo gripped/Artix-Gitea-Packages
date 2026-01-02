@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.7.1-9
+    version: 0.7.1-10
     packages:
-      - python-musicbrainzngs-0.7.1-9-any.pkg.tar.zst
+      - python-musicbrainzngs-0.7.1-10-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
