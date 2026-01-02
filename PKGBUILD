@@ -184,3 +184,4 @@ package() {
   # Remove tests
   rm -r "${pkgdir}"$(python -c "import site; print(site.getsitepackages()[0])")/{matplotlib,mpl_toolkits/*}/tests/
 }
+ 
