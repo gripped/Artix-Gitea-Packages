@@ -3,29 +3,30 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-applets
+_pkgname=libmateweather
 pkgver=1.28.1
-pkgrel=2.1
+pkgrel=3
 pkgdesc="Applets for MATE panel"
 arch=('x86_64')
 url="https://mate-desktop.org"
 license=('GPL-2.0-or-later AND LGPL-2.0-or-later')
 depends=('cpupower' 'gtksourceview4' 'libgtop' 'libnotify' 'mate-panel' 'polkit' 'upower' 'wireless_tools' 'libnl')
-makedepends=('autoconf-archive' 'intltool' 'itstool' 'mate-common' 'glib2-devel' 'gucharmap' 'yelp-tools')
+makedepends=('autoconf-archive' 'intltool' 'itstool' 'mate-common' 'glib2-devel' 'gucharmap' 'yelp-tools' 'libsoup' 'git')
 optdepends=('fortune-mod: for displaying fortune cookies in the Wanda the Fish applet'
             'gucharmap: character picker applet')
 groups=('mate-extra')
 conflicts=('mate-applets-gtk3' 'mate-netspeed' 'mate-netspeed-gtk3')
 replaces=('mate-applets-gtk3' 'mate-netspeed' 'mate-netspeed-gtk3')
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/mate-desktop/mate-applets/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('2d3f9b87e4d290052ff17f4b6f1aef8f07b0d594515a289fab32f22bf02e7ac7')
+source=("git+https://github.com/mate-desktop/libmateweather.git#branch=1.28")
+sha256sums=('SKIP')
 
 prepare() {
-	cd "${pkgname}-${pkgver}"
+	cd "${_pkgname}"
 	./autogen.sh
 }
 
 build() {
-    	cd "${pkgname}-${pkgver}"
+    	cd "${_pkgname}"
     	./configure \
         	--prefix=/usr \
         	--sysconfdir=/etc \
@@ -37,6 +38,6 @@ build() {
 }
 
 package() {
-    	cd "${pkgname}-${pkgver}"
+    	cd "${_pkgname}"
     	make DESTDIR="${pkgdir}" install
 }
