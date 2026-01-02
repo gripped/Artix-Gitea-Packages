@@ -6,7 +6,7 @@
 
 pkgname=python-urllib3
 pkgver=2.6.2
-pkgrel=3
+pkgrel=4
 pkgdesc='HTTP library with thread-safe connection pooling and file post support'
 arch=(any)
 url='https://github.com/urllib3/urllib3'
@@ -42,7 +42,6 @@ optdepends=(
   'python-brotlicffi: Brotli support'
   'python-h2: HTTP/2 support'
   'python-pysocks: SOCKS support'
-  'python-backports-zstd: Zstandard support'
 )
 _urllib3_hypercorn_commit=d1719f8c1570cbd8e6a3719ffdb14a4d72880abb
 source=(
@@ -90,3 +89,4 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE.txt
 }
+ 
