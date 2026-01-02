@@ -1,0 +1,52 @@
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+
+pkgname=egl-wayland2
+pkgver=1.0.0.rc.r53.gf4a2d32
+pkgrel=1
+pkgdesc="EGLStream-based Wayland external platform (2)"
+url="https://github.com/NVIDIA/egl-wayland2"
+arch=(x86_64)
+license=(Apache-2.0)
+depends=(
+  eglexternalplatform
+  mesa
+  glibc
+  libdrm
+  wayland
+)
+makedepends=(
+  git
+  'libglvnd>=1.3.4'
+  meson
+  wayland-protocols
+)
+provides=(libnvidia-egl-wayland2.so)
+_commit=f4a2d326cc2eb32d6cf6c0b64082f1c53c770049
+source=("git+$url#tag=$_commit")
+b2sums=('c79a7bf37362dea83d3a52598ee70dda3f202c47fb0aca5491e838f741fe485dfa3cec4ddb065adc177a903a3de1f420f68a8042efdccea744d70ab2e917ab63')
+
+pkgver() {
+  cd $pkgname
+  git describe --long --tags | sed -E 's/^v//;s/-0-g[0-9a-f]+$//;s/-([0-9]+)-g/.r\1.g/;s/-/./g'
+}
+
+prepare() {
+  cd $pkgname
+}
+
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 $pkgname/LICENSE
+}
+
+# vim:set sw=2 sts=-1 et:

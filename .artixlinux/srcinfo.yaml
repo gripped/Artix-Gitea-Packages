@@ -1,0 +1,32 @@
+---
+version: 1.0.0.rc.r53.gf4a2d32-1
+pkgbase:
+  name: egl-wayland2
+  pkgdesc: EGLStream-based Wayland external platform (2)
+  pkgver: 1.0.0.rc.r53.gf4a2d32
+  pkgrel: 1
+  url: https://github.com/NVIDIA/egl-wayland2
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - git
+    - libglvnd>=1.3.4
+    - meson
+    - wayland-protocols
+  depends:
+    - eglexternalplatform
+    - mesa
+    - glibc
+    - libdrm
+    - wayland
+  provides:
+    - libnvidia-egl-wayland2.so
+  source:
+    - git+https://github.com/NVIDIA/egl-wayland2#tag=f4a2d326cc2eb32d6cf6c0b64082f1c53c770049
+  b2sums:
+    - c79a7bf37362dea83d3a52598ee70dda3f202c47fb0aca5491e838f741fe485dfa3cec4ddb065adc177a903a3de1f420f68a8042efdccea744d70ab2e917ab63
+pkgname:
+  - name: egl-wayland2
+# generated with artixpkg 0.37.4-1-any
