@@ -1,9 +1,9 @@
 ---
-version: 1.25.2-1
+version: 1.25.3-1
 pkgbase:
   name: gitea
   pkgdesc: Painless self-hosted Git service, community managed.
-  pkgver: 1.25.2
+  pkgver: 1.25.3
   pkgrel: 1
   url: https://gitea.io
   arch:
@@ -32,7 +32,7 @@ pkgbase:
   backup:
     - etc/gitea/app.ini
   source:
-    - git+https://github.com/go-gitea/gitea.git#tag=v1.25.2?signed
+    - git+https://github.com/go-gitea/gitea.git#tag=v1.25.3?signed
     - gitea.tmpfiles
     - gitea.sysusers
   validpgpkeys:
@@ -44,7 +44,7 @@ pkgbase:
     - 82A110A44DF1A28D50C093BFB853ADA5DA7BBF7A
     - FE7C3EAEB8CD8290390B12AD3DECE05F6D9A647C
   sha256sums:
-    - 97d9e90f04a1ed66e31e783550a9ee05d9d566c4c690c79b2ca33a590acafb7e
+    - 99533f7ab4a6cc026b016e8a1106fd0f0e6fe786df6175bfa83c95244f83e5e9
     - 1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba
     - e29dcc74b2f52e32d3931103d03f202d1cafe18e7eb9a271da0f50ef61dc8446
 pkgname:
