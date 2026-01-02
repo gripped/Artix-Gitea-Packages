@@ -146,6 +146,9 @@ prepare() {
   echo "Fix OS naming FS#33393..."
   sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
 
+  echo "Pull in latest language files..."
+  ./linguas.sh
+
   echo "Avoid problem with unifont during compile of grub..."
   # http://savannah.gnu.org/bugs/?40330 and https://bugs.archlinux.org/task/37847
   gzip -cd "${srcdir}/unifont-${_unifont_ver}.bdf.gz" > "unifont.bdf"
