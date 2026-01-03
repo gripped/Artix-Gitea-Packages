@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20250329-51
+    version: 20250329-56
     packages:
-      - vhba-module-20250329-51-x86_64.pkg.tar.zst
-      - vhba-module-dkms-20250329-51-x86_64.pkg.tar.zst
+      - vhba-module-20250329-56-x86_64.pkg.tar.zst
+      - vhba-module-dkms-20250329-56-x86_64.pkg.tar.zst
     debug: []
