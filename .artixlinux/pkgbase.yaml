@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.5.1-2
+    version: 5.6.0-1
     packages:
-      - python-flask-socketio-5.5.1-2-any.pkg.tar.zst
+      - python-flask-socketio-5.6.0-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
