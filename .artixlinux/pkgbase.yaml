@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.5.2-3
+    version: 1.5.3-1
     packages:
-      - python-joblib-1.5.2-3-any.pkg.tar.zst
+      - python-joblib-1.5.3-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
