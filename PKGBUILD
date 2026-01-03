@@ -5,7 +5,7 @@
 
 _base=textual
 pkgname=python-${_base}
-pkgver=6.12.0
+pkgver=7.0.0
 pkgrel=2
 pkgdesc="Modern Text User Interface framework"
 arch=(any)
@@ -15,7 +15,7 @@ depends=(python python-rich python-markdown-it-py python-typing_extensions pytho
 makedepends=(python-build python-installer python-poetry-core)
 checkdepends=(python-pytest-asyncio python-time-machine python-linkify-it-py python-pytest-xdist python-pytest-textual-snapshot)
 source=(${_base}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz)
-sha512sums=('c172812da66087acf7a99ec667a05d8c7781123f0015e1e3ce9985d2b8a49d81405ed475a01fa3b7de46f412c03353826820df006d34fd3a85c19333df229554')
+sha512sums=('694ff3562f1ed56d898345783ebbf3a28a89fb6fe0e4c09378888c06bde9747ba4433a62d0ad4efcdd8d0ecb02dc1fc2e1781d6ec743d51401628d60dd36baa1')
 
 build() {
   cd ${_base}-${pkgver}
@@ -47,4 +47,3 @@ package() {
   ln -s "${site_packages}/${_base}-${pkgver}.dist-info/LICENSE" \
     "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
- 
