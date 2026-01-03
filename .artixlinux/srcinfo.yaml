@@ -1,9 +1,9 @@
 ---
-version: 6.18.2.artix2-1
+version: 6.18.3.artix1-1
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 6.18.2.artix2
+  pkgver: 6.18.3.artix1
   pkgrel: 1
   url: https://github.com/archlinux/linux
   arch:
@@ -32,25 +32,25 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.2.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.2.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v6.18.2-arch2/linux-v6.18.2-arch2.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v6.18.2-arch2/linux-v6.18.2-arch2.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.sign
+    - https://github.com/archlinux/linux/releases/download/v6.18.3-arch1/linux-v6.18.3-arch1.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v6.18.3-arch1/linux-v6.18.3-arch1.patch.zst.sig
     - config
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - 558c6bbab749492b34f99827fe807b0039a744693c21d3a7e03b3a48edaab96a
+    - 7a8879167b89c4bae077d6f39c4f2130769f05dbdad2aad914adab9afb7d7f9a
     - SKIP
-    - 2c66168bb8afe4ba64d087af5a6228ae8ac906200e186dfedb4199fa06f2c6c0
+    - 2985e564ed2e9bd08c0c12b3b97a1039978842b8e5ded135ee53176416c40f90
     - SKIP
     - 5e7102f33c74bb2fb0323d88b956bf602bb523f5d6d9ab964ca87ebc52a5d3da
   b2sums:
-    - 2e5cae5fe963cf25344ccfe9426d2edab2583b1bb206f6551d60177777595d4c19200e5e3c35ca41b574d25e8fa49013ea086efe05078e7ec2203c77ea420d51
+    - 273e7b7161765022c7345d00a57ab865ac443422327157522b8a2960ead39b0fbac17b7a8b27d09800d06e08c3ce04e3bc08433863aedc3a8ec1e7a51e6d9d4a
     - SKIP
-    - 97affbffdbac53ed469fcbcbd7c822c0f46860cc740dfb0d40ead77fde7a4559ed982774696bba2c91150de1bdf241b24804b7c623df55bc3348b11e47c6553a
+    - 8058499f1e8dec08ef91cb6d0bca57dded2cfe05f728085cf9d9f30890180507c292dc6e9a12c350a511c3ba9278e60b5dca53dfd6054428a8a70cb94aa40fa6
     - SKIP
     - 01f01bb082e64e0fc992546e29772cc6629d317e27bff2f26cab02b05174108a950e3535b38eddf20bcf90750204123be6ef850f9ba80244723364944059049e
 pkgname:
