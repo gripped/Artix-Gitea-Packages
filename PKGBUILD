@@ -25,3 +25,4 @@ package() {
 	cd "$_archive"
 	python -m installer -d "$pkgdir" dist/*.whl
 }
+ 
