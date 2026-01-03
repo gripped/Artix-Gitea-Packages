@@ -1,27 +1,24 @@
-# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
+# Maintainer: artist for Artix Linux
+# Contributor: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Brad Fanella <cesura@archlinux.org
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=libmateweather
-pkgver=1.28.0
-pkgrel=3
+pkgver=1.28.1
+pkgrel=1
 pkgdesc="Provides access to weather information from the Internet."
 url="https://mate-desktop.org"
 arch=('x86_64')
 license=('LGPL')
 depends=('gtk3' 'libsoup3' 'gettext')
-makedepends=('git' 'glib2-devel' 'gtk-doc')
+makedepends=('glib2-devel' 'gtk-doc' 'git')
 conflicts=('libmateweather-gtk3')
 replaces=('libmateweather-gtk3')
-source=(git+https://github.com/mate-desktop/libmateweather#tag=v$pkgver)
-sha256sums=('5914bbaf84fcb578933cf48772c9cf0d0009ff75bb3c38448036ba591548b021')
+source=("git+https://github.com/mate-desktop/libmateweather.git#commit=dcd6be514a3d7e5d0a3f935a21a9af70cd62a86a")
+sha256sums=('8556f68e0da35d9acc9a27d26239c470c22fc6a6a899104130d921578e147638')
 
 prepare() {
     	cd "${pkgname}"
-
-    	# Port to libsoup-3.0
-    	git cherry-pick -n c1c54a15545f13f3dabd2bcd303533d818905c7b
-
     	autoreconf -fiv
 }
 
