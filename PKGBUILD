@@ -2,8 +2,8 @@
 
 pkgname=python-elastic-transport
 _pkgname=elastic-transport-python
-pkgver=9.2.0
-pkgrel=4
+pkgver=9.2.1
+pkgrel=1
 pkgdesc="Transport classes and utilities shared among Python Elastic client libraries"
 arch=(any)
 url="https://github.com/elastic/elastic-transport-python"
@@ -34,8 +34,8 @@ checkdepends=(
   python-trio
   python-trustme
 )
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('98a47630facd0f5a36208a8f177bcda950465b6a940b4d896e4b6dcb6a621bf8')
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+b2sums=('d469e4caa01f741dac083e30fd06b8770739060ae4eee5e4b6b5de1c043bbaf4a5267b3bac3bae63513416d0ddde2981b7c4867cd8a14dd53ea16e14e5187b4f')
 
 build() {
   cd $_pkgname-$pkgver
@@ -57,3 +57,4 @@ package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 

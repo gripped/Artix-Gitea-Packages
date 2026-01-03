@@ -1,10 +1,10 @@
 ---
-version: 9.2.0-4
+version: 9.2.1-1
 pkgbase:
   name: python-elastic-transport
   pkgdesc: Transport classes and utilities shared among Python Elastic client libraries
-  pkgver: 9.2.0
-  pkgrel: 4
+  pkgver: 9.2.1
+  pkgrel: 1
   url: https://github.com/elastic/elastic-transport-python
   arch:
     - any
@@ -34,9 +34,9 @@ pkgbase:
     - python-sniffio
     - python-urllib3
   source:
-    - python-elastic-transport-9.2.0.tar.gz::https://github.com/elastic/elastic-transport-python/archive/v9.2.0.tar.gz
-  sha256sums:
-    - 98a47630facd0f5a36208a8f177bcda950465b6a940b4d896e4b6dcb6a621bf8
+    - https://github.com/elastic/elastic-transport-python/archive/v9.2.1/python-elastic-transport-9.2.1.tar.gz
+  b2sums:
+    - d469e4caa01f741dac083e30fd06b8770739060ae4eee5e4b6b5de1c043bbaf4a5267b3bac3bae63513416d0ddde2981b7c4867cd8a14dd53ea16e14e5187b4f
 pkgname:
   - name: python-elastic-transport
 # generated with artixpkg 0.37.4-1-any
