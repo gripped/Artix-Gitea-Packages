@@ -1,7 +1,7 @@
 # Maintainer: nous
 
 pkgname=artix-dark-theme
-pkgver=20251230
+pkgver=20260104
 pkgrel=1
 pkgdesc="Dark theme for the community ISOs of Artix Linux. Gtk2/3/4, Qt5, Plasma splash."
 arch=('any')
@@ -16,6 +16,5 @@ groups=('artix-branding' 'artix-style')
 
 package() {
   cd "${srcdir}/$pkgname"
-#  mkdir -p "${pkgdir}"/usr/share/
   cp -rf usr "${pkgdir}"/
 }
