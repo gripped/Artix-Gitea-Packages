@@ -41,4 +41,3 @@ package() {
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
 # vim: ts=2 sw=2 et:
- 
