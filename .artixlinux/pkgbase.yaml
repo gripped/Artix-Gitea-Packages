@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 590.48.01-3
+    version: 590.48.01-4
     packages:
-      - nvidia-open-590.48.01-3-x86_64.pkg.tar.zst
+      - nvidia-open-590.48.01-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 580.105.08-6
