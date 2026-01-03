@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: libqrtr-glib
-  version: 1.2.2-4
-  arch:
-    - x86_64
-  pkgname:
-    - libqrtr-glib
-    - libqrtr-glib-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -19,39 +11,52 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.2.2-4
+    version: 1.4.0-1
     packages:
-      - libqrtr-glib-1.2.2-4-x86_64.pkg.tar.zst
-      - libqrtr-glib-docs-1.2.2-4-x86_64.pkg.tar.zst
+      - libqrtr-glib-1.4.0-1-x86_64.pkg.tar.zst
+      - libqrtr-glib-docs-1.4.0-1-x86_64.pkg.tar.zst
+    debug:
+      - libqrtr-glib-debug-1.4.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world
