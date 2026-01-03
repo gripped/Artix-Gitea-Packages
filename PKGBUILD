@@ -3,10 +3,10 @@
 
 pkgname=python-elasticsearch
 _pkgname=elasticsearch-py
-pkgver=9.2.0
-pkgrel=3
-arch=(any)
+pkgver=9.2.1
+pkgrel=1
 pkgdesc="Official Python client for Elasticsearch"
+arch=(any)
 url="https://github.com/elastic/elasticsearch-py"
 license=(Apache-2.0)
 depends=(
@@ -46,8 +46,8 @@ optdepends=(
   'python-requests: support for synchronous requests'
   # 'python-simsimd: support for Maximal Marginal Relevance (MMR) for search results'
 )
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('e2e6a5d609e1b07c739dab907c4d10eb0eae8ca4476333217232045cb9550f08')
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+b2sums=('afa392b4b25145bf62410bb652853889ab218e5e736a94edbcbc41e56355d8b154045c4788e9168bdaa11f28b43894f78edbbf5a9c364b474f136decd340a13a')
 
 build() {
   cd $_pkgname-$pkgver
@@ -68,3 +68,4 @@ package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+ 
