@@ -2,8 +2,8 @@
 # Contributor: Chih-Hsuan Yen <yan12125@archlinux.org>
 
 pkgname=python-cfn-lint
-pkgver=1.42.1
-pkgrel=2
+pkgver=1.43.1
+pkgrel=1
 pkgdesc='CloudFormation Linter'
 arch=(any)
 url='https://github.com/aws-cloudformation/cfn-lint'
@@ -42,7 +42,7 @@ optdepends=(
   'python-sarif-om: for sarif formatter'
 )
 source=("git+$url.git#tag=v$pkgver")
-sha256sums=('8cd2d0e1d1fed10156f9f79ebf55b837c44325f7583515e9f1cb48d9a20f790e')
+b2sums=('de0f0a75589f44213986113da9f924343b0400578ff22faccaac1588ca874f25a9a86732d3b64b0ddc560829ca5fd62480080057393a9ad21fb0c0ab95421217')
 
 build() {
   cd ${pkgname#python-}
@@ -65,4 +65,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
- 
