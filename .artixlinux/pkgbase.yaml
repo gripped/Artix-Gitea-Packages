@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.22.0-2
+    version: 1.23.0-1
     packages:
-      - python-yarl-1.22.0-2-x86_64.pkg.tar.zst
+      - python-yarl-1.23.0-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
