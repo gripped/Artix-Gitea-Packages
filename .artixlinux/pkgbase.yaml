@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 8.2.1-1
+    version: 8.2.2-1
     packages:
-      - fast_float-8.2.1-1-any.pkg.tar.zst
+      - fast_float-8.2.2-1-any.pkg.tar.zst
     debug: []
   world:
     version: 8.1.0-1
