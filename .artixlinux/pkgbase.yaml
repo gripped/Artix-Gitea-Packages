@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -21,15 +21,15 @@ repos:
     packages: []
     debug: []
   world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
     version: 0.45.0-2
     packages:
       - kitty-0.45.0-2-x86_64.pkg.tar.zst
       - kitty-terminfo-0.45.0-2-x86_64.pkg.tar.zst
       - kitty-shell-integration-0.45.0-2-x86_64.pkg.tar.zst
-    debug: []
-  world-gremlins:
-    version: null
-    packages: []
     debug: []
   world:
     version: 0.45.0-1
