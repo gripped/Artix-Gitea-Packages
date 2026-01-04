@@ -5,7 +5,7 @@ pkgname=(
   libmbim
   libmbim-docs
 )
-pkgver=1.32.0
+pkgver=1.34.0
 pkgrel=1
 pkgdesc="MBIM modem protocol helper library"
 url="https://www.freedesktop.org/wiki/Software/libmbim/"
@@ -25,8 +25,8 @@ makedepends=(
   help2man
   meson
 )
-source=("git+https://gitlab.freedesktop.org/mobile-broadband/libmbim.git#tag=${pkgver/[a-z]/-&}")
-b2sums=('SKIP')
+source=("git+https://gitlab.freedesktop.org/mobile-broadband/libmbim.git?signed#tag=${pkgver/[a-z]/-&}")
+b2sums=('bb5d02ebc7a14fc79803fcfc651fcb9d979e0ee45a97c9cb001df4a078e8fafb3fe2e54cfd2e18609423e64cdbe5aee537ce8ae4e8615302e03d807c0d594fe0')
 validpgpkeys=(
   A814D09B9C5BC01945A64308AECE0239C6606AD5 # Aleksander Morgado <aleksandermj@chromium.org>
   3A948E16E8860C68CD68441D734614319E26A433 # Dan Williams <dan@ioncontrol.co>
