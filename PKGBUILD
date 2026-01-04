@@ -7,7 +7,7 @@
 pkgname=libkate
 _name="${pkgname/lib}"
 pkgver=0.4.3
-pkgrel=2
+pkgrel=4
 pkgdesc="A karaoke and text codec for embedding in ogg"
 license=(BSD-3-Clause)
 url="https://gitlab.xiph.org/xiph/kate"
@@ -15,10 +15,15 @@ arch=(x86_64)
 depends=(
   glibc
   libogg
-  liboggz
   libpng
-  python
+)
+makedepends=(
+  liboggz
   python-wxpython
+)
+optdepends=(
+  'liboggz: for KateDJ'
+  'python-wxpython: for KateDJ'
 )
 provides=(
   libkate.so

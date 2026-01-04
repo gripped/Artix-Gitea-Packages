@@ -1,22 +1,25 @@
 ---
-version: 0.4.3-2
+version: 0.4.3-4
 pkgbase:
   name: libkate
   pkgdesc: A karaoke and text codec for embedding in ogg
   pkgver: 0.4.3
-  pkgrel: 2
+  pkgrel: 4
   url: https://gitlab.xiph.org/xiph/kate
   arch:
     - x86_64
   license:
     - BSD-3-Clause
+  makedepends:
+    - liboggz
+    - python-wxpython
   depends:
     - glibc
     - libogg
-    - liboggz
     - libpng
-    - python
-    - python-wxpython
+  optdepends:
+    - 'liboggz: for KateDJ'
+    - 'python-wxpython: for KateDJ'
   provides:
     - libkate.so
     - liboggkate.so
