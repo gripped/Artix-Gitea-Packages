@@ -1,10 +1,10 @@
 ---
-version: 6.13-1
+version: 6.13-2.1
 pkgbase:
   name: xscreensaver
   pkgdesc: Screen saver and locker for the X Window System
   pkgver: 6.13
-  pkgrel: 1
+  pkgrel: 2.1
   url: https://www.jwz.org/xscreensaver/
   arch:
     - x86_64
@@ -44,11 +44,15 @@ pkgbase:
     - xdg-utils
     - xorg-appres
   optdepends:
+    - 'fortune-mod: for fortune file support (can be replaced with eg misfortune)'
     - 'gdm: for login manager support'
+    - 'perl-lwp-protocol-https: for https support on networked demos'
+    - 'words: for Web Collage demo'
   backup:
     - etc/pam.d/xscreensaver
   source:
     - https://www.jwz.org/xscreensaver/xscreensaver-6.13.tar.gz
+    - xscreensaver
   sha512sums:
     - 1ab42c0d0bf31b6d25e543d44c2ff41f48ef229ffce3a02f82495c1ef9c9452eddec4abe1cd7705220c6491562361f8cd0cca8bce9875ff80a765816574bf8ac
   b2sums:

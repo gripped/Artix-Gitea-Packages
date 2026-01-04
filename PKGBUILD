@@ -3,7 +3,7 @@
 
 pkgname=xscreensaver
 pkgver=6.13
-pkgrel=1
+pkgrel=2.1
 pkgdesc='Screen saver and locker for the X Window System'
 url='https://www.jwz.org/xscreensaver/'
 arch=(x86_64)
@@ -47,12 +47,16 @@ makedepends=(
  
 )
 optdepends=(
+  'fortune-mod: for fortune file support (can be replaced with eg misfortune)'
   'gdm: for login manager support'
+  'perl-lwp-protocol-https: for https support on networked demos'
+  'words: for Web Collage demo'
 )
 backup=(
   etc/pam.d/xscreensaver
 )
-source=(https://www.jwz.org/xscreensaver/${pkgname}-${pkgver}.tar.gz)
+source=(https://www.jwz.org/xscreensaver/${pkgname}-${pkgver}.tar.gz
+        xscreensaver)
 sha512sums=('1ab42c0d0bf31b6d25e543d44c2ff41f48ef229ffce3a02f82495c1ef9c9452eddec4abe1cd7705220c6491562361f8cd0cca8bce9875ff80a765816574bf8ac')
 b2sums=('a165a9bf9fa2f1d3db6e660ccb03fe5474bf2338e4d1d606d76b5552ae08d4d9ca97ff5a4b4a0778c741f391a9d654b0422c4b0e9b4a0a5a0c7b535c346d3e69')
 
@@ -80,6 +84,7 @@ package() {
   install -d "${pkgdir}/etc/pam.d"
   make DESTDIR="${pkgdir}" install
   install -Dm 644 debian/copyright -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 "${srcdir}/xscreensaver" "${pkgdir}/etc/pam.d/xscreensaver"
   echo "NotShowIn=KDE;GNOME;" >> "${pkgdir}/usr/share/applications/xscreensaver-settings.desktop"
 }
 
