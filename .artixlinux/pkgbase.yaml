@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 590.48.01-1
+    version: 590.48.01-2
     packages:
-      - nvidia-utils-590.48.01-1-x86_64.pkg.tar.zst
-      - opencl-nvidia-590.48.01-1-x86_64.pkg.tar.zst
-      - nvidia-open-dkms-590.48.01-1-x86_64.pkg.tar.zst
+      - nvidia-utils-590.48.01-2-x86_64.pkg.tar.zst
+      - opencl-nvidia-590.48.01-2-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-590.48.01-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 580.105.08-5
