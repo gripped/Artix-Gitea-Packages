@@ -2,7 +2,7 @@
 
 pkgname=reaper
 pkgver=7.58
-pkgrel=2
+pkgrel=1
 pkgdesc="A complete digital audio production application for computers"
 arch=(
   aarch64
