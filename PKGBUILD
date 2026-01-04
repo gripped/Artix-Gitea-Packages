@@ -140,4 +140,3 @@ package_python-tests() {
   cd "$pkgdir"/usr/lib/python*/
   rm -r !(test)
 }
- 
