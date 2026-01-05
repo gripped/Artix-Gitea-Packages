@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,11 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.9.20-2
+    version: 0.9.21-2
     packages:
-      - uv-0.9.20-2-x86_64.pkg.tar.zst
-      - python-uv-0.9.20-2-x86_64.pkg.tar.zst
-      - python-uv-build-0.9.20-2-x86_64.pkg.tar.zst
+      - uv-0.9.21-2-x86_64.pkg.tar.zst
+      - python-uv-0.9.21-2-x86_64.pkg.tar.zst
+      - python-uv-build-0.9.21-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.9.21-1
