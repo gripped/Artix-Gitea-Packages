@@ -1,0 +1,30 @@
+---
+version: 1.9.0-1
+pkgbase:
+  name: lua-filesystem
+  pkgdesc: File System Library for the Lua Programming Language
+  pkgver: 1.9.0
+  pkgrel: 1
+  url: https://lunarmodules.github.io/luafilesystem
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - luarocks
+  source:
+    - https://github.com/lunarmodules/luafilesystem/archive/v1_9_0/luafilesystem-1_9_0.tar.gz
+    - https://luarocks.org/manifests/hisham/luafilesystem-1.9.0-1.rockspec
+  sha256sums:
+    - 1142c1876e999b3e28d1c236bf21ffd9b023018e336ac25120fb5373aade1450
+    - 32bbfb40a23a10063a8f332b874556019232e4a01e9bcd9c0cfb422118e2e1c9
+pkgname:
+  - name: lua-filesystem
+  - name: lua51-filesystem
+  - name: lua52-filesystem
+  - name: lua53-filesystem
+# generated with artixpkg 0.37.4-1-any
