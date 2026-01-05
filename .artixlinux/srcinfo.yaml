@@ -1,10 +1,10 @@
 ---
-version: 5.2-1
+version: 5.2-2
 pkgbase:
   name: python-roman
   pkgdesc: Small helper library to convert arabic to roman numerals
   pkgver: 5.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zopefoundation/roman
   arch:
     - any
