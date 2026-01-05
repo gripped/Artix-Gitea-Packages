@@ -4,7 +4,7 @@
 
 pkgname=libheif
 pkgver=1.21.1
-pkgrel=1
+pkgrel=3
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
 url='https://github.com/strukturag/libheif'
@@ -26,9 +26,11 @@ depends=(aom
          libde265
          libwebp
          openh264
+         x264
          x265)
-optdepends=('libjpeg-turbo: for heif-convert and heif-enc'
-            'libpng: for heif-convert and heif-enc'
+optdepends=('libjpeg-turbo: for heif-dec and heif-enc'
+            'libpng: for heif-dec and heif-enc'
+            'libtiff: for heif-dec and hei-enc'
             'dav1d: dav1d encoder'
             'ffmpeg: hardware decode'
             'openjpeg2: JPEG2000 decoder'
