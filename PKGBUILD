@@ -6,8 +6,8 @@ pkgname=(
   libshumate
   libshumate-docs
 )
-pkgver=1.5.1
-pkgrel=1.1
+pkgver=1.5.2
+pkgrel=1
 pkgdesc="Map widget for GTK 4"
 url="https://wiki.gnome.org/Projects/libshumate"
 license=(LGPL-2.1-or-later)
@@ -40,7 +40,7 @@ checkdepends=(xorg-server-xvfb)
 source=(
   "git+https://gitlab.gnome.org/GNOME/libshumate.git?signed#tag=${pkgver/[a-z]/.&}"
 )
-b2sums=('08990ede97ef0da3f10e1bb00a10b04977df0e534c49a48bd827a270356ef919b444a0d89ea7bece83871f4e3db718a20ee360147205469040e7acb9bc92773b')
+b2sums=('04d6318177604c3b6ac8611818a6a2503ae51b62090c42ccf1e369de99c85497b306b389213310e900a61a7cccb074a2f3e3d14180604007577d800aece409fa')
 validpgpkeys=(
   7448F128A4B18AB2EF87F092FA6624580A420D5D # Marcus Lundblad <ml@update.uu.se>
 )
@@ -59,10 +59,10 @@ build() {
   meson compile -C build
 }
 
-#check() {
-#  GTK_A11Y=none dbus-run-session xvfb-run -s '-nolisten local' \
-#    meson test -C build --print-errorlogs
-#}
+check() {
+  GTK_A11Y=none dbus-run-session xvfb-run -s '-nolisten local' \
+    meson test -C build --print-errorlogs
+}
 
 package_libshumate() {
   provides=(libshumate-1.0.so)
