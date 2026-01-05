@@ -1,10 +1,10 @@
 ---
-version: 49.0-1
+version: 49.0-2
 pkgbase:
   name: polari
   pkgdesc: An IRC Client for GNOME
   pkgver: 49.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Polari/
   arch:
     - x86_64
@@ -21,20 +21,23 @@ pkgbase:
   depends:
     - dconf
     - gcc-libs
+    - gdk-pixbuf2
     - gjs
     - glib2
     - glibc
-    - gnome-keyring
+    - graphene
     - gtk4
     - hicolor-icon-theme
     - libadwaita
     - libgirepository
+    - libsecret
     - libsoup3
+    - org.freedesktop.secrets
+    - pango
     - telepathy-glib
     - telepathy-idle
-    - telepathy-logger
     - telepathy-mission-control
-    - tracker3
+    - tinysparql
   optdepends:
     - 'webkit2gtk-4.1: URL preview feature'
   source:
