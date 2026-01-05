@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Dale Blount <dale@archlinux.org>
 
 pkgname=net-snmp
-pkgver=5.9.4
-pkgrel=8
+pkgver=5.9.5
+pkgrel=1
 pkgdesc='A suite of applications used to implement SNMP v1, SNMP v2c and SNMP v3 using both IPv4 and IPv6'
 arch=('x86_64')
 url='http://www.net-snmp.org/'
@@ -21,22 +22,13 @@ provides=('libnetsnmpagent.so'
           'libsnmp.so')
 options=('!emptydirs' '!makeflags')
 source=("git+https://github.com/net-snmp/net-snmp.git#tag=v${pkgver}")
-sha512sums=('c88ff9d81a683dbe5ff2c34c1e8c9e579b67aef1d74153275a1dc4ff7991cdc1611d01acc2d5691ae3cf6acd980807fb1a5309f91470ae2f67fbbc175b3e34e1')
+sha512sums=('66d35d6d4ba06b101987145c0ff3addf0a861e64ec562874d9df7b64cda9cb68787bdbc39c485ee8065a1652414c47217bcf852ef1db947a6498b530c153ddb1')
 validpgpkeys=('27CAA4A32E371383A33ED0587D5F9576E0F81533'
               '6E6718AEF1EB5C65C32D1B2A356BC0B552D53CAB'
               '8AAA779B597B405BBC329B6376CF47B8A77C5329'
               'D0F8F495DA6160C44EFFBF10F07B9D2DACB19FD6')  # Net-SNMP Administrators
 
 _backports=(
-  # add pcre2 support
-  'd3e95c87b32397815f6d5bcfc844259f2552697a'
-  # Improve pcre2 support
-  '346b6f8959513320e5b674fd670c49ba2cd43af5'
-  # if-mib/data_access/interface.c: plug a leak with pcre2
-  'e5aadf1e78c624a8e4147d4b70a7795497a50e73'
-
-  # Add Linux 6.7 compatibility parsing /proc/net/snmp
-  '7fc7edf676c527a0cfb661f9000a3d22738cf8e6'
 )
 
 _reverts=(
