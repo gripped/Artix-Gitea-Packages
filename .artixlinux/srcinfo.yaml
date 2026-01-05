@@ -1,0 +1,47 @@
+---
+version: 1.12.6-1
+pkgbase:
+  name: imlib2
+  pkgdesc: Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support
+  pkgver: 1.12.6
+  pkgrel: 1
+  url: https://sourceforge.net/projects/enlightenment/
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - highway
+    - libheif
+    - libid3tag
+    - libjxl
+    - librsvg
+    - libspectre
+    - libwebp
+    - openjpeg2
+  depends:
+    - bzip2
+    - freetype2
+    - giflib
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - libxext
+    - xz
+  optdepends:
+    - 'libheif: HEIF loader (for AVIF)'
+    - 'libid3tag: ID3 loader'
+    - 'libjxl: JXL loader'
+    - 'librsvg: SVG loader'
+    - 'libspectre: PS loader'
+    - 'libwebp: WEBP loader'
+    - 'openjpeg2: J2K loader'
+  source:
+    - https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.12.6/imlib2-1.12.6.tar.xz
+  sha256sums:
+    - 250f9752f69dc522e529a81aaa9395705f7fc312ff2453e5de59ac2ba1f2858f
+  sha512sums:
+    - e62b7e89f6d75fb6a649a589f06fea34d08bba696c68d9ece59ee9500558af874c1073ffecae2d1cadd6d603f1acf4d071a415dbf2ba73b505ccf11fe45eea62
+pkgname:
+  - name: imlib2
+# generated with artixpkg 0.37.4-1-any
