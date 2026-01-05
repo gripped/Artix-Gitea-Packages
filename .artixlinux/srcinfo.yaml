@@ -1,9 +1,9 @@
 ---
-version: 21.1.6-1
+version: 21.1.6-2
 pkgbase:
   name: llvm
   pkgver: 21.1.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://llvm.org/
   arch:
     - x86_64
