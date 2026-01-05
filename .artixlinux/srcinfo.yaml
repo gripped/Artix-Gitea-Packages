@@ -1,17 +1,16 @@
 ---
-version: 40.0-9
+version: 40.0-10
 pkgbase:
   name: gnome-games
   pkgdesc: Simple game launcher for GNOME
   pkgver: 40.0
-  pkgrel: 9
+  pkgrel: 10
   url: https://wiki.gnome.org/Apps/Games
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later
   makedepends:
-    - appstream-glib
     - git
     - meson
     - vala
@@ -37,7 +36,6 @@ pkgbase:
     - 'libretro-beetle-pce-fast: Support for TurboGrafx-16 and TurboGrafx-CD games'
     - 'libretro-beetle-psx: Support for PlayStation games'
     - 'libretro-blastem: Support for Sega Genesis games'
-    - 'libretro-citra: Support for Nintendo 3DS games'
     - 'libretro-flycast: Support for Dreamcast games'
     - 'libretro-gambatte: Support for Game Boy and Game Boy Color games'
     - 'libretro-mgba: Support for Game Boy Advance games'
@@ -58,4 +56,4 @@ pkgbase:
     - 06d25a12f9105a9ef4aeea9706f034e747840c541a3a2ae4ec58a9a15c3c849de1dc18661f3133ef45f37348ca9e4c739b71cf93a541d71bba2e9e3f61547c31
 pkgname:
   - name: gnome-games
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
