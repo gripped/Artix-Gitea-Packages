@@ -1,9 +1,9 @@
 ---
-version: 15.2.1+r301+gf24307422d1d-1
+version: 15.2.1+r447+g6a64f6c3ebb8-1
 pkgbase:
   name: gcc
   pkgdesc: The GNU Compiler Collection
-  pkgver: 15.2.1+r301+gf24307422d1d
+  pkgver: 15.2.1+r447+g6a64f6c3ebb8
   pkgrel: 1
   url: https://gcc.gnu.org
   arch:
@@ -35,7 +35,7 @@ pkgbase:
     - '!lto'
     - debug
   source:
-    - git+https://sourceware.org/git/gcc.git#commit=f24307422d1d15f99b2f8af19894e573f7036fb1
+    - git+https://sourceware.org/git/gcc.git#commit=6a64f6c3ebb88a30ee1f36803c48573731018e0c
     - c89
     - c99
     - gcc-ada-repro.patch
@@ -45,7 +45,7 @@ pkgbase:
     - 13975A70E63C361C73AE69EF6EEB81F8981C74C7
     - D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62
   sha256sums:
-    - 76a99cc53c730139e838ef6c132c0b36b4e511a5c2266b596015d2b765a3fa89
+    - adeb3a940db8da675a596af35aeeb05be1308b26d9a80f105dc6e2487d3ac4f0
     - 7b09ec947f90b98315397af675369a1e3dfc527fa70013062e6e85c4be0275ab
     - 44ea973558842f3f4bd666bdaf6e810fd7b7c7bd36b5cc4c69f93d2cd0124fc7
     - 1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f
@@ -53,7 +53,7 @@ pkgname:
   - name: gcc
     pkgdesc: The GNU Compiler Collection - C and C++ frontends
     depends:
-      - gcc-libs=15.2.1+r301+gf24307422d1d-1
+      - gcc-libs=15.2.1+r447+g6a64f6c3ebb8-1
       - binutils>=2.28
       - libmpc
       - zstd
@@ -101,7 +101,7 @@ pkgname:
   - name: gcc-ada
     pkgdesc: Ada front-end for GCC (GNAT)
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
     provides:
       - gcc-ada-multilib
@@ -113,7 +113,7 @@ pkgname:
   - name: gcc-d
     pkgdesc: D frontend for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
     provides:
       - gdc
@@ -124,7 +124,7 @@ pkgname:
   - name: gcc-fortran
     pkgdesc: Fortran front-end for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
     provides:
       - gcc-fortran-multilib
@@ -133,7 +133,7 @@ pkgname:
   - name: gcc-go
     pkgdesc: Go front-end for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
     provides:
       - go=1.17
@@ -145,12 +145,12 @@ pkgname:
   - name: gcc-m2
     pkgdesc: Modula-2 frontend for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
   - name: gcc-objc
     pkgdesc: Objective-C front-end for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
     provides:
       - gcc-objc-multilib
@@ -159,21 +159,21 @@ pkgname:
   - name: gcc-rust
     pkgdesc: Rust frontend for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
   - name: gcc-gcobol
     pkgdesc: Cobol frontend for GCC
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
   - name: lto-dump
     pkgdesc: Dump link time optimization object files
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
   - name: libgccjit
     pkgdesc: Just-In-Time Compilation with GCC backend
     depends:
-      - gcc=15.2.1+r301+gf24307422d1d-1
+      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
       - libisl.so
 # generated with artixpkg 0.37.4-1-any
