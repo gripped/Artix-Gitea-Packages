@@ -1,9 +1,9 @@
 ---
-version: 1:45.0-1
+version: 1:45.1-1
 pkgbase:
   name: rygel
   pkgdesc: UPnP AV MediaServer and MediaRenderer
-  pkgver: 45.0
+  pkgver: 45.1
   pkgrel: 1
   epoch: 1
   url: https://gitlab.gnome.org/GNOME/rygel
@@ -57,11 +57,11 @@ pkgbase:
   backup:
     - etc/rygel.conf
   source:
-    - git+https://gitlab.gnome.org/GNOME/rygel.git?signed#tag=45.0
+    - git+https://gitlab.gnome.org/GNOME/rygel.git?signed#tag=45.1
   validpgpkeys:
     - AC9CD4E32D7C7F6357BA8ADD10F6E970175D29E1
   b2sums:
-    - 56555768254872bcdaf9d68ac9c9e63757391ceb91c56492ff34cbe5b1ce2872f39a4709c27c5f68212f7d3e89be7d6a450236c73fefea3a9f74ea179cd7b77b
+    - a0db116810a87361e885208c169f2abaeca55ef5f2321d5fbd24662aaee4e39c53f9c7f27c25d99c6deb23df155d9372d57e3124af1cf0b56d4b105b60da4297
 pkgname:
   - name: rygel
 # generated with artixpkg 0.37.4-1-any
