@@ -1,10 +1,10 @@
 ---
-version: 1.8.0-2
+version: 1.9.0-1
 pkgbase:
   name: ktextaddons
   pkgdesc: Various text handling addons
-  pkgver: 1.8.0
-  pkgrel: 2
+  pkgver: 1.9.0
+  pkgrel: 1
   url: https://invent.kde.org/libraries/ktextaddons
   arch:
     - x86_64
@@ -35,12 +35,12 @@ pkgbase:
     - 'grammalecte: French grammar checking'
     - 'libreoffice: Use autocorrection data from LibreOffice'
   source:
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-1.8.0.tar.xz
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-1.8.0.tar.xz.sig
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-1.9.0.tar.xz
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-1.9.0.tar.xz.sig
   validpgpkeys:
     - 90A774939A973FF1ECC827788FFE4352ED54BB8A
   sha256sums:
-    - 159c605d3d031bf818e164ea410150103c5f9f87cea35e2979e42d86c3318c99
+    - 053bcf84e45c141042186a9115a8dd51a7262802fe9547745e44b419015b9694
     - SKIP
 pkgname:
   - name: ktextaddons
