@@ -1,0 +1,56 @@
+---
+version: 0.103.1-2
+pkgbase:
+  name: rst2pdf
+  pkgdesc: Use a text editor. Make a PDF
+  pkgver: 0.103.1
+  pkgrel: 2
+  url: https://github.com/rst2pdf/rst2pdf
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - graphviz
+    - plantuml
+    - python-aafigure
+    - python-matplotlib
+    - python-pymupdf
+    - python-pytest
+    - python-pytest-xdist
+    - python-sphinx
+    - python-svglib
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-scm
+    - python-wheel
+  depends:
+    - python
+    - python-docutils
+    - python-importlib-metadata
+    - python-jinja
+    - python-packaging
+    - python-pillow
+    - python-pygments
+    - python-reportlab
+    - python-roman
+    - python-smartypants
+    - python-yaml
+  optdepends:
+    - 'plantuml: for UML diagram support'
+    - 'python-aafigure: for ASCII image support'
+    - 'python-pyphen: for hyphenation support'
+    - 'python-matplotlib: for math support'
+    - 'python-sphinx: for sphinx support'
+    - 'python-svglib: for SVG support'
+  source:
+    - git+https://github.com/rst2pdf/rst2pdf.git#tag=0.103.1
+  sha512sums:
+    - 9366787ccff062018509abd6d9477ac5120085d2c6004d265975a502def5be90e1c76130d14603d4d95987078bc24487e97b530504aa0bcb9443d9d3674d2a5f
+  b2sums:
+    - b4e144bc9354778fb8130f47382681b8bd2ac9d68e7843f463f75c26b272bf89ffe97078bbdad03122fb054ccd9c33b5fb9f15d23a2162be9f283e44a6b78b78
+pkgname:
+  - name: rst2pdf
+# generated with artixpkg 0.37.4-1-any
