@@ -29,10 +29,10 @@ repos:
     packages: []
     debug: []
   world:
-    version: 3.56.2-1
+    version: 3.56.3-1
     packages:
-      - gnome-online-accounts-3.56.2-1-x86_64.pkg.tar.zst
-      - libgoa-3.56.2-1-x86_64.pkg.tar.zst
+      - gnome-online-accounts-3.56.3-1-x86_64.pkg.tar.zst
+      - libgoa-3.56.3-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
