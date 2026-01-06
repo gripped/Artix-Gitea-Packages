@@ -93,6 +93,7 @@ makedepends=(
   ruby-rdoc
   rust
   vala
+  wget
 )
 checkdepends=(
   linux-lts  # test against LTS kernel: https://github.com/libguestfs/libguestfs/issues/139

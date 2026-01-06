@@ -37,6 +37,7 @@ pkgbase:
     - ruby-rdoc
     - rust
     - vala
+    - wget
   depends:
     - augeas
     - bash
