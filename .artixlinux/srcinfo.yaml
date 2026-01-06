@@ -1,10 +1,10 @@
 ---
-version: 127-3
+version: 127-3.1
 pkgbase:
   name: polkit
   pkgdesc: Application development toolkit for controlling system-wide privileges
   pkgver: 127
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/polkit-org/polkit
   install: polkit.install
   arch:

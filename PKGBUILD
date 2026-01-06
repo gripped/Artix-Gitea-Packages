@@ -3,7 +3,7 @@
 
 pkgname=polkit
 pkgver=127
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Application development toolkit for controlling system-wide privileges"
 url="https://github.com/polkit-org/polkit"
 arch=(x86_64)
