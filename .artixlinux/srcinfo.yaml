@@ -1,0 +1,31 @@
+---
+version: 0.4.5.4-1
+pkgbase:
+  name: timezonemap
+  pkgdesc: GTK3 timezone map widget
+  pkgver: 0.4.5.4
+  pkgrel: 1
+  url: https://codeberg.org/dashea/timezonemap
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - gobject-introspection
+  depends:
+    - cairo
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - json-glib
+    - librsvg
+    - libsoup3
+  source:
+    - git+https://codeberg.org/dashea/timezonemap.git#tag=0.4.5.4
+  b2sums:
+    - 36209220b8b68e597cb17f6abb709737a85186ec9c0dbf461c3f5ba8fbbf2493ddf12f6ce088222922a6ce6c8b2201d5f640cdcd6f50222ceb533eb588f44ec6
+pkgname:
+  - name: timezonemap
+# generated with artixpkg 0.37.4-1-any
