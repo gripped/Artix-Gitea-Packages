@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.11-3
+    version: 25.11-3.1
     packages:
-      - usd-25.11-3-x86_64.pkg.tar.zst
+      - usd-25.11-3.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.11-2
