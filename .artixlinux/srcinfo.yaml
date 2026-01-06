@@ -1,9 +1,9 @@
 ---
-version: 2.0.12-1
+version: 2.0.13-1
 pkgbase:
   name: syncthing
   pkgdesc: Open Source Continuous Replication / Cluster Synchronization Thing
-  pkgver: 2.0.12
+  pkgver: 2.0.13
   pkgrel: 1
   url: https://syncthing.net/
   arch:
@@ -18,8 +18,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/syncthing/syncthing/releases/download/v2.0.12/syncthing-source-v2.0.12.tar.gz
-    - https://github.com/syncthing/syncthing/releases/download/v2.0.12/syncthing-source-v2.0.12.tar.gz.asc
+    - https://github.com/syncthing/syncthing/releases/download/v2.0.13/syncthing-source-v2.0.13.tar.gz
+    - https://github.com/syncthing/syncthing/releases/download/v2.0.13/syncthing-source-v2.0.13.tar.gz.asc
     - syncthing-discosrv.sysusers
     - syncthing-relaysrv.sysusers
     - syncthing-discosrv.tmpfiles
@@ -28,7 +28,7 @@ pkgbase:
   validpgpkeys:
     - 37C84554E7E0A261E4F76E1ED26E6ED000654A3E
   sha256sums:
-    - 56004ae6d974aa387c3c6a734eb98aafd5d6159fc657a1f4c618e0b1814fadae
+    - fd7c93e01a6d61faa84adda8b22479dd7fd106144fbbb2eb15d773707d8a382e
     - SKIP
     - f6e704dd7b10127b1642c889a29e95468daa75d895493b235ce1ed5e97155b70
     - 6ab96a5949e223d315d49663734ad27b70c72469c691a61ac198cb7794cb5eaa
