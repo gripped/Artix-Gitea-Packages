@@ -2,7 +2,7 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.37.4
+pkgver=0.37.5
 pkgrel=1
 pkgdesc='Development tools for Artix'
 arch=('any')
@@ -69,6 +69,7 @@ package_artools-pkg() {
         'binutils'
         'bzr'
         'diffutils'
+	'ed'
         'findutils'
         'git'
         'go-yq'
