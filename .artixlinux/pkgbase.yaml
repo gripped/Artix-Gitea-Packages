@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,12 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.9.2-13
+    packages:
+      - lua-lgi-0.9.2-13-x86_64.pkg.tar.zst
+      - lua51-lgi-0.9.2-13-x86_64.pkg.tar.zst
+      - lua53-lgi-0.9.2-13-x86_64.pkg.tar.zst
+      - lua54-lgi-0.9.2-13-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
