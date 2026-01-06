@@ -3,7 +3,7 @@
 
 pkgname=libretro-play
 pkgver=8625
-pkgrel=1
+pkgrel=3
 pkgdesc='Sony PlayStation 2 core'
 arch=(x86_64)
 url=https://github.com/jpd002/Play-
@@ -55,6 +55,7 @@ pkgver() {
 
 prepare() {
   cd libretro-play
+  export GIT_CONFIG_GLOBAL="$HOME/.gitconfig"
   git config --global protocol.file.allow always
   for submodule in deps/{CodeGen,Dependencies,Framework,Nuanceur,libchdr}; do
     git submodule init ${submodule}
