@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -45,8 +45,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 44520-3
+    packages:
+      - libretro-ppsspp-44520-3-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
