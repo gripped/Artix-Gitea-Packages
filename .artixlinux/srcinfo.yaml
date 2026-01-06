@@ -1,0 +1,35 @@
+---
+version: 1:3.1.0-2
+pkgbase:
+  name: luasocket
+  pkgdesc: Networking support library for the Lua language
+  pkgver: 3.1.0
+  pkgrel: 2
+  epoch: 1
+  url: https://github.com/lunarmodules/luasocket
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - luarocks
+  source:
+    - https://github.com/lunarmodules/luasocket/archive/v3.1.0/luasocket-3.1.0.tar.gz
+  sha256sums:
+    - bf033aeb9e62bcaa8d007df68c119c966418e8c9ef7e4f2d7e96bddeca9cca6e
+pkgname:
+  - name: lua-socket
+  - name: lua51-socket
+    conflicts:
+      - luasocket
+    replaces:
+      - luasocket
+  - name: lua52-socket
+  - name: lua53-socket
+  - name: lua54-socket
+# generated with artixpkg 0.37.4-1-any
