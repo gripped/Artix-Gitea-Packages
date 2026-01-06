@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.21.1-2
+    version: 0.22.0-2
     packages:
-      - magic-wormhole-0.21.1-2-any.pkg.tar.zst
+      - magic-wormhole-0.22.0-2-any.pkg.tar.zst
     debug: []
   world:
     version: 0.22.0-1
