@@ -1,10 +1,10 @@
 ---
-version: 3.2-5
+version: 3.2-6
 pkgbase:
   name: j4-dmenu-desktop
   pkgdesc: Find .desktop files and offer you a menu to start an application using dmenu
   pkgver: 3.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/enkore/j4-dmenu-desktop
   arch:
     - x86_64
