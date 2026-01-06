@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.3.10-1
+    version: 6.4.1-1
     packages:
-      - telegram-desktop-6.3.10-1-x86_64.pkg.tar.zst
+      - telegram-desktop-6.4.1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
