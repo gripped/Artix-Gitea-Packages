@@ -3,7 +3,7 @@
 
 pkgname=haproxy
 pkgver=3.3.1
-pkgrel=1
+pkgrel=2
 
 # Each release serie has its own repository. This is handled automatically in
 # PKGBUILD, but nvchecker configuration needs to be updated on bump!
@@ -13,7 +13,7 @@ url='https://www.haproxy.org/'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
 
-depends=('openssl' 'pcre2' 'zlib' 'libxcrypt' 'libcrypt.so' 'lua')
+depends=('openssl' 'pcre2' 'zlib' 'libxcrypt' 'libcrypt.so' 'lua54')
 makedepends=('git')
 
 backup=('etc/haproxy/haproxy.cfg')
