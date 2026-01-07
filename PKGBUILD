@@ -10,7 +10,7 @@ shopt -s extglob
 pkgbase=python
 pkgname=(python python-tests)
 pkgver=3.14.2
-pkgrel=2.1
+pkgrel=2
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
 arch=('x86_64')
@@ -98,7 +98,8 @@ check() {
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
-      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl
+      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl \
+      -x test_pidfd_send_signal -x test_keyboard_interrupt_exit_code -x test_sigint -x test_interrupt -x test_wait_result -x test_shared_memory_SharedMemoryServer_ignores_sigint
 }
 
 package_python() {

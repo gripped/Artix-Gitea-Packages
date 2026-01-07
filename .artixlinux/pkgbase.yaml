@@ -13,10 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 3.14.2-2.1
+    version: 3.14.2-2
     packages:
-      - python-3.14.2-2.1-x86_64.pkg.tar.zst
-      - python-tests-3.14.2-2.1-x86_64.pkg.tar.zst
+      - python-3.14.2-2-x86_64.pkg.tar.zst
+      - python-tests-3.14.2-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 3.13.11-1
