@@ -35,9 +35,9 @@ sha512sums=('2f593e210409c74974395bf163be127159136eac86216443122f5d2104cb85b5b65
             '71aaf2cdf6885547931c212fa312b4d684af1b765be78f7ad4cded4700305d81602d76fae859338357ef9dda8c7fe265c829ed1a4a964e67591f4390def1b23b')
 
 prepare() {
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
-	./bootstrap.sh
+	#./bootstrap.sh
 
 	# Write logs to syslog (rather than log files)
 	patch -Np1 -i "${srcdir}/write_log_to_syslog.patch"
@@ -80,13 +80,13 @@ build() {
 		--enable-webservice
 	)
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	for db in postgresql mysql; do
 		./configure "${_configure_flags[@]}" --enable-server --with-"${db}"
 		make clean
 		make gettext
-		make dbschema
+		# make dbschema
 		make
 		mkdir -p "${srcdir}/copies/database_server/${db}"
 		cp database/"${db}"/*.sql "${srcdir}/copies/database_server/${db}/"
@@ -97,7 +97,7 @@ build() {
 		./configure "${_configure_flags[@]}" --enable-proxy --with-"${db}"
 		make clean
 		make gettext
-		make dbschema
+		# make dbschema
 		make
 		mkdir -p "${srcdir}/copies/database_proxy/${db}"
 		cp database/"${db}"/*.sql "${srcdir}/copies/database_proxy/${db}/"
@@ -120,7 +120,7 @@ package_zabbix-server() {
 	            'zabbix-web-service: for scheduled PDF report generation')
 	backup=('etc/zabbix/zabbix_server.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	for db in postgresql mysql; do
 		install -Dm 755 "src/zabbix_server/zabbix_server_${db}" "${pkgdir}/usr/bin/zabbix_server_${db}"
@@ -142,7 +142,7 @@ package_zabbix-frontend-php() {
 	pkgdesc="PHP frontend for Zabbix"
 	depends=('zabbix-server' 'php' 'php-gd')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -d "${pkgdir}/usr/share/webapps/zabbix"
 	cp -av ui/* "${pkgdir}/usr/share/webapps/zabbix"
@@ -156,7 +156,7 @@ package_zabbix-web-service() {
 	depends=('zabbix-common' 'chromium')
 	backup=('etc/zabbix/zabbix_web_service.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -Dm 755 src/go/bin/zabbix_web_service "${pkgdir}/usr/bin/zabbix_web_service"
 
@@ -172,7 +172,7 @@ package_zabbix-proxy() {
 	            'postgresql-libs: for PostgreSQL support')
 	backup=('etc/zabbix/zabbix_proxy.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	for db in postgresql mysql sqlite3; do
 		install -Dm 755 "src/zabbix_proxy/zabbix_proxy_${db}" "${pkgdir}/usr/bin/zabbix_proxy_${db}"
@@ -189,7 +189,7 @@ package_zabbix-agent() {
 	depends=('zabbix-common' 'curl' 'pcre2')
 	backup=('etc/zabbix/zabbix_agentd.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -Dm 755 src/zabbix_agent/zabbix_agentd "${pkgdir}/usr/bin/zabbix_agentd"
 	install -Dm 755 src/zabbix_sender/zabbix_sender "${pkgdir}/usr/bin/zabbix_sender"
@@ -210,7 +210,7 @@ package_zabbix-agent2() {
 	depends=('zabbix-common' 'curl' 'pcre2')
 	backup=('etc/zabbix/zabbix_agent2.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -Dm 755 src/go/bin/zabbix_agent2 "${pkgdir}/usr/bin/zabbix_agent2"
 
