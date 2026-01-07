@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 11.6.4-1
+    version: 11.7.0-1
     packages:
-      - npm-11.6.4-1-any.pkg.tar.zst
+      - npm-11.7.0-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
