@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,10 +49,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1.1.30-3
+    version: 1.1.31-2
     packages:
-      - doublecmd-qt5-1.1.30-3-x86_64.pkg.tar.zst
-      - doublecmd-qt6-1.1.30-3-x86_64.pkg.tar.zst
+      - doublecmd-qt5-1.1.31-2-x86_64.pkg.tar.zst
+      - doublecmd-qt6-1.1.31-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 1.1.31-1
