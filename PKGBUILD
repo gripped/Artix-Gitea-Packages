@@ -13,7 +13,7 @@
 # Contributor: hugelgupf <ckoch (at) cs.nmt.edu>
 
 pkgname=dpkg
-pkgver=1.22.21
+pkgver=1.23.3
 pkgrel=1
 pkgdesc='The Debian Package Manager tools'
 arch=('x86_64')
@@ -24,6 +24,7 @@ depends=(
   'gcc-libs'
   'glibc'
   'libmd'
+  'ncurses'
   'perl'
   'xz'
   'zlib-ng'
@@ -45,7 +46,7 @@ source=(
   origin.archlinux
   origin.artixlinux
 )
-sha256sums=('73fc4ebba8037122fdfeff070ec80ce4a6204359d857d9d335b6a1f72e877c55'
+sha256sums=('0c1b1ca5d71ed99cda66929cb65c4b11a7b9362311f07b7ec363e36834bebd42'
             '9cfd50f65f1fb52adccf48ea859871259a549f24620b52466c890931919b7e04'
             '33ff4f2677b4438e58810bf4a276a338ff17d0d6cd0adbfaa1004f09148f627a')
 validpgpkeys=('4F3E74F436050C10F5696574B972BF3EA4AE57A3') # Guillem Jover <guillem@hadrons.org>
