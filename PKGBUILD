@@ -8,7 +8,7 @@
 
 pkgname=prosody
 epoch=1
-pkgver=13.0.2
+pkgver=13.0.3
 pkgrel=1
 pkgdesc="Lightweight and extensible Jabber/XMPP server written in Lua"
 arch=('x86_64')
@@ -30,11 +30,11 @@ validpgpkeys=('32A9EDDE3609931EB98CEAC315907E8E7BDD6BFE'
               '3E52119EF853C59678DBBF6BADED9A77B67AD329'
               'C01A477A8F69E6E57F5C54CDE7AB958013F1F1D5')
 source=("https://prosody.im/downloads/source/prosody-$pkgver.tar.gz"{,.asc}
-        'prosody.tmpfile.d'
+        'prosody.tmpfiles'
         'prosody.logrotated'
         'sysuser.conf'
 )
-sha256sums=('3e61bd396f37ca5245debfd6be49a47a6191332f0faa2d4ee5f00fbb040addb0'
+sha256sums=('a51ed3ebe54c19acd638ee5f54014ab3696c12f99ffc75ac293d69f2f0ffdc0b'
             'SKIP'
             '0753bd9260f1cfdce6e18e01a61e320b396acfe9fca8ccf3250653bfa6af997e'
             '5a2466b73bd069fb73be97a4e23b24e4c8dd1adb7db871cb8f5ab4094c1f967f'
@@ -60,7 +60,8 @@ build() {
     --idn-library=idn \
     --cflags="${CPPFLAGS} ${CFLAGS} -fPIC -D_GNU_SOURCE" \
     --ldflags="${LDFLAGS} -shared" \
-    --no-example-certs
+    --no-example-certs \
+    --with-random=getrandom
   make
 }
 
@@ -70,7 +71,7 @@ package() {
   make DESTDIR="${pkgdir}" install
   make DESTDIR="${pkgdir}" install -C tools/migration
 
-  install -Dm644 "${srcdir}"/prosody.tmpfile.d "${pkgdir}"/usr/lib/tmpfiles.d/prosody.conf
+  install -Dm644 "${srcdir}"/prosody.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/prosody.conf
   install -Dm644 "${srcdir}"/sysuser.conf "${pkgdir}"/usr/lib/sysusers.d/prosody.conf
 
   for i in tools/*.lua; do

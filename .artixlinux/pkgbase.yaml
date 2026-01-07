@@ -29,10 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:13.0.2-1
+    version: 1:13.0.3-1
     packages:
-      - prosody-1:13.0.2-1-x86_64.pkg.tar.zst
-    debug: []
+      - prosody-1:13.0.3-1-x86_64.pkg.tar.zst
+    debug:
+      - prosody-debug-1:13.0.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
