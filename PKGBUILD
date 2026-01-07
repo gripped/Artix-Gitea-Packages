@@ -18,6 +18,7 @@ license=('PSF-2.0')
 url="https://www.python.org/"
 depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal')
 makedepends=('tk' 'sqlite' 'bluez-libs' 'llvm' 'gdb' 'xorg-server-xvfb' 'ttf-font')
+options=(debug)
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"
         EXTERNALLY-MANAGED
         fix-pgo-test-generators.patch)
@@ -36,7 +37,7 @@ prepare() {
   # rather than copies shipped in the tarball
   rm -r Modules/expat
   rm -r Modules/_decimal/libmpdec
-  patch -Np 1 -i ../fix-pgo-test-generators.patch
+  #patch -Np 1 -i ../fix-pgo-test-generators.patch
 }
 
 build() {
@@ -98,8 +99,9 @@ check() {
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
-      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl \
-      -x test_pidfd_send_signal -x test_keyboard_interrupt_exit_code -x test_sigint -x test_interrupt -x test_wait_result -x test_shared_memory_SharedMemoryServer_ignores_sigint
+      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl
+      #-x test_pidfd_send_signal -x test_keyboard_interrupt_exit_code -x test_sigint -x test_interrupt -x test_wait_result \
+      #-x test_shared_memory_SharedMemoryServer_ignores_sigint -x test_processes -x test_multiprocessing_forkserver -x test_multiprocessing_fork
 }
 
 package_python() {
