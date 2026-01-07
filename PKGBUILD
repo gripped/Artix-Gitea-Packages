@@ -37,7 +37,7 @@ prepare() {
   # rather than copies shipped in the tarball
   rm -r Modules/expat
   rm -r Modules/_decimal/libmpdec
-  #patch -Np 1 -i ../fix-pgo-test-generators.patch
+  patch -Np 1 -i ../fix-pgo-test-generators.patch
 }
 
 build() {

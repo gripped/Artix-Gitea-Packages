@@ -1,21 +1,24 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoAdd: true
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 3.14.2-2
+    packages:
+      - python-3.14.2-2-x86_64.pkg.tar.zst
+      - python-tests-3.14.2-2-x86_64.pkg.tar.zst
+    debug:
+      - python-debug-3.14.2-2-x86_64.pkg.tar.zst
   system:
     version: 3.13.11-1
     packages:
