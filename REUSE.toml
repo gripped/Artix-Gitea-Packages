@@ -29,6 +29,7 @@ path = [
     "html5lib-mock-stdlib.patch",
     "html5lib_pytest74.patch",
     "python-3.14-compatibility.patch",
+    "html5lib-use-context-manager-for-urllib.patch",
 ]
 SPDX-FileCopyrightText = "python-html5lib contributors"
 SPDX-License-Identifier = "MIT"
