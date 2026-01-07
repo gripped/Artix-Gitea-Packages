@@ -24,6 +24,7 @@ SPDX-License-Identifier = "0BSD"
 [[annotations]]
 path = [
     "fix-tests.patch",
+    "python-softlayer-click-8.3-compatibility.patch",
 ]
 SPDX-FileCopyrightText = "python-softlayer contributors"
 SPDX-License-Identifier = "MIT"
