@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -55,9 +55,9 @@ repos:
       - doublecmd-qt6-1.1.30-3-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 1.1.30-2
+    version: 1.1.31-1
     packages:
-      - doublecmd-qt5-1.1.30-2-x86_64.pkg.tar.zst
-      - doublecmd-qt6-1.1.30-2-x86_64.pkg.tar.zst
+      - doublecmd-qt5-1.1.31-1-x86_64.pkg.tar.zst
+      - doublecmd-qt6-1.1.31-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
