@@ -9,7 +9,7 @@
 pkgbase=uv
 pkgname=("$pkgbase" "python-$pkgbase"{,-build})
 pkgver=0.9.22
-pkgrel=1
+pkgrel=2
 pkgdesc='An extremely fast Python package installer and resolver written in Rust'
 arch=('x86_64')
 url="https://github.com/astral-sh/uv"

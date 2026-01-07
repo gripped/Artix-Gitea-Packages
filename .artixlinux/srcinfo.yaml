@@ -1,10 +1,10 @@
 ---
-version: 0.9.22-1
+version: 0.9.22-2
 pkgbase:
   name: uv
   pkgdesc: An extremely fast Python package installer and resolver written in Rust
   pkgver: 0.9.22
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/astral-sh/uv
   arch:
     - x86_64
