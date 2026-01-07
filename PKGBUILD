@@ -4,7 +4,7 @@
 
 pkgname=opencolorio
 pkgver=2.5.0
-pkgrel=2
+pkgrel=4
 pkgdesc="A color management framework for visual effects and animation"
 arch=('x86_64')
 url="https://opencolorio.org"
