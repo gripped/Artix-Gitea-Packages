@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.0.4-4
+    version: 1.0.5-1
     packages:
-      - python-pyasyncore-1.0.4-4-any.pkg.tar.zst
+      - python-pyasyncore-1.0.5-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.0.4-3
