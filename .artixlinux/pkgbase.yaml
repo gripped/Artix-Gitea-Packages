@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.4.0-3
+    version: 2.4.1-1
     packages:
-      - pcsclite-2.4.0-3-x86_64.pkg.tar.zst
+      - pcsclite-2.4.1-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
