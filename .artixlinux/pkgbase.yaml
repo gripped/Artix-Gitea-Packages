@@ -1,12 +1,12 @@
 ---
-team: galaxy
+team: world
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: galaxy
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: null
-    packages: []
+    version: 580.119.02-2
+    packages:
+      - nvidia-580xx-utils-580.119.02-2-x86_64.pkg.tar.zst
+      - opencl-nvidia-580xx-580.119.02-2-x86_64.pkg.tar.zst
+      - nvidia-580xx-dkms-580.119.02-2-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
@@ -54,9 +57,6 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 580.119.02-2
-    packages:
-      - nvidia-580xx-utils-580.119.02-2-x86_64.pkg.tar.zst
-      - opencl-nvidia-580xx-580.119.02-2-x86_64.pkg.tar.zst
-      - nvidia-580xx-dkms-580.119.02-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
