@@ -2,7 +2,7 @@
 
 pkgname=rst2pdf
 pkgver=0.103.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Use a text editor. Make a PDF"
 arch=(any)
 url="https://github.com/rst2pdf/rst2pdf"
@@ -16,7 +16,6 @@ depends=(
   python-pillow
   python-pygments
   python-reportlab
-  python-roman
   python-smartypants
   python-yaml
 )
@@ -49,9 +48,20 @@ optdepends=(
   'python-sphinx: for sphinx support'
   'python-svglib: for SVG support'
 )
-source=("git+$url.git#tag=$pkgver")
-sha512sums=('9366787ccff062018509abd6d9477ac5120085d2c6004d265975a502def5be90e1c76130d14603d4d95987078bc24487e97b530504aa0bcb9443d9d3674d2a5f')
-b2sums=('b4e144bc9354778fb8130f47382681b8bd2ac9d68e7843f463f75c26b272bf89ffe97078bbdad03122fb054ccd9c33b5fb9f15d23a2162be9f283e44a6b78b78')
+source=(
+  "git+$url.git#tag=$pkgver"
+  $pkgname-0.103.1-vendor-docutils-roman-api.patch
+)
+sha512sums=('9366787ccff062018509abd6d9477ac5120085d2c6004d265975a502def5be90e1c76130d14603d4d95987078bc24487e97b530504aa0bcb9443d9d3674d2a5f'
+            '1670680d3b0e58f6b060a8044ee9440f695c21e306a16e030fde7dd4047b48f2fb6c70da61152eafc05f07f7abee2bd8af15ca9d5efb05d20dd4f59085090396')
+b2sums=('b4e144bc9354778fb8130f47382681b8bd2ac9d68e7843f463f75c26b272bf89ffe97078bbdad03122fb054ccd9c33b5fb9f15d23a2162be9f283e44a6b78b78'
+        '02274861109c5fcc07a8837cfb5c6133a920cf3fc89223165ba0127ce71c074529990d7054b1a49898f39a81d82828fe853e94c5598e4b7719904988a719de47')
+
+prepare() {
+  # Backport of https://github.com/rst2pdf/rst2pdf/commit/ec8f3f2e90ffddd81e222d6a36eac06db718e56a
+  # Fixes incompatibility with python-docutils >=0.22.0: https://gitlab.archlinux.org/archlinux/packaging/packages/rst2pdf/-/issues/2
+  patch -Np1 -d $pkgname -i ../$pkgname-0.103.1-vendor-docutils-roman-api.patch
+}
 
 build() {
   cd $pkgname
