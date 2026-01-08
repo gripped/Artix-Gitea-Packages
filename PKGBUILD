@@ -2,11 +2,12 @@
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Patryk Kowalczyk < patryk at kowalczyk dot ws>
+# Contributor: RocketDev <ma2014119@outlook.com>
 
 pkgbase=libseccomp
 pkgname=(libseccomp python-libseccomp)
-pkgver=2.5.6
-pkgrel=2
+pkgver=2.6.0
+pkgrel=1
 pkgdesc='Enhanced seccomp library'
 arch=(x86_64)
 license=(LGPL-2.1-only)
@@ -25,8 +26,8 @@ makedepends=(
   python-wheel
 )
 source=(git+https://github.com/seccomp/libseccomp.git#tag=v${pkgver}?signed)
-sha256sums=('51b6119c2af35ac40eef2421459b308ec4bf9e4b00d68740a4ede56bd323cf7d')
-b2sums=('3cccadb92d2745f9405e4dc06027f1238823dc6cd6bff846c858b49fa5c48591cdde6ed69a989947352ac5066b44c335b2842acca0711b9eb7a338903c023886')
+sha256sums=('2aa9a02d102753f4c4f23ff201dec3fbc4cf33d46dd64a0f2aaf5a5341227a93')
+b2sums=('76fa0801936a970b0bdff3d3cbc9e8e65f0afbfa1d1e13bd4319a6fee4aa520234a2a5273354ed87671666abb1f961cf9c678d1b38c3afd594f9c8d7694630d2')
 validpgpkeys=(
   '7100AADFAE6E6E940D2E0AD655E45A5AE8CA7C8A' # Paul Moore <paul@paul-moore.com>
   '47A68FCE37C7D7024FD65E11356CE62C2B524099' # Tom Hromatka <tom.hromatka@oracle.com>
@@ -45,7 +46,7 @@ build() {
   ./configure --prefix=/usr
   make
   cd src/python
-  env VERSION_RELEASE=${pkgver} python -m build --wheel --no-isolation
+  VERSION_RELEASE=${pkgver} CPPFLAGS="$CPPFLAGS -I${srcdir}/${pkgbase}/include" python -m build --wheel --no-isolation
 }
 
 check() {
