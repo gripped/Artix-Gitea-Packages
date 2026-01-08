@@ -1,10 +1,10 @@
 ---
-version: 8.17.0-1
+version: 8.18.0-3
 pkgbase:
   name: lib32-curl
   pkgdesc: command line tool and library for transferring data with URLs (32-bit)
-  pkgver: 8.17.0
-  pkgrel: 1
+  pkgver: 8.18.0
+  pkgrel: 3
   url: https://curl.se/
   arch:
     - x86_64
@@ -13,34 +13,26 @@ pkgbase:
   makedepends:
     - git
     - patchelf
-    - lib32-gnutls
-    - lib32-openssl
-  depends:
     - curl
     - lib32-brotli
-    - libbrotlidec.so
+    - lib32-gnutls
     - lib32-krb5
-    - libgssapi_krb5.so
+    - lib32-nettle
     - lib32-libidn2
-    - libidn2.so
     - lib32-libnghttp2
-    - libnghttp2.so
     - lib32-libnghttp3
-    - libnghttp3.so
+    - lib32-libngtcp2
     - lib32-libpsl
-    - libpsl.so
     - lib32-libssh2
-    - libssh2.so
+    - lib32-openssl
     - lib32-zlib
-    - libz.so
     - lib32-zstd
-    - libzstd.so
   source:
-    - git+https://github.com/curl/curl.git#tag=curl-8_17_0?signed
+    - git+https://github.com/curl/curl.git#tag=curl-8_18_0?signed
   validpgpkeys:
     - 27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2
   sha512sums:
-    - b2d6ab7e3bbfd7436524d78f82d1cf99151e43bc356a41f08005dff2cd0c15516af870c945db7f26c4495f5b2a013df116ffb9060dc52aa2e9acca085abc7044
+    - 304ddac52ee589f6e6e168747d720ea1ecc6f66adb469b70e0a1ee7c9f0bf5ed12e2538647bb746b8a6aaa1e3860e9b00ed29cd2079ca2e4c25a2afc972f0e6a
 pkgname:
   - name: lib32-curl
     depends:
@@ -55,30 +47,78 @@ pkgname:
       - libnghttp2.so
       - lib32-libnghttp3
       - libnghttp3.so
+      - lib32-libngtcp2
+      - libngtcp2.so
       - lib32-libpsl
       - libpsl.so
       - lib32-libssh2
       - libssh2.so
+      - lib32-openssl
+      - libcrypto.so
+      - libssl.so
       - lib32-zlib
       - libz.so
       - lib32-zstd
       - libzstd.so
-      - lib32-openssl
-      - libcrypto.so
-      - libssl.so
     provides:
       - libcurl.so
   - name: lib32-libcurl-compat
     pkgdesc: command line tool and library for transferring data with URLs (32-bit, no versioned symbols)
     depends:
-      - lib32-curl
+      - libcurl-compat
+      - lib32-brotli
+      - libbrotlidec.so
+      - lib32-krb5
+      - libgssapi_krb5.so
+      - lib32-libidn2
+      - libidn2.so
+      - lib32-libnghttp2
+      - libnghttp2.so
+      - lib32-libnghttp3
+      - libnghttp3.so
+      - lib32-libngtcp2
+      - libngtcp2.so
+      - lib32-libpsl
+      - libpsl.so
+      - lib32-libssh2
+      - libssh2.so
+      - lib32-openssl
+      - libcrypto.so
+      - libssl.so
+      - lib32-zlib
+      - libz.so
+      - lib32-zstd
+      - libzstd.so
     provides:
       - libcurl-compat.so
   - name: lib32-libcurl-gnutls
     pkgdesc: command line tool and library for transferring data with URLs (32-bit, no versioned symbols, linked against gnutls)
     depends:
-      - lib32-curl
+      - libcurl-gnutls
+      - lib32-brotli
+      - libbrotlidec.so
       - lib32-gnutls
+      - lib32-krb5
+      - libgssapi_krb5.so
+      - lib32-libidn2
+      - libidn2.so
+      - lib32-libnghttp2
+      - libnghttp2.so
+      - lib32-libnghttp3
+      - libnghttp3.so
+      - lib32-libngtcp2
+      - libngtcp2.so
+      - libngtcp2_crypto_gnutls.so
+      - lib32-libpsl
+      - libpsl.so
+      - lib32-libssh2
+      - libssh2.so
+      - lib32-nettle
+      - libnettle.so
+      - lib32-zlib
+      - libz.so
+      - lib32-zstd
+      - libzstd.so
     provides:
       - libcurl-gnutls.so
 # generated with artixpkg 0.37.4-1-any
