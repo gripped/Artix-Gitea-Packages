@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.7.0-3
+    version: 0.8.1-1
     packages:
-      - python-pytest-run-parallel-0.7.0-3-any.pkg.tar.zst
+      - python-pytest-run-parallel-0.8.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 0.7.0-2
