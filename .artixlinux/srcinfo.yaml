@@ -1,10 +1,10 @@
 ---
-version: 1.5.2-1
+version: 1.5.2-2
 pkgbase:
   name: luaexpat
   pkgdesc: SAX XML parser based on the Expat library
   pkgver: 1.5.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lunarmodules/luaexpat
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
     - lua51
     - lua52
     - lua53
+    - lua54
     - luarocks
   depends:
     - expat
@@ -31,4 +32,5 @@ pkgname:
       - luaexpat
   - name: lua52-expat
   - name: lua53-expat
-# generated with artixpkg 0.36.4-1-any
+  - name: lua54-expat
+# generated with artixpkg 0.37.4-1-any
