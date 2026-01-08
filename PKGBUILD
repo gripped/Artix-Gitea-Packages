@@ -3,7 +3,7 @@
 
 pkgname=jrnl
 pkgver=4.2.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Collect your thoughts and notes without leaving the command line"
 arch=('any')
 url="https://jrnl.sh/"

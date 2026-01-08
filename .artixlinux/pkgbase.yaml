@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.2.1-2
+    version: 4.2.1-2.1
     packages:
-      - jrnl-4.2.1-2-any.pkg.tar.zst
+      - jrnl-4.2.1-2.1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
