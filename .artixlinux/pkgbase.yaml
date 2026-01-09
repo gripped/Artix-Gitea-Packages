@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - fontforge-20251009-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 20251009-5
+    packages:
+      - fontforge-20251009-5-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 20251009-2.1
