@@ -1,10 +1,10 @@
 ---
-version: 2:1.3.2-2
+version: 2:1.3.2-3
 pkgbase:
   name: luasec
   pkgdesc: Lua bindings for OpenSSL library to provide TLS/SSL communication
   pkgver: 1.3.2
-  pkgrel: 2
+  pkgrel: 3
   epoch: 2
   url: https://github.com/brunoos/luasec/wiki
   arch:
@@ -16,6 +16,7 @@ pkgbase:
     - lua51
     - lua52
     - lua53
+    - lua54
     - lua
   depends:
     - openssl
@@ -25,7 +26,7 @@ pkgbase:
     - 8f0c4b5ff87c024685b23770e1d342467554b8dc19a1704076e184d9e84b966f171091c31d1da135ab009e850275adc2bf2720fc9f32c83ac23f0a42f13d311f
 pkgname:
   - name: lua-sec
-    pkgdesc: Lua bindings for OpenSSL library to provide TLS/SSL communication for Lua 5.4
+    pkgdesc: Lua bindings for OpenSSL library to provide TLS/SSL communication for Lua 5.5
     depends:
       - openssl
       - lua-socket
@@ -48,4 +49,9 @@ pkgname:
     depends:
       - openssl
       - lua53-socket
-# generated with artixpkg 0.36.4-1-any
+  - name: lua54-sec
+    pkgdesc: Lua bindings for OpenSSL library to provide TLS/SSL communication for Lua 5.4
+    depends:
+      - openssl
+      - lua-socket
+# generated with artixpkg 0.37.4-1-any
