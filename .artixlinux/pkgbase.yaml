@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 25.12.3-1
+    version: 25.12.4-1
     packages:
-      - timeshift-25.12.3-1-x86_64.pkg.tar.zst
+      - timeshift-25.12.4-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 25.12.2-1
