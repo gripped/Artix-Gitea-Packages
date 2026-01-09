@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.14.10-2
+    version: 0.14.11-2
     packages:
-      - ruff-0.14.10-2-x86_64.pkg.tar.zst
-      - python-ruff-0.14.10-2-x86_64.pkg.tar.zst
+      - ruff-0.14.11-2-x86_64.pkg.tar.zst
+      - python-ruff-0.14.11-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.14.11-1
