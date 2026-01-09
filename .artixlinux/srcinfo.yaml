@@ -1,10 +1,10 @@
 ---
-version: 20260107-1
+version: 20260107-2
 pkgbase:
   name: archlinux-keyring
   pkgdesc: Arch Linux PGP keyring
   pkgver: 20260107
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.archlinux.org/archlinux/archlinux-keyring/
   arch:
     - any
@@ -20,13 +20,12 @@ pkgbase:
     - pkgconf
     - voa
   source:
-    - archlinux-keyring::git+https://gitlab.archlinux.org/archlinux/archlinux-keyring.git#tag=20260107?signed
+    - archlinux-keyring::git+https://gitlab.archlinux.org/archlinux/archlinux-keyring.git?signed#tag=20260107
   validpgpkeys:
     - 02FD1C7A934E614545849F19A6234074498E9CEE
-    - C7E7849466FE2358343588377258734B41C31549
-    - 4AA4767BBC9C4B1D18AE28B77F2D434B9741E8AC
-    - CFA6AF15E5C74149FC1D8C086D1655C14CE1C13E
-    - ECCAC84C1BA08A6CC8E63FBBF22FB1D78A77AEAB
+    - 991F6E3F0765CF6295888586139B09DA5BF0D338
+    - 5134EF9EAF65F95B6BB1608E50FB9B273A9D0BB5
+    - B4B759625D4633430B74877059E43E106B247368
     - E240B57E2C4630BA768E2F26FC1B547C8D8172C8
     - C100346676634E80C940FB9E9C02FF419FECBE16
   sha256sums:
