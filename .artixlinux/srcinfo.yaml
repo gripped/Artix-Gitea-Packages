@@ -1,10 +1,10 @@
 ---
-version: 2025.0.1-2
+version: 2025.0.1-4
 pkgbase:
   name: hugin
   pkgdesc: Panorama photo stitcher
   pkgver: 2025.0.1
-  pkgrel: 2
+  pkgrel: 4
   url: http://hugin.sourceforge.net/
   arch:
     - x86_64
@@ -21,11 +21,11 @@ pkgbase:
     - enblend-enfuse
     - exiv2
     - fftw
-    - glew
     - glu
     - lapack
     - lcms2
     - lensfun
+    - libepoxy
     - libpano13
     - libtiff
     - libxi
