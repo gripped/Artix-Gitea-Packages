@@ -1,0 +1,32 @@
+---
+version: 0.7.0-3
+pkgbase:
+  name: chatblade
+  pkgdesc: A CLI Swiss Army Knife for ChatGPT
+  pkgver: 0.7.0
+  pkgrel: 3
+  url: https://github.com/npiv/chatblade
+  arch:
+    - any
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-openai
+    - python-platformdirs
+    - python-pylatexenc
+    - python-rich
+    - python-tiktoken
+    - python-yaml
+  source:
+    - chatblade-0.7.0.tar.gz::https://github.com/npiv/chatblade/archive/v0.7.0.tar.gz
+  sha256sums:
+    - ffe136b110debe72bae6d651d21f259c5e85117276b8458c4ebd598b9cc368e4
+pkgname:
+  - name: chatblade
+# generated with artixpkg 0.37.4-1-any
