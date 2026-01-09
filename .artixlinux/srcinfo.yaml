@@ -1,9 +1,9 @@
 ---
-version: 2.4.128-1
+version: 2.4.131-1
 pkgbase:
   name: lib32-libdrm
   pkgdesc: Userspace interface to kernel DRM services (32-bit)
-  pkgver: 2.4.128
+  pkgver: 2.4.131
   pkgrel: 1
   url: https://dri.freedesktop.org/
   arch:
@@ -19,11 +19,11 @@ pkgbase:
     - lib32-glibc
     - libdrm
   source:
-    - https://dri.freedesktop.org/libdrm/libdrm-2.4.128.tar.xz
+    - https://dri.freedesktop.org/libdrm/libdrm-2.4.131.tar.xz
   validpgpkeys:
-    - F3A52DB8ECE9EB9E33BC48C6917A3EE97A0FCD1A
+    - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
   sha512sums:
-    - b80e6be1c9d0427e1c3ffd018213d7230333f037498cf98819a8a6c50d923ad3472002044e010ca9dc646ef79dbca241bd47eaa992014cb7063b31cdb84037c7
+    - d75894215600b648e25bbe13422901b650fb94bba8276d77971a49db7dc001819c9fc4b7e90ed82275f170a331687960ca5752cbb12064b2eec9c5c8eb60bf3c
 pkgname:
   - name: lib32-libdrm
 # generated with artixpkg 0.37.4-1-any
