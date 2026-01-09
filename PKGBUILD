@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Dale Blount <dale@archlinux.org>
 
 pkgname=net-snmp
-pkgver=5.9.5
+pkgver=5.9.5.2
 pkgrel=1
 pkgdesc='A suite of applications used to implement SNMP v1, SNMP v2c and SNMP v3 using both IPv4 and IPv6'
 arch=('x86_64')
@@ -22,7 +21,7 @@ provides=('libnetsnmpagent.so'
           'libsnmp.so')
 options=('!emptydirs' '!makeflags')
 source=("git+https://github.com/net-snmp/net-snmp.git#tag=v${pkgver}")
-sha512sums=('66d35d6d4ba06b101987145c0ff3addf0a861e64ec562874d9df7b64cda9cb68787bdbc39c485ee8065a1652414c47217bcf852ef1db947a6498b530c153ddb1')
+sha512sums=('782892a7db0ca84ffb3d89f1568d93169bf8cef6d5790783fd2c8f72be2a5d22a0cb0964400046b3e8705a3efba365b7610672aee12e77693d391dc2861d311e')
 validpgpkeys=('27CAA4A32E371383A33ED0587D5F9576E0F81533'
               '6E6718AEF1EB5C65C32D1B2A356BC0B552D53CAB'
               '8AAA779B597B405BBC329B6376CF47B8A77C5329'
