@@ -1,11 +1,11 @@
 ---
-version: 0.18.4.3-2
+version: 0.18.4.5-1
 pkgbase:
   name: monero
   pkgdesc:
     Monero: the secure, private, untraceable peer-to-peer currency
-  pkgver: 0.18.4.3
-  pkgrel: 2
+  pkgver: 0.18.4.5
+  pkgrel: 1
   url: https://getmonero.org/
   arch:
     - x86_64
@@ -31,7 +31,7 @@ pkgbase:
     - pcsclite
     - protobuf
   source:
-    - monero::git+https://github.com/monero-project/monero?signed#tag=v0.18.4.3
+    - monero::git+https://github.com/monero-project/monero?signed#tag=v0.18.4.5
     - git+https://github.com/miniupnp/miniupnp.git
     - git+https://github.com/Tencent/rapidjson.git
     - git+https://github.com/trezor/trezor-common.git
@@ -45,7 +45,7 @@ pkgbase:
     - BDA6BD7042B721C467A9759D7455C5E3C0CDCEB9
     - 487277A8BD0A209C16B700F3C64552D877C32479
   sha512sums:
-    - 870a2723e07accbc735dfc19ae12c5829709c8099dba727d4d0823f0a1e7a9fe907269d106794fe210b6cee8c24ed5137c848dea642f602a1646b5055ff3faaf
+    - 65a96daae530d9c7dcb5830b11ca81efcd96138fe80f144a9f46c7cdf08d8dfe21ac8e2b80e9954ef4f70cf80d9b141ce8bb87363ef9dc663b55fb8a20393f4f
     - SKIP
     - SKIP
     - SKIP
@@ -58,4 +58,4 @@ pkgname:
   - name: monero
     backup:
       - etc/monerod.conf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
