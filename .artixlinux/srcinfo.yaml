@@ -1,10 +1,10 @@
 ---
-version: 1.2.2-324
+version: 1.2.2-327
 pkgbase:
   name: acpi_call
   pkgdesc: A linux kernel module that enables calls to ACPI methods through /proc/acpi/call
   pkgver: 1.2.2
-  pkgrel: 324
+  pkgrel: 327
   url: https://github.com/nix-community/acpi_call
   arch:
     - x86_64
