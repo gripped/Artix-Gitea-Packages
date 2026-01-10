@@ -1,10 +1,10 @@
 ---
-version: 1.26-1
+version: 1.26-3
 pkgbase:
   name: crun
   pkgdesc: A fast and lightweight fully featured OCI runtime and C library for running containers
   pkgver: 1.26
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/containers/crun
   arch:
     - x86_64
@@ -16,9 +16,7 @@ pkgbase:
     - go-md2man
     - udev
     - git
-  depends:
     - yajl
-    - libudev
     - libcap
     - libseccomp
     - criu
@@ -33,4 +31,15 @@ pkgbase:
     - c42d4baf9a8f2e337b3b54f8659357fcd2697ef36f32bf6d41e8d0c91613632c
 pkgname:
   - name: crun
-# generated with artixpkg 0.37.5-10-any
+    depends:
+      - yajl
+      - libudev
+      - libcap
+      - libseccomp
+      - criu
+  - name: krun
+    pkgdesc: crun based OCI runtime using libkrun to run containerized programs in isolated KVM environments
+    depends:
+      - crun
+      - libkrun
+# generated with artixpkg 0.37.4-1-any

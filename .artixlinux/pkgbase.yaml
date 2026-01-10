@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,10 @@ repos:
       - crun-1.26-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.26-3
+    packages:
+      - crun-1.26-3-x86_64.pkg.tar.zst
+      - krun-1.26-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.25.1-2
