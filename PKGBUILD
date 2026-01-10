@@ -6,7 +6,7 @@
 pkgbase=nvidia-510xx-utils
 pkgname=('nvidia-510xx-utils' 'opencl-510xx-nvidia' 'nvidia-510xx-dkms')
 pkgver=510.108.03
-pkgrel=6
+pkgrel=6.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')

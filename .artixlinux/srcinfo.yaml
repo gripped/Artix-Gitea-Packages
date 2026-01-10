@@ -1,9 +1,9 @@
 ---
-version: 510.108.03-6
+version: 510.108.03-6.1
 pkgbase:
   name: nvidia-510xx-utils
   pkgver: 510.108.03
-  pkgrel: 6
+  pkgrel: 6.1
   url: http://www.nvidia.com/
   arch:
     - x86_64

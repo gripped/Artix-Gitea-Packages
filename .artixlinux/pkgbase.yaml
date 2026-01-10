@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 510.108.03-6.1
+    packages:
+      - nvidia-510xx-utils-510.108.03-6.1-x86_64.pkg.tar.zst
+      - opencl-510xx-nvidia-510.108.03-6.1-x86_64.pkg.tar.zst
+      - nvidia-510xx-dkms-510.108.03-6.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 510.108.03-6
