@@ -1,9 +1,9 @@
 ---
-version: 6.18.3.artix1-1
+version: 6.18.4.artix1-1
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 6.18.3.artix1
+  pkgver: 6.18.4.artix1
   pkgrel: 1
   url: https://github.com/archlinux/linux
   arch:
@@ -32,27 +32,27 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.3.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v6.18.3-arch1/linux-v6.18.3-arch1.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v6.18.3-arch1/linux-v6.18.3-arch1.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.4.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.4.tar.sign
+    - https://github.com/archlinux/linux/releases/download/v6.18.4-arch1/linux-v6.18.4-arch1.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v6.18.4-arch1/linux-v6.18.4-arch1.patch.zst.sig
     - config
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - 7a8879167b89c4bae077d6f39c4f2130769f05dbdad2aad914adab9afb7d7f9a
+    - f850139ca5f79c1bf6bb8b32f92e212aadca97bdaef8a83a7cf4ac4d6a525fab
     - SKIP
-    - 2985e564ed2e9bd08c0c12b3b97a1039978842b8e5ded135ee53176416c40f90
+    - 0fde11b643d18d702f1f26c62dad03a3c716a39accbda5c0073619c1f4125def
     - SKIP
-    - 5e7102f33c74bb2fb0323d88b956bf602bb523f5d6d9ab964ca87ebc52a5d3da
+    - e3a4e529526e64050120029dedfb3c9ab5d9a7044856725fe83056c90920fbbf
   b2sums:
-    - 273e7b7161765022c7345d00a57ab865ac443422327157522b8a2960ead39b0fbac17b7a8b27d09800d06e08c3ce04e3bc08433863aedc3a8ec1e7a51e6d9d4a
+    - 3cb595f16f164583bdc80022d3f011f683d0b31b618b005bbc85a77005406f45ec9a6a8941976926dbdb79e0f392cc1b70ce2a48fd7d8fa44f131f937f2d38b4
     - SKIP
-    - 8058499f1e8dec08ef91cb6d0bca57dded2cfe05f728085cf9d9f30890180507c292dc6e9a12c350a511c3ba9278e60b5dca53dfd6054428a8a70cb94aa40fa6
+    - 1d7112353b985b07156b5c2182ae7eb00d132107cab9e15440cca45e756a3249240abea41ff42f54363234299195b185d411f1459b658626e7f6345ca770bba2
     - SKIP
-    - 01f01bb082e64e0fc992546e29772cc6629d317e27bff2f26cab02b05174108a950e3535b38eddf20bcf90750204123be6ef850f9ba80244723364944059049e
+    - 564d51868cef47d34846039a4a23bbf273eef4998428563531e586607ee140d006563e99c788852e39f9c76c5a05376f585282ad6c40f7321a58b47d1a28ca5a
 pkgname:
   - name: linux
     pkgdesc: The Linux kernel and modules
