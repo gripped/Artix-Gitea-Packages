@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,9 @@ repos:
       - mkdocs-material-9.7.0-2-any.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 9.7.1-1
+    packages:
+      - mkdocs-material-9.7.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 9.7.0-1
