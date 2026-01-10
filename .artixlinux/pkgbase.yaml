@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 535.274.02-1.1
+    packages:
+      - nvidia-535xx-utils-535.274.02-1.1-x86_64.pkg.tar.zst
+      - opencl-nvidia-535xx-535.274.02-1.1-x86_64.pkg.tar.zst
+      - nvidia-535xx-dkms-535.274.02-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 535.274.02-1
