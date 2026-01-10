@@ -3,7 +3,7 @@
 
 pkgname=niri
 pkgver=25.11
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A scrollable-tiling Wayland compositor"
 arch=(x86_64)
 url="https://github.com/YaLTeR/niri"
@@ -55,7 +55,8 @@ build() {
   cd $pkgname-$pkgver
   export NIRI_BUILD_COMMIT="$(zcat ../$pkgname-$pkgver.tar.gz | git get-tar-commit-id | cut -c1-7)"
   CFLAGS+=(' -ffat-lto-objects')
-  cargo build --frozen --release --features default
+  cargo build --frozen --release --no-default-features --features "dbus xdp-gnome-screencast"
+  sed -i "s/niri-session/dbus-launch --exit-with-session niri --session/" resources/$pkgname.desktop
 
   # generate shell completions
   for shell in bash fish zsh; do
