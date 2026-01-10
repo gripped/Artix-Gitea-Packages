@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 390.157-17.1
+    packages:
+      - nvidia-390xx-utils-390.157-17.1-x86_64.pkg.tar.zst
+      - opencl-nvidia-390xx-390.157-17.1-x86_64.pkg.tar.zst
+      - nvidia-390xx-dkms-390.157-17.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 390.157-17
