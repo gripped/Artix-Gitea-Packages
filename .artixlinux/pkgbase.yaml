@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 5.2.2-2
     packages:
       - certbot-dns-google-5.2.2-2-any.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 5.2.2-1
-    packages:
-      - certbot-dns-google-5.2.2-1-any.pkg.tar.zst
     debug: []
 team: galaxy
