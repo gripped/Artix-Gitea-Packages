@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: akonadi-mime
   pkgdesc: Libraries and daemons to implement basic email handling
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -28,14 +28,14 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/akonadi-mime-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/akonadi-mime-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/akonadi-mime-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/akonadi-mime-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8dddf240255f4b32e4697e5daa04bc2f14db78901b5224e1be29935ab304f5f8
+    - 3619f91bf5104671bce96fec29746e07ebfbbbe80559476723c8ef844c8f0798
     - SKIP
 pkgname:
   - name: akonadi-mime
