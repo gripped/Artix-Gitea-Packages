@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: akonadi-calendar-tools
   pkgdesc: CLI tools to manage akonadi calendars
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -28,14 +28,14 @@ pkgbase:
     - libakonadi
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/akonadi-calendar-tools-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/akonadi-calendar-tools-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/akonadi-calendar-tools-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/akonadi-calendar-tools-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ac7bd4c6e1d2c817cf13e5695f22fa7828d1a2c2b7c142ded77d563b636a877a
+    - 36aeff7758e722b7a791a08812cf3ef4e19839f3da46e022950113a193eb08b3
     - SKIP
 pkgname:
   - name: akonadi-calendar-tools
