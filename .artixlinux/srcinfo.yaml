@@ -1,0 +1,32 @@
+---
+version: 2.4.3-2
+pkgbase:
+  name: talloc
+  pkgdesc: Hierarchical pool based memory allocator with destructors
+  pkgver: 2.4.3
+  pkgrel: 2
+  url: https://talloc.samba.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - python
+    - docbook-xsl
+  depends:
+    - glibc
+    - libbsd
+    - libxcrypt
+  optdepends:
+    - 'python: for python bindings'
+  source:
+    - https://www.samba.org/ftp/talloc/talloc-2.4.3.tar.gz
+    - https://www.samba.org/ftp/talloc/talloc-2.4.3.tar.asc
+  validpgpkeys:
+    - 9147A339719518EE9011BCB54793916113084025
+  sha512sums:
+    - 7174a069dd3d4ebf8c04fee3434fd50269015bb8f039839e7e7723f431d089b66fb0167e8893bff2d1c392de1ac33665e5b278168246da30d528d522b0e1d5bd
+    - SKIP
+pkgname:
+  - name: talloc
+# generated with artixpkg 0.37.4-1-any
