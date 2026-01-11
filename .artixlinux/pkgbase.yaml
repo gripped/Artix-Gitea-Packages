@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -55,6 +55,10 @@ repos:
       - kodi-dev-21.3-3-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 21.3-2
     packages:
       - kodi-21.3-2-x86_64.pkg.tar.zst
@@ -62,13 +66,4 @@ repos:
       - kodi-eventclients-21.3-2-x86_64.pkg.tar.zst
       - kodi-tools-texturepacker-21.3-2-x86_64.pkg.tar.zst
       - kodi-dev-21.3-2-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 21.3-1
-    packages:
-      - kodi-21.3-1-x86_64.pkg.tar.zst
-      - kodi-gles-21.3-1-x86_64.pkg.tar.zst
-      - kodi-eventclients-21.3-1-x86_64.pkg.tar.zst
-      - kodi-tools-texturepacker-21.3-1-x86_64.pkg.tar.zst
-      - kodi-dev-21.3-1-x86_64.pkg.tar.zst
     debug: []
