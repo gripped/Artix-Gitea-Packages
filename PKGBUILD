@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=falkon
-pkgver=25.12.0
-pkgrel=2
+pkgver=25.12.1
+pkgrel=3
 pkgdesc='Cross-platform QtWebEngine browser'
 arch=(x86_64)
 url='https://www.falkon.org/'
@@ -19,7 +18,6 @@ depends=(gcc-libs
          qt6-webengine)
 makedepends=(extra-cmake-modules
              kio
-             libgnome-keyring
              purpose
              pyside6
              qt6-tools
@@ -29,13 +27,12 @@ optdepends=('kcoreaddons: KDE integration'
             'kio: KDE integration'
             'kjobwidgets: KDE integration'
             'kwallet: KDE integration'
-            'libgnome-keyring: gnome keyring integration'
             'purpose: KDE integration'
             'pyside6: Python plugins')
 groups=(kde-applications
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('6d9b4dba1bde0d04570736ed7bb9bc1288cd7fb94b4ffe934a990912b9b7a959'
+sha256sums=('65cf68238bc8afa4fa6192a701ad4879d49b443364fa4e2d11c4c71fb65575bb'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
