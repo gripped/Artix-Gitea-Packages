@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: kimagemapeditor
   pkgdesc: HTML Image Map Editor
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://apps.kde.org/kimagemapeditor/
   arch:
@@ -31,14 +31,14 @@ pkgbase:
     - qt6-base
     - qt6-webengine
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/kimagemapeditor-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/kimagemapeditor-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/kimagemapeditor-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/kimagemapeditor-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - e1b79a411472ac7b57c0723d86a1dbbc2ba8574027f5c157a5c823150fdff9d3
+    - 5fd1797c381ef1b6ed12a4049316efbd26ffca02d62bace668cefa8328ef9c41
     - SKIP
 pkgname:
   - name: kimagemapeditor
