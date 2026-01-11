@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=ktnef
-pkgver=25.12.0
+pkgver=25.12.1
 pkgrel=1
 pkgdesc='API for handling TNEF data'
 arch=(x86_64)
@@ -17,7 +17,7 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('cbf7fddbdef942965a4fd9941dcd97d211002b4612f0d70b673f43e0343cb0f0'
+sha256sums=('8a16d103e0a3d4139344507319cb22d31bb7b1f0471dd73942718b2ce045ca55'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
