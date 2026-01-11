@@ -1,10 +1,10 @@
 ---
-version: 1:5.0.2-2
+version: 1:5.0.2-3
 pkgbase:
   name: python-keyrings-alt
   pkgdesc: Alternate keyring implementations
   pkgver: 5.0.2
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://github.com/jaraco/keyrings.alt
   arch:
@@ -12,9 +12,7 @@ pkgbase:
   license:
     - MIT
   checkdepends:
-    - libgnome-keyring
     - python-pycryptodome
-    - python-gobject
     - python-keyring
     - python-pytest-enabler
   makedepends:
@@ -27,9 +25,6 @@ pkgbase:
     - python-keyring
     - python-pycryptodomex
   optdepends:
-    - 'libgnome-keyring: GNOME Integration'
-    - 'python-gobject: GNOME Integration'
-    - python-fs
     - 'python-pycryptodome: Encrypted file storage'
   source:
     - git+https://github.com/jaraco/keyrings.alt.git#tag=v5.0.2
