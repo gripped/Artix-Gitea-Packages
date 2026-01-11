@@ -1,10 +1,10 @@
 ---
-version: 1:0.9rc2-1
+version: 1:0.9rc2-3
 pkgbase:
   name: avahi
   pkgdesc: Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)
   pkgver: 0.9rc2
-  pkgrel: 1
+  pkgrel: 3
   epoch: 1
   url: https://github.com/avahi/avahi
   arch:
@@ -21,7 +21,7 @@ pkgbase:
     - libevent
     - python-dbus
     - python-gobject
-    - elogind
+    - systemd
     - xmltoman
   depends:
     - bash
@@ -32,7 +32,7 @@ pkgbase:
     - glibc
     - libcap
     - libdaemon
-    - libelogind
+    - systemd-libs
   optdepends:
     - 'gtk3: avahi-discover, avahi-discover-standalone, bshell, bssh, bvnc'
     - 'libevent: libevent bindings'
@@ -72,6 +72,6 @@ pkgname:
       - glibc
       - libcap
       - libdaemon
-      - libelogind
+      - systemd-libs
       - libdbus-1.so
-# generated with artixpkg 0.37.2-1-any
+# generated with artixpkg 0.37.4-1-any

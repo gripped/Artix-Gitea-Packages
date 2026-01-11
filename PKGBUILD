@@ -4,7 +4,7 @@
 
 pkgname=avahi
 pkgver=0.9rc2
-pkgrel=1
+pkgrel=3
 epoch=1
 pkgdesc="Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)"
 url="https://github.com/avahi/avahi"
@@ -19,7 +19,7 @@ depends=(
   glibc
   libcap
   libdaemon
-  libelogind
+  systemd-libs
 )
 makedepends=(
   doxygen
@@ -31,7 +31,7 @@ makedepends=(
   libevent
   python-dbus
   python-gobject
-  elogind
+  systemd
   xmltoman
 )
 optdepends=(
@@ -60,6 +60,12 @@ b2sums=('2513fcc933cc6010888d1b43254846b1bbc91fc83d257055c82006010b393339b4dcf4c
 prepare() {
   cd avahi
 
+  # CVE-2024-2699
+  git cherry-pick -n 78eab31128479f06e30beb8c1cbf99dd921e2524
+
+  # CVE-2024-52615
+  git cherry-pick -n 4e2e1ea0908d7e6ad7f38ae04fdcdf2411f8b942
+
   # https://bugs.archlinux.org/task/47822
   git apply -3 ../0001-HACK-Install-fixes.patch
 
@@ -80,8 +86,7 @@ build() {
     --with-autoipd-user=avahi
     --with-avahi-priv-access-group=network
     --with-distro=archlinux
-    --with-systemdsystemunitdir=no
-    --disable-libsystemd
+    --with-systemdsystemunitdir=/usr/lib/systemd/system
     with_dbus_sys=/usr/share/dbus-1/system.d
   )
 
