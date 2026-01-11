@@ -1,9 +1,9 @@
 ---
-version: 590.48.01-2
+version: 590.48.01-2.1
 pkgbase:
   name: nvidia-utils
   pkgver: 590.48.01
-  pkgrel: 2
+  pkgrel: 2.1
   url: http://www.nvidia.com/
   arch:
     - x86_64

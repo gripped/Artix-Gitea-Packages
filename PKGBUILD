@@ -7,7 +7,7 @@
 pkgbase=nvidia-utils
 pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-open-dkms')
 pkgver=590.48.01
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
