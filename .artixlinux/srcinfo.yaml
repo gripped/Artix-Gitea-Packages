@@ -1,0 +1,30 @@
+---
+version: 1.3.1-2
+pkgbase:
+  name: python-cron-converter
+  pkgdesc: Cron string converter for Python
+  pkgver: 1.3.1
+  pkgrel: 2
+  url: https://github.com/Sonic0/cron-converter
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-dateutil
+  source:
+    - python-cron-converter::git+https://github.com/Sonic0/cron-converter.git#tag=v1.3.1
+  sha512sums:
+    - e85db02e9f9ec079ce4061c59b8d69feb5bc2de1894532db421fa502904bd52e9a985c40dab97928847fc5b65089342a2ee629a05ad7c193969c3b89b0b03ea6
+  b2sums:
+    - 71cf8f7f6840ed0d3d0e9cf01d82ec69fd9c2c8f2b51006b892b4fb1b8be7addada2ce9f2359a6ab786d7aaeadd640ddf511ba3b4192e8788fdf9e41277d538c
+pkgname:
+  - name: python-cron-converter
+# generated with artixpkg 0.37.4-1-any
