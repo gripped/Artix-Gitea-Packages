@@ -5,7 +5,7 @@ _artix_url=https://gitea.artixlinux.org/artix/calamares
 
 pkgname=calamares
 pkgver=3.3.14
-pkgrel=5
+pkgrel=6
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://codeberg.org/Calamares/calamares"
