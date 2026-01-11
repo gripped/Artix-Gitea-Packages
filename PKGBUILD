@@ -7,7 +7,7 @@
 
 pkgname=unbound
 pkgver=1.24.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Validating, recursive, and caching DNS resolver"
 arch=(x86_64)
 url="https://unbound.net/"
@@ -87,7 +87,6 @@ build() {
     --enable-pie
     --enable-relro-now
     --enable-subnet
-    --disable-systemd
     --enable-tfo-client
     --enable-tfo-server
     --enable-cachedb
@@ -125,4 +124,5 @@ package() {
   install -vDm 644 $pkgname-tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
   # libalpm hook to copy the dnssec-anchors provided key to /etc/unbound
   install -vDm 644 unbound-trusted-key.hook -t "$pkgdir/usr/share/libalpm/hooks/"
+  install -vDm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/0BSD.txt"
 }

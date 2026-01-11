@@ -1,10 +1,10 @@
 ---
-version: 1.24.2-1
+version: 1.24.2-2
 pkgbase:
   name: unbound
   pkgdesc: Validating, recursive, and caching DNS resolver
   pkgver: 1.24.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://unbound.net/
   arch:
     - x86_64
