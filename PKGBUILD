@@ -19,7 +19,7 @@ depends=(
   glibc
   libcap
   libdaemon
-  systemd-libs
+  libelogind
 )
 makedepends=(
   doxygen
@@ -31,7 +31,7 @@ makedepends=(
   libevent
   python-dbus
   python-gobject
-  systemd
+  elogind
   xmltoman
 )
 optdepends=(
@@ -86,7 +86,8 @@ build() {
     --with-autoipd-user=avahi
     --with-avahi-priv-access-group=network
     --with-distro=archlinux
-    --with-systemdsystemunitdir=/usr/lib/systemd/system
+    --with-systemdsystemunitdir=no
+    --disable-libsystemd
     with_dbus_sys=/usr/share/dbus-1/system.d
   )
 

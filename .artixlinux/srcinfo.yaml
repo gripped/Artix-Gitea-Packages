@@ -21,7 +21,7 @@ pkgbase:
     - libevent
     - python-dbus
     - python-gobject
-    - systemd
+    - elogind
     - xmltoman
   depends:
     - bash
@@ -32,7 +32,7 @@ pkgbase:
     - glibc
     - libcap
     - libdaemon
-    - systemd-libs
+    - libelogind
   optdepends:
     - 'gtk3: avahi-discover, avahi-discover-standalone, bshell, bssh, bvnc'
     - 'libevent: libevent bindings'
@@ -72,6 +72,6 @@ pkgname:
       - glibc
       - libcap
       - libdaemon
-      - systemd-libs
+      - libelogind
       - libdbus-1.so
 # generated with artixpkg 0.37.4-1-any
