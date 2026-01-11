@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: kmbox
   pkgdesc: Library for accessing mail storages in MBox format
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -18,14 +18,14 @@ pkgbase:
     - kmime
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/kmbox-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/kmbox-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/kmbox-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/kmbox-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 3a6a109bdc4a1648918d4d332aaac2447f67710d87ee9a1bcfac16991b8e93e8
+    - 0b1981437273a4bed80fd81aad732eec7a4ea41001ad6cf83cf3896b6d152f1c
     - SKIP
 pkgname:
   - name: kmbox
