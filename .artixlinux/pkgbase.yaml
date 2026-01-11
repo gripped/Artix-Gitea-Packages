@@ -2,11 +2,11 @@
 team: galaxy
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 7.58-2
+    version: 7.59-1
     packages:
-      - reaper-7.58-2-x86_64.pkg.tar.zst
+      - reaper-7.59-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 7.58-1
