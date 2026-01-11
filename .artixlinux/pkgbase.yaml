@@ -1,5 +1,5 @@
 ---
-team: world
+team: python
 actions:
   addRepo: null
   removeRepo: null
