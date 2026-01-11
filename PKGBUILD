@@ -19,7 +19,7 @@ groups=(
 )
 # checkdepends=('shellcheck')
 source=("git+${url}.git#tag=${pkgver}")
-sha256sums=('2b08c97efb42326aabc5f5c171d28ea7966e603802177ed304f6467a5adfd208')
+sha256sums=('1b7f4344551ccfd29df193ee2ac0b70922b4edc605602ec9e32f00f5eda448bd')
 
 _patches=(
 )

@@ -18,7 +18,7 @@ pkgbase:
   source:
     - git+https://gitea.artixlinux.org/artix/artools.git#tag=0.37.5
   sha256sums:
-    - 2b08c97efb42326aabc5f5c171d28ea7966e603802177ed304f6467a5adfd208
+    - 1b7f4344551ccfd29df193ee2ac0b70922b4edc605602ec9e32f00f5eda448bd
 pkgname:
   - name: artools-base
     pkgdesc: Development tools for Artix (base tools)
