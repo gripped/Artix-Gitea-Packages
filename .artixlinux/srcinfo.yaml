@@ -1,0 +1,34 @@
+---
+version: 49.0-1
+pkgbase:
+  name: gedit-plugins
+  pkgdesc: Collection of plugins for the gedit Text Editor
+  pkgver: 49.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/World/gedit/gedit-plugins
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - itstool
+    - meson
+  depends:
+    - dconf
+    - gedit
+    - glib2
+    - glibc
+    - gtk3
+    - libgedit-gtksourceview
+    - libgedit-tepl
+    - libpeas
+  source:
+    - git+https://gitlab.gnome.org/World/gedit/gedit-plugins.git#tag=49.0
+  validpgpkeys:
+    - 08C0A6B1A08310A45363B328426F014A261FD87F
+  b2sums:
+    - 0378b433319a2f1c4195251f75d8903ba2b1ef2f3f2dbd56869b11f821cdadd5adb9543357de5d069ae84459c379dcb2a545a01707651a2ad8a94cf22ce30560
+pkgname:
+  - name: gedit-plugins
+# generated with artixpkg 0.37.4-1-any
