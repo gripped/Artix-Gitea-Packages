@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.16.2-6
+    version: 2.16.2-5
     packages:
-      - hexchat-2.16.2-6-x86_64.pkg.tar.zst
+      - hexchat-2.16.2-5-x86_64.pkg.tar.zst
     debug: []

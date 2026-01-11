@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Christian Hesse <mail@eworm.de>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: TingPing <tingping@tingping.se>
 
 pkgname=hexchat
 pkgver=2.16.2
-pkgrel=6
+pkgrel=5
 pkgdesc='A popular and easy to use graphical IRC (chat) client'
 arch=('x86_64')
 url='https://hexchat.github.io/'
@@ -36,3 +35,5 @@ build() {
 package() {
   DESTDIR="${pkgdir}" ninja -C build install
 }
+
+# vim: ts=2 sw=2 et:
