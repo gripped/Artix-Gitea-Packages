@@ -1,7 +1,7 @@
 ---
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -25,14 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.0.1-4
-    packages:
-      - hugin-2025.0.1-4-x86_64.pkg.tar.zst
-    debug: []
-  world:
     version: 2025.0.1-2
     packages:
       - hugin-2025.0.1-2-x86_64.pkg.tar.zst
+    debug: []
+  world:
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
