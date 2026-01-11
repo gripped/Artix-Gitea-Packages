@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,14 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 2025.2.post0-2
     packages:
       - python-tzdata-2025.2.post0-2-any.pkg.tar.zst
-    debug: []
-  world:
-    version: 2025.3-1
-    packages:
-      - python-tzdata-2025.3-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
