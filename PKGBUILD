@@ -5,7 +5,7 @@ _commit=bc77da07495cf5c6815de692aa25228ee6d768ea
 
 pkgname=calamares-extensions
 pkgver=0.16
-pkgrel=6
+pkgrel=7
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(
