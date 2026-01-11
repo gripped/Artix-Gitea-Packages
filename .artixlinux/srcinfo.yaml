@@ -1,10 +1,10 @@
 ---
-version: 1.42-1
+version: 1.42-1.1
 pkgbase:
   name: renderdoc
   pkgdesc: OpenGL and Vulkan debugging tool
   pkgver: 1.42
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/baldurk/renderdoc
   arch:
     - x86_64
