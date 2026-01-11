@@ -1,0 +1,32 @@
+---
+version: 1:2.0.9-1
+pkgbase:
+  name: lightdm-gtk-greeter
+  pkgdesc: GTK+ greeter for LightDM
+  pkgver: 2.0.9
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/Xubuntu/lightdm-gtk-greeter
+  arch:
+    - x86_64
+  license:
+    - GPL3
+    - LGPL3
+  makedepends:
+    - exo
+    - git
+    - gobject-introspection
+    - intltool
+    - xfce4-dev-tools
+  depends:
+    - gtk3
+    - lightdm
+  backup:
+    - etc/lightdm/lightdm-gtk-greeter.conf
+  source:
+    - git+https://github.com/Xubuntu/lightdm-gtk-greeter.git#tag=21295c70377ff4b006bfa8f10cc622c56fc0851e
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: lightdm-gtk-greeter
+# generated with artixpkg 0.37.4-1-any
