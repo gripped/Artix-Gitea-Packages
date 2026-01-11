@@ -1,10 +1,10 @@
 ---
-version: 1.1.9-1
+version: 1.1.9-3
 pkgbase:
   name: opencc
   pkgdesc: Library for Open Chinese Convert
   pkgver: 1.1.9
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/BYVoid/OpenCC
   arch:
     - x86_64
