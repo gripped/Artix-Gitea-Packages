@@ -5,7 +5,7 @@
 
 pkgname=renderdoc
 pkgver=1.42
-pkgrel=1.1
+pkgrel=1
 pkgdesc="OpenGL and Vulkan debugging tool"
 arch=(x86_64)
 url="https://github.com/baldurk/renderdoc"
@@ -42,4 +42,3 @@ package() {
     DESTDIR="$pkgdir" cmake --install build
     install -Dm 0644 "LICENSE.md" "$pkgdir/usr/share/licenses/${pkgname}/LICENSE"
 }
- 
