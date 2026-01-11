@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 2.6.3-4
     packages:
       - onionshare-2.6.3-4-any.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 2.6.3-3
-    packages:
-      - onionshare-2.6.3-3-any.pkg.tar.zst
     debug: []
 team: galaxy
