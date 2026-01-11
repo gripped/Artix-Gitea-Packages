@@ -19,6 +19,7 @@ pkgbase:
     - lib32-polkit
   depends:
     - libudev.so
+    - lib32-udev
     - libpolkit-gobject-1.so
     - pcsclite
   provides:

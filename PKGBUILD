@@ -21,7 +21,7 @@ license=(
   '0BSD'                # src/simclist.c, src/simclist.h
 )
 depends=(
-  'libudev.so'
+  'libudev.so' 'lib32-udev'
   'libpolkit-gobject-1.so'
   $_pkgname
 )
@@ -62,7 +62,6 @@ build() {
     -D libudev=true
     -D polkit=true
     -D serial=true
-    -D libsystemd=false
     -D libsystemd=false
     -D usbdropdir=/usr/lib32/pcsc/drivers
   )
