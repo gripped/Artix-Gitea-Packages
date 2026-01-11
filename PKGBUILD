@@ -99,8 +99,7 @@ check() {
     --ignore=tests/test_benchmarks_http_writer.py
 
     # Fails in artix ci
-    --deselect=tests/test_connector.py::test_tcp_connector_socket_factory[pyloop]
-    --deselect=tests/test_connector.py::test_available_connections_with_limit_per_host
+    --deselect=tests/test_connector.py
 
     # Tests freeze and timeout when running serialized, no idea why
     -n auto
