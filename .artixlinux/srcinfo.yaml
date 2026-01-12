@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: libkdegames
   pkgdesc: Common code and data for many KDE games
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -35,14 +35,14 @@ pkgbase:
     - qt6-declarative
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/libkdegames-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/libkdegames-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/libkdegames-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/libkdegames-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 1a88f99a3a07a3745c1a783c302d5461cd38c1da782dee1e1a365c45b75006f1
+    - 69290ca23cef853747ffa5b767aa05fc0397e8c31464a25828390a16eb0a8287
     - SKIP
 pkgname:
   - name: libkdegames
