@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: analitza
   pkgdesc: A library to add mathematical features to your program
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -27,14 +27,14 @@ pkgbase:
   replaces:
     - analitza5
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/analitza-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/analitza-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/analitza-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/analitza-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ed75ecc7e867d80fb6c23b40b57cd794be3b79b17d3a7bdd081a868a8aa01ebd
+    - 8455c7593399669c420732513c6d90f3c595b0d0631609263d4aa051ba38f7fe
     - SKIP
 pkgname:
   - name: analitza
