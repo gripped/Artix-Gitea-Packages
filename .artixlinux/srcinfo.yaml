@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: kmplot
   pkgdesc: Mathematical Function Plotter
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://apps.kde.org/kmplot/
   arch:
@@ -36,14 +36,14 @@ pkgbase:
     - qt6-base
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/kmplot-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/kmplot-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/kmplot-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/kmplot-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 8af8b6213df6a9db028e1489c4a07bfb0fb34f288c6b1e9d1bb6e15c2ebc466e
+    - dda4d95eb187dd221fbc0f078bc62bd68da5153e30eb0bd707f1ab6efe849b3a
     - SKIP
 pkgname:
   - name: kmplot
