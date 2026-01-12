@@ -2,11 +2,11 @@
 # Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=pacman
-pkgver=7.1.0.r7.gb9f7d4a
+pkgver=7.1.0.r9.g54d9411
 pkgrel=1
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
 _git_tag=7.1.0
-_git_patch_level_commit=b9f7d4a5b0bea75953f5892621a2caecc5672de5
+_git_patch_level_commit=54d94116164b0b2202c6061c4a59c6f3e70820d8
 pkgdesc="A library-based package manager with dependency support"
 arch=('x86_64')
 url="https://www.archlinux.org/pacman/"
@@ -63,7 +63,7 @@ sha256sums=('74cfd4b6d2b10c742f5a4a7cdaeffb01405ab897b11b80681a9063245113a308'
             'de428b496a825772ef49ec5555a386a4b23ffa10b9dfd9907f0671d5c1dc2178'
             '3489d68d56fd453fd13cc456cb21014c6dd4fcb1075fe82d3f2f5fa09e729cf6'
             '77dbd360964f3c3c86d0a777ca2a6a61ba3f6113578172434cd63515694c708c'
-            'c8760d7ebb6c9817d508c691c67084be251cd9c8811ee1ccf92c1278bad74c1c'
+            'c79460e7262faad7505163049da520fc0693fe7672eaffdddc739072218ee939'
             '933b0b878fa611bf24b92f655040a3bcb4a1b67841d929013802abbb09b2ccf4'
             '6fe03e6ea3f69d99d59a48847a8ae97c2160fca847c7aedf7b89d05e4aa9386d'
             'a78f366eee71610be1a2da1e533128af3ef188ff9ab577f3eab82ba69ad02466'
