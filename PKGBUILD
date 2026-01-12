@@ -5,8 +5,8 @@
 # Contributor: Dobroslaw Kijowski
 
 pkgname=mitmproxy
-pkgver=12.2.0
-pkgrel=3
+pkgver=12.2.1
+pkgrel=2
 pkgdesc='SSL-capable man-in-the-middle HTTP proxy'
 arch=(any)
 url='https://mitmproxy.org'
@@ -58,8 +58,8 @@ provides=(pathod)
 conflicts=(pathod)
 replaces=(pathod)
 source=("$pkgname::git+https://github.com/mitmproxy/mitmproxy#tag=v$pkgver")
-sha512sums=('5465a27e46bc83adc9d9e04d83d116947d501157366acee9a340332efd97cb6af068803bdf9eba6ec6f7557b16ed5c2bccf3345a3aef337ac81335bd028c90d7')
-b2sums=('99e3a92ac89423900eb205a6fa73194146e1fba4c5be16612951cd5a30c8d7fe117a0e14d953885ffec67861cd97b5ed2760f7d9ec5a131d2376dc82b3e4a8ae')
+sha512sums=('d16d6dfc28396b52b44b90b3958a38dea072dee7b7d50dde821412237eeb7a15d61e355fea6f573f6a73d549a749e4fb6e1aba58d7075724e3a84adf1bb6b047')
+b2sums=('44e98809d27cb1b97632fa5ca5fb24086c1f6c33856036b88d475fbf51231a6460acdd17f2460e19415e71e7deb3801af366d145ed38685c55acc6bfd854cf99')
 
 build() {
   cd "$pkgname"
@@ -70,16 +70,10 @@ build() {
 check() {
   cd "$pkgname"
 
-  local pytest_opts=(
-  	--override-ini="addopts="
-    --deselect test/mitmproxy/addons/test_dns_resolver.py
-  )
-
   python -m installer --destdir=test_dir dist/*.whl
   local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv "${pytest_opts[@]}"
+  PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv
 }
-
 
 package() {
   cd "$pkgname"
