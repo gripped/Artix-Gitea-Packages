@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: kget
   pkgdesc: Download Manager
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://apps.kde.org/kget/
   arch:
@@ -49,14 +49,14 @@ pkgbase:
     - 'libktorrent: torrent support'
     - 'libmms: MMS support'
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/kget-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/kget-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/kget-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/kget-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - bd10c266c5f22bb716b7559c1b9aa86cd11c285fbe7648ad0f2b0ae8f3579921
+    - d205f85fa728f7e8b8dbf90ed621a88cd461bfaf56299865b1f24b3ab36cf3c6
     - SKIP
 pkgname:
   - name: kget
