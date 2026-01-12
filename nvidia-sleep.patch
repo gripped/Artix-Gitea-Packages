@@ -1,5 +1,5 @@
---- a/NVIDIA-Linux-x86_64-590.48.01/systemd/system-sleep/nvidia	2026-01-12 17:23:20.334638693 +0100
-+++ b/NVIDIA-Linux-x86_64-590.48.01/systemd/system-sleep/nvidia	2026-01-12 17:23:55.237391586 +0100
+--- a/systemd/system-sleep/nvidia	2026-01-12 17:23:20.334638693 +0100
++++ b/systemd/system-sleep/nvidia	2026-01-12 17:23:55.237391586 +0100
 @@ -29,6 +29,9 @@
  fi
  
