@@ -1,10 +1,10 @@
 ---
-version: 2.4.0-1
+version: 2.4.0-2
 pkgbase:
   name: kddockwidgets
   pkgdesc: Dock Widgets Library by KDAB for Qt6
   pkgver: 2.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/KDAB/KDDockWidgets
   arch:
     - x86_64
