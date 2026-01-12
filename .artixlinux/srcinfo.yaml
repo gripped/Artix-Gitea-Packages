@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: ktorrent
   pkgdesc: A powerful BitTorrent client for KDE
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://apps.kde.org/ktorrent/
   arch:
@@ -56,14 +56,14 @@ pkgbase:
     - 'syndication: syndication plugin'
     - 'taglib: mediaplayer plugin'
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/ktorrent-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/ktorrent-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/ktorrent-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/ktorrent-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - c3d3b4dede17c02c0196868154043319e624b0f33cdced95f6cd7bc09b7d74e3
+    - 9936a870c4d8c4356789610a704d5d1cf2e584e6c1d6376ff570dcbee382b050
     - SKIP
 pkgname:
   - name: ktorrent
