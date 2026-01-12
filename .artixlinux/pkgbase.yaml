@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.58.0-1
+    version: 0.58.1-1
     packages:
-      - lazygit-0.58.0-1-x86_64.pkg.tar.zst
+      - lazygit-0.58.1-1-x86_64.pkg.tar.zst
     debug: []
