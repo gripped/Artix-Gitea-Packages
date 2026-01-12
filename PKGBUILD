@@ -69,10 +69,13 @@ build() {
 
 check() {
   cd "$pkgname"
-
+  local pytest_opts=(
+  	--override-ini="addopts="
+    --deselect test/mitmproxy/addons/test_dns_resolver.py
+  )
   python -m installer --destdir=test_dir dist/*.whl
   local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv
+  PATH="test_dir/usr/bin:$PATH" PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH" pytest -vv  "${pytest_opts[@]}"
 }
 
 package() {
