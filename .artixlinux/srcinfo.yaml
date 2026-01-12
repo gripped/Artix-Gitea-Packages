@@ -1,22 +1,21 @@
 ---
-version: 1.7.2-4
+version: 1.7.2-5
 pkgbase:
   name: dtc
   pkgdesc: Device Tree Compiler
   pkgver: 1.7.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.devicetree.org/
   arch:
     - x86_64
   license:
     - GPL-2.0-or-later
-  checkdepends:
-    - valgrind
   makedepends:
     - git
     - meson
     - python-setuptools-scm
     - swig
+    - valgrind
   depends:
     - bash
     - glibc
@@ -29,4 +28,4 @@ pkgbase:
     - 3e28d3c2d3e069331d8e4799892933ab667ffec71164fdefd0b390d25a69e0b8
 pkgname:
   - name: dtc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.4-1-any

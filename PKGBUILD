@@ -4,7 +4,7 @@
 
 pkgname=dtc
 pkgver=1.7.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Device Tree Compiler'
 url='https://www.devicetree.org/'
 arch=(x86_64)
@@ -19,8 +19,8 @@ makedepends=(
   meson
   python-setuptools-scm
   swig
+  valgrind
 )
-checkdepends=(valgrind)
 optdepends=('python: Python bindings')
 source=("git+git://git.kernel.org/pub/scm/utils/dtc/dtc.git#tag=v$pkgver")
 sha256sums=('3e28d3c2d3e069331d8e4799892933ab667ffec71164fdefd0b390d25a69e0b8')
@@ -28,7 +28,7 @@ sha256sums=('3e28d3c2d3e069331d8e4799892933ab667ffec71164fdefd0b390d25a69e0b8')
 prepare() {
   cd $pkgname
   git config user.name builduser
-  git config user.email builduser@artixlinux
+  git config user.email builduser@archlinux
 
   # pylibfdt/libfdt.i: fix backwards compatibility of return values
   git cherry-pick 9a969f3b70b07bbf1c9df44a38d7f8d1d3a6e2a5
