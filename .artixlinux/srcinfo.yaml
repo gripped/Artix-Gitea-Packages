@@ -1,12 +1,11 @@
 ---
-version: 6.5.4-1
+version: 6.5.4-2
 pkgbase:
   name: libksysguard
   pkgdesc: Library to retrieve information on the current status of computer hardware
   pkgver: 6.5.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
-  install: libksysguard.install
   arch:
     - x86_64
   groups:
