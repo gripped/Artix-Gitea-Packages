@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=angelfish
-pkgver=25.12.0
+pkgver=25.12.1
 pkgrel=1
 pkgdesc='Web browser for Plasma Mobile'
 url='https://apps.kde.org/angelfish/'
@@ -32,7 +32,7 @@ makedepends=(corrosion
 groups=(kde-applications
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('5c804a51032da603376e1ff0710fadf80d5aee817152878b75ab51318b5225cb'
+sha256sums=('93d0230d0c2738c7782cb509623b8e6b7106950b10a3af891cc1820640823f4e'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
