@@ -1,10 +1,10 @@
 ---
-version: 26.04-1
+version: 26.04-2
 pkgbase:
   name: gufw
   pkgdesc: Uncomplicated way to manage your Linux firewall
   pkgver: 26.04
-  pkgrel: 1
+  pkgrel: 2
   url: https://costales.github.io/projects/gufw/
   arch:
     - any
@@ -32,4 +32,4 @@ pkgbase:
     - 48d88dca594bf386aba21bfbce6c16b4fb04a31fae738f2cce4d323671a44f1adaca05bf2dcbfd90f17c265871828cea9a8dcefa5086458a21c7547ed171d266
 pkgname:
   - name: gufw
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.4-1-any
