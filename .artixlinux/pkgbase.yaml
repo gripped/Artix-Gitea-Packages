@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.1.0-9
+    version: 2.1.0-10
     packages:
-      - nyx-2.1.0-9-any.pkg.tar.zst
+      - nyx-2.1.0-10-any.pkg.tar.zst
     debug: []

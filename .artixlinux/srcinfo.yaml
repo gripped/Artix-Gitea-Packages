@@ -1,10 +1,10 @@
 ---
-version: 2.1.0-9
+version: 2.1.0-10
 pkgbase:
   name: nyx
   pkgdesc: Command-line status monitor for tor
   pkgver: 2.1.0
-  pkgrel: 9
+  pkgrel: 10
   url: https://nyx.torproject.org/
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 00db02e9d7aa8787a2b167a5b4364168c5fdc60f7baa1edd7416466b4f981ca69ba4488011cf87420c0b49b7232c2efca8915873b32f68127819f4e073c9a9bb
 pkgname:
   - name: nyx
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
