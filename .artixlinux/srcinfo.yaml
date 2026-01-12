@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: kdevelop-php
   pkgdesc: PHP language and documentation plugin for KDevelop
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: http://www.kdevelop.org/
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - qt6-base
     - threadweaver
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/kdev-php-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/kdev-php-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/kdev-php-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/kdev-php-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 7fbe8f6b6814636f6640f2b314369a22551e34ff5a6fb7d266e14e20f2823bcd
+    - efe3476d5cefc06be9b77b4fe88395e4b4dc5891411c87255e0856360345be0b
     - SKIP
 pkgname:
   - name: kdevelop-php
