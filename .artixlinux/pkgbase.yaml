@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -55,7 +55,7 @@ repos:
       - lutris-0.5.19-7-any.pkg.tar.zst
     debug: []
   galaxy:
-    version: 0.5.19-6
+    version: 0.5.19-8
     packages:
-      - lutris-0.5.19-6-any.pkg.tar.zst
+      - lutris-0.5.19-8-any.pkg.tar.zst
     debug: []

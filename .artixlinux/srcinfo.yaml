@@ -1,17 +1,17 @@
 ---
-version: 0.5.19-7
+version: 0.5.19-8
 pkgbase:
   name: lutris
   pkgdesc: Open Gaming Platform
   pkgver: 0.5.19
-  pkgrel: 7
+  pkgrel: 8
   url: https://lutris.net
   arch:
     - any
   license:
     - GPL-3.0-only
   checkdepends:
-    - python-nose
+    - python-nose2
     - xorg-server-xvfb
     - xterm
     - fluidsynth
