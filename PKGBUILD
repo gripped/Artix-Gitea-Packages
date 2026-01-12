@@ -8,7 +8,7 @@
 pkgbase=nvidia-580xx-utils
 pkgname=('nvidia-580xx-utils' 'opencl-nvidia-580xx' 'nvidia-580xx-dkms')
 pkgver=580.119.02
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -258,6 +258,8 @@ package_nvidia-580xx-utils() {
     ln -s nvidia "${pkgdir}/usr/share/doc/nvidia-utils"
 
     # new power management support
+    install -Dm755 systemd/system-sleep/nvidia "${pkgdir}/usr/lib/elogind/system-sleep/nvidia"
+    install -Dm755 systemd/nvidia-sleep.sh "${pkgdir}/usr/bin/nvidia-sleep.sh"
     install -Dm755 nvidia-powerd "${pkgdir}/usr/bin/nvidia-powerd"
     install -Dm644 nvidia-dbus.conf "${pkgdir}/usr/share/dbus-1/system.d/nvidia-dbus.conf"
 
