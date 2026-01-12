@@ -4,7 +4,7 @@
 # Contributor: Jakub "mr.MikyMaus" Fiser <mr@MikyMaus.org>
 
 pkgname=clawsker
-pkgver=1.4.0
+pkgver=1.4.1
 pkgrel=1
 pkgdesc="An applet to edit Claws Mail's hidden preferences."
 arch=('any')
@@ -14,7 +14,7 @@ makedepends=('gettext')
 depends=('perl-gtk3' 'perl-locale-gettext' 'perl-file-which' 'claws-mail')
 validpgpkeys=('43BC364B16DF0C205EBD75921F0F0A88DE5BCCA6') # Ricardo Mones Lastra <ricardo@mones.org>
 source=("https://www.claws-mail.org/tools/$pkgname-$pkgver.tar.xz"{,.asc})
-sha256sums=('7ecc78edb4d39e350f91e1cec09908739659307862b37754ae26dfbf74d1cb88'
+sha256sums=('586b91a8ca8cd5bddcc166935b3ef109269817aec7b93bdff90b31361949ffba'
             'SKIP')
 
 build()
