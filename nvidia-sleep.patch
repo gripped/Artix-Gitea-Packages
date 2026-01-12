@@ -1,0 +1,12 @@
+--- a/systemd/system-sleep/nvidia	2026-01-12 17:23:20.334638693 +0100
++++ b/systemd/system-sleep/nvidia	2026-01-12 17:23:55.237391586 +0100
+@@ -29,6 +29,9 @@
+ fi
+ 
+ case "$1" in
++    pre)
++        /usr/bin/nvidia-sleep.sh "suspend"
++        ;;
+     post)
+         /usr/bin/nvidia-sleep.sh "resume"
+         ;;
