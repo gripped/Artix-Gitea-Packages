@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: dolphin-plugins
   pkgdesc: Extra Dolphin plugins
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://apps.kde.org/dolphin_plugins/
   arch:
@@ -33,14 +33,14 @@ pkgbase:
     - qt6-base
     - solid
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/dolphin-plugins-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/dolphin-plugins-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/dolphin-plugins-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/dolphin-plugins-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - f6ee3660a746bd3d093c40acd102b2e1eea45161cd061d6ea4dc1873cb2a9c6c
+    - c36d7756afdd3286bf61f4184122203c20eda3bcefc4b203b27b05395c459ce7
     - SKIP
 pkgname:
   - name: dolphin-plugins
