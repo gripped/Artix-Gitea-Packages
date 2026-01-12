@@ -1,9 +1,9 @@
 ---
-version: 25.12.0-1
+version: 25.12.1-1
 pkgbase:
   name: kollision
   pkgdesc: A simple ball dodging game
-  pkgver: 25.12.0
+  pkgver: 25.12.1
   pkgrel: 1
   url: https://apps.kde.org/kollision/
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - libkdegames
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.0/src/kollision-25.12.0.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.0/src/kollision-25.12.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.1/src/kollision-25.12.1.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.1/src/kollision-25.12.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9aceb38e0fc330f54d6a8b1e88feae9662bcbcef83de355e0deceee27b4756f5
+    - c19c0e8373f7e6b6e4a8817c61fd4a5204de7380b835499a6d34d7a5b67bef2f
     - SKIP
 pkgname:
   - name: kollision
