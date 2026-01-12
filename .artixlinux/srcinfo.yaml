@@ -1,9 +1,9 @@
 ---
-version: 2:4.23.4-2
+version: 2:4.23.4-2.1
 pkgbase:
   name: samba
   pkgver: 4.23.4
-  pkgrel: 2
+  pkgrel: 2.1
   epoch: 2
   url: https://www.samba.org
   arch:
