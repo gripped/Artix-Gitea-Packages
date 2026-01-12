@@ -1,9 +1,9 @@
 ---
-version: 590.48.01-2.1
+version: 590.48.01-2.2
 pkgbase:
   name: nvidia-utils
   pkgver: 590.48.01
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: http://www.nvidia.com/
   arch:
     - x86_64
@@ -20,6 +20,7 @@ pkgbase:
     - https://download.nvidia.com/XFree86/NVIDIA-kernel-module-source/NVIDIA-kernel-module-source-590.48.01.tar.xz
     - 0001-Enable-atomic-kernel-modesetting-by-default.patch
     - 0002-Add-IBT-support.patch
+    - nvidia-sleep.patch
   sha512sums:
     - de7116c09f282a27920a1382df84aa86f559e537664bb30689605177ce37dc5067748acf9afd66a3269a6e323461356592fdfc624c86523bf105ff8fe47d3770
     - 1bcf2c6ee71686c0d32625e746ec8c0f7cf42fc63c76c3076ff2526b2661e8b9e9f76eaa2c4b213c7cc437a6f06006cc07672c4974d7f4515b2de2fd7c47a891

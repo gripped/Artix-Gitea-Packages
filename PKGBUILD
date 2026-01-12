@@ -7,7 +7,7 @@
 pkgbase=nvidia-utils
 pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-open-dkms')
 pkgver=590.48.01
-pkgrel=2.1
+pkgrel=2.2
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -21,7 +21,8 @@ source=('nvidia-drm-outputclass.conf'
         "https://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/${_pkg}.run"
         "https://download.nvidia.com/XFree86/NVIDIA-kernel-module-source/${_pkg_open}.tar.xz"
         0001-Enable-atomic-kernel-modesetting-by-default.patch
-        0002-Add-IBT-support.patch)
+        0002-Add-IBT-support.patch
+        nvidia-sleep.patch)
 sha512sums=('de7116c09f282a27920a1382df84aa86f559e537664bb30689605177ce37dc5067748acf9afd66a3269a6e323461356592fdfc624c86523bf105ff8fe47d3770'
             '1bcf2c6ee71686c0d32625e746ec8c0f7cf42fc63c76c3076ff2526b2661e8b9e9f76eaa2c4b213c7cc437a6f06006cc07672c4974d7f4515b2de2fd7c47a891'
             'f8f071f5a46c1a5ce5188e104b017808d752e61c0c20de1466feb5d693c0b55a5586314411e78cc2ab9c0e16e2c67afdd358da94c0c75df1f8233f54c280762c'
@@ -56,6 +57,8 @@ prepare() {
     # Kernel-open
     patch -Np1 -i "${srcdir}/0001-Enable-atomic-kernel-modesetting-by-default.patch" -d "${srcdir}/${_pkg_open}"
     patch -Np1 -i "${srcdir}/0002-Add-IBT-support.patch" -d "${srcdir}/${_pkg_open}"
+
+    patch -Np1 -i "${srcdir}/nvidia-sleep.patch"
 
     # Attempt to make builds reproducible
     sed -i "s/^  HOSTNAME.*/  HOSTNAME = echo archlinux/" "${srcdir}/${_pkg_open}/utils.mk"
