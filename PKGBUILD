@@ -46,6 +46,7 @@ build() {
   mkdir -p build
 
   meson setup --prefix=/usr --buildtype=release \
+    -Dc_std=gnu99 \
     -Dpulseaudio=true \
     -Dglib=true \
     -Dsystemd=false \
