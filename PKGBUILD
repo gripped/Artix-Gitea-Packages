@@ -8,7 +8,7 @@ pkgrel=2
 pkgdesc="NVIDIA kernel modules"
 arch=('x86_64')
 url="https://www.nvidia.com/"
-makedepends=('linux-headers' "nvidia-dkms=$pkgver")
+makedepends=('linux-headers' "nvidia-580xx-dkms=$pkgver")
 provides=('NVIDIA-MODULE')
 license=('LicenseRef-custom')
 options=('!strip')
@@ -29,5 +29,5 @@ package() {
     # compress each module individually
     find "$pkgdir" -name '*.ko' -exec zstd --rm -19 {} +
 
-    install -Dm644 /usr/share/licenses/nvidia-dkms/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -Dm644 /usr/share/licenses/nvidia-580xx-dkms/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }

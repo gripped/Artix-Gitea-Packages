@@ -12,7 +12,7 @@ pkgbase:
     - LicenseRef-custom
   makedepends:
     - linux-headers
-    - nvidia-dkms=580.119.02
+    - nvidia-580xx-dkms=580.119.02
   provides:
     - NVIDIA-MODULE
   options:
