@@ -1,10 +1,10 @@
 ---
-version: 8.1.1-3
+version: 8.2-1
 pkgbase:
   name: python-zope-interface
   pkgdesc: Zope Interfaces for Python 3.x
-  pkgver: 8.1.1
-  pkgrel: 3
+  pkgver: 8.2
+  pkgrel: 1
   url: https://github.com/zopefoundation/zope.interface
   arch:
     - x86_64
@@ -22,9 +22,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - https://github.com/zopefoundation/zope.interface/archive/8.1.1/python-zope-interface-8.1.1.tar.gz
+    - https://github.com/zopefoundation/zope.interface/archive/8.2/python-zope-interface-8.2.tar.gz
   sha512sums:
-    - 58d7f23f6a0bdeb3cfdf8a4788440cffa3e265707f15b745eafb2d3706d3599be32f0d82ecfd0529b4d36640250abbcdb72596cd5c536a6dea59923aa9681728
+    - 9338ad23b2a1ab6c3af900058fb8bd8f94c48005107eaddf22740e53b2140b5e75541d2e73b83eb50b21f2c2fe9662f163b0be3703807de64030e553f994ae43
 pkgname:
   - name: python-zope-interface
 # generated with artixpkg 0.37.4-1-any
