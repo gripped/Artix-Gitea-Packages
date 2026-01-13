@@ -1,10 +1,10 @@
 ---
-version: 1.4.1-13
+version: 1.4.1-13.1
 pkgbase:
   name: onboard
   pkgdesc: On-screen keyboard useful on tablet PCs or for mobility impaired users
   pkgver: 1.4.1
-  pkgrel: 13
+  pkgrel: 13.1
   url: https://launchpad.net/onboard
   arch:
     - x86_64
