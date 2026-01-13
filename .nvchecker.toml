@@ -1,0 +1,4 @@
+[fossil]
+source = "regex"
+url = "https://fossil-scm.org/home/doc/trunk/www/index.wiki"
+regex = 'Latest Release: (\d+\.\d+)'
