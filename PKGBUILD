@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Balló György <ballogyor+arch at gmail dot com>
-# Contributor: Bruno Pagani <archange@archlinux.org
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Maintainer: Bruno Pagani <archange@archlinux.org
 # Contributor: Doug Newgard <scimmia at archlinux dot org>
 # Contributor: XavierCLL <xavier.corredor.llano (a) gmail.com>
 # Contributor: SaultDon <sault.don gmail>
@@ -11,8 +10,8 @@
 # Contributor: Eric Forgeot < http://esclinux.tk >
 
 pkgname=qgis
-pkgver=3.44.4
-pkgrel=5
+pkgver=3.44.6
+pkgrel=1
 pkgdesc='Geographic Information System (GIS) that supports vector, raster & database formats'
 arch=(x86_64)
 url='https://qgis.org/'
@@ -79,7 +78,7 @@ optdepends=(
   'gpsbabel: GPS Tools plugin'
 )
 source=("https://qgis.org/downloads/$pkgname-$pkgver.tar.bz2")
-sha256sums=('e54d407c5fe921f31ec69104f8d4abbed310b277379e0a5e20af21d46565da0d')
+sha256sums=('6a7a0ad471b325f0ac364a7256b415013fc23e3ede3e6b152005739a8d273cd3')
 
 build() {
   cmake -S $pkgname-$pkgver -B build -G Ninja \
