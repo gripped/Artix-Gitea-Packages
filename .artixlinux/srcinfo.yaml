@@ -1,10 +1,10 @@
 ---
-version: 0.67.0-1
+version: 0.67.0-2
 pkgbase:
   name: fzf
   pkgdesc: Command-line fuzzy finder
   pkgver: 0.67.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/junegunn/fzf
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - dcddea0b5011165e01375564c345e6a166049c6a1eae8c89fed33312abda41093bf61fc746dcc82c8d9cbc0e1e5794b2caceee5aef064aa3154c12a0a141a69e
 pkgname:
   - name: fzf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
