@@ -2,7 +2,7 @@
 
 pkgname=efl
 pkgver=1.28.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="http://www.enlightenment.org"
