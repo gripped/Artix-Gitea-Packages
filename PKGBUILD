@@ -333,7 +333,7 @@ _pkgsrc="${srcdir}"/samba-pkg
   rm -rf "${pkgdir}"/run
   rm -rf "${pkgdir}"/var/run
   rm -rf "${pkgdir}"/etc/sysconfig
-  rm -f "${pkgdir}"/usr/lib/python3.14/site-packages/*"${tdb,teventt}"*
+  rm -f "${pkgdir}"/usr/lib/python3.14/site-packages/*{tdb,teventt}*
   
   # copy ldap example
   install -D -m644 "${srcdir}"/samba-${pkgver}/examples/LDAP/samba.schema \
