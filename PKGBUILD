@@ -5,7 +5,7 @@
 
 pkgname=hplip
 pkgver=3.25.8
-pkgrel=3.1
+pkgrel=4
 epoch=1
 pkgdesc="Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet"
 arch=('x86_64')
@@ -100,14 +100,14 @@ prepare() {
  # https://gitlab.archlinux.org/archlinux/packaging/packages/hplip/-/issues/3
 # patch -Np1 -i ../hplip-1_3_23_12-4-python3_12-fix.patch
 
- # https://bugs.launchpad.net/hplip/+bug/2115046
- patch -Np1 -i ../hplip-no-urlopener.patch
-
  # fix build with gcc14
  patch -Np1 -i ../hplip-hpaio-gcc14.patch 
  patch -Np1 -i ../hplip-pserror-gcc14.patch
  # fix build with gcc15
  patch -Np1 -i ../hplip-gcc15-stdc23.patch
+ # Python 3.14 removed urlopener
+ # https://bugs.launchpad.net/hplip/+bug/2115046
+ patch -Np1 -i ../hplip-no-urlopener.patch
 
  export AUTOMAKE='automake --foreign'
  autoreconf --force --install

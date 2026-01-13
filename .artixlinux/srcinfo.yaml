@@ -1,10 +1,10 @@
 ---
-version: 1:3.25.8-3.1
+version: 1:3.25.8-4
 pkgbase:
   name: hplip
   pkgdesc: Drivers for HP DeskJet, OfficeJet, Photosmart, Business Inkjet and some LaserJet
   pkgver: 3.25.8
-  pkgrel: 3.1
+  pkgrel: 4
   epoch: 1
   url: https://hplipopensource.com
   arch:
@@ -91,4 +91,4 @@ pkgbase:
     - 006a14ef2444fa7e09c940af25aa789c1b6482912fe289dd7c81d85ef0dcb665d249f2a14f9aa2d92b271ea002a5a1b0a52fae1528689d2e859fd30785d5707c
 pkgname:
   - name: hplip
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
