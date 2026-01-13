@@ -19,6 +19,61 @@
                 "Status": "unlocked",
                 "Type": "boolean",
                 "Value": false
+             },
+            "browser.ml.enable": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.linkPreview.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.pageAssist.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.chat.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.smartAssist.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.tabs.groups.smart.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.search.visualSearch.featureGate": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.urlbar.quicksuggest.mlEnabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "pdfjs.enableAltText": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "places.semanticHistory.featureGate": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "sidebar.revamp": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
              }
         },
         "WebsiteFilter": {
