@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 4.6.1-1
+    version: 4.6.3-1
     packages:
-      - xreader-4.6.1-1-x86_64.pkg.tar.zst
+      - xreader-4.6.3-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
