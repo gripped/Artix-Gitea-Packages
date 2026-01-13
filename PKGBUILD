@@ -88,6 +88,7 @@ options=(
 source=(
   https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz{,.asc}
   $pkgname.desktop identity-icons-brand.svg
+  dbf9702ed87ea5c88c2a1ee615998532ac8f10cc.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -143,6 +144,9 @@ END
 
 build() {
   cd firefox-$pkgver
+
+  # Fix building with python 3.14
+  patch -Np1 -i ../dbf9702ed87ea5c88c2a1ee615998532ac8f10cc.patch
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -392,6 +396,7 @@ sha512sums=('7781b1e203130c1cdf2a0c2ecb05a9cfa824c75d467e7faca78b66bd5568c821324
             'SKIP'
             '4b53ee133a4ecaf068e240f6a05a1ebf4b788d67fe9141cc5b3561e1128907c8c3edb49bf2b24ba89daf1552f94ac48adf682dbe7dd070cffe7f78d98f2b3338'
             'b579b73176c72a5ecf36e3f63bba08fdb8041ae99d54e5cab906660fed6a9cf2311f7ca1ec1649e451cc6d5a4b1e6060b974b1d7befe9c8df3c5a89c50383c17'
+            'c534e6b5753db869622c962b86cfd4c90314ba989413bb0374190153417a226d2bf6896158e4cd60d4b1b1edd23526da1c37bd3fb51703548fa51f384b30acad'
             'cb68683eef11ae6bbc375bfc53e57fa1f9953c459d2ab79685f0a47fe29c8fb3fe7792ebbb439521d00017a161be529dec92dd08f9535b71cc5e943fd507df09'
             'c90f612f3a57a955329d29b8ab55f4852b6b4e657e73befae8ce5e39eb572f0f81f48e04cfacb194b62ecfa7f1d6f92c24c7ad0923b526eb537ad9735d13929f'
             '754ecb771cae60f4efa67ff38dc1348b689d62b07f3a2d26d2bc0898cafd402e1de4ec63703e9ee4da0febd95c1cd659a0d4483ceee9d8f0e0710cfa07b4d195'
