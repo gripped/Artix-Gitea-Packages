@@ -30,8 +30,7 @@ source=("git+https://git.launchpad.net/ufw?signed#tag=${pkgver}"
 sha256sums=('c2b36d70d003050e54310b55a6bf6a7d17c649a8f056eba09b6a24f3500ed8c5'
             'a024698e008ed88744f7ca827309e089e439afcfb73204082c3a4c2deb8ae8aa'
             '199a3445f90bfdb6c132c8068cf1a5f1ddda795c1d5a819ffb6aab013d59c070'
-            '61fe124caa3295f0e9a119658b50e1acc20a2993f79b069c7a427f8e62cbb3db'
-            'fdface6f4690e4748fbbd5661c02e1967a8750fdb23581d35516174017a3fe39')
+            '61fe124caa3295f0e9a119658b50e1acc20a2993f79b069c7a427f8e62cbb3db')
 validpgpkeys=('4C20C06B5D8BDE688854D28A51DBDC58CC559573')
 
 prepare() {
