@@ -1,10 +1,10 @@
 ---
-version: 1.6.53-1
+version: 1.6.53-2
 pkgbase:
   name: libpng
   pkgdesc: A collection of routines used to create PNG format graphics files
   pkgver: 1.6.53
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.libpng.org/pub/png/libpng.html
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - 08c7700264cf66f1700d47719cdaa45eac10743de5702f19164c84b67035b0ba
 pkgname:
   - name: libpng
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
