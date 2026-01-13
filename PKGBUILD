@@ -8,7 +8,7 @@
 
 pkgname=distcc
 pkgver=3.4
-pkgrel=14
+pkgrel=15
 pkgdesc='Distributed compilation service for C, C++ and Objective-C'
 arch=(x86_64)
 url='https://github.com/distcc/distcc'
@@ -46,7 +46,7 @@ build() {
   export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
   # ref FS#78400
-  export NATIVE_COMPILER_TRIPLE=x86_64-pc-linux-gnu-gcc
+  export NATIVE_COMPILER_TRIPLE=${CHOST}-gcc
 
   ./configure \
     --enable-rfc2553 \
@@ -66,9 +66,10 @@ package() {
     install
 
   install -Dm644 distccd.conf.d "$pkgdir/etc/conf.d/distccd"
+
   # Package symlinks
-  _targets=(c++ c89 c99 cc clang clang++ cpp g++ gcc $CARCH-pc-linux-gnu-g++
-            $CARCH-pc-linux-gnu-gcc $CARCH-pc-linux-gnu-gcc-$(gcc -dumpversion))
+  _targets=(c++ c89 c99 cc clang clang++ cpp g++ gcc $CHOST-g++
+            $CHOST-gcc $CHOST-gcc-$(gcc -dumpversion))
   install -d "$pkgdir/usr/lib/$pkgname/bin"
   for bin in "${_targets[@]}"; do
     # For whitelist since version 3.3, ref FS#57978
