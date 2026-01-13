@@ -29,10 +29,10 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.5.8-1
+    version: 1.6.0-1
     packages:
-      - xdp-tools-1.5.8-1-x86_64.pkg.tar.zst
-      - libxdp-1.5.8-1-x86_64.pkg.tar.zst
+      - xdp-tools-1.6.0-1-x86_64.pkg.tar.zst
+      - libxdp-1.6.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
