@@ -5,7 +5,7 @@
 # Contributor: Mario Vazquez <mario_vazq@hotmail.com>
 
 pkgname=bind
-pkgver=9.20.16
+pkgver=9.20.17
 pkgrel=1
 pkgdesc='A complete, highly portable implementation of the DNS protocol'
 url='https://www.isc.org/software/bind/'
@@ -31,10 +31,11 @@ source=("git+https://gitlab.isc.org/isc-projects/bind9.git#tag=v${pkgver}"
         'localhost.zone'
         'localhost.ip6.zone'
         '127.0.0.zone')
-sha256sums=('e0ad11609deb6c22b079a895b9af39197b180962da73da52464731476d19da61'
+sha256sums=('3f14129c185181799204e1eea128bf71730681c734ff1ddcd3bd0bb879dacf52'
             'f0423c4ee8495da487e07e9144bec1d25f46a0cd2dfa7cfd7a761ef15bfefc98'
             'c968019a5f040a4a8f9ed13d82d4ba597652224b42f7cff123d8125af2c5108c'
             'e503b8472a82fa6bfc8d4ec011da402750166a63c319e54c48a242c81798e83a'
+            '3f0f8db0a1deae270dd166b4750be7c1041b4b44891176f35a8df7dd55d24d34'
             '0011708e516128647dd25b59b6ebc465f36e85bbe0a8fbdc3eb04b7f28c2197f'
             'c06fc270e32a843c8b6d86335a2ec607d405dfba6875de8d8a9abde39a9e2c17'
             'b88fd2b99e7d42d414b329b814b9ff3304fa0ef9c67df81bde235bbfa0f3a3b8')
