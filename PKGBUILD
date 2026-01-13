@@ -7,7 +7,7 @@
 pkgbase=nvidia-utils
 pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-open-dkms')
 pkgver=590.48.01
-pkgrel=2.2
+pkgrel=2.3
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -62,8 +62,8 @@ prepare() {
     patch -Np1 -i "${srcdir}/nvidia-sleep.patch"
 
     # Attempt to make builds reproducible
-    sed -i "s/^  HOSTNAME.*/  HOSTNAME = echo archlinux/" "${srcdir}/${_pkg_open}/utils.mk"
-    sed -i "s/^WHOAMI.*/WHOAMI = echo archlinux-builder/" "${srcdir}/${_pkg_open}/utils.mk"
+    sed -i "s/^  HOSTNAME.*/  HOSTNAME = echo artixlinux/" "${srcdir}/${_pkg_open}/utils.mk"
+    sed -i "s/^WHOAMI.*/WHOAMI = echo artixlinux-builder/" "${srcdir}/${_pkg_open}/utils.mk"
     sed -i "s/^DATE.*/DATE = date -r version.mk/" "${srcdir}/${_pkg_open}/utils.mk"
 
     shopt -s globstar
