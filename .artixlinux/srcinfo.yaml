@@ -31,7 +31,6 @@ pkgbase:
     - 01-move-from-lib-to-usr-lib.patch
     - 02-correct-iptables-location.patch
     - 03-tcp-selective-acks.patch
-    - ufw.service
   validpgpkeys:
     - 4C20C06B5D8BDE688854D28A51DBDC58CC559573
   sha256sums:

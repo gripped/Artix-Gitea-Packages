@@ -26,8 +26,7 @@ backup=('etc/ufw/before.rules'
 source=("git+https://git.launchpad.net/ufw?signed#tag=${pkgver}"
         "01-move-from-lib-to-usr-lib.patch"
         "02-correct-iptables-location.patch"
-        "03-tcp-selective-acks.patch"
-        "ufw.service")
+        "03-tcp-selective-acks.patch")
 sha256sums=('c2b36d70d003050e54310b55a6bf6a7d17c649a8f056eba09b6a24f3500ed8c5'
             'a024698e008ed88744f7ca827309e089e439afcfb73204082c3a4c2deb8ae8aa'
             '199a3445f90bfdb6c132c8068cf1a5f1ddda795c1d5a819ffb6aab013d59c070'
