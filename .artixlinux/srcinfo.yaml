@@ -1,36 +1,36 @@
 ---
-version: 6.6.1-2
+version: 6.6.2-1
 pkgbase:
   name: cinnamon-desktop
   pkgdesc: Library with common API for various Cinnamon modules
-  pkgver: 6.6.1
-  pkgrel: 2
+  pkgver: 6.6.2
+  pkgrel: 1
   url: https://github.com/linuxmint/cinnamon-desktop
   arch:
     - x86_64
   license:
-    - GPL
-    - LGPL
+    - GPL-2.0-or-later AND LGPL-2.0-or-later
   makedepends:
     - git
-    - meson
-    - gobject-introspection
-    - intltool
     - glib2-devel
+    - gobject-introspection
+    - meson
   depends:
-    - accountsservice
+    - cairo
+    - dconf
+    - gcc-libs
+    - gdk-pixbuf2
+    - glib2
+    - glibc
     - gtk3
-    - libxkbfile
     - libpulse
+    - libx11
+    - libxkbfile
+    - libelogind
   source:
-    - git+https://github.com/linuxmint/cinnamon-desktop#tag=6.6.1
-    - config.patch
-  sha256sums:
-    - c8a23a91f005a301bde170612fcd99d49b7dcef0a071a36209b9b28f00c64965
-    - e70227c64eca6857fe9adc21c6aee851df40b3a54bf34a145e0dc4b9819a7b6a
+    - git+https://github.com/linuxmint/cinnamon-desktop.git#tag=6.6.2
   b2sums:
-    - 60d012b7e5838b3b58225942c8a68a42d36940628078c4e8676e67753d2dc9d8d3d27da88c8f0d3f8e5e4b96c563f1c320ea59bf2da9fae7b3ce84ec734205ba
-    - 5ae28fca1f3fee35222569afdba3f6f2df00f2b27709d1135589f33a3b80546ca541c391f5ee02759467fcaffe380dc1cbc4117dffe3c10cdf7046fd8588e384
+    - 2d9762a60bc6c43f43e5bbcae4b07f60406dcf4de9ea82ca0c397a4ef0728a48702d4dc40deb6fae0e9329e6a16d589c3d0f1a54fa11ce8a9648407730f4c420
 pkgname:
   - name: cinnamon-desktop
 # generated with artixpkg 0.37.4-1-any

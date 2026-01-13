@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.6.1-2
+    version: 6.6.2-1
     packages:
-      - cinnamon-desktop-6.6.1-2-x86_64.pkg.tar.zst
+      - cinnamon-desktop-6.6.2-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
