@@ -1,5 +1,6 @@
-# Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 # Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
+# Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Sarah Hay <sarahhay@mb.sympatico.ca>
 # Contributor: Simo L. <neotuli@yahoo.com>
 # Contributor: eric <eric@archlinux.org>
@@ -7,7 +8,7 @@
 _name=backends
 pkgname=sane
 pkgver=1.4.0
-pkgrel=1
+pkgrel=3
 pkgdesc="Scanner Access Now Easy"
 arch=(x86_64)
 url="https://gitlab.com/sane-project/backends"
@@ -37,7 +38,7 @@ makedepends=(
   libxml2
   poppler-glib
   python
-  udev
+  systemd
   texlive-latexextra
 )
 optdepends=(
@@ -48,16 +49,19 @@ source=(
   $url/-/archive/$pkgver/$_name-$pkgver.tar.gz
   66-${pkgname}d.rules
   $pkgname.sysusers
-  sane.xinetd
+  ${pkgname}d.service
+  ${pkgname}d.socket
 )
 sha512sums=('69adc9e4a7c7252ff677c510c4112096c3c4b00525113795d5d2ecd0efe8716a556c6c403df685d0e360eae72546ad55ff9dd27b3fde5c5b1b9d13dbcd735465'
             'd0d1b6bd6fbb04d610e7186e26d04c2233a620cc7c731ca3acd7fb860dd033fbe99d8974ffa1dd59c8affcc4aa2664d76ab3dfd6f7b2a734b31d7e3832359c41'
             '12eb44f94464f79f7cff05d769685e724efd79a45ec646bf72941f482d4b63d17c4098df30558a533f7ba725ef397f46e34053fc96e40f46f89196d5721cf05b'
-            '8f9f18d432087e5445aa533be375a811daf320512069c108d41a79121868937e1a7ffa21ee7d33adcf9fbb670bca460ff06423ce39602f35151eccc243d9d4ec')
+            'baf2cf2fdff689f776973ac4f69ea02b131f2a1a754a8d52a8e8ad33b0e559ba286649a891723a7ad94b2bcb01ec88155d43c36eaeb35e47fbc8ea80c49c5d47'
+            'a23ceeeb02bd9e214702003a3165886858ecbdd93df89cd37ad5f00581745454548ccda0ab656f2dc0acbf2896a8781568c786797e64a07014be003d6140a093')
 b2sums=('1bb766d311ec8672f630f7ef10209de030bb7efee565e878f9bf64505f93fbccd668872babe49631cd11e9c5cdee8e1dfb53e69c2577739323fc5daaa08510e2'
         'c9c6ba224b9b27f4ecc6b1ded6621a8abb52b1ded2d9078e4cad31177290b788e286fad74545a5cb09e1f6726515adc22003988eb646dc986e87f1a8061a0e27'
         '14711932fa106dab7464b75f1c9fd96a5bfa34fd2727486c382ffcd8af5e6d7b327d8c1b29a2ff7d45c6f810b04394e6aa17afacad0e733d9f0162e40fe9ac32'
-        '158952a09d5b29ae848a4c1377de6ff824b61c7d1932d29f3a0d313bafdaa0c5973614c5b744f53c7d2d4acff3dd4dc8b821068b95ae07a081539fd5cabd7477')
+        '272b4860dbd3f2b69eedfed4532cf8a388629c003c9a0e0ee98defbc2023e07edc26275a17f56ea9fd4d90e9b3b6532c5b10d1e2b91e6ab4df242ac44101d802'
+        '5e9f0350a1553fc75aea88ce355fb68b881e3b2194ac0e3c6f3cecdae79111fb1db1cfe3b4933eca15af5f985fc6b89e4d9af3844b6e9cfd542828b6b9e57ed9')
 
 prepare() {
   # extract custom license exception
@@ -88,7 +92,7 @@ build() {
     --with-libcurl
     --with-pic
     --with-poppler-glib
-    --without-systemd
+    --with-systemd
     --with-usb
   )
 
@@ -111,6 +115,7 @@ package() {
     libusb libusb-1.0.so
     libxml2 libxml2.so
     poppler-glib libpoppler-glib.so
+    systemd-libs libsystemd.so
   )
 
   cd $_name-$pkgver
@@ -131,13 +136,12 @@ package() {
   printf "\n" >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
   tools/sane-desc -m hwdb -s doc/descriptions-external/ >> "$pkgdir/usr/lib/udev/hwdb.d/20-$pkgname.hwdb"
 
-  # udev integration
+  # systemd integration
+  install -vDm 644 ../${pkgname}d.socket -t "$pkgdir/usr/lib/systemd/system/"
+  install -vDm 644 ../${pkgname}d.service "$pkgdir/usr/lib/systemd/system/${pkgname}d@.service"
   install -vDm 644 ../66-${pkgname}d.rules "$pkgdir/usr/lib/udev/rules.d/"
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
-
-  # install xinetd file
-  install -D -m644 "${srcdir}/sane.xinetd" "${pkgdir}/etc/xinetd.d/sane"
 
   # remove old ChangeLogs
   rm -rvf "$pkgdir/usr/share/doc/$pkgname/ChangeLogs/"
