@@ -1,0 +1,25 @@
+---
+version: 0.1.2-1
+pkgbase:
+  name: zug
+  pkgdesc: Transducers for C++
+  pkgver: 0.1.2
+  pkgrel: 1
+  url: https://sinusoid.es/zug/
+  arch:
+    - any
+  license:
+    - BSL-1.0
+  checkdepends:
+    - boost
+  makedepends:
+    - catch2-v2
+    - cmake
+    - git
+  source:
+    - git+https://github.com/arximboldi/zug#tag=v0.1.2
+  sha256sums:
+    - 6baf3bd2c18c37bc5a3ca498b190cadd4b0e41a51807700112e816f5b53708a2
+pkgname:
+  - name: zug
+# generated with artixpkg 0.37.4-1-any
