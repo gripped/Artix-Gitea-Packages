@@ -5,7 +5,7 @@
 _alpm=2.4.4
 
 pkgname="dinit-user-spawn"
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
@@ -35,7 +35,7 @@ provides=(
 )
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm")
-sha256sums=('a22d289ef3d359ecb516ad2e731e52b08213777fe70bb977ab8e4e47312d7987'
+sha256sums=('d6047df7fb221c175605f651255d2670beed7e50baf762843954f717e9781be2'
             'e33444dba1b0a185eead8460a77f763bc99bca8cb072dbb90e90a29393d4f865')
 
 build() {
