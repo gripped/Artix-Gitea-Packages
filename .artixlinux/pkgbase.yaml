@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.10.2-6
+    version: 0.10.2-7
     packages:
-      - httpbin-0.10.2-6-any.pkg.tar.zst
+      - httpbin-0.10.2-7-any.pkg.tar.zst
     debug:
-      - httpbin-debug-0.10.2-6-any.pkg.tar.zst
+      - httpbin-debug-0.10.2-7-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
