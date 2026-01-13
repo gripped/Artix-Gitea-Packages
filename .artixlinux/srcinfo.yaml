@@ -1,10 +1,10 @@
 ---
-version: 0.1.11-5
+version: 0.1.11-6
 pkgbase:
   name: arandr
   pkgdesc: Provide a simple visual front end for XRandR 1.2.
   pkgver: 0.1.11
-  pkgrel: 5
+  pkgrel: 6
   url: https://christian.amsuess.com/tools/arandr/
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - eb954b763bd2dd7f98ff04a4d45e59db9f8a16cc7384b47ffed733781057ab37
 pkgname:
   - name: arandr
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
