@@ -15,11 +15,6 @@
         "NoDefaultBookmarks": true,
         "SSLVersionMin": "tls1.2",
         "Preferences": {
-            "browser.ml.chat.enabled": {
-                "Status": "unlocked",
-                "Type": "boolean",
-                "Value": false
-             },
             "browser.ml.enable": {
                 "Status": "unlocked",
                 "Type": "boolean",
@@ -40,12 +35,42 @@
                 "Type": "boolean",
                 "Value": false
              },
+            "browser.ml.chat.menu": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.chat.page": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.chat.page.footerBadge": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.ml.chat.page.menuBadge": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
             "browser.ml.smartAssist.enabled": {
                 "Status": "unlocked",
                 "Type": "boolean",
                 "Value": false
              },
             "browser.tabs.groups.smart.enabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "browser.tabs.groups.smart.userEnabled": {
+                "Status": "unlocked",
+                "Type": "boolean",
+                "Value": false
+             },
+            "extensions.ml.enabled:" {
                 "Status": "unlocked",
                 "Type": "boolean",
                 "Value": false
