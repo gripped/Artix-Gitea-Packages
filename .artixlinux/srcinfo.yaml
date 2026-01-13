@@ -36,4 +36,4 @@ pkgbase:
     - b5a53d747422f8b594e3e9615e238457d696732efce94050cdd72182a8645ef2
 pkgname:
   - name: i2c-tools
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
