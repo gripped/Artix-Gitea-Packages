@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.6.1-1
+    version: 6.6.2-1
     packages:
-      - cinnamon-translations-6.6.1-1-any.pkg.tar.zst
+      - cinnamon-translations-6.6.2-1-any.pkg.tar.zst
     debug: []
 team: galaxy
