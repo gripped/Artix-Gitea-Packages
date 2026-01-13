@@ -1,10 +1,10 @@
 ---
-version: 12.17.2-2
+version: 12.18.0-1
 pkgbase:
   name: python-pyqt5-sip
   pkgdesc: The sip module support for PyQt5
-  pkgver: 12.17.2
-  pkgrel: 2
+  pkgver: 12.18.0
+  pkgrel: 1
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
     - x86_64
@@ -19,9 +19,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - https://pypi.python.org/packages/source/P/PyQt5-sip/pyqt5_sip-12.17.2.tar.gz
+    - https://pypi.python.org/packages/source/P/PyQt5-sip/pyqt5_sip-12.18.0.tar.gz
   sha256sums:
-    - 7f66565c2a13d34d8ad6aad08e953d355ea3fe466d991d51aa5a0966a5289f05
+    - 71c37db75a0664325de149f43e2a712ec5fa1f90429a21dafbca005cb6767f94
 pkgname:
   - name: python-pyqt5-sip
 # generated with artixpkg 0.37.4-1-any
