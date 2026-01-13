@@ -4,8 +4,8 @@
 # Contributor: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgname=cinnamon-settings-daemon
-pkgver=6.6.1
-pkgrel=2
+pkgver=6.6.2
+pkgrel=1
 pkgdesc='Settings daemon for Cinnamon'
 arch=(x86_64)
 url='https://github.com/linuxmint/cinnamon-settings-daemon'
@@ -46,7 +46,7 @@ makedepends=(
   meson
 )
 source=("git+https://github.com/linuxmint/cinnamon-settings-daemon.git#tag=$pkgver")
-b2sums=(fb694bda874f9f9d0d6851ea72339fd2bd5c902e49fb9a14af13a6a085722f72fe60622543f0e83e1ab13ec382aa7ea0f60b4f9a9b06792ac5b1132f952bbfa9)
+b2sums=('177f73765b4788ce41243c82090acd47f372496c4364c3818186695e0ad9002911fd9f41ae24192799d1692c27d9601745762a76ffd1d339b54fcfee09d8a99c')
 
 build() {
   artix-meson $pkgname build \
