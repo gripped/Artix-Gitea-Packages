@@ -1,15 +1,15 @@
 ---
-version: 1.9.0-2
+version: 1.9.0-3
 pkgbase:
   name: tlp
   pkgver: 1.9.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://linrunner.de/en/tlp/tlp.html
   install: tlp.install
   arch:
     - any
   license:
-    - GPL-2.0-only
+    - GPL-2.0-or-later
   makedepends:
     - git
   source:
@@ -56,4 +56,4 @@ pkgname:
       - bash
       - networkmanager
       - tlp
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any
