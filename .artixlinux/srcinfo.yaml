@@ -1,10 +1,10 @@
 ---
-version: 2:1.12.4-1
+version: 2:1.12.4-2
 pkgbase:
   name: julia
   pkgdesc: High-level, high-performance, dynamic programming language
   pkgver: 1.12.4
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://julialang.org/
   arch:
@@ -44,7 +44,8 @@ pkgbase:
     - https://github.com/JuliaLang/julia/releases/download/v1.12.4/julia-1.12.4-full.tar.gz.asc
     - c12e8515.patch
     - julia-hardcoded-libs.patch
-    - https://github.com/JuliaLang/julia/commit/4539b7b4.patch
+    - https://github.com/JuliaLang/julia/commit/e7b2b231.patch
+    - https://github.com/JuliaLang/julia/commit/657273ae.patch
   validpgpkeys:
     - 3673DF529D9049477F76B37566E3C7DC03D6E495
   sha256sums:
@@ -52,7 +53,8 @@ pkgbase:
     - SKIP
     - 2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367
     - 120c3b77a1aecfdb045ac64902164210ea8dd139d2fb8e8b098155b344a8e1fb
-    - 31325154fde6291b0840d4ff0c17149d9cbcd127088dfa05c69c3ee221e1bf9b
+    - 9cfbe07b174777c1801e2552ce6e30b7a95d577db2d4bb5886603571a6c5bd2b
+    - b2b8768f708580d58dd7d9206fa3a8fe406fdaaafa581152d3024a6e96c29845
 pkgname:
   - name: julia
 # generated with artixpkg 0.37.4-1-any
