@@ -6,7 +6,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=exim
-pkgver=4.99
+pkgver=4.99.1
 pkgrel=1
 pkgdesc='Message Transfer Agent'
 arch=(x86_64)
@@ -39,13 +39,23 @@ source=("https://downloads.exim.org/exim4/$_archive.tar.bz2"{,.asc}
         aliases
         exim.logrotate
         exim.Makefile
+        exim-submission@.service
+        exim.service
+        exim@.service
+        exim.socket
+        exim-submission.socket
         exim.sysusers
         exim.tmpfiles)
-sha512sums=('31240d12505aa03c916ee0b89bab8cbe487d25b8df0810fbe3649ce7e8095bfbd2208f1257407d37d59b4932bc6800f2d837c77b7c68fbaf5f43d6183c94283b'
+sha512sums=('7147f286324c63340a3ead61039a3819f0bfe911ef30a331780593aa9386c0418d03cb8d2acaf1eb076bdbff7338c7ef04e12b654262163b05155555fe67e812'
             'SKIP'
             '6494d9aae71a630935f3946a136855aadede54fd10b7b3cd7df47972d320ae142410076871e839f6caca8e02ec136604464b0b9c593721db243d8edf75c2f17f'
             'd8e3b466e0bba8175cfe762058dec49018495a260aa5efd139f4ef435284c305958cbd7fc514e81042146368b749ae38f0bf276fc0b4b91918ef33126900aa81'
             '7fd7d364473bec032ddd685c80e38dd8fcb4130ba960cc2a8b5747c35c2a0757229e95a9c86cb601b7d60344989bb187d3a35f2d2fdc718bb8587af971146c1c'
+            'dc28698f15e8eaa4614ae81fc8cb76d92fed1110ce02f7a6ee8feace418dbb194711eb2d4dd444cf818628c11721e21d80b7b974879ab6ddd78cc717cce17c2f'
+            'b3c3b18652df435cb87d647cfd4f19e182fbf12b0b56f9c91f72b27ae5a819fb3d8c4c25445c5a3c184f70a0c181925fabda891f2057b8a917070d6c40529b8d'
+            '11c8133ee15b3e5193c9b1c59aed66c81b6e045dd23310bede9fcde6c88905db5ef08afdb798b53b75a7465915ea1247e980edf95db07a7f9b7bb58ce95fbb5a'
+            'db621116907ceb573e6f34581f47c91f751bff593054d7ddc32397b34c7f2405bec184bdb0589d2ac457fa3a61bcba072761e3a6293a99c9c764d2d9fd6069ae'
+            '4a233761793e3510e9efa5aad3a6098c41b757f13133a7ea825680f2b393aba8d7935f16bf1dd065dde884fe7ba45639a8d398333a7d9bf0a6b72f88c8f2a09d'
             '87a16aa7bd60a8df0da8131bb811825232f25e934b9326460a2f8f0f8e0f44c53d71b1225ecfee8d30c8714f6e9f85f5f0821e346a7751d43683b406376d605b'
             'f8a34fea0a65d0992732bc444bbb334d060de7d91d9cca6f00bc950ba289afa813783517dd3999437f89bc194290785805df7081606a65abb1db3fd3b3aa94ca')
 validpgpkeys=('C693A034E1ED6EE954CAE2DA13DAD99C7E41519C'  # Phil Pennock <pdp@exim.org>
@@ -61,6 +71,10 @@ build() {
 }
 
 package() {
+	install -Dm0644 -t "$pkgdir/usr/lib/systemd/system/" \
+		exim.service exim@.service exim-submission@.service
+	install -Dm0644 -t "$pkgdir/usr/lib/systemd/system/" \
+		exim.socket exim-submission.socket
 	install -Dm0644 exim.logrotate "$pkgdir/etc/logrotate.d/exim"
 	install -Dm0644 exim.sysusers "$pkgdir/usr/lib/sysusers.d/exim.conf"
 	install -Dm0644 exim.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/exim.conf"
