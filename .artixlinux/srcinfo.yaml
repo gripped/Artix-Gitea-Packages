@@ -1,9 +1,9 @@
 ---
-version: 147.0.0-1
+version: 147.0-1
 pkgbase:
   name: librewolf
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom.
-  pkgver: 147.0.0
+  pkgver: 147.0
   pkgrel: 1
   url: https://librewolf.net/
   install: librewolf.install

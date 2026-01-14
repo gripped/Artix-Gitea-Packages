@@ -2,7 +2,8 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=147.0.0
+pkgver=147.0
+_pkgver=147.0.0
 pkgrel=1
 _pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
