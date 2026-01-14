@@ -1,0 +1,37 @@
+---
+version: 0.3.4-1
+pkgbase:
+  name: msgraph
+  pkgdesc: A shared library for accessing MS Graph API
+  pkgver: 0.3.4
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/msgraph
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - gobject-introspection
+    - meson
+    - uhttpmock
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - json-glib
+    - libgoa
+    - libsoup3
+  source:
+    - git+https://gitlab.gnome.org/GNOME/msgraph.git#tag=0.3.4
+  b2sums:
+    - 679092f34701b0f44a38f17fad629cd9e7efad98dec8c888d058759f066fae06cb49cd2c39f205e5b1e2fb81f3b274dd158462a22d80cc2acd0c0f91e6c89b16
+pkgname:
+  - name: msgraph
+    provides:
+      - libmsgraph-1.so
+  - name: msgraph-docs
+    pkgdesc: A shared library for accessing MS Graph API (documentation)
+    depends: []
+# generated with artixpkg 0.37.5-1-any
