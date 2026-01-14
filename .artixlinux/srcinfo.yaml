@@ -1,10 +1,10 @@
 ---
-version: 3.12.1-1
+version: 3.12.1-1.1
 pkgbase:
   name: gdal
   pkgdesc: A translator library for raster and vector geospatial data formats
   pkgver: 3.12.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://gdal.org/
   changelog: gdal.changelog
   arch:
@@ -117,4 +117,4 @@ pkgname:
     depends:
       - gdal=3.12.1
       - python-numpy
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
