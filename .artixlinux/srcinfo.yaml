@@ -1,10 +1,10 @@
 ---
-version: 0.4.66-1
+version: 0.4.66-2
 pkgbase:
   name: gegl
   pkgdesc: Graph based image processing framework
   pkgver: 0.4.66
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gegl.org/
   arch:
     - x86_64
@@ -53,4 +53,4 @@ pkgbase:
     - 607e0744a0c8df6fc7d96189520dc9b2f8711bddc757b3ae4bd94a53a7d1238d
 pkgname:
   - name: gegl
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
