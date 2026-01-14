@@ -1,41 +1,73 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=fvwm3
-pkgver=1.1.3
-pkgrel=1.3
-pkgdesc="A highly customizable virtual desktop window manager with small memory footprint."
-arch=('x86_64')
-url="https://www.fvwm.org"
-license=('GPL' 'custom')
-depends=('x11win-server' 'xorg-xauth' 'xorg-xinit' 'libxcursor' 'libevent' 'libx11' 'libxft' 
-         'libxrender' 'libxt' 'python-xdg' 'libxrandr' 'libxpm' 'imagemagick'
-         'fontconfig' 'librsvg' 'libxkbcommon' 'libxslt')
-makedepends=('meson' 'cmake' 'go' 'xtrans' 'asciidoctor')
-optdepends=('asciidoctor: An implementation of AsciiDoc in Ruby'
-            'fribidi: A Free Implementation of the Unicode Bidirectional Algorithm'
-            'libxi: X11 Input extension library'
-            'sharutils: Makes so-called shell archives out of many files')
-options=('!emptydirs' '!makeflags')
-source=("https://github.com/fvwmorg/${pkgname}/archive/refs/tags/${pkgver}.tar.gz"
-        "fvwm3.desktop")
-sha256sums=('60080776f3eac070c6b2bc8504fde7d9bad9531bf0bc32755871fdf4cd86f134'
-            'e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db')
+pkgver=1.1.4
+pkgrel=1
+pkgdesc='Virtual window manager for the X windows system, originally derived from twm'
+arch=(x86_64)
+url='https://www.fvwm.org/'
+license=(GPL-2.0-or-later)
+depends=(
+  bash
+  cairo
+  fontconfig
+  fribidi
+  glib2
+  glibc
+  libevent
+  libice
+  libpng
+  librsvg
+  libsm
+  libx11
+  libxcursor
+  libxext
+  libxfixes
+  libxft
+  libxpm
+  libxrandr
+  libxrender
+  perl
+  python
+  python-pyxdg
+)
+makedepends=(
+  asciidoctor
+  git
+  go
+  libxkbcommon
+  meson
+  xtrans
+)
+optdepends=(
+  'dmenu: Default run command'
+  'stalonetray: System tray support'
+  'xterm: Default terminal emulator'
+)
+source=("git+https://github.com/fvwmorg/fvwm3.git#tag=$pkgver")
+b2sums=(8878d4636d0fc683a80bff7521a5fa82b2e6c001f5032ebc811763dd45187fad45c84db10031f3a09a3cfb11e4e5157031f2f610ceea70c1dd475ed42d2362bb)
+
+prepare() {
+  cd $pkgname/bin/FvwmPrompt
+  export GOPATH="$srcdir"
+  go mod download -modcacherw
+}
 
 build() {
-  artix-meson ${pkgname}-${pkgver} build \
-                                     -Dbidi=disabled \
-                                     -Dmandoc=true \
-                                     -Dgolang=enabled \
-                                     --prefix=/usr \
-                                     --libexecdir=/usr/lib
-  meson compile -C build  
+  export CGO_CPPFLAGS="$CPPFLAGS"
+  export CGO_CFLAGS="$CFLAGS"
+  export CGO_CXXFLAGS="$CXXFLAGS"
+  export CGO_LDFLAGS="$LDFLAGS"
+  export GOPATH="$srcdir"
+  export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=readonly -modcacherw"
+
+  artix-meson $pkgname build \
+    -D mandoc=true
+  meson compile -C build
 }
 
 package() {
-  DESTDIR="${pkgdir}" meson install -C build
-  cd "${pkgname}-${pkgver}"
-  install -d "${pkgdir}/usr/share/doc/fvwm3"
-  install -D -m644 ../fvwm3.desktop "${pkgdir}/usr/share/xsessions/fvwm3.desktop"
-  install -D -m644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" $pkgname/COPYING
 }
-

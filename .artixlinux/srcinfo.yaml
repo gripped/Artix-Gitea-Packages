@@ -1,54 +1,53 @@
 ---
-version: 1.1.3-1.3
+version: 1.1.4-1
 pkgbase:
   name: fvwm3
-  pkgdesc: A highly customizable virtual desktop window manager with small memory footprint.
-  pkgver: 1.1.3
-  pkgrel: 1.3
-  url: https://www.fvwm.org
+  pkgdesc: Virtual window manager for the X windows system, originally derived from twm
+  pkgver: 1.1.4
+  pkgrel: 1
+  url: https://www.fvwm.org/
   arch:
     - x86_64
   license:
-    - GPL
-    - custom
+    - GPL-2.0-or-later
   makedepends:
-    - meson
-    - cmake
-    - go
-    - xtrans
     - asciidoctor
-  depends:
-    - x11win-server
-    - xorg-xauth
-    - xorg-xinit
-    - libxcursor
-    - libevent
-    - libx11
-    - libxft
-    - libxrender
-    - libxt
-    - python-xdg
-    - libxrandr
-    - libxpm
-    - imagemagick
-    - fontconfig
-    - librsvg
+    - git
+    - go
     - libxkbcommon
-    - libxslt
+    - meson
+    - xtrans
+  depends:
+    - bash
+    - cairo
+    - fontconfig
+    - fribidi
+    - glib2
+    - glibc
+    - libevent
+    - libice
+    - libpng
+    - librsvg
+    - libsm
+    - libx11
+    - libxcursor
+    - libxext
+    - libxfixes
+    - libxft
+    - libxpm
+    - libxrandr
+    - libxrender
+    - perl
+    - python
+    - python-pyxdg
   optdepends:
-    - 'asciidoctor: An implementation of AsciiDoc in Ruby'
-    - 'fribidi: A Free Implementation of the Unicode Bidirectional Algorithm'
-    - 'libxi: X11 Input extension library'
-    - 'sharutils: Makes so-called shell archives out of many files'
-  options:
-    - '!emptydirs'
-    - '!makeflags'
+    - 'dmenu: Default run command'
+    - 'stalonetray: System tray support'
+    - 'xterm: Default terminal emulator'
   source:
-    - https://github.com/fvwmorg/fvwm3/archive/refs/tags/1.1.3.tar.gz
-    - fvwm3.desktop
-  sha256sums:
-    - 60080776f3eac070c6b2bc8504fde7d9bad9531bf0bc32755871fdf4cd86f134
-    - e18c21b37219328309ac97b0026778299fc5db8d4aec3a4610287d92cec260db
+    - git+https://github.com/fvwmorg/fvwm3.git#tag=1.1.4
+  b2sums:
+    - 8878d4636d0fc683a80bff7521a5fa82b2e6c001f5032ebc811763dd45187fad45c84db10031f3a09a3cfb11e4e5157031f2f610ceea70c1dd475ed42d2362bb
 pkgname:
   - name: fvwm3
 # generated with artixpkg 0.37.4-1-any
