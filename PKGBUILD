@@ -2,7 +2,7 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-pkgver=146.0.1
+pkgver=147.0.0
 pkgrel=1
 _pkgrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
@@ -87,15 +87,19 @@ options=(
 
 install='librewolf.install'
 source=(
-  https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${_pkgrel}.source.tar.gz
+  #https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${pkgver}-${pkgrel}/librewolf-${pkgver}-${_pkgrel}.source.tar.gz
+  #https://codeberg.org/api/packages/librewolf/generic/librewolf-source/$pkgver-1/librewolf-$pkgver-1.source.tar.gz
+https://codeberg.org/api/packages/librewolf/generic/librewolf-source/147.0-1/librewolf-147.0-1.source.tar.gz
   # {,.sig} sig files are currently broken, it seems
   $pkgname.desktop
   "default192x192.png"
+  allow_dark.patch
 )
 
-sha256sums=('f872b12327543e1e454f9a50be9a7675450aed3e04cc87e1a8c7fb4f235c2bf7'
+sha256sums=('e55c0dd91cf2154e7696d83683a865c0c614eff010965b1248b249f5f050d315'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
-            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
+            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
+            'a3cdb88e58fca72018f1443fb935cda3cc5ac5394e7d327664060dfc00e3b54d')
 
 validpgpkeys=('034F7776EF5E0C613D2F7934D29FBD5F93C0CFC3') # maltej(?)
 
@@ -106,6 +110,8 @@ _build_profiled_x86_64=true
 prepare() {
   mkdir -p mozbuild
   cd librewolf-$pkgver-$_pkgrel
+
+  patch -p1 -i ../allow_dark.patch
 
   mv mozconfig ../mozconfig
 

@@ -1,0 +1,58 @@
+diff -ru a/browser/components/preferences/main.js b/browser/components/preferences/main.js
+--- a/browser/components/preferences/main.js
++++ b/browser/components/preferences/main.js
+@@ -534,7 +534,8 @@
+       document.getElementById("web-appearance-rfp-warning")?.remove();
+       const chooser = document.getElementById("web-appearance-chooser");
+       const container = document.getElementById("webAppearanceGroup");
+-      const rfp = Services.prefs.getBoolPref("privacy.resistFingerprinting", false);
++      const rfp = Services.prefs.getBoolPref("privacy.resistFingerprinting", false) &&
++      	!Services.prefs.getBoolPref("privacy.override_rfp_for_color_scheme", false);
+ 
+       if (chooser) {
+         chooser.style.opacity = rfp ? "0.3" : "1";
+@@ -568,6 +569,7 @@
+       },
+     };
+     Services.prefs.addObserver("privacy.resistFingerprinting", prefObserver);
++    Services.prefs.addObserver("privacy.override_rfp_for_color_scheme", prefObserver);
+ 
+     const ensurePaneReady = cb => {
+       const id = "webAppearanceGroup";
+@@ -589,6 +591,7 @@
+     return () => {
+       FORCED_COLORS_QUERY.removeEventListener("change", emitChange);
+       Services.prefs.removeObserver("privacy.resistFingerprinting", prefObserver);
++      Services.prefs.removeObserver("privacy.override_rfp_for_color_scheme", prefObserver);
+     };
+   },
+   visible: () => {
+diff -ru a/dom/base/Document.cpp b/dom/base/Document.cpp
+--- a/dom/base/Document.cpp
++++ b/dom/base/Document.cpp
+@@ -20470,7 +20470,8 @@
+ 
+ ColorScheme Document::PreferredColorScheme(IgnoreRFP aIgnoreRFP) const {
+   if (ShouldResistFingerprinting(RFPTarget::CSSPrefersColorScheme) &&
+-      aIgnoreRFP == IgnoreRFP::No) {
++      aIgnoreRFP == IgnoreRFP::No &&
++      !StaticPrefs::privacy_override_rfp_for_color_scheme()) {
+     return ColorScheme::Light;
+   }
+ 
+diff -ru a/modules/libpref/init/StaticPrefList.yaml b/modules/libpref/init/StaticPrefList.yaml
+--- a/modules/libpref/init/StaticPrefList.yaml
++++ b/modules/libpref/init/StaticPrefList.yaml
+@@ -16126,6 +16126,12 @@
+   value: false
+   mirror: always
+ 
++# Allows overriding RFP for only the dark/light pref
++- name: privacy.override_rfp_for_color_scheme
++  type: bool
++  value: false
++  mirror: always
++
+ # Enforce tracking protection in all modes.
+ - name: privacy.trackingprotection.enabled
+   type: bool
