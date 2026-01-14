@@ -8,7 +8,7 @@ arch=(x86_64)
 license=(GPL-2.1)
 url='https://www.waterfox.net/'
 source=("$pkgname-$pkgver.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/$pkgver.tar.gz"
-	"l10n.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main"
+	"l10n-$pkgver.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main"
 	"$pkgname.desktop"
 	policies.json
 	remove-organization-policy-banner.patch

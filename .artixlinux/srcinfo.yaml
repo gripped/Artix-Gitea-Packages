@@ -74,7 +74,7 @@ pkgbase:
     - '!debug'
   source:
     - waterfox-6.6.8.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.6.8.tar.gz
-    - l10n.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main
+    - l10n-6.6.8.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main
     - waterfox.desktop
     - policies.json
     - remove-organization-policy-banner.patch
