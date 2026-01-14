@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.22.0-1
+    version: 0.22.1-1
     packages:
-      - xonsh-0.22.0-1-any.pkg.tar.zst
+      - xonsh-0.22.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 0.20.0-2
