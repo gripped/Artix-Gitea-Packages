@@ -5,13 +5,9 @@
 : ${_build_profiled_xvfb:=true}
 
 pkgname=librewolf
-_pkgname=LibreWolf
-epoch=1
-pkgver=147.0.0_1
-_fixedfirefoxver="${pkgver%_*}" # Version of Firefox this LibreWolf version is based on, but the Firefox patch number is always included
-_librewolfver="${pkgver#*_}"
-_firefoxver="${_fixedfirefoxver%.0}" # Removes ".0" from the end. For "136.0.0" this will result in "136.0" but for "136.0.1" won't do anything.
+pkgver=147.0
 pkgrel=1
+_lwrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
 arch=(x86_64 aarch64)
@@ -107,7 +103,7 @@ options=(
 
 install='librewolf.install'
 source=(
-  https://codeberg.org/api/packages/librewolf/generic/librewolf-source/$_firefoxver-$_librewolfver/librewolf-$_firefoxver-$_librewolfver.source.tar.gz{,.sig}
+  https://codeberg.org/api/packages/$pkgname/generic/$pkgname-source/$pkgver-$_lwrel/$pkgname-$pkgver-$_lwrel.source.tar.gz{,.sig}
   $pkgname.desktop
   "default192x192.png"
   allow_dark.patch
