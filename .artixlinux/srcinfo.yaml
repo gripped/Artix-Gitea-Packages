@@ -1,9 +1,9 @@
 ---
-version: 6.5.4-1
+version: 6.5.5-1
 pkgbase:
   name: qqc2-breeze-style
   pkgdesc: Applications useful for Plasma development
-  pkgver: 6.5.4
+  pkgver: 6.5.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -25,15 +25,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.5.4/qqc2-breeze-style-6.5.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.4/qqc2-breeze-style-6.5.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.5/qqc2-breeze-style-6.5.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.5/qqc2-breeze-style-6.5.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - a936699c5658e11737746883177e29c71d0f0cda91b0a5ae499e1fbf92df7c0f
+    - 1ce7b641570f7111d751b54400e80832e0c3122d3cb6a4c2a01b16c2ed71b5af
     - SKIP
 pkgname:
   - name: qqc2-breeze-style
