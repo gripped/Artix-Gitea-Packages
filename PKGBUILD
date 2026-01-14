@@ -5,7 +5,7 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=dnsmasq
-pkgver=2.91
+pkgver=2.92
 pkgrel=1
 pkgdesc='Lightweight, easy to configure DNS forwarder and DHCP server'
 url='http://www.thekelleys.org.uk/dnsmasq/doc.html'
@@ -16,8 +16,8 @@ depends=('glibc' 'gmp' 'libidn2' 'libidn2.so' 'libdbus' 'libdbus-1.so' 'nftables
 backup=('etc/dnsmasq.conf')
 validpgpkeys=('D6EACBD6EE46B834248D111215CDDA6AE19135A2') # Simon Kelley <simon@thekelleys.org.uk>
 source=("http://www.thekelleys.org.uk/$pkgname/$pkgname-$pkgver.tar.xz"{,.asc}
-        'dnsmasq-sysusers.conf')
-sha256sums=('f622682848b33677adb2b6ad08264618a2ae0a01da486a93fd8cd91186b3d153'
+        'dnsmasq.sysusers')
+sha256sums=('4bf50c2c1018f9fbc26037df51b90ecea0cb73d46162846763b92df0d6c3a458'
             'SKIP'
             'e805d41b291dfe6988d6896d311ff2fa62d8291067572f3db1059b0217f31aff')
 
@@ -56,7 +56,7 @@ package() {
 
   install -Dm0644 "dbus/dnsmasq.conf" "$pkgdir"/usr/share/dbus-1/system.d/dnsmasq.conf
   install -Dm0644 "dnsmasq.conf.example" "$pkgdir"/etc/dnsmasq.conf
-  install -Dm0644 "$srcdir/dnsmasq-sysusers.conf" "$pkgdir"/usr/lib/sysusers.d/dnsmasq.conf
+  install -Dm0644 "$srcdir/dnsmasq.sysusers" "$pkgdir"/usr/lib/sysusers.d/dnsmasq.conf
 
   # DNSSEC setup
   sed -i 's,%%PREFIX%%,/usr,' "$pkgdir"/etc/dnsmasq.conf
