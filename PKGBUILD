@@ -10,7 +10,7 @@ pkgname=(
   vhba-module-dkms
 )
 pkgver=20250329
-pkgrel=56
+pkgrel=59
 pkgdesc="Kernel module that emulates SCSI devices"
 url="https://cdemu.sourceforge.io/"
 arch=(x86_64)
