@@ -53,10 +53,10 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.14.0.rt3.artix1-5
+    version: 6.14.0.rt3.artix1-6
     packages:
-      - linux-rt-6.14.0.rt3.artix1-5-x86_64.pkg.tar.zst
-      - linux-rt-headers-6.14.0.rt3.artix1-5-x86_64.pkg.tar.zst
-      - linux-rt-docs-6.14.0.rt3.artix1-5-x86_64.pkg.tar.zst
+      - linux-rt-6.14.0.rt3.artix1-6-x86_64.pkg.tar.zst
+      - linux-rt-headers-6.14.0.rt3.artix1-6-x86_64.pkg.tar.zst
+      - linux-rt-docs-6.14.0.rt3.artix1-6-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

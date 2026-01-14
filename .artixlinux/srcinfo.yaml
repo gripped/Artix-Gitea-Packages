@@ -1,10 +1,10 @@
 ---
-version: 6.14.0.rt3.artix1-5
+version: 6.14.0.rt3.artix1-6
 pkgbase:
   name: linux-rt
   pkgdesc: Linux RT
   pkgver: 6.14.0.rt3.artix1
-  pkgrel: 5
+  pkgrel: 6
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt
   arch:
     - x86_64
@@ -175,4 +175,4 @@ pkgname:
       - GPL-2.0-or-later OR X11
       - LGPL-2.1-only OR BSD-2-Clause
       - MIT
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
