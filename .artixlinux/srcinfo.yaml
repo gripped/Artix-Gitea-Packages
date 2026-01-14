@@ -1,9 +1,9 @@
 ---
-version: 6.5.4-1
+version: 6.5.5-1
 pkgbase:
   name: plasma-activities-stats
   pkgdesc: A library for accessing the usage data collected by the activities system
-  pkgver: 6.5.4
+  pkgver: 6.5.5
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -26,15 +26,15 @@ pkgbase:
   replaces:
     - kactivities-stats
   source:
-    - https://download.kde.org/stable/plasma/6.5.4/plasma-activities-stats-6.5.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.4/plasma-activities-stats-6.5.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.5.5/plasma-activities-stats-6.5.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.5.5/plasma-activities-stats-6.5.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - df12623a30f4bb0eb41fceccb4bea538172ef09b71d6ab40a1b443afa8dfbcca
+    - 7f281b6840d33f934a4252fd74846913321214472fe431e5432b891f8d212a10
     - SKIP
 pkgname:
   - name: plasma-activities-stats
