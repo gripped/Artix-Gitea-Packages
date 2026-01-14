@@ -55,7 +55,7 @@ depends=(
 )
 makedepends=(
   unzip zip diffutils python nasm mesa libpulse libice libsm
-  rust clang llvm cbindgen nodejs lld
+  rustp clang llvm cbindgen nodejs lld
   gawk perl findutils libotr wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi
 )
 options=(!emptydirs !makeflags !lto)
@@ -111,6 +111,8 @@ prepare() {
 }
 
 build() {
+  export RUSTUP_TOOLCHAIN=1.88.0
+  rustup default stable
   cd $pkgname-$pkgver
   if [[ -n "${SOURCE_DATE_EPOCH}" ]]; then
     export MOZ_BUILD_DATE=$(date --date "@${SOURCE_DATE_EPOCH}" "+%Y%m%d%H%M%S")

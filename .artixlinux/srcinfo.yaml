@@ -22,7 +22,7 @@ pkgbase:
     - libpulse
     - libice
     - libsm
-    - rust
+    - rustp
     - clang
     - llvm
     - cbindgen
