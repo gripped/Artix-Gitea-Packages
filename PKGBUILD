@@ -120,7 +120,7 @@ validpgpkeys=('662E3CDD6FE329002D0CA5BB40339DD82B12EF16') # https://rpm.librewol
 
 prepare() {
   mkdir -p mozbuild
-  cd librewolf-$_firefoxver-$_librewolfver
+  cd librewolf-$pkgver-$_lwrel
 
   patch -p1 -i ../allow_dark.patch
 
@@ -198,7 +198,7 @@ fi
 
 
 build() {
-  cd librewolf-$_firefoxver-$_librewolfver
+  cd librewolf-$pkgver-$_lwrel
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -314,7 +314,7 @@ END
 }
 
 package() {
-  cd librewolf-$_firefoxver-$_librewolfver
+  cd librewolf-$pkgver-$_lwrel
   DESTDIR="$pkgdir" ./mach install
 
   local vendorjs="$pkgdir/usr/lib/$pkgname/browser/defaults/preferences/vendor.js"
