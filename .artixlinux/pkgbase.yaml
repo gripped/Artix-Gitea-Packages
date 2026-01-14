@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 7.1.2.12-2
+    packages:
+      - imagemagick-7.1.2.12-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
