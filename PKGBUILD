@@ -77,7 +77,7 @@ prepare() {
         mkdir -p mozbuild
         cd "$pkgname-$pkgver"
 
-	bsdtar xvf ../l10n.zip --strip-components=1 -C waterfox/browser/locales
+	bsdtar xvf ../l10n-$pkgver.zip --strip-components=1 -C waterfox/browser/locales
         patch -Np1 -i ../remove-organization-policy-banner.patch
         patch -Np1 -i ../9002.enable_reader_mode_hotkey.patch
         patch -Np1 -i ../9003.rebind_screenshot_key_to_ctrl_alt_s.patch	
