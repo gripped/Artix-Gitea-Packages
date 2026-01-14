@@ -1,10 +1,10 @@
 ---
-version: 2.2.1-3
+version: 2.2.2-1
 pkgbase:
   name: apache-orc
   pkgdesc: Columnar storage for Hadoop workloads.
-  pkgver: 2.2.1
-  pkgrel: 3
+  pkgver: 2.2.2
+  pkgrel: 1
   url: https://orc.apache.org
   arch:
     - x86_64
@@ -25,16 +25,16 @@ pkgbase:
     - zlib
     - zstd
   source:
-    - apache-orc::git+https://github.com/apache/orc.git#tag=v2.2.1
+    - apache-orc::git+https://github.com/apache/orc.git#tag=v2.2.2
     - fix-timezone.patch
     - fix-cmake-modules.patch
   validpgpkeys:
     - F28C9C925C188C35E345614DEDA00CE834F0FC5C
     - AA94E2A8F0A0B7167305C5232D9F6201DECDFA29
   sha256sums:
-    - 0886c1f28c6b935c98f411058789869de49e01d3acb85a91767b58860ae454c7
+    - d463313339da0523239303a0b74e432d9e8b942935093ebad7cab0147503cd76
     - d2493cef910f73b01a8ea853470e8c5497e0ef33bb3d17f8eb8ffef7e52f00ac
     - 19134d5ad86dd76c8b65828dda195f113591c944d8be7298fa980e781595e7d9
 pkgname:
   - name: apache-orc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
