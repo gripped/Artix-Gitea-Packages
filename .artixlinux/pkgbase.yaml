@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.9.2-1
+    version: 0.9.3-1
     packages:
-      - libfyaml-0.9.2-1-x86_64.pkg.tar.zst
+      - libfyaml-0.9.3-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
