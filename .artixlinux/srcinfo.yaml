@@ -1,10 +1,10 @@
 ---
-version: 6.17.13.hardened1-1
+version: 6.17.13.hardened1-2
 pkgbase:
   name: linux-hardened
   pkgdesc: Security-Hardened Linux
   pkgver: 6.17.13.hardened1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/anthraxx/linux-hardened
   arch:
     - x86_64
@@ -77,4 +77,4 @@ pkgname:
       - pahole
   - name: linux-hardened-docs
     pkgdesc: Documentation for the Security-Hardened Linux kernel
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
