@@ -1,10 +1,10 @@
 ---
-version: 6.6.87.rt54.artix1-4
+version: 6.6.87.rt54.artix1-5
 pkgbase:
   name: linux-rt-lts
   pkgdesc: Linux RT LTS
   pkgver: 6.6.87.rt54.artix1
-  pkgrel: 4
+  pkgrel: 5
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts
   arch:
     - x86_64
@@ -176,4 +176,4 @@ pkgname:
       - GPL-2.0-or-later OR X11
       - LGPL-2.1-only OR BSD-2-Clause
       - MIT
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
