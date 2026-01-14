@@ -4,7 +4,7 @@
 
 pkgname=adios2
 pkgver=2.11.0
-pkgrel=3
+pkgrel=4
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
