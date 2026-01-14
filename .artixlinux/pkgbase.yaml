@@ -1,13 +1,5 @@
 ---
 team: world
-pkgbase:
-  name: b3sum
-  version: 1.8.2-1
-  arch:
-    - x86_64
-  pkgname:
-    - b3sum
-    - libblake3
 actions:
   addRepo: world
   removeRepo: null
@@ -20,38 +12,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.8.2-1
+    version: 1.8.3-1
     packages:
-      - b3sum-1.8.2-1-x86_64.pkg.tar.zst
-      - libblake3-1.8.2-1-x86_64.pkg.tar.zst
+      - b3sum-1.8.3-1-x86_64.pkg.tar.zst
+      - libblake3-1.8.3-1-x86_64.pkg.tar.zst
+    debug:
+      - b3sum-debug-1.8.3-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
