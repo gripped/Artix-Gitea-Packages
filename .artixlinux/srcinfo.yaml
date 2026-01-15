@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-2
+version: 1.1.0-3
 pkgbase:
   name: python-py7zr
   pkgdesc: Pure python 7-zip library
   pkgver: 1.1.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/miurahr/py7zr
   arch:
     - any
@@ -32,7 +32,6 @@ pkgbase:
     - python-pybcj
     - python-pycryptodomex
     - python-pyppmd
-    - python-pyzstd
     - python-texttable
     - python-inflate64
   source:
