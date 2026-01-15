@@ -1,10 +1,10 @@
 ---
-version: 25.12.1-1
+version: 25.12.1-2
 pkgbase:
   name: kopeninghours
   pkgdesc: Library for parsing and evaluating OSM opening hours expressions
   pkgver: 25.12.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kde.org
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kopeninghours
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
