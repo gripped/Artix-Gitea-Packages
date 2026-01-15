@@ -1,0 +1,36 @@
+---
+version: 2.1.1-3
+pkgbase:
+  name: libcupsfilters
+  pkgdesc: OpenPrinting CUPS Filters - contains all the code of the filters of the former cups-filters package as library functions
+  pkgver: 2.1.1
+  pkgrel: 3
+  url: https://github.com/OpenPrinting/libcupsfilters
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 WITH LLVM-exception
+  checkdepends:
+    - ttf-dejavu
+  makedepends:
+    - ghostscript
+  depends:
+    - libcups
+    - libexif
+    - qpdf
+    - poppler
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - lcms2
+    - fontconfig
+    - glibc
+    - gcc-libs
+    - dbus
+  source:
+    - https://github.com/OpenPrinting/libcupsfilters/releases/download/2.1.1/libcupsfilters-2.1.1.tar.xz
+  sha256sums:
+    - 6c303e36cfde05a6c88fb940c62b6a18e7cdbfb91f077733ebc98f104925ce36
+pkgname:
+  - name: libcupsfilters
+# generated with artixpkg 0.37.4-1-any
