@@ -1,5 +1,3 @@
-diff --git a/pygraphviz/graphviz_wrap.c b/pygraphviz/graphviz_wrap.c
-index cb06da7..5f66e42 100644
 --- a/pygraphviz/graphviz_wrap.c
 +++ b/pygraphviz/graphviz_wrap.c
 @@ -5447,7 +5447,7 @@ SWIGINTERN PyObject *_wrap_gvRenderData(PyObject *self, PyObject *args) {
