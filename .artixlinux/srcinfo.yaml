@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.1-1
+version: 1:1.0.2-1
 pkgbase:
   name: cosmic-settings-daemon
   pkgdesc: Cosmic settings daemon
-  pkgver: 1.0.1
+  pkgver: 1.0.2
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-settings-daemon
@@ -35,7 +35,7 @@ pkgbase:
   optdepends:
     - 'pulseaudio-alsa: Media keys support'
   source:
-    - git+https://github.com/pop-os/cosmic-settings-daemon.git#tag=epoch-1.0.1
+    - git+https://github.com/pop-os/cosmic-settings-daemon.git#tag=epoch-1.0.2
     - cosmic-settings-daemon-lto.patch
   b2sums:
     - 5f8662fdd57208beedf2cfbb550f5923b8547fbd87bc265e4e971f6959c3d9e9ccd835ff4b0e4ee73759c00ab188b73a377b9a3a591b5ee5bff1a30fc34e103c
