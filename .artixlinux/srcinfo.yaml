@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.1-1
+version: 1:1.0.2-1
 pkgbase:
   name: cosmic-randr
   pkgdesc: Library and utility for displaying and configuring Wayland outputs
-  pkgver: 1.0.1
+  pkgver: 1.0.2
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-randr
@@ -23,7 +23,7 @@ pkgbase:
     - glibc
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-randr.git#tag=epoch-1.0.1
+    - git+https://github.com/pop-os/cosmic-randr.git#tag=epoch-1.0.2
     - cosmic-randr-lto.patch
   b2sums:
     - e43031171baefc7c4dfbe64c26e8128d3293b018f2c7b57f6d96b623f7c2d2b175394987a81b7e7e215888e057ac51445e04aaf614e069082135fca5452d3926
