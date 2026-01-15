@@ -1,9 +1,9 @@
 ---
-version: 49.0-1
+version: 49.1-1
 pkgbase:
   name: gnome-text-editor
   pkgdesc: A simple text editor for the GNOME desktop
-  pkgver: 49.0
+  pkgver: 49.1
   pkgrel: 1
   url: https://apps.gnome.org/TextEditor/
   arch:
@@ -19,7 +19,6 @@ pkgbase:
     - meson
     - yelp-tools
   depends:
-    - cairo
     - dconf
     - editorconfig-core-c
     - gcc-libs
@@ -32,9 +31,9 @@ pkgbase:
     - libspelling
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-text-editor.git#tag=49.0
+    - git+https://gitlab.gnome.org/GNOME/gnome-text-editor.git#tag=49.1
   b2sums:
-    - dae452df076fa14c436d18a16c9c276d04ee3737f46b86c48f1de8d15c6d5a7d8e92630f865530e6bfe7f1c9f68970bf2825b65ba90490ea2b7238e819ceb9d9
+    - 86701f4ce868ac5f756afbb028c1414aac42454369bf2ec3e850272eedaac7891ab8c33d131c2f47eca3c6136c890087c9d57e610d4cf0d17f449af8564d2fd9
 pkgname:
   - name: gnome-text-editor
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
