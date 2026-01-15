@@ -1,10 +1,10 @@
 ---
-version: 0.5.3-4
+version: 0.5.4-1
 pkgbase:
   name: python-jupyter-server-terminals
   pkgdesc: A Jupyter Server extension providing terminals
-  pkgver: 0.5.3
-  pkgrel: 4
+  pkgver: 0.5.4
+  pkgrel: 1
   url: https://github.com/jupyter-server/jupyter_server_terminals
   arch:
     - any
@@ -25,9 +25,9 @@ pkgbase:
     - python-tornado
     - python-traitlets
   source:
-    - https://github.com/jupyter-server/jupyter_server_terminals/releases/download/v0.5.3/jupyter_server_terminals-0.5.3.tar.gz
+    - https://github.com/jupyter-server/jupyter_server_terminals/releases/download/v0.5.4/jupyter_server_terminals-0.5.4.tar.gz
   sha256sums:
-    - 5ae0295167220e9ace0edcfdb212afd2b01ee8d179fe6f23c899590e9b8a5269
+    - bbda128ed41d0be9020349f9f1f2a4ab9952a73ed5f5ac9f1419794761fb87f5
 pkgname:
   - name: python-jupyter-server-terminals
 # generated with artixpkg 0.37.4-1-any
