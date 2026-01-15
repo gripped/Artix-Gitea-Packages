@@ -6,8 +6,8 @@
 # Contributor: Giacomo Rizzo <alt@free-os.it>
 
 pkgname=gpsd
-pkgver=3.27.2
-pkgrel=2
+pkgver=3.27.5
+pkgrel=1
 pkgdesc="GPS daemon and library to support USB/serial GPS devices"
 arch=('x86_64')
 url="https://gpsd.gitlab.io/gpsd/"
@@ -30,7 +30,7 @@ makedepends=('scons' 'docbook-xsl' 'qt5-base' 'python-gobject' 'python-cairo' 'p
 backup=('etc/default/gpsd')
 source=(https://download-mirror.savannah.gnu.org/releases/$pkgname/$pkgname-$pkgver.tar.gz
         $pkgname.conf)
-sha256sums=('ebb66ed92018b79cec88efb60e35a596925eef46502cf03d6ff0aea636ee7461'
+sha256sums=('409873f5048462ef1ac413a51ab35caa8b50b31be62b3347bee1cc2994e7c649'
             'dcfa71c4c730b486269995468bdcfa8e96bf3c282db1dadea9384d32015d277f')
 validpgpkeys=('EED4A0893DCC705DB309E202CCF29C7238522905'  # Gary E. Miller <gem@rellim.com>
               'DB239ACA177A35AFBC13F819DD3DD9BBA8F257E8') # Eric S. Raymond

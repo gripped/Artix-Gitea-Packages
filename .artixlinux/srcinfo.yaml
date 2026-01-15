@@ -1,10 +1,10 @@
 ---
-version: 3.27.2-2
+version: 3.27.5-1
 pkgbase:
   name: gpsd
   pkgdesc: GPS daemon and library to support USB/serial GPS devices
-  pkgver: 3.27.2
-  pkgrel: 2
+  pkgver: 3.27.5
+  pkgrel: 1
   url: https://gpsd.gitlab.io/gpsd/
   arch:
     - x86_64
@@ -38,14 +38,14 @@ pkgbase:
   backup:
     - etc/default/gpsd
   source:
-    - https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.2.tar.gz
+    - https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.5.tar.gz
     - gpsd.conf
   validpgpkeys:
     - EED4A0893DCC705DB309E202CCF29C7238522905
     - DB239ACA177A35AFBC13F819DD3DD9BBA8F257E8
   sha256sums:
-    - ebb66ed92018b79cec88efb60e35a596925eef46502cf03d6ff0aea636ee7461
+    - 409873f5048462ef1ac413a51ab35caa8b50b31be62b3347bee1cc2994e7c649
     - dcfa71c4c730b486269995468bdcfa8e96bf3c282db1dadea9384d32015d277f
 pkgname:
   - name: gpsd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
