@@ -18,6 +18,7 @@ source=(https://github.com/OpenPrinting/$pkgname/releases/download/$pkgver/$pkgn
 sha256sums=('39e71de3ce06762b342749f1dc7cba6817738f7bf4d322c1bb9ab10b8569ab80')
 
 build() {
+  CFLAGS+=" -Wno-incompatible-pointer-types -Wno-int-conversion"
   cd "$pkgname"-$pkgver
   ./configure --prefix=/usr  \
     --sysconfdir=/etc \
