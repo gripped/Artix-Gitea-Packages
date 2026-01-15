@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.1-1
+version: 1:1.0.2-1
 pkgbase:
   name: cosmic-terminal
   pkgdesc: Cosmic Terminal Emulator
-  pkgver: 1.0.1
+  pkgver: 1.0.2
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-term
@@ -25,7 +25,7 @@ pkgbase:
     - wayland
     - cosmic-icon-theme
   source:
-    - git+https://github.com/pop-os/cosmic-term.git#tag=epoch-1.0.1
+    - git+https://github.com/pop-os/cosmic-term.git#tag=epoch-1.0.2
     - cosmic-terminal-lto.patch
   b2sums:
     - ae854568db7bb6f2963da20d6fea4afe32b3eca8e551c7dd12d6f5529f0a4fcf183a2fc7c671efabe92564d7ecab6aeab7c56b5874e5c39065d33b9f5e0f8e38
