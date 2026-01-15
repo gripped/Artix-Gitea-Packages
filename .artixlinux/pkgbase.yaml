@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2:1.0.0-1
+    version: 2:1.0.1-1
     packages:
-      - cosmic-wallpapers-2:1.0.0-1-any.pkg.tar.zst
+      - cosmic-wallpapers-2:1.0.1-1-any.pkg.tar.zst
     debug: []
