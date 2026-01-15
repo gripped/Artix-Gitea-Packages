@@ -1,10 +1,10 @@
 ---
-version: 4:0.41.0-1
+version: 4:0.41.0-2
 pkgbase:
   name: go-tools
   pkgdesc: Developer tools for the Go programming language
   pkgver: 0.41.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 4
   url: https://golang.org/
   arch:
