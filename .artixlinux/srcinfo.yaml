@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.1-1
+version: 1:1.0.2-1
 pkgbase:
   name: cosmic-bg
   pkgdesc: COSMIC session service which applies backgrounds to displays
-  pkgver: 1.0.1
+  pkgver: 1.0.2
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-bg
@@ -26,7 +26,7 @@ pkgbase:
     - glibc
     - libxkbcommon
   source:
-    - git+https://github.com/pop-os/cosmic-bg.git#tag=epoch-1.0.1
+    - git+https://github.com/pop-os/cosmic-bg.git#tag=epoch-1.0.2
     - cosmic-bg-lto.patch
   b2sums:
     - 63d6681401215b628e18e54635da56a6af473fb6936e6bc60c3349fec630cacebbd9a9666e34a32137587cd08d1d13097536cdc6bbfbd3269129157e7eda3d2d
