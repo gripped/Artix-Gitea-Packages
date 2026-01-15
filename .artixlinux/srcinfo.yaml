@@ -29,4 +29,4 @@ pkgbase:
     - f0a3f82824d81e2db4c992fc41e91c53158898fbf0b342c0c857e5e3f02d081df3822035b9eb558fe12c48ce36e4123810adc11f9b85e60e76e7de7f35a56162
 pkgname:
   - name: cgns
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
