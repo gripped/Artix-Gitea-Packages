@@ -1,9 +1,9 @@
 ---
-version: 0.11.3-1
+version: 0.11.4-1
 pkgbase:
   name: aws-c-s3
   pkgdesc: C99 library implementation for communicating with the S3 service, designed for maximizing throughput on high bandwidth EC2 instances
-  pkgver: 0.11.3
+  pkgver: 0.11.4
   pkgrel: 1
   url: https://github.com/awslabs/aws-c-s3
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - aws-checksums
     - glibc
   source:
-    - aws-c-s3-0.11.3.tar.gz::https://github.com/awslabs/aws-c-s3/archive/v0.11.3.tar.gz
+    - aws-c-s3-0.11.4.tar.gz::https://github.com/awslabs/aws-c-s3/archive/v0.11.4.tar.gz
   sha256sums:
-    - b8350a10050015493345453167d619f1b407c4970fa3fe5aaaf2b42ab93b7b6b
+    - 4a2d34a92eafe66f0edfe2483ca4fb16c48b610bfc9cccb13b00108d587fe9c9
 pkgname:
   - name: aws-c-s3
 # generated with artixpkg 0.37.4-1-any
