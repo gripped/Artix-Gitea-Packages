@@ -1,10 +1,10 @@
 ---
-version: 1.10.1-4
+version: 1.10.1-5
 pkgbase:
   name: python-fiona
   pkgdesc: Read and write geographic data files
   pkgver: 1.10.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/Toblerity/Fiona
   arch:
     - x86_64
@@ -15,7 +15,10 @@ pkgbase:
     - python-boto3
     - python-pytz
     - python-shapely
+    - python-fsspec
+    - python-pyparsing
   makedepends:
+    - git
     - cython
     - python-build
     - python-installer
@@ -26,16 +29,16 @@ pkgbase:
     - python-attrs
     - python-certifi
     - python-click
-    - python-click-plugins
     - python-cligj
-    - python-munch
   optdepends:
     - 'python-shapely: fio-calc functionnality'
     - 'python-boto3: s3 support'
   source:
-    - https://github.com/Toblerity/Fiona/archive/1.10.1/python-fiona-1.10.1.tar.gz
-  sha256sums:
-    - 308e12c33d34141c2ff2ba94ebcc7c9226f5d17882a5b51ef064f0283d67dc88
+    - python-fiona::git+https://github.com/Toblerity/Fiona#tag=1.10.1
+  sha512sums:
+    - cec6105e0d5b34e395aec9aaeeb1c6bbcb73c2f91000732a1236b4dc1fdc7123ca25c9fe73acdd854a4dabf12f5a8edb7346242dfc1c3c9e6b89ebeccb621306
+  b2sums:
+    - 85984110635e0145d89a0f89412a0c46a154b0145dfc8b316ac43ac1587a82448a7708137eb84aeee92d0dc362ff882c62ac0a1ab8efb54cf6362bd55f577471
 pkgname:
   - name: python-fiona
 # generated with artixpkg 0.37.4-1-any
