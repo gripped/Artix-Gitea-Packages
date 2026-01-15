@@ -1,10 +1,10 @@
 ---
-version: 2025.11.3-2
+version: 2026.1.15-1
 pkgbase:
   name: python-regex
   pkgdesc: Alternative python regular expression module.
-  pkgver: 2025.11.3
-  pkgrel: 2
+  pkgver: 2026.1.15
+  pkgrel: 1
   url: https://github.com/mrabarnett/mrab-regex
   arch:
     - x86_64
@@ -20,11 +20,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://files.pythonhosted.org/packages/source/r/regex/regex-2025.11.3.tar.gz
+    - https://files.pythonhosted.org/packages/source/r/regex/regex-2026.1.15.tar.gz
   sha256sums:
-    - 1fedc720f9bb2494ce31a58a1631f9c82df6a09b49c19517ea5cc280b4541e01
+    - 164759aa25575cbc0651bef59a0b18353e54300d79ace8084c818ad8ac72b7d5
   b2sums:
-    - df6ddec6ab70f9119ecc780a5a69061cd19ed2067d8d5311712e2804b2d039988e243921366224c2e983cbbc4d4c38516839f7683b710e956a77e66d0ec1efc8
+    - c8e75bc8981dea96bc40e5599e0244407c03c0bd2e85789577f8b600e3c1526996abaaeb67c7d26e4f2e2f0db8531863a09951f21c1cb72d166c2df66621bd5b
 pkgname:
   - name: python-regex
 # generated with artixpkg 0.37.4-1-any
