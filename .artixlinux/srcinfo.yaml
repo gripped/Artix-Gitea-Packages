@@ -1,10 +1,10 @@
 ---
-version: 25.12.1-1
+version: 25.12.1-2
 pkgbase:
   name: kajongg
   pkgdesc: The ancient Chinese board game for 4 players
   pkgver: 25.12.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kajongg/
   arch:
     - any
@@ -38,4 +38,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kajongg
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
