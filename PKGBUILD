@@ -34,7 +34,7 @@ makedepends=(
 )
 provides=(librdkafka.so)
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('ac44ed450ccd2c4ab4cdeba70115e6f878d794d6df3e61c9f47902f766852058')
+sha256sums=('3bd351601d8ebcbc99b9a1316cae1b83b00edbcf9411c34287edf1791c507600')
 
 build() {
   cd $pkgname-$pkgver
