@@ -3,7 +3,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-osd
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 epoch=1
 pkgdesc='COSMIC On-Screen Display'
