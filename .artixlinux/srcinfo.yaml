@@ -1,10 +1,10 @@
 ---
-version: 6.5.2-3
+version: 6.5.2-4
 pkgbase:
   name: python-tornado
   pkgdesc: open source version of the scalable, non-blocking web server and tools
   pkgver: 6.5.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.tornadoweb.org/
   arch:
     - x86_64
@@ -24,7 +24,6 @@ pkgbase:
     - python
   optdepends:
     - 'python-pycurl: for tornado.curl_httpclient'
-    - 'python-pycares: an alternative non-blocking DNS resolver'
     - 'python-twisted: for tornado.platform.twisted'
   source:
     - python-tornado-6.5.2.tar.gz::https://github.com/tornadoweb/tornado/archive/v6.5.2.tar.gz
