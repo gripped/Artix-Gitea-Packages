@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.84.0-1
+    version: 7.85.0-1
     packages:
-      - signal-desktop-7.84.0-1-x86_64.pkg.tar.zst
+      - signal-desktop-7.85.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
