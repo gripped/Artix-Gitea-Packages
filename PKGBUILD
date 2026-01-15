@@ -4,7 +4,7 @@
 # Contributor: soloturn <soloturn@gmail.com>
 
 pkgname=cosmic-notifications
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 epoch=1
 pkgdesc='Layer Shell notifications daemon which integrates with COSMIC'
