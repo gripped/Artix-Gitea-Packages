@@ -1,3 +1,4 @@
+# Maintainer : Christian Hesse <mail@eworm.de>
 # Maintainer : Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Keshav Amburay <(the ddoott ridikulus ddoott rat) (aatt) (gemmaeiil) (ddoott) (ccoomm)>
@@ -5,13 +6,10 @@
 pkgname=grub
 pkgdesc='GNU GRand Unified Bootloader (2)'
 epoch=2
-_pkgver=2.14-rc1
+_pkgver=2.14
 _unifont_ver=17.0.03
-#pkgver=${_pkgver/-/}
-# the pkgver for git master is generated with:
-# git describe --abbrev=8 | sed 's|-rc|rc|;s|grub-||;s|-|.r|;s|-|.|'
-pkgver=2.14rc1.r54.g29f3131a
-pkgrel=2
+pkgver=${_pkgver/-/}
+pkgrel=1
 url='https://www.gnu.org/software/grub/'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
@@ -88,7 +86,7 @@ source=(
   grub.default
   sbat.csv
 )
-b2sums=('576ced94c759e6eecf8a35caff1375b5dbff62c2f956e29a3e035a138b0bbc1a6df22928b92207848045d7779300993f1252f2eaebee35f48c5a02a062742ef9'
+b2sums=('45cfac7487264e323522e58b87dd1bf70c5c5c87feaf3f70e20e4c484de94be8369bd011ab53ba72959ec9bc9c9159b3327e4965c9ae5a795b20a29fef9eacd1'
         'SKIP'
         'b824e469522adeb5780a2976f45b262c335fdfb142b638f915bdc309e932c7a0f7bfbdd8731cf84b5e19b5e0cae2a5ca1754a580e8dae7603f907f94bceec397'
         'SKIP'
@@ -99,13 +97,13 @@ b2sums=('576ced94c759e6eecf8a35caff1375b5dbff62c2f956e29a3e035a138b0bbc1a6df2292
         'e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a')
 
 _backports=(
-  # current git master for security fixes
-  "grub-${_pkgver}..29f3131a3632c70129a29d924fcb8ac98f08ee2b"
 )
 
 _reverts=(
   # configure: Check linker for --image-base support
   '1a5417f39a0ccefcdd5440f2a67f84d2d2e26960'
+  # configure: Print a more helpful error if autoconf-archive is not installed
+  'ac042f3f58d33ce9cd5ff61750f06da1a1d7b0eb'
 )
 
 prepare() {
@@ -145,9 +143,6 @@ prepare() {
 
   echo "Fix OS naming FS#33393..."
   sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
-
-  echo "Pull in latest language files..."
-  ./linguas.sh
 
   echo "Avoid problem with unifont during compile of grub..."
   # http://savannah.gnu.org/bugs/?40330 and https://bugs.archlinux.org/task/37847
