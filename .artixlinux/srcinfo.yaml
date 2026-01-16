@@ -1,9 +1,9 @@
 ---
-version: 1.19.0-1
+version: 1.20.0-1
 pkgbase:
   name: plasma-wayland-protocols
   pkgdesc: Plasma Specific Protocols for Wayland
-  pkgver: 1.19.0
+  pkgver: 1.20.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop
   arch:
@@ -14,16 +14,16 @@ pkgbase:
     - extra-cmake-modules
     - qt6-base
   source:
-    - https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.19.0.tar.xz
-    - https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.19.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.20.0.tar.xz
+    - https://download.kde.org/stable/plasma-wayland-protocols/plasma-wayland-protocols-1.20.0.tar.xz.sig
   validpgpkeys:
     - CA1B4E348D22755A67EF4E1A6A4F2C4CDC8BC77F
     - EC5516B514543DA145169FD12276F09AF4A790F4
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
   sha256sums:
-    - 45679fe7a63c414f2c81793a62528fae6ccee584b6965719d7f9fc6dd48ba846
+    - 9818bb1462211ce5982e670abf0d964eb11fe1d0c02a1c26084db30695a79d6a
     - SKIP
 pkgname:
   - name: plasma-wayland-protocols
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
