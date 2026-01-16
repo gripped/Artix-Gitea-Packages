@@ -1,10 +1,10 @@
 ---
-version: 4.2.1-1.1
+version: 4.2.1-2
 pkgbase:
   name: cmake
   pkgdesc: A cross-platform open-source make system
   pkgver: 4.2.1
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://www.cmake.org/
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - 56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7
 pkgname:
   - name: cmake
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
