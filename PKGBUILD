@@ -88,6 +88,7 @@ makedepends=(
   glib2-devel
   gobject-introspection
   gtk-doc
+  lua
   meson
   python-libsass
 )
