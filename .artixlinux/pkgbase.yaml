@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 25.2.1-1
+    version: 25.3.0-1
     packages:
-      - nodejs-25.2.1-1-x86_64.pkg.tar.zst
+      - nodejs-25.3.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
