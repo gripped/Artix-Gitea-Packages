@@ -3,8 +3,8 @@
 # Contributor: Adam Fontenot <fontenot@ucla.edu>
 
 pkgname=libheif
-pkgver=1.21.1
-pkgrel=3
+pkgver=1.21.2
+pkgrel=1
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
 url='https://github.com/strukturag/libheif'
@@ -37,7 +37,7 @@ optdepends=('libjpeg-turbo: for heif-dec and heif-enc'
             'rav1e: rav1e encoder'
             'svt-av1: svt-av1 encoder')
 source=(git+https://github.com/strukturag/libheif#tag=v$pkgver)
-sha256sums=('c65e12cbd8351faa11af579229d5bdb4dae610680f0a21f86c194dfed72d7123')
+sha256sums=('2eb27d784c24061f996af7d578af25282de08802d56bfaa674a1a3ae9e86acda')
 
 build() {
   cmake -B build -S $pkgname \
