@@ -1,10 +1,10 @@
 ---
-version: 2.4.2-1
+version: 2.4.2-2
 pkgbase:
   name: gajim
   pkgdesc: Full featured and easy to use XMPP (Jabber) client
   pkgver: 2.4.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gajim.org/
   arch:
     - any
@@ -49,10 +49,8 @@ pkgbase:
     - 'libsecret: for GNOME Keyring or KDE support as password storage'
     - 'gupnp-igd: for better NAT traversing'
     - 'networkmanager: for network lose detection'
-    - 'geoclue2: share current location'
+    - 'geoclue: share current location'
     - 'gsound: Notification Sounds'
-    - 'gsound: Notification Sounds'
-    - 'libayatana-appindicator: for App Indicator on Wayland'
     - 'farstream: for video and audio calls'
     - 'gstreamer: for video and audio calls'
     - 'gst-plugins-base: for video and audio calls'
@@ -62,7 +60,6 @@ pkgbase:
     - 'libxss: for idle time checking on X11'
     - 'python-gnupg: encrypting chat messages with OpenPGP'
     - 'emoji-font: for emojis support'
-    - 'webp-pixbuf-loader: for WebP images support'
   source:
     - https://dev.gajim.org/gajim/gajim/-/archive/2.4.2/gajim-2.4.2.tar.gz
   sha512sums:
