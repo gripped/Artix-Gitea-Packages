@@ -49,7 +49,6 @@ source=(
   $url/-/archive/$pkgver/$_name-$pkgver.tar.gz
   66-${pkgname}d.rules
   $pkgname.sysusers
-  ${pkgname}d.service
   ${pkgname}d.socket
 )
 sha512sums=('69adc9e4a7c7252ff677c510c4112096c3c4b00525113795d5d2ecd0efe8716a556c6c403df685d0e360eae72546ad55ff9dd27b3fde5c5b1b9d13dbcd735465'
@@ -138,7 +137,6 @@ package() {
 
   # systemd integration
   install -vDm 644 ../${pkgname}d.socket -t "$pkgdir/usr/lib/systemd/system/"
-  install -vDm 644 ../${pkgname}d.service "$pkgdir/usr/lib/systemd/system/${pkgname}d@.service"
   install -vDm 644 ../66-${pkgname}d.rules "$pkgdir/usr/lib/udev/rules.d/"
   # sysusers.d
   install -vDm 644 ../$pkgname.sysusers "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"

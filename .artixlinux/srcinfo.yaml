@@ -42,7 +42,6 @@ pkgbase:
     - https://gitlab.com/sane-project/backends/-/archive/1.4.0/backends-1.4.0.tar.gz
     - 66-saned.rules
     - sane.sysusers
-    - saned.service
     - saned.socket
   sha512sums:
     - 69adc9e4a7c7252ff677c510c4112096c3c4b00525113795d5d2ecd0efe8716a556c6c403df685d0e360eae72546ad55ff9dd27b3fde5c5b1b9d13dbcd735465
