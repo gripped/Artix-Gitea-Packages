@@ -4,7 +4,7 @@
 _name=distributed
 pkgname=python-$_name
 pkgver=2025.12.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Distributed task scheduler for Dask"
 arch=(any)
 url="https://distributed.dask.org/"
