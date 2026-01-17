@@ -1,10 +1,10 @@
 ---
-version: 0.9.21-1
+version: 0.9.21-2
 pkgbase:
   name: etherape
   pkgdesc: Graphical network monitor for various OSI layers and protocols
   pkgver: 0.9.21
-  pkgrel: 1
+  pkgrel: 2
   url: http://etherape.sourceforge.net/
   arch:
     - x86_64
@@ -17,7 +17,8 @@ pkgbase:
     - glib2
     - libpcap
     - popt
-    - goocanvas
+    - cairo
+    - gdk-pixbuf2
     - gtk3
     - libpcap.so
   source:

@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.9.21-1
+    version: 0.9.21-2
     packages:
-      - etherape-0.9.21-1-x86_64.pkg.tar.zst
+      - etherape-0.9.21-2-x86_64.pkg.tar.zst
     debug: []
