@@ -3,8 +3,8 @@
 
 _name=dask
 pkgname=python-$_name
-pkgver=2025.12.0
-pkgrel=3.1
+pkgver=2026.1.1
+pkgrel=1
 pkgdesc="Parallel computing with task scheduling"
 arch=(any)
 url="https://dask.org"
@@ -82,7 +82,7 @@ checkdepends=(
 source=(
   https://github.com/dask/dask/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
-b2sums=('f6c31a4bdb8ba0d820e5b1efc91424086730d9fcdb83f682122ca3ed82e420d201185b4362629be82dc37aedbb08e7496073db9ad091f22fea156c467b4a5374')
+b2sums=('00d67719ccd66e6602e60f899556af9c05fbddd32efaad6f2794746f1a3c01f844858ef695ba6bcd7ad877e03aeeb27f0340f92b5b40dd1b863c81f8981fc0ea')
 
 prepare() {
   cd $_name-$pkgver
@@ -95,6 +95,50 @@ build() {
   cd $_name-$pkgver
   SETUPTOOLS_SCM_PRETEND_VERSION=$pkgver \
   python -m build --wheel --no-isolation
+}
+
+check() {
+  local pytest_options=(
+    -vv
+    --override-ini="addopts="
+    -W ignore::DeprecationWarning
+    # distribute tests across multiple CPUs
+    -n auto
+    --dist loadscope
+    # use 'signal' which only kills the offending test
+    --timeout-method signal
+    -k 'not test_RandomState_only_funcs'
+    -m 'not network and not slow and not gpu'
+    --deselect dask/dataframe/dask_expr/tests/test_shuffle.py::test_set_index_head_nlargest_string
+    # skip tests that require zarr (not packaged)
+    --deselect dask/array/tests/test_xarray.py::test_xarray_blockwise_fusion_store
+    # skip failing test (assert 16 >= 32)
+    --deselect dask/tests/test_tokenize.py::test_tokenize_range_index
+    # NotImplementedError: (CategoricalDtype(...), array([...], dtype=int8))
+    --deselect dask/tests/test_tokenize.py::test_tokenize_pandas
+    --deselect dask/tests/test_tokenize.py::test_tokenize_pandas_extension_array
+    --deselect dask/dataframe/dask_expr/tests/test_reductions.py::test_cat_value_counts_large_unknown_categories
+    # NotImplementedError: (dtype('<M8[ns]'), array([[...]], dtype='datetime64[ns]'))
+    --deselect dask/dataframe/dask_expr/tests/test_groupby.py::test_groupby_index_array
+    --deselect dask/dataframe/dask_expr/tests/test_shuffle.py::test_set_index_with_dask_dt_index
+    --deselect dask/dataframe/io/tests/test_parquet.py::test_pyarrow_schema_inference
+    --deselect dask/dataframe/io/tests/test_parquet.py::test_timeseries_nulls_in_schema
+    --deselect dask/dataframe/tests/test_groupby.py
+    --deselect dask/dataframe/tests/test_shuffle.py
+    --deselect dask/dataframe/tseries/tests/test_resample.py::test_resample_pads_last_division_to_avoid_off_by_one
+    # Failed: Timeout (>300.0s) from pytest-timeout
+    --deselect dask/tests/test_distributed.py::test_futures_in_subgraphs
+    # TimeoutError: Test timeout (30) hit after 30.000476195011288s.
+    --deselect dask/dataframe/dask_expr/tests/test_distributed.py::test_merge_indicator
+    # failing test since Python 3.14 (itertools.chain is not picklable)
+    # https://github.com/dask/dask/issues/12042
+    --deselect dask/bag/tests/test_bag.py::test_multiple_repartition_partition_size
+  )
+
+  cd $_name-$pkgver
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m pytest "${pytest_options[@]}"
 }
 
 package() {
