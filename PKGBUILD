@@ -55,11 +55,13 @@ depends=(
 )
 makedepends=(
   unzip zip diffutils python nasm mesa libpulse libice libsm
-  rustp clang llvm cbindgen nodejs lld
+  rust clang llvm cbindgen nodejs lld
   gawk perl findutils libotr wasi-compiler-rt wasi-libc wasi-libc++ wasi-libc++abi
 )
 options=(!emptydirs !makeflags !lto)
 source=(https://archive.mozilla.org/pub/thunderbird/releases/${pkgver}/source/thunderbird-${pkgver}.source.tar.xz{,.asc}
+        # https://bugzilla.mozilla.org/show_bug.cgi?id=2006630
+        fix-cargo-.gitmodules.patch
         vendor-prefs.js
         distribution.ini
         mozconfig.cfg
@@ -111,8 +113,6 @@ prepare() {
 }
 
 build() {
-  export RUSTUP_TOOLCHAIN=1.88.0
-  rustup default stable
   cd $pkgname-$pkgver
   if [[ -n "${SOURCE_DATE_EPOCH}" ]]; then
     export MOZ_BUILD_DATE=$(date --date "@${SOURCE_DATE_EPOCH}" "+%Y%m%d%H%M%S")
@@ -268,6 +268,7 @@ done
 
 sha512sums=('d04a135f23572123d5cca41c2611704aa06cb81e0226c89c267dc527f59fb0d9d5d8b8a49cd126626c2fd934624c9d2420ae71dd10a912b3011f3342fbaf7511'
             'SKIP'
+            'c438a6fde1ceeac1400cc242f25c6957e059291601129fcdeb119c5486e99fec51ae1558dd03abf476527a923be70295702b54d57c1228a3ad5a7c1227494c59'
             '6918c0de63deeddc6f53b9ba331390556c12e0d649cf54587dfaabb98b32d6a597b63cf02809c7c58b15501720455a724d527375a8fb9d757ccca57460320734'
             '5cd3ac4c94ef6dcce72fba02bc18b771a2f67906ff795e0e3d71ce7db6d8a41165bd5443908470915bdbdb98dddd9cf3f837c4ba3a36413f55ec570e6efdbb9f'
             '8c315b8744f91ad762ad4887dc757e1b282fa3bc084c60422de93695a98804a0a7bb8e091e94ca6aa057b65587dc5c91db309fa87295b47dee43becf06e126fb'
