@@ -1,10 +1,10 @@
 ---
-version: 3.13.3-1
+version: 3.13.3-1.1
 pkgbase:
   name: python-aiohttp
   pkgdesc: HTTP client/server for asyncio
   pkgver: 3.13.3
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://aiohttp.readthedocs.io
   arch:
     - x86_64
