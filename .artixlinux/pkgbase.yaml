@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - neomutt-1:20260105-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1:20260105-1
+    packages:
+      - neomutt-1:20260105-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 20260501-1
