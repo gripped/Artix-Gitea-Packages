@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -23,8 +23,9 @@ repos:
       - grub-2:2.14rc1.r54.g29f3131a-2-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2:2.14-1
+    packages:
+      - grub-2:2.14-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

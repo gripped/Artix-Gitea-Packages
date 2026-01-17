@@ -1,4 +1,3 @@
-# Maintainer : Christian Hesse <mail@eworm.de>
 # Maintainer : Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Keshav Amburay <(the ddoott ridikulus ddoott rat) (aatt) (gemmaeiil) (ddoott) (ccoomm)>
@@ -104,6 +103,7 @@ _reverts=(
   '1a5417f39a0ccefcdd5440f2a67f84d2d2e26960'
   # configure: Print a more helpful error if autoconf-archive is not installed
   'ac042f3f58d33ce9cd5ff61750f06da1a1d7b0eb'
+
 )
 
 prepare() {
@@ -143,6 +143,9 @@ prepare() {
 
   echo "Fix OS naming FS#33393..."
   sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
+
+  echo "Pull in latest language files..."
+  ./linguas.sh
 
   echo "Avoid problem with unifont during compile of grub..."
   # http://savannah.gnu.org/bugs/?40330 and https://bugs.archlinux.org/task/37847

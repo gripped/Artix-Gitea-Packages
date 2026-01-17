@@ -89,4 +89,4 @@ pkgbase:
     - e3a1d429fb02c30f8eb8316db5074b37e08bfcb007385dd050977068816e4e46fae48a228f982efd15150d177c7838fe9caf29f7620b35ab156508bd9264577a
 pkgname:
   - name: grub
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.4-1-any
