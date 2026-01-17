@@ -1,10 +1,10 @@
 ---
-version: 2025.12.0-3
+version: 2025.12.0-3.1
 pkgbase:
   name: python-dask
   pkgdesc: Parallel computing with task scheduling
   pkgver: 2025.12.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://dask.org
   arch:
     - any

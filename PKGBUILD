@@ -4,7 +4,7 @@
 _name=dask
 pkgname=python-$_name
 pkgver=2025.12.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Parallel computing with task scheduling"
 arch=(any)
 url="https://dask.org"
