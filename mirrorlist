@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2025-12-04
+## Generated on 2026-01-17 by artix-mlg
 ##
 
 # Artix mirrors
@@ -9,10 +9,10 @@
 # Then put the resulting list on top of this file.
 
 # Default mirrors
-Server = https://artix.wheaton.edu/repos/$repo/os/$arch
-Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
 Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://ftp.crifo.org/artix/repos/$repo/os/$arch
+Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
+Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 
 ## Europe
@@ -22,10 +22,8 @@ Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 Server = https://mirror.group.one/artix/$repo/os/$arch
 # France
-Server = https://artix.toret.fr/$repo/os/$arch
 Server = https://ftp.crifo.org/artix/repos/$repo/os/$arch
-# Hungary
-Server = https://quantum-mirror.hu/mirrors/pub/artix-linux/$repo/os/$arch
+Server = https://artix.toret.fr/$repo/os/$arch
 # Germany
 Server = https://mirror.netcologne.de/artix-linux/$repo/os/$arch
 Server = http://mirrors.redcorelinux.org/artixlinux/$repo/os/$arch
@@ -37,39 +35,43 @@ Server = https://mirror2.artixlinux.org/$repo/os/$arch
 Server = https://mirror3.artixlinux.org/repos/$repo/os/$arch
 Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
 # Greece
+Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
-# Monaco
-Server = https://qontinuum.space/mirror/artixlinux/$repo/os/$arch
+# Hungary
+Server = https://quantum-mirror.hu/mirrors/pub/artix-linux/$repo/os/$arch
+# Italy
+Server = https://artixlinux.mirror.garr.it/$repo/os/$arch
+# Netherlands
+Server = https://artist-mirror.artixlinux.org/$repo/os/$arch
 # Poland
 Server = https://artix.sakamoto.pl/$repo/os/$arch
-# Russia
-Server = https://mirrors.yuruyuri.fun/artix-linux/repos/$repo/os/$arch
+# Romania
+Server = https://hitman.go.ro/mirror/artix-linux/$repo/os/$arch
 # Sweden
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
 # Switzerland
 Server = https://artix.kurdy.org/$repo/os/$arch
-# The Netherlands
-Server = https://artist.artixlinux.org/repos/$repo/os/$arch
 # United Kingdom
 Server = https://mirror.vinehost.net/artix-linux/$repo/os/$arch
 
 ## North America
+# Canada
+Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
+Server = https://artix-linux.mirrors.prairievoice.ca/$repo/os/$arch
 # United States
+Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://artix.wheaton.edu/repos/$repo/os/$arch
 Server = https://mirror.clarkson.edu/artix-linux/repos/$repo/os/$arch
-Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://mirrors.ocf.berkeley.edu/artix-linux/$repo/os/$arch
 Server = https://mirror.cs.odu.edu/artixlinux/$repo/os/$arch
 Server = https://mirror.akardam.net/artix/$repo/os/$arch
 Server = http://www.nylxs.com/mirror/repos/$repo/os/$arch
 Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
-# Canada
-Server = https://mirror.csclub.uwaterloo.ca/artixlinux/$repo/os/$arch
-Server = https://artix-linux.mirrors.prairievoice.ca/$repo/os/$arch
+Server = https://mirror.sanin.dev/artix-linux/$repo/os/$arch
 
 ## South America
-# Brazil
-Server = https://slackjeff.com.br/artixlinux/$repo/os/$arch
+# Chile
+Server = https://mirror1.cl.netactuate.com/artix/repos/$repo/os/$arch
 
 ## Asia
 # China
@@ -82,8 +84,11 @@ Server = https://mirror.albony.in/artix/$repo/os/$arch
 Server = https://www.miraa.jp/artix-linux/$repo/os/$arch
 # Korea, Republic of
 Server = https://mirror.funami.tech/artix/$repo/os/$arch
+# Russia
+Server = https://mirror.infirium.ru/artixlinux/$repo/os/$arch
+Server = https://mirrors.yuruyuri.fun/artix-linux/repos/$repo/os/$arch
 # Singapore
-Server = https://mirror.freedif.org/Artix/$repo/os/$arch
+Server = https://mirror.freedif.org/artix/$repo/os/$arch
 # Taiwan
 Server = https://mirrors.cloud.tencent.com/artixlinux/$repo/os/$arch
 # Vietnam
