@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.2.15.3-1
+    packages:
+      - alsa-ucm-conf-1.2.15.3-1-any.pkg.tar.zst
+    debug:
+      - alsa-ucm-conf-debug-1.2.15.3-1-any.pkg.tar.zst
   world:
     version: 1.2.15.2-1
     packages:
