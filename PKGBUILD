@@ -29,7 +29,7 @@ depends=(
   'python-cairo'
   'python-dbus'
   'python-gobject'
-  'systemd-libs'
+  'libudev'
 )
 makedepends=(
   'python-build'

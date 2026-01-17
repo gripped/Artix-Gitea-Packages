@@ -37,7 +37,7 @@ pkgbase:
     - python-cairo
     - python-dbus
     - python-gobject
-    - systemd-libs
+    - libudev
   optdepends:
     - 'mousetweaks: hover click with mouse'
   source:
