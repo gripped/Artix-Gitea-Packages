@@ -1,15 +1,19 @@
 ---
-version: 9.2.148-2
+version: 9.2.193-1
 pkgbase:
   name: python-archinfo
   pkgdesc: Classes with architecture-specific information useful to other projects
-  pkgver: 9.2.148
-  pkgrel: 2
+  pkgver: 9.2.193
+  pkgrel: 1
   url: https://github.com/angr/archinfo
   arch:
     - any
   license:
     - BSD-2-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-xdist
+    - python-pypcode
   makedepends:
     - python-build
     - python-installer
@@ -22,12 +26,13 @@ pkgbase:
     - python-unicorn
     - python-keystone
     - python-pyvex
+    - python-pypcode
   source:
-    - https://github.com/angr/archinfo/archive/v9.2.148/python-archinfo-9.2.148.tar.gz
+    - https://github.com/angr/archinfo/archive/v9.2.193/python-archinfo-9.2.193.tar.gz
   sha512sums:
-    - a3c92f0ec1284a937a7ba274cf00a859bc915964797a8d97a09130109972bcf031bb0164fede624ce22d11b428405a5518e02376e413a96a80eda20157200d77
+    - c9db39c5a23dc030100c177f2d76eb7152fdc8cd63c0e01e315f92cd0208a900ce107c80482677b3e7f1ca137a048582752d497399996b3abcc9e34d7a37e411
   b2sums:
-    - 75b3d42dfd027ef0077cbca86c7597832b8ac20a806dcf8520be04626cc060307021213fc01d625554f61a74d4f0559a32f76b144040722cccd2dcb5f2340614
+    - 9a14450ffb86299cf1f896e81f54eeea87c75560d4543f6fed92ca4e0e5609f8b5a3df9cd3c23e7a822c49f2df083ae1a009da09134f6bd3272f98e3741bf87b
 pkgname:
   - name: python-archinfo
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
