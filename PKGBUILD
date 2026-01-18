@@ -3,7 +3,7 @@
 _pyname=backports_zstd
 pkgname=python-${_pyname//_/-}
 pkgver=1.3.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Backport of compression.zstd"
 arch=(x86_64 armv7h aarch64 i686)
 url="https://github.com/rogdham/${_pyname//_/.}"
