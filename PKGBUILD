@@ -5,9 +5,9 @@
 : ${_build_profiled_xvfb:=true}
 
 pkgname=librewolf
-pkgver=147.0
+pkgver=147.0.1
 pkgrel=1
-_lwrel=1
+_lwrel=3
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
 arch=(x86_64 aarch64)
@@ -109,7 +109,7 @@ source=(
   allow_dark.patch
 )
 
-sha256sums=('e55c0dd91cf2154e7696d83683a865c0c614eff010965b1248b249f5f050d315'
+sha256sums=('ec53e549d9165772bec73d127564098055c414bdab05261e282bfb7d9ba1c1f5'
             'SKIP'
             '7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
