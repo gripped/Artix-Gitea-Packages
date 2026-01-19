@@ -1,9 +1,9 @@
 ---
-version: 1.37.1.2-1
+version: 1.37.2-1
 pkgbase:
   name: fakeroot
   pkgdesc: Tool for simulating superuser privileges
-  pkgver: 1.37.1.2
+  pkgver: 1.37.2
   pkgrel: 1
   url: https://tracker.debian.org/pkg/fakeroot
   install: fakeroot.install
@@ -23,10 +23,12 @@ pkgbase:
     - sed
     - util-linux
     - sh
+  options:
+    - debug
   source:
-    - git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/1.37.1.2
+    - git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/1.37.2
   sha256sums:
-    - 41dda8c3dd030b9ee4d159e3f76150b3bef3ecac37ad89e4684b68e41c94159e
+    - 46f44681cc939dd3f127761717830c0bfa72e1568191d4df071ae297013591e3
 pkgname:
   - name: fakeroot
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.37.5-1-any
