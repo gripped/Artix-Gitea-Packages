@@ -1,0 +1,36 @@
+---
+version: 1.10.0-1
+pkgbase:
+  name: ruby-build-files
+  pkgdesc: Abstractions for handling and mapping paths
+  pkgver: 1.10.0
+  pkgrel: 1
+  url: https://github.com/ioquatix/build-files
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/ioquatix/build-files.git#tag=v1.10.0
+  sha512sums:
+    - 0ba4c31b795d5f22f59596bcecd807aa1072d86e89984cdfee2f4c6fb6d46d77286c60c675f342ca515065cef5edcc63def0d9da39fd7fca2ffec6ffc603a634
+  b2sums:
+    - 3a7836ec856228b1ee64e5e40847166bb532b01d05bb533fa416a22e4d9e8fb1cd6104024d17f8308c035c1b275c0e234226dcc3a5e86ede1abad53185471fdd
+pkgname:
+  - name: ruby-build-files
+# generated with artixpkg 0.37.5-1-any
