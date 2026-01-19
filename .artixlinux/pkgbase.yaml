@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 31.1.0-1
+    version: 31.2.0-1
     packages:
-      - ruby-cucumber-messages-31.1.0-1-any.pkg.tar.zst
+      - ruby-cucumber-messages-31.2.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 31.0.1-1
