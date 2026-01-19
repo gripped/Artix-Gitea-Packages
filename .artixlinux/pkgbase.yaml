@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.24.1-1
+    version: 0.24.2-1
     packages:
-      - vc-intrinsics-0.24.1-1-x86_64.pkg.tar.zst
+      - vc-intrinsics-0.24.2-1-x86_64.pkg.tar.zst
     debug:
-      - vc-intrinsics-debug-0.24.1-1-x86_64.pkg.tar.zst
+      - vc-intrinsics-debug-0.24.2-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
