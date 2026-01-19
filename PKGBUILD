@@ -6,7 +6,7 @@
 pkgname=libieee1284
 pkgver=0.2.11
 _tag=${pkgver//\./_}
-pkgrel=18
+pkgrel=19
 pkgdesc="A library to query devices connected in parallel port"
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -27,8 +27,8 @@ source=(
   "fix-python-3.12-compatibility.patch::$url/commit/cf59766dd848bd8b4318b1c67b5df053903ddefb.patch"
 )
 sha256sums=('eb6a4305f5d44f74b548c8dd41ec1103175cabb57f9661bec4af49e11f8a0238'
-            'a0b46ccba73b4e691a001d3bd1a6f4046c5fa26244fcdc3dc10c8baa9886e57f'
-            'c63d207205af43d3413e0e969771163185ab27cc1dde07577fec13f344d9d053'
+            '53dc16334556f7c2554bcb6d2370c3bae4d07d29af34fb96ffa4d522a9eedc0f'
+            '20190a7841f0fc672ead0caf1cf87a1e94b824515906ea972ae17bdb5ce99f82'
             '40efc0e6ab7c8ab30a61b89ea515dcdfbd5b110c2c08feccda7abb2dc3381583'
             '38dad4a5eb686c6cfe45b6bdedb2c68ad8625db10783f313024131752c8ecabe')
 
