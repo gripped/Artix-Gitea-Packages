@@ -4,7 +4,7 @@
 
 pkgname=libxfce4windowing
 pkgver=4.20.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Windowing concept abstraction library for X11 and Wayland"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/libxfce4windowing/start"
@@ -22,6 +22,10 @@ prepare() {
   git submodule init
   git config submodule.mate-submodules.url "$srcdir/protocols/wlr-protocols"
   git -c protocol.file.allow=always submodule update
+
+  # Don't depend on wayland-scanner and wayland-protocols
+  # https://gitlab.xfce.org/xfce/libxfce4windowing/-/merge_requests/96
+  git cherry-pick -n 9b1e7e18343f927f9946960977804230f3fbc16d
 }
 
 build() {

@@ -1,10 +1,10 @@
 ---
-version: 4.20.5-2
+version: 4.20.5-3
 pkgbase:
   name: libxfce4windowing
   pkgdesc: Windowing concept abstraction library for X11 and Wayland
   pkgver: 4.20.5
-  pkgrel: 2
+  pkgrel: 3
   url: https://docs.xfce.org/xfce/libxfce4windowing/start
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libxfce4windowing
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
