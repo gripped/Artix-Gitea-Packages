@@ -1,10 +1,10 @@
 ---
-version: 0.3.2-1
+version: 0.3.2-2
 pkgbase:
   name: yt-dlp-ejs
   pkgdesc: External JavaScript for yt-dlp supporting many runtimes
   pkgver: 0.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/yt-dlp/ejs
   arch:
     - any
@@ -28,4 +28,4 @@ pkgbase:
     - a6ebb971be548cc3649ef41b6debe4d2aff6e5ccfaf310d970b9e39fdebe0de6
 pkgname:
   - name: yt-dlp-ejs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-10-any

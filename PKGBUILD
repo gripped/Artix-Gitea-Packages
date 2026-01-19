@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=yt-dlp-ejs
 pkgver=0.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc='External JavaScript for yt-dlp supporting many runtimes'
 arch=(any)
 url='https://github.com/yt-dlp/ejs'
