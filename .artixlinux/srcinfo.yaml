@@ -1,9 +1,9 @@
 ---
-version: 0.6.0-1
+version: 0.6.1-1
 pkgbase:
   name: corrosion
   pkgdesc: Tool for integrating Rust into an existing CMake project
-  pkgver: 0.6.0
+  pkgver: 0.6.1
   pkgrel: 1
   url: https://github.com/corrosion-rs/corrosion
   arch:
@@ -16,9 +16,9 @@ pkgbase:
     - cmake
     - rust
   source:
-    - git+https://github.com/corrosion-rs/corrosion#tag=v0.6.0
+    - git+https://github.com/corrosion-rs/corrosion#tag=v0.6.1
   sha256sums:
-    - 36abbc1337cd0c388906459309f260f9d9666ae05902cad1d7a6811bbf807b9f
+    - 75c1711049c3aa058ef7f8519ecc2a8a437cd31dd8ce4fb0b65c0ba13b7b36f6
 pkgname:
   - name: corrosion
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
