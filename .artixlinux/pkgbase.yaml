@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 20260119-1
+    version: 20260119-2
     packages:
-      - artix-mirrorlist-20260119-1-any.pkg.tar.zst
+      - artix-mirrorlist-20260119-2-any.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
