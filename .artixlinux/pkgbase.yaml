@@ -1,55 +1,60 @@
 ---
-pkgbase:
-  name: xfce4-artwork
-  version: 0.1.1a_git20110420-6.1
-  arch:
-    - any
-  pkgname:
-    - xfce4-artwork
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 0.1.1a_git20110420-6.1
+    version: 0.1.1a_git20110420-7
     packages:
-      - xfce4-artwork-0.1.1a_git20110420-6.1-any.pkg.tar.zst
+      - xfce4-artwork-0.1.1a_git20110420-7-any.pkg.tar.zst
+    debug: []
 team: galaxy
