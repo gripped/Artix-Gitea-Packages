@@ -1,10 +1,10 @@
 ---
-version: 7.2.4-15
+version: 7.2.4-16
 pkgbase:
   name: virtualbox-host-modules-artix
   pkgdesc: Virtualbox host kernel modules for Artix Kernel
   pkgver: 7.2.4
-  pkgrel: 15
+  pkgrel: 16
   url: https://virtualbox.org/
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgname:
   - name: virtualbox-host-modules-artix
     depends:
       - linux
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
