@@ -1,13 +1,13 @@
-# Maintainer: Evangelos Foutras <evangelos@foutrelis.com>
+# Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Hokum <hokum_at_mail_dot_ru>
 
 pkgname=gptfdisk
 pkgver=1.0.10
-pkgrel=1
-pkgdesc="A text-mode partitioning tool that works on GUID Partition Table (GPT) disks"
+pkgrel=2
+pkgdesc='A text-mode partitioning tool that works on GUID Partition Table (GPT) disks'
 arch=('x86_64')
-url="https://www.rodsbooks.com/gdisk/"
+url='https://www.rodsbooks.com/gdisk/'
 license=('GPL2')
 depends=('gcc-libs' 'popt' 'libuuid.so' 'libncursesw.so')
 provides=("gdisk=$pkgver")
