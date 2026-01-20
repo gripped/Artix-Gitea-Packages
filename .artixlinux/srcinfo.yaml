@@ -1,9 +1,9 @@
 ---
-version: 18.0.1-1
+version: 18.1.0-1
 pkgbase:
   name: ruby-cucumber-cucumber-expressions
   pkgdesc: Cucumber Expressions - a simpler alternative to Regular Expressions
-  pkgver: 18.0.1
+  pkgver: 18.1.0
   pkgrel: 1
   url: https://github.com/cucumber/cucumber-expressions/tree/main/ruby
   arch:
@@ -27,4 +27,4 @@ pkgbase:
     - d58d5ed0e073656568e400adb8da7b310e0c09efb8d493923a44d5ee77de943a
 pkgname:
   - name: ruby-cucumber-cucumber-expressions
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.5-1-any
