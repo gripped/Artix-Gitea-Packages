@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.9.1-2
+    version: 2026.1.0-1
     packages:
-      - scummvm-2.9.1-2-x86_64.pkg.tar.zst
+      - scummvm-2026.1.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
