@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.1.0-1
+    version: 1.1.1-1
     packages:
-      - webappcontainer-1.1.0-1-x86_64.pkg.tar.zst
+      - webappcontainer-1.1.1-1-x86_64.pkg.tar.zst
     debug: []
