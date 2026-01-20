@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,12 +29,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 12.3.0-1
+    version: 12.3.1-1
     packages:
-      - qpdf-12.3.0-1-x86_64.pkg.tar.zst
-      - qpdf-docs-12.3.0-1-x86_64.pkg.tar.zst
+      - qpdf-12.3.1-1-x86_64.pkg.tar.zst
+      - qpdf-docs-12.3.1-1-x86_64.pkg.tar.zst
     debug:
-      - qpdf-debug-12.3.0-1-x86_64.pkg.tar.zst
+      - qpdf-debug-12.3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
