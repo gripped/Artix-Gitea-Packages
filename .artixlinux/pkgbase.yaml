@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.35.2-1
+    version: 0.37.0-1
     packages:
-      - ruby-protocol-http1-0.35.2-1-any.pkg.tar.zst
+      - ruby-protocol-http1-0.37.0-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
