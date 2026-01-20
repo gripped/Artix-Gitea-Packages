@@ -1,9 +1,9 @@
 ---
-version: 9.10.0-1
+version: 9.10.1-1
 pkgbase:
   name: solr
   pkgdesc: Open source enterprise search platform built on Apache Lucene
-  pkgver: 9.10.0
+  pkgver: 9.10.1
   pkgrel: 1
   url: https://lucene.apache.org/solr/
   arch:
@@ -29,7 +29,7 @@ pkgbase:
     - etc/solr/solr.xml
     - etc/solr/zoo.cfg
   source:
-    - https://archive.apache.org/dist/solr/solr/9.10.0/solr-9.10.0-src.tgz
+    - https://archive.apache.org/dist/solr/solr/9.10.1/solr-9.10.1-src.tgz
     - solr.sysusers
     - solr.tmpfiles
     - support-reproducible-builds.patch
@@ -58,7 +58,7 @@ pkgbase:
     - 1CF0DAD1470504C4EA95C697140BC45803B03F7F
     - EDF961FF03E647F9CA8A9C2C758051CCA3A13A7F
   sha512sums:
-    - bf17030e24bfc98979ae63a5a684e0c9c65e0780d6ac5de71c9e092344f2dfaed36baa417d722823289bcb679aff3ccd0c2cb46b8211b0f32cebf5da8d36d83a
+    - 14e786eacc4964bb7c41a5596d9eea930f66b6c27efa3da4a2941d2962d6ba70bde34a22b5909cc80b8953ff505cdea327e2a04222e4dfb2058d52903b4bef36
     - 4a92e55709bcaffeab9456b2c3a7e76b38ab91f0bcf8a714f7da0691c46dfb28ef39741827ab90a1e7a26d716acfdc050af5cd4d043137bff51c07e114819fc2
     - 97252d1ba1e4e211a6b5a038981cbc9d6663a0d7a980b23484f838eebb2f8194571a3f34ea6b92ed0efd4b7f862e020b5e3e8478ad1de1c6832e232d0b20ff6d
     - cda14703a9144e0add93d6f7a32691a80e2cadbb738c0c752122e6e27bbf1441a48a1a2ee146f10dd4f0ba4e5f5e38a46b45c1e01ff8c79bd477f3030a7c265d
@@ -66,7 +66,7 @@ pkgbase:
     - 1ad7eb67116fc58e7ad38926a696e76f9bc10447101e95ddfb0da914cb7a9916aeab47ad498fec3ff18285827f21d8855c1854778ce09c8e70dc9ce1576b57d1
     - 5e45fcd63be50484dbdd7b909f187d4d90a89639b80571bd93c432599b2064498344d4168dd06dfc45368ce043a873ae6be804d3ff1a3c42746b045c215cab92
   b2sums:
-    - e05384475f3412b6b91d94087eb334d74bb716820cfb9171c70ab05c6b8cab1532a92934662c13ccbdb7777ce6ab48a1d625c5ce011911ac3364099d3ecfba5e
+    - 4fb5d7485188e5cbd239909758c55c55de485d25041906787d53825480849e576a9a7087070774d2de8d33a9a1578dec60e3652123e09d913b7d5fc67aee8ecd
     - bd7624d92430c461063faa63dc00f5b546f86937c01161d3f2027406a37e8e3b7bcd7b3ca4b268e2ccd6c96c3f49addcfea4a86844145822ed70eaecdd3fd4bc
     - 37ab5d9af1da1178fcc58ce39654fdecb842b24d4e2264a2eec95c10223e7d003f27a6b2957a267a17ce0fa72258d96642d5b909963576a5a7d13e4e05c47a51
     - 60b0b2124ff8e4e2faa9323a0156fa02ea606c5779f7b80e42a05de78fa7e67546e33a444c5b1b4d61aaf2dcd067430022091449da386c310b8a99ce75eb1d3c
@@ -75,4 +75,4 @@ pkgbase:
     - ef52cfc76c484b78bacfee8a6e6321d80d3a03bdf11f81ab15e8328dd680cc87010e34a3f59423325707f60c87fe03fb2e77a082140e364d61ebaf5582101f59
 pkgname:
   - name: solr
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
