@@ -1,7 +1,7 @@
 # Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
 
 pkgname=libngtcp2
-pkgver=1.19.0
+pkgver=1.20.0
 pkgrel=1
 pkgdesc='Implementation of IETF QUIC protocol'
 url='https://github.com/ngtcp2/ngtcp2'
@@ -13,6 +13,7 @@ depends=(
   'gnutls'
 )
 makedepends=(
+  'git'
   'brotli'
 )
 provides=(
@@ -20,17 +21,32 @@ provides=(
   'libngtcp2_crypto_gnutls.so'
   'libngtcp2_crypto_ossl.so'
 )
-source=("${pkgname}-${pkgver}.tar.gz::https://github.com/ngtcp2/ngtcp2/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('3bd1217c259d0a41807fe442368b9843ff2315910b7051211d0f24bac53acd39')
-b2sums=('e4b0098b9d201dde3ded6280f658725eb6ca91e18476cc1f9319114fdeceac22ef8dd447c08dc69f8b53d26f18d7392acd3df3ee0d26558f5937f44da2c9fdcd')
+validpgpkeys=('F4F3B91474D1EB29889BD0EF7E8403D5D673C366') # Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+source=("git+https://github.com/ngtcp2/ngtcp2.git#tag=v${pkgver}?signed"
+        'git+https://github.com/ngtcp2/munit.git'
+        'git+https://github.com/ngtcp2/urlparse.git')
+sha256sums=('a2ecedfcb7c859fa699f6bd84afac3f71568a73a8dbc7e84f4213a533e4464ff'
+            'SKIP'
+            'SKIP')
+b2sums=('09390fc9dc1fa54be684e89f67f5049eb9c728c94e8dc1161be6dc1c1b42d941d0e10d62e1b54459f9f46ec7d2bc818afc0aed97ec74b32a0a14c59d73ef80c9'
+        'SKIP'
+        'SKIP')
 
 prepare() {
-  cd ngtcp2-${pkgver}
+  cd ngtcp2/
+
+  git config --file=.gitmodules submodule.tests/munit.url ../munit/
+  git config --file=.gitmodules submodule.third-party/urlparse.url ../urlparse/
+
+  git submodule init
+  git -c protocol.file.allow=always submodule update
+
   autoreconf -i
 }
 
 build() {
-  cd ngtcp2-${pkgver}
+  cd ngtcp2/
+
   ./configure \
     --prefix=/usr \
     --with-libbrotlienc \
@@ -41,9 +57,8 @@ build() {
 }
 
 package() {
-  cd ngtcp2-${pkgver}
-  make DESTDIR="${pkgdir}" install
-  install -Dm644 ./COPYING -t "${pkgdir}/usr/share/licenses/${pkgname}"
-}
+  cd ngtcp2/
 
-# vim: ts=2 sw=2 et:
+  make DESTDIR="${pkgdir}" install
+  install -D -m0644 COPYING -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
