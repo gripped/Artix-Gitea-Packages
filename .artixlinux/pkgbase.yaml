@@ -1,10 +1,10 @@
 ---
 actions:
-  addRepo: lib32
-  removeRepo: lib32-gremlins
+  addRepo: null
+  removeRepo: lib32
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -41,9 +41,8 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 2.6.0-1
-    packages:
-      - lib32-libltdl-2.6.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy-goblins:
     version: null
