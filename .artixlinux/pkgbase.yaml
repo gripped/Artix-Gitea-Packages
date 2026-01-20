@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -30,9 +30,9 @@ repos:
       - python-calver-2025.04.17-1-any.pkg.tar.zst
     debug: []
   world:
-    version: 2025.04.02-1
+    version: 2025.10.20-1
     packages:
-      - python-calver-2025.04.02-1-any.pkg.tar.zst
+      - python-calver-2025.10.20-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
