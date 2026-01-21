@@ -1,31 +1,35 @@
 ---
-version: 1.28.1-1
+version: 1.28.2-2
 pkgbase:
   name: libmateweather
-  pkgdesc: Provides access to weather information from the Internet.
-  pkgver: 1.28.1
-  pkgrel: 1
-  url: https://mate-desktop.org
+  pkgdesc: Provides access to weather information from the Internet
+  pkgver: 1.28.2
+  pkgrel: 2
+  url: https://github.com/mate-desktop/libmateweather
   arch:
     - x86_64
   license:
-    - LGPL
+    - GPL-2.0-or-later
   makedepends:
+    - git
     - glib2-devel
     - gtk-doc
-    - git
+    - tar
   depends:
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
     - gtk3
+    - hicolor-icon-theme
     - libsoup3
-    - gettext
-  conflicts:
-    - libmateweather-gtk3
-  replaces:
-    - libmateweather-gtk3
+    - libxml2
   source:
-    - git+https://github.com/mate-desktop/libmateweather.git#commit=dcd6be514a3d7e5d0a3f935a21a9af70cd62a86a
-  sha256sums:
-    - 8556f68e0da35d9acc9a27d26239c470c22fc6a6a899104130d921578e147638
+    - git+https://github.com/mate-desktop/libmateweather#tag=v1.28.2
+    - libmateweather-libsoup3.patch
+  b2sums:
+    - af967ea1debb57f97746811c2edf74d8a8f72b8879f603439a7b188634296c868f608269b66e2dff6d06d203679a8bdcf6221161b5e43ee162daef888fb70239
+    - 59552942ed4f0887e76b271cfe67a519f6bdc48754311b498e16174a8126109097beae02728ea492ecf092ed9286a9178b2ecb6d50841a76ee73c87b3fbc4954
 pkgname:
   - name: libmateweather
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any

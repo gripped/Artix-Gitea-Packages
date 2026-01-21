@@ -1,42 +1,60 @@
-# Maintainer: artist for Artix Linux
-# Contributor: Alexander Epaneshnikov <alex19ep@archlinux.org>
+# Maintainer: Alexander Epaneshnikov <alex19ep@archlinux.org>
 # Contributor: Brad Fanella <cesura@archlinux.org
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=libmateweather
-pkgver=1.28.1
-pkgrel=1
-pkgdesc="Provides access to weather information from the Internet."
-url="https://mate-desktop.org"
-arch=('x86_64')
-license=('LGPL')
-depends=('gtk3' 'libsoup3' 'gettext')
-makedepends=('glib2-devel' 'gtk-doc' 'git')
-conflicts=('libmateweather-gtk3')
-replaces=('libmateweather-gtk3')
-source=("git+https://github.com/mate-desktop/libmateweather.git#commit=dcd6be514a3d7e5d0a3f935a21a9af70cd62a86a")
-sha256sums=('8556f68e0da35d9acc9a27d26239c470c22fc6a6a899104130d921578e147638')
+pkgver=1.28.2
+pkgrel=2
+pkgdesc='Provides access to weather information from the Internet'
+arch=(x86_64)
+url='https://github.com/mate-desktop/libmateweather'
+license=(GPL-2.0-or-later)
+depends=(
+  dconf
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk3
+  hicolor-icon-theme
+  libsoup3
+  libxml2
+)
+makedepends=(
+  git
+  glib2-devel
+  gtk-doc
+  tar
+)
+source=(
+  "git+https://github.com/mate-desktop/libmateweather#tag=v$pkgver"
+  libmateweather-libsoup3.patch
+)
+b2sums=(
+  af967ea1debb57f97746811c2edf74d8a8f72b8879f603439a7b188634296c868f608269b66e2dff6d06d203679a8bdcf6221161b5e43ee162daef888fb70239
+  59552942ed4f0887e76b271cfe67a519f6bdc48754311b498e16174a8126109097beae02728ea492ecf092ed9286a9178b2ecb6d50841a76ee73c87b3fbc4954
+)
 
 prepare() {
-    	cd "${pkgname}"
-    	autoreconf -fiv
+  cd $pkgname
+
+  # Port to libsoup-3.0
+  git apply -3 ../libmateweather-libsoup3.patch
+
+  autoreconf -fiv
 }
 
 build() {
-    	cd "${pkgname}"
-    	./configure \
-        	--prefix=/usr \
-        	--sysconfdir=/etc \
-        	--localstatedir=/var \
-        	--enable-locations-compression
-
-    	#https://bugzilla.gnome.org/show_bug.cgi?id=656231
-    	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
-    	make
+  cd $pkgname
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --enable-locations-compression \
+    --enable-gtk-doc
+  make
 }
 
 package() {
-    	cd "${pkgname}"
-    	make DESTDIR="${pkgdir}" install
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
 }
