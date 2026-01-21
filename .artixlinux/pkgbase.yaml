@@ -29,12 +29,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.25.0-1
+    version: 1.25.1-1
     packages:
-      - openal-1.25.0-1-x86_64.pkg.tar.zst
-      - openal-examples-1.25.0-1-x86_64.pkg.tar.zst
+      - openal-1.25.1-1-x86_64.pkg.tar.zst
+      - openal-examples-1.25.1-1-x86_64.pkg.tar.zst
     debug:
-      - openal-debug-1.25.0-1-x86_64.pkg.tar.zst
+      - openal-debug-1.25.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
