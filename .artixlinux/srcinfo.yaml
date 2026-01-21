@@ -1,10 +1,10 @@
 ---
-version: 590.48.01-7
+version: 590.48.01-8
 pkgbase:
   name: nvidia-open
   pkgdesc: NVIDIA open kernel modules
   pkgver: 590.48.01
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/NVIDIA/open-gpu-kernel-modules
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgname:
       - linux
       - nvidia-utils=590.48.01
       - libglvnd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
