@@ -1,0 +1,35 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Thomas Baechler <thomas@archlinux.org>
+
+pkgname=nvidia580xx
+pkgver=580.119.02
+pkgrel=3
+pkgdesc="NVIDIA kernel modules"
+arch=('x86_64')
+url="https://www.nvidia.com/"
+makedepends=('linux-headers' "nvidia-580xx-dkms=$pkgver")
+provides=('NVIDIA-MODULE' 'nvidia')
+conflicts=('nvidia')
+replaces=('nvidia')
+license=('LicenseRef-custom')
+options=('!strip')
+
+build() {
+    _kernver=$(</usr/src/linux/version)
+
+    fakeroot dkms build --dkmstree "${srcdir}" -m nvidia/${pkgver} -k ${_kernver}
+}
+
+package() {
+    depends=('linux' "nvidia-utils=${pkgver}" 'libglvnd')
+
+    _kernver="$(</usr/src/linux/version)"
+
+    install -Dt "${pkgdir}/usr/lib/modules/${_kernver}/extramodules" -m644 nvidia/${pkgver}/${_kernver}/${CARCH}/module/*.ko
+
+    # compress each module individually
+    find "$pkgdir" -name '*.ko' -exec zstd --rm -19 {} +
+
+    install -Dm644 /usr/share/licenses/nvidia-580xx-dkms/LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
