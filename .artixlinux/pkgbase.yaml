@@ -29,15 +29,15 @@ repos:
     packages: []
     debug: []
   world:
-    version: 12.3.0-1
+    version: 12.3.1-1
     packages:
-      - harfbuzz-12.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-cairo-12.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-icu-12.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-utils-12.3.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-docs-12.3.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-12.3.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-12.3.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-12.3.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-12.3.1-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-12.3.1-1-x86_64.pkg.tar.zst
     debug:
-      - harfbuzz-debug-12.3.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-debug-12.3.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
