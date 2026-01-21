@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.85-2
+version: 1.0.0.85-3
 pkgbase:
   name: steam
   pkgdesc: Valve's digital software delivery system
   pkgver: 1.0.0.85
-  pkgrel: 2
+  pkgrel: 3
   url: https://steampowered.com/
   arch:
     - x86_64
@@ -56,7 +56,6 @@ pkgname:
       - steam-devices
     optdepends:
       - 'polkit: to setup SteamVR without root access'
-      - 'steam-native-runtime: steam native runtime support'
       - 'xdg-desktop-portal-impl: file & folder picker'
     depends_x86_64:
       - lib32-alsa-plugins
