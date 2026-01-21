@@ -1,0 +1,36 @@
+---
+version: 1.14.8-1
+pkgbase:
+  name: ruby-i18n
+  pkgdesc: New wave internationalisation support for Ruby
+  pkgver: 1.14.8
+  pkgrel: 1
+  url: https://github.com/ruby-i18n/i18n
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-activesupport
+    - ruby-bundler
+    - ruby-minitest
+    - ruby-mocha
+    - ruby-racc
+    - ruby-rake
+    - ruby-test_declarative
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-concurrent
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/ruby-i18n/i18n/archive/v1.14.8/ruby-i18n-1.14.8.tar.gz
+  sha512sums:
+    - 0be488e2350f9ef6c707986de7dccc62888ef2b555633c61d16c2ecaac598b28758cfbc7fce8e357490a849a8865ec2472c1e71c1706000fe735648aa6fff8ab
+  b2sums:
+    - b0838c185159f2906d5ddc2b294d146eaa145bf69917a0a5b84cddd176c4ef67f9bfbde6db9844b3323615521fa71a81db13d4ddfd53bf7afa42b511dfa62374
+pkgname:
+  - name: ruby-i18n
+# generated with artixpkg 0.37.5-1-any
