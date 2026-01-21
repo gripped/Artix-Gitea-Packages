@@ -1,10 +1,10 @@
 ---
-version: 5.0.9-2
+version: 5.0.9-3
 pkgbase:
   name: openmpi
   pkgdesc: High performance message passing library (MPI)
   pkgver: 5.0.9
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.open-mpi.org
   arch:
     - x86_64
@@ -62,4 +62,4 @@ pkgname:
       - etc/openmpi/openmpi-mca-params.conf
   - name: openmpi-docs
     pkgdesc: High performance message passing library (MPI) - documentation
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
