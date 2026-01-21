@@ -1,0 +1,57 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Mon, 7 Apr 2025 22:15:26 +0200
+Subject: [PATCH] Don't create window in startup phase
+
+This fixes the problem that the process does not exit after timeout when
+running as GApplication service.
+---
+ src/gnome-klotski.vala | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
+
+diff --git a/src/gnome-klotski.vala b/src/gnome-klotski.vala
+index 5f0c76f2cdac..f47f83251bba 100644
+--- a/src/gnome-klotski.vala
++++ b/src/gnome-klotski.vala
+@@ -81,33 +81,37 @@ private class Klotski : Gtk.Application
+ 
+         add_action_entries (action_entries, this);
+ 
+-        window = new KlotskiWindow ();
+-        add_window (window);
+-
+         set_accels_for_action ("win.prev-puzzle",   {"Up"});        // TODO
+         set_accels_for_action ("win.next-puzzle",   {"Down"});      // TODO a weird behaviour exists when you first change puzzle pack, then go to
+         set_accels_for_action ("win.prev-pack",     {"Page_Up"});   // TODO the first/last one, click on a puzzle, and immediately hit Up or Down arrows.
+         set_accels_for_action ("win.next-pack",     {"Page_Down"}); // TODO that makes these keybindings sometimes act strangely, but they’re good.
+ 
+         set_accels_for_action ("win.start-game",    { "<Shift><Primary>n",
+                                                       "<Shift><Primary>r"   }); // TODO just <Primary>n/r?
+ 
+         set_accels_for_action ("win.show-scores",   {        "<Primary>s",      // TODO that's a weird shortcut
+                                                       "<Shift><Primary>s"   });
+      // set_accels_for_action ("win.help",          {                 "F1"  }); // TODO fix dance with
+      // set_accels_for_action ("win.about",         {          "<Shift>F1"  }); // the shortcuts dialog
+         set_accels_for_action ("app.quit",          {        "<Primary>q",
+                                                       "<Shift><Primary>q"   });
+     }
+ 
+     protected override void activate ()
+     {
++        if (get_active_window () == null) {
++            window = new KlotskiWindow ();
++            add_window (window);
++        }
++
+         window.present ();
+     }
+ 
+     protected override void shutdown ()
+     {
+-        window.destroy ();
++        if (get_active_window () != null)
++            window.destroy ();
++
+         base.shutdown ();
+     }
+ }
