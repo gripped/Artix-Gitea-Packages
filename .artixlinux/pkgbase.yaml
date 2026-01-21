@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,12 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 25.0.0-8
-    packages:
-      - xlibre-input-libinput-25.0.0-8-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
     version: 25.0.0-9
     packages:
       - xlibre-input-libinput-25.0.0-9-x86_64.pkg.tar.zst
+    debug: []
+  galaxy:
+    version: null
+    packages: []
     debug: []
