@@ -1,30 +1,27 @@
 ---
-version: 2.6.0-1
+version: 2.6.0-3
 pkgbase:
-  name: lib32-libltdl
-  pkgdesc: A generic library support script (32-bit)
+  name: libtool
+  pkgdesc: A generic library support script
   pkgver: 2.6.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://www.gnu.org/software/libtool
   arch:
     - x86_64
   license:
     - LGPL-2.0-or-later WITH Libtool-exception
+  checkdepends:
+    - gcc-fortran
   makedepends:
     - gcc>=15.2.1
     - git
+    - glibc
+    - lib32-gcc-libs
+    - lib32-glibc
     - help2man
   depends:
     - sh
     - tar
-    - lib32-glibc
-    - libtool
-  provides:
-    - lib32-libtool=2.6.0
-  conflicts:
-    - lib32-libtool
-  replaces:
-    - lib32-libtool
   source:
     - git+https://git.savannah.gnu.org/git/libtool.git#commit=e40fdc22cf727fb885f9df7d9affa827e3253d1c
     - git+https://git.savannah.gnu.org/git/gnulib.git
@@ -34,5 +31,30 @@ pkgbase:
     - SKIP
     - SKIP
 pkgname:
+  - name: libtool
+    depends:
+      - sh
+      - tar
+      - glibc
+    provides:
+      - libltdl=2.6.0
+      - libtool-multilib=2.6.0
+    conflicts:
+      - libltdl
+      - libtool-multilib
+    replaces:
+      - libltdl
+      - libtool-multilib
   - name: lib32-libltdl
+    depends:
+      - sh
+      - tar
+      - lib32-glibc
+      - libtool
+    provides:
+      - lib32-libtool=2.6.0
+    conflicts:
+      - lib32-libtool
+    replaces:
+      - lib32-libtool
 # generated with artixpkg 0.37.5-1-any

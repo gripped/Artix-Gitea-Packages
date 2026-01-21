@@ -1,27 +1,36 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
-# Contributor: Giancarlo Razzolini <grazzolini@archlinux.org>
-# Contributor: Frederik Schwan <freswa at archlinux dot org>
+# Maintainer: Giancarlo Razzolini <grazzolini@archlinux.org>
+# Maintainer: Frederik Schwan <freswa at archlinux dot org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 # NOTE: requires rebuilt with each new gcc version
 
-pkgname=lib32-libltdl
+pkgbase=libtool
+pkgname=(libtool lib32-libltdl)
 pkgver=2.6.0
 _commit=e40fdc22cf727fb885f9df7d9affa827e3253d1c
-pkgrel=1
+pkgrel=3
 _gccver=15.2.1
-pkgdesc='A generic library support script (32-bit)'
+pkgdesc='A generic library support script'
 arch=(x86_64)
 url='https://www.gnu.org/software/libtool'
 license=('LGPL-2.0-or-later WITH Libtool-exception')
-depends=(sh tar lib32-glibc libtool)
-makedepends=("gcc>=$_gccver" git help2man)
-checkdepends=()
-provides=("lib32-libtool=$pkgver")
-conflicts=(lib32-libtool)
-replaces=(lib32-libtool)
+depends=(
+  sh
+  tar
+)
+makedepends=(
+  "gcc>=$_gccver"
+  git
+  glibc
+  lib32-gcc-libs
+  lib32-glibc
+  help2man
+)
+checkdepends=(
+  gcc-fortran
+)
 source=(
   git+https://git.savannah.gnu.org/git/libtool.git#commit=$_commit
   git+https://git.savannah.gnu.org/git/gnulib.git
@@ -45,17 +54,63 @@ prepare() {
   git -c protocol.file.allow=always submodule update
 
   ./bootstrap
+
+  cp -ar "${srcdir}"/libtool "${srcdir}"/libtool32
 }
 
 build() {
-  export CC="gcc -m32" CXX="g++ -m32"
-
   cd libtool
+  ./configure --prefix=/usr lt_cv_sys_lib_dlsearch_path_spec="/usr/lib /usr/lib32"
+  make
+
+  #lib32
+  cd "${srcdir}"/libtool32
+  export CC="gcc -m32" CXX="g++ -m32"
   ./configure --prefix=/usr lt_cv_sys_lib_dlsearch_path_spec="/usr/lib /usr/lib32" --libdir=/usr/lib32
   make
 }
 
-package() {
+check() {
   cd libtool
+  make check gl_public_submodule_commit=
+}
+
+package_libtool() {
+  depends+=(
+    glibc
+  )
+  provides=(
+    "libltdl=$pkgver"
+    "libtool-multilib=$pkgver"
+  )
+  conflicts=(
+    libltdl
+    libtool-multilib
+  )
+  replaces=(
+    libltdl
+    libtool-multilib
+  )
+
+  cd libtool
+  make DESTDIR="$pkgdir" install
+}
+
+package_lib32-libltdl() {
+  depends+=(
+    lib32-glibc
+    libtool
+  )
+  provides=(
+    "lib32-libtool=$pkgver"
+  )
+  conflicts=(
+    lib32-libtool
+  )
+  replaces=(
+    lib32-libtool
+  )
+
+  cd libtool32
   make DESTDIR="$pkgdir" install-libLTLIBRARIES
 }
