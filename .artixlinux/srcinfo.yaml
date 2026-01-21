@@ -1,8 +1,8 @@
 ---
-version: 17.0.17.u10-1
+version: 17.0.18.u8-1
 pkgbase:
   name: java17-openjdk
-  pkgver: 17.0.17.u10
+  pkgver: 17.0.18.u8
   pkgrel: 1
   url: https://openjdk.java.net/
   arch:
@@ -40,12 +40,12 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/openjdk/jdk17u/archive/jdk-17.0.17+10.tar.gz
+    - https://github.com/openjdk/jdk17u/archive/jdk-17.0.18+8.tar.gz
     - freedesktop-java.desktop
     - freedesktop-jconsole.desktop
     - freedesktop-jshell.desktop
   sha256sums:
-    - 6c8015923a618a3568d8ca92ec8bd263116461b1a7320f9c4176b813e3ea95a6
+    - 7ebfcc2aafd514c23df3fe5280e1a34630b9b1d429c65a80dd5a4b6e7f177bc3
     - 85c4742764590783160af74587a47269e6797fbdf17ec485c7644bd239adf61d
     - abac1ab09a33a3654378bc69be5a7cf075263ab3ae9efec1eb25cf388e711bb7
     - e7cce0ecf868f656d8dc2eb25ab82ab665526a0a28aba20f02632dd29962dac3
@@ -73,7 +73,7 @@ pkgname:
     provides:
       - java-runtime-headless=17
       - java-runtime-headless-openjdk=17
-      - jre17-openjdk-headless=17.0.17.u10-1
+      - jre17-openjdk-headless=17.0.18.u8-1
     conflicts:
       - jdk17-openjdk
       - jre17-openjdk
@@ -119,10 +119,10 @@ pkgname:
     provides:
       - java-runtime=17
       - java-runtime-openjdk=17
-      - jre17-openjdk=17.0.17.u10-1
+      - jre17-openjdk=17.0.18.u8-1
       - java-runtime-headless=17
       - java-runtime-headless-openjdk=17
-      - jre17-openjdk-headless=17.0.17.u10-1
+      - jre17-openjdk-headless=17.0.18.u8-1
     conflicts:
       - jdk17-openjdk
       - jre17-openjdk-headless
@@ -182,13 +182,13 @@ pkgname:
     provides:
       - java-environment=17
       - java-environment-openjdk=17
-      - jdk17-openjdk=17.0.17.u10-1
+      - jdk17-openjdk=17.0.18.u8-1
       - java-runtime=17
       - java-runtime-openjdk=17
-      - jre17-openjdk=17.0.17.u10-1
+      - jre17-openjdk=17.0.18.u8-1
       - java-runtime-headless=17
       - java-runtime-headless-openjdk=17
-      - jre17-openjdk-headless=17.0.17.u10-1
+      - jre17-openjdk-headless=17.0.18.u8-1
     conflicts:
       - jre17-openjdk
       - jre17-openjdk-headless
@@ -210,13 +210,13 @@ pkgname:
   - name: openjdk17-src
     pkgdesc: OpenJDK Java 17 sources
     depends:
-      - jdk17-openjdk=17.0.17.u10-1
+      - jdk17-openjdk=17.0.18.u8-1
     provides:
-      - openjdk17-src=17.0.17.u10-1
+      - openjdk17-src=17.0.18.u8-1
   - name: openjdk17-doc
     pkgdesc: OpenJDK Java 17 documentation
     depends:
-      - jdk17-openjdk=17.0.17.u10-1
+      - jdk17-openjdk=17.0.18.u8-1
     provides:
-      - openjdk17-doc=17.0.17.u10-1
-# generated with artixpkg 0.37.4-1-any
+      - openjdk17-doc=17.0.18.u8-1
+# generated with artixpkg 0.37.5-1-any
