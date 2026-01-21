@@ -3,14 +3,15 @@
 
 pkgname=pbzip2
 pkgver=1.1.13
-pkgrel=4
+pkgrel=5
 pkgdesc="Parallel implementation of the bzip2 block-sorting file compressor"
 arch=('x86_64')
 url="http://compression.great-site.net/pbzip2/"
 license=('bzip2-1.0.6')
 depends=('bzip2' 'gcc-libs')
-source=(https://launchpad.net/$pkgname/1.1/$pkgver/+download/$pkgname-$pkgver.tar.gz)
-sha256sums=('8fd13eaaa266f7ee91f85c1ea97c86d9c9cc985969db9059cdebcb1e1b7bdbe6')
+source=(https://launchpad.net/$pkgname/1.1/$pkgver/+download/$pkgname-$pkgver.tar.gz{,.asc})
+sha256sums=('8fd13eaaa266f7ee91f85c1ea97c86d9c9cc985969db9059cdebcb1e1b7bdbe6'
+            'SKIP')
 validpgpkeys=('F3D99FF0F0AA96A659AD61A9D332F1B09A0D9836')
 
 prepare() {
