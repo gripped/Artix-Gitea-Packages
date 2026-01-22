@@ -16,7 +16,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=6.18
-pkgrel=2
+pkgrel=3
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -44,14 +44,12 @@ makedepends+=('llvm' 'clang')
 makedepends+=('libnl')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
-        'cpupower.default'
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('24f57ef27799392461ce0e1d595f96412af7ade4bfd41625e563fd797743d06a'
-            '4fa509949d6863d001075fa3e8671eff2599c046d20c98bb4a70778595cd1c3f')
+sha256sums=('24f57ef27799392461ce0e1d595f96412af7ade4bfd41625e563fd797743d06a')
 
 prepare() {
   cd linux
@@ -203,7 +201,7 @@ package_perf() {
 
 package_cpupower() {
   pkgdesc='Linux kernel tool to examine and tune power saving related features of your processor'
-  backup=('etc/default/cpupower')
+  backup=('etc/default/cpupower-service.conf')
   depends=('glibc' 'bash' 'pciutils')
   conflicts=('cpufrequtils')
   replaces=('cpufrequtils')
@@ -212,14 +210,13 @@ package_cpupower() {
   pushd linux/tools/power/cpupower
   make \
     DESTDIR="$pkgdir" \
+    confdir='/etc/default/' \
     sbindir='/usr/bin' \
     libdir='/usr/lib' \
     mandir='/usr/share/man' \
     docdir='/usr/share/doc/cpupower' \
     install install-man
   popd
-  # install startup scripts
-  install -Dm 644 $pkgname.default "$pkgdir/etc/default/$pkgname"
 }
 
 package_x86_energy_perf_policy() {
