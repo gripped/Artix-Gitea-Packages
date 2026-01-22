@@ -1,9 +1,9 @@
 ---
-version: 1.3.0-1
+version: 1.3.1-1
 pkgbase:
   name: webappcontainer
   pkgdesc: Open any web app in this single, light weight, portable application with a tray icon.
-  pkgver: 1.3.0
+  pkgver: 1.3.1
   pkgrel: 1
   url: https://github.com/josephcrowell/webappcontainer
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - qt6-svg
     - qt6-webengine
   source:
-    - git+https://github.com/josephcrowell/webappcontainer.git#commit=1.3.0
+    - git+https://github.com/josephcrowell/webappcontainer.git#commit=1.3.1
   sha256sums:
-    - 89c94473ba3daca8488a7f6742af89fb1dc0914056080f615e608b4e46813f0a
+    - d849581c8169bfaef6e4d60ea0d039d624597f92c596f17be12b6ec4ad8f4b3c
 pkgname:
   - name: webappcontainer
 # generated with artixpkg 0.37.5-1-any
