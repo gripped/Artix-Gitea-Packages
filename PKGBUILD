@@ -1,5 +1,4 @@
-# Maintainer: kenobi <kenobi@artixlinux.org>
-# Contributor: Robin Broda <robin@broda.me>
+# Maintainer: Robin Broda <robin@broda.me>
 # Contributor: Michael Lass <bevan@bi-co.net>
 # Contributor: Justin Dray <justin@dray.be>
 # Contributor: Patrick McCarty <pnorcks at gmail dot com>
@@ -9,7 +8,7 @@
 # Contributor: Matt Heagney <matt@heagney.com>
 
 pkgname=multipath-tools
-pkgver=0.13.0
+pkgver=0.14.0
 pkgrel=1
 pkgdesc='Multipath tools for Linux (including kpartx)'
 arch=('x86_64')
@@ -18,7 +17,7 @@ license=('GPL-2.0-or-later' 'GPL-3.0-or-later' 'LGPL-2.0-or-later' 'LGPL-2.1-or-
 depends=('glibc' 'gcc-libs' 'libaio' 'device-mapper' 'json-c' 'liburcu' 'libudev' 'util-linux-libs')
 makedepends=('git' 'udev')
 source=("multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=${pkgver}")
-sha256sums=('b7509e24d0b4e991d3490f86c605532afa0ac500e3e652f984ec095a5770068d')
+sha256sums=('c073b02b84313b4e7242607460ad78b2f7b2937a429eff1af16486403e6a4bef')
 
 _make_opts=(
   prefix='/usr/'
