@@ -1,10 +1,10 @@
 ---
-version: 1.006002-6
+version: 1.006003-1
 pkgbase:
   name: perl-exporter-tiny
   pkgdesc: an exporter with the features of Sub::Exporter but only core dependencies
-  pkgver: 1.006002
-  pkgrel: 6
+  pkgver: 1.006003
+  pkgrel: 1
   url: https://search.cpan.org/dist/Exporter-Tiny
   arch:
     - any
@@ -19,9 +19,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://search.cpan.org/CPAN/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.006002.tar.gz
+    - https://search.cpan.org/CPAN/authors/id/T/TO/TOBYINK/Exporter-Tiny-1.006003.tar.gz
   sha512sums:
-    - 684dc97d854686910928f413bd84df3e2d2b351c2304116d5c567ec74eb7384f4085881f2bdeaf96dcf9ade2a959076ebd2bde3977dd5b876f75daaf6ca9d763
+    - bed019dae6cca43b35eea37daf46e62100f1325de679ab8eab89a24cf9822f889586789428e11bcd182ae0fc8dbed5ef181a22830c7fd00723d14534eb1b6d97
 pkgname:
   - name: perl-exporter-tiny
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
