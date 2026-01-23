@@ -1,9 +1,9 @@
 ---
-version: 2025.12-1
+version: 2025.12.1-1
 pkgbase:
   name: sof-bin
   pkgdesc: Sound Open Firmware
-  pkgver: 2025.12
+  pkgver: 2025.12.1
   pkgrel: 1
   url: https://www.sofproject.org/
   arch:
@@ -11,9 +11,9 @@ pkgbase:
   license:
     - BSD-3-Clause AND ISC
   source:
-    - https://github.com/thesofproject/sof-bin/releases/download/v2025.12/sof-bin-2025.12.tar.gz
+    - https://github.com/thesofproject/sof-bin/releases/download/v2025.12.1/sof-bin-2025.12.1.tar.gz
   b2sums:
-    - 935f909e4b5ab9fed3424767b660e7ac3b96e121f23d2b52d0b0f24e82877e1acbd54fce530861f43bf01b1b0343874959a0e75c712440c15bc761b3d9d643f2
+    - f791dccb488ae3a1db26e39d149d0a51b68c200943ef35d2f40a59c0e17a4bc7bcaea5f54195ccc6cd9574371aceb07a394a1869efe1bdfd418d938283f8e7b8
 pkgname:
   - name: sof-firmware
     options:
@@ -24,4 +24,4 @@ pkgname:
       - alsa-lib
       - glibc
       - python
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
