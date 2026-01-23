@@ -1,10 +1,10 @@
 ---
-version: 1:2.10-1
+version: 1:2.10-2
 pkgbase:
   name: vamp-plugin-sdk
   pkgdesc: The Vamp audio analysis plug-in system
   pkgver: 2.10
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/vamp-plugins/vamp-plugin-sdk
   arch:
@@ -32,4 +32,4 @@ pkgbase:
     - ba206443d4a6f94f56c1e3b7e8f47b7c8f893d2df6601f9d26a613d56bf58fee7d0a4a996964aa0690ecf69fd1d686db28165e73a0d37880a7891c67ecaaae5f
 pkgname:
   - name: vamp-plugin-sdk
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.37.6-1-any
