@@ -1,10 +1,10 @@
 ---
-version: 0.19-4
+version: 0.19-5
 pkgbase:
   name: pacrunner
   pkgdesc: Proxy configuration daemon
   pkgver: 0.19
-  pkgrel: 4
+  pkgrel: 5
   url: https://git.kernel.org/pub/scm/network/connman/pacrunner.git
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - 97700f151a95badde24c110659c1e95a8656cb021a54de3627ced2bb792cc65c0a35ea330302ae125ce1b9713077293e6f6073599e6b71d6180b8f366754c5d8
 pkgname:
   - name: pacrunner
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.37.6-1-any

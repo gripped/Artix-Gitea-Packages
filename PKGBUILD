@@ -2,7 +2,7 @@
 
 pkgname=pacrunner
 pkgver=0.19
-pkgrel=4
+pkgrel=5
 pkgdesc="Proxy configuration daemon"
 arch=(x86_64)
 url="https://git.kernel.org/pub/scm/network/connman/pacrunner.git"
@@ -49,5 +49,8 @@ build() {
   make
 }
 
-
+package() {
+  cd $pkgname
+  make DESTDIR="$pkgdir" install
+}
 # vim:set sw=2 sts=-1 et:
