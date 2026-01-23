@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 11.0-1
+    version: 11.1-2
     packages:
-      - wine-11.0-1-x86_64.pkg.tar.zst
+      - wine-11.1-2-x86_64.pkg.tar.zst
     debug:
-      - wine-debug-11.0-1-x86_64.pkg.tar.zst
+      - wine-debug-11.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
