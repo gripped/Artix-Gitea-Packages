@@ -3,7 +3,7 @@
 
 pkgname=plocate
 pkgver=1.1.24
-pkgrel=1
+pkgrel=2
 pkgdesc="Alternative to locate, faster and compatible with mlocate's database."
 arch=('x86_64')
 url="https://plocate.sesse.net"
@@ -19,7 +19,6 @@ source=("${url}/download/${pkgname}-${pkgver}.tar.gz"
         'plocate.tmpfiles'
         'updatedb.conf')
 sha256sums=('e55a757af1d7efb15ea674993224da4f0258479f8f720bd3dae0925d27dc04a2'
-            'f519c901e2fb4195e25025a745db41c4167156be698738b198cbd5651cd9d9e6'
             '1713a8fc8b81f4a390bf8597c4c0e917474379002dcc984aad2f44218d10c82a'
             'adda399ac42f0faa002caab5bf932777c0006ae7c4387add859c9f77321b4202'
             'd00796741e2194032d0185b40de70ff5c8a11fda416a70434eb0aa2020981f91')
