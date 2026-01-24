@@ -29,27 +29,27 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:25.3.3-3
+    version: 1:25.3.4-1
     packages:
-      - mesa-1:25.3.3-3-x86_64.pkg.tar.zst
-      - opencl-mesa-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-asahi-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-broadcom-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-dzn-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-freedreno-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-gfxstream-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-intel-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-nouveau-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-panfrost-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-powervr-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-radeon-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-swrast-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-virtio-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-mesa-implicit-layers-1:25.3.3-3-x86_64.pkg.tar.zst
-      - vulkan-mesa-layers-1:25.3.3-3-x86_64.pkg.tar.zst
-      - mesa-docs-1:25.3.3-3-x86_64.pkg.tar.zst
+      - mesa-1:25.3.4-1-x86_64.pkg.tar.zst
+      - opencl-mesa-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-asahi-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-broadcom-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-dzn-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-freedreno-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-gfxstream-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-intel-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-nouveau-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-panfrost-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-powervr-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-radeon-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-swrast-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-virtio-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-mesa-implicit-layers-1:25.3.4-1-x86_64.pkg.tar.zst
+      - vulkan-mesa-layers-1:25.3.4-1-x86_64.pkg.tar.zst
+      - mesa-docs-1:25.3.4-1-x86_64.pkg.tar.zst
     debug:
-      - mesa-debug-1:25.3.3-3-x86_64.pkg.tar.zst
+      - mesa-debug-1:25.3.4-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
