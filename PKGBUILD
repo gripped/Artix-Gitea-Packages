@@ -3,8 +3,8 @@
 # Contributor: wenLiangcan <boxeed at gmail dot com>
 
 pkgname=python-wcwidth
-pkgver=0.2.14
-pkgrel=2
+pkgver=0.3.1
+pkgrel=1
 pkgdesc='Python library that measures the width of unicode strings rendered to a terminal'
 arch=(any)
 url='https://github.com/jquast/wcwidth'
@@ -14,13 +14,12 @@ makedepends=(
   git
   python-build
   python-installer
-  python-setuptools
-  python-wheel
+  python-hatchling
 )
 checkdepends=(python-pytest)
 source=("$pkgname::git+$url#tag=$pkgver")
-sha512sums=('b5c177995d5cce9c69333385caf7fa750f74a1f5daaad9c90c82e42d7213995f11e423f3a2442c058d14d922ca5525fdfdbf110feb18c58679114fdb0476b1aa')
-b2sums=('38edec0cbc294b392a9eba5010aa7222c82d99a6070eb76485b9ea83a5a3bc0c78bb4d4a7b7066188b42a8a41c8c18a89b1846f6a9fba9f40e54c78a283bbf3d')
+sha512sums=('32dce81273a11958fccbddcee4214b2bd6aeabc3e3f1c24677978bd5577ed96cac4b5f41b13e10723e195134b45687e4aacb8d9ec9ec41ca08df6fac9b886db4')
+b2sums=('57398a338e52fb4e4f50c1e70079ac21d887a37507d1f6f10398317d06a8c7787109947263def99f2a636809fb53c80fa51af8b3cbfac45018933501e3fefebe')
 
 build() {
   cd "$pkgname"
@@ -33,7 +32,11 @@ check() {
 
   rm -v tox.ini
 
-  export PYTHONPATH=.
+  # temporary install
+  python -m installer --destdir="$(pwd)/tmp" dist/*.whl
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  export PYTHONPATH="$(pwd)/tmp/$site_packages"
+
   pytest -v
 }
 
