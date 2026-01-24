@@ -1,10 +1,10 @@
 ---
-version: 2.1-9
+version: 2.1-9.1
 pkgbase:
   name: qtqr
   pkgdesc: Qt GUI that makes easy creating and decoding QR codes
   pkgver: 2.1
-  pkgrel: 9
+  pkgrel: 9.1
   url: https://launchpad.net/qr-tools
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 1a4739e4c61077e17fdc63b10b329c377b40080b8afd8ae9a2e269d3f5c094b0
 pkgname:
   - name: qtqr
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any

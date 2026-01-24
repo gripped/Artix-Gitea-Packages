@@ -3,7 +3,7 @@
 pkgname=qtqr
 pkgver=2.1
 _pkgver=2.1-0~47~ubuntu24.04.1
-pkgrel=9
+pkgrel=9.1
 pkgdesc='Qt GUI that makes easy creating and decoding QR codes'
 arch=('any')
 url='https://launchpad.net/qr-tools'
