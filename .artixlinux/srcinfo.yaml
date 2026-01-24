@@ -1,10 +1,10 @@
 ---
-version: 2.19.1-1
+version: 2.19.1-1.1
 pkgbase:
   name: conan
   pkgdesc: A distributed, open source, C/C++ package manager.
   pkgver: 2.19.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://conan.io
   arch:
     - any
@@ -40,4 +40,4 @@ pkgbase:
     - 39ba5d9e7660b862d6f0be8e53e044c83fdc766432dc516434b0ca24ddebbca1
 pkgname:
   - name: conan
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
