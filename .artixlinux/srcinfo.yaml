@@ -27,7 +27,7 @@ pkgbase:
     - libxv
     - libunwind
     - peg
-    - systemd
+    - libudev
   source:
     - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.3.tar.xz
     - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.3.tar.xz.sig
