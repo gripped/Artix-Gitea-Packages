@@ -1,9 +1,9 @@
 ---
-version: 4.1.4-1
+version: 4.1.5-1
 pkgbase:
   name: tellico
   pkgdesc: A collection manager for KDE
-  pkgver: 4.1.4
+  pkgver: 4.1.5
   pkgrel: 1
   url: https://tellico-project.org/
   changelog: tellico.changelog
@@ -36,9 +36,9 @@ pkgbase:
     - qt6-charts
     - qt6-webengine
   source:
-    - https://tellico-project.org/files/tellico-4.1.4.tar.xz
+    - https://tellico-project.org/files/tellico-4.1.5.tar.xz
   sha256sums:
-    - c81b8d31bbd5fa4d7d82f9b0e3a9e859e8b65f1bc6c24839de21ca3c992c2304
+    - de85c600a725926000308622d96ee7bed1123af07f971f237841fb4a02240b36
 pkgname:
   - name: tellico
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
