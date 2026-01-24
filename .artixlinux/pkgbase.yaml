@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: rdiff-backup
-  version: 2.2.6-3
-  arch:
-    - x86_64
-  pkgname:
-    - rdiff-backup
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 2.2.6-3
+    version: 2.2.6-3.1
     packages:
-      - rdiff-backup-2.2.6-3-x86_64.pkg.tar.zst
+      - rdiff-backup-2.2.6-3.1-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy

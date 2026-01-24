@@ -2,7 +2,7 @@
 
 pkgname=rdiff-backup
 pkgver=2.2.6
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Reverse differential backup tool"
 url="https://rdiff-backup.net/"
 arch=("x86_64")

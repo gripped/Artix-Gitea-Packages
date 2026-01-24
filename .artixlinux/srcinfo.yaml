@@ -1,0 +1,29 @@
+---
+version: 2.2.6-3.1
+pkgbase:
+  name: rdiff-backup
+  pkgdesc: Reverse differential backup tool
+  pkgver: 2.2.6
+  pkgrel: 3.1
+  url: https://rdiff-backup.net/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - python-setuptools-scm
+    - python-pip
+    - asciidoctor
+  depends:
+    - python
+    - python-setuptools
+    - python-yaml
+    - python-psutil
+    - librsync
+  source:
+    - https://github.com/rdiff-backup/rdiff-backup/releases/download/v2.2.6/rdiff-backup-2.2.6.tar.gz
+  sha256sums:
+    - d0778357266bc6513bb7f75a4570b29b24b2760348bbf607babfc3a6f09458cf
+pkgname:
+  - name: rdiff-backup
+# generated with artixpkg 0.37.5-1-any
