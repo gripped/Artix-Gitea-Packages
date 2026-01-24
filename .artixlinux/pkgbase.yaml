@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 147.0.1-1
+    version: 147.0.1-2
     packages:
-      - librewolf-147.0.1-1-x86_64.pkg.tar.zst
+      - librewolf-147.0.1-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

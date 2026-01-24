@@ -6,7 +6,7 @@
 
 pkgname=librewolf
 pkgver=147.0.1
-pkgrel=1
+pkgrel=2
 _lwrel=3
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
@@ -139,8 +139,6 @@ export CXX='clang++'
 
 # Branding
 ac_add_options --with-app-name=${pkgname}
-# TODO: re-evaluate
-ac_add_options --enable-update-channel=release
 
 export MOZ_APP_REMOTINGNAME=${pkgname}
 
