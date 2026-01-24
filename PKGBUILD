@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=webappcontainer
-pkgver=1.3.1
+pkgver=1.4.0
 pkgrel=1
 pkgdesc="Open any web app in this single, light weight, portable application with a tray icon."
 arch=(x86_64)
@@ -33,4 +33,4 @@ package() {
   install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-sha256sums=('d849581c8169bfaef6e4d60ea0d039d624597f92c596f17be12b6ec4ad8f4b3c')
+sha256sums=('b5b2d5bbac6dd9c887093a13c2a95ea996485bca1aa9201308873e0f8042ee50')
