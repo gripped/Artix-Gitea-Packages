@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.9.122-1
+    version: 0.9.123-1
     packages:
-      - cargo-nextest-0.9.122-1-x86_64.pkg.tar.zst
+      - cargo-nextest-0.9.123-1-x86_64.pkg.tar.zst
     debug: []
