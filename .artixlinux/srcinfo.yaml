@@ -1,10 +1,10 @@
 ---
-version: 0.1.11-3.1
+version: 0.1.11-3.2
 pkgbase:
   name: moksha-arandr
   pkgdesc: Visual front end for XRandR 1.2
   pkgver: 0.1.11
-  pkgrel: 3.1
+  pkgrel: 3.2
   url: https://christian.amsuess.com/tools/arandr/
   arch:
     - any
@@ -55,4 +55,4 @@ pkgbase:
     - af30f629b463324c3fa97c18d2da4b1e268ed66fbb7256223d6dad22bb01cb26
 pkgname:
   - name: moksha-arandr
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.5-1-any
