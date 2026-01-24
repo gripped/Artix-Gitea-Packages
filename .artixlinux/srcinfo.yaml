@@ -1,9 +1,9 @@
 ---
-version: 2.2.14-1
+version: 2.2.15-1
 pkgbase:
   name: nilfs-utils
   pkgdesc: A log-structured file system supporting continuous snapshotting (userspace utils)
-  pkgver: 2.2.14
+  pkgver: 2.2.15
   pkgrel: 1
   url: http://nilfs.sourceforge.net/
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   backup:
     - etc/nilfs_cleanerd.conf
   source:
-    - http://nilfs.sourceforge.net/download/nilfs-utils-2.2.14.tar.bz2
+    - http://nilfs.sourceforge.net/download/nilfs-utils-2.2.15.tar.bz2
   sha256sums:
-    - 2cd57a931ee1f560985660bc07f8d52ecf6bf743a3f653c45d60c7015d365b51
+    - bd71259ab3238c2413b3caabdcd0c788d44f2746360f9cb898b0c74e6bab046d
 pkgname:
   - name: nilfs-utils
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any

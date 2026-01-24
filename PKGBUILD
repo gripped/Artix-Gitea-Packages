@@ -2,7 +2,7 @@
 # Contributor: Geoffroy Carrier <geoffroy.carrier@koon.fr>
 
 pkgname=nilfs-utils
-pkgver=2.2.14
+pkgver=2.2.15
 pkgrel=1
 pkgdesc="A log-structured file system supporting continuous snapshotting (userspace utils)"
 arch=('x86_64')
@@ -11,7 +11,7 @@ license=('GPL-2.0-or-later' 'LGPL-2.1-or-later')
 backup=('etc/nilfs_cleanerd.conf')
 depends=('util-linux')
 source=(http://nilfs.sourceforge.net/download/$pkgname-$pkgver.tar.bz2)
-sha256sums=('2cd57a931ee1f560985660bc07f8d52ecf6bf743a3f653c45d60c7015d365b51')
+sha256sums=('bd71259ab3238c2413b3caabdcd0c788d44f2746360f9cb898b0c74e6bab046d')
 
 prepare() {
   cd $pkgname-$pkgver
