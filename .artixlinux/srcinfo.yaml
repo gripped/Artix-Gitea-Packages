@@ -1,10 +1,10 @@
 ---
-version: 0.8-3
+version: 0.8-3.1
 pkgbase:
   name: piper
   pkgdesc: GTK application to configure gaming mice
   pkgver: 0.8
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/libratbag/piper
   arch:
     - any
@@ -36,4 +36,4 @@ pkgbase:
     - 56d20003503c62ad6d879b316d40cc31e5be8c6f2e650d64b7e0f44bde63c242
 pkgname:
   - name: piper
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any

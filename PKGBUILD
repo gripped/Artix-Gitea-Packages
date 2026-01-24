@@ -3,7 +3,7 @@
 
 pkgname=piper
 pkgver=0.8
-pkgrel=3
+pkgrel=3.1
 pkgdesc='GTK application to configure gaming mice'
 arch=('any')
 url='https://github.com/libratbag/piper'

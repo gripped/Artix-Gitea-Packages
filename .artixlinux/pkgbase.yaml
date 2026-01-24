@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.8-3
+    version: 0.8-3.1
     packages:
-      - piper-0.8-3-any.pkg.tar.zst
+      - piper-0.8-3.1-any.pkg.tar.zst
     debug: []
