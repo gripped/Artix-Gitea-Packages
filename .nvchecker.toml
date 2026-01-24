@@ -1,0 +1,6 @@
+[shotcut]
+source = "github"
+github = "mltframework/shotcut"
+use_latest_release = true
+include_regex = 'v\d+\.\d+\.\d+'
+prefix = "v"
