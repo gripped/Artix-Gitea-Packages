@@ -4,7 +4,7 @@
 
 pkgname=gajim
 pkgver=2.4.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Full featured and easy to use XMPP (Jabber) client"
 url="https://gajim.org/"
 arch=('any')
