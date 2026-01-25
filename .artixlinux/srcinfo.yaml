@@ -1,0 +1,31 @@
+---
+version: 1.3.0-1
+pkgbase:
+  name: libxmu
+  pkgdesc: X11 miscellaneous micro-utility library
+  pkgver: 1.3.0
+  pkgrel: 1
+  url: https://gitlab.freedesktop.org/xorg/lib/libxmu
+  arch:
+    - x86_64
+  license:
+    - MIT-open-group AND SMLNJ AND X11 AND ISC
+  makedepends:
+    - xorg-util-macros
+  depends:
+    - libxext
+    - libxt
+    - libx11
+    - xorgproto
+    - glibc
+  source:
+    - https://xorg.freedesktop.org//archive/individual/lib/libXmu-1.3.0.tar.xz
+    - https://xorg.freedesktop.org//archive/individual/lib/libXmu-1.3.0.tar.xz.sig
+  validpgpkeys:
+    - 3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2
+  sha512sums:
+    - 38bad3d975017fada13e90ae13ef8db4cb1ed5063cd3b3ae0acddfa77443265e33d0d3397cd070a0c78d92281d16445944e3f19828ff467c21da69db0249f3fa
+    - SKIP
+pkgname:
+  - name: libxmu
+# generated with artixpkg 0.37.5-1-any
