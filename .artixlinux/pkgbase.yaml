@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 11.0-1
+    version: 11.1-1
     packages:
-      - wine-staging-11.0-1-x86_64.pkg.tar.zst
+      - wine-staging-11.1-1-x86_64.pkg.tar.zst
     debug:
-      - wine-staging-debug-11.0-1-x86_64.pkg.tar.zst
+      - wine-staging-debug-11.1-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
