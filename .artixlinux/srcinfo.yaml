@@ -1,11 +1,11 @@
 ---
-version: 12.3.1-2
+version: 12.3.2-1
 pkgbase:
   name: qpdf
   pkgdesc:
     QPDF: A Content-Preserving PDF Transformation System
-  pkgver: 12.3.1
-  pkgrel: 2
+  pkgver: 12.3.2
+  pkgrel: 1
   url: https://github.com/qpdf/qpdf
   arch:
     - x86_64
@@ -24,12 +24,12 @@ pkgbase:
     - python-sphinx_rtd_theme
     - texlive-latexextra
   source:
-    - https://github.com/qpdf/qpdf/releases/download/v12.3.1/qpdf-12.3.1.tar.gz
-    - https://github.com/qpdf/qpdf/releases/download/v12.3.1/qpdf-12.3.1.tar.gz.asc
+    - https://github.com/qpdf/qpdf/releases/download/v12.3.2/qpdf-12.3.2.tar.gz
+    - https://github.com/qpdf/qpdf/releases/download/v12.3.2/qpdf-12.3.2.tar.gz.asc
   validpgpkeys:
     - C2C96B10011FE009E6D1DF828A75D10998012C7E
   sha256sums:
-    - 6de2a390b807a881bba2ab1abb080e985c2338a64137807ed28a946a258ffc89
+    - 6cba2f9f2cd887d905faeb99e0e51a307b217920d1bbf3e9cfbb2e8178a2deda
     - SKIP
 pkgname:
   - name: qpdf
@@ -43,4 +43,4 @@ pkgname:
   - name: qpdf-docs
     pkgdesc:
       QPDF: A Content-Preserving PDF Transformation System (documentation)
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
