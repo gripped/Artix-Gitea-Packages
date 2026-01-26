@@ -5,7 +5,7 @@
 
 pkgname=kapptemplate
 pkgver=25.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='KDE Template Generator'
 url='https://apps.kde.org/kapptemplate/'
 arch=(x86_64)
@@ -20,6 +20,7 @@ depends=(gcc-libs
          kiconthemes
          kirigami
          kirigami-addons
+         qqc2-desktop-style
          qt6-base
          qt6-declarative)
 makedepends=(extra-cmake-modules
