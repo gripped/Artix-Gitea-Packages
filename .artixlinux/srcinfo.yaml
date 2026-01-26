@@ -1,9 +1,9 @@
 ---
-version: 18.0.1-1
+version: 18.0.2-1
 pkgbase:
   name: qtcreator
   pkgdesc: Lightweight, cross-platform integrated development environment
-  pkgver: 18.0.1
+  pkgver: 18.0.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -53,11 +53,11 @@ pkgbase:
   options:
     - docs
   source:
-    - git+https://code.qt.io/qt-creator/qt-creator#tag=v18.0.1
+    - git+https://code.qt.io/qt-creator/qt-creator#tag=v18.0.2
     - git+https://code.qt.io/qt-creator/perfparser
     - git+https://code.qt.io/playground/qlitehtml
   sha256sums:
-    - 216f98364e284f428535285092ae99765faa8489b532d67c379efd74b08129d8
+    - 2dcda7b9433e2a2e5c9e61ee07e9d33edb732a9f4f501990cae9de940e26542d
     - SKIP
     - SKIP
 pkgname:
@@ -67,4 +67,4 @@ pkgname:
     depends:
       - qtcreator
     optdepends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
