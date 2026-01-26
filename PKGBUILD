@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=webappcontainer
-pkgver=1.4.1
+pkgver=1.4.2
 pkgrel=1
 pkgdesc="Open any web app in this single, light weight, portable application with a tray icon."
 arch=(x86_64)
@@ -12,7 +12,7 @@ depends=(
   qt6-svg
   qt6-webengine
 )
-makedepends=(cmake clang qt6-tools dpkg git)
+makedepends=(cmake clang qt6-tools git)
 source=("git+${url}.git#tag=${pkgver}")
 
 build() {
@@ -33,4 +33,4 @@ package() {
   install -Dm644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-sha256sums=('de04a29108a60efd56c1f808a8b0d6137905bd26fb2ef1f59e74ca8dc69cfee2')
+sha256sums=('838775e35484d9873955336cf2a15b170baff0b0a8a57896067f98a887b76bfa')
