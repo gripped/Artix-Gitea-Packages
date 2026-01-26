@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 20260120-1
     packages:
       - artix-mirrorlist-20260120-1-any.pkg.tar.zst
-    debug: []
-  system:
-    version: 20260117-1
-    packages:
-      - artix-mirrorlist-20260117-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
