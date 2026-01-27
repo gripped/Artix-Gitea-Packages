@@ -1,0 +1,26 @@
+---
+version: 1.1.7-1
+pkgbase:
+  name: lib32-libxdamage
+  pkgdesc: X11 damaged region extension library (32-bit)
+  pkgver: 1.1.7
+  pkgrel: 1
+  url: https://xorg.freedesktop.org/
+  arch:
+    - x86_64
+  license:
+    - HPND-sell-variant
+  makedepends:
+    - xorgproto
+  depends:
+    - lib32-libxfixes>=4.0.4
+    - libxdamage
+    - lib32-libx11
+    - lib32-glibc
+  source:
+    - https://xorg.freedesktop.org//releases/individual/lib/libXdamage-1.1.7.tar.xz
+  sha256sums:
+    - 127067f521d3ee467b97bcb145aeba1078e2454d448e8748eb984d5b397bde24
+pkgname:
+  - name: lib32-libxdamage
+# generated with artixpkg 0.37.6-1-any
