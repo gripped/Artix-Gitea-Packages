@@ -49,7 +49,7 @@ prepare() {
 # Fix build with fmt 12
   cd contrib/tarballs
   mkdir -p dhtnet
-  tar -xzf dhtnet-$_dhtnetver.tar.gz -C dhtnet
+  tar -xzf dhtnet-$_dhtnetver.tar.gz -C dhtnet --strip-components=1
   cd dhtnet
   patch -p1 -i "$srcdir"/fmt-12.patch
   tar -czf ../dhtnet-$_dhtnetver.tar.gz *
