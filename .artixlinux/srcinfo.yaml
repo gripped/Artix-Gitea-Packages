@@ -1,10 +1,10 @@
 ---
-version: 2025.7-1
+version: 2025.7-2
 pkgbase:
   name: ostree
   pkgdesc: Operating system and container binary deployment and upgrades
   pkgver: 2025.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://ostreedev.github.io/ostree/
   arch:
     - x86_64
@@ -33,7 +33,7 @@ pkgbase:
     - libsoup3
     - libxslt
     - mkinitcpio
-    - openssl-1.1
+    - openssl
     - python
     - xz
   depends:
@@ -92,4 +92,4 @@ pkgname:
       - libcrypto.so
       - xz
       - liblzma.so
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
