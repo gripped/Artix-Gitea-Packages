@@ -7,7 +7,7 @@ pkgname=(
   libinput-tools
 )
 pkgver=1.30.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Input device management and event handling library"
 url="https://wayland.freedesktop.org/libinput/doc/latest/"
 arch=(x86_64)
@@ -17,7 +17,7 @@ depends=(
   glibc
   libevdev
   libwacom
-  lua
+  lua54
   mtdev
   udev
 )
