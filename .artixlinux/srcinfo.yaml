@@ -1,0 +1,31 @@
+---
+version: 0.3.3-1
+pkgbase:
+  name: chawan
+  pkgdesc: A text-mode web browser and pager for Unix-like systems
+  pkgver: 0.3.3
+  pkgrel: 1
+  url: https://chawan.net/
+  arch:
+    - x86_64
+  license:
+    - Unlicense
+  makedepends:
+    - git
+    - nim>=2.0.0
+  depends:
+    - glibc
+    - gcc-libs
+    - brotli
+    - libssh2
+    - openssl
+    - sh
+  source:
+    - chawan::git+https://git.sr.ht/~bptato/chawan#tag=v0.3.3
+  sha512sums:
+    - b66d36a61a471942cc023f61d15e8763380b3579b9e6a7fa6d3d1175075c25c33ffc1d828705182a6bc7c6fcb64f6dd90810bf5fe18b7d1881908ba80eddf165
+  b2sums:
+    - f2dead54bd2e6c7b8035578632c8c34e8897426793ece848f70f02594f36524d04c80cb48dd37d4a06ac498c968339cbc7675175507a901954106b89bc70d3e8
+pkgname:
+  - name: chawan
+# generated with artixpkg 0.37.6-1-any
