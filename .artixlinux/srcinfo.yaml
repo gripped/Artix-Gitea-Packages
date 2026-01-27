@@ -1,10 +1,10 @@
 ---
-version: 0.5.1-1
+version: 0.5.1-2
 pkgbase:
   name: dino
   pkgdesc: Modern XMPP (Jabber) chat client written in Vala
   pkgver: 0.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://dino.im
   arch:
     - x86_64
@@ -27,7 +27,6 @@ pkgbase:
     - libsoup3
     - sqlite
     - qrencode
-    - gspell
     - libnice
     - gstreamer
     - gst-plugin-gtk
@@ -46,4 +45,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: dino
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
