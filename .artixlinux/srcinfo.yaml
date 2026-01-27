@@ -1,10 +1,10 @@
 ---
-version: 1.6.3-1
+version: 1.6.3-1.1
 pkgbase:
   name: featherpad
   pkgdesc: Lightweight Qt plain text editor
   pkgver: 1.6.3
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/tsujan/FeatherPad
   arch:
     - x86_64

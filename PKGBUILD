@@ -4,7 +4,7 @@
 
 pkgname=featherpad
 pkgver=1.6.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Lightweight Qt plain text editor'
 arch=('x86_64')
 url='https://github.com/tsujan/FeatherPad'
