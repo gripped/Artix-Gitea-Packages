@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.27.7-1
+    version: 0.29.1-1
     packages:
-      - ruby-async-container-0.27.7-1-any.pkg.tar.zst
+      - ruby-async-container-0.29.1-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
