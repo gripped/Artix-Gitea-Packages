@@ -3,7 +3,7 @@
 
 pkgname=oxipng
 pkgver=10.1.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A lossless PNG compression optimiser"
 arch=(x86_64)
 url="https://github.com/shssoichiro/oxipng"
