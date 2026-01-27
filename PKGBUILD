@@ -3,7 +3,7 @@
 
 pkgname=xorg-xkill
 pkgver=1.0.7
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Kill a client by its X resource"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"

@@ -1,10 +1,10 @@
 ---
-version: 1.0.7-1
+version: 1.0.7-1.1
 pkgbase:
   name: xorg-xkill
   pkgdesc: Kill a client by its X resource
   pkgver: 1.0.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://xorg.freedesktop.org/
   arch:
     - x86_64
