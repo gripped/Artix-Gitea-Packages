@@ -2,7 +2,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=inetutils
-pkgver=2.6
+pkgver=2.7
 pkgrel=1
 pkgdesc="A collection of common network programs"
 arch=('x86_64')
@@ -19,7 +19,7 @@ source=("git+https://git.savannah.gnu.org/git/inetutils.git#tag=v${pkgver}?signe
         'inetutils.sysusers'
         'rlogin.pam'
         'rsh.pam')
-sha512sums=('59a65642f1883cb7315abe602eb92bb4c0639cde616323449e81e44dbdcb4d41b01e2332b5822a92fb08890feda6ef98a17cf8507fa3dce600c2af5b2d917fb4'
+sha512sums=('c6559cfc92c6365abda86f22d0eaba63a93e8c2d7ae32ef33d10ca0d5f36b25c99427f4243877ffc180dc645fc3cb1b118b5358fecadfbece22243e02e7f942d'
             'SKIP'
             '00a6ff36efe63612990181f7cb37ea7d43ee7f2b6bda6b1fc23ccb2f3b19da54aabad041c2412936561dcd997f9613bd8144a96f5e04f30135a36f9ac98d8056'
             '432a45af5cd4f9f2dee4b631b45745b734e47cf631553e79db31905fa0839988914bcfed1dfcdd00d2ea6e4029b0674d46623c33ce0bd0678c2628fbaa0d1b25'
