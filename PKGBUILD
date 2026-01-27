@@ -4,7 +4,7 @@
 
 pkgname=jami-daemon
 pkgver=20250929
-pkgrel=1
+pkgrel=2
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)"
 arch=(x86_64)
 url="https://jami.net"
