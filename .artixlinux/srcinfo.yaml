@@ -53,7 +53,7 @@ pkgbase:
   source:
     - git+https://git.jami.net/savoirfairelinux/jami-daemon.git#commit=afe2446133eb3c9279e42b0d1dcfdd9a3c76a35f
     - https://github.com/savoirfairelinux/pjproject/archive/93dc96918bb6ba74e1e1d00c40c80402e856f2ac/pjproject-93dc96918bb6ba74e1e1d00c40c80402e856f2ac.tar.gz
-    - dhtnet-7861b4620b4cec5fa34c5d1bb2b304912730f638.tar.gz::https://review.jami.net/plugins/gitiles/dhtnet/+archive/7861b4620b4cec5fa34c5d1bb2b304912730f638.tar.gz
+    - dhtnet-7861b4620b4cec5fa34c5d1bb2b304912730f638.tar.gz::https://git.jami.net/savoirfairelinux/dhtnet/-/archive/7861b4620b4cec5fa34c5d1bb2b304912730f638/dhtnet-7861b4620b4cec5fa34c5d1bb2b304912730f638.tar.gz
     - ffmpeg-7.patch
     - ffmpeg-8.patch
     - fmt-12.patch

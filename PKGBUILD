@@ -21,7 +21,7 @@ _pjprojectver=93dc96918bb6ba74e1e1d00c40c80402e856f2ac
 _dhtnetver=7861b4620b4cec5fa34c5d1bb2b304912730f638
 source=(git+https://git.jami.net/savoirfairelinux/${pkgname}.git#commit=${_commit}
         https://github.com/savoirfairelinux/pjproject/archive/${_pjprojectver}/pjproject-${_pjprojectver}.tar.gz
-        dhtnet-$_dhtnetver.tar.gz::https://review.jami.net/plugins/gitiles/dhtnet/+archive/$_dhtnetver.tar.gz
+        dhtnet-$_dhtnetver.tar.gz::https://git.jami.net/savoirfairelinux/dhtnet/-/archive/${_dhtnetver}/dhtnet-${_dhtnetver}.tar.gz
         ffmpeg-7.patch
         ffmpeg-8.patch
         fmt-12.patch)
