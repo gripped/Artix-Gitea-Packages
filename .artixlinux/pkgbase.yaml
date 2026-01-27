@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 7.0.1-1
+    version: 7.0.2-1
     packages:
-      - glaze-7.0.1-1-any.pkg.tar.zst
+      - glaze-7.0.2-1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
