@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.11.1-1
+    version: 0.12.0-1
     packages:
-      - ruby-memory-0.11.1-1-any.pkg.tar.zst
+      - ruby-memory-0.12.0-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
