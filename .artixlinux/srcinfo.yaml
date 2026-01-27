@@ -1,0 +1,32 @@
+---
+version: 1.1.6-1
+pkgbase:
+  name: libxinerama
+  pkgdesc: X11 Xinerama extension library
+  pkgver: 1.1.6
+  pkgrel: 1
+  url: https://xorg.freedesktop.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - MIT-open-group
+    - X11
+  makedepends:
+    - xorg-util-macros
+  depends:
+    - libxext
+    - libx11
+    - glibc
+    - xorgproto
+  source:
+    - https://xorg.freedesktop.org//archive/individual/lib/libXinerama-1.1.6.tar.xz
+    - https://xorg.freedesktop.org//archive/individual/lib/libXinerama-1.1.6.tar.xz.sig
+  validpgpkeys:
+    - 3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2
+  sha512sums:
+    - 64bff837941625120da43b8876db4204bc5740bcf3147997fc4df1475f90d6d9e3f9caa8748c7ebbf69d681be8e5ab4bc40f82c56c367dddcec3ab27d1c71573
+    - SKIP
+pkgname:
+  - name: libxinerama
+# generated with artixpkg 0.37.6-1-any
