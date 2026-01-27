@@ -1,0 +1,48 @@
+---
+version: 1.8.0-1
+pkgbase:
+  name: gparted
+  pkgdesc: A Partition Magic clone, frontend to GNU Parted
+  pkgver: 1.8.0
+  pkgrel: 1
+  url: https://gparted.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - GFDL-1.2-or-later
+  makedepends:
+    - intltool
+    - itstool
+    - pkg-config
+    - yelp-tools
+    - polkit
+  depends:
+    - parted
+    - gtkmm3
+  optdepends:
+    - 'bcachefs-tools: for bcachefs partitions'
+    - 'btrfs-progs: for btrfs partitions'
+    - 'dosfstools: for FAT16 and FAT32 partitions'
+    - 'exfatprogs: for exFAT partitions'
+    - 'f2fs-tools: for Flash-Friendly File System'
+    - 'gpart: for recovering corrupt partition tables'
+    - 'jfsutils: for jfs partitions'
+    - 'mtools: utilities to access MS-DOS disks'
+    - 'nilfs-utils: for nilfs2 support'
+    - 'ntfs-3g: for ntfs partitions'
+    - 'polkit: to run gparted from application menu'
+    - 'udftools: for UDF file system support'
+    - 'xfsprogs: for xfs partitions'
+    - 'xorg-xhost: authorization from wayland'
+  source:
+    - https://downloads.sourceforge.net/project/gparted/gparted/gparted-1.8.0/gparted-1.8.0.tar.gz
+    - https://downloads.sourceforge.net/project/gparted/gparted/gparted-1.8.0/gparted-1.8.0.tar.gz.sig
+  validpgpkeys:
+    - BB09FFB87563FA2E1A22146817A6D3FF338C9570
+  sha256sums:
+    - f584ed4be7fd09c2cf6a784778a8540970d985f0ac8e5a7bd0628528a3ab5609
+    - SKIP
+pkgname:
+  - name: gparted
+# generated with artixpkg 0.37.6-1-any
