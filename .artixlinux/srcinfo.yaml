@@ -1,0 +1,44 @@
+---
+version: 2.0.8-1
+pkgbase:
+  name: nim
+  pkgdesc: Imperative, multi-paradigm, compiled programming language
+  pkgver: 2.0.8
+  pkgrel: 1
+  url: https://nim-lang.org/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+  depends:
+    - bash
+    - gcc
+    - gcc-libs
+    - glibc
+  provides:
+    - nimble
+  conflicts:
+    - nimble
+  replaces:
+    - nimble
+  options:
+    - '!emptydirs'
+  backup:
+    - etc/nim/nim.cfg
+    - etc/nim/nimdoc.cfg
+    - etc/nim/nimdoc.tex.cfg
+    - etc/nim/rename.rules.cfg
+  source:
+    - https://github.com/nim-lang/Nim/archive/v2.0.8/nim-2.0.8.tar.gz
+    - git+https://github.com/nim-lang/csources_v2.git#commit=86742fb02c6606ab01a532a0085784effb2e753e
+  sha256sums:
+    - 3a408e8342392342db745e26bb6acab2e6acb381db89b2624e8e58a85a1c6656
+    - 130a6d21808f43da421057385a5a8fd0a6ebd0d211211d3edd645eefd4fc7087
+  b2sums:
+    - 37bdb4d4a1f234e0a298a3dcb6071c5d8983ec588a1e510f8734a3fd06e1f055e1ff8ab0801f056ede9b31c32db96742eeca1d92de789d754f2241b2ba002fde
+    - 2325bebb91b56f9373df83366efb308994fececc0f73acb2ad7b0822fc549d101026a5c1bf7c5ff7fd534e57f9e956f167bbfe00223fe3db0b487175cf0ca369
+pkgname:
+  - name: nim
+# generated with artixpkg 0.37.6-1-any
