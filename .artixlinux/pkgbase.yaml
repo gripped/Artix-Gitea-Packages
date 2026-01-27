@@ -1,76 +1,5 @@
 ---
 team: galaxy
-pkgbase:
-  name: nerd-fonts
-  version: 3.4.0-1
-  arch:
-    - any
-  pkgname:
-    - otf-aurulent-nerd
-    - otf-codenewroman-nerd
-    - otf-comicshanns-nerd
-    - otf-commit-mono-nerd
-    - otf-droid-nerd
-    - otf-firamono-nerd
-    - otf-geist-mono-nerd
-    - otf-hasklig-nerd
-    - otf-hermit-nerd
-    - otf-monaspace-nerd
-    - otf-opendyslexic-nerd
-    - otf-overpass-nerd
-    - ttf-0xproto-nerd
-    - ttf-3270-nerd
-    - ttf-agave-nerd
-    - ttf-anonymouspro-nerd
-    - ttf-arimo-nerd
-    - ttf-bigblueterminal-nerd
-    - ttf-bitstream-vera-mono-nerd
-    - ttf-cascadia-code-nerd
-    - ttf-cascadia-mono-nerd
-    - ttf-cousine-nerd
-    - ttf-d2coding-nerd
-    - ttf-daddytime-mono-nerd
-    - ttf-dejavu-nerd
-    - ttf-envycoder-nerd
-    - ttf-fantasque-nerd
-    - ttf-firacode-nerd
-    - ttf-go-nerd
-    - ttf-gohu-nerd
-    - ttf-hack-nerd
-    - ttf-heavydata-nerd
-    - ttf-iawriter-nerd
-    - ttf-ibmplex-mono-nerd
-    - ttf-inconsolata-go-nerd
-    - ttf-inconsolata-lgc-nerd
-    - ttf-inconsolata-nerd
-    - ttf-intone-nerd
-    - ttf-iosevka-nerd
-    - ttf-iosevkaterm-nerd
-    - ttf-iosevkatermslab-nerd
-    - ttf-jetbrains-mono-nerd
-    - ttf-lekton-nerd
-    - ttf-liberation-mono-nerd
-    - ttf-lilex-nerd
-    - ttf-martian-mono-nerd
-    - ttf-meslo-nerd
-    - ttf-monofur-nerd
-    - ttf-monoid-nerd
-    - ttf-mononoki-nerd
-    - ttf-mplus-nerd
-    - ttf-noto-nerd
-    - ttf-profont-nerd
-    - ttf-proggyclean-nerd
-    - ttf-recursive-nerd
-    - ttf-roboto-mono-nerd
-    - ttf-sharetech-mono-nerd
-    - ttf-sourcecodepro-nerd
-    - ttf-space-mono-nerd
-    - ttf-terminus-nerd
-    - ttf-tinos-nerd
-    - ttf-ubuntu-mono-nerd
-    - ttf-ubuntu-nerd
-    - ttf-victor-mono-nerd
-    - ttf-zed-mono-nerd
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -83,101 +12,115 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 3.4.0-1
+    version: 3.4.0-2
     packages:
-      - otf-aurulent-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-codenewroman-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-comicshanns-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-commit-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-droid-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-firamono-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-geist-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-hasklig-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-hermit-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-monaspace-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-opendyslexic-nerd-3.4.0-1-any.pkg.tar.zst
-      - otf-overpass-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-0xproto-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-3270-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-agave-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-anonymouspro-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-arimo-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-bigblueterminal-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-bitstream-vera-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-cascadia-code-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-cascadia-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-cousine-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-d2coding-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-daddytime-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-dejavu-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-envycoder-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-fantasque-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-firacode-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-go-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-gohu-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-hack-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-heavydata-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-iawriter-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-ibmplex-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-inconsolata-go-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-inconsolata-lgc-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-inconsolata-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-intone-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-iosevka-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-iosevkaterm-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-iosevkatermslab-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-jetbrains-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-lekton-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-liberation-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-lilex-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-martian-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-meslo-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-monofur-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-monoid-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-mononoki-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-mplus-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-noto-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-profont-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-proggyclean-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-recursive-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-roboto-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-sharetech-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-sourcecodepro-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-space-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-terminus-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-tinos-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-ubuntu-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-ubuntu-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-victor-mono-nerd-3.4.0-1-any.pkg.tar.zst
-      - ttf-zed-mono-nerd-3.4.0-1-any.pkg.tar.zst
+      - otf-atkinsonhyperlegiblemono-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-aurulent-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-codenewroman-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-comicshanns-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-commit-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-droid-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-firamono-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-geist-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-hasklig-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-hermit-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-monaspace-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-opendyslexic-nerd-3.4.0-2-any.pkg.tar.zst
+      - otf-overpass-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-0xproto-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-3270-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-adwaitamono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-agave-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-anonymouspro-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-arimo-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-bigblueterminal-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-bitstream-vera-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-cascadia-code-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-cascadia-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-cousine-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-d2coding-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-daddytime-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-dejavu-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-envycoder-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-fantasque-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-firacode-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-go-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-gohu-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-hack-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-heavydata-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-iawriter-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-ibmplex-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-inconsolata-go-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-inconsolata-lgc-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-inconsolata-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-intone-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-iosevka-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-iosevkaterm-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-iosevkatermslab-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-jetbrains-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-lekton-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-liberation-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-lilex-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-martian-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-meslo-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-monofur-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-monoid-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-mononoki-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-mplus-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-noto-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-profont-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-proggyclean-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-recursive-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-roboto-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-sharetech-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-sourcecodepro-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-space-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-terminus-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-tinos-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-ubuntu-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-ubuntu-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-victor-mono-nerd-3.4.0-2-any.pkg.tar.zst
+      - ttf-zed-mono-nerd-3.4.0-2-any.pkg.tar.zst
+    debug: []
