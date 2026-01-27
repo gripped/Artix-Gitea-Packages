@@ -1,9 +1,9 @@
 ---
-version: 2.42+r51+gcbf39c26b258-1
+version: 2.42+r51+gcbf39c26b258-2
 pkgbase:
   name: glibc
   pkgver: 2.42+r51+gcbf39c26b258
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/libc
   arch:
     - x86_64
@@ -64,4 +64,4 @@ pkgname:
     pkgdesc: Pregenerated locales for GNU C Library
     depends:
       - glibc=2.42+r51+gcbf39c26b258
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
