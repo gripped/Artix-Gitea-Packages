@@ -4,7 +4,7 @@
 
 pkgname=libnih
 pkgver=1.0.3
-pkgrel=4
+pkgrel=5
 pkgdesc="Small library for C application development."
 arch=(x86_64)
 url="https://launchpad.net/libnih"
@@ -12,8 +12,9 @@ license=('GPL')
 depends=('dbus')
 makedepends=('expat')
 validpgpkeys=('8D2D1F62A4AC9A22FEFCB0DC21EC4FDC84AD676C')
-source=(https://launchpad.net/libnih/1.0/${pkgver}/+download/$pkgname-$pkgver.tar.gz)
-
+source=(https://launchpad.net/libnih/1.0/${pkgver}/+download/$pkgname-$pkgver.tar.gz{,.asc})
+sha512sums=('fce40d2445b28c27b8838631681ca3206a4f053b2dd4fc488fc9ef98bbd3d933e3d62b82cf346be2ef1677f6457f692cf5544cd915a6bb1e5c618f98ffa101b4'
+            'SKIP')
 
 build() {
   cd "$srcdir"/$pkgname-$pkgver
@@ -26,4 +27,3 @@ package() {
   cd "$srcdir"/$pkgname-$pkgver
   make DESTDIR="$pkgdir"/ install
 }
-sha512sums=('fce40d2445b28c27b8838631681ca3206a4f053b2dd4fc488fc9ef98bbd3d933e3d62b82cf346be2ef1677f6457f692cf5544cd915a6bb1e5c618f98ffa101b4')
