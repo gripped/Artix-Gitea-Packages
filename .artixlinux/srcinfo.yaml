@@ -1,0 +1,40 @@
+---
+version: 0.17.1-1
+pkgbase:
+  name: ruby-io-endpoint
+  pkgdesc: Provides a separation of concerns interface for IO endpoints
+  pkgver: 0.17.1
+  pkgrel: 1
+  url: https://github.com/socketry/io-endpoint
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-sus
+    - ruby-sus-fixtures-async
+    - ruby-sus-fixtures-openssl
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/socketry/io-endpoint/archive/v0.17.1/ruby-io-endpoint-0.17.1.tar.gz
+    - ruby-io-endpoint_fix_tests.patch
+  sha512sums:
+    - b7bf3ca2613619675b7af5243a364b1c75078ab3c1a6c40992748bcc3692483ae8453a745e2adbef1731563a5498b21884e8469cbc0cb975bd17dbdfa358c130
+    - 6f3f41b9facda424a4c4cad9ce1be0a1164383bead72352ab1c17b7042d230671d551e48f35011bedbf7e8236f0df6896477bedc524bb667d211007389506226
+  b2sums:
+    - 10f61bb4e21add98a7105edb52308b6595944f48e327dfe22c9f672eb80332c9c06e5cad40fa776502dd0d43e2f887ba6c8e5a12072381090c88fa8e1fdf078f
+    - 36619dfcbfce6b5bdd533ead12cdf5b7be535351f5b47b4c82a12201930a4ce900dfcb168b39c4878af5fe41f0ac65b8a0ac027bba2354048fa277828c7a0461
+pkgname:
+  - name: ruby-io-endpoint
+# generated with artixpkg 0.37.6-1-any
