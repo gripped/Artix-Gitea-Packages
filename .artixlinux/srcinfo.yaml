@@ -1,10 +1,10 @@
 ---
-version: 2.3-1
+version: 2.3-2
 pkgbase:
   name: intel-gpu-tools
   pkgdesc: Tools for development and testing of the Intel DRM driver
   pkgver: 2.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/drm/igt-gpu-tools
   arch:
     - x86_64
@@ -28,6 +28,8 @@ pkgbase:
     - libunwind
     - peg
     - libudev
+  optdepends:
+    - 'python-dissect.cstruct: for intel-gfx-fw-info'
   source:
     - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.3.tar.xz
     - https://xorg.freedesktop.org/releases/individual/app/igt-gpu-tools-2.3.tar.xz.sig
