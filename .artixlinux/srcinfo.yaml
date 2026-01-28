@@ -1,9 +1,9 @@
 ---
-version: 2.50.0-1
+version: 2.51.0-1
 pkgbase:
   name: python-sentry_sdk
   pkgdesc: The official Python SDK for Sentry.io
-  pkgver: 2.50.0
+  pkgver: 2.51.0
   pkgrel: 1
   url: https://sentry.io/for/python
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - 'python-pure-eval: for richer stacktraces & additional variables'
     - 'python-executing: for richer stacktraces & better function names'
   source:
-    - python-sentry_sdk-2.50.0.tar.gz::https://github.com/getsentry/sentry-python/archive/refs/tags/2.50.0.tar.gz
+    - python-sentry_sdk-2.51.0.tar.gz::https://github.com/getsentry/sentry-python/archive/refs/tags/2.51.0.tar.gz
   sha256sums:
-    - 895a73e5186bbdbb4d4a24a5380e3aa26f8c987b1dad4d62e892aa514b1dc354
+    - 56d1fbf582e57514e2f365d7db42ca11b029c6b3fe16daedb3d65c4571f62783
 pkgname:
   - name: python-sentry_sdk
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
