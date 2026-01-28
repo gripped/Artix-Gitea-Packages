@@ -6,7 +6,7 @@
 
 pkgname=librewolf
 pkgver=147.0.2
-pkgrel=1
+pkgrel=1.1
 _lwrel=1
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
