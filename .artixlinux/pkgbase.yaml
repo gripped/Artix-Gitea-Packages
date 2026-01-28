@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.1.11-1
+    version: 3.1.12-1
     packages:
-      - artix-metro-3.1.11-1-any.pkg.tar.zst
+      - artix-metro-3.1.12-1-any.pkg.tar.zst
     debug: []
