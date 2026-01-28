@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: lib32
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 20260125-1
+    packages:
+      - winetricks-20260125-1-x86_64.pkg.tar.zst
+    debug:
+      - winetricks-debug-20260125-1-x86_64.pkg.tar.zst
   world:
     version: 20250102-1
     packages:
