@@ -5,7 +5,7 @@
 _pkgname=igt-gpu-tools
 pkgname=intel-gpu-tools
 pkgver=2.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Tools for development and testing of the Intel DRM driver"
 arch=(x86_64)
 license=(MIT)

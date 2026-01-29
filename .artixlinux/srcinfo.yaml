@@ -1,10 +1,10 @@
 ---
-version: 2.3-2
+version: 2.3-2.1
 pkgbase:
   name: intel-gpu-tools
   pkgdesc: Tools for development and testing of the Intel DRM driver
   pkgver: 2.3
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://gitlab.freedesktop.org/drm/igt-gpu-tools
   arch:
     - x86_64
