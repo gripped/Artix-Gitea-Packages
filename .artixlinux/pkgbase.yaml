@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,9 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 8.18.0-3
+    packages:
+      - curl-8.18.0-3-x86_64.pkg.tar.zst
+      - libcurl-compat-8.18.0-3-x86_64.pkg.tar.zst
+      - libcurl-gnutls-8.18.0-3-x86_64.pkg.tar.zst
+    debug:
+      - curl-debug-8.18.0-3-x86_64.pkg.tar.zst
   system:
     version: 8.18.0-2
     packages:
