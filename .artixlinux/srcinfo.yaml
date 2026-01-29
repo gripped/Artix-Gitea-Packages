@@ -1,9 +1,9 @@
 ---
-version: 49.0.1-1
+version: 49.1.1-1
 pkgbase:
   name: gnome-mahjongg
   pkgdesc: Disassemble a pile of tiles by removing matching pairs
-  pkgver: 49.0.1
+  pkgver: 49.1.1
   pkgrel: 1
   url: https://apps.gnome.org/Mahjongg/
   arch:
@@ -30,11 +30,11 @@ pkgbase:
     - libadwaita
     - librsvg
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-mahjongg.git?signed#tag=49.0.1
+    - git+https://gitlab.gnome.org/GNOME/gnome-mahjongg.git?signed#tag=49.1.1
   validpgpkeys:
     - FAE80BEA85C476AF1BACC2A77B274B850A9296D4
   b2sums:
-    - a0c88a364c0f1d46f446b356aa5f8329e2076d7ecfea6ab7827d01a1a2a13a47b12bbb10e5d6e661fd75d0b17fca9ec35888f0376901d8b786c7e82dfb5eb0c8
+    - 04a0844e36f514642e100e35fd25fae5cba490ff3bdb487d771d47f17980dead92d792ffb26fc9bb03232edd6bf592c4a89a9d5862c1e77c31ff148bf20d5ed2
 pkgname:
   - name: gnome-mahjongg
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
