@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,71 +53,71 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 147.0-1
+    version: 147.0.1-1
     packages:
-      - thunderbird-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-af-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ar-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ast-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-be-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-bg-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-br-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ca-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cak-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cs-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-cy-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-da-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-de-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-dsb-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-el-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-en-gb-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-en-us-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-es-ar-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-es-es-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-et-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-eu-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fi-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fr-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-fy-nl-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ga-ie-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-gd-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-gl-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-he-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hr-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hsb-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hu-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-hy-am-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-id-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-is-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-it-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ja-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ka-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-kab-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-kk-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ko-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-lt-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ms-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nb-no-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nl-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-nn-no-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pa-in-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pl-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pt-br-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-pt-pt-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-rm-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ro-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-ru-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sk-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sl-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sq-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sr-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-sv-se-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-th-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-tr-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-uk-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-uz-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-vi-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-zh-cn-147.0-1-x86_64.pkg.tar.zst
-      - thunderbird-i18n-zh-tw-147.0-1-x86_64.pkg.tar.zst
+      - thunderbird-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-af-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ar-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ast-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-be-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-bg-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-br-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ca-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cak-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cs-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cy-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-da-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-de-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-dsb-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-el-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-gb-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-us-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-ar-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-es-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-et-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-eu-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fi-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fr-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fy-nl-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ga-ie-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gd-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gl-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-he-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hr-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hsb-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hu-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hy-am-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-id-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-is-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-it-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ja-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ka-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kab-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kk-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ko-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-lt-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ms-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nb-no-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nl-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nn-no-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pa-in-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pl-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-br-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-pt-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-rm-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ro-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ru-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sk-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sl-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sq-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sr-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sv-se-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-th-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-tr-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uk-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uz-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-vi-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-cn-147.0.1-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-tw-147.0.1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
