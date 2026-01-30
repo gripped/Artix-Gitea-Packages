@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-2.1
+version: 2.3.1-1
 pkgbase:
   name: lxqt-config
   pkgdesc: LXQt system configuration.
-  pkgver: 2.3.0
-  pkgrel: 2.1
+  pkgver: 2.3.1
+  pkgrel: 1
   url: https://github.com/lxqt/lxqt-config
   arch:
     - x86_64
@@ -29,19 +29,19 @@ pkgbase:
     - libxcursor
     - libxfixes
     - libxi
-    - x11win-input-libinput
+    - xf86-input-libinput
     - libudev.so
     - zlib
   optdepends:
     - 'xsettingsd: help GTK applications apply themes on the fly'
   source:
-    - https://github.com/lxqt/lxqt-config/releases/download/2.3.0/lxqt-config-2.3.0.tar.xz
-    - https://github.com/lxqt/lxqt-config/releases/download/2.3.0/lxqt-config-2.3.0.tar.xz.asc
+    - https://github.com/lxqt/lxqt-config/releases/download/2.3.1/lxqt-config-2.3.1.tar.xz
+    - https://github.com/lxqt/lxqt-config/releases/download/2.3.1/lxqt-config-2.3.1.tar.xz.asc
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - 69b8acf50ebedfe3c3808f7dad853e9f5a5e74c8d17693a15180654fcb7f4b0c
+    - 69e5ca947fda1d2b4242f3021af8c41bd0ec03096e946ca37e50248e44dd8e01
     - SKIP
 pkgname:
   - name: lxqt-config
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
