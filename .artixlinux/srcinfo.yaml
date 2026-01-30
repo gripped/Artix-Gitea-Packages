@@ -1,9 +1,9 @@
 ---
-version: 6.10.1-1
+version: 6.10.2-1
 pkgbase:
   name: qt6-serialbus
   pkgdesc: Qt module for general purpose serial bus access
-  pkgver: 6.10.1
+  pkgver: 6.10.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - qt6-base
     - qt6-serialport
   source:
-    - git+https://code.qt.io/qt/qtserialbus#tag=v6.10.1
+    - git+https://code.qt.io/qt/qtserialbus#tag=v6.10.2
   sha256sums:
-    - a2945dffce41e8baef41a1f562ffdae71ee9d553308dbd594623e061d90ddbcd
+    - 3968745e10f5e2bfd719291294f11f05ba4791c686335f290a36be1aaf3fc1a7
 pkgname:
   - name: qt6-serialbus
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
