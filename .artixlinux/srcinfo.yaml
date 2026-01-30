@@ -1,10 +1,10 @@
 ---
-version: 8.7.0-8
+version: 8.7.0-9
 pkgbase:
   name: calibre
   pkgdesc: Ebook management application
   pkgver: 8.7.0
-  pkgrel: 8
+  pkgrel: 9
   url: https://calibre-ebook.com
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   checkdepends:
     - poppler
     - python-fonttools
+    - python-pyzstd
     - speech-dispatcher
     - tk
   makedepends:
@@ -96,4 +97,4 @@ pkgbase:
     - 5b1b0b0d60400727136e929b941bac0b32125c9636600c2f9ec1a1d7fd74db64
 pkgname:
   - name: calibre
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
