@@ -1,9 +1,9 @@
 ---
-version: 6.10.1-1
+version: 6.10.2-1
 pkgbase:
   name: qt6-speech
   pkgdesc: Qt Speech support
-  pkgver: 6.10.1
+  pkgver: 6.10.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -32,9 +32,9 @@ pkgbase:
     - 'speech-dispatcher: speech-dispatcher TTS backend'
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtspeech#tag=v6.10.1
+    - git+https://code.qt.io/qt/qtspeech#tag=v6.10.2
   sha256sums:
-    - d461e32ef0ee32f7851c85e9b9311085563c8635d9ae9fb61e2453476aafb882
+    - 94b439bca3bf42b0d59e5869efcfe5acd8263b194b7fdf1f741f3910c5e32b6e
 pkgname:
   - name: qt6-speech
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
