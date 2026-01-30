@@ -1,9 +1,9 @@
 ---
-version: 6.10.1-1
+version: 6.10.2-1
 pkgbase:
   name: qt6-positioning
   pkgdesc: Provides access to position, satellite and area monitoring classes
-  pkgver: 6.10.1
+  pkgver: 6.10.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -30,9 +30,9 @@ pkgbase:
     - 'qt6-declarative: QML bindings'
     - 'qt6-serialport: NMEA plugin'
   source:
-    - git+https://code.qt.io/qt/qtpositioning#tag=v6.10.1
+    - git+https://code.qt.io/qt/qtpositioning#tag=v6.10.2
   sha256sums:
-    - 2ab6129278ea818d405116c21a89b99f9438e57dc7e13c3df4fd0de97f6609b1
+    - 624442d7274308cbbcb99964702a43a2452427dbc1f7c1f2fa02bedd85aef6bb
 pkgname:
   - name: qt6-positioning
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
