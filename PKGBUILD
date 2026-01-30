@@ -1,0 +1,35 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+
+pkgname=nlopt
+pkgver=2.10.0
+pkgrel=5
+pkgdesc="Nonlinear optimization library"
+arch=(x86_64)
+url="https://nlopt.readthedocs.io/en/latest/"
+license=(LGPL-2.1-or-later)
+depends=(gcc-libs)
+makedepends=(cmake python-numpy octave guile swig)
+optdepends=('python-numpy: to use with python')
+source=(https://github.com/stevengj/nlopt/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
+sha256sums=('506f83a9e778ad4f204446e99509cb2bdf5539de8beccc260a014bd560237be1')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -e 's|CMAKE_CXX_STANDARD 11|CMAKE_CXX_STANDARD 17|' -i CMakeLists.txt # Fix build with octave 10
+}
+
+build() {
+  cmake -B build -S ${pkgname}-${pkgver} \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  make -C build
+}
+
+check() {
+  cd build
+  ctest --output-on-failure
+}
+
+package() {
+  make -C build DESTDIR="${pkgdir}" install
+}
