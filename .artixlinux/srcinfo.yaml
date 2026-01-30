@@ -1,10 +1,10 @@
 ---
-version: 0.4.9-2
+version: 0.4.10-1
 pkgbase:
   name: libspelling
   pkgdesc: Spellcheck library for GTK 4
-  pkgver: 0.4.9
-  pkgrel: 2
+  pkgver: 0.4.10
+  pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/libspelling
   arch:
     - x86_64
@@ -34,9 +34,9 @@ pkgbase:
     - icu
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/libspelling.git#tag=0.4.9
+    - git+https://gitlab.gnome.org/GNOME/libspelling.git#tag=0.4.10
   b2sums:
-    - 612b0f1ec77064934915c75d6f19aff5794886a8392c89520fd8412c01db0f9a81dc14293fea963cc889701a16a30393e5645101299cd198646d3173c519a4a7
+    - fd96e152bf7c5732fc6c8c84c0375edfdb6a05618856ab5ca467609e1849ac5fc2fa784c950883143a7a08aef2daedcc1f98997390324bf55e751981f53f7dc2
 pkgname:
   - name: libspelling
     provides:
@@ -44,4 +44,4 @@ pkgname:
   - name: libspelling-docs
     pkgdesc: Spellcheck library for GTK 4 (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
