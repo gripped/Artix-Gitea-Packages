@@ -87,4 +87,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kwin-x11
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
