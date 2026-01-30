@@ -2,7 +2,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-webengine
-_pkgver=6.10.1
+_pkgver=6.10.2
 pkgver=${_pkgver/-/}
 pkgrel=1
 _chromium=
@@ -81,7 +81,7 @@ groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver
         git+https://code.qt.io/qt/qtwebengine-chromium)
-sha256sums=('b72b99bca4b28016af96e69706bab3c5e49c4ae4f2f5b9a2b93fdfb3e9470261'
+sha256sums=('98d8f65137ae6d913ddbe45b3dac562e6b01a5879695424d7f1c3f9eeeb16c21'
             'SKIP')
 
 prepare() {
@@ -89,6 +89,8 @@ prepare() {
   git submodule init
   git submodule set-url src/3rdparty "$srcdir"/qtwebengine-chromium
   git -c protocol.file.allow=always submodule update
+
+  git cherry-pick -n 4b2f03af22bfb19168e71092d075c649e942604f # Fix crashes
 
   # Bump chromium to head of stable branch
   cd src/3rdparty
