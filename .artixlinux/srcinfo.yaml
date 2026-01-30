@@ -1,9 +1,9 @@
 ---
-version: 6.10.1-1
+version: 6.10.2-1
 pkgbase:
   name: qt6-remoteobjects
   pkgdesc: Inter-process communication (IPC) module developed for Qt
-  pkgver: 6.10.1
+  pkgver: 6.10.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtremoteobjects#tag=v6.10.1
+    - git+https://code.qt.io/qt/qtremoteobjects#tag=v6.10.2
   sha256sums:
-    - f628da046dc0958c65cdbbfab15a06563a366a5f7ee5d425a880fea8d857df06
+    - ea080ef50e0a84792f0596a10899278bc744a8d766e208e7f102ad6767b3e82c
 pkgname:
   - name: qt6-remoteobjects
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.5-1-any
