@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-2
+version: 2.4.0-5
 pkgbase:
   name: firewalld
   pkgver: 2.4.0
-  pkgrel: 2
+  pkgrel: 5
   url: https://firewalld.org
   arch:
     - any
@@ -25,23 +25,44 @@ pkgbase:
 pkgname:
   - name: firewalld
     pkgdesc: Firewall daemon with D-Bus interface
+    install: firewalld.install
     depends:
-      - python-dbus
       - glib2
-      - hicolor-icon-theme
-      - nftables
+      - python-firewall
       - python-capng
-      - python-gobject
     optdepends:
       - 'bash-completion: bash completion'
-      - 'gtk3: firewall-config'
-      - 'libnotify: firewall-applet'
       - 'networkmanager: NetworkManager support'
       - 'polkit: privileged actions'
-      - 'python-pyqt6: firewall-applet'
+      - 'firewall-config: Graphical user interface for firewallD configuration'
+      - 'firewall-applet: Systray applet for firewallD'
+      - 'firewalld-test: firewallD test suite'
     backup:
       - etc/conf.d/firewalld
       - etc/firewalld/firewalld.conf
+  - name: python-firewall
+    pkgdesc: Python bindings for firewallD
+    depends:
+      - python
+      - python-dbus
+      - python-gobject
+      - nftables
+  - name: firewall-config
+    pkgdesc: Graphical user interface for firewallD configuration
+    depends:
+      - firewalld
+      - gtk3
+      - hicolor-icon-theme
+  - name: firewall-applet
+    pkgdesc: Systray applet for firewallD
+    depends:
+      - firewalld
+      - firewall-config
+      - libnotify
+      - python-pyqt6
+      - hicolor-icon-theme
   - name: firewalld-test
     pkgdesc: FirewallD test suite
-# generated with artixpkg 0.37.4-1-any
+    depends:
+      - firewalld
+# generated with artixpkg 0.37.6-1-any
