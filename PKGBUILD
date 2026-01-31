@@ -3,8 +3,8 @@
 
 _pipname=debugpy
 pkgname=python-$_pipname
-pkgver=1.8.19
-pkgrel=2
+pkgver=1.8.20
+pkgrel=1
 pkgdesc='An implementation of the Debug Adapter Protocol for Python'
 arch=(x86_64)
 url='https://aka.ms/debugpy'
@@ -19,7 +19,15 @@ makedepends=(cython
              python-setuptools
              python-wheel)
 source=(git+https://github.com/microsoft/debugpy#tag=v$pkgver)
-sha256sums=('be7e6727a746db30f5e309c56a90c5e788c2f0fae8826794b9b3bb3a06970977')
+sha256sums=('975069defb5092f6e0203c044ddb2923233ed19bd1fdc5bff5ae03ca064457e0')
+
+# https://github.com/microsoft/debugpy/blob/v1.8.19/src/debugpy/_vendored/pydevd/pydevd_tracing.py#L161
+# Special handling for x86 and x86_64
+case $CARCH in
+    i*86) _SUFFIX=x86;;
+    x86_64) _SUFFIX=amd64;;
+    *) _SUFFIX=$CARCH;;
+esac
 
 build() {
   cd $_pipname
@@ -31,13 +39,13 @@ build() {
   python -m build --wheel --no-isolation
 # Compile attach libraries
   cd build/lib*/debugpy/_vendored/pydevd/pydevd_attach_to_process
-  g++ ${CXXFLAGS} -shared -o attach_linux_amd64.so -fPIC -nostartfiles linux_and_mac/attach.cpp ${LDFLAGS}
+  g++ ${CXXFLAGS} -shared -o attach_linux_$_SUFFIX.so -fPIC -nostartfiles linux_and_mac/attach.cpp ${LDFLAGS}
 }
 
 package() {
   cd $_pipname
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -Dm755 build/lib*/debugpy/_vendored/pydevd/pydevd_attach_to_process/attach_linux_amd64.so \
+  install -Dm755 build/lib*/debugpy/_vendored/pydevd/pydevd_attach_to_process/attach_linux_$_SUFFIX.so \
     -t "$pkgdir"`python -c "import site; print(site.getsitepackages()[0])"`/debugpy/_vendored/pydevd/pydevd_attach_to_process
   install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
