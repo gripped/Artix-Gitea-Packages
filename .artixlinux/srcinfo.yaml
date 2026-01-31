@@ -1,38 +1,46 @@
 ---
-version: 3.8.5-1
+version: 3.8.9-1.1
 pkgbase:
   name: xed
-  pkgdesc: A small and lightweight text editor. X-Apps Project.
-  pkgver: 3.8.5
-  pkgrel: 1
+  pkgdesc: A small and lightweight text editor
+  pkgver: 3.8.9
+  pkgrel: 1.1
   url: https://github.com/linuxmint/xed
   arch:
     - x86_64
   groups:
     - x-apps
   license:
-    - GPL
+    - GPL-2.0-or-later
   makedepends:
     - git
-    - meson
+    - glib2-devel
     - gobject-introspection
     - intltool
     - itstool
-    - glib2-devel
-    - python-gobject
+    - meson
   depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
     - gspell
+    - gtk3
     - gtksourceview4
+    - libgirepository
     - libpeas
+    - libx11
+    - libxml2
+    - pango
+    - python
+    - python-gobject
     - xapp
-  optdepends:
-    - 'python: required for some plugins'
   source:
-    - git+https://github.com/linuxmint/xed#tag=3.8.5
-  sha256sums:
-    - d9b92857975f0e0b2ccad2cd27bf94839111655f4d12996d07e3e8519b39124b
+    - git+https://github.com/linuxmint/xed.git#tag=3.8.9
   b2sums:
-    - 35e30c5b58273572f817853aaefb5721f64e811e034121199fcb41e9a8c2aa79356848e4ca60b7780ec5a66cfd23189e68052a8ac5a181bf094dc02b1961d486
+    - f795208cfc3ce94e4b2e6fc4223f72e8cfe06af64afc5256a61e6c08e4da39083a5a6fb3b6faef19499513a2b2df2dadf0375d4344dbbdbb3e6e00948ff5505f
 pkgname:
   - name: xed
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any

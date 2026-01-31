@@ -3,26 +3,56 @@
 # Contributor: Nate Simon <aurpkg (at natesimon.net)>
 
 pkgname=xed
-pkgver=3.8.5
-pkgrel=1
-pkgdesc="A small and lightweight text editor. X-Apps Project."
+pkgver=3.8.9
+pkgrel=1.1
+pkgdesc='A small and lightweight text editor'
 arch=(x86_64)
-url="https://github.com/linuxmint/${pkgname}"
-license=(GPL)
+url='https://github.com/linuxmint/xed'
+license=(GPL-2.0-or-later)
 groups=(x-apps)
-depends=(gspell gtksourceview4 libpeas xapp)
-makedepends=(git meson gobject-introspection intltool itstool glib2-devel python-gobject)
-optdepends=('python: required for some plugins')
-source=(git+${url}#tag=$pkgver)
-sha256sums=('d9b92857975f0e0b2ccad2cd27bf94839111655f4d12996d07e3e8519b39124b')
-b2sums=('35e30c5b58273572f817853aaefb5721f64e811e034121199fcb41e9a8c2aa79356848e4ca60b7780ec5a66cfd23189e68052a8ac5a181bf094dc02b1961d486')
+depends=(
+  at-spi2-core
+  cairo
+  dconf
+  gdk-pixbuf2
+  glib2
+  glibc
+  gspell
+  gtk3
+  gtksourceview4
+  libgirepository
+  libpeas
+  libx11
+  libxml2
+  pango
+  python
+  python-gobject
+  xapp
+)
+makedepends=(
+  git
+  glib2-devel
+  gobject-introspection
+  intltool
+  itstool
+  meson
+)
+source=("git+https://github.com/linuxmint/xed.git#tag=$pkgver")
+b2sums=('f795208cfc3ce94e4b2e6fc4223f72e8cfe06af64afc5256a61e6c08e4da39083a5a6fb3b6faef19499513a2b2df2dadf0375d4344dbbdbb3e6e00948ff5505f')
+
+prepare() {
+  cd $pkgname
+
+  # Fix build by reverting commit
+  # https://github.com/linuxmint/xed/pull/711
+  git revert -n 13f55ff3f0db4e4f3b75883260bb56afbad08fd2
+}
 
 build() {
-  artix-meson ${pkgname} build
+  artix-meson $pkgname build
   meson compile -C build
 }
 
 package(){
   meson install -C build --destdir="$pkgdir"
 }
-
