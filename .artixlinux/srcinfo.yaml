@@ -1,10 +1,10 @@
 ---
-version: 8.7.0-9.3
+version: 8.7.0-9.4
 pkgbase:
   name: calibre
   pkgdesc: Ebook management application
   pkgver: 8.7.0
-  pkgrel: 9.3
+  pkgrel: 9.4
   url: https://calibre-ebook.com
   arch:
     - x86_64
