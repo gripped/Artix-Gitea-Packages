@@ -52,4 +52,4 @@ pkgbase:
     - 9b85bb0ce492894631ec3a234899dd9b5c22181945ee8682ebd5f279cf275ada21d3e3e74e8509b7c045ee34fc417824a0629993d3b373c813a5069916a2a84c
 pkgname:
   - name: python-pyarrow
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
