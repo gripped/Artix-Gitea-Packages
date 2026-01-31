@@ -44,4 +44,4 @@ pkgbase:
     - 0886d5bc2d150b391333a4555f7a90b33a55f101c8f2568eedda61872f81a5c02748fd19184c05f2f6dc60889b5c84222a7f79b90b9ab14fb68de3eb8ce3cd49
 pkgname:
   - name: python-httplib2
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
