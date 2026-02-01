@@ -3,7 +3,7 @@
 
 pkgname=inetutils
 pkgver=2.7
-pkgrel=1
+pkgrel=2
 pkgdesc="A collection of common network programs"
 arch=('x86_64')
 url="https://www.gnu.org/software/inetutils/"
@@ -38,6 +38,10 @@ prepare() {
   # Giving the path like this should work anyway...
   GNULIB_REFDIR="${srcdir}/gnulib"
   export GNULIB_REFDIR
+
+  git cherry-pick -n \
+    fd702c02497b2f398e739e3119bed0b23dd7aa7b \
+    ccba9f748aa8d50a38d7748e2e60362edd6a32cc
 
   sh bootstrap
   autoreconf -fiv

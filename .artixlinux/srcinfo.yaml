@@ -1,10 +1,10 @@
 ---
-version: 2.7-1
+version: 2.7-2
 pkgbase:
   name: inetutils
   pkgdesc: A collection of common network programs
   pkgver: 2.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/inetutils/
   install: inetutils.install
   arch:
