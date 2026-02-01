@@ -35,7 +35,8 @@ source=(svn://tug.org/texlive/tags/texlive-$pkgver/Master/texmf-dist#revision=$_
         80-mtxrun.hook
         mtxrun.script
         https://gitlab.com/git-latexdiff/git-latexdiff/-/commit/a0aa6bad.patch
-        minted-python-3.14.patch)
+        # minted-python-3.14.patch
+)
 sha256sums=('SKIP'
             'SKIP'
             'SKIP'
@@ -51,8 +52,7 @@ sha256sums=('SKIP'
             'ee6e76192a5ad880a2152cd7900b86c8465239fb228045a2f8360b0d7a449f4a'
             'f6bb67db32d37ca15eba88bd15d8b9882c61915f98bc8d7c3c21a66c8cf8f019'
             '98b730e917281227e29077ba5689ad78baee0af3859b55966b2604c6a85f1305'
-            'e6b754b49563531ec737891ae7c9ad3d2e5bc716e0718ae7bfda298463af48f1'
-            'ac01176d7396c22ff47e850ee70d8d31b9576b72e7331f58a9fbc45c9b1d0450')
+            'e6b754b49563531ec737891ae7c9ad3d2e5bc716e0718ae7bfda298463af48f1')
 options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
@@ -64,11 +64,11 @@ prepare() {
   patch -d texmf-dist/scripts/git-latexdiff -p1 < a0aa6bad.patch
 
 # Fix minted with python 3.14
-  pushd texmf-dist/scripts/minted
-    bsdunzip latexminted-0.5.0-py3-none-any.whl
-    patch -p2 --binary < "$srcdir"/minted-python-3.14.patch
-    zip -r latexminted-0.5.0-py3-none-any.whl latexminted latexminted-0.5.0.dist-info
-  popd
+#   pushd texmf-dist/scripts/minted
+#     bsdunzip latexminted-0.5.0-py3-none-any.whl
+#     patch -p2 --binary < "$srcdir"/minted-python-3.14.patch
+#     zip -r latexminted-0.5.0-py3-none-any.whl latexminted latexminted-0.5.0.dist-info
+#   popd
 
   # Copy files where format and maps will be extracted from
   cp texmf-dist/web2c/{fmtutil.cnf,updmap.cfg,texmf.cnf} .
