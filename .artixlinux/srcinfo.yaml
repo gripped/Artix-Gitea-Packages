@@ -1,10 +1,10 @@
 ---
-version: 4.6.2-2
+version: 4.7.0-1
 pkgbase:
   name: electrum
   pkgdesc: Lightweight Bitcoin wallet
-  pkgver: 4.6.2
-  pkgrel: 2
+  pkgver: 4.7.0
+  pkgrel: 1
   url: https://electrum.org
   arch:
     - any
@@ -47,18 +47,18 @@ pkgbase:
     - 'python-rpyc: send commands to Electrum Python console from an external script'
     - 'zbar: QR code reading support'
   source:
-    - git+https://github.com/spesmilo/electrum.git#tag=4.6.2?signed
+    - git+https://github.com/spesmilo/electrum.git#tag=4.7.0?signed
     - git+https://github.com/spesmilo/electrum-locale.git
     - git+https://github.com/spesmilo/electrum-http.git
     - electrum-remove-runtime-aiorpcx-version-check.patch
   validpgpkeys:
     - 6694D8DE7BE8EE5631BED9502BD5824B7F9470E6
     - 4AD64339DFA05E20B3F6AD51E7B748CDAF5E5ED9
-  sha512sums:
-    - 5ef13385ed53ff983d9d88a9f2d8601ffb4cd5c86cf25447bc43e00e8bdeada688cdaec8a0b79927bc05b0207650efedd9c88204014e1639fa98acf2b9f71b76
+  b2sums:
+    - f7e103256cc22c2c57662b338dcc71c5f31a334419c4401fb5c806fa29381345d995e1ebffd2e74c3efad36b38f7e75e7635170205d18d86b7aeed08268031d1
     - SKIP
     - SKIP
-    - e0b904cdb21b0be0abd3f22a721fd12a55be516a6f41ea498e327e6402d8e7a9e0f83f3a31a30e128defce6c9d02369389ee3b2c2ea0ebc31258184cc4241b82
+    - 9faa19e6442e1f736ec05499f7a66839c9791c5487ac8edd8d3ccb13b6ad070fba7a3625d9aa5040962aa336567409c2720fb933829eedc027cb3ceac5d6e479
 pkgname:
   - name: electrum
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
