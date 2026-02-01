@@ -1,10 +1,10 @@
 ---
-version: 3.10.2-7
+version: 3.10.2-8
 pkgbase:
   name: python-pytables
   pkgdesc: A Python package to manage extremely large amounts of data
   pkgver: 3.10.2
-  pkgrel: 7
+  pkgrel: 8
   url: https://www.pytables.org
   arch:
     - x86_64
@@ -33,10 +33,10 @@ pkgbase:
     - git+https://github.com/PyTables/PyTables.git#tag=v3.10.2
     - git+https://github.com/Blosc/c-blosc.git
     - git+https://github.com/Blosc/hdf5-blosc.git
-  sha256sums:
-    - 095274ffa1dcc0835c4eb435ddff6e52ed2f8b893db3607390e785a04577fefc
+  b2sums:
+    - 6ecc2e5c8dd22d5773d1530e4f72365862b43ee6dc93601bb3ff52acb85de3206c8349d0856714aed7669eae84cdf7f1324d3ede68a511f94292d8360e122ee8
     - SKIP
     - SKIP
 pkgname:
   - name: python-pytables
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
