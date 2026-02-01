@@ -13,7 +13,7 @@
 # Contributor: hugelgupf <ckoch (at) cs.nmt.edu>
 
 pkgname=dpkg
-pkgver=1.23.3
+pkgver=1.23.5
 pkgrel=1
 pkgdesc='The Debian Package Manager tools'
 arch=('x86_64')
@@ -46,9 +46,9 @@ source=(
   origin.archlinux
   origin.artixlinux
 )
-sha256sums=('0c1b1ca5d71ed99cda66929cb65c4b11a7b9362311f07b7ec363e36834bebd42'
-            '9cfd50f65f1fb52adccf48ea859871259a549f24620b52466c890931919b7e04'
-            '33ff4f2677b4438e58810bf4a276a338ff17d0d6cd0adbfaa1004f09148f627a')
+b2sums=('70a5abe0c9296a7c340655ade12cc939abeab99bbee61beae4a30880a2df1047dd883c133fc9cdb1817a609e2e606f5c6eb0ef609bf2d962dd09ff897eac00ed'
+        '03555ab4aad197ea9d6492268ffdf6727ada21b50275eb7530f6a4647d8ea8dc32a7f67f2cad049ab9a70fe4010da528ea6aedc07279c2fe0403a2bcdf921811'
+        '3c0fa14a5a49805829b5ff80a21083d933c42766b7a361288af2817b6d442f0969fa9d1386383b48765adbe49db2232a18992c7217e7b55659c0580002a42ac1')
 validpgpkeys=('4F3E74F436050C10F5696574B972BF3EA4AE57A3') # Guillem Jover <guillem@hadrons.org>
 
 prepare() {
