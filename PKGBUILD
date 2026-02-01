@@ -4,7 +4,7 @@
 
 pkgname=fuzzel
 pkgver=1.14.0
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Application launcher for wlroots based Wayland compositors'
 url="https://codeberg.org/dnkl/$pkgname"
 arch=(x86_64)
@@ -17,7 +17,7 @@ depends=(cairo
          libxkbcommon
          pixman
          wayland
-         librsvg) # use librsvg instead of bundled nanosvg
+         resvg) # resvg is preferred by upstream
 makedepends=(meson
              scdoc
              tllist
@@ -31,7 +31,7 @@ build() {
 	artix-meson \
 		-Denable-cairo=enabled \
 		-Dpng-backend=libpng \
-		-Dsvg-backend=librsvg \
+		-Dsvg-backend=resvg \
 		. build
 	meson compile -C build
 }
