@@ -1,4 +1,3 @@
 [texlive-texmf]
-source = 'regex'
-url = 'https://svn.tug.org/texlive/tags/'
-regex = 'texlive-([\d.]+)/'
+source = 'cmd'
+cmd = 'curl https://svn.tug.org:8369/texlive/tags/ | grep -oP "\"texlive-\K([\d.]+)" | tail -n 1'
