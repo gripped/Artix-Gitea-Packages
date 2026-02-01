@@ -11,7 +11,7 @@ pkgname=(
   python-libcamera
 )
 pkgver=0.7.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A complex camera support library for Linux, Android, and ChromeOS"
 arch=(x86_64)
 url="https://libcamera.org/"

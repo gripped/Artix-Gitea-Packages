@@ -25,16 +25,16 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.7.0-1
+    version: 0.7.0-1.1
     packages:
-      - libcamera-0.7.0-1-x86_64.pkg.tar.zst
-      - libcamera-docs-0.7.0-1-x86_64.pkg.tar.zst
-      - libcamera-ipa-0.7.0-1-x86_64.pkg.tar.zst
-      - libcamera-tools-0.7.0-1-x86_64.pkg.tar.zst
-      - gst-plugin-libcamera-0.7.0-1-x86_64.pkg.tar.zst
-      - python-libcamera-0.7.0-1-x86_64.pkg.tar.zst
+      - libcamera-0.7.0-1.1-x86_64.pkg.tar.zst
+      - libcamera-docs-0.7.0-1.1-x86_64.pkg.tar.zst
+      - libcamera-ipa-0.7.0-1.1-x86_64.pkg.tar.zst
+      - libcamera-tools-0.7.0-1.1-x86_64.pkg.tar.zst
+      - gst-plugin-libcamera-0.7.0-1.1-x86_64.pkg.tar.zst
+      - python-libcamera-0.7.0-1.1-x86_64.pkg.tar.zst
     debug:
-      - libcamera-debug-0.7.0-1-x86_64.pkg.tar.zst
+      - libcamera-debug-0.7.0-1.1-x86_64.pkg.tar.zst
   world:
     version: 0.6.0-2
     packages:
