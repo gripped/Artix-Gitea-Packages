@@ -70,3 +70,10 @@ package() {
 
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
+
+
+
+
+
+
+
