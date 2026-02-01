@@ -13,7 +13,7 @@ pkgname=(
   rabbitmq
   rabbitmqadmin
 )
-pkgver=4.2.2
+pkgver=4.2.3
 pkgrel=1
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
@@ -56,7 +56,7 @@ source=(
   rabbitmq.tmpfiles
   rabbitmq.logrotate
 )
-sha512sums=('ea02634f55ee31c423fedbbc6c16c4f9be583e5d0b598f8a1cd925a08205daa919442a78478196fbeecca2102b998b99465a71242258e6b2af5eb30854a9abdb'
+sha512sums=('f6a50e8d91bb6f715f3cb740e62b05f85e6ad8dc2047f98ddd3c57e9cc8c0c59a1fc60ee98f83eb4ddad372213ee93dccaf9d395dc9c994a3638a99b33674ba2'
             'a13f9c9d6fbff3b5356a2bf10f85cc9d44f991c8f145b57825f39119e65db7e06341d52f19f209d4968c33bed37b193996b321a0727364b79e7127fb70c74bd5'
             '8b841e28fa0a1424dd9e57c0988e015f3cd4cccef0f73ccdb7c7b66d11ca62ba8ef3a59c7ca5e5f0c9c9d8003ac72bf53785985d98aae867961787003286e179'
             '33c6af8810d8cbc479c63ed535de0a27b2e90eeed8fc9b39255683028478529a7e8953aa992f615d4101c6aefdc066f95c98fb9fb5bf1faf0ea327364101914c'
@@ -70,7 +70,7 @@ validpgpkeys=(
 )
 
 prepare() {
-  cd ${pkgbase}-server
+  cd $pkgbase-server
   sed -E 's|^(SYS_PREFIX=).*$|\1""|' -i deps/rabbit/scripts/rabbitmq-defaults
   sed -E 's|@RABBITMQ_USER@|rabbitmq|g' -i scripts/rabbitmq-script-wrapper
   sed -E 's|@RABBITMQ_GROUP@|rabbitmq|g' -i scripts/rabbitmq-script-wrapper
@@ -79,12 +79,12 @@ prepare() {
 }
 
 build() {
-  cd ${pkgbase}-server
-  make -j1 dist manpages RABBITMQ_VERSION=${pkgver}
+  cd $pkgbase-server
+  make -j1 dist manpages RABBITMQ_VERSION=$pkgver
 }
 
 check() {
-  cd ${pkgbase}-server
+  cd $pkgbase-server
   # The test suite starts epmd but doesn't kill it afterwards.
   export ERL_EPMD_PORT=5369
   trap 'epmd -port $ERL_EPMD_PORT -kill' EXIT
@@ -155,19 +155,19 @@ package_rabbitmq() {
   backup=('etc/rabbitmq/rabbitmq-env.conf')
   install=rabbitmq.install
 
-  cd ${pkgbase}-server
+  cd $pkgbase-server
   make install install-man install-bin \
-    DESTDIR="${pkgdir}" \
+    DESTDIR="$pkgdir" \
     PREFIX=/usr \
     RMQ_ROOTDIR=/usr/lib/rabbitmq \
-    PROJECT_VERSION=${pkgver}
+    PROJECT_VERSION=$pkgver
 
   # Remove rabbitmqadmin, packaged separately.
-  rm "$pkgdir/usr/lib/rabbitmq/lib/rabbitmq_server-${pkgver}/plugins/rabbitmq_management-${pkgver}/priv/www/cli/rabbitmqadmin"
+  rm "$pkgdir/usr/lib/rabbitmq/lib/rabbitmq_server-$pkgver/plugins/rabbitmq_management-$pkgver/priv/www/cli/rabbitmqadmin"
 
   # Using script wrapper for better bin handling.
-  install -vdm 755 "${pkgdir}/usr/bin"
-  install -vDm 755 scripts/rabbitmq-script-wrapper -t "${pkgdir}/usr/lib/rabbitmq/bin"
+  install -vdm 755 "$pkgdir/usr/bin"
+  install -vDm 755 -t "$pkgdir/usr/lib/rabbitmq/bin" scripts/rabbitmq-script-wrapper
   local scripts=(
     rabbitmq-defaults
     rabbitmq-diagnostics
@@ -181,15 +181,15 @@ package_rabbitmq() {
     vmware-rabbitmq
   )
   for script in "${scripts[@]}"; do
-    ln -vs /usr/lib/rabbitmq/bin/rabbitmq-script-wrapper "${pkgdir}/usr/bin/${script}"
+    ln -vs /usr/lib/rabbitmq/bin/rabbitmq-script-wrapper "$pkgdir/usr/bin/$script"
   done
 
-  install -vDm 644 "${srcdir}/rabbitmq-env.conf" "${pkgdir}/etc/rabbitmq/rabbitmq-env.conf"
-  install -vDm 644 "${srcdir}/rabbitmq.sysusers" "${pkgdir}/usr/lib/sysusers.d/rabbitmq.conf"
-  install -vDm 644 "${srcdir}/rabbitmq.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/rabbitmq.conf"
-  install -vDm 644 "${srcdir}/rabbitmq.logrotate" "${pkgdir}/etc/logrotate.d/rabbitmq"
+  install -vDm 644 "$srcdir/rabbitmq-env.conf" "$pkgdir/etc/rabbitmq/rabbitmq-env.conf"
+  install -vDm 644 "$srcdir/rabbitmq.sysusers" "$pkgdir/usr/lib/sysusers.d/rabbitmq.conf"
+  install -vDm 644 "$srcdir/rabbitmq.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/rabbitmq.conf"
+  install -vDm 644 "$srcdir/rabbitmq.logrotate" "$pkgdir/etc/logrotate.d/rabbitmq"
 
-  chown -vR 197:0 "${pkgdir}/etc/rabbitmq"
+  chown -vR 197:0 "$pkgdir/etc/rabbitmq"
 }
 
 package_rabbitmqadmin() {
@@ -197,8 +197,6 @@ package_rabbitmqadmin() {
   url='https://www.rabbitmq.com/docs/management-cli'
   depends=('python')
 
-  cd ${pkgbase}-server/deps/rabbitmq_management
-  install -vDm 755 bin/rabbitmqadmin -t "${pkgdir}/usr/bin"
+  cd $pkgbase-server/deps/rabbitmq_management
+  install -vDm 755 -t "$pkgdir/usr/bin" bin/rabbitmqadmin
 }
-
-# vim: ts=2 sw=2 et:
