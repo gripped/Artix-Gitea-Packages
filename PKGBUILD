@@ -24,7 +24,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.4.10
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -330,6 +330,10 @@ package_pipewire-audio() {
     opus libopus.so
     sbc libsbc.so
     webrtc-audio-processing-1 libwebrtc-audio-processing-1.so
+  )
+  provides=(
+    ladspa-host
+    lv2-host
   )
 
   mv audio/* "$pkgdir"
