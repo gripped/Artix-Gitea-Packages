@@ -1,0 +1,85 @@
+--- a/meson.build	2026-02-01 13:04:33.311481390 +0100
++++ b/meson.build	2026-02-01 12:56:29.059571586 +0100
+@@ -5,6 +5,7 @@
+ 
+ driver_version = meson.project_version().split('.')
+ 
++dir_pkgconf	= get_option('prefix') / get_option('libdir') / 'pkgconfig'
+ dir_man4	= get_option('prefix') / get_option('mandir') / 'man4'
+ 
+ cc = meson.get_compiler('c')
+@@ -32,7 +33,7 @@
+ pkgconfig = import('pkgconfig')
+ dep_xserver = dependency('xorg-server', version: '>= 1.19')
+ dep_xproto = dependency('xproto')
+-dep_inputproto = dependency('inputproto', version: '>= 2.2')
++dep_inputproto = dependency('inputproto', version: '>= 2.3.99.1')
+ dep_libinput = dependency('libinput', version: '>= 1.11.0')
+ 
+ config_h = configuration_data()
+@@ -40,10 +41,6 @@
+ config_h.set('PACKAGE_VERSION_MINOR', driver_version[1])
+ config_h.set('PACKAGE_VERSION_PATCHLEVEL', driver_version[2])
+ 
+-if dep_inputproto.version().version_compare('>= 2.3.99.1')
+-	config_h.set('HAVE_INPUTPROTO24', 1)
+-endif
+-
+ if cc.has_function('libinput_device_config_scroll_get_button_lock',
+ 		   dependencies: dep_libinput)
+ 	config_h.set('HAVE_LIBINPUT_SCROLL_BUTTON_LOCK', 1)
+@@ -127,6 +124,18 @@
+ 			 install: false)
+ test('test-draglock', test_draglock)
+ 
++
++conf_pkgconf = configuration_data()
++conf_pkgconf.set('PACKAGE_VERSION', meson.project_version())
++conf_pkgconf.set('sdkdir', dir_headers)
++
++configure_file(
++	input: 'xorg-libinput.pc.in',
++	output: 'xorg-libinput.pc',
++	configuration: conf_pkgconf,
++	install_dir: dir_pkgconf,
++)
++
+ config_man = configuration_data()
+ config_man.set('VERSION', '@0@ @1@'.format(meson.project_name(), meson.project_version()))
+ 
+--- a/configure.ac	2026-02-01 13:04:39.154586302 +0100
++++ b/configure.ac	2026-02-01 12:56:44.218448970 +0100
+@@ -46,13 +46,9 @@
+ CFLAGS="$CFLAGS -Wno-declaration-after-statement"
+ 
+ # Obtain compiler/linker options from server and required extensions
+-PKG_CHECK_MODULES(XORG, [xorg-server >= 1.19] xproto [inputproto >= 2.2])
++PKG_CHECK_MODULES(XORG, [xorg-server >= 25.0.0] xproto [inputproto >= 2.3.99.1])
+ PKG_CHECK_MODULES(LIBINPUT, [libinput >= 1.11.0])
+ 
+-PKG_CHECK_MODULES(INPUTPROTO24, [inputproto >= 2.3.99.1],
+-		  [AC_DEFINE(HAVE_INPUTPROTO24, [1], [inputproto 2.4 is available])],
+-		  [:])
+-
+ OLD_LIBS=$LIBS
+ OLD_CFLAGS=$CFLAGS
+ LIBS="$LIBS $LIBINPUT_LIBS"
+@@ -157,5 +153,5 @@
+ 		 src/Makefile
+ 		 man/Makefile
+ 		 test/Makefile
+-		])
++		 xorg-libinput.pc])
+ AC_OUTPUT
+--- a/Makefile.am	2026-02-01 13:04:46.472345112 +0100
++++ b/Makefile.am	2026-02-01 12:56:35.384926625 +0100
+@@ -27,6 +27,9 @@
+ SUBDIRS = src include man test
+ MAINTAINERCLEANFILES = ChangeLog INSTALL
+ 
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = xorg-libinput.pc
++
+ dist_xorgconf_DATA = conf/40-libinput.conf
+ 
+ .PHONY: ChangeLog INSTALL

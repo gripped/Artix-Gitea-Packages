@@ -2,7 +2,7 @@
 
 pkgname=xlibre-input-libinput
 pkgver=25.0.0
-pkgrel=9
+pkgrel=10
 pkgdesc="XLibre fork of the generic input driver for the X.Org server based on libinput"
 arch=(x86_64 aarch64)
 license=('MIT')
@@ -12,11 +12,19 @@ depends=("xlibre-xserver>=${pkgver%.*}" 'glibc')
 makedepends=("xlibre-xserver-devel>=${pkgver%.*}" 'xorgproto')
 conflicts=("${_pkgname}")
 provides=("${_pkgname}" x11win-input-libinput)
-source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
+source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz"
+        "xorg-libinput.pc.in::https://raw.githubusercontent.com/X11Libre/xf86-input-libinput/dcfbe775cd974c2bdfd62150ad15433ac694e89d/xorg-libinput.pc.in"
+        revert-87f63fe.patch)
 groups=('xlibre-drivers')
 depends+=('libinput')
 makedepends+=('libxi' 'libx11' 'libxfont2' 'meson')
 install=$pkgname.install
+
+prepare() {
+  cd ${_pkgname}-xlibre-${_pkgname}-${pkgver}
+  patch -Np1 -i ../revert-87f63fe.patch
+  cp -v ../xorg-libinput.pc.in ./
+}
 
 build() {
   case "$CARCH" in
@@ -64,4 +72,6 @@ package() {
   DESTDIR="$pkgdir" ninja -C build install
 }
 
-sha256sums=('aa7369a0a3834876ba11659cc663105a1511651d7ac2be2338e5d195283fbd00')
+sha256sums=('aa7369a0a3834876ba11659cc663105a1511651d7ac2be2338e5d195283fbd00'
+            'e5b21ffea081d22f05bd78ac407dc947ab7782c7166170eebeec5c0b8e17a3a5'
+            '6a7eae696c3d21e890aea69560353e4061b4684655f48ed5d6de4fe925578e4b')
