@@ -7,8 +7,8 @@
 
 _name=pip
 pkgname=python-pip
-pkgver=25.3
-pkgrel=3
+pkgver=26.0
+pkgrel=1
 pkgdesc="The PyPA recommended tool for installing Python packages"
 url="https://pip.pypa.io/"
 arch=(any)
@@ -45,8 +45,8 @@ checkdepends=(
 )
 source=(https://github.com/pypa/$_name/archive/$pkgver/$_name-$pkgver.tar.gz
         )
-sha512sums=('f50db092213ec3bb819d3da5669f73d119b5ec7f7ac5e8a587a17c27eafa32bc17a057df09389c526a3769ef3577f5553187d54ceffa89aed63f4b4498ff044e')
-b2sums=('87d848c497163a45ee3de8f6f75c80b5051b07062c5a15450ae98b59a6cebc6bf03ca8525d57929493f2cfeb28d5623401eba69f0bdfc734389efbb84eafdf53')
+sha512sums=('62a62b2db4e7a6c795cf01ab553b94068f0d1c62470c1f5c2b3164344a84fa68f7854eec99d93b9f56193c61276d95d8af21a3cb6b78f0db4f013d9997e78199')
+b2sums=('fe24bd8fca7fa2b64ed865a880a430c420a9e73e35a9f1f2405473d4778467f48a8bc0607c1423760ff23706d3e11ddfeb20cd5a7f6522530a679994278ee1d8')
 
 prepare() {
   # pip is moving towards a separate sphinx config without towncrier https://github.com/pypa/pip/issues/12881
@@ -105,4 +105,3 @@ package() {
   PYTHONPATH="$pkgdir/$_site_packages" "$pkgdir"/usr/bin/pip completion --zsh | tail -n+3 | install -vDm 644 /dev/stdin "$pkgdir"/usr/share/zsh/site-functions/_pip
   PYTHONPATH="$pkgdir/$_site_packages" "$pkgdir"/usr/bin/pip completion --fish | install -vDm 644 /dev/stdin "$pkgdir"/usr/share/fish/vendor_completions.d/pip.fish
 }
- 
