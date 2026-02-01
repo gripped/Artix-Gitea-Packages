@@ -29,10 +29,10 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:2026.01.01-1
+    version: 1:2026.02.01-1
     packages:
-      - noto-fonts-1:2026.01.01-1-any.pkg.tar.zst
-      - noto-fonts-extra-1:2026.01.01-1-any.pkg.tar.zst
+      - noto-fonts-1:2026.02.01-1-any.pkg.tar.zst
+      - noto-fonts-extra-1:2026.02.01-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
