@@ -21,9 +21,7 @@ makedepends=(
 )
 checkdepends=(
   python-pytest
-  python-pytorch
   python-scipy
-  python-tensorflow
   python-tests
 )
 source=(
