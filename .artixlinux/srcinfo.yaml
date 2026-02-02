@@ -1,10 +1,10 @@
 ---
-version: 3.2.0-9
+version: 3.2.0-9.1
 pkgbase:
   name: python-rx
   pkgdesc: Reactive Extensions for Python
   pkgver: 3.2.0
-  pkgrel: 9
+  pkgrel: 9.1
   url: http://reactivex.io
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - 3062891dcdfec9ad21ec6815aa1f83ad6b898de32339c02cef9369a975719a1d58ab7bb07cc352829264b20bfd9a710905c96cc3b88c31b157ba1336dc77271d
 pkgname:
   - name: python-rx
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
