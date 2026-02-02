@@ -1,8 +1,8 @@
 ---
-version: 2.8.4-1
+version: 2.8.5-1
 pkgbase:
   name: nfs-utils
-  pkgver: 2.8.4
+  pkgver: 2.8.5
   pkgrel: 1
   url: http://nfs.sourceforge.net
   arch:
@@ -16,14 +16,14 @@ pkgbase:
     - device-mapper
     - libnl
   source:
-    - https://www.kernel.org/pub/linux/utils/nfs-utils/2.8.4/nfs-utils-2.8.4.tar.xz
-    - https://www.kernel.org/pub/linux/utils/nfs-utils/2.8.4/nfs-utils-2.8.4.tar.sign
+    - https://www.kernel.org/pub/linux/utils/nfs-utils/2.8.5/nfs-utils-2.8.5.tar.xz
+    - https://www.kernel.org/pub/linux/utils/nfs-utils/2.8.5/nfs-utils-2.8.5.tar.sign
     - exports
     - nfs-utils.sysusers
   validpgpkeys:
     - E1B71E339E20A10A676F7CB69AFB1D681A125177
   sha256sums:
-    - 11c4cc598a434d7d340bad3e072a373ba1dcc2c49f855d44b202222b78ecdbf5
+    - b13ca4a9df44186bdbe107514b22732d4243f785f95daf2fb86afc1edba15bbb
     - SKIP
     - b8238b74179f7e1626db2b637671ddc17288a1c5b7692954ae6d2fbb1be3788d
     - 61a3fbe55e30bc9c5da17a76e772c8be1cc695e0142a144c15f0f9aa46ab9ce0
@@ -65,4 +65,4 @@ pkgname:
       - glibc
     backup:
       - etc/idmapd.conf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
