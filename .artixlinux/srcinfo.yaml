@@ -1,10 +1,10 @@
 ---
-version: 5.5.4-1
+version: 5.5.4-1.1
 pkgbase:
   name: python-kombu
   pkgdesc: A messaging library for Python
   pkgver: 5.5.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/celery/kombu
   arch:
     - any
@@ -52,4 +52,4 @@ pkgbase:
     - 7793a288cc0316d06e66785a18182b8629a692a9fb2976b85c51cb466f95c008
 pkgname:
   - name: python-kombu
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.6-1-any
