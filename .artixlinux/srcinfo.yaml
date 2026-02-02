@@ -1,0 +1,32 @@
+---
+version: 1.2.1-4.1
+pkgbase:
+  name: python-pook
+  pkgdesc: Versatile and expressive HTTP traffic mocking and testing made simple in Python
+  pkgver: 1.2.1
+  pkgrel: 4.1
+  url: https://github.com/h2non/pook
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-aiohttp
+    - python-requests
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python-furl
+    - python-jsonschema
+    - python-xmltodict
+  source:
+    - https://github.com/h2non/pook/archive/v1.2.1/python-pook-1.2.1.tar.gz
+  sha512sums:
+    - 5053703bebe5be6d01d9cddb4333d2b02de348781088b17f92db97eb70eee8fc77b2ed88d80374d7774464776e99f8a0c587f36c68146b56c91442e699dc7d46
+pkgname:
+  - name: python-pook
+# generated with artixpkg 0.37.6-1-any

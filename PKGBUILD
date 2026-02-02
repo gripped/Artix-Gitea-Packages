@@ -2,7 +2,7 @@
 
 pkgname=python-pook
 pkgver=1.2.1
-pkgrel=4
+pkgrel=4.1
 pkgdesc="Versatile and expressive HTTP traffic mocking and testing made simple in Python"
 url="https://github.com/h2non/pook"
 license=('MIT')
@@ -33,4 +33,3 @@ package() {
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
   rm -rf "$pkgdir"/$site_packages/tests
 }
-
