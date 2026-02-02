@@ -2,7 +2,7 @@
 
 pkgname=python-txrequests
 pkgver=0.9.6
-pkgrel=11
+pkgrel=11.1
 pkgdesc='Asynchronous Python HTTP Requests for Humans using twisted'
 license=('Apache')
 arch=(any)
@@ -26,4 +26,3 @@ package() {
     cd txrequests-$pkgver
     python setup.py install --root="$pkgdir" --optimize=1 --skip-build
 }
-
