@@ -1,9 +1,9 @@
 ---
-version: 0.10.0-1
+version: 0.11.0-1
 pkgbase:
   name: rmpc
   pkgdesc: A beautiful and configurable TUI client for MPD
-  pkgver: 0.10.0
+  pkgver: 0.11.0
   pkgrel: 1
   url: https://mierak.github.io/rmpc/
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - 'ueberzugpp: for alternative album art method'
     - 'cava: for visualizer'
   source:
-    - rmpc-0.10.0.tar.gz::https://github.com/mierak/rmpc/archive/v0.10.0.tar.gz
+    - rmpc-0.11.0.tar.gz::https://github.com/mierak/rmpc/archive/v0.11.0.tar.gz
   sha256sums:
-    - 86e6b465707cdca82f53aed2a3bef600430edbf4e626124d194ac346ee989cbd
+    - 930019066228d18e9530a8c0d77f10e231ab5efbbbca73b331efcd6fbb47557d
 pkgname:
   - name: rmpc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
