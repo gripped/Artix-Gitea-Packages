@@ -32,7 +32,8 @@ repos:
     version: 1.9.0-1
     packages:
       - python-pooch-1.9.0-1-any.pkg.tar.zst
-    debug: []
+    debug:
+      - python-pooch-debug-1.9.0-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
