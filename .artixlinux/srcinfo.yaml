@@ -1,0 +1,38 @@
+---
+version: 0.9.0-3.1
+pkgbase:
+  name: python-databases
+  pkgdesc: Async database support for Python
+  pkgver: 0.9.0
+  pkgrel: 3.1
+  url: https://github.com/encode/databases
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-aiosqlite
+    - python-httpx
+    - python-pytest
+    - python-requests
+    - python-starlette
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-sqlalchemy
+  optdepends:
+    - 'python-aiomysql: mysql support'
+    - 'python-aiopg: postgresql + aiopg support'
+    - 'python-aiosqlite: sqlite support'
+    - 'python-asyncpg: postgresql support'
+  source:
+    - python-databases-0.9.0.tar.gz::https://github.com/encode/databases/archive/0.9.0.tar.gz
+  sha256sums:
+    - 4dc05d1810ae683930b150c1325ec2e35854fc5838ed91d3bfe94ff7dadb59e5
+pkgname:
+  - name: python-databases
+# generated with artixpkg 0.37.6-1-any
