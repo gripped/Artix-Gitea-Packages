@@ -1,0 +1,65 @@
+---
+version: 5.4.0-2.1
+pkgbase:
+  name: python-celery
+  pkgdesc: Distributed Asynchronous Task Queue
+  pkgver: 5.4.0
+  pkgrel: 2.1
+  url: http://celeryproject.org/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest-celery
+    - python-pytest-subtests
+    - python-pytest-timeout
+    - python-cryptography
+    - python-gevent
+    - python-pymongo
+    - python-msgpack
+    - python-pyro
+    - python-redis
+    - python-sqlalchemy
+    - python-boto3
+    - python-yaml
+    - python-pyzmq
+    - python-eventlet
+    - python-moto
+    - python-pytest-click
+    - esysusers
+  makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - etmpfiles
+    - python-billiard
+    - python-click-didyoumean
+    - python-click-plugins
+    - python-click-repl
+    - python-kombu
+    - python-pytz
+    - python-vine
+  optdepends:
+    - 'python-cryptography: for celery.security'
+    - 'python-pymongo: for celery.backends.mongodb'
+    - 'python-msgpack: for using the msgpack serializer'
+    - 'python-pyro: for using Pyro4 message transport'
+    - 'python-redis: for celery.backends.redis'
+    - 'python-sqlalchemy: for celery.backends.database'
+    - 'python-boto3: for SQS transport'
+    - 'python-yaml: for using the yaml serializer'
+    - 'python-pyzmq: for using ZeroMQ transport'
+  options:
+    - '!emptydirs'
+  source:
+    - https://pypi.io/packages/source/c/celery/celery-5.4.0.tar.gz
+    - celery.tmpfiles.d
+  sha512sums:
+    - e59b62878f7da0af79be13df816e899c948f71f1063643baaabc1244dd44fd3114a5b3d724c010307ca8091c6b4343a4322213bc6154b843b79893b8f772476c
+    - 67279b75c3b44d065811c9c90aee006296164000912d5bb97c74956b26ee4ad4f0847e846052a896d379848b869c849300367e676d3f689cf29e3a0c7ae5310b
+pkgname:
+  - name: python-celery
+# generated with artixpkg 0.37.6-1-any
