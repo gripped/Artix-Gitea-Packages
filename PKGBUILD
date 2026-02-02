@@ -3,7 +3,7 @@
 _pyname=ypy_websocket
 pkgname=python-ypy-websocket
 pkgver=0.12.4
-pkgrel=3
+pkgrel=3.1
 pkgdesc='WebSocket connector for Ypy'
 arch=(any)
 url='https://github.com/y-crdt/ypy-websocket'
@@ -39,4 +39,3 @@ package() {
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
 }
-
