@@ -1,10 +1,10 @@
 ---
-version: 1.3.0-3
+version: 1.3.0-5
 pkgbase:
   name: libavif
   pkgdesc: Library for encoding and decoding .avif files
   pkgver: 1.3.0
-  pkgrel: 3
+  pkgrel: 5
   url: https://github.com/AOMediaCodec/libavif
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 71f5a51a8e1a9198cd9f2e38c158e50815989bb1fe28cc80e481aa16a3e1ec2d
 pkgname:
   - name: libavif
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
