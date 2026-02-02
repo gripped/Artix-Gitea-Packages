@@ -6,15 +6,11 @@ pkgbase=zlib
 pkgname=(zlib minizip)
 epoch=1
 pkgver=1.3.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Compression library implementing the deflate compression method found in gzip and PKZIP'
 arch=(x86_64)
 license=(Zlib)
 url="https://www.zlib.net/"
-options=(
-  staticlibs  # needed by binutils testsuite
-  debug
-)
 source=(https://github.com/madler/zlib/releases/download/v$pkgver/$pkgname-$pkgver.tar.xz{,.asc})
 sha512sums=('1e8e70b362d64a233591906a1f50b59001db04ca14aaffad522198b04680be501736e7d536b4191e2f99767e7001ca486cd802362cca2be05d5d409b83ea732d'
             'SKIP')
