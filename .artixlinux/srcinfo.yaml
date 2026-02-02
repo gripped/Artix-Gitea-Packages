@@ -1,10 +1,10 @@
 ---
-version: 0.15.0-2
+version: 0.15.0-2.1
 pkgbase:
   name: python-trio-asyncio
   pkgdesc: A re-implementation of the asyncio mainloop on top of Trio
   pkgver: 0.15.0
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/python-trio/trio-asyncio
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - f39e13d8bf8c5fdb5f994a67cbb4fbf844d12cfe1cf4cc11b50aac5fadf38b4c0cd4ca145a206a44e88fa98b20dda69c31ae46dcb256419f422d137a8e7330b4
 pkgname:
   - name: python-trio-asyncio
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any

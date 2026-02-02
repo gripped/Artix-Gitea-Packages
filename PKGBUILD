@@ -2,7 +2,7 @@
 
 pkgname=python-trio-asyncio
 pkgver=0.15.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='A re-implementation of the asyncio mainloop on top of Trio'
 arch=(any)
 url=https://github.com/python-trio/trio-asyncio
