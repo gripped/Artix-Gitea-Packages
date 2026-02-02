@@ -1,10 +1,10 @@
 ---
-version: 6.5.5-3.1
+version: 6.5.5-3
 pkgbase:
   name: kwin
   pkgdesc: An easy to use, but flexible, Wayland compositor
   pkgver: 6.5.5
-  pkgrel: 3.1
+  pkgrel: 3
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -97,4 +97,4 @@ pkgbase:
     - 75d194ed2a3ddcabad010844319572b1cec17d34b603f9cdb498fd51f33ff42d
 pkgname:
   - name: kwin
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
