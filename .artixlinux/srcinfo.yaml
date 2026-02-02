@@ -1,9 +1,9 @@
 ---
-version: 1:1.8.3-1
+version: 1:1.8.4-1
 pkgbase:
   name: libadwaita
   pkgdesc: Building blocks for modern adaptive GNOME applications
-  pkgver: 1.8.3
+  pkgver: 1.8.4
   pkgrel: 1
   epoch: 1
   url: https://gnome.pages.gitlab.gnome.org/libadwaita/
@@ -30,9 +30,9 @@ pkgbase:
     - gtk4
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/libadwaita.git#tag=1.8.3
+    - git+https://gitlab.gnome.org/GNOME/libadwaita.git#tag=1.8.4
   b2sums:
-    - a401ab752e044c04a3a2bd771807899bcc805fe3ba7be6804514fcf810f2618c7d148a70a08ea76bcd228746dc2cdda97f540c1193dc98eac2445ea82bbaf195
+    - 307d17c74fe504f4e204d7c495f0261ef797e656fc43b867b2b8013fb1213deda75c8dd860e7bbc08d0810405d4e2e298928c14d9f5312fcd17c21b1bb1071f0
 pkgname:
   - name: libadwaita
     depends:
@@ -57,4 +57,4 @@ pkgname:
   - name: libadwaita-docs
     pkgdesc: Building blocks for modern adaptive GNOME applications (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
