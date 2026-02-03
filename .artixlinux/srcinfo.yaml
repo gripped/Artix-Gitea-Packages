@@ -1,9 +1,9 @@
 ---
-version: 3.2026.0113-1
+version: 3.2026.0127-1
 pkgbase:
   name: ruby-mime-types-data
   pkgdesc: provides a registry for information about MIME media type definitions
-  pkgver: 3.2026.0113
+  pkgver: 3.2026.0127
   pkgrel: 1
   url: https://github.com/mime-types/mime-types-data/
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - ruby-mime-types-data-3.2026.0113.tar.gz::https://github.com/mime-types/mime-types-data/archive/refs/tags/v3.2026.0113.tar.gz
+    - ruby-mime-types-data-3.2026.0127.tar.gz::https://github.com/mime-types/mime-types-data/archive/refs/tags/v3.2026.0127.tar.gz
   sha256sums:
-    - 0724a68844fa7b33ff2839cc78c95d76917c77de7d4ffc30c78591206eeaae4d
+    - c327b511c2dc5294b38b9cbac33ce27c06e6221f6bd891ee8713bccf90bb0e85
 pkgname:
   - name: ruby-mime-types-data
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
