@@ -1,9 +1,9 @@
 ---
-version: 2:7.1.1-2
+version: 2:7.2.0-1
 pkgbase:
   name: rocm-llvm
-  pkgver: 7.1.1
-  pkgrel: 2
+  pkgver: 7.2.0
+  pkgrel: 1
   epoch: 2
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
@@ -28,15 +28,9 @@ pkgbase:
     - staticlibs
     - '!lto'
   source:
-    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-7.1.1
-    - rocm-llvm-6.4-llvm-gold-plugin-fix-ModuleName.patch
-    - rocm-llvm-6.4-fix-array-assert.patch
-    - rocm-llvm-6.4-fix-glibc-2.42-termio-removal.patch
+    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-7.2.0
   sha256sums:
-    - fed80645f307dff71c2bf54ae19133b87a2d90ad812ae86a9bc0203ffc7b09d5
-    - 0293c307131426a9c031f215045e2f0725677de0aac6dda1729456ac9a444415
-    - 6485a06e4f3b85df76110548f428217f86e785ec3dec7b0de0a7a2cf6384f0c0
-    - 09d9135f8212a93d678c6c2fd9f551e55cab431e257f1182cfdfae7834e2fa14
+    - 676db89f6b7b0c954f24ff1eb1c16db769a5c43b826337b9f4fd9f38f7b8af27
 pkgname:
   - name: rocm-llvm
     pkgdesc: Radeon Open Compute - LLVM toolchain (llvm, clang, lld)
@@ -71,4 +65,4 @@ pkgname:
       - rocm-core
       - rocm-llvm
       - rocm-device-libs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
