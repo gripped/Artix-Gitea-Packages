@@ -1,32 +1,34 @@
 ---
-version: 4.5.1-2
+version: 4.5.4-1
 pkgbase:
   name: python-yara
   pkgdesc: Tool aimed at helping malware researchers to identify and classify malware samples
-  pkgver: 4.5.1
-  pkgrel: 2
+  pkgver: 4.5.4
+  pkgrel: 1
   url: https://github.com/VirusTotal/yara-python
   arch:
     - x86_64
   license:
-    - Apache
+    - Apache-2.0
   checkdepends:
     - python-pytest
   makedepends:
     - git
     - python-build
     - python-installer
-    - python-wheel
     - python-setuptools
+    - python-wheel
   depends:
+    - glibc
+    - libyara.so
     - python
     - yara
-    - libyara.so
-    - glibc
   source:
-    - python-yara::git+https://github.com/VirusTotal/yara-python#tag=v4.5.1
-  sha512sums:
-    - 807e7f07acaaae5071076cc334a80e09920918c4fd871a6cdc8e5d72cad386bc16ba384b1d6943e567beec7d1ea992e66e61b372f65fb15bf9427425cdf360d0
+    - python-yara::git+https://github.com/VirusTotal/yara-python#commit=v4.5.4?signed
+  validpgpkeys:
+    - 2A05514ACB63CB0E0C89DEE2B471460BB894AB84
+  b2sums:
+    - 1c220616dc4f7caebba75754d75b4892ebbe1496b5337f5db636a8795ba026febb04ce24ca0bd4b3ce1dff73acde7a64c5efcc49e6d3eea93c2583ab359989fa
 pkgname:
   - name: python-yara
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
