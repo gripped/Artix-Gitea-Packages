@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.1.12-1
+    version: 2026.01.30-1
     packages:
-      - zathura-cb-0.1.12-1-x86_64.pkg.tar.zst
+      - zathura-cb-2026.01.30-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
