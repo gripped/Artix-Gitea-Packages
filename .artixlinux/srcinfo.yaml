@@ -1,9 +1,9 @@
 ---
-version: 2.6.10-1
+version: 2.6.12-1
 pkgbase:
   name: lib32-libldap
   pkgdesc: Lightweight Directory Access Protocol (LDAP) client libraries (32-bit)
-  pkgver: 2.6.10
+  pkgver: 2.6.12
   pkgrel: 1
   url: https://www.openldap.org/
   arch:
@@ -17,13 +17,13 @@ pkgbase:
     - lib32-libxcrypt
     - libldap
   source:
-    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz
-    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.10.tgz.asc
+    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.12.tgz
+    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.6.12.tgz.asc
   validpgpkeys:
     - 3CE269B5398BC8B785645E987F67D5FD1CE1CBCE
   sha256sums:
-    - c065f04aad42737aebd60b2fe4939704ac844266bc0aeaa1609f0cad987be516
+    - 1716ad779e85d743694c3e3b05277fb71b6a5eadca43c7a958aa62683b22208e
     - SKIP
 pkgname:
   - name: lib32-libldap
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.6-1-any
