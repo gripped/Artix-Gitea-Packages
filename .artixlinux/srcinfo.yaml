@@ -1,9 +1,9 @@
 ---
-version: 2.17.0-1
+version: 2.18.0-1
 pkgbase:
   name: libwacom
   pkgdesc: Library to identify Wacom tablets and their features
-  pkgver: 2.17.0
+  pkgver: 2.18.0
   pkgrel: 1
   url: https://github.com/linuxwacom/libwacom/wiki
   arch:
@@ -20,18 +20,19 @@ pkgbase:
     - glib2
     - libevdev
     - libgudev
+    - gcc-libs
     - glibc
   optdepends:
     - 'python-libevdev: for libwacom-show-stylus'
     - 'python-pyudev: for libwacom-show-stylus'
   source:
-    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.17.0/libwacom-2.17.0.tar.xz
-    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.17.0/libwacom-2.17.0.tar.xz.sig
+    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.18.0/libwacom-2.18.0.tar.xz
+    - https://github.com/linuxwacom/libwacom/releases/download/libwacom-2.18.0/libwacom-2.18.0.tar.xz.sig
   validpgpkeys:
     - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
   sha256sums:
-    - 41a0f239841567b101904df8ced81e1e0115334ccfd82a024412aa0903dae5a7
+    - 7dbb9ab37df9df47ae2fdbb644916c986728291749bcd5ad8bcaa26f1e15f002
     - SKIP
 pkgname:
   - name: libwacom
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
