@@ -1,0 +1,32 @@
+---
+version: 0.14.0-2
+pkgbase:
+  name: pinentry-bemenu
+  pkgdesc: Pinentry based on bemenu
+  pkgver: 0.14.0
+  pkgrel: 2
+  url: https://github.com/t-8ch/pinentry-bemenu
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - meson
+    - ninja
+    - cmake
+    - pkgconf
+    - popt
+  depends:
+    - bemenu
+    - libassuan
+    - libgpg-error
+    - popt
+  provides:
+    - pinentry
+  source:
+    - pinentry-bemenu-0.14.0.tar.gz::https://github.com/t-8ch/pinentry-bemenu/archive/refs/tags/v0.14.0.tar.gz
+  sha512sums:
+    - 0495a8c0f8886ead908ab9f633986ea88a3775e0e76a5a2937125338e5e77a1c1c297ec6c7bb2bbc8198b60a8931c076bc750f3d04dbb5e344d8ddc66245052f
+pkgname:
+  - name: pinentry-bemenu
+# generated with artixpkg 0.37.6-1-any

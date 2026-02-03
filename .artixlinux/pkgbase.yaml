@@ -1,12 +1,5 @@
 ---
 team: galaxy
-pkgbase:
-  name: pinentry-bemenu
-  version: 0.14.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - pinentry-bemenu
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,37 +12,49 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 0.14.0-1
+    version: 0.14.0-2
     packages:
-      - pinentry-bemenu-0.14.0-1-x86_64.pkg.tar.zst
+      - pinentry-bemenu-0.14.0-2-x86_64.pkg.tar.zst
+    debug: []
