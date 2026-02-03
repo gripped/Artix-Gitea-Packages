@@ -1,9 +1,9 @@
 ---
-version: 0.3.4-1
+version: 2026.01.30-1
 pkgbase:
   name: zathura-pdf-poppler
   pkgdesc: Adds pdf support to zathura by using the poppler engine
-  pkgver: 0.3.4
+  pkgver: 2026.01.30
   pkgrel: 1
   url: https://pwmt.org/projects/zathura-pdf-poppler/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - zathura
     - desktop-file-utils
   source:
-    - zathura-pdf-poppler-0.3.4.tar.gz::https://github.com/pwmt/zathura-pdf-poppler/archive/refs/tags/0.3.4.tar.gz
+    - zathura-pdf-poppler-2026.01.30.tar.gz::https://github.com/pwmt/zathura-pdf-poppler/archive/refs/tags/2026.01.30.tar.gz
   sha512sums:
-    - e4c219eecd59b7e60013e37a7ab89e6afd425fd4fb66ea219070045999fa541ab5e597b91ad202d81f614e7a82bd623b7c69314b301cbd33cd92acbeef216ae5
+    - 54c9067f6a78d7d6865ecdd72304187e4bd9b43cae7a72e2017a691b763c36bdf51f7365817f0ba7195e019f065aae83e748ce5dd98fdbad41bb871963813014
 pkgname:
   - name: zathura-pdf-poppler
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
