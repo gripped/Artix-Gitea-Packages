@@ -47,4 +47,4 @@ pkgbase:
     - 2eb27d784c24061f996af7d578af25282de08802d56bfaa674a1a3ae9e86acda
 pkgname:
   - name: libheif
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
