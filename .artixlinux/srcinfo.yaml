@@ -1,9 +1,9 @@
 ---
-version: 7.1.1-1
+version: 7.2.0-1
 pkgbase:
   name: hipify-clang
   pkgdesc: Convert CUDA to Portable C++ Code
-  pkgver: 7.1.1
+  pkgver: 7.2.0
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/HIPIFY/en/latest
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - hipify-clang-7.1.1.tar.gz::https://github.com/ROCm/HIPIFY/archive/rocm-7.1.1.tar.gz
+    - hipify-clang-7.2.0.tar.gz::https://github.com/ROCm/HIPIFY/archive/rocm-7.2.0.tar.gz
   sha256sums:
-    - abb80ecc0ea82fd847a95a9c2dd1d182990a7a495f1eab6126e7c5e9dc8b68a7
+    - ddea52cc4b624f5a48413cc390d0308c9b889d9dd6699077f4cfb7d014417a9f
 pkgname:
   - name: hipify-clang
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
