@@ -1,10 +1,10 @@
 ---
-version: 0.5.19-8
+version: 0.5.19-9
 pkgbase:
   name: lutris
   pkgdesc: Open Gaming Platform
   pkgver: 0.5.19
-  pkgrel: 8
+  pkgrel: 9
   url: https://lutris.net
   arch:
     - any
@@ -78,9 +78,11 @@ pkgbase:
   source:
     - git+https://github.com/lutris/lutris.git#tag=v0.5.19
     - git+https://github.com/bartok765/galaxy_blizzard_plugin.git
+    - fix_archive_extraction_python_3.14.patch::https://github.com/lutris/lutris/commit/4cef2407288fd0219eba684c7b24451eeaf35fef.patch?full_index=1
   sha256sums:
     - e0349f6c127e9da4a935d84fa73370c353cd08e513160e28b1da13db94cc9d8c
     - SKIP
+    - 6e52c552f0b2a08e420151f897180bf895a62daf94e38511f3f4ab48357d21af
 pkgname:
   - name: lutris
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
