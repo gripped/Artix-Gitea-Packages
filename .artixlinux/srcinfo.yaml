@@ -1,10 +1,10 @@
 ---
-version: 0.9.5-8
+version: 0.9.5-9
 pkgbase:
   name: igsc
   pkgdesc: Intel graphics system controller firmware update library
   pkgver: 0.9.5
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/intel/igsc/
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - 516a099239ad0541598be87025556c878c0d11c6d43e09115d2bb2e24508b6ec
 pkgname:
   - name: igsc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
