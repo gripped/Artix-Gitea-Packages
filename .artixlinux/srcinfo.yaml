@@ -1,10 +1,10 @@
 ---
-version: 1.16.0-2
+version: 1.16.0-3
 pkgbase:
   name: tigervnc
   pkgdesc: Suite of VNC servers and clients based on the VNC 4 branch of TightVNC
   pkgver: 1.16.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.tigervnc.org
   arch:
     - x86_64
@@ -32,6 +32,7 @@ pkgbase:
     - hicolor-icon-theme
     - libgl
     - libjpeg-turbo
+    - libpipewire
     - libunwind
     - libx11
     - libxau
@@ -42,6 +43,7 @@ pkgbase:
     - libxfixes
     - libxfont2
     - libxi
+    - libxkbcommon
     - libxrender
     - libxshmfence
     - libxtst

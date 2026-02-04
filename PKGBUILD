@@ -4,7 +4,7 @@
 
 pkgname=tigervnc
 pkgver=1.16.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Suite of VNC servers and clients based on the VNC 4 branch of TightVNC"
 arch=('x86_64')
 url="https://www.tigervnc.org"
@@ -20,6 +20,7 @@ depends=(
   'hicolor-icon-theme'
   'libgl'
   'libjpeg-turbo'
+  'libpipewire'
   'libunwind'
   'libx11'
   'libxau'
@@ -30,6 +31,7 @@ depends=(
   'libxfixes'
   'libxfont2'
   'libxi'
+  'libxkbcommon'
   'libxrender'
   'libxshmfence'
   'libxtst'
@@ -105,6 +107,7 @@ build() {
     -D CMAKE_INSTALL_LIBEXECDIR=/usr/bin
     -D BUILD_JAVA=TRUE
     -D BUILD_VIEWER=TRUE
+    -D ENABLE_WAYLAND=TRUE
     -S .  # out-of-tree build not possible due to xorg-server build below
     -W no-dev
   )
