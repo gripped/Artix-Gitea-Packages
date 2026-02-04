@@ -1,0 +1,30 @@
+---
+version: 4.3-1
+pkgbase:
+  name: pstoedit
+  pkgdesc: Translates PostScript and PDF graphics into other vector formats
+  pkgver: 4.3
+  pkgrel: 1
+  url: https://www.pstoedit.com
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - ghostscript
+    - texlive-basic
+    - texlive-bin
+    - texlive-latex
+    - texlive-latexrecommended
+  depends:
+    - gcc-libs
+    - gd
+    - imagemagick
+    - plotutils
+  source:
+    - https://github.com/woglu/pstoedit/archive/refs/tags/v4.3/pstoedit-4.3.tar.gz
+  sha256sums:
+    - 36dfdc79c750930dd57e2c4a4dee2a6ab1a1fe65cd8fc4dc047dbfb6f2cfa15b
+pkgname:
+  - name: pstoedit
+# generated with artixpkg 0.37.6-1-any
