@@ -1,9 +1,9 @@
 ---
-version: 8.2.2-1
+version: 8.2.3-1
 pkgbase:
   name: fast_float
   pkgdesc: Fast and exact implementation of the C++ from_chars functions for float and double types
-  pkgver: 8.2.2
+  pkgver: 8.2.3
   pkgrel: 1
   url: https://github.com/fastfloat/fast_float
   arch:
@@ -15,9 +15,9 @@ pkgbase:
     - doctest
     - git
   source:
-    - git+https://github.com/fastfloat/fast_float.git#tag=v8.2.2
+    - git+https://github.com/fastfloat/fast_float.git#tag=v8.2.3
   b2sums:
-    - 23b4707c3e486ed83338d97497cdb83c912fa07fba78b47dddbd8b450ff3e19974e5a010f50a499d1f26c3f36198b39f9ef955d6a6c11887181fbe7d333b263c
+    - 65c079fc80281915ba1007c63a4e12a401ae01d19f8d09de3cd3e382a87a133e0d44189fde22bb0b858dd51420837d93f0d3e58141d6964dbd3366939eb1cb7a
 pkgname:
   - name: fast_float
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
