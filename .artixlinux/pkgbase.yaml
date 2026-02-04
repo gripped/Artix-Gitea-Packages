@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:2.5.10-1
+    version: 2:2.5.11-1
     packages:
-      - thermald-1:2.5.10-1-x86_64.pkg.tar.zst
+      - thermald-2:2.5.11-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
