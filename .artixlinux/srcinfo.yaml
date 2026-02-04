@@ -1,0 +1,78 @@
+---
+version: 255.22-1
+pkgbase:
+  name: elogind
+  pkgdesc: The systemd project's logind, extracted to a standalone package
+  pkgver: 255.22
+  pkgrel: 1
+  url: https://github.com/elogind/elogind
+  arch:
+    - x86_64
+  makedepends:
+    - acl
+    - audit
+    - dbus
+    - docbook-xsl
+    - git
+    - gperf
+    - intltool
+    - kexec-tools
+    - libutempter
+    - meson
+    - pam
+    - python-jinja
+    - udev
+    - util-linux
+  depends:
+    - gcc-libs
+    - glibc
+    - libcap
+  source:
+    - git+https://github.com/elogind/elogind.git#tag=V255.22
+  sha256sums:
+    - 24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882
+pkgname:
+  - name: elogind
+    pkgdesc: The systemd project's logind, extracted to a standalone package
+    license:
+      - GPL-2.0-only
+      - LGPL-2.1-only
+    depends:
+      - gcc-libs
+      - glibc
+      - libcap
+      - acl
+      - libacl.so
+      - audit
+      - libaudit.so
+      - dbus
+      - kexec-tools
+      - libcap.so
+      - libelogind
+      - pam
+      - udev
+      - util-linux
+      - libmount.so
+    optdepends:
+      - 'polkit: allow administration as unprivileged user'
+    provides:
+      - logind
+    backup:
+      - etc/elogind/logind.conf
+      - etc/elogind/sleep.conf
+      - etc/elogind/logind.conf.d/10-elogind.conf
+      - etc/elogind/sleep.conf.d/10-elogind.conf
+  - name: libelogind
+    pkgdesc: elogind client libraries
+    license:
+      - LGPL-2.1-only
+    depends:
+      - gcc-libs
+      - glibc
+      - libcap
+      - libcap.so
+      - libudev
+    provides:
+      - libelogind.so
+      - liblogind
+# generated with artixpkg 0.37.6-1-any
