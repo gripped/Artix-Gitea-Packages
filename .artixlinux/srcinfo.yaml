@@ -1,0 +1,50 @@
+---
+version: 255.22-1
+pkgbase:
+  name: lib32-elogind
+  pkgdesc: The systemd project's logind, extracted to a standalone package (32-bit)
+  pkgver: 255.22
+  pkgrel: 1
+  url: https://github.com/elogind/elogind
+  arch:
+    - x86_64
+  license:
+    - GPL
+    - LGPL2.1
+  checkdepends:
+    - python-lxml
+  makedepends:
+    - git
+    - gperf
+    - intltool
+    - lib32-bzip2
+    - lib32-curl
+    - lib32-dbus
+    - lib32-glib2
+    - lib32-gnutls
+    - lib32-libelf
+    - lib32-libidn2
+    - lib32-pcre2
+    - libxslt
+    - meson
+    - python-jinja
+  depends:
+    - lib32-gcc-libs
+    - lib32-acl
+    - lib32-libcap
+    - lib32-libgcrypt
+    - lib32-libxcrypt
+    - lib32-udev
+    - elogind
+    - lib32-util-linux
+    - lib32-glibc
+    - lib32-pam
+  provides:
+    - libelogind.so
+  source:
+    - git+https://github.com/elogind/elogind.git#tag=V255.22
+  sha256sums:
+    - 24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882
+pkgname:
+  - name: lib32-elogind
+# generated with artixpkg 0.37.6-1-any
