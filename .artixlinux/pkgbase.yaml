@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 40-1
+    version: 41-1
     packages:
-      - lf-40-1-x86_64.pkg.tar.zst
+      - lf-41-1-x86_64.pkg.tar.zst
     debug: []
