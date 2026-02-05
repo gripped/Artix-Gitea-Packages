@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.60-1
+    version: 7.61-1
     packages:
-      - reaper-7.60-1-x86_64.pkg.tar.zst
+      - reaper-7.61-1-x86_64.pkg.tar.zst
     debug: []
