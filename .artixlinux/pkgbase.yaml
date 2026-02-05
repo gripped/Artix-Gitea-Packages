@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 25.10-1
+    version: 26.01-1
     packages:
-      - libmediainfo-25.10-1-x86_64.pkg.tar.zst
+      - libmediainfo-26.01-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
