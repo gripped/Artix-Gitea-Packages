@@ -1,10 +1,10 @@
 ---
-version: 1.21.2-1
+version: 1.21.2-2
 pkgbase:
   name: vault
   pkgdesc: A tool for managing secrets
   pkgver: 1.21.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://vaultproject.io/
   install: vault.install
   arch:
@@ -15,12 +15,8 @@ pkgbase:
     - go
     - git
     - yarn
-    - bower
     - nodejs-lts-iron
     - npm
-    - zip
-    - gox
-    - go-tools
   depends:
     - glibc
     - esysusers
