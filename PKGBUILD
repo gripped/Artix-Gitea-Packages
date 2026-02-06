@@ -5,8 +5,8 @@
 
 _pkgbase=systemd
 
-_alpm=2.4.4
-_tag='259'
+_alpm=2.4.5
+_tag='259.1'
 
 pkgbase=udev
 pkgname=(
@@ -29,7 +29,6 @@ license=(
 depends=(
     'gcc-libs'
     'glibc'
-    'libcap'
 )
 makedepends=(
     'acl'
@@ -62,8 +61,8 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         loader.conf
         splash-artix.bmp
 )
-sha512sums=('b7a0a2da92af8cc55ddb11e73e4bb635d359f0768d0b10c38ea696683dc6605202125541a2d271e9c1ae5aa79753c7b1f0d07e7aa1e2d29d986666056c42e619'
-            '1c2cfce7051107172d1d1e75890ef9e4500c1b4516193b36d01e18fc4ee8dcb5324ee20b03b0890eecea674921cda55d5a455b49505f57991226e3a22be94417'
+sha512sums=('6d39209c4168c3de01399e4dbb7958961790e4c4e508cd1153038daa62620ab74bd14307237f738c2b22cb61c4c235826a48c18ce38dba3df2086a28deb0bad1'
+            'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             'bb5879ba8eeb3833d6e8529ccd2355b68221bf16cd8b1b833e2b5f7ca6b1fa1eec8b90116e63d9eda76bf1cb76beaf3b25707b440889786ee1abc4d6af0f883b'
             '063033fc7e95dff0397fe53f6692bee66717700683725d8bfebad03e9c6f7009726820aaca69aa040b78f810b921bd3690e49b7f2448c5dd63a8866e437a90a5'
@@ -362,8 +361,6 @@ package_udev() {
         'hwdata'
         'kbd'
         'kmod'
-        'libcap'
-       # 'libcap.so'
         'libudev'
         'util-linux' #'libblkid.so'
     )
@@ -382,10 +379,6 @@ package_udev() {
 
 package_libudev() {
     pkgdesc='udev library for enumerating and introspecting local devices'
-    depends+=(
-        #'libcap.so'
-        'libcap'
-    )
     provides=('libudev.so')
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags libudev,libudev-devel
@@ -396,8 +389,6 @@ package_libudev() {
 package_esysusers() {
     pkgdesc='the sysusers.d binary'
     depends+=(
-        #'libcap.so'
-        'libcap'
         'libxcrypt' #'libcrypt.so'
     )
 
@@ -414,8 +405,6 @@ package_etmpfiles() {
     pkgdesc='the tmpfiles.d binary'
     depends+=(
         'acl' #'libacl.so'
-        'libcap'
-        #'libcap.so'
     )
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags etmpfiles
@@ -432,8 +421,6 @@ package_egummiboot() {
     provides=('gummiboot')
     depends+=(
         'util-linux' #'libblkid.so' 'libmount.so'
-        #'libcap.so'
-        'libcap'
         'sh'
     )
 
@@ -447,6 +434,10 @@ package_egummiboot() {
     for m in bootctl.1 kernel-install.8 systemd-boot.7 systemd-bless-boot-generator.8; do
         _inst_man "$m"
     done
+
+    # symlink kernel-install to installkernel
+    ln -s kernel-install "$pkgdir"/usr/bin/installkernel
+    ln -s kernel-install.8.gz "$pkgdir"/usr/share/man/man8/installkernel.8.gz
 }
 
 package_eukify() {
