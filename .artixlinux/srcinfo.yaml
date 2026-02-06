@@ -1,0 +1,31 @@
+---
+version: 1.8.2-4
+pkgbase:
+  name: libgnome-games-support
+  pkgdesc: Code shared between GNOME games
+  pkgver: 1.8.2
+  pkgrel: 4
+  url: https://gitlab.gnome.org/GNOME/libgnome-games-support
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+    - vala
+  depends:
+    - glib2
+    - glibc
+    - gtk3
+    - libgee
+  provides:
+    - libgnome-games-support-1.so
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libgnome-games-support.git#tag=1.8.2
+  b2sums:
+    - 620cd420db4596afe0615f8c4372f5646c55dd66a6f4135e6067bdf3f9d9460245ca189b0326ada5d90a18a0ebb60f0ef45298ef66dec009548e142bb6d03c3b
+pkgname:
+  - name: libgnome-games-support
+# generated with artixpkg 0.37.6-1-any
