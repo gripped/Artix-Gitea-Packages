@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: kpmcore
   pkgdesc: Library for managing partitions
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/partitionmanager/
   arch:
@@ -36,15 +36,15 @@ pkgbase:
     - 'udftools: UDF support'
     - 'xfsprogs: XFS support'
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/kpmcore-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/kpmcore-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/kpmcore-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/kpmcore-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 18d1d46d1c866ed93128f58ee9850c993bc0ab375cc27ca1cd4ec20d8fcdc62b
+    - 3220fe4b3095b2df6d2381f8adf3dd2f50af085ebf3bdf8dee97f7c3db7b4933
     - SKIP
 pkgname:
   - name: kpmcore
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
