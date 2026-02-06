@@ -1,17 +1,17 @@
 ---
-version: 1.12.3-2
+version: 1.12.3-3
 pkgbase:
   name: vigra
   pkgdesc: Computer vision library
   pkgver: 1.12.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://ukoethe.github.io/vigra
   arch:
     - x86_64
   license:
     - MIT
   checkdepends:
-    - python-nose
+    - python-pytest
   makedepends:
     - boost
     - cmake
@@ -30,9 +30,11 @@ pkgbase:
   source:
     - https://github.com/ukoethe/vigra/archive/Version-1-12-3/vigra-Version-1-12-3.tar.gz
     - vigra-openexr3.patch
+    - vigra-python3.14.patch
   sha256sums:
     - 04bd9bcf3d5fd694c8fd25d651a56376f2b8bc2623d41b1805fc84ac5bad0512
     - 2572717e39f916c7c463b8f49306b683c5923906be2721f7da181c58b3a2b34b
+    - 2dd80d542d00957503ce9213c004c88c49e45fc603b063aedab8951c9a91fb9e
 pkgname:
   - name: vigra
     depends:
@@ -62,4 +64,4 @@ pkgname:
       - python-numpy
       - python-scipy
       - vigra
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
