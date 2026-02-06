@@ -5,7 +5,7 @@ _tag=255.22
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -32,8 +32,10 @@ makedepends=(
 )
 source=(
     "git+https://github.com/elogind/elogind.git#tag=V${_tag}"
+    elogind-255.22-revert-openrc-user.patch
 )
-sha256sums=('24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882')
+sha256sums=('24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882'
+            '948d21621d9d916006dfc8ff864b0ae54b299f00a17cf7717a77a38277d54698')
 
 _backports=(
 )
@@ -53,6 +55,8 @@ prepare() {
         git log --oneline -1 "${_c}"
         git revert -n "${_c}"
     done
+
+    patch -Np1 -i ../elogind-255.22-revert-openrc-user.patch
 }
 
 build() {
