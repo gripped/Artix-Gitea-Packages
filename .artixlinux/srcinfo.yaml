@@ -1,9 +1,9 @@
 ---
-version: 3.58.2-1
+version: 3.58.3-1
 pkgbase:
   name: evolution
   pkgdesc: Manage your email, contacts and schedule
-  pkgver: 3.58.2
+  pkgver: 3.58.3
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/evolution/-/wikis/home
   arch:
@@ -58,9 +58,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://gitlab.gnome.org/GNOME/evolution.git#tag=3.58.2
+    - git+https://gitlab.gnome.org/GNOME/evolution.git#tag=3.58.3
   b2sums:
-    - 705fa07a85ff837010d33a0e7263a53f9d3cdd1d6e0995cd9577f32fd2de4af2e56174a594da0c9441f273d43eb511c12766e8ab199ca840fa9f306f2c7ed307
+    - 1c476f1f4be237efe4b5388b2bd55fba94719bc69f0c888ae8f96014c307c19b54159ca962cb1d3497a7e36bb343d9dbafae6f8ad9956e9b9f0919ccc121926b
 pkgname:
   - name: evolution
     license:
@@ -110,7 +110,7 @@ pkgname:
   - name: evolution-bogofilter
     pkgdesc: Spam filtering for Evolution, using Bogofilter
     depends:
-      - evolution=3.58.2
+      - evolution=3.58.3
       - bogofilter
       - evolution-data-server
       - glib2
@@ -119,10 +119,10 @@ pkgname:
   - name: evolution-spamassassin
     pkgdesc: Spam filtering for Evolution, using SpamAssassin
     depends:
-      - evolution=3.58.2
+      - evolution=3.58.3
       - evolution-data-server
       - glib2
       - glibc
       - gtk3
       - spamassassin
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
