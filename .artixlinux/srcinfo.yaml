@@ -1,0 +1,27 @@
+---
+version: 0.40.4-1
+pkgbase:
+  name: nvm
+  pkgdesc: Node Version Manager - Simple bash script to manage multiple active node.js versions
+  pkgver: 0.40.4
+  pkgrel: 1
+  url: https://github.com/nvm-sh/nvm
+  install: nvm.install
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - bash
+    - npm
+  makedepends:
+    - git
+  source:
+    - git+https://github.com/nvm-sh/nvm.git#tag=v0.40.4
+    - init-nvm.sh
+  b2sums:
+    - cb6576b81075a276312fe441e49f22a897fe2df67a800bf554e1d61fe6af4c4438399a112621cf6bca5be9224353806d7c72880ce8fdd639871f711c05842555
+    - d541d4a3411b665ad19e80fce02bc44e19b389a67959944451da4fb3e0a3e10bee0052f0f2ece2a67e4908333a26d23664bef995ef929bdcf44ffa77eff052aa
+pkgname:
+  - name: nvm
+# generated with artixpkg 0.37.6-1-any
