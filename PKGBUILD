@@ -2,19 +2,20 @@
 
 pkgname=farstream
 pkgver=0.2.9
-pkgrel=3
+pkgrel=4
 pkgdesc="Farstream (formerly Farsight) - Audio/Video Communications Framework"
 arch=('x86_64')
 url="https://www.freedesktop.org/wiki/Software/Farstream"
 license=('LGPL')
 depends=('gst-plugins-base-libs' 'libnice')
-makedepends=('gobject-introspection' 'python' 'gtk-doc')
+makedepends=('gobject-introspection' 'python' 'glib2-devel' 'gtk-doc')
 optdepends=('gst-plugins-good' 'gst-plugins-bad')
 conflicts=('farsight2')
 replaces=('farsight2')
-source=(https://freedesktop.org/software/$pkgname/releases/$pkgname/$pkgname-$pkgver.tar.gz
+source=(https://freedesktop.org/software/$pkgname/releases/$pkgname/$pkgname-$pkgver.tar.gz{,.asc}
         farstream-make-4.3.patch)
 sha256sums=('cb7d112433cf7c2e37a8ec918fb24f0ea5cb293cfa1002488e431de26482f47b'
+            'SKIP'
             '2e7fe73d43c4b1baa5ba0f191aa54c1abb5f72a2bb801d149e7094f4c2c8d0c2')
 validpgpkeys=('DB30B086FAF86CE7296FADC51D388E5A4ED9A2BB')  # Olivier Crête
 
@@ -30,7 +31,7 @@ build() {
     --enable-gtk-doc \
     --with-package-name='Arch Linux farstream package' \
     --with-package-origin='http://archlinux.org'
-  make
+  make -j1
 }
 
 package() {
