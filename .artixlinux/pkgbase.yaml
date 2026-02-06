@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.5.0-1
+    version: 5.5.0-2
     packages:
-      - lua-5.5.0-1-x86_64.pkg.tar.zst
+      - lua-5.5.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
