@@ -29,11 +29,10 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.1.0-2
+    version: 1.1.1-1
     packages:
-      - par2cmdline-1.1.0-2-x86_64.pkg.tar.zst
-    debug:
-      - par2cmdline-debug-1.1.0-2-x86_64.pkg.tar.zst
+      - par2cmdline-1.1.1-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
