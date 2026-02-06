@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: akonadi-calendar
   pkgdesc: Akonadi calendar integration
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -42,15 +42,15 @@ pkgbase:
     - qgpgme
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/akonadi-calendar-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/akonadi-calendar-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/akonadi-calendar-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/akonadi-calendar-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - a42789bbf168de43ee92852838977f2592218eb6a7fa6490ceff8b4417671fa2
+    - ec5a5440d9a8b200f5018e23b52c4329fa401ad35408812be4a0f4b45fb77a75
     - SKIP
 pkgname:
   - name: akonadi-calendar
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
