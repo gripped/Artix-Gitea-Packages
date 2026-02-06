@@ -1,10 +1,10 @@
 ---
-version: 0.3.24-1.1
+version: 0.3.25-1
 pkgbase:
   name: libxmlb
   pkgdesc: Library to help create and query binary XML blobs
-  pkgver: 0.3.24
-  pkgrel: 1.1
+  pkgver: 0.3.25
+  pkgrel: 1
   url: https://github.com/hughsie/libxmlb
   arch:
     - x86_64
@@ -24,13 +24,13 @@ pkgbase:
     - xz
     - zstd
   source:
-    - https://github.com/hughsie/libxmlb/releases/download/0.3.24/libxmlb-0.3.24.tar.xz
-    - https://github.com/hughsie/libxmlb/releases/download/0.3.24/libxmlb-0.3.24.tar.xz.asc
+    - https://github.com/hughsie/libxmlb/releases/download/0.3.25/libxmlb-0.3.25.tar.xz
+    - https://github.com/hughsie/libxmlb/releases/download/0.3.25/libxmlb-0.3.25.tar.xz.asc
   validpgpkeys:
     - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
   sha256sums:
-    - ded52667aac942bb1ff4d1e977e8274a9432d99033d86918feb82ade82b8e001
+    - 77f2768c9debd2e946173cdf9465efd987849805e7c58251c5772ea728a61d9a
     - SKIP
 pkgname:
   - name: libxmlb
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
