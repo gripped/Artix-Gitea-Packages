@@ -1,9 +1,9 @@
 ---
-version: 0.14.2-1
+version: 0.14.3-1
 pkgbase:
   name: multipath-tools
   pkgdesc: Multipath tools for Linux (including kpartx)
-  pkgver: 0.14.2
+  pkgver: 0.14.3
   pkgrel: 1
   url: https://github.com/opensvc/multipath-tools
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - libudev
     - util-linux-libs
   source:
-    - multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=0.14.2
+    - multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=0.14.3
   sha256sums:
-    - 6072ff3729c0257446b7df0b7069e9c6d57afcfb227dad3379ef6a7ca892263a
+    - f7489066879598c7d8c4af5f168dc85fbce5b92b9d1c96a7c815415443fa32af
 pkgname:
   - name: multipath-tools
 # generated with artixpkg 0.37.6-1-any
