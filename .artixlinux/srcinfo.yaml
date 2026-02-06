@@ -1,0 +1,60 @@
+---
+version: 3.26.4-5
+pkgbase:
+  name: geocode-glib
+  pkgdesc: Helper library for geocoding services
+  pkgver: 3.26.4
+  pkgrel: 5
+  url: https://gitlab.gnome.org/GNOME/geocode-glib
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  checkdepends:
+    - glibc-locales
+  makedepends:
+    - gcc-libs
+    - git
+    - glib2
+    - glib2-devel
+    - glibc
+    - gobject-introspection
+    - gtk-doc
+    - hicolor-icon-theme
+    - json-glib
+    - libsoup
+    - libsoup3
+    - meson
+  source:
+    - git+https://gitlab.gnome.org/GNOME/geocode-glib.git#tag=3.26.4
+  b2sums:
+    - c235a8ebf5d5b7ef19d8a6ff0b8b4f2d7e1609350ffc915cf4c9252b9ee3401383e0aab1ebde4aed8ab02c8e594f83a33a411a4b28093f091bc25d3cf6a74eea
+pkgname:
+  - name: geocode-glib-common
+    pkgdesc: Helper library for geocoding services (common files)
+    depends:
+      - hicolor-icon-theme
+  - name: geocode-glib
+    pkgdesc: Helper library for geocoding services (legacy)
+    depends:
+      - geocode-glib-common=3.26.4-5
+      - gcc-libs
+      - glib2
+      - glibc
+      - json-glib
+      - libsoup
+      - libsoup-2.4.so
+    provides:
+      - libgeocode-glib.so
+  - name: geocode-glib-2
+    depends:
+      - geocode-glib-common=3.26.4-5
+      - gcc-libs
+      - glib2
+      - glibc
+      - json-glib
+      - libsoup3
+      - libsoup-3.0.so
+    provides:
+      - libgeocode-glib-2.so
+# generated with artixpkg 0.37.6-1-any
