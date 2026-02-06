@@ -1,0 +1,44 @@
+---
+version: 1.14.5-2
+pkgbase:
+  name: cairomm
+  pkgdesc: C++ bindings for Cairo
+  pkgver: 1.14.5
+  pkgrel: 2
+  url: https://www.cairographics.org/cairomm/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - git
+    - libsigc++-docs
+    - meson
+    - mm-common
+  depends:
+    - cairo
+    - gcc-libs
+    - glibc
+    - libsigc++
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://gitlab.freedesktop.org/cairo/cairomm.git#tag=1.14.5
+  b2sums:
+    - 3df2ce4165371900d3609a6046f13496cf2b85071a89fc6acbd648482ea8a4555adfdd0657f926a1c500c1bec0141c16d653ca43675e5fbd9687e7c350772fd0
+pkgname:
+  - name: cairomm
+    depends:
+      - cairo
+      - gcc-libs
+      - glibc
+      - libsigc++
+      - libsigc-2.0.so
+    provides:
+      - libcairomm-1.0.so
+  - name: cairomm-docs
+    pkgdesc: C++ bindings for Cairo (documentation)
+    depends: []
+    options:
+      - '!strip'
+# generated with artixpkg 0.37.6-1-any

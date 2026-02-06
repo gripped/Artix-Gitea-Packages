@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: cairomm
-  version: 1.14.5-1
-  arch:
-    - x86_64
-  pkgname:
-    - cairomm
-    - cairomm-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -19,38 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.14.5-1
+    version: 1.14.5-2
     packages:
-      - cairomm-1.14.5-1-x86_64.pkg.tar.zst
-      - cairomm-docs-1.14.5-1-x86_64.pkg.tar.zst
+      - cairomm-1.14.5-2-x86_64.pkg.tar.zst
+      - cairomm-docs-1.14.5-2-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
+team: world
