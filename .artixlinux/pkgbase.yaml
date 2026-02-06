@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.8.139-1
+    version: 2.8.140-1
     packages:
-      - gsoap-2.8.139-1-x86_64.pkg.tar.zst
+      - gsoap-2.8.140-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
