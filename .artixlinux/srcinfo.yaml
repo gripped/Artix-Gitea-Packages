@@ -1,10 +1,10 @@
 ---
-version: 2.17.0-1
+version: 2.17.0-3
 pkgbase:
   name: bash-completion
   pkgdesc: Programmable completion for the bash shell
   pkgver: 2.17.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/scop/bash-completion
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - ee11f2bff82b0852979e4843c7ad5e5b976e4d1e44ab5ed1b96da64fe9b32d91150f12f32bf7c6c0286cd2a0c424d786bbad47066403c71f8d3c8425487427dd
 pkgname:
   - name: bash-completion
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
