@@ -4,7 +4,7 @@
 
 pkgname=vamp-plugin-sdk
 pkgver=2.10
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc="The Vamp audio analysis plug-in system"
 arch=(x86_64)
