@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: zanshin
   pkgdesc: To-do management application based on Akonadi
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/zanshin/
   arch:
@@ -36,15 +36,15 @@ pkgbase:
     - libakonadi
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/zanshin-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/zanshin-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/zanshin-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/zanshin-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - cab673e121caacbaa9db5203dc307fb137696d4ff615968b7eecd2146cef9ecd
+    - 0eed6b4526b4fde5a42612740826c3ea4e53b1c1e8b13b1ee8cdb435dc5f8aa3
     - SKIP
 pkgname:
   - name: zanshin
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
