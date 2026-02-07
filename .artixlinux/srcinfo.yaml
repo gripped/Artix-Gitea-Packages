@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: arianna
   pkgdesc: EPub Reader for mobile devices
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/arianna/
   arch:
@@ -40,15 +40,15 @@ pkgbase:
     - qt6-webchannel
     - qt6-webengine
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/arianna-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/arianna-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/arianna-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/arianna-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - c769ee3a85ed85eec1651155513c61764fb90b458b9e748bafcc7cd102f87158
+    - 5edc4b7ec556d1b640d145cb7c9539e32ecadd016836bc5b58fdd6692b182def
     - SKIP
 pkgname:
   - name: arianna
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
