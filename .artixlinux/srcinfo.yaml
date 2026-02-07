@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: killbots
   pkgdesc: A simple game of evading killer robots
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/killbots/
   arch:
@@ -33,15 +33,15 @@ pkgbase:
     - libkdegames
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/killbots-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/killbots-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/killbots-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/killbots-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 67601082cbfec74f93ef0a81b2d0f897a3c521dcf24573093bdfda7f82c4f48e
+    - 2106091fc82bc2e0b88cbb875137436588f599d2c37ef639959d713a531066d8
     - SKIP
 pkgname:
   - name: killbots
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
