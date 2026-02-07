@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: kcalc
   pkgdesc: Scientific Calculator
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/kcalc/
   arch:
@@ -36,15 +36,15 @@ pkgbase:
     - mpfr
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/kcalc-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/kcalc-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/kcalc-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/kcalc-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 349f4235b1495f609c487fa4f549cee469a0582dcba7b7b3efbcd1cabdc39405
+    - ab363558023fac17cd7ebe2ee2de774e1ae7a2390d1f291a7c7316ec0df1a174
     - SKIP
 pkgname:
   - name: kcalc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
