@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: libkcompactdisc
   pkgdesc: A library for interfacing with CDs
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -22,15 +22,15 @@ pkgbase:
     - qt6-base
     - solid
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/libkcompactdisc-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/libkcompactdisc-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/libkcompactdisc-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/libkcompactdisc-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 4f0b409a2fb332e6a94a590465f7c1782883d2ed76078125c734b1cc07f133cc
+    - 02e5bb5330a2dd9fbae0dba1e1c8536a78dc1f88ba2756e8b96f928156d3c180
     - SKIP
 pkgname:
   - name: libkcompactdisc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
