@@ -1,0 +1,29 @@
+---
+version: 2.43-2
+pkgbase:
+  name: arm-none-eabi-binutils
+  pkgdesc: A set of programs to assemble and manipulate binary and object files for the ARM EABI (bare-metal) target
+  pkgver: 2.43
+  pkgrel: 2
+  url: https://www.gnu.org/software/binutils/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  depends:
+    - zlib
+    - libelf
+  source:
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2
+    - https://ftp.gnu.org/gnu/binutils/binutils-2.43.tar.bz2.sig
+  validpgpkeys:
+    - 3A24BC1E8FB409FA9F14371813FCEF89DD9E3C4F
+  sha1sums:
+    - 9b0b465bf52fdbb677bd67ba64424842e297ebcd
+    - SKIP
+  sha256sums:
+    - fed3c3077f0df7a4a1aa47b080b8c53277593ccbb4e5e78b73ffb4e3f265e750
+    - SKIP
+pkgname:
+  - name: arm-none-eabi-binutils
+# generated with artixpkg 0.37.6-1-any
