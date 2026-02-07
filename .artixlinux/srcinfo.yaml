@@ -1,10 +1,10 @@
 ---
-version: 25.12.1-2
+version: 25.12.2-1
 pkgbase:
   name: audiotube
   pkgdesc: Client for YouTube Music
-  pkgver: 25.12.1
-  pkgrel: 2
+  pkgver: 25.12.2
+  pkgrel: 1
   url: https://apps.kde.org/audiotube/
   arch:
     - x86_64
@@ -42,15 +42,15 @@ pkgbase:
     - qt6-svg
     - yt-dlp
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/audiotube-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/audiotube-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/audiotube-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/audiotube-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 5549c2adcf877bf768776a4ffc83945a76a519a422b337758b4afa96f9c17ca7
+    - 112bb3fb429922065ff2f2bc8df34b44856e7260da1d0e7d3c86b4b3aef05db5
     - SKIP
 pkgname:
   - name: audiotube
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
