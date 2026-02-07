@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: kmousetool
   pkgdesc: Clicks the mouse for you, reducing the effects of RSI
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/kmousetool/
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - qt6-base
     - qt6-multimedia
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/kmousetool-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/kmousetool-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/kmousetool-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/kmousetool-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - cfc72c1f264aaf9749c491e97ceab18f2319c3b3e0df904e47f798f2b5bf3d7f
+    - 539dc3195ce6574d1d85633c08078ee5d6c0d706994893d06665e9a6ad5f713a
     - SKIP
 pkgname:
   - name: kmousetool
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
