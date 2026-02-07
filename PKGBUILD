@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=ly
-pkgver=1.3.1
+pkgver=1.3.2
 pkgrel=1
 pkgdesc="Lightweight TUI (ncurses-like) display manager"
 arch=(x86_64)
@@ -16,7 +16,7 @@ optdepends=('brightnessctl: for controling brightness'
 backup=(etc/$pkgname/{config.ini,setup.sh}
         etc/pam.d/ly)
 source=("git+$url.git#tag=v${pkgver}")
-b2sums=('94e57276a9d0c9b27774f94522ad8684ef5a227b62ef5e3710ae49233612b063c8924a4e2967362ed331d7ba4950b242f8ef4f828703a058fde97e49e376a252')
+b2sums=('2c28171c16b01776f7c63b45525e45bad7b13a79aa04a4023b54301c5069c153cf36a18a6ecd8b76b93ddf4ca5c74e8c65d56b29e4767ebf07df325fd61310a5')
 
 prepare() {
   cd "$pkgname"
