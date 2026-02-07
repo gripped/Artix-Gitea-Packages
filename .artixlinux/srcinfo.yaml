@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: lskat
   pkgdesc: Lieutenant Skat is a fun and engaging card game for two players
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/lskat/
   arch:
@@ -34,15 +34,15 @@ pkgbase:
     - qt6-base
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/lskat-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/lskat-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/lskat-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/lskat-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 4f41369ccb344505d9f235b27539f2e624dcf065f9552154dbf184a9d06ec18b
+    - b6984e0818fa071c54aaa9e6f7cb60116f6f02505f98dc707183f67dc0a7c45e
     - SKIP
 pkgname:
   - name: lskat
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
