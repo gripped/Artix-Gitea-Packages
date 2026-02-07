@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: kcron
   pkgdesc: Configure and schedule tasks
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/kcron/
   arch:
@@ -31,15 +31,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/kcron-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/kcron-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/kcron-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/kcron-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 73d7237a442836cfdf1b786f4a0f49c20e5939ef502753928f1beb6fa49ea212
+    - 87a6c742d6061968fb0772333a5c3d47a03d65dad23b7e5224829cba83a349f2
     - SKIP
 pkgname:
   - name: kcron
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
