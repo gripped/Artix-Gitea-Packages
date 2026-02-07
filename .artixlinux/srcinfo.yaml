@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: klines
   pkgdesc: A simple but highly addictive one player game
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/klines/
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - libkdegames
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/klines-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/klines-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/klines-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/klines-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - c9a66480e3d35e2dbf2a5438df06ffa1b95c6fc5951be8af53a69805e1b146e5
+    - ffd5196abcb0665133b8d07ca82d69c6300ff815dab7564ace7df76a553e8103
     - SKIP
 pkgname:
   - name: klines
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
