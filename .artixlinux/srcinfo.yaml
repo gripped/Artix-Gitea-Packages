@@ -1,9 +1,9 @@
 ---
-version: 25.12.1-1
+version: 25.12.2-1
 pkgbase:
   name: alligator
   pkgdesc: Kirigami-based RSS reader
-  pkgver: 25.12.1
+  pkgver: 25.12.2
   pkgrel: 1
   url: https://apps.kde.org/alligator/
   arch:
@@ -31,15 +31,15 @@ pkgbase:
     - qt6-declarative
     - syndication
   source:
-    - https://download.kde.org/stable/release-service/25.12.1/src/alligator-25.12.1.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.1/src/alligator-25.12.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.2/src/alligator-25.12.2.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.2/src/alligator-25.12.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 2158ac2625b13efc43f06aa46aad2a75e9c4a92e416d825018fc9b8059dda35f
+    - 431fba621eac88627495398a567b0f55907a3bd07309d2bc339c9d2053d4bda8
     - SKIP
 pkgname:
   - name: alligator
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
