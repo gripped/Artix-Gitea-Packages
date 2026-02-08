@@ -1,17 +1,20 @@
 ---
-version: 1.0.3-12
+version: 1.0.3-13
 pkgbase:
   name: python-flup
   pkgdesc: Random assortment of WSGI servers
   pkgver: 1.0.3
-  pkgrel: 12
+  pkgrel: 13
   url: https://www.saddi.com/software/flup/
   arch:
     - any
   license:
     - BSD
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
@@ -20,4 +23,4 @@ pkgbase:
     - f165685b39a8539d29d48d0ad3c9c0495f428892b8935545a128730687c658a1e8b74a09c8084dd4a2490b1d26f1382b48c95ba43401171fd46876b068ba2f8e
 pkgname:
   - name: python-flup
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
