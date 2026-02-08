@@ -1,10 +1,10 @@
 ---
-version: 3.3.2-1
+version: 3.3.2-2
 pkgbase:
   name: haproxy
   pkgdesc: Reliable, high performance TCP/HTTP load balancer
   pkgver: 3.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.haproxy.org/
   install: haproxy.install
   arch:
