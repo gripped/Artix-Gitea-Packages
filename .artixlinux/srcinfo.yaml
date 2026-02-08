@@ -38,4 +38,4 @@ pkgbase:
     - 43da0fb7469e34a239b2711876475f303a4012151e44f72e636a5a7fcf21bff8
 pkgname:
   - name: nodejs-lts-iron
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
