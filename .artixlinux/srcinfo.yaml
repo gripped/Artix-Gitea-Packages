@@ -1,10 +1,10 @@
 ---
-version: 0.12.46-1.1
+version: 0.12.46-1.2
 pkgbase:
   name: python-pycrdt
   pkgdesc: CRDTs based on Yrs
   pkgver: 0.12.46
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://github.com/jupyter-server/pycrdt
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 71c61886f1cf2096f29eeed4dfb7f3d58632d759d379151e64423ce239df19e4
 pkgname:
   - name: python-pycrdt
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.37.5-1-any
