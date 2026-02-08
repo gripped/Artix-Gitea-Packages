@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,17 +26,15 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 1.4.341.0-1
     packages:
       - volk-1.4.341.0-1-x86_64.pkg.tar.zst
     debug:
       - volk-debug-1.4.341.0-1-x86_64.pkg.tar.zst
-  world:
-    version: 1.4.335.0-1
-    packages:
-      - volk-1.4.335.0-1-x86_64.pkg.tar.zst
-    debug:
-      - volk-debug-1.4.335.0-1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
