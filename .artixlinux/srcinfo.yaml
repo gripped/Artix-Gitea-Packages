@@ -1,21 +1,24 @@
 ---
-version: 0.4.1.2-13
+version: 0.4.1.2-14
 pkgbase:
   name: python-axolotl-curve25519
   pkgdesc: Python wrapper for curve25519 library with ed25519 signatures
   pkgver: 0.4.1.2
-  pkgrel: 13
+  pkgrel: 14
   url: https://github.com/tgalal/python-axolotl-curve25519
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
+    - glibc
     - python
     - zlib
-    - glibc
   source:
     - python-axolotl-curve25519-0.4.1.2.tar.gz::https://github.com/tgalal/python-axolotl-curve25519/archive/0.4.1-2.tar.gz
     - pymoduledef-gcc-compile-error.patch
@@ -27,4 +30,4 @@ pkgbase:
     - 3d6e540451ee9bfee53d9781e661669661c0d5263a884bb2e30ce1c1e127d3ba6c5a3229795be5676be5250965dc32d88e1c7673a7ae291c964f10bc7d2c0a8d
 pkgname:
   - name: python-axolotl-curve25519
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
