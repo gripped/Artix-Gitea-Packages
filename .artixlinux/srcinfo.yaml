@@ -1,34 +1,35 @@
 ---
-version: 9.2.160-2
+version: 9.2.197-1
 pkgbase:
   name: python-pyvex
   pkgdesc: Python bindings for Valgrind's VEX IR
-  pkgver: 9.2.160
-  pkgrel: 2
+  pkgver: 9.2.197
+  pkgrel: 1
   url: https://github.com/angr/pyvex
   arch:
     - x86_64
   license:
-    - BSD
+    - BSD-2-Clause AND GPL-2.0-only
   checkdepends:
     - python-pytest
+    - python-pytest-xdist
   makedepends:
     - git
     - python-build
     - python-installer
+    - python-scikit-build-core
     - python-wheel
   depends:
+    - glibc
     - python
-    - python-archinfo
     - python-bitstring
     - python-cffi
-    - python-setuptools
   source:
-    - git+https://github.com/angr/pyvex.git#commit=v9.2.160
+    - git+https://github.com/angr/pyvex.git#commit=v9.2.197
     - git+https://github.com/angr/vex.git
   sha512sums:
-    - 785021aa203a0226ea579dfd96d71f98534c57bd7425b45b45307e6ed9fa029874ad826740575b9587694358821a2b17d6b0cd9e48c1735a4e12bd27efd37f1f
+    - 3ab2e6da31f0a6bbf09f0b2cc8ce752ddb6993a3f2c06274559b1c7fe033c57368b7071267def991f8b5b852448b5641abbe3cc35272e7e84777e891be9ad92b
     - SKIP
 pkgname:
   - name: python-pyvex
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
