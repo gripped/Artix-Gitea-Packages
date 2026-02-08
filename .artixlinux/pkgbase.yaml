@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersRepoRemove: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.2.2-1
-    packages:
-      - python-psutil-7.2.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: 7.2.2-1
