@@ -3,7 +3,7 @@
 _pyname=jupyter_ydoc
 pkgname=python-${_pyname//_/-}
 pkgver=3.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Document structures for collaborative editing using Ypy'
 arch=(any)
 url='https://jupyter.org/'

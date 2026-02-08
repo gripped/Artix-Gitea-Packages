@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-1
+version: 3.4.0-1.1
 pkgbase:
   name: python-jupyter-ydoc
   pkgdesc: Document structures for collaborative editing using Ypy
   pkgver: 3.4.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://jupyter.org/
   arch:
     - any
@@ -31,4 +31,4 @@ pkgbase:
     - 17b2ff1f5391072fae86d70ea9831c89a6effd60b1df9f74b3b9fc5c0bb4ca28
 pkgname:
   - name: python-jupyter-ydoc
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.37.5-1-any
