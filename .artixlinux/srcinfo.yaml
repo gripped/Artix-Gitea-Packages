@@ -1,10 +1,10 @@
 ---
-version: 9.5.0-2
+version: 9.6.0-1
 pkgbase:
   name: python-mysql-connector
   pkgdesc: A standardized database driver for Python platforms and development
-  pkgver: 9.5.0
-  pkgrel: 2
+  pkgver: 9.6.0
+  pkgrel: 1
   url: https://dev.mysql.com/downloads/connector/python/
   arch:
     - any
@@ -20,14 +20,14 @@ pkgbase:
     - python-dnspython
     - python-typing_extensions
   source:
-    - https://cdn.mysql.com//Downloads/Connector-Python/mysql-connector-python-9.5.0-src.tar.gz
-    - mysql-connector-python-9.5.0-src.tar.gz.asc::https://dev.mysql.com/downloads/gpg/?file=mysql-connector-python-9.5.0-src.tar.gz&p=29
+    - https://cdn.mysql.com//Downloads/Connector-Python/mysql-connector-python-9.6.0-src.tar.gz
+    - mysql-connector-python-9.6.0-src.tar.gz.asc::https://dev.mysql.com/downloads/gpg/?file=mysql-connector-python-9.6.0-src.tar.gz&p=29
   validpgpkeys:
     - 859BE8D7C586F538430B19C2467B942D3A79BD29
     - BCA43417C3B485DD128EC6D4B7B3B788A8D3785C
   sha512sums:
-    - 718f0799fd552e439652ed918b1d9f91e261107afdbaa69dc79364a67a72de886b673e9edf431aaac4ce5be42f5bc052979bc28c91c6ec4b352ebe61a748850c
+    - 447f8261e6d0a2b332b444ec12f68b70bda56307e6a8964c8e5a377427fc6738c7068cce96f305370e095f669fa1a6dd9868a3e4cbb7aa01ab7e1e136d9c4754
     - SKIP
 pkgname:
   - name: python-mysql-connector
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
