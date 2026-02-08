@@ -1,15 +1,20 @@
 ---
-version: 0.0.16-9
+version: 0.0.16-10
 pkgbase:
   name: python-gcp-devrel-py-tools
   pkgdesc: Tools for Cloud Platform Python libraries and samples
   pkgver: 0.0.16
-  pkgrel: 9
+  pkgrel: 10
   url: https://github.com/GoogleCloudPlatform/python-repo-tools
   arch:
     - any
   license:
-    - Apache
+    - Apache-2.0
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-setuptools
     - python-requests
@@ -17,9 +22,9 @@ pkgbase:
     - python-packaging
     - python-pylint
   source:
-    - python-gcp-devrel-py-tools-dbc02f5ec965a6672d47a0e8963365970d96db17.tar.gz::https://github.com/GoogleCloudPlatform/python-repo-tools/archive/dbc02f5ec965a6672d47a0e8963365970d96db17.tar.gz
+    - git+https://github.com/GoogleCloudPlatform/python-repo-tools.git#commit=dbc02f5ec965a6672d47a0e8963365970d96db17
   sha512sums:
-    - 8e1963d9cf15aee6c11bf99236f6d86ba72a56a8bb41c20b7d28786669551a35204755c9abcccc617ac4384b9f68e53a0a04d70726849fd0cd3c89f0aae15b76
+    - a2783ac210a652c4b8dcea0046fb6c344e2fce2d76df740abd61b62b1144e5c9d26d353e5c6ea55ef4bc065001d52399af18148f944e835959f3bad940a0d74d
 pkgname:
   - name: python-gcp-devrel-py-tools
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
