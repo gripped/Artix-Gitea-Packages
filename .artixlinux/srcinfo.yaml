@@ -1,10 +1,10 @@
 ---
-version: 1.21.0-1
+version: 1.21.0-1.1
 pkgbase:
   name: python-parse
   pkgdesc: Parse strings using a specification based on the Python format() syntax.
   pkgver: 1.21.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://pypi.python.org/pypi/parse
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 3cc3ff2a6657fb2b84cbc233dded95721e415f79ffb27c82ca05165f8406c89b
 pkgname:
   - name: python-parse
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.37.5-1-any

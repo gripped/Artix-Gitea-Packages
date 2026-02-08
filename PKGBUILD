@@ -3,7 +3,7 @@
 
 pkgname=python-parse
 pkgver=1.21.0
-pkgrel=1
+pkgrel=1.1
 
 pkgdesc='Parse strings using a specification based on the Python format() syntax.'
 url='https://pypi.python.org/pypi/parse'
