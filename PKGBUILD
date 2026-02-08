@@ -3,7 +3,7 @@
 
 pkgname=python-elasticsearch
 _pkgname=elasticsearch-py
-pkgver=9.2.1
+pkgver=9.3.0
 pkgrel=1
 pkgdesc="Official Python client for Elasticsearch"
 arch=(any)
@@ -47,7 +47,7 @@ optdepends=(
   # 'python-simsimd: support for Maximal Marginal Relevance (MMR) for search results'
 )
 source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-b2sums=('afa392b4b25145bf62410bb652853889ab218e5e736a94edbcbc41e56355d8b154045c4788e9168bdaa11f28b43894f78edbbf5a9c364b474f136decd340a13a')
+b2sums=('c0ff3ea253156aa8eeb264bca5f9a088a7c20fb93267b0c49e113b5865a3c5745203c4f7285a4f10da02e29db469cbac8d8e7de5b478a022e019d34080ec28bf')
 
 build() {
   cd $_pkgname-$pkgver
@@ -68,4 +68,3 @@ package() {
   cd $_pkgname-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
- 
