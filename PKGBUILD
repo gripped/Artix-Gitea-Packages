@@ -2,7 +2,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=prometheus
-pkgver=3.8.1
+pkgver=3.9.1
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -20,8 +20,8 @@ source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/ar
         prometheus.sysusers
         )
 
-sha256sums=('4745c45427a297a8736d5796297721dfa467f3c5af6422d4ac22360580e0f0fb'
-            '2747fabb4e56b808361eb7dd7acf9729ab8973d1ebe2f857dd56f6c71f71e45f')
+sha256sums=('b97651c0aa00d0f6fd2973b773b18d31fe0402a4ca75b1eba7e788d7de42c9c0'
+            '0d995040e441e07bae7517d852fdc1bce2e1f3ae9ae206a1e1e127563e122015')
 
 prepare() {
   cd prometheus-$pkgver
