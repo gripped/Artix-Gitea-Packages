@@ -1,10 +1,10 @@
 ---
-version: 3.0.0-2
+version: 3.1.1-1
 pkgbase:
   name: python-pyvips
   pkgdesc: Python binding for libvips using cffi
-  pkgver: 3.0.0
-  pkgrel: 2
+  pkgver: 3.1.1
+  pkgrel: 1
   url: https://github.com/libvips/pyvips
   arch:
     - x86_64
@@ -28,9 +28,9 @@ pkgbase:
     - python-numpy
     - python-pkgconfig
   source:
-    - pyvips-3.0.0.tar.gz::https://github.com/libvips/pyvips/archive/refs/tags/v3.0.0.tar.gz
+    - pyvips-3.1.1.tar.gz::https://github.com/libvips/pyvips/archive/refs/tags/v3.1.1.tar.gz
   sha256sums:
-    - 252819173f4d3737c516c5b81aa3c82a92a21f666633705ecf239a0b33e95899
+    - 1ab3c901fb9ae2221eef4b2258cddbaf52af30fc6d6023d610ebbe7cd94d3aff
 pkgname:
   - name: python-pyvips
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
