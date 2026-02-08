@@ -1,0 +1,32 @@
+---
+version: 0.23.1-1
+pkgbase:
+  name: python-baize
+  pkgdesc: Powerful and exquisite WSGI/ASGI framework/toolkit
+  pkgver: 0.23.1
+  pkgrel: 1
+  url: https://github.com/abersheeran/baize
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+    - python-httpx
+    - python-starlette
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-pdm-backend
+    - python-setuptools
+  depends:
+    - python
+  source:
+    - python-baize-0.23.1.tar.gz::https://github.com/abersheeran/baize/archive/refs/tags/v0.23.1.tar.gz
+  sha256sums:
+    - bb0c3ba87d3d9440a30abb61af9a2e576631b5ba268161f3490a847656222823
+pkgname:
+  - name: python-baize
+# generated with artixpkg 0.37.6-1-any
