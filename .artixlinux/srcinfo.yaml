@@ -1,0 +1,30 @@
+---
+version: 0.21.1-2
+pkgbase:
+  name: python-typer
+  pkgdesc: Build great CLIs. Easy to code. Based on Python type hints
+  pkgver: 0.21.1
+  pkgrel: 2
+  url: https://typer.tiangolo.com/
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-flit-core
+    - python-pdm-backend
+  depends:
+    - python-click
+    - python-typing_extensions
+    - python-rich
+    - python-shellingham
+  source:
+    - python-typer-0.21.1.tar.gz::https://github.com/tiangolo/typer/archive/0.21.1.tar.gz
+  sha512sums:
+    - 945c9a1412c9f5276aca45d07cde9b0ff9b0c1077791edd519c6f824d3a2253e4dad1aa9aa1239c96b8aa251ca0d656e63d8e234ec0cec65ded0aaf3d5585af9
+pkgname:
+  - name: python-typer
+# generated with artixpkg 0.37.6-1-any
