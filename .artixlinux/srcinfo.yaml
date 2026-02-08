@@ -1,9 +1,9 @@
 ---
-version: 0.25.0-1
+version: 0.25.1-1
 pkgbase:
   name: tree-sitter-bash
   pkgdesc: Bash grammar for tree-sitter
-  pkgver: 0.25.0
+  pkgver: 0.25.1
   pkgrel: 1
   url: https://github.com/tree-sitter/tree-sitter-bash
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   provides:
     - libtree-sitter-bash.so
   source:
-    - git+https://github.com/tree-sitter/tree-sitter-bash.git#commit=v0.25.0
+    - git+https://github.com/tree-sitter/tree-sitter-bash.git#commit=v0.25.1
   b2sums:
-    - c7300bcf1ebfc5931e4eb8e4fcb574169cf2f0ce3e145a5d8cdd114929e9ca0a2cba867907464dac47066ce40c2c987f6ba81bb4bb59465f5dea311bd050a158
+    - a7fc497386f2f72d1e04c60bbf825e443e816ed1be1bb8591a8ea233b5e0aebe059713035ebfd21f23f5b19c9d4f4d1b6e2e6564f5f5a0958470d46cc834bc63
 pkgname:
   - name: tree-sitter-bash
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.37.6-1-any
