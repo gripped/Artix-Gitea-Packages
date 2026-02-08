@@ -4,7 +4,7 @@
 
 pkgname=python-wcwidth
 pkgver=0.6.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Python library that measures the width of unicode strings rendered to a terminal'
 arch=(any)
 url='https://github.com/jquast/wcwidth'
