@@ -35,6 +35,8 @@ prepare() {
   sed -n '33,65p' $_source_dir/COPYING > BSD-3-Clause.txt
 }
 
+export MAKEFLAGS="-j1"
+
 build() {
   cd $_source_dir
   ./configure --prefix=/usr
