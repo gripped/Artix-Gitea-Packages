@@ -28,3 +28,4 @@ package() {
   make DESTDIR="${pkgdir}" install
   install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
 }
+
