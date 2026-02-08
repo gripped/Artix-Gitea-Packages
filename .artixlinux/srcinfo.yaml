@@ -1,0 +1,30 @@
+---
+version: 1:0.27.3-1
+pkgbase:
+  name: gemini-cli
+  pkgdesc: Open-source AI agent that brings the power of Gemini directly into your terminal
+  pkgver: 0.27.3
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/google-gemini/gemini-cli
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - git
+    - jq
+    - npm
+  depends:
+    - gcc-libs
+    - glib2
+    - glibc
+    - libsecret
+    - nodejs
+  source:
+    - git+https://github.com/google-gemini/gemini-cli.git#tag=v0.27.3
+  b2sums:
+    - 644607b99116487e705050cca16fc00722b7e589c281614521213a7a8020b9819ed0f8801916beeb54312f115abd6ba2e3ec7da9169d4e943db9c3a8c0d7da2b
+pkgname:
+  - name: gemini-cli
+# generated with artixpkg 0.37.6-1-any
