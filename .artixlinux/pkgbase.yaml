@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.0.402-1
+    version: 0.0.406-1
     packages:
-      - github-copilot-cli-0.0.402-1-x86_64.pkg.tar.zst
+      - github-copilot-cli-0.0.406-1-x86_64.pkg.tar.zst
     debug: []
