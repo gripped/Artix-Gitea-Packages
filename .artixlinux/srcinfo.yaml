@@ -1,21 +1,24 @@
 ---
-version: 2.3.3-2
+version: 2.3.3-3
 pkgbase:
   name: miniupnpc
   pkgdesc: Small UPnP client library/tool to access Internet Gateway Devices
   pkgver: 2.3.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://miniupnp.tuxfamily.org/
   arch:
     - x86_64
   license:
-    - BSD
+    - BSD-3-Clause
   makedepends:
-    - sh
     - glibc
     - lsb-release
     - python
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
+    - sh
   source:
     - http://miniupnp.free.fr/files/miniupnpc-2.3.3.tar.gz
     - http://miniupnp.free.fr/files/miniupnpc-2.3.3.tar.gz.sig
@@ -39,4 +42,4 @@ pkgname:
     depends:
       - python
       - glibc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
