@@ -1,15 +1,15 @@
 ---
-version: 0.12.1-4
+version: 1.0.4-1
 pkgbase:
   name: python-pathspec
   pkgdesc: Utility library for gitignore style pattern matching of file paths
-  pkgver: 0.12.1
-  pkgrel: 4
+  pkgver: 1.0.4
+  pkgrel: 1
   url: https://github.com/cpburnz/python-pathspec
   arch:
     - any
   license:
-    - MPL2
+    - MPL-2.0
   makedepends:
     - git
     - python-build
@@ -18,10 +18,12 @@ pkgbase:
     - python-wheel
   depends:
     - python
+  optdepends:
+    - 'python-google-re2: re2 backend'
   source:
-    - git+https://github.com/cpburnz/python-pathspec.git#tag=v0.12.1
+    - git+https://github.com/cpburnz/python-pathspec.git#tag=v1.0.4
   b2sums:
-    - 3cf1c642db6a7562c986f880fe917c1add214abf8c4a004315273ee05e5c4ca44252d1c09259bb7dcacf429b139041912e517414540b2250ad81f089549d5a57
+    - 05860cfda3bdd182dbe6667f3c08138f56a92b8867c9b69ed7359da995afee7b6bdc4509cd45fedb469d02f17ed4a791adbd890286525f022a44bbc0956bff6d
 pkgname:
   - name: python-pathspec
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
