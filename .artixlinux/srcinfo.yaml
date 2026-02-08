@@ -1,10 +1,10 @@
 ---
-version: 1.8.12-2
+version: 1.8.13-1
 pkgbase:
   name: libx11
   pkgdesc: X11 client-side library
-  pkgver: 1.8.12
-  pkgrel: 2
+  pkgver: 1.8.13
+  pkgrel: 1
   url: https://gitlab.freedesktop.org/xorg/lib/libx11
   arch:
     - x86_64
@@ -18,13 +18,13 @@ pkgbase:
     - glibc
     - xorgproto
   source:
-    - https://xorg.freedesktop.org//releases/individual/lib/libX11-1.8.12.tar.xz
-    - https://xorg.freedesktop.org//releases/individual/lib/libX11-1.8.12.tar.xz.sig
+    - https://xorg.freedesktop.org//releases/individual/lib/libX11-1.8.13.tar.xz
+    - https://xorg.freedesktop.org//releases/individual/lib/libX11-1.8.13.tar.xz.sig
   validpgpkeys:
-    - 4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E
+    - 3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2
   sha512sums:
-    - cb7a284d9081a8b67f7d8568d56dc403a4b787e46ac497b07768d236084c01f80f4ea2ebd814f950ac9738adc3baea3912932fc333858195c4f8217744b6f730
+    - 4c4a098eaff09a51309f3f322bc435ccd022c8f753974eb2650b60e42b737077ca0fde0df82b53f4ba8ed2388bbc8cb59ba66cc9946ae2b5907d7d1a9580e03d
     - SKIP
 pkgname:
   - name: libx11
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
