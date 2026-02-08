@@ -7,7 +7,7 @@
 
 _name=pip
 pkgname=python-pip
-pkgver=26.0
+pkgver=26.0.1
 pkgrel=1
 pkgdesc="The PyPA recommended tool for installing Python packages"
 url="https://pip.pypa.io/"
@@ -45,8 +45,8 @@ checkdepends=(
 )
 source=(https://github.com/pypa/$_name/archive/$pkgver/$_name-$pkgver.tar.gz
         )
-sha512sums=('62a62b2db4e7a6c795cf01ab553b94068f0d1c62470c1f5c2b3164344a84fa68f7854eec99d93b9f56193c61276d95d8af21a3cb6b78f0db4f013d9997e78199')
-b2sums=('fe24bd8fca7fa2b64ed865a880a430c420a9e73e35a9f1f2405473d4778467f48a8bc0607c1423760ff23706d3e11ddfeb20cd5a7f6522530a679994278ee1d8')
+sha512sums=('3786df7522ea65bc20fb9885ce5c2ddc60200a536a1f754a8d7dc278115c73258863e4c51ac7e9a60dda0b70263730dc194f70e1e8f8d00178a8b3c724333bf0')
+b2sums=('96a2fab2de472b3cde570f3bcbd6bc5e5c48ef2f0808ca9b2b6c0f57a611f723cd0f5d592b6b5f553fb57a6909459f57b4130f2451cd95c3b18678e02215e0c9')
 
 prepare() {
   # pip is moving towards a separate sphinx config without towncrier https://github.com/pypa/pip/issues/12881

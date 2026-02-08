@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 26.0-1
+    version: 26.0.1-1
     packages:
-      - python-pip-26.0-1-any.pkg.tar.zst
+      - python-pip-26.0.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 25.3-3
