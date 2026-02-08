@@ -3,7 +3,7 @@
 
 pkgname=netavark
 pkgver=1.17.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Container network stack"
 arch=(x86_64)
 url="https://github.com/containers/netavark"
@@ -12,6 +12,7 @@ depends=(
   aardvark-dns
   gcc-libs
   glibc
+  nftables
 )
 makedepends=(
   cargo
@@ -26,18 +27,18 @@ b2sums=('e239b18efb5006130a575d16f6226f8cdbebd46825835e9166cda52e004650de2099238
 
 prepare() {
   cd $pkgname
-  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
 }
 
 build() {
   cd $pkgname
   make -C docs
-  cargo build --frozen --release --all-features
+  cargo build --frozen --release
 }
 
 check() {
   cd $pkgname
-  cargo test --frozen --all-features
+  cargo test --frozen
 }
 
 package() {
