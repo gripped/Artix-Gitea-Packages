@@ -2,8 +2,12 @@
 # Contributor: Torsten Keßler <tpkessler@archlinux.org>
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
 pkgname=hiprt
-pkgver=3.0.3.a1525e7
-_libver=03000
+pkgver=3.1.0.cb09c56
+# For the calculation of the HIPRT_VERSION, see
+# https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT/blob/8602b8c475255fb922c2792654aae0a6bcdeb0af/CMakeLists.txt#L262
+# For zero padding, see
+# https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT/blob/8602b8c475255fb922c2792654aae0a6bcdeb0af/CMakeLists.txt#L265-L266
+_libver=$(awk -F "." '{printf "%05d\n", $1 * 1000 + $2}' <<< $pkgver)
 pkgrel=2
 pkgdesc="Ray Tracing Library for HIP"
 arch=('x86_64')
@@ -12,7 +16,7 @@ license=('MIT')
 depends=('rocm-core' 'hip-runtime-amd' 'glibc' 'gcc-libs')
 makedepends=('git' 'python' 'cmake')
 source=("$pkgname-$pkgver::git+https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT#tag=$pkgver")
-sha256sums=('0c0806694f2dbd21e114fa99b82036e069b844a679be8b014dd9f37d58ec490e')
+sha256sums=('6c60046f8d9406807063a1c5accc6ce85b03b694d818cc56f8d79f3b700bc27a')
 
 build() {
 	local cmake_args=(
