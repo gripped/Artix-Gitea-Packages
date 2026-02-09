@@ -1,11 +1,11 @@
 ---
 team: lib32
 actions:
-  addRepo: null
+  addRepo: lib32
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -42,8 +42,10 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: null
-    packages: []
+    version: 580.126.09-1
+    packages:
+      - lib32-nvidia-580xx-utils-580.126.09-1-x86_64.pkg.tar.zst
+      - lib32-opencl-nvidia-580xx-580.126.09-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
