@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,11 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 0.26.2-1
+    packages:
+      - p11-kit-0.26.2-1-x86_64.pkg.tar.zst
+      - libp11-kit-0.26.2-1-x86_64.pkg.tar.zst
+      - p11-kit-docs-0.26.2-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 0.26.1-1
