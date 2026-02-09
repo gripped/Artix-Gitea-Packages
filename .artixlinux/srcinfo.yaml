@@ -1,9 +1,9 @@
 ---
-version: 1.102.1-1
+version: 1.103.0-1
 pkgbase:
   name: avogadro-fragments
   pkgdesc: Molecular fragments and inorganic ligands for rapidly building structures
-  pkgver: 1.102.1
+  pkgver: 1.103.0
   pkgrel: 1
   url: https://openchemistry.org/
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   optdepends:
     - 'python-openbabel: for scripts'
   source:
-    - git+https://github.com/OpenChemistry/fragments#tag=1.102.1
+    - git+https://github.com/OpenChemistry/fragments#tag=1.103.0
   sha256sums:
-    - a7d9679cf3cd802ccb37f5058681845b656bd080eafa5b68095362fa3eb02d3f
+    - 5533cbb5fcb77b203bbef9e60b3b5642b070ffcd0e1ecd3f489930a5b49d2b5d
 pkgname:
   - name: avogadro-fragments
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
