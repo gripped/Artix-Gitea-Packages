@@ -29,10 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:0+503+ac020b86-1
+    version: 1:0+531+ec0effd7-1
     packages:
-      - wasi-libc-1:0+503+ac020b86-1-any.pkg.tar.zst
-    debug: []
+      - wasi-libc-1:0+531+ec0effd7-1-any.pkg.tar.zst
+    debug:
+      - wasi-libc-debug-1:0+531+ec0effd7-1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
