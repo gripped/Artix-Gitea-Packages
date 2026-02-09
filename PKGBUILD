@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.12.67
+pkgver=6.12.69
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
@@ -42,18 +42,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('16805dc62e1fa5ef8a3f466f3f44a2efb171b5206d6840ced4ba5475cf12c432'
+sha256sums=('4b493657f218703239c4f22415f027b3644949bf2761abd18b849f0aad5f7665'
             'SKIP'
             '3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c'
             '423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e'
             '596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1'
-            '76fc45e4869a17dc81f1718d980077c23772c9760f7e56fd0e47b1efb19c421d')
-b2sums=('e5434b2a9e26be723963d279117067617b2ba0cd1e339666b96e53742f02190dfda034f5c36f902a5cdb731d885da7a19b37e5af3ac999cd11a4a8f0b9f08c98'
+            '42382e396addaa7ea615b84d1713c2469a396f7fea1954d3b863ba8e9715f87e')
+b2sums=('1b5e827c351e5b1edccc167d7f5e2d145b1a6f4890ba207c4c913e3b38609d30ae23596990a15eade55742b8af4f9d85ee8516223959aa0eae8690d7c2444bdc'
         'SKIP'
         'b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918'
         '01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5'
         '410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea'
-        'f7c9dcb98f33247d723d7b1910f65de40c4ff2035205957464fec9801205ca4278cabf47c2b579d47b6a5fb028b240ff0a8edcc2cf83e26a7df6f112ffcb88b5')
+        '7f52f4214751674774a0c8b4551c7687ddcb6ca1cd9c7bf26106c2cfbcf6384e9c6a047637cf646a80e0a64b6f20575eb041f41b0119e30b87c66e41a4dfab53')
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
@@ -79,7 +79,7 @@ prepare() {
   cp ../config .config
   make olddefconfig
   diff -u ../config .config || :
-
+  
   make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
 }
@@ -238,6 +238,7 @@ _package-headers() {
     Zlib
   )
   depends=(pahole)
+  provides=(LINUX-HEADERS)
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
