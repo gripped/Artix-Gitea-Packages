@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 5.1.20-1
+    version: 5.1.21-1
     packages:
-      - python-moto-5.1.20-1-any.pkg.tar.zst
+      - python-moto-5.1.21-1-any.pkg.tar.zst
     debug: []
   world:
     version: 5.1.20-1
