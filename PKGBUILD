@@ -12,17 +12,13 @@ arch=('any')
 license=('GPL-2.0-or-later')
 makedepends=('docbook-xsl' 'git' 'intltool' 'podman')
 source=("git+https://github.com/firewalld/firewalld.git#tag=v${pkgver}"
-        'firewalld-sysconfigdir.patch'
         'fix_gettext_macros_path.patch')
 sha256sums=('8107cf1bbaf2b4679a24132e19f8099c4836882e1ba76e20872129b1cf878a62'
-            '3b2e00f67680c2e620804eb28620d7370b4096851bcb5f6fec22460a21941ad9'
             '49f793aeaf2e87c834c734b37dc926c9579cc2ec0782e5fe297ee286df6c7ef6')
 
 prepare() {
 	cd "${pkgbase}"
 
-	# Use '/etc/conf.d' rather than '/etc/sysconfig'
-	patch -Np1 -i "${srcdir}/firewalld-sysconfigdir.patch"
 	# Fix gettext's macros path
 	patch -Np1 -i "${srcdir}/fix_gettext_macros_path.patch"
 
@@ -70,13 +66,13 @@ package_firewalld() {
 		    'firewall-config: Graphical user interface for firewallD configuration'
 		    'firewall-applet: Systray applet for firewallD'
 		    'firewalld-test: firewallD test suite')
-	backup=('etc/conf.d/firewalld'
+	backup=('etc/sysconfig/firewalld'
 	        'etc/firewalld/firewalld.conf')
 	install="${pkgbase}.install"
 
 	# Selectively install files
 	# Can be dropped in favor of https://gitlab.archlinux.org/-/snippets/3770 once available
-	_install fakeinstall/etc/conf.d/firewalld
+	_install fakeinstal/etc/sysconfig/firewalld
 	_install fakeinstall/etc/firewalld/*
 	_install fakeinstall/etc/logrotate.d/firewalld
 	_install fakeinstall/etc/modprobe.d/firewalld-sysctls.conf
