@@ -6,7 +6,7 @@
 pkgbase=firewalld
 pkgname=('firewalld' 'python-firewall' 'firewall-config' 'firewall-applet' 'firewalld-test')
 pkgver=2.4.0
-pkgrel=6
+pkgrel=6.1
 url="https://firewalld.org"
 arch=('any')
 license=('GPL-2.0-or-later')
@@ -72,7 +72,7 @@ package_firewalld() {
 
 	# Selectively install files
 	# Can be dropped in favor of https://gitlab.archlinux.org/-/snippets/3770 once available
-	_install fakeinstal/etc/sysconfig/firewalld
+	_install fakeinstall/etc/sysconfig/firewalld
 	_install fakeinstall/etc/firewalld/*
 	_install fakeinstall/etc/logrotate.d/firewalld
 	_install fakeinstall/etc/modprobe.d/firewalld-sysctls.conf
