@@ -1,10 +1,10 @@
 ---
-version: 1.10-1.1
+version: 1.10-1.2
 pkgbase:
   name: hashcat-utils
   pkgdesc: Set of small utilities that are useful in advanced password cracking
   pkgver: 1.10
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://github.com/hashcat/hashcat-utils
   arch:
     - x86_64

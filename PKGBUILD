@@ -3,7 +3,7 @@
 
 pkgname=hashcat-utils
 pkgver=1.10
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Set of small utilities that are useful in advanced password cracking'
 url='https://github.com/hashcat/hashcat-utils'
 arch=(x86_64)
