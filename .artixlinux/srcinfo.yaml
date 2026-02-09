@@ -1,10 +1,10 @@
 ---
-version: 3.5.0-1
+version: 3.5.0-2
 pkgbase:
   name: laszip
   pkgdesc: ASPRS LAS lossless compression library
   pkgver: 3.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://laszip.org
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - 6cdc38249ace8191dae454817fe5f5a3cd22b24c7065daa0e4a3eaaca4d698540c56affa06e15de88aea2912a82033d1dc93f5d3904190a896edf1204af865f5
 pkgname:
   - name: laszip
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
