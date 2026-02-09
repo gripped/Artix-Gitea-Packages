@@ -1,7 +1,7 @@
 # Maintainer: nous
 
 pkgname=artix-dark-theme
-pkgver=20260105
+pkgver=20260209
 pkgrel=1
 pkgdesc="Dark theme for the community ISOs of Artix Linux. Gtk2/3/4, Qt5, Plasma splash."
 arch=('any')
