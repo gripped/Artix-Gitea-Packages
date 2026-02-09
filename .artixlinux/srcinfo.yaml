@@ -1,9 +1,9 @@
 ---
-version: 1.102.1-1
+version: 1.103.0-1
 pkgbase:
   name: avogadro-crystals
   pkgdesc: Crystallographic files of common materials, elements, oxides, for visualization in Avogadro
-  pkgver: 1.102.1
+  pkgver: 1.103.0
   pkgrel: 1
   url: https://openchemistry.org/
   arch:
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - git
   source:
-    - git+https://github.com/OpenChemistry/crystals#tag=1.102.1
+    - git+https://github.com/OpenChemistry/crystals#tag=1.103.0
   sha256sums:
     - fe4e88a470a22eea66dbd2ded3ae4f13bc3b492418f1ec20dd211c5dc48a95ce
 pkgname:
   - name: avogadro-crystals
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
