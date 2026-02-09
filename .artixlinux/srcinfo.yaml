@@ -1,10 +1,10 @@
 ---
-version: 1.22.2-1
+version: 1.22.2-2
 pkgbase:
   name: consul
   pkgdesc: A tool for service discovery, monitoring and configuration.
   pkgver: 1.22.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.consul.io
   install: consul.install
   arch:
@@ -14,10 +14,6 @@ pkgbase:
   makedepends:
     - git
     - go
-    - gox
-    - go-tools
-    - procps-ng
-    - zip
     - yarn
     - nodejs-lts-iron
     - pnpm
@@ -37,4 +33,4 @@ pkgbase:
     - c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348
 pkgname:
   - name: consul
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
