@@ -1,9 +1,9 @@
 ---
-version: 590.48.01-2.3
+version: 590.48.01-3
 pkgbase:
   name: nvidia-utils
   pkgver: 590.48.01
-  pkgrel: 2.3
+  pkgrel: 3
   url: http://www.nvidia.com/
   arch:
     - x86_64
@@ -21,6 +21,7 @@ pkgbase:
     - 0001-Enable-atomic-kernel-modesetting-by-default.patch
     - 0002-Add-IBT-support.patch
     - nvidia-sleep.patch
+    - kernel-6.19.patch
   sha512sums:
     - de7116c09f282a27920a1382df84aa86f559e537664bb30689605177ce37dc5067748acf9afd66a3269a6e323461356592fdfc624c86523bf105ff8fe47d3770
     - 1bcf2c6ee71686c0d32625e746ec8c0f7cf42fc63c76c3076ff2526b2661e8b9e9f76eaa2c4b213c7cc437a6f06006cc07672c4974d7f4515b2de2fd7c47a891
@@ -31,6 +32,7 @@ pkgbase:
     - 98ff06b32bac4297b4ca68e069750114ab5caf41d2a58f945488b52acf97c34dd3b64a6af609f8972e688bd646fe3ee598e699534001230d6f0154cebe6ff5d1
     - 3c4d87686cc79f09feca29df1a8c1973412b48077870b0d3424d575500234e9522b93df53bb6ecd72afd8dc69ecb4a8e7bd3e206080348d30a48c00e62f42943
     - beddb072332c78d666ab4a9ba1799bee557f8a0fc97a5f91c91e0d22f9a40199eea2575faf431835bc4fc3aba0c0d1f2b8b6fde9c96d6bde207fca4463a88dbf
+    - 8d4633c804079e2cd26a4c6e147c7f212770a0ed5514d3c37a33d7453c209dec560fff141134590af56f44d139b87c0c29ddbcb7eb110e90d3c06a237285a5bc
 pkgname:
   - name: nvidia-utils
     pkgdesc: NVIDIA drivers utilities
@@ -77,4 +79,4 @@ pkgname:
       - NVIDIA-MODULE
     replaces:
       - nvidia-dkms
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
