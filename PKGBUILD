@@ -148,5 +148,5 @@ package_firewalld-test() {
 	_install fakeinstall/usr/share/firewalld/testsuite/*
 
 	# make sure there are no files left to install
-	find fakeinstall -depth -print0 | xargs -0 rmdir
+	find fakeinstall -depth -print0 | xargs -0 rmdir | :
 }
