@@ -1,0 +1,25 @@
+---
+version: 13.00.02-2
+pkgbase:
+  name: icmake
+  pkgdesc: A program maintenance (make) utility using a C-like grammar
+  pkgver: 13.00.02
+  pkgrel: 2
+  url: https://fbb-git.gitlab.io/icmake/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  depends:
+    - libunwind
+  source:
+    - https://gitlab.com/fbb-git/icmake/-/archive/13.00.02/icmake-13.00.02.tar.gz
+    - icmake-13.02.00-restore-IFS.patch
+    - icmake-13.02.00-missing-CXXFLAGS.patch
+  b2sums:
+    - 625dfc3bde3d822fa4e763296beded3703d6cb1860cade87c60c4724d387360802538f39b2328e26d8918654a04fb3387e10295dbd8603706927000ec17f8ed4
+    - 8bfcd05bed40ec8c7da79f11160a768e30c870d0a72d64e03bad6c6d794131eb2d4f8ef71b21695f774ec261e70f7098d54a33144d7e9dc46ee048c0a44131d8
+    - 7a8e26e68ab22f24d7e16bd1435d960005b23efbe3f05f2cad0e8c88156eefc2f7d1d0a38fc18b2be642cd922a1dc6004e43aece6b0cfa5335cced268a9cf933
+pkgname:
+  - name: icmake
+# generated with artixpkg 0.37.6-1-any
