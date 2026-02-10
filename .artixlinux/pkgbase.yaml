@@ -1,16 +1,6 @@
 ---
-pkgbase:
-  name: xorg-fonts-alias
-  version: 1.0.5-1.1
-  arch:
-    - any
-  pkgname:
-    - xorg-fonts-alias-100dpi
-    - xorg-fonts-alias-75dpi
-    - xorg-fonts-alias-cyrillic
-    - xorg-fonts-alias-misc
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,18 +11,27 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.0.6-1
+    packages:
+      - xorg-fonts-alias-100dpi-1.0.6-1-any.pkg.tar.zst
+      - xorg-fonts-alias-75dpi-1.0.6-1-any.pkg.tar.zst
+      - xorg-fonts-alias-cyrillic-1.0.6-1-any.pkg.tar.zst
+      - xorg-fonts-alias-misc-1.0.6-1-any.pkg.tar.zst
+    debug: []
   world:
     version: 1.0.5-1.1
     packages:
@@ -40,21 +39,29 @@ repos:
       - xorg-fonts-alias-75dpi-1.0.5-1.1-any.pkg.tar.zst
       - xorg-fonts-alias-cyrillic-1.0.5-1.1-any.pkg.tar.zst
       - xorg-fonts-alias-misc-1.0.5-1.1-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
+team: world
