@@ -1,10 +1,10 @@
 ---
-version: 2.7.10-5
+version: 2.7.11-1
 pkgbase:
   name: keepassxc
   pkgdesc: Cross-platform community-driven port of Keepass password manager
-  pkgver: 2.7.10
-  pkgrel: 5
+  pkgver: 2.7.11
+  pkgrel: 1
   url: https://keepassxc.org/
   arch:
     - x86_64
@@ -36,7 +36,7 @@ pkgbase:
   provides:
     - org.freedesktop.secrets
   source:
-    - git+https://github.com/keepassxreboot/keepassxc.git#tag=2.7.10?signed
+    - git+https://github.com/keepassxreboot/keepassxc.git#tag=2.7.11?signed
     - TestEntryModel.patch
   validpgpkeys:
     - 3489040C1F0C3EEAB8D556A5440FC65F2E0C6E01
@@ -45,8 +45,8 @@ pkgbase:
     - AF0AEA44ABAC8F1047733EA7AFF235EEFB5A2517
     - C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
   sha256sums:
-    - 789edc3cbd55783b10a3b64863ea34e2588b6b52de85ffe11898fa5ca3022b10
+    - b278cecaeb49f8c6ba9253a956cf250f85e444a140054eb3ecf29f99cb6ea528
     - 1448fb616c4eaf7b0f9019ee10f813199d7105442e3f61aea31e901139b87f43
 pkgname:
   - name: keepassxc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
