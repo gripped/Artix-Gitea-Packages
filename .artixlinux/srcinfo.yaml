@@ -1,10 +1,10 @@
 ---
-version: 1.5-3.1
+version: 1.5-3.2
 pkgbase:
   name: libvdpau
   pkgdesc: Nvidia VDPAU library
   pkgver: 1.5
-  pkgrel: 3.1
+  pkgrel: 3.2
   url: https://www.freedesktop.org/wiki/Software/VDPAU/
   arch:
     - x86_64
