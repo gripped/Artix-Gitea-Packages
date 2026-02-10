@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-5
+version: 3.0.0-3
 pkgbase:
   name: zxing-cpp
   pkgdesc: An open-source, multi-format linear/matrix barcode image processing library implemented in C++
-  pkgver: 2.3.0
-  pkgrel: 5
+  pkgver: 3.0.0
+  pkgrel: 3
   url: https://github.com/zxing-cpp/zxing-cpp
   arch:
     - x86_64
@@ -15,13 +15,24 @@ pkgbase:
   makedepends:
     - cmake
     - git
+    - libpng
+    - opencv
+    - qt6-base
+    - qt6-declarative
+    - qt6-multimedia
+    - stb
   depends:
     - gcc-libs
     - glibc
+    - zint
+  optdepends:
+    - 'qt6-multimedia: for ZXingQtCamReader'
   source:
-    - git+https://github.com/zxing-cpp/zxing-cpp#tag=v2.3.0
+    - git+https://github.com/zxing-cpp/zxing-cpp#tag=v3.0.0
+    - system-stb.patch
   sha256sums:
-    - 1042010b960c29e6d7c5cd99e8c2a887cf84febb918abeb0405bcf12aaf8543c
+    - 072683b5dec4060f2abfb54f8b7da9db198406138895876831fc16dece6aee7a
+    - cc83c917902c3551ff0a4b7752baf895044d40901eba74678aeef19e236266f1
 pkgname:
   - name: zxing-cpp
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.37.6-1-any
