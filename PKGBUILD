@@ -1,8 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.18.5.zen1
-pkgrel=1
+pkgver=6.18.9.zen1
+pkgrel=2
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
 arch=(x86_64)
@@ -45,16 +45,16 @@ validpgpkeys=(
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('189d1f409cef8d0d234210e04595172df392f8cb297e14b447ed95720e2fd940'
+sha256sums=('030115ff8fb4cb536d8449dc40ebc3e314e86ba1b316a6ae21091a11cc930578'
             'SKIP'
-            '59c83209de9dd831e0023deb5e7861e0d5bca7222ea795c5c80f57204b4e2022'
+            '6de083ccfbe1283715c30876a53e3a92c8aa702b6023c6a471e5d008b30f78ca'
             'SKIP'
-            '695c1c4ddb3f323aaa6f04535357aef4d230523e8f3d8384f27ebcb589f32590')
-b2sums=('9294ae977d7b8b929c476e649cbb116969a674d3923e5a4cddf8615ee5ba373761630f1a6397045d9ebe7eeaa87a3fffae3628aebc1ca4c7db5561b1c4513289'
+            'e6b2d169833144e944d1a1ca48c3f9288e6b9b81e79947f4211d59c35155dc15')
+b2sums=('9aed902e41583597cb7595efe77504630a621993d20f89365a93cf2ea4d9790a6361d93cbb7fd7603881a4f82b76394b7e12fb4e4a88c9fedb2d63d64a9d49d3'
         'SKIP'
-        '7e56be0c5cc96751a8695218d16b4175f69e428c185d51d3024b85912ba028b36847a8074d8816e6ac3191f3d59fd37f96dea106babb27ddf89789774279890f'
+        '9034b7a407d863d868506234702b7572e6de65110e4aecefb56dc5362dbf0a4088c2b97069b275cda75ce244782a1f348e6f838dbe25fbd4abbf4a2175473b8e'
         'SKIP'
-        'e1b48acf9cb1cff6d84d6ec3d89d0a8407ff11080d1740c5e95a2022f14843525567197161e0d446074363fee0fc3e4a05b01310b7a0c3873a27f6cb364aba97')
+        '823956f56477d31ade7540c66961f8522e96c9dd2f2d3437910fe8e4944d19b591c9caa810cb061cebbc2a263505c9954d6efb6ec6a832da74a45189b1ad023a')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -137,6 +137,7 @@ _package() {
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
+  provides=(LINUX-HEADERS)
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
