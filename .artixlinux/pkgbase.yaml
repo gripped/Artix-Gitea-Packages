@@ -25,12 +25,12 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.0.6-1.1
+    version: 1.0.6-1.2
     packages:
-      - xorg-fonts-alias-100dpi-1.0.6-1.1-any.pkg.tar.zst
-      - xorg-fonts-alias-75dpi-1.0.6-1.1-any.pkg.tar.zst
-      - xorg-fonts-alias-cyrillic-1.0.6-1.1-any.pkg.tar.zst
-      - xorg-fonts-alias-misc-1.0.6-1.1-any.pkg.tar.zst
+      - xorg-fonts-alias-100dpi-1.0.6-1.2-any.pkg.tar.zst
+      - xorg-fonts-alias-75dpi-1.0.6-1.2-any.pkg.tar.zst
+      - xorg-fonts-alias-cyrillic-1.0.6-1.2-any.pkg.tar.zst
+      - xorg-fonts-alias-misc-1.0.6-1.2-any.pkg.tar.zst
     debug: []
   world:
     version: 1.0.5-1.1

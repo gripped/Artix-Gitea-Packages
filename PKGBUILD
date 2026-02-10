@@ -4,7 +4,7 @@
 pkgbase=xorg-fonts-alias
 pkgname=('xorg-fonts-alias-100dpi' 'xorg-fonts-alias-75dpi' 'xorg-fonts-alias-cyrillic' 'xorg-fonts-alias-misc')
 pkgver=1.0.6
-pkgrel=1.1
+pkgrel=1.2
 arch=('any')
 url="https://xorg.freedesktop.org/"
 makedepends=('xorg-util-macros')
@@ -12,7 +12,7 @@ license=('custom')
 source=(${url}/releases/individual/font/font-alias-${pkgver}.tar.xz{,.sig})
 sha512sums=('a6c5441a1dab197799716c5b9940871c40731c21f2dcf7557b51a6ed090332157bb6f3f733e61a9aa5709c6065c7b9e988cf486b1a68a499c73fe0c6c3dee355'
             'SKIP')
-validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # "Alan Coopersmith <alan.coopersmith@oracle.com>"
+validpgpkeys=('3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2') # "Alan Coopersmith <alan.coopersmith@oracle.com>"
 
 build() {
   cd "${srcdir}/font-alias-${pkgver}"
