@@ -4,7 +4,7 @@
 
 pkgname=libxklavier
 pkgver=5.4
-pkgrel=6
+pkgrel=7
 pkgdesc='High-level API for X Keyboard Extension (deprecated)'
 arch=('x86_64')
 url='https://www.freedesktop.org/wiki/Software/LibXklavier/'
