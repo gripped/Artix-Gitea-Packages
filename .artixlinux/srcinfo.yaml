@@ -1,9 +1,9 @@
 ---
-version: 15.2.1+r447+g6a64f6c3ebb8-1
+version: 15.2.1+r604+g0b99615a8aef-1
 pkgbase:
   name: gcc
   pkgdesc: The GNU Compiler Collection
-  pkgver: 15.2.1+r447+g6a64f6c3ebb8
+  pkgver: 15.2.1+r604+g0b99615a8aef
   pkgrel: 1
   url: https://gcc.gnu.org
   arch:
@@ -35,7 +35,7 @@ pkgbase:
     - '!lto'
     - debug
   source:
-    - git+https://sourceware.org/git/gcc.git#commit=6a64f6c3ebb88a30ee1f36803c48573731018e0c
+    - git+https://sourceware.org/git/gcc.git#commit=0b99615a8aef011cff76c6caa8c09434f46598b3
     - c89
     - c99
     - gcc-ada-repro.patch
@@ -45,7 +45,7 @@ pkgbase:
     - 13975A70E63C361C73AE69EF6EEB81F8981C74C7
     - D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62
   sha256sums:
-    - adeb3a940db8da675a596af35aeeb05be1308b26d9a80f105dc6e2487d3ac4f0
+    - fda170be6da777107c74ad322d51a508edf448b86ce8247755eb0eb1524f38b6
     - 7b09ec947f90b98315397af675369a1e3dfc527fa70013062e6e85c4be0275ab
     - 44ea973558842f3f4bd666bdaf6e810fd7b7c7bd36b5cc4c69f93d2cd0124fc7
     - 1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f
@@ -53,7 +53,7 @@ pkgname:
   - name: gcc
     pkgdesc: The GNU Compiler Collection - C and C++ frontends
     depends:
-      - gcc-libs=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc-libs=15.2.1+r604+g0b99615a8aef-1
       - binutils>=2.28
       - libmpc
       - zstd
@@ -67,41 +67,10 @@ pkgname:
     options:
       - '!emptydirs'
       - staticlibs
-  - name: gcc-libs
-    pkgdesc: Runtime libraries shipped by GCC
-    depends:
-      - glibc>=2.27
-    provides:
-      - gcc-libs-multilib
-      - libgo.so
-      - libgfortran.so
-      - libgphobos.so
-      - libubsan.so
-      - libasan.so
-      - libtsan.so
-      - liblsan.so
-    replaces:
-      - gcc-libs-multilib
-      - libgphobos
-    options:
-      - '!emptydirs'
-      - '!strip'
-  - name: lib32-gcc-libs
-    pkgdesc: 32-bit runtime libraries shipped by GCC
-    depends:
-      - lib32-glibc>=2.27
-    provides:
-      - libgo.so
-      - libgfortran.so
-      - libubsan.so
-      - libasan.so
-    options:
-      - '!emptydirs'
-      - '!strip'
   - name: gcc-ada
     pkgdesc: Ada front-end for GCC (GNAT)
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
       - libisl.so
     provides:
       - gcc-ada-multilib
@@ -113,7 +82,8 @@ pkgname:
   - name: gcc-d
     pkgdesc: D frontend for GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
+      - libgphobos
       - libisl.so
     provides:
       - gdc
@@ -124,16 +94,24 @@ pkgname:
   - name: gcc-fortran
     pkgdesc: Fortran front-end for GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
+      - libgfortran
       - libisl.so
     provides:
       - gcc-fortran-multilib
     replaces:
       - gcc-fortran-multilib
+  - name: gcc-gcobol
+    pkgdesc: Cobol frontend for GCC
+    depends:
+      - gcc=15.2.1+r604+g0b99615a8aef-1
+      - libgcobol
+      - libisl.so
   - name: gcc-go
     pkgdesc: Go front-end for GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
+      - libgo
       - libisl.so
     provides:
       - go=1.17
@@ -142,15 +120,33 @@ pkgname:
       - go
     replaces:
       - gcc-go-multilib
+  - name: gcc-libs
+    pkgdesc: Runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+      - libasan
+      - libatomic
+      - libgfortran
+      - libgcc
+      - libgomp
+      - liblsan
+      - libobjc
+      - libquadmath
+      - libstdc++
+      - libtsan
+      - libubsan
+    provides:
+      - gcc-libs-multilib
   - name: gcc-m2
     pkgdesc: Modula-2 frontend for GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
       - libisl.so
   - name: gcc-objc
     pkgdesc: Objective-C front-end for GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
+      - libobjc
       - libisl.so
     provides:
       - gcc-objc-multilib
@@ -159,21 +155,137 @@ pkgname:
   - name: gcc-rust
     pkgdesc: Rust frontend for GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
       - libisl.so
-  - name: gcc-gcobol
-    pkgdesc: Cobol frontend for GCC
+  - name: lib32-gcc-libs
+    pkgdesc: 32-bit runtime libraries shipped by GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
-      - libisl.so
-  - name: lto-dump
-    pkgdesc: Dump link time optimization object files
+      - lib32-glibc>=2.27
+    provides:
+      - libasan.so
+      - libatomic.so
+      - libgdruntime.so
+      - libgfortran.so
+      - libgo.so
+      - libgomp.so
+      - libgphobos.so
+      - libitm.so
+      - libobjc.so
+      - libquadmath.so
+      - libubsan.so
+    options:
+      - '!emptydirs'
+  - name: libasan
+    pkgdesc: Address Sanitizer runtime library shipped by GCC
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
-      - libisl.so
+      - glibc>=2.27
+    provides:
+      - libasan.so
+  - name: libatomic
+    pkgdesc: GNU Atomic library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libatomic.so
+  - name: libgcc
+    pkgdesc: Low-level runtime library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libgcc_s.so
   - name: libgccjit
     pkgdesc: Just-In-Time Compilation with GCC backend
     depends:
-      - gcc=15.2.1+r447+g6a64f6c3ebb8-1
+      - gcc=15.2.1+r604+g0b99615a8aef-1
       - libisl.so
-# generated with artixpkg 0.37.4-1-any
+    provides:
+      - libgccjit.so
+  - name: libgcobol
+    pkgdesc: Cobol runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libgcobol.so
+  - name: libgfortran
+    pkgdesc: Runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libgfortran.so
+  - name: libgm2
+    pkgdesc: Address Sanitizer runtime library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libm2cor.so
+      - libm2iso.so
+      - libm2log.so
+      - libm2min.so
+      - libm2pim.so
+  - name: libgo
+    pkgdesc: Go runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libgo.so
+  - name: libgomp
+    pkgdesc: OpenMP library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libgomp.so
+  - name: libgphobos
+    pkgdesc: D runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libgdruntime.so
+      - libgphobos.so
+  - name: libitm
+    pkgdesc: GNU Transactional Memory library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libitm.so
+  - name: liblsan
+    pkgdesc: Leak Sanitizer runtime library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - liblsan.so
+  - name: libobjc
+    pkgdesc: Ojective-C runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libobjc.so
+  - name: libquadmath
+    pkgdesc: GCC __float128 library
+    depends:
+      - glibc>=2.27
+    provides:
+      - libquadmath.so
+  - name: libstdc++
+    pkgdesc: C++ runtime libraries shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libstdc++.so
+  - name: libtsan
+    pkgdesc: Thread Sanitizer runtime library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libtsan.so
+  - name: libubsan
+    pkgdesc: Undefined Behavior Sanitizer runtime library shipped by GCC
+    depends:
+      - glibc>=2.27
+    provides:
+      - libubsan.so
+  - name: lto-dump
+    pkgdesc: Dump link time optimization object files
+    depends:
+      - gcc=15.2.1+r604+g0b99615a8aef-1
+      - libisl.so
+# generated with artixpkg 0.37.6-1-any
