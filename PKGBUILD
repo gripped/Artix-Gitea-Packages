@@ -2,16 +2,16 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
-pkgname=nvidia580xx
-pkgver=580.119.02
-pkgrel=3
+pkgname=nvidia-580xx
+pkgver=580.126.09
+pkgrel=2
 pkgdesc="NVIDIA kernel modules"
 arch=('x86_64')
 url="https://www.nvidia.com/"
 makedepends=('linux-headers' "nvidia-580xx-dkms=$pkgver")
-provides=('NVIDIA-MODULE' 'nvidia')
-conflicts=('nvidia')
-replaces=('nvidia')
+provides=('NVIDIA-MODULE' 'nvidia' 'nvidia580xx')
+conflicts=('nvidia' 'nvidia580xx')
+replaces=('nvidia' 'nvidia580xx')
 license=('LicenseRef-custom')
 options=('!strip')
 
