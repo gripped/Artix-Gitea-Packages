@@ -1,10 +1,10 @@
 ---
-version: 0.194-1
+version: 0.194-2
 pkgbase:
   name: elfutils
   pkgdesc: Handle ELF object files and DWARF debugging information
   pkgver: 0.194
-  pkgrel: 1
+  pkgrel: 2
   url: https://sourceware.org/elfutils/
   arch:
     - x86_64
@@ -79,4 +79,4 @@ pkgname:
       - liblzma.so
     optdepends:
       - 'elfutils=0.194: for translations'
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any

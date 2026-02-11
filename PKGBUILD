@@ -10,7 +10,7 @@ pkgname=(
   debuginfod
 )
 pkgver=0.194
-pkgrel=1
+pkgrel=2
 pkgdesc="Handle ELF object files and DWARF debugging information"
 arch=(x86_64)
 url="https://sourceware.org/elfutils/"
@@ -28,7 +28,10 @@ makedepends=(
   zlib
   zstd
 )
-options=(staticlibs debug)
+options=(
+  staticlibs
+  debug
+)
 source=(git+$_url?signed#tag=$pkgbase-$pkgver)
 sha512sums=('b8b031e1e99466af969792ea9fb2b1c2b0f39425b2eb5bed986fa72189410a4bc5bb8e0e48a57d41fb6bcedba0a5f3c56a4d0c8b66c606feac98c46a303ba379')
 b2sums=('a2e84bfaa316f2de5aff212bd91f15bed66f1881e4622fbfc19d671d09be68d2203813743570044de2a1c29c3db18d069db7481ad8cfe71104878cfc9e6f2191')
@@ -42,6 +45,9 @@ prepare() {
   # fix issue with /etc/profile.d/debuginfod.sh for zsh:
   # https://gitlab.archlinux.org/archlinux/packaging/packages/elfutils/-/issues/2
   git cherry-pick -n 00cb3efe36337f27925dbff9b2e7d97c7df95bf8
+
+  # fix c23 const handling issue
+  git cherry-pick -n 4a5cf8be906d5991e7527e69e3f2ceaa74811301
 
   # remove failing test due to missing glibc debug package during test: https://bugs.archlinux.org/task/74875
   sed -e 's/run-backtrace-native.sh//g' -i tests/Makefile.am
