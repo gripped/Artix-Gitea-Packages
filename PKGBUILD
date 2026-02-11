@@ -7,8 +7,8 @@
 
 pkgbase=nvidia-580xx-utils
 pkgname=('nvidia-580xx-utils' 'opencl-nvidia-580xx' 'nvidia-580xx-dkms')
-pkgver=580.119.02
-pkgrel=2.2
+pkgver=580.126.09
+pkgrel=2
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -22,6 +22,7 @@ source=('nvidia-drm-outputclass.conf'
         'nvidia-sleep.conf'
         "https://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/${_pkg}.run"
         '0001-Enable-atomic-kernel-modesetting-by-default.patch'
+        '0002-Fix-compile-for-6.19.patch'
         'limit-vram-usage'
         'nvidia-sleep.patch')
 
@@ -29,8 +30,9 @@ sha256sums=('be99ff3def641bb900c2486cce96530394c5dc60548fc4642f19d3a4c784134d'
             'f77a5247a3ba63e9fad3a3b2822d0fcfa51e0f79b5a90bd79bf08ea34b64ab07'
             '0e54249a7754b668b436f0f7aa7e95fff68edbb12a93dbee4660e09a8c695f84'
             '12d31a5425aba66be9e9129012cde82755ad4d5b7ce9933df8fc398c4fa8d631'
-            '8020f5dfd3ee88aee7a38990d0c3d2afe54751e9a170ba9eadd7ea670138ecd7'
+            '4cac53e48f8adff661d47c8788ed24059a248c9fd8098ceafd088a498986ec26'
             '163c57160cc1033020680f638b44ebd94b496152dcd8951e87d5077d4d5c2009'
+            'fdfe224fa39b2707942a89a54e1c0d60c5eb7da20b7a3e1dfde294e5bdec237e'
             'b14f7a65359c05c373ddfc750cd4cf086a48e815489d93ad5cbe1dbf84bf8f5a'
             '9b2bfc53dbcb736dd434cfd8be74ded2b2c0b8da1aeb1adc8e1cb5f242197802')
 
@@ -55,7 +57,11 @@ prepare() {
     # https://github.com/rpmfusion/nvidia-kmod/blob/master/make_modeset_default.patch
     patch -Np1 -i "${srcdir}/0001-Enable-atomic-kernel-modesetting-by-default.patch" -d "${srcdir}/${_pkg}/kernel"
 
+    # Fix sleep conf
     patch -Np1 -i "${srcdir}/nvidia-sleep.patch"
+
+    # Fix compilation for 6.19
+    patch -Np1 -i "${srcdir}/0002-Fix-compile-for-6.19.patch"
 
     shopt -s globstar
     for conf in "${srcdir}"/**/dkms.conf; do
