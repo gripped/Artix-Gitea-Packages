@@ -3,7 +3,7 @@
 
 pkgname=libvdpau
 pkgver=1.5
-pkgrel=3.3
+pkgrel=3.4
 pkgdesc='Nvidia VDPAU library'
 arch=(x86_64)
 url='https://www.freedesktop.org/wiki/Software/VDPAU/'
