@@ -1,10 +1,10 @@
 ---
-version: 2.6.0-3
+version: 2.6.0-4
 pkgbase:
   name: libtool
   pkgdesc: A generic library support script
   pkgver: 2.6.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.gnu.org/software/libtool
   arch:
     - x86_64
@@ -59,4 +59,4 @@ pkgname:
       - lib32-libtool
     replaces:
       - lib32-libtool
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
