@@ -1,10 +1,10 @@
 ---
-version: 2.17-2
+version: 2.17-2.1
 pkgbase:
   name: python-qt-material
   pkgdesc: Material inspired stylesheet for PySide & PyQt
   pkgver: 2.17
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://qt-material.readthedocs.io/
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - bede50048f8ec00164a241b8b18dfcf296ac1737a77a0040cc147e23b8a98b28eea25dacfdc3714c6fc16b855d35327c1a3f0f79b4e42eb0e21d70db029da431
 pkgname:
   - name: python-qt-material
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
