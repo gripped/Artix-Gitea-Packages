@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 3.25.1-4
+    packages:
+      - valgrind-3.25.1-4-x86_64.pkg.tar.zst
+    debug:
+      - valgrind-debug-3.25.1-4-x86_64.pkg.tar.zst
   world:
     version: 3.25.1-3
     packages:
