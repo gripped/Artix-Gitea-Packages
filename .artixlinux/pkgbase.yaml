@@ -30,9 +30,9 @@ repos:
       - python-fastapi-0.128.3-1-any.pkg.tar.zst
     debug: []
   world:
-    version: 0.128.3-1
+    version: 0.129.0-1
     packages:
-      - python-fastapi-0.128.3-1-any.pkg.tar.zst
+      - python-fastapi-0.129.0-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
