@@ -1,10 +1,10 @@
 ---
-version: 3.10.8-3
+version: 3.10.8-4
 pkgbase:
   name: python-matplotlib
   pkgdesc: A python plotting library, making publication quality plots
   pkgver: 3.10.8
-  pkgrel: 3
+  pkgrel: 4
   url: https://matplotlib.org
   arch:
     - x86_64
@@ -26,7 +26,6 @@ pkgbase:
     - python-ipykernel
     - python-pandas
     - python-pikepdf
-    - python-pyqt5
     - python-pyqt6
     - python-pytest
     - python-pytest-rerunfailures
@@ -71,7 +70,6 @@ pkgbase:
   optdepends:
     - 'tk: Tk{Agg,Cairo} backends'
     - 'pyside6: alternative for Qt6{Agg,Cairo} backends'
-    - 'python-pyqt5: Qt5{Agg,Cairo} backends'
     - 'python-pyqt6: Qt6{Agg,Cairo} backends'
     - 'python-gobject: for GTK{3,4}{Agg,Cairo} backend'
     - 'python-wxpython: WX{Agg,Cairo} backend'
@@ -102,4 +100,4 @@ pkgbase:
     - 2378456c277ad20d4c2d0781e70f2db63c2f2892ec35e9f0569c8f8943fea97b5efaab740bd582b7dece55572d65b01a13364382ef1fd1aeaa9f24076ddc6e08
 pkgname:
   - name: python-matplotlib
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
