@@ -1,9 +1,9 @@
 ---
-version: 6.16-1
+version: 6.17-1
 pkgbase:
   name: man-pages
   pkgdesc: Linux man pages
-  pkgver: 6.16
+  pkgver: 6.17
   pkgrel: 1
   url: https://www.kernel.org/doc/man-pages/
   arch:
@@ -17,8 +17,8 @@ pkgbase:
     - GPL-2.0-only
     - GPL-2.0-or-later
     - GPL-3.0-or-later
-    - LGPL-3.0-or-later
     - LGPL-3.0-linking-exception
+    - LGPL-3.0-or-later
     - LicenseRef-Public-Domain
     - LicenseRef-UltraPermissive
     - Linux-man-pages-1-para
@@ -30,21 +30,25 @@ pkgbase:
   makedepends:
     - man2html
     - git
-  depends:
-    - sh
   source:
-    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.16.tar.xz
-    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.16.tar.sign
+    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.17.tar.xz
+    - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-6.17.tar.sign
     - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/man-pages-posix-2017-a.tar.xz
     - https://www.kernel.org/pub/linux/docs/man-pages/man-pages-posix/man-pages-posix-2017-a.tar.sign
   validpgpkeys:
     - E522595B52EDA4E6BFCCCB5E856199113A35CE5E
     - A9348594CE31283A826FBDD8D57633D441E25BB5
   sha256sums:
-    - 8e247abd75cd80809cfe08696c81b8c70690583b045749484b242fb43631d7a3
+    - d18f21a602b09778a5a9096bf1be8441b7733e998150474accf703d165f4ebf4
     - SKIP
     - ce67bb25b5048b20dad772e405a83f4bc70faf051afa289361c81f9660318bc3
     - SKIP
 pkgname:
   - name: man-pages
-# generated with artixpkg 0.37.4-1-any
+  - name: man-pages-utils
+    pkgdesc: Linux man pages - command line tools
+    license:
+      - GPL-3.0-or-later
+    depends:
+      - sh
+# generated with artixpkg 0.37.6-1-any
