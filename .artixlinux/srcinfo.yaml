@@ -1,10 +1,10 @@
 ---
-version: 7.0.0-2
+version: 7.0.0-3
 pkgbase:
   name: python-isort
   pkgdesc: A Python utility / library to sort Python imports
   pkgver: 7.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/PyCQA/isort
   arch:
     - any
@@ -20,11 +20,10 @@ pkgbase:
     - python
     - python-colorama
     - python-setuptools
-    - python-tomli
   source:
     - https://files.pythonhosted.org/packages/source/i/isort/isort-7.0.0.tar.gz
   sha256sums:
     - 5513527951aadb3ac4292a41a16cbc50dd1642432f5e8c20057d414bdafb4187
 pkgname:
   - name: python-isort
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
