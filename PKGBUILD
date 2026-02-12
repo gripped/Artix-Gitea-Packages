@@ -7,7 +7,7 @@ _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(x86_64)

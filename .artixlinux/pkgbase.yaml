@@ -13,11 +13,11 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 6.18.9.artix1-1
+    version: 6.18.9.artix1-2
     packages:
-      - linux-6.18.9.artix1-1-x86_64.pkg.tar.zst
-      - linux-headers-6.18.9.artix1-1-x86_64.pkg.tar.zst
-      - linux-docs-6.18.9.artix1-1-x86_64.pkg.tar.zst
+      - linux-6.18.9.artix1-2-x86_64.pkg.tar.zst
+      - linux-headers-6.18.9.artix1-2-x86_64.pkg.tar.zst
+      - linux-docs-6.18.9.artix1-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 6.18.6.artix1-1
