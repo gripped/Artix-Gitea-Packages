@@ -4,7 +4,7 @@
 _name=ucx
 pkgname=openucx
 pkgver=1.20.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Communication framework for data-centric and high-performance applications"
 arch=(x86_64)
 url="https://openucx.org/"
@@ -64,6 +64,8 @@ build() {
   # this uses malloc_usable_size, which is incompatible with fortification level 3
   export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
+
+  export CFLAGS="${CFLAGS} -Wno-error=discarded-qualifiers"
 
   cd $_name-$pkgver
   ./autogen.sh
