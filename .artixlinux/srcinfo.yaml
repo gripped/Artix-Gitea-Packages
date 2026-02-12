@@ -1,10 +1,10 @@
 ---
-version: 3.1-8
+version: 3.1-9
 pkgbase:
   name: python-pyscreenshot
   pkgdesc: Copy the contents of the screen to a PIL or Pillow image memory
   pkgver: 3.1
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/ponty/pyscreenshot
   arch:
     - any
@@ -18,7 +18,6 @@ pkgbase:
     - python-pygame
     - python-xlib
     - python-gobject
-    - python-pyqt5
     - python-wxpython
     - xorg-server-xvfb
     - xorg-xdpyinfo
@@ -43,4 +42,4 @@ pkgbase:
     - 8c0e93f0aef66a6bfe55a86abfced6bd396ae4b4f6cc1e36f04a28ad2625594d
 pkgname:
   - name: python-pyscreenshot
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
