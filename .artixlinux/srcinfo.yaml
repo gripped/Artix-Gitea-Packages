@@ -1,10 +1,10 @@
 ---
-version: 6.06.02-1.1
+version: 6.06.02-2
 pkgbase:
   name: libbobcat
   pkgdesc: Bobcat (Brokken's Own Base Classes And Templates) library
   pkgver: 6.06.02
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://fbb-git.gitlab.io/bobcat/
   arch:
     - x86_64
