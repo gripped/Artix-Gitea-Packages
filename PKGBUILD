@@ -6,7 +6,7 @@
 
 pkgbase=linux-hardened
 pkgver=6.17.13.hardened1
-pkgrel=2
+pkgrel=3
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
 arch=(x86_64)
@@ -42,6 +42,7 @@ source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   ${url}/releases/download/${_srctag}/${pkgbase}-${_srctag}.patch{,.sig}
   config  # the main kernel config file
+  c23.patch::https://github.com/archlinux/linux/commit/ab21cf885fb2af179c44d8beeabd716133b9385d.patch
 )
 validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
@@ -53,12 +54,14 @@ sha256sums=('116802dc3ad1646163cc6ffe9bddba24a8069b569135ec0523cd799064f2edb9'
             'SKIP'
             '4c6671688c0f9fc1782f5de268e185de19accc706cbd0256c5df48c74df37eb3'
             'SKIP'
-            '5991a82cce522f9a1862ad475e7a22f1ca367c017a44d89540fee16e152549b4')
+            '5991a82cce522f9a1862ad475e7a22f1ca367c017a44d89540fee16e152549b4'
+            '5442769bb8842f2eb522c531cad61998f507b5abf40ec21e2147da6e6a8b30d8')
 b2sums=('96a9975fa0541b2225cd6f4422691ed2f145f4e41772be64b062022b0faf005e04ec94d966a015f5cab85f71aeac809b68cc0c1fc3d8d02cdd62699874938859'
         'SKIP'
         '67e8af0e06150c9839a2bd1c17e2db14a23fab4cfe3179582cb00866592996ae982838061194ecbd1e940c706acaa1f44822368fa0990232477f8cc329f21e11'
         'SKIP'
-        'a442ccbb9b56d39f0bf7c69173daa320cd6981c22018e983b9cb4eaa42f81a307a8bd2e6ebd9133a9841958f7c74c74807afc909b6a7ff966027a86b80a337e0')
+        'a442ccbb9b56d39f0bf7c69173daa320cd6981c22018e983b9cb4eaa42f81a307a8bd2e6ebd9133a9841958f7c74c74807afc909b6a7ff966027a86b80a337e0'
+        '10e4909361b26c9fa0a024e223785726b0dcab6444222c70a1dbea5c149a47291159d9b5fc8ccbf03ad285e6ca5801d913e7bd20e2ddd5024dcadb1c0d1a199b')
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -145,6 +148,7 @@ _package() {
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
   depends=(pahole)
+  provides=(LINUX-HEADERS)
 
   cd $_srcname
   local builddir="$pkgdir/usr/lib/modules/$(<version)/build"
