@@ -1,15 +1,15 @@
 ---
-version: 7.0.0-3
+version: 7.0.0-4
 pkgbase:
   name: python-hacking
   pkgdesc: OpenStack Hacking Guideline Enforcement
   pkgver: 7.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://docs.openstack.org/developer/hacking
   arch:
     - any
   license:
-    - Apache
+    - Apache-2.0
   checkdepends:
     - python-subunit
     - python-stestr
@@ -19,8 +19,11 @@ pkgbase:
     - python-eventlet
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-pbr
     - python-setuptools
+    - python-wheel
   depends:
     - flake8
   source:
@@ -29,4 +32,4 @@ pkgbase:
     - 82cdb3099877b9bba72855a9c4a2729f03ea94d6ba3f4fa1c8d31befccd250abec044b9fe8fd7c13e54b579634f6280b9d3e9e8e237ce85453e9fee51d28aa8d
 pkgname:
   - name: python-hacking
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
