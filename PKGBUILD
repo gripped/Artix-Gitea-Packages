@@ -33,3 +33,4 @@ package() {
   cd hacking
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
+
