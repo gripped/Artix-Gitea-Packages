@@ -1,9 +1,9 @@
 ---
-version: 4.01-1
+version: 4.04-1
 pkgbase:
   name: perl-mail-message
   pkgdesc: container for MIME-encoded message information
-  pkgver: 4.01
+  pkgver: 4.04
   pkgrel: 1
   url: https://search.mcpan.org/dist/Mail-Message
   arch:
@@ -16,6 +16,7 @@ pkgbase:
     - perl-user-identity
     - perl-mailtools
     - perl-mime-types
+    - perl-hash-case
     - perl-io-stringy
     - perl-uri
     - perl-hash-ordered
@@ -23,9 +24,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/Mail-Message-4.01.tar.gz
+    - https://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/Mail-Message-4.04.tar.gz
   sha256sums:
-    - c91f102f459a1a3f2f9f35e9e169e39d904605fc7aee5c5715d76032247c2176
+    - 9915db17c3e0deb4ff4c9065dc2eaf1d3833096937a0d46e573f6f2a76158c54
 pkgname:
   - name: perl-mail-message
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
