@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:81.0.0-1
+    version: 1:82.0.0-1
     packages:
-      - python-setuptools-1:81.0.0-1-any.pkg.tar.zst
+      - python-setuptools-1:82.0.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1:81.0.0-1
