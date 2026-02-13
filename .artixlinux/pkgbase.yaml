@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.59.0-1
+    version: 2.59.0-1.1
     packages:
-      - fastfetch-2.59.0-1-x86_64.pkg.tar.zst
+      - fastfetch-2.59.0-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.58.0-1
