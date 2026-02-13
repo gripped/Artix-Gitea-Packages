@@ -1,10 +1,10 @@
 ---
-version: 3.2.3-5
+version: 3.2.3-6
 pkgbase:
   name: python-qdarkstyle
   pkgdesc: Dark style sheet for QtWidgets application
   pkgver: 3.2.3
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/ColinDuquesnoy/QDarkStyleSheet
   arch:
     - any
@@ -12,11 +12,13 @@ pkgbase:
     - MIT
     - CCPL
   checkdepends:
-    - python-pyqt5
     - python-pytest
     - python-pytest-qt
+    - qt6-tools
   makedepends:
     - python-setuptools
+    - python-build
+    - python-installer
   depends:
     - python-helpdev
     - python-qtpy
@@ -26,4 +28,4 @@ pkgbase:
     - 5c7412cbe2f348ac55284f9869736fb9918e78f00fcd929bfd40e6fd66237224
 pkgname:
   - name: python-qdarkstyle
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
