@@ -1,9 +1,9 @@
 ---
-version: 20260109-1
+version: 20260204-1
 pkgbase:
   name: perl-tidy
   pkgdesc: Parses and beautifies perl source
-  pkgver: 20260109
+  pkgver: 20260204
   pkgrel: 1
   url: https://search.cpan.org/dist/Perl-Tidy
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://www.cpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-20260109.tar.gz
+    - https://www.cpan.org/authors/id/S/SH/SHANCOCK/Perl-Tidy-20260204.tar.gz
   sha256sums:
-    - 76404514505ba0c768a394d4f28ea0691c8899b049258aa545b7042265e14811
+    - 56a1fc2f1f813e49026a0f284b9209a6b2824620993e7598c85b01c444ff0f64
 pkgname:
   - name: perl-tidy
 # generated with artixpkg 0.37.6-1-any
