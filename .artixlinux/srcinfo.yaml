@@ -1,15 +1,17 @@
 ---
-version: 1.4.21-1.1
+version: 1.4.21-1.2
 pkgbase:
   name: m4
   pkgdesc: The GNU macro processor
   pkgver: 1.4.21
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://www.gnu.org/software/m4
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later
+  makedepends:
+    - coreutils
   depends:
     - glibc
     - bash
