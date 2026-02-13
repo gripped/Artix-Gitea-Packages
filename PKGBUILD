@@ -1,4 +1,4 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
+# Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 # Contributor: Adam Walters <abwalters@abwalters.us>
 # Contributor: William Rea <sillywilly@gmail.com>
@@ -6,7 +6,7 @@
 
 pkgname=libatomic_ops
 pkgver=7.8.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Provides semi-portable access to hardware provided atomic memory operations'
 arch=(x86_64)
 url='https://github.com/ivmai/libatomic_ops'
