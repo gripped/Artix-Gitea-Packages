@@ -24,7 +24,7 @@ pkgbase:
   source:
     - https://github.com/fonttools/unicodedata2/archive/17.0.1/unicodedata2-17.0.1.tar.gz
   sha256sums:
-    - 3d2cc9a7360672fbb591aa56f49b21faeed999c241317aff677be6152150fd9e
+    - bbd3e238c163d6a1d7f0d919fb5abd28030660f3d53cad757c8eca4b6239a128
 pkgname:
   - name: python-unicodedata2
 # generated with artixpkg 0.37.6-1-any
