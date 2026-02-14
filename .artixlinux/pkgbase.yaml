@@ -49,10 +49,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 26.2.0-3
+    version: 26.2.0-4
     packages:
-      - libreoffice-fresh-sdk-26.2.0-3-x86_64.pkg.tar.zst
-      - libreoffice-fresh-26.2.0-3-x86_64.pkg.tar.zst
+      - libreoffice-fresh-sdk-26.2.0-4-x86_64.pkg.tar.zst
+      - libreoffice-fresh-26.2.0-4-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 26.2.0-2

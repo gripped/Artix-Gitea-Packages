@@ -1,9 +1,9 @@
 ---
-version: 26.2.0-3
+version: 26.2.0-4
 pkgbase:
   name: libreoffice-fresh
   pkgver: 26.2.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -26,7 +26,6 @@ pkgbase:
     - redland
     - hyphen
     - lpsolve
-    - gcc-libs
     - sh
     - graphite
     - icu
@@ -207,11 +206,12 @@ pkgname:
     pkgdesc: Software Development Kit for LibreOffice Fresh
     depends:
       - libreoffice-fresh
-      - gcc-libs
       - sh
       - make
       - zip
       - gcc
+      - libstdc++
+      - libgcc
       - java-environment
       - glibc
     provides:
@@ -235,7 +235,8 @@ pkgname:
       - redland
       - hyphen
       - lpsolve
-      - gcc-libs
+      - libstdc++
+      - libgcc
       - sh
       - graphite
       - icu
@@ -251,8 +252,6 @@ pkgname:
       - nss
       - clucene
       - hicolor-icon-theme
-      - desktop-file-utils
-      - shared-mime-info
       - libpagemaker
       - libxinerama
       - libabw
