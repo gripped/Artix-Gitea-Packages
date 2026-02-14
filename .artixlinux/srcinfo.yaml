@@ -1,10 +1,10 @@
 ---
-version: 78.2-1
+version: 78.2-2
 pkgbase:
   name: icu
   pkgdesc: International Components for Unicode library
   pkgver: 78.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://icu.unicode.org
   arch:
     - x86_64
@@ -16,8 +16,9 @@ pkgbase:
   makedepends:
     - python
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
+    - libgcc
     - sh
   provides:
     - libicudata.so
@@ -38,4 +39,4 @@ pkgbase:
     - 1178062ccfcf7ecc698c64132b3612e73f9c4b0bbfaa668ae2039f3eb4cb2722d0b08a9f45b057da10def7a308d5c8d14c0c644892e7f11092c9cc488c850ab7
 pkgname:
   - name: icu
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
