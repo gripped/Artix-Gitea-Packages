@@ -8,7 +8,7 @@ pkgname=(
   python-capstone
 )
 pkgver=5.0.7
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Lightweight multi-platform, multi-architecture disassembly framework'
 arch=(x86_64)
 url='https://www.capstone-engine.org/index.html'

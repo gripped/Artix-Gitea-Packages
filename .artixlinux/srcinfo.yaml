@@ -1,10 +1,10 @@
 ---
-version: 5.0.7-2
+version: 5.0.7-2.1
 pkgbase:
   name: capstone
   pkgdesc: Lightweight multi-platform, multi-architecture disassembly framework
   pkgver: 5.0.7
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://www.capstone-engine.org/index.html
   arch:
     - x86_64
