@@ -1,10 +1,10 @@
 ---
-version: 0.0.2-19
+version: 0.0.2-20
 pkgbase:
   name: libzmf
   pkgdesc: a library for import of Zoner drawing and bitmap files
   pkgver: 0.0.2
-  pkgrel: 19
+  pkgrel: 20
   url: https://wiki.documentfoundation.org/DLP/Libraries/libzmf
   arch:
     - x86_64
@@ -19,8 +19,9 @@ pkgbase:
     - libpng
     - zlib
     - icu
-    - gcc-libs
     - glibc
+    - libstdc++
+    - libgcc
   source:
     - https://dev-www.libreoffice.org/src/libzmf/libzmf-0.0.2.tar.xz
     - doxygen-1.14.patch
@@ -29,4 +30,4 @@ pkgbase:
     - aa70e940c77124ac3bd9e5197b323b409551a95ae5098b3872d869025d0bccf9
 pkgname:
   - name: libzmf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
