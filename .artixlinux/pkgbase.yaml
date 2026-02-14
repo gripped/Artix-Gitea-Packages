@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.23.0-1
+    version: 3.24.0-1
     packages:
-      - python-filelock-3.23.0-1-any.pkg.tar.zst
+      - python-filelock-3.24.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 3.20.3-1
