@@ -1,10 +1,10 @@
 ---
-version: 0.13.0-1
+version: 0.13.0-2
 pkgbase:
   name: python-jiter
   pkgdesc: Fast iterable JSON parser
   pkgver: 0.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pydantic/jiter
   arch:
     - x86_64
@@ -19,8 +19,8 @@ pkgbase:
     - python-maturin
     - python-wheel
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - python
   source:
     - https://github.com/pydantic/jiter/archive/v0.13.0/python-jiter-0.13.0.tar.gz
