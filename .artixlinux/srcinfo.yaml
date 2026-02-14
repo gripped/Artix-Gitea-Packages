@@ -1,10 +1,10 @@
 ---
-version: 2026.02.03-1
+version: 2026.02.03-2
 pkgbase:
   name: zathura-pdf-poppler
   pkgdesc: Adds pdf support to zathura by using the poppler engine
   pkgver: 2026.02.03
-  pkgrel: 1
+  pkgrel: 2
   url: https://pwmt.org/projects/zathura-pdf-poppler/
   arch:
     - x86_64
