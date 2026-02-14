@@ -2,11 +2,11 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-filelock
-pkgver=3.20.3
+pkgver=3.23.0
 pkgrel=1
-pkgdesc="A platform independent file lock"
-url="https://github.com/benediktschmitt/py-filelock"
-license=('Unlicense')
+pkgdesc="A platform-independent file lock"
+url="https://github.com/tox-dev/filelock"
+license=('MIT')
 arch=('any')
 depends=('python')
 makedepends=(
@@ -24,19 +24,22 @@ checkdepends=(
   'python-virtualenv'
 )
 source=("git+$url.git#tag=$pkgver")
-b2sums=('50cf3f9a8e0f8154182001f7b23f17babb4c81f36d22f9d5be18d71ed3cb84bf388a224a17d9c36fd4bd391cf9b8aec0cace26f34e28c6c6e42ab5a292bf5e3d')
+b2sums=('7e81a7ce77bce68815745d2e351b635a6bd71a6699e0f22031d0fb8fe907c19ca07897aa9432e30385e1b683aa584ce4cd8b4684c63f3d05bcbb44f42437ec8b')
 
 build() {
-  cd py-filelock
-  python -m build --wheel --no-isolation --skip-dependency-check
+  cd ${pkgname#python-}
+  python -m build --wheel --no-isolation
 }
 
 check() {
-  cd py-filelock
-  PYTHONPATH=src pytest tests
+  cd ${pkgname#python-}
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m pytest
 }
 
 package() {
-  cd py-filelock
+  cd ${pkgname#python-}
   python -m installer --destdir="$pkgdir" dist/*.whl
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
