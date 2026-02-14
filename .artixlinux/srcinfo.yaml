@@ -1,35 +1,38 @@
 ---
-version: 2.15.0-2
+version: 2.16.0-1
 pkgbase:
   name: zint
   pkgdesc: Barcode encoding library supporting over 50 symbologies
-  pkgver: 2.15.0
-  pkgrel: 2
+  pkgver: 2.16.0
+  pkgrel: 1
   url: https://zint.org.uk/
   arch:
     - x86_64
   license:
-    - GPL3
+    - GPL-3.0-or-later
   makedepends:
     - cmake
-    - ninja
+    - git
     - qt6-svg
     - qt6-tools
+  depends:
+    - glibc
   source:
-    - https://downloads.sourceforge.net/zint/zint-2.15.0-src.tar.gz
-    - zint-qt.appdata.xml
+    - git+https://github.com/zint/zint#tag=2.16.0
   sha256sums:
-    - bce37d9b86e6127cac63c8b6267ac421116d4ac086519d726eb724f5462d98c7
-    - 268d1be50b94150f1bdad3d2831d10d68dae0708ea796fc413638d22fcbed2e6
+    - 0bd39dbba01db925e9c50fcd282b36377b9b748a3f0ea9fbc890ccb37b448d4c
 pkgname:
   - name: zint
     depends:
+      - glibc
       - libpng
   - name: zint-qt
     pkgdesc: Zint Barcode Studio GUI
     depends:
-      - hicolor-icon-theme
+      - glibc
+      - gcc-libs
+      - qt6-base
       - qt6-svg
       - qt6-tools
       - zint
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
