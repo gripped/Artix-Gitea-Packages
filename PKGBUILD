@@ -5,37 +5,38 @@
 
 pkgname=snappy
 pkgver=1.2.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A fast compressor/decompressor library'
 arch=('x86_64')
 url="https://github.com/google/snappy"
 license=('BSD-3-Clause')
 depends=(
-  'gcc-libs'
   'glibc'
+  'libstdc++'
 )
 makedepends=(
   'clang'
   'cmake'
+  'git'
   'gtest'
 )
 checkdepends=('zlib')
 provides=('libsnappy.so')
 source=(
-  "$url/archive/$pkgver/$pkgname-$pkgver.tar.gz"
+  "git+${url}.git#tag=${pkgver}"
   "snappy.pc.in"
   "$pkgname-cmake_add_pkgconfig.patch"
   "$pkgname-use_system_gtest.patch"
   "$pkgname-reenable_rtti.patch"
 )
-sha256sums=('90f74bc1fbf78a6c56b3c4a082a05103b3a56bb17bca1a27e052ea11723292dc'
-            '134f06ca0584a1026538d0fb972fc141c008390ecae1806184b721eca1abbc75'
-            '2a204d7d35509ffc290d80c641fcb7e8488c67ca550aa1695493cff12c53156b'
-            '50b31b45511e8907f1319305c102f37631b0fbe509f862b612e70073383658e4'
-            '6ff6970d2a1961aed375a8e5098bf3b7340ff86fe60aff4483dec3400f273372')
+b2sums=('e529079f34d57078351014d958025104f6385c018c7164c1b9aeff75f2213d9fe6eb68fb63d11eff7474b83e08e264d733b83cc39c723d3d6f0c030c5340bed8'
+        '01ded6bce04572813842383996941439fc7869b8f82cd5d13446c62c129c84d6cbb79d41a58c0076aa8687d22633e82a29d3169d33c9a9d6280848809177a89d'
+        '5b4df9ff9534492bb4f14ace36353b7d2536a94e378f348d011a8578847e16946bc9e34e38657502e2732ea2953ef33d7d83fc24829412e0fbf9d4574bffcabe'
+        '0c751bd1d57f70786c07c3579248db0d912d98cbcf2327eabbefe630dea45a1119db8f3bb190e718733f53b754080c4b335cd70ace944957ec81016e6087c8df'
+        '8d8ae2b50e11a5945dac97d00932de17f05f3df0d9db202bbcf85c20b2c4a69ea4d28b82cbc762e38f03f5ab2d70abccedfd05648f00e7f5d20ff64d6c35f36b')
 
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   cp ../snappy.pc.in .
   patch -Np1 < ../$pkgname-cmake_add_pkgconfig.patch # https://bugs.archlinux.org/task/71246
   patch -Np1 < ../$pkgname-use_system_gtest.patch
@@ -43,8 +44,7 @@ prepare() {
 }
 
 build() {
-  cd $pkgname-$pkgver
-  cmake -S . -B build \
+  cmake -S $pkgname -B build \
     -D CMAKE_BUILD_TYPE=None \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -W no-dev \
@@ -55,12 +55,10 @@ build() {
 }
 
 check() {
-  cd $pkgname-$pkgver
   cmake --build build --target test
 }
 
 package() {
-  cd $pkgname-$pkgver
   DESTDIR="$pkgdir" cmake --install build
-  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" COPYING
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" $pkgname/COPYING
 }
