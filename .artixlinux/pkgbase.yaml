@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.42.44-1
+    version: 1.42.49-1
     packages:
-      - python-botocore-1.42.44-1-any.pkg.tar.zst
+      - python-botocore-1.42.49-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.42.44-1
