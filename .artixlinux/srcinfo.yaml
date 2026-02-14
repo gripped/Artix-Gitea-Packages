@@ -1,11 +1,11 @@
 ---
-version: 12.3.2-1
+version: 12.3.2-2
 pkgbase:
   name: qpdf
   pkgdesc:
     QPDF: A Content-Preserving PDF Transformation System
   pkgver: 12.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/qpdf/qpdf
   arch:
     - x86_64
@@ -39,7 +39,8 @@ pkgname:
       - gnutls
       - openssl
       - glibc
-      - gcc-libs
+      - libstdc++
+      - libgcc
   - name: qpdf-docs
     pkgdesc:
       QPDF: A Content-Preserving PDF Transformation System (documentation)
