@@ -9,22 +9,19 @@ shopt -s extglob
 
 pkgbase=python
 pkgname=(python python-tests)
-pkgver=3.14.2
-pkgrel=2
+pkgver=3.14.3
+pkgrel=1
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
 arch=('x86_64')
 license=('PSF-2.0')
 url="https://www.python.org/"
-depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal')
+depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal' 'zstd')
 makedepends=('tk' 'sqlite' 'bluez-libs' 'llvm' 'gdb' 'xorg-server-xvfb' 'ttf-font')
-options=(debug)
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"
-        EXTERNALLY-MANAGED
-        fix-pgo-test-generators.patch)
-sha512sums=('165256b4c713e0262767cd7a2c65622f3f086423524646a39bfa64912376be9e5b70863d5a3c95224b516152d0b79e7ccbfe2f2cf35b809d132f2c38ebb3ab3b'
-            '62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0'
-            '54116b82011ebcd1e3cef965a95fad73d6b959906129bd9423a16192e62f2ce4703e309ca338a5e011a2fcbe45e50377fe57dcddd874aa7cdfb0eb27d58bf69b')
+        EXTERNALLY-MANAGED)
+sha512sums=('9fd875f7a1d96d64e7150913ef38b72b0aeecfcbc24ba46967e57b6495146b0cba6b940c273561fc4d656b6d0ce2e23ffb7bd32bcd0b61fd59a6d90585998c07'
+            '62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0')
 validpgpkeys=('0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D'  # Ned Deily (Python release signing key) <nad@python.org>
               'E3FF2839C048B25C084DEBE9B26995E310250568'  # Łukasz Langa (GPG langa.pl) <lukasz@langa.pl>
               'A035C8C19219BA821ECEA86B64E628F8D684696D'  # Pablo Galindo Salgado <pablogsal@gmail.com>
@@ -37,7 +34,6 @@ prepare() {
   # rather than copies shipped in the tarball
   rm -r Modules/expat
   rm -r Modules/_decimal/libmpdec
-  patch -Np 1 -i ../fix-pgo-test-generators.patch
 }
 
 build() {
@@ -77,14 +73,6 @@ check() {
   # test_tkk: AssertionError: Tuples differ: (0,) != ('0',)
   # test_ssl: flaky tests issues
 
-  # AssertionError: KeyboardInterrupt not raised
-  # test_pidfd_send_signal
-  # test_keyboard_interrupt_exit_code
-  # test_sigint
-  # test_interrupt
-  # test_wait_result
-  # test_shared_memory_SharedMemoryServer_ignores_sigint
-
   cd Python-${pkgver}
 
   # Obtain next free server number for xvfb-run; this even works in a chroot environment.
@@ -100,8 +88,6 @@ check() {
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
       -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl
-      #-x test_pidfd_send_signal -x test_keyboard_interrupt_exit_code -x test_sigint -x test_interrupt -x test_wait_result \
-      #-x test_shared_memory_SharedMemoryServer_ignores_sigint -x test_processes -x test_multiprocessing_forkserver -x test_multiprocessing_fork
 }
 
 package_python() {
