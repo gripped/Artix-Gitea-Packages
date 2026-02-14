@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 25.8.4-1
+    version: 25.8.4-3
     packages:
-      - libreoffice-still-sdk-25.8.4-1-x86_64.pkg.tar.zst
-      - libreoffice-still-25.8.4-1-x86_64.pkg.tar.zst
+      - libreoffice-still-sdk-25.8.4-3-x86_64.pkg.tar.zst
+      - libreoffice-still-25.8.4-3-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

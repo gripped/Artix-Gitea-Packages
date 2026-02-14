@@ -1,9 +1,9 @@
 ---
-version: 25.8.4-1
+version: 25.8.4-3
 pkgbase:
   name: libreoffice-still
   pkgver: 25.8.4
-  pkgrel: 1
+  pkgrel: 3
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -26,7 +26,6 @@ pkgbase:
     - redland
     - hyphen
     - lpsolve
-    - gcc-libs
     - sh
     - graphite
     - icu
@@ -54,8 +53,6 @@ pkgbase:
     - cppunit
     - beanshell
     - clucene
-    - qt5-base
-    - qt5-x11extras
     - qt6-base
     - qt6-multimedia
     - kio
@@ -197,19 +194,20 @@ pkgbase:
     - f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140
     - 3f15bba96d017f24532411701ddd5c5957c57935fdf8e3030486f086e15fc2fa
     - d0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879
-    - 9fb33dbc3ffeb6af2ea7341b58242142d4eca903584c21c5f4b44ff27fbf5b5f
-    - 512355b5ef646791089da8c2b35cf8b019673c0c8a58685962af3b5d9eb5d6bb
+    - d7aae12edf82a2a20192ef153ca5132450ae0c6cb9df829b271a2c489c700641
+    - e1d7887e815970f3d21e07f58a7a3a4efc823768a1628307c516f14a506ae7dc
     - 04c3e77cd357b5f6ff2c53eb398a902b0219b8bfe9f169eae9c70748cd46d9d0
 pkgname:
   - name: libreoffice-still-sdk
     pkgdesc: Software Development Kit for LibreOffice maintenance branch
     depends:
       - libreoffice-still
-      - gcc-libs
       - sh
       - make
       - zip
       - gcc
+      - libstdc++
+      - libgcc
       - java-environment
       - glibc
     provides:
@@ -233,7 +231,8 @@ pkgname:
       - redland
       - hyphen
       - lpsolve
-      - gcc-libs
+      - libstdc++
+      - libgcc
       - sh
       - graphite
       - icu
@@ -249,8 +248,6 @@ pkgname:
       - nss
       - clucene
       - hicolor-icon-theme
-      - desktop-file-utils
-      - shared-mime-info
       - libpagemaker
       - libxinerama
       - libabw
@@ -310,7 +307,6 @@ pkgname:
       - 'coin-or-mp:       required by the Calc solver'
       - 'gtk3:             for GTK3 integration'
       - 'gtk4:             for GTK4 integration (experimental)'
-      - 'qt5-x11extras:    for Qt5 desktop integration'
       - 'kio:              for KF6 KDE desktop integration'
       - 'qt6-multimedia:   for Qt6 desktop integration'
       - 'rhino:            for JavaScript support'
