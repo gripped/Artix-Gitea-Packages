@@ -49,11 +49,13 @@ pkgbase:
     - '!lto'
   source:
     - git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v6.18?signed
+    - d70f79fef65810faf64dbae1f3a1b5623cdb2345.patch
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
     - 24f57ef27799392461ce0e1d595f96412af7ade4bfd41625e563fd797743d06a
+    - bcb4e391a2ffa6babc5ad9222bd5bd4eef7a330188f9c3955d23af4053d32434
 pkgname:
   - name: bootconfig
     pkgdesc: Apply, delete or show boot config to initrd

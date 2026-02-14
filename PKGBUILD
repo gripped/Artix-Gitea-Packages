@@ -44,12 +44,14 @@ makedepends+=('llvm' 'clang')
 makedepends+=('libnl')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
+        "d70f79fef65810faf64dbae1f3a1b5623cdb2345.patch"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('24f57ef27799392461ce0e1d595f96412af7ade4bfd41625e563fd797743d06a')
+sha256sums=('24f57ef27799392461ce0e1d595f96412af7ade4bfd41625e563fd797743d06a'
+            'bcb4e391a2ffa6babc5ad9222bd5bd4eef7a330188f9c3955d23af4053d32434')
 
 prepare() {
   cd linux
@@ -179,7 +181,7 @@ package_perf() {
     prefix=/usr \
     lib=lib/perf \
     perfexecdir=lib/perf \
-    EXTRA_CFLAGS=' -Wno-error=bad-function-cast -Wno-error=declaration-after-statement -Wno-error=switch-enum' \
+    EXTRA_CFLAGS=' -Wno-error=bad-function-cast -Wno-error=declaration-after-statement -Wno-error=switch-enum -Wno-error=discarded-qualifiers' \
     NO_SDT=1 \
     BUILD_BPF_SKEL=1 \
     PYTHON=python \
