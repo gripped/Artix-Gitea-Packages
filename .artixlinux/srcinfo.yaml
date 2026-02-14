@@ -1,10 +1,10 @@
 ---
-version: 2026.02.03-1
+version: 2026.02.03-2
 pkgbase:
   name: zathura-djvu
   pkgdesc: DjVu support for Zathura
   pkgver: 2026.02.03
-  pkgrel: 1
+  pkgrel: 2
   url: https://pwmt.org/projects/zathura-djvu/
   arch:
     - x86_64
