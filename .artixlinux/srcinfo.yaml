@@ -1,10 +1,10 @@
 ---
-version: 3.8.12-1
+version: 3.8.12-2
 pkgbase:
   name: gnutls
   pkgdesc: A library which provides a secure layer over a reliable transport layer
   pkgver: 3.8.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnutls.org/
   arch:
     - x86_64
@@ -18,12 +18,13 @@ pkgbase:
     - gtk-doc
   depends:
     - glibc
-    - gcc-libs
     - gmp
     - libtasn1
     - zlib
     - nettle
     - leancrypto
+    - libstdc++
+    - libgcc
     - libp11-kit
     - libidn2
     - zstd
