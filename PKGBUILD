@@ -4,7 +4,7 @@
 pkgbase=libstaroffice
 pkgname=(libstaroffice libstaroffice-doc)
 pkgver=0.0.7
-pkgrel=4
+pkgrel=5
 pkgdesc="filter for old StarOffice documents(.sdc, .sdw, ...) based on librevenge"
 url="https://github.com/fosnola/libstaroffice"
 arch=('x86_64')
@@ -12,6 +12,11 @@ license=('LGPL-2.1-or-later OR MPL-2.0')
 makedepends=('doxygen' 'librevenge' 'zlib' 'gcc-libs' 'glibc')
 source=(https://github.com/fosnola/$pkgname/releases/download/$pkgver/libstaroffice-$pkgver.tar.xz)
 sha256sums=('f94fb0ad8216f97127bedef163a45886b43c62deac5e5b0f5e628e234220c8db')
+
+prepare() {
+  cd $pkgname-$pkgver
+  autoreconf -fiv
+}
 
 build() {
   cd "${pkgbase}-${pkgver}"
@@ -25,7 +30,7 @@ check() {
 }
 
 package_libstaroffice() {
-  depends=('librevenge' 'zlib' 'gcc-libs' 'glibc')
+  depends=('librevenge' 'zlib' 'glibc' 'libstdc++' 'libgcc')
 
   cd "${pkgbase}-${pkgver}"
   make DESTDIR="${pkgdir}" install-exec install-pkgconfDATA
