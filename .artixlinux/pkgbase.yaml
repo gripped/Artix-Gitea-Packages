@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.0.0-3
+    version: 3.0.1-1
     packages:
-      - zxing-cpp-3.0.0-3-x86_64.pkg.tar.zst
+      - zxing-cpp-3.0.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.3.0-5
