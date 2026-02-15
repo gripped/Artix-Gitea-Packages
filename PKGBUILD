@@ -5,7 +5,7 @@
 
 pkgname=keyd
 pkgver=2.6.0
-pkgrel=2
+pkgrel=5
 pkgdesc="A key remapping daemon for linux"
 arch=(x86_64)
 url="https://github.com/rvaiya/keyd"
@@ -27,11 +27,18 @@ build() {
     make PREFIX=/usr
 }
 
-# TODO: Work with upstream to make tests more suitable for PKGBUILDS
+check() {
+    cd "$pkgname-$pkgver"
+    make test-io
+}
 
 package() {
     cd "$pkgname-$pkgver"
     make PREFIX=/usr DESTDIR="$pkgdir/" FORCE_SYSTEMD=1 install
+
+    # Delete the test-io binary produced during check()
+    # https://gitlab.archlinux.org/archlinux/packaging/packages/keyd/-/issues/4
+    rm -fv "$pkgdir/usr/bin/test-io"
 
     install -Dm644 ../keyd.sysusers "$pkgdir/usr/lib/sysusers.d/keyd.conf"
     install -Dm755 scripts/dump-xkb-config -t "$pkgdir/usr/share/keyd/"

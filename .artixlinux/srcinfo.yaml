@@ -1,10 +1,10 @@
 ---
-version: 2.6.0-2
+version: 2.6.0-5
 pkgbase:
   name: keyd
   pkgdesc: A key remapping daemon for linux
   pkgver: 2.6.0
-  pkgrel: 2
+  pkgrel: 5
   url: https://github.com/rvaiya/keyd
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - b3fa546c31f61be824a84a33af5c723692e2cedd4e5f87ff655e90f33227395d
 pkgname:
   - name: keyd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
