@@ -2,7 +2,7 @@
 
 pkgbase=artools
 pkgname=('artools-base' 'artools-pkg' 'artools-iso')
-pkgver=0.37.6
+pkgver=0.38
 pkgrel=1
 pkgdesc='Development tools for Artix'
 arch=('any')
@@ -19,7 +19,7 @@ groups=(
 )
 # checkdepends=('shellcheck')
 source=("git+${url}.git#tag=${pkgver}")
-sha256sums=('c91f7e6d4fc63a0f399836df9e6d3461e90e983ae5cf85f29ffb16e9fd2713fd')
+sha256sums=('90dba7bfc176c9bd9c06a459c505b94efa74b5877f23a34dc69e899e464ed66f')
 
 _patches=(
 )
@@ -69,7 +69,7 @@ package_artools-pkg() {
         'binutils'
         'bzr'
         'diffutils'
-	'ed'
+        'ed'
         'findutils'
         'git'
         'go-yq'
