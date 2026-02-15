@@ -29,7 +29,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.28.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -319,6 +319,7 @@ package_gstreamer() {
     libunwind
   )
   optdepends=("python: gst-plugins-doc-cache-generator")
+  conflicts=('gstreamer-vaapi<=1.26.10-5')
   install=gstreamer.install
 
   meson install -C build --destdir "$srcdir/root"
@@ -1071,6 +1072,7 @@ package_gst-plugin-va() {
     libgudev
     libva
   )
+  replaces=('gstreamer-vaapi<=1.26.10-5')
 
   cd root; local files=(
     usr/lib/gstreamer-1.0/libgstva.so
