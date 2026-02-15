@@ -1,10 +1,10 @@
 ---
-version: 3.10.0-5
+version: 3.11.1-1
 pkgbase:
   name: python-asgiref
   pkgdesc: Reference ASGI adapters and channel layers
-  pkgver: 3.10.0
-  pkgrel: 5
+  pkgver: 3.11.1
+  pkgrel: 1
   url: http://github.com/django/asgiref
   arch:
     - any
@@ -14,13 +14,16 @@ pkgbase:
     - python-pytest
     - python-pytest-asyncio
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
-    - https://pypi.io/packages/source/a/asgiref/asgiref-3.10.0.tar.gz
+    - https://pypi.io/packages/source/a/asgiref/asgiref-3.11.1.tar.gz
   sha256sums:
-    - d89f2d8cd8b56dada7d52fa7dc8075baa08fb836560710d38c292a7a3f78c04e
+    - 5f184dc43b7e763efe848065441eac62229c9f7b0475f41f80e207a114eda4ce
 pkgname:
   - name: python-asgiref
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
