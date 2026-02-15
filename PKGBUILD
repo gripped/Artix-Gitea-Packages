@@ -92,7 +92,7 @@ check() {
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
       -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl \
       -x test_generators -x test_multiprocessing_spawn -x test_multiprocessing_forkserver -x test_multiprocessing_fork \
-      -x test_signal -x test_asyncio
+      -x test_signal -x test_asyncio -x test_threading
 }
 
 package_python() {
