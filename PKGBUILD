@@ -3,7 +3,7 @@
 
 pkgname=mold
 pkgver=2.40.4
-pkgrel=1
+pkgrel=2
 pkgdesc='A Modern Linker'
 arch=('x86_64')
 url='https://github.com/rui314/mold'
@@ -11,8 +11,8 @@ license=('MIT')
 # xxhash is bundled
 depends=(
   glibc
-  gcc-libs
   libblake3
+  libstdc++
   mimalloc
   tbb
   zlib

@@ -1,10 +1,10 @@
 ---
-version: 2.40.4-1
+version: 2.40.4-2
 pkgbase:
   name: mold
   pkgdesc: A Modern Linker
   pkgver: 2.40.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rui314/mold
   arch:
     - x86_64
@@ -20,8 +20,8 @@ pkgbase:
     - python
   depends:
     - glibc
-    - gcc-libs
     - libblake3
+    - libstdc++
     - mimalloc
     - tbb
     - zlib
@@ -34,4 +34,4 @@ pkgbase:
     - 35ef221bbe5dd7873f1983b3cf2b3db0fe0224618ba59df99e03eb858e8a24455471e4ea192df09c24170ddc1fe98e93a8e13907e40a1e8bdf83252ab4a3da16
 pkgname:
   - name: mold
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.6-1-any
