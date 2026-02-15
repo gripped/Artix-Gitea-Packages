@@ -1,10 +1,10 @@
 ---
-version: 1.0-1
+version: 1.0-2
 pkgbase:
   name: gettext
   pkgdesc: GNU internationalization library
   pkgver: 1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/gettext/
   arch:
     - x86_64
@@ -18,7 +18,12 @@ pkgbase:
   depends:
     - acl
     - attr
-    - gcc-libs
+    - curl
+    - glibc
+    - json-c
+    - libgcc
+    - libgomp
+    - libstdc++
     - gnulib-l10n
     - libunistring
     - libxml2
