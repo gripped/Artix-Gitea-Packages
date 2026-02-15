@@ -1,21 +1,24 @@
 ---
-version: 0.33-5
+version: 0.33-6
 pkgbase:
   name: python-xlib
   pkgdesc: A fully functional X client library for Python programs
   pkgver: 0.33
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/python-xlib/python-xlib
   arch:
     - any
   license:
-    - LGPL
+    - LGPL-2.1-or-later
   checkdepends:
     - xorg-xauth
     - xorg-server-xvfb
-    - python-nose
+    - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools-scm
+    - python-wheel
   depends:
     - python-six
   source:
@@ -26,4 +29,4 @@ pkgbase:
     - 39d69e698bfd14dce82d36fc5cd5ec8968630df13e3f7425626bdf1bdcbaef4e
 pkgname:
   - name: python-xlib
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
