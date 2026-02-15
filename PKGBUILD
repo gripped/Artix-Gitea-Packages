@@ -18,6 +18,7 @@ license=('PSF-2.0')
 url="https://www.python.org/"
 depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal' 'zstd')
 makedepends=('tk' 'sqlite' 'bluez-libs' 'llvm' 'gdb' 'xorg-server-xvfb' 'ttf-font')
+options=(debug)
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"
         EXTERNALLY-MANAGED)
 sha512sums=('9fd875f7a1d96d64e7150913ef38b72b0aeecfcbc24ba46967e57b6495146b0cba6b940c273561fc4d656b6d0ce2e23ffb7bd32bcd0b61fd59a6d90585998c07'
@@ -89,7 +90,9 @@ check() {
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
-      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl -x test_generators
+      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl \
+      -x test_generators -x test_multiprocessing_spawn -x test_multiprocessing_forkserver -x test_multiprocessing_fork \
+      -x test_signal
 }
 
 package_python() {

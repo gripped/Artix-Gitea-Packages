@@ -30,6 +30,8 @@ pkgbase:
     - tzdata
     - mpdecimal
     - zstd
+  options:
+    - debug
   source:
     - https://www.python.org/ftp/python/3.14.3/Python-3.14.3.tar.xz
     - EXTERNALLY-MANAGED
