@@ -27,7 +27,7 @@ pkgname=(
   qemu-{base,desktop,emulators-full,full}
 )
 pkgver=10.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A generic and open source machine emulator and virtualizer"
 arch=(x86_64)
 url="https://www.qemu.org/"
@@ -66,7 +66,7 @@ makedepends=(
   curl
   dtc
   fuse3
-  gcc-libs
+  libgcc
   gdk-pixbuf2
   glib2
   glib2-devel
@@ -159,7 +159,7 @@ validpgpkeys=('CEACC9E15534EBABB82D3FA03353C9CEF108B584') # Michael Roth <fluksh
 _qemu_system_deps=(
   capstone
   fuse3
-  gcc-libs
+  libgcc
   glibc
   glib2 libgio-2.0.so libglib-2.0.so libgmodule-2.0.so
   gnutls
@@ -391,7 +391,7 @@ package_qemu-common() {
     --preserve-argv0 yes
   )
 
-  depends=(gcc-libs glibc glib2 libglib-2.0.so libgmodule-2.0.so hicolor-icon-theme libcap-ng libcap-ng.so)
+  depends=(glibc glib2 libgcc libglib-2.0.so libgmodule-2.0.so hicolor-icon-theme libcap-ng libcap-ng.so)
   backup=(
     etc/$pkgbase/bridge.conf
     etc/sasl2/$pkgbase.conf
@@ -635,14 +635,14 @@ package_qemu-audio-alsa() {
 
 package_qemu-audio-dbus() {
   pkgdesc="QEMU D-Bus audio driver"
-  depends=(gcc-libs glib2 libgio-2.0.so libgobject-2.0.so libglib-2.0.so glibc qemu-common=$pkgver-$pkgrel)
+  depends=(glib2 libgio-2.0.so libgcc libgobject-2.0.so libglib-2.0.so glibc qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-audio-jack() {
   pkgdesc="QEMU JACK audio driver"
-  depends=(gcc-libs glibc jack libjack.so qemu-common=$pkgver-$pkgrel)
+  depends=(glibc jack libgcc libjack.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -663,7 +663,7 @@ package_qemu-audio-pa() {
 
 package_qemu-audio-pipewire() {
   pkgdesc="QEMU PipeWire audio driver"
-  depends=(gcc-libs glibc libpipewire libpipewire-0.3.so qemu-common=$pkgver-$pkgrel)
+  depends=(glibc libgcc libpipewire libpipewire-0.3.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -684,7 +684,7 @@ package_qemu-audio-spice() {
 
 package_qemu-block-curl() {
   pkgdesc="QEMU curl block driver"
-  depends=(curl libcurl.so gcc-libs glibc qemu-common=$pkgver-$pkgrel)
+  depends=(curl libcurl.so glibc libgcc qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -698,35 +698,35 @@ package_qemu-block-dmg() {
 
 package_qemu-block-gluster() {
   pkgdesc="QEMU Gluster block driver"
-  depends=(gcc-libs glibc glusterfs qemu-common=$pkgver-$pkgrel)
+  depends=(glibc glusterfs libgcc qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-block-iscsi() {
   pkgdesc="QEMU iSCSI block driver"
-  depends=(gcc-libs glibc libiscsi qemu-common=$pkgver-$pkgrel)
+  depends=(glibc libgcc libiscsi qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-block-nfs() {
   pkgdesc="QEMU NFS block driver"
-  depends=(gcc-libs glibc libnfs qemu-common=$pkgver-$pkgrel)
+  depends=(glibc libgcc libnfs qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-block-ssh() {
   pkgdesc="QEMU SSH block driver"
-  depends=(gcc-libs glibc libssh libssh.so qemu-common=$pkgver-$pkgrel)
+  depends=(glibc libgcc libssh libssh.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-chardev-baum() {
   pkgdesc="QEMU Baum chardev driver"
-  depends=(brltty libbrlapi.so gcc-libs glibc qemu-common=$pkgver-$pkgrel)
+  depends=(brltty libbrlapi.so glibc libgcc qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -746,7 +746,7 @@ package_qemu-docs() {
 
 package_qemu-guest-agent() {
   pkgdesc="QEMU Guest Agent"
-  depends=(gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc liburing liburing.so numactl libnuma.so sh libudev libudev.so)
+  depends=(glib2 libglib-2.0.so libgcc libgmodule-2.0.so glibc liburing liburing.so numactl libnuma.so sh libudev libudev.so)
   backup=(
     etc/$pkgbase/$pkgbase-ga.conf
     etc/$pkgbase/fsfreeze-hook
@@ -762,7 +762,7 @@ package_qemu-guest-agent() {
 
 package_qemu-hw-display-qxl() {
   pkgdesc="QEMU QXL display device"
-  depends=(gcc-libs glibc pixman libpixman-1.so qemu-common=$pkgver-$pkgrel qemu-ui-spice-core=$pkgver-$pkgrel spice libspice-server.so)
+  depends=(glibc pixman libgcc libpixman-1.so qemu-common=$pkgver-$pkgrel qemu-ui-spice-core=$pkgver-$pkgrel spice libspice-server.so)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -776,14 +776,14 @@ package_qemu-hw-display-virtio-gpu() {
 
 package_qemu-hw-display-virtio-gpu-rutabaga() {
   pkgdesc="QEMU virtio-gpu-rutabaga display device"
-  depends=(gcc-libs glibc pixman libpixman-1.so qemu-common=$pkgver-$pkgrel rutabaga-ffi)
+  depends=(glibc pixman libgcc libpixman-1.so qemu-common=$pkgver-$pkgrel rutabaga-ffi)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-hw-display-virtio-gpu-gl() {
   pkgdesc="QEMU virtio-gpu-gl display device"
-  depends=(gcc-libs glibc qemu-common=$pkgver-$pkgrel virglrenderer)
+  depends=(glibc libgcc qemu-common=$pkgver-$pkgrel virglrenderer)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1036,7 +1036,7 @@ package_qemu-system-xtensa() {
 
 package_qemu-hw-uefi-vars() {
   pkgdesc="QEMU UEFI vars handling"
-  depends=(gcc-libs glibc gnutls qemu-common=$pkgver-$pkgrel)
+  depends=(glibc gnutls libgcc qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1050,28 +1050,28 @@ package_qemu-hw-usb-host() {
 
 package_qemu-hw-usb-redirect() {
   pkgdesc="QEMU usbredir device"
-  depends=(gcc-libs glibc qemu-common=$pkgver-$pkgrel usbredir)
+  depends=(glibc libgcc qemu-common=$pkgver-$pkgrel usbredir)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-hw-usb-smartcard() {
   pkgdesc="QEMU USB smartcard device"
-  depends=(gcc-libs libcacard glib2 libglib-2.0.so glibc qemu-common=$pkgver-$pkgrel)
+  depends=(libcacard glib2 libgcc libglib-2.0.so glibc qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-img() {
   pkgdesc="QEMU tooling for manipulating disk images"
-  depends=(fuse3 gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc gnutls libaio liburing liburing.so numactl libnuma.so pam libpam.so zlib zstd libzstd.so)
+  depends=(fuse3 glib2 libgcc libglib-2.0.so libgmodule-2.0.so glibc gnutls libaio liburing liburing.so numactl libnuma.so pam libpam.so zlib zstd libzstd.so)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-pr-helper() {
   pkgdesc="QEMU persistent reservation utility"
-  depends=(gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc gnutls libcap-ng libcap-ng.so liburing liburing.so multipath-tools numactl libnuma.so pam libpam.so qemu-common=$pkgver-$pkgrel libudev)
+  depends=(glib2 libgcc libglib-2.0.so libgmodule-2.0.so glibc gnutls libcap-ng libcap-ng.so liburing liburing.so multipath-tools numactl libnuma.so pam libpam.so qemu-common=$pkgver-$pkgrel libudev)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1085,7 +1085,7 @@ package_qemu-tests() {
 
 package_qemu-tools() {
   pkgdesc="QEMU tools"
-  depends=(curl libcurl.so gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc libxkbcommon libxkbcommon.so python qemu-common=$pkgver-$pkgrel)
+  depends=(curl libcurl.so glib2 libgcc libglib-2.0.so libgmodule-2.0.so glibc libxkbcommon libxkbcommon.so python qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   install -vDm 644 $pkgbase-$pkgver/scripts/dump-guest-memory.py -t "$pkgdir/usr/share/$pkgbase/"
   install -vDm 755 $pkgbase-$pkgver/scripts/simpletrace.py -t "$pkgdir/usr/share/$pkgbase/"
@@ -1097,14 +1097,14 @@ package_qemu-tools() {
 
 package_qemu-ui-curses() {
   pkgdesc="QEMU curses UI driver"
-  depends=(gcc-libs glib2 libglib-2.0.so glibc ncurses libncursesw.so qemu-common=$pkgver-$pkgrel)
+  depends=(glib2 libgcc libglib-2.0.so glibc ncurses libncursesw.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-ui-dbus() {
   pkgdesc="QEMU D-Bus UI driver"
-  depends=(gcc-libs glib2 libgio-2.0.so libgobject-2.0.so libglib-2.0.so glibc libepoxy pixman libpixman-1.so qemu-common=$pkgver-$pkgrel)
+  depends=(glib2 libgcc libgio-2.0.so libgobject-2.0.so libglib-2.0.so glibc libepoxy pixman libpixman-1.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1137,7 +1137,7 @@ package_qemu-ui-gtk() {
 
 package_qemu-ui-opengl() {
   pkgdesc="QEMU OpenGL UI driver"
-  depends=(gcc-libs glibc libepoxy mesa pixman libpixman-1.so qemu-common=$pkgver-$pkgrel)
+  depends=(glibc libgcc libepoxy mesa pixman libpixman-1.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1158,14 +1158,14 @@ package_qemu-ui-spice-app() {
 
 package_qemu-ui-spice-core() {
   pkgdesc="QEMU spice core UI driver"
-  depends=(gcc-libs glibc pixman libpixman-1.so qemu-common=$pkgver-$pkgrel qemu-ui-opengl=$pkgver-$pkgrel spice libspice-server.so)
+  depends=(glibc pixman libgcc libpixman-1.so qemu-common=$pkgver-$pkgrel qemu-ui-opengl=$pkgver-$pkgrel spice libspice-server.so)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
 
 package_qemu-user() {
   pkgdesc="QEMU user mode emulation"
-  depends=(capstone gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc gnutls libelf liburing liburing.so numactl libnuma.so qemu-common=$pkgver-$pkgrel zlib)
+  depends=(capstone glib2 libgcc libglib-2.0.so libgmodule-2.0.so glibc gnutls libelf liburing liburing.so numactl libnuma.so qemu-common=$pkgver-$pkgrel zlib)
   optdepends=('qemu-user-binfmt: for binary format rules')
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
@@ -1198,7 +1198,7 @@ package_qemu-user-static-binfmt() {
 
 package_qemu-vhost-user-gpu() {
   pkgdesc="QEMU vhost-user-gpu display device"
-  depends=(gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc pixman libepoxy libpixman-1.so mesa numactl libnuma.so qemu-common=$pkgver-$pkgrel virglrenderer)
+  depends=(glib2 libgcc libglib-2.0.so libgmodule-2.0.so glibc pixman libepoxy libpixman-1.so mesa numactl libnuma.so qemu-common=$pkgver-$pkgrel virglrenderer)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
@@ -1207,7 +1207,7 @@ package_qemu-vmsr-helper() {
   pkgdesc="QEMU persistent reservation utility"
   # NOTE: The qemu-vmsr-helper is only available on the x86 architecture.
   arch=(x86_64)
-  depends=(gcc-libs glib2 libglib-2.0.so libgmodule-2.0.so glibc gnutls libcap-ng libcap-ng.so liburing liburing.so numactl libnuma.so pam libpam.so qemu-common=$pkgver-$pkgrel)
+  depends=(glib2 libgcc libglib-2.0.so libgmodule-2.0.so glibc gnutls libcap-ng libcap-ng.so liburing liburing.so numactl libnuma.so pam libpam.so qemu-common=$pkgver-$pkgrel)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
