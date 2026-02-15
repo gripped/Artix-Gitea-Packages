@@ -1,9 +1,9 @@
 ---
-version: 6.22.0-1
+version: 6.23.0-1
 pkgbase:
   name: kfilemetadata
   pkgdesc: A library for extracting file metadata
-  pkgver: 6.22.0
+  pkgver: 6.23.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -39,15 +39,15 @@ pkgbase:
     - 'kdegraphics-mobipocket: MOBI extractor'
     - 'libappimage: AppImage extractor'
   source:
-    - https://download.kde.org/stable/frameworks/6.22/kfilemetadata-6.22.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.22/kfilemetadata-6.22.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.23/kfilemetadata-6.23.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.23/kfilemetadata-6.23.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 58e594fdb77883d684bd699731ed57ff24e8970c13c2a1bdb470f5dca84fb2bd
+    - 4e99cd8dc1fd784589c5b173f076bd5655eca2908fb61a31cb5404e1c7f64a88
     - SKIP
 pkgname:
   - name: kfilemetadata
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
