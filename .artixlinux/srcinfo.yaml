@@ -1,0 +1,29 @@
+---
+version: 0.0.5-4
+pkgbase:
+  name: librevenge
+  pkgdesc: library for REVerses ENGineered formats filters
+  pkgver: 0.0.5
+  pkgrel: 4
+  url: https://sf.net/p/libwpd/librevenge/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later OR MPL-2.0
+    - BSD-3-Clause
+  makedepends:
+    - boost
+    - doxygen
+    - cppunit
+  depends:
+    - zlib
+    - glibc
+    - libstdc++
+    - libgcc
+  source:
+    - https://sourceforge.net/projects/libwpd/files/librevenge/librevenge-0.0.5/librevenge-0.0.5.tar.xz
+  sha256sums:
+    - 106d0c44bb6408b1348b9e0465666fa83b816177665a22cd017e886c1aaeeb34
+pkgname:
+  - name: librevenge
+# generated with artixpkg 0.37.6-1-any
