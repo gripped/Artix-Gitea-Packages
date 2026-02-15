@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Marcus Ben Spencer <marcus@marcusspencer.xyz>
 # Contributor: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=llhttp
-pkgver=9.3.0
-pkgrel=1.1
+pkgver=9.3.1
+pkgrel=1
 pkgdesc='Port of http_parser to llparse'
 arch=(x86_64)
 url='https://llhttp.org'
@@ -16,7 +15,7 @@ makedepends=(cmake
              npm
              ts-node)
 source=(git+https://github.com/nodejs/llhttp#tag=v$pkgver)
-sha256sums=('e50bb063f12869f5af99afb991bb3cad5fcebb1e28d82be09b6b9616ac894920')
+sha256sums=('b09cc993e0c9941257441b51b657c23542e01c9607ce2f38f8667ebdeb0bfb65')
 
 build() {
   cd $pkgname
