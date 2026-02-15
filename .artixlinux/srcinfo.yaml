@@ -1,10 +1,10 @@
 ---
-version: 2.4.1-3
+version: 2.4.1-4
 pkgbase:
   name: lib3mf
   pkgdesc: Implementation of the 3D Manufacturing Format file standard
   pkgver: 2.4.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/3MFConsortium/lib3mf
   arch:
     - x86_64
@@ -18,7 +18,8 @@ pkgbase:
     - python
     - ninja
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - libzip
     - util-linux-libs
@@ -51,4 +52,4 @@ pkgname:
     depends:
       - python
       - lib3mf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any

@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,12 +30,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.4.1-3
+    version: 2.4.1-4
     packages:
-      - lib3mf-2.4.1-3-x86_64.pkg.tar.zst
-      - python-lib3mf-2.4.1-3-x86_64.pkg.tar.zst
+      - lib3mf-2.4.1-4-x86_64.pkg.tar.zst
+      - python-lib3mf-2.4.1-4-x86_64.pkg.tar.zst
     debug:
-      - lib3mf-debug-2.4.1-3-x86_64.pkg.tar.zst
+      - lib3mf-debug-2.4.1-4-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
