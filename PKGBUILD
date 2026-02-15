@@ -5,7 +5,7 @@
 # Contributor: feuri
 
 pkgname=dunst
-pkgver=1.13.0
+pkgver=1.13.1
 pkgrel=1
 pkgdesc="Customizable and lightweight notification-daemon"
 url="https://dunst-project.org/"
@@ -17,7 +17,7 @@ optdepends=('libnotify: dunstify')
 backup=('etc/dunst/dunstrc')
 provides=('notification-daemon')
 source=("dunst-$pkgver.tar.gz::https://github.com/dunst-project/dunst/archive/v$pkgver.tar.gz")
-sha256sums=('7a8a1813977ad5941488c66b914501703fc0f6e12e631dc18506ad617242e7a0')
+sha256sums=('a578e5c2cdb546187355c710f1aa84c472e6e23828e692fe1cb0ebb9635b11a6')
 
 build() {
   cd dunst-$pkgver
