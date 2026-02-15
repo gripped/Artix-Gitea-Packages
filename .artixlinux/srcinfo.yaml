@@ -1,0 +1,24 @@
+---
+version: 1.0.11-3
+pkgbase:
+  name: libnumbertext
+  pkgdesc: Number to number name and money text conversion library
+  pkgver: 1.0.11
+  pkgrel: 3
+  url: https://github.com/Numbertext/libnumbertext
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later OR BSD-3-Clause
+    - LGPL-3.0-or-later OR CC-BY-SA-3.0
+  depends:
+    - glibc
+    - libstdc++
+    - libgcc
+  source:
+    - libnumbertext-1.0.11::https://github.com/Numbertext/libnumbertext/archive/1.0.11.tar.gz
+  sha256sums:
+    - 80aad7cab123edc614f904d9f145d1d15cf465084a1a15fca2117525dc746034
+pkgname:
+  - name: libnumbertext
+# generated with artixpkg 0.37.6-1-any
