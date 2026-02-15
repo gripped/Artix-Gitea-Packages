@@ -1,10 +1,10 @@
 ---
-version: 6.22.0-1
+version: 6.23.0-2
 pkgbase:
   name: kidletime
   pkgdesc: Monitoring user activity
-  pkgver: 6.22.0
-  pkgrel: 1
+  pkgver: 6.23.0
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -31,15 +31,15 @@ pkgbase:
     - 'libxss: XCB plugin'
     - 'wayland: Wayland plugin'
   source:
-    - https://download.kde.org/stable/frameworks/6.22/kidletime-6.22.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.22/kidletime-6.22.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.23/kidletime-6.23.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.23/kidletime-6.23.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 0701ba4c321785ba670f4a9dba54c551ffd476451caba2c77b9f079e8db42a2e
+    - 4d5e9086d260c9550f1d732d2f6481d34517ba9f571f2e7d76ed9887adb2c97b
     - SKIP
 pkgname:
   - name: kidletime
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
