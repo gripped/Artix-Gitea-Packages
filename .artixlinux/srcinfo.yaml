@@ -1,10 +1,10 @@
 ---
-version: 0.7.1-2
+version: 0.7.1-3
 pkgbase:
   name: python-httptools
   pkgdesc: Fast HTTP parser
   pkgver: 0.7.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/MagicStack/httptools
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-httptools
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
