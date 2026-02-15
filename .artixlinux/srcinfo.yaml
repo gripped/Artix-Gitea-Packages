@@ -1,10 +1,10 @@
 ---
-version: 2.16.0-1
+version: 2.16.0-2
 pkgbase:
   name: libvpl
   pkgdesc: Intel Video Processing Library
   pkgver: 2.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://intel.github.io/libvpl/
   arch:
     - x86_64
@@ -13,8 +13,9 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
   optdepends:
     - 'intel-media-sdk: runtime implementation for legacy Intel GPUs'
     - 'vpl-gpu-rt: runtime implementation for Tiger Lake and newer GPUs'
@@ -33,4 +34,4 @@ pkgbase:
     - d60931937426130ddad9f1975c010543f0da99e67edb1c6070656b7947f633b6
 pkgname:
   - name: libvpl
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
