@@ -1,10 +1,10 @@
 ---
-version: 26.01-1
+version: 26.01-2
 pkgbase:
   name: libmediainfo
   pkgdesc: Shared library for MediaInfo
   pkgver: 26.01
-  pkgrel: 1
+  pkgrel: 2
   url: https://mediaarea.net
   arch:
     - x86_64
@@ -12,11 +12,12 @@ pkgbase:
     - BSD-2-Clause
   depends:
     - glibc
-    - gcc-libs
     - curl
     - glib2
     - libmms
     - libzen
+    - libgcc
+    - libstdc++
     - tinyxml2
     - graphviz
     - zlib
