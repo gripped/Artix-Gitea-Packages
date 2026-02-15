@@ -29,11 +29,12 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1:1.3.14-5
+    version: 1:1.3.14-6
     packages:
-      - graphite-1:1.3.14-5-x86_64.pkg.tar.zst
-      - graphite-docs-1:1.3.14-5-x86_64.pkg.tar.zst
-    debug: []
+      - graphite-1:1.3.14-6-x86_64.pkg.tar.zst
+      - graphite-docs-1:1.3.14-6-x86_64.pkg.tar.zst
+    debug:
+      - graphite-debug-1:1.3.14-6-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
