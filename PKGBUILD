@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kjobwidgets
-pkgver=6.22.0
+pkgver=6.23.0
 pkgrel=1
 pkgdesc='Widgets for tracking KJob instances'
 arch=(x86_64)
@@ -24,7 +24,7 @@ makedepends=(doxygen
 optdepends=('pyside6: Python bindings')
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('ce864bcdb4dcfd3fcf0afc3e3e2fcb86780c9242252315bc003fb547af7463f0'
+sha256sums=('bb1970b0728dcafd630935f5b65076dd51f5c94f21b4d5db2542ca4869416b0c'
             'SKIP')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
               E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
