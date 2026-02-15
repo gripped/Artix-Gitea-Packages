@@ -1,10 +1,10 @@
 ---
-version: 0.1.3-19
+version: 0.1.3-20
 pkgbase:
   name: libe-book
   pkgdesc: Library for import of reflowable e-book formats.
   pkgver: 0.1.3
-  pkgrel: 19
+  pkgrel: 20
   url: https://sourceforge.net/projects/libebook/
   arch:
     - x86_64
@@ -21,8 +21,9 @@ pkgbase:
     - liblangtag
     - zlib
     - icu
-    - gcc-libs
     - glibc
+    - libstdc++
+    - libgcc
   source:
     - https://sourceforge.net/projects/libebook/files//libe-book-0.1.3/libe-book-0.1.3.tar.xz
     - icu68.patch
@@ -34,4 +35,4 @@ pkgbase:
     - 33953b0430e5f80ac75fc80270ef9b52f996632bc8ee30d8c88999658beb056e
 pkgname:
   - name: libe-book
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
