@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-3
+version: 3.4.0-4
 pkgbase:
   name: sdl3
   pkgdesc: A library for portable low-level access to a video framebuffer, audio output, mouse, and keyboard (Version 3)
   pkgver: 3.4.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.libsdl.org
   arch:
     - x86_64
@@ -13,39 +13,38 @@ pkgbase:
   makedepends:
     - cmake
     - ninja
-    - wayland-protocols
-    - ibus
-    - vulkan-headers
-  depends:
-    - alsa-lib
-    - fribidi
-    - gcc-libs
-    - glibc
-    - hidapi
     - jack
-    - libdecor
-    - libdrm
-    - libgl
-    - libpipewire
-    - libpulse
-    - libunwind
-    - libusb
-    - libx11
-    - libxcursor
-    - libxext
-    - libxfixes
-    - libxi
-    - libxkbcommon
-    - libxrandr
-    - libxrender
-    - libxss
-    - libthai
-    - libxtst
+    - wayland-protocols
+    - alsa-lib
     - mesa
-    - sndio
+    - libpulse
+    - libxrandr
+    - libxinerama
     - wayland
+    - libxkbcommon
+    - ibus
+    - libxss
+    - pipewire
+    - libdecor
+    - vulkan-headers
+    - sndio
+  depends:
+    - glibc
+    - libxext
+    - libxrender
+    - libx11
+    - libgl
+    - libxcursor
+    - hidapi
+    - libusb
   optdepends:
+    - 'alsa-lib: ALSA audio driver'
+    - 'libpulse: PulseAudio audio driver'
+    - 'jack: JACK audio driver'
+    - 'pipewire: PipeWire audio driver'
     - 'vulkan-driver: vulkan renderer'
+    - 'sndio: sndio audio driver'
+    - 'libdecor: Wayland client decorations'
   source:
     - https://github.com/libsdl-org/SDL/releases/download/release-3.4.0/SDL3-3.4.0.tar.gz
     - https://github.com/libsdl-org/SDL/releases/download/release-3.4.0/SDL3-3.4.0.tar.gz.sig
@@ -56,4 +55,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: sdl3
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38-1-any
