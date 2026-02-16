@@ -1,10 +1,10 @@
 ---
-version: 1.23.5-1
+version: 1.23.5-2
 pkgbase:
   name: dpkg
   pkgdesc: The Debian Package Manager tools
   pkgver: 1.23.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://tracker.debian.org/pkg/dpkg
   install: dpkg.install
   arch:
@@ -20,9 +20,10 @@ pkgbase:
     - perl-timedate
   depends:
     - bzip2
-    - gcc-libs
     - glibc
+    - libgcc
     - libmd
+    - libstdc++
     - ncurses
     - perl
     - xz
