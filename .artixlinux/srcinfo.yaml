@@ -1,10 +1,10 @@
 ---
-version: 23.0.0-1
+version: 23.0.0-2
 pkgbase:
   name: arrow
   pkgdesc: Columnar in-memory analytics layer for big data.
   pkgver: 23.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://arrow.apache.org
   arch:
     - x86_64
@@ -30,10 +30,11 @@ pkgbase:
     - aws-sdk-cpp-s3
     - brotli
     - bzip2
-    - gcc-libs
     - glibc
     - google-glog
     - grpc
+    - libgcc
+    - libstdc++
     - libutf8proc
     - lz4
     - openssl
