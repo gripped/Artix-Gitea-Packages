@@ -1,0 +1,46 @@
+---
+version: 3.14.14-9
+pkgbase:
+  name: apcupsd
+  pkgdesc: Power mangement and controlling most of APC's UPS models
+  pkgver: 3.14.14
+  pkgrel: 9
+  url: http://www.apcupsd.org
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - gd
+  depends:
+    - libgcc
+    - svc-manager
+    - libusb-compat
+  optdepends:
+    - 'gd: for CGI'
+  backup:
+    - etc/apcupsd/apcupsd.conf
+    - etc/apcupsd/hosts.conf
+    - etc/apcupsd/multimon.conf
+    - etc/apcupsd/apcupsd.css
+    - etc/apcupsd/changeme
+    - etc/apcupsd/commfailure
+    - etc/apcupsd/commok
+    - etc/apcupsd/offbattery
+    - etc/apcupsd/onbattery
+    - etc/apcupsd/apccontrol
+  source:
+    - https://downloads.sourceforge.net/apcupsd/apcupsd-3.14.14.tar.gz
+    - https://downloads.sourceforge.net/apcupsd/apcupsd-3.14.14.tar.gz.sig
+    - apcupsd_shutdown
+    - apcupsd-tmpfiles.conf
+  validpgpkeys:
+    - 635B9D943945DCA05BE9AB0A24E84804A57B2D90
+  sha256sums:
+    - db7748559b6b4c3784f9856561ef6ac6199ef7bd019b3edcd7e0a647bf8f9867
+    - SKIP
+    - a5e3a4c3a47d1abdf23b0a7c3832ad5a00e1cab03fe51336a4ee5f236152a60d
+    - a4474cfcd607c5e9b64e27eec7cbc2b0bcf08c8ea37fd1f0f28e98ac2883fd4f
+pkgname:
+  - name: apcupsd
+# generated with artixpkg 0.37.6-1-any
