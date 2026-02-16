@@ -1,19 +1,19 @@
 ---
-version: 1.17-6
+version: 1.17-7
 pkgbase:
   name: ladspa
   pkgdesc: Linux Audio Developer's Simple Plugin API (LADSPA)
   pkgver: 1.17
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.ladspa.org/
   arch:
     - x86_64
   license:
     - LGPL-2.1-or-later
   depends:
-    - gcc-libs
     - glibc
     - libsndfile
+    - libstdc++
   source:
     - https://ladspa.org/download/ladspa_sdk_1.17.tgz
     - ladspa-1.17-plugin_underlinking.patch
@@ -31,4 +31,4 @@ pkgbase:
     - b9f0c37a7af1afe1b977a5188e39ff10c8ee7f9286efdc8898a7cff1089621ef86e5364f89f48ea9bc21d713f7f5c9586a4451a4607a8590171b28a33f8ad6c5
 pkgname:
   - name: ladspa
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.37.6-1-any

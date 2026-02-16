@@ -29,10 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.17-6
+    version: 1.17-7
     packages:
-      - ladspa-1.17-6-x86_64.pkg.tar.zst
-    debug: []
+      - ladspa-1.17-7-x86_64.pkg.tar.zst
+    debug:
+      - ladspa-debug-1.17-7-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
