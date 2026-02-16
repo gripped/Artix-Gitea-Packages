@@ -1,10 +1,10 @@
 ---
-version: 1:13.0.4-1
+version: 1:13.0.4-2
 pkgbase:
   name: prosody
   pkgdesc: Lightweight and extensible Jabber/XMPP server written in Lua
   pkgver: 13.0.4
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://prosody.im/
   install: prosody.install
@@ -13,15 +13,15 @@ pkgbase:
   license:
     - MIT
   depends:
-    - lua
-    - lua-sec
-    - lua-socket
-    - lua-expat
-    - lua-filesystem
+    - lua54
+    - lua54-sec
+    - lua54-socket
+    - lua54-expat
+    - lua54-filesystem
     - libidn
     - openssl
   optdepends:
-    - 'lua-dbi: SQL storage support'
+    - 'lua54-dbi: SQL storage support'
     - 'luarocks: plugin manager'
   backup:
     - etc/prosody/prosody.cfg.lua
