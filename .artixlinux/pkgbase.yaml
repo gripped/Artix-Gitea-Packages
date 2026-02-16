@@ -29,10 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 3.7.5-2
+    version: 3.7.5-3
     packages:
-      - avisynthplus-3.7.5-2-x86_64.pkg.tar.zst
-    debug: []
+      - avisynthplus-3.7.5-3-x86_64.pkg.tar.zst
+    debug:
+      - avisynthplus-debug-3.7.5-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

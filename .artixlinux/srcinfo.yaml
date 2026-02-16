@@ -1,10 +1,10 @@
 ---
-version: 3.7.5-2
+version: 3.7.5-3
 pkgbase:
   name: avisynthplus
   pkgdesc: An improved version of the AviSynth frameserver
   pkgver: 3.7.5
-  pkgrel: 2
+  pkgrel: 3
   url: https://avs-plus.net/
   arch:
     - x86_64
@@ -15,9 +15,10 @@ pkgbase:
     - devil
     - soundtouch
   depends:
-    - gcc-libs
     - glibc
     - hicolor-icon-theme
+    - libgcc
+    - libstdc++
   optdepends:
     - 'devil: for ImageSeq plugin'
     - 'soundtouch: for TimeStretch plugin'
@@ -33,4 +34,4 @@ pkgbase:
     - c4b270a3df7fbe1c153400215169c4ae4cae3b7a8710c843393e3a6ed0fd8a3e
 pkgname:
   - name: avisynthplus
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38-1-any
