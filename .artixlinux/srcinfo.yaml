@@ -1,10 +1,10 @@
 ---
-version: 21.1.4-1
+version: 21.1.4-2
 pkgbase:
   name: spirv-llvm-translator
   pkgdesc: LLVM <-> SPIR-V converter for compilers targeting SPIR-V
   pkgver: 21.1.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.khronos.org/spirv/
   arch:
     - x86_64
@@ -20,8 +20,8 @@ pkgbase:
     - ninja
     - spirv-headers
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
     - llvm-libs
     - spirv-tools
   source:
@@ -30,4 +30,4 @@ pkgbase:
     - aea99585e6c99b0268e8fb2e8b7945060b8e8a2ccba29754d934713676935271d569ee6db615350908a4bf0e6e528878de737278bdbe68181e1557f9becdb4f7
 pkgname:
   - name: spirv-llvm-translator
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
