@@ -29,10 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.3.0-1
+    version: 1.3.0-2
     packages:
-      - highway-1.3.0-1-x86_64.pkg.tar.zst
-    debug: []
+      - highway-1.3.0-2-x86_64.pkg.tar.zst
+    debug:
+      - highway-debug-1.3.0-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
