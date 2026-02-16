@@ -1,0 +1,60 @@
+---
+version: 3.6.6-1
+pkgbase:
+  name: lib32-libsoup3
+  pkgdesc: HTTP client/server library for GNOME (32-bit)
+  pkgver: 3.6.6
+  pkgrel: 1
+  url: https://wiki.gnome.org/Projects/libsoup
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.0-or-later
+  checkdepends:
+    - apache
+    - php-apache
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+    - python-quart
+    - samba
+  depends:
+    - lib32-brotli
+    - lib32-glib-networking
+    - lib32-glib2
+    - lib32-glibc
+    - lib32-krb5
+    - lib32-libnghttp2
+    - lib32-libpsl
+    - lib32-sqlite
+    - lib32-zlib
+    - libsoup3
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libsoup.git#tag=3.6.6
+  b2sums:
+    - 2578d5f18b5bb633dfa593fc098053f720623cbc98e572539d19109442076f4bd3cb9d81ba952d371fc48511eff3cacd7efc0189910a872914e28c298646e5a6
+pkgname:
+  - name: lib32-libsoup3
+    depends:
+      - lib32-brotli
+      - lib32-glib-networking
+      - lib32-glib2
+      - lib32-glibc
+      - lib32-krb5
+      - lib32-libnghttp2
+      - lib32-libpsl
+      - lib32-sqlite
+      - lib32-zlib
+      - libsoup3
+      - libbrotlidec.so
+      - libgssapi_krb5.so
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - libgio-2.0.so
+      - libpsl.so
+    optdepends:
+      - 'samba: Windows Domain SSO'
+    provides:
+      - libsoup-3.0.so
+# generated with artixpkg 0.37.6-1-any
