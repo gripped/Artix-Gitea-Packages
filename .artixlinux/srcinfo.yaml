@@ -1,10 +1,10 @@
 ---
-version: 4.3.1-4.1
+version: 4.3.1-5
 pkgbase:
   name: claws-mail
   pkgdesc: A GTK+ based e-mail client
   pkgver: 4.3.1
-  pkgrel: 4.1
+  pkgrel: 5
   url: https://www.claws-mail.org
   install: claws-mail.install
   arch:
@@ -25,6 +25,7 @@ pkgbase:
     - python
     - gumbo-parser
     - webkit2gtk-4.1
+    - libayatana-appindicator
     - docbook-utils
     - texlive-formatsextra
   depends:
@@ -37,6 +38,17 @@ pkgbase:
     - compface
     - libsm
     - dbus-glib
+    - librsvg
+    - libldap
+    - glib2
+    - pango
+    - libice
+    - gdk-pixbuf2
+    - cairo
+    - nettle
+    - glibc
+    - hicolor-icon-theme
+    - sh
   optdepends:
     - 'python:            needed for some tools'
     - 'perl:              needed for some tools and perl plugin'
@@ -45,6 +57,7 @@ pkgbase:
     - 'libnotify:         for notification plugin'
     - 'libcanberra:       for notification plugin'
     - 'dbus:              for notification plugin'
+    - 'libayatana-appindicator: for notification plugin'
     - 'libxml2:           for rssyl plugins'
     - 'curl:              for vcalendar, rssyl and spamreport plugins'
     - 'libarchive:        for archive plugin and various other plugins'
@@ -69,4 +82,4 @@ pkgbase:
     - 3f6c248b8658cd7a62186bff572cce2525712a498f363cbbda1ed459021c28cb
 pkgname:
   - name: claws-mail
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.6-1-any
