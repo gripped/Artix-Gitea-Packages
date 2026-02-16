@@ -1,10 +1,10 @@
 ---
-version: 2.3.1-1
+version: 2.3.1-2
 pkgbase:
   name: lxqt-config
   pkgdesc: LXQt system configuration.
   pkgver: 2.3.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/lxqt-config
   arch:
     - x86_64
@@ -16,7 +16,7 @@ pkgbase:
     - lxqt-build-tools
   depends:
     - glibc
-    - gcc-libs
+    - libstdc++
     - qt6-base
     - qt6-svg
     - libkscreen
@@ -44,4 +44,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lxqt-config
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
