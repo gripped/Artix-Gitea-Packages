@@ -1,10 +1,10 @@
 ---
-version: 25.12.2-1
+version: 25.12.2-2
 pkgbase:
   name: neochat
   pkgdesc: A client for matrix, the decentralized communication protocol
   pkgver: 25.12.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/neochat/
   arch:
     - x86_64
