@@ -484,4 +484,4 @@ pkgname:
   - name: firefox-esr-i18n-xh
   - name: firefox-esr-i18n-zh-cn
   - name: firefox-esr-i18n-zh-tw
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38-1-any
