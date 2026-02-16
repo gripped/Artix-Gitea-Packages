@@ -29,12 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.14.1-1
+    version: 2.14.1-2
     packages:
-      - freetype2-2.14.1-1-x86_64.pkg.tar.zst
-      - freetype2-demos-2.14.1-1-x86_64.pkg.tar.zst
-      - freetype2-docs-2.14.1-1-x86_64.pkg.tar.zst
-    debug: []
+      - freetype2-2.14.1-2-x86_64.pkg.tar.zst
+      - freetype2-demos-2.14.1-2-x86_64.pkg.tar.zst
+      - freetype2-docs-2.14.1-2-x86_64.pkg.tar.zst
+    debug:
+      - freetype2-debug-2.14.1-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

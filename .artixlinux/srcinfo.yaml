@@ -1,10 +1,10 @@
 ---
-version: 2.14.1-1
+version: 2.14.1-2
 pkgbase:
   name: freetype2
   pkgdesc: Font rasterization library
   pkgver: 2.14.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.freetype.org/
   arch:
     - x86_64
@@ -12,7 +12,8 @@ pkgbase:
     - FTL OR GPL-2.0-or-later
   makedepends:
     - cairo
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glib2
     - harfbuzz
     - librsvg
@@ -63,7 +64,8 @@ pkgname:
     depends:
       - cairo
       - freetype2
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glib2
       - glibc
       - librsvg
@@ -73,4 +75,4 @@ pkgname:
   - name: freetype2-docs
     pkgdesc: Freetype documentation
     depends: []
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.38-1-any
