@@ -1,10 +1,10 @@
 ---
-version: 2.11.0-5
+version: 2.11.0-6
 pkgbase:
   name: adios2
   pkgdesc: The Adaptable Input/Output System version 2
   pkgver: 2.11.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://adios2.readthedocs.io/en/latest/
   arch:
     - x86_64
@@ -24,14 +24,16 @@ pkgbase:
     - blosc2
     - bzip2
     - libbz2.so
-    - gcc-libs
     - glibc
     - hdf5
     - libfabric
+    - libgcc
+    - libgfortran
     - libpng
     - libpng16.so
     - libsodium
     - libsodium.so
+    - libstdc++
     - mgard
     - openmpi
     - libmpi.so
