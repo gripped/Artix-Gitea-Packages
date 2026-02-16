@@ -1,10 +1,10 @@
 ---
-version: 2.0.0-3
+version: 2.0.0-4
 pkgbase:
   name: hdf5
   pkgdesc: General purpose library and file format for storing scientific data
   pkgver: 2.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.hdfgroup.org/hdf5
   arch:
     - x86_64
@@ -18,9 +18,11 @@ pkgbase:
     - time
   depends:
     - bash
-    - gcc-libs
     - glibc
     - libaec
+    - libgcc
+    - libgfortran
+    - libstdc++
     - zlib
   provides:
     - hdf5-java
@@ -36,13 +38,15 @@ pkgname:
     pkgdesc: General purpose library and file format for storing scientific data (OpenMPI version)
     depends:
       - bash
-      - gcc-libs
       - glibc
       - libaec
+      - libgcc
+      - libgfortran
+      - libstdc++
       - zlib
       - openmpi
     provides:
       - hdf5
     conflicts:
       - hdf5
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
