@@ -1,10 +1,10 @@
 ---
-version: 7.61-1
+version: 7.61-2
 pkgbase:
   name: reaper
   pkgdesc: A complete digital audio production application for computers
   pkgver: 7.61
-  pkgrel: 1
+  pkgrel: 2
   url: https://reaper.fm
   arch:
     - aarch64
@@ -20,7 +20,8 @@ pkgbase:
     - alsa-lib
     - libasound.so
     - fontconfig
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - hicolor-icon-theme
     - libglvnd
