@@ -1,4 +1,4 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor: Daniele Paolella <danielepaolella@email.it>
 # Contributor: Philipp Überbacher <hollunder at gmx dot at>
@@ -9,15 +9,15 @@ pkgname=(jack2 jack2-dbus jack2-docs)
 pkgdesc="The JACK low-latency audio server"
 pkgver=1.9.22
 _commit=80149e552b56d6d57d754dc04d119b8170d27313  # refs/tags/v1.9.22
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url="https://github.com/jackaudio/jack2"
-license=(GPL2)
-makedepends=(alsa-lib db5.3 dbus doxygen expat git libffado libsamplerate opus waf)
+license=(GPL-2.0-or-later)
+makedepends=(alsa-lib db5.3 dbus doxygen expat git libffado libsamplerate opus systemd waf)
 # jack breaks when built with LTO: https://github.com/jackaudio/jack2/issues/485
 options=(!lto)
 source=(
-  _$pkgbase::git+$url#tag=$_commit?signed
+  git+$url#tag=$_commit?signed
   $pkgbase-1.9.22-db-5.3.patch
 )
 validpgpkeys=('62B11043D2F6EB6672D93103CDBAA37ABC74FBA0') # falkTX <falktx@falktx.com>
@@ -35,10 +35,10 @@ _pick() {
 }
 
 prepare() {
-  patch -Np1 -d _$pkgbase -i ../$pkgbase-1.9.22-db-5.3.patch
+  patch -Np1 -d $pkgbase -i ../$pkgbase-1.9.22-db-5.3.patch
 
   # remove custom waflib, as we are using system provided waf
-  rm -rv _$pkgbase/waflib
+  rm -rv $pkgbase/waflib
 }
 
 build() {
@@ -47,11 +47,12 @@ build() {
     --htmldir=/usr/share/doc/$pkgbase/html
     --autostart=none
     --doxygen=yes
+    --systemd-unit
     --classic
     --dbus
   )
 
-  cd _$pkgbase
+  cd $pkgbase
   export CXXFLAGS="$CXXFLAGS -I/usr/include/db5.3"
   export LDFLAGS="$LDFLAGS -ldb-5.3"
   export LINKFLAGS="$LDFLAGS"
@@ -66,10 +67,12 @@ package_jack2() {
     alsa-lib libasound.so
     db5.3
     dbus libdbus-1.so
-    gcc-libs
     glibc
+    libgcc
     libsamplerate libsamplerate.so
+    libstdc++
     opus libopus.so
+    systemd-libs libsystemd.so
   )
   optdepends=(
     'a2jmidid: for ALSA MIDI to JACK MIDI bridging'
@@ -82,7 +85,7 @@ package_jack2() {
   conflicts=(jack)
   provides=(jack libjack.so libjacknet.so libjackserver.so)
 
-  cd _$pkgbase
+  cd $pkgbase
   export PYTHONPATH="$PWD:$PYTHONPATH"
   waf install --destdir="$pkgdir"
 
@@ -100,9 +103,9 @@ package_jack2-dbus() {
   depends=(
     dbus libdbus-1.so
     expat libexpat.so
-    gcc-libs
     glibc
     jack2 libjackserver.so
+    libstdc++
     python-dbus
   )
 
