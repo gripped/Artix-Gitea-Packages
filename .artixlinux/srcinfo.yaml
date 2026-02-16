@@ -1,10 +1,10 @@
 ---
-version: 0.9.9-1
+version: 0.9.9-2
 pkgbase:
   name: zoxide
   pkgdesc: A smarter cd command for your terminal
   pkgver: 0.9.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ajeetdsouza/zoxide
   arch:
     - x86_64
@@ -14,8 +14,9 @@ pkgbase:
     - cargo
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libgcc_s.so
   optdepends:
     - 'fzf: for interactive selection'
   options:
