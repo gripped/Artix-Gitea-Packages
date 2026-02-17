@@ -1,10 +1,10 @@
 ---
-version: 0.26.1-1
+version: 0.26.1-2
 pkgbase:
   name: bat
   pkgdesc: Cat clone with syntax highlighting and git integration
   pkgver: 0.26.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/sharkdp/bat
   arch:
     - x86_64
@@ -17,7 +17,7 @@ pkgbase:
     - git
     - rust
   depends:
-    - gcc-libs
+    - libgcc
     - glibc
     - libgit2
     - oniguruma
@@ -29,10 +29,10 @@ pkgbase:
 pkgname:
   - name: bat
     depends:
-      - gcc-libs
+      - libgcc
       - glibc
       - libgit2
       - oniguruma
       - zlib
       - libgit2.so
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
