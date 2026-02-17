@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 21.1.4-2
+    version: 21.1.4-3
     packages:
-      - spirv-llvm-translator-21.1.4-2-x86_64.pkg.tar.zst
+      - spirv-llvm-translator-21.1.4-3-x86_64.pkg.tar.zst
     debug:
-      - spirv-llvm-translator-debug-21.1.4-2-x86_64.pkg.tar.zst
+      - spirv-llvm-translator-debug-21.1.4-3-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

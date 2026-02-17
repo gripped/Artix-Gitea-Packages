@@ -4,7 +4,7 @@
 
 pkgname=spirv-llvm-translator
 pkgver=21.1.4
-pkgrel=2
+pkgrel=3
 pkgdesc="LLVM <-> SPIR-V converter for compilers targeting SPIR-V"
 url="https://www.khronos.org/spirv/"
 arch=(x86_64)
@@ -36,7 +36,9 @@ prepare() {
 
   # Fix tests
   # https://github.com/KhronosGroup/SPIRV-LLVM-Translator/pull/3301
+  # https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/3580
   git cherry-pick -n fc5873ee760c333738c9e8e8d8c2eb906f0c40f5
+  git cherry-pick -n 30258ee35493b5355a5c6df0655f91eff4217685
 }
 
 build() {
@@ -60,11 +62,10 @@ build() {
   cmake --build build
 }
 
-# https://github.com/KhronosGroup/SPIRV-LLVM-Translator/issues/3580
-#check() {
-#  # Does not use ctest-compatible targets
-#  cmake --build build --target test
-#}
+check() {
+  # Does not use ctest-compatible targets
+  cmake --build build --target test
+}
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
