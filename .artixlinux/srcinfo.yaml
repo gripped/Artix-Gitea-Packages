@@ -1,10 +1,10 @@
 ---
-version: 1:7.9.3-1
+version: 1:7.9.3-2
 pkgbase:
   name: opencascade
   pkgdesc: SDK intended for development of applications dealing with 3D CAD data
   pkgver: 7.9.3
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.opencascade.org
   arch:
@@ -21,9 +21,10 @@ pkgbase:
   depends:
     - freetype2
     - fontconfig
-    - gcc-libs
     - glibc
+    - libgcc
     - libglvnd
+    - libstdc++
     - tcl
     - tk
     - vtk
@@ -38,4 +39,4 @@ pkgbase:
     - da9db038ed2348d2d7736505eda2f40fe52c836bcedb74d9f369cc53f7d40a330bd87d6aedd773863745cd46e4dbe5876acda2d2d60177f00d5db9cae4f1f102
 pkgname:
   - name: opencascade
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
