@@ -1,10 +1,10 @@
 ---
-version: 0.23.4-2
+version: 0.23.4-3
 pkgbase:
   name: eza
   pkgdesc: A modern replacement for ls (community fork of exa)
   pkgver: 0.23.4
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/eza-community/eza
   arch:
     - x86_64
@@ -14,7 +14,7 @@ pkgbase:
     - cargo
     - pandoc
   depends:
-    - gcc-libs
+    - libgcc
     - glibc
     - libgit2
   provides:
@@ -32,7 +32,7 @@ pkgbase:
 pkgname:
   - name: eza
     depends:
-      - gcc-libs
+      - libgcc
       - glibc
       - libgit2
       - libgit2.so
