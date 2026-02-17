@@ -1,10 +1,10 @@
 ---
-version: 0.8.4-1.1
+version: 0.8.4-2
 pkgbase:
   name: lact
   pkgdesc: Linux GPU Configuration Tool
   pkgver: 0.8.4
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/ilya-zlobintsev/LACT
   install: lact.install
   arch:
@@ -20,7 +20,8 @@ pkgbase:
     - git
   depends:
     - hwdata
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - gtk4
     - vulkan-tools
@@ -37,7 +38,8 @@ pkgname:
     pkgdesc: Linux GPU Configuration Tool (libadwaita edition)
     depends:
       - hwdata
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - gtk4
       - vulkan-tools
