@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.52.0-1
+    version: 2.53.0-1
     packages:
-      - python-sentry_sdk-2.52.0-1-any.pkg.tar.zst
+      - python-sentry_sdk-2.53.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.52.0-1
