@@ -162,7 +162,7 @@ build() {
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
   #patch -Np1 -i ../0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
   # https://bugzilla.mozilla.org/show_bug.cgi?id=2016618
-  #patch -Np1 -i ../0004-Fix-sandbox-to-build-with-glibc-2.43.patch
+  patch -Np1 -i ../0004-Fix-sandbox-to-build-with-glibc-2.43.patch
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
