@@ -1,13 +1,13 @@
-From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From 17ad5a975e8a52d7bb72c47dd610dc4a97a2bf53 Mon Sep 17 00:00:00 2001
 From: "Jan Alexander Steffens (heftig)" <heftig@archlinux.org>
-Date: Thu, 12 Feb 2026 09:31:45 +0100
-Subject: [PATCH] Patch glsl-optimizer to build with glibc 2.43
+Date: Tue, 17 Feb 2026 17:46:21 -0600
+Subject: [PATCH 1/1] Patch glsl-optimizer to build with glibc 2.43
 
+Adapation of Arch's firefox patch for the esr branch.
 ---
  Cargo.lock                                             |  2 --
  Cargo.toml                                             |  3 +++
  .../rust/glslopt/.cargo-checksum.json                  |  0
- {third_party => build}/rust/glslopt/Cargo.lock         |  0
  {third_party => build}/rust/glslopt/Cargo.toml         |  0
  {third_party => build}/rust/glslopt/README.md          |  0
  {third_party => build}/rust/glslopt/build.rs           |  0
@@ -20,7 +20,7 @@ Subject: [PATCH] Patch glsl-optimizer to build with glibc 2.43
  .../rust/glslopt/glsl-optimizer/include/GL/glext.h     |  0
  .../glslopt/glsl-optimizer/include/KHR/khrplatform.h   |  0
  .../rust/glslopt/glsl-optimizer/include/c11/threads.h  |  0
- .../glslopt/glsl-optimizer/include/c11/threads_posix.h | 10 ++++++++++
+ .../glslopt/glsl-optimizer/include/c11/threads_posix.h | 10 +++++++++-
  .../glslopt/glsl-optimizer/include/c11/threads_win32.h |  0
  .../rust/glslopt/glsl-optimizer/include/c11_compat.h   |  0
  .../rust/glslopt/glsl-optimizer/include/c99_compat.h   |  0
@@ -308,9 +308,8 @@ Subject: [PATCH] Patch glsl-optimizer to build with glibc 2.43
  {third_party => build}/rust/glslopt/src/lib.rs         |  0
  {third_party => build}/rust/glslopt/wrapper.hpp        |  0
  supply-chain/config.toml                               |  4 ++++
- 304 files changed, 17 insertions(+), 2 deletions(-)
+ 303 files changed, 16 insertions(+), 3 deletions(-)
  rename {third_party => build}/rust/glslopt/.cargo-checksum.json (100%)
- rename {third_party => build}/rust/glslopt/Cargo.lock (100%)
  rename {third_party => build}/rust/glslopt/Cargo.toml (100%)
  rename {third_party => build}/rust/glslopt/README.md (100%)
  rename {third_party => build}/rust/glslopt/build.rs (100%)
@@ -612,26 +611,26 @@ Subject: [PATCH] Patch glsl-optimizer to build with glibc 2.43
  rename {third_party => build}/rust/glslopt/wrapper.hpp (100%)
 
 diff --git a/Cargo.lock b/Cargo.lock
-index 723445447f49..19678edbb1d3 100644
+index 15f008a0fe..71acdc4205 100644
 --- a/Cargo.lock
 +++ b/Cargo.lock
-@@ -2780,8 +2780,6 @@ dependencies = [
+@@ -2771,8 +2771,6 @@ dependencies = [
  [[package]]
  name = "glslopt"
- version = "0.1.12"
+ version = "0.1.11"
 -source = "registry+https://github.com/rust-lang/crates.io-index"
--checksum = "8ba4741358604ca0848c27ecc069d68e62e11cde81e38aac1da3c54b79ab5adf"
+-checksum = "913662ae8335df058d56e00f11340b20fa82e03e0276587797ef325ab01e50d4"
  dependencies = [
   "cc",
  ]
 diff --git a/Cargo.toml b/Cargo.toml
-index 35e725043bce..1c5fea666c31 100644
+index 57cfc09d3b..512d59f144 100644
 --- a/Cargo.toml
 +++ b/Cargo.toml
-@@ -293,3 +293,6 @@ zip = { path = "third_party/rust/zip" }
- 
- # Patch libcrux-traits to avoid unnecessary unused dependencies and conflicts.
- libcrux-traits = { path = "build/rust/libcrux-traits" }
+@@ -278,3 +278,6 @@ sync15 = { git = "https://github.com/mozilla/application-services", rev = "f5907
+ tabs = { git = "https://github.com/mozilla/application-services", rev = "f5907a411e52a3985d0369d71c486eb507c2c4e6" }
+ viaduct = { git = "https://github.com/mozilla/application-services", rev = "f5907a411e52a3985d0369d71c486eb507c2c4e6" }
+ webext-storage = { git = "https://github.com/mozilla/application-services", rev = "f5907a411e52a3985d0369d71c486eb507c2c4e6" }
 +
 +# Patch glslopt to fix build with glibc 2.43
 +glslopt = { path = "build/rust/glslopt" }
@@ -639,10 +638,6 @@ diff --git a/third_party/rust/glslopt/.cargo-checksum.json b/build/rust/glslopt/
 similarity index 100%
 rename from third_party/rust/glslopt/.cargo-checksum.json
 rename to build/rust/glslopt/.cargo-checksum.json
-diff --git a/third_party/rust/glslopt/Cargo.lock b/build/rust/glslopt/Cargo.lock
-similarity index 100%
-rename from third_party/rust/glslopt/Cargo.lock
-rename to build/rust/glslopt/Cargo.lock
 diff --git a/third_party/rust/glslopt/Cargo.toml b/build/rust/glslopt/Cargo.toml
 similarity index 100%
 rename from third_party/rust/glslopt/Cargo.toml
@@ -695,17 +690,16 @@ diff --git a/third_party/rust/glslopt/glsl-optimizer/include/c11/threads_posix.h
 similarity index 98%
 rename from third_party/rust/glslopt/glsl-optimizer/include/c11/threads_posix.h
 rename to build/rust/glslopt/glsl-optimizer/include/c11/threads_posix.h
-index 45cb6075e6e0..2479d88570af 100644
+index 45cb6075e6..935602eb74 100644
 --- a/third_party/rust/glslopt/glsl-optimizer/include/c11/threads_posix.h
 +++ b/build/rust/glslopt/glsl-optimizer/include/c11/threads_posix.h
-@@ -47,54 +47,64 @@ Configuration macro:
+@@ -47,11 +47,16 @@ Configuration macro:
  #define EMULATED_THREADS_USE_NATIVE_TIMEDLOCK
  #endif
  
 +#ifndef ONCE_FLAG_INIT
 +#define ONCE_FLAG_USE_PTHREAD_ONCE
 +#endif
-+
  
  #include <pthread.h>
  
@@ -716,14 +710,7 @@ index 45cb6075e6e0..2479d88570af 100644
  #ifdef INIT_ONCE_STATIC_INIT
  #define TSS_DTOR_ITERATIONS PTHREAD_DESTRUCTOR_ITERATIONS
  #else
- #define TSS_DTOR_ITERATIONS 1  // assume TSS dtor MAY be called at least once.
- #endif
- 
- // FIXME: temporary non-standard hack to ease transition
- #define _MTX_INITIALIZER_NP PTHREAD_MUTEX_INITIALIZER
- 
- /*---------------------------- types ----------------------------*/
- typedef pthread_cond_t  cnd_t;
+@@ -66,7 +71,9 @@ typedef pthread_cond_t  cnd_t;
  typedef pthread_t       thrd_t;
  typedef pthread_key_t   tss_t;
  typedef pthread_mutex_t mtx_t;
@@ -733,23 +720,7 @@ index 45cb6075e6e0..2479d88570af 100644
  
  
  /*
- Implementation limits:
-   - Conditionally emulation for "mutex with timeout"
-     (see EMULATED_THREADS_USE_NATIVE_TIMEDLOCK macro)
- */
- struct impl_thrd_param {
-     thrd_start_t func;
-     void *arg;
- };
- 
- static inline void *
- impl_thrd_routine(void *p)
- {
-     struct impl_thrd_param pack = *((struct impl_thrd_param *)p);
-     free(p);
-     return (void*)(intptr_t)pack.func(pack.arg);
- }
- 
+@@ -90,12 +97,13 @@ impl_thrd_routine(void *p)
  
  /*--------------- 7.25.2 Initialization functions ---------------*/
  // 7.25.2.1
@@ -759,10 +730,11 @@ index 45cb6075e6e0..2479d88570af 100644
  {
      pthread_once(flag, func);
  }
+-
 +#endif
  
- 
  /*------------- 7.25.3 Condition variable functions -------------*/
+ // 7.25.3.1
 diff --git a/third_party/rust/glslopt/glsl-optimizer/include/c11/threads_win32.h b/build/rust/glslopt/glsl-optimizer/include/c11/threads_win32.h
 similarity index 100%
 rename from third_party/rust/glslopt/glsl-optimizer/include/c11/threads_win32.h
@@ -1908,10 +1880,10 @@ similarity index 100%
 rename from third_party/rust/glslopt/wrapper.hpp
 rename to build/rust/glslopt/wrapper.hpp
 diff --git a/supply-chain/config.toml b/supply-chain/config.toml
-index 04133cf864ff..1450c3dad15a 100644
+index 9b9308f982..ee313cd462 100644
 --- a/supply-chain/config.toml
 +++ b/supply-chain/config.toml
-@@ -68,6 +68,10 @@ notes = "Used for testing."
+@@ -76,6 +76,10 @@ notes = "Used for testing."
  dependency-criteria = { tokio-reactor = [], tokio-threadpool = [] }
  notes = "The dependencies on tokio-reactor and tokio-threadpools are just a hack to pin the version used by audioipc-{client,server}. Suppress vetting on those for the same reasons behind the policy entries."
  
@@ -1922,3 +1894,6 @@ index 04133cf864ff..1450c3dad15a 100644
  [policy.gluesmith]
  criteria = "safe-to-run"
  notes = "Used for fuzzing."
+-- 
+2.53.0
+
