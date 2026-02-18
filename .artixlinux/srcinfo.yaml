@@ -1,9 +1,9 @@
 ---
-version: 1.58-1
+version: 1.59-1
 pkgbase:
   name: libgpg-error
   pkgdesc: Support library for libgcrypt
-  pkgver: 1.58
+  pkgver: 1.59
   pkgrel: 1
   url: https://www.gnupg.org
   arch:
@@ -17,14 +17,14 @@ pkgbase:
     - glibc
     - sh
   source:
-    - https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.58.tar.bz2
-    - https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.58.tar.bz2.sig
+    - https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.59.tar.bz2
+    - https://www.gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.59.tar.bz2.sig
   validpgpkeys:
     - 6DAA6E64A76D2840571B4902528897B826403ADA
     - AC8E115BF73E2D8D47FA9908E98E9B2D19C6C8BD
   sha256sums:
-    - f943aea9a830a8bd938e5124b579efaece24a3225ff4c3d27611a80ce1260c27
+    - a19bc5087fd97026d93cb4b45d51638d1a25202a5e1fbc3905799f424cfa6134
     - SKIP
 pkgname:
   - name: libgpg-error
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38-1-any
