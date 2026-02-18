@@ -1,10 +1,10 @@
 ---
-version: 1.20.0-2
+version: 1.20.0-3
 pkgbase:
   name: openucx
   pkgdesc: Communication framework for data-centric and high-performance applications
   pkgver: 1.20.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://openucx.org/
   arch:
     - x86_64
@@ -16,8 +16,10 @@ pkgbase:
     - rocm-language-runtime
   depends:
     - binutils
-    - gcc-libs
     - glibc
+    - libgcc
+    - libgomp
+    - libstdc++
     - zlib
     - zstd
   optdepends:
@@ -33,9 +35,11 @@ pkgbase:
   source:
     - openucx-1.20.0.tar.gz::https://github.com/openucx/ucx/archive/refs/tags/1.20.0.tar.gz
     - ucx-conf.patch
+    - c-gnu23.patch
   b2sums:
     - c0f28a2a62801be866fa98775ec4a1b46f97d1e6bafea462306265d620541c7f84c8275419337102be2444c4ff2343e354b99aabc1e242c6ef75d76872d3d59c
     - 2b3b4575ce64b947ecc42c9055934bcd7e5feb30031c6504f8cc3057cfc138b28c2826a6cc55be56d186e09e20c6201dacfc308647d9b62a5d33688348d15a68
+    - 3af500ee1a51ff9d2d1a2ae7896d87da5f274d54251ad816ca5143b220a9c8a7f1bea5236a7f826943187686fe9130fecd5f9271889d51a59cc80f0c2665ede6
 pkgname:
   - name: openucx
 # generated with artixpkg 0.37.6-1-any
