@@ -1,10 +1,10 @@
 ---
-version: 21.1.8-1
+version: 21.1.8-2
 pkgbase:
   name: lldb
   pkgdesc: Next generation, high-performance debugger
   pkgver: 21.1.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://lldb.llvm.org/
   arch:
     - x86_64
@@ -19,12 +19,13 @@ pkgbase:
   depends:
     - llvm-libs
     - clang
-    - gcc-libs
     - zlib
     - xz
     - libedit
     - ncurses
     - libxml2
+    - libgcc
+    - libstdc++
     - python
   source:
     - https://github.com/llvm/llvm-project/releases/download/llvmorg-21.1.8/lldb-21.1.8.src.tar.xz
@@ -47,4 +48,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lldb
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
