@@ -1,10 +1,10 @@
 ---
-version: 255.22-2
+version: 255.22-3
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
   pkgver: 255.22
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
@@ -24,7 +24,8 @@ pkgbase:
     - udev
     - util-linux
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - libcap
   source:
@@ -40,7 +41,8 @@ pkgname:
       - GPL-2.0-only
       - LGPL-2.1-only
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - libcap
       - acl
@@ -69,7 +71,8 @@ pkgname:
     license:
       - LGPL-2.1-only
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - libcap
       - libcap.so
@@ -77,4 +80,4 @@ pkgname:
     provides:
       - libelogind.so
       - liblogind
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any

@@ -5,12 +5,13 @@ _tag=255.22
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=2
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 depends=(
-    'gcc-libs'
+    'libgcc'
+    'libstdc++'
     'glibc'
     'libcap'
 )
