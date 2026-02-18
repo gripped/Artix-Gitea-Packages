@@ -1,10 +1,10 @@
 ---
-version: 6.5.5-1
+version: 6.6.0-2
 pkgbase:
   name: breeze
   pkgdesc: Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
-  pkgver: 6.5.5
-  pkgrel: 1
+  pkgver: 6.6.0
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -42,18 +42,38 @@ pkgbase:
     - 'breeze-gtk: Breeze widget style for GTK applications'
     - 'breeze5: Breeze widget style for Qt5 applications'
   source:
-    - https://download.kde.org/stable/plasma/6.5.5/breeze-6.5.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.5/breeze-6.5.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.0/breeze-6.6.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.0/breeze-6.6.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 09b3f7bd2386c4b91c418462f02b203510f2ae88489398ef05e0b6ddea3aa590
+    - 162594cb74d2e6c033d08b45fc52904b488f232097c7aa025d837bf1e7fa38e8
     - SKIP
 pkgname:
   - name: breeze
+    depends:
+      - breeze-icons
+      - frameworkintegration
+      - gcc-libs
+      - glibc
+      - kcmutils
+      - kcolorscheme
+      - kconfig
+      - kcoreaddons
+      - kdecoration
+      - kguiaddons
+      - ki18n
+      - kiconthemes
+      - kirigami
+      - kwidgetsaddons
+      - kwindowsystem
+      - qt6-base
+      - qt6-declarative
+      - qt6-svg
+      - breeze-cursors
   - name: breeze5
     pkgdesc: Qt5 Breeze style
     groups: []
@@ -76,4 +96,8 @@ pkgname:
       - breeze<5.27.80
     replaces:
       - breeze<5.27.80
-# generated with artixpkg 0.37.4-1-any
+  - name: breeze-cursors
+    pkgdesc: Breeze cursors
+    depends: []
+    optdepends: []
+# generated with artixpkg 0.37.6-1-any
