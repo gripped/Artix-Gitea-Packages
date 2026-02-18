@@ -1,10 +1,10 @@
 ---
-version: 0.14.4-1
+version: 0.14.4-2
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
   pkgver: 0.14.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://gstreamer.freedesktop.org/
   arch:
     - x86_64
@@ -25,15 +25,16 @@ pkgbase:
     - gst-plugins-good
     - gtk4
     - libsodium
+    - libstdc++
     - nasm
     - openssl
     - pango
     - rust
   depends:
-    - gcc-libs
     - glib2
     - glibc
     - gstreamer
+    - libgcc
   options:
     - '!lto'
   source:
@@ -46,16 +47,16 @@ pkgname:
   - name: gst-webrtc-signalling-server
     pkgdesc: Multimedia graph framework - webrtc signalling server
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
   - name: gst-plugin-aws
     pkgdesc: Multimedia graph framework - aws plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-hlssink3=0.14.4-1
+      - libgcc
+      - gst-plugin-hlssink3=0.14.4-2
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -64,47 +65,47 @@ pkgname:
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-claxon
     pkgdesc: Multimedia graph framework - claxon plugin
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-dav1d
     pkgdesc: Multimedia graph framework - dav1d plugin
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - dav1d
       - gst-plugins-base-libs
   - name: gst-plugin-elevenlabs
     pkgdesc: Multimedia graph framework - elevenlabs plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-fallbackswitch
     pkgdesc: Multimedia graph framework - fallbackswitch plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
       - gst-plugins-good
   - name: gst-plugin-ffv1
@@ -112,73 +113,74 @@ pkgname:
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-fmp4
     pkgdesc: Multimedia graph framework - fmp4 plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-gif
     pkgdesc: Multimedia graph framework - gif plugin
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-gopbuffer
     pkgdesc: Multimedia graph framework - gopbuffer plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-gtk4
     pkgdesc: Multimedia graph framework - gtk4 plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - graphene
       - gst-plugins-base-libs
       - gtk4
   - name: gst-plugin-hlsmultivariantsink
     pkgdesc: Multimedia graph framework - hlsmultivariantsink plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugin-hlssink3
       - gst-plugins-base-libs
   - name: gst-plugin-hlssink3
     pkgdesc: Multimedia graph framework - hlssink3 plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
+      - gst-plugin-fmp4
       - gst-plugins-base-libs
   - name: gst-plugin-hsv
     pkgdesc: Multimedia graph framework - hsv plugin
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-json
     pkgdesc: Multimedia graph framework - json plugin
@@ -187,56 +189,56 @@ pkgname:
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-livesync
     pkgdesc: Multimedia graph framework - livesync plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-mp4
     pkgdesc: Multimedia graph framework - mp4 plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-mpegtslive
     pkgdesc: Multimedia graph framework - mpegtslive plugin
   - name: gst-plugin-originalbuffer
     pkgdesc: Multimedia graph framework - originalbuffer plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-quinn
     pkgdesc: Multimedia graph framework - quinn plugin
   - name: gst-plugin-raptorq
     pkgdesc: Multimedia graph framework - raptorq plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-rav1e
     pkgdesc: Multimedia graph framework - rav1e plugin
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-regex
     pkgdesc: Multimedia graph framework - regex plugin
@@ -247,19 +249,19 @@ pkgname:
   - name: gst-plugin-rsaudiofx
     pkgdesc: Multimedia graph framework - rsaudiofx plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-rsclosedcaption
     pkgdesc: Multimedia graph framework - rsclosedcaption plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-textwrap=0.14.4-1
+      - libgcc
+      - gst-plugin-textwrap=0.14.4-2
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -275,26 +277,26 @@ pkgname:
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-rsinter
     pkgdesc: Multimedia graph framework - rsinter plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-rsonvif
     pkgdesc: Multimedia graph framework - rsonvif plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - cairo
       - gst-plugins-base-libs
       - pango
@@ -303,26 +305,26 @@ pkgname:
     license:
       - MIT OR Apache-2.0
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-rsrtp
     pkgdesc: Multimedia graph framework - rsrtp plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-rsrtsp
     pkgdesc: Multimedia graph framework - rsrtsp plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
       - gst-plugins-good
   - name: gst-plugin-rstracers
@@ -330,59 +332,60 @@ pkgname:
   - name: gst-plugin-rsvideofx
     pkgdesc: Multimedia graph framework - rsvideofx plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - cairo
       - gst-plugins-base-libs
   - name: gst-plugin-rswebp
     pkgdesc: Multimedia graph framework - rswebp plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
       - libwebp
   - name: gst-plugin-rswebrtc
     pkgdesc: Multimedia graph framework - rswebrtc plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
-      - gst-plugin-rsrtp=0.14.4-1
+      - libgcc
+      - gst-plugin-rsrtp=0.14.4-2
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
   - name: gst-plugin-skia
     pkgdesc: Multimedia graph framework - skia plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - fontconfig
       - freetype2
       - gst-plugins-base-libs
+      - libstdc++
   - name: gst-plugin-sodium
     pkgdesc: Multimedia graph framework - sodium plugin
     license:
       - MIT
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - libsodium
   - name: gst-plugin-speechmatics
     pkgdesc: Multimedia graph framework - speechmatics plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-spotify
     pkgdesc: Multimedia graph framework - spotify plugin
@@ -397,29 +400,29 @@ pkgname:
     license:
       - LGPL-2.1-or-later
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-togglerecord
     pkgdesc: Multimedia graph framework - togglerecord plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-uriplaylistbin
     pkgdesc: Multimedia graph framework - uriplaylistbin plugin
   - name: gst-plugin-webrtchttp
     pkgdesc: Multimedia graph framework - webrtchttp plugin
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gstreamer
+      - libgcc
       - gst-plugins-bad
       - gst-plugins-bad-libs
       - gst-plugins-base-libs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38-1-any
