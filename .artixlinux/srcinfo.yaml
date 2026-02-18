@@ -1,10 +1,10 @@
 ---
-version: 1.8.1-1
+version: 1.8.1-2
 pkgbase:
   name: tealdeer
   pkgdesc: A fast tldr client in Rust
   pkgver: 1.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tealdeer-rs/tealdeer
   arch:
     - x86_64
@@ -15,7 +15,8 @@ pkgbase:
     - git
     - rust
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
   provides:
     - tldr
   conflicts:
@@ -30,4 +31,4 @@ pkgbase:
     - 084a27d19b8e00d414d6d478f760e105e4d0ebf642477867ff6cd1f2a2a63d2660a82733eea99d4e43f39b2f8bbd3bea3bc4a29048e5e1c3e82a616cbcf10049
 pkgname:
   - name: tealdeer
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
