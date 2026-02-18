@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 62-1
+    version: 62-2
     packages:
-      - libinih-62-1-x86_64.pkg.tar.zst
+      - libinih-62-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 61-1
