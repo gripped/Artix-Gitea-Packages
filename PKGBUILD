@@ -95,6 +95,7 @@ source=(
   d4b3eb4f76e81f18c53863b1d55ee146d6ec7d10.patch
   dbf9702ed87ea5c88c2a1ee615998532ac8f10cc.patch
   0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+  0002-Fix-sandbox-to-build-with-glibc-2.43.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -161,6 +162,8 @@ build() {
   # Fix build with glibc 2.43
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
   patch -Np1 -i ../0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=2016618
+  patch -Np1 -i ../0002-Fix-sandbox-to-build-with-glibc-2.43.patch
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
@@ -416,6 +419,7 @@ sha512sums=('7d867fa3c9c94903f6583be75ad4aa8d918f98f74c99c6615a0e40caf21c545a301
             '77b571fcbfb3d3e5e07217f25ab5051d0b693456c59f6273b84b8863f7ead7bfef81677cdaf2fb560e65aafdad008967e0479ac429a860ea90a4b7e36ecd57e4'
             '566c35ca78698939ce682c71caa03bb53388f0befdcc52c4a72565c93ad1528447d3df7a11f7d4eb5dfb6aab6dfb053050a97cb255bd20838315db5e1309989f'
             '755c3d2d9f24101d80b766e5adbf9ab0bb133e743dd9ea57ff2722d243bc4056d890bfedaeb23c506b440a82859d26c303f15e9f7e6bf9fc78a14f83de5f94aa'
+            'ed0f58b8532dbc773c5c91424578ad4502fc42c1d937e4b2b1c9905212a0d74e83b5a935ed18207b73588a84791d3cf0d3740a7ccd3dc67cd8009ba03ce1d756'
             '3d9440a34f8436424eff33182c3cac0eebea8cea2724069177b3784ef875fd3c6279c6713287b6f2b86f55001e65010963f882ab095be8e42580f72ffd0fc1fe'
             '74f3504a6594fc2997a8105a285b08f09ecb1dfbb85a259a0face7f92c3feae243f55df0e7e88e1441e1aed9c761bbe75ebf740e4fb8a5eb275400a2eee53d52'
             '677269bc36fbf1bc02423e2347172129572cf53b19e29e35e645652d3b766346dcc42f3c10ee91017cd33161c03dd6740e3e51dbd1877547b37c1255bec5649f'
