@@ -1,10 +1,10 @@
 ---
-version: 259.1-1
+version: 259.1-2
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 259.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -29,7 +29,8 @@ pkgbase:
     - python-pyelftools
     - python-pefile
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
   source:
     - git+https://github.com/systemd/systemd#tag=v259.1?signed
@@ -58,7 +59,8 @@ pkgname:
   - name: udev
     pkgdesc: Userspace device file manager
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - acl
       - bash
@@ -77,19 +79,22 @@ pkgname:
   - name: esysusers
     pkgdesc: the sysusers.d binary
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - libxcrypt
   - name: etmpfiles
     pkgdesc: the tmpfiles.d binary
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - acl
   - name: egummiboot
     pkgdesc: the gummiboot bootloader
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - util-linux
       - sh
@@ -98,7 +103,8 @@ pkgname:
   - name: eukify
     pkgdesc: Combine kernel and initrd into a signed Unified Kernel Image
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - binutils
       - python
@@ -109,4 +115,4 @@ pkgname:
       - 'sbsigntools: Sign the embedded kernel'
     provides:
       - ukify
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any

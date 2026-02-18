@@ -19,7 +19,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -27,7 +27,8 @@ license=(
     'LGPL-2.1-or-later'
 )
 depends=(
-    'gcc-libs'
+    'libgcc'
+    'libstdc++'
     'glibc'
 )
 makedepends=(
