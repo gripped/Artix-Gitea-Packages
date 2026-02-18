@@ -1,10 +1,10 @@
 ---
-version: 3.4.8-1
+version: 3.4.8-2
 pkgbase:
   name: ruby
   pkgdesc: An object-oriented language for quick and easy programming
   pkgver: 3.4.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.ruby-lang.org/en/
   arch:
     - x86_64
@@ -14,7 +14,7 @@ pkgbase:
     - procps-ng
   makedepends:
     - doxygen
-    - gcc-libs
+    - libgcc
     - gdbm
     - glibc
     - gmp
@@ -38,7 +38,7 @@ pkgbase:
 pkgname:
   - name: ruby
     depends:
-      - gcc-libs
+      - libgcc
       - gdbm
       - glibc
       - gmp
