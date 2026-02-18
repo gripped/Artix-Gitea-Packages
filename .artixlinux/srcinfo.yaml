@@ -1,10 +1,10 @@
 ---
-version: 2.16-1
+version: 2.16-2
 pkgbase:
   name: nvme-cli
   pkgdesc: NVM-Express user space tooling for Linux
   pkgver: 2.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/linux-nvme/nvme-cli
   install: nvme-cli.install
   arch:
@@ -19,7 +19,7 @@ pkgbase:
     - udev
     - xmlto
   depends:
-    - gcc-libs
+    - libgcc
     - glibc
     - json-c
     - libnvme
@@ -31,4 +31,4 @@ pkgbase:
     - 989682ed7b250a2c7a8127e362ffc5d29f5c370127abe405be09c73216da2b97
 pkgname:
   - name: nvme-cli
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38-1-any
