@@ -1,0 +1,27 @@
+---
+version: 1.25-3
+pkgbase:
+  name: lzip
+  pkgdesc: A lossless file compressor based on the LZMA algorithm
+  pkgver: 1.25
+  pkgrel: 3
+  url: https://www.nongnu.org/lzip/lzip.html
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - glibc
+    - libgcc
+    - libstdc++
+  source:
+    - https://download.savannah.gnu.org/releases/lzip/lzip-1.25.tar.gz
+    - https://download.savannah.gnu.org/releases/lzip/lzip-1.25.tar.gz.sig
+  validpgpkeys:
+    - 1D41C14B272A2219A739FA4F8FE99503132D7742
+  sha256sums:
+    - 09418a6d8fb83f5113f5bd856e09703df5d37bae0308c668d0f346e3d3f0a56f
+    - SKIP
+pkgname:
+  - name: lzip
+# generated with artixpkg 0.38-1-any
