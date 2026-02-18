@@ -4,18 +4,27 @@
 
 pkgname=gmp
 pkgver=6.3.0
-pkgrel=2
+pkgrel=3
 pkgdesc='A free library for arbitrary precision arithmetic'
 arch=(x86_64)
 url='https://gmplib.org/'
-depends=(gcc-libs
+depends=(libgcc
+         libstdc++
          glibc)
 license=(GPL-2.0-or-later
          LGPL-3.0-or-later)
-source=(https://gmplib.org/download/gmp/gmp-$pkgver.tar.lz{,.sig})
+source=(https://gmplib.org/download/gmp/gmp-$pkgver.tar.lz{,.sig}
+        gmp-gcc-15.patch)
 sha256sums=('be5c908a7a836c3a9bd9d62aa58563c5e9e7fef94c43a7f42dbc35bb6d02733c'
-            'SKIP')
+            'SKIP'
+            'fd0f1b48dbe72413efbd9c45f1ca7013d555f46c578446ce3ba202e3a9b96c6c')
 validpgpkeys=('343C2FF0FBEE5EC2EDBEF399F3599FF828C67298')   # Niels Möller
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -p1 < ../gmp-gcc-15.patch # Fix build with GCC 15
+  autoreconf -vif
+}
 
 build() {
   cd $pkgname-$pkgver
