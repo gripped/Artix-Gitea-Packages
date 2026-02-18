@@ -1,10 +1,10 @@
 ---
-version: 0.10.20-1
+version: 0.10.20-2
 pkgbase:
   name: cargo-c
   pkgdesc: A cargo subcommand to build and install C-ABI compatible dynamic and static libraries
   pkgver: 0.10.20
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lu-zero/cargo-c/
   arch:
     - x86_64
@@ -14,8 +14,8 @@ pkgbase:
     - cargo
     - curl
     - libcurl.so
-    - gcc-libs
     - glibc
+    - libgcc
     - openssl
     - libssl.so
     - zlib
@@ -30,4 +30,4 @@ pkgbase:
     - 4ff6e5180204220f95916210c6b174dabe03381d7e77550547742b210165b57d
 pkgname:
   - name: cargo-c
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
