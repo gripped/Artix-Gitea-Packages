@@ -1,0 +1,21 @@
+---
+version: 20260219-1
+pkgbase:
+  name: rustdesk-openrc
+  pkgdesc: OpenRC rustdesk init script
+  pkgver: 20260219
+  pkgrel: 1
+  arch:
+    - any
+  license:
+    - GPL
+  depends:
+    - rustdesk
+    - openrc
+  source:
+    - rustdesk.initd
+  sha256sums:
+    - 1c958753ec41a7fae7e62a4b04a8739bd5ac519a68e10d67e4b164fd9e3ae7d6
+pkgname:
+  - name: rustdesk-openrc
+# generated with artixpkg 0.37.6-1-any
