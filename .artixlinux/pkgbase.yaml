@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.07.4-1
+    version: 1.07.5-1
     packages:
-      - inchi-1.07.4-1-x86_64.pkg.tar.zst
+      - inchi-1.07.5-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
