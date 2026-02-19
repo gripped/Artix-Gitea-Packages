@@ -13,7 +13,7 @@ pkgrel=2
 arch=(x86_64)
 url="https://github.com/jackaudio/jack2"
 license=(GPL-2.0-or-later)
-makedepends=(alsa-lib db5.3 dbus doxygen expat git libffado libsamplerate opus systemd waf)
+makedepends=(alsa-lib db5.3 dbus doxygen expat git libffado libsamplerate opus waf)
 # jack breaks when built with LTO: https://github.com/jackaudio/jack2/issues/485
 options=(!lto)
 source=(
@@ -72,7 +72,7 @@ package_jack2() {
     libsamplerate libsamplerate.so
     libstdc++
     opus libopus.so
-    systemd-libs libsystemd.so
+   
   )
   optdepends=(
     'a2jmidid: for ALSA MIDI to JACK MIDI bridging'

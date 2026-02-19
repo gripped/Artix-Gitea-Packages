@@ -20,7 +20,6 @@ pkgbase:
     - libffado
     - libsamplerate
     - opus
-    - systemd
     - waf
   options:
     - '!lto'
@@ -50,8 +49,6 @@ pkgname:
       - libstdc++
       - opus
       - libopus.so
-      - systemd-libs
-      - libsystemd.so
     optdepends:
       - 'a2jmidid: for ALSA MIDI to JACK MIDI bridging'
       - 'libffado: for firewire support using FFADO'
