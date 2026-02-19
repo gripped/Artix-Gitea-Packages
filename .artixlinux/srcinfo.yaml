@@ -1,10 +1,10 @@
 ---
-version: 23.2.2-5
+version: 23.2.2-6
 pkgbase:
   name: intel-media-sdk
   pkgdesc: Legacy API for hardware video acceleration on Intel GPUs (Broadwell to Rocket Lake)
   pkgver: 23.2.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/Intel-Media-SDK/MediaSDK/
   arch:
     - x86_64
@@ -35,11 +35,12 @@ pkgbase:
 pkgname:
   - name: intel-media-sdk
     depends:
-      - gcc-libs
       - glibc
       - intel-media-driver
       - libdrm
+      - libgcc
       - libmfx=23.2.2
+      - libstdc++
       - libva
       - wayland
     provides:
@@ -49,6 +50,7 @@ pkgname:
   - name: libmfx
     pkgdesc: Intel Media SDK dispatcher library
     depends:
-      - gcc-libs
       - glibc
-# generated with artixpkg 0.37.4-1-any
+      - libgcc
+      - libstdc++
+# generated with artixpkg 0.37.6-1-any
