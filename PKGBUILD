@@ -15,8 +15,8 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.18
-pkgrel=3.1
+pkgver=6.19
+pkgrel=2
 license=('GPL-2.0-only')
 arch=('x86_64')
 url='https://www.kernel.org'
@@ -44,14 +44,12 @@ makedepends+=('llvm' 'clang')
 makedepends+=('libnl')
 groups=("$pkgbase")
 source=("git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v${pkgver//_/-}?signed"
-        "d70f79fef65810faf64dbae1f3a1b5623cdb2345.patch"
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('24f57ef27799392461ce0e1d595f96412af7ade4bfd41625e563fd797743d06a'
-            'bcb4e391a2ffa6babc5ad9222bd5bd4eef7a330188f9c3955d23af4053d32434')
+sha256sums=('05c6e18573ffacca5c3ff0105090a0bb063a2927d280c5ae0372c9667a60f871')
 
 prepare() {
   cd linux
@@ -74,6 +72,8 @@ EOF
 }
 
 build() {
+  export CFLAGS="${CFLAGS} -Wno-error=discarded-qualifiers"
+
   echo ':: perf'
   pushd linux/tools/perf
   make -f Makefile.perf \
@@ -215,6 +215,7 @@ package_cpupower() {
     confdir='/etc/default/' \
     sbindir='/usr/bin' \
     libdir='/usr/lib' \
+    libexecdir='/usr/lib/artix' \
     mandir='/usr/share/man' \
     docdir='/usr/share/doc/cpupower' \
     install install-man
