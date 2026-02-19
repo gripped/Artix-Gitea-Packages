@@ -1,10 +1,10 @@
 ---
-version: 26.05.37020.3-1
+version: 26.05.37020.3-2
 pkgbase:
   name: intel-compute-runtime
   pkgdesc: Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
   pkgver: 26.05.37020.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/intel/compute-runtime/
   arch:
     - x86_64
@@ -16,10 +16,11 @@ pkgbase:
     - level-zero-headers
     - libva
   depends:
-    - gcc-libs
     - glibc
     - intel-gmmlib
     - intel-graphics-compiler
+    - libgcc
+    - libstdc++
   optdepends:
     - 'igsc: for discrete GPU firmware enumeration through Level Zero'
     - 'libdrm: for cl_intel_va_api_media_sharing OpenCL extension'
