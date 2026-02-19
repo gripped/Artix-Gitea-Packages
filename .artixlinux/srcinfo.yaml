@@ -1,10 +1,10 @@
 ---
-version: 0.4.0-2
+version: 0.4.0-3
 pkgbase:
   name: htmlq
   pkgdesc: Like jq, but for HTML
   pkgver: 0.4.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/mgdm/htmlq
   arch:
     - x86_64
@@ -14,13 +14,16 @@ pkgbase:
     - git
     - rust
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
   options:
     - '!lto'
   source:
     - git+https://github.com/mgdm/htmlq.git#tag=v0.4.0
+  sha512sums:
+    - db569a2effecf4da95584b4535ef1a260ca5009286e6fe889e714f642ece7028737f6bafa930a886873a577563dd4434bd4c0a9b2955a04e1a3904a1dcf47647
   b2sums:
     - 2cb83ed964c7c97993d6eec419109c20672dfeefaebc1725e2d887f8939f9a3a2d9f41a4de36e2d2e8defaeed6e945047132adc266cb247f0ff057bfae820cce
 pkgname:
   - name: htmlq
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.6-1-any
