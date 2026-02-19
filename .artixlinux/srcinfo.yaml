@@ -1,10 +1,10 @@
 ---
-version: 5.1.12-1
+version: 5.1.12-2
 pkgbase:
   name: fcitx5-configtool
   pkgdesc: Configuration Tool for Fcitx5
   pkgver: 5.1.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/fcitx/fcitx5-configtool
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgbase:
     - 42a417d358f13f0e09520e766037f186275a80cc3ab1f049b173f00d724bb7eb50e9821d67c8e6acded6257515f6fd3b2d7e79fb3096d5a7e57ee6590013c98a
 pkgname:
   - name: fcitx5-configtool
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38-1-any
