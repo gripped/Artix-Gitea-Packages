@@ -1,10 +1,10 @@
 ---
-version: 9.19.0.56-1
+version: 9.19.0.56-2
 pkgbase:
   name: cudnn
   pkgdesc: NVIDIA CUDA Deep Neural Network library
   pkgver: 9.19.0.56
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.nvidia.com/cuDNN
   arch:
     - x86_64
@@ -14,7 +14,8 @@ pkgbase:
   depends:
     - cuda>=13
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - zlib
     - libz.so
   options:
