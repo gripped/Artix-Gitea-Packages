@@ -1,9 +1,9 @@
 ---
-version: 6.5.5-1
+version: 6.6.0-1
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
-  pkgver: 6.5.5
+  pkgver: 6.6.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -17,7 +17,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
     - networkmanager-qt
-    - phonon-qt6
     - plasma-wayland-protocols
     - qcoro
   depends:
@@ -60,7 +59,6 @@ pkgbase:
     - knewstuff
     - knighttime
     - knotifications
-    - knotifyconfig
     - kpackage
     - kparts
     - kpipewire
@@ -100,7 +98,6 @@ pkgbase:
     - ocean-sound-theme
     - plasma-activities
     - plasma-activities-stats
-    - plasma5support
     - prison
     - qt6-5compat
     - qt6-base
@@ -122,15 +119,15 @@ pkgbase:
     - xorg-xwayland
     - zlib
   source:
-    - https://download.kde.org/stable/plasma/6.5.5/plasma-workspace-6.5.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.5/plasma-workspace-6.5.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.0/plasma-workspace-6.6.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.0/plasma-workspace-6.6.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 29b0763bbbdd9e27416dce1fd939242d2588feef36c4cbae941c31964d531fd4
+    - 098e1fddb30600855248bea36e012c0f5ff12d1ba3381a1ce42005e4d2304d6e
     - SKIP
 pkgname:
   - name: plasma-workspace
@@ -174,7 +171,6 @@ pkgname:
       - knewstuff
       - knighttime
       - knotifications
-      - knotifyconfig
       - kpackage
       - kparts
       - kpipewire
@@ -214,7 +210,6 @@ pkgname:
       - ocean-sound-theme
       - plasma-activities
       - plasma-activities-stats
-      - plasma5support
       - prison
       - qt6-5compat
       - qt6-base
@@ -257,4 +252,4 @@ pkgname:
     depends:
       - plasma-workspace
       - kwin-x11
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
