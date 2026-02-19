@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.16.22-1
+    packages:
+      - sord-0.16.22-1-x86_64.pkg.tar.zst
+      - sord-docs-0.16.22-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.16.20-1
