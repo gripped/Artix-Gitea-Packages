@@ -1,9 +1,9 @@
 ---
-version: 2:2.4.16-1
+version: 2:2.4.16-2
 pkgbase:
   name: cups
   pkgver: 2.4.16
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://openprinting.github.io/cups/
   arch:
@@ -61,7 +61,8 @@ pkgname:
       - libpaper
       - hicolor-icon-theme
       - glibc
-      - gcc-libs
+      - libstdc++
+      - libgcc
       - avahi
       - gnutls
     optdepends:
@@ -80,4 +81,4 @@ pkgname:
       - etc/cups/subscriptions.conf
       - etc/logrotate.d/cups
       - etc/pam.d/cups
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
