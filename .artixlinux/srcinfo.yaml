@@ -1,10 +1,10 @@
 ---
-version: 0.8.2-2
+version: 0.8.2-3
 pkgbase:
   name: mangohud
   pkgdesc: A Vulkan overlay layer for monitoring FPS, temperatures, CPU/GPU load and more.
   pkgver: 0.8.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/flightlessmango/MangoHud
   arch:
     - x86_64
@@ -23,7 +23,6 @@ pkgbase:
   depends:
     - dbus
     - fmt
-    - gcc-libs
     - glfw
     - hicolor-icon-theme
     - libglvnd
@@ -57,4 +56,4 @@ pkgbase:
     - c6db1fa344638da38969d5bb2fdd1d9c2aa8fced88229efda2e2a3f39a504810fea9ecddefee8364b44666485ab10e05d3f7cf3f5a6450fade28a270653d7918
 pkgname:
   - name: mangohud
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
