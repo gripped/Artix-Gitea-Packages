@@ -1,9 +1,9 @@
 ---
-version: 6.5-1
+version: 6.6-1
 pkgbase:
   name: plasma-meta
   pkgdesc: Meta package to install KDE Plasma
-  pkgver: 6.5
+  pkgver: 6.6
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -35,7 +35,6 @@ pkgbase:
     - kwallet-pam
     - kwayland
     - kwin
-    - kwin-x11
     - kwrited
     - layer-shell-qt
     - libkscreen
@@ -52,6 +51,7 @@ pkgbase:
     - plasma-disks
     - plasma-firewall
     - plasma-integration
+    - plasma-keyboard
     - plasma-nm
     - plasma-pa
     - plasma-systemmonitor
@@ -71,10 +71,12 @@ pkgbase:
     - 'breeze-grub: Breeze theme for GRUB'
     - 'breeze-plymouth: Breeze theme for Plymouth'
     - 'kgamma: Adjust gamma settings on X'
+    - 'kwin-x11: X11 window manager'
     - 'plasma-x11-session: Plasma X11 session'
     - 'plymouth-kcm: Configure Plymouth from systemsettings'
     - 'plasma-sdk: Development tools'
+    - 'sddm-kcm: SDDM configuration module'
     - 'wacomtablet: Drawing tablet settings on X'
 pkgname:
   - name: plasma-meta
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any

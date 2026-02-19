@@ -2,7 +2,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=plasma-meta
-pkgver=6.5
+pkgver=6.6
 pkgrel=1
 pkgdesc='Meta package to install KDE Plasma'
 arch=(any)
@@ -32,7 +32,6 @@ depends=(aurorae
          kwallet-pam
          kwayland
          kwin
-         kwin-x11
          kwrited
          layer-shell-qt
          libkscreen
@@ -49,6 +48,8 @@ depends=(aurorae
          plasma-disks
          plasma-firewall
          plasma-integration
+         plasma-keyboard
+         #plasma-login-manager   # does not support elogind
          plasma-nm
          plasma-pa
          plasma-systemmonitor
@@ -68,8 +69,9 @@ depends=(aurorae
 optdepends=('breeze-grub: Breeze theme for GRUB'
             'breeze-plymouth: Breeze theme for Plymouth'
             'kgamma: Adjust gamma settings on X'
-            # 'kwin-x11: X11 window manager'
+            'kwin-x11: X11 window manager'
             'plasma-x11-session: Plasma X11 session'
             'plymouth-kcm: Configure Plymouth from systemsettings'
             'plasma-sdk: Development tools'
+            'sddm-kcm: SDDM configuration module'
             'wacomtablet: Drawing tablet settings on X')
