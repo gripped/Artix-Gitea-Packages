@@ -1,10 +1,10 @@
 ---
-version: 1.5-9
+version: 1.5-10
 pkgbase:
   name: libftdi
   pkgdesc: A library to talk to FTDI chips
   pkgver: 1.5
-  pkgrel: 9
+  pkgrel: 10
   url: https://www.intra2net.com/en/developer/libftdi/
   arch:
     - x86_64
@@ -20,7 +20,8 @@ pkgbase:
     - python-setuptools
   depends:
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - sh
     - libusb
     - confuse
@@ -45,4 +46,4 @@ pkgbase:
     - 09c10e98ae0ee5f5dbc68110a79c1097a3621c53e2779fe1b632bcc916f1696694ad58f5a81c91c1a620dc555f66e5dded4225eafbe2608bd6712586becc8aec
 pkgname:
   - name: libftdi
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
