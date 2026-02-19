@@ -1,0 +1,28 @@
+---
+version: B.02.20-3
+pkgbase:
+  name: lshw
+  pkgdesc: A small tool to provide detailed information on the hardware configuration of the machine.
+  pkgver: B.02.20
+  pkgrel: 3
+  url: https://ezix.org/project/wiki/HardwareLiSter
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - gcc
+    - sqlite
+    - git
+    - gtk3
+  depends:
+    - hwdata
+  optdepends:
+    - gtk3
+  source:
+    - lshw-B.02.20::git+https://ezix.org/src/pkg/lshw.git#commit=4c6497c8b0a67cd9fa9693e9101a7cafd3297e81
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: lshw
+# generated with artixpkg 0.37.6-1-any
