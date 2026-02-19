@@ -23,7 +23,7 @@ depends=(freerdp
          pam
          qt6-base
          qtkeychain-qt6
-         ligelogind
+         libelogind
          wayland)
 makedepends=(extra-cmake-modules
              plasma-wayland-protocols)
