@@ -1,10 +1,10 @@
 ---
-version: 1.17.0-1
+version: 1.17.0-2
 pkgbase:
   name: spdlog
   pkgdesc: Very fast, header-only/compiled, C++ logging library
   pkgver: 1.17.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/gabime/spdlog
   arch:
     - x86_64
@@ -14,9 +14,10 @@ pkgbase:
     - cmake
     - catch2
   depends:
-    - gcc-libs
     - glibc
     - libfmt.so
+    - libgcc
+    - libstdc++
   provides:
     - libspdlog.so
   source:
@@ -27,4 +28,4 @@ pkgbase:
     - 686be3f61e4c578c53660e0bad6afe1918472f5b46322f207d3fde2cca3a3bc480c10891eeaa7b85e3c4d3370c43a6da85376a93eea411333a1147eb853bddc8
 pkgname:
   - name: spdlog
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
