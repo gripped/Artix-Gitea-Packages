@@ -1,9 +1,9 @@
 ---
-version: 40.1.2-1
+version: 40.1.3-1
 pkgbase:
   name: python-faker
   pkgdesc: Faker generates fake data for you.
-  pkgver: 40.1.2
+  pkgver: 40.1.3
   pkgrel: 1
   url: https://faker.readthedocs.io/en/master/
   arch:
@@ -28,9 +28,9 @@ pkgbase:
   optdepends:
     - 'python-xmltodict: for xml provider'
   source:
-    - git+https://github.com/joke2k/faker.git#tag=v40.1.2
+    - git+https://github.com/joke2k/faker.git#tag=v40.1.3
   sha512sums:
-    - 96d6b0790a9c4139cf0f824d9efdc292afaaf418864e66459bb4e39b386b36647002ca7e35cccbdb4b667597e875a6db3e576e59ed64748429ae18c14d174fa2
+    - ba6a9c642a20d1042f5ca548c5bd0d23bcd5d74f630f3f89f8a33a7dcecb4b3468148d01c44325c3d3ca788331e7f0483b79bab0d2ccdc55841ebdfa9e55dea7
 pkgname:
   - name: python-faker
 # generated with artixpkg 0.37.6-1-any
