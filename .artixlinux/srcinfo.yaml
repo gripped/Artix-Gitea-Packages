@@ -1,10 +1,10 @@
 ---
-version: 1.9.22-2
+version: 1.9.22-2.2
 pkgbase:
   name: jack2
   pkgdesc: The JACK low-latency audio server
   pkgver: 1.9.22
-  pkgrel: 2
+  pkgrel: 2.2
   url: https://github.com/jackaudio/jack2
   arch:
     - x86_64

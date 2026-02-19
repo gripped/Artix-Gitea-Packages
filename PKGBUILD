@@ -9,7 +9,7 @@ pkgname=(jack2 jack2-dbus jack2-docs)
 pkgdesc="The JACK low-latency audio server"
 pkgver=1.9.22
 _commit=80149e552b56d6d57d754dc04d119b8170d27313  # refs/tags/v1.9.22
-pkgrel=2
+pkgrel=2.2
 arch=(x86_64)
 url="https://github.com/jackaudio/jack2"
 license=(GPL-2.0-or-later)
@@ -47,7 +47,6 @@ build() {
     --htmldir=/usr/share/doc/$pkgbase/html
     --autostart=none
     --doxygen=yes
-    --systemd-unit
     --classic
     --dbus
   )
@@ -72,7 +71,7 @@ package_jack2() {
     libsamplerate libsamplerate.so
     libstdc++
     opus libopus.so
-   
+
   )
   optdepends=(
     'a2jmidid: for ALSA MIDI to JACK MIDI bridging'
