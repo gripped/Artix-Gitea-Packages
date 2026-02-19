@@ -1,9 +1,9 @@
 ---
-version: 6.5.5-1
+version: 6.6.0-1
 pkgbase:
   name: plasma-nm
   pkgdesc: Plasma applet written in QML for managing network connections
-  pkgver: 6.5.5
+  pkgver: 6.6.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -31,8 +31,10 @@ pkgbase:
     - kio
     - kirigami
     - kirigami-addons
+    - kjobwidgets
     - knotifications
     - kquickcharts
+    - kservice
     - ksvg
     - kwallet
     - kwidgetsaddons
@@ -50,18 +52,19 @@ pkgbase:
     - solid
   optdepends:
     - 'openconnect: Cisco AnyConnect VPN plugin'
+    - 'qrca: QR code scanner'
     - 'qt6-webengine: Cisco AnyConnect VPN plugin'
   source:
-    - https://download.kde.org/stable/plasma/6.5.5/plasma-nm-6.5.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.5.5/plasma-nm-6.5.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.0/plasma-nm-6.6.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.0/plasma-nm-6.6.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - fb096f1bc85f5eb1ee8ae80df044479860987c8bcecd4ab7120fed253698c2a0
+    - 01e543d5c6f101fb2e01ceefd7d4338b7e2ed0b2d67546d7227ed3aa78dd5d50
     - SKIP
 pkgname:
   - name: plasma-nm
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
