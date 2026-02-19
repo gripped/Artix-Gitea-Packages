@@ -1,0 +1,46 @@
+---
+version: 6.6.0-1
+pkgbase:
+  name: plasma-keyboard
+  pkgdesc: Virtual Keyboard for Qt based desktops
+  pkgver: 6.6.0
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - wayland-protocols
+  depends:
+    - gcc-libs
+    - glibc
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - ki18n
+    - kirigami
+    - kirigami-addons
+    - kitemmodels
+    - libxkbcommon
+    - qt6-base
+    - qt6-declarative
+    - qt6-virtualkeyboard
+    - wayland
+  source:
+    - https://download.kde.org/stable/plasma/6.6.0/plasma-keyboard-6.6.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.0/plasma-keyboard-6.6.0.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - cc2ee9154e55e1a49c934aa8b2d4146a7209859de58057d96d297561652b76dc
+    - SKIP
+pkgname:
+  - name: plasma-keyboard
+# generated with artixpkg 0.37.6-1-any
