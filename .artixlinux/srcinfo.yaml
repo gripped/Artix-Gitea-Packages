@@ -1,29 +1,30 @@
 ---
-version: 3.2.0-5
+version: 3.2.0-6
 pkgbase:
   name: ospray
   pkgdesc: Ray Tracing Based Rendering Engine for High-Fidelity Visualization
   pkgver: 3.2.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://www.ospray.org/
   arch:
     - x86_64
   license:
-    - Apache
+    - Apache-2.0
   makedepends:
     - benchmark
     - cmake
     - git
     - glu
     - gtest
+    - ispc
     - level-zero-headers
     - level-zero-loader
     - ninja
   depends:
     - embree
-    - gcc-libs
     - glibc
-    - ispc
+    - libgcc
+    - libstdc++
     - onetbb
     - openmpi
     - openimagedenoise
