@@ -1,10 +1,10 @@
 ---
-version: 1.27.0-1
+version: 1.27.0-2
 pkgbase:
   name: level-zero
   pkgdesc: API for accessing low level interfaces in oneAPI platform devices
   pkgver: 1.27.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/oneapi-src/level-zero/
   arch:
     - x86_64
@@ -25,7 +25,8 @@ pkgname:
   - name: level-zero-loader
     pkgdesc: API for accessing low level interfaces in oneAPI platform devices (loader)
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - spdlog
 # generated with artixpkg 0.37.6-1-any
