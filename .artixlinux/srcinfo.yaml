@@ -1,10 +1,10 @@
 ---
-version: 0.1.13-1
+version: 0.1.13-2
 pkgbase:
   name: libetonyek
   pkgdesc: Library and a set of tools for reading and converting Apple Keynote presentations
   pkgver: 0.1.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.documentfoundation.org/DLP/Libraries/libetonyek
   arch:
     - x86_64
@@ -14,7 +14,6 @@ pkgbase:
     - boost
     - cppunit
     - doxygen
-    - gcc-libs
     - glibc
     - glm
     - gperf
@@ -36,8 +35,9 @@ pkgname:
       - zlib
       - librevenge
       - liblangtag
-      - gcc-libs
+      - libstdc++
+      - libgcc
       - glibc
   - name: libetonyek-doc
     pkgdesc: Library and a set of tools for reading and converting Apple Keynote presentations - documentation
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
