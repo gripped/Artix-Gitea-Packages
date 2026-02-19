@@ -1,10 +1,10 @@
 ---
-version: 0.110.0-1
+version: 0.110.0-2
 pkgbase:
   name: nushell
   pkgdesc: A new type of shell
   pkgver: 0.110.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.nushell.sh
   install: nushell.install
   arch:
@@ -19,7 +19,7 @@ pkgbase:
   depends:
     - curl
     - glibc
-    - gcc-libs
+    - libgcc
     - libcrypto.so
     - libssl.so
     - zlib
