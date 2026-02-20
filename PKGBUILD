@@ -11,7 +11,7 @@ pkgname=(
   'mgba-qt'
 )
 pkgver=0.10.5
-pkgrel=2
+pkgrel=3
 pkgdesc='A Nintendo Gameboy Advance Emulator focusing on speed and accuracy'
 arch=('x86_64')
 url='http://mgba.io'
@@ -72,10 +72,11 @@ package_mgba-qt() {
   pkgdesc+=' (Qt5 UI)'
   depends=(
     'ffmpeg'
-    'gcc-libs'
     'glibc'
+    'libgcc'
     'libglvnd'
     'libmgba'
+    'libstdc++'
     'qt5-base'
     'qt5-multimedia'
     'sdl2'

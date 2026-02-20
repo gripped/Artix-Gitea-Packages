@@ -1,10 +1,10 @@
 ---
-version: 0.10.5-2
+version: 0.10.5-3
 pkgbase:
   name: mgba
   pkgdesc: A Nintendo Gameboy Advance Emulator focusing on speed and accuracy
   pkgver: 0.10.5
-  pkgrel: 2
+  pkgrel: 3
   url: http://mgba.io
   arch:
     - x86_64
@@ -50,11 +50,12 @@ pkgname:
     pkgdesc: A Nintendo Gameboy Advance Emulator focusing on speed and accuracy (Qt5 UI)
     depends:
       - ffmpeg
-      - gcc-libs
       - glibc
+      - libgcc
       - libglvnd
       - libmgba
+      - libstdc++
       - qt5-base
       - qt5-multimedia
       - sdl2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
