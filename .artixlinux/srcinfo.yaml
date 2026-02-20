@@ -28,4 +28,4 @@ pkgbase:
     - 13f83d7d38891145661a3e994969bcb06a9c561a4e18961e65040ddc32e706c1fb52c9be9ab696adfe9d97817e2eecfd916d57d7053b92df4d724fa374c05e05
 pkgname:
   - name: libuv
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
