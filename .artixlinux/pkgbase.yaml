@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,9 +13,12 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 3.121-1
+    packages:
+      - nss-3.121-1-x86_64.pkg.tar.zst
+      - ca-certificates-mozilla-3.121-1-x86_64.pkg.tar.zst
+    debug:
+      - nss-debug-3.121-1-x86_64.pkg.tar.zst
   system:
     version: 3.120.1-1
     packages:
