@@ -11,9 +11,8 @@
 pkgbase=mariadb
 pkgname=('mariadb-libs' 'mariadb-clients' 'mariadb' 'mytop')
 pkgdesc='Fast SQL database server, derived from MySQL'
-# Note: Please update nvchecker configuration on feature update!
-pkgver=12.1.2
-pkgrel=1
+pkgver=12.2.2
+pkgrel=2
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -28,8 +27,9 @@ source=("mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-${pkgver
         'git+https://github.com/mariadb-corporation/libmarias3.git'
         'git+https://github.com/mariadb-corporation/mariadb-columnstore-engine.git'
         '0001-arch-specific.patch'
+        '0002-MDEV-38811-crash-in-information_schema.table_constra.patch'
 'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
-sha256sums=('307cd1f1ee54424dc11724de074fbac57f02fc04d9836fc6f139931668cd9879'
+sha256sums=('b93cca3f38b90c3b70e22b484f074ac0d0655c1aa80f8c59593bdda2d950b0cc'
             'SKIP'
             'SKIP'
             'SKIP'
@@ -37,6 +37,7 @@ sha256sums=('307cd1f1ee54424dc11724de074fbac57f02fc04d9836fc6f139931668cd9879'
             'SKIP'
             'SKIP'
             'dd5e4846f6173097130e44d60cdd880c7d1b98bf5177baaca67c0ab9e5134516'
+            'b7f475587ec8657aba5b733e90e4182a69e8bee1eb18201a67726bca5307720b'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
 
@@ -58,6 +59,9 @@ prepare() {
   #  * force preloading jemalloc for memory management
   #  * make systemd-tmpfiles create MYSQL_DATADIR
   patch -Np1 < ../0001-arch-specific.patch
+
+  # https://jira.mariadb.org/browse/MDEV-38811
+  patch -Np1 < ../0002-MDEV-38811-crash-in-information_schema.table_constra.patch
 }
 
 build() {
@@ -224,7 +228,7 @@ package_mariadb() {
               'xz: lzma provider')
   conflicts=('mysql')
   provides=("mariadb-server=${pkgver}"
-	    "mysql=${pkgver}")
+	    'mysql')
   options=('emptydirs')
 
   cd build
