@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-1
+version: 1.1.0-2
 pkgbase:
   name: viskores
   pkgdesc: A visualization library for many-threaded devices
   pkgver: 1.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Viskores/viskores
   arch:
     - x86_64
@@ -14,8 +14,10 @@ pkgbase:
     - cmake
     - ninja
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libgomp
+    - libstdc++
     - onetbb
     - openmpi
     - libmpi.so
@@ -25,4 +27,4 @@ pkgbase:
     - 016e697a693cfa909864307dbff34f06a095b40f3454e3aba883d2384752ead4493aa1bc51108e7130ec47b5ba4dab3825eef8b7e599206ca54152364d74815b
 pkgname:
   - name: viskores
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
