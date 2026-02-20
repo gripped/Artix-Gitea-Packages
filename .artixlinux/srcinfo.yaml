@@ -1,0 +1,24 @@
+---
+version: 2.2.1-2
+pkgbase:
+  name: iperf
+  pkgdesc: A tool to measure maximum TCP bandwidth
+  pkgver: 2.2.1
+  pkgrel: 2
+  url: https://sourceforge.net/projects/iperf2/
+  install: iperf.install
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-IPerf
+  depends:
+    - glibc
+    - libgcc
+    - libstdc++
+  source:
+    - https://downloads.sourceforge.net/iperf2/iperf-2.2.1.tar.gz
+  sha256sums:
+    - 754ab0a7e28033dbea81308ef424bc7df4d6e2fe31b60cc536b61b51fefbd8fb
+pkgname:
+  - name: iperf
+# generated with artixpkg 0.38-1-any
