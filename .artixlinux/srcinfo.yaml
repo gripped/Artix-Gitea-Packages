@@ -1,10 +1,10 @@
 ---
-version: 1:1.9.2-1
+version: 1:1.9.2-3
 pkgbase:
   name: libgit2
   pkgdesc: A linkable library for Git
   pkgver: 1.9.2
-  pkgrel: 1
+  pkgrel: 3
   epoch: 1
   url: https://github.com/libgit2/libgit2
   arch:
@@ -18,7 +18,7 @@ pkgbase:
     - pcre2
     - python
   depends:
-    - gcc-libs
+    - libgcc
     - glibc
     - llhttp
     - zlib
@@ -33,7 +33,7 @@ pkgbase:
 pkgname:
   - name: libgit2
     depends:
-      - gcc-libs
+      - libgcc
       - glibc
       - llhttp
       - zlib
@@ -44,4 +44,4 @@ pkgname:
       - libssl.so
       - pcre2
       - libpcre2-8.so
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38-1-any
