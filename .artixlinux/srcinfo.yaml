@@ -1,10 +1,10 @@
 ---
-version: 25-1
+version: 25-2
 pkgbase:
   name: pkgfile
   pkgdesc: A tool to search for files in official repository packages
   pkgver: 25
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/falconindy/pkgfile/
   install: pkgfile.install
   arch:
@@ -19,10 +19,11 @@ pkgbase:
     - meson
   depends:
     - curl
-    - gcc-libs
     - glibc
     - libarchive
     - libelogind
+    - libgcc
+    - libstdc++
     - pacman
     - pcre
   source:
@@ -33,4 +34,4 @@ pkgbase:
     - 3b247c9e0647ddf93682b7b9fedee5822004b9b4b57af37be82351f1cdca3b81
 pkgname:
   - name: pkgfile
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38-1-any

@@ -3,17 +3,18 @@
 
 pkgname=pkgfile
 pkgver=25
-pkgrel=1
+pkgrel=2
 pkgdesc='A tool to search for files in official repository packages'
 arch=('x86_64')
 url='https://github.com/falconindy/pkgfile/'
 license=('MIT')
 depends=(
     'curl'
-    'gcc-libs'
     'glibc'
     'libarchive'
     'libelogind'
+    'libgcc'
+    'libstdc++'
     'pacman'
     'pcre'
    )
