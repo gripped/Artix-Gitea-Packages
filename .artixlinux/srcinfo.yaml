@@ -1,10 +1,10 @@
 ---
-version: 1:82.0.0-0
+version: 1:82.0.0-1
 pkgbase:
   name: python-setuptools
   pkgdesc: Easily download, build, install, upgrade, and uninstall Python packages
   pkgver: 82.0.0
-  pkgrel: 0
+  pkgrel: 1
   epoch: 1
   url: https://pypi.org/project/setuptools/
   arch:
@@ -42,6 +42,7 @@ pkgbase:
     - python-packaging
     - python-platformdirs
     - python-wheel
+    - python-pkg_resources
   provides:
     - python-distribute
   replaces:

@@ -8,7 +8,7 @@ _bootstrap_version=3.14.0
 pkgname=python-setuptools
 _name=${pkgname#python-}
 pkgver=82.0.0
-pkgrel=0
+pkgrel=1
 epoch=1
 pkgdesc="Easily download, build, install, upgrade, and uninstall Python packages"
 arch=('any')
@@ -27,6 +27,7 @@ if (( _bootstrap == 0 )); then
     'python-packaging'
     'python-platformdirs'
     'python-wheel'
+    'python-pkg_resources'
   )
 fi
 makedepends=(
@@ -165,3 +166,4 @@ package() {
 
   rm "$pkgdir/$site_packages/$_name"/*.exe
 }
+
