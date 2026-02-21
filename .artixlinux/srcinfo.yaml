@@ -1,10 +1,10 @@
 ---
-version: 1.4.3-2
+version: 1.4.3-3
 pkgbase:
   name: inkscape
   pkgdesc: Professional vector graphics editor
   pkgver: 1.4.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://inkscape.org/
   arch:
     - x86_64
@@ -31,7 +31,6 @@ pkgbase:
     - freetype2
     - libfreetype.so
     - gc
-    - gcc-libs
     - gdk-pixbuf2
     - libgdk_pixbuf-2.0.so
     - glib2
@@ -62,6 +61,10 @@ pkgbase:
     - libcdr
     - libepoxy
     - libepoxy.so
+    - libgcc
+    - libgcc_s.so
+    - libgomp
+    - libgomp.so
     - libjpeg-turbo
     - libjpeg.so
     - libpng
@@ -69,6 +72,8 @@ pkgbase:
     - librevenge
     - libsigc++
     - libsigc-2.0.so
+    - libstdc++
+    - libstdc++.so
     - libvisio
     - libwpg
     - libx11
@@ -144,4 +149,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: inkscape
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38-1-any
