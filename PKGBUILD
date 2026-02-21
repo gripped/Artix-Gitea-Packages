@@ -50,4 +50,3 @@ package() {
   make prefix=/usr DESTDIR="${pkgdir}" install
 }
 
-# vim: ts=2 sw=2 et:
