@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-launcher
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Layer Shell frontend for Pop Launcher'
@@ -31,8 +32,8 @@ source=(
   git+https://github.com/pop-os/cosmic-launcher.git#tag=epoch-${pkgver}
   cosmic-launcher-lto.patch
 )
-b2sums=('ab46eb1445fc400f9713c541c3686c646d22d7a556cc8c4406f23cfc27850caa31cc4488dd39a620509adac88b7c239522b9d485974957b491c32ff0292f1875'
-        'eb4bf64cbec00b5e6c2d3a332b38ec37dca374c0da16882c421fdea296a0c2a5c741ccd357b4d8cc1af6e82e1c06e5363121b6c03344e6af47025535a127fb8b')
+b2sums=('8f8bd69ea565f2d8b709181a0304dad2702b6e0775ce9ee9d338a5acc27236c10cb5f1d950824453401abd5d3ffc22048e3a6ded652dcfac78442b21ead5c899'
+        '17282e6d01b5998f67a326b791de7ee0d00d1a8cdeabe3b4eb87ea7e8f73419062dc5e8a558ff8ab5e4568f27dc24e2f0faed90463a3246e668e119082dbe797')
 
 prepare() {
   cd cosmic-launcher
