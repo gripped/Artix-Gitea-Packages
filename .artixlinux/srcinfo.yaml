@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.2-1
+version: 1:1.0.7-1
 pkgbase:
   name: cosmic-idle
   pkgdesc: Cosmic idle daemon
-  pkgver: 1.0.2
+  pkgver: 1.0.7
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-idle
@@ -25,9 +25,9 @@ pkgbase:
     - libxkbcommon
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-idle.git#tag=epoch-1.0.2
+    - git+https://github.com/pop-os/cosmic-idle.git#tag=epoch-1.0.7
   b2sums:
-    - ed9d1ed95c4a6437b15cbbf72813c560949e6d658cc6f9b50a6937d2979a2935e7874a17beeddbf574ebe2147b4c461d64c4703231abe8b47ee9a299790d984b
+    - 23e204198fa8f662a5370bbe064833a3213ba352927223fc9c526b2ed761a69eb5cef6634e696b9eabfa5f4b69415199ca45bcf13146c3496ae35961cb60e162
 pkgname:
   - name: cosmic-idle
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
