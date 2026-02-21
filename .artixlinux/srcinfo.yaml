@@ -1,10 +1,10 @@
 ---
-version: 5.0.3-1
+version: 5.0.3-2
 pkgbase:
   name: libfbclient
   pkgdesc: Client library for Firebird
   pkgver: 5.0.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.firebirdsql.org
   arch:
     - x86_64
@@ -18,7 +18,9 @@ pkgbase:
     - unzip
     - cmake
   depends:
-    - gcc-libs
+    - sh
+    - glibc
+    - libgcc
     - libtommath
   options:
     - '!lto'
@@ -30,4 +32,4 @@ pkgbase:
     - f16119b11063de5a64157c8ed2d51cda15437739072e202a4408ac26ffd6be57c80381e99cb9d5353de7fe5bdd25dcec4149da91ead0671491019dc3de110ae1
 pkgname:
   - name: libfbclient
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.37.6-1-any
