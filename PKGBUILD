@@ -1,9 +1,10 @@
-# Maintainer: Peter Jung <ptr1337@archlinux.org
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=pop-sound-theme
 pkgver=5.5.1.r7.g25ea85d
-pkgrel=2
+pkgrel=2.2
 pkgdesc="System76 Pop sound theme"
 arch=('any')
 url="https://github.com/pop-os/gtk-theme"

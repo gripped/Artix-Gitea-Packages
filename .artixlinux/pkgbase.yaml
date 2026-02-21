@@ -1,10 +1,10 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -50,8 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 5.5.1.r7.g25ea85d-2.2
+    packages:
+      - pop-sound-theme-5.5.1.r7.g25ea85d-2.2-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 5.5.1.r7.g25ea85d-2

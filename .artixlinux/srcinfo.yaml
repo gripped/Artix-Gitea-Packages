@@ -1,10 +1,10 @@
 ---
-version: 5.5.1.r7.g25ea85d-2
+version: 5.5.1.r7.g25ea85d-2.2
 pkgbase:
   name: pop-sound-theme
   pkgdesc: System76 Pop sound theme
   pkgver: 5.5.1.r7.g25ea85d
-  pkgrel: 2
+  pkgrel: 2.2
   url: https://github.com/pop-os/gtk-theme
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - 43e2044d5c51413e1038068f1a178c6412db1841d52aa304978790782b1b9bbc
 pkgname:
   - name: pop-sound-theme
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
