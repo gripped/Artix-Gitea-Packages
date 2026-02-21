@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-files
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='File manager for the COSMIC desktop environment'
@@ -31,7 +32,7 @@ source=(
   git+https://github.com/pop-os/cosmic-files.git#tag=epoch-${pkgver}
   cosmic-files-lto.patch
 )
-b2sums=('0605c080fe79164c067a300d4f65976aa429dcb6a6d0e747218a2493dcf2f928fa92f8318c8740c86a1a8d8b805a23e0704714cb7c2e1f07e2bf46c93bff183b'
+b2sums=('6e334b0e7020621f58c971458191a4d7ac4db4376ca35d085a746b552d498c3e3c958caecb3f1faf3476f166c4a1464777003584ec4815c9fe89b5f7d2d6d065'
         '105231f886affb3274d18bbe95d0fc27ba33cb557245ca567caccc9b0f5fbae0b7d92a81c0b2784130659e81b73e374ac735f8ad9b06adad18b4e4fd227164b5')
 
 prepare() {
