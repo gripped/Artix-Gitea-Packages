@@ -37,11 +37,6 @@ prepare() {
   sed 's/lto = "fat"/lto = "thin"/g' -i Cargo.toml
 }
 
-pkgver() {
-  cd launcher
-  git describe --tags
-}
-
 build() {
   cd launcher
   RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
