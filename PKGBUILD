@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-workspaces
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=2
 pkgdesc='Cosmic workspaces'
@@ -29,7 +30,7 @@ source=(
   git+https://github.com/pop-os/cosmic-workspaces-epoch.git#tag=epoch-${pkgver}
   cosmic-workspaces-lto.patch
 )
-b2sums=('29afa4d4107d51094ebd5ca5266060d3bd62a4fe8a27937ab50a47a38a5dcceedeecd7678a49e47248ac564b1c2413a4908840ed99ed90fdd31d7ca823057681'
+b2sums=('548897e6e32c2c4362f73e39dbf01beade373ba7eb2e1a82b1c85e42429413fef5de55ae8e79e0232ae8ee648fb72a593dc20950f169ee097a4b6d2acf8051a8'
         '1ea5088acc34078e58a6368976b470080aa8053a97f94a41546dd79a4c7450c419b260d1e17e7c5652bdc2b9f4b2ed547a83c69a2b37dc76ccedf94242a8fba3')
 
 prepare() {
