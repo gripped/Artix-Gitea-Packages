@@ -17,11 +17,11 @@ makedepends=(
   just
 )
 options=(!strip)
-source=(git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-${pkgver})
+source=(cosmic-icons-${pkgver}::git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-${pkgver})
 b2sums=('f45bfe859adf55a72c3a2b2d392378bcc6617ef3c7c95a601853d9dc373a21255641082cb40ccedd2fe1b03b75d8a1630033cd456e3f4298b27d1bb0cc6ab44e')
 
 package() {
-  cd cosmic-icons
+  cd cosmic-icons-${pkgver}
   just rootdir="${pkgdir}" install
 }
 
