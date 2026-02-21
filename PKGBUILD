@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-greeter
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='COSMIC greeter for greetd'
@@ -13,6 +14,7 @@ license=(GPL-3.0-only)
 groups=(cosmic)
 depends=(
   cosmic-comp
+  cosmic-icon-theme
   gcc-libs
   glibc
   greetd
@@ -30,12 +32,10 @@ makedepends=(
 )
 source=(
   git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-${pkgver}
-  com.system76.CosmicGreeter
   cosmic-greeter-display-manager.patch
   cosmic-greeter-lto.patch
 )
-b2sums=('8f01cd11d1242b69f96f59a62f553c48d1b7543a42b844e39670e10a7c679081b1fa211c46ce68fb0fc9b095205d3b163a6b0f8d682420d8b06c8e021012be92'
-        '2d95dac0ff6cab589b19de9341a4a75156a6ce45bf70d69d8b9d51cf28ee458d96bb53933fb93e2bcd56dbab7ad0479043e0b986e0520e3caeef421b049e7a21'
+b2sums=('3ad4cfe09910d486821c612cf551faba0f6069cf56c0133385cab95b2625681754c072041dd128d6c65cc785f35ebe39793bfda29b0326d00ed96922a8190815'
         '8b5c32a991e31cf102b1b07e06d37e979f19106b82e8cab7dc8df81789ab6b24587605aa3387254057732a268368c4074f92461f6f5125bc1cba4e62e18cef27'
         '89ca262c95713e773662fb81e379bc2b63d2c93072b909f8f1eaaafee5289359fd729a476eb66568f893986a53e9c689dccfc4aeeeef62cb736cff466c463f7d')
 
@@ -62,7 +62,6 @@ package() {
   cd cosmic-greeter
   just rootdir="${pkgdir}" install
   install -Dm 644 cosmic-greeter.toml -t "${pkgdir}"/etc/greetd/
-  install -Dm 644 "${srcdir}"/com.system76.CosmicGreeter -t "${pkgdir}"/usr/share/dbus-1/services/
 }
 
 # vim: ts=2 sw=2 et:
