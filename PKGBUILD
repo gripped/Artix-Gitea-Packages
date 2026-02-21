@@ -1,8 +1,9 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-screenshot
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Utility for capturing screenshots via XDG Desktop Portal'
@@ -25,7 +26,7 @@ makedepends=(
 source=(
   git+https://github.com/pop-os/cosmic-screenshot.git#tag=epoch-${pkgver}
 )
-b2sums=('e55a70259961f8e9362c263810967a1a93f984c1e0d9e88f7922d1e1cf7f7944919fb9bdeb561043c0a53b84bc698434945d99b18c76d572fa0996558562d5a1')
+b2sums=('301a6375e6a84236762645f09f0bf84140944f664d5cef320c7fbfa73fb58a91d7d684c4653a98772419e465f8ed6e541285442c886a419b3eb37a1e57aeebfa')
 
 prepare() {
   cd cosmic-screenshot
