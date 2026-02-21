@@ -56,4 +56,3 @@ package() {
   just rootdir="${pkgdir}" install
 }
 
-# vim: ts=2 sw=2 et:
