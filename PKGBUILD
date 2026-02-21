@@ -11,7 +11,7 @@ pkgname=(
   zenmap
 )
 pkgver=7.98
-pkgrel=4
+pkgrel=6
 pkgdesc="Utility for network discovery and security auditing"
 url='https://nmap.org/'
 arch=(x86_64)
@@ -23,11 +23,12 @@ makedepends=(
   python-setuptools-gettext
   python-wheel
   # nmap deps:
-  gcc-libs
   glibc
+  libgcc
   libpcap
   libssh2
-  lua
+  libstdc++
+  lua54
   openssl
   pcre2
   zlib
@@ -97,11 +98,12 @@ check() {
 
 package_nmap() {
   depends=(
-    gcc-libs
     glibc
+    libgcc
     libpcap
     libssh2
-    lua
+    libstdc++
+    lua54
     openssl
     pcre2
     zlib

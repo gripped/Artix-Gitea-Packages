@@ -1,10 +1,10 @@
 ---
-version: 7.98-4
+version: 7.98-6
 pkgbase:
   name: nmap
   pkgdesc: Utility for network discovery and security auditing
   pkgver: 7.98
-  pkgrel: 4
+  pkgrel: 6
   url: https://nmap.org/
   arch:
     - x86_64
@@ -16,11 +16,12 @@ pkgbase:
     - python-setuptools
     - python-setuptools-gettext
     - python-wheel
-    - gcc-libs
     - glibc
+    - libgcc
     - libpcap
     - libssh2
-    - lua
+    - libstdc++
+    - lua54
     - openssl
     - pcre2
     - zlib
@@ -48,11 +49,12 @@ pkgbase:
 pkgname:
   - name: nmap
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
       - libpcap
       - libssh2
-      - lua
+      - libstdc++
+      - lua54
       - openssl
       - pcre2
       - zlib
@@ -72,4 +74,4 @@ pkgname:
       - python
       - python-cairo
       - python-gobject
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
