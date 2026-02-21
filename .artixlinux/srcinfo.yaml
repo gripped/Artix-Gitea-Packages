@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.2-1
+version: 1:1.0.7-1
 pkgbase:
   name: cosmic-comp
   pkgdesc: Compositor for the COSMIC desktop environment
-  pkgver: 1.0.2
+  pkgver: 1.0.7
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-comp
@@ -31,9 +31,9 @@ pkgbase:
     - libelogind
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-comp.git#tag=epoch-1.0.2
+    - git+https://github.com/pop-os/cosmic-comp.git#tag=epoch-1.0.7
   b2sums:
-    - c273ef8c2be7c518ac3789a48c01a14712bd43eee62c03c9f97c6066b58f8c797368854e2d3cab48aac465c2a9901327ccccc577eac9e10591484e847a23b94c
+    - 31602748a629b8dbc4b23f11e36ee2f6c997b6dccde068347c0d9fbc00c170ed8b6e879aa06f75e038487a5653ba4aa21ffb0d0447f036b634081700a3fb22ee
 pkgname:
   - name: cosmic-comp
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any

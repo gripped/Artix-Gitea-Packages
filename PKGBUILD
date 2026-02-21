@@ -1,10 +1,11 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: soloturn <soloturn@gmail.com>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-comp
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Compositor for the COSMIC desktop environment'
@@ -32,7 +33,7 @@ makedepends=(
   lld
 )
 source=(git+https://github.com/pop-os/cosmic-comp.git#tag=epoch-${pkgver})
-b2sums=('c273ef8c2be7c518ac3789a48c01a14712bd43eee62c03c9f97c6066b58f8c797368854e2d3cab48aac465c2a9901327ccccc577eac9e10591484e847a23b94c')
+b2sums=('31602748a629b8dbc4b23f11e36ee2f6c997b6dccde068347c0d9fbc00c170ed8b6e879aa06f75e038487a5653ba4aa21ffb0d0447f036b634081700a3fb22ee')
 
 prepare() {
   cd cosmic-comp
