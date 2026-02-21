@@ -5,7 +5,7 @@
 
 pkgname=cosmic-icon-theme
 pkgver=1.0.7
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='Cosmic icon theme'
 arch=(any)
@@ -17,11 +17,11 @@ makedepends=(
   just
 )
 options=(!strip)
-source=(cosmic-icons-${pkgver}::git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-${pkgver})
+source=(git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-${pkgver})
 b2sums=('f45bfe859adf55a72c3a2b2d392378bcc6617ef3c7c95a601853d9dc373a21255641082cb40ccedd2fe1b03b75d8a1630033cd456e3f4298b27d1bb0cc6ab44e')
 
 package() {
-  cd cosmic-icons-${pkgver}
+  cd cosmic-icons
   just rootdir="${pkgdir}" install
 }
 
