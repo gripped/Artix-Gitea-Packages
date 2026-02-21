@@ -1,0 +1,90 @@
+---
+version: 145.0.7632.109-2
+pkgbase:
+  name: ungoogled-chromium
+  pkgdesc: A lightweight approach to removing Google web service dependency
+  pkgver: 145.0.7632.109
+  pkgrel: 2
+  url: https://github.com/ungoogled-software/ungoogled-chromium
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - python
+    - gn
+    - ninja
+    - clang
+    - lld
+    - gperf
+    - nodejs
+    - pipewire
+    - rust
+    - rust-bindgen
+    - qt6-base
+    - java-runtime-headless
+    - git
+    - compiler-rt
+  depends:
+    - gtk3
+    - nss
+    - alsa-lib
+    - xdg-utils
+    - libxss
+    - libcups
+    - libgcrypt
+    - ttf-liberation
+    - dbus
+    - libpulse
+    - pciutils
+    - libva
+    - libffi
+    - desktop-file-utils
+    - hicolor-icon-theme
+    - fontconfig
+    - brotli
+    - libjpeg-turbo
+    - flac
+    - libxml2
+    - libwebp
+    - minizip
+    - opus
+    - harfbuzz
+    - libxslt
+    - freetype2
+  optdepends:
+    - 'pipewire: WebRTC desktop sharing under Wayland'
+    - 'kdialog: support for native dialogs in Plasma'
+    - 'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
+    - 'org.freedesktop.secrets: password storage backend on GNOME / Xfce'
+    - 'kwallet: support for storing passwords in KWallet on Plasma'
+    - 'upower: Battery Status API support'
+  provides:
+    - chromium=145.0.7632.109
+    - chromedriver=145.0.7632.109
+  conflicts:
+    - chromium
+    - chromedriver
+  options:
+    - '!lto'
+  source:
+    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-145.0.7632.109-lite.tar.xz
+    - ungoogled-chromium-145.0.7632.109-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/145.0.7632.109-1.tar.gz
+    - https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz
+    - chromium-138-nodejs-version-check.patch
+    - chromium-145-fix-SYS_SECCOMP.patch
+    - compiler-rt-adjust-paths.patch
+    - increase-fortify-level.patch
+    - use-oauth2-client-switches-as-default.patch
+  sha256sums:
+    - 4b9460a4c852b824dbd3c6de00948fe97b760e89ac56c62b5e28f8581a5c1690
+    - 17b1909d1525020f6e7241dc11f8cbec591c8ac985e023846e74cb40a45c0aa0
+    - 213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a
+    - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
+    - 4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e
+    - ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863
+    - d634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342
+    - 9343afa1a4308a7cfb3317229f5aff7778688debcc03c4a74a85908aa1d0cc3a
+pkgname:
+  - name: ungoogled-chromium
+# generated with artixpkg 0.37.6-1-any
