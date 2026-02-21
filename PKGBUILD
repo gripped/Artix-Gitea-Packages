@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=pop-launcher
 pkgver=1.2.7
-pkgrel=1.1
+pkgrel=1.3
 pkgdesc='Modular IPC-based desktop launcher service'
 arch=(x86_64)
 url=https://github.com/pop-os/launcher
