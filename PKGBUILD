@@ -1,10 +1,11 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: soloturn <soloturn@gmail.com>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-app-library
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Cosmic App Library'
@@ -24,11 +25,14 @@ makedepends=(
   just
   lld
 )
-source=(git+https://github.com/pop-os/cosmic-applibrary.git#tag=epoch-${pkgver})
-b2sums=('b2d3618427fa87745a82fc5456257420bbe4cf949b7055f9c0523de7e00ff461f8e77475dd560c22d73c47c71be4c5a1c83969e0ff6391f0504e8c896e8af1fe')
+source=(git+https://github.com/pop-os/cosmic-applibrary.git#tag=epoch-${pkgver}
+       fix-locked.patch)
+b2sums=('0136b0ec0c1ecf131f0970ca9c775120d89a87f0552bfe6de8d2ce54de075ad12ab9cede45a3e824024a68ee6c60d52aa202cdd07196c3833b04f54d2ddd77f2'
+        'f4301a9e1da0a9b02d6e4509a8d289ccba29060f2a365d13d2735fff3e82a2775f8d80c963b692e10adf48574090d47321df7935bec2591688c0d62c090f7d92')
 
 prepare() {
   cd cosmic-applibrary
+  patch -Np1 < ../fix-locked.patch
   cargo fetch --locked
 }
 
