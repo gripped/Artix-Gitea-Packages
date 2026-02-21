@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=xdg-desktop-portal-cosmic
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='A backend implementation for xdg-desktop-portal for the COSMIC desktop environment'
@@ -31,7 +32,7 @@ provides=(xdg-desktop-portal-impl)
 source=(
   git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git#tag=epoch-${pkgver}
 )
-b2sums=('566802c5d85a6fe40dcd46bdb2855411c559ef2a8b35f16d5413f82a0d934a9be5d7445918861a5969d926400c2b3ed3774c22d91401951d3c339be3a58c6c79')
+b2sums=('af18dc7e268bd76edddd4aef6dcec1ef04c87170ce90c6d4a64149bb89a0fa5e6a2ef06eff5ccf126558788ee2f7c0204098dad58d4d4a895705dafcd72791e7')
 
 prepare() {
   cd xdg-desktop-portal-cosmic
