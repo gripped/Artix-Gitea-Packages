@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-icon-theme
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Cosmic icon theme'
@@ -17,7 +18,7 @@ makedepends=(
 )
 options=(!strip)
 source=(git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-${pkgver})
-b2sums=('628c69c5ddbfa446ee0b5e8c9b4889f468049eb401e26238e70929288739c3f4f874a0e4987f7c7f75d9ca2e282621090beeed7bfb96ba5ff4279021c15ec49a')
+b2sums=('f45bfe859adf55a72c3a2b2d392378bcc6617ef3c7c95a601853d9dc373a21255641082cb40ccedd2fe1b03b75d8a1630033cd456e3f4298b27d1bb0cc6ab44e')
 
 package() {
   cd cosmic-icons
