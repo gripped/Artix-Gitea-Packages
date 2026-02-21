@@ -4,7 +4,7 @@
 # Contributor: Daniele Paolella <dp@mcrservice.it>
 
 pkgname=python-virtualenv
-pkgver=20.36.1
+pkgver=20.38.0
 pkgrel=1
 pkgdesc='Virtual Python Environment builder'
 arch=(any)
@@ -22,10 +22,14 @@ makedepends=(
   python-installer
   python-hatchling
   python-hatch-vcs
+  python-wheel
   python-sphinx
   python-sphinx-argparse
+  python-sphinx-autodoc-typehints
+  python-sphinx-copybutton
+  python-sphinx-inline-tabs
   python-sphinxcontrib-towncrier
-  python-wheel
+  python-sphinxcontrib-mermaid
   towncrier
 )
 checkdepends=(
@@ -44,8 +48,8 @@ replaces=(virtualenv)
 conflicts=(virtualenv)
 options=(!makeflags)
 source=("$pkgname::git+https://github.com/pypa/virtualenv#tag=$pkgver")
-sha512sums=('303f26769cf3ee23e3c8d570aa68e598a6182f363dd6a5baf7e3e773db0407bfbb95605beb7653a55a53f4ae021def112c485f9149e43f703035ef0c23ce6601')
-b2sums=('000798007bea3fc945678377d9e6a81d5b0ed8934b4cebe0a03515e760dc1a5b66f3cc38454db7024484c24266205d512c3515ca64c4b7715f6b1ee8fb7d12dc')
+sha512sums=('a7b4a24ff091ad5f9b74ee72574a7a68989c4755b41b107734c7cf88ff2dde13295ac209e7842e63c4ccc2f65c65a66e42cbb3447baed0bffa85a160e8d5e64c')
+b2sums=('d4be9ec5efea4052575d19cf074374c4b3efaeb88b1da8442f897566f2055671fa4734b50a223ad33843ff7974ac71842b864bb0a0475b9d56ed11c8d91525fa')
 
 build() {
   cd "$pkgname"
