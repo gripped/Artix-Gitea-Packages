@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.2-1
+version: 1:1.0.7-1
 pkgbase:
   name: cosmic-osd
   pkgdesc: COSMIC On-Screen Display
-  pkgver: 1.0.2
+  pkgver: 1.0.7
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-osd
@@ -30,9 +30,11 @@ pkgbase:
     - libelogind
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-osd.git#tag=epoch-1.0.2
+    - git+https://github.com/pop-os/cosmic-osd.git#tag=epoch-1.0.7
+    - suid-polkit-agent-helper.rs
   b2sums:
-    - c9c27bef3583dde8e0894411777f927396c415f9db7c7089a1a61e7e6518b6cd748f8e635eb0036afb7eb3bfa8247b131c00fd4613ee043bd6149494ce32aabf
+    - 4ec61171adbccd500cfb956cdba0b1107f954193eb21c5de8e0453832b55447b89aaabdba03e1dbbc1d032330eec65bf376a65647462046e37f6d07c61982ce2
+    - b2c1f956aad81b17fa82f0663e4b67265d904af04f67c003f39614f0338ee1ad0cd32e0ed9d7437800ef4b9f82f105533acd14c3b479ce289db4cee1c1309d92
 pkgname:
   - name: cosmic-osd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
