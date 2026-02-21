@@ -1,10 +1,10 @@
 ---
-version: 1:2.112.1-1
+version: 1:2.112.1-2
 pkgbase:
   name: dmd
   pkgdesc: D programming language compiler and standard library
   pkgver: 2.112.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.dlang.org
   arch:
@@ -61,8 +61,6 @@ pkgname:
     pkgdesc: The Phobos standard library for D programming language
     license:
       - BSL-1.0
-    depends:
-      - gcc-libs
     provides:
       - d-runtime=2.112.1
       - d-stdlib=2.112.1
@@ -74,4 +72,4 @@ pkgname:
     options:
       - staticlibs
       - '!strip'
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.37.6-1-any
