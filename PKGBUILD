@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-store
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Cosmic App Store'
@@ -26,15 +27,13 @@ makedepends=(
   cargo
   git
   just
-  lld
-  packagekit
+  mold
 )
-optdepends=('packagekit: Native packages support')
 source=(
   git+https://github.com/pop-os/cosmic-store.git#tag=epoch-${pkgver}
   cosmic-store-lto.patch
 )
-b2sums=('929912d98d78e3658f2f8cff97d3cee6387116a49360cab5540317a086b8608feb12ad5db5437ebc69411dac864647a4babe10141aa43c8fbfcd87bf08622d68'
+b2sums=('d2270738cb1e61b01f874e6d31406e75f378f53868e7f270ac37bcb919e03d22e53f66d07407bee2804411e35be6216c390b4ea4431a2ed77ad9a0adbc509c15'
         'ed4089dd1ded4a87307c50f38af03ff3742bfc54053a668416f713c9b27eb591e608166ce14f2f50f8303aaf06533963fd821d00522b77e7f965827035a7ff11')
 
 prepare() {
@@ -45,8 +44,8 @@ prepare() {
 
 build() {
   cd cosmic-store
-  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
-  just build-release --frozen
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=mold"
+  just build-release --frozen --no-default-features --features dbus-config,desktop-systemd-scope,flatpak,logind,notify,single-instance,wgpu,wayland,xdg-portal
 }
 
 package() {
