@@ -1,10 +1,11 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org
 # Contributor: soloturn <soloturn@gmail.com>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-bg
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='COSMIC session service which applies backgrounds to displays'
@@ -30,7 +31,7 @@ source=(
   git+https://github.com/pop-os/cosmic-bg.git#tag=epoch-${pkgver}
   cosmic-bg-lto.patch
 )
-b2sums=('63d6681401215b628e18e54635da56a6af473fb6936e6bc60c3349fec630cacebbd9a9666e34a32137587cd08d1d13097536cdc6bbfbd3269129157e7eda3d2d'
+b2sums=('3d69bf907e9d282cad6702d29fd9506cfb9f9ca59064186497a1a86ac2b723b42b3269fd7e13facd92117b46040a1e81ec53327fbbfd3549d25f195681599393'
         '425c8b386f69d6b4b7883235f822089bb8b596043b1ef5616ff13768ab7afa5a0db55b0cff9c64f264abc60dd6c11f137069c0c8273135b8203054db3ff87c83')
 
 prepare() {
