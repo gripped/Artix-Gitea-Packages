@@ -1,9 +1,10 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
-# Maintainer: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-settings-daemon
-pkgver=1.0.2
+pkgver=1.0.7
 pkgrel=1
 epoch=1
 pkgdesc='Cosmic settings daemon'
@@ -39,7 +40,7 @@ source=(
   git+https://github.com/pop-os/cosmic-settings-daemon.git#tag=epoch-${pkgver}
   cosmic-settings-daemon-lto.patch
 )
-b2sums=('5f8662fdd57208beedf2cfbb550f5923b8547fbd87bc265e4e971f6959c3d9e9ccd835ff4b0e4ee73759c00ab188b73a377b9a3a591b5ee5bff1a30fc34e103c'
+b2sums=('cb25ea2d883c12f14b85a26f794a089dabdacf07ff17acf3bf7cb7d67df34b17cb3936c7a1e4e4bab623f96ef5653d126fbf46797ce91870dac8e28af483ef80'
         'd08aacbcc5b98304f9a99bc2d6a0072473f4ccd9175dcd558334179561bb2e68c0c339471f6e85b849087108998fb1b17707be9d3c87bd018c75b45b7774e91e')
 
 prepare() {

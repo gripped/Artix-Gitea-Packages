@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1:1.0.2-1
+    version: 1:1.0.7-1
     packages:
-      - cosmic-settings-daemon-1:1.0.2-1-x86_64.pkg.tar.zst
+      - cosmic-settings-daemon-1:1.0.7-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 1:1.0.1-1
