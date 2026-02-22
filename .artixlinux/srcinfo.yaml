@@ -53,4 +53,4 @@ pkgname:
       - libstdc++.so
       - alsa-lib
       - libasound.so
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.37.6-1-any
