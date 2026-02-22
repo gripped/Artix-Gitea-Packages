@@ -1,10 +1,10 @@
 ---
-version: 3.10.8-4
+version: 3.10.8-5
 pkgbase:
   name: python-matplotlib
   pkgdesc: A python plotting library, making publication quality plots
   pkgver: 3.10.8
-  pkgrel: 4
+  pkgrel: 5
   url: https://matplotlib.org
   arch:
     - x86_64
@@ -53,9 +53,10 @@ pkgbase:
     - python-setuptools-scm
     - python-wheel
   depends:
-    - gcc-libs
     - glibc
     - freetype2
+    - libgcc
+    - libstdc++
     - python
     - python-contourpy
     - python-cycler
@@ -89,6 +90,7 @@ pkgbase:
     - freetype.patch
     - test_polar_title_position.patch
     - test_imshow_masked_interpolation.patch
+    - python-matplotlib-fix-mock-usage.patch::https://github.com/matplotlib/matplotlib/commit/63207bbc8c5f791d1ca5565db39a8e2400165e7b.patch
   validpgpkeys:
     - 23CAB59E3332F94D26BEF0378D86E7FAE5EB0C10
     - EB8322187FD451192E430A7279B3FEC456F12599
@@ -98,6 +100,7 @@ pkgbase:
     - c66bec7fd0c9236432e814c34216f7c3d3f7634a3d37669c92c442d077ee762ed631737697423e4ea8cc249b8dd961bdb4ffb9ab32eddfb1bfa45cbafcfd5f94
     - 0c2dfbcda86be5d9bdf19c16fc031ae28b10e6aa89eaf3701b88d67b4158bb5dc0469a0bcb7c0050004f45b7aa07e8ed3fe68512f94a0b54b4e03c9b6e33349c
     - 2378456c277ad20d4c2d0781e70f2db63c2f2892ec35e9f0569c8f8943fea97b5efaab740bd582b7dece55572d65b01a13364382ef1fd1aeaa9f24076ddc6e08
+    - ea67dec520abbd2811bb95470efe4585c2972ba420d2999dd7040b08d8b78a41bbc4d5f438cead785cc4c68f13cfb397cc12b235226e07fd0d17a0f111cea03b
 pkgname:
   - name: python-matplotlib
 # generated with artixpkg 0.37.6-1-any
