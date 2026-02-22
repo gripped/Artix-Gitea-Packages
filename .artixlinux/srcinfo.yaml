@@ -1,10 +1,10 @@
 ---
-version: 26.1.22-1
+version: 26.1.22-3
 pkgbase:
   name: yazi
   pkgdesc: Blazing fast terminal file manager written in Rust, based on async I/O
   pkgver: 26.1.22
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/sxyazi/yazi
   arch:
     - x86_64
@@ -14,8 +14,12 @@ pkgbase:
     - cargo
     - imagemagick
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
+    - hicolor-icon-theme
     - ttf-nerd-fonts-symbols
+    - lua54
+    - oniguruma
   optdepends:
     - 'ffmpeg: for video thumbnails'
     - '7zip: for archive extraction and preview'
@@ -40,4 +44,4 @@ pkgbase:
     - 83b8a1bf166bfcb54b44b966fa3f34afa7c55584bf81d29275a1cdd99d1c9c4c
 pkgname:
   - name: yazi
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.37.6-1-any
