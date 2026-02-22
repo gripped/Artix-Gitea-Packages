@@ -1,15 +1,15 @@
 ---
-version: 3.3.1-1
+version: 3.3.1-2
 pkgbase:
   name: ruby-bigdecimal
   pkgdesc: This library provides arbitrary-precision decimal floating-point number class
   pkgver: 3.3.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ruby/bigdecimal
   arch:
-    - any
+    - x86_64
   license:
-    - Ruby,
+    - Ruby
     - BSD-2-Clause
   checkdepends:
     - ruby-bundler
@@ -31,4 +31,4 @@ pkgbase:
     - 29b9bc4eb7879fdabb2fd45ed23a4e91c931a570ae5ea93f13af3d0c72ffb90d2f981b259b04430cc7bbb3e58bd6d0c6d8bf0cc44bcda613e86d8ba439719abb
 pkgname:
   - name: ruby-bigdecimal
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
