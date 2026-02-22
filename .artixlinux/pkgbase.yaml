@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.299.0-1
+    version: 0.300.0-1
     packages:
-      - python-strawberry-graphql-0.299.0-1-any.pkg.tar.zst
+      - python-strawberry-graphql-0.300.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 0.296.2-1
