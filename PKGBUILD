@@ -1,0 +1,49 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Peter Jung <ptr1337@archlinux.org>
+# Contributor: Mark Wagie <mark dot wagie at proton dot me>
+
+pkgname=cosmic-initial-setup
+pkgver=1.0.7
+pkgrel=1
+epoch=1
+pkgdesc="COSMIC Initial Setup"
+arch=(x86_64)
+url="https://github.com/pop-os/cosmic-initial-setup"
+license=(GPL-3.0-only)
+groups=(cosmic)
+depends=(
+  cosmic-icon-theme
+  libinput
+  libpulse
+  libxkbcommon
+  polkit
+  libelogind
+)
+makedepends=(
+  cargo
+  git
+  git-lfs
+  just
+)
+source=(git+https://github.com/pop-os/cosmic-initial-setup.git#tag=epoch-${pkgver})
+sha256sums=('f145a91f811eef39a5318fa701db09d7e09d989887cd06e5be3728c190a1f8ba')
+
+prepare() {
+  cd "${pkgname}"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+
+  git lfs install --local
+  git remote add network-origin https://github.com/pop-os/cosmic-initial-setup
+  git lfs fetch network-origin
+  git lfs checkout
+}
+
+build() {
+  cd "${pkgname}"
+  just build-release
+}
+
+package() {
+  cd "${pkgname}"
+  just rootdir="$pkgdir" install
+}
