@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.0.35-1
+    version: 0.0.37-1
     packages:
-      - python-sqlmodel-0.0.35-1-any.pkg.tar.zst
+      - python-sqlmodel-0.0.37-1-any.pkg.tar.zst
     debug: []
   world:
     version: 0.0.34-1
