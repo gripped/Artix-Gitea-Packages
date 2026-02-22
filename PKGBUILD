@@ -4,7 +4,7 @@
 
 pkgname=inkscape
 pkgver=1.4.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Professional vector graphics editor'
 url='https://inkscape.org/'
 license=('GPL' 'LGPL')
@@ -65,7 +65,6 @@ depends=(
   'python-filelock'
   'python-gobject'
   'python-idna'
-  'python-lockfile'
   'python-lxml'
   'python-msgpack'
   'python-numpy'
