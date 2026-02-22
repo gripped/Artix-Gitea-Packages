@@ -2,27 +2,37 @@
 # Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgname=nlopt
-pkgver=2.10.0
-pkgrel=5
-pkgdesc="Nonlinear optimization library"
+pkgver=2.10.1
+pkgrel=1
+pkgdesc='Nonlinear optimization library'
 arch=(x86_64)
-url="https://nlopt.readthedocs.io/en/latest/"
+url='https://nlopt.readthedocs.io/en/latest/'
 license=(LGPL-2.1-or-later)
-depends=(gcc-libs)
+depends=(glibc libgcc libstdc++)
 makedepends=(cmake python-numpy octave guile swig)
 optdepends=('python-numpy: to use with python')
 source=(https://github.com/stevengj/nlopt/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha256sums=('506f83a9e778ad4f204446e99509cb2bdf5539de8beccc260a014bd560237be1')
+sha256sums=('30d13ce16da119db3e987784f7864e35a562ec62c186352fae55cd003e6c58ff')
 
 prepare() {
   cd $pkgname-$pkgver
-  sed -e 's|CMAKE_CXX_STANDARD 11|CMAKE_CXX_STANDARD 17|' -i CMakeLists.txt # Fix build with octave 10
+
+  # Fix build with octave 10+
+  sed \
+    -e 's|CMAKE_CXX_STANDARD 11|CMAKE_CXX_STANDARD 17|' \
+    -i CMakeLists.txt
 }
 
 build() {
-  cmake -B build -S ${pkgname}-${pkgver} \
-    -DCMAKE_INSTALL_PREFIX=/usr
-  make -C build
+    local cmake_options=(
+    -B build
+    -S $pkgname-$pkgver
+    -D CMAKE_INSTALL_PREFIX=/usr
+  )
+
+  cmake "${cmake_options[@]}"
+
+  cmake --build build
 }
 
 check() {
@@ -31,5 +41,5 @@ check() {
 }
 
 package() {
-  make -C build DESTDIR="${pkgdir}" install
+  DESTDIR="$pkgdir" cmake --install build
 }
