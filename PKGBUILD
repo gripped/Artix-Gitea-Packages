@@ -5,8 +5,8 @@
 
 pkgbase=lib32-nvidia-580xx-utils
 pkgname=('lib32-nvidia-580xx-utils' 'lib32-opencl-nvidia-580xx')
-pkgver=580.126.09
-pkgrel=1.1
+pkgver=580.126.18
+pkgrel=2
 arch=('x86_64')
 url="http://www.nvidia.com/"
 #makedepends=('nvidia-libgl')  # To avoid conflict during installation in the build chroot
@@ -14,7 +14,7 @@ license=('custom')
 options=('!strip')
 _pkg="NVIDIA-Linux-x86_64-${pkgver}"
 source=("https://us.download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/${_pkg}.run")
-sha512sums=('d5c41131304b29d55d0caf8cd84c95b454d81e68d7b23ca893504c63d84dd78726e2dbd7f076b7f12be518e641d110d131ac178336d61a00bcc81b7a1890799d')
+sha512sums=('3007896838256c5534d7a04958f38f2837314b09d05e595966ba68789b0166fd8c1a574b29c8dd9ee5414822c9aebad9f9c7e5db777b811701fcac2b92245f0f')
 
 create_links() {
     # create soname links
