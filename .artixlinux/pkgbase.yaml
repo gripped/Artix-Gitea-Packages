@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: a28.0-1
+    version: 0.28.0-2
     packages:
-      - 0ad-a28.0-1-x86_64.pkg.tar.zst
+      - 0ad-0.28.0-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

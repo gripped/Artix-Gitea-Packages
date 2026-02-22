@@ -1,10 +1,10 @@
 ---
-version: a28.0-1
+version: 0.28.0-2
 pkgbase:
   name: 0ad
   pkgdesc: Cross-platform, 3D and historically-based real-time strategy game
-  pkgver: a28.0
-  pkgrel: 1
+  pkgver: 0.28.0
+  pkgrel: 2
   url: http://play0ad.com/
   arch:
     - x86_64
@@ -23,7 +23,7 @@ pkgbase:
     - cbindgen
     - premake
   depends:
-    - 0ad-data
+    - 0ad-data=0.28.0
     - binutils
     - boost-libs
     - curl
@@ -39,7 +39,6 @@ pkgbase:
     - libgl
     - glu
     - fmt
-    - js128
     - gloox
     - miniupnpc
     - libminiupnpc.so
