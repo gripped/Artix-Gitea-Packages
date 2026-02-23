@@ -1,0 +1,84 @@
+---
+version: 2.30-2
+pkgbase:
+  name: links
+  pkgdesc: A text WWW browser, similar to Lynx
+  pkgver: 2.30
+  pkgrel: 2
+  url: http://links.twibright.com/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - libgomp
+    - libjpeg-turbo
+    - libpng
+    - libtiff
+    - libwebp
+    - libx11
+  depends:
+    - brotli
+    - libbrotlidec.so
+    - bzip2
+    - libbz2.so
+    - glibc
+    - gpm
+    - libgpm.so
+    - libevent
+    - libevent-2.1.so
+    - openssl
+    - libcrypto.so
+    - libssl.so
+    - xz
+    - liblzma.so
+    - zstd
+    - libzstd.so
+    - zlib
+    - libz.so
+  source:
+    - http://links.twibright.com/download/links-2.30.tar.bz2
+    - 0001-fix-build-with-recent-gcc.patch
+    - links.desktop
+  sha256sums:
+    - c4631c6b5a11527cdc3cb7872fc23b7f2b25c2b021d596be410dadb40315f166
+    - 0b3bd401d9ff6ff1354607e56647ad2cb7ed7c1258c99bef714bdd050d3c64bb
+    - f96bf2638e9c309bfdb857bd62a732b980231b3a683cd585ec872b249c2c1b19
+pkgname:
+  - name: links
+    optdepends:
+      - 'xlinks: support for X11'
+  - name: xlinks
+    pkgdesc: A text WWW browser, similar to Lynx (with support for X11)
+    depends:
+      - brotli
+      - libbrotlidec.so
+      - bzip2
+      - libbz2.so
+      - glibc
+      - gpm
+      - libgpm.so
+      - libevent
+      - libevent-2.1.so
+      - openssl
+      - libcrypto.so
+      - libssl.so
+      - xz
+      - liblzma.so
+      - zstd
+      - libzstd.so
+      - zlib
+      - libz.so
+      - links
+      - libgomp
+      - libgomp.so
+      - libjpeg-turbo
+      - libjpeg.so
+      - libpng
+      - libpng16.so
+      - libtiff
+      - libtiff.so
+      - libwebp
+      - libwebp.so
+      - libx11
+# generated with artixpkg 0.38-1-any
