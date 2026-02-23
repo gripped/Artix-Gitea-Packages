@@ -1,9 +1,9 @@
 ---
-version: 6.19-2
+version: 6.19.3-1
 pkgbase:
   name: linux-tools
-  pkgver: 6.19
-  pkgrel: 2
+  pkgver: 6.19.3
+  pkgrel: 1
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -48,12 +48,14 @@ pkgbase:
     - '!strip'
     - '!lto'
   source:
-    - git+https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git#tag=v6.19?signed
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.3.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.3.tar.sign
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 05c6e18573ffacca5c3ff0105090a0bb063a2927d280c5ae0372c9667a60f871
+    - 0e474968adfcbee32916fd01a89d8ccfd1168d8d32569e76a5c664c793198ebe
+    - SKIP
 pkgname:
   - name: bootconfig
     pkgdesc: Apply, delete or show boot config to initrd
