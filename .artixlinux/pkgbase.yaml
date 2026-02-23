@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 0.5.13-1
+    version: 0.5.13.1-1
     packages:
-      - dash-0.5.13-1-x86_64.pkg.tar.zst
+      - dash-0.5.13.1-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 0.5.12-1

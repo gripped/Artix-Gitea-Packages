@@ -2,7 +2,7 @@
 # Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=dash
-pkgver=0.5.13
+pkgver=0.5.13.1
 pkgrel=1
 pkgdesc='POSIX compliant shell that aims to be as small as possible'
 url='http://gondor.apana.org.au/~herbert/dash/'
@@ -11,8 +11,8 @@ license=('BSD-3-Clause' 'GPL-2.0-or-later')
 depends=('glibc' 'libedit' 'libedit.so')
 install=dash.install
 source=(https://git.kernel.org/pub/scm/utils/dash/dash.git/snapshot/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('879cfd80d36385dbf33cc2b93773a853633da16d39e8bb94bc3351abc785cc68a3f60e66b6bfb4a6a7ce38ea3190c5f06679a50e8ba894a79bc9a2cbb4e99438')
-b2sums=('9ac69893e20fdf1e990a76507be15060eefcb0af7610ff14f7130f68634167214aae351cf26440097f942e3435a5bdd5f549997826e94756f8e82eb9508bab29')
+sha512sums=('c5ef88538fcbfd0de586e42626886e4ae1e35e52004bde103db8df978d5e159dcafdaa4ef4b8e4b699405742f17ce813a018525d544417563a2389357dd67122')
+b2sums=('6a57a7e1a532019ddaaca5484d4d2e50e63959776cf0e87d0bceb4cacafc5fd4aeedfe05c9a8d3b76a5334c78a1ce2df485b9f8313427e413f275eea9ff29085')
 
 prepare() {
   cd ${pkgname}-${pkgver}
