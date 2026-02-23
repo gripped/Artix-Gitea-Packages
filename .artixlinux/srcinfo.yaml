@@ -1,10 +1,10 @@
 ---
-version: 0.36.0-1
+version: 0.36.0-2
 pkgbase:
   name: rust-script
   pkgdesc: Run Rust files and expressions as scripts without any setup or compilation
   pkgver: 0.36.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://rust-script.org
   arch:
     - x86_64
@@ -15,7 +15,8 @@ pkgbase:
     - git
     - rust
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
   source:
     - rust-script::git+https://github.com/fornwall/rust-script#tag=0.36.0
   sha512sums:
@@ -24,4 +25,4 @@ pkgbase:
     - 1bfad11c0e989d44e266ece373f9ae61b69b270be480a1303d2112d993c8828d2aee296304735a23db2db5e858d8ad112f446bb5f689ae3323deea7a365ca403
 pkgname:
   - name: rust-script
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
