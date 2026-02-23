@@ -1,9 +1,9 @@
 ---
-version: 0.52.5-1
+version: 0.52.6-1
 pkgbase:
   name: libreoffice-extension-texmaths
   pkgdesc: A LaTeX equation editor for LibreOffice
-  pkgver: 0.52.5
+  pkgver: 0.52.6
   pkgrel: 1
   url: http://roland65.free.fr/texmaths/
   arch:
@@ -14,9 +14,9 @@ pkgbase:
     - libreoffice
     - texlive-basic
   source:
-    - https://downloads.sourceforge.net/project/texmaths/0.52.5/TexMaths-0.52.5.oxt
+    - https://downloads.sourceforge.net/project/texmaths/0.52.6/TexMaths-0.52.6.oxt
   sha256sums:
-    - e10ae08e2067f3737751c9126033b82ba1e38239a72549e7a9627643a2429649
+    - c4545539b17caa042110a356bf6f02631061a990e234b328670cb2ec8eecb9be
 pkgname:
   - name: libreoffice-extension-texmaths
 # generated with artixpkg 0.37.6-1-any
