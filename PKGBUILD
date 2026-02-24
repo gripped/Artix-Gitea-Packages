@@ -5,7 +5,7 @@
 pkgbase=poppler
 pkgname=('poppler' 'poppler-glib' 'poppler-qt5' 'poppler-qt6')
 pkgver=26.02.0
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 license=('GPL-2.0-only'
          'GPL-3.0-or-later'
@@ -13,7 +13,7 @@ license=('GPL-2.0-only'
          'LGPL-2.1-or-later'
          'MIT'
          'HPND-sell-variant')
-makedepends=('libjpeg-turbo' 'gcc-libs' 'cairo' 'fontconfig' 'openjpeg2'
+makedepends=('libjpeg-turbo' 'libgcc' 'libstdc++' 'cairo' 'fontconfig' 'openjpeg2'
              'gtk3' 'pkgconfig' 'lcms2' 'gobject-introspection' 'icu'
              'qt5-base' 'qt6-base' 'git' 'nss' 'gpgmepp' 'gtk-doc' 'curl' 'poppler-data'
              'cmake' 'python' 'boost' 'glib2-devel')
@@ -43,7 +43,7 @@ check() {
 
 package_poppler() {
   pkgdesc="PDF rendering library based on xpdf 3.0"
-  depends=('libjpeg-turbo' 'gcc-libs' 'cairo' 'fontconfig'
+  depends=('libjpeg-turbo' 'libgcc' 'libstdc++' 'cairo' 'fontconfig'
            'openjpeg2' 'lcms2' 'nss' 'curl' 'gpgmepp'
            'nspr' 'libpng' 'freetype2' 'zlib' 'libtiff' 'glibc')
   optdepends=('poppler-data: highly recommended encoding data to display PDF documents with certain encodings and characters')
@@ -66,7 +66,7 @@ package_poppler() {
 
 package_poppler-glib() {
   pkgdesc="Poppler glib bindings"
-  depends=("poppler=${pkgver}" 'glib2' 'gcc-libs' 'freetype2' 'cairo' 'glibc')
+  depends=("poppler=${pkgver}" 'glib2' 'libgcc' 'libstdc++' 'freetype2' 'cairo' 'glibc')
   provides=('libpoppler-glib.so')
 
   cd build
@@ -84,7 +84,7 @@ package_poppler-glib() {
 
 package_poppler-qt5() {
   pkgdesc="Poppler Qt5 bindings"
-  depends=("poppler=${pkgver}" 'qt5-base' 'lcms2' 'freetype2' 'gcc-libs' 'glibc')
+  depends=("poppler=${pkgver}" 'qt5-base' 'lcms2' 'freetype2' 'libgcc' 'libstdc++' 'glibc')
   provides=('libpoppler-qt5.so')
 
   cd build
@@ -99,7 +99,7 @@ package_poppler-qt5() {
 
 package_poppler-qt6() {
   pkgdesc="Poppler Qt6 bindings"
-  depends=("poppler=${pkgver}" 'qt6-base' 'lcms2' 'freetype2' 'gcc-libs' 'glibc')
+  depends=("poppler=${pkgver}" 'qt6-base' 'lcms2' 'freetype2' 'libgcc' 'libstdc++' 'glibc')
   provides=('libpoppler-qt6.so')
 
   cd build
