@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2026-02-19 by artix-mlg
+## Generated on 2026-02-24 by artix-mlg
 ##
 
 # Artix mirrors
@@ -12,7 +12,6 @@
 Server = https://mirrors.rit.edu/artixlinux/$repo/os/$arch
 Server = https://ftp.crifo.org/artix/repos/$repo/os/$arch
 Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
-Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 
 ## Europe
@@ -34,8 +33,8 @@ Server = https://artix.unixpeople.org/repos/$repo/os/$arch
 Server = https://mirror2.artixlinux.org/$repo/os/$arch
 Server = https://mirror3.artixlinux.org/repos/$repo/os/$arch
 Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
+Server = https://mirror.rabisu.com/mirrors/artixlinux/$repo/os/$arch
 # Greece
-Server = http://ftp.ntua.gr/pub/linux/artix-linux/$repo/os/$arch
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
 # Hungary
 Server = https://quantum-mirror.hu/mirrors/pub/artix-linux/$repo/os/$arch
