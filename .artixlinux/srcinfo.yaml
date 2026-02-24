@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.43-1
+version: 1:1.4.43-2
 pkgbase:
   name: remmina
   pkgdesc: Remote desktop client written in GTK+
   pkgver: 1.4.43
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.remmina.org
   arch:
@@ -29,13 +29,13 @@ pkgbase:
     - bash
     - cairo
     - curl
-    - gcc-libs
     - glib2
     - glibc
     - gtk3
     - hicolor-icon-theme
     - json-glib
     - libayatana-appindicator
+    - libgcc
     - libgcrypt
     - libsodium
     - libssh
