@@ -15,7 +15,7 @@ depends=(
   glibc
   libdiscid
   ncurses
-  systemd-libs
+  libudev
 )
 makedepends=(
   git

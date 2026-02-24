@@ -31,7 +31,7 @@ pkgbase:
     - glibc
     - libdiscid
     - ncurses
-    - systemd-libs
+    - libudev
   optdepends:
     - 'alsa-lib: for ALSA output plugin support'
     - 'libao: for AO output plugin support'
@@ -96,4 +96,4 @@ pkgbase:
     - 985b1bcfaeb76823fdd1c15c796e340606a77fba02cc29a5d558bf8ec85eb39305a2301a8b4468846c55e82e04b7e6edea9f4bf63803ac481641cb21a00acf08
 pkgname:
   - name: cmus
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.38.1-1-any
