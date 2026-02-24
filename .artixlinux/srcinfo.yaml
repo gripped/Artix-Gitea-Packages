@@ -1,10 +1,10 @@
 ---
-version: 1.8.2-1
+version: 1.8.2-2
 pkgbase:
   name: libconfig
   pkgdesc: C/C++ Configuration File Library
   pkgver: 1.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyperrealm/libconfig
   arch:
     - x86_64
@@ -13,7 +13,8 @@ pkgbase:
   makedepends:
     - texinfo
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
   provides:
     - libconfig++.so
@@ -26,4 +27,4 @@ pkgbase:
     - c19561fcc0ae376567ba024e4da874fb6cfe27d509aa6ed84000867c8e849bceb9ac0a883446b445de29d852b4d1b6d1a9ad526c129645903105bc7d82bd35c9
 pkgname:
   - name: libconfig
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.1-1-any
