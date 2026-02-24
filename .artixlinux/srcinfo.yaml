@@ -1,10 +1,10 @@
 ---
-version: 7.360.0-1
+version: 7.360.0-2
 pkgbase:
   name: libplacebo
   pkgdesc: Reusable library for GPU-accelerated video/image rendering primitives
   pkgver: 7.360.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/haasn/libplacebo
   arch:
     - x86_64
@@ -28,7 +28,8 @@ pkgbase:
     - lcms2
     - shaderc
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - libunwind
     - libdovi
     - xxhash
@@ -51,7 +52,8 @@ pkgname:
       - lcms2
       - shaderc
       - glibc
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - libunwind
       - libdovi
       - xxhash
@@ -59,4 +61,4 @@ pkgname:
       - liblcms2.so
       - libshaderc_shared.so
       - libvulkan.so
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
