@@ -1,10 +1,10 @@
 ---
-version: 1:0.54.1-1
+version: 1:0.54.1-2
 pkgbase:
   name: libfilezilla
   pkgdesc: Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs
   pkgver: 0.54.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://lib.filezilla-project.org/
   arch:
@@ -17,9 +17,11 @@ pkgbase:
     - clang
   depends:
     - glibc
-    - gcc-libs
+    - gmp
     - nettle
     - gnutls
+    - libgcc
+    - libstdc++
     - libnettle.so
     - libhogweed.so
     - libcrypt.so
