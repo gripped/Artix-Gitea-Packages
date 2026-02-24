@@ -1,10 +1,10 @@
 ---
-version: 4.1.6-1
+version: 4.1.6-2
 pkgbase:
   name: apparmor
   pkgdesc: Mandatory Access Control (MAC) using Linux Security Module (LSM)
   pkgver: 4.1.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/apparmor/apparmor
   arch:
     - x86_64
@@ -31,8 +31,8 @@ pkgbase:
   depends:
     - audit
     - bash
-    - gcc-libs
     - glibc
+    - libgcc
     - pam
     - python
     - python-legacy-cgi
@@ -63,4 +63,4 @@ pkgbase:
     - ec52673b24940def9569fcf4ad1022c4dd344d78519e77f05d7e8a93c388a199d11f4c910121e71a603c4825ac994c34f0435df6adc03e40712ff1375fc654fd
 pkgname:
   - name: apparmor
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
