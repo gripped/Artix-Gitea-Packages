@@ -1,10 +1,10 @@
 ---
-version: 4.4-2
+version: 4.5-1
 pkgbase:
   name: mdadm
   pkgdesc: A tool for managing/monitoring Linux md device arrays, also known as Software RAID
-  pkgver: 4.4
-  pkgrel: 2
+  pkgver: 4.5
+  pkgrel: 1
   url: https://git.kernel.org/pub/scm/utils/mdadm
   arch:
     - x86_64
@@ -25,14 +25,11 @@ pkgbase:
   backup:
     - etc/mdadm.conf
   source:
-    - git+https://git.kernel.org/pub/scm/utils/mdadm/mdadm.git#tag=mdadm-4.4?signed
+    - git+https://git.kernel.org/pub/scm/utils/mdadm/mdadm.git#tag=mdadm-4.5
     - mdadm.conf
-  validpgpkeys:
-    - 6A86B80E1D22F21D0B26BA75397D82E0531A9C91
-    - EED84966493AEEAF4B466F696F9E3E9D4EDEBB11
   b2sums:
-    - 436b64fd90c3fd5d0adf38ae7fae455ed54a28ee9d0d32469fa7d3e9c832802d4d346313f28752e261074f3eb18dfa9dcc9327cc8f8af5b249cd373f0e38c92a
+    - 44269cc471544548b928d86ef48880de035945100882bf419fb1e495c61fe0038823e3b2b393e55ab49a6990a239b6c5b15f5aa3fb15eff76140a633a77c3db9
     - 8572eae7f566deb040fa1489cb5e3c9e501609e4c51b476c04c256b4466b3cbdb9d1d5345e9d9dbf1cfd8a22bfd60a171cc83fe68acd8dfe7e893e3b210fc8a3
 pkgname:
   - name: mdadm
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.1-1-any
