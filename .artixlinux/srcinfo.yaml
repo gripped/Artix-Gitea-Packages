@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: wl-clip-persist
   pkgdesc: Keep Wayland clipboard even after programs close
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Linus789/wl-clip-persist
   arch:
     - x86_64
@@ -14,11 +14,11 @@ pkgbase:
     - cargo
   depends:
     - glibc
-    - gcc-libs
+    - libgcc
   source:
     - wl-clip-persist-0.5.0.tar.gz::https://github.com/Linus789/wl-clip-persist/archive/v0.5.0.tar.gz
   sha256sums:
     - fdd2506e6556dda943a164d891fe498985838fdd0e94c54e595a8f1cd8c49b66
 pkgname:
   - name: wl-clip-persist
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.37.6-1-any
