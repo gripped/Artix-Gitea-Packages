@@ -1,5 +1,7 @@
-@Library('artix-ci@orion') _
+@Library('artix-ci@production') _
 
 import org.artixlinux.RepoPackage
 
-PackagePipeline(new RepoPackage(this))
+String runOn = 'orion'
+
+PackagePipeline(new RepoPackage(this), runOn)
