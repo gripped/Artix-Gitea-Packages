@@ -1,10 +1,10 @@
 ---
-version: 1.4.341.0-1
+version: 1.4.341.0-2
 pkgbase:
   name: vulkan-tools
   pkgdesc: Vulkan tools and utilities
   pkgver: 1.4.341.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.vulkan.org/
   arch:
     - x86_64
@@ -24,8 +24,9 @@ pkgbase:
     - vulkan-headers
     - wayland-protocols
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - libx11
     - libxcb
     - vulkan-icd-loader
@@ -36,4 +37,4 @@ pkgbase:
     - 8cbd8200660bdd5bf6eb5c601820b288a299afeb69464a43c5d04f68a87a4cf5d0a090be4f5c6e04f2f2e54eeaa0fecd3cfa52b1a9c2ce566f9f99b555eed8e6
 pkgname:
   - name: vulkan-tools
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38-1-any
