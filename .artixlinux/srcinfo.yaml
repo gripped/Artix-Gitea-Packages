@@ -1,10 +1,10 @@
 ---
-version: 0.3.3-1
+version: 0.3.3-2
 pkgbase:
   name: chawan
   pkgdesc: A text-mode web browser and pager for Unix-like systems
   pkgver: 0.3.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://chawan.net/
   arch:
     - x86_64
@@ -15,7 +15,7 @@ pkgbase:
     - nim>=2.0.0
   depends:
     - glibc
-    - gcc-libs
+    - libgcc
     - brotli
     - libssh2
     - openssl
