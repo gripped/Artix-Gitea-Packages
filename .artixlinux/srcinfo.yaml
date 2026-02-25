@@ -1,10 +1,10 @@
 ---
-version: 25.12.2-1
+version: 25.12.2-2
 pkgbase:
   name: kclock
   pkgdesc: Clock app for Plasma Mobile
   pkgver: 25.12.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kclock/
   arch:
     - x86_64
