@@ -1,54 +1,61 @@
 ---
-pkgbase:
-  name: torsocks
-  version: 2.4.0-4
-  arch:
-    - x86_64
-  pkgname:
-    - torsocks
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: null
-    packages: []
+    version: 2.5.0-1
+    packages:
+      - torsocks-2.5.0-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: 2.4.0-4
     packages:
       - torsocks-2.4.0-4-x86_64.pkg.tar.zst
+    debug: []
+team: galaxy

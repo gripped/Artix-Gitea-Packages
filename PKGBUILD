@@ -1,45 +1,38 @@
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: Nicolas Pouillard <nicolas.pouillard@gmail.com>
 # Contributor: Rorschach <r0rschach@lavabit.com>
 
 pkgname=torsocks
-pkgver=2.4.0
-pkgrel=4
-pkgdesc="Wrapper to transparently torify an application"
-url="https://gitlab.torproject.org/tpo/core/torsocks"
-## File: https://gitlab.torproject.org/tpo/core/torsocks/-/blob/main/changelog
-changelog=Changelog.txt
-arch=("x86_64")
-depends=("tor")
-makedepends=(
-	"autoconf"
-	"automake"
-	"gcc"
-	"libtool"
+pkgver=2.5.0
+pkgrel=1
+pkgdesc='Wrapper to safely torify applications'
+url='https://gitlab.torproject.org/tpo/core/torsocks'
+arch=('x86_64')
+license=(GPL-2.0-or-later)
+depends=(
+  bash
+  glibc
+  tor
 )
-backup=("etc/tor/$pkgname.conf")
-source=(https://gitlab.torproject.org/tpo/core/$pkgname/-/archive/v$pkgver/$pkgname-v$pkgver.tar.gz)
-sha256sums=('c01b471d89eda9f3c8dcb85a448e8066692d0707f9ff8b2ac7e665a602291b87')
-license=('GPL2')
-
-# prepare(){
-	# cd $pkgname-v$pkgver
-
-# }
+backup=("etc/tor/${pkgname}.conf")
+#source=(https://people.torproject.org/~dgoulet/${pkgname}/${pkgname}-${pkgver}.tar.xz{,.asc})
+source=("${url}/-/archive/v${pkgver}/torsocks-v${pkgver}.tar.gz")
+sha512sums=('dcf4d4d817eb79e52930afff12915eb040b8fc7acd75ec60f28e0d06528cf011b20968ae6ea9bcb3dc51aebe26f88e89fc53d0630487e9216371ed7f71d25773')
+validpgpkeys=('B74417EDDF22AC9F9E90F49142E86A2A11F48D36')
 
 build() {
-	cd $pkgname-v$pkgver
-	./autogen.sh
-	sed -i 's/| -V//g' configure
-	./configure --prefix=/usr \
-		--sysconfdir=/etc \
-		--mandir=/usr/share/man \
-		--localstatedir=/var
-	make
+  cd ${pkgname}-v${pkgver}
+  autoreconf -vfi
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc
+  make
 }
 
 package() {
-	cd $pkgname-v$pkgver
-	make DESTDIR="$pkgdir" install
+  cd ${pkgname}-v${pkgver}
+  make DESTDIR="${pkgdir}" install
 }
+
+# vim: ts=2 sw=2 et:
