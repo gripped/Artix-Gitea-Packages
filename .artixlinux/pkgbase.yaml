@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.5.20-1
+    version: 0.5.22-1
     packages:
-      - lutris-0.5.20-1-any.pkg.tar.zst
+      - lutris-0.5.22-1-any.pkg.tar.zst
     debug: []
