@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.6.1-1
+    version: 6.6.1-1.1
     packages:
-      - plasma-workspace-6.6.1-1-x86_64.pkg.tar.zst
-      - plasma-x11-session-6.6.1-1-x86_64.pkg.tar.zst
+      - plasma-workspace-6.6.1-1.1-x86_64.pkg.tar.zst
+      - plasma-x11-session-6.6.1-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.6.0-1
