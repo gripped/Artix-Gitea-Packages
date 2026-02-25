@@ -1,4 +1,4 @@
-@Library('artix-ci@taurus') _
+@Library('artix-ci@orion') _
 
 import org.artixlinux.RepoPackage
 
