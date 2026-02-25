@@ -1,9 +1,9 @@
 ---
-version: 6.6.0-1
+version: 6.6.1-1
 pkgbase:
   name: kwallet-pam
   pkgdesc: KWallet PAM integration
-  pkgver: 6.6.0
+  pkgver: 6.6.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -22,15 +22,15 @@ pkgbase:
     - sh
     - socat
   source:
-    - https://download.kde.org/stable/plasma/6.6.0/kwallet-pam-6.6.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.0/kwallet-pam-6.6.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.1/kwallet-pam-6.6.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.1/kwallet-pam-6.6.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 5ab6026975785e216105fd58362b2832ab075b68c1d242b732a556179cc4ca05
+    - 310e0f7685922d2c5ad4e811f5d1f05ce58334e1ec17209b939cb429fb5d4b27
     - SKIP
 pkgname:
   - name: kwallet-pam
