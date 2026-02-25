@@ -11,7 +11,7 @@
 
 pkgname=ungoogled-chromium
 pkgver=145.0.7632.116
-pkgrel=2
+pkgrel=2.1
 _launcher_ver=8
 _manual_clone=0
 _system_clang=1
@@ -44,7 +44,6 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         chromium-145-fix-SYS_SECCOMP.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
-        enable-widevine-arm64.patch
         use-oauth2-client-switches-as-default.patch)
 sha256sums=('4b9460a4c852b824dbd3c6de00948fe97b760e89ac56c62b5e28f8581a5c1690'
             '27c1d35574fb7833ccf72583848e5a558ed4b8d69c582618887d76931a196217'
@@ -128,9 +127,6 @@ prepare() {
 
   # https://crbug.com/456218403
   patch -Np1 -i ../chromium-145-fix-SYS_SECCOMP.patch
-
-  # enable widevine for arm64
-  patch -Np1 -i ../enable-widevine-arm64.patch
 
   if (( !_system_clang )); then
     # Use prebuilt rust as system rust cannot be used due to the error:
