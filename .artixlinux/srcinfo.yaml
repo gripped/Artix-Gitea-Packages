@@ -1,10 +1,10 @@
 ---
-version: 3.2-6
+version: 3.2-7
 pkgbase:
   name: j4-dmenu-desktop
   pkgdesc: Find .desktop files and offer you a menu to start an application using dmenu
   pkgver: 3.2
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/enkore/j4-dmenu-desktop
   arch:
     - x86_64
@@ -18,8 +18,9 @@ pkgbase:
     - meson
   depends:
     - fmt
-    - gcc-libs
     - glibc
+    - libstdc++.so
+    - libgcc_s.so
     - spdlog
   optdepends:
     - 'dmenu: The default backend'
@@ -35,4 +36,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: j4-dmenu-desktop
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
