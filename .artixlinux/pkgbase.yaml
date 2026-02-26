@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: system-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,8 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.21.0-1
+    packages:
+      - libngtcp2-1.21.0-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 1.20.0-1
@@ -30,9 +31,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.21.0-1
-    packages:
-      - libngtcp2-1.21.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
@@ -58,4 +58,4 @@ repos:
     version: null
     packages: []
     debug: []
-team: world
+team: system
