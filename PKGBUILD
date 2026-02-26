@@ -7,8 +7,8 @@
 
 pkgbase=wireshark
 pkgname=(wireshark-cli wireshark-qt)
-pkgver=4.6.2
-pkgrel=2
+pkgver=4.6.4
+pkgrel=1
 pkgdesc='Network traffic and protocol analyzer/sniffer'
 url='https://www.wireshark.org/'
 arch=(x86_64)
@@ -21,7 +21,6 @@ makedepends=(
   cmake
   desktop-file-utils
   doxygen
-  gcc-libs
   git
   glib2
   glibc
@@ -29,14 +28,15 @@ makedepends=(
   hicolor-icon-theme
   krb5
   libcap
+  libgcc
   libgcrypt
   libmaxminddb
   libnghttp2
   libnghttp3
   libnl
-  libnl
   libpcap
   libssh
+  libstdc++
   libxml2
   libxslt
   lua
@@ -69,9 +69,9 @@ source=(
   "git+https://gitlab.com/wireshark/wireshark.git#tag=v${pkgver}"
   wireshark.sysusers
 )
-sha512sums=('ad135790a5a380a68ecdc51690ef6b36ac13e339ff4b48b4abf9be4ff6503350f6889baf7e9cafba86c27d0d83af95d52ec99db6de829de4bb4ca823f2bb2b5d'
+sha512sums=('5f1f2effdb9bd2f2f4d8d5036366e7cda5b59c591192cd7362daa1cfbad0c3b7afcd9233063cc804913bdae2999c2eca7b86b40053de23660f6d92afb2950f07'
             '3956c1226e64f0ce4df463f80b55b15eed06ecd9b8703b3e8309d4236a6e1ca84e43007336f3987bc862d8a5e7cfcaaf6653125d2a34999a0f1357c52e7c4990')
-b2sums=('c4ae77c8298b381e2b97a92bf096a1e8e2f6b9a013f3d75b58e5680494eff869bb7acd83aeda81a6a7ed350f2347abbf5abead6e3bc40ab39c079a492c522f6a'
+b2sums=('2532c052b9f97e939ac5d7384b50fe5a4375709c2907bdca80cffdf73da46a76388f56de60a5e13102a1582eb0d09c68596b76b83a2586ea2e3e6c311fad9655'
         '3cebcc993f51eaf0e09673c77e0436598593ef5eff306d880415ccc8eecb32fee93c9a6986f1a7bb0835ab7f9732369d7c5a07e6c053d6293e73a1ea84c58a5c')
 
 build() {
@@ -83,6 +83,7 @@ build() {
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DCMAKE_SKIP_INSTALL_RPATH=TRUE \
     -DENABLE_LUA=ON \
     -DENABLE_ZLIB=OFF \
@@ -101,7 +102,6 @@ package_wireshark-cli() {
     bcg729
     brotli
     c-ares
-    gcc-libs
     glib2
     glibc
     gnutls
@@ -110,6 +110,7 @@ package_wireshark-cli() {
     libcap
     libcap.so
     libcares.so
+    libgcc
     libgcrypt
     libk5crypto.so
     libkrb5.so
@@ -162,14 +163,15 @@ package_wireshark-qt() {
   pkgdesc+=' - Qt GUI'
   depends=(
     desktop-file-utils
-    gcc-libs
     glib2
     glibc
     hicolor-icon-theme
+    libgcc
     libgcrypt
     libnl
     libpcap
     libpcap.so
+    libstdc++
     libwireshark.so
     libwiretap.so
     libwsutil.so
