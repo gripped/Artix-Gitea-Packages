@@ -4,7 +4,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-idle
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 epoch=1
 pkgdesc='Cosmic idle daemon'
@@ -13,7 +13,7 @@ url=https://github.com/pop-os/cosmic-idle
 license=(GPL-3.0-only)
 groups=(cosmic)
 depends=(
-  gcc-libs
+  libgcc
   glibc
   libxkbcommon
   wayland
