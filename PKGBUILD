@@ -158,7 +158,7 @@ build() {
 	CFLAGS="${CFLAGS/-fexceptions/}"
 	CXXFLAGS="${CXXFLAGS/-fexceptions/}"
 	CFLAGS+=" -w"
-	CXXFLAGS+=" -w"
+	CXXFLAGS+=" -w -std=c++20"
 
 	ulimit -n 4096
 
