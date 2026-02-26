@@ -4,7 +4,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-session
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 epoch=1
 pkgdesc='Session manager for the COSMIC desktop environment'
@@ -31,7 +31,7 @@ depends=(
   cosmic-settings-daemon
   cosmic-settings
   cosmic-workspaces
-  gcc-libs
+  libgcc
   glibc
   noto-fonts
   switcheroo-control
@@ -47,7 +47,6 @@ makedepends=(
   lld
 )
 optdepends=(
-  'cosmic-files: COSMIC file manager'
   'cosmic-player: COSMIC media player'
   'cosmic-store: COSMIC store'
   'cosmic-terminal: COSMIC terminal'
@@ -62,7 +61,7 @@ source=(
   cosmic-session-lto.patch
 
   no_journald-systemctl.patch)
-b2sums=('d58f5280ac23e4b7095be06e298c20116a4f45451450286d1b84e1a975efede355e15df92a9092fd17bba7fbfa799d23ec3d3cfbbfbbc9feae55559dd52b5da6'
+b2sums=('669121c071642121ca36b99f1b86b97ebb59973f40d39d9e5b13b97d5a3e16e733a502baa3407b8b8b85fa2c3d889f29fa57f564955fc4d9196b938504c59eaa'
         '8b1a6ba7e159831e24d4e2abe1ee82c3b9a1f7c34af982a0ec20f5941c816922213cbc6bda3a7c2419ace2adf5cdfea131fab76045454b6ad800e18df0368307'
         '7c9db3b6d2456e5c303da6f72a8169207ce35ca9fcb9beffb548cd55b3fe0cb9019b719c85540159075444cdd7bffce117a19cad57f3b8d766ae27cc47615f79')
 
