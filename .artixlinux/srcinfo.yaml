@@ -1,10 +1,10 @@
 ---
-version: 1.13-5
+version: 1.13-6
 pkgbase:
   name: perl-config-grammar
   pkgdesc: A grammar-based, user-friendly config parser
   pkgver: 1.13
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/Config-Grammar
   arch:
     - any
@@ -21,4 +21,4 @@ pkgbase:
     - a8b3a3a2c9c8c43b92dc401bf2709d6514f15b467fd4f72c48d356335771d6e3
 pkgname:
   - name: perl-config-grammar
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any

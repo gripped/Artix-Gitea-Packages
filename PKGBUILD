@@ -4,7 +4,7 @@
 
 pkgname='perl-config-grammar'
 pkgver=1.13
-pkgrel=5
+pkgrel=6
 pkgdesc="A grammar-based, user-friendly config parser"
 arch=('any')
 license=('PerlArtistic' 'GPL')
@@ -38,5 +38,4 @@ check() {
 package() {
   cd "$srcdir/Config-Grammar-$pkgver"
   make install
-  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
 }
