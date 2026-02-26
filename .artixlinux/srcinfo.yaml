@@ -1,10 +1,10 @@
 ---
-version: 4.8.6-2
+version: 5.0.0-1
 pkgbase:
   name: rssguard
   pkgdesc: Simple (yet powerful) Qt feed reader
-  pkgver: 4.8.6
-  pkgrel: 2
+  pkgver: 5.0.0
+  pkgrel: 1
   url: https://github.com/martinrotter/rssguard
   arch:
     - x86_64
@@ -13,46 +13,32 @@ pkgbase:
   makedepends:
     - cmake
     - git
+    - go
     - qt6-tools
-    - qt6-webengine
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - libglvnd
+    - libstdc++
     - mpv
-    - qt6-5compat
     - qt6-base
     - qt6-declarative
     - qt6-multimedia
-    - sqlite
   optdepends:
     - 'clang: Support for beautification of message filter scripts'
     - 'mariadb-libs: Support for MariaDB-based data storage'
+  conflicts:
+    - rssguard-lite
+  replaces:
+    - rssguard-lite
   source:
-    - git+https://github.com/martinrotter/rssguard#tag=4.8.6
-    - fix-adblock.patch
+    - git+https://github.com/martinrotter/rssguard#tag=5.0.0
+    - git+https://github.com/litehtml/litehtml.git
+    - git+https://github.com/martinrotter/qtlinq
   sha256sums:
-    - 5ade476e36a2e00191ec54d913dd6ab865406f0e62eba994b4fb1e4fcb37b783
-    - ba1a676527d45a1deaa062f06f2819a94b4bca6a07c88e20eef47e093bf3d1b8
+    - 8f76d88551e87749a98265152981b296f3630129ed83eea09214624cae5fdd6e
+    - SKIP
+    - SKIP
 pkgname:
   - name: rssguard
-    depends:
-      - gcc-libs
-      - glibc
-      - libglvnd
-      - mpv
-      - qt6-5compat
-      - qt6-base
-      - qt6-declarative
-      - qt6-multimedia
-      - sqlite
-      - qt6-webengine
-  - name: rssguard-lite
-    pkgdesc: Simple (yet powerful) Qt feed reader without WebEngine support
-    provides:
-      - rssguard=4.8.6
-    conflicts:
-      - rssguard
-    replaces:
-      - rssguard-nowebengine
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
