@@ -1,9 +1,9 @@
 ---
-version: 1.0.20250521-1
+version: 1.0.20260223-1
 pkgbase:
   name: wireguard-tools
   pkgdesc: next generation secure network tunnel - tools for configuration
-  pkgver: 1.0.20250521
+  pkgver: 1.0.20260223
   pkgrel: 1
   url: https://www.wireguard.com/
   arch:
@@ -18,11 +18,11 @@ pkgbase:
     - 'openresolv: for DNS functionality'
     - 'sudo: elevate privileges'
   source:
-    - git+https://git.zx2c4.com/wireguard-tools#tag=v1.0.20250521?signed
+    - git+https://git.zx2c4.com/wireguard-tools#tag=v1.0.20260223?signed
   validpgpkeys:
     - AB9942E6D4A4CFC3412620A749FC7012A5DE03AE
   sha256sums:
-    - d7d5b1ad1931cd472f8db1451f711ca04e0b359cf871a83747fb2a56653f89db
+    - dc2c44bdfd8ac11f7558e2e2536afa7e3da1381a3b17370b0798ecd83a4323eb
 pkgname:
   - name: wireguard-tools
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.38.2-1-any
