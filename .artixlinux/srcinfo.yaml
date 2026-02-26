@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.7-1
+version: 1:1.0.8-1
 pkgbase:
   name: cosmic-osd
   pkgdesc: COSMIC On-Screen Display
-  pkgver: 1.0.7
+  pkgver: 1.0.8
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-osd
@@ -20,7 +20,7 @@ pkgbase:
     - just
     - lld
   depends:
-    - gcc-libs
+    - libgcc
     - glibc
     - libinput
     - libpipewire
@@ -30,7 +30,7 @@ pkgbase:
     - libelogind
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-osd.git#tag=epoch-1.0.7
+    - git+https://github.com/pop-os/cosmic-osd.git#tag=epoch-1.0.8
     - suid-polkit-agent-helper.rs
   b2sums:
     - 4ec61171adbccd500cfb956cdba0b1107f954193eb21c5de8e0453832b55447b89aaabdba03e1dbbc1d032330eec65bf376a65647462046e37f6d07c61982ce2

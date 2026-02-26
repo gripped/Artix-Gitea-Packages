@@ -4,7 +4,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-osd
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 epoch=1
 pkgdesc='COSMIC On-Screen Display'
@@ -13,7 +13,7 @@ url=https://github.com/pop-os/cosmic-osd
 license=(GPL-3.0-only)
 groups=(cosmic)
 depends=(
-  gcc-libs
+  libgcc
   glibc
   libinput
   libpipewire
