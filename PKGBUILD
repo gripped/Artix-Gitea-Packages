@@ -6,7 +6,7 @@
 
 pkgname=(libvirt libvirt-storage-gluster libvirt-storage-iscsi-direct)
 epoch=1
-pkgver=11.10.0
+pkgver=12.0.0
 pkgrel=2
 pkgdesc="API for controlling virtualization engines (openvz,kvm,qemu,virtualbox,xen,etc)"
 arch=('x86_64')
@@ -22,7 +22,7 @@ depends=(
   curl
   device-mapper
   fuse3
-  gcc-libs
+  libgcc
   glib2
   glibc
   gnutls
@@ -128,7 +128,7 @@ backup=(
 source=(
   "git+https://gitlab.com/libvirt/libvirt.git#tag=v${pkgver}"
 )
-sha256sums=('24e5e20169037352cd9f2a53f0a3b02f585464727731cda2e61f9bd487928631')
+sha256sums=('00d3df8f165b52d5c1b1f36a3b90bf50d309f2317482e56bbec633ec45442001')
 
 prepare() {
   cd ${pkgname}
@@ -220,7 +220,7 @@ package_libvirt-storage-gluster() {
   pkgdesc="Libvirt Gluster storage backend"
   depends=(
     "libvirt=$pkgver"
-    gcc-libs
+    libgcc
     glib2
     glibc
     glusterfs
@@ -236,7 +236,7 @@ package_libvirt-storage-iscsi-direct() {
   pkgdesc="Libvirt iSCSI-direct storage backend"
   depends=(
     "libvirt=$pkgver"
-    gcc-libs
+    libgcc
     glib2
     glibc
     libiscsi
