@@ -4,7 +4,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-launcher
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 epoch=1
 pkgdesc='Layer Shell frontend for Pop Launcher'
@@ -14,7 +14,7 @@ license=(GPL-3.0-only)
 groups=(cosmic)
 depends=(
   cosmic-icon-theme
-  gcc-libs
+  libgcc
   glibc
   libxkbcommon
   pop-launcher
