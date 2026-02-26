@@ -157,7 +157,7 @@ build() {
 	CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 	CFLAGS="${CFLAGS/-fexceptions/}"
 	CXXFLAGS="${CXXFLAGS/-fexceptions/}"
-	CFLAGS+=" -w"
+	CFLAGS+=" -w -std=c++20"
 	CXXFLAGS+=" -w -std=c++20"
 
 	ulimit -n 4096
