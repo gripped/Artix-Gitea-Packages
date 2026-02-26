@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.7-1
+version: 1:1.0.8-1
 pkgbase:
   name: xdg-desktop-portal-cosmic
   pkgdesc: A backend implementation for xdg-desktop-portal for the COSMIC desktop environment
-  pkgver: 1.0.7
+  pkgver: 1.0.8
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/xdg-desktop-portal-cosmic
@@ -20,7 +20,7 @@ pkgbase:
     - mold
   depends:
     - cosmic-icon-theme
-    - gcc-libs
+    - libgcc
     - glibc
     - libpipewire
     - libxkbcommon
@@ -30,7 +30,7 @@ pkgbase:
   provides:
     - xdg-desktop-portal-impl
   source:
-    - git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git#tag=epoch-1.0.7
+    - git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git#tag=epoch-1.0.8
   b2sums:
     - af18dc7e268bd76edddd4aef6dcec1ef04c87170ce90c6d4a64149bb89a0fa5e6a2ef06eff5ccf126558788ee2f7c0204098dad58d4d4a895705dafcd72791e7
 pkgname:
