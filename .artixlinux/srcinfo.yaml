@@ -1,21 +1,23 @@
 ---
-version: 0.34-4
+version: 0.34-6
 pkgbase:
   name: perl-convert-asn1
   pkgdesc:
     Perl/CPAN Module Convert::ASN1: Standard endecode of ASN1 structures
   pkgver: 0.34
-  pkgrel: 4
+  pkgrel: 6
   url: https://search.cpan.org/dist/Convert-ASN1
   arch:
     - any
   license:
     - GPL
     - PerlArtistic
+  options:
+    - '!emptydirs'
   source:
     - https://cpan.metacpan.org/authors/id/T/TI/TIMLEGGE/Convert-ASN1-0.34.tar.gz
   sha256sums:
     - a628d7c9d390568fb76359975fa03f626ce57f10dc17980e8e3587d7713e4ee7
 pkgname:
   - name: perl-convert-asn1
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
