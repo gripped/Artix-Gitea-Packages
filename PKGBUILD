@@ -4,31 +4,32 @@
 
 pkgname=atftp
 pkgver=0.8.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Client/server implementation of the TFTP protocol that implements RFCs 1350, 2090, 2347, 2348, and 2349'
 arch=('x86_64')
 url='https://sourceforge.net/projects/atftp/'
 license=('GPL')
 depends=('pcre2' 'readline')
+makedepends=('git')
 backup=('etc/conf.d/atftpd')
 options=('!lto')
-source=("https://downloads.sf.net/sourceforge/atftp/atftp-${pkgver}.tar.gz"
+source=("atftp::git+https://git.code.sf.net/p/atftp/code#tag=v${pkgver}"
         'atftpd.conf'
-        'sysusers.conf'
-        'tmpfiles.conf')
-sha256sums=('df2aa089c7670f9eab40e5598e5d2cb6a582dc5182926ea50b4d690e4e37f316'
+        'atftp.sysusers'
+        'atftp.tmpfiles')
+sha256sums=('85b56ee612c3c84f782c5428e867cf0d22461197a8062fd4afeb4b0bac44184b'
             '0b28125099ffdd6869c6fbcb3167e93ccd71a0c6e465b1b62c7dedf9f628dd4e'
             '9a0f81ed10ffa35466e3ff35b82dad181aadacb4a05917f580681ffbb5a597e6'
             '2096272445c736ba05529af628cc2d46d0236c8f1ecbd50bb1db6dc6c4a972c5')
 
 prepare() {
-  cd "atftp-${pkgver}/"
+  cd atftp/
 
   autoreconf -fi
 }
 
 build() {
-  cd "atftp-${pkgver}/"
+  cd atftp/
 
   ./configure \
     --prefix=/usr \
@@ -40,13 +41,13 @@ build() {
 }
 
 package() {
-  cd "atftp-${pkgver}/"
+  cd atftp/
 
-  make DESTDIR="$pkgdir" install
+  make DESTDIR="${pkgdir}" install
 
-  install -D -m0644 ../atftpd.conf "$pkgdir"/etc/conf.d/atftpd
-  install -D -m0644 ../sysusers.conf "$pkgdir"/usr/lib/sysusers.d/atftp.conf
-  install -D -m0644 ../tmpfiles.conf "$pkgdir"/usr/lib/tmpfiles.d/atftp.conf
+  install -D -m0644 ../atftpd.conf "${pkgdir}"/etc/conf.d/atftpd
+  install -D -m0644 ../atftp.sysusers "${pkgdir}"/usr/lib/sysusers.d/atftp.conf
+  install -D -m0644 ../atftp.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/atftp.conf
 
   # remove in.tftpd link as it conflicts with extra/tftp-hpa
   rm "${pkgdir}/usr/share/man/man8/in.tftpd.8"
