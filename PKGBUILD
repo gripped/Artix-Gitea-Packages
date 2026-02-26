@@ -4,8 +4,8 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-icon-theme
-pkgver=1.0.7
-pkgrel=1.1
+pkgver=1.0.8
+pkgrel=1
 epoch=1
 pkgdesc='Cosmic icon theme'
 arch=(any)
