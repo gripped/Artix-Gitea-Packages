@@ -80,11 +80,14 @@ checkdepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
+  "systemd.patch"
 )
-b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba2257253ff97a2afc91043c862d75b2b6754df3d002137ce9637d60782')
+b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba2257253ff97a2afc91043c862d75b2b6754df3d002137ce9637d60782'
+        'SKIP')
 
 prepare() {
   cd pipewire
+  patch -Np1 -i ../systemd.patch
 }
 
 build() {
