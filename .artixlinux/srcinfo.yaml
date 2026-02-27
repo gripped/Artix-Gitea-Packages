@@ -58,7 +58,6 @@ pkgbase:
     - valgrind
     - webrtc-audio-processing-1
   source:
-    - systemd.patch
     - git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=1.6.0
     - systemd.patch
   b2sums:
