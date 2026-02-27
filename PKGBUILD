@@ -79,15 +79,16 @@ checkdepends=(
   openal
 )
 source=(
+   systemd.patch
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
-  "systemd.patch"
+   systemd.patch
 )
-b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba2257253ff97a2afc91043c862d75b2b6754df3d002137ce9637d60782'
-        'SKIP')
+b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba2257253ff97a2afc91043c862d75b2b6754df3d002137ce9637d60782' SKIP)
 
 prepare() {
+   patch -Np1 -i ../systemd.patch
   cd pipewire
-  patch -Np1 -i ../systemd.patch
+   patch -Np1 -i ../systemd.patch
 }
 
 build() {
@@ -184,7 +185,6 @@ package_pipewire() {
 
     _pick libcamera usr/lib/$_spaname/libcamera
 
-    _pick onnx usr/lib/$_spaname/filter-graph/libspa-filter-graph-plugin-onnx.so
 
     _pick audio usr/bin/pipewire-{aes67,avb}
     _pick audio usr/bin/pw-{cat,loopback,mididump,midi2play,midi2record,sysex}
