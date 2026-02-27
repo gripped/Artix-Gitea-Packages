@@ -8,13 +8,13 @@
 
 pkgname=lxc
 epoch=1
-pkgver=6.0.5
+pkgver=6.0.6
 pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
 url="https://linuxcontainers.org"
 depends=('bash' 'perl' 'libseccomp' 'libcap' 'python' 'rsync' 'wget')
-makedepends=('docbook2x' 'elogind' 'meson' 'lua' 'python-setuptools' 'apparmor')
+makedepends=('docbook2x' 'elogind' 'meson' 'python-setuptools' 'apparmor')
 optdepends=('dnsmasq'
 	    'lua'
 	    'lua-filesystem: lxc-top'
@@ -28,7 +28,7 @@ source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.
 #	"$pkgname-fix-dumpable.patch::https://github.com/lxc/lxc/commit/2663712e8fa8f37e0bb873185e2d4526dc644764.patch"
 	"lxc.tmpfiles"
 )
-sha256sums=('2e540c60b9dd49e7ee1a4efa5e9c743b05df911b81b375ed5043d9dd7ee0b48a'
+sha256sums=('b0ba4537258d2b848fd07dedb1044dab132de3fb3f1976d240da40a7dee1b8cf'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
