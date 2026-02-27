@@ -13,3 +13,13 @@ index c954a644c..e35eb0e97 100644
  logind_dep = dependency(get_option('logind-provider'), required: get_option('logind'))
  summary({'logind': logind_dep.found()}, bool_yn: true)
  cdata.set('HAVE_LOGIND', logind_dep.found())
+diff --git a/meson_options.txt b/meson_options.txt
+index 206d68659..95be3d366 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -394,4 +394,4 @@ option('fftw',
+ option('onnxruntime',
+        description: 'Enable code that depends on onnxruntime',
+        type: 'feature',
+-       value: 'auto')
++       value: 'disabled')
