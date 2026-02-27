@@ -25,11 +25,13 @@ makedepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
+   systemd.patch
 )
-b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba2257253ff97a2afc91043c862d75b2b6754df3d002137ce9637d60782')
+b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba2257253ff97a2afc91043c862d75b2b6754df3d002137ce9637d60782' SKIP)
 
 prepare() {
   cd pipewire
+   patch -Np1 -i ../systemd.patch
 }
 
 build() {
@@ -62,7 +64,6 @@ build() {
     -D libusb=disabled
     -D lv2=disabled
     -D man=disabled
-    -D onnxruntime=disabled
     -D opus=disabled
     -D pw-cat=disabled
     -D raop=disabled
@@ -76,9 +77,7 @@ build() {
     -D sndfile=disabled
     -D tests=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
-    -D systemd=disabled
     -D rlimits-install=false
-    -D logind-provider=libelogind
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
