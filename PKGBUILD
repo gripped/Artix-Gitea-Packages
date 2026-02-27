@@ -78,6 +78,7 @@ build() {
     -D tests=disabled
     -D udevrulesdir=/usr/lib/udev/rules.d
     -D rlimits-install=false
+    -D logind-provider=libelogind
     -D v4l2=disabled
     -D x11-xfixes=disabled
     -D x11=disabled
