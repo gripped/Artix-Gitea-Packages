@@ -1,9 +1,9 @@
 ---
-version: 0.4.2-1
+version: 0.4.3-1
 pkgbase:
   name: nwg-hello
   pkgdesc: GTK3-based greeter for greetd written in python
-  pkgver: 0.4.2
+  pkgver: 0.4.3
   pkgrel: 1
   url: https://github.com/nwg-piotr/nwg-hello
   arch:
@@ -27,11 +27,11 @@ pkgbase:
     - 'hyprland: Wayland compositor nwg-hello has been made for'
     - 'mugshot: for user avatar support'
   source:
-    - nwg-hello-0.4.2.tar.gz::https://github.com/nwg-piotr/nwg-hello/archive/v0.4.2.tar.gz
+    - nwg-hello-0.4.3.tar.gz::https://github.com/nwg-piotr/nwg-hello/archive/v0.4.3.tar.gz
     - nwg-hello.tmpfiles
   sha256sums:
-    - 473be80ae23a572ed7d61327eada60e1faa07a548120c951226155a52fca9584
+    - b0956b24a7033df247b1124659c88ee842c416ca2f16dc1e37d680a4c12c317e
     - 7f684ff594b49f22035b804659541aa7b14d046c70f50e434227dbb2d083aa1c
 pkgname:
   - name: nwg-hello
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
