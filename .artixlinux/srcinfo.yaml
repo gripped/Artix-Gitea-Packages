@@ -1,10 +1,10 @@
 ---
-version: 1.2.3-2
+version: 1.2.3-3
 pkgbase:
   name: ghostty
   pkgdesc: Fast, native, feature-rich terminal emulator pushing modern features
   pkgver: 1.2.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/ghostty-org/ghostty
   arch:
     - x86_64
@@ -22,7 +22,6 @@ pkgbase:
     - libfontconfig.so
     - freetype2
     - libfreetype.so
-    - gcc-libs
     - glibc
     - glib2
     - libglib-2.0.so
@@ -44,8 +43,10 @@ pkgbase:
     - zlib
   source:
     - https://github.com/ghostty-org/ghostty/archive/v1.2.3/ghostty-1.2.3.tar.gz
+    - ghostty-1.2.3-update-schemes-to-working-tag.patch
   sha256sums:
     - e17d39482fc70fba3d72f5f25c12e9d9a72b87dd45a61a854d9928e98b69edd8
+    - 4d6b324e79cf6182ab8518f328054a8a31ad1adec613414e1431cbf7a6c30057
 pkgname:
   - name: ghostty
     depends:
@@ -54,7 +55,6 @@ pkgname:
       - libfontconfig.so
       - freetype2
       - libfreetype.so
-      - gcc-libs
       - glibc
       - glib2
       - libglib-2.0.so
@@ -82,4 +82,4 @@ pkgname:
   - name: ghostty-terminfo
     pkgdesc: Terminfo for ghostty
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
