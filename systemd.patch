@@ -1,22 +1,25 @@
-diff --git a/meson.build b/meson.build
-index c954a644c..e35eb0e97 100644
---- a/meson.build
-+++ b/meson.build
-@@ -279,10 +279,6 @@ endforeach
- cdata.set('HAVE_PIDFD_OPEN',
-           cc.get_define('SYS_pidfd_open', prefix: '#include <sys/syscall.h>') != '')
- 
--systemd_dep = dependency('libsystemd', required: get_option('libsystemd'))
--summary({'libsystemd': systemd_dep.found()}, bool_yn: true)
--cdata.set('HAVE_SYSTEMD', systemd_dep.found())
--
- logind_dep = dependency(get_option('logind-provider'), required: get_option('logind'))
- summary({'logind': logind_dep.found()}, bool_yn: true)
- cdata.set('HAVE_LOGIND', logind_dep.found())
 diff --git a/meson_options.txt b/meson_options.txt
-index 206d68659..95be3d366 100644
+index 206d68659..14994734e 100644
 --- a/meson_options.txt
 +++ b/meson_options.txt
+@@ -33,7 +33,7 @@ option('gstreamer-device-provider',
+ option('libsystemd',
+        description: 'Enable code that depends on libsystemd',
+        type: 'feature',
+-       value: 'auto')
++       value: 'disabled')
+ option('logind',
+        description: 'Enable logind integration',
+        type: 'feature',
+@@ -50,7 +50,7 @@ option('systemd-system-service',
+ option('systemd-user-service',
+        description: 'Install systemd user service file',
+        type: 'feature',
+-       value: 'auto')
++       value: 'disabled')
+ option('selinux',
+        description: 'Enable SELinux integration',
+        type: 'feature',
 @@ -394,4 +394,4 @@ option('fftw',
  option('onnxruntime',
         description: 'Enable code that depends on onnxruntime',
