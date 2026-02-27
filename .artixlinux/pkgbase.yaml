@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -55,7 +55,7 @@ repos:
       - waterfox-6.6.9-1.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 6.6.9-1
+    version: 6.6.9-1.1
     packages:
-      - waterfox-6.6.9-1-x86_64.pkg.tar.zst
+      - waterfox-6.6.9-1.1-x86_64.pkg.tar.zst
     debug: []
