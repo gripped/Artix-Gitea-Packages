@@ -46,7 +46,6 @@ pkgbase:
     - lilv
     - meson
     - ncurses
-    - onnxruntime
     - opus
     - python-docutils
     - python-packaging
@@ -89,7 +88,6 @@ pkgname:
       - 'pipewire-jack-client: PipeWire as JACK client'
       - 'pipewire-jack: JACK replacement'
       - 'pipewire-libcamera: Libcamera support'
-      - 'pipewire-onnx: ONNX filter support'
       - 'pipewire-pulse: PulseAudio replacement'
       - 'pipewire-roc: ROC streaming'
       - 'pipewire-session-manager: Session manager'
@@ -227,13 +225,6 @@ pkgname:
       - jack
       - jack2
       - pipewire-jack-client
-  - name: pipewire-onnx
-    pkgdesc: Low-latency audio/video router and processor - ONNX filter support
-    depends:
-      - pipewire-audio=1:1.6.0-1
-      - pipewire=1:1.6.0-1
-      - glibc
-      - onnxruntime
   - name: pipewire-pulse
     pkgdesc: Low-latency audio/video router and processor - PulseAudio replacement
     depends:

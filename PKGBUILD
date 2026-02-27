@@ -14,7 +14,6 @@ pkgname=(
   pipewire-ffado
   pipewire-jack-client
   pipewire-jack
-  pipewire-onnx
   pipewire-pulse
   pipewire-roc
   gst-plugin-pipewire
@@ -63,7 +62,6 @@ makedepends=(
   lilv
   meson
   ncurses
-  onnxruntime
   opus
   python-docutils
   python-packaging
@@ -151,7 +149,6 @@ package_pipewire() {
     'pipewire-jack-client: PipeWire as JACK client'
     'pipewire-jack: JACK replacement'
     'pipewire-libcamera: Libcamera support'
-    'pipewire-onnx: ONNX filter support'
     'pipewire-pulse: PulseAudio replacement'
     'pipewire-roc: ROC streaming'
     'pipewire-session-manager: Session manager'
@@ -451,19 +448,6 @@ package_pipewire-jack() {
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
 }
 
-package_pipewire-onnx() {
-  pkgdesc+=" - ONNX filter support"
-  depends=(
-    "pipewire-audio=$epoch:$pkgver-$pkgrel"
-    "pipewire=$epoch:$pkgver-$pkgrel"
-    glibc
-    onnxruntime
-  )
-
-  mv onnx/* "$pkgdir"
-
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
-}
 
 package_pipewire-pulse() {
   pkgdesc+=" - PulseAudio replacement"
