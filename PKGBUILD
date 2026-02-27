@@ -47,7 +47,7 @@ depends=(
 )
 makedepends=(
 	cbindgen
-	clang19
+	clang
 	diffutils
 	imake
 	inetutils
@@ -159,12 +159,13 @@ build() {
 
 	ulimit -n 4096
 
+        _disable_pgo=y
 	if [[ -z $_disable_pgo ]]; then
 	# Do 3-tier PGO
 	echo; echo "----- Building instrumented browser -----"; echo
-#	cat >.mozconfig ../mozconfig - <<END
-#ac_add_options --enable-profile-generate=cross
-#END
+	cat >.mozconfig ../mozconfig - <<END
+ac_add_options --enable-profile-generate=cross
+END
 	./mach build --priority normal
 	./mach package
 
