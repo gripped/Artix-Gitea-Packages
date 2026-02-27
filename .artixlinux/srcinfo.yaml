@@ -12,7 +12,7 @@ pkgbase:
     - GPL-2.1
   makedepends:
     - cbindgen
-    - clang
+    - clang20
     - diffutils
     - imake
     - inetutils

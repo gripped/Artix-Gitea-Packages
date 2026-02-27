@@ -47,7 +47,7 @@ depends=(
 )
 makedepends=(
 	cbindgen
-	clang
+	clang20
 	diffutils
 	imake
 	inetutils
