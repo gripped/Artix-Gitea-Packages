@@ -2,7 +2,7 @@
 
 pkgname=waterfox
 pkgver=6.6.9
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)   
 license=(GPL-2.1)
@@ -92,8 +92,8 @@ export MOZ_APP_REMOTINGNAME=${pkgname}
 export RUSTC_OPT_LEVEL=2
 export MOZILLA_OFFICIAL=1
 export RUSTFLAGS="$RUSTFLAGS -Ctarget-cpu=x86-64"
-export RUST_VER=1.92.0
-export RUSTUP_TOOLCHAIN=stable
+#export RUST_VER=1.92.0
+#export RUSTUP_TOOLCHAIN=stable
 
 ac_add_options --disable-crashreporter
 ac_add_options --disable-debug
@@ -150,24 +150,21 @@ build() {
 	export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
 	export MOZ_NOSPAM=1
 
-        export RUST_VER=1.92.0
-        export RUSTUP_TOOLCHAIN=stable
-
 	CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 	CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 	CFLAGS="${CFLAGS/-fexceptions/}"
 	CXXFLAGS="${CXXFLAGS/-fexceptions/}"
-	CFLAGS+=" -w -std=c++20"
-	CXXFLAGS+=" -w -std=c++20"
+	CFLAGS+=" -w"
+	CXXFLAGS+=" -w"
 
 	ulimit -n 4096
 
 	if [[ -z $_disable_pgo ]]; then
 	# Do 3-tier PGO
 	echo; echo "----- Building instrumented browser -----"; echo
-	cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-profile-generate=cross
-END
+#	cat >.mozconfig ../mozconfig - <<END
+#ac_add_options --enable-profile-generate=cross
+#END
 	./mach build --priority normal
 	./mach package
 
