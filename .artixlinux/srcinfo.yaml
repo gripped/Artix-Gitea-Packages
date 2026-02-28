@@ -1,0 +1,35 @@
+---
+version: 1.1.0-1
+pkgbase:
+  name: python-python-discovery
+  pkgdesc: Python interpreter discovery
+  pkgver: 1.1.0
+  pkgrel: 1
+  url: https://python-discovery.readthedocs.io
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-mock
+    - python-setuptools
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python
+    - python-filelock
+    - python-platformdirs
+  source:
+    - python-python-discovery::git+https://github.com/tox-dev/python-discovery#tag=1.1.0
+  sha512sums:
+    - 81d531af70b2d19f5709fec4fb2771da911c69e65de875815ea492b90284b20c718a1e4fdff3a5c2821ca22b8ce507600923501787071493614498d3129de88b
+  b2sums:
+    - bbf4bafac0c9bf7e74af0fea62bd304a0ed99ce2181199fc726613e70014243ad63cdea84241c3e900dfee718ff27ef96a2e85190abfff9c82e3ac419e650f7c
+pkgname:
+  - name: python-python-discovery
+# generated with artixpkg 0.38.2-1-any
