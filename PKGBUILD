@@ -8,7 +8,7 @@
 pkgbase=wireshark
 pkgname=(wireshark-cli wireshark-qt)
 pkgver=4.6.4
-pkgrel=2
+pkgrel=3
 pkgdesc='Network traffic and protocol analyzer/sniffer'
 url='https://www.wireshark.org/'
 arch=(x86_64)
@@ -55,7 +55,6 @@ makedepends=(
   snappy
   spandsp
   speexdsp
-  systemd-libs
   xxhash
   zlib-ng
   zstd
@@ -131,7 +130,6 @@ package_wireshark-cli() {
     snappy
     spandsp
     speexdsp
-    systemd-libs
     xxhash
     zlib-ng
     zstd

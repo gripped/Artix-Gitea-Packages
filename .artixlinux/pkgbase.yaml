@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.6.4-2
+    version: 4.6.4-3
     packages:
-      - wireshark-cli-4.6.4-2-x86_64.pkg.tar.zst
-      - wireshark-qt-4.6.4-2-x86_64.pkg.tar.zst
+      - wireshark-cli-4.6.4-3-x86_64.pkg.tar.zst
+      - wireshark-qt-4.6.4-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 4.6.2-2
