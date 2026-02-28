@@ -1,10 +1,10 @@
 ---
-version: 0.9.78-1
+version: 0.9.78-2
 pkgbase:
   name: firejail
   pkgdesc: Linux namespaces sandbox program
   pkgver: 0.9.78
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/netblue30/firejail
   install: firejail.install
   arch:
@@ -30,4 +30,4 @@ pkgbase:
     - c28109164f06e0b66956e93f05270442d04ce6636f484bcf8b754e6764f7c3b2ab77d9368c705983134f7947b66bf4122ab5c2e3e7493947b837fb8636dfaab2
 pkgname:
   - name: firejail
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.38.2-1-any

@@ -5,7 +5,7 @@
 
 pkgname=firejail
 pkgver=0.9.78
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux namespaces sandbox program'
 arch=('x86_64')
 url=https://github.com/netblue30/firejail
