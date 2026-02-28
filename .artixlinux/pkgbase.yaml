@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 25.12.31-1
+    version: 26.2.26-1
     packages:
-      - shotcut-25.12.31-1-x86_64.pkg.tar.zst
+      - shotcut-26.2.26-1-x86_64.pkg.tar.zst
     debug: []
