@@ -1,9 +1,9 @@
 ---
-version: 140.7.1-1
+version: 140.8.0-1
 pkgbase:
   name: js140
   pkgdesc: JavaScript interpreter and libraries - Version 140
-  pkgver: 140.7.1
+  pkgver: 140.8.0
   pkgrel: 1
   url: https://spidermonkey.dev/
   arch:
@@ -31,8 +31,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://archive.mozilla.org/pub/firefox/releases/140.7.1esr/source/firefox-140.7.1esr.source.tar.xz
-    - https://archive.mozilla.org/pub/firefox/releases/140.7.1esr/source/firefox-140.7.1esr.source.tar.xz.asc
+    - https://archive.mozilla.org/pub/firefox/releases/140.8.0esr/source/firefox-140.8.0esr.source.tar.xz
+    - https://archive.mozilla.org/pub/firefox/releases/140.8.0esr/source/firefox-140.8.0esr.source.tar.xz.asc
     - 0001-Bug-1973994-mozjs-140.pc-does-not-contain-DXP_UNIX-o.patch
     - 0002-Bug-1969769-Change-uses-of-ast.Str-with-ast.Constant.patch
     - 0003-Bug-1983713-Use-non-deprecated-ast-value.-r-firefox-.patch
@@ -41,7 +41,7 @@ pkgbase:
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - e42d26aeabd17ab1e642656c7b1bc8cadf705ce2ac6751b103dd407f5af32827
+    - 57a7f339ef68273f6597d8074a841fa053f63a21d1f609ab0074a26c063282e6
     - SKIP
     - b5178a7b8a603b645cbae61467f3fa1fef6e9f34c90e4a22faf4ea2152a50fba
     - 941db682a37888582eb1608b936d57c73d7ce4377f4831c73cabb56745734013
@@ -49,7 +49,7 @@ pkgbase:
     - 5173051257f4fd8ed7c0811f01126a6a0f17c9ab6e561b4e0a89cc67509ccdc5
     - ab43fa4fc086926e03bb0fcd2e7a0fac16a9f498461661951d043dc2ba41ca33
   b2sums:
-    - 89699f1200a913205ef93aac5ce24aeed1be41f2befa7d5fcb4d5a7a0124ad8b42fb7075243ee09efb0de7e793df1e753bb8b275515d5b3efa690d49be28b249
+    - dbbf560ae20c6eb384cce577d49fc71152dc3c72dde64efadfa12d975dda2e13aa1c6da7517e435d3e72b0501f440a5cb3a35a75796a42256627620572bf85f3
     - SKIP
     - 89f39bd3ef2ca4894d98f860c2296b2afa58e4fe8c68ddb816a0684cc0db3a8e0deec71af5d214fb3ae40f6ad963aefef02d6b71071c41b9b55752c7cf791a9c
     - dac1b03aadcde42f9ebdfc91e2806a35a2ab78e0c7f1b15bbfb5970700f4d9db34ee1b561470baee4ac1cb3f42a946a01f5afabb53d8ce92a497382b90e21552
@@ -58,4 +58,4 @@ pkgbase:
     - 3d51383d407f7d9c5da8df55899e2ff6a0fdbbf07583af0e06c8bcefda73b1fcecd89ffea52f822ae605a14d498f11b0e492b686ad711d0e3dc97a2c601fdaa0
 pkgname:
   - name: js140
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.2-1-any
