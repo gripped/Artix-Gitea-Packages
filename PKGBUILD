@@ -13,7 +13,7 @@ pkgname=(
   rabbitmq
   rabbitmqadmin
 )
-pkgver=4.2.3
+pkgver=4.2.4
 pkgrel=1
 pkgdesc='Highly reliable and performant enterprise messaging implementation of AMQP written in Erlang/OTP'
 url='https://rabbitmq.com'
@@ -56,7 +56,7 @@ source=(
   rabbitmq.tmpfiles
   rabbitmq.logrotate
 )
-sha512sums=('f6a50e8d91bb6f715f3cb740e62b05f85e6ad8dc2047f98ddd3c57e9cc8c0c59a1fc60ee98f83eb4ddad372213ee93dccaf9d395dc9c994a3638a99b33674ba2'
+sha512sums=('6db886a6c0dca270d59a1654fde2f0189313d79d2e29865f1daf79d26de5b7a0b49185202655241c7ee4a6e6f84b6d1a3995dcc0080d390e652b449c03002452'
             'a13f9c9d6fbff3b5356a2bf10f85cc9d44f991c8f145b57825f39119e65db7e06341d52f19f209d4968c33bed37b193996b321a0727364b79e7127fb70c74bd5'
             '8b841e28fa0a1424dd9e57c0988e015f3cd4cccef0f73ccdb7c7b66d11ca62ba8ef3a59c7ca5e5f0c9c9d8003ac72bf53785985d98aae867961787003286e179'
             '33c6af8810d8cbc479c63ed535de0a27b2e90eeed8fc9b39255683028478529a7e8953aa992f615d4101c6aefdc066f95c98fb9fb5bf1faf0ea327364101914c'
