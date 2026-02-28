@@ -6,7 +6,7 @@
 # Contributer: nightuser <nightuser.android at gmail.com>
 
 pkgname=lxd
-pkgver=6.6
+pkgver=6.7
 pkgrel=1
 pkgdesc="Daemon based on liblxc offering a REST API to manage containers"
 arch=('x86_64')
@@ -30,7 +30,7 @@ source=("https://github.com/canonical/lxd/releases/download/${pkgname}-${pkgver}
         "lxd.sysusers")
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67'  # Stéphane Graber <stgraber@stgraber.org>
               'ED1CA1E7A6F80E22E5CB2DA84ACE106615754614') # Thomas Parrott <tomp@tomp.uk>
-sha256sums=('2ddfa88441ef1f4f1f0b49cce11285620e34f3245e792f22034a688f3c07233a'
+sha256sums=('30d902408f8616484579be6ac8642e14a9b2c839000fbef7bb35456d79ac30af'
             'SKIP'
             'd0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4')
 
@@ -49,7 +49,7 @@ build() {
 
   CGO_LDFLAGS="-static" go build -v -tags "agent" -o bin/ ./lxd-agent/...
 
-  go build -v -tags "netgo" -o bin/ ./lxd-migrate/...
+  go build -v -tags "netgo" -o bin/ ./lxd-convert/...
   for tool in fuidshift lxc lxd lxd-benchmark lxd-user; do
     go build -v -tags "libsqlite3" -o bin/ ./$tool/...
   done
@@ -58,7 +58,7 @@ build() {
 package() {
   cd "$pkgname-$pkgver"
 
-  for tool in fuidshift lxc lxd lxd-agent lxd-benchmark lxd-migrate lxd-user; do
+  for tool in fuidshift lxc lxd lxd-agent lxd-benchmark lxd-convert lxd-user; do
     install -v -p -Dm755 "bin/$tool" "${pkgdir}/usr/bin/$tool"
   done
 
