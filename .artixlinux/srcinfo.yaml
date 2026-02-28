@@ -1,10 +1,10 @@
 ---
-version: 1.27.2-1
+version: 1.27.2-2
 pkgbase:
   name: mupdf
   pkgdesc: Lightweight PDF and XPS viewer
   pkgver: 1.27.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://mupdf.com
   arch:
     - x86_64
@@ -63,12 +63,13 @@ pkgname:
     depends:
       - brotli
       - freetype2
-      - gcc-libs
       - glibc
       - gumbo-parser
       - harfbuzz
       - jbig2dec
       - leptonica
+      - libgcc
+      - libstdc++
       - libjpeg-turbo
       - openjpeg2
       - tesseract
@@ -105,8 +106,9 @@ pkgname:
   - name: python-mupdf
     pkgdesc: Library for Lightweight PDF and XPS viewer - Python bindings
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libmupdf
       - python
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
