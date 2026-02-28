@@ -1,10 +1,10 @@
 ---
-version: 1.2.7-7
+version: 1.2.7-8
 pkgbase:
   name: python-adal
   pkgdesc: ADAL for Python
   pkgver: 1.2.7
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/AzureAD/azure-activedirectory-library-for-python
   arch:
     - any
@@ -14,7 +14,10 @@ pkgbase:
     - python-httpretty
   makedepends:
     - fakeroot
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python-cryptography
     - python-dateutil
@@ -28,4 +31,4 @@ pkgbase:
     - 29a9354028a9420ba883cb494688a0ecbf238d8e46fc011c4a309515a1444faa
 pkgname:
   - name: python-adal
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
