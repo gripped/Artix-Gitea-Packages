@@ -1,9 +1,9 @@
 ---
-version: 20.38.0-1
+version: 21.1.0-1
 pkgbase:
   name: python-virtualenv
   pkgdesc: Virtual Python Environment builder
-  pkgver: 20.38.0
+  pkgver: 21.1.0
   pkgrel: 1
   url: https://virtualenv.pypa.io
   arch:
@@ -17,6 +17,8 @@ pkgbase:
     - python-pytest
     - python-pytest-freezer
     - python-pytest-mock
+    - python-pytest-env
+    - python-pytest-timeout
     - python-time-machine
     - python-setuptools
     - tcsh
@@ -41,6 +43,7 @@ pkgbase:
     - python-distlib
     - python-filelock
     - python-platformdirs
+    - python-python-discovery
   conflicts:
     - virtualenv
   replaces:
@@ -48,11 +51,11 @@ pkgbase:
   options:
     - '!makeflags'
   source:
-    - python-virtualenv::git+https://github.com/pypa/virtualenv#tag=20.38.0
+    - python-virtualenv::git+https://github.com/pypa/virtualenv#tag=21.1.0
   sha512sums:
-    - a7b4a24ff091ad5f9b74ee72574a7a68989c4755b41b107734c7cf88ff2dde13295ac209e7842e63c4ccc2f65c65a66e42cbb3447baed0bffa85a160e8d5e64c
+    - fd81efea761e3a92cd802885b563454ab0f93b0a91c5dac208d6e84e4518638385143f9921b2f10871aa8736c20e20e2f438fde337c6b3719586829340f25f46
   b2sums:
-    - d4be9ec5efea4052575d19cf074374c4b3efaeb88b1da8442f897566f2055671fa4734b50a223ad33843ff7974ac71842b864bb0a0475b9d56ed11c8d91525fa
+    - 30c10312762be666b290c60bc8c4266ebcbb283f2807318991a5a90cecb6257e5689dcb3c70a56db424345243c33083f4cae3f97b946b20577a136f252bbfb31
 pkgname:
   - name: python-virtualenv
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
