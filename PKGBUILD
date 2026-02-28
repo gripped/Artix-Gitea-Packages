@@ -8,7 +8,7 @@ pkgname=(
   postgresql-libs
   postgresql-docs
 )
-pkgver=18.2
+pkgver=18.3
 pkgrel=1
 pkgdesc="Sophisticated object-relational DBMS"
 url="https://www.postgresql.org/"
@@ -30,7 +30,6 @@ depends=(
   numactl libnuma.so
   openssl libcrypto.so libssl.so
   pam libpam.so
- 
   util-linux-libs
   zlib libz.so
   zstd libzstd.so
@@ -45,7 +44,6 @@ makedepends=(
   perl-ipc-run
   python
   readline
- 
   tcl
   util-linux
 )
@@ -59,7 +57,7 @@ source=(
   postgresql.sysusers
   postgresql.tmpfiles
 )
-md5sums=('54f31676486d31ea14ed81aa346ee15b'
+md5sums=('b5843c3f76958d0efe0134eafa1d4c45'
          '344d51b4e3ddf4cb4c2e143650b0476b'
          'b74d848f5527740dce663ae72f39c5ae'
          '10123caec61006cbe316de8ab7a497bc'
@@ -67,7 +65,7 @@ md5sums=('54f31676486d31ea14ed81aa346ee15b'
          '96f82c38f3f540b53f3e5144900acf17'
          'da6a0dda84638d0c3463abf4bc01e621'
          '9138244e0e6b98acc770931a4b150b86')
-sha256sums=('5245bd1b79700d55b8e0575be0325ef61e7bbef627e6a616e4cf36ad4687be36'
+sha256sums=('d95663fbbf3a80f81a9d98d895266bdcb74ba274bcc04ef6d76630a72dee016f'
             '064b7e266094e07feae29735efab3246e2b7a3364d6948d2f98d338e827d6a1a'
             '0fb4915c06b9767933b27adc329e7319485e043fb9f17b1697b969779a00cf14'
             '94af93b53bf7772e6664c239523ef952ffc905a0de3c2c4b2dfc2fe8f3a2efed'
@@ -75,7 +73,7 @@ sha256sums=('5245bd1b79700d55b8e0575be0325ef61e7bbef627e6a616e4cf36ad4687be36'
             '57dfd072fd7ef0018c6b0a798367aac1abb5979060ff3f9df22d1048bb71c0d5'
             '3cfe36dd202af56b3ef8e6d6a746b24e6f46f0d9e0d3fa125dbfb5e598170afb'
             'ea771830c15b24c8725ded92e6a9ba9848b13f722357c5f5857dfeb21985d54c')
-b2sums=('060ef9be485a6c23239408ec955764108c31084042ccc678dbba59fb4a0c6f28d9665bb132d4a0af45c3a33bc668933328a7d955e43e032b1c8f5d6751aea7ff'
+b2sums=('b5d07158c25b1de80211cfdc9a20924f2249ffc45ca1daee1cc25d813922d39576057c360167da248350aa310d3ad5523eb6ed7b4a2b33215cba9b1eaf56d3f4'
         '057e65b1e5a1fd82c7fa9da1c4e2fef39321ee59f74f54d9864e8ab4d7db4862c8fb6353f6006e1a9e1f5132543cf0c12b388963487a09b1465447b3ff6d7321'
         'd98280e004adcb1ad85053d9bd202a2b4798df6e7a72b21cb263da6b282f42b5463ce77dcc4f0b1b39d3f55303d0f6869b23f2338ffcd98720b0550204adf85a'
         '682bfab1189221d82f6cce9bcb8c40c6d37ecacbcaf0568bbaa2706503b1f102e5476d0d110dcc6240ab62c5e7c2c20a5d9af8edd4038d212327f8866b1cf15a'
