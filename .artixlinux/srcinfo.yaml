@@ -1,10 +1,10 @@
 ---
-version: 0.14.4-2
+version: 0.15.0-1
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
-  pkgver: 0.14.4
-  pkgrel: 2
+  pkgver: 0.15.0
+  pkgrel: 1
   url: https://gstreamer.freedesktop.org/
   arch:
     - x86_64
@@ -13,6 +13,9 @@ pkgbase:
   makedepends:
     - cairo
     - cargo-c
+    - clang
+    - cmake
+    - csound
     - dav1d
     - fontconfig
     - freetype2
@@ -30,6 +33,8 @@ pkgbase:
     - openssl
     - pango
     - rust
+    - vulkan-headers
+    - vulkan-icd-loader
   depends:
     - glib2
     - glibc
@@ -38,11 +43,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.14.4
+    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.15.0
   validpgpkeys:
     - 7F4BC7CC3CA06F97336BBFEB0668CC1486C2D7B5
   b2sums:
-    - 50e6cb80b107fbaafc947f8c29c4167ed622ad77fa9da3bb12864c85d3c2b15f1d9914a4654bdf5f2f095238be30ff7c392dc0b21b62ca13fbd3343ce7f29d5f
+    - 0b62fbbad299951d187eb69b2a0a66ce1496f86b4d0aa85378a4a7ba422ec41bf8b60d230fec5f91d5b0a1550f30ddc4f07a39c345fbde6e4c11e951223f5d12
 pkgname:
   - name: gst-webrtc-signalling-server
     pkgdesc: Multimedia graph framework - webrtc signalling server
@@ -56,10 +61,20 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-hlssink3=0.14.4-2
+      - gst-plugin-hlssink3=0.15.0-1
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
+  - name: gst-plugin-burn
+    pkgdesc: Multimedia graph framework - burn plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-bad-libs
+      - gst-plugins-base-libs
+      - vulkan-icd-loader
   - name: gst-plugin-cdg
     pkgdesc: Multimedia graph framework - cdg plugin
     license:
@@ -80,6 +95,15 @@ pkgname:
       - gstreamer
       - libgcc
       - gst-plugins-base-libs
+  - name: gst-plugin-csound
+    pkgdesc: Multimedia graph framework - csound plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - csound
+      - gst-plugins-base-libs
   - name: gst-plugin-dav1d
     pkgdesc: Multimedia graph framework - dav1d plugin
     license:
@@ -90,6 +114,31 @@ pkgname:
       - gstreamer
       - libgcc
       - dav1d
+      - gst-plugins-base-libs
+  - name: gst-plugin-debugseimetainserter
+    pkgdesc: Multimedia graph framework - debugseimetainserter plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-base-libs
+  - name: gst-plugin-deepgram
+    pkgdesc: Multimedia graph framework - deepgram plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-base-libs
+      - openssl
+  - name: gst-plugin-demucs
+    pkgdesc: Multimedia graph framework - demucs plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
       - gst-plugins-base-libs
   - name: gst-plugin-elevenlabs
     pkgdesc: Multimedia graph framework - elevenlabs plugin
@@ -112,14 +161,6 @@ pkgname:
     pkgdesc: Multimedia graph framework - ffv1 plugin
     license:
       - MIT OR Apache-2.0
-    depends:
-      - glib2
-      - glibc
-      - gstreamer
-      - libgcc
-      - gst-plugins-base-libs
-  - name: gst-plugin-fmp4
-    pkgdesc: Multimedia graph framework - fmp4 plugin
     depends:
       - glib2
       - glibc
@@ -161,7 +202,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-hlssink3
+      - gst-plugin-hlssink3=0.15.0-1
       - gst-plugins-base-libs
   - name: gst-plugin-hlssink3
     pkgdesc: Multimedia graph framework - hlssink3 plugin
@@ -170,7 +211,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-fmp4
+      - gst-plugin-isobmff=0.15.0-1
       - gst-plugins-base-libs
   - name: gst-plugin-hsv
     pkgdesc: Multimedia graph framework - hsv plugin
@@ -182,6 +223,25 @@ pkgname:
       - gstreamer
       - libgcc
       - gst-plugins-base-libs
+  - name: gst-plugin-icecast
+    pkgdesc: Multimedia graph framework - icecast plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-base-libs
+  - name: gst-plugin-isobmff
+    pkgdesc: Multimedia graph framework - isobmff plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-base-libs
+    replaces:
+      - gst-plugin-fmp4<=0.14.4-2
+      - gst-plugin-mp4<=0.14.4-2
   - name: gst-plugin-json
     pkgdesc: Multimedia graph framework - json plugin
   - name: gst-plugin-lewton
@@ -196,14 +256,6 @@ pkgname:
       - gst-plugins-base-libs
   - name: gst-plugin-livesync
     pkgdesc: Multimedia graph framework - livesync plugin
-    depends:
-      - glib2
-      - glibc
-      - gstreamer
-      - libgcc
-      - gst-plugins-base-libs
-  - name: gst-plugin-mp4
-    pkgdesc: Multimedia graph framework - mp4 plugin
     depends:
       - glib2
       - glibc
@@ -246,8 +298,25 @@ pkgname:
     pkgdesc: Multimedia graph framework - reqwest plugin
     license:
       - MIT OR Apache-2.0
+  - name: gst-plugin-rsanalytics
+    pkgdesc: Multimedia graph framework - rsanalytics plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-bad-libs
+      - gst-plugins-base-libs
   - name: gst-plugin-rsaudiofx
     pkgdesc: Multimedia graph framework - rsaudiofx plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-base-libs
+  - name: gst-plugin-rsaudioparsers
+    pkgdesc: Multimedia graph framework - rsaudioparsers plugin
     depends:
       - glib2
       - glibc
@@ -261,7 +330,8 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-textwrap=0.14.4-2
+      - gst-plugin-textaccumulate=0.15.0-1
+      - gst-plugin-textwrap=0.15.0-1
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -354,7 +424,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-rsrtp=0.14.4-2
+      - gst-plugin-rsrtp=0.15.0-1
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
@@ -391,6 +461,8 @@ pkgname:
     pkgdesc: Multimedia graph framework - spotify plugin
   - name: gst-plugin-streamgrouper
     pkgdesc: Multimedia graph framework - streamgrouper plugin
+  - name: gst-plugin-textaccumulate
+    pkgdesc: Multimedia graph framework - textaccumulate plugin
   - name: gst-plugin-textahead
     pkgdesc: Multimedia graph framework - textahead plugin
   - name: gst-plugin-textwrap
@@ -425,4 +497,14 @@ pkgname:
       - gst-plugins-bad
       - gst-plugins-bad-libs
       - gst-plugins-base-libs
-# generated with artixpkg 0.38-1-any
+  - name: gst-plugin-whisper
+    pkgdesc: Multimedia graph framework - whisper plugin
+    depends:
+      - glib2
+      - glibc
+      - gstreamer
+      - libgcc
+      - gst-plugins-base-libs
+      - libstdc++
+      - vulkan-icd-loader
+# generated with artixpkg 0.38.2-1-any
