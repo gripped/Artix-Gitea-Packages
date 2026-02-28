@@ -1,10 +1,10 @@
 ---
-version: 1.58.0-1
+version: 1.58.0-2
 pkgbase:
   name: python-playwright
   pkgdesc: A Python library to automate Chromium, Firefox and WebKit browsers with a single API
   pkgver: 1.58.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/microsoft/playwright-python
   arch:
     - any
@@ -45,4 +45,4 @@ pkgbase:
     - 8af7d2f2a41582212fc20665ec5a38e569b79195d85ec35e25f4ec421cb5db32
 pkgname:
   - name: python-playwright
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
