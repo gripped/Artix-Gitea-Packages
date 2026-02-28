@@ -1,9 +1,9 @@
 ---
-version: 0.10.1-1
+version: 0.10.2-1
 pkgbase:
   name: bpf-linker
   pkgdesc: Simple BPF static linker
-  pkgver: 0.10.1
+  pkgver: 0.10.2
   pkgrel: 1
   url: https://github.com/aya-rs/bpf-linker
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - llvm-libs
     - clang
   source:
-    - bpf-linker-0.10.1.tar.gz::https://github.com/aya-rs/bpf-linker/archive/refs/tags/v0.10.1.tar.gz
+    - bpf-linker-0.10.2.tar.gz::https://github.com/aya-rs/bpf-linker/archive/refs/tags/v0.10.2.tar.gz
   sha256sums:
-    - b09b2daec7e1935cabccab5b6d61cc61f195047775cf1d63c0c7e5a52cac6a39
+    - c4e99d548b6a0d90f6ef35acb348cf4b8944ff4ba62b2795aa688b3178d82141
 pkgname:
   - name: bpf-linker
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
