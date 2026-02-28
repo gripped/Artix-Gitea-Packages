@@ -1,0 +1,47 @@
+---
+version: 0.18.1-5
+pkgbase:
+  name: libgdata
+  pkgdesc: GLib-based library for accessing online service APIs using the GData protocol
+  pkgver: 0.18.1
+  pkgrel: 5
+  url: https://wiki.gnome.org/Projects/libgdata
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gtk-doc
+    - meson
+    - vala
+  depends:
+    - gcr
+    - glib2
+    - glibc
+    - json-glib
+    - libgcc
+    - libgoa
+    - libsoup
+    - libxml2
+  source:
+    - git+https://gitlab.gnome.org/Archive/libgdata.git#tag=0.18.1
+  b2sums:
+    - 6d1304109657a56640404b491fc712b22e673a3ec96bcff7198735e072973bca58f806f45f4de44eec840f2dae7f6d7e85b2eaa61f71a988e827ec1c468aaad3
+pkgname:
+  - name: libgdata
+    depends:
+      - gcr
+      - glib2
+      - glibc
+      - json-glib
+      - libgcc
+      - libgoa
+      - libsoup
+      - libxml2
+      - libsoup-2.4.so
+    provides:
+      - libgdata.so
+# generated with artixpkg 0.38.2-1-any
