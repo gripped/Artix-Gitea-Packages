@@ -1,27 +1,30 @@
 ---
-version: 6.6.9-1.1
+version: 6.6.9-1.2
 pkgbase:
   name: waterfox
   pkgdesc: Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.
   pkgver: 6.6.9
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://www.waterfox.net/
   arch:
     - x86_64
   license:
-    - GPL-2.1
+    - MPL-2.0
   makedepends:
     - cbindgen
     - clang
     - diffutils
+    - dump_syms
     - imake
-    - inetutils
+    - jack
     - lld
     - llvm
+    - mercurial
     - mesa
     - nasm
     - nodejs
     - python
+    - python-pip
     - rust
     - unzip
     - wasi-compiler-rt
@@ -32,64 +35,42 @@ pkgbase:
     - yasm
     - zip
   depends:
-    - cairo
-    - dbus
-    - ffmpeg
-    - fontconfig
-    - freetype2
-    - gcc-libs
-    - gdk-pixbuf2
-    - glib2
-    - glibc
     - gtk3
-    - hicolor-icon-theme
-    - libpulse
-    - libx11
-    - libxcb
-    - libxcomposite
-    - libxdamage
-    - libxext
-    - libxfixes
-    - libxrandr
-    - libxss
     - libxt
     - mime-types
-    - nspr
+    - dbus-glib
     - nss
-    - pango
     - ttf-font
+    - libpulse
   optdepends:
-    - 'libnotify: Notification integration'
-    - 'speech-dispatcher: Text-to-Speech'
     - 'hunspell-en_US: Spell checking, American English'
-  conflicts:
-    - waterfox
-  noextract:
-    - l10.zip
+    - 'libnotify: Notification integration'
+    - 'networkmanager: Location detection via available WiFi networks'
+    - 'pulseaudio: Audio support'
+    - 'speech-dispatcher: Text-to-Speech'
+    - 'xdg-desktop-portal: Screensharing with Wayland'
   options:
     - '!emptydirs'
     - '!makeflags'
     - '!strip'
-    - '!lto'
-    - '!debug'
   source:
     - waterfox-6.6.9.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.6.9.tar.gz
-    - l10n-6.6.9.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main
+    - locales.tar.gz::https://github.com/BrowserWorks/l10n/archive/bce7b1e821ff7f65d914d35f09eee0379f41887d.tar.gz
     - waterfox.desktop
     - policies.json
     - remove-organization-policy-banner.patch
     - 9002.enable_reader_mode_hotkey.patch
     - 9003.rebind_screenshot_key_to_ctrl_alt_s.patch
     - license.html
-  b2sums:
-    - 9babaf1a1fa0a331f37d360b70111d69f2d55b36d4767c329b36d803f28387eb18314e15ff54b82b765f72c0061a5a823e0928a263d3d9d1d089a654a2e3b065
-    - 2bfe37b18053976ca6a68c8c8254d2b1255279b6b3cd67d2583855a467bd5ab6a6dee477e3464d029bbcef3aac001a4eae1755d6ff7c6e1bc9bea997f266eda1
-    - 0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978
-    - 164844bacff82d9c6431c55ab078725e8e23ff0dc67bf079d56a5696f70b54ca81ec27e5a37acb336b52048c956cd39db087ac060414a1863d8ef3c47120df67
-    - 3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4
-    - 98d7b2aa61364c2b015d1a696a326e26d6d570cb8346e243ae67e5bfd7683732ce8227404fbfcac0969c9c52dcb1a9547e5779c74beca07ad3c41d2e4034e7bc
-    - f547df79e8e5d5c83389a0e1fec844945627c652a2058eca4f3d9028a24674feca7553b3f0cd0bb4095c0208fc19992d58ad6991440c8741e1dde418a74a0753
-    - 681c4141128e774a57c474f690e9e550f1f17675d5195e39201f17f254a8a376827d30f7ccc0ab2bd1d37495abcbc95bb9321285895c3aa99546a3600ea1668c
+  sha256sums:
+    - b491a4009b949abf09d352052e9e1b9d26bf5c05f3dbe5ee8c55ffa0a41c5af0
+    - fa87c5b01d38fddb67a7c3512acf622bc3eef2f90d2ff439cbde6d363849efd2
+    - 9345cdf0e1a537d8ff23b5db0eadaaec5868f7588de86a260da27f5015c2d286
+    - 7e7042f0ce7808c72ee1225f709db09764ffeb023b7543d39e1ba7d65dd33cef
+    - 21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2
+    - 0abdfbbf6040f694507c5e33bc3d2d06ddffdf309ce6f6da9484ae268382f731
+    - 8626d64e0250e8121255029097ba5f67e47a9d427e0143b8b8d1df3460a03be6
+    - 9ad654556a5d3a891675863252a368fba5dc1f5bdfb4d2367466f9fd24a07fe5
 pkgname:
   - name: waterfox
 # generated with artixpkg 0.38.2-1-any

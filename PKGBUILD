@@ -2,61 +2,35 @@
 
 pkgname=waterfox
 pkgver=6.6.9
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
-arch=(x86_64)   
-license=(GPL-2.1)
+arch=(x86_64)
+license=('MPL-2.0')
 url='https://www.waterfox.net/'
-source=("$pkgname-$pkgver.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/$pkgver.tar.gz"
-	"l10n-$pkgver.zip::https://codeload.github.com/BrowserWorks/l10n/zip/refs/heads/main"
-	"$pkgname.desktop"
-	policies.json
-	remove-organization-policy-banner.patch
-	9002.enable_reader_mode_hotkey.patch
-	9003.rebind_screenshot_key_to_ctrl_alt_s.patch
-	license.html)
-noextract=(l10.zip)
-conflicts=(waterfox)
 depends=(
-	cairo
-	dbus
-	ffmpeg
-	fontconfig
-	freetype2
-	gcc-libs
-	gdk-pixbuf2
-	glib2
-	glibc
 	gtk3
-	hicolor-icon-theme
-	libpulse
-	libx11
-	libxcb
-	libxcomposite
-	libxdamage
-	libxext
-	libxfixes
-	libxrandr
-	libxss
 	libxt
 	mime-types
-	nspr
+	dbus-glib
 	nss
-	pango
 	ttf-font
+	libpulse
 )
 makedepends=(
 	cbindgen
 	clang
 	diffutils
+	dump_syms
 	imake
-	inetutils
+	jack
 	lld
 	llvm
+	mercurial
 	mesa
 	nasm
 	nodejs
 	python
+	python-pip
 	rust
 	unzip
 	wasi-compiler-rt
@@ -66,25 +40,47 @@ makedepends=(
 	xorg-server-xvfb
 	yasm
 	zip
+	#sccache
 )
+
 optdepends=(
+	'hunspell-en_US: Spell checking, American English'
 	'libnotify: Notification integration'
+	'networkmanager: Location detection via available WiFi networks'
+	'pulseaudio: Audio support'
 	'speech-dispatcher: Text-to-Speech'
-	'hunspell-en_US: Spell checking, American English')
-options=(!emptydirs !makeflags !strip !lto !debug)
+	'xdg-desktop-portal: Screensharing with Wayland'
+)
 
-prepare() {
-        mkdir -p mozbuild
-        cd "$pkgname-$pkgver"
+options=(!emptydirs !makeflags !strip)
+source=(
+	"$pkgname-$pkgver.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/$pkgver.tar.gz"
+	"locales.tar.gz::https://github.com/BrowserWorks/l10n/archive/bce7b1e821ff7f65d914d35f09eee0379f41887d.tar.gz"
+	"$pkgname.desktop"
+	policies.json
+	remove-organization-policy-banner.patch
+	9002.enable_reader_mode_hotkey.patch
+	9003.rebind_screenshot_key_to_ctrl_alt_s.patch
+        license.html
+)
 
-	bsdtar xvf ../l10n-$pkgver.zip --strip-components=1 -C waterfox/browser/locales
+prepare () {
+	rm -rf "$pkgname-$pkgver/waterfox/browser/locales/"*
+	mv "l10n-bce7b1e821ff7f65d914d35f09eee0379f41887d/"* "$pkgname-$pkgver/waterfox/browser/locales/"
+
+	mkdir -p mozbuild
+	cd "waterfox-$pkgver"
+
+	#bsdtar xvf ../l10n-$pkgver.zip --strip-components=1 -C waterfox/browser/locales
         patch -Np1 -i ../remove-organization-policy-banner.patch
         patch -Np1 -i ../9002.enable_reader_mode_hotkey.patch
-        patch -Np1 -i ../9003.rebind_screenshot_key_to_ctrl_alt_s.patch	
+        patch -Np1 -i ../9003.rebind_screenshot_key_to_ctrl_alt_s.patch
         sed -i -e "s/%DISPLAY_VERSION%/$pkgver/" waterfox/browser/branding/pref/firefox-branding.js
         sed -i -e "s/^/$pkgver-/" browser/config/version_display.txt
 
-	cat >../mozconfig <<END
+	cat > ../mozconfig <<EOT
+mk_add_options MOZ_OBJDIR=${PWD@Q}/obj
+
 ac_add_options --enable-optimize="-O2 -w"
 ac_add_options --enable-release
 ac_add_options --enable-rust-simd
@@ -92,128 +88,133 @@ export MOZ_APP_REMOTINGNAME=${pkgname}
 export RUSTC_OPT_LEVEL=2
 export MOZILLA_OFFICIAL=1
 export RUSTFLAGS="$RUSTFLAGS -Ctarget-cpu=x86-64"
-#export RUST_VER=1.92.0
-#export RUSTUP_TOOLCHAIN=stable
 
-ac_add_options --disable-crashreporter
-ac_add_options --disable-debug
-ac_add_options --disable-dmd
-ac_add_options --disable-geckodriver
-ac_add_options --disable-profiling
-ac_add_options --disable-tests
+ac_add_options --enable-application=browser
 
+ac_add_options --prefix=/usr
+ac_add_options --enable-release
+ac_add_options --enable-hardening
+ac_add_options --enable-optimize
+ac_add_options --enable-rust-simd
+ac_add_options --enable-linker=lld
+ac_add_options --disable-elf-hack
 ac_add_options --enable-application=browser
 ac_add_options --enable-install-strip
 ac_add_options --enable-jxl
 ac_add_options --enable-linker=lld
 ac_add_options --enable-strip
 ac_add_options --disable-bootstrap
-# ac_add_options --enable-unverified-updates
-
+ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
+ac_add_options --with-l10n-base="$PWD"/waterfox/browser/locales
 ac_add_options --target=x86_64-pc-linux-gnu
 
 ac_add_options --with-app-basename=Waterfox
 ac_add_options --with-app-name=waterfox
 ac_add_options --with-branding=waterfox/browser/branding
 ac_add_options --with-distribution-id=net.waterfox
-ac_add_options --with-l10n-base="$PWD"/waterfox/browser/locales
 
-mk_add_options AUTOCLOBBER=1
-export MOZ_INCLUDE_SOURCE_INFO=1
-export MOZ_REQUIRE_SIGNING=
-export MOZ_TELEMETRY_REPORTING=
-
-ac_add_options --enable-pulseaudio
-ac_add_options --enable-alsa
-ac_add_options --enable-jack
-
-#ac_add_options --disable-jprof   # artist: not known by WF 6.6.0
-ac_add_options --disable-updater
-
-ac_add_options --prefix=/usr
-ac_add_options --enable-hardening
+# System libraries
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
-ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
+#ac_add_options --with-system-sccache
 
-mk_add_options MOZ_OBJDIR=./obj-"$(uname -s)"-"$(uname -m)"
+# Branding
+ac_add_options --with-app-name=waterfox
+ac_add_options --with-app-basename=Waterfox
+ac_add_options --with-branding=waterfox/browser/branding
+ac_add_options --with-distribution-id=org.artixlinux
+ac_add_options --with-unsigned-addon-scopes=app,system
+ac_add_options --allow-addon-sideload
 
-### Options for specific build pass follow
-END
+# Features
+ac_add_options --enable-alsa
+ac_add_options --enable-jack
+ac_add_options --disable-crashreporter
+ac_add_options --disable-updater
+ac_add_options --disable-tests
+ac_add_options --disable-debug
+ac_add_options --disable-dmd
+ac_add_options --disable-geckodriver
+ac_add_options --disable-profiling
+EOT
 }
 
-build() {
-	cd "$pkgname-$pkgver"
+build () {
+	cd waterfox-$pkgver
 
-	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
-	export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
-	export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
-	export MOZ_NOSPAM=1
+	
+    export CFLAGS="${CFLAGS/-fexceptions/}"
+    export CXXFLAGS="${CXXFLAGS/-fexceptions/}"
+    
+    # Breaks compilation since https://bugzilla.mozilla.org/show_bug.cgi?id=1896066
+    CFLAGS+=" -fno-exceptions"
+    CXXFLAGS+=" -fno-exceptions"
 
+	# malloc_usable_size is used in various parts of the codebase
 	CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 	CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
-	CFLAGS="${CFLAGS/-fexceptions/}"
-	CXXFLAGS="${CXXFLAGS/-fexceptions/}"
+
+	export MOZ_NOSPAM=1
+	export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
+	export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=none
+
+	# LTO needs more open files
+	ulimit -n 4096
+
+	# prevents references to $srcdir being included in error messages
+	# some references still remain in libxul.so and omni.ja
+	CFLAGS+=" -ffile-prefix-map=$srcdir=."
+	CXXFLAGS+=" -ffile-prefix-map=$srcdir=."
+
+	# suppress warnings
 	CFLAGS+=" -w"
 	CXXFLAGS+=" -w"
 
-	ulimit -n 4096
+	_disable_pgo=y #comment this to enable building the profiled browser and using PGO
 
-        _disable_pgo=y
 	if [[ -z $_disable_pgo ]]; then
-	# Do 3-tier PGO
-	echo; echo "----- Building instrumented browser -----"; echo
-	cat >.mozconfig ../mozconfig - <<END
+ # Do 3-tier PGO
+	echo "Building instrumented browser..."
+	cat >.mozconfig ../mozconfig - <<EOT
 ac_add_options --enable-profile-generate=cross
-END
-	./mach build --priority normal
-	./mach package
+EOT
+	./mach build
 
-	echo; echo "----- Profiling instrumented browser -----"; echo
-	LLVM_PROFDATA=llvm-profdata JARLOG_FILE="$PWD/jarlog" \
-		MOZ_DISABLE_CONTENT_SANDBOX=1 \
-		MOZ_DISABLE_GMP_SANDBOX=1 \
-		MOZ_DISABLE_GPU_SANDBOX=1 \
-		MOZ_DISABLE_RDD_SANDBOX=1 \
-		MOZ_DISABLE_SOCKET_PROCESS_SANDBOX=1 \
-		MOZ_DISABLE_UTILITY_SANDBOX=1 \
-		MOZ_DISABLE_VR_SANDBOX=1 \
-		GTK_A11Y=none NO_AT_BRIDGE=1 dbus-run-session \
+	echo "Profiling instrumented browser..."
+	./mach package
+	LLVM_PROFDATA=llvm-profdata \
+		JARLOG_FILE="$PWD/jarlog" \
 		xvfb-run -s "-screen 0 1920x1080x24 -nolisten local" \
 		./mach python build/pgo/profileserver.py
 
-	[[ -s merged.profdata ]] || { echo >&2 "ERROR: No profile data produced"; return 1; }
 	stat -c "Profile data found (%s bytes)" merged.profdata
-	[[ -s jarlog ]] || { echo >&2 "ERROR: No jarlog produced"; return 1; }
-	stat -c "Profile jarlog found (%s bytes)" jarlog
+	test -s merged.profdata
 
-	echo; echo "----- Removing instrumented browser -----"; echo
-	./mach clobber objdir
+	stat -c "Jar log found (%s bytes)" jarlog
+	test -s jarlog
 
-	echo; echo "----- Building optimized browser -----"; echo
-	cat >.mozconfig ../mozconfig - <<END
+	echo "Removing instrumented browser..."
+	./mach clobber
+
+	echo "Building optimized browser..."
+	cat >.mozconfig ../mozconfig - <<EOT
 ac_add_options --enable-lto=cross
 ac_add_options --enable-profile-use=cross
 ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
-END
-
-	else
-	echo; echo "----- Building browser without PGO -----"; echo
-	cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-lto
-END
-	fi
-
+EOT
+else
 	./mach build
 
+	echo "Building symbol archive..."
 	./mach buildsymbols
 
 	./mach package
 	./mach package-multi-locale --locales ar cs da de el en-US en-GB es-ES fr hu id it ja ko lt nl nn-NO pl pt-BR pt-PT ru sv-SE th tr uk zh-CN zh-TW
+fi
 }
 
-package() {
+package () {
 	cd "$pkgname-$pkgver" || exit
 
 	install -Ddvm755 "${pkgdir}/usr/lib/${pkgname}"
@@ -288,12 +289,12 @@ EOT
         fi
 }
 
-b2sums=('9babaf1a1fa0a331f37d360b70111d69f2d55b36d4767c329b36d803f28387eb18314e15ff54b82b765f72c0061a5a823e0928a263d3d9d1d089a654a2e3b065'
-        '2bfe37b18053976ca6a68c8c8254d2b1255279b6b3cd67d2583855a467bd5ab6a6dee477e3464d029bbcef3aac001a4eae1755d6ff7c6e1bc9bea997f266eda1'
-        '0fad7604486275fb74cdc11ce4375f024eda859eb6520f71cb6c4e73a042e9d16d3e6d03d3bc6e3d6bf6ec72d7c07394c922914042be3d0919205a55cf7ab978'
-        '164844bacff82d9c6431c55ab078725e8e23ff0dc67bf079d56a5696f70b54ca81ec27e5a37acb336b52048c956cd39db087ac060414a1863d8ef3c47120df67'
-        '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
-        '98d7b2aa61364c2b015d1a696a326e26d6d570cb8346e243ae67e5bfd7683732ce8227404fbfcac0969c9c52dcb1a9547e5779c74beca07ad3c41d2e4034e7bc'
-        'f547df79e8e5d5c83389a0e1fec844945627c652a2058eca4f3d9028a24674feca7553b3f0cd0bb4095c0208fc19992d58ad6991440c8741e1dde418a74a0753'
-        '681c4141128e774a57c474f690e9e550f1f17675d5195e39201f17f254a8a376827d30f7ccc0ab2bd1d37495abcbc95bb9321285895c3aa99546a3600ea1668c')
-
+#first browser package, second icon file 
+sha256sums=('b491a4009b949abf09d352052e9e1b9d26bf5c05f3dbe5ee8c55ffa0a41c5af0'
+            'fa87c5b01d38fddb67a7c3512acf622bc3eef2f90d2ff439cbde6d363849efd2'
+            '9345cdf0e1a537d8ff23b5db0eadaaec5868f7588de86a260da27f5015c2d286'
+            '7e7042f0ce7808c72ee1225f709db09764ffeb023b7543d39e1ba7d65dd33cef'
+            '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2'
+            '0abdfbbf6040f694507c5e33bc3d2d06ddffdf309ce6f6da9484ae268382f731'
+            '8626d64e0250e8121255029097ba5f67e47a9d427e0143b8b8d1df3460a03be6'
+            '9ad654556a5d3a891675863252a368fba5dc1f5bdfb4d2367466f9fd24a07fe5')
