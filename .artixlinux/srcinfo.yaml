@@ -1,10 +1,10 @@
 ---
-version: 2026.02.03-2
+version: 2026.02.03-3
 pkgbase:
   name: zathura-cb
   pkgdesc: Adds comic book support to zathura
   pkgver: 2026.02.03
-  pkgrel: 2
+  pkgrel: 3
   url: https://pwmt.org/projects/zathura-cb/
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - f27f9582d4427df4e8c432ea06c8ba062f858946f787212a80fbc9acaa2ad7a29c2f638376a8a28e9d0cdac7cf23ccde2847dd5ed7f633d8f4b71846bb048b1b
 pkgname:
   - name: zathura-cb
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
