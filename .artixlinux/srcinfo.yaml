@@ -1,10 +1,10 @@
 ---
-version: 0.18.4.5-1
+version: 0.18.4.6-1
 pkgbase:
   name: monero
   pkgdesc:
     Monero: the secure, private, untraceable peer-to-peer currency
-  pkgver: 0.18.4.5
+  pkgver: 0.18.4.6
   pkgrel: 1
   url: https://getmonero.org/
   arch:
@@ -17,13 +17,15 @@ pkgbase:
     - git
     - python
   depends:
-    - gcc-libs
     - glibc
     - libboost_program_options.so
+    - libgcc
     - libhidapi-libusb.so
     - libreadline.so
     - libsodium.so
     - libssl.so
+    - libstdc++
+    - libstdc++.so
     - libunbound.so
     - libunwind
     - libusb
@@ -31,7 +33,7 @@ pkgbase:
     - pcsclite
     - protobuf
   source:
-    - monero::git+https://github.com/monero-project/monero?signed#tag=v0.18.4.5
+    - monero::git+https://github.com/monero-project/monero?signed#tag=v0.18.4.6
     - git+https://github.com/miniupnp/miniupnp.git
     - git+https://github.com/Tencent/rapidjson.git
     - git+https://github.com/trezor/trezor-common.git
@@ -45,7 +47,7 @@ pkgbase:
     - BDA6BD7042B721C467A9759D7455C5E3C0CDCEB9
     - 487277A8BD0A209C16B700F3C64552D877C32479
   sha512sums:
-    - 65a96daae530d9c7dcb5830b11ca81efcd96138fe80f144a9f46c7cdf08d8dfe21ac8e2b80e9954ef4f70cf80d9b141ce8bb87363ef9dc663b55fb8a20393f4f
+    - dd7e339c055ba630c47765d8f92923837c4b974d501cbb59d25e080b600770ba1efae03bb6379e19780c8d72615f99a144ec6cd2f74fe801b2273918eb4b0fe7
     - SKIP
     - SKIP
     - SKIP
@@ -58,4 +60,4 @@ pkgname:
   - name: monero
     backup:
       - etc/monerod.conf
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.38.2-1-any
