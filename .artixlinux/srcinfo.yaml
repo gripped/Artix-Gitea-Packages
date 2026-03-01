@@ -1,10 +1,10 @@
 ---
-version: 10.1.0-1.1
+version: 10.1.0-2
 pkgbase:
   name: oxipng
   pkgdesc: A lossless PNG compression optimiser
   pkgver: 10.1.0
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/shssoichiro/oxipng
   arch:
     - x86_64
@@ -13,7 +13,8 @@ pkgbase:
   makedepends:
     - rust
   depends:
-    - gcc-libs
+    - libgcc
+    - glibc
   options:
     - '!lto'
   source:
@@ -22,4 +23,4 @@ pkgbase:
     - 6c5e1d021a844ba730193943ab63ad99e7d9f1089c36f3db59014517ea99cf99
 pkgname:
   - name: oxipng
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
