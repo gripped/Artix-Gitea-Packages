@@ -1,10 +1,10 @@
 ---
-version: 0.18.4.5-1
+version: 0.18.4.6-1
 pkgbase:
   name: monero-gui
   pkgdesc:
     Qt GUI wallet for Monero: the secure, private, untraceable peer-to-peer currency
-  pkgver: 0.18.4.5
+  pkgver: 0.18.4.6
   pkgrel: 1
   url: https://getmonero.org/
   arch:
@@ -18,14 +18,16 @@ pkgbase:
     - python
     - qt5-tools
   depends:
-    - gcc-libs
     - glibc
     - hicolor-icon-theme
     - libboost_program_options.so
+    - libgcc
     - libgcrypt
     - libhidapi-libusb.so
     - libsodium.so
     - libssl.so
+    - libstdc++
+    - libstdc++.so
     - libunbound.so
     - libunwind
     - libusb
@@ -40,7 +42,7 @@ pkgbase:
     - qt5-svg
     - qt5-xmlpatterns
   source:
-    - git+https://github.com/monero-project/monero-gui?signed#tag=v0.18.4.5
+    - git+https://github.com/monero-project/monero-gui?signed#tag=v0.18.4.6
     - git+https://github.com/monero-project/monero
     - git+https://github.com/dlbeer/quirc.git
     - git+https://github.com/miniupnp/miniupnp.git
@@ -53,7 +55,7 @@ pkgbase:
     - 8777AB8F778EE89487A2F8E7F4ACA0183641E010
     - 487277A8BD0A209C16B700F3C64552D877C32479
   sha512sums:
-    - 48b929329d8f6d09cb4cac4c0297434720e793ffeca93505c40494673a57d73b01807e01ffaeb99cd7ad154421120e9c84beee0a7f0102ac7d6568996e3c1260
+    - f431685c415000aa1a3b3647c8f571d9a8182dc03ccf3d0dc33116ceda89e085dd66e4da4adf818e14128128b24371d710caf7455ed473e72797e4b3fd2344d4
     - SKIP
     - SKIP
     - SKIP
@@ -64,4 +66,4 @@ pkgbase:
     - 98b67aec60e492f0a220a156a110baf96862343d3802ec34347c70c7af671a1ae49ccaec218f2e8f81e153c433e9145ad2f55b8613ce6999fc2c87fbd81fd8e1
 pkgname:
   - name: monero-gui
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.38.2-1-any
