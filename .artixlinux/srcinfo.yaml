@@ -1,10 +1,10 @@
 ---
-version: 49.1-1
+version: 49.1-2
 pkgbase:
   name: gnome-boxes
   pkgdesc: Simple GNOME application to access virtual systems
   pkgver: 49.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Boxes/
   arch:
     - x86_64
@@ -24,13 +24,13 @@ pkgbase:
     - cdrtools
     - dconf
     - edk2-ovmf
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
     - gtk3
     - hicolor-icon-theme
     - libarchive
+    - libgcc
     - libgudev
     - libhandy
     - libosinfo
@@ -61,4 +61,4 @@ pkgbase:
     - 753c8cc5cd08922f7cc57b573ac0f4a19b0b3b0b63208b1425a7ed1c7f59ce625dae28fc419c532253220de4a1fd1f1f31017f66131aa39e0e20cfcd68136c6d
 pkgname:
   - name: gnome-boxes
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
