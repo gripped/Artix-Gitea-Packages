@@ -1,0 +1,42 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+
+pkgname=wiiuse
+pkgver=0.15.6
+pkgrel=1
+pkgdesc="A library written in C that connects with several Nintendo Wii remotes"
+arch=(x86_64)
+url="https://github.com/wiiuse/wiiuse"
+license=(GPL-3.0-or-later)
+depends=(
+  bluez-libs
+  glibc
+)
+provides=(libwiiuse.so)
+makedepends=(cmake)
+source=($url/archive/$pkgver/$pkgname-$pkgver.tar.gz)
+sha512sums=('b8cbc585f68b62b6bd3faac993130d616c6479f673ccfdc508497fb11a3afca7c86fa5bdf3780c757ef8846d993984dacede1b0365dea4123136bbc393f0d05e')
+b2sums=('212323cc3297aa6b3318341b468b745efa938ba02f8ec962f500cc3541f2b8dfebbffdc5763d7ea0151edad7fc16e12f4719d017c031de34118ceb0da209640d')
+
+build() {
+  local cmake_options=(
+    -B build
+    -D BUILD_SHARED_LIBS=ON
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_LIBDIR=lib
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -S $pkgname-$pkgver
+    -W no-dev
+  )
+
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
+}
+
+check() {
+  ctest --test-dir build --output-on-failure
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -vDm 644 $pkgname-$pkgver/{{CHANGELOG,README}.mkd,RELEASE.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+}
