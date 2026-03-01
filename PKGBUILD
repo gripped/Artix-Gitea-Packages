@@ -3,7 +3,7 @@
 pkgname=python-django-compressor
 _name="${pkgname#python-}"
 pkgver=4.6
-pkgrel=4
+pkgrel=5
 pkgdesc="Compresses linked and inline javascript or CSS into a single cached file"
 arch=(any)
 url="https://github.com/django-compressor/django-compressor"
@@ -34,7 +34,7 @@ checkdepends=(
 optdepends=(
   'python-beautifulsoup4: for compressor.parser.BeautifulSoupParser and compressor.parser.LxmlParser'
   'python-brotli: for compressor.storage.BrotliCompressorFileStorage'
-  'python-calmjs: for compressor.filters.jsmin.CalmjsFilter'
+  'python-calmjs.parse: for compressor.filters.jsmin.CalmjsFilter'
   'python-csscompressor: for compressor.filters.cssmin.CSSCompressorFilter'
   'python-django-sekizai: for including template code into main template'
   'python-html5lib: for compressor.parser.Html5LibParser'
@@ -63,4 +63,3 @@ package() {
   install -vDm 644 {AUTHORS,README.rst} -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
- 

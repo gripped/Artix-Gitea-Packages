@@ -1,10 +1,10 @@
 ---
-version: 4.6-4
+version: 4.6-5
 pkgbase:
   name: python-django-compressor
   pkgdesc: Compresses linked and inline javascript or CSS into a single cached file
   pkgver: 4.6
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/django-compressor/django-compressor
   arch:
     - any
@@ -33,7 +33,7 @@ pkgbase:
   optdepends:
     - 'python-beautifulsoup4: for compressor.parser.BeautifulSoupParser and compressor.parser.LxmlParser'
     - 'python-brotli: for compressor.storage.BrotliCompressorFileStorage'
-    - 'python-calmjs: for compressor.filters.jsmin.CalmjsFilter'
+    - 'python-calmjs.parse: for compressor.filters.jsmin.CalmjsFilter'
     - 'python-csscompressor: for compressor.filters.cssmin.CSSCompressorFilter'
     - 'python-django-sekizai: for including template code into main template'
     - 'python-html5lib: for compressor.parser.Html5LibParser'
@@ -47,4 +47,4 @@ pkgbase:
     - e414899110df922d1dde66ebfe16c3e70dcba23fe78054282e82fa277d76465af0ccbc1c0a692e5d1c542a9d6fed31c2ac216d3b0b9ebd608333a1998eba3a3f
 pkgname:
   - name: python-django-compressor
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
