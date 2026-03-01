@@ -1,10 +1,10 @@
 ---
-version: 1:1.1.6-2
+version: 1:1.1.6-3
 pkgbase:
   name: nftables
   pkgdesc: Netfilter tables userspace tools
   pkgver: 1.1.6
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://netfilter.org/projects/nftables/
   install: nftables.install
@@ -21,12 +21,12 @@ pkgbase:
     - python-installer
     - python-wheel
   depends:
+    - glibc
+    - gmp
+    - jansson
     - libmnl
     - libnftnl
-    - gmp
     - readline
-    - ncurses
-    - jansson
   optdepends:
     - 'python: Python bindings'
     - 'python-jsonschema: Python bindings'
@@ -39,7 +39,7 @@ pkgbase:
     - 8C5F7146A1757A65E2422A94D70D1A666ACF2B21
   sha256sums:
     - 2874c264df80d770d95e2a93f15cddf65ee642fad8977777c12e745bf3eb8d61
-    - f83d6f2f99f306866850c60ff0e343bbd9bc0c989d333ebe288563f7be4afe20
+    - fa2f984794025339cf2d26d329f9b0bf83a39b9fa310d06b4cc40a0c1b0c8f46
 pkgname:
   - name: nftables
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
