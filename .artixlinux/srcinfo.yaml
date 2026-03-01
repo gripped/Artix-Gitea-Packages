@@ -1,10 +1,10 @@
 ---
-version: 6.6.9-1.2
+version: 6.6.9-1.3
 pkgbase:
   name: waterfox
   pkgdesc: Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.
   pkgver: 6.6.9
-  pkgrel: 1.2
+  pkgrel: 1.3
   url: https://www.waterfox.net/
   arch:
     - x86_64

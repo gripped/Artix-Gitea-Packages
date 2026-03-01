@@ -2,7 +2,7 @@
 
 pkgname=waterfox
 pkgver=6.6.9
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc='Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.'
 arch=(x86_64)
 license=('MPL-2.0')
@@ -204,6 +204,11 @@ ac_add_options --with-pgo-profile-path=${PWD@Q}/merged.profdata
 ac_add_options --with-pgo-jarlog=${PWD@Q}/jarlog
 EOT
 else
+        echo "Building non-optimized browser..."
+        cat >.mozconfig ../mozconfig - <<EOT
+ac_add_options --enable-lto=cross
+EOT
+fi
 	./mach build
 
 	echo "Building symbol archive..."
@@ -211,7 +216,6 @@ else
 
 	./mach package
 	./mach package-multi-locale --locales ar cs da de el en-US en-GB es-ES fr hu id it ja ko lt nl nn-NO pl pt-BR pt-PT ru sv-SE th tr uk zh-CN zh-TW
-fi
 }
 
 package () {
