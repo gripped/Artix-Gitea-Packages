@@ -1,9 +1,9 @@
 ---
-version: 2.11-1
+version: 2.11.1-1
 pkgbase:
   name: minicom
   pkgdesc: A serial communication program
-  pkgver: 2.11
+  pkgver: 2.11.1
   pkgrel: 1
   url: https://salsa.debian.org/minicom-team/minicom
   arch:
@@ -17,11 +17,11 @@ pkgbase:
   backup:
     - etc/minirc.dfl
   source:
-    - minicom-2.11.tar.gz::https://salsa.debian.org/minicom-team/minicom/-/archive/2.11/minicom-2.11.tar.gz
+    - minicom-2.11.1.tar.gz::https://salsa.debian.org/minicom-team/minicom/-/archive/2.11.1/minicom-2.11.1.tar.gz
     - minicom-2.9-lrzsz-rename.patch
   sha256sums:
-    - 64d68531dae6121dba7ae7d8e8e4b01e51cbf726e6cea8c1abd4af73e810d09f
+    - b296b0e5795ca143fb1ffa78f46fd294daddfccd720faf9909a842d2f70c564e
     - 4b00e97cadeb51e2cacba7114d2572dbe671b00f0f6695df96aa0ea0dab68c15
 pkgname:
   - name: minicom
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.2-1-any
