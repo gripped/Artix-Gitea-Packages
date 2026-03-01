@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.135.0-1
+    version: 0.135.1-1
     packages:
-      - python-fastapi-0.135.0-1-any.pkg.tar.zst
+      - python-fastapi-0.135.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 0.133.1-1
