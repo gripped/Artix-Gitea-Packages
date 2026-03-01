@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.341.0-1
+version: 1:1.4.341.0-2
 pkgbase:
   name: spirv-tools
   pkgdesc: API and commands for processing SPIR-V modules
   pkgver: 1.4.341.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.khronos.org/spirv/
   arch:
@@ -20,7 +20,7 @@ pkgbase:
     - python
     - spirv-headers
   depends:
-    - gcc-libs
+    - libstdc++
     - glibc
     - sh
   source:
@@ -29,4 +29,4 @@ pkgbase:
     - 9dba10905284c9d57bf5873c9712eaa224deb2f473aa49c88e80b1a0c62430c5b11fe65662b5ff9bd6e852cbbac7fe4f7402abb87caae9a4a2b60d4d7e9d1aa1
 pkgname:
   - name: spirv-tools
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
