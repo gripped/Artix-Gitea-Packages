@@ -206,7 +206,7 @@ EOT
 else
         echo "Building non-optimized browser..."
         cat >.mozconfig ../mozconfig - <<EOT
-ac_add_options --enable-lto=cross
+#ac_add_options --enable-lto=cross
 EOT
 fi
 	./mach build
