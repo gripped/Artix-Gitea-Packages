@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,16 +29,16 @@ repos:
     packages: []
     debug: []
   world:
-    version: 5.86-2
+    version: 5.86-4
     packages:
-      - bluez-5.86-2-x86_64.pkg.tar.zst
-      - bluez-utils-5.86-2-x86_64.pkg.tar.zst
-      - bluez-libs-5.86-2-x86_64.pkg.tar.zst
-      - bluez-cups-5.86-2-x86_64.pkg.tar.zst
-      - bluez-deprecated-tools-5.86-2-x86_64.pkg.tar.zst
-      - bluez-hid2hci-5.86-2-x86_64.pkg.tar.zst
-      - bluez-mesh-5.86-2-x86_64.pkg.tar.zst
-      - bluez-obex-5.86-2-x86_64.pkg.tar.zst
+      - bluez-5.86-4-x86_64.pkg.tar.zst
+      - bluez-utils-5.86-4-x86_64.pkg.tar.zst
+      - bluez-libs-5.86-4-x86_64.pkg.tar.zst
+      - bluez-cups-5.86-4-x86_64.pkg.tar.zst
+      - bluez-deprecated-tools-5.86-4-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.86-4-x86_64.pkg.tar.zst
+      - bluez-mesh-5.86-4-x86_64.pkg.tar.zst
+      - bluez-obex-5.86-4-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
