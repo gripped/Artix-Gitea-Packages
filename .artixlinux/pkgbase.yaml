@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,8 +22,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 6.18.1-8
+    packages:
+      - csound-6.18.1-8-x86_64.pkg.tar.zst
+      - csound-doc-6.18.1-8-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
