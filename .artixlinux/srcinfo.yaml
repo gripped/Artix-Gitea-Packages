@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-2
+version: 0.5.1-1
 pkgbase:
   name: xfce4-docklike-plugin
   pkgdesc: A modern, docklike, minimalist taskbar for XFCE
-  pkgver: 0.5.0
-  pkgrel: 2
+  pkgver: 0.5.1
+  pkgrel: 1
   url: https://docs.xfce.org/panel-plugins/xfce4-docklike-plugin/start
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
     - glib2
     - exo
   source:
-    - git+https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git#tag=xfce4-docklike-plugin-0.5.0
+    - git+https://gitlab.xfce.org/panel-plugins/xfce4-docklike-plugin.git#tag=xfce4-docklike-plugin-0.5.1
   sha256sums:
-    - dd1b3d5da92346fcb1705b0e5767e0163e3cdd0ca0b3fc9c736d27f725f237d8
+    - 8d3475d1ff497190c34792f2a994becfbde3580d3137e64c6b44518e790794c0
 pkgname:
   - name: xfce4-docklike-plugin
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
