@@ -1,9 +1,9 @@
 ---
-version: 6.6.1-1
+version: 6.6.2-1
 pkgbase:
   name: plymouth-kcm
   pkgdesc: KCM to manage the Plymouth (Boot) theme
-  pkgver: 6.6.1
+  pkgver: 6.6.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -30,16 +30,16 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.6.1/plymouth-kcm-6.6.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.1/plymouth-kcm-6.6.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.2/plymouth-kcm-6.6.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.2/plymouth-kcm-6.6.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 42e3b7357da44f8f2f62ad56fc6375fffa2f546e8c03c91edf1223f155b6a89f
+    - e9eda757ac11f86a0b9ab429afe15e16d79a74368a5f129ed7fc7a21393c3710
     - SKIP
 pkgname:
   - name: plymouth-kcm
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
