@@ -58,4 +58,4 @@ pkgbase:
     - 2137d12232f97cf68daaa9d44bfc0a566a56afefe29cd348b72f8335a92dc391ff0d69fb50c0aa283548c64d746d49c27df20f64d7ab768ada76088240fff08b
 pkgname:
   - name: xscreensaver
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
