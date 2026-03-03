@@ -19,7 +19,7 @@ source=("git+https://gitlab.xfce.org/apps/xfce4-screensaver.git#tag=$pkgname-$pk
 sha256sums=('bc84a11d51fbc4222ca43831671de2935e759229d21ee7136443e7250c78498f')
 
 build() {
-  artix-meson "${pkgname}" build
+  artix-meson -Dsession-manager=elogind "${pkgname}" build
   meson compile -C build
 }
 
