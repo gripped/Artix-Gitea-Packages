@@ -1,0 +1,30 @@
+---
+version: 6.3.0-1
+pkgbase:
+  name: ruby-vcr
+  pkgdesc: Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
+  pkgver: 6.3.0
+  pkgrel: 1
+  url: https://benoittgt.github.io/vcr
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - ruby-rspec
+    - ruby-test-unit
+    - ruby-rake
+    - ruby-pry
+  depends:
+    - ruby
+    - ruby-base64
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/vcr/vcr.git#tag=v6.3.0
+  sha256sums:
+    - a91d51345e898c493a918eebc4f84136ae468211cdacb6bd6c7d3f07a39453f3
+pkgname:
+  - name: ruby-vcr
+# generated with artixpkg 0.38.2-1-any
