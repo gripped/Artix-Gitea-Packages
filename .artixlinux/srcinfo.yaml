@@ -1,9 +1,9 @@
 ---
-version: 6.6.1-1
+version: 6.6.2-1
 pkgbase:
   name: kwayland-integration
   pkgdesc: Provides integration plugins for various KDE frameworks for the wayland windowing system
-  pkgver: 6.6.1
+  pkgver: 6.6.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -23,16 +23,16 @@ pkgbase:
     - qt5-wayland
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.6.1/kwayland-integration-6.6.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.1/kwayland-integration-6.6.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.2/kwayland-integration-6.6.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.2/kwayland-integration-6.6.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - b735645feb28fbc8d5f527046a90499e70a1b031aeb1a5be4c55a91975fc7f75
+    - 0c80f4b946b67b113e86396f28cb14d6d6d685a9f4c15d3b5da15912544cea33
     - SKIP
 pkgname:
   - name: kwayland-integration
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
