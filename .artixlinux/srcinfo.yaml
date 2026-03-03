@@ -1,9 +1,9 @@
 ---
-version: 4.20.3-1
+version: 4.20.4-1
 pkgbase:
   name: xfce4-settings
   pkgdesc: Xfce's Configuration System
-  pkgver: 4.20.3
+  pkgver: 4.20.4
   pkgrel: 1
   url: https://docs.xfce.org/xfce/xfce4-settings/start
   arch:
@@ -34,13 +34,13 @@ pkgbase:
     - 'cups: for printers support in xfce4-color-settings'
     - 'sane: for scanners support in xfce4-color-settings'
   source:
-    - git+https://gitlab.xfce.org/xfce/xfce4-settings.git#tag=xfce4-settings-4.20.3
+    - git+https://gitlab.xfce.org/xfce/xfce4-settings.git#tag=xfce4-settings-4.20.4
     - git+https://gitlab.freedesktop.org/wlroots/wlr-protocols.git
     - default-xsettings-xml.patch
   sha256sums:
-    - d94645103a9f60093259be55ae1b7d21f6abb357e01d101b8680f84352c82662
+    - 11b138ad304270e3b22bf1ea1e4fc08ef4c2024dd15d5e4e1aaf445919ce8a97
     - SKIP
     - 008da8cae0251864d1bf34e2649674e0566475a423becf81e8e3f5c6acb3877d
 pkgname:
   - name: xfce4-settings
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
