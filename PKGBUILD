@@ -2,19 +2,19 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=webhook
-pkgver=2.8.2
-pkgrel=2
+pkgver=2.8.3
+pkgrel=1
 pkgdesc="A lightweight incoming webhook server to run shell commands"
 arch=('x86_64')
 url="https://github.com/adnanh/webhook"
 license=('MIT')
 depends=('glibc')
 makedepends=('go' 'git')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/adnanh/webhook/archive/$pkgver.tar.gz")
-sha512sums=('2006afc324a265e807bc8be6d2aa108e06082360891682c188be932bdbf6ece3d8d67bb653f9a5466e71bbb256c66f7411920c8c96aee6bb64daba888eba7c1d')
+source=("git+https://github.com/adnanh/webhook.git#tag=$pkgver")
+sha512sums=('4978ec2620428f94fd6e70f0c5854d5f18a7607b41f918eaed2806fb5262086097c7137def5a9ba93f68cc7ba9ac10727038c8f9738b1d0a5651e85f0db50ff5')
 
 prepare() {
-  cd webhook-$pkgver
+  cd webhook
 
   mkdir -p .gopath/src/github.com/adnanh
   ln -sf "$PWD" .gopath/src/github.com/adnanh/webhook
@@ -33,15 +33,14 @@ build() {
   export CGO_LDFLAGS="${LDFLAGS}"
   export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
 
-  cd "$srcdir"/webhook-$pkgver
+  cd webhook
   go build -ldflags="-s -w -buildid=''" -o build/webhook
 }
 
 package() {
-  cd webhook-$pkgver
+  cd webhook
 
   install -Dm755 build/webhook "$pkgdir"/usr/bin/webhook
-  install -Dm644 LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
 
-  install -dm755 "$pkgdir"/etc/webhook
 }
