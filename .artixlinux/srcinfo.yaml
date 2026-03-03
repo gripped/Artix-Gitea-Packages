@@ -1,10 +1,10 @@
 ---
-version: 3.1.11.0-1
+version: 3.1.11.0-2
 pkgbase:
   name: openimageio
   pkgdesc: A library for reading and writing images, including classes, utilities, and applications
   pkgver: 3.1.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.openimageio.org/
   arch:
     - x86_64
@@ -21,12 +21,12 @@ pkgbase:
     - ninja
     - robin-map
     - fmt
+    - pybind11
   depends:
     - openexr
-    - boost-libs
+    - openjph
     - giflib
     - openjpeg2
-    - glew
     - libtiff
     - libjpeg-turbo
     - opencolorio
@@ -34,9 +34,7 @@ pkgbase:
     - libraw
     - libwebp
     - pugixml
-    - pybind11
     - libheif
-    - hdf5
     - freetype2
     - libstdc++
     - glibc
