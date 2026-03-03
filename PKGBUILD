@@ -1,7 +1,9 @@
 # Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: Markus Näther <naether.markus@gmail.com>
+
 pkgname=hipblas
-pkgver=6.3.3
+pkgver=7.2.0
 pkgrel=1
 pkgdesc='ROCm BLAS marshalling library'
 arch=('x86_64')
@@ -9,10 +11,10 @@ url='https://rocm.docs.amd.com/projects/hipBLAS/en/latest/index.html'
 license=('MIT')
 depends=('rocm-core' 'glibc' 'gcc-libs' 'hip-runtime-amd' 'hipblas-common' 'rocblas' 'rocsolver')
 makedepends=('rocm-cmake' 'git' 'cmake' 'gcc-fortran')
-_git='https://github.com/ROCm/hipBLAS'
-source=("$pkgname-$pkgver.tar.gz::$_git/archive/rocm-$pkgver.tar.gz")
-sha256sums=('8f645a5c9298170e71354437188eeca8272ff2b98077e9f34d1ca0fd7f27b7f8')
-_dirname="$(basename "$_git")-$(basename "${source[0]}" ".tar.gz")"
+_git='https://github.com/ROCm/rocm-libraries'
+source=("rocm-libraries::git+$_git.git#tag=rocm-$pkgver")
+sha256sums=('e1b1239b5c9025437edd1a3af757fd37cd8fa299bdbbbce6f82392fd2c7df736')
+_dirname="rocm-libraries/projects/$pkgname"
 
 build() {
   # -fcf-protection is not supported by HIP, see
