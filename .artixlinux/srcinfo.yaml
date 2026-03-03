@@ -1,9 +1,9 @@
 ---
-version: 3.8-1
+version: 3.9-1
 pkgbase:
   name: iio-sensor-proxy
   pkgdesc: IIO accelerometer sensor to input device proxy
-  pkgver: 3.8
+  pkgver: 3.9
   pkgrel: 1
   url: https://gitlab.freedesktop.org/hadess/iio-sensor-proxy/
   arch:
@@ -11,21 +11,24 @@ pkgbase:
   license:
     - GPL-3.0-only
   checkdepends:
-    - python-gobject
     - python-dbusmock
+    - python-gobject
     - python-psutil
     - umockdev
   makedepends:
-    - gtk3
+    - git
     - meson
   depends:
-    - libgudev
     - glib2
+    - glibc
+    - libgcc
+    - libgudev
+    - libssc
     - polkit
   source:
-    - https://gitlab.freedesktop.org/hadess/iio-sensor-proxy//-/archive/3.8/iio-sensor-proxy-3.8.tar.gz
+    - git+https://gitlab.freedesktop.org/hadess/iio-sensor-proxy#tag=3.9
   sha512sums:
-    - 9cca8d706c531c9a2e34dfebdc8673a1765b615533e3f7776118c74cb1ce145e472203c6c7804d35701c22cc93755609829bc3817c5920d5961249d7e8de87c6
+    - 6667d70fd01285f9b48fa2dfc829e3186773457c4430f8373a8e0b4e25b0f31ee2780a3766206a13bcfb2721ce10978713b8bf61c844da027c444a754f910473
 pkgname:
   - name: iio-sensor-proxy
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
