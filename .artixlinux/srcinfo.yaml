@@ -25,4 +25,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: patchutils
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
