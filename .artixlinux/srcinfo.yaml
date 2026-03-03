@@ -1,9 +1,9 @@
 ---
-version: 6.6.1-1
+version: 6.6.2-1
 pkgbase:
   name: kdecoration
   pkgdesc: Plugin based library to create window decorations
-  pkgver: 6.6.1
+  pkgver: 6.6.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -20,16 +20,16 @@ pkgbase:
     - ki18n
     - qt6-base
   source:
-    - https://download.kde.org/stable/plasma/6.6.1/kdecoration-6.6.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.1/kdecoration-6.6.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.2/kdecoration-6.6.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.2/kdecoration-6.6.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 46b8749c09488d5ddc164b23747e266079092eef945d3002b344f07c31026e6f
+    - e7f761edb07d31afeae6c013db641a9807277137db2c7121b6c3374777374250
     - SKIP
 pkgname:
   - name: kdecoration
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
