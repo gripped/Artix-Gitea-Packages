@@ -3,7 +3,7 @@
 
 pkgname=rocsolver
 pkgver=7.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Subset of LAPACK functionality on the ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocSOLVER/en/latest/index.html'

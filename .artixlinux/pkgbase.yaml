@@ -30,10 +30,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 7.2.0-1
+    version: 7.2.0-1.1
     packages:
-      - rocsolver-7.2.0-1-x86_64.pkg.tar.zst
-    debug: []
+      - rocsolver-7.2.0-1.1-x86_64.pkg.tar.zst
+    debug:
+      - rocsolver-debug-7.2.0-1.1-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
