@@ -1,9 +1,9 @@
 ---
-version: 21.3-3.1
+version: 21.3-4
 pkgbase:
   name: kodi
   pkgver: 21.3
-  pkgrel: 3.1
+  pkgrel: 4
   url: https://kodi.tv
   arch:
     - x86_64
@@ -111,6 +111,7 @@ pkgbase:
     - 'pulseaudio: PulseAudio support'
     - 'pipewire: PipeWire support'
     - 'upower: Display battery level'
+    - 'udisks2: Support for removable devices'
   noextract:
     - kodi-libdvdcss-1.4.3-Next-Nexus-Alpha2-2.tar.gz
     - kodi-libdvdnav-6.1.1-Next-Nexus-Alpha2-2.tar.gz
@@ -191,4 +192,4 @@ pkgname:
     depends:
       - kodi
     optdepends: []
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
