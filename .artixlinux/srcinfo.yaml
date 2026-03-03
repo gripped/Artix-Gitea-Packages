@@ -24,4 +24,4 @@ pkgbase:
     - dcf4d4d817eb79e52930afff12915eb040b8fc7acd75ec60f28e0d06528cf011b20968ae6ea9bcb3dc51aebe26f88e89fc53d0630487e9216371ed7f71d25773
 pkgname:
   - name: torsocks
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
