@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-2
+version: 4.4.0-3
 pkgbase:
   name: swig
   pkgdesc: Generate scripting interfaces to C/C++ code
   pkgver: 4.4.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.swig.org/
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - eed3eb9b8c769661e039718982a17c2a39907023085ec2e7f957664456a8816c376756278cc2667ce73818fe986f26d4479819c7f0d50e43fa5dea012d742c90
 pkgname:
   - name: swig
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
