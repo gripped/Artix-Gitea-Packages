@@ -1,0 +1,33 @@
+---
+version: 1.6.2-1
+pkgbase:
+  name: ruby-m
+  pkgdesc: Run test/unit tests by line number. Metal!
+  pkgver: 1.6.2
+  pkgrel: 1
+  url: https://github.com/qrush/m
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+  makedepends:
+    - git
+    - ruby-activesupport
+    - ruby-rdiscount
+    - ruby-rdoc
+    - ruby-mutex_m
+  depends:
+    - ruby
+    - ruby-method_source
+    - ruby-rake
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/qrush/m.git#tag=v1.6.2
+  sha256sums:
+    - 7bd2890baca59aace81fc4a901a762674b4f27406953fbe0d5a245b40cdd5686
+pkgname:
+  - name: ruby-m
+# generated with artixpkg 0.38.2-1-any
