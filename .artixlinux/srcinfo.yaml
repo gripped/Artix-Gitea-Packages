@@ -1,9 +1,9 @@
 ---
-version: 1:6.6.1-1
+version: 1:6.6.2-1
 pkgbase:
   name: print-manager
   pkgdesc: A tool for managing print jobs and printers
-  pkgver: 6.6.1
+  pkgver: 6.6.2
   pkgrel: 1
   epoch: 1
   url: https://kde.org/plasma-desktop/
@@ -37,16 +37,16 @@ pkgbase:
   optdepends:
     - 'system-config-printer: auto-detect the printer driver'
   source:
-    - https://download.kde.org/stable/plasma/6.6.1/print-manager-6.6.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.1/print-manager-6.6.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.2/print-manager-6.6.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.2/print-manager-6.6.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 2cc4be33015883b18aef31eaa33a858f8627fb69bd4918d977cbc16580c503d0
+    - f064e0339717f1eaabe2a5dbde3d1665c32c1f3accb8dcf1134e09cf50e90248
     - SKIP
 pkgname:
   - name: print-manager
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
