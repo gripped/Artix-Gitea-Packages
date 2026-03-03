@@ -1,0 +1,36 @@
+---
+version: 0.7.0-1
+pkgbase:
+  name: mousepad
+  pkgdesc: Simple text editor for Xfce
+  pkgver: 0.7.0
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/mousepad/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - gspell
+    - libxfce4ui
+    - meson
+    - polkit
+    - xfce4-dev-tools
+  depends:
+    - gtksourceview4
+    - desktop-file-utils
+    - hicolor-icon-theme
+  optdepends:
+    - 'gspell: spell checking plugin'
+    - 'libxfce4ui: shortcuts editor plugin'
+  source:
+    - git+https://gitlab.xfce.org/apps/mousepad.git#tag=mousepad-0.7.0
+  sha256sums:
+    - 2dd1e562bce47f6480994e234aff4dcfcf2c1ce22c9eea8dcc2cf06a2787fc11
+pkgname:
+  - name: mousepad
+# generated with artixpkg 0.38.2-1-any
