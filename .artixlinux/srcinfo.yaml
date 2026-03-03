@@ -1,10 +1,10 @@
 ---
-version: 25.34.76-1
+version: 25.34.76-2
 pkgbase:
   name: accountsservice
   pkgdesc: D-Bus interface for user account query and manipulation
   pkgver: 25.34.76
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/accountsservice/accountsservice
   arch:
     - x86_64

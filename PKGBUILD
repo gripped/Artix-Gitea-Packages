@@ -3,7 +3,7 @@
 
 pkgname=accountsservice
 pkgver=25.34.76
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus interface for user account query and manipulation"
 url="https://gitlab.freedesktop.org/accountsservice/accountsservice"
 arch=(x86_64)
@@ -53,7 +53,6 @@ build() {
     -D systemdsystemunitdir=no
     -D elogind=true
     -D admin_group=wheel
-    -D create_homed=true
     -D docbook=true
     -D gtk_doc=true
   )
