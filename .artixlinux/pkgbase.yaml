@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.6.1-2
+    version: 6.6.2-2
     packages:
-      - libkscreen-6.6.1-2-x86_64.pkg.tar.zst
+      - libkscreen-6.6.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.6.0-2
