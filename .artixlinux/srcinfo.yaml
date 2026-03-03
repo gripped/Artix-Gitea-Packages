@@ -1,10 +1,10 @@
 ---
-version: 1:1.2.16-1
+version: 1:1.2.16-2
 pkgbase:
   name: qt5pas
   pkgdesc: Free Pascal Qt5 binding library updated by lazarus IDE
   pkgver: 1.2.16
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://gitlab.com/freepascal.org/lazarus/lazarus/-/tree/main/lcl/interfaces/qt5/cbindings
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - libtool
     - staticlibs
   source:
-    - https://gitlab.com/freepascal.org/lazarus/lazarus/-/archive/lazarus_4_4/lazarus-lazarus_4_4.tar.bz2
+    - https://gitlab.com/freepascal.org/lazarus/lazarus/-/archive/lazarus_4_6/lazarus-lazarus_4_6.tar.bz2
   sha512sums:
-    - 2c01b489b747b34e4da6e872ceed7be359567ba85d4b00d3ac99239071e54156b0e5a065f3d5757c4bc1e8ba745304adda789364259bc9d2f2b39986d81fcf56
+    - 9f59a21d38b36416757b6572ebfa10dba13457fc7a5fd9c91550ea2d1b1daed7c9cc292bd7069a8dd1ac3a8ca2c8231f0456a0fe89f011a92d07a861e0f14684
 pkgname:
   - name: qt5pas
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
