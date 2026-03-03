@@ -1,0 +1,33 @@
+---
+version: 1.0.0-1
+pkgbase:
+  name: ruby-get_process_mem
+  pkgdesc: Get memory usage of a process in Ruby
+  pkgver: 1.0.0
+  pkgrel: 1
+  url: https://github.com/zombocom/get_process_mem
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+  makedepends:
+    - git
+    - ruby-rake
+    - ruby-rdoc
+    - ruby-sys-proctable
+    - ruby-test-unit
+  depends:
+    - ruby
+    - ruby-ffi
+    - ruby-bigdecimal
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/zombocom/get_process_mem.git#tag=v1.0.0
+  sha256sums:
+    - a67c76b41e6f974983a1a02bd3405bd5ce2554e42a4d104f9e17c56289601aa1
+pkgname:
+  - name: ruby-get_process_mem
+# generated with artixpkg 0.38.2-1-any
