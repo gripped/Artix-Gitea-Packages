@@ -1,9 +1,9 @@
 ---
-version: 6.6.1-1
+version: 6.6.2-1
 pkgbase:
   name: kde-gtk-config
   pkgdesc: Syncs KDE settings to GTK applications
-  pkgver: 6.6.1
+  pkgver: 6.6.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -35,16 +35,16 @@ pkgbase:
   optdepends:
     - 'gtk3: GTK3 apps support'
   source:
-    - https://download.kde.org/stable/plasma/6.6.1/kde-gtk-config-6.6.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.1/kde-gtk-config-6.6.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.2/kde-gtk-config-6.6.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.2/kde-gtk-config-6.6.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 9a23290a4ecc56ad7aec0777e6ad2540d02d674e65194b582344fc8ab722bf87
+    - d351a11d261a3100e624c81ba9bccb9cf73e3ad2305b74f45e4c67a2cc42cf73
     - SKIP
 pkgname:
   - name: kde-gtk-config
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
