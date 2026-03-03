@@ -1,9 +1,9 @@
 ---
-version: 49.2-1
+version: 49.3-1
 pkgbase:
   name: epiphany
   pkgdesc: A GNOME web browser based on the WebKit rendering engine
-  pkgver: 49.2
+  pkgver: 49.3
   pkgrel: 1
   url: https://apps.gnome.org/Epiphany
   arch:
@@ -33,7 +33,6 @@ pkgbase:
   depends:
     - cairo
     - dconf
-    - gcc-libs
     - gcr-4
     - gdk-pixbuf2
     - glib2
@@ -45,6 +44,7 @@ pkgbase:
     - json-glib
     - libadwaita
     - libarchive
+    - libgcc
     - libportal
     - libportal-gtk4
     - libsecret
@@ -55,9 +55,9 @@ pkgbase:
     - sqlite
     - webkitgtk-6.0
   source:
-    - git+https://gitlab.gnome.org/GNOME/epiphany.git#tag=49.2
+    - git+https://gitlab.gnome.org/GNOME/epiphany.git#tag=49.3
   b2sums:
-    - 5f3513169a1747953bd86cf59cf20757095f01e510891b69cf4f03cb59138f1e680ceefab4965d720b06e72fc13f6bbbcaa5a3c12a4f8f7f96c16b6ad3b832ee
+    - 7aad9c21d1e230e4607b68b453d2db4ec7a754df26628448b5a1c1f36acbd6d31705663dd46db7af6127586931837a982417e9d560459f03a32beb62647e6386
 pkgname:
   - name: epiphany
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
