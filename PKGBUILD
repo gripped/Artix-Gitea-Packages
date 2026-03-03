@@ -20,7 +20,6 @@ depends=(
   libjpeg-turbo
   libjpeg.so
   libpam.so
- 
   libx11
   libxcrypt
   libxext
@@ -43,8 +42,6 @@ makedepends=(
   gdm
   intltool
   libxpm
- 
- 
 )
 optdepends=(
   'fortune-mod: for fortune file support (can be replaced with eg misfortune)'
@@ -73,7 +70,7 @@ build() {
     --with-gl \
     --without-gle \
     --with-pixbuf \
-    --with-jpeg \
+    --with-jpeg 
   make
 }
 
@@ -84,5 +81,4 @@ package() {
   install -Dm 644 debian/copyright -t "${pkgdir}/usr/share/licenses/${pkgname}"
   echo "NotShowIn=KDE;GNOME;" >> "${pkgdir}/usr/share/applications/xscreensaver-settings.desktop"
 }
-
 # vim: ts=2 sw=2 et:
