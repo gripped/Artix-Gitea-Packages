@@ -23,4 +23,4 @@ pkgbase:
     - e1b1239b5c9025437edd1a3af757fd37cd8fa299bdbbbce6f82392fd2c7df736
 pkgname:
   - name: hipblas-common
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
