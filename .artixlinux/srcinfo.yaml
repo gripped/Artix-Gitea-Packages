@@ -1,10 +1,10 @@
 ---
-version: 9.1.2-2
+version: 9.1.3-1
 pkgbase:
   name: python-tenacity
   pkgdesc: Retry code until it succeeeds
-  pkgver: 9.1.2
-  pkgrel: 2
+  pkgver: 9.1.3
+  pkgrel: 1
   url: https://github.com/jd/tenacity
   arch:
     - any
@@ -27,9 +27,9 @@ pkgbase:
   optdepends:
     - 'python-tornado: for Tornado coroutines support'
   source:
-    - git+https://github.com/jd/tenacity.git#tag=9.1.2
+    - git+https://github.com/jd/tenacity.git#tag=9.1.3
   sha512sums:
-    - b25254c41229a3835277a8d752de59a80a72a573541b45b573a8416ad1bb4848358e4391df42381f11f2e4b584546ab7ad46e921dc85f7e429d083a7ab7e9eda
+    - 8e25aea7c129a33f5144127c0527a13ab140188934930c77fb6a3ba905da664fc13d510b69c87aec23c62715cbabea2776e9cfa4cd72f6d439e0062a50227783
 pkgname:
   - name: python-tenacity
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
