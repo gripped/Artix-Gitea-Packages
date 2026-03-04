@@ -1,10 +1,10 @@
 ---
-version: 1.15-2
+version: 1.16-1
 pkgbase:
   name: python-pypandoc
   pkgdesc: Thin wrapper for pandoc
-  pkgver: 1.15
-  pkgrel: 2
+  pkgver: 1.16
+  pkgrel: 1
   url: https://github.com/JessicaTegner/pypandoc
   arch:
     - any
@@ -16,6 +16,7 @@ pkgbase:
     - texlive-fontsrecommended
     - python-pandocfilters
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-poetry-core
@@ -23,9 +24,9 @@ pkgbase:
   depends:
     - pandoc
   source:
-    - https://github.com/JessicaTegner/pypandoc/archive/v1.15/python-pypandoc-1.15.tar.gz
+    - git+https://github.com/JessicaTegner/pypandoc.git#tag=v1.16
   sha512sums:
-    - c6127aa085c27f2e82148689647f7861c8bdb37feacc6b5fdf017947c7e1c18eaf7c17ec26b7c2881d4ae40bb20dcaaf86aa52f989315d19df92e491bf07efb8
+    - 2a3f155f2d11c644f9f022273a7306ff81c97b8db39b7e8ef4dd4558e02ffda49c8545f43f9a74efc29f99ff2af3eadc0d3540a8ecc6dd9079c441b618106139
 pkgname:
   - name: python-pypandoc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
