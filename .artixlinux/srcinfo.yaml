@@ -1,10 +1,10 @@
 ---
-version: 1.32.0-1
+version: 1.32.0-2
 pkgbase:
   name: v4l-utils
   pkgdesc: Userspace tools and conversion library for Video 4 Linux
   pkgver: 1.32.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://linuxtv.org/
   arch:
     - x86_64
@@ -19,7 +19,7 @@ pkgbase:
     - doxygen
   depends:
     - hicolor-icon-theme
-    - gcc-libs
+    - libgcc
     - libbpf
     - libjpeg-turbo
     - libudev
@@ -46,4 +46,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: v4l-utils
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
