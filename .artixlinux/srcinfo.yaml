@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-1
+version: 7.2.0-1.1
 pkgbase:
   name: rocsparse
   pkgdesc: BLAS for sparse computation on top of ROCm
   pkgver: 7.2.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://rocm.docs.amd.com/projects/rocSPARSE/en/latest/index.html
   arch:
     - x86_64
