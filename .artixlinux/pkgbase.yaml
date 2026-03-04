@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,11 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.19-2
+    version: 4.19-4
     packages:
-      - highlight-4.19-2-x86_64.pkg.tar.zst
-      - highlight-perl-4.19-2-x86_64.pkg.tar.zst
-      - highlight-gui-4.19-2-x86_64.pkg.tar.zst
+      - highlight-4.19-4-x86_64.pkg.tar.zst
+      - highlight-perl-4.19-4-x86_64.pkg.tar.zst
+      - highlight-gui-4.19-4-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
