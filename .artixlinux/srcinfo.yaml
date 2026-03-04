@@ -1,10 +1,10 @@
 ---
-version: 4.0.1-1
+version: 4.0.1-2
 pkgbase:
   name: mpdecimal
   pkgdesc: Package for correctly-rounded arbitrary precision decimal floating point arithmetic
   pkgver: 4.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.bytereef.org/mpdecimal/index.html
   arch:
     - x86_64
@@ -12,11 +12,12 @@ pkgbase:
     - BSD
   depends:
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
   source:
     - https://www.bytereef.org/software/mpdecimal/releases/mpdecimal-4.0.1.tar.gz
   sha512sums:
     - 431fa8ab90d6b8cdecc38b1618fd89d040185dec3c1150203e20f40f10a16160058f6b8abddd000f6ecb74f4dc42d9fef8111444f1496ab34c34f6b814ed32b7
 pkgname:
   - name: mpdecimal
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.38.2-1-any

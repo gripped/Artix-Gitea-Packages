@@ -2,12 +2,12 @@
 
 pkgname=mpdecimal
 pkgver=4.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Package for correctly-rounded arbitrary precision decimal floating point arithmetic"
 arch=('x86_64')
 url="https://www.bytereef.org/mpdecimal/index.html"
 license=('BSD')
-depends=('glibc' 'gcc-libs')
+depends=('glibc' 'libgcc' 'libstdc++')
 source=("https://www.bytereef.org/software/$pkgname/releases/$pkgname-$pkgver.tar.gz")
 sha512sums=('431fa8ab90d6b8cdecc38b1618fd89d040185dec3c1150203e20f40f10a16160058f6b8abddd000f6ecb74f4dc42d9fef8111444f1496ab34c34f6b814ed32b7')
 
