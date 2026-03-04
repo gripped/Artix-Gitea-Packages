@@ -1,10 +1,10 @@
 ---
-version: 2.0.3-6
+version: 2.1.0-1
 pkgbase:
   name: python-linkify-it-py
   pkgdesc: Links recognition library with full unicode support
-  pkgver: 2.0.3
-  pkgrel: 6
+  pkgver: 2.1.0
+  pkgrel: 1
   url: https://github.com/tsutsu3/linkify-it-py
   arch:
     - any
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python-uc-micro-py
   source:
-    - linkify-it-py-2.0.3.tar.gz::https://github.com/tsutsu3/linkify-it-py/archive/v2.0.3.tar.gz
+    - linkify-it-py-2.1.0.tar.gz::https://github.com/tsutsu3/linkify-it-py/archive/v2.1.0.tar.gz
   sha512sums:
-    - 6621533246a42f3b13fb7dd9f1366cadb0e3c291bcb92fd899bc6389cb9f7904ababf4b5dbae51a561a4f50f8a20597badf03c82653ae8db75d9a5a484bc1229
+    - 57652452565a667eca723e116fae858ae8eabbc0b2028520d213c2bce607aa586cd3d542847776cf1aa3ac57562348074433f072c7c993f2690d032e906e5689
 pkgname:
   - name: python-linkify-it-py
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
