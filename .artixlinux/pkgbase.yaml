@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: world
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,9 +30,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: null
-    packages: []
-    debug: []
+    version: 7.2.0-1.2
+    packages:
+      - hipblas-7.2.0-1.2-x86_64.pkg.tar.zst
+    debug:
+      - hipblas-debug-7.2.0-1.2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
