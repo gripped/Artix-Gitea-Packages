@@ -30,11 +30,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 7.2.0-1
+    version: 7.2.0-1.1
     packages:
-      - hipblas-common-7.2.0-1-any.pkg.tar.zst
+      - hipblas-common-7.2.0-1.1-any.pkg.tar.zst
     debug:
-      - hipblas-common-debug-7.2.0-1-any.pkg.tar.zst
+      - hipblas-common-debug-7.2.0-1.1-any.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []

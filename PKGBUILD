@@ -3,7 +3,7 @@
 
 pkgname=hipblas-common
 pkgver=7.2.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Common files shared by hipBLAS and hipBLASLt'
 arch=('any')
 url='https://rocm.docs.amd.com/projects/hipBLAS/en/latest/index.html'
