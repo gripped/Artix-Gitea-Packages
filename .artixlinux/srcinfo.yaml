@@ -1,10 +1,10 @@
 ---
-version: 1.28.0-3.1
+version: 1.29.0-1
 pkgbase:
   name: python-hatchling
   pkgdesc: Extensible, standards compliant build backend used by Hatch
-  pkgver: 1.28.0
-  pkgrel: 3.1
+  pkgver: 1.29.0
+  pkgrel: 1
   url: https://github.com/pypa/hatch/tree/master/backend
   arch:
     - any
@@ -24,8 +24,6 @@ pkgbase:
   makedepends:
     - python-build
     - python-installer
-    - python-pathspec
-    - python-tomli
   depends:
     - python
     - python-editables
@@ -34,9 +32,9 @@ pkgbase:
     - python-pluggy
     - python-trove-classifiers
   source:
-    - https://github.com/pypa/hatch/archive/hatchling-v1.28.0.tar.gz
+    - https://github.com/pypa/hatch/archive/hatchling-v1.29.0.tar.gz
   sha256sums:
-    - 3a52e40675ab341eab0720fe22cbd82b6a0d18a6445e2ce6bb9aebb831ca79cd
+    - a687fb850d66e15986435b63cad6b041592dc2db6aed405cac0fd9c646835dec
 pkgname:
   - name: python-hatchling
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
