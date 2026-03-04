@@ -1,9 +1,9 @@
 ---
-version: 2026.02.21-1
+version: 2026.03.03-1
 pkgbase:
   name: yt-dlp
   pkgdesc: A youtube-dl fork with additional features and fixes
-  pkgver: 2026.02.21
+  pkgver: 2026.03.03
   pkgrel: 1
   url: https://github.com/yt-dlp/yt-dlp
   arch:
@@ -27,6 +27,7 @@ pkgbase:
     - 'rtmpdump: for rtmp streams support'
     - 'atomicparsley: for embedding thumbnails into m4a files'
     - 'aria2: for using aria2 as external downloader'
+    - 'python-curl_cffi: support for impersonating browser requests'
     - 'python-mutagen: for embedding thumbnail in certain formats'
     - 'python-pycryptodome: for decrypting AES-128 HLS streams and various other data'
     - 'python-pycryptodomex: for decrypting AES-128 HLS streams and various other data'
@@ -38,9 +39,9 @@ pkgbase:
     - 'phantomjs: for extractors with javascript code'
     - 'python-secretstorage: For -cookies-from-browser to access the GNOME keyring while decrypting cookies of Chromium-based browsers'
   source:
-    - yt-dlp-2026.02.21.tar.gz::https://github.com/yt-dlp/yt-dlp/releases/download/2026.02.21/yt-dlp.tar.gz
+    - yt-dlp-2026.03.03.tar.gz::https://github.com/yt-dlp/yt-dlp/releases/download/2026.03.03/yt-dlp.tar.gz
   sha256sums:
-    - 3655cb66b0edf6accb2361e886b1399c7dad3be5fa4434ac6d0fdbfc07718867
+    - 77974412fd5585a12dea2cb0334bfbc96d9d0a2d6c102cf8cc06b5159f2d9ad4
 pkgname:
   - name: yt-dlp
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
