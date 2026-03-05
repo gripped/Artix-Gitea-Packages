@@ -9,8 +9,8 @@ pkgname=(
   lib32-harfbuzz-cairo
   lib32-harfbuzz-icu
 )
-pkgver=12.3.2
-pkgrel=1
+pkgver=13.0.0
+pkgrel=2
 pkgdesc="OpenType text shaping engine - 32-bit"
 url="https://harfbuzz.github.io/"
 arch=(x86_64)
@@ -36,7 +36,7 @@ checkdepends=(
   python-setuptools
 )
 source=("git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver")
-b2sums=('d6f26fe614aeea8f84e5be74b1cb4fd8212aa285b2a951f2dee3a39e1ad1be14524ce0b2c1d02b3307d63610e58510a2345b5b2619ea078bd820a07edcac1893')
+b2sums=('a6e8b1964580fccee71a524c1ae547201e86b0b709821ee23b494cd69e5637a00f4b51a0047336d9b86694912c9b3e91509a4e258d30d149fb980beda923b7c3')
 validpgpkeys=(
   053D20F17CCCA9651B2C6FCB9AB24930C0B997A2 # Khaled Hosny <khaled@aliftype.com> (@khaledhosny)
   9F377DDB6D3153A48EB3EB1E63CC496475267693 # Caleb Maclennan <caleb@alerque.com> (@alerque)
@@ -86,7 +86,7 @@ package_lib32-harfbuzz() {
     libfreetype.so
     libg{lib,object}-2.0.so
   )
-  provides=(libharfbuzz{,-subset,-gobject}.so)
+  provides=(libharfbuzz{,-{subset,gobject,raster,vector}}.so)
 
   meson install -C build --destdir "$pkgdir"
 
