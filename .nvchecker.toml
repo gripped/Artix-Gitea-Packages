@@ -2,3 +2,4 @@
 source = "github"
 github = "gorhill/uBlock"
 use_latest_release = true
+exclude_regex = ".*(b|rc)\\d+"
