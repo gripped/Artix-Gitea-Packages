@@ -1,0 +1,55 @@
+---
+version: 1.38.1-1
+pkgbase:
+  name: python-polars
+  pkgdesc: Blazingly fast DataFrames library using Apache Arrow Columnar Format as memory model
+  pkgver: 1.38.1
+  pkgrel: 1
+  url: https://www.pola.rs/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-xdist
+    - python-matplotlib
+    - python-hypothesis
+    - python-pandas
+    - python-pyarrow
+    - python-pydantic
+    - python-fsspec
+    - python-sqlalchemy
+    - python-zstandard
+    - python-cloudpickle
+    - python-aiosqlite
+    - python-boto3
+    - python-orjson
+  makedepends:
+    - maturin
+    - rustup
+    - python-installer
+    - python-build
+    - python-wheel
+    - python-setuptools
+  options:
+    - '!lto'
+  source:
+    - https://github.com/pola-rs/polars/archive/refs/tags/py-1.38.1.tar.gz
+  b2sums:
+    - 82db2363cec73cb1c5992d1e8d5b335c311619bab03b1837f30850c51905b2b1a23ef8dad0c41fe5e41cd8823fdf377dc6e961ccc8d5b40c2dc2febf5d95095d
+pkgname:
+  - name: python-polars
+    depends:
+      - python
+      - python-numpy
+      - python-polars-runtime
+    optdepends:
+      - 'python-pandas: for interoperability with pandas frames'
+      - 'python-pyarrow: for interoperability with arrow types'
+      - 'python-pytz: to enable conversion to python datetimes with timezones'
+      - 'python-fsspec: to transparently open files locally or remotely'
+  - name: python-polars-runtime-32
+  - name: python-polars-runtime-64
+  - name: python-polars-runtime-compat
+# generated with artixpkg 0.38.2-1-any
