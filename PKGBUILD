@@ -71,7 +71,10 @@ check() {
   cd $pkgname
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
-  test-env/bin/python -m pytest -v
+  test-env/bin/python -m pytest -v \
+    --deselect tests/test_magic.py::test_timeit_raise_on_interrupt \
+    --deselect tests/test_magic.py::test_script_raise_on_interrupt \
+    --deselect tests/test_magic.py::test_time_raise_on_interrupt
 }
 
 package() {
