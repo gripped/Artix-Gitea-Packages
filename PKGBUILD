@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=nodejs-lts-jod
-pkgver=22.22.0
+pkgver=22.22.1
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript (LTS release: Jod)'
 arch=(x86_64)
@@ -19,12 +19,10 @@ options=(!lto)
 source=(
   "https://nodejs.org/dist/v${pkgver}/node-v${pkgver}.tar.xz"
   update-icu-tests.patch
-  python-3-14.patch
 )
 # https://nodejs.org/download/release/latest-jod/SHASUMS256.txt.asc
-sha256sums=('4c138012bb5352f49822a8f3e6d1db71e00639d0c36d5b6756f91e4c6f30b683'
-            '43da0fb7469e34a239b2711876475f303a4012151e44f72e636a5a7fcf21bff8'
-            '7a45e9593c15feff66fe78fd5e887b337d5e9a78b7f96610ac724ac7d6f6fff2')
+sha256sums=('87104b07e7acee748bcc5391e1bc69cf3571caa0fdfb8b1d6b5fd3f9599b7849'
+            '43da0fb7469e34a239b2711876475f303a4012151e44f72e636a5a7fcf21bff8')
 
 _set_flags() {
   # /usr/lib/libnode.so uses malloc_usable_size, which is incompatible with fortification level 3
@@ -36,7 +34,6 @@ prepare() {
   cd node-v${pkgver}
   # Update ICU tests https://github.com/nodejs/node/pull/60523
   patch -Np1 -i ../update-icu-tests.patch
-  patch -Np1 -i ../python-3-14.patch
 }
 
 build() {
