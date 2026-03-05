@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.85-4
+version: 1.0.0.85-5
 pkgbase:
   name: steam
   pkgdesc: Valve's digital software delivery system
   pkgver: 1.0.0.85
-  pkgrel: 4
+  pkgrel: 5
   url: https://steampowered.com/
   arch:
     - x86_64
@@ -62,6 +62,7 @@ pkgname:
     optdepends:
       - 'polkit: to setup SteamVR without root access'
       - 'xdg-desktop-portal-impl: file & folder picker'
+      - 'xorg-fonts-misc: for non-latin locales'
     depends_x86_64:
       - lib32-alsa-plugins
       - lib32-fontconfig

@@ -7,7 +7,7 @@
 pkgbase=steam
 pkgname=(steam steam-devices)
 pkgver=1.0.0.85
-pkgrel=4
+pkgrel=5
 pkgdesc="Valve's digital software delivery system"
 url='https://steampowered.com/'
 arch=('x86_64')
@@ -81,6 +81,7 @@ package_steam() {
   optdepends=(
     'polkit: to setup SteamVR without root access'
     'xdg-desktop-portal-impl: file & folder picker'
+    'xorg-fonts-misc: for non-latin locales'
   )
   depends+=(steam-devices)
 
