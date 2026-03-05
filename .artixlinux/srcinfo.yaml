@@ -1,10 +1,10 @@
 ---
-version: 10.0.5-1
+version: 10.0.5-2
 pkgbase:
   name: prismlauncher
   pkgdesc: Minecraft launcher with ability to manage multiple instances
   pkgver: 10.0.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://prismlauncher.org
   arch:
     - x86_64
@@ -22,7 +22,6 @@ pkgbase:
   depends:
     - glibc
     - mesa-utils
-    - gcc-libs
     - java-runtime
     - libarchive
     - libgl
@@ -36,6 +35,8 @@ pkgbase:
     - hicolor-icon-theme
     - tomlplusplus
     - cmark
+    - libstdc++
+    - libgcc
   optdepends:
     - 'glfw: to use system GLFW libraries'
     - 'openal: to use system OpenAL libraries'
@@ -55,4 +56,4 @@ pkgbase:
     - b35c447cd9223e096a2bb75e0741a7d0a3a1606af54c957e4f276f4e6861a9b3f06ae1d646137e8d2f24ba2238c9967c76eff8cc631a68d7e48e376056982cc6
 pkgname:
   - name: prismlauncher
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
