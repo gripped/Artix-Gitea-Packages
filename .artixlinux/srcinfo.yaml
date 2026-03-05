@@ -1,10 +1,10 @@
 ---
-version: 2.2.0-2
+version: 2.3.0-1
 pkgbase:
   name: python-proxmoxer
   pkgdesc: Python Wrapper for the Proxmox 2.x API (HTTP and SSH)
-  pkgver: 2.2.0
-  pkgrel: 2
+  pkgver: 2.3.0
+  pkgrel: 1
   url: https://github.com/proxmoxer/proxmoxer
   arch:
     - any
@@ -21,9 +21,9 @@ pkgbase:
     - 'python-requests: for https backend'
     - 'python-paramiko: for ssh_paramiko backend'
   source:
-    - https://files.pythonhosted.org/packages/source/p/proxmoxer/proxmoxer-2.2.0.tar.gz
+    - https://files.pythonhosted.org/packages/source/p/proxmoxer/proxmoxer-2.3.0.tar.gz
   sha256sums:
-    - 3ed63a58e5c0822841afdb3801f9d913a4996955c1c54f7319b5842ba2615006
+    - 0b0b2067187af1fc6d4257a46ac68c8fd79cc25d2813637cdae7a9a98fbfd11f
 pkgname:
   - name: python-proxmoxer
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
