@@ -7,8 +7,8 @@
 # Contributor: Sparadox <etienne.lafarge at gmail.com>
 
 pkgname=cloud-init
-pkgver=25.3
-pkgrel=2
+pkgver=26.1
+pkgrel=1
 pkgdesc="Cloud instance initialization"
 arch=(any)
 url="https://cloud-init.io"
@@ -59,9 +59,10 @@ source=(
   $_url/archive/$pkgver/$pkgname-$pkgver.tar.gz
   $pkgname-25.3-skip_openrc_check.patch
 )
-sha512sums=('f881cac48fcb421fc07a435cd7a1acdf0b0c13aebf997af3100ecaca276e595a7ddaf778cff817c385a6b0103a36e326a5eeb8e281e8ef270ba2a4508d91168d'
+
+sha512sums=('3ba85590c9205562a36bb779f7f4ebd8827d68d09c880282924af14cc46a54d3da18db456aa8b0fff8b0a8135927c28e5e96b54090d836229ca508204dc43614'
             '64a49d8359fe7d51a5cf8449abab792b00d1bc910ab7928201af6f2fec87486a3658ee6d06e13c789b40618428bf209be56cd5c79dbdf3736f99ef85db08783c')
-b2sums=('c49494ce91200f54a194554c19067f6533587fe3caebaf54e71d99548dcb956545ae709a775e09fad33a84702043b4e311626103c42b7d72190d1304bc45bdb3'
+b2sums=('adcbe735d988de081a18f0928ee6efbff96219261556f2c4c50617527b9dca865e8af8cd592503d9f9ecf4c3b31865cc3c46cd259a0ad248dcd3c2a794ff047b'
         'b4805b7842bae79105d8963776f635067d4b0c9aab5a5c9ac311f6d754082923f2ab1faa9a867e4bcbc91923d0512d38f21527712a5b25b3ad431a189ca60c07')
 
 prepare() {
