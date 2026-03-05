@@ -1,9 +1,9 @@
 ---
-version: 8.3.003-1
+version: 8.3.3-1
 pkgbase:
   name: readline
   pkgdesc: GNU readline library
-  pkgver: 8.3.003
+  pkgver: 8.3.3
   pkgrel: 1
   url: https://tiswww.case.edu/php/chet/readline/rltop.html
   arch:
@@ -24,8 +24,6 @@ pkgbase:
   source:
     - https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz
     - https://ftp.gnu.org/gnu/readline/readline-8.3.tar.gz.sig
-    - https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-001
-    - https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-001.sig
     - inputrc
     - https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-001
     - https://ftp.gnu.org/gnu/readline/readline-8.3-patches/readline83-001.sig
@@ -38,8 +36,6 @@ pkgbase:
   b2sums:
     - 45d6fe7e34c56d309102a94aa776a7f5284201e844450e14ff818df9fa84a72154bdca70f11828c94954b080cbbe4666fa0b00ffa8460118ec8f3ea551b73dad
     - SKIP
-    - b0953458a18b8b06b0086567abd3c9ca3efceb5e4c38271e62137e126c106b938945d956394de0e955ecea5d48f8b261a4f2f3db2ee1d2cbc3b4cfdcf213ca46
-    - SKIP
     - 50db43bff430f282175aba4c4259e0b2222bc7e342fbe47b9dcce0172458472e72aebb9852eeafa4d10d4e89f2e1e8bb83b6b5dfc68eeababe699d4b5eae80f7
     - b0953458a18b8b06b0086567abd3c9ca3efceb5e4c38271e62137e126c106b938945d956394de0e955ecea5d48f8b261a4f2f3db2ee1d2cbc3b4cfdcf213ca46
     - SKIP
@@ -49,4 +45,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: readline
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
