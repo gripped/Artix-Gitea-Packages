@@ -1,10 +1,10 @@
 ---
-version: 23.0.0-3
+version: 25.1.0-1
 pkgbase:
   name: gunicorn
   pkgdesc: WSGI HTTP Server for UNIX
-  pkgver: 23.0.0
-  pkgrel: 3
+  pkgver: 25.1.0
+  pkgrel: 1
   url: https://gunicorn.org/
   arch:
     - any
@@ -13,7 +13,10 @@ pkgbase:
   checkdepends:
     - python-eventlet
     - python-gevent
+    - python-h2
+    - python-httpx
     - python-pytest
+    - python-pytest-asyncio
   makedepends:
     - git
     - python-build
@@ -25,12 +28,13 @@ pkgbase:
   optdepends:
     - 'python-eventlet: for asynchronous request handling with eventlet'
     - 'python-gevent: for asynchronous request handling with gevent'
+    - 'python-h2: for HTTP/2 support'
     - 'python-setproctitle: for process renaming'
     - 'python-tornado: for asynchronous request handling with tornado'
   source:
-    - git+https://github.com/benoitc/gunicorn.git#tag=23.0.0
+    - git+https://github.com/benoitc/gunicorn.git#tag=25.1.0
   b2sums:
-    - 0836b34726af4aceb5ceb040afdf9f71ed0a978259f455ff925f526b79b2e150c61c5dc93e9e9b58a71c1112e2c12c8040bdb0aeb36f8acf67480a835b33936b
+    - 77a976ca86533da8f24884f6e8b607bc6c4f61cb4f1a203dd99cda769a63e0d27c09cef0e614f6119a31992bcec4068ddadf04301f02977fe06f5f6ceed447a9
 pkgname:
   - name: gunicorn
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
