@@ -1,10 +1,10 @@
 ---
-version: 12.3.2-1
+version: 13.0.0-2
 pkgbase:
   name: harfbuzz
   pkgdesc: OpenType text shaping engine
-  pkgver: 12.3.2
-  pkgrel: 1
+  pkgver: 13.0.0
+  pkgrel: 2
   url: https://harfbuzz.github.io/
   arch:
     - x86_64
@@ -31,14 +31,14 @@ pkgbase:
     - glibc
     - graphite
   source:
-    - git+https://github.com/harfbuzz/harfbuzz?signed#tag=12.3.2
+    - git+https://github.com/harfbuzz/harfbuzz?signed#tag=13.0.0
   validpgpkeys:
     - 053D20F17CCCA9651B2C6FCB9AB24930C0B997A2
     - 9F377DDB6D3153A48EB3EB1E63CC496475267693
     - 2277650A4E8BDFE4B7F6BE419FEE04E5D3531115
     - EACF64F53455E2771BA661A4803B21859F015E4E
   b2sums:
-    - d6f26fe614aeea8f84e5be74b1cb4fd8212aa285b2a951f2dee3a39e1ad1be14524ce0b2c1d02b3307d63610e58510a2345b5b2619ea078bd820a07edcac1893
+    - a6e8b1964580fccee71a524c1ae547201e86b0b709821ee23b494cd69e5637a00f4b51a0047336d9b86694912c9b3e91509a4e258d30d149fb980beda923b7c3
 pkgname:
   - name: harfbuzz
     depends:
@@ -56,6 +56,8 @@ pkgname:
       - libharfbuzz.so
       - libharfbuzz-subset.so
       - libharfbuzz-gobject.so
+      - libharfbuzz-raster.so
+      - libharfbuzz-vector.so
   - name: harfbuzz-cairo
     pkgdesc: OpenType text shaping engine - Cairo integration
     depends:
@@ -101,4 +103,4 @@ pkgname:
   - name: harfbuzz-docs
     pkgdesc: OpenType text shaping engine - Documentation
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
