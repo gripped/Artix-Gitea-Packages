@@ -1,0 +1,30 @@
+---
+version: 0.3.2-1
+pkgbase:
+  name: ruby-rss
+  pkgdesc: Family of libraries that support various formats of XML "feeds"
+  pkgver: 0.3.2
+  pkgrel: 1
+  url: https://github.com/ruby/rss
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - ruby-bundler
+    - ruby-erb
+  makedepends:
+    - git
+    - ruby-rake
+    - ruby-test-unit
+  depends:
+    - ruby-rexml
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/ruby/rss.git#tag=0.3.2
+  sha256sums:
+    - d9c660f42fc90dc37d9088557258b1cb716ae312ceda9143af0f47ae4ebea0f8
+pkgname:
+  - name: ruby-rss
+# generated with artixpkg 0.38.2-1-any
