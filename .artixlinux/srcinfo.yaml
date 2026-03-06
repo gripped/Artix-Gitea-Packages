@@ -1,9 +1,9 @@
 ---
-version: 25.12.2-1
+version: 25.12.3-1
 pkgbase:
   name: kolourpaint
   pkgdesc: Paint Program
-  pkgver: 25.12.2
+  pkgver: 25.12.3
   pkgrel: 1
   url: https://apps.kde.org/kolourpaint/
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - libksane
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.2/src/kolourpaint-25.12.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.2/src/kolourpaint-25.12.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.3/src/kolourpaint-25.12.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.3/src/kolourpaint-25.12.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 526b630af7797a79fdec0eba7948236ed2975e2d3a66f53a92cfa6787d5acf86
+    - ecbd48b7a13eb46bad63b0afe638c6c87f1b661b79740320902c890861543568
     - SKIP
 pkgname:
   - name: kolourpaint
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
