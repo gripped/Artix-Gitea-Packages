@@ -1,10 +1,10 @@
 ---
-version: 25.12.2-3
+version: 25.12.3-1
 pkgbase:
   name: calligra
   pkgdesc: A set of applications for productivity and creative usage
-  pkgver: 25.12.2
-  pkgrel: 3
+  pkgver: 25.12.3
+  pkgrel: 1
   url: https://www.calligra-suite.org/
   arch:
     - x86_64
@@ -77,19 +77,15 @@ pkgbase:
     - 'qqc2-desktop-style: for calligralauncher'
     - 'qt6-webengine: Braindump web shape'
   source:
-    - https://download.kde.org/stable/release-service/25.12.2/src/calligra-25.12.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.2/src/calligra-25.12.2.tar.xz.sig
-    - https://invent.kde.org/office/calligra/-/commit/dce97ba7.patch
-    - https://invent.kde.org/office/calligra/-/commit/ef7e9525.patch
+    - https://download.kde.org/stable/release-service/25.12.3/src/calligra-25.12.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.3/src/calligra-25.12.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - f29a18bdd96c3d009a8056e9c60110c4d65ced30a71d7cd976e3a0849b40abb0
+    - 98648733fc0052cb20aca00ac10fbd4656549422bc50fdf79d1b5f5efc5ebec1
     - SKIP
-    - cb087148551c80749b40e0a5d26bcaf8eb7d08f7ca44083cb66075f13482d074
-    - 75fafb5c04ff94790112c8dc1bcbc6f7ddbfaf2630dbee7c76ad6988628f36d4
 pkgname:
   - name: calligra
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
