@@ -3,7 +3,7 @@
 pkgname=lua54
 pkgver=5.4.8
 _majorver=${pkgver%.*}
-pkgrel=5
+pkgrel=6
 pkgdesc='Powerful lightweight programming language designed for extending applications'
 arch=('x86_64')
 url='https://www.lua.org/'
@@ -61,6 +61,9 @@ package() {
   install -d "$pkgdir/usr/share/doc/$pkgname"
   install -m644 doc/*.{gif,png,css,html} "$pkgdir/usr/share/doc/$pkgname"
   install -Dm644 ../license-from-upstream "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+
+  ln -s liblua$_majorver.so "$pkgdir"/usr/lib/liblua.so.$_majorver
+  ln -s liblua$_majorver.so "$pkgdir"/usr/lib/liblua.so.$pkgver
 
   cd ../lua++-$pkgver
   make \

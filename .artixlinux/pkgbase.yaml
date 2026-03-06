@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.4.8-5
+    version: 5.4.8-6
     packages:
-      - lua54-5.4.8-5-x86_64.pkg.tar.zst
+      - lua54-5.4.8-6-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
