@@ -1,10 +1,10 @@
 ---
-version: 8.8.0-3.1
+version: 9.0.0-1
 pkgbase:
   name: digikam
   pkgdesc: An advanced digital photo management application
-  pkgver: 8.8.0
-  pkgrel: 3.1
+  pkgver: 9.0.0
+  pkgrel: 1
   url: https://www.digikam.org/
   arch:
     - x86_64
@@ -21,7 +21,6 @@ pkgbase:
     - exiv2
     - expat
     - ffmpeg
-    - gcc-libs
     - glib2
     - glibc
     - imagemagick
@@ -43,13 +42,16 @@ pkgbase:
     - kxmlgui
     - lcms2
     - lensfun
+    - libgcc
     - libglvnd
+    - libgomp
     - libgphoto2
     - libheif
     - libjpeg-turbo
     - libjxl
     - libksane
     - libpng
+    - libstdc++
     - libtiff
     - libx11
     - libxml2
@@ -75,13 +77,13 @@ pkgbase:
     - 'qt6-imageformats: support for additional image formats (WEBP, TIFF)'
     - 'rawtherapee: RAW import'
   source:
-    - https://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz
-    - https://download.kde.org/stable/digikam/8.8.0/digiKam-8.8.0.tar.xz.sig
+    - https://download.kde.org/stable/digikam/9.0.0/digiKam-9.0.0.tar.xz
+    - https://download.kde.org/stable/digikam/9.0.0/digiKam-9.0.0.tar.xz.sig
   validpgpkeys:
     - D1CF2444A7858C5F2FB095B74A77747BC2386E50
   sha256sums:
-    - db3a1b6e3c73f903e3dff8003f52455dd2ecd198cb66534fee4abbd0bdeb6b9a
+    - 7680ea024fe00e10c96090e45fe4b7b4a1c3993bc5e87576eddd4e0eefd08ef3
     - SKIP
 pkgname:
   - name: digikam
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
