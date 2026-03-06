@@ -1,10 +1,10 @@
 ---
-version: 25.12.2-3
+version: 25.12.3-1
 pkgbase:
   name: kitinerary
   pkgdesc: Data model and extraction system for travel reservation information
-  pkgver: 25.12.2
-  pkgrel: 3
+  pkgver: 25.12.3
+  pkgrel: 1
   url: https://kontact.kde.org
   arch:
     - x86_64
@@ -31,15 +31,15 @@ pkgbase:
     - zlib
     - zxing-cpp
   source:
-    - https://download.kde.org/stable/release-service/25.12.2/src/kitinerary-25.12.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.2/src/kitinerary-25.12.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.3/src/kitinerary-25.12.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.3/src/kitinerary-25.12.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 6f5074ff8d4fd0640a7d0f37e9c14b3bb0316f121625c7d50513da706d439046
+    - dd8374be2e4c488902f6c0b4b9fd12ad7f808de23b7df4561ef30b3f79b44d13
     - SKIP
 pkgname:
   - name: kitinerary
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
