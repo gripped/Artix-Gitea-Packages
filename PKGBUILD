@@ -5,7 +5,7 @@
 
 pkgname=fceux
 pkgver=2.6.6
-pkgrel=7
+pkgrel=8
 pkgdesc='Fast and ultra-compatible NES/Famicom emulator'
 arch=(x86_64)
 url='https://github.com/TASEmulators/fceux'
@@ -27,7 +27,7 @@ build() {
   cmake \
     -B build \
     -D CMAKE_C_FLAGS="$CFLAGS -fPIC -w" \
-    -D CMAKE_CXX_FLAGS="$CXXFLAGS -fPIC -w" \
+    -D CMAKE_CXX_FLAGS="$CXXFLAGS -I /usr/include/minizip -fPIC -w" \
     -D CMAKE_INSTALL_PREFIX=/usr \
     -D QT6=ON \
     -S $pkgname
