@@ -1,10 +1,10 @@
 ---
-version: 1.51.0-1
+version: 1.51.0-2
 pkgbase:
   name: libluv
   pkgdesc: Bare libuv bindings for lua
   pkgver: 1.51.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/luvit/luv
   arch:
     - x86_64
@@ -15,11 +15,12 @@ pkgbase:
     - libuv
     - ninja
     - luajit
-    - lua>=5.4.0
-    - lua<5.5.0
+    - lua>=5.5.0
+    - lua<5.6.0
     - lua51
     - lua52
     - lua53
+    - lua54
   depends:
     - libuv
   source:
@@ -51,4 +52,9 @@ pkgname:
     depends:
       - libuv
       - lua53
-# generated with artixpkg 0.37.4-1-any
+  - name: lua54-luv
+    pkgdesc: Bare libuv bindings for lua - Lua 5.4 module
+    depends:
+      - libuv
+      - lua54
+# generated with artixpkg 0.38.2-1-any

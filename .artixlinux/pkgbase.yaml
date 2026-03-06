@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,14 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.51.0-2
+    packages:
+      - libluv-1.51.0-2-x86_64.pkg.tar.zst
+      - lua-luv-1.51.0-2-x86_64.pkg.tar.zst
+      - lua51-luv-1.51.0-2-x86_64.pkg.tar.zst
+      - lua52-luv-1.51.0-2-x86_64.pkg.tar.zst
+      - lua53-luv-1.51.0-2-x86_64.pkg.tar.zst
+      - lua54-luv-1.51.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
