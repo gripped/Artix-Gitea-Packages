@@ -1,9 +1,9 @@
 ---
-version: 26.2.0-1
+version: 26.3.0-1
 pkgbase:
   name: ansible-creator
   pkgdesc: A CLI tool for scaffolding all your Ansible Content
-  pkgver: 26.2.0
+  pkgver: 26.3.0
   pkgrel: 1
   url: https://github.com/ansible/ansible-creator
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - 'docker: To use docker as a container runtime'
     - 'podman: To use podman as a container runtime'
   source:
-    - ansible-creator-26.2.0.tar.gz::https://github.com/ansible/ansible-creator/archive/refs/tags/v26.2.0.tar.gz
+    - ansible-creator-26.3.0.tar.gz::https://github.com/ansible/ansible-creator/archive/refs/tags/v26.3.0.tar.gz
   sha256sums:
-    - 897add40f05da4cfda664f6227402a733a4b5bba01776cbfac8ab726dd94a5ed
+    - b8abfd8496a74288456c65ed7ef11b026928536320bd33f33ac62873b7298cd3
 pkgname:
   - name: ansible-creator
 # generated with artixpkg 0.38.2-1-any
