@@ -103,4 +103,4 @@ pkgbase:
     - ea67dec520abbd2811bb95470efe4585c2972ba420d2999dd7040b08d8b78a41bbc4d5f438cead785cc4c68f13cfb397cc12b235226e07fd0d17a0f111cea03b
 pkgname:
   - name: python-matplotlib
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
