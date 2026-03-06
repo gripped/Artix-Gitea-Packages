@@ -1,9 +1,9 @@
 ---
-version: 25.12.2-1
+version: 25.12.3-1
 pkgbase:
   name: calendarsupport
   pkgdesc: Calendar support library
-  pkgver: 25.12.2
+  pkgver: 25.12.3
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - libakonadi
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/25.12.2/src/calendarsupport-25.12.2.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.2/src/calendarsupport-25.12.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/25.12.3/src/calendarsupport-25.12.3.tar.xz
+    - https://download.kde.org/stable/release-service/25.12.3/src/calendarsupport-25.12.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ca88695936e64d01acbf34476b7215f1796a366b96cc43890a3e3e1a3320b92d
+    - 455785712a32f0dba7947a314eb99065d902ac6c432947e9e699a44ca18c70a1
     - SKIP
 pkgname:
   - name: calendarsupport
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
