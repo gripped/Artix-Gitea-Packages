@@ -24,7 +24,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.6.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -87,6 +87,9 @@ b2sums=('7223fdee4491093b7611599794d379bcdeda59ac0e3ffb681b0bb5fd744fbc6d32714ba
 prepare() {
   cd pipewire
    patch -Np1 -i ../systemd.patch
+
+  # Fix socket activation
+  git cherry-pick -n 5cd734e8c097680eca0bfe7b46e4f93747b04fc3
 }
 
 build() {
