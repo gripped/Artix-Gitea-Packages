@@ -1,10 +1,10 @@
 ---
-version: 1.4.82-1
+version: 1.4.82-2
 pkgbase:
   name: lighttpd
   pkgdesc: A secure, fast, compliant and very flexible web-server
   pkgver: 1.4.82
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.lighttpd.net/
   arch:
     - x86_64
@@ -55,4 +55,4 @@ pkgbase:
     - da6878d1649572259f29ae50236a129ff131c9b1730af81498581824cf8c4c35
 pkgname:
   - name: lighttpd
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.38.2-1-any
