@@ -1,9 +1,9 @@
 ---
-version: 4.5.2-1
+version: 4.6.5-1
 pkgbase:
   name: musescore
   pkgdesc: Create, play and print beautiful sheet music
-  pkgver: 4.5.2
+  pkgver: 4.6.5
   pkgrel: 1
   url: https://musescore.org/
   arch:
@@ -20,15 +20,18 @@ pkgbase:
     - ninja
     - python
     - qt6-tools
+    - vulkan-headers
   depends:
-    - gcc-libs
     - glibc
+    - flac
     - harfbuzz
     - hicolor-icon-theme
     - libasound.so
     - libfreetype.so
     - libopusenc
     - libsndfile.so
+    - libgcc
+    - libstdc++
     - opus
     - qt6-5compat
     - qt6-base
@@ -44,9 +47,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/musescore/MuseScore.git#tag=v4.5.2
-  sha256sums:
-    - a5ebc0484855d3984b85dbf9cb818563d5936a35402712f4a9f6113ebb654ee4
+    - musescore::git+https://github.com/musescore/MuseScore.git#tag=v4.6.5
+  sha512sums:
+    - 4f1fa2fc8684662bfafbefbbf63519a3f8077c077e063f2144e95a1eeedf5c54a97013c01461f55474379a8d0bcffc71e54a6ab994c6f61cc48aee7b97e64352
+  b2sums:
+    - d8d43fe137d76b84caf36d9be81f11caeb1f925c4e81286b1f5b1b950ab4fceb8d91c8ae3380efd5cf906c898a41664f3985eebe092fe63280d1369b6d52cf9b
 pkgname:
   - name: musescore
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
