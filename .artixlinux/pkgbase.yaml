@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.8.1-3
+    version: 4.8.2-2
     packages:
-      - weechat-4.8.1-3-x86_64.pkg.tar.zst
+      - weechat-4.8.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 4.8.2-1

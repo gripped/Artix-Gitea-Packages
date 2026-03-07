@@ -1,10 +1,10 @@
 ---
-version: 4.8.2-1
+version: 4.8.2-2
 pkgbase:
   name: weechat
   pkgdesc: Fast, light and extensible IRC client (curses UI)
   pkgver: 4.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.weechat.org/
   arch:
     - x86_64
