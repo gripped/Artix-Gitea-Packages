@@ -1,9 +1,9 @@
 ---
-version: 2.2-1
+version: 2.2.1-1
 pkgbase:
   name: taglib
   pkgdesc: A Library for reading and editing the meta-data of several popular audio formats
-  pkgver: 2.2
+  pkgver: 2.2.1
   pkgrel: 1
   url: https://taglib.github.io/
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - sh
     - zlib
   source:
-    - git+https://github.com/taglib/taglib#tag=v2.2
+    - git+https://github.com/taglib/taglib#tag=v2.2.1
   sha256sums:
-    - 5e1b0c9601a4e5e088641aa26f9e5b19be2095ac2cfeb2ff741b48cf383ca1d5
+    - ce64ef47fc4f4c9e89b0e51329ab29abdf49cd80148149a3dcbae920e05b3ae3
 pkgname:
   - name: taglib
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
