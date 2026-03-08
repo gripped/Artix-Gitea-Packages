@@ -1,9 +1,9 @@
 ---
-version: 1:0+531+ec0effd7-1
+version: 1:0+556+58fa18a9-1
 pkgbase:
   name: wasi-libc
   pkgdesc: WASI libc implementation for WebAssembly
-  pkgver: 0+531+ec0effd7
+  pkgver: 0+556+58fa18a9
   pkgrel: 1
   epoch: 1
   url: https://github.com/WebAssembly/wasi-libc
@@ -17,13 +17,18 @@ pkgbase:
     - git
     - llvm
     - ninja
+    - wasi-compiler-rt
+    - wasm-tools
+    - wasm-component-ld
+    - wasm-pkg-tools
+    - wit-bindgen
   options:
     - '!buildflags'
     - staticlibs
   source:
-    - git+https://github.com/WebAssembly/wasi-libc.git#commit=ec0effd769df5f05b647216578bcf5d3b5449725
+    - git+https://github.com/WebAssembly/wasi-libc.git#commit=58fa18a968de915bea7d962485d9838693779bf9
   b2sums:
-    - 6050e62313411cdc25883ec491ca16885e992ea8954e3b8dbf75a4c420fb34f5ec32776260b238d9ca37488135372ed009574997b566a4cc3be22f621b131f16
+    - 1157e27798e7ac431655c2aa9f62e883a3fed90cc7ef97cc2c53650215d691119c61eb8ecd93168243b8d3d3c95001c0459d7f37a24623ab7125b5c3c5cd3046
 pkgname:
   - name: wasi-libc
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
