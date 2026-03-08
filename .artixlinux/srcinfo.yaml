@@ -1,9 +1,9 @@
 ---
-version: 1.10.2-4
+version: 1.11.0-1
 pkgbase:
   name: handbrake
-  pkgver: 1.10.2
-  pkgrel: 4
+  pkgver: 1.11.0
+  pkgrel: 1
   url: https://handbrake.fr/
   arch:
     - x86_64
@@ -40,12 +40,12 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/HandBrake/HandBrake.git?signed#tag=1.10.2
+    - git+https://github.com/HandBrake/HandBrake.git?signed#tag=1.11.0
   validpgpkeys:
     - 1629C061B3DDE7EB4AE34B81021DB8B44E4A8645
     - D57F6026431D68DFFB942F0D5759C8A0D1C34D47
   sha256sums:
-    - 40bc16213cef6df27d524949089d3ccb6d1eea9e6fef8e35f14f5b15b167d521
+    - cf11a468ffc0d809d2554c2e421b081131f3def81d010647de057a533b15f9f9
 pkgname:
   - name: handbrake
     pkgdesc: Multithreaded video transcoder
@@ -101,4 +101,4 @@ pkgname:
     optdepends:
       - 'intel-media-sdk: Intel QuickSync support'
       - 'libdvdcss: for decoding encrypted DVDs'
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
