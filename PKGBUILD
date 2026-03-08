@@ -2,7 +2,7 @@
 # Contributor: Zerial <fernando@zerial.org>
 
 pkgname=unrealircd
-pkgver=6.2.2
+pkgver=6.2.3
 pkgrel=1
 pkgdesc="Open Source IRC Server"
 arch=('x86_64')
@@ -15,11 +15,11 @@ provides=('ircd')
 backup=('etc/unrealircd/unrealircd.conf')
 install=unrealircd.install
 validpgpkeys=('1D2D2B03A0B68ED11D68A24BA7A21B0A108FF4A9'
-	          '36E6F65706E36B0937280299101001DAF48BB56D')
+	      '36E6F65706E36B0937280299101001DAF48BB56D')
 source=(https://www.unrealircd.org/unrealircd4/unrealircd-$pkgver.tar.gz{,.asc}
-        unrealircd.tmpfiles
-        unrealircd.sysusers)
-sha256sums=('01c547673412169a5659872662d46092b1d16a1ba8fc60a4f5f6ad144f8786f8'
+	unrealircd.tmpfiles
+	unrealircd.sysusers)
+sha256sums=('489641956a9354e048b900e64dc2cd14863e11e66fb1ceea03ea016ac3f88751'
             'SKIP'
             '91b5e1d623b51ffd4734d73e35cead09be596460c41b9440406f92c9e2b4b9b1'
             'c9a6ee91098f23d050c73f3d079ea5edf05e885bf148a154000d1768f551307b')
@@ -60,6 +60,7 @@ build() {
 package() {
   cd unrealircd-$pkgver
 
+  sed -i 's|../../../src/ircd|/bin/true|g' src/modules/third/Makefile
   make install DESTDIR="$pkgdir"
   mv "$pkgdir"/usr/unrealircd "$pkgdir"/etc/unrealircd/unrealircd
   cp "$pkgdir"/etc/unrealircd/examples/example.conf "$pkgdir"/etc/unrealircd/unrealircd.conf
