@@ -23,4 +23,4 @@ pkgbase:
     - d5982f4585bc657afc329e070832df4b477411acbf6e1fdd9c07b8355d8b682f50892ec4f075f769a38244622672adb6231a86b079683cf177e34047cf7b1755
 pkgname:
   - name: spirv-headers
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
