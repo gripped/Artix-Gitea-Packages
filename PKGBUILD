@@ -42,7 +42,6 @@ depends=(
   libxkbcommon
   libxi
   libxrandr
-  systemd-libs
   wayland
 )
 makedepends=(

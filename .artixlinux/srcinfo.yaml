@@ -52,7 +52,6 @@ pkgbase:
     - libxkbcommon
     - libxi
     - libxrandr
-    - systemd-libs
     - wayland
   optdepends:
     - alsa-lib
