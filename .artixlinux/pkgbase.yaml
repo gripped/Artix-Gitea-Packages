@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 22.1.0-1
+    version: 22.1.0-2
     packages:
-      - clang-22.1.0-1-x86_64.pkg.tar.zst
+      - clang-22.1.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
