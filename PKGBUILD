@@ -99,8 +99,6 @@ provides=(plasma-desktop)
 source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
-echo hiero
-read
   cmake -B build  -S $pkgname-$pkgver \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
     -DBUILD_TESTING=OFF
