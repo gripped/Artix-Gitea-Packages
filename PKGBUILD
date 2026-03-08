@@ -3,7 +3,7 @@
 
 pkgname=clang
 pkgver=22.1.0
-pkgrel=2
+pkgrel=1
 pkgdesc="C language family frontend for LLVM"
 arch=('x86_64')
 url="https://clang.llvm.org/"
