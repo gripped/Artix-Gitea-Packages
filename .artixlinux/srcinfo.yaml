@@ -1,10 +1,10 @@
 ---
-version: 3:1.41.0-2
+version: 3:1.42.0-1
 pkgbase:
   name: ldc
   pkgdesc: A D Compiler based on the LLVM Compiler Infrastructure including D runtime and libphobos2
-  pkgver: 1.41.0
-  pkgrel: 2
+  pkgver: 1.42.0
+  pkgrel: 1
   epoch: 3
   url: https://github.com/ldc-developers/ldc
   arch:
@@ -17,28 +17,28 @@ pkgbase:
   makedepends:
     - git
     - cmake
-    - llvm20
+    - llvm21
     - lld
     - ldc
     - ninja
   options:
     - '!lto'
   source:
-    - git+https://github.com/ldc-developers/ldc#commit=90e39b6a6e61d36ef5f5d0ab6ae0667130fd8549
+    - git+https://github.com/ldc-developers/ldc#commit=3d5bafdf0e6f0d4619f04baad80d2b8afb6ba8ad
     - ldc-phobos::git+https://github.com/ldc-developers/phobos.git
   sha256sums:
-    - d680e97568265c37ce456a8837e16a4356c2d93b83511b73ded4c0d681a591a6
+    - c30b46ce86759290cc2fc7e9da3357fa34a322a78c079b43876f7f0d935f3c1a
     - SKIP
 pkgname:
   - name: ldc
     depends:
       - liblphobos
-      - llvm20-libs
+      - llvm21-libs
       - gcc
-      - compiler-rt20
+      - compiler-rt21
       - curl
     provides:
-      - d-compiler=2.111.0
+      - d-compiler=2.112.1
     backup:
       - etc/ldc2.conf
   - name: liblphobos
@@ -49,4 +49,4 @@ pkgname:
       - d-stdlib
     options:
       - staticlibs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
