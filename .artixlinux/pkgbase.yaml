@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 21.1.8-2
+    version: 22.1.0-1
     packages:
-      - lldb-21.1.8-2-x86_64.pkg.tar.zst
+      - lldb-22.1.0-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
