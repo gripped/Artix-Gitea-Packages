@@ -1,10 +1,10 @@
 ---
-version: 1.15.1.0-1
+version: 1.15.1.0-2
 pkgbase:
   name: openshadinglanguage
   pkgdesc: Advanced shading language for production GI renderers
   pkgver: 1.15.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/imageworks/OpenShadingLanguage
   arch:
     - x86_64
@@ -16,6 +16,7 @@ pkgbase:
     - llvm
     - ninja
     - git
+    - pybind11
   depends:
     - openimageio
     - imath
@@ -35,8 +36,10 @@ pkgbase:
     - 'python: the Python module'
   source:
     - openshadinglanguage-1.15.1.0.tar.gz::https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/archive/refs/tags/v1.15.1.0.tar.gz
+    - llvm22.patch::https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/commit/7bcf83eb859b4ce7ffcc599835ec2e6058fbd12f.patch
   sha512sums:
     - 0660c3dc798ee4d879f5913eef8fca040bba20434fc2c7108319207158f49906423b3aa9609f20424426e5f0ac820f76c854080b62a86444bd4e414de350e7fa
+    - 5e52dfc7dfe8540bbe1c517141853b33a9f508c68ae9abd3278408445ebabf83e0fbb2c1990b9998b936398b3931f61c5ca4624d0209cd3c2eaf3382f13bfeb9
 pkgname:
   - name: openshadinglanguage
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
