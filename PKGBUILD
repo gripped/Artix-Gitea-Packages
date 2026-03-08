@@ -71,7 +71,7 @@ build() {
       -DTARGET_TRIPLE=$target
       -DCMAKE_C_FLAGS="$extra_cflags"
       -DCMAKE_ASM_FLAGS="$extra_cflags"
-      -DBUILTINS_LIB="$resource_dir/lib/${target/wasm32/wasm32-unknown}/libclang_rt.builtins.a"
+      #-DBUILTINS_LIB="$resource_dir/lib/${target/wasm32/wasm32-unknown}/libclang_rt.builtins.a"
     )
 
     cmake "${cmake_options[@]}"
