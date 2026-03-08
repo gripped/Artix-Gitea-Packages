@@ -2,7 +2,7 @@
 
 pkgname=sonic-desktop-interface
 pkgver=6.6.2.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Sonic Desktop Interface'
 arch=(x86_64)
 url="https://github.com/Sonic-DE/$pkgname"
@@ -70,7 +70,6 @@ depends=(attica
          solid
          sonnet
          systemsettings
-         wayland
          xcb-util-keysyms
          xdg-user-dirs)
 optdepends=('bluedevil: Bluetooth applet'
@@ -96,7 +95,13 @@ makedepends=(extra-cmake-modules
 groups=(sonicde)
 conflicts=(plasma-desktop)
 provides=(plasma-desktop)
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
+source=("${url}/archive/refs/tags/${pkgver}.tar.gz"
+        "no-wayland.patch::https://patch-diff.githubusercontent.com/raw/Sonic-DE/sonic-desktop-interface/pull/9.patch")
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -Np1 -i ../no-wayland.patch
+}
 
 build() {
   cmake -B build  -S $pkgname-$pkgver \
@@ -109,5 +114,6 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('9e83c8e0bfcabdafab8ec75df14477dcaef092b6fe29d2570b56aa7fd795702d')
+sha256sums=('9e83c8e0bfcabdafab8ec75df14477dcaef092b6fe29d2570b56aa7fd795702d'
+            'e58db907d604a8c7371f1b66ce9646eacc7dac22e537f6d90af98199c611ed9a')
 
