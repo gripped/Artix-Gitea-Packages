@@ -1,10 +1,10 @@
 ---
-version: 6.0.1-1
+version: 6.0.1-2
 pkgbase:
   name: rpm-tools
   pkgdesc: RPM Package Manager - RPM.org fork, used in major RPM distros
   pkgver: 6.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://rpm.org/
   install: rpm-tools.install
   arch:
@@ -42,4 +42,4 @@ pkgbase:
     - 3e5bf450d4628366ba35469ec0530a99cd09ab2616a3d261a3f68270f481f777
 pkgname:
   - name: rpm-tools
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
