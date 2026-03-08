@@ -10,7 +10,7 @@
 
 pkgname=blender
 pkgver=5.0.1
-pkgrel=7
+pkgrel=8
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')

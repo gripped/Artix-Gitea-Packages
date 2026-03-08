@@ -1,10 +1,10 @@
 ---
-version: 17:5.0.1-7
+version: 17:5.0.1-8
 pkgbase:
   name: blender
   pkgdesc: A fully integrated 3D graphics creation suite
   pkgver: 5.0.1
-  pkgrel: 7
+  pkgrel: 8
   epoch: 17
   url: https://www.blender.org
   arch:
