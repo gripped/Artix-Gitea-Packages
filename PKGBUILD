@@ -136,6 +136,7 @@ package_llvm() {
   rm -r "$pkgdir"/usr/share/doc/llvm/html/{_sources,.buildinfo}
 
   install -Dm644 ../LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  rm -rf "$pkgdir"/usr/bin/clang-offload-packager
 }
 
 package_llvm-libs() {
