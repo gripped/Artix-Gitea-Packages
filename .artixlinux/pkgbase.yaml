@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:0+556+58fa18a9-1
+    version: 1:0+556+58fa18a9-1.1
     packages:
-      - wasi-libc-1:0+556+58fa18a9-1-any.pkg.tar.zst
+      - wasi-libc-1:0+556+58fa18a9-1.1-any.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

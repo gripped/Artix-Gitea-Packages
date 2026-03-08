@@ -4,7 +4,7 @@
 pkgname=wasi-libc
 pkgver=0+556+58fa18a9
 _commit=58fa18a968de915bea7d962485d9838693779bf9  # pull/759/head~3
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='WASI libc implementation for WebAssembly'
 url='https://github.com/WebAssembly/wasi-libc'
