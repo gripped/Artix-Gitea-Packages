@@ -1,0 +1,34 @@
+---
+version: 0.14.0-1
+pkgbase:
+  name: ristretto
+  pkgdesc: A fast and lightweight picture viewer for Xfce
+  pkgver: 0.14.0
+  pkgrel: 1
+  url: https://docs.xfce.org/apps/ristretto/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - meson
+    - python
+    - xfce4-dev-tools
+  depends:
+    - exo
+    - libxfce4ui
+    - xfconf
+    - tumbler
+    - libexif
+    - file
+  source:
+    - git+https://gitlab.xfce.org/apps/ristretto.git#tag=ristretto-0.14.0
+  sha256sums:
+    - ea0a0a409db1bc4671cf9b3d14a81817c58204a3338b1e15cdd75ab1641b001b
+pkgname:
+  - name: ristretto
+# generated with artixpkg 0.38.2-1-any
