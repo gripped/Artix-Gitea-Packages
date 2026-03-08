@@ -1,0 +1,42 @@
+# Maintainer: Frederik Schwan <freswa at archlinux.org>
+
+pkgname=wit-bindgen
+pkgver=0.53.1
+pkgrel=1
+pkgdesc="A language binding generator for WebAssembly interface types "
+url="https://github.com/bytecodealliance/wit-bindgen"
+arch=('x86_64')
+license=('Apache-2.0' 'MIT')
+depends=(
+  cargo
+  glibc
+  libgcc
+)
+makedepends=(
+  git
+)
+options=(!lto)
+source=("git+https://github.com/bytecodealliance/wit-bindgen.git#tag=v${pkgver}")
+sha256sums=('67d002671ac013a47248981313e31b4785bc788ec1339cd388a3be347e0e5f58')
+b2sums=('c2e5c93abb5079022001e70ee554a48cee8e2d7671e10a13561558854a27bdc4f2750195e59c58c696c2e87abace61942d3c57a14476f42b2ff02643797024d8')
+
+prepare() {
+  cd ${pkgname}
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+  cd ${pkgname}
+  cargo build --release --locked
+}
+
+check() {
+  cd ${pkgname}
+  cargo test --release --locked
+}
+
+package() {
+  cd ${pkgname}
+  install -Dm755 target/release/${pkgname} -t "${pkgdir}"/usr/bin
+  install -Dm644 LICENSE-MIT -t "${pkgdir}"/usr/share/licenses/${pkgname}
+}
