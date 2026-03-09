@@ -3,7 +3,7 @@
 # Contributor: Felix Schindler <ftschindler at aur dot archlinux>
 
 pkgname=webmin
-pkgver=2.610
+pkgver=2.621
 pkgrel=1
 pkgdesc="A web-based administration interface for Unix systems"
 arch=(any)
@@ -136,9 +136,9 @@ prepare() {
     rm {webmin,usermin}/{update.cgi,upgrade.cgi,edit_upgrade.cgi,install_mod.cgi,delete_mod.cgi,install_theme.cgi}
     rm usermin/{update.pl,update_sched.cgi}
 
-    # remove config files for other distros, make Arch linux related additions
+    # remove config files for other distros, make Artix linux related additions
     find . ! -name 'config-generic-linux' ! -name 'config-ALL-linux' ! -name 'config-lib.pl' -name 'config-*' -exec rm '{}' \+
-    echo 'Archlinux	Any version	generic-linux	*	-d "/etc/pacman.d"' > os_list.txt
+    echo 'Artixlinux	Any version	generic-linux	*	-d "/etc/pacman.d"' > os_list.txt
     cp -rp "$srcdir"/webmin-config/* "$srcdir"/$pkgname-$pkgver/
     install -m 700 "$srcdir"/setup-{pre,post}.sh "$srcdir"/$pkgname-$pkgver/
 
@@ -189,10 +189,12 @@ package() {
 
     # delete directories not to be packaged
     rm -r "$pkgdir"/{tmp,var}
+
+    rm -r $pkgdir/usr/lib/systemd
 }
 
 
-sha256sums=('a6fab4652fc1703ba413a31f5bfd17e50b98dba86cd8d5908ca6360541cbcb8f'
+sha256sums=('88381e8bcdd4733b215c114ca2158dc044892ea68dc0da4d235d88d2b1db4bb8'
             '3c27a52679607c73cdaa00c0735bea04cf66cf92ca4af6a7ac906eaed537b910'
             'cb860a79ea652f7c4f3c5ac2093bcfad5d29e2f246f10ef408e7909adc143174'
             '4e8268aa038434aa520d93c84ea2c6c54cc76fe279e9496debf4acad93cedc31'

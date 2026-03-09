@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.610-1
+    version: 2.621-1
     packages:
-      - webmin-2.610-1-any.pkg.tar.zst
+      - webmin-2.621-1-any.pkg.tar.zst
     debug: []
