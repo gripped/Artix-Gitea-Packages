@@ -188,10 +188,10 @@ package() {
     install -D -m 644 "$srcdir"/$pkgname-$pkgver/LICENCE "$pkgdir"/usr/share/licenses/webmin/LICENCE
 
     # fix soft links
-    rm -v "${pkgdir}/etc/webmin/{restart,restart-by-force-kill,start}"
-    ln -sfv "${pkgdir}/etc/webmin/restart" "${pkgdir}/etc/webmin/.restart-init"
-    ln -sfv "${pkgdir}/etc/webmin/restart-by-force-kill" "${pkgdir}/etc/webmin/.restart-by-force-kill-init"
-    ln -sfv "${pkgdir}/etc/webmin/start" "${pkgdir}/etc/webmin/.start-init"
+    rm -v ${pkgdir}/etc/webmin/{restart,restart-by-force-kill,start}
+    ln -s "${pkgdir}/etc/webmin/restart" "${pkgdir}/etc/webmin/.restart-init"
+    ln -s "${pkgdir}/etc/webmin/restart-by-force-kill" "${pkgdir}/etc/webmin/.restart-by-force-kill-init"
+    ln -s "${pkgdir}/etc/webmin/start" "${pkgdir}/etc/webmin/.start-init"
     
 
     # delete directories not to be packaged
