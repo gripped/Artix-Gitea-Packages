@@ -1,8 +1,8 @@
 # Maintainer: artist for Sonic-DE
 
 pkgname=sonic-desktop-interface
-pkgver=6.6.2.3
-pkgrel=3
+pkgver=6.6.2.4
+pkgrel=1
 pkgdesc='Sonic Desktop Interface'
 arch=(x86_64)
 url="https://github.com/Sonic-DE/$pkgname"
@@ -94,13 +94,7 @@ makedepends=(extra-cmake-modules
 groups=(sonicde)
 conflicts=(plasma-desktop)
 provides=(plasma-desktop)
-#source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
-makedepends+=(git)
-source=("git+https://github.com/artist4xlibre/sonic-desktop-interface.git#commit=e1a6b130bbac2dbea607fe7c978a3051158aff86")
-
-prepare() {
-  mv $pkgname $pkgname-$pkgver
-}
+source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
   cmake -B build  -S $pkgname-$pkgver \
@@ -113,5 +107,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('d04753966a4c938629e4a7b20e766ab2add2d573103dc7f20739f156cfc11282')
+sha256sums=('32b2db426e3785d2b290ede93c0f47fbea5413879c23e5b52dc9c490ab47517d')
 
