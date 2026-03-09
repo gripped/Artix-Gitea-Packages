@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.1.8-1
+    version: 2.0.2-1
     packages:
-      - lib32-cmocka-1.1.8-1-x86_64.pkg.tar.zst
+      - lib32-cmocka-2.0.2-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
