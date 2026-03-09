@@ -1,9 +1,9 @@
 ---
-version: 1.18-1
+version: 1.19-1
 pkgbase:
   name: lib32-vkd3d
   pkgdesc: Direct3D 12 to Vulkan translation library By WineHQ
-  pkgver: 1.18
+  pkgver: 1.19
   pkgrel: 1
   url: https://wiki.winehq.org/Vkd3d
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - lib32-vulkan-icd-loader
     - perl-json
   source:
-    - https://dl.winehq.org/vkd3d/source/vkd3d-1.18.tar.xz
+    - https://dl.winehq.org/vkd3d/source/vkd3d-1.19.tar.xz
   sha512sums:
-    - 33668fbcb04828c7630734563b6b8d38b5cce78f3971391728a2043021a3b5ca7940c410fd2586cb7affa94dc3bf7eae32d2957cfef39fd97c92871b46aca3a4
+    - 97502ee4340648feaf19919710310db5fe87909bb4e71150987595cd7fa85031d7eadfd5cb09285d2a41dd8a0e4664813631b636e4ccd561f4ed818ce9bc8682
 pkgname:
   - name: lib32-vkd3d
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
