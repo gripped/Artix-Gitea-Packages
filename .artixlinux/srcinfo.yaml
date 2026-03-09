@@ -28,7 +28,7 @@ pkgbase:
     - ncurses
     - spirv-tools
   source:
-    - git+https://gitlab.winehq.org/wine/vkd3d.git?signed#tag=vkd3d-1.19
+    - git+https://gitlab.winehq.org/wine/vkd3d.git#tag=vkd3d-1.19
   validpgpkeys:
     - 277EB71D1BEBFC86E0E14983C380B588AA8A1D1C
   b2sums:
