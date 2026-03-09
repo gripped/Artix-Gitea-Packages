@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 3.2026.0203-1
+    version: 3.2026.0303-1
     packages:
-      - ruby-mime-types-data-3.2026.0203-1-any.pkg.tar.zst
+      - ruby-mime-types-data-3.2026.0303-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
