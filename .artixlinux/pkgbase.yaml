@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,15 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 6.9-1
+    packages:
+      - brltty-6.9-1-x86_64.pkg.tar.zst
+      - brltty-udev-generic-6.9-1-x86_64.pkg.tar.zst
+      - dracut-brltty-6.9-1-x86_64.pkg.tar.zst
+      - java-brltty-6.9-1-x86_64.pkg.tar.zst
+      - ocaml-brltty-6.9-1-x86_64.pkg.tar.zst
+      - python-brltty-6.9-1-x86_64.pkg.tar.zst
+      - tcl-brltty-6.9-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.8-6
