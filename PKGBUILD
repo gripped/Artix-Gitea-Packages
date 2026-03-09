@@ -23,8 +23,7 @@ arch=('x86_64')
 license=('GPL')
 options=('!emptydirs' '!makeflags')
 source=(https://opensips.org/pub/opensips/${pkgver}/opensips-${pkgver}.tar.gz)
-sha256sums=('b5be5161b6962633506ed05830eac87700320792759a53b6d3b044d15bc501db'
-            'c2fec4be085b108db10834fa9832e98d696c2de6408f85f96cf89c13bf6be819')
+sha256sums=('b5be5161b6962633506ed05830eac87700320792759a53b6d3b044d15bc501db')
 
 _modules="db_http db_mysql db_postgres db_unixodbc h350 httpd ldap presence presence_xml proto_tls tls_mgm tls_openssl tm rr"
 

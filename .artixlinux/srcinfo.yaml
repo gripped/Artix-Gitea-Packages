@@ -42,7 +42,6 @@ pkgbase:
     - https://opensips.org/pub/opensips/3.6.4/opensips-3.6.4.tar.gz
   sha256sums:
     - b5be5161b6962633506ed05830eac87700320792759a53b6d3b044d15bc501db
-    - c2fec4be085b108db10834fa9832e98d696c2de6408f85f96cf89c13bf6be819
 pkgname:
   - name: opensips
 # generated with artixpkg 0.38.2-1-any
