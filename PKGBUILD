@@ -4,7 +4,7 @@
 
 pkgname=webmin
 pkgver=2.621
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A web-based administration interface for Unix systems"
 arch=(any)
 license=('custom:webmin')
@@ -181,16 +181,21 @@ package() {
     find "$pkgdir"/etc/webmin -type f -exec sed -i -e "s:$pkgdir::g" {} \+
 
     # install sources
-    install -D -m 644 "$pkgdir"/opt/webmin/webmin-systemd "$pkgdir"/usr/lib/systemd/system/webmin.service
+    #install -D -m 644 "$pkgdir"/opt/webmin/webmin-systemd "$pkgdir"/usr/lib/systemd/system/webmin.service
     install -D -m 644 "$srcdir"/webmin.pam "$pkgdir"/etc/pam.d/webmin
     install -D -m 644 "$srcdir"/webmin.logrotate "$pkgdir"/etc/logrotate.d/webmin
     install -D -m 644 "$srcdir"/webmin.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/webmin.conf
     install -D -m 644 "$srcdir"/$pkgname-$pkgver/LICENCE "$pkgdir"/usr/share/licenses/webmin/LICENCE
 
+    # fix soft links
+    rm -v "${pkgdir}/etc/webmin/{restart,restart-by-force-kill,start}"
+    ln -sfv "${pkgdir}/etc/webmin/restart" "${pkgdir}/etc/webmin/.restart-init"
+    ln -sfv "${pkgdir}/etc/webmin/restart-by-force-kill" "${pkgdir}/etc/webmin/.restart-by-force-kill-init"
+    ln -sfv "${pkgdir}/etc/webmin/start" "${pkgdir}/etc/webmin/.start-init"
+    
+
     # delete directories not to be packaged
     rm -r "$pkgdir"/{tmp,var}
-
-    rm -r $pkgdir/usr/lib/systemd
 }
 
 

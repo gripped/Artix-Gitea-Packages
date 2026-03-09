@@ -1,10 +1,10 @@
 ---
-version: 2.621-1
+version: 2.621-1.1
 pkgbase:
   name: webmin
   pkgdesc: A web-based administration interface for Unix systems
   pkgver: 2.621
-  pkgrel: 1
+  pkgrel: 1.1
   url: http://www.webmin.com/
   install: webmin.install
   arch:
