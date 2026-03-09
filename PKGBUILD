@@ -9,23 +9,21 @@ pkgname=(
   lib32-harfbuzz-cairo
   lib32-harfbuzz-icu
 )
-pkgver=13.0.0
-pkgrel=2
+pkgver=13.0.1
+pkgrel=1
 pkgdesc="OpenType text shaping engine - 32-bit"
 url="https://harfbuzz.github.io/"
 arch=(x86_64)
 license=(MIT)
-depends=(
+makedepends=(
+  git
+  glib2-devel
   harfbuzz
+  lib32-cairo
   lib32-freetype2
   lib32-gcc-libs
   lib32-glib2
   lib32-glibc
-)
-makedepends=(
-  git
-  glib2-devel
-  lib32-cairo
   lib32-icu
   meson
   python
@@ -36,7 +34,7 @@ checkdepends=(
   python-setuptools
 )
 source=("git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver")
-b2sums=('a6e8b1964580fccee71a524c1ae547201e86b0b709821ee23b494cd69e5637a00f4b51a0047336d9b86694912c9b3e91509a4e258d30d149fb980beda923b7c3')
+b2sums=('6b2d6aafce9d55756c04cf07f26ad451b09adae41ed6b994d0fb390e5bca6b68865cfc95ba4ec28a0e00073be47eebf9b0925afb1ac0f2ee8b7d1b6a7c4516ca')
 validpgpkeys=(
   053D20F17CCCA9651B2C6FCB9AB24930C0B997A2 # Khaled Hosny <khaled@aliftype.com> (@khaledhosny)
   9F377DDB6D3153A48EB3EB1E63CC496475267693 # Caleb Maclennan <caleb@alerque.com> (@alerque)
@@ -82,9 +80,12 @@ _pick() {
 }
 
 package_lib32-harfbuzz() {
-  depends+=(
-    libfreetype.so
-    libg{lib,object}-2.0.so
+  depends=(
+    harfbuzz
+    lib32-freetype2 libfreetype.so
+    lib32-gcc-libs
+    lib32-glib2 libg{lib,object}-2.0.so
+    lib32-glibc
   )
   provides=(libharfbuzz{,-{subset,gobject,raster,vector}}.so)
 
@@ -107,13 +108,11 @@ package_lib32-harfbuzz-cairo() {
   pkgdesc+=" - Cairo integration"
   depends=(
     harfbuzz-cairo
-    lib32-cairo
+    lib32-cairo libcairo.so
     lib32-freetype2
     lib32-glib2
     lib32-glibc
-    lib32-harfbuzz
-    libcairo.so
-    libharfbuzz.so
+    lib32-harfbuzz libharfbuzz.so
   )
   provides=(libharfbuzz-cairo.so)
 
@@ -127,10 +126,8 @@ package_lib32-harfbuzz-icu() {
   depends=(
     harfbuzz-icu
     lib32-glibc
-    lib32-harfbuzz
-    lib32-icu
-    libharfbuzz.so
-    libicuuc.so
+    lib32-harfbuzz libharfbuzz.so
+    lib32-icu libicuuc.so
   )
   provides=(libharfbuzz-icu.so)
 
