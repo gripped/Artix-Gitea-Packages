@@ -1,10 +1,10 @@
 ---
-version: 6.6.2.3-2
+version: 6.6.2.3-3
 pkgbase:
   name: sonic-desktop-interface
   pkgdesc: Sonic Desktop Interface
   pkgver: 6.6.2.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/Sonic-DE/sonic-desktop-interface
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
     - libibus
     - packagekit-qt6
     - scim
-    - wayland-protocols
     - xf86-input-libinput
     - xorg-server-devel
+    - git
   depends:
     - attica
     - baloo
@@ -105,8 +105,7 @@ pkgbase:
   conflicts:
     - plasma-desktop
   source:
-    - https://github.com/Sonic-DE/sonic-desktop-interface/archive/refs/tags/6.6.2.3.tar.gz
-    - no-wayland.patch::https://patch-diff.githubusercontent.com/raw/Sonic-DE/sonic-desktop-interface/pull/9.patch
+    - git+https://github.com/artist4xlibre/sonic-desktop-interface.git#commit=e1a6b130bbac2dbea607fe7c978a3051158aff86
   sha256sums:
     - 9e83c8e0bfcabdafab8ec75df14477dcaef092b6fe29d2570b56aa7fd795702d
     - e58db907d604a8c7371f1b66ce9646eacc7dac22e537f6d90af98199c611ed9a

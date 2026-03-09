@@ -2,7 +2,7 @@
 
 pkgname=sonic-desktop-interface
 pkgver=6.6.2.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Sonic Desktop Interface'
 arch=(x86_64)
 url="https://github.com/Sonic-DE/$pkgname"
@@ -89,18 +89,17 @@ makedepends=(extra-cmake-modules
              libibus
              packagekit-qt6
              scim
-             wayland-protocols
              xf86-input-libinput
              xorg-server-devel)
 groups=(sonicde)
 conflicts=(plasma-desktop)
 provides=(plasma-desktop)
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz"
-        "no-wayland.patch::https://patch-diff.githubusercontent.com/raw/Sonic-DE/sonic-desktop-interface/pull/9.patch")
+#source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
+makedepends+=(git)
+source=("git+https://github.com/artist4xlibre/sonic-desktop-interface.git#commit=e1a6b130bbac2dbea607fe7c978a3051158aff86")
 
 prepare() {
-  cd $pkgname-$pkgver
-  patch -Np1 -i ../no-wayland.patch
+  mv $pkgname $pkgname-$pkgver
 }
 
 build() {
