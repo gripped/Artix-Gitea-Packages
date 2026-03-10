@@ -1,10 +1,10 @@
 ---
-version: 0.15.2-2.1
+version: 0.15.2-3
 pkgbase:
   name: zig
   pkgdesc: a general-purpose programming language and toolchain for maintaining robust, optimal, and reusable software
   pkgver: 0.15.2
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://ziglang.org/
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - eb30e0eb00e6ced4c99383f0658a0351f42882e303300ed1828d162d27171cd0
 pkgname:
   - name: zig
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
