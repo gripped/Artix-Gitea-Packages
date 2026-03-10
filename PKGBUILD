@@ -32,7 +32,7 @@ arch=(
 license=("Apache-2.0 OR MIT")
 depends=(
   bash
-  compiler-rt21
+  compiler-rt
   curl
   gcc
   glibc
@@ -40,16 +40,16 @@ depends=(
   libgit2
   libssh2
   libstdc++
-  lld21
+  lld
   llvm21-libs
   openssl
   zlib
 )
 makedepends=(
-  clang21
+  clang
   cmake
   libffi
-  llvm21
+  llvm
   musl
   ninja
   perl

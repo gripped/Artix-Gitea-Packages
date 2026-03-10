@@ -18,10 +18,10 @@ pkgbase:
     - gdb
     - procps-ng
   makedepends:
-    - clang21
+    - clang
     - cmake
     - libffi
-    - llvm21
+    - llvm
     - musl
     - ninja
     - perl
@@ -31,7 +31,7 @@ pkgbase:
     - wasm-component-ld
   depends:
     - bash
-    - compiler-rt21
+    - compiler-rt
     - curl
     - gcc
     - glibc
@@ -39,7 +39,7 @@ pkgbase:
     - libgit2
     - libssh2
     - libstdc++
-    - lld21
+    - lld
     - llvm21-libs
     - openssl
     - zlib
@@ -106,7 +106,7 @@ pkgname:
   - name: rust
     depends:
       - bash
-      - compiler-rt21
+      - compiler-rt
       - curl
       - gcc
       - glibc
@@ -114,7 +114,7 @@ pkgname:
       - libgit2
       - libssh2
       - libstdc++
-      - lld21
+      - lld
       - llvm21-libs
       - openssl
       - zlib
