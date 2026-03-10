@@ -1,10 +1,10 @@
 ---
-version: 4.3.1-5
+version: 4.4.0-1
 pkgbase:
   name: claws-mail
   pkgdesc: A GTK+ based e-mail client
-  pkgver: 4.3.1
-  pkgrel: 5
+  pkgver: 4.4.0
+  pkgrel: 1
   url: https://www.claws-mail.org
   install: claws-mail.install
   arch:
@@ -71,15 +71,15 @@ pkgbase:
   provides:
     - claws
   source:
-    - https://www.claws-mail.org/download.php?file=releases/claws-mail-4.3.1.tar.xz
-    - https://www.claws-mail.org/download.php?file=releases/claws-mail-4.3.1.tar.xz.asc
+    - https://www.claws-mail.org/download.php?file=releases/claws-mail-4.4.0.tar.xz
+    - https://www.claws-mail.org/download.php?file=releases/claws-mail-4.4.0.tar.xz.asc
     - bash_completion
   validpgpkeys:
     - D04526CE8C87436EBBC51588E0E355F76BE234CA
   sha256sums:
-    - d8adf210c767ab58252dfc5ab3c69e603d7ffdb7281a1e3340d2d86062f468a6
+    - 03e0549d5f0fcd7a59804186524105d05ebb5e534d42a4b86a9a90f729ca255b
     - SKIP
     - 3f6c248b8658cd7a62186bff572cce2525712a498f363cbbda1ed459021c28cb
 pkgname:
   - name: claws-mail
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
