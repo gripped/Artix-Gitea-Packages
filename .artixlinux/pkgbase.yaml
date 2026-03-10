@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.2.3-1
+    version: 2.2.6-1
     packages:
-      - ddcutil-2.2.3-1-x86_64.pkg.tar.zst
+      - ddcutil-2.2.6-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.2.5-2
