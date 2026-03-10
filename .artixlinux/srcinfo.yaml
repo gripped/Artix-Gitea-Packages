@@ -1,9 +1,9 @@
 ---
-version: 2.4.2-1
+version: 2.4.3-1
 pkgbase:
   name: python-numpy
   pkgdesc: Scientific tools for Python
-  pkgver: 2.4.2
+  pkgver: 2.4.3
   pkgrel: 1
   url: https://www.numpy.org/
   arch:
@@ -28,7 +28,7 @@ pkgbase:
   optdepends:
     - 'blas-openblas: faster linear algebra'
   source:
-    - git+https://github.com/numpy/numpy#tag=v2.4.2
+    - git+https://github.com/numpy/numpy#tag=v2.4.3
     - numpy-meson::git+https://github.com/numpy/meson.git
     - numpy-highway::git+https://github.com/google/highway.git
     - numpy-x86-simd-sort::git+https://github.com/intel/x86-simd-sort
@@ -36,7 +36,7 @@ pkgbase:
     - numpy-svml::git+https://github.com/numpy/SVML.git
     - numpy-pythoncapi-compat::git+https://github.com/python/pythoncapi-compat
   sha512sums:
-    - 13fa8aa7b69a57921cf709c0146fb835cb2cd20b2953b8b58ca82ba49e21d22084a806c416a01842f399619f2b67e143516744d62f948c972ca7176dbeeaf89c
+    - daefbc67b6b7aab3c17790a6f22594faf4b36d5c1967b223f6bd0701bdf61ab3c2dfc84492bb5849dd1ad61050589c2f2d410fa37bbda3f73315fcb4895c19e9
     - SKIP
     - SKIP
     - SKIP
@@ -45,4 +45,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-numpy
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
