@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 9.2.0081-2
+    packages:
+      - vim-9.2.0081-2-x86_64.pkg.tar.zst
+      - gvim-9.2.0081-2-x86_64.pkg.tar.zst
+      - vim-runtime-9.2.0081-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: 9.2.0038-1
