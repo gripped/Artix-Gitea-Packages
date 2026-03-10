@@ -41,7 +41,7 @@ depends=(
   libssh2
   libstdc++
   lld
-  llvm21-libs
+  llvm-libs
   openssl
   zlib
 )

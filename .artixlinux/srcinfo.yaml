@@ -40,7 +40,7 @@ pkgbase:
     - libssh2
     - libstdc++
     - lld
-    - llvm21-libs
+    - llvm-libs
     - openssl
     - zlib
   options:
@@ -115,7 +115,7 @@ pkgname:
       - libssh2
       - libstdc++
       - lld
-      - llvm21-libs
+      - llvm-libs
       - openssl
       - zlib
       - libcurl.so
