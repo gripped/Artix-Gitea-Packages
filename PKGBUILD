@@ -2,7 +2,7 @@
 
 _name=binaryornot
 pkgname=python-binaryornot
-pkgver=0.5.0
+pkgver=0.6.0
 pkgrel=1
 pkgdesc="Ultra-lightweight pure Python package to check if a file is binary or text"
 arch=(any)
@@ -17,12 +17,13 @@ makedepends=(
 checkdepends=(
   python-hypothesis
   python-pytest
+  uv
 )
 source=(
   $_name-$pkgver-$pkgrel.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz
 )
-sha512sums=('33a8d7c9144cb85c74903e7354ba0daeae2af682c383bb0f5fe07baece958055134bb7c8ec3be8f4700a39a6a169e98a22f0ff1f02d72a6a71b1624c7c51833e')
-b2sums=('46cbc2d98c0ed36e2264fdd7e7cd43df593a2699af7e29b26289dc4e6a0d54840083a2fd7d041b48e80e9530499311f8a4ab57800c89cdd31295940ce05af61b')
+sha512sums=('ccc823895ee23b0bd748b6a780cdc5adaf5961237ab45b4c8f26ccf5a7e78c1a42a58097a548ee6adffb44e9195c82028cb3182de0d23c49ec7494c4d700fde5')
+b2sums=('199e7407289327ea2ae81d7040e008cd970896fe9774abad44c650feac8dd38b8a9bca54c943520e516064de9dba1f32d21237ba174f6f530f4d3640a9d7ad2d')
 
 build() {
   cd $_name-$pkgver
