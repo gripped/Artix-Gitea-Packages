@@ -9,7 +9,7 @@ pkgname=(
   postgresql-docs
 )
 pkgver=18.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Sophisticated object-relational DBMS"
 url="https://www.postgresql.org/"
 arch=(x86_64)
@@ -30,6 +30,7 @@ depends=(
   numactl libnuma.so
   openssl libcrypto.so libssl.so
   pam libpam.so
+ 
   util-linux-libs
   zlib libz.so
   zstd libzstd.so
@@ -44,6 +45,7 @@ makedepends=(
   perl-ipc-run
   python
   readline
+ 
   tcl
   util-linux
 )
