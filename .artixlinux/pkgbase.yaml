@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -22,8 +22,12 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.36.1-2
+    packages:
+      - bcc-0.36.1-2-x86_64.pkg.tar.zst
+      - bcc-libbpf-tools-0.36.1-2-x86_64.pkg.tar.zst
+      - bcc-examples-0.36.1-2-x86_64.pkg.tar.zst
+      - python-bcc-0.36.1-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
