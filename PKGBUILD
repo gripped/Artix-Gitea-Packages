@@ -19,7 +19,7 @@ pkgname=(
   rust-aarch64-musl
 )
 pkgver=1.94.0
-pkgrel=2
+pkgrel=1
 epoch=1
 pkgdesc="Systems programming language focused on safety, speed and concurrency"
 url=https://www.rust-lang.org/
@@ -32,7 +32,7 @@ arch=(
 license=("Apache-2.0 OR MIT")
 depends=(
   bash
-  compiler-rt
+  compiler-rt21
   curl
   gcc
   glibc
@@ -40,16 +40,16 @@ depends=(
   libgit2
   libssh2
   libstdc++
-  lld
-  llvm-libs
+  lld21
+  llvm21-libs
   openssl
   zlib
 )
 makedepends=(
-  clang
+  clang21
   cmake
   libffi
-  llvm
+  llvm21
   musl
   ninja
   perl

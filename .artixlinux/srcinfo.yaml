@@ -1,10 +1,10 @@
 ---
-version: 1:1.94.0-2
+version: 1:1.94.0-1
 pkgbase:
   name: rust
   pkgdesc: Systems programming language focused on safety, speed and concurrency
   pkgver: 1.94.0
-  pkgrel: 2
+  pkgrel: 1
   epoch: 1
   url: https://www.rust-lang.org/
   arch:
@@ -18,10 +18,10 @@ pkgbase:
     - gdb
     - procps-ng
   makedepends:
-    - clang
+    - clang21
     - cmake
     - libffi
-    - llvm
+    - llvm21
     - musl
     - ninja
     - perl
@@ -31,7 +31,7 @@ pkgbase:
     - wasm-component-ld
   depends:
     - bash
-    - compiler-rt
+    - compiler-rt21
     - curl
     - gcc
     - glibc
@@ -39,8 +39,8 @@ pkgbase:
     - libgit2
     - libssh2
     - libstdc++
-    - lld
-    - llvm-libs
+    - lld21
+    - llvm21-libs
     - openssl
     - zlib
   options:
@@ -106,7 +106,7 @@ pkgname:
   - name: rust
     depends:
       - bash
-      - compiler-rt
+      - compiler-rt21
       - curl
       - gcc
       - glibc
@@ -114,8 +114,8 @@ pkgname:
       - libgit2
       - libssh2
       - libstdc++
-      - lld
-      - llvm-libs
+      - lld21
+      - llvm21-libs
       - openssl
       - zlib
       - libcurl.so
