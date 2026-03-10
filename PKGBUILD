@@ -5,29 +5,29 @@
 
 pkgname=orca
 pkgver=49.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Screen reader for individuals who are blind or visually impaired"
 url="https://orca.gnome.org/"
 arch=(any)
 license=(LGPL-2.1-or-later)
 depends=(
   at-spi2-core
-  brltty
   glib2
   gobject-introspection-runtime
   gsettings-desktop-schemas
-  gstreamer
   gst-plugins-base # playbin, audiotestsrc, basic decoders
   gst-plugins-good # pulsesink, more decoders
+  gstreamer
   gtk3
   hicolor-icon-theme
   liblouis
   libwnck3
   pango
   python
+  python-brltty
   python-cairo
-  python-dbus
   python-dasbus
+  python-dbus
   python-gobject
   python-psutil
   python-setproctitle
