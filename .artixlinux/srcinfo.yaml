@@ -1,9 +1,9 @@
 ---
-version: 0.1.122-1
+version: 0.1.124-1
 pkgbase:
   name: babl
   pkgdesc: Dynamic, any to any, pixel format conversion library
-  pkgver: 0.1.122
+  pkgver: 0.1.124
   pkgrel: 1
   url: https://gegl.org/babl/
   arch:
@@ -19,10 +19,12 @@ pkgbase:
   depends:
     - glibc
     - lcms2
+  provides:
+    - libbabl-0.1.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/babl.git#tag=BABL_0_1_122
+    - git+https://gitlab.gnome.org/GNOME/babl.git#tag=BABL_0_1_124
   sha256sums:
-    - 0119e0c4c707f61a5244d649a0d22a385b5e43ed3292f12a76b82c9a22a2bff6
+    - c40233426616713f6e0003e6162796a510f20fadaefec6130814433da8cdb1c5
 pkgname:
   - name: babl
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
