@@ -1,0 +1,75 @@
+---
+version: 0.5.0-2
+pkgbase:
+  name: libopenshot
+  pkgdesc: A video editing, animation, and playback library for C++, Python, and Ruby
+  pkgver: 0.5.0
+  pkgrel: 2
+  url: https://github.com/openshot/libopenshot
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - catch2
+    - cmake
+    - cppzmq
+    - doxygen
+    - ffmpeg4.4
+    - jsoncpp
+    - libopenshot-audio
+    - protobuf
+    - python-setuptools
+    - swig
+    - unittestpp
+    - xorg-server-xvfb
+    - zeromq
+  depends:
+    - babl
+    - gcc-libs
+    - glibc
+    - libmagick
+    - opencv
+    - python
+    - resvg
+    - qt5-base
+    - qt6-base
+    - qt5-multimedia
+    - qt5-svg
+  provides:
+    - libopenshot.so
+  source:
+    - https://github.com/openshot/libopenshot/archive/v0.5.0/libopenshot-0.5.0.tar.gz
+  sha512sums:
+    - 6a19717ed9f1602e0c3737a69b7664de0a36f837e2cbcf3d9275b28001306ea75bc0cd45306221d5134913ac1173ee764e74a321e07045eca177d52355a70dd9
+  b2sums:
+    - e667138e67debeb0161ac221744009f5112abdcd10689a14195fd21319874000c5fde3d69ea10900ddec71f21f991657e867929486b87fde78928a42a0597dbb
+pkgname:
+  - name: libopenshot
+    depends:
+      - babl
+      - gcc-libs
+      - glibc
+      - libmagick
+      - opencv
+      - python
+      - resvg
+      - qt5-base
+      - qt6-base
+      - qt5-multimedia
+      - qt5-svg
+      - ffmpeg4.4
+      - libavcodec.so
+      - libavformat.so
+      - libavutil.so
+      - libswscale.so
+      - libswresample.so
+      - jsoncpp
+      - libjsoncpp.so
+      - libopenshot-audio
+      - libopenshot-audio.so
+      - protobuf
+      - libprotobuf.so
+      - zeromq
+      - libzmq.so
+# generated with artixpkg 0.38.2-1-any
