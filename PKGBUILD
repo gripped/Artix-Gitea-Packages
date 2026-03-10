@@ -7,7 +7,7 @@ pkgname=(
   postgresql-old-upgrade
 )
 pkgver=17.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Older PostgreSQL for migrating major versions with pg_upgrade"
 url="https://www.postgresql.org/"
 arch=(x86_64)
@@ -39,11 +39,11 @@ makedepends=(
 source=(
   https://ftp.postgresql.org/pub/source/v${pkgver}/postgresql-${pkgver}.tar.bz2
 )
-md5sums=('e443d2b4a7edb8dbcbbe7a05a712d881')
-sha256sums=('3b9a62538a8da151e807a3ddb1198e8605f2032544d78f403ae883d27ecf1ee4')
 b2sums=('e5deeed82f710b38ed959a2f873e8ac0c27fc68b2ced22f70e9e89a34e473e1368231328351d300e617e61554cce68a8cec3731e6d3b31c620f93a2b2672470d')
 
 # PostgreSQL releases are unsigned and only provide these sums
+md5sums=('e443d2b4a7edb8dbcbbe7a05a712d881')
+sha256sums=('3b9a62538a8da151e807a3ddb1198e8605f2032544d78f403ae883d27ecf1ee4')
 
 prepare() {
   cd postgresql-${pkgver}
