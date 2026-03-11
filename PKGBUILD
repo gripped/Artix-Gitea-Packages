@@ -1,45 +1,42 @@
-# Maintainer: Eli Schwartz <eschwartz@archlinux.org>
-
-# All my PKGBUILDs are managed at https://github.com/eli-schwartz/pkgbuilds
+# Maintainer: Morgan <morganamilo@archlinux.org>
+# Co-Maintainer: Andreas Baumann <mail@andreasbaumann.cc>
+# Contributor: Eli Schwartz <eschwartz@archlinux.org>
 
 pkgname=pacman-static
-pkgver=7.0.0.r6.gc685ae6
-_cares_ver=1.34.5
-_nghttp2_ver=1.65.0
-_curlver=8.13.0
-_sslver=3.5.0
-_zlibver=1.3.1
-_xzver=5.8.1
+pkgver=7.1.0.r9.g54d9411
+_nghttp2_ver=1.68.0
+_curlver=8.18.0
+_sslver=3.6.1
+_zlibver=1.3.2
+_xzver=5.8.2
 _bzipver=1.0.8
 _zstdver=1.5.7
-_libarchive_ver=3.7.9
-_gpgerrorver=1.53
+_libarchive_ver=3.8.5
+_gpgerrorver=1.59
 _libassuanver=3.0.0
-_gpgmever=1.24.2
-pkgrel=17
+_gpgmever=2.0.1
+_libseccompver=2.6.0
+pkgrel=6
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
-_git_tag=7.0.0
-_git_patch_level_commit=c685ae6412af04cae1eaa5d6bda8c277c7ffb8c8
+_git_tag=7.1.0
+_git_patch_level_commit=54d94116164b0b2202c6061c4a59c6f3e70820d8
 pkgdesc="Statically-compiled pacman (to fix or install systems without libc)"
 arch=('i486' 'i686' 'pentium4' 'x86_64' 'arm' 'armv6h' 'armv7h' 'aarch64')
 url="https://www.archlinux.org/pacman/"
 license=('GPL-2.0-or-later')
 depends=('pacman')
-makedepends=('meson' 'musl' 'kernel-headers-musl' 'git')
+makedepends=('meson' 'musl' 'kernel-headers-musl' 'git' 'gperf')
 options=('!emptydirs' '!lto')
 
 # pacman
 source=("git+https://gitlab.archlinux.org/pacman/pacman.git#tag=v${_git_tag}?signed"
-        pacman-revertme-makepkg-remove-libdepends-and-libprovides.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/354a300cd26bb1c7e6551473596be5ecced921de.patch)
+        pacman-revertme-makepkg-remove-libdepends-and-libprovides.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/354a300cd26bb1c7e6551473596be5ecced921de.patch
+        pacman-reproducible-builds.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/f4bdb77470528019aaba4d8b8f947e918c6db17d.patch)
 
 validpgpkeys=('6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD'  # Allan McRae <allan@archlinux.org>
               'B8151B117037781095514CA7BBDFFC92306B1121') # Andrew Gregory (pacman) <andrew@archlinux.org>
 # nghttp2
 source+=("https://github.com/nghttp2/nghttp2/releases/download/v$_nghttp2_ver/nghttp2-$_nghttp2_ver.tar.xz")
-# c-ares
-source+=("https://github.com/c-ares/c-ares/releases/download/v${_cares_ver}/c-ares-${_cares_ver}.tar.gz"{,.asc})
-validpgpkeys+=('27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2'  # Daniel Stenberg <daniel@haxx.se>
-               'DA7D64E4C82C6294CB73A20E22E3D13B5411B7CA') # Brad House <brad@brad-house.com>
 # curl
 source+=("https://curl.haxx.se/download/curl-${_curlver}.tar.gz"{,.asc})
 validpgpkeys+=('27EDEAF22F3ABCEB50DB9A125CC908FDB71E12C2') # Daniel Stenberg
@@ -55,7 +52,7 @@ validpgpkeys+=('8657ABB260F056B1E5190839D9C4D26D0E604491'
 
 validpgpkeys+=('8657ABB260F056B1E5190839D9C4D26D0E604491'  # Matt Caswell <matt@openssl.org>
               '7953AC1FBC3DC8B3B292393ED5E9E43F7DF9EE8C'   # Matt Caswell <matt@openssl.org>
-              'A21FAB74B0088AA361152586B8EF1A6BA9DA2D5C'   # Tomá? Mráz <tm@t8m.info>
+              'A21FAB74B0088AA361152586B8EF1A6BA9DA2D5C'   # Tom?? Mr?z <tm@t8m.info>
               'EFC0A467D613CB83C7ED6D30D894E2CE8B3D79F5')  # OpenSSL security team key
 # zlib
 source+=("https://zlib.net/zlib-${_zlibver}.tar.gz"{,.asc})
@@ -81,35 +78,39 @@ source+=("https://www.gnupg.org/ftp/gcrypt/gpgme/gpgme-${_gpgmever}.tar.bz2"{,.s
 validpgpkeys+=('AC8E115BF73E2D8D47FA9908E98E9B2D19C6C8BD') #  Niibe Yutaka (GnuPG Release Key)
 # libarchive
 source+=("https://github.com/libarchive/libarchive/releases/download/v${_libarchive_ver}/libarchive-${_libarchive_ver}.tar.xz"{,.asc})
-validpgpkeys+=('A5A45B12AD92D964B89EEE2DEC560C81CEC2276E'  # Martin Matuska <mm@FreeBSD.org>
-              'DB2C7CF1B4C265FAEF56E3FC5848A18B8F14184B') # Martin Matuska <martin@matuska.org>
+validpgpkeys+=('DB2C7CF1B4C265FAEF56E3FC5848A18B8F14184B'  # Martin Matuska <martin@matuska.org>
+              '659C84C0E23EA1FA97E0B58CC040B508D63D2B36') # Martin Matuska <mm@FreeBSD.org>
+# libseccomp
+source+=(git+https://github.com/seccomp/libseccomp.git#tag=v${_libseccompver}?signed)
+validpgpkeys+=('7100AADFAE6E6E940D2E0AD655E45A5AE8CA7C8A' # Paul Moore <paul@paul-moore.com>
+              '47A68FCE37C7D7024FD65E11356CE62C2B524099') # Tom Hromatka <tom.hromatka@oracle.com>
 
-sha512sums=('44e00c2bc259fe6a85de71f7fd8a43fcfd1b8fb7d920d2267bd5b347e02f1dab736b3d96e31faf7b535480398e2348f7c0b9914e51ca7e12bab2d5b8003926b4'
+sha512sums=('512c5096c82e00730c884e5d4d452928a66d35b42a831a2b4b8b17af9215140d6b21b2d2de7233eefae70edb8ddd8fc4d4c750bda1ba0235489bc427396c04ba'
             '1a108c4384b6104e627652488659de0b1ac3330640fc3250f0a283af7c5884daab187c1efc024b2545262da1911d2b0b7b0d5e4e5b68bb98db25a760c9f1fb1a'
-            'e1ef685a425017474ea0412c8ad13a217a45a320322b3aee48e646be21457d9b1f374abb9f681f47595a0ad8feb07d076bd0aa3279d35c5c9b5b8c921d8dd39e'
-            '386709e9f405034cb16ba514f9792e89992be52b24a237e6c51f1032e4ca99a8c57b1c3038d6f0a205202a3bfb1246bb95ff0d5e6fc0ee2bba1cb17f6677f97f'
+            '7ca20c2ab350f72552544004b37c5c920ae32b852e7f5315b8b29ee8acb86ca8e1f9f9678792842723908e3cb894f63904af8488cb4d49066a3dba5fc14518aa'
+            'a5182c2c54cdff3c70bdad204bff9a573cf7951e189d68665087f047cb79e5fc2d5d5aefbb41e2dfe264e2e74fbbe10196cb596248e328c944406ca09da98344'
+            '84f193f28369ccb7fba0d8933cfc24f5fbb282b046e7e8c2c1a0da35db8ec13d17e6407c240ce3a12cf4dccac62e5919bd98f3add77065408c6259cfe1071575'
             'SKIP'
-            '718e3d70dbab8a62f506a90c608e57d541baac0ac5c2c4fae0a59fca4e4f31ef4f73f76f00a9ee0e339e7a9bd5dea9643090d3ab3ff5ca1631d1be0e2de15b31'
-            'SKIP'
-            '39cc80e2843a2ee30f3f5de25cd9d0f759ad8de71b0b39f5a679afaaa74f4eb58d285ae50e29e4a27b139b49343ac91d1f05478f96fb0c6b150f16d7b634676f'
+            '492cd2e0a7506e085d9840a929ead994390409a35c24e47e0cf44987920711b61f1513f21b7eee50e56f226b26cd654cda6dbd1f6e439563a93a8f0e530fefb5'
             'SKIP'
             'b1873dbb7a49460b007255689102062756972de5cc2d38b12cc9f389b6be412da6797579b1acd3717a8cd2ee118fd9801b94e55f063d4328f050f0876a5eb53c'
             'b5887ea77417fae49b6cb1e9fa782d3021f268d5219701d87a092235964f73fa72a31428b630445517f56f2bb69dcbbb24119ef9dbf8b4e40a753369a9f9a16f'
-            '580677aad97093829090d4b605ac81c50327e74a6c2de0b85dd2e8525553f3ddde17556ea46f8f007f89e435493c9a20bc997d1ef1c1c2c23274528e3c46b94f'
+            '70963771ea5d763614278a69b474f09b7d237ef8f53b675a10fe31d9923aeef601504b35d7ebd1b1e7f347e9ebb048e6b3b47fffdf137e7bdc7e8d5eb4ec4692'
             'SKIP'
-            'b9a0f746215cd93c04fecd390ca44fc281d892b989e740ec6abbaa6a1eb457bbef40a33596dfe6e2285a319f2b09ae1994d778f0cf61114cbee9454a0eaa754b'
+            '328fe243e5701ac8216d21168a9e17ea9475cc08b27659c18b68230d8ddd0fffa9f831c576b08c160774fe2c4795604f82b64113e7f84db417b4bd26a4dae2c1'
             '083f5e675d73f3233c7930ebe20425a533feedeaaa9d8cc86831312a6581cefbe6ed0d08d2fa89be81082f2a5abdabca8b3c080bf97218a1bd59dc118a30b9f3'
             'SKIP'
             '2af02be3df319556b65403450acc55964d971fe263fed87dea823fb264a862db807a2a3d89358564277a83e5b303302cc677f66b5e523e3d224120b884e5ef1b'
             'SKIP'
-            'e42b013eaa4af3bbd7085eff4b9fa980052f7efebe98e512728b6079be85ae156f040acbb0bb16f0b9113b512e0c7e6fb4762c0593a4a154183965901e81f552'
+            '86a2b4f94928e88aab23c84e0febb702453617edf3cddf45d0ed9ea817007085a6d132214fd2c855d816ec296514401157e89dab2790aea1edf5c376ea7e1f56'
             'SKIP'
             '7c5c95c1b85bef2d4890c068a5a8ea8a1fe0d8def6ab09e5f34fc2746d8808bbb0fc168e3bd66d52ee5ed799dcf9f258f4125cda98c8384f6411bcad8d8b3139'
             'SKIP'
-            'ad69101d1fceef6cd1dd6d5348f6f2be06912da6b6a7d0fece3ce08cf35054e6953b80ca9c4748554882892faa44e7c54e705cf25bbf2b796cd4ad12b09da185'
+            'ad19169594b6048b11df9311080e179232ff03def08f377e7d7536a3a91e12f722cbae93e80364b73db013152b327bc3457ec9a9ddea9c660d74f389f6ab8837'
             'SKIP'
-            'd8918445e2536eb29c2d6a6c8cd3671a8525be1619009a2e7c3a9c2a821b51939172dfccc25bfd62fec2a17fb01796b4f522b0ba72b31e3de9b9658c44c46345'
-            'SKIP')
+            'b050ca8488143503bdec38ffcab7a5010af61f1b93c1207a3fa006d72d643b84aa8c1ab267e890eb39966ccaedd6e18db8fe5b02f2789bbd1b318a3c4cf138f3'
+            'SKIP'
+            '34d33f96df79b4e6bb3112bc01d5991fb8045e2af43568f8a6bf02481c0e9295c71987ee17ef49d1fc32a870632acc2c233a851316ecfc9a212095868de24e33')
 
 export LDFLAGS="$LDFLAGS -static"
 export CC=musl-gcc
@@ -205,7 +206,12 @@ build() {
             openssltarget='linux-aarch64'
             optflags='no-afalgeng'
             ;;
+        riscv64)
+            openssltarget='linux64-$CARCH'
+            optflags=''
+            ;;
     esac
+
     # mark stack as non-executable: http://bugs.archlinux.org/task/12434
     ./Configure --prefix="${srcdir}"/temp/usr \
                 --openssldir=/etc/ssl \
@@ -234,6 +240,7 @@ build() {
     install -Dvm644 bzlib.h "${srcdir}"/temp/usr/include/
     install -Dvm644 libbz2.a "${srcdir}"/temp/usr/lib/
 
+    # zstd
     cd "${srcdir}"/zstd-${_zstdver}/lib
     make libzstd.a
     make PREFIX="${srcdir}"/temp/usr install-pc install-static install-includes
@@ -262,20 +269,10 @@ build() {
     ./configure --prefix="${srcdir}"/temp/usr \
         --disable-shared \
         --disable-examples \
-        --disable-python-bindings
+        --disable-python-bindings \
+        --enable-lib-only
     make -C lib
     make -C lib install
-
-    # c-ares
-    # needed for curl, which does not use it in the repos
-    # but seems to be needed for static builds
-    cd "${srcdir}"/c-ares-${_cares_ver}
-    ./configure --prefix="${srcdir}"/temp/usr \
-        --disable-shared
-    make -C src/lib
-    make install-pkgconfigDATA
-    make -C src/lib install
-    make -C include install
 
     # curl
     cd "${srcdir}"/curl-${_curlver}
@@ -283,11 +280,11 @@ build() {
     ./configure --prefix="${srcdir}"/temp/usr \
                 --disable-shared \
                 --with-ca-bundle=/etc/ssl/certs/ca-certificates.crt \
+                --enable-{ipv6,threaded-resolver} \
                 --disable-{dict,gopher,imap,ldap,ldaps,manual,pop3,rtsp,smb,smtp,telnet,tftp} \
-                --without-{brotli,libidn2,librtmp,libssh2,libpsl} \
+                --without-{brotli,libidn2,librtmp,libssh2,libpsl,gssapi,nghttp3,ngtcp2} \
                 --disable-libcurl-option \
-                --with-openssl \
-                --enable-ares="${srcdir}"/temp/usr
+                --with-openssl
     make -C lib
     make install-pkgconfigDATA
     make -C lib install
@@ -312,9 +309,19 @@ build() {
     ./configure --prefix="${srcdir}"/temp/usr \
         --disable-fd-passing \
         --disable-shared \
-        --disable-languages
+        --disable-languages \
+        --disable-gpgsm-test
     make -C src
     make -C src install-{binSCRIPTS,libLTLIBRARIES,nodist_includeHEADERS,pkgconfigDATA}
+
+    # libseccomp for sanboxing
+    cd "${srcdir}/libseccomp"
+    autoreconf -fiv
+    ./configure --prefix="${srcdir}"/temp/usr \
+        --disable-shared --enable-static \
+        --disable-python
+    make
+    make install
 
     # ew libtool
     rm "${srcdir}"/temp/usr/lib/lib*.la

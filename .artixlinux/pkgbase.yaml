@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.0.0.r6.gc685ae6-17
+    version: 7.1.0.r9.g54d9411-6
     packages:
-      - pacman-static-7.0.0.r6.gc685ae6-17-x86_64.pkg.tar.xz
+      - pacman-static-7.1.0.r9.g54d9411-6-x86_64.pkg.tar.xz
     debug: []
