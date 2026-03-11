@@ -1,0 +1,25 @@
+---
+version: 0.64-1
+pkgbase:
+  name: distro-info-data
+  pkgdesc: Information about all releases of Debian and Ubuntu (data files)
+  pkgver: 0.64
+  pkgrel: 1
+  url: https://salsa.debian.org/debian/distro-info-data
+  arch:
+    - any
+  license:
+    - ISC
+  checkdepends:
+    - python
+  makedepends:
+    - git
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://salsa.debian.org/debian/distro-info-data.git#tag=debian/0.64
+  sha256sums:
+    - 7055421abc24b45fad41998fc5eb3b5590ecbf4ecd275ef6f5bbf5cf6097089e
+pkgname:
+  - name: distro-info-data
+# generated with artixpkg 0.38.2-1-any
