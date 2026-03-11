@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 9.4.0-1
+    version: 9.4.0-2
     packages:
-      - gradle-9.4.0-1-any.pkg.tar.zst
-      - gradle-doc-9.4.0-1-any.pkg.tar.zst
-      - gradle-src-9.4.0-1-any.pkg.tar.zst
+      - gradle-9.4.0-2-any.pkg.tar.zst
+      - gradle-doc-9.4.0-2-any.pkg.tar.zst
+      - gradle-src-9.4.0-2-any.pkg.tar.zst
     debug: []
   world:
     version: 9.3.1-1

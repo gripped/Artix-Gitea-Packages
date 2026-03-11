@@ -1,10 +1,10 @@
 ---
-version: 9.4.0-1
+version: 9.4.0-2
 pkgbase:
   name: gradle
   pkgdesc: Powerful build system for the JVM
   pkgver: 9.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gradle.org/
   arch:
     - any

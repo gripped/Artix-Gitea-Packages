@@ -6,7 +6,7 @@
 pkgbase=gradle
 pkgname=('gradle' 'gradle-doc' 'gradle-src')
 pkgver=9.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Powerful build system for the JVM'
 url='https://gradle.org/'
 arch=('any')
@@ -75,10 +75,10 @@ package_gradle() {
   install -d "${pkgdir}"/usr/share/java/${pkgname}/init.d
   install -d "${pkgdir}"/usr/bin
 
-  # copy across jar files
-  install -Dm 644 lib/*.jar "${pkgdir}"/usr/share/java/${pkgname}/lib
-  install -Dm 644 lib/plugins/*.jar "${pkgdir}"/usr/share/java/${pkgname}/lib/plugins
-  install -Dm 644 lib/agents/*.jar "${pkgdir}"/usr/share/java/${pkgname}/lib/agents
+  # copy across jar files and module descriptor properties files
+  install -Dm 644 lib/*.jar lib/*.properties "${pkgdir}"/usr/share/java/${pkgname}/lib
+  install -Dm 644 lib/plugins/*.jar lib/plugins/*.properties "${pkgdir}"/usr/share/java/${pkgname}/lib/plugins
+  install -Dm 644 lib/agents/*.jar lib/agents/*.properties "${pkgdir}"/usr/share/java/${pkgname}/lib/agents
 
   # copy across supporting text documentation and scripts
   install -m 644 NOTICE "${pkgdir}"/usr/share/java/${pkgname}
