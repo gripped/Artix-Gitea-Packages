@@ -1,10 +1,10 @@
 ---
-version: 0.4.66-2
+version: 0.4.68-1
 pkgbase:
   name: gegl
   pkgdesc: Graph based image processing framework
-  pkgver: 0.4.66
-  pkgrel: 2
+  pkgver: 0.4.68
+  pkgrel: 1
   url: https://www.gegl.org/
   arch:
     - x86_64
@@ -22,35 +22,62 @@ pkgbase:
     - gi-docgen
   depends:
     - babl
+    - libbabl-0.1.so
     - cairo
-    - gcc-libs
+    - libcairo.so
     - gdk-pixbuf2
+    - libgdk_pixbuf-2.0.so
     - glib2
+    - libgio-2.0.so
+    - libglib-2.0.so
+    - libgmodule-2.0.so
+    - libgobject-2.0.so
     - glibc
     - jasper
+    - libjasper.so
     - json-glib
+    - libjson-glib-1.0.so
     - lcms2
+    - liblcms2.so
     - lensfun
+    - libgcc
+    - libgcc_s.so
+    - libgomp.so
+    - libgomp.so
     - libjpeg-turbo
+    - libjpeg.so
     - libpng
+    - libpng16.so
     - libraw
     - librsvg
+    - librsvg-2.so
     - libspiro
+    - libstdc++
+    - libstdc++.so
     - libtiff
+    - libtiff.so
     - libwebp
+    - libwebp.so
     - luajit
     - openexr
     - pango
+    - libpango-1.0.so
+    - libpangocairo-1.0.so
     - poppler-glib
+    - libpoppler-glib.so
     - suitesparse
   optdepends:
     - 'ffmpeg: FFmpeg Frame Loader and FFmpeg Frame Saver plugins'
     - 'graphviz: for gegl-introspect'
     - 'sdl2: SDL2 Display plugin'
+  provides:
+    - libgegl-0.4.so
+    - libgegl-npd-0.4.so
+    - libgegl-sc-0.4.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/gegl.git#tag=GEGL_0_4_66
+    - git+https://gitlab.gnome.org/GNOME/gegl.git#tag=GEGL_0_4_68
   sha256sums:
-    - 607e0744a0c8df6fc7d96189520dc9b2f8711bddc757b3ae4bd94a53a7d1238d
+    - 57b84ca002e64f7dc7f321204ff525376436d9d714ada99755df6942c65309ca
 pkgname:
   - name: gegl
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
