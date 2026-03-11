@@ -1,10 +1,10 @@
 ---
-version: 6.6.9-1.3
+version: 6.6.9-1.8
 pkgbase:
   name: waterfox
   pkgdesc: Fork of Mozilla Firefox featuring some privacy, usability, and speed enhancements.
   pkgver: 6.6.9
-  pkgrel: 1.3
+  pkgrel: 1.8
   url: https://www.waterfox.net/
   arch:
     - x86_64
@@ -15,16 +15,16 @@ pkgbase:
     - clang
     - diffutils
     - dump_syms
+    - git
     - imake
+    - inetutils
     - jack
     - lld
     - llvm
-    - mercurial
     - mesa
     - nasm
     - nodejs
     - python
-    - python-pip
     - rust
     - unzip
     - wasi-compiler-rt
@@ -35,42 +35,68 @@ pkgbase:
     - yasm
     - zip
   depends:
+    - alsa-lib
+    - at-spi2-core
+    - bash
+    - cairo
+    - dbus
+    - ffmpeg
+    - fontconfig
+    - freetype2
+    - gdk-pixbuf2
+    - glib2
+    - glibc
     - gtk3
+    - hicolor-icon-theme
+    - libgcc
+    - libpulse
+    - libstdc++
+    - libx11
+    - libxcb
+    - libxcomposite
+    - libxdamage
+    - libxext
+    - libxfixes
+    - libxrandr
+    - libxss
     - libxt
     - mime-types
-    - dbus-glib
+    - nspr
     - nss
+    - pango
     - ttf-font
-    - libpulse
   optdepends:
     - 'hunspell-en_US: Spell checking, American English'
     - 'libnotify: Notification integration'
     - 'networkmanager: Location detection via available WiFi networks'
-    - 'pulseaudio: Audio support'
     - 'speech-dispatcher: Text-to-Speech'
     - 'xdg-desktop-portal: Screensharing with Wayland'
   options:
+    - '!debug'
     - '!emptydirs'
+    - '!lto'
     - '!makeflags'
     - '!strip'
   source:
-    - waterfox-6.6.9.tar.gz::https://github.com/WaterfoxCo/Waterfox/archive/refs/tags/6.6.9.tar.gz
-    - locales.tar.gz::https://github.com/BrowserWorks/l10n/archive/bce7b1e821ff7f65d914d35f09eee0379f41887d.tar.gz
+    - waterfox-6.6.9.tar.gz::https://github.com/BrowserWorks/waterfox/archive/refs/tags/6.6.9.tar.gz
+    - git+https://github.com/BrowserWorks/l10n.git
     - waterfox.desktop
     - policies.json
     - remove-organization-policy-banner.patch
+    - 0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+    - 0002-Fix-sandbox-to-build-with-glibc-2.43.patch
     - 9002.enable_reader_mode_hotkey.patch
     - 9003.rebind_screenshot_key_to_ctrl_alt_s.patch
-    - license.html
   sha256sums:
     - b491a4009b949abf09d352052e9e1b9d26bf5c05f3dbe5ee8c55ffa0a41c5af0
-    - fa87c5b01d38fddb67a7c3512acf622bc3eef2f90d2ff439cbde6d363849efd2
-    - 3c8a3e73ffcb4670ca25fc7087b9c5d93ebbef2f3be8a33cf81ae424c3f27fa3
-    - 7e7042f0ce7808c72ee1225f709db09764ffeb023b7543d39e1ba7d65dd33cef
+    - SKIP
+    - 1edf74423d201cbfd4162353c2fa040bb29da9db1d3f46d7fd2eff0209140e85
+    - c970c95820226210f60083b28d79db0477d7c290b03e263118971191dc616e86
     - 21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2
+    - 157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852
+    - 404e780b1488625989c6dd8e2234e50ed01401b7cb1e99e79dee87f4f4f584f8
     - 0abdfbbf6040f694507c5e33bc3d2d06ddffdf309ce6f6da9484ae268382f731
     - 8626d64e0250e8121255029097ba5f67e47a9d427e0143b8b8d1df3460a03be6
-    - 9ad654556a5d3a891675863252a368fba5dc1f5bdfb4d2367466f9fd24a07fe5
 pkgname:
   - name: waterfox
 # generated with artixpkg 0.38.2-1-any
