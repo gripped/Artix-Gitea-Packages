@@ -1,0 +1,29 @@
+---
+version: 1.13.1-1
+pkgbase:
+  name: ruby-build-environment
+  pkgdesc: A nested hash data structure for controlling build environments
+  pkgver: 1.13.1
+  pkgrel: 1
+  url: https://github.com/ioquatix/build-environment
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-covered
+    - ruby-sus
+    - ruby-decode
+  makedepends:
+    - git
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/ioquatix/build-environment.git#tag=v1.13.1
+  sha256sums:
+    - 51986e0605dd394d18a59abe67d4d92d7b4b84dd0d84053feb4a888311aca1c4
+pkgname:
+  - name: ruby-build-environment
+# generated with artixpkg 0.38.2-1-any
