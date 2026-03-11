@@ -10,7 +10,7 @@ pkgname=(
   harfbuzz-utils
   harfbuzz-docs
 )
-pkgver=13.0.1
+pkgver=13.1.0
 pkgrel=1
 pkgdesc="OpenType text shaping engine"
 url="https://harfbuzz.github.io/"
@@ -29,6 +29,7 @@ makedepends=(
   gtk-doc
   help2man
   icu
+  libpng
   libstdc++
   meson
   python
@@ -38,8 +39,12 @@ checkdepends=(
   python-fonttools
   python-setuptools
 )
-source=("git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver")
-b2sums=('6b2d6aafce9d55756c04cf07f26ad451b09adae41ed6b994d0fb390e5bca6b68865cfc95ba4ec28a0e00073be47eebf9b0925afb1ac0f2ee8b7d1b6a7c4516ca')
+source=(
+  "git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver"
+  0001-util-Add-missing-chafa_dep-to-hb-raster.patch
+)
+b2sums=('b2670ceedb372c631d2a1771f1ea19c16711530306a7326c4d8f6ba9993515d59ae6bdcf1612fb5365df21f2e6e9495c5a978dfc1f3953ddb81e23ff7c07f769'
+        '09831355f499e6481f8a4de236bcaf0c42f6559fd24fe92310bbb1a928543f332d7808af6167e81e1892940ef776baba20a0e8bb798169e7cb5c58010848b482')
 validpgpkeys=(
   053D20F17CCCA9651B2C6FCB9AB24930C0B997A2 # Khaled Hosny <khaled@aliftype.com> (@khaledhosny)
   9F377DDB6D3153A48EB3EB1E63CC496475267693 # Caleb Maclennan <caleb@alerque.com> (@alerque)
@@ -49,6 +54,9 @@ validpgpkeys=(
 
 prepare() {
   cd harfbuzz
+
+  # Fix build
+  git apply -3 ../0001-util-Add-missing-chafa_dep-to-hb-raster.patch
 }
 
 build() {
@@ -67,7 +75,7 @@ build() {
 
 check() {
   mkdir -p tmp
-  TMPDIR="$PWD/tmp" meson test -C build --print-errorlogs
+  TMPDIR="$PWD/tmp" meson test -C build --print-errorlogs --no-rebuild
   rm -r tmp
 }
 
@@ -87,11 +95,12 @@ package_harfbuzz() {
     glib2 libg{lib,object}-2.0.so
     glibc
     graphite libgraphite2.so
+    libpng libpng16.so
   )
   optdepends=('harfbuzz-utils: utilities')
   provides=(libharfbuzz{,-{subset,gobject,raster,vector}}.so)
 
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build --destdir "$pkgdir" --no-rebuild
 
   ( cd "$pkgdir"
 
