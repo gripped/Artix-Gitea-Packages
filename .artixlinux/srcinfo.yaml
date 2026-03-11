@@ -1,9 +1,9 @@
 ---
-version: 7.7.0-1
+version: 7.8.0-1
 pkgbase:
   name: granite7
   pkgdesc: Library that extends Gtk+
-  pkgver: 7.7.0
+  pkgver: 7.8.0
   pkgrel: 1
   url: https://github.com/elementary/granite
   arch:
@@ -30,9 +30,9 @@ pkgbase:
   provides:
     - libgranite-7.so
   source:
-    - git+https://github.com/elementary/granite.git#tag=ae94e9123bbf1dea8db38bedd8a925dbd5a8f812
+    - git+https://github.com/elementary/granite.git#tag=9d59c4a348de7f69c312ce9eabc154dcdc6c550f
   sha256sums:
-    - 8dd5f6584ac62f1d3b86de76f4eb13c21f59e19b7e6e3e30f88ddf1a89fbba10
+    - d11bb8e9646acfcbfb27c323f167c51b9e4c8e607af61885ec623d1ac11b2389
 pkgname:
   - name: granite7
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
