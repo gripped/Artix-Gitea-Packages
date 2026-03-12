@@ -36,4 +36,4 @@ pkgbase:
     - 026f472e8c9c7693b510371e2448a7a475890763ca6814b1c16f46180c2288b7
 pkgname:
   - name: lib32-libarchive
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
