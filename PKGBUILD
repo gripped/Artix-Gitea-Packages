@@ -9,7 +9,7 @@ pkgname=(
   lib32-harfbuzz-cairo
   lib32-harfbuzz-icu
 )
-pkgver=13.0.1
+pkgver=13.1.0
 pkgrel=1
 pkgdesc="OpenType text shaping engine - 32-bit"
 url="https://harfbuzz.github.io/"
@@ -25,6 +25,7 @@ makedepends=(
   lib32-glib2
   lib32-glibc
   lib32-icu
+  lib32-libpng
   meson
   python
   ragel
@@ -33,8 +34,10 @@ checkdepends=(
   python-fonttools
   python-setuptools
 )
-source=("git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver")
-b2sums=('6b2d6aafce9d55756c04cf07f26ad451b09adae41ed6b994d0fb390e5bca6b68865cfc95ba4ec28a0e00073be47eebf9b0925afb1ac0f2ee8b7d1b6a7c4516ca')
+source=(
+  "git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver"
+)
+b2sums=('b2670ceedb372c631d2a1771f1ea19c16711530306a7326c4d8f6ba9993515d59ae6bdcf1612fb5365df21f2e6e9495c5a978dfc1f3953ddb81e23ff7c07f769')
 validpgpkeys=(
   053D20F17CCCA9651B2C6FCB9AB24930C0B997A2 # Khaled Hosny <khaled@aliftype.com> (@khaledhosny)
   9F377DDB6D3153A48EB3EB1E63CC496475267693 # Caleb Maclennan <caleb@alerque.com> (@alerque)
@@ -65,7 +68,7 @@ build() {
 
 check() {
   mkdir -p tmp
-  TMPDIR="$PWD/tmp" meson test -C build --print-errorlogs
+  TMPDIR="$PWD/tmp" meson test -C build --print-errorlogs --no-rebuild
   rm -r tmp
 }
 
@@ -86,10 +89,11 @@ package_lib32-harfbuzz() {
     lib32-gcc-libs
     lib32-glib2 libg{lib,object}-2.0.so
     lib32-glibc
+    lib32-libpng libpng16.so
   )
   provides=(libharfbuzz{,-{subset,gobject,raster,vector}}.so)
 
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build --destdir "$pkgdir" --no-rebuild
 
   ( cd "$pkgdir"
     rm -r usr/{bin,include}
