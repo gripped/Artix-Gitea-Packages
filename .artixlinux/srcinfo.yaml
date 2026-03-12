@@ -1,10 +1,10 @@
 ---
-version: 0.11.0-1
+version: 0.11.0-2
 pkgbase:
   name: ruby-process-metrics
   pkgdesc: Provide detailed OS-specific process metrics
   pkgver: 0.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/socketry/process-metrics
   arch:
     - any
@@ -35,4 +35,4 @@ pkgbase:
     - 9eff4a73c74e0772af07a8df93be7e40570968b052b3e0c69b54de301a0a383dfb35709c108c166d13084f29de7e34411ceeb0781caf5652ae58b136ce071c0b
 pkgname:
   - name: ruby-process-metrics
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
