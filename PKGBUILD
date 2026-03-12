@@ -2,9 +2,9 @@
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=wasi-libc
-pkgver=0+556+58fa18a9
-_commit=58fa18a968de915bea7d962485d9838693779bf9  # pull/759/head~3
-pkgrel=1.1
+pkgver=0+571+2fc32bc8
+_commit=2fc32bc81b9f07f8d9525edea59bfbaf760c06d6 # tags/wasi-sdk-30
+pkgrel=1
 epoch=1
 pkgdesc='WASI libc implementation for WebAssembly'
 url='https://github.com/WebAssembly/wasi-libc'
@@ -27,7 +27,7 @@ options=(
   staticlibs
 )
 source=("git+https://github.com/WebAssembly/wasi-libc.git#commit=${_commit}")
-b2sums=('1157e27798e7ac431655c2aa9f62e883a3fed90cc7ef97cc2c53650215d691119c61eb8ecd93168243b8d3d3c95001c0459d7f37a24623ab7125b5c3c5cd3046')
+b2sums=('c6006678c2481039a9487cae9aaa738b048a40c53c836ef26e5cd91b8b962b831c12c63a07acf0d46401c071a2a91ecc6c8508375a3bb674775211e9878e60d1')
 
 _targets=(wasm32-wasi wasm32-wasip1 wasm32-wasip1-threads wasm32-wasip2)
 
@@ -71,7 +71,7 @@ build() {
       -DTARGET_TRIPLE=$target
       -DCMAKE_C_FLAGS="$extra_cflags"
       -DCMAKE_ASM_FLAGS="$extra_cflags"
-      #-DBUILTINS_LIB="$resource_dir/lib/${target/wasm32/wasm32-unknown}/libclang_rt.builtins.a"
+      -DBUILTINS_LIB="$resource_dir/lib/${target/wasm32/wasm32-unknown}/libclang_rt.builtins.a"
     )
 
     cmake "${cmake_options[@]}"
