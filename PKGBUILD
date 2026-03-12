@@ -6,12 +6,12 @@
 
 pkgname=opensmtpd
 pkgver=7.8.0p0
-pkgrel=1
+pkgrel=2
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
 url="https://www.opensmtpd.org"
 license=(custom)
-depends=(libevent libxcrypt openssl pam zlib)
+depends=(libevent libxcrypt openssl pam  zlib)
 optdepends=('opensmtpd-filter-rspamd: rspamd integration')
 makedepends=(git)
 provides=(smtp-server smtp-forwarder)
