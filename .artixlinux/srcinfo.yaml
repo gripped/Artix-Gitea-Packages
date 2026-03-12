@@ -1,9 +1,9 @@
 ---
-version: 3.51.2-1
+version: 3.52.0-1
 pkgbase:
   name: sqlite
   pkgdesc: A C library that implements an SQL database engine
-  pkgver: 3.51.2
+  pkgver: 3.52.0
   pkgrel: 1
   url: https://www.sqlite.org/
   arch:
@@ -17,13 +17,13 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://www.sqlite.org/2026/sqlite-src-3510200.zip
-    - https://www.sqlite.org/2026/sqlite-doc-3510200.zip
+    - https://www.sqlite.org/2026/sqlite-src-3520000.zip
+    - https://www.sqlite.org/2026/sqlite-doc-3520000.zip
     - sqlite-lemon-system-template.patch
     - license.txt
   sha256sums:
-    - 85110f762d5079414d99dd5d7917bc3ff7e05876e6ccbd13d8496a3817f20829
-    - c6e30d07c5e9c126901c54d8d7c90a9c1a37078245517f060b3c69c4de43bf5d
+    - 652a98ca833ed638809a52bec225a7f37799f71a995778f9ccb68ad03bd1fc11
+    - 6f0d517e0c47e6446c74cf5503c87312181b80f04c95743f99f05af3ccc5e5a6
     - ce0083835e458236c83d4f74ad398816e29859cd2f940c7aad9080835b50dcec
     - 4e57d9ac979f1c9872e69799c2597eeef4c6ce7224f3ede0bf9dc8d217b1e65d
 pkgname:
@@ -34,7 +34,7 @@ pkgname:
       - zlib
       - glibc
     provides:
-      - sqlite3=3.51.2
+      - sqlite3=3.52.0
       - libsqlite3.so
     replaces:
       - sqlite3
@@ -43,9 +43,10 @@ pkgname:
     depends:
       - sqlite
       - tcl
+      - zlib
       - glibc
     provides:
-      - sqlite3-tcl=3.51.2
+      - sqlite3-tcl=3.52.0
     replaces:
       - sqlite3-tcl
   - name: sqlite-analyzer
@@ -61,7 +62,7 @@ pkgname:
   - name: sqlite-doc
     pkgdesc: most of the static HTML files that comprise this website, including all of the SQL Syntax and the C/C++ interface specs and other miscellaneous documentation
     provides:
-      - sqlite3-doc=3.51.2
+      - sqlite3-doc=3.52.0
     replaces:
       - sqlite3-doc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
