@@ -286,6 +286,8 @@ build() {
     # Allow the use of nightly features with stable Rust compiler
     # https://github.com/ungoogled-software/ungoogled-chromium/pull/2696#issuecomment-1918173198
     export RUSTC_BOOTSTRAP=1
+    export RUSTUP_TOOLCHAIN=1.92
+    export RUSTUP_TOOLCHAIN=stable
 
     _flags+=(
       'rust_sysroot_absolute="/usr"'
