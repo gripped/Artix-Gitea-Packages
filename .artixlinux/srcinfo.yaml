@@ -1,10 +1,10 @@
 ---
-version: 3.6.6-1
+version: 3.6.6-2
 pkgbase:
   name: libsoup3
   pkgdesc: HTTP client/server library for GNOME
   pkgver: 3.6.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Projects/libsoup
   arch:
     - x86_64
@@ -63,4 +63,4 @@ pkgname:
   - name: libsoup3-docs
     pkgdesc: HTTP client/server library for GNOME (documentation)
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
