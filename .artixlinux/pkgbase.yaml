@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 146.0.7680.71-1
+    version: 146.0.7680.75-1
     packages:
-      - ungoogled-chromium-146.0.7680.71-1-x86_64.pkg.tar.zst
+      - ungoogled-chromium-146.0.7680.75-1-x86_64.pkg.tar.zst
     debug: []
