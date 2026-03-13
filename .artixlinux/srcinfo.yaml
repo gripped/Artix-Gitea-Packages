@@ -1,9 +1,9 @@
 ---
-version: 9.0.0-1
+version: 9.0.1-1
 pkgbase:
   name: bazel
   pkgdesc: Correct, reproducible, and fast builds for everyone
-  pkgver: 9.0.0
+  pkgver: 9.0.1
   pkgrel: 1
   url: https://bazel.build/
   arch:
@@ -24,13 +24,13 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://github.com/bazelbuild/bazel/releases/download/9.0.0/bazel-9.0.0-dist.zip
-    - https://github.com/bazelbuild/bazel/releases/download/9.0.0/bazel-9.0.0-dist.zip.sig
+    - https://github.com/bazelbuild/bazel/releases/download/9.0.1/bazel-9.0.1-dist.zip
+    - https://github.com/bazelbuild/bazel/releases/download/9.0.1/bazel-9.0.1-dist.zip.sig
   validpgpkeys:
     - 71A1D0EFCFEB6281FD0437C93D5919B448457EE0
   b2sums:
-    - cc23e09222ee4e5ae0cc2efe9f2f1772a657a81dc8bb255c95d5b2c6db84cda92542b3fe3d4bedd209ce693b927b05ba99290995139f349c764cd8394358101d
+    - f99c7a37f7552bb6a8f44d4ab44863590e31101cf7c0b749789c3f6fb8787ad694d0712ca90dea97fcc49c123378b6f7caaccf0e545ee722dafff7dd19262ede
     - SKIP
 pkgname:
   - name: bazel
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
