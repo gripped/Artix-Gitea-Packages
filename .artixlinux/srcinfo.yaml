@@ -1,9 +1,9 @@
 ---
-version: 2.50.5-1
+version: 2.50.6-1
 pkgbase:
   name: webkit2gtk-4.1
   pkgdesc: Web content engine for GTK
-  pkgver: 2.50.5
+  pkgver: 2.50.6
   pkgrel: 1
   url: https://webkitgtk.org
   arch:
@@ -57,7 +57,6 @@ pkgbase:
     - expat
     - fontconfig
     - freetype2
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -70,10 +69,12 @@ pkgbase:
     - hyphen
     - icu
     - lcms2
+    - libatomic
     - libavif
     - libdrm
     - libegl
     - libepoxy
+    - libgcc
     - libgcrypt
     - libgl
     - libgles
@@ -84,6 +85,7 @@ pkgbase:
     - libseccomp
     - libsecret
     - libsoup3
+    - libstdc++
     - libtasn1
     - libwebp
     - libx11
@@ -99,16 +101,16 @@ pkgbase:
     - xdg-dbus-proxy
     - zlib
   source:
-    - https://webkitgtk.org/releases/webkitgtk-2.50.5.tar.xz
-    - https://webkitgtk.org/releases/webkitgtk-2.50.5.tar.xz.asc
+    - https://webkitgtk.org/releases/webkitgtk-2.50.6.tar.xz
+    - https://webkitgtk.org/releases/webkitgtk-2.50.6.tar.xz.asc
   validpgpkeys:
     - 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
     - 013A0127AC9C65B34FFA62526C1009B693975393
   sha256sums:
-    - 8737631bac3e9c7ad3e5208f9370e076c09d9c45b39980021ce54edadcc6f94f
+    - 2b281abf8894ffc6172152e5660b75eeeedbe1cc43d6783d09dc79f7c865bb42
     - SKIP
   b2sums:
-    - 5aa6b55ee0965b760d26aebbf59d141543923cf26a65027a6d9ae4b03fef3759a9778e9c0a17ba2b23ea51025a76d3a283066de71a6b1996c9385da948dbb1ca
+    - cebdf02e52e0a80ec9b48517e4856768ed530ed4d4d4f15145058e96dc42f990c8712897303ec176609f9a0af749ec49fc3785eecd829ce7d82a397bc822b89c
     - SKIP
 pkgname:
   - name: webkit2gtk-4.1
@@ -123,4 +125,4 @@ pkgname:
   - name: webkit2gtk-4.1-docs
     pkgdesc: Web content engine for GTK (documentation)
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
