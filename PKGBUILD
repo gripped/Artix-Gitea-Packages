@@ -3,8 +3,8 @@
 
 pkgbase=ghostty
 pkgname=(ghostty ghostty-shell-integration ghostty-terminfo)
-pkgver=1.2.3
-pkgrel=3
+pkgver=1.3.1
+pkgrel=1
 pkgdesc='Fast, native, feature-rich terminal emulator pushing modern features'
 arch=(x86_64 aarch64 i686)
 url="https://github.com/ghostty-org/$pkgbase"
@@ -26,18 +26,13 @@ depends=(bzip2
          zlib)
 makedepends=(blueprint-compiler
              pandoc-cli
-             zig0.14)
+             zig)
 _archive="$pkgname-$pkgver"
-source=("$url/archive/v$pkgver/$_archive.tar.gz"
-        ghostty-1.2.3-update-schemes-to-working-tag.patch
-    )
-sha256sums=('e17d39482fc70fba3d72f5f25c12e9d9a72b87dd45a61a854d9928e98b69edd8'
-            '4d6b324e79cf6182ab8518f328054a8a31ad1adec613414e1431cbf7a6c30057')
+source=("$url/archive/v$pkgver/$_archive.tar.gz")
+sha256sums=('265837d3026b433f0e6b4e49d43153b915b0a19513f7edd8a8e693c559bd415b')
 
 prepare() {
 	cd "$_archive"
-    # current scheme was removed upstream, use next tag
-    patch -Np1 -i ../ghostty-1.2.3-update-schemes-to-working-tag.patch
 	ZIG_GLOBAL_CACHE_DIR="$srcdir/zig-global-cache/" ./nix/build-support/fetch-zig-cache.sh
 }
 
@@ -52,7 +47,8 @@ build() {
 		-Dcpu=baseline \
 		-Dpie=true \
 		-Demit-docs \
-		-Dversion-string="$pkgver-arch$pkgrel"
+		-Dversion-string="$pkgver-arch$pkgrel" \
+		--build-id=sha1
 }
 
 package_ghostty() {

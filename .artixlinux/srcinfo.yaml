@@ -1,10 +1,10 @@
 ---
-version: 1.2.3-3
+version: 1.3.1-1
 pkgbase:
   name: ghostty
   pkgdesc: Fast, native, feature-rich terminal emulator pushing modern features
-  pkgver: 1.2.3
-  pkgrel: 3
+  pkgver: 1.3.1
+  pkgrel: 1
   url: https://github.com/ghostty-org/ghostty
   arch:
     - x86_64
@@ -15,7 +15,7 @@ pkgbase:
   makedepends:
     - blueprint-compiler
     - pandoc-cli
-    - zig0.14
+    - zig
   depends:
     - bzip2
     - fontconfig
@@ -42,11 +42,9 @@ pkgbase:
     - libwayland-client.so
     - zlib
   source:
-    - https://github.com/ghostty-org/ghostty/archive/v1.2.3/ghostty-1.2.3.tar.gz
-    - ghostty-1.2.3-update-schemes-to-working-tag.patch
+    - https://github.com/ghostty-org/ghostty/archive/v1.3.1/ghostty-1.3.1.tar.gz
   sha256sums:
-    - e17d39482fc70fba3d72f5f25c12e9d9a72b87dd45a61a854d9928e98b69edd8
-    - 4d6b324e79cf6182ab8518f328054a8a31ad1adec613414e1431cbf7a6c30057
+    - 265837d3026b433f0e6b4e49d43153b915b0a19513f7edd8a8e693c559bd415b
 pkgname:
   - name: ghostty
     depends:
