@@ -44,6 +44,9 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         chromium-145-fix-SYS_SECCOMP.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
+        chromium-146-apply-upstream-libmuck-fix.patch
+        chromium-146-build-with-wasm-rollup.patch
+        chromium-146-drop-unknown-clang-flag.patch
         use-oauth2-client-switches-as-default.patch)
 sha256sums=('094a80801d0a3573c5654cf004f4fc34e2219069380652916235794fc0f94414'
             'f394934222898f43c74cfc4360d008754c0917f0d4155efe37999d7f3f000790'
@@ -52,6 +55,9 @@ sha256sums=('094a80801d0a3573c5654cf004f4fc34e2219069380652916235794fc0f94414'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             'ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
+            '06299959918481caf2c27bcb1841088967d9855acc22970ffcaa75e0cb218f0e'
+            '45fa20cc27ef0aa00d654d0bac84bfaa8d8090b5f8aec49cc2e8d7249d3cd7ba'
+            '24535c314c7e70c52bcf409aaf604728bfc5b5c97e60087e630e1f7233b9e12d'
             '9343afa1a4308a7cfb3317229f5aff7778688debcc03c4a74a85908aa1d0cc3a')
 
 if (( _manual_clone )); then
@@ -126,6 +132,10 @@ prepare() {
 
   # https://crbug.com/456218403
   patch -Np1 -i ../chromium-145-fix-SYS_SECCOMP.patch
+
+  patch -Np1 -i ../chromium-146-apply-upstream-libmuck-fix.patch
+  patch -Np1 -i ../chromium-146-build-with-wasm-rollup.patch
+  patch -Np1 -i ../chromium-146-drop-unknown-clang-flag.patch
 
   if (( !_system_clang )); then
     # Use prebuilt rust as system rust cannot be used due to the error:
