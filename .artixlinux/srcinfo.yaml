@@ -1,10 +1,10 @@
 ---
-version: 145.0.7632.159-3
+version: 146.0.7680.71-1
 pkgbase:
   name: ungoogled-chromium
   pkgdesc: A lightweight approach to removing Google web service dependency
-  pkgver: 145.0.7632.159
-  pkgrel: 3
+  pkgver: 146.0.7680.71
+  pkgrel: 1
   url: https://github.com/ungoogled-software/ungoogled-chromium
   arch:
     - x86_64
@@ -60,16 +60,16 @@ pkgbase:
     - 'kwallet: support for storing passwords in KWallet on Plasma'
     - 'upower: Battery Status API support'
   provides:
-    - chromium=145.0.7632.159
-    - chromedriver=145.0.7632.159
+    - chromium=146.0.7680.71
+    - chromedriver=146.0.7680.71
   conflicts:
     - chromium
     - chromedriver
   options:
     - '!lto'
   source:
-    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-145.0.7632.159-lite.tar.xz
-    - ungoogled-chromium-145.0.7632.159-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/145.0.7632.159-1.tar.gz
+    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-146.0.7680.71-lite.tar.xz
+    - ungoogled-chromium-146.0.7680.71-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/146.0.7680.71-1.tar.gz
     - https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz
     - chromium-138-nodejs-version-check.patch
     - chromium-145-fix-SYS_SECCOMP.patch
