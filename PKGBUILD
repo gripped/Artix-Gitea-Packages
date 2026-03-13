@@ -36,7 +36,7 @@ depends=(
   'libxss'
   'nss'
   'pciutils'
-  'systemd'
+  'udev'
   'ttf-liberation'
   'xdg-utils'
 )
