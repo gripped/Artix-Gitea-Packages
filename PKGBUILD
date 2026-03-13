@@ -1,0 +1,33 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+
+pkgname=ex-vi-compat
+pkgver=2
+pkgrel=1
+pkgdesc="The ex and vi commands based on vim's compatibility modes"
+arch=(any)
+url="https://gitlab.archlinux.org/archlinux/packaging/packages/ex-vi-compat"
+license=(0BSD)
+depends=(vim)
+provides=(
+  edit
+  ex
+  vedit
+  vi
+  view
+)
+conflicts=(vi)
+replaces=(vi)
+source=(LICENSE)
+sha512sums=('a33658d9271e5c537ccd41bf540b463ad2a5eca4a060c80486ff42a736f0aa042d10436e7177c34d792177cb11285243dee1f31c4df54fb0bfaabbc306406930')
+b2sums=('a29664104e1ee73ca0aee1d633e9095d92a57c92787f8d8740bdb7211ba3205782ed8677f539bdb8cae3dd75a3694be3132e185fa3fc4b3f401e1f88eb776101')
+
+package() {
+  local cmd
+
+  install -vdm 755 "$pkgdir/usr/bin/"
+  for cmd in {edit,ex,vedit,vi,view} ; do
+    ln -sv vim "$pkgdir/usr/bin/$cmd"
+  done
+  install -vDm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/0BSD.txt"
+}
