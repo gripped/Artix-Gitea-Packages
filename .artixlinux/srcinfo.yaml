@@ -1,9 +1,9 @@
 ---
-version: 2.88.0-1
+version: 2.88.1-1
 pkgbase:
   name: github-cli
   pkgdesc: The GitHub CLI
-  pkgver: 2.88.0
+  pkgver: 2.88.1
   pkgrel: 1
   url: https://github.com/cli/cli
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - 'git: To interact with repositories'
     - 'org.freedesktop.secrets: Store credentials in system keyring'
   source:
-    - github-cli-2.88.0.tar.gz::https://github.com/cli/cli/archive/v2.88.0.tar.gz
+    - github-cli-2.88.1.tar.gz::https://github.com/cli/cli/archive/v2.88.1.tar.gz
   sha256sums:
-    - f26b30659630254b9ec19e4a8f50a3b1315cdacde63e57e7f2c1292758c92c89
+    - 79b9d8b6f45771188bcbe7de23e0300827b33454b811881522e20f6b48bb6e4c
 pkgname:
   - name: github-cli
 # generated with artixpkg 0.38.2-1-any
