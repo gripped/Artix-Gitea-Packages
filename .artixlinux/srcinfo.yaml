@@ -1,9 +1,9 @@
 ---
-version: 2.50.5-1
+version: 2.50.6-1
 pkgbase:
   name: wpewebkit
   pkgdesc: Embeddable web content engine
-  pkgver: 2.50.5
+  pkgver: 2.50.6
   pkgrel: 1
   url: https://wpewebkit.org
   arch:
@@ -56,7 +56,6 @@ pkgbase:
     - expat
     - fontconfig
     - freetype2
-    - gcc-libs
     - glib2
     - glibc
     - gst-plugins-bad-libs
@@ -66,9 +65,11 @@ pkgbase:
     - harfbuzz-icu
     - icu
     - lcms2
+    - libatomic
     - libavif
     - libdrm
     - libepoxy
+    - libgcc
     - libgcrypt
     - libinput
     - libjpeg-turbo
@@ -76,6 +77,7 @@ pkgbase:
     - libpng
     - libseccomp
     - libsoup3
+    - libstdc++
     - libtasn1
     - libwebp
     - libwpe
@@ -92,16 +94,16 @@ pkgbase:
     - xdg-dbus-proxy
     - zlib
   source:
-    - https://wpewebkit.org/releases/wpewebkit-2.50.5.tar.xz
-    - https://wpewebkit.org/releases/wpewebkit-2.50.5.tar.xz.asc
+    - https://wpewebkit.org/releases/wpewebkit-2.50.6.tar.xz
+    - https://wpewebkit.org/releases/wpewebkit-2.50.6.tar.xz.asc
   validpgpkeys:
     - 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
     - 013A0127AC9C65B34FFA62526C1009B693975393
   sha256sums:
-    - de4bfd20bfc921cdfc77e839ee4da84e2674bcb58b2f916172978d62fa115fc2
+    - 8864fd3f6116370d75425f9b1efa48eb188ccf42c92ae9e8aaf2dd51f9f27def
     - SKIP
   b2sums:
-    - b233546b9c88e3315e9d90ef359f1f4f144665547d46b03f4cde447b2e67d63bf1e3b976a77a7937391d2ae2530d610eea0e07b7f03317b1529463ce064ac566
+    - 7da76c83bcb558155c2738bd55f8537442b057ae3b2d9fdbe6aa7a4c21466a46067703078b023139dfa0d73dc1332cb841b1d65bd5aa818e13415e1d683c8f46
     - SKIP
 pkgname:
   - name: wpewebkit
@@ -113,7 +115,6 @@ pkgname:
       - expat
       - fontconfig
       - freetype2
-      - gcc-libs
       - glib2
       - glibc
       - gst-plugins-bad-libs
@@ -123,9 +124,11 @@ pkgname:
       - harfbuzz-icu
       - icu
       - lcms2
+      - libatomic
       - libavif
       - libdrm
       - libepoxy
+      - libgcc
       - libgcrypt
       - libinput
       - libjpeg-turbo
@@ -133,6 +136,7 @@ pkgname:
       - libpng
       - libseccomp
       - libsoup3
+      - libstdc++
       - libtasn1
       - libwebp
       - libwpe
@@ -160,4 +164,4 @@ pkgname:
   - name: wpewebkit-docs
     pkgdesc: Embeddable web content engine (documentation)
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
