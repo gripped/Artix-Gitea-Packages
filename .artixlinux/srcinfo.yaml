@@ -1,0 +1,63 @@
+---
+version: 6.6.2-1
+pkgbase:
+  name: sonic-system-info
+  pkgdesc: Display information about your computers hardware on the Sonic desktop
+  pkgver: 6.6.2
+  pkgrel: 1
+  url: https://github.com/Sonic-DE/sonic-system-info
+  arch:
+    - x86_64
+  groups:
+    - sonicde
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - fwupd
+    - kdoctools
+    - vulkan-headers
+  depends:
+    - aha
+    - clinfo
+    - dmidecode
+    - gcc-libs
+    - glibc
+    - glu
+    - iproute2
+    - kauth
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - kdeclarative
+    - ki18n
+    - kio
+    - kirigami
+    - kservice
+    - libdisplay-info
+    - libdrm
+    - libpulse
+    - libusb
+    - lm_sensors
+    - mesa-utils
+    - qt6-base
+    - qt6-declarative
+    - sh
+    - solid
+    - systemsettings
+    - vulkan-tools
+    - xorg-xdpyinfo
+  optdepends:
+    - 'fwupd: firmware security module'
+    - 'plasma-disks: SMART devices health monitor'
+  provides:
+    - kinfocenter
+  conflicts:
+    - kinfocenter
+  source:
+    - https://github.com/Sonic-DE/sonic-system-info/archive/refs/tags/6.6.2.tar.gz
+  sha256sums:
+    - 3928aa479423c0eaf7bf3a72ad75000d03feb13fbacb69bd9b152feca5968a3a
+pkgname:
+  - name: sonic-system-info
+# generated with artixpkg 0.38.2-1-any
