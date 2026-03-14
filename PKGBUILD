@@ -18,7 +18,7 @@ source=("smbd"
         "samba-pre")
 sha256sums=('5b4815892a55308565e943abc514e177cbac97677b056f800e6d35f8f390fc91'
             '93dbbf967355f90a5b0c1d5a1640e2f4c0d3fbdd377ab4126eec09b9881692ba'
-            'e2eaa03b13d5a8b99981ce518e35d394838f4eca0c373406d2d93b9723cabae9'
+            'd3a2da93b44c5265755ac5414794391f4bab246141dfaca3dd33e879cec13e2f'
             '5cf702fb0c12ec1fc6df2a8084ca4e614374a221a8cc986a5bbc08d9c3a5dad2'
             '7ad7c855651996ac6b65f2a1af5d7ffd7bd7f3d2fc63a9c350bc5414cf715e77')
 
