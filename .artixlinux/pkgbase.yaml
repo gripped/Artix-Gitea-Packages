@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 9.20.19-1
+    version: 9.20.20-1
     packages:
-      - bind-9.20.19-1-x86_64.pkg.tar.zst
+      - bind-9.20.20-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 9.20.17-1
