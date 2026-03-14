@@ -7,11 +7,11 @@ pkgname=('zabbix-common' 'zabbix-server' 'zabbix-frontend-php' 'zabbix-web-servi
 pkgver=7.4.8
 pkgrel=1
 pkgdesc="The universal, open-source observability solution for IT & OT"
-url="https://www.zabbix.com"
+url="https://cdn.zabbix.com/zabbix"
 arch=('x86_64')
 license=('GPL-2.0-only')
 makedepends=('postgresql-libs' 'libxml2' 'unixodbc' 'net-snmp' 'mariadb-libs' 'libldap' 'libevent' 'go' 'pkgconfig' 'pcre2' 'openipmi' 'git')
-source=("git+https://git.zabbix.com/scm/zbx/zabbix.git#tag=${pkgver}"
+source=("$pkgbase-$pkgver.tar.gz::$url/sources/stable/7.4/$pkgbase-$pkgver.tar.gz"
         'zabbix-common.sysusers'
         'zabbix-common.tmpfiles'
         'zabbix-server.tmpfiles'
@@ -22,7 +22,7 @@ source=("git+https://git.zabbix.com/scm/zbx/zabbix.git#tag=${pkgver}"
         'write_log_to_syslog.patch'
         'set_socket_paths.patch'
         'reproducible_build.patch')
-sha512sums=('0924e8b422662b17ae9dcd5a8ce6e119d40ebcc2df5e8d7e8efcb7c513ae9fd61341206a36a1b80dc62f870aab03202bd7d75f5c5cd3e97a5ae0dff16f50fb79'
+sha512sums=('7f123690832441575ea61b4e8500f39c0ec1aa94cad18a76f3972d658239b360c78485cfd4a52e3acda51ea87ab326184d2f531b3816533e531a1b8961582404'
             '8570843ad927d900f9e9aa95dfa8a24ebb0f01beda3073b24c5963aedd92e3ebed75bbb6139127830eaf289df233c2734d81b52b25a1b8f4db57336152514194'
             '7c39d1cb1d269e8a2a22c634612c7d110e9e67c170f32add33312f97bc2e7f8f19bf5bb1d1c71df43afc893043472069b9f828dfc5a9f2946606798ed54c73a0'
             'c82056591146e7ef0020a3cd9865322407a116e20beb1ddd6fc2afdec09306b6d249d9a2afe8d9234932861b506b3b50a3b528944ab3889c076e5088cd7e63ed'
@@ -35,9 +35,9 @@ sha512sums=('0924e8b422662b17ae9dcd5a8ce6e119d40ebcc2df5e8d7e8efcb7c513ae9fd6134
             '71aaf2cdf6885547931c212fa312b4d684af1b765be78f7ad4cded4700305d81602d76fae859338357ef9dda8c7fe265c829ed1a4a964e67591f4390def1b23b')
 
 prepare() {
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
-	./bootstrap.sh
+	#./bootstrap.sh
 
 	# Write logs to syslog (rather than log files)
 	patch -Np1 -i "${srcdir}/write_log_to_syslog.patch"
@@ -80,13 +80,13 @@ build() {
 		--enable-webservice
 	)
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	for db in postgresql mysql; do
 		./configure "${_configure_flags[@]}" --enable-server --with-"${db}"
 		make clean
 		make gettext
-		make dbschema
+		# make dbschema
 		make
 		mkdir -p "${srcdir}/copies/database_server/${db}"
 		cp database/"${db}"/*.sql "${srcdir}/copies/database_server/${db}/"
@@ -97,7 +97,7 @@ build() {
 		./configure "${_configure_flags[@]}" --enable-proxy --with-"${db}"
 		make clean
 		make gettext
-		make dbschema
+		# make dbschema
 		make
 		mkdir -p "${srcdir}/copies/database_proxy/${db}"
 		cp database/"${db}"/*.sql "${srcdir}/copies/database_proxy/${db}/"
@@ -120,7 +120,7 @@ package_zabbix-server() {
 	            'zabbix-web-service: for scheduled PDF report generation')
 	backup=('etc/zabbix/zabbix_server.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	for db in postgresql mysql; do
 		install -Dm 755 "src/zabbix_server/zabbix_server_${db}" "${pkgdir}/usr/bin/zabbix_server_${db}"
@@ -142,7 +142,7 @@ package_zabbix-frontend-php() {
 	pkgdesc="PHP frontend for Zabbix"
 	depends=('zabbix-server' 'php' 'php-gd')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -d "${pkgdir}/usr/share/webapps/zabbix"
 	cp -av ui/* "${pkgdir}/usr/share/webapps/zabbix"
@@ -156,7 +156,7 @@ package_zabbix-web-service() {
 	depends=('zabbix-common' 'chromium')
 	backup=('etc/zabbix/zabbix_web_service.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -Dm 755 src/go/bin/zabbix_web_service "${pkgdir}/usr/bin/zabbix_web_service"
 
@@ -172,7 +172,7 @@ package_zabbix-proxy() {
 	            'postgresql-libs: for PostgreSQL support')
 	backup=('etc/zabbix/zabbix_proxy.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	for db in postgresql mysql sqlite3; do
 		install -Dm 755 "src/zabbix_proxy/zabbix_proxy_${db}" "${pkgdir}/usr/bin/zabbix_proxy_${db}"
@@ -189,7 +189,7 @@ package_zabbix-agent() {
 	depends=('zabbix-common' 'curl' 'pcre2')
 	backup=('etc/zabbix/zabbix_agentd.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -Dm 755 src/zabbix_agent/zabbix_agentd "${pkgdir}/usr/bin/zabbix_agentd"
 	install -Dm 755 src/zabbix_sender/zabbix_sender "${pkgdir}/usr/bin/zabbix_sender"
@@ -210,7 +210,7 @@ package_zabbix-agent2() {
 	depends=('zabbix-common' 'curl' 'pcre2')
 	backup=('etc/zabbix/zabbix_agent2.conf')
 
-	cd "${pkgbase}"
+	cd "${pkgbase}-${pkgver}"
 
 	install -Dm 755 src/go/bin/zabbix_agent2 "${pkgdir}/usr/bin/zabbix_agent2"
 
