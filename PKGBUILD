@@ -46,7 +46,7 @@ optdepends=('fwupd: firmware security module'
 groups=(sonicde)
 conflicts=(kinfocenter)
 provides=(kinfocenter)
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
+source=("i$pkgname-$pkgver::${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -59,5 +59,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('3928aa479423c0eaf7bf3a72ad75000d03feb13fbacb69bd9b152feca5968a3a')
+sha256sums=('SKIP')
 
