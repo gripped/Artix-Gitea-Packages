@@ -1,9 +1,9 @@
 ---
-version: 6.6.2.4-1
+version: 6.6.2.5-1
 pkgbase:
   name: sonic-desktop-interface
   pkgdesc: Sonic Desktop Interface
-  pkgver: 6.6.2.4
+  pkgver: 6.6.2.5
   pkgrel: 1
   url: https://github.com/Sonic-DE/sonic-desktop-interface
   arch:
@@ -104,9 +104,9 @@ pkgbase:
   conflicts:
     - plasma-desktop
   source:
-    - https://github.com/Sonic-DE/sonic-desktop-interface/archive/refs/tags/6.6.2.4.tar.gz
+    - https://github.com/Sonic-DE/sonic-desktop-interface/archive/refs/tags/6.6.2.5.tar.gz
   sha256sums:
-    - 32b2db426e3785d2b290ede93c0f47fbea5413879c23e5b52dc9c490ab47517d
+    - 2dff847c415c953968511ac0f01170aa8fe65a18433a873bc94a5f7da34321c7
 pkgname:
   - name: sonic-desktop-interface
 # generated with artixpkg 0.38.2-1-any
