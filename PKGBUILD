@@ -3,16 +3,16 @@
 # Contributor: Tobias Kieslich <tobias@justdreams.de>
 
 pkgname=perl-libintl-perl
-pkgver=1.35
-pkgrel=2
+pkgver=1.37
+pkgrel=1
 pkgdesc="Perl Module: Localization support"
 arch=('x86_64')
-license=('LGPL')
+license=('GPL-3.0-or-later')
 url="https://search.cpan.org/dist/libintl-perl"
 depends=('coreutils' 'gettext' 'perl')
 options=('!emptydirs')
-source=("https://www.cpan.org/authors/id/G/GU/GUIDO/libintl-perl-$pkgver.tar.gz")
-sha512sums=('2952a0cfb8bc84307208d71b974777fd7883266f595309cf7f38f7f640a20c1a3852c6daf4b02e758dc94d37cc84fc23ef9a51a892b3de50b4eaf28ee253ac77')
+source=("https://cpan.metacpan.org/authors/id/G/GU/GUIDO/libintl-perl-$pkgver.tar.gz")
+sha512sums=('86591b61b05a54a9cbfdd0f040afb0f5a80b0d80fb5953298b764019a153ff7966a2d5479be9d43bd3b4d5797572da93faa738f730a59824cee300bd8f65153a')
 
 build() {
   cd libintl-perl-$pkgver
