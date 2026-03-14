@@ -1,9 +1,9 @@
 ---
-version: 0.4.16-1
+version: 0.4.18-1
 pkgbase:
   name: libp11
   pkgdesc: A library implementing a small layer on top of the PKCS11 API
-  pkgver: 0.4.16
+  pkgver: 0.4.18
   pkgrel: 1
   url: https://github.com/OpenSC/libp11/wiki
   arch:
@@ -13,13 +13,13 @@ pkgbase:
   depends:
     - openssl
   source:
-    - https://github.com/OpenSC/libp11/releases/download/libp11-0.4.16/libp11-0.4.16.tar.gz
-    - https://github.com/OpenSC/libp11/releases/download/libp11-0.4.16/libp11-0.4.16.tar.gz.asc
+    - https://github.com/OpenSC/libp11/releases/download/libp11-0.4.18/libp11-0.4.18.tar.gz
+    - https://github.com/OpenSC/libp11/releases/download/libp11-0.4.18/libp11-0.4.18.tar.gz.asc
   validpgpkeys:
     - AC915EA30645D9D3D4DAE4FEB1048932DD3AAAA3
   sha256sums:
-    - 97777640492fa9e5831497e5892e291dfbf39a7b119d9cb6abb3ec8c56d17553
+    - 9292de67ca73aba1deacf577c9086b595765f36ef47712cfeb49fa31f6e772fb
     - SKIP
 pkgname:
   - name: libp11
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
