@@ -1,0 +1,44 @@
+---
+version: 20260314-1
+pkgbase:
+  name: s6-scripts
+  pkgdesc: A collection of essential s6-rc oneshots and longruns for startup/shutdown.
+  pkgver: 20260314
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-scripts
+  arch:
+    - any
+  makedepends:
+    - git
+  depends:
+    - artix-cgroups
+    - execline
+    - pam
+    - s6-rc
+    - udev
+  optdepends:
+    - 'cryptsetup-s6: cryptsetup boot script support'
+    - 'lvm2-s6: lvm2 boot script support'
+  provides:
+    - init-udev
+  backup:
+    - etc/s6/rc.local
+    - etc/s6/config/tty1.conf
+    - etc/s6/config/tty2.conf
+    - etc/s6/config/tty3.conf
+    - etc/s6/config/tty4.conf
+    - etc/s6/config/tty5.conf
+    - etc/s6/config/tty6.conf
+    - etc/s6/config/ttyS.conf
+    - etc/s6/config/dmesg.conf
+    - etc/s6/config/hwclock.conf
+    - etc/s6/config/mount-tmpfs.conf
+    - etc/s6/config/udevd.conf
+    - usr/lib/sysctl.d/50-default.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=bf8b3898fc2f0f3d63ff37c8b568e9fbc43bb42a
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: s6-scripts
+# generated with artixpkg 0.38.2-1-any
