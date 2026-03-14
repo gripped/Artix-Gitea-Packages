@@ -1,7 +1,7 @@
 type            = process
-command         = /usr/bin/nmbd -F -d=1 --no-process-group
+command         = /usr/bin/samba -F --no-process-group
 smooth-recovery = true
-logfile         = /var/log/dinit/nmbd.log
+logfile         = /var/log/dinit/samba.log
 depends-on: samba-pre
 depends-on: network.target
 before: login.target

@@ -2,6 +2,8 @@ type            = process
 command         = /usr/bin/smbd -F -d=1 --no-process-group
 smooth-recovery = true
 logfile         = /var/log/dinit/smbd.log
-depends-on      = samba-pre
-depends-on      = network.target
-before          = login.target
+depends-on: samba-pre
+depends-on: network.target
+before: login.target
+after: nmbd
+after: winbindd
