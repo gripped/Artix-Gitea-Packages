@@ -1,8 +1,8 @@
 ---
-version: 3:20251122-1
+version: 3:20260209-1
 pkgbase:
   name: foomatic-db
-  pkgver: 20251122
+  pkgver: 20260209
   pkgrel: 1
   epoch: 3
   url: http://www.linuxprinting.org/foomatic.html
@@ -20,7 +20,7 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - foomatic-db::git+https://github.com/OpenPrinting/foomatic-db#commit=d4774d0c39bcdf970ccb335452f48d9241ec1f71
+    - foomatic-db::git+https://github.com/OpenPrinting/foomatic-db#commit=57e546cb7774c7b03e7090ced65fb1ffd552f33d
     - foomatic-db-nonfree::git+https://github.com/OpenPrinting/foomatic-db-nonfree#commit=6ddae02ac89240c019f8b5026cfe70e30fd2b3db
   sha256sums:
     - SKIP
@@ -54,4 +54,4 @@ pkgname:
     pkgdesc: Foomatic - non-free PPDs from printer manufacturers
     license:
       - LicenseRef-foomatic-db-nonfree-ppds
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
