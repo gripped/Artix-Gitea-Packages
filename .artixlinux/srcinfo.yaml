@@ -57,7 +57,7 @@ pkgbase:
   source:
     - https://github.com/Sonic-DE/sonic-system-info/archive/refs/tags/6.6.2.tar.gz
   sha256sums:
-    - 3928aa479423c0eaf7bf3a72ad75000d03feb13fbacb69bd9b152feca5968a3a
+    - SKIP
 pkgname:
   - name: sonic-system-info
 # generated with artixpkg 0.38.2-1-any
