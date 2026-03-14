@@ -1,10 +1,10 @@
 ---
-version: 0.83-3
+version: 0.83-3.1
 pkgbase:
   name: jimtcl
   pkgdesc: A small footprint implementation of Tcl
   pkgver: 0.83
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://jim.tcl-lang.org/home/doc/www/www/index.html
   arch:
     - x86_64
