@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:12.0.0-2
+    version: 1:12.1.0-1
     packages:
-      - libvirt-1:12.0.0-2-x86_64.pkg.tar.zst
-      - libvirt-storage-gluster-1:12.0.0-2-x86_64.pkg.tar.zst
-      - libvirt-storage-iscsi-direct-1:12.0.0-2-x86_64.pkg.tar.zst
+      - libvirt-1:12.1.0-1-x86_64.pkg.tar.zst
+      - libvirt-storage-gluster-1:12.1.0-1-x86_64.pkg.tar.zst
+      - libvirt-storage-iscsi-direct-1:12.1.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:11.10.0-2
