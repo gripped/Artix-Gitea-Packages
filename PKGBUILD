@@ -25,7 +25,7 @@ backup=('etc/s6/rc.local'
         'usr/lib/sysctl.d/50-default.conf')
 _commit=bf8b3898fc2f0f3d63ff37c8b568e9fbc43bb42a
 source=("git+$url.git#commit=$_commit")
-sha256sums=('SKIP')
+sha256sums=('64956c02afe7599e491833e1c1e97c49d594ee0a2930658877ca447860223911')
 
 package() {
   cd "${pkgname}"
