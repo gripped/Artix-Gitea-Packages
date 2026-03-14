@@ -1,0 +1,38 @@
+---
+version: 4.1.0-1
+pkgbase:
+  name: privoxy
+  pkgdesc: A web proxy with advanced filtering capabilities.
+  pkgver: 4.1.0
+  pkgrel: 1
+  url: https://www.privoxy.org
+  arch:
+    - x86_64
+  license:
+    - GPL2
+  makedepends:
+    - git
+  depends:
+    - pcre2
+    - zlib
+    - zstd
+  backup:
+    - etc/privoxy/config
+    - etc/privoxy/trust
+    - etc/privoxy/match-all.action
+    - etc/privoxy/default.action
+    - etc/privoxy/default.filter
+    - etc/privoxy/user.action
+    - etc/privoxy/user.filter
+    - etc/logrotate.d/privoxy
+  source:
+    - git+https://www.privoxy.org/git/privoxy.git#tag=v_4_1_0
+    - privoxy.logrotate.d
+    - privoxy.sysusers
+  sha256sums:
+    - 871fbdb2919294610f400844da6d8d91ba5a477149fd102ee0801cf99e820380
+    - 769740ea3c15228f24b559192e7b3f45b95dcf9040e2b25f15bfdfae8af86ce3
+    - 6681231552f431962dda2ac49187df833b2b57544eac97ca94d1f4207b27b04c
+pkgname:
+  - name: privoxy
+# generated with artixpkg 0.38.2-1-any
