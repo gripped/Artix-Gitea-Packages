@@ -59,5 +59,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('SKIP')
+sha256sums=('3928aa479423c0eaf7bf3a72ad75000d03feb13fbacb69bd9b152feca5968a3a')
 
