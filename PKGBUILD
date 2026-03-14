@@ -10,7 +10,7 @@ pkgname=(
   harfbuzz-utils
   harfbuzz-docs
 )
-pkgver=13.1.0
+pkgver=13.1.1
 pkgrel=1
 pkgdesc="OpenType text shaping engine"
 url="https://harfbuzz.github.io/"
@@ -43,7 +43,7 @@ source=(
   "git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver"
   0001-util-Add-missing-chafa_dep-to-hb-raster.patch
 )
-b2sums=('b2670ceedb372c631d2a1771f1ea19c16711530306a7326c4d8f6ba9993515d59ae6bdcf1612fb5365df21f2e6e9495c5a978dfc1f3953ddb81e23ff7c07f769'
+b2sums=('3626b19545a4ea4dd92cf5f38b8cdffd3a5d7e3eae7c49df23821e2c05bc299ec62373836454e5f92ab9e90c4b4d8c9a360f16eefa1c0690153d4be9403af266'
         '09831355f499e6481f8a4de236bcaf0c42f6559fd24fe92310bbb1a928543f332d7808af6167e81e1892940ef776baba20a0e8bb798169e7cb5c58010848b482')
 validpgpkeys=(
   053D20F17CCCA9651B2C6FCB9AB24930C0B997A2 # Khaled Hosny <khaled@aliftype.com> (@khaledhosny)
@@ -69,7 +69,7 @@ build() {
   CFLAGS="${CFLAGS/-fexceptions/}"
   CXXFLAGS="${CXXFLAGS/-fexceptions/}"
 
-  arch-meson harfbuzz build "${meson_options[@]}"
+  artix-meson harfbuzz build "${meson_options[@]}"
   meson compile -C build
 }
 
