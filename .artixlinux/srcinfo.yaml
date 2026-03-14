@@ -1,9 +1,9 @@
 ---
-version: 1.5.13-1
+version: 1.5.14-1
 pkgbase:
   name: freetds
   pkgdesc: Library for accessing Sybase and MS SQL Server databases
-  pkgver: 1.5.13
+  pkgver: 1.5.14
   pkgrel: 1
   url: https://www.freetds.org
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - etc/freetds/locales.conf
     - etc/freetds/pool.conf
   source:
-    - https://www.freetds.org/files/stable/freetds-1.5.13.tar.bz2
+    - https://www.freetds.org/files/stable/freetds-1.5.14.tar.bz2
   sha256sums:
-    - 0c34f60027d714fe11763da14c299d253bbd8c6b8e542a4cdb46f4545f70045d
+    - 2422a04d6fb546f168e69dd4a8289d13ac9f53ef86fc852ab11f5e0de249207f
 pkgname:
   - name: freetds
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.2-1-any
