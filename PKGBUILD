@@ -74,18 +74,16 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         chromium-146-apply-upstream-libmuck-fix.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
-        enable-widevine-arm64.patch
         use-oauth2-client-switches-as-default.patch)
 sha256sums=('180d7db4217eb8b8291426cadd4926a448368f69a0253b1377c9f2cdd1aaffd8'
             '916e108adf53b8d966eebfe26de5f525bcd08355092b3c741474f9354ce1dfdb'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
-            '24535c314c7e70c52bcf409aaf604728bfc5b5c97e60087e630e1f7233b9e12d'
-            '06299959918481caf2c27bcb1841088967d9855acc22970ffcaa75e0cb218f0e'
+            'f71de14ebf4e34b43cb2d09091ab6bee3debe43a8cc35a2479d6062600164a3d'
+            'a2f37026e6e13417d5a894b9e5a44b0d217769893c6cc34e08a4d77d9726aeea'
             'ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
-            '9c766b82d1143cb3413fe2057361bd2655e46287eacc2c6d6f8504b4c255647a'
             '9343afa1a4308a7cfb3317229f5aff7778688debcc03c4a74a85908aa1d0cc3a')
 
 if (( _manual_clone )); then
@@ -169,9 +167,6 @@ prepare() {
 
   # https://crbug.com/456218403
   patch -Np1 -i ../chromium-145-fix-SYS_SECCOMP.patch
-
-  # enable widevine for arm64
-  patch -Np1 -i ../enable-widevine-arm64.patch
 
   if (( !_system_clang )); then
     # Use prebuilt rust as system rust cannot be used due to the error:
@@ -286,8 +281,6 @@ build() {
     # Allow the use of nightly features with stable Rust compiler
     # https://github.com/ungoogled-software/ungoogled-chromium/pull/2696#issuecomment-1918173198
     export RUSTC_BOOTSTRAP=1
-    export RUSTUP_TOOLCHAIN=1.92
-    export RUSTUP_TOOLCHAIN=stable
 
     _flags+=(
       'rust_sysroot_absolute="/usr"'

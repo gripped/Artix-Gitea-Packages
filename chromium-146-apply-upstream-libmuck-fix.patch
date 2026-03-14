@@ -67,4 +67,3 @@ index 397ddde..186c567 100644
 +  core::simd::LaneCount<N>: core::simd::SupportedLaneCount,
  {
  }
- 
