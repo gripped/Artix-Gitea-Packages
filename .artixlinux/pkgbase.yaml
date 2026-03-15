@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.20251130.1-1
+    version: 4.20260303.1-1
     packages:
-      - xdotool-4.20251130.1-1-x86_64.pkg.tar.zst
+      - xdotool-4.20260303.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 4.20251130.1-1
