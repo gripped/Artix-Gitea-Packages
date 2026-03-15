@@ -1,10 +1,10 @@
 ---
-version: 2026.1.0.9-1
+version: 2026.1.0.9-2
 pkgbase:
   name: nsight-compute
   pkgdesc: Interactive profiler for NVIDIA CUDA and OptiX
   pkgver: 2026.1.0.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.nvidia.com/nsight-compute
   arch:
     - x86_64
@@ -16,8 +16,14 @@ pkgbase:
     - fontconfig
     - glib2
     - glibc
+    - libatomic
+    - libcap
     - libdrm
+    - libelf
+    - libgcc
     - libglvnd
+    - libpng
+    - libstdc++
     - libx11
     - libxcb
     - libxext
@@ -26,13 +32,19 @@ pkgbase:
     - libxkbcommon-x11
     - libxkbfile
     - libxshmfence
+    - mesa
     - nspr
     - nss
+    - openssl
+    - python
+    - sqlite
     - wayland
+    - xcb-util
     - xcb-util-cursor
     - xcb-util-image
     - xcb-util-keysyms
     - xcb-util-renderutil
+    - zlib
   optdepends:
     - 'cuda: for profiling on the local system'
   options:
