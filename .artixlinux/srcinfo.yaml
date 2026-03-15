@@ -1,10 +1,10 @@
 ---
-version: 9.0.2-2
+version: 9.1.0-1
 pkgbase:
   name: python-ipyparallel
   pkgdesc: Interactive Parallel Computing in Python
-  pkgver: 9.0.2
-  pkgrel: 2
+  pkgver: 9.1.0
+  pkgrel: 1
   url: https://pypi.org/project/ipyparallel/
   arch:
     - any
@@ -34,9 +34,9 @@ pkgbase:
   optdepends:
     - 'openmpi: to use the MPI Launchers in ipcluster command'
   source:
-    - git+https://github.com/ipython/ipyparallel#tag=9.0.2
+    - git+https://github.com/ipython/ipyparallel#tag=9.1.0
   sha256sums:
-    - 26738e7864e314ee2da557b53003b380830bcfb3466001c80d17484103945508
+    - dee96421951758cda511f707ca278bef23a7a12d980c70fd0432f46590e55a6c
 pkgname:
   - name: python-ipyparallel
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
