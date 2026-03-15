@@ -1,10 +1,10 @@
 ---
-version: 49.1-1
+version: 49.2-1
 pkgbase:
   name: eog
   pkgdesc:
     Eye of Gnome: An image viewing and cataloging program
-  pkgver: 49.1
+  pkgver: 49.2
   pkgrel: 1
   url: https://wiki.gnome.org/Apps/EyeOfGnome
   arch:
@@ -22,7 +22,6 @@ pkgbase:
     - cairo
     - dconf
     - exempi
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -31,6 +30,7 @@ pkgbase:
     - hicolor-icon-theme
     - lcms2
     - libexif
+    - libgcc
     - libgirepository
     - libhandy
     - libjpeg-turbo
@@ -39,9 +39,9 @@ pkgbase:
     - libx11
     - zlib
   source:
-    - git+https://gitlab.gnome.org/GNOME/eog.git#tag=49.1
+    - git+https://gitlab.gnome.org/GNOME/eog.git#tag=49.2
   b2sums:
-    - cc488aff801833fee20a06386a43fea008b6e0ebcf4ac41db9c314c853c0659d78131773559574319b0d5b17c66ce4ef86e5cef546bb24baa0add88ac642ad59
+    - fb0d3379c57ec9ef03827e5cad4c3169a5a187615b9d6e0e86f174df3e0794d15986fb9a83d18d180bb87eb0ff7918285f4f964963b6905ea682b953d0d738cf
 pkgname:
   - name: eog
     optdepends:
@@ -50,4 +50,4 @@ pkgname:
     pkgdesc:
       Eye of Gnome: An image viewing and cataloging program (documentation)
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
