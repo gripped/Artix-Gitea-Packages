@@ -9,7 +9,7 @@ arch=('x86_64')
 url="https://gitlab.gnome.org/World/Shortwave"
 license=('GPL-3.0-or-later')
 makedepends=('git' 'meson' 'ninja' 'cargo' 'gettext')
-source="git+https://gitlab.gnome.org/World/Shortwave.git#tag=$pkgver"
+source=("git+https://gitlab.gnome.org/World/Shortwave.git#tag=$pkgver")
 sha256sums=('SKIP')
 
 build() {
