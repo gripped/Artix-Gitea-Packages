@@ -1,9 +1,9 @@
 ---
-version: 0.25.2-1
+version: 1.1.0-1
 pkgbase:
   name: python-dulwich
   pkgdesc: Pure-Python implementation of the Git file formats and protocols
-  pkgver: 0.25.2
+  pkgver: 1.1.0
   pkgrel: 1
   url: https://www.dulwich.io
   arch:
@@ -37,11 +37,11 @@ pkgbase:
     - 'python-pyinotify: to watch for changes to refs'
     - 'python-rich: for colorized diff support'
   source:
-    - git+https://github.com/jelmer/dulwich.git#tag=dulwich-0.25.2
+    - git+https://github.com/jelmer/dulwich.git#tag=dulwich-1.1.0
   validpgpkeys:
     - DC837EE14A7E37347E87061700806F2BD729A457
   b2sums:
-    - 710183318307877089f412f4cdc58a4640c7baa5ad51edda94e1066c77f5dce148904abbab5fb6b8c34b1affdb863906cde9afcdcb1b95ad596104bbedf45196
+    - 1b110b4c23b845a77151ef129daec1626631a3ff7853ce035306684c63c4cf1955d7adf75ebb8d96124613a1f9442f06f0a8d7487081e18af38de4d0e4088707
 pkgname:
   - name: python-dulwich
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
