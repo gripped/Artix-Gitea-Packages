@@ -1,9 +1,9 @@
 ---
-version: 8.0.0-1
+version: 8.1.0-1
 pkgbase:
   name: nodejs-nopt
   pkgdesc: Node/npm Option Parsing library
-  pkgver: 8.0.0
+  pkgver: 8.1.0
   pkgrel: 1
   url: https://github.com/npm/nopt
   arch:
@@ -15,13 +15,13 @@ pkgbase:
   depends:
     - nodejs
   noextract:
-    - nopt-8.0.0.tgz
+    - nopt-8.1.0.tgz
   options:
     - '!strip'
   source:
-    - https://registry.npmjs.org/nopt/-/nopt-8.0.0.tgz
+    - https://registry.npmjs.org/nopt/-/nopt-8.1.0.tgz
   sha256sums:
-    - 3f48846dc38a6e4acc4ea74b1b0ee385b9b5c410519aceb158b06e2023dab8d7
+    - 60aba7d630bb40bc386577f16fce64a96f4631988fa48a774242f9dee410f0a6
 pkgname:
   - name: nodejs-nopt
 # generated with artixpkg 0.38.2-1-any
