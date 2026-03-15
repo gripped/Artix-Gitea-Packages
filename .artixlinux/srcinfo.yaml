@@ -1,17 +1,20 @@
 ---
-version: 0.4.2-1
+version: 0.4.2-2
 pkgbase:
   name: python-colored-traceback
   pkgdesc: Automatically color Python’s uncaught exception tracebacks
   pkgver: 0.4.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/staticshock/colored-traceback.py
   arch:
     - any
   license:
     - MIT
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
     - python-colorama
