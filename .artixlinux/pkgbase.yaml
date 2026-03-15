@@ -21,14 +21,14 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.51.0-2
+    version: 1.51.0.2-1
     packages:
-      - libluv-1.51.0-2-x86_64.pkg.tar.zst
-      - lua-luv-1.51.0-2-x86_64.pkg.tar.zst
-      - lua51-luv-1.51.0-2-x86_64.pkg.tar.zst
-      - lua52-luv-1.51.0-2-x86_64.pkg.tar.zst
-      - lua53-luv-1.51.0-2-x86_64.pkg.tar.zst
-      - lua54-luv-1.51.0-2-x86_64.pkg.tar.zst
+      - libluv-1.51.0.2-1-x86_64.pkg.tar.zst
+      - lua-luv-1.51.0.2-1-x86_64.pkg.tar.zst
+      - lua51-luv-1.51.0.2-1-x86_64.pkg.tar.zst
+      - lua52-luv-1.51.0.2-1-x86_64.pkg.tar.zst
+      - lua53-luv-1.51.0.2-1-x86_64.pkg.tar.zst
+      - lua54-luv-1.51.0.2-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
