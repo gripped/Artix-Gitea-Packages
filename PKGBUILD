@@ -3,8 +3,8 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.144.0
-pkgrel=4
+pkgver=1.149.1
+pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
 arch=('x86_64')
@@ -17,10 +17,10 @@ depends=('gcc-libs' 'glibc' 'libwebp' 'python' 'python-ijson' 'python-jsonschema
          'python-signedjson' 'python-pymacaroons'
          'python-service-identity' 'python-msgpack'
          'python-phonenumbers' 'python-prometheus_client'
-         'python-attrs' 'python-netaddr' 'python-sortedcontainers'
+         'python-attrs' 'python-netaddr' 'python-sortedcontainers' 'python-pyparsing' 'python-pyrsistent'
          'python-treq' 'python-idna' 'python-jinja' 'python-matrix-common'
          'python-bleach' 'python-typing_extensions' 'python-python-multipart')
-makedepends=(git python-build python-installer python-wheel python-poetry-core python-setuptools-rust)
+makedepends=(git python-build python-installer python-wheel python-poetry-core python-maturin)
 checkdepends=('python-pip' 'python-authlib' 'python-pyjwt' 'python-lxml' 'python-parameterized'
               'python-txredisapi' 'python-hiredis' 'postgresql' 'python-pyicu')
 optdepends=('perl: sync_room_to_group.pl'
@@ -39,7 +39,7 @@ source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf'
         )
-sha256sums=('01eaa5afce4e4e0006206f7f754c53cdd1e6b67a6e599685c8ce5a4ecbecaca7'
+sha256sums=('f80fe0f33c928980a745725464905734298eb3e2221b469883c8d9159da10ec7'
             '751d0cb122b3c17cb4a2142461ac99bbaec798f1e4b357dd41ec4041e5623d35'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             '574175c27a4f07d4ce6a676d86b697c82c36b796442d0955881da588b6f4bb65'
@@ -70,6 +70,9 @@ prepare() {
 	sed 's/setuptools_rust>=1.3,<=1.11.1/setuptools_rust>=1.3.0/' -i pyproject.toml
 
   patch -Np1 < ../$pkgname-fix-worker-test-race.patch
+
+	# Work around xmlschema + zope.interface incompatibility (FS#1 python-xmlschema)
+	sed -i 's/except ImportError:/except (ImportError, AttributeError):/' tests/handlers/test_saml.py
 }
 
 build() {
@@ -82,7 +85,7 @@ check() {
 	local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
 	python -m venv --system-site-packages test-env
 	test-env/bin/python -m installer dist/*.whl
-	pushd build/lib.linux-$CARCH-cpython-${python_version}
+	pushd target/release
 	ln -sv ../../tests .
 	PYTHONPATH="$PWD" PATH="../../test-env/bin:$PATH" ../../test-env/bin/python -m twisted.trial -j$(nproc) tests
 	rm -r tests _trial_temp
