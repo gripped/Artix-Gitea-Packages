@@ -32,4 +32,4 @@ pkgbase:
     - d4af0a872f3036f6bee071524beab2ad312eaf3464ff0b604d06c60dac8e4135b9c7a2a28fbe8c5dbd2b3a4dcf8458b26b77a70fabdde5d739358d0ee2f626c7
 pkgname:
   - name: python-sphinx-argparse
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
