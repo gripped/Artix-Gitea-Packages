@@ -1,10 +1,10 @@
 ---
-version: 1.25-3
+version: 1.33-1
 pkgbase:
   name: python-blessed
   pkgdesc: A thin, practical wrapper around terminal styling, screen positioning, and keyboard input
-  pkgver: 1.25
-  pkgrel: 3
+  pkgver: 1.33
+  pkgrel: 1
   url: https://github.com/jquast/blessed
   arch:
     - any
@@ -24,9 +24,9 @@ pkgbase:
     - python
     - python-wcwidth
   source:
-    - git+https://github.com/jquast/blessed.git#tag=864a8f7d6de752d7fede2c030758d245f1bb8e21
+    - git+https://github.com/jquast/blessed.git#tag=405113b7643f513f1625b1860301b3fa08430aef
   b2sums:
-    - abd1bc99026547ce266e03554f685f07fa446964f92dbab99fc7a42321baed3ce96a7b1db3ce34369d861c0e96ae20939b57641fae43facb5a4faaa1a6e95c56
+    - 7a799b7f509c7b02be311b3a0a9207d5e6a24f5efa5bb18b8d7bc7154d0054f4d2c1f0cb158c1660472ac6ff31ccea7ce7ef6045ecd1c859c968085c613e3dab
 pkgname:
   - name: python-blessed
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
