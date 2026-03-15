@@ -3,7 +3,7 @@
 # Contributor: Stijn Segers <francesco dot borromini at gmail dot com>
 
 pkgname=freerdp
-pkgver=3.23.0
+pkgver=3.24.0
 _libver=${pkgver/.*/}
 pkgrel=1
 epoch=2
@@ -65,14 +65,8 @@ provides=(
 source=(
   "git+https://github.com/$pkgname/$pkgname#tag=$pkgver"
 )
-sha512sums=('fc067df40bfed774ce2152004ae466653455ca67f99c0364973e232978a28070fc38e599ff2b1923bebd2e761c360d472198c9fc899e4997b1598bdf0d1d178b')
-b2sums=('a298a00b6f0c506bf198309493eaf2b0580cf906e10f5876130e5cdc9dcc10c5e736dcb45d4d55a66ac91ca8fc27e903cf1d4fd0f57b4a58dac77d4858d4252f')
-
-prepare() {
-  # Fix building downstream packages
-  # https://github.com/FreeRDP/FreeRDP/pull/11876
-  git -C $pkgname cherry-pick -n 74a3a7695cdd09cf020acdeb09480ac8ee92ccbe
-}
+sha512sums=('0a02fa9f2520870431b041baa4a179af17a20d6cc2b9dcd12aff8d57d8dff55b3be2436fbd78187568074c117fd4093ac611100c26625a8daea982c42fa5781f')
+b2sums=('6f57dfec34b733afe392c1df43caf827b486b343853f29e5043cd5df150b4cc88747a4c7f3090d5120d4b5874a0c302eca2ce564eb953758caf8a1863ecb7e84')
 
 build() {
   # gcc14 buildfix
