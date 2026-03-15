@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=2.21.0
+pkgver=2.28.0
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -52,14 +52,14 @@ optdepends=(
   'python-websockets: Realtime support'
 )
 # Defined in .stats.yml
-# curl -s https://raw.githubusercontent.com/openai/openai-python/refs/tags/v1.71.0/.stats.yml | grep openapi_spec_url | cut -d- -f5 | cut -d. -f1
-_openai_openapi_spec=0db5326a0fb6a30ffad9242c72872c3388ef927e8a4549ddd20aec3420541209
+# curl -s https://raw.githubusercontent.com/openai/openai-python/refs/tags/v2.26.0/.stats.yml | grep openapi_spec_url | cut -d- -f5 | cut -d. -f1
+_openai_openapi_spec=cb3e4451108eed58d59cff25bf77ec0dc960ec9c6f3dba68f90e7a9847c09d21
 source=(
   "${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz"
   "https://storage.googleapis.com/stainless-sdk-openapi-specs/openai%2Fopenai-${_openai_openapi_spec}.yml"
 )
-b2sums=('cd07dc6341eb026124f1235b32e069c89206abcd0966defe74da0f310d397377218e5077ed4cd242d31cd3de54e6335e71a0aa3cf17fa34650901ad2aa69ec06'
-        '5d745417ec16cb9812e8c952eb2cb7803797a77cc47e34b82c17243a94759f452730f11825df3d9e74663fc5a68cdfbcfe648e63e3fbe7f46a22119f4ba87313')
+b2sums=('23eb8ebb720bc0554db5b361c0e7ed2317d2f5d4b1fbcf607610ce84327e8d53b6147873672e9f198c46a699cae5257e5d837e1b2f85772e41d7455788aa4c80'
+        'ce769143ae170fd03bbcd7bc6ccf637cfd630f7e4a353dbec5512393f5c90631e9605809a8fabe2cea163904436811dd49f4a65af8bd9f0bb0cb4298282b1310')
 
 prepare() {
   cd "${_name}-${pkgver}"
@@ -79,6 +79,7 @@ check() {
   export PYTHONPATH="$PWD/tmp_install/${site_packages}"
 
   # Start mock server and make sure it's cleaned up on exit
+  export npm_config_yes=true
   trap 'pkill "npm exec prism"' EXIT
   ./scripts/mock --daemon "${srcdir}/openai-${_openai_openapi_spec}.yml"
 
