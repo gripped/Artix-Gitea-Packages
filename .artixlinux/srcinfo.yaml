@@ -1,9 +1,9 @@
 ---
-version: 1.11.749-1
+version: 1.11.769-1
 pkgbase:
   name: aws-sdk-cpp
   pkgdesc: AWS SDK for C++
-  pkgver: 1.11.749
+  pkgver: 1.11.769
   pkgrel: 1
   url: https://github.com/aws/aws-sdk-cpp
   arch:
@@ -20,14 +20,14 @@ pkgbase:
     - aws-crt-cpp
     - cmake
     - curl
-    - gcc-libs
     - glibc
     - libpulse
+    - libstdc++
     - zlib
   source:
-    - https://github.com/aws/aws-sdk-cpp/archive/1.11.749/aws-sdk-cpp-1.11.749.tar.gz
+    - https://github.com/aws/aws-sdk-cpp/archive/1.11.769/aws-sdk-cpp-1.11.769.tar.gz
   b2sums:
-    - 4a18bdfcc11be67e13459f574e4f10a754e2a1815e8e32c5b12e2aafe997d165469fa1dfed8759c0a55e5f2226919f257d3a4ad9f9ccd5aa568d10966f99266c
+    - 8a985d8b737fcf151443806c55ebcf0fbda13dc2afb217d1419db09feb2a83949098129c8bc4a1c4192b031d1470a825b3508f7c7debf03d18df16eb5292f364
 pkgname:
   - name: aws-sdk-cpp
     depends:
@@ -39,9 +39,9 @@ pkgname:
       - aws-sdk-cpp-iam
       - aws-sdk-cpp-kinesis
       - aws-sdk-cpp-s3
-      - gcc-libs
       - glibc
       - libpulse
+      - libstdc++
   - name: aws-sdk-cpp-core
     pkgdesc: AWS SDK for C++ - core library
     depends:
@@ -49,40 +49,37 @@ pkgname:
       - aws-c-event-stream
       - aws-crt-cpp
       - curl
-      - gcc-libs
       - glibc
+      - libstdc++
       - zlib
   - name: aws-sdk-cpp-ec2
     pkgdesc: AWS SDK for C++ - EC2 libraries
     depends:
-      - aws-c-common
       - aws-crt-cpp
       - aws-sdk-cpp-core
-      - gcc-libs
       - glibc
+      - libstdc++
   - name: aws-sdk-cpp-firehose
     pkgdesc: AWS SDK for C++ - Firehose libraries
     depends:
-      - aws-c-common
       - aws-crt-cpp
       - aws-sdk-cpp-core
-      - gcc-libs
       - glibc
+      - libstdc++
   - name: aws-sdk-cpp-iam
     pkgdesc: AWS SDK for C++ - IAM libraries
     depends:
       - aws-crt-cpp
       - aws-sdk-cpp-core
-      - gcc-libs
       - glibc
+      - libstdc++
   - name: aws-sdk-cpp-kinesis
     pkgdesc: AWS SDK for C++ - Kinesis libraries
     depends:
-      - aws-c-common
       - aws-crt-cpp
       - aws-sdk-cpp-core
-      - gcc-libs
       - glibc
+      - libstdc++
   - name: aws-sdk-cpp-s3
     pkgdesc: AWS SDK for C++ - S3 libraries
     depends:
@@ -93,6 +90,6 @@ pkgname:
       - aws-c-s3
       - aws-crt-cpp
       - aws-sdk-cpp-core
-      - gcc-libs
       - glibc
-# generated with artixpkg 0.37.6-1-any
+      - libstdc++
+# generated with artixpkg 0.38.2-1-any
