@@ -1,10 +1,10 @@
 ---
-version: 4.3.1-2
+version: 4.4.0-1
 pkgbase:
   name: python-bitstring
   pkgdesc: A Python module to help you manage your bits
-  pkgver: 4.3.1
-  pkgrel: 2
+  pkgver: 4.4.0
+  pkgrel: 1
   url: https://github.com/scott-griffiths/bitstring
   arch:
     - any
@@ -14,6 +14,7 @@ pkgbase:
     - python-hypothesis
     - python-pytest
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-setuptools
@@ -22,9 +23,9 @@ pkgbase:
     - python
     - python-bitarray
   source:
-    - https://github.com/scott-griffiths/bitstring/archive/bitstring-4.3.1.tar.gz
-  sha256sums:
-    - 49e0fa2d0f174ca1e40711f8b443e6ba2a2e939f13cfefab508bb4ef4257aff3
+    - git+https://github.com/scott-griffiths/bitstring.git#tag=4.4.0
+  b2sums:
+    - 18971e0c67bda9bf83c6a244c864c696f48057c07b26de097979ac5658477cfc95ab1c3578f597a100640afa15abe323120db9a6cf6543f9dc47d17e6bbd31f5
 pkgname:
   - name: python-bitstring
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
