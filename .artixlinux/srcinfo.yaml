@@ -1,9 +1,9 @@
 ---
-version: 10.3.0-1
+version: 10.5.0-1
 pkgbase:
   name: python-pikepdf
   pkgdesc: Read and write PDFs with Python, powered by qpdf
-  pkgver: 10.3.0
+  pkgver: 10.5.0
   pkgrel: 1
   url: https://github.com/pikepdf/pikepdf
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - python-pillow
     - qpdf
   source:
-    - git+https://github.com/pikepdf/pikepdf#tag=v10.3.0
+    - git+https://github.com/pikepdf/pikepdf#tag=v10.5.0
   sha256sums:
-    - aed417e981f91640b5584e3cc2e60d91cc56c78ea2fb65ed72bfedbe150c3806
+    - 1bfccaf20196ec4d5e6a4ff0e0a99b48e1d37c9faab9b2b051af63713a41cfc4
 pkgname:
   - name: python-pikepdf
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
