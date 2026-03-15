@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.13.0-1
+    version: 2.13.2-1
     packages:
-      - librdkafka-2.13.0-1-x86_64.pkg.tar.zst
+      - librdkafka-2.13.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.13.0-1
