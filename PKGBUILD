@@ -9,14 +9,14 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs
-pkgver=25.7.0
+pkgver=25.8.0
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
 url='https://nodejs.org/'
 license=('MIT')
 depends=(
-#  'ada'
+  'ada'
   'brotli'
   'c-ares'
   'icu'
@@ -30,20 +30,18 @@ depends=(
 #  'simdutf'
 #  'v8'
   'zlib'
+  'zstd'
 )
 makedepends=(
   'git'
+  'ninja'
   'procps-ng'
   'python'
 )
 optdepends=('npm: nodejs package manager')
 options=('!lto')
-source=(
-  "git+https://github.com/nodejs/node.git#tag=v$pkgver?signed"
-  "update-icu-tests.patch")
-
-sha512sums=('972c32814b34111ed750b06fef9a0033403799ac650a4cb9645bd45242738562d4b4ff377d3a6bc41eb0ddcf2d90a3c6d8c02a0fcedf9418af5f5891e55127da'
-            'ab2edd1d99a6bb53f8f1f2cef8a3155dd1a44dda181040543ded1aef8775461676bba24470e8f2f9ffc5c36a6acdc77ecb2ea8492eda6bad382c9e0a06dca446')
+source=("git+https://github.com/nodejs/node.git#tag=v$pkgver?signed")
+sha512sums=('184901256260b22d93255084fa174394117c228ecb661ff66ec9615e9d2dee5c5fa8364f2850cc9b143d9817f524fc6a3fb33f08fd6463c92dd83c496fbbd275')
 validpgpkeys=(
   '8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600' # Michaël Zasso (Targos) <targos@protonmail.com>
   '890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4' # RafaelGSS <rafael.nunu@hotmail.com>
@@ -59,20 +57,16 @@ _set_flags() {
   CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 }
 
-prepare() {
-  cd node
-  # Update ICU tests https://github.com/nodejs/node/pull/60523
-  patch -Np1 -i ../update-icu-tests.patch
-}
-
 build() {
   _set_flags
   cd node
 
   ./configure \
+    --ninja \
     --prefix=/usr \
     --with-intl=system-icu \
     --without-npm \
+    --shared-ada \
     --shared-brotli \
     --shared-cares \
     --shared-libuv \
@@ -81,8 +75,8 @@ build() {
     --shared-ngtcp2 \
     --shared-openssl \
     --shared-simdjson \
-    --shared-zlib
-    # --shared-ada
+    --shared-zlib \
+    --shared-zstd
     # --shared-http-parser
     # --shared-simdutf
     # --shared-v8
@@ -103,9 +97,6 @@ check() {
   rm test/parallel/test-http2-priority-event.js
   rm test/parallel/test-http2-reset-flood.js
   rm test/parallel/test-tls-ocsp-callback.js
-
-  # https://github.com/nodejs/node/pull/60523
-  rm test/parallel/test-datetime-change-notify.js
 
   make test-only
 }
