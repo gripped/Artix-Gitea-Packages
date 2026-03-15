@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.1.1767980792+707c12b-2
+    version: 2.1.1772619647+659a616-1
     packages:
-      - luajit-2.1.1767980792+707c12b-2-x86_64.pkg.tar.zst
+      - luajit-2.1.1772619647+659a616-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
