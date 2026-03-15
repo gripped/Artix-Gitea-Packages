@@ -8,6 +8,8 @@ pkgdesc="Internet radio player"
 arch=('x86_64')
 url="https://gitlab.gnome.org/World/Shortwave"
 license=('GPL-3.0-or-later')
+depends=('gtk4' 'libadwaita' 'libshumate' 'libpeas-2' 'glycin-gtk4' 'sqlite'
+         'gst-plugins-bad' 'desktop-file-utils' 'openssl')
 makedepends=('git' 'meson' 'ninja' 'cargo' 'gettext')
 source=("git+https://gitlab.gnome.org/World/Shortwave.git#tag=$pkgver")
 sha256sums=('SKIP')
@@ -31,10 +33,6 @@ EOF
 }
 
 package() {
-    depends=('gtk4' 'libadwaita' 'libshumate' 'libpeas-2' 'glycin-gtk4' 'sqlite'
-             'gst-plugins-bad' 'desktop-file-utils' 'openssl')
-    provides=('shortwave')
-    conflicts=('shortwave')
     DESTDIR="$pkgdir" meson install -C build
     rm -rf "$pkgdir/usr/lib/systemd"
     sed -i 's|/usr/bin/shortwave|/usr/bin/shortwave --gapplication-service|' \

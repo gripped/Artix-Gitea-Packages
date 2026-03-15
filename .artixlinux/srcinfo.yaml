@@ -16,24 +16,20 @@ pkgbase:
     - ninja
     - cargo
     - gettext
+  depends:
+    - gtk4
+    - libadwaita
+    - libshumate
+    - libpeas-2
+    - glycin-gtk4
+    - sqlite
+    - gst-plugins-bad
+    - desktop-file-utils
+    - openssl
   source:
     - git+https://gitlab.gnome.org/World/Shortwave.git#tag=5.1.0
   sha256sums:
     - SKIP
 pkgname:
   - name: shortwave
-    depends:
-      - gtk4
-      - libadwaita
-      - libshumate
-      - libpeas-2
-      - glycin-gtk4
-      - sqlite
-      - gst-plugins-bad
-      - desktop-file-utils
-      - openssl
-    provides:
-      - shortwave
-    conflicts:
-      - shortwave
 # generated with artixpkg 0.38.2-1-any
