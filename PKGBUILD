@@ -9,8 +9,8 @@ pkgname=(
   lib32-harfbuzz-cairo
   lib32-harfbuzz-icu
 )
-pkgver=13.1.0
-pkgrel=1
+pkgver=13.1.1
+pkgrel=2
 pkgdesc="OpenType text shaping engine - 32-bit"
 url="https://harfbuzz.github.io/"
 arch=(x86_64)
@@ -26,6 +26,7 @@ makedepends=(
   lib32-glibc
   lib32-icu
   lib32-libpng
+  lib32-zlib
   meson
   python
   ragel
@@ -37,7 +38,7 @@ checkdepends=(
 source=(
   "git+https://github.com/harfbuzz/harfbuzz?signed#tag=$pkgver"
 )
-b2sums=('b2670ceedb372c631d2a1771f1ea19c16711530306a7326c4d8f6ba9993515d59ae6bdcf1612fb5365df21f2e6e9495c5a978dfc1f3953ddb81e23ff7c07f769')
+b2sums=('3626b19545a4ea4dd92cf5f38b8cdffd3a5d7e3eae7c49df23821e2c05bc299ec62373836454e5f92ab9e90c4b4d8c9a360f16eefa1c0690153d4be9403af266')
 validpgpkeys=(
   053D20F17CCCA9651B2C6FCB9AB24930C0B997A2 # Khaled Hosny <khaled@aliftype.com> (@khaledhosny)
   9F377DDB6D3153A48EB3EB1E63CC496475267693 # Caleb Maclennan <caleb@alerque.com> (@alerque)
@@ -90,6 +91,7 @@ package_lib32-harfbuzz() {
     lib32-glib2 libg{lib,object}-2.0.so
     lib32-glibc
     lib32-libpng libpng16.so
+    lib32-zlib libz.so
   )
   provides=(libharfbuzz{,-{subset,gobject,raster,vector}}.so)
 
