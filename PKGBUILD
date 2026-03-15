@@ -6,19 +6,23 @@
 pkgbase=firewalld
 pkgname=('firewalld' 'python-firewall' 'firewall-config' 'firewall-applet' 'firewalld-test')
 pkgver=2.4.0
-pkgrel=6.1
+pkgrel=7
 url="https://firewalld.org"
 arch=('any')
 license=('GPL-2.0-or-later')
-makedepends=('docbook-xsl' 'git' 'intltool' 'podman')
+makedepends=('docbook-xsl' 'git' 'intltool' 'python' 'iptables')
 source=("git+https://github.com/firewalld/firewalld.git#tag=v${pkgver}"
+        'firewalld-sysconfigdir.patch'
         'fix_gettext_macros_path.patch')
 sha256sums=('8107cf1bbaf2b4679a24132e19f8099c4836882e1ba76e20872129b1cf878a62'
+            '3b2e00f67680c2e620804eb28620d7370b4096851bcb5f6fec22460a21941ad9'
             '49f793aeaf2e87c834c734b37dc926c9579cc2ec0782e5fe297ee286df6c7ef6')
 
 prepare() {
 	cd "${pkgbase}"
 
+	# Use '/etc/conf.d' rather than '/etc/sysconfig'
+	patch -Np1 -i "${srcdir}/firewalld-sysconfigdir.patch"
 	# Fix gettext's macros path
 	patch -Np1 -i "${srcdir}/fix_gettext_macros_path.patch"
 
@@ -33,7 +37,6 @@ build() {
 		--sbindir=/usr/bin \
 		--sysconfdir=/etc \
 		--disable-schemas-compile \
-		--disable-systemd \
 		--disable-sysconfig
 	make
 
@@ -66,19 +69,20 @@ package_firewalld() {
 		    'firewall-config: Graphical user interface for firewallD configuration'
 		    'firewall-applet: Systray applet for firewallD'
 		    'firewalld-test: firewallD test suite')
-	backup=('etc/sysconfig/firewalld'
+	backup=('etc/conf.d/firewalld'
 	        'etc/firewalld/firewalld.conf')
 	install="${pkgbase}.install"
 
 	# Selectively install files
 	# Can be dropped in favor of https://gitlab.archlinux.org/-/snippets/3770 once available
-	_install fakeinstall/etc/sysconfig/firewalld
+	_install fakeinstall/etc/conf.d/firewalld
 	_install fakeinstall/etc/firewalld/*
 	_install fakeinstall/etc/logrotate.d/firewalld
 	_install fakeinstall/etc/modprobe.d/firewalld-sysctls.conf
 	_install fakeinstall/usr/bin/firewall-cmd
 	_install fakeinstall/usr/bin/firewall-offline-cmd
 	_install fakeinstall/usr/lib/firewalld/*
+	_install fakeinstall/usr/lib/systemd/system/firewalld.service
 	_install fakeinstall/usr/bin/firewalld
 	_install fakeinstall/usr/share/dbus-1/system.d/FirewallD.conf
 	_install fakeinstall/usr/share/bash-completion/completions/firewall-cmd
@@ -144,5 +148,5 @@ package_firewalld-test() {
 	_install fakeinstall/usr/share/firewalld/testsuite/*
 
 	# make sure there are no files left to install
-	find fakeinstall -depth -print0 | xargs -0 rmdir | :
+	find fakeinstall -depth -print0 | xargs -0 rmdir
 }

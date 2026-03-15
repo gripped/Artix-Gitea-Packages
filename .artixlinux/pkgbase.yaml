@@ -29,13 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.4.0-6.1
+    version: 2.4.0-7
     packages:
-      - firewalld-2.4.0-6.1-any.pkg.tar.zst
-      - python-firewall-2.4.0-6.1-any.pkg.tar.zst
-      - firewall-config-2.4.0-6.1-any.pkg.tar.zst
-      - firewall-applet-2.4.0-6.1-any.pkg.tar.zst
-      - firewalld-test-2.4.0-6.1-any.pkg.tar.zst
+      - firewalld-2.4.0-7-any.pkg.tar.zst
+      - python-firewall-2.4.0-7-any.pkg.tar.zst
+      - firewall-config-2.4.0-7-any.pkg.tar.zst
+      - firewall-applet-2.4.0-7-any.pkg.tar.zst
+      - firewalld-test-2.4.0-7-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null

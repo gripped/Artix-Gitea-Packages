@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-6.1
+version: 2.4.0-7
 pkgbase:
   name: firewalld
   pkgver: 2.4.0
-  pkgrel: 6.1
+  pkgrel: 7
   url: https://firewalld.org
   arch:
     - any
@@ -13,12 +13,15 @@ pkgbase:
     - docbook-xsl
     - git
     - intltool
-    - podman
+    - python
+    - iptables
   source:
     - git+https://github.com/firewalld/firewalld.git#tag=v2.4.0
+    - firewalld-sysconfigdir.patch
     - fix_gettext_macros_path.patch
   sha256sums:
     - 8107cf1bbaf2b4679a24132e19f8099c4836882e1ba76e20872129b1cf878a62
+    - 3b2e00f67680c2e620804eb28620d7370b4096851bcb5f6fec22460a21941ad9
     - 49f793aeaf2e87c834c734b37dc926c9579cc2ec0782e5fe297ee286df6c7ef6
 pkgname:
   - name: firewalld
@@ -36,7 +39,7 @@ pkgname:
       - 'firewall-applet: Systray applet for firewallD'
       - 'firewalld-test: firewallD test suite'
     backup:
-      - etc/sysconfig/firewalld
+      - etc/conf.d/firewalld
       - etc/firewalld/firewalld.conf
   - name: python-firewall
     pkgdesc: Python bindings for firewallD
@@ -63,4 +66,4 @@ pkgname:
     pkgdesc: FirewallD test suite
     depends:
       - firewalld
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
