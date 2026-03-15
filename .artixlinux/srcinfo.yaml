@@ -33,4 +33,4 @@ pkgbase:
     - 6495a6cd172213a668ca5072676b1969c35f5ee4bf927ad89eac323d878cb25fa85ab56e7079d562c1915277b6196a5286000fb51ceb2603f710c3d65a2ab524
 pkgname:
   - name: xdotool
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
