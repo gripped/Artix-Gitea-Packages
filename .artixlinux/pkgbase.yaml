@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.9.4-1
+    version: 0.10.1-1
     packages:
-      - aws-c-auth-0.9.4-1-x86_64.pkg.tar.zst
+      - aws-c-auth-0.10.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.9.5-1
