@@ -7,7 +7,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1:0.32.1-1
+    version: 1:0.33.1-1
     packages:
-      - gemini-cli-1:0.32.1-1-x86_64.pkg.tar.zst
+      - gemini-cli-1:0.33.1-1-x86_64.pkg.tar.zst
     debug: []
