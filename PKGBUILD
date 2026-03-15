@@ -1,12 +1,12 @@
 # Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
-_name=google-auth-library-python
+_name=google-auth
 pkgname=python-google-auth
-pkgver=2.48.0
+pkgver=2.49.1
 pkgrel=1
 pkgdesc="Google Authentication Library"
-url="https://github.com/GoogleCloudPlatform/google-auth-library-python"
+url="https://github.com/googleapis/google-cloud-python"
 license=('Apache-2.0')
 arch=('any')
 depends=(
@@ -50,16 +50,16 @@ optdepends=(
   'python-requests: for async HTTP support'
 )
 source=(
-  "$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
+  "${url}/archive/refs/tags/${_name}-v${pkgver}.tar.gz"
   "python-pyopenssl-compatibility.patch"
 )
-sha512sums=('67f010fc05cbf5db25312b0fcc5de59edf1cfc9387609dcf3d34b65508d28f1bc5a760a169c532f5c9f1c3f0bb14dd67807675c7c8a9c5ba2c7e89b1850919de'
+sha512sums=('92ca0fd379b3bad66d969c7f76716494209450ba8b652a913fd6b5f28fbbdacc68af4634bee35e063bdd56ad4bc73a7bf4f58e0db6131c6036faa3d7cdfdd7be'
             '4e23dfaeec6933b1fb6736b6402f1f3cce0fedc0967e527879bc1b3e6215d94c986c28ab9d6b9b4ba975f39316eb0159bb74144aca1f27345b0a9174857fcfff')
 
 prepare() {
-  cd $_name-$pkgver
+  cd "google-cloud-python-${_name}-v${pkgver}/packages/${_name}"
 
-  patch -Np1 -i ../python-pyopenssl-compatibility.patch
+  patch -Np1 -i "$srcdir"/python-pyopenssl-compatibility.patch
 
   # Remove python-mock, upstream PR: https://github.com/googleapis/google-auth-library-python/pull/1361
   sed -i -e 's/^import mock$/from unittest import mock/' \
@@ -71,16 +71,16 @@ prepare() {
 }
 
 build() {
-  cd $_name-$pkgver
+  cd "google-cloud-python-${_name}-v${pkgver}/packages/${_name}"
   python -m build --wheel --no-isolation
 }
 
 check() {
-  cd $_name-$pkgver
+  cd "google-cloud-python-${_name}-v${pkgver}/packages/${_name}"
   python -m pytest tests
 }
 
 package() {
-  cd $_name-$pkgver
+  cd "google-cloud-python-${_name}-v${pkgver}/packages/${_name}"
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
