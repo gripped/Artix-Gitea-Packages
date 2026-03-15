@@ -1,10 +1,10 @@
 ---
-version: 3.1.2-2
+version: 3.1.3-1
 pkgbase:
   name: python-flask
   pkgdesc: Micro webdevelopment framework for Python
-  pkgver: 3.1.2
-  pkgrel: 2
+  pkgver: 3.1.3
+  pkgrel: 1
   url: https://flask.palletsprojects.com/
   arch:
     - any
@@ -31,9 +31,9 @@ pkgbase:
     - 'python-cryptography: using ad-hoc certificates'
     - 'python-dotenv: loading env vars from files'
   source:
-    - python-flask-3.1.2.tar.gz::https://github.com/pallets/flask/archive/3.1.2.tar.gz
-  sha512sums:
-    - 87fcb2c73531eca0151286204034e433130f74ae365e62600f3973fbd0f11d0cdead62b07a9f4cbaaca2a1b2c149063be091c00addeba1f9ba6b7f2f2e0572c2
+    - https://github.com/pallets/flask/archive/3.1.3/python-flask-3.1.3.tar.gz
+  b2sums:
+    - cd0144a13ada95038b231aaf4fd59dd4cfecb6d0df0008aef1e68b7159969a39f9aceafe1e292163b3580a0cf8c84983cd0eaaf8d3e976f1fd45bcc337707796
 pkgname:
   - name: python-flask
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
