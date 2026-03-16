@@ -6,7 +6,7 @@ pkgname=(pyside6
          pyside6-tools
          shiboken6)
 pkgver=6.10.2
-pkgrel=3.1
+pkgrel=3.2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -42,16 +42,20 @@ makedepends=(clang
              qt6-tools
              qt6-webchannel
              qt6-webengine
-             qt6-websockets)
+             qt6-websockets
+             qt6-webview)
 source=(git+https://code.qt.io/pyside/pyside-setup#tag=v$pkgver
-        fix-header-install-dir.patch)
+        fix-header-install-dir.patch
+        clang-22.patch)
 sha256sums=('8eb03468f637e9deddad966ddf00e4a291a9b3880db0e2678af13ad735160ad0'
-            '3bc87409ea3dc41847f1d5d7612fd97931b67f1b40510b465543a8ef5c9764ff')
+            '3bc87409ea3dc41847f1d5d7612fd97931b67f1b40510b465543a8ef5c9764ff'
+            '6e9b7c7f8799ca3d3ab92eeaa80c357014f979cf681b8aadeb7c55314795f0ca')
 
 prepare() {
   cd pyside-setup
   git revert -n c9d602ab4afa5c9834c4674a742dc9bab7f4b326 05e328476f2d6ef8a0f3f44aca1e5b1cdb7499fc # Revert broken cmake files
   patch -p1 -i ../fix-header-install-dir.patch # Revert broken header install dir
+  patch -p1 -i ../clang-22.patch # https://qt-project.atlassian.net/browse/PYSIDE-3286
 }
 
 build() {
@@ -118,7 +122,8 @@ package_pyside6() {
               'qt6-tools: QtHelp, QtUiTools bindings'
               'qt6-webchannel: QtWebChannel bindings'
               'qt6-webengine: QtWebEngine bindings'
-              'qt6-websockets: QtWebSockets bindings')
+              'qt6-websockets: QtWebSockets bindings'
+              'qt6-webview: QtWebView bindings')
   provides=(qt6-python-bindings)
 
   DESTDIR="$pkgdir" cmake --install build/sources/pyside6

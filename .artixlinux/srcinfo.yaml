@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-3.1
+version: 6.10.2-3.2
 pkgbase:
   name: pyside6
   pkgver: 6.10.2
-  pkgrel: 3.1
+  pkgrel: 3.2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -43,12 +43,15 @@ pkgbase:
     - qt6-webchannel
     - qt6-webengine
     - qt6-websockets
+    - qt6-webview
   source:
     - git+https://code.qt.io/pyside/pyside-setup#tag=v6.10.2
     - fix-header-install-dir.patch
+    - clang-22.patch
   sha256sums:
     - 8eb03468f637e9deddad966ddf00e4a291a9b3880db0e2678af13ad735160ad0
     - 3bc87409ea3dc41847f1d5d7612fd97931b67f1b40510b465543a8ef5c9764ff
+    - 6e9b7c7f8799ca3d3ab92eeaa80c357014f979cf681b8aadeb7c55314795f0ca
 pkgname:
   - name: pyside6
     pkgdesc: Enables the use of Qt6 APIs in Python applications
@@ -82,6 +85,7 @@ pkgname:
       - 'qt6-webchannel: QtWebChannel bindings'
       - 'qt6-webengine: QtWebEngine bindings'
       - 'qt6-websockets: QtWebSockets bindings'
+      - 'qt6-webview: QtWebView bindings'
     provides:
       - qt6-python-bindings
   - name: pyside6-tools
@@ -102,4 +106,4 @@ pkgname:
       - qt6-base
     optdepends:
       - 'python: Python bindings'
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
