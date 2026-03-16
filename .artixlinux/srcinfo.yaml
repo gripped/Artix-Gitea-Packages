@@ -1,11 +1,11 @@
 ---
-version: 5.4.0-1
+version: 5.4.1-1
 pkgbase:
   name: ocaml
   pkgdesc: A functional language with OO extensions
-  pkgver: 5.4.0
+  pkgver: 5.4.1
   pkgrel: 1
-  url: https://caml.inria.fr/
+  url: https://ocaml.org/
   arch:
     - x86_64
   license:
@@ -21,9 +21,9 @@ pkgbase:
     - '!emptydirs'
     - staticlibs
   source:
-    - https://github.com/ocaml/ocaml/releases/download/5.4.0/ocaml-5.4.0.tar.gz
+    - https://github.com/ocaml/ocaml/releases/download/5.4.1/ocaml-5.4.1.tar.gz
   sha256sums:
-    - 6fcf1b192e389e54c4f5cb51306ab2baee2a54a25b1770366de5a8b42695996e
+    - d4528517aaa1a44b8e2b1bc109a1ed0a5e0014f3ddc4feb8906b11a7e063e89a
 pkgname:
   - name: ocaml
   - name: ocaml-compiler-libs
@@ -33,4 +33,4 @@ pkgname:
     depends:
       - ocaml
     optdepends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
