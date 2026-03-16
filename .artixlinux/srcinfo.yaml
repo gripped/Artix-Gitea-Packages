@@ -1,9 +1,9 @@
 ---
-version: 6.23.0-1
+version: 6.24.0-1
 pkgbase:
   name: kstatusnotifieritem
   pkgdesc: Implementation of Status Notifier Items
-  pkgver: 6.23.0
+  pkgver: 6.24.0
   pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -27,15 +27,15 @@ pkgbase:
   optdepends:
     - 'pyside6: Python bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.23/kstatusnotifieritem-6.23.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.23/kstatusnotifieritem-6.23.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.24/kstatusnotifieritem-6.24.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.24/kstatusnotifieritem-6.24.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - a7225448dd96578a343fc9c3ab5409d3c7c0bce04665825ccb10273eff419ade
+    - f76c77dcc27a60007330329a6d6c60298c11ddddba82f710a90715ec81f886ff
     - SKIP
 pkgname:
   - name: kstatusnotifieritem
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
