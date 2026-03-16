@@ -5,30 +5,28 @@
 
 pkgname=kio5-extras
 pkgver=24.02.2
-pkgrel=7
+pkgrel=9
 pkgdesc='Additional components to increase the functionality of KIO'
 arch=(x86_64)
 url='https://www.kde.org/'
 license=(LGPL-2.0-or-later)
-depends=(gcc-libs
-         glibc
+depends=(glibc
          karchive5
          kconfig5
          kcoreaddons5
          kdbusaddons5
-         kdnssd5
-         kdsoap-qt5
          ki18n5
          kio5
+         libgcc
          libimobiledevice
          libmtp
          libplist
          libssh
+         libstdc++
          libtirpc
          libxcursor
          qt5-base
          qt5-svg
-         smbclient
          solid5
          syntax-highlighting5)
 makedepends=(extra-cmake-modules
@@ -36,8 +34,7 @@ makedepends=(extra-cmake-modules
              libappimage
              openexr
              taglib)
-optdepends=('icoutils: Windows executable thumbnails'
-            'kimageformats5: thumbnails for additional image formats'
+optdepends=('kimageformats5: thumbnails for additional image formats'
             'libappimage: AppImage thumbnails'
             'openexr: EXR format thumbnails'
             'perl: info kioslave'
@@ -55,6 +52,8 @@ prepare() {
   sed -e 's|"extension "|"extension"|' -i kio-extras-kf5-$pkgver/po/it/docs/kioslave5/bzip2/index.docbook
 # Drop docs
   sed -e '/DocTools/d' -e '/( doc )/d' -e '/kdoctools_install/d' -i kio-extras-kf5-$pkgver/CMakeLists.txt
+# Drop kio-smb
+  sed -e '/DNSSD/d' -i kio-extras-kf5-$pkgver/CMakeLists.txt
 }
 
 build() {
