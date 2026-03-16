@@ -1,9 +1,9 @@
 ---
-version: 3.1.13-1
+version: 3.1.14-1
 pkgbase:
   name: artix-metro
   pkgdesc: Artix package pushing automation tool
-  pkgver: 3.1.13
+  pkgver: 3.1.14
   pkgrel: 1
   url: https://gitea.artixlinux.org/corysanin/artix-metro
   arch:
@@ -17,13 +17,13 @@ pkgbase:
     - artools-pkg
     - artix-checkupdates
   noextract:
-    - artix-metro-3.1.13.tgz
+    - artix-metro-3.1.14.tgz
   options:
     - '!strip'
   source:
-    - https://registry.npmjs.org/artix-metro/-/artix-metro-3.1.13.tgz
+    - https://registry.npmjs.org/artix-metro/-/artix-metro-3.1.14.tgz
   sha512sums:
-    - 0200a29452e14a8c5351ceac2abdcf65e5c092fdcf8864676d1dd1562242100e5e7614cc89f14f8782f663464ec05a3e826033a556497d595b15aae14e753a85
+    - 47da68678520b7844eb7d4f4bd850ee20a26bec86ee3e67b1abed5375e77de8a8364857c46256e6b1e162d5a19325510bf22dbb487074faa5c2032bcd69db492
 pkgname:
   - name: artix-metro
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
