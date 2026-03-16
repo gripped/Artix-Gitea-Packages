@@ -1,10 +1,10 @@
 ---
-version: 25.11-1.1
+version: 25.11-2
 pkgbase:
   name: niri
   pkgdesc: A scrollable-tiling Wayland compositor
   pkgver: 25.11
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/YaLTeR/niri
   arch:
     - x86_64
@@ -16,10 +16,10 @@ pkgbase:
     - rust
   depends:
     - cairo
-    - gcc-libs
     - glib2
     - glibc
     - libdisplay-info
+    - libgcc
     - libinput
     - libpipewire
     - libxkbcommon
@@ -50,4 +50,4 @@ pkgbase:
     - 1ae432534044bbc4ab34d30d1c52e2f90e0391e5d04611c1b7ec60ccb1ba6fe87ff4c28f82de26d8eee2c839deb37c8096deec2ee7819884a23bfa4f3746c147
 pkgname:
   - name: niri
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

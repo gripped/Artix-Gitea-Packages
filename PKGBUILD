@@ -1,19 +1,20 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=niri
 pkgver=25.11
-pkgrel=1.1
+pkgrel=2
 pkgdesc="A scrollable-tiling Wayland compositor"
 arch=(x86_64)
 url="https://github.com/YaLTeR/niri"
 license=(GPL-3.0-or-later)
 depends=(
   cairo
-  gcc-libs
   glib2
   glibc
   libdisplay-info
+  libgcc
   libinput
   libpipewire
   libxkbcommon
@@ -55,8 +56,8 @@ build() {
   cd $pkgname-$pkgver
   export NIRI_BUILD_COMMIT="$(zcat ../$pkgname-$pkgver.tar.gz | git get-tar-commit-id | cut -c1-7)"
   CFLAGS+=(' -ffat-lto-objects')
-  cargo build --frozen --release --no-default-features --features "dbus xdp-gnome-screencast"
   sed -i "s/niri-session/dbus-launch --exit-with-session niri --session/" resources/$pkgname.desktop
+  cargo build --frozen --release --no-default-features --features "dbus xdp-gnome-screencast"
 
   # generate shell completions
   for shell in bash fish zsh; do
