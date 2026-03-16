@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.7.12-1
+    version: 2.7.12-2
     packages:
-      - keepassxc-2.7.12-1-x86_64.pkg.tar.zst
+      - keepassxc-2.7.12-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.7.11-1
