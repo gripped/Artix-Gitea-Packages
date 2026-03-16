@@ -1,9 +1,9 @@
 ---
-version: 49.4-1
+version: 49.5-1
 pkgbase:
   name: nautilus
   pkgdesc: Default file manager for GNOME
-  pkgver: 49.4
+  pkgver: 49.5
   pkgrel: 1
   url: https://apps.gnome.org/Nautilus/
   arch:
@@ -23,7 +23,6 @@ pkgbase:
   depends:
     - cairo
     - dconf
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -38,6 +37,7 @@ pkgbase:
     - icu
     - libadwaita
     - libcloudproviders
+    - libgcc
     - libgexiv2
     - libportal
     - libportal-gtk4
@@ -48,12 +48,12 @@ pkgbase:
     - wayland
     - xdg-user-dirs-gtk
   source:
-    - git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=49.4
+    - git+https://gitlab.gnome.org/GNOME/nautilus.git#tag=49.5
   validpgpkeys:
     - 6B211753AC950672287226800538577822AE4B17
     - 550660707A6F40376B9B9F8D504A78811E6160CC
   b2sums:
-    - 6bc5372bb504d80d2e0c3b230d893ab0faf9aca90e76cba20b812d8e05d487a942740f32fcefa78bc9f94c93eee0ff0d9399055debf9e868fca9c14349d398df
+    - b016febd72fd94faddc23dcab0a2daf3c41bac7bf07a39d0997d11f9c43f4333c68285315729d3f22edd3539e1e96166aff281c8d015ef2145b435d49ab5dab2
 pkgname:
   - name: nautilus
     groups:
@@ -61,7 +61,6 @@ pkgname:
     depends:
       - cairo
       - dconf
-      - gcc-libs
       - gdk-pixbuf2
       - glib2
       - glibc
@@ -76,6 +75,7 @@ pkgname:
       - icu
       - libadwaita
       - libcloudproviders
+      - libgcc
       - libgexiv2
       - libportal
       - libportal-gtk4
@@ -89,12 +89,12 @@ pkgname:
   - name: libnautilus-extension
     pkgdesc: Extension interface for Nautilus
     depends:
-      - gcc-libs
       - glib2
       - glibc
+      - libgcc
     provides:
       - libnautilus-extension.so
   - name: libnautilus-extension-docs
     pkgdesc: Extension interface for Nautilus (documentation)
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
