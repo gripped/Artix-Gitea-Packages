@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 49.5-3
+    version: 49.6-1
     packages:
-      - orca-49.5-3-any.pkg.tar.zst
+      - orca-49.6-1-any.pkg.tar.zst
     debug: []
   world:
     version: 49.5-2
