@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.8.0-1
+    version: 25.8.1-1
     packages:
-      - nodejs-25.8.0-1-x86_64.pkg.tar.zst
+      - nodejs-25.8.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.7.0-1
