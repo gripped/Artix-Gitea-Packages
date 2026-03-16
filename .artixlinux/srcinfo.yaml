@@ -1,0 +1,71 @@
+---
+version: 25.09.2-5
+pkgbase:
+  name: anki
+  pkgdesc: A smart spaced repetition flashcard program
+  pkgver: 25.09.2
+  pkgrel: 5
+  url: https://apps.ankiweb.net/
+  arch:
+    - x86_64
+  license:
+    - AGPL-3.0-or-later
+  makedepends:
+    - cargo
+    - git
+    - ninja
+    - protobuf
+    - python-installer
+    - python-wheel
+    - rsync
+    - uv
+    - yarn
+  depends:
+    - gcc-libs
+    - glibc
+    - python
+    - python-beautifulsoup4
+    - python-decorator
+    - python-distro
+    - python-flask
+    - python-flask-cors
+    - python-jsonschema
+    - python-markdown
+    - python-orjson
+    - python-protobuf
+    - python-pyqt6
+    - python-pyqt6-webengine
+    - python-pysocks
+    - python-requests
+    - python-send2trash
+    - python-waitress
+    - qt6-multimedia
+    - qt6-svg
+  optdepends:
+    - 'lame: record sound'
+    - 'mpv: play sound. prefered over mplayer'
+    - 'mplayer: play sound'
+    - 'texlive-most: render LaTex in cards'
+  source:
+    - git+https://github.com/ankitects/anki.git#tag=25.09.2
+    - git+https://github.com/ankitects/anki-core-i18n.git
+    - git+https://github.com/ankitects/anki-desktop-ftl.git
+    - no-update.patch
+    - strip-formatter-deps.patch
+    - strip-type-checking-deps.patch
+    - strip-python-pip-system-certs.patch
+    - no-corepack.patch
+    - reproducible-sveltekit.patch
+  b2sums:
+    - 42c5859373132b76ca7f3c047be5cb175c326da770638e6d329538a6fc258dea14bb63f6ad75fc0ce59ecc9818d87b59013602a6c1896c6cbfe71412d2fb8ef6
+    - SKIP
+    - SKIP
+    - 0f3ce855e9eaea67ef461668c296ae08cad0d31a7a2bf9ea7006220b44c2cb2e132dfb656140828141fbf21dde2b686a4a3248b92bb3fa46217f1a987425ffa3
+    - 18a8fefd5995ba83ebdb3e0c7d9a5c821a19b51616f6eebd7980e30bab4ab3c12573f5a8e59d7db03492a9df22245275da74a4594c2b652d772fbbb17984ff96
+    - 4ea648cec8b784b7586605ddc97633b9471ab8e1f75b5f38c0459f839625cdc3e28419cf34f8d8e453283707a17a090a48287140573c96599d83baa56d114a4a
+    - 903e22a623f058215d50cb2574ac0beeea784c7b7d07aaa207ebcfcd5a0795be70341845bc4fd20bf296e6c389e98d481a6e0a0b3ad550e88adf5aeb0d401fc6
+    - e1a05314e4d4118cd1f23de1da6c6561db6cc322a0fd1507f4fd72bdf16352cbab4e7150da5788a52a988e923d339555e4923079459c4fa55dff9c695c4117bb
+    - 1dede904fbc5c0b499251d3d11a39ad2f467d644ad742d6d162dc4cd60a120f445e0b5f0fb9758ace1d95372ad48a86bbd6cad3200d97f19f4c62bb0620dc8c4
+pkgname:
+  - name: anki
+# generated with artixpkg 0.38.2-1-any
