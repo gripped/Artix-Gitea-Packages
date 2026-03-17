@@ -1,25 +1,26 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ndctl
-pkgver=80
+pkgver=82
 pkgrel=1
 pkgdesc='Utility library for managing the libnvdimm (non-volatile memory device) sub-system in the Linux kernel'
 arch=('x86_64')
 url="https://github.com/pmem/ndctl"
-license=('LGPL')
+license=('LGPL-2.1-only' 'GPL-2.0-only' 'CC0-1.0' 'MIT')
 depends=('iniparser' 'json-c' 'keyutils' 'kmod' 'libtraceevent' 'libtracefs' 'libudev'
          'util-linux-libs')
-makedepends=('asciidoctor' 'bash-completion' 'cmake' 'meson' 'udev' 'xmlto')
-source=("https://github.com/pmem/ndctl/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('f8302c0c64c0b30524cc62d5af35a81bca9ed9afb94e3a9a1848e976aabb0af0824f9a12080a522ab935665ccdbf2a18ed3ac6347343446385830dae9f5736a4')
+makedepends=('git' 'asciidoctor' 'bash-completion' 'cmake' 'meson' 'udev' 'xmlto')
+source=("git+https://github.com/pmem/ndctl.git#tag=v$pkgver")
+sha512sums=('60e7a7babafce63ee7a273b071f511848f9954d508f7ae8df7a8e1faf27aef7a1d74fc50b308dd70c595f785d498807ef18c018aba839cd273ffe91dd2396a8d')
 
 prepare() {
+  cd ndctl
   # fix location of modprobe.d conf
-  sed -i "s|^modprobedatadir =.*|modprobedatadir = '/usr/lib/modprobe.d/'|" $pkgname-$pkgver/contrib/meson.build
+  sed -i "s|^modprobedatadir =.*|modprobedatadir = '/usr/lib/modprobe.d/'|" contrib/meson.build
 }
 
 build() {
-  artix-meson $pkgname-$pkgver build -Dsystemd=disabled
+  artix-meson ndctl build
   meson compile -C build
 }
 
