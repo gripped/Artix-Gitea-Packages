@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-3.2
+version: 6.10.2-4
 pkgbase:
   name: pyside6
   pkgver: 6.10.2
-  pkgrel: 3.2
+  pkgrel: 4
   url: https://www.qt.io
   arch:
     - x86_64
@@ -13,10 +13,10 @@ pkgbase:
     - LicenseRef-Qt-Commercial
     - Qt-GPL-exception-1.0
   makedepends:
-    - clang
+    - clang21
     - cmake
     - git
-    - llvm
+    - llvm21
     - ninja
     - python-numpy
     - python-setuptools
@@ -47,11 +47,9 @@ pkgbase:
   source:
     - git+https://code.qt.io/pyside/pyside-setup#tag=v6.10.2
     - fix-header-install-dir.patch
-    - clang-22.patch
   sha256sums:
     - 8eb03468f637e9deddad966ddf00e4a291a9b3880db0e2678af13ad735160ad0
     - 3bc87409ea3dc41847f1d5d7612fd97931b67f1b40510b465543a8ef5c9764ff
-    - 6e9b7c7f8799ca3d3ab92eeaa80c357014f979cf681b8aadeb7c55314795f0ca
 pkgname:
   - name: pyside6
     pkgdesc: Enables the use of Qt6 APIs in Python applications
@@ -96,12 +94,13 @@ pkgname:
   - name: shiboken6
     pkgdesc: Generates bindings for C++ libraries using CPython source code
     depends:
-      - clang
+      - clang21
       - gcc-libs
       - glibc
       - libxml2
       - libxslt
       - llvm
+      - llvm21
       - python
       - qt6-base
     optdepends:
