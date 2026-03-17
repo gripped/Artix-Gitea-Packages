@@ -1,6 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Brett Cornwall <ainola@archlinux.org>
 # Contributor: Evgeniy Alekseev <arcanis at archlinux dot org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Geoffroy Carrier <geoffroy@archlinux.org>
@@ -10,21 +11,22 @@
 
 pkgname=lilypond
 pkgver=2.24.4
-pkgrel=6
+pkgrel=7
 pkgdesc="Music engraving program, devoted to producing the highest-quality sheet music possible"
 arch=(x86_64)
 url="https://lilypond.org"
-license=(FDL1.3 GPL3 OFL)
+license=(GFDL-1.3 GPL-3.0-or-later OFL-1.1)
 groups=(pro-audio)
 depends=(fontconfig libfontconfig.so
          freetype2 libfreetype.so
-         gcc-libs
          ghostscript
          glib2 libgobject-2.0.so
          glibc libglib-2.0.so
          gsfonts
          guile
          harfbuzz libharfbuzz.so
+         libgcc libgcc_s.so
+         libstdc++ libstdc++.so
          pango libpango-1.0.so libpangoft2-1.0.so
          )
 makedepends=(dblatex
