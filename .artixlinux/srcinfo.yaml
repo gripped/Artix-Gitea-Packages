@@ -1,10 +1,10 @@
 ---
-version: 1:0.54.1-2
+version: 1:0.55.0-1
 pkgbase:
   name: libfilezilla
   pkgdesc: Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs
-  pkgver: 0.54.1
-  pkgrel: 2
+  pkgver: 0.55.0
+  pkgrel: 1
   epoch: 1
   url: https://lib.filezilla-project.org/
   arch:
@@ -28,11 +28,11 @@ pkgbase:
   provides:
     - libfilezilla.so
   source:
-    - https://sources.archlinux.org/other/libfilezilla/libfilezilla-0.54.1.tar.xz
+    - https://sources.archlinux.org/other/libfilezilla/libfilezilla-0.55.0.tar.xz
   sha512sums:
-    - 9f123cc74ad158fd2510fdd067fe6983feb01f787acc983d86d5d81065a9b042614a9c4cd7aecd9f77178482e0327f17623d2019d9269bceb33be887b0dc7d7f
+    - 1a8c1e097501e7ffa4e5667d245128a002585fb2bacf10c055b9ef1c0793d38d601aded9eca0eef6ba5f86daf5b7471c1e885657545a20db51999c2c239dea17
   b2sums:
-    - 48ea93e8732c256d2b7579e2bcde424e7f5128b5d020c5ec1248f2f00d0196e1e9daf9c37a91f286fd7084c7174da67b92cd53a694cbfde5033fab38e9378ca4
+    - efb21994140b2b080c0a37df9621c909dd0e56f03542c3699a0e73c600fd302ace5c5eb6e287f836f83abdf2c61071c71c26364602f79ff749082f1e1bb54f97
 pkgname:
   - name: libfilezilla
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
