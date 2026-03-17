@@ -1,7 +1,7 @@
 # Maintainer: artist for Sonic-DE
 
 pkgname=sonic-desktop-interface
-pkgver=6.6.2.5
+pkgver=6.6.2.6
 pkgrel=1
 pkgdesc='Sonic Desktop Interface'
 arch=(x86_64)
@@ -107,5 +107,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('2dff847c415c953968511ac0f01170aa8fe65a18433a873bc94a5f7da34321c7')
+sha256sums=('f1987e5c0bfaf4c6f0e4ae3d1d4d7e06a6e4ef3d355b57c13cf56e31e9fda61b')
 
