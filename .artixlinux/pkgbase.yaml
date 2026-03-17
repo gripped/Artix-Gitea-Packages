@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.12.4-1
+    version: 0.12.5-1
     packages:
-      - swaync-0.12.4-1-x86_64.pkg.tar.zst
+      - swaync-0.12.5-1-x86_64.pkg.tar.zst
     debug: []
