@@ -2,7 +2,7 @@
 
 pkgname=ndctl
 pkgver=82
-pkgrel=1
+pkgrel=2
 pkgdesc='Utility library for managing the libnvdimm (non-volatile memory device) sub-system in the Linux kernel'
 arch=('x86_64')
 url="https://github.com/pmem/ndctl"
@@ -20,7 +20,7 @@ prepare() {
 }
 
 build() {
-  artix-meson ndctl build
+  artix-meson ndctl build -Dsystemd=disabled
   meson compile -C build
 }
 

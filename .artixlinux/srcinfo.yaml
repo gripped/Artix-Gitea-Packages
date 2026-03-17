@@ -1,10 +1,10 @@
 ---
-version: 82-1
+version: 82-2
 pkgbase:
   name: ndctl
   pkgdesc: Utility library for managing the libnvdimm (non-volatile memory device) sub-system in the Linux kernel
   pkgver: 82
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pmem/ndctl
   arch:
     - x86_64
