@@ -1,10 +1,10 @@
 ---
-version: 2.5.4-1
+version: 2.5.4-2
 pkgbase:
   name: mixxx
   pkgdesc: Free, open source software for digital DJing
   pkgver: 2.5.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.mixxx.org
   arch:
     - x86_64
@@ -38,15 +38,16 @@ pkgbase:
     - protobuf
     - rubberband
   depends:
-    - gcc-libs
     - glibc
     - hicolor-icon-theme
     - hidapi
     - lame
     - libebur128
+    - libgcc
     - libkeyfinder
     - libmad
     - libmodplug
+    - libstdc++
     - libx11
     - openssl
     - opus
@@ -70,15 +71,16 @@ pkgbase:
 pkgname:
   - name: mixxx
     depends:
-      - gcc-libs
       - glibc
       - hicolor-icon-theme
       - hidapi
       - lame
       - libebur128
+      - libgcc
       - libkeyfinder
       - libmad
       - libmodplug
+      - libstdc++
       - libx11
       - openssl
       - opus
@@ -129,4 +131,4 @@ pkgname:
       - librubberband.so
       - zlib
       - libz.so
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
