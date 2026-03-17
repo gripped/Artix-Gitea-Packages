@@ -1,9 +1,9 @@
 ---
-version: 0.53.1-1
+version: 0.54.0-1
 pkgbase:
   name: wit-bindgen
   pkgdesc: A language binding generator for WebAssembly interface types
-  pkgver: 0.53.1
+  pkgver: 0.54.0
   pkgrel: 1
   url: https://github.com/bytecodealliance/wit-bindgen
   arch:
@@ -20,11 +20,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/bytecodealliance/wit-bindgen.git#tag=v0.53.1
+    - git+https://github.com/bytecodealliance/wit-bindgen.git#tag=v0.54.0
   sha256sums:
-    - 67d002671ac013a47248981313e31b4785bc788ec1339cd388a3be347e0e5f58
+    - ec100c95baec1e8f7791785e196f76bf4295cbe19054d340051dad0185bfbddb
   b2sums:
-    - c2e5c93abb5079022001e70ee554a48cee8e2d7671e10a13561558854a27bdc4f2750195e59c58c696c2e87abace61942d3c57a14476f42b2ff02643797024d8
+    - 2b83bb2a1f241dd20ce9fabd2313b80c830756d930b89a8b3791772a289a90041886c15108e32dfc9a0d20d6f28c41d27ac9bba8634b1100f579f9ded9644729
 pkgname:
   - name: wit-bindgen
 # generated with artixpkg 0.38.2-1-any
