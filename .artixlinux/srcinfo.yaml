@@ -1,15 +1,15 @@
 ---
-version: 3.25-8
+version: 3.25-9
 pkgbase:
   name: bullet
   pkgdesc: A 3D Collision Detection and Rigid Body Dynamics Library for games and animation
   pkgver: 3.25
-  pkgrel: 8
+  pkgrel: 9
   url: http://www.bulletphysics.com/Bullet/
   arch:
     - x86_64
   license:
-    - custom:zlib
+    - Zlib
   makedepends:
     - cmake
     - doxygen
@@ -18,17 +18,26 @@ pkgbase:
     - mesa
     - glu
     - python
+    - python-build
+    - python-installer
     - python-numpy
     - python-setuptools
+    - python-wheel
     - ninja
   source:
     - bullet-3.25.tar.gz::https://github.com/bulletphysics/bullet3/archive/refs/tags/3.25.tar.gz
+    - bullet-3.25-remove-pkg_resources.patch
     - bullet3_examplebrowser.sh
   sha512sums:
     - 7086e5fcf69635801bb311261173cb8d173b712ca1bd78be03df48fad884674e85512861190e45a1a62d5627aaad65cde08c175c44a3be9afa410d3dfd5358d4
+    - 4a5480c460d34c5457c0db66aa85b66e5869e26259ff9481122488bd6499d9b10edce711bfc72bee3478cc647b120febf0c51225999557698bd41ed32a1497b9
     - 8741ad94b6c46c226d89aebc8ab06d8a11bac3c04d3f0a2bf7a7524792a3375aa7bf7d295410b16fbeb4c348a31057b4570acdebe9bbaea251f44daca8d9fe81
 pkgname:
   - name: bullet
+    depends:
+      - glibc
+      - libgcc
+      - libstdc++
     optdepends:
       - 'glu: for the example browser'
       - 'python: python bindings'
@@ -36,6 +45,10 @@ pkgname:
       - 'bullet-docs: documentation'
   - name: bullet-dp
     pkgdesc: A 3D Collision Detection and Rigid Body Dynamics Library for games and animation (double precision)
+    depends:
+      - glibc
+      - libgcc
+      - libstdc++
     optdepends:
       - 'glu: for the example browser'
       - 'python: python bindings'
@@ -51,5 +64,7 @@ pkgname:
     pkgdesc: Bullet Python bindings
     depends:
       - bullet
-      - gcc-libs
-# generated with artixpkg 0.37.4-1-any
+      - glibc
+      - libgcc
+      - libstdc++
+# generated with artixpkg 0.38.2-1-any
