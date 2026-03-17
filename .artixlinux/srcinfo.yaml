@@ -1,9 +1,9 @@
 ---
-version: 4.0.6-1
+version: 4.0.7-1
 pkgbase:
   name: ruby-net-http-persistent
   pkgdesc: Thread-safe persistent connections with Net::HTTP
-  pkgver: 4.0.6
+  pkgver: 4.0.7
   pkgrel: 1
   url: https://github.com/drbrain/net-http-persistent
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/drbrain/net-http-persistent.git#tag=v4.0.6
+    - git+https://github.com/drbrain/net-http-persistent.git#tag=v4.0.7
   sha256sums:
-    - 5408680f48ab9c5780104e3b20c68fb7dfec44c76e76cdea1307b85e72e85881
+    - e6ec8f94344f018df352b35d28d89989686def8ce2527b7a593862d9c98ea19f
 pkgname:
   - name: ruby-net-http-persistent
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
