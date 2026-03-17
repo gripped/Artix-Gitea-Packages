@@ -1,10 +1,10 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -50,8 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 25.09.2-6
+    packages:
+      - anki-25.09.2-6-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 25.09.2-5

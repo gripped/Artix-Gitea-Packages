@@ -1,10 +1,10 @@
 ---
-version: 25.09.2-5
+version: 25.09.2-6
 pkgbase:
   name: anki
   pkgdesc: A smart spaced repetition flashcard program
   pkgver: 25.09.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://apps.ankiweb.net/
   arch:
     - x86_64
@@ -21,8 +21,8 @@ pkgbase:
     - uv
     - yarn
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - python
     - python-beautifulsoup4
     - python-decorator
