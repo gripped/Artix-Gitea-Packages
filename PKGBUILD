@@ -3,7 +3,7 @@
 # Contributor: Stijn Segers <francesco dot borromini at gmail dot com>
 
 pkgname=freerdp
-pkgver=3.24.0
+pkgver=3.24.1
 _libver=${pkgver/.*/}
 pkgrel=1
 epoch=2
@@ -16,6 +16,8 @@ depends=(
   glibc
   jansson
   libcups
+  libgcc
+  libstdc++
   libx11
   libxcursor
   libxext
@@ -65,8 +67,8 @@ provides=(
 source=(
   "git+https://github.com/$pkgname/$pkgname#tag=$pkgver"
 )
-sha512sums=('0a02fa9f2520870431b041baa4a179af17a20d6cc2b9dcd12aff8d57d8dff55b3be2436fbd78187568074c117fd4093ac611100c26625a8daea982c42fa5781f')
-b2sums=('6f57dfec34b733afe392c1df43caf827b486b343853f29e5043cd5df150b4cc88747a4c7f3090d5120d4b5874a0c302eca2ce564eb953758caf8a1863ecb7e84')
+sha512sums=('3dbbe033370d126ac0d7f68067957b5b2f04e2c7d38cf654377338522f8a4695fce4768daba2067bb9f3b163ad60203f7430db7044946aed3cfcd9b612f11203')
+b2sums=('272c540c10467de4f6857c288286e9da4da4650e6f9aab6d09a2275537ba1ac7a8936462df010a2e5c2c6b2ecb6e86856a7f4d8f35237315c65b4458cdad6bbe')
 
 build() {
   # gcc14 buildfix
