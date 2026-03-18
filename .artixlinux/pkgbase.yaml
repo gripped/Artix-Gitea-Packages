@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1:148.0.2_3-1
+    packages:
+      - librewolf-1:148.0.2_3-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 147.0.4-1

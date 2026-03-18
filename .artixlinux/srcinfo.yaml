@@ -1,10 +1,11 @@
 ---
-version: 147.0.4-1
+version: 1:148.0.2_3-1
 pkgbase:
   name: librewolf
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom.
-  pkgver: 147.0.4
+  pkgver: 148.0.2_3
   pkgrel: 1
+  epoch: 1
   url: https://librewolf.net/
   install: librewolf.install
   arch:
@@ -48,7 +49,6 @@ pkgbase:
     - ffmpeg
     - fontconfig
     - freetype2
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -84,19 +84,25 @@ pkgbase:
     - usr/lib/librewolf/librewolf.cfg
     - usr/lib/librewolf/distribution/policies.json
   source:
-    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/147.0.4-1/librewolf-147.0.4-1.source.tar.gz
-    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/147.0.4-1/librewolf-147.0.4-1.source.tar.gz.sig
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/148.0.2-3/librewolf-148.0.2-3.source.tar.gz
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/148.0.2-3/librewolf-148.0.2-3.source.tar.gz.sig
+    - https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/fdd14cc14c10c23980b7d707e8f98af4a6d17577/0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+    - https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/d82490f5db9d55f3e5e61b640c6618ab209aa06b/0004-Fix-sandbox-to-build-with-glibc-2.43.patch
+    - llvm22.1-wasi.patch
+    - allow_dark.patch
     - librewolf.desktop
     - default192x192.png
-    - allow_dark.patch
   validpgpkeys:
     - 662E3CDD6FE329002D0CA5BB40339DD82B12EF16
   sha256sums:
-    - 44f291b45211f50a5accfcd5d2a4a219ff3e4a7ad5e4115201c0a5ed5c80a45e
+    - e00c0de9330b6655fbfa2e31540d5f02248f6b1959bbece384d4afb1a0d6efa7
     - SKIP
-    - 7d01d317b7db7416783febc18ee1237ade2ec86c1567e2c2dd628a94cbf2f25d
-    - 959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1
+    - 83857f3531688885b62be0b06583f6815f236edbc43a942830395ec3cbdc7934
+    - 8d2182ae8660474ac567482fe6658af77f3b402314e361c846528ae171586245
+    - a0f78d15c710917f4677842e4175694fb0dd470b51b4fe40bda96e1a9ea332a6
     - a3cdb88e58fca72018f1443fb935cda3cc5ac5394e7d327664060dfc00e3b54d
+    - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
+    - 959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1
 pkgname:
   - name: librewolf
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
