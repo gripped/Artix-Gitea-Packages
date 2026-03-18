@@ -1,9 +1,9 @@
 ---
-version: 1.3.0-1
+version: 1.3.1-1
 pkgbase:
   name: plasma-pass
   pkgdesc: Plasma applet for the Pass password manager
-  pkgver: 1.3.0
+  pkgver: 1.3.1
   pkgrel: 1
   url: https://www.dvratil.cz/2018/05/plasma-pass/
   arch:
@@ -28,14 +28,14 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma-pass/plasma-pass-1.3.0.tar.xz
-    - https://download.kde.org/stable/plasma-pass/plasma-pass-1.3.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma-pass/plasma-pass-1.3.1.tar.xz
+    - https://download.kde.org/stable/plasma-pass/plasma-pass-1.3.1.tar.xz.sig
   validpgpkeys:
     - 0ABDFA55A4E6BEA99A83EA974D69557AECB13683
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 91b32509638ab602073816287110ac79b86ffc7f05c23b3285886f7ce6e4cd0f
+    - 5a88985dc522ca3287f13ed989609a93871996d4e8c5b0a41594e2d3a2fe8f2a
     - SKIP
 pkgname:
   - name: plasma-pass
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
