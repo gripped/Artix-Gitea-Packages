@@ -1,0 +1,29 @@
+---
+version: 3.2.1-1
+pkgbase:
+  name: yoga
+  pkgdesc: Cross-platform layout engine
+  pkgver: 3.2.1
+  pkgrel: 1
+  url: https://github.com/facebook/yoga
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - gtest
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  depends:
+    - libgcc
+    - glibc
+    - libstdc++
+  source:
+    - git+https://github.com/facebook/yoga.git#tag=v3.2.1
+  sha512sums:
+    - ba61fb833817abfc32a0903a108399a783fdbf89a9f2a10cb3045e27955e7a2be866c40d88b1b13b72e94ddd6f9080d21cf14a0acd4e2c0eab9835db52862807
+pkgname:
+  - name: yoga
+# generated with artixpkg 0.38.2-1-any
