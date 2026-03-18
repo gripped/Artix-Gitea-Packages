@@ -1,10 +1,10 @@
 ---
-version: 0.36.1-2
+version: 0.36.1-3
 pkgbase:
   name: bcc
   pkgdesc: BPF Compiler Collection
   pkgver: 0.36.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/iovisor/bcc
   arch:
     - x86_64
@@ -45,11 +45,12 @@ pkgname:
     pkgdesc: BPF Compiler Collection (C library)
     depends:
       - clang
-      - gcc-libs
       - glibc
       - libbpf
       - libbpf.so
       - libelf
+      - libgcc
+      - libstdc++
       - llvm-libs
       - xz
     optdepends:
