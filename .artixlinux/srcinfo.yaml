@@ -1,10 +1,10 @@
 ---
-version: 1.0.17-1
+version: 1.0.17-2
 pkgbase:
   name: libde265
   pkgdesc: Open h.265 video codec implementation
   pkgver: 1.0.17
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/strukturag/libde265
   arch:
     - x86_64
@@ -13,11 +13,13 @@ pkgbase:
   makedepends:
     - cmake
     - git
+    - sdl2-compat
   depends:
     - glibc
     - libgcc
     - libstdc++
-    - sdl2-compat
+  optdepends:
+    - 'sdl2-compat: for the decoder tool'
   source:
     - git+https://github.com/strukturag/libde265#tag=v1.0.17
   sha256sums:
