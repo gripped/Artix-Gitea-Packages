@@ -1,9 +1,9 @@
 ---
-version: 6.6.2-2
+version: 6.6.3-2
 pkgbase:
   name: kwin
   pkgdesc: An easy to use, but flexible, Wayland compositor
-  pkgver: 6.6.2
+  pkgver: 6.6.3
   pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
@@ -84,8 +84,8 @@ pkgbase:
   optdepends:
     - 'plasma-keyboard: virtual keyboard'
   source:
-    - https://download.kde.org/stable/plasma/6.6.2/kwin-6.6.2.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.2/kwin-6.6.2.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.3/kwin-6.6.3.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.3/kwin-6.6.3.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
@@ -93,7 +93,7 @@ pkgbase:
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 89db742659f0c96140ba39b4053ade7e1c20660e7eb82c18b5a68c16f93356e8
+    - 61a2e0f0b1a34f38b37f8a4ac7f7712c975ec763ff4e24ebb05ec1187e458e0f
     - SKIP
 pkgname:
   - name: kwin
