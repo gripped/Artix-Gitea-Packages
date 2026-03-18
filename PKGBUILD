@@ -1,4 +1,4 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: artist
 
 pkgname=firefox
 pkgver=148.0.2
@@ -16,7 +16,6 @@ depends=(
   ffmpeg
   fontconfig
   freetype2
-  gcc-libs
   gdk-pixbuf2
   glib2
   glibc
@@ -51,6 +50,7 @@ makedepends=(
   mesa
   nasm
   nodejs
+  #onnxruntime
   python
   rust
   unzip
@@ -117,7 +117,6 @@ b2sums=('ba2036baf01584d37b25944a50b497d18e238334ec866846c676b518fbb66ede35404a7
         '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
         'e4c6d14fbfde0237da9fad63289c2dc55084378e1edc805e39c207595dc71c12e731934b83fbf0286635f520832774c6c33398a47b11288dd4c34e431e8f6ffd')
 
-
 prepare() {
   mkdir mozbuild
   cd firefox-$pkgver
@@ -136,10 +135,7 @@ prepare() {
   # https://bugzilla.mozilla.org/show_bug.cgi?id=2016618
   patch -Np1 -i ../0004-Fix-sandbox-to-build-with-glibc-2.43.patch
 
-  echo -n "$_google_api_key" >google-api-key
-
-  patch -Np1 -i ../preferences.patch
-  patch -Np1 -i ../preferences2.patch
+  echo -n "" >google-api-key
 
   cat >../mozconfig <<END
 ac_add_options --enable-application=browser
@@ -152,7 +148,6 @@ ac_add_options --enable-optimize
 ac_add_options --enable-rust-simd
 ac_add_options --enable-linker=lld
 ac_add_options --disable-install-strip
-ac_add_options --disable-elf-hack
 ac_add_options --disable-bootstrap
 ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 
@@ -165,7 +160,6 @@ ac_add_options --allow-addon-sideload
 export MOZILLA_OFFICIAL=1
 export MOZ_APP_REMOTINGNAME=$pkgname
 
-
 # System libraries
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
@@ -173,7 +167,7 @@ ac_add_options --with-system-nss
 # Features
 ac_add_options --enable-alsa
 ac_add_options --enable-jack
-ac_add_options --enable-crashreporter
+ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
 ac_add_options --disable-tests
 END
@@ -203,6 +197,7 @@ build() {
   cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-profile-generate=cross
 END
+ sed -i 's|wasm32-wasi|wasm32-wasip1|' build/moz.configure/toolchain.configure
   ./mach build --priority normal
 
   echo "Profiling instrumented browser..."
@@ -234,9 +229,9 @@ END
 package() {
   cd firefox-$pkgver
   DESTDIR="$pkgdir" ./mach install
+  local appdir="$pkgdir/usr/lib/$pkgname"
 
-  local vendorjs="$pkgdir/usr/lib/$pkgname/browser/defaults/preferences/vendor.js"
-  install -Dvm644 /dev/stdin "$vendorjs" <<END
+  install -Dvm644 /dev/stdin "$appdir/browser/defaults/preferences/vendor.js" <<END
 // Use LANG environment variable to choose locale
 pref("intl.locale.requested", "");
 
@@ -253,22 +248,25 @@ pref("extensions.autoDisableScopes", 11);
 pref("browser.gnome-search-provider.enabled", true);
 END
 
-  local distini="$pkgdir/usr/lib/$pkgname/distribution/distribution.ini"
-  install -Dvm644 /dev/stdin "$distini" <<END
+  install -Dvm644 /dev/stdin "$appdir/distribution/distribution.ini" <<END
 [Global]
-id=artixlinux
+id=archlinux
 version=1.0
-about=Mozilla Firefox for Artix Linux
+about=Mozilla Firefox for Arch Linux
 
 [Preferences]
-app.distributor=artixlinux
+app.distributor=archlinux
 app.distributor.channel=$pkgname
-app.partner.artixlinux=artixlinux
+app.partner.archlinux=artixlinux
 startup.homepage_welcome_url.additional=""
 startup.homepage_override_url=""
 startup.homepage_welcome_url=""
 END
 
+  # Link up system ONNX runtime
+  ln -srv "$pkgdir/usr/lib/libonnxruntime.so" -t "$appdir"
+
+  # Install desktop icons and metadata
   local i theme=official
   for i in 16 22 24 32 48 64 128 256; do
     install -Dvm644 browser/branding/$theme/default$i.png \
@@ -296,14 +294,13 @@ END
   # https://bugzilla.mozilla.org/show_bug.cgi?id=658850
   ln -srfv "$pkgdir/usr/bin/$pkgname" "$pkgdir/usr/lib/$pkgname/firefox-bin"
 
-  local sprovider="$pkgdir/usr/share/gnome-shell/search-providers/$pkgname.search-provider.ini"
-
   # Use system certificates
   if [[ -e $appdir/libnss3.so ]]; then
     ln -sfv ../libnssckbi.so -t "$appdir"
   fi
 
-  install -Dvm644 /dev/stdin "$sprovider" <<END
+  # Register GNOME search provider
+  install -Dvm644 /dev/stdin "$pkgdir/usr/share/gnome-shell/search-providers/$pkgname.search-provider.ini" <<END
 [Shell Search Provider]
 DesktopId=$pkgname.desktop
 BusName=org.mozilla.${pkgname//-/_}.SearchProvider
@@ -311,5 +308,3 @@ ObjectPath=/org/mozilla/${pkgname//-/_}/SearchProvider
 Version=2
 END
 }
-
-# vim:set sw=2 sts=-1 et:

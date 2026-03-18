@@ -40,7 +40,6 @@ pkgbase:
     - ffmpeg
     - fontconfig
     - freetype2
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
