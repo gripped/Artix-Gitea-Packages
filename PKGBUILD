@@ -5,16 +5,17 @@
 _pkgname=CGNS
 pkgname=cgns
 pkgver=4.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Standard for recording and recovering computer data associated with the numerical solution of fluid dynamics equations"
 arch=(x86_64)
 url="https://cgns.github.io/"
 license=(Zlib)
 depends=(
-  gcc-libs
   glibc
   glu
   hdf5
+  libgcc
+  libgfortran
   libglvnd
   libx11
   libxmu

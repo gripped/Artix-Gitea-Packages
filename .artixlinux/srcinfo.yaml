@@ -1,10 +1,10 @@
 ---
-version: 4.5.1-1
+version: 4.5.1-2
 pkgbase:
   name: cgns
   pkgdesc: Standard for recording and recovering computer data associated with the numerical solution of fluid dynamics equations
   pkgver: 4.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://cgns.github.io/
   arch:
     - x86_64
@@ -14,10 +14,11 @@ pkgbase:
     - cmake
     - gcc-fortran
   depends:
-    - gcc-libs
     - glibc
     - glu
     - hdf5
+    - libgcc
+    - libgfortran
     - libglvnd
     - libx11
     - libxmu
@@ -29,4 +30,4 @@ pkgbase:
     - f0a3f82824d81e2db4c992fc41e91c53158898fbf0b342c0c857e5e3f02d081df3822035b9eb558fe12c48ce36e4123810adc11f9b85e60e76e7de7f35a56162
 pkgname:
   - name: cgns
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
