@@ -1,10 +1,10 @@
 ---
-version: 25.09.2-6
+version: 25.09.2-7
 pkgbase:
   name: anki
   pkgdesc: A smart spaced repetition flashcard program
   pkgver: 25.09.2
-  pkgrel: 6
+  pkgrel: 7
   url: https://apps.ankiweb.net/
   arch:
     - x86_64
@@ -41,6 +41,8 @@ pkgbase:
     - python-waitress
     - qt6-multimedia
     - qt6-svg
+    - sqlite
+    - zstd
   optdepends:
     - 'lame: record sound'
     - 'mpv: play sound. prefered over mplayer'
