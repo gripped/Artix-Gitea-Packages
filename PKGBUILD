@@ -1,7 +1,7 @@
 # Maintainer: artist for Sonic-DE
 
 pkgname=sonic-system-info
-pkgver=6.6.2
+pkgver=6.6.3
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Display information about your computer''s hardware on the Sonic desktop'
@@ -46,7 +46,7 @@ optdepends=('fwupd: firmware security module'
 groups=(sonicde)
 conflicts=(kinfocenter)
 provides=(kinfocenter)
-source=("i$pkgname-$pkgver::${url}/archive/refs/tags/${pkgver}.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -59,5 +59,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 }
 
-sha256sums=('SKIP')
+sha256sums=('b870994588b93b0b058130eeaeb472dec1185d5ac3536a0793d00bd6e2491528')
 

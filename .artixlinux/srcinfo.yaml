@@ -1,9 +1,9 @@
 ---
-version: 6.6.2-1
+version: 6.6.3-1
 pkgbase:
   name: sonic-system-info
   pkgdesc: Display information about your computers hardware on the Sonic desktop
-  pkgver: 6.6.2
+  pkgver: 6.6.3
   pkgrel: 1
   url: https://github.com/Sonic-DE/sonic-system-info
   arch:
@@ -55,9 +55,9 @@ pkgbase:
   conflicts:
     - kinfocenter
   source:
-    - isonic-system-info-6.6.2::https://github.com/Sonic-DE/sonic-system-info/archive/refs/tags/6.6.2.tar.gz
+    - sonic-system-info-6.6.3.tar.gz::https://github.com/Sonic-DE/sonic-system-info/archive/refs/tags/6.6.3.tar.gz
   sha256sums:
-    - SKIP
+    - b870994588b93b0b058130eeaeb472dec1185d5ac3536a0793d00bd6e2491528
 pkgname:
   - name: sonic-system-info
 # generated with artixpkg 0.38.2-1-any
