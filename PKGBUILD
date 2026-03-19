@@ -94,7 +94,7 @@ makedepends=(extra-cmake-modules
 groups=(sonicde)
 conflicts=(plasma-desktop)
 provides=(plasma-desktop)
-source=("${url}/archive/refs/tags/${pkgver}.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
   cmake -B build  -S $pkgname-$pkgver \
