@@ -1,9 +1,9 @@
 # Maintainer: artist for Sonic-DE
 
 pkgname=sonic-screen-library 
-pkgver=6.6.2
+pkgver=6.6.3
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=1
 pkgdesc='Screen management library for SonicDE Workspaces'
 arch=(x86_64)
 url='https://github.com/Sonic-DE/sonic-screen-library'
@@ -18,7 +18,7 @@ makedepends=(extra-cmake-modules
 groups=(sonicde)
 conflicts=(libkscreen)
 provides=(libkscreen)
-source=("$pkgname-$pkgver::${url}/archive/refs/tags/v${pkgver}.tar.gz")
+source=("$pkgname-$pkgver.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
@@ -33,5 +33,5 @@ package() {
   rm -r $pkgdir/usr/lib/systemd
 }
 
-sha256sums=('95c87b29da0a73488c2e2c539d73cc07c9bd873635177514423ebd1326b09776')
+sha256sums=('48876b84a96d229d329d106bd0c73225fadf57734d9a8fd326f6df76aa4cd408')
 
