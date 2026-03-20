@@ -5,7 +5,7 @@
 
 pkgname=torsocks
 pkgver=2.5.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Wrapper to safely torify applications'
 url='https://gitlab.torproject.org/tpo/core/torsocks'
 arch=('x86_64')

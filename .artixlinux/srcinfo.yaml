@@ -1,10 +1,10 @@
 ---
-version: 2.5.0-1
+version: 2.5.0-1.1
 pkgbase:
   name: torsocks
   pkgdesc: Wrapper to safely torify applications
   pkgver: 2.5.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://gitlab.torproject.org/tpo/core/torsocks
   arch:
     - x86_64
