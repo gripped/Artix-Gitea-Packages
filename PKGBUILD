@@ -2,7 +2,7 @@
 
 pkgname=sonic-desktop-interface
 pkgver=6.6.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Sonic Desktop Interface'
 arch=(x86_64)
 url="https://github.com/Sonic-DE/$pkgname"
@@ -24,7 +24,7 @@ depends=(attica
          kcrash
          kdbusaddons
          kdeclarative
-         kglobalaccel
+         sonic-frameworks-keybind
          kguiaddons
          ki18n
          kiconthemes
@@ -76,7 +76,7 @@ optdepends=('bluedevil: Bluetooth applet'
             'glib2: kimpanel IBUS support'
             'ibus: kimpanel IBUS support'
             'kaccounts-integration: OpenDesktop integration plugin'
-            'kscreen: screen management'
+            'sonic-screen: screen management'
             'libaccounts-qt: OpenDesktop integration plugin'
             'packagekit-qt6: to install new krunner plugins'
             'plasma-nm: Network manager applet'
@@ -89,8 +89,8 @@ makedepends=(extra-cmake-modules
              libibus
              packagekit-qt6
              scim
-             xf86-input-libinput
-             xorg-server-devel)
+             xlibre-input-libinput
+             xlibre-xserver-devel)
 groups=(sonicde)
 conflicts=(plasma-desktop)
 provides=(plasma-desktop)

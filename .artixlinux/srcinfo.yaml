@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-1
+version: 6.6.3-2
 pkgbase:
   name: sonic-desktop-interface
   pkgdesc: Sonic Desktop Interface
   pkgver: 6.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Sonic-DE/sonic-desktop-interface
   arch:
     - x86_64
@@ -20,8 +20,8 @@ pkgbase:
     - libibus
     - packagekit-qt6
     - scim
-    - xf86-input-libinput
-    - xorg-server-devel
+    - xlibre-input-libinput
+    - xlibre-xserver-devel
   depends:
     - attica
     - baloo
@@ -40,7 +40,7 @@ pkgbase:
     - kcrash
     - kdbusaddons
     - kdeclarative
-    - kglobalaccel
+    - sonic-frameworks-keybind
     - kguiaddons
     - ki18n
     - kiconthemes
@@ -93,7 +93,7 @@ pkgbase:
     - 'glib2: kimpanel IBUS support'
     - 'ibus: kimpanel IBUS support'
     - 'kaccounts-integration: OpenDesktop integration plugin'
-    - 'kscreen: screen management'
+    - 'sonic-screen: screen management'
     - 'libaccounts-qt: OpenDesktop integration plugin'
     - 'packagekit-qt6: to install new krunner plugins'
     - 'plasma-nm: Network manager applet'
