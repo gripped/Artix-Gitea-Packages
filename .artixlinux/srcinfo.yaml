@@ -1,10 +1,10 @@
 ---
-version: 0.6.8-1
+version: 0.6.8-2
 pkgbase:
   name: hyprlang
   pkgdesc: implementation library for the hypr config language
   pkgver: 0.6.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprlang
   arch:
     - x86_64
@@ -14,7 +14,8 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - hyprutils
     - libhyprutils.so
@@ -26,4 +27,4 @@ pkgbase:
     - d10a0778b646e04d83e8b90cc0f764fb96958c01a15c3c0678d95a40fc647ed5
 pkgname:
   - name: hyprlang
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
