@@ -1,10 +1,10 @@
 ---
-version: 0.99.beta20-6
+version: 0.99.beta20-7
 pkgbase:
   name: libcaca
   pkgdesc: Color ASCII art library
   pkgver: 0.99.beta20
-  pkgrel: 6
+  pkgrel: 7
   url: http://caca.zoy.org/wiki/libcaca
   arch:
     - x86_64
@@ -17,11 +17,11 @@ pkgbase:
     - python
   depends:
     - freeglut
-    - gcc-libs
     - glibc
     - glu
     - imlib2
     - libglvnd
+    - libstdc++
     - libx11
     - ncurses
     - slang
@@ -36,4 +36,4 @@ pkgbase:
     - 82bc7243844238089c5f513738bd9e95ac6cb88b16202db0655592e4037732a8353b72e5bd26ad73cdb32ad2da5d864bbb9ee5196bc0c3d2805c397e7686f728
 pkgname:
   - name: libcaca
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

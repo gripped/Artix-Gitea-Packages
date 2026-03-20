@@ -4,18 +4,18 @@
 
 pkgname=libcaca
 pkgver=0.99.beta20
-pkgrel=6
+pkgrel=7
 pkgdesc='Color ASCII art library'
 arch=(x86_64)
 url='http://caca.zoy.org/wiki/libcaca'
 license=(WTFPL)
 depends=(
   freeglut
-  gcc-libs
   glibc
   glu
   imlib2
   libglvnd
+  libstdc++
   libx11
   ncurses
   slang
@@ -44,7 +44,7 @@ prepare() {
   # https://github.com/cacalabs/libcaca/pull/66
   git apply -3 ../libcaca-0.99.beta20-CVE-2022-0856.patch
 
-  autoreconf -fi
+  autoreconf -fiv
 }
 
 build() {
