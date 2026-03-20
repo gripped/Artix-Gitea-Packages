@@ -1,10 +1,10 @@
 ---
-version: 2.6.6-2
+version: 2.6.6-3
 pkgbase:
   name: exempi
   pkgdesc: Library to parse XMP metadata
   pkgver: 2.6.6
-  pkgrel: 2
+  pkgrel: 3
   url: https://libopenraw.freedesktop.org/exempi/
   arch:
     - x86_64
@@ -15,8 +15,9 @@ pkgbase:
     - git
   depends:
     - expat
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - zlib
   source:
     - git+https://gitlab.freedesktop.org/libopenraw/exempi.git#tag=2.6.6
@@ -26,4 +27,4 @@ pkgbase:
     - aeaded22cfd41a51eebd6575cf3b701f78c883b06b060117734b51e1b23191a1a04e6a71858787b57ca841a82750394709159d44faa40a8a09f39b50414ff071
 pkgname:
   - name: exempi
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
