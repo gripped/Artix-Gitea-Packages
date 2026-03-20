@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: hyprgraphics
   pkgdesc: hyprland graphics resources and utilities
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprgraphics
   arch:
     - x86_64
@@ -17,7 +17,8 @@ pkgbase:
     - cairo
     - file
     - libmagic.so
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - hyprutils
     - libhyprutils.so
@@ -41,4 +42,4 @@ pkgbase:
     - bb37f611c1f50e58dcc0aa97ec1b39c186b78160807f109c5dd8833d58f8bc04
 pkgname:
   - name: hyprgraphics
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
