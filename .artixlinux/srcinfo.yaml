@@ -1,10 +1,10 @@
 ---
-version: 0.54.2-1
+version: 0.54.2-2
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
   pkgver: 0.54.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -22,7 +22,8 @@ pkgbase:
     - cairo
     - aquamarine
     - libaquamarine.so
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - glib2
     - libgio-2.0.so
