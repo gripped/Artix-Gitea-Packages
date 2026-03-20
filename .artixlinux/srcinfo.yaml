@@ -1,10 +1,10 @@
 ---
-version: 0.23.0-3
+version: 0.24.0-1
 pkgbase:
   name: ocaml-ctypes
   pkgdesc: Library for binding to C libraries using pure OCaml
-  pkgver: 0.23.0
-  pkgrel: 3
+  pkgver: 0.24.0
+  pkgrel: 1
   url: https://github.com/ocamllabs/ocaml-ctypes
   arch:
     - x86_64
@@ -24,9 +24,9 @@ pkgbase:
     - '!makeflags'
     - '!debug'
   source:
-    - ocaml-ctypes-0.23.0.tar.gz::https://github.com/yallop/ocaml-ctypes/archive/refs/tags/0.23.0.tar.gz
+    - ocaml-ctypes-0.24.0.tar.gz::https://github.com/yallop/ocaml-ctypes/archive/refs/tags/0.24.0.tar.gz
   sha512sums:
-    - 0c287cd3162d092b37bd6d4b24c196d41c93b792c4aa77938fde60f5dbc7eedde588097493a645af9bffc0ed722eadd0fa90e04b04d5e36e78e6467ae9e4baf8
+    - 0fa640f00e2960a8ceae3bb9835c5318d3718e748f40adc3f0a50dcb9b38a696de2442f2e75a6ce2356bab7e7eb5edea5486a757e553c17207191a49ceaa307d
 pkgname:
   - name: ocaml-ctypes
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
