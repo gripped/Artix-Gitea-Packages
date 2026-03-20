@@ -2,7 +2,7 @@
 
 pkgname=sonic-desktop-interface
 pkgver=6.6.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Sonic Desktop Interface'
 arch=(x86_64)
 url="https://github.com/Sonic-DE/$pkgname"
@@ -55,9 +55,10 @@ depends=(attica
          libxi
          libxkbcommon
          libxkbfile
-         libplasma
          plasma-activities
          plasma-activities-stats
+         sonic-frameworks-keybind
+         sonic-interface-libraries
          sonic-win
          sonic-workspace
          plasma5support
