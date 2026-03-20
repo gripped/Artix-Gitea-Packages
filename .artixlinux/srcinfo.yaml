@@ -1,10 +1,10 @@
 ---
-version: 1.8-1
+version: 1.8-2
 pkgbase:
   name: fwupd-efi
   pkgdesc: EFI Application used by uefi-capsule plugin in fwupd
   pkgver: 1.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/fwupd/fwupd-efi
   arch:
     - any
@@ -24,4 +24,4 @@ pkgbase:
     - 57d0a5e54179150fb923fcf86fd2c84fa7fb52fcdafbac1c9881954650afb0dd
 pkgname:
   - name: fwupd-efi
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
