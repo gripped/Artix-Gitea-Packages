@@ -36,4 +36,4 @@ pkgbase:
     - e5165e1b212f10d56724dc552e2cd75411bbe8c3b0d6b2d930f73e85e22596fade1cd3e84f8c93b4cd73bbf5cce8d3cf22ed489e4fdfe46c73a65d97f76e57b8
 pkgname:
   - name: python-importlib-metadata
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
