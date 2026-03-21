@@ -28,4 +28,4 @@ pkgbase:
     - 86b1890a65ebf04c47155cd9bf2fff3449c92e7ac8a3e22605f05c9dd990b0089e37bb1ea9e980134035f0ff09cc878c239693e359008b62ff4e80d91d3e212d
 pkgname:
   - name: python-flexmock
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
