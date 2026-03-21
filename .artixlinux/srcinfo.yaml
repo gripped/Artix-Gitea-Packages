@@ -27,4 +27,4 @@ pkgbase:
     - 66ad0cfc08288ea9bcfc5cae9903139af4be9d8d5b7fc37ec1965e653b9e820055a79456e34b1c2fed36690cee3a952819a1afb0170a3559eba4303044fc1a04
 pkgname:
   - name: python-ujson
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
