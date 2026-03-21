@@ -34,4 +34,4 @@ pkgbase:
     - a70beb3172d12b88bdfad25ec43d1bc4d0a0479828711c3037ad92a5b29b0ff0
 pkgname:
   - name: python-pygal
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
