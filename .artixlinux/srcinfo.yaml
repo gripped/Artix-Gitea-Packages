@@ -21,4 +21,4 @@ pkgbase:
     - 9555f1d06f82987fbb4658862705515740414fd34b4db6ad2ed76a2dc08d3bde
 pkgname:
   - name: xerces-c
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
