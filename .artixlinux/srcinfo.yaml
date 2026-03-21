@@ -24,4 +24,4 @@ pkgbase:
     - eb1658d1a8df9067949f7841abe8bc111698b3cbe0aa150fa9d1028760163853
 pkgname:
   - name: python-google-api-python-client
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
