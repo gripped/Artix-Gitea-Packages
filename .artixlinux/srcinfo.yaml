@@ -26,4 +26,4 @@ pkgbase:
     - 765eecbdd68491c56947e29c38b8b69b834ee5dbbdd2fb7409f08ebdebf04428
 pkgname:
   - name: python-reportlab
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
