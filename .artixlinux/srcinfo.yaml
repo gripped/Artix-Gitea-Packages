@@ -28,4 +28,4 @@ pkgbase:
     - 3de24fc7af22657e0f4a26479e464fd383c49074c4696034ffec9017936d2009
 pkgname:
   - name: python-async-lru
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
