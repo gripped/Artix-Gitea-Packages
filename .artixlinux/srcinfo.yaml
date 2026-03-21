@@ -31,4 +31,4 @@ pkgbase:
     - b3ad0d96b739cb48b2811d9baea297cb0f2c5e2693bdccca17c7d8c7b6651b94c7bd16edf0e1e6520c6ed89712a7d190c91d3b860bd28230413a6d6c9e20d0bf
 pkgname:
   - name: python-pyopenssl
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
