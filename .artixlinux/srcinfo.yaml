@@ -67,4 +67,4 @@ pkgbase:
     - 461aec2eeef773c599843677e681c3715c474a0b194a9a520033c8b1672568409360715dd46b2111f5f2b5c951ef4a122c1957bd850adb7230326eb1c8971d69
 pkgname:
   - name: python-dask
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
