@@ -52,4 +52,4 @@ pkgbase:
     - 30cbcb70f575d9d74d94c7bbb363930f8557588b143609bcc276472accf9a7fb
 pkgname:
   - name: python-nbdime
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
