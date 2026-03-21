@@ -30,4 +30,4 @@ pkgbase:
     - e7a8f559ec5b580b3f60c792e0a056c80071bbcf2a2ec5912b00f90eef9b1de7
 pkgname:
   - name: python-hiredis
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
