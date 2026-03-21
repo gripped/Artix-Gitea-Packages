@@ -34,4 +34,4 @@ pkgbase:
     - a0992fd1a9c743cacb043a4db5025d9904f909fcd54fe1c23f32cfc1a01b6e6a47c7aa00e0fd741690bdbf0b79359fd159196b5b6e01122ff38298fff8fb87c9
 pkgname:
   - name: python-jsonpickle
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
