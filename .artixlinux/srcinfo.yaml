@@ -47,4 +47,4 @@ pkgbase:
     - b5b947a9ac9c957fc824a8528e2dadd3aebc6f7190e91f0a3d02c430ddab62396214c1f264d93c0c372acdbfef73fc117275406a3ce08aba08a81d1b5dc1c46d
 pkgname:
   - name: python-pydantic-extra-types
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
