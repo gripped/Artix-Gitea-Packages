@@ -32,4 +32,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-maxminddb
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
