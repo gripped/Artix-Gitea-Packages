@@ -34,4 +34,4 @@ pkgbase:
     - 198a061edbbe17be5d04bb7a394144645b2c5da3eb5c83a079162a0cc979d5153fd899258561701186588883d2322d1e27970dfb54a9455124847fed18e3ec28
 pkgname:
   - name: python-fastparquet
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
