@@ -27,4 +27,4 @@ pkgbase:
     - 69721e2729e8c8ff3832721255d6ccfbd78d6a87d1ca032b95185b190f265e888fbdf1b297b45aad82d45bbc8229dbe07dfd901cd7945085057321500fcb992f
 pkgname:
   - name: python-sphinx_rtd_theme
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
