@@ -5,26 +5,42 @@
 
 pkgname=mod_dnssd
 pkgver=0.6
-pkgrel=9
+pkgrel=10
 pkgdesc='Zeroconf module for Apache'
-arch=('x86_64')
+arch=(x86_64)
 url='https://0pointer.de/lennart/projects/mod_dnssd/'
-license=('Apache')
-depends=('apache' 'apr' 'avahi' 'glibc')
-source=("http://0pointer.de/lennart/projects/$pkgname/$pkgname-$pkgver.tar.gz"
-        'fix_undefined_reference.patch')
-sha256sums=('2cd171d76eba398f03c1d5bcc468a1756f4801cd8ed5bd065086e4374997c5aa'
-            'fc7db6067cb8bb9feb0a3f17f291a1e245fce0a45beac2b7ba5e280020f9b43d')
+license=(Apache-2.0)
+depends=(
+  apache
+  apr
+  avahi
+  glibc
+)
+source=(
+  "http://0pointer.de/lennart/projects/$pkgname/$pkgname-$pkgver.tar.gz"
+  fix_undefined_reference.patch
+)
+b2sums=(
+  01aee3624e413f5a00d6e63e5e74d9dc1667db9e9747b65a7fce9ab762cf0f9a5cd3ef4dcccf9532e9aa70435bd6afd846fdbaafff6667ba1fd9d413ea6fe0d9
+  aa89b74651a656f9520aa99e7bd25bd8929675a40ea1630834208038be268eb4987535539ac2a1e337e3535efad216a0fa35cf5c35d88c1a7d290d411093c0f7
+)
 
 prepare() {
   cd $pkgname-$pkgver
+
   # http://git.0pointer.net/mod_dnssd.git/commit/?id=be2fb9f6158f800685de7a1bc01c39b6cf1fa12c
   patch -Np1 -i ../fix_undefined_reference.patch
+
+  autoreconf -fiv
 }
 
 build() {
   cd $pkgname-$pkgver
-  ./configure --prefix=/usr --disable-lynx
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --disable-lynx
   make
 }
 
