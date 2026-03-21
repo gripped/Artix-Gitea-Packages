@@ -33,4 +33,4 @@ pkgbase:
     - 5538bdddc792f6f83692b1a239e0283863ae2e81e22d1d3e699d57e11b4efcc12100382b73cbf8f5ad0a88f850365c71ffe6c3885cac8d606c8308360fd53872
 pkgname:
   - name: python-argcomplete
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
