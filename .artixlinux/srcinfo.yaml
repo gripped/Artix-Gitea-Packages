@@ -41,4 +41,4 @@ pkgbase:
     - bf405ac2bac3e1dc63e4102d8e6ac0901333f8455cfe0ee35794ee02638dd4e6926ac8e3fc0cf87fa53c49a4381da9664b16ddddb014d802a1e3d3dd3f4af8d4
 pkgname:
   - name: python-pecan
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
