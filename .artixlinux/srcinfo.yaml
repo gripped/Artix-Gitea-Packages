@@ -30,4 +30,4 @@ pkgbase:
     - 7c8b101a0722006721d1e39eb0dd13dd4a363dd2c3b36c921ec1291a08f00ba2ece06a191128dfbbf1e5c2ee4428258a1d92cea3e611dbcfc3b5a0eaa10478bf
 pkgname:
   - name: python-google-auth-httplib2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
