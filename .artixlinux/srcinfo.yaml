@@ -1,10 +1,10 @@
 ---
-version: 3.35.90-4
+version: 3.35.90-5
 pkgbase:
   name: gnome-multi-writer
   pkgdesc: Write an ISO file to multiple USB devices at once
   pkgver: 3.35.90
-  pkgrel: 4
+  pkgrel: 5
   url: https://wiki.gnome.org/Apps/MultiWriter
   arch:
     - x86_64
@@ -18,12 +18,12 @@ pkgbase:
     - perl-sgmls
   depends:
     - dconf
-    - gcc-libs
     - glib2
     - glibc
     - gtk3
     - hicolor-icon-theme
     - libcanberra
+    - libgcc
     - libgudev
     - libgusb
     - polkit
@@ -38,4 +38,4 @@ pkgbase:
     - da803f330ca427b23d3023f31b9ead72b5925e6796684acb8bb995c6a702bc7cc05fd852575bf784038bfb2b57111b93a6b3595f29ca6e67f86bf56506c94787
 pkgname:
   - name: gnome-multi-writer
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
