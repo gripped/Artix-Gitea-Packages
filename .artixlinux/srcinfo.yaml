@@ -24,4 +24,4 @@ pkgbase:
     - 26f02a4f64f4baa6e61b679f3eda483346b5a0b535693748b08fc11869d1be7765e5884b2f7939cad9831f09d392629b72ff6c377f112ba3d7b62e6981f4614b
 pkgname:
   - name: python-better-exceptions
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
