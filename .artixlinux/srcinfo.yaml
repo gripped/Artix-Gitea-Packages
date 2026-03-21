@@ -30,4 +30,4 @@ pkgbase:
     - e3d42b2e486318ac56205aa2770c0a636866d2d4a6f195a6a510777b18ae8f3152f626c3dd7377247d08375603a33342a4b4e220a53108fa80aa15bd7c02dea3
 pkgname:
   - name: python-pipx
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
