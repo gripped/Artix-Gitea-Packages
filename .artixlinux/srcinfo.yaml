@@ -26,4 +26,4 @@ pkgbase:
     - 377b54a28bb20cab08aa2dc3d1190ba677e25e1232a2549d671ee32be1b5a2aa7d111778e9071e98d5440a3f0ca464a9b334cdad13adcc417c637eeb1d3a30ae
 pkgname:
   - name: python-sybil
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
