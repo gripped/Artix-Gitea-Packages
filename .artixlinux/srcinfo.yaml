@@ -23,4 +23,4 @@ pkgbase:
     - fe3c85c55d344f33d4ca7a7b85381258bbd8b6d32249ac93b529dab7d68f84b536c531fcefd77d5c4fec5cab92595896414022ff8a53666de99502d89feaa74a
 pkgname:
   - name: python-ruamel-yaml
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
