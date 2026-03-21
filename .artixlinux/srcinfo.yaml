@@ -26,4 +26,4 @@ pkgbase:
     - b86208909f809bb48a9d4809decb59810680f599f44c3894c28c4cb8f9c19bf3ad49212bed9ae68508ebd7c4cf16df07edce1b681d50a4c09a63a3d0ec42a210
 pkgname:
   - name: python-fastbencode
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
