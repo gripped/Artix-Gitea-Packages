@@ -23,4 +23,4 @@ pkgbase:
     - 79e92235ecb828fe952b6b8b0c6c87863248631922c8e8e0fa5b17b232c4514d
 pkgname:
   - name: python-stevedore
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
