@@ -28,4 +28,4 @@ pkgbase:
     - 6d22e8880563fe0240d3a50dfcb0729b7f434f3fe11eb4b308e1bad719f49368f4b4cbb01334a2c2951626f886d8ab2a6419ff5fe33e496323b99c107588f6a9
 pkgname:
   - name: python-ulid-transform
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
