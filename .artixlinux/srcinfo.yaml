@@ -35,4 +35,4 @@ pkgbase:
     - d1d18d1fcf595b3138d4a103f0586b5b6df987c0595e9e663651224c022c7326436f2814b6f8f0d8e3f220331fb89a383fe26d8be81c6c128cf4394cdeedf6db
 pkgname:
   - name: python-oslo-log
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
