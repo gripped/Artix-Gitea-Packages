@@ -25,4 +25,4 @@ pkgbase:
     - fbe39e27b0df0e8e07b04030cc08b3aed7c51bd91dab145af5cd184c88180e20c472578821bdaaf047c6ecf9ca58523bc3e63aeba6e683b81ae0914b4b8f45af
 pkgname:
   - name: python-sphinx-issues
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
