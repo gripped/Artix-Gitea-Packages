@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-1
+version: 1.1.0-2
 pkgbase:
   name: ocaml-topkg
   pkgdesc: A packager for distributing OCaml software
   pkgver: 1.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://erratique.ch/software/topkg
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 34d22ae5b6bd166dd4a601a7d12d89c336684b3c56d7c7f481b40837eab263616cc3a6e6f63602f3d4a7d53c911967bf261de6c1ac205341b98a9838e5ea7aeb
 pkgname:
   - name: ocaml-topkg
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
