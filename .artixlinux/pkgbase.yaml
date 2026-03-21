@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2.14.1-6
+    packages:
+      - qscintilla-qt5-2.14.1-6-x86_64.pkg.tar.zst
+      - qscintilla-qt6-2.14.1-6-x86_64.pkg.tar.zst
+      - python-qscintilla-qt6-2.14.1-6-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.14.1-5
