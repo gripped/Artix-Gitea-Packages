@@ -21,4 +21,4 @@ pkgbase:
     - 1526d7874c52c99d25af2c52154bace3051fcc8a0ab57558a4251dca7718b6298eddb277de4c0826aac3f61f76cc8dd0219fc20955e3c83face7ec6741a1438c
 pkgname:
   - name: python-pycparser
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
