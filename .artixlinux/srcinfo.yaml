@@ -64,4 +64,4 @@ pkgbase:
     - a397a60fb512a9cc73a4c38bce5c62f4b2a2a6cb11e6887f84b7d4fc7e53e172b18766dd84653c51e3fd9e1aeb9eaab1c5095df73a8a77c5558882202661fc1b
 pkgname:
   - name: python-distributed
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
