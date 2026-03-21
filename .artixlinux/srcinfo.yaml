@@ -1,9 +1,9 @@
 ---
-version: 3.44.7-1
+version: 4.0.0-1
 pkgbase:
   name: qgis
   pkgdesc: Geographic Information System (GIS) that supports vector, raster & database formats
-  pkgver: 3.44.7
+  pkgver: 4.0.0
   pkgrel: 1
   url: https://qgis.org/
   arch:
@@ -16,7 +16,7 @@ pkgbase:
     - ninja
     - opencl-clhpp
     - pyqt-builder
-    - qt5-tools
+    - qt6-tools
     - sip
   depends:
     - abseil-cpp
@@ -46,20 +46,22 @@ pkgbase:
     - python-owslib
     - python-packaging
     - python-psycopg2
-    - python-pyqt5
-    - python-qscintilla-qt5
+    - python-pyqt6
+    - python-qscintilla-qt6
     - python-yaml
-    - qca-qt5
-    - qscintilla-qt5
-    - qt5-3d
-    - qt5-base
-    - qt5-declarative
-    - qt5-imageformats
-    - qt5-location
-    - qt5-multimedia
-    - qt5-serialport
-    - qt5-svg
-    - qtkeychain-qt5
+    - qca-qt6
+    - qscintilla-qt6
+    - qt6-3d
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-imageformats
+    - qt6-multimedia
+    - qt6-positioning
+    - qt6-serialport
+    - qt6-svg
+    - qt6-webengine
+    - qtkeychain-qt6
     - qwt
     - sqlite
     - zlib
@@ -68,9 +70,9 @@ pkgbase:
     - 'fcgi: Map server'
     - 'gpsbabel: GPS Tools plugin'
   source:
-    - https://qgis.org/downloads/qgis-3.44.7.tar.bz2
+    - https://qgis.org/downloads/qgis-4.0.0.tar.bz2
   sha256sums:
-    - 1ab06f40600c84e928b4fe22a66997d80973201b10769e7a636e5be83459b814
+    - b07377af3193cc980c03f6e0022d028590ece6d0e85d04fee03e8761472484f3
 pkgname:
   - name: qgis
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
