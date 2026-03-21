@@ -26,4 +26,4 @@ pkgbase:
     - 389bf425d3d6ecba6dbc5afa65fa19d2bb75adde46f504ca80c743ce4b28269c24c344f5a865d301fdef51321dbbeb780b55dc63e8925d1a4b70be6ebfffb49e
 pkgname:
   - name: python-oslo-context
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
