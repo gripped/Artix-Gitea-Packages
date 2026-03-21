@@ -1,10 +1,10 @@
 ---
-version: 2.4.3-15
+version: 2.4.3-16
 pkgbase:
   name: easytag
   pkgdesc: Simple application for viewing and editing tags in audio files
   pkgver: 2.4.3
-  pkgrel: 15
+  pkgrel: 16
   url: https://wiki.gnome.org/Apps/EasyTAG
   arch:
     - x86_64
@@ -19,15 +19,16 @@ pkgbase:
   depends:
     - dconf
     - flac
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
     - gtk3
     - hicolor-icon-theme
     - id3lib
+    - libgcc
     - libid3tag
     - libogg
+    - libstdc++
     - libvorbis
     - opus
     - opusfile
@@ -52,4 +53,4 @@ pkgbase:
     - d58363471fa4a159d50b2fe03c07581bb530e158c18fd086d6e3a5714cc3514f62fa3b5002525cf45e825d6e684cb1083bd874e07a65defb1848d352c258f664
 pkgname:
   - name: easytag
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any

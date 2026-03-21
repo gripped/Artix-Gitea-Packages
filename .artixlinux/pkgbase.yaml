@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.4.3-15
+    version: 2.4.3-16
     packages:
-      - easytag-2.4.3-15-x86_64.pkg.tar.zst
+      - easytag-2.4.3-16-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
