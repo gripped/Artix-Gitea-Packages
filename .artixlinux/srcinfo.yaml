@@ -39,4 +39,4 @@ pkgbase:
     - 16c732a4f4c27148f98d6ba1684c7d51e139732e1a70f66d521a512f7993617e
 pkgname:
   - name: python-h5py
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
