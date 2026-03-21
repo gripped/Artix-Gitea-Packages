@@ -30,4 +30,4 @@ pkgbase:
     - 8e15f9dbd7ffcb56413dec8b1318b9f7e9ccd4425af6579e9283048caff123eb3ed20e1afc1c16335db47832933d4e3f5239cc5c1472e8201d977391249bfa28
 pkgname:
   - name: python-attrs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
