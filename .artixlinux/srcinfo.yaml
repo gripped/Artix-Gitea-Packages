@@ -36,4 +36,4 @@ pkgbase:
     - 04c8e63e5134f19a4e8b4c2f4f2e15fa3d105c9717196f5fdc2c53169d1af7bb293c7fe95f91c2525d6195a2718b4c97ad8d22ee8c0da71ba4275c9ea4f78c24
 pkgname:
   - name: python-pipenv
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
