@@ -28,4 +28,4 @@ pkgbase:
     - 1ed50361ba6c32f12b97bec837855e3728dbeb3f94f0c012837d343d85814a81543285068ce63167890687b274f14abe30ee845ed0460592b1623a736a229d83
 pkgname:
   - name: python-hidapi
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
