@@ -51,4 +51,4 @@ pkgbase:
     - a2ec32c2ff87896b43fa2c51274d48343d791e32ac659f756a64db88bac09f2ff8a9899da2b59b957f050904be168fa3cb86ceb6b0c1e94499942d7cf04bbb92
 pkgname:
   - name: python-tox
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
