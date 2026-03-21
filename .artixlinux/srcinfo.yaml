@@ -1,9 +1,9 @@
 ---
-version: 1.0.5-1
+version: 1.0.10-1
 pkgbase:
   name: github-copilot-cli
   pkgdesc: GitHub Copilot CLI brings the power of Copilot coding agent directly to your terminal.
-  pkgver: 1.0.5
+  pkgver: 1.0.10
   pkgrel: 1
   url: https://github.com/github/copilot-cli
   changelog: changelog.md
@@ -28,16 +28,16 @@ pkgbase:
   replaces:
     - github-copilot
   noextract:
-    - copilot-1.0.5.tgz
+    - copilot-1.0.10.tgz
   options:
     - '!strip'
     - emptydirs
     - staticlibs
     - zipman
   source:
-    - https://registry.npmjs.org/@github/copilot/-/copilot-1.0.5.tgz
+    - https://registry.npmjs.org/@github/copilot/-/copilot-1.0.10.tgz
   b2sums:
-    - 10f62bb595260262ec4c508b627468555f0761955a9b413bd7f977712b7573c47de9893d8c0d16b897593198c7efa395e4f258d288e9b445e59879d31f5f8c23
+    - 1548824077231d321f5c153bca41ffedd549de63b85eada00455afcffd593fd285930cc3a2806a8fab30d40c2af6f8350328d2ad09aaa6829dfcbcdf80a9cfdb
 pkgname:
   - name: github-copilot-cli
 # generated with artixpkg 0.38.2-1-any
