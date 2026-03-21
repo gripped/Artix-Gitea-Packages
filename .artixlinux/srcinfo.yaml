@@ -59,4 +59,4 @@ pkgbase:
     - 3a741ba70e6bddc6f8052d0c76343e756874e284cdcdcc3ff0c48fb6302c5e4b2ef47fa0b1a6bd4f85d1972cd3740dc87c3af711419ea0fb50239d53565d829c
 pkgname:
   - name: python-lsp-server
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
