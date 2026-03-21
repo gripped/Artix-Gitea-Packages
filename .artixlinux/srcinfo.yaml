@@ -32,4 +32,4 @@ pkgbase:
     - 5c9e0b76751245434ff6f730b247b88760f8f95cdf5e17c54ea419ad44c727d0837c6705653e77b1d10765f2835a6e62257add777fb0b1389173a9da878e4f3f
 pkgname:
   - name: python-sphinx-furo
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
