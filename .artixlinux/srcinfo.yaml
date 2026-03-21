@@ -50,4 +50,4 @@ pkgbase:
     - d6163eb220bd567226c6006bef30c6db1eac1263ae161392db9766dca1ce78014cc555dd9d27febd2b924150053fa01b47c06777b1e760864459574c7614bfc4
 pkgname:
   - name: xpdf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
