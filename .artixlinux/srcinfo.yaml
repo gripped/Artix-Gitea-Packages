@@ -30,4 +30,4 @@ pkgbase:
     - 03e06c8c13e352133962c4395ebe0696905c9f1fbdead2d19deae37ba48eb47c
 pkgname:
   - name: python-nltk
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
