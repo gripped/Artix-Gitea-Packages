@@ -1,10 +1,10 @@
 ---
-version: 6.9-1
+version: 6.9-2
 pkgbase:
   name: brltty
   pkgdesc: Braille display driver for Linux/Unix
   pkgver: 6.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://brltty.app
   arch:
     - x86_64
