@@ -28,4 +28,4 @@ pkgbase:
     - 0e98174c7a1680330258adb42650d74cb2549685f88471178b2d98088f09e5f462cd2e3e09c4749f6e7916d828668cf4201ccf87a62875d81c5a3f516969da58
 pkgname:
   - name: python-pytest-ruff
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
