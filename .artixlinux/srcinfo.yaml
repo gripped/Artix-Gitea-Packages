@@ -34,4 +34,4 @@ pkgbase:
     - eccd86a06050bd802b16c52a2c4e33649aabb23da8b3ccaa6b176894e444564b
 pkgname:
   - name: python-pyspnego
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
