@@ -34,4 +34,4 @@ pkgbase:
     - 2924cbb8009f7523bf78aab2f7cc17ce5abfb5f45fbc25ce074e597934e2bd269e1806672b95c570fb199169fefc8e23551254934d964deb69596b8f3c27e6d3
 pkgname:
   - name: python-peewee
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
