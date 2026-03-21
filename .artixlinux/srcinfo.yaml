@@ -28,4 +28,4 @@ pkgbase:
     - 2955fc4f9d83847952b496d3a8a8c9eb3f0758188ef89a4b2f5412a8db52ff16e5bad0e52368d714e34a6898e08f03125ed7edf4351fe6d8139074a8ecea7690
 pkgname:
   - name: python-cloudflare
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
