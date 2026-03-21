@@ -35,4 +35,4 @@ pkgbase:
     - d4f32e2777c9b6e52e61849e816eb0092b10c7e01ba484499a167e4bfa5a7e2bec3ac103815d686a66f77eb74bf558d59f271e566bedc35210d104f69d925d87
 pkgname:
   - name: python-pygame
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
