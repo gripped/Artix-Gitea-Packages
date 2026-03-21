@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - python-sphinx-argparse-0.5.2-4-any.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.5.2-4
+    packages:
+      - python-sphinx-argparse-0.5.2-4-any.pkg.tar.zst
     debug: []
   world:
     version: 0.5.2-4
