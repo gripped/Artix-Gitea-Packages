@@ -1,9 +1,9 @@
 ---
-version: 3.19.0-1
+version: 4.0.2-1
 pkgbase:
   name: python-peewee
   pkgdesc: A small, expressive orm
-  pkgver: 3.19.0
+  pkgver: 4.0.2
   pkgrel: 1
   url: https://github.com/coleifer/peewee
   arch:
@@ -11,9 +11,11 @@ pkgbase:
   license:
     - MIT
   checkdepends:
+    - python-aiosqlite
     - python-apsw
     - python-flask
     - python-gevent
+    - python-greenlet
     - python-psycopg2
   makedepends:
     - cython
@@ -26,12 +28,20 @@ pkgbase:
     - python
     - sqlite
   optdepends:
+    - 'python-aiomysql: for async MySQL database support'
+    - 'python-aiosqlite: for async SQLite database support'
+    - 'python-apsw: for APSW SQLite database support'
+    - 'python-asyncpg: for async PostgreSQL database support'
+    - 'python-flask: for Flask integration utilities'
+    - 'python-gevent: for green-thread based async support'
+    - 'python-greenlet: for async database support'
     - 'python-psycopg2: for PostgreSQL database support'
+    - 'python-psycopg: for PostgreSQL database support via psycopg3'
     - 'python-pymysql: for MySQL database support'
   source:
-    - https://github.com/coleifer/peewee/archive/3.19.0/python-peewee-3.19.0.tar.gz
-  sha512sums:
-    - 2924cbb8009f7523bf78aab2f7cc17ce5abfb5f45fbc25ce074e597934e2bd269e1806672b95c570fb199169fefc8e23551254934d964deb69596b8f3c27e6d3
+    - https://github.com/coleifer/peewee/archive/4.0.2/python-peewee-4.0.2.tar.gz
+  b2sums:
+    - 806cf98c98dbdcc1aa4e6288546bd573214d16bc1fe4fa3fdc7fe191c0f672f0e9887e3c17645e5f1deed1a22e443dac91949be6dab2a315f1e8a3561829a5cc
 pkgname:
   - name: python-peewee
 # generated with artixpkg 0.38.2-1-any

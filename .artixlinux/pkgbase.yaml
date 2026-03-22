@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.19.0-1
+    version: 4.0.2-1
     packages:
-      - python-peewee-3.19.0-1-x86_64.pkg.tar.zst
+      - python-peewee-4.0.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.19.0-1
