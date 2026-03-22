@@ -1,10 +1,10 @@
 ---
-version: 0.6.13-1
+version: 0.6.13-2
 pkgbase:
   name: python-wand
   pkgdesc: Ctypes-based simple MagickWand API binding for Python
   pkgver: 0.6.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/emcconville/wand
   arch:
     - any
@@ -19,7 +19,10 @@ pkgbase:
     - librsvg
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - imagemagick
     - libxml2
