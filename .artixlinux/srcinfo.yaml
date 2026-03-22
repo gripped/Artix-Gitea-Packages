@@ -1,9 +1,9 @@
 ---
-version: 31.2.0-1
+version: 32.2.0-1
 pkgbase:
   name: ruby-cucumber-messages
   pkgdesc: Protocol Buffer messages for Cucumber's inter-process communication
-  pkgver: 31.2.0
+  pkgver: 32.2.0
   pkgrel: 1
   url: https://github.com/cucumber/messages/tree/main/ruby
   arch:
@@ -15,17 +15,18 @@ pkgbase:
     - ruby-rake
     - ruby-rspec
   makedepends:
+    - git
     - ruby-rdoc
   depends:
     - ruby
   options:
     - '!emptydirs'
   source:
-    - https://github.com/cucumber/messages/archive/v31.2.0/cucumber-messages-31.2.0.tar.gz
+    - git+https://github.com/cucumber/messages.git#tag=v32.2.0
   sha512sums:
-    - 8345d445f0c8c26c14c8a2984e66fb57f20de07af00fb3c079430a9e2e385ade1b1601fc4f469094084b639f7326ef96c3691e0b6014d9d67c0f288d009898dd
+    - a831ac2aa212a3d1b28c1533bdccdab150829734d18c83567f4e43102bbf22da285b2125fa191c0f8c91b74746a69c5ec974721bf38565e536d6de56da535ad7
   b2sums:
-    - dabe8600f24234001c8fa4f933a408f7d8ff92a7e594ad006a99fd4657347f9f8c25d7d6ed12b916c0f026a02f1f6c8f0452478da72d7522406fbf393405902c
+    - e75f684ed7647c4bd81766c513099cecbe92f9e2b6785ed823eb943200666aff60ce077bdb64971d7ab72a09fed9c389de83ebdda5af2e8cfca926a08d223b78
 pkgname:
   - name: ruby-cucumber-messages
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
