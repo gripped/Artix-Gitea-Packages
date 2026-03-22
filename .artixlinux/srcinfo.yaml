@@ -1,10 +1,10 @@
 ---
-version: 2.0.1-6
+version: 2.0.1-7
 pkgbase:
   name: python-sure
   pkgdesc: An idiomatic testing library for python with powerful and flexible assertions
   pkgver: 2.0.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/gabrielfalcao/sure
   arch:
     - any
@@ -14,8 +14,11 @@ pkgbase:
     - python-pytest
     - python-nose
   makedepends:
-    - python-setuptools
     - git
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
   depends:
     - python-six
   source:
@@ -30,4 +33,4 @@ pkgbase:
     - 7fd64564513a56caf2d6041763bc6ce593ecb3a35364e6f1d174931d3d8d44197b0360b5e73dc63377aca28e6a49e253c9a91c305b80a8171f253534549820be
 pkgname:
   - name: python-sure
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
