@@ -1,0 +1,32 @@
+---
+version: 3.2.0-1
+pkgbase:
+  name: ruby-optimist
+  pkgdesc: Commandline option parser for Ruby that just gets out of your way
+  pkgver: 3.2.0
+  pkgrel: 1
+  url: https://github.com/ManageIQ/optimist
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-minitest
+    - ruby-chronic
+  makedepends:
+    - ruby-rdoc
+    - ruby-rake
+    - ruby-bundler
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/ManageIQ/optimist/archive/v3.2.0/ruby-optimist-3.2.0.tar.gz
+  sha512sums:
+    - c08c4a7329e82152449758bfc4dfc5befc69ad89e13fa5dbb9c13ca0553dae0902135d6a4b598c8102add36980dcdc2b652861e36c2c0e73700d2ac93dc6b61c
+  b2sums:
+    - 30cb6016c3e2e83d2fc9a82dadaaed99243172c40123dac324bd76d9f741cd63b70ef229ba1d4c455f864c7733e74aa34b16d9930f773715cb6c3ce26a4e716e
+pkgname:
+  - name: ruby-optimist
+# generated with artixpkg 0.38.2-1-any
