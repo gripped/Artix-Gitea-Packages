@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-5
+version: 0.14.0-6
 pkgbase:
   name: python-hidapi
   pkgdesc: A Cython interface to the hidapi from signal11/hidapi
   pkgver: 0.14.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/trezor/cython-hidapi
   arch:
     - x86_64
@@ -12,9 +12,11 @@ pkgbase:
     - custom
   makedepends:
     - cython
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
     - udev
-    - python-pip
   depends:
     - python
     - hidapi
