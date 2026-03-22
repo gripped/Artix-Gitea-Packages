@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-1
+version: 7.2.0-2
 pkgbase:
   name: python-oslo-concurrency
   pkgdesc: OpenStack library for all concurrency-related code
   pkgver: 7.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/oslo.concurrency/7.2.0
   arch:
     - any
@@ -16,7 +16,9 @@ pkgbase:
     - python-eventlet
   makedepends:
     - git
-    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-pbr
     - python-oslo-config
