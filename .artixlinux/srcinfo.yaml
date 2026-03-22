@@ -1,10 +1,10 @@
 ---
-version: 6.0.0-1
+version: 6.0.0-2
 pkgbase:
   name: python-oslotest
   pkgdesc: Oslo test framework
   pkgver: 6.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openstack/oslotest
   arch:
     - any
@@ -15,6 +15,9 @@ pkgbase:
     - python-stestr
   makedepends:
     - git
+    - python-build
+    - python-installer
+    - python-wheel
     - python-pbr
   depends:
     - python-fixtures
