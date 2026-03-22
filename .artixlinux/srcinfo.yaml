@@ -1,10 +1,10 @@
 ---
-version: 3.10.1-5
+version: 3.10.1-6
 pkgbase:
   name: python-paste
   pkgdesc: Tools for using a Web Server Gateway Interface stack
   pkgver: 3.10.1
-  pkgrel: 5
+  pkgrel: 6
   url: https://pythonpaste.readthedocs.io/
   arch:
     - any
@@ -14,6 +14,9 @@ pkgbase:
     - python-pytest
     - python-flup
   makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
     - python-setuptools
   depends:
     - python
@@ -25,4 +28,4 @@ pkgbase:
     - 3d224fc017f8354a4737c83d3dcddd0dfa8baaa80a86f843e817ccba295b8e04d16bb10594f17f010da204a0854cf9d57c03a09d0dacb0e7af305a9b0f86422f
 pkgname:
   - name: python-paste
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
