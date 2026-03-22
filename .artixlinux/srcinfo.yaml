@@ -1,10 +1,10 @@
 ---
-version: 13.0.0-1
+version: 13.0.0-2
 pkgbase:
   name: python-oslo-db
   pkgdesc: OpenStack Database Pattern Library
   pkgver: 13.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/oslo.db/13.0.0
   arch:
     - any
@@ -22,7 +22,9 @@ pkgbase:
     - python-psycopg2
   makedepends:
     - git
-    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-pbr
     - python-alembic
