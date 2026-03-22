@@ -1,0 +1,30 @@
+---
+version: 20260322-1
+pkgbase:
+  name: dnscrypt-proxy-openrc
+  pkgdesc: OpenRC dnscrypt-proxy init script
+  pkgver: 20260322
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artixlinux/packages-openrc
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  depends:
+    - openrc
+    - dnscrypt-proxy
+  provides:
+    - init-dnscrypt-proxy
+  conflicts:
+    - init-dnscrypt-proxy
+  source:
+    - dnscrypt-proxy.confd
+    - dnscrypt-proxy.initd
+  sha256sums:
+    - fd918f1c0c04e594b8ba50b693b617c8e28562f14e9faa4f1528539d64b2c840
+    - 3968d8d4bee545a7c4452c70741b6ad8c500371c14cb989bf938d509dc6576d8
+pkgname:
+  - name: dnscrypt-proxy-openrc
+# generated with artixpkg 0.38.2-1-any
