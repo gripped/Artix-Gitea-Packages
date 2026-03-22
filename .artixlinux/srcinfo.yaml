@@ -1,9 +1,9 @@
 ---
-version: 2.3.0-1
+version: 2.3.1-1
 pkgbase:
   name: nodejs-yaml
   pkgdesc: JavaScript parser and stringifier for YAML
-  pkgver: 2.3.0
+  pkgver: 2.3.1
   pkgrel: 1
   url: https://eemeli.org/yaml/
   arch:
@@ -15,11 +15,11 @@ pkgbase:
   depends:
     - nodejs
   noextract:
-    - yaml-2.3.0.tgz
+    - yaml-2.3.1.tgz
   source:
-    - https://registry.npmjs.org/yaml/-/yaml-2.3.0.tgz
+    - https://registry.npmjs.org/yaml/-/yaml-2.3.1.tgz
   sha512sums:
-    - f3fd7083374a73b6dcf44ea6cb9c198e675abc72ef3bf40e98b1b5141ba06e512f638217acb8e556220e98bdb81ed854d38da55930d13bdd05cf5629eba52733
+    - d9e1d67e36a85e04c10b68cd3352d179feb65506b4ba6b6f4620d293a1d2cd6ed1bd2e58b6469b26bc182cb10a58173c6b95363d3482b3e7498d44c97651ec59
 pkgname:
   - name: nodejs-yaml
 # generated with artixpkg 0.38.2-1-any
