@@ -1,10 +1,10 @@
 ---
-version: 2.4.2-3
+version: 2.4.3-1
 pkgbase:
   name: ansible-runner
   pkgdesc: A tool and python library that helps when interfacing with Ansible
-  pkgver: 2.4.2
-  pkgrel: 3
+  pkgver: 2.4.3
+  pkgrel: 1
   url: https://github.com/ansible/ansible-runner
   arch:
     - any
@@ -22,10 +22,10 @@ pkgbase:
     - python-pexpect
     - python-yaml
   source:
-    - ansible-runner-2.4.2.tar.gz::https://github.com/ansible/ansible-runner/archive/refs/tags/2.4.2.tar.gz
+    - ansible-runner-2.4.3.tar.gz::https://github.com/ansible/ansible-runner/archive/refs/tags/2.4.3.tar.gz
     - relax_setuptools_upperbound_version.patch
   sha256sums:
-    - 07398551890d0829f37f4c72af78f747bf887b8ea07efd94e2b8bcc0c26e6875
+    - 1913869ab95fbd8627b8d006724ff21adc832dd88301b51ae2559b3f2599e400
     - cb6af5b6b3a302b003be8267f4cfcc23b07e8b803273627b89c3a2f36e8ea914
 pkgname:
   - name: ansible-runner
