@@ -1,0 +1,35 @@
+---
+version: 2.14.0-1
+pkgbase:
+  name: ruby-faraday
+  pkgdesc: HTTP/REST API client library.
+  pkgver: 2.14.0
+  pkgrel: 1
+  url: https://github.com/lostisland/faraday
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-pry
+    - ruby-rack
+    - ruby-rake
+    - ruby-rspec
+    - ruby-webmock
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-faraday-net_http
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/lostisland/faraday/archive/v2.14.0/faraday-v2.14.0.tar.gz
+  sha512sums:
+    - 22b8babd9d880d19c176d429a5eb27fa45e72ab9a92fcf377477dac7a50adba4805fe7014d98c00ab7b04f2c8cb22ee9cfab0da23a9bee157f4b408654d2db02
+  b2sums:
+    - dbb6bc6e3dbd4a9c0bf3329facb5f87f90989a7ba2d8533a4fe03f14cd0a3fa2746315f599c5ef682cf7b301ca5ad35f505b6d1a7f83557500bff15b4cb2d689
+pkgname:
+  - name: ruby-faraday
+# generated with artixpkg 0.38.2-1-any
