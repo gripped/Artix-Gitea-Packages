@@ -1,23 +1,27 @@
 ---
-version: 0.7-14
+version: 0.7-15
 pkgbase:
   name: python-strict-rfc3339
   pkgdesc: Strict, simple, lightweight RFC3339 functions
   pkgver: 0.7
-  pkgrel: 14
+  pkgrel: 15
   url: https://github.com/danielrichman/strict-rfc3339
   arch:
     - any
   license:
     - GPL-3.0-or-later
   makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
     - python-setuptools
   depends:
     - python
   source:
-    - https://pypi.io/packages/source/s/strict-rfc3339/strict-rfc3339-0.7.tar.gz
+    - git+https://github.com/danielrichman/strict-rfc3339.git#tag=version-0.7
   sha512sums:
-    - 94a2992a9ea41b75527348f0f8dae1d118d57b0764122f874baa85f5e3b523beb219ed83c2d7224725e504cd3737a6bde485957135856dcde470f32675e44e77
+    - 2461158e6521f126572001b004de1eaee7eb716840a95a12cfd7a4df0ec96e586d1028c3c3e359da59ae7cf78e54f7a377d2a84e1ffaa7b8afb1a47213a66711
 pkgname:
   - name: python-strict-rfc3339
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
