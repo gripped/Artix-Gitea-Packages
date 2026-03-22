@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-1
+version: 4.4.0-2
 pkgbase:
   name: python-openstacksdk
   pkgdesc: An SDK for building applications to work with OpenStack
   pkgver: 4.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.openstack.org/sdks/python/openstacksdk
   arch:
     - any
@@ -24,7 +24,9 @@ pkgbase:
     - python-testtools
   makedepends:
     - git
-    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-cryptography
     - python-decorator
