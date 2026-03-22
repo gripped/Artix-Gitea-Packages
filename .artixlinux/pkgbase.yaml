@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.7.1-1
+    version: 4.7.1-2
     packages:
-      - electrum-4.7.1-1-any.pkg.tar.zst
+      - electrum-4.7.1-2-any.pkg.tar.zst
     debug: []
   world:
     version: 4.7.1-1
