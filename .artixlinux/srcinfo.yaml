@@ -1,10 +1,10 @@
 ---
-version: 6.5-3
+version: 6.5-4
 pkgbase:
   name: python-persistent
   pkgdesc: Translucent persistent objects
   pkgver: 6.5
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/zopefoundation/persistent/
   arch:
     - x86_64
@@ -15,6 +15,9 @@ pkgbase:
     - python-manuel
   makedepends:
     - git
+    - python-build
+    - python-installer
+    - python-wheel
     - python-setuptools
   depends:
     - python-cffi
@@ -26,4 +29,4 @@ pkgbase:
     - c4f5d0f1d6c9bf0379445ab78737347f41c930b0694aff76ca9bbf845f4c260a5554f9c6762b30dc688a2ee624bd369e4adf8174a9483c0feb6862df2f8b8190
 pkgname:
   - name: python-persistent
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
