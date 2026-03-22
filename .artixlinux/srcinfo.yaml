@@ -1,9 +1,9 @@
 ---
-version: 3.0.4-1
+version: 3.0.5-1
 pkgbase:
   name: python-webtest
   pkgdesc: Helper to test WSGI applications
-  pkgver: 3.0.4
+  pkgver: 3.0.5
   pkgrel: 1
   url: https://docs.pylonsproject.org/projects/webtest/en/latest/
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - 'python-pyquery: for response.pyquery'
     - 'python-lxml: for response.lxml'
   source:
-    - git+https://github.com/Pylons/webtest.git#tag=3.0.4
+    - git+https://github.com/Pylons/webtest.git#tag=3.0.5
   sha512sums:
-    - a5edd9daae1a3995cd330e3c53ab338307aba6f2246db81fabd054b806ff2cf4bb68831e8ecd0080cbcec337963bad6b77b87b16eff8e6a8a7d9caf23b4a1347
+    - 7fa8b3259f63ad6ab66945c8692edfa1a3129ecdd1036f1047bdf3e7db307dc5efdf80e09a9be1e3d65c0444e3459f47039da12a20d868fd1009f9efec69854d
 pkgname:
   - name: python-webtest
 # generated with artixpkg 0.38.2-1-any
