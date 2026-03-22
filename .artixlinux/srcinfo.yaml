@@ -1,10 +1,10 @@
 ---
-version: 8.1.0-1
+version: 8.1.0-2
 pkgbase:
   name: python-oslo-utils
   pkgdesc: Oslo Utility library
   pkgver: 8.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/oslo.utils/8.1.0
   arch:
     - any
@@ -20,7 +20,9 @@ pkgbase:
     - qemu-img
   makedepends:
     - git
-    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-pbr
     - python-iso8601
