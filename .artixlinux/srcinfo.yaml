@@ -1,10 +1,10 @@
 ---
-version: 1.47.1-1
+version: 1.47.1-2
 pkgbase:
   name: just
   pkgdesc: A handy way to save and run project-specific commands
   pkgver: 1.47.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/casey/just
   arch:
     - x86_64
@@ -13,7 +13,7 @@ pkgbase:
   makedepends:
     - cargo
   depends:
-    - gcc-libs
+    - libgcc
   source:
     - just-1.47.1.tar.gz::https://github.com/casey/just/archive/1.47.1.tar.gz
   sha256sums:
