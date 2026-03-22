@@ -1,10 +1,10 @@
 ---
-version: 6.3.0-1
+version: 6.3.0-2
 pkgbase:
   name: python-pytest-cov
   pkgdesc: py.test plugin for coverage reporting with support for both centralised and distributed testing, including subprocesses and multiprocessing
   pkgver: 6.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pytest-dev/pytest-cov
   arch:
     - any
@@ -17,6 +17,9 @@ pkgbase:
     - python-fields
   makedepends:
     - git
+    - python-build
+    - python-installer
+    - python-wheel
     - python-setuptools
   depends:
     - python-coverage
