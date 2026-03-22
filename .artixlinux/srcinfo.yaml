@@ -1,10 +1,10 @@
 ---
-version: 20250329-66
+version: 20250329-70
 pkgbase:
   name: vhba-module
   pkgdesc: Kernel module that emulates SCSI devices
   pkgver: 20250329
-  pkgrel: 66
+  pkgrel: 70
   url: https://cdemu.sourceforge.io/
   arch:
     - x86_64
