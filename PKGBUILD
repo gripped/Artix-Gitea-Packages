@@ -1,11 +1,12 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Florian Pritz <bluewind@xinu.at>
 # Contributor: Martchus <martchus@gmx.net>
 
 pkgname=libfilezilla
 epoch=1
-pkgver=0.55.0
+pkgver=0.55.1
 pkgrel=1
 pkgdesc="Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs"
 url="https://lib.filezilla-project.org/"
@@ -19,8 +20,8 @@ provides=('libfilezilla.so')
 # See https://trac.filezilla-project.org/ticket/13186
 #source=("https://download.filezilla-project.org/libfilezilla/libfilezilla-${pkgver}.tar.xz")
 source=("https://sources.archlinux.org/other/libfilezilla/${pkgname}-${pkgver}.tar.xz")
-sha512sums=('1a8c1e097501e7ffa4e5667d245128a002585fb2bacf10c055b9ef1c0793d38d601aded9eca0eef6ba5f86daf5b7471c1e885657545a20db51999c2c239dea17')
-b2sums=('efb21994140b2b080c0a37df9621c909dd0e56f03542c3699a0e73c600fd302ace5c5eb6e287f836f83abdf2c61071c71c26364602f79ff749082f1e1bb54f97')
+sha512sums=('1de2d4ba9ea2cda1e54c153d9625ea740f9d27261f8e6c875ed8c573aaefac0b5e7d10b4453319cbf526d765bfe4f0675bb697cf4702221926374c4a3f048aa8')
+b2sums=('1cf6a3f7f477ddba5b0d187d2aa18e99411ce0b29b712560f02e2521c9629c9cce70568b5bbadbc835cf11566b48061c37558aad3c07b8c7a71afd939ada326f')
 
 build() {
   cd "${pkgname}-${pkgver}"
