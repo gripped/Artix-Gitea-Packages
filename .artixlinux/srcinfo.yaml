@@ -1,0 +1,30 @@
+---
+version: 0.12-1
+pkgbase:
+  name: ruby-minitar
+  pkgdesc: A pure-Ruby library that provides the ability to deal with POSIX tar(1) archive files
+  pkgver: 0.12
+  pkgrel: 1
+  url: https://github.com/halostatue/minitar/
+  arch:
+    - any
+  license:
+    - Ruby
+    - BSD-2-Clause
+  makedepends:
+    - ruby-rdoc
+    - ruby-rake
+    - ruby-hoe
+    - ruby-minitest
+    - ruby-base64
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/halostatue/minitar/archive/v0.12/ruby-minitar-v0.12.tar.gz
+  sha512sums:
+    - 33ffc428fb9425cd5cd835c45bffc81d407c08c2052f44dc1322df06a6d5b810ab28e49f22b0b9363bc59e4f28f5de7db3833d2ad04bc993076f8ff9c3cfc575
+pkgname:
+  - name: ruby-minitar
+# generated with artixpkg 0.38.2-1-any
