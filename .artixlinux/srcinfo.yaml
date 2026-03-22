@@ -1,22 +1,25 @@
 ---
-version: 2.0.2-3
+version: 2.0.2-4
 pkgbase:
   name: python-testresources
   pkgdesc: Testresources, a pyunit extension for managing expensive test resources
   pkgver: 2.0.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://launchpad.net/testresources
   arch:
     - any
   license:
-    - Apache
-    - BSD
+    - Apache-2.0
+    - BSD-3-Clause
   checkdepends:
     - python-fixtures
   makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-wheel
     - python-pbr
     - python-testtools
-    - git
   depends:
     - python
   source:
