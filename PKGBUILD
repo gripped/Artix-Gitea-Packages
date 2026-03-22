@@ -1,11 +1,12 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 # Contributor: Alexander Fehr <pizzapunk gmail com>
 
 pkgname=filezilla
 pkgver=3.69.6
-pkgrel=2
+pkgrel=3
 pkgdesc="Fast and reliable FTP, FTPS and SFTP client"
 url="https://filezilla-project.org"
 arch=('x86_64')
