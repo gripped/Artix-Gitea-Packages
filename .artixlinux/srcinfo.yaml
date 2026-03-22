@@ -1,22 +1,25 @@
 ---
-version: 0.3.31-1
+version: 0.3.31-2
 pkgbase:
   name: openblas
   pkgdesc: An optimized BLAS library based on GotoBLAS2 1.13 BSD
   pkgver: 0.3.31
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.openblas.net/
   arch:
     - x86_64
   license:
-    - BSD
+    - BSD-3-Clause
   makedepends:
     - git
     - cmake
     - perl
     - gcc-fortran
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
+    - libgfortran
+    - libgomp
   source:
     - git+https://github.com/xianyi/OpenBLAS#tag=v0.3.31
   sha512sums:
@@ -57,4 +60,4 @@ pkgname:
       - cblas64
       - lapack64
       - lapacke64
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
