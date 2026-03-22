@@ -1,31 +1,30 @@
 ---
-version: 24.7.2-4
+version: 24.11.0-1
 pkgbase:
   name: python-incremental
   pkgdesc: A small library that versions your Python projects
-  pkgver: 24.7.2
-  pkgrel: 4
-  url: https://github.com/hawkowl/incremental
+  pkgver: 24.11.0
+  pkgrel: 1
+  url: https://github.com/twisted/incremental
   arch:
     - any
   license:
     - MIT
   checkdepends:
     - python-pytest
+    - python-twisted
   makedepends:
     - git
     - python-build
     - python-installer
-    - python-setuptools
+    - python-hatchling
     - python-wheel
   depends:
-    - python-click
     - python-packaging
-    - python-twisted
   source:
-    - git+https://github.com/hawkowl/incremental.git#tag=incremental-24.7.2
+    - git+https://github.com/twisted/incremental.git#tag=incremental-24.11.0
   sha512sums:
-    - 25dee34209c856eeacb23f29c0cede207f354c136634bc6ca73a8389d727b0594714cb0c29330d4a5c97d547e6efd85b8bc7f30d1b833d04db427e9f51aa0cfd
+    - 7fba8d7a3c167884c0b853945b574b7aaf790cebc133f26c305ad903c43b491502172d2c62704bb5b963d0e73a3b58caf18a7a126bf01d13320add4ca664e65d
 pkgname:
   - name: python-incremental
 # generated with artixpkg 0.38.2-1-any
