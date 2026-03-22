@@ -1,16 +1,17 @@
 ---
-version: 2.0.0-3
+version: 3.0.0-1
 pkgbase:
   name: python-sphinx_rtd_theme
   pkgdesc: Read the Docs theme for Sphinx
-  pkgver: 2.0.0
-  pkgrel: 3
+  pkgver: 3.0.0
+  pkgrel: 1
   url: https://github.com/readthedocs/sphinx_rtd_theme
   arch:
     - any
   license:
     - MIT
   makedepends:
+    - git
     - python-setuptools-scm
     - python-build
     - python-installer
@@ -20,11 +21,11 @@ pkgbase:
     - python-sphinx
     - python-sphinxcontrib-jquery
   source:
-    - sphinx_rtd_theme-2.0.0.tar.gz::https://github.com/readthedocs/sphinx_rtd_theme/archive/refs/tags/2.0.0.tar.gz
+    - git+https://github.com/readthedocs/sphinx_rtd_theme.git#tag=3.0.0
   sha256sums:
-    - 40446e6789dd34deb4e9814e379bae0aa74057b6fb43de4b343a48c84fc0f8db
+    - 60d49d2d387b07f061c2be08e42001dc3c71e8a37aed90ffb86cf9d8c4b7efdc
   b2sums:
-    - 69721e2729e8c8ff3832721255d6ccfbd78d6a87d1ca032b95185b190f265e888fbdf1b297b45aad82d45bbc8229dbe07dfd901cd7945085057321500fcb992f
+    - 0d606188c48fa1e51f8281912f73c5fb4621ef6b76a2ef7616fd9488cf0dcc0e4aab9b9abfceb820ca92129bce1265585889fe10d4f810d29ce689ccf5024a76
 pkgname:
   - name: python-sphinx_rtd_theme
 # generated with artixpkg 0.38.2-1-any
