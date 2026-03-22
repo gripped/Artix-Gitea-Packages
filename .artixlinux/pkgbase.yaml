@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.16.1-2
+    version: 3.17.0-1
     packages:
-      - python-django-rest-framework-3.16.1-2-any.pkg.tar.zst
+      - python-django-rest-framework-3.17.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 3.16.1-2
