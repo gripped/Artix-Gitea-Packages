@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.3.9-2
+    version: 0.3.10-1
     packages:
-      - python-fastbencode-0.3.9-2-x86_64.pkg.tar.zst
+      - python-fastbencode-0.3.10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.3.9-2
