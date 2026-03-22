@@ -1,0 +1,31 @@
+---
+version: 1.1.2-1
+pkgbase:
+  name: ruby-path_expander
+  pkgdesc: Helps pre-process command-line arguments expanding directories into their constituent file
+  pkgver: 1.1.2
+  pkgrel: 1
+  url: https://github.com/seattlerb/path_expander
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-minitest
+  makedepends:
+    - ruby-rdoc
+    - ruby-rake
+    - ruby-hoe
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/seattlerb/path_expander/archive/v1.1.2/ruby-path_expander-1.1.2.tar.gz
+  sha512sums:
+    - e5c8a31112a34f1d047f20af70ff260a2a258db33b1b5ea38d4a0170126e8b4ad7cc3957b1eb30497f46d40c4f5eb77d14f4254197661ea70e29c78f52f136c0
+  b2sums:
+    - e1000124e5c211f1cb1e9fef898c45b68fa142810d1c31f477875eb8df40329365abee8ba9c1080953ae13f760885f1febb246378eeb3d52afa0ba47a48ff538
+pkgname:
+  - name: ruby-path_expander
+# generated with artixpkg 0.38.2-1-any
