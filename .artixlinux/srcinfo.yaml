@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-1
+version: 6.24.0-2
 pkgbase:
   name: baloo
   pkgdesc: A framework for searching and managing metadata
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -19,7 +19,6 @@ pkgbase:
     - kdoctools
     - qt6-tools
   depends:
-    - gcc-libs
     - glibc
     - kconfig
     - kcoreaddons
@@ -29,6 +28,7 @@ pkgbase:
     - ki18n
     - kidletime
     - kio
+    - libstdc++
     - lmdb
     - qt6-base
     - solid
