@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-1
+version: 6.24.0-2
 pkgbase:
   name: bluez-qt
   pkgdesc: Qt wrapper for Bluez 5 DBus API
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -20,8 +20,8 @@ pkgbase:
     - qt6-tools
   depends:
     - bluez
-    - gcc-libs
     - glibc
+    - libstdc++
     - qt6-base
   optdepends:
     - 'qt6-declarative: QML bindings'
