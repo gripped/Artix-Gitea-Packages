@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.30-1
+version: 1:1.4.30-2
 pkgbase:
   name: xapian-core
   pkgdesc: Open source search engine library
   pkgver: 1.4.30
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.xapian.org/
   arch:
@@ -29,7 +29,8 @@ pkgname:
   - name: xapian-core
     depends:
       - bash
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - util-linux-libs
       - libuuid.so

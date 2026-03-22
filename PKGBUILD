@@ -9,7 +9,7 @@
 pkgbase=xapian-core
 pkgname=(xapian-core{,-docs})
 pkgver=1.4.30
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='Open source search engine library'
 arch=('x86_64')
@@ -56,7 +56,8 @@ _pick() {
 package_xapian-core() {
   depends=(
     'bash'
-    'gcc-libs'
+    'libgcc'
+    'libstdc++'
     'glibc'
     'util-linux-libs' 'libuuid.so'
     'zlib' 'libz.so'
