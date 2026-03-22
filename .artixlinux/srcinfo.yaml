@@ -1,17 +1,20 @@
 ---
-version: 3.0.0.1-1
+version: 3.0.0.1-2
 pkgbase:
   name: python-snowballstemmer
   pkgdesc: Snowball stemming library collection for Python
   pkgver: 3.0.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://snowballstem.org
   arch:
     - any
   license:
     - BSD-3-Clause
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   optdepends:
