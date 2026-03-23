@@ -13,14 +13,14 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 260-2
+    version: 260-1
     packages:
-      - udev-260-2-x86_64.pkg.tar.zst
-      - libudev-260-2-x86_64.pkg.tar.zst
-      - esysusers-260-2-x86_64.pkg.tar.zst
-      - etmpfiles-260-2-x86_64.pkg.tar.zst
-      - egummiboot-260-2-x86_64.pkg.tar.zst
-      - eukify-260-2-x86_64.pkg.tar.zst
+      - udev-260-1-x86_64.pkg.tar.zst
+      - libudev-260-1-x86_64.pkg.tar.zst
+      - esysusers-260-1-x86_64.pkg.tar.zst
+      - etmpfiles-260-1-x86_64.pkg.tar.zst
+      - egummiboot-260-1-x86_64.pkg.tar.zst
+      - eukify-260-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 259.1-2
