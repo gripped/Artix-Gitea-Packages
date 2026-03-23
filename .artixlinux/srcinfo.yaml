@@ -1,10 +1,10 @@
 ---
-version: 0.16.0-1
+version: 0.16.0-2
 pkgbase:
   name: gexiv2
   pkgdesc: GObject-based wrapper around the Exiv2 library
   pkgver: 0.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gexiv2
   arch:
     - x86_64
@@ -19,9 +19,10 @@ pkgbase:
     - vala
   depends:
     - exiv2
-    - gcc-libs
     - glib2
     - glibc
+    - libgcc
+    - libstdc++
   source:
     - git+https://gitlab.gnome.org/GNOME/gexiv2.git?signed#tag=0.16.0
   validpgpkeys:
@@ -32,13 +33,17 @@ pkgname:
   - name: gexiv2
     depends:
       - exiv2
-      - gcc-libs
       - glib2
       - glibc
+      - libgcc
+      - libstdc++
       - libglib-2.0.so
       - libgobject-2.0.so
       - libgio-2.0.so
       - libexiv2.so
     provides:
       - libgexiv2-0.16.so
-# generated with artixpkg 0.37.4-1-any
+  - name: gexiv2-docs
+    pkgdesc: GObject-based wrapper around the Exiv2 library (documentation)
+    depends: []
+# generated with artixpkg 0.38.2-1-any
