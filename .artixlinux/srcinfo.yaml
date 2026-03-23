@@ -1,10 +1,10 @@
 ---
-version: 0.8-10
+version: 0.8-11
 pkgbase:
   name: python-cson
   pkgdesc: A Python parser for Coffeescript Object Notation (CSON)
   pkgver: 0.8
-  pkgrel: 10
+  pkgrel: 11
   url: https://github.com/avakar/pycson
   arch:
     - any
@@ -12,7 +12,10 @@ pkgbase:
     - MIT
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
     - python-pytest
     - python-speg
   depends:
@@ -21,7 +24,7 @@ pkgbase:
   source:
     - git+https://github.com/avakar/pycson.git#tag=d2ed07d980382e44726cf3c074957e752ef6441b
   sha256sums:
-    - SKIP
+    - f957146918a0c2245346f2da63a95cf2e5ca636707287ed59df1e241161b8461
 pkgname:
   - name: python-cson
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
