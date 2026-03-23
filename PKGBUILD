@@ -1,40 +1,65 @@
-# Packager: nous
-# PKGBUILD: https://codeberg.org/kev2600/shortwave-artix
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 
 pkgname=shortwave
 pkgver=5.1.0
-pkgrel=1
-pkgdesc="Internet radio player"
-arch=('x86_64')
-url="https://gitlab.gnome.org/World/Shortwave"
-license=('GPL-3.0-or-later')
-depends=('gtk4' 'libadwaita' 'libshumate' 'libpeas-2' 'glycin-gtk4' 'sqlite'
-         'gst-plugins-bad' 'desktop-file-utils' 'openssl')
-makedepends=('git' 'meson' 'ninja' 'cargo' 'gettext')
+pkgrel=2
+pkgdesc='Internet radio player'
+arch=(x86_64)
+url='https://apps.gnome.org/Shortwave/'
+license=(GPL-3.0-or-later)
+groups=(gnome-circle)
+depends=(
+  dconf
+  glib2
+  glibc
+  glycin
+  glycin-gtk4
+  graphene
+  gst-plugins-bad
+  gst-plugins-base
+  gst-plugins-base-libs
+  gst-plugins-good
+  gstreamer
+  gtk4
+  hicolor-icon-theme
+  libadwaita
+  libgcc
+  libshumate
+  openssl
+  pango
+  sqlite
+)
+makedepends=(
+  appstream
+  git
+  meson
+  rust
+)
+options=(!lto)
 source=("git+https://gitlab.gnome.org/World/Shortwave.git#tag=$pkgver")
-sha256sums=('SKIP')
+b2sums=(5172239d703d73f4b283543f62fbb64dae93ebdadc474e9980800082ecf20a2e4576ee45abc5bcfd9f9376709583dbc3a1261c5bc597e30af9488e02941392c3)
+
+prepare() {
+  cd Shortwave
+
+  CARGO_HOME="$srcdir/build/cargo-home" \
+    cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
 
 build() {
-    export CC=gcc
-    export CXX=g++
-    export CFLAGS="$CFLAGS -ffat-lto-objects"
-    export CXXFLAGS="$CXXFLAGS -ffat-lto-objects"
-    export CARGO_HOME="$srcdir/../cargo-home"
-    export CARGO_TARGET_DIR="$srcdir/../cargo-target"
+  artix-meson Shortwave build
 
-    mkdir -p "$srcdir/../cargo-home"
-    cat > "$srcdir/../cargo-home/config.toml" << 'EOF'
-[target.x86_64-unknown-linux-gnu]
-linker = "cc"
-EOF
-
-    arch-meson Shortwave build
+  CARGO_PROFILE_RELEASE_LTO=true \
+    CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1 \
+    CARGO_PROFILE_RELEASE_DEBUG=2 \
+    CARGO_PROFILE_RELEASE_STRIP=false \
     meson compile -C build
 }
 
+check() {
+  meson test -C build --print-errorlogs --no-rebuild
+}
+
 package() {
-    DESTDIR="$pkgdir" meson install -C build
-    rm -rf "$pkgdir/usr/lib/systemd"
-    sed -i 's|/usr/bin/shortwave|/usr/bin/shortwave --gapplication-service|' \
-        "$pkgdir/usr/share/dbus-1/services/de.haeckerfelix.Shortwave.service"
+  meson install -C build --destdir "$pkgdir" --no-rebuild
 }

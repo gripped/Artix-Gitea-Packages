@@ -1,35 +1,48 @@
 ---
-version: 5.1.0-1
+version: 5.1.0-2
 pkgbase:
   name: shortwave
   pkgdesc: Internet radio player
   pkgver: 5.1.0
-  pkgrel: 1
-  url: https://gitlab.gnome.org/World/Shortwave
+  pkgrel: 2
+  url: https://apps.gnome.org/Shortwave/
   arch:
     - x86_64
+  groups:
+    - gnome-circle
   license:
     - GPL-3.0-or-later
   makedepends:
+    - appstream
     - git
     - meson
-    - ninja
-    - cargo
-    - gettext
+    - rust
   depends:
-    - gtk4
-    - libadwaita
-    - libshumate
-    - libpeas-2
+    - dconf
+    - glib2
+    - glibc
+    - glycin
     - glycin-gtk4
-    - sqlite
+    - graphene
     - gst-plugins-bad
-    - desktop-file-utils
+    - gst-plugins-base
+    - gst-plugins-base-libs
+    - gst-plugins-good
+    - gstreamer
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libgcc
+    - libshumate
     - openssl
+    - pango
+    - sqlite
+  options:
+    - '!lto'
   source:
     - git+https://gitlab.gnome.org/World/Shortwave.git#tag=5.1.0
-  sha256sums:
-    - SKIP
+  b2sums:
+    - 5172239d703d73f4b283543f62fbb64dae93ebdadc474e9980800082ecf20a2e4576ee45abc5bcfd9f9376709583dbc3a1261c5bc597e30af9488e02941392c3
 pkgname:
   - name: shortwave
 # generated with artixpkg 0.38.2-1-any
