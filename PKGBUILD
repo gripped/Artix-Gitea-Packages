@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Rémy Oudompheng <remy@archlinux.org>
 
 pkgbase=texlive-texmf

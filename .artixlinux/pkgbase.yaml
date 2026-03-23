@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,49 +25,49 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2026.0-2
+    version: 2026.0-3
     packages:
-      - texlive-doc-2026.0-2-any.pkg.tar.zst
-      - texlive-meta-2026.0-2-any.pkg.tar.zst
-      - texlive-basic-2026.0-2-any.pkg.tar.zst
-      - texlive-bibtexextra-2026.0-2-any.pkg.tar.zst
-      - texlive-binextra-2026.0-2-any.pkg.tar.zst
-      - texlive-context-2026.0-2-any.pkg.tar.zst
-      - texlive-fontsextra-2026.0-2-any.pkg.tar.zst
-      - texlive-fontsrecommended-2026.0-2-any.pkg.tar.zst
-      - texlive-fontutils-2026.0-2-any.pkg.tar.zst
-      - texlive-formatsextra-2026.0-2-any.pkg.tar.zst
-      - texlive-games-2026.0-2-any.pkg.tar.zst
-      - texlive-humanities-2026.0-2-any.pkg.tar.zst
-      - texlive-langarabic-2026.0-2-any.pkg.tar.zst
-      - texlive-langchinese-2026.0-2-any.pkg.tar.zst
-      - texlive-langcjk-2026.0-2-any.pkg.tar.zst
-      - texlive-langcyrillic-2026.0-2-any.pkg.tar.zst
-      - texlive-langczechslovak-2026.0-2-any.pkg.tar.zst
-      - texlive-langenglish-2026.0-2-any.pkg.tar.zst
-      - texlive-langeuropean-2026.0-2-any.pkg.tar.zst
-      - texlive-langfrench-2026.0-2-any.pkg.tar.zst
-      - texlive-langgerman-2026.0-2-any.pkg.tar.zst
-      - texlive-langgreek-2026.0-2-any.pkg.tar.zst
-      - texlive-langitalian-2026.0-2-any.pkg.tar.zst
-      - texlive-langjapanese-2026.0-2-any.pkg.tar.zst
-      - texlive-langkorean-2026.0-2-any.pkg.tar.zst
-      - texlive-langother-2026.0-2-any.pkg.tar.zst
-      - texlive-langpolish-2026.0-2-any.pkg.tar.zst
-      - texlive-langportuguese-2026.0-2-any.pkg.tar.zst
-      - texlive-langspanish-2026.0-2-any.pkg.tar.zst
-      - texlive-latex-2026.0-2-any.pkg.tar.zst
-      - texlive-latexextra-2026.0-2-any.pkg.tar.zst
-      - texlive-latexrecommended-2026.0-2-any.pkg.tar.zst
-      - texlive-luatex-2026.0-2-any.pkg.tar.zst
-      - texlive-mathscience-2026.0-2-any.pkg.tar.zst
-      - texlive-metapost-2026.0-2-any.pkg.tar.zst
-      - texlive-music-2026.0-2-any.pkg.tar.zst
-      - texlive-pictures-2026.0-2-any.pkg.tar.zst
-      - texlive-plaingeneric-2026.0-2-any.pkg.tar.zst
-      - texlive-pstricks-2026.0-2-any.pkg.tar.zst
-      - texlive-publishers-2026.0-2-any.pkg.tar.zst
-      - texlive-xetex-2026.0-2-any.pkg.tar.zst
+      - texlive-doc-2026.0-3-any.pkg.tar.zst
+      - texlive-meta-2026.0-3-any.pkg.tar.zst
+      - texlive-basic-2026.0-3-any.pkg.tar.zst
+      - texlive-bibtexextra-2026.0-3-any.pkg.tar.zst
+      - texlive-binextra-2026.0-3-any.pkg.tar.zst
+      - texlive-context-2026.0-3-any.pkg.tar.zst
+      - texlive-fontsextra-2026.0-3-any.pkg.tar.zst
+      - texlive-fontsrecommended-2026.0-3-any.pkg.tar.zst
+      - texlive-fontutils-2026.0-3-any.pkg.tar.zst
+      - texlive-formatsextra-2026.0-3-any.pkg.tar.zst
+      - texlive-games-2026.0-3-any.pkg.tar.zst
+      - texlive-humanities-2026.0-3-any.pkg.tar.zst
+      - texlive-langarabic-2026.0-3-any.pkg.tar.zst
+      - texlive-langchinese-2026.0-3-any.pkg.tar.zst
+      - texlive-langcjk-2026.0-3-any.pkg.tar.zst
+      - texlive-langcyrillic-2026.0-3-any.pkg.tar.zst
+      - texlive-langczechslovak-2026.0-3-any.pkg.tar.zst
+      - texlive-langenglish-2026.0-3-any.pkg.tar.zst
+      - texlive-langeuropean-2026.0-3-any.pkg.tar.zst
+      - texlive-langfrench-2026.0-3-any.pkg.tar.zst
+      - texlive-langgerman-2026.0-3-any.pkg.tar.zst
+      - texlive-langgreek-2026.0-3-any.pkg.tar.zst
+      - texlive-langitalian-2026.0-3-any.pkg.tar.zst
+      - texlive-langjapanese-2026.0-3-any.pkg.tar.zst
+      - texlive-langkorean-2026.0-3-any.pkg.tar.zst
+      - texlive-langother-2026.0-3-any.pkg.tar.zst
+      - texlive-langpolish-2026.0-3-any.pkg.tar.zst
+      - texlive-langportuguese-2026.0-3-any.pkg.tar.zst
+      - texlive-langspanish-2026.0-3-any.pkg.tar.zst
+      - texlive-latex-2026.0-3-any.pkg.tar.zst
+      - texlive-latexextra-2026.0-3-any.pkg.tar.zst
+      - texlive-latexrecommended-2026.0-3-any.pkg.tar.zst
+      - texlive-luatex-2026.0-3-any.pkg.tar.zst
+      - texlive-mathscience-2026.0-3-any.pkg.tar.zst
+      - texlive-metapost-2026.0-3-any.pkg.tar.zst
+      - texlive-music-2026.0-3-any.pkg.tar.zst
+      - texlive-pictures-2026.0-3-any.pkg.tar.zst
+      - texlive-plaingeneric-2026.0-3-any.pkg.tar.zst
+      - texlive-pstricks-2026.0-3-any.pkg.tar.zst
+      - texlive-publishers-2026.0-3-any.pkg.tar.zst
+      - texlive-xetex-2026.0-3-any.pkg.tar.zst
     debug: []
   world:
     version: 2026.0-3
