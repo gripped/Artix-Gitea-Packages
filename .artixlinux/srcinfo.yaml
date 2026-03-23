@@ -1,0 +1,33 @@
+---
+version: 2.73-1
+pkgbase:
+  name: autoconf
+  pkgdesc: A GNU tool for automatically configuring source code
+  pkgver: 2.73
+  pkgrel: 1
+  url: https://www.gnu.org/software/autoconf
+  arch:
+    - any
+  license:
+    - GPL2
+    - GPL3
+    - custom
+  checkdepends:
+    - gcc-fortran
+  depends:
+    - awk
+    - m4
+    - diffutils
+    - perl
+    - sh
+  source:
+    - https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.73.tar.xz
+    - https://ftp.gnu.org/pub/gnu/autoconf/autoconf-2.73.tar.xz.sig
+  validpgpkeys:
+    - 82F854F3CE73174B8B63174091FCC32B6769AA64
+  sha256sums:
+    - 9fd672b1c8425fac2fa67fa0477b990987268b90ff36d5f016dae57be0d6b52e
+    - SKIP
+pkgname:
+  - name: autoconf
+# generated with artixpkg 0.38.2-1-any
