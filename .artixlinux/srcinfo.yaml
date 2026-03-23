@@ -1,0 +1,27 @@
+---
+version: 1.4.0-1
+pkgbase:
+  name: libmpc
+  pkgdesc: Library for the arithmetic of complex numbers with arbitrarily high precision
+  pkgver: 1.4.0
+  pkgrel: 1
+  url: http://www.multiprecision.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-only
+  depends:
+    - glibc
+    - gmp
+    - mpfr
+  source:
+    - https://ftp.gnu.org/gnu/mpc/mpc-1.4.0.tar.xz
+    - https://ftp.gnu.org/gnu/mpc/mpc-1.4.0.tar.xz.sig
+  validpgpkeys:
+    - AD17A21EF8AED8F1CC02DBD9F7D5C9BF765C61E3
+  sha256sums:
+    - 3210b3a546b1cb00c296ca360891d7740ee6ff06deb02a27a35b20cd3c0bb1a5
+    - SKIP
+pkgname:
+  - name: libmpc
+# generated with artixpkg 0.38.2-1-any
