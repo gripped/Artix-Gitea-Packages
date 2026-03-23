@@ -1,12 +1,13 @@
-# Maintainer: Daniel Bermond <dbermond@archlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Daniel Bermond <dbermond@archlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgbase=level-zero
 pkgname=(
     'level-zero-headers'
     'level-zero-loader')
-pkgver=1.27.0
-pkgrel=2
+pkgver=1.28.0
+pkgrel=1
 pkgdesc='API for accessing low level interfaces in oneAPI platform devices'
 arch=('x86_64')
 url='https://github.com/oneapi-src/level-zero/'
@@ -17,7 +18,7 @@ makedepends=(
     'opencl-headers'
     'spdlog')
 source=("https://github.com/oneapi-src/level-zero/archive/v${pkgver}/${pkgbase}-${pkgver}.tar.gz")
-sha256sums=('b9f5d6c661a23cad78db1552c4951a1bb6f1628e4f737c68e69c3a23d64db2eb')
+sha256sums=('92cdffb1e55084857c63672cfe6ef03fd763dec5cca0318d9d02583bf07064a5')
 
 prepare() {
     printf '%s\n' "${pkgver##*.}" > "${pkgbase}-${pkgver}/VERSION_PATCH"
