@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,9 @@ repos:
       - yazi-26.1.22-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 26.1.22-4
+    packages:
+      - yazi-26.1.22-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 26.1.22-3
