@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='259.1'
+_tag='260'
 
 pkgbase=udev
 pkgname=(
@@ -62,7 +62,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         loader.conf
         splash-artix.bmp
 )
-sha512sums=('6d39209c4168c3de01399e4dbb7958961790e4c4e508cd1153038daa62620ab74bd14307237f738c2b22cb61c4c235826a48c18ce38dba3df2086a28deb0bad1'
+sha512sums=('4bb2b04cbf509ce1a275ffd96a3e96a24954377a6eca08eadfd148616f49bc681e3b7470826e2b644b5b10c4b69f14a74b3a4049628205ebf7d0af29b4086387'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             'bb5879ba8eeb3833d6e8529ccd2355b68221bf16cd8b1b833e2b5f7ca6b1fa1eec8b90116e63d9eda76bf1cb76beaf3b25707b440889786ee1abc4d6af0f883b'
