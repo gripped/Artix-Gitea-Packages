@@ -1,10 +1,10 @@
 ---
-version: 0.18.4-7
+version: 0.18.4-8
 pkgbase:
   name: telepathy-gabble
   pkgdesc: Jabber/XMPP connection manager for Telepathy
   pkgver: 0.18.4
-  pkgrel: 7
+  pkgrel: 8
   url: https://telepathy.freedesktop.org/
   arch:
     - x86_64
@@ -17,10 +17,10 @@ pkgbase:
   depends:
     - dbus
     - dbus-glib
-    - gcc-libs
     - glib2
     - glibc
     - gnutls
+    - libgcc
     - libnice
     - libsoup3
     - libxml2
@@ -46,4 +46,4 @@ pkgbase:
     - 9118a5817abf4b38e3b6c127d691c23d7bf81d2a46520b1c4278a4e6235f54ecff00449131497f5e4905f6c5b3d38bebc5620e5f8e2c8caa1182c1c3404ec7bd
 pkgname:
   - name: telepathy-gabble
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
