@@ -1,19 +1,21 @@
 ---
-version: 4.3.3-2.1
+version: 4.3.3-3
 pkgbase:
   name: libvoikko
   pkgdesc: A spelling and grammar checker, hyphenator and collection of related linguistic data for Finnish language
   pkgver: 4.3.3
-  pkgrel: 2.1
+  pkgrel: 3
   url: http://voikko.sourceforge.net
   arch:
     - x86_64
   license:
-    - GPL2
+    - GPL-2.0-or-later
   makedepends:
     - python
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
+    - libstdc++
   source:
     - https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.3.3.tar.gz
     - https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.3.3.tar.gz.asc
@@ -24,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libvoikko
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
