@@ -1,0 +1,24 @@
+---
+version: 0.32-3
+pkgbase:
+  name: darts
+  pkgdesc: C++ Template Library for implementation of Double-Array
+  pkgver: 0.32
+  pkgrel: 3
+  url: http://chasen.org/~taku/software/darts/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+    - LGPL-2.1-or-later
+  depends:
+    - glibc
+    - libgcc
+    - libstdc++
+  source:
+    - http://chasen.org/~taku/software/darts/src/darts-0.32.tar.gz
+  sha256sums:
+    - 0dfc0b82f0a05d93b92acf849368e54bf93f1de8ffb31ba0a21e45ab9e269285
+pkgname:
+  - name: darts
+# generated with artixpkg 0.38.2-1-any
