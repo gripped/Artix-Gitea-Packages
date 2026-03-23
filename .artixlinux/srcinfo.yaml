@@ -1,10 +1,10 @@
 ---
-version: 1:6.24.0-1
+version: 1:6.24.0-2
 pkgbase:
   name: kcontacts
   pkgdesc: Address book API for KDE
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -20,7 +20,7 @@ pkgbase:
     - qt6-declarative
     - qt6-tools
   depends:
-    - gcc-libs
+    - libstdc++
     - glibc
     - kcodecs
     - kconfig
