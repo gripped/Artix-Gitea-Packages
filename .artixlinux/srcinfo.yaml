@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-1
+version: 6.24.0-2
 pkgbase:
   name: karchive
   pkgdesc: Qt addon providing access to numerous types of archives
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -19,8 +19,8 @@ pkgbase:
     - qt6-tools
   depends:
     - bzip2
-    - gcc-libs
     - glibc
+    - libstdc++
     - openssl
     - qt6-base
     - xz
