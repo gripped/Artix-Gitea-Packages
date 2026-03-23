@@ -1,9 +1,9 @@
 ---
-version: 1.0.4-1
+version: 1.0.5-1
 pkgbase:
   name: egl-x11
   pkgdesc: NVIDIA XLib and XCB EGL Platform Library
-  pkgver: 1.0.4
+  pkgver: 1.0.5
   pkgrel: 1
   url: https://github.com/NVIDIA/egl-x11
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - libxcb
     - mesa
   source:
-    - git+https://github.com/NVIDIA/egl-x11#tag=v1.0.4
+    - git+https://github.com/NVIDIA/egl-x11#tag=v1.0.5
   sha256sums:
-    - f7068e4a5619a877174b781b2378fe5f703a45a14d125a400bae4806fe545c46
+    - 30af8e25bc5b9201bbc6c4fb1fa81605a09b26f2570b25e5b03c9fa559686c30
 pkgname:
   - name: egl-x11
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
