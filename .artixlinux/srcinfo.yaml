@@ -1,10 +1,10 @@
 ---
-version: 6.6.7-1.2
+version: 6.6.7-2
 pkgbase:
   name: cinnamon
   pkgdesc: Desktop environment which provides advanced innovative features and a traditional user experience
   pkgver: 6.6.7
-  pkgrel: 1.2
+  pkgrel: 2
   url: https://github.com/linuxmint/cinnamon
   arch:
     - x86_64
@@ -15,9 +15,8 @@ pkgbase:
     - glib2-devel
     - gobject-introspection
     - gtk-doc
-    - lua
     - meson
-    - python-libsass
+    - sassc
   depends:
     - accountsservice
     - at-spi2-core
@@ -33,7 +32,6 @@ pkgbase:
     - cjs
     - dconf
     - evolution-data-server
-    - gcc-libs
     - gcr
     - gdk-pixbuf2
     - glib2
@@ -44,6 +42,7 @@ pkgbase:
     - gstreamer
     - gtk3
     - hicolor-icon-theme
+    - libgcc
     - libgirepository
     - libglvnd
     - libibus
@@ -99,4 +98,4 @@ pkgbase:
     - c071ce664c5189883c409d65b1d054ef4526c0283484e936b10500cec13efdaf3e3792459e648817e1c48e0505bc1154950ce3080cd9aafe0f5de8da5b16bafd
 pkgname:
   - name: cinnamon
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
