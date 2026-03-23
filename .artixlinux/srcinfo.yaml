@@ -1,10 +1,10 @@
 ---
-version: 1:0.26.25-1
+version: 1:0.26.25-2
 pkgbase:
   name: okteta
   pkgdesc: KDE hex editor for viewing and editing the raw data of files
   pkgver: 0.26.25
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://apps.kde.org/okteta/
   arch:
@@ -16,8 +16,9 @@ pkgbase:
     - extra-cmake-modules
     - qt5-tools
   depends:
-    - gcc-libs
+    - bash
     - glibc
+    - hicolor-icon-theme
     - kcmutils5
     - kcodecs5
     - kcompletion5
@@ -33,6 +34,7 @@ pkgbase:
     - knewstuff5
     - kparts5
     - kservice5
+    - libstdc++
     - kwidgetsaddons5
     - kxmlgui5
     - qca-qt5
@@ -53,4 +55,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: okteta
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any

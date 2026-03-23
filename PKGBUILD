@@ -5,15 +5,16 @@
 
 pkgname=okteta
 pkgver=0.26.25
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='KDE hex editor for viewing and editing the raw data of files'
 url='https://apps.kde.org/okteta/'
 arch=(x86_64)
 license=(LGPL-2.1-only
          LGPL-3.0-only)
-depends=(gcc-libs
+depends=(bash
          glibc
+         hicolor-icon-theme
          kcmutils5
          kcodecs5
          kcompletion5
@@ -29,6 +30,7 @@ depends=(gcc-libs
          knewstuff5
          kparts5
          kservice5
+         libstdc++
          kwidgetsaddons5
          kxmlgui5
          qca-qt5
