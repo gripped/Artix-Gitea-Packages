@@ -1,10 +1,10 @@
 ---
-version: 3.69.6-3
+version: 3.69.6-4
 pkgbase:
   name: filezilla
   pkgdesc: Fast and reliable FTP, FTPS and SFTP client
   pkgver: 3.69.6
-  pkgrel: 3
+  pkgrel: 4
   url: https://filezilla-project.org
   arch:
     - x86_64
