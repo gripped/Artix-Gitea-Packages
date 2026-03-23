@@ -7,8 +7,8 @@
 
 pkgbase=nfs-utils
 pkgname=('nfs-utils' 'nfsidmap')
-pkgver=2.8.5
-pkgrel=2
+pkgver=2.8.7
+pkgrel=1
 arch=('x86_64')
 url='http://nfs.sourceforge.net'
 license=('GPL-2.0-or-later')
@@ -18,7 +18,7 @@ source=(https://www.kernel.org/pub/linux/utils/${pkgname}/${pkgver}/${pkgname}-$
         exports
         nfs-utils.sysusers)
 # https://mirrors.edge.kernel.org/pub/linux/utils/nfs-utils/2.8.5/sha256sums.asc
-sha256sums=('b13ca4a9df44186bdbe107514b22732d4243f785f95daf2fb86afc1edba15bbb'
+sha256sums=('59d0f1e17b18efaa60ea3ccf89a9cad3217f8d3b23c18d2fe34b25c8969d60ae'
             'SKIP'
             'b8238b74179f7e1626db2b637671ddc17288a1c5b7692954ae6d2fbb1be3788d'
             '61a3fbe55e30bc9c5da17a76e772c8be1cc695e0142a144c15f0f9aa46ab9ce0')
@@ -26,7 +26,6 @@ validpgpkeys=('E1B71E339E20A10A676F7CB69AFB1D681A125177') # Steve Dickson
 
 prepare() {
   cd "${pkgbase}"-${pkgver}
-
   # fix hardcoded sbin/libexec path to our needs
   sed -i "s|sbindir = /sbin|sbindir = /usr/bin|g" utils/*/Makefile.am
   sed -i "s|sbin|bin|" utils/nfsidmap/id_resolver.conf
