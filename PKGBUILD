@@ -3,7 +3,7 @@
 # Contributor: Tom Gundersen <teg@jklm.no>
 
 pkgname=btrfs-progs
-pkgver=6.19
+pkgver=6.19.1
 pkgrel=1
 pkgdesc='Btrfs filesystem utilities'
 arch=('x86_64')
@@ -47,7 +47,7 @@ source=(
   initcpio-install-btrfs
   initcpio-hook-btrfs
 )
-b2sums=('0e69fa95a69637cd326367cf7f8ba2af5313adb5495c61fded157da28e9c208ef022e92ad505b2f1f1aa9b48b1da00ddf0d3a2da5d53baf143129bc60c213b6f'
+b2sums=('4b8b854fb0d40a820be7ed6e6fd8aef823de9b4ad54282adac563b35ce2025352fb15b7e171fb58a19261e353bc8379087d2e9023c03d1bf2189d9b735817f7e'
         '75659665a24f92bba1175a2fcae942d9851495c9cff88570b88a98dced4eb98fcc9879de044bfc7d560dbe1c71a20d7ae51ca4b7c2649f90d646b414e0864b6e'
         '0d3c25d0cb6fdb8e8777723b5e199835fac25573bc8f7fcb248ccfeea7268752b7100dd2c8284529812f0b1d3943eceb5785f119959f89bffedcf30472a915db')
 
@@ -75,8 +75,6 @@ check() {
   cd "${pkgname}"
   # remove all tests, which requires real root 
   rm -r $(dirname $(rg -t sh -l -e SUDO_HELPER -e mount -e prepare_test) | rg 'tests/')
-  # prevent tests from calling function that performs 'modprobe btrfs' as this errors when not run as real root
-  sed -i '/^check_kernel_support$/d' tests/*.sh
   # -j1 for running tests chronological
   make -j1 -C tests test
 }
