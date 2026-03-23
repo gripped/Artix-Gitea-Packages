@@ -1,19 +1,22 @@
 ---
-version: 0.7.2-7
+version: 0.7.2-8
 pkgbase:
   name: python-cligj
   pkgdesc: Click-based argument and option decorators for Python GIS command line programs
   pkgver: 0.7.2
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/mapbox/cligj
   arch:
     - any
   license:
-    - BSD
+    - BSD-3-Clause
   checkdepends:
     - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python-click
   source:
@@ -22,4 +25,4 @@ pkgbase:
     - a4bc13d623356b373c2c27c53dbd9c68cae5d526270bfa71f6c6fa69669c6b27
 pkgname:
   - name: python-cligj
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
