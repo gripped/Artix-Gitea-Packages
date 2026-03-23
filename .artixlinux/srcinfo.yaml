@@ -1,10 +1,10 @@
 ---
-version: 0.22.0-5
+version: 0.22.0-6
 pkgbase:
   name: thrift
   pkgdesc: Scalable cross-language services framework for IPC/RPC
   pkgver: 0.22.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://thrift.apache.org
   arch:
     - x86_64
@@ -17,11 +17,12 @@ pkgbase:
     - boost
     - cmake
     - emacs-nox
-    - gcc-libs
     - git
     - glib2
     - glibc
     - libevent
+    - libgcc
+    - libstdc++
     - openssl
     - python
     - python-build
@@ -45,10 +46,11 @@ pkgbase:
 pkgname:
   - name: thrift
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - libevent
+      - libgcc
+      - libstdc++
       - openssl
       - zlib
     optdepends:
@@ -62,11 +64,12 @@ pkgname:
   - name: python-thrift
     pkgdesc: Scalable cross-language services framework for IPC/RPC (Python bindings)
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - python
     optdepends:
       - 'python-tornado: for tornado backend'
       - 'python-twisted: for twisted backend'
       - 'python-zope-interface: for twisted backend'
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

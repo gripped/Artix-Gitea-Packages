@@ -1,5 +1,6 @@
-# Maintainer: Anatol Pomozov
-# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov
+# Contributor: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Byron Clark <byron@theclarkfamily.name>
 
 pkgbase=thrift
@@ -8,7 +9,7 @@ pkgname=(
   python-thrift
 )
 pkgver=0.22.0
-pkgrel=5
+pkgrel=6
 pkgdesc="Scalable cross-language services framework for IPC/RPC"
 arch=(x86_64)
 url="https://thrift.apache.org"
@@ -18,11 +19,12 @@ makedepends=(
   boost
   cmake
   emacs-nox
-  gcc-libs
   git
   glib2
   glibc
   libevent
+  libgcc
+  libstdc++
   openssl
   python
   python-build
@@ -90,10 +92,11 @@ check() {
 
 package_thrift() {
   depends=(
-    gcc-libs
     glib2
     glibc
     libevent
+    libgcc
+    libstdc++
     openssl
     zlib
   )
@@ -117,8 +120,9 @@ package_thrift() {
 package_python-thrift() {
   pkgdesc+=" (Python bindings)"
   depends=(
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     python
   )
   optdepends=(
