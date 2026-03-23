@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-1
+version: 6.24.0-2
 pkgbase:
   name: kiconthemes
   pkgdesc: Support for icon themes
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -19,7 +19,7 @@ pkgbase:
     - qt6-tools
   depends:
     - breeze-icons
-    - gcc-libs
+    - libstdc++
     - glibc
     - karchive
     - kcolorscheme
