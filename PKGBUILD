@@ -23,19 +23,19 @@ depends=(
   'liblzma.so'
   'libseccomp.so'
   'libssl.so'
-  'libsystemd.so'
+ 
   'libz.so'
   'libzstd.so'
 )
 optdepends=('torsocks: for torify')
-makedepends=('ca-certificates' 'systemd')
+makedepends=('ca-certificates')
 backup=('etc/tor/torrc')
 source=("https://dist.torproject.org/${pkgname}-${pkgver}.tar.gz"{,.sha256sum{,.asc}}
         "disable-openssl-dynamic-linking-warning.patch"
         'torrc.patch'
         'tor.sysusers'
         'tor.tmpfiles'
-        'tor.service')
+)
 sha256sums=('c949c2f86b348e64891976f6b1e49c177655b23df97193049bf1b8cd3099e179'
             '0838dc738fbf0d51132512b42ec3596330822b40e46fd085510f51d65c556689'
             'SKIP'
@@ -84,7 +84,6 @@ package() {
   mv "${pkgdir}"/etc/tor/torrc{.sample,}
 
   # install arch custom files
-  install -Dm 644 "${srcdir}"/*.service -t "${pkgdir}"/usr/lib/systemd/system
   install -Dm 644 "${srcdir}"/tor.sysusers "${pkgdir}"/usr/lib/sysusers.d/tor.conf
   install -Dm 644 "${srcdir}"/tor.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/tor.conf
 

@@ -14,7 +14,6 @@ pkgbase:
     - MIT
   makedepends:
     - ca-certificates
-    - systemd
   depends:
     - bash
     - glibc
@@ -25,7 +24,6 @@ pkgbase:
     - liblzma.so
     - libseccomp.so
     - libssl.so
-    - libsystemd.so
     - libz.so
     - libzstd.so
   optdepends:
@@ -40,7 +38,6 @@ pkgbase:
     - torrc.patch
     - tor.sysusers
     - tor.tmpfiles
-    - tor.service
   validpgpkeys:
     - 2133BC600AB133E1D826D173FE43009C4607B1FB
     - B74417EDDF22AC9F9E90F49142E86A2A11F48D36
