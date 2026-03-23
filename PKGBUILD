@@ -44,14 +44,13 @@ pkgname=(
   erlang-wx
   erlang-xmerl
 )
-pkgver=28.3.2
-pkgrel=1
+pkgver=28.4.1
+pkgrel=2
 pkgdesc='General-purpose concurrent functional programming language developed by Ericsson'
 arch=(x86_64)
 url='https://erlang.org/'
 license=(Apache-2.0)
 makedepends=(
-  gcc-libs
   git
   glib2
   glibc
@@ -76,7 +75,7 @@ source=(
   "git+https://github.com/erlang/otp#tag=OTP-$pkgver"
   epmd.conf
 )
-b2sums=('c9e584712f3f15c63ed83ba12608740c69a6e69187b0e597b537c2ec717d8baf4087c0d9914522cd2043f59e41b4ca78298c8d4f1dab6556189cc869e085aa95'
+b2sums=('e0157baad672a731dd0ea2517a0b51f54ffb5dcb38aca6e72b401c5a4d9a3b7a521dfb8a1e77f720df24584d8f4fc16b9f6b5fcab36abcddc9aca4e436dde34d'
         '1675ac9bf948ab19e8b63077d870ccf356fcdbce14de2777f00b3488aa1ce34a5e0a5cdc0428707f744dee5940b12653a44e0ded0554de95ebb31bce4676ff87')
 
 prepare() {
@@ -325,6 +324,7 @@ package_erlang-dialyzer() {
   depends=(
     erlang-core
     erlang-syntax_tools
+    glibc
   )
   cp -va -t "$pkgdir" "$pkgname/"*
 }
