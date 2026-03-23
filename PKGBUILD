@@ -3,20 +3,21 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=4.2.3
-pkgrel=1
+pkgver=4.3.0
+pkgrel=2
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
-license=('custom')
+license=('BSD-3-Clause')
 depends=(cppdap
          curl
          expat
-         gcc-libs
          glibc
          hicolor-icon-theme
          jsoncpp
          libarchive
+         libgcc
+         libstdc++
          libuv
          ncurses
          rhash
@@ -33,14 +34,17 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('20931228c30183694729a825348d67d58cb1f7eb56c72b6f2c2dea00c21bc1806e36e859d31aaa3445f5154bf133cbb90f41c9bc96f48a63cad01664c7a7175a'
+sha512sums=('8e2f3b837cbf24a349e558edcce9f52fd529000e183d71d405c128932b482394f82b924016a82e950789c9f8789ea3aa5fb486268482615a0339246ac968cfe3'
             '56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
+  git -C "${pkgname}" apply ../artix-cmake.patch
+}
+
+prepare() {
   cd $pkgname
   git cherry-pick -n 261b7b933c6604095687d473503e24bae6ec0d6f # Support LUA 5.5
-  git apply ../artix-cmake.patch
 
   rm -fr .git # Avoid dirty version number
 }
