@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.2.5-1
+    version: 3.2.6-1
     packages:
-      - easy-rsa-3.2.5-1-any.pkg.tar.zst
+      - easy-rsa-3.2.6-1-any.pkg.tar.zst
     debug: []
