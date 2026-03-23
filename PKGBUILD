@@ -1,52 +1,57 @@
-# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: kpcyrd <kpcyrd[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: simo <simo@archlinux.org>
 # Contributor: Sid Karunaratne
 
 pkgname=tor
 pkgver=0.4.9.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Anonymizing overlay network.'
 arch=('x86_64')
 url='https://www.torproject.org/download/tor/'
 license=("BSD-3-Clause" "LGPL-3.0-only" "MIT")
 depends=(
   'bash'
-  'gcc-libs'
   'glibc'
   'libcap.so'
   'libcrypto.so'
   'libevent'
+  'libgcc'
   'liblzma.so'
   'libseccomp.so'
   'libssl.so'
+  'libsystemd.so'
   'libz.so'
   'libzstd.so'
 )
 optdepends=('torsocks: for torify')
-makedepends=('ca-certificates')
+makedepends=('ca-certificates' 'systemd')
 backup=('etc/tor/torrc')
 source=("https://dist.torproject.org/${pkgname}-${pkgver}.tar.gz"{,.sha256sum{,.asc}}
         "disable-openssl-dynamic-linking-warning.patch"
         'torrc.patch'
         'tor.sysusers'
-        'tor.tmpfiles')
+        'tor.tmpfiles'
+        'tor.service')
 sha256sums=('c949c2f86b348e64891976f6b1e49c177655b23df97193049bf1b8cd3099e179'
             '0838dc738fbf0d51132512b42ec3596330822b40e46fd085510f51d65c556689'
             'SKIP'
             '4067f5a6589bfaa97dd2b1a20aa73a9d3f1793bb8862c602c24b4f0cefd05dc9'
             'c5c082fd1cda30c95c40043d5be96926fa81e5388a97534373bf0ce100191ade'
             '86dccabaf769a48ffad9dffa37fcd7fbf7ef1712464ddfd12a4b43f2a680cdeb'
-            '07bedb17660a3673b31b0005b6505065c90b32f2c6b28b969241da675560f926')
+            '07bedb17660a3673b31b0005b6505065c90b32f2c6b28b969241da675560f926'
+            '8d6d9cf8218029a73d60f044f72826dc0b5001d0a99233eac6ddcdbdbdbc5d8a')
 b2sums=('9540662fcd0e62612e6dab9c0dc9e61f29b71c0ffbe0d9799ac9f6ba4f5966244f3372f90860122bdea26d7b61dc57acdfdcb2c98876b003d6fdce2d011c7318'
         '64f3bcb998198b36e0f6c8984dc1005d10d666f70b6c8296664f80ef19892d700f237517bd4a2c0859d962e27c23944660e4b0c4afa57eec27d2f50c7c695f35'
         'SKIP'
         'cb9fbdc4bb449975bab57ad11a188ccc0462981132ab9617108d6a92f71e22448e407afc73f252fc4f3f2f6bf9e5c211abd9cdfe6514a76ff2162ef750348b90'
         '98baf96cdac36072086f48bf4701cede6cf31eee207f4a1a4cfc81b483ba53b991082aaf4ed638e50dfd67fb006bbd915af97943ab658df29dfa51ea4aa77dd2'
         '39fbefb33b008782b3800cbbd6f0d7caa9686eda8ccd2d0fef805bd29a21d3bf246e92974e8a93bb931910f84fe0145a18e55ec788168fc9eb0c0590c7f28510'
-        '5d55d9a7e42b6ce78b8ab985bab37afe8f0bacddb5abd895c4a490adb8f98b9422f90b40066fef05ecf37b7b21e80aadc615c4b7f6e12b05581304113a1b1f1d')
+        '5d55d9a7e42b6ce78b8ab985bab37afe8f0bacddb5abd895c4a490adb8f98b9422f90b40066fef05ecf37b7b21e80aadc615c4b7f6e12b05581304113a1b1f1d'
+        '79897036eb23e3202a6810cb0ef39b3e96c32638fe44a9cf7f50e26aa2caa2061a45cea33872fe5496c9dd2c0545cb2f7c47d77eb3d478dff52d9af422547a80')
 validpgpkeys=(
   '2133BC600AB133E1D826D173FE43009C4607B1FB' # Nick Mathewson
   'B74417EDDF22AC9F9E90F49142E86A2A11F48D36' # David Goulet
@@ -79,6 +84,7 @@ package() {
   mv "${pkgdir}"/etc/tor/torrc{.sample,}
 
   # install arch custom files
+  install -Dm 644 "${srcdir}"/*.service -t "${pkgdir}"/usr/lib/systemd/system
   install -Dm 644 "${srcdir}"/tor.sysusers "${pkgdir}"/usr/lib/sysusers.d/tor.conf
   install -Dm 644 "${srcdir}"/tor.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/tor.conf
 
