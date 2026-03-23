@@ -1,10 +1,10 @@
 ---
-version: 4.10.2-6
+version: 4.11.0-1
 pkgbase:
   name: syslog-ng
   pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities
-  pkgver: 4.10.2
-  pkgrel: 6
+  pkgver: 4.11.0
+  pkgrel: 1
   url: https://github.com/syslog-ng/syslog-ng
   arch:
     - x86_64
@@ -16,6 +16,7 @@ pkgbase:
     - gperf
     - python-pytest
     - python-pytest-mock
+    - qpdf
   makedepends:
     - abseil-cpp
     - autoconf-archive
@@ -23,7 +24,6 @@ pkgbase:
     - curl
     - docbook-xsl
     - gawk
-    - gcc-libs
     - git
     - glib2
     - glibc
@@ -33,10 +33,12 @@ pkgbase:
     - libcap
     - libdbi
     - libesmtp
+    - libgcc
     - libmaxminddb
     - libnet
     - librabbitmq-c
     - librdkafka
+    - libstdc++
     - libxslt
     - mongo-c-driver
     - net-snmp
@@ -66,21 +68,21 @@ pkgbase:
     - python-websocket-client
     - zlib
   source:
-    - git+https://github.com/syslog-ng/syslog-ng.git#tag=syslog-ng-4.10.2
+    - git+https://github.com/syslog-ng/syslog-ng.git#tag=syslog-ng-4.11.0
     - git+https://github.com/balabit/ivykis.git
     - git+https://github.com/open-telemetry/opentelemetry-proto.git
     - git+https://github.com/Thalhammer/jwt-cpp.git
     - syslog-ng.logrotate
     - syslog-ng-do-not-install-python-venv.patch
     - syslog-ng-config.patch
-  sha256sums:
-    - 8542b1347942602bbf7a084ff82a08779fcbb9d0116636f0fb77b4c53a4687b4
+  b2sums:
+    - b8759cb46de931129e323b7f569c714b50c41bb13924ed50d4a8d03e8f40eb5f219ba8fb820417bd14ea396aca130f4a4c6ad50ef955401a23b230e22646e7d3
     - SKIP
     - SKIP
     - SKIP
-    - 93c935eca56854011ea9e353b7a1da662ad40b2e8452954c5b4b5a1d5b2d5317
-    - 7ca7f0d9fb203b3814fe2f609904af84df346b84591eeeb171bb2e5eb6393990
-    - 1039550b091df1a50e8d30b624d52a7fd56c29d0ceec596b4b029a7cc92a3825
+    - c9f77c126cda73ece1c617c59fa60def3332adcc0fb2868320c2528892f4462a2e5507b07561ffa45677a9f7afccd7bcca589535f7da85163535313d5138ec03
+    - f6c885d34c38c6d9b59102df9c5fc09067e0ec6feace9e026092f8c7b9aa0baafc3364c151548e641bc1297770ff12c367e348bef502f4dd43d2badff2a758c0
+    - 301d25a8752a4d4113cd1d5a48b38f497bab56a2a86662ee6195c7e92de483484926666dfebfbd2e89a9635ebdae61e9b0ea5dec5c840f71c5f55933a251266f
 pkgname:
   - name: syslog-ng
     install: syslog-ng.install
@@ -89,13 +91,14 @@ pkgname:
       - bash
       - curl
       - gawk
-      - gcc-libs
       - glib2
       - glibc
       - grpc
       - json-c
       - libcap
+      - libgcc
       - libnet
+      - libstdc++
       - openssl
       - pcre2
       - protobuf
@@ -198,4 +201,4 @@ pkgname:
       - libdbi
       - openssl
       - syslog-ng
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
