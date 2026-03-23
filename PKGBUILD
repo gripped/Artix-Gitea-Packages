@@ -3,7 +3,7 @@
 _target=riscv64-linux-gnu
 pkgname=$_target-gdb
 pkgver=17.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='The GNU Debugger for the 32bit and 64bit RISC-V target'
 arch=(x86_64)
 url='https://www.gnu.org/software/gdb/'
