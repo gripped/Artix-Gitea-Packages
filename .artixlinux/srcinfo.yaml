@@ -1,10 +1,10 @@
 ---
-version: 3.2.0-6.1
+version: 3.2.0-7
 pkgbase:
   name: dillo
   pkgdesc: A small, fast graphical web browser built on FLTK
   pkgver: 3.2.0
-  pkgrel: 6.1
+  pkgrel: 7
   url: https://dillo-browser.org/
   arch:
     - x86_64
@@ -14,10 +14,11 @@ pkgbase:
     - git
   depends:
     - fltk1.3
-    - gcc-libs
     - glibc
+    - hicolor-icon-theme
     - libjpeg-turbo
     - libpng
+    - libstdc++
     - libwebp
     - libx11
     - openssl
@@ -38,4 +39,4 @@ pkgbase:
     - 67b328d9d9c4af6c6d1d180c8ec2ea9bd3ac9c125bedb26345cd3363d3c989a1b853fa4485d1df9e9a8f0c9e05b29aecfab31e330328dd74cfe3d5dd22db8635
 pkgname:
   - name: dillo
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

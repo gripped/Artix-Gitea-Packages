@@ -1,20 +1,22 @@
-# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: dorphell <dorphell@archlinux.org>
 
 pkgname=dillo
 pkgver=3.2.0
-pkgrel=6.1
+pkgrel=7
 pkgdesc="A small, fast graphical web browser built on FLTK"
 arch=(x86_64)
 url="https://dillo-browser.org/"
 license=('GPL-3.0-or-later')
 depends=(
   'fltk1.3'
-  'gcc-libs'
   'glibc'
+  'hicolor-icon-theme'
   'libjpeg-turbo'
   'libpng'
+  'libstdc++'
   'libwebp'
   'libx11'
   'openssl'
