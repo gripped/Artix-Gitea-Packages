@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.0.9-1
+    version: 1.0.10-1
     packages:
-      - fcitx5-bamboo-1.0.9-1-x86_64.pkg.tar.zst
+      - fcitx5-bamboo-1.0.10-1-x86_64.pkg.tar.zst
     debug: []
