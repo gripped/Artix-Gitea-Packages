@@ -17,7 +17,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=6.19.9
-pkgrel=1
+pkgrel=1.1
 _srcname=linux-${pkgver}
 license=('GPL-2.0-only')
 arch=('x86_64')
@@ -52,10 +52,7 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('c16068a3af12e3943dee3b1eef57ca70229c069128bfa1184fb3f48b219d55bf'
-            'SKIP'
-            '2e187734d8aec58a3046d79883510d779aa93fb3ab20bd3132c1a607ebe5498f'
-            'b1315cb77a35454e1af9172f821a52e2a0cb18561be05a340d21cf337b01ae61'
-            '2d5e2f8d40b6f19bf2e1dead57ca105d72098fb0b418c09ff2e0cb91089710af')
+            'SKIP')
 
 prepare() {
   cd "$_srcname"
