@@ -1,10 +1,10 @@
 ---
-version: 1:6.24.0-1
+version: 1:6.24.0-2
 pkgbase:
   name: kholidays
   pkgdesc: KDE library for regional holiday information
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://community.kde.org/Frameworks
   arch:
@@ -20,7 +20,7 @@ pkgbase:
     - qt6-declarative
     - qt6-tools
   depends:
-    - gcc-libs
+    - libstdc++
     - glibc
     - qt6-base
   optdepends:
