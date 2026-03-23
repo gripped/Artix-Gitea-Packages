@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-1
+version: 6.24.0-2
 pkgbase:
   name: kcrash
   pkgdesc: Support for application crash analysis and bug report from apps
   pkgver: 6.24.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -18,7 +18,8 @@ pkgbase:
     - extra-cmake-modules
     - qt6-tools
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - kcoreaddons
     - libx11
