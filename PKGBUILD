@@ -10,7 +10,7 @@ url='https://0pointer.de/blog/projects/being-smart.html'
 license=(LGPL-2.1-or-later)
 depends=(
   glibc
-  systemd-libs
+ 
 )
 source=(
   "https://0pointer.de/public/$pkgname-$pkgver.tar.xz"

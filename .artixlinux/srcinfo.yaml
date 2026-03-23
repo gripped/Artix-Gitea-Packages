@@ -12,7 +12,6 @@ pkgbase:
     - LGPL-2.1-or-later
   depends:
     - glibc
-    - systemd-libs
   source:
     - https://0pointer.de/public/libatasmart-0.19.tar.xz
     - 0001-Dont-test-undefined-bits.patch
