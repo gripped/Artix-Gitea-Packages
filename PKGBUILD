@@ -1,7 +1,7 @@
 # Maintainer: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=groff
-pkgver=1.24.0
+pkgver=1.24.1
 pkgrel=1
 pkgdesc='GNU troff text-formatting system'
 arch=('x86_64')
@@ -39,7 +39,7 @@ source=(
   git+https://git.savannah.gnu.org/git/groff.git?signed#tag=${pkgver}
   site.tmac
 )
-b2sums=('504e9c5bb49369f3cf3b7560798d9da2c9c3cc89a5e0e36714c3d291db76b77870768e809c696f47339efc88e6095bd40eb993e33fb4c8ca526015149386667c'
+b2sums=('1027ea426467450190dc565655a9d6c194492f78c5f5c56c5a2d25068e6d9b02364684799b1647a68853180e3a61fe4d8ce48aee64cba8545e145c0128fc8b66'
         '39087d04a2af011820e9428c3c01da4be63cd34125bb087097b4e56865806e33e3e20a666885110ab71d36eeafdbfb01202ca4ee45d6cdeed8ab71d83852341b')
 
 prepare() {
@@ -49,7 +49,6 @@ prepare() {
 
 build() {
   cd "${pkgname}"
-
   ./configure \
     --prefix=/usr \
     --with-x \
