@@ -1,10 +1,10 @@
 ---
-version: 0.3.2-1
+version: 0.3.2-2
 pkgbase:
   name: tinydns
   pkgdesc: Tiny cache DNS server
   pkgver: 0.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/michael105/tinydns
   arch:
     - x86_64

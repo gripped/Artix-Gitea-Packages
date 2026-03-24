@@ -1,8 +1,9 @@
-# Maintainer: CupIvan <mail@cupivan.ru>
+# Packager: nous
+# Maintainer: https://github.com/michael105
 
 pkgname=tinydns
 pkgver=0.3.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Tiny cache DNS server'
 arch=('x86_64')
 url="https://github.com/michael105/tinydns"
