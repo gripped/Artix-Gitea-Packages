@@ -62,7 +62,7 @@ makedepends=(
   nasm
   nodejs
   python
-  rust
+  rustup
   unzip
   wasi-compiler-rt
   wasi-libc
@@ -173,6 +173,7 @@ build() {
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
   export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
   export MOZ_NOSPAM=1
+  export RUSTUP_TOOLCHAIN=1.93
 
   # malloc_usable_size is used in various parts of the codebase
   CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
