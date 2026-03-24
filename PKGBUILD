@@ -61,9 +61,6 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '60-vboxdrv.rules'
         '60-vboxguest.rules'
         'LocalConfig.kmk'
-        'vboxservice.service'
-        'vboxservice-nox.service'
-        'vboxweb.service'
         'vboxreload'
         '001-disable-update.patch'
         '004-drop-Wno-format.patch'
@@ -81,9 +78,6 @@ sha256sums=('c58443a0e6fcc7fc7e84c1011a10823b3540c6a2b8f2e27c4d8971272baf09f7'
             'f876e9f55243eded423fda4fc2ffe3b174dca90380a6315f7c9b3cd1c9d07206'
             '033c597e0f5285d2ddb0490868e5b6f945f45c7b1b1152a02a9e6fea438b2c95'
             '942743b5ef38eecd8ebcb8682c2c65e1be377b4af83fa54d28cd71385f26dc5a'
-            '238d244a565d272ed4b3a20bd3b1d74d4df76ceb3e7ae0711a1833ddc13f073b'
-            '01dbb921bd57a852919cc78be5b73580a564f28ebab2fe8d6c9b8301265cbfce'
-            'e6e875ef186578b53106d7f6af48e426cdaf1b4e86834f01696b8ef1c685787f'
             '4001b5927348fe669a541e80526d4f9ea91b883805f102f7d571edbb482a9b9d'
             '483a043ddfe32c4c5001a8de0a94a0ea884f34d3dbd817b492b9c97fba3ab5e0'
             'eea2671ca4be1d06d1c8e6903ba4bad90581da9fbeea218023409de298803d58'
@@ -245,7 +239,6 @@ package_virtualbox() {
 
     # install systemd stuff
     install -D -m0644 60-vboxdrv.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxdrv.rules"
-    install -D -m0644 vboxweb.service "${pkgdir}/usr/lib/systemd/system/vboxweb.service"
     install -D -m0644 virtualbox.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox.conf"
 
     # install module reloading shortcut (with a symlink with default helper)
@@ -309,7 +302,6 @@ package_virtualbox-guest-utils() {
     popd
     # systemd stuff
     install -D -m0644 60-vboxguest.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxguest.rules"
-    install -D -m0644 vboxservice.service "${pkgdir}/usr/lib/systemd/system/vboxservice.service"
     install -D -m0644 virtualbox-guest-utils.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
     install -D -m0644 VirtualBox-${pkgver}/COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
@@ -335,7 +327,6 @@ package_virtualbox-guest-utils-nox() {
     popd
     # systemd stuff
     install -D -m0644 60-vboxguest.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxguest.rules"
-    install -D -m0644 vboxservice-nox.service "${pkgdir}/usr/lib/systemd/system/vboxservice.service"
     install -D -m0644 virtualbox-guest-utils.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
     install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING" \
