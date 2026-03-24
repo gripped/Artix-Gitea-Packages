@@ -1,7 +1,7 @@
 # Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 pkgname=ada
 pkgver=3.4.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc='WHATWG-compliant and fast URL parser written in modern C++'
 arch=('x86_64')
 url="https://github.com/ada-url/ada"

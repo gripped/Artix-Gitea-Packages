@@ -1,10 +1,10 @@
 ---
-version: 3.4.4-1
+version: 3.4.4-1.1
 pkgbase:
   name: ada
   pkgdesc: WHATWG-compliant and fast URL parser written in modern C++
   pkgver: 3.4.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/ada-url/ada
   arch:
     - x86_64
