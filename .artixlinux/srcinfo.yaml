@@ -1,9 +1,9 @@
 ---
-version: 2.17.2-1
+version: 2.18.1-1
 pkgbase:
   name: gperftools
   pkgdesc: Fast, multi-threaded malloc and nifty performance analysis tools
-  pkgver: 2.17.2
+  pkgver: 2.18.1
   pkgrel: 1
   url: https://github.com/gperftools/gperftools
   arch:
@@ -14,13 +14,14 @@ pkgbase:
     - asciidoctor
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - libunwind
   source:
-    - git+https://github.com/gperftools/gperftools.git#tag=gperftools-2.17.2
+    - git+https://github.com/gperftools/gperftools.git#tag=gperftools-2.18.1
   b2sums:
-    - 5ae15f6d12150351bc12d462905840a816bfbec8e81ce42e589cfc7e79aeeebb460d68e12aa2fce7f73e7148d03f92b0f3cf47fdf104f2434b4c7bfa89d78ddc
+    - c34297c71106df8ffa7111c7f9530b25c883492f24604da45e223487ca3eaadc7a670683eff1e6a81c237573ffd347de3986e7146fb15cbcd5a0263d5cbeada3
 pkgname:
   - name: gperftools
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
