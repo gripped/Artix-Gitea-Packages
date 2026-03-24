@@ -35,4 +35,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libfm-qt
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
