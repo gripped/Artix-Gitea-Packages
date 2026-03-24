@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.4.3-7
+    version: 1.4.3-7.1
     packages:
-      - inkscape-1.4.3-7-x86_64.pkg.tar.zst
+      - inkscape-1.4.3-7.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
