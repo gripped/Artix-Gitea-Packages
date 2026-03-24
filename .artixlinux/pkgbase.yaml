@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,12 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 4.1.4-1
+    packages:
+      - audit-4.1.4-1-x86_64.pkg.tar.zst
+      - audispd-plugins-4.1.4-1-x86_64.pkg.tar.zst
+      - audispd-plugins-zos-4.1.4-1-x86_64.pkg.tar.zst
+      - python-audit-4.1.4-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 4.1.3-1
