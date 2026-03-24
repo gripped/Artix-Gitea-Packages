@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-1
+version: 6.11.0-1
 pkgbase:
   name: qt6-datavis3d
   pkgdesc: Qt6 Data Visualization module
-  pkgver: 6.10.2
+  pkgver: 6.11.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtdatavis3d#tag=v6.10.2
+    - git+https://code.qt.io/qt/qtdatavis3d#tag=v6.11.0
   sha256sums:
-    - 98c7161a54eac0b6a5f9abf4ec26e0740ffda68cd59a8a5aefe9fe3d10bf4711
+    - df6cea01db75c66310a59f0e6b1c5d7f7afbc4dc92ceb827b7250199ad07980d
 pkgname:
   - name: qt6-datavis3d
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
