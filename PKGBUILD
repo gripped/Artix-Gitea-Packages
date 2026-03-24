@@ -40,10 +40,17 @@ optdepends=(
   'lib32-libpulse: PulseAudio audio driver'
   'lib32-pipewire: PipeWire audio driver'
 )
-source=("https://github.com/libsdl-org/SDL/releases/download/release-${pkgver}/SDL2-${pkgver}.tar.gz"{,.sig})
+source=("https://github.com/libsdl-org/SDL/releases/download/release-${pkgver}/SDL2-${pkgver}.tar.gz"{,.sig}
+        "pipewire.patch")
 sha512sums=('cd4c040ebe4ec74250e32b401a292658353721dda30ad1066522b2a9de9a07560313978880a0bad7e7f5103cc14278fcbe27dbc5a188189e7fb6f097e7308550'
-            'SKIP')
+            'SKIP'
+            '624a9cfcf41f9734e967bbe19eba3ddd4d9939a87dddd839465620494935a48a2b41030b3939baff82d6e2b7120b7da225a78747fb0134e6502cdf7c13484bb9')
 validpgpkeys=('1528635D8053A57F77D1E08630A59377A7763BE6') # Sam Lantinga
+
+prepare() {
+  cd $srcdir/SDL2-$pkgver
+  patch -Np1 -i ../pipewire.patch
+}
 
 build() {
   export CC='gcc -m32'
