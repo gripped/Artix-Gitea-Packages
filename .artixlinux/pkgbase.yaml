@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-goblins
-  removeRepo: null
+  addRepo: world-gremlins
+  removeRepo: world-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,14 +21,14 @@ repos:
     packages: []
     debug: []
   world-goblins:
+    version: null
+    packages: []
+    debug: []
+  world-gremlins:
     version: 3.8.0_build_66-1
     packages:
       - vst3sdk-3.8.0_build_66-1-any.pkg.tar.zst
       - vst3sdk-docs-3.8.0_build_66-1-any.pkg.tar.zst
-    debug: []
-  world-gremlins:
-    version: null
-    packages: []
     debug: []
   world:
     version: 3.7.14_build_55-1
