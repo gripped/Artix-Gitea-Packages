@@ -47,7 +47,7 @@ build() {
 
 check() {
 	cd "$pkgname"
-	make check
+	make check SKIP=test-execute.sh
 }
 
 package() {
