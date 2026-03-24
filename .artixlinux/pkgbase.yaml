@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2.59.0-3
+    version: 2.59.0-3.1
     packages:
-      - i2pd-2.59.0-3-x86_64.pkg.tar.zst
+      - i2pd-2.59.0-3.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
