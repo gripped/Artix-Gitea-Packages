@@ -176,8 +176,7 @@ build() {
 
   # Force an older toolchain
   export RUSTUP_TOOLCHAIN=1.93
-  rustup install stable
-  rustup default stable
+  rustup default 1.93
 
   # malloc_usable_size is used in various parts of the codebase
   CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
