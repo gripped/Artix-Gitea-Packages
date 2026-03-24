@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world
+  removeRepo: world-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,13 +21,8 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.1.0-5
-    packages:
-      - lua-lpeg-1.1.0-5-x86_64.pkg.tar.zst
-      - lua51-lpeg-1.1.0-5-x86_64.pkg.tar.zst
-      - lua52-lpeg-1.1.0-5-x86_64.pkg.tar.zst
-      - lua53-lpeg-1.1.0-5-x86_64.pkg.tar.zst
-      - lua54-lpeg-1.1.0-5-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world-gremlins:
     version: null
