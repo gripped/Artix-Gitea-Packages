@@ -1,10 +1,10 @@
 ---
-version: 0.10.1-6
+version: 0.10.1-7
 pkgbase:
   name: ncmpcpp
   pkgdesc: Featureful ncurses based MPD client inspired by ncmpc
   pkgver: 0.10.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/ncmpcpp/ncmpcpp
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - c70a4d6457fd830da7ee8ccfa284071ea01115b86aff87af82ae3ae87e9bd4e897bb3b3fc62e0cafbf5070f1d1f0bf34c3a9c0bbfdcf80f1eefc4d3c0fc15256
 pkgname:
   - name: ncmpcpp
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
