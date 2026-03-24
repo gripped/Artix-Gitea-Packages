@@ -1,10 +1,10 @@
 ---
-version: 2.0.4-14
+version: 2.0.4-15
 pkgbase:
   name: gnome-recipes
   pkgdesc: Recipe management application for GNOME
   pkgver: 2.0.4
-  pkgrel: 14
+  pkgrel: 15
   url: https://wiki.gnome.org/Apps/Recipes
   arch:
     - x86_64
@@ -18,7 +18,6 @@ pkgbase:
   depends:
     - cairo
     - dconf
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -27,6 +26,7 @@ pkgbase:
     - gtk3
     - hicolor-icon-theme
     - libcanberra
+    - libgcc
     - libsoup3
     - pango
   source:
@@ -55,4 +55,4 @@ pkgbase:
     - 3b2497f9c240bb60e76f6a74b0e2c4772a772db1947fb25f3dfb5531e7d2d483714efb1101025c8c1217e7202fce87560cb5284d120fd61bcb626dfb6b3e1cd7
 pkgname:
   - name: gnome-recipes
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
