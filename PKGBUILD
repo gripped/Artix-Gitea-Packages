@@ -1,5 +1,6 @@
-# Maintainer: Jiachen Yang <farseerfc@gmail.com>
-# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jiachen Yang <farseerfc@gmail.com>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Håvard Pettersson <mail@haavard.me>
 # Contributor: naxuroqa <naxuroqa at gmail.com>
@@ -10,7 +11,7 @@ pkgname=toxcore
 _pkgname=c-toxcore
 epoch=1
 pkgver=0.2.22
-pkgrel=1
+pkgrel=2
 pkgdesc='Secure, configuration-free, P2P Skype replacement backend'
 arch=('x86_64')
 url='https://tox.chat'
@@ -87,6 +88,8 @@ package() {
   cd $_pkgname
   DESTDIR="$pkgdir" cmake --install build
   install -vDm644 -t "$pkgdir/etc" other/bootstrap_daemon/tox-bootstrapd.conf
+  install -vDm644 -t "$pkgdir/usr/lib/systemd/system" \
+    other/bootstrap_daemon/tox-bootstrapd.service
   install -vDm644 ../toxcore.sysusers "$pkgdir/usr/lib/sysusers.d/toxcore.conf"
   install -vDm644 ../toxcore.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/toxcore.conf"
 }

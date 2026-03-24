@@ -1,10 +1,10 @@
 ---
-version: 1:0.2.22-1
+version: 1:0.2.22-2
 pkgbase:
   name: toxcore
   pkgdesc: Secure, configuration-free, P2P Skype replacement backend
   pkgver: 0.2.22
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://tox.chat
   arch:
@@ -50,4 +50,4 @@ pkgbase:
     - 6c48116f064d9da91ea17a1b08d659b8f0201697676e478e7d7d80a05566029ea415ab270a799747c98e8c7cff4b0e1cb5448e21942531df90c8cc60e7032c6b
 pkgname:
   - name: toxcore
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
