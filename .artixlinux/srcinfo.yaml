@@ -1,10 +1,10 @@
 ---
-version: 1.9-14
+version: 1.9-15
 pkgbase:
   name: innoextract
   pkgdesc: A tool to extract installers created by Inno Setup
   pkgver: 1.9
-  pkgrel: 14
+  pkgrel: 15
   url: https://constexpr.org/innoextract/
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - afbf98340e2e0fd5051deca352ec17307a8bdf1b9ec3a3c35eb0ba431ec9be56
 pkgname:
   - name: innoextract
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
