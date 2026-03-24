@@ -22,4 +22,4 @@ pkgbase:
     - 758e2c85426a6b31aef52da1656deca219383c07e0beb612279c23d33bcf0b0ffa1d76c37a1230854dbfd827e1ae8449af77db16221595993ed83ea8898b848a
 pkgname:
   - name: java-hamcrest
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
