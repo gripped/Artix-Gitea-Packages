@@ -1,10 +1,10 @@
 ---
-version: 1:20260105-1
+version: 1:20260105-1.1
 pkgbase:
   name: neomutt
   pkgdesc: A version of mutt with added features
   pkgver: 20260105
-  pkgrel: 1
+  pkgrel: 1.1
   epoch: 1
   url: https://neomutt.org/
   arch:
@@ -48,4 +48,4 @@ pkgbase:
     - 571716b8979e9b43328416c3c56eff228b6c58355d7c080b8987ea89c6360776
 pkgname:
   - name: neomutt
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
