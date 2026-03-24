@@ -1,8 +1,8 @@
 ---
-version: 25.0.2.u10-1
+version: 26.u35-1
 pkgbase:
   name: java-openjdk
-  pkgver: 25.0.2.u10
+  pkgver: 26.u35
   pkgrel: 1
   url: https://openjdk.java.net/
   arch:
@@ -15,7 +15,6 @@ pkgbase:
     - bash
     - cpio
     - freetype2
-    - gcc-libs
     - giflib
     - glibc
     - graphviz
@@ -23,9 +22,11 @@ pkgbase:
     - lcms2
     - libcups
     - libelf
+    - libgcc
     - libjpeg-turbo
     - libnet
     - libpng
+    - libstdc++
     - libx11
     - libxext
     - libxrandr
@@ -38,33 +39,34 @@ pkgbase:
   optdepends:
     - 'gvfs: open links e.g. hyperlinks'
   source:
-    - https://github.com/openjdk/jdk25u/archive/jdk-25.0.2+10.tar.gz
+    - https://github.com/openjdk/jdk26u/archive/jdk-26+35.tar.gz
     - freedesktop-java.desktop
     - freedesktop-jconsole.desktop
     - freedesktop-jshell.desktop
   sha256sums:
-    - 9b3164cedf78d7a76a59499d7a6833145c7e0269ec7b664bfe5ee03ced2f449e
-    - b800c73efde1b5655fff8d6926c6390e306b375ea72a3066a946011faa05de5a
-    - a308c7b85339a03718583ceb8b37140fb23c754c30e50f60cee19d7b04c747ba
-    - cd83d0a053954ea46a37b057e73668d5933deac873630aeaca06dc072c532413
+    - 958ce142d3aaa26e170dfbf087321219e8bfac60bc41a6a91d7c68455a765d73
+    - 87d952d0d5d59ccf605ba582f6338eea7b42e8be2df1680634a7a5fb25443afb
+    - 41548bd89c1300bf5aaae07acb3add82a0a179a2b1c0591e936a9608c718d3c0
+    - a3db68d377d5b6541096849404130a07a222859cd61d77eadc0defd09dec9de8
 pkgname:
   - name: jdk-openjdk
-    pkgdesc: OpenJDK Java 25 development kit
+    pkgdesc: OpenJDK Java 26 development kit
     install: install_jdk-openjdk.sh
     depends:
       - java-runtime-common>=3
       - ca-certificates-utils
       - freetype2
-      - gcc-libs
       - glibc
       - harfbuzz
       - lcms2
       - libfreetype.so
+      - libgcc
       - libharfbuzz.so
       - libjpeg.so
       - libjpeg-turbo
       - liblcms2.so
       - libnet
+      - libstdc++
       - nss
       - java-environment-common=3
       - ca-certificates-utils
@@ -87,15 +89,15 @@ pkgname:
       - 'alsa-lib: for basic sound support'
       - 'gtk3: for the Gtk+ 3 look and feel - desktop usage'
     provides:
-      - java-environment=25
-      - java-environment-openjdk=25
-      - jdk25-openjdk=25.0.2.u10-1
-      - java-runtime=25
-      - java-runtime-openjdk=25
-      - jre25-openjdk=25.0.2.u10-1
-      - java-runtime-headless=25
-      - java-runtime-headless-openjdk=25
-      - jre25-openjdk-headless=25.0.2.u10-1
+      - java-environment=26
+      - java-environment-openjdk=26
+      - jdk26-openjdk=26.u35-1
+      - java-runtime=26
+      - java-runtime-openjdk=26
+      - jre26-openjdk=26.u35-1
+      - java-runtime-headless=26
+      - java-runtime-headless-openjdk=26
+      - jre26-openjdk-headless=26.u35-1
     conflicts:
       - jre-openjdk
       - jre-openjdk-headless
@@ -115,22 +117,23 @@ pkgname:
       - etc/java-openjdk/security/policy/unlimited/default_local.policy
       - etc/java-openjdk/sound.properties
   - name: jre-openjdk
-    pkgdesc: OpenJDK Java 25 full runtime environment
+    pkgdesc: OpenJDK Java 26 full runtime environment
     install: install_jre-openjdk.sh
     depends:
       - java-runtime-common>=3
       - ca-certificates-utils
       - freetype2
-      - gcc-libs
       - glibc
       - harfbuzz
       - lcms2
       - libfreetype.so
+      - libgcc
       - libharfbuzz.so
       - libjpeg.so
       - libjpeg-turbo
       - liblcms2.so
       - libnet
+      - libstdc++
       - nss
       - giflib
       - libgif.so
@@ -139,12 +142,12 @@ pkgname:
       - 'alsa-lib: for basic sound support'
       - 'gtk3: for the Gtk+ 3 look and feel - desktop usage'
     provides:
-      - java-runtime=25
-      - java-runtime-openjdk=25
-      - jre25-openjdk=25.0.2.u10-1
-      - java-runtime-headless=25
-      - java-runtime-headless-openjdk=25
-      - jre25-openjdk-headless=25.0.2.u10-1
+      - java-runtime=26
+      - java-runtime-openjdk=26
+      - jre26-openjdk=26.u35-1
+      - java-runtime-headless=26
+      - java-runtime-headless-openjdk=26
+      - jre26-openjdk-headless=26.u35-1
     conflicts:
       - jdk-openjdk
       - jre-openjdk-headless
@@ -164,29 +167,30 @@ pkgname:
       - etc/java-openjdk/security/policy/unlimited/default_local.policy
       - etc/java-openjdk/sound.properties
   - name: jre-openjdk-headless
-    pkgdesc: OpenJDK Java 25 headless runtime environment
+    pkgdesc: OpenJDK Java 26 headless runtime environment
     install: install_jre-openjdk-headless.sh
     depends:
       - java-runtime-common>=3
       - ca-certificates-utils
       - freetype2
-      - gcc-libs
       - glibc
       - harfbuzz
       - lcms2
       - libfreetype.so
+      - libgcc
       - libharfbuzz.so
       - libjpeg.so
       - libjpeg-turbo
       - liblcms2.so
       - libnet
+      - libstdc++
       - nss
     optdepends:
       - 'java-rhino: for some JavaScript support'
     provides:
-      - java-runtime-headless=25
-      - java-runtime-headless-openjdk=25
-      - jre25-openjdk-headless=25.0.2.u10-1
+      - java-runtime-headless=26
+      - java-runtime-headless-openjdk=26
+      - jre26-openjdk-headless=26.u35-1
     conflicts:
       - jdk-openjdk
       - jre-openjdk
@@ -206,15 +210,15 @@ pkgname:
       - etc/java-openjdk/security/policy/unlimited/default_local.policy
       - etc/java-openjdk/sound.properties
   - name: openjdk-doc
-    pkgdesc: OpenJDK Java 25 documentation
+    pkgdesc: OpenJDK Java 26 documentation
     depends:
-      - jdk25-openjdk=25.0.2.u10-1
+      - jdk26-openjdk=26.u35-1
     provides:
-      - openjdk25-doc=25.0.2.u10-1
+      - openjdk26-doc=26.u35-1
   - name: openjdk-src
-    pkgdesc: OpenJDK Java 25 sources
+    pkgdesc: OpenJDK Java 26 sources
     depends:
-      - jdk25-openjdk=25.0.2.u10-1
+      - jdk26-openjdk=26.u35-1
     provides:
-      - openjdk25-src=25.0.2.u10-1
-# generated with artixpkg 0.37.5-1-any
+      - openjdk26-src=26.u35-1
+# generated with artixpkg 0.38.2-1-any
