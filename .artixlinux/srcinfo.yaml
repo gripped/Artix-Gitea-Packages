@@ -1,10 +1,10 @@
 ---
-version: 1:0.2.22-2
+version: 1:0.2.22-2.1
 pkgbase:
   name: toxcore
   pkgdesc: Secure, configuration-free, P2P Skype replacement backend
   pkgver: 0.2.22
-  pkgrel: 2
+  pkgrel: 2.1
   epoch: 1
   url: https://tox.chat
   arch:
