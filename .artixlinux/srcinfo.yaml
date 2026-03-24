@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-1
+version: 6.11.0-1
 pkgbase:
   name: qt6-graphs
   pkgdesc: Qt Graphs for data visualization
-  pkgver: 6.10.2
+  pkgver: 6.11.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - qt6-declarative
     - qt6-quick3d
   source:
-    - git+https://code.qt.io/qt/qtgraphs#tag=v6.10.2
+    - git+https://code.qt.io/qt/qtgraphs#tag=v6.11.0
   sha256sums:
-    - 64a334b76d1fef25478d5db8cbfb2f9ff591e274d565b7c830b301c86c349fa7
+    - 4b6ee9d0e75f96351071dfc0a852e697fdc67d3d48ef36999c3f2d2b1521eaa8
 pkgname:
   - name: qt6-graphs
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
