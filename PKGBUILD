@@ -2,7 +2,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-webengine
-_pkgver=6.10.2
+_pkgver=6.11.0
 pkgver=${_pkgver/-/}
 pkgrel=2
 _chromium=
@@ -25,8 +25,6 @@ depends=(alsa-lib
          harfbuzz
          icu
          lcms2
-         libdrm
-         libevent
          libglvnd
          libjpeg-turbo
          libpng
@@ -48,6 +46,7 @@ depends=(alsa-lib
          minizip
          nspr
          nss
+         openh264
          openjpeg2
          opus
          qt6-base
@@ -81,7 +80,7 @@ groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver
         git+https://code.qt.io/qt/qtwebengine-chromium)
-sha256sums=('98d8f65137ae6d913ddbe45b3dac562e6b01a5879695424d7f1c3f9eeeb16c21'
+sha256sums=('b0c490850019c6ff4351e27c3635f3a0057cb5d45f5dacc6ff09dcedeeff6e3c'
             'SKIP')
 
 prepare() {
@@ -90,11 +89,13 @@ prepare() {
   git submodule set-url src/3rdparty "$srcdir"/qtwebengine-chromium
   git -c protocol.file.allow=always submodule update
 
-  git cherry-pick -n 4b2f03af22bfb19168e71092d075c649e942604f # Fix crashes
+  git cherry-pick -n 692e6b11a92d80954f80b27109d9738732591a20 # Fix using system openh264
 
   # Bump chromium to head of stable branch
   cd src/3rdparty
   [[ -n $_chromium ]] && git checkout $_chromium || true
+
+  git cherry-pick -n c60cb063bc6884a47dd34337dd878b3656f855cf # Fix build with system openh264
 }
 
 build() {
@@ -103,8 +104,8 @@ build() {
     -DCMAKE_TOOLCHAIN_FILE=/usr/lib/cmake/Qt6/qt.toolchain.cmake \
     -DQT_FEATURE_webengine_system_ffmpeg=ON \
     -DQT_FEATURE_webengine_system_icu=ON \
-    -DQT_FEATURE_webengine_system_libevent=ON \
     -DQT_FEATURE_webengine_system_re2=ON \
+    -DQT_FEATURE_webengine_system_openh264=ON \
     -DQT_FEATURE_webengine_proprietary_codecs=ON \
     -DQT_FEATURE_webengine_kerberos=ON \
     -DQT_FEATURE_webengine_webrtc_pipewire=ON
@@ -115,4 +116,6 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
 
   install -Dm644 "$srcdir"/${_pkgfn}/src/3rdparty/chromium/LICENSE "$pkgdir"/usr/share/licenses/${pkgname}/LICENSE.chromium
+# Remove cmake module that breaks corrosion
+  rm "$pkgdir"/usr/lib/cmake/Qt6/FindRust.cmake
 }
