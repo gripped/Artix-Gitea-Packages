@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-1
+version: 6.11.0-1
 pkgbase:
   name: qt6-httpserver
   pkgdesc: Qt HTTP Server
-  pkgver: 6.10.2
+  pkgver: 6.11.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - qt6-base
     - qt6-websockets
   source:
-    - git+https://code.qt.io/qt/qthttpserver#tag=v6.10.2
+    - git+https://code.qt.io/qt/qthttpserver#tag=v6.11.0
   sha256sums:
-    - 347f6e9dfedfab30ee3509b4600b3f49a8873622fe371b0f0713cbf3a1e3812b
+    - 0179fad52273ba2848f015eb6fdfdea451a62fb652897f8ac79cc026c7102831
 pkgname:
   - name: qt6-httpserver
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
