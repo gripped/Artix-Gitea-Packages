@@ -1,10 +1,10 @@
 ---
-version: 1.0.4.5-11
+version: 1.0.4.5-12
 pkgbase:
   name: libappimage
   pkgdesc: Reference implementation of the AppImage specification
   pkgver: 1.0.4.5
-  pkgrel: 11
+  pkgrel: 12
   url: https://appimage.org/
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - e5419e65f92a73c7fae39073288468d41f8f2731c7f21f182b6b195755420ae9
 pkgname:
   - name: libappimage
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
