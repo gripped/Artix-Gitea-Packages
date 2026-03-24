@@ -1,10 +1,10 @@
 ---
-version: 49.4-1
+version: 49.4-2
 pkgbase:
   name: papers
   pkgdesc: Document viewer for PDF and other document formats aimed at the GNOME desktop
   pkgver: 49.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Papers/
   arch:
     - x86_64
@@ -26,7 +26,6 @@ pkgbase:
     - dconf
     - djvulibre
     - exempi
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -36,6 +35,7 @@ pkgbase:
     - hicolor-icon-theme
     - libadwaita
     - libarchive
+    - libgcc
     - libnautilus-extension
     - libspelling
     - libtiff
@@ -52,4 +52,4 @@ pkgname:
   - name: papers-lib-docs
     pkgdesc: Document viewer for PDF and other document formats aimed at the GNOME desktop (library API documentation)
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
