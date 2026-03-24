@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-1
+version: 6.11.0-1
 pkgbase:
   name: qt6-location
   pkgdesc: Helps you create viable mapping solutions using the data available from some of the popular location services
-  pkgver: 6.10.2
+  pkgver: 6.11.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - qt6-declarative
     - qt6-positioning
   source:
-    - git+https://code.qt.io/qt/qtlocation#tag=v6.10.2
+    - git+https://code.qt.io/qt/qtlocation#tag=v6.11.0
   sha256sums:
-    - db35099a7ceef0d55447fe4e535621a084be0f285b370df71097eb6653019327
+    - d636c51b591740a3129fabbde07ca60b7ec808a6289be97ee9cba08881611c34
 pkgname:
   - name: qt6-location
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
