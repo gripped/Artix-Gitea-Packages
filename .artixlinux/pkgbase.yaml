@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.0.4.5-12
+    version: 1.0.4.5-12.1
     packages:
-      - libappimage-1.0.4.5-12-x86_64.pkg.tar.zst
+      - libappimage-1.0.4.5-12.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
