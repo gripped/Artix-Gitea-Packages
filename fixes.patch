@@ -1,0 +1,76 @@
+diff -uNr tinydns/common.h tinydns-master/common.h
+--- tinydns/common.h	2025-12-10 21:34:53.000000000 +0200
++++ tinydns-master/common.h	2026-03-24 11:16:09.905011236 +0200
+@@ -12,7 +12,8 @@
+ #include "parse.h"
+ #include "cache.h"
+ 
+-//#define log_s(s) { if ( config.debug_level ) write(1,s,sizeof(s)); } 
++//#define log_s(s) { if ( config.debug_level ) write(1,s,sizeof(s)); }
++void log_s(char *msg);
+ 
+ //#define DBG(...) printsl(__STRLINE__," "__VA_OPT__(,__VA_ARGS__))
+ #define DBG(...) {}
+@@ -22,7 +23,6 @@
+ 
+ //void error(char *msg);
+ 
+-void log_s(char *msg);
+ void log_b(char *prefix, void *ptr, int n);
+ 
+ void help();
+diff -uNr tinydns/config.c tinydns-master/config.c
+--- tinydns/config.c	2025-12-10 21:34:53.000000000 +0200
++++ tinydns-master/config.c	2026-03-24 11:10:55.494398178 +0200
+@@ -1,4 +1,5 @@
+ #include "common.h"
++#include <errno.h>
+ 
+ TConfig config = {
+ 	.server_ip = "127.0.0.1", 
+diff -uNr tinydns/help.c tinydns-master/help.c
+--- tinydns/help.c	2025-12-10 21:34:53.000000000 +0200
++++ tinydns-master/help.c	2026-03-24 11:19:20.933776154 +0200
+@@ -2,7 +2,7 @@
+ 
+ void help()
+ {
+-writes("tinydns - small proxy DNS server.\n\
++printf("tinydns - small proxy DNS server.\n\
+   -c config       load config instead of tinydns.conf / /etc/tinydns.conf\n\
+   -d              Run as daemon.\n\
+   -D              show debug info\n\
+diff -uNr tinydns/main.c tinydns-master/main.c
+--- tinydns/main.c	2025-12-10 21:34:53.000000000 +0200
++++ tinydns-master/main.c	2026-03-24 11:19:41.901750351 +0200
+@@ -213,7 +213,7 @@
+ 		for ( char *c = argv[0]+1; *c != 0; c++ ){
+ 			switch ( *c ){
+ 				case 'v': 
+-					writes("tinydns " version "\nAuthor: CupIvan <mail@cupivan.ru>\nLicense: MIT\n" );
++					printf("tinydns " version "\nAuthor: CupIvan <mail@cupivan.ru>\nLicense: MIT\n" );
+ 					exit(0);
+ 				case 'd':{
+ 								pid_t pid = fork();
+diff -uNr tinydns/Makefile tinydns-master/Makefile
+--- tinydns/Makefile	2025-12-10 21:34:53.000000000 +0200
++++ tinydns-master/Makefile	2026-03-24 11:23:07.721506145 +0200
+@@ -13,14 +13,14 @@
+ 
+ CFLAGS=-Os -s -static
+ 
+-tinydns: *.c *.h
+-	$(CC) $(CFLAGS) -o tinydns src.c
++tinydns -Wl,-z,now,-z,relro: *.c *.h
++	$(CC) $(CFLAGS) -o tinydns -Wl,-z,now,-z,relro src.c
+ 
+ withminilib: *.c *.h minilib.conf
+-	$(MLGCC) --config minilib.conf -o tinydns src.c
++	$(MLGCC) --config minilib.conf -o tinydns -Wl,-z,now,-z,relro src.c
+ 
+ main: main.o cache.o config.o parse.o log.o help.o
+-	$(CC) $(CFLAGS) -o tinydns *.o 
++	$(CC) $(CFLAGS) -o tinydns -Wl,-z,now,-z,relro *.o 
+ 
+ %.o: %.c
+ 	$(CC) $(CFLAGS) -c -o $@ $<

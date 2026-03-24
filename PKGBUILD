@@ -1,31 +1,30 @@
 # Maintainer: CupIvan <mail@cupivan.ru>
 
 pkgname=tinydns
-pkgver=0.3.1
-pkgrel=1.3
+pkgver=0.3.2
+pkgrel=1
 pkgdesc='Tiny cache DNS server'
 arch=('x86_64')
-url="https://github.com/CupIvan/tinydns"
+url="https://github.com/michael105/tinydns"
 license=('MIT')
-source=("https://github.com/CupIvan/${pkgname}/archive/v${pkgver}.tar.gz")
-sha256sums=('baf5d4246a22bd0c2d8ac3579cea18b50b3636762fecc452cad8614c13fc9807')
+source=("$url/archive/refs/heads/master.zip"
+        'fixes.patch')
+sha256sums=('c03d1c38e68533ce92579d33f6ff070bfccb48bc6976a905d8210118a7f0673b'
+            '30869a8cf77c6f1479543404bb6edf763ddc8c269e4736780e6153cb61397d55')
 
 prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
-  sed -i 's:tinydns:& -Wl,-z,now,-z,relro:' Makefile
-  # Correct version
-  sed -i '/char version/s|0.3|0.3.1|' main.c
+  cd "$srcdir/$pkgname-master"
+  patch -p1 < ../fixes.patch
 }
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-master"
   make
 }
 
 package_tinydns() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-master"
   backup=(etc/${pkgname}.conf)
-	
   install -Dm755 ${pkgname} ${pkgdir}/usr/bin/${pkgname}
   install -Dm644 ${pkgname}.conf ${pkgdir}/etc/${pkgname}.conf
   install -Dm644 LICENSE ${pkgdir}/usr/share/licenses/${pkgname}/LICENSE

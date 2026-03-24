@@ -1,6 +1,6 @@
 #!/bin/sh
 
-REPO=CupIvan/tinydns
+REPO=michael105/tinydns
 VERSION=`wget -O - https://api.github.com/repos/$REPO/releases/latest | grep tarball_url | sed -e 's/.\+\/v\(.\+\)",/\1/g'`
 wget -c https://github.com/$REPO/archive/v${VERSION}.tar.gz
 MD5=`md5sum "v$VERSION.tar.gz" | awk '{ print $1 }'`
