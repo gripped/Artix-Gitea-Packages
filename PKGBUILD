@@ -2,7 +2,7 @@
 
 pkgname=firefox
 pkgver=149.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
 arch=(x86_64)
@@ -195,7 +195,7 @@ build() {
   cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-profile-generate=cross
 END
- sed -i 's|wasm32-wasi|wasm32-wasip1|' build/moz.configure/toolchain.configure
+ #sed -i 's|wasm32-wasi|wasm32-wasip1|' build/moz.configure/toolchain.configure
   ./mach build --priority normal
 
   echo "Profiling instrumented browser..."
