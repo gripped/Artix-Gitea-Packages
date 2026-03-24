@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2026-02-24 by artix-mlg
+## Generated on 2026-03-24 by artix-mlg
 ##
 
 # Artix mirrors
@@ -15,6 +15,8 @@ Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
 Server = https://mirrors.dotsrc.org/artix-linux/repos/$repo/os/$arch
 
 ## Europe
+# Bulgaria
+Server = https://artix.arkhost.com/repos/$repo/os/$arch
 # Czech Republic
 Server = https://ftp.sh.cvut.cz/artix-linux/$repo/os/$arch
 # Denmark
