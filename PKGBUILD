@@ -6,7 +6,7 @@
 
 pkgname=dune
 pkgver=3.22.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A composable build system for OCaml (formerly jbuilder)"
 arch=(x86_64)
 url="https://github.com/ocaml/dune"
