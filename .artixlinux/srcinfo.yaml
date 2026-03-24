@@ -1,9 +1,9 @@
 ---
-version: 6.10.2-1
+version: 6.11.0-1
 pkgbase:
   name: qt6-multimedia
   pkgdesc: Classes for audio, video, radio and camera functionality
-  pkgver: 6.10.2
+  pkgver: 6.11.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -35,9 +35,9 @@ pkgbase:
     - pipewire
     - qt6-base
   source:
-    - git+https://code.qt.io/qt/qtmultimedia#tag=v6.10.2
+    - git+https://code.qt.io/qt/qtmultimedia#tag=v6.11.0
   sha256sums:
-    - c9fbfcc5bf8a2e3ee4040f04b854d84b739ae08920a41301b65905487dd80e6c
+    - 4e1686488eceb3b1ec7458b9f73a5d8432f7475cf9198aeaa8369fe7f335b8ce
 pkgname:
   - name: qt6-multimedia
     depends:
@@ -87,4 +87,4 @@ pkgname:
       - 'gst-plugins-ugly: additional plugins'
     provides:
       - qt6-multimedia-backend
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
