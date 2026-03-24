@@ -1,10 +1,10 @@
 ---
-version: 4:0.42.0-2
+version: 4:0.43.0-1
 pkgbase:
   name: go-tools
   pkgdesc: Developer tools for the Go programming language
-  pkgver: 0.42.0
-  pkgrel: 2
+  pkgver: 0.43.0
+  pkgrel: 1
   epoch: 4
   url: https://golang.org/
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - go-tools::git+https://go.googlesource.com/tools#tag=v0.42.0
+    - go-tools::git+https://go.googlesource.com/tools#tag=v0.43.0
   sha256sums:
-    - 1b58d4bbbef247d00ec45d74c4b4c54ab5517b24e56f874d04e3c58f7b778b5d
+    - afd362d858c2f89cce720c16db2666224e6273458e755f2296246d345d76fb6c
 pkgname:
   - name: go-tools
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.2-1-any
