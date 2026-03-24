@@ -1,10 +1,10 @@
 ---
-version: 0.20.0-5
+version: 0.20.0-6
 pkgbase:
   name: libixion
   pkgdesc: A general purpose formula parser & interpreter
   pkgver: 0.20.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://gitlab.com/ixion/ixion
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 0fdf9c1e34dfbdf55b4f2f347b9fbb1b8fe6fd35b6a0575d2aa6c58eae160920
 pkgname:
   - name: libixion
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
