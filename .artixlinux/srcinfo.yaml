@@ -1,9 +1,9 @@
 ---
-version: 0.4.68-1
+version: 0.4.70-1
 pkgbase:
   name: gegl
   pkgdesc: Graph based image processing framework
-  pkgver: 0.4.68
+  pkgver: 0.4.70
   pkgrel: 1
   url: https://www.gegl.org/
   arch:
@@ -75,9 +75,9 @@ pkgbase:
     - libgegl-npd-0.4.so
     - libgegl-sc-0.4.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/gegl.git#tag=GEGL_0_4_68
+    - git+https://gitlab.gnome.org/GNOME/gegl.git#tag=GEGL_0_4_70
   sha256sums:
-    - 57b84ca002e64f7dc7f321204ff525376436d9d714ada99755df6942c65309ca
+    - 2d1d8e77b18be3db417b37247b80e798d51cfc2ac27cc881f30089f9723899df
 pkgname:
   - name: gegl
 # generated with artixpkg 0.38.2-1-any
