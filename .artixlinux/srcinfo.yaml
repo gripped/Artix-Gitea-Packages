@@ -1,37 +1,22 @@
 ---
-version: 3.13.0-3
+version: 3.13.0-4
 pkgbase:
   name: luarocks
   pkgdesc: Deployment and management system for Lua modules
   pkgver: 3.13.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://luarocks.org/
   install: luarocks.install
   arch:
     - any
   license:
     - custom
-  depends:
+  makedepends:
     - coreutils
     - curl
     - lua
     - unzip
     - zip
-  optdepends:
-    - 'cvs: for fetching sources from CVS repositories'
-    - 'git: for fetching sources from git repositories'
-    - 'mercurial: for fetching sources from mercurial repositories'
-    - 'cmake: for building rocks that use the cmake build system'
-    - 'lua-sec: HTTPS support'
-  replaces:
-    - luarocks5.1
-    - luarocks5.2
-  backup:
-    - etc/luarocks/config-5.1.lua
-    - etc/luarocks/config-5.2.lua
-    - etc/luarocks/config-5.3.lua
-    - etc/luarocks/config-5.4.lua
-    - etc/luarocks/config-5.5.lua
   source:
     - https://luarocks.org/releases/luarocks-3.13.0.tar.gz
     - https://luarocks.org/releases/luarocks-3.13.0.tar.gz.asc
@@ -64,4 +49,31 @@ pkgbase:
     - f6ab6c65aaaa2680ce83a3277a2aec4400d234ddfc17c62f44190928a53b7146c38f8a779aedc1c71fed3dd2f1833e1ca924080e98ecf7462274b0d9acb07f90
 pkgname:
   - name: luarocks
-# generated with artixpkg 0.37.4-1-any
+    depends:
+      - coreutils
+      - curl
+      - lua
+      - unzip
+      - zip
+    optdepends:
+      - 'cvs: for fetching sources from CVS repositories'
+      - 'git: for fetching sources from git repositories'
+      - 'mercurial: for fetching sources from mercurial repositories'
+      - 'cmake: for building rocks that use the cmake build system'
+      - 'lua-sec: HTTPS support'
+    backup:
+      - etc/luarocks/config-5.1.lua
+      - etc/luarocks/config-5.2.lua
+      - etc/luarocks/config-5.3.lua
+      - etc/luarocks/config-5.4.lua
+      - etc/luarocks/config-5.5.lua
+  - name: lua-luarocks
+  - name: lua54-luarocks
+  - name: lua53-luarocks
+  - name: lua52-luarocks
+    depends:
+      - lua52-compat53
+  - name: lua51-luarocks
+    depends:
+      - lua51-compat53
+# generated with artixpkg 0.38.2-1-any
