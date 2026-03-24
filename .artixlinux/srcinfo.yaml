@@ -1,10 +1,10 @@
 ---
-version: 1.8.1.r128+gded46373-17
+version: 1.8.1.r128+gded46373-18
 pkgbase:
   name: liblas
   pkgdesc: C/C++ library for reading and writing the very common LAS LiDAR format
   pkgver: 1.8.1.r128+gded46373
-  pkgrel: 17
+  pkgrel: 18
   url: https://liblas.org/
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - ca933a36fc91487da51e9368d6d766b37d619b1741b540952155c974293b0239
 pkgname:
   - name: liblas
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
