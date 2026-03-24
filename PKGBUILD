@@ -1,7 +1,7 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.12.73
+pkgver=6.18.19
 pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
@@ -14,6 +14,9 @@ makedepends=(
   pahole
   perl
   python
+  rust
+  rust-bindgen
+  rust-src
   tar
   xz
 
@@ -33,8 +36,8 @@ _srctag=v$pkgver
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
   0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
-  0002-Default-to-maximum-amount-of-ASLR-bits.patch
-  0003-skip-simpledrm-if-nvidia-drm.modeset\=1-is.patch
+  0002-drm-amdgpu-avoid-memory-allocation-in-the-critical-code-path-v3.patch
+  0003-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-critical-path.patch
   config  # the main kernel config file
 )
 validpgpkeys=(
@@ -42,18 +45,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('4059d394cbf8e9548df36d37e0b8a80c4409ac4e14ecc5019a72a770ef7b41ba'
+sha256sums=('eaaf78271cd07c68ad9c4c9a70c72718b33abbd716239d82bac96b1751eb090c'
             'SKIP'
-            '3cf389ced2b40e6457421cb27892bf126b73032fbf1de895ecc37b13d981a17c'
-            '423b2c6fbc8d6df79997550bef1b1e4f6f402b668007d150013623a83a12b49e'
-            '596f8e0aef1df72a84685e8f2b8a9dde7e33b513de555fae6069ba652cbd00c1'
-            'fd39933096dc2453e5955531bdc6ff947c5c023bb8a717df171cbf703344578d')
-b2sums=('344395dff181769ee0bc782ed6a781bfa073c10f8027a4d5a73a84680742d40616646ea8aa04e6564d2f47ad330811ade7d955d570796dd0b3c3bc642c8ebd28'
+            'e5bda61fa4405571a0267cd8812329bb8a432a37efb50459461628d371849906'
+            'c31b8c0ace123f5c1a0012a1254272eea9ac9cdd0d3e5d538ca6b11830dd01b0'
+            '0f482368b62c3cece941e2d3ba497bf322db59315df5c2f72500fc1318e4768e'
+            'ede595520224dd07ace6252804aa039a3c6e207d56c491f6fbe75629cc3365d5')
+b2sums=('1dac9f18e177002f418a5348b54b0261ae8d4ce1355f7358529260f6bb6e502cfd65f57f6198ebbec9a26d948c71e0bbce8e56b882e4e6678cb643c3b6b63471'
         'SKIP'
-        'b2e1f3544470a0ded336a8d9097b879060530d795a9b60ef5d617d16c165f3ca27424529a7c464d249ab72abcaf48d65d66d96508a7b49622ab404739ae0a918'
-        '01f1a8249983b1a52437843ce3566242b3ed1df03fcab98ec092982be9a4dc947ab0f932a6bc9ac84f85248dca479ebe193a6032cfd2b574dc6f5ca31a0190c5'
-        '410dc8911051905c5c01b47890eeff817fc180434372864cfa9ee0d77e0ff43571b9fcc3c193d562c4dcd49511edf7c6c01dde12dd0778845d1868dc435531ea'
-        '1c69fd7a4d97b129731ed475f9f0c5aa0be07e8fa562ef8a38db7bdd8783c3e1f02907a53556f6ce54726c6118a412495aab6293fc899f909aa0f841d5905921')
+        '5b3597cab8b174ff41b3f17aae6d1376a155356f781542e2e176d66c5a6dee53f7a1db8e2b9540ce8246efac4e27476c882fc8cc8063f0f514ae09230b5aef0a'
+        'a71f78bea42d158fc9383f2bbb985dafa71274d2032876b67f84602c8085b1c53f3d36965e54e5fdbab5c0d7537c98d917bd7743d3cf373c1dcb6da3bc19f4e7'
+        'c9d4ec8fac86a9b6f0567c57f6d5be04d56f8efbc9dc1b183981dad38387d750b53c17fcdd295cb68a874bf50f81d117cfe94bd3a8d9e08e1918644ae8daa3e5'
+        '38e92f24367c9c1d27c072c8d1327dfdf8deb3f432df13efe5b77ec9ec4dc915db3614db9c227589a41e37b82b541ae80fb965897110fcb9ad1ecc3d43aa49dc')
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
 export KBUILD_BUILD_TIMESTAMP="$(date -Ru${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH})"
@@ -87,7 +90,7 @@ prepare() {
 build() {
   cd $_srcname
 
-  make htmldocs &
+  make htmldocs SPHINXOPTS=-QT &
   local pid_docs=$!
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
@@ -278,6 +281,14 @@ _package-headers() {
 
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
+
+  echo "Installing Rust files..."
+  install -Dt "$builddir/rust" -m644 rust/*.rmeta
+  install -Dt "$builddir/rust" rust/*.so
+
+  echo "Installing unstripped VDSO..."
+  make INSTALL_MOD_PATH="$pkgdir/usr" vdso_install \
+    link=  # Suppress build-id symlinks
 
   echo "Removing unneeded architectures..."
   local arch
