@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 32.1.0-2
+    version: 32.1.0-2.1
     packages:
-      - obs-studio-32.1.0-2-x86_64.pkg.tar.zst
+      - obs-studio-32.1.0-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 32.1.0-1
