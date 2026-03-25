@@ -1,8 +1,8 @@
 ---
-version: 590.48.01-1
+version: 595.58.03-1
 pkgbase:
   name: lib32-nvidia-utils
-  pkgver: 590.48.01
+  pkgver: 595.58.03
   pkgrel: 1
   url: http://www.nvidia.com/
   arch:
@@ -12,9 +12,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - https://us.download.nvidia.com/XFree86/Linux-x86_64/590.48.01/NVIDIA-Linux-x86_64-590.48.01.run
+    - https://us.download.nvidia.com/XFree86/Linux-x86_64/595.58.03/NVIDIA-Linux-x86_64-595.58.03.run
   sha512sums:
-    - 31fd82af707dbe9a6d3848766925386f5e91c5fae0a605819450eb8e5a5a52eaab3ae5cff50b4dd36bc5c32fe1aabc29a6a79438d6614988c7b08f509ef0da6d
+    - d38e184805230ab1dc7065c49814d92c7033cf0e078e2cec919baef05d8ea297d061fb45a8fec608e7b2823f756568df3cbe1b08d75e8581c55a380413018499
 pkgname:
   - name: lib32-nvidia-utils
     pkgdesc: NVIDIA drivers utilities (32-bit)
@@ -22,7 +22,7 @@ pkgname:
       - lib32-zlib
       - lib32-gcc-libs
       - lib32-libglvnd
-      - nvidia-utils=590.48.01
+      - nvidia-utils=595.58.03
     optdepends:
       - lib32-opencl-nvidia
     provides:
@@ -42,4 +42,4 @@ pkgname:
       - 'opencl-headers: headers necessary for OpenCL development'
     provides:
       - lib32-opencl-driver
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
