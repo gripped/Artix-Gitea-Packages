@@ -46,9 +46,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 0.18.4.7-2
+    version: 0.18.4.7-2.1
     packages:
-      - monero-gui-0.18.4.7-2-x86_64.pkg.tar.zst
+      - monero-gui-0.18.4.7-2.1-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
