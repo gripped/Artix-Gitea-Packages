@@ -1,10 +1,10 @@
 ---
-version: 25.12.3-1
+version: 25.12.3-2
 pkgbase:
   name: kopeninghours
   pkgdesc: Library for parsing and evaluating OSM opening hours expressions
   pkgver: 25.12.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kde.org
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - boost
+    - boost-libs
     - extra-cmake-modules
     - python
     - qt6-declarative
