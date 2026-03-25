@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=xlibre-input-libinput
-pkgver=25.0.1
-pkgrel=1
+pkgver=1.5.2
+pkgrel=2
 pkgdesc="XLibre fork of the generic input driver for the X.Org server based on libinput"
 arch=(x86_64 aarch64)
 license=('MIT')
@@ -64,4 +64,4 @@ package() {
   DESTDIR="$pkgdir" ninja -C build install
 }
 
-sha256sums=('d7d9246b6f9a03459a5b603b726aa4e4c0ec8ea669fff2f38976bc81eec96a44')
+sha256sums=('9e43efadc5fe2cf16292b26b0df4c142d0dec3b220b3fe7f3f754c170fd74d5d')
