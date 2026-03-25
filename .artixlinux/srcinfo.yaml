@@ -17,7 +17,6 @@ pkgbase:
     - docbook-xsl
     - pam
     - git
-    - systemd
   depends:
     - btrfs-progs
     - libxml2

@@ -10,7 +10,7 @@ arch=('x86_64')
 url="http://snapper.io"
 license=('GPL-2.0-only')
 depends=('btrfs-progs' 'libxml2' 'dbus' 'boost-libs' 'acl' 'json-c')
-makedepends=('boost' 'lvm2' 'libxslt' 'docbook-xsl' 'pam' 'git' 'systemd')
+makedepends=('boost' 'lvm2' 'libxslt' 'docbook-xsl' 'pam' 'git')
 optdepends=('pam: pam_snapper')
 backup=(
   'etc/conf.d/snapper'
@@ -39,7 +39,7 @@ prepare() {
 
 build() {
   cd $pkgname
-  ./configure --prefix=/usr \
+  ./configure --disable-systemd --prefix=/usr \
               --sbindir=/usr/bin \
               --with-conf=/etc/conf.d \
               --with-pam-security=/usr/lib/security \
@@ -56,4 +56,6 @@ package() {
     "$pkgdir"/etc/conf.d/snapper
 
   rm -rf "$pkgdir/usr/lib/snapper/testsuite/"
+
+  rm -rf "$pkgdir"/usr/lib/snapper/systemd-helper
 }
