@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.6.3-3
+    version: 6.6.3-4
     packages:
-      - kwin-6.6.3-3-x86_64.pkg.tar.zst
+      - kwin-6.6.3-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.6.3-2
