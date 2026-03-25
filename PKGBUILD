@@ -1,4 +1,5 @@
-# Maintainer: AndyRTR <andyrtr@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 # Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
@@ -12,7 +13,7 @@ pkgbase=libreoffice-fresh
 pkgname=('libreoffice-fresh-sdk' 'libreoffice-fresh')
 _LOver=26.2.1.2
 pkgver=26.2.1
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
