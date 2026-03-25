@@ -1,10 +1,10 @@
 ---
-version: 1.1.1-2
+version: 1.1.1-2.1
 pkgbase:
   name: mpvqt
   pkgdesc: A libmpv wrapper for QtQuick2 and QML
   pkgver: 1.1.1
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://invent.kde.org/libraries/mpvqt
   arch:
     - x86_64

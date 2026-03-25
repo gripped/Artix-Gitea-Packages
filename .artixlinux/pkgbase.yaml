@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.1.1-2
+    version: 1.1.1-2.1
     packages:
-      - mpvqt-1.1.1-2-x86_64.pkg.tar.zst
+      - mpvqt-1.1.1-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.1.1-1
