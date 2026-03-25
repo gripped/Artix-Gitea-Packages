@@ -1,4 +1,5 @@
-# Maintainer: AndyRTR <andyrtr@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 # Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
@@ -11,7 +12,7 @@ pkgbase=libreoffice-still
 pkgname=('libreoffice-still-sdk' 'libreoffice-still')
 _LOver=25.8.5.2
 pkgver=25.8.5
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 license=('MPL-2.0' 'LGPL-3.0-or-later')
 url="https://www.libreoffice.org/"
