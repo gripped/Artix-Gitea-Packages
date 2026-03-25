@@ -1,10 +1,10 @@
 ---
-version: 0.13.0-2
+version: 0.13.0-3
 pkgbase:
   name: snapper
   pkgdesc: A tool for managing BTRFS and LVM snapshots
   pkgver: 0.13.0
-  pkgrel: 2
+  pkgrel: 3
   url: http://snapper.io
   arch:
     - x86_64
@@ -17,6 +17,7 @@ pkgbase:
     - docbook-xsl
     - pam
     - git
+    - systemd
   depends:
     - btrfs-progs
     - libxml2
@@ -44,4 +45,4 @@ pkgbase:
     - d7ace894d7a59fb70c45c9314b8be1f89c730e1ddd2d6e28d24c5ea08ad2e7bf
 pkgname:
   - name: snapper
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

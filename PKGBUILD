@@ -1,15 +1,16 @@
-# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 # Contributor: Tom Kuther <gimpel@sonnenkinder.org>
 
 pkgname=snapper
 pkgver=0.13.0
-pkgrel=2
+pkgrel=3
 pkgdesc="A tool for managing BTRFS and LVM snapshots"
 arch=('x86_64')
 url="http://snapper.io"
 license=('GPL-2.0-only')
 depends=('btrfs-progs' 'libxml2' 'dbus' 'boost-libs' 'acl' 'json-c')
-makedepends=('boost' 'lvm2' 'libxslt' 'docbook-xsl' 'pam' 'git')
+makedepends=('boost' 'lvm2' 'libxslt' 'docbook-xsl' 'pam' 'git' 'systemd')
 optdepends=('pam: pam_snapper')
 backup=(
   'etc/conf.d/snapper'
@@ -43,8 +44,7 @@ build() {
               --with-conf=/etc/conf.d \
               --with-pam-security=/usr/lib/security \
               --disable-zypp \
-              --disable-silent-rules \
-              --disable-systemd
+              --disable-silent-rules
   make
 }
 
@@ -56,6 +56,4 @@ package() {
     "$pkgdir"/etc/conf.d/snapper
 
   rm -rf "$pkgdir/usr/lib/snapper/testsuite/"
-
-  rm -rf "$pkgdir"/usr/lib/snapper/systemd-helper
 }
