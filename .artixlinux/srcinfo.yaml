@@ -1,10 +1,10 @@
 ---
-version: 0.18.1-7
+version: 0.18.1-8
 pkgbase:
   name: utox
   pkgdesc: Lightweight Tox client
   pkgver: 0.18.1
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/uTox/uTox
   arch:
     - x86_64
@@ -47,4 +47,4 @@ pkgbase:
     - 0d63f414c82c295759fe304710a5e87b695b70d0796ddbb9d6df0dd6015cab53ee87ad0f4e137248de07b8bdfe4bf2c9e38a462fa06fb908e2171cc82fac0ce6
 pkgname:
   - name: utox
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

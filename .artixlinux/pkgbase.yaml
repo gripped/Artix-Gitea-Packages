@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.18.1-7
+    version: 0.18.1-8
     packages:
-      - utox-0.18.1-7-x86_64.pkg.tar.zst
+      - utox-0.18.1-8-x86_64.pkg.tar.zst
     debug: []
