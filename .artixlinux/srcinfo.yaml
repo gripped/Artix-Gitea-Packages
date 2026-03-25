@@ -1,10 +1,10 @@
 ---
-version: 45.2-1
+version: 45.2-2
 pkgbase:
   name: ngspice
   pkgdesc: Mixed-level/Mixed-signal circuit simulator based on Spice3f5, Ciber1b1, and Xspice
   pkgver: 45.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://ngspice.sourceforge.net
   arch:
     - x86_64
@@ -15,7 +15,9 @@ pkgbase:
     - libxt
     - libx11
     - ncurses
-    - gcc-libs
+    - libgcc
+    - libstdc++
+    - libgomp
     - readline
     - libxaw
   source:
@@ -29,4 +31,4 @@ pkgbase:
     - d5163652c6e7e088d3d3a95494a088f394f0c8efd71e80f15ac0f1d3dd238f17b7104be45390de39bf9aa2d41f1677ea7979685471cf9deaafc934c2a531c67a
 pkgname:
   - name: ngspice
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
