@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 4.3.0-5
+    version: 4.3.0-5.1
     packages:
-      - libqtxdg-4.3.0-5-x86_64.pkg.tar.zst
+      - libqtxdg-4.3.0-5.1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 4.3.0-4
