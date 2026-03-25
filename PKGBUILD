@@ -1,11 +1,12 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Daniel M. Capella <polyzen@archlinux.org>
 # Contributor: Jeremy "Ichimonji10" Audet <ichimonji10 at gmail dot com>
 # Contributor: pumpkin <pumpkin at mailoo dot org>
 # Contributor: Vsevolod Balashov <vsevolod at balashov dot name>
 
 pkgname=gunicorn
-pkgver=25.1.0
+pkgver=25.2.0
 pkgrel=1
 pkgdesc='WSGI HTTP Server for UNIX'
 arch=('any')
@@ -35,7 +36,7 @@ optdepends=(
   'python-tornado: for asynchronous request handling with tornado'
 )
 source=("git+https://github.com/benoitc/$pkgname.git#tag=$pkgver")
-b2sums=('77a976ca86533da8f24884f6e8b607bc6c4f61cb4f1a203dd99cda769a63e0d27c09cef0e614f6119a31992bcec4068ddadf04301f02977fe06f5f6ceed447a9')
+b2sums=('e28f3324c13a9b0f3c53e928aeb4f0d79de608085d6da178e64229a7d9ad967b40990f35c6157fe3ef9d06d03acc0fba3232f9614cfb19b7d6a0061fc003c48c')
 
 build() {
   cd $pkgname
