@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 595.58.03-1
+    packages:
+      - nvidia-utils-595.58.03-1-x86_64.pkg.tar.zst
+      - opencl-nvidia-595.58.03-1-x86_64.pkg.tar.zst
+      - nvidia-open-dkms-595.58.03-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 590.48.01-4
