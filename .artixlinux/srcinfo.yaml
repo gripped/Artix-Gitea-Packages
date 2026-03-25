@@ -1,9 +1,9 @@
 ---
-version: 22.1.1-1
+version: 22.1.2-1
 pkgbase:
   name: clang
   pkgdesc: C language family frontend for LLVM
-  pkgver: 22.1.1
+  pkgver: 22.1.2
   pkgrel: 1
   url: https://clang.llvm.org/
   arch:
@@ -13,7 +13,7 @@ pkgbase:
   checkdepends:
     - clang
   makedepends:
-    - llvm=22.1.1
+    - llvm=22.1.2
     - cmake
     - ninja
     - python-sphinx
@@ -29,8 +29,8 @@ pkgbase:
     - 'python: for scan-view and git-clang-format'
     - 'llvm: referenced by some clang headers'
   provides:
-    - clang-analyzer=22.1.1
-    - clang-tools-extra=22.1.1
+    - clang-analyzer=22.1.2
+    - clang-tools-extra=22.1.2
   conflicts:
     - clang-analyzer
     - clang-tools-extra
@@ -40,8 +40,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.1/llvm-project-22.1.1.src.tar.xz
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.1/llvm-project-22.1.1.src.tar.xz.sig
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.2/llvm-project-22.1.2.src.tar.xz
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.2/llvm-project-22.1.2.src.tar.xz.sig
     - 0001-Revert-clang-driver-When-fveclib-ArmPL-flag-is-in-us.patch
     - enable-fstack-protector-strong-by-default.patch
   validpgpkeys:
@@ -50,7 +50,7 @@ pkgbase:
     - FFB3368980F3E6BB5737145A316C56D064CACBA5
     - 71046D1E9C6656BDD61171873E83BABF4A4F9E85
   sha256sums:
-    - 9c6f37f6f5f68d38f435d25f770fc48c62d92b2412205767a16dac2c942f0c95
+    - 62f2f13ff25b1bb28ea507888e858212d19aafb65e8e72b4a65ee0629ec4ae0c
     - SKIP
     - 6f3cc7a4847e03d16ed90341bb71fec98427763ff2351f5344b2ca2ce62a604c
     - 93713470709ad0fbcf04aad29adb269478027c25e5a45e0ef3ca807dff409c12
