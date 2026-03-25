@@ -1,9 +1,9 @@
 ---
-version: 5.2.16-1
+version: 6.0.0-1
 pkgbase:
   name: krita
   pkgdesc: Edit and paint images
-  pkgver: 5.2.16
+  pkgver: 6.0.0
   pkgrel: 1
   url: https://krita.org
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - libheif
     - libjxl
     - libmypaint
-    - poppler-qt5
-    - python-pyqt5
-    - qt5-tools
+    - poppler-qt6
+    - python-pyqt6
+    - qt6-tools
     - sip
     - xsimd
     - zug
@@ -39,55 +39,54 @@ pkgbase:
     - gsl
     - harfbuzz
     - imath
-    - kcompletion5
-    - kconfig5
-    - kcoreaddons5
-    - kcrash5
-    - kguiaddons5
-    - ki18n5
-    - kitemviews5
-    - kwidgetsaddons5
-    - kwindowsystem5
+    - kcolorscheme
+    - kcompletion
+    - kconfig
+    - kcoreaddons
+    - kcrash
+    - kguiaddons
+    - ki18n
+    - kitemviews
+    - kwidgetsaddons
     - lcms2
     - libjpeg-turbo
-    - libkdcraw5
+    - libkdcraw
     - libpng
     - libtiff
     - libunibreak
     - libwebp
     - libx11
+    - libxkbcommon
     - mlt
     - opencolorio
     - openexr
     - openjpeg2
-    - qt5-base
-    - qt5-svg
-    - qt5-x11extras
-    - quazip-qt5
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-svg
+    - quazip-qt6
+    - wayland
     - zlib
   optdepends:
-    - 'kimageformats5: PSD support'
+    - 'kimageformats: PSD support'
     - 'krita-plugin-gmic: GMic plugin'
     - 'kseexpr: SeExpr generator layer'
     - 'libheif: HEIF filter'
     - 'libjxl: JPEG-XL filter'
     - 'libmypaint: support for MyPaint brushes'
-    - 'poppler-qt5: PDF filter'
-    - 'python-pyqt5: for the Python plugins'
+    - 'poppler-qt6: PDF filter'
+    - 'python-pyqt6: for the Python plugins'
   source:
-    - https://download.kde.org/stable/krita/5.2.16/krita-5.2.16.tar.gz
-    - https://download.kde.org/stable/krita/5.2.16/krita-5.2.16.tar.gz.sig
-    - https://invent.kde.org/graphics/krita/-/commit/2d71c476.patch
-    - xsimd-14.patch
+    - https://download.kde.org/stable/krita/6.0.0/krita-6.0.0.tar.xz
+    - https://download.kde.org/stable/krita/6.0.0/krita-6.0.0.tar.xz.sig
   validpgpkeys:
     - 05D00A8B73A686789E0A156858B9596C722EA3BD
     - E9FB29E74ADEACC5E3035B8AB69EB4CF7468332F
     - 064182440C674D9F8D0F6F8B4DA79EDA231C852B
   sha256sums:
-    - 3c2880a421f86dc9b58317db166b23a3bc6c64754f38c7deffe246fee1a13cb5
+    - 9eb18cee50d10d5f5e63304a1b96c1e1edd685d3ffa337dc19fc30c6280dfdbb
     - SKIP
-    - 10b41e078a70296c026c97efb7d3a56c99426a9b675ea5e691d0a14d69829eec
-    - d52a6d31e98c1de730c3a5ead5239a786d1b6f3a1aec731f449e9f429a5b8a94
 pkgname:
   - name: krita
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
