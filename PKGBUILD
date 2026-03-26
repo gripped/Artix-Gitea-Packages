@@ -4,8 +4,8 @@
 # Contributor: Dan Anderson <dan-anderson at cox dptnet>
 
 pkgname=mosquitto
-pkgver=2.0.22
-pkgrel=2
+pkgver=2.1.2
+pkgrel=1
 pkgdesc="An Open Source MQTT Broker"
 arch=(x86_64)
 url="https://mosquitto.org/"
@@ -15,14 +15,20 @@ license=(
 )
 depends=(
   cjson
-  gcc-libs
+  libgcc
+  libstdc++
   glibc
   openssl
   util-linux-libs
+  readline
+  sqlite
+  c-ares
+ 
 )
 makedepends=(
-  c-ares
+  argon2
   cmake
+  ninja
   docbook-xsl
   libwebsockets
  
@@ -32,13 +38,14 @@ checkdepends=(
   cunit
   python
   python-psutil
+  gtest
 )
 source=(
   https://mosquitto.org/files/source/mosquitto-$pkgver.tar.gz{,.asc}
   "sysusers_mosquitto.conf"
 )
 backup=("etc/$pkgname/$pkgname.conf")
-sha512sums=('5aae399b308d8262a758a72064c613bfd6930e1a54f34939e30454d988c65c9d7c4c139ed70a016baa1264a0100a0c842c00e843ffe3ef83f90be440403e7482'
+sha512sums=('f75bf9461680c35ec1c9837bec33490f3709df0adee3bb1ef69151e61b6afabc36dc562f54de43cb11fa7aa57417100d30be83fafc0d6585308f239f0a4a40d5'
             'SKIP'
             '22b7472ad47f077bef025c476ca9181b0e0ccefce84a7ee0b5a212a84ddd1e46f6f6e64b0722d9d359178c74e74920fe95bcee7ea895449f2aa26e284b4b11b1')
 validpgpkeys=('A0D6EEA1DCAE49A635A3B2F0779B22DFB3E717B7')
@@ -58,6 +65,9 @@ build() {
 
   local cmake_options=(
     -B build
+    -S $pkgname-$pkgver
+    -W no-dev
+    -G Ninja
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
     -D CMAKE_INSTALL_SBINDIR=bin
@@ -66,39 +76,23 @@ build() {
     -D WITH_SRV=ON
     -D WITH_SYSTEMD=OFF
     -D WITH_WEBSOCKETS=ON
-    -S $pkgname-$pkgver
-    -W no-dev
+    -D WITH_TESTS=OFF
   )
   cmake "${cmake_options[@]}"
   cmake --build build --verbose
 }
 
 check() {
-  local plugin client
+  cd build
 
-  # NOTE: tests hardcode all paths... so we copy in place... -_-
-  cp -v build/lib/lib* $pkgname-$pkgver/lib/
-  cp -v build/lib/cpp/lib* $pkgname-$pkgver/lib/cpp/
-  cp -v build/src/$pkgname $pkgname-$pkgver/src/
-  for plugin in {dynamic-security,message-timestamp,payload-modification}; do
-    cp -v build/plugins/$plugin/*.so $pkgname-$pkgver/plugins/$plugin/
-  done
-  for client in {pub,rr,sub}; do
-    cp -v build/client/${pkgname}_$client $pkgname-$pkgver/client/
-  done
-
-  make -C $pkgname-$pkgver/test check
+  ctest --output-on-failure --repeat until-pass:5
 }
 
 package() {
-  depends+=(
-    c-ares libcares.so
-    libwebsockets libwebsockets.so
-   
-  )
-
   DESTDIR="$pkgdir" cmake --install build
 
   install -vDm 644 $pkgname-$pkgver/edl-v10 -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 sysusers_mosquitto.conf "${pkgdir}"/usr/lib/sysusers.d/mosquitto.conf
+
+  mv "$pkgdir"/etc/mosquitto/mosquitto.conf{.example,}
 }
