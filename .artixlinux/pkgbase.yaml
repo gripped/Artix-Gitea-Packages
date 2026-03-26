@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 6.6.4-5
+    version: 6.6.4-6
     packages:
-      - telegram-desktop-6.6.4-5-x86_64.pkg.tar.zst
+      - telegram-desktop-6.6.4-6-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 6.6.4-4
