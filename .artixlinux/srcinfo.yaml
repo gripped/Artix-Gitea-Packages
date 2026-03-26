@@ -1,17 +1,20 @@
 ---
-version: 2.0.0-5
+version: 2.0.0-6
 pkgbase:
   name: python-requests-credssp
   pkgdesc: HTTPS CredSSP authentication with the requests library
   pkgver: 2.0.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/jborean93/requests-credssp
   arch:
     - any
   license:
-    - ISC
+    - MIT
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
     - python-pyopenssl
@@ -24,4 +27,4 @@ pkgbase:
     - d11a76bc9577f3054e5955aad513ee27ff2cf3a70414a1d4a81e721a7b40510d45fa33abc5957724ead6c04958a009153f670e154f38f32f2331cc14dd44ee27
 pkgname:
   - name: python-requests-credssp
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
