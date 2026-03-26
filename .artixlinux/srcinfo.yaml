@@ -1,17 +1,20 @@
 ---
-version: 1.4-5
+version: 1.4-6
 pkgbase:
   name: python-py3c
   pkgdesc: A Python 2/3 compatibility layer for C extensions
   pkgver: 1.4
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/encukou/py3c
   arch:
     - any
   license:
     - MIT
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
@@ -20,4 +23,4 @@ pkgbase:
     - db71db2c19a16ba5a430b676beb357faee5b67b161478932af13dd06be23b5505da85dbaf5b2447f95590fea55b833ee33fa19d3350ba3117f3364a9ab012ee6
 pkgname:
   - name: python-py3c
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
