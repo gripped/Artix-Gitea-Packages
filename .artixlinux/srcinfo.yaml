@@ -1,10 +1,10 @@
 ---
-version: 0.10.2-1
+version: 0.10.2-2
 pkgbase:
   name: bpf-linker
   pkgdesc: Simple BPF static linker
   pkgver: 0.10.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/aya-rs/bpf-linker
   arch:
     - x86_64
@@ -16,7 +16,7 @@ pkgbase:
     - llvm
   depends:
     - glibc
-    - gcc-libs
+    - libgcc
     - llvm-libs
     - clang
   source:
