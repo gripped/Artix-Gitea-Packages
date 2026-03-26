@@ -21,7 +21,6 @@ depends=(
 makedepends=(
   "meson"
   "scdoc"
-  "systemd"
   "wayland-protocols"
 )
 optdepends=("jq: support for 'makoctl menu'")

@@ -13,7 +13,6 @@ pkgbase:
   makedepends:
     - meson
     - scdoc
-    - systemd
     - wayland-protocols
   depends:
     - cairo
