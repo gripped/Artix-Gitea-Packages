@@ -1,10 +1,10 @@
 ---
-version: 1.2.0-2
+version: 1.2.0-3
 pkgbase:
   name: opencc
   pkgdesc: Library for Open Chinese Convert
   pkgver: 1.2.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/BYVoid/OpenCC
   arch:
     - x86_64
@@ -19,6 +19,8 @@ pkgbase:
     - marisa
     - pybind11
     - python-setuptools
+    - python-build
+    - python-installer
     - python-wheel
     - rapidjson
     - tclap
