@@ -17,7 +17,7 @@ pkgname=(
   python-audit
 )
 pkgver=4.1.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Userspace components of the audit framework'
 url="https://github.com/linux-audit/audit-userspace"
 arch=(x86_64)
@@ -126,6 +126,10 @@ package_audit() {
 
   # add tmpfiles.d integration for factory files and file permissions
   install -vDm 644 $pkgbase.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/$pkgbase.conf"
+
+  # move bash-completion to the correct location
+  install -vDm 644 "$pkgdir/etc/bash_completion.d/$pkgbase.bash_completion" "$pkgdir/usr/share/bash-completion/completions/$pkgbase"
+  rm -frv "$pkgdir/etc/bash_completion.d/"
 
   # remove legacy files
   rm -frv "$pkgdir/usr/lib/audit"
