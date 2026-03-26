@@ -2,31 +2,39 @@
 # Contributor: huyz
 
 pkgname=gemini-cli
-pkgver=0.34.0
-pkgrel=1
+pkgver=0.35.1
+pkgrel=3
 epoch=1
 pkgdesc="Open-source AI agent that brings the power of Gemini directly into your terminal"
 arch=(x86_64)
 url="https://github.com/google-gemini/gemini-cli"
 license=(Apache-2.0)
 depends=(
-  libgcc
-  libstdc++
   glib2
   glibc
+  libgcc
   libsecret
+  libstdc++
   nodejs
 )
 makedepends=(
   git
   jq
+  node-gyp
   npm
+  python
+)
+optdepends=(
+  'ripgrep: file content search'
+  'wl-clipboard: clipboard image pasting on Wayland'
+  'xclip: clipboard image pasting on X11'
+  'xdg-utils: opening URLs in default browser'
 )
 checkdepends=(
   vim
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('c5cb8a0d8dc5beaaee71c6290f1e64abd9994e8cd12b1b4619594fbb57f9097e6e4ad1254d13c64733c8536c86a74e48158e0a6f2e33281a74163841d36a6fcb')
+b2sums=('ed72d5eff3a1199e811ad0069fcbd0ed5af317febedfbe3ab9c01b090a1698fac312bccf6174906775edac9b10432772dd048640bd2ba9a4fb0ec5b414c5a377')
 
 prepare() {
   cd $pkgname
@@ -36,6 +44,13 @@ prepare() {
 build() {
   cd $pkgname
   npm run bundle
+  # Build keytar native addon to enable OS keychain integration via libsecret
+  # (GNOME Keyring, KDE Wallet, etc.) instead of falling back to a file-based
+  # keychain.
+  (
+    cd node_modules/keytar
+    node-gyp rebuild
+  )
   local bundled=$(jq '.dependencies + .optionalDependencies | keys' package.json)
   npm pkg set --json bundledDependencies="$bundled"
   npm pack
@@ -55,6 +70,8 @@ package() {
   cd $pkgname
   npm install --global --offline --prefix "$pkgdir/usr" \
     google-$pkgname-$pkgver.tgz
+  # Remove node-gyp build artifacts
+  rm -vr "$pkgdir/usr/lib/node_modules/@google/gemini-cli/node_modules/keytar/build/Release/obj.target"
   install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
