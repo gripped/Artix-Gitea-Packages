@@ -1,0 +1,34 @@
+---
+version: 1.8.2-1
+pkgbase:
+  name: lib32-libunwind
+  pkgdesc: Determine and manipulate the call-chain of a program (32-bit)
+  pkgver: 1.8.2
+  pkgrel: 1
+  url: https://www.nongnu.org/libunwind/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  depends:
+    - lib32-glibc
+    - lib32-xz
+    - lib32-zlib
+    - libunwind
+  provides:
+    - libunwind-coredump.so
+    - libunwind-ptrace.so
+    - libunwind-setjmp.so
+    - libunwind-x86.so
+    - libunwind.so
+  source:
+    - https://github.com/libunwind/libunwind/releases/download/v1.8.2/libunwind-1.8.2.tar.gz
+    - https://github.com/libunwind/libunwind/releases/download/v1.8.2/libunwind-1.8.2.tar.gz.asc
+  validpgpkeys:
+    - F86EB09F72717426F20D36470A0FF845B7DB3427
+  b2sums:
+    - b198b186c616adf1302d153a12949ceab07608f8133e42454e6b10bdf9518a514ef15d5ba52ef75b11e5f73fa330205accd415cfc30e6fa3ddd9724cbb088737
+    - SKIP
+pkgname:
+  - name: lib32-libunwind
+# generated with artixpkg 0.38.2-1-any
