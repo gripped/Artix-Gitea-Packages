@@ -1,0 +1,39 @@
+---
+version: 0.0.10-3
+pkgbase:
+  name: obfuscate
+  pkgdesc: Censor private information from any image
+  pkgver: 0.0.10
+  pkgrel: 3
+  url: https://apps.gnome.org/Obfuscate/
+  arch:
+    - x86_64
+  groups:
+    - gnome-circle
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - appstream
+    - git
+    - meson
+    - rust
+  depends:
+    - dconf
+    - glib2
+    - glibc
+    - graphene
+    - gtk4
+    - hicolor-icon-theme
+    - libadwaita
+    - libgcc
+  source:
+    - git+https://gitlab.gnome.org/World/obfuscate.git#tag=0.0.10
+    - obfuscate-dbus-activatable.patch
+    - obfuscate-new-window.patch
+  b2sums:
+    - 5b2ff8e5d07f982e94a77e6a8a1092acbe5f01eb8f82780381a48dee8891a9563fb7b93bd8d157693550de1e8b6b0446bbc3497a3e27739e0c96e6a8dd038fd8
+    - 4b55e18e632915522d21f8af1cb1de1eb908f28d9ab3c7a327ad0197aa4a21c5519ab2eefe890fbeb8ca8b3827cca4d051db21e2f011bdacb91540d15a235645
+    - f3f4409541a31e52229224fa55be3e42f95251f5e776cb32db61dd9dff0eaffdda219296e9f68caa0902e194ac7f357008bbb13085d16204f16e313defb68296
+pkgname:
+  - name: obfuscate
+# generated with artixpkg 0.38.2-1-any
