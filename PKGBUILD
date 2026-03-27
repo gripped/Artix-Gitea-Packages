@@ -1,16 +1,17 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 
 pkgname=fractal
 pkgver=13
-pkgrel=1
+pkgrel=2
 pkgdesc="Matrix group messaging app"
 arch=(x86_64)
 url="https://gitlab.gnome.org/World/fractal"
 license=(GPL-3.0-only)
 depends=(
   dconf
+  emoji-font
   fontconfig
-  gcc-libs
   gdk-pixbuf2
   glib2
   glibc
@@ -25,6 +26,7 @@ depends=(
   hicolor-icon-theme
   lcms2
   libadwaita
+  libgcc
   libpipewire
   libseccomp
   libshumate
@@ -43,6 +45,9 @@ makedepends=(
   rust
   xdg-desktop-portal
 )
+optdepends=(
+  'gst-plugins-good: for video support'
+)
 source=(
   $url/-/archive/$pkgver/$pkgname-$pkgver.tar.gz
 )
@@ -53,8 +58,7 @@ prepare() {
   # NOTE: usptream uses a custom CARGO_HOME from within meson
   export CARGO_HOME="$(pwd)/build/cargo-home"
   cd $pkgname-$pkgver
-  export RUSTUP_TOOLCHAIN=stable
-  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
 }
 
 build() {

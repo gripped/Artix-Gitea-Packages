@@ -1,10 +1,10 @@
 ---
-version: 13-1
+version: 13-2
 pkgbase:
   name: fractal
   pkgdesc: Matrix group messaging app
   pkgver: 13
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/World/fractal
   arch:
     - x86_64
@@ -21,8 +21,8 @@ pkgbase:
     - xdg-desktop-portal
   depends:
     - dconf
+    - emoji-font
     - fontconfig
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -37,6 +37,7 @@ pkgbase:
     - hicolor-icon-theme
     - lcms2
     - libadwaita
+    - libgcc
     - libpipewire
     - libseccomp
     - libshumate
@@ -44,6 +45,8 @@ pkgbase:
     - org.freedesktop.secrets
     - pango
     - sqlite
+  optdepends:
+    - 'gst-plugins-good: for video support'
   source:
     - https://gitlab.gnome.org/World/fractal/-/archive/13/fractal-13.tar.gz
   sha512sums:
@@ -52,4 +55,4 @@ pkgbase:
     - 6d3128996cadf47b89d95e47194aa9c028aed6ea6a53f92d2631feeda6f8547cf45dd9d5e92da5326d48e217a091b4d305c52aceefc1c7c5ef61632ae2f286d8
 pkgname:
   - name: fractal
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
