@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.15.0-2
+    version: 1.15.1-1
     packages:
-      - packer-1.15.0-2-x86_64.pkg.tar.zst
+      - packer-1.15.1-1-x86_64.pkg.tar.zst
     debug: []
