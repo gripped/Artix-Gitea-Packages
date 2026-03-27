@@ -1,10 +1,10 @@
 ---
-version: 0.13.1-1
+version: 0.13.1-2
 pkgbase:
   name: anari-sdk
   pkgdesc: ANARI Software Development Kit (SDK)
   pkgver: 0.13.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/KhronosGroup/ANARI-SDK
   arch:
     - x86_64
@@ -14,8 +14,9 @@ pkgbase:
     - cmake
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - python
   source:
     - git+https://github.com/KhronosGroup/ANARI-SDK#tag=v0.13.1
@@ -23,4 +24,4 @@ pkgbase:
     - cbcbe8a3ead5fb88b9a91d629316d334f284fb7efdf9c83b1b09bfde3738f419
 pkgname:
   - name: anari-sdk
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.38.2-1-any
