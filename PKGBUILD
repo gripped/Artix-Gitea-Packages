@@ -25,13 +25,16 @@ options=('!debug') # some interaction with FIXTURES_OPTIONS_CONFIG makes it
 source=(
   https://github.com/awesomized/libmemcached/archive/$pkgver/$pkgname-$pkgver.tar.gz
   $pkgname-1.1.4-memcapable-test.patch::https://github.com/awesomized/libmemcached/commit/664fada99d0260fc07c77b8514979fda2175e20c.patch
+  $pkgname-sphinx.patch::https://github.com/awesomized/libmemcached/commit/aa0a58dbe4eff7948b529f7f2fbe0f63cc823878.patch
 )
 sha256sums=('c477e1f6510e1dc698e84f3717ce690a8f65b94c616ecaa62306cce0f5e3116a'
-            '0cb231caf77e3a94c357643317fcb0ebe98582632ed19a61a8aa72c98bcdec02')
+            '0cb231caf77e3a94c357643317fcb0ebe98582632ed19a61a8aa72c98bcdec02'
+            '2e5797f79a3b0da95e8d31a6908480946de9a027c1a5a59ec35db551b50ad5a8')
 
 prepare() {
   # Fix issue with bin/memcapable test: https://github.com/awesomized/libmemcached/issues/161
   patch -Np1 -d $_name-$pkgver -i ../$pkgname-1.1.4-memcapable-test.patch
+  patch -Np1 -d $_name-$pkgver -i ../$pkgname-sphinx.patch
 }
 
 build() {
