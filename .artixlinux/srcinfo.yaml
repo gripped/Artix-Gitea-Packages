@@ -1,10 +1,10 @@
 ---
-version: 0.54.2-2
+version: 0.54.3-1
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
-  pkgver: 0.54.2
-  pkgrel: 2
+  pkgver: 0.54.3
+  pkgrel: 1
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -100,9 +100,9 @@ pkgbase:
   provides:
     - wayland-compositor
   source:
-    - Hyprland-0.54.2.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.54.2/source-v0.54.2.tar.gz
+    - Hyprland-0.54.3.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.54.3/source-v0.54.3.tar.gz
   sha256sums:
-    - 723d9cf86ad09b2f01d2cc403ac5799f9d6ad69a438b43a8f7b7589122eafd1b
+    - 3c20a191a6f23af75f9a8db636d690c6adc95931447f9d69fb20884ec04c63ee
 pkgname:
   - name: hyprland
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
