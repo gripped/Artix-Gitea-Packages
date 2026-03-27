@@ -1,0 +1,62 @@
+---
+version: 0.9.4-3
+pkgbase:
+  name: font-manager
+  pkgdesc: A simple font management application for GTK+ Desktop Environments
+  pkgver: 0.9.4
+  pkgrel: 3
+  url: https://fontmanager.github.io
+  arch:
+    - x86_64
+    - i686
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - gobject-introspection
+    - intltool
+    - meson
+    - nautilus
+    - vala
+    - yelp-tools
+  depends:
+    - cairo
+    - libcairo.so
+    - dconf
+    - fontconfig
+    - libfontconfig.so
+    - freetype2
+    - libfreetype.so
+    - glibc
+    - glib2
+    - libgio-2.0.so
+    - libglib-2.0.so
+    - libgobject-2.0.so
+    - graphene
+    - libgraphene-1.0.so
+    - gtk4
+    - harfbuzz
+    - libharfbuzz.so
+    - hicolor-icon-theme
+    - json-glib
+    - libgcc
+    - libsoup3
+    - libsoup-3.0.so
+    - libxml2
+    - libxml2.so
+    - pango
+    - libpango-1.0.so
+    - libpangoft2-1.0.so
+    - sqlite
+    - libsqlite3.so
+    - webkitgtk-6.0
+    - libwebkitgtk-6.0.so
+  optdepends:
+    - file-roller
+    - libnautilus-extension
+  source:
+    - https://github.com/FontManager/font-manager/releases/download/0.9.4/font-manager-0.9.4.tar.xz
+  sha256sums:
+    - 6a0899ac753f50d0779751828c62fa6220024213ebd2179b6f64a3a9bff51f96
+pkgname:
+  - name: font-manager
+# generated with artixpkg 0.38.2-1-any
