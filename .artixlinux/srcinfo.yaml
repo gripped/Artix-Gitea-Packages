@@ -1,10 +1,10 @@
 ---
-version: 2.10.13-1
+version: 2.10.13-2
 pkgbase:
   name: coin-or-cbc
   pkgdesc: COIN-OR branch-and-cut mixed integer programming solver
   pkgver: 2.10.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/coin-or/Cbc
   arch:
     - x86_64
@@ -21,7 +21,8 @@ pkgbase:
     - coin-or-coinutils
     - coin-or-osi
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - nauty
   source:
     - git+https://github.com/coin-or/Cbc#tag=releases/2.10.13
@@ -29,4 +30,4 @@ pkgbase:
     - 306ed55406540a69c5c2c1911f96df5c47a44524856b524294f04e9158d2d53a
 pkgname:
   - name: coin-or-cbc
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
