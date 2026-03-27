@@ -1,14 +1,17 @@
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=btop
 pkgver=1.4.6
-pkgrel=1
+pkgrel=2
 pkgdesc='A monitor of system resources, bpytop ported to C++'
 arch=(x86_64)
 url="https://github.com/aristocratos/$pkgname"
 license=(Apache-2.0)
-depends=(gcc-libs
-         glibc)
+depends=(glibc
+         hicolor-icon-theme
+         libgcc
+         libstdc++)
 makedepends=(lowdown
              rocm-smi-lib)
 optdepends=('rocm-smi-lib: AMD GPU support')
@@ -26,4 +29,3 @@ package() {
 	make DESTDIR="$pkgdir" PREFIX=/usr install
 	make DESTDIR="$pkgdir" PREFIX=/usr setcap
 }
-

@@ -1,10 +1,10 @@
 ---
-version: 1.4.6-1
+version: 1.4.6-2
 pkgbase:
   name: btop
   pkgdesc: A monitor of system resources, bpytop ported to C++
   pkgver: 1.4.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/aristocratos/btop
   arch:
     - x86_64
@@ -14,8 +14,10 @@ pkgbase:
     - lowdown
     - rocm-smi-lib
   depends:
-    - gcc-libs
     - glibc
+    - hicolor-icon-theme
+    - libgcc
+    - libstdc++
   optdepends:
     - 'rocm-smi-lib: AMD GPU support'
   source:
@@ -24,4 +26,4 @@ pkgbase:
     - 4beb90172c6acaac08c1b4a5112fb616772e214a7ef992bcbd461453295a58be
 pkgname:
   - name: btop
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
