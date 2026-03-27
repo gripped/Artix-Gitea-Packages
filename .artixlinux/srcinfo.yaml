@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-3
+version: 6.6.3-3.1
 pkgbase:
   name: plasma-integration
   pkgdesc: Qt Platform Theme integration plugins for the Plasma workspaces
   pkgver: 6.6.3
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
