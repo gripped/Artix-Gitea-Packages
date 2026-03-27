@@ -3,8 +3,8 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.2
-pkgrel=2
-_commit="099d2d316f351d647b78b60b9192440c64db8190"
+pkgrel=2.1
+_commit="89f5daad4bb2a5df598c0ef0d9eddbfc7b71217c"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -25,7 +25,7 @@ source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=$
         "sysactions.patch"
         "Artix_dna_spiral_dark_bw-4K.png"
         "background.edc"
-autopoint
+#autopoint
         "artix-icon.png")
 
 prepare() {
@@ -37,7 +37,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/e_main_c.patch"
   patch -Np1 -i "${srcdir}/tasks_edc.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
-sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
+#sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
   sed -i 's/About Operating System/Moksha Desktop/g' po/*.po*
@@ -50,7 +50,7 @@ sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [exter
 build() {
   CFLAGS+=" -Wno-incompatible-pointer-types"
   cd "$srcdir/${pkgname}"
-export AUTOPOINT=$srcdir/autopoint
+#export AUTOPOINT=$srcdir/autopoint
   ./autogen.sh
   ./configure --prefix=/usr --disable-bodhi
   make
@@ -64,7 +64,8 @@ check() {
 package_moksha() {
   depends=('efl>=1.27.0' 'terminology' 'moksha-menu' 'moksha-arandr' 'moksha-help' 'desktop-file-utils'
            'x11win-server' 'xorg-xinit' 'xsel' 'xclip' 'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy'
-           'xcb-util-keysyms' 'openssl-1.1' 'rrdtool')
+           'xcb-util-keysyms' 'rrdtool')
+           #'xcb-util-keysyms' 'openssl-1.1' 'rrdtool')
   optdepends=('moksha-module-mixer: Moksha pulse audio mixer'
               'moksha-extra-modules: additional modules for Moksha'
               'moksha-themes: additional themes for Moksha'
@@ -101,7 +102,7 @@ package_moksha-module-mixer() {
   install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COPYING
 }
 
-sha256sums=('ce0cb7ddba6b44444b02982274935fe163c635592a43845e1c8e8f969e6275df'
+sha256sums=('e213ed34f9ebb3f0f609af6d65a30c711ba1fa646f6686410f81d820b9e0d464'
             'SKIP'
             'f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb'
             'aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98'
@@ -114,6 +115,5 @@ sha256sums=('ce0cb7ddba6b44444b02982274935fe163c635592a43845e1c8e8f969e6275df'
             '8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c'
             '1b6f11541e730b1a8c28d32ce058f0c4129940f917a8952e9f80b27dec956c11'
             '6e44b16c0a4cddea98dafe9e922d9157bc1ec10c997f5c026b6d633eb1c06831'
-            'a1e3685bd8f98063529397eed51ab9f9e749488d32809e9e29ed92e8109090a9'
             'd3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95')
 
