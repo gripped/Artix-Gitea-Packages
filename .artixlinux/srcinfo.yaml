@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-2.1
+version: 0.4.2-2.2
 pkgbase:
   name: moksha
   pkgdesc: Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17
   pkgver: 0.4.2
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
