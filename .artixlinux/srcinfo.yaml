@@ -1,10 +1,10 @@
 ---
-version: 1.17.11-1
+version: 1.17.11-2
 pkgbase:
   name: coin-or-clp
   pkgdesc: COIN-OR linear programming solver
   pkgver: 1.17.11
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/coin-or/Clp
   arch:
     - x86_64
@@ -18,8 +18,9 @@ pkgbase:
     - coin-or-asl
     - coin-or-coinutils
     - coin-or-osi
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - suitesparse
   source:
     - git+https://github.com/coin-or/Clp#tag=releases/1.17.11
@@ -29,4 +30,4 @@ pkgbase:
     - bc7f730484a0f5c92e73e861c78141e5efdb015b7828740fef14656eedfb7541
 pkgname:
   - name: coin-or-clp
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
