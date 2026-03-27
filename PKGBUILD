@@ -1,15 +1,16 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Otreblan <otreblain@gmail.com>
 
 pkgname=draco
 pkgver=1.5.7
-pkgrel=1
+pkgrel=2
 pkgdesc="A library for compressing and decompressing 3D geometric meshes and point clouds"
 arch=('x86_64')
 url="https://github.com/google/draco"
 license=('Apache-2.0')
 makedepends=('cmake' 'ninja')
-depends=('gcc-libs' 'glibc')
+depends=('glibc' 'libgcc' 'libstdc++')
 options=('staticlibs')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
 sha256sums=('bf6b105b79223eab2b86795363dfe5e5356050006a96521477973aba8f036fe1')
