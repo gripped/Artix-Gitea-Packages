@@ -1,10 +1,10 @@
 ---
-version: 1.4.7-1
+version: 1.4.7-2
 pkgbase:
   name: flatpak-builder
   pkgdesc: Tool to build flatpaks from source
   pkgver: 1.4.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://flatpak.org
   arch:
     - x86_64
@@ -27,13 +27,13 @@ pkgbase:
     - elfutils
     - flatpak
     - fuse3
-    - gcc-libs
     - git
     - glib2
     - glibc
     - json-glib
     - libarchive
     - libelf
+    - libgcc
     - libxml2
     - libyaml
     - ostree
@@ -52,4 +52,4 @@ pkgbase:
     - 43edf343ef4ab7a57562923549dc06020c57c197b96ecb521a8cea3bf00afe61ef04d0bb226b74d0bf082db486783c6c556e521707f648098cb422c4a0c8884c
 pkgname:
   - name: flatpak-builder
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.3-1-any
