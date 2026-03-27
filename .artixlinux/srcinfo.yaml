@@ -1,10 +1,10 @@
 ---
-version: 0.3.19-1
+version: 0.3.19-2
 pkgbase:
   name: grilo
   pkgdesc: Framework that provides access to various sources of multimedia content
   pkgver: 0.3.19
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Projects/Grilo
   arch:
     - x86_64
@@ -18,9 +18,9 @@ pkgbase:
     - meson
     - vala
   depends:
-    - gcc-libs
     - glib2
     - glibc
+    - libgcc
     - libsoup3
     - libxml2
     - totem-pl-parser
@@ -36,4 +36,4 @@ pkgbase:
     - 0738ab5280c709a2bdeb3e704d41d698f66ce0a63d61c69aeec81c162ed7513dc85b5ed866554446df8209801880477e2ba9cbcf1b4efe7e9e7f4637ea8342fc
 pkgname:
   - name: grilo
-# generated with artixpkg 0.36.2-1-any
+# generated with artixpkg 0.38.3-1-any
