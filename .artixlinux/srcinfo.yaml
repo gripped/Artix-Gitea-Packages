@@ -1,10 +1,10 @@
 ---
-version: 0.29.2-1
+version: 0.29.2-2
 pkgbase:
   name: cbindgen
   pkgdesc: A tool for generating C bindings to Rust code
   pkgver: 0.29.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mozilla/cbindgen
   arch:
     - x86_64
@@ -18,8 +18,8 @@ pkgbase:
     - cargo
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
   options:
     - '!lto'
   source:
@@ -28,4 +28,4 @@ pkgbase:
     - 35a8701948006c362f385c89da78aa2dac33007ac512232e743a0f4c7c3491b4e753200d11ab8738d9b207778c1b41c328aec0c2cf663ca0569778779be9ed45
 pkgname:
   - name: cbindgen
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
