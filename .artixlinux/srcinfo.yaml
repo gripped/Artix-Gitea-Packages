@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-2
+version: 0.4.2-2.1
 pkgbase:
   name: moksha
   pkgdesc: Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17
   pkgver: 0.4.2
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
@@ -30,7 +30,7 @@ pkgbase:
   options:
     - lto
   source:
-    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=099d2d316f351d647b78b60b9192440c64db8190
+    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=89f5daad4bb2a5df598c0ef0d9eddbfc7b71217c
     - moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git
     - page_000.patch
     - page_040.patch
@@ -43,10 +43,9 @@ pkgbase:
     - sysactions.patch
     - Artix_dna_spiral_dark_bw-4K.png
     - background.edc
-    - autopoint
     - artix-icon.png
   sha256sums:
-    - ce0cb7ddba6b44444b02982274935fe163c635592a43845e1c8e8f969e6275df
+    - e213ed34f9ebb3f0f609af6d65a30c711ba1fa646f6686410f81d820b9e0d464
     - SKIP
     - f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb
     - aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98
@@ -59,7 +58,6 @@ pkgbase:
     - 8cd61b2686995f45c79799651511c1da61c80a47ed6187fc47843a6d0d024c2c
     - 1b6f11541e730b1a8c28d32ce058f0c4129940f917a8952e9f80b27dec956c11
     - 6e44b16c0a4cddea98dafe9e922d9157bc1ec10c997f5c026b6d633eb1c06831
-    - a1e3685bd8f98063529397eed51ab9f9e749488d32809e9e29ed92e8109090a9
     - d3451714f3f4751e168aee8c5030ac4f63a2f99c0d1e68dd0f3243b6530e4a95
 pkgname:
   - name: moksha
@@ -79,7 +77,6 @@ pkgname:
       - xdg-user-dirs
       - xdg-dbus-proxy
       - xcb-util-keysyms
-      - openssl-1.1
       - rrdtool
     optdepends:
       - 'moksha-module-mixer: Moksha pulse audio mixer'
@@ -99,4 +96,4 @@ pkgname:
     depends:
       - moksha
       - pulseaudio
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
