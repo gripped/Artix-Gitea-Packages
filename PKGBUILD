@@ -8,7 +8,7 @@
 
 pkgname=conky
 pkgver=1.22.3
-pkgrel=2
+pkgrel=3
 pkgdesc='Light-weight system monitor for X, Wayland, and other things, too'
 arch=('x86_64')
 url='https://github.com/brndnmtthws/conky'
@@ -20,13 +20,14 @@ depends=(
   'cairo'
   'curl' libcurl.so
   'fontconfig'
-  'gcc-libs'
   'glib2'
   'glibc'
   'hicolor-icon-theme'
   'imlib2'
+  'libgcc'
   'libpulse' libpulse.so
   'librsvg' librsvg-2.so
+  'libstdc++'
   'libx11'
   'libxdamage'
   'libxext'
