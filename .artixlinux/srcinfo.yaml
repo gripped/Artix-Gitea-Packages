@@ -1,10 +1,10 @@
 ---
-version: 44.6-1
+version: 44.6-2
 pkgbase:
   name: file-roller
   pkgdesc: Create and modify archives
   pkgver: 44.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/FileRoller
   arch:
     - x86_64
@@ -35,7 +35,6 @@ pkgbase:
     - zip
   depends:
     - dconf
-    - gcc-libs
     - glib2
     - glibc
     - gtk4
@@ -43,6 +42,7 @@ pkgbase:
     - json-glib
     - libadwaita
     - libarchive
+    - libgcc
     - libnautilus-extension
     - pango
   optdepends:
@@ -67,4 +67,4 @@ pkgbase:
     - 5fb870628b5e35b0ebef613119df6d63a81e4c5f3a064b2b489b54a588dc4a3f46ffcd41a207ffaf23e223604bef82e133b683a0665be1661a54f708bf6f1db7
 pkgname:
   - name: file-roller
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.3-1-any
