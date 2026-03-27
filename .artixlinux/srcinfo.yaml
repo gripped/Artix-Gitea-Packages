@@ -1,10 +1,10 @@
 ---
-version: 3.12.10-1
+version: 3.12.10-2
 pkgbase:
   name: gthumb
   pkgdesc: Image browser and viewer for the GNOME Desktop
   pkgver: 3.12.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Gthumb
   arch:
     - x86_64
@@ -23,7 +23,6 @@ pkgbase:
     - cairo
     - dconf
     - exiv2
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -35,10 +34,12 @@ pkgbase:
     - hicolor-icon-theme
     - lcms2
     - libcolord
+    - libgcc
     - libheif
     - libjpeg-turbo
     - libjxl
     - libpng
+    - libstdc++
     - librsvg
     - libtiff
     - libwebp
@@ -54,4 +55,4 @@ pkgbase:
     - 71c6117d28e08d2704eddc0824e2d1f38aaaebf4eee25c501d4adb69c2a6877ffa02509368ef6887f731be8c9c598ef7a55f3feb96cc934fd9fc8149ee4bf329
 pkgname:
   - name: gthumb
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.3-1-any
