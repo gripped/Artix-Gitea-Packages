@@ -1,10 +1,10 @@
 ---
-version: 1.12.9-8
+version: 1.12.9-9
 pkgbase:
   name: leatherman
   pkgdesc: Collection of C++ and CMake utility libraries
   pkgver: 1.12.9
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/puppetlabs/leatherman
   arch:
     - x86_64
@@ -47,4 +47,4 @@ pkgbase:
     - bebf0124c300bc161c6e233fd68b6006e5361a0ffc09bcfbd9d880233bb66daef056b693d83f37a84cafbc403954ed92d75ff535c8f9cf04ac0bf7dcfae855c4
 pkgname:
   - name: leatherman
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.3-1-any
