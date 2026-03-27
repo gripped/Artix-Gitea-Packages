@@ -1,10 +1,10 @@
 ---
-version: 47.1-2
+version: 47.1-3
 pkgbase:
   name: gnome-bluetooth-3.0
   pkgdesc: GNOME Bluetooth Subsystem
   pkgver: 47.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://wiki.gnome.org/Projects/GnomeBluetooth
   arch:
     - x86_64
@@ -24,11 +24,11 @@ pkgbase:
   depends:
     - bluez
     - bluez-obex
-    - gcc-libs
     - glib2
     - glibc
     - gsound
     - gtk4
+    - libgcc
     - libadwaita
     - libnotify
     - upower
@@ -43,4 +43,4 @@ pkgbase:
     - fce98d0355c8b45cc36d264c2b6def51e073ff320cbf4ce18c37bf3f22b76e01755060e695fa1391a9f72e93c9863569f562246302f7ebab28bbcaa6b26518f5
 pkgname:
   - name: gnome-bluetooth-3.0
-# generated with artixpkg 0.36.3-2-any
+# generated with artixpkg 0.38.3-1-any
