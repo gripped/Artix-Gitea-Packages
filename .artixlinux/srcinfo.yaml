@@ -1,0 +1,35 @@
+---
+version: 0.1.1-4
+pkgbase:
+  name: futuresql
+  pkgdesc: Non-blocking Qt database framework
+  pkgver: 0.1.1
+  pkgrel: 4
+  url: https://kde.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - extra-cmake-modules
+  depends:
+    - glibc
+    - libstdc++
+    - qt6-base
+  provides:
+    - futuresql-qt6
+  conflicts:
+    - futuresql-qt6
+  replaces:
+    - futuresql-qt6
+  source:
+    - https://download.kde.org/stable/futuresql/futuresql-0.1.1.tar.xz
+    - https://download.kde.org/stable/futuresql/futuresql-0.1.1.tar.xz.sig
+  validpgpkeys:
+    - C3D7CAFBF442353F95F69F4AA81E075ABEC80A7E
+  sha256sums:
+    - e44ed8d5a9618b3ca7ba2983ed9c5f7572e6e0a5b199f94868834b71ccbebd43
+    - SKIP
+pkgname:
+  - name: futuresql
+# generated with artixpkg 0.38.2-1-any
