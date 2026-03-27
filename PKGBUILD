@@ -4,7 +4,7 @@
 
 pkgname=kded
 pkgver=6.24.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Extensible deamon for providing system level services'
 arch=(x86_64)
 url='https://community.kde.org/Frameworks'
