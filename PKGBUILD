@@ -1,10 +1,11 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 
 pkgbase=fltk
 pkgname=(fltk fltk-docs)
 pkgver=1.4.4
-pkgrel=3
+pkgrel=4
 pkgdesc="Graphical user interface toolkit for X"
 arch=(x86_64)
 license=('LGPL-2.0-only WITH FLTK-exception')
@@ -70,14 +71,19 @@ build() {
 
 package_fltk() {
   depends=(
+    cairo
+    dbus
     fontconfig libfontconfig.so
-    gcc-libs
+    glib2
     glibc
     glu
     hicolor-icon-theme
+    libdecor
+    libgcc
     libglvnd
     libjpeg-turbo
     libpng
+    libstdc++
     libx11
     libxcursor
     libxext
@@ -86,10 +92,10 @@ package_fltk() {
     libxinerama
     libxrender
     libxkbcommon
-    libdecor
     pango
-    cairo
     sh
+    wayland
+    zlib
   )
   provides=(
     libfltk_images.so
