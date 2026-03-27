@@ -1,10 +1,10 @@
 ---
-version: 0.8.3-3
+version: 0.8.3-4
 pkgbase:
   name: appstream-glib
   pkgdesc: Objects and methods for reading and writing AppStream metadata
   pkgver: 0.8.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://people.freedesktop.org/~hughsient/appstream-glib/
   arch:
     - x86_64
@@ -21,12 +21,12 @@ pkgbase:
     - curl
     - fontconfig
     - freetype2
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
     - gtk3
     - json-glib
+    - libgcc
     - libarchive
     - libyaml
     - pacman
@@ -47,4 +47,4 @@ pkgbase:
     - a356111d3daa1b62e8f0c67b4328c937f913b96fcc066d45a27a9bf0269db7aa3c71bfe5a4d11e0272aa7857c028766413adf293f8e8fdbc263162da6df4c6d1
 pkgname:
   - name: appstream-glib
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
