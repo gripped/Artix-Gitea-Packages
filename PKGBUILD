@@ -14,7 +14,6 @@ depends=('glibc')
 makedepends=('git' 'go')
 makedepends+=('yarn' 'nodejs-lts-iron' 'pnpm')  # makedepends for the UI
 source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
-        'consul.service'
         'consul.default'
         'consul.sysusers'
         'example.json'
@@ -22,7 +21,6 @@ source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
 install=consul.install
 backup=('etc/default/consul')
 sha512sums=('da9f7489e797e77f2aeea5f4aed0b7277b1fccf8ac2626b558c9f904db1f31f3e555e49770f4785cab470f0dcb86a3a26928ba611d809dbcf8a57c2a10b62910'
-            'c70b9d1556f6c7ecb2e915ab685f289cef0e31198bd2e50c74a0483bbfb387beec67334f539a90adbf68b61b07946e98b300ab8a8e26e53b35f4ab4894adeb04'
             'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
             'f6d66e970f7cdbba2f1a3d15d89df5dfa33810d6330dae0aaf42dee0938354667a505c39c65db74fe3c06c8f753bc6155a64419fa31b4445ccbe23f5e6a685c6'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348')
@@ -78,7 +76,6 @@ package() {
   install -D -m644 -o 0 -g 0 "${srcdir}/example.json" "${pkgdir}/usr/share/doc/consul/config.example.json"
   install -Dm755 "build/consul" "${pkgdir}/usr/bin/consul"
 
-  install -Dm644 "${srcdir}/consul.service" "${pkgdir}/usr/lib/systemd/system/consul.service"
   install -Dm644 "${srcdir}/consul.sysusers" "${pkgdir}/usr/lib/sysusers.d/consul.conf"
 
   install -Dm644 "LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
