@@ -1,10 +1,10 @@
 ---
-version: 2.11.13-1
+version: 2.11.13-2
 pkgbase:
   name: coin-or-coinutils
   pkgdesc: COIN-OR collection of utility classes
   pkgver: 2.11.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/coin-or/CoinUtils
   arch:
     - x86_64
@@ -20,10 +20,11 @@ pkgbase:
     - blas
     - bzip2
     - coin-or-data-sample
-    - gcc-libs
     - glibc
     - glpk
     - lapack
+    - libgcc
+    - libstdc++
     - zlib
   source:
     - git+https://github.com/coin-or/CoinUtils#tag=releases/2.11.13
@@ -31,4 +32,4 @@ pkgbase:
     - db83271f4f0bc489a75278ff4128a79e450035f0405873ec787d52ca6cbab6b4
 pkgname:
   - name: coin-or-coinutils
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
