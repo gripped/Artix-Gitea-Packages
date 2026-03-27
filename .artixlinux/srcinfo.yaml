@@ -1,10 +1,10 @@
 ---
-version: 0.108.12-1
+version: 0.108.12-2
 pkgbase:
   name: coin-or-osi
   pkgdesc: COIN-OR Open Solver Interface
   pkgver: 0.108.12
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/coin-or/Osi
   arch:
     - x86_64
@@ -17,12 +17,13 @@ pkgbase:
     - git
   depends:
     - coin-or-coinutils
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
   source:
     - git+https://github.com/coin-or/Osi#tag=releases/0.108.12
   sha256sums:
     - 103cc33037c77ac9c8ec7e5c1a7d4b67f5b082b36f39b0651f51a24e71a5e1e1
 pkgname:
   - name: coin-or-osi
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
