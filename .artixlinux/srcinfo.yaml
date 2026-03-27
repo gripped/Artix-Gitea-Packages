@@ -1,10 +1,10 @@
 ---
-version: 0.60.10-1
+version: 0.60.10-2
 pkgbase:
   name: coin-or-cgl
   pkgdesc: COIN-OR Cut Generation Library
   pkgver: 0.60.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/coin-or/Cgl
   arch:
     - x86_64
@@ -18,12 +18,13 @@ pkgbase:
     - coin-or-clp
     - coin-or-coinutils
     - coin-or-osi
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
   source:
     - git+https://github.com/coin-or/Cgl#tag=releases/0.60.10
   sha256sums:
     - bd3901eee3df06693b652b7431d4d7542dc69125c5ccc835b6def2dae5c6877f
 pkgname:
   - name: coin-or-cgl
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
