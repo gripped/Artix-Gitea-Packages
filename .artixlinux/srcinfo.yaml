@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-2
+version: 3.4.0-3
 pkgbase:
   name: libblockdev
   pkgdesc: A library for manipulating block devices
   pkgver: 3.4.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/storaged-project/libblockdev
   arch:
     - x86_64
@@ -18,7 +18,6 @@ pkgbase:
     - dosfstools
     - e2fsprogs
     - exfatprogs
-    - gcc-libs
     - glib2
     - glibc
     - gobject-introspection
@@ -28,6 +27,7 @@ pkgbase:
     - keyutils
     - libatasmart
     - libbytesize
+    - libgcc
     - libnvme
     - libyaml
     - lvm2
@@ -97,7 +97,6 @@ pkgname:
     depends:
       - cryptsetup
       - libcryptsetup.so
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - glibc
@@ -105,6 +104,7 @@ pkgname:
       - libkeyutils.so
       - libblockdev=3.4.0
       - libbd_utils.so
+      - libgcc
       - nss
       - util-linux-libs
       - libblkid.so
@@ -129,13 +129,13 @@ pkgname:
       - e2fsprogs
       - libext2fs.so
       - libe2p.so
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - glibc
       - libblockdev=3.4.0
       - libbd_utils.so
       - libbytesize
+      - libgcc
       - parted
       - util-linux-libs
       - libblkid.so
@@ -159,12 +159,12 @@ pkgname:
   - name: libblockdev-loop
     pkgdesc: A library for manipulating block devices - loop device support
     depends:
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - glibc
       - libblockdev=3.4.0
       - libbd_utils.so
+      - libgcc
     provides:
       - libbd_loop.so
   - name: libblockdev-lvm
@@ -172,13 +172,13 @@ pkgname:
     depends:
       - device-mapper
       - libdevmapper.so
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - glibc
       - libblockdev=3.4.0
       - libbd_utils.so
       - libblockdev.so
+      - libgcc
       - libyaml
       - libbytesize
     provides:
@@ -193,13 +193,13 @@ pkgname:
   - name: libblockdev-mdraid
     pkgdesc: A library for manipulating block devices - MDRAID support
     depends:
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - glibc
       - libblockdev=3.4.0
       - libbd_utils.so
       - libbytesize
+      - libgcc
       - mdadm
     provides:
       - libbd_mdraid.so
@@ -269,12 +269,12 @@ pkgname:
   - name: libblockdev-swap
     pkgdesc: A library for manipulating block devices - swap device support
     depends:
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - glibc
       - libblockdev=3.4.0
       - libbd_utils.so
+      - libgcc
       - util-linux-libs
       - libblkid.so
     provides:
@@ -286,4 +286,4 @@ pkgname:
       - libbytesize
       - python
       - python-gobject
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.3-1-any
