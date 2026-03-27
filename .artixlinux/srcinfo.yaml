@@ -1,12 +1,12 @@
 ---
-version: 1:48.1-1
+version: 1:48.1-2
 pkgbase:
   name: evince
   pkgdesc: Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt)
   pkgver: 48.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
-  url: https://apps.gnome.org/Evince
+  url: https://gitlab.gnome.org/GNOME/evince
   arch:
     - x86_64
   license:
@@ -26,7 +26,6 @@ pkgbase:
     - dconf
     - djvulibre
     - exempi
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -40,6 +39,7 @@ pkgbase:
     - gvfs
     - hicolor-icon-theme
     - libarchive
+    - libgcc
     - libgxps
     - libhandy
     - libsecret
@@ -65,4 +65,4 @@ pkgname:
   - name: evince-lib-docs
     pkgdesc: Document viewer (PDF, PostScript, XPS, djvu, dvi, tiff, cbr, cbz, cb7, cbt) (library API documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.3-1-any
