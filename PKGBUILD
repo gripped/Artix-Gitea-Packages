@@ -1,15 +1,17 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=bigsh0t
 pkgver=2.7
-pkgrel=1
+pkgrel=2
 pkgdesc='A collection of frei0r plugins for VR video, with support for Shotcut'
 arch=(x86_64)
 url='https://bitbucket.org/leo_sutic/bigsh0t'
 license=(GPL-2.0-only)
-depends=(gcc-libs)
+depends=(glibc
+         libgcc
+         libgomp
+         libstdc++)
 makedepends=(cmake
              python)
 source=($pkgname-$pkgver::https://bitbucket.org/leo_sutic/bigsh0t/get/$pkgver.tar.gz)
