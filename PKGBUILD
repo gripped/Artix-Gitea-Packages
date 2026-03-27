@@ -6,7 +6,7 @@ pkgbase=polkit-qt
 pkgname=(polkit-qt5
          polkit-qt6)
 pkgver=0.200.0
-pkgrel=2.2
+pkgrel=2.3
 pkgdesc='A library that allows developers to access PolicyKit API with a nice Qt-style API'
 arch=(x86_64)
 url='https://www.kde.org/'
@@ -33,7 +33,6 @@ build() {
 
   cmake -B build6 -S $pkgbase-1-$pkgver \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DQT_MAJOR_VERSION=6
   cmake --build build6
 }
