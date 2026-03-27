@@ -1,9 +1,9 @@
 ---
-version: 4.20.2-1
+version: 4.20.3-1
 pkgbase:
   name: orage
   pkgdesc: A simple calendar application with reminders for Xfce
-  pkgver: 4.20.2
+  pkgver: 4.20.3
   pkgrel: 1
   url: https://docs.xfce.org/apps/orage/start
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - libnotify
     - libical
   source:
-    - git+https://gitlab.xfce.org/apps/orage.git#tag=orage-4.20.2
+    - git+https://gitlab.xfce.org/apps/orage.git#tag=orage-4.20.3
   sha256sums:
-    - fd6aff3eaae88a0cda0363ffc6bfd2d7f3d2f1f285a81b521ae9d950a2afa0f8
+    - eda1ab1c426169c04601cf5ac423563723926020a8c09108c542257f17c0bd1d
 pkgname:
   - name: orage
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
