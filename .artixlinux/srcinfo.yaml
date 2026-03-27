@@ -1,9 +1,9 @@
 ---
-version: 580.142-1
+version: 580.142-1.1
 pkgbase:
   name: nvidia-580xx-utils
   pkgver: 580.142
-  pkgrel: 1
+  pkgrel: 1.1
   url: http://www.nvidia.com/
   arch:
     - x86_64
@@ -47,6 +47,7 @@ pkgname:
     provides:
       - vulkan-driver
       - nvidia-utils
+      - nvidia-utils=580.142
       - opengl-driver
       - nvidia-libgl
     conflicts:

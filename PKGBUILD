@@ -8,7 +8,7 @@
 pkgbase=nvidia-580xx-utils
 pkgname=('nvidia-580xx-utils' 'opencl-nvidia-580xx' 'nvidia-580xx-dkms')
 pkgver=580.142
-pkgrel=1
+pkgrel=1.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -120,7 +120,7 @@ package_nvidia-580xx-utils() {
         'xorg-server-devel: nvidia-xconfig'
     )
     conflicts=('nvidia-libgl' 'nvidia-utils')
-    provides=('vulkan-driver' 'nvidia-utils' 'opengl-driver' 'nvidia-libgl')
+    provides=('vulkan-driver' 'nvidia-utils' "nvidia-utils=${pkgver}" 'opengl-driver' 'nvidia-libgl')
     replaces=('nvidia-libgl')
     install="${pkgname}.install"
 
