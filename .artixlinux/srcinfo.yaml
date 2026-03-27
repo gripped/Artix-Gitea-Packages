@@ -1,10 +1,10 @@
 ---
-version: 1.9.5-1
+version: 1.9.5-2
 pkgbase:
   name: benchmark
   pkgdesc: A microbenchmark support library
   pkgver: 1.9.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/google/benchmark
   arch:
     - x86_64
@@ -13,11 +13,13 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
+    - libstdc++
   source:
     - https://github.com/google/benchmark/archive/v1.9.5/benchmark-1.9.5.tar.gz
   sha256sums:
     - 9631341c82bac4a288bef951f8b26b41f69021794184ece969f8473977eaa340
 pkgname:
   - name: benchmark
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
