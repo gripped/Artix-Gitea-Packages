@@ -1,10 +1,10 @@
 ---
-version: 1.1.1-13
+version: 1.1.1-14
 pkgbase:
   name: dssi
   pkgdesc: An API for audio processing plugins & softsynths with UIs
   pkgver: 1.1.1
-  pkgrel: 13
+  pkgrel: 14
   url: https://dssi.sourceforge.net/
   arch:
     - x86_64
@@ -17,10 +17,11 @@ pkgbase:
     - libsndfile
   depends:
     - alsa-lib
-    - gcc-libs
     - glibc
-    - liblo
     - jack
+    - libgcc
+    - liblo
+    - libstdc++
   optdepends:
     - 'libsamplerate: for trivial_sampler plugin'
     - 'libsndfile: for trivial_sampler plugin'
@@ -34,4 +35,4 @@ pkgbase:
     - f97f6f138d497fdd3bdda7f0258db43f6a85156406ab485d37aa7002866fe35a8165af5fc7c0c08f140e0f6bb2776594ce49a25836d166edd3b9e6ac4cd62f7c
 pkgname:
   - name: dssi
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.3-1-any
