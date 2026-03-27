@@ -1,21 +1,23 @@
 ---
-version: 3.14.1-1
+version: 3.14.1-2
 pkgbase:
   name: geos
   pkgdesc: C/C++ library for computational geometry
   pkgver: 3.14.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://libgeos.org/
   changelog: geos.changelog
   arch:
     - x86_64
   license:
-    - LGPL
+    - LGPL-2.1-only
   makedepends:
     - cmake
   depends:
-    - gcc-libs
     - bash
+    - glibc
+    - libgcc
+    - libstdc++
   options:
     - '!emptydirs'
   source:
@@ -24,4 +26,4 @@ pkgbase:
     - 3c20919cda9a505db07b5216baa980bacdaa0702da715b43f176fb07eff7e716
 pkgname:
   - name: geos
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
