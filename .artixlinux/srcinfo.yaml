@@ -1,10 +1,10 @@
 ---
-version: 25.04-2
+version: 25.04-3
 pkgbase:
   name: appmenu-gtk-module
   pkgdesc: Application Menu GTK Module
   pkgver: 25.04
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitlab.com/vala-panel-project/vala-panel-appmenu/
   arch:
     - x86_64
@@ -14,10 +14,12 @@ pkgbase:
     - git
     - meson
   depends:
-    - gcc-libs
+    - bash
+    - dconf
     - gdk-pixbuf2
     - glib2
     - glibc
+    - libgcc
     - gtk3
   source:
     - git+https://gitlab.com/vala-panel-project/vala-panel-appmenu#tag=25.04
@@ -27,4 +29,4 @@ pkgbase:
     - e8aff88851145085e24989cc99da9f631c593b506d0224225f3eb347d16c6455
 pkgname:
   - name: appmenu-gtk-module
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
