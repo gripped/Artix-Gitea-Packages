@@ -1,0 +1,26 @@
+---
+version: 0.9.0-5
+pkgbase:
+  name: cauchy
+  pkgdesc: A library for transforming Matlab/Octave files to C++ (with Eigen) and Matlab
+  pkgver: 0.9.0
+  pkgrel: 5
+  url: https://archlinux.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+    - eigen3
+  depends:
+    - glibc
+    - libgcc
+    - libstdc++
+  source:
+    - https://sources.archlinux.org/other/packages/cauchy/cauchy-0.9.0.tar.bz2
+  sha256sums:
+    - 7a0cd9ef17190c09f271454b0e698e2e82172ce9efb9ef662e4f7134863d9b56
+pkgname:
+  - name: cauchy
+# generated with artixpkg 0.38.2-1-any
