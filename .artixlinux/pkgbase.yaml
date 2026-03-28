@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,8 +50,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.2.5.r27.g6693f34-1
+    packages:
+      - deploytix-git-1.2.5.r27.g6693f34-1-x86_64.pkg.tar.zst
+      - deploytix-gui-git-1.2.5.r27.g6693f34-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
