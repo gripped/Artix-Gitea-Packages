@@ -1,0 +1,61 @@
+# Maintainer: superphenotype
+pkgbase=deploytix
+pkgname=('deploytix' 'deploytix-gui')
+pkgver=1.2.5
+pkgrel=1
+pkgdesc="Automated Artix Linux deployment installer for removable media and disks"
+arch=('x86_64')
+url="https://github.com/MasterGenotype/Deploytix"
+license=('GPL-3.0-or-later')
+makedepends=('cargo' 'git' 'libxkbcommon' 'libxcb' 'wayland' 'mesa')
+source=("deploytix::git+https://github.com/MasterGenotype/Deploytix.git")
+sha256sums=('SKIP')
+
+prepare() {
+    cd deploytix
+    export RUSTUP_TOOLCHAIN=stable
+    cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+    cd deploytix
+    export RUSTUP_TOOLCHAIN=stable
+    export CARGO_TARGET_DIR=target
+    cargo build --release --frozen --features gui
+}
+
+package_deploytix() {
+    pkgdesc="Automated Artix Linux deployment installer (CLI)"
+    depends=('gcc-libs')
+    optdepends=(
+        'dosfstools: EFI partition formatting (mkfs.vfat)'
+        'e2fsprogs: ext4 filesystem support'
+        'btrfs-progs: btrfs filesystem support'
+        'xfsprogs: xfs filesystem support'
+        'f2fs-tools: f2fs filesystem support'
+        'cryptsetup: LUKS encryption support'
+        'lvm2: LVM thin provisioning layout'
+        'grub: GRUB bootloader'
+        'artools: basestrap for Artix installation'
+    )
+    conflicts=('deploytix-git')
+
+    cd deploytix
+    install -Dm755 "target/release/deploytix" "$pkgdir/usr/bin/deploytix"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    install -Dm644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
+
+package_deploytix-gui() {
+    pkgdesc="Automated Artix Linux deployment installer (GUI)"
+    depends=('deploytix' 'libxkbcommon' 'libxcb' 'wayland' 'mesa')
+    conflicts=('deploytix-gui-git')
+
+    cd deploytix
+    install -Dm755 "target/release/deploytix-gui" "$pkgdir/usr/bin/deploytix-gui"
+    install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    sed 's|%BINDIR%|/usr/bin|g' deploytix-gui.desktop > deploytix-gui.desktop.out
+    install -Dm644 deploytix-gui.desktop.out "$pkgdir/usr/share/applications/deploytix-gui.desktop"
+    install -Dm644 com.deploytix.gui.policy "$pkgdir/usr/share/polkit-1/actions/com.deploytix.gui.policy"
+    sed -i 's|%BINDIR%|/usr/bin|g' "$pkgdir/usr/share/polkit-1/actions/com.deploytix.gui.policy"
+}

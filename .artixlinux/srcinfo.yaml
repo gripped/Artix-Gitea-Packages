@@ -1,0 +1,51 @@
+---
+version: 1.2.5-1
+pkgbase:
+  name: deploytix
+  pkgdesc: Automated Artix Linux deployment installer for removable media and disks
+  pkgver: 1.2.5
+  pkgrel: 1
+  url: https://github.com/MasterGenotype/Deploytix
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cargo
+    - git
+    - libxkbcommon
+    - libxcb
+    - wayland
+    - mesa
+  source:
+    - deploytix::git+https://github.com/MasterGenotype/Deploytix.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: deploytix
+    pkgdesc: Automated Artix Linux deployment installer (CLI)
+    depends:
+      - gcc-libs
+    optdepends:
+      - 'dosfstools: EFI partition formatting (mkfs.vfat)'
+      - 'e2fsprogs: ext4 filesystem support'
+      - 'btrfs-progs: btrfs filesystem support'
+      - 'xfsprogs: xfs filesystem support'
+      - 'f2fs-tools: f2fs filesystem support'
+      - 'cryptsetup: LUKS encryption support'
+      - 'lvm2: LVM thin provisioning layout'
+      - 'grub: GRUB bootloader'
+      - 'artools: basestrap for Artix installation'
+    conflicts:
+      - deploytix-git
+  - name: deploytix-gui
+    pkgdesc: Automated Artix Linux deployment installer (GUI)
+    depends:
+      - deploytix
+      - libxkbcommon
+      - libxcb
+      - wayland
+      - mesa
+    conflicts:
+      - deploytix-gui-git
+# generated with artixpkg 0.38.2-1-any
