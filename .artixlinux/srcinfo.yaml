@@ -1,9 +1,9 @@
 ---
-version: 1.13.1-1
+version: 1.13.2-1
 pkgbase:
   name: dunst
   pkgdesc: Customizable and lightweight notification-daemon
-  pkgver: 1.13.1
+  pkgver: 1.13.2
   pkgrel: 1
   url: https://dunst-project.org/
   arch:
@@ -12,6 +12,7 @@ pkgbase:
     - BSD
   makedepends:
     - libnotify
+    - wayland-protocols
   depends:
     - libxinerama
     - dbus
@@ -29,9 +30,9 @@ pkgbase:
   backup:
     - etc/dunst/dunstrc
   source:
-    - dunst-1.13.1.tar.gz::https://github.com/dunst-project/dunst/archive/v1.13.1.tar.gz
+    - dunst-1.13.2.tar.gz::https://github.com/dunst-project/dunst/archive/v1.13.2.tar.gz
   sha256sums:
-    - a578e5c2cdb546187355c710f1aa84c472e6e23828e692fe1cb0ebb9635b11a6
+    - c68645cecef4a45840cd67c19a18a3a21ecae6b331e9864c2b745c31aee5fc85
 pkgname:
   - name: dunst
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
