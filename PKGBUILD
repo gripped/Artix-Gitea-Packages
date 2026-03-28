@@ -1,12 +1,13 @@
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
-# Maintainer: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-device-libs comgr)
 epoch=2
 pkgver=7.2.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
@@ -100,7 +101,7 @@ build() {
 package_rocm-llvm() {
     pkgdesc='Radeon Open Compute - LLVM toolchain (llvm, clang, lld)'
     license=('Apache-2.0 WITH LLVM-exception')
-    depends=('rocm-core' 'perl' 'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit'
+    depends=('rocm-core' 'perl' 'glibc' 'libgcc' 'libstdc++' 'zlib' 'zstd' 'libffi' 'libedit'
              'ncurses' 'libxml2')
 
     DESTDIR="$pkgdir" cmake --install build
@@ -140,7 +141,7 @@ package_rocm-device-libs() {
 package_comgr() {
     pkgdesc='AMDGPU GPU Code Object Manager'
     license=('NCSA')
-    depends=('glibc' 'gcc-libs' 'zstd' 'zlib' 'ncurses'
+    depends=('glibc' 'libgcc' 'libstdc++' 'zstd' 'zlib' 'ncurses'
              'rocm-core' 'rocm-llvm' 'rocm-device-libs')
 
     DESTDIR="$pkgdir" cmake --install build-comgr

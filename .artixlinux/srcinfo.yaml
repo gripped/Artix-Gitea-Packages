@@ -1,9 +1,9 @@
 ---
-version: 2:7.2.0-1
+version: 2:7.2.0-2
 pkgbase:
   name: rocm-llvm
   pkgver: 7.2.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
@@ -39,7 +39,9 @@ pkgname:
     depends:
       - rocm-core
       - perl
-      - gcc-libs
+      - glibc
+      - libgcc
+      - libstdc++
       - zlib
       - zstd
       - libffi
@@ -58,11 +60,12 @@ pkgname:
       - NCSA
     depends:
       - glibc
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - zstd
       - zlib
       - ncurses
       - rocm-core
       - rocm-llvm
       - rocm-device-libs
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
