@@ -23,7 +23,7 @@ build() {
   make
 }
 
-package_tinydns() {
+package() {
   cd "$srcdir/$pkgname-master"
   backup=(etc/${pkgname}.conf)
   install -Dm755 ${pkgname} ${pkgdir}/usr/bin/${pkgname}
