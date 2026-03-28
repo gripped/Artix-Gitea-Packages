@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-1.1
+version: 6.6.3-2
 pkgbase:
   name: cinnamon-settings-daemon
   pkgdesc: Settings daemon for Cinnamon
   pkgver: 6.6.3
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/linuxmint/cinnamon-settings-daemon
   arch:
     - x86_64
@@ -19,7 +19,6 @@ pkgbase:
     - cinnamon-desktop
     - dconf
     - fontconfig
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -27,6 +26,7 @@ pkgbase:
     - hicolor-icon-theme
     - lcms2
     - libcanberra-pulse
+    - libgcc
     - libcolord
     - libcups
     - libgudev
@@ -50,4 +50,4 @@ pkgbase:
     - bd29dec8898b054c0b6e0be0bdb943e69867731076bca5171384b2640a9ffa9534d62d75105ce21e9b59fb5acd1b53c65de53e28162f6651eb08fa9c2b233fe3
 pkgname:
   - name: cinnamon-settings-daemon
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
