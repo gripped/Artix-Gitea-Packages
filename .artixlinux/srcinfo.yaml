@@ -1,10 +1,10 @@
 ---
-version: 6.6.3-1
+version: 6.6.3-2
 pkgbase:
   name: cinnamon-session
   pkgdesc: The Cinnamon session handler
   pkgver: 6.6.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/linuxmint/cinnamon-session
   arch:
     - x86_64
@@ -19,12 +19,12 @@ pkgbase:
     - bash
     - cinnamon-desktop
     - dconf
-    - gcc-libs
     - glib2
     - glibc
     - gtk3
     - hicolor-icon-theme
     - libcanberra
+    - libgcc
     - libglvnd
     - libice
     - libsm
@@ -44,4 +44,4 @@ pkgbase:
     - 9559ad84a78294adfea50d97c82979fb1b0309d739688096fcc41136d93aeaf677994848f8caf271e806c75aa12214cbd1acb7cf13bd3bd55d9fa523cf2cd525
 pkgname:
   - name: cinnamon-session
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
