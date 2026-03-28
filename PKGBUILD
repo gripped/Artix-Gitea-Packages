@@ -2,12 +2,12 @@
 
 pkgname=terminology
 pkgver=1.14.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="EFL based terminal emulator"
 arch=('x86_64')
 url="http://www.enlightenment.org/p.php?p=about/terminology"
 license=('BSD')
-depends=('efl>=1.26' 'openssl-1.1' 'libsndfile' 'libpulse')
+depends=('efl>=1.26' 'libsndfile' 'libpulse')
 makedepends=('git' 'meson' 'cmake')
 source=("git+http://git.enlightenment.org/enlightenment/$pkgname.git#commit=915e60c0184495c56b5de38b5d35ec14031ebade")
 
