@@ -5,7 +5,7 @@
 pkgname=libkscreen
 pkgver=6.6.3
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=2
+pkgrel=2.1
 pkgdesc='KDE screen management software'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
