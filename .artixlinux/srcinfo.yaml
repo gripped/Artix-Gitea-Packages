@@ -1,10 +1,10 @@
 ---
-version: 6.6.0-2
+version: 6.6.0-3
 pkgbase:
   name: cinnamon-control-center
   pkgdesc: A collection of configuration plugins used in cinnamon-settings
   pkgver: 6.6.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/linuxmint/cinnamon-control-center
   arch:
     - x86_64
@@ -22,13 +22,13 @@ pkgbase:
     - cinnamon-settings-daemon
     - colord
     - dconf
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
     - gnome-color-manager
     - gtk3
     - hicolor-icon-theme
+    - libgcc
     - libcolord
     - libgudev
     - libmm-glib
@@ -51,4 +51,4 @@ pkgbase:
     - 0521be583a47061f35d76474308269c821e7c5c5e7bcbf6fee7fd6e8b6ff0ef9d0ffd79ed2d397d3af1509ec284e3a2700430a41d2233568aac52b33446e5262
 pkgname:
   - name: cinnamon-control-center
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
