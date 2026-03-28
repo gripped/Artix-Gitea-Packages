@@ -17,6 +17,8 @@ pkgbase:
     - libs6.so
     - s6-rc
     - libs6rc.so
+    - s6-linux-init
+    - libs6_linux_init.so
   backup:
     - etc/s6-frontend.conf
   source:
