@@ -13,7 +13,7 @@ optdepends=(
 )
 provides=('tkg-gui-git')
 conflicts=('tkg-gui-git')
-source=("tkg-gui::git+ssh://git@github.com/MasterGenotype/tkg-gui.git")
+source=("tkg-gui::git+https://git@github.com/MasterGenotype/tkg-gui.git")
 sha256sums=('SKIP')
 
 prepare() {
