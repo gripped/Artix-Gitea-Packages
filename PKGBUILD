@@ -62,7 +62,7 @@ makedepends=(
   nasm
   nodejs
   python
-  rustup
+  rust
   unzip
   wasi-compiler-rt
   wasi-libc
@@ -170,16 +170,13 @@ build() {
 
   # Fix build with Clang 22
   patch -Np1 -i ../0003-Use-wasm32-wasip1-target.patch
-  xzcat ../../0004-update-rust-bindgen-to-fix-clang22-build.patch | patch -B .patchorigin -Np1
-  xzcat ../../0004-skia-m142-update.patch | patch -B .patchorigin -Np1
+  xzcat ../0004-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
+  xzcat ../0005-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
   export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
   export MOZ_NOSPAM=1
-
-  # Force an older toolchain
-  rustup default 1.93
 
   # malloc_usable_size is used in various parts of the codebase
   CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"

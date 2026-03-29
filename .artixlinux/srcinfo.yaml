@@ -24,7 +24,7 @@ pkgbase:
     - nasm
     - nodejs
     - python
-    - rustup
+    - rust
     - unzip
     - wasi-compiler-rt
     - wasi-libc
