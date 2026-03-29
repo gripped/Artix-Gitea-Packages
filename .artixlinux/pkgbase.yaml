@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,11 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 4.16.0-1
+    packages:
+      - z3-4.16.0-1-x86_64.pkg.tar.zst
+      - python-z3-solver-4.16.0-1-x86_64.pkg.tar.zst
+      - z3-java-4.16.0-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
