@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-portable-utils
 pkgver=2.3.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Tiny portable generic utilities.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-portable-utils/'
@@ -12,7 +12,7 @@ sha256sums=('cf08d71963c0ea1708cdd82bd40ad301154bccc59b68eefb428aa79b42273242')
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
-              --datadir=/etc \
+              --sysconfdir=/etc \
               --libexecdir=/usr/lib \
               --disable-allstatic \
               --disable-static \
