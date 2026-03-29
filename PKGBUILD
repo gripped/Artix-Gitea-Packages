@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-utils
 pkgver=2.6.4.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Tiny Linux-specific utilities.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-utils/'
@@ -13,7 +13,7 @@ sha256sums=('cc727f70d5e8780433a497acb7cb3100656b3126589ab02e9d2042006c794cf2')
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
-              --datadir=/etc \
+              --sysconfdir=/etc \
               --libexecdir=/usr/lib \
               --disable-allstatic \
               --disable-static \
