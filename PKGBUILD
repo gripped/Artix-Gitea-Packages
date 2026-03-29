@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=execline
 pkgver=2.9.8.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A small scripting language, to be used in place of a shell in non-interactive scripts.'
 arch=('x86_64')
 url='https://skarnet.org/software/execline'
@@ -14,7 +14,7 @@ sha256sums=('23350d10797909636060522607591cb4a2118328cb58c5e65fb19a2c0d47264e')
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
-              --datadir=/etc \
+              --sysconfdir=/etc \
               --disable-allstatic \
               --disable-static \
               --enable-pkgconfig \
