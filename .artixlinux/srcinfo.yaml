@@ -1,9 +1,9 @@
 ---
-version: 0.7.1-1
+version: 0.8.0-1
 pkgbase:
   name: python-eth-hash
   pkgdesc: The Ethereum hashing function, keccak256
-  pkgver: 0.7.1
+  pkgver: 0.8.0
   pkgrel: 1
   url: https://github.com/ethereum/eth-hash
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - python
     - python-pycryptodome
   source:
-    - git+https://github.com/ethereum/eth-hash.git#tag=v0.7.1
+    - git+https://github.com/ethereum/eth-hash.git#tag=v0.8.0
   sha512sums:
-    - da408aae72f29d1c069e564ab65802f89ffa33751adce4e1492e0965638a0b5b4db8505bca27f154ad9b826a5f23afc92e3c0c88f4dc1ac8e53a5569a839c1a4
+    - fc829456fd1499cf4365e95b6e02ff89e837d5492abc24fc6ce13a08522ff2a6ebf4c8d82c3f464b0c5e9077efdbb6d579b722e033a8e157acab4e3ff1fdf830
 pkgname:
   - name: python-eth-hash
 # generated with artixpkg 0.38.2-1-any
