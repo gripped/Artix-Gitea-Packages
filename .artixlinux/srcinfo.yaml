@@ -28,7 +28,7 @@ pkgbase:
   conflicts:
     - tkg-gui
   source:
-    - tkg-gui::git+ssh://git@github.com/MasterGenotype/tkg-gui.git
+    - tkg-gui::git+https://git@github.com/MasterGenotype/tkg-gui.git
   sha256sums:
     - SKIP
 pkgname:
