@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.2.0-2
+    version: 0.2.0-2.1
     packages:
-      - greetd-regreet-0.2.0-2-x86_64.pkg.tar.zst
+      - greetd-regreet-0.2.0-2.1-x86_64.pkg.tar.zst
     debug: []

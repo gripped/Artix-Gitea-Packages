@@ -1,10 +1,10 @@
 ---
-version: 0.2.0-2
+version: 0.2.0-2.1
 pkgbase:
   name: greetd-regreet
   pkgdesc: Clean and customizable greeter for greetd
   pkgver: 0.2.0
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/rharish101/ReGreet
   install: greetd-regreet.install
   arch:
@@ -32,7 +32,7 @@ pkgbase:
     - regreet.toml
   sha256sums:
     - 6ce1f948feb75e12436eccc41557ad6a7127672f0658a9c9fbd5a412cebafc8a
-    - 7780028e5774347793e8073c86bde7f38b70a9736dc7c5b0566d93aa7f0c252b
+    - b80b3eb31f8cc463d512c9db0eef899bdbe232d977429a8a12e95a3b6df2e387
 pkgname:
   - name: greetd-regreet
 # generated with artixpkg 0.38.2-1-any

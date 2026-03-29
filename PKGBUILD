@@ -3,7 +3,7 @@
 _orgname=ReGreet
 pkgname="greetd-${_orgname,,}"
 pkgver=0.2.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Clean and customizable greeter for greetd'
 url="https://github.com/rharish101/$_orgname"
 license=(GPL-3.0-or-later)
@@ -24,7 +24,7 @@ install=$pkgname.install
 source=("$url/archive/$pkgver/${pkgname}-${pkgver}.tar.gz"
         "${_orgname,,}.toml")
 sha256sums=('6ce1f948feb75e12436eccc41557ad6a7127672f0658a9c9fbd5a412cebafc8a'
-            '7780028e5774347793e8073c86bde7f38b70a9736dc7c5b0566d93aa7f0c252b')
+            'b80b3eb31f8cc463d512c9db0eef899bdbe232d977429a8a12e95a3b6df2e387')
 
 prepare() {
   cd "${_orgname}-${pkgver}"
