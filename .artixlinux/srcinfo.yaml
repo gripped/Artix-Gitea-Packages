@@ -1,10 +1,10 @@
 ---
-version: 3.5.3-2
+version: 3.5.3-3
 pkgbase:
   name: knot
   pkgdesc: High-performance authoritative-only DNS server
   pkgver: 3.5.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.knot-dns.cz/
   arch:
     - x86_64
@@ -15,12 +15,12 @@ pkgbase:
     - python-sphinx
   depends:
     - fstrm
-    - gcc-libs
     - glibc
     - gnutls
     - libbpf
     - libcap-ng
     - libedit
+    - libgcc
     - libidn2
     - libmaxminddb
     - libmnl
@@ -40,4 +40,4 @@ pkgbase:
     - 2b821b94e2f00d889f01c78ebb1e816e42efd4e1be150ab12a79379b77e2fd68b4500cc88c833056940d0065e9bbf5b346a2aed48e6087573106fd844d82242f
 pkgname:
   - name: knot
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any

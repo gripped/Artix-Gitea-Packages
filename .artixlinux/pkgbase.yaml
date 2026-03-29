@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.5.3-2
+    version: 3.5.3-3
     packages:
-      - knot-3.5.3-2-x86_64.pkg.tar.zst
+      - knot-3.5.3-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.5.3-2
