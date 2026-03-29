@@ -1,10 +1,10 @@
 ---
-version: 0.6.0.0-1
+version: 0.6.0.0-2
 pkgbase:
   name: s6-rc
   pkgdesc: A complete service manager for s6 systems.
   pkgver: 0.6.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/s6-rc/
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgbase:
     - 46d4a62959ef16097b84dcfb0c3b31a6ff49aa476d4aeec9c5b7bde1ce684901
 pkgname:
   - name: s6-rc
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
