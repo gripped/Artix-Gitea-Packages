@@ -1,0 +1,36 @@
+---
+version: r39-1
+pkgbase:
+  name: tkg-gui
+  pkgdesc: Graphical interface for building custom Linux kernels using the linux-tkg build system
+  pkgver: r39
+  pkgrel: 1
+  url: https://github.com/MasterGenotype/tkg-gui
+  arch:
+    - x86_64
+  license:
+    - unknown
+  makedepends:
+    - cargo
+    - git
+  depends:
+    - gcc-libs
+    - glibc
+    - libxkbcommon
+    - libxcb
+    - wayland
+    - mesa
+    - openssl
+  optdepends:
+    - 'base-devel: required by makepkg for kernel builds'
+  provides:
+    - tkg-gui-git
+  conflicts:
+    - tkg-gui-git
+  source:
+    - tkg-gui::git+ssh://git@github.com/MasterGenotype/tkg-gui.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: tkg-gui
+# generated with artixpkg 0.38.2-1-any
