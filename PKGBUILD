@@ -3,7 +3,7 @@
 
 pkgname=gitoxide
 pkgver=0.51.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="An idiomatic, lean, fast & safe pure Rust implementation of Git"
 url='https://github.com/Byron/gitoxide'
 arch=('x86_64')
