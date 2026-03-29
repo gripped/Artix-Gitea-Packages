@@ -1,10 +1,10 @@
 ---
-version: 0.5.13-2
+version: 0.5.14-1
 pkgbase:
   name: wireplumber
   pkgdesc: Session / policy manager implementation for PipeWire
-  pkgver: 0.5.13
-  pkgrel: 2
+  pkgver: 0.5.14
+  pkgrel: 1
   url: https://pipewire.pages.freedesktop.org/wireplumber/
   arch:
     - x86_64
@@ -14,13 +14,13 @@ pkgbase:
     - pipewire-audio
   makedepends:
     - doxygen
-    - gcc-libs
     - git
     - glib2
     - glib2-devel
     - glibc
     - gobject-introspection
     - graphviz
+    - libgcc
     - libpipewire
     - lua
     - meson
@@ -30,15 +30,15 @@ pkgbase:
     - python-sphinx
     - python-sphinx_rtd_theme
   source:
-    - git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#tag=0.5.13
+    - git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#tag=0.5.14
   b2sums:
-    - 3b4b3c1b8fd00ff7ed149fa893c4d467a2605d3eb5ef8c8c3e265bd20438db58464d5ede4f8deabb48f2200fca5616d8511e022c0c6497062b15cbdbae97c83e
+    - bdf2b17806b2ac30f4f40b4e1e35a9aecdf0660b24f75978e546e59d525bf4a97ad079a13d5b08d76d2d79d8b89f7093b777c5d92590ce2681490e3e114938e7
 pkgname:
   - name: wireplumber
     depends:
-      - libwireplumber=0.5.13-2
-      - gcc-libs
+      - libwireplumber=0.5.14-1
       - glibc
+      - libgcc
       - libglib-2.0.so
       - libgobject-2.0.so
       - libgio-2.0.so
@@ -55,8 +55,8 @@ pkgname:
   - name: libwireplumber
     pkgdesc: Session / policy manager implementation for PipeWire - client library
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
       - libglib-2.0.so
       - libgmodule-2.0.so
       - libgobject-2.0.so
@@ -66,4 +66,4 @@ pkgname:
       - libwireplumber-0.5.so
   - name: wireplumber-docs
     pkgdesc: Session / policy manager implementation for PipeWire - documentation
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
