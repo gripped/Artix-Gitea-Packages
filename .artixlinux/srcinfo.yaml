@@ -1,9 +1,9 @@
 ---
-version: 4.3.1-1
+version: 4.3.2-1
 pkgbase:
   name: python-fixtures
   pkgdesc: Python fixtures for testing / resource management
-  pkgver: 4.3.1
+  pkgver: 4.3.2
   pkgrel: 1
   url: https://github.com/testing-cabal/fixtures
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://github.com/testing-cabal/fixtures/archive/4.3.1/fixtures-4.3.1.tar.gz
+    - https://github.com/testing-cabal/fixtures/archive/4.3.2/fixtures-4.3.2.tar.gz
   b2sums:
-    - c302900848e1e5e9dbf39a09abc37b9518e2f0c2c41403e9542e678cd781268e1b0d60f73fe38dff2a85f1e146712c3789b7d8f672e9d231ae8792ccc1fdd65b
+    - e39042e831d0466e46bc26c035d0155dfddaa307123931f0b6b3a4aadafb96c018a38d88302eead1327140e38197fb52f2079493284c9ac9a27e90a126bd6ea3
 pkgname:
   - name: python-fixtures
 # generated with artixpkg 0.38.2-1-any
