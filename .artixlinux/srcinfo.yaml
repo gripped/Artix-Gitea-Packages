@@ -1,10 +1,10 @@
 ---
-version: 0.8.2-2
+version: 0.9.0-1
 pkgbase:
   name: python-httpx-ws
   pkgdesc: WebSocket support for HTTPX
-  pkgver: 0.8.2
-  pkgrel: 2
+  pkgver: 0.9.0
+  pkgrel: 1
   url: https://frankie567.github.io/httpx-ws/
   arch:
     - any
@@ -28,11 +28,11 @@ pkgbase:
     - python-httpx
     - python-wsproto
   source:
-    - git+https://github.com/frankie567/httpx-ws#tag=v0.8.2
+    - git+https://github.com/frankie567/httpx-ws#tag=v0.9.0
     - no-regex-commit.patch
   sha256sums:
-    - 2de7923746cab61eb9a6535a5062e80381bbac26a898c1599667af47ce356523
+    - aff180d97ba7067946671de28b08732a6458c9895b0ff6ac1c9b928fc47055a1
     - 13ffebbb4c916529420221d6bcb7073967b692d1d8f8bdd6e4266dfdcee9f0a9
 pkgname:
   - name: python-httpx-ws
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
