@@ -1,9 +1,9 @@
 ---
-version: 2.6.1-1
+version: 2.6.2-1
 pkgbase:
   name: udiskie
   pkgdesc: Removable disk automounter using udisks
-  pkgver: 2.6.1
+  pkgver: 2.6.2
   pkgrel: 1
   url: https://pypi.python.org/pypi/udiskie
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   optdepends:
     - 'libappindicator-gtk3: --appindicator support'
   source:
-    - udiskie-2.6.1.tar.gz::https://codeload.github.com/coldfix/udiskie/tar.gz/v2.6.1
+    - udiskie-2.6.2.tar.gz::https://codeload.github.com/coldfix/udiskie/tar.gz/v2.6.2
   sha256sums:
-    - 225a0316d56a33d8dc67607d8b2103d1d216feb304d72724d2512fb54eeedc66
+    - 9d758efd4e3706ce824e693708cce1e0a840dae9aa5b130e3592d3588da8279c
 pkgname:
   - name: udiskie
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
