@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-frontend
 pkgver=0.0.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A higher-level interface to the s6 ecosystem.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-frontend'
@@ -17,7 +17,7 @@ sha256sums=('2c1ac4f64b04400cd7c81cd9be222be52b07b7d8955a876b9f9f3f8c2328dfeb'
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
-              --datadir=/etc \
+              --sysconfdir=/etc \
               --libexecdir=/usr/lib \
               --disable-allstatic \
               --disable-static \
