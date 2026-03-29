@@ -21,13 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.13.0-3
+    version: 4.13.0-4
     packages:
-      - opencv-4.13.0-3-x86_64.pkg.tar.zst
-      - opencv-samples-4.13.0-3-x86_64.pkg.tar.zst
-      - python-opencv-4.13.0-3-x86_64.pkg.tar.zst
-      - opencv-cuda-4.13.0-3-x86_64.pkg.tar.zst
-      - python-opencv-cuda-4.13.0-3-x86_64.pkg.tar.zst
+      - opencv-4.13.0-4-x86_64.pkg.tar.zst
+      - opencv-samples-4.13.0-4-x86_64.pkg.tar.zst
+      - python-opencv-4.13.0-4-x86_64.pkg.tar.zst
+      - opencv-cuda-4.13.0-4-x86_64.pkg.tar.zst
+      - python-opencv-cuda-4.13.0-4-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
