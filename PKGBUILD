@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-rc
 pkgver=0.6.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-rc/'
@@ -15,7 +15,7 @@ sha256sums=('46d4a62959ef16097b84dcfb0c3b31a6ff49aa476d4aeec9c5b7bde1ce684901')
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
-              --datadir=/etc \
+              --sysconfdir=/etc \
               --libexecdir=/usr/lib \
               --disable-allstatic \
               --disable-static \
