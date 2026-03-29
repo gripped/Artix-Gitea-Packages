@@ -1,0 +1,30 @@
+---
+version: 0.9.1-2
+pkgbase:
+  name: greetd-tuigreet
+  pkgdesc: A console UI greeter for greetd
+  pkgver: 0.9.1
+  pkgrel: 2
+  url: https://github.com/apognu/tuigreet
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - scdoc
+  depends:
+    - glibc
+    - greetd
+    - libgcc
+  provides:
+    - greetd-greeter
+  source:
+    - https://github.com/apognu/tuigreet/archive/0.9.1/tuigreet-0.9.1.tar.gz
+    - tuigreet.tmpfiles
+  sha256sums:
+    - 14fd1fadeb84040eb31901da2b53a48aa55b0fdaccb36d96fa52ce2d2113667f
+    - 8f83aee7874aab5d06981a1d1cd05df906368a79dbca90d157a33a2f023b67d3
+pkgname:
+  - name: greetd-tuigreet
+# generated with artixpkg 0.38.2-1-any
