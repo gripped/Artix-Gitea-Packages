@@ -3,7 +3,7 @@
 _orgname=ReGreet
 pkgname="greetd-${_orgname,,}"
 pkgver=0.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Clean and customizable greeter for greetd'
 url="https://github.com/rharish101/$_orgname"
 license=(GPL-3.0-or-later)
@@ -11,10 +11,10 @@ arch=(x86_64)
 depends=(wayland-compositor
          greetd
          cairo
-         gcc-libs
          gdk-pixbuf2
          glib2
          glibc
+         libgcc
          gtk4
          pango)
 makedepends=(cargo)

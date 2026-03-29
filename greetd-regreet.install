@@ -1,8 +1,3 @@
-post_install() {
-    _pkgname=regreet
-    echo "Sample configuration file installed at /usr/share/doc/$_pkgname/$_pkgname.sample.toml"
-}
-
 post_upgrade() {
  if [ "`vercmp $2 0.1.1-3`" -lt 0 ]; then
    cat << _EOF
@@ -15,4 +10,3 @@ post_upgrade() {
 _EOF
  fi
 }
-
