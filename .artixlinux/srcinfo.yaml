@@ -1,10 +1,10 @@
 ---
-version: 1.1.1-2
+version: 1.1.1-3
 pkgbase:
   name: python-watchfiles
   pkgdesc: Simple, modern and high performance file watching and code reload in Python
   pkgver: 1.1.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/samuelcolvin/watchfiles
   arch:
     - x86_64
@@ -20,8 +20,8 @@ pkgbase:
     - python-installer
     - python-maturin
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - python
     - python-anyio
   source:
@@ -30,4 +30,4 @@ pkgbase:
     - df9831559c0e0bf91b436763aea2a8b7cf85477d33bbe9427118c2b7ef5c6af235c18740f9cdd73b31629de6ec2f2b8b1acdf78da05921d5d0ad3f8deba9b230
 pkgname:
   - name: python-watchfiles
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
