@@ -1,10 +1,10 @@
 ---
-version: 2.14.5.1-1
+version: 2.14.5.1-2
 pkgbase:
   name: skalibs
   pkgdesc: A general-purpose utility library for secure, small C development
   pkgver: 2.14.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.skarnet.org/software/skalibs/
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - fa359c70439b480400a0a2ef68026a2736b315025a9d95df69d34601fb938f0f
 pkgname:
   - name: skalibs
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
