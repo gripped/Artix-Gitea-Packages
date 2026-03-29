@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2026.02.03-5
+    version: 2026.02.03-6
     packages:
-      - zathura-pdf-mupdf-2026.02.03-5-x86_64.pkg.tar.zst
+      - zathura-pdf-mupdf-2026.02.03-6-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

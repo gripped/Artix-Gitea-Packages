@@ -1,10 +1,10 @@
 ---
-version: 2026.02.03-5
+version: 2026.02.03-6
 pkgbase:
   name: zathura-pdf-mupdf
   pkgdesc: PDF support for Zathura (MuPDF backend) (Supports PDF, ePub, and OpenXPS)
   pkgver: 2026.02.03
-  pkgrel: 5
+  pkgrel: 6
   url: https://pwmt.org/projects/zathura-pdf-mupdf/
   arch:
     - x86_64
