@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 20250719-1.3
+    packages:
+      - pambase-20250719-1.3-any.pkg.tar.zst
     debug: []
   system:
     version: 20250719-1
