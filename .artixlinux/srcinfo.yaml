@@ -1,9 +1,9 @@
 ---
-version: 4.4-1
+version: 4.5.1-1
 pkgbase:
   name: re2c
   pkgdesc: A tool for generating C-based recognizers from regular expressions
-  pkgver: 4.4
+  pkgver: 4.5.1
   pkgrel: 1
   url: https://re2c.org
   arch:
@@ -14,12 +14,13 @@ pkgbase:
     - cmake
     - python
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
   source:
-    - https://github.com/skvadrik/re2c/archive/4.4/re2c-4.4.tar.gz
+    - https://github.com/skvadrik/re2c/archive/4.5.1/re2c-4.5.1.tar.gz
   b2sums:
-    - 6cd791c3c51cc8651cd48b2fb52998c25cc6497c3257893ec70ec003e40f9c76893d00fa81f83b4d975f110de8e58418af63112f337969cd9b36059b11115cc9
+    - 0c054c4ad3e694a7784d8076e807a07f41c2315ba369fff8080911015b25e53c1164a2e8513d17be4a40e36eecb3d9de02fea377134a65ec206c67b691389ec8
 pkgname:
   - name: re2c
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
