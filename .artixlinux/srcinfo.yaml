@@ -1,10 +1,10 @@
 ---
-version: 2.14.0.1-1
+version: 2.14.0.1-2
 pkgbase:
   name: s6
   pkgdesc: skarnet.org's small & secure supervision software suite. Comes with an ultra-fast init replacement, process management tools, an asynchronous locking library, and more.
   pkgver: 2.14.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/s6/
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - cb6cc5ca87185ab72aa00857752b6b5436f7653e3d8812dc2704df020c212822
 pkgname:
   - name: s6
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
