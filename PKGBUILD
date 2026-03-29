@@ -2,7 +2,7 @@
 pkgbase=deploytix
 pkgname=('deploytix' 'deploytix-gui')
 pkgver=1.2.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Automated Artix Linux deployment installer for removable media and disks"
 arch=('x86_64')
 url="https://github.com/MasterGenotype/Deploytix"
@@ -38,6 +38,7 @@ package_deploytix() {
         'grub: GRUB bootloader'
         'artools: basestrap for Artix installation'
     )
+    provides=('deploytix-git')
     conflicts=('deploytix-git')
 
     cd deploytix
@@ -49,6 +50,7 @@ package_deploytix() {
 package_deploytix-gui() {
     pkgdesc="Automated Artix Linux deployment installer (GUI)"
     depends=('deploytix' 'libxkbcommon' 'libxcb' 'wayland' 'mesa')
+    provides=('deploytix-gui-git')
     conflicts=('deploytix-gui-git')
 
     cd deploytix

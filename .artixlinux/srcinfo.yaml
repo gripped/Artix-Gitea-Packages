@@ -1,10 +1,10 @@
 ---
-version: 1.2.5-1
+version: 1.2.5-2
 pkgbase:
   name: deploytix
   pkgdesc: Automated Artix Linux deployment installer for removable media and disks
   pkgver: 1.2.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/MasterGenotype/Deploytix
   arch:
     - x86_64
@@ -36,6 +36,8 @@ pkgname:
       - 'lvm2: LVM thin provisioning layout'
       - 'grub: GRUB bootloader'
       - 'artools: basestrap for Artix installation'
+    provides:
+      - deploytix-git
     conflicts:
       - deploytix-git
   - name: deploytix-gui
@@ -46,6 +48,8 @@ pkgname:
       - libxcb
       - wayland
       - mesa
+    provides:
+      - deploytix-gui-git
     conflicts:
       - deploytix-gui-git
 # generated with artixpkg 0.38.2-1-any
