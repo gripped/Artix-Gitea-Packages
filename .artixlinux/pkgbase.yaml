@@ -1,12 +1,12 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.2.1-1
+    version: 3.3.0-1
     packages:
-      - python-aiobotocore-3.2.1-1-any.pkg.tar.zst
+      - python-aiobotocore-3.3.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 3.2.1-1
