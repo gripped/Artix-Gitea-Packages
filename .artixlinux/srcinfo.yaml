@@ -27,4 +27,4 @@ pkgbase:
     - e7688a99ec23a475e9d63a2da5b881647eae2d7f46800a45d27b951c4ed85f8cf4af1afa6d8fe4f6aa453bc29b4b7748608e2c4f7da531213b343517394c5312
 pkgname:
   - name: ruby-lsp
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
