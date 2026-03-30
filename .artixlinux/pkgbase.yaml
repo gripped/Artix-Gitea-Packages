@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,8 +50,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2.44.4-2
+    packages:
+      - gdk-pixbuf2-noglycin-2.44.4-2-x86_64.pkg.tar.zst
+      - gdk-pixbuf2-noglycin-docs-2.44.4-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
