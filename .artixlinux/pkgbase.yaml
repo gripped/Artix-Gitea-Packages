@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 128.1-1
+    version: 128.1-2
     packages:
-      - cjs-128.1-1-x86_64.pkg.tar.zst
+      - cjs-128.1-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
