@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2:2025.11.05-2
+    version: 2:2025.11.05-3
     packages:
-      - re2-2:2025.11.05-2-x86_64.pkg.tar.zst
+      - re2-2:2025.11.05-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

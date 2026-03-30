@@ -1,10 +1,10 @@
 ---
-version: 2:2025.11.05-2
+version: 2:2025.11.05-3
 pkgbase:
   name: re2
   pkgdesc: Fast, safe, thread-friendly regular expression engine
   pkgver: 2025.11.05
-  pkgrel: 2
+  pkgrel: 3
   epoch: 2
   url: https://github.com/google/re2
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - git
     - cmake
   depends:
-    - gcc-libs
-    - glibc
     - abseil-cpp
+    - glibc
+    - libgcc
   provides:
     - libre2.so
   source:
