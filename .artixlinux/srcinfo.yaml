@@ -1,10 +1,10 @@
 ---
-version: 2.5.0-3
+version: 2.5.0-3.1
 pkgbase:
   name: collada-dom
   pkgdesc: COLLADA Document Object Model (DOM) C++ Library
   pkgver: 2.5.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/rdiankov/collada-dom/
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 24bddd4c9663cf763114d5371f89f569ff320a9bee757e2d701913dbdaad1327f980e0c877900beb47fdfeca08b96fae2015699810cac269bcd73b2a879b9632
 pkgname:
   - name: collada-dom
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
