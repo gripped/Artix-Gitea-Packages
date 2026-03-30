@@ -1,9 +1,9 @@
 ---
-version: 4.32.0-1
+version: 4.33.0-1
 pkgbase:
   name: python-tox
   pkgdesc: Python virtualenv management and testing tool
-  pkgver: 4.32.0
+  pkgver: 4.33.0
   pkgrel: 1
   url: https://tox.readthedocs.io
   arch:
@@ -45,9 +45,9 @@ pkgbase:
     - 'python-pytest-mock: for pytest plugin to test tox and its plugins'
     - 'python-re-assert: for pytest plugin to test tox and its plugins'
   source:
-    - git+https://github.com/tox-dev/tox.git#tag=4.32.0
+    - git+https://github.com/tox-dev/tox.git#tag=4.33.0
   sha512sums:
-    - 5432280cdcdfcfffa0820a1d081aad2e9b8dfe581c0025df5070ec3adbab663f36c95ba288bfbf77ef6e8f0c5f800196409ca1758994cc08da50a1f12f872e4f
+    - ec5618040ff5f70da10f8d2b216f178abba950ca09a192ebd40d6c19bf5d1215472ad3e850b5635331f02a2c74cf07c849757c858c10c36c5d0b28a01c058603
 pkgname:
   - name: python-tox
 # generated with artixpkg 0.38.2-1-any
