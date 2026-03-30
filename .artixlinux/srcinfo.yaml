@@ -1,9 +1,9 @@
 ---
-version: 1.16.2-1
+version: 1.17-1
 pkgbase:
   name: python-pypandoc
   pkgdesc: Thin wrapper for pandoc
-  pkgver: 1.16.2
+  pkgver: 1.17
   pkgrel: 1
   url: https://github.com/JessicaTegner/pypandoc
   arch:
@@ -18,15 +18,14 @@ pkgbase:
   makedepends:
     - git
     - python-build
+    - python-hatchling
     - python-installer
-    - python-poetry-core
-    - python-wheel
   depends:
     - pandoc
   source:
-    - git+https://github.com/JessicaTegner/pypandoc.git#tag=v1.16.2
+    - git+https://github.com/JessicaTegner/pypandoc.git#tag=v1.17
   sha512sums:
-    - 8cf029152894cdc507aaf45aaabe6dfa90558a7fd21c9a6c4a098a71801f67f2aea9e760f27a8c8abcad8ff153a94e5557929ae657379d754062f389135fe52d
+    - 66327609ec7002361d81d6712328be32cc416365092d18a04240be26ea446241b3b29d78c5d6acf8e4d231b079c76ae819199e3aed0ed2c7a2cb5304e4f77569
 pkgname:
   - name: python-pypandoc
 # generated with artixpkg 0.38.2-1-any
