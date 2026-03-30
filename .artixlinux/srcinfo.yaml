@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-2
+version: 0.5.0-3
 pkgbase:
   name: libopenshot
   pkgdesc: A video editing, animation, and playback library for C++, Python, and Ruby
   pkgver: 0.5.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/openshot/libopenshot
   arch:
     - x86_64
@@ -72,4 +72,4 @@ pkgname:
       - libprotobuf.so
       - zeromq
       - libzmq.so
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
