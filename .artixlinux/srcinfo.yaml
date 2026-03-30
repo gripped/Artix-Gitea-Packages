@@ -1,10 +1,10 @@
 ---
-version: 1.16.0-15
+version: 1.16.0-16
 pkgbase:
   name: trojan
   pkgdesc: An unidentifiable mechanism that helps you bypass GFW
   pkgver: 1.16.0
-  pkgrel: 15
+  pkgrel: 16
   url: https://github.com/trojan-gfw/trojan
   arch:
     - x86_64
@@ -38,4 +38,4 @@ pkgbase:
     - 0461507df046c51cf7127333a5b3266f8973ad30bcc570e1818daf81878e926338011d13c9bbc12ae7065ee77b68dfd8eb990199cc9e91f8a16b86ac23291801
 pkgname:
   - name: trojan
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
