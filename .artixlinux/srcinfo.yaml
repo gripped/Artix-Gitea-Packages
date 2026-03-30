@@ -1,10 +1,10 @@
 ---
-version: 3.13.0-4
+version: 3.13.0-5
 pkgbase:
   name: luarocks
   pkgdesc: Deployment and management system for Lua modules
   pkgver: 3.13.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://luarocks.org/
   install: luarocks.install
   arch:
@@ -53,6 +53,7 @@ pkgname:
       - coreutils
       - curl
       - lua
+      - lua-luarocks
       - unzip
       - zip
     optdepends:
