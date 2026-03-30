@@ -2,7 +2,7 @@
 
 pkgname=emptty
 pkgdesc="Dead simple CLI Display Manager on TTY"
-pkgver=0.16.0
+pkgver=0.16.1
 pkgrel=1
 arch=('x86_64')
 url="https://github.com/tvrzna/emptty"
@@ -27,5 +27,5 @@ package() {
   install -Dm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
 }
 
-sha256sums=('35a5d60d21b4496a7df1b14ce7f7b7be0be9dc1e54c1e86e17e49f6dd83732a8')
+sha256sums=('e85d0658fd793ad97be90af241451a9374b299d9525d2aeb57a6f83f10ad4931')
 
