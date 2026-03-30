@@ -1,10 +1,10 @@
 ---
-version: 3.1.0.cb09c56-2
+version: 3.1.0.cb09c56-3
 pkgbase:
   name: hiprt
   pkgdesc: Ray Tracing Library for HIP
   pkgver: 3.1.0.cb09c56
-  pkgrel: 2
+  pkgrel: 3
   url: https://gpuopen.com/hiprt/
   arch:
     - x86_64
@@ -18,11 +18,12 @@ pkgbase:
     - rocm-core
     - hip-runtime-amd
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
   source:
     - hiprt-3.1.0.cb09c56::git+https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT#tag=3.1.0.cb09c56
   sha256sums:
     - 6c60046f8d9406807063a1c5accc6ce85b03b694d818cc56f8d79f3b700bc27a
 pkgname:
   - name: hiprt
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
