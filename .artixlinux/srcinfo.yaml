@@ -1,10 +1,10 @@
 ---
-version: 6.6.4-6
+version: 6.6.4-7
 pkgbase:
   name: telegram-desktop
   pkgdesc: Official Telegram Desktop client
   pkgver: 6.6.4
-  pkgrel: 6
+  pkgrel: 7
   url: https://desktop.telegram.org/
   arch:
     - x86_64
@@ -26,25 +26,25 @@ pkgbase:
   depends:
     - abseil-cpp
     - ada
+    - boost-libs
     - ffmpeg
     - glib2
+    - glibc
     - hicolor-icon-theme
     - hunspell
     - kcoreaddons
     - libavif
     - libdispatch
+    - libgcc
     - libheif
     - libjxl
+    - libstdc++
     - libxcomposite
     - libxdamage
     - libxrandr
     - libxtst
     - lz4
     - minizip
-    - zlib
-    - libstdc++
-    - glibc
-    - libgcc
     - openal
     - openh264
     - openssl
@@ -55,6 +55,7 @@ pkgbase:
     - qt6-wayland
     - rnnoise
     - xxhash
+    - zlib
   optdepends:
     - 'geoclue: geoinformation support'
     - 'crow-translate: translation provider'
