@@ -58,4 +58,4 @@ repos:
     packages:
       - nbd-3.27.0-2-x86_64.pkg.tar.zst
     debug: []
-team: world
+team: galaxy
