@@ -1,10 +1,10 @@
 ---
-version: 2.1-6
+version: 2.1-6.1
 pkgbase:
   name: webrtc-audio-processing
   pkgdesc: AudioProcessing library based on Google's implementation of WebRTC
   pkgver: 2.1
-  pkgrel: 6
+  pkgrel: 6.1
   url: https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/
   arch:
     - x86_64
