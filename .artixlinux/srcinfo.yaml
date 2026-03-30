@@ -1,0 +1,55 @@
+---
+version: 2.61.4-1
+pkgbase:
+  name: librsvg-noglycin
+  pkgdesc: SVG rendering library, compatible with gdk-pixbuf2-noglycin
+  pkgver: 2.61.4
+  pkgrel: 1
+  url: https://wiki.gnome.org/Projects/LibRsvg
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - ttf-dejavu
+  makedepends:
+    - cargo-c
+    - gi-docgen
+    - git
+    - gobject-introspection
+    - llvm
+    - meson
+    - python-docutils
+    - rust
+    - vala
+  depends:
+    - cairo
+    - dav1d
+    - freetype2
+    - gdk-pixbuf2-noglycin
+    - glib2
+    - glibc
+    - harfbuzz
+    - libgcc
+    - libxml2
+    - pango
+  source:
+    - git+https://gitlab.gnome.org/GNOME/librsvg.git#tag=2.61.4
+  b2sums:
+    - 2e3839de21a227b1f548ee879fdf67eb60422a0632ba06ae6192997876504beead18248825d6b76336fb3435d7aadc291c788ad7fdc8d93058e140059edf8116
+pkgname:
+  - name: librsvg-noglycin
+    install: librsvg-noglycin.install
+    provides:
+      - librsvg-2.so
+      - librsvg
+    conflicts:
+      - librsvg
+  - name: librsvg-noglycin-docs
+    pkgdesc: SVG rendering library, compatible with gdk-pixbuf2-noglycin (documentation)
+    depends: []
+    provides:
+      - librsvg-docs
+    conflicts:
+      - librsvg-docs
+# generated with artixpkg 0.38.2-1-any
