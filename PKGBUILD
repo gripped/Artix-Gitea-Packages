@@ -1,11 +1,12 @@
-# Maintainer: Anatol Pomozov
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Anatol Pomozov
 # Contributor: 謝致邦 <Yeking@Red54.com>
 # Contributor: Alucryd <alucryd at gmail dot com>
 
 pkgname=android-tools
 pkgver=35.0.2
 _tag=${pkgver} # https://github.com/nmeum/android-tools sometimes carries extra patch version on top of the upstream versioning
-pkgrel=23
+pkgrel=24
 pkgdesc='Android platform tools'
 arch=(x86_64)
 url='http://tools.android.com/'
