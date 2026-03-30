@@ -1,30 +1,37 @@
 # Maintainer: Christian Hesse <mail@eworm.de>
-# Contributor: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 # Contributor: Gerhard Brauer <gerbra@archlinux.de>
 
 pkgname=nbd
-pkgver=3.26.1
+pkgver=3.27.0
 pkgrel=2
 pkgdesc='tools for network block devices, allowing you to use remote block devices over TCP/IP'
 arch=('x86_64')
 url='https://github.com/NetworkBlockDevice/nbd/'
 license=('GPL')
 depends=('glib2' 'gnutls' 'libnl')
-makedepends=('docbook-utils' 'docbook-sgml' 'perl-sgmls' 'autoconf-archive')
+makedepends=('git' 'docbook-utils' 'docbook-sgml' 'perl-sgmls' 'autoconf-archive')
 backup=('etc/nbd-server/config')
-source=("https://github.com/NetworkBlockDevice/${pkgname}/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz"
+source=("git+https://github.com/NetworkBlockDevice/nbd.git#tag=nbd-${pkgver}"
         'config'
         'sysusers_nbd.conf')
-sha256sums=('f0cf509fa5b20b1a07f7904eb637e9b47d3e30b6ed6f00075af5d8b701c78fef'
+sha256sums=('a096087af761016e80b91ffc6518ae1b2a8f72bb9fa738ffeb16f376e7ebee11'
             'ee2e9fbbeb8a8b9b71d16b6f32eb41788f6def9d00cc4a47897ed3cb97cdde7c'
             'c2259eba02b7e959476e4f7032f273c1972947dfdeb9019106e70ce8798b912d')
 
+prepare() {
+  cd "${srcdir}/${pkgname}"
+
+  # https://github.com/NetworkBlockDevice/nbd/issues/182
+  git revert -n \
+    'da5e07c057abbee8cc4d2beef03952c7a44fd9eb'
+
+  autoreconf -fi
+}
 
 build() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
-
-  echo > systemd/Makefile.am
+  cd "${srcdir}/${pkgname}"
 
   ./configure \
     --prefix=/usr \
@@ -32,20 +39,18 @@ build() {
     --sysconfdir=/etc \
     --enable-syslog
 
-  sed -i 's|automake-1.16|automake-1.17|' Makefile */Makefile
-  autoreconf -f
   make
 }
 
 # checks still fail...
 #check() {
-#  cd "${srcdir}/${pkgname}-${pkgver}"
+#  cd "${srcdir}/${pkgname}"
 #
 #  make check
 #}
 
 package() {
-  cd "${srcdir}/${pkgname}-${pkgver}"
+  cd "${srcdir}/${pkgname}"
 
   make DESTDIR="${pkgdir}" install
 

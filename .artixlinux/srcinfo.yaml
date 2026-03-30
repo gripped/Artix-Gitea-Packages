@@ -1,0 +1,35 @@
+---
+version: 3.27.0-2
+pkgbase:
+  name: nbd
+  pkgdesc: tools for network block devices, allowing you to use remote block devices over TCP/IP
+  pkgver: 3.27.0
+  pkgrel: 2
+  url: https://github.com/NetworkBlockDevice/nbd/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - git
+    - docbook-utils
+    - docbook-sgml
+    - perl-sgmls
+    - autoconf-archive
+  depends:
+    - glib2
+    - gnutls
+    - libnl
+  backup:
+    - etc/nbd-server/config
+  source:
+    - git+https://github.com/NetworkBlockDevice/nbd.git#tag=nbd-3.27.0
+    - config
+    - sysusers_nbd.conf
+  sha256sums:
+    - a096087af761016e80b91ffc6518ae1b2a8f72bb9fa738ffeb16f376e7ebee11
+    - ee2e9fbbeb8a8b9b71d16b6f32eb41788f6def9d00cc4a47897ed3cb97cdde7c
+    - c2259eba02b7e959476e4f7032f273c1972947dfdeb9019106e70ce8798b912d
+pkgname:
+  - name: nbd
+# generated with artixpkg 0.38.2-1-any
