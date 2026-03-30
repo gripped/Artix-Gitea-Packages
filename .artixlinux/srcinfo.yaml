@@ -1,10 +1,10 @@
 ---
-version: 1.12.3-3
+version: 1.12.3-4
 pkgbase:
   name: vigra
   pkgdesc: Computer vision library
   pkgver: 1.12.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://ukoethe.github.io/vigra
   arch:
     - x86_64
@@ -14,6 +14,7 @@ pkgbase:
     - python-pytest
   makedepends:
     - boost
+    - boost-libs
     - cmake
     - fftw
     - hdf5
@@ -64,4 +65,4 @@ pkgname:
       - python-numpy
       - python-scipy
       - vigra
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
