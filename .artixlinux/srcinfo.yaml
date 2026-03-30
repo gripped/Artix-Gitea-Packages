@@ -1,9 +1,9 @@
 ---
-version: 0.31.0-1
+version: 0.34.4-1
 pkgbase:
   name: ruby-async-container
   pkgdesc: Abstract container-based parallelism using threads and processes where appropriate
-  pkgver: 0.31.0
+  pkgver: 0.34.4
   pkgrel: 1
   url: https://github.com/socketry/async-container
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/socketry/async-container.git#tag=v0.31.0
+    - git+https://github.com/socketry/async-container.git#tag=v0.34.4
   sha256sums:
-    - e10ca24fe383d0c738c4b03b1fc0be7493f82ed9ad6f7b42ff4491307d637113
+    - 729c299a64ebe4a6754d8a1c50f056d16e222007994b1b666a6150de67d2c584
 pkgname:
   - name: ruby-async-container
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
