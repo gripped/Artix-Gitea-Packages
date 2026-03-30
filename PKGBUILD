@@ -5,7 +5,7 @@
 
 pkgname=cinnamon-desktop
 pkgver=6.6.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Library with common API for various Cinnamon modules'
 arch=(x86_64)
 url='https://github.com/linuxmint/cinnamon-desktop'
@@ -33,7 +33,7 @@ source=("git+https://github.com/linuxmint/cinnamon-desktop.git#tag=$pkgver")
 b2sums=('2d9762a60bc6c43f43e5bbcae4b07f60406dcf4de9ea82ca0c397a4ef0728a48702d4dc40deb6fae0e9329e6a16d589c3d0f1a54fa11ce8a9648407730f4c420')
 
 build() {
-  artix-meson $pkgname build
+  artix-meson build $pkgname -Dsystemd=disabled
   meson compile -C build
 }
 
