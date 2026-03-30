@@ -1,10 +1,10 @@
 ---
-version: 3.11.7-1
+version: 3.11.7-2
 pkgbase:
   name: python-orjson
   pkgdesc: Fast, correct Python JSON library supporting dataclasses and datetimes
   pkgver: 3.11.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ijl/orjson
   arch:
     - x86_64
@@ -22,8 +22,8 @@ pkgbase:
     - python-installer
     - rust
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - python
   source:
     - https://github.com/ijl/orjson/archive/3.11.7/orjson-3.11.7.tar.gz
@@ -33,4 +33,4 @@ pkgbase:
     - 6b410f8115e27cd8c3d5070b9ee7fd5846cce5ce535319d0072da7bbcb3048dec65edd89921b13e8de84da7500eecd9d05c18fb1827af854f4b606da425dcd31
 pkgname:
   - name: python-orjson
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
