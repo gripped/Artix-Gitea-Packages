@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.0.6-2
+    version: 2.0.6-3
     packages:
-      - rpi-imager-2.0.6-2-x86_64.pkg.tar.zst
+      - rpi-imager-2.0.6-3-x86_64.pkg.tar.zst
     debug: []

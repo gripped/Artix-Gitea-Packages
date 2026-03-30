@@ -1,10 +1,10 @@
 ---
-version: 2.0.6-2
+version: 2.0.6-3
 pkgbase:
   name: rpi-imager
   pkgdesc: Raspberry Pi Imaging Utility
   pkgver: 2.0.6
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/raspberrypi/rpi-imager
   arch:
     - x86_64
@@ -17,11 +17,13 @@ pkgbase:
     - qt6-svg
   depends:
     - curl
-    - gcc-libs
     - glibc
     - gnutls
     - hicolor-icon-theme
     - libarchive
+    - libgcc
+    - libstdc++
+    - liburing
     - polkit
     - qt6-base
     - qt6-declarative
@@ -38,4 +40,4 @@ pkgbase:
     - 0e1f638695ffe702efd7a8a66bc822787119af98eee6fc21dc6f134765de89d12f661b34a444e16b466b7397fb9098cee968520fd4d9e95c86e18f5708c496b1
 pkgname:
   - name: rpi-imager
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
