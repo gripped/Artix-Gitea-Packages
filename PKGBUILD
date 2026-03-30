@@ -3,7 +3,7 @@
 
 pkgname=khard
 pkgver=0.20.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Console address book manager'
 arch=(any)
 url=https://github.com/lucc/khard

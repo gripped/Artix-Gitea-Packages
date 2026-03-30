@@ -1,10 +1,10 @@
 ---
-version: 0.20.1-2
+version: 0.20.1-2.1
 pkgbase:
   name: khard
   pkgdesc: Console address book manager
   pkgver: 0.20.1
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/lucc/khard
   arch:
     - any
