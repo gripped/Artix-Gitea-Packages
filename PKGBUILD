@@ -1,6 +1,7 @@
-# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
-# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
-# Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Johannes Löthberg <johannes@kyriasis.com>
+# Contributor: Thore Bödecker <foxxx0@archlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
 # Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Paul Mattal <paul@mattal.com>
@@ -14,8 +15,8 @@
 #   +dovecot-fts-xapian
 
 pkgname=dovecot
-pkgver=2.4.2
-pkgrel=5
+pkgver=2.4.3
+pkgrel=2
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -75,7 +76,7 @@ source=(
   'dovecot.pam'
   'dovecot.install'
 )
-sha256sums=('2cd62e4d22b9fc1c80bd38649739950f0dbda34fbc3e62624fb6842264e93c6e'
+sha256sums=('e0b30330fe51e47ecfcf641bc16041184d91bdd0ac3db789b7cef54e3a75ac9b'
             'SKIP'
             'b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87'
             '068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc'
@@ -135,7 +136,9 @@ build() {
     --with-libcap \
     --with-stemmer \
     --with-flatcurve \
-    --with-pcre2
+    --with-pcre2 \
+    --enable-experimental-mail-utf8 \
+    --enable-experimental-imap4rev2
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
