@@ -12,7 +12,7 @@ pkgbase=qbittorrent
 pkgname=(qbittorrent
          qbittorrent-nox)
 pkgver=5.1.4
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qbittorrent.org'
 license=(GPL-2.0-or-later
@@ -33,6 +33,7 @@ source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver
         qbittorrent.sysusers
         qbittorrent.tmpfiles)
 sha256sums=('3ec56cf992dfbf9a9d159ec9f9d79eb96a79908a5238ab48e7cdce2ece720f09'
+            'e0142e716098aa7047bf5160eee1dd839d84feaa30ec2c01b988c9bca16bd831'
             '0f148c97cc5fae83fc5022b5f2da374b60a1e2f62a4faf01265e73a9f208825a'
             '8bd2274ba9a6d414cd0170c8855cd6823fa026158ce7ed5eb74d661f21457238')
 validpgpkeys=('D8F3DA77AAC6741053599C136E4A2D025B7CC9A2') # sledgehammer999 <sledgehammer999@qbittorrent.org>
