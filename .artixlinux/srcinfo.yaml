@@ -1,10 +1,10 @@
 ---
-version: 0.2.1-5
+version: 0.2.1-6
 pkgbase:
   name: quickshell
   pkgdesc: Flexible toolkit for making desktop shells with QtQuick
   pkgver: 0.2.1
-  pkgrel: 5
+  pkgrel: 6
   url: https://git.outfoxxed.me/quickshell/quickshell
   arch:
     - x86_64
@@ -46,4 +46,4 @@ pkgbase:
     - a7e0a1029ff69d0f3b5788e042463735bacafd5fc369b1382143ffbd9d497964
 pkgname:
   - name: quickshell
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
