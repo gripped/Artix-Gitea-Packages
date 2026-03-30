@@ -1,10 +1,10 @@
 ---
-version: 1:2.0.12-1
+version: 1:2.0.12-2
 pkgbase:
   name: libtorrent-rasterbar
   pkgdesc: An efficient and feature complete C++ BitTorrent library implementation
   pkgver: 2.0.12
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.rasterbar.com/products/libtorrent/
   arch:
@@ -30,4 +30,4 @@ pkgbase:
     - 9f18a2e71b3924897f88b1c4148d3afe3bb29d1fe41a3166f0e3dfb64f1641f50ac25551e942241c7207e6692e4765df53e160ea9d3a8eca30879d6e299e9e1d
 pkgname:
   - name: libtorrent-rasterbar
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
