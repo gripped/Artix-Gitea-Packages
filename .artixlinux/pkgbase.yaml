@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,18 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 4.11.0-1
+    packages:
+      - syslog-ng-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-python-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-amqp-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-geoip2-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-kafka-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-mongodb-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-redis-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-smtp-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-snmp-4.11.0-1-x86_64.pkg.tar.zst
+      - syslog-ng-sql-4.11.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 4.11.0-1

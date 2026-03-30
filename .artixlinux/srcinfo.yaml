@@ -201,4 +201,4 @@ pkgname:
       - libdbi
       - openssl
       - syslog-ng
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
