@@ -1,10 +1,10 @@
 ---
-version: 2.11.0-2
+version: 2.11.0-3
 pkgbase:
   name: python-cramjam
   pkgdesc: Thin Python bindings to de/compression algorithms in Rust
   pkgver: 2.11.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/milesgranger/cramjam
   arch:
     - x86_64
@@ -23,8 +23,8 @@ pkgbase:
     - python-wheel
   depends:
     - bzip2
-    - gcc-libs
     - glibc
+    - libgcc
     - python
   options:
     - '!lto'
@@ -34,4 +34,4 @@ pkgbase:
     - 542ea349a7528d88935856d3eb562cd17bff713d7a41eab8d6812d78a3cb00ba
 pkgname:
   - name: python-cramjam
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
