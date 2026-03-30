@@ -5,8 +5,8 @@
 # Contributor: parchd <parchd@archlinux.info>
 
 pkgname=opensmtpd
-pkgver=7.8.0p0
-pkgrel=2
+pkgver=7.8.0p1
+pkgrel=1
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
 url="https://www.opensmtpd.org"
@@ -20,7 +20,7 @@ backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
 source=("git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=${pkgver}"
         opensmtpd.sysusers)
-sha256sums=('10131c5cc2dfce51d520e6847cb43d08e0043d87fafeb74b3531ca617ab4aced'
+sha256sums=('3c8081ef03b07b366d516ada002a3ae932e5839b41c5b57381aa903a6ce21afc'
             '955e25043dbbc266a496db10c5d5f25f70d5342bba0550915932c04068a4ca01')
 install="${pkgname}.install"
 
