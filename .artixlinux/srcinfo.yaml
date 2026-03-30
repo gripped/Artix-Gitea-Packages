@@ -1,10 +1,10 @@
 ---
-version: 3:2.41.5-3
+version: 3:2.41.5-4
 pkgbase:
   name: python-pydantic-core
   pkgdesc: Core validation logic for pydantic written in rust
   pkgver: 2.41.5
-  pkgrel: 3
+  pkgrel: 4
   epoch: 3
   url: https://github.com/pydantic/pydantic-core
   arch:
@@ -26,8 +26,8 @@ pkgbase:
     - python-installer
     - python-maturin
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - python
     - python-typing-inspection
     - python-typing_extensions
@@ -41,4 +41,4 @@ pkgbase:
     - 6a852a710509f8db92cabfb48d6b7b1b959c873f65f4cec4a35946dac943720f1e80f55021264847574e877a5f19353e95bc338deff432447d40ad836631e947
 pkgname:
   - name: python-pydantic-core
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

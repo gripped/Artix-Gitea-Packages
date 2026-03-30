@@ -5,15 +5,15 @@ _name=pydantic-core
 pkgname=python-pydantic-core
 # WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
 pkgver=2.41.5
-pkgrel=3
+pkgrel=4
 epoch=3
 pkgdesc="Core validation logic for pydantic written in rust "
 arch=(x86_64)
 url="https://github.com/pydantic/pydantic-core"
 license=(MIT)
 depends=(
-  gcc-libs
   glibc
+  libgcc
   python
   python-typing-inspection
   python-typing_extensions
@@ -67,4 +67,3 @@ package() {
   install -vDm 644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
- 
