@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,9 +50,8 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.4.0-14
-    packages:
-      - libopenshot-0.4.0-14-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy:
     version: 0.5.0-2
