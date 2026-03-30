@@ -41,4 +41,4 @@ pkgbase:
     - 7456c1c4fb2f00139d6d4896b67be5721fdb58239a824c3a65cbf34a82c76993b74b5f10c6a5476a8c9b810acee1203212d0add844d255d61554390108614463
 pkgname:
   - name: ruby-addressable
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
