@@ -3,7 +3,7 @@
 # Contributor: Xyne <gro xunilhcra enyx, backwards>
 pkgname=reflector
 pkgver=2023
-pkgrel=5
+pkgrel=5.1
 pkgdesc='A Python 3 module and script to retrieve and filter the latest Pacman mirror list.'
 arch=(any)
 license=(GPL-2.0-only)
@@ -12,34 +12,28 @@ depends=(python)
 makedepends=(python-build python-installer python-setuptools python-wheel)
 optdepends=('rsync: rate rsync mirrors')
 backup=(etc/xdg/reflector/reflector.conf)
-source=(https://xyne.dev/projects/reflector/src/reflector-2023.tar.xz{,.sig}
+source=($pkgname-$pkgver.tar.gz::https://gitea.artixlinux.org/corysanin/reflector/archive/v2023-5.1.tar.gz
         mp-fork.patch)
 
-sha512sums=('11aec550c15080695525409f11eae6d4b545df8b37a8e0727de939eefec2b2fa6aa95c5c3500a6c8a940b6060cdaf2526430ed47e01a3c6f098e1b77189eb479'
-            'SKIP'
+sha512sums=('2c94e0da795d3bfa80880f335d0b0a3f95cc1c6bee99469b62ca9c54469507a042bdaf8985ddb721ed6a7134c49d9e6c9eee8cffb375386ddf20fb90944b4095'
             '6bbb85a7e829b18ebc7451c38e7ef8ebb9c2d05dac7ab981fc8712b365867faa264eae177a0536a3ad72ffedbf5a6251fed4c6c834879b7e8ada9035ffbdb28e')
-b2sums=('24ee3610eb94e4412bceba40f4763def380028683358cb1016546a4d0bb12eaa69aba4e83b7998ebb74ee6f025f9f342901d076e44302da47d0ed14b727fb9c1'
-        'SKIP'
+b2sums=('00259af48eaa5acca59bceea99c03411cf88946ea5d210afea7970c94fbc8a4bf8d0baf0dde05b05f1e3e710c11fcabc820cae4ba7d207fbb0ba7d54377edc86'
         '37d9980afa27eaf80796d090327c0ce0f78772d4ea8a651bd2fe37af29f002dcff434d9839f930317c4d441cf4236d60ad95676489ae0a22dbe0c37bbae765ef')
 validpgpkeys=('D89FAAEB4CECAFD199A2F5E612C6F735F7A9A519')
 
 prepare() {
-  cd $pkgname-$pkgver
+  cd $pkgname
   patch -p1 < "${srcdir}/mp-fork.patch"
 }
 
 build() {
-  cd $pkgname-$pkgver
-  sed -e "s|https://archlinux.org|https://status.artixlinux.org|g" \
-      -e "s|Arch Linux|Artix Linux|g"  \
-      -e "s|extra/os/x86_64/extra.db|system/os/x86_64/system.db|g" \
-      -i Reflector.py
+  cd $pkgname
   python -m build --wheel --no-isolation
 }
 
 package ()
 {
-  cd $pkgname-$pkgver
+  cd $pkgname
   python -m installer --destdir="$pkgdir" dist/*.whl
   install -Dm644 "man/${pkgname}.1.gz" "${pkgdir}/usr/share/man/man1/${pkgname}.1.gz"
   install -Dm644 'reflector.conf' "$pkgdir/etc/xdg/reflector/reflector.conf"
