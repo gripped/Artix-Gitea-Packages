@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.5.857-6
+    version: 1.5.857-6.1
     packages:
-      - mumble-1.5.857-6-x86_64.pkg.tar.zst
-      - mumble-server-1.5.857-6-x86_64.pkg.tar.zst
+      - mumble-1.5.857-6.1-x86_64.pkg.tar.zst
+      - mumble-server-1.5.857-6.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.5.857-5
