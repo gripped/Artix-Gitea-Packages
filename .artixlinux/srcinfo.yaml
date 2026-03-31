@@ -1,10 +1,10 @@
 ---
-version: 0.16-7
+version: 0.16-8
 pkgbase:
   name: calamares-extensions
   pkgdesc: Distribution-independent installer framework extensions
   pkgver: 0.16
-  pkgrel: 7
+  pkgrel: 8
   url: https://gitea.artixlinux.org/artix/calamares-extensions
   arch:
     - x86_64
@@ -21,7 +21,7 @@ pkgbase:
     - kdialog
   depends:
     - bash
-    - gcc-libs
+    - libgcc
     - glibc
     - python
     - qt6-base
@@ -34,11 +34,11 @@ pkgname:
   - name: calamares-extensions
     depends:
       - bash
-      - gcc-libs
+      - libgcc
       - glibc
       - python
       - qt6-base
       - qt6-declarative
       - calamares
       - kdialog
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any

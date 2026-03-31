@@ -5,7 +5,7 @@ _commit=bc77da07495cf5c6815de692aa25228ee6d768ea
 
 pkgname=calamares-extensions
 pkgver=0.16
-pkgrel=7
+pkgrel=8
 pkgdesc='Distribution-independent installer framework extensions'
 arch=('x86_64')
 license=(
@@ -13,7 +13,7 @@ license=(
     'LGPL-2.1-only'
     'LGPL-3.0-or-later')
 url="https://gitea.artixlinux.org/artix/calamares-extensions"
-depends=('bash' 'gcc-libs' 'glibc' 'python' 'qt6-base' 'qt6-declarative')
+depends=('bash' 'libgcc' 'glibc' 'python' 'qt6-base' 'qt6-declarative')
 makedepends=('extra-cmake-modules' 'qt6-tools' 'git' 'qt6-translations' 'calamares' 'kdialog')
 source=("git+$url.git#commit=$_commit")
 sha256sums=('SKIP')
