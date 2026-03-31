@@ -1,10 +1,11 @@
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
-# Maintainer: Christian Heusel <christian@heusel.eu>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Contributor: Christian Heusel <christian@heusel.eu>
 # Contributor: Ranieri Althoff <ranisalt+aur at gmail dot com>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocm-opencl-runtime
-pkgver=7.2.0
+pkgver=7.2.1
 pkgrel=1
 pkgdesc='OpenCL implementation for AMD'
 arch=('x86_64')
@@ -12,7 +13,7 @@ url='https://github.com/ROCm/clr'
 license=('MIT')
 depends=(
   'comgr'
-  'gcc-libs'
+  'libgcc'
   'glibc'
   'hsa-rocr'
   'mesa'
@@ -25,7 +26,7 @@ makedepends=('git' 'rocm-cmake')
 provides=('opencl-driver')
 _git='https://github.com/ROCm/rocm-systems'
 source=("rocm-systems::git+$_git#tag=rocm-$pkgver")
-sha256sums=('e411176a9be2af4e6a542061cf2697350a848e769f1e35255c0cd6694c5e1ef6')
+sha256sums=('912710f54b8d3e1403fcaac0cbda7fb40710ad60429031fbb9a131256d807187')
 _dir_name='rocm-systems/projects/clr'
 
 build() {
