@@ -5,17 +5,17 @@
 
 pkgname=rocm-core
 pkgver=7.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc='AMD ROCm core package (version files)'
 license=('MIT')
 arch=('x86_64')
 depends=(
-    'gcc-libs'
     'glibc'
-    'python-pyelftools'
-    'python-pyaml'
-    'python-prettytable'
+    'libgcc'
     'python'
+    'python-prettytable'
+    'python-pyaml'
+    'python-pyelftools'
 )
 makedepends=('cmake')
 source=("rocm-$pkgver.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/rocm-$pkgver.tar.gz"

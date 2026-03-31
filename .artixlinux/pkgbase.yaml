@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,8 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 7.2.1-2
+    packages:
+      - rocm-core-7.2.1-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.2.1-1

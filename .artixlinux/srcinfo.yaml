@@ -1,10 +1,10 @@
 ---
-version: 7.2.1-1
+version: 7.2.1-2
 pkgbase:
   name: rocm-core
   pkgdesc: AMD ROCm core package (version files)
   pkgver: 7.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/en/latest/
   arch:
     - x86_64
@@ -13,12 +13,12 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
     - glibc
-    - python-pyelftools
-    - python-pyaml
-    - python-prettytable
+    - libgcc
     - python
+    - python-prettytable
+    - python-pyaml
+    - python-pyelftools
   source:
     - rocm-7.2.1.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/rocm-7.2.1.tar.gz
     - rocm-ld.conf
