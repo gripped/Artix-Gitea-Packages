@@ -1,10 +1,10 @@
 ---
-version: 0.9.3-1
+version: 0.9.3-2
 pkgbase:
   name: hyprlock
   pkgdesc: hyprland’s GPU-accelerated screen locking utility
   pkgver: 0.9.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprlock
   arch:
     - x86_64
@@ -54,4 +54,4 @@ pkgbase:
     - 22e7346486d0f6a1ab46d9917ae5354de4d3d32350f6947bc7028a9c42859ce8
 pkgname:
   - name: hyprlock
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
