@@ -1,5 +1,6 @@
-# Maintainer: Christian Rebischke <Chris.Rebischke@archlinux.org>
-# Maintainer: Justin Kromlinger <hashworks@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Christian Rebischke <Chris.Rebischke@archlinux.org>
+# Contributor: Justin Kromlinger <hashworks@archlinux.org>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Sebastian Rakel <sebastian@devunit.eu>
 # Contributor: Andrew Tyler <assimilat@gmail.com>
@@ -7,12 +8,12 @@
 pkgname=vault
 pkgdesc='A tool for managing secrets'
 pkgver=1.21.4
-pkgrel=1
+pkgrel=2
 url="https://vaultproject.io/"
 license=('BUSL-1.1')
 arch=('x86_64')
-depends=('glibc' 'esysusers' 'etmpfiles')
-makedepends=('go' 'git' 'yarn' 'nodejs-lts-iron' 'npm')
+depends=('glibc')
+makedepends=('go' 'git' 'yarn' 'nodejs-lts-jod' 'npm')
 install=vault.install
 backup=('etc/vault.hcl' 'etc/default/vault')
 source=("git+https://github.com/hashicorp/vault#tag=v${pkgver}"
@@ -27,6 +28,12 @@ sha512sums=('93082e087944a0980adb4bb1013b6185528511d548fee50028965ac0d7e9fc73099
 pkgver() {
   cd vault
   git describe --tags --match 'v*' | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+}
+
+prepare() {
+  cd vault
+  sed -i 's|/etc/vault.d/vault.hcl|/etc/vault.hcl|g' .release/linux/package/usr/lib/systemd/system/vault.service
+  sed -i 's|/etc/vault.d/vault.env|/etc/default/vault|g' .release/linux/package/usr/lib/systemd/system/vault.service
 }
 
 build() {
@@ -61,6 +68,7 @@ package() {
   cd "${srcdir}/vault"
 
   install -Dm644 ".release/linux/package/etc/vault.d/vault.env" "${pkgdir}/etc/default/vault"
+  install -Dm644 ".release/linux/package/usr/lib/systemd/system/vault.service" "${pkgdir}/usr/lib/systemd/system/vault.service"
 
   install -Dm755 "dist/vault" "${pkgdir}/usr/bin/vault"
   install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
