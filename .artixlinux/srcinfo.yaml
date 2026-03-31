@@ -1,10 +1,10 @@
 ---
-version: 0.3.0-1
+version: 0.3.0-2
 pkgbase:
   name: hyprwire
   pkgdesc: A fast and consistent wire protocol for IPC
   pkgver: 0.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprwire
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - ba3ff4b82620209d5680ce0e771d0f2c41f78cdb96d5d84fa66e4f0709ca8de6
 pkgname:
   - name: hyprwire
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
