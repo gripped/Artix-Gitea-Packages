@@ -1,10 +1,10 @@
 ---
-version: 0.8.3-3
+version: 0.8.3-4
 pkgbase:
   name: hyprpaper
   pkgdesc: a blazing fast wayland wallpaper utility with IPC controls
   pkgver: 0.8.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/hyprwm/hyprpaper
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgbase:
     - bfede471179adca93ed6d10e0132838c16dae364d828bd44f67819afc1a15594
 pkgname:
   - name: hyprpaper
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
