@@ -1,9 +1,9 @@
 ---
-version: 2.556-1
+version: 2.557-1
 pkgbase:
   name: jenkins
   pkgdesc: Extendable continuous integration server (latest)
-  pkgver: 2.556
+  pkgver: 2.557
   pkgrel: 1
   url: https://jenkins.io
   install: jenkins.install
@@ -26,15 +26,15 @@ pkgbase:
   replaces:
     - jenkins-ci
   source:
-    - git+https://github.com/jenkinsci/jenkins.git#tag=jenkins-2.556
+    - git+https://github.com/jenkinsci/jenkins.git#tag=jenkins-2.557
     - jenkins.tmpfiles
     - jenkins.sysusers
     - skip-failing-test.patch
   sha512sums:
-    - 89b7f8416bb22b40bff1ef3242b7b7d3bc0ba91623a9ad537d6075f157698ecae46b9440595c59a5fec2cf2575ba11da64795a7fdae11101e0c5e0ff6b8853ad
+    - b68de91f9ea84d6ee19c044495f203e535c29f11b200eec84c6627abfe968f00a0ba563b54818ff0b920527782a450bbfaccb129cdb67e213df5c77c923c89a3
     - a845a7147be54affc586dfce9a188ec24c92e673e88dec0b62da386d2e597de6ecda103429008562abd897f179a52c37cf2188ebc65b8c636efd07d707e18f90
     - d1118e1d20e499c88f3fbb6ac31a21200eeb46e77656dc9192fcdbaa2b132051a4e8acbeb5ba1ac357ff34dfd58d92d20e264dea4894210e00aa7019fc216442
     - 57e94c44f2bb9692349bb6e596fd7885832372bf11df0947b04c40b61a089491c6770cfbdf6ad42f2b4bcf222ad69ba0d8f5042ce27309f0f59c990c682fffcb
 pkgname:
   - name: jenkins
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
