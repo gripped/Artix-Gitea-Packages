@@ -7,7 +7,7 @@
 
 pkgname=knot
 pkgver=3.5.3
-pkgrel=3.1
+pkgrel=3
 pkgdesc="High-performance authoritative-only DNS server"
 arch=(x86_64)
 url="https://www.knot-dns.cz/"
