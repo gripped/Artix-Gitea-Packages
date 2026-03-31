@@ -1,10 +1,10 @@
 ---
-version: 1:1.6.2-1
+version: 1:1.6.2-1.1
 pkgbase:
   name: pipewire
   pkgdesc: Low-latency audio/video router and processor
   pkgver: 1.6.2
-  pkgrel: 1
+  pkgrel: 1.1
   epoch: 1
   url: https://pipewire.org
   arch:
@@ -60,16 +60,18 @@ pkgbase:
   source:
     - git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=1.6.2
     - systemd.patch
+    - artix-pipewire-launcher
   b2sums:
     - 27c3f29c85791a7c524256c6e52dbd086f346ecc9d33b5f075f82cdfdef4f31e04af5f937c3d95c501a5f94d6e26160585bec4bb96808c8dc766396d99763aaa
-    - SKIP
+    - a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789
+    - b24d6c83d6846dd9de8806ea5cd8da5745a13645cea6e0904c4ce6bfb2f018e189f698e2ff1d44e38538d1233b63fd3ad0c1492e3e3ed0d62ae78282ff696755
 pkgname:
   - name: pipewire
     license:
       - MIT
       - LGPL-2.1-or-later
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
       - dbus
       - libdbus-1.so
@@ -124,9 +126,9 @@ pkgname:
   - name: pipewire-audio
     pkgdesc: Low-latency audio/video router and processor - Audio support
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire=1:1.6.2-1
+      - pipewire=1:1.6.2-1.1
       - alsa-card-profiles
       - alsa-lib
       - libasound.so
@@ -174,26 +176,26 @@ pkgname:
   - name: pipewire-alsa
     pkgdesc: Low-latency audio/video router and processor - ALSA configuration
     depends:
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - pipewire-session-manager
   - name: pipewire-ffado
     pkgdesc: Low-latency audio/video router and processor - FireWire support
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - glibc
       - libffado
       - libffado.so
   - name: pipewire-jack-client
     pkgdesc: Low-latency audio/video router and processor - PipeWire as JACK client
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - dbus
       - libdbus-1.so
       - glibc
@@ -209,10 +211,10 @@ pkgname:
       - GPL-2.0-only
       - LGPL-2.1-or-later
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - glibc
       - pipewire-session-manager
       - sh
@@ -230,10 +232,10 @@ pkgname:
   - name: pipewire-pulse
     pkgdesc: Low-latency audio/video router and processor - PulseAudio replacement
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - avahi
       - libavahi-client.so
       - libavahi-common.so
@@ -256,10 +258,10 @@ pkgname:
   - name: pipewire-roc
     pkgdesc: Low-latency audio/video router and processor - ROC streaming support
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - glibc
       - libgcc
       - roc-toolkit
@@ -267,10 +269,10 @@ pkgname:
   - name: gst-plugin-pipewire
     pkgdesc: Multimedia graph framework - pipewire plugin
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - glib2
       - libglib-2.0.so
       - libgobject-2.0.so
@@ -282,10 +284,10 @@ pkgname:
   - name: pipewire-zeroconf
     pkgdesc: Low-latency audio/video router and processor - Zeroconf support
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - avahi
       - libavahi-client.so
       - libavahi-common.so
@@ -298,19 +300,19 @@ pkgname:
   - name: pipewire-v4l2
     pkgdesc: Low-latency audio/video router and processor - V4L2 interceptor
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire=1:1.6.2-1
+      - pipewire=1:1.6.2-1.1
       - glibc
       - pipewire-session-manager
       - sh
   - name: pipewire-x11-bell
     pkgdesc: Low-latency audio/video router and processor - X11 bell
     depends:
-      - libpipewire=1:1.6.2-1
+      - libpipewire=1:1.6.2-1.1
       - libpipewire-0.3.so
-      - pipewire-audio=1:1.6.2-1
-      - pipewire=1:1.6.2-1
+      - pipewire-audio=1:1.6.2-1.1
+      - pipewire=1:1.6.2-1.1
       - glibc
       - libcanberra
       - libcanberra.so
@@ -328,4 +330,4 @@ pkgname:
       - CC0-1.0
     depends:
       - pipewire-pulse
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any

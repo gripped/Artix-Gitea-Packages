@@ -24,7 +24,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.6.2
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -80,9 +80,11 @@ checkdepends=(
 )
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
-   systemd.patch
+   systemd.patch artix-pipewire-launcher
 )
-b2sums=('27c3f29c85791a7c524256c6e52dbd086f346ecc9d33b5f075f82cdfdef4f31e04af5f937c3d95c501a5f94d6e26160585bec4bb96808c8dc766396d99763aaa' SKIP)
+b2sums=('27c3f29c85791a7c524256c6e52dbd086f346ecc9d33b5f075f82cdfdef4f31e04af5f937c3d95c501a5f94d6e26160585bec4bb96808c8dc766396d99763aaa'
+        'a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789'
+        'b24d6c83d6846dd9de8806ea5cd8da5745a13645cea6e0904c4ce6bfb2f018e189f698e2ff1d44e38538d1233b63fd3ad0c1492e3e3ed0d62ae78282ff696755')
 
 prepare() {
   cd pipewire
@@ -131,6 +133,7 @@ _pwname=pipewire-0.3
 _spaname=spa-0.2
 
 package_pipewire() {
+install -Dm755 ../artix-pipewire-launcher $pkgdir/usr/bin
   license+=(
     # libspa-alsa
     LGPL-2.1-or-later
