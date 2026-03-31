@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-1
+version: 7.2.0-2
 pkgbase:
   name: rocm-smi-lib
   pkgdesc: ROCm System Management Interface Library
   pkgver: 7.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/rocm_smi_lib/en/latest
   arch:
     - x86_64
@@ -13,11 +13,11 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - rocm-core
     - glibc
-    - gcc-libs
     - hsa-rocr
+    - libgcc
     - python
+    - rocm-core
   options:
     - '!lto'
   source:
@@ -26,4 +26,4 @@ pkgbase:
     - 728ea7e9bf16e6ed217a0fd1a8c9afaba2dae2e7908fa4e27201e67c803c5638
 pkgname:
   - name: rocm-smi-lib
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any

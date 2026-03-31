@@ -1,15 +1,22 @@
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
-# Maintainer: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Contributor: Christian Heusel <gromit@archlinux.org>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocm-smi-lib
 pkgver=7.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='ROCm System Management Interface Library'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocm_smi_lib/en/latest'
 license=('NCSA')
-depends=('rocm-core' 'glibc' 'gcc-libs' 'hsa-rocr' 'python')
+depends=(
+    'glibc'
+    'hsa-rocr'
+    'libgcc'
+    'python'
+    'rocm-core'
+)
 makedepends=('cmake')
 _git='https://github.com/ROCm/rocm-systems'
 source=("rocm-$pkgver.tar.gz::$_git/archive/rocm-$pkgver.tar.gz")
