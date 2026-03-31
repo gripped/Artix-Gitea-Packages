@@ -1,10 +1,10 @@
 ---
-version: 2026.1.0.9-2
+version: 2026.1.0.9-3
 pkgbase:
   name: nsight-compute
   pkgdesc: Interactive profiler for NVIDIA CUDA and OptiX
   pkgver: 2026.1.0.9
-  pkgrel: 2
+  pkgrel: 3
   url: https://developer.nvidia.com/nsight-compute
   arch:
     - x86_64
@@ -53,7 +53,7 @@ pkgbase:
   source:
     - nsight-compute.desktop
   b2sums:
-    - 3dc305bcdbf6927a3645ce4c2bb4e251d45f3fe026710f54c8cc5949c8037780df0b75b5f76e4052cdb5992bc5f88d6ef582966d7b9f78e0a594b4dfc87e7e67
+    - 9d31d1e3a8fed40b90cdf5871bd78231e92fae0b13ef66f420677efe7a9b1a6b94b9b83cc9ad1eed29f7eb4db88f3c03383a28da7cc6f811984efa7123ef412b
   source_x86_64:
     - https://developer.download.nvidia.com/compute/cuda/redist/nsight_compute/linux-x86_64/nsight_compute-linux-x86_64-2026.1.0.9-archive.tar.xz
   b2sums_x86_64:
@@ -64,4 +64,4 @@ pkgbase:
     - a50821e6112a7298968af3a0a26152b313d259eb3398c8dfa67f7410359120a9a57b7f56c9941bed9801b38c2d4793fbd1fbaf9cf39122113603947d024f3ba3
 pkgname:
   - name: nsight-compute
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
