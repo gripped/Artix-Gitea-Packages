@@ -12,7 +12,7 @@ pkgrel=2
 url="https://vaultproject.io/"
 license=('BUSL-1.1')
 arch=('x86_64')
-depends=('glibc')
+depends=('esysusers' 'etmpfiles' 'glibc')
 makedepends=('go' 'git' 'yarn' 'nodejs-lts-jod' 'npm')
 install=vault.install
 backup=('etc/vault.hcl' 'etc/default/vault')
@@ -30,11 +30,6 @@ pkgver() {
   git describe --tags --match 'v*' | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 }
 
-prepare() {
-  cd vault
-  sed -i 's|/etc/vault.d/vault.hcl|/etc/vault.hcl|g' .release/linux/package/usr/lib/systemd/system/vault.service
-  sed -i 's|/etc/vault.d/vault.env|/etc/default/vault|g' .release/linux/package/usr/lib/systemd/system/vault.service
-}
 
 build() {
   mkdir -p "${srcdir}/vault/http/web_ui"
@@ -68,7 +63,6 @@ package() {
   cd "${srcdir}/vault"
 
   install -Dm644 ".release/linux/package/etc/vault.d/vault.env" "${pkgdir}/etc/default/vault"
-  install -Dm644 ".release/linux/package/usr/lib/systemd/system/vault.service" "${pkgdir}/usr/lib/systemd/system/vault.service"
 
   install -Dm755 "dist/vault" "${pkgdir}/usr/bin/vault"
   install -Dm644 "LICENSE" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"

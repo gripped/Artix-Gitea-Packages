@@ -18,6 +18,8 @@ pkgbase:
     - nodejs-lts-jod
     - npm
   depends:
+    - esysusers
+    - etmpfiles
     - glibc
   backup:
     - etc/vault.hcl
