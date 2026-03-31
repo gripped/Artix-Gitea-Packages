@@ -1,10 +1,10 @@
 ---
-version: 0.6-9
+version: 0.6-10
 pkgbase:
   name: python-pytest-ordering
   pkgdesc: pytest plugin to run your tests in a specific order
   pkgver: 0.6
-  pkgrel: 9
+  pkgrel: 10
   url: https://github.com/ftobia/pytest-ordering
   arch:
     - any
@@ -12,6 +12,9 @@ pkgbase:
     - MIT
   makedepends:
     - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python-pytest
   source:
@@ -24,4 +27,4 @@ pkgbase:
     - d433345dbb6e399d3a646fc2a25718afd53dc230496aaa60def843f8ebac7fde
 pkgname:
   - name: python-pytest-ordering
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any
