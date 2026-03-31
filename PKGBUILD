@@ -133,7 +133,6 @@ _pwname=pipewire-0.3
 _spaname=spa-0.2
 
 package_pipewire() {
-install -Dm755 $srcdir/artix-pipewire-launcher $pkgdir/usr/bin
   license+=(
     # libspa-alsa
     LGPL-2.1-or-later
@@ -275,6 +274,7 @@ install -Dm755 $srcdir/artix-pipewire-launcher $pkgdir/usr/bin
   )
 
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
+  install -Dm755 $srcdir/artix-pipewire-launcher $pkgdir/usr/bin
 }
 
 package_libpipewire() {
