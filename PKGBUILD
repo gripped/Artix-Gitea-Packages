@@ -1,8 +1,7 @@
-# Maintainer: Robin Candau <antiz@archlinux.org>
-# Contributor: Mintsuki <mintsuki@protonmail.com>
+# Maintainer: artist
 
 pkgname=limine
-pkgver=10.8.5
+pkgver=11.1.0
 pkgrel=1
 pkgdesc="An advanced, portable, multiprotocol bootloader"
 url="https://limine-bootloader.org/"
@@ -30,3 +29,4 @@ package() {
   	make DESTDIR="${pkgdir}" install
 	install -Dm 644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
 }
+

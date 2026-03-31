@@ -1,9 +1,9 @@
 ---
-version: 10.8.5-1
+version: 11.1.0-1
 pkgbase:
   name: limine
   pkgdesc: An advanced, portable, multiprotocol bootloader
-  pkgver: 10.8.5
+  pkgver: 11.1.0
   pkgrel: 1
   url: https://limine-bootloader.org/
   arch:
@@ -20,11 +20,11 @@ pkgbase:
   depends:
     - glibc
   source:
-    - git+https://codeberg.org/Limine/limine.git#tag=v10.8.5?signed
+    - git+https://codeberg.org/Limine/limine.git#tag=v11.1.0?signed
   validpgpkeys:
     - 05D29860D0A0668AAEFB9D691F3C021BECA23821
   sha256sums:
     - beabc3a95559b7e608a715ed67d585f2fd449d0c6e4ecd36d37b72d368027d7d
 pkgname:
   - name: limine
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any

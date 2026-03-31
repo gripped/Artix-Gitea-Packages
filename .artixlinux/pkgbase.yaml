@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 10.8.5-1
+    version: 11.1.0-1
     packages:
-      - limine-10.8.5-1-x86_64.pkg.tar.zst
+      - limine-11.1.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 10.4.0-1
