@@ -1,6 +1,6 @@
-From 03581ccf21fca4776794cbad9c7359abb0752e7b Mon Sep 17 00:00:00 2001
+From 206057496ee5414d9aeb602f6043db7db33d52ba Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Thu, 18 Dec 2025 16:30:15 +0100
+Date: Tue, 31 Mar 2026 20:15:38 +0200
 Subject: [PATCH 1/1] artix standalone install
 
 ---
@@ -8,8 +8,8 @@ Subject: [PATCH 1/1] artix standalone install
  meson.build                       | 22 ++++++++++++++----
  rules.d/meson.build               |  3 +--
  shell-completion/bash/meson.build | 38 +------------------------------
- shell-completion/zsh/meson.build  | 29 +----------------------
- src/core/meson.build              |  4 ----
+ shell-completion/zsh/meson.build  | 31 +------------------------
+ src/core/meson.build              |  5 ----
  src/hwdb/meson.build              |  2 +-
  src/libudev/meson.build           |  9 +++++++-
  src/sysusers/meson.build          |  3 ++-
@@ -19,8 +19,8 @@ Subject: [PATCH 1/1] artix standalone install
  sysusers.d/meson.build            |  4 ++--
  test/meson.build                  |  6 ++---
  tmpfiles.d/legacy.conf.in         |  3 ---
- tmpfiles.d/meson.build            |  9 +++-----
- 16 files changed, 49 insertions(+), 98 deletions(-)
+ tmpfiles.d/meson.build            | 10 +++-----
+ 16 files changed, 49 insertions(+), 102 deletions(-)
 
 diff --git a/factory/templates/meson.build b/factory/templates/meson.build
 index 0f53217a48..071cfc9547 100644
@@ -43,10 +43,10 @@ index 0f53217a48..071cfc9547 100644
  
  if conf.get('ENABLE_NSS') == 1
 diff --git a/meson.build b/meson.build
-index 4746146a98..fd2b335ce5 100644
+index 3672005d75..6ef9ee5f11 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -127,7 +127,7 @@ includedir = prefixdir / get_option('includedir')
+@@ -121,7 +121,7 @@ includedir = prefixdir / get_option('includedir')
  datadir = prefixdir / get_option('datadir')
  localstatedir = '/' / get_option('localstatedir')
  
@@ -55,7 +55,7 @@ index 4746146a98..fd2b335ce5 100644
  libexecdir_to_bin = '../../bin/'
  pkglibdir = libdir / 'systemd'
  
-@@ -2837,7 +2837,6 @@ subdir('shell-completion/zsh')
+@@ -2799,7 +2799,6 @@ subdir('shell-completion/zsh')
  subdir('sysctl.d')
  subdir('sysusers.d')
  subdir('tmpfiles.d')
@@ -63,7 +63,7 @@ index 4746146a98..fd2b335ce5 100644
  
  install_subdir('factory/etc',
                 install_dir : factorydir)
-@@ -2859,6 +2858,21 @@ install_data('LICENSE.GPL2',
+@@ -2821,6 +2820,21 @@ install_data('LICENSE.GPL2',
  install_subdir('LICENSES',
                 install_dir : docdir)
  
@@ -82,10 +82,10 @@ index 4746146a98..fd2b335ce5 100644
 +             install_tag : 'esysusers',
 +             install_dir : datadir / 'doc/esysusers')
 +
- install_emptydir(systemdstatedir)
- 
  #####################################################################
-@@ -3025,10 +3039,10 @@ udev_targets = []
+ 
+ # Ensure that changes to the docs/ directory do not break the
+@@ -3000,10 +3014,10 @@ udev_targets = []
  foreach bin : udev_binaries
          udev_targets += executables_by_name.get(bin, [])
  endforeach
@@ -99,7 +99,7 @@ index 4746146a98..fd2b335ce5 100644
  
  alt_time_epoch = run_command('date', '-Is', '-u', '-d', f'@@time_epoch@', check : false)
 diff --git a/rules.d/meson.build b/rules.d/meson.build
-index 6029ec8768..fbc3f82aef 100644
+index aa469ef7a7..4576cb92e3 100644
 --- a/rules.d/meson.build
 +++ b/rules.d/meson.build
 @@ -2,7 +2,7 @@
@@ -111,7 +111,7 @@ index 6029ec8768..fbc3f82aef 100644
  
  rules = [
          [files('60-autosuspend.rules',
-@@ -65,7 +65,6 @@ rules_in = [
+@@ -67,7 +67,6 @@ rules_in = [
          ['50-udev-default.rules'],
          ['60-persistent-storage.rules'],
          ['64-btrfs.rules'],
@@ -120,7 +120,7 @@ index 6029ec8768..fbc3f82aef 100644
          ['70-uaccess.rules',   conf.get('ENABLE_LOGIND') == 1 and conf.get('HAVE_ACL') == 1],
          ['71-seat.rules',      conf.get('ENABLE_LOGIND') == 1],
 diff --git a/shell-completion/bash/meson.build b/shell-completion/bash/meson.build
-index 178986e171..9492becac9 100644
+index 178986e171..79ee20a16d 100644
 --- a/shell-completion/bash/meson.build
 +++ b/shell-completion/bash/meson.build
 @@ -20,48 +20,12 @@ custom_target(
@@ -169,15 +169,15 @@ index 178986e171..9492becac9 100644
  
          if item[1] == '' or conf.get(item[1]) == 1
                  install_data(item[0],
-+                        install_tag : 'udev',
++                install_tag : 'udev',
                               install_dir : bashcompletiondir)
          endif
  endforeach
 diff --git a/shell-completion/zsh/meson.build b/shell-completion/zsh/meson.build
-index 221c30627f..e4cf6c45dd 100644
+index eb5bb4b6a4..0538954fb9 100644
 --- a/shell-completion/zsh/meson.build
 +++ b/shell-completion/zsh/meson.build
-@@ -15,39 +15,12 @@ custom_target(
+@@ -15,41 +15,12 @@ custom_target(
          install_dir : zshcompletiondir)
  
  foreach item : [
@@ -196,12 +196,13 @@ index 221c30627f..e4cf6c45dd 100644
 -        ['_run0',                     ''],
 -        ['_sd_bus_address',           ''],
 -        ['_sd_hosts_or_user_at_host', ''],
--        ['_sd_machines',              ''],
+-        ['_sd_machines',              'ENABLE_MACHINED'],
 -        ['_sd_outputmodes',           ''],
 -        ['_sd_unit_files',            ''],
 -        ['_systemd',                  ''],
 -        ['_systemd-analyze',          ''],
 -        ['_systemd-delta',            ''],
+-        ['_systemd-id128',            ''],
 -        ['_systemd-inhibit',          'ENABLE_LOGIND'],
 -        ['_systemd-nspawn',           ''],
 -        ['_systemd-path',             ''],
@@ -209,20 +210,21 @@ index 221c30627f..e4cf6c45dd 100644
 -        ['_systemd-tmpfiles',         'ENABLE_TMPFILES'],
 -        ['_timedatectl',              'ENABLE_TIMEDATED'],
          ['_udevadm',                  ''],
+-        ['_userdbctl',                ''],
 -        ['_varlinkctl',               ''],
  ]
  
          if item[1] == '' or conf.get(item[1]) == 1
                  install_data(item[0],
-+                        install_tag : 'udev',
++                install_tag : 'udev',
                               install_dir : zshcompletiondir)
          endif
  endforeach
 diff --git a/src/core/meson.build b/src/core/meson.build
-index 657574019c..51658e4506 100644
+index e703cc3728..d6719d2c9c 100644
 --- a/src/core/meson.build
 +++ b/src/core/meson.build
-@@ -291,10 +291,6 @@ if install_sysconfdir
+@@ -295,11 +295,6 @@ if install_sysconfdir
                          install_dir : sysconfdir / 'xdg/systemd')
  endif
  
@@ -230,9 +232,10 @@ index 657574019c..51658e4506 100644
 -install_symlink('init',
 -                pointing_to : '../lib/systemd/systemd',
 -                install_dir : sbindir)
- 
+-
  ############################################################
  
+ core_test_template = test_template + {
 diff --git a/src/hwdb/meson.build b/src/hwdb/meson.build
 index 57ace3ad44..96c0b185d0 100644
 --- a/src/hwdb/meson.build
@@ -272,44 +275,52 @@ index eb9dda79ae..e45d25c71b 100644
 +        install_tag : 'libudev-devel',
          install_dir : pkgconfiglibdir)
 diff --git a/src/sysusers/meson.build b/src/sysusers/meson.build
-index f286ce8a20..842b4080d0 100644
+index b74ac6aa1a..6be39ac23b 100644
 --- a/src/sysusers/meson.build
 +++ b/src/sysusers/meson.build
-@@ -12,10 +12,11 @@ executables += [
+@@ -12,7 +12,7 @@ executables += [
                  'dependencies' : libaudit_cflags,
          },
          executable_template + {
 -                'name' : 'systemd-sysusers.standalone',
 +                'name' : 'esysusers',
                  'public' : true,
-                 'sources' : files('sysusers.c'),
-                 'c_args' : '-DSTANDALONE',
-+                'install_tag' : 'esysusers',
+                 'objects' : ['systemd-sysusers'],
                  'link_with' : [
-                         libc_wrapper_static,
-                         libbasic_static,
+@@ -21,6 +21,7 @@ executables += [
+                         libshared_static,
+                         libsystemd_static,
+                 ],
++                'install_tag' : 'esysusers',
+                 'dependencies' : libaudit_cflags,
+         },
+ ]
 diff --git a/src/tmpfiles/meson.build b/src/tmpfiles/meson.build
-index 9abe0a0c8e..d899d0cd64 100644
+index 2a7728c295..54ab1e2e71 100644
 --- a/src/tmpfiles/meson.build
 +++ b/src/tmpfiles/meson.build
-@@ -20,10 +20,11 @@ executables += [
+@@ -15,7 +15,7 @@ executables += [
                  'dependencies' : libacl_cflags,
          },
          executable_template + {
 -                'name' : 'systemd-tmpfiles.standalone',
 +                'name' : 'etmpfiles',
                  'public' : true,
-                 'sources' : systemd_tmpfiles_sources + systemd_tmpfiles_extract_sources,
-                 'c_args' : '-DSTANDALONE',
-+                'install_tag' : 'etmpfiles',
+                 'objects' : ['systemd-tmpfiles'],
                  'link_with' : [
-                         libc_wrapper_static,
-                         libbasic_static,
+@@ -24,6 +24,7 @@ executables += [
+                         libshared_static,
+                         libsystemd_static,
+                 ],
++                'install_tag' : 'etmpfiles',
+                 'dependencies' : libacl_cflags,
+         },
+         test_template + {
 diff --git a/src/udev/meson.build b/src/udev/meson.build
-index 7df5b3de85..26d69ef8e9 100644
+index 700a8cc8d5..d2981583ff 100644
 --- a/src/udev/meson.build
 +++ b/src/udev/meson.build
-@@ -254,9 +254,9 @@ executables += [
+@@ -258,9 +258,9 @@ executables += [
          },
  ]
  
@@ -322,7 +333,7 @@ index 7df5b3de85..26d69ef8e9 100644
                  install_tag : 'udev')
  
  if install_sysconfdir_samples
-@@ -273,7 +273,7 @@ udev_pc = custom_target(
+@@ -277,7 +277,7 @@ udev_pc = custom_target(
          output : 'udev.pc',
          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
          install : pkgconfigdatadir != 'no',
@@ -332,10 +343,10 @@ index 7df5b3de85..26d69ef8e9 100644
  
  if install_sysconfdir
 diff --git a/src/udev/udevd.c b/src/udev/udevd.c
-index ab3106334b..4680b66cdc 100644
+index 840febbd42..b772115d3c 100644
 --- a/src/udev/udevd.c
 +++ b/src/udev/udevd.c
-@@ -65,7 +65,7 @@ int run_udevd(int argc, char *argv[]) {
+@@ -67,7 +67,7 @@ int run_udevd(int argc, char *argv[]) {
          if (arg_daemonize) {
                  pid_t pid;
  
@@ -345,7 +356,7 @@ index ab3106334b..4680b66cdc 100644
                  /* connect /dev/null to stdin, stdout, stderr */
                  if (log_get_max_level() < LOG_DEBUG) {
 diff --git a/sysusers.d/meson.build b/sysusers.d/meson.build
-index 84fadfe3f7..72c55c7685 100644
+index 84fadfe3f7..22dfd09c05 100644
 --- a/sysusers.d/meson.build
 +++ b/sysusers.d/meson.build
 @@ -7,12 +7,11 @@ files = [['README',                true],
@@ -353,7 +364,7 @@ index 84fadfe3f7..72c55c7685 100644
  foreach tuple : files
          if enable_sysusers and tuple[1]
 -                install_data(tuple[0], install_dir : sysusersdir)
-+                install_data(tuple[0], install_dir : sysusersdir, install_tag : 'esysusers',)
++                install_data(tuple[0], install_dir : sysusersdir, install_tag : 'esysusers')
          endif
  endforeach
  
@@ -370,7 +381,7 @@ index 84fadfe3f7..72c55c7685 100644
                  install_dir : sysusersdir)
  endforeach
 diff --git a/test/meson.build b/test/meson.build
-index 7e8c3296ab..8dfa7afcae 100644
+index 7bf557cc19..38a3da9e5b 100644
 --- a/test/meson.build
 +++ b/test/meson.build
 @@ -17,7 +17,7 @@ if conf.get('ENABLE_SYSUSERS') == 1
@@ -391,7 +402,7 @@ index 7e8c3296ab..8dfa7afcae 100644
          test('hwdb-test',
               files('hwdb-test.sh'),
               suite : 'dist',
-@@ -96,7 +96,7 @@ if want_tests != 'false' and conf.get('ENABLE_TMPFILES') == 1
+@@ -86,7 +86,7 @@ if want_tests != 'false' and conf.get('ENABLE_TMPFILES') == 1
               suite : 'tmpfiles')
  
          if have_standalone_binaries
@@ -401,39 +412,37 @@ index 7e8c3296ab..8dfa7afcae 100644
                       test_systemd_tmpfiles_py,
                       args : exe.full_path(),
 diff --git a/tmpfiles.d/legacy.conf.in b/tmpfiles.d/legacy.conf.in
-index cdef21fa9b..03798c953e 100644
+index 7036c12b7c..80120b04b4 100644
 --- a/tmpfiles.d/legacy.conf.in
 +++ b/tmpfiles.d/legacy.conf.in
-@@ -13,9 +13,6 @@
+@@ -13,6 +13,3 @@
  
  d /run/lock 0755 root root -
  L /var/lock - - - - ../run/lock
 -{% if CREATE_LOG_DIRS %}
 -L$ /var/log/README - - - - ../..{{DOC_DIR}}/README.logs
 -{% endif %}
- 
- {% if HAVE_SYSV_COMPAT %}
- # /run/lock/subsys is used for serializing SysV service execution, and
 diff --git a/tmpfiles.d/meson.build b/tmpfiles.d/meson.build
-index 203eb7bb55..0c689008e9 100644
+index c8f9015b2e..8398efbca8 100644
 --- a/tmpfiles.d/meson.build
 +++ b/tmpfiles.d/meson.build
-@@ -6,14 +6,12 @@ endif
+@@ -6,15 +6,12 @@ endif
  
- files = [['README'],
-          ['home.conf'],
--         ['journal-nocow.conf'],
+ files = [['README'                                  ],
+          ['home.conf'                               ],
+-         ['journal-nocow.conf'                      ],
           ['portables.conf',       'ENABLE_PORTABLED'],
-          ['systemd-network.conf', 'ENABLE_NETWORKD'],
-          ['systemd-nologin.conf', 'HAVE_PAM'],
-          ['systemd-nspawn.conf',  'ENABLE_MACHINED'],
-          ['systemd-pstore.conf',  'ENABLE_PSTORE'],
-          ['systemd-resolve.conf', 'ENABLE_RESOLVE'],
--         ['systemd-tmp.conf'],
-          ['tmp.conf'],
-          ['x11.conf'],
-          ['provision.conf'],
-@@ -22,7 +20,7 @@ files = [['README'],
+          ['systemd-network.conf', 'ENABLE_NETWORKD' ],
+          ['systemd-nologin.conf', 'HAVE_PAM'        ],
+          ['systemd-nspawn.conf',  'ENABLE_MACHINED' ],
+          ['systemd-pstore.conf',  'ENABLE_PSTORE'   ],
+          ['systemd-resolve.conf', 'ENABLE_RESOLVE'  ],
+-         ['20-systemd-varlink.conf'                 ],
+-         ['systemd-tmp.conf'                        ],
+          ['tmp.conf'                                ],
+          ['x11.conf'                                ],
+          ['provision.conf'                          ],
+@@ -23,7 +20,7 @@ files = [['README'                                  ],
  
  foreach f : files
          if f.length() == 1 or conf.get(f[1]) == 1
@@ -442,20 +451,20 @@ index 203eb7bb55..0c689008e9 100644
          else
                  message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
                          .format(f[0], f[1], conf.get(f[1], 0)))
-@@ -33,12 +31,10 @@ in_files = [
-         ['20-systemd-shell-extra.conf',   'LINK_SHELL_EXTRA_DROPIN'],
-         ['20-systemd-osc-context.conf',   'LINK_OSC_CONTEXT_DROPIN'],
-         ['20-systemd-ssh-generator.conf', 'ENABLE_SSH_PROXY_CONFIG'],
--        ['20-systemd-stub.conf',          'ENABLE_EFI'],
-         ['20-systemd-userdb.conf',        'ENABLE_SSH_USERDB_CONFIG'],
-         ['etc.conf'],
-         ['legacy.conf'],
-         ['static-nodes-permissions.conf'],
--        ['systemd.conf'],
-         ['var.conf'],
+@@ -34,12 +31,10 @@ in_files = [
+         ['20-systemd-shell-extra.conf',   'LINK_SHELL_EXTRA_DROPIN'      ],
+         ['20-systemd-osc-context.conf',   'LINK_OSC_CONTEXT_DROPIN'      ],
+         ['20-systemd-ssh-generator.conf', 'ENABLE_SSH_PROXY_CONFIG'      ],
+-        ['20-systemd-stub.conf',          'ENABLE_EFI'                   ],
+         ['20-systemd-userdb.conf',        'ENABLE_SSH_USERDB_CONFIG'     ],
+         ['etc.conf'                                                      ],
+         ['legacy.conf',                   'ENABLE_COMPAT_SYSV_INTERFACES'],
+         ['static-nodes-permissions.conf'                                 ],
+-        ['systemd.conf'                                                  ],
+         ['var.conf'                                                      ],
  ]
  
-@@ -49,6 +45,7 @@ foreach f : in_files
+@@ -50,6 +45,7 @@ foreach f : in_files
                          output: f[0],
                          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
                          install : true,
@@ -463,13 +472,15 @@ index 203eb7bb55..0c689008e9 100644
                          install_dir : tmpfilesdir)
          else
                  message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
-@@ -57,5 +54,5 @@ foreach f : in_files
+@@ -58,7 +54,7 @@ foreach f : in_files
  endforeach
  
  if install_sysconfdir
 -        install_emptydir(sysconfdir / 'tmpfiles.d')
 +        install_emptydir(sysconfdir / 'tmpfiles.d', install_tag : 'etmpfiles')
  endif
+ 
+ subdir('user')
 -- 
-2.52.0
+2.53.0
 

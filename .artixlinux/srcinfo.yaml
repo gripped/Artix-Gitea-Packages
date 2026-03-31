@@ -1,9 +1,9 @@
 ---
-version: 260-1
+version: 260.1-1
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
-  pkgver: 260
+  pkgver: 260.1
   pkgrel: 1
   url: https://www.github.com/systemd/systemd
   arch:
@@ -33,7 +33,7 @@ pkgbase:
     - libstdc++
     - glibc
   source:
-    - git+https://github.com/systemd/systemd#tag=v260?signed
+    - git+https://github.com/systemd/systemd#tag=v260.1?signed
     - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.5
     - 0001-Use-Arch-Linux-device-access-groups.patch
     - 0001-artix-standalone-install.patch
@@ -47,11 +47,11 @@ pkgbase:
     - 9A774DB5DB996C154EBBFBFDA0099A18E29326E1
     - 5C251B5FC54EB2F80F407AAAC54CA336CFEB557E
   sha512sums:
-    - 4bb2b04cbf509ce1a275ffd96a3e96a24954377a6eca08eadfd148616f49bc681e3b7470826e2b644b5b10c4b69f14a74b3a4049628205ebf7d0af29b4086387
+    - 16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb
     - e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79
     - ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82
-    - bb5879ba8eeb3833d6e8529ccd2355b68221bf16cd8b1b833e2b5f7ca6b1fa1eec8b90116e63d9eda76bf1cb76beaf3b25707b440889786ee1abc4d6af0f883b
-    - 063033fc7e95dff0397fe53f6692bee66717700683725d8bfebad03e9c6f7009726820aaca69aa040b78f810b921bd3690e49b7f2448c5dd63a8866e437a90a5
+    - b01878eebe964177e53121e8249d73d0b041e4882e818d79cd8e14da6ce3ec53d1128aa6b74fe604effcdff0c9403c32cb8bce3d8938c8556a6e2d17ae12461f
+    - fc7bc3200211ed5a0d7aaf9465fbb6524088f3c049c21e6ca06c161dd7469de518245730257878376fafbf2dbab23f91d68c7ce3ea26a6b904c3f6ce2e02e4c8
     - 982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5
     - ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58
     - a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b
@@ -115,4 +115,4 @@ pkgname:
       - 'sbsigntools: Sign the embedded kernel'
     provides:
       - ukify
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
