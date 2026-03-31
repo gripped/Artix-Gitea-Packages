@@ -1,9 +1,9 @@
 ---
-version: 0.5.2-1
+version: 0.5.3-1
 pkgbase:
   name: libcgif
   pkgdesc: A fast and lightweight GIF encoding library
-  pkgver: 0.5.2
+  pkgver: 0.5.3
   pkgrel: 1
   url: https://github.com/dloebl/cgif
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - libcgif-0.5.2.tar.gz::https://github.com/dloebl/cgif/archive/v0.5.2.tar.gz
+    - libcgif-0.5.3.tar.gz::https://github.com/dloebl/cgif/archive/v0.5.3.tar.gz
   sha256sums:
-    - d5e603309176334406d7e4f0063ed96924fe9b0368e8037df2614c0df67bb41b
+    - dcc7731e974ee77db75df26c99aca4d95f11ca2d267d870d42bce1e0d1e1e75f
 pkgname:
   - name: libcgif
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
