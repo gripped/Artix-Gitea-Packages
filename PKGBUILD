@@ -6,7 +6,7 @@
 # Contributor: Francois Boulogne <fboulogne at april dot org>
 
 pkgname=glances
-pkgver=4.5.3.1
+pkgver=4.5.3.2
 pkgrel=1
 pkgdesc="CLI curses-based monitoring tool"
 url="https://nicolargo.github.io/glances"
@@ -33,10 +33,10 @@ install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/nicolargo/glances/archive/v${pkgver}.tar.gz"
         "${pkgname}-env.conf"
         'disable_update_check.patch')
-sha512sums=('d7429d2de6e6ea282a0f6ddcd5625e6194ea3b517037a96572f555edca89608bf9468637e1644a10d5f0feeb1093f333bcac41095dc5a40eea22d5a2f468a53c'
+sha512sums=('1a673ec2357a81c1eed7d8c473f8136dd65f015aed40395a66d549bbcff3585573ad55a389ed0a1424a49c296a224faf8bfb584d2b73f1fbe59c95f649ad53fe'
             '05f1a7dfb293fd52eabdc877950fed01c8407d84f4c4959f292c4b91e653dd86b4a7d3145c3b2e237920f8fd3d5e05bbc0999d95aa72b56e083a55cf3e72b913'
             'debe0bdd62fae124d17e559476327db22f916e5f0b3186b0ba0bc6254437617285b455ead961edb5c9654d42236db56c302a0c750dce4a8446611b8a3fe2c175')
-b2sums=('117f38532a3d6772340830f5e308f00cfeccbf4c333b59a179aa3170496741bacc99ec4a61df7c07c09e75f4a197d0e0164cfa42d5893a3c9d58633e7fddb173'
+b2sums=('2471fcbc7896c445d55db7f2eb69921ec38b935345a2bb1fef424e854b488ce95f4ff931a6d1b50a1d3f92544378303c86390f9c5aa3269df51ca397fb9385bf'
         'e1218752e5ed8e3d42a5f9b7a1497839bb7f8666f45c4caf4fa8307666f0ee1c3f5c5213377421bfa18160ea0eb4ff3a3469c3501b4b56f00843be7adffac93e'
         '574d49f96729e698de77868d74812f0efd9861043f25a8f473431440654481f60fcce9f1c457f1900651b157d94f67835c67b548a4bc1957c9123d41e0a9b0a1')
 
