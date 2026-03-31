@@ -4,8 +4,8 @@
 _artix_url=https://gitea.artixlinux.org/artix/calamares
 
 pkgname=calamares
-pkgver=3.3.14
-pkgrel=6
+pkgver=3.4.2
+pkgrel=1
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://codeberg.org/Calamares/calamares"
@@ -32,9 +32,8 @@ source=(
         0001-packagechooser-customize-qrc.patch
         0002-if-license.patch
         0003-packagechooser-add-if-png.patch
-        initcpiocfg-rm-crc32c_intel.patch::https://codeberg.org/Calamares/calamares/commit/9e7be34703338befefe7a713e6908da47ae6b77b.patch
 )
-sha256sums=('e06f8d5d185120ce3c02ea94137eb51e84a76bb8f5b09be7e9f6e9129c0f81af'
+sha256sums=('c1748d8eda8c11bbe586cd1d22a133e63354c9995a5755c9a9ea9fae94788af7'
             '893e55d56557bc422cab095f9d303863240d883797e3920ff5a165b3618bb29d'
             'f95255cd446a8887d41698c6da7d3d5147afa98ba775930f1cce64c21300b7ba'
             '9cc8e5172171681eec810ce7d259995a9e3bcabe9ef46772c8f1c35040f8f5fd'
@@ -45,7 +44,6 @@ prepare() {
     git apply ../0001-packagechooser-customize-qrc.patch
     git apply ../0002-if-license.patch
     git apply ../0003-packagechooser-add-if-png.patch
-    git apply ../initcpiocfg-rm-crc32c_intel.patch
 }
 
 build() {
