@@ -1,10 +1,10 @@
 ---
-version: 2.1.1-2
+version: 2.1.1-3
 pkgbase:
   name: fwupd
   pkgdesc: Simple daemon to allow session software to update firmware
   pkgver: 2.1.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/fwupd/fwupd
   arch:
     - x86_64
@@ -126,4 +126,4 @@ pkgname:
   - name: fwupd-docs
     pkgdesc: Simple daemon to allow session software to update firmware - documentation
     depends: []
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
