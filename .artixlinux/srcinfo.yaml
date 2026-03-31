@@ -18,7 +18,7 @@ pkgbase:
     - git
   depends:
     - glibc
-    - libcgg
+    - libgcc
     - libalpm.so
   source:
     - git+https://gitlab.archlinux.org/archlinux/arch-rebuild-order.git?signed#tag=v0.4.5
