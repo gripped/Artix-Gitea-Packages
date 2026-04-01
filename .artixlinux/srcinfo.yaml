@@ -1,10 +1,10 @@
 ---
-version: 6.0.0-2
+version: 6.0.1-1
 pkgbase:
   name: krita
   pkgdesc: Edit and paint images
-  pkgver: 6.0.0
-  pkgrel: 2
+  pkgver: 6.0.1
+  pkgrel: 1
   url: https://krita.org
   arch:
     - x86_64
@@ -78,15 +78,15 @@ pkgbase:
     - 'poppler-qt6: PDF filter'
     - 'python-pyqt6: for the Python plugins'
   source:
-    - https://download.kde.org/stable/krita/6.0.0/krita-6.0.0.tar.xz
-    - https://download.kde.org/stable/krita/6.0.0/krita-6.0.0.tar.xz.sig
+    - https://download.kde.org/stable/krita/6.0.1/krita-6.0.1.tar.xz
+    - https://download.kde.org/stable/krita/6.0.1/krita-6.0.1.tar.xz.sig
   validpgpkeys:
     - 05D00A8B73A686789E0A156858B9596C722EA3BD
     - E9FB29E74ADEACC5E3035B8AB69EB4CF7468332F
     - 064182440C674D9F8D0F6F8B4DA79EDA231C852B
   sha256sums:
-    - 9eb18cee50d10d5f5e63304a1b96c1e1edd685d3ffa337dc19fc30c6280dfdbb
+    - aeaab7959b610eca5025af81eb54db2ce5985f98208d4390b08ee4ceb969c1f5
     - SKIP
 pkgname:
   - name: krita
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
