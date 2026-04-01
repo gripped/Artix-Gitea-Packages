@@ -9,14 +9,14 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs-lts-krypton
-pkgver=24.13.0
-pkgrel=1
+pkgver=24.14.1
+pkgrel=2
 pkgdesc='Evented I/O for V8 javascript ("Active LTS" release: Krypton)'
 arch=('x86_64')
 url='https://nodejs.org/'
 license=('MIT')
 depends=(
-#  'ada'
+  'ada'
   'brotli'
   'c-ares'
   'icu'
@@ -30,9 +30,11 @@ depends=(
 #  'simdutf'
 #  'v8'
   'zlib'
+  'zstd'
 )
 makedepends=(
   'git'
+  'ninja'
   'procps-ng'
   'python'
 )
@@ -44,7 +46,7 @@ provides=(
 conflicts=(nodejs)
 options=('!lto')
 source=("git+https://github.com/nodejs/node.git#tag=v$pkgver?signed")
-b2sums=('ec771721f9aab7ee0e5ba4731bea1a75c8b1d039d9f8d50b69e86c27082fa5b28cac9802bdf22c4d0ad2ad59576cbe35081a042975fbe2f286e5e3c1232e9958')
+b2sums=('4cd832e83000540dfc083bc5512bb67befc5638bfb3d64d845f040b39468c054b3cae133f8ddea9ebfade9dc303a343f95edc408d98c483f7cfac5a3a55216b6')
 validpgpkeys=(
   '8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600' # Michaël Zasso (Targos) <targos@protonmail.com>
   '890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4' # RafaelGSS <rafael.nunu@hotmail.com>
@@ -52,6 +54,7 @@ validpgpkeys=(
   'C0D6248439F1D5604AAFFB4021D900FFDB233756' # Antoine du Hamel <duhamelantoine1995@gmail.com>
   '5BE8A3F6C8A5C01D106C0AD820B1A390B168D356' # Antoine du Hamel <antoine.duhamel@rosa.be>
   'CC68F5A3106FF448322E48ED27F5E38D5B0A215F' # marco-ippolito <marcoippolito54@gmail.com>
+  '108F52B48DB57BB0CC439B2997B01419BD92F80A' # Ruy Adorno <ruyadorno@hotmail.com>
 )
 
 _set_flags() {
@@ -60,21 +63,17 @@ _set_flags() {
   CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 }
 
-prepare() {
-  cd node
-  # Update ICU test data
-  git cherry-pick --no-commit 5afe4cd716cbf7699f6abc99338f44db3b1424d5
-}
-
 build() {
   _set_flags
   cd node
 
   ./configure \
+    --ninja \
     --prefix=/usr \
     --with-intl=system-icu \
     --without-corepack \
     --without-npm \
+    --shared-ada \
     --shared-brotli \
     --shared-cares \
     --shared-libuv \
@@ -83,8 +82,8 @@ build() {
     --shared-ngtcp2 \
     --shared-openssl \
     --shared-simdjson \
-    --shared-zlib
-    # --shared-ada
+    --shared-zlib \
+    --shared-zstd
     # --shared-http-parser
     # --shared-simdutf
     # --shared-v8
@@ -104,10 +103,6 @@ check() {
   rm test/parallel/test-http2-priority-event.js
   rm test/parallel/test-http2-reset-flood.js
   rm test/parallel/test-tls-ocsp-callback.js
-
-
-  # https://github.com/nodejs/node/pull/60523
-  rm test/parallel/test-datetime-change-notify.js
 
   make test-only
 }
