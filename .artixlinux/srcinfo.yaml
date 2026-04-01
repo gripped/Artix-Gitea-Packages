@@ -1,10 +1,10 @@
 ---
-version: 0.90.9-1
+version: 0.90.9-2
 pkgbase:
   name: calf
   pkgdesc: LV2 plug-in suite
   pkgver: 0.90.9
-  pkgrel: 1
+  pkgrel: 2
   url: http://calf-studio-gear.org
   arch:
     - x86_64
@@ -21,9 +21,10 @@ pkgbase:
   depends:
     - expat
     - fluidsynth
-    - gcc-libs
     - glibc
     - hicolor-icon-theme
+    - libgcc
+    - libstdc++
   source:
     - git+https://github.com/calf-studio-gear/calf#tag=0.90.9
   b2sums:
