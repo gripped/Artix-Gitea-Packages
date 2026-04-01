@@ -1,10 +1,10 @@
 ---
-version: 4.5.0-2
+version: 4.6.0-1
 pkgbase:
   name: fish
   pkgdesc: Smart and user friendly shell intended mostly for interactive use
-  pkgver: 4.5.0
-  pkgrel: 2
+  pkgver: 4.6.0
+  pkgrel: 1
   url: https://fishshell.com/
   install: fish.install
   arch:
@@ -14,6 +14,7 @@ pkgbase:
   checkdepends:
     - expect
     - procps-ng
+    - python-pexpect
   makedepends:
     - cmake
     - git
@@ -37,11 +38,11 @@ pkgbase:
   backup:
     - etc/fish/config.fish
   source:
-    - fish::git+https://github.com/fish-shell/fish-shell#tag=4.5.0
+    - fish::git+https://github.com/fish-shell/fish-shell#tag=4.6.0
   sha512sums:
-    - bf06ac239c4755cb87e5450051737d87dc3c681464a19646029ec9037577ec21d6c7f41a4beaa550c718f0c568c4369869e9369d6ed3c39f0a05d47422704c22
+    - 3ba65d9ba4828ad29acb7cb8fcc2d2abfd69e885113b3f610a0aa0977d3cbe65263ffa350af2138ac39250dfe5b61ab8cccf2ed058dbe3ad7f62f93f4b365e3c
   b2sums:
-    - 5df0d8270b7372a5a4ee9dd91466a2ace576d93a95cc18bd1c38d47b89298f009c2a84fa42856abd6260836ab56207a7939f3c4f5ef7b1818af8513a60e0394e
+    - e7291d1273743e9a69c31d1292c4df0e3caca19419fb027ec27f079bb47d3e69795a0dbf9d053490bce5e709f0177deaf1efca9392bcea9ce8c1740cd1c876fe
 pkgname:
   - name: fish
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
