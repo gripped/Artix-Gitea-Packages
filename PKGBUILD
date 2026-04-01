@@ -5,7 +5,7 @@
 
 pkgname=yazi
 pkgver=26.1.22
-pkgrel=4
+pkgrel=4.1
 pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
 url="https://github.com/sxyazi/yazi"
 arch=("x86_64")
