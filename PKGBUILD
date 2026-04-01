@@ -1,7 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 
 pkgname=artix-metro
-pkgver=3.1.16
+pkgver=3.1.17
 pkgrel=1
 pkgdesc="Artix package pushing automation tool"
 arch=('any')
@@ -15,7 +15,7 @@ depends=(
 makedepends=('npm')
 source=("https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz")
 noextract=($pkgname-$pkgver.tgz)
-sha512sums=('177c3bc044448979eff3693047bc94a49ac72e19e75fb24e41f09ef342b1f01f03eb531de9f397bbbf2bcb02e47dc98919b2736315a2f7cd6bf6fab01f3a8fd2')
+sha512sums=('03ba09dbbd502514bd85af8d4042ab2e2180c0eae96a97ea6aa2e3e26ff1f08fdb92fffd995c7514ee501a070aee5e793936176176bb812723d31658e9796668')
 options=("!strip")
 
 package() {
