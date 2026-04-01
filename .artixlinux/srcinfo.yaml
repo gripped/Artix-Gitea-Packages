@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-1.2
+version: 7.2.1-1
 pkgbase:
   name: hipblas
   pkgdesc: ROCm BLAS marshalling library
-  pkgver: 7.2.0
-  pkgrel: 1.2
+  pkgver: 7.2.1
+  pkgrel: 1
   url: https://rocm.docs.amd.com/projects/hipBLAS/en/latest/index.html
   arch:
     - x86_64
@@ -16,17 +16,17 @@ pkgbase:
     - cmake
     - gcc-fortran
   depends:
-    - rocm-core
     - glibc
-    - gcc-libs
     - hip-runtime-amd
     - hipblas-common
+    - libgcc
     - rocblas
+    - rocm-core
     - rocsolver
   source:
-    - rocm-libraries::git+https://github.com/ROCm/rocm-libraries.git#tag=rocm-7.2.0
+    - rocm-libraries::git+https://github.com/ROCm/rocm-libraries.git#tag=rocm-7.2.1
   sha256sums:
-    - e1b1239b5c9025437edd1a3af757fd37cd8fa299bdbbbce6f82392fd2c7df736
+    - b476acbcd0f4017c800e4b05533e6dfb875bde32242729c8df557d4624379623
 pkgname:
   - name: hipblas
 # generated with artixpkg 0.38.2-1-any
