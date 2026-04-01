@@ -1,0 +1,31 @@
+---
+version: 4.1.2-1
+pkgbase:
+  name: nrpe
+  pkgdesc: Nagios Remote Plugin Executor
+  pkgver: 4.1.2
+  pkgrel: 1
+  url: https://github.com/NagiosEnterprises/nrpe
+  install: nrpe.install
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - procps-ng
+  depends:
+    - glibc
+    - openssl
+  optdepends:
+    - 'monitoring-plugins: common tools for monitoring using nrpe'
+  backup:
+    - etc/nrpe/nrpe.cfg
+  source:
+    - https://github.com/NagiosEnterprises/nrpe/releases/download/nrpe-4.1.2/nrpe-4.1.2.tar.gz
+    - nrpe.sysusers
+  sha256sums:
+    - 366cd5de9953872ed78e1a5e8fe36c8c86839a5fbf8b894f38211c915a83434a
+    - 9430d6c7ccf9817f9c66eda8e2126b0b0fdad93fa17dee9227627c35a4101ad3
+pkgname:
+  - name: nrpe
+# generated with artixpkg 0.38.2-1-any
