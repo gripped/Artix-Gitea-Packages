@@ -1,10 +1,10 @@
 ---
-version: 7.2.0-1
+version: 7.2.1-2
 pkgbase:
   name: rocblas
   pkgdesc: Next generation BLAS implementation for ROCm platform
-  pkgver: 7.2.0
-  pkgrel: 1
+  pkgver: 7.2.1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html
   arch:
     - x86_64
@@ -29,9 +29,9 @@ pkgbase:
     - gtest
   depends:
     - cblas
-    - gcc-libs
     - glibc
     - hip-runtime-amd
+    - libgcc
     - openmp
     - rocm-core
     - roctracer
@@ -42,9 +42,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - rocm-libraries-7.2.0.tar.gz::https://github.com/ROCm/rocm-libraries/archive/refs/tags/rocm-7.2.0.tar.gz
+    - rocm-libraries-7.2.1.tar.gz::https://github.com/ROCm/rocm-libraries/archive/refs/tags/rocm-7.2.1.tar.gz
   sha256sums:
-    - 8ad5f4a11f1ed8a7b927f2e65f24083ca6ce902a42021a66a815190a91ccb654
+    - bc5140deec3b1c93c13796a8a6d2cb7e50aa87fd89f60f87c8d801d66f2fd156
 pkgname:
   - name: rocblas
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
