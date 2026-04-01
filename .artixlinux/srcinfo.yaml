@@ -1,0 +1,29 @@
+---
+version: 6.1.2-1
+pkgbase:
+  name: giflib
+  pkgdesc: Library for reading and writing gif images
+  pkgver: 6.1.2
+  pkgrel: 1
+  url: http://giflib.sourceforge.net/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - docbook-xml
+    - docbook-xsl
+    - git
+    - imagemagick
+    - xmlto
+  depends:
+    - glibc
+  provides:
+    - libgif.so
+  source:
+    - giflib::git+https://git.code.sf.net/p/giflib/code#tag=6.1.2
+  sha512sums:
+    - afae74bcd4858237a86a4fd26409f1d8b1c9075b3482a56353a773def4f608b37e17b1fc1b5cd81a8a907b171aea3cc3dfc8311b63905d022208b73ed8618a67
+pkgname:
+  - name: giflib
+# generated with artixpkg 0.38.4-1-any
