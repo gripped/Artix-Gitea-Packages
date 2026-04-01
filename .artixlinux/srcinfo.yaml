@@ -1,9 +1,9 @@
 ---
-version: 1.47-1
+version: 1.48-1
 pkgbase:
   name: wayland-protocols
   pkgdesc: Specifications of extended Wayland protocols
-  pkgver: 1.47
+  pkgver: 1.48
   pkgrel: 1
   url: https://wayland.freedesktop.org/
   arch:
@@ -14,15 +14,15 @@ pkgbase:
     - wayland
     - meson
   source:
-    - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.47/downloads/wayland-protocols-1.47.tar.xz
-    - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.47/downloads/wayland-protocols-1.47.tar.xz.sig
+    - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.48/downloads/wayland-protocols-1.48.tar.xz
+    - https://gitlab.freedesktop.org/wayland/wayland-protocols/-/releases/1.48/downloads/wayland-protocols-1.48.tar.xz.sig
   validpgpkeys:
     - 8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A
     - A66D805F7C9329B4C5D82767CCC4F07FAC641EFF
     - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
   sha256sums:
-    - 5fd4349bcbc9bab9a46f8cf77d1f434296a7a052c87440a094f63fcf62a58e20
+    - 398036ac0eb6484982ddbde7ff86848d753231f9cdeeae983f06b52946625aa1
     - SKIP
 pkgname:
   - name: wayland-protocols
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
