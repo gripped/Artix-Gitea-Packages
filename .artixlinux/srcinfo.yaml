@@ -1,0 +1,40 @@
+---
+version: 1:0.5.3.r557.r241-1
+pkgbase:
+  name: vpnc
+  pkgdesc: VPN client for cisco3000 VPN Concentrators
+  pkgver: 0.5.3.r557.r241
+  pkgrel: 1
+  epoch: 1
+  url: https://github.com/streambinder/vpnc
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+  depends:
+    - bash
+    - glibc
+    - iproute2
+    - libgcrypt
+    - openssl
+    - perl
+    - which
+  optdepends:
+    - 'openresolv: Let vpnc manage resolv.conf'
+  backup:
+    - etc/vpnc/default.conf
+  source:
+    - vpnc::git+https://github.com/streambinder/vpnc#commit=95f08ac4434d59752f2447a2c568b325df4c5903
+    - vpnc-scripts::git+https://gitlab.com/openconnect/vpnc-scripts.git#commit=ce9e961bd0f6b867e1c7c35f78f6fb973f6ff101
+    - git+https://github.com/streambinder/vpnc.wiki.git
+    - vpnc.conf
+  sha512sums:
+    - 2862f9661541b3e91833c0bd9ad41541f4cf25f7d9d610fe1d88b74765dc4f26aeb3a00847d9fa302f75d310f9c9179ae5fb7253366857f59cba97ed16612d44
+    - 238a19f266b0341554f02a260eee533d2ecdb940ad24eb5703282d505a46828faeeb2eb8446452fc38c502a39fca79918792006aeedccb2ee8b0997ebf992973
+    - SKIP
+    - ac70712192c01ff638a9badc5cff7105bee5c4fed5d3a3b728e9597661952d156041c82fe1e544e2bab602d193d4105d3689c79c46d964623f6ce38dd89f0ea7
+pkgname:
+  - name: vpnc
+# generated with artixpkg 0.38.4-1-any

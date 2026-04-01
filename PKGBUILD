@@ -3,9 +3,9 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgname=vpnc
-_vpnc_commit=d0fd23d9432d54e7f354ecf3ced1e35d92d3dbde
-_vpncscripts_commit=4ed41c21e3857f96ab935b45092bbb07c3ccd5be
-pkgver=0.5.3.r539.r239
+_vpnc_commit=95f08ac4434d59752f2447a2c568b325df4c5903
+_vpncscripts_commit=ce9e961bd0f6b867e1c7c35f78f6fb973f6ff101
+pkgver=0.5.3.r557.r241
 pkgrel=1
 epoch=1
 pkgdesc='VPN client for cisco3000 VPN Concentrators'
@@ -36,11 +36,11 @@ source=(
   git+https://github.com/streambinder/vpnc.wiki.git
   vpnc.conf
 )
-sha512sums=('SKIP'
-            'SKIP'
+sha512sums=('2862f9661541b3e91833c0bd9ad41541f4cf25f7d9d610fe1d88b74765dc4f26aeb3a00847d9fa302f75d310f9c9179ae5fb7253366857f59cba97ed16612d44'
+            '238a19f266b0341554f02a260eee533d2ecdb940ad24eb5703282d505a46828faeeb2eb8446452fc38c502a39fca79918792006aeedccb2ee8b0997ebf992973'
             'SKIP'
             'ac70712192c01ff638a9badc5cff7105bee5c4fed5d3a3b728e9597661952d156041c82fe1e544e2bab602d193d4105d3689c79c46d964623f6ce38dd89f0ea7')
-            
+
 pkgver() {
   cd ${pkgname}
   printf "%s.r%s.r%s" "$(grep '^VERSION' Makefile|sed 's|VERSION := ||')" \
@@ -61,10 +61,6 @@ prepare() {
   sed 's|/sbin/resolvconf|/usr/bin/resolvconf|g' -i ../vpnc-scripts/vpnc-script
   ln -sf ../../vpnc-scripts/vpnc-script src
   ln -sf ../../vpnc.conf src
-  # Keep from installing sysd service file (Artix)
-  sed -e '/service/d' \
-      -e "/SYSTEMDDIR=/d"\
-      -i "$srcdir"/vpnc/Makefile
 }
 
 build() {
