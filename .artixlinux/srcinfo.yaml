@@ -1,0 +1,27 @@
+---
+version: 0.6.5-1
+pkgbase:
+  name: evisum
+  pkgdesc: Process monitor like top based on EFL
+  pkgver: 0.6.5
+  pkgrel: 1
+  url: https://www.enlightenment.org/about-evisum
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - meson
+    - ninja
+    - gcc
+    - binutils
+    - git
+  depends:
+    - efl
+  source:
+    - evisum-0.6.5::git+https://git.enlightenment.org/enlightenment/evisum.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: evisum
+# generated with artixpkg 0.38.4-1-any
