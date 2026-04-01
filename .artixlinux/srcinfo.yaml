@@ -1,10 +1,10 @@
 ---
-version: 1.2.6-1
+version: 1.2.6-3
 pkgbase:
   name: cdrdao
   pkgdesc: Records audio/data CD-Rs in disk-at-once (DAO) mode
   pkgver: 1.2.6
-  pkgrel: 1
+  pkgrel: 3
   url: http://cdrdao.sourceforge.net/
   arch:
     - x86_64
@@ -37,11 +37,12 @@ pkgbase:
 pkgname:
   - name: cdrdao
     depends:
-      - gcc-libs
       - glibc
       - lame
       - libao
+      - libgcc
       - libmad
+      - libstdc++
       - libvorbis
   - name: gcdmaster
     pkgdesc: GUI frontend for creating audio CDs and burning them using cdrdao
@@ -50,15 +51,16 @@ pkgname:
       - cairomm
       - cdrdao
       - dconf
-      - gcc-libs
       - glib2
       - glibc
       - glibmm
       - gtk3
       - gtkmm3
       - libao
+      - libgcc
       - libmad
       - libsigc++
+      - libstdc++
       - libvorbis
       - pangomm
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.2-1-any
