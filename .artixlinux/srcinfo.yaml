@@ -1,10 +1,10 @@
 ---
-version: 1.0.0.85-5
+version: 1.0.0.85-6
 pkgbase:
   name: steam
   pkgdesc: Valve's digital software delivery system
   pkgver: 1.0.0.85
-  pkgrel: 5
+  pkgrel: 6
   url: https://steampowered.com/
   arch:
     - x86_64
@@ -39,10 +39,10 @@ pkgname:
       - desktop-file-utils
       - diffutils
       - freetype2
-      - gcc-libs
       - gdk-pixbuf2
       - glibc
       - hicolor-icon-theme
+      - libgcc
       - libxcrypt
       - libxcrypt-compat
       - libxkbcommon-x11
@@ -87,4 +87,4 @@ pkgname:
       - MIT
     depends:
       - udev
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
