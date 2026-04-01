@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-2
+version: 4.4.1-1
 pkgbase:
   name: embree
   pkgdesc: Collection of high-performance ray tracing kernels
-  pkgver: 4.4.0
-  pkgrel: 2
+  pkgver: 4.4.1
+  pkgrel: 1
   url: https://embree.github.io/
   arch:
     - x86_64
@@ -22,9 +22,9 @@ pkgbase:
     - libstdc++
     - intel-tbb
   source:
-    - https://github.com/embree/embree/archive/v4.4.0/embree-4.4.0.tar.gz
+    - https://github.com/embree/embree/archive/v4.4.1/embree-4.4.1.tar.gz
   sha256sums:
-    - acb517b0ea0f4b442235d5331b69f96192c28da6aca5d5dde0cbe40799638d5c
+    - dcf338cc61b636c871ccf370e673bfd380c5ecb71ce49ad50f28e1d4ec9995dc
 pkgname:
   - name: embree
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
