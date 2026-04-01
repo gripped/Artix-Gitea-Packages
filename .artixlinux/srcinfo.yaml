@@ -1,9 +1,9 @@
 ---
-version: 13.2.1-1
+version: 14.0.0-1
 pkgbase:
   name: harfbuzz
   pkgdesc: OpenType text shaping engine
-  pkgver: 13.2.1
+  pkgver: 14.0.0
   pkgrel: 1
   url: https://harfbuzz.github.io/
   arch:
@@ -18,6 +18,8 @@ pkgbase:
     - chafa
     - freetype2
     - git
+    - glew
+    - glfw
     - glib2
     - glib2-devel
     - glibc
@@ -26,6 +28,7 @@ pkgbase:
     - gtk-doc
     - help2man
     - icu
+    - libgl
     - libpng
     - libstdc++
     - meson
@@ -33,14 +36,14 @@ pkgbase:
     - ragel
     - zlib
   source:
-    - git+https://github.com/harfbuzz/harfbuzz?signed#tag=13.2.1
+    - git+https://github.com/harfbuzz/harfbuzz?signed#tag=14.0.0
   validpgpkeys:
     - 053D20F17CCCA9651B2C6FCB9AB24930C0B997A2
     - 9F377DDB6D3153A48EB3EB1E63CC496475267693
     - 2277650A4E8BDFE4B7F6BE419FEE04E5D3531115
     - EACF64F53455E2771BA661A4803B21859F015E4E
   b2sums:
-    - 4ceda006b4d7db40a98a008c3041ff83c951e68f880a28661687ee654c04c51c6752122cb6a941915b515c57328803945a71b5f212a237cbf8392c7975cd39ce
+    - 6f3bf448de7c9c579be276fd92aa7a9c26909488fdbe498883831680ae426b68422d124dd7cc8d24656552c22db53cf541ccaa99403651e17ce382dccdc8ed44
 pkgname:
   - name: harfbuzz
     depends:
@@ -96,6 +99,9 @@ pkgname:
       - libchafa.so
       - freetype2
       - libfreetype.so
+      - glew
+      - libGLEW.so
+      - glfw
       - glib2
       - libglib-2.0.so
       - libgobject-2.0.so
@@ -106,8 +112,10 @@ pkgname:
       - libharfbuzz-subset.so
       - harfbuzz-cairo
       - libharfbuzz-cairo.so
+      - libgl
+      - libGL.so
       - libstdc++
       - libstdc++.so
   - name: harfbuzz-docs
     pkgdesc: OpenType text shaping engine - Documentation
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
