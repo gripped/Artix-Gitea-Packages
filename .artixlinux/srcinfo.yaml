@@ -1,10 +1,10 @@
 ---
-version: 1.3.7-2
+version: 1.3.7-3
 pkgbase:
   name: cln
   pkgdesc: Class library for numbers
   pkgver: 1.3.7
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.ginac.de/CLN/
   arch:
     - x86_64
@@ -13,13 +13,14 @@ pkgbase:
   makedepends:
     - texlive-latex
   depends:
-    - gcc-libs
     - glibc
     - gmp
+    - libgcc
+    - libstdc++
   source:
     - https://www.ginac.de/CLN/cln-1.3.7.tar.bz2
   sha256sums:
     - 7c7ed8474958337e4df5bb57ea5176ad0365004cbb98b621765bc4606a10d86b
 pkgname:
   - name: cln
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
