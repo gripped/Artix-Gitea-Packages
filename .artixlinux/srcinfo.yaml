@@ -1,10 +1,10 @@
 ---
-version: 0.3.6-11
+version: 0.3.6-12
 pkgbase:
   name: audiofile
   pkgdesc: Silicon Graphics Audio File Library
   pkgver: 0.3.6
-  pkgrel: 11
+  pkgrel: 12
   url: https://audiofile.68k.org/
   arch:
     - x86_64
@@ -16,8 +16,9 @@ pkgbase:
     - alsa-lib
   depends:
     - flac
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
   provides:
     - libaudiofile.so
   source:
@@ -54,4 +55,4 @@ pkgbase:
     - 4c5a341e1d8e49a43041574be6f572d2352b2397a61a71259f64d20d49a61f8a3fef04149b13e2744982f3e86841a847dfc3e6eda6cc06eca3f5d6851038663f
 pkgname:
   - name: audiofile
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.2-1-any

@@ -1,10 +1,10 @@
-# Maintainer: David Runge <dave@sleepmap.de>
+# Maintainer: David Runge <dvzrv@archlinux.org>
 # Contributor: Ray Rashif <schiv@archlinux.org>
 # Contributor: dorphell <dorphell@archlinux.org>
 
 pkgname=audiofile
 pkgver=0.3.6
-pkgrel=11
+pkgrel=12
 pkgdesc="Silicon Graphics Audio File Library"
 arch=(x86_64)
 url="https://audiofile.68k.org/"
@@ -15,8 +15,9 @@ license=(
 )
 depends=(
   flac
-  gcc-libs
   glibc
+  libgcc
+  libstdc++
 )
 makedepends=(alsa-lib)
 provides=(libaudiofile.so)
