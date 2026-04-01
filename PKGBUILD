@@ -1,6 +1,7 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Angel Velasquez <angvp@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
@@ -9,7 +10,7 @@
 
 pkgname=mpd
 pkgver=0.24.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Flexible, powerful, server-side application for playing music"
 arch=(x86_64)
 url="https://www.musicpd.org/"
