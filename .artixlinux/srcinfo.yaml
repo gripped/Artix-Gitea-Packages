@@ -1,9 +1,9 @@
 ---
-version: 5.0.3-1
+version: 5.0.5-1
 pkgbase:
   name: marked
   pkgdesc: A markdown parser built for speed
-  pkgver: 5.0.3
+  pkgver: 5.0.5
   pkgrel: 1
   url: https://github.com/chjj/marked
   arch:
@@ -15,11 +15,11 @@ pkgbase:
   depends:
     - nodejs
   noextract:
-    - marked-5.0.3.tgz
+    - marked-5.0.5.tgz
   source:
-    - https://registry.npmjs.org/marked/-/marked-5.0.3.tgz
+    - https://registry.npmjs.org/marked/-/marked-5.0.5.tgz
   sha512sums:
-    - 29438d6b8dd493be2e50d58cc61ea57da35899202c44c88301a5fc4010824555f312e7d1d335fa4f7defac66ef4e740b2f4dae9e00ccdca4b366d3be72125a1e
+    - 6ae4e62894c1c1933f18b5453a19a463ba4bf2fff40f1883697442da41326a370d2745d79fd36984b0f4d74e9d6d6adb3f07320f86340eeb35e8e902cd43247e
 pkgname:
   - name: marked
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
