@@ -1,27 +1,28 @@
 ---
-version: 5.116.0-2
+version: 5.116.0-3
 pkgbase:
   name: frameworkintegration5
   pkgdesc: Framework providing components to allow applications to integrate with a KDE Workspace
   pkgver: 5.116.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
   groups:
     - kf5
   license:
-    - LGPL
+    - LGPL-2.0-only
+    - LGPL-3.0-only
   makedepends:
     - extra-cmake-modules
   depends:
-    - gcc-libs
     - glibc
     - kconfig5
     - kconfigwidgets5
     - kiconthemes5
     - knotifications5
     - kwidgetsaddons5
+    - libstdc++
     - qt5-base
   conflicts:
     - frameworkintegration<5.111
@@ -39,4 +40,4 @@ pkgbase:
     - 0a325f16b62b630212a5279ff229944504ed479311338194f406f44582ec2998
 pkgname:
   - name: frameworkintegration5
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.4-1-any
