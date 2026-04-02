@@ -1,0 +1,32 @@
+---
+version: 2.1.5-1
+pkgbase:
+  name: ruby-locale
+  pkgdesc: A pure ruby library which provides basic and general purpose APIs for localization.
+  pkgver: 2.1.5
+  pkgrel: 1
+  url: https://github.com/ruby-gettext/locale
+  arch:
+    - any
+  license:
+    - Ruby
+    - LGPL-3.0-or-later
+  checkdepends:
+    - ruby-test-unit
+    - ruby-test-unit-rr
+  makedepends:
+    - ruby-rdoc
+    - ruby-rake
+    - ruby-bundler
+    - ruby-yard
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/ruby-gettext/locale/archive/2.1.5/ruby-locale-2.1.5.tar.gz
+  sha512sums:
+    - 72e9db211150b0151bb672da63e63f30e9e82bf639b637d52088ff9de916461f985fbbca93f2da128eaa7832ead10d840d199fe56e850b95e3162419fac00544
+pkgname:
+  - name: ruby-locale
+# generated with artixpkg 0.38.4-1-any
