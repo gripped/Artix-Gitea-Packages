@@ -1,9 +1,9 @@
 ---
-version: 6.3.1-1
+version: 6.4.0-1
 pkgbase:
   name: ruby-vcr
   pkgdesc: Record your test suite's HTTP interactions and replay them during future test runs for fast, deterministic, accurate tests.
-  pkgver: 6.3.1
+  pkgver: 6.4.0
   pkgrel: 1
   url: https://benoittgt.github.io/vcr
   arch:
@@ -19,13 +19,12 @@ pkgbase:
     - ruby-pry
   depends:
     - ruby
-    - ruby-base64
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/vcr/vcr.git#tag=v6.3.1
+    - git+https://github.com/vcr/vcr.git#tag=v6.4.0
   sha256sums:
-    - 897687f343127259723b118aac460526835f8a5b3685966f65df631977ec7cb0
+    - a79f01eebb29ea2bb84eaa03d577f97eaa46e282af111b7941f2b3a7baa5bea0
 pkgname:
   - name: ruby-vcr
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
