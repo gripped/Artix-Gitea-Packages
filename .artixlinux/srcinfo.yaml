@@ -1,10 +1,10 @@
 ---
-version: 22.1.2-1
+version: 22.1.2-1.1
 pkgbase:
   name: lib32-clang
   pkgdesc: C language family frontend for LLVM (32-bit)
   pkgver: 22.1.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://clang.llvm.org/
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - 93713470709ad0fbcf04aad29adb269478027c25e5a45e0ef3ca807dff409c12
 pkgname:
   - name: lib32-clang
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
