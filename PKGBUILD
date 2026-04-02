@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-m
-pkgver=1.6.2
+pkgver=1.7.0
 pkgrel=1
 pkgdesc='Run test/unit tests by line number. Metal!'
 arch=(any)
@@ -10,7 +10,6 @@ url='https://github.com/qrush/m'
 license=(MIT)
 depends=(
   ruby
-  ruby-method_source
   ruby-rake
 )
 makedepends=(
@@ -25,7 +24,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/qrush/m.git#tag=v$pkgver)
-sha256sums=('7bd2890baca59aace81fc4a901a762674b4f27406953fbe0d5a245b40cdd5686')
+sha256sums=('38d5c5bc41590b1ac6fb79c25a4f113cbec0de4c1d932b2e4f37b384f4d48563')
 
 prepare() {
   cd m
