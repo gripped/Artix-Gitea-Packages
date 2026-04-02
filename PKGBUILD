@@ -1,0 +1,70 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+
+pkgname=ruby-timecop
+pkgver=0.9.10
+pkgrel=3
+pkgdesc='A gem providing "time travel" and "time freezing" capabilities, making it dead simple to test time-dependent code'
+arch=(any)
+url='https://github.com/travisjeffery/timecop'
+license=(MIT)
+depends=(
+  ruby
+)
+makedepends=(
+  git
+  ruby-rdoc
+)
+checkdepends=(
+  ruby-activesupport
+  ruby-minitest-rg
+  ruby-mocha
+  ruby-pry
+  ruby-rake
+)
+options=(!emptydirs)
+source=(git+https://github.com/travisjeffery/timecop.git#tag=v$pkgver)
+sha256sums=('80128daef3c95afd695e70659c8b0113f65d64ae09d2e0b682896db5c484fbdd')
+
+prepare() {
+  cd timecop
+  sed '/bundler/d' -i Rakefile test/*.rb
+}
+
+build() {
+  local _gemdir="$(gem env gemdir)"
+  cd timecop
+  gem build timecop.gemspec
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --no-user-install \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "tmp_install/usr/bin" \
+    timecop-$pkgver.gem
+  find "tmp_install/$_gemdir/gems/" \
+    -type f \
+    \( \
+        -iname "*.o" -o \
+        -iname "*.c" -o \
+        -iname "*.so" -o \
+        -iname "*.time" -o \
+        -iname "gem.build_complete" -o \
+        -iname "Makefile" \
+    \) \
+    -delete
+  rm -r tmp_install/$_gemdir/cache
+}
+
+check() {
+  local _gemdir="$(gem env gemdir)"
+  cd timecop
+  GEM_HOME="tmp_install/$_gemdir" rake
+}
+
+package() {
+  cd timecop
+  cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+}
