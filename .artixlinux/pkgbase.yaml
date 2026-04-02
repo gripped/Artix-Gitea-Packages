@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 4.20.8-1
+    version: 4.20.8-2
     packages:
-      - thunar-4.20.8-1-x86_64.pkg.tar.zst
+      - thunar-4.20.8-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
