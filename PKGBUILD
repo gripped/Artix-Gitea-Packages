@@ -7,36 +7,56 @@
 
 _gemname=rdiscount
 pkgname=ruby-$_gemname
-pkgver=2.2.7.3
-pkgrel=7
+pkgver=2.2.7.4
+pkgrel=1
 pkgdesc="Fast Implementation of Gruber's Markdown in C"
 arch=(x86_64)
 url='https://dafoster.net/projects/rdiscount/'
 license=(BSD-3-Clause)
 depends=(ruby)
 makedepends=(git ruby-rdoc ruby-rake)
+checkdepends=(ruby-test-unit)
 options=(!emptydirs)
 source=("$pkgname::git+https://github.com/davidfstr/rdiscount#tag=$pkgver")
-sha512sums=('ef50b315831677374c8bb8766b097f40192bcd35ee2ec22a6a0182def571ccf919fed56f189fc1358e366ae9b037c92b5eb25f461c22732bb2599efbe44515c9')
-b2sums=('e006909fb4e474fe0ad7b3b523ee7d4954ff89435cba1dab543cf76aa4fed97e24278622d578057235fe6d16c954d25e3d5400e90699b3bca5de52755ff191f4')
+sha512sums=('ca1c5f7b1fb448e05d35f0de27c095b7a6b446925068c134b8aa289699b919959a7c31e25d07a5d9211793c2a89354a87e6c6c53ee71178e632c4d62fbc2fe1d')
+b2sums=('6ea384be9fa5bfa63c06d77fe74056d53684dff090d0a6b2d1794f084850c7a686030dbc8aff12965f8e2f48aa7f3082c450c2b63eb6c82f1151d2bc2cf31c82')
 
-build() {
+prepare() {
   cd "$pkgname"
 
-  rake package
+  # Do not rebuild extension to run test
+  sed -i -r "/task 'test:unit' => \[:build\]/d;s/=> \[:build\] (do |t|)/\1/" Rakefile
 }
 
-package() {
+build() {
   cd "$pkgname"
 
   local _gemdir="$(ruby -e'puts Gem.default_dir')"
   local _platform="$(gem env platform | cut -d':' -f2)"
   local _extension_api_version="$(ruby -e'puts Gem.extension_api_version')"
-  gem install --ignore-dependencies --no-user-install -i "$pkgdir/$_gemdir" -n "$pkgdir/usr/bin" "pkg/$_gemname-$pkgver.gem"
-  rm "$pkgdir/$_gemdir/cache/$_gemname-$pkgver.gem" \
-      "${pkgdir}/${_gemdir}/extensions/${_platform}/${_extension_api_version}/${_gemname}-${pkgver}/gem_make.out"
-  install -D -m644 "$pkgdir/$_gemdir/gems/$_gemname-$pkgver/COPYING" "$pkgdir/usr/share/licenses/$pkgname/COPYING"
 
-  rm -rf "$pkgdir/$_gemdir/gems/$_gemname-$pkgver/ext" \
-      "${pkgdir}/${_gemdir}/doc/${_gemname}-${pkgver}/ri/ext"
+  gem build --verbose "${_gemname}.gemspec"
+  rake build
+
+  gem install --ignore-dependencies --no-user-install -i "tmp_install$_gemdir" -n "tmp_install/usr/bin" $_gemname-$pkgver.gem
+  rm "tmp_install/$_gemdir/cache/$_gemname-$pkgver.gem" \
+      "tmp_install/${_gemdir}/extensions/${_platform}/${_extension_api_version}/${_gemname}-${pkgver}/gem_make.out"
+  install -D -m644 "tmp_install/$_gemdir/gems/$_gemname-$pkgver/COPYING" "tmp_install/usr/share/licenses/$pkgname/COPYING"
+
+  rm -rf "tmp_install/$_gemdir/gems/$_gemname-$pkgver/ext" \
+      "tmp_install/${_gemdir}/doc/${_gemname}-${pkgver}/ri/ext"
+}
+
+check() {
+  cd "$pkgname"
+
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+
+  GEM_HOME="tmp_install${_gemdir}" rake test
+}
+
+package() {
+  cd "$pkgname"
+
+  cp --archive --verbose tmp_install/* "${pkgdir}"
 }
