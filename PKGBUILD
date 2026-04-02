@@ -6,7 +6,7 @@
 # Contributor: Vsevolod Balashov <vsevolod at balashov dot name>
 
 pkgname=gunicorn
-pkgver=25.2.0
+pkgver=25.3.0
 pkgrel=1
 pkgdesc='WSGI HTTP Server for UNIX'
 arch=('any')
@@ -36,7 +36,7 @@ optdepends=(
   'python-tornado: for asynchronous request handling with tornado'
 )
 source=("git+https://github.com/benoitc/$pkgname.git#tag=$pkgver")
-b2sums=('e28f3324c13a9b0f3c53e928aeb4f0d79de608085d6da178e64229a7d9ad967b40990f35c6157fe3ef9d06d03acc0fba3232f9614cfb19b7d6a0061fc003c48c')
+b2sums=('82c5b655bc8dbe611e69cec6f2079bfad3cb3057613e677b7a846e10e56a95c55c27a5547cb811fed3c4e937df75b106ee132b703f45a1fb3fad01915e2e453e')
 
 build() {
   cd $pkgname

@@ -2,8 +2,8 @@
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.2.0-1
+    version: 25.3.0-1
     packages:
-      - gunicorn-25.2.0-1-any.pkg.tar.zst
+      - gunicorn-25.3.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 25.1.0-1
