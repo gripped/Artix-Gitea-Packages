@@ -7,23 +7,27 @@
 pkgbase=kea
 pkgname=("${pkgbase}" "${pkgbase}-docs")
 pkgver=3.0.3
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="High-performance, extensible DHCP server engine from ISC, supporting both DHCPv4 and DHCPv6"
 url="https://kea.isc.org"
 arch=('x86_64')
 license=('MPL-2.0')
-makedepends=('git' 'boost' 'mariadb' 'meson' 'postgresql' 'python' 'python-sphinx' 'python-sphinx_rtd_theme' 'doxygen' 'graphviz' 'gtest'
+makedepends=('git' 'boost' 'boost-libs' 'mariadb' 'meson' 'postgresql' 'python' 'python-sphinx' 'python-sphinx_rtd_theme' 'doxygen' 'graphviz' 'gtest'
              'log4cplus' 'mariadb-libs' 'openssl' 'postgresql-libs' 'texlive-bibtexextra' 'texlive-basic' 'texlive-fontsextra'
              'texlive-formatsextra' 'texlive-games' 'texlive-humanities' 'texlive-latexextra' 'texlive-music' 'texlive-pictures'
              'texlive-pstricks' 'texlive-publishers' 'texlive-science')
 checkdepends=('procps-ng')
 source=("git+https://gitlab.isc.org/isc-projects/kea.git#tag=Kea-${pkgver}?signed"
-        'tmpfiles-kea.conf'
-        'fix-build-with-boost-1.89.patch')
+        'kea.sysusers'
+        'kea.tmpfiles'
+        'fix-build-with-boost-1.89.patch'
+        'fix-build-with-boost-1.90.patch')
 b2sums=('993f4a9d8ebde89685376694bb3655c5e1e340d7d56726724ef72262021b899eed94fe52a5c2a39e0630f30c3c3849e857cd80208b1241bc04a31fa3c244f2bf'
-        '89422802e78e958113165864d171c6cb0818949089b1ba7426c71814455be76c35a5814e9d828af578b27004e4352371f1b5aa12fdf1d8cfa437b89ff5a993d5'
-        '4cfe04b61d7884ed492c3f7f06cf3ea68ec231063a8ba868221bbeb17ab94315d80e05243db89a12b29d0b2b1e35e1c7a86f33a42874ddc85661420ea9347e07')
+        '630310bb2b544a00276a0fa0fff8b7bb93f6bf63e3e5f8ed38f2e1fd2d9747ea4b4cbaa7c0023eec1baddf5e8fe1966b71c6941b3a3cd2e7705e67b15543f2c7'
+        '5d417bfe67dcbee2696767eeda4fb3d75a7b87475667b946a041fa372e3062406acc23a257be38829cd4e8686c36f98cab73a2908d64c1420ab2fa4efb5c5444'
+        '4cfe04b61d7884ed492c3f7f06cf3ea68ec231063a8ba868221bbeb17ab94315d80e05243db89a12b29d0b2b1e35e1c7a86f33a42874ddc85661420ea9347e07'
+        '1258a72d82eedd1d428b65079cbf66e1efb1bd7fbe26c0029151c9264afd4d526e11f6f7a648fe4165cab52107bfb40577f59e50178e6c82b98efaab328f7e3c')
 validpgpkeys=('BE0E9748B718253A28BB89FFF1B11BF05CF02E57'  # Internet Systems Consortium, Inc. (Signing key, 2017-2018) <codesign@isc.org>
               'AE3FAC796711EC59FC007AA474BB6B9A4CBB3D38'  # Internet Systems Consortium, Inc. (Signing key, 2019-2020) <codesign@isc.org>
               '7E1C91AC8030A5A59D1EFAB9750F3C87723E4012'  # Internet Systems Consortium, Inc. (Signing key, 2021-2022) <codesign@isc.org>
@@ -36,10 +40,13 @@ prepare() {
 	# Fix build with boost 1.89
 	# See https://gitlab.isc.org/isc-projects/kea/-/merge_requests/2782
 	patch -Np1 -i "${srcdir}/fix-build-with-boost-1.89.patch"
+	# Fix build with boost 1.90
+	# See https://gitlab.archlinux.org/archlinux/packaging/packages/kea/-/merge_requests/3#note_440881
+	patch -Np1 -i "${srcdir}/fix-build-with-boost-1.90.patch"
 }
 
 build() {
-	artix-meson "${pkgbase}" build -D netconf=disabled -D tests=enabled
+	artix-meson "${pkgbase}" build -D netconf=disabled -D tests=enabled --install-umask 0022 -D runstatedir=/run
 	meson compile -C build
 	meson compile -C build devel doc
 }
@@ -76,24 +83,14 @@ package_kea() {
 
 	meson install -C build --destdir "${pkgdir}"
 
-	install -Dm 644 tmpfiles-kea.conf "${pkgdir}/usr/lib/tmpfiles.d/${pkgbase}.conf"
+	install -Dm 644 kea.sysusers "${pkgdir}/usr/lib/sysusers.d/${pkgbase}.conf"
+	install -Dm 644 kea.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/${pkgbase}.conf"
 
-	# Do not package /run & /var/run
-	rm -rf "${pkgdir}"{/run,/var/run}
+	# Do not package directories that will be created by systemd-tmpfiles
+	rm -rf "${pkgdir}"{/run,/var}
 
 	# Split docs in a separate package
 	rm -rf "${pkgdir}/usr/share/"{doc,man}
-
-	# Upstream changed the default permissions of all directories to 750 to address [CVE-2025-32803]
-	# To avoid pacman warning notices about top level directories' permissions differing between the package and the filesystem,
-	# but still comply with upstream change regarding [CVE-2025-32803], we are switching back filesystem's directory tree to 755
-	# but leave kea's directories in 750
-	for dir in etc \
-		   usr{,/bin,/share,/include,/lib{,/pkgconfig,/python3.14{,/site-packages}}} \
-		   var{,/lib,/log}
-	do
-		chmod 755 "${pkgdir}/${dir}"
-	done
 }
 
 package_kea-docs() {

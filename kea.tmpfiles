@@ -1,0 +1,4 @@
+d /run/kea 0750 kea kea -
+d /run/lock/kea 0750 kea kea -
+d /var/lib/kea 0750 kea kea -
+d /var/log/kea 0750 kea kea -
