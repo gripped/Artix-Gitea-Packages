@@ -8,7 +8,7 @@ _alpm=2.4.4
 
 pkgbase=openrc
 pkgname=('openrc' 'libeinfo')
-pkgver=0.63
+pkgver=0.63.1
 pkgrel=1
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
@@ -26,7 +26,7 @@ source=(
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
     "0001-install-agetty-conf.patch"
 )
-sha256sums=('593caf11997fe1bcb1bd201b69978f0096b73cc13acffeeb4f2277822a988038'
+sha256sums=('4e85a85371a603cc7a1c61eebd5ca6ff85a8f0e03483ba93cbfb33577d3d4901'
             '0b44210db9770588bd491cd6c0ac9412d99124c6be4c9d3f7d31ec8746072f5c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
