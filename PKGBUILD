@@ -2,7 +2,7 @@
 
 pkgname=artix-metro
 pkgver=3.1.17
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Artix package pushing automation tool"
 arch=('any')
 url="https://gitea.artixlinux.org/corysanin/artix-metro"
