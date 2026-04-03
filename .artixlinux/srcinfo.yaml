@@ -1,0 +1,20 @@
+---
+version: 20260403-1
+pkgbase:
+  name: artix-docs
+  pkgver: 20260403
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/documentation
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+  source:
+    - git+https://gitea.artixlinux.org/artix/documentation.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-docs
+# generated with artixpkg 0.38.2-1-any
