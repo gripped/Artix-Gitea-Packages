@@ -1,9 +1,9 @@
 ---
-version: 20250720-1
+version: 20260403-1
 pkgbase:
   name: artix-community-presets
   pkgdesc: Application settings and presets for the community ISOs
-  pkgver: 20250720
+  pkgver: 20260403
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/desktop-presets
   arch:
@@ -37,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: artix-community-presets
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
