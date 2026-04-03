@@ -1,10 +1,10 @@
 ---
-version: 1.11-2
+version: 1.12-1
 pkgbase:
   name: distro-info
   pkgdesc: Information about all releases of Debian and Ubuntu
-  pkgver: 1.11
-  pkgrel: 2
+  pkgver: 1.12
+  pkgrel: 1
   url: https://salsa.debian.org/debian/distro-info
   arch:
     - x86_64
@@ -36,9 +36,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.11
+    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.12
   sha256sums:
-    - 224e9902b1b32dff69c2de0e5065d3e822c6c81fa21e7f6e7c89edfd8270def9
+    - b04497b6667a8ed1b6b71456a35f8121af73abdca9e112bdef77cb8c8e2a338c
 pkgname:
   - name: distro-info
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
