@@ -1,10 +1,10 @@
 ---
-version: 50.0-1
+version: 50.0-2
 pkgbase:
   name: gedit-plugins
   pkgdesc: Collection of plugins for the gedit Text Editor
   pkgver: 50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/World/gedit/gedit-plugins
   arch:
     - x86_64
