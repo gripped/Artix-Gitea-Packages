@@ -1,0 +1,72 @@
+---
+version: 6.7.1-1
+pkgbase:
+  name: forkgram
+  pkgdesc: Fork of the Telegram Desktop messaging app
+  pkgver: 6.7.1
+  pkgrel: 1
+  url: https://github.com/Forkgram/tdesktop
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - boost
+    - boost-libs
+    - cmake
+    - extra-cmake-modules
+    - fmt
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - gperf
+    - jemalloc
+    - libtg_owt
+    - ninja
+    - range-v3
+    - tl-expected
+  depends:
+    - ada
+    - ffmpeg
+    - hunspell
+    - kcoreaddons
+    - libavif
+    - libdispatch
+    - libheif
+    - libjxl
+    - libvpx
+    - libxdamage
+    - minizip-ng
+    - openal
+    - openh264
+    - opus
+    - protobuf
+    - qt6-base
+    - qt6-declarative
+    - qt6-svg
+    - qt6-wayland
+    - rnnoise
+    - xcb-util-keysyms
+    - xxhash
+    - libpipewire
+    - libxcomposite
+    - libxrandr
+    - libxtst
+  optdepends:
+    - 'webkit2gtk: embedded browser features'
+    - 'xdg-desktop-portal: desktop integration'
+  conflicts:
+    - forkgram-bin
+  options:
+    - '!lto'
+  source:
+    - forkgram-6.7.1.tar.gz::https://github.com/Forkgram/tdesktop/releases/download/v6.7.1/frk-v6.7.1-full.tar.gz
+    - telegram-tdlib::git+https://github.com/tdlib/td.git
+    - 0001-calls_video_incoming.patch
+  sha256sums:
+    - 2f11fda1af85e250c3ce37676b2755e04d70750c906be624c35fcf15bf9b8bf1
+    - SKIP
+    - d421c0750b2bb6b3eb5a96d631efe6ed7b201d1c815a83a4159e22b276391fdc
+pkgname:
+  - name: forkgram
+# generated with artixpkg 0.38.2-1-any

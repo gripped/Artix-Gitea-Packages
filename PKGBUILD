@@ -1,0 +1,173 @@
+# Maintainer:
+# Contributor: Peter Jung ptr1337 <admin@ptr1337.dev>
+# Contributor: SoulHarsh007 <admin@soulharsh007.dev>
+# Contributor: MedzikUser <nivua1fn@duck.com>
+
+## options
+: ${_use_sodeps:=false}
+
+_pkgname="forkgram"
+pkgname="$_pkgname"
+pkgver=6.7.1
+pkgrel=1
+pkgdesc="Fork of the Telegram Desktop messaging app"
+url="https://github.com/Forkgram/tdesktop"
+license=('GPL-3.0-or-later')
+arch=('x86_64')
+
+depends=(
+  ada
+  ffmpeg
+  hunspell
+  kcoreaddons
+  libavif
+  libdispatch
+  libheif
+  libjxl
+  libvpx
+  libxdamage
+  minizip-ng
+  openal
+  openh264
+  opus
+  protobuf
+  qt6-base
+  qt6-declarative
+  qt6-svg
+  qt6-wayland
+  rnnoise
+  xcb-util-keysyms
+  xxhash
+
+  ## for libtg_owt
+  libpipewire
+  libxcomposite
+  libxrandr
+  libxtst
+)
+makedepends=(
+  boost
+  boost-libs # static link
+  cmake
+  extra-cmake-modules
+  fmt
+  git
+  glib2-devel
+  gobject-introspection
+  gperf    # for tde2e
+  jemalloc # gio error when absent
+  libtg_owt
+  ninja
+  range-v3
+  tl-expected
+)
+optdepends=(
+  'webkit2gtk: embedded browser features'
+  'xdg-desktop-portal: desktop integration'
+)
+
+conflicts=("forkgram-bin")
+
+options=('!lto')
+
+_pkgsrc="frk-v$pkgver-full"
+_pkgsrc_tdlib="telegram-tdlib"
+_pkgext="tar.gz"
+source=(
+  "$_pkgname-$pkgver.$_pkgext"::"$url/releases/download/v$pkgver/$_pkgsrc.$_pkgext"
+  "$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git"
+  '0001-calls_video_incoming.patch'
+)
+sha256sums=(
+  '2f11fda1af85e250c3ce37676b2755e04d70750c906be624c35fcf15bf9b8bf1'
+  'SKIP'
+  'd421c0750b2bb6b3eb5a96d631efe6ed7b201d1c815a83a4159e22b276391fdc'
+)
+
+prepare() {
+  local src
+  for src in "${source[@]}"; do
+    src="${src%%::*}"
+    src="${src##*/}"
+    src="${src%.zst}"
+    if [[ $src == *.patch ]]; then
+      printf '\nApplying patch: %s\n' "$src"
+      patch -d "$_pkgsrc" -Np1 -F100 -i "${srcdir:?}/$src"
+    fi
+  done
+
+  # force system minizip-ng
+  rm -rf "$_pkgsrc/Telegram/ThirdParty/minizip"
+  sed -E -e '/pkg_check_modules/s&\bminizip\b&minizip-ng&' -i "$_pkgsrc/cmake/external/minizip/CMakeLists.txt"
+}
+
+build() {
+  echo "Building tde2e..."
+  local _cmake_tde2e=(
+    -B "build_tde2e"
+    -S "$_pkgsrc_tdlib"
+    -G Ninja
+    -DCMAKE_BUILD_TYPE=None
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DTD_E2E_ONLY=ON
+    -DBUILD_SHARED_LIBS=OFF
+    -DBUILD_TESTING=OFF
+    -Wno-dev
+  )
+
+  cmake "${_cmake_tde2e[@]}"
+  cmake --build "build_tde2e"
+  DESTDIR="$srcdir/deps" cmake --install "build_tde2e"
+
+  echo "Building forkgram..."
+  local _cmake_options=(
+    -B build
+    -S "$_pkgsrc"
+    -G Ninja
+    -DCMAKE_BUILD_TYPE=None
+    -DCMAKE_INSTALL_PREFIX=/usr
+    -DCMAKE_PREFIX_PATH="$srcdir/deps/usr"
+    -DDESKTOP_APP_DISABLE_AUTOUPDATE=ON
+    -DTDESKTOP_API_ID=611335
+    -DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
+    -DDESKTOP_APP_USE_PACKAGED_FONTS=OFF
+    -Wno-dev
+  )
+
+  cmake "${_cmake_options[@]}"
+  cmake --build build
+}
+
+package() {
+  if [[ "${_use_sodeps::1}" == "t" ]]; then
+    eval "depends+=(
+      'libavcodec.so'
+      'libavfilter.so'
+      'libavformat.so'
+      'libavutil.so'
+      'libcrypto.so'
+      'libgio-2.0.so'
+      'libglib-2.0.so'
+      'libgobject-2.0.so'
+      'libheif.so'
+      'libjpeg.so'
+      'libjxl.so'
+      'libjxl_threads.so'
+      'liblz4.so'
+      'libopenal.so'
+      'libopenh264.so'
+      'libopus.so'
+      'libpipewire-0.3.so'
+      'libprotobuf-lite.so'
+      'libssl.so'
+      'libswresample.so'
+      'libswscale.so'
+      'libvpx.so'
+      'libxkbcommon.so'
+      'libxxhash.so'
+      'libz.so'
+    )"
+  fi
+
+  DESTDIR="$pkgdir" cmake --install build
+}
