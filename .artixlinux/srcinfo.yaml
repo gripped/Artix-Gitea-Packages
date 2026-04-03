@@ -1,10 +1,10 @@
 ---
-version: 50.0-1
+version: 50.0-2
 pkgbase:
   name: gedit
   pkgdesc: Easy-to-use general-purpose text editor
   pkgver: 50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gedit-text-editor.org/
   arch:
     - x86_64
