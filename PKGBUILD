@@ -4,11 +4,17 @@
 
 pkgname=miniaudio
 pkgver=0.11.25
-pkgrel=2
+pkgrel=4
 pkgdesc='Single file audio playback and capture library'
-arch=('any')
+arch=('x86_64')
 url='https://github.com/mackron/miniaudio'
 license=('MIT')
+depends=(
+	'glibc'
+	'opusfile'
+	'libvorbis'
+	# TODO(Martin): Missing Steam Audio
+)
 makedepends=('cmake')
 conflicts=('mini_al')
 provides=('mini_al')
@@ -17,11 +23,23 @@ sha256sums=('b900edcffe979816e2560a0580b9b1216d674b4f17fbadeca8f777a7f8ab0274')
 
 build() {
 	cd "${pkgname}-${pkgver}"
-	cmake .
+	cmake . \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DMINIAUDIO_BUILD_TESTS=OFF \
+		-DBUILD_SHARED_LIBS=ON
+	make
 }
 
 package() {
 	cd "${pkgname}-${pkgver}"
+	install -Dm755 libminiaudio.so "${pkgdir}/usr/lib/libminiaudio.so"
+	install -Dm755 libminiaudio_channel_combiner_node.so "${pkgdir}/usr/lib/libminiaudio_channel_combiner_node.so"
+	install -Dm755 libminiaudio_channel_separator_node.so "${pkgdir}/usr/lib/libminiaudio_channel_separator_node.so"
+	install -Dm755 libminiaudio_libopus.so "${pkgdir}/usr/lib/libminiaudio_libopus.so"
+	install -Dm755 libminiaudio_libvorbis.so "${pkgdir}/usr/lib/libminiaudio_libvorbis.so"
+	install -Dm755 libminiaudio_ltrim_node.so "${pkgdir}/usr/lib/libminiaudio_ltrim_node.so"
+	install -Dm755 libminiaudio_reverb_node.so "${pkgdir}/usr/lib/libminiaudio_reverb_node.so"
+	install -Dm755 libminiaudio_vocoder_node.so "${pkgdir}/usr/lib/libminiaudio_vocoder_node.so"
 	install -dm755 "${pkgdir}/usr/include/miniaudio/"
 	install -m644 miniaudio.h "${pkgdir}/usr/include/miniaudio/miniaudio.h"
 	install -dm755 "${pkgdir}/usr/include/miniaudio/extras/"

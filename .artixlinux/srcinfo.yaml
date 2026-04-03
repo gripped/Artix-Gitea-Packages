@@ -1,17 +1,21 @@
 ---
-version: 0.11.25-2
+version: 0.11.25-4
 pkgbase:
   name: miniaudio
   pkgdesc: Single file audio playback and capture library
   pkgver: 0.11.25
-  pkgrel: 2
+  pkgrel: 4
   url: https://github.com/mackron/miniaudio
   arch:
-    - any
+    - x86_64
   license:
     - MIT
   makedepends:
     - cmake
+  depends:
+    - glibc
+    - opusfile
+    - libvorbis
   provides:
     - mini_al
   conflicts:
