@@ -1,0 +1,36 @@
+---
+version: 1:2.3.3-11
+pkgbase:
+  name: amule
+  pkgdesc: An eMule-like client for ed2k p2p network
+  pkgver: 2.3.3
+  pkgrel: 11
+  epoch: 1
+  url: http://www.amule.org
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - boost
+    - cmake
+    - gd
+    - git
+  depends:
+    - crypto++
+    - geoip
+    - libupnp
+    - wxwidgets-gtk3
+  provides:
+    - amule-daemon
+  source:
+    - git+https://github.com/amule-project/amule#tag=2.3.3
+    - amule.sysusers
+    - amule.tmpfiles
+  sha256sums:
+    - 9e28bde45b432bb966a2972141f8a445c9cdfe8a808d9874cfa4d67f277ce153
+    - 1a1780d3010f338b16ace33fac6af8480bb0830402001f95f12c2e98afbd1b60
+    - e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d
+pkgname:
+  - name: amule
+# generated with artixpkg 0.38.4-1-any
