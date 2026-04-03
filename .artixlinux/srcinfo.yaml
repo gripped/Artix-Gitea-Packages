@@ -1,0 +1,28 @@
+---
+version: 20260403-1
+pkgbase:
+  name: artix-desktop-presets
+  pkgdesc: Artix common desktop presets
+  pkgver: 20260403
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/desktop-presets
+  arch:
+    - any
+  groups:
+    - artix-branding
+    - artix-style
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - artix-dark-theme
+    - artix-backgrounds
+    - artix-icons
+  source:
+    - git+https://gitea.artixlinux.org/artix/desktop-presets.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-desktop-presets
+# generated with artixpkg 0.38.2-1-any
