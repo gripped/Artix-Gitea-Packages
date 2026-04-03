@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 26.2.2-2
+    packages:
+      - libreoffice-fresh-sdk-26.2.2-2-x86_64.pkg.tar.zst
+      - libreoffice-fresh-26.2.2-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 26.2.2-1
