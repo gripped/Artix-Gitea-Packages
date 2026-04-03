@@ -1,9 +1,9 @@
 ---
-version: 20260306-1
+version: 20260328-1
 pkgbase:
   name: iana-etc
   pkgdesc: /etc/protocols and /etc/services provided by IANA
-  pkgver: 20260306
+  pkgver: 20260328
   pkgrel: 1
   url: https://www.iana.org/protocols
   arch:
@@ -14,13 +14,13 @@ pkgbase:
     - etc/protocols
     - etc/services
   source:
-    - https://sources.archlinux.org/other/packages/iana-etc/service-names-port-numbers-20260306.xml
-    - https://sources.archlinux.org/other/packages/iana-etc/protocol-numbers-20250712.xml
+    - https://sources.archlinux.org/other/packages/iana-etc/service-names-port-numbers-20260328.xml
+    - https://sources.archlinux.org/other/packages/iana-etc/protocol-numbers-20260310.xml
     - license-from-upstream
   sha256sums:
-    - fc6c499e4bd416c1539c3f17f407b4b5c7af26159c3f7622d57d0bbc9ef446c5
-    - ae8e9a2d0e18c3a34640d71ccfdae68c8f2e38704c80affd30c86f59d15d7b31
+    - 05dcb6075f7b06abb876f645c9f778653b558566f28b336d3f42374e3ababbaf
+    - 59cdd7930cd6152bd11713b8883503511fffb2add72345d21d043cecb969803b
     - dd37e92942d5a4024f1c77df49d61ca77fc6284691814903a741785df61f78cb
 pkgname:
   - name: iana-etc
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
