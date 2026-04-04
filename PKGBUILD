@@ -7,14 +7,37 @@
 
 pkgname=powerdns-recursor
 pkgver=5.4.0
-pkgrel=2
+pkgrel=4
 pkgdesc='Resolving DNS server'
-url='https://www.powerdns.com/'
 arch=('x86_64')
+url='https://www.powerdns.com/'
 license=('GPL-2.0-only')
-depends=('gcc-libs' 'boost-libs' 'libcap' 'libcurl.so' 'libsodium' 'esysusers' 'luajit' 'openssl'
-         'libboost_context.so' 'fstrm' 'net-snmp')
-makedepends=('boost' 'meson' 'pandoc' 'python' 'python-yaml' 'ragel' 'rust' )
+depends=(
+  'boost-libs'
+  'fstrm'
+  'glibc'
+  'gnutls'
+  'libboost_context.so'
+  'libcap'
+  'libcurl.so'
+  'libgcc'
+  'libsodium'
+  'libstdc++'
+  'luajit'
+  'net-snmp'
+  'openssl'
+  'esysusers'
+)
+makedepends=(
+  'boost'
+  'meson'
+  'pandoc'
+  'python'
+  'python-yaml'
+  'ragel'
+  'rust'
+  
+)
 options=(!lto)
 provides=('pdns-recursor')
 conflicts=('pdns-recursor')
