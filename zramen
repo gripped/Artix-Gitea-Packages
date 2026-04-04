@@ -1,0 +1,6 @@
+type            = scripted
+command         = /usr/bin/zramen make
+stop-command    = /usr/bin/zramen toss
+smooth-recovery = true
+log-type        = buffer
+waits-for       = pre-local.target
