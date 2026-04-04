@@ -1,9 +1,9 @@
 ---
-version: 0.26.1-1
+version: 0.27.1-1
 pkgbase:
   name: opensc
   pkgdesc: Tools and libraries for smart cards
-  pkgver: 0.26.1
+  pkgver: 0.27.1
   pkgrel: 1
   url: https://github.com/OpenSC/OpenSC/wiki
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   backup:
     - etc/opensc.conf
   source:
-    - git+https://github.com/OpenSC/OpenSC.git#tag=0.26.1
+    - git+https://github.com/OpenSC/OpenSC.git#tag=0.27.1
   sha512sums:
-    - 92b73ae829595e22de8291672bb4108565ab9065421eaf3dd87efa8f42d855c85a7a406c99b8c4c24c7c6f4ea5b3d6c1703b3b5bef3d019278beb4817217613e
+    - 67fca998cd4915ea85db87db1f7d99dc3e4f2d85273bea69edbd7d702882b8a1fbfb19c4dbeaf594271edafd1af8d815f9e487a76bf5361382e7de742711d158
 pkgname:
   - name: opensc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.4-1-any
