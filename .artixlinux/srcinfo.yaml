@@ -1,9 +1,9 @@
 ---
-version: 0.6.5-1
+version: 0.6.6-1
 pkgbase:
   name: evisum
   pkgdesc: Process monitor like top based on EFL
-  pkgver: 0.6.5
+  pkgver: 0.6.6
   pkgrel: 1
   url: https://www.enlightenment.org/about-evisum
   arch:
@@ -19,7 +19,7 @@ pkgbase:
   depends:
     - efl
   source:
-    - evisum-0.6.5::git+https://git.enlightenment.org/enlightenment/evisum.git
+    - evisum-0.6.6::git+https://git.enlightenment.org/enlightenment/evisum.git
   sha256sums:
     - SKIP
 pkgname:
