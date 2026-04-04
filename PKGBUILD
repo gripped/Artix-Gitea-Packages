@@ -3,12 +3,15 @@
 
 pkgname=tree-sitter-lua
 pkgver=0.5.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Lua grammar for tree-sitter'
 arch=(x86_64)
 url=https://github.com/tree-sitter-grammars/tree-sitter-lua
 license=(MIT)
 groups=(tree-sitter-grammars)
+depends=(
+  glibc
+)
 makedepends=(
   git
   tree-sitter-cli
