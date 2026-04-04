@@ -1,10 +1,10 @@
 ---
-version: 0.8.1-2
+version: 0.8.1-3
 pkgbase:
   name: tree-sitter-vim
   pkgdesc: Vimscript grammar for tree-sitter
   pkgver: 0.8.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/tree-sitter-grammars/tree-sitter-vim
   arch:
     - x86_64
@@ -15,6 +15,8 @@ pkgbase:
   makedepends:
     - git
     - tree-sitter-cli
+  depends:
+    - glibc
   optdepends:
     - 'tree-sitter: core library'
   provides:
@@ -25,4 +27,4 @@ pkgbase:
     - b57c58b8215ed0e3ef99377348dcfba675f4629b438be5cc84f8c18ecf8b3100468a5280188f0ba36c2f7b916a1f5cfb6984d8353a66fb8878958a3dca146693
 pkgname:
   - name: tree-sitter-vim
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
