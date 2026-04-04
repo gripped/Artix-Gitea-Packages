@@ -1,10 +1,10 @@
 ---
-version: 4.0.0-1
+version: 4.1.0-2
 pkgbase:
   name: tree-sitter-vimdoc
   pkgdesc: Vim help file grammar for tree-sitter
-  pkgver: 4.0.0
-  pkgrel: 1
+  pkgver: 4.1.0
+  pkgrel: 2
   url: https://github.com/neovim/tree-sitter-vimdoc
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
   provides:
     - libtree-sitter-vimdoc.so
   source:
-    - git+https://github.com/neovim/tree-sitter-vimdoc.git#tag=v4.0.0
+    - git+https://github.com/neovim/tree-sitter-vimdoc.git#tag=v4.1.0
   b2sums:
-    - a40ef9bb81f25cc63a1d7a2d079bd4b6ee2235882b04a5f74c2574e1fc9d9abb1890efdb5de69f33fcd2212e57cc4cec540599e9b791f79ea2a8234d9326eecb
+    - 5102cf5a457ec3d6c99e1bfaf5682ad7c976a09b712cf3d7ba5cbcd441f302899157abc64b487e69710546ba9a52e3142e1149d5f35d947db4d399fe77d9efd7
 pkgname:
   - name: tree-sitter-vimdoc
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.38.4-1-any
