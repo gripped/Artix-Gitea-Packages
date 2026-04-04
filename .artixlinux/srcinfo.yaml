@@ -1,10 +1,10 @@
 ---
-version: 6.18.1-9
+version: 6.18.1-10
 pkgbase:
   name: csound
   pkgdesc: Programming language for sound rendering and signal processing
   pkgver: 6.18.1
-  pkgrel: 9
+  pkgrel: 10
   url: https://csound.com
   arch:
     - x86_64
@@ -100,4 +100,4 @@ pkgname:
       - libcsnd6.so
   - name: csound-doc
     pkgdesc: Programming language for sound rendering and signal processing - documentation
-# generated with artixpkg 0.38.3-1-any
+# generated with artixpkg 0.38.4-1-any
