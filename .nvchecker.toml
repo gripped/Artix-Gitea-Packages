@@ -1,0 +1,4 @@
+[awww]
+source = "git"
+git = "https://codeberg.org/LGFae/awww.git"
+prefix = "v"
