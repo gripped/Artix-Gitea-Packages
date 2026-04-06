@@ -7,7 +7,7 @@
 pkgbase=kea
 pkgname=("${pkgbase}" "${pkgbase}-docs")
 pkgver=3.0.3
-pkgrel=2
+pkgrel=5
 epoch=1
 pkgdesc="High-performance, extensible DHCP server engine from ISC, supporting both DHCPv4 and DHCPv6"
 url="https://kea.isc.org"
@@ -18,6 +18,7 @@ makedepends=('git' 'boost' 'boost-libs' 'mariadb' 'meson' 'postgresql' 'python' 
              'texlive-formatsextra' 'texlive-games' 'texlive-humanities' 'texlive-latexextra' 'texlive-music' 'texlive-pictures'
              'texlive-pstricks' 'texlive-publishers' 'texlive-science')
 checkdepends=('procps-ng')
+install="${pkgbase}.install"
 source=("git+https://gitlab.isc.org/isc-projects/kea.git#tag=Kea-${pkgver}?signed"
         'kea.sysusers'
         'kea.tmpfiles'
@@ -25,7 +26,7 @@ source=("git+https://gitlab.isc.org/isc-projects/kea.git#tag=Kea-${pkgver}?signe
         'fix-build-with-boost-1.90.patch')
 b2sums=('993f4a9d8ebde89685376694bb3655c5e1e340d7d56726724ef72262021b899eed94fe52a5c2a39e0630f30c3c3849e857cd80208b1241bc04a31fa3c244f2bf'
         '630310bb2b544a00276a0fa0fff8b7bb93f6bf63e3e5f8ed38f2e1fd2d9747ea4b4cbaa7c0023eec1baddf5e8fe1966b71c6941b3a3cd2e7705e67b15543f2c7'
-        '5d417bfe67dcbee2696767eeda4fb3d75a7b87475667b946a041fa372e3062406acc23a257be38829cd4e8686c36f98cab73a2908d64c1420ab2fa4efb5c5444'
+        'd62c9181b55956441c43414bc2a5a8cff143281931bd57fe584ed03e6035a87c610da2530c10233189fa5926e98e47d05c120b5218e77c9b842131668c9be1e9'
         '4cfe04b61d7884ed492c3f7f06cf3ea68ec231063a8ba868221bbeb17ab94315d80e05243db89a12b29d0b2b1e35e1c7a86f33a42874ddc85661420ea9347e07'
         '1258a72d82eedd1d428b65079cbf66e1efb1bd7fbe26c0029151c9264afd4d526e11f6f7a648fe4165cab52107bfb40577f59e50178e6c82b98efaab328f7e3c')
 validpgpkeys=('BE0E9748B718253A28BB89FFF1B11BF05CF02E57'  # Internet Systems Consortium, Inc. (Signing key, 2017-2018) <codesign@isc.org>
@@ -86,8 +87,12 @@ package_kea() {
 	install -Dm 644 kea.sysusers "${pkgdir}/usr/lib/sysusers.d/${pkgbase}.conf"
 	install -Dm 644 kea.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/${pkgbase}.conf"
 
-	# Do not package directories that will be created by systemd-tmpfiles
-	rm -rf "${pkgdir}"{/run,/var}
+	# Do not package /run & /var/run (/run is handled via systemd-tmpfiles, /var/run is a symlink to /run)
+	rm -rf "${pkgdir}"{/run,/var/run}
+
+	# Update /etc/kea/{,radius} and /var/{log,lib}/kea directories permissions to match the ones set by systemd-tmpfiles
+	# This is to avoid unecessary "directory permissions differ" warnings from pacman during upgrades
+	chmod 750 "${pkgdir}/etc/kea/"{,radius} "${pkgdir}/var/"{log,lib}/kea
 
 	# Split docs in a separate package
 	rm -rf "${pkgdir}/usr/share/"{doc,man}

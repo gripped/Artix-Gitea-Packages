@@ -3,8 +3,8 @@ team: world
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,10 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1:3.0.3-2
+    version: 1:3.0.3-5
     packages:
-      - kea-1:3.0.3-2-x86_64.pkg.tar.zst
-      - kea-docs-1:3.0.3-2-x86_64.pkg.tar.zst
+      - kea-1:3.0.3-5-x86_64.pkg.tar.zst
+      - kea-docs-1:3.0.3-5-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1:3.0.3-1
