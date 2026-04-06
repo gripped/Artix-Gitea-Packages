@@ -1,9 +1,9 @@
 ---
-version: 49.0-1
+version: 50.0-1
 pkgbase:
   name: gnome-tour
   pkgdesc: Guided tour and greeter for GNOME
-  pkgver: 49.0
+  pkgver: 50.0
   pkgrel: 1
   url: https://apps.gnome.org/Tour/
   arch:
@@ -18,16 +18,16 @@ pkgbase:
     - meson
     - rust
   depends:
-    - gcc-libs
     - glib2
     - glibc
     - gtk4
     - hicolor-icon-theme
     - libadwaita
+    - libgcc
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-tour.git#tag=49.0
+    - git+https://gitlab.gnome.org/GNOME/gnome-tour.git#tag=50.0
   b2sums:
-    - 0a566f0db4cd76bd796d6cab42a43e0c5da89823b452af666647bbb4d26ac13efc7e35de9349d3f8b2b02269a5edbc1583584798aa8cea55dca0fbb8cda10259
+    - bbea4f457474d476c2c5933e01855ac1d5900f8048f1738910d1e8ed61a4bdc270d3eedcb1709d6a50b61efee0a2b814f0810ab1d4add64e1d3b3b382e0233ff
 pkgname:
   - name: gnome-tour
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
