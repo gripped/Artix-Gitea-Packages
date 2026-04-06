@@ -1,12 +1,11 @@
 ---
-version: 5.2.2-2
+version: 5.2.2-3
 pkgbase:
   name: kmymoney
   pkgdesc: Personal finance manager for KDE which operates similarly to MS-Money or Quicken
   pkgver: 5.2.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://kmymoney.org/
-  changelog: kmymoney.changelog
   arch:
     - x86_64
   license:
@@ -14,43 +13,47 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
     - kdoctools
-    - doxygen
     - qgpgme
   depends:
+    - aqbanking
     - glibc
-    - libgcc
-    - libstdc++
     - gmp
-    - libalkimia
-    - sqlcipher
-    - qt6-base
     - gpgmepp
+    - gwenhywfar
+    - gwenhywfar-qt
+    - hicolor-icon-theme
     - karchive
-    - kcoreaddons
-    - kconfig
-    - kwidgetsaddons
-    - ki18n
-    - kcompletion
     - kcmutils
+    - kcolorscheme
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcontacts
+    - kcoreaddons
+    - kcrash
+    - kdiagram
+    - kholidays
+    - ki18n
+    - kidentitymanagement
+    - kio
     - kitemmodels
     - kitemviews
-    - kxmlgui
-    - ktextwidgets
-    - kio
-    - kholidays
     - kjobwidgets
-    - sonnet
-    - kcolorscheme
-    - kconfigwidgets
-    - kdiagram
+    - ktextwidgets
+    - kwidgetsaddons
+    - kxmlgui
+    - libakonadi
+    - libalkimia
+    - libgcc
     - libical
     - libofx
+    - libstdc++
+    - python
+    - qt6-base
+    - qt6-declarative
     - qtkeychain-qt6
-    - kidentitymanagement
-    - libakonadi
-    - kcontacts
-    - aqbanking
-    - gwenhywfar
+    - sonnet
+    - sqlcipher
   optdepends:
     - 'perl: for financequote.pl'
   source:
@@ -58,9 +61,9 @@ pkgbase:
     - https://download.kde.org/stable/kmymoney/5.2.2/kmymoney-5.2.2.tar.xz.sig
   validpgpkeys:
     - D69A745A55331F44F404D8258D4DE062AA2EB01C
-  sha256sums:
-    - 40b6639e6a216100d20248ed74fa154202f9ccdfbc335227cedc1bef8ea5d377
+  b2sums:
+    - 701ef89f27c50d3b297ff59c8a4b30e6852786fdadabef2d08e4fa17740dbdeb5019a1851a852748fe7808eb29b8aa57afd20f035067dfb66f31612e9be83352
     - SKIP
 pkgname:
   - name: kmymoney
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.37
