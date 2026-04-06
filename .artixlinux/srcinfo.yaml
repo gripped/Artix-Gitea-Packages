@@ -1,11 +1,11 @@
 ---
-version: 41.2-3
+version: 50.0-1
 pkgbase:
   name: gnome-robots
   pkgdesc: Avoid the robots and make them crash into each other
-  pkgver: 41.2
-  pkgrel: 3
-  url: https://wiki.gnome.org/Apps/Robots
+  pkgver: 50.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gnome-robots
   arch:
     - x86_64
   groups:
@@ -15,27 +15,24 @@ pkgbase:
   makedepends:
     - appstream
     - git
-    - librsvg
     - meson
     - rust
     - yelp-tools
   depends:
-    - cairo
     - dconf
-    - gcc-libs
-    - gdk-pixbuf2
     - glib2
     - glibc
+    - glycin
+    - glycin-gtk4
     - graphene
     - gtk4
     - hicolor-icon-theme
     - libadwaita
-    - libxml2
-    - pango
+    - libgcc
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-robots.git#tag=41.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-robots.git#tag=50.0
   b2sums:
-    - a014e7ed291da79c3266532c4231e8ca8d03227a2ab802e0b299f40b5cf2b82173928a5aa3603c41266e967475bbc30b52d5201557e536ea5ff4dfa83584a3f5
+    - 8bc7f9004f1ddbafe9e556adf850a718eac9d03bbbe2155e7a590711321b3b3b408ce300f0e57998f94824994365e0383300c4f5a7d6bcb3b05f8b8abe64bbbc
 pkgname:
   - name: gnome-robots
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.4-1-any
