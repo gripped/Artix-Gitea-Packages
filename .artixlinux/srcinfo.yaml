@@ -1,11 +1,11 @@
 ---
-version: 1.28.1-3
+version: 1.28.1-4
 pkgbase:
   name: efl
   pkgdesc: Enlightenment Foundation Libraries
   pkgver: 1.28.1
-  pkgrel: 3
-  url: http://www.enlightenment.org
+  pkgrel: 4
+  url: https://www.enlightenment.org
   arch:
     - x86_64
   license:
@@ -15,63 +15,65 @@ pkgbase:
     - MIT
     - custom
   makedepends:
-    - git
-    - meson
-    - ninja
-    - gcc
-    - binutils
-    - procps-ng
-    - wayland-protocols
-    - pulseaudio
     - doxygen
-  depends:
-    - curl
-    - fontconfig
-    - fribidi
-    - harfbuzz
-    - gst-plugins-base-libs
-    - luajit
-    - lua52
-    - libgl
-    - libinput
-    - libpulse
-    - libsndfile
-    - libspectre
     - libraw
     - librsvg
-    - libwebp
-    - libxcomposite
-    - libxcursor
-    - libxinerama
-    - libxkbcommon
-    - libxrandr
-    - libxss
-    - libunwind
-    - mesa
+    - libspectre
+    - meson
+    - ninja
     - poppler
-    - openjpeg2
+    - python
+    - scim
+    - texlive-basic
+    - texlive-fontutils
+    - wayland-protocols
+  depends:
+    - curl
+    - dbus
+    - fontconfig
+    - freetype2
+    - fribidi
+    - giflib
+    - glib2
+    - gstreamer
+    - gst-plugins-base-libs
+    - harfbuzz
+    - hicolor-icon-theme
+    - libglvnd
+    - libinput
     - libjpeg-turbo
     - libpng
+    - libpulse
+    - libsndfile
     - libtiff
-    - giflib
-    - lz4
-    - zlib
-    - libelogind
-    - udev
-    - openssl
-    - glibc
-    - libutil-linux
-    - dbus
-    - shared-mime-info
-    - mailcap
-    - ttf-font
-    - scim
-    - wayland
+    - libunwind
+    - libwebp
+    - libx11
+    - libxcb
+    - libxcomposite
+    - libxcursor
+    - libxdamage
+    - libxext
+    - libxfixes
+    - libxi
+    - libxinerama
+    - libxkbcommon
     - libxkbcommon-x11
-    - libavif
-    - libheif
-    - libjxl
-    - rlottie
+    - libxrandr
+    - libxrender
+    - libxss
+    - libxtst
+    - lua52
+    - mailcap
+    - mesa
+    - openjpeg2
+    - openssl
+    - shared-mime-info
+    - systemd-libs
+    - ttf-font
+    - util-linux-libs
+    - wayland
+    - zlib
   optdepends:
     - 'gst-plugins-base: Video and thumbnail codecs'
     - 'gst-plugins-good: Video and thumbnail codecs'
@@ -88,10 +90,12 @@ pkgbase:
     - '!emptydirs'
   source:
     - https://download.enlightenment.org/rel/libs/efl/efl-1.28.1.tar.xz
-    - moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git
   sha256sums:
     - 84cf6145f9cc82bfff690005be24392c8f3c52f8e00ff04d8eea371429c09424
-    - SKIP
 pkgname:
   - name: efl
-# generated with artixpkg 0.37.4-1-any
+    replaces:
+      - elementary
+      - evas_generic_loaders
+      - emotion_generic_players
+# generated with artixpkg 0.38.4-1-any
