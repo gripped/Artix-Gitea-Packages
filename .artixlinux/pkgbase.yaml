@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,14 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 0.84.0-1
+    packages:
+      - vte-common-0.84.0-1-x86_64.pkg.tar.zst
+      - vte3-0.84.0-1-x86_64.pkg.tar.zst
+      - vte3-utils-0.84.0-1-x86_64.pkg.tar.zst
+      - vte4-0.84.0-1-x86_64.pkg.tar.zst
+      - vte4-utils-0.84.0-1-x86_64.pkg.tar.zst
+      - vte-docs-0.84.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.82.3-1
