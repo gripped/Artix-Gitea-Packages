@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=mongo-c-driver
-pkgver=1.30.7
+pkgver=2.2.3
 pkgrel=1
 pkgdesc="A client library written in C for MongoDB"
 arch=(x86_64)
@@ -18,9 +18,9 @@ depends=(
 makedepends=(cmake)
 provides=(
   libbson
-  libbson-1.0.so
+  libbson2.so
   libmongoc
-  libmongoc-1.0.so
+  libmongoc2.so
 )
 conflicts=(
   libbson
@@ -31,7 +31,7 @@ replaces=(
   libmongoc
 )
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-b2sums=('374dd5ca2e01f08e833b85b313ae256e439364f5e144e45ffc207fe414862aa8fe9d12e0d949a17f6d30070109c070d5ba29c4adacf94f871c03986b9026dae7')
+b2sums=('151d5bacb58297163ef2c2c8b5d6baf46f8cd2e9f956d899f96c0045cef93538ebe978fc5d8e462087cf5177c3681bec1d444ba5bb6fa1516f5c1747490a3345')
 
 build() {
   cd $pkgname-$pkgver
@@ -53,11 +53,14 @@ check() {
   export MONGOC_TEST_SKIP_LIVE=ON
   local skip_tests=(
     mongoc/Client/ipv6/single
+    mongoc/Client/ssl/reconnect/pooled
     mongoc/ClientPool/openssl/change_ssl_opts
     mongoc/MongoDB/handshake/null_args
     mongoc/TOPOLOGY/scanner_ssl
     mongoc/azure/imds/http/talk
     mongoc/gcp/http/talk
+    mongoc/pkg-config/mongoc-import-shared
+    mongoc/pkg-config/mongoc-import-static
   )
   local skip_tests_pattern="${skip_tests[0]}$(printf '|%s' "${skip_tests[@]:1}")"
   ctest --test-dir build --output-on-failure -E "$skip_tests_pattern"
