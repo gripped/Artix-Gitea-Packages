@@ -1,9 +1,9 @@
 ---
-version: 49.2-1
+version: 50.0-1
 pkgbase:
   name: loupe
   pkgdesc: A simple image viewer for GNOME
-  pkgver: 49.2
+  pkgver: 50.0
   pkgrel: 1
   url: https://apps.gnome.org/Loupe/
   arch:
@@ -22,7 +22,6 @@ pkgbase:
     - cairo
     - dconf
     - fontconfig
-    - gcc-libs
     - glib2
     - glibc
     - glycin
@@ -31,14 +30,15 @@ pkgbase:
     - hicolor-icon-theme
     - lcms2
     - libadwaita
+    - libgcc
     - libgweather-4
     - libseccomp
   source:
-    - git+https://gitlab.gnome.org/GNOME/loupe.git?signed#tag=49.2
+    - git+https://gitlab.gnome.org/GNOME/loupe.git?signed#tag=50.0
   validpgpkeys:
     - 4587A0EE1EE5478AAB82C0A93BA28A5559F08EBD
   b2sums:
-    - 57b7eea4eb8443101b3bb6365f53b87c7089b69887b0937f05d2673df4e7cb6703ba2b3f59507055bd47c87ff1335e41181202c2689536b9baf8c922ba703c20
+    - fb8a6a175409be8a255f0053d822318c657b1d431e38d30303c9094c906505d952fecb5bc3a85e344850d49684814397eb38bd477f58ac3abb0681273da82b9a
 pkgname:
   - name: loupe
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
