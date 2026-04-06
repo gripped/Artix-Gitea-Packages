@@ -27,7 +27,7 @@ repos:
   world-gremlins:
     version: 5.2.2-3
     packages:
-      - kmymoney-5.2.2-3-.pkg.tar.xz
+      - kmymoney-5.2.2-3-.pkg.tar.zst
     debug: []
   world:
     version: 5.2.2-2
