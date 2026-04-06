@@ -1,10 +1,10 @@
 ---
-version: 1:1.8.11-4
+version: 1:1.8.12-1
 pkgbase:
   name: iptables
   pkgdesc: Linux kernel packet control tool
-  pkgver: 1.8.11
-  pkgrel: 4
+  pkgver: 1.8.12
+  pkgrel: 1
   epoch: 1
   url: https://www.netfilter.org/projects/iptables/index.html
   arch:
@@ -24,7 +24,7 @@ pkgbase:
     - libpcap
     - nftables
   source:
-    - git+https://git.netfilter.org/iptables?signed#tag=v1.8.11
+    - git+https://git.netfilter.org/iptables?signed#tag=v1.8.12
     - 0001-fix-iptables-apply-FS-75401.patch
     - empty.rules
     - empty-filter.rules
@@ -38,8 +38,14 @@ pkgbase:
     - 37D964ACC04981C75500FB9BD55D978A8A1420E4
     - 8C5F7146A1757A65E2422A94D70D1A666ACF2B21
   b2sums:
-    - 4f42734ab3f4103720ffd5486032dac53d20958305d6e4803efcf1261d5112c464dad7ae2616a30e228590a5de907bc463e7a980fc517639b0168a6b194b6fde
+    - b27f46b9312528bc73d15ca86ec33b61334ce038894fd5dad89b828e473db43e9ff624ebde88c2de3a0b8afd5ac0ba3a1c538eeec099a6b89882a4399253fd42
     - 7008ad93b252e1410273e0474f1a571c861cfe7d5bdedf89eb0e59fe714e85b6a9cec6c711937718bce6c3c18eaeec5b6db9e40ee71d43c15472bfff6de92054
+    - b81766286ca0b9ab4a5bc92904f911cc33d4fe1e074128e16f1181a9abbf6b9b5b040bc7e0df8bf0bc9a90a4448ef9275780635494faf9922ba8412de3da473c
+    - 8bf7f2f335ca399c35c8711eebbd5278b30bb5a9a5f2ba4dd61c14a0348ac611ec3052c4e8d74221cdc968d5f0aa2d5bf9d24f101bb662fd768a936488376955
+    - bfb92b44dc843dc0c2f0c7ff2130a30b4ebac85d912f92b19a2c60bf3e658eb3277dcea7278fceae3e2286e8ea63fa70e738761067af8bfd07f837f71745ec5d
+    - f674f13e33a751ce1a85a19990172627ba955f090a7c7246a1de8b7522923e623fdb5962fec069c96a23001ced26d56de506173ce2f57b0cc4688c77f85e096c
+    - c8883910038361ce7af2c7c1ef223b15b79e224ebbd6107039143e31b12272386dbee16c9c9269e18e4c8bb3167b760ff8323799202885a865f32a293032c787
+    - 0b7c0207b96079b19fbba42bde347f5a945ac6aeba68da420fbb792e098e8d1ccff0be26793048eed8132b7e3d461a2f02df0791291d53643db923d87732dd25
     - d51b50c72db275ffc32e45d06000d6a273be56ccea9c89b34b297879fbe44cdea4dd9c7926fb14247992f4e6aefd33acc351fbbbcb012366ac73ec590ecb1b28
     - 0b42fb260ed23d823eeff23d8f56ed1388ca85cf0edd6bceedebc915f7c455bdd99cd2a213074bad02e90e977ead9c42206579cde2d6ef0dcaef33a574dd4445
     - 5597df63731a5c00516f90dcc7419501b5b3da8c8d3c30ed26b01bfe8e14dd61bb554a5a71f4f80b244600476e7af170a80d4ba575814e4bf6fd7ce2a2f14a57
@@ -91,4 +97,4 @@ pkgname:
       - etc/ethertypes
       - etc/iptables/iptables.rules
       - etc/iptables/ip6tables.rules
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
