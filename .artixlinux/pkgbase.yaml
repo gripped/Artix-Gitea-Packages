@@ -25,13 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 14.0.0-1
+    version: 14.1.0-1
     packages:
-      - harfbuzz-14.0.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-cairo-14.0.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-icu-14.0.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-utils-14.0.0-1-x86_64.pkg.tar.zst
-      - harfbuzz-docs-14.0.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-14.1.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-cairo-14.1.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-icu-14.1.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-utils-14.1.0-1-x86_64.pkg.tar.zst
+      - harfbuzz-docs-14.1.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 13.2.1-1
