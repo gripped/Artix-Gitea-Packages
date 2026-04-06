@@ -1,10 +1,10 @@
 ---
-version: 25.12.3-1
+version: 25.12.3-2
 pkgbase:
   name: libkdcraw
   pkgdesc: A C++ interface used to decode RAW picture
   pkgver: 25.12.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kde.org/
   arch:
     - x86_64
@@ -42,4 +42,4 @@ pkgname:
       - glibc
       - libraw
       - qt5-base
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
