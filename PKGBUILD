@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-regexp_parser
-pkgver=2.11.0
-pkgrel=2
+pkgver=2.11.1
+pkgrel=1
 pkgdesc='A library for tokenizing, lexing, and parsing Ruby regular expressions'
 arch=(any)
 url='https://github.com/ammar/regexp_parser'
@@ -26,7 +26,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/ammar/regexp_parser.git#tag=v$pkgver)
-sha256sums=('2e7f3f60d6d70428f844b363be71084da5be0e1295de71ad80f4a6d83aebe4d6')
+sha256sums=('c408998c81a04b149114fe712c0775d76caaa39946a2a5115b855f047fdc19ca')
 
 prepare() {
   cd regexp_parser
