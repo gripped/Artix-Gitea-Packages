@@ -1,22 +1,21 @@
-# Maintainer: artist for Artix Linux
+# Contributor: Ronald van Haren <ronald@archlinux.org>
+# Contributor: Enlightenment Developers <enlightenment-devel@enlightenment.org>
 
-pkgname=efl
+pkgbase=efl
+pkgname=('efl')
 pkgver=1.28.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
-url="http://www.enlightenment.org"
+url="https://www.enlightenment.org"
 license=('BSD' 'LGPL2.1' 'GPL2' 'MIT' 'custom')
-depends=('curl' 'fontconfig' 'fribidi' 'harfbuzz'
-         'gst-plugins-base-libs' 'luajit' 'lua52' 'libgl' 'libinput'
-         'libpulse' 'libsndfile' 'libspectre' 'libraw' 'librsvg' 'libwebp'
-         'libxcomposite' 'libxcursor' 'libxinerama' 'libxkbcommon' 'libxrandr'
-         'libxss' 'libunwind' 'mesa' 'poppler' 'openjpeg2' 'libjpeg-turbo'
-         'libpng' 'libtiff' 'giflib' 'lz4' 'zlib' 'libelogind' 'udev' 'openssl'
-         'glibc' 'libutil-linux' 'dbus' 'shared-mime-info' 'mailcap'
-         'ttf-font' 'scim' 'wayland' 'libxkbcommon-x11'
-         'libavif' 'libheif' 'libjxl' 'rlottie')
-makedepends=('git' 'meson' 'ninja' 'gcc' 'binutils' 'procps-ng' 'wayland-protocols' 'pulseaudio' 'doxygen')
+depends=('curl' 'dbus' 'fontconfig' 'freetype2' 'fribidi' 'giflib' 'glib2' 'gstreamer'
+         'gst-plugins-base-libs' 'harfbuzz' 'hicolor-icon-theme' 'libglvnd' 'libinput'
+         'libjpeg-turbo' 'libpng' 'libpulse' 'libsndfile' 'libtiff' 'libunwind' 'libwebp' 'libx11'
+         'libxcb' 'libxcomposite' 'libxcursor' 'libxdamage' 'libxext' 'libxfixes' 'libxi'
+         'libxinerama' 'libxkbcommon' 'libxkbcommon-x11' 'libxrandr' 'libxrender' 'libxss'
+         'libxtst' 'lua52' 'mailcap' 'mesa' 'openjpeg2' 'openssl' 'shared-mime-info' 'systemd-libs'
+         'ttf-font' 'util-linux-libs' 'wayland' 'zlib')
 optdepends=('gst-plugins-base: Video and thumbnail codecs'
             'gst-plugins-good: Video and thumbnail codecs'
             'gst-plugins-bad: Video and thumbnail codecs'
@@ -28,49 +27,65 @@ optdepends=('gst-plugins-base: Video and thumbnail codecs'
             'libspectre: PostScript loader'
             'poppler: PDF loader'
             'scim: IM module for SCIM')
+makedepends=('doxygen' 'libraw' 'librsvg' 'libspectre' 'meson' 'ninja' 'poppler' 'python' 'scim'
+             'texlive-basic' 'texlive-fontutils' 'wayland-protocols')
 options=('!emptydirs')
-source=("https://download.enlightenment.org/rel/libs/${pkgname}/$pkgname-$pkgver.tar.xz"
-        "moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git")
-sha256sums=('84cf6145f9cc82bfff690005be24392c8f3c52f8e00ff04d8eea371429c09424'
-            'SKIP')
+source=(https://download.enlightenment.org/rel/libs/${pkgname}/$pkgname-$pkgver.tar.xz)
+sha256sums=('84cf6145f9cc82bfff690005be24392c8f3c52f8e00ff04d8eea371429c09424')
+
+
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
 
   export CFLAGS="$CFLAGS -fvisibility=hidden"
-  export CXXFLAGS="$CXXFLAGS -fvisibility=hidden"
 
   if [ -d build ]; then
     rm -rf build
   fi
   mkdir -p build
 
-  meson setup --prefix=/usr --buildtype=release \
+  meson --prefix=/usr \
     -Dc_std=gnu99 \
-    -Dpulseaudio=true \
-    -Dglib=true \
-    -Dsystemd=false \
-    -Dnetwork-backend=connman \
     -Dfb=true \
     -Ddrm=true \
     -Dwl=true \
+    -Dnetwork-backend=connman \
     -Dlua-interpreter=lua \
     -Dbindings= \
-    -Dbuild-tests=false \
     -Dbuild-examples=false \
-    -Ddocs=true \
+    -Dbuild-tests=false \
     . build
 
   ninja -C build
+
+#  cd build/doc
+#  doxygen -w html ../../doc/head.html ../../doc/foot.html ../../doc/e.css Doxyfile
 }
 
-package() {
+package_efl(){
+  replaces=('elementary' 'evas_generic_loaders' 'emotion_generic_players')
+
   cd "${srcdir}/${pkgname}-${pkgver}"
+  DESTDIR="${pkgdir}" ninja -C build install
 
-  DESTDIR="$pkgdir" ninja -C build install
-
-  install -Dm644 -t "$pkgdir/usr/share/elementary/config/standard/" "$srcdir/moksha-artix/defaults/base.cfg"
-  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname/" README.md
-  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COMPLIANCE COPYING
+  # install non-standard license files
+  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/licenses/COPYING.BSD" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/COPYING.BSD"
+  install -Dm644 "${srcdir}/${pkgname}-${pkgver}/licenses/COPYING.SMALL" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/COPYING.SMALL"
 }
 
+# doxygen is broken - it just hangs for no apparent reason, but works
+# outside of docker conrainers, so disable docs.
+#package_efl-docs() {
+#  pkgdesc="Documentation for the Enlightenment Foundation Libraries"
+#  depends=()
+#
+#  cd "${srcdir}/${pkgbase}-${pkgver}/build"
+#  install -d "${pkgdir}/usr/share/doc/${pkgbase}"
+#  cp -a html "${pkgdir}/usr/share/doc/${pkgbase}/html"
+#  cp -a latex "${pkgdir}/usr/share/doc/${pkgbase}/latex"
+#  #cp -a man "${pkgdir}/usr/share"
+#
+#}

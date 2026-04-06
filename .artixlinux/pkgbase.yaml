@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1.28.1-2
+    version: 1.28.1-4
     packages:
-      - efl-1.28.1-2-x86_64.pkg.tar.zst
+      - efl-1.28.1-4-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 1.28.1-3
