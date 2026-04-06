@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 50.0-1
+    packages:
+      - nautilus-50.0-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-50.0-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-docs-50.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 49.5-1
