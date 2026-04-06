@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 49.2-1
+    version: 50.0-1
     packages:
-      - gdm-49.2-1-x86_64.pkg.tar.zst
-      - libgdm-49.2-1-x86_64.pkg.tar.zst
+      - gdm-50.0-1-x86_64.pkg.tar.zst
+      - libgdm-50.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 49.2-1
