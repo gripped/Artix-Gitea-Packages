@@ -23,6 +23,7 @@ makedepends=(
     'meson'
 )
 checkdepends=(
+    'libx11' # for dbus-daemon
     'dbus'
     'python-dbus-next'
     'python-pytest'

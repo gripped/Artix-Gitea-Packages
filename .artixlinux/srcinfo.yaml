@@ -11,6 +11,7 @@ pkgbase:
   license:
     - LGPL-3.0-only
   checkdepends:
+    - libx11
     - dbus
     - python-dbus-next
     - python-pytest
@@ -33,4 +34,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: playerctl
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
