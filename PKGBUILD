@@ -3,7 +3,7 @@
 
 pkgname=gnome-panel
 pkgver=3.58.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Panel of GNOME Flashback'
 arch=(x86_64)
 url='https://wiki.gnome.org/Projects/GnomePanel'
@@ -51,6 +51,7 @@ source=(
   gnome-panel-78.patch
   gnome-panel-79.patch
   gnome-panel-80.patch
+  gnome-panel-can-shutdown.patch
 )
 b2sums=('064a73442407f16d4676099472a129e3d7fbda31b5963631656a667c40b928e9b41f55e5b9c2f2cec0963806d9a12dbda7e1c75a56d751ba2944b9df011560b8'
         '92ba8de3f8e114bde52782112056a0f1d558b09c8b791fdb63a1fb3060eecabb855b2551c8227332aeb3ac1986f0718736f4014e789453a13eeaded055e00d8f'
@@ -58,7 +59,8 @@ b2sums=('064a73442407f16d4676099472a129e3d7fbda31b5963631656a667c40b928e9b41f55e
         '3a4e857b8c32a717f4c47f3c1f598c32e10e552d5092a7f45304cc0f6a15a6093ec66e237f42ed7815a0ff108224aba9eda37c7d5038a76a21fac385b84a9657'
         '63d2a15e149cd8745483de3511bb9ebfa085608505ffee9cfd5144316e3f0b2a9406e42c20e4943d30e96441d9bca95a28eb3674c4c9ecc7aac472968f9d7a12'
         '4f1fcb16b8c770637575ae29277e13c6c7b44636b55dd4dc48a90248936b125a8988332141ec9f90eb1c4754ad676c8f473e6751908d45db88d596705f5700cb'
-        '77a95c896bc541ade2b5118f27c0d2428cd8cd0d70c0b85aec5834035b66ce6f348958f5b928718a3b5b58fd1d8677a76df414141cf7d37116200a40b57e94e4')
+        '77a95c896bc541ade2b5118f27c0d2428cd8cd0d70c0b85aec5834035b66ce6f348958f5b928718a3b5b58fd1d8677a76df414141cf7d37116200a40b57e94e4'
+        'ad46619306ae24b4e20792b54e314b720619fcbd4198e16482e001c0adc8ad39b1e06d7a4e714c5164cd2b52add793465ebf63ad926204cfbb0e2901fb71b0ef')
 validpgpkeys=(7B44FD78E49334EC10B3B288A3D013EC303E1894) # Alberts Muktupāvels <alberts.muktupavels@gmail.com>
 
 prepare() {
@@ -79,11 +81,15 @@ prepare() {
   # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/80
   git apply -3 ../gnome-panel-80.patch
 
+  # Update CanShutdown method for GNOME 50
+  # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/83
+  git apply -3 ../gnome-panel-can-shutdown.patch
+
   # Reduce panel icon spacing
   sed -i '/"panel-icon-spacing"/{n;n;s/>2</>1</}' data/org.gnome.gnome-panel.gschema.xml
 
   git apply -3 ../0001-build-remove-systemd-dependency-and-code.patch
-  autoreconf -fi
+  autoreconf -fiv
 }
 
 build() {
