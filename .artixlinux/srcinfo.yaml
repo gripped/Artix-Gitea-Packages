@@ -1,10 +1,10 @@
 ---
-version: 3.38.0-2
+version: 3.40.0-1
 pkgbase:
   name: template-glib
   pkgdesc: Templating library for GLib
-  pkgver: 3.38.0
-  pkgrel: 2
+  pkgver: 3.40.0
+  pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/template-glib
   arch:
     - x86_64
@@ -18,13 +18,13 @@ pkgbase:
     - meson
     - vala
   depends:
-    - gcc-libs
     - glib2
     - glibc
+    - libgcc
   source:
-    - git+https://gitlab.gnome.org/GNOME/template-glib.git#tag=3.38.0
+    - git+https://gitlab.gnome.org/GNOME/template-glib.git#tag=3.40.0
   b2sums:
-    - 16621a53ba2d07631e371007d897e38f9f0d726d25c039dcbd6a94cc5b7671aec8a2e0ffb0c3109c4af11aab23defb8301cd5fc9498ad6317e2281ebef658cfe
+    - 196bbc261901ab8b4b74b36e3d5c2fc150f4eeee24d8a816811a32c3b0296b78120df60ce44bf1cdb8ea91c864050caa3165d04f283696b7e93496b0a41df182
 pkgname:
   - name: template-glib
     provides:
@@ -32,4 +32,4 @@ pkgname:
   - name: template-glib-docs
     pkgdesc: Templating library for GLib (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
