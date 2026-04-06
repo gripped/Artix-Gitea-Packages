@@ -1,25 +1,26 @@
 ---
-version: 1.48-6
+version: 1.49-1
 pkgbase:
   name: perl-xml-xpath
   pkgdesc: A set of modules for parsing and evaluating XPath statements
-  pkgver: 1.48
-  pkgrel: 6
+  pkgver: 1.49
+  pkgrel: 1
   url: https://metacpan.org/release/XML-XPath
   arch:
     - any
   license:
-    - PerlArtistic
-    - GPL
+    - Artistic-2.0
+  makedepends:
+    - perl-path-tiny
   depends:
     - perl
     - perl-xml-parser
   options:
     - '!emptydirs'
   source:
-    - https://cpan.metacpan.org/authors/id/M/MA/MANWAR/XML-XPath-1.48.tar.gz
+    - https://cpan.metacpan.org/authors/id/M/MA/MANWAR/XML-XPath-1.49.tar.gz
   sha256sums:
-    - 7bc75be36b239e5b2e700a9570d2b53b43093d467f2abe6a743f9ff9093790cd
+    - 9c84a51be4cdb47bf88766ecab051fe092016472969e39f4acdba009885faabe
 pkgname:
   - name: perl-xml-xpath
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
