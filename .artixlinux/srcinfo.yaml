@@ -1,29 +1,25 @@
 ---
-version: 2.5.6-1.1
+version: 2.5.6-2
 pkgbase:
   name: frei0r-plugins
   pkgdesc: Collection of video effect plugins
   pkgver: 2.5.6
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://frei0r.dyne.org/
   arch:
     - x86_64
   license:
     - GPL-2.0-or-later
   makedepends:
-    - cairo
     - cmake
-    - gavl
     - git
-    - opencv
   depends:
+    - cairo
+    - gavl
     - glibc
     - libgcc
     - libstdc++
-  optdepends:
-    - 'cairo: cairoaffineblend, cairoblend, cairogradient, cairoimagegrid and mirr0r plugins'
-    - 'gavl: rgbparade, scale0tilt and vectorscope plugins'
-    - 'opencv: facebl0r and facedetect plugins'
+    - opencv
   source:
     - git+https://github.com/dyne/frei0r#tag=v2.5.6
   validpgpkeys:
@@ -32,4 +28,4 @@ pkgbase:
     - 246ca3f9e7bbed04e339e343e1ee6ee367ef6ecb8d78f9b5a48f94e1b0088498144b4f2cb503084b8650bd5338e6812564b4bc1adb3c9ccb7e8a50366223eeda
 pkgname:
   - name: frei0r-plugins
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
