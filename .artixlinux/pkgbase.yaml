@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.60.0-1
+    packages:
+      - evolution-3.60.0-1-x86_64.pkg.tar.zst
+      - evolution-bogofilter-3.60.0-1-x86_64.pkg.tar.zst
+      - evolution-spamassassin-3.60.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.58.3-2.1
