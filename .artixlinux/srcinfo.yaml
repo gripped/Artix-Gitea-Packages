@@ -1,10 +1,10 @@
 ---
-version: 25.09.2-7
+version: 25.09.2-8
 pkgbase:
   name: anki
   pkgdesc: A smart spaced repetition flashcard program
   pkgver: 25.09.2
-  pkgrel: 7
+  pkgrel: 8
   url: https://apps.ankiweb.net/
   arch:
     - x86_64
@@ -70,4 +70,4 @@ pkgbase:
     - 1dede904fbc5c0b499251d3d11a39ad2f467d644ad742d6d162dc4cd60a120f445e0b5f0fb9758ace1d95372ad48a86bbd6cad3200d97f19f4c62bb0620dc8c4
 pkgname:
   - name: anki
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
