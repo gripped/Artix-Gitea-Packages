@@ -1,16 +1,16 @@
 ---
-version: 2.6.1-1
+version: 2.6.2-1
 pkgbase:
   name: perl-mouse
   pkgdesc: Moose minus the antlers
-  pkgver: 2.6.1
+  pkgver: 2.6.2
   pkgrel: 1
   url: https://search.cpan.org/dist/Mouse
   arch:
     - x86_64
   license:
-    - PerlArtistic
-    - GPL
+    - Artistic-1.0-Perl
+    - GPL-1.0-or-later
   checkdepends:
     - perl-path-class
   makedepends:
@@ -26,9 +26,9 @@ pkgbase:
   depends:
     - perl
   source:
-    - https://search.cpan.org/CPAN/authors/id/S/SK/SKAJI/Mouse-v2.6.1.tar.gz
+    - https://cpan.metacpan.org/authors/id/S/SY/SYOHEX/Mouse-v2.6.2.tar.gz
   sha512sums:
-    - d7f365331a0eaab83483091612802bb3973bd097442cc07fd74cd69eeb40e7c4e849a71f906890cff17df4918487842ff2fb778d62296205cd313a26a895919c
+    - e28f8e2ce6275ed3ab1e5ee0ee436d6cc3888ef7f752c4aa3d61b6ff97d3486dccbd00f1b5e2b6ac9d16bc8148e7ef27c87097684f68773ce9789878e994065b
 pkgname:
   - name: perl-mouse
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
