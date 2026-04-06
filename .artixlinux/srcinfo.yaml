@@ -1,10 +1,10 @@
 ---
-version: 1.58.3-1
+version: 1.60.0-2
 pkgbase:
   name: gvfs
   pkgdesc: Virtual filesystem implementation for GIO
-  pkgver: 1.58.3
-  pkgrel: 1
+  pkgver: 1.60.0
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gvfs
   arch:
     - x86_64
@@ -18,7 +18,6 @@ pkgbase:
     - docbook-xsl
     - git
     - glib2-devel
-    - libgdata
     - libgoa
     - libgphoto2
     - libimobiledevice
@@ -51,10 +50,10 @@ pkgbase:
     - procps-ng
     - udisks2
   source:
-    - git+https://gitlab.gnome.org/GNOME/gvfs.git#tag=1.58.3
+    - git+https://gitlab.gnome.org/GNOME/gvfs.git#tag=1.60.0
     - gvfsd.hook
   b2sums:
-    - e5e0a12a9514317be9559ef7c5b541d9b49e26acb7e45f4b21ae01ce2023b10aede93204fd4b894c51cc9d86518c45ba9468d6c77d50c3ba6d9187b9a1522f1a
+    - 79865df854d878ecac23b8ea2cbbf594accb581a5c824a66314955374c8a633a3ed70ed752903f1369151dba86d6e9df4b2fdc390e0cde9052427f79953ad234
     - a0356a49c419dc69466c591d5e69701b865bb97ca336ea6d8bca0f0d9173b832b73d9f2c701d572a0245957d39c9a38ab6dff4ea7c737c34f2a1a28d93c0427f
 pkgname:
   - name: gvfs
@@ -62,20 +61,20 @@ pkgname:
       - 'gvfs-afc: AFC support (Apple mobile devices)'
       - 'gvfs-dnssd: DNS-SD and WebDAV support (macOS file sharing)'
       - 'gvfs-goa:  Gnome Online Accounts support (e.g. OwnCloud)'
-      - 'gvfs-google: Google Drive support'
       - 'gvfs-gphoto2: gphoto2 support (PTP camera, MTP media player)'
       - 'gvfs-mtp: MTP support (Android, media player)'
       - 'gvfs-nfs: NFS support'
       - 'gvfs-onedrive: Microsoft OneDrive support'
       - 'gvfs-smb: SMB/CIFS support (Windows file sharing)'
       - 'gvfs-wsdd: Web Services Dynamic Discovery support (Windows discovery)'
+    conflicts:
+      - gvfs-google<=1.58.3-1
     replaces:
-      - gvfs-afp
-      - gvfs-obexftp
+      - gvfs-google<=1.58.3-1
   - name: gvfs-afc
     pkgdesc: Virtual filesystem implementation for GIO - AFC backend (Apple mobile devices)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - glib2
       - glibc
       - libimobiledevice
@@ -84,7 +83,7 @@ pkgname:
   - name: gvfs-dnssd
     pkgdesc: Virtual filesystem implementation for GIO - DNS-SD and WebDAV backend (macOS file sharing)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - avahi
       - dconf
       - glib2
@@ -94,30 +93,24 @@ pkgname:
   - name: gvfs-goa
     pkgdesc: Virtual filesystem implementation for GIO - Gnome Online Accounts backend (e.g. OwnCloud)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - glib2
       - glibc
-      - libgoa
-  - name: gvfs-google
-    pkgdesc: Virtual filesystem implementation for GIO - Google Drive backend
-    depends:
-      - gvfs-goa=1.58.3
-      - glib2
-      - glibc
-      - libgdata
+      - libgcc
       - libgoa
   - name: gvfs-gphoto2
     pkgdesc: Virtual filesystem implementation for GIO - gphoto2 backend (PTP camera, MTP media player)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - glib2
       - glibc
+      - libgcc
       - libgphoto2
       - libgudev
   - name: gvfs-mtp
     pkgdesc: Virtual filesystem implementation for GIO - MTP backend (Android, media player)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - glib2
       - glibc
       - libgcc
@@ -128,7 +121,7 @@ pkgname:
     pkgdesc: Virtual filesystem implementation for GIO - NFS backend
     install: gvfs-nfs.install
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - glib2
       - glibc
       - libgcc
@@ -136,7 +129,7 @@ pkgname:
   - name: gvfs-onedrive
     pkgdesc: Virtual filesystem implementation for GIO - Microsoft OneDrive backend
     depends:
-      - gvfs-goa=1.58.3
+      - gvfs-goa=1.60.0
       - glib2
       - glibc
       - libgcc
@@ -145,7 +138,7 @@ pkgname:
   - name: gvfs-smb
     pkgdesc: Virtual filesystem implementation for GIO - SMB/CIFS backend (Windows file sharing)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - smbclient>=4.12.0
       - dconf
       - glib2
@@ -154,10 +147,10 @@ pkgname:
   - name: gvfs-wsdd
     pkgdesc: Virtual filesystem implementation for GIO - Web Services Dynamic Discovery backend (Windows discovery)
     depends:
-      - gvfs=1.58.3
+      - gvfs=1.60.0
       - dconf
       - glib2
       - glibc
       - libgcc
       - wsdd
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
