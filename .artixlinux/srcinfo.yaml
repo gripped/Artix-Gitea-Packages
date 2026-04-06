@@ -1,9 +1,9 @@
 ---
-version: 49.3-1
+version: 50.0-1
 pkgbase:
   name: gnome-remote-desktop
   pkgdesc: GNOME Remote Desktop server
-  pkgver: 49.3
+  pkgver: 50.0
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gnome-remote-desktop
   arch:
@@ -26,6 +26,7 @@ pkgbase:
     - fuse3
     - glib2
     - glibc
+    - krb5
     - libdrm
     - libei
     - libepoxy
@@ -43,12 +44,12 @@ pkgbase:
     - tpm2-tss
     - vulkan-icd-loader
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=49.3
+    - git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=50.0
   validpgpkeys:
     - 8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A
     - E60DADB5546D3F01AF35B87289F540EAB24513E2
   b2sums:
-    - 941fdc907a2bc0b11de8fa37a502be173e14af6aed510f53bbbff287fb875b72c0eb502a1dacbb3e68d560f65b3cd0cee7b741852be7a03a4818562db12f32f6
+    - e7d22c685a68445d96d18d7572b90ae2d252f158ce1a65a231c207f50cbaab8ff1bca5cabca7798787361e0f4fef01d4a67b7c6003b2e0a9fd34898908394636
 pkgname:
   - name: gnome-remote-desktop
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.4-1-any
