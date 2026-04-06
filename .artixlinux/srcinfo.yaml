@@ -1,9 +1,9 @@
 ---
-version: 3.10.2-1
+version: 3.11.0-1
 pkgbase:
   name: localsearch
   pkgdesc: Filesystem indexer and metadata extractor
-  pkgver: 3.10.2
+  pkgver: 3.11.0
   pkgrel: 1
   url: https://gnome.pages.gitlab.gnome.org/localsearch/
   arch:
@@ -24,7 +24,6 @@ pkgbase:
     - dconf
     - exempi
     - ffmpeg
-    - gcc-libs
     - gexiv2
     - giflib
     - glib2
@@ -35,6 +34,7 @@ pkgbase:
     - icu
     - libcue
     - libexif
+    - libgcc
     - libgsf
     - libgudev
     - libgxps
@@ -46,21 +46,21 @@ pkgbase:
     - libtiff
     - libwebp
     - libxml2
+    - libzip
     - poppler-glib
     - tinysparql
     - totem-plparser
     - upower
   source:
-    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.10.2
+    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.11.0
   b2sums:
-    - 8a06eb3ee9be2146c04558ebe6ae27089cca15029e9754100bf27c058c84e091b3ae3f77c1ade526c38f08b1c6f6a95edb2bd6fb3770def56b81a39b6a62187e
+    - 4c7987cd6688e872e088feeb2955815b185d1207f564f9869c011753d205569ff89e7df7f6fe064bd47f9239a0f8400e8080494ee75c75e06883c903bc7f3521
 pkgname:
   - name: localsearch
     depends:
       - dconf
       - exempi
       - ffmpeg
-      - gcc-libs
       - gexiv2
       - giflib
       - glib2
@@ -71,6 +71,7 @@ pkgname:
       - icu
       - libcue
       - libexif
+      - libgcc
       - libgsf
       - libgudev
       - libgxps
@@ -82,13 +83,14 @@ pkgname:
       - libtiff
       - libwebp
       - libxml2
+      - libzip
       - poppler-glib
       - tinysparql
       - totem-plparser
       - upower
       - libtinysparql-3.0.so
     provides:
-      - tracker3-miners=3.10.2
+      - tracker3-miners=3.11.0
     conflicts:
       - tracker3-miners<=3.7.3-2
     replaces:
@@ -101,4 +103,4 @@ pkgname:
       - python
       - python-gobject
       - tinysparql
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
