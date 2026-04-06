@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-2
+version: 6.24.0-3
 pkgbase:
   name: kimageformats
   pkgdesc: Image format plugins for Qt 6
   pkgver: 6.24.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kimageformats
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
