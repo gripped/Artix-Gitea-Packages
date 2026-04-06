@@ -3,7 +3,7 @@
 
 pkgname=ruby-parser
 pkgver=3.3.10.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A production-ready Ruby parser written in pure Ruby'
 arch=(any)
 url='https://github.com/whitequark/parser'
@@ -15,7 +15,7 @@ depends=(
 )
 makedepends=(
   git
-  ragel
+  ragel6
   ruby-bundler
   ruby-rake
   ruby-rdoc

@@ -1,10 +1,10 @@
 ---
-version: 3.3.10.2-1
+version: 3.3.10.2-2
 pkgbase:
   name: ruby-parser
   pkgdesc: A production-ready Ruby parser written in pure Ruby
   pkgver: 3.3.10.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/whitequark/parser
   arch:
     - any
@@ -16,7 +16,7 @@ pkgbase:
     - ruby-simplecov
   makedepends:
     - git
-    - ragel
+    - ragel6
     - ruby-bundler
     - ruby-rake
     - ruby-rdoc
