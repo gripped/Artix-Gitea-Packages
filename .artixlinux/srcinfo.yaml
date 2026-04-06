@@ -1,20 +1,23 @@
 ---
-version: 0.13.1-1
+version: 0.14.0-3
 pkgbase:
   name: malcontent
   pkgdesc: Parental control support for applications
-  pkgver: 0.13.1
-  pkgrel: 1
+  pkgver: 0.14.0
+  pkgrel: 3
   url: https://gitlab.freedesktop.org/pwithnall/malcontent
   arch:
     - x86_64
   license:
     - LGPL-2.1-or-later
+  checkdepends:
+    - python-dbusmock
   makedepends:
     - git
+    - gi-docgen
     - glib2-devel
+    - gnome-desktop-4
     - gobject-introspection
-    - gtk-doc
     - libglib-testing
     - meson
     - python-packaging
@@ -24,22 +27,33 @@ pkgbase:
     - appstream
     - dbus
     - flatpak
-    - gcc-libs
     - glib2
     - glibc
+    - graphene
     - gtk4
     - hicolor-icon-theme
+    - json-glib
     - libadwaita
+    - libgcc
+    - libgsystemservice
+    - libsoup3
     - pam
+    - pango
     - polkit
     - python
     - python-gobject
   source:
-    - git+https://gitlab.freedesktop.org/pwithnall/malcontent.git#tag=0.13.1
+    - git+https://gitlab.freedesktop.org/pwithnall/malcontent.git#tag=0.14.0
+    - git+https://gitlab.gnome.org/GNOME/gvdb.git
+    - https://www.corpit.ru/mjt/tinycdb/tinycdb-0.81.tar.gz
+    - 0001-meson-Statically-link-against-libgcc.patch
   validpgpkeys:
     - 923B7025EE03C1C59F42684CF0942E894B2EAFA0
   b2sums:
-    - 25a9bfcfe4ea81260a73ba69640a0ae6ceb9645765d77ac5a6504173140ac9800dc0b7d493a6f59fa2ec8aa9bf4b34ccaff1554b5e585366302817bcca8f3d5b
+    - 7258122f1b593c7352b1847e2fecb29da7a1cf7438575d0050202977e0d35b925fc85d202bee093c20f86bd8471bf9e645792c637b82e6aede6cc49c31b40949
+    - SKIP
+    - 6b5b1167bd7e58a02b9a3a1ff2d58adb0e522ef65a13384051d9a037358ed7586f7d567e543099adec6322f9c60d38525fed586488510215bf72d12a60c67684
+    - 1c49ae7ab9bffbf556191fdec67c2e8b4541477e162eddd552db4a69f149ac085bfb8d8add572ca16cb20eabac93c0406d711a155d189103bf4d8071d026919a
 pkgname:
   - name: malcontent
     groups:
@@ -49,27 +63,36 @@ pkgname:
       - appstream
       - dbus
       - flatpak
-      - gcc-libs
       - glib2
       - glibc
+      - graphene
       - gtk4
       - hicolor-icon-theme
+      - json-glib
       - libadwaita
+      - libgcc
+      - libgsystemservice
+      - libsoup3
       - pam
+      - pango
       - polkit
       - python
       - python-gobject
-      - libmalcontent=0.13.1-1
+      - libmalcontent=0.14.0-3
     provides:
       - libmalcontent-ui-1.so
   - name: libmalcontent
     pkgdesc: Parental control library
     depends:
-      - gcc-libs
+      - accountsservice
       - glibc
+      - libgcc
       - libglib-2.0.so
       - libgobject-2.0.so
       - libgio-2.0.so
     provides:
       - libmalcontent-0.so
-# generated with artixpkg 0.37.4-1-any
+  - name: malcontent-docs
+    pkgdesc: Parental control support for applications (documentation)
+    depends: []
+# generated with artixpkg 0.38.4-1-any
