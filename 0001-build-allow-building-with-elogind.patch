@@ -1,0 +1,48 @@
+From fdf9c6dfd55646d9c2f65cc7594bbdbc885d2288 Mon Sep 17 00:00:00 2001
+From: Dudemanguy <random342@airmail.cc>
+Date: Mon, 6 Apr 2026 18:16:21 -0500
+Subject: [PATCH 1/1] build: allow building with elogind
+
+libelogind also provides sd-daemon so search it as well if libsystemd
+isn't found.
+---
+ libgsystemservice/meson.build | 4 ++--
+ meson.build                   | 2 +-
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/libgsystemservice/meson.build b/libgsystemservice/meson.build
+index d5c3211..d0def7e 100644
+--- a/libgsystemservice/meson.build
++++ b/libgsystemservice/meson.build
+@@ -23,7 +23,7 @@ libgsystemservice_public_deps = [
+   dependency('gobject-2.0', version: '>= 2.44'),
+ ]
+ libgsystemservice_private_deps = [
+-  dependency('libsystemd'),
++  dependency('libsystemd', 'libelogind'),
+   dependency('polkit-gobject-1'),
+ ]
+ 
+@@ -69,4 +69,4 @@ endif
+ if get_option('gtk_doc')
+   subdir('docs')
+ endif
+-subdir('tests')
+\ No newline at end of file
++subdir('tests')
+diff --git a/meson.build b/meson.build
+index 1df52a0..b808b59 100644
+--- a/meson.build
++++ b/meson.build
+@@ -4,7 +4,7 @@
+ 
+ project('libgsystemservice','c',
+   version: '0.3.0',
+-  meson_version: '>= 0.56.0',
++  meson_version: '>= 0.60.0',
+   license: 'LGPLv2.1+',
+   default_options: [
+     'c_std=gnu11',
+-- 
+2.53.0
+
