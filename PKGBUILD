@@ -1,29 +1,51 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Adrian Perez de Castro <aperez@igalia.com>
 
 pkgname=wcm
 pkgver=0.10.0
-pkgrel=1
-pkgdesc='Wayfire Config Manager'
-url=https://wayfire.org
+pkgrel=3
+pkgdesc='GTK application to configure Wayfire'
 arch=(x86_64)
-license=(custom:MIT)
-depends=(gtkmm3 wayfire wf-shell)
-makedepends=(wayland-protocols meson ninja extra-cmake-modules git)
-optdepends=("wayfire-plugins-extra: configuration for extra Wayfire plugins")
-source=("${pkgname}::git+https://github.com/WayfireWM/wcm#tag=v${pkgver}")
+url='https://github.com/WayfireWM/wcm'
+license=(MIT)
+depends=(
+  atkmm
+  glib2
+  glibc
+  glibmm
+  gtk3
+  gtkmm3
+  libevdev
+  libgcc
+  libsigc++
+  libstdc++
+  libxkbcommon
+  libxml2
+  wayland
+  "wf-config>=${pkgver%.*}.0"
+)
+makedepends=(
+  git
+  glm
+  meson
+  "wayfire>=${pkgver%.*}.0"
+  wayland-protocols
+  "wf-shell>=${pkgver%.*}.0"
+)
+optdepends=('wdisplays: Display configuration tool')
+source=("git+https://github.com/WayfireWM/wcm.git#tag=v$pkgver")
+b2sums=(b76e5467d02cc5926ae7efe300c6d017aa9a0410b2c720e16ebb53fce03560c111ab9e664f4e164881bee2c1237d45e14c5b8ab18ddc0265e319f718867985a5)
 
-build () {
-  CFLAGS+=" -Wno-incompatible-pointer-types"
-  export PKG_CONFIG_PATH=/usr/lib/wlroots0.17/pkgconfig
-  artix-meson "${pkgname}" build \
-    --auto-features=disabled \
-    -Dwf_shell=enabled
-  ninja -C build
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
 }
 
-package () {
-  DESTDIR="${pkgdir}" ninja -C build install
+check() {
+  meson test -C build --print-errorlogs
 }
 
-sha256sums=('aa3bcacd4d4314b5a61738de66bee541f50d086f20882ad4f0597ea8846dec88')
-
+package() {
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" $pkgname/LICENSE
+}
