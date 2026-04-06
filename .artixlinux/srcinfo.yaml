@@ -1,9 +1,9 @@
 ---
-version: 49.2-1
+version: 50.0-1
 pkgbase:
   name: gnome-calculator
   pkgdesc: GNOME Scientific calculator
-  pkgver: 49.2
+  pkgver: 50.0
   pkgrel: 1
   url: https://apps.gnome.org/Calculator
   arch:
@@ -36,9 +36,9 @@ pkgbase:
     - libgcalc-2.so
     - libgci-1.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-calculator.git#tag=49.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-calculator.git#tag=50.0
   b2sums:
-    - 2b4e54bda4d07c991ddbad1e0742f1e17af614677d6a0b6e1cde67380626a7049d48274030b63c663abd89232da9b01dddc42f4e8e075966e6320b97c5618df3
+    - 0f83432e40e0714799adc25127c597e7d1bff6465c0591a30651a0fb578b1e33248ed51b445f8a3846193ec7c72d3e1e54b9cffcbe74c8bcc87feee0cea85d52
 pkgname:
   - name: gnome-calculator
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
