@@ -1,9 +1,9 @@
 ---
-version: 2.0.8-1
+version: 2.1.1-1
 pkgbase:
   name: glycin
   pkgdesc: Sandboxed and extendable image decoding
-  pkgver: 2.0.8
+  pkgver: 2.1.1
   pkgrel: 1
   url: https://gnome.pages.gitlab.gnome.org/glycin/
   arch:
@@ -28,18 +28,18 @@ pkgbase:
     - bubblewrap
     - cairo
     - fontconfig
-    - gcc-libs
     - glib2
     - glibc
     - lcms2
+    - libgcc
     - libjxl
     - librsvg
     - libseccomp
   source:
-    - git+https://gitlab.gnome.org/GNOME/glycin.git#tag=2.0.8
+    - git+https://gitlab.gnome.org/GNOME/glycin.git#tag=2.1.1
     - git+https://gitlab.gnome.org/sophie-h/test-images.git
   b2sums:
-    - 82c04a7bad9d3a30c69b8da760077fc785cebefbc79620274df93e19a7ec954d182e0eb309f86ea2cbe711a47ffee14736912ef919d9b829d0709d4ebbe8ffa0
+    - 4028b02e02e6e2e19ce76e543461552abcf68da1fd3e3459a31222a52ddd9ace95e3426d24879aae13245b3a2bd20606e3d2b8fa11045f35ad2639d32ff5db33
     - SKIP
 pkgname:
   - name: glycin
@@ -51,13 +51,13 @@ pkgname:
     pkgdesc: Sandboxed and extendable image decoding - GTK4 integration
     depends:
       - fontconfig
-      - gcc-libs
       - glib2
       - glibc
       - glycin
       - gtk4
       - lcms2
+      - libgcc
       - libseccomp
     provides:
       - libglycin-gtk4-2.so
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
