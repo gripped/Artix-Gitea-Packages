@@ -1,8 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ndctl
-pkgver=82
-pkgrel=2
+pkgver=84
+pkgrel=1
 pkgdesc='Utility library for managing the libnvdimm (non-volatile memory device) sub-system in the Linux kernel'
 arch=('x86_64')
 url="https://github.com/pmem/ndctl"
@@ -11,7 +11,7 @@ depends=('iniparser' 'json-c' 'keyutils' 'kmod' 'libtraceevent' 'libtracefs' 'li
          'util-linux-libs')
 makedepends=('git' 'asciidoctor' 'bash-completion' 'cmake' 'meson' 'udev' 'xmlto')
 source=("git+https://github.com/pmem/ndctl.git#tag=v$pkgver")
-sha512sums=('60e7a7babafce63ee7a273b071f511848f9954d508f7ae8df7a8e1faf27aef7a1d74fc50b308dd70c595f785d498807ef18c018aba839cd273ffe91dd2396a8d')
+sha512sums=('864b53df51d630528e405c112b26764c707f9e9ccf5ea69bc9c11344b59161660b34ed60c1c33880c1e9d57c440e09bcde1fc74ce0a2759e6e93f93850ebf1cb')
 
 prepare() {
   cd ndctl
