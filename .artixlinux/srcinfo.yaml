@@ -1,10 +1,10 @@
 ---
-version: 49.0-2
+version: 50.0-1
 pkgbase:
   name: sysprof
   pkgdesc: Kernel based performance profiler
-  pkgver: 49.0
-  pkgrel: 2
+  pkgver: 50.0
+  pkgrel: 1
   url: https://apps.gnome.org/Sysprof/
   arch:
     - x86_64
@@ -17,7 +17,6 @@ pkgbase:
     - yelp-tools
   depends:
     - cairo
-    - gcc-libs
     - glib2
     - glibc
     - graphene
@@ -27,21 +26,22 @@ pkgbase:
     - libadwaita
     - libdex
     - libelf
+    - libgcc
     - libpanel
+    - libstdc++
     - libunwind
     - pango
     - polkit
   source:
-    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=49.0
+    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=50.0
   b2sums:
-    - 615b5e11e44a7762430a35c6c36979dff70c021bb9eb556690ff70194414f78eb6ea8c230497b5b10fc10d60361331faaf8671d9f92d92e37424610b4278f9c1
+    - dcdc3157710f9eb72afda82b22475694180e36b45b96c07bda13d23bd05bdf51036d39f22aba586ffc09b706f13c880e704f1a3c7c48124f8e01e8e37791a14d
 pkgname:
   - name: sysprof
     groups:
       - gnome-extra
     depends:
       - cairo
-      - gcc-libs
       - glib2
       - glibc
       - graphene
@@ -51,7 +51,9 @@ pkgname:
       - libadwaita
       - libdex
       - libelf
+      - libgcc
       - libpanel
+      - libstdc++
       - libunwind
       - pango
       - polkit
@@ -61,4 +63,4 @@ pkgname:
     license:
       - BSD-2-Clause-Patent
     depends: []
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
