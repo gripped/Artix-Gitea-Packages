@@ -1,12 +1,12 @@
 ---
-version: 2:1.86.0-2
+version: 2:1.88.0-1
 pkgbase:
   name: gjs
   pkgdesc: Javascript Bindings for GNOME
-  pkgver: 1.86.0
-  pkgrel: 2
+  pkgver: 1.88.0
+  pkgrel: 1
   epoch: 2
-  url: https://wiki.gnome.org/Projects/Gjs
+  url: https://gitlab.gnome.org/GNOME/gjs
   arch:
     - x86_64
   license:
@@ -18,6 +18,7 @@ pkgbase:
   makedepends:
     - dbus
     - git
+    - glib2-devel
     - gobject-introspection
     - meson
   depends:
@@ -36,15 +37,13 @@ pkgbase:
   provides:
     - libgjs.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/gjs.git#tag=1.86.0
+    - git+https://gitlab.gnome.org/GNOME/gjs.git#tag=1.88.0
     - git+https://gitlab.gnome.org/GNOME/gobject-introspection-tests.git
-    - 0001-gi-Allow-optional-inout-arguments-to-be-null.patch
   validpgpkeys:
     - 53C0524AD3AE115F69C47D2D0E9D857756977391
   b2sums:
-    - c4875a14a5c0c2edf70f469af90a938baf87740b8a1d542cc2d3640e802efa420d7ecff2a807ca80b7bd4e65da0e393f7a9b708b653f906e77460671ebe3e8b4
+    - d32efaf8336eb2f2d47b8a4b01e4c4bf311228044cdf8297f2e4225fd2afeca03d780fa85c35827dee2c6c716c3d0c4f5e4b6618857876ec1c6e07780851f887
     - SKIP
-    - cc7898bde1df722caae0d449582d3282d0ba292341293ac5dbf755d4fb881b7596bf52c3deee8df3567858ca55f2bcdccd582eeef6515c1247ad85bb4d04847c
 pkgname:
   - name: gjs
     depends:
@@ -61,4 +60,4 @@ pkgname:
       - libx11
       - readline
       - libreadline.so
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
