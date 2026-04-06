@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.60.0-1
+    packages:
+      - evolution-data-server-3.60.0-1-x86_64.pkg.tar.zst
+      - libedataserverui4-3.60.0-1-x86_64.pkg.tar.zst
+      - evolution-data-server-docs-3.60.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.58.3-2
