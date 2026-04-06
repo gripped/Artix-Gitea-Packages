@@ -3,17 +3,17 @@
 # Contributor: Alex Dioso <adioso->gmail*com>
 
 pkgname=perl-clone
-pkgver=0.48
+pkgver=0.50
 pkgrel=1
 pkgdesc='Recursive copy of nested objects.'
 arch=('x86_64')
 url='https://github.com/garu/Clone'
-license=('GPL' 'PerlArtistic')
+license=('Artistic-1.0-Perl' 'GPL-1.0-or-later')
 depends=('perl')
 checkdepends=('perl-b-cow')
 options=('!emptydirs')
 source=("https://cpan.metacpan.org/authors/id/A/AT/ATOOMIC/Clone-$pkgver.tar.gz")
-sha512sums=('ea3b5e5f2a48fe2f03231f41dfd8c3acca57d72a31adac3ece297eec0993cbce9f5a15fc6ac3a1a7887e4fa7e0097ffc8cf20ae8d192a62419544b6173a6e608')
+sha512sums=('b76382994567ce566dde67c0e59188ddb971fc102f2f85f683596a368d348a7f7c22684ee2bb0087357219b541ece94e79119772198f568421a490b37e9bd049')
 
 build() {
   cd Clone-$pkgver
