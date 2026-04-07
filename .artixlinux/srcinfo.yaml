@@ -1,10 +1,10 @@
 ---
-version: 6.6-1
+version: 6.6-2
 pkgbase:
   name: plasma-meta
   pkgdesc: Meta package to install KDE Plasma
   pkgver: 6.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - any
