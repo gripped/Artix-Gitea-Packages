@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.4.3-1
+    version: 0.4.4-1
     packages:
-      - nwg-hello-0.4.3-1-any.pkg.tar.zst
+      - nwg-hello-0.4.4-1-any.pkg.tar.zst
     debug: []
