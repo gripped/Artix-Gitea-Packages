@@ -6,6 +6,15 @@
 
 DATE_FORMAT='+%Y-%m-%dT%H:%M:%S%Z'
 
+for init in dinit openrc runit s6; do
+    [[ -f /sbin/$init-init ]] && case $init in
+        dinit|openrc)  SUPPORT='' ;;
+        runit|s6)      SUPPORT='YES' ;;
+    esac && break
+done
+
+[ $SUPPORT ] || { echo "Unsupported method; use dinitctl to control PipeWire."; exit 1; }
+
 startpw() {
 	# The core daemon which by itself does probably nothing.
 	echo "[$(date "${DATE_FORMAT}")] Starting PipeWire." 1>>"${ARTIX_PIPEWIRE_LOG}"
@@ -61,16 +70,7 @@ pwpid=$(pgrep -u "${USER}" -x "pipewire")
 wppid=$(pgrep -u "${USER}" -x "wireplumber")
 [[ ! -z "$pwpid$wppid" && "${1}" != "restart" ]] &&  { echo "PipeWire/WirePlumber already running."; exit 0; }
 
-if [ -z "${1}" ]; then
-	for init in dinit openrc runit s6; do
-	    [[ -f /sbin/$init-init ]] && case $init in
-	        dinit)  echo "Unsupported method; use dinitctl to control PipeWire."; exit 1 ;;
-	        openrc) echo "Unsupported method; use rc-service to control PipeWire."; exit 1 ;;
-	        runit)  startpw ;;
-	        s6)     startpw ;;
-	    esac && break
-	done
-fi
+[ -z "${1}" ] && startpw
 
 if [ "${#}" -gt 0 ]; then
 	if [ "${1}" = 'restart' ]; then

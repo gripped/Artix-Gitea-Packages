@@ -24,7 +24,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.6.2
-pkgrel=1.4
+pkgrel=1.5
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -84,7 +84,7 @@ source=(
 )
 b2sums=('27c3f29c85791a7c524256c6e52dbd086f346ecc9d33b5f075f82cdfdef4f31e04af5f937c3d95c501a5f94d6e26160585bec4bb96808c8dc766396d99763aaa'
         'a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789'
-        '5292b9912223e23c5b03d221d2ceea1ab36411d3157f65552e009377264eda046787a3059c71ade06e842897828cb6288c082f655cc995f95cf4266dcec38b89')
+        '0fc139360c615e8c87f3dc6b1b176532b773d1ae44e1c814edd40c466730e81cd39f8f0029523f255628954db262111fa7c6165c3dbb5b55c193a319524ec61e')
 
 prepare() {
   cd pipewire
