@@ -2,8 +2,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-parser
-pkgver=3.3.10.2
-pkgrel=2
+pkgver=3.3.11.0
+pkgrel=1
 pkgdesc='A production-ready Ruby parser written in pure Ruby'
 arch=(any)
 url='https://github.com/whitequark/parser'
@@ -27,8 +27,8 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/whitequark/parser.git#tag=v$pkgver)
-sha512sums=('96aa3bafc8bfe17cc6953dde3657a49ec21adfa3968b62559e34b5ceb9adafadbe5f33a1c3bfac2ab4f50ca3f41ee71eab280805936f4c08627a5921512d3a21')
-b2sums=('c340355d35e98ecd103dd198f53461559d42b058be6e31cd4e89826902382db0e545ef37e21960c132bc50a48ee19142ce6d0cbaa38f5307f44ea8cfc641177c')
+sha512sums=('6c82a943f1c3457bf91138c2f4331d62442cf6f829ffb46760b641bb3f631858bd5db8beb60a67cfe87a1dfa5a0cafe9f43d23b1c5551976dadbabc2380c4dc5')
+b2sums=('bac559fd995738b7b52c62170a5930202ff184658aaf9db3742b33e6b9382d420b99bd45a87acad8624ec9fd81df2d7fbe84d5f2503ba48f02d4d09c3a3de46d')
 
 prepare() {
   cd parser

@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.3.10.2-2
+    version: 3.3.11.0-1
     packages:
-      - ruby-parser-3.3.10.2-2-any.pkg.tar.zst
+      - ruby-parser-3.3.11.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 3.3.10.2-1
