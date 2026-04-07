@@ -52,11 +52,13 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
   "https://www.corpit.ru/mjt/tinycdb/tinycdb-0.81.tar.gz"
   0001-meson-Statically-link-against-libgcc.patch
+  0002-build-don-t-hard-depend-on-systemd.patch
 )
 b2sums=('7258122f1b593c7352b1847e2fecb29da7a1cf7438575d0050202977e0d35b925fc85d202bee093c20f86bd8471bf9e645792c637b82e6aede6cc49c31b40949'
         'SKIP'
         '6b5b1167bd7e58a02b9a3a1ff2d58adb0e522ef65a13384051d9a037358ed7586f7d567e543099adec6322f9c60d38525fed586488510215bf72d12a60c67684'
-        '1c49ae7ab9bffbf556191fdec67c2e8b4541477e162eddd552db4a69f149ac085bfb8d8add572ca16cb20eabac93c0406d711a155d189103bf4d8071d026919a')
+        '1c49ae7ab9bffbf556191fdec67c2e8b4541477e162eddd552db4a69f149ac085bfb8d8add572ca16cb20eabac93c0406d711a155d189103bf4d8071d026919a'
+        'a2b31d6d327b88648b36a2f3bd4c69f93021e6af7426a6f399c0db1f26d9799d12837832ed444235682144371b9dafe48fcf6da7760287bc95ecc1c8047a81e9')
 validpgpkeys=(
   923B7025EE03C1C59F42684CF0942E894B2EAFA0 # Philip Withnall <pwithnall@gnome.org>
 )
@@ -68,6 +70,9 @@ prepare() {
   # that fails the "nss - malcontent:nss-objdump.py" test.
   # To avoid this, we link libgcc statically.
   git apply -3 ../0001-meson-Statically-link-against-libgcc.patch
+
+  # Remove systemd dependency
+  git apply -3 ../0002-build-don-t-hard-depend-on-systemd.patch
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
