@@ -1,10 +1,10 @@
 ---
-version: 1:3.8.1-1
+version: 1:3.8.2-2
 pkgbase:
   name: kstars
   pkgdesc: Desktop Planetarium
-  pkgver: 3.8.1
-  pkgrel: 1
+  pkgver: 3.8.2
+  pkgrel: 2
   epoch: 1
   url: https://kstars.kde.org/
   arch:
@@ -19,7 +19,7 @@ pkgbase:
   depends:
     - breeze-icons
     - cfitsio
-    - gcc-libs
+    - hicolor-icon-theme
     - glibc
     - gsl
     - kconfig
@@ -33,8 +33,10 @@ pkgbase:
     - kplotting
     - kwidgetsaddons
     - kxmlgui
+    - libgcc
     - libindi
     - libraw
+    - libstdc++
     - libxisf
     - opencv
     - qt6-base
@@ -49,13 +51,13 @@ pkgbase:
   optdepends:
     - 'xplanet: XPlanet support'
   source:
-    - https://download.kde.org/stable/kstars/3.8.1/kstars-3.8.1.tar.xz
-    - https://download.kde.org/stable/kstars/3.8.1/kstars-3.8.1.tar.xz.sig
+    - https://download.kde.org/stable/kstars/3.8.2/kstars-3.8.2.tar.xz
+    - https://download.kde.org/stable/kstars/3.8.2/kstars-3.8.2.tar.xz.sig
   validpgpkeys:
     - 259D9FCEE9175351965633696D9CE2AEE028C4F3
   sha256sums:
-    - d5fe3421d0738ca57676dd5366d2302c4fa2bee3e46f418c58cd36033d126aea
+    - aca3f662c06371c3eefcd553a3a687c94ba58a7ae460d0c63907f6cb9f69ced9
     - SKIP
 pkgname:
   - name: kstars
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
