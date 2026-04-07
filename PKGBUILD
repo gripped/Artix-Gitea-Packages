@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-minitest-parallel_fork
-pkgver=2.1.0
+pkgver=2.1.1
 pkgrel=1
 pkgdesc='Fork-based parallelization for minitest'
 arch=(any)
@@ -24,7 +24,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/jeremyevans/minitest-parallel_fork.git#tag=$pkgver)
-sha256sums=('7c9403ddd0215532c714b56d2f6aae42270c7705b3e412a22a835fb2888f2616')
+sha256sums=('b2fec3c38b4889de1726af6b478bd1d71d20cc0097b200427a02373be0669415')
 
 build() {
   local _gemdir="$(gem env gemdir)"
