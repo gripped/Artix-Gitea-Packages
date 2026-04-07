@@ -49,7 +49,6 @@ depends=(aurorae
          plasma-firewall
          plasma-integration
          plasma-keyboard
-         #plasma-login-manager   # does not support elogind
          plasma-nm
          plasma-pa
          plasma-systemmonitor
@@ -57,7 +56,6 @@ depends=(aurorae
          plasma-vault
          plasma-welcome
          plasma-workspace
-         plasma-workspace-wallpapers
          polkit-kde-agent
          powerdevil
          print-manager
@@ -73,5 +71,6 @@ optdepends=('breeze-grub: Breeze theme for GRUB'
             'plasma-x11-session: Plasma X11 session'
             'plymouth-kcm: Configure Plymouth from systemsettings'
             'plasma-sdk: Development tools'
+            'plasma-workspace-wallpapers: Additional wallpapers'
             'sddm-kcm: SDDM configuration module'
             'wacomtablet: Drawing tablet settings on X')

@@ -59,7 +59,6 @@ pkgbase:
     - plasma-vault
     - plasma-welcome
     - plasma-workspace
-    - plasma-workspace-wallpapers
     - polkit-kde-agent
     - powerdevil
     - print-manager
@@ -75,8 +74,9 @@ pkgbase:
     - 'plasma-x11-session: Plasma X11 session'
     - 'plymouth-kcm: Configure Plymouth from systemsettings'
     - 'plasma-sdk: Development tools'
+    - 'plasma-workspace-wallpapers: Additional wallpapers'
     - 'sddm-kcm: SDDM configuration module'
     - 'wacomtablet: Drawing tablet settings on X'
 pkgname:
   - name: plasma-meta
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
