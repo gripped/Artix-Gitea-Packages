@@ -3,7 +3,7 @@
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 
 pkgname=avahi
-pkgver=0.9rc3
+pkgver=0.9rc4
 pkgrel=1
 epoch=1
 pkgdesc="Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)"
@@ -19,7 +19,6 @@ depends=(
   glibc
   libcap
   libdaemon
-  libelogind
 )
 makedepends=(
   doxygen
@@ -31,7 +30,6 @@ makedepends=(
   libevent
   python-dbus
   python-gobject
-  elogind
   xmltoman
 )
 optdepends=(
@@ -54,7 +52,7 @@ source=(
   "git+$url#tag=v${pkgver/[a-z]/-&}"
   0001-HACK-Install-fixes.patch
 )
-b2sums=('e9cfd9aa6da87cab3040b2243e4c4946ce028503c69eac06f1c7d2356e63ed3c469bb354d5fb56cd142e56028a34f16a4069b30951d22cdf17091edd58dbb4fb'
+b2sums=('8bc6a6f8bf189d86df53d189bd718df384e614bc396faa84e4672b82216f04e74be1d40357f0e0ae174673648e9c3b4a40ea27ef04c1155e80b189cc5ab35f1d'
         'a15b00c05cce3b6a1479d88b1393cd955a80c669fed03be5f624a8e8701f22fe327bbd42f7563a532ae8ebc39408f3aedfc982c42a2b6141ccc22af96f16293c')
 
 prepare() {
@@ -68,6 +66,8 @@ prepare() {
 
 build() {
   local configure_options=(
+    --with-systemdsystemunitdir=no
+    --disable-libsystemd
     --prefix=/usr
     --sysconfdir=/etc
     --localstatedir=/var
@@ -80,8 +80,6 @@ build() {
     --with-autoipd-user=avahi
     --with-avahi-priv-access-group=network
     --with-distro=archlinux
-    --with-systemdsystemunitdir=no
-    --disable-libsystemd
     with_dbus_sys=/usr/share/dbus-1/system.d
   )
 
