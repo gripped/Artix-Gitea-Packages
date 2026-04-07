@@ -13,7 +13,7 @@ for init in dinit openrc runit s6; do
     esac && break
 done
 
-[ $SUPPORT ] || { echo "Unsupported method; use dinitctl to control PipeWire."; exit 1; }
+[ $SUPPORT ] || { echo "Unsupported method; use the service manager (rc-service/dinitctl) to control PipeWire."; exit 1; }
 
 startpw() {
 	# The core daemon which by itself does probably nothing.
