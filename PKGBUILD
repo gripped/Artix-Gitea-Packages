@@ -8,7 +8,7 @@
 pkgname=qt5-webengine
 _basever=5.15.18
 pkgver=5.15.19
-pkgrel=4.1
+pkgrel=4.2
 arch=('x86_64')
 #url='https://www.qt.io'
 url='https://wiki.qt.io/QtWebEngine/ChromiumVersions'

@@ -1,10 +1,10 @@
 ---
-version: 5.15.19-4.1
+version: 5.15.19-4.2
 pkgbase:
   name: qt5-webengine
   pkgdesc: Provides support for web applications using the Chromium browser project
   pkgver: 5.15.19
-  pkgrel: 4.1
+  pkgrel: 4.2
   url: https://wiki.qt.io/QtWebEngine/ChromiumVersions
   arch:
     - x86_64
@@ -117,4 +117,4 @@ pkgbase:
     - fdb6653d92b897d7ea2d8fa669155a7cf9b6aa0500341ce4f67319a0052bcea2
 pkgname:
   - name: qt5-webengine
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any

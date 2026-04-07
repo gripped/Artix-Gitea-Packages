@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.15.19-4.1
+    version: 5.15.19-4.2
     packages:
-      - qt5-webengine-5.15.19-4.1-x86_64.pkg.tar.zst
+      - qt5-webengine-5.15.19-4.2-x86_64.pkg.tar.zst
     debug: []
