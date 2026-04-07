@@ -1,5 +1,6 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Jeff Brodnax <tullyarcher@bellsouth.net>
 # Contributor: Paul Mattal <paul@archlinux.org>
@@ -10,7 +11,7 @@ pkgname=(
   postfix-{cdb,ldap,lmdb,mongodb,mysql,pcre,pgsql,sqlite}
 )
 pkgver=3.11.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
 url="https://www.postfix.org/"
@@ -84,7 +85,7 @@ build() {
     '-DUSE_LDAP_SASL'
     '-DHAS_LMDB'
     '-DUSE_TLS'
-    '-DHAS_MONGODB' '-I/usr/include/libmongoc-1.0' '-I/usr/include/libbson-1.0'
+    '-DHAS_MONGODB' "$(pkgconf --cflags-only-I mongoc2)"
     '-DHAS_MYSQL' '-I/usr/include/mysql'
     '-DUSE_TLSRPT'
     '-DHAS_PCRE=2'
@@ -112,7 +113,7 @@ build() {
     AUXLIBS_LDAP='-lldap -llber'
     AUXLIBS_LMDB="$(pkgconf --libs lmdb)"
     AUXLIBS_PCRE="$(pcre2-config --libs8)"
-    AUXLIBS_MONGODB="$(pkgconf --libs libmongoc-1.0)"
+    AUXLIBS_MONGODB="$(pkgconf --libs mongoc2)"
     AUXLIBS_MYSQL="$(pkgconf --libs mariadb)"
     AUXLIBS_PGSQL="$(pkgconf --libs libpq)"
     AUXLIBS_SQLITE="$(pkgconf --libs sqlite3)"
