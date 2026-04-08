@@ -1,10 +1,10 @@
 ---
-version: 1.4.1-13.1
+version: 1.4.1-14
 pkgbase:
   name: onboard
   pkgdesc: On-screen keyboard useful on tablet PCs or for mobility impaired users
   pkgver: 1.4.1
-  pkgrel: 13.1
+  pkgrel: 14
   url: https://launchpad.net/onboard
   arch:
     - x86_64
@@ -20,14 +20,16 @@ pkgbase:
     - at-spi2-core
     - cairo
     - dconf
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
     - gtk3
+    - hicolor-icon-theme
     - hunspell
     - iso-codes
     - libcanberra
+    - libgcc
+    - libstdc++
     - libx11
     - libxi
     - libxkbfile
@@ -56,4 +58,4 @@ pkgbase:
     - ccc05356c5b2000fe851a37dc8780b0a01e0ae0cb7a8ee3ebd6e3ea8f1225e0d37216c9c0b8fab5397ca5e33c07b6ad0ce5f8cb2145e86499254305cfd19d591
 pkgname:
   - name: onboard
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
