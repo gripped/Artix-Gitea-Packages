@@ -3,8 +3,8 @@
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
 
 pkgname=certbot
-pkgver=5.4.0
-pkgrel=1.1
+pkgver=5.5.0
+pkgrel=1
 pkgdesc='An ACME client'
 arch=(any)
 license=(Apache-2.0)
@@ -29,7 +29,14 @@ makedepends=(
   python-sphinx
   python-sphinx_rtd_theme
 )
-checkdepends=(python-pytest)
+checkdepends=(
+  python-pytest
+  # dependencies for certbot[nginx,apache]
+  # all code from certbot-{nginx,apache} moved into certbot as of v5.5.0
+  python-augeas
+  python-pyopenssl
+  python-pyparsing
+)
 optdepends=(
   'certbot-apache: Apache plugin for Let’s Encrypt client'
   'certbot-nginx: Nginx plugin for Let’s Encrypt client'
@@ -43,9 +50,9 @@ source=(
   "$_repo::git+https://github.com/certbot/certbot#tag=v$pkgver"
   tmpfiles.conf
 )
-sha512sums=('4e151c8a688de50fa7f934b20e4d96d70a5ae655bb1ab2f5d2cd5ed66861e1d1c20dc6a4117ff215110b54705bbe480a26e5f873185118e3936e83feee9ce67c'
+sha512sums=('532f7939a5d5af331755a9b572a698ffececc8a4394a30c5adc05694e8a3ea4e1f9087a5a8f6f1a973e738c46bca39da8f90e496aa2fa0cf31e58a1c63139179'
             'fbb7bb4591876aeb2e118c3f3fc8ff507b6a3127de0f921c689e1d74c70320b4f2b8bf05b488ec4f714259701f1ac54e64a9f6181475da6bd6d1e3da3a602217')
-b2sums=('3632786cb4ddb294eec8b0bbdb6e9eb3b62032687b51ff6652dc005600c89d8b647acdcfe128fa01d7050f90976e76a00a1c47992349015e4ef9a3a468222f41'
+b2sums=('6ad84d30bc21e11624a45dcaab8bfefec091e461fbcbca1b03523d4b4c23e0545eadab795921df21de9f87d11ae21d9738755c17bdc06bfa6ecf5fe2fa40a0ce'
         '7d2c26a9953d3b5a899053bdd7bd77051c67abe6480af2bfaaee06f20a399b0b4ccccc0af35cfe9e6d2b1fc833dbff928ba46771a9127720073dda29aef9a2e0')
 
 build() {
