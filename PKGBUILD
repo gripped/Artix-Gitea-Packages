@@ -46,6 +46,7 @@ depends=(
 )
 makedepends=(
   boost
+  boost-libs
   cmake
   gi-docgen
   git

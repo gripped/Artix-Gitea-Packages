@@ -14,6 +14,7 @@ pkgbase:
     - db
   makedepends:
     - boost
+    - boost-libs
     - cmake
     - gi-docgen
     - git
