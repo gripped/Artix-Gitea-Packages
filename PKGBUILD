@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Alexander Jacocks <alexander@redhat.com>
 
 pkgname=ansible-creator
-pkgver=26.3.3
+pkgver=26.4.0
 pkgrel=1
 pkgdesc="A CLI tool for scaffolding all your Ansible Content"
 arch=('any')
@@ -15,7 +14,7 @@ optdepends=('ansible: check official ansible collections'
             'docker: To use docker as a container runtime'
             'podman: To use podman as a container runtime')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('6e5bbca48ee53adc5079311d48c93ab0e299d8957f4520b474d5f11c6206a576')
+sha256sums=('d9647c64dbdb1809601e6a4c6a5532ec7f06c96db03599c44ee28139082d1a81')
 
 build() {
 	cd "${pkgname}-${pkgver}"
