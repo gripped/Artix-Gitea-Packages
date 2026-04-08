@@ -1,10 +1,10 @@
 ---
-version: 0.4.4-1
+version: 0.4.4-1.1
 pkgbase:
   name: nwg-hello
   pkgdesc: GTK3-based greeter for greetd written in python
   pkgver: 0.4.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/nwg-piotr/nwg-hello
   arch:
     - any

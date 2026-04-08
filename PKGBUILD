@@ -3,7 +3,7 @@
 
 pkgname=nwg-hello
 pkgver=0.4.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="GTK3-based greeter for greetd written in python"
 url="https://github.com/nwg-piotr/nwg-hello"
 arch=('any')
@@ -27,9 +27,12 @@ package() {
 	cd "${pkgname}-${pkgver}"
 	python -m installer --destdir="${pkgdir}" dist/*.whl
 
+	sed -i s/systemctl/loginctl/g "${pkgname}-default.json"
 	install -Dm 644 "${pkgname}-default.json" "${pkgdir}/etc/${pkgname}/${pkgname}-default.json"
 	install -Dm 644 "${pkgname}-default.css" "${pkgdir}/etc/${pkgname}/${pkgname}-default.css"
+	sed -i s/systemctl/loginctl/g hyprland.conf
 	install -Dm 644 hyprland.conf "${pkgdir}/etc/${pkgname}/hyprland.conf"
+	sed -i s/systemctl/loginctl/g sway-config
 	install -Dm 644 sway-config "${pkgdir}/etc/${pkgname}/sway-config"
 	install -Dm 644 README "${pkgdir}/etc/${pkgname}/README"
 	install -Dm 644 img/* -t "${pkgdir}/usr/share/${pkgname}/"
