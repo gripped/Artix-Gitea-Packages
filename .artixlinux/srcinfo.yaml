@@ -1,9 +1,9 @@
 ---
-version: 2.2.3-1
+version: 2.2.4-1
 pkgbase:
   name: mongo-c-driver
   pkgdesc: A client library written in C for MongoDB
-  pkgver: 2.2.3
+  pkgver: 2.2.4
   pkgrel: 1
   url: https://github.com/mongodb/mongo-c-driver
   arch:
@@ -30,9 +30,9 @@ pkgbase:
     - libbson
     - libmongoc
   source:
-    - https://github.com/mongodb/mongo-c-driver/archive/2.2.3/mongo-c-driver-2.2.3.tar.gz
+    - https://github.com/mongodb/mongo-c-driver/archive/2.2.4/mongo-c-driver-2.2.4.tar.gz
   b2sums:
-    - 151d5bacb58297163ef2c2c8b5d6baf46f8cd2e9f956d899f96c0045cef93538ebe978fc5d8e462087cf5177c3681bec1d444ba5bb6fa1516f5c1747490a3345
+    - 186a26f5e0ce8bd5c75b56ff3f111db850289927374593365c1931917ef1cb6fe35f6a918241ce6bccfd3c1a424e52460101369e5af45e9991cdf2ee59b4a5eb
 pkgname:
   - name: mongo-c-driver
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.2.r6.ga4d1be2-1-any
