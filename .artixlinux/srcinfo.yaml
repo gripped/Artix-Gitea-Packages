@@ -1,10 +1,10 @@
 ---
-version: 2.44.6-1
+version: 2.44.6-2
 pkgbase:
   name: gdk-pixbuf2
   pkgdesc: An image loading library
   pkgver: 2.44.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gdk-pixbuf
   arch:
     - x86_64
