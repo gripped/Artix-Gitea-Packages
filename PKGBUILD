@@ -3,7 +3,7 @@
 # Contributor: Johannes Dewender   arch at JonnyJD dot net
 
 pkgname=distro-info
-pkgver=1.12
+pkgver=1.14
 pkgrel=1
 pkgdesc="Information about all releases of Debian and Ubuntu"
 arch=('x86_64')
@@ -29,7 +29,7 @@ provides=('python-distro-info' 'perl-distro-info')
 conflicts=('python-distro-info' 'perl-distro-info')
 options=('!emptydirs')
 source=("git+https://salsa.debian.org/debian/distro-info.git#tag=debian/$pkgver")
-sha256sums=('b04497b6667a8ed1b6b71456a35f8121af73abdca9e112bdef77cb8c8e2a338c')
+sha256sums=('600cecc96ddc172c753d5ae71c81049ff16b0cadd759258480a48c0cbb90e881')
 
 prepare() {
   cd $pkgname
