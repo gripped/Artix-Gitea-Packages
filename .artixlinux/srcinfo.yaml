@@ -1,10 +1,10 @@
 ---
-version: 32.1.0-2.1
+version: 32.1.1-2
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
-  pkgver: 32.1.0
-  pkgrel: 2.1
+  pkgver: 32.1.1
+  pkgrel: 2
   url: https://obsproject.com
   arch:
     - x86_64
@@ -51,9 +51,9 @@ pkgbase:
     - 'v4l2loopback-dkms: virtual camera support'
     - 'xdg-desktop-portal-impl: Wayland window/screen capture'
   source:
-    - obs-studio-32.1.0.tar.gz::https://github.com/obsproject/obs-studio/releases/download/32.1.0/OBS-Studio-32.1.0-Sources.tar.gz
+    - obs-studio-32.1.1.tar.gz::https://github.com/obsproject/obs-studio/releases/download/32.1.1/OBS-Studio-32.1.1-Sources.tar.gz
   sha256sums:
-    - e03440278ef0e14232325e5a7068a18c03f358d949ab20e3d29308b7692ad7e2
+    - f4c17e1aa2a00efd8729ed6cfef9308bc6a2b6c583c187d7959eaa72eb2e3676
 pkgname:
   - name: obs-studio
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
