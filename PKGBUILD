@@ -1,35 +1,34 @@
-# Maintainer: Chris Cromer <cromer@artixlinux.org>
+# Maintainer: Sam Burgos <santiago.burgos1089@gmail.com>
 
 pkgname=mint-themes
-pkgver=2.2.3
+pkgver=2.3.8
 pkgrel=1
-pkgdesc='A collection of Mint themes. Includes GTK2, GTK3, Cinnamon and Xfce components.'
+pkgdesc='A collection of Mint themes.'
 arch=('any')
-url="http://packages.linuxmint.com/pool/main/m/${pkgname}"
-license=(GPL3)
+url="https://github.com/linuxmint/mint-themes"
+_url="http://packages.linuxmint.com/pool/main/m/${pkgname}"
+license=('GPL-3.0-or-later')
 depends=(
-    ttf-ubuntu-font-family
+    'ttf-ubuntu-font-family'
 )
 makedepends=(
-    gtk3
-    inkscape
-    optipng
-    python
-    sassc
+    'python-libsass'
 )
 optdepends=(
-    mint-y-icons
-    mint-x-icons
+    'mint-x-icons'
+    'mint-y-icons'
 )
-source=("${pkgname}_${pkgver}.tar.xz::${url}/${pkgname}_${pkgver}.tar.xz")
-sha256sums=('9751ccd489c16497e5d5c067b582c0106193045a04b8368fcbfee08655c06b5b')
+options=('!strip')
+source=("${pkgname}_${pkgver}.tar.xz::${_url}/${pkgname}_${pkgver}.tar.xz")
+sha256sums=('5322226a3505829c2adf2489358563657cc4678ec4725fb9eca14ea3e29238b4')
 
 build() {
-	cd "${pkgname}"
-	make
+    cd "$pkgname"
+    make clean
+    make
 }
 
 package() {
-  cd "${srcdir}"/"${pkgname}"
-  cp -r usr $pkgdir
+    cd "$pkgname"
+    cp -r usr "$pkgdir/"
 }
