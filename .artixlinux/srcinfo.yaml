@@ -1,10 +1,10 @@
 ---
-version: 255.22-3
+version: 255.22-4
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
   pkgver: 255.22
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
@@ -80,4 +80,4 @@ pkgname:
     provides:
       - libelogind.so
       - liblogind
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.5-1-any

@@ -1,0 +1,5 @@
+[elogind]
+source = "git"
+git = "https://github.com/elogind/elogind.git"
+prefix = "V"
+exclude_regex = ".*-pre.*"
