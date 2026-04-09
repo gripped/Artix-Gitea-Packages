@@ -1,9 +1,9 @@
 ---
-version: 1.73.1-1
+version: 1.74.0-1
 pkgbase:
   name: python-googleapis-common-protos
   pkgdesc: Python classes generated from the common protos in the googleapis repository
-  pkgver: 1.73.1
+  pkgver: 1.74.0
   pkgrel: 1
   url: https://github.com/googleapis/googleapis
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   optdepends:
     - 'python-grpcio: for grpc support'
   source:
-    - https://github.com/googleapis/google-cloud-python/archive/refs/tags/googleapis-common-protos-v1.73.1.tar.gz
+    - https://github.com/googleapis/google-cloud-python/archive/refs/tags/googleapis-common-protos-v1.74.0.tar.gz
   sha256sums:
-    - eb2708c651b1b8d20c16f8eaefa9ccb4e18cb0fc70a4851e1e2de65fb8b0854d
+    - 1adcf775bf8bb361070f61fb3d2d64e488f1c97b08d5075e4b5e36e090df7b0f
 pkgname:
   - name: python-googleapis-common-protos
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
