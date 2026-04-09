@@ -47,4 +47,4 @@ pkgbase:
     - 7a794f5dffcffc368114206294855025c9ca504064c44d50faf32d25b32851b3bf4879a4d05a77158f25ad4d74a2b8252bffed0a400c672f924187fcb3e2dc46
 pkgname:
   - name: graphviz
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
