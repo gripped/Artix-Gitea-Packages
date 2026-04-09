@@ -1,10 +1,10 @@
 ---
-version: 1.0.6-1
+version: 1.0.6-2
 pkgbase:
   name: xorg-xkbutils
   pkgdesc: XKB utility demos
   pkgver: 1.0.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/xorg/app/xkbutils
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: xorg-xkbutils
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
