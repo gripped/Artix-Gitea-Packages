@@ -3,7 +3,7 @@
 
 pkgname=interception-tools
 pkgver=0.6.8
-pkgrel=9
+pkgrel=9.3
 pkgdesc='A minimal composable infrastructure on top of libudev and libevdev'
 arch=('x86_64')
 license=('GPL-3.0-only')

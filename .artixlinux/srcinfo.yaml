@@ -1,10 +1,10 @@
 ---
-version: 0.6.8-9
+version: 0.6.8-9.3
 pkgbase:
   name: interception-tools
   pkgdesc: A minimal composable infrastructure on top of libudev and libevdev
   pkgver: 0.6.8
-  pkgrel: 9
+  pkgrel: 9.3
   url: https://gitlab.com/interception/linux/tools
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 84ced1c10bef7f00660704685c651c4241096cc9848c31f5a04f166e1450949d
 pkgname:
   - name: interception-tools
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
