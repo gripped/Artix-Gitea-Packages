@@ -2,7 +2,7 @@
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=python-webtest
-pkgver=3.0.5
+pkgver=3.0.7
 pkgrel=1
 pkgdesc="Helper to test WSGI applications"
 arch=('any')
@@ -14,7 +14,7 @@ optdepends=('python-pyquery: for response.pyquery'
 makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 checkdepends=('python-pytest' 'python-pyquery' 'python-pastedeploy' 'python-wsgiproxy2')
 source=("git+https://github.com/Pylons/webtest.git#tag=$pkgver")
-sha512sums=('7fa8b3259f63ad6ab66945c8692edfa1a3129ecdd1036f1047bdf3e7db307dc5efdf80e09a9be1e3d65c0444e3459f47039da12a20d868fd1009f9efec69854d')
+sha512sums=('f60372acfe8dfd0998e8c231a3c454d159f78b9bdccdd73a515c3a55f3e58e6c2a2927bf8dff4a51c29288ae82538081444356b296c8d944367d002f13dee724')
 
 build() {
   cd webtest
