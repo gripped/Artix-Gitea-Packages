@@ -1,15 +1,15 @@
 ---
-version: 1.3.3-4
+version: 1.4.1-1
 pkgbase:
   name: python-dogpile.cache
   pkgdesc: A caching front-end based on the Dogpile lock
-  pkgver: 1.3.3
-  pkgrel: 4
-  url: https://pypi.python.org/pypi/dogpile.cache
+  pkgver: 1.4.1
+  pkgrel: 1
+  url: https://github.com/sqlalchemy/dogpile.cache
   arch:
     - any
   license:
-    - BSD
+    - MIT
   checkdepends:
     - memcached
     - pifpaf
@@ -19,6 +19,7 @@ pkgbase:
     - python-pytest
     - python-pylibmc
   makedepends:
+    - git
     - python-setuptools
     - python-build
     - python-installer
@@ -27,9 +28,9 @@ pkgbase:
     - python-decorator
     - python-stevedore
   source:
-    - https://pypi.io/packages/source/d/dogpile.cache/dogpile.cache-1.3.3.tar.gz
+    - git+https://github.com/sqlalchemy/dogpile.cache.git#tag=rel_1_4_1
   sha512sums:
-    - 80809d072167c62dcc731ab5b265c54bcc6f6a1dc09e3ea88959a34823dc0bb776b61166b8e60812dd47c38e8f23ba55c2be173d600a10c4c400c1334d0339fb
+    - ba0cc1764e8623f3a28b0dbd0f54eefc33933ec22fec17c6c01365dfa17fd1ef6f638e01e7552ad6189f9386773084104ce7454ee12e87900b7995c6d1dc819b
 pkgname:
   - name: python-dogpile.cache
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
