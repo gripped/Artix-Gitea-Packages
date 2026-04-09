@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-pyaml
-pkgver=25.5.0
+pkgver=26.2.1
 pkgrel=1
 pkgdesc="PyYAML-based module to produce pretty and readable YAML-serialized data"
 url="https://github.com/mk-fg/pretty-yaml"
@@ -12,7 +12,7 @@ makedepends=('git' 'python-setuptools' 'python-build' 'python-installer' 'python
 checkdepends=('python-unidecode')
 optdepends=('python-unidecode: Needed if same-id objects or recursion is used within serialized data')
 source=("git+https://github.com/mk-fg/pretty-yaml.git#tag=$pkgver")
-sha512sums=('2032ac37771a57c1b8dcd12d5908679e599586dabba58267bbbf24ebb5aca8c2a1d25c8374d21c964253cca10f1b50e1a6b609d6d2d83a0c7bccdcab39f7dd74')
+sha512sums=('ebe492ca30f3bedae909ae9961e9f3256cd78a62675c869f427388ea90cec3d7084e5e74641deb182f2f1470736da2ff42cc0a551f3d8663c635f1879f9e0e15')
 
 build() {
   cd pretty-yaml
