@@ -1,10 +1,10 @@
 ---
-version: 0.63.1-1
+version: 0.63.1-2
 pkgbase:
   name: openrc
   pkgdesc: OpenRC is a dependency-based init system that works with the system-provided init program
   pkgver: 0.63.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/OpenRC/openrc
   arch:
     - x86_64
@@ -95,4 +95,4 @@ pkgname:
       - glibc
     provides:
       - libeinfo.so
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
