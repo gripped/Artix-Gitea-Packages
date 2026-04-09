@@ -1,9 +1,9 @@
 ---
-version: 0.32.0-1
+version: 0.35.0-1
 pkgbase:
   name: python-validators
   pkgdesc: Python Data Validation for Humans
-  pkgver: 0.32.0
+  pkgver: 0.35.0
   pkgrel: 1
   url: https://python-validators.github.io/validators
   arch:
@@ -23,9 +23,9 @@ pkgbase:
   optdepends:
     - 'python-eth-hash: for eth_address validator'
   source:
-    - git+https://github.com/kvesteri/validators.git#tag=0.32.0
+    - git+https://github.com/kvesteri/validators.git#tag=0.35.0
   sha512sums:
-    - f0bc263b7472ad83ff229a005ba37f9f843dd81653c80bba2cba4b7f9767e61f0737dc0902a6bb7c67f78db71137767bce25e65e5fc6e1993669571c1b1f9c88
+    - fd41d39dabef21a0ecdea5eb3fc18e81d8c62c0b52311ff60db45dd88e04df43a0bfdd7a5d4622920a09b8ab69c3cea42badd2408072116a497cce4145bf3efb
 pkgname:
   - name: python-validators
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
