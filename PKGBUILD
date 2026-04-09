@@ -2,7 +2,7 @@
 # Contributor: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=python-cogapp
-pkgver=3.4.1
+pkgver=3.6.0
 pkgrel=1
 pkgdesc="A code generator for executing Python snippets in source files"
 url="https://nedbatchelder.com/code/cog"
@@ -13,7 +13,7 @@ makedepends=('git' 'python-build' 'python-installer' 'python-wheel' 'python-setu
 checkdepends=('python-pytest')
 conflicts=('cocogitto')
 source=("git+https://github.com/nedbat/cog.git#tag=v$pkgver")
-sha512sums=('a2c9127e606f9b0c55e1c826ea76029ea350109d2c0e88618ba8c70c1074efc2134a0d082fd5dac3be164692c3dec0aecbef4cb1ff7712ef9d647000b8280c9f')
+sha512sums=('fb03b4a360b05e971be9595982c31cec2a2a602087416eaba37fe7d9203462a0f1d75f8ab9ba9d6666a18101cb433f88cced0fe5fe9d0e3788d9f7fab53e72a0')
 
 build() {
   cd cog
