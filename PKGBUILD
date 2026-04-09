@@ -1,24 +1,25 @@
-# Maintainer: Chris Cromer <cromer@artixlinux.org>
+# Maintainer: Santiago Burgos <santiago.burgos1089@gmail.com>
 
 pkgname=mint-y-icons
-pkgver=1.8.6
+pkgver=1.9.1
 pkgrel=1
 pkgdesc='A flat, colorful, and modern theme based on Paper and Moka'
 arch=('any')
-url="http://packages.linuxmint.com/pool/main/m/${pkgname}"
-license=(GPL3)
+url="https://github.com/linuxmint/mint-y-icons"
+_url="http://packages.linuxmint.com/pool/main/m/${pkgname}"
+license=('GPL-3.0-or-later')
 depends=(
-    gtk-update-icon-cache
-    hicolor-icon-theme
+    'gtk-update-icon-cache'
+    'hicolor-icon-theme'
 )
 optdepends=(
     'mint-x-icons: enable additional icons to inheritage'
 )
 options=(!strip)
-source=("${url}/${pkgname}_${pkgver}.tar.xz")
-sha256sums=('2c3c18061fe79e8bc195b3a115b16470dcd2aa5d0788f15abcae2ee1c8a38fcc')
+source=("${_url}/${pkgname}_${pkgver}.tar.xz")
+sha256sums=('dfbe157fcab934a0e9314cd400bc21863591a520854b60bd02a13e9864a7da3f')
 
 package() {
-  cd "${srcdir}"/"${pkgname}"
-  cp -r usr "${pkgdir}"
+    cd "${srcdir}"/"${pkgname}"
+    cp -r usr "${pkgdir}"
 }

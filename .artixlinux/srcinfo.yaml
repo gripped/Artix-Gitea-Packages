@@ -1,15 +1,15 @@
 ---
-version: 1.8.6-1
+version: 1.9.1-1
 pkgbase:
   name: mint-y-icons
   pkgdesc: A flat, colorful, and modern theme based on Paper and Moka
-  pkgver: 1.8.6
+  pkgver: 1.9.1
   pkgrel: 1
-  url: http://packages.linuxmint.com/pool/main/m/mint-y-icons
+  url: https://github.com/linuxmint/mint-y-icons
   arch:
     - any
   license:
-    - GPL3
+    - GPL-3.0-or-later
   depends:
     - gtk-update-icon-cache
     - hicolor-icon-theme
@@ -18,9 +18,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.8.6.tar.xz
+    - http://packages.linuxmint.com/pool/main/m/mint-y-icons/mint-y-icons_1.9.1.tar.xz
   sha256sums:
-    - 2c3c18061fe79e8bc195b3a115b16470dcd2aa5d0788f15abcae2ee1c8a38fcc
+    - dfbe157fcab934a0e9314cd400bc21863591a520854b60bd02a13e9864a7da3f
 pkgname:
   - name: mint-y-icons
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.2-1-any
