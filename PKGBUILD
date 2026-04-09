@@ -2,7 +2,7 @@
 # Contributor: Tomas Schertel<tschertel@gmail.com>
 
 pkgname=python-logbook
-pkgver=1.9.0
+pkgver=1.9.2
 pkgrel=1
 pkgdesc="Logging sytem for Python that replaces the standard library’s logging module"
 arch=('x86_64')
@@ -13,7 +13,7 @@ makedepends=('git' 'python-setuptools' 'python-setuptools-rust' 'python-build' '
 checkdepends=('valkey' 'python-pytest' 'python-sqlalchemy' 'python-redis' 'python-pyzmq'
               'python-execnet' 'python-jinja' 'python-brotli' 'pifpaf')
 source=("git+https://github.com/mitsuhiko/logbook.git#tag=$pkgver")
-sha512sums=('3b987bebdf04305eda51fee64620e2995fec7b45101bd027210e0083f19adc3f5efb52172132c02de14286a8745f17f63f1bc6f51bd0f5e3009fcd947fec04cb')
+sha512sums=('5755d241805216f1490863e4c618bbede7b4ffab837b6c0676b57134d4253417c34f2261d7d66847389eb8c4016c42d14f2e4ae469e8c41c74c05c71adc0bf34')
 
 prepare() {
   cd logbook
