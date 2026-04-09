@@ -1,0 +1,46 @@
+---
+version: 1.36.0-2
+pkgbase:
+  name: network-manager-applet
+  pkgdesc: Applet for managing network connections
+  pkgver: 1.36.0
+  pkgrel: 2
+  url: https://gitlab.gnome.org/GNOME/network-manager-applet
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - gobject-introspection
+    - gtk-doc
+    - meson
+  depends:
+    - libappindicator-gtk3
+    - libmm-glib
+    - libnma
+    - libsecret
+    - networkmanager
+  source:
+    - git+https://gitlab.gnome.org/GNOME/network-manager-applet.git#commit=8accd508caa0400304a01da718eeab587ee8fb04
+  b2sums:
+    - SKIP
+pkgname:
+  - name: network-manager-applet
+    depends:
+      - libappindicator-gtk3
+      - libmm-glib
+      - libnma
+      - libsecret
+      - networkmanager
+      - nm-connection-editor
+  - name: nm-connection-editor
+    pkgdesc: NetworkManager GUI connection editor and widgets
+    depends:
+      - jansson
+      - libnma
+    conflicts:
+      - libnm-gtk<1.8.18-1
+    replaces:
+      - libnm-gtk<1.8.18-1
+# generated with artixpkg 0.38.4-1-any
