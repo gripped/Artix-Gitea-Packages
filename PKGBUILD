@@ -2,7 +2,7 @@
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 
 pkgname=python-openstacksdk
-pkgver=4.6.0
+pkgver=4.8.0
 pkgrel=1
 pkgdesc="An SDK for building applications to work with OpenStack"
 arch=('any')
@@ -17,7 +17,7 @@ checkdepends=('python-ddt' 'python-fixtures' 'python-hacking' 'python-jsonschema
               'python-oslo-config' 'python-oslotest' 'python-prometheus_client'
               'python-requests-mock' 'python-stestr' 'python-testscenarios' 'python-testtools')
 source=("git+https://github.com/openstack/openstacksdk.git#tag=$pkgver")
-sha512sums=('1a054caebb3c179575a320a57312e27d4874b19e4ae715b731c2d98419a69a68f6c9454958d6a3ed6b8613ce6219f9179630de69dae190f0aa1cbb39876dd1d8')
+sha512sums=('2df332dbfa834491c905b5281f4a5f638251477a922c6d20d0f06ed9d2ab267090be276721d739c531825339ea1aad7131e9fb5a23c5472a841a14aac384bb88')
 
 prepare() {
   cd openstacksdk
