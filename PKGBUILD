@@ -4,8 +4,8 @@
 # Contributor: Douglas Soares de Andrade <douglas@archlinux.org>
 
 pkgname=python-twisted
-pkgver=24.7.0
-pkgrel=3
+pkgver=25.5.0
+pkgrel=1
 pkgdesc="Asynchronous networking framework written in Python"
 arch=('any')
 url="https://twistedmatrix.com/"
@@ -39,6 +39,7 @@ optdepends=(
   'python-pyopenssl: for TLS client hostname verification'
   'python-pyserial: for serial support'
   'python-service-identity: for TLS client hostname verification'
+  'python-wsproto: for websocket support'
   'tk: for using tkconch'
 )
 checkdepends=(
@@ -55,6 +56,7 @@ checkdepends=(
   'python-gobject'
   'python-h2'
   'python-hypothesis'
+  'python-httpx'
   'python-idna'
   'python-priority'
   'python-pyasn1'
@@ -68,7 +70,7 @@ checkdepends=(
   'xorg-server-xvfb'
 )
 source=("https://github.com/twisted/twisted/archive/twisted-$pkgver.tar.gz")
-sha512sums=('7c919f956bced94b39b9f196910ad8022e94b4ed199a7a5a5c7edd6600bb13ed7bd9bca4af46338ae593b9da8a1559bd9658e51bcffa33a37b6a5125b89477b1')
+sha512sums=('2cc54ace787b986a1682a500e41b64f2c17cc1c608b054e64ad932f6bf42ec19979cbdc3a6121e879e1b1d4578ea1f4a66b992489ee00a3a85e601d0f29b711a')
 
 build() {
   cd twisted-twisted-$pkgver
