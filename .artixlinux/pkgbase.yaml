@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 2025.0.0-2
+    version: 2025.0.0-2.1
     packages:
-      - intel-oneapi-dpcpp-debugger-2025.0.0-2-x86_64.pkg.tar.zst
+      - intel-oneapi-dpcpp-debugger-2025.0.0-2.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
