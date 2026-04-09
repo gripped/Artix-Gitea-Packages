@@ -3,7 +3,7 @@
 
 pkgname=xf86-video-sisusb
 pkgver=0.9.7
-pkgrel=5.2
+pkgrel=6
 pkgdesc="X.org SiS USB video driver"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
@@ -13,6 +13,11 @@ makedepends=('xorg-server-devel' 'X-ABI-VIDEODRV_VERSION=25.2')
 conflicts=('xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.bz2)
 sha256sums=('f4400416b920cd1136d60d36b99d33f245cdeaf2ad6c1340936c7c0987761424')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  autoreconf -vfi
+}
 
 build() {
   cd ${pkgname}-${pkgver}
