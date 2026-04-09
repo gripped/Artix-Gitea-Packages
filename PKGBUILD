@@ -4,11 +4,11 @@
 
 pkgname=acpi_call-dkms
 pkgver=1.2.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A linux kernel module that enables calls to ACPI methods through /proc/acpi/call - module sources'
 url='https://github.com/nix-community/acpi_call'
 arch=('any')
-license=('GPL')
+license=('GPL-3.0-or-later')
 depends=('dkms')
 makedepends=('git')
 provides=("acpi_call=${pkgver}-${pkgrel}")
