@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.6.8-9.4
+    version: 0.6.8-9.1
     packages:
-      - interception-tools-0.6.8-9.4-x86_64.pkg.tar.zst
+      - interception-tools-0.6.8-9.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
