@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-sybil
-pkgver=7.0.0
+pkgver=7.1.1
 pkgrel=1
 pkgdesc='Automated testing for the examples in your documentation.'
 arch=('any')
@@ -11,15 +11,7 @@ depends=('python')
 makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 checkdepends=('python-pytest' 'python-seedir' 'python-testfixtures' 'python-yaml')
 source=("git+https://github.com/simplistix/sybil.git#tag=$pkgver")
-sha512sums=('f7537185717c9ec9269f7a1e92360c44e8ddb8dc63623424128ae849b0b5128b447b6754c033c634a13d7aef3946095954ec57ca22280f0400a673c5a0393ec0')
-
-prepare() {
-  cd sybil
-  # Python 3.14 compatibility for sybil/document.py (ast.Str removal)
-  sed -i 's/^from ast import AsyncFunctionDef, FunctionDef, ClassDef, Module, Expr, Constant, Str$/from ast import AsyncFunctionDef, FunctionDef, ClassDef, Constant, Module, Expr/' sybil/document.py
-  sed -i 's/if isinstance(docstring, Str):/if isinstance(docstring, Constant):/' sybil/document.py
-  sed -i 's/text = docstring.s/text = docstring.value/' sybil/document.py
-}
+sha512sums=('5720db3315bfab18edf36e11377b18950365bc7c47901b475a4fceb0595c1d8f77bc549486b1080ef0f17f086384c975e50afff5686081a1d2bce796aecf518f')
 
 build() {
   cd sybil

@@ -1,9 +1,9 @@
 ---
-version: 7.0.0-1
+version: 7.1.1-1
 pkgbase:
   name: python-sybil
   pkgdesc: Automated testing for the examples in your documentation.
-  pkgver: 7.0.0
+  pkgver: 7.1.1
   pkgrel: 1
   url: https://github.com/simplistix/sybil
   arch:
@@ -24,9 +24,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/simplistix/sybil.git#tag=7.0.0
+    - git+https://github.com/simplistix/sybil.git#tag=7.1.1
   sha512sums:
-    - f7537185717c9ec9269f7a1e92360c44e8ddb8dc63623424128ae849b0b5128b447b6754c033c634a13d7aef3946095954ec57ca22280f0400a673c5a0393ec0
+    - 5720db3315bfab18edf36e11377b18950365bc7c47901b475a4fceb0595c1d8f77bc549486b1080ef0f17f086384c975e50afff5686081a1d2bce796aecf518f
 pkgname:
   - name: python-sybil
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
