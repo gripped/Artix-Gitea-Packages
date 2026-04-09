@@ -31,7 +31,7 @@ makedepends=(
   'python'
 )
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha512sums=('08b367b2458762ccde2e6a5f0d2ad7f05deb58171b4ab487f5e1ed5102460f4a5852eed37da54aa93355ecaa324ada227b058d87befc25165d9759e72e8cf58d')
+sha512sums=('505e9dbdf553540f6f9eac45e387ab76a0fac308938c45082e02203ba4721a6be3cc8ae9037a46feff052e29b6a329ddb73c3ad1dbdfe1ce09ffe49eef482da2')
 
 prepare() {
   cd "${pkgname}-${pkgver}"
