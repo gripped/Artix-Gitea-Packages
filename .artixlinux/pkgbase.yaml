@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,13 +29,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2:1.3.2-3
+    version: 2:1.3.2-5
     packages:
-      - lua-sec-2:1.3.2-3-x86_64.pkg.tar.zst
-      - lua51-sec-2:1.3.2-3-x86_64.pkg.tar.zst
-      - lua52-sec-2:1.3.2-3-x86_64.pkg.tar.zst
-      - lua53-sec-2:1.3.2-3-x86_64.pkg.tar.zst
-      - lua54-sec-2:1.3.2-3-x86_64.pkg.tar.zst
+      - lua-sec-2:1.3.2-5-x86_64.pkg.tar.zst
+      - lua51-sec-2:1.3.2-5-x86_64.pkg.tar.zst
+      - lua52-sec-2:1.3.2-5-x86_64.pkg.tar.zst
+      - lua53-sec-2:1.3.2-5-x86_64.pkg.tar.zst
+      - lua54-sec-2:1.3.2-5-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
