@@ -23,8 +23,8 @@ pkgname=(
   pipewire-session-manager
   pulse-native-provider
 )
-pkgver=1.6.2
-pkgrel=1.6
+pkgver=1.6.3
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -82,7 +82,7 @@ source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
    systemd.patch artix-pipewire-launcher
 )
-b2sums=('27c3f29c85791a7c524256c6e52dbd086f346ecc9d33b5f075f82cdfdef4f31e04af5f937c3d95c501a5f94d6e26160585bec4bb96808c8dc766396d99763aaa'
+b2sums=('fc4426c8d637d93e5b23eb6d53e79ca060b777a49659412dc0e1cd519890d93b1f63a35ab57288f33a54faefd3395b259fcaa52686b0f0e5ba8037b92cfb77de'
         'a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789'
         '697fc71055e3e8fc50787fe8d69a85eea585ce1afcb90048a528c34ae4639f05b0711efc54a8fd5d8dea41772074e32199f6a282156fdfbfa83fad0134d6d6d4')
 
@@ -272,9 +272,8 @@ package_pipewire() {
     # directories for overrides
     mkdir -p etc/pipewire/{client-rt,client,minimal,pipewire}.conf.d
   )
-
-  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
   install -Dm755 $srcdir/artix-pipewire-launcher $pkgdir/usr/bin
+  install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
 }
 
 package_libpipewire() {
