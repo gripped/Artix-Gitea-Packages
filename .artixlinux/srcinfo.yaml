@@ -1,9 +1,9 @@
 ---
-version: 8.2.0-1
+version: 8.4.1-1
 pkgbase:
   name: python-deepdiff
   pkgdesc: Deep Difference and Search of any Python object/data.
-  pkgver: 8.2.0
+  pkgver: 8.4.1
   pkgrel: 1
   url: https://github.com/seperman/deepdiff
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - 'python-clevercsv: for more robust CSV parsing'
     - 'python-orjson: for speed and memory optimized parsing'
   source:
-    - git+https://github.com/seperman/deepdiff.git#tag=8.2.0
+    - git+https://github.com/seperman/deepdiff.git#tag=8.4.1
   sha512sums:
-    - 85647abf06fe74ac93db4a4866c26409f9ae9b4aa6b948ff2a91a1cc31f883e7df35ae15d95288cf9d46002882cf447b12dc6caa0c2137bbc3cdcd26d3b4456f
+    - a82681e30b8cfc7bfb5af35dedc33cb251aca0361477a8bce3fc16a8a41087de891a0ac2dec71550c67e716e7251d59e196930bd284cfcedb8a057caae56430f
 pkgname:
   - name: python-deepdiff
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
