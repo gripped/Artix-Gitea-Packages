@@ -1,0 +1,37 @@
+---
+version: 3.5.0-1
+pkgbase:
+  name: htop
+  pkgdesc: Interactive process viewer
+  pkgver: 3.5.0
+  pkgrel: 1
+  url: https://htop.dev/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - git
+    - lm_sensors
+  depends:
+    - libcap
+    - libcap.so
+    - libnl
+    - ncurses
+    - libncursesw.so
+  optdepends:
+    - 'lm_sensors: show cpu temperatures'
+    - 'lsof: show files opened by a process'
+    - 'strace: attach to a running process'
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/htop-dev/htop.git#tag=3.5.0
+  validpgpkeys:
+    - F7ABE8761E6FE68638E6283AFE0842EE36DD8C0C
+    - 0D316B6ABE022C7798D0324BF1D35CB9E8E12EAD
+  sha256sums:
+    - 22bdc0de7e533a62a11c25df99519123e0fd8926c4f0aafe06f38b4e2211326e
+pkgname:
+  - name: htop
+# generated with artixpkg 0.38.4-1-any
