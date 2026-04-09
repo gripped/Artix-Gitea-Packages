@@ -2,6 +2,9 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Rémy Oudompheng <remy@archlinux.org>
 
+export LC_ALL=C.UTF-8
+export LANG=C.UTF-8
+
 pkgbase=texlive-texmf
 pkgname=(texlive-doc texlive-meta)
 # generate collections with ./list-collections
@@ -11,7 +14,7 @@ for _coll in ${_collections[@]}; do
 done
 _rev=78408
 pkgver=2026.1
-pkgrel=1.1
+pkgrel=1
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
@@ -54,8 +57,8 @@ options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
 # Force UTF-8
-  export LC_ALL=en_US.UTF-8
-  export LANG=en_US.UTF-8
+  #export LC_ALL=en_US.UTF-8
+  #export LANG=en_US.UTF-8
   
 # Update minted for Python 3.14 compatibility
   patch -p1 < minted-3.8.patch
