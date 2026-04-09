@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,42 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 28.4.2-1
+    packages:
+      - erlang-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-headless-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-core-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-asn1-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-common_test-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-debugger-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-dialyzer-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-diameter-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-edoc-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-eldap-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-erl_interface-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-et-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-eunit-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-ftp-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-inets-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-jinterface-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-megaco-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-mnesia-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-observer-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-odbc-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-os_mon-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-parsetools-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-public_key-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-reltool-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-runtime_tools-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-sasl-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-snmp-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-ssh-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-ssl-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-syntax_tools-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-tftp-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-tools-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-wx-28.4.2-1-x86_64.pkg.tar.zst
+      - erlang-xmerl-28.4.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 28.4.1-2
