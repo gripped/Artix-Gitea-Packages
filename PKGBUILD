@@ -2,7 +2,7 @@
 
 pkgname=xf86-video-dummy
 pkgver=0.4.1
-pkgrel=2.2
+pkgrel=3
 pkgdesc="X.org dummy video driver"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
@@ -10,7 +10,6 @@ license=('MIT AND X11')
 depends=('glibc')
 makedepends=('xorg-server-devel' 'X-ABI-VIDEODRV_VERSION=25.2' 'xorgproto')
 conflicts=('xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
-provides=('x11win-video-dummy')
 groups=('xorg-drivers')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
 sha512sums=('ff7fd8b668e5e9f40a5d27f82599b7a455a8162fc1a247195335c17980f00ce10ae6b2c062239cbaa67d8684c86174f85b398dd7f7065d36f69294bd6f2469de'
