@@ -1,9 +1,9 @@
 ---
-version: 3.1.6-1
+version: 3.1.8-1
 pkgbase:
   name: python-werkzeug
   pkgdesc: Swiss Army knife of Python web development
-  pkgver: 3.1.6
+  pkgver: 3.1.8
   pkgrel: 1
   url: https://werkzeug.palletsprojects.com/
   arch:
@@ -30,9 +30,9 @@ pkgbase:
   optdepends:
     - 'python-watchdog: faster and more advanced reloader'
   source:
-    - git+https://github.com/pallets/werkzeug.git#tag=3.1.6
+    - git+https://github.com/pallets/werkzeug.git#tag=3.1.8
   sha512sums:
-    - 643c97b0a4ae7bc0d72b198581b4c37d888ae1ee58e1a0b698b83ea47b93bab60cf8322f26adefc04b276c77813cc39fb0c9ac76ed6276daf2617b24288e3632
+    - e0f8e867cd1c4b4d72e9a9af29817b5036449e8f5b0d62414c3386cf29fe65fa7b2a16db776e241009e3bf409a9accc955a27b03373ef3b57a97b7457a2726fe
 pkgname:
   - name: python-werkzeug
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any

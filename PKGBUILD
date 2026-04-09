@@ -7,7 +7,7 @@
 # Contributor: Richard Murri
 
 pkgname=python-werkzeug
-pkgver=3.1.6
+pkgver=3.1.8
 pkgrel=1
 pkgdesc='Swiss Army knife of Python web development'
 url='https://werkzeug.palletsprojects.com/'
@@ -35,7 +35,7 @@ checkdepends=(
 )
 optdepends=('python-watchdog: faster and more advanced reloader')
 source=("git+https://github.com/pallets/werkzeug.git#tag=${pkgver}")
-sha512sums=('643c97b0a4ae7bc0d72b198581b4c37d888ae1ee58e1a0b698b83ea47b93bab60cf8322f26adefc04b276c77813cc39fb0c9ac76ed6276daf2617b24288e3632')
+sha512sums=('e0f8e867cd1c4b4d72e9a9af29817b5036449e8f5b0d62414c3386cf29fe65fa7b2a16db776e241009e3bf409a9accc955a27b03373ef3b57a97b7457a2726fe')
 
 build() {
   cd werkzeug
