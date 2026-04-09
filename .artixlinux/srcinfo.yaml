@@ -1,9 +1,9 @@
 ---
-version: 6.8.1-1
+version: 6.8.4-1
 pkgbase:
   name: python-apispec
   pkgdesc: A pluggable API specification generator. Currently supports the OpenAPI Specification.
-  pkgver: 6.8.1
+  pkgver: 6.8.4
   pkgrel: 1
   url: https://github.com/marshmallow-code/apispec
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - 'python-marshmallow: for marshmallow support'
     - 'python-yaml: for yaml support'
   source:
-    - git+https://github.com/marshmallow-code/apispec.git#tag=6.8.1
+    - git+https://github.com/marshmallow-code/apispec.git#tag=6.8.4
   sha512sums:
-    - a8b5d11684c94774e239dc1502252fcd8e451d3cae48666423fa3f1fee8ecc49769b7e2798b7b94d9fbca7f052a8f742c24ace32d0b9726ca2f7d1e11410f0d5
+    - cd88d2c38e91e6c32270da345f2ea0e10654cfbf0089eb448a405c54daeaff40b227badcf9b5a2b126e12835444dc0d8b8e038967c17385f4bdaff631f863a84
 pkgname:
   - name: python-apispec
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
