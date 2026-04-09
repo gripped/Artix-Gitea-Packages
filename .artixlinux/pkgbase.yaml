@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,13 +26,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 0.14.7-5
     packages:
       - colm-0.14.7-5-x86_64.pkg.tar.zst
-    debug: []
-  world:
-    version: null
-    packages: []
     debug: []
   lib32-goblins:
     version: null
