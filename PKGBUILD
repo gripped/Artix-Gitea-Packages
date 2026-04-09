@@ -5,7 +5,7 @@
 
 pkgname=cosmic-store
 pkgver=1.0.9
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='Cosmic App Store'
 arch=(x86_64)
@@ -45,7 +45,7 @@ prepare() {
 build() {
   cd cosmic-store
   RUSTFLAGS+=" -C link-arg=-fuse-ld=mold"
-  just build-release --frozen --no-default-features --features dbus-config,desktop-systemd-scope,flatpak,logind,notify,single-instance,wgpu,wayland,xdg-portal
+  just build-release --frozen
 }
 
 package() {
