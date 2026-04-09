@@ -11,7 +11,7 @@ for _coll in ${_collections[@]}; do
 done
 _rev=78408
 pkgver=2026.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='TeX Live - '
 license=(GPL)
 arch=(any)
@@ -53,6 +53,10 @@ sha256sums=('SKIP'
 options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
+# Force UTF-8
+  export LC_ALL=en_US.UTF-8
+  export LANG=en_US.UTF-8
+  
 # Update minted for Python 3.14 compatibility
   patch -p1 < minted-3.8.patch
 
