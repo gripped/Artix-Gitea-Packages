@@ -1,9 +1,9 @@
 ---
-version: 3.0.0-1
+version: 3.0.2-1
 pkgbase:
   name: python-prawcore
   pkgdesc: Low-level communication layer for PRAW 4+.
-  pkgver: 3.0.0
+  pkgver: 3.0.2
   pkgrel: 1
   url: https://github.com/praw-dev/prawcore
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - python
     - python-requests
   source:
-    - git+https://github.com/praw-dev/prawcore.git#tag=v3.0.0
+    - git+https://github.com/praw-dev/prawcore.git#tag=v3.0.2
   sha512sums:
-    - 4bd9838718c3cbed857fb32782439242050d4dd2c6d068f6620ac7e60493818ddc852fc9635c6f03363552cd35527db055763df0dfd8e0ccb1067d4a7bc4955e
+    - d5ab25ec32bdaf128c269bc12602b013434fdab58f082654426c6190762f20d214ddeef3b5107b376e6898f297bbffe68f753ab7e0838081ed1d28a9a6e46a43
 pkgname:
   - name: python-prawcore
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
