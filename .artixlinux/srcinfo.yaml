@@ -1,10 +1,10 @@
 ---
-version: 1.2.0-1
+version: 1.2.0-2
 pkgbase:
   name: xorg-xpr
   pkgdesc: Print an X window dump from xwd
   pkgver: 1.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/xorg/app/xpr
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: xorg-xpr
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
