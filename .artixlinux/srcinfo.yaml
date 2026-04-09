@@ -31,4 +31,4 @@ pkgbase:
     - 33df3dcb195f9920227aa03ab60fb5abcaf18567b1a281ef1f4010803316b6281adf7f79eb082f1084bff41cfcdff7c0fa4a82460ecd2d792f4cf3e588b4e1a7
 pkgname:
   - name: pypy3
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
