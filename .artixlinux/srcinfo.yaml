@@ -1,9 +1,9 @@
 ---
-version: 2.7.0-1
+version: 2.8.2-1
 pkgbase:
   name: python-maxminddb
   pkgdesc: Reader for the MaxMind DB format
-  pkgver: 2.7.0
+  pkgver: 2.8.2
   pkgrel: 1
   url: https://github.com/maxmind/MaxMind-DB-Reader-python
   arch:
@@ -23,13 +23,13 @@ pkgbase:
     - python
     - libmaxminddb
   source:
-    - git+https://github.com/maxmind/MaxMind-DB-Reader-python.git#tag=v2.7.0
+    - git+https://github.com/maxmind/MaxMind-DB-Reader-python.git#tag=v2.8.2
     - git+https://github.com/maxmind/MaxMind-DB.git
     - git+https://github.com/maxmind/libmaxminddb.git
   sha512sums:
-    - e459cf0625dec8999f70e2900bca302304649993dbecef0ad849fab58f4580d632c3e082b5c29ab44d6fe05a0cd5bc40154b2e3ee29f490916d011f8f70ad948
+    - c297aa47d2f94a7daa89398e8299a7a1e3d2fe0760e64784265a752c9e8b8436dc4c860d3cb9976efedb9cae00abc912aee8fcd331a212df6dc128671784011e
     - SKIP
     - SKIP
 pkgname:
   - name: python-maxminddb
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
