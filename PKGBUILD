@@ -1,26 +1,39 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Adrian Perez de Castro <aperez@igalia.com>
 
 pkgname=wf-config
-pkgver=0.9.0
-pkgrel=2.1
-pkgdesc="A library for managing configuration files, written for wayfire"
-arch=('x86_64')
-url="https://github.com/WayfireWM/wf-config"
-license=('MIT')
-depends=('libevdev' 'libxml2')
-makedepends=('wlroots' 'meson' 'ninja' 'wayland-protocols' 'glm' 'doctest' 'cmake')
-source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz")
+pkgver=0.10.0
+pkgrel=2
+pkgdesc='Library for managing configuration files, written for Wayfire'
+arch=(x86_64)
+url='https://github.com/WayfireWM/wf-config'
+license=(MIT)
+depends=(
+  glibc
+  libevdev
+  libgcc
+  libstdc++
+  libxml2
+)
+makedepends=(
+  doctest
+  git
+  glm
+  meson
+)
+source=("git+https://github.com/WayfireWM/wf-config.git#tag=v$pkgver")
+b2sums=(b3003af078672b2e0f45e06fd202192e3ddbceb20bd3bcade22de29ed99531bf71782eef4d5f494d6fbcdfe65a3b3f696d019da6493421d9e4465d3d1b5cb1c5)
 
 build() {
-  cd "${pkgname}-${pkgver}"
-  artix-meson build
-  ninja -C build
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs
 }
 
 package() {
-  cd "${pkgname}-${pkgver}"
-  DESTDIR="$pkgdir/" ninja -C build install
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" $pkgname/LICENSE
 }
-
-sha256sums=('f681fe028aa9026e0c6894d7b94c544230b8285078f176076a3d964fd1dfc37b')
-
