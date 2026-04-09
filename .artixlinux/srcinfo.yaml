@@ -1,9 +1,9 @@
 ---
-version: 2.8.5-1
+version: 2.8.7-1
 pkgbase:
   name: python-testtools
   pkgdesc: Extensions to the Python standard library unit testing framework
-  pkgver: 2.8.5
+  pkgver: 2.8.7
   pkgrel: 1
   url: https://github.com/testing-cabal/testtools
   arch:
@@ -24,9 +24,9 @@ pkgbase:
   depends:
     - python-setuptools
   source:
-    - git+https://github.com/testing-cabal/testtools.git#tag=2.8.5
+    - git+https://github.com/testing-cabal/testtools.git#tag=2.8.7
   sha512sums:
-    - a0105246762abb96831b308c269a84f62d466391434c4e10c8584839bc40969f88248f7cd8a0382706c044c27de2ab14f5efa98fb2425a990325ae7c4061e9b8
+    - 5c4af2347da894e4d2be08df17c4d0a81dfde009dde4407e657ad50df743afb8315f5021c0da7f3e605e999297d2ae2ce0e57ca3090254fd1f1dce08a96abf0e
 pkgname:
   - name: python-testtools
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
