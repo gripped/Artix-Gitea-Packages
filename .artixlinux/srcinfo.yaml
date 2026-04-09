@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.8-1
+version: 1:1.0.9-1
 pkgbase:
   name: cosmic-settings
   pkgdesc: The settings application for the COSMIC desktop environment
-  pkgver: 1.0.8
+  pkgver: 1.0.9
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-settings
@@ -41,9 +41,9 @@ pkgbase:
   optdepends:
     - 'power-profiles-daemon: power profiles support'
   source:
-    - git+https://github.com/pop-os/cosmic-settings.git#tag=epoch-1.0.8
+    - git+https://github.com/pop-os/cosmic-settings.git#tag=epoch-1.0.9
   b2sums:
-    - a1fc45590133d88c0b6fe02ef6e75b381d9d484ef68e943d9df25ab2082d36d66a3ba774aa13f362e92b2b4c8fc122040f41a53d6a7e3c38978bac7b559ee9b7
+    - 5fa745e1fc60380c6847d1baeb903c8c4855e045e51f583b8afb3e873f3b87ad7c1b22429e12912580296dcb121211d6ce8b6e2456eaf05bab73a5d95e90d4a6
 pkgname:
   - name: cosmic-settings
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.4-1-any
