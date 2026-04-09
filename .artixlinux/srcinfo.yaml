@@ -1,9 +1,9 @@
 ---
-version: 4.28.0-1
+version: 4.30.0-1
 pkgbase:
   name: man-pages-l10n
   pkgdesc: Translation of man pages
-  pkgver: 4.28.0
+  pkgver: 4.30.0
   pkgrel: 1
   url: https://salsa.debian.org/manpages-l10n-team/manpages-l10n
   changelog: man-pages-l10n.changelog
@@ -18,9 +18,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://salsa.debian.org/manpages-l10n-team/manpages-l10n/-/archive/4.28.0/manpages-l10n-4.28.0.tar.bz2
+    - https://salsa.debian.org/manpages-l10n-team/manpages-l10n/-/archive/4.30.0/manpages-l10n-4.30.0.tar.bz2
   sha256sums:
-    - 165cb14a9d9f7c38605fe343e07435e6c608f8e1a2e75a2b8f14b36e991bfe86
+    - 8e720754d859de77d7aab827f8f8920d30d8c283ffb3879ca7a797862aaae17b
 pkgname:
   - name: man-pages-cs
     pkgdesc: Czech man pages
@@ -106,4 +106,4 @@ pkgname:
     pkgdesc: Vietnamese man pages
     depends:
       - man
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
