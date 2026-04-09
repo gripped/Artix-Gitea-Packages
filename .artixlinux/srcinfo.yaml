@@ -1,0 +1,41 @@
+---
+version: 2.0.0-1
+pkgbase:
+  name: ruby-parallel
+  pkgdesc: Run any kind of code in parallel processes
+  pkgver: 2.0.0
+  pkgrel: 1
+  url: https://github.com/grosser/parallel
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - lsof
+    - procps-ng
+    - ruby-base64
+    - ruby-bigdecimal
+    - ruby-benchmark
+    - ruby-bundler
+    - ruby-logger
+    - ruby-mutex_m
+    - ruby-rake
+    - ruby-rspec
+    - ruby-rspec-rerun
+    - ruby-ruby-progressbar
+    - ruby-sqlite3
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/grosser/parallel/archive/v2.0.0/ruby-parallel-2.0.0.tar.gz
+  sha512sums:
+    - 5cbb355dce0c77655572f18b82b71b8a2834bcb7ff4b454c6967144b90b781be347e5f27021a9ddd8c4fd579094f8aca749e45250618f1b17d846aa2842ed5a7
+  b2sums:
+    - b27448f99941e0e77999994cb1bf95ebb1bb06de9983955658c5208e18c4501244f09aa16609102b51bb3ed9ff44375b13248bd1609dfeb18ad8e2c78aa657bf
+pkgname:
+  - name: ruby-parallel
+# generated with artixpkg 0.38.4-1-any
