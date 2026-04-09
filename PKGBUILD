@@ -6,15 +6,13 @@
 
 pkgname=rspamd
 pkgver=3.14.3
-pkgrel=1
+pkgrel=4
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
 url=https://rspamd.com
 license=(Apache-2.0)
 depends=(
-  file
-  gcc-libs
   glib2
   glibc
   hyperscan
@@ -22,7 +20,9 @@ depends=(
   jemalloc
   libarchive
   libelf
+  libgcc
   libsodium
+  libstdc++
   luajit
   openblas
   openssl
@@ -33,6 +33,7 @@ depends=(
 makedepends=(
   cmake
   git
+  lapack
   ninja
   perl
   ragel
@@ -159,7 +160,8 @@ build() {
     -DWANT_SYSTEMD_UNITS=OFF \
     -DENABLE_HYPERSCAN=ON \
     -DENABLE_JEMALLOC=ON \
-    -DENABLE_OPTIMIZATION=ON
+    -DENABLE_OPTIMIZATION=ON \
+    -DENABLE_BLAS=ON
   cmake --build build
 }
 
