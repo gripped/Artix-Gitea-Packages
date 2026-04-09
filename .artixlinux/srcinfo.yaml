@@ -1,11 +1,11 @@
 ---
-version: 2.0.1-1
+version: 2.1.2-1
 pkgbase:
   name: python-wrapt
   pkgdesc: A Python module for decorators, wrappers and monkey patching
-  pkgver: 2.0.1
+  pkgver: 2.1.2
   pkgrel: 1
-  url: https://pypi.python.org/pypi/wrapt
+  url: https://github.com/GrahamDumpleton/wrapt
   arch:
     - x86_64
   license:
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/GrahamDumpleton/wrapt.git#tag=2.0.1
+    - git+https://github.com/GrahamDumpleton/wrapt.git#tag=2.1.2
   sha512sums:
-    - d5cbd07a03abe7816839625fd1debf17499ac9972f7177bc55590f8ac441c512fb90ad818f562d18f0ce6d064a7da29f7e8fd62136602ec7f7c1da0a40eaedbe
+    - ad9bab39af92455637fca3651ca47540de56bbbaae3c8f221a568dcfac8270564dbadc87774e06cd18c7cc95f5a4b225e210d8ecdaeafaf37d649ccc7c03fb7d
 pkgname:
   - name: python-wrapt
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
