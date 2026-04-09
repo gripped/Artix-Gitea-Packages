@@ -1,9 +1,9 @@
 ---
-version: 1.22.4-1
+version: 1.22.5-1
 pkgbase:
   name: ed
   pkgdesc: A POSIX-compliant line-oriented text editor
-  pkgver: 1.22.4
+  pkgver: 1.22.5
   pkgrel: 1
   url: https://www.gnu.org/software/ed/ed.html
   arch:
@@ -16,13 +16,14 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://ftp.gnu.org/gnu/ed/ed-1.22.4.tar.lz
-    - https://ftp.gnu.org/gnu/ed/ed-1.22.4.tar.lz.sig
+    - https://ftp.gnu.org/gnu/ed/ed-1.22.5.tar.lz
+    - https://ftp.gnu.org/gnu/ed/ed-1.22.5.tar.lz.sig
   validpgpkeys:
     - 1D41C14B272A2219A739FA4F8FE99503132D7742
+    - 1E5AEE0B18C0DEB45D64AA0325B62C9821501AA0
   sha256sums:
-    - 987a1ebbbad3fcf63a1ffa9e29b3fa7de065150d16319d0a49dd8b57f81d3e9c
+    - 56e107ddc2f29dad6690376c15bf9751509e1ee3b8241710e44edbe5c3a158cc
     - SKIP
 pkgname:
   - name: ed
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
