@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.4.2-1
+    version: 3.4.2-2
     packages:
-      - calamares-3.4.2-1-x86_64.pkg.tar.zst
+      - calamares-3.4.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.3.14-6
