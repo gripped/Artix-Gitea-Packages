@@ -1,10 +1,11 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
 # Contributor: Tobias Powalowski <tpowa@archlinux.org>
 
 pkgname=libgssglue
 pkgver=0.9
-pkgrel=1
+pkgrel=2
 pkgdesc="Library exporting a gssapi interface to call gssapi routines in other libraries"
 arch=(x86_64)
 url="https://gitlab.com/gsasl/libgssglue/"
