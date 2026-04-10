@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 20260409-1
+    packages:
+      - archlinux-keyring-20260409-1-any.pkg.tar.zst
+      - voa-verifiers-arch-20260409-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 20260323-1
