@@ -77,7 +77,6 @@ makedepends=(
   libogg                  # libvtkIOOggTheora.so (1 direct lib, 2 total libs)
   libtheora               # libvtkIOOggTheora.so (1 direct lib, 2 total libs)
   mariadb-libs            # libvtkIOMySQL.so (1 direct lib, 2 total libs)
-  onnxruntime             # libvtkFiltersONNX.so.1 (1 direct lib, 2 total libs)
   opencascade             # libvtkIOOCCT.so (1 direct lib, 2 total libs)
   openimagedenoise        # libvtkRenderingRayTracing.so (1 direct lib, 2 total libs)
   openvdb                 # libvtkIOOpenVDB.so (1 direct lib, 2 total libs)
@@ -118,7 +117,6 @@ optdepends=(
   'freetype2: rendering fonts'
   'gl2ps: rendering to PostScript, PDF, and SVG'
   'anari-sdk: ANARI rendering module'
-  'onnxruntime: ONNX filter for AI-related computation'
   'openvr: rendering for virtual reality'
   'openxr: rendering for virtual and augmented reality'
   'openimagedenoise: rendering with raytracing support'
