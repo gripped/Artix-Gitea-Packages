@@ -1,0 +1,64 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+
+pkgname=xviewer
+pkgver=3.4.16
+pkgrel=2
+pkgdesc='Simple image viewer'
+arch=(x86_64)
+url='https://github.com/linuxmint/xviewer'
+license=(GPL-2.0-or-later)
+groups=(x-apps)
+depends=(
+  at-spi2-core
+  cairo
+  cinnamon-desktop
+  dconf
+  exempi
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk3
+  hicolor-icon-theme
+  lcms2
+  libexif
+  libjpeg-turbo
+  libpeas
+  librsvg
+  libx11
+  xapp
+  zlib
+)
+makedepends=(
+  git
+  glib2-devel
+  gobject-introspection
+  gtk-doc
+  itstool
+  meson
+)
+source=(
+  "git+https://github.com/linuxmint/xviewer.git#tag=$pkgver"
+  0001-libpeas-1.38.patch
+)
+b2sums=('805fea1c7e38a73a3f2403c6c0433fac45cf4c78cd5a62950fa4265c1469401377caebe219482bc86d08a641bd131f802561d78997521c060b43f476df09b86a'
+        '86ef118b38328baec0c28d22dc40be2df3dc3d1b80dcefa4213c8530a9904c830a661cb99241fcfecd4f983ef45de41e83203e80b54366e95ed98750b2dab88f')
+
+prepare() {
+  cd $pkgname
+
+  # Fix build with libpeas 1.38
+  git apply -3 ../0001-libpeas-1.38.patch
+
+  # Update state after opening images
+  # https://github.com/linuxmint/xviewer/pull/238
+  sed -i '/xviewer_window_display_image (window, job->image);/a\		update_action_groups_state (window);' src/xviewer-window.c
+}
+
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
