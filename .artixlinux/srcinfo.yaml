@@ -1,0 +1,24 @@
+---
+version: 0.2.7-2
+pkgbase:
+  name: webp-pixbuf-loader
+  pkgdesc: WebM GDK Pixbuf Loader library
+  pkgver: 0.2.7
+  pkgrel: 2
+  url: https://github.com/aruiz/webp-pixbuf-loader
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - meson
+  depends:
+    - gdk-pixbuf2
+    - libwebp
+  source:
+    - https://github.com/aruiz/webp-pixbuf-loader/archive/0.2.7/webp-pixbuf-loader-0.2.7.tar.gz
+  sha256sums:
+    - 61ce5e8e036043f9d0e78c1596a621788e879c52aedf72ab5e78a8c44849411a
+pkgname:
+  - name: webp-pixbuf-loader
+# generated with artixpkg 0.38.5-1-any
