@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: world-goblins
+  removeRepo: world-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,13 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
-    debug: []
-  world-gremlins:
     version: 9.0.1-1
     packages:
       - tcl-9.0.1-1-x86_64.pkg.tar.zst
+    debug: []
+  world-gremlins:
+    version: null
+    packages: []
     debug: []
   world:
     version: 8.6.16-1
