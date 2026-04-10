@@ -1,10 +1,10 @@
 ---
-version: 50.0-1
+version: 50.0-2
 pkgbase:
   name: gnome-initial-setup
   pkgdesc: Helps you to set up your OS when you boot for the first time
   pkgver: 50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gnome-initial-setup
   arch:
     - x86_64
@@ -49,4 +49,4 @@ pkgbase:
     - 0b858aa2c60396f5b99001bb9f91e59afb8d7b0c97dfe727285aec9fb9e76f379a8bc6f25c785f416fabeb171cbbafe893f8bcb3973b6709a5ff29f472832d2d
 pkgname:
   - name: gnome-initial-setup
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
