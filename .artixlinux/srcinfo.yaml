@@ -1,10 +1,10 @@
 ---
-version: 1.6.0-1
+version: 1.5.0-2
 pkgbase:
   name: slurp
   pkgdesc: Select a region in a Wayland compositor
-  pkgver: 1.6.0
-  pkgrel: 1
+  pkgver: 1.5.0
+  pkgrel: 2
   url: https://github.com/emersion/slurp
   arch:
     - x86_64
@@ -16,15 +16,16 @@ pkgbase:
     - wayland-protocols
   depends:
     - cairo
-    - glibc
-    - libxkbcommon
     - wayland
+    - libxkbcommon
   source:
-    - https://github.com/emersion/slurp/archive/v1.6.0/slurp-1.6.0.tar.gz
+    - slurp-1.5.0.tar.gz::https://github.com/emersion/slurp/releases/download/v1.5.0/slurp-1.5.0.tar.gz
+    - slurp-1.5.0.tar.gz.sig::https://github.com/emersion/slurp/releases/download/v1.5.0/slurp-1.5.0.tar.gz.sig
   validpgpkeys:
     - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
-  b2sums:
-    - 5b18b88c5e668ff24bcee6b85923eb066f4a8c3115ed05e2c017e139f5cc9f62085581a7a5cc217ddd6d6e74923015ed03dbc4236743006a552752b867bd0124
+  sha256sums:
+    - eeb282b2adc8db5614b852596340b69da6f3954cf6cfbdc4392da509c934208a
+    - SKIP
 pkgname:
   - name: slurp
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
