@@ -1,0 +1,29 @@
+---
+version: 8.61-4
+pkgbase:
+  name: signond
+  pkgdesc: A D-Bus service which performs user authentication on behalf of its clients
+  pkgver: 8.61
+  pkgrel: 4
+  url: https://gitlab.com/accounts-sso/signond/
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - doxygen
+    - git
+    - graphviz
+    - qt6-tools
+    - ttf-font
+  depends:
+    - libgcc
+    - glibc
+    - qt6-base
+  source:
+    - git+https://gitlab.com/nicolasfella/signond#commit=c8ad98249af541514ff7a81634d3295e712f1a39
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: signond
+# generated with artixpkg 0.38.4-1-any
