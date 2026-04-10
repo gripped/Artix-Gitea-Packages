@@ -1,10 +1,10 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world
+  addRepo: world
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -25,15 +25,15 @@ repos:
     packages: []
     debug: []
   world-gremlins:
+    version: null
+    packages: []
+    debug: []
+  world:
     version: 5.14.1-3
     packages:
       - gwenhywfar-5.14.1-3-x86_64.pkg.tar.zst
       - gwenhywfar-gtk-5.14.1-3-x86_64.pkg.tar.zst
       - gwenhywfar-qt-5.14.1-3-x86_64.pkg.tar.zst
-    debug: []
-  world:
-    version: null
-    packages: []
     debug: []
   lib32-goblins:
     version: null
