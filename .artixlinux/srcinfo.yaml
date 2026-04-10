@@ -1,10 +1,10 @@
 ---
-version: 4.7.1-1.1
+version: 4.7.1-2
 pkgbase:
   name: libtiff
   pkgdesc: Library for manipulation of TIFF images
   pkgver: 4.7.1
-  pkgrel: 1.1
+  pkgrel: 2
   url: http://www.simplesystems.org/libtiff/
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - 28fb783db36e184b578f19d1141c82df46fd60da323b592c73e6da97f3e2dddb5cb38bd2977eb4b93e361a65ee116cd249e980cebfd558d4d57182d1c8f8b3a9
 pkgname:
   - name: libtiff
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.38.5-1-any

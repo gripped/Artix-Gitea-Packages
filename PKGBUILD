@@ -4,7 +4,7 @@
 
 pkgname=libtiff
 pkgver=4.7.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Library for manipulation of TIFF images'
 url='http://www.simplesystems.org/libtiff/'
 arch=(x86_64)
@@ -40,11 +40,17 @@ validpgpkeys=(
   'B1FA7D81EEB8E66399178B9733EBBFC47B3DD87D' # Even Rouault <even.rouault@spatialys.com>
 )
 
+prepare() {
+  cd ${pkgname}
+  # CVE-2026-4775
+  git cherry-pick -n 782a11d6b5b61c6dc21e714950a4af5bf89f023c
+}
+
 build() {
   cmake -B build -S $pkgname \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=None \
-    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+  -DCMAKE_INSTALL_PREFIX=/usr \
+  -DCMAKE_BUILD_TYPE=None \
+  -DCMAKE_POLICY_VERSION_MINIMUM=3.5
 
   cmake --build build
 }
