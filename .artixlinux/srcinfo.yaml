@@ -1,10 +1,10 @@
 ---
-version: 2025.0.0-2.1
+version: 2025.0.0-2.2
 pkgbase:
   name: intel-oneapi-dpcpp-debugger
   pkgdesc: Intel OneAPI GDB
   pkgver: 2025.0.0
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - db56931bc8c565b573d2623b3564bfb6b92d58baf199ab8e816c929db6be1b936fcdd04dc2b74fb28624aa93c83b0be388474f5395244dfc162ff39da14d0cd8
 pkgname:
   - name: intel-oneapi-dpcpp-debugger
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
