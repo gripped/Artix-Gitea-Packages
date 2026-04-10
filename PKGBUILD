@@ -56,10 +56,6 @@ sha256sums=('SKIP'
 options=(!strip) # Nothing to strip, save packaging time
 
 prepare() {
-# Force UTF-8
-  #export LC_ALL=en_US.UTF-8
-  #export LANG=en_US.UTF-8
-  
 # Update minted for Python 3.14 compatibility
   patch -p1 < minted-3.8.patch
 
@@ -94,8 +90,14 @@ prepare() {
         for _file in $_files; do
           # some modules include docs in runfiles
           [[ $_file == texmf-dist/doc/* ]] && continue
-          mkdir -p texlive-$_coll/$(dirname $_file)
-          mv $_file texlive-$_coll/$(dirname $_file)
+              
+              # Test fix: Check if file exists before moving.
+              if [ -e "$_file" ]; then
+                  mkdir -p texlive-$_coll/$(dirname $_file)
+                  mv "$_file" texlive-$_coll/$(dirname $_file)
+              else
+                  echo "INFO: File $_file not found (listed in tlpdb but missing from SVN revision), skipping" >&2
+              fi
         done
         # extract formats
         _fmts=`echo "$_split" | grep "execute AddFormat"` || true
