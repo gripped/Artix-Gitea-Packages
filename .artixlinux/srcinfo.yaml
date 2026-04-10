@@ -1,0 +1,45 @@
+---
+version: 2.46.4-2
+pkgbase:
+  name: pangomm
+  pkgdesc: C++ bindings for Pango
+  pkgver: 2.46.4
+  pkgrel: 2
+  url: https://www.gtkmm.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cairomm-docs
+    - git
+    - glibmm-docs
+    - meson
+    - mm-common
+  depends:
+    - cairomm
+    - glibmm
+    - pango
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/pangomm.git#commit=13629c78e2b3ed106bd3b3fbee3522e11bafd559
+  b2sums:
+    - SKIP
+pkgname:
+  - name: pangomm
+    depends:
+      - cairomm
+      - glibmm
+      - pango
+      - libcairomm-1.0.so
+      - libglibmm-2.4.so
+      - libsigc-2.0.so
+    provides:
+      - libpangomm-1.4.so
+  - name: pangomm-docs
+    pkgdesc: C++ bindings for Pango (documentation)
+    depends: []
+    options:
+      - '!strip'
+# generated with artixpkg 0.38.5-1-any
