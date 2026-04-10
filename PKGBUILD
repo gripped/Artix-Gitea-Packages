@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Maintainer: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Orivej Desh <smpuj@bk.ru>
 
 pkgname=libunibreak
 pkgver=6.1
-pkgrel=1
+pkgrel=2
 pkgdesc="An implementation of the line breaking algorithm as described in Unicode 5.2.0 Standard Annex 14, Revision 24"
 arch=("x86_64")
 url="https://github.com/adah1972/libunibreak/"
