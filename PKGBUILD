@@ -4,10 +4,10 @@
 
 pkgname=krename
 pkgver=5.0.2
-pkgrel=10
+pkgrel=11
 pkgdesc='A very powerful batch file renamer'
 arch=(x86_64)
-url='https://www.krename.net'
+url='https://apps.kde.org/krename/'
 license=(GPL-2.0-or-later)
 depends=(exiv2
          freetype2
@@ -52,8 +52,9 @@ prepare() {
 }
 
 build() {
-  artix-cmake -B build -S $pkgname-$pkgver \
-    -DBUILD_TESTING=OFF
+  cmake -B build -S $pkgname-$pkgver \
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build
 }
 
