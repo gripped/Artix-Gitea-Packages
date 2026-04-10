@@ -1,10 +1,10 @@
 ---
-version: 50.0-1
+version: 50.0-2
 pkgbase:
   name: gnome-control-center
   pkgdesc: GNOME's main interface to configure various aspects of the desktop
   pkgver: 50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Settings/
   arch:
     - x86_64
@@ -161,4 +161,4 @@ pkgname:
   - name: gnome-keybindings
     pkgdesc: Keybindings configuration for GNOME applications
     depends: []
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
