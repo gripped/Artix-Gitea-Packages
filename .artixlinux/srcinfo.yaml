@@ -1,0 +1,52 @@
+---
+version: 0.10.0-4
+pkgbase:
+  name: wf-shell
+  pkgdesc: GTK-based panel for Wayfire
+  pkgver: 0.10.0
+  pkgrel: 4
+  url: https://github.com/WayfireWM/wf-shell
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - glib2-devel
+    - glm
+    - meson
+    - wayland-protocols
+  depends:
+    - alsa-lib
+    - atkmm
+    - cairo
+    - cairomm
+    - glib2
+    - glibc
+    - glibmm
+    - gtk-layer-shell
+    - gtk3
+    - gtkmm3
+    - hicolor-icon-theme
+    - libdbusmenu-gtk3
+    - libgcc
+    - libpulse
+    - libsigc++
+    - libstdc++
+    - pangomm
+    - wayfire>=0.10.0
+    - wayland
+    - wf-config>=0.10.0
+  source:
+    - git+https://github.com/WayfireWM/wf-shell.git#tag=v0.10.0
+    - git+https://github.com/wmww/gtk-layer-shell.git
+    - git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
+    - git+https://github.com/soreau/wayland-logout.git
+  b2sums:
+    - aa5f67f70235a40e3a58252da79396930643765db32e5cbd36c5b4c6353e528442e9b43380e22de49a8738b57726967dacb8ba0043cdf18d652c2e7d45e3eb78
+    - SKIP
+    - SKIP
+    - SKIP
+pkgname:
+  - name: wf-shell
+# generated with artixpkg 0.38.5-1-any

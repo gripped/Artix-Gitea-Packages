@@ -1,33 +1,77 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Adrian Perez de Castro <aperez@igalia.com>
 
 pkgname=wf-shell
-pkgver=0.9.0
-pkgrel=3
-pkgdesc='GTK3-based panel for the Wayfire compositor'
-url=https://wayfire.org
+pkgver=0.10.0
+pkgrel=4
+pkgdesc='GTK-based panel for Wayfire'
 arch=(x86_64)
+url='https://github.com/WayfireWM/wf-shell'
 license=(MIT)
-depends=(wf-config gtkmm3 gtk-layer-shell libdbusmenu-gtk3 libpulse)
-makedepends=(wayland wayfire wayland-protocols meson ninja gobject-introspection glib2-devel)
-conflicts=(wayland-logout)
-provides=(wayland-logout)
-source=("https://github.com/WayfireWM/${pkgname}/releases/download/v${pkgver}/${pkgname}-${pkgver}.tar.xz"
-        notifications{,-disabled}.png)
+depends=(
+  alsa-lib
+  atkmm
+  cairo
+  cairomm
+  glib2
+  glibc
+  glibmm
+  gtk-layer-shell
+  gtk3
+  gtkmm3
+  hicolor-icon-theme
+  libdbusmenu-gtk3
+  libgcc
+  libpulse
+  libsigc++
+  libstdc++
+  pangomm
+  "wayfire>=${pkgver%.*}.0"
+  wayland
+  "wf-config>=${pkgver%.*}.0"
+)
+makedepends=(
+  git
+  glib2-devel
+  glm
+  meson
+  wayland-protocols
+)
+source=(
+  "git+https://github.com/WayfireWM/wf-shell.git#tag=v$pkgver"
+  git+https://github.com/wmww/gtk-layer-shell.git
+  git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
+  git+https://github.com/soreau/wayland-logout.git
+)
+b2sums=(
+  aa5f67f70235a40e3a58252da79396930643765db32e5cbd36c5b4c6353e528442e9b43380e22de49a8738b57726967dacb8ba0043cdf18d652c2e7d45e3eb78
+  SKIP
+  SKIP
+  SKIP
+)
 
-build () {
-  artix-meson "${pkgname}-${pkgver}" build -Dpulse=enabled
-  ninja -C build
+prepare() {
+  cd $pkgname
+
+  git submodule init
+  git config submodule.subprojects/wlroots.update none
+  git submodule set-url subprojects/gtk-layer-shell "$srcdir/gtk-layer-shell"
+  git submodule set-url subprojects/gvc "$srcdir/libgnome-volume-control"
+  git submodule set-url subprojects/wayland-logout "$srcdir/wayland-logout"
+  git -c protocol.file.allow=always submodule update
 }
 
-package () {
-  DESTDIR="${pkgdir}" ninja -C build install
-  cd "${pkgname}-${pkgver}"
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-  install -Dm644 wf-shell.ini.example "${pkgdir}/usr/share/doc/${pkgname}/wf-shell.ini.example"
-  install -Dm644 "${srcdir}/notifications"{,-disabled}.png "${pkgdir}/usr/share/icons"
+build() {
+  artix-meson $pkgname build
+  meson compile -C build
 }
 
-sha256sums=('c8ac529b9fa6a4f65bd430140394b6b6a486c7b2def6c22b811396612ba94bb4'
-            '30a2a685e89732662b0c4a6e62b5b147e5cf65f51e8bc98784ae85836b83e93d'
-            '295730610f94faf2a1fb737d9da01baecbc4f6b62f4b09575a6b4e0eb487b559')
+check() {
+  meson test -C build --print-errorlogs
+}
 
+package() {
+  meson install -C build --destdir "$pkgdir"
+  install -Dm644 -t "$pkgdir/usr/share/doc/$pkgname" $pkgname/wf-shell.ini.example
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname" $pkgname/LICENSE
+}
