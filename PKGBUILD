@@ -20,6 +20,12 @@ sha256sums=('76c8f3cd42ee05cffb47bcc81256e3d5e7426f4d08e733788b45985dedf4f975'
             'SKIP')
 validpgpkeys=(7E228507C26D8DC164F531BFBA54C8AF755A2A99)
 
+prepare() {
+	cd bmake
+	sed -i 's/cmd-interrupt//g' unit-tests/Makefile
+	sed -i 's/deptgt-interrupt//g' unit-tests/Makefile
+}
+
 build() {
 	cd bmake
 	./boot-strap --prefix=/usr op=build
