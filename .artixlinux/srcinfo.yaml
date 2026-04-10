@@ -1,9 +1,9 @@
 ---
-version: 1.8.3-1
+version: 1.8.4-1
 pkgbase:
   name: b3sum
   pkgdesc: Command line implementation of the BLAKE3 hash function
-  pkgver: 1.8.3
+  pkgver: 1.8.4
   pkgrel: 1
   url: https://github.com/BLAKE3-team/BLAKE3
   arch:
@@ -16,16 +16,18 @@ pkgbase:
     - onetbb
     - rust
   depends:
-    - gcc-libs
+    - glibc
+    - libgcc
   source:
-    - git+https://github.com/BLAKE3-team/BLAKE3.git#tag=1.8.3
+    - git+https://github.com/BLAKE3-team/BLAKE3.git#tag=1.8.4
   b2sums:
-    - d3a5de3c8f9a54b23efdaaedb694a6836afcb0718005460f3d7a9d045d457e213649f0e19d4325ea1ee9478034ca2e25f48e58f68ee7088a3da74b7988184d1b
+    - 2525d6cb5b038560211c3934e7e0de520e150fd3602cc4ded77f927762e5dacfec611063c850409490c1acebd57c598fc87cefec3c2b231a6a89ac0bb9808014
 pkgname:
   - name: b3sum
   - name: libblake3
     pkgdesc: The official C implementation of BLAKE3
     depends:
-      - gcc-libs
+      - glibc
+      - libgcc
       - onetbb
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
