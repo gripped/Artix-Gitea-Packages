@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 # Contributor: Isaac Dupree <antispam@idupree.com>
 
 pkgname=libsass
 pkgver=3.6.6
-pkgrel=1
+pkgrel=2
 pkgdesc='C implementation of Sass CSS preprocessor (library)'
 arch=(x86_64)
 url="https://sass-lang.com/$pkgname/"
