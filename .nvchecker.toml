@@ -1,0 +1,4 @@
+[hugo]
+source = "git"
+git = "https://github.com/gohugoio/hugo.git"
+prefix = "v"
