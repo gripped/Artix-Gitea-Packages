@@ -1,0 +1,40 @@
+---
+version: 1.4-6
+pkgbase:
+  name: hspell
+  pkgver: 1.4
+  pkgrel: 6
+  url: http://www.ivrix.org.il/projects/spell-checker/
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - glibc
+    - zlib
+    - perl
+    - hunspell
+    - gawk
+    - qt6-webengine
+  options:
+    - '!makeflags'
+  source:
+    - http://hspell.ivrix.org.il/hspell-1.4.tar.gz
+    - http://hspell.ivrix.org.il/hspell-1.4.tar.gz.sig
+  validpgpkeys:
+    - 996512CD85DC510BD45EAD46415E26D84D4E37DB
+  sha256sums:
+    - 7310f5d58740d21d6d215c1179658602ef7da97a816bc1497c8764be97aabea3
+    - SKIP
+pkgname:
+  - name: hspell
+    pkgdesc: Hebrew spell-checker
+    depends:
+      - glibc
+      - zlib
+      - perl
+  - name: hunspell-he
+    pkgdesc: Hebrew hunspell dictionary
+    provides:
+      - hunspell-dictionary
+# generated with artixpkg 0.38.5-1-any
