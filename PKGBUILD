@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Maintainer: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 # Contributor: Paulo Matias <matiasΘarchlinux-br·org>
 
 pkgname=libnsgif
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Decoding library for the GIF image file format'
 arch=(x86_64)
 url='https://www.netsurf-browser.org/projects/libnsgif/'
