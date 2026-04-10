@@ -1,70 +1,54 @@
 ---
-version: 0.10.0-1.1
+version: 0.10.1-4
 pkgbase:
   name: wayfire
-  pkgdesc: 3D wayland compositor
-  pkgver: 0.10.0
-  pkgrel: 1.1
-  url: https://github.com/WayfireWM/wayfire
+  pkgdesc: 3D Wayland compositor, inspired by Compiz and based on wlroots
+  pkgver: 0.10.1
+  pkgrel: 4
+  url: https://wayfire.org/
   arch:
     - x86_64
   license:
     - MIT
   makedepends:
-    - meson
-    - ninja
-    - cmake
-    - vulkan-headers
     - doctest
-    - pkgconf
-    - wayland-protocols
-    - libxml2
     - git
+    - glm
+    - meson
+    - vulkan-headers
+    - wayland-protocols
   depends:
     - cairo
-    - pango
-    - libdrm
+    - glib2
+    - glibc
     - libevdev
+    - libgcc
     - libglvnd
+    - libgomp
+    - libinput
     - libjpeg
     - libpng
-    - libxkbcommon
-    - pixman
-    - polkit
-    - seatd
-    - xorg-xwayland
-    - wayland
-    - yyjson
-    - libinput
-    - glib2
-    - libelogind
+    - libstdc++
     - libxcb
-    - glm
-    - pkgconf
-    - xcb-util-errors
-    - xcb-util-renderutil
-    - xcb-util-wm
+    - libxkbcommon
+    - pango
+    - pixman
+    - libelogind
+    - vulkan-icd-loader
     - wayland
-    - wayland-protocols
-    - libdisplay-info
+    - wf-config>=0.10.0
     - wlroots0.19
-  optdepends:
-    - xorg-xeyes
-  provides:
-    - wayland-compositor
-    - wf-config=0.7
-  conflicts:
-    - wf-config
+    - yyjson
   source:
-    - git+https://github.com/WayfireWM/wayfire#commit=9229cef3b65b12d5eb10697deb66b304358d99e4
-    - git+https://github.com/WayfireWM/wf-config
-    - git+https://github.com/WayfireWM/wf-touch
-    - git+https://github.com/WayfireWM/wf-utils
-  sha256sums:
-    - ceddf00fad33242b8f8236410fa4e0709197bf156b2023df8ec2a3b1a88d2aee
+    - git+https://github.com/WayfireWM/wayfire.git#tag=v0.10.1
+    - git+https://github.com/WayfireWM/wf-config.git
+    - git+https://github.com/WayfireWM/wf-utils.git
+    - git+https://github.com/WayfireWM/wf-touch.git
+  b2sums:
+    - 6c64d6edc5b8226875c9f4adb9a1f0f07f952fb7aa274809d23feb2f3c01f8431ce2a24673b4752aef3a3c45554186995817e1663817b2ef7f0a713c81f2a4b0
     - SKIP
     - SKIP
     - SKIP
 pkgname:
   - name: wayfire
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
