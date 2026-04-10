@@ -12,7 +12,7 @@ arch=('i686' 'x86_64')
 license=('GPL-3.0')
 groups=('system')
 makedeps=('boost-libs')
-depends=('libgcc' 'libstdc++' 'pcre2' 'sdl2-compat' 'sdl2_image' 'ftgl' 'glew' 'glu' 'glm' 'boost' 'libpng' 'libglvnd' 'freetype2')
+depends=('libgcc' 'libstdc++' 'pcre2' 'sdl2-compat' 'sdl2_image' 'ftgl' 'glew' 'glu' 'glm' 'boost' 'boost-libs' 'libpng' 'libglvnd' 'freetype2')
 source=("${url}/releases/download/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.gz")
 sha256sums=('028936e9f663c877d6969ad25f145c7b420797e9a3e01c6c184815ed8309f481')
 

@@ -24,6 +24,7 @@ pkgbase:
     - glu
     - glm
     - boost
+    - boost-libs
     - libpng
     - libglvnd
     - freetype2
