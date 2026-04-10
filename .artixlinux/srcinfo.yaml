@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-3
+version: 0.14.0-4
 pkgbase:
   name: malcontent
   pkgdesc: Parental control support for applications
   pkgver: 0.14.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://gitlab.freedesktop.org/pwithnall/malcontent
   arch:
     - x86_64
@@ -80,7 +80,7 @@ pkgname:
       - polkit
       - python
       - python-gobject
-      - libmalcontent=0.14.0-3
+      - libmalcontent=0.14.0-4
     provides:
       - libmalcontent-ui-1.so
   - name: libmalcontent
@@ -97,4 +97,4 @@ pkgname:
   - name: malcontent-docs
     pkgdesc: Parental control support for applications (documentation)
     depends: []
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
