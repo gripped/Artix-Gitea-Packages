@@ -1,10 +1,10 @@
 ---
-version: 50.0-1
+version: 50.0-2
 pkgbase:
   name: gdm
   pkgdesc: Display manager and login screen
   pkgver: 50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gdm
   arch:
     - x86_64
@@ -100,4 +100,4 @@ pkgname:
       - libelogind
     provides:
       - libgdm.so
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
