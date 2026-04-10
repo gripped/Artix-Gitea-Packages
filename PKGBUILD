@@ -4,7 +4,7 @@
 pkgbase=efl
 pkgname=('efl')
 pkgver=1.28.1
-pkgrel=4
+pkgrel=4.1
 pkgdesc="Enlightenment Foundation Libraries"
 arch=('x86_64')
 url="https://www.enlightenment.org"
@@ -14,7 +14,7 @@ depends=('curl' 'dbus' 'fontconfig' 'freetype2' 'fribidi' 'giflib' 'glib2' 'gstr
          'libjpeg-turbo' 'libpng' 'libpulse' 'libsndfile' 'libtiff' 'libunwind' 'libwebp' 'libx11'
          'libxcb' 'libxcomposite' 'libxcursor' 'libxdamage' 'libxext' 'libxfixes' 'libxi'
          'libxinerama' 'libxkbcommon' 'libxkbcommon-x11' 'libxrandr' 'libxrender' 'libxss'
-         'libxtst' 'lua52' 'mailcap' 'mesa' 'openjpeg2' 'openssl' 'shared-mime-info' 'systemd-libs'
+         'libxtst' 'lua52' 'mailcap' 'mesa' 'openjpeg2' 'openssl' 'shared-mime-info' 'libelogind'
          'ttf-font' 'util-linux-libs' 'wayland' 'zlib')
 optdepends=('gst-plugins-base: Video and thumbnail codecs'
             'gst-plugins-good: Video and thumbnail codecs'

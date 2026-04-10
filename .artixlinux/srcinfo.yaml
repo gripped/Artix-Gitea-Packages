@@ -1,10 +1,10 @@
 ---
-version: 1.28.1-4
+version: 1.28.1-4.1
 pkgbase:
   name: efl
   pkgdesc: Enlightenment Foundation Libraries
   pkgver: 1.28.1
-  pkgrel: 4
+  pkgrel: 4.1
   url: https://www.enlightenment.org
   arch:
     - x86_64
@@ -69,7 +69,7 @@ pkgbase:
     - openjpeg2
     - openssl
     - shared-mime-info
-    - systemd-libs
+    - libelogind
     - ttf-font
     - util-linux-libs
     - wayland
@@ -98,4 +98,4 @@ pkgname:
       - elementary
       - evas_generic_loaders
       - emotion_generic_players
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
