@@ -1,9 +1,9 @@
 ---
-version: 50.0-1
+version: 50.1-1
 pkgbase:
   name: gnome-sudoku
   pkgdesc: Test your logic skills in this number grid puzzle
-  pkgver: 50.0
+  pkgver: 50.1
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gnome-sudoku/-/wikis/home
   arch:
@@ -33,9 +33,9 @@ pkgbase:
     - pango
     - qqwing
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-sudoku.git#tag=50.0
+    - git+https://gitlab.gnome.org/GNOME/gnome-sudoku.git#tag=50.1
   b2sums:
-    - 984f2660330e2d29c9ef5e91db73940d790bf0867d56bc4cb497c0a310c1c0b3b5bfccd05b6d5853b39d22ebe5bbed98589829d8ca5a27e35a2c10b3ce3bf0e2
+    - 9dfbf9c0a1e9bdc28da3980698aef83ac0445ea7aed6c64dbaa636a91b1ee9c5229fdcf2bf0fdb8006cd736cba7b2402d4be0f3be1b456f2465dd4d63bddc4d7
 pkgname:
   - name: gnome-sudoku
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
