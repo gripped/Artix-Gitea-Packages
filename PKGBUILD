@@ -1,10 +1,10 @@
 # Maintainer: artist for Artix Linux
 
 _module='forecasts'
-_fullmodule='bodhi-weather'
+_fullmodule='forecast_e'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=8
+pkgrel=9
 pkgdesc="The forecasts gadget will display the current weather conditions plus a few days forecast."
 _group=('moksha-modules-extra')
 arch=('x86_64')
@@ -12,8 +12,8 @@ url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
 makedepends=('git')
-source=("${_fullmodule}::git+https://github.com/thewaiter/$_fullmodule.git")
-sha256sums=('SKIP')
+source=("${_fullmodule}::git+https://github.com/thewaiter/$_fullmodule.git#commit=a3a25b16cebeebf070e76ee07aa44df4b46f3f81")
+sha256sums=('39ce46b98e441b3bcbc7f28457cdd13ca95943a723e26bd0630b00887a18494e')
 
 build() {
     cd "${srcdir}/${_fullmodule}"
