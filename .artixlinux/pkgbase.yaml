@@ -54,8 +54,8 @@ repos:
       - xed-3.8.5-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 3.8.9-1.1
+    version: 3.8.9-2
     packages:
-      - xed-3.8.9-1.1-x86_64.pkg.tar.zst
+      - xed-3.8.9-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
