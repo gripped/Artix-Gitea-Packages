@@ -1,0 +1,29 @@
+---
+version: 1.6-4
+pkgbase:
+  name: pamixer
+  pkgdesc: Pulseaudio command-line mixer like amixer
+  pkgver: 1.6
+  pkgrel: 4
+  url: https://github.com/cdemoulins/pamixer
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cxxopts
+    - meson
+    - ninja
+  depends:
+    - glibc
+    - libgcc
+    - libpulse
+  source:
+    - pamixer-1.6.tar.gz::https://github.com/cdemoulins/pamixer/archive/1.6.tar.gz
+  sha256sums:
+    - 8b7199e495dc19b190f8f02ace8782f533266a4bd7c7d3cf6f4cf09b2de13e71
+  b2sums:
+    - f7951102b2605d31886a7d76f608e3a349ab760a0995e81514dfc978d92e322ce83abb733364169317b996494bc898c1a81efc71805a62b61f9817c743a31e79
+pkgname:
+  - name: pamixer
+# generated with artixpkg 0.38.5-1-any
