@@ -1,10 +1,10 @@
 ---
-version: 6.24.0-2
+version: 6.25.0-1
 pkgbase:
   name: kitemmodels
   pkgdesc: Models for Qt Model/View system
-  pkgver: 6.24.0
-  pkgrel: 2
+  pkgver: 6.25.0
+  pkgrel: 1
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -25,15 +25,15 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.24/kitemmodels-6.24.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.24/kitemmodels-6.24.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.25/kitemmodels-6.25.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.25/kitemmodels-6.25.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 6636bf47de0df2464a94691a1092340efba2abc91fb305253bbb9058af959727
+    - ab78119a00b84eac65ffc986df30fbf9b1b8d00635e8fc626372e84580d158ca
     - SKIP
 pkgname:
   - name: kitemmodels
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
