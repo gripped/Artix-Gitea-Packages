@@ -207,6 +207,7 @@ build() {
     -DVTK_MODULE_ENABLE_VTK_DomainsMicroscopy=NO
     -DVTK_MODULE_ENABLE_VTK_FiltersOpenTURNS=NO
     -DVTK_MODULE_ENABLE_VTK_IOCatalystConduit=YES
+    -DVTK_MODULE_ENABLE_VTK_FiltersONNX=NO
     # building with the usd package does not work: https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/issues/7
     -DVTK_MODULE_ENABLE_VTK_IOUSD=NO
     -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON
