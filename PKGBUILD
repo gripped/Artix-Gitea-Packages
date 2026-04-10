@@ -6,7 +6,7 @@ pkgname=(
   iptables
   iptables-legacy
 )
-pkgver=1.8.12
+pkgver=1.8.13
 pkgrel=1
 epoch=1
 pkgdesc='Linux kernel packet control tool'
@@ -32,7 +32,7 @@ source=(
   0001-fix-iptables-apply-FS-75401.patch
   {empty,empty-{filter,mangle,nat,raw,security},simple_firewall}.rules
 )
-b2sums=('b27f46b9312528bc73d15ca86ec33b61334ce038894fd5dad89b828e473db43e9ff624ebde88c2de3a0b8afd5ac0ba3a1c538eeec099a6b89882a4399253fd42'
+b2sums=('b6b2891dc2081ca1dc01e15c8e586cc172c857ca687d86d8ad040fd784048e83a6b9ce55a23ae4f0bbb9976b7604c231870d128024769662298819a52d77d1a6'
         '7008ad93b252e1410273e0474f1a571c861cfe7d5bdedf89eb0e59fe714e85b6a9cec6c711937718bce6c3c18eaeec5b6db9e40ee71d43c15472bfff6de92054'
         'd51b50c72db275ffc32e45d06000d6a273be56ccea9c89b34b297879fbe44cdea4dd9c7926fb14247992f4e6aefd33acc351fbbbcb012366ac73ec590ecb1b28'
         '0b42fb260ed23d823eeff23d8f56ed1388ca85cf0edd6bceedebc915f7c455bdd99cd2a213074bad02e90e977ead9c42206579cde2d6ef0dcaef33a574dd4445'
