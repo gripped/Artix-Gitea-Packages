@@ -1,10 +1,10 @@
 ---
-version: 20260206-5
+version: 20260206-5.1
 pkgbase:
   name: jami-daemon
   pkgdesc: Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)
   pkgver: 20260206
-  pkgrel: 5
+  pkgrel: 5.1
   url: https://jami.net
   arch:
     - x86_64
@@ -64,4 +64,4 @@ pkgbase:
     - 8fcfe52808d00b8535dc6d181af0233dc0f3a51e8da69728a04e7f6edc82c54fb11e62ffad05344d9eeb6d203dc323ffa03181c615c7c6f84682f70a02ee4319
 pkgname:
   - name: jami-daemon
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any

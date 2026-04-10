@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world-goblins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20260206-5
+    version: 20260206-5.1
     packages:
-      - jami-daemon-20260206-5-x86_64.pkg.tar.zst
+      - jami-daemon-20260206-5.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 20260206-3
