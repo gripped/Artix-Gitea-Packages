@@ -1,30 +1,36 @@
 ---
-version: 1.1.4-2
+version: 1.1.5-1
 pkgbase:
   name: logstalgia
-  pkgdesc: a website access log visualisation tool
-  pkgver: 1.1.4
-  pkgrel: 2
+  pkgdesc: a visualization tool that replays or streams web server access logs as a retro arcade game simulation
+  pkgver: 1.1.5
+  pkgrel: 1
   url: https://github.com/acaudwell/Logstalgia
   arch:
     - i686
     - x86_64
+  groups:
+    - system
   license:
-    - GPL3
+    - GPL-3.0
   depends:
-    - pcre
+    - libgcc
+    - libstdc++
+    - pcre2
+    - sdl2-compat
     - sdl2_image
     - ftgl
     - glew
+    - glu
     - glm
     - boost
     - libpng
+    - libglvnd
+    - freetype2
   source:
-    - https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.4/logstalgia-1.1.4.tar.gz
-    - boost-1.89.patch
+    - https://github.com/acaudwell/Logstalgia/releases/download/logstalgia-1.1.5/logstalgia-1.1.5.tar.gz
   sha256sums:
-    - c049eff405e924035222edb26bcc6c7b5f00a08926abdb7b467e2449242790a9
-    - ed3e81179cd6649b449e8f912b7e1d63da005bd5e577055874a8858d7f0c4018
+    - 028936e9f663c877d6969ad25f145c7b420797e9a3e01c6c184815ed8309f481
 pkgname:
   - name: logstalgia
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.2-1-any
