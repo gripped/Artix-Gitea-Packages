@@ -1,43 +1,41 @@
-# Maintainer: Artoo <artoo@artixlinux.org>
+# Maintainer: Carlos Eduardo <capezotte@artixlinux.org>
+# AUR-maintainer: Gustavo Alvarez <sl1pkn07@gmail.com>
 # Contributor: MatMoul <matmoul at the google email domain which is .com>
 
-_url=https://gitea.artixlinux.org/artix/qt-sudo
-
 pkgname=qt-sudo
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
-pkgdesc='A clone of LXQt sudo tool, without LXQt libs '
+pkgdesc='A clone of LXQt sudo tool, without LXQt libs'
 arch=('x86_64')
-license=('LGPL-2.1-only')
-url="https://github.com/aarnt/qt-sudo"
-makedepends=(
-    qt6-tools
-    cmake
-    git
-)
+url='https://github.com/aarnt/qt-sudo.git'
+license=('LGPL-2.1-or-later')
 depends=(
-    glibc
-    gcc-libs
-    qt6-base
+  'libgcc'
+  'libstdc++'
+  'glibc'
+  'qt6-base' # libQt6Core.so libQt6Gui.so libQt6Widgets.so
+  'sudo'
 )
-source=(
-    "git+$url.git#tag=v$pkgver"
-    "$pkgname-cmake.patch::$_url/commit/ab4e3dd18ee028791218e3b8551728a0fb115c92.patch"
+makedepends=(
+  'git'
+  'qt6-tools'
 )
-sha256sums=('4bceaba9eda795b504263377be880954b57e9416bf8cae3abea7b2674733fbe0'
-            'f0dff2b306d853edf2e66546813bf4263c332a7390c08a2edb47fea96da49ae3')
-
-prepare() {
-    git -C "$pkgname" apply ../$pkgname-cmake.patch
-    sed -e "s|2.0.0|$pkgver|" -i "$pkgname"/CMakeLists.txt
-}
+source=("git+https://github.com/aarnt/qt-sudo.git#tag=v${pkgver}")
+sha256sums=('SKIP')
 
 build() {
-    cmake -S "$pkgname" -B build \
-        -DCMAKE_INSTALL_PREFIX=/usr
-    cmake --build build
+  cd qt-sudo
+  qmake6 \
+    PREFIX="${pkgdir}/usr" \
+    QMAKE_CFLAGS="${CFLAGS}" \
+    QMAKE_CXXFLAGS="${CXXFLAGS}" \
+    QMAKE_LFLAGS="${LDFLAGS}"
+
+  make
 }
 
 package() {
-    DESTDIR="$pkgdir" cmake --install build
+  cd qt-sudo
+  make install
+  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 }
