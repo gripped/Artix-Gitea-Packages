@@ -4,7 +4,7 @@
 
 pkgname=bats-support
 pkgver=0.3.0
-pkgrel=5
+pkgrel=6
 pkgdesc='Supporting library for Bats test helpers'
 url='https://github.com/bats-core/bats-support'
 arch=(any)
@@ -35,3 +35,5 @@ package() {
   install -Dm 644 LICENSE -t "${pkgdir}/usr/share/licenses/${pkgname}"
   install -Dm 644 README.md CHANGELOG.md -t "${pkgdir}/usr/share/doc/${pkgname}"
 }
+
+# vim: ts=2 sw=2 et:
