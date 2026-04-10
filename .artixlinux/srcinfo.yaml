@@ -1,10 +1,10 @@
 ---
-version: 7.0-3
+version: 7.1-1
 pkgbase:
   name: python-zope-configuration
   pkgdesc: Zope Configuration Markup Language (ZCML)
-  pkgver: 7.0
-  pkgrel: 3
+  pkgver: 7.1
+  pkgrel: 1
   url: https://github.com/zopefoundation/zope.configuration
   arch:
     - any
@@ -14,6 +14,7 @@ pkgbase:
     - python-zope-testing
     - python-zope-testrunner
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-setuptools
@@ -24,9 +25,9 @@ pkgbase:
     - python-zope-interface
     - python-zope-schema
   source:
-    - https://github.com/zopefoundation/zope.configuration/archive/7.0/python-zope-configuration-7.0.tar.gz
+    - git+https://github.com/zopefoundation/zope.configuration.git#tag=7.1
   sha512sums:
-    - 7ec42686eef99e12bd249b3b9ab622bf724708118f847be9bd31657fa4a71642ee006315a2247f1609749da47f799fca03c08da7269c55287e57ead32eaf166a
+    - cda8da15bd8343b86612a083217321c0ee418fd6c7470dc23745d92b0c6abad540dd67e1bf477ca1df50de9c15cecd56563adfe0df66d8c7c7acc2e747275d77
 pkgname:
   - name: python-zope-configuration
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.4-1-any
