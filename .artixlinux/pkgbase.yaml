@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.6.56-1
+    version: 1.6.57-1
     packages:
-      - lib32-libpng-1.6.56-1-x86_64.pkg.tar.zst
+      - lib32-libpng-1.6.57-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
