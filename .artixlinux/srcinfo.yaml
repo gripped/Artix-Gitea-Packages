@@ -1,9 +1,9 @@
 ---
-version: 0.9.2-1
+version: 0.9.3-1
 pkgbase:
   name: libcap-ng
   pkgdesc: A library for Linux that makes using posix capabilities easy
-  pkgver: 0.9.2
+  pkgver: 0.9.3
   pkgrel: 1
   url: https://people.redhat.com/sgrubb/libcap-ng/
   arch:
@@ -12,16 +12,17 @@ pkgbase:
     - GPL-2.0-or-later
     - LGPL-2.1-or-later
   makedepends:
+    - bash-completion
     - python
     - swig
   depends:
     - glibc
   source:
-    - https://github.com/stevegrubb/libcap-ng/archive/v0.9.2/libcap-ng-0.9.2.tar.gz
+    - https://github.com/stevegrubb/libcap-ng/archive/v0.9.3/libcap-ng-0.9.3.tar.gz
   sha512sums:
-    - 15730e77ea7b3c8e66cd96f43d5d564189388af70342eabb7a3acc06429bcfbb74cfdb3ff318abea0dc50c4dcf26ac08d757ecf6e42fda7785c75ee563af2d39
+    - cbe6e322a6349dcd2b23833c4f66a173d5d8d36ccded782e79fa8b83a1a700da293e0a79a31408814f19cf788fd56726beb587f51314a92c135e05eb2e5a47e2
   b2sums:
-    - c9823bd7397e82fcc00a201b275283e8f49597ebeff21bec859bbfd962b55152caf10ede1dc2060634bda2c3c8523f446671aeab55a9a1c5b78d0031047ce13b
+    - 8050f69c91a8c5214d718d3ad750cf50db25690b9b8d59f37db32d33d5a0fe864afe8064ca4261f27f49f65064926c816a627a9c1c7a28e268a1a459409c59d8
 pkgname:
   - name: libcap-ng
     provides:
@@ -36,4 +37,4 @@ pkgname:
       - python
     provides:
       - python-libcap-ng
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
