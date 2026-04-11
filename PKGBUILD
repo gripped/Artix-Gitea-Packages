@@ -9,7 +9,7 @@ shopt -s extglob
 
 pkgbase=python
 pkgname=(python python-tests)
-pkgver=3.14.3
+pkgver=3.14.4
 pkgrel=1
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
@@ -18,10 +18,9 @@ license=('PSF-2.0')
 url="https://www.python.org/"
 depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal' 'zstd')
 makedepends=('tk' 'sqlite' 'bluez-libs' 'llvm' 'gdb' 'xorg-server-xvfb' 'ttf-font')
-options=(debug)
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"
         EXTERNALLY-MANAGED)
-sha512sums=('9fd875f7a1d96d64e7150913ef38b72b0aeecfcbc24ba46967e57b6495146b0cba6b940c273561fc4d656b6d0ce2e23ffb7bd32bcd0b61fd59a6d90585998c07'
+sha512sums=('89a7f8b8a31f48d150badb4751df137d47d9014c9c422649a1a55aef5618aa7f0259dd18c151e6804fa8312c6a21544332a9f630ee81150dc00505637e62bb8c'
             '62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0')
 validpgpkeys=('0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D'  # Ned Deily (Python release signing key) <nad@python.org>
               'E3FF2839C048B25C084DEBE9B26995E310250568'  # Łukasz Langa (GPG langa.pl) <lukasz@langa.pl>
@@ -61,9 +60,7 @@ build() {
   export servernum=99
   while ! xvfb-run -a -n "$servernum" /bin/true 2>/dev/null; do servernum=$((servernum+1)); done
 
-  # test_generators yields a fail in pipeline
-  LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
-  make EXTRA_CFLAGS="$CFLAGS" PROFILE_TASK="-m test --pgo -x test_generators"
+  LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" make EXTRA_CFLAGS="$CFLAGS"
 }
 
 check() {
@@ -90,15 +87,13 @@ check() {
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
-      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl \
-      -x test_generators -x test_multiprocessing_spawn -x test_multiprocessing_forkserver -x test_multiprocessing_fork \
-      -x test_signal -x test_asyncio -x test_threading
+      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl
 }
 
 package_python() {
   optdepends=('python-setuptools: for building Python packages using tooling that is usually bundled with Python'
               'python-pip: for installing Python packages using tooling that is usually bundled with Python'
-              'python-pipx: for installing Python software not packaged on Artix Linux'
+              'python-pipx: for installing Python software not packaged on Arch Linux'
               'sqlite: for a default database integration'
               'xz: for lzma'
               'tk: for tkinter')
