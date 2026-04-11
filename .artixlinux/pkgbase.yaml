@@ -1,54 +1,61 @@
 ---
-pkgbase:
-  name: make
-  version: 4.4.1-2
-  arch:
-    - x86_64
-  pkgname:
-    - make
 actions:
-  addRepo: null
+  addRepo: system-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 4.4.1-3
+    packages:
+      - make-4.4.1-3-x86_64.pkg.tar.zst
+    debug: []
   system:
     version: 4.4.1-2
     packages:
       - make-4.4.1-2-x86_64.pkg.tar.zst
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
+team: system

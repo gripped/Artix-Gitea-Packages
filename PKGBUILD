@@ -1,10 +1,10 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=make
 pkgver=4.4.1
-pkgrel=2
+pkgrel=3
 pkgdesc="GNU make utility to maintain groups of programs"
 arch=('x86_64')
 url="https://www.gnu.org/software/make"
