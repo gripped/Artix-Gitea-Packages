@@ -1,9 +1,9 @@
 ---
-version: 2.11.1-1
+version: 2.11.2-1
 pkgbase:
   name: ruby-regexp_parser
   pkgdesc: A library for tokenizing, lexing, and parsing Ruby regular expressions
-  pkgver: 2.11.1
+  pkgver: 2.11.2
   pkgrel: 1
   url: https://github.com/ammar/regexp_parser
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/ammar/regexp_parser.git#tag=v2.11.1
+    - git+https://github.com/ammar/regexp_parser.git#tag=v2.11.2
   sha256sums:
-    - c408998c81a04b149114fe712c0775d76caaa39946a2a5115b855f047fdc19ca
+    - f2f090f1630fe2325fd182d80a7460be86e483213c3bbbe0a112d20ba84b24d0
 pkgname:
   - name: ruby-regexp_parser
 # generated with artixpkg 0.38.4-1-any
