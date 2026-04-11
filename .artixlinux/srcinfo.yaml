@@ -1,0 +1,30 @@
+---
+version: 20180314-7
+pkgbase:
+  name: lxdm-runit
+  pkgdesc: Runit service script for lxdm
+  pkgver: 20180314
+  pkgrel: 7
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-galaxy
+  license:
+    - BSD
+  depends:
+    - lxdm
+    - runit
+  provides:
+    - init-lxdm
+    - init-displaymanager
+  conflicts:
+    - init-lxdm
+    - init-displaymanager
+  source:
+    - lxdm.run
+  sha256sums:
+    - ad7755e96418dd5a89999083d34458b4e82a4e71cf520adcdcf7ae22b33941f3
+pkgname:
+  - name: lxdm-runit
+# generated with artixpkg 0.38.5-1-any

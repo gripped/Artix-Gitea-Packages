@@ -4,12 +4,12 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=lxdm-runit
 pkgver=20180314
-pkgrel=6
+pkgrel=7
 pkgdesc="Runit service script for lxdm"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('lxdm-gtk3' 'runit')
+depends=('lxdm' 'runit')
 provides=('init-lxdm' 'init-displaymanager')
 groups=('runit-galaxy')
 conflicts=('init-lxdm' 'init-displaymanager')
