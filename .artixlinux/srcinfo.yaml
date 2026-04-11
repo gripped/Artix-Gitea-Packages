@@ -87,4 +87,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: qt6-webengine
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
