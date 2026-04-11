@@ -16,6 +16,10 @@ sha512sums=('25867c1c316c24a104af575ec62ae1170de6141544e7c523e34e1a7e9feaa19edfd
 prepare() {
   cd python-xmlsec
   sed -i 's/setuptools==80\.9\.0/setuptools/' pyproject.toml
+  sed -i 's/lxml==6.0.2/lxml==6.0.3/' pyproject.toml
+
+  sed -e 's/lxml==6.0.2/lxml==6.0.3/' -i requirements.txt
+  sed -e 's/lxml==6.0.2/lxml==6.0.3/' -i doc/source/requirements.txt
 }
 
 build() {

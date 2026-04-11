@@ -32,4 +32,4 @@ pkgbase:
     - 25867c1c316c24a104af575ec62ae1170de6141544e7c523e34e1a7e9feaa19edfdf48787cb7f6f99ed3d70866d58813b673efdb5f3fd30f479bec623c6527c0
 pkgname:
   - name: python-xmlsec
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
