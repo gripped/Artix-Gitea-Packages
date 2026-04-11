@@ -1,0 +1,44 @@
+---
+version: 1.33.0-1
+pkgbase:
+  name: limine-mkinitcpio-hook
+  pkgdesc: Install kernels for the Limine bootloader.
+  pkgver: 1.33.0
+  pkgrel: 1
+  url: https://gitlab.com/Zesko/limine-entry-tool
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - GPL3
+  makedepends:
+    - git
+    - gradle
+  depends:
+    - bash
+    - grep
+    - tar
+    - limine
+    - mkinitcpio
+    - efibootmgr
+  optdepends:
+    - 'kernel-modules-hook: Safely keeps kernel on upgrade failure'
+    - 'sbctl: Signs UEFI boot files for Secure Boot when enabled'
+  provides:
+    - limine-entry-tool
+  conflicts:
+    - limine-entry-tool
+  options:
+    - '!debug'
+    - '!strip'
+  backup:
+    - etc/limine-entry-tool.conf
+  source:
+    - https://gitlab.com/Zesko/limine-entry-tool/-/archive/1.33.0/limine-entry-tool-1.33.0.tar.gz
+    - https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-x64_bin.tar.gz
+  sha256sums:
+    - f3b6b91e9e5eb07eb04203d856d15bb2e7cc6afe6ac6190b39868238f56fac7d
+    - e0be791c8fda4d03b6b0a0cb824fef3149736170057b3a515252b44419606af0
+pkgname:
+  - name: limine-mkinitcpio-hook
+# generated with artixpkg 0.38.5-1-any
