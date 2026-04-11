@@ -4,6 +4,9 @@
 
 export LC_ALL=C.UTF-8
 export LANG=C.UTF-8
+export LANGUAGE=C.UTF-8
+
+export LC_CTYPE=C.UTF-8
 
 pkgbase=texlive-texmf
 pkgname=(texlive-doc texlive-meta)
@@ -90,14 +93,8 @@ prepare() {
         for _file in $_files; do
           # some modules include docs in runfiles
           [[ $_file == texmf-dist/doc/* ]] && continue
-              
-              # Test fix: Check if file exists before moving.
-              if [ -e "$_file" ]; then
-                  mkdir -p texlive-$_coll/$(dirname $_file)
-                  mv "$_file" texlive-$_coll/$(dirname $_file)
-              else
-                  echo "INFO: File $_file not found (listed in tlpdb but missing from SVN revision), skipping" >&2
-              fi
+          mkdir -p texlive-$_coll/$(dirname $_file)
+          mv $_file texlive-$_coll/$(dirname $_file)
         done
         # extract formats
         _fmts=`echo "$_split" | grep "execute AddFormat"` || true
