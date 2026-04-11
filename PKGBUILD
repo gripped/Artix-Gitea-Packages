@@ -1,14 +1,14 @@
-# Maintainer: artoo <artoo@artixlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Allan McRae <allan@archlinux.org>
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=flex
 pkgver=2.6.4
-pkgrel=5
+pkgrel=6
 pkgdesc="A tool for generating text-scanning programs"
 arch=('x86_64')
 url="https://github.com/westes/flex"
-license=('custom')
+license=('custom:flex')
 depends=('glibc' 'm4' 'sh')
 makedepends=('help2man')
 source=(
