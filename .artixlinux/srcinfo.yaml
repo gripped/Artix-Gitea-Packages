@@ -29,7 +29,7 @@ pkgbase:
   source:
     - https://git.skyjake.fi/skyjake/lagrange/releases/download/v1.20.0/lagrange-1.20.0.tar.gz
   sha256sums:
-    - a51e7519f0dfa2cfc2918d6b498a6aca6a966702ae0f8d2c94f02f4287b2ffd7
+    - fd19217f0f2706addf6e6a82260e9f62bab799ef35c43faaa305232efe4ebab9
 pkgname:
   - name: lagrange
 # generated with artixpkg 0.38.4-1-any
