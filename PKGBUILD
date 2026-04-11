@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=6.19.9.zen1
+pkgver=6.19.11.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -11,9 +11,13 @@ arch=(
 license=(GPL-2.0-only)
 makedepends=(
   bc
+  binutils
   cpio
   gettext
+  glibc
   libelf
+  libgcc
+  openssl
   pahole
   perl
   python
@@ -21,7 +25,10 @@ makedepends=(
   rust-bindgen
   rust-src
   tar
+  xxhash
   xz
+  zlib
+  zstd
 
   # htmldocs
   graphviz
@@ -46,16 +53,16 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('6be41037c5b18e9a8d1c58fdd613e37bb5c841b7f43baf95516f3dda461adc6eb20da03e6a8892bd5b8410125ad42dae8ef4634a0eb95b84aaf3882a6ed00074'
+b2sums=('7304717954b8ad9eec54071d28d2d6c9af108d2c84686cee9b401e38078d4b39810541a854e458c85349de10959d96edb2ba7e38b0e0a7ebc46949e69e7816b3'
         'SKIP'
-        '3f9f93356d534622cfbe1d5d4f6e27a9560e25bf29a41b17110b347a0e865e73a435973b2f65c890a02a796b649af914581e5fe8fa20c43e34763a20fa9a6c6e'
+        '19d630b1c595271562760ba02144fe65fdac682dcddf3e377f38d103a73f0a21f994699e75b3f7e34e5e2ec70818edb722ec25e9a087061c98005409d4c65ede'
         'SKIP')
-b2sums_x86_64=('f4df62e97938e9764efaaa7eaf8543a11c8fdc12f342e2d0a28e19e172f40cea65f276b7e0ba2fd287176af03a81d4c79e380cdc92f8b1b1029e6ea78d47b24b')
+b2sums_x86_64=('a55b3ac0332276b6047b0f72a5d60a7c3d1004202934a95085142a61a3c528a59944df6f393bb9ed1378644a3fc69cc32f7e577d1d4bf5fb9ba77979ed7367c6')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('c16068a3af12e3943dee3b1eef57ca70229c069128bfa1184fb3f48b219d55bf'
+sha256sums=('20039d7b6b256c08be2f8fac43c3ff9a620308c703c643cf2f80c3910b9bd59b'
             'SKIP'
-            'f7355c8649f5b5f4dfe9a58e4398aecfcd7f759560be3ca47d59d8b68c97752c'
+            '2c95c1dbaec3f00ec4bc4c59f056d22163b5e9de572df17e09f6fab7e1ba520f'
             'SKIP')
 
 export KBUILD_BUILD_HOST=artixlinux
@@ -139,7 +146,17 @@ _package() {
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
-  depends=(pahole)
+  depends=(
+    binutils
+    glibc
+    libelf
+    libgcc
+    openssl
+    pahole
+    xxhash
+    zlib
+    zstd
+  )
   provides=(LINUX-HEADERS)
 
   cd $_srcname
