@@ -33,4 +33,4 @@ pkgbase:
     - 1611ffd0470db3513b210a511621180262f3688ec3931d1151bcdbc32dcf270561036e94179cccc75d03eb8593856740c9f98574024bf258d0752a09522c2b4d
 pkgname:
   - name: rio
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
