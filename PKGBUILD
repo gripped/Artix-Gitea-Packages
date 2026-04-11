@@ -1,10 +1,10 @@
 # Maintainer: marzosh <marzosh@artixlinux.org>
-# Maintainer: artist for Artix Linux
+# Contributor: artist for Artix Linux
 # Contributor: Roshless <pkg@roshless.com>
 
 pkgname=lagrange
 pkgrel=1
-pkgver=1.19.4
+pkgver=1.20.0
 pkgdesc="Beautiful Gemini Client"
 url="https://git.skyjake.fi/skyjake/lagrange"
 arch=('x86_64')
