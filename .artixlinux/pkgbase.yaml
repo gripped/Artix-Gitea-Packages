@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,7 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 20180314-7
+    packages:
+      - lxdm-runit-20180314-7-any.pkg.tar.zst
     debug: []
 team: world
