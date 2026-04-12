@@ -1,0 +1,32 @@
+---
+version: 1.0.10-2
+pkgbase:
+  name: xorg-iceauth
+  pkgdesc: ICE authority file utility
+  pkgver: 1.0.10
+  pkgrel: 2
+  url: https://gitlab.freedesktop.org/xorg/app/iceauth
+  arch:
+    - x86_64
+  groups:
+    - xorg-apps
+    - xorg
+  license:
+    - MIT-open-group
+  makedepends:
+    - xorg-util-macros
+    - xorgproto
+  depends:
+    - libice
+    - glibc
+  source:
+    - https://xorg.freedesktop.org/archive/individual/app/iceauth-1.0.10.tar.xz
+    - https://xorg.freedesktop.org/archive/individual/app/iceauth-1.0.10.tar.xz.sig
+  validpgpkeys:
+    - 4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E
+  sha512sums:
+    - cfadac03a3f72f3c0bb58f67984a033847c76e7e3fdd9ebce583c0554d7f9484faf5053d878f5a82a543cdcc8e2ef8acecadb8830bd3c53584d7ec950cb51cc3
+    - SKIP
+pkgname:
+  - name: xorg-iceauth
+# generated with artixpkg 0.38.5-1-any
