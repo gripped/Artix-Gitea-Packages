@@ -1,10 +1,10 @@
 ---
-version: 0.15-5
+version: 0.15-6
 pkgbase:
   name: dvtm
   pkgdesc: Dynamic virtual terminal manager.
   pkgver: 0.15
-  pkgrel: 5
+  pkgrel: 6
   url: https://www.brain-dump.org/projects/dvtm/
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 89652c67613d8750567b4bdb9088939203fe5602d6d36bb95c95b72908b4a80b
 pkgname:
   - name: dvtm
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any

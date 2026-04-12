@@ -5,7 +5,7 @@
 
 pkgname=dvtm
 pkgver=0.15
-pkgrel=5
+pkgrel=6
 pkgdesc='Dynamic virtual terminal manager.'
 arch=('x86_64')
 url='https://www.brain-dump.org/projects/dvtm/'
@@ -21,7 +21,9 @@ prepare() {
 
 	cp "${srcdir}/config.h" .
 	sed -i 's/CFLAGS =/CFLAGS +=/' config.mk
-	sed -i '/TERMINFO/Id' "Makefile"
+
+	# Do not install terminfo file, provided by ncurses now.
+	sed -i '/tic -s dvtm.info/d' Makefile
 }
 
 build() {
@@ -36,7 +38,4 @@ package() {
 
 	make PREFIX=/usr DESTDIR="${pkgdir}" install
 	install -Dm0644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
-
-	# this is provided by ncurses now
-	rm -rf "${pkgdir}/usr/share/terminfo/"
 }
