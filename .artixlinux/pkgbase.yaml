@@ -1,10 +1,10 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: null
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -29,9 +29,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 5.15.18+kde+r7-2
-    packages:
-      - qt5-location-5.15.18+kde+r7-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
