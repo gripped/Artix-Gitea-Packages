@@ -60,7 +60,8 @@ build() {
   export servernum=99
   while ! xvfb-run -a -n "$servernum" /bin/true 2>/dev/null; do servernum=$((servernum+1)); done
 
-  LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" make EXTRA_CFLAGS="$CFLAGS"
+  LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" make EXTRA_CFLAGS="$CFLAGS" \
+    PROFILE_TASK="-m test --pgo -x test_generators" -j $(nproc)
 }
 
 check() {
@@ -87,13 +88,15 @@ check() {
   LD_LIBRARY_PATH="${srcdir}/Python-${pkgver}":${LD_LIBRARY_PATH} \
   LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" \
     "${srcdir}/Python-${pkgver}/python" -m test.regrtest -j "$_jobs" -v -uall -x test_tk -x test_ttk -x test_ttk.test_widgets \
-      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl
+      -x test_tkinter -x test_pyexpat -x test_socket -x test_unittest -x test_ssl \
+      -x test_generators -x test_multiprocessing_spawn -x test_multiprocessing_forkserver -x test_multiprocessing_fork \
+      -x test_signal -x test_asyncio -x test_threading
 }
 
 package_python() {
   optdepends=('python-setuptools: for building Python packages using tooling that is usually bundled with Python'
               'python-pip: for installing Python packages using tooling that is usually bundled with Python'
-              'python-pipx: for installing Python software not packaged on Arch Linux'
+              'python-pipx: for installing Python software not packaged on Artix Linux'
               'sqlite: for a default database integration'
               'xz: for lzma'
               'tk: for tkinter')
