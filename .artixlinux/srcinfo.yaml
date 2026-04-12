@@ -1,10 +1,10 @@
 ---
-version: 4.6-1
+version: 4.6-2
 pkgbase:
   name: mdadm
   pkgdesc: A tool for managing/monitoring Linux md device arrays, also known as Software RAID
   pkgver: 4.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://git.kernel.org/pub/scm/utils/mdadm
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - 8572eae7f566deb040fa1489cb5e3c9e501609e4c51b476c04c256b4466b3cbdb9d1d5345e9d9dbf1cfd8a22bfd60a171cc83fe68acd8dfe7e893e3b210fc8a3
 pkgname:
   - name: mdadm
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any

@@ -4,7 +4,7 @@
 
 pkgname=mdadm
 pkgver=4.6
-pkgrel=1
+pkgrel=2
 pkgdesc='A tool for managing/monitoring Linux md device arrays, also known as Software RAID'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -35,7 +35,6 @@ package() {
 
 	make INSTALL=/usr/bin/install BINDIR=/usr/bin DESTDIR="$pkgdir" UDEVDIR=/usr/lib/udev install
 	install -D -m644 ../mdadm.conf "$pkgdir"/etc/mdadm.conf
-	install -D -m755 misc/mdcheck "$pkgdir"/usr/share/mdadm/mdcheck
 
 	install -Dm 644 raid6check.8 "$pkgdir"/usr/share/man/man8/raid6check.8
 	install -Dm 755 raid6check "$pkgdir"/usr/bin/raid6check
