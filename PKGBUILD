@@ -3,11 +3,11 @@
 
 pkgname=keyutils
 pkgver=1.6.3
-pkgrel=3
+pkgrel=4
 pkgdesc='Linux Key Management Utilities'
 arch=('x86_64')
 url='https://www.kernel.org/'
-license=('GPL2' 'LGPL2.1')
+license=('GPL-2.0-or-later' 'LGPL-2.1-or-later')
 depends=('glibc' 'sh')
 makedepends=('git')
 provides=('libkeyutils.so')
