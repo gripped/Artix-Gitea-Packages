@@ -1,9 +1,9 @@
 ---
-version: 26.0.1-1
+version: 26.0.2-1
 pkgbase:
   name: dbeaver
   pkgdesc: Free universal SQL Client for developers and database administrators (community edition)
-  pkgver: 26.0.1
+  pkgver: 26.0.2
   pkgrel: 1
   url: https://dbeaver.io/
   install: dbeaver.install
@@ -28,9 +28,9 @@ pkgbase:
     - dbeaver-plugin-apache-poi
     - dbeaver-plugin-office
   source:
-    - dbeaver-26.0.1.tar.gz::https://github.com/dbeaver/dbeaver/archive/26.0.1.tar.gz
-    - dbeaver-common-26.0.1.tar.gz::https://github.com/dbeaver/dbeaver-common/archive/release_26_0_1.tar.gz
-    - dbeaver-jdbc-libsql-26.0.1.tar.gz::https://github.com/dbeaver/dbeaver-jdbc-libsql/archive/release_26_0_1.tar.gz
+    - dbeaver-26.0.2.tar.gz::https://github.com/dbeaver/dbeaver/archive/26.0.2.tar.gz
+    - dbeaver-common-26.0.2.tar.gz::https://github.com/dbeaver/dbeaver-common/archive/release_26_0_2.tar.gz
+    - dbeaver-jdbc-libsql-26.0.2.tar.gz::https://github.com/dbeaver/dbeaver-jdbc-libsql/archive/release_26_0_2.tar.gz
     - https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar
     - https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar
     - io.dbeaver.DBeaver.desktop
@@ -39,9 +39,9 @@ pkgbase:
     - dbeaver.hook
     - dbeaver.install
   sha256sums:
-    - b735af3ddac9b461afca848aed88399fdc3a3974d7ec82005aef3779ec096803
-    - c8eba0cc28ca35b84ea71c1ebb4a33456e4cee52dbbbf1cfa6c01ab4f66f126a
-    - 20d5f4ca82c1ba2b8b23f8b6c02782c49f16f5e3cb55baa330c3afac6639d485
+    - 3ae8eacd94a73c46eab14e9f4789afcdc3b4da9e124ceb11c363ea9bd2893b9e
+    - 43a305aac6116d8f29327e5338e8e2d8f1bc325103d81c50305a5c6f0db0c42c
+    - 4a0ea078117d3dd4086cf1872ebb0d1d39b28e176fd29bc37026a1fd823baf29
     - e1522945218456f3649a39bc4afd70ce4bd466221519dba7d378f2141a4642ca
     - 32733ab4bc90b45b63eb72677d886961003fd4ed113e07b1028f9877cb2ac735
     - 9480a7d08f680e10c399db070c5a04cbabf282442602a2ef83d1159fe7c3e88b
@@ -51,4 +51,4 @@ pkgbase:
     - f8d65dd933049b587a5815ea75a30ef944300b812df383ca1c2dcd68280bc7ab
 pkgname:
   - name: dbeaver
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
