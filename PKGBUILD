@@ -1,7 +1,6 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Johannes Löthberg <johannes@kyriasis.com>
-# Contributor: Thore Bödecker <foxxx0@archlinux.org>
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Johannes Löthberg <johannes@kyriasis.com>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 # Contributor: Paul Mattal <paul@mattal.com>
@@ -16,7 +15,7 @@
 
 pkgname=dovecot
 pkgver=2.4.3
-pkgrel=2
+pkgrel=3
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -76,7 +75,7 @@ source=(
   'dovecot.pam'
   'dovecot.install'
 )
-sha256sums=('e0b30330fe51e47ecfcf641bc16041184d91bdd0ac3db789b7cef54e3a75ac9b'
+sha256sums=('ff0be85228122f250627b19e67505fdb7fb2f72a702ef6bf35f27fce54c072e5'
             'SKIP'
             'b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87'
             '068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc'
