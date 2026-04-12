@@ -1,10 +1,10 @@
 ---
-version: 1.17.2-1
+version: 1.17.2-2
 pkgbase:
   name: netavark
   pkgdesc: Container network stack
   pkgver: 1.17.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/containers/netavark
   arch:
     - x86_64
@@ -17,8 +17,8 @@ pkgbase:
     - protobuf
   depends:
     - aardvark-dns
-    - gcc-libs
     - glibc
+    - libgcc
     - nftables
   provides:
     - container-network-stack=2
@@ -30,4 +30,4 @@ pkgbase:
     - b61dfdfb4afa8725ef05c216710602ee97a78d6d93667b7d2ed3fa00025e97e5b820af1edd4f46dde26494ab7f347f74f4782e80dd3cd6315c630617fea49f94
 pkgname:
   - name: netavark
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
