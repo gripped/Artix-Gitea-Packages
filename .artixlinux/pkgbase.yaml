@@ -1,8 +1,8 @@
 ---
-team: world
+team: galaxy
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -30,9 +30,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.4.2-2.2
-    packages:
-      - xf86-input-void-1.4.2-2.2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
@@ -55,6 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 1.4.2-2.2
+    packages:
+      - xf86-input-void-1.4.2-2.2-x86_64.pkg.tar.zst
     debug: []
