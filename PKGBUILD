@@ -11,7 +11,7 @@
 # Contributor: Eric Forgeot < http://esclinux.tk >
 
 pkgname=qgis
-pkgver=4.0.0
+pkgver=4.0.1
 pkgrel=2
 pkgdesc='Geographic Information System (GIS) that supports vector, raster & database formats'
 arch=(x86_64)
@@ -60,6 +60,7 @@ depends=(
   qt6-positioning
   qt6-serialport
   qt6-svg
+  qt6-tools
   qt6-webengine
   qtkeychain-qt6
   qwt
@@ -73,7 +74,6 @@ makedepends=(
   ninja
   opencl-clhpp
   pyqt-builder
-  qt6-tools
   sip
 )
 optdepends=(
@@ -81,7 +81,7 @@ optdepends=(
   'gpsbabel: GPS Tools plugin'
 )
 source=("https://qgis.org/downloads/$pkgname-$pkgver.tar.bz2")
-sha256sums=('b07377af3193cc980c03f6e0022d028590ece6d0e85d04fee03e8761472484f3')
+sha256sums=('b827501c58c0c271e7ef3cffcb2204adfeef3eaf9ff7a0ab607f0873de2b7eaf')
 
 build() {
   cmake -S $pkgname-$pkgver -B build -G Ninja \
