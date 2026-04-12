@@ -58,4 +58,4 @@ repos:
     packages:
       - lxdm-runit-20180314-7-any.pkg.tar.zst
     debug: []
-team: world
+team: galaxy
