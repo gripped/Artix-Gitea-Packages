@@ -1,9 +1,9 @@
 ---
-version: 1.10.2-1
+version: 1.11.0-1
 pkgbase:
   name: meson
   pkgdesc: High productivity build system
-  pkgver: 1.10.2
+  pkgver: 1.11.0
   pkgrel: 1
   url: https://mesonbuild.com/
   arch:
@@ -12,6 +12,7 @@ pkgbase:
     - Apache-2.0
   checkdepends:
     - boost
+    - boost-libs
     - byacc
     - clang
     - cmake
@@ -85,7 +86,7 @@ pkgbase:
     - python
     - python-tqdm
   source:
-    - git+https://github.com/mesonbuild/meson?signed#tag=1.10.2
+    - git+https://github.com/mesonbuild/meson?signed#tag=1.11.0
     - artix-meson
     - cross-lib32
     - native-clang
@@ -93,10 +94,10 @@ pkgbase:
     - 19E2D6D9B46D8DAA6288F877C24E631BABB1FE70
     - BD27B07A5EF45C2ADAF70E0484818A6819AF4A9B
   b2sums:
-    - 545c65bf36747a2eae3456808626e8eaa94e8460447f946dd500b8f08b4eb8243ecdc05a8c3947cadfb47bc3cf918b3160f88936dd1fe20494c654263b8b8d2d
+    - 947942478e658847e3db7a5addf731688510db5e1520377575fc58c8462803ffc753308b821f1afcb246323db503d4c3be0a3fdf73fc83de31574025be4d9375
     - 70f042a7603d1139f6cef33aec028da087cacabe278fd47375e1b2315befbfde1c0501ad1ecc63d04d31b232a04f08c735d61ce59d7244521f3d270e417fb5af
     - 01de9b127552feaec612a0bc9551796e44f0800908bd759c6ede4dc22a65dd8ed4fc06dcbdeaef48c4aef926115d783ef019e429b01295526f23f8fa7d49e11b
     - 7d88929d5a3b49d91c5c9969f19d9b47f3151706526b889515acaeda0141257d5115875ac84832e9ea46f83a7700d673adcc5db84b331cd798c70ae6e90eac1e
 pkgname:
   - name: meson
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
