@@ -1,10 +1,10 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 # Contributor: Eric Belanger <eric@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=smpeg
 pkgver=2.0.0
-pkgrel=2
+pkgrel=4
 pkgdesc="SDL MPEG Player Library"
 arch=(x86_64)
 url="https://icculus.org/smpeg/"
