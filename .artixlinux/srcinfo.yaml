@@ -32,4 +32,4 @@ pkgbase:
     - 2c28171c16b01776f7c63b45525e45bad7b13a79aa04a4023b54301c5069c153cf36a18a6ecd8b76b93ddf4ca5c74e8c65d56b29e4767ebf07df325fd61310a5
 pkgname:
   - name: ly
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
