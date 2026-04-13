@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: George Rawlinson <grawlinson@archlinux.org>
-# Contributor: Jakub Klinkovský <lahwaacz at archlinux dot org>
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
 # Contributor: Kyle Keen <keenerd@gmail.com>
 # Contributor: Gabriel Souza Franco <Z2FicmllbGZyYW5jb3NvdXphQGdtYWlsLmNvbQ==>
 # Contributor: Florian Pritz <bluewind@xinu.at>
@@ -10,7 +9,7 @@
 
 pkgname=opencascade
 pkgver=7.9.3
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc='SDK intended for development of applications dealing with 3D CAD data'
 arch=(x86_64)
@@ -23,6 +22,7 @@ depends=(
   libgcc
   libglvnd
   libstdc++
+  libx11
   tcl
   tk
   vtk
@@ -31,6 +31,8 @@ makedepends=(
   git
   cmake
   eigen
+  fast_float
+  libxcursor
   nlohmann-json
   rapidjson
 )
