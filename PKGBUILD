@@ -21,7 +21,7 @@ makedepends=(
   git
 )
 source=("git+https://github.com/dyne/frei0r#tag=v$pkgver")
-b2sums=('7045725c25d1ebe346e63a2752e377ffad75b0b7ec283c884804cd16cf9e31cf60b064a49d39c5af41279717ab2676e947d1b1ebe046d81a04abbc73e27621b1')
+b2sums=('51f04da26b5f4c9c2df5c512085787a59d569de5573976145943d9d4dcb6bc594ff3eee5b5b656247c4e39289bb8786b53085bef4dc80e45332f8ebf89fd7506')
 validpgpkeys=(6113D89CA825C5CEDD02C87273B35DA54ACB7D10) # Denis Roio (Jaromil)
 
 build() {
