@@ -1,54 +1,55 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Harish Rajagopal <harish dot rajagopals at gmail dot com>
 
-_orgname=ReGreet
-pkgname="greetd-${_orgname,,}"
-pkgver=0.2.0
-pkgrel=2.1
+_pkgname=ReGreet
+pkgname=greetd-${_pkgname,,}
+pkgver=0.3.0
+pkgrel=1
 pkgdesc='Clean and customizable greeter for greetd'
-url="https://github.com/rharish101/$_orgname"
+url="https://github.com/rharish101/$_pkgname"
 license=(GPL-3.0-or-later)
 arch=(x86_64)
 depends=(wayland-compositor
+         accountsservice
          greetd
          cairo
+         libgcc
          gdk-pixbuf2
          glib2
          glibc
-         libgcc
          gtk4
          pango)
-makedepends=(cargo)
 provides=(greetd-greeter)
-backup=("etc/greetd/${_orgname,,}.toml")
+backup=("etc/greetd/${_pkgname,,}.toml")
+makedepends=(cargo)
 install=$pkgname.install
-source=("$url/archive/$pkgver/${pkgname}-${pkgver}.tar.gz"
-        "${_orgname,,}.toml")
-sha256sums=('6ce1f948feb75e12436eccc41557ad6a7127672f0658a9c9fbd5a412cebafc8a'
-            'b80b3eb31f8cc463d512c9db0eef899bdbe232d977429a8a12e95a3b6df2e387')
+_archive="$_pkgname-$pkgver"
+source=("$url/archive/$pkgver/$_archive.tar.gz"
+        "${_pkgname,,}.toml")
+sha256sums=('0d8855b98c868f89f62ed1ce0eff2e34c5eba903040fcf8acd96e6b18ab69dc6'
+            '7780028e5774347793e8073c86bde7f38b70a9736dc7c5b0566d93aa7f0c252b')
 
 prepare() {
-  cd "${_orgname}-${pkgver}"
-  sed -i -e 's|systemctl|loginctl|' regreet.sample.toml
-  cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
+	cd "$_archive"
+	sed -i -e 's|systemctl|loginctl|' regreet.sample.toml
+	cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
 }
 
 build() {
-  export REBOOT_CMD="loginctl reboot"
-  export POWEROFF_CMD="loginctl shutdown"
-  cd "${_orgname}-${pkgver}"
-  cargo build --frozen --release --all-features
+	export REBOOT_CMD="loginctl reboot" POWEROFF_CMD="loginctl poweroff"
+	cd "$_archive"
+	cargo build --frozen --release --all-features
 }
 
 check() {
-  cd "${_orgname}-${pkgver}"
-  cargo test --frozen --all-features
+	cd "$_archive"
+	cargo test --frozen --all-features
 }
 
 package() {
-  cd "${_orgname}-${pkgver}"
-  install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/${_orgname,,}"
-  install -Dm0644 -t "$pkgdir/etc/greetd/" ../"${_orgname,,}.toml"
-  install -Dm0644 -t "$pkgdir/usr/share/doc/$_pkgname/" "${_orgname,,}.sample.toml"
-  install -Dm0644 systemd-tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/${_orgname,,}.conf"
+	cd "$_archive"
+	install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/${_pkgname,,}"
+	install -Dm0644 -t "$pkgdir/etc/greetd/" ../"${_pkgname,,}.toml"
+	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname/" "${_pkgname,,}.sample.toml"
+	install -Dm0644 systemd-tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/${_pkgname,,}.conf"
 }
-
