@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.70.0-1
+    version: 3.70.1-1
     packages:
-      - filezilla-3.70.0-1-x86_64.pkg.tar.zst
+      - filezilla-3.70.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.69.6-4
