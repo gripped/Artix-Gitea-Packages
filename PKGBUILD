@@ -2,7 +2,7 @@
 
 pkgname=ly
 pkgver=1.3.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Lightweight TUI (ncurses-like) display manager"
 arch=(x86_64)
 url="https://codeberg.org/AnErrupTion/ly"
