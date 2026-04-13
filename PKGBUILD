@@ -2,12 +2,6 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Rémy Oudompheng <remy@archlinux.org>
 
-export LC_ALL=C.UTF-8
-export LANG=C.UTF-8
-export LANGUAGE=C.UTF-8
-
-export LC_CTYPE=C.UTF-8
-
 pkgbase=texlive-texmf
 pkgname=(texlive-doc texlive-meta)
 # generate collections with ./list-collections

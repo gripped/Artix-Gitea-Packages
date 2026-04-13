@@ -94,4 +94,4 @@ pkgname:
   - name: texlive-pstricks
   - name: texlive-publishers
   - name: texlive-xetex
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
