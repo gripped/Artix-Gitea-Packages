@@ -25,12 +25,12 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 202602-1
+    version: 202602-2
     packages:
-      - edk2-aarch64-202602-1-any.pkg.tar.zst
-      - edk2-riscv64-202602-1-any.pkg.tar.zst
-      - edk2-shell-202602-1-any.pkg.tar.zst
-      - edk2-ovmf-202602-1-any.pkg.tar.zst
+      - edk2-aarch64-202602-2-any.pkg.tar.zst
+      - edk2-riscv64-202602-2-any.pkg.tar.zst
+      - edk2-shell-202602-2-any.pkg.tar.zst
+      - edk2-ovmf-202602-2-any.pkg.tar.zst
     debug: []
   world:
     version: 202508-1
