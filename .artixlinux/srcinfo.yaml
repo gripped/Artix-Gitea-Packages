@@ -1,10 +1,10 @@
 ---
-version: 7.36.1-4
+version: 7.36.1-5
 pkgbase:
   name: mlt
   pkgdesc: An open source multimedia framework
   pkgver: 7.36.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.mltframework.org
   arch:
     - x86_64
@@ -36,9 +36,10 @@ pkgbase:
     - swig
     - vid.stab
   depends:
-    - gcc-libs
     - glibc
     - libebur128
+    - libgcc
+    - libstdc++
   optdepends:
     - 'ffmpeg: ffmpeg plugin'
     - 'fftw: plus plugin'
@@ -72,10 +73,10 @@ pkgbase:
     - 'zlib: glaxnimate plugin'
   source:
     - git+https://github.com/mltframework/mlt#tag=v7.36.1
-    - git+https://gitlab.com/mattbas/glaxnimate.git
+    - git+https://invent.kde.org/graphics/glaxnimate.git
   sha256sums:
     - 96c89f203e0e2061f29fa21ab6c5c449cd5ed9b37c29d50779bd2975ef339937
     - SKIP
 pkgname:
   - name: mlt
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
