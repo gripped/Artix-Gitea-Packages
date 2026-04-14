@@ -8,7 +8,7 @@
 pkgbase=thunderbird
 pkgname=(thunderbird)
 pkgver=149.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Standalone mail and news reader from mozilla.org'
 url='https://www.thunderbird.net/'
 arch=(x86_64)
@@ -33,7 +33,8 @@ depends=(
   libjpeg-turbo
   libffi libffi.so
   nspr
-  gcc-libs
+  libgcc
+  libstdc++
   libx11
   libxrender
   libxfixes
