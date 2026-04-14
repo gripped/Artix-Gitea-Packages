@@ -1,17 +1,18 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+# Contributor: Carlos Eduardo <capezotte@artixlinux.org>
 
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=syncthing-runit
-pkgver=20250813
-pkgrel=1.1
+pkgver=20260413
+pkgrel=1
 pkgdesc="Runit service script for syncthing"
 arch=('any')
 url="https://artixlinux.org"
-license=('BSD')
+license=('BSD-3-Clause')
 # Note: While this PKGBUILD is licensed under BSD-3 terms, all of the
 #       included runscript should follow it's main package's licenses.
-depends=('syncthing' 'runit')
+depends=('syncthing' 'runit' 'util-linux')
 groups=('runit-galaxy')
 install=syncthing-runit.install
 provides=('init-syncthing')
@@ -19,7 +20,8 @@ conflicts=('init-syncthing')
 source=("syncthing.run"
         "logsyncthing.run"
         "syncthing.conf")
-sha256sums=('9539c154ac402f29e4e1c465af3eab97e63f514a5461df7ba6c1bed7c3bf56eb'
+backup=("etc/runit/sv/${pkgname%-runit}/conf")
+sha256sums=('ed0d83d59c6fb5fdef03c75f276418eafc5451f42e01c1395610bf6a02dcf00d'
             'cc524d6e190a19a70ca34b66520abec2060e08041589b34a3a1048b63e6bf4a4'
             '9af1ce2cf531c758a0a84f7e683172cac24081fbb2001d6e3125e512a214f03e')
 
