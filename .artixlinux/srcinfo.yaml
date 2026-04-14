@@ -1,10 +1,10 @@
 ---
-version: 3.4.9-1
+version: 3.4.9-2
 pkgbase:
   name: openexr
   pkgdesc: A high dynamic-range image file format library
   pkgver: 3.4.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.openexr.com/
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - ebeda794cd7583e4a28b6630de392a9a58a65a4b7229af33de7713f03cbb78cd
 pkgname:
   - name: openexr
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
