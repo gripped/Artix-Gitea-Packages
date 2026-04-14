@@ -10,14 +10,14 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=ungoogled-chromium
-pkgver=146.0.7680.164
+pkgver=147.0.7727.55
 pkgrel=1
 _launcher_ver=8
 _manual_clone=0
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
-_uc_ver=146.0.7680.164-1
+_uc_ver=147.0.7727.55-1
 pkgdesc="A lightweight approach to removing Google web service dependency"
 arch=('x86_64')
 url="https://github.com/ungoogled-software/ungoogled-chromium"
@@ -70,22 +70,22 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         chromium-138-nodejs-version-check.patch
         chromium-145-fix-SYS_SECCOMP.patch
         chromium-146-drop-unknown-clang-flag.patch
-        chromium-146-apply-upstream-libmuck-fix.patch
+        chromium-147-revert-clang-no-lifetime-dse-flag.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
         use-oauth2-client-switches-as-default.patch
         glibc-2.42-baud-rate-fix.patch)
-sha256sums=('2d4163d39cc85c58d0bad83ccb5f200174cc99e3627fc56b095025f1ae7038c8'
-            'd5f2a7e20af064fa70dc87095021cf035842527fdc09f73a743dba028562d538'
+sha256sums=('57594966be592efdb9fe6491f5a834de237f5c7decdca5eb1f7d7a5d38dd54e9'
+            '167f12552e356abc229c5fc99ec670021e9ce171fe5dc995985855c6d1635d63'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
-            'f71de14ebf4e34b43cb2d09091ab6bee3debe43a8cc35a2479d6062600164a3d'
-            'a2f37026e6e13417d5a894b9e5a44b0d217769893c6cc34e08a4d77d9726aeea'
+            '24535c314c7e70c52bcf409aaf604728bfc5b5c97e60087e630e1f7233b9e12d'
+            'c382830318c5b37826ecf44f3ba9def6be8affdad1bce819ecb83f3222ff4b3a'
             'ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
             '9343afa1a4308a7cfb3317229f5aff7778688debcc03c4a74a85908aa1d0cc3a'
-            '78cc60004b5975dc4e1f0cff2520874041157cb6fc043cb329241b0df6cd7097')
+            '1c1898f263eaacbc069a8e1a3e732852350350d1dad4cb1a6bba430e3b796cd0')
 
 if (( _manual_clone )); then
   source[0]=fetch-chromium-release
@@ -163,8 +163,8 @@ prepare() {
   # clang++: error: unknown argument: '-fsanitize-ignore-for-ubsan-feature=array-bounds'
   patch -Np1 -i ../chromium-146-drop-unknown-clang-flag.patch
 
-  # https://chromium-review.googlesource.com/c/chromium/src/+/7487414
-  patch -Np1 -i ../chromium-146-apply-upstream-libmuck-fix.patch
+  # Causes a build failure with our clang version
+  patch -Np1 -i ../chromium-147-revert-clang-no-lifetime-dse-flag.patch
 
   # https://crbug.com/456218403
   patch -Np1 -i ../chromium-145-fix-SYS_SECCOMP.patch
