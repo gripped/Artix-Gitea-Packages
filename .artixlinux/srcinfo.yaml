@@ -1,9 +1,9 @@
 ---
-version: 21.1.21-2
+version: 21.1.22-1
 pkgbase:
   name: xorg-server
-  pkgver: 21.1.21
-  pkgrel: 2
+  pkgver: 21.1.22
+  pkgrel: 1
   url: https://xorg.freedesktop.org
   arch:
     - x86_64
@@ -58,7 +58,7 @@ pkgbase:
     - meson
     - git
   source:
-    - xorg-server::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=xorg-server-21.1.21
+    - xorg-server::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=xorg-server-21.1.22
     - xvfb-run
     - xvfb-run.1
   validpgpkeys:
@@ -67,7 +67,7 @@ pkgbase:
     - FD0004A26EADFE43A4C3F249C6F7AE200374452D
     - 3BB639E56F861FA2E86505690FDD682D974CA72A
   sha512sums:
-    - 8c1fafb41d678a6e7d9cd5df3b2bdb5c30e22b3e7a53f5e4bc38e00a23af687364efd08a3faa12f27bdf5fd23a7d1cac1ce3ff6fed2be12e2c739e0171721908
+    - 81644a6a95b387fdd8e5582100d63cf4efbe6353e6a6b9bdd6435555018f6bae9318fb3f67c5a2f574b9b4b997917c077027162f37fc26f94b0745d6f531fba6
     - 672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49
     - de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22
 pkgname:
@@ -179,4 +179,4 @@ pkgname:
       - xorg-util-macros
   - name: xorg-server-src
     pkgdesc: Source files of the X.Org X server
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
