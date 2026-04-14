@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=cosmic-player
-pkgver=1.0.9
+pkgver=1.0.10
 pkgrel=1
 epoch=1
 pkgdesc="WIP COSMIC media player"
@@ -29,7 +28,7 @@ makedepends=(
   lld
 )
 source=(git+https://github.com/pop-os/cosmic-player.git#tag=epoch-${pkgver})
-sha256sums=('a0f383ca46e09e54fe879cc12e4673ed0cd6aebcf2012ff5171e95472e837a6e')
+sha256sums=('db5c2b32b514db43d56d275abab38ca0cfd755321836d8ba892460c40f39a16b')
 
 prepare() {
   cd "$pkgname"
