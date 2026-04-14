@@ -1,7 +1,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=fzssh
-pkgver=1.1.8
+pkgver=1.1.10
 pkgrel=1
 pkgdesc="a SSH/SFTP library based on libfilezilla"
 url="https://filezilla-project.org"
@@ -12,8 +12,8 @@ makedepends=('meson')
 # Upstream download link became (purposely) unstable
 # See https://trac.filezilla-project.org/ticket/13186
 source=("https://sources.archlinux.org/other/packages/${pkgname}/${pkgname}-${pkgver}.tar.xz")
-sha256sums=('6542efec4ea87dc0b36a83541c1c07e051b1f352f177df15712daafc894fcd1a')
-sha512sums=('512ef17505a743fa50c3903f3b8b6fb238b817d1f3d56f49e2d8364d8a4580ee19b6d22bc80241479c2dc27773e4d7261744ed358230b6fd226cfef0c719d288')
+sha256sums=('9e34605c7c349aa3be31822b15c564c77f5f3f68030d8560b7b5b9dc085fd634')
+sha512sums=('b726b478e1088f3e6259cd31cd861648c5dfb955f6de73a24da157efe7aa7a0593782ad00dabcfca6f8a9c41fdefcf348e84bcd23ecd29086dd2e5e1ed1f785b')
 
 build() {
 	artix-meson "${pkgname}-${pkgver}" build
