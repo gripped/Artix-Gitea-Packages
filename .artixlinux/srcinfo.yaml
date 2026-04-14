@@ -1,0 +1,26 @@
+---
+version: 0.25-4
+pkgbase:
+  name: signon-plugin-oauth2
+  pkgdesc: OAuth 2 plugin for signon
+  pkgver: 0.25
+  pkgrel: 4
+  url: https://gitlab.com/accounts-sso/signon-plugin-oauth2
+  arch:
+    - x86_64
+  license:
+    - LGPL
+  makedepends:
+    - git
+  depends:
+    - glibc
+    - libgcc
+    - qt6-base
+    - signond
+  source:
+    - git+https://gitlab.com/nicolasfella/signon-plugin-oauth2#commit=fab698862466994a8fdc9aa335c87b4f05430ce6
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: signon-plugin-oauth2
+# generated with artixpkg 0.38.4-1-any
