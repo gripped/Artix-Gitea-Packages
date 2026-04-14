@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
-# Contributor: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
 # Contributor: soloturn <soloturn@gmail.com>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-applets
-pkgver=1.0.9
+pkgver=1.0.10
 pkgrel=1
 epoch=1
 pkgdesc='Applets for COSMIC Panel'
@@ -33,7 +32,7 @@ makedepends=(
   mold
 )
 source=(git+https://github.com/pop-os/cosmic-applets.git#tag=epoch-${pkgver})
-b2sums=('40363138b9f729eccb408bd2794a87960d4e4662ac3409a903009459d079fbb687b7eb90b76a3bafd306836f3367093537af6ee06d8b48fd29ca85e9061c54d6')
+b2sums=('e59789c2b3d61e30cac4b52a760c6f28616d26184806765c62c08eaea8042fbbe4fe4ae6c682361f0ea3b102d231c86c554b1c624cc99c0cdacb52b5734cf7e1')
 
 prepare() {
   cd cosmic-applets
