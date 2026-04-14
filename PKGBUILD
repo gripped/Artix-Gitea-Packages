@@ -6,7 +6,7 @@ pkgname=(
   nss
   ca-certificates-mozilla
 )
-pkgver=3.122
+pkgver=3.122.1
 pkgrel=1
 pkgdesc="Network Security Services"
 url="https://firefox-source-docs.mozilla.org/security/nss/index.html"
@@ -31,7 +31,7 @@ source=(
   bundle.sh
   certdata2pem.py
 )
-b2sums=('a316cbe516996a50e5c722ba2393a6de9d4d944d4a5b9887036019bf7994181d7280b7437c42fa79f5582d05179f4d6ec7d4ad2862ee21e7ad70ad7e26d2bc4c'
+b2sums=('6c006b7456e7fb6e0fce8f7ed4150f303cffc3b242b4d9937536f65e1a2d57e2a0fa40ab5e8220b1e680509932316fb2b168fb6765446dfff04c385781bd0c2a'
         '4be5dd836c844fdd7b63302a6994d62149082c3bc81eef70f373f416fed80a61a923960e4390d1c391b81ab01b409370d788818a30ffdd3a4ed467b670f990f6'
         '6bb59dcc9289916dcbf8fb6d73db0c0cd7582dc12a3aa4e8be19ec62c9ede65fdd9470a2d92ec5a114506b78d2d21b8ae0a1b45a17dc1f90f7d75434a93da510')
 
