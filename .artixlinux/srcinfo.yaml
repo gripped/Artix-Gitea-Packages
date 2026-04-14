@@ -1,10 +1,10 @@
 ---
-version: 1.6.6-1
+version: 1.6.6-2
 pkgbase:
   name: reaver
   pkgdesc: Brute force attack against Wifi Protected Setup
   pkgver: 1.6.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/t6x/reaver-wps-fork-t6x
   arch:
     - x86_64
@@ -19,4 +19,4 @@ pkgbase:
     - 431e3ed03eb6145a33a27bd03f4568c58046721566505f06bb0fe42ace8327d6749a70d443a592278253248f676299ff29962c839409d0173733eaaf0e2e6410
 pkgname:
   - name: reaver
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.4-1-any
