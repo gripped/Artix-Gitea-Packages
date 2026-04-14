@@ -1,10 +1,10 @@
 ---
-version: 2.4.5-1
+version: 2.4.5-2
 pkgbase:
   name: gajim
   pkgdesc: Full featured and easy to use XMPP (Jabber) client
   pkgver: 2.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://gajim.org/
   arch:
     - any
@@ -42,6 +42,7 @@ pkgbase:
     - python-truststore
     - python-h2
     - python-socksio
+    - emoji-font
   optdepends:
     - 'python-dbus: to have gajim-remote working'
     - 'python-sentry_sdk: for Sentry error reporting to dev.gajim.org (users decide whether to send reports or not)'
@@ -59,7 +60,6 @@ pkgbase:
     - 'gst-plugin-gtk4: for video and audio calls'
     - 'libxss: for idle time checking on X11'
     - 'python-gnupg: encrypting chat messages with OpenPGP'
-    - 'emoji-font: for emojis support'
   source:
     - https://dev.gajim.org/gajim/gajim/-/archive/2.4.5/gajim-2.4.5.tar.gz
   sha512sums:
@@ -68,4 +68,4 @@ pkgbase:
     - dc5289d37f73fa6a5532da07b6c0d38125fc41e79ef7b70f724bd1c9eaf0c5f5738a95c3fcc9355f3630e8b6c0206ef58a8d847334c640a668558540481920a7
 pkgname:
   - name: gajim
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
