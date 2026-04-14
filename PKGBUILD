@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: BlackIkeEagle < ike DOT devolder AT gmail DOT com >
+# Maintainer: BlackIkeEagle < ike DOT devolder AT gmail DOT com >
 # Contributor: Maxim Baz <$pkgname at maximbaz dot com>
 # Contributor: Batou <batou at cryptolab net>
 # Contributor: Karol "Kenji Takahashi" Woźniak <kenji.sx>
 
 pkgname=copyq
-pkgver=14.0.0
+pkgver=15.0.0
 pkgrel=1
 pkgdesc="Clipboard manager with searchable and editable history"
 url="https://github.com/hluk/${pkgname}"
@@ -14,7 +13,7 @@ makedepends=('extra-cmake-modules' 'qt6-tools' 'vulkan-headers')
 license=('GPL-3.0-or-later')
 arch=('x86_64')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz")
-sha256sums=('1d659e1bb4fba4aab095290472a73b2d454e2a3a3faa471364329be3982cf73b')
+sha256sums=('19665e503997e9d2ffd6f062df43255ee2be38d888d8cc22215474196016bb39')
 
 #prepare() {
     #cd CopyQ-$pkgver
