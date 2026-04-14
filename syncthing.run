@@ -1,4 +1,6 @@
 #!/bin/sh
+test -r ./conf && . ./conf
+
 exec 2>&1
 exec setpriv --reuid="$USER" --regid="$USER" --init-groups --reset-env -- \
-	sh -c 'test -r conf && . ./conf; cd "$HOME" && exec syncthing'
+	sh -c 'test -r ./conf && . ./conf; cd "$HOME" && exec syncthing "$@"' -- $SYNCTHING_ARGS

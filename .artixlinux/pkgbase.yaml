@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20260413-1
+    version: 20260413-2
     packages:
-      - syncthing-runit-20260413-1-any.pkg.tar.zst
+      - syncthing-runit-20260413-2-any.pkg.tar.zst
     debug: []
   world:
     version: 20250813-1.1

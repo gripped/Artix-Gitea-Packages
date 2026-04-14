@@ -5,7 +5,7 @@ _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/us
 
 pkgname=syncthing-runit
 pkgver=20260413
-pkgrel=1
+pkgrel=2
 pkgdesc="Runit service script for syncthing"
 arch=('any')
 url="https://artixlinux.org"
@@ -21,7 +21,7 @@ source=("syncthing.run"
         "logsyncthing.run"
         "syncthing.conf")
 backup=("etc/runit/sv/${pkgname%-runit}/conf")
-sha256sums=('ed0d83d59c6fb5fdef03c75f276418eafc5451f42e01c1395610bf6a02dcf00d'
+sha256sums=('486f86711c73ca959fbc0f335802626ccf2a94b510bff5a1486ca7402e9c7fa1'
             'cc524d6e190a19a70ca34b66520abec2060e08041589b34a3a1048b63e6bf4a4'
             '9af1ce2cf531c758a0a84f7e683172cac24081fbb2001d6e3125e512a214f03e')
 
