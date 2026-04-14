@@ -1,10 +1,10 @@
 ---
-version: 1.6.5-7
+version: 1.6.6-2
 pkgbase:
   name: scribus
   pkgdesc: Desktop publishing software
-  pkgver: 1.6.5
-  pkgrel: 7
+  pkgver: 1.6.6
+  pkgrel: 2
   url: https://www.scribus.net/
   arch:
     - x86_64
@@ -16,34 +16,53 @@ pkgbase:
     - qt5-tools
   depends:
     - cairo
+    - libcairo.so
     - fontconfig
+    - libfontconfig.so
     - freetype2
+    - libfreetype.so
+    - glibc
+    - harfbuzz
+    - libharfbuzz.so
+    - libharfbuzz-subset.so
     - harfbuzz-icu
+    - libharfbuzz-icu.so
     - hunspell
     - icu
     - libicuuc.so
     - lcms2
+    - liblcms2.so
     - libcdr
     - libcups
     - libfreehand
+    - libgcc
+    - libgcc_s.so
     - libjpeg-turbo
     - libjpeg.so
     - libmspub
     - libpagemaker
     - libpng
+    - libpng16.so
     - libqxp
     - librevenge
+    - libstdc++
+    - libstdc++.so
     - libtiff
+    - libtiff.so
     - libvisio
     - libxml2
+    - libxml2.so
     - libzmf
     - openscenegraph
     - openssl
     - podofo
+    - libpodofo.so
     - poppler
-    - python3
+    - libpoppler.so
+    - python
     - qt5-base
     - zlib
+    - libz.so
   optdepends:
     - 'gdal: enable gdal plugin'
     - 'hyphen-lang: hyphenation patterns for desired languages'
@@ -51,23 +70,15 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://downloads.sourceforge.net/scribus/scribus-1.6.5.tar.xz
-    - https://downloads.sourceforge.net/scribus/scribus-1.6.5.tar.xz.asc
-    - fix_build_with_poppler_26.01.0.patch
-    - fix_build_with_poppler_26.02.0.patch
-    - fix_build_with_poppler_26.03.0.patch
-    - fix_build_with_poppler_26.04.0.patch
+    - https://downloads.sourceforge.net/scribus/scribus-1.6.6.tar.xz
+    - https://downloads.sourceforge.net/scribus/scribus-1.6.6.tar.xz.asc
   validpgpkeys:
     - 5086B8D68E70FDDF4C40045AEF7B95E7F60166DA
     - 757F5E9B13DD648887AD50092D47C099E782504E
     - 6558BE84D27273A438A151198BEA48118AEBEE64
   sha256sums:
-    - 09bdb736a8ff8a437191458a36d847cc0adeca0fc059cf696474e0ba6f59ac6a
+    - fdfe3e7cbe84b760b38d0561ed8736f9d25d4923adde6e15e03760d83be6166d
     - SKIP
-    - 6826daa9be333e722e91bd09d5e8c1f2c31317efb1875f2cf6c12a3c8c11f045
-    - 136aba5019f6fcadad44c6615af10546ac32e4b9dd7d1459273ce10a9a553c28
-    - 369b181a4f818057b0cf733a3b83e1419923aa9484fa6962497bb3252f0a1049
-    - 7655f8017e11f0a07018750d0a77588575d8ca8f14815e80edb45d52a3717747
 pkgname:
   - name: scribus
 # generated with artixpkg 0.38.5-1-any
