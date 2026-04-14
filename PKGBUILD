@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Peter Jung <ptr1337@archlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=cosmic-initial-setup
-pkgver=1.0.9
+pkgver=1.0.10
 pkgrel=1
 epoch=1
 pkgdesc="COSMIC Initial Setup"
@@ -26,7 +25,7 @@ makedepends=(
   just
 )
 source=(git+https://github.com/pop-os/cosmic-initial-setup.git#tag=epoch-${pkgver})
-sha256sums=('cc65567570ed502eec3b5ea8b57502468120ce4236a3cbb04ce77678fbc45fb8')
+sha256sums=('2e1d386f97d88c7691f28dc9a7a2527570c97746b4734e589133794bd217d730')
 
 prepare() {
   cd "${pkgname}"
