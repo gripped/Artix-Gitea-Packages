@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
-# Contributor: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: Markus Näther <naetherm@cs.uni-freiburg.de>
 # Contributor: fermyon <antifermion@protonmail.com>
 # Contributor: Ranieri Althoff <ranisalt+aur at gmail.com>
 # Contributor: Greg Land <landjgregory at gmail dot com>
 
 pkgname=rocm-cmake
-pkgver=7.2.1
+pkgver=7.2.2
 pkgrel=1
 pkgdesc='CMake modules for common build tasks needed for the ROCm software stack'
 arch=('any')
@@ -16,7 +15,7 @@ license=('MIT')
 depends=('rocm-core' 'cmake')
 checkdepends=('git' 'rocm-llvm')
 source=("${pkgname}-${pkgver}.tar.gz::$url/archive/rocm-$pkgver.tar.gz")
-sha256sums=('5eec670557b41516e9e27738d20178122b5b536344f471ab823b308d3c767588')
+sha256sums=('e5e3abe573c66efc5d0d7cf0ae58fcc7be20dfba706c7706419bc25338e75c6f')
 _dirname="$(basename "$url")-$(basename "${source[0]}" .tar.gz)"
 
 prepare() {
