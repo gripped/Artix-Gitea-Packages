@@ -4,7 +4,7 @@
 _pkgname=ReGreet
 pkgname=greetd-${_pkgname,,}
 pkgver=0.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Clean and customizable greeter for greetd'
 url="https://github.com/rharish101/$_pkgname"
 license=(GPL-3.0-or-later)

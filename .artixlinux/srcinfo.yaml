@@ -1,10 +1,10 @@
 ---
-version: 0.3.0-1
+version: 0.3.0-2
 pkgbase:
   name: greetd-regreet
   pkgdesc: Clean and customizable greeter for greetd
   pkgver: 0.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rharish101/ReGreet
   install: greetd-regreet.install
   arch:
