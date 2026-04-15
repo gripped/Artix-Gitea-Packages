@@ -1,9 +1,9 @@
 ---
-version: 3.70.2-1
+version: 3.70.3-1
 pkgbase:
   name: filezilla
   pkgdesc: Fast and reliable FTP, FTPS and SFTP client
-  pkgver: 3.70.2
+  pkgver: 3.70.3
   pkgrel: 1
   url: https://filezilla-project.org
   arch:
@@ -31,11 +31,11 @@ pkgbase:
     - wxwidgets-gtk3
     - xdg-utils
   source:
-    - https://sources.archlinux.org/other/filezilla/filezilla-3.70.2.tar.xz
+    - https://sources.archlinux.org/other/filezilla/filezilla-3.70.3.tar.xz
   sha256sums:
-    - 75dbc631695ed0fa504ed73a72a7f4a22bbb05690e41ebfe4fc819c4d490aeb8
+    - be5436f8d4b49df451f2af5b85d9e3b2054b28005076d0aa6322acbd687680a7
   sha512sums:
-    - e9bf00b2b72392dc2dfb2f551ce509b1ae1bfa5b38cd4c2eec78a3fa1d085193004b8d12d5d363bc39b664f3bce0102b50e113f95e53f76ec80d2ce41d11517a
+    - 8a2aaf5e384a60026e7d67a33c74fcc660399b910263d5e39182c48a7c5fc17103952e48e3d95f8a5cd4bf34228b981a207665b6c1fe0cc90e8643c67a1c7e04
 pkgname:
   - name: filezilla
 # generated with artixpkg 0.38.5-1-any
