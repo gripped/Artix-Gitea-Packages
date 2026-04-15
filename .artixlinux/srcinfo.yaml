@@ -1,9 +1,9 @@
 ---
-version: 3.11.0-1
+version: 3.11.1-1
 pkgbase:
   name: localsearch
   pkgdesc: Filesystem indexer and metadata extractor
-  pkgver: 3.11.0
+  pkgver: 3.11.1
   pkgrel: 1
   url: https://gnome.pages.gitlab.gnome.org/localsearch/
   arch:
@@ -52,9 +52,9 @@ pkgbase:
     - totem-plparser
     - upower
   source:
-    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.11.0
+    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.11.1
   b2sums:
-    - 4c7987cd6688e872e088feeb2955815b185d1207f564f9869c011753d205569ff89e7df7f6fe064bd47f9239a0f8400e8080494ee75c75e06883c903bc7f3521
+    - 031e921741a70456be9ed9160b347e0ab657f2c617bacee8507c7f42b5e75248b7039c46d3146c26c7974830dcf01762e0ecae4c4eef0de9384a0be216998008
 pkgname:
   - name: localsearch
     depends:
@@ -90,7 +90,7 @@ pkgname:
       - upower
       - libtinysparql-3.0.so
     provides:
-      - tracker3-miners=3.11.0
+      - tracker3-miners=3.11.1
     conflicts:
       - tracker3-miners<=3.7.3-2
     replaces:
@@ -103,4 +103,4 @@ pkgname:
       - python
       - python-gobject
       - tinysparql
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
