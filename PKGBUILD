@@ -1,7 +1,7 @@
 # Maintainer: Frederik Schwan <freswa at archlinux dot org>
 
 pkgname=passim
-pkgver=0.1.10
+pkgver=0.1.11
 pkgrel=1
 pkgdesc="A local caching server"
 arch=(x86_64)
@@ -27,9 +27,9 @@ backup=(
 )
 source=("git+https://github.com/hughsie/passim.git#tag=${pkgver}?signed"
         '0001-no-systemd.patch')
-sha512sums=('800590e98f46ca817b6e7b6385eeb3c4789afe363553e5084ac6f82f6253bfac0f001208101684bc463849d1e37210a6e3f6e45ae82ffd84a0928b23a8f2c08e'
+sha512sums=('7492ee01d78566e2f3c5f856ea4261f3d1caeebf577ff456c801107f13c9856d948747dd54a69433dba4ef4623a5b36bb919d50f0be4f12cf936036a52a260be'
             '5d7c69dc33099c0a6db76eb213dedf50a8dc22b3f8b677a1d4c1b9d856e63f5b665c19bb5803bd13038d342c3334ee1992f393ecaddd5d83406cd9f5ef8012ed')
-b2sums=('eaa66a128d1a3a5502c3e9aed8e5d32f32a04d5521361769ec6a6ec7cd8619d7b019d7706e42bd01e33f627a8a7ef630d964d8ee81ae2ed42b230b4b2e125b75'
+b2sums=('4eeaea6cd6d63fa8cb0a9149f016c46315baa18693659238d2ea4385c4d2ba6b9223edabf1537603be3bd459b6f45d412dd7d0beb1b6f870a6fde4eda769a55b'
         'f6d90013cb56f9707d95788d888baeeb9a11a75ded9cb1cda8c68870a7a0fbc8142b55e4570ea51556be484a56b8dc2a6384eee58e3ab2ba7a737888b3ca1d63')
 validpgpkeys=(163EB50119225DB3DF8F49EA17ACBA8DFA970E17) # Richard Hughes <richard@hughsie.com>
 

@@ -1,0 +1,43 @@
+---
+version: 0.1.11-1
+pkgbase:
+  name: passim
+  pkgdesc: A local caching server
+  pkgver: 0.1.11
+  pkgrel: 1
+  url: https://github.com/hughsie/passim
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+    - git
+    - gobject-introspection
+    - meson
+  depends:
+    - avahi
+    - glib2
+    - libgio-2.0.so
+    - gnutls
+    - hicolor-icon-theme
+    - libsoup3
+    - libsoup-3.0.so
+  provides:
+    - libpassim.so
+  backup:
+    - etc/passim.conf
+  source:
+    - git+https://github.com/hughsie/passim.git#tag=0.1.11?signed
+    - 0001-no-systemd.patch
+  validpgpkeys:
+    - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
+  sha512sums:
+    - 7492ee01d78566e2f3c5f856ea4261f3d1caeebf577ff456c801107f13c9856d948747dd54a69433dba4ef4623a5b36bb919d50f0be4f12cf936036a52a260be
+    - 5d7c69dc33099c0a6db76eb213dedf50a8dc22b3f8b677a1d4c1b9d856e63f5b665c19bb5803bd13038d342c3334ee1992f393ecaddd5d83406cd9f5ef8012ed
+  b2sums:
+    - 4eeaea6cd6d63fa8cb0a9149f016c46315baa18693659238d2ea4385c4d2ba6b9223edabf1537603be3bd459b6f45d412dd7d0beb1b6f870a6fde4eda769a55b
+    - f6d90013cb56f9707d95788d888baeeb9a11a75ded9cb1cda8c68870a7a0fbc8142b55e4570ea51556be484a56b8dc2a6384eee58e3ab2ba7a737888b3ca1d63
+pkgname:
+  - name: passim
+# generated with artixpkg 0.38.5-1-any
