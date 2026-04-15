@@ -1,14 +1,14 @@
 ---
-version: 1.16-4
+version: 1.16-5
 pkgbase:
   name: potrace
   pkgver: 1.16
-  pkgrel: 4
+  pkgrel: 5
   url: http://potrace.sourceforge.net/
   arch:
     - x86_64
   license:
-    - GPL-2.0-only
+    - GPL-2.0-or-later
   depends:
     - glibc
     - zlib
@@ -21,4 +21,4 @@ pkgbase:
     - 88b6325e98015d75b3f12e83c133eb73773a3751c190516348d8a1235e3abe4a
 pkgname:
   - name: potrace
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
