@@ -10,7 +10,7 @@ shopt -s extglob
 pkgbase=python
 pkgname=(python python-tests)
 pkgver=3.14.4
-pkgrel=1
+pkgrel=1.1
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
 arch=('x86_64')
