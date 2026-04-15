@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
-# Contributor: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-device-libs comgr)
 epoch=2
-pkgver=7.2.1
+pkgver=7.2.2
 pkgrel=1
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
