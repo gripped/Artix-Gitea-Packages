@@ -2,7 +2,7 @@
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 
 pkgname=python-osc-lib
-pkgver=4.1.0
+pkgver=4.2.0
 pkgrel=1
 pkgdesc="OpenStackClient Library"
 arch=('any')
@@ -14,7 +14,7 @@ makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python
 checkdepends=('python-fixtures' 'python-oslotest' 'python-requests-mock' 'python-stestr'
               'python-testrepository' 'python-testtools')
 source=("git+https://github.com/openstack/osc-lib.git#tag=$pkgver")
-sha512sums=('f696ca80deb53ed4d64a137f4ca04b83792e684a1c327a20b0d843a7ef6c34ea67e0f680a47adf4b1584d294c23ef1d7f92effcf4c8cdf1dcf5eb31289232c81')
+sha512sums=('1bbddce6f5cf82fb6891b8150924e6c750085d291e2ce6dff0e850dd1396a7ef5c21bef5e3b47235b0983ed8322a8f6957cdbce516339021024b512e96a2fc0f')
 
 prepare() {
   cd osc-lib
