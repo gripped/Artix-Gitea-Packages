@@ -1,10 +1,10 @@
 ---
-version: 1:20260105-1.1
+version: 1:20260406-1
 pkgbase:
   name: neomutt
   pkgdesc: A version of mutt with added features
-  pkgver: 20260105
-  pkgrel: 1.1
+  pkgver: 20260406
+  pkgrel: 1
   epoch: 1
   url: https://neomutt.org/
   arch:
@@ -16,6 +16,7 @@ pkgbase:
     - git
     - gnupg
     - libxslt
+    - tcl
     - w3m
   depends:
     - gdbm
@@ -39,13 +40,13 @@ pkgbase:
     - 'perl: smime_keys'
     - 'python: keybase.py'
   source:
-    - git+https://github.com/neomutt/neomutt.git#tag=20260105
+    - git+https://github.com/neomutt/neomutt.git#tag=20260406
     - default-ca-certificates.patch
   validpgpkeys:
     - 86C2397270DD7A561263CA4E5FAF0A6EE7371805
   sha256sums:
-    - 882e51f531c223e7d20435e57719b67a7db478f9dc7fc57a96c0c7deeb37eef1
+    - 4b68dad17eadab0113f152a12d4c5a5b629db44deedb8e148cdaf120c7627028
     - 571716b8979e9b43328416c3c56eff228b6c58355d7c080b8987ea89c6360776
 pkgname:
   - name: neomutt
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
