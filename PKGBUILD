@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
-# Contributor: Christian Heusel <christian@heusel.eu>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Christian Heusel <christian@heusel.eu>
 # Contributor: Markus Näther <naetherm@informatik.uni-freiburg.de>
 
 pkgname=rocprim
-pkgver=7.2.1
+pkgver=7.2.2
 pkgrel=1
 pkgdesc='Header-only library providing HIP parallel primitives'
 arch=('any')
