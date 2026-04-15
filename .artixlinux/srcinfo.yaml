@@ -1,9 +1,9 @@
 ---
-version: 1.6.57-1
+version: 1.6.58-1
 pkgbase:
   name: libpng
   pkgdesc: A collection of routines used to create PNG format graphics files
-  pkgver: 1.6.57
+  pkgver: 1.6.58
   pkgrel: 1
   url: http://www.libpng.org/pub/png/libpng.html
   arch:
@@ -18,12 +18,12 @@ pkgbase:
   provides:
     - libpng16.so
   source:
-    - git+https://github.com/pnggroup/libpng.git?signed#tag=v1.6.57?signed
+    - git+https://github.com/pnggroup/libpng.git?signed#tag=v1.6.58?signed
   validpgpkeys:
     - F57A55036A4D45837074FD92C9E384533403C2F8
     - 1FED507E3236B4A6E53E922BB292C64843FF5BCF
   sha256sums:
-    - 045cb51f2eafc719b87c65be9f42732152243afbe572919e7f163475db4351db
+    - 07900c2e616ce58dda6b30ec444bbe662b51c0bdd0bc7e02ba053ec83f009df5
 pkgname:
   - name: libpng
 # generated with artixpkg 0.38.5-1-any
