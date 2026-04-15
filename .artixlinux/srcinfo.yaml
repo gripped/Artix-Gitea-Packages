@@ -1,9 +1,9 @@
 ---
-version: 50.0-1
+version: 50.1-1
 pkgbase:
   name: gsettings-desktop-schemas
   pkgdesc: GSettings schemas for GNOME
-  pkgver: 50.0
+  pkgver: 50.1
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas
   arch:
@@ -18,18 +18,18 @@ pkgbase:
     - gobject-introspection
     - meson
   source:
-    - git+https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas.git#tag=50.0
+    - git+https://gitlab.gnome.org/GNOME/gsettings-desktop-schemas.git#tag=50.1
   b2sums:
-    - 2c3d0c6cef8287420532ab27d35ab5c4c2cf5cac58874ceeda0aacd207aff86b0dda524396564ba1319815ab5a46cebbdc60863ef2125e830abbfca5c5f320d1
+    - 5d8f8f3783ce6ad061dd588c38da4a4fa5be25f3e2ebb7db59266a379618e6ab7daf794db036713d42e842e81e5372f65749fb5157e13bf9050e530c1af8313f
 pkgname:
   - name: gsettings-desktop-schemas
     pkgdesc: GSettings schemas for GNOME desktop components
     depends:
-      - gsettings-system-schemas=50.0-1
+      - gsettings-system-schemas=50.1-1
       - adwaita-fonts
       - dconf
   - name: gsettings-system-schemas
     pkgdesc: GSettings schemas for GNOME system components
     depends:
       - dconf
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
