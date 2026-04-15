@@ -16,8 +16,8 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=6.19.11
-pkgrel=1
+pkgver=7.0
+pkgrel=3
 _srcname=linux-${pkgver}
 license=('GPL-2.0-only')
 arch=('x86_64')
@@ -29,7 +29,7 @@ makedepends=('git')
 makedepends+=('asciidoc' 'xmlto')
 # perf deps
 makedepends+=('perl' 'python' 'python-setuptools' 'slang' 'elfutils' 'libunwind'
-  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang' 'llvm-libs' 'libpfm')
+  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang21' 'llvm21-libs' 'libpfm')
 # cpupower deps
 makedepends+=('pciutils')
 # usbip deps
@@ -45,13 +45,12 @@ makedepends+=('llvm' 'clang')
 # intel-speed-select
 makedepends+=('libnl')
 groups=("$pkgbase")
-source=(https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
-)
+source=(https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign})
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('20039d7b6b256c08be2f8fac43c3ff9a620308c703c643cf2f80c3910b9bd59b'
+sha256sums=('bb7f6d80b387c757b7d14bb93028fcb90f793c5c0d367736ee815a100b3891f0'
             'SKIP')
 
 prepare() {
@@ -90,7 +89,8 @@ build() {
     NO_LIBLLVM=1 \
     PYTHON_CONFIG=python-config \
     LIBPFM4=1 \
-    DESTDIR="$pkgdir"
+    DESTDIR="$pkgdir" \
+    CLANG=/usr/lib/llvm21/bin/clang
   popd
 
   echo ':: cpupower'
@@ -131,7 +131,8 @@ build() {
   pushd "$_srcname"/tools/bpf
   # doesn't compile when we don't first compile bpftool in its own directory and
   # man pages require to be also launch from the subdirectory
-  make -C bpftool all doc
+  # -j1 added to check for potential repro issues
+  make -j1 -C bpftool all doc
   # runqslower, require kernel binary path to build, skip it
   make -W runqslower
   popd
@@ -177,7 +178,7 @@ package_perf() {
   pkgdesc='Linux kernel performance auditing tool'
   depends=('glibc' 'perl' 'python' 'slang' 'elfutils' 'libunwind' 'binutils'
            'numactl' 'audit' 'coreutils' 'glib2' 'xz' 'zlib' 'libelf' 'bash'
-           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm-libs' 'libpfm')
+           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm21-libs' 'libpfm')
 
   cd "$_srcname"/tools/perf
   make -f Makefile.perf \
@@ -210,7 +211,6 @@ package_cpupower() {
   depends=('glibc' 'bash' 'pciutils')
   conflicts=('cpufrequtils')
   replaces=('cpufrequtils')
-  install=cpupower.install
 
   pushd "$_srcname"/tools/power/cpupower
   make \
@@ -271,7 +271,7 @@ package_hyperv() {
 
 package_bpf() {
   pkgdesc='BPF tools'
-  depends=('glibc' 'readline' 'zlib' 'libelf' 'libcap' 'zstd' 'llvm-libs' 'binutils' 'libsframe.so')
+  depends=('glibc' 'readline' 'zlib' 'libelf' 'libcap' 'zstd' 'llvm21-libs' 'binutils' 'libsframe.so')
 
   cd "$_srcname"/tools/bpf
   # skip runsqlower until disabled in build

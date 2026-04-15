@@ -1,9 +1,9 @@
 ---
-version: 6.19.11-1
+version: 7.0-3
 pkgbase:
   name: linux-tools
-  pkgver: 6.19.11
-  pkgrel: 1
+  pkgver: 7.0
+  pkgrel: 3
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -27,8 +27,8 @@ pkgbase:
     - libcap
     - libtraceevent
     - openssl
-    - clang
-    - llvm-libs
+    - clang21
+    - llvm21-libs
     - libpfm
     - pciutils
     - glib2
@@ -48,13 +48,13 @@ pkgbase:
     - '!strip'
     - '!lto'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.11.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.11.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.tar.sign
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 20039d7b6b256c08be2f8fac43c3ff9a620308c703c643cf2f80c3910b9bd59b
+    - bb7f6d80b387c757b7d14bb93028fcb90f793c5c0d367736ee815a100b3891f0
     - SKIP
 pkgname:
   - name: bootconfig
@@ -70,12 +70,11 @@ pkgname:
       - libelf
       - libcap
       - zstd
-      - llvm-libs
+      - llvm21-libs
       - binutils
       - libsframe.so
   - name: cpupower
     pkgdesc: Linux kernel tool to examine and tune power saving related features of your processor
-    install: cpupower.install
     depends:
       - glibc
       - bash
@@ -138,7 +137,7 @@ pkgname:
       - libtraceevent
       - openssl
       - libsframe.so
-      - llvm-libs
+      - llvm21-libs
       - libpfm
   - name: tmon
     pkgdesc: Monitoring and Testing Tool for Linux kernel thermal subsystem
@@ -161,4 +160,4 @@ pkgname:
     pkgdesc: Read or write MSR_IA32_ENERGY_PERF_BIAS
     depends:
       - glibc
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
