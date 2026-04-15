@@ -1,8 +1,7 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=v2ray-geoip
-pkgver=202604050243
+pkgver=202604142202
 pkgrel=1
 pkgdesc="GeoIP List for V2Ray"
 arch=('any')
