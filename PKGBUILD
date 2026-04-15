@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-xattr
-pkgver=1.1.3
+pkgver=1.1.4
 pkgrel=1
 pkgdesc='Python wrapper for extended filesystem attributes'
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=('python-cffi')
 makedepends=('git' 'python-build' 'python-cffi' 'python-installer' 'python-setuptools' 'python-wheel')
 checkdepends=('python-pytest')
 source=("git+https://github.com/xattr/xattr.git#tag=v$pkgver")
-sha512sums=('6c8118a9985e5a126b59005bcf8e621085f1c2077bdc3bc21f55323d808ed9bd64f8e5f284562463e84f82025af36cb1012f055ad2693078351794ac72701b9e')
+sha512sums=('022aadb4f3afb2ce40a13be65d7f55ed50d3151885a78a3ed0cbf17dd86669c5f4d6cd7d6cc06ddaa6e35deef2c9e9b8c6321d88c0d79b6ff90b223916fb9d44')
 
 build() {
   cd xattr
