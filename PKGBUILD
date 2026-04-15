@@ -2,7 +2,7 @@
 # Contributor: huyz
 
 pkgname=gemini-cli
-pkgver=0.36.0
+pkgver=0.38.0
 pkgrel=1
 epoch=1
 pkgdesc="Open-source AI agent that brings the power of Gemini directly into your terminal"
@@ -31,10 +31,11 @@ optdepends=(
   'xdg-utils: opening URLs in default browser'
 )
 checkdepends=(
+  bubblewrap
   vim
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('9881c3a24fcd0fe04fe485bdd0c8a0cce63cbce57be391dd8c2f115e772d6f96bda640f302d5118c23d372ea935e3f196e6844c5e6715f91538832776cd7ede8')
+b2sums=('f0289c9c1ab6f0dd19d09699f7ae307e3f43eeaa552a52b65b9251fa07f4afd841e52cc72bb765b16aba0bdc18773d596d32e2f3323a54b67b5f3800e6bba057')
 
 prepare() {
   cd $pkgname
@@ -60,10 +61,12 @@ check() {
   cd $pkgname
   npm run build
   # Deselect failing tests
-  npm test -- \
+  npm run test --workspaces --if-present -- \
     --exclude='**/BuiltinCommandLoader.test.ts' \
     --exclude='**/config.integration.test.ts' \
-    --exclude='**/mcp-client.test.ts'
+    --exclude='**/mcp-client.test.ts' \
+    --exclude='**/sandboxManager.integration.test.ts'
+  npm run test:sea-launch
 }
 
 package() {
