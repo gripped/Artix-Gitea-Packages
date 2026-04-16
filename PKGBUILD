@@ -27,7 +27,7 @@ pkgname=(
   qemu-{base,desktop,emulators-full,full}
 )
 pkgver=10.2.2
-pkgrel=3
+pkgrel=4
 pkgdesc="A generic and open source machine emulator and virtualizer"
 arch=(x86_64)
 url="https://www.qemu.org/"
@@ -444,10 +444,6 @@ package_qemu-common() {
   # remove files provided by seabios
   rm -fv "$pkgdir/usr/share/$pkgbase/"{bios,vgabios}*
 
-  # remove files provided by edk2-{aarch64,arm,ovmf}
-  rm -fv "$pkgdir/usr/share/$pkgbase/"edk2-*
-  rm -frv "$pkgdir/usr/share/$pkgbase/firmware"
-
   (
     # create man page symlinks for all system emulators
     cd "$pkgdir/usr/share/man/man1"
@@ -523,6 +519,10 @@ package_qemu-common() {
     _pick qemu-system-arm usr/share/man/man1/qemu-system-arm.1*
 
     _pick qemu-system-arm-firmware usr/share/qemu/{ast27x0,npcm{7,8}xx}_bootrom.bin
+    # NOTE: These used to belong to edk2-arm, but upstream edk2 removed support for 32bit ARM.
+    # We will track them here for as long as QEMU upstream provides them prebuilt.
+    _pick qemu-system-arm-firmware usr/share/qemu/edk2-arm-{code,vars}.fd
+    _pick qemu-system-arm-firmware usr/share/qemu/firmware/60-edk2-arm.json
 
     _pick qemu-system-avr usr/bin/qemu-system-avr
     _pick qemu-system-avr usr/share/man/man1/qemu-system-avr.1*
@@ -625,6 +625,11 @@ package_qemu-common() {
       _pick qemu-vmsr-helper usr/bin/qemu-vmsr-helper
     fi
   )
+
+  # remove files provided by edk2-{aarch64,arm,ovmf}
+  rm -fv "$pkgdir/usr/share/$pkgbase/"edk2-*
+  rm -frv "$pkgdir/usr/share/$pkgbase/firmware"
+
 }
 
 package_qemu-audio-alsa() {
@@ -868,6 +873,8 @@ package_qemu-system-arm() {
 
 package_qemu-system-arm-firmware() {
   pkgdesc="Firmware for QEMU system emulator for ARM"
+  conflicts=(edk2-arm)
+  replaces=(edk2-arm)
   options=(!strip)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
@@ -952,7 +959,7 @@ package_qemu-system-ppc-firmware() {
 
 package_qemu-system-riscv() {
   pkgdesc="QEMU system emulator for RISC-V"
-  depends=("${_qemu_system_deps[@]}" dtc qemu-system-riscv-firmware=$pkgver-$pkgrel libudev libudev.so)
+  depends=("${_qemu_system_deps[@]}" dtc edk2-riscv64 qemu-system-riscv-firmware=$pkgver-$pkgrel libudev libudev.so)
   mv -v $pkgname/* "$pkgdir"
   _install_licenses
 }
