@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kpkpass
-pkgver=25.12.3
+pkgver=26.03.80
 pkgrel=1
 pkgdesc='Apple Wallet Pass reader'
 arch=(x86_64)
@@ -15,8 +15,8 @@ depends=(gcc-libs
 makedepends=(extra-cmake-modules
              qt6-declarative)
 optdepends=('qt6-declarative: QML bindings')
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f916bdc37c11740cc527ee76a1326d3457ed9bf153d609cdb5ea7bb581885df9'
+source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('be73b86e4725abb937226b6362544167a07e8b8cb83b6a0dac3461b6810c8a9b'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
