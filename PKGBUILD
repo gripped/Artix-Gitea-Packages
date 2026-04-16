@@ -1,0 +1,30 @@
+# Maintainer: George Hu <integral@archlinux.org>
+# Contributor: dalto <dalto at fastmail.com>
+
+pkgname=btrfs-assistant
+pkgver=2.2
+pkgrel=5
+pkgdesc="An application for managing BTRFS subvolumes and Snapper snapshots"
+arch=('x86_64')
+url="https://gitlab.com/${pkgname}/${pkgname}"
+license=('GPL-3.0-or-later')
+depends=('qt6-base' 'qt6-svg' 'polkit' 'util-linux' 'btrfs-progs' 'diffutils')
+optdepends=('snapper: Snapper support'
+            'btrfsmaintenance: Btrfs maintenance support')
+makedepends=('cmake' 'qt6-tools')
+backup=("etc/${pkgname}.conf")
+source=("${url}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('cf478b7a5673a456b3aa09df2a875aae8a023511a14ef901970666b93c28ebb9')
+
+prepare() {
+	sed -e 's/-Werror//' -i ${pkgname}-${pkgver}/src/CMakeLists.txt # Fix build with Qt 6.10
+}
+
+build() {
+	cmake -B build -S "${pkgname}-${pkgver}" -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=None
+	cmake --build build
+}
+
+package() {
+	DESTDIR="${pkgdir}" cmake --install build
+}
