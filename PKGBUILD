@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=grantleetheme
-pkgver=26.03.80
+pkgver=26.03.90
 pkgrel=1
 pkgdesc='Library for Grantlee theming support'
 arch=(x86_64)
@@ -23,7 +23,7 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f406d37bb25b1ebb844f8a2180252f56e86e150c87c370da3dbfdb1f4fd3a882'
+sha256sums=('42b2350b825265652bb0503c9fead14edc022acff954e1162f2d64c9a4907c8f'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>

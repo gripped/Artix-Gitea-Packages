@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 26.03.80-1
+    version: 26.03.90-1
     packages:
-      - grantleetheme-26.03.80-1-x86_64.pkg.tar.zst
+      - grantleetheme-26.03.90-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.12.3-1
