@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kmime
-pkgver=25.12.3
+pkgver=26.03.80
 pkgrel=1
 pkgdesc='Library for handling mail messages and newsgroup articles'
 arch=(x86_64)
@@ -14,8 +14,8 @@ depends=(gcc-libs
          qt6-base)
 makedepends=(extra-cmake-modules
              qt6-tools)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('fce3c603cac3fec9a3f0e101c49785c32ace07b8f60b52739b638d329f43826d'
+source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('00db69a2f091c303e747517f8ddb1bfba0a31d2609d683c72b9bc449150f95c2'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
