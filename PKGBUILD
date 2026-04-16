@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
-# Contributor: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contriubtor: Markus Näther <naetherm@informatik.uni-freiburg.de>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rccl
-pkgver=7.2.1
-pkgrel=2
+pkgver=7.2.2
+pkgrel=1
 pkgdesc="ROCm Communication Collectives Library"
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rccl/en/latest/index.html'
