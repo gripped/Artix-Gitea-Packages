@@ -1,0 +1,26 @@
+---
+version: 1.5.1-4
+pkgbase:
+  name: svt-hevc
+  pkgdesc: Scalable Video Technology HEVC encoder
+  pkgver: 1.5.1
+  pkgrel: 4
+  url: https://github.com/OpenVisualCloud/SVT-HEVC
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause-Patent
+  makedepends:
+    - cmake
+    - git
+    - nasm
+    - ninja
+  depends:
+    - glibc
+  source:
+    - git+https://github.com/OpenVisualCloud/SVT-HEVC.git#tag=b65eba07e6dee37407631cc441561960838b0333
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: svt-hevc
+# generated with artixpkg 0.38.5-1-any
