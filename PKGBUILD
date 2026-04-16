@@ -42,3 +42,4 @@ package() {
   install -Dm644 contrib/autocomplete/ctr "$pkgdir"/usr/share/bash-completion/completions/ctr
   install -Dm644 contrib/autocomplete/zsh_autocomplete "$pkgdir"/usr/share/zsh/site-functions/_ctr
 }
+
