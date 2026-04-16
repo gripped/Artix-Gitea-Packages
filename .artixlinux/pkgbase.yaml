@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 11.0.0-1
+    version: 11.0.2-1
     packages:
-      - prismlauncher-11.0.0-1-x86_64.pkg.tar.zst
+      - prismlauncher-11.0.2-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 10.0.5-2

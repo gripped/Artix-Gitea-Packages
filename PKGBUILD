@@ -10,7 +10,7 @@
 # Contributor: dada513 <dada513@protonmail.com>
 
 pkgname=prismlauncher
-pkgver=11.0.0
+pkgver=11.0.2
 pkgrel=1
 pkgdesc="Minecraft launcher with ability to manage multiple instances"
 arch=(x86_64)
@@ -55,10 +55,10 @@ optdepends=(
 )
 source=("https://github.com/PrismLauncher/PrismLauncher/releases/download/$pkgver/PrismLauncher-$pkgver.tar.gz"
   {lionshead,batch,mdi}.license)
-b2sums=('5f5f6c297bb7fbdbe5afb53f880d2c8093f848d02db63a2883a1253dcdc1abfafe7c4df2d6da709bcb775097c0ce272e5683bb7395746e7c18a68dd20ee7adfd'
-  'be4289832af95b1cd6e721dc16b84a034533de9718d9b43a49bd08dd6fe4e28eaa15228bfb311867b18fddbda1c9fc4c91f04c6d5c1a3bcc39aaa5161425e3ba'
-  '356248a6b86f06d260e0920b49d34034f79f9bc504c7fdc1849d929d2ff9b169e693a8269a2c0b34656b3802970d9b8be41a92b35177eaa3c4ccc89a702f5c9d'
-  'b35c447cd9223e096a2bb75e0741a7d0a3a1606af54c957e4f276f4e6861a9b3f06ae1d646137e8d2f24ba2238c9967c76eff8cc631a68d7e48e376056982cc6')
+b2sums=('2fd5affcda9fd7604e47f054ee809f23d26586cada65dd47acd73c854b3d26bc76bab77f7e4736c32c6c8b621c934160caea40924946283c163b949ee28987b0'
+        'be4289832af95b1cd6e721dc16b84a034533de9718d9b43a49bd08dd6fe4e28eaa15228bfb311867b18fddbda1c9fc4c91f04c6d5c1a3bcc39aaa5161425e3ba'
+        '356248a6b86f06d260e0920b49d34034f79f9bc504c7fdc1849d929d2ff9b169e693a8269a2c0b34656b3802970d9b8be41a92b35177eaa3c4ccc89a702f5c9d'
+        'b35c447cd9223e096a2bb75e0741a7d0a3a1606af54c957e4f276f4e6861a9b3f06ae1d646137e8d2f24ba2238c9967c76eff8cc631a68d7e48e376056982cc6')
 
 build() {
   export PATH="/usr/lib/jvm/java-17-openjdk/bin/:$PATH"
