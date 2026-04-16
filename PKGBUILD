@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kidentitymanagement
-pkgver=25.12.3
+pkgver=26.03.80
 pkgrel=1
 pkgdesc='Library to assist in handling user identities'
 arch=(x86_64)
@@ -25,8 +25,8 @@ makedepends=(extra-cmake-modules
              kirigami-addons)
 optdepends=('kirigami-addons: QML bindings'
             'qt6-declarative: QML bindings')
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('18b24c23bd6fdb5e617b0cd7c7b2ce1da6ffb566e309c796176691c633d49e87'
+source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('e9fad0f8971f3a4b45aad2a779197e714c70ea2c45621315a05f070a60117828'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
