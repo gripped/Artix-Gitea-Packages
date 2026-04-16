@@ -9,8 +9,8 @@
 # fine with them.
 
 pkgname=blender
-pkgver=5.1.0
-pkgrel=2
+pkgver=5.1.1
+pkgrel=1
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -126,7 +126,7 @@ options=('!lto')
 source=("git+https://projects.blender.org/blender/blender.git#tag=v$pkgver"
         blender-hip-update.patch
         https://developer.download.nvidia.com/redist/optix/v8.0/OptiX-8.0-Include.zip)
-sha512sums=('2dc1668f95df2e514b784ddf588371b47badf2fb51d294c1c8cd1aa5332905a0c2f18c1358ab8a5160ea6437bf4bd6a4d4a91e3e022afcdba854078c13c1560c'
+sha512sums=('fd408f920c3762c155fcf47cde18f78800d2565b12dc671836c53f7a43beec782059b42d07856b8b168b37ece02eba6048338ee0076ef7f2724113cd5ee65dc0'
             '77d202e2033a2e5c26adcc5340da6fbd7f859a8b237b37f9be7f08fbbb99173a67462f1b0aa0dce31967cd8c465b6341628567ace1e477b81a1b75c2383357ca'
             '5502d9df847de12badc702c0444bd4f1f7620460b2235026df2c3133da1e04c148af0f1fc7f345e9a0c009c32f905f66c8d427743445e8864d3a797cdce6a483')
 
@@ -163,6 +163,7 @@ build() {
   # This should fix #13.
   export CXXFLAGS=${CXXFLAGS/-Wp,-D_GLIBCXX_ASSERTIONS/}
   CXXFLAGS+=' --param=max-vartrack-size=640000000'
+  CXXFLAGS+=' -Wno-error=format-security'
 
   # In general, we want to list all real archs (sm_XX) and the latest virtual arch (compute_XX) for future PTX compatibility.
   # Valid values can be discovered from nvcc --help
