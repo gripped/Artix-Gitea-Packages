@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kitinerary
-pkgver=25.12.3
-pkgrel=4
+pkgver=26.04.0
+pkgrel=1
 pkgdesc='Data model and extraction system for travel reservation information'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -26,18 +26,12 @@ depends=(gcc-libs
          zlib
          zxing-cpp)
 makedepends=(extra-cmake-modules)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig}
-        https://invent.kde.org/pim/kitinerary/-/commit/72f2de55.patch)
-sha256sums=('dd8374be2e4c488902f6c0b4b9fd12ad7f808de23b7df4561ef30b3f79b44d13'
-            'SKIP'
-            '0b5373e04eda3ea6f98a984f1081aa4d06d7b6e92dfbf3ca365058193161f954')
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('75a310debea448774265e312a71b5f3043d4e52d6f6f88a75aa4740bf3446f05'
+            'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
-
-prepare() {
-  patch -d $pkgname-$pkgver -p1 < 72f2de55.patch # poppler 26.04
-}
 
 build() {
   cmake -B build -S $pkgname-$pkgver \
