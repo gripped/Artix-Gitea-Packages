@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2026-03-24 by artix-mlg
+## Generated on 2026-04-16 by artix-mlg
 ##
 
 # Artix mirrors
@@ -38,8 +38,6 @@ Server = https://tools.sphnet.in/mirror/artix/$repo/os/$arch
 Server = https://mirror.rabisu.com/mirrors/artixlinux/$repo/os/$arch
 # Greece
 Server = https://ftp.cc.uoc.gr/mirrors/linux/artixlinux/$repo/os/$arch
-# Hungary
-Server = https://quantum-mirror.hu/mirrors/pub/artix-linux/$repo/os/$arch
 # Italy
 Server = https://artixlinux.mirror.garr.it/$repo/os/$arch
 # Netherlands
