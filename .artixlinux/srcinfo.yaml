@@ -1,12 +1,11 @@
 ---
-version: 1.8.1-1
+version: 1.8.1-2
 pkgbase:
   name: jq
   pkgdesc: Command-line JSON processor
   pkgver: 1.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://jqlang.github.io/jq/
-  changelog: ChangeLog
   arch:
     - x86_64
   license:
@@ -16,14 +15,15 @@ pkgbase:
     - automake
     - bison
     - flex
+    - git
     - python
   depends:
     - glibc
     - oniguruma
   source:
-    - https://github.com/jqlang/jq/releases/download/jq-1.8.1/jq-1.8.1.tar.gz
+    - git+https://github.com/jqlang/jq.git#tag=jq-1.8.1
   sha512sums:
-    - b09d48dbeaac7b552397b75692ed7833afa72186de80d977fb1b887a14ac66c02f677acdd79f9a2736db1fd738b7ce57a39725e34846bfa21ed3728cd7adc187
+    - 756a136b20991bbe24ab8b1b92511b877502697146dd1c492d388ee4bf3f6c968e91e6f45078519575f57407f091e171457fd16f6794002660b493766efa3725
 pkgname:
   - name: jq
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.5-1-any
