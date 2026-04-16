@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-markly
-pkgver=0.15.1
+pkgver=0.15.2
 pkgrel=1
 pkgdesc='CommonMark parser and renderer. Written in C, wrapped in Ruby.'
 arch=(x86_64)
@@ -27,7 +27,7 @@ checkdepends=(
 options=(!emptydirs)
 source=(git+https://github.com/ioquatix/markly.git#tag=v$pkgver
         git+https://github.com/github/cmark-gfm.git)
-sha256sums=('69aa76e3147824e49ebc13d1015198d256372c35cf8b8f2442b4f8c7a891b67d'
+sha256sums=('e7ddf9bc7a11c1658252c2ddfc1075736c3a58f46aab58a71b2391e25024ccb8'
             'SKIP')
 
 prepare() {
