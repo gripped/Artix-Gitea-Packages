@@ -1,8 +1,10 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Andreas Schleifer <segaja@archlinux.org>
+# Contributor: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-sys-uname
-pkgver=1.4.1
+pkgver=1.5.1
 pkgrel=1
 pkgdesc='An interface for gathering information about your current platform'
 arch=(any)
@@ -11,7 +13,7 @@ license=(Apache)
 depends=(
   ruby
   ruby-ffi
-  ruby-memoist
+  ruby-memoist3
 )
 makedepends=(
   ruby-rdoc
@@ -22,7 +24,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(https://github.com/djberg96/sys-uname/archive/sys-uname-$pkgver.tar.gz)
-sha256sums=('a63f84d77ba26be4e8c0d8644ff69ea5016db62470cbb34e29c846b4f2b7a393')
+sha256sums=('701f9bd30b376194e91b2329ba2596da604d5b62ced4660b130baf5a110d9d43')
 
 prepare() {
   cd sys-uname-sys-uname-$pkgver
