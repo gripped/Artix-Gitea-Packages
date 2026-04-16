@@ -1,9 +1,9 @@
 ---
-version: 5.86-4
+version: 5.86-5
 pkgbase:
   name: bluez
   pkgver: 5.86
-  pkgrel: 4
+  pkgrel: 5
   url: http://www.bluez.org/
   arch:
     - x86_64
@@ -24,6 +24,7 @@ pkgbase:
     - bluetooth.modprobe
     - fix-broken-stdin-handling.patch::https://github.com/bluez/bluez/commit/21e13976f2e375d701b8b7032ba5c1b2e56c305f.patch?full_index=1
     - revert_e73bf58.patch::https://github.com/bluez/bluez/commit/b33e923b55e4d0e9d78a83cfcb541fd1f687ef54.patch?full_index=1
+    - a2dp-connect-source-profile-after-sink.patch::https://github.com/bluez/bluez/commit/066a164a524e4983b850f5659b921cb42f84a0e0.patch?full_index=1
   validpgpkeys:
     - E932D120BC2AEC444E558F0106CA9F5D1DCF2659
   sha256sums:
@@ -32,6 +33,7 @@ pkgbase:
     - 46c021be659c9a1c4e55afd04df0c059af1f3d98a96338236412e449bf7477b4
     - e042d131206c2080f32b7f0d954092e8be34ecd8892fe9f2b7d26d90313bf2af
     - d4256f1a29abc50e4116e3ab6d31a75f2f69f3704e662e59656c10ee2276c92e
+    - 50ceb91113c4f99eede3ca9fac34760c46aad127018ff1837ca6b3517dd60da9
 pkgname:
   - name: bluez
     pkgdesc: Daemons for the bluetooth protocol stack
@@ -101,4 +103,4 @@ pkgname:
       - dbus
       - readline
       - glibc
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
