@@ -54,11 +54,11 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 21.3-4
+    version: 21.3-5
     packages:
-      - kodi-21.3-4-x86_64.pkg.tar.zst
-      - kodi-gles-21.3-4-x86_64.pkg.tar.zst
-      - kodi-eventclients-21.3-4-x86_64.pkg.tar.zst
-      - kodi-tools-texturepacker-21.3-4-x86_64.pkg.tar.zst
-      - kodi-dev-21.3-4-x86_64.pkg.tar.zst
+      - kodi-21.3-5-x86_64.pkg.tar.zst
+      - kodi-gles-21.3-5-x86_64.pkg.tar.zst
+      - kodi-eventclients-21.3-5-x86_64.pkg.tar.zst
+      - kodi-tools-texturepacker-21.3-5-x86_64.pkg.tar.zst
+      - kodi-dev-21.3-5-x86_64.pkg.tar.zst
     debug: []
