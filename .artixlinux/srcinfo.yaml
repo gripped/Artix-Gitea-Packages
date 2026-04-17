@@ -1,9 +1,9 @@
 ---
-version: 25.12.3-1
+version: 26.04.0-1
 pkgbase:
   name: khelpcenter
   pkgdesc: Application to show KDE Applications documentation
-  pkgver: 25.12.3
+  pkgver: 26.04.0
   pkgrel: 1
   url: https://apps.kde.org/khelpcenter/
   arch:
@@ -38,15 +38,15 @@ pkgbase:
     - qt6-webengine
     - xapian-core
   source:
-    - https://download.kde.org/stable/release-service/25.12.3/src/khelpcenter-25.12.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.3/src/khelpcenter-25.12.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.0/src/khelpcenter-26.04.0.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.0/src/khelpcenter-26.04.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 53f4fd37ced3e882b197600439df43105cd18197124fcfb01e47d1b8ce68b1c1
+    - 77e1897fa689ac2f6fde5a9e4fea2e1eb4d3e710e09ac6c579433fdbffbdfc6b
     - SKIP
 pkgname:
   - name: khelpcenter
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
