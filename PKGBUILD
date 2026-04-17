@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kpimtextedit
-pkgver=26.03.90
+pkgver=26.04.0
 pkgrel=1
 pkgdesc='A textedit with PIM-specific features'
 arch=(x86_64)
@@ -22,8 +22,8 @@ depends=(gcc-libs
          sonnet
          syntax-highlighting)
 makedepends=(extra-cmake-modules)
-source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0aba5e3e79942138f25ebb6b22282f1d82c46757d4f56a4cc7b2e27e2639c7d4'
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('eed48b3190f13178dada96d793529c0ca4959520c411d2ffc60463ab859f9046'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
