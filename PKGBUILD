@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-cloudflare
-pkgver=2.19.0
+pkgver=2.19.2
 pkgrel=1
 pkgdesc='Python wrapper for the Cloudflare v4 API'
 arch=('any')
@@ -23,7 +23,7 @@ checkdepends=(
   'python-pytest'
 )
 source=("git+https://github.com/cloudflare/python-cloudflare.git#tag=$pkgver")
-sha512sums=('4faa9be231850eec9947a2920454da9e53c3434a6f150b0e1c90fcc19f2b608ad0e9c3ca4a86192010e5a3058276459611270048b2a87bc8955d9826f9cfcd7b')
+sha512sums=('9b0ebe715f876951858999c05957581081ca6f3af5e18dc2f9b7789dfc347a18c4e1b6a03803111e306637fee8d2d3e83c6cb9b671db17584d08d445c6351ae7')
 
 build() {
   cd python-cloudflare
