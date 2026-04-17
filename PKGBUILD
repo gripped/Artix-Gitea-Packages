@@ -9,7 +9,7 @@ pkgdesc='Async Python 3.10+ web server/framework | Build fast. Run fast.'
 arch=("any")
 url='https://sanic.dev/'
 license=("MIT")
-depends=('python-sanic-routing' 'python-httptools' 'python-uvloop' 'python-ujson' 'python-aiofiles'
+depends=('python-httptools' 'python-uvloop' 'python-ujson' 'python-aiofiles'
          'python-websockets' 'python-multidict' 'python-tracerite' 'python-html5tagger'
          'python-typing_extensions')
 makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel')

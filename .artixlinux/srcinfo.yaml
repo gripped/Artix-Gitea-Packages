@@ -17,7 +17,6 @@ pkgbase:
     - python-setuptools
     - python-wheel
   depends:
-    - python-sanic-routing
     - python-httptools
     - python-uvloop
     - python-ujson
