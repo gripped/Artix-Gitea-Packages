@@ -1,9 +1,9 @@
 ---
-version: 10.2.0-1
+version: 10.3.0-1
 pkgbase:
   name: python-oslo-config
   pkgdesc: parsing command line arguments and .ini style configuration files
-  pkgver: 10.2.0
+  pkgver: 10.3.0
   pkgrel: 1
   url: https://pypi.org/project/oslo.config/
   arch:
@@ -36,11 +36,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/openstack/oslo.config.git#tag=10.2.0
-    - python-oslo-config-python-3.14.patch
+    - git+https://github.com/openstack/oslo.config.git#tag=10.3.0
   sha512sums:
-    - fc893762dc498054e05070019996aa99004735ed9f8d896a679b73fe7741ed46c68f88069fab9dd70ff6cdad782ce5b518a82a222fb6dca0d175f2c138270047
-    - 84c6db3076dcd0190f467313efb3df66925bdf0c3db377bf118564af341304eaae0799aaa746058549b9c6cef4199daf5b8c272d29ffb534432411863dcfb5d5
+    - a69af1f7d28fb975b8db03602384e74aaaa83ac5c1a00b75a1a76a06d1db9122219263db00c3226fa83ba7052cba9aeae46778d154aebe5b9bc19879bdc438dc
 pkgname:
   - name: python-oslo-config
 # generated with artixpkg 0.38.5-1-any
