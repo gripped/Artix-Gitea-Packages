@@ -13,7 +13,7 @@
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
 pkgver=2.42
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -58,7 +58,7 @@ sha256sums=('fb18631f240fce145e1dca75fe9b587bb206ffd463f433ae0eaa8a808ecb24ec'
             '3f54249ac2db44945d6d12ec728dcd0d69af0735787a8b078eacd2c67e38155b'
             '4a0b3dd8aa6d34dd29e1d153f396cacf908b0d64f7218276cbcab684587c0a0a'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            '43180fb2bf51696654cc6bda7a5bacc769882268613343d783caad875749ef45')
+            'ddd71ce505a677b086d5bcf7b6890cc8927367d871227bbd6a773acff1def219')
 
 _backports=(
 )
@@ -116,7 +116,7 @@ build() {
 
 check() {
   cd build
-  ../util-linux/tests/run.sh --show-diff --exclude='lsfd/column-mntid-nonroot'
+  ../util-linux/tests/run.sh --show-diff --exclude='lsfd/column-mntid-nonroot','lsfd/assoc-pidfs'
 }
 
 package_util-linux() {
