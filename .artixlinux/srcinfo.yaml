@@ -1,0 +1,29 @@
+---
+version: 0.8.5-1
+pkgbase:
+  name: xchpst
+  pkgdesc: A backwards-compatible chpst implementation with new hardening options using namespaces and capabilities
+  pkgver: 0.8.5
+  pkgrel: 1
+  url: https://gitlab.com/init-tools/xchpst
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - make
+  depends:
+    - libcap
+  source:
+    - https://gitlab.com/init-tools/xchpst/-/archive/v0.8.5/xchpst-v0.8.5.tar.bz2
+  sha256sums:
+    - bc8aa05a3a20c04d48cc2ac4f49b663bfef5e0ae7d02d9980f219fe909127029
+pkgname:
+  - name: xchpst
+  - name: xchpst-compat
+    pkgdesc: A backwards-compatible chpst implementation with new hardening options using namespaces and capabilities (compat symlinks)
+    depends:
+      - xchpst
+    provides:
+      - chpst
+# generated with artixpkg 0.38.5-1-any
