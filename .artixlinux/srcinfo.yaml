@@ -1,0 +1,28 @@
+---
+version: 2.3.0-1
+pkgbase:
+  name: python-tracerite
+  pkgdesc: Pythonic HTML generation/templating (no template files)
+  pkgver: 2.3.0
+  pkgrel: 1
+  url: https://github.com/sanic-org/tracerite
+  arch:
+    - any
+  license:
+    - Unlicense
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-vcs
+  depends:
+    - python
+    - python-html5tagger
+  source:
+    - git+https://github.com/sanic-org/tracerite.git#tag=v2.3.0
+  sha256sums:
+    - 5b5fdaac539a501fd497cb120521fbf3735834deb10b2858c638840199d80557
+pkgname:
+  - name: python-tracerite
+# generated with artixpkg 0.38.5-1-any
