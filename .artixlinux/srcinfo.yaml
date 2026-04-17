@@ -29,4 +29,4 @@ pkgbase:
     - 217cf6611f13cb91997856c3af9c30b7c23fa3744126d27f71768001b6799a4a100c9c0baec34beb656fee1c8c519c86b1a9c549e2ea6befe197eb930f70caaa
 pkgname:
   - name: lame
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
