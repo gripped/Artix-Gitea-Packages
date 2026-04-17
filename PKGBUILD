@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kunifiedpush
-pkgver=25.12.3
+pkgver=26.04.0
 pkgrel=1
 pkgdesc='UnifiedPush client components'
 arch=(x86_64)
@@ -11,6 +11,7 @@ license=(LGPL-2.0-or-later)
 depends=(gcc-libs
          glibc
          kcmutils
+         kcrash
          ki18n
          kcoreaddons
          kservice
@@ -21,7 +22,7 @@ depends=(gcc-libs
          solid)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('3ebd6ef38fafb0abd3ec434ccf79468453ea53897f69dccf18226dd5f122c229'
+sha256sums=('0756dfc94de2bc065542e5c1e366dec2226615bfecc2993381a45051b1c24f03'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
