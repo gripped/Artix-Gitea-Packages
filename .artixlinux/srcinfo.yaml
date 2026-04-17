@@ -1,9 +1,9 @@
 ---
-version: 4.10.0-1
+version: 4.11.0-1
 pkgbase:
   name: python-openstacksdk
   pkgdesc: An SDK for building applications to work with OpenStack
-  pkgver: 4.10.0
+  pkgver: 4.11.0
   pkgrel: 1
   url: https://developer.openstack.org/sdks/python/openstacksdk
   arch:
@@ -22,6 +22,7 @@ pkgbase:
     - python-stestr
     - python-testscenarios
     - python-testtools
+    - python-keyring
   makedepends:
     - git
     - python-build
@@ -41,11 +42,10 @@ pkgbase:
     - python-psutil
     - python-typing_extensions
     - python-yaml
-    - python-requestsexceptions
   source:
-    - git+https://github.com/openstack/openstacksdk.git#tag=4.10.0
+    - git+https://github.com/openstack/openstacksdk.git#tag=4.11.0
   sha512sums:
-    - 4c155454f2e1352041caabbc90a6780f39c218bc06c0840e155a96f0abece7ff46d7811ebda68fe320ae871b83fec04a70fb6cea9beaa051863ffe95eb3f0b27
+    - eefc2137f047ffe0f0ecd336b449de4bf46d6fa7916a612c4c34273af7bfa6c7a98524b1ce331bdebce527196d4f3b03da3f122b16cf2f5670df82b8c7c18b9c
 pkgname:
   - name: python-openstacksdk
 # generated with artixpkg 0.38.5-1-any
