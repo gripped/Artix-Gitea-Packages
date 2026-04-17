@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.8.5-1
+    version: 0.8.5-3
     packages:
-      - xchpst-0.8.5-1-x86_64.pkg.tar.zst
-      - xchpst-compat-0.8.5-1-x86_64.pkg.tar.zst
+      - xchpst-0.8.5-3-x86_64.pkg.tar.zst
+      - xchpst-compat-0.8.5-3-any.pkg.tar.zst
     debug: []
