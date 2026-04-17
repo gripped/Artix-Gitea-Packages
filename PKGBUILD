@@ -1,0 +1,41 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: Aleksana QWQ <me@aleksana.moe>
+
+pkgname=hyfetch
+pkgver=2.0.5
+pkgrel=2
+pkgdesc="Neofetch fork with flags"
+url="https://github.com/hykilpikonna/hyfetch"
+arch=('x86_64')
+license=('MIT')
+makedepends=('cargo')
+optdepends=('fastfetch: Alternative fetch backend'
+            'macchina: Alternative fetch backend')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
+sha256sums=('32942e558288f7939ae4ff1cc2ceccd9dcc9112074afc598b230c03b13c7bfca')
+
+prepare() {
+	cd "${pkgname}-${pkgver}"
+	cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+	cd "${pkgname}-${pkgver}"
+	cargo build --frozen --release --all-features
+}
+
+check() {
+	cd "${pkgname}-${pkgver}"
+	cargo test --frozen --all-features
+}
+
+package() {
+	cd "${pkgname}-${pkgver}"
+	install -Dm 755 "target/release/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+	install -Dm 644 "docs/${pkgname}.1" "${pkgdir}/usr/share/man/man1/${pkgname}.1"
+	install -Dm 644 "${pkgname}/scripts/autocomplete.bash" "${pkgdir}/usr/share/bash-completion/completions/${pkgname}"
+	install -Dm 644 "${pkgname}/scripts/autocomplete.zsh" "${pkgdir}/usr/share/zsh/site-functions/_${pkgname}"
+	install -Dm 644 README.md "${pkgdir}/usr/share/doc/${pkgname}/README.md"
+	install -Dm 644 LICENSE.md "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
