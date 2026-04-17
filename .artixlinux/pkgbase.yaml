@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 26.03.90-1
+    version: 26.04.0-1
     packages:
-      - kidentitymanagement-26.03.90-1-x86_64.pkg.tar.zst
+      - kidentitymanagement-26.04.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.12.3-1
