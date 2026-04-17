@@ -9,12 +9,13 @@
 
 pkgname=kmymoney
 pkgver=5.2.2
-pkgrel=3.1
+pkgrel=4
 pkgdesc="Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
 arch=('x86_64')
 url="https://kmymoney.org/"
 license=('GPL-2.0-or-later')
 depends=(
+  'akonadi'
   'aqbanking'
   'glibc'
   'gmp'
@@ -42,7 +43,6 @@ depends=(
   'ktextwidgets'
   'kwidgetsaddons'
   'kxmlgui'
-  'libakonadi'
   'libalkimia'
   'libgcc'
   'libical'
