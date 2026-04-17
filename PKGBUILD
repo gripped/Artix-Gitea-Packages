@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kimap
-pkgver=26.03.80
+pkgver=26.04.0
 pkgrel=1
 pkgdesc='Job-based API for interacting with IMAP servers'
 arch=(x86_64)
@@ -17,8 +17,8 @@ depends=(gcc-libs
          libsasl
          qt6-base)
 makedepends=(extra-cmake-modules)
-source=(https://download.kde.org/unstable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('3cbafdc6cb7b969dc1048e402ae3048fceff59e939036a2d4c8117fb76896d0d'
+source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('d445daeedb378481a9ee4cfd65524b4c2f36c9710a65e27f42ddc325ba1fdc71'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
