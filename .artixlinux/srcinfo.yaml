@@ -1,9 +1,9 @@
 ---
-version: 25.12.3-1
+version: 26.04.0-1
 pkgbase:
   name: kdeconnect
   pkgdesc: Adds communication between KDE and your smartphone
-  pkgver: 25.12.3
+  pkgver: 26.04.0
   pkgrel: 1
   url: https://kdeconnect.kde.org/
   arch:
@@ -20,6 +20,7 @@ pkgbase:
   depends:
     - dbus
     - gcc-libs
+    - glib2
     - glibc
     - kconfig
     - kcoreaddons
@@ -38,6 +39,8 @@ pkgbase:
     - kservice
     - kstatusnotifieritem
     - kwindowsystem
+    - libei
+    - libevdev
     - libfakekey
     - libx11
     - libxkbcommon
@@ -57,15 +60,15 @@ pkgbase:
     - 'qt6-tools: for some runcommand plugin actions'
     - 'sshfs: remote filesystem browser'
   source:
-    - https://download.kde.org/stable/release-service/25.12.3/src/kdeconnect-kde-25.12.3.tar.xz
-    - https://download.kde.org/stable/release-service/25.12.3/src/kdeconnect-kde-25.12.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.0/src/kdeconnect-kde-26.04.0.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.0/src/kdeconnect-kde-26.04.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - a242c968b7f83af21e02113ce5728b9fca98258b6e8f6e7a33d5d6c3cc9e69bb
+    - 6cdf82d6c476005de5ffa85c46b6d698910ba1a74f6ecac7600cf3989256e66a
     - SKIP
 pkgname:
   - name: kdeconnect
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
