@@ -1,9 +1,9 @@
 ---
-version: 26.03.80-1
+version: 26.03.90-1
 pkgbase:
   name: kidentitymanagement
   pkgdesc: Library to assist in handling user identities
-  pkgver: 26.03.80
+  pkgver: 26.03.90
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -31,14 +31,14 @@ pkgbase:
     - 'kirigami-addons: QML bindings'
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/unstable/release-service/26.03.80/src/kidentitymanagement-26.03.80.tar.xz
-    - https://download.kde.org/unstable/release-service/26.03.80/src/kidentitymanagement-26.03.80.tar.xz.sig
+    - https://download.kde.org/unstable/release-service/26.03.90/src/kidentitymanagement-26.03.90.tar.xz
+    - https://download.kde.org/unstable/release-service/26.03.90/src/kidentitymanagement-26.03.90.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - e9fad0f8971f3a4b45aad2a779197e714c70ea2c45621315a05f070a60117828
+    - eb4fbb3e1e72d40f4c6cb4f7ce8c90a16450c63797a207cfe34f55f926322d77
     - SKIP
 pkgname:
   - name: kidentitymanagement
