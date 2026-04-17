@@ -1,0 +1,28 @@
+---
+version: 20260417-1
+pkgbase:
+  name: i2pd-dinit
+  pkgdesc: dinit service scripts for i2pd
+  pkgver: 20260417
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - 0BSD
+  depends:
+    - i2pd
+    - dinit
+  provides:
+    - init-i2pd
+  conflicts:
+    - init-i2pd
+  source:
+    - i2pd
+  sha256sums:
+    - 9def8da3ee00879742a9b810f43622c8dac03026476fd3c9dbeb7656cadc3f83
+pkgname:
+  - name: i2pd-dinit
+# generated with artixpkg 0.38.5-1-any
