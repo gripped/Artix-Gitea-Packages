@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2.4.3-4
+    packages:
+      - dovecot-2.4.3-4-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
