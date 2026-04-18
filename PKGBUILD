@@ -1,7 +1,7 @@
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=perl-xml-parser
-pkgver=2.55
+pkgver=2.56
 pkgrel=1
 pkgdesc="Expat-based XML parser module for perl"
 arch=('x86_64')
@@ -11,7 +11,7 @@ depends=('perl-file-sharedir' 'perl-libwww' 'expat')
 makedepends=('git' 'perl-file-sharedir-install' 'perl-devel-checklib')
 options=('!emptydirs')
 source=("git+https://github.com/cpan-authors/XML-Parser.git#tag=${pkgver}")
-sha512sums=('ec3f3c536af66ecf4e21e08136ee01aa21197bea6b0c8c8551d0ec48db6f13ec9b9a4da4f3a86d08eb2bbfa7fced27e0aa0fdae2a9a58d6cc4dd86f946c056f3')
+sha512sums=('d0ee5cd72e9c64ff2cfd1c5bed387fe73f40e90d4dd9fe332723c89a5a93b3b42f19a6c1353b028db430095dcb334a3ac926f350205c95dbf18d6f27a56197d8')
 
 build() {
   cd XML-Parser
