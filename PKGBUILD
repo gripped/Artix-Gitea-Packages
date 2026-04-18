@@ -2,7 +2,7 @@
 # Maintainer: nous <nous@artixlinux.org>
 
 _repo=artwork
-_commit=22f17c8bbff67b32e2646cb7f132d755ee9a8199
+#_commit=22f17c8bbff67b32e2646cb7f132d755ee9a8199
 pkgbase=artix-artwork
 pkgname=('artix-icons'
         'artix-backgrounds'
@@ -10,14 +10,15 @@ pkgname=('artix-icons'
         'artix-grub-theme'
         'artix-plasma-splash'
         'artix-wallpapers')
-pkgver=2024.07
+pkgver=2026.04
 pkgrel=1
 pkgdesc='Artix icons, backgrounds and wallpapers'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artwork"
 license=('GPL')
 makedepends=('git' 'hicolor-icon-theme')
-source=("git+$url.git#commit=$_commit")
+#source=("git+$url.git#commit=$_commit")
+source=("git+${url}.git")
 sha256sums=('SKIP')
 
 # pkgver() {

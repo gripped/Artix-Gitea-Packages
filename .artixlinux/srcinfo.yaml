@@ -1,0 +1,47 @@
+---
+version: 2026.04-1
+pkgbase:
+  name: artix-artwork
+  pkgdesc: Artix icons, backgrounds and wallpapers
+  pkgver: 2026.04
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/artwork
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+    - hicolor-icon-theme
+  source:
+    - git+https://gitea.artixlinux.org/artix/artwork.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-icons
+    pkgdesc: Artix icons
+    groups:
+      - artix-style
+    depends:
+      - hicolor-icon-theme
+  - name: artix-backgrounds
+    pkgdesc: Artix backgrounds
+    groups:
+      - artix-branding
+  - name: artix-breeze-sddm
+    pkgdesc: Artix breeze sddm theme customization
+    groups:
+      - artix-style
+  - name: artix-grub-theme
+    pkgdesc: Artix grub theme
+    groups:
+      - artix-style
+  - name: artix-plasma-splash
+    pkgdesc: Artix plasma desktop splash screen
+    groups:
+      - artix-style
+  - name: artix-wallpapers
+    pkgdesc: Artix wallpapers
+    groups:
+      - artix-style
+# generated with artixpkg 0.38.5-1-any
