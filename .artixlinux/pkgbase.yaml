@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 25.0.2.u10-1
+    packages:
+      - jdk25-openjdk-25.0.2.u10-1-x86_64.pkg.tar.zst
+      - jre25-openjdk-25.0.2.u10-1-x86_64.pkg.tar.zst
+      - jre25-openjdk-headless-25.0.2.u10-1-x86_64.pkg.tar.zst
+      - openjdk25-doc-25.0.2.u10-1-x86_64.pkg.tar.zst
+      - openjdk25-src-25.0.2.u10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.0.2.u10-1
