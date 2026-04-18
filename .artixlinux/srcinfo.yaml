@@ -1,10 +1,10 @@
 ---
-version: 26.04.0-1
+version: 26.04.0-2
 pkgbase:
   name: khelpcenter
   pkgdesc: Application to show KDE Applications documentation
   pkgver: 26.04.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/khelpcenter/
   arch:
     - x86_64
