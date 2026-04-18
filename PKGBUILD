@@ -26,7 +26,7 @@ arch=('x86_64')
 url='https://openjdk.java.net/'
 license=('LicenseRef-Java')
 makedepends=(
-  "java-environment>=22"
+  "java-environment=24"
   alsa-lib
   bash
   cpio

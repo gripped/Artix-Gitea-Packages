@@ -10,7 +10,7 @@ pkgbase:
   license:
     - LicenseRef-Java
   makedepends:
-    - java-environment>=22
+    - java-environment=24
     - alsa-lib
     - bash
     - cpio
