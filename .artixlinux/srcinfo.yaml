@@ -1,9 +1,9 @@
 ---
-version: 4.0.5-1
+version: 4.1.0-1
 pkgbase:
   name: python-jsonpickle
   pkgdesc: Python library for serializing any arbitrary object graph into JSON
-  pkgver: 4.0.5
+  pkgver: 4.1.0
   pkgrel: 1
   url: https://jsonpickle.github.io/
   arch:
@@ -29,9 +29,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/jsonpickle/jsonpickle.git#tag=v4.0.5
+    - git+https://github.com/jsonpickle/jsonpickle.git#tag=v4.1.0
   sha512sums:
-    - ad3f8abd88153c846d35c2f06d02f04e85c3aebe24cc76422f2c582d10fea52b2feaca50352377454e1af132508c7dec192f93b3f3438fb380fe0b3aab6d02f9
+    - caa9b27ace829fc03a04ccfdd942c887d1c5996d443d5b36eef9c213f2a9162a28e52d4a1d488538541b5048fd361c4f234a166b708b0577e0284b3c26670763
 pkgname:
   - name: python-jsonpickle
 # generated with artixpkg 0.38.5-1-any
