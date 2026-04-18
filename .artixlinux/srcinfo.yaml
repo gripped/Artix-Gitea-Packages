@@ -1,10 +1,10 @@
 ---
-version: 1.7.2-1
+version: 1.7.2-1.1
 pkgbase:
   name: movit
   pkgdesc: The modern video toolkit
   pkgver: 1.7.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://movit.sesse.net/
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - 41ac1518909287c74940429ac2a5ced160fb3315b805988097a4ab152bbd56f780297b721e1501b4434a4d6c963bac6d5ebe0b7e3d48186ff5b326803fe6d254
 pkgname:
   - name: movit
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any

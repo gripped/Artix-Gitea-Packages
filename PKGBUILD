@@ -5,7 +5,7 @@
 
 pkgname=movit
 pkgver=1.7.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The modern video toolkit"
 arch=('x86_64')
 url="https://movit.sesse.net/"
@@ -59,7 +59,7 @@ check() {
   export GTEST_FILTER="-$skipped_tests_filter"
   # deinterlace_effect_test crashes under llvmpipe during shader compilation
   sed -i '/TESTED_EFFECTS += deinterlace_effect/d' Makefile
-  xvfb-run make check
+  xvfb-run env LIBGL_ALWAYS_SOFTWARE=1 make check
 }
 
 package() {

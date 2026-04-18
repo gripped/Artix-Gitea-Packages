@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.7.2-1
+    version: 1.7.2-1.1
     packages:
-      - movit-1.7.2-1-x86_64.pkg.tar.zst
+      - movit-1.7.2-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.7.1-2
