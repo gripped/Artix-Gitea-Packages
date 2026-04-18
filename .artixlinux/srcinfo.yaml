@@ -1,0 +1,52 @@
+---
+version: 1.0.5-2
+pkgbase:
+  name: qjackctl
+  pkgdesc: A Qt front-end for the JACK low-latency audio server
+  pkgver: 1.0.5
+  pkgrel: 2
+  url: https://qjackctl.sourceforge.io
+  arch:
+    - x86_64
+  groups:
+    - pro-audio
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - alsa-lib
+    - cmake
+    - jack2
+    - jack2-dbus
+    - qt6-tools
+    - portaudio
+  depends:
+    - glibc
+    - hicolor-icon-theme
+    - libgcc
+    - libstdc++
+    - qt6-base
+    - qt6-svg
+  optdepends:
+    - 'jack2-dbus: for JACK dbus support'
+  source:
+    - https://downloads.sourceforge.net/qjackctl/qjackctl-1.0.5.tar.gz
+  sha512sums:
+    - 8d273ef0d572bce531d7dad030634a65eb5488ce418527d4a28189cc3e3602925ff883bae787d0bd3d3b28a3f3c8e0d0efe762bf5471673be6988b364da3233f
+  b2sums:
+    - 0b0eb92169bc8adfb73503549292f6fab333487a4ec4da9c5d5ddedba4f8863140f14cdddfdbddd9aa0e65ee362dbde4ca936e934b469b544e818d88c5dd08c0
+pkgname:
+  - name: qjackctl
+    depends:
+      - glibc
+      - hicolor-icon-theme
+      - libgcc
+      - libstdc++
+      - qt6-base
+      - qt6-svg
+      - alsa-lib
+      - libasound.so
+      - jack
+      - libjack.so
+      - portaudio
+      - libportaudio.so
+# generated with artixpkg 0.38.5-1-any
