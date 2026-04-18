@@ -26,13 +26,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.0.2.u10-1
+    version: 25.0.2.u10-1.1
     packages:
-      - jdk25-openjdk-25.0.2.u10-1-x86_64.pkg.tar.zst
-      - jre25-openjdk-25.0.2.u10-1-x86_64.pkg.tar.zst
-      - jre25-openjdk-headless-25.0.2.u10-1-x86_64.pkg.tar.zst
-      - openjdk25-doc-25.0.2.u10-1-x86_64.pkg.tar.zst
-      - openjdk25-src-25.0.2.u10-1-x86_64.pkg.tar.zst
+      - jdk25-openjdk-25.0.2.u10-1.1-x86_64.pkg.tar.zst
+      - jre25-openjdk-25.0.2.u10-1.1-x86_64.pkg.tar.zst
+      - jre25-openjdk-headless-25.0.2.u10-1.1-x86_64.pkg.tar.zst
+      - openjdk25-doc-25.0.2.u10-1.1-x86_64.pkg.tar.zst
+      - openjdk25-src-25.0.2.u10-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.0.2.u10-1

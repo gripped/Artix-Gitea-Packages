@@ -19,14 +19,14 @@ _securityver=2
 _updatever=10
 pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
 # pkgver=${_majorver}.u${_updatever}
-pkgrel=1
+pkgrel=1.1
 _git_tag=jdk-${_majorver}.${_minorver}.${_securityver}+${_updatever}
 # _git_tag=jdk-${_majorver}+${_updatever}
 arch=('x86_64')
 url='https://openjdk.java.net/'
 license=('LicenseRef-Java')
 makedepends=(
-  java-runtime
+  "java-environment=25"
   alsa-lib
   bash
   cpio
@@ -58,18 +58,14 @@ optdepends=(
 )             
 source=(
   https://github.com/openjdk/jdk${_majorver}u/archive/${_git_tag}.tar.gz
-  https://archive.artixlinux.org/packages/j/jdk-openjdk/jdk-openjdk-25.u36-1-x86_64.pkg.tar.zst{,.sig} # FIXME: remove after bootstrapping
   freedesktop-java.desktop
   freedesktop-jconsole.desktop
   freedesktop-jshell.desktop
 )
 sha256sums=('9b3164cedf78d7a76a59499d7a6833145c7e0269ec7b664bfe5ee03ced2f449e'
-            'a526e4f30c317ac09690513a3c73d19526bcc30d1891cc146041be3ea325e5ac'
-            'SKIP'
             'b800c73efde1b5655fff8d6926c6390e306b375ea72a3066a946011faa05de5a'
             'a308c7b85339a03718583ceb8b37140fb23c754c30e50f60cee19d7b04c747ba'
             'cd83d0a053954ea46a37b057e73668d5933deac873630aeaca06dc072c532413')
-validpgpkeys=('0A3EB6BB142C56653300420C1247D995F165BBAC') # Artix Build Bot
 
 case "${CARCH}" in
   x86_64) _JARCH='x86_64';;
@@ -161,8 +157,6 @@ build() {
     --with-native-debug-symbols=internal \
     --enable-unlimited-crypto \
     --disable-warnings-as-errors \
-    --with-boot-jdk="$srcdir/usr/lib/jvm/java-25-openjdk/" \
-    --disable-javac-server \
     --with-vendor-name="Artix Linux"
 
   make images legacy-jre-image docs
