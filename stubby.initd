@@ -1,14 +1,16 @@
-#!/usr/bin/openrc-run
+#!/sbin/openrc-run
 # Copyright 1999-2019 Gentoo Authors
+# Copyright 2026 Artix Linux maintainers
 # Distributed under the terms of the GNU General Public License, v2 or later
 
-stubby_opts="-C ${STUBBY_CONFIG_FILE:-/etc/stubby/stubby.yml} -v ${STUBBY_LOGLEVEL:-5}"
-
 supervisor=supervise-daemon
-command="capsh"
-command_args="--inh=cap_net_bind_service --user=stubby -- -c '/usr/bin/stubby ${stubby_opts} >>/var/log/stubby.log 2>&1'"
+command="/usr/bin/stubby"
+command_args="-C ${STUBBY_CONFIG_FILE:-/etc/stubby/stubby.yml} -v ${STUBBY_LOGLEVEL:-5}"
+command_user="stubby"
+error_log="/var/log/stubby.log"
 pidfile="/run/stubby.pid"
 name="DNS Privacy Daemon"
+capabilities="^cap_net_bind_service"
 
 depend()
 {

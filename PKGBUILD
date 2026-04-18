@@ -1,7 +1,8 @@
 # Maintainer: Nathan Owens <ndowens @ artixlinux.org>
+# Contributor: capezotte <capezotte @ artixlinux.org>
 
 pkgname=stubby-openrc
-pkgver=20210505
+pkgver=20260418
 pkgrel=1
 pkgdesc="OpenRC Stubby init script"
 arch=('any')
@@ -16,7 +17,7 @@ source=("stubby.confd"
         "stubby.initd"
         "stubby.logrotate")
 sha256sums=('d9777a6f3092115566a9c786f929c0d2b3c3a92d2fa78d37e44962acb1133480'
-            '74ee9464df93f561b99964285dd446d147590c53a1e763150d7e88e1926a4308'
+            '29bf06129d1c421743f9de07b4c2ddaa5415c987d38395b69b644aa4e6ef0dbf'
             '73140697520a1ccdf2096cb2044aacc32ad1c5238973a93d781755c9c8bb6a0d')
 
 package() {
