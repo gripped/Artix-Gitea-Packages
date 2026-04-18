@@ -1,10 +1,10 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: null
   removeRepo: world
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
