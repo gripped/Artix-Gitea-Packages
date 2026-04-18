@@ -1,17 +1,17 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=marked
-pkgver=5.1.0
+pkgver=7.0.1
 pkgrel=1
 pkgdesc="A markdown parser built for speed"
 arch=('any')
-url='https://github.com/chjj/marked'
+url='https://marked.js.org'
 license=('MIT')
 depends=('nodejs')
 makedepends=('npm')
 source=(https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz)
 noextract=($pkgname-$pkgver.tgz)
-sha512sums=('cf7fe705eeda4c8f090ecce560b93b74354da67823c34a35649b6b03d9087e490770817ec47ee63b6dda2129785b13fcdde954f8c1513a06a1a9da5dd3994c11')
+sha512sums=('9bc0337badb44eceb6c9a722cf60e08591949147dd82f48d462712dbf5ed4244ad30da1c7b73568ce0f66ff8d6177dbe5d72bab9d33aa5186fd9d28d96778014')
 
 package() {
   npm install -g --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
