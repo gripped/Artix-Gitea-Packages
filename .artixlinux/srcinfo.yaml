@@ -1,0 +1,35 @@
+---
+version: 1:0.14.2-2
+pkgbase:
+  name: typst
+  pkgdesc: A markup-based typesetting system for the sciences
+  pkgver: 0.14.2
+  pkgrel: 2
+  epoch: 1
+  url: https://typst.app
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cargo
+    - git
+  depends:
+    - glibc
+    - libgcc
+    - libgcc_s.so
+    - openssl
+    - libssl.so
+    - libcrypto.so
+  optdepends:
+    - 'otf-libertinus: additional weights and variants for default font'
+    - 'ttf-linux-libertine: legacy default font prior to v0.12.0'
+  replaces:
+    - typst-bin
+  source:
+    - https://github.com/typst/typst/archive/v0.14.2/typst-0.14.2.tar.gz
+  sha256sums:
+    - 70a56445020ca05efc571c7b07a1a9f52eb93842d420518693c077ae74e54142
+pkgname:
+  - name: typst
+# generated with artixpkg 0.38.5-1-any
