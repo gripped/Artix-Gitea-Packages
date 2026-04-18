@@ -1,9 +1,9 @@
 ---
-version: 1.1.4-1
+version: 1.2.0-1
 pkgbase:
   name: python-xattr
   pkgdesc: Python wrapper for extended filesystem attributes
-  pkgver: 1.1.4
+  pkgver: 1.2.0
   pkgrel: 1
   url: https://github.com/xattr/xattr
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - python-cffi
   source:
-    - git+https://github.com/xattr/xattr.git#tag=v1.1.4
+    - git+https://github.com/xattr/xattr.git#tag=v1.2.0
   sha512sums:
-    - 022aadb4f3afb2ce40a13be65d7f55ed50d3151885a78a3ed0cbf17dd86669c5f4d6cd7d6cc06ddaa6e35deef2c9e9b8c6321d88c0d79b6ff90b223916fb9d44
+    - befb86d0e0acdd80d276db6820b8e037ba6b003d7b2da714a6490290c468b04195e91591fc7f44bd477380a060f2f756a53cfb5e0150bbf7cbaab950690c2b7f
 pkgname:
   - name: python-xattr
 # generated with artixpkg 0.38.5-1-any
