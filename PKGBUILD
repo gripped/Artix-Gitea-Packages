@@ -15,7 +15,7 @@
 
 pkgname=dovecot
 pkgver=2.4.3
-pkgrel=3
+pkgrel=3.1
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=('x86_64')
@@ -75,7 +75,7 @@ source=(
   'dovecot.pam'
   'dovecot.install'
 )
-sha256sums=('SKIP'
+sha256sums=('ff0be85228122f250627b19e67505fdb7fb2f72a702ef6bf35f27fce54c072e5'
             'SKIP'
             'b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87'
             '068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc'
