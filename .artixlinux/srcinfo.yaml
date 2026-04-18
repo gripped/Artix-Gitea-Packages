@@ -1,9 +1,9 @@
 ---
-version: 1.14-1
+version: 1.15-1
 pkgbase:
   name: distro-info
   pkgdesc: Information about all releases of Debian and Ubuntu
-  pkgver: 1.14
+  pkgver: 1.15
   pkgrel: 1
   url: https://salsa.debian.org/debian/distro-info
   arch:
@@ -36,9 +36,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.14
+    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.15
   sha256sums:
-    - 600cecc96ddc172c753d5ae71c81049ff16b0cadd759258480a48c0cbb90e881
+    - fe11e1361a74f17f96501a64037725132c0f1356113e24bcaaa09573662a972f
 pkgname:
   - name: distro-info
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
