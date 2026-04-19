@@ -1,9 +1,9 @@
 ---
-version: 4.8.0-1
+version: 4.8.1-1
 pkgbase:
   name: python-syrupy
   pkgdesc: Pytest Snapshot Test Utility
-  pkgver: 4.8.0
+  pkgver: 4.8.1
   pkgrel: 1
   url: https://github.com/tophat/syrupy
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python-pytest
   source:
-    - git+https://github.com/tophat/syrupy.git#tag=v4.8.0
+    - git+https://github.com/tophat/syrupy.git#tag=v4.8.1
   sha512sums:
-    - f184ecabc33fa24fcf37ee8bc382b8f14f40a1b78c2b703e985422dd4e4997416ed2c558c7235319ed9bc2eac50880d30e72d70314eb3c277f8e6104b362ec7a
+    - 3234ab9559166b121ebfa861de8aea182b1ee335aba95dc63cbaf511190221fb07a9c708f025ad848e3c2b266feee458cde2c105bcbe48fe47b9c8da8e9b423c
 pkgname:
   - name: python-syrupy
 # generated with artixpkg 0.38.5-1-any
