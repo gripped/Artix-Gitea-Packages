@@ -3,7 +3,7 @@
 
 pkgname=v2ray
 pkgver=5.46.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A platform for building proxies to bypass network restrictions"
 arch=('x86_64')
 url="https://github.com/v2fly/v2ray-core"
@@ -13,11 +13,6 @@ makedepends=('go' 'git')
 backup=(etc/v2ray/config.json)
 source=("git+https://github.com/v2fly/v2ray-core.git#tag=v$pkgver")
 sha512sums=('9e114dcc5449fd53189f06a35ae0cbb7f2da59e5c0b74da5eb17cde1f9267856b3144ae8040bfca64b3887e2795b99f008b5507227403f721df81d9c7a6db916')
-
-prepare() {
-  cd v2ray-core
-  sed -i 's|/usr/local/bin|/usr/bin|;s|/usr/local/etc|/etc|' release/config/systemd/system/*.service
-}
 
 build() {
   cd v2ray-core
@@ -38,8 +33,6 @@ check() {
 package() {
   cd v2ray-core
   install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/v2ray/
-  install -Dm644 release/config/systemd/system/v2ray.service -t "$pkgdir"/usr/lib/systemd/system/
-  install -Dm644 release/config/systemd/system/v2ray@.service -t "$pkgdir"/usr/lib/systemd/system/
   install -Dm644 release/config/*.json -t "$pkgdir"/etc/v2ray/
   install -Dm755 v2ray -t "$pkgdir"/usr/bin/
 }
