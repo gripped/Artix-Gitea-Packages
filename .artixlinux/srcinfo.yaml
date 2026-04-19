@@ -1,9 +1,9 @@
 ---
-version: 3.26.0-1
+version: 3.28.0-1
 pkgbase:
   name: python-filelock
   pkgdesc: A platform-independent file lock
-  pkgver: 3.26.0
+  pkgver: 3.28.0
   pkgrel: 1
   url: https://github.com/tox-dev/filelock
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/tox-dev/filelock.git#tag=3.26.0
+    - git+https://github.com/tox-dev/filelock.git#tag=3.28.0
   b2sums:
-    - 598edb76b26a5f153a067da7e81c327c3ecfd907175886690602bff88f3cbe93e7e966d88a0b2cdeee081048f252c424b4ff94cfd43fc66d9241c22ff5deb127
+    - 6473d4573c66477cf4afc9d0828d15d89b5d8e8975b70853bf1673eb2c89aece6fca2cd5424f325ae3c86be98f8ef37cf2d7e9431ed7159d1715cacd157ba1d2
 pkgname:
   - name: python-filelock
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
