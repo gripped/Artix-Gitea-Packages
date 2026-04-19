@@ -82,7 +82,7 @@ check() {
         # Requires unpackaged python-altair
         --ignore tests/unit/operations/namespaces/test_plot.py
         # Requires unpackaged python-arrow-adbc-driver-sqlite
-        --ignore tests/unit/io/database/test_read.py
+        --ignore tests/unit/io/database/test_{read,write}.py
     )
 
     test-env/bin/python -P -m pytest tests/unit "${_pytest_args[@]}"
