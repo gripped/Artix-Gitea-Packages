@@ -1,10 +1,10 @@
 ---
-version: 1.5.2-1
+version: 1.5.2-2
 pkgbase:
   name: marknote
   pkgdesc: A simple markdown note management app
   pkgver: 1.5.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/marknote/
   arch:
     - x86_64
@@ -14,7 +14,6 @@ pkgbase:
     - extra-cmake-modules
   depends:
     - breeze-icons
-    - gcc-libs
     - glibc
     - kcolorscheme
     - kconfig
@@ -26,6 +25,7 @@ pkgbase:
     - kmime
     - knotifications
     - kwindowsystem
+    - libstdc++
     - md4c
     - qqc2-desktop-style
     - qt6-base
@@ -40,4 +40,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: marknote
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
