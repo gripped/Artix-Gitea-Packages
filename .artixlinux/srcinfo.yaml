@@ -1,11 +1,11 @@
 ---
-version: 0.15.3-1
+version: 0.16.0-1
 pkgbase:
   name: ruby-markly
   pkgdesc: CommonMark parser and renderer. Written in C, wrapped in Ruby.
-  pkgver: 0.15.3
+  pkgver: 0.16.0
   pkgrel: 1
-  url: https://github.com/ioquatix/markly
+  url: https://github.com/socketry/markly
   arch:
     - x86_64
   license:
@@ -26,10 +26,10 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/ioquatix/markly.git#tag=v0.15.3
-    - git+https://github.com/github/cmark-gfm.git
+    - git+https://github.com/socketry/markly.git#tag=v0.16.0
+    - socketry-cmark-gfm::git+https://github.com/socketry/cmark-gfm.git
   sha256sums:
-    - 725d736b987c94a19fe057ab84dcb9d94a8f3f015cf25a188239a8fe36d7219f
+    - afbc246d4f43f33ae01a94bd8bceecaa3562acd470c0e5cdc70426b4e7109383
     - SKIP
 pkgname:
   - name: ruby-markly

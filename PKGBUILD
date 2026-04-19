@@ -2,11 +2,11 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-markly
-pkgver=0.15.3
+pkgver=0.16.0
 pkgrel=1
 pkgdesc='CommonMark parser and renderer. Written in C, wrapped in Ruby.'
 arch=(x86_64)
-url='https://github.com/ioquatix/markly'
+url='https://github.com/socketry/markly'
 license=(MIT)
 depends=(
   ruby
@@ -25,15 +25,15 @@ checkdepends=(
   ruby-sus
 )
 options=(!emptydirs)
-source=(git+https://github.com/ioquatix/markly.git#tag=v$pkgver
-        git+https://github.com/github/cmark-gfm.git)
-sha256sums=('725d736b987c94a19fe057ab84dcb9d94a8f3f015cf25a188239a8fe36d7219f'
+source=(git+https://github.com/socketry/markly.git#tag=v$pkgver
+        socketry-cmark-gfm::git+https://github.com/socketry/cmark-gfm.git)
+sha256sums=('afbc246d4f43f33ae01a94bd8bceecaa3562acd470c0e5cdc70426b4e7109383'
             'SKIP')
 
 prepare() {
   cd markly
   git submodule init
-  git submodule set-url cmark-gfm ../cmark-gfm
+  git submodule set-url cmark-gfm ../socketry-cmark-gfm
   git -c protocol.file.allow=always submodule update
 
   # update gemspec/Gemfile to allow newer version of the dependencies
@@ -97,4 +97,5 @@ check() {
 package() {
   cd markly
   cp -a tmp_install/* "$pkgdir"/
+  install -Dm644 license.md -t "$pkgdir/usr/share/licenses/$pkgname"
 }
