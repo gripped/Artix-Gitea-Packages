@@ -1,9 +1,9 @@
 ---
-version: 1.6.11-1
+version: 1.7.0-1
 pkgbase:
   name: python-authlib
   pkgdesc: The ultimate Python library in building OAuth and OpenID Connect servers & clients
-  pkgver: 1.6.11
+  pkgver: 1.7.0
   pkgrel: 1
   url: https://github.com/authlib/authlib
   arch:
@@ -32,12 +32,13 @@ pkgbase:
   depends:
     - python
     - python-cryptography
+    - python-joserfc
   source:
-    - python-authlib::git+https://github.com/authlib/authlib#tag=v1.6.11
+    - python-authlib::git+https://github.com/authlib/authlib#tag=v1.7.0
   sha512sums:
-    - 8fa5736d550b3d52fc0f64832feaccbb7d10c27a6c7b3092a391fbcce8e3648e8a15f8629cf28ccb171ea5b6e1c346220d4dd8b4d4f8d27e35980be955435a05
+    - 7d27fee8e3f6381db3b34eeec64dd380f8362a0d5b952baff954bf99cfcc57af70b26ec8491135e01424bd13af955cfc3b7be0e569d6e0b948f9db32a276c23d
   b2sums:
-    - bf6879f2fbeb9bcb51f5f087a16f8e4225358e48c42085b3a31cce881e37774f2ec8ed58d802b475a8bd4d4511659b4857e78bd578714d21c2e0dd6288a295aa
+    - 1612b69594c2e3315d402d3d61e63acbd35fbc81cd7018c583f6e1f19b5c22fb1018cd55279690204d960c93969f33c4131781bea0f9285e845bc4b3baea6b19
 pkgname:
   - name: python-authlib
 # generated with artixpkg 0.38.5-1-any
