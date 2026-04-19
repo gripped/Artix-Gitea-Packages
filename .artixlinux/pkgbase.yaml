@@ -1,19 +1,7 @@
 ---
 team: galaxy
-pkgbase:
-  name: linux-lts515
-  version: 5.15.160-1
-  arch:
-    - x86_64
-    - pentium4
-    - i686
-    - i486
-  pkgname:
-    - linux-lts515
-    - linux-lts515-headers
-    - linux-lts515-docs
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -24,39 +12,54 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 5.15.202-1
+    packages:
+      - linux-lts515-5.15.202-1-x86_64.pkg.tar.zst
+      - linux-lts515-headers-5.15.202-1-x86_64.pkg.tar.zst
+      - linux-lts515-docs-5.15.202-1-x86_64.pkg.tar.zst
+    debug: []
   galaxy:
     version: 5.15.160-1
     packages:
       - linux-lts515-5.15.160-1-x86_64.pkg.tar.zst
       - linux-lts515-headers-5.15.160-1-x86_64.pkg.tar.zst
       - linux-lts515-docs-5.15.160-1-x86_64.pkg.tar.zst
+    debug: []
