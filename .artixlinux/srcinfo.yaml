@@ -1,9 +1,9 @@
 ---
-version: 9.0.0-1
+version: 9.1.0-1
 pkgbase:
   name: python-sybil
   pkgdesc: Automated testing for the examples in your documentation.
-  pkgver: 9.0.0
+  pkgver: 9.1.0
   pkgrel: 1
   url: https://github.com/simplistix/sybil
   arch:
@@ -24,9 +24,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/simplistix/sybil.git#tag=9.0.0
+    - git+https://github.com/simplistix/sybil.git#tag=9.1.0
   sha512sums:
-    - ad7678393dc66b52e5ab0b28ed65bd263a925e512cfebe88beb2a47ac4086d0ac8fdc8b50ff911ca65e0c9198e7a05e12fb897fdbc9fba7d1f447f404a89fae4
+    - 8a96cf8a2e3ff1cfc658ff3dd45f6c0d2de76c899475fbb90ff15669d6b248488d3116c0bff5dd2eaadfea7494fde6aed5d24c1e3dca5a0177abf674d7f90df7
 pkgname:
   - name: python-sybil
 # generated with artixpkg 0.38.5-1-any
