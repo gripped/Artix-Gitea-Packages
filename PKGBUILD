@@ -2,7 +2,7 @@
 
 pkgname=fzssh
 pkgver=1.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc="a SSH/SFTP library based on libfilezilla"
 url="https://filezilla-project.org"
 arch=('x86_64')
