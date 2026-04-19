@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-marshmallow
-pkgver=3.23.3
+pkgver=3.24.0
 pkgrel=1
 pkgdesc="A lightweight library for converting complex datatypes to and from native Python datatypes."
 url="https://github.com/marshmallow-code/marshmallow"
@@ -11,7 +11,7 @@ depends=('python-packaging')
 makedepends=('git' 'python-build' 'python-installer' 'python-flit-core')
 checkdepends=('python-pytest' 'python-simplejson')
 source=("git+https://github.com/marshmallow-code/marshmallow.git#tag=$pkgver")
-sha512sums=('8e3283b1857cfb83a0f8242ea7a7f61a08dd246fd076b696b7fc24d6ae79a73e75d01eb0b565c574e68e852778bbdb60cfd6548eb991de502eb5ff2752a9c657')
+sha512sums=('f8243bc886732bcfeb38f0a6b429aa28f62c8adfde2a68dc069fa0786a73fdac0214e5107cb28a717a7bc69a78a8aef2d5060549b86b6297a90f102c5dc6003e')
 
 build() {
   cd marshmallow
