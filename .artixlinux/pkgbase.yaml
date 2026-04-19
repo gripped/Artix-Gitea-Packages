@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,12 +26,12 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.39.0-1
+    version: 1.40.0-1
     packages:
-      - python-polars-1.39.0-1-x86_64.pkg.tar.zst
-      - python-polars-runtime-32-1.39.0-1-x86_64.pkg.tar.zst
-      - python-polars-runtime-64-1.39.0-1-x86_64.pkg.tar.zst
-      - python-polars-runtime-compat-1.39.0-1-x86_64.pkg.tar.zst
+      - python-polars-1.40.0-1-x86_64.pkg.tar.zst
+      - python-polars-runtime-32-1.40.0-1-x86_64.pkg.tar.zst
+      - python-polars-runtime-64-1.40.0-1-x86_64.pkg.tar.zst
+      - python-polars-runtime-compat-1.40.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.39.3-1
