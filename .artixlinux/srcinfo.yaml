@@ -1,10 +1,10 @@
 ---
-version: 3.1.0-1
+version: 3.1.0-1.1
 pkgbase:
   name: sfml
   pkgdesc: A simple, fast, cross-platform, and object-oriented multimedia API
   pkgver: 3.1.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: http://www.sfml-dev.org/
   arch:
     - x86_64
