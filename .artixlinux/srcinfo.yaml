@@ -1,9 +1,9 @@
 ---
-version: 0.40-1
+version: 0.40-2
 pkgbase:
   name: notmuch
   pkgver: 0.40
-  pkgrel: 1
+  pkgrel: 2
   url: https://notmuchmail.org/
   arch:
     - x86_64
@@ -75,4 +75,4 @@ pkgname:
       - gmime3
       - talloc
       - sfsexp
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.5-1-any
