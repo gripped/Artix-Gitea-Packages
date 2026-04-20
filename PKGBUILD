@@ -4,7 +4,7 @@
 
 pkgbase=git
 pkgname=(git git-zsh-completion)
-pkgver=2.53.0
+pkgver=2.54.0
 pkgrel=1
 pkgdesc='the fast distributed version control system'
 arch=('x86_64')
@@ -18,7 +18,7 @@ install=git.install
 validpgpkeys=('96E07AF25771955980DAD10020D04E5A713660A7') # Junio C Hamano
 source=("git+https://github.com/git/git#tag=v${pkgver}?signed"
         'git-sysusers.conf')
-sha256sums=('9a01c7ee4b1d39392b1f0216c2548f3de1805bed6976140b0509f24751de0a6f'
+sha256sums=('a185bb4716fe77d02d8cf81080686c580fece76e0289593871810c83f2c912a1'
             '7630e8245526ad80f703fac9900a1328588c503ce32b37b9f8811674fcda4a45')
 
 _make() {
