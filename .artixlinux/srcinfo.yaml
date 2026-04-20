@@ -1,9 +1,9 @@
 ---
-version: 1:4.22.2-1
+version: 1:4.22.3-1
 pkgbase:
   name: gtk4
   pkgdesc: GObject-based multi-platform GUI toolkit
-  pkgver: 4.22.2
+  pkgver: 4.22.3
   pkgrel: 1
   epoch: 1
   url: https://www.gtk.org/
@@ -72,14 +72,15 @@ pkgbase:
     - tinysparql
     - vulkan-icd-loader
     - wayland
+    - xdg-desktop-portal-gtk
   source:
-    - git+https://gitlab.gnome.org/GNOME/gtk.git#tag=4.22.2
+    - git+https://gitlab.gnome.org/GNOME/gtk.git#tag=4.22.3
     - gtk-update-icon-cache.hook
     - gtk-update-icon-cache.script
     - gtk4-querymodules.hook
     - gtk4-querymodules.script
   b2sums:
-    - af80460da793d7d4d93e3b0277d28393d60fbf6cfca9a659c96f184453fb3ae4dde4e3d8ba5240175183f157ada37be89a5cab114aad9fb14f412aec04115d84
+    - 8023183a4e40547c669f4f33cd7f492ab656da24995ce4b832f9b10b494ccc5da9808eedba4d6e4749db45dc9f6ce16ac1baffb22ec1fe934c61e6e565ccb887
     - 136bdb410c46daf769175e8e8837286576391797a4762b8cf388217e893dd6c5087c5c91c347cbdf7d3e9dcd2c978c2fb275b5af1f3425c9f7979fbc65a81324
     - 6bcd839ef82296d864587e0cc7acc0145bdea8e5235af304747cf3c0e564c2757cc67c0373dc044bec83dccfc57dc899546c2fccea96cff2bba22f09978a3814
     - dd589bd1ad2b13f0e06f6899776a083f20a1aac24d4308d666ffd0d1cff38457b8257b8366f92e767b4233b3d86b6b54fa50339faf84c4801a824986366dce30
@@ -88,7 +89,6 @@ pkgname:
   - name: gtk4
     optdepends:
       - 'evince: Default print preview command'
-      - 'xdg-desktop-portal-gtk: Fallback portals for various APIs'
     provides:
       - libgtk-4.so
   - name: gtk4-demos
@@ -141,4 +141,4 @@ pkgname:
       - glibc
       - hicolor-icon-theme
       - librsvg
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
