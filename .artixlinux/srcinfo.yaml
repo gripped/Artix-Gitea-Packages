@@ -1,0 +1,25 @@
+---
+version: 5.6.4-1
+pkgbase:
+  name: cppjieba
+  pkgdesc: C++ implementation of Jieba Chinese text segmentation
+  pkgver: 5.6.4
+  pkgrel: 1
+  url: https://github.com/yanyiwu/cppjieba
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+    - gtest
+  depends:
+    - limonp
+  source:
+    - git+https://github.com/yanyiwu/cppjieba.git#tag=v5.6.4
+  b2sums:
+    - c368e0f79de0425b14b1ea4751cf50f61c0fea8385c02ca868d1b3576406d086c87681c9ec813a427a42864dae398e52df15032cdb5bb8363c6f4000e6e96a72
+pkgname:
+  - name: cppjieba
+# generated with artixpkg 0.38.5-1-any
