@@ -4,19 +4,19 @@
 # Contributor: Gerhard Brauer <gerbra@archlinux.de>
 
 pkgname=nbd
-pkgver=3.27.0
-pkgrel=2
+pkgver=3.27.1
+pkgrel=1
 pkgdesc='tools for network block devices, allowing you to use remote block devices over TCP/IP'
 arch=('x86_64')
 url='https://github.com/NetworkBlockDevice/nbd/'
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=('glib2' 'gnutls' 'libnl')
 makedepends=('git' 'docbook-utils' 'docbook-sgml' 'perl-sgmls' 'autoconf-archive')
 backup=('etc/nbd-server/config')
 source=("git+https://github.com/NetworkBlockDevice/nbd.git#tag=nbd-${pkgver}"
         'config'
         'sysusers_nbd.conf')
-sha256sums=('a096087af761016e80b91ffc6518ae1b2a8f72bb9fa738ffeb16f376e7ebee11'
+sha256sums=('6b8d0a8d9751b539ada025c925b35b34557b1b33ae507324b684f44353a02737'
             'ee2e9fbbeb8a8b9b71d16b6f32eb41788f6def9d00cc4a47897ed3cb97cdde7c'
             'c2259eba02b7e959476e4f7032f273c1972947dfdeb9019106e70ce8798b912d')
 
