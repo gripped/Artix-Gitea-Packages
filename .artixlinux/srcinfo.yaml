@@ -1,9 +1,9 @@
 ---
-version: 6.1.0-1
+version: 6.1.1-1
 pkgbase:
   name: python-oslotest
   pkgdesc: Oslo test framework
-  pkgver: 6.1.0
+  pkgver: 6.1.1
   pkgrel: 1
   url: https://github.com/openstack/oslotest
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - python-subunit
     - python-testtools
   source:
-    - git+https://github.com/openstack/oslotest.git#tag=6.1.0
+    - git+https://github.com/openstack/oslotest.git#tag=6.1.1
   sha512sums:
-    - 4012f6e6b3cd88fb0e4c8c2b98c3c2975d11d7679bb680695892445c07f78b21f10ef7b7bdb319dccfe9a7f6f35843532fb427c1aacaecd8cafac6ebe39c6aab
+    - 28765888f59178d6a9546ff3cd22a19f04eadd27c3d0d4800455d4049519e304518308d5e456cfe4cb75b9d4320769c7b812016afa1f053c5b5a5baa0f7e616a
 pkgname:
   - name: python-oslotest
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
