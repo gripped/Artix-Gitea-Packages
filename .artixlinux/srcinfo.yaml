@@ -1,10 +1,10 @@
 ---
-version: 1.24.2-1
+version: 1.24.2-2
 pkgbase:
   name: libnbd
   pkgdesc: NBD client library in userspace
   pkgver: 1.24.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/nbdkit/libnbd
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libnbd
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
