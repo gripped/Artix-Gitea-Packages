@@ -1,9 +1,9 @@
 ---
-version: 2.4.16-1
+version: 2.4.17-1
 pkgbase:
   name: lib32-libcups
   pkgdesc: The CUPS Printing System - client libraries (32-bit)
-  pkgver: 2.4.16
+  pkgver: 2.4.17
   pkgrel: 1
   url: https://www.cups.org/
   arch:
@@ -17,17 +17,17 @@ pkgbase:
     - lib32-gnutls
     - libcups
   source:
-    - https://github.com/OpenPrinting/cups/releases/download/v2.4.16/cups-2.4.16-source.tar.gz
-    - https://github.com/OpenPrinting/cups/releases/download/v2.4.16/cups-2.4.16-source.tar.gz.sig
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.17/cups-2.4.17-source.tar.gz
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.17/cups-2.4.17-source.tar.gz.sig
     - cups-freebind.patch
     - guid.patch
   validpgpkeys:
     - 7082A0A50A2E92640F3880E0E4522DCC9B246FF7
   sha256sums:
-    - 0339587204b4f9428dd0592eb301dec0bf9ea6ea8dce5d9690d56be585aba92d
+    - 89c703238de210d4f4f4e5d4269e3d60c4b2f487aad75a8a1eaecd659e4d0b77
     - SKIP
     - 3385047b9ac8a7b13aeb8f0ca55d15f793ce7283516db0155fe28a67923c592d
     - 0bf6a75ba1b051771f155d9a5d36b307a6d40c6857d645b250fe93f3fb713474
 pkgname:
   - name: lib32-libcups
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
