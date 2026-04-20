@@ -1,10 +1,10 @@
 ---
-version: 20260420-1
+version: 20260420-2
 pkgbase:
   name: limine-snapper-sync-openrc
   pkgdesc: OpenRC limine-snapper-sync init script
   pkgver: 20260420
-  pkgrel: 1
+  pkgrel: 2
   url: https://artixlinux.org
   arch:
     - any
@@ -12,6 +12,8 @@ pkgbase:
     - openrc-world
   license:
     - BSD
+  depends:
+    - inotify-tools
   source:
     - limine-snapper-sync.initd
   sha256sums:

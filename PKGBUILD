@@ -2,11 +2,12 @@
 
 pkgname=limine-snapper-sync-openrc
 pkgver=20260420
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC limine-snapper-sync init script"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
+depends=('inotify-tools')
 groups=('openrc-world')
 source=("limine-snapper-sync.initd")
 
