@@ -1,9 +1,9 @@
 ---
-version: 4.3.0-1
+version: 4.4.0-1
 pkgbase:
   name: python-osc-lib
   pkgdesc: OpenStackClient Library
-  pkgver: 4.3.0
+  pkgver: 4.4.0
   pkgrel: 1
   url: https://docs.openstack.org/osc-lib/latest/
   arch:
@@ -33,9 +33,9 @@ pkgbase:
     - python-requests
     - python-stevedore
   source:
-    - git+https://github.com/openstack/osc-lib.git#tag=4.3.0
+    - git+https://github.com/openstack/osc-lib.git#tag=4.4.0
   sha512sums:
-    - 152358238a60f93a876dc546ea3187a8c0afee61e48fd7624e83f2f617570f61cd3f2f1d546d3f9c3966e5625d0f069c1dd056bed06f798fa7d1dbd3e8eaee8f
+    - 4eb0c1da3911f78962e8716f2fdd664237cfac70f4ea0c87795096e169a0e3683fd8e5d381ed91798f7fdde9f87f3ff4f49d57d10699d27032d4c0c440981514
 pkgname:
   - name: python-osc-lib
 # generated with artixpkg 0.38.5-1-any
