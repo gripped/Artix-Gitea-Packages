@@ -1,0 +1,36 @@
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
+# Contributor: Leonidas Spyropoulos <artafinde at gmail com>
+# Contributor: Miguel Revilla <yo@miguelrevilla.com>
+# Contributor: Joshua Stiefer <facedelajunk@gmail.com>
+# Contributor: Alexander Fehr <pizzapunk gmail com>
+# Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
+
+pkgname=wxsvg
+pkgver=1.5.25
+pkgrel=5
+pkgdesc='C++ library to create, manipulate and render SVG files'
+arch=('x86_64')
+url='http://wxsvg.sourceforge.net/'
+license=('custom:wxWindows')
+depends=('ffmpeg' 'libexif' 'wxwidgets-gtk3')
+source=("https://downloads.sourceforge.net/$pkgname/$pkgname-$pkgver.tar.bz2")
+sha256sums=('5bf6ac6831b54bd19aef48cde8fa0572dbb63f30aee9d5323f6be6b3f326534b')
+
+prepare() {
+  cd $pkgname-$pkgver
+  sed -i 's/libwxsvg_la_LDFLAGS = /libwxsvg_la_LDFLAGS = $(LDFLAGS) /' src/Makefile.am
+  autoreconf -fi
+}
+
+build() {
+  cd $pkgname-$pkgver
+  ./configure --prefix=/usr
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
+
+package() {
+  cd $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install
+  install -Dm644 COPYING "$pkgdir/usr/share/licenses/$pkgname/COPYING"
+}
