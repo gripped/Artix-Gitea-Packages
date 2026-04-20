@@ -1,0 +1,18 @@
+#!/usr/bin/openrc-run
+
+supervisor=supervise-daemon
+command="/usr/bin/limine-snapper-watcher"
+command_background="yes"
+description="(limine-snapper-watcher) Automatically synchronizes boot entries with the Snapper snapshot list"
+
+depend()
+{
+    need localmount
+}
+
+stop() {
+    ebegin "Stopping limine-snapper-watcher"
+    pkill -9 -f /usr/bin/limine-snapper-watcher
+    eend $?
+}
+
