@@ -1,9 +1,9 @@
 ---
-version: 7.3.3-1
+version: 7.4.0-1
 pkgbase:
   name: glaze
   pkgdesc: An Extremely fast, In-Memory JSON and Interface Library for Modern C++
-  pkgver: 7.3.3
+  pkgver: 7.4.0
   pkgrel: 1
   url: https://github.com/stephenberry/glaze
   arch:
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - cmake
   source:
-    - https://github.com/stephenberry/glaze/archive/v7.3.3/glaze-7.3.3.tar.gz
+    - https://github.com/stephenberry/glaze/archive/v7.4.0/glaze-7.4.0.tar.gz
   sha256sums:
-    - 41c8184a4fc4ab4df92b9bdde9ff85c9c47ef8f7a0fe3972db369574ac130d3a
+    - e7592590187dd56f16558a08b36e90bf349e885330f3a3961048df302cc9dfa1
 pkgname:
   - name: glaze
 # generated with artixpkg 0.38.5-1-any
