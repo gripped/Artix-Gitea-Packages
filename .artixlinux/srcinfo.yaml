@@ -1,10 +1,10 @@
 ---
-version: 3.6.2-1
+version: 3.6.2-2
 pkgbase:
   name: openssl
   pkgdesc: The Open Source toolkit for Secure Sockets Layer and Transport Layer Security
   pkgver: 3.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.openssl.org
   arch:
     - x86_64
@@ -13,7 +13,10 @@ pkgbase:
   makedepends:
     - perl
   depends:
+    - brotli
     - glibc
+    - zlib
+    - zstd
   optdepends:
     - ca-certificates
     - perl
@@ -38,4 +41,4 @@ pkgbase:
     - 0a32d9ca68e8d985ce0bfef6a4c20b46675e06178cc2d0bf6d91bd6865d648b7
 pkgname:
   - name: openssl
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
