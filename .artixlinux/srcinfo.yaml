@@ -39,7 +39,7 @@ pkgname:
       - 'firewall-applet: Systray applet for firewallD'
       - 'firewalld-test: firewallD test suite'
     backup:
-      - etc/conf.d/firewalld
+      - etc/sysconfig/firewalld
       - etc/firewalld/firewalld.conf
   - name: python-firewall
     pkgdesc: Python bindings for firewallD

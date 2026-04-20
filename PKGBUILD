@@ -21,8 +21,6 @@ sha256sums=('a5f1df1c267aa60ade69572d9fd931dbbc33ddebca282234b1db61d3620c4abe'
 prepare() {
 	cd "${pkgbase}"
 
-	# Use '/etc/conf.d' rather than '/etc/sysconfig'
-	patch -Np1 -i "${srcdir}/firewalld-sysconfigdir.patch"
 	# Fix gettext's macros path
 	patch -Np1 -i "${srcdir}/fix_gettext_macros_path.patch"
 
@@ -37,12 +35,16 @@ build() {
 		--sbindir=/usr/bin \
 		--sysconfdir=/etc \
 		--disable-schemas-compile \
+		--disable-systemd \
 		--disable-sysconfig
 	make
 
 	# Install to a temporary / fake installation path to separate files in split packages
 	# Can be dropped in favor of https://gitlab.archlinux.org/-/snippets/3770 once available
 	make DESTDIR="${srcdir}/fakeinstall" install
+
+	# remove systemd files
+	rm -rf "${srcdir}/fakeinstall/usr/lib/systemd"
 }
 
 
@@ -69,13 +71,14 @@ package_firewalld() {
 		    'firewall-config: Graphical user interface for firewallD configuration'
 		    'firewall-applet: Systray applet for firewallD'
 		    'firewalld-test: firewallD test suite')
-	backup=('etc/conf.d/firewalld'
+	backup=('etc/sysconfig/firewalld'
 	        'etc/firewalld/firewalld.conf')
 	install="${pkgbase}.install"
 
 	# Selectively install files
 	# Can be dropped in favor of https://gitlab.archlinux.org/-/snippets/3770 once available
-	_install fakeinstall/etc/conf.d/firewalld
+	_install fakeinstall/etc/sysconfig/firewalld
+	_install fakeinstall/etc/rc.d/init.d/firewalld
 	_install fakeinstall/etc/firewalld/*
 	_install fakeinstall/etc/logrotate.d/firewalld
 	_install fakeinstall/etc/modprobe.d/firewalld-sysctls.conf
