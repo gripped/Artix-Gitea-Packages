@@ -1,9 +1,9 @@
 ---
-version: 3.0.2-1
+version: 3.1.0-1
 pkgbase:
   name: sfml
   pkgdesc: A simple, fast, cross-platform, and object-oriented multimedia API
-  pkgver: 3.0.2
+  pkgver: 3.1.0
   pkgrel: 1
   url: http://www.sfml-dev.org/
   arch:
@@ -16,6 +16,7 @@ pkgbase:
     - doxygen
     - udev
     - ninja
+    - git
   depends:
     - libsndfile
     - libxrandr
@@ -24,6 +25,14 @@ pkgbase:
     - libx11
     - libxcursor
     - libxi
+    - mbedtls
+    - harfbuzz
+    - glibc
+    - libstdc++
+    - libgcc
+    - libogg
+    - flac
+    - libvorbis
   provides:
     - libsfml-window.so
     - libsfml-network.so
@@ -31,9 +40,9 @@ pkgbase:
     - libsfml-audio.so
     - libsfml-graphics.so
   source:
-    - sfml-3.0.2.tar.gz::https://github.com/SFML/SFML/archive/3.0.2.tar.gz
+    - sfml-3.1.0.tar.gz::https://github.com/SFML/SFML/archive/3.1.0.tar.gz
   sha512sums:
-    - 7fc3f91b84ba2353b4216c0d0a71fd15f7349b8e22630dd727fc98a1f8c295a69fe21f3e1e878413966662047280ed4f195b51ee3302061c3903aea4958a6999
+    - 5fe38a11c146f5bb99d4ced8e97cd8872f384cc0531073480f7380ce19a3440b085da5ce66c7a06768728065bc645afecbeed0e1ecc88e28df1720a9cf55abdc
 pkgname:
   - name: sfml
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
