@@ -1,0 +1,55 @@
+---
+version: 3.0.2-1
+pkgbase:
+  name: gimp-help
+  pkgver: 3.0.2
+  pkgrel: 1
+  url: https://docs.gimp.org/
+  arch:
+    - any
+  license:
+    - GFDL-1.2-or-later
+  makedepends:
+    - python
+    - docbook-xsl
+  options:
+    - '!strip'
+    - '!zipman'
+  source:
+    - https://download.gimp.org/gimp/help/gimp-help-3.0.2.tar.bz2
+  sha256sums:
+    - 1dbfe008e5f42dacc15d587d8f2c837833e7a0247d52335320046a60d4499a24
+pkgname:
+  - name: gimp-help-bg
+  - name: gimp-help-ca
+  - name: gimp-help-cs
+  - name: gimp-help-da
+  - name: gimp-help-de
+  - name: gimp-help-el
+  - name: gimp-help-en
+  - name: gimp-help-en_gb
+  - name: gimp-help-eo
+  - name: gimp-help-es
+  - name: gimp-help-fa
+  - name: gimp-help-fi
+  - name: gimp-help-fr
+  - name: gimp-help-hr
+  - name: gimp-help-hu
+  - name: gimp-help-it
+  - name: gimp-help-ja
+  - name: gimp-help-ko
+  - name: gimp-help-lt
+  - name: gimp-help-nl
+  - name: gimp-help-nn
+  - name: gimp-help-pl
+  - name: gimp-help-pt
+  - name: gimp-help-pt_br
+  - name: gimp-help-ro
+  - name: gimp-help-ru
+  - name: gimp-help-sk
+  - name: gimp-help-sl
+  - name: gimp-help-sv
+  - name: gimp-help-tr
+  - name: gimp-help-uk
+  - name: gimp-help-zh_cn
+# generated with artixpkg 0.38.5-1-any
