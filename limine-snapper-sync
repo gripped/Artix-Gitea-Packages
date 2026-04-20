@@ -1,0 +1,4 @@
+type: process
+command: /usr/bin/limine-snapper-watcher
+depends-on: early-fs-local.target
+logfile: /var/log/dinit/limine-snapper-sync.log

@@ -1,0 +1,28 @@
+---
+version: 20260420-1
+pkgbase:
+  name: limine-snapper-sync-dinit
+  pkgdesc: dinit service scripts for limine-snapper-sync
+  pkgver: 20260420
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-galaxy
+  license:
+    - 0BSD
+  depends:
+    - limine-snapper-sync
+    - dinit
+  provides:
+    - init-limine-snapper-sync
+  conflicts:
+    - init-limine-snapper-sync
+  source:
+    - limine-snapper-sync
+  sha256sums:
+    - 7259da08db2b55820cfad53a481f560e1c31faad8a0150063bc992ccb2c28fec
+pkgname:
+  - name: limine-snapper-sync-dinit
+# generated with artixpkg 0.38.5-1-any
