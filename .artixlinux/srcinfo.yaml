@@ -1,10 +1,10 @@
 ---
-version: 3.14.3-4
+version: 3.14.3-5
 pkgbase:
   name: rspamd
   pkgdesc: Fast, free and open-source spam filtering system
   pkgver: 3.14.3
-  pkgrel: 4
+  pkgrel: 5
   url: https://rspamd.com
   install: rspamd.install
   arch:
@@ -136,4 +136,4 @@ pkgbase:
     - 8a2882e4cd59eb3304acae9dfa71252c2024a8251e61cd1e75e6b84a84ec8c636e70d6702c03d7b7d0e2f7fa60d2466c6eed4f4f80f1834585185deaf7157eee
 pkgname:
   - name: rspamd
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
