@@ -1,10 +1,10 @@
 ---
-version: 3.1.0-1.1
+version: 3.2.0-1
 pkgbase:
   name: screengrab
   pkgdesc: Crossplatform tool for grabbing screenshots of your desktop.
-  pkgver: 3.1.0
-  pkgrel: 1.1
+  pkgver: 3.2.0
+  pkgrel: 1
   url: https://github.com/lxqt/screengrab
   arch:
     - x86_64
@@ -25,13 +25,14 @@ pkgbase:
     - libQt6Xdg.so
     - layer-shell-qt
   source:
-    - https://github.com/lxqt/screengrab/releases/download/3.1.0/screengrab-3.1.0.tar.xz
-    - https://github.com/lxqt/screengrab/releases/download/3.1.0/screengrab-3.1.0.tar.xz.asc
+    - https://github.com/lxqt/screengrab/releases/download/3.2.0/screengrab-3.2.0.tar.xz
+    - https://github.com/lxqt/screengrab/releases/download/3.2.0/screengrab-3.2.0.tar.xz.asc
   validpgpkeys:
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+    - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - f83281ed4a5b5b315afc8bccc28b577246397e03f194acab6c698ed51fa2d3bc
+    - f43f27b261c3b22f05c79cb0131460bb144faf2720b590fc906c89cbcd3678bf
     - SKIP
 pkgname:
   - name: screengrab
