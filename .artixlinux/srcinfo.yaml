@@ -1,9 +1,9 @@
 ---
-version: 2.3.0-1
+version: 2.4.0-1
 pkgbase:
   name: lxqt-about
   pkgdesc: LXQt about dialog.
-  pkgver: 2.3.0
+  pkgver: 2.4.0
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-about
   arch:
@@ -18,15 +18,16 @@ pkgbase:
     - liblxqt
     - libQt6Xdg.so
   source:
-    - https://github.com/lxqt/lxqt-about/releases/download/2.3.0/lxqt-about-2.3.0.tar.xz
-    - https://github.com/lxqt/lxqt-about/releases/download/2.3.0/lxqt-about-2.3.0.tar.xz.asc
+    - https://github.com/lxqt/lxqt-about/releases/download/2.4.0/lxqt-about-2.4.0.tar.xz
+    - https://github.com/lxqt/lxqt-about/releases/download/2.4.0/lxqt-about-2.4.0.tar.xz.asc
   validpgpkeys:
     - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+    - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - 199056c2e848f8d22b4f6818ddca04305e849c22ac059b200df5bd574aaa12bd
+    - 77263dd1b3582791b7134c590a2aee641fb7423ee5f89cf05378529276445fae
     - SKIP
 pkgname:
   - name: lxqt-about
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
