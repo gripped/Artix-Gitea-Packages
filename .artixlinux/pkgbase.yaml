@@ -56,5 +56,5 @@ repos:
   galaxy:
     version: 0.4.3-1
     packages:
-      - river-4.3.0-1-x86_64.pkg.tar.zst
+      - river-0.4.3-1-x86_64.pkg.tar.zst
     debug: []
