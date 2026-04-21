@@ -1,9 +1,9 @@
 ---
-version: 1.44-1
+version: 1.45-1
 pkgbase:
   name: perl-log-report
   pkgdesc: Perl package to log/report a problem with exceptions, pluggable handlers and translation support
-  pkgver: 1.44
+  pkgver: 1.45
   pkgrel: 1
   url: https://metacpan.org/release/Log-Report
   arch:
@@ -19,9 +19,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - http://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/Log-Report-1.44.tar.gz
+    - http://search.cpan.org/CPAN/authors/id/M/MA/MARKOV/Log-Report-1.45.tar.gz
   sha256sums:
-    - f747e6575fc68f5811b655ee51674593ff9e90f6016142f2764a8cd3f0ef4fc9
+    - bf08ea5ea171944fdaeb33ef7bd85d2bb3f9065553eb867637eb9f60cc19fa1f
 pkgname:
   - name: perl-log-report
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
