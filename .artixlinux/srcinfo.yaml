@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-2
+version: 2.4.0-1
 pkgbase:
   name: pcmanfm-qt
   pkgdesc: The LXQt file manager, Qt port of PCManFM
-  pkgver: 2.3.0
-  pkgrel: 2
+  pkgver: 2.4.0
+  pkgrel: 1
   url: https://github.com/lxqt/pcmanfm-qt
   arch:
     - x86_64
@@ -25,15 +25,16 @@ pkgbase:
     - 'lxqt-archiver: archive management'
     - 'qt6-translations: allow keyboard shortcuts to function in some languages (e.g. German)'
   source:
-    - https://github.com/lxqt/pcmanfm-qt/releases/download/2.3.0/pcmanfm-qt-2.3.0.tar.xz
-    - https://github.com/lxqt/pcmanfm-qt/releases/download/2.3.0/pcmanfm-qt-2.3.0.tar.xz.asc
+    - https://github.com/lxqt/pcmanfm-qt/releases/download/2.4.0/pcmanfm-qt-2.4.0.tar.xz
+    - https://github.com/lxqt/pcmanfm-qt/releases/download/2.4.0/pcmanfm-qt-2.4.0.tar.xz.asc
   validpgpkeys:
     - 169704C6FB490C6892C7F23C37E0AF1FDA48F373
     - 7C733BA5F585AAD669E4D23A42C9C8D3AF5EA5E3
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
+    - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - 30ab4cc0f36aedd3f454cec2468d7b8a5820f12de1dd9e69d2e65d7299716d09
+    - 53fb1acf5a818300487ceffabc5b768034fa4dee956b9d1bc0019bb456b48daf
     - SKIP
 pkgname:
   - name: pcmanfm-qt
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
