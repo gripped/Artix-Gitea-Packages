@@ -3,7 +3,7 @@
 # Contributor: Matt Monaco <net 0x01b dgbaley27>
 
 pkgname=openvswitch
-pkgver=3.7.0
+pkgver=3.7.1
 pkgrel=1
 pkgdesc="Production Quality, Multilayer Open Virtual Switch"
 url="http://openvswitch.org"
@@ -14,7 +14,7 @@ source=("http://openvswitch.org/releases/openvswitch-$pkgver.tar.gz"
 	    openvswitch.tmpfiles)
 depends=('openssl' 'libcap-ng' 'dpdk')
 makedepends=('python')
-sha256sums=('d974a8dc98d51b16816d5721f5b1936e6973041407d749204043e548699634e5'
+sha256sums=('b8936c2e95a024d37123536ca843648bc2f1d2520921f991dd3d06248859b70f'
             'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9')
 
 prepare() {
