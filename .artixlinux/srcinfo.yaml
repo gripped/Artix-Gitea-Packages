@@ -35,4 +35,4 @@ pkgbase:
     - 787317905987b22d6e9001a0bddc66008c8b352de6104b329b62529520623b7e
 pkgname:
   - name: xdg-desktop-portal-lxqt
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
