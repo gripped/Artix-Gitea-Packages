@@ -1,0 +1,94 @@
+---
+version: 0.287-2
+pkgbase:
+  name: mame
+  pkgdesc: Port of the popular Multiple Arcade Machine Emulator using SDL with OpenGL support
+  pkgver: 0.287
+  pkgrel: 2
+  url: https://mamedev.org/
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+    - BSD-3-Clause
+    - BSL-1.0
+    - CC0-1.0
+    - GPL-2.0-only
+    - LGPL-2.1-only
+    - MIT
+    - Zlib
+  makedepends:
+    - asio
+    - flac
+    - git
+    - glm
+    - libpulse
+    - libutf8proc
+    - libxi
+    - libxinerama
+    - lua
+    - nasm
+    - portaudio
+    - portmidi
+    - pugixml
+    - python
+    - qt6-base
+    - rapidjson
+    - sdl2_ttf
+  options:
+    - '!debug'
+    - '!lto'
+  source:
+    - git+https://github.com/mamedev/mame#tag=mame0287?signed
+    - mame.desktop
+    - mame.sh
+    - mame.svg
+    - lua-5.5.patch
+  validpgpkeys:
+    - D0362DB01844E0433ADBBFBAC174B1018C40710E
+  sha256sums:
+    - 5cc8f275f2156c8ab73e3e658a582cb9f729bd4db7771e40f969309ec31f8398
+    - 0e5e93f84673c2d17a1bf7a6b256cfa54ef89a086a828df19bc054c12776d821
+    - ee1c59bafc5e5441e99fa4c58108a3e18048e60672f34de865c8a5a976094dba
+    - 17c442c933d764175e4ce1de50a80c0c2ddd5d733caf09c3cd5e6ba697ac43f4
+    - 714e4ae47bfb9a3d3d477a41ed86b3b9848610a3b3511c53d87bf4b73b1f877a
+pkgname:
+  - name: mame
+    depends:
+      - expat
+      - flac
+      - fontconfig
+      - libgcc
+      - glibc
+      - libglvnd
+      - libjpeg-turbo
+      - libpulse
+      - libutf8proc
+      - libx11
+      - libxi
+      - lua
+      - portaudio
+      - portmidi
+      - pugixml
+      - qt6-base
+      - sdl2
+      - sdl2_ttf
+      - sh
+      - sqlite
+      - zlib
+      - zstd
+    conflicts:
+      - sdlmame
+    replaces:
+      - sdlmame
+  - name: mame-tools
+    pkgdesc: Port of the popular Multiple Arcade Machine Emulator using SDL with OpenGL support (tools)
+    depends:
+      - flac
+      - glibc
+      - libgcc
+      - libutf8proc
+      - sdl2
+      - zlib
+      - zstd
+# generated with artixpkg 0.38.5-1-any
