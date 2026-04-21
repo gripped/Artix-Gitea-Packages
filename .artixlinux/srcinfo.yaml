@@ -1,0 +1,92 @@
+---
+version: 146.0.11-1
+pkgbase:
+  name: cef
+  pkgdesc: Chromium Embedded Framework (CEF), simple framework for embedding Chromium-based browsers in other applications
+  pkgver: 146.0.11
+  pkgrel: 1
+  url: https://chromiumembedded.github.io/cef
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - clang
+    - compiler-rt
+    - git
+    - gn
+    - gperf
+    - java-runtime-headless
+    - lld
+    - ninja
+    - nodejs
+    - npm
+    - pipewire
+    - python
+    - python-httplib2
+    - python-pyparsing
+    - python-six
+    - rsync
+    - rust
+    - rust-bindgen
+    - libxtst
+  depends:
+    - alsa-lib
+    - at-spi2-core
+    - dbus
+    - libdrm
+    - libffi
+    - libpulse
+    - libxcomposite
+    - libxdamage
+    - libxkbcommon
+    - libxrandr
+    - mesa
+    - nss
+    - pango
+    - fontconfig
+    - brotli
+    - libjpeg-turbo
+    - flac
+    - libxml2
+    - libwebp
+    - minizip
+    - opus
+    - harfbuzz
+    - libxslt
+    - freetype2
+  options:
+    - '!lto'
+  source:
+    - chromium-146.0.7680.179-lite.tar.xz::https://commondatastorage.googleapis.com/chromium-browser-official/chromium-146.0.7680.179-lite.tar.xz
+    - cef::git+https://github.com/chromiumembedded/cef.git#commit=3a0fcf1e1b6249b50c96ac77c429bfefade09d96
+    - chromium-138-nodejs-version-check.patch
+    - chromium-145-fix-SYS_SECCOMP.patch
+    - chromium-146-drop-unknown-clang-flag.patch
+    - chromium-146-apply-upstream-libmuck-fix.patch
+    - chromium-146-build-with-wasm-rollup.patch
+    - compiler-rt-adjust-paths.patch
+    - increase-fortify-level.patch
+    - glibc-2.42-baud-rate-fix.patch
+    - cef-no-sysroot.patch
+    - cef-no-libxml-visibility-patch.patch
+    - chromium-disable-font-tests.patch
+    - FindCEF.cmake
+  sha256sums:
+    - 16800d0b92057f0014cbfb91c88bd66206c7624e3a8634a90dd6c87f37f20f58
+    - 581a6caa3a46349c49cdbefe9900995e3a96a37776ca6c8a913a9adbcc72a71b
+    - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
+    - 4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e
+    - 24535c314c7e70c52bcf409aaf604728bfc5b5c97e60087e630e1f7233b9e12d
+    - 06299959918481caf2c27bcb1841088967d9855acc22970ffcaa75e0cb218f0e
+    - 45fa20cc27ef0aa00d654d0bac84bfaa8d8090b5f8aec49cc2e8d7249d3cd7ba
+    - ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863
+    - d634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342
+    - 1c1898f263eaacbc069a8e1a3e732852350350d1dad4cb1a6bba430e3b796cd0
+    - cdc046c3da5a57dae8fba0de49cadbe65d4f8fbfffb172f7a768222232595faa
+    - 6695d7bcac489f74b8290a05dac540c2b5c5fed997ee119ae05419d36509445d
+    - 44dcc0da55a8c6c6af875addcfb9c552c722b56a31479eb7d99f16d0a27f4ebb
+    - e576250c4d0f3dd307bd22c6d4f9f7aba54fdf4d5899520c0bd1c3527aec65ed
+pkgname:
+  - name: cef
+# generated with artixpkg 0.38.5-1-any
