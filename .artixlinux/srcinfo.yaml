@@ -1,10 +1,10 @@
 ---
-version: 0.6.0-3
+version: 0.6.0-4
 pkgbase:
   name: libqaccessibilityclient
   pkgdesc: Helper library to make writing accessibility tools easier
   pkgver: 0.6.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.kde.org
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
   depends:
+    - at-spi2-core
     - glibc
     - libstdc++
     - qt6-base
