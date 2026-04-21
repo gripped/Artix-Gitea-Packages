@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.3.11-1
+    packages:
+      - fftw-3.3.11-1-x86_64.pkg.tar.zst
+      - fftw-openmpi-3.3.11-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.3.10-8
