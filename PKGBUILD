@@ -5,8 +5,8 @@
 # Contributor: Richard Bradfield <bradfier@fstab.me>
 
 pkgname=github-cli
-pkgver=2.90.0
-pkgrel=1
+pkgver=2.91.0
+pkgrel=3
 pkgdesc="The GitHub CLI"
 arch=("x86_64")
 url="https://github.com/cli/cli"
@@ -16,8 +16,10 @@ makedepends=("go" "git")
 checkdepends=("openssh")
 optdepends=("git: To interact with repositories"
             "org.freedesktop.secrets: Store credentials in system keyring")
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('87a6a3b3df1155e9d253ec6ae273d9e018773498b7ce7570f896a7cb75b64e39')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
+        "$url/commit/cb2509cb612cf9111a12a7960afd10b0c9d2dede.patch")
+sha256sums=('6409f89e1b8a69347fbdfea4b60cb78d4c58217c3d96c858ce0eb8b0ae853b59'
+            'f5c78941435a2cd7581b3ccc7f7c1f6db17e2e910bb6b87d1693ccb19ec0e7aa')
 
 prepare() {
     cd "cli-${pkgver}"
@@ -26,6 +28,8 @@ prepare() {
     # Drop tests that invoking 3rd party server processes
     rm pkg/cmd/search/shared/shared_test.go \
        internal/codespaces/rpc/invoker_test.go
+    # TODO: as-yet unmerged telemetry patch, see https://github.com/cli/cli/issues/13260
+    patch -p1 -i ../cb2509cb612cf9111a12a7960afd10b0c9d2dede.patch
 }
 
 build() {
@@ -36,6 +40,7 @@ build() {
     export CGO_CXXFLAGS="${CXXFLAGS}"
     export CGO_LDFLAGS="${LDFLAGS}"
     export GOFLAGS='-buildmode=pie -trimpath -mod=readonly -modcacherw'
+    export GO_BUILDTAGS='noupdateable,notelemetry'
 
     make GH_VERSION="v$pkgver" bin/gh manpages
     bin/gh completion -s bash | install -Dm0644 /dev/stdin share/bash-completion/completions/gh
