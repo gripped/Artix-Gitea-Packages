@@ -1,0 +1,54 @@
+---
+version: 0.10.0-2
+pkgbase:
+  name: kup
+  pkgdesc: A backup software for helping people to keep up-to-date backups
+  pkgver: 0.10.0
+  pkgrel: 2
+  url: https://apps.kde.org/kup/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+    - GPL-2.0-or-later
+    - GPL-3.0-only
+  makedepends:
+    - extra-cmake-modules
+    - git
+  depends:
+    - gcc-libs
+    - glibc
+    - kcmutils
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kdbusaddons
+    - ki18n
+    - kidletime
+    - kio
+    - kirigami
+    - kjobwidgets
+    - knotifications
+    - kwidgetsaddons
+    - kxmlgui
+    - libgit2
+    - libplasma
+    - plasma5support
+    - qt6-base
+    - qt6-declarative
+    - solid
+  optdepends:
+    - 'bup: bup backend'
+    - 'rsync: support for synced backups'
+  source:
+    - https://download.kde.org/stable/kup/kup-0.10.0.tar.xz
+    - https://download.kde.org/stable/kup/kup-0.10.0.tar.xz.sig
+  validpgpkeys:
+    - CBA1DCD0B06A2B2E9B133E5C5C7D83CE9812E291
+  sha256sums:
+    - ac58f3f789973cac5f2b70a81683294e90f7f84fa3b399116b398bca6eff1b0a
+    - SKIP
+pkgname:
+  - name: kup
+# generated with artixpkg 0.38.5-1-any

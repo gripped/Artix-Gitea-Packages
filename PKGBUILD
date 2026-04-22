@@ -1,0 +1,56 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: XavierCLL <xavier.corredor.llano (a) gmail.com>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+# PKGBUILD base; Simper < simonpersson1 AT gmail DOT com >
+
+pkgname=kup
+pkgver=0.10.0
+pkgrel=2
+pkgdesc='A backup software for helping people to keep up-to-date backups'
+arch=(x86_64)
+url='https://apps.kde.org/kup/'
+license=(GPL-2.0-only
+         GPL-2.0-or-later
+         GPL-3.0-only)
+depends=(gcc-libs
+         glibc
+         kcmutils
+         kcompletion
+         kconfig
+         kconfigwidgets
+         kcoreaddons
+         kdbusaddons
+         ki18n
+         kidletime
+         kio
+         kirigami
+         kjobwidgets
+         knotifications
+         kwidgetsaddons
+         kxmlgui
+         libgit2
+         libplasma
+         plasma5support
+         qt6-base
+         qt6-declarative
+         solid)
+makedepends=(extra-cmake-modules
+             git)
+optdepends=('bup: bup backend'
+            'rsync: support for synced backups')
+source=(https://download.kde.org/stable/kup/kup-$pkgver.tar.xz{,.sig})
+sha256sums=('ac58f3f789973cac5f2b70a81683294e90f7f84fa3b399116b398bca6eff1b0a'
+            'SKIP')
+validpgpkeys=(CBA1DCD0B06A2B2E9B133E5C5C7D83CE9812E291)
+
+build() {
+  cmake -B build -S $pkgname-$pkgver \
+    -DBUILD_TESTING=OFF \
+    -DQT_MAJOR_VERSION=6
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+}
