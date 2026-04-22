@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: David Moore <davidm@sjsoft.com>
 
 pkgname=aqbanking
 pkgver=6.9.1
-pkgrel=2
+pkgrel=3
 pkgdesc="A library for online banking and financial applications"
 arch=('x86_64')
 url="https://www.aquamaniac.de/rdm/projects/aqbanking"
