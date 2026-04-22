@@ -1,9 +1,9 @@
 ---
-version: 3.5.18-1
+version: 3.5.19-1
 pkgbase:
   name: libxpm
   pkgdesc: X11 pixmap library
-  pkgver: 3.5.18
+  pkgver: 3.5.19
   pkgrel: 1
   url: https://xorg.freedesktop.org/
   arch:
@@ -12,6 +12,7 @@ pkgbase:
     - MIT
     - X11-distribute-modifications-variant
   makedepends:
+    - git
     - xorg-util-macros
   depends:
     - libxt
@@ -19,13 +20,11 @@ pkgbase:
     - libx11
     - glibc
   source:
-    - https://xorg.freedesktop.org//releases/individual/lib/libXpm-3.5.18.tar.xz
-    - https://xorg.freedesktop.org//releases/individual/lib/libXpm-3.5.18.tar.xz.sig
+    - git+https://gitlab.freedesktop.org/xorg/lib/libxpm.git?signed#tag=libXpm-3.5.19
   validpgpkeys:
-    - 3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2
+    - 67DC86F2623FC5FD4BB5225D14706DBE1E4B4540
   sha512sums:
-    - ced907c984cb9735948da82a69e33ef09421fee2e6f24178a2cca683a5425e48e3fa9d771bf82bc80b78e6dedf485d464563d91c0395a71f13502d0f7599f40e
-    - SKIP
+    - de3a50b56f69d011ab297ee1d8c97c1b6c9fcd180c3602ce23a0957f77395dd64c0c21568034030886a1103b09bc868776af4de7342c4721b8d08d846234cd7e
 pkgname:
   - name: libxpm
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.5-1-any
