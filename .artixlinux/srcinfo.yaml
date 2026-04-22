@@ -27,4 +27,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: qt5-location
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
