@@ -1,10 +1,10 @@
 ---
-version: 2.6.14-2.1
+version: 2.6.14-3
 pkgbase:
   name: oath-toolkit
   pkgdesc: OATH one-time password toolkit
   pkgver: 2.6.14
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://oath-toolkit.codeberg.page/
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: oath-toolkit
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
