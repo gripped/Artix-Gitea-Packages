@@ -1,9 +1,9 @@
 ---
-version: 0.232.3-1
+version: 0.233.5-1
 pkgbase:
   name: zed
   pkgdesc: A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
-  pkgver: 0.232.3
+  pkgver: 0.233.5
   pkgrel: 1
   url: https://zed.dev
   arch:
@@ -26,12 +26,16 @@ pkgbase:
     - curl
     - libcurl.so
     - fontconfig
+    - glib2
+    - libgio-2.0.so
+    - libglib-2.0.so
+    - libgobject-2.0.so
     - glibc
     - libgcc
     - libgcc_s.so
     - libstdc++
     - libstdc++.so
-    - libxcb
+    - libx11
     - libxkbcommon
     - libxkbcommon-x11
     - nodejs>=18
@@ -41,6 +45,7 @@ pkgbase:
     - libcrypto.so
     - libssl.so
     - sqlite
+    - libsqlite3.so
     - vulkan-driver
     - vulkan-icd-loader
     - vulkan-tools
@@ -58,9 +63,9 @@ pkgbase:
   replaces:
     - zed-editor
   source:
-    - https://github.com/zed-industries/zed/archive/v0.232.3/zed-0.232.3.tar.gz
+    - https://github.com/zed-industries/zed/archive/v0.233.5/zed-0.233.5.tar.gz
   sha256sums:
-    - 096a12b6ccfdf07f1d57c2a039dfb17df8f151acba6ac7a1f710f2d55dfc73b6
+    - 7e3317885820a1c1de619b157278fcfefc0ef6a8564718318d396b813873f370
 pkgname:
   - name: zed
 # generated with artixpkg 0.38.5-1-any
