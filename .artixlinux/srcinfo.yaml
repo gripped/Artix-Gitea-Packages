@@ -1,9 +1,9 @@
 ---
-version: 7.2.6-1
+version: 7.2.8-1
 pkgbase:
   name: virtualbox-guest-iso
   pkgdesc: The official VirtualBox Guest Additions ISO image
-  pkgver: 7.2.6
+  pkgver: 7.2.8
   pkgrel: 1
   url: https://www.virtualbox.org/
   install: virtualbox-guest-iso.install
@@ -11,6 +11,8 @@ pkgbase:
     - any
   license:
     - GPL-3.0-only
+  depends:
+    - bash
   conflicts:
     - virtualbox-additions
     - virtualbox-iso-additions
@@ -18,11 +20,11 @@ pkgbase:
     - virtualbox-additions
     - virtualbox-iso-additions
   noextract:
-    - VBoxGuestAdditions_7.2.6.iso
+    - VBoxGuestAdditions_7.2.8.iso
   source:
-    - https://download.virtualbox.org/virtualbox/7.2.6/VBoxGuestAdditions_7.2.6.iso
+    - https://download.virtualbox.org/virtualbox/7.2.8/VBoxGuestAdditions_7.2.8.iso
   sha256sums:
-    - 740e9a729c944180a165188fd426f9a2e1a2581d654402a1b856f9755a1ffc97
+    - 169acb9361ade42d32500f51b48ad366fdfdb094b5e3fb422d640c1416a6b216
 pkgname:
   - name: virtualbox-guest-iso
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
