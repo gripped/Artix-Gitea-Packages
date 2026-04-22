@@ -4,29 +4,26 @@
 
 pkgname=zed
 pkgver=0.233.5
-pkgrel=1
+pkgrel=2
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
 url=https://zed.dev
 _url="https://github.com/zed-industries/$pkgname"
 license=(GPL-3.0-or-later AGPL-3.0-or-later Apache-2.0)
 depends=(alsa-lib libasound.so
-         curl libcurl.so
+         curl
          fontconfig
          glib2 libgio-2.0.so libglib-2.0.so libgobject-2.0.so
-         glibc # libc.so libm.so
+         glibc # libc.so libm.so ld-linux-x86_64.so
          libgcc libgcc_s.so
-         # libgit2 libgit2.so
          libstdc++ libstdc++.so
-         # libxau libXau.so
-         # libxdmcp libXdmcp.so
+         libxcb # libxcb.so libxcb-xkb.so
          libx11 # libX11-xcb.so
-         libxkbcommon # libxkbcommon.so
-         libxkbcommon-x11 # libxkbcommon-x11.so
-         'nodejs>=18'
+         libxkbcommon libxkbcommon.so
+         libxkbcommon-x11 libxkbcommon-x11.so
          netcat
+         'nodejs>=18'
          npm
-         openssl libcrypto.so libssl.so
          sqlite libsqlite3.so
          vulkan-driver
          vulkan-icd-loader
