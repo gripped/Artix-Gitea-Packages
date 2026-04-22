@@ -3,7 +3,7 @@
 
 pkgname=river-classic
 pkgver=0.3.15
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A dynamic tiling wayland compositor"
 arch=('x86_64')
 url="https://codeberg.org/river/river-classic"
