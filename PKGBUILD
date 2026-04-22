@@ -1,0 +1,92 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Contributor: Andrea Feletto <andrea@andreafeletto.com>
+
+pkgname=river-classic
+pkgver=0.3.15
+pkgrel=1
+pkgdesc="A dynamic tiling wayland compositor"
+arch=('x86_64')
+url="https://codeberg.org/river/river-classic"
+license=('GPL-3.0-or-later')
+depends=('glibc'
+  'libevdev'
+  'libinput'
+  'libxkbcommon'
+  'mesa'
+  'pixman'
+  'sh'
+  'wayland'
+  'wlroots0.20'
+  'xorg-xwayland')
+makedepends=('git'
+  'scdoc'
+  'wayland-protocols'
+  'zig')
+optdepends=('polkit: access seat through systemd-logind')
+provides=('wayland-compositor')
+conflicts=('river')
+source=(git+https://codeberg.org/river/river-classic.git#tag=v${pkgver}?signed)
+# PACKAGING.md -> build.zig.zon
+source+=(zig-pixman-v0.3.0.tar.gz::https://codeberg.org/ifreund/zig-pixman/archive/v0.3.0.tar.gz
+  zig-wayland-v0.4.0.tar.gz::https://codeberg.org/ifreund/zig-wayland/archive/v0.4.0.tar.gz
+  zig-wlroots-v0.20.0.tar.gz::https://codeberg.org/ifreund/zig-wlroots/archive/v0.20.0.tar.gz
+  zig-xkbcommon-v0.3.0.tar.gz::https://codeberg.org/ifreund/zig-xkbcommon/archive/v0.3.0.tar.gz)
+noextract=("${source[@]:1}")
+validpgpkeys=('5FBDF84DD2278DB2B8AD8A5286DED400DDFD7A11') # Isaac Freund <mail@isaacfreund.com>
+sha256sums=('137484721880e8c2ba7a69778342923227c485c3c9f211d145c45abc7d428bec'
+  'cd7fe3415d4d58685a94fdedd308e9994a37f012828940cfb603461de7f2c6ad'
+  '907fdd18c7ede1ab1f249c618ba5dce3b8a72c26e50090b4ae7010033a419ba9'
+  '75af3510386c639582693d01788579abde4dca9ce1ae6703c1e877ec8123d106'
+  '1e185423e6b23ed9729614e66751ab7522db4487df4e0dcc7a2b06375aacda23')
+
+prepare() {
+  zig fetch --global-cache-dir ./zig-global-cache "./${source[1]%%::*}"
+  zig fetch --global-cache-dir ./zig-global-cache "./${source[2]%%::*}"
+  zig fetch --global-cache-dir ./zig-global-cache "./${source[3]%%::*}"
+  zig fetch --global-cache-dir ./zig-global-cache "./${source[4]%%::*}"
+}
+
+build() {
+  cd $pkgname
+
+  DESTDIR="build" zig build \
+    --summary all \
+    --prefix /usr \
+    --search-prefix /usr \
+    --global-cache-dir ../zig-global-cache \
+    --system ../zig-global-cache/p \
+    --build-id=sha1 \
+    -Dtarget=native-linux.6.6-gnu.2.40 \
+    -Dcpu=baseline \
+    -Dpie \
+    -Doptimize=ReleaseSafe \
+    -Dxwayland
+}
+
+check() {
+  cd $pkgname
+  zig build test \
+    --summary all \
+    --prefix /usr \
+    --search-prefix /usr \
+    --global-cache-dir ../zig-global-cache \
+    --system ../zig-global-cache/p \
+    --build-id=sha1 \
+    -Dtarget=native-linux.6.6-gnu.2.40 \
+    -Dcpu=baseline \
+    -Dpie \
+    -Doptimize=ReleaseSafe \
+    -Dxwayland
+}
+
+package() {
+  cd $pkgname
+
+  cp -a build/* "$pkgdir"
+
+  install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
+  install -Dm644 contrib/river.desktop -t "$pkgdir/usr/share/wayland-sessions"
+
+  install -d "$pkgdir/usr/share/$pkgname"
+  cp -a example "$pkgdir/usr/share/$pkgname"
+}
