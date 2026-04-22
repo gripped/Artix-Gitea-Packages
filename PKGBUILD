@@ -3,7 +3,7 @@
 # Contributor: Yigit Sever <yigit at yigitsever dot com>
 
 pkgname=ouch
-pkgver=0.7.0
+pkgver=0.7.1
 pkgrel=1
 pkgdesc="A command line utility for easily compressing and decompressing files and directories"
 arch=('x86_64')
@@ -13,12 +13,12 @@ depends=('xz' 'bzip2' 'zlib')
 makedepends=('cargo' 'clang' 'cmake')
 checkdepends=('git')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('cbcfbc41cabfaa562dd7f8ca556f981d85612d3b1d457c00ea1b1ee59e19fb79')
+sha256sums=('9dadaa3340972347c39e0047668af0e2c59c6128470eeb3fdf86629a3b298443')
 options=('!lto')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
-  cargo fetch --locked --target "$(rustc --print host-tuple)"
+  cargo fetch --target "$(rustc --print host-tuple)" # --locked
 }
 
 build() {
