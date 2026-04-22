@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Christian Hesse <eworm@archlinux.org>
+# Maintainer: Christian Hesse <eworm@archlinux.org>
 # Contributor: Sébastien "Seblu" Luttringer
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
@@ -10,9 +9,9 @@ pkgname=('virtualbox'
          'virtualbox-guest-utils-nox'
          'virtualbox-host-dkms'
          'virtualbox-sdk')
-pkgver=7.2.6
+pkgver=7.2.8
 _tarver=${pkgver}
-pkgrel=4
+pkgrel=1
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL-3.0-only AND (GPL-3.0-only OR CDDL-1.0)')
@@ -70,7 +69,7 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '013-support-building-from-dkms.patch'
         '018-upate-xclient-script.patch'
         '020-python-3-12.patch')
-sha256sums=('c58443a0e6fcc7fc7e84c1011a10823b3540c6a2b8f2e27c4d8971272baf09f7'
+sha256sums=('0642ed4a12b7204cd30c0abbc2c10c1cc7ad55ce1756a01e86a16d4b6b066592'
             'f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04'
             '07fe5c8b313cd7f01505eb9721357269a288ccd0c04e6467afb954038d6f46df'
             '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
@@ -237,7 +236,7 @@ package_virtualbox() {
     install -D -m0644 VirtualBox-${pkgver}/COPYING "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -D -m0644 VirtualBox-${pkgver}/COPYING.CDDL "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
 
-    # install systemd stuff
+    # install udev stuff
     install -D -m0644 60-vboxdrv.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxdrv.rules"
     install -D -m0644 virtualbox.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox.conf"
 
@@ -300,7 +299,7 @@ package_virtualbox-guest-utils() {
         "${pkgdir}"/etc/xdg/autostart/vboxclient.desktop
     install -m0755 -D pam_vbox.so "${pkgdir}/usr/lib/security/pam_vbox.so"
     popd
-    # systemd stuff
+    # udev stuff
     install -D -m0644 60-vboxguest.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxguest.rules"
     install -D -m0644 virtualbox-guest-utils.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
@@ -325,7 +324,7 @@ package_virtualbox-guest-utils-nox() {
     install -m0755 VBoxControl VBoxService "${pkgdir}/usr/bin"
     install -m0755 -D pam_vbox.so "${pkgdir}/usr/lib/security/pam_vbox.so"
     popd
-    # systemd stuff
+    # udev stuff
     install -D -m0644 60-vboxguest.rules "${pkgdir}/usr/lib/udev/rules.d/60-vboxguest.rules"
     install -D -m0644 virtualbox-guest-utils.sysusers "${pkgdir}/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
     # licence
@@ -354,7 +353,7 @@ package_virtualbox-host-dkms() {
         "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
     install -D -m0644 "${srcdir}/VirtualBox-${pkgver}/COPYING.CDDL" \
         "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.CDDL"
-    # systemd module loading
+    # kernel module loading
     printf '%s\n' vboxdrv vboxnetadp vboxnetflt |
       install -D -m0644 /dev/stdin "${pkgdir}/usr/lib/modules-load.d/${pkgname}.conf"
     # dkms configuration file
