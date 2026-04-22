@@ -1,0 +1,65 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+
+pkgname=halloy
+pkgver=2026.5
+pkgrel=1
+pkgdesc='An open-source IRC client'
+arch=(x86_64)
+url='https://halloy.chat'
+license=(GPL-3.0-or-later)
+depends=(
+  alsa-lib
+  libgcc
+  glibc
+  hicolor-icon-theme
+  openssl
+  libxcb
+  sqlite
+)
+makedepends=(
+  git
+  rust
+)
+options=(!lto)
+source=("$pkgname::git+https://github.com/squidowl/halloy#tag=$pkgver")
+sha512sums=('d488c500ab9d5be1a807610a4a6ecfb3de1e417ae9222134e09509b52120a4e3e86943fe2d1c78d280848ba9a02de34ade06e2630edaef10e7fecfa526eaae35')
+b2sums=('2157b4790f046134549d710429a8d0fdf2dbfb2005768ef23e28c93a8c40ebca695c81cd16c3a70c43a611a94b894fa3c662da553a00faa4cde42825b0213a75')
+
+prepare() {
+  cd "$pkgname"
+
+  # download dependencies
+  cargo fetch --locked --target $(rustc --print host-tuple)
+}
+
+build() {
+  cd "$pkgname"
+
+  LIBSQLITE3_SYS_USE_PKG_CONFIG=1 cargo build --frozen --release --all-features
+}
+
+check() {
+  cd "$pkgname"
+
+  LIBSQLITE3_SYS_USE_PKG_CONFIG=1 cargo test --frozen --all-features
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" target/release/halloy
+
+  # desktop files
+  pushd assets/linux
+  install -vDm644 -t "$pkgdir/usr/share/metainfo" org.squidowl.halloy.appdata.xml
+  install -vDm644 -t "$pkgdir/usr/share/applications" org.squidowl.halloy.desktop
+  cp -vr icons "$pkgdir/usr/share"
+  popd
+
+  # documentation
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
