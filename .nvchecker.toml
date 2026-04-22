@@ -1,0 +1,5 @@
+[satty]
+source = "git"
+git = "https://github.com/gabm/Satty"
+prefix = "v"
+

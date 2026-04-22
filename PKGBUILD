@@ -1,0 +1,58 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+
+pkgname=satty
+pkgver=0.20.1
+pkgrel=1
+pkgdesc="Modern screenshot annotation tool, inspired by Swappy and Flameshot"
+arch=(x86_64)
+url="https://github.com/gabm/satty"
+license=(MPL-2.0)
+depends=(
+  fontconfig
+  gdk-pixbuf2
+  glib2
+  glibc
+  gtk4
+  hicolor-icon-theme
+  libadwaita
+  libgcc
+  pango
+)
+makedepends=(
+  cargo
+  git
+)
+source=("$pkgname::git+$url.git#tag=v$pkgver")
+b2sums=('c97f8bc8144f070fcf2ea1b01a62989150932010a5176bee35bc74dd757a722dc40eaca8f3a1e9b8c8c020d50739d300c5bd11c54478a53d3c4f9bbf43467d69')
+
+prepare() {
+  cd $pkgname
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+  cd $pkgname
+  cargo build --frozen --release --all-features
+}
+
+package() {
+  cd $pkgname
+  install -vDm755 -t "$pkgdir/usr/bin" target/release/satty
+
+  install -vDm644 completions/_satty \
+    "$pkgdir/usr/share/zsh/site-functions/_satty"
+  install -vDm644 completions/satty.bash \
+    "$pkgdir/usr/share/bash-completion/completions/satty"
+  install -vDm644 completions/satty.fish \
+    "$pkgdir/usr/share/fish/vendor_completions.d/satty.fish"
+  install -vDm644 completions/satty.nu \
+    "$pkgdir/usr/share/nushell/completions/satty.nu"
+  install -vDm644 completions/satty.elv \
+    "$pkgdir/usr/share/elvish/lib/satty.elv"
+
+  install -vDm644 -t "$pkgdir/usr/share/applications" satty.desktop
+  install -vDm644 -t "$pkgdir/usr/share/icons/hicolor/scalable/apps" assets/satty.svg
+
+  install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
+  cp -va -t "$pkgdir/usr/share/doc/$pkgname" assets
+}
