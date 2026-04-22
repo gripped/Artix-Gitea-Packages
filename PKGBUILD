@@ -2,7 +2,7 @@
 # Contributor: Andrea Feletto <andrea@andreafeletto.com>
 
 pkgname=river-classic
-pkgver=0.3.15-1
+pkgver=0.3.15
 pkgrel=1
 pkgdesc="A dynamic tiling wayland compositor"
 arch=('x86_64')
