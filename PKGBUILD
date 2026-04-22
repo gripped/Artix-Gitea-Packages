@@ -2,7 +2,7 @@
 
 pkgname=satty
 pkgver=0.20.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Modern screenshot annotation tool, inspired by Swappy and Flameshot"
 arch=(x86_64)
 url="https://github.com/gabm/satty"
