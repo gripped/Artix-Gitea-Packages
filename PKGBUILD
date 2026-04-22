@@ -48,7 +48,7 @@ sha256sums=('5cc8f275f2156c8ab73e3e658a582cb9f729bd4db7771e40f969309ec31f8398'
             '714e4ae47bfb9a3d3d477a41ed86b3b9848610a3b3511c53d87bf4b73b1f877a')
 options=(!debug
          !lto) # debug build fails
-#validpgpkeys=(D0362DB01844E0433ADBBFBAC174B1018C40710E) # Vas Crabb <vas@vastheman.com>
+validpgpkeys=(D0362DB01844E0433ADBBFBAC174B1018C40710E) # Vas Crabb <vas@vastheman.com>
 
 prepare() {
   cd mame
