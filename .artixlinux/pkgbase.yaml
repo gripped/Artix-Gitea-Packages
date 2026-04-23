@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,12 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 202602-3
+    packages:
+      - edk2-aarch64-202602-3-any.pkg.tar.zst
+      - edk2-riscv64-202602-3-any.pkg.tar.zst
+      - edk2-shell-202602-3-any.pkg.tar.zst
+      - edk2-ovmf-202602-3-any.pkg.tar.zst
     debug: []
   world:
     version: 202602-2
