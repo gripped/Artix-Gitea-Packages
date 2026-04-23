@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 65.16.0-1
+    version: 65.16.1-1
     packages:
-      - python-django-allauth-65.16.0-1-any.pkg.tar.zst
+      - python-django-allauth-65.16.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 65.15.1-1
