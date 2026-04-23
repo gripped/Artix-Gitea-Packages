@@ -1,0 +1,39 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Contributor: dec05eba <dec05eba@protonmail.com>
+
+pkgname=gpu-screen-recorder-notification
+pkgver=1.2.1
+pkgrel=1
+pkgdesc='Notification in the style of ShadowPlay'
+arch=(x86_64)
+url="https://git.dec05eba.com/gpu-screen-recorder-notification"
+license=(GPL-3.0-only)
+makedepends=(
+  git
+  meson
+)
+depends=(
+  glibc
+  gcc-libs
+  libglvnd
+  libx11
+  libxrandr
+  libxrender
+  libxext
+  wayland
+  pango
+  freetype2
+)
+source=(git+https://repo.dec05eba.com/gpu-screen-recorder-notification#tag=${pkgver})
+sha512sums=('ce6dc25760d74f3b17dfec3d4970ad5a79f8403adaca6910b0e1feed0588f07e0d9b0e0135b0d7097fe1a92f7cd251e8e9ce54d950d4e3c08dc410f46de3d674')
+
+build() {
+  cd "$srcdir"/$pkgname
+  arch-meson build --buildtype=release -Dstrip=true
+  meson compile -C build
+}
+
+package() {
+  cd "$srcdir"/$pkgname
+  meson install -C build --destdir "$pkgdir"
+}

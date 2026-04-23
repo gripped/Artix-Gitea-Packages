@@ -1,0 +1,33 @@
+---
+version: 1.2.1-1
+pkgbase:
+  name: gpu-screen-recorder-notification
+  pkgdesc: Notification in the style of ShadowPlay
+  pkgver: 1.2.1
+  pkgrel: 1
+  url: https://git.dec05eba.com/gpu-screen-recorder-notification
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - meson
+  depends:
+    - glibc
+    - gcc-libs
+    - libglvnd
+    - libx11
+    - libxrandr
+    - libxrender
+    - libxext
+    - wayland
+    - pango
+    - freetype2
+  source:
+    - git+https://repo.dec05eba.com/gpu-screen-recorder-notification#tag=1.2.1
+  sha512sums:
+    - ce6dc25760d74f3b17dfec3d4970ad5a79f8403adaca6910b0e1feed0588f07e0d9b0e0135b0d7097fe1a92f7cd251e8e9ce54d950d4e3c08dc410f46de3d674
+pkgname:
+  - name: gpu-screen-recorder-notification
+# generated with artixpkg 0.38.5-1-any
