@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-testresources
-pkgver=2.1.1
+pkgver=2.1.2
 pkgrel=1
 pkgdesc="Testresources, a pyunit extension for managing expensive test resources"
 arch=('any')
@@ -11,7 +11,7 @@ depends=('python')
 makedepends=('git' 'python-build' 'python-hatch-vcs' 'python-hatchling' 'python-installer' 'python-wheel')
 checkdepends=('python-fixtures' 'python-testtools')
 source=("git+https://github.com/testing-cabal/testresources.git#tag=$pkgver")
-sha512sums=('821e7f9b991a4b9a52ba7552fb86deb4cf257ec2faf68fe773326b049e866f7d83af0faf2426782aa6102eaef073ea8e83998c976316d5e8bd19d4f8edde965b')
+sha512sums=('13bb908d0984f6d522d8370ecb2a30e190fbca0b3d371c313c75607dcc22709e93c611e73eb93138ac8c36b99b080b2981d509d326ec2b9cb235aec76e851976')
 
 build() {
   cd testresources
