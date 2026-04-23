@@ -1,0 +1,5 @@
+[autotiling]
+source = "git"
+git = "https://github.com/nwg-piotr/autotiling.git"
+prefix = "v"
+
