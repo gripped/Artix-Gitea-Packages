@@ -11,7 +11,7 @@
 
 pkgver=39.5.2
 _gcc_patches=142
-pkgrel=2
+pkgrel=3
 _major_ver=${pkgver%%.*}
 pkgname="electron${_major_ver}"
 pkgdesc='Build cross platform desktop apps with web technologies'
@@ -411,7 +411,7 @@ declare -gA _system_libs=(
   [flac]="flac libFLAC.so"
   [fontconfig]="fontconfig libfontconfig.so"
   [freetype]="freetype2 libfreetype.so"
-  [harfbuzz - ng]="harfbuzz libharfbuzz.so libharfbuzz-subset.so"
+  [harfbuzz-ng]="harfbuzz libharfbuzz.so libharfbuzz-subset.so"
   # [icu]="icu libicui18n.so libicuuc.so" # disabled because ICU 76 not supported yet
   # [jsoncpp]="jsoncpp libjsoncpp.so"  # needs libstdc++
   # [libaom]=aom
@@ -609,30 +609,30 @@ build() {
   CXXFLAGS+=' -Wno-unknown-warning-option'
 
   # Let Chromium set its own symbol level
-  CFLAGS=${CFLAGS/-g /}
-  CXXFLAGS=${CXXFLAGS/-g /}
+  CFLAGS=${CFLAGS/-g }
+  CXXFLAGS=${CXXFLAGS/-g }
 
   # https://github.com/ungoogled-software/ungoogled-chromium-archlinux/issues/123
-  CFLAGS=${CFLAGS/-fexceptions/}
-  CFLAGS=${CFLAGS/-fcf-protection/}
-  CXXFLAGS=${CXXFLAGS/-fexceptions/}
-  CXXFLAGS=${CXXFLAGS/-fcf-protection/}
+  CFLAGS=${CFLAGS/-fexceptions}
+  CFLAGS=${CFLAGS/-fcf-protection}
+  CXXFLAGS=${CXXFLAGS/-fexceptions}
+  CXXFLAGS=${CXXFLAGS/-fcf-protection}
 
   # This appears to cause random segfaults when combined with ThinLTO
   # https://bugs.archlinux.org/task/73518
-  CFLAGS=${CFLAGS/-fstack-clash-protection/}
-  CXXFLAGS=${CXXFLAGS/-fstack-clash-protection/}
+  CFLAGS=${CFLAGS/-fstack-clash-protection}
+  CXXFLAGS=${CXXFLAGS/-fstack-clash-protection}
 
   # https://crbug.com/957519#c122
-  CXXFLAGS=${CXXFLAGS/-Wp,-D_GLIBCXX_ASSERTIONS/}
+  CXXFLAGS=${CXXFLAGS/-Wp,-D_GLIBCXX_ASSERTIONS}
 
   if [[ $CARCH == aarch64 ]]; then
     # On aarch64, certain files (e.g. in libvpx and libyuv) needs to be compiled
     # with additional arch features (e.g. dotprod, sve, sme)
     # Having an arch setting in the C(XX)FLAGS overrides those
     # and causes compilation failure
-    CFLAGS="${CFLAGS/-march=*([^ ]) /}"
-    CXXFLAGS="${CXXFLAGS/-march=*([^ ]) /}"
+    CFLAGS="${CFLAGS/-march=*([^ ]) }"
+    CXXFLAGS="${CXXFLAGS/-march=*([^ ]) }"
   fi
 
   export CHROMIUM_BUILDTOOLS_PATH="${PWD}/buildtools"
