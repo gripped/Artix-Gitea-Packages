@@ -1,0 +1,59 @@
+# Maintainer: Peter Jung <arc-d3v@artixlinux.org>
+# Contributor: dec05eba <dec05eba@protonmail.com>
+
+pkgname=gpu-screen-recorder
+pkgver=5.13.3
+pkgrel=1
+pkgdesc='A shadowplay-like screen recorder for Linux. The fastest screen recorder for Linux'
+arch=('x86_64')
+url="https://git.dec05eba.com/gpu-screen-recorder"
+license=('GPL-3.0-only')
+makedepends=(
+  meson
+  vulkan-headers
+  git
+)
+depends=(
+  bash
+  glibc
+  libstdc++
+  libgcc
+  ffmpeg
+  libglvnd
+  libxcomposite
+  libxrandr
+  libxfixes
+  libxdamage
+  libx11
+  libpulse
+  libva
+  libdrm
+  libcap
+  wayland
+  libpipewire
+  dbus
+  libjpeg-turbo
+)
+optdepends=(
+  'nvidia-utils: Required to record your screen on NVIDIA'
+  'libxnvctrl: Required when using the -oc option to overclock the NVIDIA GPU to workaround NVIDIA p2 state bug'
+  'mesa: Required to record your screen on AMD/Intel'
+  'libva-mesa-driver: Required to record your screen on AMD'
+  'libva-intel-driver: Required to record your screen on Intel G45 and HD Graphics family'
+  'intel-media-driver: Required to record your screen on Intel Broadwell or later iGPUs or Intel Arc'
+  'linux-firmware-intel: Required to record your screen on Intel Skylake or later iGPUs'
+)
+source=(git+https://repo.dec05eba.com/gpu-screen-recorder#tag=$pkgver)
+sha512sums=('b2afb907e7e969fe5ec147df071d67d8a730afd9ba5893488a26a786f8865ef5b9a82bfb59f9ecc21b030ad7accf524560c8e9d32419f5572114a1e2e9446e2d')
+
+build() {
+  cd "$srcdir"/$pkgname
+  arch-meson build -Dsystemd=true --buildtype=release -Dstrip=true
+  meson compile -C build
+}
+
+package() {
+  cd "$srcdir"/$pkgname
+  meson install -C build --destdir "$pkgdir"
+  setcap CAP_SYS_ADMIN=+ep "$pkgdir"/usr/bin/gsr-kms-server
+}
