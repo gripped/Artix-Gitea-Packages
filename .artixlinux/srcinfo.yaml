@@ -1,9 +1,9 @@
 ---
-version: 1.0.1-1
+version: 1.0.2-1
 pkgbase:
   name: limonp
   pkgdesc: C++ headers(hpp) library with Python style
-  pkgver: 1.0.1
+  pkgver: 1.0.2
   pkgrel: 1
   url: https://github.com/yanyiwu/limonp
   arch:
@@ -14,9 +14,9 @@ pkgbase:
     - cmake
     - git
   source:
-    - git+https://github.com/yanyiwu/limonp.git#tag=v1.0.1
+    - git+https://github.com/yanyiwu/limonp.git#tag=v1.0.2
   b2sums:
-    - 195e69b10b60bedd6fa447c11875dd0f339c93043d75952c4fe38a1ff928ccdbcca04c6d501a2a7d37e5eaf003a7ac26d7498f9edb8c39d5924a76876e6e3baf
+    - e182e6f85506d0985a3a20feb227475a5c6dc4a47d70d84d85d7a84f49461adc9ab01127edc178a031ac087a357e982a03a07814c55dd268c2d38ac08a5e04b3
 pkgname:
   - name: limonp
 # generated with artixpkg 0.38.5-1-any

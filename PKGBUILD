@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=limonp
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="C++ headers(hpp) library with Python style"
 arch=('any')
@@ -9,15 +9,11 @@ url="https://github.com/yanyiwu/limonp"
 license=('MIT')
 makedepends=('cmake' 'git')
 source=("git+https://github.com/yanyiwu/limonp.git#tag=v$pkgver")
-b2sums=('195e69b10b60bedd6fa447c11875dd0f339c93043d75952c4fe38a1ff928ccdbcca04c6d501a2a7d37e5eaf003a7ac26d7498f9edb8c39d5924a76876e6e3baf')
-
-prepare() {
-  cd limonp
-  sed -i '/^ADD_SUBDIRECTORY(test)$/d' CMakeLists.txt
-}
+b2sums=('e182e6f85506d0985a3a20feb227475a5c6dc4a47d70d84d85d7a84f49461adc9ab01127edc178a031ac087a357e982a03a07814c55dd268c2d38ac08a5e04b3')
 
 build() {
   cmake -B build -S limonp \
+    -DENABLE_UNIT_TESTS=OFF \
     -DCMAKE_INSTALL_PREFIX=/usr
   cmake --build build
 }
