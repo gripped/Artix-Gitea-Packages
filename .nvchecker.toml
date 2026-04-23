@@ -1,0 +1,5 @@
+[font-awesome]
+source = "git"
+git = "https://github.com/FortAwesome/Font-Awesome.git"
+prefix = "v"
+

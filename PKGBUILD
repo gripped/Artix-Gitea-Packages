@@ -1,0 +1,35 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Contributor: Alad Wenter <https://wiki.archlinux.org/index.php/Special:EmailUser/Alad>
+
+pkgbase=font-awesome
+_pkgbase=Font-Awesome
+pkgname=('woff2-font-awesome' 'otf-font-awesome')
+pkgver=7.2.0
+pkgrel=1
+pkgdesc="Iconic font designed for Bootstrap"
+url="https://fontawesome.com/"
+license=('LicenseRef-OFL')
+arch=('any')
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/FortAwesome/Font-Awesome/archive/${pkgver}.tar.gz")
+sha256sums=('8f433b74d3d4bbba2a6374a0a0ddf53be8e127809341e4c2578719229b43903a')
+
+package_woff2-font-awesome() {
+  pkgdesc="${pkgdesc} - woff2 format"
+  provides=('ttf-font-awesome')
+  replaces=('ttf-font-awesome')
+  install="${pkgname}.install"
+
+  cd "${_pkgbase}-${pkgver}"
+  install -d "${pkgdir}/usr/share/fonts/WOFF2"
+  install -m 644 ./webfonts/*.woff2 "${pkgdir}/usr/share/fonts/WOFF2"
+  install -Dm 644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+}
+
+package_otf-font-awesome() {
+  pkgdesc="${pkgdesc} - otf format"
+
+  cd "${_pkgbase}-${pkgver}"
+  install -d "${pkgdir}/usr/share/fonts/OTF"
+  install -m 644 ./otfs/*.otf "${pkgdir}/usr/share/fonts/OTF"
+  install -Dm 644 LICENSE.txt "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE.txt"
+}
