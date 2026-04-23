@@ -1,9 +1,9 @@
-# Maintainer: Peter Jung <arc-d3v@artixlinux.org>
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
 # Contributor: dec05eba <dec05eba@protonmail.com>
 
 pkgname=gpu-screen-recorder
 pkgver=5.13.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A shadowplay-like screen recorder for Linux. The fastest screen recorder for Linux'
 arch=('x86_64')
 url="https://git.dec05eba.com/gpu-screen-recorder"
