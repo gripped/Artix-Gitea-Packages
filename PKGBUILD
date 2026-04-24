@@ -1,0 +1,30 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+
+pkgname=perl-file-mimeinfo
+pkgver=0.36
+pkgrel=1
+pkgdesc='Determine file type, includes mimeopen and mimetype'
+arch=('any')
+url="https://metacpan.org/release/File-MimeInfo"
+license=('GPL' 'PerlArtistic')
+depends=('perl-encode-locale' 'perl-file-basedir' 'perl-file-desktopentry' 'shared-mime-info')
+checkdepends=('perl-test-pod' 'perl-test-pod-coverage')
+options=('!emptydirs')
+source=(https://cpan.metacpan.org/authors/id/M/MI/MICHIELB/File-MimeInfo-$pkgver.tar.gz)
+sha512sums=('b1087b2636246137c3e4cab9d8bbdcd0f32db288fba91029c218f13e8b9d88b16aa83d79d975fd659db5bf4a3393e4e36e03e4457c1e8fca294cb5166dee4d99')
+
+build() {
+    cd File-MimeInfo-$pkgver
+    perl Makefile.PL INSTALLDIRS=vendor
+    make
+}
+
+check() {
+    cd File-MimeInfo-$pkgver
+    make test
+}
+
+package() {
+    cd File-MimeInfo-$pkgver
+    make DESTDIR="${pkgdir}" install
+}
