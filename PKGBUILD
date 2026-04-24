@@ -11,7 +11,7 @@ pkgname=(
     mullvad-vpn-daemon
 )
 pkgver=2026.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Mullvad VPN client"
 arch=('x86_64')
 url="https://www.mullvad.net"

@@ -11,4 +11,3 @@ files:
 asar: true
 linux:
   target: dir
-

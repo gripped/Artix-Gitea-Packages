@@ -1,10 +1,10 @@
 ---
-version: 2026.1-1
+version: 2026.1-2
 pkgbase:
   name: mullvad-vpn
   pkgdesc: Mullvad VPN client
   pkgver: 2026.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.mullvad.net
   arch:
     - x86_64
