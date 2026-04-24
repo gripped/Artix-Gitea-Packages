@@ -1,0 +1,29 @@
+---
+version: 0.0.16-1
+pkgbase:
+  name: libva-nvidia-driver
+  pkgdesc: VA-API implementation that uses NVDEC as a backend
+  pkgver: 0.0.16
+  pkgrel: 1
+  url: https://github.com/elFarto/nvidia-vaapi-driver/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - ffnvcodec-headers
+    - libva
+    - meson
+  depends:
+    - glibc
+    - gst-plugins-bad-libs
+    - libegl
+  conflicts:
+    - libva-vdpau-driver
+  source:
+    - https://github.com/elFarto/nvidia-vaapi-driver/archive/v0.0.16/libva-nvidia-driver-0.0.16.tar.gz
+  sha256sums:
+    - 799244cab5ace62b6354e429bd56faa83045470c438fbea13690b4d06754eb8b
+pkgname:
+  - name: libva-nvidia-driver
+# generated with artixpkg 0.38.5-1-any

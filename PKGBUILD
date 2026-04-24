@@ -1,0 +1,30 @@
+# Maintainer: Daniel Bermond <dbermond@archlinux.org>
+
+pkgname=libva-nvidia-driver
+pkgver=0.0.16
+pkgrel=1
+pkgdesc='VA-API implementation that uses NVDEC as a backend'
+arch=('x86_64')
+url='https://github.com/elFarto/nvidia-vaapi-driver/'
+license=('MIT')
+depends=(
+    'glibc'
+    'gst-plugins-bad-libs'
+    'libegl')
+makedepends=(
+    'ffnvcodec-headers'
+    'libva'
+    'meson')
+conflicts=('libva-vdpau-driver')
+source=("https://github.com/elFarto/nvidia-vaapi-driver/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+sha256sums=('799244cab5ace62b6354e429bd56faa83045470c438fbea13690b4d06754eb8b')
+
+build() {
+    artix-meson "nvidia-vaapi-driver-${pkgver}" build
+    meson compile -C build
+}
+
+package() {
+    meson install -C build --destdir "$pkgdir"
+    install -D -m644 "nvidia-vaapi-driver-${pkgver}/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+}
