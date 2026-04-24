@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.10-1
+version: 1:1.0.11-1
 pkgbase:
   name: cosmic-notifications
   pkgdesc: Layer Shell notifications daemon which integrates with COSMIC
-  pkgver: 1.0.10
+  pkgver: 1.0.11
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-notifications
@@ -25,7 +25,7 @@ pkgbase:
     - libxkbcommon
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-notifications.git#tag=epoch-1.0.10
+    - git+https://github.com/pop-os/cosmic-notifications.git#tag=epoch-1.0.11
   b2sums:
     - 37480f82466fcbb80b17e82366c514989c995ac4dde3670c028cd6599dd149fbec0626ea042fc721238dd15e790e045d5ec5355e5437592958a0447268072623
 pkgname:
