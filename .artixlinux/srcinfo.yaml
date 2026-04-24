@@ -1,10 +1,10 @@
 ---
-version: 3.2.2-4.1
+version: 3.2.2-5
 pkgbase:
   name: imath
   pkgdesc: A C++ and python library of 2D and 3D vector, matrix, and math operations for computer graphics
   pkgver: 3.2.2
-  pkgrel: 4.1
+  pkgrel: 5
   url: https://www.openexr.com/
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - c691c5d0ae8efb549ee558ba0876eda345817ba15718384dccd6b32c06c58212
 pkgname:
   - name: imath
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
