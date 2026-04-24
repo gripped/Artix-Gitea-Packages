@@ -1,9 +1,9 @@
 ---
-version: 2:1.0.10-1
+version: 2:1.0.11-1
 pkgbase:
   name: cosmic-workspaces
   pkgdesc: Cosmic workspaces
-  pkgver: 1.0.10
+  pkgver: 1.0.11
   pkgrel: 1
   epoch: 2
   url: https://github.com/pop-os/cosmic-workspaces-epoch
@@ -26,7 +26,7 @@ pkgbase:
     - mesa
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-workspaces-epoch.git#tag=epoch-1.0.10
+    - git+https://github.com/pop-os/cosmic-workspaces-epoch.git#tag=epoch-1.0.11
     - cosmic-workspaces-lto.patch
   b2sums:
     - b7205f08dc9a6a07fb0c3ac9884a9e5c402bfad5733ce241761c16d1b1c92d58b31972534852c902083cddc6c21388c6929b01b70191eced98d65b9f55818edd
