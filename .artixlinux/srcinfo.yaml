@@ -1,10 +1,10 @@
 ---
-version: 1.46-1
+version: 1.46-2
 pkgbase:
   name: perl-curses
   pkgdesc: Character screen handling and windowing
   pkgver: 1.46
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Curses
   arch:
     - x86_64

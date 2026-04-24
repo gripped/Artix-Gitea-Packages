@@ -1,9 +1,9 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.com>
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
 # Contributor: Francois Charette <firmicus@gmx.net>
 
 pkgname=perl-curses
 pkgver=1.46
-pkgrel=1
+pkgrel=2
 pkgdesc="Character screen handling and windowing"
 arch=('x86_64')
 url="https://search.cpan.org/dist/Curses"
