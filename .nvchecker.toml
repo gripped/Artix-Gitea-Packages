@@ -1,0 +1,4 @@
+[perl-term-animation]
+source = "cpan"
+cpan = "Term-Animation"
+
