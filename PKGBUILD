@@ -1,0 +1,18 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+
+pkgver=39
+pkgrel=1
+epoch=1
+pkgname=electron
+pkgdesc='Meta package providing the latest available stable Electron build'
+arch=(any)
+url='https://electronjs.org'
+license=(MIT)
+depends=("electron$pkgver")
+
+package() {
+    mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/lib"
+    ln -sf "${depends[0]}" "$pkgdir/usr/bin/$pkgname"
+    ln -sf "${depends[0]}" "$pkgdir/usr/lib/$pkgname"
+}
