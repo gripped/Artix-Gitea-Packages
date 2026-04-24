@@ -1,10 +1,10 @@
 ---
-version: 39.5.2-3
+version: 39.5.2-3.1
 pkgbase:
   name: electron39
   pkgdesc: Build cross platform desktop apps with web technologies
   pkgver: 39.5.2
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://electronjs.org
   arch:
     - x86_64
@@ -89,6 +89,7 @@ pkgbase:
     - compiler-rt-adjust-paths.patch
     - increase-fortify-level.patch
     - chromium-141-cssstylesheet-iwyu.patch
+    - chromium-144-fix-SYS_SECCOMP.patch
     - electron-launcher.sh
     - jinja-python-3.10.patch
     - use-system-libraries-in-node.patch
@@ -257,6 +258,7 @@ pkgbase:
     - ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863
     - d634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342
     - de5c873564b09713b65dd9e6a0b9049d7b3cf8f881436f36e1c091824b63e876
+    - 4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e
     - 13fcf26193f4417fd5dfbc82a3f24e5c7a1cce82f729f6a73f1b1d3a7b580b34
     - 55dbe71dbc1f3ab60bf1fa79f7aea7ef1fe76436b1d7df48728a1f8227d2134e
     - 2eacf9210185e497fec084d9ba87fd5796f867d871f7f0c5418d2833f3fd4226
