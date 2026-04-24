@@ -1,16 +1,16 @@
 ---
-version: 3.12.3-2
+version: 3.12.3-3
 pkgbase:
   name: gdal
   pkgdesc: A translator library for raster and vector geospatial data formats
   pkgver: 3.12.3
-  pkgrel: 2
+  pkgrel: 3
   url: https://gdal.org/
   changelog: gdal.changelog
   arch:
     - x86_64
   license:
-    - custom
+    - MIT
   makedepends:
     - cmake
     - opencl-headers
@@ -68,36 +68,39 @@ pkgbase:
 pkgname:
   - name: gdal
     depends:
-      - proj
       - blosc
       - crypto++
       - curl
-      - libdeflate
       - expat
-      - libfreexl
       - geos
-      - libgeotiff
       - giflib
-      - libjpeg-turbo
+      - glibc
       - json-c
-      - xz
+      - libaec
+      - libarchive
+      - libdeflate
+      - libfreexl
+      - libgcc
+      - libgeotiff
+      - libjpeg-turbo
+      - libpng
+      - libspatialite
+      - libstdc++
+      - libtiff
       - libxml2
       - lz4
-      - unixodbc
+      - muparser
       - ocl-icd
       - openssl
       - pcre2
-      - libpng
+      - proj
       - qhull
-      - libspatialite
       - sqlite
-      - libtiff
+      - unixodbc
       - xerces-c
+      - xz
       - zlib
       - zstd
-      - libaec
-      - muparser
-      - libarchive
     optdepends:
       - 'arrow: Arrow/Parquet support'
       - 'cfitsio: FITS support'
@@ -116,5 +119,12 @@ pkgname:
     pkgdesc: Python bindings for GDAL
     depends:
       - gdal=3.12.3
+      - glibc
+      - libgcc
+      - libstdc++
+      - python
+      - python-fsspec
       - python-numpy
+      - python-pyarrow
+      - python-simplejson
 # generated with artixpkg 0.38.5-1-any

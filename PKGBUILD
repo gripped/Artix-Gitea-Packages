@@ -7,11 +7,11 @@
 pkgbase=gdal
 pkgname=(gdal python-gdal)
 pkgver=3.12.3
-pkgrel=2
+pkgrel=3
 pkgdesc="A translator library for raster and vector geospatial data formats"
 arch=(x86_64)
 url="https://gdal.org/"
-license=(custom)
+license=(MIT)
 makedepends=(cmake opencl-headers python-setuptools python-numpy
              proj arrow blosc cfitsio curl crypto++ libdeflate expat libfreexl
              libgeotiff geos giflib libheif hdf5 libjpeg-turbo json-c libjxl xz
@@ -82,9 +82,41 @@ build() {
 }
 
 package_gdal () {
-  depends=(proj blosc crypto++ curl libdeflate expat libfreexl geos libgeotiff
-           giflib libjpeg-turbo json-c xz libxml2 lz4 unixodbc ocl-icd openssl
-           pcre2 libpng qhull libspatialite sqlite libtiff xerces-c zlib zstd libaec muparser libarchive)
+  depends=(
+    blosc
+    crypto++
+    curl
+    expat
+    geos
+    giflib
+    glibc
+    json-c
+    libaec
+    libarchive
+    libdeflate
+    libfreexl
+    libgcc
+    libgeotiff
+    libjpeg-turbo
+    libpng
+    libspatialite
+    libstdc++
+    libtiff
+    libxml2
+    lz4
+    muparser
+    ocl-icd
+    openssl
+    pcre2
+    proj
+    qhull
+    sqlite
+    unixodbc
+    xerces-c
+    xz
+    zlib
+    zstd
+  )
   optdepends=('arrow: Arrow/Parquet support'
               'cfitsio: FITS support'
               'hdf5: HDF5 support'
@@ -109,7 +141,17 @@ package_gdal () {
 
 package_python-gdal () {
   pkgdesc="Python bindings for GDAL"
-  depends=("gdal=$pkgver" 'python-numpy')
+  depends=(
+    gdal=$pkgver
+    glibc
+    libgcc
+    libstdc++
+    python
+    python-fsspec
+    python-numpy
+    python-pyarrow
+    python-simplejson
+  )
 
   install -d "${pkgdir}"/usr/{bin,lib}
   mv bin/* "${pkgdir}"/usr/bin
