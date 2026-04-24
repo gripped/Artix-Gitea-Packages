@@ -3,7 +3,7 @@
 
 _gemname='parallel'
 pkgname="ruby-${_gemname}"
-pkgver=2.0.1
+pkgver=2.1.0
 pkgrel=1
 pkgdesc='Run any kind of code in parallel processes'
 arch=('any')
@@ -32,8 +32,8 @@ checkdepends=(
 )
 options=('!emptydirs')
 source=("${url}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('6fa34bc22a97950ad0cb3c2f486fbee78e5340cc7f7eb07f551bf0f0fb55cfc4769916237fad7e815cff1e159603fa0680968d99c8ca1666dfb22784554d35ae')
-b2sums=('1be27a1fa266b3823b980bee55a9d078dab7ec6f270e677da6b456e6667e22dffd5d92fc2b97f04b0e830891a80c3f3a9c4b59d57010d21e273a72e21e6c40dd')
+sha512sums=('a70d1793788b5a9b6ebe6d59cac9db1d10d2a71b2a7ec5be14c352c99954a53136e109444c2dd5c67a791323e3283a5bd0bc224aa24b609949e17cc92ff88145')
+b2sums=('0b7f2367952e9cc8357c14dfb83c8bdd9763814ff0a1401fd2ca53f3c6a07b026cce0352ad98d88cd6434b66d6f27a21af9262d5a70b6bb2138171fad7f2a8bf')
 
 prepare() {
   cd "${_gemname}-${pkgver}"
