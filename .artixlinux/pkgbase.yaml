@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 11.0.31.u11-1
+    packages:
+      - jre11-openjdk-headless-11.0.31.u11-1-x86_64.pkg.tar.zst
+      - jre11-openjdk-11.0.31.u11-1-x86_64.pkg.tar.zst
+      - jdk11-openjdk-11.0.31.u11-1-x86_64.pkg.tar.zst
+      - openjdk11-src-11.0.31.u11-1-x86_64.pkg.tar.zst
+      - openjdk11-doc-11.0.31.u11-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 11.0.30.u7-1
