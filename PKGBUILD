@@ -3,7 +3,7 @@
 
 pkgbase=python-polars
 pkgname=($pkgbase $pkgbase-runtime-{32,64,compat})
-pkgver=1.40.0
+pkgver=1.40.1
 pkgrel=1
 pkgdesc="Blazingly fast DataFrames library using Apache Arrow Columnar Format as memory model"
 arch=("x86_64")
@@ -33,13 +33,13 @@ checkdepends=('python-pytest'
               'python-cloudpickle'
               'python-aiosqlite'
               'python-boto3'
-	      'python-orjson')
-              #'python-altair'
-              #'python-arrow-adbc-driver-sqlite')
+              'python-orjson'
+              'python-altair'
+              'python-arrow-adbc-driver-sqlite')
 _name=${pkgname#python-}
 _tag="py-$pkgver"
 source=("https://github.com/pola-rs/polars/archive/refs/tags/$_tag.tar.gz")
-b2sums=('c9d5df9770de6c5faad1e742afee1cf543af0e0d2454f233e31a79819e209020e489d6f83e6871894265a3c3b74d41297de4366389d59b3d3d1ba072584628d4')
+b2sums=('f02ca8fea1966da71bd476da53708fa044394e202f9c1ac1882d9faf2a5bec00ad79683f0e76c02a9c2669444823b5c86014199f1392732e6dbdb2c3202eb2cd')
 
 prepare() {
     cd polars-$_tag/py-polars
@@ -79,11 +79,8 @@ check() {
         --ignore tests/unit/io/test_spreadsheet.py
         # Requires unpackaged python-pyiceberg
         --ignore tests/unit/io/test_iceberg.py
-        # Requires unpackaged python-altair
-        --ignore tests/unit/operations/namespaces/test_plot.py
-        # Requires unpackaged python-arrow-adbc-driver-sqlite
-        --ignore tests/unit/io/database/test_read.py
-        --ignore tests/unit/io/database/test_write.py
+        # Requires unpackaged python-connectorx
+        --deselect "tests/unit/io/database/test_read.py::test_read_database_cx_credentials"
     )
 
     test-env/bin/python -P -m pytest tests/unit "${_pytest_args[@]}"
