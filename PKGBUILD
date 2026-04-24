@@ -3,8 +3,8 @@
 # Contributor: Marcell Pardavi <marcell.pardavi@gmail.com>
 
 pkgname=zed
-pkgver=0.233.8
-pkgrel=1
+pkgver=0.233.9
+pkgrel=2
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
 url=https://zed.dev
@@ -16,6 +16,7 @@ depends=(alsa-lib libasound.so
          glib2 libgio-2.0.so libglib-2.0.so libgobject-2.0.so
          glibc # libc.so libm.so ld-linux-x86_64.so
          libgcc libgcc_s.so
+         libgit2 libgit2.so
          libstdc++ libstdc++.so
          libxcb # libxcb.so libxcb-xkb.so
          libx11 # libX11-xcb.so
@@ -46,7 +47,7 @@ optdepends=('clang: improved C/C++ language support'
 replaces=(zed-editor)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('3b3ae1abb4641736829d12ac4607d82df78f0968c15e9778974d6f9b8cbd4fc8')
+sha256sums=('13735305a18d7a52b0767ea5e0389ed104c93adab5b5ed215bd18bbbf47b4ecf')
 
 _binname=zeditor
 _appid=dev.zed.Zed
@@ -69,6 +70,7 @@ _srcenv() {
 	CFLAGS+=' -ffat-lto-objects'
 	CXXFLAGS+=' -ffat-lto-objects'
 	RUSTFLAGS+=" --remap-path-prefix $PWD=/"
+	export LIBGIT2_NO_VENDOR=1
 	export LIBSQLITE3_SYS_USE_PKG_CONFIG=1
 	export ZSTD_SYS_USE_PKG_CONFIG=1
 }
