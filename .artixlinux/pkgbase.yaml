@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 21.0.11.u10-1
+    packages:
+      - jre21-openjdk-headless-21.0.11.u10-1-x86_64.pkg.tar.zst
+      - jre21-openjdk-21.0.11.u10-1-x86_64.pkg.tar.zst
+      - jdk21-openjdk-21.0.11.u10-1-x86_64.pkg.tar.zst
+      - openjdk21-src-21.0.11.u10-1-x86_64.pkg.tar.zst
+      - openjdk21-doc-21.0.11.u10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 21.0.10.u7-1
