@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -25,8 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 17.0.19.u10-1
+    packages:
+      - jre17-openjdk-headless-17.0.19.u10-1-x86_64.pkg.tar.zst
+      - jre17-openjdk-17.0.19.u10-1-x86_64.pkg.tar.zst
+      - jdk17-openjdk-17.0.19.u10-1-x86_64.pkg.tar.zst
+      - openjdk17-src-17.0.19.u10-1-x86_64.pkg.tar.zst
+      - openjdk17-doc-17.0.19.u10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 17.0.18.u8-1
