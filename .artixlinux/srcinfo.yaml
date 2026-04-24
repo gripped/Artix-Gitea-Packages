@@ -186,8 +186,10 @@ pkgbase:
     - 0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
     - 0002-Fix-sandbox-to-build-with-glibc-2.43.patch
     - 0003-Use-wasm32-wasip1-target.patch
-    - 0004-update-rust-bindgen-to-fix-clang22-build.patch.xz
-    - 0005-skia-m142-update.patch.xz
+    - 0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch
+    - 0005-update-rust-bindgen-to-fix-clang22-build.patch.xz
+    - 0006-skia-m142-update.patch.xz
+    - 0007-PATCH-Bug-2033279-Make-enable-rust-simd-work-with-Ru.patch
     - firefox-esr-i18n-140.10.0-ach.xpi::https://archive.mozilla.org/pub/mozilla.org/firefox/releases/140.10.0esr/linux-x86_64/xpi/ach.xpi
     - firefox-esr-i18n-140.10.0-af.xpi::https://archive.mozilla.org/pub/mozilla.org/firefox/releases/140.10.0esr/linux-x86_64/xpi/af.xpi
     - firefox-esr-i18n-140.10.0-an.xpi::https://archive.mozilla.org/pub/mozilla.org/firefox/releases/140.10.0esr/linux-x86_64/xpi/an.xpi
@@ -299,8 +301,10 @@ pkgbase:
     - 755c3d2d9f24101d80b766e5adbf9ab0bb133e743dd9ea57ff2722d243bc4056d890bfedaeb23c506b440a82859d26c303f15e9f7e6bf9fc78a14f83de5f94aa
     - ed0f58b8532dbc773c5c91424578ad4502fc42c1d937e4b2b1c9905212a0d74e83b5a935ed18207b73588a84791d3cf0d3740a7ccd3dc67cd8009ba03ce1d756
     - 1099880b5a1af63b426fd5fd10f554f0a2ef2b1f3a044372e997940c115d441441ba14c604524309603be9bd40e31973bf84ee77fdee2c15449bcfdd6f1c3d22
+    - 78a4b4518316ffa7b7409041ba1cc64cdbb6b118fed7a8c2d75665df8521e836d70d2b9b491ff140990a4c4c2472f9c438fd74167acb9f965e5428025991ce4a
     - 6413c00e574f90f08ae770acb6e1191f1d8fa60742fa540265d4333ccefb08e0c7225f17e817f49d8b167f7068780fe44436036b5a37b3fcf7ae9bd703171f4c
     - 5cf81a70a83e8f25ff5ab9f8c42afd58a6dbb95fac784da78ab21524b836430b1b68f80e9626c0f1540c53866343d6955b6552efac4908acb17750d7b5626d8d
+    - 0753b87ff64073e722a6303ccbdd67dfad939c39144aaf52b6e8034ce50321cc429b3a3f5849e4c10c08f77d0980bf60eedfbfb171bbabc41201dce7a947e22b
     - 212d89cd2e8a8bb6107f5f4e5aabf74766411fa8bb2038da9602a5a10c43b3e6b63189251d760faf496c29bb943538bab0a05d28518d232a7f12c9b9028a0068
     - 45c5df93734886bc7e06a938316aa516d1f64ef3083686d2684192f2d5459dcac43a99ef1b689116e7b048c18738a08267e09ad7a44fcca7ef82d9a255d17a57
     - a18221c75ae8598b39c680ab1e8f9d5e21a5178bf948b6fe477ec97505425e433a3b8f2c8dd020abd8fc0de49836bc8cbfbcf597d87e9053c858b5b233944825
