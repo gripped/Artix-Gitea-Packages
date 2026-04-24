@@ -9,12 +9,12 @@ pkgname=cef
 # To update this package, update the _cef_commit and _chromium_ver variables.
 # For the CEF versioning scheme, see
 # https://chromiumembedded.github.io/cef/branches_and_building#version-number-format
-pkgver=146.0.11
+pkgver=147.0.10
 # See https://github.com/chromiumembedded/cef/tree/<release branch>
 # Also see https://chromiumembedded.github.io/cef/branches_and_building
-_cef_commit=3a0fcf1e1b6249b50c96ac77c429bfefade09d96
+_cef_commit=d58e84d17dd3f646c906ac633156cd0ec46638e9
 # the chromium version must match CHROMIUM_BUILD_COMPATIBILITY.txt in the CEF repo
-_chromium_ver=146.0.7680.179
+_chromium_ver=147.0.7727.118
 _system_clang=1
 pkgrel=1
 pkgdesc="Chromium Embedded Framework (CEF), simple framework for embedding Chromium-based browsers in other applications"
@@ -63,8 +63,9 @@ source=("chromium-$_chromium_ver-lite.tar.xz::https://commondatastorage.googleap
         chromium-138-nodejs-version-check.patch
         chromium-145-fix-SYS_SECCOMP.patch
         chromium-146-drop-unknown-clang-flag.patch
-        chromium-146-apply-upstream-libmuck-fix.patch
         chromium-146-build-with-wasm-rollup.patch
+        chromium-147-revert-clang-no-lifetime-dse-flag.patch
+        chromium-147-rust-1.95-bytemuck.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
         glibc-2.42-baud-rate-fix.patch
@@ -73,13 +74,14 @@ source=("chromium-$_chromium_ver-lite.tar.xz::https://commondatastorage.googleap
         chromium-disable-font-tests.patch
         FindCEF.cmake
 )
-sha256sums=('16800d0b92057f0014cbfb91c88bd66206c7624e3a8634a90dd6c87f37f20f58'
-            '581a6caa3a46349c49cdbefe9900995e3a96a37776ca6c8a913a9adbcc72a71b'
+sha256sums=('713eb46feccf03417a06bb26768d0ffb6ec635b13eeffaacfe570e7ce55c5da7'
+            '752d63b546d78146a3c3618eaefb0eccb22343abd7d26d76de264d52029e5638'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             '24535c314c7e70c52bcf409aaf604728bfc5b5c97e60087e630e1f7233b9e12d'
-            '06299959918481caf2c27bcb1841088967d9855acc22970ffcaa75e0cb218f0e'
             '45fa20cc27ef0aa00d654d0bac84bfaa8d8090b5f8aec49cc2e8d7249d3cd7ba'
+            'c382830318c5b37826ecf44f3ba9def6be8affdad1bce819ecb83f3222ff4b3a'
+            'b9e6339221efe03540ffb360c161d93604a1fc93a5a1c53e5e9849066f987d05'
             'ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
             '1c1898f263eaacbc069a8e1a3e732852350350d1dad4cb1a6bba430e3b796cd0'
@@ -149,13 +151,15 @@ prepare() {
   # clang++: error: unknown argument: '-fsanitize-ignore-for-ubsan-feature=array-bounds'
   patch -Np1 -i ../chromium-146-drop-unknown-clang-flag.patch
 
-  # https://chromium-review.googlesource.com/c/chromium/src/+/7487414
-  patch -Np1 -i ../chromium-146-apply-upstream-libmuck-fix.patch
+  # Causes a build failure with our clang version
+  patch -Np1 -i ../chromium-147-revert-clang-no-lifetime-dse-flag.patch
 
   # https://crbug.com/456218403
   patch -Np1 -i ../chromium-145-fix-SYS_SECCOMP.patch
 
   patch -Np1 -i ../chromium-146-build-with-wasm-rollup.patch
+
+  patch -Np1 -i ../chromium-147-rust-1.95-bytemuck.patch
 
   patch -Np1 -i ../chromium-disable-font-tests.patch
 
