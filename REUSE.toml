@@ -39,6 +39,7 @@ SPDX-License-Identifier = "BSD-3-Clause"
 path = [
     "chromium-138-nodejs-version-check.patch",
     "chromium-141-cssstylesheet-iwyu.patch",
+    "chromium-144-fix-SYS_SECCOMP.patch",
 ]
 SPDX-FileCopyrightText = "Gentoo contributors"
 SPDX-License-Identifier = "BSD-3-Clause"
