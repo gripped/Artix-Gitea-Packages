@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.8-11
+    version: 0.8-12
     packages:
-      - python-cson-0.8-11-any.pkg.tar.zst
+      - python-cson-0.8-12-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
