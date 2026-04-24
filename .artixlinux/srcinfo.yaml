@@ -1,9 +1,9 @@
 ---
-version: 6.19.12.artix1-1
+version: 6.19.14.artix1-1
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 6.19.12.artix1
+  pkgver: 6.19.14.artix1
   pkgrel: 1
   url: https://github.com/archlinux/linux
   arch:
@@ -39,30 +39,30 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.12.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.12.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v6.19.12-arch1/linux-v6.19.12-arch1.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v6.19.12-arch1/linux-v6.19.12-arch1.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.14.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.19.14.tar.sign
+    - https://github.com/archlinux/linux/releases/download/v6.19.14-arch1/linux-v6.19.14-arch1.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v6.19.14-arch1/linux-v6.19.14-arch1.patch.zst.sig
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - ce5c4f1205f9729286b569b037649591555f31ca1e03cc504bd3b70b8e58a8d5
+    - cde8bf6739be4a0777fedbbba5330b8188c55680c45a922a4dfa289cbec6f185
     - SKIP
-    - 339358b19fd725eb83c72a7fe4894dc444f9243aed431965153c43350ff12b62
+    - 2ae741a9e5009d21e1bbbb7a9abeebcc39ec5cdb7cf4cdf52d616a57d262de96
     - SKIP
   b2sums:
-    - d016cebe33cfd8f43798d52f90c94b81cc61a0914ac3ac663c399cdde2ebf024331c84da53813a0d09c1c21419b8a36e97eec092adc1888624625897dc976228
+    - 64c2a0003d8080f268772d36923ff6ef8b2d55320ea08b77ad39384c98c9a5c1a8e71425470619aa3aa4dda8941f46aa9da364748cfa8fd9f8507a5ddd7ac03a
     - SKIP
-    - 8a84b338e199c9f89fc15bfa34775d717dbd46166341e4c217b4d08bb2f477f5cf76675353cb73a9b758b6493806b5579ceecb300078806abe024a7f63bcb452
+    - 6536f9ccb408f89b0a6dc86fdbb09f4229e9e4ea5ed210d118484a18ca8a82a1e1060114877ce7286b721d59587a8a70b5ed4616c4ec4925b0bdf5b25227e6fe
     - SKIP
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
-    - 8b9fae560bb7e0319bc888146a74ad4b31bcf6b896bd14aee7297099063530ae
+    - 3aae56e059aed87151bd8c0a03f45a9b9390dbf40a5f3c35f771270f93006e06
   b2sums_x86_64:
-    - 4923f1044991014e3fe84c0bb5804d1613069f274cb0a79d99b917d93a0acabbb5f69e265e1ec8564b709f6c1eb387121f872edceb8d2b6ca5bca3629b503c68
+    - 5f4328d9ae1a0edf3c656c8bae6c5d7005125da379ec97a49df969e6a978be92f77643b6a9942a0554903b1ca9939ec1f6468b4056e8122f0e3e2677cee8f7a8
 pkgname:
   - name: linux
     pkgdesc: The Linux kernel and modules
