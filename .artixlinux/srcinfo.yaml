@@ -1,10 +1,10 @@
 ---
-version: 1.90.0-4
+version: 1.91.0-1
 pkgbase:
   name: boost
   pkgdesc: Free peer-reviewed portable C++ source libraries
-  pkgver: 1.90.0
-  pkgrel: 4
+  pkgver: 1.91.0
+  pkgrel: 1
   url: https://www.boost.org/
   arch:
     - x86_64
@@ -19,11 +19,9 @@ pkgbase:
     - openmpi
     - zstd
   source:
-    - https://archives.boost.io/release/1.90.0/source/boost_1_90_0.tar.bz2
-    - https://github.com/boostorg/range/commit/9ac89e99.patch
+    - https://archives.boost.io/release/1.91.0/source/boost_1_91_0.tar.bz2
   sha256sums:
-    - 49551aff3b22cbc5c5a9ed3dbc92f0e23ea50a0f7325b0d198b705e8ee3fc305
-    - d66116e9ed03c309e5338cfa12b624894d116aed0903595842d97d461db70a28
+    - de5e6b0e4913395c6bdfa90537febd9028ea4c0735d2cdb0cd9b45d5f51264f5
 pkgname:
   - name: boost
     pkgdesc: Free peer-reviewed portable C++ source libraries (development headers)
@@ -91,4 +89,4 @@ pkgname:
       - libboost_wserialization.so
     options:
       - staticlibs
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
