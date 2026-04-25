@@ -28,4 +28,4 @@ pkgbase:
     - ab3ecad6cd62d100b2d782c28c2d3bb05c41304b0a160bd2766c687b7619680796e27563fa5ba28dad9de47c5d22c5e519db83a85c9bcc0de372fa49311ec211
 pkgname:
   - name: lib32-expat
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
