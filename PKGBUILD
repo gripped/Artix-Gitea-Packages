@@ -33,9 +33,9 @@ checkdepends=('python-pytest'
               'python-cloudpickle'
               'python-aiosqlite'
               'python-boto3'
-              'python-orjson'
-              'python-altair'
-              'python-arrow-adbc-driver-sqlite')
+	      'python-orjson')
+              #'python-altair'
+              #'python-arrow-adbc-driver-sqlite')
 _name=${pkgname#python-}
 _tag="py-$pkgver"
 source=("https://github.com/pola-rs/polars/archive/refs/tags/$_tag.tar.gz")
@@ -79,8 +79,11 @@ check() {
         --ignore tests/unit/io/test_spreadsheet.py
         # Requires unpackaged python-pyiceberg
         --ignore tests/unit/io/test_iceberg.py
-        # Requires unpackaged python-connectorx
-        --deselect "tests/unit/io/database/test_read.py::test_read_database_cx_credentials"
+        # Requires unpackaged python-altair
+        --ignore tests/unit/operations/namespaces/test_plot.py
+        # Requires unpackaged python-arrow-adbc-driver-sqlite
+        --ignore tests/unit/io/database/test_read.py
+        --ignore tests/unit/io/database/test_write.py
     )
 
     test-env/bin/python -P -m pytest tests/unit "${_pytest_args[@]}"
