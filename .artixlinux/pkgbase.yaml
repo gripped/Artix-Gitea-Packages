@@ -25,14 +25,14 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.2.8-1
+    version: 7.2.8-2
     packages:
-      - virtualbox-7.2.8-1-x86_64.pkg.tar.zst
-      - virtualbox-ext-vnc-7.2.8-1-x86_64.pkg.tar.zst
-      - virtualbox-guest-utils-7.2.8-1-x86_64.pkg.tar.zst
-      - virtualbox-guest-utils-nox-7.2.8-1-x86_64.pkg.tar.zst
-      - virtualbox-host-dkms-7.2.8-1-x86_64.pkg.tar.zst
-      - virtualbox-sdk-7.2.8-1-x86_64.pkg.tar.zst
+      - virtualbox-7.2.8-2-x86_64.pkg.tar.zst
+      - virtualbox-ext-vnc-7.2.8-2-x86_64.pkg.tar.zst
+      - virtualbox-guest-utils-7.2.8-2-x86_64.pkg.tar.zst
+      - virtualbox-guest-utils-nox-7.2.8-2-x86_64.pkg.tar.zst
+      - virtualbox-host-dkms-7.2.8-2-x86_64.pkg.tar.zst
+      - virtualbox-sdk-7.2.8-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.2.6-4

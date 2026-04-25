@@ -1,9 +1,9 @@
 ---
-version: 7.2.8-1
+version: 7.2.8-2
 pkgbase:
   name: virtualbox
   pkgver: 7.2.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://virtualbox.org/
   arch:
     - x86_64
@@ -65,6 +65,7 @@ pkgbase:
     - 013-support-building-from-dkms.patch
     - 018-upate-xclient-script.patch
     - 020-python-3-12.patch
+    - 021-disable-CET-on-kallsyms_lookup_name.patch
   sha256sums:
     - 0642ed4a12b7204cd30c0abbc2c10c1cc7ad55ce1756a01e86a16d4b6b066592
     - f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04
@@ -83,6 +84,7 @@ pkgbase:
     - 00f68b86d32a1fada900c2da8dad2ab4215106cd58004f049bded99727cda2ff
     - 2540381de895fabbcc68d820c1f72ba644ef566ff5dab0f60be055c7b45cc06f
     - ddb2092a5a000aa6ef854796f39dcdf86e72c06d53b24bac3835350571182df6
+    - 6d038c245b216ac4ffbfe08998c75350d833c1bd4bda4ccdb685a157e6ce29c2
 pkgname:
   - name: virtualbox
     pkgdesc: Powerful x86 virtualization for enterprise as well as home use
