@@ -56,4 +56,4 @@ pkgname:
       - libsndfile.so
       - lib32-portaudio
       - libportaudio.so
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
