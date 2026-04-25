@@ -1,0 +1,28 @@
+---
+version: 1.4.1_445-1
+pkgbase:
+  name: intel-oneapi-tcm
+  pkgdesc: Thread Composability Manager
+  pkgver: 1.4.1_445
+  pkgrel: 1
+  url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-Intel-Simplified
+  depends:
+    - intel-oneapi-common
+    - glibc
+    - gcc-libs
+    - hwloc
+  conflicts:
+    - intel-oneapi-basekit
+  noextract:
+    - intel-oneapi-tcm--1.4.1-445_amd64.deb
+  source:
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-tcm-1.4-1.4.1-445_amd64.deb
+  b2sums:
+    - dff1e9198505b28ec69a8450faaef44946f9b1d1d789062f3d8f4ae7b8b5f08b758a089d88018adcb7624a0f93f2863ef43dd2fc2d5fd69f0f7fcc21ea1c5122
+pkgname:
+  - name: intel-oneapi-tcm
+# generated with artixpkg 0.38.5-1-any
