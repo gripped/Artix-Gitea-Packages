@@ -1,9 +1,9 @@
 ---
-version: 46.0.7-1
+version: 47.0.0-1
 pkgbase:
   name: python-cryptography
   pkgdesc: A package designed to expose cryptographic recipes and primitives to Python developers
-  pkgver: 46.0.7
+  pkgver: 47.0.0
   pkgrel: 1
   url: https://github.com/pyca/cryptography
   arch:
@@ -32,11 +32,9 @@ pkgbase:
     - python
     - python-cffi
   source:
-    - git+https://github.com/pyca/cryptography.git#tag=46.0.7
-    - python-cryptography-sdist-only-includes.patch
+    - git+https://github.com/pyca/cryptography.git#tag=47.0.0
   b2sums:
-    - 43166cc3be26a5feaa1ccd0ca872c022b9744db54b96b408c4b2deed6249ba5986ea3596f20fb4c8e81643459cf672bb5d630c78662937be9f275e29a1e0c22b
-    - b2778db329fb43c9e7e81a894fa1a25db8001e83a1e0edb6f0e5a0a0ef8f4c2a7f4867c63a46c89376da3a2301ee39dc13e21e19536b4b458efa727f83346ca8
+    - d578c37ba59013dcec06887ad233bc7b76fd0ad9f7ba23cbaada74b20ab53cd5a61b963eb2f892622be2d9b5f3e63395de5416bcd6b9777ee952656ab5fc4d19
 pkgname:
   - name: python-cryptography
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
