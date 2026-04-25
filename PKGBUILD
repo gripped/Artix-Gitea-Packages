@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: AndyRTR <andyrtr@archlinux.org>
+# Maintainer: AndyRTR <andyrtr@archlinux.org>
 # Contributor: Thomas Arnhold <thomas at arnhold dot org>
 
 pkgname=liborcus
 pkgver=0.21.0
-pkgrel=5
+pkgrel=6
 pkgdesc="File import filter library for spreadsheet documents."
 arch=('x86_64')
 url="https://gitlab.com/orcus/orcus/blob/master/README.md"
