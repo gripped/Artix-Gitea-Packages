@@ -1,41 +1,40 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 # Contributor: Jingbei Li <i@jingbei.li>
 
 pkgname=intel-oneapi-dev-utilities
-_pkgver=2025.0
-_debpkgrel=599
-pkgver=2025.0.0
+pkgver=2025.3.1_15
+_pkgver=$(echo $pkgver | sed 's/_/-/')
+_majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
 pkgdesc="Intel oneAPI Dev Utilities"
 arch=('any')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
-source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${pkgver}-${_debpkgrel}_amd64.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-eclipse-cfg-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb")
-b2sums=('6e61a2432c5eca830e5bcee8c835aeb1e9ccf366864eddd42637a94996509940d8482f8996c5e7a7d392442a409cdc7c2837e413b1447a707161c3d3888a7e49'
-        '121d10c1ec4882837957c7bf93f0e4c239282b81a5c4696c3c2e4c1fee463f1bec1bf72bba556d98eea12e9a8f959099e53768407436172aa5fbbbda4050f24f')
+source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_pkgver}_amd64.deb"
+        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-eclipse-cfg-${_majmin}-${_pkgver}_all.deb")
+b2sums=('6d849687758765fe15517d3c7982a252002c3b8e1156eee8e0f50e363a93d6a123b0c6f017ce86163fe0f8c0df630b76b056e318c26f5c24c3fa0b5aa34c2503'
+        '1303ad1880b246cf44c446416097fa92063922acf4218c8e248fec3da3d1bf3b24b80aee44b0652d71f5d11e6aa623f3c36ed09b585ebd28b78a718e3594b98c')
 depends=('intel-oneapi-common')
 provides=("${pkgname}-eclipse-cfg")
 conflicts=('intel-oneapi-basekit')
 
 noextract=(
-	"${pkgname}-${pkgver}-${_debpkgrel}_amd64.deb"
-	"${pkgname}-eclipse-cfg-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
+	"${pkgname}-${_pkgver}_amd64.deb"
+	"${pkgname}-eclipse-cfg-${_majmin}-${_pkgver}_all.deb"
 )
 
 package() {
   cd "${srcdir}"
-  ar x ${pkgname}-${pkgver}-${_debpkgrel}_amd64.deb
+  ar x ${pkgname}-${_pkgver}_amd64.deb
   tar xvf data.tar.xz -C "${pkgdir}"
   rm data.tar.xz
 
-  ar x ${pkgname}-eclipse-cfg-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb
+  ar x ${pkgname}-eclipse-cfg-${_majmin}-${_pkgver}_all.deb
   tar xvf data.tar.xz -C "${pkgdir}"
   rm data.tar.xz
 
   local _dev_path='/opt/intel/oneapi/dev-utilities'
-  ln -s "${_dev_path}/${_pkgver}" "${pkgdir}/${_dev_path}/latest"
+  ln -s "${_dev_path}/${_majmin}" "${pkgdir}/${_dev_path}/latest"
 
   install -d "${pkgdir}"/usr/share/licenses/"${pkgname}"
   ln -s /usr/share/licenses/intel-oneapi "${pkgdir}"/usr/share/licenses/"${pkgname}"/oneapi

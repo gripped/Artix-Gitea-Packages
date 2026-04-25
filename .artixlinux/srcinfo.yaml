@@ -1,0 +1,30 @@
+---
+version: 2025.3.1_15-1
+pkgbase:
+  name: intel-oneapi-dev-utilities
+  pkgdesc: Intel oneAPI Dev Utilities
+  pkgver: 2025.3.1_15
+  pkgrel: 1
+  url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
+  arch:
+    - any
+  license:
+    - LicenseRef-Intel-EULA-Developer-Tools
+  depends:
+    - intel-oneapi-common
+  provides:
+    - intel-oneapi-dev-utilities-eclipse-cfg
+  conflicts:
+    - intel-oneapi-basekit
+  noextract:
+    - intel-oneapi-dev-utilities-2025.3.1-15_amd64.deb
+    - intel-oneapi-dev-utilities-eclipse-cfg-2025.3-2025.3.1-15_all.deb
+  source:
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-dev-utilities-2025.3.1-15_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-dev-utilities-eclipse-cfg-2025.3-2025.3.1-15_all.deb
+  b2sums:
+    - 6d849687758765fe15517d3c7982a252002c3b8e1156eee8e0f50e363a93d6a123b0c6f017ce86163fe0f8c0df630b76b056e318c26f5c24c3fa0b5aa34c2503
+    - 1303ad1880b246cf44c446416097fa92063922acf4218c8e248fec3da3d1bf3b24b80aee44b0652d71f5d11e6aa623f3c36ed09b585ebd28b78a718e3594b98c
+pkgname:
+  - name: intel-oneapi-dev-utilities
+# generated with artixpkg 0.38.5-1-any
