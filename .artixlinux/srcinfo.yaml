@@ -1,0 +1,45 @@
+---
+version: 2025.3.3_30-1
+pkgbase:
+  name: intel-oneapi-openmp
+  pkgdesc: Intel oneAPI OpenMP runtime library
+  pkgver: 2025.3.3_30
+  pkgrel: 1
+  url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-Intel-EULA-Developer-Tools
+  depends:
+    - intel-oneapi-common
+    - intel-oneapi-tcm
+    - sh
+    - glibc
+    - gcc-libs
+    - zlib
+    - libelf
+    - level-zero-loader
+    - libffi
+  conflicts:
+    - intel-oneapi-basekit
+  noextract:
+    - intel-oneapi-openmp-2025.3-2025.3.3-30_amd64.deb
+    - intel-oneapi-openmp-2025.3-2025.3.3-30_amd64.deb
+    - intel-oneapi-openmp-common-2025.3-2025.3.3-30_all.deb
+    - intel-oneapi-runtime-openmp-2025.3.3-30_amd64.deb
+    - intel-oneapi-runtime-openmp-opencl-shared-2025.3.3-30_amd64.deb
+  source:
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-openmp-2025.3-2025.3.3-30_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-openmp-2025.3-2025.3.3-30_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-openmp-common-2025.3-2025.3.3-30_all.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-runtime-openmp-2025.3.3-30_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-runtime-openmp-opencl-shared-2025.3.3-30_amd64.deb
+  b2sums:
+    - b6b776a0af89499d544a70c8d86fbd6738d77d91410882e02707b4b38881dcd6d937b53df9e15ba0181522f40fcf9164265232dd97f8358f723d236986387fcd
+    - b6b776a0af89499d544a70c8d86fbd6738d77d91410882e02707b4b38881dcd6d937b53df9e15ba0181522f40fcf9164265232dd97f8358f723d236986387fcd
+    - af67d87b3c476815c72e62e21a81f62368f4e3d470f6c12603a41170b267788834d37efc42ec3d890793cc1cbf5785ba4ce913f3870e34b7c834ac4a67408a72
+    - 1a06676a863865ba4aeaa8bbd855bd90f6638003c1e9ed6ce3ecce8a08bcf679c1db6cad3ffaf7271281561833f60c6013235eaeeb8e72914bc25c0a8b2aa81e
+    - 5aeb3cb0f604c7e381a0c4d7b4257af5cde6919a893e85a98cf82590d762b62f89c1503899a789829819e49704f6115ed4661c28f0c0715136ad2267074b70ab
+pkgname:
+  - name: intel-oneapi-openmp
+# generated with artixpkg 0.38.5-1-any
