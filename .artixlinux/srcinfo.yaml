@@ -1,9 +1,9 @@
 ---
-version: 20250525-1
+version: 20260423-1
 pkgbase:
   name: android-udev
   pkgdesc: Udev rules to connect Android devices to your linux box
-  pkgver: 20250525
+  pkgver: 20260423
   pkgrel: 1
   url: https://github.com/M0Rf30/android-udev-rules
   arch:
@@ -14,9 +14,9 @@ pkgbase:
     - udev
     - libmtp
   source:
-    - android-udev-20250525.tar.gz::https://github.com/M0Rf30/android-udev-rules/archive/20250525.tar.gz
+    - android-udev-20260423.tar.gz::https://github.com/M0Rf30/android-udev-rules/archive/20260423.tar.gz
   sha256sums:
-    - 582bf8daa23f318047e77ece4c101c8696fd9151c459f695dca56cf4a40a72a2
+    - d5cfdbd2bc19dc560424c807298c6822daf4ed1cf8389373dfe029b5dfc7b1a2
 pkgname:
   - name: android-udev
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.38.5-1-any

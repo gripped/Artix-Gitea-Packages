@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 20250525-1
+    version: 20260423-1
     packages:
-      - android-udev-20250525-1-any.pkg.tar.zst
+      - android-udev-20260423-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
