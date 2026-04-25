@@ -1,10 +1,10 @@
 ---
-version: 0.3.0-24
+version: 0.3.0-25
 pkgbase:
   name: cpp-hocon
   pkgdesc: C++ port of the Typesafe Config library
   pkgver: 0.3.0
-  pkgrel: 24
+  pkgrel: 25
   url: https://github.com/puppetlabs/cpp-hocon
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - de997e6d90330f901863b7da0d6f6e069a31e052b6f31c1e3009a9559c863f08879ecf4e202c763ec32567dd3a1e436ff5d3bf0b3009a085ef3ee95e5ca6c7e5
 pkgname:
   - name: cpp-hocon
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
