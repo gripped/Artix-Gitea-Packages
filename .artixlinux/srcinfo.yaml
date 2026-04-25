@@ -1,10 +1,10 @@
 ---
-version: 39.5.2-3.2
+version: 39.8.9-1
 pkgbase:
   name: electron39
   pkgdesc: Build cross platform desktop apps with web technologies
-  pkgver: 39.5.2
-  pkgrel: 3.2
+  pkgver: 39.8.9
+  pkgrel: 1
   url: https://electronjs.org
   arch:
     - x86_64
@@ -82,7 +82,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/electron/electron.git#tag=v39.5.2
+    - git+https://github.com/electron/electron.git#tag=v39.8.9
     - https://gitlab.com/Matt.Jolly/chromium-patches/-/archive/142/chromium-patches-142.tar.bz2
     - chromium-138-nodejs-version-check.patch
     - chromium-138-rust-1.86-mismatched_lifetime_syntaxes.patch
@@ -96,7 +96,7 @@ pkgbase:
     - makepkg-source-roller.py
     - chromium-mirror::git+https://github.com/chromium/chromium.git#tag=142.0.7444.265
     - chromium-mirror_third_party_nan::git+https://github.com/nodejs/nan.git#commit=e14bdcd1f72d62bca1d541b66da43130384ec213
-    - chromium-mirror_third_party_electron_node::git+https://github.com/nodejs/node.git#tag=v22.22.0
+    - chromium-mirror_third_party_electron_node::git+https://github.com/nodejs/node.git#tag=v22.22.1
     - chromium-mirror_third_party_engflow-reclient-configs::git+https://github.com/EngFlow/reclient-configs.git#commit=955335c30a752e9ef7bff375baab5e0819b6c00d
     - chromium-mirror_third_party_clang-format_script::git+https://chromium.googlesource.com/external/github.com/llvm/llvm-project/clang/tools/clang-format.git#commit=37f6e68a107df43b7d7e044fd36a13cbae3413f2
     - chromium-mirror_third_party_compiler-rt_src::git+https://chromium.googlesource.com/external/github.com/llvm/llvm-project/compiler-rt.git#commit=05f2a5dd0d1386777ae9d7fac9da776f82e7e0f2
@@ -251,7 +251,7 @@ pkgbase:
     - chromium-mirror_third_party_dawn_third_party_partition_alloc::git+https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git#commit=fae4df38cef9720a13dd55a6b1d20600919e671b
     - chromium-mirror_third_party_openscreen_src_third_party_tinycbor_src::git+https://chromium.googlesource.com/external/github.com/intel/tinycbor.git#commit=d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7
   sha256sums:
-    - cef6deaf139745f46bbcee57f842bbcc2a44f46c3d737107e46533bbd4528545
+    - 0639b124d1b534d057725b14cdef98519d8484f2799a890bd66bb27309251928
     - 27c2669be463ab462636c7367efddea29e810c58a185281084132ee4a98a17c5
     - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
     - 5abc8611463b3097fc5ce58017ef918af8b70d616ad093b8b486d017d021bbdf
@@ -265,7 +265,7 @@ pkgbase:
     - da228d1bbe2e078acf33f0f1123f5eaf82fbd3af6f93e67315390a6cd685c1df
     - 2998e33d9d607bd07aff299acebce7ba9edde87c32fd9dfef64b8d44a958013e
     - 0b7a546ee6913c49519c10c293ac530ff381641a8a465fa2e184d6dbe0fb784d
-    - 15355f12077d5751500bfb1a427ed37df12a7abdddc9f979ccd44751ff7a2c01
+    - 00cebaa66a2a8756ed5fefea6dbb61349f46f8df4e5fde5c1b1388a1bc6a7140
     - 3522166c3ca75316a172b7cc4fe12bba9367e30fed16df8193ede2e236dca8c5
     - 60935b226794933e881973746d892eb6fb7b7d596bf6cf9ff3c4f2da56240a9b
     - 28ffaac5ade55e51505c9e00d6e9bcc4eb13ce4b1ba1f1b4ebce1abfb0db377e
