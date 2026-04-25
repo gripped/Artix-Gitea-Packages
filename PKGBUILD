@@ -1,21 +1,18 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 
 pkgname="intel-oneapi-dpcpp-cpp"
-_pkgver=2025.0
-pkgver=2025.0.4
-# Figure out new _debpkgrel value using
-# curl -L https://apt.repos.intel.com/oneapi/dists/all/main/binary-amd64/Packages | grep dpcpp-cpp
-_debpkgrel=1519
-pkgrel=1.1
+pkgver=2025.3.3_30
+_pkgver=$(echo $pkgver | sed 's/_/-/')
+_majmin=$(echo $pkgver | cut -d. -f1,2)
+pkgrel=1
 pkgdesc="Intel oneAPI DPC++/C++ Compiler"
 arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
-source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb")
-b2sums=('27b7032aadce6daa17a03e163836915784ae1c55e34c1ef1470ede7a91ebe3cd5615bf8c5dcab9e22b45186fa53cc2a3a45f167b963439938b83fb4055d6d2a6')
+source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb")
+b2sums=('a74fc4a00496941e6d6051c464c451410cee8141b9271c4db3262e6a2bd86124318190562eec09c159fd9617c78607d6348f30b6c8372e9ddd6e90d7727ab41e')
 noextract=(
-    "${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
+    "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
 )
 depends=('intel-oneapi-compiler-dpcpp-cpp-common' 'intel-oneapi-compiler-dpcpp-cpp-runtime'
          'intel-oneapi-compiler-shared-runtime' 'intel-oneapi-compiler-shared'
@@ -25,7 +22,7 @@ conflicts=('intel-oneapi-basekit')
 
 package() {
     cd "${srcdir}"
-    ar x "${srcdir}/${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
+    ar x "${srcdir}/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
     tar xvf data.tar.xz -C "${pkgdir}"
     rm data.tar.xz
 

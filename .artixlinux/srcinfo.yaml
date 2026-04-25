@@ -1,0 +1,35 @@
+---
+version: 2025.3.3_30-1
+pkgbase:
+  name: intel-oneapi-dpcpp-cpp
+  pkgdesc: Intel oneAPI DPC++/C++ Compiler
+  pkgver: 2025.3.3_30
+  pkgrel: 1
+  url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-Intel-EULA-Developer-Tools
+  depends:
+    - intel-oneapi-compiler-dpcpp-cpp-common
+    - intel-oneapi-compiler-dpcpp-cpp-runtime
+    - intel-oneapi-compiler-shared-runtime
+    - intel-oneapi-compiler-shared
+    - intel-oneapi-tbb
+    - intel-oneapi-dev-utilities
+    - intel-oneapi-common
+    - gcc-libs
+    - glibc
+    - bash
+    - zlib
+  conflicts:
+    - intel-oneapi-basekit
+  noextract:
+    - intel-oneapi-dpcpp-cpp-2025.3-2025.3.3-30_amd64.deb
+  source:
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-dpcpp-cpp-2025.3-2025.3.3-30_amd64.deb
+  b2sums:
+    - a74fc4a00496941e6d6051c464c451410cee8141b9271c4db3262e6a2bd86124318190562eec09c159fd9617c78607d6348f30b6c8372e9ddd6e90d7727ab41e
+pkgname:
+  - name: intel-oneapi-dpcpp-cpp
+# generated with artixpkg 0.38.5-1-any
