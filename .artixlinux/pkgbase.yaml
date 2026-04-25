@@ -1,14 +1,7 @@
 ---
 team: world
-pkgbase:
-  name: intel-oneapi-common
-  version: 2024.1.0-1
-  arch:
-    - any
-  pkgname:
-    - intel-oneapi-common
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -19,37 +12,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2025.3.1_15-1
+    packages:
+      - intel-oneapi-common-2025.3.1_15-1-any.pkg.tar.zst
+    debug: []
   world:
     version: 2024.1.0-1
     packages:
       - intel-oneapi-common-2024.1.0-1-any.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
