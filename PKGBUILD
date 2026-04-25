@@ -2,12 +2,12 @@
 
 pkgname=(artix-archlinux-support lib32-artix-archlinux-support)
 pkgver=4.2
-pkgrel=1
+pkgrel=2
 arch=('any')
-pkgdesc='Add arch linux repo support'
+pkgdesc='Add Arch Linux repo support'
 license=('GPL')
 url='https://gitea.artixlinux.org/artix'
-depends=('archlinux-keyring' 'archlinux-mirrorlist' 'etmpfiles' 'esysusers' 'init-logind')
+depends=('archlinux-keyring' 'archlinux-mirrorlist' 'etmpfiles' 'esysusers' 'libudev' 'init-logind')
 source=(arch-repos-install.hook
         arch-repos-hook.script
         arch-release)
@@ -16,8 +16,8 @@ sha256sums=('0f98eb7e798815d217a527f81ee59edb9499a93d2f2331cc0b7cfb2b526ef18f'
             '64b34944c9ea19083979bd05e8c05361f5f1efd13354d71f6490ddd239fb31c2')
 
 package_artix-archlinux-support() {
-    provides=('arch-release-dummy' 'systemd' 'systemd-libs')
-    conflicts=('arch-release-dummy' 'systemd' 'systemd-libs')
+    provides=('arch-release-dummy' 'systemd' 'systemd-libs' 'libsystemd')
+    conflicts=('arch-release-dummy' 'systemd' 'systemd-libs' 'libsystemd')
     replaces=('arch-release-dummy')
 
     # pacman hooks

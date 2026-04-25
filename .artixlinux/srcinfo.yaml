@@ -1,0 +1,49 @@
+---
+version: 4.2-2
+pkgbase:
+  name: artix-archlinux-support
+  pkgdesc: Add Arch Linux repo support
+  pkgver: 4.2
+  pkgrel: 2
+  url: https://gitea.artixlinux.org/artix
+  arch:
+    - any
+  license:
+    - GPL
+  depends:
+    - archlinux-keyring
+    - archlinux-mirrorlist
+    - etmpfiles
+    - esysusers
+    - libudev
+    - init-logind
+  source:
+    - arch-repos-install.hook
+    - arch-repos-hook.script
+    - arch-release
+  sha256sums:
+    - 0f98eb7e798815d217a527f81ee59edb9499a93d2f2331cc0b7cfb2b526ef18f
+    - edad7529e9070ba039d444761c59d1b1b117fd9b3a751de5ec24d3044b453cc5
+    - 64b34944c9ea19083979bd05e8c05361f5f1efd13354d71f6490ddd239fb31c2
+pkgname:
+  - name: artix-archlinux-support
+    provides:
+      - arch-release-dummy
+      - systemd
+      - systemd-libs
+      - libsystemd
+    conflicts:
+      - arch-release-dummy
+      - systemd
+      - systemd-libs
+      - libsystemd
+    replaces:
+      - arch-release-dummy
+  - name: lib32-artix-archlinux-support
+    depends:
+      - lib32-elogind
+    provides:
+      - lib32-systemd
+    conflicts:
+      - lib32-systemd
+# generated with artixpkg 0.38.5-1-any

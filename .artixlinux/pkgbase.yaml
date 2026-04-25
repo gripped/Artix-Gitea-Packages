@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: artix-archlinux-support
-  version: 4.2-1
-  arch:
-    - any
-  pkgname:
-    - artix-archlinux-support
-    - lib32-artix-archlinux-support
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -19,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 4.2-1
+    version: 4.2-2
     packages:
-      - artix-archlinux-support-4.2-1-any.pkg.tar.zst
-      - lib32-artix-archlinux-support-4.2-1-any.pkg.tar.zst
+      - artix-archlinux-support-4.2-2-any.pkg.tar.zst
+      - lib32-artix-archlinux-support-4.2-2-any.pkg.tar.zst
+    debug: []
 team: galaxy
