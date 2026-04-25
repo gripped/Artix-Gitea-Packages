@@ -1,64 +1,49 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Konstantin Gizdov <arch at kge dot pw>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 
 pkgname=intel-oneapi-tbb
-_pkgver=2021.12
-pkgver=2021.12.0
-_debpkgrel=495
-pkgrel=2
+pkgver=2022.3.1_400
+_pkgver=$(echo $pkgver | sed 's/_/-/')
+_majmin=$(echo $pkgver | cut -d. -f1,2)
+pkgrel=1
 pkgdesc="Intel oneAPI Threading Building Blocks"
 arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("Apache-2.0 AND LicenseRef-Intel-EULA-Developer-Tools AND LicenseRef-Intel-Simplified")
-source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-devel-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-common-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-common-devel-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb")
-b2sums=('c7906cdabcae7b63269bcad8738d59f2e01bea9ab93ec0e4c68b1d55dcdd36a64d0789e70c0e2d5f430fdb038b2397ddc1d7de1f46d40bbdbeb3fabcfcc643ec'
-        '1094a1a9f86bb5a27db6805c02c07556a76860e5b05062bf4c9b8b5e3e187741356f5563f21042aeee1041880e3c2b78d8f99ee18e63030d30e8e0623df83a2d'
-        '3be4338ddb14ac5c9e4705edf9431cecb65e36ffa5420782337e824b9b2dd28284f82703cafaafdc1ef8688ca43a2b11940f490f042a47cf2a133fe71c99a3a0'
-        '0201445cd7f7588fa44007669e6445f673539d8c78c5b5c8e58c006c1ad575be42fe3cb90ea0a4c5456141ef993454e9884e332e7d4012a4579236866a2fd1c7')
+source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
+        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-devel-${_majmin}-${_pkgver}_amd64.deb")
+b2sums=('63dc428781da607587b34f0a43d028867a293b32fb9b7f452d3ef83048c500d1db82feb99aa6a4c82dc8bed927e4db3e1539255e642184d67a78485396a7e22a'
+        '691842feff3fed809671fcb44111105ff06410e6f15cf34a4dd1ed62eecbc56f663a37c590d94db40b20cfbac3d3a6b97ab0bd9458a390733351e2b8f396d7b5')
 depends=('intel-oneapi-common' 'intel-oneapi-tcm' 'sh' 'gcc-libs' 'glibc' 'hwloc')
 conflicts=('intel-oneapi-basekit')
 noextract=(
-    "${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-    "${pkgname}-devel-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-    "${pkgname}-common-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
-    "${pkgname}-common-devel-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
+    "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
+    "${pkgname}-devel-${_majmin}-${_pkgver}_amd64.deb"
 )
 
 package() {
     cd "${srcdir}"
-    ar x "${srcdir}/${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
+    ar x "${srcdir}/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
     tar xvf data.tar.xz -C "${pkgdir}"
     rm data.tar.xz
 
-    ar x "${srcdir}/${pkgname}-devel-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-    tar xvf data.tar.xz -C "${pkgdir}"
-    rm data.tar.xz
-
-    ar x "${srcdir}/${pkgname}-common-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
-    tar xvf data.tar.xz -C "${pkgdir}"
-    rm data.tar.xz
-
-    ar x "${srcdir}/${pkgname}-common-devel-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
+    ar x "${srcdir}/${pkgname}-devel-${_majmin}-${_pkgver}_amd64.deb"
     tar xvf data.tar.xz -C "${pkgdir}"
     rm data.tar.xz
 
     # latest symlink
     local _prefix=/opt/intel/oneapi/tbb
-    ln -s "${_prefix}/${_pkgver}" "${pkgdir}/${_prefix}/latest"
+    ln -s "${_prefix}/${_majmin}" "${pkgdir}/${_prefix}/latest"
 
     # fix pkgconfig
     sed "s@prefix=.*@prefix=${_prefix}/latest@g" \
-        -i "${pkgdir}/${_prefix}/${_pkgver}"/lib/pkgconfig/tbb.pc
+        -i "${pkgdir}/${_prefix}/${_majmin}"/lib/pkgconfig/tbb.pc
     install -d "${pkgdir}"/usr/share/pkgconfig
     ln -s "${_prefix}"/latest/lib/pkgconfig/tbb.pc "${pkgdir}"/usr/share/pkgconfig/tbb.pc
 
     # cmake
     sed "s@get_filename_component(_tbb_root.*@get_filename_component(_tbb_root ${_prefix}/latest ABSOLUTE)@g" \
-        -i "${pkgdir}/${_prefix}/${_pkgver}"/lib/cmake/tbb/TBBConfig.cmake
+        -i "${pkgdir}/${_prefix}/${_majmin}"/lib/cmake/tbb/TBBConfig.cmake
     install -d "${pkgdir}"/usr/share/cmake/TBB
     ln -s "${_prefix}"/latest/lib/cmake/tbb/TBBConfig.cmake "${pkgdir}"/usr/share/cmake/TBB/TBBConfig.cmake
     ln -s "${_prefix}"/latest/lib/cmake/tbb/TBBConfigVersion.cmake "${pkgdir}"/usr/share/cmake/TBB/TBBConfigVersion.cmake
@@ -72,10 +57,10 @@ package() {
     # will always have priority.
     # FIXME Find a better way to handle this.
     # install -d "${pkgdir}"/etc/ld.so.conf.d
-    # echo "${_prefix}"/latest/"$(sed -n 's/libdir=${prefix}\///p' "${pkgdir}/${_prefix}/${_pkgver}"/lib/pkgconfig/tbb.pc)" \
+    # echo "${_prefix}"/latest/"$(sed -n 's/libdir=${prefix}\///p' "${pkgdir}/${_prefix}/${_majmin}"/lib/pkgconfig/tbb.pc)" \
     #     > "${pkgdir}/etc/ld.so.conf.d/${pkgname}.conf"
 
     install -d "${pkgdir}"/usr/share/licenses/"${pkgname}"
     ln -s /usr/share/licenses/intel-oneapi "${pkgdir}"/usr/share/licenses/"${pkgname}"/oneapi
-    ln -s /opt/intel/oneapi/tbb/"${_pkgver}"/licensing "${pkgdir}"/usr/share/licenses/"${pkgname}"/tbb
+    ln -s /opt/intel/oneapi/tbb/"${_majmin}"/licensing "${pkgdir}"/usr/share/licenses/"${pkgname}"/tbb
 }

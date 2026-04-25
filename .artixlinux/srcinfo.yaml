@@ -1,0 +1,33 @@
+---
+version: 2022.3.1_400-1
+pkgbase:
+  name: intel-oneapi-tbb
+  pkgdesc: Intel oneAPI Threading Building Blocks
+  pkgver: 2022.3.1_400
+  pkgrel: 1
+  url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0 AND LicenseRef-Intel-EULA-Developer-Tools AND LicenseRef-Intel-Simplified
+  depends:
+    - intel-oneapi-common
+    - intel-oneapi-tcm
+    - sh
+    - gcc-libs
+    - glibc
+    - hwloc
+  conflicts:
+    - intel-oneapi-basekit
+  noextract:
+    - intel-oneapi-tbb-2022.3-2022.3.1-400_amd64.deb
+    - intel-oneapi-tbb-devel-2022.3-2022.3.1-400_amd64.deb
+  source:
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-tbb-2022.3-2022.3.1-400_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-tbb-devel-2022.3-2022.3.1-400_amd64.deb
+  b2sums:
+    - 63dc428781da607587b34f0a43d028867a293b32fb9b7f452d3ef83048c500d1db82feb99aa6a4c82dc8bed927e4db3e1539255e642184d67a78485396a7e22a
+    - 691842feff3fed809671fcb44111105ff06410e6f15cf34a4dd1ed62eecbc56f663a37c590d94db40b20cfbac3d3a6b97ab0bd9458a390733351e2b8f396d7b5
+pkgname:
+  - name: intel-oneapi-tbb
+# generated with artixpkg 0.38.5-1-any
