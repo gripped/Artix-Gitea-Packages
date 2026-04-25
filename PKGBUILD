@@ -1,55 +1,54 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Konstantin Gizdov <arch at kge dot pw>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 
 _pkgname='intel-oneapi-compiler-shared'
 pkgbase="${_pkgname}-runtime"
 pkgname=("${_pkgname}-runtime" "${_pkgname}-runtime-libs")
-_pkgver=2025.0
-pkgver=2025.0.4
-_debpkgrel=1519
-pkgrel=2
+pkgver=2025.3.3_30
+_pkgver=$(echo $pkgver | sed 's/_/-/')
+_majmin=$(echo $pkgver | cut -d. -f1,2)
+pkgrel=1
 _pkgdesc="Intel oneAPI compiler runtime libraries"
 arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
 depends=('level-zero-loader')
-source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/${_pkgname}-common-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb")
-b2sums=('14569c598eec7b263a29cf619ea2fe3233b7eef080ba0a338afaea046351ed93885405fcb6ab5fec741689f2a64b626f8e0c22f4bec53a535c80e2c72fffde2b'
-        '9f71a8538618d13aaf366309daf5b0d967f5041c8b6c651480403cde7ff19e814734294d21ea1120caf0473c814bb5361a9559747f22d7561a1630bc38e43b8c')
+source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
+        "https://apt.repos.intel.com/oneapi/pool/main/${_pkgname}-common-${_majmin}-${_pkgver}_all.deb")
+b2sums=('ccc7da489104f41efacd0912174094e188426b87408b32c66b3e7b173897a42eaf1e73b9522bb6a827af2ec0bba01fc2ac92600be242a43f3a58782717ae6974'
+        'e087f54f1a0197e58b28eadc44aa03a5b92e416936e0861412f0d715fe7a3917240d9647072f9c0652e091e08f663613a2fbcb253ce796dd1f2e44083d9b561c')
 
 noextract=(
-    "${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
-    "${_pkgname}-common-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
+    "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
+    "${_pkgname}-common-${_majmin}-${_pkgver}_all.deb"
 )
 _lib_path='/opt/intel/oneapi/compiler'
 
 prepare() {
     mkdir "${_pkgname}-${pkgver}"
-    ar x "${srcdir}/${pkgname}-${_pkgver}-${pkgver}-${_debpkgrel}_amd64.deb"
+    ar x "${srcdir}/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
     tar xvf data.tar.xz -C "${_pkgname}-${pkgver}"
     rm data.tar.xz
-    ar x "${srcdir}/${_pkgname}-common-${_pkgver}-${pkgver}-${_debpkgrel}_all.deb"
+    ar x "${srcdir}/${_pkgname}-common-${_majmin}-${_pkgver}_all.deb"
     tar xvf data.tar.xz -C "${_pkgname}-${pkgver}"
     rm data.tar.xz
 }
 
 build() {
     mkdir libs
-    install -d "libs/${_lib_path}/${_pkgver}/bin"
+    install -d "libs/${_lib_path}/${_majmin}/bin"
 
     local _bin
     for _bin in aocl-ioc64 compiler icx-cc icx-cl ioc64 sycl-ls sycl-trace; do
-        mv "${_pkgname}-${pkgver}/${_lib_path}/${_pkgver}/bin/${_bin}" \
-           "libs/${_lib_path}/${_pkgver}/bin"
+        mv "${_pkgname}-${pkgver}/${_lib_path}/${_majmin}/bin/${_bin}" \
+           "libs/${_lib_path}/${_majmin}/bin"
     done
 
     local _lib
-    install -d "libs/${_lib_path}/${_pkgver}/lib"
+    install -d "libs/${_lib_path}/${_majmin}/lib"
     for _lib in libsvml.so libirng.so libimf.so libintlc.so libintlc.so.5; do
-        mv "${_pkgname}-${pkgver}/${_lib_path}/${_pkgver}/lib/${_lib}" \
-           "libs/${_lib_path}/${_pkgver}/lib"
+        mv "${_pkgname}-${pkgver}/${_lib_path}/${_majmin}/lib/${_lib}" \
+           "libs/${_lib_path}/${_majmin}/lib"
     done
 
     mkdir most
@@ -63,9 +62,6 @@ package_intel-oneapi-compiler-shared-runtime-libs() {
     pkgdesc="${_pkgdesc}: Minimal compiler libraries"
 
     cp -a libs/* "${pkgdir}"
-
-    # add latest and common symlink
-    ln -s "${_lib_path}/${_pkgver}" "${pkgdir}/${_lib_path}/latest"
 
     # allow libs to be found
     local _ldso_conf="${pkgdir}"/etc/ld.so.conf.d

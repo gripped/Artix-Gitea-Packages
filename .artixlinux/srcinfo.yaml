@@ -1,0 +1,51 @@
+---
+version: 2025.3.3_30-1
+pkgbase:
+  name: intel-oneapi-compiler-shared-runtime
+  pkgver: 2025.3.3_30
+  pkgrel: 1
+  url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-Intel-EULA-Developer-Tools
+  depends:
+    - level-zero-loader
+  noextract:
+    - intel-oneapi-compiler-shared-runtime-2025.3-2025.3.3-30_amd64.deb
+    - intel-oneapi-compiler-shared-common-2025.3-2025.3.3-30_all.deb
+  source:
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-compiler-shared-runtime-2025.3-2025.3.3-30_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-compiler-shared-common-2025.3-2025.3.3-30_all.deb
+  b2sums:
+    - ccc7da489104f41efacd0912174094e188426b87408b32c66b3e7b173897a42eaf1e73b9522bb6a827af2ec0bba01fc2ac92600be242a43f3a58782717ae6974
+    - e087f54f1a0197e58b28eadc44aa03a5b92e416936e0861412f0d715fe7a3917240d9647072f9c0652e091e08f663613a2fbcb253ce796dd1f2e44083d9b561c
+pkgname:
+  - name: intel-oneapi-compiler-shared-runtime
+    pkgdesc: Intel oneAPI compiler runtime libraries
+    depends:
+      - intel-oneapi-openmp
+      - intel-oneapi-common
+      - intel-oneapi-compiler-shared-runtime-libs
+      - libxml2
+      - glibc
+      - gcc-libs
+      - level-zero-loader
+      - zlib
+    provides:
+      - intel-oneapi-compiler-shared-common
+      - opencl-driver
+    conflicts:
+      - intel-oneapi-basekit
+  - name: intel-oneapi-compiler-shared-runtime-libs
+    pkgdesc:
+      Intel oneAPI compiler runtime libraries: Minimal compiler libraries
+    depends:
+      - intel-oneapi-common
+      - intel-oneapi-openmp
+      - glibc
+      - gcc-libs
+      - zlib
+    conflicts:
+      - intel-oneapi-basekit
+# generated with artixpkg 0.38.5-1-any
