@@ -1,10 +1,10 @@
 ---
-version: 13.0.0-3
+version: 13.0.1-1
 pkgbase:
   name: python-pyee
   pkgdesc: Port of node.js's EventEmitter to python
-  pkgver: 13.0.0
-  pkgrel: 3
+  pkgver: 13.0.1
+  pkgrel: 1
   url: https://github.com/jfhbrook/pyee
   arch:
     - any
@@ -22,14 +22,15 @@ pkgbase:
     - python-setuptools-scm
     - python-wheel
   depends:
+    - python
     - python-typing_extensions
   optdepends:
     - python-trio
     - python-twisted
   source:
-    - git+https://github.com/jfhbrook/pyee#tag=v13.0.0
+    - git+https://github.com/jfhbrook/pyee#tag=v13.0.1
   sha256sums:
-    - d44abfc1549ae13fb1c8b4325aae98aebff07bdc87475232162dc81e22f5700f
+    - 2f3cb24b02767665060a63d5639c9b0b8185eea98419a9aa4037b1456d42e0d2
 pkgname:
   - name: python-pyee
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
