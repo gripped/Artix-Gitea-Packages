@@ -3,7 +3,7 @@
 # Contributor: Frederik “Freso” S. Olesen <freso.dk@gmail.com>
 
 pkgname=python-mediafile
-pkgver=0.16.2
+pkgver=0.17.0
 pkgrel=1
 pkgdesc='Elegant audio file tagging'
 arch=(any)
@@ -22,8 +22,8 @@ makedepends=(
 )
 checkdepends=(python-pytest)
 source=("$pkgname::git+https://github.com/beetbox/mediafile#tag=v$pkgver")
-sha512sums=('606cd7cb1b56086e1a9ac98ebdb9e23f9dc1b4dfd223c4b0cf4bd7370a575c874c529fcaf250459988e585e6e7e05dd6cc82838bcbff2f84fac8b6fa76878295')
-b2sums=('e2623bfeaa69bee6623deb423ac9b0c4439e7efde61ca1843be9fdf714bbb5762023c77992ffe004f5edd59254e0980a3088b831740b9ce635e8c0efc77d15d6')
+sha512sums=('f3d182e065343697f384c0eb8685d4f9f7eaff12c6bd32be80f194104837672acfb2d2055cc6948c7065cd9c0a4f21df8a6c1782652eb18bf684c282410cd746')
+b2sums=('bed66b9d4852735d55b506877e9bc013d2564f2401836920db8ac955bf1c74106c8fa7f745751a3695b41c47df709ee01b100ea17d4fe041f565f5c711c1e89b')
 
 build() {
   cd "$pkgname"
