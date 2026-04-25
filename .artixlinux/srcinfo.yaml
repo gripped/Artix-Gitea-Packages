@@ -1,10 +1,10 @@
 ---
-version: 1.3.3-4.1
+version: 1.3.3-5
 pkgbase:
   name: maeparser
   pkgdesc: Maestro file parser
   pkgver: 1.3.3
-  pkgrel: 4.1
+  pkgrel: 5
   url: https://github.com/schrodinger/maeparser
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - 74912bdc8b99d93c6488caf4c70f05e87c14d03a80ea8df78979ce14ddcef9d3
 pkgname:
   - name: maeparser
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
