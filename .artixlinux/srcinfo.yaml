@@ -1,10 +1,10 @@
 ---
-version: 32.1.1-3
+version: 32.1.2-1
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
-  pkgver: 32.1.1
-  pkgrel: 3
+  pkgver: 32.1.2
+  pkgrel: 1
   url: https://obsproject.com
   arch:
     - x86_64
@@ -22,6 +22,7 @@ pkgbase:
     - websocketpp
     - asio
     - extra-cmake-modules
+    - git
   depends:
     - ffmpeg
     - jansson
@@ -52,10 +53,16 @@ pkgbase:
     - 'v4l2loopback-dkms: virtual camera support'
     - 'xdg-desktop-portal-impl: Wayland window/screen capture'
   source:
-    - obs-studio-32.1.1.tar.gz::https://github.com/obsproject/obs-studio/releases/download/32.1.1/OBS-Studio-32.1.1-Sources.tar.gz
+    - obs-studio::git+https://github.com/obsproject/obs-studio#tag=32.1.2
+    - obs-studio-libdshowcapture::git+https://github.com/obsproject/libdshowcapture.git
+    - obs-studio-obs-browser::git+https://github.com/obsproject/obs-browser.git
+    - obs-studio-obs-websocket::git+https://github.com/obsproject/obs-websocket.git
     - obs-browser-Update-to-C-20.patch
   sha256sums:
-    - f4c17e1aa2a00efd8729ed6cfef9308bc6a2b6c583c187d7959eaa72eb2e3676
+    - 5d515107c68006319c91d24a3a661f6fc4c1a619ebbac85a567fb6f5fec1e2c4
+    - SKIP
+    - SKIP
+    - SKIP
     - 474832a156d29224eabc77bc78ca33b0e6116cb00dc2786b5869744bae8f72c3
 pkgname:
   - name: obs-studio
