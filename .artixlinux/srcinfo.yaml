@@ -1,9 +1,9 @@
 ---
-version: 2025.0.1-3
+version: 2025.3.1_8-1
 pkgbase:
   name: intel-oneapi-mkl
-  pkgver: 2025.0.1
-  pkgrel: 3
+  pkgver: 2025.3.1_8
+  pkgrel: 1
   url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
   arch:
     - x86_64
@@ -12,49 +12,70 @@ pkgbase:
   makedepends:
     - dpkg
   noextract:
-    - intel-oneapi-mkl-classic-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-classic-include-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-core-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-core-devel-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-cluster-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-cluster-devel-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-sycl-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-sycl-blas-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-sycl-lapack-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-sycl-dft-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-sycl-sparse-2025.0-2025.0.1-14_amd64.deb
-    - intel-oneapi-mkl-sycl-data-fitting-2025.0-2025.0.1-14_amd64.deb
+    - intel-oneapi-mkl-devel-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-classic-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-classic-devel-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-classic-include-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-core-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-core-devel-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-cluster-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-cluster-devel-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-include-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-devel-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-blas-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-lapack-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-dft-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-sparse-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-data-fitting-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-rng-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-stats-2025.3-2025.3.1-8_amd64.deb
+    - intel-oneapi-mkl-sycl-vm-2025.3-2025.3.1-8_amd64.deb
   options:
     - staticlibs
     - '!debug'
   source:
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-include-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-devel-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-devel-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-blas-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-lapack-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-dft-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-sparse-2025.0-2025.0.1-14_amd64.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-data-fitting-2025.0-2025.0.1-14_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-devel-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-devel-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-classic-include-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-core-devel-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-cluster-devel-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-include-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-devel-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-blas-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-lapack-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-dft-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-sparse-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-data-fitting-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-rng-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-stats-2025.3-2025.3.1-8_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-mkl-sycl-vm-2025.3-2025.3.1-8_amd64.deb
     - intel-oneapi-mkl.conf
     - intel-oneapi-mkl.sh
   sha256sums:
-    - b1dae0ee0fd0622825146faf1ab6713ac69f90619867291f1aa3ca2b0c8ce4c5
-    - 689223a1c616a56dae6c10b86eff48885c2a4fb488d37e9f93e7936307275874
-    - 26d934b13c7e5bae019b5f45bfde5fda0a16beedf6f18f172007c53084784942
-    - 77a6fe0d2e11593ab8a06a3510ef71bbcf63142be8530123dc77730ae2cd44fb
-    - 904159bbbab7e1f9ec30ec9890216f39195d58820cd6c3928c21918afddb8c7a
-    - 8cac9223c6e5c539799aa71672dafe9237ed32a21b4c9970b312071e2259319e
-    - 27a8f4ef8cd8162ecb77d387a1583ae639fe9deef19469105b7f184bf60e0626
-    - 192a730dedb0ce9e513735e56364f78276c835a917ed4054239b3e81f3b9e164
-    - 52c0dfd47367a92ce49788a28bc043988f68dacfc146be09094b0b3309eccdd6
-    - b3ab0022eff79ddc52a78df3cddddce240e44f2d5509183989a8bea7597a6d34
-    - cc28d8334ea665dbf0cd22589eb54d47bd848ee5c84c9f99e4905633eeeb48ff
-    - cc6a702e1c40928ee18124361facfc182ac24f674082883ff46602b751950e06
+    - a0ff407b16b584be7d50cfab6ac8081133049ec6567e2ec922a5c99015fa5e77
+    - e629398bb30bab38af404aae18d44c2f270a3da0100e1a3124df48df42e8cba0
+    - 5d6d62e721795211f48483725581fff15533b50c4ee00f55a06d6e24f1fe5925
+    - 4ba39c1de76e318723c35c3043f2ad6279eb13a8658955eb4c36c595cf672f9c
+    - 1648440662a5146d2064456c6e7ba23b00dbe63cb4a26e3563eb43b4912ace2f
+    - d2efe5d549803e80c3a9b3e5e092860f0acdd2f37da0e1c12de17d2e730035e6
+    - 2149ca2adb7cef318ff50ea1fd6135cf873c2c4a1f3c0e396051645d992c0e7d
+    - 3eb204990eb328b218bbd0a178dc40e4ac3f3a4fd7578caaf00caf7f0d732e70
+    - d3db31980517d70ba5febee14e089ac75844a9420ffde2baa43dc6f3e7269df8
+    - 5fa96fb892c4b818fb176e556f3a93f99235affe0b47b7766717b9d6dcbd44ae
+    - 73c70ab19f76d2c4cb64686800b2682d01a79f3a686454ff6d0b5198ce5f4e0d
+    - deb413a909822c14a6ee8eb270d5edb3351dc1c2656175ef40a7f99e025e6aab
+    - 5296ef4a969688e3af40ebd851162523e3b5d4f63fea1d2f48a8dfd6a675a0a5
+    - e825872685f8b93130e32ca1b72d31cad808042f97f956b5e8e86065f94d29e8
+    - 1261ee1b3ce52dfcc642ba541953af144308b2242e57ab7a32550da51882afaf
+    - ca9b47611b8e7b8503b087ca7de4ff6417325c10685d6d0254df1eb3a668aca8
+    - 8559a0e7cdcd77f8f4e97c490b0d5e055605b21815e93d88383c53772f60c507
+    - 426fd7795f4ef278930e2ea8a0021b4ff3460ab1c826206e01a17458cca9a9ba
+    - 47f9a6fa7fcc9bcc98de93cfea2c92cfda45f9e86ddd8129176f527e53a7f7e9
     - cd787d9843146ad5ccf28ec72311d76d95d6bb9e42974dd614d8b5aa76bb5bd9
     - 85a56750e03ad99a5b99e7296dcea411fb88c4a0a25e674c86ab48f5648d9ae9
 pkgname:
@@ -89,4 +110,4 @@ pkgname:
       - bash
     conflicts:
       - intel-oneapi-basekit
-# generated with artixpkg 0.36.0-3-any
+# generated with artixpkg 0.38.5-1-any
