@@ -1,7 +1,7 @@
 # Maintainer: arc-d3v <arc-d3v@artixlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
-pkgver=39
+pkgver=41
 pkgrel=1
 epoch=1
 pkgname=electron
@@ -12,7 +12,7 @@ license=(MIT)
 depends=("electron$pkgver")
 
 package() {
-    mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/lib"
-    ln -sf "${depends[0]}" "$pkgdir/usr/bin/$pkgname"
-    ln -sf "${depends[0]}" "$pkgdir/usr/lib/$pkgname"
+  mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/lib"
+  ln -sf "${depends[0]}" "$pkgdir/usr/bin/$pkgname"
+  ln -sf "${depends[0]}" "$pkgdir/usr/lib/$pkgname"
 }
