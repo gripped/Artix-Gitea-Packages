@@ -1,11 +1,11 @@
 ---
-version: 16.0.0-1
+version: 17.0.0-1
 pkgbase:
   name: python-oslo-db
   pkgdesc: OpenStack Database Pattern Library
-  pkgver: 16.0.0
+  pkgver: 17.0.0
   pkgrel: 1
-  url: https://pypi.org/project/oslo.db/16.0.0/
+  url: https://pypi.org/project/oslo.db/17.0.0/
   arch:
     - any
   license:
@@ -40,9 +40,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/openstack/oslo.db.git#tag=16.0.0
+    - git+https://github.com/openstack/oslo.db.git#tag=17.0.0
   sha512sums:
-    - 259a356cb80a5b628c5404ef3f3e232edeb017221f2159dd0691d86cb3e31f7b3e1d6f6d1ca3f8bb689cdb5f17c5bc890f08dc330f79fe41c89698e0ff7aed3b
+    - bbefc19c6a162a0a1e1769b00c7d4da52674732741e26ef44b99796d3045f1f068c9e5cc95b2a3297492cda6d488a170c9cb093f2a4dfb359d4602cd57dc55e6
 pkgname:
   - name: python-oslo-db
 # generated with artixpkg 0.38.5-1-any
