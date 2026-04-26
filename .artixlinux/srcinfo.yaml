@@ -1,9 +1,9 @@
 ---
-version: 4.1.0-1
+version: 4.1.2-1
 pkgbase:
   name: minizip-ng
   pkgdesc: Fork of the popular zip manipulation library found in the zlib distribution
-  pkgver: 4.1.0
+  pkgver: 4.1.2
   pkgrel: 1
   url: https://github.com/zlib-ng/minizip-ng
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - zlib-ng
     - zstd
   source:
-    - git+https://github.com/zlib-ng/minizip-ng#tag=4.1.0
+    - git+https://github.com/zlib-ng/minizip-ng#tag=4.1.2
   sha256sums:
-    - 89078260decfc7346e41a97a3584037258130bc865e32ec44418ceafd74dabc6
+    - 8f080428bf3b07595f8aa737ac78666caeb3d27ad23dbf9a1b39b6f829a685d4
 pkgname:
   - name: minizip-ng
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.5-1-any
