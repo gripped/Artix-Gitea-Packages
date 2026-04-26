@@ -1,9 +1,9 @@
 ---
-version: 0.22.8-1
+version: 0.23.1-1
 pkgbase:
   name: xonsh
   pkgdesc: A python-powered shell. Full-featured and cross-platform.
-  pkgver: 0.22.8
+  pkgver: 0.23.1
   pkgrel: 1
   url: https://xon.sh/
   install: xonsh.install
@@ -31,9 +31,9 @@ pkgbase:
     - 'python-pygments: for syntax highlighting and colorization'
     - 'python-setproctitle: for updating process title to match Xonsh arguments'
   source:
-    - https://github.com/xonsh/xonsh/archive/0.22.8/xonsh-0.22.8.tar.gz
+    - https://github.com/xonsh/xonsh/archive/0.23.1/xonsh-0.23.1.tar.gz
   sha256sums:
-    - 86c4ff931df7550ba5365c6ccf8173aec9958668271d2cff219dac1c6e226e8b
+    - 0ac36813b47de440ba5deb86da7bb2bd2a9d8d257a76fdbc2d211264741c66b8
 pkgname:
   - name: xonsh
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
