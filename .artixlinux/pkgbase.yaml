@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,19 +45,17 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 26.2.2-5
-    packages:
-      - libreoffice-fresh-sdk-26.2.2-5-x86_64.pkg.tar.zst
-      - libreoffice-fresh-26.2.2-5-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy-gremlins:
     version: null
     packages: []
     debug: []
   galaxy:
-    version: 26.2.2-4
+    version: 26.2.2-5
     packages:
-      - libreoffice-fresh-sdk-26.2.2-4-x86_64.pkg.tar.zst
-      - libreoffice-fresh-26.2.2-4-x86_64.pkg.tar.zst
+      - libreoffice-fresh-sdk-26.2.2-5-x86_64.pkg.tar.zst
+      - libreoffice-fresh-26.2.2-5-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
