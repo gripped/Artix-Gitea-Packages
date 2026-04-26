@@ -5,7 +5,7 @@
 
 pkgname=logstalgia
 pkgver=1.1.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc="a visualization tool that replays or streams web server access logs as a retro arcade game simulation"
 url="https://github.com/acaudwell/Logstalgia"
 arch=('i686' 'x86_64')
