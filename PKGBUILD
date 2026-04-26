@@ -1,10 +1,11 @@
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
 
 _pkgname='intel-oneapi-compiler-shared'
 pkgbase="${_pkgname}-runtime"
 pkgname=("${_pkgname}-runtime" "${_pkgname}-runtime-libs")
-pkgver=2025.3.3_30
+pkgver=2026.0.0_947
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -15,8 +16,8 @@ license=("LicenseRef-Intel-EULA-Developer-Tools")
 depends=('level-zero-loader')
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
         "https://apt.repos.intel.com/oneapi/pool/main/${_pkgname}-common-${_majmin}-${_pkgver}_all.deb")
-b2sums=('ccc7da489104f41efacd0912174094e188426b87408b32c66b3e7b173897a42eaf1e73b9522bb6a827af2ec0bba01fc2ac92600be242a43f3a58782717ae6974'
-        'e087f54f1a0197e58b28eadc44aa03a5b92e416936e0861412f0d715fe7a3917240d9647072f9c0652e091e08f663613a2fbcb253ce796dd1f2e44083d9b561c')
+b2sums=('87976021447f06a7643b398bb783b2d05ba1b2614e996af4d987a7dd9004c4e1ba1964e43ed5aafb4d3fca3a2f889d3441f35a1db3aea122366e02b73289b645'
+        '7d62eecc7f72a28516746f9876828e0941f41ae701d573a0f491dd84e2290fc4bed6dc1da37b8f274ab7214dd80342c206b469862985f1a56e14f6fb06ce4d13')
 
 noextract=(
     "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
