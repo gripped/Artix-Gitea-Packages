@@ -1,4 +1,5 @@
-type            = process
-command         = /usr/bin/pipewire
-depends-on      = dbus
-log-type        = buffer
+type               = process
+ready-notification = pipevar:PIPEWIRE_NOTIFICATION_FD
+command            = /usr/bin/pipewire
+depends-on         = dbus
+log-type           = buffer
