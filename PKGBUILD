@@ -1,6 +1,7 @@
-# Maintainer: Torsten Keßler <tpkessler@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler@archlinux.org>
 pkgname=intel-oneapi-tcm
-pkgver=1.4.1_445
+pkgver=1.5.0_489
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -10,7 +11,7 @@ url="https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.htm
 license=('LicenseRef-Intel-Simplified')
 depends=('intel-oneapi-common' 'glibc' 'gcc-libs' 'hwloc')
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb")
-b2sums=('dff1e9198505b28ec69a8450faaef44946f9b1d1d789062f3d8f4ae7b8b5f08b758a089d88018adcb7624a0f93f2863ef43dd2fc2d5fd69f0f7fcc21ea1c5122')
+b2sums=('874b6bb986bbf98cfa8340955c1f7575f823050c3258450bd0508b09dd9fa0507bacb13193d4282ff2591b5e8f79fea1ecc412141ea07eb290e4103411cdd9be')
 noextract=("${pkgname}-${majmin}-${_pkgver}_amd64.deb")
 conflicts=('intel-oneapi-basekit')
 
