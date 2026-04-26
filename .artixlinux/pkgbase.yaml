@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.3.1_15-1
+    version: 2026.0.0_230-1
     packages:
-      - intel-oneapi-dev-utilities-2025.3.1_15-1-any.pkg.tar.zst
+      - intel-oneapi-dev-utilities-2026.0.0_230-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2025.0.0-1
