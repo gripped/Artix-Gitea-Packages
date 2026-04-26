@@ -1,11 +1,12 @@
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
 # Contributor: Martin Rodriguez Reboredo <yakoyoku@gmail.com>
 # Contributor: huyz
 # Contributor: Jingbei Li <i@jingbei.li>
 pkgbase=intel-oneapi-mkl
 pkgname=("${pkgbase}" "${pkgbase}-sycl")
-pkgver=2025.3.1_8
+pkgver=2026.0.0_908
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -58,25 +59,25 @@ noextract=(
            "${pkgbase}-sycl-stats-${_majmin}-${_pkgver}_amd64.deb"
            "${pkgbase}-sycl-vm-${_majmin}-${_pkgver}_amd64.deb"
            )
-sha256sums=('a0ff407b16b584be7d50cfab6ac8081133049ec6567e2ec922a5c99015fa5e77'
-            'e629398bb30bab38af404aae18d44c2f270a3da0100e1a3124df48df42e8cba0'
-            '5d6d62e721795211f48483725581fff15533b50c4ee00f55a06d6e24f1fe5925'
-            '4ba39c1de76e318723c35c3043f2ad6279eb13a8658955eb4c36c595cf672f9c'
-            '1648440662a5146d2064456c6e7ba23b00dbe63cb4a26e3563eb43b4912ace2f'
-            'd2efe5d549803e80c3a9b3e5e092860f0acdd2f37da0e1c12de17d2e730035e6'
-            '2149ca2adb7cef318ff50ea1fd6135cf873c2c4a1f3c0e396051645d992c0e7d'
-            '3eb204990eb328b218bbd0a178dc40e4ac3f3a4fd7578caaf00caf7f0d732e70'
-            'd3db31980517d70ba5febee14e089ac75844a9420ffde2baa43dc6f3e7269df8'
-            '5fa96fb892c4b818fb176e556f3a93f99235affe0b47b7766717b9d6dcbd44ae'
-            '73c70ab19f76d2c4cb64686800b2682d01a79f3a686454ff6d0b5198ce5f4e0d'
-            'deb413a909822c14a6ee8eb270d5edb3351dc1c2656175ef40a7f99e025e6aab'
-            '5296ef4a969688e3af40ebd851162523e3b5d4f63fea1d2f48a8dfd6a675a0a5'
-            'e825872685f8b93130e32ca1b72d31cad808042f97f956b5e8e86065f94d29e8'
-            '1261ee1b3ce52dfcc642ba541953af144308b2242e57ab7a32550da51882afaf'
-            'ca9b47611b8e7b8503b087ca7de4ff6417325c10685d6d0254df1eb3a668aca8'
-            '8559a0e7cdcd77f8f4e97c490b0d5e055605b21815e93d88383c53772f60c507'
-            '426fd7795f4ef278930e2ea8a0021b4ff3460ab1c826206e01a17458cca9a9ba'
-            '47f9a6fa7fcc9bcc98de93cfea2c92cfda45f9e86ddd8129176f527e53a7f7e9'
+sha256sums=('922b068582f403335cc1a468f98cd415fa052a72aa79188eba7bfe87d125d4ba'
+            '2d7c1511564fe1f56ccc41ab5ee599a6529a64d7f0e02c121885a3bd7c7f7de6'
+            'fc4753d8735b3234ca75c70b8707c1af51e5cbe1fcdd2b60b97f4abf3495c380'
+            'c6df2a80d444736037fe44f4f681cf04a85759cf66f6756b13864f4f1acf26be'
+            '3cc588084e9820af237c90dba4c1546e50f2d7e02a15d0072504ed4ccf764ec0'
+            '5c0d13c36849fd58c21975950e1343cd9770b7d81fc7f26cebee09365cbf8d21'
+            '3146729238008bae02486bd24943ffd0b92009506ce6a3eade416af93964aee9'
+            'ed5d7e96fbadcb7e82c08e42aa4957d56f5aaa930cd6f1bac9342b97d6ec6d14'
+            '776c4ff4d21de67d94bd4a28e4c6abc9ed24c78b124bfdb322bdf6bc8e63c41b'
+            'e30e1e14ae32bd1824ed28be178ea88921c271ad72ab7f1e2b9214dc9d2de719'
+            '08a5f9941360b21dc4a93df2c071d1778b229a9932bdfdf53c4bef5ff3999eab'
+            'b32078f1805ab126f78333276bb860f288d3a2785dc101b4b9df499cd35fa76d'
+            '5a31d222fa527c96bd7aa8bbc7819a11417cc7e6ba38803b55e224541aab68c3'
+            'e4168ed1fce35e19552125fdc27bce0820e7348eb42842f4373f05f7fc5f3635'
+            '1552782efcad141280666f05db5983cfcec4e094a57672170786c7b5e1ff5f9c'
+            'd84b0e2351c8a2de3b503600e604befb689041a561d4702c77b40699acf2e891'
+            'ae6910cd6226a9a380df846849288bf07c5eda0387896b90820cf904a29ee4a0'
+            'f13aefc7b2c7d5222428f2b8c2140ce5e1e70cf635386fadcf9338f91468dc77'
+            '5d519d5fe0a4cdf6cd689eea4f97f1bdbeb3eed1d508d46486a57f072f633cd6'
             'cd787d9843146ad5ccf28ec72311d76d95d6bb9e42974dd614d8b5aa76bb5bd9'
             '85a56750e03ad99a5b99e7296dcea411fb88c4a0a25e674c86ab48f5648d9ae9')
 
