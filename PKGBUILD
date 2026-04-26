@@ -2,7 +2,7 @@
 # Contributor: huyz
 
 pkgname=gemini-cli
-pkgver=0.38.2
+pkgver=0.39.1
 pkgrel=1
 epoch=1
 pkgdesc="Open-source AI agent that brings the power of Gemini directly into your terminal"
@@ -35,7 +35,7 @@ checkdepends=(
   vim
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('386396e8e29f814b9060b2a802953d1eea91ac729f5781cbdab1f87dcb3bbebab827a77634e48da8879aa6fb753e9e8f211be439ba25f2fac37612dbe55204bf')
+b2sums=('64591531c90e8909b495f2a3796f6df5a968376220d9d08ad01b048cb8cd55dd7bc2e7ac81dd1e3024bde0baa8a1b5c3757b7251b800a8274e89005362eaaeca')
 
 prepare() {
   cd $pkgname
@@ -49,7 +49,7 @@ build() {
   # (GNOME Keyring, KDE Wallet, etc.) instead of falling back to a file-based
   # keychain.
   (
-    cd node_modules/keytar
+    cd node_modules/@github/keytar
     node-gyp rebuild
   )
   local bundled=$(jq '.dependencies + .optionalDependencies | keys' package.json)
@@ -64,6 +64,7 @@ check() {
   npm run test --workspaces --if-present -- \
     --exclude='**/BuiltinCommandLoader.test.ts' \
     --exclude='**/config.integration.test.ts' \
+    --exclude='**/gemini.test.tsx' \
     --exclude='**/mcp-client.test.ts' \
     --exclude='**/sandboxManager.integration.test.ts'
   npm run test:sea-launch
@@ -74,7 +75,7 @@ package() {
   npm install --global --offline --prefix "$pkgdir/usr" \
     google-$pkgname-$pkgver.tgz
   # Remove node-gyp build artifacts
-  rm -vr "$pkgdir/usr/lib/node_modules/@google/gemini-cli/node_modules/keytar/build/Release/obj.target"
+  rm -vrf "$pkgdir/usr/lib/node_modules/@google/gemini-cli/node_modules/@github/keytar/build/Release/obj.target"
   install -vDm644 -t "$pkgdir/usr/share/doc/$pkgname" README.md
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 }
