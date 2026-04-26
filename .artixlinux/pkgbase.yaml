@@ -1,8 +1,8 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: galaxy-gremlins
+  addRepo: galaxy
+  removeRepo: galaxy-goblins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -46,16 +46,15 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 0.18.4.6-3
-    packages:
-      - monero-0.18.4.6-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy-gremlins:
     version: null
     packages: []
     debug: []
   galaxy:
-    version: 0.18.4.6-2
+    version: 0.18.4.6-3
     packages:
-      - monero-0.18.4.6-2-x86_64.pkg.tar.zst
+      - monero-0.18.4.6-3-x86_64.pkg.tar.zst
     debug: []
