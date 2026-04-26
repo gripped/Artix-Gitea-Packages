@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2022.3.1_400-1
+    version: 2023.0.0_724-1
     packages:
-      - intel-oneapi-tbb-2022.3.1_400-1-x86_64.pkg.tar.zst
+      - intel-oneapi-tbb-2023.0.0_724-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2021.12.0-2

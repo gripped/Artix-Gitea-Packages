@@ -1,8 +1,9 @@
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
 
 pkgname=intel-oneapi-tbb
-pkgver=2022.3.1_400
+pkgver=2023.0.0_724
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -12,8 +13,8 @@ url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("Apache-2.0 AND LicenseRef-Intel-EULA-Developer-Tools AND LicenseRef-Intel-Simplified")
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
         "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-devel-${_majmin}-${_pkgver}_amd64.deb")
-b2sums=('63dc428781da607587b34f0a43d028867a293b32fb9b7f452d3ef83048c500d1db82feb99aa6a4c82dc8bed927e4db3e1539255e642184d67a78485396a7e22a'
-        '691842feff3fed809671fcb44111105ff06410e6f15cf34a4dd1ed62eecbc56f663a37c590d94db40b20cfbac3d3a6b97ab0bd9458a390733351e2b8f396d7b5')
+b2sums=('5dc1e6e6a78443a5098089565b4004ac7f0679e6080b96b9c009b0a79660f70b0bc6e5e967fc488db399064a3f68c35e89b068744a2f53aebbfc0107cee3f560'
+        'f96fa6000ccddccc0ea7d20f9e071648405e0532c03d788e64e05b9852b32c1fe7d941bd764de411bef9960c4e6ed31bfed3e358c43560f4858a3af730c4a4d4')
 depends=('intel-oneapi-common' 'intel-oneapi-tcm' 'sh' 'gcc-libs' 'glibc' 'hwloc')
 conflicts=('intel-oneapi-basekit')
 noextract=(
