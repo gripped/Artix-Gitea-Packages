@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-goblins
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -51,8 +51,9 @@ repos:
       - blender-17:5.1.1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 17:5.1.1-4
+    packages:
+      - blender-17:5.1.1-4-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 17:5.1.1-1

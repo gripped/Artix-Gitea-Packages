@@ -1,4 +1,5 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Hurricane Pootis <hurricanepootis@protonmail.com>
 # Contributor: John Sowiak <john@archlinux.org>
 # Contributor: tobias <tobias@archlinux.org>
@@ -9,7 +10,7 @@
 
 pkgname=blender
 pkgver=5.1.1
-pkgrel=2
+pkgrel=4
 epoch=17
 pkgdesc="A fully integrated 3D graphics creation suite"
 arch=('x86_64')
@@ -35,6 +36,7 @@ depends=(
   'expat'
   'ffmpeg'
   'fftw'
+  'fmt'
   'freetype2'
   'glew'
   'glibc'
@@ -124,9 +126,11 @@ optdepends=('cuda: Cycles renderer CUDA support'
 options=('!lto')
 source=("git+https://projects.blender.org/blender/blender.git#tag=v$pkgver"
         blender-hip-update.patch
+        blender-fix-oneapi-2026-atomic-address-space.patch::https://raw.githubusercontent.com/intel/llvm/20a7095cba72ace59f7c8a64711ec4b51f01f030/devops/actions/blender/blender-build/patches/Fix-build.patch
         https://developer.download.nvidia.com/redist/optix/v8.0/OptiX-8.0-Include.zip)
 sha512sums=('fd408f920c3762c155fcf47cde18f78800d2565b12dc671836c53f7a43beec782059b42d07856b8b168b37ece02eba6048338ee0076ef7f2724113cd5ee65dc0'
             '77d202e2033a2e5c26adcc5340da6fbd7f859a8b237b37f9be7f08fbbb99173a67462f1b0aa0dce31967cd8c465b6341628567ace1e477b81a1b75c2383357ca'
+            '17b15a7e2ea7e89e22a35325104e6a047253242f820815fa499a1010a0caa90b5a7c0a67b4434e24d472d09c767d34a6524e769ca8f1da13728dec89ed9267c0'
             '5502d9df847de12badc702c0444bd4f1f7620460b2235026df2c3133da1e04c148af0f1fc7f345e9a0c009c32f905f66c8d427743445e8864d3a797cdce6a483')
 
 prepare() {
@@ -137,10 +141,8 @@ prepare() {
   git lfs fetch network-origin
   git lfs checkout
 
-  # Fix build with older oneapi (we really should upgrade soon!)
-  git revert -n d4147c046e98d5996720cefd6e0b630e19c88e94 49414a72f607ccd15f8b71b81edc9aff040d581e
-
   patch -Np1 -i "$srcdir"/blender-hip-update.patch
+  patch -Np1 -i "$srcdir"/blender-fix-oneapi-2026-atomic-address-space.patch
 
   # TODO Dirty hack / workaround to address:
   # https://gitlab.archlinux.org/archlinux/packaging/packages/blender/-/issues/44
