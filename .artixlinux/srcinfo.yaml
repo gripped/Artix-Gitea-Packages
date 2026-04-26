@@ -1,10 +1,10 @@
 ---
-version: 1.1.0_340-1
+version: 1.1.0_340-2
 pkgbase:
   name: intel-oneapi-umf
   pkgdesc: Unified Memory Framework
   pkgver: 1.1.0_340
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.intel.com/content/www/us/en/developer/tools/oneapi/overview.html
   arch:
     - x86_64
