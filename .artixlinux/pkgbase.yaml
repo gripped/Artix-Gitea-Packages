@@ -26,10 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20250308-2
+    version: 20260426-1
     packages:
-      - pipewire-openrc-20250308-2-any.pkg.tar.zst
-      - pipewire-pulse-openrc-20250308-2-any.pkg.tar.zst
+      - pipewire-openrc-20260426-1-any.pkg.tar.zst
+      - pipewire-pulse-openrc-20260426-1-any.pkg.tar.zst
     debug: []
   world:
     version: 20250308-2
