@@ -1,9 +1,9 @@
 ---
-version: 2026.0.0_947-1
+version: 2026.0.0_947-2
 pkgbase:
   name: intel-oneapi-compiler-dpcpp-cpp-runtime
   pkgver: 2026.0.0_947
-  pkgrel: 1
+  pkgrel: 2
   url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
   arch:
     - x86_64

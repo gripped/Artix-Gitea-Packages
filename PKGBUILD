@@ -9,7 +9,7 @@ pkgname=("${_pkgname}-runtime" "${_pkgname}-runtime-libs")
 pkgver=2026.0.0_947
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
-pkgrel=1
+pkgrel=2
 _pkgdesc="Intel oneAPI Data Parallel C++ compiler"
 arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
@@ -68,6 +68,11 @@ package_intel-oneapi-compiler-dpcpp-cpp-runtime-libs() {
     pkgdesc="${_pkgdesc}: Minimal runtime libraries"
 
     cp -a "${srcdir}/${_pkgbase}-${pkgver}-libs/opt" "${pkgdir}"
+
+    # fix ldconfig warning by adjusting the symlinks to a semver lib
+    local _lib=/opt/intel/oneapi/compiler/${_majmin}/lib/libsycl-preview.so
+    local _ver=9.0.0
+    ln -vsf "${_lib}.${_ver}" "${pkgdir}/${_lib}.${_ver%%.*}"
 
     # allow libs to be found
     local _lib_path='/opt/intel/oneapi/compiler'
