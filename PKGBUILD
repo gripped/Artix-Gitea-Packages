@@ -1,8 +1,9 @@
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
 # Contributor: Jingbei Li <i@jingbei.li>
 
 pkgname=intel-oneapi-dpcpp-debugger
-pkgver=2025.3.1_7
+pkgver=2026.0.0_220
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -11,7 +12,7 @@ arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb")
-b2sums=('ea17b53dded87884b6c105d13054a7e9847be9f90c8d7a90d0e18dcc8cf23646cf1d4b081a45fea3cb121247b1407e8c7edbbacef0d461da2ae08fbea65fa28f')
+b2sums=('d90a63fe1a6277551b77e196767d28ad0db55a6f93b5eb76fc574dfb4b1a5b449b2b9c27e70267397d785a8798d5cca1bc4ce7f7239b55ac65cb54e6c7b7f342')
 noextract=(
 	"${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
 )

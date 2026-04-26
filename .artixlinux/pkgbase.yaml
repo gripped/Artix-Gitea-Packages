@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.3.1_7-1
+    version: 2026.0.0_220-1
     packages:
-      - intel-oneapi-dpcpp-debugger-2025.3.1_7-1-x86_64.pkg.tar.zst
+      - intel-oneapi-dpcpp-debugger-2026.0.0_220-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2025.0.0-2.2

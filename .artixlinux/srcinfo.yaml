@@ -1,9 +1,9 @@
 ---
-version: 2025.3.1_7-1
+version: 2026.0.0_220-1
 pkgbase:
   name: intel-oneapi-dpcpp-debugger
   pkgdesc: Intel OneAPI GDB
-  pkgver: 2025.3.1_7
+  pkgver: 2026.0.0_220
   pkgrel: 1
   url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
   arch:
@@ -22,11 +22,11 @@ pkgbase:
   conflicts:
     - intel-oneapi-basekit
   noextract:
-    - intel-oneapi-dpcpp-debugger-2025.3-2025.3.1-7_amd64.deb
+    - intel-oneapi-dpcpp-debugger-2026.0-2026.0.0-220_amd64.deb
   source:
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-dpcpp-debugger-2025.3-2025.3.1-7_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-dpcpp-debugger-2026.0-2026.0.0-220_amd64.deb
   b2sums:
-    - ea17b53dded87884b6c105d13054a7e9847be9f90c8d7a90d0e18dcc8cf23646cf1d4b081a45fea3cb121247b1407e8c7edbbacef0d461da2ae08fbea65fa28f
+    - d90a63fe1a6277551b77e196767d28ad0db55a6f93b5eb76fc574dfb4b1a5b449b2b9c27e70267397d785a8798d5cca1bc4ce7f7239b55ac65cb54e6c7b7f342
 pkgname:
   - name: intel-oneapi-dpcpp-debugger
 # generated with artixpkg 0.38.5-1-any
