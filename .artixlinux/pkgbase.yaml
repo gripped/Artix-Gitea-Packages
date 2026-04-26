@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:2.0.12-3
+    version: 1:2.0.12-3.1
     packages:
-      - libtorrent-rasterbar-1:2.0.12-3-x86_64.pkg.tar.zst
+      - libtorrent-rasterbar-1:2.0.12-3.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
