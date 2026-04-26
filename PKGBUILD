@@ -1,11 +1,12 @@
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
 # Contributor: Jingbei Li <i@jingbei.li>
 # Contributor: Intel Corporation <http://www.intel.com/software/products/support>
 
 _pkgname='intel-oneapi'
 pkgname="${_pkgname}-common"
-pkgver=2025.3.1_15
+pkgver=2026.0.0_235
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -16,9 +17,9 @@ license=("LicenseRef-Intel-EULA-Developer-Tools AND LicenseRef-Intel-Simplified"
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-oneapi-vars-${_pkgver}_all.deb"
         "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-licensing-${_majmin}-${_pkgver}_all.deb"
 		"https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-vars-${_pkgver}_all.deb")
-b2sums=('412851b03b7073be063fe511b66d28e93e028835542b40905de51b3fe324c5c378b004aca75599a8d87de6fbd77b54d3c164f4ef8f4543f57b2ccf2db98fa850'
-        '3887661ecc2573647cda5453c69b1d6d431ba44076accb3f57f42b6f94a668cd9ebf43197e35eb00c92aef67f5be402eb283686a79b13d790454366e3d1c6679'
-        'eea2cef795c4afa823f2dda78aed00b5cdb1e36adcb985b815fd3a3415afa9fce037138ac124dbd1634f9bf61ebd88e3fd7a5cd4ea449a8dfb212336e2a5653f')
+b2sums=('667b791b9206178061b27677360fd2a098a4fc996004e63d5768715cb1fb70debfa88683410ee08ddbcc1d73c688cc30b268ff6655c09414341be1340881ce35'
+        '54815ca8f66ad017e2afd0d180fc4d010b30b89d7f5b3ca6f36f01458a6b71141040c9b196eb63b2246faf27908d45999fd4b5fbe7c52da1564f47fd11224bf5'
+        'f3d1969522a32d9f8f01515804235275b3fdffa740b5079c0221c1f4cc6865c5cd237450bc5a1bd1e31d5d1fd9fbd622d4e7ac2cf015fecd6d7cda553bb8fcd6')
 depends=('sh')
 optdepends=("procps-ng: Sourcing oneapi-vars.sh")
 noextract=(

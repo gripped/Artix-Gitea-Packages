@@ -1,9 +1,9 @@
 ---
-version: 2025.3.1_15-1
+version: 2026.0.0_235-1
 pkgbase:
   name: intel-oneapi-common
   pkgdesc: Intel's oneAPI common variables and licensing
-  pkgver: 2025.3.1_15
+  pkgver: 2026.0.0_235
   pkgrel: 1
   url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
   arch:
@@ -17,17 +17,17 @@ pkgbase:
   conflicts:
     - intel-oneapi-basekit
   noextract:
-    - intel-oneapi-common-oneapi-vars-2025.3.1-15_all.deb
-    - intel-oneapi-common-licensing-2025.3-2025.3.1-15_all.deb
-    - intel-oneapi-common-vars-2025.3.1-15_all.deb
+    - intel-oneapi-common-oneapi-vars-2026.0.0-235_all.deb
+    - intel-oneapi-common-licensing-2026.0-2026.0.0-235_all.deb
+    - intel-oneapi-common-vars-2026.0.0-235_all.deb
   source:
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-common-oneapi-vars-2025.3.1-15_all.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-common-licensing-2025.3-2025.3.1-15_all.deb
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-common-vars-2025.3.1-15_all.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-common-oneapi-vars-2026.0.0-235_all.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-common-licensing-2026.0-2026.0.0-235_all.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-common-vars-2026.0.0-235_all.deb
   b2sums:
-    - 412851b03b7073be063fe511b66d28e93e028835542b40905de51b3fe324c5c378b004aca75599a8d87de6fbd77b54d3c164f4ef8f4543f57b2ccf2db98fa850
-    - 3887661ecc2573647cda5453c69b1d6d431ba44076accb3f57f42b6f94a668cd9ebf43197e35eb00c92aef67f5be402eb283686a79b13d790454366e3d1c6679
-    - eea2cef795c4afa823f2dda78aed00b5cdb1e36adcb985b815fd3a3415afa9fce037138ac124dbd1634f9bf61ebd88e3fd7a5cd4ea449a8dfb212336e2a5653f
+    - 667b791b9206178061b27677360fd2a098a4fc996004e63d5768715cb1fb70debfa88683410ee08ddbcc1d73c688cc30b268ff6655c09414341be1340881ce35
+    - 54815ca8f66ad017e2afd0d180fc4d010b30b89d7f5b3ca6f36f01458a6b71141040c9b196eb63b2246faf27908d45999fd4b5fbe7c52da1564f47fd11224bf5
+    - f3d1969522a32d9f8f01515804235275b3fdffa740b5079c0221c1f4cc6865c5cd237450bc5a1bd1e31d5d1fd9fbd622d4e7ac2cf015fecd6d7cda553bb8fcd6
 pkgname:
   - name: intel-oneapi-common
 # generated with artixpkg 0.38.5-1-any
