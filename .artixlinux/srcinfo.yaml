@@ -1,10 +1,10 @@
 ---
-version: 26.4.0-1
+version: 26.4.0-2
 pkgbase:
   name: molecule
   pkgdesc: Aids in the development and testing of Ansible roles
   pkgver: 26.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ansible-community/molecule
   arch:
     - any
@@ -41,15 +41,12 @@ pkgbase:
     - python-jsonschema
     - python-packaging
     - python-pluggy
-    - python-pyyaml
+    - python-yaml
     - python-rich
     - python-wcmatch
   optdepends:
     - 'ansible: for the ansible verifier'
     - 'ansible-navigator: to use navigator as playbook executor'
-    - 'molecule-docker: for the docker driver'
-    - 'molecule-podman: for the podman driver'
-    - 'molecule-vagrant: for the vagrant driver'
     - 'python-pywinrm: for Windows support'
     - 'python-pytest-testinfra: for the testinfra verifier'
   source:
@@ -60,4 +57,4 @@ pkgbase:
     - 3fb3b04d428feaa3d48c45dddd0f2820ef6d0ea921ae972b5ad02002ac8630cf8a821178b8de60d593de94512cc3db5abe1dcec8e5893df3237f05d1b974e1e0
 pkgname:
   - name: molecule
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
