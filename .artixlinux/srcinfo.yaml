@@ -1,0 +1,52 @@
+---
+version: 1.12.15-1
+pkgbase:
+  name: element.io
+  pkgdesc: Glossy Matrix collaboration client —
+  pkgver: 1.12.15
+  pkgrel: 1
+  url: https://element.io
+  arch:
+    - x86_64
+  license:
+    - Apache
+  makedepends:
+    - electron41
+    - git
+    - jq
+    - libxcrypt-compat
+    - nodejs
+    - npm
+    - python
+    - python-setuptools
+    - rust
+    - tcl
+    - pnpm
+    - yarn
+  source:
+    - git+https://github.com/element-hq/element-web.git#tag=v1.12.15?signed
+    - io.element.Element.desktop
+    - element-desktop.sh
+  validpgpkeys:
+    - 712BFBEE92DCA45252DB17D7C7BE97EFA179B100
+  sha256sums:
+    - 8372d34d15870a4499352429c5790a62a79d6926f2f7176c69d6b39ecd43ca8b
+    - 16a21cd4ad144641e0f4cbe18ed1b665565ed6f3f3e67d5bccba2806491674a9
+    - c1bd9ace215e3ec9af14d7f28b163fc8c8b42e23a2cf04ce6f4ce2fcc465feba
+pkgname:
+  - name: element-web
+    pkgdesc: Glossy Matrix collaboration client — web version.
+    replaces:
+      - riot-web
+      - vector-web
+  - name: element-desktop
+    pkgdesc: Glossy Matrix collaboration client — desktop version.
+    depends:
+      - element-web=1.12.15
+      - electron41
+      - libsecret
+    replaces:
+      - riot-desktop
+    backup:
+      - etc/element/config.json
+# generated with artixpkg 0.38.5-1-any
