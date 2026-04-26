@@ -26,10 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.3.3_30-1
+    version: 2026.0.0_947-1
     packages:
-      - intel-oneapi-compiler-dpcpp-cpp-runtime-2025.3.3_30-1-x86_64.pkg.tar.zst
-      - intel-oneapi-compiler-dpcpp-cpp-runtime-libs-2025.3.3_30-1-x86_64.pkg.tar.zst
+      - intel-oneapi-compiler-dpcpp-cpp-runtime-2026.0.0_947-1-x86_64.pkg.tar.zst
+      - intel-oneapi-compiler-dpcpp-cpp-runtime-libs-2026.0.0_947-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2025.0.4-1

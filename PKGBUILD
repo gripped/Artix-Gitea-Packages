@@ -1,11 +1,12 @@
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
 
 _pkgbase='intel-oneapi-compiler-dpcpp'
 _pkgname="${_pkgbase}-cpp"
 pkgbase="${_pkgname}-runtime"
 pkgname=("${_pkgname}-runtime" "${_pkgname}-runtime-libs")
-pkgver=2025.3.3_30
+pkgver=2026.0.0_947
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -17,10 +18,10 @@ source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_p
         "https://apt.repos.intel.com/oneapi/pool/main/${_pkgname}-common-${_majmin}-${_pkgver}_all.deb"
         "https://apt.repos.intel.com/oneapi/pool/main/${_pkgbase}-eclipse-cfg-${_pkgver}_all.deb"
         "https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-icc-eclipse-plugin-cpp-${_majmin}-${_pkgver}_all.deb")
-b2sums=('35f32880c719c04452f935f5eaa4e02d55a462b45950bc6acad2d976b36cd6fe92d23fc0f739372180088485d95a5d8072dada697da141b6df131ef57b23eae4'
-        '839d433abbf1ae35b8c5700e3dd77c9430298dbff651b5879b36b5d0b24dee2627b8eaad05e847e1df276c5818c31b704e7f859eda21bd0bc06ea9c05269ef72'
-        '3fd68f7ef6b5f7976690b5c66c0aa073a323f63c803649f6396cdf6570be7823bc2b7f30c17fad9860d784bf1b9171a410f24560de3bca01e665daf089ed5259'
-        'ea93f0ebd630400f04763fdb3f94f4d6d66b900926ca06780881e8640826a47f5559a89f9d217f38b11986887f881bfd7c86ff6f0cff4e347ef253b3b2446aac')
+b2sums=('fa1c078b1208099a094774d89347912f1473778df620607a972624d11b4366ca57ea9b1330df8cbc333b625270e92d5c3ab18fc7343dca01e299c07c684dc34b'
+        'fde65a9390d6b32126f1a33aa0087451862ea1fbcf03402c40efcd34e5617e60d4bbc01d099bfcada588d0d6de2377081d6e7845adab78a79a01c1655ec56529'
+        '330657bb757a4a3ba1728e1c52114b863426ea12f43679878c8f0c27766be9778164300591f483b77baabf1d70c82314dedf10be48581b42dc2571b48d30e57a'
+        '0ed06eee7b766af122a44a0410081a9324fe24f8654513913977403e64dd7a1db7df8784696405bc5af37acc83c594bd241d133055f55e12c823214d7ad78c27')
 noextract=(
     "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
     "${_pkgname}-common-${_majmin}-${_pkgver}_all.deb"
