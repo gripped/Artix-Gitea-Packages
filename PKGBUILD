@@ -2,7 +2,7 @@
 
 pkgname=monero
 pkgver=0.18.4.6
-pkgrel=3
+pkgrel=3.1
 pkgdesc="Monero: the secure, private, untraceable peer-to-peer currency"
 license=('BSD-3-Clause')
 arch=('x86_64')
