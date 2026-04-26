@@ -1,10 +1,10 @@
 ---
-version: 7.36.1-5
+version: 7.38.0-1
 pkgbase:
   name: mlt
   pkgdesc: An open source multimedia framework
-  pkgver: 7.36.1
-  pkgrel: 5
+  pkgver: 7.38.0
+  pkgrel: 1
   url: https://www.mltframework.org
   arch:
     - x86_64
@@ -72,10 +72,12 @@ pkgbase:
     - 'vid.stab: video stabilize plugin'
     - 'zlib: glaxnimate plugin'
   source:
-    - git+https://github.com/mltframework/mlt#tag=v7.36.1
+    - git+https://github.com/mltframework/mlt#tag=v7.38.0
     - git+https://invent.kde.org/graphics/glaxnimate.git
+    - git+https://github.com/mbasaglia/thorvg.git
   sha256sums:
-    - 96c89f203e0e2061f29fa21ab6c5c449cd5ed9b37c29d50779bd2975ef339937
+    - 3d7ed52001238ec13d858db372fc598219771217baedb3aa38e6efdad4e6dff4
+    - SKIP
     - SKIP
 pkgname:
   - name: mlt
