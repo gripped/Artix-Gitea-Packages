@@ -1,4 +1,5 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
+# Contributor: capezotte <capezotte@artixlinux.org> based on wiki edits by Artist
 
 pkgbase=pipewire-openrc
 pkgname=(pipewire-openrc pipewire-pulse-openrc)
@@ -18,7 +19,7 @@ makedepends=(
 source=(
     pipewire{,-pulse}.user.initd
 )
-sha256sums=('affa8120a5cc070256f8b357ca947c312e262acf6b7c1c18a7c3cfd3cb9c362e'
+sha256sums=('aec5c27ac7b47314b9a368e34c73c35341a77d900b1cede09070bfb593afb746'
             'e7af2160c453ff797db3aa3aace61e0f27dc88d90239b6be318762588cf483cd')
 
 package_pipewire-openrc() {

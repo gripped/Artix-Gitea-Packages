@@ -1,0 +1,36 @@
+---
+version: 20250308-2
+pkgbase:
+  name: pipewire-openrc
+  pkgdesc: openrc user service script for pipewire
+  pkgver: 20250308
+  pkgrel: 2
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - openrc-world
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - avahi-openrc
+    - dbus-openrc
+    - pipewire
+    - pipewire-pulse
+  source:
+    - pipewire.user.initd
+    - pipewire-pulse.user.initd
+  sha256sums:
+    - aec5c27ac7b47314b9a368e34c73c35341a77d900b1cede09070bfb593afb746
+    - e7af2160c453ff797db3aa3aace61e0f27dc88d90239b6be318762588cf483cd
+pkgname:
+  - name: pipewire-openrc
+    depends:
+      - dbus-openrc
+      - pipewire
+  - name: pipewire-pulse-openrc
+    depends:
+      - pipewire-openrc
+      - pipewire-pulse
+      - avahi-openrc
+# generated with artixpkg 0.38.5-1-any
