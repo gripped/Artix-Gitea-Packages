@@ -3,7 +3,7 @@
 
 pkgname=python-strawberry-graphql
 _pkgname=strawberry
-pkgver=0.315.0
+pkgver=0.315.2
 pkgrel=1
 pkgdesc="A GraphQL library for Python that leverages type annotations"
 url="https://strawberry.rocks"
@@ -13,7 +13,7 @@ depends=('python' 'python-graphql-core'	'python-dateutil' 'python-packaging'
          'python-cross-web' 'python-rich' 'python-typing_extensions' 'python-pygments')
 makedepends=('python-build' 'python-installer' 'python-uv-build')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/strawberry-graphql/strawberry/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('f42c32493651b48c02041c42e90f92462f29c1c1041d939bd8684303ba678a55')
+sha256sums=('5c149fcc1bc9eeaf9bf3537709d05040655f8e4a07788a41f2429243448b269c')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
