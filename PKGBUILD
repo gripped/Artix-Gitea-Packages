@@ -1,8 +1,9 @@
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
-# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
 
 pkgname=intel-oneapi-openmp
-pkgver=2025.3.3_30
+pkgver=2026.0.0_947
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -11,23 +12,17 @@ arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
         "https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-common-${_majmin}-${_pkgver}_all.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-runtime-openmp-${_pkgver}_amd64.deb"
-        "https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-runtime-openmp-opencl-shared-${_pkgver}_amd64.deb")
-b2sums=('b6b776a0af89499d544a70c8d86fbd6738d77d91410882e02707b4b38881dcd6d937b53df9e15ba0181522f40fcf9164265232dd97f8358f723d236986387fcd'
-        'b6b776a0af89499d544a70c8d86fbd6738d77d91410882e02707b4b38881dcd6d937b53df9e15ba0181522f40fcf9164265232dd97f8358f723d236986387fcd'
-        'af67d87b3c476815c72e62e21a81f62368f4e3d470f6c12603a41170b267788834d37efc42ec3d890793cc1cbf5785ba4ce913f3870e34b7c834ac4a67408a72'
-        '1a06676a863865ba4aeaa8bbd855bd90f6638003c1e9ed6ce3ecce8a08bcf679c1db6cad3ffaf7271281561833f60c6013235eaeeb8e72914bc25c0a8b2aa81e'
-        '5aeb3cb0f604c7e381a0c4d7b4257af5cde6919a893e85a98cf82590d762b62f89c1503899a789829819e49704f6115ed4661c28f0c0715136ad2267074b70ab')
+        "https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-runtime-openmp-${_pkgver}_amd64.deb")
+b2sums=('7d2c2a140f4a8e5c3d5d09dbb18d950d50367c29a8af3e87c429c3da351c3e7f5a42af91759e0625e7e8a8ee11d6263b453cfcd0486a54b6721f16deadefa9a9'
+        'be5f87a8ca09ee59459a639750009aee63a48239fac69ff1e553074027507b1ae3c082a5024152dd492fd647ba58ca2b8546bc07af782322804d02f64138d299'
+        '188f5e8aa0103c66fae7ce9937292421f215c326a8a9e2fb25aff085b3713a71cf7e1d2f6d9f8bd92877caec89ac39ddff3952956cfaf9420611ed433f9d3363')
 depends=('intel-oneapi-common' 'intel-oneapi-tcm' 'sh' 'glibc' 'gcc-libs' 'zlib'
          'libelf' 'level-zero-loader' 'libffi')
 noextract=(
     "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
-    "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
     "${pkgname}-common-${_majmin}-${_pkgver}_all.deb"
     "intel-oneapi-runtime-openmp-${_pkgver}_amd64.deb"
-    "intel-oneapi-runtime-openmp-opencl-shared-${_pkgver}_amd64.deb"
 )
 conflicts=('intel-oneapi-basekit')
 
@@ -47,10 +42,6 @@ package() {
     rm data.tar.xz
 
     ar x "${srcdir}/intel-oneapi-runtime-openmp-${_pkgver}_amd64.deb"
-    tar xvf data.tar.xz -C "${pkgdir}"
-    rm data.tar.xz
-
-    ar x "${srcdir}/intel-oneapi-runtime-openmp-opencl-shared-${_pkgver}_amd64.deb"
     tar xvf data.tar.xz -C "${pkgdir}"
     rm data.tar.xz
 

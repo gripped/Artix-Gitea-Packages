@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.3.3_30-1
+    version: 2026.0.0_947-1
     packages:
-      - intel-oneapi-openmp-2025.3.3_30-1-x86_64.pkg.tar.zst
+      - intel-oneapi-openmp-2026.0.0_947-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2025.0.4-1
