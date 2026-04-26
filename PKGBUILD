@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=cppjieba
-pkgver=5.6.6
+pkgver=5.6.7
 pkgrel=1
 pkgdesc="C++ implementation of Jieba Chinese text segmentation"
 arch=('any')
@@ -10,7 +10,7 @@ license=('MIT')
 depends=('limonp')
 makedepends=('cmake' 'git' 'gtest')
 source=("git+https://github.com/yanyiwu/cppjieba.git#tag=v$pkgver")
-b2sums=('03b5617f94d86d8cd47cf2740a69483f71aba54ec7f25477d2e7f197035548834131b2fd28384cfcba2b4f1db8ec3eec27b124fa2dec283363935f681cd16591')
+b2sums=('7782cdd57f6cd6fc5246b8e98e40ea8f41d5df501fb06d86d468a9d8b89de85f1c9288ae82d86d416e564c6a35ebef1464cc2417058ffbbbf517a8ee8e1a00f2')
 
 prepare() {
   cd cppjieba
