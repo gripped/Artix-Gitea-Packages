@@ -1,7 +1,7 @@
 # Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 
 pkgname="intel-oneapi-dpcpp-cpp"
-pkgver=2025.3.3_30
+pkgver=2026.0.0_947
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -10,7 +10,7 @@ arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb")
-b2sums=('a74fc4a00496941e6d6051c464c451410cee8141b9271c4db3262e6a2bd86124318190562eec09c159fd9617c78607d6348f30b6c8372e9ddd6e90d7727ab41e')
+b2sums=('a4307b1ba59fce43483755eb9d1070ebf1a4b86cb21bba084a65f711b1b2b76315141ab03c4b288d1626ccf8a75a87a985b07ccce4bd694836b2eabc12e96b0b')
 noextract=(
     "${pkgname}-${_majmin}-${_pkgver}_amd64.deb"
 )
