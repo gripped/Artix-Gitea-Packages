@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 12.0.0-1
+    packages:
+      - limine-12.0.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 11.4.1-2
