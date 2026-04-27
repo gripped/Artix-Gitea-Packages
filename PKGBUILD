@@ -1,5 +1,6 @@
-# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: loqs <bugs-archlinux@entropy-collector.net>
 # Contributor: Adrià Cabello <adro.cc79 at protonmail dot com>
 # Contributor: Started by https://github.com/qumaciel at https://github.com/PixarAnimationStudios/USD/issues/2000
@@ -7,7 +8,7 @@
 pkgname='usd'
 pkgbase=usd
 pkgver=26.05
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://openusd.org'
 pkgdesc='3D VFX pipeline interchange file format'
@@ -16,6 +17,9 @@ depends=(alembic # libAlembic.so
          draco # libdraco.so
          embree # libembree4.so
          glew
+         libgcc
+         libstdc++
+         glibc
          imath # libImath-3_1.so
          jemalloc libjemalloc.so
          libglvnd libGL.so
