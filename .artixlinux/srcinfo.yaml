@@ -1,9 +1,9 @@
 ---
-version: 1.10.1-1
+version: 1.10.2-1
 pkgbase:
   name: rpm-sequoia
   pkgdesc: An OpenPGP backend for rpm using Sequoia PGP
-  pkgver: 1.10.1
+  pkgver: 1.10.2
   pkgrel: 1
   url: https://github.com/rpm-software-management/rpm-sequoia
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   depends:
     - nettle
   source:
-    - rpm-sequoia-1.10.1.tar.gz::https://github.com/rpm-software-management/rpm-sequoia/archive/refs/tags/v1.10.1.tar.gz
+    - rpm-sequoia-1.10.2.tar.gz::https://github.com/rpm-software-management/rpm-sequoia/archive/refs/tags/v1.10.2.tar.gz
   sha256sums:
-    - 539705430ab061358c943d1a2f8140057756877a6acb074fd6fd7c4698f9f59f
+    - ba740c16657498bb1a5a2b04472728089992e93a83d3584f00854b112dfd45df
 pkgname:
   - name: rpm-sequoia
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
