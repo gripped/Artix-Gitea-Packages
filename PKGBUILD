@@ -5,7 +5,7 @@ pkgname="limine-mkinitcpio-hook"
 _pkgver=1.35.1
 _extver="" #_extver="_1"
 pkgver="${_pkgver}${_extver}"
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Install kernels for the Limine bootloader."
 arch=('x86_64' 'aarch64')
 url="https://gitlab.com/Zesko/${_pkgname}"
@@ -47,6 +47,7 @@ build() {
 package() {
 	cd "${_pkgname}-${pkgver}"
 	src_path="install/arch-linux/${pkgname}"
+        rm -r "$src_path/usr/lib/systemd"
 	install -dm 755 "$src_path/usr/share/limine-entry-tool.d/"
 	install -dm 755 "$src_path/etc/limine-entry-tool.d/"
 	install -Dm 755 build/native/nativeCompile/limine-entry-tool "$src_path/usr/lib/limine/"
