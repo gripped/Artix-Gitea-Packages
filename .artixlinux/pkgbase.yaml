@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.12.3-3
+    version: 3.12.4-1
     packages:
-      - gdal-3.12.3-3-x86_64.pkg.tar.zst
-      - python-gdal-3.12.3-3-x86_64.pkg.tar.zst
+      - gdal-3.12.4-1-x86_64.pkg.tar.zst
+      - python-gdal-3.12.4-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.12.3-2
