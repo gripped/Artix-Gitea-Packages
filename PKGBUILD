@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname="limine-snapper-sync"
-pkgver=1.25.0
+pkgver=1.27.0
 pkgrel=1
 pkgdesc="Automatically syncs Limine snapshot entries with Snapper snapshots."
 arch=('x86_64' 'aarch64')
@@ -52,5 +52,5 @@ package() {
 	cp -r "$src_path/usr" "$src_path/etc" "$pkgdir"
 }
 
-sha256sums=('d9351a964b37d57a6c3426da7f440a58b5cd76642342b813e5ed1a3f6ca5a1ad'
+sha256sums=('13785893d569d07063cc543db94110fbbffdb02207c4ff366f77bde82914ce99'
             'e0be791c8fda4d03b6b0a0cb824fef3149736170057b3a515252b44419606af0')
