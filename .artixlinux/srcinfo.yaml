@@ -1,9 +1,9 @@
 ---
-version: 1.8.2.4-1
+version: 1.8.2.5-1
 pkgbase:
   name: distrobox
   pkgdesc: Use any linux distribution inside your terminal.
-  pkgver: 1.8.2.4
+  pkgver: 1.8.2.5
   pkgrel: 1
   url: https://distrobox.it
   arch:
@@ -17,9 +17,9 @@ pkgbase:
     - 'docker: Docker support'
     - 'podman: Podman support'
   source:
-    - distrobox-1.8.2.4.tar.gz::https://github.com/89luca89/distrobox/archive/1.8.2.4.tar.gz
+    - distrobox-1.8.2.5.tar.gz::https://github.com/89luca89/distrobox/archive/1.8.2.5.tar.gz
   sha256sums:
-    - 83eab6ba893dce56f0523a70ebfcf2a78f7785637a6895255777ef1b72d4eb89
+    - 0c3bc4785ee3be3b89f93abb7cc0a9f60e56989e81319af140a4b60403b18f80
 pkgname:
   - name: distrobox
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
