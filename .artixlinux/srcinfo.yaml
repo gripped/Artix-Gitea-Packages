@@ -1,10 +1,10 @@
 ---
-version: 2.11-2
+version: 2.11-3
 pkgbase:
   name: fop
   pkgdesc: XSL-FO to PDF formatter
   pkgver: 2.11
-  pkgrel: 2
+  pkgrel: 3
   url: https://xmlgraphics.apache.org/fop/
   arch:
     - any
@@ -17,7 +17,7 @@ pkgbase:
     - maven
   depends:
     - java-avalon-framework
-    - java-batik=1.17
+    - java-batik=1.19
     - java-commons-io
     - java-commons-logging
     - java-xmlgraphics-commons
@@ -31,4 +31,4 @@ pkgbase:
     - 928ced5f2591d2537829d74ae94c6f59e1be2f12eddf44e2f7fe5fd06606e94a5911396d6ef8596137449524c9d0d13ef8896bc4fb5e58096bd9948708879857
 pkgname:
   - name: fop
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
