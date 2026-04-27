@@ -2,7 +2,7 @@
 # Contributor: Jerome Leclanche <jerome@leclan.ch>
 
 pkgname=xonsh
-pkgver=0.23.1
+pkgver=0.23.2
 pkgrel=1
 pkgdesc='A python-powered shell. Full-featured and cross-platform.'
 url='https://xon.sh/'
@@ -13,7 +13,6 @@ depends=(
     'python-distro'
     'python-packaging'
     'python-ply'
-    'python-pyperclip'
     'python-ujson')
 optdepends=(
     'python-prompt_toolkit: for SHELL_TYPE=prompt_toolkit'
@@ -30,7 +29,7 @@ makedepends=(
     'python-setproctitle')
 install=xonsh.install
 source=("https://github.com/xonsh/xonsh/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('0ac36813b47de440ba5deb86da7bb2bd2a9d8d257a76fdbc2d211264741c66b8')
+sha256sums=('8d5e6711e949e02bd5912789ad78f3c6ceee6784d315ee186953618237a1eeb9')
 
 build() {
     cd "${pkgname}-${pkgver}"
@@ -39,5 +38,5 @@ build() {
 
 package() {
     python -m installer --destdir="$pkgdir" "${pkgname}-${pkgver}/dist"/*.whl
-    install -D -m644 "${pkgname}-${pkgver}/license" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    install -D -m644 "${pkgname}-${pkgver}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
