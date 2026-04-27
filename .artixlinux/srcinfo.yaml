@@ -1,9 +1,9 @@
 ---
-version: 0.4.5-1
+version: 0.4.6-1
 pkgbase:
   name: hyprwayland-scanner
   pkgdesc: A Hyprland implementation of wayland-scanner, in and for C++
-  pkgver: 0.4.5
+  pkgver: 0.4.6
   pkgrel: 1
   url: https://github.com/hyprwm/hyprwayland-scanner
   arch:
@@ -19,9 +19,9 @@ pkgbase:
   provides:
     - hyprwayland-scaner
   source:
-    - hyprwayland-scanner-0.4.5.tar.gz::https://github.com/hyprwm/hyprwayland-scanner/archive/refs/tags/v0.4.5.tar.gz
+    - hyprwayland-scanner-0.4.6.tar.gz::https://github.com/hyprwm/hyprwayland-scanner/archive/refs/tags/v0.4.6.tar.gz
   sha256sums:
-    - 2125d279eea106e3e6c8dc9fa15181c75d67467b5352d24e2a07903b10abad62
+    - 05f55fd1a20d8ca81b5030980fdb7c87147749230145bdb3745af2741d617f5c
 pkgname:
   - name: hyprwayland-scanner
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.5-1-any
