@@ -1,0 +1,54 @@
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: uastasi <uastasi@archlinux.us>
+
+pkgname=gnote
+pkgver=50.1
+pkgrel=1
+pkgdesc="A note taking application"
+url="https://gitlab.gnome.org/GNOME/gnote/-/wikis/Gnote"
+arch=(x86_64)
+license=(GPL-3.0-or-later)
+depends=(
+  cairomm-1.16
+  dconf
+  glib2
+  glibc
+  glibmm-2.68
+  gtk4
+  gtkmm-4.0
+  hicolor-icon-theme
+  libadwaita
+  libgcc
+  libsecret
+  libsigc++-3.0
+  libstdc++
+  libxml2
+  libxslt
+  pango
+  pangomm-2.48
+  util-linux-libs
+)
+makedepends=(
+  git
+  meson
+  yelp-tools
+)
+source=("git+https://gitlab.gnome.org/GNOME/gnote.git#tag=${pkgver/[a-z]/.&}")
+b2sums=('b38f5c69da1d3f5ba69900d852e711062385c85cc21f2071f6b255ec584ef58c3526c69292ad744e551ff36b76926d71df7c247725258fab8d6d154f5afc282d')
+
+build() {
+  artix-meson gnote build
+  meson compile -C build
+}
+
+check() {
+  meson test -C build
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
+
+# vim:set sw=2 sts=-1 et:
