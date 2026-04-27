@@ -2,7 +2,7 @@
 
 _pkgname="limine-entry-tool"
 pkgname="limine-mkinitcpio-hook"
-_pkgver=1.33.0
+_pkgver=1.35.1
 _extver="" #_extver="_1"
 pkgver="${_pkgver}${_extver}"
 pkgrel=1
@@ -55,5 +55,5 @@ package() {
 	cp -r "$src_path/usr" "$src_path/etc" "$pkgdir"
 }
 
-sha256sums=('f3b6b91e9e5eb07eb04203d856d15bb2e7cc6afe6ac6190b39868238f56fac7d'
+sha256sums=('660826bc5087f8a9fe103f8dbe98ad595dcda9148f597224c95a3be2c8e26555'
             'e0be791c8fda4d03b6b0a0cb824fef3149736170057b3a515252b44419606af0')
