@@ -1,9 +1,9 @@
 ---
-version: 1.15.2-1
+version: 1.15.3-1
 pkgbase:
   name: packer
   pkgdesc: tool for creating machine images for platforms from a single source configuration
-  pkgver: 1.15.2
+  pkgver: 1.15.3
   pkgrel: 1
   url: https://github.com/hashicorp/packer
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - packer-1.15.2.tar.gz::https://github.com/hashicorp/packer/archive/v1.15.2.tar.gz
+    - packer-1.15.3.tar.gz::https://github.com/hashicorp/packer/archive/v1.15.3.tar.gz
   sha512sums:
-    - 1e9f4f7f44b1b5eeed2473fd9c765fc4eafdbf3670618c7742210ec39c39bc699877ac888041095220c7eab03e1603082b874196a351b6c640e8611c82bdadc1
+    - b6e0cae5722933aea0b9feb593f86381b366219322ad984fdbe1b7a0f55e2369a507ff38fadcbbe464af8f7c4c46b56c813e8268f1cb9ab8fd73faa0110d7dc9
 pkgname:
   - name: packer
 # generated with artixpkg 0.38.5-1-any
