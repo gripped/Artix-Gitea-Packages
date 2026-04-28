@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.35.1-1.1
+    version: 1.35.1-1
     packages:
-      - limine-mkinitcpio-hook-1.35.1-1.1-x86_64.pkg.tar.zst
+      - limine-mkinitcpio-hook-1.35.1-1-x86_64.pkg.tar.zst
     debug: []
