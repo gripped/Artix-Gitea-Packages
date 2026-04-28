@@ -32,11 +32,9 @@ source=("git+https://github.com/ilya-zlobintsev/LACT.git#tag=v$pkgver")
 sha256sums=('f6ffef87137cea1af76733cd31909b210d677c3b85aae4b137afcee5ffdb20c1')
 b2sums=('419c1cd0f15bb1c07418ca68de99ec5e91e06543c0705bf0df182e22ccf96411519b33247ffd62d8715f88ad2ae633a3e64e610278c78758d60dc4dce3cb9a70')
 
-_backports=(
-)
+_backports=()
 
-_reverts=(
-)
+_reverts=()
 
 prepare() {
   cd "LACT"
