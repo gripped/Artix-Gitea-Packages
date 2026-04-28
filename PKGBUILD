@@ -1,7 +1,4 @@
-# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
-# Contributor: William Grieshaber <me@zee.li>
-# Contributor: Victor Aurélio <victoraur dot santos at gmail dot com>
+# Maintainer: commandk <commandk@artix>
 
 pkgname=speedtest-cli
 pkgver=2.1.3
