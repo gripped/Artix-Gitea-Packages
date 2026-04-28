@@ -37,4 +37,4 @@ pkgbase:
     - 4d95c0bbf602238c5bf01b0ac5929ee87b25becbe4dcab64992fa843122dac990f267babe09048add7c9825aec62b16ca78e75356362bd2a0da343bf2168f8e7
 pkgname:
   - name: capnproto
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
