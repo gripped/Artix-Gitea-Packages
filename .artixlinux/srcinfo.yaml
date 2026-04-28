@@ -34,7 +34,6 @@ pkgbase:
     - python-filelock
     - python-setuptools
     - rust
-    - sccache
     - unzip
     - wasi-compiler-rt
     - wasi-libc++
@@ -46,9 +45,6 @@ pkgbase:
     - gnupg
     - tree
     - wget
-    - weston
-    - xorg-xwayland
-    - wlheadless-run
   depends:
     - dbus
     - alsa-lib

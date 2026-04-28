@@ -1,6 +1,6 @@
-# run pgo build or not; with X(vfb) or wayland
-: ${_build_profiled:=true}
-: ${_build_profiled_xvfb:=false}
+# Maintainer: commandk <commandk@artixlinux.org>
+# run pgo build or not with X(vfb)
+: ${_build_profiled:=false}
 
 epoch=1
 pkgname=konform-browser
@@ -78,7 +78,6 @@ makedepends=(
   python-filelock
   python-setuptools
   rust
-  sccache
   unzip
   wasi-compiler-rt
   wasi-libc++
@@ -107,17 +106,9 @@ optdepends=(
 )
 
 if [[ "${_build_profiled}" == "true" ]]; then
-  if [[ "${_build_profiled_xvfb}" == "true" ]]; then
-    makedepends+=(
-      xorg-server-xvfb
-    )
-  else
-    makedepends+=(
-      weston
-      xorg-xwayland
-      wlheadless-run # aur/xwayland-run-git
-    )
-  fi
+  makedepends+=(
+    xorg-server-xvfb
+  )
 fi
 
 backup=("usr/lib/${__pkgname}/librewolf.cfg"
@@ -215,7 +206,6 @@ ac_add_options --disable-tests
 ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
 ac_add_options --enable-system-pixman
-ac_add_options --with-ccache=sccache
 
 ##### /Kon
 
@@ -320,11 +310,8 @@ build() {
 
   # sacrifice cpu for memory to prevent OoM
   export LDFLAGS+=" -Wl,--no-keep-memory"
-  ulimit -n 40960
 
   # Do 3-tier PGO
-
-
   if [[ "${_build_profiled}" == "true" ]]; then
     if [[ "${CARCH}" == "aarch64" ]]; then
 
@@ -363,17 +350,10 @@ END
         dbus-run-session
     )
 
-    if [[ "${_build_profiled_xvfb}" == "true" ]]; then
-      local _headless_run=(
-        xvfb-run
-        -s "-screen 0 1920x1080x24 -nolisten local"
-      )
-    else
-      local _headless_run=(
-        wlheadless-run
-        -c weston --width=1920 --height=1080
-      )
-    fi
+    local _headless_run=(
+      xvfb-run
+      -s "-screen 0 1920x1080x24 -nolisten local"
+    )
 
     env "${_headless_env[@]}" "${_headless_run[@]}" -- ./mach python build/pgo/profileserver.py
 
