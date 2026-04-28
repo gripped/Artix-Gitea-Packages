@@ -1,8 +1,8 @@
 ---
-version: 2:2.4.18-1
+version: 2:2.4.19-1
 pkgbase:
   name: cups
-  pkgver: 2.4.18
+  pkgver: 2.4.19
   pkgrel: 1
   epoch: 2
   url: https://openprinting.github.io/cups/
@@ -20,8 +20,8 @@ pkgbase:
     - avahi
     - libpaper
   source:
-    - https://github.com/OpenPrinting/cups/releases/download/v2.4.18/cups-2.4.18-source.tar.gz
-    - https://github.com/OpenPrinting/cups/releases/download/v2.4.18/cups-2.4.18-source.tar.gz.sig
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.19/cups-2.4.19-source.tar.gz
+    - https://github.com/OpenPrinting/cups/releases/download/v2.4.19/cups-2.4.19-source.tar.gz.sig
     - cups.logrotate
     - cups.pam
     - cups.sysusers
@@ -29,9 +29,9 @@ pkgbase:
     - cups-freebind.patch
     - guid.patch
   validpgpkeys:
-    - 7082A0A50A2E92640F3880E0E4522DCC9B246FF7
+    - 9086C3CDC66C3F563CF8F405BE67C75EC81F3244
   sha256sums:
-    - 8fe23bf4905f8889f4bd5ebf375e81916e84754bfc59eccc88cfd7b1e97a741b
+    - 820984b12a67f98705785aae2dd1347fe0ac097828001d4583ff64574aed6389
     - SKIP
     - d87fa0f0b5ec677aae34668f260333db17ce303aa1a752cba5f8e72623d9acf9
     - 57dfd072fd7ef0018c6b0a798367aac1abb5979060ff3f9df22d1048bb71c0d5
@@ -54,7 +54,7 @@ pkgname:
     depends:
       - acl
       - pam
-      - libcups>=2.4.18
+      - libcups>=2.4.19
       - cups-filters
       - dbus
       - libudev
