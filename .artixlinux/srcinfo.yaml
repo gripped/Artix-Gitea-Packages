@@ -1,0 +1,33 @@
+---
+version: 0.2.5-1
+pkgbase:
+  name: lib32-libdecor
+  pkgdesc: Client-side decorations library for Wayland clients
+  pkgver: 0.2.5
+  pkgrel: 1
+  url: https://gitlab.gnome.org/jadahl/libdecor
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - ninja
+    - meson
+    - wayland-protocols
+  depends:
+    - libdecor
+    - lib32-wayland
+    - lib32-pango
+    - lib32-dbus
+    - lib32-gtk3
+    - lib32-glibc
+    - lib32-cairo
+    - lib32-glib2
+  source:
+    - https://gitlab.freedesktop.org/libdecor/libdecor/-/archive/0.2.5/libdecor-0.2.5.tar.gz
+  sha512sums:
+    - c696ed38a80256e1db68fcc0fd8a8c18439c4a1c4bf4d7e4068a741b0e2642d99dc07ae92e209c15f2387ea9330f9b3281ab9114b5d8989e085165f3eae6abed
+pkgname:
+  - name: lib32-libdecor
+# generated with artixpkg 0.38.5-1-any
