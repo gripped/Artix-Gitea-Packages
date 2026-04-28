@@ -1,9 +1,9 @@
 ---
-version: 20260426-1
+version: 20260428-1
 pkgbase:
   name: artix-mirrorlist
   pkgdesc: Artix mirror list for use by pacman
-  pkgver: 20260426
+  pkgver: 20260428
   pkgrel: 1
   url: https://gitea.artixlinux.org/packages/artix-mirrorlist
   arch:
@@ -21,7 +21,7 @@ pkgbase:
   source:
     - mirrorlist
   sha256sums:
-    - 81ff8756fff1f0576bd9c5b7c2afbe44200ed7ca202624e689beebec158e61e6
+    - 4e5cfd788efaffac2113bcbeffee28afaec2e99b4e03738c771830f90dca90ad
 pkgname:
   - name: artix-mirrorlist
 # generated with artixpkg 0.38.5-1-any

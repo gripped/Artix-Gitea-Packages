@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2026-04-26 by artix-mlg
+## Generated on 2026-04-28 by artix-mlg
 ##
 
 # Artix mirrors
@@ -90,6 +90,8 @@ Server = https://mirror.albony.in/artix/$repo/os/$arch
 Server = https://www.miraa.jp/artix-linux/$repo/os/$arch
 # Korea, Republic of
 Server = https://mirror.funami.tech/artix/$repo/os/$arch
+Server = https://mirror.keiminem.com/artix/$repo/os/$arch
+Server = https://mirror2.keiminem.com/artix/$repo/os/$arch
 # Russia
 Server = https://mirror.infirium.ru/artixlinux/$repo/os/$arch
 Server = https://mirrors.yuruyuri.fun/artix-linux/repos/$repo/os/$arch
