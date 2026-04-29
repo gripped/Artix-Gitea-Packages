@@ -1,10 +1,10 @@
 ---
-version: 2.5.6-1
+version: 2.5.6-2
 pkgbase:
   name: mixxx
   pkgdesc: Free, open source software for digital DJing
   pkgver: 2.5.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.mixxx.org
   arch:
     - x86_64
@@ -59,7 +59,7 @@ pkgbase:
     - qtkeychain-qt6
     - soundtouch
     - sqlite
-    - taglib1
+    - taglib
     - upower
     - wavpack
   source:
@@ -92,7 +92,7 @@ pkgname:
       - qtkeychain-qt6
       - soundtouch
       - sqlite
-      - taglib1
+      - taglib
       - upower
       - wavpack
       - chromaprint
@@ -131,4 +131,4 @@ pkgname:
       - librubberband.so
       - zlib
       - libz.so
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any

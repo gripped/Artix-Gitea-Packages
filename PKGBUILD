@@ -7,7 +7,7 @@
 
 pkgname=mixxx
 pkgver=2.5.6
-pkgrel=1
+pkgrel=2
 pkgdesc="Free, open source software for digital DJing"
 arch=(x86_64)
 url="https://www.mixxx.org"
@@ -37,7 +37,7 @@ depends=(
   qtkeychain-qt6
   soundtouch
   sqlite
-  taglib1
+  taglib
   upower
   wavpack
 )
