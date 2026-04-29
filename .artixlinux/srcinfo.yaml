@@ -1,10 +1,10 @@
 ---
-version: 0.5.3-3
+version: 0.5.3-4
 pkgbase:
   name: hyprtoolkit
   pkgdesc: A modern C++ Wayland-native GUI toolkit
   pkgver: 0.5.3
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/hyprwm/hyprtoolkit
   arch:
     - x86_64
