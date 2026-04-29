@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+
+description="manage zram-backed swap devices"
+
+start() {
+	/usr/bin/zramen make
+}
+
+stop() {
+       /usr/bin/zramen toss
+}
+

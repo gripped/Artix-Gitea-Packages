@@ -1,0 +1,24 @@
+---
+version: 20260429-1
+pkgbase:
+  name: zramen-openrc
+  pkgdesc: OpenRC script for zramen
+  pkgver: 20260429
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - Unlicense
+  depends:
+    - openrc
+    - zramen
+  source:
+    - zramen.initd
+  b2sums:
+    - 1a1353d5c479e52994ab2fdf9bcb5dce9ee977fccbf94def7201f8a9f4bd3ee7f4bf8a525f8c9ca5d0b1e582de9cc70f298b7eda44a2d888fdde594e0dd18571
+pkgname:
+  - name: zramen-openrc
+# generated with artixpkg 0.38.5-1-any
