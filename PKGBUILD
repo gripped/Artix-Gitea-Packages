@@ -1,0 +1,61 @@
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Contributor: csslayer <wengxt AT gmail com>
+
+pkgname=libime
+pkgver=1.1.14
+_lmver=20250113
+_dictver=20250327
+_tablever=20240108
+pkgrel=1
+pkgdesc="A library to support generic input method implementation"
+arch=('x86_64')
+url="https://github.com/fcitx/libime"
+license=('LGPL-2.1-or-later')
+depends=('boost-libs' 'fcitx5')
+makedepends=('git' 'boost' 'extra-cmake-modules' 'ninja' 'python')
+source=("git+https://github.com/fcitx/libime.git#tag=$pkgver?signed"
+        "git+https://github.com/kpu/kenlm.git"
+        "https://download.fcitx-im.org/data/lm_sc.arpa-$_lmver.tar.zst"
+        "https://download.fcitx-im.org/data/dict-$_dictver.tar.zst"
+        "https://download.fcitx-im.org/data/table-$_tablever.tar.zst")
+noextract=("lm_sc.arpa-$_lmver.tar.zst"
+           "dict-$_dictver.tar.zst"
+           "table-$_tablever.tar.zst")
+sha512sums=('f0bc6afa07fdb6f1cf6a3e8a3faa457cb405bd7da9ec0bd7c5205fd9943ae3b424f42c1bde88822d8f570efab306017f3bdc0171248fc5a7bf613f50a9bebefa'
+            'SKIP'
+            'c30f9f3be426489c70fb88dd94b332691aff582f72edcf45b917127d9aaadd069e3d9c28f260695ec7a466cefdb07fc9679c9401ad1e41c3aebde97aee718f7e'
+            '63011cc493dbbe04097264a2a52bee5d3addfe6e0a3173e15a81884d065aada9cafe29f0405828b98da2946d917e16ef980ae1a59719f40672558ce00caf06aa'
+            '0d1642ff84e5da2c5b95710e17439bda11b39d3f65d53426bdc03a775dbe592ae64bff8f9191ce27c57b92db8cfed8284a3b6a4f7f02f8ab7fcc8f28cfa0c0ff')
+validpgpkeys=('2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9') # Weng Xuetian <wengxt@gmail.com>
+
+prepare() {
+  cd $pkgname
+  git submodule init
+  git config submodule.src/libime/kenlm.url "$srcdir"/kenlm
+  git -c protocol.file.allow=always submodule update
+
+  mv ../lm_sc.arpa-$_lmver.tar.zst data/
+  mv ../dict-$_dictver.tar.zst data/
+  mv ../table-$_tablever.tar.zst data/
+  # grep to make sure the version is correct
+  grep lm_sc.arpa-$_lmver.tar.zst data/CMakeLists.txt
+  grep dict-$_dictver.tar.zst data/CMakeLists.txt
+  grep table-$_tablever.tar.zst data/CMakeLists.txt
+}
+
+build() {
+  cd $pkgname
+
+  cmake -GNinja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib .
+  ninja
+}
+
+check() {
+  cd $pkgname
+  ninja test
+}
+
+package() {
+  cd $pkgname
+  DESTDIR="$pkgdir" ninja install
+}
