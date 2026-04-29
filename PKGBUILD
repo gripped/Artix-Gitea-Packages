@@ -2,7 +2,7 @@
 
 _pkgbasename=libcups
 pkgname=lib32-$_pkgbasename
-pkgver=2.4.17
+pkgver=2.4.19
 pkgrel=1
 pkgdesc="The CUPS Printing System - client libraries (32-bit)"
 arch=('x86_64')
@@ -13,12 +13,13 @@ source=(https://github.com/OpenPrinting/cups/releases/download/v${pkgver}/cups-$
         cups-freebind.patch
         guid.patch
 )
-sha256sums=('89c703238de210d4f4f4e5d4269e3d60c4b2f487aad75a8a1eaecd659e4d0b77'
+sha256sums=('820984b12a67f98705785aae2dd1347fe0ac097828001d4583ff64574aed6389'
             'SKIP'
             '3385047b9ac8a7b13aeb8f0ca55d15f793ce7283516db0155fe28a67923c592d'
             '0bf6a75ba1b051771f155d9a5d36b307a6d40c6857d645b250fe93f3fb713474')
 #validpgpkeys=('7ADB58203CA5F046F28025B215AA6A7F4D4227D7') # "Zdenek Dohnal (Associate Software Engineer) <zdohnal@redhat.com>"
-validpgpkeys=('7082A0A50A2E92640F3880E0E4522DCC9B246FF7') # Zdenek Dohnal (The old 4D4227D7 key revoked) <zdohnal@redhat.com>
+# validpgpkeys=('7082A0A50A2E92640F3880E0E4522DCC9B246FF7') # Zdenek Dohnal (The old 4D4227D7 key revoked) <zdohnal@redhat.com>
+validpgpkeys+=('9086C3CDC66C3F563CF8F405BE67C75EC81F3244') #  "Michael R Sweet <msweet@msweet.org>"
 
 build() {
   export CC="gcc -m32"
