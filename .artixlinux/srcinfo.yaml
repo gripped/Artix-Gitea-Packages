@@ -1,9 +1,9 @@
 ---
-version: 0.12.0-1
+version: 0.13.0-1
 pkgbase:
   name: hyprutils
   pkgdesc: Hyprland utilities library used across the ecosystem
-  pkgver: 0.12.0
+  pkgver: 0.13.0
   pkgrel: 1
   url: https://github.com/hyprwm/hyprutils
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   provides:
     - libhyprutils.so
   source:
-    - https://github.com/hyprwm/hyprutils/archive/v0.12.0/hyprutils-0.12.0.tar.gz
+    - https://github.com/hyprwm/hyprutils/archive/v0.13.0/hyprutils-0.13.0.tar.gz
   sha256sums:
-    - d9b495cc8c7602fe54148388fe94892a1337be871267dc5e93f4e719fe6ef8f2
+    - d28e2b76aa13a21ed4efcbfb770542240bb0391ed0513f02c8b453ee7f64aee6
 pkgname:
   - name: hyprutils
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
