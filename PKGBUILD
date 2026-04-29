@@ -2,7 +2,7 @@
 
 pkgname=speedtest-cli
 pkgver=2.1.3
-pkgrel=10
+pkgrel=10.1
 pkgdesc='Command line interface for testing internet bandwidth using speedtest.net'
 url='https://github.com/sivel/speedtest-cli'
 arch=('any')

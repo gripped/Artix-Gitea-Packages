@@ -50,11 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 2.1.3-10
+    version: 2.1.3-10.1
     packages:
-      - speedtest-cli-2.1.3-10-any.pkg.tar.zst
+      - speedtest-cli-2.1.3-10.1-any.pkg.tar.zst
     debug:
-      - speedtest-cli-debug-2.1.3-10-any.pkg.tar.zst
+      - speedtest-cli-debug-2.1.3-10.1-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []
