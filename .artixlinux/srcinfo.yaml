@@ -1,10 +1,10 @@
 ---
-version: 3.4.0-3
+version: 3.5.0-1
 pkgbase:
   name: libblockdev
   pkgdesc: A library for manipulating block devices
-  pkgver: 3.4.0
-  pkgrel: 3
+  pkgver: 3.5.0
+  pkgrel: 1
   url: https://github.com/storaged-project/libblockdev
   arch:
     - x86_64
@@ -41,11 +41,11 @@ pkgbase:
     - util-linux-libs
     - volume_key
   source:
-    - https://github.com/storaged-project/libblockdev/releases/download/3.4.0/libblockdev-3.4.0.tar.gz
+    - https://github.com/storaged-project/libblockdev/releases/download/3.5.0/libblockdev-3.5.0.tar.gz
   sha512sums:
-    - d722ee1f41b76158b41f57ea4062adaba274c5ffdd88fa40b0b605a8557e68ba095e6a6649b8f6efeff9ad814532b5b19aa541a1688ef4b34ea23078d946c1d3
+    - bdc22bd2ec23a6e0fcee9e41d6e4ed05645b7c5413874e6ed8bc0f2ad17d5e671ed966e8697a2a2b65738eb49830ade3c302a93f9facb7542685e544ebe9106a
   b2sums:
-    - 330efc4792465b7fd74a6028cd90274b95333c2e3b449e0ed965eb663e59ac2e77e5fcda755a74f7a775fc217a21344440b9d18bed08bd2e6726da93187ea811
+    - d852cd6bf62e4b138a38b4756cb3bf11f7cfc4d5289b021d8b84c1738591609b66b3dbe6d51d53b77e60ac5705568db5d5b6b68f2c88b2ecb0ccea686cf95389
 pkgname:
   - name: libblockdev
     depends:
@@ -87,7 +87,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libbytesize
     provides:
@@ -102,7 +102,7 @@ pkgname:
       - glibc
       - keyutils
       - libkeyutils.so
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libgcc
       - nss
@@ -119,7 +119,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
     provides:
       - libbd_dm.so
@@ -132,7 +132,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libbytesize
       - libgcc
@@ -162,7 +162,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libgcc
     provides:
@@ -175,7 +175,8 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - json-glib
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libblockdev.so
       - libgcc
@@ -196,7 +197,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libbytesize
       - libgcc
@@ -211,7 +212,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
     provides:
       - libbd_mpath.so
@@ -221,7 +222,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - ndctl
       - util-linux-libs
@@ -234,7 +235,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libnvme
     provides:
@@ -245,7 +246,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - util-linux-libs
       - libfdisk.so
@@ -259,7 +260,7 @@ pkgname:
       - glibc
       - json-glib
       - libatasmart
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
     optdepends:
       - 'smartmontools: for experimental smartmontools-based plugin'
@@ -272,7 +273,7 @@ pkgname:
       - glib2
       - libglib-2.0.so
       - glibc
-      - libblockdev=3.4.0
+      - libblockdev=3.5.0
       - libbd_utils.so
       - libgcc
       - util-linux-libs
@@ -286,4 +287,4 @@ pkgname:
       - libbytesize
       - python
       - python-gobject
-# generated with artixpkg 0.38.3-1-any
+# generated with artixpkg 0.38.5-1-any
