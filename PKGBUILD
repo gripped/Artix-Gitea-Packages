@@ -10,14 +10,14 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=ungoogled-chromium
-pkgver=147.0.7727.55
+pkgver=147.0.7727.116
 pkgrel=1
 _launcher_ver=8
 _manual_clone=0
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
-_uc_ver=147.0.7727.55-1
+_uc_ver=147.0.7727.116-1
 pkgdesc="A lightweight approach to removing Google web service dependency"
 arch=('x86_64')
 url="https://github.com/ungoogled-software/ungoogled-chromium"
@@ -71,17 +71,19 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         chromium-145-fix-SYS_SECCOMP.patch
         chromium-146-drop-unknown-clang-flag.patch
         chromium-147-revert-clang-no-lifetime-dse-flag.patch
+        chromium-147-rust-1.95-bytemuck.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
         use-oauth2-client-switches-as-default.patch
         glibc-2.42-baud-rate-fix.patch)
-sha256sums=('57594966be592efdb9fe6491f5a834de237f5c7decdca5eb1f7d7a5d38dd54e9'
-            '167f12552e356abc229c5fc99ec670021e9ce171fe5dc995985855c6d1635d63'
+sha256sums=('44be73f82b1b670255b3c58676be08844ddf1bf5727d5fcdf430d214aa8d15bb'
+            '8f3f7340d457d58348bc90b5cda222fd3e9b7021c4156b76f3071fb8b15c0436'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             'f71de14ebf4e34b43cb2d09091ab6bee3debe43a8cc35a2479d6062600164a3d'
             'c382830318c5b37826ecf44f3ba9def6be8affdad1bce819ecb83f3222ff4b3a'
+            '77326d4b613bb9e2e746b569b161009ae59cd6cbf531f37a52196e916c00f011'
             'ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
             '9343afa1a4308a7cfb3317229f5aff7778688debcc03c4a74a85908aa1d0cc3a'
@@ -168,6 +170,8 @@ prepare() {
 
   # https://crbug.com/456218403
   patch -Np1 -i ../chromium-145-fix-SYS_SECCOMP.patch
+
+  patch -Np1 -i ../chromium-147-rust-1.95-bytemuck.patch
 
   # https://crbug.com/456677057
   patch -Np1 -i ../glibc-2.42-baud-rate-fix.patch
