@@ -1,0 +1,28 @@
+---
+version: 1.7.1-1
+pkgbase:
+  name: innernet
+  pkgdesc: A private network system that uses WireGuard under the hood
+  pkgver: 1.7.1
+  pkgrel: 1
+  url: https://github.com/tonarino/innernet
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - rust
+    - git
+    - clang
+    - llvm
+  depends:
+    - sqlite
+  options:
+    - '!lto'
+  source:
+    - https://github.com/tonarino/innernet/archive/v1.7.1/innernet-1.7.1.tar.gz
+  sha256sums:
+    - aed18003c3bbdf621ef204acbf6b939a18ec4943dd219be328b2400d77cddb47
+pkgname:
+  - name: innernet
+# generated with artixpkg 0.38.5-1-any

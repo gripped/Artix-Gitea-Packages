@@ -1,0 +1,55 @@
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Jake McGinty <jake@tonari.no>
+
+pkgname=innernet
+pkgver=1.7.1
+pkgrel=1
+pkgdesc="A private network system that uses WireGuard under the hood"
+arch=('x86_64')
+url="https://github.com/tonarino/innernet"
+license=('MIT')
+depends=('sqlite')
+makedepends=('rust' 'git' 'clang' 'llvm')
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+sha256sums=('aed18003c3bbdf621ef204acbf6b939a18ec4943dd219be328b2400d77cddb47')
+options=('!lto')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --frozen
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+
+  install -Dm 755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  install -Dm 755 "target/release/$pkgname-server" "$pkgdir/usr/bin/$pkgname-server"
+
+  install -Dm 644 "client/$pkgname@.service" "$pkgdir/usr/lib/systemd/system/$pkgname@.service"
+  install -Dm 644 "client/$pkgname.target" "$pkgdir/usr/lib/systemd/system/$pkgname.target"
+
+  install -Dm 644 "server/$pkgname-server@.service" "$pkgdir/usr/lib/systemd/system/$pkgname-server@.service"
+
+  for binary in "$pkgname" "$pkgname-server"; do
+    install -Dm 644 "doc/$binary.completions.bash" "$pkgdir/usr/share/bash-completion/completions/$binary"
+    install -Dm 644 "doc/$binary.completions.fish" "$pkgdir/usr/share/fish/vendor_completions.d/$binary.fish"
+    install -Dm 644 "doc/$binary.completions.zsh" "$pkgdir/usr/share/zsh/site-functions/_$binary"
+    install -Dm 644 "doc/$binary.8.gz" "$pkgdir/usr/share/man/man8/$binary.8.gz"
+  done
+
+  install -Dm 644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm 644 README.md "$pkgdir/usr/share/doc/$pkgname/README.md"
+}
+
+# vim:set ts=2 sw=2 et:

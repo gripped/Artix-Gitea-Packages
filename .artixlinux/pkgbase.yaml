@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,9 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.7.1-1
+    packages:
+      - innernet-1.7.1-1-x86_64.pkg.tar.zst
+    debug:
+      - innernet-debug-1.7.1-1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
