@@ -1,11 +1,11 @@
 ---
 team: null
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,8 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 5.1.12-2
+    packages:
+      - fcitx5-chinese-addons-5.1.12-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
