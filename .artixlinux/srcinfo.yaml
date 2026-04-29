@@ -1,17 +1,17 @@
 ---
-version: 1.2.1-2
+version: 2.0.0-1
 pkgbase:
   name: msedit
   pkgdesc: A simple editor for simple needs (Microsoft Edit)
-  pkgver: 1.2.1
-  pkgrel: 2
+  pkgver: 2.0.0
+  pkgrel: 1
   url: https://github.com/microsoft/edit
   arch:
     - x86_64
   license:
     - MIT
   makedepends:
-    - rustup
+    - rust
     - git
   depends:
     - glibc
@@ -24,9 +24,9 @@ pkgbase:
   replaces:
     - ms-edit
   source:
-    - msedit::git+https://github.com/microsoft/edit.git#tag=v1.2.1
+    - msedit::git+https://github.com/microsoft/edit.git#tag=v2.0.0
   sha256sums:
-    - 272a51d6ddf0b8768b373ac3ed561af21ed266620e492a838df2226e82255c50
+    - cab8aebba0c96dfc2362148d4c7ca1f1de72057614ac33b4d397bbe9d338547b
 pkgname:
   - name: msedit
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any

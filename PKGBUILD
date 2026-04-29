@@ -1,8 +1,8 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Bert Peters <bertptrs@archlinux.org>
 pkgname=msedit
-pkgver=1.2.1
-pkgrel=2
+pkgver=2.0.0
+pkgrel=1
 pkgdesc="A simple editor for simple needs (Microsoft Edit)"
 arch=(x86_64)
 url="https://github.com/microsoft/edit"
@@ -18,11 +18,11 @@ optdepends=(
 replaces=(ms-edit)
 provides=(ms-edit)
 makedepends=(
-  rustup
+  rust
   git
 )
 source=("$pkgname::git+$url.git#tag=v$pkgver")
-sha256sums=('272a51d6ddf0b8768b373ac3ed561af21ed266620e492a838df2226e82255c50')
+sha256sums=('cab8aebba0c96dfc2362148d4c7ca1f1de72057614ac33b4d397bbe9d338547b')
 
 prepare() {
   cd "$pkgname"
