@@ -24,7 +24,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.6.4
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -272,7 +272,7 @@ package_pipewire() {
     # directories for overrides
     mkdir -p etc/pipewire/{client-rt,client,minimal,pipewire}.conf.d
   )
-
+  install -Dm755 $srcdir/artix-pipewire-launcher $pkgdir/usr/bin
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 pipewire/COPYING
 }
 
