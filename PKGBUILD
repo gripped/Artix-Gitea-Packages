@@ -8,7 +8,7 @@
 pkgbase=nvidia-580xx-utils
 pkgname=('nvidia-580xx-utils' 'opencl-nvidia-580xx' 'nvidia-580xx-dkms')
 pkgver=580.142
-pkgrel=3
+pkgrel=3.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
@@ -36,7 +36,7 @@ sha256sums=('be99ff3def641bb900c2486cce96530394c5dc60548fc4642f19d3a4c784134d'
             'c1a1cf05dd12efd67858180461ad97a6ebe206b55b56df207854b322ce734613'
             'b14f7a65359c05c373ddfc750cd4cf086a48e815489d93ad5cbe1dbf84bf8f5a'
             '856a04794d44063ba98a4dd5fca198bc45042d203773b9659f178bb6c73ac9f3'
-            '9b2bfc53dbcb736dd434cfd8be74ded2b2c0b8da1aeb1adc8e1cb5f242197802')
+            'd728f5c200d7efbe12f5b4d2d2854da763c73b90d4a1d0ca86ee28d0561522e2')
 
 create_links() {
     # create soname links
@@ -66,6 +66,9 @@ prepare() {
 
     # Fix compilation for 7.0
     patch -Np1 -i "${srcdir}/0003-kernel-7.0.patch" -d "${srcdir}/${_pkg}/kernel"
+    
+    # Fix system sleep
+    patch -Np1 -i "${srcdir}/nvidia-sleep.patch" -d "${srcdir}/${_pkg}/systemd/system-sleep"
 
     shopt -s globstar
     for conf in "${srcdir}"/**/dkms.conf; do
