@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -9,8 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 3.8.13-2
+    packages:
+      - gnutls-3.8.13-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: 3.8.13-1
