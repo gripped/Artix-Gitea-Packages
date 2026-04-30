@@ -1,9 +1,9 @@
 ---
-version: 2.57-1
+version: 2.58-1
 pkgbase:
   name: perl-xml-parser
   pkgdesc: Expat-based XML parser module for perl
-  pkgver: 2.57
+  pkgver: 2.58
   pkgrel: 1
   url: https://github.com/cpan-authors/XML-Parser
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/cpan-authors/XML-Parser.git#tag=2.57
+    - git+https://github.com/cpan-authors/XML-Parser.git#tag=2.58
   sha512sums:
-    - 6a9658d8b62bb0a4df0a0751d15d1b9ba036d14996491de6ca01eff03d40b2304fff03766cbcf31e98e4e443c560eea541475231314774b8e346f7c7d6c8ad07
+    - 60fccbf6ad870055d9dfa187f0281f7c04a6578712e23d0f1f74ab61ecc2ab33599faadbdfdde1dbabaa8a1800fcc1c4d8b9043fc978845cb1e1a5b4c69570ce
 pkgname:
   - name: perl-xml-parser
 # generated with artixpkg 0.38.5-1-any
