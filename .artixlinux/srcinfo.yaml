@@ -1,0 +1,42 @@
+---
+version: 3.4.2-1
+pkgbase:
+  name: rsync
+  pkgdesc: A fast and versatile file copying tool for remote and local files
+  pkgver: 3.4.2
+  pkgrel: 1
+  url: https://rsync.samba.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - python-commonmark
+  depends:
+    - acl
+    - libacl.so
+    - lz4
+    - openssl
+    - popt
+    - xxhash
+    - libxxhash.so
+    - zlib
+    - zstd
+  optdepends:
+    - 'python: for rrsync'
+  backup:
+    - etc/rsyncd.conf
+    - etc/xinetd.d/rsync
+  source:
+    - git+https://github.com/RsyncProject/rsync.git#tag=v3.4.2?signed
+    - rsyncd.conf
+  validpgpkeys:
+    - 0048C8B026D4C96F0E589C2F6C859FB14B96A8C5
+    - 9FEF112DCE19A0DC7E882CB81BB24997A8535F6F
+  sha256sums:
+    - 3b6fa3f3efe4ea43b077aa5c78ab7d4245e72edb44b37547f45c3616481241e4
+    - 733ccb571721433c3a6262c58b658253ca6553bec79c2bdd0011810bb4f2156b
+pkgname:
+  - name: rsync
+# generated with artixpkg 0.38.5-1-any
