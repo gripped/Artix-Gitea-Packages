@@ -1,9 +1,9 @@
 ---
-version: 1:6.0.6-1
+version: 1:7.0.0-1
 pkgbase:
   name: lxc
   pkgdesc: Linux Containers
-  pkgver: 6.0.6
+  pkgver: 7.0.0
   pkgrel: 1
   epoch: 1
   url: https://linuxcontainers.org
@@ -36,15 +36,15 @@ pkgbase:
     - etc/lxc/default.conf
     - etc/default/lxc
   source:
-    - https://linuxcontainers.org/downloads/lxc/lxc-6.0.6.tar.gz
-    - https://linuxcontainers.org/downloads/lxc/lxc-6.0.6.tar.gz.asc
+    - https://linuxcontainers.org/downloads/lxc/lxc-7.0.0.tar.gz
+    - https://linuxcontainers.org/downloads/lxc/lxc-7.0.0.tar.gz.asc
     - lxc.tmpfiles
   validpgpkeys:
     - 602F567663E593BCBD14F338C638974D64792D67
   sha256sums:
-    - b0ba4537258d2b848fd07dedb1044dab132de3fb3f1976d240da40a7dee1b8cf
+    - ba0c860626efbac6683f351dd718edb062065e919716d787b89e3d547c5d9493
     - SKIP
     - 10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479
 pkgname:
   - name: lxc
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any

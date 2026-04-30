@@ -8,7 +8,7 @@
 
 pkgname=lxc
 epoch=1
-pkgver=6.0.6
+pkgver=7.0.0
 pkgrel=1
 pkgdesc="Linux Containers"
 arch=('x86_64')
@@ -28,7 +28,7 @@ source=("https://linuxcontainers.org/downloads/lxc/$pkgname-${pkgver}.tar.gz"{,.
 #	"$pkgname-fix-dumpable.patch::https://github.com/lxc/lxc/commit/2663712e8fa8f37e0bb873185e2d4526dc644764.patch"
 	"lxc.tmpfiles"
 )
-sha256sums=('b0ba4537258d2b848fd07dedb1044dab132de3fb3f1976d240da40a7dee1b8cf'
+sha256sums=('ba0c860626efbac6683f351dd718edb062065e919716d787b89e3d547c5d9493'
             'SKIP'
             '10e4f661872f773bf3122a2f9f2cb13344fea86a4ab72beecb4213be4325c479')
 
