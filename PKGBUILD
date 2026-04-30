@@ -1,18 +1,18 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-ppi
-pkgver=1.284
-pkgrel=2
+pkgver=1.288
+pkgrel=1
 pkgdesc="Parse, Analyze and Manipulate Perl (without perl)"
 arch=('any')
-license=('PerlArtistic')
+license=('Artistic-1.0-Perl' 'GPL-1.0-or-later')
 url="https://metacpan.org/release/PPI"
-depends=('perl-clone' 'perl-io-string' 'perl-list-moreutils' 'perl-params-util' 'perl-task-weaken' 'perl-safe-isa' 'perl-yaml-pp')
-makedepends=('perl-class-inspector' 'perl-file-remove' 'perl-test-deep' 'perl-test-object'
+depends=('perl-clone' 'perl-params-util' 'perl-task-weaken' 'perl-safe-isa' 'perl-yaml-pp')
+makedepends=('perl-class-inspector' 'perl-test-nowarnings' 'perl-test-object'
              'perl-test-subcalls')
 options=('!emptydirs')
-source=("https://cpan.metacpan.org/authors/id/O/OA/OALDERS/PPI-$pkgver.tar.gz")
-sha512sums=('7fd5503d157aee926d92392d531ed3dcedb8d37920125463ec5fdc0907366a0a496b9e3abd39b2064961384a1ce3a617f416dbf560bbff8c17e4cd3f85ee8954')
+source=("https://cpan.metacpan.org/authors/id/M/MI/MITHALDU/PPI-$pkgver.tar.gz")
+sha512sums=('1d2d3e3a6f7596d13261f8494de1c35bbc36f99d466012023f4f0cadd2e04853400d5befae024ab1a60e6ccc86abbe7ee977340def57f278eb8220c9f0487247')
 
 build() {
   cd PPI-$pkgver
