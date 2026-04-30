@@ -1,15 +1,15 @@
 ---
-version: 2.92-1
+version: 2.92-2
 pkgbase:
   name: dnsmasq
   pkgdesc: Lightweight, easy to configure DNS forwarder and DHCP server
   pkgver: 2.92
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.thekelleys.org.uk/dnsmasq/doc.html
   arch:
     - x86_64
   license:
-    - GPL
+    - GPL-2.0-or-later
   depends:
     - glibc
     - gmp
@@ -27,13 +27,15 @@ pkgbase:
   source:
     - http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.92.tar.xz
     - http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.92.tar.xz.asc
+    - 0001-nettle-4-0.patch
     - dnsmasq.sysusers
   validpgpkeys:
     - D6EACBD6EE46B834248D111215CDDA6AE19135A2
   sha256sums:
     - 4bf50c2c1018f9fbc26037df51b90ecea0cb73d46162846763b92df0d6c3a458
     - SKIP
+    - bec0c353e33efcf259a29f2f5a566edfb57b6cf2371c1680d553a62c63006193
     - e805d41b291dfe6988d6896d311ff2fa62d8291067572f3db1059b0217f31aff
 pkgname:
   - name: dnsmasq
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.5-1-any
