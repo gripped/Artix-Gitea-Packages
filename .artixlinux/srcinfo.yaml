@@ -1,9 +1,9 @@
 ---
-version: 4.99.1-1
+version: 4.99.2-1
 pkgbase:
   name: exim
   pkgdesc: Message Transfer Agent
-  pkgver: 4.99.1
+  pkgver: 4.99.2
   pkgrel: 1
   url: https://www.exim.org/
   arch:
@@ -38,7 +38,7 @@ pkgbase:
     - etc/mail/exim.conf
     - etc/logrotate.d/exim
   source:
-    - https://downloads.exim.org/exim4/exim-4.99.1.tar.bz2
+    - https://downloads.exim.org/exim4/exim-4.99.2.tar.bz2
     - aliases
     - exim.logrotate
     - exim.Makefile
@@ -51,7 +51,7 @@ pkgbase:
     - DD98D92359DE9E3C2663F291697F0EDD68099F6F
     - A986F3A6BD6377D8730958DEBCE58C8CE41F32DF
   sha512sums:
-    - 7147f286324c63340a3ead61039a3819f0bfe911ef30a331780593aa9386c0418d03cb8d2acaf1eb076bdbff7338c7ef04e12b654262163b05155555fe67e812
+    - 7a07d79b260b7f3749a97a4eec1a36afda0a30acaaba4d407627e3e978b078c6b77c147cc855ee87296e164a61f6a71b2ac0ec31cb515bc6d0c09d8dcd5c4b28
     - 6494d9aae71a630935f3946a136855aadede54fd10b7b3cd7df47972d320ae142410076871e839f6caca8e02ec136604464b0b9c593721db243d8edf75c2f17f
     - d8e3b466e0bba8175cfe762058dec49018495a260aa5efd139f4ef435284c305958cbd7fc514e81042146368b749ae38f0bf276fc0b4b91918ef33126900aa81
     - 7fd7d364473bec032ddd685c80e38dd8fcb4130ba960cc2a8b5747c35c2a0757229e95a9c86cb601b7d60344989bb187d3a35f2d2fdc718bb8587af971146c1c
@@ -59,4 +59,4 @@ pkgbase:
     - f8a34fea0a65d0992732bc444bbb334d060de7d91d9cca6f00bc950ba289afa813783517dd3999437f89bc194290785805df7081606a65abb1db3fd3b3aa94ca
 pkgname:
   - name: exim
-# generated with artixpkg 0.38.1-1-any
+# generated with artixpkg 0.38.5-1-any
