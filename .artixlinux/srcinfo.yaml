@@ -1,0 +1,27 @@
+---
+version: 20260429-1
+pkgbase:
+  name: lact-dinit
+  pkgdesc: dinit init script for lact
+  pkgver: 20260429
+  pkgrel: 1
+  url: https://auris.artixlinux.org/auris/packager/src/branch/lact-dinit/
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  depends:
+    - lact
+    - dinit
+    - dinit-base
+  provides:
+    - init-lact
+  conflicts:
+    - init-lact
+  source:
+    - lact
+  sha256sums:
+    - 250694383639068a869d2e670fcff61876248da4cbba05b166feabea2c6764ee
+pkgname:
+  - name: lact-dinit
+# generated with artixpkg 0.38.5-1-any

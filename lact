@@ -1,0 +1,5 @@
+type = process
+nice = -10
+command = /usr/bin/lact daemon
+waits-for = local.target
+restart = true
