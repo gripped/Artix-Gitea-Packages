@@ -42,4 +42,4 @@ pkgbase:
     - e709df2f97b523ef1c7a9dae3232ccbd235ac8f025eba866165272f8ba0372a0aba965d3aae1402395e43331bd629b9d8f3fbffd75fc254f4a7e5ecd47f73130
 pkgname:
   - name: chrony
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
