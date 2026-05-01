@@ -18,5 +18,5 @@ sha256sums=('SKIP')
 
 package() {
     mkdir -p $pkgdir/usr/share/sddm/themes
-    cp -a $srcdir/$pkgname/artix $pkgdir/usr/share/sddm/themes/
+    cp -a $pkgname/artix $pkgdir/usr/share/sddm/themes/
 }
