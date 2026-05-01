@@ -1,9 +1,9 @@
 ---
-version: 0.315.2-1
+version: 0.315.3-1
 pkgbase:
   name: python-strawberry-graphql
   pkgdesc: A GraphQL library for Python that leverages type annotations
-  pkgver: 0.315.2
+  pkgver: 0.315.3
   pkgrel: 1
   url: https://strawberry.rocks
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - python-typing_extensions
     - python-pygments
   source:
-    - python-strawberry-graphql-0.315.2.tar.gz::https://github.com/strawberry-graphql/strawberry/archive/refs/tags/0.315.2.tar.gz
+    - python-strawberry-graphql-0.315.3.tar.gz::https://github.com/strawberry-graphql/strawberry/archive/refs/tags/0.315.3.tar.gz
   sha256sums:
-    - 5c149fcc1bc9eeaf9bf3537709d05040655f8e4a07788a41f2429243448b269c
+    - d8a577904989b86ff4442c3dec23ef3fac779951d00395c714f2b47251034f31
 pkgname:
   - name: python-strawberry-graphql
 # generated with artixpkg 0.38.5-1-any
