@@ -40,7 +40,8 @@ repos:
       - libtsan-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
       - libubsan-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
       - lto-dump-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
-    debug: []
+    debug:
+      - gcc-debug-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
   system-gremlins:
     version: null
     packages: []

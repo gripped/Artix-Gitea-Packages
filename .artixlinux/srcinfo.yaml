@@ -33,6 +33,7 @@ pkgbase:
   options:
     - '!emptydirs'
     - '!lto'
+    - debug
   source:
     - git+https://sourceware.org/git/gcc.git#commit=301eb08fa2c5b6f3045260bf1294c2e2bacbcd90
     - c89

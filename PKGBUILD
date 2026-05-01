@@ -72,6 +72,7 @@ checkdepends=(
 options=(
   !emptydirs
   !lto
+  debug
 )
 _libdir=usr/lib/gcc/$CHOST/${pkgver%%+*}
 source=(git+https://sourceware.org/git/gcc.git#commit=$_commit
