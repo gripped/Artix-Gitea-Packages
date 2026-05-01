@@ -1,10 +1,10 @@
 ---
-version: 1:2.6-1
+version: 1:2.6-2
 pkgbase:
   name: rtmpdump
   pkgdesc: A toolkit for RTMP streams
   pkgver: 2.6
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://rtmpdump.mplayerhq.hu/
   arch:
@@ -22,8 +22,10 @@ pkgbase:
     - librtmp.so
   source:
     - git+https://git.ffmpeg.org/rtmpdump#tag=138fdb258d9fc26f1843fd1b891180416c9dc575
+    - nettle-4.patch
   sha256sums:
-    - SKIP
+    - 0cba5d49d41b5e35a34ea8230124ed853eeeac19091d17a4188a47c31a17d352
+    - b9cbbcf14d9fb46962d541544f47226909a7bc7191e2be50cfd0c73c73c4b80d
 pkgname:
   - name: rtmpdump
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
