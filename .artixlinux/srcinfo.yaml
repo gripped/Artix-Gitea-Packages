@@ -1,0 +1,49 @@
+---
+version: 0.9.r400.g452f5da1-1
+pkgbase:
+  name: vis
+  pkgdesc: modern, legacy free, simple yet efficient vim-like editor
+  pkgver: 0.9.r400.g452f5da1
+  pkgrel: 1
+  url: https://github.com/martanne/vis#vis-a-vim-like-text-editor
+  arch:
+    - x86_64
+  license:
+    - custom:ISC
+  checkdepends:
+    - vim
+    - lua-lpeg
+  makedepends:
+    - git
+  depends:
+    - acl
+    - libacl.so
+    - bash
+    - ncurses
+    - libncursesw.so
+    - libtermkey
+    - libtermkey.so
+    - lua
+    - tre
+    - file
+  source:
+    - git+https://github.com/martanne/vis.git#commit=452f5da105d9ecdae84f00b60595b9bc69d232ae
+  validpgpkeys:
+    - 54A47F12462D26A7D078A932C83A52CD1962562C
+  sha256sums:
+    - bb33a7cf6270666c4475b8d4c2582422f5cee9c62d5e3450ba1232b26a96e59a
+pkgname:
+  - name: vis
+    optdepends:
+      - 'wl-clipboard: wayland clipboard support'
+      - 'xclip: X11 clipboard support'
+      - 'xsel: X11 clipboard support'
+      - 'vis-syntax-highlighting: syntax highlighting'
+    backup:
+      - etc/vis/visrc.lua
+  - name: vis-syntax-highlighting
+    pkgdesc: syntax highlighting for vis editor
+    depends:
+      - vis
+      - lua-lpeg
+# generated with artixpkg 0.38.5-1-any
