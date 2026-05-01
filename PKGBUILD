@@ -38,12 +38,15 @@ pkgname=(
   libubsan
   lto-dump
 )
-pkgver=15.2.1+r604+g0b99615a8aef
-_commit=0b99615a8aef011cff76c6caa8c09434f46598b3
+pkgver=16.1.1+r12+g301eb08fa2c5
+_commit=301eb08fa2c5b6f3045260bf1294c2e2bacbcd90
 pkgrel=1
 pkgdesc='The GNU Compiler Collection'
 arch=(x86_64)
-license=(GPL-3.0-with-GCC-exception GFDL-1.3-or-later)
+license=(
+  'GPL-3.0-or-later WITH GCC-exception-3.1'
+  GFDL-1.3-or-later
+)
 url='https://gcc.gnu.org'
 makedepends=(
   binutils
@@ -69,7 +72,6 @@ checkdepends=(
 options=(
   !emptydirs
   !lto
-  debug
 )
 _libdir=usr/lib/gcc/$CHOST/${pkgver%%+*}
 source=(git+https://sourceware.org/git/gcc.git#commit=$_commit
@@ -80,7 +82,7 @@ validpgpkeys=(F3691687D867B81B51CE07D9BBE43771487328A9  # bpiotrowski@archlinux.
               86CFFCA918CF3AF47147588051E8B148A9999C34  # foutrelis@archlinux.org
               13975A70E63C361C73AE69EF6EEB81F8981C74C7  # richard.guenther@gmail.com
               D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62) # Jakub Jelinek <jakub@redhat.com>
-sha256sums=('fda170be6da777107c74ad322d51a508edf448b86ce8247755eb0eb1524f38b6'
+sha256sums=('e7641bfddebaada298ca0a631183ef8d81bb3c5dfd3aef30bc7d4223f1c0e450'
             '7b09ec947f90b98315397af675369a1e3dfc527fa70013062e6e85c4be0275ab'
             '44ea973558842f3f4bd666bdaf6e810fd7b7c7bd36b5cc4c69f93d2cd0124fc7'
             '1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f')
@@ -88,9 +90,6 @@ sha256sums=('fda170be6da777107c74ad322d51a508edf448b86ce8247755eb0eb1524f38b6'
 prepare() {
   [[ ! -d gcc ]] && ln -s gcc-${pkgver/+/-} gcc
   cd gcc
-
-  # Do not run fixincludes
-  sed -i 's@\./fixinc\.sh@-c true@' gcc/Makefile.in
 
   # Arch Linux installs x86_64 libraries /lib
   sed -i '/m64=/s/lib64/lib/' gcc/config/i386/t-linux64
@@ -113,7 +112,6 @@ build() {
       --with-build-config=bootstrap-lto
       --with-linker-hash-style=gnu
       --with-system-zlib
-      --enable-__cxa_atexit
       --enable-cet=auto
       --enable-checking=release
       --enable-clocale=gnu
@@ -132,6 +130,7 @@ build() {
       --disable-libssp
       --disable-libstdcxx-pch
       --disable-werror
+      --disable-fixincludes
   )
 
   cd gcc-build
@@ -188,14 +187,29 @@ check() {
   "$srcdir/gcc/contrib/test_summary"
 }
 
+_install_runtime_library_exception() {
+  # Install Runtime Library Exception
+  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
+    "$pkgdir/usr/share/licenses/$pkgname/RUNTIME.LIBRARY.EXCEPTION"
+}
+
 package_gcc() {
   pkgdesc="The GNU Compiler Collection - C and C++ frontends"
   depends=(
-    "gcc-libs=$pkgver-$pkgrel"
+    "libasan=$pkgver-$pkgrel"
+    "libgcc=$pkgver-$pkgrel"
+    "liblsan=$pkgver-$pkgrel"
+    "libstdc++=$pkgver-$pkgrel"
+    "libtsan=$pkgver-$pkgrel"
+    "libubsan=$pkgver-$pkgrel"
     'binutils>=2.28'
-    libmpc
-    zstd
+    'glibc>=2.27'
+    gmp
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
   optdepends=(
     'lib32-gcc-libs: for generating code for 32-bit ABI'
@@ -221,7 +235,6 @@ package_gcc() {
 
   make -C $CHOST/libgcc DESTDIR="$pkgdir" install
   make -C $CHOST/32/libgcc DESTDIR="$pkgdir" install
-  rm -f "$pkgdir"/usr/lib{,32}/libgcc_s.so*
 
   make -C $CHOST/libstdc++-v3/src DESTDIR="$pkgdir" install
   make -C $CHOST/libstdc++-v3/include DESTDIR="$pkgdir" install
@@ -284,24 +297,29 @@ package_gcc() {
   # install the libstdc++ man pages
   make -C $CHOST/libstdc++-v3/doc DESTDIR="$pkgdir" doc-install-man
 
-  # remove files provided by lib32-gcc-libs
-  rm -f "$pkgdir"/usr/lib32/lib{stdc++,gcc_s}.so
+  # remove files provided by lib32-gcc-libs and libgcc
+  rm -f "$pkgdir"/usr/lib{,32}/libgcc_s{,_asneeded}.so*
+  rm -f "$pkgdir"/usr/lib32/libstdc++.so
 
   # byte-compile python libraries
   python -m compileall "$pkgdir/usr/share/gcc-${pkgver%%+*}/"
   python -O -m compileall "$pkgdir/usr/share/gcc-${pkgver%%+*}/"
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-ada() {
   pkgdesc='Ada front-end for GCC (GNAT)'
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
+    libgcc
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
   provides=(
     $pkgname-multilib
@@ -340,18 +358,21 @@ package_gcc-ada() {
   ln -s libgnat-${pkgver%%.*}.so "$pkgdir/usr/lib32/libgnat.so"
   rm -f "$pkgdir"/$_libdir/32/adalib/libgna{rl,t}.so
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-d() {
   pkgdesc="D frontend for GCC"
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libgphobos
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
   provides=(
     gdc
@@ -360,6 +381,7 @@ package_gcc-d() {
     gdc
   )
   options=(
+    !emptydirs
     staticlibs
   )
 
@@ -373,18 +395,21 @@ package_gcc-d() {
   rm -f "$pkgdir/usr/lib/"lib{gphobos,gdruntime}.so*
   rm -f "$pkgdir/usr/lib32/"lib{gphobos,gdruntime}.so*
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-fortran() {
   pkgdesc='Fortran front-end for GCC'
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libgfortran
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
   provides=(
     $pkgname-multilib
@@ -404,18 +429,21 @@ package_gcc-fortran() {
 
   ln -s gfortran "$pkgdir/usr/bin/f95"
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-gcobol() {
   pkgdesc="Cobol frontend for GCC"
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libgcobol
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
 
   cd gcc-build
@@ -425,18 +453,21 @@ package_gcc-gcobol() {
 
   install -Dm644 $CHOST/libgcobol/libgcobol.spec "$pkgdir"/$_libdir/
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-go() {
   pkgdesc='Go front-end for GCC'
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libgo
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
   provides=(
     "go=1.17"
@@ -458,10 +489,7 @@ package_gcc-go() {
   rm -f "$pkgdir"/usr/lib{,32}/libgo.so*
   install -Dm755 gcc/go1 "$pkgdir/$_libdir/go1"
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 
@@ -471,8 +499,8 @@ package_gcc-libs() {
     'glibc>=2.27'
     libasan
     libatomic
-    libgfortran
     libgcc
+    libgfortran
     libgomp
     liblsan
     libobjc
@@ -490,7 +518,14 @@ package_gcc-m2() {
   pkgdesc='Modula-2 frontend for GCC'
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
+    libgm2
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
 
   cd gcc-build
@@ -499,18 +534,21 @@ package_gcc-m2() {
   install -Dm755 gcc/cc1gm2 "$pkgdir/$_libdir"/cc1gm2
   install -Dm755 gcc/gm2 "$pkgdir"/usr/bin/gm2
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-objc() {
   pkgdesc='Objective-C front-end for GCC'
   depends=(
     "gcc=$pkgver-$pkgrel"
-    libobjc
+    'glibc>=2.27'
+    gmp
     libisl.so
+    libmpc
+    libobjc
+    mpfr
+    zlib
+    zstd
   )
   provides=(
     $pkgname-multilib
@@ -524,17 +562,20 @@ package_gcc-objc() {
   install -dm755 "$pkgdir/$_libdir"
   install -m755 gcc/cc1obj{,plus} "$pkgdir/$_libdir/"
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_gcc-rust() {
   pkgdesc="Rust frontend for GCC"
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
 
   cd gcc-build
@@ -543,10 +584,7 @@ package_gcc-rust() {
   install -Dm755 gcc/gccrs "$pkgdir"/usr/bin/gccrs
   install -Dm755 gcc/crab1 "$pkgdir"/usr/bin/crab1
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_lib32-gcc-libs() {
@@ -596,15 +634,15 @@ package_lib32-gcc-libs() {
   # remove files provided by gcc-libs
   rm -rf "$pkgdir"/usr/lib
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/lib32-gcc-libs/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libasan() {
   pkgdesc='Address Sanitizer runtime library shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
+    libstdc++
   )
   provides=(
     libasan.so
@@ -614,9 +652,7 @@ package_libasan() {
 
   make -C $CHOST/libsanitizer/asan DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libasan/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libatomic() {
@@ -632,9 +668,7 @@ package_libatomic() {
 
   make -C $CHOST/libatomic DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libatomic/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libgcc() {
@@ -650,16 +684,20 @@ package_libgcc() {
   make -C $CHOST/libgcc DESTDIR="$pkgdir" install-shared
   rm -f "$pkgdir/$_libdir/libgcc_eh.a"
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libgccjit() {
   pkgdesc="Just-In-Time Compilation with GCC backend"
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
   provides=(
     libgccjit.so
@@ -668,16 +706,15 @@ package_libgccjit() {
   cd gcc-build
   make -C gcc DESTDIR="$pkgdir" jit.install-common jit.install-info
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/libgcc/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
 
 package_libgcobol() {
   pkgdesc='Cobol runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
+    libstdc++
   )
   provides=(
     libgcobol.so
@@ -686,15 +723,14 @@ package_libgcobol() {
   cd gcc-build
   make -C $CHOST/libgcobol DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libgcobol/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libgfortran() {
   pkgdesc='Runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libgfortran.so
@@ -703,15 +739,14 @@ package_libgfortran() {
   cd gcc-build
   make -C $CHOST/libgfortran DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libgfortran/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libgo() {
   pkgdesc='Go runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libgo.so
@@ -720,9 +755,7 @@ package_libgo() {
   cd gcc-build
   make -C $CHOST/libgo DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libgo/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 
@@ -740,13 +773,11 @@ package_libgomp() {
   make -C $CHOST/libgomp DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
   make -C $CHOST/libgomp DESTDIR="$pkgdir" install-info
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libgomp/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libgm2() {
-  pkgdesc='Address Sanitizer runtime library shipped by GCC'
+  pkgdesc='Modula-2 runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
   )
@@ -765,15 +796,14 @@ package_libgm2() {
   # remove files provided by lib32-gcc-libs
   rm -rf "$pkgdir"/usr/lib32/
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libgm2/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libgphobos() {
   pkgdesc='D runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libgdruntime.so
@@ -789,15 +819,14 @@ package_libgphobos() {
   # remove files provided by lib32-gcc-libs
   rm -rf "$pkgdir"/usr/lib32/
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libgphobos/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libitm() {
   pkgdesc='GNU Transactional Memory library shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libitm.so
@@ -808,15 +837,15 @@ package_libitm() {
   make -C $CHOST/libitm DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
   make -C $CHOST/libitm DESTDIR="$pkgdir" install-info
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libitm/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_liblsan() {
   pkgdesc='Leak Sanitizer runtime library shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
+    libstdc++
   )
   provides=(
     liblsan.so
@@ -826,15 +855,14 @@ package_liblsan() {
 
   make -C $CHOST/libsanitizer/lsan DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/liblsan/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libobjc() {
   pkgdesc='Ojective-C runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libobjc.so
@@ -846,15 +874,14 @@ package_libobjc() {
   # remove files provided by lib32-gcc-libs
   rm -rf "$pkgdir"/usr/lib32/
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libobjc/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libquadmath() {
   pkgdesc='GCC __float128 library'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libquadmath.so
@@ -865,15 +892,14 @@ package_libquadmath() {
   make -C $CHOST/libquadmath DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
   make -C $CHOST/libquadmath DESTDIR="$pkgdir" install-info
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libquadmath/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libstdc++ () {
   pkgdesc='C++ runtime libraries shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
   )
   provides=(
     libstdc++.so
@@ -883,15 +909,15 @@ package_libstdc++ () {
   make -C $CHOST/libstdc++-v3/src DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
   make -C $CHOST/libstdc++-v3/po DESTDIR="$pkgdir" install
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libstdc++/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libtsan() {
   pkgdesc='Thread Sanitizer runtime library shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
+    libstdc++
   )
   provides=(
     libtsan.so
@@ -901,15 +927,15 @@ package_libtsan() {
 
   make -C $CHOST/libsanitizer/tsan DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libtsan/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_libubsan() {
   pkgdesc='Undefined Behavior Sanitizer runtime library shipped by GCC'
   depends=(
     'glibc>=2.27'
+    libgcc
+    libstdc++
   )
   provides=(
     libubsan.so
@@ -919,23 +945,24 @@ package_libubsan() {
 
   make -C $CHOST/libsanitizer/ubsan DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
-  # Install Runtime Library Exception
-  install -Dm644 "$srcdir/gcc/COPYING.RUNTIME" \
-    "$pkgdir/usr/share/licenses/libubsan/RUNTIME.LIBRARY.EXCEPTION"
+  _install_runtime_library_exception
 }
 
 package_lto-dump() {
   pkgdesc="Dump link time optimization object files"
   depends=(
     "gcc=$pkgver-$pkgrel"
+    'glibc>=2.27'
+    gmp
     libisl.so
+    libmpc
+    mpfr
+    zlib
+    zstd
   )
 
   cd gcc-build
   make -C gcc DESTDIR="$pkgdir" lto.install-{common,man,info}
 
-  # Install Runtime Library Exception
-  install -d "$pkgdir/usr/share/licenses/$pkgname/"
-  ln -s /usr/share/licenses/gcc-libs/RUNTIME.LIBRARY.EXCEPTION \
-    "$pkgdir/usr/share/licenses/$pkgname/"
+  _install_runtime_library_exception
 }
