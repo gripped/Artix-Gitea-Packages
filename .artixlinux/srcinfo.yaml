@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-2.2
+version: 0.4.2-3
 pkgbase:
   name: moksha
   pkgdesc: Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17
   pkgver: 0.4.2
-  pkgrel: 2.2
+  pkgrel: 3
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
@@ -30,7 +30,7 @@ pkgbase:
   options:
     - lto
   source:
-    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=89f5daad4bb2a5df598c0ef0d9eddbfc7b71217c
+    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=255b970353a918f065c44e9af7677516789ab8bf
     - moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git
     - page_000.patch
     - page_040.patch
@@ -45,7 +45,7 @@ pkgbase:
     - background.edc
     - artix-icon.png
   sha256sums:
-    - e213ed34f9ebb3f0f609af6d65a30c711ba1fa646f6686410f81d820b9e0d464
+    - d2f988061e162bb0315fc12389cb66c1a5cb7eb272f1d5c728bac2d2a9b5ffa4
     - SKIP
     - f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb
     - aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98
@@ -96,4 +96,4 @@ pkgname:
     depends:
       - moksha
       - pulseaudio
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
