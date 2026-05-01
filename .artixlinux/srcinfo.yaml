@@ -1,0 +1,26 @@
+---
+version: 2026.05-1
+pkgbase:
+  name: artix-grub-theme
+  pkgdesc: Artix GRUB theme
+  pkgver: 2026.05
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/artix-branding
+  arch:
+    - any
+  groups:
+    - artix-style
+    - artix-branding
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - grub
+  source:
+    - git+https://gitea.artixlinux.org/artix/artix-branding.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-grub-theme
+# generated with artixpkg 0.38.5-1-any
