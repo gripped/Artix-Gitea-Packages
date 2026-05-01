@@ -1,22 +1,22 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 # Maintainer: nous <nous@artixlinux.org>
 
-pkgbase=sddm-theme
-pkgname=${pkgbase}-artix
-pkgver=20240803
-pkgrel=2
-pkgdesc="Artix theme for SDDM"
+pkgname=artix-sddm-theme
+pkgver=2026.05
+pkgrel=1
+pkgdesc='Artix SDDM theme'
 arch=('any')
-url="https://gitea.artixlinux.org/artix/sddm-theme-artix"
+url="https://gitea.artixlinux.org/artix/artix-branding"
 license=('GPL')
-makedepends=('git')
 depends=('sddm' 'qt5-declarative' 'artix-backgrounds')
-conflicts=('artix-sddm-theme')
-replaces=('artix-sddm-theme')
-source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('e936a35da63dbd1b75e6954648aa25f087ed56a3be939a1a0a3c2bcd5be03562')
+makedepends=('git')
+groups=('artix-style' 'artix-branding')
+conflicts=('artix-breeze-sddm' 'sddm-theme-artix')
+replaces=('artix-breeze-sddm' 'sddm-theme-artix')
+source=("git+${url}.git")
+sha256sums=('SKIP')
 
 package() {
-    cd ${pkgname} #-${pkgver}
-    make PREFIX=/usr DESTDIR=${pkgdir} install
+    mkdir -p $pkgdir/usr/share/sddm/themes
+    cp -a $srcdir/$pkgname/artix $pkgdir/usr/share/sddm/themes/
 }
