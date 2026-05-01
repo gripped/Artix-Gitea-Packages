@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 4.8-2
+    version: 4.8-3
     packages:
-      - chrony-4.8-2-x86_64.pkg.tar.zst
+      - chrony-4.8-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
