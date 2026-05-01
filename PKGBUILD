@@ -8,8 +8,8 @@ arch=('x86_64')
 url="https://github.com/MasterGenotype/Deploytix"
 license=('GPL-3.0-or-later')
 makedepends=('cargo' 'git' 'libxkbcommon' 'libxcb' 'wayland' 'mesa')
-source=()
-sha256sums=()
+source=('https://github.com/MasterGenotype/Deploytix/raw/refs/heads/main/Cargo.toml')
+sha512sums=('b8503ac2df628f3e1d8fae779d70f94b7e9130f57c4d20a55da4c9b119405ddfbd1520bbed30130954fde6d8c3b965b64bfeb440fab85cb62703ce0618b8b42a')
 
 # Build from the local repo tree (pkg/ lives one level below the repo root).
 _repodir="$startdir/.."

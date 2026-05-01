@@ -1,0 +1,67 @@
+[package]
+name = "deploytix"
+version = "1.2.0"
+edition = "2021"
+authors = ["superphenotype"]
+description = "Automated Artix Linux deployment installer for removable media and disks"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/MasterGenotype/Deploytix"
+keywords = ["linux", "installer", "artix", "deployment"]
+categories = ["command-line-utilities", "filesystem"]
+
+[dependencies]
+# CLI
+clap = { version = "4", features = ["derive", "env"] }
+dialoguer = { version = "0.11", features = ["fuzzy-select"] }
+console = "0.15"
+indicatif = "0.17"
+colored = "2"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+
+# System
+nix = { version = "0.29", features = ["fs", "mount", "process", "signal", "user"] }
+libc = "0.2"
+uuid = { version = "1", features = ["v4"] }
+
+# Error handling
+thiserror = "2"
+anyhow = "1"
+
+# Logging
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Audio
+rodio = { version = "0.19", default-features = false, features = ["wav"] }
+
+# Misc
+regex = "1"
+once_cell = "1"
+
+# GUI (optional)
+eframe = { version = "0.31", optional = true, default-features = false, features = ["default_fonts", "glow", "x11", "wayland"] }
+egui = { version = "0.31", optional = true }
+
+[features]
+default = []
+gui = ["dep:eframe", "dep:egui"]
+
+[[bin]]
+name = "deploytix"
+path = "src/main.rs"
+
+[[bin]]
+name = "deploytix-gui"
+path = "src/gui_main.rs"
+required-features = ["gui"]
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

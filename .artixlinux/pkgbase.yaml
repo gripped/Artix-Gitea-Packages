@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -56,8 +56,8 @@ repos:
       - deploytix-gui-git-1.2.6.rr9.ge34a93c.9.gfb8e963-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 1.2.5.r27-1
+    version: 1.2.6.rr9.ge34a93c.9.gfb8e963-1
     packages:
-      - deploytix-git-1.2.5.r27-1-x86_64.pkg.tar.zst
-      - deploytix-gui-git-1.2.5.r27-1-x86_64.pkg.tar.zst
+      - deploytix-git-1.2.6.rr9.ge34a93c.9.gfb8e963-1-x86_64.pkg.tar.zst
+      - deploytix-gui-git-1.2.6.rr9.ge34a93c.9.gfb8e963-1-x86_64.pkg.tar.zst
     debug: []
