@@ -1,17 +1,17 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-syrupy
-pkgver=4.9.0
+pkgver=5.0.0
 pkgrel=1
 pkgdesc="Pytest Snapshot Test Utility"
 arch=('any')
-license=('Apache-2.0')
+license=('MIT')
 url="https://github.com/tophat/syrupy"
 depends=('python-pytest')
 makedepends=('git' 'python-build' 'python-installer' 'python-poetry-core')
 checkdepends=('python-pytest-xdist')
 source=("git+https://github.com/tophat/syrupy.git#tag=v$pkgver")
-sha512sums=('4da8d876a31bdb51b6ef0fb4d65fb4d76749d79170b3fe4fc62e66e286bebe0bd82871cfac974c0514077ad03d74c9e9f55491dbfdfe10f99154d6a197681a17')
+sha512sums=('515174ddd4f7b418bf2cec1c92bc57f555da4abd8daf21e4be70482f240145fd58b09da0bd3c548c4b170315bfeb602006cc0818e4c086fb157c06c888607a4d')
 
 build() {
   cd syrupy
@@ -28,4 +28,5 @@ check() {
 package() {
   cd syrupy
   python -m installer -d "$pkgdir" dist/*.whl
+  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
 }
