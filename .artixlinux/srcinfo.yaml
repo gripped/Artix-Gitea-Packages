@@ -1,0 +1,26 @@
+---
+version: 2026.05-1
+pkgbase:
+  name: artix-plasma-splash
+  pkgdesc: Artix Plasma desktop splash screen
+  pkgver: 2026.05
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/artix-branding
+  arch:
+    - any
+  groups:
+    - artix-style
+    - artix-branding
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - plasma-desktop
+  source:
+    - git+https://gitea.artixlinux.org/artix/artix-branding.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: artix-plasma-splash
+# generated with artixpkg 0.38.5-1-any
