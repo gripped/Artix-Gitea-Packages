@@ -1,10 +1,10 @@
 ---
-version: 1.6.3-16
+version: 1.6.3-17
 pkgbase:
   name: dejagnu
   pkgdesc: Framework for testing other programs
   pkgver: 1.6.3
-  pkgrel: 16
+  pkgrel: 17
   url: https://www.gnu.org/software/dejagnu/
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: dejagnu
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
