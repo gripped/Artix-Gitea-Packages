@@ -1,0 +1,263 @@
+diff -ru libfilezilla-0.55.4.orig/lib/encryption.cpp libfilezilla-0.55.4/lib/encryption.cpp
+--- libfilezilla-0.55.4.orig/lib/encryption.cpp	2026-04-30 23:41:00.817487992 +0200
++++ libfilezilla-0.55.4/lib/encryption.cpp	2026-04-30 23:49:17.541231322 +0200
+@@ -177,7 +177,11 @@
+ 			// Return ephemeral_pub.key_||ephemeral_pub.salt_||ciphertext||tag
+ 			memcpy(ret.data(), ephemeral_pub.key_.data(), public_key::key_size);
+ 			memcpy(ret.data() + public_key::key_size, ephemeral_pub.salt_.data(), public_key::salt_size);
++#if NETTLE_VERSION_MAJOR > 3
++			nettle_gcm_aes256_digest(&ctx, ret.data() + public_key::key_size + public_key::salt_size + size);
++#else
+ 			nettle_gcm_aes256_digest(&ctx, GCM_DIGEST_SIZE, ret.data() + public_key::key_size + public_key::salt_size + size);
++#endif
+ 		}
+ 		else {
+ 			std::vector<uint8_t> ctr = hash_accumulator(hash_algorithm::sha256) << ephemeral_pub.salt_ << 1 << secret << ephemeral_pub.key_ << pub.key_ << pub.salt_;
+@@ -276,7 +280,11 @@
+ 
+ 			// Last but not least, verify the tag
+ 			uint8_t tag[GCM_DIGEST_SIZE];
++#if NETTLE_VERSION_MAJOR > 3
++			nettle_gcm_aes256_digest(&ctx, tag);
++#else
+ 			nettle_gcm_aes256_digest(&ctx, GCM_DIGEST_SIZE, tag);
++#endif
+ 			if (!nettle_memeql_sec(tag, cipher + size - GCM_DIGEST_SIZE, GCM_DIGEST_SIZE)) {
+ 				ret.clear();
+ 			}
+@@ -470,7 +478,11 @@
+ 
+ 		// Return nonce||ciphertext||tag
+ 		memcpy(ret.data(), nonce.data(), symmetric_key::salt_size);
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_gcm_aes256_digest(&ctx, ret.data() + symmetric_key::salt_size + size);
++#else
+ 		nettle_gcm_aes256_digest(&ctx, GCM_DIGEST_SIZE, ret.data() + symmetric_key::salt_size + size);
++#endif
+ 	}
+ 
+ 	return ret;
+@@ -535,7 +547,11 @@
+ 
+ 		// Last but not least, verify the tag
+ 		uint8_t tag[GCM_DIGEST_SIZE];
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_gcm_aes256_digest(&ctx, tag);
++#else
+ 		nettle_gcm_aes256_digest(&ctx, GCM_DIGEST_SIZE, tag);
++#endif
+ 		if (!nettle_memeql_sec(tag, cipher + size - GCM_DIGEST_SIZE, GCM_DIGEST_SIZE)) {
+ 			ret.clear();
+ 		}
+diff -ru libfilezilla-0.55.4.orig/lib/hash.cpp libfilezilla-0.55.4/lib/hash.cpp
+--- libfilezilla-0.55.4.orig/lib/hash.cpp	2026-04-30 23:41:00.818314230 +0200
++++ libfilezilla-0.55.4/lib/hash.cpp	2026-05-01 00:10:40.117332625 +0200
+@@ -9,6 +9,7 @@
+ #include <nettle/memops.h>
+ #include <nettle/pbkdf2.h>
+ #include <nettle/sha3.h>
++#include <nettle/version.h>
+ 
+ // Undo Nettle's horrible namespace mangling fuckery
+ #ifdef pbkdf2_hmac_sha256
+@@ -95,7 +96,11 @@
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_md5_digest(&ctx_, out);
++#else
+ 		nettle_md5_digest(&ctx_, MD5_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ private:
+@@ -228,7 +233,11 @@
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha1_digest(&ctx_, out);
++#else
+ 		nettle_sha1_digest(&ctx_, SHA1_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ private:
+@@ -257,7 +266,11 @@
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha256_digest(&ctx_, out);
++#else
+ 		nettle_sha256_digest(&ctx_, SHA256_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ 
+@@ -287,7 +300,11 @@
+ 
+ 	virtual void digest(uint8_t* out) override final
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha512_digest(&ctx_, out);
++#else
+ 		nettle_sha512_digest(&ctx_, SHA512_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ protected:
+@@ -316,7 +333,11 @@
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha384_digest(&ctx_, out);
++#else
+ 		nettle_sha384_digest(&ctx_, SHA384_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ protected:
+@@ -340,12 +361,16 @@
+ 
+ 	virtual void reinit() override final
+ 	{
+-		nettle_sha3_256_init(&ctx_);
++		sha3_256_init(&ctx_);
+ 	}
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha3_256_digest(&ctx_, out);
++#else
+ 		nettle_sha3_256_digest(&ctx_, SHA3_256_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ protected:
+@@ -370,12 +395,16 @@
+ 
+ 	virtual void reinit() override final
+ 	{
+-		nettle_sha3_384_init(&ctx_);
++		sha3_384_init(&ctx_);
+ 	}
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha3_384_digest(&ctx_, out);
++#else
+ 		nettle_sha3_384_digest(&ctx_, SHA3_384_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ protected:
+@@ -400,12 +429,16 @@
+ 
+ 	virtual void reinit() override final
+ 	{
+-		nettle_sha3_512_init(&ctx_);
++		sha3_512_init(&ctx_);
+ 	}
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_sha3_512_digest(&ctx_, out);
++#else
+ 		nettle_sha3_512_digest(&ctx_, SHA3_512_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ protected:
+@@ -431,12 +464,20 @@
+ 	virtual void reinit() override
+ 	{
+ 		uint8_t buf[SHA256_DIGEST_SIZE];
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_hmac_sha256_digest(&ctx_, buf);
++#else
+ 		nettle_hmac_sha256_digest(&ctx_, SHA256_DIGEST_SIZE, buf);
++#endif
+ 	}
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_hmac_sha256_digest(&ctx_, out);
++#else
+ 		nettle_hmac_sha256_digest(&ctx_, SHA256_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ private:
+@@ -461,12 +502,20 @@
+ 	virtual void reinit() override
+ 	{
+ 		uint8_t buf[SHA512_DIGEST_SIZE];
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_hmac_sha512_digest(&ctx_, buf);
++#else
+ 		nettle_hmac_sha512_digest(&ctx_, SHA512_DIGEST_SIZE, buf);
++#endif
+ 	}
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_hmac_sha512_digest(&ctx_, out);
++#else
+ 		nettle_hmac_sha512_digest(&ctx_, SHA512_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ private:
+@@ -491,12 +540,20 @@
+ 	virtual void reinit() override
+ 	{
+ 		uint8_t buf[SHA1_DIGEST_SIZE];
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_hmac_sha1_digest(&ctx_, buf);
++#else
+ 		nettle_hmac_sha1_digest(&ctx_, SHA1_DIGEST_SIZE, buf);
++#endif
+ 	}
+ 
+ 	virtual void digest(uint8_t* out) override
+ 	{
++#if NETTLE_VERSION_MAJOR > 3
++		nettle_hmac_sha1_digest(&ctx_, out);
++#else
+ 		nettle_hmac_sha1_digest(&ctx_, SHA1_DIGEST_SIZE, out);
++#endif
+ 	}
+ 
+ private:
+@@ -771,7 +828,11 @@
+ 	}
+ 
+ 	ret.resize(SHA1_DIGEST_SIZE);
++#if NETTLE_VERSION_MAJOR > 3
++	nettle_hmac_sha1_digest(&ctx, ret.data());
++#else
+ 	nettle_hmac_sha1_digest(&ctx, ret.size(), ret.data());
++#endif
+ 
+ 	return ret;
+ }
+@@ -792,7 +853,11 @@
+ 	}
+ 
+ 	ret.resize(SHA256_DIGEST_SIZE);
++#if NETTLE_VERSION_MAJOR > 3
++	nettle_hmac_sha256_digest(&ctx, ret.data());
++#else
+ 	nettle_hmac_sha256_digest(&ctx, ret.size(), ret.data());
++#endif
+ 
+ 	return ret;
+ }
