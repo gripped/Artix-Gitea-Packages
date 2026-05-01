@@ -1,10 +1,10 @@
 ---
-version: 50.4-1
+version: 50.4-2
 pkgbase:
   name: epiphany
   pkgdesc: A GNOME web browser based on the WebKit rendering engine
   pkgver: 50.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/Epiphany
   arch:
     - x86_64
