@@ -17,7 +17,8 @@ source=("git+${url}.git")
 sha256sums=('SKIP')
 
 package() {
-    cd $pkgname
+    echo "Fuck chroots"
+    pwd; ls
     mkdir -p $pkgdir/usr/share/sddm/themes
-    cp -a artix $pkgdir/usr/share/sddm/themes/
+    cp -a artix-branding/$pkgnameartix $pkgdir/usr/share/sddm/themes/
 }
