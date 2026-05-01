@@ -1,17 +1,21 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
-    debug: []
+    version: 2.43+r22+g8362e8ce10b2-2
+    packages:
+      - glibc-2.43+r22+g8362e8ce10b2-2-x86_64.pkg.tar.zst
+      - lib32-glibc-2.43+r22+g8362e8ce10b2-2-x86_64.pkg.tar.zst
+      - glibc-locales-2.43+r22+g8362e8ce10b2-2-x86_64.pkg.tar.zst
+    debug:
+      - glibc-debug-2.43+r22+g8362e8ce10b2-2-x86_64.pkg.tar.zst
   system-gremlins:
     version: 2.43+r22+g8362e8ce10b2-1
     packages:
