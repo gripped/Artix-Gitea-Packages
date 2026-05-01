@@ -17,6 +17,7 @@ source=("git+${url}.git")
 sha256sums=('SKIP')
 
 package() {
+    cd $pkgname
     mkdir -p $pkgdir/usr/share/sddm/themes
-    cp -a $pkgname/artix $pkgdir/usr/share/sddm/themes/
+    cp -a artix $pkgdir/usr/share/sddm/themes/
 }
