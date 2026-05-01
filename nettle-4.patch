@@ -1,0 +1,35 @@
+diff -ru fzssh-1.2.0.orig/lib/cipher.cpp fzssh-1.2.0/lib/cipher.cpp
+--- fzssh-1.2.0.orig/lib/cipher.cpp	2026-05-01 00:13:28.784382810 +0200
++++ fzssh-1.2.0/lib/cipher.cpp	2026-05-01 00:15:51.764389228 +0200
+@@ -4,6 +4,7 @@
+ #include <nettle/ctr.h>
+ #include <nettle/gcm.h>
+ #include <nettle/memops.h>
++#include <nettle/version.h>
+ 
+ #include <libfilezilla/util.hpp>
+ 
+@@ -84,7 +85,11 @@
+ 	if (mac_size != 16) {
+ 		return false;
+ 	}
++#if NETTLE_VERSION_MAJOR > 3
++	gcm_aes256_digest(&ctx_, mac);
++#else
+ 	gcm_aes256_digest(&ctx_, 16, mac);
++#endif
+ 
+ 	// Update IV
+ 	for (size_t i = 11; i > 3; --i) {
+@@ -106,7 +111,11 @@
+ 	gcm_aes256_decrypt(&ctx_, size, cipher, cipher);
+ 
+ 	uint8_t digest[16];
++#if NETTLE_VERSION_MAJOR > 3
++	gcm_aes256_digest(&ctx_, digest);
++#else
+ 	gcm_aes256_digest(&ctx_, 16, digest);
++#endif
+ 	if (mac_size != 16 || !memeql_sec(digest, mac, 16)) {
+ 		return false;
+ 	}
