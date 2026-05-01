@@ -1,10 +1,10 @@
 ---
-version: 2026.05-1
+version: 2026.05-2
 pkgbase:
   name: artix-sddm-theme
   pkgdesc: Artix SDDM theme
   pkgver: 2026.05
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/artix-branding
   arch:
     - any

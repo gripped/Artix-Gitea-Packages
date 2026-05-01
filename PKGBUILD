@@ -3,7 +3,7 @@
 
 pkgname=artix-sddm-theme
 pkgver=2026.05
-pkgrel=1
+pkgrel=2
 pkgdesc='Artix SDDM theme'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artix-branding"
@@ -17,8 +17,6 @@ source=("git+${url}.git")
 sha256sums=('SKIP')
 
 package() {
-    echo "Fuck chroots"
-    pwd; ls
     mkdir -p $pkgdir/usr/share/sddm/themes
-    cp -a artix-branding/$pkgnameartix $pkgdir/usr/share/sddm/themes/
+    cp -a artix-branding/$pkgname/artix $pkgdir/usr/share/sddm/themes/
 }
