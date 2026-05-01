@@ -1,9 +1,9 @@
 ---
-version: 1.2.5.r27-1
+version: 1.2.6.rr9.ge34a93c.9.gfb8e963-1
 pkgbase:
   name: deploytix-git
   pkgdesc: Automated Artix Linux deployment installer for removable media and disks
-  pkgver: 1.2.5.r27
+  pkgver: 1.2.6.rr9.ge34a93c.9.gfb8e963
   pkgrel: 1
   url: https://github.com/MasterGenotype/Deploytix
   arch:
@@ -17,15 +17,12 @@ pkgbase:
     - libxcb
     - wayland
     - mesa
-  source:
-    - deploytix::git+https://github.com/MasterGenotype/Deploytix.git
-  sha256sums:
-    - SKIP
 pkgname:
   - name: deploytix-git
     pkgdesc: Automated Artix Linux deployment installer (CLI)
     depends:
       - gcc-libs
+      - alsa-lib
     optdepends:
       - 'dosfstools: EFI partition formatting (mkfs.vfat)'
       - 'e2fsprogs: ext4 filesystem support'
@@ -44,6 +41,7 @@ pkgname:
     pkgdesc: Automated Artix Linux deployment installer (GUI)
     depends:
       - deploytix-git
+      - alsa-lib
       - libxkbcommon
       - libxcb
       - wayland
@@ -52,4 +50,4 @@ pkgname:
       - deploytix-gui
     conflicts:
       - deploytix-gui
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
