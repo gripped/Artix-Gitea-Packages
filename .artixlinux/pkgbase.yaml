@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.9.5-2
+    version: 0.9.5-3
     packages:
-      - neatvnc-0.9.5-2-x86_64.pkg.tar.zst
+      - neatvnc-0.9.5-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
