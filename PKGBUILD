@@ -6,11 +6,8 @@ _repo=artwork
 pkgbase=artix-artwork
 pkgname=('artix-icons'
         'artix-backgrounds'
-        'artix-breeze-sddm'
-        'artix-grub-theme'
-        'artix-plasma-splash'
         'artix-wallpapers')
-pkgver=2026.04
+pkgver=2026.05
 pkgrel=1
 pkgdesc='Artix icons, backgrounds and wallpapers'
 arch=('any')
@@ -40,38 +37,10 @@ package_artix-backgrounds(){
     make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_backgrounds
 }
 
-package_artix-grub-theme() {
-    groups=('artix-style')
-
-    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_grub_theme
-}
-
-package_artix-breeze-sddm() {
-    pkgdesc='Artix breeze sddm theme customization'
-    groups=('artix-style')
-
-    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_sddm_theme
-}
-
-package_artix-grub-theme() {
-    pkgdesc='Artix grub theme'
-    groups=('artix-style')
-
-    make -C "$_repo" PREFIX=/usr DESTDIR=${pkgdir} install_grub_theme
-}
-
 package_artix-wallpapers(){
     pkgdesc='Artix wallpapers'
     groups=('artix-style')
 
     install -d "$pkgdir"/usr/share
     cp -rv "$_repo"/wallpapers "$pkgdir"/usr/share/
-}
-
-package_artix-plasma-splash(){
-    pkgdesc='Artix plasma desktop splash screen'
-    groups=('artix-style')
-
-    install -d "$pkgdir"/usr/share/plasma/look-and-feel
-    cp -rv "$_repo"/plasma/look-and-feel/ArtixTube "$pkgdir"/usr/share/plasma/look-and-feel/
 }
