@@ -1,0 +1,31 @@
+---
+version: 1.0-1
+pkgbase:
+  name: mullvad-vpn-openrc
+  pkgdesc: OpenRC service for Mullvad VPN
+  pkgver: 1.0
+  pkgrel: 1
+  url: https://artixlinux.org/packages/mullvad-vpn-openrc
+  arch:
+    - any
+  license:
+    - GPL
+  depends:
+    - openrc
+    - mullvad-vpn-daemon
+  provides:
+    - init-mullvad
+  conflicts:
+    - init-mullvad
+  source:
+    - mullvad-daemon.rc
+    - mullvad-early-boot-blocking.rc
+    - mullvad.install
+  sha256sums:
+    - 6119522269a253226f9156d89234d1d6deaa99365a008e7ef585fd60288a3269
+    - 4127f351a7eea23b6a9cd2012efa7600683aeb56d7e32b62d627415fcd3c10ce
+    - 9e81c3f1b97d3c26a4a5d5216d18147cf9b0307b4208cfaa441f4700975f6cde
+pkgname:
+  - name: mullvad-vpn-openrc
+    install: mullvad.install
+# generated with artixpkg 0.38.5-1-any
