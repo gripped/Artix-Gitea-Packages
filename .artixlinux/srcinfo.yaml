@@ -1,10 +1,10 @@
 ---
-version: 7.0.3.artix1-1
+version: 7.0.3.artix1-2
 pkgbase:
   name: linux
   pkgdesc: Linux
   pkgver: 7.0.3.artix1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/archlinux/linux
   arch:
     - x86_64
