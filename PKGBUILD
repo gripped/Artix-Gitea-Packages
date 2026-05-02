@@ -3,10 +3,10 @@
 # Contributor: Luca Weiss <luca (at) z3ntu (dot) xyz>
 # Contributor: Julian Schacher <jspp@posteo.net>
 
-_electron=electron41
+_electron=electron39
 pkgbase=element.io
 pkgname=(element-web element-desktop)
-pkgver=1.12.15
+pkgver=1.12.9
 pkgrel=1
 pkgdesc="Glossy Matrix collaboration client — "
 arch=(x86_64)
@@ -23,21 +23,22 @@ makedepends=(
   python-setuptools
   rust
   tcl
-  pnpm
   yarn
 )
 _url="https://github.com/element-hq/element"
-source=(git+https://github.com/element-hq/element-web.git#tag=v${pkgver}?signed
+source=(git+https://github.com/element-hq/element-desktop.git#tag=v${pkgver}?signed
+        git+https://github.com/element-hq/element-web.git#tag=v${pkgver}?signed
         io.element.Element.desktop
         element-desktop.sh)
-sha256sums=('8372d34d15870a4499352429c5790a62a79d6926f2f7176c69d6b39ecd43ca8b'
+sha256sums=('0e503dcd7e8641ef64a9af9a91e3a3b62fa0e33b7392bf0d9b8b6f763a6ee301'
+            '6717e1d78bcc4b6218743e2995a6988f7af9f2ec58e3d082834b9bf91622aa44'
             '16a21cd4ad144641e0f4cbe18ed1b665565ed6f3f3e67d5bccba2806491674a9'
             'c1bd9ace215e3ec9af14d7f28b163fc8c8b42e23a2cf04ce6f4ce2fcc465feba')
 validpgpkeys=(712BFBEE92DCA45252DB17D7C7BE97EFA179B100) # Element Releases <releases@riot.im>
 
 prepare() {
   # Find out which major release of electron this version of element-desktop requires
-  _electron_major=$(jq --raw-output '.devDependencies.electron' < "${srcdir}/element-web/apps/desktop/package.json" | sed 's/^[~^]\?\([0-9]\+\)\(\.[0-9]\+\)*$/\1/')
+  _electron_major=$(jq --raw-output '.devDependencies.electron' < "${srcdir}/element-desktop/package.json" | sed 's/^[~^]\?\([0-9]\+\)\(\.[0-9]\+\)*$/\1/')
 
   # Check if we depend on the correct electron version
   if [ "${_electron}" != "electron${_electron_major}" ] ; then
@@ -49,31 +50,31 @@ prepare() {
   sed -i "s|@ELECTRON@|${_electron}|" element-desktop.sh
 
   cd element-web
-  pnpm install
+  yarn install --no-fund
 
-  cd apps/desktop
+  cd ../element-desktop
   sed -i 's|"target": "deb"|"target": "dir"|' package.json
   sed -i 's|"https://packages.element.io/desktop/update/"|null|' element.io/release/config.json
-  pnpm install
+  yarn install --no-fund
 }
 
 build() {
   export NODE_OPTIONS=--openssl-legacy-provider
-  cd element-web/apps/web
-  VERSION=${pkgver} pnpm run build
+  cd element-web
+  VERSION=${pkgver} yarn build
 
-  cd ../desktop
+  cd ../element-desktop
   export SQLCIPHER_BUNDLED=1
   export CFLAGS+=" -ffat-lto-objects"
-  pnpm run build:native
-  pnpm run build --publish never
+  yarn run build:native
+  yarn run build --publish never
 }
 
 package_element-web() {
   pkgdesc+="web version."
   replaces=(riot-web vector-web)
 
-  cd element-web/apps/web
+  cd element-web
 
   install -d "${pkgdir}"/{usr/share/webapps,etc/webapps}/element
 
@@ -89,7 +90,7 @@ package_element-desktop() {
   depends=("element-web=${pkgver}" ${_electron} libsecret)
   backup=('etc/element/config.json')
 
-  cd element-web/apps/desktop
+  cd element-desktop
 
   install -d "${pkgdir}"{/usr/lib/element/,/etc/webapps/element}
 
@@ -102,10 +103,10 @@ package_element-desktop() {
   install -Dm644 element.io/release/config.json -t "${pkgdir}"/etc/element
 
   # Required extras
-  install -Dm644 "${srcdir}"/io.element.Element.desktop -t "${pkgdir}"/usr/share/applications/
-  install -Dm755 "${srcdir}"/${pkgname}.sh "${pkgdir}"/usr/bin/${pkgname}
+  install -Dm644 ../io.element.Element.desktop -t "${pkgdir}"/usr/share/applications/
+  install -Dm755 ../${pkgname}.sh "${pkgdir}"/usr/bin/${pkgname}
 
   # Icons
-  install -Dm644 ../web/res/themes/element/img/logos/element-logo.svg "${pkgdir}"/usr/share/icons/hicolor/scalable/apps/io.element.Element.svg
+  install -Dm644 ../element-web/res/themes/element/img/logos/element-logo.svg "${pkgdir}"/usr/share/icons/hicolor/scalable/apps/io.element.Element.svg
   install -Dm644 build/icon.png "${pkgdir}"/usr/share/icons/hicolor/512x512/apps/io.element.Element.png
 }
