@@ -1,7 +1,7 @@
 # Maintainer: Haden Collins <collinshaden@gmail.com>
 pkgname='wlogout'
 pkgver=1.2.2
-pkgrel=0
+pkgrel=0.1
 pkgdesc="Logout menu for wayland"
 arch=('x86_64')
 license=("MIT")
@@ -11,8 +11,16 @@ source=("$pkgname-$pkgver.tar.gz::https://github.com/ArtsyMacaw/$pkgname/release
 validpgpkeys=("F4FDB18A9937358364B276E9E25D679AF73C6D2F")
 makedepends=("meson" "git" "scdoc")
 depends=("gtk3" "gobject-introspection" "gtk-layer-shell")
+sha256sums=('70742b32479ae34ed544ce1fe5b6d92845857d4c4dfe55fccd4eb993f0dd0d9e'
+            'SKIP')
+
+prepare() {
+    cd "$srcdir"
+    sed -i 's/systemctl/loginctl/g' layout
+}
+
 build() {
-    cd $srcdir
+    cd "$srcdir"
     meson setup build --prefix /usr
     ninja -C build
 }
@@ -21,5 +29,3 @@ package() {
     DESTDIR="$pkgdir" ninja -C build install
     install -Dm644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-sha256sums=('70742b32479ae34ed544ce1fe5b6d92845857d4c4dfe55fccd4eb993f0dd0d9e'
-            'SKIP')

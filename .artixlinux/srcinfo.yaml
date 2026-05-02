@@ -1,0 +1,31 @@
+---
+version: 1.2.2-0.1
+pkgbase:
+  name: wlogout
+  pkgdesc: Logout menu for wayland
+  pkgver: 1.2.2
+  pkgrel: 0.1
+  url: https://github.com/ArtsyMacaw/wlogout
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - meson
+    - git
+    - scdoc
+  depends:
+    - gtk3
+    - gobject-introspection
+    - gtk-layer-shell
+  source:
+    - wlogout-1.2.2.tar.gz::https://github.com/ArtsyMacaw/wlogout/releases/download/1.2.2/wlogout.tar.gz
+    - wlogout-1.2.2.tar.gz.sig::https://github.com/ArtsyMacaw/wlogout/releases/download/1.2.2/wlogout.tar.gz.sig
+  validpgpkeys:
+    - F4FDB18A9937358364B276E9E25D679AF73C6D2F
+  sha256sums:
+    - 70742b32479ae34ed544ce1fe5b6d92845857d4c4dfe55fccd4eb993f0dd0d9e
+    - SKIP
+pkgname:
+  - name: wlogout
+# generated with artixpkg 0.38.5-1-any
