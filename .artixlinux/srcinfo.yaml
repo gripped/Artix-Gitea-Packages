@@ -1,10 +1,10 @@
 ---
-version: 0.5.2-4
+version: 0.5.2-4.2
 pkgbase:
   name: python-sphinx-argparse
   pkgdesc: Sphinx extension that automatically documents argparse commands and options
   pkgver: 0.5.2
-  pkgrel: 4
+  pkgrel: 4.2
   url: https://github.com/ashb/sphinx-argparse
   arch:
     - any
