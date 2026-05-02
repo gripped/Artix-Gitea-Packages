@@ -8,7 +8,7 @@
 
 pkgname=lib32-gnutls
 pkgver=3.8.13
-pkgrel=3
+pkgrel=3.1
 pkgdesc="A library which provides a secure layer over a reliable transport layer (32-bit)"
 arch=('x86_64')
 license=('GPL-3.0-or-later AND LGPL-2.1-or-later')
