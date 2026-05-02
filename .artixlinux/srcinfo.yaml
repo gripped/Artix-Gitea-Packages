@@ -1,10 +1,10 @@
 ---
-version: 5.0.2-11
+version: 5.0.2-12
 pkgbase:
   name: krename
   pkgdesc: A very powerful batch file renamer
   pkgver: 5.0.2
-  pkgrel: 11
+  pkgrel: 12
   url: https://apps.kde.org/krename/
   arch:
     - x86_64
@@ -52,4 +52,4 @@ pkgbase:
     - 4c1dc38146196caf2364dfc1e1d50aefda5543438a0416513e00f2b5ff035476
 pkgname:
   - name: krename
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
