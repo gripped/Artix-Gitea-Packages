@@ -1,0 +1,106 @@
+# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Contributor: TZ86
+
+pkgname=vivaldi
+_rpmversion=7.9.3970.60-1
+pkgver=7.9.3970.60
+pkgrel=1
+pkgdesc='An advanced browser made with the power user in mind.'
+url="https://vivaldi.com"
+options=(!strip !zipman)
+license=('custom')
+arch=('x86_64' 'aarch64')
+provides=('vivaldi-stable')
+depends=(
+  'alsa-lib'
+  'at-spi2-core'
+  'cairo'
+  'libcups'
+  'libxcomposite'
+  'libxdamage'
+  'libxkbcommon'
+  'libxrandr'
+  'libxss'
+  'mesa'
+  'nss'
+  'pango'
+  'ttf-font'
+  'desktop-file-utils'
+  'shared-mime-info'
+  'hicolor-icon-theme'
+)
+makedepends=('w3m' 'imagemagick')
+optdepends=(
+  'vivaldi-ffmpeg-codecs: playback of proprietary video/audio'
+  'org.freedesktop.secrets: better secret storage in gnome-keyring or kwallet'
+  'libnotify: native notifications'
+  'pipewire: WebRTC desktop sharing under Wayland'
+  'gtk3: gtk3 integration'
+  'gtk4: for use with --gtk-version=4'
+  'qt5-base: qt5 integration'
+  'qt6-base: qt6 integration'
+  'upower: Battery Status API support'
+)
+source_x86_64=("https://downloads.vivaldi.com/stable/vivaldi-stable-${_rpmversion}.x86_64.rpm")
+source_aarch64=("https://downloads.vivaldi.com/stable/vivaldi-stable-${_rpmversion}.aarch64.rpm")
+source=('0001-add-support-for-user-flags.patch')
+sha512sums=('a9bdab0fb0f394af17d1b126bae2d0cdc55e63eaa6eaf36eb994735047d3d7bc5000d75ab930f74b76b283c5addefbd4e4e63c5e4f2908bd53c270e73641c19d')
+sha512sums_x86_64=('c8e1210571ba23a2a44098fc51d26ad273cfe25105a85c647eec3a305e217d1ffabb248a6dcb267dfa775c62005d388829efe16a3c363b3b18f376b1e9b8aba5')
+sha512sums_aarch64=('d773e091f082aaed45869d2509880357f4689d1b89efd33f80eaae35d006d91aed8f88acbe2847aaff8891f7ce68c9e4d51dc7084b6611ed703bf2a22985793a')
+
+package() {
+  cp --parents -a {opt,usr/bin,usr/share} "$pkgdir"
+
+  # add support for ~/.config/vivaldi-stable.conf
+  patch -p1 -i "$srcdir/0001-add-support-for-user-flags.patch" \
+    "$pkgdir/opt/$pkgname/$pkgname"
+  # remove "orig" leftover if it is there
+  rm -f "$pkgdir/opt/$pkgname/$pkgname.orig"
+
+  # suid sandbox
+  chmod 4755 "$pkgdir/opt/$pkgname/vivaldi-sandbox"
+
+  install -dm755 "$pkgdir/usr/bin"
+
+  # make /usr/bin/vivaldi-stable available
+  binf="$pkgdir/usr/bin/vivaldi-stable"
+  if [[ ! -e "$binf" ]] && [[ ! -f "$binf" ]] && [[ ! -L "$binf" ]]; then
+    ln -s /opt/vivaldi/vivaldi "$binf"
+  fi
+  # make /usr/bin/vivaldi available
+  binf="$pkgdir/usr/bin/vivaldi"
+  if [[ ! -e "$binf" ]] && [[ ! -f "$binf" ]] && [[ ! -L "$binf" ]]; then
+    ln -s /opt/vivaldi/vivaldi "$binf"
+  fi
+
+  # Vivaldi has different design for each size of icons. Avoid using them.
+  # hicolor xdg fallback
+  install -Dm644 "$pkgdir/opt/$pkgname/resources/vivaldi/resources/welcomepage-vivaldi.svg" \
+    "$pkgdir/usr/share/icons/hicolor/scalable/${pkgname}.svg"
+  install -Dm644 "$pkgdir/opt/$pkgname/product_logo_256.png" \
+    "$pkgdir/usr/share/icons/hicolor/256x256/apps/$pkgname.png"
+  for _res in 128 64 48 32 22; do
+    install -d "$pkgdir/usr/share/icons/hicolor/${_res}x${_res}/apps"
+    magick "$pkgdir/opt/$pkgname/product_logo_256.png" \
+      -resize ${_res}x${_res} \
+      "$pkgdir/usr/share/icons/hicolor/${_res}x${_res}/apps/$pkgname.png"
+    chmod 0644 \
+      "$pkgdir/usr/share/icons/hicolor/${_res}x${_res}/apps/$pkgname.png"
+  done
+  install -d "$pkgdir/usr/share/pixmaps"
+  install -Dm644 "$pkgdir/opt/$pkgname/product_logo_256.png" \
+    "$pkgdir/usr/share/pixmaps/${pkgname}.png"
+
+  rm -f "$pkgdir/opt/$pkgname/product_logo_"*.png
+
+  # license
+  install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
+  w3m -dump "$pkgdir/opt/$pkgname/LICENSE.html" |
+    head -n 5 \
+      >"$pkgdir/usr/share/licenses/$pkgname/license.txt"
+
+  # https://archlinux.org/todo/legacy-path-for-metainfo-files/
+  install -Dm644 "usr/share/appdata/$pkgname.appdata.xml" -t \
+    "$pkgdir/usr/share/metainfo/"
+  rm -rv "$pkgdir/usr/share/appdata"
+}

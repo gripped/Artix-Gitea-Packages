@@ -1,0 +1,63 @@
+---
+version: 7.9.3970.60-1
+pkgbase:
+  name: vivaldi
+  pkgdesc: An advanced browser made with the power user in mind.
+  pkgver: 7.9.3970.60
+  pkgrel: 1
+  url: https://vivaldi.com
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - custom
+  makedepends:
+    - w3m
+    - imagemagick
+  depends:
+    - alsa-lib
+    - at-spi2-core
+    - cairo
+    - libcups
+    - libxcomposite
+    - libxdamage
+    - libxkbcommon
+    - libxrandr
+    - libxss
+    - mesa
+    - nss
+    - pango
+    - ttf-font
+    - desktop-file-utils
+    - shared-mime-info
+    - hicolor-icon-theme
+  optdepends:
+    - 'vivaldi-ffmpeg-codecs: playback of proprietary video/audio'
+    - 'org.freedesktop.secrets: better secret storage in gnome-keyring or kwallet'
+    - 'libnotify: native notifications'
+    - 'pipewire: WebRTC desktop sharing under Wayland'
+    - 'gtk3: gtk3 integration'
+    - 'gtk4: for use with --gtk-version=4'
+    - 'qt5-base: qt5 integration'
+    - 'qt6-base: qt6 integration'
+    - 'upower: Battery Status API support'
+  provides:
+    - vivaldi-stable
+  options:
+    - '!strip'
+    - '!zipman'
+  source:
+    - 0001-add-support-for-user-flags.patch
+  sha512sums:
+    - a9bdab0fb0f394af17d1b126bae2d0cdc55e63eaa6eaf36eb994735047d3d7bc5000d75ab930f74b76b283c5addefbd4e4e63c5e4f2908bd53c270e73641c19d
+  source_x86_64:
+    - https://downloads.vivaldi.com/stable/vivaldi-stable-7.9.3970.60-1.x86_64.rpm
+  sha512sums_x86_64:
+    - c8e1210571ba23a2a44098fc51d26ad273cfe25105a85c647eec3a305e217d1ffabb248a6dcb267dfa775c62005d388829efe16a3c363b3b18f376b1e9b8aba5
+  source_aarch64:
+    - https://downloads.vivaldi.com/stable/vivaldi-stable-7.9.3970.60-1.aarch64.rpm
+  sha512sums_aarch64:
+    - d773e091f082aaed45869d2509880357f4689d1b89efd33f80eaae35d006d91aed8f88acbe2847aaff8891f7ce68c9e4d51dc7084b6611ed703bf2a22985793a
+pkgname:
+  - name: vivaldi
+# generated with artixpkg 0.38.5-1-any
