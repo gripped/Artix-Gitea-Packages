@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,8 +45,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 1.16.2-2
+    packages:
+      - tigervnc-1.16.2-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
