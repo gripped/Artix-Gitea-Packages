@@ -1,10 +1,10 @@
 ---
-version: 3.6.2-1
+version: 3.6.2-2
 pkgbase:
   name: postgis
   pkgdesc: A spatial database extender for PostgreSQL
   pkgver: 3.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://postgis.net/
   changelog: postgis.changelog
   arch:
@@ -36,4 +36,4 @@ pkgbase:
     - 66a998b1495bd4c03943fa718f08dee5abcd7ee9f16c3eec87574672f785359456f3d1913b1d26882968ce812bda8db86b5fc42c241ed82b1eb75a227034280c
 pkgname:
   - name: postgis
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
