@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:9.12-5
+    version: 1:9.12-5.1
     packages:
-      - openconnect-1:9.12-5-x86_64.pkg.tar.zst
+      - openconnect-1:9.12-5.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
