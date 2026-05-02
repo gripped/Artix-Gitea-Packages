@@ -11,6 +11,7 @@ pkgbase:
   license:
     - custom:ISC
   makedepends:
+    - aml
     - git
     - meson
     - ninja

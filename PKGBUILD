@@ -20,6 +20,7 @@ depends=(
   zlib
 )
 makedepends=(
+  aml
   git
   meson
   ninja
