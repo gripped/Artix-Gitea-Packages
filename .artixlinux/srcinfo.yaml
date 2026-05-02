@@ -1,10 +1,10 @@
 ---
-version: 3.7.1-1
+version: 3.7.1-2
 pkgbase:
   name: openvswitch
   pkgdesc: Production Quality, Multilayer Open Virtual Switch
   pkgver: 3.7.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://openvswitch.org
   install: openvswitch.install
   arch:
