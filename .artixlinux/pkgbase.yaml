@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 41.4.0-1
+    version: 41.5.0-1
     packages:
-      - electron41-41.4.0-1-x86_64.pkg.tar.zst
+      - electron41-41.5.0-1-x86_64.pkg.tar.zst
     debug: []
