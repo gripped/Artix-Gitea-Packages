@@ -5,7 +5,7 @@
 
 pkgname=squid
 pkgver=7.5
-pkgrel=1
+pkgrel=2
 pkgdesc='Full-featured Web proxy cache server'
 arch=('x86_64')
 url='http://www.squid-cache.org'
@@ -26,18 +26,21 @@ source=("https://github.com/squid-cache/squid/releases/download/SQUID_${pkgver/.
         "https://github.com/squid-cache/squid/releases/download/SQUID_${pkgver/./_}/squid-$pkgver.tar.xz.asc"
         'squid.pam'
         'squid.tmpfiles'
-        'squid.sysusers')
+        'squid.sysusers'
+         nettle-4.patch)
 sha256sums=('f6058907db0150d2f5d228482b5a9e5678920cf368ae0ccbcecceb2ff4c35106'
             'SKIP'
             '11fb388f8679fd6461e0de006810ea608a3686fffda16904b0ed71f412be499c'
             '495f54e51f6ec1e4dce87090d76718aea1eb37559c4439d876dd39598163062a'
-            'b13c6c17ba8d24fa9414ba3c0aa92863dccce720930a0dd53acc1c0e32041e5a')
+            'b13c6c17ba8d24fa9414ba3c0aa92863dccce720930a0dd53acc1c0e32041e5a'
+            'd0cef79717db6d547d776eac61195430933ae7a5ffc24403bde44175b3eb373b')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
   for p in ${source[@]}; do
     test "${p:(-5)}" == "patch" && patch -p1 -i ../${p:(-46)} || true
   done
+  patch -p1 -i ../nettle-4.patch
 }
 
 build() {
@@ -91,7 +94,7 @@ package() {
   make -C "$pkgname-$pkgver" DESTDIR="$pkgdir" install
 
   chmod 07755 "$pkgdir"/usr/lib/squid/basic_pam_auth
-  
+
   install -Dm644 "$srcdir/squid.pam" "$pkgdir/usr/lib/pam.d/squid"
   install -Dm644 "$srcdir/squid.tmpfiles" "$pkgdir/usr/lib/tmpfiles.d/squid.conf"
   install -Dm644 "$srcdir/squid.sysusers" "$pkgdir/usr/lib/sysusers.d/squid.conf"
