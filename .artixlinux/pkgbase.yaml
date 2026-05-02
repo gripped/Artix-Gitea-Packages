@@ -1,14 +1,18 @@
 ---
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+    debug: []
+  system-gremlins:
     version: 16.1.1+r12+g301eb08fa2c5-1
     packages:
       - gcc-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
@@ -42,10 +46,6 @@ repos:
       - lto-dump-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
     debug:
       - gcc-debug-16.1.1+r12+g301eb08fa2c5-1-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
-    debug: []
   system:
     version: 15.2.1+r604+g0b99615a8aef-1
     packages:
