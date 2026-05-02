@@ -1,10 +1,10 @@
 ---
-version: 0.12.1-1
+version: 0.12.1-2
 pkgbase:
   name: python-pyogrio
   pkgdesc: Vectorized vector I/O using OGR
   pkgver: 0.12.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pyogrio.readthedocs.io/
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - e548ab705bb3e5383693717de1e6c76da97f3762ab92522cb310f93128a75ff1
 pkgname:
   - name: python-pyogrio
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
