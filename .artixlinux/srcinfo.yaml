@@ -1,28 +1,28 @@
 ---
-version: 1:6.19-1
+version: 1:7.0-1
 pkgbase:
   name: ethtool
   pkgdesc: Utility for controlling network drivers and hardware
-  pkgver: 6.19
+  pkgver: 7.0
   pkgrel: 1
   epoch: 1
   url: https://www.kernel.org/pub/software/network/ethtool/
   arch:
     - x86_64
   license:
-    - GPL
+    - GPL-2.0-or-later
   makedepends:
     - git
   depends:
     - glibc
     - libmnl
   source:
-    - git+https://git.kernel.org/pub/scm/network/ethtool/ethtool.git#tag=v6.19
+    - git+https://git.kernel.org/pub/scm/network/ethtool/ethtool.git#tag=v7.0
   validpgpkeys:
     - CE4A4D080F0D304F23B9EBDD972D5BF4DC613806
     - D2CB120AB45957B721CD9596F4554567B91DE934
   sha256sums:
-    - ffa70ad03a5f5790853d97acb2e2358e6de7b7c1e64d06695615fa865ba84a32
+    - 0bcdf4a9cc2188a553deae441a44c7e91e862fd88bd97383601e2f33482571ad
 pkgname:
   - name: ethtool
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.5-1-any
