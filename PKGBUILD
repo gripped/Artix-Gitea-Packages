@@ -11,7 +11,7 @@ pkgname=(
     mullvad-vpn-daemon
 )
 pkgver=2026.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Mullvad VPN client"
 arch=('x86_64')
 url="https://www.mullvad.net"
@@ -63,10 +63,6 @@ prepare() {
         )
 
     install -vDm644 -t desktop/packages/mullvad-vpn ../electron-builder.yml
-
-    # Patch systemd service to use /usr/lib/mullvad-vpn for resources
-    sed -i 's|/opt/Mullvad\\x20VPN/resources/|/usr/lib/mullvad-vpn|g' \
-        dist-assets/linux/mullvad-daemon.service
 
     git submodule init
     git config submodule.dist-assets/binaries.url ../mullvadvpn-app-binaries
@@ -150,10 +146,6 @@ package_mullvad-vpn-daemon() {
         target/release/mullvad-problem-report
     install -vDm4755 -t "$pkgdir/usr/bin" \
         target/release/mullvad-exclude
-
-    install -vDm644 -t "$pkgdir/usr/lib/systemd/system" \
-        dist-assets/linux/mullvad-daemon.service \
-        dist-assets/linux/mullvad-early-boot-blocking.service
 
     install -vDm644 build/mullvad.bash \
         "$pkgdir/usr/share/bash-completion/completions/mullvad"
