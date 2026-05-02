@@ -1,10 +1,10 @@
 ---
-version: 2026.05-1
+version: 2026.05-2
 pkgbase:
   name: artix-plasma-splash
   pkgdesc: Artix Plasma desktop splash screen
   pkgver: 2026.05
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/artix-branding
   arch:
     - any
@@ -17,6 +17,7 @@ pkgbase:
     - git
   depends:
     - plasma-desktop
+    - artix-dark-theme
   source:
     - git+https://gitea.artixlinux.org/artix/artix-branding.git
   sha256sums:
