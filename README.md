@@ -1,0 +1,2 @@
+# mullvad-vpn-openrc
+
