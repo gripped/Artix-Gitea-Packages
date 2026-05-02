@@ -3,7 +3,7 @@
 
 pkgname=opensnitch
 pkgver=1.7.2
-pkgrel=4
+pkgrel=4.1
 pkgdesc='A GNU/Linux application firewall'
 arch=(x86_64)
 url=https://github.com/evilsocket/opensnitch
@@ -100,6 +100,9 @@ prepare() {
   # template-ify version strings for easier sed invocation (1/2)
   #patch -p1 -i "$srcdir/template-version-strings.patch"
 
+  # Fix build on kernels > 6.19
+  git cherry-pick -n 614537c92ec82f54f76a45fb406ad2fb6e6fa618
+
   # download dependencies
   cd daemon
   export GOPATH="${srcdir}"
@@ -171,6 +174,9 @@ package() {
 
   # daemon
   install -vDm755 -t "$pkgdir/usr/bin" daemon/opensnitchd
+
+  # tmpfiles integration
+  install -vDm644 "$srcdir/tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
 
   # configuration
   install -vDm644 -t "$pkgdir/etc/opensnitchd" daemon/{default-config,system-fw}.json

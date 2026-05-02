@@ -1,10 +1,10 @@
 ---
-version: 1.7.2-4
+version: 1.7.2-4.1
 pkgbase:
   name: opensnitch
   pkgdesc: A GNU/Linux application firewall
   pkgver: 1.7.2
-  pkgrel: 4
+  pkgrel: 4.1
   url: https://github.com/evilsocket/opensnitch
   arch:
     - x86_64
@@ -78,4 +78,4 @@ pkgbase:
     - 81dbb6ba72d5bf5a0d9fa3dea33b87f03604c1a2537a4ca47b45923ab186e68d5c24b043691a857948ae404409dc3cc66a7ef004ee20dc2451aa5190fe6479bb
 pkgname:
   - name: opensnitch
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
