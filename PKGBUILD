@@ -21,6 +21,7 @@ depends=(
 )
 makedepends=(
   aml
+  cmake
   git
   meson
   ninja

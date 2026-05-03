@@ -12,6 +12,7 @@ pkgbase:
     - custom:ISC
   makedepends:
     - aml
+    - cmake
     - git
     - meson
     - ninja
