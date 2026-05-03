@@ -15,10 +15,12 @@ validpgpkeys=('4018CBA95CA2BA1436BF623170928BEA88CDC7EE')
 
 build() {
 	cd "$pkgname"
+
 	make
 }
 
 package() {
 	cd "$pkgname"
+
 	make DESTDIR="$pkgdir/" PREFIX=/usr install
 }
