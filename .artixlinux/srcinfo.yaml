@@ -1,0 +1,25 @@
+---
+version: 0.1-1
+pkgbase:
+  name: chcgs
+  pkgdesc: Daemonless and painless management of Linux cgroups
+  pkgver: 0.1
+  pkgrel: 1
+  url: https://codeberg.org/Capezotte/chcgs
+  arch:
+    - x86_64
+  license:
+    - ISC
+  makedepends:
+    - git
+  depends:
+    - skalibs
+  source:
+    - git+https://codeberg.org/Capezotte/chcgs.git#tag=v0.1?signed
+  validpgpkeys:
+    - 4018CBA95CA2BA1436BF623170928BEA88CDC7EE
+  sha256sums:
+    - 346b1bf4bc1fecfd142a8d466c6daad26fc6c11f3a2b813f8ba0f3dc48fc7dc0
+pkgname:
+  - name: chcgs
+# generated with artixpkg 0.38.5-1-any
