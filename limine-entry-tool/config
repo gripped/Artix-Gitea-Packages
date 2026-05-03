@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://gitlab.com/Zesko/limine-entry-tool.git
+	tagOpt = --no-tags
+	fetch = +refs/*:refs/*
+	mirror = true
