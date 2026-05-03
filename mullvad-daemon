@@ -2,4 +2,4 @@ type            = process
 command         = "/usr/bin/mullvad-daemon" -v --disable-stdout-timestamps
 smooth-recovery = true
 logfile         = /var/log/dinit/mullvad-vpn.log
-waits-for       = network
+waits-for       = network.target
