@@ -1,5 +1,5 @@
 ---
-team: null
+team: galaxy
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.0-1
+    version: 1.0-2
     packages:
-      - mullvad-vpn-openrc-1.0-1-any.pkg.tar.zst
+      - mullvad-vpn-openrc-1.0-2-any.pkg.tar.zst
     debug: []

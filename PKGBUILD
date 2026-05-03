@@ -2,10 +2,10 @@
 
 pkgname=mullvad-vpn-openrc
 pkgver=1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC service for Mullvad VPN"
 arch=('any')
-url="https://artixlinux.org/packages/mullvad-vpn-openrc"
+url="https://artixlinux.org"
 license=('GPL')
 provides=('init-mullvad')
 conflicts=('init-mullvad')

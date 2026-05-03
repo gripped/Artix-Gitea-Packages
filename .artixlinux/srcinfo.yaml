@@ -1,11 +1,11 @@
 ---
-version: 1.0-1
+version: 1.0-2
 pkgbase:
   name: mullvad-vpn-openrc
   pkgdesc: OpenRC service for Mullvad VPN
   pkgver: 1.0
-  pkgrel: 1
-  url: https://artixlinux.org/packages/mullvad-vpn-openrc
+  pkgrel: 2
+  url: https://artixlinux.org
   arch:
     - any
   license:
