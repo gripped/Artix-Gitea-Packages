@@ -1,0 +1,28 @@
+---
+version: 1.0-1
+pkgbase:
+  name: mullvad-vpn-dinit
+  pkgdesc: dinit service for Mullvad
+  pkgver: 1.0
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  license:
+    - GPL
+  depends:
+    - dinit
+    - mullvad-vpn-daemon
+  provides:
+    - init-mullvad
+  conflicts:
+    - init-mullvad
+  source:
+    - mullvad-daemon
+    - mullvad-early-boot-blocking
+  sha256sums:
+    - 1b90727be3b78e4847508a0c38ad2213e950f91db48fed90b14e263fac889a83
+    - e15849257dc799da2ad56552d885acb4171c4209f39accbb922a419d7609b956
+pkgname:
+  - name: mullvad-vpn-dinit
+# generated with artixpkg 0.38.5-1-any

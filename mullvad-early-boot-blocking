@@ -1,0 +1,5 @@
+type            = process
+command         = "/usr/bin/mullvad-daemon" --initialize-early-boot-firewall
+smooth-recovery = true
+logfile         = /var/log/dinit/mullvad-early-boot-blocking.log
+waits-for       = mullvad-vpn
