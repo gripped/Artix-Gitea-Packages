@@ -15,9 +15,7 @@ pkgbase:
   depends:
     - skalibs
   source:
-    - git+https://codeberg.org/Capezotte/chcgs.git#tag=v0.1?signed
-  validpgpkeys:
-    - 4018CBA95CA2BA1436BF623170928BEA88CDC7EE
+    - git+https://codeberg.org/Capezotte/chcgs.git#tag=v0.1
   sha256sums:
     - 346b1bf4bc1fecfd142a8d466c6daad26fc6c11f3a2b813f8ba0f3dc48fc7dc0
 pkgname:
