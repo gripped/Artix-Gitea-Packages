@@ -4,7 +4,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
 pkgver=15.2.0
-pkgrel=1.1
+pkgrel=1.2
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
 arch=(x86_64)
@@ -73,8 +73,7 @@ build() {
       --enable-lto --enable-plugin --enable-install-libiberty \
       --with-linker-hash-style=gnu --enable-gnu-indirect-function \
       --disable-multilib --disable-werror \
-      --enable-checking=release \
-	  --enable-verbose \
+      --enable-checking=release
 
   make
 }
