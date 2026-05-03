@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,19 +13,16 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 2.6.0+r23+gb08cb0a0-1
     packages:
       - libtool-2.6.0+r23+gb08cb0a0-1-x86_64.pkg.tar.zst
       - lib32-libltdl-2.6.0+r23+gb08cb0a0-1-x86_64.pkg.tar.zst
     debug:
       - libtool-debug-2.6.0+r23+gb08cb0a0-1-x86_64.pkg.tar.zst
-  system:
-    version: 2.6.0-4
-    packages:
-      - libtool-2.6.0-4-x86_64.pkg.tar.zst
-      - lib32-libltdl-2.6.0-4-x86_64.pkg.tar.zst
-    debug:
-      - libtool-debug-2.6.0-4-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
