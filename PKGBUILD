@@ -3,16 +3,17 @@
 
 pkgname=kpmcore
 pkgver=26.04.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Library for managing partitions'
 arch=(x86_64)
 url='https://apps.kde.org/partitionmanager/'
 license=(GPL-2.0-or-later)
-depends=(gcc-libs
-         glibc
+depends=(glibc
          kcoreaddons
          ki18n
          kwidgetsaddons
+         libgcc
+         libstdc++
          polkit-qt6
          qt6-base
          smartmontools
@@ -25,9 +26,9 @@ optdepends=('bcachefs-tools: BCacheFS support'
             'exfatprogs: exFAT support (alternative to exfat-utils)'
             'f2fs-tools: F2FS support'
             'fatresize: FAT resize support'
-	        'jfsutils: JFS support'
+            'jfsutils: JFS support'
             'nilfs-utils: nilfs support'
-            'ntfs-3g: NTFS support'
+            'ntfsprogs: NTFS support'
             'udftools: UDF support'
             'xfsprogs: XFS support')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
