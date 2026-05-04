@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 6.0.4-2
+    version: 6.0.5-1
     packages:
-      - assimp-6.0.4-2-x86_64.pkg.tar.zst
+      - assimp-6.0.5-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
