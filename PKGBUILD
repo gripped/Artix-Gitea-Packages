@@ -1,4 +1,4 @@
-# Maintainer: ohfp/lsf <@ohfp:matrix.org>
+# Maintainer: artist for Artix Linux
 
 # run pgo build or not; with X(vfb) or wayland
 : ${_build_profiled:=true}
@@ -7,7 +7,7 @@
 pkgname=librewolf
 _pkgname=LibreWolf
 epoch=1
-pkgver=148.0.2_3
+pkgver=150.0.1_1
 _fixedfirefoxver="${pkgver%_*}" # Version of Firefox this LibreWolf version is based on, but the Firefox patch number is always included
 _librewolfver="${pkgver#*_}"
 _firefoxver="${_fixedfirefoxver%.0}" # Removes ".0" from the end. For "136.0.0" this will result in "136.0" but for "136.0.1" won't do anything.
@@ -107,20 +107,20 @@ options=(
 install='librewolf.install'
 source=(
   https://codeberg.org/api/packages/librewolf/generic/librewolf-source/$_firefoxver-$_librewolfver/librewolf-$_firefoxver-$_librewolfver.source.tar.gz{,.sig}
-  https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/fdd14cc14c10c23980b7d707e8f98af4a6d17577/0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-  https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/d82490f5db9d55f3e5e61b640c6618ab209aa06b/0004-Fix-sandbox-to-build-with-glibc-2.43.patch
-  llvm22.1-wasi.patch
-  allow_dark.patch
+  0001-rust-build.patch::https://codeberg.org/librewolf/source/raw/commit/163cb7eb83b340f0c30ef8832fd72f02a88a1b3e/patches/rust-build.patch
+  0002-Bug-2033279-Make-enable-rust-simd-work-with-Rust-1.9.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/79485441f8b5875d618f0a121fd6c4b5e0c9bbd2/0002-Bug-2033279-Make-enable-rust-simd-work-with-Rust-1.9.patch
+  0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/79485441f8b5875d618f0a121fd6c4b5e0c9bbd2/0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+  0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/79485441f8b5875d618f0a121fd6c4b5e0c9bbd2/0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch
   $pkgname.desktop
   "default192x192.png"
 )
 
-sha256sums=('e00c0de9330b6655fbfa2e31540d5f02248f6b1959bbece384d4afb1a0d6efa7'
+sha256sums=('d6470f5d93b531b9a20f750f2a2903ce20f5186e5bc4e87e28bbb6f4409fe4fa'
             'SKIP'
-            '83857f3531688885b62be0b06583f6815f236edbc43a942830395ec3cbdc7934'
-            '8d2182ae8660474ac567482fe6658af77f3b402314e361c846528ae171586245'
-            'a0f78d15c710917f4677842e4175694fb0dd470b51b4fe40bda96e1a9ea332a6'
-            'a3cdb88e58fca72018f1443fb935cda3cc5ac5394e7d327664060dfc00e3b54d'
+            '972c400f09b51d1638ca4bc534c84798393cee5aaabad71cd1843e9d4d2d2489'
+            '9baae0f2313efdfdbfce9464e89f1fe21571890fd9746212b54cf56a3391c1c1'
+            '4c958237fa592a9dd299ddc3fe272c8e1da9c2e3e419e595bcb53dc0419913a4'
+            'd6e1dbafe56bc52c8ab6cbf9542cf80e89c1857a71ce08bbbd82804909bcb76f'
             '3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
 
@@ -130,8 +130,6 @@ validpgpkeys=('662E3CDD6FE329002D0CA5BB40339DD82B12EF16') # https://rpm.librewol
 prepare() {
   mkdir -p mozbuild
   cd librewolf-$_firefoxver-$_librewolfver
-
-  patch -p1 -i ../allow_dark.patch
 
   mv mozconfig ../mozconfig
 
@@ -199,16 +197,24 @@ fi
   # reduce chance of builds failung during linking due to running out of memory
   export LDFLAGS+=" -Wl,--no-keep-memory"
 
+  # revert LW upstream way to address rust build issues, so Arch upstream's patches can apply cleanly
+  sed -i 's/60cd124908737068ab21c7773b3df71d00e186cd605f15bad9977232830aabc0/9456ca46168ef86c98399a2536f577ef7be3cdde90c0c51392d8ac48519d3fae/g' third_party/rust/encoding_rs/.cargo-checksum.json
+  sed -i 's/a066ad881d5a74386e666fc844f7fecbbd70021d0330c1b08a2d7a2a67437ccf/d7405d2bcf99cf9729075473c45f677630f4c1947c8ba9757db607f2025a7da2/g' third_party/rust/encoding_rs/.cargo-checksum.json
+  patch -Rp1 -i ../0001-rust-build.patch
+
   # upstream Arch fixes
+
+  # Fix build with Rust 1.95.0
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=2033279
+  patch -Np1 -i ../0002-Bug-2033279-Make-enable-rust-simd-work-with-Rust-1.9.patch
+
+  # Fix build with glibc 2.43
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
   patch -Np1 -i ../0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-  # https://bugzilla.mozilla.org/show_bug.cgi?id=2016618
-  patch -Np1 -i ../0004-Fix-sandbox-to-build-with-glibc-2.43.patch
 
-  # fix building with llvm > 22.1
-  # this will probably break on manjaro, as they are behind with llvm versions
-  # so if you are on manjaro: comment this out? ^^
-  patch -Np1 -i ../llvm22.1-wasi.patch
+  # Fix build with Clang 22
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=2023597
+  patch -Np1 -i ../0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch
 }
 
 
@@ -245,7 +251,7 @@ END
     else
 
       cat >.mozconfig ../mozconfig - <<END
-ac_add_options --enable-profile-generate=cross
+ac_add_options --enable-profile-generate
 export MOZ_ENABLE_FULL_SYMBOLS=1
 END
 
