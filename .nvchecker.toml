@@ -1,0 +1,6 @@
+[konform-browser]
+source = "gitea"
+gitea = "konform-browser/source"
+host = "codeberg.org"
+prefix = ""
+use_latest_release = true

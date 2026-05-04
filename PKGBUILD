@@ -10,10 +10,11 @@ _pkgname="${pkgname}"
 __pkgname=konform
 _ffsrcver=140.10.1
 _ffbuild=1
+_commit=ea300e3c59ec7395ccfddf53dbfe00ebe705d19e
 _l10n_commit=e4f894a4eef5c492c83a860a4ff16c8ed361445c
 _lwrelver=100
 pkgver="${_ffsrcver}.${_lwrelver}"
-pkgrel=1
+pkgrel=2
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 if [[ "$_ffbuild" == "0" ]]; then
@@ -121,10 +122,9 @@ options=(
 )
 
 install='konform.install'
-_tag="${_ffsrcver}.${_lwrelver}"
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
 source=(
-  "src"::"git+https://codeberg.org/konform-browser/source.git#tag=${_tag}"
+  "src"::"git+https://codeberg.org/konform-browser/source.git#commit=${_commit}"
   "${_ff_source_tarball}"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "${_ff_source_tarball}.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
