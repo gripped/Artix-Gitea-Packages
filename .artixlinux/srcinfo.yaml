@@ -1,9 +1,9 @@
 ---
-version: 25.1.5-3
+version: 25.1.5-4
 pkgbase:
   name: xlibre-xserver-beta
   pkgver: 25.1.5
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/X11Libre/xserver
   arch:
     - x86_64
@@ -68,7 +68,7 @@ pkgname:
   - name: xlibre-xserver-beta
     pkgdesc: XLibre fork of X.Org X server
     depends:
-      - xlibre-xserver-common=25.1.5
+      - xlibre-xserver-common-beta=25.1.5
       - xlibre-input-libinput
       - libepoxy
       - libxfont2
@@ -107,7 +107,7 @@ pkgname:
   - name: xlibre-xserver-xephyr-beta
     pkgdesc: XLibre fork of X.Org nested X server that runs as an X application
     depends:
-      - xlibre-xserver-common=25.1.5
+      - xlibre-xserver-common-beta=25.1.5
       - libxfont2
       - libgl
       - libepoxy
@@ -137,7 +137,7 @@ pkgname:
       - MIT
       - GPL-2.0-only
     depends:
-      - xlibre-xserver-common=25.1.5
+      - xlibre-xserver-common-beta=25.1.5
       - libxfont2
       - libunwind
       - pixman
@@ -158,7 +158,7 @@ pkgname:
   - name: xlibre-xserver-xnest-beta
     pkgdesc: XLibre fork of X.Org nested X server that runs as an X application
     depends:
-      - xlibre-xserver-common=25.1.5
+      - xlibre-xserver-common-beta=25.1.5
       - libxfont2
       - libunwind
       - libxext
@@ -190,7 +190,7 @@ pkgname:
   - name: xlibre-xserver-devel-beta
     pkgdesc: XLibre fork of X.Org development files for the X.Org X server
     depends:
-      - xlibre-xserver=25.1.5
+      - xlibre-xserver-beta=25.1.5
       - xorgproto
       - mesa
       - libpciaccess
