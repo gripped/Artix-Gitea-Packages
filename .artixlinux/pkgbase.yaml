@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,23 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.5.0-2
+    packages:
+      - libblockdev-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-btrfs-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-crypto-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-dm-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-fs-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-loop-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-lvm-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-mdraid-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-mpath-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-nvdimm-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-nvme-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-part-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-smart-3.5.0-2-x86_64.pkg.tar.zst
+      - libblockdev-swap-3.5.0-2-x86_64.pkg.tar.zst
+      - python-libblockdev-3.5.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.5.0-1

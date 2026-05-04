@@ -1,10 +1,10 @@
 ---
-version: 3.5.0-1
+version: 3.5.0-2
 pkgbase:
   name: libblockdev
   pkgdesc: A library for manipulating block devices
   pkgver: 3.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/storaged-project/libblockdev
   arch:
     - x86_64
@@ -147,7 +147,7 @@ pkgname:
       - 'exfatprogs: for exFAT filesystem support'
       - 'f2fs-tools: for F2FS filesystem support'
       - 'nilfs-utils: for nilfs filesystem support'
-      - 'ntfs-3g: for NTFS filesystem support'
+      - 'ntfsprogs: for NTFS filesystem support'
       - 'udftools: for UDF filesystem support'
       - 'xfsprogs: for XFS filesystem support'
     provides:
