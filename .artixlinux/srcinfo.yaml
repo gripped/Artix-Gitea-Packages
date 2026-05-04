@@ -1,0 +1,211 @@
+---
+version: 25.1.5-2
+pkgbase:
+  name: xlibre-xserver-beta
+  pkgver: 25.1.5
+  pkgrel: 2
+  url: https://github.com/X11Libre/xserver
+  arch:
+    - x86_64
+    - aarch64
+  groups:
+    - xlibre
+  license:
+    - LicenseRef-Adobe-Display-PostScript
+    - BSD-3-Clause
+    - LicenseRef-DEC-3-Clause
+    - HPND
+    - LicenseRef-HPND-sell-MIT-disclaimer-xserver
+    - HPND-sell-variant
+    - ICU
+    - ISC
+    - MIT
+    - MIT-open-group
+    - NTP
+    - SGI-B-2.0
+    - SMLNJ
+    - X11
+    - X11-distribute-modifications-variant
+  makedepends:
+    - xorgproto
+    - pixman
+    - libx11
+    - mesa
+    - mesa-libgl
+    - libxkbfile
+    - libxfont2
+    - libpciaccess
+    - libxv
+    - libxcvt
+    - libxmu
+    - libxrender
+    - libxi
+    - libxaw
+    - libxtst
+    - libxres
+    - xorg-xkbcomp
+    - xorg-util-macros
+    - xorg-font-util
+    - libepoxy
+    - xcb-util
+    - xcb-util-image
+    - xcb-util-renderutil
+    - xcb-util-wm
+    - xcb-util-keysyms
+    - libxshmfence
+    - libunwind
+    - meson
+    - dbus
+  source:
+    - https://github.com/X11Libre/xserver/archive/refs/tags/xlibre-xserver-25.1.5.tar.gz
+    - xvfb-run
+    - xvfb-run.1
+  sha256sums:
+    - 7ee3612e7674595d7cef337d6955fddf02e63719cbc2607b29d80a17891eca0e
+    - 27ce50f4432e5549e662db857118761fa9cd74c6900aac52c4db768c956838db
+    - 2460adccd3362fefd4cdc5f1c70f332d7b578091fb9167bf88b5f91265bbd776
+pkgname:
+  - name: xlibre-xserver-beta
+    pkgdesc: XLibre fork of X.Org X server
+    depends:
+      - xlibre-xserver-common=25.1.5
+      - xlibre-input-libinput
+      - libepoxy
+      - libxfont2
+      - pixman
+      - libunwind
+      - dbus
+      - libgl
+      - nettle
+      - libxdmcp
+      - sh
+      - glibc
+      - libxau
+      - libtirpc
+      - libbsd
+      - libpciaccess
+      - libdrm
+      - libxshmfence
+      - libxcvt
+    provides:
+      - xlibre-xserver
+      - xorg-server
+      - X-ABI-VIDEODRV_VERSION=28.0
+      - X-ABI-XINPUT_VERSION=26.0
+      - X-ABI-EXTENSION_VERSION=11.0
+      - x-server
+      - x11win-server
+    conflicts:
+      - xlibre-xserver
+      - xorg-server
+      - nvidia-utils<=331.20
+      - glamor-egl
+      - xf86-video-modesetting
+    replaces:
+      - glamor-egl
+      - xf86-video-modesetting
+  - name: xlibre-xserver-xephyr-beta
+    pkgdesc: XLibre fork of X.Org nested X server that runs as an X application
+    depends:
+      - xlibre-xserver-common=25.1.5
+      - libxfont2
+      - libgl
+      - libepoxy
+      - libunwind
+      - xcb-util-image
+      - xcb-util-renderutil
+      - xcb-util-wm
+      - xcb-util-keysyms
+      - pixman
+      - nettle
+      - libtirpc
+      - xcb-util
+      - libxdmcp
+      - libx11
+      - libxau
+      - libxshmfence
+      - glibc
+    provides:
+      - xlibre-xserver-xephyr
+      - xorg-server-xephyr
+    conflicts:
+      - xlibre-xserver-xephyr
+      - xorg-server-xephyr
+  - name: xlibre-xserver-xvfb-beta
+    pkgdesc: XLibre fork of X.Org virtual framebuffer X server
+    license:
+      - MIT
+      - GPL-2.0-only
+    depends:
+      - xlibre-xserver-common=25.1.5
+      - libxfont2
+      - libunwind
+      - pixman
+      - xorg-xauth
+      - libgl
+      - nettle
+      - libtirpc
+      - libxdmcp
+      - sh
+      - glibc
+      - libxau
+    provides:
+      - xlibre-xserver-xvfb
+      - xorg-server-xvfb
+    conflicts:
+      - xlibre-xserver-xvfb
+      - xorg-server-xvfb
+  - name: xlibre-xserver-xnest-beta
+    pkgdesc: XLibre fork of X.Org nested X server that runs as an X application
+    depends:
+      - xlibre-xserver-common=25.1.5
+      - libxfont2
+      - libunwind
+      - libxext
+      - pixman
+      - nettle
+      - libtirpc
+      - libxdmcp
+      - glibc
+      - libx11
+      - libxau
+    provides:
+      - xlibre-xserver-xnest
+      - xorg-server-xnest
+    conflicts:
+      - xlibre-xserver-xnest
+      - xorg-server-xnest
+  - name: xlibre-xserver-common-beta
+    pkgdesc: XLibre fork of X.Org Xorg server common files
+    depends:
+      - xkeyboard-config
+      - xorg-xkbcomp
+      - xorg-setxkbmap
+    provides:
+      - xlibre-xserver-common
+      - xorg-server-common
+    conflicts:
+      - xlibre-xserver-common
+      - xorg-server-common
+  - name: xlibre-xserver-devel-beta
+    pkgdesc: XLibre fork of X.Org development files for the X.Org X server
+    depends:
+      - xlibre-xserver=25.1.5
+      - xorgproto
+      - mesa
+      - libpciaccess
+      - pixman
+      - xorg-util-macros
+    provides:
+      - xlibre-xserver-devel
+      - xorg-server-devel
+    conflicts:
+      - xlibre-xserver-devel
+      - xorg-server-devel
+  - name: xlibre-xserver-src-beta
+    pkgdesc: Source files of the XLibre X server
+    provides:
+      - xlibre-xserver-src
+    conflicts:
+      - xlibre-xserver-src
+# generated with artixpkg 0.38.5-1-any
