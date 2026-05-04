@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 580.159.03-1
+    packages:
+      - nvidia-580xx-settings-580.159.03-1-x86_64.pkg.tar.zst
+      - libxnvctrl-580xx-580.159.03-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 580.142-1
