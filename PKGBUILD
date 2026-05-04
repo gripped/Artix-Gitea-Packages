@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gtk2-ng-git
-pkgver=r22052.e96b0f5e2
+pkgver=2.24.260503
 pkgrel=1
 pkgdesc="GObject-based multi-platform GUI toolkit (community-maintained fork)"
 url="https://www.gtk.org/"
@@ -51,13 +51,13 @@ provides=('gtk2' 'gtk2=2.24.33')
 conflicts=('gtk2')
 replaces=('gtk2')
 
-pkgver() {
-  cd gtk2-ng
-  ( set -o pipefail
-    git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
-    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-  )
-}
+#pkgver() {
+#  cd gtk2-ng
+#  ( set -o pipefail
+#    git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
+#    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
+#  )
+#}
 
 prepare() {
   cd gtk2-ng

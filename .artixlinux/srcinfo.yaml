@@ -1,9 +1,9 @@
 ---
-version: r22052.e96b0f5e2-1
+version: 2.24.260503-1
 pkgbase:
   name: gtk2-ng-git
   pkgdesc: GObject-based multi-platform GUI toolkit (community-maintained fork)
-  pkgver: r22052.e96b0f5e2
+  pkgver: 2.24.260503
   pkgrel: 1
   url: https://www.gtk.org/
   arch:
