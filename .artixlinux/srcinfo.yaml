@@ -1,10 +1,10 @@
 ---
-version: 3:2.41.5-4
+version: 3:2.46.3-1
 pkgbase:
   name: python-pydantic-core
   pkgdesc: Core validation logic for pydantic written in rust
-  pkgver: 2.41.5
-  pkgrel: 4
+  pkgver: 2.46.3
+  pkgrel: 1
   epoch: 3
   url: https://github.com/pydantic/pydantic-core
   arch:
@@ -22,6 +22,7 @@ pkgbase:
     - python-pytest-run-parallel
     - python-pytest-timeout
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-maturin
@@ -34,11 +35,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - python-pydantic-core-2.41.5.tar.gz::https://github.com/pydantic/pydantic-core/archive/refs/tags/v2.41.5.tar.gz
+    - pydantic::git+https://github.com/pydantic/pydantic.git#tag=core-v2.46.3
   sha512sums:
-    - dc24a219b8fced95dc0caed2c5bfe4b9b3b264c18097cc26593604603ce36bc3d19ad78fe62a62fc2033a31c604c6e6e18ce5aa451bf6b06556941273a85dafc
+    - 194b5b4a2c93f89c3a24abca0aa6e43ba39060a3a7378234876f6693c8ccc26532ecb6808e5530678cf241c004ec89b6d25c6a7e5169cd812df34d5b01e917bd
   b2sums:
-    - 6a852a710509f8db92cabfb48d6b7b1b959c873f65f4cec4a35946dac943720f1e80f55021264847574e877a5f19353e95bc338deff432447d40ad836631e947
+    - 4fe82812274782eb2c6410cb64d1d3b450fc02fb11fb2b3087030ef0a95f11e9ae5425fb8f6bfc88f7ba711f9e92c8e38cc99cdcdc0ac2bc31d38b8700dcda3a
 pkgname:
   - name: python-pydantic-core
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
