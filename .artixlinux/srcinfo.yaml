@@ -1,16 +1,17 @@
 ---
-version: 32.1.2-1
+version: 32.1.2-2
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
   pkgver: 32.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://obsproject.com
   arch:
     - x86_64
   license:
     - GPL-2.0-only
   makedepends:
+    - cef
     - cmake
     - libfdk-aac
     - x264
@@ -42,16 +43,6 @@ pkgbase:
     - simde
     - qrcodegencpp-cmake
     - python
-    - cef
-  optdepends:
-    - 'libfdk-aac: FDK AAC codec support'
-    - 'libva-intel-driver: hardware encoding for older Intel GPUs'
-    - 'intel-media-driver: hardware encoding for recent Intel GPUs'
-    - 'libva-mesa-driver: hardware encoding'
-    - 'luajit: scripting support'
-    - 'sndio: Sndio input client'
-    - 'v4l2loopback-dkms: virtual camera support'
-    - 'xdg-desktop-portal-impl: Wayland window/screen capture'
   source:
     - obs-studio::git+https://github.com/obsproject/obs-studio#tag=32.1.2
     - obs-studio-libdshowcapture::git+https://github.com/obsproject/libdshowcapture.git
@@ -66,4 +57,25 @@ pkgbase:
     - 474832a156d29224eabc77bc78ca33b0e6116cb00dc2786b5869744bae8f72c3
 pkgname:
   - name: obs-studio
+    optdepends:
+      - 'libfdk-aac: FDK AAC codec support'
+      - 'libva-intel-driver: hardware encoding for older Intel GPUs'
+      - 'intel-media-driver: hardware encoding for recent Intel GPUs'
+      - 'libva-mesa-driver: hardware encoding'
+      - 'luajit: scripting support'
+      - 'sndio: Sndio input client'
+      - 'v4l2loopback-dkms: virtual camera support'
+      - 'xdg-desktop-portal-impl: Wayland window/screen capture'
+      - 'obs-studio-plugin-browser: CEF-based browser plugin'
+  - name: obs-studio-plugin-browser
+    pkgdesc: CEF-based OBS Studio browser plugin
+    url: https://obsproject.com/kb/browser-source
+    depends:
+      - cef
+      - glibc
+      - libgcc
+      - libstdc++
+      - libx11
+      - obs-studio
+      - qt6-base
 # generated with artixpkg 0.38.5-1-any
