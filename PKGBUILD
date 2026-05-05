@@ -3,7 +3,7 @@
 
 pkgname=gpu-screen-recorder
 pkgver=5.13.4
-pkgrel=2
+pkgrel=1
 pkgdesc='A shadowplay-like screen recorder for Linux. The fastest screen recorder for Linux'
 arch=('x86_64')
 url="https://git.dec05eba.com/gpu-screen-recorder"
