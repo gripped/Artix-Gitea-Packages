@@ -1,9 +1,9 @@
 ---
-version: 1.4.5-1
+version: 1.4.6-1
 pkgbase:
   name: python-subunit
   pkgdesc: Python implementation of subunit test streaming protocol
-  pkgver: 1.4.5
+  pkgver: 1.4.6
   pkgrel: 1
   url: https://launchpad.net/subunit
   arch:
@@ -24,10 +24,11 @@ pkgbase:
   depends:
     - python-iso8601
     - python-testtools
+    - python-yaml
   source:
-    - git+https://github.com/testing-cabal/subunit.git#tag=1.4.5
+    - git+https://github.com/testing-cabal/subunit.git#tag=1.4.6
   sha512sums:
-    - a659f2596bac01e4e3eea1ba18e1fdb43cc460a6f4bb9d9c20c309a719c85678f7d5850825fbc29e4e48d0bd7aa46239aee27faf8da0dc83fe750671e6a42ff7
+    - f7434d2907b3382f437b59fb172d6c8e7b064d852d1a91ac92a3dc28791db054d4b263823dcce91c2388020725df09b95a8164d99ea3f4a34a1a545052f6446c
 pkgname:
   - name: python-subunit
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
