@@ -1,9 +1,9 @@
 ---
-version: 2.2.0-1
+version: 2.2.1-1
 pkgbase:
   name: python-plette
   pkgdesc: Structured Pipfile and Pipfile.lock models
-  pkgver: 2.2.0
+  pkgver: 2.2.1
   pkgrel: 1
   url: https://github.com/sarugaku/plette
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - python-tomlkit
   source:
-    - git+https://github.com/sarugaku/plette.git#tag=v2.2.0
+    - git+https://github.com/sarugaku/plette.git#tag=v2.2.1
   sha512sums:
-    - b0d3763941757b7dcc7bfdc56051da0c16596834ef3ddb10c796352c128a47706f6daeb02699c3999518a394b4e0b0588bfacbb9d20e1e95eaef7c0cf3e53a9d
+    - 3cc9d4a3cf1bcfdff5f4ca657b63199a875b7d20a01f9ac83ae392a76f1e097d8fdff21b99e3148352a19e733fdab2b81d0665ddf752d9f1a2ce010e91dd73b6
 pkgname:
   - name: python-plette
 # generated with artixpkg 0.38.5-1-any
