@@ -4,7 +4,7 @@
 pkgname=goverlay
 pkgver=1.7.5
 _pkgver=${pkgver//_/-}
-pkgrel=2
+pkgrel=1
 pkgdesc="A GUI to help manage Vulkan/OpenGL overlays"
 url="https://github.com/benjamimgois/goverlay"
 arch=('x86_64')

@@ -1,10 +1,10 @@
 ---
-version: 1.7.5-2
+version: 1.7.5-1
 pkgbase:
   name: goverlay
   pkgdesc: A GUI to help manage Vulkan/OpenGL overlays
   pkgver: 1.7.5
-  pkgrel: 2
+  pkgrel: 1
   url: https://github.com/benjamimgois/goverlay
   arch:
     - x86_64
