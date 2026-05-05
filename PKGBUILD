@@ -3,7 +3,7 @@
 
 pkgname=tea
 pkgver=0.14.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A command line tool to interact with Gitea servers'
 arch=(x86_64)
 url='https://gitea.com/gitea/tea'
@@ -21,9 +21,6 @@ prepare() {
 
   # create directory for build output
   mkdir build
-
-  # fix zsh completion
-  sed -i "s/\$PROG/tea/" contrib/autocomplete.zsh
 
   # download dependencies
   export GOPATH="${srcdir}"
@@ -46,10 +43,18 @@ build() {
     -ldflags "-compressdwarf=false \
     -linkmode external \
     -extldflags '${LDFLAGS}' \
-    -X main.Version=${pkgver} \
-    -X main.Tags=${TAGS}" \
+    -X code.gitea.io/tea/modules/version.Version=${pkgver} \
+    -X code.gitea.io/tea/modules/version.Tags=${TAGS}" \
     -o build \
     .
+
+  # generate shell completions
+  for shell in bash fish zsh; do
+    build/tea completion "$shell" > build/"${shell}-completion"
+  done
+
+  # generate man page
+  build/tea man --out build/tea.8
 }
 
 package() {
@@ -61,7 +66,15 @@ package() {
   # license
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
 
-  # completions
-  install -vDm644 contrib/autocomplete.sh "$pkgdir/usr/share/bash-completion/completions/$pkgname"
-  install -vDm644 contrib/autocomplete.zsh "$pkgdir/usr/share/zsh/site-functions/_tea"
+  # shell completions
+  install -vDm644 build/bash-completion \
+    "$pkgdir/usr/share/bash-completion/completions/tea"
+  install -vDm644 build/fish-completion \
+    "$pkgdir/usr/share/fish/vendor_completions.d/tea.fish"
+  install -vDm644 build/zsh-completion \
+    "$pkgdir/usr/share/zsh/site-functions/_tea"
+
+  # man page
+  install -vDm644 build/tea.8 \
+    "$pkgdir/usr/share/man/man8/tea.8"
 }
