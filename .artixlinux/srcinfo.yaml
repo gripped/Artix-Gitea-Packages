@@ -1,17 +1,16 @@
 ---
-version: 19.0.0-3.1
+version: 19.0.1-1
 pkgbase:
   name: qtcreator
   pkgdesc: Lightweight, cross-platform integrated development environment
-  pkgver: 19.0.0
-  pkgrel: 3.1
+  pkgver: 19.0.1
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
   license:
     - GPL-3.0-only
   makedepends:
-    - clang21
     - cmake
     - git
     - go
@@ -54,11 +53,11 @@ pkgbase:
   options:
     - docs
   source:
-    - git+https://code.qt.io/qt-creator/qt-creator#tag=v19.0.0
+    - git+https://code.qt.io/qt-creator/qt-creator#tag=v19.0.1
     - git+https://code.qt.io/qt-creator/perfparser
     - git+https://code.qt.io/playground/qlitehtml
   sha256sums:
-    - a0900e5c56b7cfcba630df2c9343328f71f54107dfd48f61282bce0e95aa4b65
+    - a6830fda886149e7ee214e9389d7441b1f780fe0bf521f02ca8ef5dd2705e148
     - SKIP
     - SKIP
 pkgname:
@@ -68,4 +67,4 @@ pkgname:
     depends:
       - qtcreator
     optdepends: []
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
