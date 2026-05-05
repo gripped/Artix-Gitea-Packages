@@ -1,10 +1,10 @@
 ---
-version: 2.17.0-3
+version: 2.18.1-1
 pkgbase:
   name: jupyter-server
   pkgdesc: Provides the backend for Jupyter web applications like Jupyter notebook, JupyterLab, and Voila
-  pkgver: 2.17.0
-  pkgrel: 3
+  pkgver: 2.18.1
+  pkgrel: 1
   url: https://jupyter.org/
   arch:
     - any
@@ -47,9 +47,9 @@ pkgbase:
     - 'jupyter-server-mathjax: to use local MathJax'
     - 'python-jupyter-server-terminals: terminals support'
   source:
-    - git+https://github.com/jupyter-server/jupyter_server#tag=v2.17.0
+    - git+https://github.com/jupyter-server/jupyter_server#tag=v2.18.1
   sha256sums:
-    - 22d12daafd2303b601b796881f1aadb4293659e7729d2bb3a502c697c5f7615a
+    - 74024e770c637d0cdf4ce25ed519c2263e376870d5b75b1a4db779bd73cb9a25
 pkgname:
   - name: jupyter-server
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
