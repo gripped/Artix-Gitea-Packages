@@ -1,10 +1,10 @@
 ---
-version: 8.2.0-1
+version: 8.2.0-2
 pkgbase:
   name: elementary-icon-theme
   pkgdesc: Named, vector icons for elementary OS
   pkgver: 8.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/elementary/icons
   arch:
     - any
@@ -25,4 +25,4 @@ pkgbase:
     - 910e2e8cb75cc9d5a66e69fc9b2d5a40e98cdb2fd001d18b65e7b86281f07122
 pkgname:
   - name: elementary-icon-theme
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any

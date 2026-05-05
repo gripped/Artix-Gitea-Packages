@@ -4,10 +4,9 @@
 # Contributor: paterbrown <paterbrown@silberhelme.de>
 # Contributor: Josip <josipponjavic@gmail.com>
 
-
 pkgname=elementary-icon-theme
 pkgver=8.2.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Named, vector icons for elementary OS'
 arch=(any)
 url=https://github.com/elementary/icons
@@ -38,6 +37,9 @@ build() {
 
 package() {
   DESTDIR="${pkgdir}" ninja -C build install
+
+  # installed by inkscape itself
+  rm -r "${pkgdir}"/usr/share/inkscape/
 }
 
 # vim: ts=2 sw=2 et:
