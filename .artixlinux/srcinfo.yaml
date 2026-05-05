@@ -1,10 +1,10 @@
 ---
-version: 7.17.1-1
+version: 7.17.1-2
 pkgbase:
   name: jupyter-nbconvert
   pkgdesc: Jupyter Notebook Conversion
   pkgver: 7.17.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/nbconvert
   arch:
     - any
@@ -44,6 +44,7 @@ pkgbase:
     - python-packaging
     - python-pandocfilters
     - python-pygments
+    - python-tinycss2
     - python-tornado
     - python-traitlets
   optdepends:
@@ -55,4 +56,4 @@ pkgbase:
     - 76de72a87b3efe4291c307d0079499c509fb9e6e13204688cf56c57d0d98447f
 pkgname:
   - name: jupyter-nbconvert
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
