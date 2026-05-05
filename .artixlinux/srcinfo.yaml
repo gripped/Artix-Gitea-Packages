@@ -1,9 +1,9 @@
 ---
-version: 2.49.2-1
+version: 2.50.0-1
 pkgbase:
   name: python-google-auth
   pkgdesc: Google Authentication Library
-  pkgver: 2.49.2
+  pkgver: 2.50.0
   pkgrel: 1
   url: https://github.com/googleapis/google-cloud-python
   arch:
@@ -47,11 +47,11 @@ pkgbase:
     - 'python-pyu2f: for reauthentication support'
     - 'python-requests: for async HTTP support'
   source:
-    - https://github.com/googleapis/google-cloud-python/archive/refs/tags/google-auth-v2.49.2.tar.gz
+    - https://github.com/googleapis/google-cloud-python/archive/refs/tags/google-auth-v2.50.0.tar.gz
     - python-pyopenssl-compatibility.patch
   sha512sums:
-    - c3cf62d29c72a864dc68570810d6567e70578fa068e33339e0d3d8294b051b473fba3bdcd581f4e0fdccbe15f4f62eab026d812629680aff77657b0920e22142
+    - b9fb92c66ace38f6bd8a61ab161df1d73f41ec6bfd68de27b26379b1fbde69ff18913b6224940eb4b2912fa55227f479596dce181cc598925b713b5e9fe2c54e
     - 4e23dfaeec6933b1fb6736b6402f1f3cce0fedc0967e527879bc1b3e6215d94c986c28ab9d6b9b4ba975f39316eb0159bb74144aca1f27345b0a9174857fcfff
 pkgname:
   - name: python-google-auth
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
