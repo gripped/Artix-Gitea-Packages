@@ -2,11 +2,11 @@
 team: lib32
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -42,10 +42,10 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 580.142-1
+    version: 580.159.03-1
     packages:
-      - lib32-nvidia-580xx-utils-580.142-1-x86_64.pkg.tar.zst
-      - lib32-opencl-nvidia-580xx-580.142-1-x86_64.pkg.tar.zst
+      - lib32-nvidia-580xx-utils-580.159.03-1-x86_64.pkg.tar.zst
+      - lib32-opencl-nvidia-580xx-580.159.03-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
