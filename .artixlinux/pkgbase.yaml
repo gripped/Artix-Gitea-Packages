@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.2.0-3
+    version: 1.2.1-1
     packages:
-      - fzssh-1.2.0-3-x86_64.pkg.tar.zst
+      - fzssh-1.2.1-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
