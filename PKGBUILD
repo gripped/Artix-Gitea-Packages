@@ -2,12 +2,13 @@
 
 pkgname="limine-snapper-sync"
 pkgver=1.28.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Automatically syncs Limine snapshot entries with Snapper snapshots."
 arch=('x86_64' 'aarch64')
 url="https://gitlab.com/Zesko/limine-snapper-sync"
 source=("${url}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
-        "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-x64_bin.tar.gz")
+        "https://github.com/graalvm/graalvm-ce-builds/releases/download/jdk-25.0.2/graalvm-community-jdk-25.0.2_linux-x64_bin.tar.gz"
+        syslog-watch-command.patch)
 license=("GPL3")
 options=(!debug !strip)
 _graalvm_version=graalvm_ce_jdk25
@@ -33,6 +34,8 @@ prepare() {
 		echo "Error: "${_graalvm_version}"/bin/javac not found." >&2
 		return 1
 	fi
+	cd $pkgname-$pkgver
+	patch -Np1 -i ../syslog-watch-command.patch
 }
 
 build() {
@@ -54,4 +57,5 @@ package() {
 }
 
 sha256sums=('38b4c7df36cdc5f401dedfcb46589090461c18d46beef6bca166259ac018d69d'
-            'e0be791c8fda4d03b6b0a0cb824fef3149736170057b3a515252b44419606af0')
+            'e0be791c8fda4d03b6b0a0cb824fef3149736170057b3a515252b44419606af0'
+            'c353571358211846d8f267cc3e7d8a4f4e00a96a41f82595cac4c773b2878a31')

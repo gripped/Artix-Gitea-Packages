@@ -1,0 +1,33 @@
+--- a/install/arch-linux/usr/bin/limine-snapper-notify	2026-05-06 18:48:31.421229032 +0200
++++ b/install/arch-linux/usr/bin/limine-snapper-notify	2026-05-06 18:41:01.727550464 +0200
+@@ -92,7 +92,7 @@
+ 		# Store last notification state
+ 		last_notify_time=$(date +%s)
+ 
+-	done < <(journalctl --output=short-iso -b -p "$LOG_LEVEL" -n0 -f)
++	done < <($watchcmd)
+ }
+ 
+ # Main logic
+@@ -101,9 +101,18 @@
+ 	exit 1
+ fi
+ 
+-if ! command -v journalctl &>/dev/null; then
+-	echo -e "\033[91mjournalctl is not installed.\033[0m" >&2
+-	exit 1
++if [ -f /usr/bin/metalog ] ; then
++  logfile="/var/log/everything/current"
++  if [ -r "$logfile" ] ; then
++    watchcmd="tail -f $logfile"
++  else
++    echo "File $logfile cannot be read by this user."
++    echo "When changing this be carefull to not expose sensitive unformation."
++    exit
++  fi
++else
++  "Currently the only suported logger is 'metalog'"
++  exit
+ fi
+ 
+ load_config
