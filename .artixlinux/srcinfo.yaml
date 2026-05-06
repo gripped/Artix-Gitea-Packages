@@ -1,9 +1,9 @@
 ---
-version: 7.2.2-1
+version: 7.2.3-1
 pkgbase:
   name: rocm-opencl-runtime
   pkgdesc: OpenCL implementation for AMD
-  pkgver: 7.2.2
+  pkgver: 7.2.3
   pkgrel: 1
   url: https://github.com/ROCm/clr
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   provides:
     - opencl-driver
   source:
-    - rocm-systems::git+https://github.com/ROCm/rocm-systems#tag=rocm-7.2.2
+    - rocm-systems::git+https://github.com/ROCm/rocm-systems#tag=rocm-7.2.3
   sha256sums:
-    - fd77919387606098c650ee03191ac2ebc89e216992684a46260e22819906a20a
+    - 8c9e9119fbe8509984a0fe058471882bd6387c855b1b3e11bb03ba5667fab251
 pkgname:
   - name: rocm-opencl-runtime
 # generated with artixpkg 0.38.5-1-any
