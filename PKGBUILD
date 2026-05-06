@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 # Contributor: Kaiting Chen <kaitocracy@gmail.com>
 # Contributor: Abhishek Dasgupta <abhidg@gmail.com>
@@ -7,7 +6,7 @@
 # Contributor: Jan Fader <jan.fader@web.de>
 
 pkgname=fish
-pkgver=4.6.0
+pkgver=4.7.0
 pkgrel=1
 pkgdesc='Smart and user friendly shell intended mostly for interactive use'
 url='https://fishshell.com/'
@@ -30,8 +29,8 @@ install=fish.install
 backup=(etc/fish/config.fish)
 source=("${pkgname}::git+https://github.com/fish-shell/fish-shell#tag=${pkgver}")
 #validpgpkeys=(003837986104878835FA516D7A67D962D88A709A) # David Adam <zanchey@gmail.com>
-sha512sums=('3ba65d9ba4828ad29acb7cb8fcc2d2abfd69e885113b3f610a0aa0977d3cbe65263ffa350af2138ac39250dfe5b61ab8cccf2ed058dbe3ad7f62f93f4b365e3c')
-b2sums=('e7291d1273743e9a69c31d1292c4df0e3caca19419fb027ec27f079bb47d3e69795a0dbf9d053490bce5e709f0177deaf1efca9392bcea9ce8c1740cd1c876fe')
+sha512sums=('dabce8930cfcd9eb04eb360df2cfa409c9ad372635fa0f91e781aa2ef27b1b93f3918c163492b17a8e5adc5e0b7eb27b6a985399db8107ac8af1e8de35c0465e')
+b2sums=('85378858472cb6c58000fe074880755162ec3af524523f85686927f6561ca33440bfd5a1a3b5954066e3e861a60df5857952ce1554fa7b71572a0631b2058e0c')
 
 build() {
   cd ${pkgname}
