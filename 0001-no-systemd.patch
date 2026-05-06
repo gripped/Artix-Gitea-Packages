@@ -1,21 +1,22 @@
-From c1621a30348fcf15647ad4c29f549667cfe5d6c3 Mon Sep 17 00:00:00 2001
+From 1f0f3a593616e8d12bdb2d81975f982b895afa8a Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Wed, 5 Nov 2025 17:54:49 +0100
+Date: Wed, 6 May 2026 19:39:47 +0200
 Subject: [PATCH 1/1] no systemd
 
 ---
  hooks/resume              |   7 ---
- init_functions            |  10 ----
+ init_functions            |  11 ----
  install/lvm2              |   6 +-
- install/mdadm_udev        |   3 -
+ install/mdadm_udev        |   6 --
  install/resume            |   7 ---
- install/sd-encrypt-opensc |  48 ---------------
- install/sd-shutdown       |  19 ------
- install/sd-vconsole       | 119 --------------------------------------
+ install/sd-encrypt        |  67 --------------------
+ install/sd-encrypt-opensc |  59 ------------------
+ install/sd-shutdown       |  21 -------
+ install/sd-vconsole       | 124 --------------------------------------
  install/sd-verity         |  38 ------------
  install/sd-volatile       |  22 -------
- mkinitcpio                |   7 ++-
- 11 files changed, 7 insertions(+), 279 deletions(-)
+ 11 files changed, 1 insertion(+), 367 deletions(-)
+ delete mode 100644 install/sd-encrypt
  delete mode 100644 install/sd-encrypt-opensc
  delete mode 100644 install/sd-shutdown
  delete mode 100644 install/sd-vconsole
@@ -41,13 +42,14 @@ index 2a58c4f..6a63a96 100644
      if [ -z "$resume" ]; then
          err 'resume: no device specified for hibernation'
 diff --git a/init_functions b/init_functions
-index 1260f84..e4456c7 100644
+index 1260f84..2d80426 100644
 --- a/init_functions
 +++ b/init_functions
-@@ -351,16 +351,6 @@ fsck_root() {
+@@ -350,17 +350,6 @@ fsck_root() {
+         elif bitfield_has_bit "$fsckret" 128; then
              err "fatal error invoking fsck"
          fi
- 
+-
 -        # ensure that root is going to be mounted rw. Otherwise, systemd
 -        # might fsck the device again. Annoy the user so that they fix this.
 -        if [ "${rwopt:-ro}" != 'rw' ]; then
@@ -79,15 +81,18 @@ index 0c2e456..90d7ceb 100644
      # config file
      sed -e 's/^[[:space:]#]*monitoring = [[:digit:]]\+\s*$/\tmonitoring = 0/' \
 diff --git a/install/mdadm_udev b/install/mdadm_udev
-index 1b4e45d..7c2b1a8 100644
+index dad7f7b..7c2b1a8 100644
 --- a/install/mdadm_udev
 +++ b/install/mdadm_udev
-@@ -15,9 +15,6 @@ build() {
+@@ -15,12 +15,6 @@ build() {
  
      # For external metadata arrays (e.g. IMSM)
      add_binary mdmon
 -    if declare -F add_systemd_unit &>/dev/null; then
 -        add_systemd_unit 'mdmon@.service'
+-        # support activation of degraded arrays
+-        add_systemd_unit 'mdadm-last-resort@.service'
+-        add_systemd_unit 'mdadm-last-resort@.timer'
 -    fi
  }
  
@@ -110,12 +115,85 @@ index 4d9622e..97fb9ec 100644
      add_runscript
  }
  
+diff --git a/install/sd-encrypt b/install/sd-encrypt
+deleted file mode 100644
+index 856f640..0000000
+--- a/install/sd-encrypt
++++ /dev/null
+@@ -1,67 +0,0 @@
+-#!/bin/bash
+-
+-build() {
+-    local mod
+-
+-    map add_module 'dm-crypt' 'dm-integrity' 'hid-generic?'
+-    if [[ -n "$CRYPTO_MODULES" ]]; then
+-        for mod in $CRYPTO_MODULES; do
+-            add_module "$mod"
+-        done
+-    else
+-        add_all_modules '/crypto/'
+-    fi
+-    add_checked_modules '/drivers/char/tpm/'
+-
+-    map add_udev_rule \
+-        '10-dm.rules' \
+-        '13-dm-disk.rules' \
+-        '60-fido-id.rules' \
+-        '95-dm-notify.rules'
+-
+-    map add_systemd_unit 'cryptsetup.target' \
+-        'systemd-ask-password-console.path' \
+-        'systemd-ask-password-console.service'
+-    map add_binary \
+-        '/usr/lib/systemd/system-generators/systemd-cryptsetup-generator' \
+-        '/usr/lib/systemd/systemd-cryptsetup' \
+-        '/usr/lib/systemd/systemd-makefs' \
+-        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-fido2.so' \
+-        '/usr/lib/cryptsetup/libcryptsetup-token-systemd-tpm2.so'
+-
+-    # cryptsetup calls pthread_create(), which dlopen()s libgcc_s.so.1
+-    add_binary '/usr/lib/libgcc_s.so.1'
+-
+-    # cryptsetup loads the legacy provider which is required for whirlpool
+-    add_binary '/usr/lib/ossl-modules/legacy.so'
+-
+-    # add libraries dlopen()ed by systemd-cryptsetup
+-    LC_ALL=C.UTF-8 find /usr/lib/ -maxdepth 1 -name "libfido2.so*" | while read -r FILE; do
+-        if [[ -L "${FILE}" ]]; then
+-            add_symlink "${FILE}"
+-        else
+-            add_binary "${FILE}"
+-        fi
+-    done
+-
+-    # add mkswap for creating swap space on the fly (see 'swap' in crypttab(5))
+-    add_binary 'mkswap'
+-
+-    # add NVPCR definition files
+-    map add_file /usr/lib/nvpcr/*.nvpcr
+-
+-    [[ -f /etc/crypttab.initramfs ]] && add_file '/etc/crypttab.initramfs' '/etc/crypttab'
+-}
+-
+-help() {
+-    cat <<HELPEOF
+-This hook allows systemd to unlock encrypted LUKS1 volumes with a password, and encrypted LUKS2 volumes with a password, FIDO2 token or TPM2 key. Unlocking of LUKS2 volumes with a PKCS#11 token is supported for some tokens by additional 'sd-encrypt-opensc' hook.
+-
+-See the manpage of systemd-cryptsetup-generator(8) for available kernel
+-command line options. Alternatively, if the file /etc/crypttab.initramfs
+-exists, it will be added to the initramfs as /etc/crypttab. See the
+-crypttab(5) manpage for more information on crypttab syntax.
+-HELPEOF
+-}
+-
+-# vim: set ft=sh ts=4 sw=4 et:
 diff --git a/install/sd-encrypt-opensc b/install/sd-encrypt-opensc
 deleted file mode 100644
-index 5177f2d..0000000
+index 08c1be9..0000000
 --- a/install/sd-encrypt-opensc
 +++ /dev/null
-@@ -1,48 +0,0 @@
+@@ -1,59 +0,0 @@
 -#!/usr/bin/bash
 -
 -build() {
@@ -133,17 +211,28 @@ index 5177f2d..0000000
 -
 -    add_binary '/usr/lib/pkcs11/opensc-pkcs11.so'
 -
--    add_systemd_unit 'pcscd.service'
 -    printf '%s\n' \
 -        '[Unit]' \
+-        'Description=PC/SC Smart Card Daemon' \
 -        'DefaultDependencies=no' \
+-        'Requires=pcscd.socket' \
 -        '[Service]' \
--        'ExecStart=' \
 -        'ExecStart=/usr/bin/pcscd --foreground --disable-polkit' \
--    | add_systemd_drop_in 'pcscd.service' 'mkinitcpio'
+-        'ExecReload=/usr/bin/pcscd --hotplug' \
+-        'RuntimeDirectory=pcscd' \
+-        'RuntimeDirectoryPreserve=true' \
+-        'PIDFile=/run/pcscd/pcscd.pid' \
+-    | add_file - '/usr/lib/systemd/system/pcscd.service' 644
 -
--    add_systemd_unit 'pcscd.socket'
--    printf '[Unit]\nDefaultDependencies=no\n' | add_systemd_drop_in 'pcscd.socket' 'mkinitcpio'
+-    add_binary '/usr/bin/pcscd'
+-
+-    printf '%s\n' \
+-        '[Unit]' \
+-        'Description=PC/SC Smart Card Daemon Activation Socket' \
+-        'DefaultDependencies=no' \
+-        '[Socket]' \
+-        'ListenStream=/run/pcscd/pcscd.comm' \
+-    | add_file - '/usr/lib/systemd/system/pcscd.socket' 644
 -
 -    # pcscd.socket -> cryptsetup-pre.target -> systemd-cryptsetup@.service -> cryptsetup.target
 -    add_systemd_unit 'cryptsetup-pre.target'
@@ -166,14 +255,16 @@ index 5177f2d..0000000
 -}
 diff --git a/install/sd-shutdown b/install/sd-shutdown
 deleted file mode 100644
-index f8aad2e..0000000
+index 238a946..0000000
 --- a/install/sd-shutdown
 +++ /dev/null
-@@ -1,19 +0,0 @@
+@@ -1,21 +0,0 @@
 -#!/usr/bin/env bash
 -# SPDX-License-Identifier: GPL-2.0-only
 -
 -build() {
+-    # TODO: should be pulled inn by .notes.dlopen in the future
+-    add_binary /usr/lib/libmount.so
 -    add_binary /usr/lib/systemd/systemd-shutdown /shutdown
 -
 -    if type -P kexec >/dev/null; then
@@ -191,10 +282,10 @@ index f8aad2e..0000000
 -# vim: set ft=sh ts=4 sw=4 et:
 diff --git a/install/sd-vconsole b/install/sd-vconsole
 deleted file mode 100644
-index 8291329..0000000
+index c6ed1e0..0000000
 --- a/install/sd-vconsole
 +++ /dev/null
-@@ -1,119 +0,0 @@
+@@ -1,124 +0,0 @@
 -#!/usr/bin/env bash
 -# SPDX-License-Identifier: GPL-2.0-only
 -
@@ -207,7 +298,12 @@ index 8291329..0000000
 -    add_binary /usr/lib/systemd/systemd-vconsole-setup
 -    add_binary loadkeys
 -    add_binary setfont
--    add_file /etc/vconsole.conf
+-    if [[ -s /etc/vconsole.conf ]]; then
+-        add_file /etc/vconsole.conf
+-    else
+-        warning 'sd-vconsole: "/etc/vconsole.conf" not found, will use default values'
+-    fi
+-
 -    add_udev_rule 90-vconsole.rules
 -
 -    # subshell to avoid namespace pollution
@@ -386,24 +482,6 @@ index 134443e..0000000
 -}
 -
 -# vim: set ft=sh ts=4 sw=4 et:
-diff --git a/mkinitcpio b/mkinitcpio
-index 0f4a90a..3b4dc12 100755
---- a/mkinitcpio
-+++ b/mkinitcpio
-@@ -779,7 +779,12 @@ preload_builtin_modules() {
-         while IFS=.= read -rd '' modname field value; do
-             _addedmodules[${modname//-/_}]=2
-             case "$field" in
--                alias)
-+                alias)if command -v systemctl &>/dev/null; then
-+        IFS=' .-~^' read -r _ systemd_ver _ < <(SYSTEMD_COLORS=0 systemctl --version)
-+        if (( systemd_ver >= 255 )); then
-+            add_binary /usr/lib/systemd/systemd-hibernate-resume
-+        fi
-+    fi
-                     _addedmodules["${value//-/_}"]=2
-                     ;;
-             esac
 -- 
-2.51.2
+2.54.0
 
