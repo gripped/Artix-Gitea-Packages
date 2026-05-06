@@ -9,16 +9,16 @@
 # Contributor: Evine Deng <evinedeng@hotmail.com>
 
 pkgbase=qbittorrent
-pkgname=(qbittorrent
-         qbittorrent-nox)
-pkgver=5.1.4
-pkgrel=2.1
+pkgname=(qbittorrent)
+pkgver=5.2.0
+pkgrel=1
 arch=(x86_64)
 url='https://www.qbittorrent.org'
 license=(GPL-2.0-or-later
          GPL-3.0-or-later)
-depends=(gcc-libs
-         glibc
+depends=(glibc
+         libgcc
+         libstdc++
          libtorrent-rasterbar
          openssl
          qt6-base
@@ -32,30 +32,17 @@ optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver
         qbittorrent.sysusers
         qbittorrent.tmpfiles)
-sha256sums=('3ec56cf992dfbf9a9d159ec9f9d79eb96a79908a5238ab48e7cdce2ece720f09'
+sha256sums=('20fb5ff17314dc8e492caf308231f424db04a45ab04861daa953fa0fab260120'
+            'e0142e716098aa7047bf5160eee1dd839d84feaa30ec2c01b988c9bca16bd831'
             '0f148c97cc5fae83fc5022b5f2da374b60a1e2f62a4faf01265e73a9f208825a'
             '8bd2274ba9a6d414cd0170c8855cd6823fa026158ce7ed5eb74d661f21457238')
 validpgpkeys=('D8F3DA77AAC6741053599C136E4A2D025B7CC9A2') # sledgehammer999 <sledgehammer999@qbittorrent.org>
-
-prepare() {
-  # Fix bug where webui cannot save preferences, see:
-  # - https://github.com/qbittorrent/qBittorrent/issues/22909
-  # - https://github.com/qbittorrent/qBittorrent/pull/22910
-  # - https://github.com/qbittorrent/qBittorrent/commit/101f35dcf2898afd52c6721066e1d71f6cef9c6e
-  git -C qBittorrent cherry-pick -n 101f35dcf2898afd52c6721066e1d71f6cef9c6e
-}
 
 build() {
   cmake -B build -S qBittorrent \
     -DCMAKE_INSTALL_PREFIX=/usr
   cmake --build build
-
-  cmake -B build-nox -S qBittorrent \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DGUI=OFF \
-    -DSYSTEMD=OFF
-  cmake --build build-nox
-}
+  }
 
 package_qbittorrent() {
   pkgdesc='An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar'
@@ -63,14 +50,4 @@ package_qbittorrent() {
 
   DESTDIR="$pkgdir" cmake --install build
   install -Dm644 qBittorrent/COPYING -t "$pkgdir"/usr/share/licenses/$pkgname
-}
-
-package_qbittorrent-nox() {
-  pkgdesc='An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar, w/o gui'
-
-  DESTDIR="$pkgdir" cmake --install build-nox
-  install -Dm644 qBittorrent/COPYING -t "$pkgdir"/usr/share/licenses/$pkgname
-
-  install -Dm644 qbittorrent.sysusers "$pkgdir/usr/lib/sysusers.d/qbittorrent.conf"
-  install -Dm644 qbittorrent.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/qbittorrent.conf"
-}
+  }
