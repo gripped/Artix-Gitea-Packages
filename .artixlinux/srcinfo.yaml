@@ -1,9 +1,9 @@
 ---
-version: 2.19-1
+version: 2.19.1-1
 pkgbase:
   name: lcms2
   pkgdesc: Small-footprint color management engine, version 2
-  pkgver: 2.19
+  pkgver: 2.19.1
   pkgrel: 1
   url: http://www.littlecms.com/
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   provides:
     - liblcms2.so
   source:
-    - https://github.com/mm2/Little-CMS/releases/download/lcms2.19/lcms2-2.19.tar.gz
+    - https://github.com/mm2/Little-CMS/releases/download/lcms2.19.1/lcms2-2.19.1.tar.gz
   sha256sums:
-    - 49e7e134e4299733dd0eda434fa468997a28ab3d33fa397c642b03644f552216
+    - bfc54f7bab59fbc921012014a8032e4cba4abd46db47d46b76416a8c0b2815c8
 pkgname:
   - name: lcms2
 # generated with artixpkg 0.38.5-1-any
