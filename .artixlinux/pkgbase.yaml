@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 2.24.260503-1
+    version: 2.24.260507-1
     packages:
-      - gtk2-ng-git-2.24.260503-1-x86_64.pkg.tar.zst
+      - gtk2-ng-git-2.24.260507-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
