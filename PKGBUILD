@@ -7,7 +7,7 @@
 pkgbase=curl
 pkgname=(curl libcurl-compat libcurl-gnutls)
 pkgver=8.20.0
-pkgrel=4
+pkgrel=5
 pkgdesc='command line tool and library for transferring data with URLs'
 arch=('x86_64')
 url='https://curl.se/'
@@ -77,8 +77,8 @@ build() {
     --disable-ldap
     --disable-ldaps
     --disable-manual
-    --disable-threaded-resolver
     --enable-ipv6
+    --enable-threaded-resolver
     --enable-websockets
     --with-gssapi
     --with-libssh2

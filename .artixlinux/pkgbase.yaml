@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-goblins
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -16,8 +16,11 @@ repos:
       - libcurl-gnutls-8.20.0-4-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 8.20.0-5
+    packages:
+      - curl-8.20.0-5-x86_64.pkg.tar.zst
+      - libcurl-compat-8.20.0-5-x86_64.pkg.tar.zst
+      - libcurl-gnutls-8.20.0-5-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 8.20.0-3
