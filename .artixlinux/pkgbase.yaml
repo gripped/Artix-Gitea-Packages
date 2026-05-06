@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1:0.55.4-4
+    version: 1:0.55.5-1
     packages:
-      - libfilezilla-1:0.55.4-4-x86_64.pkg.tar.zst
+      - libfilezilla-1:0.55.5-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
