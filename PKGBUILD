@@ -42,7 +42,6 @@ makedepends=(
 source=(
   "git+https://git.devuan.org/Daemonratte/gtk2-ng"
   gtk-query-immodules-2.0.hook
-  0001-Lower-severity-of-XID-collision-warnings.patch
 )
 b2sums=('SKIP'
         '9c531f9f605e1739e13c39c1cac22daddd9574f3082f18bcf0b9dfaa4c41f2485d55be03a9ed12fb4504d509f0d5ac63980a9d9349e3f80a06595c6430c78096')
@@ -60,7 +59,6 @@ replaces=('gtk2')
 
 prepare() {
   cd gtk2-ng
-  git apply -3 ../0001-Lower-severity-of-XID-collision-warnings.patch
 
   sed -i '/AM_INIT_AUTOMAKE/s/]/ foreign]/' configure.ac
   autoreconf -fvi
