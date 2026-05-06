@@ -7,7 +7,7 @@
 pkgbase=nvidia-580xx-settings
 pkgname=('nvidia-580xx-settings' 'libxnvctrl-580xx')
 pkgver=580.159.03
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Tool for configuring the NVIDIA graphics driver (580xx)'
 url='https://github.com/NVIDIA/nvidia-settings'
 arch=('x86_64')

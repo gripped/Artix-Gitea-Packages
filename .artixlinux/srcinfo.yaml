@@ -1,10 +1,10 @@
 ---
-version: 580.159.03-1
+version: 580.159.03-1.1
 pkgbase:
   name: nvidia-580xx-settings
   pkgdesc: Tool for configuring the NVIDIA graphics driver (580xx)
   pkgver: 580.159.03
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/NVIDIA/nvidia-settings
   arch:
     - x86_64
