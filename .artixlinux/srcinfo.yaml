@@ -1,10 +1,10 @@
 ---
-version: 1.3.2-1.1
+version: 1.4.0-1
 pkgbase:
   name: ly
   pkgdesc: Lightweight TUI (ncurses-like) display manager
-  pkgver: 1.3.2
-  pkgrel: 1.1
+  pkgver: 1.4.0
+  pkgrel: 1
   url: https://codeberg.org/AnErrupTion/ly
   arch:
     - x86_64
@@ -27,9 +27,9 @@ pkgbase:
     - etc/ly/setup.sh
     - etc/pam.d/ly
   source:
-    - git+https://codeberg.org/AnErrupTion/ly.git#tag=v1.3.2
+    - git+https://codeberg.org/AnErrupTion/ly.git#tag=v1.4.0
   b2sums:
-    - 2c28171c16b01776f7c63b45525e45bad7b13a79aa04a4023b54301c5069c153cf36a18a6ecd8b76b93ddf4ca5c74e8c65d56b29e4767ebf07df325fd61310a5
+    - b982af1d9e682b712a51513fb5452aa19d26bdaa9361329f5ce42ddd5e80953a4231608fa0fd654a8a8c71c5efa8e5a7f113c7cf87855b16eff1c12a171fd949
 pkgname:
   - name: ly
 # generated with artixpkg 0.38.5-1-any

@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=ly
-pkgver=1.3.2
-pkgrel=1.1
+pkgver=1.4.0
+pkgrel=1
 pkgdesc="Lightweight TUI (ncurses-like) display manager"
 arch=(x86_64)
 url="https://codeberg.org/AnErrupTion/ly"
@@ -16,7 +16,7 @@ optdepends=('brightnessctl: for controling brightness'
 backup=(etc/$pkgname/{config.ini,setup.sh}
         etc/pam.d/ly)
 source=("git+$url.git#tag=v${pkgver}")
-b2sums=('2c28171c16b01776f7c63b45525e45bad7b13a79aa04a4023b54301c5069c153cf36a18a6ecd8b76b93ddf4ca5c74e8c65d56b29e4767ebf07df325fd61310a5')
+b2sums=('b982af1d9e682b712a51513fb5452aa19d26bdaa9361329f5ce42ddd5e80953a4231608fa0fd654a8a8c71c5efa8e5a7f113c7cf87855b16eff1c12a171fd949')
 
 prepare() {
   cd "$pkgname"
@@ -24,7 +24,7 @@ prepare() {
   sed -i 's|restart_cmd = /sbin/shutdown -r now|restart_cmd = /usr/bin/loginctl reboot|' res/config.ini
   sed -i 's|shutdown_cmd = /sbin/shutdown $PLATFORM_SHUTDOWN_ARG now|shutdown_cmd = /usr/bin/loginctl poweroff|' res/config.ini
   sed -i 's|sleep_cmd = null|sleep_cmd = /usr/bin/loginctl suspend|' res/config.ini
-  git cherry-pick -n ced8f9bee35ad97c1e59ef1e182e064c04eb76a7
+  #git cherry-pick -n ced8f9bee35ad97c1e59ef1e182e064c04eb76a7
 }
 
 build() {
