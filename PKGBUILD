@@ -2,24 +2,43 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=inetutils
-pkgver=2.7
-pkgrel=2
+pkgver=2.8
+pkgrel=1
 pkgdesc="A collection of common network programs"
-arch=('x86_64')
 url="https://www.gnu.org/software/inetutils/"
-license=('GPL-3.0-or-later')
-depends=('glibc' 'pam' 'libcap' 'readline' 'ncurses' 'libxcrypt'
-	     libpam.so libcrypt.so libreadline.so libncursesw.so)
-makedepends=('git' 'help2man' 'python')
-backup=('etc/pam.d/rlogin' 'etc/pam.d/rsh')
+arch=(x86_64)
+license=(GPL-3.0-or-later)
+depends=(
+  glibc
+  libcap
+  libcrypt.so
+  libncursesw.so
+  libpam.so
+  libreadline.so
+  libxcrypt
+  ncurses
+  pam
+  readline
+)
+makedepends=(
+  git
+  help2man
+  python
+)
+backup=(
+  etc/pam.d/rlogin
+  etc/pam.d/rsh
+)
 options=('!emptydirs')
 install=inetutils.install
-source=("git+https://git.savannah.gnu.org/git/inetutils.git#tag=v${pkgver}?signed"
-        "git+https://git.savannah.gnu.org/git/gnulib.git"
-        'inetutils.sysusers'
-        'rlogin.pam'
-        'rsh.pam')
-sha512sums=('c6559cfc92c6365abda86f22d0eaba63a93e8c2d7ae32ef33d10ca0d5f36b25c99427f4243877ffc180dc645fc3cb1b118b5358fecadfbece22243e02e7f942d'
+source=(
+  "git+https://git.savannah.gnu.org/git/inetutils.git#tag=v${pkgver}?signed"
+  "git+https://git.savannah.gnu.org/git/gnulib.git"
+  inetutils.sysusers
+  rlogin.pam
+  rsh.pam
+)
+sha512sums=('348f7ed9528ac8d68de72d3b7efb93c5a31f924b80cdc1f0818ad4fdd7694e3e9d0bb759be02839a5eaa0f14b913f5aaab3032ed22a9f2cbab58ed085d12c780'
             'SKIP'
             '00a6ff36efe63612990181f7cb37ea7d43ee7f2b6bda6b1fc23ccb2f3b19da54aabad041c2412936561dcd997f9613bd8144a96f5e04f30135a36f9ac98d8056'
             '432a45af5cd4f9f2dee4b631b45745b734e47cf631553e79db31905fa0839988914bcfed1dfcdd00d2ea6e4029b0674d46623c33ce0bd0678c2628fbaa0d1b25'
@@ -38,10 +57,6 @@ prepare() {
   # Giving the path like this should work anyway...
   GNULIB_REFDIR="${srcdir}/gnulib"
   export GNULIB_REFDIR
-
-  git cherry-pick -n \
-    fd702c02497b2f398e739e3119bed0b23dd7aa7b \
-    ccba9f748aa8d50a38d7748e2e60362edd6a32cc
 
   sh bootstrap
   autoreconf -fiv
