@@ -1,9 +1,9 @@
 ---
-version: 26.04.0-1
+version: 26.04.1-1
 pkgbase:
   name: poxml
   pkgdesc: Translates DocBook XML files using gettext po files
-  pkgver: 26.04.0
+  pkgver: 26.04.1
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -23,14 +23,14 @@ pkgbase:
     - glibc
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.04.0/src/poxml-26.04.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.0/src/poxml-26.04.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.1/src/poxml-26.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.1/src/poxml-26.04.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - dce68a16977ed0bc5b3e6d17600e2b58e15f336a731b403b4b2aaa0d13fc1055
+    - 7a0b0faba027db7732bb3652d437dacb25df57464c384a64d479ef984e299629
     - SKIP
 pkgname:
   - name: poxml
