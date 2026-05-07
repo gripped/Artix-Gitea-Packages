@@ -1,9 +1,9 @@
 ---
-version: 26.04.0-1
+version: 26.04.1-1
 pkgbase:
   name: filelight
   pkgdesc: View disk usage information
-  pkgver: 26.04.0
+  pkgver: 26.04.1
   pkgrel: 1
   url: https://apps.kde.org/filelight/
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/26.04.0/src/filelight-26.04.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.0/src/filelight-26.04.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.1/src/filelight-26.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.1/src/filelight-26.04.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 141a734d1ba99a51f9068804755e6e1400c813ad22b2059294017398de37c13a
+    - 4661cc46e4f89ccc6ac130c9c3be2eeed0598781a80ddda428c6dedcf49f8c03
     - SKIP
 pkgname:
   - name: filelight
