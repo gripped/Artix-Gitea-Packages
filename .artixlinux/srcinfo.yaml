@@ -1,10 +1,10 @@
 ---
-version: 2.0.1-1
+version: 2.0.1-2
 pkgbase:
   name: gavl
   pkgdesc: Low level library, upon which multimedia APIs can be built
   pkgver: 2.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/bplaum/gavl
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - c47fa36b64bcf97f6453ec8cdb95a36eda04c2850afb8cd465db0d1c17e3905abe5f5a36e6a00ac5546daedd754238cec1841a09e91aed99ae4209fa0935003c
 pkgname:
   - name: gavl
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
