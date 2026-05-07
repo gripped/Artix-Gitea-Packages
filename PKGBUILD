@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=jupyter-server
-pkgver=2.18.1
+pkgver=2.18.2
 pkgrel=1
 pkgdesc='Provides the backend for Jupyter web applications like Jupyter notebook, JupyterLab, and Voila'
 arch=(any)
@@ -40,7 +40,7 @@ checkdepends=(python-flaky
 optdepends=('jupyter-server-mathjax: to use local MathJax'
             'python-jupyter-server-terminals: terminals support')
 source=(git+https://github.com/jupyter-server/jupyter_server#tag=v$pkgver)
-sha256sums=('74024e770c637d0cdf4ce25ed519c2263e376870d5b75b1a4db779bd73cb9a25')
+sha256sums=('9016f5b92d66bc12897e10c499c0247b7a26badf346a3a5504e1a510a81d8e3f')
 
 prepare() {
   cd ${pkgname/-/_}
