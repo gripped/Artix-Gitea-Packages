@@ -11,7 +11,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.6.1
-pkgrel=4
+pkgrel=5
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -77,6 +77,7 @@ makedepends=(
   libogg                  # libvtkIOOggTheora.so (1 direct lib, 2 total libs)
   libtheora               # libvtkIOOggTheora.so (1 direct lib, 2 total libs)
   mariadb-libs            # libvtkIOMySQL.so (1 direct lib, 2 total libs)
+  onnxruntime             # libvtkFiltersONNX.so.1 (1 direct lib, 2 total libs)
   opencascade             # libvtkIOOCCT.so (1 direct lib, 2 total libs)
   openimagedenoise        # libvtkRenderingRayTracing.so (1 direct lib, 2 total libs)
   openvdb                 # libvtkIOOpenVDB.so (1 direct lib, 2 total libs)
@@ -117,6 +118,7 @@ optdepends=(
   'freetype2: rendering fonts'
   'gl2ps: rendering to PostScript, PDF, and SVG'
   'anari-sdk: ANARI rendering module'
+  'onnxruntime: ONNX filter for AI-related computation'
   'openvr: rendering for virtual reality'
   'openxr: rendering for virtual and augmented reality'
   'openimagedenoise: rendering with raytracing support'
@@ -207,7 +209,6 @@ build() {
     -DVTK_MODULE_ENABLE_VTK_DomainsMicroscopy=NO
     -DVTK_MODULE_ENABLE_VTK_FiltersOpenTURNS=NO
     -DVTK_MODULE_ENABLE_VTK_IOCatalystConduit=YES
-    -DVTK_MODULE_ENABLE_VTK_FiltersONNX=NO
     # building with the usd package does not work: https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/issues/7
     -DVTK_MODULE_ENABLE_VTK_IOUSD=NO
     -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON
