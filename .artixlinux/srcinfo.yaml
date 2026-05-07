@@ -1,9 +1,9 @@
 ---
-version: 26.04.0-1
+version: 26.04.1-1
 pkgbase:
   name: kalarm
   pkgdesc: Personal alarm scheduler
-  pkgver: 26.04.0
+  pkgver: 26.04.1
   pkgrel: 1
   url: https://apps.kde.org/kalarm/
   arch:
@@ -59,14 +59,14 @@ pkgbase:
     - 'mpv: MPV audio backend'
     - 'vlc-plugins-base: VLC audio backend'
   source:
-    - https://download.kde.org/stable/release-service/26.04.0/src/kalarm-26.04.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.0/src/kalarm-26.04.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.1/src/kalarm-26.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.1/src/kalarm-26.04.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 87d46227f249c0bbb07880937a955e7a5ba76cd465992a9a0b365f46cea88559
+    - 45c144398b380f03424159a8333f50e7f67e8058c0baef1b605e5bb7f5036e9c
     - SKIP
 pkgname:
   - name: kalarm
