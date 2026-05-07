@@ -4,7 +4,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
 pkgver=15.2.0
-pkgrel=1.5
+pkgrel=1.6
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
 arch=(x86_64)
@@ -47,12 +47,15 @@ build() {
   CFLAGS=${CFLAGS/-pipe/}
   CXXFLAGS=${CXXFLAGS/-pipe/}
 
+  export CC=gcc-15
+  export CXX=g++-15
+
   # Credits @allanmcrae
   # https://github.com/allanmcrae/toolchain/blob/f18604d70c5933c31b51a320978711e4e6791cf1/gcc/PKGBUILD
   # TODO: properly deal with the build issues resulting from this
   CFLAGS=${CFLAGS/-Werror=format-security/}
   CXXFLAGS=${CXXFLAGS/-Werror=format-security/}
-  # unset FFLAGS FCFLAGS
+  unset FFLAGS FCFLAGS
 
   "$srcdir"/$_basedir/configure \
       --prefix=/usr \
