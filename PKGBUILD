@@ -5,7 +5,7 @@
 _name=pydantic
 pkgname=python-$_name
 # WARNING: upstream pins pydantic-core down to the patch-level and using other versions breaks tests! only update in lock-step with python-pydantic-core!
-pkgver=2.13.3
+pkgver=2.13.4
 pkgrel=1
 pkgdesc='Data parsing and validation using Python type hints'
 arch=(any)
@@ -57,8 +57,8 @@ optdepends=(
 source=(
   $url/archive/v$pkgver/$_name-v$pkgver.tar.gz
 )
-sha512sums=('ef8cd0ca079f81649630afdcb377c66546b5873ba5863564ffb5919d7ac4d3fd1bc1d70a8e3e54424215a6be5930a1513007bbf8e3fd066e59507ef7212e0e33')
-b2sums=('ca6b1076f339a32485a00ea5916782b8326c712b81f07e43505a30cc68a5f1af1734ec0451bdfef4d249a6798c97542528820bf46a2a387adbd8f0e902814382')
+sha512sums=('947572f1bd15ecf96c88b0ca7e3d049fb5b855819a2d163560ed7c3789cf6a4b77c5493c663cdae9f9c198885715676c5d987de87144ce0bf1464ba5ecb68f14')
+b2sums=('dccf3ab8bb306ed7973ec9637325851f7412574aed9d28d7510f0f73bad29cad157d35951261568303c601a882fbc93b82391fdcbfa338acfc5a1a2f9a38cd0f')
 
 build() {
   cd $_name-$pkgver
