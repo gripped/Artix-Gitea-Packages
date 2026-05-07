@@ -1,10 +1,10 @@
 ---
-version: 2.8.140-2
+version: 2.8.142-1
 pkgbase:
   name: gsoap
   pkgdesc: Offers an XML language binding to ease the development of SOAP/XML Web services in C and C/C++
-  pkgver: 2.8.140
-  pkgrel: 2
+  pkgver: 2.8.142
+  pkgrel: 1
   url: https://sourceforge.net/projects/gsoap2/
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - https://prdownloads.sourceforge.net/gsoap2/gsoap_2.8.140.zip
+    - https://prdownloads.sourceforge.net/gsoap2/gsoap_2.8.142.zip
   sha256sums:
-    - 46a2a91f1d9fd756fd6e6e3b82deb673e3f7cc574d234c91132cfaf90449d3ab
+    - 6d7196bd6591ec2977474c681e351b4a33eb5c2d64c9e2e6727b004f330b3752
 pkgname:
   - name: gsoap
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
