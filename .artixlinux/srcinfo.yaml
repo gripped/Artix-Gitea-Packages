@@ -1,9 +1,9 @@
 ---
-version: 0.68-1
+version: 0.69-1
 pkgbase:
   name: distro-info-data
   pkgdesc: Information about all releases of Debian and Ubuntu (data files)
-  pkgver: 0.68
+  pkgver: 0.69
   pkgrel: 1
   url: https://salsa.debian.org/debian/distro-info-data
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://salsa.debian.org/debian/distro-info-data.git#tag=debian/0.68
+    - git+https://salsa.debian.org/debian/distro-info-data.git#tag=debian/0.69
   sha256sums:
-    - b77e71e04c2c601abc519f86bd44f824085c202af8ee6fcefffe7acb1469a8f3
+    - 35346a6ca136fb62910d1af5fbae31881ba9c0c2f3c74c29ab2758684ae4c61d
 pkgname:
   - name: distro-info-data
 # generated with artixpkg 0.38.5-1-any
