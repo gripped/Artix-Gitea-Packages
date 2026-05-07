@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3:2.46.3-1
+    version: 3:2.46.4-1
     packages:
-      - python-pydantic-core-3:2.46.3-1-x86_64.pkg.tar.zst
+      - python-pydantic-core-3:2.46.4-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3:2.41.5-4

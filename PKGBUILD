@@ -4,7 +4,7 @@
 _name=pydantic-core
 pkgname=python-pydantic-core
 # WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
-pkgver=2.46.3
+pkgver=2.46.4
 pkgrel=1
 epoch=3
 pkgdesc="Core validation logic for pydantic written in rust "
@@ -40,8 +40,8 @@ source=(
     "pydantic::git+https://github.com/pydantic/pydantic.git#tag=core-v${pkgver}"
 )
 
-sha512sums=('194b5b4a2c93f89c3a24abca0aa6e43ba39060a3a7378234876f6693c8ccc26532ecb6808e5530678cf241c004ec89b6d25c6a7e5169cd812df34d5b01e917bd')
-b2sums=('4fe82812274782eb2c6410cb64d1d3b450fc02fb11fb2b3087030ef0a95f11e9ae5425fb8f6bfc88f7ba711f9e92c8e38cc99cdcdc0ac2bc31d38b8700dcda3a')
+sha512sums=('521d1e547c0b59d4b2f409c6ad611e5fb6359b8b941144292c3463106657be689282a84a376d18a1caac9660f5454bb3595cb9eb5d309383a0ec4bc152a1a2a7')
+b2sums=('ab408b0b2e8115bc743355204609c3680321f939b2de883cc0fd04e346ed574bfdd5aaf2aaa7309ed523f164137178873d15b294093937b04dc4883473dcd9af')
 
 build() {
   cd "pydantic/$_name"
