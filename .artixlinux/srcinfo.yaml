@@ -1,10 +1,10 @@
 ---
-version: 2.3.10-5
+version: 2.3.10-6
 pkgbase:
   name: qca
   pkgdesc: Qt Cryptographic Architecture
   pkgver: 2.3.10
-  pkgrel: 5
+  pkgrel: 6
   url: https://userbase.kde.org/QCA
   arch:
     - x86_64
@@ -62,4 +62,4 @@ pkgname:
       - nss
       - qt6-5compat
       - qt6-base
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
