@@ -1,9 +1,9 @@
 ---
-version: 26.04.0-1
+version: 26.04.1-1
 pkgbase:
   name: kbackup
   pkgdesc: A program that lets you back up any directories or files
-  pkgver: 26.04.0
+  pkgver: 26.04.1
   pkgrel: 1
   url: https://apps.kde.org/kbackup/
   arch:
@@ -36,14 +36,14 @@ pkgbase:
     - qt6-5compat
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.04.0/src/kbackup-26.04.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.0/src/kbackup-26.04.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.1/src/kbackup-26.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.1/src/kbackup-26.04.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 605ca76baa936bd3866634f29183942329c3c07ff8e308ed2bfe708bb1b8948c
+    - 584d4f80ced90697799bec8ddcf3cfb1cc225e8ec6576ce23978844d0acb3219
     - SKIP
 pkgname:
   - name: kbackup
