@@ -1,9 +1,9 @@
 ---
-version: 1.11.2-1
+version: 1.12.0-1
 pkgbase:
   name: python-pipx
   pkgdesc: Install and Run Python Applications in Isolated Environments
-  pkgver: 1.11.2
+  pkgver: 1.12.0
   pkgrel: 1
   url: https://github.com/pypa/pipx
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - python-packaging
     - python-platformdirs
   source:
-    - git+https://github.com/pypa/pipx.git#tag=1.11.2
+    - git+https://github.com/pypa/pipx.git#tag=1.12.0
   sha512sums:
-    - f78c95d8f1e3a3ad0c8f51224bc7fad9fceebb89d10c5ce25afd11d8c87dd6c33d26b51aa330f3059b6759923d73d889ac5d3a3b3761d65674ed8778097d8f5a
+    - 89863a876bc3f5ee570e43f02ccf021ecb2717f5e644557fe66427b48a36931ac88e4fdd4f775877a26bd9f04f71db76c9fec179fe2cc1d8a3d70eff8dce390a
 pkgname:
   - name: python-pipx
 # generated with artixpkg 0.38.5-1-any
