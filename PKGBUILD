@@ -5,11 +5,11 @@
 
 pkgname=signal-desktop
 _pkgname=Signal-Desktop
-pkgver=8.8.0
+pkgver=8.9.0
 pkgrel=1
 pkgdesc="Signal Private Messenger for Linux"
 license=('AGPL-3.0-only')
-arch=('x86_64')
+arch=('x86_64' 'aarch64')
 url="https://signal.org"
 install="${pkgname}.install"
 depends=(
@@ -57,10 +57,10 @@ source=(
   "signal.desktop"
   "${pkgname}.sh"
 )
-sha256sums=('d0199b7f42f3da5238707712093d96e590bdb4947170be69eb561c1fa261fc51'
+sha256sums=('5b055e5174c94f56ce27ab363de4f313c8e572abf3bff24c9ef5b2f60881f73b'
             'bf388df4b5bbcab5559ebbf220ed4748ed21b057f24b5ff46684e3fe6e88ccce'
             '37701c610829ea3d0ae984b468ef83870fb75358396feb85b5f13f69cdbf1e68')
-b2sums=('94c2512fae1276f817d903b21f8e7a672b896f7528b2e88f88ce66ea3e58064fd31c4b6631dd44daf13d631af21892162a3644fb9b53746bf850189ab19e6913'
+b2sums=('7fc710b764c556ff23ca2011ac1d38686896e2e213a9faf3b240d7c34dd3022f42a174a0febc1a25efc3c877318e16eba35bffd34c46a1f012b906167beddceb'
         'ffb8f7bab4fd84aacf13e7b6d2835daf449b6650b4b3fa723456792ba7fb6cae352928fea11cb030510d558ce30036ff5a1513444f067b94c7fff0158b4f2265'
         '3b52b3e8530652472560fbc83f709cd1377210098c81b84cb9b14a985fbfcb349897843bb995cb772de31568517e038b497277b2fddca18b4a6dba5315d1a7c1')
 
@@ -73,6 +73,9 @@ prepare() {
 
   # Allow higher Node versions
   sed 's#"node": "#&>=#' -i package.json
+
+  # Upgrade electron-builder to support aarch64
+  sed -i 's/"electron-builder": "26\.0\.14",/"electron-builder": "26.0.20",/' package.json
 
   # Install dependencies for sticker-creator
   pnpm install --dir sticker-creator
@@ -95,7 +98,13 @@ package() {
   cd "${_pkgname}-${pkgver}"
 
   install -d "${pkgdir}/usr/"{lib,bin}
-  cp -a release/linux-unpacked "${pkgdir}/usr/lib/${pkgname}"
+
+  case "${CARCH}" in
+    "aarch64") folder="linux-arm64-unpacked" ;;
+    *) folder="linux-unpacked" ;;
+  esac
+
+  cp -a release/${folder} "${pkgdir}/usr/lib/${pkgname}"
   # Launcher
   install -Dm755 "${srcdir}/${pkgname}.sh" "${pkgdir}/usr/bin/${pkgname}"
 
