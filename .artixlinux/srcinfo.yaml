@@ -1,10 +1,10 @@
 ---
-version: 1.8.0-1
+version: 1.8.0-2
 pkgbase:
   name: rdfind
   pkgdesc: Redundant data find - a program that finds duplicate files
   pkgver: 1.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://rdfind.pauldreik.se
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - bb70c5359e1245539120c80bb2bed2919aee8801041259740542cebfd468ff2397d4158590ca9511b7f5f3582c2a244e3311abf188488151e2c13132224897a0
 pkgname:
   - name: rdfind
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
