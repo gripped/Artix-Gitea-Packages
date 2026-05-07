@@ -4,7 +4,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
 pkgver=15.2.0
-pkgrel=1.4
+pkgrel=1.5
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
 arch=(x86_64)
@@ -52,7 +52,7 @@ build() {
   # TODO: properly deal with the build issues resulting from this
   CFLAGS=${CFLAGS/-Werror=format-security/}
   CXXFLAGS=${CXXFLAGS/-Werror=format-security/}
-  unset FFLAGS FCFLAGS
+  # unset FFLAGS FCFLAGS
 
   "$srcdir"/$_basedir/configure \
       --prefix=/usr \
