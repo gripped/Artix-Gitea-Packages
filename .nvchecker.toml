@@ -1,5 +1,6 @@
 [elogind]
 source = "git"
 git = "https://github.com/elogind/elogind.git"
-prefix = "V"
+from_pattern = '^[vV](.+)$'
+to_pattern = '\1'
 exclude_regex = ".*-pre.*"

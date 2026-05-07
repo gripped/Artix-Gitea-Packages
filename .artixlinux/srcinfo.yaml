@@ -1,10 +1,10 @@
 ---
-version: 255.22-4
+version: 257.13-1
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
-  pkgver: 255.22
-  pkgrel: 4
+  pkgver: 257.13
+  pkgrel: 1
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
@@ -29,11 +29,9 @@ pkgbase:
     - glibc
     - libcap
   source:
-    - git+https://github.com/elogind/elogind.git#tag=V255.22
-    - elogind-255.22-revert-openrc-user.patch
+    - git+https://github.com/elogind/elogind.git#tag=v257.13
   sha256sums:
-    - 24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882
-    - 948d21621d9d916006dfc8ff864b0ae54b299f00a17cf7717a77a38277d54698
+    - 6068f9af2892390b6f7f374144868a6fa6b7402add8ef29c1d5673785f16a312
 pkgname:
   - name: elogind
     pkgdesc: The systemd project's logind, extracted to a standalone package
@@ -80,4 +78,5 @@ pkgname:
     provides:
       - libelogind.so
       - liblogind
+      - libnss_elogind.so
 # generated with artixpkg 0.38.5-1-any

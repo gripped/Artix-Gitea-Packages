@@ -1,11 +1,11 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_tag=255.22
+_tag=257.13
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=4
+pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -32,11 +32,9 @@ makedepends=(
     'util-linux'
 )
 source=(
-    "git+https://github.com/elogind/elogind.git#tag=V${_tag}"
-    elogind-255.22-revert-openrc-user.patch
+    "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
 )
-sha256sums=('24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882'
-            '948d21621d9d916006dfc8ff864b0ae54b299f00a17cf7717a77a38277d54698')
+sha256sums=('6068f9af2892390b6f7f374144868a6fa6b7402add8ef29c1d5673785f16a312')
 
 _backports=(
 )
@@ -56,8 +54,6 @@ prepare() {
         git log --oneline -1 "${_c}"
         git revert -n "${_c}"
     done
-
-    patch -Np1 -i ../elogind-255.22-revert-openrc-user.patch
 }
 
 build() {
@@ -131,6 +127,7 @@ package_elogind() {
 
     install -dm755 "${srcdir}"/_libelogind
     mv -v "${pkgdir}"/usr/lib/libelogind*.so* "${srcdir}"/_libelogind
+    mv -v "${pkgdir}"/usr/lib/libnss_elogind*.so* "${srcdir}"/_libelogind
     mv -v "${pkgdir}"/usr/lib/pkgconfig "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
@@ -150,11 +147,20 @@ package_libelogind(){
     provides=(
         'libelogind.so'
         'liblogind'
+        'libnss_elogind.so'
+        # 'nss-myhostname'
     )
+    # conflicts=(
+    #     'nss-myhostname'
+    # )
+    # replaces=(
+    #     'nss-myhostname'
+    # )
     license=('LGPL-2.1-only')
 
     install -dm755 "${pkgdir}"/usr/{lib,share/man}
     mv -v "${srcdir}"/_libelogind/libelogind*.so* "${pkgdir}"/usr/lib
+    mv -v "${srcdir}"/_libelogind/libnss_elogind*.so* "${pkgdir}"/usr/lib
     mv -v "${srcdir}"/_libelogind/pkgconfig "${pkgdir}"/usr/lib/
     mv -v "${srcdir}"/_libelogind/include "${pkgdir}"/usr/
     mv -v "${srcdir}"/_libelogind/man3 "${pkgdir}"/usr/share/man
