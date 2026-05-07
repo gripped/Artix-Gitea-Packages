@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Lukas Fleischer <lfleischer@archlinux.org>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Contributor: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
 # Contributor: Daniel Micay <danielmicay@gmail.com>
 # Contributor: simo <simo@archlinux.org>
 # Contributor: Sid Karunaratne
 
 pkgname=tor
-pkgver=0.4.9.7
+pkgver=0.4.9.8
 pkgrel=1
 pkgdesc='Anonymizing overlay network.'
 arch=('x86_64')
@@ -35,15 +34,15 @@ source=("https://dist.torproject.org/${pkgname}-${pkgver}.tar.gz"{,.sha256sum{,.
         'tor.sysusers'
         'tor.tmpfiles'
 )
-sha256sums=('5a740f32f688ac89c066345c38b47ba286b0c4394d351b251ff48b6a5394618f'
-            '2bcfcc0bb090d3a7d83f0cdcce7ede4e56e282bee71050588ffcebe040e8dcfd'
+sha256sums=('ac1f394e2dd2ab0877d27d928fd0d9e86662fe3ca6afdffb9fd9b6f0f96d05de'
+            'f0b0b952fcf79e5fe5a9444c9a5aff9b5789cd6445d47dd2274594192df2766c'
             'SKIP'
             '4067f5a6589bfaa97dd2b1a20aa73a9d3f1793bb8862c602c24b4f0cefd05dc9'
             'c5c082fd1cda30c95c40043d5be96926fa81e5388a97534373bf0ce100191ade'
             '86dccabaf769a48ffad9dffa37fcd7fbf7ef1712464ddfd12a4b43f2a680cdeb'
             '07bedb17660a3673b31b0005b6505065c90b32f2c6b28b969241da675560f926')
-b2sums=('189aa16fb2bcc2e0838aceeb3f68b43694dea580a89f0bfc27acd4ded9b3824a0c731fb3182e1e221534be9d0f2cbdd5633a4fba7d3137ed793009b39a1d571f'
-        '3a18c82a74b63c99164ca2122f4da986b7ec226d88dbbbca0209d9c0f28128507851b7cf218c1483aa6a7d4396d422fb3a05e166f823e8794a09920995c38b91'
+b2sums=('d9f2ea4231161a39ed02e832afaa224ebdf6d16ae210fac4b8e7bacc47ad8876cff4cb93f6376954b38fe1a030d88bd2accf784f89d08f0fc4b2b0940b5a1c91'
+        'a4b35c92c3fec8abf45780ac544698df77da3a0bb86ef9515e647497b4ac2c372ec36a352ea389ad7daf5a8d9696f79102e3c1ffb2cf0cdff0501341c8a9bbed'
         'SKIP'
         'cb9fbdc4bb449975bab57ad11a188ccc0462981132ab9617108d6a92f71e22448e407afc73f252fc4f3f2f6bf9e5c211abd9cdfe6514a76ff2162ef750348b90'
         '98baf96cdac36072086f48bf4701cede6cf31eee207f4a1a4cfc81b483ba53b991082aaf4ed638e50dfd67fb006bbd915af97943ab658df29dfa51ea4aa77dd2'
