@@ -19,7 +19,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -362,7 +362,7 @@ package_udev() {
         'hwdata'
         'kbd'
         'kmod'
-        'libudev'
+        "libudev=${pkgver}"
         'util-linux' #'libblkid.so'
     )
     backup=(etc/udev/iocost.conf
