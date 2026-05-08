@@ -4,7 +4,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
 pkgver=15.2.0
-pkgrel=1.12
+pkgrel=1.13
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
 arch=(x86_64)
@@ -28,7 +28,6 @@ else
 fi
 
 prepare() {
-  ls /usr/bin/x86_64-linux-gnu-gcc*
   cd $_basedir
 
   echo $pkgver > gcc/BASE-VER
@@ -53,10 +52,10 @@ build() {
   # TODO: properly deal with the build issues resulting from this
   CFLAGS=${CFLAGS/-Werror=format-security/}
   CXXFLAGS=${CXXFLAGS/-Werror=format-security/}
+  CXXFLAGS=${CXXFLAGS/-fno-char8_t/}
   unset FFLAGS FCFLAGS
 
   "$srcdir"/$_basedir/configure \
-	  CXX=g++15.2.0 CC=gcc15.2.0 \
       --prefix=/usr \
       --program-prefix=$_target- \
       --with-local-prefix=/usr/$_target \
