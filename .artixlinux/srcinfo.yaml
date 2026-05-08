@@ -1,10 +1,10 @@
 ---
-version: 1.7.2-1
+version: 1.7.2-1.1
 pkgbase:
   name: ntpd-rs
   pkgdesc: Full-featured implementation of NTP with NTS support
   pkgver: 1.7.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://docs.ntpd-rs.pendulum-project.org
   arch:
     - x86_64

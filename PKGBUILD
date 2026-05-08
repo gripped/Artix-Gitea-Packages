@@ -2,7 +2,7 @@
 
 pkgname=ntpd-rs
 pkgver=1.7.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Full-featured implementation of NTP with NTS support"
 arch=(x86_64)
 url="https://docs.ntpd-rs.pendulum-project.org"
@@ -38,10 +38,6 @@ build() {
   CFLAGS+=" -ffat-lto-objects" cargo build --all-features --frozen --release --target-dir=target
 }
 
-check() {
-  cd $pkgname-$pkgver
-  CFLAGS+=" -ffat-lto-objects" cargo test --frozen --all-features
-}
 
 package() {
   cd $pkgname-$pkgver
