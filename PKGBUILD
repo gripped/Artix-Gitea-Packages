@@ -2,8 +2,8 @@
 # Contributor: Piotr Miller <nwg.piotr@gmail.com>
 
 pkgname=nwg-hello
-pkgver=0.4.4
-pkgrel=2
+pkgver=0.4.5
+pkgrel=1
 pkgdesc="GTK3-based greeter for greetd written in python"
 url="https://github.com/nwg-piotr/nwg-hello"
 arch=('any')
@@ -13,10 +13,11 @@ makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel
 optdepends=('sway: Wayland compositor nwg-hello has been made for'
             'hyprland: Wayland compositor nwg-hello has been made for'
             'mugshot: for user avatar support')
-backup=("etc/${pkgname}/hyprland.conf" "etc/${pkgname}/sway-config")
+backup=("etc/${pkgname}/hyprland.conf"
+        "etc/${pkgname}/sway-config")
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
         "${pkgname}.tmpfiles")
-sha256sums=('5570e12dd71f0c9b6704a5504a1e906a6c03ec3007b207613fdd8695c9d51554'
+sha256sums=('9bdebcc58b9536e1238af14a7bc98de635baa811ba1494c98a7dcfa2239e02b5'
             '7f684ff594b49f22035b804659541aa7b14d046c70f50e434227dbb2d083aa1c')
 
 build() {
