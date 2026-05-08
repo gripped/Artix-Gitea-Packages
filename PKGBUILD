@@ -1,7 +1,7 @@
 # Maintainer: Evangelos Foutras <foutrelis@archlinux.org>
 
 pkgname=openmp
-pkgver=22.1.4
+pkgver=22.1.5
 pkgrel=1
 pkgdesc="LLVM OpenMP Runtime Library"
 arch=('x86_64')
@@ -14,7 +14,7 @@ optdepends=('cuda: offloading to NVIDIA GPUs'
 options=('!lto') # https://bugzilla.redhat.com/show_bug.cgi?id=1988155
 _source_base=https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver
 source=($_source_base/llvm-project-$pkgver.src.tar.xz{,.sig})
-sha256sums=('3e68c90dda630c27d41d201e37b8bbf5222e39b273dec5ca880709c69e0a07d4'
+sha256sums=('7972b87b705a003ce70ab55f9f0fb495d156887cba0eb296d284731139118e2c'
             'SKIP')
 validpgpkeys=('474E22316ABF4785A88C6E8EA2C794A986419D8A'  # Tom Stellard <tstellar@redhat.com>
               'D574BD5D1D0E98895E3BF90044F2485E45D59042'  # Tobias Hieta <tobias@hieta.se>
