@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 22.1.4-1
+    version: 22.1.5-1
     packages:
-      - lld-22.1.4-1-x86_64.pkg.tar.zst
+      - lld-22.1.5-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 22.1.3-1
