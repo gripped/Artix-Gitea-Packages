@@ -1,11 +1,12 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _tag=257.13
+_req=257
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=2
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -106,7 +107,7 @@ package_elogind() {
         'libcap.so'
         "libelogind=${pkgver}"
         'pam'
-        'udev'
+        "udev>=${_req}"
         'util-linux' 'libmount.so'
     )
     provides=(
@@ -132,18 +133,13 @@ package_elogind() {
     mv -v "${pkgdir}"/usr/lib/pkgconfig "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
-
-#     install -Dm644 /dev/stdin "${pkgdir}"/etc/elogind/sleep.conf.d/50-artix.conf <<END
-# [Sleep]
-# SuspendMode=deep s2idle
-# END
 }
 
 package_libelogind(){
     pkgdesc="elogind client libraries"
     depends+=(
         'libcap.so'
-        'libudev'
+        "libudev>=${_req}"
     )
     provides=(
         'libelogind.so'
