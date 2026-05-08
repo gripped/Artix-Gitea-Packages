@@ -1,10 +1,10 @@
 ---
-version: 3.0.1-3
+version: 3.0.1-3.1
 pkgbase:
   name: snap-pac
   pkgdesc: Pacman hooks that use snapper to create pre/post btrfs snapshots like openSUSE's YaST
   pkgver: 3.0.1
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/wesbarnett/snap-pac
   install: snap-pac.install
   arch:
