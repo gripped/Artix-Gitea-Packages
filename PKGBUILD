@@ -4,7 +4,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
 pkgver=15.2.0
-pkgrel=1.10
+pkgrel=1.11
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
 arch=(x86_64)
@@ -47,9 +47,6 @@ build() {
   CFLAGS=${CFLAGS/-pipe/}
   CXXFLAGS=${CXXFLAGS/-pipe/}
 
-  export CC=x86_64-pc-linux-gnu-gcc-15.2.0
-  export CXX=x86_64-pc-linux-gnu-g++-15.2.0
-
   # Credits @allanmcrae
   # https://github.com/allanmcrae/toolchain/blob/f18604d70c5933c31b51a320978711e4e6791cf1/gcc/PKGBUILD
   # TODO: properly deal with the build issues resulting from this
@@ -58,6 +55,7 @@ build() {
   unset FFLAGS FCFLAGS
 
   "$srcdir"/$_basedir/configure \
+	  CXX=g++-15.2.0 CC=gcc-15.2.0 \
       --prefix=/usr \
       --program-prefix=$_target- \
       --with-local-prefix=/usr/$_target \
