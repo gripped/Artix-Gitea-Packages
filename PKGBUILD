@@ -4,7 +4,7 @@
 _target=aarch64-linux-gnu
 pkgname=$_target-gcc
 pkgver=15.2.0
-pkgrel=1.14
+pkgrel=1.15
 #_snapshot=8-20190111
 pkgdesc='The GNU Compiler Collection - cross compiler for ARM64 target'
 arch=(x86_64)
@@ -52,7 +52,6 @@ build() {
   # TODO: properly deal with the build issues resulting from this
   CFLAGS=${CFLAGS/-Werror=format-security/}
   CXXFLAGS=${CXXFLAGS/-Werror=format-security/}
-  export CXXFLAGS="$CXXFLAGS -fno-char8_t -std=gnu++17"
   unset FFLAGS FCFLAGS
 
   "$srcdir"/$_basedir/configure \
@@ -74,7 +73,8 @@ build() {
       --enable-lto --enable-plugin --enable-install-libiberty \
       --with-linker-hash-style=gnu --enable-gnu-indirect-function \
       --disable-multilib --disable-werror \
-      --enable-checking=release
+      --enable-checking=release \
+  		CXXFLAGS='-O2 -pipe -std=gnu++17 -fno-char8_t'
 
   make
 }
