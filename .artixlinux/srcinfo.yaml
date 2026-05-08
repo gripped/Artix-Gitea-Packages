@@ -1,9 +1,9 @@
 ---
-version: 26.04.0-1
+version: 26.04.1-1
 pkgbase:
   name: ktrip
   pkgdesc: Public Transport Assistance for Mobile Devices
-  pkgver: 26.04.0
+  pkgver: 26.04.1
   pkgrel: 1
   url: https://apps.kde.org/ktrip/
   arch:
@@ -31,14 +31,14 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/26.04.0/src/ktrip-26.04.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.0/src/ktrip-26.04.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.1/src/ktrip-26.04.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.1/src/ktrip-26.04.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - bec1a19ba1d63b6950ade48a65b7ff814ad29eed893fc2800d9fec8edeef7cb5
+    - 80a51468c09c21b11c083d43afb695655c59ba0c4ebd996f48330b0cbaf2724c
     - SKIP
 pkgname:
   - name: ktrip
