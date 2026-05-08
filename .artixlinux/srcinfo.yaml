@@ -1,10 +1,10 @@
 ---
-version: 257.13-1
+version: 257.13-2
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
   pkgver: 257.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
@@ -50,7 +50,7 @@ pkgname:
       - dbus
       - kexec-tools
       - libcap.so
-      - libelogind
+      - libelogind=257.13
       - pam
       - udev
       - util-linux
@@ -78,5 +78,4 @@ pkgname:
     provides:
       - libelogind.so
       - liblogind
-      - libnss_elogind.so
 # generated with artixpkg 0.38.5-1-any

@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: system-gremlins
-  removeRepo: system-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,10 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 257.13-1
+    version: 257.13-2
     packages:
-      - elogind-257.13-1-x86_64.pkg.tar.zst
-      - libelogind-257.13-1-x86_64.pkg.tar.zst
+      - elogind-257.13-2-x86_64.pkg.tar.zst
+      - libelogind-257.13-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 255.22-4

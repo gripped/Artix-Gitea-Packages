@@ -5,7 +5,7 @@ _tag=257.13
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=1
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -61,6 +61,7 @@ build() {
 
     meson_options+=(
         --libexecdir=/usr/lib/elogind
+        -Dversion-tag="${pkgver}-${pkgrel}-artix"
         -Dshared-lib-tag="${pkgver}-${pkgrel}"
         -Dmode=release
 
@@ -103,7 +104,7 @@ package_elogind() {
         'dbus'
         'kexec-tools'
         'libcap.so'
-        'libelogind'
+        "libelogind=${pkgver}"
         'pam'
         'udev'
         'util-linux' 'libmount.so'
@@ -147,15 +148,7 @@ package_libelogind(){
     provides=(
         'libelogind.so'
         'liblogind'
-        'libnss_elogind.so'
-        # 'nss-myhostname'
     )
-    # conflicts=(
-    #     'nss-myhostname'
-    # )
-    # replaces=(
-    #     'nss-myhostname'
-    # )
     license=('LGPL-2.1-only')
 
     install -dm755 "${pkgdir}"/usr/{lib,share/man}
