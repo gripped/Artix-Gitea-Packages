@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 22.1.4-1
+    version: 22.1.5-1
     packages:
-      - llvm-22.1.4-1-x86_64.pkg.tar.zst
-      - llvm-libs-22.1.4-1-x86_64.pkg.tar.zst
+      - llvm-22.1.5-1-x86_64.pkg.tar.zst
+      - llvm-libs-22.1.5-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 22.1.3-1
