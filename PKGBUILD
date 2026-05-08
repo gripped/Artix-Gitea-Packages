@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 _pkgname=elogind
-_tag=255.22
+_tag=257.13
 
 pkgname=lib32-elogind
 pkgver=${_tag/-r/.}
@@ -45,9 +45,9 @@ checkdepends=(
     'python-lxml'
 )
 source=(
-    "git+https://github.com/elogind/elogind.git#tag=V${_tag}"
+    "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
 )
-sha256sums=('24589d7af71ad5a2f3c60f6f0e4d4cc92873faaccbca810bb2c29fcdf3fdc882')
+sha256sums=('6068f9af2892390b6f7f374144868a6fa6b7402add8ef29c1d5673785f16a312')
 
 
 build() {
