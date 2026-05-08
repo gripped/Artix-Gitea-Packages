@@ -2,7 +2,7 @@
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgname=xscreensaver
-pkgver=6.14
+pkgver=6.15
 pkgrel=1
 pkgdesc='Screen saver and locker for the X Window System'
 url='https://www.jwz.org/xscreensaver/'
@@ -20,6 +20,7 @@ depends=(
   libjpeg-turbo
   libjpeg.so
   libpam.so
+ 
   libx11
   libxcrypt
   libxext
@@ -42,19 +43,21 @@ makedepends=(
   gdm
   intltool
   libxpm
+  elogind
 )
 optdepends=(
   'fortune-mod: for fortune file support (can be replaced with eg misfortune)'
   'gdm: for login manager support'
   'perl-lwp-protocol-https: for https support on networked demos'
   'words: for Web Collage demo'
+  'elogind: for xscreensaver-systemd'
 )
 backup=(
   etc/pam.d/xscreensaver
 )
 source=(https://www.jwz.org/xscreensaver/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('2ef426f7ae862e7b4665014843451410e30dce8dcc16b98e94c58c0a904bba8ab9eb0f561599ea57eb68df49265171507074026784fdbff23fafeb87175e47df')
-b2sums=('2137d12232f97cf68daaa9d44bfc0a566a56afefe29cd348b72f8335a92dc391ff0d69fb50c0aa283548c64d746d49c27df20f64d7ab768ada76088240fff08b')
+sha512sums=('2a01c6c450c85e427cf2194b96d85017d3817d7e76821f36db9f643dd0c0a30b5197d431044c6a451dc3c3d74252b77e25bd8b51203a5f5c23ddef6e1bd02fb6')
+b2sums=('4d090583a92e39b154b3559fc939b0eade0c9f1fb6819fc846805ceda27e23e4f04ce6e07ca3c10f604bcc41deaa28ba7dc1cc98f693b67d1c0e2af99bdbd9fe')
 
 build() {
   cd ${pkgname}-${pkgver}
@@ -70,7 +73,8 @@ build() {
     --with-gl \
     --without-gle \
     --with-pixbuf \
-    --with-jpeg 
+    --with-jpeg \
+    --with-elogind
   make
 }
 
@@ -81,4 +85,5 @@ package() {
   install -Dm 644 debian/copyright -t "${pkgdir}/usr/share/licenses/${pkgname}"
   echo "NotShowIn=KDE;GNOME;" >> "${pkgdir}/usr/share/applications/xscreensaver-settings.desktop"
 }
+
 # vim: ts=2 sw=2 et:
