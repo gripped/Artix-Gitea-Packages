@@ -1,9 +1,9 @@
 ---
-version: 2.67-1
+version: 2.68-1
 pkgbase:
   name: perl-datetime-timezone
   pkgdesc: Time zone object base class and factory
-  pkgver: 2.67
+  pkgver: 2.68
   pkgrel: 1
   url: https://search.cpan.org/dist/DateTime-TimeZone
   arch:
@@ -19,9 +19,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.67.tar.gz
+    - https://www.cpan.org/CPAN/authors/id/D/DR/DROLSKY/DateTime-TimeZone-2.68.tar.gz
   sha256sums:
-    - 15df7c1decf2779fded1dda8ad9c3541fe858a7b276b362afb269579fc3d6b84
+    - 1c1285d911027d276f235b32a888ee7425c9ab356ee62cd126c4b3ee3ea659b3
 pkgname:
   - name: perl-datetime-timezone
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
