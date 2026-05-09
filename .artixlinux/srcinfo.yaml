@@ -36,9 +36,9 @@ pkgbase:
     - etc/s6/config/udevd.conf
     - usr/lib/sysctl.d/50-default.conf
   source:
-    - git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=29ed7027abb36c2887ba1ccb9429bc21763d904b
+    - git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=7cdb4fd0fb39568348ef800c5ce6d8de2d8d352f
   sha256sums:
-    - b430ecbeaa54a17c7637287b2ef3a77a4398839dbdb38dfac021e392e97e7396
+    - b3581cffd5f1e1f098802a63d7be1f11021e03f700f0f6a2aedd2ff450d7456a
 pkgname:
   - name: s6-scripts
 # generated with artixpkg 0.38.5-1-any

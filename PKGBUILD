@@ -23,9 +23,9 @@ backup=('etc/s6/rc.local'
         'etc/s6/config/mount-tmpfs.conf'
         'etc/s6/config/udevd.conf'
         'usr/lib/sysctl.d/50-default.conf')
-_commit=29ed7027abb36c2887ba1ccb9429bc21763d904b
+_commit=7cdb4fd0fb39568348ef800c5ce6d8de2d8d352f
 source=("git+$url.git#commit=$_commit")
-sha256sums=('b430ecbeaa54a17c7637287b2ef3a77a4398839dbdb38dfac021e392e97e7396')
+sha256sums=('b3581cffd5f1e1f098802a63d7be1f11021e03f700f0f6a2aedd2ff450d7456a')
 
 package() {
   cd "${pkgname}"
