@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-3
+version: 0.7.0-1
 pkgbase:
   name: libopenshot
   pkgdesc: A video editing, animation, and playback library for C++, Python, and Ruby
-  pkgver: 0.5.0
-  pkgrel: 3
+  pkgver: 0.7.0
+  pkgrel: 1
   url: https://github.com/openshot/libopenshot
   arch:
     - x86_64
@@ -26,38 +26,34 @@ pkgbase:
     - zeromq
   depends:
     - babl
-    - gcc-libs
+    - libgomp
+    - libstdc++
+    - libgcc
     - glibc
     - libmagick
     - opencv
     - python
-    - resvg
     - qt5-base
-    - qt6-base
-    - qt5-multimedia
-    - qt5-svg
   provides:
     - libopenshot.so
   source:
-    - https://github.com/openshot/libopenshot/archive/v0.5.0/libopenshot-0.5.0.tar.gz
+    - https://github.com/openshot/libopenshot/archive/v0.7.0/libopenshot-0.7.0.tar.gz
   sha512sums:
-    - 6a19717ed9f1602e0c3737a69b7664de0a36f837e2cbcf3d9275b28001306ea75bc0cd45306221d5134913ac1173ee764e74a321e07045eca177d52355a70dd9
+    - d36ad17e65534c890358ea7a12b039e94296327341835f39c5d76d257f5be5e8f874124b51005cd710cfc668a44dd898f63de2c674544d30b5a9d012273f56ce
   b2sums:
-    - e667138e67debeb0161ac221744009f5112abdcd10689a14195fd21319874000c5fde3d69ea10900ddec71f21f991657e867929486b87fde78928a42a0597dbb
+    - 3c11f13d881b798e173c685f20700a2e060606a852834905547d971a569d85ccd7951753f4de2d119caebfacd1917df30c8038c6b69f3c9d31560c92e9b361d4
 pkgname:
   - name: libopenshot
     depends:
       - babl
-      - gcc-libs
+      - libgomp
+      - libstdc++
+      - libgcc
       - glibc
       - libmagick
       - opencv
       - python
-      - resvg
       - qt5-base
-      - qt6-base
-      - qt5-multimedia
-      - qt5-svg
       - ffmpeg4.4
       - libavcodec.so
       - libavformat.so
@@ -72,4 +68,4 @@ pkgname:
       - libprotobuf.so
       - zeromq
       - libzmq.so
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any

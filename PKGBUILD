@@ -1,4 +1,5 @@
-# Maintainer: Rafael Dominiquini <rafaeldominiquini at gmail dot com>
+# Maintainer:
+# Contributor: Rafael Dominiquini <rafaeldominiquini at gmail dot com>
 # Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Martin Wimpress <code@flexion.org>
@@ -6,25 +7,22 @@
 # Contributor: Jonathan Thomas <jonathan@openshot.org>
 
 pkgname=libopenshot
-pkgver=0.5.0
-pkgrel=3
+pkgver=0.7.0
+pkgrel=1
 pkgdesc="A video editing, animation, and playback library for C++, Python, and Ruby"
 arch=(x86_64)
 url="https://github.com/openshot/libopenshot"
 license=(LGPL-3.0-or-later)
-# TODO: package cppzmq and resvg
 depends=(
   babl
-  gcc-libs
+  libgomp
+  libstdc++
+  libgcc
   glibc
   libmagick
   opencv
   python
-  resvg
   qt5-base
-  qt6-base
-  qt5-multimedia
-  qt5-svg
 )
 makedepends=(
   catch2
@@ -43,8 +41,8 @@ makedepends=(
 )
 provides=(libopenshot.so)
 source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha512sums=('6a19717ed9f1602e0c3737a69b7664de0a36f837e2cbcf3d9275b28001306ea75bc0cd45306221d5134913ac1173ee764e74a321e07045eca177d52355a70dd9')
-b2sums=('e667138e67debeb0161ac221744009f5112abdcd10689a14195fd21319874000c5fde3d69ea10900ddec71f21f991657e867929486b87fde78928a42a0597dbb')
+sha512sums=('d36ad17e65534c890358ea7a12b039e94296327341835f39c5d76d257f5be5e8f874124b51005cd710cfc668a44dd898f63de2c674544d30b5a9d012273f56ce')
+b2sums=('3c11f13d881b798e173c685f20700a2e060606a852834905547d971a569d85ccd7951753f4de2d119caebfacd1917df30c8038c6b69f3c9d31560c92e9b361d4')
 
 prepare() {
 # protobuf 23 requiers C++17
