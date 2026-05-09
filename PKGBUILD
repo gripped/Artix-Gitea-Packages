@@ -1,14 +1,14 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-portable-utils
-pkgver=2.3.1.1
-pkgrel=2
+pkgver=2.3.1.2
+pkgrel=1
 pkgdesc='Tiny portable generic utilities.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-portable-utils/'
 license=('ISC')
 depends=('skalibs')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('cf08d71963c0ea1708cdd82bd40ad301154bccc59b68eefb428aa79b42273242')
+sha256sums=('cfb90186d0c0eb204e1e5c6f9379e99413c546bccf38bb6e76177f82371aa3aa')
 build() {
   cd ${pkgname}-${pkgver}
   ./configure --prefix=/usr \
