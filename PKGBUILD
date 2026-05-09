@@ -1,0 +1,31 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: T.J. Townsend <blakkheim@archlinux.org>
+# Contributor: Kyle Keen <keenerd@gmail.com>
+# Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
+# Contributor: Hannes Rist <hrist@phreeknet.org>
+
+pkgname=mg
+pkgver=20260227
+pkgrel=1
+pkgdesc="Micro GNU/emacs"
+arch=('x86_64')
+url="https://github.com/hboetes/mg"
+makedepends=('git')
+depends=('ncurses' 'libbsd')
+license=('custom')
+source=("git+https://github.com/hboetes/mg.git#tag=${pkgver}")
+sha256sums=('a9a761559565baed502646f09cd9d3669d3a807285fd6b234ebb373dec645168')
+
+build() {
+  cd mg
+  make prefix=/usr mandir=/usr/share/man
+}
+
+package() {
+  cd mg
+
+  make install INSTALL=install prefix=/usr mandir=/usr/share/man DESTDIR="$pkgdir" BINDIR=/usr/bin
+
+  install -Dm644 README -t "$pkgdir/usr/share/licenses/$pkgname"
+  install -Dm644 tutorial -t "$pkgdir/usr/share/doc/$pkgname"
+}

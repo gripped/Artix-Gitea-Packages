@@ -1,0 +1,24 @@
+---
+version: 20260227-1
+pkgbase:
+  name: mg
+  pkgdesc: Micro GNU/emacs
+  pkgver: 20260227
+  pkgrel: 1
+  url: https://github.com/hboetes/mg
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - git
+  depends:
+    - ncurses
+    - libbsd
+  source:
+    - git+https://github.com/hboetes/mg.git#tag=20260227
+  sha256sums:
+    - a9a761559565baed502646f09cd9d3669d3a807285fd6b234ebb373dec645168
+pkgname:
+  - name: mg
+# generated with artixpkg 0.38.5-1-any
