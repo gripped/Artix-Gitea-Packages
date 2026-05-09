@@ -1,10 +1,10 @@
 ---
-version: 0.0.7.1-2
+version: 0.0.7.2-1
 pkgbase:
   name: tipidee
   pkgdesc: A small and fast HTTP/1.1 server.
-  pkgver: 0.0.7.1
-  pkgrel: 2
+  pkgver: 0.0.7.2
+  pkgrel: 1
   url: https://skarnet.org/software/tipidee/
   arch:
     - x86_64
@@ -18,9 +18,9 @@ pkgbase:
   provides:
     - libtipidee.so
   source:
-    - https://skarnet.org/software/tipidee/tipidee-0.0.7.1.tar.gz
+    - https://skarnet.org/software/tipidee/tipidee-0.0.7.2.tar.gz
   sha256sums:
-    - 6a1e49c2f0af5aa44db8edec2b9294c4f5cf68b83a78319ab49904f8a52feb73
+    - c77e12b7db3fdc56dc23db379dca668616e742603fe867fa2bdc8d4f1aca8f9b
 pkgname:
   - name: tipidee
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
