@@ -1,10 +1,10 @@
 ---
-version: 3.60.1-1
+version: 3.60.1-2
 pkgbase:
   name: evolution
   pkgdesc: Manage your email, contacts and schedule
   pkgver: 3.60.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/evolution/-/wikis/home
   arch:
     - x86_64
