@@ -1,10 +1,10 @@
 ---
-version: 6.11.0-3
+version: 6.11.0-4
 pkgbase:
   name: qt6-base
   pkgdesc: A cross-platform application and UI framework
   pkgver: 6.11.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.qt.io
   arch:
     - x86_64
@@ -39,7 +39,6 @@ pkgbase:
     - double-conversion
     - fontconfig
     - freetype2
-    - gcc-libs
     - glib2
     - glibc
     - harfbuzz
@@ -48,6 +47,7 @@ pkgbase:
     - libb2
     - libcups
     - libdrm
+    - libgcc
     - libgl
     - libice
     - libinput
@@ -55,6 +55,7 @@ pkgbase:
     - libpng
     - libproxy
     - libsm
+    - libstdc++
     - liburing
     - libx11
     - libxcb
@@ -105,7 +106,6 @@ pkgname:
       - double-conversion
       - fontconfig
       - freetype2
-      - gcc-libs
       - glib2
       - glibc
       - harfbuzz
@@ -114,6 +114,7 @@ pkgname:
       - libb2
       - libcups
       - libdrm
+      - libgcc
       - libgl
       - libice
       - libinput
@@ -121,6 +122,7 @@ pkgname:
       - libpng
       - libproxy
       - libsm
+      - libstdc++
       - liburing
       - libx11
       - libxcb
