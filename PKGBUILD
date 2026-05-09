@@ -1,0 +1,44 @@
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Jonas Witschel <diabonas@archlinux.org>
+
+pkgname=helvum
+pkgver=0.6.1
+pkgrel=1
+pkgdesc='GTK patchbay for PipeWire'
+arch=(x86_64)
+url='https://gitlab.freedesktop.org/pipewire/helvum'
+license=(GPL-3.0-only)
+depends=(
+  cairo
+  gdk-pixbuf2
+  glib2
+  glibc
+  graphene
+  gtk4
+  hicolor-icon-theme
+  libadwaita
+  libgcc
+  libpipewire
+  pango
+  pipewire
+)
+makedepends=(
+  appstream-glib
+  cargo
+  clang
+  meson
+)
+# LTO suddenly breaks linking stage: https://gitlab.freedesktop.org/pipewire/helvum/-/issues/111
+options=(!lto)
+source=($url/-/archive/$pkgver/helvum-$pkgver.tar.gz)
+sha512sums=('11a589b4180e71e437a695c3cb6a0584c571c8e1e61441b05fdc597ce7c0befa8a98f531507027d4aa24b07da3cee3c6fe0711768be580975afcb5541b173fbd')
+b2sums=('15aed8383cffc767f3e1858a32a6d216c397db85fdd3e00e4ad2315c3bb72256cc626b5fb446b383025f225027915b473c2907fbc7c9df6ff26eaa928cab0afc')
+
+build() {
+  artix-meson "$pkgname-$pkgver" build
+  meson compile -C build
+}
+
+package() {
+  meson install -C build --destdir "$pkgdir"
+}
