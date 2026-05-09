@@ -1,10 +1,10 @@
 ---
-version: 0.1-1
+version: 0.1-2
 pkgbase:
   name: chcgs
   pkgdesc: Daemonless and painless management of Linux cgroups
   pkgver: 0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://codeberg.org/Capezotte/chcgs
   arch:
     - x86_64

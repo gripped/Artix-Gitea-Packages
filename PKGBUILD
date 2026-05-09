@@ -2,7 +2,7 @@
 
 pkgname=chcgs
 pkgver=0.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Daemonless and painless management of Linux cgroups"
 arch=(x86_64)
 url="https://codeberg.org/Capezotte/chcgs"
