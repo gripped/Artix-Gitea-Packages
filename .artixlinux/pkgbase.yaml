@@ -1,21 +1,21 @@
 ---
 actions:
-  addRepo: system-goblins
-  removeRepo: null
+  addRepo: system-gremlins
+  removeRepo: system-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+    debug: []
+  system-gremlins:
     version: 4.0-1
     packages:
       - nettle-4.0-1-x86_64.pkg.tar.zst
-    debug: []
-  system-gremlins:
-    version: null
-    packages: []
     debug: []
   system:
     version: 3.10.2-1
