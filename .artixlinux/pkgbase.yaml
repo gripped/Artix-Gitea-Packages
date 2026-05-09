@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.9.3970.60-1
+    version: 7.9.3970.64-1
     packages:
-      - vivaldi-7.9.3970.60-1-x86_64.pkg.tar.zst
+      - vivaldi-7.9.3970.64-1-x86_64.pkg.tar.zst
     debug: []
