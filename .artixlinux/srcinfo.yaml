@@ -1,10 +1,10 @@
 ---
-version: 43.0-7
+version: 43.0-8
 pkgbase:
   name: endeavour
   pkgdesc: Personal task manager (Formerly GNOME Todo)
   pkgver: 43.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://wiki.gnome.org/Apps/Todo
   arch:
     - x86_64
@@ -48,4 +48,4 @@ pkgbase:
     - 6a0dbe20ebf7b29a0ed573317decb32bf8d61f7512eedc3190dde7128370adf1c0658a2a6cbd6c4637519fed93debc3358c74f49cb40ba53c860dff94d55e6bc
 pkgname:
   - name: endeavour
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
