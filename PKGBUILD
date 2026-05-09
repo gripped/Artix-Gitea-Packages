@@ -3,13 +3,13 @@
 
 pkgname=lld
 pkgver=22.1.5
-pkgrel=1
+pkgrel=3
 pkgdesc="Linker from the LLVM project"
 arch=('x86_64')
 url="https://lld.llvm.org/"
 license=('Apache-2.0 WITH LLVM-exception')
 depends=('llvm-libs' 'libstdc++' 'glibc' 'zlib' 'zstd' )
-makedepends=('llvm' 'cmake' 'ninja' 'python-sphinx')
+makedepends=('llvm' 'cmake' 'ninja' 'python-sphinx' 'clang')
 _source_base=https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver
 source=($_source_base/llvm-project-$pkgver.src.tar.xz{,.sig})
 sha256sums=('7972b87b705a003ce70ab55f9f0fb495d156887cba0eb296d284731139118e2c'
@@ -27,6 +27,9 @@ prepare() {
 
 build() {
   cd llvm-project-$pkgver.src/lld/build
+
+  export CC=clang
+  export CXX=clang++
 
   local cmake_args=(
     -G Ninja
