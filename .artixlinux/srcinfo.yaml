@@ -1,9 +1,9 @@
 ---
-version: 2.9.9.0-1
+version: 2.9.9.1-1
 pkgbase:
   name: execline
   pkgdesc: A small scripting language, to be used in place of a shell in non-interactive scripts.
-  pkgver: 2.9.9.0
+  pkgver: 2.9.9.1
   pkgrel: 1
   url: https://skarnet.org/software/execline
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   provides:
     - libexecline.so
   source:
-    - https://skarnet.org/software/execline/execline-2.9.9.0.tar.gz
+    - https://skarnet.org/software/execline/execline-2.9.9.1.tar.gz
   sha256sums:
-    - 1f628b670eb47fef9e05224ea56eb736007457cb6ccc0cefd37f0bfde61a02ae
+    - be63533297a93c36fd267195117b4e668687a526f834517a8db47d85b6c7ec6a
 pkgname:
   - name: execline
 # generated with artixpkg 0.38.5-1-any
