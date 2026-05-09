@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 0.6.1.0-1
+    version: 0.6.1.1-1
     packages:
-      - s6-rc-0.6.1.0-1-x86_64.pkg.tar.zst
+      - s6-rc-0.6.1.1-1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null

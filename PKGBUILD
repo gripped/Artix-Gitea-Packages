@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-rc
-pkgver=0.6.1.0
+pkgver=0.6.1.1
 pkgrel=1
 pkgdesc='A complete service manager for s6 systems.'
 arch=('x86_64')
@@ -10,7 +10,7 @@ depends=('s6' 'libs6.so')
 provides=('libs6rc.so')
 makedepends=('git')
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('6878e024341396364f75bbc5fd7a09c04864de7a2199bc98bd78200272502954')
+sha256sums=('b54f226a35be1ee56a228bf1a4c39437f072bc64e69dbf356e733e606a86402d')
 
 build() {
   cd ${pkgname}-${pkgver}
