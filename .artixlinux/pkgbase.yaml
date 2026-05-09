@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,16 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 5.86-6
+    packages:
+      - bluez-5.86-6-x86_64.pkg.tar.zst
+      - bluez-utils-5.86-6-x86_64.pkg.tar.zst
+      - bluez-libs-5.86-6-x86_64.pkg.tar.zst
+      - bluez-cups-5.86-6-x86_64.pkg.tar.zst
+      - bluez-deprecated-tools-5.86-6-x86_64.pkg.tar.zst
+      - bluez-hid2hci-5.86-6-x86_64.pkg.tar.zst
+      - bluez-mesh-5.86-6-x86_64.pkg.tar.zst
+      - bluez-obex-5.86-6-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
