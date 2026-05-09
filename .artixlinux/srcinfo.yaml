@@ -1,9 +1,9 @@
 ---
-version: 20260327-1
+version: 20260509-1
 pkgbase:
   name: s6-scripts
   pkgdesc: A collection of essential s6-rc oneshots and longruns for startup/shutdown.
-  pkgver: 20260327
+  pkgver: 20260509
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/s6-scripts
   arch:
@@ -36,9 +36,9 @@ pkgbase:
     - etc/s6/config/udevd.conf
     - usr/lib/sysctl.d/50-default.conf
   source:
-    - git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=e5f8d83358d9c61dbc79117d96d4fa2221ece076
+    - git+https://gitea.artixlinux.org/artix/s6-scripts.git#commit=29ed7027abb36c2887ba1ccb9429bc21763d904b
   sha256sums:
-    - 91671e8d2c749c70c1c589600e91f55912af77fcfa9f9eb4d21facab8184b2ff
+    - b430ecbeaa54a17c7637287b2ef3a77a4398839dbdb38dfac021e392e97e7396
 pkgname:
   - name: s6-scripts
-# generated with artixpkg 0.38.3-1-any
+# generated with artixpkg 0.38.5-1-any
