@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy-gremlins
+  removeRepo: galaxy-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,6 +45,10 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
+    version: null
+    packages: []
+    debug: []
+  galaxy-gremlins:
     version: 21.1.22-2
     packages:
       - xorg-server-21.1.22-2-x86_64.pkg.tar.zst
@@ -54,10 +58,6 @@ repos:
       - xorg-server-common-21.1.22-2-x86_64.pkg.tar.zst
       - xorg-server-devel-21.1.22-2-x86_64.pkg.tar.zst
       - xorg-server-src-21.1.22-2-x86_64.pkg.tar.zst
-    debug: []
-  galaxy-gremlins:
-    version: null
-    packages: []
     debug: []
   galaxy:
     version: 21.1.22-1
