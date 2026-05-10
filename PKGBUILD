@@ -38,6 +38,7 @@ makedepends=(
   unittestpp
   xorg-server-xvfb
   zeromq
+  qt5-svg
 )
 provides=(libopenshot.so)
 source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)

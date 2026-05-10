@@ -24,6 +24,7 @@ pkgbase:
     - unittestpp
     - xorg-server-xvfb
     - zeromq
+    - qt5-svg
   depends:
     - babl
     - libgomp
