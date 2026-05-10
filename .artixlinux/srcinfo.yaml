@@ -1,9 +1,9 @@
 ---
-version: 2026.03.27-1
+version: 2026.05.10-1
 pkgbase:
   name: zathura
   pkgdesc: Minimalistic document viewer
-  pkgver: 2026.03.27
+  pkgver: 2026.05.10
   pkgrel: 1
   url: https://pwmt.org/projects/zathura/
   arch:
@@ -13,6 +13,7 @@ pkgbase:
   checkdepends:
     - xorg-server-xvfb
     - weston
+    - libdisplay-info
   makedepends:
     - appstream
     - python-sphinx
@@ -36,9 +37,9 @@ pkgbase:
     - 'zathura-ps: PostScript support'
     - 'zathura-cb: Comic book support'
   source:
-    - zathura-2026.03.27.tar.gz::https://github.com/pwmt/zathura/archive/refs/tags/2026.03.27.tar.gz
+    - zathura-2026.05.10.tar.gz::https://github.com/pwmt/zathura/archive/refs/tags/2026.05.10.tar.gz
   sha512sums:
-    - e3d045271b4c015ecc399cd945764f1883e45c127f4b9dda402c8bbf4cc9ddd38c4342c1a66a86b1b06ef3e7330c1773ff3cdbc7bd82e8243748413f1fb98d6c
+    - df99b45c20f2a6411d44c57ae437d3f1764a2f1990efa9c7f7cfff1d965b2657fbdb5fd78a3355e70d4b0bb2f7d4dceb05ddaf1a0fcc89f82f2d0d9d2f0a223e
 pkgname:
   - name: zathura
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
