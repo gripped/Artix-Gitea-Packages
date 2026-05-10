@@ -1,9 +1,9 @@
 ---
-version: 25.1.5-4
+version: 25.1.5-5
 pkgbase:
   name: xlibre-xserver-beta
   pkgver: 25.1.5
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/X11Libre/xserver
   arch:
     - x86_64

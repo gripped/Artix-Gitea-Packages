@@ -4,7 +4,7 @@ pkgbase=xlibre-xserver-beta
 _pkgbase=xlibre-xserver
 pkgname=($_pkgbase-beta $_pkgbase-xephyr-beta $_pkgbase-xvfb-beta $_pkgbase-xnest-beta $_pkgbase-common-beta $_pkgbase-devel-beta $_pkgbase-src-beta)
 pkgver=25.1.5
-pkgrel=4
+pkgrel=5
 arch=(x86_64 aarch64)
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause' 
