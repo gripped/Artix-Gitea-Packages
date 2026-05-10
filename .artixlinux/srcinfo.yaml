@@ -1,9 +1,9 @@
 ---
-version: 3.27.0-1
+version: 3.28.1-1
 pkgbase:
   name: python-aiogram
   pkgdesc: A modern and fully asynchronous framework for Telegram Bot API
-  pkgver: 3.27.0
+  pkgver: 3.28.1
   pkgrel: 1
   url: https://github.com/aiogram/aiogram
   arch:
@@ -15,6 +15,7 @@ pkgbase:
     - python-aiohttp-socks
     - python-aresponses
     - python-babel
+    - python-cryptography
     - python-motor
     - python-pycryptodomex
     - python-pymongo
@@ -25,6 +26,7 @@ pkgbase:
     - python-redis
     - valkey
   makedepends:
+    - git
     - python-build
     - python-hatchling
     - python-installer
@@ -34,9 +36,9 @@ pkgbase:
     - python-aiofiles
     - python-aiohttp
     - python-certifi
-    - python-cryptography
     - python-magic-filter
     - python-pydantic
+    - python-typing_extensions
   optdepends:
     - 'python-uvloop: fast, drop-in replacement of the built-in asyncio event loop'
     - 'python-ujson: ultra fast JSON encoder and decoder written in pure C'
@@ -46,10 +48,11 @@ pkgbase:
     - 'python-aiohttp-socks: SOCKS4(a) and SOCKS5 proxy support'
     - 'python-motor: MongoDB storage support'
     - 'python-babel: i18n support'
+    - 'python-cryptography: webhook signature verification support'
   source:
-    - https://github.com/aiogram/aiogram/archive/v3.27.0/python-aiogram-3.27.0.tar.gz
+    - git+https://github.com/aiogram/aiogram.git#tag=v3.28.1
   b2sums:
-    - b5e0b4c214ed517d375ab061d366705c646577aea20c8d8531f0e37855e9ad35bceae204bd34a7c1b0d547fe466df74133f0d1ab1b64fc2be048a55a83d0c74b
+    - 6645904a4d2d6f0244e9105cf5fd7dfd5b772564587938a9d12d8d0ec22bc73d4833c0135db337a495f8258f7794a2b73d8d515ee884135caa8f18e624c52754
 pkgname:
   - name: python-aiogram
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
