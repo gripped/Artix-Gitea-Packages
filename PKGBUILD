@@ -3,8 +3,8 @@
 # Contributor: Marcell Pardavi <marcell.pardavi@gmail.com>
 
 pkgname=zed
-pkgver=1.1.6
-pkgrel=1
+pkgver=1.1.7
+pkgrel=2
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
 url=https://zed.dev
@@ -47,7 +47,7 @@ optdepends=('clang: improved C/C++ language support'
 replaces=(zed-editor)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('ba2eb5735109dba11805a04a697ced6c1a82d4cdb9db4425bc186780574499bb')
+sha256sums=('8b84b3dbae140addef9070ef3d0ebbf6f42e8826383f890b50aff1b094bc59b7')
 
 _binname=zeditor
 _appid=dev.zed.Zed
@@ -97,5 +97,5 @@ package() {
 	install -Dm0755 target/release/cli "$pkgdir/usr/bin/$_binname"
 	install -Dm0755 target/release/zed "$pkgdir/usr/lib/$pkgname/zed-editor"
 	install -Dm0644 -t "$pkgdir/usr/share/applications/" "$_appid.desktop"
-	install -Dm0644 crates/zed/resources/app-icon.png "$pkgdir/usr/share/icons/$pkgname.png"
+	install -Dm0644 crates/zed/resources/app-icon.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/$pkgname.png"
 }
