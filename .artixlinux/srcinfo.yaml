@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-1
+version: 2.4.1-1
 pkgbase:
   name: python-poetry
   pkgdesc: Python dependency management and packaging made easy
-  pkgver: 2.4.0
+  pkgver: 2.4.1
   pkgrel: 1
   url: https://python-poetry.org
   arch:
@@ -54,9 +54,9 @@ pkgbase:
   provides:
     - poetry
   source:
-    - https://github.com/python-poetry/poetry/archive/2.4.0/poetry-2.4.0.tar.gz
+    - https://github.com/python-poetry/poetry/archive/2.4.1/poetry-2.4.1.tar.gz
   sha256sums:
-    - 7bd6db257a00ebafe149cf5fe0ef8cd3ee05b5bdf19d74d65748ac56a46fe429
+    - 93a189a01f6cb812d12b9bc9b64733b05c89deb915aff67c35bf07894967c1af
 pkgname:
   - name: python-poetry
 # generated with artixpkg 0.38.5-1-any
