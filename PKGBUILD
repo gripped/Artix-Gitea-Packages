@@ -10,7 +10,7 @@
 
 pkgver=42.0.1
 _gcc_patches=148
-pkgrel=1.1
+pkgrel=1.2
 _major_ver=${pkgver%%.*}
 pkgname="electron${_major_ver}"
 pkgdesc='Build cross platform desktop apps with web technologies'
@@ -53,9 +53,8 @@ makedepends=(clang
              rust-bindgen
              wget
              yarn)
-optdepends=('kde-cli-tools: file deletion support (kioclient5)'
+optdepends=('kde-cli-tools: file deletion support (kioclient)'
             'pipewire: WebRTC desktop sharing under Wayland'
-            'qt5-base: enable Qt5 with --enable-features=AllowQt'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
             'trash-cli: file deletion support (trash-put)'
             'xdg-utils: open URLs with desktop’s default (xdg-email, xdg-open)')
