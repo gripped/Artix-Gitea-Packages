@@ -4,7 +4,7 @@
 
 pkgname=libical
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="An open source reference implementation of the icalendar data type and serialization format"
 arch=(x86_64)
 url='https://github.com/libical/libical'
@@ -26,8 +26,13 @@ checkdepends=(python-gobject)
 source=(git+https://github.com/libical/libical#tag=v$pkgver)
 sha512sums=('cfbb6ee330017b17f4165885764e311e6661402284a5b49d08a67b73eeae15a40782f0a15bcc3bcf6af5273778893e964d2106beafb308049b7fcc59769ac9ea')
 
+prepare() {
+  cd $pkgname
+  git cherry-pick -n 79fda0e985dd0380a217f79add4d09d644d3de87 # Fix tests in gnome-calendar
+}
+
 build() {
-  cmake -S ${pkgname} -B build \
+  cmake -S $pkgname -B build \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBEXECDIR=lib \
