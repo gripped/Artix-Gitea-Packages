@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-settings-daemon
-pkgver=49.0
+pkgver=50.1
 pkgrel=1
 pkgdesc="GNOME Settings Daemon"
 url="https://gitlab.gnome.org/GNOME/gnome-settings-daemon"
@@ -16,7 +16,6 @@ depends=(
   bash
   dconf
   fontconfig
-  gcc-libs
   gcr-4
   geoclue
   geocode-glib-2
@@ -28,6 +27,7 @@ depends=(
   libcanberra-pulse
   libcolord
   libcups
+  libgcc
   libgudev
   libgweather-4
   libmm-glib
@@ -63,7 +63,7 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#tag=${pkgver/[a-z]/.&}"
   "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git"
 )
-b2sums=('87acacd2b77f527811384665a2a29d3ab67656dd9e800c37168dab4db478825afe967442ebbbe146f4f9c54f9c256d1c9e2f8010a49b8bc0ec1b5f655a96d41d'
+b2sums=('0b410617b89c8b3956086cecdd66704c73d3e57c64888a5c510d6eb4c43efa112c578a0cf2eda1e9729e631ac7f6201dcd2cd3c97eddb15ec316ba6bba55887e'
         'SKIP')
 
 prepare() {

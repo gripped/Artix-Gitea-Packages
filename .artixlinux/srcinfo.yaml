@@ -1,9 +1,9 @@
 ---
-version: 49.0-1
+version: 50.1-1
 pkgbase:
   name: gnome-settings-daemon
   pkgdesc: GNOME Settings Daemon
-  pkgver: 49.0
+  pkgver: 50.1
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gnome-settings-daemon
   arch:
@@ -30,7 +30,6 @@ pkgbase:
     - bash
     - dconf
     - fontconfig
-    - gcc-libs
     - gcr-4
     - geoclue
     - geocode-glib-2
@@ -42,6 +41,7 @@ pkgbase:
     - libcanberra-pulse
     - libcolord
     - libcups
+    - libgcc
     - libgudev
     - libgweather-4
     - libmm-glib
@@ -60,11 +60,11 @@ pkgbase:
   backup:
     - etc/xdg/Xwayland-session.d/00-xrdb
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#tag=49.0
+    - git+https://gitlab.gnome.org/GNOME/gnome-settings-daemon.git#tag=50.1
     - git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
   b2sums:
-    - 87acacd2b77f527811384665a2a29d3ab67656dd9e800c37168dab4db478825afe967442ebbbe146f4f9c54f9c256d1c9e2f8010a49b8bc0ec1b5f655a96d41d
+    - 0b410617b89c8b3956086cecdd66704c73d3e57c64888a5c510d6eb4c43efa112c578a0cf2eda1e9729e631ac7f6201dcd2cd3c97eddb15ec316ba6bba55887e
     - SKIP
 pkgname:
   - name: gnome-settings-daemon
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
