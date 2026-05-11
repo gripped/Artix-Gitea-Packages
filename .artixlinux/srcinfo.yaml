@@ -1,0 +1,43 @@
+---
+version: 1.5-3
+pkgbase:
+  name: caja-gtkhash
+  pkgdesc: A GTK+ utility for computing message digests or checksums (Gtkhash with Caja filemanager plugin)
+  pkgver: 1.5
+  pkgrel: 3
+  url: https://github.com/tristanheaven/gtkhash
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - appstream-glib
+    - intltool
+    - librsvg
+    - meson
+    - xdg-utils
+  depends:
+    - caja
+    - dconf
+    - gtk3
+    - libb2
+    - libgcrypt
+    - nettle
+  provides:
+    - gtkhash
+    - gtkhash-caja
+  conflicts:
+    - gtkhash
+    - gtkhash-caja
+    - gtkhash-nautilus
+    - gtkhash-nemo
+    - gtkhash-thunar
+  replaces:
+    - caja-gtkhash
+  source:
+    - https://github.com/tristanheaven/gtkhash/releases/download/v1.5/gtkhash-1.5.tar.xz
+  sha256sums:
+    - 7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005
+pkgname:
+  - name: caja-gtkhash
+# generated with artixpkg 0.38.5-1-any
