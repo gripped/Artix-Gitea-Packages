@@ -24,8 +24,8 @@ makedepends=(
 provides=(
   gtkhash
   gtkhash-caja
+  ${pkgname}
 )
-replaces=(caja-gtkhash)
 conflicts=(
   gtkhash
   gtkhash-caja
@@ -33,11 +33,17 @@ conflicts=(
   gtkhash-nemo
   gtkhash-thunar
 )
-source=("${url}/releases/download/v$pkgver/gtkhash-$pkgver.tar.xz")
-sha256sums=('7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005')
+replaces=(caja-gtkhash)
+source=("${url}/releases/download/v$pkgver/gtkhash-$pkgver.tar.xz"
+nettle4.patch)
+sha256sums=('7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005'
+            '74bea0d9917f9b034c32e4d6d8a8d1764bf6fffef19af3467b9c21543cb1da94')
 
 prepare() {
+  pwd
+  ls -l
   mkdir -p plugins
+  patch -p0 -i nettle4.patch
 }
 
 build() {
@@ -53,7 +59,6 @@ build() {
 }
 
 check() {
-
   desktop-file-validate build/data/*.desktop
   appstream-util validate-relax --nonet build/data/appdata/*.appdata.xml
   appstream-util validate-relax --nonet build/data/appdata/*.metainfo.xml
@@ -63,11 +68,4 @@ check() {
 package() {
 
   meson install -C build --destdir "$pkgdir"
-
-  install -Dm644 build/data/appdata/org.gtkhash.caja.metainfo.xml -t \
-    "$pkgdir/usr/share/metainfo/"
-  install -Dm644 build/data/caja/libgtkhash-properties-caja.caja-extension -t \
-    "$pkgdir/usr/share/caja/extensions/"
-  install -Dm644 plugins/caja/extensions-2.0/libgtkhash-properties-caja.so -t \
-    "$pkgdir/usr/lib/caja/extensions-2.0/"
 }
