@@ -8,8 +8,8 @@ pkgname=(
   gnome-shell
   gnome-shell-docs
 )
-pkgver=49.0
-pkgrel=1
+pkgver=50.1
+pkgrel=2
 epoch=1
 pkgdesc="Next generation desktop shell"
 url="https://gitlab.gnome.org/GNOME/gnome-shell"
@@ -21,7 +21,6 @@ depends=(
   bash
   cairo
   dconf
-  gcc-libs
   gcr-4
   gdk-pixbuf2
   gjs
@@ -35,9 +34,11 @@ depends=(
   gsettings-desktop-schemas
   gtk4
   hicolor-icon-theme
+  ibus
   json-glib
   libadwaita
   libcanberra-pulse
+  libgcc
   libgdm
   libglvnd
   libgweather-4
@@ -75,18 +76,23 @@ makedepends=(
 source=(
   # GNOME Shell tags use SSH signatures which makepkg doesn't understand
   "git+https://gitlab.gnome.org/GNOME/gnome-shell.git#tag=${pkgver/[a-z]/.&}"
-  "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git#commit=5f9768a2eac29c1ed56f1fbb449a77a3523683b6"
+  "git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git#commit=d2442f455844e5292cb4a74ffc66ecc8d7595a9f"
   "git+https://github.com/ptomato/jasmine-gjs.git#commit=856465dddbd92e82e574891e1ebc79e17d7b708a"
-  "git+https://gitlab.gnome.org/GNOME/libshew.git#commit=ed782477cb5164320ae4f731d49bc5d475ab2a52"
+  "git+https://gitlab.gnome.org/GNOME/libshew.git#commit=d16afc40412b565d2bbecf80335f54a19a978009"
+   libical-4.patch
 )
-b2sums=('fdc8acc857f136a654839d550bc57d3f349284d4c8e9e4a83ed7f63cf1ca95c18f3d0e59339814ea2fc8a2d8957f4797ac29572d7b9b15e970956da987ecd804'
-        'e31ae379039dfc345e8032f7b9803a59ded075fc52457ba1553276d3031e7025d9304a7f2167a01be2d54c5e121bae00a2824a9c5ccbf926865d0b24520bb053'
+b2sums=('5d766da4ad5201e46abf655082fff8f0b6f0c0bc064ecf9b41c1b37991752df3cb70b923e5692ac2079ad4ffacd567b919aa6fbade04c6a7f36360751909a59f'
+        '8995bd33c011045c391169f044a46dbe42c55219d22fc1f52ec360b9cfb63b7b3a91bb07abb0f22ec7da39825a096bfa5fff9a5080d4d3919286156aeac392e5'
         'ecbbb9ce5895cc1caed2ddef39c70b4768d78ea0a929ea932d4149f923f92650973cdaefc2aacc9063f2ccf4ec965b57a9698a286f9a6561e39ce2e579ae4522'
-        'ec120324e4fe90fb8017847e5eda3c0b181b6609b78610b3a61ea106ee4d56d2b3bf243c3bc5d3ddd59fe55bb5ceed4f55b41f09626137027ed1c3e27930d082')
+        '7b39ef786d0af34f207c36c078fda5410848a5eceb84509b145184be1dbb994aeb3ffa70cb3de363a8460d59c140aafbdee8f74312cf2971a80cc5d485f1b829'
+        '9c081752a7e0d833b8a45f1ade8dceb392f9ab3d5953de27201c0583b222cf558546848fa050bdba5950506540732c4dd0e0a03e831817608b42d499b63b3142')
 
 prepare() {
   # Inject gvc
   ln -s libgnome-volume-control gvc
+
+  cd $pkgbase
+  patch -p1 -i ../libical-4.patch # Fix build with libical 4
 }
 
 build() {
@@ -107,7 +113,7 @@ build() {
 }
 
 package_gnome-shell() {
-  depends+=(libmutter-17.so)
+  depends+=(libmutter-18.so)
   optdepends=(
     'evolution-data-server: Evolution calendar integration'
     'gnome-bluetooth-3.0: Bluetooth support'
