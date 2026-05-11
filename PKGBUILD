@@ -37,7 +37,7 @@ replaces=(caja-gtkhash)
 source=("${url}/releases/download/v$pkgver/gtkhash-$pkgver.tar.xz"
 nettle4.patch)
 sha256sums=('7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005'
-            'a68f9baddf05727629a1406e166afced37d9f00bc1985cb413564436b90ecfe6')
+            'a5cc43f51b721f7bf4fd64f648541b22d546113448efbcf2b58c0c39b70c196d')
 
 prepare() {
   pwd

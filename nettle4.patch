@@ -1,6 +1,6 @@
 diff -uNr gtkhash-1.5/data/caja/meson.build gtkhash-1.5-fixed/data/caja/meson.build
---- gtkhash-1.5/data/caja/meson.build   2022-09-21 21:32:02.000000000 +0200
-+++ gtkhash-1.5-fixed/data/caja/meson.build     2026-05-11 18:57:14.166829813 +0200
+--- gtkhash-1.5/data/caja/meson.build	2022-09-21 21:32:02.000000000 +0200
++++ gtkhash-1.5-fixed/data/caja/meson.build	2026-05-11 20:39:00.485162311 +0200
 @@ -1,4 +1,3 @@
 -
  cajaextension = 'libgtkhash-properties-caja.caja-extension'
@@ -27,14 +27,14 @@ diff -uNr gtkhash-1.5/data/caja/meson.build gtkhash-1.5-fixed/data/caja/meson.bu
 +    rename: cajaextension
  )
 diff -uNr gtkhash-1.5/src/hash/hash-lib-nettle.c gtkhash-1.5-fixed/src/hash/hash-lib-nettle.c
---- gtkhash-1.5/src/hash/hash-lib-nettle.c      2022-09-21 21:32:02.000000000 +0200
-+++ gtkhash-1.5-fixed/src/hash/hash-lib-nettle.c        2026-05-11 20:30:45.911430320 +0200
+--- gtkhash-1.5/src/hash/hash-lib-nettle.c	2022-09-21 21:32:02.000000000 +0200
++++ gtkhash-1.5-fixed/src/hash/hash-lib-nettle.c	2026-05-11 20:30:45.911430320 +0200
 @@ -103,7 +103,7 @@
-        *size = LIB_DATA->meta->digest_size;
-        uint8_t *digest = g_malloc(*size);
+ 	*size = LIB_DATA->meta->digest_size;
+ 	uint8_t *digest = g_malloc(*size);
  
--       LIB_DATA->meta->digest(LIB_DATA->ctx, *size, digest);
-+       LIB_DATA->meta->digest(LIB_DATA->ctx, digest);
+-	LIB_DATA->meta->digest(LIB_DATA->ctx, *size, digest);
++	LIB_DATA->meta->digest(LIB_DATA->ctx, digest);
  
-        g_free(LIB_DATA->ctx);
-        g_free(LIB_DATA);
+ 	g_free(LIB_DATA->ctx);
+ 	g_free(LIB_DATA);
