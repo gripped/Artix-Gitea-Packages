@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=cryptsetup-s6
-pkgver=20251213
+pkgver=20260511
 pkgrel=1
 pkgdesc="s6-rc service scripts for cryptsetup"
 arch=('any')
@@ -10,9 +10,9 @@ provides=('init-cryptsetup')
 conflicts=('init-cryptsetup')
 depends=('cryptsetup' 's6-base')
 makedepends=('git')
-_commit=f647a5956f8ca1c6c32f91bc48831f5d2c82b59c
+_commit=9d4551b9673e6088802ca09e4dc2bc9ebdd0bbb1
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('523081c0acd7907d9d3858d1f15db0eb949e69a0c573a802fae5d25e779189f2')
+sha256sums=('0d88139bbdd59b6ee059731ee89a2695b83e34506041cc765f269352d0299f4f')
 
 package() {
     cd "${srcdir}"/s6-services
