@@ -1,11 +1,12 @@
 ---
-version: 0.4.0-1
+version: 0.4.0-2
 pkgbase:
   name: lxqt-wayland-session
   pkgdesc: Files needed for the LXQt Wayland Session
   pkgver: 0.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/lxqt-wayland-session
+  install: lxqt-wayland-session.install
   arch:
     - any
   license:
