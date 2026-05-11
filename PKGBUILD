@@ -6,10 +6,11 @@
 pkgbase=mutter
 pkgname=(
   mutter
+  mutter-devkit
   mutter-docs
 )
-pkgver=48.5
-pkgrel=2
+pkgver=50.1
+pkgrel=1
 pkgdesc="Window manager and compositor for GNOME"
 url="https://gitlab.gnome.org/GNOME/mutter"
 arch=(x86_64)
@@ -22,10 +23,10 @@ depends=(
   egl-wayland
   fontconfig
   fribidi
-  gcc-libs
   gdk-pixbuf2
   glib2
   glibc
+  glycin
   gnome-desktop-4
   gnome-settings-daemon
   graphene
@@ -39,13 +40,12 @@ depends=(
   libdisplay-info
   libdrm
   libei
+  libgcc
   libgirepository
   libglvnd
   libgudev
-  libice
   libinput
   libpipewire
-  libsm
   libsysprof-capture
   libwacom
   libx11
@@ -59,16 +59,14 @@ depends=(
   libxi
   libxinerama
   libxkbcommon
-  libxkbcommon-x11
-  libxkbfile
   libxrandr
-  libxtst
   mesa
   pango
   pipewire
   pixman
   python
   python-argcomplete
+  python-dbus
   python-gobject
   startup-notification
   libelogind
@@ -89,10 +87,10 @@ makedepends=(
 source=(
   # Mutter tags use SSH signatures which makepkg doesn't understand
   "git+$url.git#tag=${pkgver/[a-z]/.&}"
-  "git+https://gitlab.gnome.org/GNOME/gvdb.git#commit=466fc22016cf0981424e7121557611942191992f"
+  "git+https://gitlab.gnome.org/GNOME/gvdb.git#commit=b54bc5da25127ef416858a3ad92e57159ff565b3"
 )
-b2sums=('a24df78021a0f2499eae868bd168e2cf08e595a4df8e73ddbdb7bd2c2f24372b5652eccce1bffbfe09dc511abbf45c2ac9dd02f8493d0c2fe7accdda0f4a0819'
-        'c25796ff54fee353c5fc7a0815c25255b399490148d2bad1f37932d2da66d80561d6e262a5f256c89d142419a504c23eff69f7ef4e65e349f2dea3e0ac0bac1a')
+b2sums=('224bcda4fcd4aaf58abd1e52c95c36d93cf3d1621f87b3c9ca4b7130849cea1fd535dbb11142ad4676b18965d273a356d1112c9a1bd39ad39c2d6d7d4f5c8802'
+        'f989bc2ceb52aad3c6a23c439df3bbc672bc11d561a247d19971d30cc85ed5d42295de40f8e55b13404ed32aa44f12307c9f5b470f2e288d1c9c8329255c43bf')
 
 prepare() {
   cd mutter
@@ -128,12 +126,40 @@ _pick() {
 }
 
 package_mutter() {
-  provides=(libmutter-16.so)
-  optdepends=('bash-completion: Bash completions for gdctl')
+  provides=(libmutter-18.so)
+  optdepends=(
+    'bash-completion: Bash completions for gdctl'
+    'mutter-devkit: Mutter SDK, "MDK"'
+  )
 
   meson install -C build --destdir "$pkgdir"
 
+  _pick devkit "$pkgdir"/usr/lib/mutter-devkit
+  _pick devkit "$pkgdir"/usr/share/applications/org.gnome.Mutter.Mdk.desktop
+  _pick devkit "$pkgdir"/usr/share/icons/hicolor/scalable/apps/org.gnome.Mutter.Mdk.Devel.svg
+  _pick devkit "$pkgdir"/usr/share/icons/hicolor/scalable/apps/org.gnome.Mutter.Mdk.svg
+  _pick devkit "$pkgdir"/usr/share/icons/hicolor/symbolic/apps/org.gnome.Mutter.Mdk-symbolic.svg
+
   _pick docs "$pkgdir"/usr/share/mutter-*/doc
+}
+
+package_mutter-devkit() {
+  pkgdesc="GNOME Mutter Development Kit"
+  depends=(
+    cairo
+    glib2
+    glibc
+    gtk4
+    hicolor-icon-theme
+    libadwaita
+    libei
+    libgcc
+    libpipewire
+    libxkbcommon
+    mutter
+  )
+
+  mv devkit/* "$pkgdir"
 }
 
 package_mutter-docs() {
