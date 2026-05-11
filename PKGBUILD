@@ -2,7 +2,7 @@
 
 pkgname=ly
 pkgver=1.4.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="TUI display manager"
 arch=(x86_64 aarch64)
 url="https://codeberg.org/fairyglade/ly.git"
