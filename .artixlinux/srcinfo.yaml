@@ -1,11 +1,12 @@
 ---
-version: 2.4.0-1
+version: 2.4.0-2
 pkgbase:
   name: lxqt-session
   pkgdesc: The LXQt session manager
   pkgver: 2.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/lxqt-session
+  install: lxqt-session.install
   arch:
     - x86_64
   groups:
