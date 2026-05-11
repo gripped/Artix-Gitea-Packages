@@ -28,8 +28,8 @@ diff -uNr gtkhash-1.5/data/caja/meson.build gtkhash-1.5-fixed/data/caja/meson.bu
  )
 diff -uNr gtkhash-1.5/src/hash/hash-lib-nettle.c gtkhash-1.5-fixed/src/hash/hash-lib-nettle.c
 --- gtkhash-1.5/src/hash/hash-lib-nettle.c      2022-09-21 21:32:02.000000000 +0200
-+++ gtkhash-1.5-fixed/src/hash/hash-lib-nettle.c        2026-05-11 13:23:57.063541060 +0200
-@@ -103,7 +103,8 @@
++++ gtkhash-1.5-fixed/src/hash/hash-lib-nettle.c        2026-05-11 20:30:45.911430320 +0200
+@@ -103,7 +103,7 @@
         *size = LIB_DATA->meta->digest_size;
         uint8_t *digest = g_malloc(*size);
  
