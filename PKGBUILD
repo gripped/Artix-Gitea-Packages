@@ -5,7 +5,7 @@
 
 pkgname=filezilla
 pkgver=3.70.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast and reliable FTP, FTPS and SFTP client"
 url="https://filezilla-project.org"
 arch=('x86_64')
@@ -16,7 +16,6 @@ depends=(
   gtk3 libgtk-3.so libgdk-3.so
   hicolor-icon-theme
   libfilezilla libfilezilla.so
-  nettle libnettle.so
   sqlite libsqlite3.so
   wxwidgets-gtk3
   xdg-utils

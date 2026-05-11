@@ -1,10 +1,10 @@
 ---
-version: 3.70.5-1
+version: 3.70.5-2
 pkgbase:
   name: filezilla
   pkgdesc: Fast and reliable FTP, FTPS and SFTP client
   pkgver: 3.70.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://filezilla-project.org
   arch:
     - x86_64
@@ -24,8 +24,6 @@ pkgbase:
     - hicolor-icon-theme
     - libfilezilla
     - libfilezilla.so
-    - nettle
-    - libnettle.so
     - sqlite
     - libsqlite3.so
     - wxwidgets-gtk3
