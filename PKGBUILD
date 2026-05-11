@@ -38,7 +38,7 @@ b2sums=('255580de8e1a260d7d677049abac79e782e675d979de390209fab824b0fdb6d683916ab
 
 prepare() {
   cd $pkgname
-  patch -Np1 ../0001-meson-allow-building-with-elogind.patch
+  patch -Np1 -i ../0001-meson-allow-building-with-elogind.patch
 }
 
 build() {
