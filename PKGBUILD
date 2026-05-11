@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-session
-pkgver=49.0
+pkgver=50.0
 pkgrel=1
 pkgdesc="The GNOME Session Handler"
 url="https://gitlab.gnome.org/GNOME/gnome-session"
@@ -10,13 +10,11 @@ arch=(x86_64)
 license=(GPL-2.0-or-later)
 depends=(
   dconf
-  gcc-libs
   glib2
   glibc
   gnome-desktop-4
   gsettings-desktop-schemas
-  gtk4
-  json-glib
+  libgcc
   libelogind
   xdg-desktop-portal-gnome
 )
@@ -28,18 +26,19 @@ makedepends=(
   meson
   xmlto
 )
+optdepends=('gnome-keyring: Secrets service backend')
 conflicts=(gnome-mimeapps)
 replaces=(gnome-mimeapps)
 provides=(gnome-mimeapps)
 groups=(gnome)
 source=("git+https://gitlab.gnome.org/GNOME/gnome-session.git#tag=${pkgver/[a-z]/.&}"
-        "0001-meson-allow-disabling-systemd-specific-code.patch")
-b2sums=('b8f4494818e8943dae6a13f2af42de47e672068530e67c1a718753cf2fb29e5eb7fe57b5b13093e1cd68ee8b75501d2a81dced4319f4fed05969091d83165edf'
-        '4b1150b0979c3e9d64cedebedc85eb0f522a5e85dc3f250ff1029f72f95ac81ae6a4b7506b2c2199ea4d984482ea12203b41de0b1d059c65f891e2c70ed54df7')
+        0001-meson-allow-building-with-elogind.patch)
+b2sums=('255580de8e1a260d7d677049abac79e782e675d979de390209fab824b0fdb6d683916abd85f5e9c3fda33f19a97c9a6fbc5ad3cc171697c9286d418a56f98190'
+        '0685ff053573841b23fe427e79bc9e42aaef92017f479b59347645083830efbe9a08a27d62afb74d0cdc1b5e341be5139b3d8eeb194d3b322f272aaf0d40da4f')
 
 prepare() {
   cd $pkgname
-  git apply -3 ../0001-meson-allow-disabling-systemd-specific-code.patch
+  patch -Np1 ../0001-meson-allow-building-with-elogind.patch
 }
 
 build() {
@@ -48,7 +47,7 @@ build() {
     -D man=true
   )
 
-  artix-meson $pkgname build -Dsystemd=disabled "${meson_options[@]}"
+  artix-meson $pkgname build "${meson_options[@]}"
   meson compile -C build
 }
 

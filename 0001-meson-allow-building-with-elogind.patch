@@ -1,0 +1,103 @@
+From a34132d1087208e0ac3bf9f6d6c7ce797cc799e3 Mon Sep 17 00:00:00 2001
+From: Dudemanguy <random342@airmail.cc>
+Date: Mon, 25 Mar 2024 12:03:18 -0500
+Subject: [PATCH 1/1] meson: allow building with elogind
+
+elogind also provides compatibility with the logind API. All we need to
+do is not install system-specific things like services, but otherwise
+this can work fine.
+---
+ gnome-session/meson.build | 20 +++++++++++---------
+ meson.build               | 12 +++++-------
+ tools/meson.build         |  5 ++++-
+ 3 files changed, 20 insertions(+), 17 deletions(-)
+
+diff --git a/gnome-session/meson.build b/gnome-session/meson.build
+index 67774960..f7631c76 100644
+--- a/gnome-session/meson.build
++++ b/gnome-session/meson.build
+@@ -24,15 +24,17 @@ sources = files(
+     'leader-systemd.c',
+ )
+ 
+-executable(
+-  meson.project_name() + '-init-worker',
+-  sources,
+-  include_directories: top_inc,
+-  dependencies: session_bin_deps,
+-  c_args: cflags,
+-  install: true,
+-  install_dir: session_libexecdir
+-)
++if systemd_dep.found()
++  executable(
++    meson.project_name() + '-init-worker',
++    sources,
++    include_directories: top_inc,
++    dependencies: session_bin_deps,
++    c_args: cflags,
++    install: true,
++    install_dir: session_libexecdir
++  )
++endif
+ 
+ sources = files(
+   'gsm-app.c',
+diff --git a/meson.build b/meson.build
+index 6ed29533..d3e12061 100644
+--- a/meson.build
++++ b/meson.build
+@@ -3,7 +3,7 @@ project(
+   version: '50.0',
+   license: 'GPL2+',
+   default_options: 'buildtype=debugoptimized',
+-  meson_version: '>= 0.60.0'
++  meson_version: '>= 0.64.0'
+ )
+ 
+ session_version = meson.project_version()
+@@ -86,18 +86,16 @@ session_deps = [
+   dependency('gnome-desktop-4'),
+ ]
+ 
+-libsystemd_dep = dependency('libsystemd', version: '>= 209', required: true)
+-config_h.set('SYSTEMD_STRICT_ENV',
+-              libsystemd_dep.version().version_compare('< 248'))
+-
+ session_bin_deps = session_deps + [
+-  libsystemd_dep,
++  dependency('libsystemd', 'libelogind', version: '>= 209', required: true),
+   dependency('gio-unix-2.0', version: glib_req_version),
+ ]
++systemd_dep = dependency('systemd', version: '>= 242', required: false, disabler: true)
++
++config_h.set('SYSTEMD_STRICT_ENV', systemd_dep.version().version_compare('< 248'))
+ 
+ systemd_userunitdir = get_option('systemduserunitdir')
+ if systemd_userunitdir == ''
+-  systemd_dep = dependency('systemd', version: '>= 242', required: true)
+   systemd_userunitdir = systemd_dep.get_variable(pkgconfig: 'systemduserunitdir',
+                                                  pkgconfig_define: ['prefix', session_prefix])
+ endif
+diff --git a/tools/meson.build b/tools/meson.build
+index c453093e..b147574c 100644
+--- a/tools/meson.build
++++ b/tools/meson.build
+@@ -1,10 +1,13 @@
+ programs = [
+   # name, deps, install_dir
+-  ['gnome-session-ctl', session_bin_deps, session_libexecdir],
+   ['gnome-session-inhibit', session_deps, session_bindir],
+   ['gnome-session-quit', session_deps, session_bindir],
+ ]
+ 
++if systemd_dep.found()
++  programs += [['gnome-session-ctl', session_bin_deps, session_libexecdir]]
++endif
++
+ foreach program: programs
+   executable(
+     program[0],
+-- 
+2.54.0
+
