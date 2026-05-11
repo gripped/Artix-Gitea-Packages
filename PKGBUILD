@@ -28,7 +28,7 @@ sha512sums=('cfbb6ee330017b17f4165885764e311e6661402284a5b49d08a67b73eeae15a4078
 
 prepare() {
   cd $pkgname
-  git cherry-pick -n 79fda0e985dd0380a217f79add4d09d644d3de87 # Fix tests in gnome-calendar
+  git cherry-pick -n 7bb06c99d8ced01c3d84ca4151b4b7d351999eff # Fix tests in gnome-calendar
 }
 
 build() {
