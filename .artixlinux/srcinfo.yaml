@@ -1,35 +1,33 @@
 ---
-version: 1.4.0-1
+version: 1.4.0-1.1
 pkgbase:
   name: ly
-  pkgdesc: Lightweight TUI (ncurses-like) display manager
+  pkgdesc: TUI display manager
   pkgver: 1.4.0
-  pkgrel: 1
-  url: https://codeberg.org/AnErrupTion/ly
+  pkgrel: 1.1
+  url: https://codeberg.org/fairyglade/ly.git
   arch:
     - x86_64
+    - aarch64
   license:
     - WTFPL
   makedepends:
+    - zig>=0.16
+    - zig<0.17
     - git
     - libxcb
-    - zig
   depends:
     - pam
-    - glibc
   optdepends:
-    - 'brightnessctl: for controling brightness'
-    - 'xorg-xmessage: for displaying a message or query in a window'
     - 'xorg-xauth: for X server sessions'
-    - 'libxcb: for X server sessions'
+    - 'durdraw: for animations'
   backup:
     - etc/ly/config.ini
     - etc/ly/setup.sh
-    - etc/pam.d/ly
   source:
-    - git+https://codeberg.org/AnErrupTion/ly.git#tag=v1.4.0
-  b2sums:
-    - b982af1d9e682b712a51513fb5452aa19d26bdaa9361329f5ce42ddd5e80953a4231608fa0fd654a8a8c71c5efa8e5a7f113c7cf87855b16eff1c12a171fd949
+    - git+https://codeberg.org/fairyglade/ly.git#tag=v1.4.0
+  sha256sums:
+    - 9656bc5e061d234c7d369416b4572d13394ccb6815a2bdcae3fcc7e45b1c95f3
 pkgname:
   - name: ly
 # generated with artixpkg 0.38.5-1-any
