@@ -40,7 +40,7 @@ pkgbase:
     - nettle4.patch
   sha256sums:
     - 7102a192eca3e82ed67a8252a6850440e50c1dbea7c6364bda154ec80f8ff005
-    - ed99896536f45428374cdbfc97e2033fc40c3c92614a68df921ee26a771b66a7
+    - bb8a6b5d634714ada2f816eb90df807a69f6f00bfd1647263e73cbbac9954a45
 pkgname:
   - name: caja-gtkhash
 # generated with artixpkg 0.38.5-1-any

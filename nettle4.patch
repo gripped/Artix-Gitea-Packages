@@ -35,7 +35,6 @@ diff -uNr gtkhash-1.5/src/hash/hash-lib-nettle.c gtkhash-1.5-fixed/src/hash/hash
  
 -       LIB_DATA->meta->digest(LIB_DATA->ctx, *size, digest);
 +       LIB_DATA->meta->digest(LIB_DATA->ctx, digest);
-+       *size = LIB_DATA->meta->digest_size;
  
         g_free(LIB_DATA->ctx);
         g_free(LIB_DATA);
