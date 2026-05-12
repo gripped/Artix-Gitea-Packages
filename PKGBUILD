@@ -1,14 +1,13 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-systemmonitor
-pkgver=6.6.4
+pkgver=6.6.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1.2
+pkgrel=1
 pkgdesc='An interface for monitoring system sensors, process information and other system resources'
 arch=(x86_64)
 url='https://apps.kde.org/plasma-systemmonitor/'
 license=(GPL-2.0-or-later LGPL-2.0-or-later)
-source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
 depends=(gcc-libs
          glibc
          kconfig
@@ -35,8 +34,8 @@ makedepends=(extra-cmake-modules)
 groups=(plasma)
 replaces=(ksysguard)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
-        plasma-systemmonitor.patch::https://raw.githubusercontent.com/chimera-linux/cports/604026ab38185f2c6008752cb59153f831c4952b/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch)
-sha256sums=('5be0c214a4d48c85608169c0603c4d5687553c98bc1b45c7353be93f66cd8b12'
+"https://raw.githubusercontent.com/chimera-linux/cports/604026ab38185f2c6008752cb59153f831c4952b/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch")
+sha256sums=('b6ebf7c1e6f7a42c91a0b511971fd67041d4d9b617edc3a4fc0b08af4a0ec78f'
             'SKIP'
             '89399fc8b29361c460a4efa8d63503f8384827a40653ad330c4aac4e6dfc2e67')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
@@ -45,8 +44,8 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 prepare() {
-  cd $pkgname-$pkgver
-  patch -Np1 -i ../plasma-systemmonitor.patch
+  cd "$pkgname-$pkgver"
+  patch -p1 < "$srcdir/replace-unsupported-applications-view-with-processes.patch"
 }
 
 build() {
