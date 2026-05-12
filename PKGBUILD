@@ -6,12 +6,12 @@
 
 pkgname=librewolf
 _pkgname=LibreWolf
-epoch=1
-pkgver=150.0.1_1
-_fixedfirefoxver="${pkgver%_*}" # Version of Firefox this LibreWolf version is based on, but the Firefox patch number is always included
-_librewolfver="${pkgver#*_}"
-_firefoxver="${_fixedfirefoxver%.0}" # Removes ".0" from the end. For "136.0.0" this will result in "136.0" but for "136.0.1" won't do anything.
+pkgver=150.0.2
+_pkgver="${pkgver}_1"
 pkgrel=1
+_fixedfirefoxver="${_pkgver%_*}" # Version of Firefox this LibreWolf version is based on, but the Firefox patch number is always included
+_librewolfver="${_pkgver#*_}"
+_firefoxver="${_fixedfirefoxver%.0}" # Removes ".0" from the end. For "136.0.0" this will result in "136.0" but for "136.0.1" won't do anything.
 pkgdesc="Community-maintained fork of Firefox, focused on privacy, security and freedom."
 url="https://librewolf.net/"
 arch=(x86_64 aarch64)
@@ -115,11 +115,11 @@ source=(
   "default192x192.png"
 )
 
-sha256sums=('d6470f5d93b531b9a20f750f2a2903ce20f5186e5bc4e87e28bbb6f4409fe4fa'
+sha256sums=('9483d41b4a1efdf00919dce60db4be9d1e05c378839f1c47f48660175c521f22'
             'SKIP'
             '972c400f09b51d1638ca4bc534c84798393cee5aaabad71cd1843e9d4d2d2489'
             '9baae0f2313efdfdbfce9464e89f1fe21571890fd9746212b54cf56a3391c1c1'
-            '4c958237fa592a9dd299ddc3fe272c8e1da9c2e3e419e595bcb53dc0419913a4'
+            '83857f3531688885b62be0b06583f6815f236edbc43a942830395ec3cbdc7934'
             'd6e1dbafe56bc52c8ab6cbf9542cf80e89c1857a71ce08bbbd82804909bcb76f'
             '3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae'
             '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
