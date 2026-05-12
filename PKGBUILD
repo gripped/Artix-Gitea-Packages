@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributer: John Smith <promisedneverland@disroot.org>
 pkgname=trojan-s6
-pkgver=20230829
+pkgver=20260512
 pkgrel=1
 pkgdesc="s6-rc service scripts for trojan"
 arch=('any')
@@ -13,9 +13,9 @@ conflicts=('init-trojan')
 depends=('trojan' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/trojan.conf')
-_commit=f8db772e97393417271f286a3c9dc136d25a959c
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('SKIP')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
