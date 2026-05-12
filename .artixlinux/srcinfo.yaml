@@ -1,9 +1,9 @@
 ---
-version: 1:6.6.4-1
+version: 1:6.6.5-1
 pkgbase:
   name: spectacle
   pkgdesc: KDE screenshot capture utility
-  pkgver: 6.6.4
+  pkgver: 6.6.5
   pkgrel: 1
   epoch: 1
   url: https://kde.org/plasma-desktop/
@@ -55,16 +55,16 @@ pkgbase:
   optdepends:
     - 'tesseract: OCR text extraction'
   source:
-    - https://download.kde.org/stable/plasma/6.6.4/spectacle-6.6.4.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.4/spectacle-6.6.4.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.6.5/spectacle-6.6.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.5/spectacle-6.6.5.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 1e6d66f3a4731c635f6abd144f1bb002271b12626ccb38e86f04e79c7e1ad2e6
+    - a37df7731a6bc89bc23ac08ad1f995ce9f1efb330f3ebad9bf926dca6ebb5fc7
     - SKIP
 pkgname:
   - name: spectacle
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
