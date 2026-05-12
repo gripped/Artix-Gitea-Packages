@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan Owens <ndowens@artixlinux.org>
 pkgname=redis-s6
-pkgver=20230829
+pkgver=20260512
 pkgrel=1
 pkgdesc="s6-rc service scripts for redis"
 arch=('any')
@@ -12,9 +12,9 @@ conflicts=('init-redis')
 depends=('redis' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/redis.conf')
-_commit=5d699023ba6c2fc0a5b687c725dc0206ae4ee1fa
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('SKIP')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
