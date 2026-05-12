@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
-  removeRepo: world
+  addRepo: null
+  removeRepo: world-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -26,9 +26,8 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20260512-1
-    packages:
-      - ly-s6-20260512-1-any.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world:
     version: null
