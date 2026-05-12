@@ -1,12 +1,12 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_tag=257.13
+_tag=257.14
 _req=257
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=3
+pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -35,7 +35,7 @@ makedepends=(
 source=(
     "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
 )
-sha256sums=('6068f9af2892390b6f7f374144868a6fa6b7402add8ef29c1d5673785f16a312')
+sha256sums=('79c4d514403bbbf824b33f11d697b2f37b8fcc47484075baedca2d0faa9cb3b9')
 
 _backports=(
 )
@@ -111,7 +111,7 @@ package_elogind() {
         'util-linux' 'libmount.so'
     )
     provides=(
-        'logind'
+        "logind=${pkgver}"
     )
     optdepends=(
         'polkit: allow administration as unprivileged user'
@@ -128,8 +128,7 @@ package_elogind() {
     meson install -C build --destdir "${pkgdir}"
 
     install -dm755 "${srcdir}"/_libelogind
-    mv -v "${pkgdir}"/usr/lib/libelogind*.so* "${srcdir}"/_libelogind
-    mv -v "${pkgdir}"/usr/lib/libnss_elogind*.so* "${srcdir}"/_libelogind
+    mv -v "${pkgdir}"/usr/lib/lib{,nss_}elogind*.so* "${srcdir}"/_libelogind
     mv -v "${pkgdir}"/usr/lib/pkgconfig "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
@@ -143,13 +142,12 @@ package_libelogind(){
     )
     provides=(
         'libelogind.so'
-        'liblogind'
+        "liblogind=${pkgver}"
     )
     license=('LGPL-2.1-only')
 
     install -dm755 "${pkgdir}"/usr/{lib,share/man}
-    mv -v "${srcdir}"/_libelogind/libelogind*.so* "${pkgdir}"/usr/lib
-    mv -v "${srcdir}"/_libelogind/libnss_elogind*.so* "${pkgdir}"/usr/lib
+    mv -v "${srcdir}"/_libelogind/lib{,nss_}elogind*.so* "${pkgdir}"/usr/lib
     mv -v "${srcdir}"/_libelogind/pkgconfig "${pkgdir}"/usr/lib/
     mv -v "${srcdir}"/_libelogind/include "${pkgdir}"/usr/
     mv -v "${srcdir}"/_libelogind/man3 "${pkgdir}"/usr/share/man
