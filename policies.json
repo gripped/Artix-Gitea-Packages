@@ -70,7 +70,7 @@
                 "Type": "boolean",
                 "Value": false
              },
-            "extensions.ml.enabled:" {
+            "extensions.ml.enabled": {
                 "Status": "unlocked",
                 "Type": "boolean",
                 "Value": false
