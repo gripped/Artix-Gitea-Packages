@@ -1,11 +1,12 @@
 ---
-version: 2.24.260507-1
+version: 2.24.260512-1
 pkgbase:
   name: gtk2-ng-git
   pkgdesc: GObject-based multi-platform GUI toolkit (community-maintained fork)
-  pkgver: 2.24.260507
+  pkgver: 2.24.260512
   pkgrel: 1
   url: https://www.gtk.org/
+  install: gtk2.install
   arch:
     - x86_64
   license:
@@ -38,9 +39,16 @@ pkgbase:
     - libxrender
     - pango
     - shared-mime-info
+  optdepends:
+    - 'adwaita-fonts: Default font'
+    - 'adwaita-icon-theme: Default icon theme'
+    - 'gnome-themes-extra-gtk2: Default widget theme'
+    - 'python: gtk-builder-convert'
   provides:
-    - gtk2
     - gtk2=2.24.33
+    - libgailutil.so
+    - libgdk-x11-2.0.so
+    - libgtk-x11-2.0.so
   conflicts:
     - gtk2
   replaces:
@@ -53,14 +61,4 @@ pkgbase:
     - 9c531f9f605e1739e13c39c1cac22daddd9574f3082f18bcf0b9dfaa4c41f2485d55be03a9ed12fb4504d509f0d5ac63980a9d9349e3f80a06595c6430c78096
 pkgname:
   - name: gtk2-ng-git
-    install: gtk2.install
-    optdepends:
-      - 'adwaita-fonts: Default font'
-      - 'adwaita-icon-theme: Default icon theme'
-      - 'gnome-themes-extra-gtk2: Default widget theme'
-      - 'python: gtk-builder-convert'
-    provides:
-      - libgailutil.so
-      - libgdk-x11-2.0.so
-      - libgtk-x11-2.0.so
 # generated with artixpkg 0.38.5-1-any

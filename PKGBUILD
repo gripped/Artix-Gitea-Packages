@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gtk2-ng-git
-pkgver=2.24.260507
+pkgver=2.24.260512
 pkgrel=1
 pkgdesc="GObject-based multi-platform GUI toolkit (community-maintained fork)"
 url="https://www.gtk.org/"
@@ -45,17 +45,29 @@ source=(
 )
 b2sums=('SKIP'
         '9c531f9f605e1739e13c39c1cac22daddd9574f3082f18bcf0b9dfaa4c41f2485d55be03a9ed12fb4504d509f0d5ac63980a9d9349e3f80a06595c6430c78096')
-provides=('gtk2' 'gtk2=2.24.33')
+provides=(
+  gtk2=2.24.33
+  libgailutil.so
+  libgdk-x11-2.0.so
+  libgtk-x11-2.0.so
+)
 conflicts=('gtk2')
 replaces=('gtk2')
+optdepends=(
+  'adwaita-fonts: Default font'
+  'adwaita-icon-theme: Default icon theme'
+  'gnome-themes-extra-gtk2: Default widget theme'
+  'python: gtk-builder-convert'
+)
+install=gtk2.install
 
-#pkgver() {
-#  cd gtk2-ng
-#  ( set -o pipefail
-#    git describe --long 2>/dev/null | sed 's/\([^-]*-g\)/r\1/;s/-/./g' ||
-#    printf "r%s.%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
-#  )
-#}
+
+pkgver() {
+  cd gtk2-ng
+  ( set -o pipefail
+    git show HEAD -s --format='%as' | sed 's/^..//;s/-//g'
+  )
+}
 
 prepare() {
   cd gtk2-ng
@@ -82,19 +94,6 @@ build() {
 }
 
 package() {
-  optdepends=(
-    'adwaita-fonts: Default font'
-    'adwaita-icon-theme: Default icon theme'
-    'gnome-themes-extra-gtk2: Default widget theme'
-    'python: gtk-builder-convert'
-  )
-  provides=(
-    libgailutil.so
-    libgdk-x11-2.0.so
-    libgtk-x11-2.0.so
-  )
-  install=gtk2.install
-
   make -C gtk2-ng DESTDIR="$pkgdir" install
 
   install -Dm644 /dev/stdin "$pkgdir/usr/share/gtk-2.0/gtkrc" <<END
