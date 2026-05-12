@@ -13,7 +13,7 @@ pkgbase:
   makedepends:
     - git
   depends:
-    - erlang-nox
+    - erlang-core
     - s6-base
   provides:
     - init-epmd

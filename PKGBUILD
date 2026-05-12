@@ -1,5 +1,5 @@
-# Maintainer: Nathan <ndowens@artixlinux.org>
-# Contributor: Dudemanguy <dudemanguy@artixlinux.org>
+# Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
+# Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=erlang-s6
 pkgver=20260512
 pkgrel=1
@@ -9,7 +9,7 @@ url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-epmd')
 conflicts=('init-epmd')
-depends=('erlang-nox' 's6-base')
+depends=('erlang-core' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/erlang.conf')
 _commit=22903adc87ffdd4774cc30c5da4b09889339670b
