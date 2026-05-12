@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=lightdm-s6
-pkgver=20220410
+pkgver=20260512
 pkgrel=1
 pkgdesc="s6-rc service scripts for lightdm"
 arch=('any')
@@ -11,9 +11,9 @@ conflicts=('init-lightdm')
 depends=('lightdm' 'logind-s6' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/lightdm.conf')
-_commit=7813296e9da1e936752e16daf12492b0a49b4527
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('SKIP')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
