@@ -8,7 +8,7 @@ url="https://gitea.artixlinux.org/artix/s6-services"
 groups=('s6-world')
 provides=('init-lxdm')
 conflicts=('init-lxdm')
-depends=('lxdm-gtk3' 's6-base')
+depends=('lxdm' 's6-base')
 makedepends=('git')
 _commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")

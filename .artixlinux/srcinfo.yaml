@@ -13,7 +13,7 @@ pkgbase:
   makedepends:
     - git
   depends:
-    - lxdm-gtk3
+    - lxdm
     - s6-base
   provides:
     - init-lxdm
