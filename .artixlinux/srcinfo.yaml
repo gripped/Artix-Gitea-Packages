@@ -1,0 +1,30 @@
+---
+version: 50.0.20260410-1
+pkgbase:
+  name: gnome-session-sysvinit
+  pkgdesc: Init agnostic GNOME session handler from Porteus
+  pkgver: 50.0.20260410
+  pkgrel: 1
+  url: https://github.com/fulalas/gnome-session-sysvinit/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+  depends:
+    - bash
+    - gnome-session
+    - elogind
+    - glib2
+  provides:
+    - gnome-session-leader
+  conflicts:
+    - gnome-session-leader
+  source:
+    - git+https://github.com/capezotte/gnome-session-sysvinit#branch=standalone
+  b2sums:
+    - SKIP
+pkgname:
+  - name: gnome-session-sysvinit
+# generated with artixpkg 0.38.5-1-any
