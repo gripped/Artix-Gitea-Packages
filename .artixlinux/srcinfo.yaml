@@ -1,10 +1,10 @@
 ---
-version: 6.26.0-2
+version: 6.26.0-3
 pkgbase:
   name: kcalendarcore
   pkgdesc: The KDE calendar access library
   pkgver: 6.26.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -16,17 +16,18 @@ pkgbase:
   makedepends:
     - doxygen
     - extra-cmake-modules
-    - qt6-declarative
-    - qt6-tools
     - pyside6
     - python-build
     - python-setuptools
+    - qt6-declarative
+    - qt6-tools
   depends:
     - glibc
     - libical
     - libstdc++
     - qt6-base
   optdepends:
+    - 'pyside6: Python bindings'
     - 'qt6-declarative: QML bindings'
   source:
     - https://download.kde.org/stable/frameworks/6.26/kcalendarcore-6.26.0.tar.xz
