@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=syncthing-relaysrv-s6
-pkgver=20250813
+pkgver=20260512
 pkgrel=1
 pkgdesc="s6-rc service scripts for syncthing-relaysrv"
 arch=('any')
@@ -11,9 +11,9 @@ conflicts=('init-syncthing-relaysrv')
 depends=('syncthing-relaysrv' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/syncthing-relaysrv.conf')
-_commit=9b135a47a3a94917b36d2545c7d7ea30e650cba6
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('5178be4d2fe11108470ce4d39b61b5f38025009f643367aad920e0b229b73d53')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
