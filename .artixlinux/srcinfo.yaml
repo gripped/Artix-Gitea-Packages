@@ -1,0 +1,30 @@
+---
+version: 20260512-1
+pkgbase:
+  name: bolt-s6
+  pkgdesc: s6-rc service scripts for bolt
+  pkgver: 20260512
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-services
+  arch:
+    - any
+  groups:
+    - s6-world
+  makedepends:
+    - git
+  depends:
+    - bolt
+    - s6-base
+  provides:
+    - init-bolt
+  conflicts:
+    - init-bolt
+  backup:
+    - etc/s6/config/bolt.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=22903adc87ffdd4774cc30c5da4b09889339670b
+  sha256sums:
+    - 7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2
+pkgname:
+  - name: bolt-s6
+# generated with artixpkg 0.38.5-1-any
