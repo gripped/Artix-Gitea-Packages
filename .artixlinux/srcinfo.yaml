@@ -1,0 +1,27 @@
+---
+version: 20260512-1
+pkgbase:
+  name: backlight-s6
+  pkgdesc: Restore the screen brightness at system startup
+  pkgver: 20260512
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-services
+  arch:
+    - any
+  groups:
+    - s6-world
+  makedepends:
+    - git
+  depends:
+    - s6-base
+  provides:
+    - init-backlight
+  conflicts:
+    - init-backlight
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=22903adc87ffdd4774cc30c5da4b09889339670b
+  sha256sums:
+    - 7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2
+pkgname:
+  - name: backlight-s6
+# generated with artixpkg 0.38.5-1-any
