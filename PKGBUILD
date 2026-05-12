@@ -1,6 +1,6 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=nfs-utils-s6
-pkgver=20251104
+pkgver=20260512
 pkgrel=1
 pkgdesc="s6-rc service scripts for nfs-utils"
 arch=('any')
@@ -11,9 +11,9 @@ conflicts=('init-nfs-utils')
 depends=('nfs-utils' 'device-mapper-s6' 'rpcbind-s6' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/nfs-utils.conf')
-_commit=85f1e9afbe29108779274a3f56b9fc3a06f660b6
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('357643ef79fc3cf29ac35e0b843d6f1b8151b33bdeaf02e04c00324a75f61c63')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
