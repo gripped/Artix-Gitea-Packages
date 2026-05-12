@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=docker-s6
-pkgver=20230829
+pkgver=20260512
 pkgrel=1
 pkgdesc="s6-rc service scripts for docker"
 arch=('any')
@@ -12,9 +12,9 @@ conflicts=('init-docker')
 depends=('containerd-s6' 'docker' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/docker.conf')
-_commit=93d1cd4a3aa8c2d6800a81d433e5c606256afe33
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('SKIP')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
