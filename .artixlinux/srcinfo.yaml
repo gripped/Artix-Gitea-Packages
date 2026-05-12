@@ -1,9 +1,9 @@
 ---
-version: 20260511-1
+version: 20260512-1
 pkgbase:
   name: cryptsetup-s6
   pkgdesc: s6-rc service scripts for cryptsetup
-  pkgver: 20260511
+  pkgver: 20260512
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/s6-services
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   conflicts:
     - init-cryptsetup
   source:
-    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=9d4551b9673e6088802ca09e4dc2bc9ebdd0bbb1
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=22903adc87ffdd4774cc30c5da4b09889339670b
   sha256sums:
-    - 0d88139bbdd59b6ee059731ee89a2695b83e34506041cc765f269352d0299f4f
+    - 7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2
 pkgname:
   - name: cryptsetup-s6
 # generated with artixpkg 0.38.5-1-any
