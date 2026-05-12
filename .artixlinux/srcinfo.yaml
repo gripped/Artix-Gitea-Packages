@@ -1,9 +1,9 @@
 ---
-version: 20260511-1
+version: 20260512-1
 pkgbase:
   name: lvm2-s6
   pkgdesc: s6-rc service scripts for lvm2
-  pkgver: 20260511
+  pkgver: 20260512
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/s6-services
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   backup:
     - etc/s6/config/lvm2.conf
   source:
-    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=02346dc79b28dee5d8f7921eeb2e0b2c0a5abf7c
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=22903adc87ffdd4774cc30c5da4b09889339670b
   sha256sums:
-    - b54d0567384aaa4e5b9122dd4f5d9f4b097472a41acb4204e458574be3d63adb
+    - 7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2
 pkgname:
   - name: lvm2-s6
 # generated with artixpkg 0.38.5-1-any
