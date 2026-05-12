@@ -1,13 +1,15 @@
 ---
-version: 0.15.1-1
+version: 0.15.2-1
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
-  pkgver: 0.15.1
+  pkgver: 0.15.2
   pkgrel: 1
   url: https://gstreamer.freedesktop.org/
   arch:
     - x86_64
+  groups:
+    - gst-plugins-rs
   license:
     - MPL-2.0
   makedepends:
@@ -43,11 +45,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.15.1
+    - git+https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs.git?signed#tag=0.15.2
   validpgpkeys:
     - 7F4BC7CC3CA06F97336BBFEB0668CC1486C2D7B5
   b2sums:
-    - 61a67c164937198dc9359a4eac33c295ea047a54b573ac387332c852389e09f5a5ecd66e13380b35b40c4370ac04fb8770b53ab32e0a5f9b37f0a0094076ef30
+    - b7f17bc9f693a4d223fea2c832d428f3dddd76f0a4009e87634cf91767a2174c1ac3aca1a337ef448ac4cfae1d494d7d1d9d983c87116b85a70ba7be84d8c1d4
 pkgname:
   - name: gst-webrtc-signalling-server
     pkgdesc: Multimedia graph framework - webrtc signalling server
@@ -61,7 +63,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-hlssink3=0.15.1-1
+      - gst-plugin-hlssink3=0.15.2-1
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -202,7 +204,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-hlssink3=0.15.1-1
+      - gst-plugin-hlssink3=0.15.2-1
       - gst-plugins-base-libs
   - name: gst-plugin-hlssink3
     pkgdesc: Multimedia graph framework - hlssink3 plugin
@@ -211,7 +213,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-isobmff=0.15.1-1
+      - gst-plugin-isobmff=0.15.2-1
       - gst-plugins-base-libs
   - name: gst-plugin-hsv
     pkgdesc: Multimedia graph framework - hsv plugin
@@ -330,8 +332,8 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-textaccumulate=0.15.1-1
-      - gst-plugin-textwrap=0.15.1-1
+      - gst-plugin-textaccumulate=0.15.2-1
+      - gst-plugin-textwrap=0.15.2-1
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -424,7 +426,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-rsrtp=0.15.1-1
+      - gst-plugin-rsrtp=0.15.2-1
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
@@ -507,4 +509,4 @@ pkgname:
       - gst-plugins-base-libs
       - libstdc++
       - vulkan-icd-loader
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
