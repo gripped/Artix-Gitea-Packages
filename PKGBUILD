@@ -12,9 +12,9 @@ conflicts=('init-atftp')
 depends=('atftp' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/atftp.conf')
-_commit=6d6f6e34a4dbe6a18fe5889510d6956f8d6dffa0
+_commit=22903adc87ffdd4774cc30c5da4b09889339670b
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('ebece0d6c57ab07011e1e56dadbd29bc03cc1b52041f5f3042e5e3bb5d4cc31e')
+sha256sums=('7ed937d8bb15ab5d229d1843df54cd491156f0635f8299e6dba5f983abcb70c2')
 
 package() {
     cd "${srcdir}"/s6-services
