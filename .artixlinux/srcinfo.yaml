@@ -1,0 +1,30 @@
+---
+version: 20260512-1
+pkgbase:
+  name: apache-s6
+  pkgdesc: s6-rc service scripts for apache
+  pkgver: 20260512
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-services
+  arch:
+    - any
+  groups:
+    - s6-world
+  makedepends:
+    - git
+  depends:
+    - apache
+    - s6-base
+  provides:
+    - init-apache
+  conflicts:
+    - init-apache
+  backup:
+    - etc/s6/config/apache.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-services.git#commit=6d6f6e34a4dbe6a18fe5889510d6956f8d6dffa0
+  sha256sums:
+    - ebece0d6c57ab07011e1e56dadbd29bc03cc1b52041f5f3042e5e3bb5d4cc31e
+pkgname:
+  - name: apache-s6
+# generated with artixpkg 0.38.5-1-any
