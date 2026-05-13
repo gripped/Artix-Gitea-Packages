@@ -1,10 +1,10 @@
 ---
-version: 2-3
+version: 2-4
 pkgbase:
   name: moksha-artix
   pkgdesc: Programs and Themes for Moksha Desktop on Artix Linux
   pkgver: 2
-  pkgrel: 3
+  pkgrel: 4
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
@@ -29,7 +29,6 @@ pkgbase:
     - moksha-menu
     - moksha-module-alarm
     - moksha-module-calendar
-    - moksha-module-compton
     - moksha-module-cpu
     - moksha-module-deskshow
     - moksha-module-desktitle
@@ -45,6 +44,7 @@ pkgbase:
     - moksha-module-net
     - moksha-module-news
     - moksha-module-penguins
+    - moksha-module-picom
     - moksha-module-photo
     - moksha-module-productivity
     - moksha-module-rain
@@ -92,4 +92,4 @@ pkgbase:
     - '!debug'
 pkgname:
   - name: moksha-artix
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any

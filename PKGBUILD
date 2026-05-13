@@ -2,7 +2,7 @@
 
 pkgname=moksha-artix
 pkgver=2
-pkgrel=3
+pkgrel=4
 pkgdesc='Programs and Themes for Moksha Desktop on Artix Linux'
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
 arch=('x86_64')
@@ -26,7 +26,6 @@ depends=(edi
          moksha-menu
          moksha-module-alarm
          moksha-module-calendar
-         moksha-module-compton
          moksha-module-cpu
          moksha-module-deskshow
          moksha-module-desktitle
@@ -42,6 +41,7 @@ depends=(edi
          moksha-module-net
          moksha-module-news
          moksha-module-penguins
+         moksha-module-picom
          moksha-module-photo
          moksha-module-productivity
          moksha-module-rain
