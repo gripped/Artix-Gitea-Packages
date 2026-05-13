@@ -1,10 +1,10 @@
 ---
-version: 26.1.0-1
+version: 26.1.0-2
 pkgbase:
   name: nodejs
   pkgdesc: Evented I/O for V8 javascript ("Current" release)
   pkgver: 26.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://nodejs.org/
   arch:
     - x86_64
@@ -20,6 +20,7 @@ pkgbase:
     - brotli
     - c-ares
     - icu
+    - libffi
     - libnghttp2
     - libnghttp3
     - libngtcp2
@@ -30,8 +31,6 @@ pkgbase:
     - zstd
   optdepends:
     - 'npm: nodejs package manager'
-  options:
-    - '!lto'
   source:
     - git+https://github.com/nodejs/node.git#tag=v26.1.0?signed
   validpgpkeys:
