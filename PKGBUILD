@@ -3,7 +3,7 @@
 # Contributor: Gilles Hamel <hamelg at laposte dot net>
 
 pkgname=grafana
-pkgver=12.4.2
+pkgver=13.0.1
 pkgrel=1
 pkgdesc='Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB'
 url='https://grafana.com/'
@@ -17,7 +17,7 @@ source=("git+https://github.com/grafana/grafana.git#tag=v$pkgver"
         'grafana.tmpfiles'
        )
 install=$pkgname.install
-sha512sums=('625c6bfc121c7b733d799ea87f8246c2fd9bbe9b8622f5b3dc2bf35b33e15fd2a9479898614419c9f8a665796ab63f817b09410f302957f65a37e9a555e45f5a'
+sha512sums=('2f7dafb0a74e6af8fad0489a15f6d0cb141d1de1e41803d6dd1eb4bbc95fd0ab824cc4d236b495c37687ffefdd12c32928363c0a675d578451b495c6faaea71b'
             '38b46d953837a7afa5a654dfeef163b210d56cad57d937018531d00cd63b5341d6f9cd777299bdc7a994d0cb7df09b8157aad0f166e76ad47564e1ad6d5441d4'
             'c1724bfc7cbd6a406f17acb661efca0f1e57e2c30cc1841f4cb7ccfc420adc40cc61cb1c023d00444827b2c40e9caa4c2fefbfd503419848c74a0b455b2375ab')
 
@@ -42,6 +42,7 @@ build() {
   cd grafana
   echo 'Generate golang'
   make gen-go
+  make gen-themes
 
   echo 'building the backend'
   export CGO_LDFLAGS="${LDFLAGS}"
@@ -49,8 +50,15 @@ build() {
   export CGO_CFLAGS="${CFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export GOFLAGS="-buildmode=pie -trimpath -modcacherw"
-  go run build.go setup
-  go run build.go build
+  export BUILD_DATE="$(date --utc --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%Y-%m-%d)"
+
+  go build \
+      -trimpath \
+      -buildmode=pie \
+      -mod=readonly \
+      -modcacherw \
+      -ldflags "-linkmode external -extldflags \"${LDFLAGS}\" -X \"main.Version=${pkgver}\" -X \"main.buildstamp=${BUILD_DATE}\"" \
+      -o grafana pkg/cmd/grafana/main.go
 
   echo 'building the frontend'
   export NPM_CONFIG_PREFIX="$srcdir/npm"
@@ -64,9 +72,7 @@ package() {
   install -Dm644 grafana.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/grafana.conf"
   install -Dm644 grafana.sysusers "$pkgdir/usr/lib/sysusers.d/grafana.conf"
   cd $pkgname
-  install -Dsm755 bin/linux-*/grafana "$pkgdir/usr/bin/grafana"
-  install -Dsm755 bin/linux-*/grafana-server "$pkgdir/usr/bin/grafana-server"
-  install -Dsm755 bin/linux-*/grafana-cli "$pkgdir/usr/bin/grafana-cli"
+  install -Dsm755 grafana "$pkgdir/usr/bin/grafana"
   install -Dm640 -o207 -g207 conf/sample.ini "$pkgdir/etc/$pkgname.ini"
   install -Dm644 conf/defaults.ini "$pkgdir/usr/share/$pkgname/conf/defaults.ini"
   install -dm755 "$pkgdir/usr/share/grafana/"
