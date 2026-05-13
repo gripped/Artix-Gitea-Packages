@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.2
-pkgrel=3
+pkgrel=3.1
 _commit="255b970353a918f065c44e9af7677516789ab8bf"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -25,7 +25,6 @@ source=("${pkgname}::git+https://github.com/JeffHoogland/${pkgname}.git#commit=$
         "sysactions.patch"
         "Artix_dna_spiral_dark_bw-4K.png"
         "background.edc"
-#autopoint
         "artix-icon.png")
 
 prepare() {
@@ -37,8 +36,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/e_main_c.patch"
   patch -Np1 -i "${srcdir}/tasks_edc.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
-sed -i '/AM_GNU_GETTEXT_VERSION/,+2d' configure.ac
-#sed -i 's|AM_GNU_GETTEXT_VERSION(\[0.19\])|AM_GNU_GETTEXT_VERSION([0.19], [external])|' configure.ac
+#sed -i '/AM_GNU_GETTEXT_VERSION/,+2d' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
   sed -i 's/About Operating System/Moksha Desktop/g' po/*.po*
@@ -51,7 +49,6 @@ sed -i '/AM_GNU_GETTEXT_VERSION/,+2d' configure.ac
 build() {
   CFLAGS+=" -Wno-incompatible-pointer-types"
   cd "$srcdir/${pkgname}"
-#export AUTOPOINT=$srcdir/autopoint
   ./autogen.sh
   ./configure --prefix=/usr --disable-bodhi
   make
@@ -65,8 +62,7 @@ check() {
 package_moksha() {
   depends=('efl>=1.27.0' 'terminology' 'moksha-menu' 'moksha-arandr' 'moksha-help' 'desktop-file-utils'
            'x11win-server' 'xorg-xinit' 'xsel' 'xclip' 'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy'
-           'xcb-util-keysyms' 'rrdtool')
-           #'xcb-util-keysyms' 'openssl-1.1' 'rrdtool')
+           'xcb-util-keysyms' 'rrdtool' 'thunar')
   optdepends=('moksha-module-mixer: Moksha pulse audio mixer'
               'moksha-extra-modules: additional modules for Moksha'
               'moksha-themes: additional themes for Moksha'
