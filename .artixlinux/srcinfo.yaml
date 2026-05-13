@@ -1,9 +1,9 @@
 ---
-version: 1:2.6.30-1
+version: 1:2.6.31-1
 pkgbase:
   name: pyenv
   pkgdesc: Easily switch between multiple versions of Python
-  pkgver: 2.6.30
+  pkgver: 2.6.31
   pkgrel: 1
   epoch: 1
   url: https://github.com/pyenv/pyenv
@@ -16,13 +16,13 @@ pkgbase:
   optdepends:
     - 'git: installing development versions'
   source:
-    - https://github.com/pyenv/pyenv/archive/v2.6.30/pyenv-2.6.30.tar.gz
+    - https://github.com/pyenv/pyenv/archive/v2.6.31/pyenv-2.6.31.tar.gz
     - pyenv.zsh
   sha512sums:
-    - 3fe98b2ecc8da5d3f779615b1545686ce2298b6eef19740a8d38ded268f0ecf317a8ba8f6a32e7efdf7066af5b67bb8ce57ec59e1388f76f014ea46f8d5b6d8c
+    - ea2abab34d7aead2226a599f733b081cd06aad18311c2298ca9ffb1fc3414984a6a2d12a626853a4a26f09dd1633f48f6857d6e7ad115efd9db78b1d6c609e95
     - 0db4e464d3f79a3402fca8457ef5fe66078c360596c8d899f1fe2759700171299100421ebcaa12ab6a96ec4c4450fa9245879f3d0058632b10c8acff2ceeb106
   b2sums:
-    - 04d3382fad2bb11f12aeccf867a11eefcbe791417a8fb3557697faba8fb9e7b79aec057467772f48d46ceeeb50da425361e4ad5420bf96b0a8f7d5b95382f58e
+    - e8e8b60f74ee3fb24ba3f2b6df588a2fd2e2f5daf19cf3e0eeeae73d7c4df34f05bad7e90eea9018d5620a54d292c8a97253556dffd04846bd100dddd47a59c9
     - 853a2e62a3d1c1963bf32e297a086d74e3142784f32b16df0738e5694587719954e868744d66e4a265aa6197a1fa1ae74b0b1300bda5b924feb6854bcb1f4aaf
 pkgname:
   - name: pyenv
