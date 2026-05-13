@@ -6,7 +6,7 @@ _req=257
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=1.2
+pkgrel=2
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -34,8 +34,10 @@ makedepends=(
 )
 source=(
     "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
+    0001-fix-logind-dbus-install.patch
 )
-sha256sums=('79c4d514403bbbf824b33f11d697b2f37b8fcc47484075baedca2d0faa9cb3b9')
+sha256sums=('79c4d514403bbbf824b33f11d697b2f37b8fcc47484075baedca2d0faa9cb3b9'
+            '1036c6d3311846cc6b95540681cd0bcd19a99f8d29c1620427a68eb62dc9079e')
 
 _backports=(
 )
@@ -55,6 +57,8 @@ prepare() {
         git log --oneline -1 "${_c}"
         git revert -n "${_c}"
     done
+
+    patch -Np1 -i ../0001-fix-logind-dbus-install.patch
 }
 
 build() {
@@ -132,11 +136,6 @@ package_elogind() {
     mv -v "${pkgdir}"/usr/lib/pkgconfig "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
-
-    install -Dvm644 "${pkgbase}/src/login/org.freedesktop.login1.service.in" \
-        "${pkgdir}/usr/share/dbus-1/system-services/org.freedesktop.login1.service"
-    sed -i 's|{{LIBEXECDIR}}|/usr/lib/elogind|' \
-        "${pkgdir}/usr/share/dbus-1/system-services/org.freedesktop.login1.service"
 }
 
 package_libelogind(){
