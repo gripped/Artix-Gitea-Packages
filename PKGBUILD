@@ -16,10 +16,11 @@ pkgname=(
     'etmpfiles'
     'egummiboot'
     'eukify'
+    'eshutdown'
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -27,9 +28,8 @@ license=(
     'LGPL-2.1-or-later'
 )
 depends=(
-    'libgcc'
-    'libstdc++'
     'glibc'
+    'libgcc'
 )
 makedepends=(
     'acl'
@@ -37,7 +37,6 @@ makedepends=(
     'hwdata'
     'kbd'
     'kmod'
-    'libxcrypt'
     'util-linux'
     'docbook-xsl'
     'git'
@@ -58,6 +57,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-artix-standalone-install.patch
         0001-artix-boot-standalone.patch
+        0001-eshutdown-standalone.patch
         artix.conf
         loader.conf
         splash-artix.bmp
@@ -67,6 +67,7 @@ sha512sums=('16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             'b01878eebe964177e53121e8249d73d0b041e4882e818d79cd8e14da6ce3ec53d1128aa6b74fe604effcdff0c9403c32cb8bce3d8938c8556a6e2d17ae12461f'
             'fc7bc3200211ed5a0d7aaf9465fbb6524088f3c049c21e6ca06c161dd7469de518245730257878376fafbf2dbab23f91d68c7ce3ea26a6b904c3f6ce2e02e4c8'
+            'eeacecd674165139b9027a03916f251c01e0250ae3eec770c71ad3f7ab734f27ce60ac733c295c2af3cbcdeb876c220a53518ef8539b344c9789a1acfe52c18f'
             '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
             'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
             'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
@@ -95,6 +96,7 @@ prepare() {
 
     patch -Np1 -i ../0001-artix-standalone-install.patch
     patch -Np1 -i ../0001-artix-boot-standalone.patch
+    patch -Np1 -i ../0001-eshutdown-standalone.patch
 }
 
 build() {
@@ -283,6 +285,9 @@ build() {
         src/kernel-install/60-ukify.install
         man/ukify.1
 
+        eshutdown
+        man/shutdown.8
+
         systemd-detect-virt
         systemd-runtest.env
 
@@ -300,6 +305,8 @@ build() {
 
         test-fido-id-desc
         test-link-config-tables
+
+        test-umount
     )
     meson compile -C build "${_targets[@]}"
 }
@@ -334,6 +341,8 @@ check() {
         test-systemd-tmpfiles.standalone
         test-sysusers.standalone
 
+        test-umount
+
         #test-tmpfile-util
         #test-offline-passwd
     )
@@ -349,6 +358,7 @@ _inst_man() {
         *systemd-hwdb*) man=${x/systemd/udev} ;;
         *systemd-boot*) man=${x/systemd-/egummi} ;;
         *systemd-bless-boot-generator*) man=${x/systemd-/e} ;;
+        *shutdown*) man=e${x} ;;
         *) man=${x/systemd-/e} ;;
     esac
     install -vm644 build/man/"$x" "${pkgdir}"/usr/share/man/man"$y/$man"
@@ -389,9 +399,6 @@ package_libudev() {
 
 package_esysusers() {
     pkgdesc='the sysusers.d binary'
-    depends+=(
-        'libxcrypt' #'libcrypt.so'
-    )
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags esysusers
 
@@ -404,9 +411,6 @@ package_esysusers() {
 
 package_etmpfiles() {
     pkgdesc='the tmpfiles.d binary'
-    depends+=(
-        'acl' #'libacl.so'
-    )
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags etmpfiles
 
@@ -421,7 +425,6 @@ package_egummiboot() {
     pkgdesc='the gummiboot bootloader'
     provides=('gummiboot')
     depends+=(
-        'util-linux' #'libblkid.so' 'libmount.so'
         'sh'
     )
 
@@ -444,8 +447,7 @@ package_egummiboot() {
 package_eukify() {
     pkgdesc='Combine kernel and initrd into a signed Unified Kernel Image'
     provides=('ukify')
-    depends+=(
-        'binutils'
+    depends=(
         'python'
         'python-cryptography'
         'python-pefile'
@@ -458,4 +460,12 @@ package_eukify() {
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags eukify
 
     _inst_man "ukify.1"
+}
+
+package_eshutdown() {
+    pkgdesc='e-shutdown binary'
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eshutdown
+
+    _inst_man "shutdown.8"
 }

@@ -1,0 +1,33 @@
+From 641fa26f1ab4c00ea430c4a888294e17a4ca2ffe Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Wed, 13 May 2026 21:11:19 +0200
+Subject: [PATCH 1/1] eshutdown standalone
+
+---
+ src/shutdown/meson.build | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/shutdown/meson.build b/src/shutdown/meson.build
+index 709b0fa692..b4f3ad8b2d 100644
+--- a/src/shutdown/meson.build
++++ b/src/shutdown/meson.build
+@@ -21,7 +21,7 @@ executables += [
+                 'dependencies' : libmount_cflags,
+         },
+         libexec_template + {
+-                'name' : 'systemd-shutdown.standalone',
++                'name' : 'eshutdown',
+                 'objects' : ['systemd-shutdown'],
+                 'link_with' : [
+                         libc_wrapper_static,
+@@ -29,6 +29,7 @@ executables += [
+                         libshared_static,
+                         libsystemd_static,
+                 ],
++                'install_tag' : 'eshutdown',
+                 'dependencies' : libmount_cflags,
+         },
+         test_template + {
+-- 
+2.54.0
+
