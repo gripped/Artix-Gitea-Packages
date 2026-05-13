@@ -1,10 +1,10 @@
 ---
-version: 6.4-3
+version: 6.4.4-1
 pkgbase:
   name: xpra
   pkgdesc: multi-platform screen and application forwarding system screen for X11
-  pkgver: 6.4
-  pkgrel: 3
+  pkgver: 6.4.4
+  pkgrel: 1
   url: https://www.xpra.org
   arch:
     - x86_64
@@ -61,19 +61,19 @@ pkgbase:
     - etc/xpra/conf.d/65_proxy.conf
     - etc/pam.d/xpra
   source:
-    - xpra-6.4.tar.xz::https://www.xpra.org/src/xpra-6.4.tar.xz
-    - xpra-6.4.tar.xz.asc::https://www.xpra.org/src/xpra-6.4.tar.xz.gpg
+    - xpra-6.4.4.tar.xz::https://www.xpra.org/src/xpra-6.4.4.tar.xz
+    - xpra-6.4.4.tar.xz.asc::https://www.xpra.org/src/xpra-6.4.4.tar.xz.gpg
   validpgpkeys:
     - B4993B57323148E37977E5D873254CAD17978FAF
   md5sums:
-    - 4ef585487c4eda99bcfa08203c24c1fe
+    - 9dc7caed7cf27c1dea152c12b30afaa4
     - SKIP
   sha1sums:
-    - 95f5eed8b169c7de20f93dde22c1f40515db1652
+    - 1e325943f04ee6a15f3a0adef77aa0de0163f8b3
     - SKIP
   sha256sums:
-    - 3cf2d025bfdbec1cfc56dcd3f66e799991d2b58f0f9a259a23b4a63836df35b2
+    - 8b8a50caa60bb9a03be6f37afd726d40b69b9a2d363b668bb1de6787cb356065
     - SKIP
 pkgname:
   - name: xpra
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
