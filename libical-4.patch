@@ -1,0 +1,248 @@
+diff --git a/src/calendar/libecal/e-cal-component-alarm-repeat.c b/src/calendar/libecal/e-cal-component-alarm-repeat.c
+index 5b50eda05..2024ebe41 100644
+--- a/src/calendar/libecal/e-cal-component-alarm-repeat.c
++++ b/src/calendar/libecal/e-cal-component-alarm-repeat.c
+@@ -37,7 +37,7 @@ struct _ECalComponentAlarmRepeat {
+ 
+ #if !ICAL_CHECK_VERSION(3, 99, 99)
+ #define i_cal_duration_new_from_seconds i_cal_duration_new_from_int
+-#define i_cal_duration_as_seconds i_cal_duration_as_int
++#define i_cal_duration_as_utc_seconds i_cal_duration_as_int
+ #endif
+ 
+ /**
+@@ -60,7 +60,7 @@ e_cal_component_alarm_repeat_new (gint repetitions,
+ 	g_return_val_if_fail (I_CAL_IS_DURATION ((ICalDuration *) interval), NULL);
+ 
+ 	return e_cal_component_alarm_repeat_new_seconds (repetitions,
+-		i_cal_duration_as_seconds ((ICalDuration *) interval));
++		i_cal_duration_as_utc_seconds ((ICalDuration *) interval));
+ }
+ 
+ /**
+@@ -105,7 +105,7 @@ e_cal_component_alarm_repeat_copy (const ECalComponentAlarmRepeat *repeat)
+ 	g_return_val_if_fail (repeat != NULL, NULL);
+ 
+ 	return e_cal_component_alarm_repeat_new_seconds (repeat->repetitions,
+-		i_cal_duration_as_seconds (repeat->interval));
++		i_cal_duration_as_utc_seconds (repeat->interval));
+ }
+ 
+ /**
+@@ -203,7 +203,7 @@ e_cal_component_alarm_repeat_set_interval (ECalComponentAlarmRepeat *repeat,
+ 
+ 	if (repeat->interval != interval) {
+ 		e_cal_component_alarm_repeat_set_interval_seconds (repeat,
+-			i_cal_duration_as_seconds ((ICalDuration *) interval));
++			i_cal_duration_as_utc_seconds ((ICalDuration *) interval));
+ 	}
+ }
+ 
+@@ -222,7 +222,7 @@ e_cal_component_alarm_repeat_get_interval_seconds (const ECalComponentAlarmRepea
+ {
+ 	g_return_val_if_fail (repeat != NULL, 0);
+ 
+-	return i_cal_duration_as_seconds (repeat->interval);
++	return i_cal_duration_as_utc_seconds (repeat->interval);
+ }
+ 
+ /**
+@@ -240,7 +240,7 @@ e_cal_component_alarm_repeat_set_interval_seconds (ECalComponentAlarmRepeat *rep
+ {
+ 	g_return_if_fail (repeat != NULL);
+ 
+-	if (i_cal_duration_as_seconds (repeat->interval) != interval_seconds) {
++	if (i_cal_duration_as_utc_seconds (repeat->interval) != interval_seconds) {
+ 		g_clear_object (&repeat->interval);
+ 		repeat->interval = i_cal_duration_new_from_seconds (interval_seconds);
+ 	}
+diff --git a/src/calendar/libecal/e-cal-component-alarm-trigger.c b/src/calendar/libecal/e-cal-component-alarm-trigger.c
+index 33e4dc53b..e4f78b050 100644
+--- a/src/calendar/libecal/e-cal-component-alarm-trigger.c
++++ b/src/calendar/libecal/e-cal-component-alarm-trigger.c
+@@ -44,7 +44,7 @@ struct _ECalComponentAlarmTrigger {
+ 
+ #if !ICAL_CHECK_VERSION(3, 99, 99)
+ #define i_cal_duration_new_from_seconds i_cal_duration_new_from_int
+-#define i_cal_duration_as_seconds i_cal_duration_as_int
++#define i_cal_duration_as_utc_seconds i_cal_duration_as_int
+ #define i_cal_trigger_new_from_seconds i_cal_trigger_new_from_int
+ #endif
+ 
+@@ -427,7 +427,7 @@ e_cal_component_alarm_trigger_set_relative (ECalComponentAlarmTrigger *trigger,
+ 
+ 	trigger->kind = kind;
+ 	trigger->rel_duration = i_cal_duration_new_from_seconds (
+-		i_cal_duration_as_seconds ((ICalDuration *) duration));
++		i_cal_duration_as_utc_seconds ((ICalDuration *) duration));
+ }
+ 
+ /**
+@@ -543,10 +543,10 @@ e_cal_component_alarm_trigger_set_duration (ECalComponentAlarmTrigger *trigger,
+ 		return;
+ 
+ 	if (trigger->rel_duration != duration &&
+-	    i_cal_duration_as_seconds (trigger->rel_duration) != i_cal_duration_as_seconds ((ICalDuration *) duration)) {
++	    i_cal_duration_as_utc_seconds (trigger->rel_duration) != i_cal_duration_as_utc_seconds ((ICalDuration *) duration)) {
+ 		g_clear_object (&trigger->rel_duration);
+ 		trigger->rel_duration = i_cal_duration_new_from_seconds (
+-			i_cal_duration_as_seconds ((ICalDuration *) duration));
++			i_cal_duration_as_utc_seconds ((ICalDuration *) duration));
+ 	}
+ }
+ 
+diff --git a/src/calendar/libecal/e-cal-component-bag.c b/src/calendar/libecal/e-cal-component-bag.c
+index 794dd0cad..2e045e43e 100644
+--- a/src/calendar/libecal/e-cal-component-bag.c
++++ b/src/calendar/libecal/e-cal-component-bag.c
+@@ -343,7 +343,7 @@ e_cal_component_bag_item_read_times (ECalComponentBagItem *self,
+ 			dur = i_cal_property_get_duration (prop);
+ 			if (dur) {
+ 				#if ICAL_CHECK_VERSION(3, 99, 99)
+-				self->duration_minutes = i_cal_duration_as_seconds (dur) / 60;
++				self->duration_minutes = i_cal_duration_as_utc_seconds (dur) / 60;
+ 				#else
+ 				self->duration_minutes = i_cal_duration_as_int (dur) / 60;
+ 				#endif
+diff --git a/src/calendar/libecal/e-cal-component-period.c b/src/calendar/libecal/e-cal-component-period.c
+index 6f53a735c..2e50b9bec 100644
+--- a/src/calendar/libecal/e-cal-component-period.c
++++ b/src/calendar/libecal/e-cal-component-period.c
+@@ -41,7 +41,7 @@ struct _ECalComponentPeriod {
+ };
+ 
+ #if !ICAL_CHECK_VERSION(3, 99, 99)
+-#define i_cal_duration_as_seconds i_cal_duration_as_int
++#define i_cal_duration_as_utc_seconds i_cal_duration_as_int
+ #define i_cal_duration_new_from_seconds i_cal_duration_new_from_int
+ #endif
+ 
+@@ -369,6 +369,6 @@ e_cal_component_period_set_duration (ECalComponentPeriod *period,
+ 
+ 	if (period->duration != duration) {
+ 		g_clear_object (&period->duration);
+-		period->duration = i_cal_duration_new_from_seconds (i_cal_duration_as_seconds ((ICalDuration *) duration));
++		period->duration = i_cal_duration_new_from_seconds (i_cal_duration_as_utc_seconds ((ICalDuration *) duration));
+ 	}
+ }
+diff --git a/src/calendar/libecal/e-cal-util.c b/src/calendar/libecal/e-cal-util.c
+index 9d28f6260..f7052afe6 100644
+--- a/src/calendar/libecal/e-cal-util.c
++++ b/src/calendar/libecal/e-cal-util.c
+@@ -37,7 +37,7 @@
+ #define _TIME_MAX	((time_t) INT_MAX)
+ 
+ #if !ICAL_CHECK_VERSION(3, 99, 99)
+-#define i_cal_duration_as_seconds i_cal_duration_as_int
++#define i_cal_duration_as_utc_seconds i_cal_duration_as_int
+ #define i_cal_duration_new_from_seconds i_cal_duration_new_from_int
+ #endif
+ 
+@@ -359,7 +359,7 @@ compute_alarm_range (ECalComponent *comp,
+ 		case E_CAL_COMPONENT_ALARM_TRIGGER_RELATIVE_START:
+ 		case E_CAL_COMPONENT_ALARM_TRIGGER_RELATIVE_END:
+ 			dur = e_cal_component_alarm_trigger_get_duration (trigger);
+-			dur_time = i_cal_duration_as_seconds (dur);
++			dur_time = i_cal_duration_as_utc_seconds (dur);
+ 
+ 			if (repeat && e_cal_component_alarm_repeat_get_repetitions (repeat) != 0) {
+ 				gint rdur;
+@@ -468,7 +468,7 @@ e_cal_util_add_alarm_before_start (ECalComponent *comp,
+ 		if (!duration || !i_cal_duration_is_neg (duration))
+ 			continue;
+ 
+-		if (i_cal_duration_as_seconds (duration) == (-1) * before_start_seconds)
++		if (i_cal_duration_as_utc_seconds (duration) == (-1) * before_start_seconds)
+ 			break;
+ 	}
+ 
+@@ -574,7 +574,7 @@ add_alarm_occurrences_cb (ICalComponent *icalcomp,
+ 		}
+ 
+ 		dur = e_cal_component_alarm_trigger_get_duration (trigger);
+-		dur_time = i_cal_duration_as_seconds (dur);
++		dur_time = i_cal_duration_as_utc_seconds (dur);
+ 
+ 		if (e_cal_component_alarm_trigger_get_kind (trigger) == E_CAL_COMPONENT_ALARM_TRIGGER_RELATIVE_START)
+ 			occur_time = start;
+diff --git a/src/services/evolution-alarm-notify/e-alarm-notify.c b/src/services/evolution-alarm-notify/e-alarm-notify.c
+index 76963ec98..dc2441924 100644
+--- a/src/services/evolution-alarm-notify/e-alarm-notify.c
++++ b/src/services/evolution-alarm-notify/e-alarm-notify.c
+@@ -624,7 +624,7 @@ e_alarm_notify_process (EAlarmNotify *an,
+ 			gint offset;
+ 
+ 			#if ICAL_CHECK_VERSION(3, 99, 99)
+-			offset = i_cal_duration_as_seconds (duration);
++			offset = i_cal_duration_as_utc_seconds (duration);
+ 			#else
+ 			offset = i_cal_duration_as_int (duration);
+ 			#endif
+diff --git a/tests/libecal/test-cal-component.c b/tests/libecal/test-cal-component.c
+index 740e8591e..895511661 100644
+--- a/tests/libecal/test-cal-component.c
++++ b/tests/libecal/test-cal-component.c
+@@ -21,7 +21,7 @@
+ #include <libecal/libecal.h>
+ 
+ #if !ICAL_CHECK_VERSION(3, 99, 99)
+-#define i_cal_duration_as_seconds i_cal_duration_as_int
++#define i_cal_duration_as_utc_seconds i_cal_duration_as_int
+ #define i_cal_duration_new_from_seconds i_cal_duration_new_from_int
+ #endif
+ 
+@@ -83,7 +83,7 @@ verify_ical_durationtype_equal (ICalDuration *expected,
+ 
+ 	g_assert_nonnull (received);
+ 
+-	g_assert_cmpint (i_cal_duration_as_seconds (expected), ==, i_cal_duration_as_seconds (received));
++	g_assert_cmpint (i_cal_duration_as_utc_seconds (expected), ==, i_cal_duration_as_utc_seconds (received));
+ }
+ 
+ static void
+@@ -371,11 +371,11 @@ verify_struct_alarm_repeat_equal (const ECalComponentAlarmRepeat *expected,
+ 					e_cal_component_alarm_repeat_get_interval (received));
+ 	g_assert_cmpint (e_cal_component_alarm_repeat_get_interval_seconds (expected), ==, e_cal_component_alarm_repeat_get_interval_seconds (received));
+ 	g_assert_cmpint (e_cal_component_alarm_repeat_get_interval_seconds (expected), ==,
+-			 i_cal_duration_as_seconds (e_cal_component_alarm_repeat_get_interval (expected)));
++			 i_cal_duration_as_utc_seconds (e_cal_component_alarm_repeat_get_interval (expected)));
+ 	g_assert_cmpint (e_cal_component_alarm_repeat_get_interval_seconds (received), ==,
+-			 i_cal_duration_as_seconds (e_cal_component_alarm_repeat_get_interval (received)));
++			 i_cal_duration_as_utc_seconds (e_cal_component_alarm_repeat_get_interval (received)));
+ 	g_assert_cmpint (e_cal_component_alarm_repeat_get_interval_seconds (expected), ==,
+-			 i_cal_duration_as_seconds (e_cal_component_alarm_repeat_get_interval (received)));
++			 i_cal_duration_as_utc_seconds (e_cal_component_alarm_repeat_get_interval (received)));
+ }
+ 
+ static void
+diff --git a/tests/libecal/test-cal-recur.c b/tests/libecal/test-cal-recur.c
+index 54e1448c6..10b829d73 100644
+--- a/tests/libecal/test-cal-recur.c
++++ b/tests/libecal/test-cal-recur.c
+@@ -20,7 +20,7 @@
+ #include "e-test-server-utils.h"
+ 
+ #if !ICAL_CHECK_VERSION(3, 99, 99)
+-#define i_cal_duration_as_seconds i_cal_duration_as_int
++#define i_cal_duration_as_utc_seconds i_cal_duration_as_int
+ #endif
+ 
+ static ETestServerClosure test_closure = { E_TEST_SERVER_CALENDAR, NULL, E_CAL_CLIENT_SOURCE_TYPE_EVENTS, FALSE, NULL, FALSE };
+@@ -656,7 +656,7 @@ duration_got_instance_cb (ICalComponent *icomp,
+ 
+ 	dur = i_cal_component_get_duration (icomp);
+ 	g_assert_nonnull (dur);
+-	g_assert_cmpint (i_cal_duration_as_seconds (dur), ==, dd->expected_duration);
++	g_assert_cmpint (i_cal_duration_as_utc_seconds (dur), ==, dd->expected_duration);
+ 	g_assert_cmpint (i_cal_time_as_timet (instance_end) - i_cal_time_as_timet (instance_start), ==, dd->expected_duration);
+ 
+ 	g_object_unref (dur);
+@@ -698,7 +698,7 @@ test_recur_duration (ETestServerFixture *fixture,
+ 	dur = i_cal_component_get_duration (comp);
+ 	g_assert_nonnull (dur);
+ 
+-	dd.expected_duration = i_cal_duration_as_seconds (dur);
++	dd.expected_duration = i_cal_duration_as_utc_seconds (dur);
+ 	g_object_unref (dur);
+ 
+ 	g_assert_cmpint (dd.expected_duration, ==, 30 * 60);
