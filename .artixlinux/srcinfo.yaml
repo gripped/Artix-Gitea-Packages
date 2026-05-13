@@ -1,10 +1,10 @@
 ---
-version: 1.10.1-6
+version: 1.10.1-7
 pkgbase:
   name: python-fiona
   pkgdesc: Read and write geographic data files
   pkgver: 1.10.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/Toblerity/Fiona
   arch:
     - x86_64
