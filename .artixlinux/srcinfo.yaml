@@ -1,9 +1,9 @@
 ---
-version: 20260404-1
+version: 20260512-1
 pkgbase:
   name: zramen-dinit
   pkgdesc: dinit service scripts for zramen
-  pkgver: 20260404
+  pkgver: 20260512
   pkgrel: 1
   url: https://artixlinux.org
   arch:
@@ -19,10 +19,14 @@ pkgbase:
     - init-zramen
   conflicts:
     - init-zramen
+  backup:
+    - etc/dinit.d/config/zramen.conf
   source:
     - zramen
+    - zramen.conf
   sha256sums:
-    - 61b035db4921b2a845bd49b667ac16a1cd69ba9e50a4c3ca6339058eaa8df66f
+    - 572f8a9d29168742b0003a4508ec6f4682a61406ea37b70c72c6e99a31d37466
+    - 4cc81ffc75e4c065ac6718dce93547a515101564321990b4e25f3711b0e081e4
 pkgname:
   - name: zramen-dinit
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
