@@ -1,10 +1,10 @@
 ---
-version: 3.25.2-1
+version: 3.25.2-2
 pkgbase:
   name: dns-lexicon
   pkgdesc: Manipulate DNS records on various DNS providers in a standardized/agnostic way
   pkgver: 3.25.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/dns-lexicon/dns-lexicon
   arch:
     - any
@@ -38,6 +38,8 @@ pkgbase:
     - 'python-localzone: for localzone support'
     - 'python-softlayer: for SoftLayer support'
     - 'python-zeep: for Gransy support'
+  conflicts:
+    - python-lexicon
   source:
     - dns-lexicon::git+https://github.com/dns-lexicon/dns-lexicon#tag=v3.25.2
   sha512sums:
