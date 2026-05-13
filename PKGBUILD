@@ -6,7 +6,7 @@ _req=257
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -132,6 +132,9 @@ package_elogind() {
     mv -v "${pkgdir}"/usr/lib/pkgconfig "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/include "${srcdir}"/_libelogind/
     mv -v "${pkgdir}"/usr/share/man/man3 "${srcdir}"/_libelogind/
+
+    install -Dvm644 "${pkgbase}/src/login/org.freedesktop.login1.service.in" \
+        "${pkgdir}/usr/share/dbus-1/system-services/org.freedesktop.login1.service"
 }
 
 package_libelogind(){

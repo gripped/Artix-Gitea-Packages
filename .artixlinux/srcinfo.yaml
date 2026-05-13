@@ -1,10 +1,10 @@
 ---
-version: 257.14-1
+version: 257.14-1.1
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
   pkgver: 257.14
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
