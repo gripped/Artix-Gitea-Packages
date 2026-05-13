@@ -3,7 +3,7 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.2
-pkgrel=3.1
+pkgrel=3.2
 _commit="255b970353a918f065c44e9af7677516789ab8bf"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
@@ -36,7 +36,7 @@ prepare() {
   patch -Np1 -i "${srcdir}/e_main_c.patch"
   patch -Np1 -i "${srcdir}/tasks_edc.patch"
   patch -Np1 -i "${srcdir}/sysactions.patch"
-#sed -i '/AM_GNU_GETTEXT_VERSION/,+2d' configure.ac
+  sed -i '/AM_GNU_GETTEXT_VERSION/,+2d' configure.ac
   sed -i 's/bodhi-help/moksha-help/g' src/bin/e_utils.c
   sed -i 's/About Operating System/Moksha Desktop/g' src/bin/e_int_menus.c
   sed -i 's/About Operating System/Moksha Desktop/g' po/*.po*
