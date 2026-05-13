@@ -2,7 +2,7 @@
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgname=haproxy
-pkgver=3.3.9
+pkgver=3.3.10
 pkgrel=1
 
 # Each release serie has its own repository. This is handled automatically in

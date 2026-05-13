@@ -1,9 +1,9 @@
 ---
-version: 3.3.9-1
+version: 3.3.10-1
 pkgbase:
   name: haproxy
   pkgdesc: Reliable, high performance TCP/HTTP load balancer
-  pkgver: 3.3.9
+  pkgver: 3.3.10
   pkgrel: 1
   url: https://www.haproxy.org/
   install: haproxy.install
@@ -23,7 +23,7 @@ pkgbase:
   backup:
     - etc/haproxy/haproxy.cfg
   source:
-    - git+https://git.haproxy.org/git/haproxy-3.3.git#tag=v3.3.9?signed
+    - git+https://git.haproxy.org/git/haproxy-3.3.git#tag=v3.3.10?signed
     - haproxy.cfg
     - haproxy.sysusers
     - 0001-Use-CFLAGS-and-LDFLAGS-when-building-admin.patch
