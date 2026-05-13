@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-3
+version: 0.4.2-3.1
 pkgbase:
   name: moksha
   pkgdesc: Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17
   pkgver: 0.4.2
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
@@ -78,6 +78,7 @@ pkgname:
       - xdg-dbus-proxy
       - xcb-util-keysyms
       - rrdtool
+      - thunar
     optdepends:
       - 'moksha-module-mixer: Moksha pulse audio mixer'
       - 'moksha-extra-modules: additional modules for Moksha'
