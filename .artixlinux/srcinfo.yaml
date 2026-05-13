@@ -1,9 +1,9 @@
 ---
-version: 25.5.0-1
+version: 26.4.0-1
 pkgbase:
   name: python-twisted
   pkgdesc: Asynchronous networking framework written in Python
-  pkgver: 25.5.0
+  pkgver: 26.4.0
   pkgrel: 1
   url: https://twistedmatrix.com/
   arch:
@@ -37,6 +37,7 @@ pkgbase:
     - tk
     - xorg-server-xvfb
   makedepends:
+    - git
     - python-build
     - python-hatch-fancy-pypi-readme
     - python-hatchling
@@ -66,9 +67,9 @@ pkgbase:
     - 'python-wsproto: for websocket support'
     - 'tk: for using tkconch'
   source:
-    - https://github.com/twisted/twisted/archive/twisted-25.5.0.tar.gz
+    - git+https://github.com/twisted/twisted.git#tag=twisted-26.4.0
   sha512sums:
-    - 2cc54ace787b986a1682a500e41b64f2c17cc1c608b054e64ad932f6bf42ec19979cbdc3a6121e879e1b1d4578ea1f4a66b992489ee00a3a85e601d0f29b711a
+    - a878ddd6b30257d91fde780975d4acd24216f90955583f76f088413fc12c0df2380627a0cac2c453ba1edd74098dca40f54a9c60ecf501c60dfe04d9e488e28a
 pkgname:
   - name: python-twisted
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
