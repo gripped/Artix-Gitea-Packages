@@ -1,9 +1,9 @@
 ---
-version: 409-1
+version: 410-1
 pkgbase:
   name: xterm
   pkgdesc: X Terminal Emulator
-  pkgver: 409
+  pkgver: 410
   pkgrel: 1
   url: https://invisible-island.net/xterm/
   arch:
@@ -30,11 +30,11 @@ pkgbase:
     - 'luit: locale converter for -lc option'
     - 'xorg-mkfontscale: font scaling'
   source:
-    - xterm::git+https://github.com/ThomasDickey/xterm-snapshots.git?signed#tag=xterm-409
+    - xterm::git+https://github.com/ThomasDickey/xterm-snapshots.git?signed#tag=xterm-410
   validpgpkeys:
     - 19882D92DDA4C400C22C0D56CC2AF4472167BE03
   b2sums:
-    - 9cecae9b1a2211e24ee752d2bf4df268c5c02108ce7f0fd51f22adfadd895862c9dd092b95f351d37594b299e318d7e5a41078937da6e96655c99b2caadf1a5d
+    - 94c296124bc2ddd171f56610ad69144cc25168e8443c276660b101cd9f7bd0bc057bc361cb36b1e504074616fd177334cdce318f5543a1edf342638f53d6dfd7
 pkgname:
   - name: xterm
 # generated with artixpkg 0.38.5-1-any
