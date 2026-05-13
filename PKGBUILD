@@ -65,7 +65,7 @@ install=gtk2.install
 pkgver() {
   cd gtk2-ng
   ( set -o pipefail
-    git show HEAD -s --format='%as' | sed 's/^..//;s/-//g'
+    git show HEAD -s --format='%as' | sed 's/-//g;s/^../2.24./'
   )
 }
 
