@@ -1,0 +1,35 @@
+---
+version: 0.0.1-1
+pkgbase:
+  name: moksha-module-picom
+  pkgdesc: Picom module for Moksha desktop
+  pkgver: 0.0.1
+  pkgrel: 1
+  url: https://github.com/thewaiter/PicomMod
+  arch:
+    - x86_64
+  license:
+    - GPL3
+  makedepends:
+    - git
+    - meson
+    - cmake
+    - libtool
+    - intltool
+  depends:
+    - picom
+    - moksha
+    - efl
+  provides:
+    - moksha-module-compton
+  conflicts:
+    - moksha-module-compton
+  replaces:
+    - moksha-module-compton
+  source:
+    - git+https://github.com/thewaiter/PicomMod.git#commit=343c00ef868dadf2e5dd26e3ec0caa541445583b
+  sha256sums:
+    - cfcf7d519e07d76a008484dac5be0d5acfc15dd771d5caea0f4ab2c3f69b4a5f
+pkgname:
+  - name: moksha-module-picom
+# generated with artixpkg 0.38.5-1-any
