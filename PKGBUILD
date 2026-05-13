@@ -3,8 +3,8 @@
 # Contributor: SpepS <dreamspepser at yahoo dot it>
 
 pkgname=ardour
-pkgver=9.2
-pkgrel=3
+pkgver=9.3
+pkgrel=1
 pkgdesc="Professional-grade digital audio workstation"
 arch=(x86_64)
 url="https://ardour.org/"
@@ -90,10 +90,10 @@ source=(
   $pkgname-7.0-re-vendor_qm-dsp.patch
 )
 noextract=($pkgname-midi-$pkgver.zip)
-sha512sums=('3aa8e9ce980545f0c3ec1d62182a715e5a181dc8223eec0a7455c3989a068b4f2b55312a6b522f7279d25c7c104661012ff25b44c6e5c70e1427c55a3aaf1436'
+sha512sums=('1cd459872b0a8b73f1cc50f63646909a943bdb513230342fb1eaba0fbd2f1f6450b807e3d01a594643a4bd2b57af8a7f772646185de1da3e45c51ed9bc254e7f'
             '94b681f989e834f5de25ce87da9c174b11d90617063f8c96147d7eb470391b35f6d54b85de16da8d963cacb01b50d1c1fab0fddd18eb3b086fe17124ecfa4f65'
             'a3da14925bc25d8a57ba3e137c4b2b04010054667ac4ae2aec116ce6c157b03c9dd76bf4d73c313022282362d19b91683f062d6ab2ee0c73a576d3fa6272bd1d')
-b2sums=('bae6945923fe1e2986f22c13f9be998da8b07754332b1c9d45956d7778d3fdee16310e02763d7c389531ea16a67b8583f4a691141e95528bda78c730bda61ed0'
+b2sums=('a46e995d89e869aa2e23cdcae763e8ff9a823f76edf32ed0d4036aae3732dd31c6f6a62aa48640f2b376b7df9f1caf17a91798951c126104b9d2d3f735ce9e1d'
         'e31be6b51a217e2f7f799aa1d6e8c3cd024d80ab2d8d4371496a2b8bf0215749979217b565909841a346d6b3128fbfd674d2fae64b9fe741a5b418cd184c23be'
         '73845adce9a48938cd7aef5fbc65f492e470de316620d278365d247c80caef44531e850fbd3d2f5de65a8562e67aabfd982c938439bd3670726a27bc003be017')
 
@@ -155,11 +155,12 @@ package() {
     glibmm libglibmm-2.4.so
     jack libjack.so
     libarchive libarchive.so
+    libjpeg-turbo libjpeg.so
     liblo liblo.so
-    libpulse libpulse.so
     liblrdf liblrdf.so
     libltc libltc.so
     libpng libpng16.so
+    libpulse libpulse.so
     libsamplerate libsamplerate.so
     libsndfile libsndfile.so
     libusb libusb-1.0.so
@@ -170,6 +171,7 @@ package() {
     pangomm libpangomm-1.4.so
     readline libreadline.so
     rubberband librubberband.so
+    serd libserd-0.so
     vamp-plugin-sdk libvamp-hostsdk.so libvamp-sdk.so
   )
 
