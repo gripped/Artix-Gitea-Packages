@@ -1,8 +1,8 @@
 # Maintainer: commandk <commandk@artixlinux.org>
 
 pkgname=waylock
-pkgver=1.5.0
-pkgrel=2
+pkgver=1.6.0
+pkgrel=1
 pkgdesc="A simple screenlocker for wayland compositors"
 arch=(x86_64)
 url="https://codeberg.org/ifreund/waylock"
@@ -30,10 +30,10 @@ source=(
   "${_zig_deps[@]}"
 )
 noextract=("${_zig_deps[@]}")
-sha512sums=('b0c6ab9c0b5d200629f84e9b29ae0962e8980d0f850b4dea4e63698388aac0e5aab8dcf284049c1f41af50adac4015024b5082dce5cfaf0c32e8cbeba9b41147'
+sha512sums=('6a372ae283e0bb0c4624452fe093eaa882de07f7efe5bbc33a441478e63a0afd4ed8d0c3045d8cf10dcfd27cb3e861bf7546cf7b06204889b7365e61b0ffa240'
             '8536456d2f2886c7aa844e227272e8e4595ba3197575cba46b5f757b045976cf1c65a131532a191f2a8a82ca3d58642900d57fe7358518a237f29e84cb85e0f2'
             'fe0dc46a8556f19c2ce1badbeee7576065cb56495b94b6d468ee6ed8667f9fef5377e26864b0c8e81c3a2718cfcaf8a4f5e13aab23a615f3a58ec639372fb758')
-b2sums=('b9aa88fac8fb9d8c06bc3d5e5e556752c0e1c5cbbc160ae5f7b76af22770eeaac17694752aed8de5a8c179d28cf83cfe767f22fc0237d5d057503b2c84a43d13'
+b2sums=('fd00b1abcf33a67fc2e8a1ac2367853aacf1841ad4af8d586beb79a2c05f530584a112f85a1ae3bf1a34aaccad868d60ab76bc187e3b3a7edfd92da1c4ed829f'
         '1c33b878c3efdf20eef58ddd6f8a6cab99a24e7481f9a3b8f31b19b58d13372d8dea84dfb26b4097123ca25b1d38939e9b987d70eb3a23fe0fecf9f21fe6f8a2'
         '6870fc2465e2b1ef4faa6330183a1dade4a4bcf36130113444e5221ff9c764db488304f2f25a603f2511c2562d55bf1011a5f8fe41a068e7e5b707e1d06c0792')
 validpgpkeys=('5FBDF84DD2278DB2B8AD8A5286DED400DDFD7A11') # Isaac Freund <mail@isaacfreund.com>
