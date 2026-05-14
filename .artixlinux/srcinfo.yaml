@@ -1,10 +1,10 @@
 ---
-version: 260.1-4
+version: 260.1-5
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 260.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -99,5 +99,5 @@ pkgname:
     provides:
       - ukify
   - name: eshutdown
-    pkgdesc: e-shutdown binary
+    pkgdesc: the eshutdown binary
 # generated with artixpkg 0.38.5-1-any

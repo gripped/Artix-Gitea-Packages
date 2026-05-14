@@ -20,7 +20,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=4
+pkgrel=5
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -463,7 +463,7 @@ package_eukify() {
 }
 
 package_eshutdown() {
-    pkgdesc='e-shutdown binary'
+    pkgdesc='the eshutdown binary'
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags eshutdown
 
