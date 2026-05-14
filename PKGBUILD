@@ -1,6 +1,6 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=7.0.6
+_ver=7.0.7
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -58,16 +58,16 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-sha256sums=('cba44440aa57affd7c21241dc5bc234b0df53c499f8ffc3ebc290dd3390a7523'
+sha256sums=('c8e1fe86a3aaff2de6f7401383f959283510c389ff84c15ab711c8fbceb25df4'
             'SKIP'
-            'cf3f8e6dc3c71a25e3f76ede780d0653d73b3d13f224f52350eb6d2e51d1b6f4'
+            '4a5fa687751890e3850cdbce18728de631877d0c9290d8a3b2a4fd164cf12c63'
             'SKIP')
-sha256sums_x86_64=('f5ac1a0a911cdeb79d558047ebc12b2615386a3ab92863aefb9db214bd3eb2c5')
-b2sums=('0e8640c77249b251b22f162b8eb21d062308c4a5d16e3942882fbfbbb50a3ac981ad14db8e5612fb9e0a26f8f3a2c6bb07f0309e26ea59323430f780d22b2821'
+sha256sums_x86_64=('895c15d70cb859290ecbbf70af5ac3ebdf258d883b0a49acefc52de535e84711')
+b2sums=('ae7214087a29d81c77b2351a4781ad248726f2e7b0a8ddb75790fd64825032d94ddb9526e979f0a41eb4b4da0bf76c63b1681e915c90f1706de7df0980c249f9'
         'SKIP'
-        '21900beb3994169ee9bc82842f4f663ee22cce0117a05c1ae8b4fb62372e7bf47c37ed7cbd289f919c4afd0182ca35d33d6f0c5aeb6663ce3034c97cc71c089c'
+        '26202ba5c3155fb045550a349c5f2d43b79848383bfc2052ba22157350327c1e4b8fd347adbe4f978820f26c49d078bdd438d3cf15ed6d8f6c304926dc086200'
         'SKIP')
-b2sums_x86_64=('57fca504ec3d683d5f958c3358e67d28474beeb76fecd1b255ea395907f54847a177a356de4d67f24d0c796f972c59ee030b1e6f9ebd618f382f1dd5a66eac58')
+b2sums_x86_64=('a4300ce61441ad50726cfe29bdeefa5e68302e636f4f764ffdc397b329da520307e698d24a1ad6e6e446500701b765555f75b8586d0ab763c0baa6c41b4cb02b')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
