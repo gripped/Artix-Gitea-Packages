@@ -1,9 +1,9 @@
 ---
-version: 6.11.0-1
+version: 6.11.1-1
 pkgbase:
   name: qt6-translations
   pkgdesc: A cross-platform application and UI framework (Translations)
-  pkgver: 6.11.0
+  pkgver: 6.11.1
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - ninja
     - qt6-tools
   source:
-    - git+https://code.qt.io/qt/qttranslations#tag=v6.11.0
+    - git+https://code.qt.io/qt/qttranslations#tag=v6.11.1
   sha256sums:
-    - 0926ddd1d698c0efc5f9d933412981da54222e8a3aed0a752fc7f52bd3f43495
+    - 59c11d3553b5fc0c0d37f6ad50cfa6a29758ee634c855f7306435a1320c7ec4b
 pkgname:
   - name: qt6-translations
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
