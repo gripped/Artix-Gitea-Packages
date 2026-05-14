@@ -1,9 +1,9 @@
 ---
-version: 6.11.0-1
+version: 6.11.1-1
 pkgbase:
   name: qt6-webview
   pkgdesc: Provides a way to display web content in a QML application
-  pkgver: 6.11.0
+  pkgver: 6.11.1
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - qt6-declarative
     - qt6-webengine
   source:
-    - git+https://code.qt.io/qt/qtwebview#tag=v6.11.0
+    - git+https://code.qt.io/qt/qtwebview#tag=v6.11.1
   sha256sums:
-    - 2aafcae651f78ce077ea374a285597c8b5c5f361b7af92547eb37b2a6992b664
+    - 87caf5bb1dc807589d6b52f5bb7c2f15bb9772c74e086ab16dbf8adbd99e42ac
 pkgname:
   - name: qt6-webview
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
