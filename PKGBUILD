@@ -2,7 +2,7 @@
 # Contributor: Damir Perisa <damir.perisa@bluewin.ch>
 
 pkgname=libksba
-pkgver=1.7.0
+pkgver=1.8.0
 pkgrel=1
 pkgdesc='Library for working with X.509 certificates, CMS data and related objects'
 url='https://www.gnupg.org/related_software/libksba/'
@@ -10,7 +10,7 @@ license=('GPL-2.0-only' 'GPL-3.0-only' 'LGPL-3.0-only')
 arch=('x86_64')
 depends=('bash' 'libgpg-error' 'glibc')
 source=("https://www.gnupg.org/ftp/gcrypt/${pkgname}/${pkgname}-${pkgver}.tar.bz2"{,.sig})
-sha256sums=('e1d3a5745911f5a663fddecf526541c4241052a9e4cafbc92dc7f4096c7efdac'
+sha256sums=('296b9db9095749f2aa104202d7ab7fd09ad10710e00780a709c9754b1a1d9292'
             'SKIP')
 validpgpkeys=('AC8E115BF73E2D8D47FA9908E98E9B2D19C6C8BD'  # Niibe Yutaka (GnuPG Release Key)
               'D8692123C4065DEA5E0F3AB5249B39D24F25E3B6'  # Werner Koch
