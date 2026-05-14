@@ -1,10 +1,10 @@
 ---
-version: 0.11-5.1
+version: 0.11-6
 pkgbase:
   name: qt6ct
   pkgdesc: Qt 6 Configuration Utility
   pkgver: 0.11
-  pkgrel: 5.1
+  pkgrel: 6
   url: https://www.opencode.net/trialuser/qt6ct
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 76bfc26838b8ec7dd049da54bd812d8c526986024845a30d1e546e43555e52bf
 pkgname:
   - name: qt6ct
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
