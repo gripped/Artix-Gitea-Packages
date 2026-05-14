@@ -1,9 +1,9 @@
 ---
-version: 6.11.0-4
+version: 6.11.1-1
 pkgbase:
   name: pyside6
-  pkgver: 6.11.0
-  pkgrel: 4
+  pkgver: 6.11.1
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -13,14 +13,15 @@ pkgbase:
     - LicenseRef-Qt-Commercial
     - Qt-GPL-exception-1.0
   makedepends:
-    - clang21
+    - clang
     - cmake
     - git
-    - llvm21
+    - llvm
     - ninja
     - python-numpy
     - python-setuptools
     - qt6-3d
+    - qt6-canvaspainter
     - qt6-charts
     - qt6-connectivity
     - qt6-datavis3d
@@ -45,23 +46,23 @@ pkgbase:
     - qt6-websockets
     - qt6-webview
   source:
-    - git+https://code.qt.io/pyside/pyside-setup#tag=v6.11.0
-    - fix-header-install-dir.patch
+    - git+https://code.qt.io/pyside/pyside-setup#tag=v6.11.1
   sha256sums:
-    - be9ab37fcb968156880ab8c6790ad80ab75fbbdd3519fe693ae9cda3f385f8f2
-    - 3bc87409ea3dc41847f1d5d7612fd97931b67f1b40510b465543a8ef5c9764ff
+    - 4f8c8416ceceaca24d7b75d0007d5c1979c5b40827743b7b734a4674be9a1b70
 pkgname:
   - name: pyside6
     pkgdesc: Enables the use of Qt6 APIs in Python applications
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - python
       - qt6-base
       - qt6-declarative
       - shiboken6
     optdepends:
       - 'qt6-3d: Qt3D bindings'
+      - 'qt6-canvaspainter: QtCanvasPainter bindings'
       - 'qt6-charts: QtCharts bindings'
       - 'qt6-connectivity: QtBluetooth and QtNfc bindings'
       - 'qt6-datavis3d: QtDataVisualization bindings'
@@ -95,15 +96,14 @@ pkgname:
     pkgdesc: Generates bindings for C++ libraries using CPython source code
     depends:
       - clang
-      - clang21
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libxml2
       - libxslt
       - llvm
-      - llvm21
       - python
       - qt6-base
     optdepends:
       - 'python: Python bindings'
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
