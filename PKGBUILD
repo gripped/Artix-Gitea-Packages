@@ -2,7 +2,7 @@
 
 pkgname=ly
 pkgver=1.4.0
-pkgrel=1.5
+pkgrel=1.6
 pkgdesc="TUI display manager"
 arch=(x86_64 aarch64)
 url="https://codeberg.org/fairyglade/ly.git"
@@ -37,7 +37,8 @@ package() {
         --global-cache-dir "$srcdir/zig-global-cache" \
         -Ddest_directory="$pkgdir" \
         -Dname="ly-dm" \
-        -Dinit_system="openrc"
+        -Dinit_system="openrc" \
+        -Doptimize=ReleaseSafe -Dtarget=x86_64-native -Dcpu=penryn
 
     install -DZ -m644 license.md "$pkgdir/usr/share/licenses/$pkgname/WTFPL"
 
