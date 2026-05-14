@@ -12,7 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=e4f894a4eef5c492c83a860a4ff16c8ed361445c
 pkgver=140.11.0.100
-pkgrel=2
+pkgrel=3
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
 _lwrelver="${pkgver##*.}"
@@ -149,6 +149,13 @@ validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
   # https://blog.mozilla.org/security/2023/05/11/updated-gpg-key-for-signing-firefox-releases/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
+)
+_languages=(
+    ach af an ar ast az be bg bn br bs ca-valencia ca cak cs cy da de dsb el
+    en-CA en-GB en-US eo es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE
+    gd gl gn gu-IN he hi-IN hr hsb hu hy-AM ia id is it ja ka kab kk km kn ko lij
+    lt lv mk mr ms my nb-NO ne-NP nl nn-NO oc pa-IN pl pt-BR pt-PT rm ro ru si sk sl
+    son sq sr sv-SE ta te th tl tr trs uk ur uz vi xh zh-CN zh-TW
 )
 
 prepare() {
@@ -398,18 +405,13 @@ END
   rm -f ../mozconfig  ./mozconfig
 
   ./mach build --priority normal
-  ./mach pack-multi-locale --locales \
-    ach af an ar ast az be bg bn br bs ca-valencia ca cak cs cy da de dsb el \
-    en-CA en-GB en-US eo es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE \
-    gd gl gn gu-IN he hi-IN hr hsb hu hy-AM ia id is it ja ka kab kk km kn ko lij \
-    lt lv mk mr ms my nb-NO ne-NP nl nn-NO oc pa-IN pl pt-BR pt-PT rm ro ru si sk sl \
-    son sq sr sv-SE ta te th tl tr trs uk ur uz vi xh zh-CN zh-TW
+  MOZ_PKG_FORMAT=tar ./mach pack-multi-locale --locales ${_languages[@]}
 }
 
 package() {
   _lw_srcdir=$srcdir/src/librewolf-$_ffsrcver-$_lwrelver
   cd "${_lw_srcdir}"
-  DESTDIR="$pkgdir" ./mach install
+  DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[@]}" ./mach install
 
   rm -f "${pkgdir}/usr/lib/pingsender"
 
@@ -418,6 +420,8 @@ package() {
   install -Dvm644 /dev/stdin "$vendorjs" <<END
 // Use system-provided dictionaries
 pref("spellchecker.dictionary_path", "/usr/share/hunspell");
+// Language packs are bundled
+pref("intl.multilingual.downloadEnabled", false);
 END
 
   local distini="$pkgdir/usr/lib/$__pkgname/distribution/distribution.ini"
