@@ -10,10 +10,9 @@ _pkgname="${pkgname}"
 __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
-_commit=ef1035f2d544e57212571dc158449aecef0c11ad
 _l10n_commit=e4f894a4eef5c492c83a860a4ff16c8ed361445c
-pkgver="140.10.2.100"
-pkgrel=2
+pkgver=140.11.0.100
+pkgrel=1
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
 _lwrelver="${pkgver##*.}"
@@ -124,7 +123,7 @@ options=(
 install='konform.install'
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
 source=(
-  "src"::"git+https://codeberg.org/konform-browser/source.git#commit=${_commit}"
+  "src"::"git+https://codeberg.org/konform-browser/source.git#tag=${pkgver}"
   "${_ff_source_tarball}"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "${_ff_source_tarball}.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
@@ -134,10 +133,9 @@ source=(
   "0002-Use-wasm32-wasip1-target.patch"
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
-  "0005-rust1_95compat.patch"
 )
-sha256sums=('c0bb994f89dcd089d1395095e13e6af5a1dd2c3c175eb54c52dd0769902f525c'
-            '796bf65372e702c13277e6f38e9276ded9dceea81e8934c29a06568016f24e77'
+sha256sums=('789e837e7b05bfa478c054a25931d71b538d78e226c3995d57e1be20cfa58e52'
+            '142a82a695240e303eeb5c187dbf4fb1c4ea5190fae0109b87a11796a12c5ef2'
             'SKIP'
             '52d638394dcc3254c70b550340bffb0ade63bd35f155eaee12e0000a51ef939b'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
@@ -145,8 +143,7 @@ sha256sums=('c0bb994f89dcd089d1395095e13e6af5a1dd2c3c175eb54c52dd0769902f525c'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760'
-            '6476516b1b56fe7b16f53bd4f6d2d77cb297fca0ca895c0354cd07d245d20bdc')
+            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -279,7 +276,6 @@ fi
   patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
   xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
   xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
-  patch -B .patchorigin -Np1 -i ../../0005-rust1_95compat.patch
 }
 
 
