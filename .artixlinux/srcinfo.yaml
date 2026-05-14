@@ -1,9 +1,9 @@
 ---
-version: 148.0.7778.96-1
+version: 148.0.7778.167-1
 pkgbase:
   name: ungoogled-chromium
   pkgdesc: A lightweight approach to removing Google web service dependency
-  pkgver: 148.0.7778.96
+  pkgver: 148.0.7778.167
   pkgrel: 1
   url: https://github.com/ungoogled-software/ungoogled-chromium
   arch:
@@ -60,16 +60,16 @@ pkgbase:
     - 'org.freedesktop.secrets: password storage backend on GNOME / Xfce'
     - 'upower: Battery Status API support'
   provides:
-    - chromium=148.0.7778.96
-    - chromedriver=148.0.7778.96
+    - chromium=148.0.7778.167
+    - chromedriver=148.0.7778.167
   conflicts:
     - chromium
     - chromedriver
   options:
     - '!lto'
   source:
-    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-148.0.7778.96-lite.tar.xz
-    - ungoogled-chromium-148.0.7778.96-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/148.0.7778.96-1.tar.gz
+    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-148.0.7778.167-lite.tar.xz
+    - ungoogled-chromium-148.0.7778.167-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/148.0.7778.167-1.tar.gz
     - https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz
     - chromium-138-nodejs-version-check.patch
     - chromium-145-fix-SYS_SECCOMP.patch
