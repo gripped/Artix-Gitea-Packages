@@ -12,7 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=e4f894a4eef5c492c83a860a4ff16c8ed361445c
 pkgver=140.11.0.100
-pkgrel=1
+pkgrel=2
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
 _lwrelver="${pkgver##*.}"
@@ -398,6 +398,12 @@ END
   rm -f ../mozconfig  ./mozconfig
 
   ./mach build --priority normal
+  ./mach pack-multi-locale --locales \
+    ach af an ar ast az be bg bn br bs ca-valencia ca cak cs cy da de dsb el \
+    en-CA en-GB en-US eo es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE \
+    gd gl gn gu-IN he hi-IN hr hsb hu hy-AM ia id is it ja ka kab kk km kn ko lij \
+    lt lv mk mr ms my nb-NO ne-NP nl nn-NO oc pa-IN pl pt-BR pt-PT rm ro ru si sk sl \
+    son sq sr sv-SE ta te th tl tr trs uk ur uz vi xh zh-CN zh-TW
 }
 
 package() {
