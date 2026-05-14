@@ -2,7 +2,7 @@
 
 pkgname=waylock
 pkgver=1.6.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A simple screenlocker for wayland compositors"
 arch=(x86_64)
 url="https://codeberg.org/ifreund/waylock"
@@ -21,7 +21,7 @@ makedepends=(
 )
 _zig_deps=(
   # https://codeberg.org/ifreund/waylock/src/tag/v${pkgver}/build.zig.zon
-  zig-wayland-v0.4.0.tar.gz::https://codeberg.org/ifreund/zig-wayland/archive/v0.4.0.tar.gz
+  zig-wayland-v0.6.0.tar.gz::https://codeberg.org/ifreund/zig-wayland/archive/v0.6.0.tar.gz
   zig-xkbcommon-v0.3.0.tar.gz::https://codeberg.org/ifreund/zig-xkbcommon/archive/v0.3.0.tar.gz
 )
 source=(
@@ -31,22 +31,31 @@ source=(
 )
 noextract=("${_zig_deps[@]}")
 sha512sums=('6a372ae283e0bb0c4624452fe093eaa882de07f7efe5bbc33a441478e63a0afd4ed8d0c3045d8cf10dcfd27cb3e861bf7546cf7b06204889b7365e61b0ffa240'
-            '8536456d2f2886c7aa844e227272e8e4595ba3197575cba46b5f757b045976cf1c65a131532a191f2a8a82ca3d58642900d57fe7358518a237f29e84cb85e0f2'
+            'b2328222e60676b50a5a3445e3e6e74655139c5e6e4f263108846fe0ec79a48b99590f823353e9721d9ce2c6d783681fd75cf6b672de19217db50582df444372'
             'fe0dc46a8556f19c2ce1badbeee7576065cb56495b94b6d468ee6ed8667f9fef5377e26864b0c8e81c3a2718cfcaf8a4f5e13aab23a615f3a58ec639372fb758')
 b2sums=('fd00b1abcf33a67fc2e8a1ac2367853aacf1841ad4af8d586beb79a2c05f530584a112f85a1ae3bf1a34aaccad868d60ab76bc187e3b3a7edfd92da1c4ed829f'
-        '1c33b878c3efdf20eef58ddd6f8a6cab99a24e7481f9a3b8f31b19b58d13372d8dea84dfb26b4097123ca25b1d38939e9b987d70eb3a23fe0fecf9f21fe6f8a2'
+        '5722bd1cdb8734e20dc998b64e3598f5d3bce1cf22388a093216e4a7c795a13d65f8b041b8ec27e2975e3081b3c676b77f281a85b7cd964af9b3c93c48d83579'
         '6870fc2465e2b1ef4faa6330183a1dade4a4bcf36130113444e5221ff9c764db488304f2f25a603f2511c2562d55bf1011a5f8fe41a068e7e5b707e1d06c0792')
 validpgpkeys=('5FBDF84DD2278DB2B8AD8A5286DED400DDFD7A11') # Isaac Freund <mail@isaacfreund.com>
 
-pkgver() {
-  cd $pkgname
-  git describe --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g;s/v//g'
-}
-
 prepare() {
-  for dep in "${_zig_deps[@]}"; do
-    zig fetch --global-cache-dir ./zig-cache "${dep%%::*}"
-  done
+  (
+    cd $pkgname
+    for dep in "${_zig_deps[@]}"; do
+      file_name="${dep%%::*}"
+      # Link dependency tarfile into place so that `zig fetch` can find it.
+      ln -s "../$file_name" "$file_name"
+      zig fetch --debug-hash --global-cache-dir ../zig-cache "$file_name"
+    done
+  )
+  (
+    cd zig-cache/p/
+    for file in *.tar.gz; do
+      # Extract and remove tar file, because `zig build` will only use the extracted sources.
+      tar --force-local --extract --verbose --file="$file"
+      rm -v "$file"
+    done
+  )
 }
 
 build() {
