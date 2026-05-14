@@ -27,7 +27,6 @@ build() {
     zig build \
         --cache-dir "$srcdir/zig-cache" \
         --global-cache-dir "$srcdir/zig-global-cache" \
-        -Dcpu=baseline \
         -Doptimize=ReleaseSafe -Dtarget=x86_64-native -Dcpu=penryn
 }
 
