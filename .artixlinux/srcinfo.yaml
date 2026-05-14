@@ -1,9 +1,9 @@
 ---
-version: 1.3.46-1
+version: 1.3.47-1
 pkgbase:
   name: graphicsmagick
   pkgdesc: Image processing system
-  pkgver: 1.3.46
+  pkgver: 1.3.47
   pkgrel: 1
   url: http://www.graphicsmagick.org/
   arch:
@@ -44,9 +44,9 @@ pkgbase:
     - '!emptydirs'
     - libtool
   source:
-    - https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.46/GraphicsMagick-1.3.46.tar.xz
+    - https://downloads.sourceforge.net/project/graphicsmagick/graphicsmagick/1.3.47/GraphicsMagick-1.3.47.tar.xz
   sha256sums:
-    - c7c706a505e9c6c3764156bb94a0c9644d79131785df15a89c9f8721d1abd061
+    - 95fb682dab0206a9db168d065963f4ffdf5a60b0b2a375aca1f4492fb18d0627
 pkgname:
   - name: graphicsmagick
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
