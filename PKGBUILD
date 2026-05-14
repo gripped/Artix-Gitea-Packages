@@ -2,7 +2,7 @@
 
 pkgname=ly
 pkgver=1.4.0
-pkgrel=1.4
+pkgrel=1.5
 pkgdesc="TUI display manager"
 arch=(x86_64 aarch64)
 url="https://codeberg.org/fairyglade/ly.git"
@@ -28,7 +28,7 @@ build() {
         --cache-dir "$srcdir/zig-cache" \
         --global-cache-dir "$srcdir/zig-global-cache" \
         -Dcpu=baseline \
-        -Doptimize=ReleaseSafe
+        -Doptimize=ReleaseSafe -Dtarget=x86_64-native -Dcpu=penryn
 }
 
 package() {
