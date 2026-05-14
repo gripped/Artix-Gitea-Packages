@@ -1,9 +1,9 @@
 ---
-version: 6.11.0-1
+version: 6.11.1-1
 pkgbase:
   name: qt6-serialport
   pkgdesc: Provides access to hardware and virtual serial ports
-  pkgver: 6.11.0
+  pkgver: 6.11.1
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - qt6-base
     - libelogind
   source:
-    - git+https://code.qt.io/qt/qtserialport#tag=v6.11.0
+    - git+https://code.qt.io/qt/qtserialport#tag=v6.11.1
   sha256sums:
-    - 02c08a12bfdcc102a6a9910e7c51d575975ce68d8900f34e4d6f7712257f3df5
+    - 273ab931b9f6798237dcb30faf331bb6547da5c5e3c019c6dede6770aa9ba721
 pkgname:
   - name: qt6-serialport
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
