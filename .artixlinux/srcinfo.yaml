@@ -1,9 +1,9 @@
 ---
-version: 6.11.0-1
+version: 6.11.1-1
 pkgbase:
   name: qt6-canvaspainter
   pkgdesc: Accelerated 2D painting solution for Qt Quick and QRhi-based render targets
-  pkgver: 6.11.0
+  pkgver: 6.11.1
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - git+https://code.qt.io/qt/qtcanvaspainter#tag=v6.11.0
+    - git+https://code.qt.io/qt/qtcanvaspainter#tag=v6.11.1
   sha256sums:
-    - 3f068e8faf1242f5e71cf2aee27c642fb0b559ed6837a6f6b82fde8d18d339b9
+    - 18b505f811c47e7351c04c52660a55266f2ef15860f14af8557c4532f6ff474e
 pkgname:
   - name: qt6-canvaspainter
 # generated with artixpkg 0.38.5-1-any
