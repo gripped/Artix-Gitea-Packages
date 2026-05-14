@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 13.0.1-1
+    version: 13.0.1-2
     packages:
-      - grafana-13.0.1-1-x86_64.pkg.tar.zst
+      - grafana-13.0.1-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 12.4.2-1

@@ -4,7 +4,7 @@
 
 pkgname=grafana
 pkgver=13.0.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB'
 url='https://grafana.com/'
 arch=('x86_64')
@@ -57,7 +57,7 @@ build() {
       -buildmode=pie \
       -mod=readonly \
       -modcacherw \
-      -ldflags "-linkmode external -extldflags \"${LDFLAGS}\" -X \"main.Version=${pkgver}\" -X \"main.buildstamp=${BUILD_DATE}\"" \
+      -ldflags "-linkmode external -extldflags \"${LDFLAGS}\" -X \"main.version=${pkgver}\" -X \"main.commit=$(git rev-parse --short HEAD)\" -X \"main.buildstamp=${BUILD_DATE}\"" \
       -o grafana pkg/cmd/grafana/main.go
 
   echo 'building the frontend'

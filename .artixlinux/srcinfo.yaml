@@ -1,10 +1,10 @@
 ---
-version: 13.0.1-1
+version: 13.0.1-2
 pkgbase:
   name: grafana
   pkgdesc: Gorgeous metric viz, dashboards & editors for Graphite, InfluxDB & OpenTSDB
   pkgver: 13.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://grafana.com/
   install: grafana.install
   arch:
