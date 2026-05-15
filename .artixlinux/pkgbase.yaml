@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -56,8 +56,8 @@ repos:
       - element-desktop-1.12.15-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 1.12.9-1
+    version: 1.12.18-3
     packages:
-      - element-web-1.12.9-1-x86_64.pkg.tar.zst
-      - element-desktop-1.12.9-1-x86_64.pkg.tar.zst
+      - element-web-1.12.18-3-x86_64.pkg.tar.zst
+      - element-desktop-1.12.18-3-x86_64.pkg.tar.zst
     debug: []
