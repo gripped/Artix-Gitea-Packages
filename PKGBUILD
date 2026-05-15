@@ -12,15 +12,10 @@ pkgbase=udev
 pkgname=(
     'udev'
     'libudev'
-    'esysusers'
-    'etmpfiles'
-    'egummiboot'
-    'eukify'
-    'eshutdown'
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=5
+pkgrel=6
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -55,22 +50,12 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=${_alpm}"
         0001-Use-Arch-Linux-device-access-groups.patch
-        0001-artix-standalone-install.patch
-        0001-artix-boot-standalone.patch
-        0001-eshutdown-standalone.patch
-        artix.conf
-        loader.conf
-        splash-artix.bmp
+        0001-udev-standalone-install.patch
 )
 sha512sums=('16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            'b01878eebe964177e53121e8249d73d0b041e4882e818d79cd8e14da6ce3ec53d1128aa6b74fe604effcdff0c9403c32cb8bce3d8938c8556a6e2d17ae12461f'
-            'fc7bc3200211ed5a0d7aaf9465fbb6524088f3c049c21e6ca06c161dd7469de518245730257878376fafbf2dbab23f91d68c7ce3ea26a6b904c3f6ce2e02e4c8'
-            'eeacecd674165139b9027a03916f251c01e0250ae3eec770c71ad3f7ab734f27ce60ac733c295c2af3cbcdeb876c220a53518ef8539b344c9789a1acfe52c18f'
-            '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
-            'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
-            'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
+            '476fc25b042c49e3a5afa54259255e878c5a0879bea481eda398526579dabe3a89ffd04784d26cb354283518d975b58d47eb613d1c7f72d1aa3112b2784d9771')
 
 _backports=(
 )
@@ -94,9 +79,7 @@ prepare() {
     # Replace cdrom/dialout/tape groups with optical/uucp/storage
     patch -Np1 -i ../0001-Use-Arch-Linux-device-access-groups.patch
 
-    patch -Np1 -i ../0001-artix-standalone-install.patch
-    patch -Np1 -i ../0001-artix-boot-standalone.patch
-    patch -Np1 -i ../0001-eshutdown-standalone.patch
+    patch -Np1 -i ../0001-udev-standalone-install.patch
 }
 
 build() {
@@ -109,9 +92,10 @@ build() {
         -Dshared-lib-tag="${_meson_ver/~/}"
         -Dmode=release
 
-        -Dstandalone-binaries=true
-        -Dsysusers=true
-        -Dtmpfiles=true
+        -Dstandalone-udev=true
+        -Dstandalone-binaries=false
+        -Dsysusers=false
+        -Dtmpfiles=false
 
         -Dhwdb=true
 
@@ -130,7 +114,6 @@ build() {
 
         -Dlink-udev-shared=false
         -Dlink-boot-shared=false
-        -Dlink-kernel-install-shared=false
 
         -Ddefault-keymap='us'
 
@@ -140,11 +123,11 @@ build() {
 
         -Ddns-servers=''
         -Dntp-servers=''
-        -Defi=true
+        -Defi=false
 
-        -Dbootloader=enabled
-        -Dkernel-install=true
-        -Dukify=enabled
+        -Dbootloader=disabled
+        -Dkernel-install=false
+        -Dukify=disabled
 
         -Dsysvinit-path=
         -Dsysvrcnd-path=
@@ -260,34 +243,6 @@ build() {
         src/udev/udev.pc
         man/{libudev.3,udev.conf.5,hwdb.7,udev.7,udevadm.8,iocost.conf.5,systemd-hwdb.8}
 
-        esysusers
-        etmpfiles
-        sysusers.d/basic.conf
-        tmpfiles.d/{etc,static-nodes-permissions,var,legacy}.conf
-        man/{sysusers,tmpfiles}.d.5
-        man/systemd-{sysusers,tmpfiles}.8
-        factory/templates/{locale,vconsole}.conf
-
-        bootctl
-        man/bootctl.1
-        src/boot/eboot${_efi_arch}.efi
-        src/boot/linux${_efi_arch}.efi.stub
-        src/boot/addon${_efi_arch}.efi.stub
-
-        ebless-boot{,-generator}
-        man/systemd-{boot.7,bless-boot-generator.8}
-
-        kernel-install
-        src/kernel-install/90-loaderentry.install
-        man/kernel-install.8
-
-        ukify
-        src/kernel-install/60-ukify.install
-        man/ukify.1
-
-        eshutdown
-        man/shutdown.8
-
         systemd-detect-virt
         systemd-runtest.env
 
@@ -301,12 +256,9 @@ build() {
         test-udev-node
         test-udev-rules
         test-udev-spawn
-        #test-udev-util
 
         test-fido-id-desc
         test-link-config-tables
-
-        test-umount
     )
     meson compile -C build "${_targets[@]}"
 }
@@ -328,7 +280,6 @@ check() {
         test-udev-node
         test-udev-rules
         test-udev-spawn
-        #test-udev-util
 
         test-fido-id-desc
         test-link-config-tables
@@ -336,15 +287,6 @@ check() {
         dmidecode_HP-Z600
         dmidecode_Lenovo-ThinkPad-X280
         dmidecode_Lenovo-Thinkcentre-m720s
-
-
-        test-systemd-tmpfiles.standalone
-        test-sysusers.standalone
-
-        test-umount
-
-        #test-tmpfile-util
-        #test-offline-passwd
     )
 
     meson test -C build --print-errorlogs "${_tests[@]}"
@@ -354,11 +296,7 @@ _inst_man() {
     local x="$1" y=${1##*.} man
     install -d "${pkgdir}"/usr/share/man/man"$y"
     case "$x" in
-        *sysusers*|*tmpfiles*) man=${x/systemd-/e} ;;
         *systemd-hwdb*) man=${x/systemd/udev} ;;
-        *systemd-boot*) man=${x/systemd-/egummi} ;;
-        *systemd-bless-boot-generator*) man=${x/systemd-/e} ;;
-        *shutdown*) man=e${x} ;;
         *) man=${x/systemd-/e} ;;
     esac
     install -vm644 build/man/"$x" "${pkgdir}"/usr/share/man/man"$y/$man"
@@ -395,77 +333,4 @@ package_libudev() {
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags libudev,libudev-devel
 
     _inst_man "libudev.3"
-}
-
-package_esysusers() {
-    pkgdesc='the sysusers.d binary'
-
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags esysusers
-
-    _inst_man "sysusers.d.5"
-    _inst_man "systemd-sysusers.8"
-
-    # pacman hooks
-    make -C alpm-hooks DESTDIR="${pkgdir}" install_sysusers
-}
-
-package_etmpfiles() {
-    pkgdesc='the tmpfiles.d binary'
-
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags etmpfiles
-
-    _inst_man "tmpfiles.d.5"
-    _inst_man "systemd-tmpfiles.8"
-
-    # pacman hooks
-    make -C alpm-hooks DESTDIR="${pkgdir}" install_tmpfiles
-}
-
-package_egummiboot() {
-    pkgdesc='the gummiboot bootloader'
-    provides=('gummiboot')
-    depends+=(
-        'sh'
-    )
-
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eboot,kernel-install,ebless
-
-    # add example bootctl configuration
-    install -D -m0644 artix.conf "$pkgdir"/usr/share/egummiboot/bootctl/artix.conf
-    install -D -m0644 loader.conf "$pkgdir"/usr/share/egummiboot/bootctl/loader.conf
-    install -D -m0644 splash-artix.bmp "$pkgdir"/usr/share/egummiboot/bootctl/splash-artix.bmp
-
-    for m in bootctl.1 kernel-install.8 systemd-boot.7 systemd-bless-boot-generator.8; do
-        _inst_man "$m"
-    done
-
-    # symlink kernel-install to installkernel
-    ln -s kernel-install "$pkgdir"/usr/bin/installkernel
-    ln -s kernel-install.8.gz "$pkgdir"/usr/share/man/man8/installkernel.8.gz
-}
-
-package_eukify() {
-    pkgdesc='Combine kernel and initrd into a signed Unified Kernel Image'
-    provides=('ukify')
-    depends=(
-        'python'
-        'python-cryptography'
-        'python-pefile'
-    )
-    optdepends=(
-        'python-pillow: Show the size of splash image'
-        'sbsigntools: Sign the embedded kernel'
-    )
-
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eukify
-
-    _inst_man "ukify.1"
-}
-
-package_eshutdown() {
-    pkgdesc='the eshutdown binary'
-
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eshutdown
-
-    _inst_man "shutdown.8"
 }
