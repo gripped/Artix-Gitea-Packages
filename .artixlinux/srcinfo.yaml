@@ -1,10 +1,10 @@
 ---
-version: 1.4.0-1.6
+version: 1.4.1-1
 pkgbase:
   name: ly
   pkgdesc: TUI display manager
-  pkgver: 1.4.0
-  pkgrel: 1.6
+  pkgver: 1.4.1
+  pkgrel: 1
   url: https://codeberg.org/fairyglade/ly.git
   arch:
     - x86_64
@@ -25,9 +25,9 @@ pkgbase:
     - etc/ly/config.ini
     - etc/ly/setup.sh
   source:
-    - git+https://codeberg.org/fairyglade/ly.git#tag=v1.4.0
+    - git+https://codeberg.org/fairyglade/ly.git#tag=v1.4.1
   sha256sums:
-    - 9656bc5e061d234c7d369416b4572d13394ccb6815a2bdcae3fcc7e45b1c95f3
+    - 203cbe6e67f8d3bebd37ed0f86e5b94c919b4a45293f73269b4fb1ebb05a36a0
 pkgname:
   - name: ly
 # generated with artixpkg 0.38.5-1-any

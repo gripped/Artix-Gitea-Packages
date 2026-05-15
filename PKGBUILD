@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=ly
-pkgver=1.4.0
-pkgrel=1.6
+pkgver=1.4.1
+pkgrel=1
 pkgdesc="TUI display manager"
 arch=(x86_64 aarch64)
 url="https://codeberg.org/fairyglade/ly.git"
@@ -44,5 +44,5 @@ package() {
 
     rm -r "$pkgdir/etc/init.d"
 }
-sha256sums=('9656bc5e061d234c7d369416b4572d13394ccb6815a2bdcae3fcc7e45b1c95f3')
+sha256sums=('203cbe6e67f8d3bebd37ed0f86e5b94c919b4a45293f73269b4fb1ebb05a36a0')
 
