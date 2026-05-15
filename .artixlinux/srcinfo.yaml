@@ -15,7 +15,7 @@ pkgbase:
     - clang
     - meson
     - cmake
-    - git
+    - blueprint-compiler
   depends:
     - glib2
     - gtk4
