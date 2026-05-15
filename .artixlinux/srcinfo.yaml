@@ -1,10 +1,10 @@
 ---
-version: 20260206-6
+version: 20260206-7
 pkgbase:
   name: jami-daemon
   pkgdesc: Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)
   pkgver: 20260206
-  pkgrel: 6
+  pkgrel: 7
   url: https://jami.net
   arch:
     - x86_64
@@ -15,38 +15,40 @@ pkgbase:
   checkdepends:
     - cppunit
   makedepends:
-    - git
-    - cmake
-    - perl
     - asio
+    - cmake
+    - git
+    - meson
     - msgpack-c
     - msgpack-cxx
+    - perl
     - restinio
     - udev
-    - meson
   depends:
-    - glibc
-    - opendht
-    - gnutls
-    - nettle
-    - libgit2
-    - libsecp256k1
-    - libsecp256k1.so
-    - ffmpeg
-    - speexdsp
-    - fmt
-    - yaml-cpp
-    - jsoncpp
-    - zlib
     - alsa-lib
-    - libpulse
+    - ffmpeg
+    - fmt
+    - glibc
+    - gnutls
     - jack
-    - libupnp
-    - libnatpmp
-    - openssl
-    - webrtc-audio-processing-0.3
-    - libudev
+    - jsoncpp
     - libarchive
+    - libgcc
+    - libgit2
+    - libnatpmp
+    - libpulse
+    - libsecp256k1
+    - libupnp
+    - libstdc++
+    - nettle
+    - opendht
+    - openssl
+    - speexdsp
+    - libudev
+    - util-linux-libs
+    - webrtc-audio-processing-0.3
+    - yaml-cpp
+    - zlib
   noextract:
     - pjproject-59d9e1355686cf4f3f3d81d45560058354f42802.tar.gz
     - dhtnet-cff03260fa037f59d6768bac26014b01c07b3fb9.tar.gz
