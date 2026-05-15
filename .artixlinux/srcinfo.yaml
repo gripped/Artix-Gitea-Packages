@@ -1,0 +1,82 @@
+---
+version: 6.6.5-1
+pkgbase:
+  name: plasma-mobile
+  pkgdesc: Plasma shell for mobile devices
+  pkgver: 6.6.5
+  pkgrel: 1
+  url: https://plasma-mobile.org/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cmake
+    - extra-cmake-modules
+    - plasma-wayland-protocols
+  depends:
+    - bash
+    - bluez-qt
+    - glibc
+    - kauth
+    - kcmutils
+    - kconfig
+    - kcoreaddons
+    - kdbusaddons
+    - kdeclarative
+    - ki18n
+    - kio
+    - kirigami
+    - kirigami-addons
+    - kitemmodels
+    - kjobwidgets
+    - knewstuff
+    - knotifications
+    - kpackage
+    - kpipewire
+    - kservice
+    - ksvg
+    - kwayland
+    - kwin
+    - kwindowsystem
+    - layer-shell-qt
+    - libgcc
+    - libkscreen
+    - libplasma
+    - libstdc++
+    - milou
+    - modemmanager-qt
+    - modemmanager-qt
+    - networkmanager-qt
+    - plasma-keyboard
+    - plasma-nano
+    - plasma-nm
+    - plasma-pa
+    - plasma-workspace
+    - powerdevil
+    - qcoro
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - qt6-sensors
+    - solid
+    - libudev
+    - wayland
+  optdepends:
+    - 'bluedevil: Bluetooth management'
+    - 'kscreen: Screen management'
+    - 'plasma-settings: System settings'
+  source:
+    - https://download.kde.org/stable/plasma/6.6.5/plasma-mobile-6.6.5.tar.xz
+    - https://download.kde.org/stable/plasma/6.6.5/plasma-mobile-6.6.5.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - 164380a6e1d75dc6fb072090caa3c4e5fb80bbb3f188d305bce767c90b9e4600
+    - SKIP
+pkgname:
+  - name: plasma-mobile
+# generated with artixpkg 0.38.5-1-any
