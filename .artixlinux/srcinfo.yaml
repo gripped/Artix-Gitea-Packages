@@ -15,6 +15,7 @@ pkgbase:
     - clang
     - meson
     - cmake
+    - git
   depends:
     - glib2
     - gtk4
