@@ -1,0 +1,32 @@
+---
+version: 3.2.0-1
+pkgbase:
+  name: ruby-facets
+  pkgdesc: Premiere collection of general purpose method extensions and standard additions for the Ruby programming language
+  pkgver: 3.2.0
+  pkgrel: 1
+  url: https://github.com/rubyworks/facets
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - ruby-lemon
+    - ruby-qed
+    - ruby-rake
+    - ruby-rubytest-cli
+    - ruby-simplecov
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/rubyworks/facets.git#tag=v3.2.0
+  sha256sums:
+    - 26b3069f390983c1c719db73cd593a8865b3b56a02d9436ff4263edbbca51353
+pkgname:
+  - name: ruby-facets
+# generated with artixpkg 0.38.5-1-any
