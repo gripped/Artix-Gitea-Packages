@@ -1,10 +1,10 @@
 ---
-version: 2.12.1-1
+version: 2.12.1-2
 pkgbase:
   name: adios2
   pkgdesc: The Adaptable Input/Output System version 2
   pkgver: 2.12.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://adios2.readthedocs.io/en/latest/
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
     - cuda
     - gcc-fortran
     - gtest
+    - nanobind
     - ninja
     - nlohmann-json
     - python-mpi4py
