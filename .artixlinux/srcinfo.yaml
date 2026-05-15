@@ -1,0 +1,30 @@
+---
+version: 1.9.0-1
+pkgbase:
+  name: ruby-ae
+  pkgdesc: Assertive Expressive is an assertions library specifically designed for reuse by other test frameworks
+  pkgver: 1.9.0
+  pkgrel: 1
+  url: https://github.com/rubyworks/ae
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+    - LicenseRef-BlankSlate
+  checkdepends:
+    - ruby-qed
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-ansi
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/rubyworks/ae.git#tag=v1.9.0
+  sha256sums:
+    - d3cc2b666b5435ba05fc0c6f55f5c6d6c5d34d4ae753c6aae05ccd8ab1737b18
+pkgname:
+  - name: ruby-ae
+# generated with artixpkg 0.38.5-1-any
