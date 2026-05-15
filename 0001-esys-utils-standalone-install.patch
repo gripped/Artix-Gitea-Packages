@@ -1,0 +1,465 @@
+From bd7bb56706f3190d9f1d85561a05d794240cd425 Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Fri, 15 May 2026 14:54:41 +0200
+Subject: [PATCH 1/1] esys-utils standalone install
+
+---
+ factory/templates/meson.build  |  2 ++
+ meson.build                    | 21 +++++++++++++++++++--
+ meson_options.txt              |  2 ++
+ src/bless-boot/meson.build     | 10 +++++++---
+ src/boot/meson.build           |  8 ++++----
+ src/bootctl/meson.build        |  3 +++
+ src/core/meson.build           |  5 -----
+ src/kernel-install/meson.build | 16 +++++++++++++++-
+ src/shutdown/meson.build       |  3 ++-
+ src/sysusers/meson.build       |  3 ++-
+ src/tmpfiles/meson.build       |  3 ++-
+ sysusers.d/meson.build         |  4 ++--
+ test/meson.build               |  4 ++--
+ tmpfiles.d/legacy.conf.in      |  3 ---
+ tmpfiles.d/meson.build         | 10 +++-------
+ 15 files changed, 65 insertions(+), 32 deletions(-)
+
+diff --git a/factory/templates/meson.build b/factory/templates/meson.build
+index 0f53217a48..071cfc9547 100644
+--- a/factory/templates/meson.build
++++ b/factory/templates/meson.build
+@@ -7,6 +7,7 @@ custom_target(
+         output : 'locale.conf',
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+         install : true,
++        install_tag : 'etmpfiles',
+         install_dir : factory_etc_dir)
+ 
+ custom_target(
+@@ -14,6 +15,7 @@ custom_target(
+         output : 'vconsole.conf',
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+         install : true,
++        install_tag : 'etmpfiles',
+         install_dir : factory_etc_dir)
+ 
+ if conf.get('ENABLE_NSS') == 1
+diff --git a/meson.build b/meson.build
+index 3672005d75..609f0d94a8 100644
+--- a/meson.build
++++ b/meson.build
+@@ -121,7 +121,7 @@ includedir = prefixdir / get_option('includedir')
+ datadir = prefixdir / get_option('datadir')
+ localstatedir = '/' / get_option('localstatedir')
+ 
+-libexecdir = prefixdir / 'lib/systemd'
++libexecdir = bindir
+ libexecdir_to_bin = '../../bin/'
+ pkglibdir = libdir / 'systemd'
+ 
+@@ -169,7 +169,7 @@ catalogdir = libexecdir / 'catalog'
+ kerneldir = prefixdir / 'lib/kernel'
+ kernelinstalldir = kerneldir / 'install.d'
+ factorydir = datadir / 'factory'
+-bootlibdir = libexecdir / 'boot/efi'
++bootlibdir = prefixdir / 'lib/systemd/boot/efi'
+ testsdir = libexecdir / 'tests'
+ unittestsdir = testsdir / 'unit-tests'
+ testdata_dir = testsdir / 'testdata'
+@@ -2732,6 +2732,7 @@ ukify = custom_target(
+         install : want_ukify,
+         install_mode : 'rwxr-xr-x',
+         depends : ukify_depends,
++        install_tag: 'eukify',
+         install_dir : bindir)
+ if want_ukify
+         public_programs += ukify
+@@ -2821,6 +2822,21 @@ install_data('LICENSE.GPL2',
+ install_subdir('LICENSES',
+                install_dir : docdir)
+ 
++install_data('LICENSE.GPL2',
++             'LICENSE.LGPL2.1',
++             install_tag : 'etmpfiles',
++             install_dir : datadir / 'doc/etmpfiles')
++
++install_data('LICENSE.GPL2',
++             'LICENSE.LGPL2.1',
++             install_tag : 'esysusers',
++             install_dir : datadir / 'doc/esysusers')
++
++install_data('LICENSE.GPL2',
++             'LICENSE.LGPL2.1',
++             install_tag : 'eboot',
++             install_dir : datadir / 'doc/egummiboot')
++
+ #####################################################################
+ 
+ # Ensure that changes to the docs/ directory do not break the
+@@ -3199,6 +3215,7 @@ foreach tuple : [
+         ['fuzz tests',             want_fuzz_tests],
+         ['install tests',          install_tests],
+         ['link-udev-shared',       get_option('link-udev-shared')],
++        ['link-kernel-install-shared', get_option('link-kernel-install-shared')],
+         ['link-systemctl-shared',  get_option('link-systemctl-shared')],
+         ['link-networkd-shared',   get_option('link-networkd-shared')],
+         ['link-timesyncd-shared',  get_option('link-timesyncd-shared')],
+diff --git a/meson_options.txt b/meson_options.txt
+index c1af7ce237..7c50067240 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -568,3 +568,5 @@ option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
+ 
+ option('default-oci-registry', type : 'string', value : 'docker.io',
+        description : 'Default OCI registry name')
++option('link-kernel-install-shared', type: 'boolean',
++       description : 'link kernel-install against libsystemd-shared.so')
+diff --git a/src/bless-boot/meson.build b/src/bless-boot/meson.build
+index ae814f1b29..9706c0a08d 100644
+--- a/src/bless-boot/meson.build
++++ b/src/bless-boot/meson.build
+@@ -11,7 +11,7 @@ endif
+ 
+ executables += [
+         libexec_template + {
+-                'name' : 'systemd-bless-boot',
++                'name' : 'ebless-boot',
+                 'public' : true,
+                 'conditions' : [
+                         'HAVE_BLKID',
+@@ -19,18 +19,22 @@ executables += [
+                 ],
+                 'sources' : files('bless-boot.c'),
+                 'link_with' : boot_link_with,
++                'install_tag' : 'ebless',
++                'install_dir' : bindir,
+         },
+         generator_template + {
+-                'name' : 'systemd-bless-boot-generator',
++                'name' : 'ebless-boot-generator',
+                 'conditions' : [
+                         'HAVE_BLKID',
+                         'ENABLE_BOOTLOADER',
+                 ],
+                 'sources' : files('bless-boot-generator.c'),
+                 'link_with' : boot_link_with,
++                'install_tag' : 'ebless',
++                'install_dir' : bindir,
+         },
+         libexec_template + {
+-                'name' : 'systemd-boot-check-no-failures',
++                'name' : 'eboot-check-no-failures',
+                 'sources' : files('boot-check-no-failures.c'),
+         },
+ ]
+diff --git a/src/boot/meson.build b/src/boot/meson.build
+index 06c8146a9e..7009fa8e53 100644
+--- a/src/boot/meson.build
++++ b/src/boot/meson.build
+@@ -417,7 +417,7 @@ foreach archspec : efi_archspecs
+         }
+ 
+         efi_elf_binaries += executable(
+-                'systemd-boot' + archspec['arch'],
++                'eboot' + archspec['arch'],
+                 sources : [systemd_boot_sources, version_h],
+                 link_with : libefi,
+                 name_suffix : 'elf',
+@@ -439,7 +439,7 @@ endforeach
+ 
+ foreach efi_elf_binary : efi_elf_binaries
+         name = efi_elf_binary.name()
+-        name += name.startswith('systemd-boot') ? '.efi' : '.efi.stub'
++        name += name.startswith('eboot') ? '.efi' : '.efi.stub'
+ 
+         # For the addon, given it's empty, we need to explicitly reserve space in the header to account for
+         # the sections that ukify will add.
+@@ -456,7 +456,7 @@ foreach efi_elf_binary : efi_elf_binaries
+                 input : efi_elf_binary,
+                 install : true,
+                 install_dir : bootlibdir,
+-                install_tag : 'systemd-boot',
++                install_tag : 'eboot',
+                 command : [
+                         elf2efi_py,
+                         f'--version-major=@project_major_version@',
+@@ -485,4 +485,4 @@ foreach efi_elf_binary : efi_elf_binaries
+              suite : 'boot')
+ endforeach
+ 
+-alias_target('systemd-boot', boot_targets)
++alias_target('eboot', boot_targets)
+diff --git a/src/bootctl/meson.build b/src/bootctl/meson.build
+index 8cfbb7c14a..52b06de737 100644
+--- a/src/bootctl/meson.build
++++ b/src/bootctl/meson.build
+@@ -24,5 +24,8 @@ executables += [
+                 'sources' : bootctl_sources,
+                 'link_with' : boot_link_with,
+                 'dependencies' : [libopenssl],
++                'install' : true,
++                'install_tag' : 'eboot',
++                'install_dir' : bindir,
+         },
+ ]
+diff --git a/src/core/meson.build b/src/core/meson.build
+index e703cc3728..d6719d2c9c 100644
+--- a/src/core/meson.build
++++ b/src/core/meson.build
+@@ -295,11 +295,6 @@ if install_sysconfdir
+                         install_dir : sysconfdir / 'xdg/systemd')
+ endif
+ 
+-assert(fs.parent(sbindir) / 'lib/systemd' == libexecdir)
+-install_symlink('init',
+-                pointing_to : '../lib/systemd/systemd',
+-                install_dir : sbindir)
+-
+ ############################################################
+ 
+ core_test_template = test_template + {
+diff --git a/src/kernel-install/meson.build b/src/kernel-install/meson.build
+index 716fffb46b..d552c4958e 100644
+--- a/src/kernel-install/meson.build
++++ b/src/kernel-install/meson.build
+@@ -2,12 +2,21 @@
+ 
+ want_kernel_install = conf.get('ENABLE_KERNEL_INSTALL') == 1
+ 
++if get_option('link-kernel-install-shared')
++        kernel_install_link_with = [libshared]
++else
++        kernel_install_link_with = [libsystemd_static, libshared_static]
++endif
++
+ executables += [
+         executable_template + {
+                 'name' : 'kernel-install',
+                 'public' : true,
+                 'conditions' : ['ENABLE_KERNEL_INSTALL'],
+                 'sources' : files('kernel-install.c'),
++                'link_with' : kernel_install_link_with,
++                'install_tag' : 'kernel-install',
++                'install_dir' : bindir,
+         },
+ ]
+ 
+@@ -17,6 +26,7 @@ ukify_install = custom_target(
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+         install : want_kernel_install and want_ukify,
+         install_mode : 'rwxr-xr-x',
++        install_tag: 'eukify',
+         install_dir : kernelinstalldir)
+ 
+ loaderentry_install = custom_target(
+@@ -25,6 +35,7 @@ loaderentry_install = custom_target(
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+         install : want_kernel_install,
+         install_mode : 'rwxr-xr-x',
++        install_tag: 'kernel-install',
+         install_dir : kernelinstalldir)
+ 
+ uki_copy_install = files('90-uki-copy.install')
+@@ -36,18 +47,21 @@ kernel_install_files = uki_copy_install + files(
+ if want_kernel_install
+         install_data(kernel_install_files,
+                      install_mode : 'rwxr-xr-x',
++                     install_tag: 'kernel-install',
+                      install_dir : kernelinstalldir)
+ 
+         install_data('install.conf',
++                     install_tag: 'kernel-install',
+                      install_dir : kerneldir)
+ 
+         if want_ukify
+                 install_data('uki.conf',
++                             install_tag: 'kernel-install',
+                              install_dir : kerneldir)
+         endif
+ 
+         if install_sysconfdir
+-                install_emptydir(sysconfdir / 'kernel/install.d')
++                install_emptydir(sysconfdir / 'kernel/install.d', install_tag: 'kernel-install')
+         endif
+ endif
+ 
+diff --git a/src/shutdown/meson.build b/src/shutdown/meson.build
+index 709b0fa692..b4f3ad8b2d 100644
+--- a/src/shutdown/meson.build
++++ b/src/shutdown/meson.build
+@@ -21,7 +21,7 @@ executables += [
+                 'dependencies' : libmount_cflags,
+         },
+         libexec_template + {
+-                'name' : 'systemd-shutdown.standalone',
++                'name' : 'eshutdown',
+                 'objects' : ['systemd-shutdown'],
+                 'link_with' : [
+                         libc_wrapper_static,
+@@ -29,6 +29,7 @@ executables += [
+                         libshared_static,
+                         libsystemd_static,
+                 ],
++                'install_tag' : 'eshutdown',
+                 'dependencies' : libmount_cflags,
+         },
+         test_template + {
+diff --git a/src/sysusers/meson.build b/src/sysusers/meson.build
+index b74ac6aa1a..6be39ac23b 100644
+--- a/src/sysusers/meson.build
++++ b/src/sysusers/meson.build
+@@ -12,7 +12,7 @@ executables += [
+                 'dependencies' : libaudit_cflags,
+         },
+         executable_template + {
+-                'name' : 'systemd-sysusers.standalone',
++                'name' : 'esysusers',
+                 'public' : true,
+                 'objects' : ['systemd-sysusers'],
+                 'link_with' : [
+@@ -21,6 +21,7 @@ executables += [
+                         libshared_static,
+                         libsystemd_static,
+                 ],
++                'install_tag' : 'esysusers',
+                 'dependencies' : libaudit_cflags,
+         },
+ ]
+diff --git a/src/tmpfiles/meson.build b/src/tmpfiles/meson.build
+index 2a7728c295..9ef5f1729a 100644
+--- a/src/tmpfiles/meson.build
++++ b/src/tmpfiles/meson.build
+@@ -15,7 +15,7 @@ executables += [
+                 'dependencies' : libacl_cflags,
+         },
+         executable_template + {
+-                'name' : 'systemd-tmpfiles.standalone',
++                'name' : 'etmpfiles',
+                 'public' : true,
+                 'objects' : ['systemd-tmpfiles'],
+                 'link_with' : [
+@@ -25,6 +25,7 @@ executables += [
+                         libsystemd_static,
+                 ],
+                 'dependencies' : libacl_cflags,
++                'install_tag' : 'etmpfiles',
+         },
+         test_template + {
+                 'sources' : files('test-offline-passwd.c') +
+diff --git a/sysusers.d/meson.build b/sysusers.d/meson.build
+index 84fadfe3f7..22dfd09c05 100644
+--- a/sysusers.d/meson.build
++++ b/sysusers.d/meson.build
+@@ -7,12 +7,11 @@ files = [['README',                true],
+ 
+ foreach tuple : files
+         if enable_sysusers and tuple[1]
+-                install_data(tuple[0], install_dir : sysusersdir)
++                install_data(tuple[0], install_dir : sysusersdir, install_tag : 'esysusers')
+         endif
+ endforeach
+ 
+ in_files = [['basic.conf',            true],
+-            ['systemd-journal.conf',  true],
+             ['systemd-network.conf',  conf.get('ENABLE_NETWORKD') == 1],
+             ['systemd-resolve.conf',  conf.get('ENABLE_RESOLVE') == 1],
+             ['systemd-timesync.conf', conf.get('ENABLE_TIMESYNCD') == 1]]
+@@ -24,5 +23,6 @@ foreach tuple : in_files
+                 output: file,
+                 command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+                 install : enable_sysusers and tuple[1],
++                install_tag : 'esysusers',
+                 install_dir : sysusersdir)
+ endforeach
+diff --git a/test/meson.build b/test/meson.build
+index 7bf557cc19..1c192c9134 100644
+--- a/test/meson.build
++++ b/test/meson.build
+@@ -17,7 +17,7 @@ if conf.get('ENABLE_SYSUSERS') == 1
+                      suite : 'sysusers')
+ 
+                 if have_standalone_binaries
+-                        exe = executables_by_name.get('systemd-sysusers.standalone')
++                        exe = executables_by_name.get('esysusers')
+                         test('test-sysusers.standalone',
+                              test_sysusers_sh,
+                              # https://github.com/mesonbuild/meson/issues/2681
+@@ -86,7 +86,7 @@ if want_tests != 'false' and conf.get('ENABLE_TMPFILES') == 1
+              suite : 'tmpfiles')
+ 
+         if have_standalone_binaries
+-                exe = executables_by_name.get('systemd-tmpfiles.standalone')
++                exe = executables_by_name.get('etmpfiles')
+                 test('test-systemd-tmpfiles.standalone',
+                      test_systemd_tmpfiles_py,
+                      args : exe.full_path(),
+diff --git a/tmpfiles.d/legacy.conf.in b/tmpfiles.d/legacy.conf.in
+index 7036c12b7c..80120b04b4 100644
+--- a/tmpfiles.d/legacy.conf.in
++++ b/tmpfiles.d/legacy.conf.in
+@@ -13,6 +13,3 @@
+ 
+ d /run/lock 0755 root root -
+ L /var/lock - - - - ../run/lock
+-{% if CREATE_LOG_DIRS %}
+-L$ /var/log/README - - - - ../..{{DOC_DIR}}/README.logs
+-{% endif %}
+diff --git a/tmpfiles.d/meson.build b/tmpfiles.d/meson.build
+index c8f9015b2e..8398efbca8 100644
+--- a/tmpfiles.d/meson.build
++++ b/tmpfiles.d/meson.build
+@@ -6,15 +6,12 @@ endif
+ 
+ files = [['README'                                  ],
+          ['home.conf'                               ],
+-         ['journal-nocow.conf'                      ],
+          ['portables.conf',       'ENABLE_PORTABLED'],
+          ['systemd-network.conf', 'ENABLE_NETWORKD' ],
+          ['systemd-nologin.conf', 'HAVE_PAM'        ],
+          ['systemd-nspawn.conf',  'ENABLE_MACHINED' ],
+          ['systemd-pstore.conf',  'ENABLE_PSTORE'   ],
+          ['systemd-resolve.conf', 'ENABLE_RESOLVE'  ],
+-         ['20-systemd-varlink.conf'                 ],
+-         ['systemd-tmp.conf'                        ],
+          ['tmp.conf'                                ],
+          ['x11.conf'                                ],
+          ['provision.conf'                          ],
+@@ -23,7 +20,7 @@ files = [['README'                                  ],
+ 
+ foreach f : files
+         if f.length() == 1 or conf.get(f[1]) == 1
+-                install_data(f[0], install_dir : tmpfilesdir)
++                install_data(f[0], install_dir : tmpfilesdir, install_tag : 'etmpfiles')
+         else
+                 message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
+                         .format(f[0], f[1], conf.get(f[1], 0)))
+@@ -34,12 +31,10 @@ in_files = [
+         ['20-systemd-shell-extra.conf',   'LINK_SHELL_EXTRA_DROPIN'      ],
+         ['20-systemd-osc-context.conf',   'LINK_OSC_CONTEXT_DROPIN'      ],
+         ['20-systemd-ssh-generator.conf', 'ENABLE_SSH_PROXY_CONFIG'      ],
+-        ['20-systemd-stub.conf',          'ENABLE_EFI'                   ],
+         ['20-systemd-userdb.conf',        'ENABLE_SSH_USERDB_CONFIG'     ],
+         ['etc.conf'                                                      ],
+         ['legacy.conf',                   'ENABLE_COMPAT_SYSV_INTERFACES'],
+         ['static-nodes-permissions.conf'                                 ],
+-        ['systemd.conf'                                                  ],
+         ['var.conf'                                                      ],
+ ]
+ 
+@@ -50,6 +45,7 @@ foreach f : in_files
+                         output: f[0],
+                         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+                         install : true,
++                        install_tag : 'etmpfiles',
+                         install_dir : tmpfilesdir)
+         else
+                 message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
+@@ -58,7 +54,7 @@ foreach f : in_files
+ endforeach
+ 
+ if install_sysconfdir
+-        install_emptydir(sysconfdir / 'tmpfiles.d')
++        install_emptydir(sysconfdir / 'tmpfiles.d', install_tag : 'etmpfiles')
+ endif
+ 
+ subdir('user')
+-- 
+2.54.0
+

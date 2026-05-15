@@ -1,0 +1,376 @@
+# Maintainer: Artoo <artoo@artixlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
+# Contributor: Dave Reisner <dreisner@archlinux.org>
+# Contributor: Tom Gundersen <teg@jklm.no>
+
+_pkgbase=systemd
+
+_alpm=2.4.5
+_tag='260.1'
+
+pkgbase=esys-utils
+pkgname=(
+    'esysusers'
+    'etmpfiles'
+    'egummiboot'
+    'eukify'
+    'eshutdown'
+)
+pkgdesc='System utils extracted from systemd'
+pkgver="${_tag/[-~]/}"
+pkgrel=6
+arch=('x86_64')
+url='https://www.github.com/systemd/systemd'
+license=(
+    'GPL-2.0-or-later'
+    'LGPL-2.1-or-later'
+)
+depends=(
+    'glibc'
+    'libgcc'
+)
+makedepends=(
+    'acl'
+    'gperf'
+   # 'kmod'
+    'util-linux'
+    'docbook-xsl'
+    'git'
+    'intltool'
+    'meson'
+    'python-jinja'
+    'rsync'
+    'bash-completion'
+    'python-pyelftools'
+    'python-pefile'
+)
+validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <lennart@poettering.net>
+              'A9EA9081724FFAE0484C35A1A81CEA22BC8C7E2E'  # Luca Boccassi <luca.boccassi@gmail.com>
+              '9A774DB5DB996C154EBBFBFDA0099A18E29326E1'  # Yu Watanabe <watanabe.yu+github@gmail.com>
+              '5C251B5FC54EB2F80F407AAAC54CA336CFEB557E') # Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
+source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
+        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=${_alpm}"
+        0001-Use-Arch-Linux-device-access-groups.patch
+        0001-esys-utils-standalone-install.patch
+        artix.conf
+        loader.conf
+        splash-artix.bmp
+)
+sha512sums=('16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb'
+            'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
+            'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
+            'e81198f3de9028fababc6f5ee82c03f4f258d39e53fed08a3e103a1bd316366b9c3e7ee05593112f58b62f387e05790133c5d259f8401b32d76e474b02d7160a'
+            '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
+            'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
+            'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
+
+_backports=(
+)
+
+_reverts=(
+)
+
+prepare() {
+    cd "$_pkgbase"
+
+    local _c
+    for _c in "${_backports[@]}"; do
+        git log --oneline -1 "${_c}"
+        git cherry-pick -n "${_c}"
+    done
+    for _c in "${_reverts[@]}"; do
+        git log --oneline -1 "${_c}"
+        git revert -n "${_c}"
+    done
+
+    # Replace cdrom/dialout/tape groups with optical/uucp/storage
+    patch -Np1 -i ../0001-Use-Arch-Linux-device-access-groups.patch
+
+    patch -Np1 -i ../0001-esys-utils-standalone-install.patch
+}
+
+build() {
+    local _meson_options=() _targets=()
+
+    local _meson_ver="${pkgver}-${pkgrel}"
+
+    _meson_options+=(
+        -Dversion-tag="${_meson_ver}-artix"
+        -Dshared-lib-tag="${_meson_ver/~/}"
+        -Dmode=release
+
+        -Dstandalone-binaries=true
+        -Dsysusers=true
+        -Dtmpfiles=true
+
+        -Dhwdb=false
+
+        -Dblkid=enabled
+        -Dacl=enabled
+
+        -Dkmod=disabled
+
+        -Dgshadow=true
+
+        -Defi=true
+
+        -Dbootloader=enabled
+        -Dkernel-install=true
+        -Dukify=enabled
+
+        -Dsbat-distro='artix'
+        -Dsbat-distro-summary='Artix Linux'
+        -Dsbat-distro-pkgname="${pkgbase}"
+        -Dsbat-distro-version="${pkgver}"
+
+        -Dtests=true
+
+        -Dlink-udev-shared=false
+        -Dlink-boot-shared=false
+        -Dlink-kernel-install-shared=false
+
+        -Ddefault-keymap='us'
+
+        -Dman=enabled
+
+        -Dhtml=disabled
+
+        -Ddns-servers=''
+        -Dntp-servers=''
+
+        -Dsysvinit-path=
+        -Dsysvrcnd-path=
+        -Ddefault-dnssec=no
+
+        -Ddefault-llmnr=no
+        -Ddefault-mdns=no
+
+        -Dsshconfdir=no
+
+        -Dadm-group=false
+        -Danalyze=false
+        -Dapparmor=disabled
+        -Daudit=disabled
+        -Dbacklight=false
+        -Dbinfmt=false
+        -Dbzip2=disabled
+        -Dcoredump=false
+        -Ddbus=disabled
+        -Delfutils=disabled
+        -Denvironment-d=false
+        -Dfdisk=disabled
+        -Dgcrypt=disabled
+        -Dglib=disabled
+        -Dgnutls=disabled
+        -Dhibernate=false
+        -Dhostnamed=false
+        -Didn=false
+        -Dima=false
+        -Dinitrd=false
+        -Dfirstboot=false
+        -Dldconfig=false
+        -Dlibcryptsetup=disabled
+        -Dlibcurl=disabled
+        -Dlibfido2=disabled
+        -Dlibidn=disabled
+        -Dlibidn2=disabled
+        -Dlibiptc=disabled
+        -Dlocaled=false
+        -Dlogind=false
+        -Dlz4=disabled
+        -Dmachined=false
+        -Dmicrohttpd=disabled
+        -Dnetworkd=false
+        -Dnss-myhostname=false
+        -Dnss-resolve=disabled
+        -Dnss-systemd=false
+        -Doomd=false
+        -Dopenssl=disabled
+        -Dp11kit=disabled
+        -Dpam=disabled
+        -Dpcre2=disabled
+        -Dpolkit=disabled
+        -Dportabled=false
+        -Dpstore=false
+        -Dpwquality=disabled
+        -Drandomseed=false
+        -Dresolve=false
+        -Drfkill=false
+        -Dseccomp=disabled
+        -Dsmack=false
+        -Dstoragetm=false
+        -Dsysext=false
+        -Dtimedated=false
+        -Dtimesyncd=false
+        -Dtpm=false
+        -Dqrencode=disabled
+        -Dquotacheck=false
+        -Duserdb=false
+        -Dutmp=false
+        -Dvconsole=false
+        -Dvmspawn=disabled
+        -Dwheel-group=false
+        -Dxdg-autostart=false
+        -Dxkbcommon=disabled
+        -Dxz=disabled
+        -Dzlib=disabled
+        -Dzstd=disabled
+        -Dbpf-framework=disabled
+        -Dpasswdqc=disabled
+        -Dselinux=disabled
+        -Dxenctrl=disabled
+        -Dlibcryptsetup-plugins=disabled
+        -Drepart=disabled
+        -Dsysupdate=disabled
+        -Dimportd=disabled
+        -Dhomed=disabled
+        -Dremote=disabled
+        -Dnss-mymachines=disabled
+        -Dtpm2=disabled
+        -Dshellprofiledir=no
+    )
+
+    artix-meson "$_pkgbase" build "${_meson_options[@]}"
+
+    local _efi_arch
+
+    case $CARCH in
+        x86_64*) _efi_arch=x64 ;;
+        i686) _efi_arch=ia32 ;;
+    esac
+
+
+    _targets+=(
+        esysusers
+        etmpfiles
+        sysusers.d/basic.conf
+        tmpfiles.d/{etc,static-nodes-permissions,var,legacy}.conf
+        man/{sysusers,tmpfiles}.d.5
+        man/systemd-{sysusers,tmpfiles}.8
+        factory/templates/{locale,vconsole}.conf
+
+        bootctl
+        man/bootctl.1
+        src/boot/eboot${_efi_arch}.efi
+        src/boot/linux${_efi_arch}.efi.stub
+        src/boot/addon${_efi_arch}.efi.stub
+
+        ebless-boot{,-generator}
+        man/systemd-{boot.7,bless-boot-generator.8}
+
+        kernel-install
+        src/kernel-install/90-loaderentry.install
+        man/kernel-install.8
+
+        ukify
+        src/kernel-install/60-ukify.install
+        man/ukify.1
+
+        eshutdown
+        man/shutdown.8
+
+        systemd-detect-virt
+        systemd-runtest.env
+
+        test-umount
+    )
+    meson compile -C build "${_targets[@]}"
+}
+
+check() {
+    local _tests=()
+    _tests+=(
+        test-systemd-tmpfiles.standalone
+        test-sysusers.standalone
+
+        test-umount
+    )
+
+    meson test -C build --print-errorlogs "${_tests[@]}"
+}
+
+_inst_man() {
+    local x="$1" y=${1##*.} man
+    install -d "${pkgdir}"/usr/share/man/man"$y"
+    case "$x" in
+        *sysusers*|*tmpfiles*) man=${x/systemd-/e} ;;
+        *systemd-boot*) man=${x/systemd-/egummi} ;;
+        *systemd-bless-boot-generator*) man=${x/systemd-/e} ;;
+        *shutdown*) man=e${x} ;;
+        *) man=${x/systemd-/e} ;;
+    esac
+    install -vm644 build/man/"$x" "${pkgdir}"/usr/share/man/man"$y/$man"
+}
+
+package_esysusers() {
+    pkgdesc='the sysusers.d binary'
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags esysusers
+
+    _inst_man "sysusers.d.5"
+    _inst_man "systemd-sysusers.8"
+
+    # pacman hooks
+    make -C alpm-hooks DESTDIR="${pkgdir}" install_sysusers
+}
+
+package_etmpfiles() {
+    pkgdesc='the tmpfiles.d binary'
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags etmpfiles
+
+    _inst_man "tmpfiles.d.5"
+    _inst_man "systemd-tmpfiles.8"
+
+    # pacman hooks
+    make -C alpm-hooks DESTDIR="${pkgdir}" install_tmpfiles
+}
+
+package_egummiboot() {
+    pkgdesc='the gummiboot bootloader'
+    provides=('gummiboot')
+    depends+=(
+        'sh'
+    )
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eboot,kernel-install,ebless
+
+    # add example bootctl configuration
+    install -D -m0644 artix.conf "$pkgdir"/usr/share/egummiboot/bootctl/artix.conf
+    install -D -m0644 loader.conf "$pkgdir"/usr/share/egummiboot/bootctl/loader.conf
+    install -D -m0644 splash-artix.bmp "$pkgdir"/usr/share/egummiboot/bootctl/splash-artix.bmp
+
+    for m in bootctl.1 kernel-install.8 systemd-boot.7 systemd-bless-boot-generator.8; do
+        _inst_man "$m"
+    done
+
+    # symlink kernel-install to installkernel
+    ln -s kernel-install "$pkgdir"/usr/bin/installkernel
+    ln -s kernel-install.8.gz "$pkgdir"/usr/share/man/man8/installkernel.8.gz
+}
+
+package_eukify() {
+    pkgdesc='Combine kernel and initrd into a signed Unified Kernel Image'
+    provides=('ukify')
+    depends=(
+        'python'
+        'python-cryptography'
+        'python-pefile'
+    )
+    optdepends=(
+        'python-pillow: Show the size of splash image'
+        'sbsigntools: Sign the embedded kernel'
+    )
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eukify
+
+    _inst_man "ukify.1"
+}
+
+package_eshutdown() {
+    pkgdesc='the extracted shutdown binary'
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eshutdown
+
+    _inst_man "shutdown.8"
+}

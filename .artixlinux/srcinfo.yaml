@@ -1,0 +1,77 @@
+---
+version: 260.1-6
+pkgbase:
+  name: esys-utils
+  pkgdesc: System utils extracted from systemd
+  pkgver: 260.1
+  pkgrel: 6
+  url: https://www.github.com/systemd/systemd
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+    - LGPL-2.1-or-later
+  makedepends:
+    - acl
+    - gperf
+    - util-linux
+    - docbook-xsl
+    - git
+    - intltool
+    - meson
+    - python-jinja
+    - rsync
+    - bash-completion
+    - python-pyelftools
+    - python-pefile
+  depends:
+    - glibc
+    - libgcc
+  source:
+    - git+https://github.com/systemd/systemd#tag=v260.1?signed
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.5
+    - 0001-Use-Arch-Linux-device-access-groups.patch
+    - 0001-esys-utils-standalone-install.patch
+    - artix.conf
+    - loader.conf
+    - splash-artix.bmp
+  validpgpkeys:
+    - 63CDA1E5D3FC22B998D20DD6327F26951A015CC4
+    - A9EA9081724FFAE0484C35A1A81CEA22BC8C7E2E
+    - 9A774DB5DB996C154EBBFBFDA0099A18E29326E1
+    - 5C251B5FC54EB2F80F407AAAC54CA336CFEB557E
+  sha512sums:
+    - 16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb
+    - e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79
+    - ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82
+    - e81198f3de9028fababc6f5ee82c03f4f258d39e53fed08a3e103a1bd316366b9c3e7ee05593112f58b62f387e05790133c5d259f8401b32d76e474b02d7160a
+    - 982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5
+    - ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58
+    - a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b
+pkgname:
+  - name: esysusers
+    pkgdesc: the sysusers.d binary
+  - name: etmpfiles
+    pkgdesc: the tmpfiles.d binary
+  - name: egummiboot
+    pkgdesc: the gummiboot bootloader
+    depends:
+      - glibc
+      - libgcc
+      - sh
+    provides:
+      - gummiboot
+  - name: eukify
+    pkgdesc: Combine kernel and initrd into a signed Unified Kernel Image
+    depends:
+      - python
+      - python-cryptography
+      - python-pefile
+    optdepends:
+      - 'python-pillow: Show the size of splash image'
+      - 'sbsigntools: Sign the embedded kernel'
+    provides:
+      - ukify
+  - name: eshutdown
+    pkgdesc: the extracted shutdown binary
+# generated with artixpkg 0.38.5-1-any
