@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=pwvucontrol
-pkgver=0.5.1
+pkgver=0.5.2
 pkgrel=1
 pkgdesc="Pipewire volume control"
 url="https://github.com/saivert/$pkgname"
@@ -16,7 +16,7 @@ source=(
   "pwvucontrol.desktop"
 )
 
-b2sums=('d66be3bc85624a770f769ff86d4531ae565436348df8b0e96b8b488b6c06217706b4cc43a387fe745083bd6444827750e2d8a73453ac1726164aad3da104a809'
+b2sums=('fb749511f886a0481edc5e6d8312241503d133724f316a76dfc1c3222c1b1874d4ed332fe847b358340cef8258ca04e56bd33ed2a72a713cacf8e06f992a7031'
         'fcc137332b78c9a80232df0c2023c833319b09152d1a29d078d82226c5e7638d3f1ffed7dbeab9f4cd6869556a417d84b3c5f10e17ba1cb56b632cfe22662be7')
 
 build() {
