@@ -1,0 +1,29 @@
+---
+version: 1.3.0-1
+pkgbase:
+  name: ruby-brass
+  pkgdesc: Bare-Metal Ruby Assertions System Standard
+  pkgver: 1.3.0
+  pkgrel: 1
+  url: https://github.com/rubyworks/brass
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - ruby-lemon
+    - ruby-rubytest-cli
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/rubyworks/brass.git#tag=v1.3.0
+  sha256sums:
+    - abc944a385756e27d259de66bf74a795e677e5c6330ce43923265b062e950220
+pkgname:
+  - name: ruby-brass
+# generated with artixpkg 0.38.5-1-any
