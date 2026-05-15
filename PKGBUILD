@@ -16,7 +16,7 @@ _vlcver=3.0.22
 # optional fixup version including hyphen
 _vlcfixupver=
 pkgver=$_vlcver${_vlcfixupver//-/.r}
-pkgrel=3
+pkgrel=4
 pkgdesc='Free and open source cross-platform multimedia player and framework'
 url=https://www.videolan.org/vlc/
 arch=(x86_64)
@@ -44,7 +44,6 @@ makedepends=(
   fontconfig
   freetype2
   fribidi
-  gcc-libs
   gdk-pixbuf2
   glib2
   glibc
@@ -60,12 +59,13 @@ makedepends=(
   libbluray
   libcaca
   libcddb
-  libdca
   libdc1394
+  libdca
   libdvbpsi
   libdvdcss
   libdvdnav
   libdvdread
+  libgcc
   libglvnd
   libgme
   libgoom2
@@ -78,8 +78,8 @@ makedepends=(
   libmpcdec
   libmpeg2
   libmtp
-  libnotify
   libnfs
+  libnotify
   libogg
   libpng
   libproxy
@@ -90,6 +90,7 @@ makedepends=(
   libshout
   libsoxr
   libssh2
+  libstdc++
   libtheora
   libtiger
   libupnp
@@ -147,9 +148,6 @@ prepare() {
   sed 's|whoami|echo builduser|g' -i configure
   sed 's|hostname -f|echo arch|g' -i configure
 
-  # libupnp callback typedef now uses non-const event pointer
-  sed -i 's/typedef const void\* UpnpEventPtr;/typedef void* UpnpEventPtr;/' modules/services_discovery/upnp.hpp
-  
   # Fix build with gstreamer 1.28
   sed -i '/#include <gst\/gstbufferpool.h>/d; /#include <gst\/video\/gstvideopool.h>/d' modules/codec/gstreamer/gstvlcvideopool.h
   
@@ -880,8 +878,8 @@ package_libvlc() {
   pkgdesc+=" - library"
   depends=(
     dbus
-    gcc-libs
     glibc
+    libgcc
   )
   provides=(
     libvlc.so
@@ -929,8 +927,9 @@ package_vlc-gui-qt() {
   pkgdesc+=" - Qt GUI"
   depends=(
     bash
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libvlc libvlccore.so
     libx11
     qt5-base
@@ -962,8 +961,9 @@ package_vlc-gui-skins2() {
     bash
     freetype2
     fribidi
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libvlc libvlccore.so
     libx11
     libxext
@@ -1125,8 +1125,9 @@ package_vlc-plugin-chromecast() {
   pkgdesc+=" - Chromecast plugin"
   depends=(
     abseil-cpp
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libvlc libvlccore.so
     protobuf
     vlc-plugins-base
@@ -1238,10 +1239,10 @@ package_vlc-plugin-ffmpeg() {
 package_vlc-plugin-firewire() {
   pkgdesc+=" - FireWire plugins"
   depends=(
-    gcc-libs
     glibc
     libavc1394
     libdc1394
+    libgcc
     libraw1394
     libvlc libvlccore.so
     vlc-plugins-base
@@ -1414,8 +1415,9 @@ package_vlc-plugin-lirc() {
 package_vlc-plugin-live555() {
   pkgdesc+=" - live555 RTP/RSTP client plugin"
   depends=(
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libvlc libvlccore.so
     live-media
     vlc-plugins-base
@@ -1427,8 +1429,8 @@ package_vlc-plugin-live555() {
 package_vlc-plugin-lua() {
   pkgdesc+=" - Lua scripting plugins"
   depends=(
-    gcc-libs
     glibc
+    libgcc
     libvlc libvlccore.so
     lua
     vlc-plugins-base
@@ -1455,10 +1457,11 @@ package_vlc-plugin-mad() {
 package_vlc-plugin-matroska() {
   pkgdesc+=" - Matroska plugin"
   depends=(
-    gcc-libs
     glibc
     libebml
+    libgcc
     libmatroska
+    libstdc++
     libvlc libvlccore.so
     zlib
     vlc-plugins-base
@@ -1736,8 +1739,9 @@ package_vlc-plugin-svg() {
 package_vlc-plugin-tag() {
   pkgdesc+=" - tag plugin"
   depends=(
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libvlc libvlccore.so
     taglib
   )
@@ -1783,8 +1787,9 @@ package_vlc-plugin-udev() {
 package_vlc-plugin-upnp() {
   pkgdesc+=" - UPnP plugin"
   depends=(
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libupnp
     libvlc libvlccore.so
     vlc-plugins-base
@@ -1889,8 +1894,9 @@ package_vlc-plugins-all() {
 package_vlc-plugins-base() {
   pkgdesc+=" - base plugins"
   depends=(
-    gcc-libs
     glibc
+    libgcc
+    libstdc++
     libvlc libvlccore.so
     vlc-plugin-alsa
     vlc-plugin-a52dec
@@ -1971,8 +1977,8 @@ package_vlc-plugins-extra() {
 package_vlc-plugins-video-output() {
   pkgdesc+=" - video output plugins"
   depends=(
-    gcc-libs
     glibc
+    libgcc
     libglvnd
     libva
     libvlc libvlccore.so
@@ -1996,10 +2002,11 @@ package_vlc-plugins-video-output() {
 package_vlc-plugins-visualization() {
   pkgdesc+=" - visualization plugins"
   depends=(
-    gcc-libs
     glibc
+    libgcc
     libglvnd
     libgoom2
+    libstdc++
     libvlc libvlccore.so
     projectm
     ttf-dejavu

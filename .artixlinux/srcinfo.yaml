@@ -1,10 +1,10 @@
 ---
-version: 3.0.22-3
+version: 3.0.22-4
 pkgbase:
   name: vlc
   pkgdesc: Free and open source cross-platform multimedia player and framework
   pkgver: 3.0.22
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
@@ -31,7 +31,6 @@ pkgbase:
     - fontconfig
     - freetype2
     - fribidi
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -47,12 +46,13 @@ pkgbase:
     - libbluray
     - libcaca
     - libcddb
-    - libdca
     - libdc1394
+    - libdca
     - libdvbpsi
     - libdvdcss
     - libdvdnav
     - libdvdread
+    - libgcc
     - libglvnd
     - libgme
     - libgoom2
@@ -65,8 +65,8 @@ pkgbase:
     - libmpcdec
     - libmpeg2
     - libmtp
-    - libnotify
     - libnfs
+    - libnotify
     - libogg
     - libpng
     - libproxy
@@ -77,6 +77,7 @@ pkgbase:
     - libshout
     - libsoxr
     - libssh2
+    - libstdc++
     - libtheora
     - libtiger
     - libupnp
@@ -196,8 +197,8 @@ pkgname:
     pkgdesc: Free and open source cross-platform multimedia player and framework - library
     depends:
       - dbus
-      - gcc-libs
       - glibc
+      - libgcc
     provides:
       - libvlc.so
       - libvlccore.so
@@ -224,8 +225,9 @@ pkgname:
     pkgdesc: Free and open source cross-platform multimedia player and framework - Qt GUI
     depends:
       - bash
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libvlc
       - libvlccore.so
       - libx11
@@ -252,8 +254,9 @@ pkgname:
       - bash
       - freetype2
       - fribidi
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libvlc
       - libvlccore.so
       - libx11
@@ -362,8 +365,9 @@ pkgname:
     pkgdesc: Free and open source cross-platform multimedia player and framework - Chromecast plugin
     depends:
       - abseil-cpp
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libvlc
       - libvlccore.so
       - protobuf
@@ -439,10 +443,10 @@ pkgname:
   - name: vlc-plugin-firewire
     pkgdesc: Free and open source cross-platform multimedia player and framework - FireWire plugins
     depends:
-      - gcc-libs
       - glibc
       - libavc1394
       - libdc1394
+      - libgcc
       - libraw1394
       - libvlc
       - libvlccore.so
@@ -559,8 +563,9 @@ pkgname:
   - name: vlc-plugin-live555
     pkgdesc: Free and open source cross-platform multimedia player and framework - live555 RTP/RSTP client plugin
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libvlc
       - libvlccore.so
       - live-media
@@ -568,8 +573,8 @@ pkgname:
   - name: vlc-plugin-lua
     pkgdesc: Free and open source cross-platform multimedia player and framework - Lua scripting plugins
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
       - libvlc
       - libvlccore.so
       - lua
@@ -587,10 +592,11 @@ pkgname:
   - name: vlc-plugin-matroska
     pkgdesc: Free and open source cross-platform multimedia player and framework - Matroska plugin
     depends:
-      - gcc-libs
       - glibc
       - libebml
+      - libgcc
       - libmatroska
+      - libstdc++
       - libvlc
       - libvlccore.so
       - zlib
@@ -776,8 +782,9 @@ pkgname:
   - name: vlc-plugin-tag
     pkgdesc: Free and open source cross-platform multimedia player and framework - tag plugin
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libvlc
       - libvlccore.so
       - taglib
@@ -807,8 +814,9 @@ pkgname:
   - name: vlc-plugin-upnp
     pkgdesc: Free and open source cross-platform multimedia player and framework - UPnP plugin
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libupnp
       - libvlc
       - libvlccore.so
@@ -882,8 +890,9 @@ pkgname:
   - name: vlc-plugins-base
     pkgdesc: Free and open source cross-platform multimedia player and framework - base plugins
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libvlc
       - libvlccore.so
       - vlc-plugin-alsa
@@ -956,8 +965,8 @@ pkgname:
   - name: vlc-plugins-video-output
     pkgdesc: Free and open source cross-platform multimedia player and framework - video output plugins
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
       - libglvnd
       - libva
       - libvlc
@@ -975,12 +984,13 @@ pkgname:
   - name: vlc-plugins-visualization
     pkgdesc: Free and open source cross-platform multimedia player and framework - visualization plugins
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
       - libglvnd
       - libgoom2
+      - libstdc++
       - libvlc
       - libvlccore.so
       - projectm
       - ttf-dejavu
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
