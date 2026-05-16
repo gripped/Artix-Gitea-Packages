@@ -16,7 +16,7 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=7.0.6
+pkgver=7.0.8
 pkgrel=1
 _srcname=linux-${pkgver}
 license=('GPL-2.0-only')
@@ -50,7 +50,7 @@ validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('cba44440aa57affd7c21241dc5bc234b0df53c499f8ffc3ebc290dd3390a7523'
+sha256sums=('1945afb22c9f4f7c78d971210f3bbb7deb09f5d8c41a38bfac772de25f6dcb22'
             'SKIP')
 
 prepare() {
