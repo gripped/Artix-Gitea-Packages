@@ -2,7 +2,7 @@
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts515
-pkgver=5.15.202
+pkgver=5.15.207
 pkgrel=1
 pkgdesc='LTS Linux 5.15.x'
 url="https://www.kernel.org/"
@@ -27,9 +27,9 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
-sha256sums=('0bc1bdf74957e276793691865ffb71505809706d9243a42e9704aad0f128cdd4'
+sha256sums=('50eb7fa307745f30e5cae4c17e188fc42ce6a72f7d925d5ea7e3c2135de6148e'
             'SKIP'
-            '3b5c167b4824865fd92b53b9a272382003bd333bec522c6806b15324ddbb6a6f'
+            '5323dbb3aec4c01881fda25a4c738105f139cb6f82da707fd99f9f3f6ccfa188'
             '3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd'
             '2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431'
             '8357f000b2b622e73dcfd41c2bad42b5e99fffe8f7ee64f774aa771f86cef43c'
@@ -218,3 +218,57 @@ pkgname=(
       grep -v '^\$pkgbase-docs'
   )
 )
+
+
+if [ "${CARCH}" = "i486" -o  "${CARCH}" = "i686" -o "${CARCH}" = "pentium4" ]; then
+
+  # use 32-bit configuration files per subarchitecture instead of main config file
+  source_pentium4=('config.pentium4')
+  source_i686=('config.i686')
+  source_i486=('config.i486')
+  # fail if upstream's .config changes
+  for ((i=0; i<${#sha256sums[@]}; i++)); do
+    if [ "${sha256sums[${i}]}" = '5323dbb3aec4c01881fda25a4c738105f139cb6f82da707fd99f9f3f6ccfa188' ]; then
+      sha256sums_pentium4=('86aeb4a545c7068c03f2402141f38070a067549704257f8c306b8536376e28e6')
+      sha256sums_i686=('50d48f1c7bc266579121c98eb9d55b58e7c9aa2d7ece7564c925477c8b4f12f9')
+      sha256sums_i486=('01b20235ffc44d92ffc619521eff9d8757bac46bdd751422383e9a4337e623d8')
+    fi
+  done
+
+  # copy architecture specific config file, not default 'config'
+  eval "$(
+    declare -f prepare | \
+      sed '
+        s,\.\./config,../config.$CARCH,
+      '
+  )"
+
+  # patch architecture when copying the kernel Makefile
+  eval "$(
+    declare -f package_linux-lts515-headers | \
+      sed '
+        \,/tools/objtool" ,d
+        \,arch/x86/Makefile, {
+          a \
+          install -t "${builddir}/arch/x86" -m644 arch/x86/Makefile_32.cpu
+        }
+      '
+  )"
+
+  # avoid using zstd compression in ultra mode (exhausts virtual memory)
+  source+=('no-ultra-zstd.patch')
+  sha256sums+=('3997ce6033fdf950a9960f1db720b38c47b1a2e06ab75fc6712c154f596e7c47')
+  # upstream prepare() does already do the *.patch patching
+
+  eval "$(
+    declare -f build | \
+      sed '
+        s/\bhtmldocs\b//
+      '
+  )"
+  makedepends=(${makedepends[@]//python-sphinx_rtd_theme/})
+  makedepends=(${makedepends[@]//python-sphinx/})
+  makedepends=(${makedepends[@]//graphviz/})
+  makedepends=(${makedepends[@]//imagemagick/})
+  makedepends=(${makedepends[@]//texlive-latexextra/})
+fi
