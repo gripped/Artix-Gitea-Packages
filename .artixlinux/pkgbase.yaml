@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
       - fastfetch-2.63.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 2.62.1-1
+    version: 2.63.1-1
     packages:
-      - fastfetch-2.62.1-1-x86_64.pkg.tar.zst
+      - fastfetch-2.63.1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
