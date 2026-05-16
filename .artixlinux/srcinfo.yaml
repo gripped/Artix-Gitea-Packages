@@ -1,13 +1,13 @@
 ---
-version: 20260125-1
+version: 20260125-2
 pkgbase:
   name: winetricks
   pkgdesc: Script to install various redistributable runtime libraries in Wine.
   pkgver: 20260125
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.winehq.org/winetricks
   arch:
-    - x86_64
+    - any
   license:
     - LGPL-2.1-or-later
   depends:
@@ -30,4 +30,4 @@ pkgname:
       - perl
       - unzip
       - wine
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
