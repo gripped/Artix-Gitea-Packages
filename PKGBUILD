@@ -18,7 +18,7 @@ pkgname=(
 )
 pkgdesc='System utils extracted from systemd'
 pkgver="${_tag/[-~]/}"
-pkgrel=7
+pkgrel=8
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -330,7 +330,7 @@ package_egummiboot() {
     depends+=(
         'sh'
     )
-    optdepend=('eukify: combine kernel and initrd into a signed Unified Kernel Image')
+    optdepends=('eukify: combine kernel and initrd into a signed Unified Kernel Image')
 
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags eboot,kernel-install,ebless

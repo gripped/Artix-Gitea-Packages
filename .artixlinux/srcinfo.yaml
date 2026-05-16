@@ -1,10 +1,10 @@
 ---
-version: 260.1-7
+version: 260.1-8
 pkgbase:
   name: esys-utils
   pkgdesc: System utils extracted from systemd
   pkgver: 260.1
-  pkgrel: 7
+  pkgrel: 8
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -61,6 +61,8 @@ pkgname:
       - glibc
       - libgcc
       - sh
+    optdepends:
+      - 'eukify: combine kernel and initrd into a signed Unified Kernel Image'
     provides:
       - gummiboot
   - name: eukify
