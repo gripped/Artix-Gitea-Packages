@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 595.71.05-7
+    version: 595.71.05-9
     packages:
-      - nvidia-open-595.71.05-7-x86_64.pkg.tar.zst
+      - nvidia-open-595.71.05-9-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 595.71.05-5
