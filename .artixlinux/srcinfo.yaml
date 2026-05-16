@@ -1,10 +1,10 @@
 ---
-version: 260.1-6
+version: 260.1-7
 pkgbase:
   name: esys-utils
   pkgdesc: System utils extracted from systemd
   pkgver: 260.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -13,7 +13,9 @@ pkgbase:
     - LGPL-2.1-or-later
   makedepends:
     - acl
+    - audit
     - gperf
+    - kmod
     - util-linux
     - docbook-xsl
     - git
@@ -64,6 +66,8 @@ pkgname:
   - name: eukify
     pkgdesc: Combine kernel and initrd into a signed Unified Kernel Image
     depends:
+      - egummiboot=260.1
+      - binutils
       - python
       - python-cryptography
       - python-pefile

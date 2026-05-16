@@ -18,7 +18,7 @@ pkgname=(
 )
 pkgdesc='System utils extracted from systemd'
 pkgver="${_tag/[-~]/}"
-pkgrel=6
+pkgrel=7
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -31,8 +31,9 @@ depends=(
 )
 makedepends=(
     'acl'
+    'audit'
     'gperf'
-   # 'kmod'
+    'kmod'
     'util-linux'
     'docbook-xsl'
     'git'
@@ -108,7 +109,7 @@ build() {
         -Dblkid=enabled
         -Dacl=enabled
 
-        -Dkmod=disabled
+        -Dkmod=enabled
 
         -Dgshadow=true
 
@@ -117,6 +118,7 @@ build() {
         -Dbootloader=enabled
         -Dkernel-install=true
         -Dukify=enabled
+        -Daudit=enabled
 
         -Dsbat-distro='artix'
         -Dsbat-distro-summary='Artix Linux'
@@ -138,8 +140,6 @@ build() {
         -Ddns-servers=''
         -Dntp-servers=''
 
-        -Dsysvinit-path=
-        -Dsysvrcnd-path=
         -Ddefault-dnssec=no
 
         -Ddefault-llmnr=no
@@ -150,7 +150,7 @@ build() {
         -Dadm-group=false
         -Danalyze=false
         -Dapparmor=disabled
-        -Daudit=disabled
+
         -Dbacklight=false
         -Dbinfmt=false
         -Dbzip2=disabled
@@ -172,9 +172,7 @@ build() {
         -Dlibcryptsetup=disabled
         -Dlibcurl=disabled
         -Dlibfido2=disabled
-        -Dlibidn=disabled
         -Dlibidn2=disabled
-        -Dlibiptc=disabled
         -Dlocaled=false
         -Dlogind=false
         -Dlz4=disabled
@@ -332,6 +330,8 @@ package_egummiboot() {
     depends+=(
         'sh'
     )
+    optdepend=('eukify: combine kernel and initrd into a signed Unified Kernel Image')
+
 
     meson install -C build --destdir "$pkgdir" --no-rebuild --tags eboot,kernel-install,ebless
 
@@ -353,6 +353,8 @@ package_eukify() {
     pkgdesc='Combine kernel and initrd into a signed Unified Kernel Image'
     provides=('ukify')
     depends=(
+        "egummiboot=${pkgver}"
+        'binutils'
         'python'
         'python-cryptography'
         'python-pefile'
