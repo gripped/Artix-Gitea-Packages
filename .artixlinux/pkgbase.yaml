@@ -13,11 +13,11 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 7.0.7.artix1-1
+    version: 7.0.8.artix1-1
     packages:
-      - linux-7.0.7.artix1-1-x86_64.pkg.tar.zst
-      - linux-headers-7.0.7.artix1-1-x86_64.pkg.tar.zst
-      - linux-docs-7.0.7.artix1-1-x86_64.pkg.tar.zst
+      - linux-7.0.8.artix1-1-x86_64.pkg.tar.zst
+      - linux-headers-7.0.8.artix1-1-x86_64.pkg.tar.zst
+      - linux-docs-7.0.8.artix1-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 7.0.5.artix1-1
