@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.8-818
+    version: 0.8-820
     packages:
-      - bbswitch-0.8-818-x86_64.pkg.tar.zst
-      - bbswitch-dkms-0.8-818-x86_64.pkg.tar.zst
+      - bbswitch-0.8-820-x86_64.pkg.tar.zst
+      - bbswitch-dkms-0.8-820-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.8-816
