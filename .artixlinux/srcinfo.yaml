@@ -1,10 +1,10 @@
 ---
-version: 260.1-6
+version: 260.1-7
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 260.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -24,6 +24,7 @@ pkgbase:
     - meson
     - python-jinja
     - rsync
+    - tpm2-tss
     - bash-completion
     - python-pyelftools
     - python-pefile
@@ -58,6 +59,8 @@ pkgname:
       - kmod
       - libudev=260.1
       - util-linux
+    optdepends:
+      - 'tpm2-tss: unlocking LUKS2 volumes with TPM2'
     backup:
       - etc/udev/iocost.conf
       - etc/udev/udev.conf

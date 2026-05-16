@@ -15,7 +15,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=6
+pkgrel=7
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -28,6 +28,7 @@ depends=(
 )
 makedepends=(
     'acl'
+    #'audit'
     'gperf'
     'hwdata'
     'kbd'
@@ -39,6 +40,7 @@ makedepends=(
     'meson'
     'python-jinja'
     'rsync'
+    'tpm2-tss'
     'bash-completion'
     'python-pyelftools'
     'python-pefile'
@@ -119,6 +121,9 @@ build() {
 
         -Dman=enabled
 
+        -Dtpm2=enabled
+        -Dacl=enabled
+
         -Dhtml=disabled
 
         -Ddns-servers=''
@@ -129,8 +134,6 @@ build() {
         -Dkernel-install=false
         -Dukify=disabled
 
-        -Dsysvinit-path=
-        -Dsysvrcnd-path=
         -Ddefault-dnssec=no
 
         -Ddefault-llmnr=no
@@ -163,9 +166,7 @@ build() {
         -Dlibcryptsetup=disabled
         -Dlibcurl=disabled
         -Dlibfido2=disabled
-        -Dlibidn=disabled
         -Dlibidn2=disabled
-        -Dlibiptc=disabled
         -Dlocaled=false
         -Dlogind=false
         -Dlz4=disabled
@@ -217,8 +218,10 @@ build() {
         -Dhomed=disabled
         -Dremote=disabled
         -Dnss-mymachines=disabled
-        -Dtpm2=disabled
         -Dshellprofiledir=no
+        -Dnsresourced=false
+        -Dmountfsd=false
+        -Dnspawn=disabled
     )
 
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
@@ -313,6 +316,7 @@ package_udev() {
         "libudev=${pkgver}"
         'util-linux' #'libblkid.so'
     )
+    optdepends=('tpm2-tss: unlocking LUKS2 volumes with TPM2')
     backup=(etc/udev/iocost.conf
             etc/udev/udev.conf)
 
