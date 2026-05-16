@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.2.8-13
+    version: 7.2.8-15
     packages:
-      - virtualbox-host-modules-artix-7.2.8-13-x86_64.pkg.tar.zst
+      - virtualbox-host-modules-artix-7.2.8-15-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.2.8-11
