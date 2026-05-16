@@ -1,9 +1,9 @@
 ---
-version: 0.11.0-1
+version: 0.12.1-1
 pkgbase:
   name: python-pyspnego
   pkgdesc: SPNEGO Authentication library
-  pkgver: 0.11.0
+  pkgver: 0.12.1
   pkgrel: 1
   url: https://github.com/jborean93/pyspnego
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - 'python-krb5: Kerberos support'
     - 'python-ruamel-yaml: YAML configuration'
   source:
-    - https://github.com/jborean93/pyspnego/archive/v0.11.0/python-pyspnego-0.11.0.tar.gz
+    - https://github.com/jborean93/pyspnego/archive/v0.12.1/python-pyspnego-0.12.1.tar.gz
   sha256sums:
-    - 6f92ae401a3515e41b40a7cff9bffd837ba8b4567f4a078335df8d24a1187bd9
+    - b55b31ebd4a35e638936b53f17b8a67b905cb94d8f2f0d55e17399cb9453951a
 pkgname:
   - name: python-pyspnego
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
