@@ -9,7 +9,7 @@ pkgname=(
   librsvg-noglycin-docs
 )
 pkgver=2.61.4
-pkgrel=1
+pkgrel=1.1
 pkgdesc="SVG rendering library, compatible with gdk-pixbuf2-noglycin"
 url="https://wiki.gnome.org/Projects/LibRsvg"
 arch=(x86_64)

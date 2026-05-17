@@ -1,10 +1,10 @@
 ---
-version: 2.61.4-1
+version: 2.61.4-1.1
 pkgbase:
   name: librsvg-noglycin
   pkgdesc: SVG rendering library, compatible with gdk-pixbuf2-noglycin
   pkgver: 2.61.4
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://wiki.gnome.org/Projects/LibRsvg
   arch:
     - x86_64
@@ -52,4 +52,4 @@ pkgname:
       - librsvg-docs
     conflicts:
       - librsvg-docs
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
