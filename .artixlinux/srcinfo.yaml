@@ -1,9 +1,9 @@
 ---
-version: 2.2.1-1
+version: 2.3.0-1
 pkgbase:
   name: sdbus-cpp
   pkgdesc: a high-level C++ D-Bus library designed to provide expressive, easy-to-use API
-  pkgver: 2.2.1
+  pkgver: 2.3.0
   pkgrel: 1
   url: https://github.com/Kistler-Group/sdbus-cpp
   arch:
@@ -19,12 +19,12 @@ pkgbase:
     - expat
     - libelogind
   source:
-    - https://github.com/Kistler-Group/sdbus-cpp/archive/v2.2.1/sdbus-cpp-2.2.1.tar.gz
+    - https://github.com/Kistler-Group/sdbus-cpp/archive/v2.3.0/sdbus-cpp-2.3.0.tar.gz
   sha256sums:
-    - da69a0104beb6e51415a59f1571a47beb1eacc65cc6027b250eb1cf13ff4f802
+    - 8c01d28fa7b1a973d7a9cfdfd65480e733a52172506eaa1fea225b681590fe3c
 pkgname:
   - name: sdbus-cpp
     provides:
       - libsdbus-c++.so
   - name: sdbus-cpp-doc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
