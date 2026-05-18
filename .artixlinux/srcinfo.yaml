@@ -1,10 +1,10 @@
 ---
-version: 26.04.1-1
+version: 26.04.1-2
 pkgbase:
   name: plasmatube
   pkgdesc: Kirigami YouTube video player based on QtMultimedia and youtube-dl
   pkgver: 26.04.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/plasmatube/
   arch:
     - x86_64
@@ -17,7 +17,6 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
   depends:
-    - gcc-libs
     - glibc
     - kconfig
     - kcoreaddons
@@ -29,6 +28,7 @@ pkgbase:
     - kitemmodels
     - knotifications
     - kwindowsystem
+    - libstdc++
     - mpvqt
     - purpose
     - qqc2-desktop-style
