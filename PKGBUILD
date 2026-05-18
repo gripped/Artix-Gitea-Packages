@@ -22,7 +22,6 @@ source=("http://www.thekelleys.org.uk/${pkgname}/${pkgname}-${_pkgver}.tar.xz"{,
 sha256sums=('43d72b8c129bdf33d17bafedc98823f63e46b5005128066bf0d2a472a32ce06a'
             'SKIP'
             'bec0c353e33efcf259a29f2f5a566edfb57b6cf2371c1680d553a62c63006193'
-            '297dbae8cfa3d353284820dd87cc65c37d1ef289cac3a5c3ede079413d31eeec'
             'e805d41b291dfe6988d6896d311ff2fa62d8291067572f3db1059b0217f31aff')
 
 _build_copts='-DHAVE_CONNTRACK -DHAVE_DBUS -DHAVE_DNSSEC -DHAVE_LIBIDN2 -DHAVE_NFTSET'
