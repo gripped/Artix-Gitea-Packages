@@ -2,8 +2,9 @@
 # Maintainer: Thomas Bächler <thomas@archlinux.org>
 
 pkgbase=lvm2
+pkgdesc='Device mapper and Logical Volume Manager'
 pkgname=('lvm2' 'device-mapper')
-pkgver=2.03.40
+pkgver=2.03.41
 pkgrel=1
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
@@ -11,8 +12,10 @@ license=('GPL-2.0-only' 'LGPL-2.1-only')
 makedepends=('git' 'udev' 'libaio' 'thin-provisioning-tools')
 validpgpkeys=('88437EF5C077BD113D3B7224228191C1567E2C17'  # Alasdair G Kergon <agk@redhat.com>
               'D501A478440AE2FD130A1BE8B9112431E509039F') # Marian Csontos <marian.csontos@gmail.com>
-source=("git+https://gitlab.com/lvmteam/lvm2.git#tag=v${pkgver//./_}?signed")
-sha256sums=('07008f7d953cf43eb77fbd6bc30e5cbe112f681f914e741524a303fdf9fef599')
+source=("git+https://gitlab.com/lvmteam/lvm2.git#tag=v${pkgver//./_}?signed"
+        '0001-libdm-Makefile-add-an-empty-target-install_lvm2.patch')
+sha256sums=('7ad3899acacc53697fcc6bf9e8f93e0017f22cddeea0db60c77fcab6ddc5959e'
+            '867a9ea522754144cd33d203a9400013bb9209925db9ef033b07dd586eda69dd')
 
 _backports=(
 )
@@ -26,6 +29,9 @@ prepare() {
     git show "${_c}" -- ':(exclude)WHATS_NEW' | git apply
   done
 
+
+  # libdm/Makefile: add an empty target install_lvm2
+  patch -Np1 < ../0001-libdm-Makefile-add-an-empty-target-install_lvm2.patch
 }
 
 build() {
@@ -63,9 +69,13 @@ build() {
 }
 
 package_device-mapper() {
-  pkgdesc="Device mapper userspace library and tools"
-  url="http://sourceware.org/dm/"
-  depends=('glibc' 'libudev' 'libudev.so')
+  pkgdesc='Device mapper userspace library and tools'
+  url='http://sourceware.org/dm/'
+  depends=(
+    'bash'
+    'glibc'
+    'libgcc' 'libgcc_s.so'
+    'libudev' 'libudev.so')
   provides=('libdevmapper.so'
     'libdevmapper-event.so')
 
@@ -75,17 +85,24 @@ package_device-mapper() {
 }
 
 package_lvm2() {
-  pkgdesc="Logical Volume Manager 2 utilities"
-  depends=('bash' "device-mapper>=${pkgver}" 'libudev'
-    'libudev.so' 'util-linux-libs' 'libblkid.so' 'readline' 'libreadline.so'
-    'thin-provisioning-tools' 'libaio' 'libaio.so')
+  pkgdesc='Logical Volume Manager 2 utilities'
+  url='https://sourceware.org/lvm2/'
+  depends=(
+    'bash'
+    "device-mapper>=${pkgver}"
+    'glibc'
+    'libaio' 'libaio.so'
+    'readline' 'libreadline.so'
+    'libudev' 'libudev.so'
+    'thin-provisioning-tools'
+    'util-linux-libs' 'libblkid.so')
   conflicts=('lvm' 'mkinitcpio<38-1')
   backup=('etc/lvm/lvm.conf'
     'etc/lvm/lvmlocal.conf')
 
   cd lvm2/
 
-  make DESTDIR="${pkgdir}" install_lvm2
+  make -j1 DESTDIR="${pkgdir}" install_lvm2
   # /etc directories
   install -d "${pkgdir}"/etc/lvm/{archive,backup}
 
