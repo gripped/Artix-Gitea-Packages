@@ -8,15 +8,22 @@
 pkgname=amule
 epoch=1
 pkgver=2.3.3
-pkgrel=11
+pkgrel=12
 pkgdesc='An eMule-like client for ed2k p2p network'
 arch=(x86_64)
 url='http://www.amule.org'
 license=(GPL-2.0-or-later)
 depends=(crypto++
          geoip
+         glibc
+         libgcc
+         libpng
+         libstdc++
          libupnp
-         wxwidgets-gtk3)
+         readline
+         wxwidgets-common
+         wxwidgets-gtk3
+         zlib)
 makedepends=(boost
              cmake
              gd
@@ -25,6 +32,7 @@ provides=(amule-daemon)
 source=(git+https://github.com/amule-project/amule#tag=$pkgver
         amule.sysusers
         amule.tmpfiles)
+options=(!lto)
 sha256sums=('9e28bde45b432bb966a2972141f8a445c9cdfe8a808d9874cfa4d67f277ce153'
             '1a1780d3010f338b16ace33fac6af8480bb0830402001f95f12c2e98afbd1b60'
             'e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d')
@@ -40,7 +48,6 @@ prepare() {
   git cherry-pick -n 0cd4412 # CMake 4 compatibility in ec abstracts
   git cherry-pick -n 9e1d9eb
   git cherry-pick -n a667c61 # Install icons
-  sed -i 's/const void \*Event/void *Event/' src/UPnPBase.h src/UPnPBase.cpp # libupnp callback signature
   rm -fr .git
 }
 
