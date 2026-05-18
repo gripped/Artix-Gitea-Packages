@@ -1,10 +1,10 @@
 ---
-version: 10.86.48-1
+version: 10.86.49-3
 pkgbase:
   name: netpbm
   pkgdesc: A toolkit for manipulation of graphic images
-  pkgver: 10.86.48
-  pkgrel: 1
+  pkgver: 10.86.49
+  pkgrel: 3
   url: http://netpbm.sourceforge.net/
   arch:
     - x86_64
@@ -13,11 +13,13 @@ pkgbase:
     - GPL-2.0-only
     - LGPL-2.0-only
     - MIT
+  makedepends:
+    - python
   depends:
     - bash
-    - gcc-libs
     - glibc
     - jbigkit
+    - libgcc
     - libjpeg-turbo
     - libpng
     - libtiff
@@ -25,23 +27,25 @@ pkgbase:
     - perl
     - zlib
   source:
-    - https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.48/netpbm-10.86.48.tgz
+    - https://downloads.sourceforge.net/project/netpbm/super_stable/10.86.49/netpbm-10.86.49.tgz
     - https://sources.archlinux.org/other/packages/netpbm/netpbm-doc-31Jan2014.tar.xz
     - https://sources.archlinux.org/other/packages/netpbm/netpbm-doc-31Jan2014.tar.xz.sig
     - netpbm-CAN-2005-2471.patch
     - netpbm-security-code.patch
     - netpbm-security-scripts.patch
+    - netpbm-build-manpages.patch
     - reproducible-man-gzip.patch
   validpgpkeys:
     - 5357F3B111688D88C1D88119FCF2CB179205AC90
   sha256sums:
-    - 709a98e871aeae892437274d68833c804dd41a4b8daf8fd978cac2782da4148a
+    - 98c1abdad8e593a20e36b597c6b5b4427c80349544d466eed7761ecec69f6daf
     - 74bcf840ee643c6917330c382484010cb99c004a3fcf05391bebcac63815acb3
     - SKIP
     - 7348274b72b8285add042d0f45d124c9833206ee3440bd1846cfc792b9b4d5e5
     - 698645215d46bcee515d75847fc550ce99c5fcb6fae63dacdba1d773f327c80e
     - 5ee27b4187577cbb9e85f6b36c5e5a421e03927f9195f888be7be2b647a5ac9d
+    - c289ec584097e2fdd7a975299d5a51e8266a706832c3d39105e4dd99e57ee94b
     - b0be94fbfbf247552c5cc3f1cdd93e2d549f59c3d218350ccc1bea44e9bebc9b
 pkgname:
   - name: netpbm
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
