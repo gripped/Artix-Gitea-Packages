@@ -100,8 +100,8 @@ pkgbase:
     - usr/lib/konform/distribution/policies.json
   source:
     - src::git+https://codeberg.org/konform-browser/source.git#tag=140.11.0.101
-    - firefox-140.11.0esr.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/140.11.0esr-candidates/build2/source/firefox-140.11.0esr.source.tar.xz
-    - firefox-140.11.0esr.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/140.11.0esr-candidates/build2/source/firefox-140.11.0esr.source.tar.xz.asc
+    - firefox-140.11.0esr-2.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/140.11.0esr-candidates/build2/source/firefox-140.11.0esr.source.tar.xz
+    - firefox-140.11.0esr-2.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/140.11.0esr-candidates/build2/source/firefox-140.11.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz
     - konform.desktop
     - default192x192.png

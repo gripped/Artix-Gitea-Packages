@@ -124,8 +124,8 @@ install='konform.install'
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
 source=(
   "src"::"git+https://codeberg.org/konform-browser/source.git#tag=${pkgver}"
-  "${_ff_source_tarball}"::"${_ffsrcurl}/source/${_ff_source_tarball}"
-  "${_ff_source_tarball}.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
+  "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
+  "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
   "${__pkgname}.desktop"
   "default192x192.png"
@@ -285,10 +285,6 @@ build() {
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
-  # export MOZ_BUILD_DATE="$(date -u${SOURCE_DATE_EPOCH:+d @$SOURCE_DATE_EPOCH} +%Y%m%d%H%M%S)"
-  #hardcoded build timestamp for fingerprint protection defense-in-depth
-  export KONFORM_MOZ_BUILD_ID="$(grep '^buildID=' "$srcdir/src/config/linux_info.txt" | cut -d= -f2)"
-  export MOZ_BUILD_DATE="${KONFORM_MOZ_BUILD_ID}"
   export MOZ_NOSPAM=1
   export MOZ_REQUIRE_SIGNING=
 
@@ -404,7 +400,7 @@ END
 package() {
   _lw_srcdir=$srcdir/src/librewolf-$_ffsrcver-$_lwrelver
   cd "${_lw_srcdir}"
-  DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[@]}" ./mach install
+  DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[*]}" ./mach install
 
   rm -f "${pkgdir}/usr/lib/pingsender"
 
@@ -413,8 +409,6 @@ package() {
   install -Dvm644 /dev/stdin "$vendorjs" <<END
 // Use system-provided dictionaries
 pref("spellchecker.dictionary_path", "/usr/share/hunspell");
-// Language packs are bundled
-pref("intl.multilingual.downloadEnabled", false);
 END
 
   local distini="$pkgdir/usr/lib/$__pkgname/distribution/distribution.ini"
