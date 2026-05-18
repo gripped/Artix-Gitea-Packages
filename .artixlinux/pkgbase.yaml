@@ -1,4 +1,4 @@
-team: galaxy
+team: world
 repos:
   system-goblins:
     debug: []
@@ -14,8 +14,9 @@ repos:
     packages: []
   world:
     debug: []
-    version: null
-    packages: []
+    version: 0.1.6-2.2
+    packages:
+      - xf86-video-qxl-0.1.6-2.2-x86_64.pkg.tar.zst
   lib32-goblins:
     debug: []
   lib32-gremlins:
@@ -30,12 +31,11 @@ repos:
     packages: []
   galaxy:
     debug: []
-    version: 0.1.6-2.2
-    packages:
-      - xf86-video-qxl-0.1.6-2.2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
 actions:
-  addRepo: galaxy
-  removeRepo: world
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
