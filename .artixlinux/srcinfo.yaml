@@ -1,0 +1,33 @@
+---
+version: 1.8.3-1
+pkgbase:
+  name: libxi
+  pkgdesc: X11 Input extension library
+  pkgver: 1.8.3
+  pkgrel: 1
+  url: https://xorg.freedesktop.org
+  arch:
+    - x86_64
+  license:
+    - MIT-open-group
+    - SMLNJ
+    - MIT
+  makedepends:
+    - xorg-util-macros
+  depends:
+    - libxext
+    - libxfixes
+    - libx11
+    - glibc
+    - xorgproto
+  source:
+    - https://xorg.freedesktop.org/releases/individual/lib/libXi-1.8.3.tar.xz
+    - https://xorg.freedesktop.org/releases/individual/lib/libXi-1.8.3.tar.xz.sig
+  validpgpkeys:
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+  sha512sums:
+    - 5fb8273424467c102d3bab01cb273169038ff6fae739f6873ca357be8890c4fd30ba2952bca2759249458796df53ad130e2c9c3674b385602afd13c718faf79a
+    - SKIP
+pkgname:
+  - name: libxi
+# generated with artixpkg 0.38.5-1-any
