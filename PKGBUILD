@@ -10,10 +10,10 @@ _pkgname="${pkgname}"
 __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
-_l10n_commit=e4f894a4eef5c492c83a860a4ff16c8ed361445c
-pkgver=140.11.0.100
-pkgrel=3
-_ffbuild=1
+_l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
+pkgver=140.11.0.101
+pkgrel=1
+_ffbuild=2
 _ffsrcver="${pkgver%.*}"
 _lwrelver="${pkgver##*.}"
 if [[ "$_ffbuild" == "0" ]]; then
@@ -134,10 +134,10 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('789e837e7b05bfa478c054a25931d71b538d78e226c3995d57e1be20cfa58e52'
-            '142a82a695240e303eeb5c187dbf4fb1c4ea5190fae0109b87a11796a12c5ef2'
+sha256sums=('92594f6971162bc445bda373839bd565142dfa2dad23fb796d440ce83b087349'
+            '1b034d2117356fda24807a151055132315c6ba58ad2bdf7ec71ee707fac5e028'
             'SKIP'
-            '52d638394dcc3254c70b550340bffb0ade63bd35f155eaee12e0000a51ef939b'
+            '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
             'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
@@ -172,9 +172,6 @@ prepare() {
   mkdir -p "${_lw_srcdir}/lw"
   mv "../firefox-l10n-${_l10n_commit}" "${_lw_srcdir}/lw/l10n"
 
-  export KONFORM_MOZ_BUILD_ID="$(grep '^buildID=' "$srcdir/src/config/linux_info.txt" | cut -d= -f2)"
-  export MOZ_BUILD_DATE="${KONFORM_MOZ_BUILD_ID}"
-
   python3 scripts/librewolf-patches.py "${_ffsrcver}" "${_lwrelver}"
 
   ## </srcprep>
@@ -190,9 +187,6 @@ ac_add_options --allow-addon-sideload
 
 
 ##### Kon
-mk_add_options KONFORM_MOZ_BUILD_ID=${KONFORM_MOZ_BUILD_ID}
-export KONFORM_MOZ_BUILD_ID=${KONFORM_MOZ_BUILD_ID}
-export MOZ_BUILD_DATE=${MOZ_BUILD_DATE}
 export MOZ_REQUIRE_SIGNING=
 export MOZ_DATA_REPORTING=
 export MOZ_TELEMETRY_ON_BY_DEFAULT=
@@ -205,7 +199,7 @@ mk_add_options MOZ_TELEMETRY_ON_BY_DEFAULT=
 
 mk_add_options MOZ_REQUIRE_SIGNING=
 
-#ac_add_options --enable-rust-simd
+ac_add_options --enable-rust-simd
 ac_add_options --disable-tests
 ac_add_options --disable-crashreporter
 ac_add_options --disable-updater
@@ -224,7 +218,6 @@ export CXX='clang++'
 
 # Branding
 ac_add_options --with-app-name=${__pkgname}
-ac_add_options --enable-update-channel=release
 export MOZ_APP_REMOTINGNAME=${__pkgname}
 
 # System libraries
