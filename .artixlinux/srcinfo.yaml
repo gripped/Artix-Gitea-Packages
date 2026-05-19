@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.12-1
+version: 1:1.0.13-1
 pkgbase:
   name: cosmic-panel
   pkgdesc: XDG Shell Wrapper Panel for Cosmic
-  pkgver: 1.0.12
+  pkgver: 1.0.13
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-panel
@@ -24,7 +24,7 @@ pkgbase:
     - libxkbcommon
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-panel.git#tag=epoch-1.0.12
+    - git+https://github.com/pop-os/cosmic-panel.git#tag=epoch-1.0.13
   b2sums:
     - 5944c361ceef853f58b32a09663591bc52f52ada58c51c1c720d4ee98d2d8159fa8150bb6872c994f7fb48d724287b266ab7e78aef5d3632d2fbbced560b43d6
 pkgname:
