@@ -25,14 +25,14 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2025.08-8
+    version: 2026.05-1
     packages:
-      - artix-live-base-2025.08-8-any.pkg.tar.zst
-      - artix-live-openrc-2025.08-8-any.pkg.tar.zst
-      - artix-live-runit-2025.08-8-any.pkg.tar.zst
-      - artix-live-s6-2025.08-8-any.pkg.tar.zst
-      - artix-live-dinit-2025.08-8-any.pkg.tar.zst
-      - artix-grub-live-2025.08-8-any.pkg.tar.zst
+      - artix-live-base-2026.05-1-any.pkg.tar.zst
+      - artix-live-openrc-2026.05-1-any.pkg.tar.zst
+      - artix-live-runit-2026.05-1-any.pkg.tar.zst
+      - artix-live-s6-2026.05-1-any.pkg.tar.zst
+      - artix-live-dinit-2026.05-1-any.pkg.tar.zst
+      - artix-grub-live-2026.05-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2025.08-6
