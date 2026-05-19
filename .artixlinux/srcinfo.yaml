@@ -1,9 +1,9 @@
 ---
-version: 21.1.22-2.1
+version: 21.1.22-2.2
 pkgbase:
   name: xorg-server-tearfree
   pkgver: 21.1.22
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://xorg.freedesktop.org
   arch:
     - x86_64
@@ -79,11 +79,11 @@ pkgname:
       - libepoxy
       - libxfont2
       - pixman
-      - xorg-server-common
-      - libunwind
+      - xorg-server-common=21.1.22
+      - xf86-input-libinput<2.0.0
       - dbus
       - libgl
-      - xf86-input-libinput
+      - libunwind
       - nettle
       - libxdmcp
       - sh
