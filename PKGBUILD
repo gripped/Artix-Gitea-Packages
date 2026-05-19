@@ -30,9 +30,9 @@ prepare() {
     git cherry-pick -n e23fd3841a92927a52ad7950001e258b0d6538d1
 }
 
-pkgver() {
-    date +%Y.%m
-}
+#pkgver() {
+#    date +%Y.%m
+#}
 
 build() {
     make -C "${pkgbase}"
