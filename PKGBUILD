@@ -1,9 +1,10 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 
 pkgname=krb5
-_pkgvermajor=1.21
-pkgver=1.21.3
-pkgrel=2
+pkgver=1.22.2
+_pkgvermajor=${pkgver%.*}
+[[ $_pkgvermajor == *.* ]] || _pkgvermajor=$pkgver
+pkgrel=1
 pkgdesc='The Kerberos network authentication system'
 url='https://web.mit.edu/kerberos/'
 arch=('x86_64')
@@ -42,8 +43,10 @@ backup=(
   'var/lib/krb5kdc/kdc.conf'
 )
 options=('!emptydirs')
-source=(https://web.mit.edu/kerberos/dist/krb5/${_pkgvermajor}/${pkgname}-${pkgver}.tar.gz{,.asc})
-sha512sums=('87bc06607f4d95ff604169cea22180703a42d667af05f66f1569b8bd592670c42820b335e5c279e8b4f066d1e7da20f1948a1e4def7c5d295c170cbfc7f49c71'
+source=(
+  https://web.mit.edu/kerberos/dist/krb5/${_pkgvermajor}/${pkgname}-${pkgver}.tar.gz{,.asc}
+)
+sha512sums=('3237cacfb2019285107991a3211e0d74944c605942ab38a8b4b372703b8f02f5779fa2de80c4e201bd59703d557f37ac346bdc5ea14b986b0a0db23eb422fc6f'
             'SKIP')
 validpgpkeys=('2C732B1C0DBEF678AB3AF606A32F17FD0055C305'  # Tom Yu <tlyu@mit.edu>
               'C4493CB739F4A89F9852CBC20CBA08575F8372DF') # Greg Hudson <ghudson@mit.edu>
@@ -58,7 +61,7 @@ prepare() {
 build() {
    cd ${pkgname}-${pkgver}/src
    export CFLAGS+=" -fPIC -fno-strict-aliasing -fstack-protector-all -std=gnu17"
-   
+   export WARN_CFLAGS=""
    ./configure --prefix=/usr \
                --sbindir=/usr/bin \
                --sysconfdir=/etc \
