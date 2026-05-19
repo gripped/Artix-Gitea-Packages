@@ -1,0 +1,112 @@
+---
+version: 21.1.22-2
+pkgbase:
+  name: xorg-server-tearfree
+  pkgver: 21.1.22
+  pkgrel: 2
+  url: https://xorg.freedesktop.org
+  arch:
+    - x86_64
+  groups:
+    - xorg
+  license:
+    - LicenseRef-Adobe-Display-PostScript
+    - BSD-3-Clause
+    - LicenseRef-DEC-3-Clause
+    - HPND
+    - LicenseRef-HPND-sell-MIT-disclaimer-xserver
+    - HPND-sell-variant
+    - ICU
+    - ISC
+    - MIT
+    - MIT-open-group
+    - NTP
+    - SGI-B-2.0
+    - SMLNJ
+    - X11
+    - X11-distribute-modifications-variant
+  makedepends:
+    - xorgproto
+    - pixman
+    - libx11
+    - mesa
+    - mesa-libgl
+    - xtrans
+    - libxkbfile
+    - libxfont2
+    - libpciaccess
+    - libxv
+    - libxcvt
+    - libxmu
+    - libxrender
+    - libxi
+    - libxaw
+    - libxtst
+    - libxres
+    - xorg-xkbcomp
+    - xorg-util-macros
+    - xorg-font-util
+    - libepoxy
+    - xcb-util
+    - xcb-util-image
+    - xcb-util-renderutil
+    - xcb-util-wm
+    - xcb-util-keysyms
+    - libxshmfence
+    - libunwind
+    - elogind
+    - meson
+    - git
+  source:
+    - xorg-server::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=xorg-server-21.1.22
+    - xvfb-run
+    - xvfb-run.1
+    - 1006.patch
+  validpgpkeys:
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+    - 67DC86F2623FC5FD4BB5225D14706DBE1E4B4540
+    - FD0004A26EADFE43A4C3F249C6F7AE200374452D
+    - 3BB639E56F861FA2E86505690FDD682D974CA72A
+  sha512sums:
+    - 81644a6a95b387fdd8e5582100d63cf4efbe6353e6a6b9bdd6435555018f6bae9318fb3f67c5a2f574b9b4b997917c077027162f37fc26f94b0745d6f531fba6
+    - 672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49
+    - de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22
+    - 16371960eae107543cc207e80991c842bc88f2f6fe95debb53f637986a8ac05e9c21a19ad7f6d6beb059ce6b2d8cae3b3fdea34bce560fa5fafd0087b980feb6
+pkgname:
+  - name: xorg-server-tearfree
+    pkgdesc: Xorg X server with the tearfree patch for the modesetting driver (enabled by default)
+    depends:
+      - libepoxy
+      - libxfont2
+      - pixman
+      - xorg-server-common
+      - libunwind
+      - dbus
+      - libgl
+      - xf86-input-libinput
+      - nettle
+      - libxdmcp
+      - sh
+      - glibc
+      - libxau
+      - libelogind
+      - libtirpc
+      - libpciaccess
+      - libdrm
+      - libxshmfence
+      - libxcvt
+    provides:
+      - X-ABI-VIDEODRV_VERSION=25.2
+      - X-ABI-XINPUT_VERSION=24.4
+      - X-ABI-EXTENSION_VERSION=10.0
+      - x-server
+      - xorg-server=21.1.22
+    conflicts:
+      - nvidia-utils<=331.20
+      - glamor-egl
+      - xf86-video-modesetting
+      - xorg-server
+    replaces:
+      - glamor-egl
+      - xf86-video-modesetting
+# generated with artixpkg 0.38.5-1-any
