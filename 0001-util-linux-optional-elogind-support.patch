@@ -1,0 +1,337 @@
+From 4ae793a73c4b487d7bbd087a03e91cd145b2ed04 Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Sun, 10 May 2026 14:46:43 +0200
+Subject: [PATCH 1/1] optional elogind support
+
+---
+ libmount/meson.build   |   6 +-
+ libmount/src/cache.c   |   4 ++
+ meson.build            | 157 ++++++++++++++++++++++++++++++++---------
+ meson_options.txt      |   8 +++
+ misc-utils/meson.build |  27 +++++++
+ sys-utils/zramctl.c    |   6 +-
+ 6 files changed, 174 insertions(+), 34 deletions(-)
+
+diff --git a/libmount/meson.build b/libmount/meson.build
+index 558f30468..e5aa869f3 100644
+--- a/libmount/meson.build
++++ b/libmount/meson.build
+@@ -100,7 +100,11 @@ lib__mount_deps = [
+ ]
+ 
+ if conf.get('USE_LIBMOUNT_UDEV_SUPPORT').to_string() == '1'
+-  lib__mount_deps += [lib_systemd]
++  if conf.get('HAVE_LIBSYSTEMD')
++    lib__mount_deps += [lib_systemd]
++  elif conf.get('HAVE_LIBELOGIND').to_string() == '1'
++    lib__mount_deps += [lib_elogind]
++  endif
+ endif
+ 
+ lib_mount = library(
+diff --git a/libmount/src/cache.c b/libmount/src/cache.c
+index 4d2a20f23..d9524259f 100644
+--- a/libmount/src/cache.c
++++ b/libmount/src/cache.c
+@@ -32,7 +32,11 @@
+ 
+ /* sd-device is a replacement for libudev */
+ #ifdef USE_LIBMOUNT_UDEV_SUPPORT
++#if HAVE_LIBSYSTEMD
+ # include <systemd/sd-device.h>
++#elif HAVE_LIBELOGIND
++# include <elogind/sd-device.h>
++#endif
+ #endif
+ 
+ #include "canonicalize.h"
+diff --git a/meson.build b/meson.build
+index 8e2947b9e..525586fdd 100644
+--- a/meson.build
++++ b/meson.build
+@@ -372,45 +372,120 @@ systemd = dependency(
+   'systemd',
+   required : get_option('systemd'))
+ 
+-# Since systemd-257, which provides locked system user accounts.
+-if systemd.version().version_compare('>=257')
+-  conf.set('SYSTEMD_USER_LOCK', '!')
+-endif
+-
+ lib_systemd = dependency(
+-  'libsystemd',
+-  required : get_option('systemd'))
++    'libsystemd',
++    required : get_option('systemd'))
+ conf.set('HAVE_LIBSYSTEMD', lib_systemd.found() ? 1 : false)
+ conf.set('USE_SYSTEMD', lib_systemd.found() ? 1 : false)
+ summary('libsystemd', lib_systemd.found() ? 'enabled' : 'disabled', section : 'components')
+ 
+-# Since systemd-240, which provides basic functions in sd-device.
+-have = cc.has_function(
+-  'sd_device_new_from_syspath',
+-  dependencies : lib_systemd)
+-conf.set('HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH', have ? 1 : false)
++elogind = dependency(
++    'libelogind',
++    required : get_option('elogind'))
+ 
+-# Since systemd-251, which also newly provides sd_device_new_from_devname().
+-have = cc.has_function(
+-  'sd_device_open',
+-  dependencies : lib_systemd)
+-conf.set('HAVE_DECL_SD_DEVICE_OPEN', have ? 1 : false)
+-
+-have = cc.has_function(
+-  'sd_session_get_username',
+-  dependencies : lib_systemd)
+-conf.set('HAVE_DECL_SD_SESSION_GET_USERNAME', have ? 1 : false)
++lib_elogind = dependency(
++  'libelogind',
++  required : get_option('elogind'))
++conf.set('HAVE_LIBELOGIND', lib_elogind.found() ? 1 : false)
++#conf.set('USE_SYSTEMD', lib_elogind.found() ? 1 : false)
++summary('libelogind', lib_elogind.found() ? 'enabled' : 'disabled', section : 'components')
+ 
+-have = cc.has_function(
+-  'sd_device_new_from_devname',
+-  dependencies : lib_systemd)
+-conf.set('USE_LIBMOUNT_UDEV_SUPPORT',
+-  not get_option('build-libmount-udev-support').disabled() and have ? 1 : false)
++# Since systemd-257, which provides locked system user accounts.
++if systemd.version().version_compare('>=257')
++  conf.set('SYSTEMD_USER_LOCK', '!')
++elif elogind.version().version_compare('>=257')
++  conf.set('SYSTEMD_USER_LOCK', '!')
++endif
+ 
+-lib_udev = dependency(
+-  'libudev',
+-  required : get_option('systemd'))
+-conf.set('HAVE_LIBUDEV', lib_udev.found() ? 1 : false)
++if systemd.found()
++  # Since systemd-240, which provides basic functions in sd-device.
++  have = cc.has_function(
++    'sd_device_new_from_syspath',
++    dependencies : lib_systemd)
++  conf.set('HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH', have ? 1 : false)
++
++  # Since systemd-251, which also newly provides sd_device_new_from_devname().
++  have = cc.has_function(
++    'sd_device_open',
++    dependencies : lib_systemd)
++  conf.set('HAVE_DECL_SD_DEVICE_OPEN', have ? 1 : false)
++
++  have = cc.has_function(
++    'sd_session_get_username',
++    dependencies : lib_systemd)
++  conf.set('HAVE_DECL_SD_SESSION_GET_USERNAME', have ? 1 : false)
++
++  have = cc.has_function(
++    'sd_device_new_from_devname',
++    dependencies : lib_systemd)
++  conf.set('USE_LIBMOUNT_UDEV_SUPPORT',
++    not get_option('build-libmount-udev-support').disabled() and have ? 1 : false)
++
++  lib_udev = dependency(
++    'libudev',
++    required : get_option('systemd'))
++  conf.set('HAVE_LIBUDEV', lib_udev.found() ? 1 : false)
++  summary('libudev', lib_udev.found() ? 'enabled' : 'disabled', section : 'components')
++
++elif elogind.found()
++  # Since systemd-240, which provides basic functions in sd-device.
++  have = cc.has_function(
++    'sd_device_new_from_syspath',
++    dependencies : lib_elogind)
++  conf.set('HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH', have ? 1 : false)
++
++  # Since systemd-251, which also newly provides sd_device_new_from_devname().
++  have = cc.has_function(
++    'sd_device_open',
++    dependencies : lib_elogind)
++  conf.set('HAVE_DECL_SD_DEVICE_OPEN', have ? 1 : false)
++
++  have = cc.has_function(
++    'sd_session_get_username',
++    dependencies : lib_elogind)
++  conf.set('HAVE_DECL_SD_SESSION_GET_USERNAME', have ? 1 : false)
++
++  have = cc.has_function(
++    'sd_device_new_from_devname',
++    dependencies : lib_elogind)
++  conf.set('USE_LIBMOUNT_UDEV_SUPPORT',
++    not get_option('build-libmount-udev-support').disabled() and have ? 1 : false)
++
++  lib_udev = dependency(
++    'libudev',
++    required : get_option('elogind'))
++  conf.set('HAVE_LIBUDEV', lib_udev.found() ? 1 : false)
++  summary('libudev', lib_udev.found() ? 'enabled' : 'disabled', section : 'components')
++else
++  # Since systemd-240, which provides basic functions in sd-device.
++  have = cc.has_function(
++    'sd_device_new_from_syspath',
++    dependencies : lib_systemd)
++  conf.set('HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH', have ? 1 : false)
++
++  # Since systemd-251, which also newly provides sd_device_new_from_devname().
++  have = cc.has_function(
++    'sd_device_open',
++    dependencies : lib_systemd)
++  conf.set('HAVE_DECL_SD_DEVICE_OPEN', have ? 1 : false)
++
++  have = cc.has_function(
++    'sd_session_get_username',
++    dependencies : lib_systemd)
++  conf.set('HAVE_DECL_SD_SESSION_GET_USERNAME', have ? 1 : false)
++
++  have = cc.has_function(
++    'sd_device_new_from_devname',
++    dependencies : lib_systemd)
++  conf.set('USE_LIBMOUNT_UDEV_SUPPORT',
++    not get_option('build-libmount-udev-support').disabled() and have ? 1 : false)
++
++  lib_udev = dependency(
++    'libudev',
++    required : get_option('udev'))
++  conf.set('HAVE_LIBUDEV', lib_udev.found() ? 1 : false)
++  summary('libudev', lib_udev.found() ? 'enabled' : 'disabled', section : 'components')
++endif
+ 
+ lib_crypt = cc.find_library('crypt', required : get_option('build-newgrp'))
+ if not lib_crypt.found()
+@@ -948,11 +1023,23 @@ endif
+ systemd_sysusers_dir = ''
+ if systemd.found()
+   systemd_sysusers_dir = systemd.get_variable(pkgconfig : 'sysusers_dir')
++else
++  sysusersdir = ''
++  systemd_sysusers_dir = get_option('sysusersdir')
++  if sysusersdir == ''
++    systemd_sysusers_dir = get_option('libdir') / 'sysusers.d'
++  endif
+ endif
+ 
+ systemd_tmpfiles_dir = ''
+ if systemd.found()
+   systemd_tmpfiles_dir = systemd.get_variable(pkgconfig : 'tmpfiles_dir')
++else
++  tmpfilesdir = ''
++  systemd_tmpfiles_dir = get_option('tmpfilesdir')
++  if tmpfilesdir == ''
++    systemd_tmpfiles_dir = get_option('libdir') / 'tmpfiles.d'
++  endif
+ endif
+ 
+ sysvinit = get_option('sysvinit').enabled()
+@@ -1872,6 +1959,12 @@ if opt and not is_disabler(exe)
+ endif
+ 
+ opt = not get_option('build-zramctl').disabled()
++if conf.get('HAVE_LIBSYSTEMD').to_string() == '1'
++  dep = lib_systemd
++elif conf.get('HAVE_LIBELOGIND').to_string() == '1'
++  dep = lib_elogind
++endif
++
+ exe = executable(
+   'zramctl',
+   zramctl_sources,
+@@ -1879,7 +1972,7 @@ exe = executable(
+   link_with : [lib_common,
+                lib_smartcols],
+   # requires systemd v240 or newer
+-  dependencies : [conf.get('HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH').to_string() == '1' ? lib_systemd : [] ],
++  dependencies : [conf.get('HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH').to_string() == '1' ? dep : [] ],
+   install_dir : sbindir,
+   install : opt,
+   build_by_default : opt)
+diff --git a/meson_options.txt b/meson_options.txt
+index d90a4b99d..fb866c378 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -20,6 +20,8 @@ option('smack',       type : 'feature', value : 'disabled')
+ option('magic',       type : 'feature')
+ option('econf',       type : 'feature')
+ option('systemd',     type : 'feature')
++option('elogind',     type : 'feature')
++option('udev',        type : 'feature')
+ option('sysvinit',    type : 'feature', value : 'disabled',
+        description : 'build and install sysvinit startup scripts')
+ option('btrfs',       type : 'feature')
+@@ -335,3 +337,9 @@ option('hwclock-gplv3', type : 'boolean',
+ option('tty-setgid', type : 'boolean',
+        value : true,
+        description : 'setgid tty group for wall and write programs')
++
++option('sysusersdir', type : 'string',
++        description : 'directory for sysusers')
++
++option('tmpfilesdir', type : 'string',
++        description : 'directory for tmpfiles')
+diff --git a/misc-utils/meson.build b/misc-utils/meson.build
+index 4d95beadc..b8142feec 100644
+--- a/misc-utils/meson.build
++++ b/misc-utils/meson.build
+@@ -95,6 +95,15 @@ if build_liblastlog2 and systemd.found()
+   install_data(
+     lastlog2_service,
+     install_dir : systemdsystemunitdir)
++elif build_liblastlog2
++  lastlog2_tmpfiles = configure_file(
++    input : 'lastlog2-tmpfiles.conf.in',
++    output : 'lastlog2-tmpfiles.conf',
++    configuration : conf)
++  install_data(
++    lastlog2_tmpfiles,
++    install_dir : systemd_tmpfiles_dir,
++    rename : 'lastlog2.conf')
+ endif
+ 
+ if build_uuidd and systemd.found()
+@@ -123,6 +132,24 @@ if build_uuidd and systemd.found()
+     uuidd_socket,
+     install_dir : systemdsystemunitdir)
+ 
++  uuidd_sysusers = configure_file(
++    input : 'uuidd-sysusers.conf.in',
++    output : 'uuidd-sysusers.conf',
++    configuration : conf)
++  install_data(
++    uuidd_sysusers,
++    install_dir: systemd_sysusers_dir,
++    rename : 'uuidd.conf')
++elif build_uuidd
++  uuidd_tmpfiles = configure_file(
++    input : 'uuidd-tmpfiles.conf.in',
++    output : 'uuidd-tmpfiles.conf',
++    configuration : conf)
++  install_data(
++    uuidd_tmpfiles,
++    install_dir : systemd_tmpfiles_dir,
++    rename : 'uuidd.conf')
++
+   uuidd_sysusers = configure_file(
+     input : 'uuidd-sysusers.conf.in',
+     output : 'uuidd-sysusers.conf',
+diff --git a/sys-utils/zramctl.c b/sys-utils/zramctl.c
+index d91e5f661..5608650ef 100644
+--- a/sys-utils/zramctl.c
++++ b/sys-utils/zramctl.c
+@@ -29,7 +29,11 @@
+ #include <libsmartcols.h>
+ 
+ #if HAVE_DECL_SD_DEVICE_NEW_FROM_SYSPATH
+-#include <systemd/sd-device.h>
++#if HAVE_LIBSYSTEMD
++# include <systemd/sd-device.h>
++#elif HAVE_LIBELOGIND
++# include <elogind/sd-device.h>
++#endif
+ #endif
+ 
+ #include "c.h"
+-- 
+2.54.0
+

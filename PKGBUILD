@@ -10,10 +10,12 @@
 #     SigLevel = Required
 #     Server = https://pkgbuild.com/~eworm/$repo/$arch/
 
+_elogind=false
+
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-pkgver=2.42
-pkgrel=1.1
+pkgver=2.42.1
+pkgrel=0.5
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -22,13 +24,16 @@ makedepends=('asciidoctor'
              'cryptsetup'
              'git'
              'libcap-ng'
-             'libxcrypt'
              'libutempter'
+             'libxcrypt'
              'meson'
              'po4a'
              'python'
              'sqlite'
              'udev')
+if ${_elogind}; then
+    makedepends+=('elogind')
+fi
 license=(
   'BSD-2-Clause'
   'BSD-3-Clause'
@@ -47,9 +52,8 @@ source=("git+https://github.com/util-linux/util-linux#tag=v${pkgver/rc/-rc}?sign
         {login,common,remote,runuser,su}.pam
         'util-linux.sysusers'
         '60-rfkill.rules'
-        0001-util-linux-no-systemd.patch
-)
-sha256sums=('fb18631f240fce145e1dca75fe9b587bb206ffd463f433ae0eaa8a808ecb24ec'
+        0001-util-linux-optional-elogind-support.patch)
+sha256sums=('02c15bd250c371d4864c43c7fc61c794b83e5e2eff264a88469001cb03299c3e'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
@@ -58,12 +62,14 @@ sha256sums=('fb18631f240fce145e1dca75fe9b587bb206ffd463f433ae0eaa8a808ecb24ec'
             '3f54249ac2db44945d6d12ec728dcd0d69af0735787a8b078eacd2c67e38155b'
             '4a0b3dd8aa6d34dd29e1d153f396cacf908b0d64f7218276cbcab684587c0a0a'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            'ddd71ce505a677b086d5bcf7b6890cc8927367d871227bbd6a773acff1def219')
+            'd830210ac8805ca44cd61139ed8df01c67ea8cf6eb8be225f2844c15c5cd623b')
 
 _backports=(
 )
 
 _reverts=(
+  # fincore: (tests) fix tmpfs detection for out-of-tree builds
+  'ec2e371da56a8d69d6787eff856a36ddab9e12f0'
 )
 
 prepare() {
@@ -81,7 +87,7 @@ prepare() {
     git revert --mainline 1 --no-commit "${_c}"
   done
 
-  git apply ../0001-util-linux-no-systemd.patch
+  git apply ../0001-util-linux-optional-elogind-support.patch
 
   # do not mark dirty
   sed -i '/dirty=/c dirty=' tools/git-version-gen
@@ -108,6 +114,11 @@ build() {
     -Dsysusersdir=/usr/lib/sysusers.d
     -Dtmpfilesdir=/usr/lib/tmpfiles.d
   )
+  if ${_elogind}; then
+    _meson_options+=(-Delogind=enabled)
+  else
+    _meson_options+=(-Delogind=disabled)
+  fi
 
   artix-meson "${pkgbase}" build "${_meson_options[@]}"
 
@@ -116,7 +127,11 @@ build() {
 
 check() {
   cd build
-  ../util-linux/tests/run.sh --show-diff --exclude='lsfd/column-mntid-nonroot','lsfd/assoc-pidfs'
+  local _args=()
+  if ! ${_elogind}; then
+    _args+=(--exclude='lsfd/column-mntid-nonroot','lsfd/assoc-pidfs')
+  fi
+  ../util-linux/tests/run.sh --show-diff "${_args[@]}"
 }
 
 package_util-linux() {
@@ -128,6 +143,7 @@ package_util-linux() {
            'file' 'libmagic.so'
            'glibc'
            'libcap-ng'
+           'libgcc' 'libgcc_s.so'
            'libxcrypt' 'libcrypt.so'
            'ncurses' 'libncursesw.so'
            'pam'
@@ -136,6 +152,9 @@ package_util-linux() {
            'libudev' # 'libudev.so'
            'libutempter'
            'zlib')
+  if ${_elogind}; then
+    depends+=('libelogind')
+  fi
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
           etc/pam.d/chsh
@@ -190,6 +209,9 @@ package_util-linux-libs() {
   pkgdesc='util-linux runtime libraries'
   depends=('glibc'
            'sqlite')
+  if ${_elogind}; then
+    depends+=('libelogind')
+  fi
   provides=('libutil-linux' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.so' 'libuuid.so')
   conflicts=('libutil-linux')
   replaces=('libutil-linux')

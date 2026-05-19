@@ -1,10 +1,10 @@
 ---
-version: 2.42-1.1
+version: 2.42.1-0.5
 pkgbase:
   name: util-linux
   pkgdesc: Miscellaneous system utilities for Linux
-  pkgver: 2.42
-  pkgrel: 1.1
+  pkgver: 2.42.1
+  pkgrel: 0.5
   url: https://github.com/util-linux/util-linux
   arch:
     - x86_64
@@ -24,8 +24,8 @@ pkgbase:
     - cryptsetup
     - git
     - libcap-ng
-    - libxcrypt
     - libutempter
+    - libxcrypt
     - meson
     - po4a
     - python
@@ -34,7 +34,7 @@ pkgbase:
   options:
     - strip
   source:
-    - git+https://github.com/util-linux/util-linux#tag=v2.42?signed
+    - git+https://github.com/util-linux/util-linux#tag=v2.42.1?signed
     - util-linux-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
     - login.pam
     - common.pam
@@ -43,11 +43,11 @@ pkgbase:
     - su.pam
     - util-linux.sysusers
     - 60-rfkill.rules
-    - 0001-util-linux-no-systemd.patch
+    - 0001-util-linux-optional-elogind-support.patch
   validpgpkeys:
     - B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284
   sha256sums:
-    - fb18631f240fce145e1dca75fe9b587bb206ffd463f433ae0eaa8a808ecb24ec
+    - 02c15bd250c371d4864c43c7fc61c794b83e5e2eff264a88469001cb03299c3e
     - 6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a
     - ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275
     - 57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af
@@ -56,16 +56,18 @@ pkgbase:
     - 3f54249ac2db44945d6d12ec728dcd0d69af0735787a8b078eacd2c67e38155b
     - 4a0b3dd8aa6d34dd29e1d153f396cacf908b0d64f7218276cbcab684587c0a0a
     - 7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37
-    - ddd71ce505a677b086d5bcf7b6890cc8927367d871227bbd6a773acff1def219
+    - d830210ac8805ca44cd61139ed8df01c67ea8cf6eb8be225f2844c15c5cd623b
 pkgname:
   - name: util-linux
     depends:
-      - util-linux-libs=2.42
+      - util-linux-libs=2.42.1
       - coreutils
       - file
       - libmagic.so
       - glibc
       - libcap-ng
+      - libgcc
+      - libgcc_s.so
       - libxcrypt
       - libcrypt.so
       - ncurses
@@ -76,6 +78,7 @@ pkgname:
       - libudev
       - libutempter
       - zlib
+      - libelogind
     optdepends:
       - 'words: default dictionary for look'
     provides:
@@ -101,6 +104,7 @@ pkgname:
     depends:
       - glibc
       - sqlite
+      - libelogind
     optdepends:
       - 'python: python bindings to libmount'
     provides:
