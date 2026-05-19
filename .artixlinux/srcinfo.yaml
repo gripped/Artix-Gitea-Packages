@@ -1,10 +1,10 @@
 ---
-version: 2.92.0-1
+version: 2.92.0-2
 pkgbase:
   name: github-cli
   pkgdesc: The GitHub CLI
   pkgver: 2.92.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/cli/cli
   arch:
     - x86_64
@@ -21,6 +21,8 @@ pkgbase:
   optdepends:
     - 'git: To interact with repositories'
     - 'org.freedesktop.secrets: Store credentials in system keyring'
+  options:
+    - '!lto'
   source:
     - github-cli-2.92.0.tar.gz::https://github.com/cli/cli/archive/v2.92.0.tar.gz
     - https://github.com/cli/cli/commit/cb2509cb612cf9111a12a7960afd10b0c9d2dede.patch
