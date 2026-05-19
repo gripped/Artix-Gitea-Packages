@@ -1,9 +1,9 @@
 # Maintainer: artist for Artix Linux
 
 pkgname="limine-snapper-sync"
-pkgver=1.28.0
-pkgrel=1.1
-pkgdesc="Automatically syncs Limine snapshot entries with Snapper snapshots."
+pkgver=1.29.0
+pkgrel=1
+pkgdesc="Integrates Limine boot entries with Snapper snapshots."
 arch=('x86_64' 'aarch64')
 url="https://gitlab.com/Zesko/limine-snapper-sync"
 source=("${url}/-/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz"
@@ -56,6 +56,6 @@ package() {
 	cp -r "$src_path/usr" "$src_path/etc" "$pkgdir"
 }
 
-sha256sums=('38b4c7df36cdc5f401dedfcb46589090461c18d46beef6bca166259ac018d69d'
+sha256sums=('ac7de9a3d5de8f18e92f46c52ffa316cb85b81e28f536fb5bd8a1ef505dc498d'
             'e0be791c8fda4d03b6b0a0cb824fef3149736170057b3a515252b44419606af0'
             'c353571358211846d8f267cc3e7d8a4f4e00a96a41f82595cac4c773b2878a31')
