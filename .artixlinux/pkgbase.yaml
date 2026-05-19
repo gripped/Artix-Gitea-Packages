@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 21.1.22-2
+    version: 21.1.22-2.1
     packages:
-      - xorg-server-tearfree-21.1.22-2-x86_64.pkg.tar.zst
+      - xorg-server-tearfree-21.1.22-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null
