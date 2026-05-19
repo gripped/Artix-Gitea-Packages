@@ -189,7 +189,6 @@ pkgbase:
     - 0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch
     - 0005-update-rust-bindgen-to-fix-clang22-build.patch.xz
     - 0006-skia-m142-update.patch.xz
-    - 0007-PATCH-Bug-2033279-Make-enable-rust-simd-work-with-Ru.patch
     - firefox-esr-i18n-140.11.0-ach.xpi::https://archive.mozilla.org/pub/mozilla.org/firefox/releases/140.11.0esr/linux-x86_64/xpi/ach.xpi
     - firefox-esr-i18n-140.11.0-af.xpi::https://archive.mozilla.org/pub/mozilla.org/firefox/releases/140.11.0esr/linux-x86_64/xpi/af.xpi
     - firefox-esr-i18n-140.11.0-an.xpi::https://archive.mozilla.org/pub/mozilla.org/firefox/releases/140.11.0esr/linux-x86_64/xpi/an.xpi
@@ -304,7 +303,6 @@ pkgbase:
     - 78a4b4518316ffa7b7409041ba1cc64cdbb6b118fed7a8c2d75665df8521e836d70d2b9b491ff140990a4c4c2472f9c438fd74167acb9f965e5428025991ce4a
     - 6413c00e574f90f08ae770acb6e1191f1d8fa60742fa540265d4333ccefb08e0c7225f17e817f49d8b167f7068780fe44436036b5a37b3fcf7ae9bd703171f4c
     - 5cf81a70a83e8f25ff5ab9f8c42afd58a6dbb95fac784da78ab21524b836430b1b68f80e9626c0f1540c53866343d6955b6552efac4908acb17750d7b5626d8d
-    - 0753b87ff64073e722a6303ccbdd67dfad939c39144aaf52b6e8034ce50321cc429b3a3f5849e4c10c08f77d0980bf60eedfbfb171bbabc41201dce7a947e22b
     - 4064306bf02f5da0c57edca1e207de6a225355ab4929d7ac1df8cf8b47c60b1ec8aad4350d65828eeef54549018d39e641aad7d37d0ad347b572ed4b4ea211c3
     - 752d9d2d7a5e634bc5309096444f737705e651390a70bfcdd8d8a14e97f6ba16087546cf39c4588c6034c4f47b795f445542effe71124b5059c24adab94dd31a
     - 127de6e64b8a85ff9998dbea57ce89d16b4b6dc34eef063645d0de4ce8762a6e5f0647812dde4f7bc6e7fd0c7a819af7d036be089d2a8f4488f2cf778577ffef
