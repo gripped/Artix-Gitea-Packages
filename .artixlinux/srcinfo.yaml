@@ -1,0 +1,41 @@
+---
+version: 4.12.0-2
+pkgbase:
+  name: tlsh
+  pkgdesc: Fuzzy matching library that generates a hash value which can be used for similarity comparisons
+  pkgver: 4.12.0
+  pkgrel: 2
+  url: https://github.com/trendmicro/tlsh
+  arch:
+    - x86_64
+  license:
+    - Apache-2.0
+  makedepends:
+    - cmake
+    - gcc
+    - make
+    - python
+    - gcc-libs
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  source:
+    - https://github.com/trendmicro/tlsh/archive/refs/tags/4.12.0/tlsh-4.12.0.tar.gz
+  sha256sums:
+    - 93d206e999d51b25bc800f01c1a88dd632849b1555ca8680264486738f39f3c2
+  sha512sums:
+    - 6085d63430a7f5e89565d5e5c03da3bb5717cdf95cd7d75cf0008559f78df1bf35303015c84e3eb0b06ae35cc8ef58c90a0164051237a7c7ec251e46a25c1103
+pkgname:
+  - name: tlsh
+    depends:
+      - glibc
+      - gcc-libs
+    provides:
+      - libtlsh.so
+  - name: python-tlsh
+    depends:
+      - python
+      - glibc
+      - gcc-libs
+# generated with artixpkg 0.38.5-1-any
