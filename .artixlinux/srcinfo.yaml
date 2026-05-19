@@ -1,0 +1,27 @@
+---
+version: 1.1-1
+pkgbase:
+  name: s6-contrib
+  pkgdesc: A collection of s6 convenience scripts.
+  pkgver: 1.1
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artix/s6-contrib
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - sh
+    - s6
+    - s6-scripts
+  backup:
+    - etc/s6/s6-db-reload.conf
+  source:
+    - git+https://gitea.artixlinux.org/artix/s6-contrib.git#commit=f437f24ad603d2489bd68f3ef39d58d423c022ba
+  sha256sums:
+    - 93cd6943eaf3415872c9f9452921686776f92750346826fe5cc0e8179b3771ca
+pkgname:
+  - name: s6-contrib
+# generated with artixpkg 0.38.5-1-any
