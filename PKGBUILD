@@ -87,7 +87,8 @@ options=(
   !strip
 )
 source=(
-  firefox-esr-${pkgver}esr.source.tar.xz{,.asc}::https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz{,.asc}
+  firefox-esr-${pkgver}esr.source.tar.xz::https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz
+  firefox-esr-${pkgver}esr.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz.asc
   $pkgname.desktop identity-icons-brand.svg
   5fcff175718cd308bc6d6f2996de14eb8a93e2a2.patch
   23efd75219786d71acff0b4e7c1b0de297b84c4e.patch
