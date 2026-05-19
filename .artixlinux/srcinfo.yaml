@@ -1,10 +1,10 @@
 ---
-version: 2025.08-6
+version: 2025.08-7
 pkgbase:
   name: artix-live
   pkgdesc: Artix live session
   pkgver: 2025.08
-  pkgrel: 6
+  pkgrel: 7
   url: https://gitea.artixlinux.org/artix/artix-live
   arch:
     - any
@@ -58,4 +58,4 @@ pkgname:
       - init-artix-live
   - name: artix-grub-live
     pkgdesc: Artix grub live
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.38.5-1-any

@@ -13,7 +13,7 @@ pkgname=('artix-live-base'
         'artix-live-dinit'
         'artix-grub-live')
 pkgver=2025.08
-pkgrel=6
+pkgrel=7
 pkgdesc='Artix live session'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artix-live"
@@ -24,6 +24,11 @@ source=(
     "git+$url.git#tag=$_tag"
 )
 sha256sums=('99828c04eada8d01f19a85dee9a274bca257d62a3856b24907602398bb36f7bb')
+
+prepare() {
+    cd "${pkgbase}"
+    git cherry-pick -n e23fd3841a92927a52ad7950001e258b0d6538d1
+}
 
 pkgver() {
     date +%Y.%m
