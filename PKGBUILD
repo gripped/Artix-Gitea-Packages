@@ -10,12 +10,12 @@
 #     SigLevel = Required
 #     Server = https://pkgbuild.com/~eworm/$repo/$arch/
 
-_elogind=false
+_elogind=true
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
 pkgver=2.42.1
-pkgrel=0.5
+pkgrel=0.6
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')

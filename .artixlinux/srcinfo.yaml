@@ -1,10 +1,10 @@
 ---
-version: 2.42.1-0.5
+version: 2.42.1-0.6
 pkgbase:
   name: util-linux
   pkgdesc: Miscellaneous system utilities for Linux
   pkgver: 2.42.1
-  pkgrel: 0.5
+  pkgrel: 0.6
   url: https://github.com/util-linux/util-linux
   arch:
     - x86_64
@@ -31,6 +31,7 @@ pkgbase:
     - python
     - sqlite
     - udev
+    - elogind
   options:
     - strip
   source:
