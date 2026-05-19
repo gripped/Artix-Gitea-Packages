@@ -1,7 +1,6 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=xorg-server-tearfree
-
 pkgver=21.1.22
 pkgrel=2
 arch=('x86_64')
