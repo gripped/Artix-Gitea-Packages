@@ -1,11 +1,11 @@
 ---
 team: null
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,9 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 6.7.0-2
+    packages:
+      - rofimoji-6.7.0-2-any.pkg.tar.zst
+    debug:
+      - rofimoji-debug-6.7.0-2-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []

@@ -1,0 +1,44 @@
+---
+version: 6.7.0-2
+pkgbase:
+  name: rofimoji
+  pkgdesc: Emoji, unicode and general character picker for rofi and rofi-likes
+  pkgver: 6.7.0
+  pkgrel: 2
+  url: https://github.com/fdw/rofimoji
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python-configargparse
+  optdepends:
+    - 'emoji-font: for the emojis character file'
+    - 'nerd-fonts: for the nerd_font character file'
+    - 'otf-font-awesome: for the fontawesome6 character file'
+    - 'woff2-font-awesome: for the fontawesome6 character file'
+    - 'bemenu: for a generic selector'
+    - 'dmenu: for one of the X.Org selectors'
+    - 'rofi: for one of the X.Org selectors'
+    - 'xclip: for one of the X.Org clipboarders'
+    - 'xsel: for one of the X.Org clipboarders'
+    - 'xdotool: for the X.Org typer'
+    - 'fuzzel: for one of the Wayland selectors'
+    - 'tofi: for one of the Wayland selectors'
+    - 'wmenu: for one of the Wayland selectors'
+    - 'wofi: for one of the Wayland selectors'
+    - 'wl-clipboard: for the Wayland clipboarder'
+    - 'wtype: for one of the Wayland typers'
+    - 'ydotool: for one of the Wayland typers'
+  source:
+    - git+https://github.com/fdw/rofimoji.git#tag=6.7.0
+  b2sums:
+    - 096065b025700adc83b6dba2fa37f196be4042ee819fc33d01e44db6d80116ce8d1ade5704d9b821b69d37d6e724847f2b5c59c6c9e0cc71182f7e1fcff3c412
+pkgname:
+  - name: rofimoji
+# generated with artixpkg 0.38.5-1-any
