@@ -1,10 +1,10 @@
 ---
-version: 1.21.2-2
+version: 1.22.0-1
 pkgbase:
   name: libheif
   pkgdesc: An HEIF and AVIF file format decoder and encoder
-  pkgver: 1.21.2
-  pkgrel: 2
+  pkgver: 1.22.0
+  pkgrel: 1
   url: https://github.com/strukturag/libheif
   arch:
     - x86_64
@@ -23,13 +23,24 @@ pkgbase:
     - svt-av1
   depends:
     - aom
-    - gcc-libs
+    - libaom.so
     - glibc
+    - libgcc_s.so
     - libde265
+    - libgcc
+    - libgcc_s.so
+    - libstdc++
+    - libstdc++.so
     - libwebp
+    - libsharpyuv.so
     - openh264
+    - libopenh264.so
+    - openh264
+    - libopenh264.so
     - x264
+    - libx264.so
     - x265
+    - libx265.so
   optdepends:
     - 'libjpeg-turbo: for heif-dec and heif-enc'
     - 'libpng: for heif-dec and heif-enc'
@@ -42,11 +53,9 @@ pkgbase:
   provides:
     - libheif.so
   source:
-    - git+https://github.com/strukturag/libheif#tag=v1.21.2
-    - svt-av1-4.patch
+    - git+https://github.com/strukturag/libheif#tag=v1.22.0
   sha256sums:
-    - 2eb27d784c24061f996af7d578af25282de08802d56bfaa674a1a3ae9e86acda
-    - 84c9298918dcb1de59acb3eb25aff657eee2a602bf3d2572c93663dd1374b15f
+    - f6cc19c076bf1e2f2d73b4f43f814f6a980ba3b41edbe253e4d35b4993a19212
 pkgname:
   - name: libheif
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
