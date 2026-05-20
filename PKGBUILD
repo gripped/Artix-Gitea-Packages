@@ -15,7 +15,7 @@ install=fakeroot.install
 depends=('lib32-glibc' "$_pkgbasename")
 makedepends=('git' 'po4a')
 source=("git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/${pkgver}")
-sha512sums=('a1d8921ff62e1d3a283e92970824188cc287afda3fc05c9cad1021ff9d08d0af48a166a4069c82fd125bf101fad12bd590b4793252a05d4e424bc1a5d1eca083')
+sha512sums=('9f1057ef267597a06db692baa408e467db1b45be8f2d074316d0425cf5fb291bc6735f979eaa7980bc1b5dda60ed255083b7030a30ba2c753850e977175d2ded')
 
 prepare() {
   cd "${_pkgbasename}"
