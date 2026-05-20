@@ -1,0 +1,48 @@
+---
+version: 1.22.2-1
+pkgbase:
+  name: lib32-krb5
+  pkgdesc: The Kerberos network authentication system (32-bit)
+  pkgver: 1.22.2
+  pkgrel: 1
+  url: https://web.mit.edu/kerberos/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - perl
+  depends:
+    - lib32-e2fsprogs
+    - lib32-gcc-libs
+    - lib32-glibc
+    - lib32-keyutils
+    - lib32-libldap
+    - lib32-openssl
+    - krb5
+  provides:
+    - libgssapi_krb5.so
+    - libgssrpc.so
+    - libk5crypto.so
+    - libkadm5clnt_mit.so
+    - libkadm5srv_mit.so
+    - libkdb5.so
+    - libkdb_ldap.so
+    - libkrad.so
+    - libkrb5.so
+    - libkrb5support.so
+    - libverto.so
+  options:
+    - '!emptydirs'
+  source:
+    - https://web.mit.edu/kerberos/dist/krb5/1.22/krb5-1.22.2.tar.gz
+    - https://web.mit.edu/kerberos/dist/krb5/1.22/krb5-1.22.2.tar.gz.asc
+  validpgpkeys:
+    - 2C732B1C0DBEF678AB3AF606A32F17FD0055C305
+    - C4493CB739F4A89F9852CBC20CBA08575F8372DF
+  sha512sums:
+    - 3237cacfb2019285107991a3211e0d74944c605942ab38a8b4b372703b8f02f5779fa2de80c4e201bd59703d557f37ac346bdc5ea14b986b0a0db23eb422fc6f
+    - SKIP
+pkgname:
+  - name: lib32-krb5
+# generated with artixpkg 0.38.5-1-any
