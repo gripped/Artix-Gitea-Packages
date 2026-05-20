@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 4.19.88-3
+    version: 6.12.77-1
     packages:
-      - kernel-headers-musl-4.19.88-3-x86_64.pkg.tar.zst
+      - kernel-headers-musl-6.12.77-1-x86_64.pkg.tar.zst
     debug: []
