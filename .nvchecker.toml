@@ -1,0 +1,4 @@
+[dinit-user-spawn]
+source = "git"
+git = "https://github.com/initMayday/dinit-user-spawn.git"
+prefix = "v"

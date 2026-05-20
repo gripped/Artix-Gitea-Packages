@@ -2,10 +2,10 @@
 # Contributor: initMayday <initMayday@protonmail.com>
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
-_alpm=2.4.4
+_alpm=2.4.5
 
 pkgname="dinit-user-spawn"
-pkgver=1.0.3
+pkgver=1.0.4
 pkgrel=1
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
@@ -35,8 +35,8 @@ provides=(
 )
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm")
-sha256sums=('d6047df7fb221c175605f651255d2670beed7e50baf762843954f717e9781be2'
-            'e33444dba1b0a185eead8460a77f763bc99bca8cb072dbb90e90a29393d4f865')
+sha256sums=('f93a78fd09a8aa9fc869aa4d0c89aa1955614c74ad6fce8066e07f332b8a7502'
+            '987e908f28a06ef4c577e4dda286d9111a226837c92d44b659ca8b164caf9ea4')
 
 build() {
     artix-meson "$pkgname" build
