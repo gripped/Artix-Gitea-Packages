@@ -4,7 +4,7 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=10.33.0
+pkgver=11.1.3
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=(any)
@@ -17,7 +17,7 @@ makedepends=(
   python
 )
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-b2sums=('49c7066f39bf9cd5fd56802989e5a21085e428ffc8738047f8a841bda688534161aea998a9f75b383e737338fced5d439c4d8e508b7661a02fc4ac888cd2bbfb')
+b2sums=('5582802a254ce0c049d45487992ec910c6386d7cbbd58dc099e4a2166d3edb40565c3e45920bb95f08f5a264cb29490e0c056782906bccb8702f2e616b24d118')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
 
 prepare() {
@@ -34,12 +34,12 @@ package() {
   local mod_dir=/usr/lib/node_modules/$pkgname
 
   install -d "$pkgdir"/{usr/bin,$mod_dir/dist}
-  ln -s $mod_dir/bin/$pkgname.cjs "$pkgdir"/usr/bin/$pkgname
-  ln -s $mod_dir/bin/pnpx.cjs "$pkgdir"/usr/bin/pnpx
+  ln -s $mod_dir/bin/$pkgname.mjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $mod_dir/bin/pnpx.mjs "$pkgdir"/usr/bin/pnpx
 
   cd $pkgname/$pkgname
   cp -r bin package.json "$pkgdir"/$mod_dir
   install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
   cd dist
-  cp -r $pkgname.cjs pnpmrc templates worker.js "$pkgdir"/$mod_dir/dist
+  cp -r $pkgname.mjs pnpmrc templates worker.js "$pkgdir"/$mod_dir/dist
 }
