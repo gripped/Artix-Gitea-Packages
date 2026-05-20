@@ -1,0 +1,24 @@
+---
+version: 20210119-2
+pkgbase:
+  name: ofono-openrc
+  pkgdesc: Infrastructure for building mobile telephony (GSM/UMTS) applications support for OpenRC Init
+  pkgver: 20210119
+  pkgrel: 2
+  url: https://gitea.artixlinux.org/
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - BSD-3-Clause
+  depends:
+    - openrc
+    - ofono
+  source:
+    - ofonod.initd
+  b2sums:
+    - e3e0e1aff450411342314d124223d14643a978c8f1e9fd35c6ccde7cd0913fd0bf7d0fd9215ad05364a185b1c8a5d983dfbe1a84ee2cf1526072bb824ef377d9
+pkgname:
+  - name: ofono-openrc
+# generated with artixpkg 0.38.5-1-any

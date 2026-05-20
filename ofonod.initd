@@ -1,0 +1,11 @@
+#!/sbin/openrc-run
+
+supervisor=supervise-daemon
+healthcheck_delay=12
+pidfile="/run/ofonod.pid"
+command="/usr/sbin/ofonod"
+command_args_foreground="-n"
+
+depend() {
+	need dbus
+}
