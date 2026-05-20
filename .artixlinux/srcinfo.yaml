@@ -1,10 +1,10 @@
 ---
-version: 2.42.1-0.6
+version: 2.42.1-1
 pkgbase:
   name: util-linux
   pkgdesc: Miscellaneous system utilities for Linux
   pkgver: 2.42.1
-  pkgrel: 0.6
+  pkgrel: 1
   url: https://github.com/util-linux/util-linux
   arch:
     - x86_64
@@ -24,6 +24,7 @@ pkgbase:
     - cryptsetup
     - git
     - libcap-ng
+    - libelogind
     - libutempter
     - libxcrypt
     - meson
@@ -31,7 +32,6 @@ pkgbase:
     - python
     - sqlite
     - udev
-    - elogind
   options:
     - strip
   source:
@@ -67,6 +67,7 @@ pkgname:
       - libmagic.so
       - glibc
       - libcap-ng
+      - libelogind
       - libgcc
       - libgcc_s.so
       - libxcrypt
@@ -79,7 +80,6 @@ pkgname:
       - libudev
       - libutempter
       - zlib
-      - libelogind
     optdepends:
       - 'words: default dictionary for look'
     provides:
@@ -104,8 +104,8 @@ pkgname:
     pkgdesc: util-linux runtime libraries
     depends:
       - glibc
-      - sqlite
       - libelogind
+      - sqlite
     optdepends:
       - 'python: python bindings to libmount'
     provides:

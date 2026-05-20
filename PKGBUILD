@@ -10,12 +10,10 @@
 #     SigLevel = Required
 #     Server = https://pkgbuild.com/~eworm/$repo/$arch/
 
-_elogind=true
-
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
 pkgver=2.42.1
-pkgrel=0.6
+pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
 arch=('x86_64')
@@ -24,6 +22,7 @@ makedepends=('asciidoctor'
              'cryptsetup'
              'git'
              'libcap-ng'
+             'libelogind'
              'libutempter'
              'libxcrypt'
              'meson'
@@ -31,9 +30,6 @@ makedepends=('asciidoctor'
              'python'
              'sqlite'
              'udev')
-if ${_elogind}; then
-    makedepends+=('elogind')
-fi
 license=(
   'BSD-2-Clause'
   'BSD-3-Clause'
@@ -111,14 +107,10 @@ build() {
     -Dbuild-vipw=enabled
     -Dbuild-write=enabled
 
+    -Delogind=enabled
     -Dsysusersdir=/usr/lib/sysusers.d
     -Dtmpfilesdir=/usr/lib/tmpfiles.d
   )
-  if ${_elogind}; then
-    _meson_options+=(-Delogind=enabled)
-  else
-    _meson_options+=(-Delogind=disabled)
-  fi
 
   artix-meson "${pkgbase}" build "${_meson_options[@]}"
 
@@ -127,11 +119,7 @@ build() {
 
 check() {
   cd build
-  local _args=()
-  if ! ${_elogind}; then
-    _args+=(--exclude='lsfd/column-mntid-nonroot','lsfd/assoc-pidfs')
-  fi
-  ../util-linux/tests/run.sh --show-diff "${_args[@]}"
+  ../util-linux/tests/run.sh --show-diff
 }
 
 package_util-linux() {
@@ -143,6 +131,7 @@ package_util-linux() {
            'file' 'libmagic.so'
            'glibc'
            'libcap-ng'
+           'libelogind'
            'libgcc' 'libgcc_s.so'
            'libxcrypt' 'libcrypt.so'
            'ncurses' 'libncursesw.so'
@@ -152,9 +141,6 @@ package_util-linux() {
            'libudev' # 'libudev.so'
            'libutempter'
            'zlib')
-  if ${_elogind}; then
-    depends+=('libelogind')
-  fi
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
           etc/pam.d/chsh
@@ -208,10 +194,8 @@ package_util-linux() {
 package_util-linux-libs() {
   pkgdesc='util-linux runtime libraries'
   depends=('glibc'
+           'libelogind'
            'sqlite')
-  if ${_elogind}; then
-    depends+=('libelogind')
-  fi
   provides=('libutil-linux' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.so' 'libuuid.so')
   conflicts=('libutil-linux')
   replaces=('libutil-linux')
