@@ -5,7 +5,7 @@
 
 pkgname=gopass
 pkgver=1.16.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc="The slightly more awesome standard unix password manager for teams."
 arch=('x86_64')
 url="https://github.com/gopasspw/gopass"
@@ -53,7 +53,7 @@ build() {
 check() {
   cd ${pkgname}
   export GIT_CONFIG_GLOBAL="${PWD}/gitconfig"
-  git config --global user.email "builduser@archlinux.org"
+  git config --global user.email "builduser@artixlinux.org"
   git config --global user.name "Build User"
 
   # Suppress GPG "insecure memory" warning that pollutes test output.

@@ -1,10 +1,10 @@
 ---
-version: 1.16.1-2
+version: 1.16.1-2.1
 pkgbase:
   name: gopass
   pkgdesc: The slightly more awesome standard unix password manager for teams.
   pkgver: 1.16.1
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/gopasspw/gopass
   arch:
     - x86_64

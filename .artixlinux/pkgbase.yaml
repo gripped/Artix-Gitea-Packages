@@ -50,11 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1.16.1-2
+    version: 1.16.1-2.1
     packages:
-      - gopass-1.16.1-2-x86_64.pkg.tar.zst
+      - gopass-1.16.1-2.1-x86_64.pkg.tar.zst
     debug:
-      - gopass-debug-1.16.1-2-x86_64.pkg.tar.zst
+      - gopass-debug-1.16.1-2.1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
