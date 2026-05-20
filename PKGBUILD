@@ -9,7 +9,7 @@ url="https://gitlab.gnome.org/GNOME/gnome-themes-extra"
 arch=(x86_64)
 license=(LGPL2.1)
 depends=(gtk-engines)
-makedepends=(intltool git)
+makedepends=(automake autoconf intltool git)
 options=('!emptydirs')
 _commit=45b1d457c63b1c7f6c8dcb7fe29b23ec7cd63a14  # master
 source=("git+https://gitlab.gnome.org/Archive/gnome-themes-extra.git#commit=$_commit")

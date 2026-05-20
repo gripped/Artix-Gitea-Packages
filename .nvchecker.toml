@@ -1,0 +1,4 @@
+[gnome-themes-extra-gtk2]
+source = "aur"
+aur = "gnome-themes-extra-gtk2"
+strip_release = true
