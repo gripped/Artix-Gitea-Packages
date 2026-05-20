@@ -4,7 +4,7 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=11.1.3
+pkgver=11.2.0
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=(any)
@@ -17,7 +17,7 @@ makedepends=(
   python
 )
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-b2sums=('5582802a254ce0c049d45487992ec910c6386d7cbbd58dc099e4a2166d3edb40565c3e45920bb95f08f5a264cb29490e0c056782906bccb8702f2e616b24d118')
+b2sums=('0124b8450640dbbc4f695245f35676fbc80094e0fa92da8c350ff1af9952e20bc67940ed8ccadd2a66db298d2608f52c0858c2d2e065a70d9b1e52029bad5cbd')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
 
 prepare() {
@@ -35,7 +35,9 @@ package() {
 
   install -d "$pkgdir"/{usr/bin,$mod_dir/dist}
   ln -s $mod_dir/bin/$pkgname.mjs "$pkgdir"/usr/bin/$pkgname
+  ln -s $mod_dir/bin/$pkgname.mjs "$pkgdir"/usr/bin/pn
   ln -s $mod_dir/bin/pnpx.mjs "$pkgdir"/usr/bin/pnpx
+  ln -s $mod_dir/bin/pnpx.mjs "$pkgdir"/usr/bin/pnx
 
   cd $pkgname/$pkgname
   cp -r bin package.json "$pkgdir"/$mod_dir
