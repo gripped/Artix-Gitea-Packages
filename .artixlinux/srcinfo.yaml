@@ -1,10 +1,10 @@
 ---
-version: 75-2
+version: 75-3
 pkgbase:
   name: vapoursynth
   pkgdesc: A video processing framework with the future in mind
   pkgver: 75
-  pkgrel: 2
+  pkgrel: 3
   url: http://www.vapoursynth.com/
   arch:
     - x86_64

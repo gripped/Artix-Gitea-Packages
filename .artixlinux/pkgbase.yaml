@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 75-2
+    version: 75-3
     packages:
-      - vapoursynth-75-2-x86_64.pkg.tar.zst
+      - vapoursynth-75-3-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
