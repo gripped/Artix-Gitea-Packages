@@ -1,3 +1,4 @@
 [ublock-origin]
-source = "git"
-git = "https://github.com/gorhill/uBlock.git"
+source = "github"
+github = "gorhill/uBlock"
+use_latest_release = true

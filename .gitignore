@@ -12,6 +12,7 @@
 
 pkg/
 src/
+uBlock/
 
 *.service
 *.timer

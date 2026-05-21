@@ -1,0 +1,37 @@
+---
+version: 1.70.0-1
+pkgbase:
+  name: ublock-origin
+  pkgdesc: Efficient blocker add-on for various browsers. Fast, potent, and lean
+  pkgver: 1.70.0
+  pkgrel: 1
+  url: https://github.com/gorhill/uBlock
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - python
+    - strip-nondeterminism
+    - zip
+  source:
+    - git+https://github.com/gorhill/uBlock.git#commit=1.70.0?signed
+  validpgpkeys:
+    - 91BFC93FDEC1D00C365C061EF5630CAE62A14316
+  b2sums:
+    - d0c9f6644b9b8623a6a82f5e299e5807e1d6c339ec906ffc77a2c22bd4133de9906315819d9f0b3089b3f953c35b39d5a87a1fc5e70aa4249774b676fee37b6e
+pkgname:
+  - name: firefox-ublock-origin
+    groups:
+      - firefox-addons
+  - name: thunderbird-ublock-origin
+    groups:
+      - thunderbird-addons
+  - name: ublock-origin
+    pkgdesc: Efficient blocker add-on for various browsers. Fast, potent, and lean (unpacked webextension)
+    provides:
+      - chromium-ublock-origin
+    replaces:
+      - chromium-ublock-origin
+# generated with artixpkg 0.38.5-1-any
