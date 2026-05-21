@@ -3,7 +3,7 @@
 # Contributor: Jochem Kossen <j.kossen@home.nl>
 
 pkgname=fakeroot
-pkgver=1.38
+pkgver=1.38.1
 pkgrel=1
 pkgdesc='Tool for simulating superuser privileges'
 arch=('x86_64')
@@ -15,10 +15,14 @@ makedepends=('git' 'udev' 'po4a')
 checkdepends=('sharutils')
 options=(debug)
 source=("git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/${pkgver}")
-sha256sums=('1b139597fa3f348247db13df6c118e1b9929adf49e361c91bab1cb2058b5485b')
+sha256sums=('4c32e5b0acf983e36e6dabc73ac15f2ebafa7817b031acd4f1e6c80fb79c78b7')
 
 prepare() {
   cd "${pkgname}"
+
+  # Setting an xattr named 'gnu.translator' inside the build environment fails.
+  # However this is unrelated to fakeroot, so let's just lilence for now.
+  sed -i 's|gnu|user|' test/t.xattr2
 
   autoreconf -fi
 }
@@ -40,7 +44,9 @@ build() {
 check() {
   cd "${pkgname}"
 
-  make check
+  make \
+    VERBOSE=1 \
+    check
 }
 
 package() {
