@@ -1,0 +1,9 @@
+[firefox-noscript]
+source = "git"
+git = "https://github.com/hackademix/noscript.git"
+include_regex = "\\d+\\.\\d+\\.\\d+"
+exclude_regex = ".*(beta|rc).*"
+
+#source = "regex"
+#url = "https://addons.mozilla.org/en-US/firefox/addon/noscript/"
+#regex = 'version\">(\d+\.\d+\.\d+)\<'
