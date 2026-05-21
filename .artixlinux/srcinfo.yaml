@@ -1,9 +1,9 @@
 ---
-version: 4.0.1-1
+version: 4.1.0-1
 pkgbase:
   name: python-marshmallow
   pkgdesc: A lightweight library for converting complex datatypes to and from native Python datatypes.
-  pkgver: 4.0.1
+  pkgver: 4.1.0
   pkgrel: 1
   url: https://github.com/marshmallow-code/marshmallow
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/marshmallow-code/marshmallow.git#tag=4.0.1
+    - git+https://github.com/marshmallow-code/marshmallow.git#tag=4.1.0
   sha512sums:
-    - 89fe14db7abc523db9a4db168fa589a40f5ac1349cf9c42e58d3ee20e7be57369b4e09f7fd453bffbd791180db01cccec94d71b4537c45d6243e40bc71ac258f
+    - 2d1f656352f75aee44d9ffedf221b33b631046596edb86170586422f0461af303ca3e96c3d294cd13fdbf31328e4153fc129f2398818ed7baedfd28b881e96f2
 pkgname:
   - name: python-marshmallow
 # generated with artixpkg 0.38.5-1-any
