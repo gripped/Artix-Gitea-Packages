@@ -1,10 +1,10 @@
 ---
-version: 257.14-2
+version: 257.14-3
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
   pkgver: 257.14
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
     - docbook-xsl
     - git
     - gperf
+    - libcap
     - intltool
     - kexec-tools
     - libutempter
@@ -25,9 +26,7 @@ pkgbase:
     - util-linux
   depends:
     - libgcc
-    - libstdc++
     - glibc
-    - libcap
   source:
     - git+https://github.com/elogind/elogind.git#tag=v257.14
     - 0001-fix-logind-dbus-install.patch
@@ -42,15 +41,14 @@ pkgname:
       - LGPL-2.1-only
     depends:
       - libgcc
-      - libstdc++
       - glibc
-      - libcap
       - acl
       - libacl.so
       - audit
       - libaudit.so
       - dbus
       - kexec-tools
+      - libcap
       - libcap.so
       - libelogind=257.14
       - pam
@@ -72,12 +70,10 @@ pkgname:
       - LGPL-2.1-only
     depends:
       - libgcc
-      - libstdc++
       - glibc
       - libcap
       - libcap.so
       - libudev>=257
     provides:
-      - libelogind.so
       - liblogind=257.14
 # generated with artixpkg 0.38.5-1-any

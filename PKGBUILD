@@ -6,15 +6,13 @@ _req=257
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=2
+pkgrel=3
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
 depends=(
     'libgcc'
-    'libstdc++'
     'glibc'
-    'libcap'
 )
 makedepends=(
     'acl'
@@ -23,6 +21,7 @@ makedepends=(
     'docbook-xsl'
     'git'
     'gperf'
+    'libcap'
     'intltool'
     'kexec-tools'
     'libutempter'
@@ -59,6 +58,8 @@ prepare() {
     done
 
     patch -Np1 -i ../0001-fix-logind-dbus-install.patch
+
+    sed -e "s/#RemoveIPC=yes/RemoveIPC=no/" -i src/login/logind.conf.in
 }
 
 build() {
@@ -108,7 +109,7 @@ package_elogind() {
         'audit' 'libaudit.so'
         'dbus'
         'kexec-tools'
-        'libcap.so'
+        'libcap' 'libcap.so'
         "libelogind=${pkgver}"
         'pam'
         "udev>=${_req}"
@@ -141,11 +142,11 @@ package_elogind() {
 package_libelogind(){
     pkgdesc="elogind client libraries"
     depends+=(
-        'libcap.so'
+        'libcap' 'libcap.so'
         "libudev>=${_req}"
     )
     provides=(
-        'libelogind.so'
+        #'libelogind.so'
         "liblogind=${pkgver}"
     )
     license=('LGPL-2.1-only')
