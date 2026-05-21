@@ -1,17 +1,15 @@
 ---
-version: 2026.5.7.17-1
+version: 2026.5.20.13-1
 pkgbase:
   name: python-trove-classifiers
   pkgdesc: Canonical source for classifiers on PyPI (pypi.org)
-  pkgver: 2026.5.7.17
+  pkgver: 2026.5.20.13
   pkgrel: 1
   url: https://github.com/pypa/trove-classifiers
   arch:
     - any
   license:
     - Apache-2.0
-  checkdepends:
-    - python-pytest
   makedepends:
     - git
     - python-calver
@@ -22,9 +20,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/pypa/trove-classifiers.git#tag=2026.5.7.17
+    - git+https://github.com/pypa/trove-classifiers.git#tag=2026.5.20.13
   sha512sums:
-    - 78b1e7d03aab693eb733404eb256a2eaa5740e46a9cade9dc5f719dbb3c5d8060a9bb6e1f32f6d42df345b44d6483d11ddb5b68a299a44bafa323ac9759766c6
+    - 73fb97370b31f7fc461f59068968368e97279dbddb680084d565a6f180b80468b3f2ac368306e2fea79ef07b53f54cbb5913c36717ac3f9277c5c0febf09699b
 pkgname:
   - name: python-trove-classifiers
 # generated with artixpkg 0.38.5-1-any
