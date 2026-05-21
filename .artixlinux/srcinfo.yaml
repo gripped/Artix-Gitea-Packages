@@ -1,10 +1,10 @@
 ---
-version: 0.148.0-2
+version: 0.149.1-1
 pkgbase:
   name: python-zeroconf
   pkgdesc: A pure python implementation of multicast DNS service discovery
-  pkgver: 0.148.0
-  pkgrel: 2
+  pkgver: 0.149.1
+  pkgrel: 1
   url: https://github.com/jstasiak/python-zeroconf
   arch:
     - x86_64
@@ -24,9 +24,9 @@ pkgbase:
     - python
     - python-ifaddr
   source:
-    - python-zeroconf-0.148.0.tar.gz::https://github.com/jstasiak/python-zeroconf/archive/0.148.0.tar.gz
+    - python-zeroconf-0.149.1.tar.gz::https://github.com/jstasiak/python-zeroconf/archive/0.149.1.tar.gz
   sha256sums:
-    - 8a85eca5facbeb9118a1d72fc3cbf3e014960a5bd048f947b3cec908ff44107b
+    - 5a71b927c70b8a3fd83e64fdb97f62642a6c4c562891aa5e02dd96ab80a7901b
 pkgname:
   - name: python-zeroconf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
