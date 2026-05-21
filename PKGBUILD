@@ -6,7 +6,7 @@ _req=257
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=3
+pkgrel=4
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -146,7 +146,7 @@ package_libelogind(){
         "libudev>=${_req}"
     )
     provides=(
-        #'libelogind.so'
+        'libelogind.so'
         "liblogind=${pkgver}"
     )
     license=('LGPL-2.1-only')
