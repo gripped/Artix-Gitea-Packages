@@ -2,4 +2,7 @@
 source = "gitlab"
 gitlab = "qt/qt/qtsensors"
 host = "invent.kde.org"
-branch = "5.15"
+use_max_tag = true
+include_regex = 'v5.*-lts-lgpl'
+from_pattern = 'v(\d.+)-lts-lgpl'
+to_pattern = '\1'
