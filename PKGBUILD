@@ -26,7 +26,7 @@ pkgname=(
 )
 pkgver=26.1.1
 _pkgver=${pkgver/[a-z]/-&}
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Open-source OpenGL drivers"
 url="https://www.mesa3d.org/"
@@ -82,7 +82,6 @@ makedepends=(
   xorgproto
 
   # mesa-only deps
-  libsysprof-capture
   valgrind
 
   # html-docs
@@ -258,7 +257,6 @@ build() {
     -D intel-virtio-experimental=true
     -D libunwind=disabled
     -D microsoft-clc=disabled
-    -D sysprof=true
     -D valgrind=enabled
     -D video-codecs=all
     -D vulkan-drivers=amd,intel,intel_hasvk,swrast,freedreno,panfrost,virtio,broadcom,imagination,microsoft-experimental,nouveau,asahi,gfxstream
