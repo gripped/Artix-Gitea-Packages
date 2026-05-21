@@ -1,9 +1,9 @@
 ---
-version: 1.26.1-1
+version: 1.26.2-1
 pkgbase:
   name: gitea
   pkgdesc: Painless self-hosted Git service, community managed.
-  pkgver: 1.26.1
+  pkgver: 1.26.2
   pkgrel: 1
   url: https://gitea.io
   arch:
@@ -27,12 +27,14 @@ pkgbase:
     - 'postgresql: PostgreSQL support'
     - 'valkey: Valkey support'
     - 'sqlite: SQLite support'
+    - 'gitea-runner: Official runner for Gitea'
+    - 'tea: A command line tool to interact with Gitea servers'
   options:
     - '!lto'
   backup:
     - etc/gitea/app.ini
   source:
-    - git+https://github.com/go-gitea/gitea.git#tag=v1.26.1?signed
+    - git+https://github.com/go-gitea/gitea.git#tag=v1.26.2?signed
     - gitea.tmpfiles
     - gitea.sysusers
   validpgpkeys:
@@ -45,7 +47,7 @@ pkgbase:
     - 82A110A44DF1A28D50C093BFB853ADA5DA7BBF7A
     - FE7C3EAEB8CD8290390B12AD3DECE05F6D9A647C
   sha256sums:
-    - 95f9efdeb87bea43b87a65cb06f1c8dc7ce6c8e29fb194975a8e802d25b8985a
+    - 13199fe638c15067ebc5683122a60504e3a0273b243239cc33baf85b2e4087f2
     - 1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba
     - e29dcc74b2f52e32d3931103d03f202d1cafe18e7eb9a271da0f50ef61dc8446
 pkgname:
