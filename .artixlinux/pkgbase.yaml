@@ -1,10 +1,10 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: true
   triggersNoCheck: false
 repos:
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 5.0.0.20170311-51
     packages:
       - qt5-styleplugins-5.0.0.20170311-51-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 5.0.0.20170311-50
-    packages:
-      - qt5-styleplugins-5.0.0.20170311-50-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
