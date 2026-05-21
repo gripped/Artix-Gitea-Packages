@@ -1,11 +1,12 @@
 ---
-version: 0.4.1-1
+version: 1.0.5-1
 pkgbase:
-  name: act-runner
-  pkgdesc: A runner for Gitea Actions based on GitHub's Act
-  pkgver: 0.4.1
+  name: gitea-runner
+  pkgdesc: Official runner for Gitea
+  pkgver: 1.0.5
   pkgrel: 1
-  url: https://gitea.com/gitea/act_runner
+  url: https://gitea.com/gitea/runner
+  install: gitea-runner.install
   arch:
     - x86_64
   license:
@@ -14,16 +15,25 @@ pkgbase:
     - go
   depends:
     - glibc
+    - git
+  optdepends:
+    - 'docker: To run runners in containers'
   provides:
     - act_runner
+    - act-runner
+  replaces:
+    - act_runner
+    - act-runner
   backup:
-    - etc/act_runner/act_runner.yaml
+    - etc/gitea-runner/config.yaml
   source:
-    - act_runner-0.4.1.tar.gz::https://gitea.com/gitea/act_runner/archive/v0.4.1.tar.gz
-    - act_runner.yaml
+    - gitea-runner-1.0.5.tar.gz::https://gitea.com/gitea/runner/archive/v1.0.5.tar.gz
+    - gitea-runner.sysusers
+    - gitea-runner.tmpfiles
   sha256sums:
-    - b7674aefd6271727d78ec1072634d6b78768f323b74450ab933d525f69a9d2a3
-    - c7daf8870a1b8ac67358b912e0511be1f815345a6b7bd9643050e9c3a48f83e9
+    - 103b9b903b16db865f0295f5f3a2c175eec40932b267aaa4ddc9cc8f50a9d555
+    - d7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d
+    - 476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37
 pkgname:
-  - name: act-runner
+  - name: gitea-runner
 # generated with artixpkg 0.38.5-1-any

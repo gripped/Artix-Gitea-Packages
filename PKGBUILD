@@ -1,46 +1,47 @@
-# Maintainer: artoo <artoo@artixlinux.org>
-# Contributor: Ben Parsons <9parsonsb[at]gmail[dot]com>
-# Contributor: Chris Dill <chrisdude134[at]gmail[dot]com>
-# Contributor: Filipe Nascimento <flipee at tuta dot io>
-# Contributor: Sven Lechner <sven[dot]lechner[at]rwth-aachen[dot]de>
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Rocket Aaron <i at rocka dot me>
+# Contributor: Manuel Gugger <mdgdot[at]tutanota[dot]com>
 
-_pkgname=act_runner
-
-pkgname=act-runner
-pkgver=0.4.1
+pkgname=gitea-runner
+_pkgname=runner
+pkgver=1.0.5
 pkgrel=1
-pkgdesc="A runner for Gitea Actions based on GitHub's Act"
+pkgdesc="Official runner for Gitea"
+url="https://gitea.com/gitea/runner"
 arch=('x86_64')
-url="https://gitea.com/gitea/act_runner"
 license=('MIT')
-depends=('glibc')
-provides=('act_runner')
+depends=('glibc' 'git')
 makedepends=('go')
-backup=('etc/act_runner/act_runner.yaml')
-source=("act_runner-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
-        'act_runner.yaml')
-sha256sums=('b7674aefd6271727d78ec1072634d6b78768f323b74450ab933d525f69a9d2a3'
-            'c7daf8870a1b8ac67358b912e0511be1f815345a6b7bd9643050e9c3a48f83e9')
+optdepends=('docker: To run runners in containers')
+provides=('act_runner' 'act-runner')
+replaces=('act_runner' 'act-runner')
+backup=("etc/${pkgname}/config.yaml")
+install="${pkgname}.install"
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
+        "${pkgname}.sysusers"
+        "${pkgname}.tmpfiles")
+sha256sums=('103b9b903b16db865f0295f5f3a2c175eec40932b267aaa4ddc9cc8f50a9d555'
+            'd7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d'
+            '476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37')
 
 build() {
-    cd "$_pkgname"
+	cd "${_pkgname}"
+	export CGO_CPPFLAGS="${CPPFLAGS}"
+	export CGO_CFLAGS="${CFLAGS}"
+	export CGO_CXXFLAGS="${CXXFLAGS}"
+	export CGO_LDFLAGS="${LDFLAGS}"
+	export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+	go build -ldflags "-s -w -buildid='' -linkmode external -X gitea.com/gitea/runner/internal/pkg/ver.version=${pkgver}" -o "${pkgname}"
 
-    export CGO_CPPFLAGS="${CPPFLAGS}"
-    export CGO_CFLAGS="${CFLAGS}"
-    export CGO_CXXFLAGS="${CXXFLAGS}"
-    export CGO_LDFLAGS="${LDFLAGS}"
-
-    go build \
-        -buildvcs=false \
-        -ldflags "-linkmode=external -X main.version=$pkgver"
+	"./${pkgname}" generate-config > "${srcdir}/${pkgname}-config.yaml"
 }
 
 package() {
-    cd "$_pkgname"
-    install -Dm755 act_runner -t "$pkgdir/usr/bin"
-    install -Dm644 README.md -t "$pkgdir/usr/share/doc/$pkgname"
-    install -Dm644 LICENSE -t "$pkgdir/usr/share/licenses/$pkgname"
+	cd "${_pkgname}"
+	install -Dm 755 "${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+	install -Dm 644 LICENSE "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
 
-    # install config
-    install -Dm644 "$srcdir/act_runner.yaml" "$pkgdir/etc/act_runner/act_runner.yaml"
+	install -Dm 644 "${srcdir}/${pkgname}-config.yaml" "${pkgdir}/etc/${pkgname}/config.yaml"
+	install -Dm 644 "${srcdir}/${pkgname}.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
+	install -Dm 644 "${srcdir}/${pkgname}.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
 }
