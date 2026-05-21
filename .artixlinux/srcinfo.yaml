@@ -1,9 +1,9 @@
 ---
-version: 5.15.18-1
+version: 5.15.19-1
 pkgbase:
   name: qt5-virtualkeyboard
   pkgdesc: Virtual keyboard framework
-  pkgver: 5.15.18
+  pkgver: 5.15.19
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - qt5-svg
     - hunspell
   source:
-    - kde-qtvirtualkeyboard::git+https://invent.kde.org/qt/qt/qtvirtualkeyboard#commit=859d2a6ee329cc08414410b2ef8c0af77a6853d3
+    - kde-qtvirtualkeyboard::git+https://invent.kde.org/qt/qt/qtvirtualkeyboard#commit=4fc9919ee3fad1d520d0921ba3069dca3c34ff78
   sha256sums:
-    - 9cd5cff3ee836c37ac1c8e06c88a8c144af450aae39460977e14438187020d97
+    - 52bee1629268ca5eefb96569f16c6f77c4420a33a892ceb380d54f5222ef7245
 pkgname:
   - name: qt5-virtualkeyboard
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
