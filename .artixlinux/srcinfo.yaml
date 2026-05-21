@@ -1,9 +1,9 @@
 ---
-version: 5.15.18-1
+version: 5.15.19-1
 pkgbase:
   name: qt5-networkauth
   pkgdesc: Network authentication module
-  pkgver: 5.15.18
+  pkgver: 5.15.19
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - qt5-base
   source:
-    - kde-qtnetworkauth::git+https://invent.kde.org/qt/qt/qtnetworkauth#commit=510687fa4fdee84dd3d6d166e8f080c484016199
+    - kde-qtnetworkauth::git+https://invent.kde.org/qt/qt/qtnetworkauth#commit=d1ce24a72122c315e3d190c9ebc26ed603b90057
   sha256sums:
-    - f45497e66bf4dbd5b84c7988e861090d0297de7e57be076abcb93b00f4fb2bf2
+    - d736135cc93f0837e69b5e5328fafd4768e2a1ee6ff6e25b61bbc337f04d113f
 pkgname:
   - name: qt5-networkauth
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
