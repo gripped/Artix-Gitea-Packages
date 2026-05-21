@@ -1,10 +1,10 @@
 ---
-version: 2.4.3-4
+version: 2.4.4-1
 pkgbase:
   name: dovecot
   pkgdesc: An IMAP and POP3 server written with security primarily in mind
-  pkgver: 2.4.3
-  pkgrel: 4
+  pkgver: 2.4.4
+  pkgrel: 1
   url: https://dovecot.org/
   install: dovecot.install
   arch:
@@ -16,12 +16,11 @@ pkgbase:
     - libldap
     - lua53
     - xapian-core
-  depends:
     - bzip2
     - expat
     - glibc
-    - icu
     - krb5
+    - icu
     - libcap
     - libgcc
     - libsodium
@@ -44,14 +43,26 @@ pkgbase:
   provides:
     - imap-server
     - pop3-server
+    - libdovecot.so
+    - libdovecot-storage.so
+    - libdovecot-storage-lua.so
+    - libdovecot-sql.so
+    - libdovecot-lua.so
+    - libdovecot-login.so
+    - libdovecot-ldap.so
+    - libdovecot-lda.so
+    - libdovecot-language.so
+    - libdovecot-gssapi.so
+    - libdovecot-dsync.so
+    - libdovecot-compression.so
   options:
     - '!emptydirs'
   backup:
     - etc/dovecot/dovecot.conf
     - etc/pam.d/dovecot
   source:
-    - https://dovecot.org/releases/2.4/dovecot-2.4.3.tar.gz
-    - https://dovecot.org/releases/2.4/dovecot-2.4.3.tar.gz.sig
+    - https://dovecot.org/releases/2.4/dovecot-2.4.4.tar.gz
+    - https://dovecot.org/releases/2.4/dovecot-2.4.4.tar.gz.sig
     - json-v0.1.2.lua::https://raw.githubusercontent.com/rxi/json.lua/v0.1.2/json.lua
     - dovecot.sysusers
     - dovecot.tmpfiles
@@ -63,7 +74,7 @@ pkgbase:
     - 2BE74AAB3EE754DFB9C80D3318A348AEED409DA1
     - EF0882079FD4ED32BF8B23B2A1B09EF84EDC5219
   sha256sums:
-    - SKIP
+    - 670f98d55a29b02ae6a97281e51374e553b94496480ab0a07439571ab30ca8c3
     - SKIP
     - b13df59b32c77db3bec7a1619280ea77ee5014e715ccffaa4876d857e3e9ab87
     - 068b16ab8afcc4f5cbced76269264088aed6d662db409b94bd5d22e816a869cc
@@ -73,4 +84,47 @@ pkgbase:
     - 2cfaade95b24639558b28c781687b32029d6566ce3ccc3999b1ff81d94674d6c
 pkgname:
   - name: dovecot
+    depends:
+      - glibc
+      - bzip2
+      - libbz2.so
+      - expat
+      - libexpat.so
+      - icu
+      - libicuuc.so
+      - libicui18n.so
+      - krb5
+      - libgssapi_krb5.so
+      - libkrb5.so
+      - libcap
+      - libcap.so
+      - libgcc
+      - libgcc_s.so
+      - libsodium
+      - libsodium.so
+      - libstdc++
+      - libstdc++.so
+      - libstemmer
+      - libstemmer.so
+      - libxcrypt
+      - libcrypt.so
+      - lz4
+      - liblz4.so
+      - mariadb-libs
+      - libmariadb.so
+      - openssl
+      - libcrypto.so
+      - libssl.so
+      - pam
+      - libpam.so
+      - pcre2
+      - libpcre2-32.so
+      - postgresql-libs
+      - libpq.so
+      - sqlite
+      - libsqlite3.so
+      - zlib
+      - libz.so
+      - zstd
+      - libzstd.so
 # generated with artixpkg 0.38.5-1-any
