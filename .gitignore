@@ -12,6 +12,7 @@
 
 pkg/
 src/
+python-mpv/
 
 *.service
 *.timer
