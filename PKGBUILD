@@ -1,8 +1,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-pkgname=act-runner-openrc
+pkgname=gitea-runner-openrc
 pkgver=20260521
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC gitea-runner init script"
 arch=('any')
 url="https://gitea.artixlinux.org/packages"
