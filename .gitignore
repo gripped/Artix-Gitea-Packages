@@ -12,6 +12,7 @@
 
 pkg/
 src/
+kde-qtsensors/
 
 *.service
 *.timer
