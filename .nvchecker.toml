@@ -1,2 +1,5 @@
 [qt5-webchannel]
-source = "manual"
+source = "gitlab"
+gitlab = "qt/qt/qtwebchannel"
+host = "invent.kde.org"
+branch = "5.15"

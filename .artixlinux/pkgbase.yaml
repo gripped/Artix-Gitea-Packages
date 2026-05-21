@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,9 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 5.15.18+kde+r3-1
+    packages:
+      - qt5-webchannel-5.15.18+kde+r3-1-x86_64.pkg.tar.zst
+    debug:
+      - qt5-webchannel-debug-5.15.18+kde+r3-1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
