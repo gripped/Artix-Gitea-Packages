@@ -1,0 +1,30 @@
+---
+version: 20250501-1
+pkgbase:
+  name: act-runner-openrc
+  pkgdesc: OpenRC act-runner init script
+  pkgver: 20250501
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/packages
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  depends:
+    - openrc
+    - act-runner
+  provides:
+    - init-act-runner
+  conflicts:
+    - init-act-runner
+  source:
+    - act_runner.initd
+    - act_runner.confd
+  sha256sums:
+    - 8101610cdc1960eba8fa7e4b2790402d3378f8ed967938117cf377025b7f3518
+    - 0c9fbd759dec2853cee45a1acb3f7cf1efe1152db125d90fe18dae7405452cae
+pkgname:
+  - name: act-runner-openrc
+# generated with artixpkg 0.38.5-1-any
