@@ -1,2 +1,5 @@
 [qt5-sensors]
-source = "manual"
+source = "gitlab"
+gitlab = "qt/qt/qtsensors"
+host = "invent.kde.org"
+branch = "5.15"
