@@ -1,9 +1,9 @@
 ---
-version: 5.15.18+kde+r23-1
+version: 5.15.19+kde+r23-1
 pkgbase:
   name: qt5-declarative
   pkgdesc: Classes for QML and JavaScript languages
-  pkgver: 5.15.18+kde+r23
+  pkgver: 5.15.19+kde+r23
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -24,9 +24,9 @@ pkgbase:
   conflicts:
     - qtchooser
   source:
-    - kde-qtdeclarative::git+https://invent.kde.org/qt/qt/qtdeclarative#commit=f78bc0b2c6884fd730bf34a931870d67936cf01d
+    - kde-qtdeclarative::git+https://invent.kde.org/qt/qt/qtdeclarative#commit=5bc1ac07b2d2c7839368084a4bb97e4c67eb8294
   sha256sums:
-    - 3bbd582de55008c5c30f8029ba961dba944c8a757feaa4ac4e2ea3fc8620832a
+    - 2f823676e0d4953e2226ac80d4b2a575e534654dc6be3638f87cb45596642625
 pkgname:
   - name: qt5-declarative
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
