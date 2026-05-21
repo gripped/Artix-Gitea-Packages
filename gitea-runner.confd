@@ -1,0 +1,5 @@
+# config file for /etc/init.d/gitea-runner
+
+RUNNER_CONFIG="/etc/gitea-runner/config.yaml"
+
+RUNNER_DIR="/etc/gitea-runner"

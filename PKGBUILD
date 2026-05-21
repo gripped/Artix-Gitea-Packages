@@ -1,22 +1,31 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=act-runner-openrc
-pkgver=20250501
+pkgver=20260521
 pkgrel=1
-pkgdesc="OpenRC act-runner init script"
+pkgdesc="OpenRC gitea-runner init script"
 arch=('any')
 url="https://gitea.artixlinux.org/packages"
 license=('GPL2')
 groups=('openrc-galaxy')
-provides=('init-act-runner')
-depends=('openrc' 'act-runner')
-conflicts=('init-act-runner')
-source=(act_runner.{initd,confd})
-sha256sums=('8101610cdc1960eba8fa7e4b2790402d3378f8ed967938117cf377025b7f3518'
-            '0c9fbd759dec2853cee45a1acb3f7cf1efe1152db125d90fe18dae7405452cae')
+provides=(
+    'init-gitea-runner'
+    'init-act-runner'
+    'act-runner-openrc'
+)
+depends=('openrc' 'gitea-runner')
+conflicts=(
+    'init-gitea-runner'
+)
+replaces=(
+    'act-runner-openrc'
+)
+source=(gitea-runner.{initd,confd})
+sha256sums=('236b6a10d607cca568b9da64bb723ef6e4143528adfe79859354c8a383be0137'
+            '76c2a85b7657bc11d8042ff069527d03be043d9c28fd83e953d7b3ba6c26ca3d')
 
 package() {
-    install -Dm755 "${srcdir}"/act_runner.initd "${pkgdir}"/etc/init.d/act_runner
-    install -Dm644 "${srcdir}"/act_runner.confd "${pkgdir}"/etc/conf.d/act_runner
+    install -Dm755 "${srcdir}"/gitea-runner.initd "${pkgdir}"/etc/init.d/gitea-runner
+    install -Dm644 "${srcdir}"/gitea-runner.confd "${pkgdir}"/etc/conf.d/gitea-runner
 }
 
