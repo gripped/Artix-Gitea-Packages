@@ -1,9 +1,9 @@
 ---
-version: 5.15.19+kde-1
+version: 5.15.19-1
 pkgbase:
   name: qt5-webchannel
   pkgdesc: Provides access to QObject or QML objects from HTML clients for seamless integration of Qt applications with HTML/JavaScript clients
-  pkgver: 5.15.19+kde
+  pkgver: 5.15.19
   pkgrel: 1
   url: https://www.qt.io
   arch:

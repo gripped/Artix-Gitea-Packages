@@ -2,8 +2,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=qt5-webchannel
-_basever=5.15.18
-pkgver=5.15.19+kde
+pkgver=5.15.19
 pkgrel=1
 _commit=4d9f25e1c49a202df6956fb1c0fed9f898433a54
 arch=('x86_64')
@@ -16,11 +15,6 @@ groups=('qt5')
 _pkgfqn=${pkgname/5-/}
 source=(kde-$_pkgfqn::git+https://invent.kde.org/qt/qt/$_pkgfqn#commit=$_commit)
 sha256sums=('fea40dc28a291daf2d1864dcc92f2fe3577b142fc1df4b8c276a429336e5f2b7')
-
-pkgver() {
-  cd kde-$_pkgfqn
-  echo "$_basever+kde+r"`git rev-list --count v$_basever-lts-lgpl..$_commit` | sed -e 's|+kde+r0||'
-}
 
 prepare() {
   mkdir -p build
