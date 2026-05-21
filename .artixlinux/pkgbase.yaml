@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,6 +50,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 1.70.0-1
     packages:
       - firefox-ublock-origin-1.70.0-1-any.pkg.tar.zst
@@ -57,7 +61,3 @@ repos:
       - ublock-origin-1.70.0-1-any.pkg.tar.zst
     debug:
       - ublock-origin-debug-1.70.0-1-any.pkg.tar.zst
-  galaxy:
-    version: null
-    packages: []
-    debug: []
