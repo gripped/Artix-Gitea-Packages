@@ -1,10 +1,10 @@
 ---
-version: 0.9.r420.g6efb844b-1
+version: 0.9.r420.g6efb844b-2
 pkgbase:
   name: vis
   pkgdesc: modern, legacy free, simple yet efficient vim-like editor
   pkgver: 0.9.r420.g6efb844b
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/martanne/vis#vis-a-vim-like-text-editor
   arch:
     - x86_64
@@ -39,12 +39,18 @@ pkgname:
       - 'wl-clipboard: wayland clipboard support'
       - 'xclip: X11 clipboard support'
       - 'xsel: X11 clipboard support'
-      - 'vis-syntax-highlighting: syntax highlighting'
+      - 'vis-lexers: syntax highlighting'
     backup:
       - etc/vis/visrc.lua
-  - name: vis-syntax-highlighting
+  - name: vis-lexers
     pkgdesc: syntax highlighting for vis editor
     depends:
       - vis
       - lua-lpeg
+    provides:
+      - vis-syntax-highlighting
+    conflicts:
+      - vis-syntax-highlighting
+    replaces:
+      - vis-syntax-highlighting
 # generated with artixpkg 0.38.5-1-any
