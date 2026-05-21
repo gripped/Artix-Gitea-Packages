@@ -6,7 +6,7 @@ pkgname=(
   ublock-origin
 )
 pkgbase=ublock-origin
-pkgver=1.71.0
+pkgver=1.72.0
 pkgrel=1
 pkgdesc='Efficient blocker add-on for various browsers. Fast, potent, and lean'
 arch=(any)
@@ -19,11 +19,12 @@ makedepends=(
   zip
 )
 source=("git+$url.git#commit=$pkgver?signed")
-b2sums=('b05086b66ef7702885791083976b4530b1cb971fbfc1e16acca640d771d29f9b7901065a777d3d56e5a74d92025b3b6f010148c0fe876b153dc6bc91ad71c411')
+b2sums=('381bf4967489030a360bf50d0205a18b68726b2f4c0c94ce2e44ca02919d401fb36f45f27a70e9438a3a19531e43d5a96905dc9680a0cdc6ad386594a7d57013')
 validpgpkeys=(91BFC93FDEC1D00C365C061EF5630CAE62A14316) # gorhill
 
 prepare() {
   local dest=dist/build/uAssets
+  rm -rf $dest
 
   cd uBlock
   sed -i "s/ \$(assets)//" Makefile
@@ -38,7 +39,7 @@ build() {
   ./tools/make-thunderbird.sh all
 
   cd dist/build
-  strip-nondeterminism -t zip uBlock0.*.xpi
+  /usr/bin/vendor_perl/strip-nondeterminism -t zip uBlock0.*.xpi
 }
 
 package_ublock-origin() {
