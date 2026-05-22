@@ -1,0 +1,54 @@
+From 0000000000000000000000000000000000000000 Mon Sep 17 00:00:00 2001
+From: "Jan Alexander Steffens (heftig)" <heftig@archlinux.org>
+Date: Thu, 21 May 2026 18:41:48 +0200
+Subject: [PATCH] meson: Only install 05-macos.conf on darwin
+
+---
+ conf.d/meson.build | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+diff --git a/conf.d/meson.build b/conf.d/meson.build
+index 2f8dfec9475e..974350d5b4cf 100644
+--- a/conf.d/meson.build
++++ b/conf.d/meson.build
+@@ -1,5 +1,4 @@
+ conf_files = [
+-  '05-macos.conf',
+   '05-reset-dirs-sample.conf',
+   '09-autohint-if-no-hinting.conf',
+   '10-autohint.conf',
+@@ -50,29 +49,33 @@ preferred_sub_pixel_rendering = get_option('default-sub-pixel-rendering')
+ preferred_bitmap = get_option('bitmap-conf')
+ 
+ conf_links = [
+-  '05-macos.conf',
+   '10-scale-bitmap-fonts.conf',
+   '10-yes-antialias.conf',
+   '11-lcdfilter-default.conf',
+   '20-unhint-small-vera.conf',
+   '30-metric-aliases.conf',
+   '40-nonlatin.conf',
+   '45-generic.conf',
+   '45-latin.conf',
+   '48-guessfamily.conf',
+   '48-spacing.conf',
+   '49-sansserif.conf',
+   '50-user.conf',
+   '51-local.conf',
+   '60-generic.conf',
+   '60-latin.conf',
+   '65-fonts-persian.conf',
+   '65-nonlatin.conf',
+   '69-unifont.conf',
+   '80-delicious.conf',
+   '90-synthetic.conf',
+ ]
+ 
++if host_machine.system() == 'darwin'
++  conf_files += '05-macos.conf'
++  conf_links += '05-macos.conf'
++endif
++
+ if preferred_hinting != 'noinstall'
+   conf_links += '10-hinting-@0@.conf'.format(preferred_hinting)
+ endif

@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=fontconfig
-pkgver=2.17.1
+pkgver=2.18.0
 pkgrel=1
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
@@ -31,11 +30,13 @@ backup=(etc/fonts/fonts.conf)
 install=fontconfig.install
 source=(
   "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git?signed#tag=$pkgver"
+  0001-meson-Only-install-05-macos.conf-on-darwin.patch
   40-fontconfig-config.script
   40-fontconfig-config.hook
   fontconfig.hook
 )
-b2sums=('2fbcf5b9df5d1d9c7ce2a02c7fe5d28631b2ad6ba56905b159dfd8a57224d10cb75e89ca4a1d5c9c07dc09949b384ced4e7fd6c8790aa196a2744ba8ca59c293'
+b2sums=('b345126ee3216aaa0feb79a4bb9d41c33b116862242e547eab9c217db2220205edbdd67893d1d8917c4a469da5a75cce0526d31b4c792b38815e4a70b4c6b750'
+        '861cf70218bba8a7173a80f1ab01ca10e1c1445f5079a9c72839c7fa3964f500c1fd0f72953f4e0641447e9f0a98d8a0dfe4df62a71964579b52659a9c84f19d'
         '7fb63e76ab126bc0a7decfd74c53429ad1ce6d13de2f14037259616d8d4150b8fa4601c7f02b75918ccd5995d424816dc9d01a5fe7e39dc3dd1fcc83dfdb0fe8'
         'b06b3f2b8c0c38139a9247c26a641e6dc01d50b530478dd14133175a603f60b0af901af16c9fcf1ce73d23786ea14bfdbacd39f1dcfd88f6382965ad22be1411'
         'dfbf47c069c88da7687511356cef5bb94b7190e558a6f08390d6976fa7065ba7137ccb0a5ca1defdef655091afe74eb8a3d33fb9f3e0633409aa79f753ad276d')
@@ -46,6 +47,9 @@ validpgpkeys=(
 
 prepare() {
   cd fontconfig
+
+  # Remove 05-macos.conf
+  git apply -3 ../0001-meson-Only-install-05-macos.conf-on-darwin.patch
 }
 
 build() {
