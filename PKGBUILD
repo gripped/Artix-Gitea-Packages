@@ -2,13 +2,14 @@
 
 pkgname=psi-plus
 pkgver=1.5.2132
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Psi+ is a powerful XMPP client (Qt, C++) designed for the XMPP power users"
 url="https://psi-im.org"
 license=('GPL-2.0-or-later')
 arch=('x86_64')
 depends=('qt6-multimedia' 'qca-qt6' 'qt6-svg' 'hunspell'
     'qtkeychain-qt6' 'libotr' 'tidy' 'http-parser'
+    'libxss'
     'libusrsctp' 'libomemo-c' 'libb2')
 makedepends=('cmake' 'ninja')
 source=("https://github.com/psi-plus/psi-plus-snapshots/archive/${pkgver}.tar.gz")
