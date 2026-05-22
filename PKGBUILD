@@ -17,7 +17,10 @@ makedepends=(cmake
 conflicts=(qgpgme-qt6)
 provides=(qgpgme-qt6)
 replaces=(qgpgme-qt6)
-source=(git+https://dev.gnupg.org/source/gpgmeqt#tag=gpgmeqt-$pkgver)
+source=(
+    #git+https://dev.gnupg.org/source/gpgmeqt#tag=gpgmeqt-$pkgver
+    git+https://github.com/gpg/gpgmeqt.git#tag=gpgmeqt-$pkgver
+)
 sha256sums=('2601b9fafa0b974768d24112613d839e1b6828ec5a7f2fb8b02fb601fcef6e39')
 
 prepare() {

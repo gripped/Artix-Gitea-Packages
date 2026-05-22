@@ -28,7 +28,7 @@ pkgbase:
   replaces:
     - qgpgme-qt6
   source:
-    - git+https://dev.gnupg.org/source/gpgmeqt#tag=gpgmeqt-2.1.0
+    - git+https://github.com/gpg/gpgmeqt.git#tag=gpgmeqt-2.1.0
   sha256sums:
     - 2601b9fafa0b974768d24112613d839e1b6828ec5a7f2fb8b02fb601fcef6e39
 pkgname:
