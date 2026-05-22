@@ -8,8 +8,8 @@ pkgname=(
   libedataserverui4
   evolution-data-server-docs
 )
-pkgver=3.60.1
-pkgrel=3
+pkgver=3.60.2
+pkgrel=1
 pkgdesc="Unified contacts, tasks and calendar backend"
 url="https://gitlab.gnome.org/GNOME/evolution/-/wikis/home"
 arch=(x86_64)
@@ -62,15 +62,11 @@ makedepends=(
   webkitgtk-6.0
 )
 checkdepends=(db)
-source=("git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#tag=$pkgver"
-         libical-4.patch)
-b2sums=('0b72d38a967dfdaaf32e7921e92d5a4424ce91bd3fa84444ecfb482740ef65637141e0f3ad0c59b58cc78c231ef845b1af6d397dc5d9164cada3d9c9417eb94f'
-        '6d48c5f7cbaf38b5d5a45ec631866d1f6225e8ff369fbc63750ff7cf11a20c6a6391318218c3596e4d0485da75b51150c7f66cb3f4638ffda5b89d2b21dcc19a')
+source=("git+https://gitlab.gnome.org/GNOME/evolution-data-server.git#tag=$pkgver")
+b2sums=('526f59d41a16d718e3ecc1bc2525eee661eac9f0c5ffdd3a45af8142353158632b01c1cb76cae248e19a0caf97315897f9b2c9f51368c0972db33c004bc89a82')
 
 prepare() {
   cd $pkgbase
-# Fix libical 4 porting https://gitlab.gnome.org/GNOME/evolution-data-server/-/work_items/640
-  patch -p1 -i ../libical-4.patch
 }
 
 build() {
