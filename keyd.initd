@@ -1,0 +1,12 @@
+#!/sbin/openrc-run
+description="A key remapping deamon"
+
+command="/usr/bin/keyd"
+command_background="yes"
+pidfile="/run/$RC_SVCNAME.pid"
+output_log="/var/log/keyd.log"
+error_log="/var/log/keyd.err"
+
+depend() {
+	need localmount dev-mount
+}

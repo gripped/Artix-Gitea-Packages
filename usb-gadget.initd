@@ -1,0 +1,8 @@
+
+#!/sbin/openrc-run
+description="Keyd service for usb gadget setup"
+command="/usr/bin/keyd-usb-gadget.sh"
+
+depend() {
+	before keyd 
+}
