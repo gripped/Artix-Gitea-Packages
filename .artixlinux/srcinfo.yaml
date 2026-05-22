@@ -1,0 +1,25 @@
+---
+version: 0.9.5.0-4
+pkgbase:
+  name: libusrsctp
+  pkgdesc: A portable SCTP userland stack
+  pkgver: 0.9.5.0
+  pkgrel: 4
+  url: https://github.com/sctplab/usrsctp
+  arch:
+    - i686
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - automake
+    - autoconf
+  depends:
+    - glibc
+  source:
+    - libusrsctp-0.9.5.0.tar.gz::https://github.com/sctplab/usrsctp/archive/0.9.5.0.tar.gz
+  sha512sums:
+    - 7b28706449f9365ba9750fd39925e7171516a1e3145d123ec69a12486637ae2393ad4c587b056403298dc13c149f0b01a262cbe4852abca42e425d7680c77ee3
+pkgname:
+  - name: libusrsctp
+# generated with artixpkg 0.38.5-1-any
