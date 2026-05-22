@@ -31,7 +31,7 @@ pkgbase:
     - libomemo-c
     - libb2
   source:
-    - https://github.com/psi-plus/psi-plus-snapshots/archive/1.5.2132.tar.gz
+    - psi-plus-1.5.2132.tar.gz::https://github.com/psi-plus/psi-plus-snapshots/archive/1.5.2132.tar.gz
   sha256sums:
     - 466fb31e167d6965b1bc0fda061474926bb1975b6ba93213a613c2501ffbe2a3
 pkgname:

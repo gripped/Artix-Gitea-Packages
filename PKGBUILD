@@ -12,7 +12,7 @@ depends=('qt6-multimedia' 'qca-qt6' 'qt6-svg' 'hunspell'
     'gstreamer' 'gst-libav' 'libxss'
     'libusrsctp' 'libomemo-c' 'libb2')
 makedepends=('cmake' 'git' 'ninja' 'vulkan-headers')
-source=("https://github.com/psi-plus/psi-plus-snapshots/archive/${pkgver}.tar.gz")
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/psi-plus/psi-plus-snapshots/archive/${pkgver}.tar.gz")
 sha256sums=('466fb31e167d6965b1bc0fda061474926bb1975b6ba93213a613c2501ffbe2a3')
 
 build() {
