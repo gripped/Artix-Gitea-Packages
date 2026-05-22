@@ -1,10 +1,10 @@
 ---
-version: 0.15.2-1
+version: 0.15.2-2
 pkgbase:
   name: gst-plugins-rs
   pkgdesc: Multimedia graph framework
   pkgver: 0.15.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gstreamer.freedesktop.org/
   arch:
     - x86_64
@@ -63,7 +63,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-hlssink3=0.15.2-1
+      - gst-plugin-hlssink3=0.15.2-2
       - gst-plugins-bad
       - gst-plugins-base-libs
       - openssl
@@ -204,7 +204,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-hlssink3=0.15.2-1
+      - gst-plugin-hlssink3=0.15.2-2
       - gst-plugins-base-libs
   - name: gst-plugin-hlssink3
     pkgdesc: Multimedia graph framework - hlssink3 plugin
@@ -213,7 +213,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-isobmff=0.15.2-1
+      - gst-plugin-isobmff=0.15.2-2
       - gst-plugins-base-libs
   - name: gst-plugin-hsv
     pkgdesc: Multimedia graph framework - hsv plugin
@@ -332,8 +332,8 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-textaccumulate=0.15.2-1
-      - gst-plugin-textwrap=0.15.2-1
+      - gst-plugin-textaccumulate=0.15.2-2
+      - gst-plugin-textwrap=0.15.2-2
       - cairo
       - gst-plugins-bad
       - gst-plugins-base-libs
@@ -426,7 +426,7 @@ pkgname:
       - glibc
       - gstreamer
       - libgcc
-      - gst-plugin-rsrtp=0.15.2-1
+      - gst-plugin-rsrtp=0.15.2-2
       - gst-plugins-bad-libs
       - gst-plugins-base
       - gst-plugins-base-libs
