@@ -1,15 +1,15 @@
 ---
-version: 20260521-2
+version: 20260522-1
 pkgbase:
   name: gitea-runner-openrc
   pkgdesc: OpenRC gitea-runner init script
-  pkgver: 20260521
-  pkgrel: 2
+  pkgver: 20260522
+  pkgrel: 1
   url: https://gitea.artixlinux.org/packages
   arch:
     - any
   groups:
-    - openrc-galaxy
+    - openrc-world
   license:
     - GPL2
   depends:

@@ -1,13 +1,13 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=gitea-runner-openrc
-pkgver=20260521
-pkgrel=2
+pkgver=20260522
+pkgrel=1
 pkgdesc="OpenRC gitea-runner init script"
 arch=('any')
 url="https://gitea.artixlinux.org/packages"
 license=('GPL2')
-groups=('openrc-galaxy')
+groups=('openrc-world')
 provides=(
     'init-gitea-runner'
     'init-act-runner'
