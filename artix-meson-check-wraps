@@ -19,10 +19,7 @@ def msg(message="", attr=""):
 def exit(message="", attr: str | None = None, code=1):
     if attr is None:
         attr = "97" if code == 0 else "91"
-    if message:
-        msg(message, attr)
-    if code == 0:
-        msg()
+    msg(message, attr)
     sys.exit(code)
 
 
@@ -72,7 +69,7 @@ for wrapfile in wrapfiles:
     wraps.append((wrapfile.name, wraptype, directory, section))
 
 if not wraps:
-    exit(f"\n{srcdir.name} has no valid wrap files", attr="93", code=0)
+    exit(f"{srcdir.name} has no valid wrap files", attr="93", code=0)
 
 repos: list[tuple[str, Path, SectionProxy]] = []
 name_max = max(len(wrapname) for wrapname, _, _, _ in wraps)
@@ -105,6 +102,8 @@ for wrapname, pkgdir, section in repos:
     if not want_ref:
         msg(f"Wrap file {wrapname} has no revision", attr="93")
         continue
+    if want_ref == "head":
+        want_ref = "origin/HEAD"
 
     if not (pkgdir / ".git").exists():
         msg(f"Cached dir {pkgdir} is not a git worktree", attr="93")
@@ -118,8 +117,6 @@ for wrapname, pkgdir, section in repos:
         have_rev = None
 
     try:
-        if want_ref == 'head':
-            want_ref = 'origin/HEAD'
         want_rev = check_output(
             ["git", "-C", pkgdir, "rev-parse", "-q", "--verify", want_ref], text=True
         ).strip()
