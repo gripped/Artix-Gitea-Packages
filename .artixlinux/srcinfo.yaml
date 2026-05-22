@@ -2,7 +2,7 @@
 version: 1.5.2132-1
 pkgbase:
   name: psi-plus
-  pkgdesc: Psi+ is a powerful XMPP client (Qt, C++) designed for the XMPP power users
+  pkgdesc: Powerful XMPP client (Qt, C++) designed for the XMPP power users
   pkgver: 1.5.2132
   pkgrel: 1
   url: https://psi-im.org
@@ -12,7 +12,9 @@ pkgbase:
     - GPL-2.0-or-later
   makedepends:
     - cmake
+    - git
     - ninja
+    - vulkan-headers
   depends:
     - qt6-multimedia
     - qca-qt6
@@ -23,6 +25,7 @@ pkgbase:
     - tidy
     - http-parser
     - gstreamer
+    - gst-libav
     - libxss
     - libusrsctp
     - libomemo-c
