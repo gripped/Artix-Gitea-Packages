@@ -3,8 +3,8 @@
 pkgbase=moksha
 pkgname=(moksha moksha-module-mixer)
 pkgver=0.4.2
-pkgrel=3.2
-_commit="255b970353a918f065c44e9af7677516789ab8bf"
+pkgrel=4
+_commit="d63f2de5205fcb4f45496a5d76039dedc4336262"
 pkgdesc="Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17"
 arch=('x86_64')
 url="https://wiki.artixlinux.org/Site/MokshaDesktopForArtix"
@@ -61,8 +61,8 @@ check() {
 
 package_moksha() {
   depends=('efl>=1.27.0' 'terminology' 'moksha-menu' 'moksha-arandr' 'moksha-help' 'desktop-file-utils'
-           'x11win-server' 'xorg-xinit' 'xsel' 'xclip' 'xdg-utils' 'xdg-user-dirs' 'xdg-dbus-proxy'
-           'xcb-util-keysyms' 'rrdtool' 'thunar')
+           'x11win-server' 'xorg-xinit' 'xorg-xauth' 'xsel' 'xclip' 'xdg-utils' 'xdg-user-dirs'
+           'xdg-dbus-proxy' 'xcb-util-keysyms' 'rrdtool' 'thunar')
   optdepends=('moksha-module-mixer: Moksha pulse audio mixer'
               'moksha-extra-modules: additional modules for Moksha'
               'moksha-themes: additional themes for Moksha'
@@ -99,7 +99,7 @@ package_moksha-module-mixer() {
   install -D -m644 -t "$pkgdir/usr/share/licenses/$pkgname/" AUTHORS COPYING
 }
 
-sha256sums=('d2f988061e162bb0315fc12389cb66c1a5cb7eb272f1d5c728bac2d2a9b5ffa4'
+sha256sums=('649d8f5f1233c2ca63dbf31b4de44f44d40908396208b99b3b3023e1ee0965e5'
             'SKIP'
             'f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb'
             'aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98'
