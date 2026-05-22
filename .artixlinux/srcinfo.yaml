@@ -1,9 +1,9 @@
 ---
-version: 2.7.0-1
+version: 2.7.1-1
 pkgbase:
   name: chess-tui
   pkgdesc: Play chess in your terminal
-  pkgver: 2.7.0
+  pkgver: 2.7.1
   pkgrel: 1
   url: https://github.com/thomas-mauran/chess-tui
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - chess-tui-2.7.0.tar.gz::https://github.com/thomas-mauran/chess-tui/archive/2.7.0.tar.gz
+    - chess-tui-2.7.1.tar.gz::https://github.com/thomas-mauran/chess-tui/archive/2.7.1.tar.gz
   sha512sums:
-    - afc132c55e62f36d2b7f7d010a7c6964bb922477a94c97c47f0c1a753f730d9ae03500f820934eb04bd13907005d9fdd9d950b035d21fd0d1e4f8cf6fd54c998
+    - b916cfd39166c149e0fe8a98cb7524913e006491854b594dddcfe20658e4370de921212bd475c0ba1e56c55389471e69776d687371944a0f3dca62e797922ee5
 pkgname:
   - name: chess-tui
 # generated with artixpkg 0.38.5-1-any
