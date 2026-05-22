@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Brett Cornwall <ainola@archlinux.org>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Brett Cornwall <ainola@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: eNV25
 
 pkgname=keyd
 pkgver=2.6.0
-pkgrel=5
+pkgrel=5.1
 pkgdesc="A key remapping daemon for linux"
 arch=(x86_64)
 url="https://github.com/rvaiya/keyd"
@@ -34,7 +33,7 @@ check() {
 
 package() {
     cd "$pkgname-$pkgver"
-    make PREFIX=/usr DESTDIR="$pkgdir/" FORCE_SYSTEMD=1 install
+    make PREFIX=/usr DESTDIR="$pkgdir/" install
 
     # Delete the test-io binary produced during check()
     # https://gitlab.archlinux.org/archlinux/packaging/packages/keyd/-/issues/4
