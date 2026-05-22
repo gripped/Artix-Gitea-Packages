@@ -126,7 +126,7 @@ declare -gA _system_libs=(
   #[snappy]=snappy    # needs libstdc++
   #[woff2]=woff2      # needs libstdc++
   [zlib]=minizip
-  [zsdt]=zstd
+  [zstd]=zstd
 )
 _unwanted_bundled_libs=(
   $(printf "%s\n" ${!_system_libs[@]} | sed 's/^libjpeg$/&_turbo/')

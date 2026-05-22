@@ -47,9 +47,9 @@ pkgbase:
     - libjpeg-turbo
     - openh264
     - flac
-    - zstd
     - libdrm
     - libxml2
+    - zstd
     - libwebp
     - minizip
     - opus
