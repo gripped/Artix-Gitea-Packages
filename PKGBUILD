@@ -1,9 +1,9 @@
-# Maintainer: Sich <little_sich@tuta.io>
+# Maintainer: commandk <userhandle@artixlinux.org>
 
-pkgname=psi-plus-nowebengine
+pkgname=psi-plus
 pkgver=1.5.2132
 pkgrel=1
-pkgdesc="Psi+ is a powerful XMPP client (Qt, C++) designed for the XMPP power users (with all plugins and basic chat support with no WebEngine)"
+pkgdesc="Psi+ is a powerful XMPP client (Qt, C++) designed for the XMPP power users"
 url="https://psi-im.org"
 license=('GPL-2.0-or-later')
 arch=('x86_64')
