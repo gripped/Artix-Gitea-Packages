@@ -50,11 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1.5.2132-1.1
+    version: 1.5.2132-1
     packages:
-      - psi-plus-1.5.2132-1.1-x86_64.pkg.tar.zst
+      - psi-plus-1.5.2132-1-x86_64.pkg.tar.zst
     debug:
-      - psi-plus-debug-1.5.2132-1.1-x86_64.pkg.tar.zst
+      - psi-plus-debug-1.5.2132-1-x86_64.pkg.tar.zst
   galaxy:
     version: null
     packages: []
