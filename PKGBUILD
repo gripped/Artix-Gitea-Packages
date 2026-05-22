@@ -10,14 +10,14 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=ungoogled-chromium
-pkgver=148.0.7778.167
+pkgver=148.0.7778.178
 pkgrel=1
 _launcher_ver=8
 _manual_clone=0
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
-_uc_ver=148.0.7778.167-1
+_uc_ver=148.0.7778.178-1
 pkgdesc="A lightweight approach to removing Google web service dependency"
 arch=('x86_64')
 url="https://github.com/ungoogled-software/ungoogled-chromium"
@@ -78,8 +78,8 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         increase-fortify-level.patch
         use-oauth2-client-switches-as-default.patch
         glibc-2.42-baud-rate-fix.patch)
-sha256sums=('57a78706c149afe8cacdc801c20ef89ad1c1fbba0ad2154fda03f4fc0f33c9d6'
-            '16006bae1ec831a5cca59db79d8a111f5d72aad0f0126f4d44d2d3d1941b1bc0'
+sha256sums=('074cc06fd96c7d47abfe4a4bb4b09b99f4261a3f1a4e49a07624810e83ef4556'
+            '39ce1309e8808f00f846b368c5b34fd469f4f5335730fd629c00b23fc808c4d4'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
@@ -113,17 +113,20 @@ declare -gA _system_libs=(
   #[jsoncpp]=jsoncpp  # needs libstdc++
   #[libaom]=aom
   #[libavif]=libavif  # needs -DAVIF_ENABLE_EXPERIMENTAL_GAIN_MAP=ON
+  [libdrm]=libdrm
   [libjpeg]=libjpeg-turbo
   #[libpng]=libpng
   #[libvpx]=libvpx
   [libwebp]=libwebp
   [libxml]=libxml2
   [libxslt]=libxslt
+  [openh264]=openh264
   [opus]=opus
   #[re2]=re2          # needs libstdc++
   #[snappy]=snappy    # needs libstdc++
   #[woff2]=woff2      # needs libstdc++
   [zlib]=minizip
+  [zsdt]=zstd
 )
 _unwanted_bundled_libs=(
   $(printf "%s\n" ${!_system_libs[@]} | sed 's/^libjpeg$/&_turbo/')

@@ -1,9 +1,9 @@
 ---
-version: 148.0.7778.167-1
+version: 148.0.7778.178-1
 pkgbase:
   name: ungoogled-chromium
   pkgdesc: A lightweight approach to removing Google web service dependency
-  pkgver: 148.0.7778.167
+  pkgver: 148.0.7778.178
   pkgrel: 1
   url: https://github.com/ungoogled-software/ungoogled-chromium
   arch:
@@ -45,7 +45,10 @@ pkgbase:
     - fontconfig
     - brotli
     - libjpeg-turbo
+    - openh264
     - flac
+    - zstd
+    - libdrm
     - libxml2
     - libwebp
     - minizip
@@ -60,16 +63,16 @@ pkgbase:
     - 'org.freedesktop.secrets: password storage backend on GNOME / Xfce'
     - 'upower: Battery Status API support'
   provides:
-    - chromium=148.0.7778.167
-    - chromedriver=148.0.7778.167
+    - chromium=148.0.7778.178
+    - chromedriver=148.0.7778.178
   conflicts:
     - chromium
     - chromedriver
   options:
     - '!lto'
   source:
-    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-148.0.7778.167-lite.tar.xz
-    - ungoogled-chromium-148.0.7778.167-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/148.0.7778.167-1.tar.gz
+    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-148.0.7778.178-lite.tar.xz
+    - ungoogled-chromium-148.0.7778.178-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/148.0.7778.178-1.tar.gz
     - https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz
     - chromium-138-nodejs-version-check.patch
     - chromium-145-fix-SYS_SECCOMP.patch
@@ -83,8 +86,8 @@ pkgbase:
     - use-oauth2-client-switches-as-default.patch
     - glibc-2.42-baud-rate-fix.patch
   sha256sums:
-    - 57a78706c149afe8cacdc801c20ef89ad1c1fbba0ad2154fda03f4fc0f33c9d6
-    - 16006bae1ec831a5cca59db79d8a111f5d72aad0f0126f4d44d2d3d1941b1bc0
+    - 074cc06fd96c7d47abfe4a4bb4b09b99f4261a3f1a4e49a07624810e83ef4556
+    - 39ce1309e8808f00f846b368c5b34fd469f4f5335730fd629c00b23fc808c4d4
     - 213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a
     - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
     - 4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e
