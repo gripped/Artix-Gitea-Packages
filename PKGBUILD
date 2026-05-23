@@ -1,8 +1,8 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
 # Contributor: dec05eba <dec05eba@protonmail.com>
 
 pkgname=gpu-screen-recorder-ui
-pkgver=1.12.0
+pkgver=1.12.2
 pkgrel=1
 pkgdesc='A fullscreen overlay UI for GPU Screen Recorder in the style of ShadowPlay'
 arch=('x86_64')
@@ -42,12 +42,12 @@ depends=(
 )
 
 source=(git+https://repo.dec05eba.com/gpu-screen-recorder-ui#tag=${pkgver})
-sha512sums=('2ba8726a9e01860ee00c34fb840e6a01f04d1c4ce570d68ddf6a9746342e3ff1183df8e7cf78a5f31cfe6e0cf7c39d397a27611ebae5f9e2152d0ae515256eeb')
+sha512sums=('81e68e381defcf8dc29d66d12e2b46062068d0888132051740c4f069f06811d69e09e1b5325886aa2978e72792280dfb62470162403c3d74f8b9043f954372e4')
 install="${pkgname}.install"
 
 build() {
   cd "$srcdir"/$pkgname
-  arch-meson build --buildtype=release -Dstrip=true
+  artix-meson build --buildtype=release -Dstrip=true
   meson compile -C build
 }
 
