@@ -2,7 +2,7 @@
 
 _name=libtmux
 pkgname=python-libtmux
-pkgver=0.57.1
+pkgver=0.58.0
 pkgrel=1
 pkgdesc="Python api for tmux"
 arch=(any)
@@ -28,8 +28,8 @@ checkdepends=(
 )
 optdepends=('python-pytest: for pytest plugin')
 source=($_name-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('bd2069c7d246b8a736965fefb3ba5bce243d61ccd86660c75036a557f4294285122d4928b84c2fafce330135fe22fef70b759f94839bb1ddfca2eb6b8c4f5e7c')
-b2sums=('21fbaafe1e8f1c9b938fa08dc3f3f429d9d825d01cab4db5019ab28bd868c306a4cd2b8fa47a8deeb1116634b45ef49067a6e39e36263d97122e67b4f9e088a1')
+sha512sums=('d0b33c321eb84f1622f024445f81f8e2baad742d11c37fb0193f9c49947e247db22f5b864dbfc9684b90cc1f0404d32d10a7d7239ce095ffd8d761fccb5c35dc')
+b2sums=('4768636649710f54538fd3c041080f44142fcd872434fa6f32251f9ebff4fcf3d235be13b5db6d5f8520a0d41d660342b7aaa24b52fda191ab6122cab1b4da28')
 
 build() {
   cd $_name-$pkgver
@@ -39,7 +39,7 @@ build() {
 check() {
   local pytest_options=(
     --deselect tests/test_pane.py::test_capture_pane_start
-    --deselect 'tests/test_pane.py::test_capture_pane - AssertionError: assert '' == '$''
+    --deselect tests/test_pane.py::test_capture_pane
     --deselect 'tests/test_pane_capture_pane.py::test_capture_pane_flags[join_wrapped_numbers]'
     --deselect tests/test_pane.py::test_set_title
     -vv
