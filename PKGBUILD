@@ -5,8 +5,8 @@
 # Contributor: Padfoot <padfoot@exemail.com.au>
 
 pkgname=plymouth
-pkgver=24.004.60
-pkgrel=14
+pkgver=26.134.222
+pkgrel=1
 pkgdesc='Graphical boot splash screen'
 arch=(x86_64)
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
@@ -47,7 +47,7 @@ source=(
   plymouth-shutdown.initcpio_install
   50-plymouth.conf
 )
-b2sums=('a3d55f4f7be81bdf2ddd5c2b74a3fdb4e368c31fc41e12ab100ce2a7986cb418151b3df0d0316011710dd0e1ae99631166eecf80bc1dd5cc9054a4685266afed'
+b2sums=('5130dbb16d4634915b7f68542b6c29d664bd8c26f4508adf536833e93f2c78aee287208e88dc3bcf8298979c6f9811657ab5a30c1563b1e5307b7e886b6bffa2'
         'afb2449b542aa3e971eab6b953c907347fdf4e499b4140a5e6736a7c99557c0d8d2fed28dbee56d84c8c619335c59bd382457d85e51145884ad0616e9095f232'
         '078482ac7758e20c5c8cef2bd1f18809102f0a4df044d918dd18e272101686013f80502980c9a3d868316a4b01e45cda0fcc7929ac4d1d092da6fea57da53bdf'
         '063448411de837ed38ece935719f07fd17b18830680c9fa95b7bd39a097778186c40373590504c9b44144125986304311f528c73592c29d19043b8395e6f99c2'
@@ -55,9 +55,6 @@ b2sums=('a3d55f4f7be81bdf2ddd5c2b74a3fdb4e368c31fc41e12ab100ce2a7986cb418151b3df
 
 prepare() {
   cd $pkgname
-
-  # Various fixes from upstream
-  git cherry-pick -n -m 1 24.004.60..e88c403bda64d301b0434045513551c1ccdee983
 
   # Use mkinitcpio to update initrd
   sed -i 's/^dracut -f$/mkinitcpio -P/' scripts/plymouth-update-initrd
