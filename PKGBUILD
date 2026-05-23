@@ -3,7 +3,7 @@
 
 pkgname=fontconfig
 pkgver=2.18.0
-pkgrel=1
+pkgrel=2
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
@@ -30,15 +30,15 @@ backup=(etc/fonts/fonts.conf)
 install=fontconfig.install
 source=(
   "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git?signed#tag=$pkgver"
-  0001-meson-Only-install-05-macos.conf-on-darwin.patch
-  40-fontconfig-config.script
+  0001-Fix-a-null-pointer-dereference-when-computing-a-patt.patch
   40-fontconfig-config.hook
+  40-fontconfig-config.script
   fontconfig.hook
 )
 b2sums=('b345126ee3216aaa0feb79a4bb9d41c33b116862242e547eab9c217db2220205edbdd67893d1d8917c4a469da5a75cce0526d31b4c792b38815e4a70b4c6b750'
-        '861cf70218bba8a7173a80f1ab01ca10e1c1445f5079a9c72839c7fa3964f500c1fd0f72953f4e0641447e9f0a98d8a0dfe4df62a71964579b52659a9c84f19d'
-        '7fb63e76ab126bc0a7decfd74c53429ad1ce6d13de2f14037259616d8d4150b8fa4601c7f02b75918ccd5995d424816dc9d01a5fe7e39dc3dd1fcc83dfdb0fe8'
+        '345b57e76bcec4990287399157ec47ab3233191f946d86bcbd8a825dc3fc5583868576644c02c31e7912d26664ab05056ac0eb0f4ad5be6edb8f2b42a2edaa68'
         'b06b3f2b8c0c38139a9247c26a641e6dc01d50b530478dd14133175a603f60b0af901af16c9fcf1ce73d23786ea14bfdbacd39f1dcfd88f6382965ad22be1411'
+        '7fb63e76ab126bc0a7decfd74c53429ad1ce6d13de2f14037259616d8d4150b8fa4601c7f02b75918ccd5995d424816dc9d01a5fe7e39dc3dd1fcc83dfdb0fe8'
         'dfbf47c069c88da7687511356cef5bb94b7190e558a6f08390d6976fa7065ba7137ccb0a5ca1defdef655091afe74eb8a3d33fb9f3e0633409aa79f753ad276d')
 validpgpkeys=(
   F77A64C4B5B45FF8763A278F65755979B34E1294 # Akira TAGOH <akira@tagoh.org>
@@ -48,8 +48,19 @@ validpgpkeys=(
 prepare() {
   cd fontconfig
 
-  # Remove 05-macos.conf
-  git apply -3 ../0001-meson-Only-install-05-macos.conf-on-darwin.patch
+  # Remove macos-specific config
+  # https://gitlab.freedesktop.org/fontconfig/fontconfig/-/merge_requests/519
+  git cherry-pick -n 05961325dc9a37d992e3ee9e9deed0877b8ac56f
+
+  # Fix font matching
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/fontconfig/-/work_items/6
+  # https://gitlab.freedesktop.org/fontconfig/fontconfig/-/merge_requests/520
+  git cherry-pick -n ec3ac5609a95d9338744d2e39af3a29c6349d2d5
+
+  # Fix Firefox crash
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/fontconfig/-/work_items/7
+  # https://gitlab.freedesktop.org/fontconfig/fontconfig/-/merge_requests/521
+  git apply -3 ../0001-Fix-a-null-pointer-dereference-when-computing-a-patt.patch
 }
 
 build() {
