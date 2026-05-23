@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.9.4-6
+    version: 1.10-1
     packages:
-      - libetpan-1.9.4-6-x86_64.pkg.tar.zst
+      - libetpan-1.10-1-x86_64.pkg.tar.zst
     debug: []
