@@ -1,8 +1,8 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Peter Jung <ptr1337@archlinux.org>
 # Contributor: dec05eba <dec05eba@protonmail.com>
 
 pkgname=gpu-screen-recorder
-pkgver=5.13.6
+pkgver=5.13.8
 pkgrel=1
 pkgdesc='A shadowplay-like screen recorder for Linux. The fastest screen recorder for Linux'
 arch=('x86_64')
@@ -35,20 +35,20 @@ depends=(
   libjpeg-turbo
 )
 optdepends=(
-  'nvidia-utils: Required to record your screen on NVIDIA'
-  'libxnvctrl: Required when using the -oc option to overclock the NVIDIA GPU to workaround NVIDIA p2 state bug'
-  'mesa: Required to record your screen on AMD/Intel'
-  'libva-mesa-driver: Required to record your screen on AMD'
-  'libva-intel-driver: Required to record your screen on Intel G45 and HD Graphics family'
-  'intel-media-driver: Required to record your screen on Intel Broadwell or later iGPUs or Intel Arc'
-  'linux-firmware-intel: Required to record your screen on Intel Skylake or later iGPUs'
+    'nvidia-utils: Required to record your screen on NVIDIA'
+    'libxnvctrl: Required when using the -oc option to overclock the NVIDIA GPU to workaround NVIDIA p2 state bug'
+    'mesa: Required to record your screen on AMD/Intel'
+    'libva-mesa-driver: Required to record your screen on AMD'
+    'libva-intel-driver: Required to record your screen on Intel G45 and HD Graphics family'
+    'intel-media-driver: Required to record your screen on Intel Broadwell or later iGPUs or Intel Arc'
+    'linux-firmware-intel: Required to record your screen on Intel Skylake or later iGPUs'
 )
 source=(git+https://repo.dec05eba.com/gpu-screen-recorder#tag=$pkgver)
-sha512sums=('10cbda2782b221383e9d8020ae373a9a22c88e93acef62d0d06c622956a1d70d24877bcec35876877160f3a66adcedd427ea2a952d87c107e10aa5f6ea7dacbf')
+sha512sums=('0670b9d1c0ddba165d96924e70dcb90654be600323a5e5b9f18206b946611f1ca2ac9dbaf909e435de506773204c7d5d0e877e6a9817c11c5cd7f50e4f809ca8')
 
 build() {
   cd "$srcdir"/$pkgname
-  arch-meson build -Dsystemd=true --buildtype=release -Dstrip=true
+  artix-meson build -Dsystemd=false --buildtype=release -Dstrip=true
   meson compile -C build
 }
 
