@@ -1,0 +1,37 @@
+# Maintainer: Andreas Radke <andyrtr@archlinux.org>
+# Contributor: Jan de Groot <jgc@archlinux.org>
+
+pkgname=xorg-xfontsel
+pkgver=1.1.1
+pkgrel=2
+pkgdesc='Point and click selection of X11 font names'
+url='https://xorg.freedesktop.org/'
+arch=('x86_64')
+# The entire source is X11, except the following files that are not installed
+# or belong to the build system and therefore do not contribute to the license
+# of the binary packages:
+#   - FSFAP: INSTALL
+#   - HPND-sell-variant: Makfile.am, Makefile.in, configure.ac
+#   - FSFULLR: aclocal.m4
+#   - GPL-2.0-or-later: compile, depcomp, missing
+#   - GPL-3.0-or-later: config.guess, config,sub
+#   - FSFUL, or perhaps (FSFUL AND X11 AND HPND-sell-variant): configure
+license=('X11')
+makedepends=('xorg-util-macros')
+depends=('libxaw' 'libxmu' 'libxt' 'libx11' 'glibc')
+source=(https://xorg.freedesktop.org/archive/individual/app/xfontsel-${pkgver}.tar.xz{,.sig})
+sha512sums=('fdb1f20dc86e2e74da77ef5e62d9465ea24d1af965f1ff3a6334ffefb239130fcf28f7cde9b4e7d7e6c9cf12fcb637784e7af209cffcee3dbe304025d33abcdd'
+            'SKIP')
+validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # "Alan Coopersmith <alan.coopersmith@oracle.com>"
+
+build() {
+  cd xfontsel-${pkgver}
+  ./configure --prefix=/usr
+  make
+}
+
+package() {
+  cd xfontsel-${pkgver}
+  make DESTDIR="${pkgdir}" install
+  install -Dm644 COPYING "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+}
