@@ -4,7 +4,7 @@
 # Contributor: Michael Irwin <6d6469@gmail.com>
 
 pkgname=memcached
-pkgver=1.6.41
+pkgver=1.6.42
 pkgrel=1
 pkgdesc='Distributed memory object caching system'
 url='https://memcached.org/'
@@ -25,7 +25,7 @@ source=(
   0001-tests-enable-drop_privileges-by-default-for-better-s.patch
   0001-seccomp-extend-syscalls-tested-on-Linux-6.1-with-gli.patch
 )
-b2sums=('4aae4d254239647416835f7c6fcf679c2494720dc847bab5f950de91abd9830ae36f159333b1784acaea325b51be10f3292b520d007d52c8b46aaf308d6a0847'
+b2sums=('43b445521045b2593fdb18bf47268074794d8ac0ae803ad5a398f8ad725ef23a502b8e121afdd0d946ece1e21658961cd8f1373df683af171e0310603a077343'
         '8c008783c4580e07463524c50ee7251cd9828c41d7e98f7516b1500ac538bc3ed0b42ce98987c6852475f0e9fbe135a5168c853626a98d2a021462b01c2dcbe8'
         '9ff28a3bebf84a14afb6413febefd346ec72401dce0ec3330fb0adb23682d89da576f9ef7d0387debabbe548c9386d373cb0d9e340bea039dc6c630db15f50df'
         'c7339653dd4e170c793f3c1e53f035f2bbc41a1a622b91fc31a6eebe7bd177b9173c50d8879b5c6a090f836fba50eeefcaaa867a39daad83e9ef8a7b30bb1888'
