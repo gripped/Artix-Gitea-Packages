@@ -1,10 +1,10 @@
 ---
-version: 0.3.1-5
+version: 0.3.1-6
 pkgbase:
   name: kcolorpicker
   pkgdesc: Qt based Color Picker with popup menu
   pkgver: 0.3.1
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/DamirPorobic/kColorPicker
   arch:
     - x86_64
@@ -14,8 +14,9 @@ pkgbase:
     - cmake
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - qt6-base
   source:
     - git+https://github.com/ksnip/kColorPicker#tag=v0.3.1
@@ -23,4 +24,4 @@ pkgbase:
     - 30e6914d81a79648d8430e30498a7952f4f93b50cd5078ad5d9724ab8ae569eb
 pkgname:
   - name: kcolorpicker
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
