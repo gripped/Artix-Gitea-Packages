@@ -2,7 +2,7 @@
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.0.0-1
+    version: 1.0.0-1.1
     packages:
-      - aml-1.0.0-1-x86_64.pkg.tar.zst
+      - aml-1.0.0-1.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

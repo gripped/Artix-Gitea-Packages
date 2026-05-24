@@ -3,7 +3,7 @@
 
 pkgname=aml
 pkgver=1.0.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Another Main Loop'
 arch=(x86_64)
 url=https://github.com/any1/aml
