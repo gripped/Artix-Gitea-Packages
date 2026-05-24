@@ -13,6 +13,7 @@ sha512sums=('2c1319fdf376ddc5a43190bdd3b8d98557a1cd4d6fb1ec2394e6363c5a52ceccbc0
 
 # Build from the local repo tree (pkg/ lives one level below the repo root).
 _repodir="$startdir/.."
+_repodir=deploytix
 
 prepare() {
     cd "$_repodir"
