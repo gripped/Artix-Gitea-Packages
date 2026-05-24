@@ -1,10 +1,10 @@
 ---
-version: 0.13.1-1
+version: 0.13.1-2
 pkgbase:
   name: python-pycrdt
   pkgdesc: CRDTs based on Yrs
   pkgver: 0.13.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jupyter-server/pycrdt
   arch:
     - x86_64
@@ -22,8 +22,8 @@ pkgbase:
     - python-installer
     - python-maturin
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - python
     - python-anyio
   source:
