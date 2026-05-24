@@ -1,10 +1,10 @@
 ---
-version: 0.5.8-1
+version: 0.5.8-2
 pkgbase:
   name: libetebase
   pkgdesc: Etebase C library
   pkgver: 0.5.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/etesync/libetebase
   arch:
     - x86_64
@@ -14,8 +14,8 @@ pkgbase:
     - git
     - rust
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - libsodium
     - openssl
   source:
@@ -24,4 +24,4 @@ pkgbase:
     - 9c73782d81b9f459cf96b33d35787340dd266d397e70eca3bc31fd9dd2d86f07
 pkgname:
   - name: libetebase
-# generated with artixpkg 0.36.3-1-any
+# generated with artixpkg 0.38.5-1-any
