@@ -2,7 +2,7 @@
 actions:
   addRepo: world-goblins
   removeRepo: null
-  triggersBuild: true
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
