@@ -1,10 +1,10 @@
 ---
-version: 0.13.0-1
+version: 0.13.0-2
 pkgbase:
   name: qcoro
   pkgdesc: C++ Coroutines for Qt
   pkgver: 0.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/danvratil/qcoro
   arch:
     - x86_64
@@ -14,8 +14,9 @@ pkgbase:
     - cmake
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - qt6-base
     - qt6-declarative
     - qt6-websockets
@@ -31,4 +32,4 @@ pkgbase:
     - f6a2d1b8d85a7f9698385aacb0f11038e6b439450b88b51d8397280c6347c24b
 pkgname:
   - name: qcoro
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
