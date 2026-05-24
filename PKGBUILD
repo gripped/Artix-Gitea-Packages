@@ -6,7 +6,7 @@ _url=https://gitea.artixlinux.org/artix/octopi
 pkgbase=octopi
 pkgname=(octopi octopi-notifier)
 pkgver=0.18.1
-pkgrel=2
+pkgrel=3
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -24,7 +24,9 @@ makedepends=(
 )
 depends=(
     glibc
-    gcc-libs
+    #gcc-libs
+    libgcc
+    libstdc++
     qt6-base
     qt6-multimedia
     qtermwidget
