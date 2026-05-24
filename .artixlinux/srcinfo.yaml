@@ -1,9 +1,9 @@
 ---
-version: 7.0.9.rt2.artix1-1
+version: 7.0.10.rt2.artix1-1
 pkgbase:
   name: linux-rt
   pkgdesc: Linux RT
-  pkgver: 7.0.9.rt2.artix1
+  pkgver: 7.0.10.rt2.artix1
   pkgrel: 1
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt
   arch:
@@ -37,36 +37,36 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.9.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.9.tar.sign
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.9-rt2-arch1/downloads/linux-rt-v7.0.9-rt2.patch.sig
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.9-rt2-arch1/downloads/linux-rt-v7.0.9-rt2.patch.zst
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.9-rt2-arch1/downloads/linux-rt-v7.0.9-rt2-arch1.patch.sig
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.9-rt2-arch1/downloads/linux-rt-v7.0.9-rt2-arch1.patch.zst
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.10.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.10.tar.sign
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.10-rt2-arch1/downloads/linux-rt-v7.0.10-rt2.patch.sig
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.10-rt2-arch1/downloads/linux-rt-v7.0.10-rt2.patch.zst
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.10-rt2-arch1/downloads/linux-rt-v7.0.10-rt2-arch1.patch.sig
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt/-/releases/v7.0.10-rt2-arch1/downloads/linux-rt-v7.0.10-rt2-arch1.patch.zst
   validpgpkeys:
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 64254695FFF0AA4466CC19E67B96E8162A8CF5D1
     - 991F6E3F0765CF6295888586139B09DA5BF0D338
   sha512sums:
-    - 326dd0a936aeb4fc9e333a017fa8427835700be3110f16d08659c17557bd63548e06dcb27bdcfe282ddae26ed9489d9ebefd1257f3a785407619907abc369d2f
+    - 6f04fa9ced78f2e7a41dfae7f707f540e7cc6dcd4d3847f0d28df58b2d18a8edb75f98c674ba935538897e89864a06681f4cd56b91f3ea3e1b7f04096cb796e7
     - SKIP
     - SKIP
-    - 4a3ee5146add4fb5003612ea6ec009a91f39c66b06f61154ec5e3fe7a68099e4c63c56f14c07e2fc687b354a26c884099283ddf564d26005d90776119fd2d2d3
+    - 576c1d4e2389e06a774f7461a35111b110bdf38f6c9381c863ef662a7e63a606cee7a8660ca4a824be590d25e8f7aeead0b28b02ce717ce24ad1094839957f3c
     - SKIP
-    - 8abdbba9f333b77f1f357a329a59e1c272956dd20b420918c5d84b61775fb2c88f4c79b4fe582206cab3f229d69d16a033076d584cb61c158ffac2e6ebcb5f10
+    - 3d2a5a914e1139b62e4decaae025f51b1deec04a3568d2d3f143532f750c3ec5c39b861f6e5e368774cebdc41ba98a069664ae8c2c6f5df9a4389a2d7dce8738
   b2sums:
-    - ab7b2f892fb20a54afaf3bfe7d6951a2ebd88742332fb0c516d8041e9989fe20bef39fd21818be71a1fa984aa1122a6496d0ab919b07e646e0ef82a55dae3070
+    - 08dc26e2247186fbfee32ee3251174f8a2e68c6ed6118c0713cb87bb66d427c85b6ae2367af053b158d9ad0d9aaf0846bdebddf84c30558fec89e68ba0dc0957
     - SKIP
     - SKIP
-    - 9b88472319eff458bf70b1b4041dca96cb5543835c687814310895198b8b681789364a59076bf70dae660e4674cfdeaca25c2a07171b88e32a89170bae4c99a1
+    - 99c42e5347bd926aee7af63648c02bb6905e9a7c9019c1420a1fd0e7f1d900b6656e33127bd050f5684c097304793851a2fe38bdfd2a18acd9a62c702a6e5c4f
     - SKIP
-    - 35cd9e9e3bc86e17db0ae47ce31b2616b6536c799e835d813f8c7b2e64f98dd7d1c0a50bd0a9482f0a6954431482bd9587e35db4d539ac30cb610f51ce6f522c
+    - ffa8e028e38a75be25cda6664e2706478b060e12ead9912783ad7883c879c73966f6bd702be2e239486e13fbe07fb6d03440a918a49dd73b47128d1754113588
   source_x86_64:
     - config.x86_64
   sha512sums_x86_64:
-    - 45d7d224fb9efa6f3cb18d94a1b62cbf3387f25feda67875295cee3089a5ad390635ff0f299bcaa9c93d83e63b5be5095c8c9a144e6951f1afce5b9c0bfcb753
+    - 40638eb19b1c34eae6da7fe39040599d2b71e487f22718cd4c79206591f3c2b3dc58a22e124e1b9a37292fdd88f59efd36f6b09008a151aac547b353536acfcc
   b2sums_x86_64:
-    - cf31c452642a839b264c8780adf591f2119bec32f39273849eae0322f12e81b50e31f8d3342a34af97bd64ddd0c4a60d2d3aed8a4a07358060cf3d5ecdde7c5f
+    - ad52cef9d267e0b8770da7e204e01bcb3124dc7cac024af8fd7aac259b34cd9cfbb2988c7b6fe5a137f8404b67f147aaf4c059ff6ba1d22a40a42483d8e94c86
 pkgname:
   - name: linux-rt
     pkgdesc: The Linux RT kernel and modules
