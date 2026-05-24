@@ -1,0 +1,21 @@
+---
+version: 0.3-6
+pkgbase:
+  name: nss-myhostname
+  pkgdesc: NSS plugin providing host name resolution for the locally configured system hostname
+  pkgver: 0.3
+  pkgrel: 6
+  url: http://0pointer.de/lennart/projects/nss-myhostname/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  depends:
+    - glibc
+  source:
+    - http://0pointer.de/lennart/projects/nss-myhostname/nss-myhostname-0.3.tar.gz
+  sha256sums:
+    - 2ba744ea8d578d1c57c85884e94a3042ee17843a5294434d3a7f6c4d67e7caf2
+pkgname:
+  - name: nss-myhostname
+# generated with artixpkg 0.38.5-1-any

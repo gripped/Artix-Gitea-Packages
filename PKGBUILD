@@ -4,14 +4,14 @@
 
 pkgname="nss-myhostname"
 pkgver=0.3
-pkgrel=5
+pkgrel=6
 pkgdesc="NSS plugin providing host name resolution for the locally configured system hostname"
 arch=(x86_64)
 url="http://0pointer.de/lennart/projects/nss-myhostname/"
-license=('LGPL2.1')
+license=('LGPL-2.1-only')
 depends=('glibc')
 source=("http://0pointer.de/lennart/projects/${pkgname}/${pkgname}-${pkgver}.tar.gz")
-md5sums=('d4ab9ac36c053ab8fb836db1cbd4a48f')
+sha256sums=('2ba744ea8d578d1c57c85884e94a3042ee17843a5294434d3a7f6c4d67e7caf2')
 
 build() {
   cd "${srcdir}/${pkgname}-${pkgver}"
@@ -27,4 +27,3 @@ package() {
   cd "$srcdir/${pkgname}-${pkgver}"
   make DESTDIR="${pkgdir}" install
 }
-
