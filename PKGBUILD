@@ -4,7 +4,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.152.4
+pkgver=6.152.9
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -38,6 +38,7 @@ checkdepends=(
   python-pytest
   python-pytest-xdist
   python-pytz
+  python-scipy
   python-syrupy
   python-watchdog
 )
@@ -59,8 +60,8 @@ optdepends=(
   'python-watchdog: for tracking file system events'
 )
 source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('1852496a3b457e45567b5e0ee5e48b21a07989f5e690d51c5c36f06d12d93273cc5c0f707172a4d12ac4b989f2b0ae92d42a976017ffebf39179f5d7727f3062')
-b2sums=('4d99fce4eaf2dd2271f62cb53cd63b70d6b9a456b0b500c38f82bfe51545da81abc3d0438360796ec2f7557dc3080876834d2ac72629e60d7d739763677df4e7')
+sha512sums=('dc592756188a93819e405bdf777bd43827b0f407b838fd6095135dd9ad149c8f0c7e870644736ee78a7a5f595b8fc11f12e07c0d2d4c86d09968520f7c8f16a5')
+b2sums=('03d61e9a8a75ac43fafaeeda1af4db0bba8ebf36e4ff9878a94e4d33f59efeaa32c12ce625f79ef37c6e6ff5dcafd45e6aac88eeb217315a6a1d9f373c005383')
 
 prepare() {
   cd $pkgname/hypothesis-python
@@ -79,6 +80,8 @@ check() {
   test-env/bin/python -m installer dist/*.whl
   local pytest_options=(
     -vv
+    # ignore deprecation warnings
+    -W=ignore::DeprecationWarning
     # Run tests in parallel, takes forever otherwise
     -n auto
     # Keep rootdir at hypothesis-python/ so --deselect node ids resolve
@@ -89,27 +92,9 @@ check() {
     --ignore=tests/crosshair/test_crosshair.py
     # Fails with AssertionError for some reason
     --ignore=tests/nocover/test_scrutineer.py
+    # fails with mismatch for some reason
+    --deselect 'tests/snapshots/test_always_failing.py::test_always_failing[emails]'
 
-    # Fails for some reason
-    --ignore=tests/pytest/test_capture.py # ::test_healthcheck_traceback_is_hidden
-    --ignore=tests/pytest/test_fixtures.py # ::test_given_fails_if_already_decorated_with_fixture
-    --ignore=tests/watchdog/test_database.py
-    --ignore=tests/nocover/test_argument_validation.py
-
-    # Fails due to health check too slow for some reason
-    --deselect=tests/nocover/test_stateful.py::test_unrelated_rule_does_not_use_var_reference_repr
-
-    # Flaky: Phase.explain's scrutineer traces syrupy lines once the
-    # plugin is loaded, diverging from the expected output
-    --deselect=tests/cover/test_custom_reprs.py::test_reprs_as_created
-    --deselect=tests/conjecture/test_inquisitor.py::test_inquisitor_doesnt_break_on_varying_forced_nodes
-
-    -W=ignore::DeprecationWarning
-
-    # Fail with numpy 2.4
-    --ignore=tests/numpy/test_floor_ceil.py
-    --ignore=tests/numpy/test_from_type.py
-    --ignore=tests/ghostwriter/test_expected_output.py
   )
   PATH="$PWD/test-env/bin:$PATH" test-env/bin/python -m pytest \
     "${pytest_options[@]}" tests/
