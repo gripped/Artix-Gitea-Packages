@@ -5,7 +5,7 @@ _artix_url=https://gitea.artixlinux.org/artix/calamares
 
 pkgname=calamares
 pkgver=3.4.2
-pkgrel=3
+pkgrel=4
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://codeberg.org/Calamares/calamares"
@@ -17,21 +17,57 @@ license=(
     'LGPL-2.1-only'
     'LGPL-3.0-or-later'
     'MIT')
-depends=('bash' 'glibc' 'gcc-libs' 'hwinfo' 'icu' 'libxcrypt' 'libpwquality'
-        'parted' 'yaml-cpp' 'qt6-base' 'qt6-svg' 'qt6-declarative' 'qt6-location'
-        'kirigami' 'kcoreaddons' 'kconfig' 'kcrash' 'kparts' 'kpackage'
-        'plasma-integration' 'kpmcore' 'polkit-qt6'
-        'gtk-update-icon-cache' 'ckbcomp' 'python'
-        'python-jsonschema' 'python-toml' 'python-pyyaml'
-        'hicolor-icon-theme') #'appstream-qt6'
-makedepends=('extra-cmake-modules' 'qt6-tools' 'qt6-translations' 'git')
-provides=('libcalamares.so' 'libcalamaresui.so')
-optdepends=('calamares-extensions: Artix extensions and branding')
+depends=(
+    #'appstream-qt6'
+    'bash'
+    'glibc'
+    'libgcc'
+    'libstdc++'
+    'hwinfo'
+    'icu'
+    'libxcrypt'
+    'libpwquality'
+    'parted'
+    'yaml-cpp'
+    'qt6-base'
+    'qt6-svg'
+    'qt6-declarative'
+    'qt6-location'
+    'kirigami'
+    'kcoreaddons'
+    'kconfig'
+    'kcrash'
+    'kparts'
+    'kpackage'
+    'plasma-integration'
+    'kpmcore'
+    'polkit-qt6'
+    'gtk-update-icon-cache'
+    'ckbcomp'
+    'python'
+    'python-jsonschema'
+    'python-toml'
+    'python-pyyaml'
+    'hicolor-icon-theme'
+)
+makedepends=(
+    'extra-cmake-modules'
+    'qt6-tools'
+    'qt6-translations'
+    'git'
+)
+provides=(
+    'libcalamares.so'
+    'libcalamaresui.so'
+)
+optdepends=(
+    'calamares-extensions: Artix extensions and branding'
+)
 source=(
-        "git+${url}.git#tag=v$pkgver"
-        0001-packagechooser-customize-qrc.patch
-        0002-if-license.patch
-        0003-packagechooser-add-if-png.patch
+    "git+${url}.git#tag=v$pkgver"
+    0001-packagechooser-customize-qrc.patch
+    0002-if-license.patch
+    0003-packagechooser-add-if-png.patch
 )
 sha256sums=('c1748d8eda8c11bbe586cd1d22a133e63354c9995a5755c9a9ea9fae94788af7'
             '893e55d56557bc422cab095f9d303863240d883797e3920ff5a165b3618bb29d'
