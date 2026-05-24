@@ -1,8 +1,8 @@
 ---
-team: galaxy
+team: world
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -30,9 +30,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 20240818-1
+    version: 20260524-1
     packages:
-      - ly-dinit-20240818-1-any.pkg.tar.zst
+      - ly-dinit-20260524-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
@@ -55,7 +55,6 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260524-1
-    packages:
-      - ly-dinit-20260524-1-any.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
