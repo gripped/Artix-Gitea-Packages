@@ -1,0 +1,39 @@
+---
+version: 1.4.0-3
+pkgbase:
+  name: esettingsd
+  pkgdesc: System settings D-Bus service for non-OpenRC systems
+  pkgver: 1.4.0
+  pkgrel: 3
+  url: https://gitlab.com/postmarketOS/openrc-settingsd
+  arch:
+    - x86_64
+  license:
+    - GPL-1.0-or-later
+  makedepends:
+    - glib2-devel
+    - meson
+    - python-packaging
+  depends:
+    - libgcc
+    - glibc
+    - glib2
+    - libdaemon
+    - dbus
+    - polkit
+    - nss-myhostname
+  provides:
+    - settingsd
+  conflicts:
+    - openrc-settingsd
+  source:
+    - https://gitlab.com/postmarketOS/openrc-settingsd/-/archive/v1.4.0/openrc-settingsd-v1.4.0.tar.gz
+    - artix.patch
+    - ntp.patch
+  sha256sums:
+    - 9d09e02de0faf15ee9a6a742586cf9b1a314591ec50f84e2513636ecfe4f2ff3
+    - 177aef1c2dfe37b645ae46f34cbd969d6a3215abbdfb155726dfc01bdf81f7eb
+    - 392c13c918f58be216a0420af0a7a3f367831b0e5f7fc39e3608f6d8e7b317b5
+pkgname:
+  - name: esettingsd
+# generated with artixpkg 0.38.5-1-any
