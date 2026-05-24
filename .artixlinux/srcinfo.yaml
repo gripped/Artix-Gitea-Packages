@@ -1,10 +1,10 @@
 ---
-version: 20260313-13
+version: 20260313-16
 pkgbase:
   name: vhba-module
   pkgdesc: Virtual SCSI adapter - Linux modules
   pkgver: 20260313
-  pkgrel: 13
+  pkgrel: 16
   url: https://cdemu.sourceforge.io/
   arch:
     - x86_64
