@@ -1,9 +1,9 @@
 ---
-version: 0.21.0-1
+version: 0.22.0-1
 pkgbase:
   name: dinit
   pkgdesc: Service monitoring/init system
-  pkgver: 0.21.0
+  pkgver: 0.22.0
   pkgrel: 1
   url: https://github.com/davmac314/dinit
   arch:
@@ -12,17 +12,19 @@ pkgbase:
     - Apache-2.0
   makedepends:
     - git
-    - gcc-libs
-    - glibc
-  depends:
+    - gcc15-libs
+    - gcc15
     - libcap
+    - libgcc
+    - libstdc++
+    - glibc
   source:
-    - git+https://github.com/davmac314/dinit.git#tag=v0.21.0
-    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.2
+    - git+https://github.com/davmac314/dinit.git#tag=v0.22.0
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.5
     - dinit-init
   sha256sums:
-    - 5fdcc804d70e82223bd85ebb9f5e86dc0f95793132256e027da41f71e4b3c623
-    - 3fcb8e642f8219ec9ce774032a746c07722bb48cd8e5f989806ad73d9eefb505
+    - 36f20dad36baaeda030fd9633874ed7df57b8d6c28db5fb2ede0a37579e7802b
+    - 987e908f28a06ef4c577e4dda286d9111a226837c92d44b659ca8b164caf9ea4
     - e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b
 pkgname:
   - name: dinit
@@ -30,7 +32,8 @@ pkgname:
     depends:
       - dinit-base
       - dinit-rc
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - sh
     provides:
@@ -42,5 +45,7 @@ pkgname:
     install: dinit.install
     depends:
       - glibc
-      - gcc-libs
-# generated with artixpkg 0.37.6-1-any
+      - libcap
+      - libgcc
+      - libstdc++
+# generated with artixpkg 0.38.5-1-any

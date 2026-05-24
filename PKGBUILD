@@ -1,11 +1,11 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 # Contributor: Artoo <artoo@artixlinux.org>
 
-_alpm=2.4.2
+_alpm=2.4.5
 
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
-pkgver=0.21.0
+pkgver=0.22.0
 pkgrel=1
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
@@ -13,26 +13,32 @@ url="https://github.com/davmac314/dinit"
 license=('Apache-2.0')
 makedepends=(
     'git'
-    'gcc-libs'
+    # fails to compile with gcc16
+    'gcc15-libs'
+    'gcc15'
+    'libcap'
+    'libgcc'
+    'libstdc++'
     'glibc'
 )
-depends=('libcap')
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
         "dinit-init")
-sha256sums=('5fdcc804d70e82223bd85ebb9f5e86dc0f95793132256e027da41f71e4b3c623'
-            '3fcb8e642f8219ec9ce774032a746c07722bb48cd8e5f989806ad73d9eefb505'
+sha256sums=('36f20dad36baaeda030fd9633874ed7df57b8d6c28db5fb2ede0a37579e7802b'
+            '987e908f28a06ef4c577e4dda286d9111a226837c92d44b659ca8b164caf9ea4'
             'e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b')
 
 build() {
-    make -C "$pkgname"
+    make -C "$pkgname" CXX=/usr/bin/g++-15
 }
 
 package_dinit-base() {
     pkgdesc='Service monitoring/init system -- base package'
     depends=(
         'glibc'
-        'gcc-libs'
+        'libcap'
+        'libgcc'
+        'libstdc++'
     )
     install=dinit.install
 
@@ -44,7 +50,8 @@ package_dinit() {
     depends=(
         'dinit-base'
         'dinit-rc'
-        'gcc-libs'
+        'libgcc'
+        'libstdc++'
         'glibc'
         'sh'
     )
