@@ -1,8 +1,7 @@
 type            = process
-restart         = true
+command         = /usr/bin/ly-dm
 smooth-recovery = true
-command         = /usr/bin/$EXE_NAME
-depends-on      = loginready
-termsignal      = HUP
+depends-on      = login.target
+logfile         = /var/log/dinit/ly.log
 # ly needs access to the console while loginready already occupies it
 options         = shares-console

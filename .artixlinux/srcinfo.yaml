@@ -1,0 +1,30 @@
+---
+version: 20260524-1
+pkgbase:
+  name: ly-dinit
+  pkgdesc: dinit service script for ly
+  pkgver: 20260524
+  pkgrel: 1
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - ly
+    - dinit
+  provides:
+    - init-ly
+    - init-displaymanager
+  conflicts:
+    - init-ly
+    - init-displaymanager
+  source:
+    - ly
+  sha256sums:
+    - a5a8bb4ead7faf08eb0ccbabe1d4af3e2a1596ca45c0e9c1ace8ae0af3f3250b
+pkgname:
+  - name: ly-dinit
+# generated with artixpkg 0.38.5-1-any

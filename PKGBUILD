@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=ly-dinit
-pkgver=20240818
+pkgver=20260524
 pkgrel=1
 pkgdesc="dinit service script for ly"
 arch=('any')
@@ -12,7 +12,7 @@ groups=('dinit-world')
 provides=('init-ly' 'init-displaymanager')
 conflicts=('init-ly' 'init-displaymanager')
 source=("ly")
-sha256sums=('7454c14f8a3ca4b67e030c29c59e9b32b2ab564f4aa4d17a0e5812a7f8a6dade')
+sha256sums=('a5a8bb4ead7faf08eb0ccbabe1d4af3e2a1596ca45c0e9c1ace8ae0af3f3250b')
 
 package() {
     install -Dm644 ly "$pkgdir/etc/dinit.d/ly"
