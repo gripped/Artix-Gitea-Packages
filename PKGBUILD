@@ -6,7 +6,7 @@ _alpm=2.4.5
 
 pkgname="dinit-user-spawn"
 pkgver=1.0.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Launches a user process dinit for you on login'
 arch=('x86_64')
 url='https://github.com/initMayday/dinit-user-spawn'
@@ -19,11 +19,12 @@ makedepends=(
     git
 )
 depends=(
-    gcc-libs
+    bash
     glibc
+    libgcc
+    libstdc++
     tomlplusplus
     'dinit-base>=0.19.4-8'
-    bash
 )
 conflicts=(
     'dinit<=0.19.4-7' # dbus hook
