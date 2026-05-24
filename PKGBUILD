@@ -6,16 +6,13 @@ _alpm=2.4.5
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.22.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
 license=('Apache-2.0')
 makedepends=(
     'git'
-    # fails to compile with gcc16
-    'gcc15-libs'
-    'gcc15'
     'libcap'
     'libgcc'
     'libstdc++'
@@ -29,7 +26,7 @@ sha256sums=('36f20dad36baaeda030fd9633874ed7df57b8d6c28db5fb2ede0a37579e7802b'
             'e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b')
 
 build() {
-    make -C "$pkgname" CXX=/usr/bin/g++-15
+    make -C "$pkgname" CXXFLAGS+="-std=c++17"
 }
 
 package_dinit-base() {
