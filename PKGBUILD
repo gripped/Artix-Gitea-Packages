@@ -1,7 +1,8 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Andri Yngvason <andri@yngvason.is>
 
 pkgname=wayvnc
-pkgver=0.9.1
+pkgver=0.10.0
 pkgrel=1
 pkgdesc='VNC server for wlroots-based Wayland compositors'
 arch=(x86_64)
@@ -18,19 +19,23 @@ depends=(
   wayland
 )
 makedepends=(
+  git
   meson
   ninja
   pam
   scdoc
 )
 optdepends=('pam: PAM authentication')
-source=("${url}/archive/refs/tags/v${pkgver}.tar.gz"
-        LICENSE)
-b2sums=('64702ff290776eb2fde8002615c791853d1158465229a3136655c05de50f34f1214c851888679c1e1949500c90aaa51ce460b07fc5658edf043eff0d46971c2d'
-        'c0afb2f05920179b4dc49c46e682244866f8c053a720b5ef93a9939ae721405d340741e15b05e9ea7dc8874111562cd932de2d6ac305589760119307a5f543d5')
+_tag=23fa174e3832841b5730789ded7fe38caf6bce88
+source=(
+  git+https://github.com/any1/wayvnc.git#tag=${_tag}
+)
+b2sums=('cf572306cc49e8c881c88ba4ff082189f4f99e163ff9db96257eebb37a5d529a55655251d1fb2388b6849916d0440f73e5c4db27c61cb2cd5adac236cff741d0'
+        '083d7ddbf353d06126b76152e51807ed7572684e0c995b71802fcf36ca133c48401126907fcac657271bf9590b4a304a103f7bf9104b73e0699af98f7388f65c')
+
 
 build() {
-  artix-meson "${pkgname}-${pkgver}" build \
+  artix-meson wayvnc build \
     -Dman-pages=enabled \
     -Dpam=enabled
   meson compile -C build
@@ -38,8 +43,8 @@ build() {
 
 package() {
   DESTDIR="${pkgdir}" meson install -C build
-  install -Dm 644 "${pkgname}-${pkgver}/${pkgname}.pam" "${pkgdir}/etc/pam.d/${pkgname}"
-  install -Dm 644 "${srcdir}/LICENSE" -t "${pkgdir}/usr/share/licenses/${pkgname}"
-  install -Dm 644 "${pkgname}-${pkgver}/COPYING" -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm 644 wayvnc/wayvnc.pam "${pkgdir}"/etc/pam.d/wayvnc
+  install -Dm 644 wayvnc/COPYING -t "${pkgdir}"/usr/share/licenses/wayvnc
 }
 
+# vim: ts=2 sw=2 et:
