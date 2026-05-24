@@ -16,7 +16,9 @@ _repodir="$startdir/.."
 prepare() {
 echo "fuck rust and $_repodir"
 ls
+cp Cargo.toml $_repodir/
     cd "$_repodir"
+ls
     export RUSTUP_TOOLCHAIN=stable
     cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
