@@ -1,10 +1,10 @@
 ---
-version: 0.18.1-3
+version: 0.19.0-1
 pkgbase:
   name: octopi
   pkgdesc: This is Octopi, a powerful Pacman frontend using Qt libs
-  pkgver: 0.18.1
-  pkgrel: 3
+  pkgver: 0.19.0
+  pkgrel: 1
   url: https://tintaescura.com/projects/octopi/
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - qt6-tools
     - qt6-5compat
+    - qt6-svg
     - qt-sudo
     - cmake
     - kstatusnotifieritem
@@ -28,13 +29,13 @@ pkgbase:
     - qt6-multimedia
     - qtermwidget
   source:
-    - git+https://github.com/aarnt/octopi.git#tag=v0.18.1
-    - octopi-0.18.1-use-liboctopi.patch::https://gitea.artixlinux.org/artix/octopi/commit/c1b25f836655801965c088e0889f4625b6981c11.patch
-    - octopi-0.18.1-qt-sudo-config.patch::https://gitea.artixlinux.org/artix/octopi/commit/df63eb937131e8de96d02a4e3c122c6b6aa16e54.patch
+    - git+https://github.com/aarnt/octopi.git#tag=v0.19.0
+    - octopi-0.19.0-use-liboctopi.patch::https://gitea.artixlinux.org/artix/octopi/commit/ffcf28bb34114a70fa310351ac8e0da7a85d02a7.patch
+    - octopi-0.19.0-use-qt-sudo-config.patch::https://gitea.artixlinux.org/artix/octopi/commit/9a19bc397d57f48f382813ab0a3a7ba5906b736c.patch
   sha256sums:
-    - 85d2c578cf75df8e2cdf7622f245756881679c998971c77c2a5f7034d786d652
-    - 0fcd1e0ba9f7a078131204e9124de6125b081c311b0d27f0541eff5777ab9f2e
-    - 3405f5bcea260af3d1549bce94572f7d13559a32bebb12b6fae79ac0f7cb5b92
+    - 7c56e17fcecd3da460a9c576ddb325194d7f45ab6d61b5b91ba55fb8ff348016
+    - fdb0b45cdd8832610fdb41dfb5406142ef36cf9afd64a2b37670e2600352127f
+    - 57fcc21dea45e0b981bc12b11d351b70b9bd6d299ff63a452e23b3299088d606
 pkgname:
   - name: octopi
     depends:

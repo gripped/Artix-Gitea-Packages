@@ -5,8 +5,8 @@ _url=https://gitea.artixlinux.org/artix/octopi
 
 pkgbase=octopi
 pkgname=(octopi octopi-notifier)
-pkgver=0.18.1
-pkgrel=3
+pkgver=0.19.0
+pkgrel=1
 pkgdesc='This is Octopi, a powerful Pacman frontend using Qt libs'
 arch=('x86_64')
 license=('GPL-2.0-or-later')
@@ -14,6 +14,7 @@ url="https://tintaescura.com/projects/octopi/"
 makedepends=(
     qt6-tools
     qt6-5compat
+    qt6-svg
     qt-sudo
     cmake
     kstatusnotifieritem
@@ -24,7 +25,6 @@ makedepends=(
 )
 depends=(
     glibc
-    #gcc-libs
     libgcc
     libstdc++
     qt6-base
@@ -33,19 +33,19 @@ depends=(
 )
 source=(
     "git+https://github.com/aarnt/octopi.git#tag=v$pkgver"
-    "$pkgbase-$pkgver-use-liboctopi.patch::$_url/commit/c1b25f836655801965c088e0889f4625b6981c11.patch"
-    "$pkgbase-$pkgver-qt-sudo-config.patch::$_url/commit/df63eb937131e8de96d02a4e3c122c6b6aa16e54.patch"
+    "$pkgbase-$pkgver-use-liboctopi.patch::$_url/commit/ffcf28bb34114a70fa310351ac8e0da7a85d02a7.patch"
+    "$pkgbase-$pkgver-use-qt-sudo-config.patch::$_url/commit/9a19bc397d57f48f382813ab0a3a7ba5906b736c.patch"
 )
-sha256sums=('85d2c578cf75df8e2cdf7622f245756881679c998971c77c2a5f7034d786d652'
-            '0fcd1e0ba9f7a078131204e9124de6125b081c311b0d27f0541eff5777ab9f2e'
-            '3405f5bcea260af3d1549bce94572f7d13559a32bebb12b6fae79ac0f7cb5b92')
+sha256sums=('7c56e17fcecd3da460a9c576ddb325194d7f45ab6d61b5b91ba55fb8ff348016'
+            'fdb0b45cdd8832610fdb41dfb5406142ef36cf9afd64a2b37670e2600352127f'
+            '57fcc21dea45e0b981bc12b11d351b70b9bd6d299ff63a452e23b3299088d606')
 
 prepare() {
     cd "$pkgbase"
     git apply ../"$pkgbase-$pkgver"-use-liboctopi.patch
-    git apply ../"$pkgbase-$pkgver"-qt-sudo-config.patch
+    git apply ../"$pkgbase-$pkgver"-use-qt-sudo-config.patch
 
-    cp resources/images/octopi_green.png resources/images/octopi.png
+    cp resources/images/octopi-svg-green.svg resources/images/octopi.svg
 }
 
 build() {
