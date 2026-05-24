@@ -2,8 +2,8 @@
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
 
 pkgname=lld
-pkgver=22.1.5
-pkgrel=4
+pkgver=22.1.6
+pkgrel=1
 pkgdesc="Linker from the LLVM project"
 arch=('x86_64')
 url="https://lld.llvm.org/"
@@ -13,7 +13,7 @@ makedepends=('llvm' 'cmake' 'ninja' 'python-sphinx')
 _source_base=https://github.com/llvm/llvm-project/releases/download/llvmorg-$pkgver
 source=($_source_base/llvm-project-$pkgver.src.tar.xz{,.sig}
         lld-pr-198129.patch::https://github.com/llvm/llvm-project/commit/0067516ad7f0fc47a15c8fc7564e0e4daf01f92e.patch)
-sha256sums=('7972b87b705a003ce70ab55f9f0fb495d156887cba0eb296d284731139118e2c'
+sha256sums=('6e0b376a1f6d9873e7dfb09ae6e04b9c7024400f01733fa4c29be69d5c138bc2'
             'SKIP'
             'b786a6f7b6f4178de705fec4918805498e5f52546f6de7679834cdf0238f7e74')
 validpgpkeys=('474E22316ABF4785A88C6E8EA2C794A986419D8A'  # Tom Stellard <tstellar@redhat.com>
