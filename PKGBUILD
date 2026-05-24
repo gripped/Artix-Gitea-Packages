@@ -8,31 +8,52 @@
 
 pkgname=poco
 pkgver=1.15.3
-_pkgver=${pkgver/_/}
-pkgrel=1
+pkgrel=2
 pkgdesc="C++ class libraries for network-centric, portable applications, complete edition with debug libraries"
 arch=('x86_64')
-url="http://www.pocoproject.org/"
-license=('custom:boost')
-depends=('mariadb-libs' 'openssl' 'unixodbc')
+url="https://pocoproject.org/"
+_url='https://github.com/pocoproject/poco'
+license=(BSL-1.0)
+depends=('glibc' 'libgcc' 'libstdc++' 'mariadb-libs' 'openssl' 'unixodbc')
 makedepends=('cmake' 'ninja')
-source=("https://pocoproject.org/releases/poco-${_pkgver}/poco-${_pkgver}-all.tar.bz2")
-sha256sums=('562a1ba1a6db4665f81091c35e997b73f87e1b45e2ab2854cd720d2349518abc')
+provides=(
+  libPocoActiveRecord.so
+  libPocoCrypto.so
+  libPocoData.so
+  libPocoDataMySQL.so
+  libPocoDataODBC.so
+  libPocoDataSQLite.so
+  libPocoEncodings.so
+  libPocoFoundation.so
+  libPocoJSON.so
+  libPocoJWT.so
+  libPocoMongoDB.so
+  libPocoNet.so
+  libPocoNetSSL.so
+  libPocoPrometheus.so
+  libPocoRedis.so
+  libPocoUtil.so
+  libPocoXML.so
+  libPocoZip.so
+)
+source=("$_url/archive/refs/tags/$pkgname-$pkgver-release.tar.gz")
+sha256sums=('4f112fea59e0c65f0fffe30a4957f8d66cf41528c21dd9903e6d7550022c794e')
 
 build() {
-  cd "poco-${_pkgver}-all"
+  local cmake_options=(
+    -B build
+    -G Ninja
+    -D CMAKE_BUILD_TYPE=Release
+    -D CMAKE_INSTALL_PREFIX=/usr
+    -S "$pkgname-$pkgname-$pkgver-release"
+    -W no-dev
+  )
 
-  cmake \
-    -GNinja \
-    -Bbuild \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_BUILD_TYPE=Release
-  ninja -C build
+  cmake "${cmake_options[@]}"
+  cmake --build build --verbose
 }
 
 package() {
-  cd "poco-${_pkgver}-all"
-
-  DESTDIR="${pkgdir}" ninja -C build install
-  install -Dm644 LICENSE "${pkgdir}/usr/share/licenses/poco/LICENSE"
+  DESTDIR="${pkgdir}" cmake --install build
+  install -vDm 644 "$pkgname-$pkgname-$pkgver-release"/LICENSE -t "${pkgdir}/usr/share/licenses/$pkgname/"
 }
