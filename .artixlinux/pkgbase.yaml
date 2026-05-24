@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.36-1
+    version: 0.37-1
     packages:
-      - perl-file-mimeinfo-0.36-1-any.pkg.tar.zst
+      - perl-file-mimeinfo-0.37-1-any.pkg.tar.zst
     debug: []
