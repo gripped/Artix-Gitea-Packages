@@ -6,8 +6,8 @@ _pkgname=userspawn
 _alpm=2.4.6
 
 pkgname=userspawn-dinit
-pkgver=1.0.0
-pkgrel=2
+pkgver=1.1.0
+pkgrel=1
 pkgdesc='Launch anything, upon any user login'
 arch=('x86_64')
 url='https://github.com/Mayware/userspawn'
@@ -38,13 +38,12 @@ source=(
     'userspawn.dinit'
     'userspawnrc'
 )
-sha256sums=('4ef5491ce4abe731570ebe1eb4618b7ecdfff6d9634ad218fa4d117a24c59215'
+sha256sums=('29970fec753883a5343677e069d9442835551f992d0e848540c6975db047705b'
             '934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5'
             'd8c25ab527c654c6c6c808033a7575165c54f2a834e92e0a7b7f55ded22f0fce'
-            '2395a270d8bde963d6056b01dc7429075500dbc70ab9041a3dbfe010f6c77763')
+            '67e9cc520c4d0f5dc57ec7219b21ed8db8723c128043a5902426408430afaeda')
 
 _backports=(
-    34022fbf1e97fee59f91d31285d3552b03108062 # xdg config
 )
 
 _reverts=(
