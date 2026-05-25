@@ -7,7 +7,7 @@ _alpm=2.4.6
 
 pkgname=userspawn-dinit
 pkgver=1.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Launch anything, upon any user login'
 arch=('x86_64')
 url='https://github.com/Mayware/userspawn'
@@ -15,6 +15,7 @@ license=('LGPL-3.0-or-later')
 makedepends=('cmake' 'git' 'ninja')
 depends=(
     'dbus'
+    'dbus-dinit'
     'dinit-base'
     'libstdc++'
     'libgcc'
@@ -28,6 +29,7 @@ provides=(
 conflicts=(
     'init-userspawn'
     'dinit-user-spawn'
+    'turnstile-dinit'
 )
 replaces=(
     'dinit-user-spawn'
