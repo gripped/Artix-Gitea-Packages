@@ -3,7 +3,7 @@
 
 pkgname=dinit-rc
 pkgver=0.6.6
-pkgrel=1
+pkgrel=2
 pkgdesc="rc files for dinit"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/dinit-rc"
@@ -23,8 +23,8 @@ optdepends=(
     'cryptsetup-dinit: Encrypted disks support'
     'lvm2-dinit: LVM support'
     'mdadm-dinit: MD devices support'
-    'turnstile-dinit: manage dinit user services'
-    'dinit-user-spawn: manage dinit user services'
+    #'turnstile-dinit: manage dinit user services'
+    'userspawn-dinit: manage dinit user services'
 )
 provides=(
     'init-udev'
