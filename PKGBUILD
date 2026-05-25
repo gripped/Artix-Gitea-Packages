@@ -7,7 +7,7 @@ _alpm=2.4.6
 
 pkgname=userspawn-dinit
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Launch anything, upon any user login'
 arch=('x86_64')
 url='https://github.com/Mayware/userspawn'
@@ -29,9 +29,9 @@ conflicts=(
     'init-userspawn'
     'dinit-user-spawn'
 )
-# replaces=(
-#     'dinit-user-spawn'
-# )
+replaces=(
+    'dinit-user-spawn'
+)
 source=(
     "git+$url.git#tag=v$pkgver"
     "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
@@ -46,9 +46,6 @@ sha256sums=('29970fec753883a5343677e069d9442835551f992d0e848540c6975db047705b'
 _backports=(
 )
 
-_reverts=(
-)
-
 prepare() {
     cd "$_pkgname"
 
@@ -56,10 +53,6 @@ prepare() {
     for _c in "${_backports[@]}"; do
         git log --oneline -1 "${_c}"
         git cherry-pick -n "${_c}"
-    done
-    for _c in "${_reverts[@]}"; do
-        git log --oneline -1 "${_c}"
-        git revert -n "${_c}"
     done
 }
 
