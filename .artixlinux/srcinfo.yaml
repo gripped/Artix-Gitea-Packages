@@ -1,10 +1,10 @@
 ---
-version: 2.20.1-1
+version: 2.20.1-2
 pkgbase:
   name: cppcheck
   pkgdesc: A tool for static C/C++ code analysis
   pkgver: 2.20.1
-  pkgrel: 1
+  pkgrel: 2
   url: http://cppcheck.sourceforge.net/
   arch:
     - x86_64
@@ -27,7 +27,6 @@ pkgbase:
     - python
     - python-pygments
     - tinyxml2
-    - pcre
   optdepends:
     - 'qt6-tools: run cppcheck-gui'
     - 'clang: for cppcheck-gui integration'
