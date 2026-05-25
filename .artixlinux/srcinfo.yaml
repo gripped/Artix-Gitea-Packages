@@ -1,16 +1,17 @@
 ---
-version: 1.9.0-9
+version: 1.10.0-1
 pkgbase:
   name: rrdtool
   pkgdesc: Data logging and graphing application
-  pkgver: 1.9.0
-  pkgrel: 9
+  pkgver: 1.10.0
+  pkgrel: 1
   url: https://www.rrdtool.org
   arch:
     - x86_64
   license:
     - GPL-2.0-or-later
   makedepends:
+    - git
     - intltool
     - ruby
     - python-setuptools
@@ -31,11 +32,9 @@ pkgbase:
     - '!emptydirs'
     - '!makeflags'
   source:
-    - https://github.com/oetiker/rrdtool-1.x/releases/download/v1.9.0/rrdtool-1.9.0.tar.gz
-    - link_ruby_bindings.patch
+    - git+https://github.com/oetiker/rrdtool-1.x.git#tag=v1.10.0
   sha256sums:
-    - 5e65385e51f4a7c4b42aa09566396c20e7e1a0a30c272d569ed029a81656e56b
-    - 1b5c63d0dc1e2db68dc36d6e462c8544c34c0d7dabcf537731c24871282e8af9
+    - ee7c33f112deac491682dff2b6523a536ce220b8d930dc34dd47263a1e1b6bcf
 pkgname:
   - name: rrdtool
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
