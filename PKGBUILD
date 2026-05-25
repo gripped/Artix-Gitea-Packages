@@ -10,7 +10,7 @@ pkgname=(
   lib32-pipewire-v4l2
 )
 pkgver=1.6.5
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
 url="https://pipewire.org"
@@ -33,8 +33,9 @@ prepare() {
   cd pipewire
    patch -Np1 -i ../systemd.patch
 
-  # Fix build
-  git cherry-pick -n fb47e739d9f605772b5098421a809537c108d30c
+  # Avoid logspam
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/pipewire/-/work_items/32
+  git cherry-pick -n 012b037eeea2ed92812ad6c930570b0a045a34dc
 }
 
 build() {
