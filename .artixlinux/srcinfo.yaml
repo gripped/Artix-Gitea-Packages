@@ -1,0 +1,29 @@
+---
+version: 0.7.14-1
+pkgbase:
+  name: netifrc
+  pkgdesc: Gentoo Network Interface Management Scripts
+  pkgver: 0.7.14
+  pkgrel: 1
+  url: https://github.com/gentoo/netifrc
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  makedepends:
+    - meson
+  depends:
+    - glibc
+    - udev
+    - sh
+  backup:
+    - etc/conf.d/net
+  source:
+    - netifrc-0.7.14.tar.gz::https://github.com/gentoo/netifrc/archive/0.7.14.tar.gz
+    - gentoo-functions-1.7.6.tar.gz::https://github.com/gentoo/gentoo-functions/archive/gentoo-functions-1.7.6.tar.gz
+  sha256sums:
+    - c44769960dfc65887ba0d7243991266203593ea1c2ec29959be40cb1fbe2fc50
+    - 98b06fd74b2dc6a1f896ebc802e8f61dd3cbd16fac2fd1d3847abc886a0ef490
+pkgname:
+  - name: netifrc
+# generated with artixpkg 0.38.5-1-any

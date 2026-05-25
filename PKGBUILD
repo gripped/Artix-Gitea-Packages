@@ -3,22 +3,22 @@
 
 _fname=gentoo-functions
 _furl="https://github.com/gentoo/${_fname}/archive"
-_fver=1.7.3
+_fver=1.7.6
 
 pkgname=netifrc
-pkgver=0.7.12
-pkgrel=2
+pkgver=0.7.14
+pkgrel=1
 pkgdesc="Gentoo Network Interface Management Scripts"
 arch=('x86_64')
 url="https://github.com/gentoo/netifrc"
-license=('BSD2')
+license=('BSD-2-Clause')
 depends=('glibc' 'udev' 'sh')
 makedepends=('meson')
 backup=('etc/conf.d/net')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz"
         "${_fname}-${_fver}.tar.gz::${_furl}/${_fname}-${_fver}.tar.gz")
-sha256sums=('54d6e92227fb736bf037ebfb22ba515ccc8953df685d0db5ba8e7c18ee0e2dac'
-            'a77a9f3dd3993e6c286a84422fafb37b3418c39d6bfd3e7d055592dd37fffcd6')
+sha256sums=('c44769960dfc65887ba0d7243991266203593ea1c2ec29959be40cb1fbe2fc50'
+            '98b06fd74b2dc6a1f896ebc802e8f61dd3cbd16fac2fd1d3847abc886a0ef490')
 
 _args=(
     SYSCONFDIR=/etc

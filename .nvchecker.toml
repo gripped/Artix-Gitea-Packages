@@ -1,0 +1,3 @@
+[netifrc]
+source = "git"
+git = "https://github.com/gentoo/netifrc.git"
