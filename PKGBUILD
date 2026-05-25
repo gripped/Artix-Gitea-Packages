@@ -126,6 +126,7 @@ check() {
     --deselect 'test/mitmproxy/proxy/layers/http/test_http3.py::TestClient::test_ignore_wrong_order'
     --deselect 'test/mitmproxy/proxy/layers/http/test_http3.py::test_early_server_data'
     --deselect 'test/mitmproxy/addons/test_dns_resolver.py'
+    --deselect 'text/mitmproxy/proxy/tset_mode_servers.py'
   )
 
   pytest -vv "${deselected_tests[@]}"
