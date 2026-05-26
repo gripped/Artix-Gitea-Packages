@@ -1,0 +1,6 @@
+#!/bin/sh
+exec 2>&1; set -e
+
+[ -d /var/log/userspawn ] || install -dm 755 /var/log/userspawn
+
+exec svlogd -tt /var/log/userspawn

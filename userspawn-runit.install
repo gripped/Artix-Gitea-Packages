@@ -1,0 +1,21 @@
+#!/bin/sh
+
+post_install() {
+    cat <<'EOF'
+
+Per-user services live under ~/.config/service/.
+
+To run a session D-Bus bus as one of those services, create
+~/.config/service/dbus/run with:
+
+    #!/bin/sh
+    exec 2>&1
+    exec dbus-daemon --session --nofork --nopidfile \
+        --address="unix:path=${XDG_RUNTIME_DIR}/bus"
+
+and make it executable. The session bus address is NOT exported to processes
+outside the userspawn tree; consumers must set DBUS_SESSION_BUS_ADDRESS
+themselves or be started from within the per-user runsvdir.
+
+EOF
+}
