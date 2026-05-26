@@ -1,0 +1,28 @@
+---
+version: 20180429-4
+pkgbase:
+  name: rpcbind-runit
+  pkgdesc: runit service scripts for rpcbind
+  pkgver: 20180429
+  pkgrel: 4
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - rpcbind
+    - runit
+  provides:
+    - init-rpcbind
+  conflicts:
+    - init-rpcbind
+  source:
+    - rpcbind.run
+  sha256sums:
+    - 1f3005344868b25a791bb470ba68e03e008f4755f2e0d59a5e3e8728a63b8a05
+pkgname:
+  - name: rpcbind-runit
+# generated with artixpkg 0.38.5-1-any
