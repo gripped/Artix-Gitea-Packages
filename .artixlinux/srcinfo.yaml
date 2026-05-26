@@ -1,10 +1,10 @@
 ---
-version: 0.10.0-2
+version: 0.10.0-3
 pkgbase:
   name: kup
   pkgdesc: A backup software for helping people to keep up-to-date backups
   pkgver: 0.10.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://apps.kde.org/kup/
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
     - extra-cmake-modules
     - git
   depends:
-    - gcc-libs
     - glibc
     - kcmutils
     - kcompletion
@@ -32,8 +31,10 @@ pkgbase:
     - knotifications
     - kwidgetsaddons
     - kxmlgui
+    - libgcc
     - libgit2
     - libplasma
+    - libstdc++
     - plasma5support
     - qt6-base
     - qt6-declarative
