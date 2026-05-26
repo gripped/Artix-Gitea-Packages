@@ -1,9 +1,9 @@
 ---
-version: 3.0.1-1
+version: 3.1.0-1
 pkgbase:
   name: python-snowballstemmer
   pkgdesc: Snowball stemming library collection for Python
-  pkgver: 3.0.1
+  pkgver: 3.1.0
   pkgrel: 1
   url: https://snowballstem.org
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   optdepends:
     - 'python-pystemmer: for improved performance'
   source:
-    - https://pypi.python.org/packages/source/s/snowballstemmer/snowballstemmer-3.0.1.tar.gz
+    - https://pypi.python.org/packages/source/s/snowballstemmer/snowballstemmer-3.1.0.tar.gz
   sha512sums:
-    - a9590da2b0be4b93a7500b337a63cf2039ff01a6da309ddb9462961c309b4763d4dfc925965a62376a9f3b41a05bb634d6472f1e2ee07e53b38f8542e7eada82
+    - 02d3022c76c3e6da37c599b9a58855e538ce5bddf0533c4b32ffeb44e426cbf998f20746c9563a5e05956c3118ce985a5129573f4342bdc94ed2dc1d1d62214d
 pkgname:
   - name: python-snowballstemmer
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
