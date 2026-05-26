@@ -4,14 +4,13 @@
 
 pkgname=kalzium
 pkgver=26.04.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Periodic Table of Elements'
 url='https://apps.kde.org/kalzium/'
 arch=(x86_64)
 license=(GPL-2.0-or-later LGPL-2.0-or-later)
 depends=(avogadrolibs
          avogadrolibs-qt
-         gcc-libs
          glibc
          kcompletion
          kconfig
@@ -27,6 +26,7 @@ depends=(avogadrolibs
          kwidgetsaddons
          kxmlgui
          kunitconversion
+         libstdc++
          openbabel
          qt6-5compat
          qt6-base
