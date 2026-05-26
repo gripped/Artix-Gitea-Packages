@@ -1,0 +1,28 @@
+---
+version: 20180429-3
+pkgbase:
+  name: device-mapper-runit
+  pkgdesc: runit service scripts for device-mapper
+  pkgver: 20180429
+  pkgrel: 3
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - device-mapper
+    - runit
+  provides:
+    - init-device-mapper
+  conflicts:
+    - init-device-mapper
+  source:
+    - dmeventd.run
+  sha256sums:
+    - 3c52d251f78e21a3013a856d2b3beda880ff3c7676a2149768a45d421057bbe8
+pkgname:
+  - name: device-mapper-runit
+# generated with artixpkg 0.38.5-1-any
