@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 50.1-1
+    version: 50.2.2-1
     packages:
-      - nautilus-50.1-1-x86_64.pkg.tar.zst
-      - libnautilus-extension-50.1-1-x86_64.pkg.tar.zst
-      - libnautilus-extension-docs-50.1-1-x86_64.pkg.tar.zst
+      - nautilus-50.2.2-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-50.2.2-1-x86_64.pkg.tar.zst
+      - libnautilus-extension-docs-50.2.2-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
