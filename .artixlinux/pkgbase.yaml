@@ -1,8 +1,8 @@
 ---
-team: galaxy
+team: system
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
+  addRepo: system
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -18,8 +18,9 @@ repos:
     packages: []
     debug: []
   system:
-    version: null
-    packages: []
+    version: 1.1.0-3
+    packages:
+      - userspawn-runit-1.1.0-3-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
@@ -54,7 +55,6 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.1.0-3
-    packages:
-      - userspawn-runit-1.1.0-3-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
