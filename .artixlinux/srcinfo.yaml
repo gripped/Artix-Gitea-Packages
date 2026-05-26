@@ -1,0 +1,33 @@
+---
+version: 20240415-2
+pkgbase:
+  name: runit-rc
+  pkgdesc: Artix Linux system initialization and shutdown for runit
+  pkgver: 20240415
+  pkgrel: 2
+  url: https://gitea.artixlinux.org/artix/runit-rc
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - git
+  depends:
+    - procps-ng
+    - bash
+    - eudev-runit
+    - artix-cgroups
+  optdepends:
+    - 'lvm2-runit: LVM support for runit'
+    - 'cryptsetup-runit: Enable boot support for encrypted partitions'
+  provides:
+    - init-rc
+  conflicts:
+    - init-rc
+  source:
+    - git+https://gitea.artixlinux.org/artix/runit-rc.git#commit=e0c4e306e448d2ac7a8a314133995ee37bc48f92
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: runit-rc
+# generated with artixpkg 0.38.5-1-any
