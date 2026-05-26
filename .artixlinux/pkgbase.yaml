@@ -14,9 +14,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 1.1.0-3
+    version: 20260526-1
     packages:
-      - userspawn-dinit-1.1.0-3-x86_64.pkg.tar.zst
+      - userspawn-dinit-20260526-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: null

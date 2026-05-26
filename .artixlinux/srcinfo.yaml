@@ -1,26 +1,21 @@
 ---
-version: 1.1.0-3
+version: 20260526-1
 pkgbase:
   name: userspawn-dinit
   pkgdesc: Launch anything, upon any user login
-  pkgver: 1.1.0
-  pkgrel: 3
+  pkgver: 20260526
+  pkgrel: 1
   url: https://github.com/Mayware/userspawn
   arch:
     - x86_64
   license:
     - LGPL-3.0-or-later
   makedepends:
-    - cmake
     - git
-    - ninja
   depends:
-    - dbus
+    - userspawn
     - dbus-dinit
     - dinit-base
-    - libstdc++
-    - libgcc
-    - glibc
     - sh
   provides:
     - init-userspawn
@@ -32,12 +27,10 @@ pkgbase:
   replaces:
     - dinit-user-spawn
   source:
-    - git+https://github.com/Mayware/userspawn.git#tag=v1.1.0
     - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=2.4.6
     - userspawn.dinit
     - userspawnrc
   sha256sums:
-    - 29970fec753883a5343677e069d9442835551f992d0e848540c6975db047705b
     - 934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5
     - d8c25ab527c654c6c6c808033a7575165c54f2a834e92e0a7b7f55ded22f0fce
     - 67e9cc520c4d0f5dc57ec7219b21ed8db8723c128043a5902426408430afaeda
