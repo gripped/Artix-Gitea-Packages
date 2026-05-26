@@ -1,0 +1,28 @@
+---
+version: 20180429-3
+pkgbase:
+  name: openldap-runit
+  pkgdesc: runit service scripts for openldap
+  pkgver: 20180429
+  pkgrel: 3
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - openldap
+    - runit
+  provides:
+    - init-openldap
+  conflicts:
+    - init-openldap
+  source:
+    - slapd.run
+  sha256sums:
+    - 4ebf5766b9847f3e4a83cb34f95d61a8bc5874be1ed818f4ca39ad4424d03c02
+pkgname:
+  - name: openldap-runit
+# generated with artixpkg 0.38.5-1-any
