@@ -1,0 +1,30 @@
+---
+version: 20200613-3
+pkgbase:
+  name: iptables-runit
+  pkgdesc: runit service scripts for iptables
+  pkgver: 20200613
+  pkgrel: 3
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - iptables
+    - runit
+  provides:
+    - init-iptables
+  conflicts:
+    - init-iptables
+  source:
+    - iptables.run
+    - ip6tables.run
+  sha256sums:
+    - 8a69f5d365de713d7bfce3a9bf203c44125e3d21ba38243d4aff0a8694b21afd
+    - ec579babdb3d5baf7f533a4f9c4573ef312fc7c45a02374868350dd291967b42
+pkgname:
+  - name: iptables-runit
+# generated with artixpkg 0.38.5-1-any
