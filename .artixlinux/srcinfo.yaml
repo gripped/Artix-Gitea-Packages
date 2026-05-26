@@ -1,10 +1,10 @@
 ---
-version: 2.36.3-2
+version: 2.36.4-1
 pkgbase:
   name: atkmm-2.36
   pkgdesc: C++ bindings for ATK
-  pkgver: 2.36.3
-  pkgrel: 2
+  pkgver: 2.36.4
+  pkgrel: 1
   url: https://www.gtkmm.org/
   arch:
     - x86_64
@@ -17,18 +17,26 @@ pkgbase:
     - mm-common
   depends:
     - atk
+    - glib2
+    - glibc
     - glibmm-2.68
+    - libgcc
+    - libstdc++
   options:
     - '!emptydirs'
   source:
-    - git+https://gitlab.gnome.org/GNOME/atkmm.git#commit=75f79502f700614a3c35d9c4eaa4c395ac6c7d66
+    - git+https://gitlab.gnome.org/GNOME/atkmm.git#tag=2.36.4
   b2sums:
-    - SKIP
+    - 2b9cfe54dbb33e1d50831448ec18576dc0a9658db4c71b2555d330496d1879247b2064ca8bd9735c8c3e5b88785aec3233f7496080c91b39661d7b1f5e614543
 pkgname:
   - name: atkmm-2.36
     depends:
       - atk
+      - glib2
+      - glibc
       - glibmm-2.68
+      - libgcc
+      - libstdc++
       - libglibmm-2.68.so
       - libsigc-3.0.so
     provides:
