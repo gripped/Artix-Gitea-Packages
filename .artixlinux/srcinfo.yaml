@@ -1,10 +1,10 @@
 ---
-version: 1.18.0-1.1
+version: 1.18.1-1
 pkgbase:
   name: libkrun
   pkgdesc: A dynamic library providing Virtualization-based process isolation capabilities
-  pkgver: 1.18.0
-  pkgrel: 1.1
+  pkgver: 1.18.1
+  pkgrel: 1
   url: https://github.com/containers/libkrun
   arch:
     - x86_64
@@ -21,11 +21,9 @@ pkgbase:
     - pipewire
     - virglrenderer
   source:
-    - https://github.com/containers/libkrun/archive/refs/tags/v1.18.0/libkrun-1.18.0.tar.gz
-    - libkrun-bump-libspa0.9.patch::https://github.com/containers/libkrun/pull/652.patch
+    - https://github.com/containers/libkrun/archive/refs/tags/v1.18.1/libkrun-1.18.1.tar.gz
   sha256sums:
-    - 3aad8087049c77424b2675ba08fe7b53708000e6df242d606e45af731f8a62cd
-    - 1e2c53c43f3bce6601770e6e60399ccdf1fd49d10f59f0b419e549edbebcd921
+    - 483f5579006d59212b9942b9ca39f03c6305940129d99925ecc979b1e6754711
 pkgname:
   - name: libkrun
 # generated with artixpkg 0.38.5-1-any
