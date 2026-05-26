@@ -4,7 +4,7 @@ _pkgname=userspawn
 
 pkgname=userspawn-runit
 pkgver=1.1.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Launch anything, upon any user login (runit)'
 arch=('x86_64')
 url='https://github.com/Mayware/userspawn'
