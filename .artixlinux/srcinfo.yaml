@@ -1,0 +1,28 @@
+---
+version: 20180226-3
+pkgbase:
+  name: gpm-runit
+  pkgdesc: runit service scripts for gpm
+  pkgver: 20180226
+  pkgrel: 3
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - gpm
+    - runit
+  provides:
+    - init-gpm
+  conflicts:
+    - init-gpm
+  source:
+    - gpm.run
+  sha256sums:
+    - 2d738d975256c17833b16946723b49ca02b1346b1e81d1fe1aee5dd864804e81
+pkgname:
+  - name: gpm-runit
+# generated with artixpkg 0.38.5-1-any
