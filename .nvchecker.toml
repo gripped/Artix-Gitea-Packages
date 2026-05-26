@@ -1,0 +1,4 @@
+[userspawn]
+source = "git"
+git = "https://github.com/Mayware/userspawn.git"
+prefix = "v"

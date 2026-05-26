@@ -3,7 +3,7 @@
 
 pkgname=userspawn
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Launch anything, upon any user login'
 arch=('x86_64')
 url='https://github.com/Mayware/userspawn'

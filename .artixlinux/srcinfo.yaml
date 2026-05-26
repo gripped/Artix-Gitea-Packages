@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-1
+version: 1.1.0-2
 pkgbase:
   name: userspawn
   pkgdesc: Launch anything, upon any user login
   pkgver: 1.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Mayware/userspawn
   arch:
     - x86_64
