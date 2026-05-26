@@ -1,16 +1,14 @@
 ---
-version: 20260526-1
+version: 20260526-2
 pkgbase:
   name: userspawn-runit
   pkgdesc: Launch anything, upon any user login
   pkgver: 20260526
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Mayware/userspawn
   install: userspawn-runit.install
   arch:
     - any
-  groups:
-    - runit-galaxy
   license:
     - LGPL-3.0-or-later
   makedepends:

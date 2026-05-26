@@ -2,7 +2,7 @@
 
 pkgname=userspawn-runit
 pkgver=20260526
-pkgrel=1
+pkgrel=2
 pkgdesc='Launch anything, upon any user login'
 arch=('any')
 url='https://github.com/Mayware/userspawn'
@@ -17,7 +17,6 @@ depends=(
     'sh'
     'userspawn'
 )
-groups=('runit-galaxy')
 provides=(
     'init-userspawn'
 )
