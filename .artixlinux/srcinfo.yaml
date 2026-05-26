@@ -1,0 +1,28 @@
+---
+version: 1.1.0-1
+pkgbase:
+  name: userspawn
+  pkgdesc: Launch anything, upon any user login
+  pkgver: 1.1.0
+  pkgrel: 1
+  url: https://github.com/Mayware/userspawn
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  makedepends:
+    - cmake
+    - git
+    - ninja
+  depends:
+    - dbus
+    - libstdc++
+    - libgcc
+    - glibc
+  source:
+    - git+https://github.com/Mayware/userspawn.git#tag=v1.1.0
+  sha256sums:
+    - 29970fec753883a5343677e069d9442835551f992d0e848540c6975db047705b
+pkgname:
+  - name: userspawn
+# generated with artixpkg 0.38.5-1-any
