@@ -1,9 +1,9 @@
 ---
-version: 50.1-1
+version: 50.2-1
 pkgbase:
   name: papers
   pkgdesc: Document viewer for PDF and other document formats aimed at the GNOME desktop
-  pkgver: 50.1
+  pkgver: 50.2
   pkgrel: 1
   url: https://apps.gnome.org/Papers/
   arch:
@@ -42,12 +42,12 @@ pkgbase:
     - pango
     - poppler-glib
   source:
-    - git+https://gitlab.gnome.org/GNOME/papers.git#tag=50.1
+    - git+https://gitlab.gnome.org/GNOME/papers.git#tag=50.2
     - git+https://github.com/gtk-rs/gir.git
     - git+https://github.com/gtk-rs/gir-files.git
     - git+https://gitlab.gnome.org/lbaudin/papers-test-data.git
   b2sums:
-    - 06c62a335a1cde7a74b9dcfe634dd3be00d80b164ef1dd13aa5a7b4dde4e9e6043c92b1d9be1ba810c424f1d5c9b9d64ec0a568b1fdf61f775e559a87bc5d706
+    - 8be598627467e2c82f59d5f79a3dd11c8aa3f5841b997dea58aa179719805a415ad5964e8e02ead8755cfcccf5f8b393791fa68ca6fc5772158b715bcdb8468b
     - SKIP
     - SKIP
     - SKIP
