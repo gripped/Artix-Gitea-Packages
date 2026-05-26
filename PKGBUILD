@@ -5,8 +5,8 @@ _alpm=2.4.6
 
 pkgname=userspawn-dinit
 pkgver=20260526
-pkgrel=2
-pkgdesc='Launch anything, upon any user login'
+pkgrel=3
+pkgdesc='dinit service script for userspawn'
 arch=('any')
 url='https://github.com/Mayware/userspawn'
 license=('LGPL-3.0-or-later')
@@ -18,6 +18,10 @@ depends=(
     'dbus-dinit'
     'dinit-base'
     'sh'
+)
+optdepends=(
+    'wireplumber-dinit: dinit user service script for wireplumber'
+    'pipewire-pulse-dinit: dinit user service script for pipewire-pulse'
 )
 provides=(
     'init-userspawn'
@@ -43,6 +47,10 @@ sha256sums=('934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5'
 package() {
     install -Dm755 userspawnrc "$pkgdir"/etc/xdg/userspawn/userspawnrc
     install -Dm644 userspawn.dinit "$pkgdir"/usr/lib/dinit.d/userspawn
+
+    # drop alpm install_userspawn_dinit?
+    # install -d "$pkgdir"/etc/dinit.d/boot.d/
+    # ln -s /usr/lib/dinit.d/userspawn "$pkgdir"/etc/dinit.d/boot.d/
 
     make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user install_userspawn_dinit
 }
