@@ -1,9 +1,9 @@
 ---
-version: 1.29-1
+version: 1.31-1
 pkgbase:
   name: perl-io-tty
   pkgdesc: Provide an interface to TTYs and PTYs
-  pkgver: 1.29
+  pkgver: 1.31
   pkgrel: 1
   url: https://search.cpan.org/dist/IO-Tty/
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://search.cpan.org/CPAN/authors/id/T/TO/TODDR/IO-Tty-1.29.tar.gz
+    - https://search.cpan.org/CPAN/authors/id/T/TO/TODDR/IO-Tty-1.31.tar.gz
   sha256sums:
-    - dcff4a39b93085bafb8632f063ff80564bd5620a6b94ad08f26c85269187e742
+    - d597af221628571cbecf35b44520148c44798dfc8a9867774e60453f79d25ff7
 pkgname:
   - name: perl-io-tty
 # generated with artixpkg 0.38.5-1-any
