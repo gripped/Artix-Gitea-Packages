@@ -1,0 +1,28 @@
+---
+version: 20180429-4
+pkgbase:
+  name: openssh-runit
+  pkgdesc: runit service scripts for openssh
+  pkgver: 20180429
+  pkgrel: 4
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - openssh
+    - runit
+  provides:
+    - init-openssh
+  conflicts:
+    - init-openssh
+  source:
+    - sshd.run
+  sha256sums:
+    - 220dde8d4495bab6f08e063860c0ad54cc70ef8b7913a00e27126f1d5eb0af5f
+pkgname:
+  - name: openssh-runit
+# generated with artixpkg 0.38.5-1-any
