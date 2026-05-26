@@ -1,0 +1,29 @@
+---
+version: 1.6.0-3
+pkgbase:
+  name: recastnavigation
+  pkgdesc: Navigation-msh toolset for games
+  pkgver: 1.6.0
+  pkgrel: 3
+  url: http://recastnav.com/
+  arch:
+    - x86_64
+  license:
+    - Zlib
+  makedepends:
+    - cmake
+    - git
+  depends:
+    - glibc
+    - glu
+    - libgcc
+    - libglvnd
+    - libstdc++
+    - sdl2
+  source:
+    - git+https://github.com/recastnavigation/recastnavigation#tag=v1.6.0
+  sha256sums:
+    - 73ca8832247f5d1bb166debacf1dd9bcf5a800c7e00a201356866e38b5f0c349
+pkgname:
+  - name: recastnavigation
+# generated with artixpkg 0.38.5-1-any
