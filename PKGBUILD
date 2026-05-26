@@ -4,7 +4,7 @@ _pkgname=userspawn
 
 pkgname=userspawn-runit
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Launch anything, upon any user login (runit)'
 arch=('x86_64')
 url='https://github.com/Mayware/userspawn'
@@ -37,7 +37,7 @@ source=(
 sha256sums=('29970fec753883a5343677e069d9442835551f992d0e848540c6975db047705b'
             '5efa2b881784b61cb21aa8ddfb988830621b5c5d766f9c6c57c65d1fecffe3f2'
             'fdd451e606e026156bc30100c5ecb7c5697dd6e4b0369aad0d73e66c31ea2374'
-            'dc8ea4a0c24f1f673f63b2bbda7919ac1e4cd72ceb8d24f60086a45aedaadd2a')
+            'ea1c3dbd3bd41097c402841c09e36bfa67e91878f692cb70eabb5f2c37acac96')
 
 _backports=(
 )
