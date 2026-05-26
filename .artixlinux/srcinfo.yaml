@@ -1,42 +1,36 @@
 ---
-version: 1.1.0-3
+version: 20260526-1
 pkgbase:
   name: userspawn-runit
-  pkgdesc: Launch anything, upon any user login (runit)
-  pkgver: 1.1.0
-  pkgrel: 3
+  pkgdesc: Launch anything, upon any user login
+  pkgver: 20260526
+  pkgrel: 1
   url: https://github.com/Mayware/userspawn
   install: userspawn-runit.install
   arch:
-    - x86_64
+    - any
   groups:
     - runit-galaxy
   license:
     - LGPL-3.0-or-later
   makedepends:
-    - cmake
     - git
-    - ninja
   depends:
     - dbus
     - dbus-runit
     - runit
-    - libstdc++
-    - libgcc
-    - glibc
     - sh
+    - userspawn
   provides:
     - init-userspawn
   conflicts:
     - init-userspawn
     - turnstile-runit
   source:
-    - git+https://github.com/Mayware/userspawn.git#tag=v1.1.0
     - userspawn.run
     - userspawn.log.run
     - userspawnrc
   sha256sums:
-    - 29970fec753883a5343677e069d9442835551f992d0e848540c6975db047705b
     - 5efa2b881784b61cb21aa8ddfb988830621b5c5d766f9c6c57c65d1fecffe3f2
     - fdd451e606e026156bc30100c5ecb7c5697dd6e4b0369aad0d73e66c31ea2374
     - ea1c3dbd3bd41097c402841c09e36bfa67e91878f692cb70eabb5f2c37acac96
