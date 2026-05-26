@@ -1,13 +1,13 @@
 ---
-version: 20260526-1
+version: 20260526-2
 pkgbase:
   name: userspawn-dinit
   pkgdesc: Launch anything, upon any user login
   pkgver: 20260526
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Mayware/userspawn
   arch:
-    - x86_64
+    - any
   license:
     - LGPL-3.0-or-later
   makedepends:
