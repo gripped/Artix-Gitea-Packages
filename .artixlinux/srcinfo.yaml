@@ -1,10 +1,10 @@
 ---
-version: 1.0.4.5-13
+version: 1.0.4.5-14
 pkgbase:
   name: libappimage
   pkgdesc: Reference implementation of the AppImage specification
   pkgver: 1.0.4.5
-  pkgrel: 13
+  pkgrel: 14
   url: https://appimage.org/
   arch:
     - x86_64
@@ -21,11 +21,12 @@ pkgbase:
   depends:
     - boost-libs
     - cairo
-    - gcc-libs
     - glib2
     - glibc
     - libarchive
+    - libgcc
     - librsvg
+    - libstdc++
     - squashfuse
   source:
     - git+https://github.com/AppImage/libappimage#tag=v1.0.4-5

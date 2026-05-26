@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.0.4.5-13
+    version: 1.0.4.5-14
     packages:
-      - libappimage-1.0.4.5-13-x86_64.pkg.tar.zst
+      - libappimage-1.0.4.5-14-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
