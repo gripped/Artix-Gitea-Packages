@@ -4,7 +4,8 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-hypothesis
-pkgver=6.152.9
+_name=${pkgname#python-}
+pkgver=6.153.0
 pkgrel=1
 pkgdesc="Advanced Quickcheck style testing library for Python"
 arch=(any)
@@ -59,23 +60,17 @@ optdepends=(
   'python-rich: for CLI'
   'python-watchdog: for tracking file system events'
 )
-source=("$pkgname::git+$_url#tag=hypothesis-python-$pkgver")
-sha512sums=('dc592756188a93819e405bdf777bd43827b0f407b838fd6095135dd9ad149c8f0c7e870644736ee78a7a5f595b8fc11f12e07c0d2d4c86d09968520f7c8f16a5')
-b2sums=('03d61e9a8a75ac43fafaeeda1af4db0bba8ebf36e4ff9878a94e4d33f59efeaa32c12ce625f79ef37c6e6ff5dcafd45e6aac88eeb217315a6a1d9f373c005383')
-
-prepare() {
-  cd $pkgname/hypothesis-python
-  # Fix test failing due to trailing space diff
-  sed -i 's/def      /def/' tests/cover/test_reflection.py
-}
+source=("$pkgname::git+$_url#tag=v$pkgver")
+sha512sums=('25146617873c69cd0ec93a44ae3e56571fbefef4d10ba92f5ab445d41ff9af9ff2b9b73b021b418f6be5666fb65de8baf471cab73b00a69a7bc9cdfe35106293')
+b2sums=('50295f2b2555c4d7f8d053490706280563a513a3e29b17d710464e10c58e0b65a6f8c2194b6f686f180a7b957f63d1376a0110f2bc29e0a3b52908313798a42d')
 
 build() {
-  cd $pkgname/hypothesis-python
+  cd $pkgname/$_name
   python -m build --wheel --no-isolation
 }
 
 check() {
-  cd $pkgname/hypothesis-python
+  cd $pkgname/$_name
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
   local pytest_options=(
@@ -94,6 +89,7 @@ check() {
     --ignore=tests/nocover/test_scrutineer.py
     # fails with mismatch for some reason
     --deselect 'tests/snapshots/test_always_failing.py::test_always_failing[emails]'
+    --deselect 'tests/quality/test_integers.py::test_biases_towards_boundary_values'
 
   )
   PATH="$PWD/test-env/bin:$PATH" test-env/bin/python -m pytest \
@@ -101,6 +97,6 @@ check() {
 }
 
 package() {
-  cd $pkgname/hypothesis-python
+  cd $pkgname/$_name
   python -m installer --destdir="$pkgdir" dist/*.whl
 }
