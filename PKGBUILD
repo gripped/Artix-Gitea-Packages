@@ -4,15 +4,16 @@
 
 pkgname=sddm
 pkgver=0.21.0
-pkgrel=6.1
+pkgrel=7
 pkgdesc='QML based X11 and Wayland display manager'
 arch=(x86_64)
 url='https://github.com/sddm/sddm'
-license=(GPL-2.0-only)
+license=(GPL-2.0-or-later)
 depends=(bash
-         gcc-libs
          glibc
          libelogind
+         libgcc
+         libstdc++
          libxau
          libxcb
          pam
@@ -22,6 +23,7 @@ depends=(bash
          x11win-server
          xorg-xauth)
 makedepends=(extra-cmake-modules
+             git
              python-docutils
              qt5-base
              qt5-declarative
@@ -34,14 +36,18 @@ backup=('usr/share/sddm/scripts/Xsetup'
         'etc/pam.d/sddm-autologin'
         'etc/pam.d/sddm-greeter')
 provides=(display-manager)
-source=(https://github.com/$pkgname/$pkgname/archive/v$pkgver/$pkgname-$pkgver.tar.gz
+source=(git+https://github.com/$pkgname/$pkgname#tag=v$pkgver
         sddm.{tmpfiles,sysusers})
-sha256sums=('f895de2683627e969e4849dbfbbb2b500787481ca5ba0de6d6dfdae5f1549abf'
+sha256sums=('67394c93f331fc02f89559f68e149a992efaed07690f548e6a83ec384ebb8000'
             'db625f2a3649d6d203e1e1b187a054d5c6263cadf7edd824774d8ace52219677'
             '9fce66f325d170c61caed57816f4bc72e9591df083e89da114a3bb16b0a0e60f')
 
+prepare() {
+  git -C $pkgname cherry-pick -n 228778c2b4b7e26db1e1d69fe484ed75c5791c3a # Fix build with cmake 4
+}
+
 build() {
-  cmake -B build -S $pkgname-$pkgver \
+  cmake -B build -S $pkgname \
         -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib/sddm \
         -DBUILD_WITH_QT6=ON \
@@ -50,13 +56,11 @@ build() {
         -DBUILD_MAN_PAGES=ON \
         -DUSE_ELOGIND=yes \
         -DNO_SYSTEMD=yes \
-        -DUID_MAX=60513 \
-		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+        -DUID_MAX=60513
   cmake --build build
 
-  cmake -B build5 -S $pkgname-$pkgver \
-        -DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_POLICY_VERSION_MINIMUM=3.5
+  cmake -B build5 -S $pkgname \
+        -DCMAKE_INSTALL_PREFIX=/usr
   cmake --build build5/src/greeter
   cmake --build build5/components
 }
