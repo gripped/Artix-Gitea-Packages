@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.7.1-1
+    version: 0.8.0-1
     packages:
-      - ouch-0.7.1-1-x86_64.pkg.tar.zst
+      - ouch-0.8.0-1-x86_64.pkg.tar.zst
     debug: []
