@@ -1,0 +1,30 @@
+---
+version: 20210205-3
+pkgbase:
+  name: lvm2-runit
+  pkgdesc: runit stage1 scripts for lvm2
+  pkgver: 20210205
+  pkgrel: 3
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - lvm2
+    - runit-rc
+  provides:
+    - init-lvm2
+  conflicts:
+    - init-lvm2
+  source:
+    - lvm2-monitoring
+    - lvm2
+  sha256sums:
+    - 7a1cdb90aa145a2904bac250d9069a3b7a94330f65d06141c1f89a613c0a8dad
+    - 200edb4bed3a9335040432a56c7e54ee5a569476cec155640f915664b3466c34
+pkgname:
+  - name: lvm2-runit
+# generated with artixpkg 0.38.5-1-any
