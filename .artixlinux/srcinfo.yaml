@@ -1,0 +1,30 @@
+---
+version: 20180605-5
+pkgbase:
+  name: krb5-runit
+  pkgdesc: runit service scripts for krb5
+  pkgver: 20180605
+  pkgrel: 5
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - krb5
+    - runit
+  provides:
+    - init-krb5
+  conflicts:
+    - init-krb5
+  source:
+    - kadmind.run
+    - krb5kdc.run
+  sha256sums:
+    - aa0879a6193df0f52b0eff10bb00733c5c2fe31a4374894672e864b32fb3d59e
+    - 73613cbd4549721483463f5ae6ef6041c02c8c92c742014ca912451f4a25d01e
+pkgname:
+  - name: krb5-runit
+# generated with artixpkg 0.38.5-1-any
