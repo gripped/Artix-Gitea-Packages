@@ -1,0 +1,31 @@
+---
+version: 20200613-3
+pkgbase:
+  name: cronie-runit
+  pkgdesc: runit service scripts for cronie
+  pkgver: 20200613
+  pkgrel: 3
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-system
+  license:
+    - BSD
+  depends:
+    - cronie
+    - runit
+  provides:
+    - init-cronie
+    - init-cron
+  conflicts:
+    - fcron
+    - init-cronie
+    - init-cron
+  source:
+    - cronie.run
+  sha256sums:
+    - 882836bff4df1d856a40c4d288d88f8e00685f0683e545bc5193bf754be0e1d6
+pkgname:
+  - name: cronie-runit
+# generated with artixpkg 0.38.5-1-any
