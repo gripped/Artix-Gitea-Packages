@@ -1,8 +1,44 @@
 #!/bin/sh
 
+post_install() {
+    _user_service_note
+}
+
 post_upgrade() {
     if [ ${2%-*} -lt 20220314 ]; then
         echo -e '\033[31mDBUS-RUNIT\033[0m: The service now also provides a xinitrc script'
         echo -e '\033[31mDBUS-RUNIT\033[0m: The service now has a log service, see svlogd(8)'
     fi
+    if [ ${2%-*} -lt 20260527 ]; then
+        _user_service_note
+        _xinitrc_note
+    fi
+}
+
+_user_service_note() {
+    cat <<'EOF'
+
+A per-user session bus service is now provided as a template at
+/etc/runit/user/sv/dbus. To enable it under a userspawn-runit per-user
+runsvdir (~/.config/service):
+
+    ln -s /etc/runit/user/sv/dbus ~/.config/service/dbus
+
+The service writes DBUS_SESSION_BUS_ADDRESS to a chpst(1) envdir at
+${XDG_RUNTIME_DIR}/runit/env, so other per-user services can consume it with:
+
+    exec chpst -e "${XDG_RUNTIME_DIR}/runit/env" some-program
+EOF
+}
+
+_xinitrc_note() {
+    cat <<'EOF'
+
+The xinitrc snippet (80-dbus.sh) now no-ops when ${XDG_RUNTIME_DIR}/bus
+already exists. Exporting DBUS_SESSION_BUS_ADDRESS to the X session is
+the session's job; a typical ~/.xprofile line is:
+
+    export DBUS_SESSION_BUS_ADDRESS="$(cat \
+        "${XDG_RUNTIME_DIR}/runit/env/DBUS_SESSION_BUS_ADDRESS")"
+EOF
 }
