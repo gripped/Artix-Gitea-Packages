@@ -1,27 +1,27 @@
-From 510f2999567d890ee227d9c2f514894a2c301ce3 Mon Sep 17 00:00:00 2001
+From 572fc6efb5ea952569f11efd185250584afbe038 Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Fri, 15 May 2026 14:13:46 +0200
+Date: Wed, 27 May 2026 15:17:52 +0200
 Subject: [PATCH 1/1] udev standalone install
 
 ---
- meson.build                       | 13 ++++++----
+ meson.build                       | 13 +++++++---
  meson_options.txt                 |  3 +++
- rules.d/meson.build               |  4 ++--
- shell-completion/bash/meson.build | 40 ++-----------------------------
- shell-completion/zsh/meson.build  | 33 ++-----------------------
+ rules.d/meson.build               |  4 +--
+ shell-completion/bash/meson.build | 41 ++-----------------------------
+ shell-completion/zsh/meson.build  | 34 ++-----------------------
  src/core/meson.build              |  5 ----
  src/hwdb/meson.build              |  2 +-
  src/libudev/meson.build           |  9 ++++++-
- src/udev/meson.build              |  8 +++----
+ src/udev/meson.build              |  8 +++---
  src/udev/udevd.c                  |  2 +-
  test/meson.build                  |  2 +-
- 11 files changed, 33 insertions(+), 88 deletions(-)
+ 11 files changed, 33 insertions(+), 90 deletions(-)
 
 diff --git a/meson.build b/meson.build
-index 3672005d75..ee70d3be75 100644
+index e98a62d9bc..ba519b7494 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -89,6 +89,7 @@ conf.set10('HAVE_SPLIT_BIN', split_bin,
+@@ -96,6 +96,7 @@ conf.set10('HAVE_SPLIT_BIN', split_bin,
             description : 'bin and sbin directories are separate')
  
  have_standalone_binaries = get_option('standalone-binaries')
@@ -29,7 +29,7 @@ index 3672005d75..ee70d3be75 100644
  
  conf.set10('CREATE_LOG_DIRS', get_option('create-log-dirs'))
  
-@@ -121,7 +122,7 @@ includedir = prefixdir / get_option('includedir')
+@@ -128,7 +129,7 @@ includedir = prefixdir / get_option('includedir')
  datadir = prefixdir / get_option('datadir')
  localstatedir = '/' / get_option('localstatedir')
  
@@ -38,7 +38,7 @@ index 3672005d75..ee70d3be75 100644
  libexecdir_to_bin = '../../bin/'
  pkglibdir = libdir / 'systemd'
  
-@@ -2799,7 +2800,6 @@ subdir('shell-completion/zsh')
+@@ -2806,7 +2807,6 @@ subdir('shell-completion/zsh')
  subdir('sysctl.d')
  subdir('sysusers.d')
  subdir('tmpfiles.d')
@@ -46,7 +46,7 @@ index 3672005d75..ee70d3be75 100644
  
  install_subdir('factory/etc',
                 install_dir : factorydir)
-@@ -2821,6 +2821,11 @@ install_data('LICENSE.GPL2',
+@@ -2828,6 +2828,11 @@ install_data('LICENSE.GPL2',
  install_subdir('LICENSES',
                 install_dir : docdir)
  
@@ -58,7 +58,7 @@ index 3672005d75..ee70d3be75 100644
  #####################################################################
  
  # Ensure that changes to the docs/ directory do not break the
-@@ -3000,10 +3005,10 @@ udev_targets = []
+@@ -3013,10 +3018,10 @@ udev_targets = []
  foreach bin : udev_binaries
          udev_targets += executables_by_name.get(bin, [])
  endforeach
@@ -105,10 +105,10 @@ index aa469ef7a7..8c56d96b04 100644
          ['70-uaccess.rules',   conf.get('ENABLE_LOGIND') == 1 and conf.get('HAVE_ACL') == 1],
          ['71-seat.rules',      conf.get('ENABLE_LOGIND') == 1],
 diff --git a/shell-completion/bash/meson.build b/shell-completion/bash/meson.build
-index 178986e171..9dc7a8bffe 100644
+index 154910979e..9dc7a8bffe 100644
 --- a/shell-completion/bash/meson.build
 +++ b/shell-completion/bash/meson.build
-@@ -20,48 +20,12 @@ custom_target(
+@@ -20,49 +20,12 @@ custom_target(
          install_dir : bashcompletiondir)
  
  foreach item : [
@@ -138,6 +138,7 @@ index 178986e171..9dc7a8bffe 100644
 -        ['systemd-delta',       ''],
 -        ['systemd-detect-virt', ''],
 -        ['systemd-dissect',     'HAVE_BLKID'],
+-        ['systemd-hwdb',        'ENABLE_HWDB'],
 -        ['systemd-id128',       ''],
 -        ['systemd-nspawn',      'ENABLE_NSPAWN'],
 -        ['systemd-path',        ''],
@@ -160,10 +161,10 @@ index 178986e171..9dc7a8bffe 100644
          endif
  endforeach
 diff --git a/shell-completion/zsh/meson.build b/shell-completion/zsh/meson.build
-index eb5bb4b6a4..ce6e147bf0 100644
+index b1bff151e4..ce6e147bf0 100644
 --- a/shell-completion/zsh/meson.build
 +++ b/shell-completion/zsh/meson.build
-@@ -15,41 +15,12 @@ custom_target(
+@@ -15,42 +15,12 @@ custom_target(
          install_dir : zshcompletiondir)
  
  foreach item : [
@@ -188,6 +189,7 @@ index eb5bb4b6a4..ce6e147bf0 100644
 -        ['_systemd',                  ''],
 -        ['_systemd-analyze',          ''],
 -        ['_systemd-delta',            ''],
+-        ['_systemd-hwdb',             'ENABLE_HWDB'],
 -        ['_systemd-id128',            ''],
 -        ['_systemd-inhibit',          'ENABLE_LOGIND'],
 -        ['_systemd-nspawn',           ''],
@@ -208,10 +210,10 @@ index eb5bb4b6a4..ce6e147bf0 100644
          endif
  endforeach
 diff --git a/src/core/meson.build b/src/core/meson.build
-index e703cc3728..d6719d2c9c 100644
+index 391dc45a6b..04faeefafe 100644
 --- a/src/core/meson.build
 +++ b/src/core/meson.build
-@@ -295,11 +295,6 @@ if install_sysconfdir
+@@ -298,11 +298,6 @@ if install_sysconfdir
                          install_dir : sysconfdir / 'xdg/systemd')
  endif
  

@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='260.1'
+_tag='260.2'
 
 pkgbase=udev
 pkgname=(
@@ -15,7 +15,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=7
+pkgrel=1
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -54,10 +54,10 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-udev-standalone-install.patch
 )
-sha512sums=('16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb'
+sha512sums=('ef2268a157abe0cf1678e3eb6bb45ba2e1083f4911176a1099b2ab7bae2eecb03d48bc2057139d13740f79835bcb0cdfd762451563f29405a53685e1c49bc236'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            '476fc25b042c49e3a5afa54259255e878c5a0879bea481eda398526579dabe3a89ffd04784d26cb354283518d975b58d47eb613d1c7f72d1aa3112b2784d9771')
+            'b683608daf50bc3b6e4c4e9bf774ff18b68328a69b5b5ca2d488f740ed616bc44c8a2722594b19806dbcb61abb327e44a8cd636d79c71dcbb642c973cd4cf0b0')
 
 _backports=(
 )
@@ -95,17 +95,16 @@ build() {
         -Dmode=release
 
         -Dstandalone-udev=true
-        -Dstandalone-binaries=false
-        -Dsysusers=false
-        -Dtmpfiles=false
 
         -Dhwdb=true
 
         -Dblkid=enabled
-
         -Dkmod=enabled
+        -Dtpm2=enabled
+        -Dacl=enabled
+        -Dman=enabled
 
-        -Dgshadow=false
+
 
         -Dsbat-distro='artix'
         -Dsbat-distro-summary='Artix Linux'
@@ -119,10 +118,11 @@ build() {
 
         -Ddefault-keymap='us'
 
-        -Dman=enabled
+        -Dstandalone-binaries=false
+        -Dsysusers=false
+        -Dtmpfiles=false
 
-        -Dtpm2=enabled
-        -Dacl=enabled
+        -Dgshadow=false
 
         -Dhtml=disabled
 
@@ -135,10 +135,8 @@ build() {
         -Dukify=disabled
 
         -Ddefault-dnssec=no
-
         -Ddefault-llmnr=no
         -Ddefault-mdns=no
-
         -Dsshconfdir=no
 
         -Dadm-group=false
@@ -225,14 +223,6 @@ build() {
     )
 
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
-
-    local _efi_arch
-
-    case $CARCH in
-        x86_64*) _efi_arch=x64 ;;
-        i686) _efi_arch=ia32 ;;
-    esac
-
 
     _targets+=(
         udev:shared_library
