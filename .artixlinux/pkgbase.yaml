@@ -14,9 +14,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 20260526-3
+    version: 20260527-1
     packages:
-      - userspawn-dinit-20260526-3-any.pkg.tar.zst
+      - userspawn-dinit-20260527-1-any.pkg.tar.zst
     debug: []
   system:
     version: null

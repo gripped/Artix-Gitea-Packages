@@ -4,8 +4,8 @@
 _alpm=2.4.6
 
 pkgname=userspawn-dinit
-pkgver=20260526
-pkgrel=3
+pkgver=20260527
+pkgrel=1
 pkgdesc='dinit service script for userspawn'
 arch=('any')
 url='https://github.com/Mayware/userspawn'
@@ -32,9 +32,12 @@ conflicts=(
     'dinit-user-spawn'
     'turnstile-dinit'
 )
-replaces=(
-    'dinit-user-spawn'
+backup=(
+    'etc/xdg/userspawn/userspawnrc'
 )
+# replaces=(
+#     'dinit-user-spawn'
+# )
 source=(
     "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
     'userspawn.dinit'
@@ -46,11 +49,10 @@ sha256sums=('934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5'
 
 package() {
     install -Dm755 userspawnrc "$pkgdir"/etc/xdg/userspawn/userspawnrc
-    install -Dm644 userspawn.dinit "$pkgdir"/usr/lib/dinit.d/userspawn
 
-    # drop alpm install_userspawn_dinit?
-    # install -d "$pkgdir"/etc/dinit.d/boot.d/
-    # ln -s /usr/lib/dinit.d/userspawn "$pkgdir"/etc/dinit.d/boot.d/
+    install -d "$pkgdir"/etc/dinit.d/boot.d/
+    install -m644 userspawn.dinit "$pkgdir"/etc/dinit.d/userspawn
+    ln -s ../userspawn "$pkgdir"/etc/dinit.d/boot.d/
 
-    make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user install_userspawn_dinit
+    make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user #install_userspawn_dinit
 }
