@@ -1,10 +1,10 @@
 ---
-version: 2.16.0-1
+version: 2.16.0-2
 pkgbase:
   name: zint
   pkgdesc: Barcode encoding library supporting over 50 symbologies
   pkgver: 2.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://zint.org.uk/
   arch:
     - x86_64
@@ -30,9 +30,10 @@ pkgname:
     pkgdesc: Zint Barcode Studio GUI
     depends:
       - glibc
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - qt6-base
       - qt6-svg
       - qt6-tools
       - zint
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
