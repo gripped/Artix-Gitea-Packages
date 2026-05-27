@@ -1,21 +1,23 @@
 ---
-version: 1.8.11-1
+version: 1.8.12-1
 pkgbase:
   name: m17n-db
   pkgdesc: Multilingual text processing library (database)
-  pkgver: 1.8.11
+  pkgver: 1.8.12
   pkgrel: 1
   url: https://www.nongnu.org/m17n/
   arch:
     - any
   license:
-    - LGPL-2.1-only
+    - LGPL-2.1-or-later
+    - GPL-2.0-or-later
+    - MIT
   depends:
     - glibc
   source:
-    - https://download.savannah.gnu.org/releases/m17n/m17n-db-1.8.11.tar.gz
+    - https://download.savannah.gnu.org/releases/m17n/m17n-db-1.8.12.tar.gz
   sha256sums:
-    - b5791f38e66d0a452730331e027ac9b52d5c43c6d8709289db640069f68487f4
+    - d11ab5820989609d0df303e4211c1f008b665f9b0992a1077bc9f4bd020a29eb
 pkgname:
   - name: m17n-db
 # generated with artixpkg 0.38.5-1-any
