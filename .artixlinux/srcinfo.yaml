@@ -1,0 +1,53 @@
+---
+version: 3.4.10-3
+pkgbase:
+  name: pix
+  pkgdesc: Image viewer and browser based on gthumb. X-Apps Project.
+  pkgver: 3.4.10
+  pkgrel: 3
+  url: https://github.com/linuxmint/pix
+  arch:
+    - i686
+    - x86_64
+    - armv7h
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - meson
+    - intltool
+    - itstool
+    - liboauth
+    - exiv2
+    - glib2-devel
+  depends:
+    - desktop-file-utils
+    - librsvg
+    - gst-plugins-base-libs
+    - gsettings-desktop-schemas
+    - libwebp
+    - xapp
+  optdepends:
+    - 'gstreamer: Video support'
+    - 'gst-plugin-gtk: Video support'
+    - 'gst-libav: Video support'
+    - 'exiv2: Embedded metadata support'
+    - 'libjpeg-turbo: Jpeg writing support'
+    - 'libtiff: Tiff writing support'
+    - 'dcraw: Support for RAW photos'
+    - 'brasero: Burn discs'
+    - 'liboauth: Web albums'
+    - 'libchamplain: Map Viewer'
+    - 'libheif: heif/heic/avif file support'
+    - 'yelp: View help and documentation from the app'
+    - 'webkit2gtk-4.1: Web services support'
+  provides:
+    - pix
+  conflicts:
+    - pix-git
+  source:
+    - pix-3.4.10.tar.gz::https://github.com/linuxmint/pix/archive/3.4.10.tar.gz
+  sha256sums:
+    - d765e779ee6e7d8220fe556c010c181ae69be059d53192d628f5bec5fdc9082b
+pkgname:
+  - name: pix
+# generated with artixpkg 0.38.5-1-any

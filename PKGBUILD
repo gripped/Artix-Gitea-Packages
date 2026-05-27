@@ -1,18 +1,17 @@
 # Maintainer: Nate Simon <njsimon10@gmail.com>
 
 pkgname=pix
-pkgver=3.4.3
-pkgrel=1
+pkgver=3.4.10
+pkgrel=3
 pkgdesc="Image viewer and browser based on gthumb. X-Apps Project."
 arch=('i686' 'x86_64' 'armv7h')
-license=('GPL')
+license=('GPL-2.0-or-later')
 depends=(
     'desktop-file-utils'
     'librsvg'
     'gst-plugins-base-libs'
     'gsettings-desktop-schemas'
     'libwebp'
-    'webkit2gtk'
     'xapp'
 )
 makedepends=(
@@ -36,18 +35,13 @@ optdepends=(
     'libchamplain: Map Viewer'
     'libheif: heif/heic/avif file support'
     'yelp: View help and documentation from the app'
+    'webkit2gtk-4.1: Web services support'
 )
 provides=($pkgname)
 conflicts=('pix-git')
 url='https://github.com/linuxmint/pix'
 
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/linuxmint/${pkgname}/archive/${pkgver}.tar.gz")
-
-prepare() {
-    cd "${srcdir}"/${pkgname}-${pkgver}
-
-    #patch --forward --strip=1 --input=../0001-fix-gcc-errors.patch
-}
 
 build() {
     mkdir -p "${srcdir}"/${pkgname}-${pkgver}/build
@@ -65,4 +59,5 @@ package(){
     cd ${srcdir}/${pkgname}-${pkgver}/build
     DESTDIR="$pkgdir/" ninja install
 }
-sha256sums=('ecd6888f7a5272c776338440ddf0ae3199da91421028e0f54c8ca0e422ba0b9a')
+
+sha256sums=('d765e779ee6e7d8220fe556c010c181ae69be059d53192d628f5bec5fdc9082b')

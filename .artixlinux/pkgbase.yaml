@@ -1,13 +1,4 @@
 ---
-pkgbase:
-  name: pix
-  version: 3.4.3-1
-  arch:
-    - i686
-    - x86_64
-    - armv7h
-  pkgname:
-    - pix
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -20,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 3.4.3-1
+    version: 3.4.10-3
     packages:
-      - pix-3.4.3-1-x86_64.pkg.tar.zst
+      - pix-3.4.10-3-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
