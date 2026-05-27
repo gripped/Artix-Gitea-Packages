@@ -1,10 +1,10 @@
 ---
-version: 1.8.20-1
+version: 1.8.20-2
 pkgbase:
   name: python-debugpy
   pkgdesc: An implementation of the Debug Adapter Protocol for Python
   pkgver: 1.8.20
-  pkgrel: 1
+  pkgrel: 2
   url: https://aka.ms/debugpy
   arch:
     - x86_64
@@ -18,8 +18,9 @@ pkgbase:
     - python-setuptools
     - python-wheel
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - python
   source:
     - git+https://github.com/microsoft/debugpy#tag=v1.8.20
@@ -27,4 +28,4 @@ pkgbase:
     - 975069defb5092f6e0203c044ddb2923233ed19bd1fdc5bff5ae03ca064457e0
 pkgname:
   - name: python-debugpy
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
