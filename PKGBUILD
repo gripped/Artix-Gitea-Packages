@@ -21,7 +21,7 @@ validpgpkeys=(15D03C86837936A0A638AA2D2BB8C36BB504BFF3) # Oliver Blanthorn <free
 
 prepare() {
   cd tridactyl
-  yarn install --frozen-lockfile --non-interactive
+  yarn install --frozen-lockfile --non-interactive --ignore-scripts
 }
 
 build() {
