@@ -1,10 +1,10 @@
 ---
-version: 2.3.10-6
+version: 2.3.10-7
 pkgbase:
   name: qca
   pkgdesc: Qt Cryptographic Architecture
   pkgver: 2.3.10
-  pkgrel: 6
+  pkgrel: 7
   url: https://userbase.kde.org/QCA
   arch:
     - x86_64
@@ -23,8 +23,9 @@ pkgbase:
     - qt6-5compat
   depends:
     - ca-certificates
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - nss
   optdepends:
     - 'botan: botan plugin'
@@ -44,8 +45,9 @@ pkgname:
   - name: qca-qt5
     depends:
       - ca-certificates
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - nss
       - qt5-base
     provides:
@@ -57,8 +59,9 @@ pkgname:
   - name: qca-qt6
     depends:
       - ca-certificates
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - nss
       - qt6-5compat
       - qt6-base
