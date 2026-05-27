@@ -1,0 +1,48 @@
+---
+version: 0.84-2
+pkgbase:
+  name: putty
+  pkgdesc: A terminal integrated SSH/Telnet client
+  pkgver: 0.84
+  pkgrel: 2
+  url: https://putty.software/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+    - halibut
+  depends:
+    - glibc
+    - gtk3
+    - libgdk-3.so
+    - libgtk-3.so
+    - glib2
+    - libglib-2.0.so
+    - libgobject-2.0.so
+    - cairo
+    - libcairo.so
+    - libpangocairo-1.0.so
+    - libpango-1.0.so
+    - gdk-pixbuf2
+    - libgdk_pixbuf-2.0.so
+    - pango
+    - libpangocairo-1.0.so
+    - libpango-1.0.so
+  source:
+    - git+https://git.tartarus.org/simon/putty.git#tag=0.84
+    - putty.desktop
+    - putty.png
+    - putty.xpm
+  validpgpkeys:
+    - F412BA3AA30FDC0E77B4E3871993D21BCAD1AA77
+  sha256sums:
+    - 9cd9a84497535baa5df5a675c367bfe2bdbf0cbcec54f24993e2110bf66f94ab
+    - 4a8af81fe8ac702ad298606076088f237b83beed82cc089a32f314888b67cf2c
+    - 93ba8ea8abf942f4de1c6cd167d4b5c2d6246fb1aa39dc49571cc18d167460c1
+    - d65139883171ed0119d9778ff4a89e6a8151a5ae97fcf8dc7cafb59df424377f
+pkgname:
+  - name: putty
+# generated with artixpkg 0.38.5-1-any
