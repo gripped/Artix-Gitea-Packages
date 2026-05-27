@@ -1,0 +1,5 @@
+pre_upgrade() {
+    if [ -L etc/dinit.d/boot.d/dinit-user-spawn ]; then
+        rm etc/dinit.d/boot.d/dinit-user-spawn
+    fi
+}
