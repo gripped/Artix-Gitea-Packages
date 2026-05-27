@@ -2,7 +2,7 @@
 actions:
   addRepo: galaxy
   removeRepo: null
-  triggersBuild: true
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
