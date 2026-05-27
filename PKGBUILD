@@ -4,7 +4,7 @@
 
 pkgname=libva-intel-driver
 pkgver=2.4.1
-pkgrel=6
+pkgrel=7
 pkgdesc='VA-API implementation for Intel G45 and HD Graphics family'
 arch=(x86_64)
 url=https://01.org/linuxmedia/vaapi
@@ -19,7 +19,7 @@ makedepends=(
 )
 replaces=(libva-driver-intel)
 _tag=9a1f0c64174f970a26380d4957583c71372fbb7c
-source=(git+https://github.com/intel/intel-vaapi-driver.git#tag=9a1f0c64174f970a26380d4957583c71372fbb7c)
+source=(git+https://github.com/intel/intel-vaapi-driver.git#tag=${_tag})
 b2sums=('524369c3ced5b7d61bb93558bf95d6ef4f7af8c41362b1821f4f9d1c8887eb6bdde5549c98c8419bcd4fc1d5e042e564037f951ce9abaa30871eac7df863458f')
 
 pkgver() {
@@ -37,7 +37,7 @@ prepare() {
 
 build() {
   CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
-  arch-meson intel-vaapi-driver build
+  artix-meson intel-vaapi-driver build
   ninja -C build
 }
 
