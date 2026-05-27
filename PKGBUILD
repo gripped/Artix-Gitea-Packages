@@ -3,7 +3,7 @@
 # Maintainer: Tom Gundersen <teg@jklm.no>
 
 _pkgbase=systemd
-_tag='260.1'
+_tag='260.2'
 
 pkgname=lib32-udev
 pkgver="${_tag/[-~]/}"
@@ -21,7 +21,6 @@ provides=(
 depends=(
     'lib32-gcc-libs'
     'libudev'
-    #'lib32-libcap'
     'lib32-glibc'
 )
 makedepends=(
@@ -45,9 +44,9 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
               '9A774DB5DB996C154EBBFBFDA0099A18E29326E1'  # Yu Watanabe <watanabe.yu+github@gmail.com>
               '5C251B5FC54EB2F80F407AAAC54CA336CFEB557E') # Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
-        0001-artix-standalone-install.patch)
-sha512sums=('16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb'
-            'b01878eebe964177e53121e8249d73d0b041e4882e818d79cd8e14da6ce3ec53d1128aa6b74fe604effcdff0c9403c32cb8bce3d8938c8556a6e2d17ae12461f')
+        0001-udev-standalone-install.patch)
+sha512sums=('ef2268a157abe0cf1678e3eb6bb45ba2e1083f4911176a1099b2ab7bae2eecb03d48bc2057139d13740f79835bcb0cdfd762451563f29405a53685e1c49bc236'
+            'b683608daf50bc3b6e4c4e9bf774ff18b68328a69b5b5ca2d488f740ed616bc44c8a2722594b19806dbcb61abb327e44a8cd636d79c71dcbb642c973cd4cf0b0')
 
 _backports=(
 )
@@ -65,7 +64,7 @@ prepare() {
     for _c in "${_reverts[@]}"; do
         git revert -n "${_c}"
     done
-    patch -Np1 -i ../0001-artix-standalone-install.patch
+    patch -Np1 -i ../0001-udev-standalone-install.patch
 }
 
 build() {
