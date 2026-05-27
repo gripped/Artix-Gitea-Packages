@@ -23,8 +23,8 @@ pkgname=(
   pipewire-session-manager
   pulse-native-provider
 )
-pkgver=1.6.5
-pkgrel=2
+pkgver=1.6.6
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -82,17 +82,13 @@ source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
    systemd.patch artix-pipewire-launcher
 )
-b2sums=('48b5141cef2faaae187cef485b4559d876de0c42c5cd07efda38a69134232ccb37406f1c6b015fcb5c9722f000952018bf0eceeaf3c8265940225fcdd282c8d1'
+b2sums=('d4f511e99af6bed1ec132f2faff8225e1c61c20a9654b14a4b8c485989cab394a09a3a4c7ce53c42ef6eaf56b86bab7a03abefb147e9eb08ca6d7464f0d7c50c'
         'a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789'
         '697fc71055e3e8fc50787fe8d69a85eea585ce1afcb90048a528c34ae4639f05b0711efc54a8fd5d8dea41772074e32199f6a282156fdfbfa83fad0134d6d6d4')
 
 prepare() {
   cd pipewire
    patch -Np1 -i ../systemd.patch
-
-  # Avoid logspam
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/pipewire/-/work_items/32
-  git cherry-pick -n 012b037eeea2ed92812ad6c930570b0a045a34dc
 }
 
 build() {
