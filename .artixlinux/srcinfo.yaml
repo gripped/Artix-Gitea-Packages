@@ -1,10 +1,10 @@
 ---
-version: 2.7.0-2
+version: 2.7.0-3
 pkgbase:
   name: spglib
   pkgdesc: C library for finding and handling crystal symmetries
   pkgver: 2.7.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://spglib.readthedocs.io/en/latest/
   arch:
     - x86_64
@@ -22,10 +22,10 @@ pkgbase:
     - python-scikit-build-core
     - python-setuptools-scm
   depends:
-    - gcc-libs
     - glibc
   optdepends:
-    - 'gcc-libs: Fortran interface'
+    - 'libgcc: Fortran interface'
+    - 'libgfortran: Fortran interface'
     - 'python-numpy: Python interface'
   source:
     - git+https://github.com/spglib/spglib#tag=v2.7.0
@@ -33,4 +33,4 @@ pkgbase:
     - 06462a670f6501a2fb6d4e0f0fd0b848a87c628a3ae48ede3c93f444d1ef0739
 pkgname:
   - name: spglib
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
