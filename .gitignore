@@ -12,6 +12,7 @@
 
 pkg/
 src/
+tridactyl/
 
 *.service
 *.timer

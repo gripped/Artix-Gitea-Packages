@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,9 +50,14 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.24.5-1
+    packages:
+      - firefox-tridactyl-1.24.5-1-any.pkg.tar.zst
+      - firefox-developer-edition-tridactyl-1.24.5-1-any.pkg.tar.zst
+      - firefox-esr-tridactyl-1.24.5-1-any.pkg.tar.zst
+      - konform-browser-tridactyl-1.24.5-1-any.pkg.tar.zst
+    debug:
+      - firefox-tridactyl-debug-1.24.5-1-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []

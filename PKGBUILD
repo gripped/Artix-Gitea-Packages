@@ -1,13 +1,18 @@
-# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
+# Maintainer: commandk <handle@artixlinuxorg>
 
-pkgname=firefox-tridactyl
+pkgname=(
+  firefox-tridactyl
+  firefox-developer-edition-tridactyl
+  firefox-esr-tridactyl
+  konform-browser-tridactyl
+)
+
+pkgbase=firefox-tridactyl
 pkgver=1.24.5
 pkgrel=1
-pkgdesc="Replace Firefox's control mechanism with one modelled on Vim"
 arch=(any)
 url=https://github.com/tridactyl/tridactyl
 license=(Apache-2.0)
-groups=(firefox-addons)
 makedepends=(
   git
   node-gyp
@@ -30,8 +35,32 @@ build() {
   strip-nondeterminism -t zip web-ext-artifacts/tridactyl-$pkgver.xpi
 }
 
-package() {
+_package() {
   cd tridactyl
   install -Dm644 web-ext-artifacts/tridactyl-$pkgver.xpi \
-    "$pkgdir"/usr/lib/firefox/browser/extensions/tridactyl.vim@cmcaine.co.uk.xpi
+    "$pkgdir"/usr/lib/$1/browser/extensions/tridactyl.vim@cmcaine.co.uk.xpi
+}
+
+package_firefox-tridactyl() {
+  export pkgdesc="Replace Firefox control mechanism with one modelled on Vim"
+  export groups=(firefox-addons)
+  _package firefox
+}
+
+package_firefox-developer-edition-tridactyl() {
+  export pkgdesc="Replace Firefox Developer Edition control mechanism with one modelled on Vim"
+  export groups=(firefox-developer-edition-addons)
+  _package firefox-developer-edition
+}
+
+package_firefox-esr-tridactyl() {
+  export pkgdesc="Replace Firefox ESR control mechanism with one modelled on Vim"
+  export groups=(firefox-esr-addons)
+  _package firefox-esr
+}
+
+package_konform-browser-tridactyl() {
+  export pkgdesc="Replace Konform Browser control mechanism with one modelled on Vim"
+  export groups=(konform-browser-addons)
+  _package konform
 }
