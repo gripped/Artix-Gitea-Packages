@@ -1,8 +1,8 @@
 # Maintainer: aartoni <aartoni@artixlinux.org>
 
 pkgname=userspawn-runit
-pkgver=20260526
-pkgrel=2
+pkgver=20260527
+pkgrel=1
 pkgdesc='Launch anything, upon any user login'
 arch=('any')
 url='https://github.com/Mayware/userspawn'
@@ -32,7 +32,7 @@ source=(
 )
 sha256sums=('5efa2b881784b61cb21aa8ddfb988830621b5c5d766f9c6c57c65d1fecffe3f2'
             'fdd451e606e026156bc30100c5ecb7c5697dd6e4b0369aad0d73e66c31ea2374'
-            'ea1c3dbd3bd41097c402841c09e36bfa67e91878f692cb70eabb5f2c37acac96')
+            '60ad911bec48c174eba7f976b7221bef78d6cf5bd1eb09030be44b4debf2124e')
 
 package() {
     install -Dm755 userspawnrc "$pkgdir"/etc/xdg/userspawn/userspawnrc

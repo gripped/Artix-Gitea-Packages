@@ -5,17 +5,8 @@ post_install() {
 
 Per-user services live under ~/.config/service/.
 
-To run a session D-Bus bus as one of those services, create
-~/.config/service/dbus/run with:
-
-    #!/bin/sh
-    exec 2>&1
-    exec dbus-daemon --session --nofork --nopidfile \
-        --address="unix:path=${XDG_RUNTIME_DIR}/bus"
-
-and make it executable. The session bus address is NOT exported to processes
-outside the userspawn tree; consumers must set DBUS_SESSION_BUS_ADDRESS
-themselves or be started from within the per-user runsvdir.
+A per-user envdir is created at \$XDG_RUNTIME_DIR/runit/env on login.
+User services can source it with chpst -e \$XDG_RUNTIME_DIR/runit/env.
 
 EOF
 }
