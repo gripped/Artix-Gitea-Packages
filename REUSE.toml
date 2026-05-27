@@ -23,10 +23,3 @@ path = [
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
-
-[[annotations]]
-path = [
-    "vlc-3.0.23_2-qt-improvements.patch",
-]
-SPDX-FileCopyrightText = "vlc contributors"
-SPDX-License-Identifier = "GPL-2.0-or-later"
