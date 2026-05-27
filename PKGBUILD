@@ -5,40 +5,42 @@ _name=QCustomPlot
 pkgbase=qcustomplot
 pkgname=('qcustomplot' 'qcustomplot-doc')
 pkgver=2.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Qt C++ widget for plotting and data visualization"
 arch=('x86_64')
 url="https://www.qcustomplot.com/"
-license=('GPL3')
+license=('GPL-3.0-or-later')
 makedepends=('doxygen' 'graphviz' 'qt5-tools')
 source=(
-  "${pkgname}-${pkgver}.tar.bz2::https://www.qcustomplot.com/release/${pkgver}/${_name}-sharedlib.tar.gz"
-  "${pkgname}-${pkgver}-source.tar.gz::https://www.qcustomplot.com/release/${pkgver}/${_name}.tar.gz"
+  "${pkgname}-${pkgver}.tar.bz2::https://gitlab.com/ecme2/${_name}/-/archive/v${pkgver}/${_name}-v${pkgver}.tar.bz2"
+  "${pkgname}-${pkgver}-source.tar.gz::https://www.qcustomplot.com/release/${pkgver}/${_name}-source.tar.gz"
 )
-sha512sums=('c661e4a835066fee92b254fbd7b825dbd5c58973189ff2099a01308cb81fe6bf3bac1456f5da91f01c6265f8f548f61b57e237d00a9b5c2c94acf1a024baa18e'
-            '2e49a9b3f7ab03bcd580e5f3c3ae0d5e8c57d3ccce0ceed9862cde7ea23e2f3672a963af988be60e504cb5aa50bc462e4b28acf577eae41cc6fea2802642dc19')
-b2sums=('5ded041a46a35dece817749479cba83da260407e387a339c5fba57a37897118b20cd50f362e78ea4a35c9babc5f6c73c235a671a17b5b0423b00e472c0a8eb60'
-        '03f72e304fd55133b27cadb75941696d94d5d485c6ac2200d46f3da282fe23c1ca3638cef0cab9f760fb7f259043a3207f6a3b52d810305d1349c2c6c9306cdf')
+sha512sums=('a9c0fe0c2393858b5de66e78606ef96e57b00e405e0417df7d59d5e93a89f706a1d4767316bf015c76514aedd69553229fd347569b9d68e387103486ee29988f'
+            '1feb4f45ef90d7709edb26c9964f0ec85ef4aa30f0a7e9fcd803fae586875e8d6744dbcfe08b21f461816ca426c8a6612f8e9c7ef9d3f5a7150c3de8fa5ee57d')
+b2sums=('6525e5ca60ba978c2c09e86786339bd92ff4a995a170f3bc30e17e183134acb9d8d7515259eb65cb006f2cd713f1ed6bce69248fe228e8bd8a913857b0800170'
+        '985ce5fbfe2888ac2346a8c694e832f8d9e3d20ae1c2f93af8757f6a7c803e24ae429c11240aeaf9e79625d8eb0e8a835dca023b73eac4ca1338d21434bd3c67')
 
 prepare() {
-  mv -v "${pkgbase}-sharedlib" "${pkgbase}-${pkgver}"
+  mv -v "${_name}-v${pkgver}" "${pkgbase}-${pkgver}"
   cd "${pkgbase}-${pkgver}"
   # move required amalgameted sources into place
-  mv -v "../${pkgname}/"* .
-  sed \
-		-e 's:../../::g' \
-		-e '/CONFIG/s:shared.*:shared:g' \
-		sharedlib-compilation/sharedlib-compilation.pro > ${pkgbase}.pro || die
+  mv -v "../${pkgname}-source/"*.{cpp,h} .
 }
 
 build() {
   cd "${pkgbase}-${pkgver}"
-  qmake-qt5 ${pkgbase}.pro
+  qmake-qt5 sharedlib/sharedlib-compilation/sharedlib-compilation.pro
   make
+  # create documentation
+  doxygen
+  qhelpgenerator documentation/html/index.qhp \
+    -o documentation/qthelp/qcustomplot.qch
+  find documentation/html -type f \
+    -iname "*.qhp" -or -iname "*.map" -or -iname "*.md5" -delete
 }
 
 package_qcustomplot() {
-  depends=('qt5-base')
+  depends=('glibc' 'libgcc' 'libstdc++' 'qt5-base')
   provides=('libqcustomplot.so')
   replaces=('qcustomplot-qt5')
 
@@ -54,7 +56,7 @@ package_qcustomplot-doc() {
   pkgdesc+=" (docs)"
 
   cd "${pkgbase}-${pkgver}"
-  install -vDm 644 documentation/*.qch -t "${pkgdir}/usr/share/doc/qt/"
+  install -vDm 644 documentation/qthelp/*.qch -t "${pkgdir}/usr/share/doc/qt/"
   find examples -type f -exec install -vDm 644 {} "${pkgdir}/usr/share/doc/${pkgbase}/"{} \;
   (
     cd documentation

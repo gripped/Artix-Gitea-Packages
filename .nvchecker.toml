@@ -1,4 +1,4 @@
 [qcustomplot]
-source = "regex"
-regex = "tags/v([\\d.]+)?"
-url = "https://gitlab.com/DerManu/QCustomPlot/-/tags"
+source = "git"
+git = "https://gitlab.com/ecme2/QCustomPlot.git"
+prefix = "v"
