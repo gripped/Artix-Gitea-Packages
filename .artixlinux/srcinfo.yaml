@@ -1,10 +1,10 @@
 ---
-version: 1.17.1-1
+version: 1.17.1-2
 pkgbase:
   name: python-scipy
   pkgdesc: Open-source software for mathematics, science, and engineering
   pkgver: 1.17.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.scipy.org/
   arch:
     - x86_64
@@ -25,9 +25,11 @@ pkgbase:
     - python-pythran
   depends:
     - blas
-    - gcc-libs
     - glibc
     - lapack
+    - libgcc
+    - libgfortran
+    - libstdc++
     - python
     - python-numpy
     - python-platformdirs
@@ -54,4 +56,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-scipy
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
