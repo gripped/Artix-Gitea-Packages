@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='260.1'
+_tag='260.2'
 
 pkgbase=esys-utils
 pkgname=(
@@ -18,7 +18,7 @@ pkgname=(
 )
 pkgdesc='System utils extracted from systemd'
 pkgver="${_tag/[-~]/}"
-pkgrel=8
+pkgrel=1
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -57,7 +57,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         loader.conf
         splash-artix.bmp
 )
-sha512sums=('16055c7438e8ea994dcb2e293ed97ffac53660c86667fdd748189c9e66addb9d3e3feceec70f0dd1c394c9b95d761304cee58669b9f479ec7fcce284972d7abb'
+sha512sums=('ef2268a157abe0cf1678e3eb6bb45ba2e1083f4911176a1099b2ab7bae2eecb03d48bc2057139d13740f79835bcb0cdfd762451563f29405a53685e1c49bc236'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             'e81198f3de9028fababc6f5ee82c03f4f258d39e53fed08a3e103a1bd316366b9c3e7ee05593112f58b62f387e05790133c5d259f8401b32d76e474b02d7160a'
