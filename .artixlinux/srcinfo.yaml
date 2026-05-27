@@ -1,8 +1,8 @@
 ---
-version: 8.0.25.sdk125-1
+version: 8.0.27.sdk127-1
 pkgbase:
   name: dotnet-core-8.0
-  pkgver: 8.0.25.sdk125
+  pkgver: 8.0.27.sdk127
   pkgrel: 1
   url: https://dotnet.microsoft.com
   arch:
@@ -35,9 +35,9 @@ pkgbase:
     - '!lto'
     - staticlibs
   source:
-    - git+https://github.com/dotnet/dotnet.git#tag=86c1b454f17232e86cccbd509c734630eb55afef
+    - git+https://github.com/dotnet/dotnet.git#tag=56fc147a7ac76b53fb65b82756da001129b26cc4
   b2sums:
-    - 8d70e105f03d04138b36c4ed5bcd2766c2c1b66c97ee7b9b243d27e5d8998cf3fad8751673a1510feb2569acb01ebeb05f25149d45bf837fd4a4aa82e78c84e1
+    - e3bdc416afbe944e10682eb052a9dc6d91a21452f2274c5bff828aeb04225ff730c5fff014691f8a91b038603010826d264017d88523dc5d2e8358c169b2bf9a
 pkgname:
   - name: dotnet-runtime-8.0
     pkgdesc: The .NET Core runtime
@@ -76,4 +76,4 @@ pkgname:
       - dotnet-targeting-pack-8.0
   - name: dotnet-source-built-artifacts-8.0
     pkgdesc: Internal package for building the .NET Core SDK
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
