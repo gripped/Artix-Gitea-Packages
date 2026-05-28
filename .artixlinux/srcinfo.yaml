@@ -1,0 +1,26 @@
+---
+version: 0.8.9-1
+pkgbase:
+  name: qhexedit2-gui
+  pkgdesc: Simple hex editor showcasing the qhexedit2 widget
+  pkgver: 0.8.9
+  pkgrel: 1
+  url: https://github.com/Simsys/qhexedit2
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  makedepends:
+    - cmake
+    - qt5-tools
+    - git
+  depends:
+    - qt5-base
+    - qhexedit2
+  source:
+    - git+https://github.com/Simsys/qhexedit2.git#tag=v0.8.9
+  sha256sums:
+    - 137628f926af842b9af0721fbcd2242e482ce05ed4ef050330a2073ce80f7f98
+pkgname:
+  - name: qhexedit2-gui
+# generated with artixpkg 0.38.5-1-any

@@ -1,0 +1,5 @@
+[qhexedit2-gui]
+source = "gitea"
+gitea = "packages/qhexedit2"
+host = "gitea.artixlinux.org"
+use_latest_release = true
