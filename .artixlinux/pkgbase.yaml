@@ -1,9 +1,9 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: true
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
@@ -55,7 +55,7 @@ repos:
       - labwc-0.20.0-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 0.9.7-1
+    version: 0.20.0-1
     packages:
-      - labwc-0.9.7-1-x86_64.pkg.tar.zst
+      - labwc-0.20.0-1-x86_64.pkg.tar.zst
     debug: []
