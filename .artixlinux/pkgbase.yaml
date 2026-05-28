@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.6.1-1
+    version: 0.6.2-1
     packages:
-      - helvum-0.6.1-1-x86_64.pkg.tar.zst
+      - helvum-0.6.2-1-x86_64.pkg.tar.zst
     debug: []
