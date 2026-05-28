@@ -1,0 +1,76 @@
+diff --git a/common/profile-sync-daemon.in b/common/profile-sync-daemon.in
+index f7cbe9b..9979abd 100644
+--- a/common/profile-sync-daemon.in
++++ b/common/profile-sync-daemon.in
+@@ -11,8 +11,7 @@
+ PATH=$PATH:/sbin
+ 
+ if [[ -n "$LAUNCHED_BY_SYSTEMD" ]] ; then
+-# This script was invoked by systemd
+-# Thx to notes-jj: https://serverfault.com/questions/926349/systemd-tell-if-script-was-run-by-systemd-or-by-user
++# Invoked from a service manager without a terminal attached.
+ # No 'echo' ANSI escape codes
+   BLD=''
+   RED=''
+@@ -70,7 +69,7 @@ if [[ -z "$XDG_RUNTIME_DIR" ]]; then
+     exit 1
+   fi
+ elif [[ ! -d "$XDG_RUNTIME_DIR" ]]; then
+-  echo -e " ${RED}ERROR:${NRM}${BLD} Cannot find XDG_RUNTIME_DIR which should be set by systemd.${NRM}"
++  echo -e " ${RED}ERROR:${NRM}${BLD} Cannot find XDG_RUNTIME_DIR.${NRM}"
+   exit 1
+ fi
+ 
+@@ -206,8 +205,7 @@ dep_check() {
+ 
+   if [[ -f /etc/psd.conf ]]; then
+     echo -e "${BLD} This version of psd does not support /etc/psd.conf since it runs as your user.${NRM}"
+-    echo -e "${BLD} Recommend that you remove /etc/psd.conf and run it in systemd's user mode:${NRM}"
+-    echo -e "${BLD}   systemd --user <action> psd.service${NRM}"
++    echo -e "${BLD} Recommend that you remove /etc/psd.conf and run it as a user service.${NRM}"
+     exit 1
+   fi
+ }
+@@ -610,8 +608,18 @@ do_unsync() {
+ }
+ 
+ parse() {
+-  psd_state=$(systemctl --user is-active psd)
+-  resync_state=$(systemctl --user is-active psd-resync.timer)
++  local service_manager=""
++  local psd_state="inactive"
++  local resync_state="n/a"
++  local psd_suspend_sync_state
++
++  if command -v rc-service >/dev/null 2>&1; then
++    local service_manager="OpenRC --user"
++    if rc-service --user psd status >/dev/null 2>&1; then
++      psd_state="active"
++    fi
++  fi
++
+   psd_suspend_sync_state=$(pgrep -cf "psd-suspend-sync")
+   if [[ "$psd_suspend_sync_state" != 0 ]]; then
+     psss_state="enabled"
+@@ -619,10 +627,18 @@ parse() {
+     psss_state="disabled"
+   fi
+   [[ "$psd_state" = "active" ]] && psd_color="${GRN}" || psd_color="${RED}"
+-  [[ "$resync_state" = "active" ]] && resync_color="${GRN}" || resync_color="${RED}"
++  if [[ "$resync_state" = "n/a" ]]; then
++    resync_color="${BLU}"
++  else
++    [[ "$resync_state" = "active" ]] && resync_color="${GRN}" || resync_color="${RED}"
++  fi
+   [[ "$psd_suspend_sync_state" != 0 ]] && psss_color="${GRN}" || psss_color="${RED}"
+-  echo -en " ${BLD}systemd service:"
+-  echo -e "$(tput cr)$(tput cuf 17) ${psd_color}$psd_state${NRM}${BLD}${NRM}"
++  if [[ -n "$service_manager" ]]; then
++    echo -en " ${BLD}service manager:"
++    echo -e "$(tput cr)$(tput cuf 17) ${BLU}$service_manager${NRM}${BLD}${NRM}"
++    echo -en " ${BLD}service state:"
++    echo -e "$(tput cr)$(tput cuf 17) ${psd_color}$psd_state${NRM}${BLD}${NRM}"
++  fi
+   echo -en " ${BLD}resync-timer:"
+   echo -e "$(tput cr)$(tput cuf 17) ${resync_color}$resync_state${NRM}${BLD}${NRM}"
+   echo -en " ${BLD}sync on sleep:"
