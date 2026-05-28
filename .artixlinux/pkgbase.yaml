@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.565-1
+    version: 2.566-1
     packages:
-      - jenkins-2.565-1-any.pkg.tar.zst
+      - jenkins-2.566-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.564-1
