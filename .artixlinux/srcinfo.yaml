@@ -1,0 +1,28 @@
+---
+version: 1.9-2
+pkgbase:
+  name: qt5ct
+  pkgdesc: Qt5 Configuration Utility
+  pkgver: 1.9
+  pkgrel: 2
+  url: https://qt5ct.sourceforge.io/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - qt5-tools
+  depends:
+    - glibc
+    - libgcc
+    - libstdc++
+    - qt5-base
+    - qt5-svg
+  source:
+    - https://downloads.sourceforge.net/project/qt5ct/qt5ct-1.9.tar.bz2
+  sha256sums:
+    - dc10e6939d423b925981ce67febb1a015b6f61c022a9cc7e6c8b5efea4588bff
+pkgname:
+  - name: qt5ct
+# generated with artixpkg 0.38.5-1-any
