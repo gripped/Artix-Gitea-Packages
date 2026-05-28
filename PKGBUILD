@@ -15,7 +15,6 @@ depends=(
   fuse-overlayfs
   procps-ng
   rsync
-  systemd
 )
 optdepends=('zsh-completions: for completion when using zsh')
 install=$pkgname.install
@@ -41,7 +40,7 @@ build() {
 }
 
 package() {
-  make DESTDIR="$pkgdir" install -C $pkgname-$pkgver
+  make DESTDIR="$pkgdir" install-bin install-man -C $pkgname-$pkgver
   install -vDm 644 $pkgname-$pkgver/MIT -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 $pkgname-$pkgver/README.md -t "$pkgdir/usr/share/doc/$pkgname/"
   install -vDm 644 "${srcdir}/konform-browser" "${pkgdir}/usr/share/psd/browsers/konform-browser"
