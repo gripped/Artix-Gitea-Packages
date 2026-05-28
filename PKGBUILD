@@ -11,7 +11,7 @@ __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
-pkgver=140.11.0.102rc4
+pkgver=140.11.0.102rc5
 pkgrel=1
 _ffbuild=2
 _ffsrcver="${pkgver%.*}"
@@ -134,7 +134,7 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('15287547c0e8703211ae8cd476011442414402f97dc349cb167071c2a03bf5bc'
+sha256sums=('2f162b390679f1337e96c54a74b987a343f676049045000ac438e77e3eb6d783'
             '1b034d2117356fda24807a151055132315c6ba58ad2bdf7ec71ee707fac5e028'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
@@ -394,12 +394,12 @@ END
   rm -f ../mozconfig  ./mozconfig
 
   ./mach build --priority normal
-  MOZ_PKG_FORMAT=tar ./mach pack-multi-locale --locales ${_languages[@]}
 }
 
 package() {
   _lw_srcdir=$srcdir/src/librewolf-$_ffsrcver-$_lwrelver
   cd "${_lw_srcdir}"
+  MOZ_PKG_FORMAT=tar ./mach pack-multi-locale --locales ${_languages[@]}
   DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[*]}" ./mach install
 
   rm -f "${pkgdir}/usr/lib/pingsender"
