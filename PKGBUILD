@@ -4,7 +4,7 @@
 pkgbase=speech-dispatcher
 pkgname=(speech-dispatcher libspeechd)
 pkgver=0.12.1
-pkgrel=3
+pkgrel=3.1
 arch=('x86_64')
 pkgdesc="High-level device independent layer for speech synthesis interface"
 url='http://www.freebsoft.org/speechd'
@@ -42,7 +42,6 @@ package_speech-dispatcher() {
           'etc/speech-dispatcher/modules/mary-generic.conf'
           'etc/speech-dispatcher/modules/swift-generic.conf'
           'etc/speech-dispatcher/speechd.conf')
-  install=speech-dispatcher.install
 
   cd ${pkgname}-${pkgver}
   make DESTDIR="${pkgdir}" install
