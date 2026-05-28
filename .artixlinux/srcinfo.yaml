@@ -1,21 +1,21 @@
 ---
-version: 3.0.1-4
+version: 3.0.1-5
 pkgbase:
   name: kdiagram
   pkgdesc: Powerful libraries for creating business diagrams
   pkgver: 3.0.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.kde.org/
   arch:
     - x86_64
   license:
-    - GPL2
+    - GPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
     - qt6-tools
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
     - qt6-base
     - qt6-svg
   source:
@@ -29,4 +29,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kdiagram
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
