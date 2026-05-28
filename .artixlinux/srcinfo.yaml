@@ -1,10 +1,10 @@
 ---
-version: 260.2-1
+version: 260.2-2
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
   pkgver: 260.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64

@@ -15,7 +15,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -60,6 +60,8 @@ sha512sums=('ef2268a157abe0cf1678e3eb6bb45ba2e1083f4911176a1099b2ab7bae2eecb03d4
             'b683608daf50bc3b6e4c4e9bf774ff18b68328a69b5b5ca2d488f740ed616bc44c8a2722594b19806dbcb61abb327e44a8cd636d79c71dcbb642c973cd4cf0b0')
 
 _backports=(
+    # hwdb/keyboard: fix match for for X+ Piccolo, again
+    '7a53696201adccecb7ad1b49ad825c02842c6845'
 )
 
 _reverts=(
