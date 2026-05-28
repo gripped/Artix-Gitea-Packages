@@ -4,7 +4,7 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=11.2.0
+pkgver=11.3.0
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=(any)
@@ -17,7 +17,7 @@ makedepends=(
   python
 )
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-b2sums=('0124b8450640dbbc4f695245f35676fbc80094e0fa92da8c350ff1af9952e20bc67940ed8ccadd2a66db298d2608f52c0858c2d2e065a70d9b1e52029bad5cbd')
+b2sums=('f4678c4d2f5d628bf0c829f2ea7d1aa3201f0b7b99b07ef326976011b8b9b8d7e8dfa583aaa5899611eb0b73646dcf323cc349b455b3e1cccae438c2d102a48a')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
 
 prepare() {

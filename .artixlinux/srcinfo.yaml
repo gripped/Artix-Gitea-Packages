@@ -1,9 +1,9 @@
 ---
-version: 11.2.0-1
+version: 11.3.0-1
 pkgbase:
   name: pnpm
   pkgdesc: Fast, disk space efficient package manager
-  pkgver: 11.2.0
+  pkgver: 11.3.0
   pkgrel: 1
   url: https://pnpm.io
   arch:
@@ -17,11 +17,11 @@ pkgbase:
   depends:
     - node-gyp
   source:
-    - git+https://github.com/pnpm/pnpm.git#tag=v11.2.0?signed
+    - git+https://github.com/pnpm/pnpm.git#tag=v11.3.0?signed
   validpgpkeys:
     - 7B74D1299568B586BA9962B5649E4D4AF74E7DEC
   b2sums:
-    - 0124b8450640dbbc4f695245f35676fbc80094e0fa92da8c350ff1af9952e20bc67940ed8ccadd2a66db298d2608f52c0858c2d2e065a70d9b1e52029bad5cbd
+    - f4678c4d2f5d628bf0c829f2ea7d1aa3201f0b7b99b07ef326976011b8b9b8d7e8dfa583aaa5899611eb0b73646dcf323cc349b455b3e1cccae438c2d102a48a
 pkgname:
   - name: pnpm
 # generated with artixpkg 0.38.5-1-any
