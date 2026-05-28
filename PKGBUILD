@@ -4,7 +4,7 @@
 _alpm=2.4.6
 
 pkgname=userspawn-dinit
-pkgver=20260527
+pkgver=20260528
 pkgrel=1
 pkgdesc='dinit service script for userspawn'
 arch=('any')
@@ -35,9 +35,9 @@ conflicts=(
 backup=(
     'etc/xdg/userspawn/userspawnrc'
 )
-# replaces=(
-#     'dinit-user-spawn'
-# )
+replaces=(
+    'dinit-user-spawn'
+)
 source=(
     "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
     'userspawn.dinit'
@@ -48,11 +48,10 @@ sha256sums=('934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5'
             '67e9cc520c4d0f5dc57ec7219b21ed8db8723c128043a5902426408430afaeda')
 
 package() {
-    install -Dm755 userspawnrc "$pkgdir"/etc/xdg/userspawn/userspawnrc
-
-    install -d "$pkgdir"/etc/dinit.d/boot.d/
+    install -d "$pkgdir"/etc/{dinit.d/boot.d,xdg/userspawn}
+    install -m755 userspawnrc "$pkgdir"/etc/xdg/userspawn/userspawnrc
     install -m644 userspawn.dinit "$pkgdir"/etc/dinit.d/userspawn
     ln -s ../userspawn "$pkgdir"/etc/dinit.d/boot.d/
 
-    make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user #install_userspawn_dinit
+    make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user
 }

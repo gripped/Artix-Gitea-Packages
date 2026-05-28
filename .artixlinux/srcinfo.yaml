@@ -1,9 +1,9 @@
 ---
-version: 20260527-1
+version: 20260528-1
 pkgbase:
   name: userspawn-dinit
   pkgdesc: dinit service script for userspawn
-  pkgver: 20260527
+  pkgver: 20260528
   pkgrel: 1
   url: https://github.com/Mayware/userspawn
   arch:
@@ -27,6 +27,8 @@ pkgbase:
     - init-userspawn
     - dinit-user-spawn
     - turnstile-dinit
+  replaces:
+    - dinit-user-spawn
   backup:
     - etc/xdg/userspawn/userspawnrc
   source:
