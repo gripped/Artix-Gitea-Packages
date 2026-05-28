@@ -1,0 +1,62 @@
+diff --git a/README.md b/README.md
+index 132a759..324cdb0 100644
+--- a/README.md
++++ b/README.md
+@@ -19,6 +19,7 @@ User of eCryptFS are encouraged not to use psd unless willing to help troublesho
+ * Icecat (GNU version of Firefox)
+ * Iceweasel (Debian version of Firefox)
+ * Inox (https://bbs.archlinux.org/viewtopic.php?id=198763)
++* Konform Browser
+ * Luakit
+ * Midori
+ * Opera, Opera-Beta, Opera-Developer, and Opera-Legacy
+@@ -30,6 +31,7 @@ User of eCryptFS are encouraged not to use psd unless willing to help troublesho
+ * Seamonkey
+ * Surf (http://surf.suckless.org/)
+ * Vivaldi-browser and Vivaldi-browser-snapshot
++* Waterfox
+ 
+ ## Documentation
+ Consult the man page or the wiki page: https://wiki.archlinux.org/index.php/Profile-sync-daemon
+diff --git a/common/psd.conf b/common/psd.conf
+index 420a715..569d047 100644
+--- a/common/psd.conf
++++ b/common/psd.conf
+@@ -36,6 +36,7 @@
+ #  heftig-aurora
+ #  icecat
+ #  inox
++#  konform-browser
+ #  luakit
+ #  midori
+ #  opera
+@@ -51,6 +52,7 @@
+ #  surf
+ #  vivaldi
+ #  vivaldi-snapshot
++#  waterfox
+ #
+ #BROWSERS=()
+ 
+diff --git a/doc/psd.1 b/doc/psd.1
+index 174cde9..e83fbef 100644
+--- a/doc/psd.1
++++ b/doc/psd.1
+@@ -128,6 +128,8 @@ Iceweasel
+ .IP \(bu 3
+ Inox (https://bbs.archlinux.org/viewtopic.php?id=198763)
+ .IP \(bu 3
++Konform Browser
++.IP \(bu 3
+ Luakit
+ .IP \(bu 3
+ Midori
+@@ -149,6 +151,8 @@ Seamonkey
+ Vivaldi
+ .IP \(bu 3
+ Vivaldi-snapshot
++.IP \(bu 3
++Waterfox
+ .RE
+ .PP
+ Psd's infrastructure can work in principal with any browser that uses a generic chrome or mozilla, etc. format. User supplied profiles are provided in /usr/share/psd/contrib/ and can be manually copied to /usr/share/psd/browsers/ if one wishes to sync that particular browser. Make a corresponding entry in the BROWSERS array within the config file. Support for these is unsupported.
