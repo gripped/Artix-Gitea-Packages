@@ -1,9 +1,9 @@
 ---
-version: 1.6-1
+version: 1.7.0-1
 pkgbase:
   name: quazip
   pkgdesc: C++ wrapper for the ZIP/UNZIP C package
-  pkgver: 1.6
+  pkgver: 1.7.0
   pkgrel: 1
   url: https://stachenov.github.io/quazip/
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - qt6-5compat
     - zlib
   source:
-    - git+https://github.com/stachenov/quazip#tag=v1.6
+    - git+https://github.com/stachenov/quazip#tag=v1.7.0
   sha256sums:
-    - 14d37474ced858799ff3dfd040c535b710a9378df5f8511a71a1dd94868584d5
+    - 22d1bd2445774d0a10187cde796467b4405bd395d8430944641975fce011cf7d
 pkgname:
   - name: quazip-qt6
 # generated with artixpkg 0.38.5-1-any
