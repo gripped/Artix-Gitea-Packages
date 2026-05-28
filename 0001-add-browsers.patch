@@ -18,26 +18,6 @@ index 132a759..324cdb0 100644
  
  ## Documentation
  Consult the man page or the wiki page: https://wiki.archlinux.org/index.php/Profile-sync-daemon
-diff --git a/common/psd.conf b/common/psd.conf
-index 420a715..569d047 100644
---- a/common/psd.conf
-+++ b/common/psd.conf
-@@ -36,6 +36,7 @@
- #  heftig-aurora
- #  icecat
- #  inox
-+#  konform-browser
- #  luakit
- #  midori
- #  opera
-@@ -51,6 +52,7 @@
- #  surf
- #  vivaldi
- #  vivaldi-snapshot
-+#  waterfox
- #
- #BROWSERS=()
- 
 diff --git a/doc/psd.1 b/doc/psd.1
 index 174cde9..e83fbef 100644
 --- a/doc/psd.1
@@ -60,3 +40,31 @@ index 174cde9..e83fbef 100644
  .RE
  .PP
  Psd's infrastructure can work in principal with any browser that uses a generic chrome or mozilla, etc. format. User supplied profiles are provided in /usr/share/psd/contrib/ and can be manually copied to /usr/share/psd/browsers/ if one wishes to sync that particular browser. Make a corresponding entry in the BROWSERS array within the config file. Support for these is unsupported.
+diff --git a/common/psd.conf b/common/psd.conf
+index 420a715..1186c23 100644
+--- a/common/psd.conf
++++ b/common/psd.conf
+@@ -27,6 +27,7 @@
+ #  epiphany
+ #  falkon
+ #  firefox
++#  firefox-esr
+ #  firefox-flatpak
+ #  firefox-flatpak-cache
+ #  firefox-trunk
+@@ -36,6 +37,7 @@
+ #  heftig-aurora
+ #  icecat
+ #  inox
++#  konform-browser
+ #  luakit
+ #  midori
+ #  opera
+@@ -51,6 +53,7 @@
+ #  surf
+ #  vivaldi
+ #  vivaldi-snapshot
++#  waterfox
+ #
+ #BROWSERS=()
+ 
