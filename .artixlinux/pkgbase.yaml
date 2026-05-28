@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.92.0-2
+    version: 2.93.0-1
     packages:
-      - github-cli-2.92.0-2-x86_64.pkg.tar.zst
+      - github-cli-2.93.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
