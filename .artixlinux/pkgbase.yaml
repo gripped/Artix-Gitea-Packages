@@ -50,11 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1:7.03-1
+    version: 1:7.03-2
     packages:
-      - profile-sync-daemon-1:7.03-1-any.pkg.tar.zst
+      - profile-sync-daemon-1:7.03-2-any.pkg.tar.zst
     debug:
-      - profile-sync-daemon-debug-1:7.03-1-any.pkg.tar.zst
+      - profile-sync-daemon-debug-1:7.03-2-any.pkg.tar.zst
   galaxy:
     version: null
     packages: []
