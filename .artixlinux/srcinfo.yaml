@@ -1,0 +1,34 @@
+---
+version: 1.8.1-1
+pkgbase:
+  name: ruby-msgpack
+  pkgdesc: MessagePack implementation for Ruby
+  pkgver: 1.8.1
+  pkgrel: 1
+  url: https://github.com/msgpack/msgpack-ruby
+  arch:
+    - x86_64
+  license:
+    - Apache
+  makedepends:
+    - ruby-rdoc
+    - ruby-rake
+    - ruby-rake-compiler
+    - ruby-yard
+    - ruby-rspec
+    - ruby-bundler
+    - ruby-webrick
+    - ruby-ruby_memcheck
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - https://github.com/msgpack/msgpack-ruby/archive/v1.8.1/ruby-msgpack-v1.8.1.tar.gz
+  sha512sums:
+    - 69346feecc4808e3da09ab5c63ad4f8011a7e90e985dc51ca2080d614bff5a18ef95535277fe9cc0f427bdfa8a3ecae393929a8de85dcc86065613a4f5cdb832
+  b2sums:
+    - d88ecd7659d825fe29cf76f090ca81205756cab714495c9eb993ab69300554edd6557da656dd2ecfcd8588083c663960690484baba7fa4d0fe283b7c12e96f63
+pkgname:
+  - name: ruby-msgpack
+# generated with artixpkg 0.38.5-1-any
