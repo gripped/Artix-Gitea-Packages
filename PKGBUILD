@@ -1,10 +1,11 @@
-# Maintainer: Bruno Pagani <archange@archlinux.org>
-# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
+# Contributor: Jakub Klinkovský <lahwaacz at archlinux dot org>
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 
 pkgname=arrow
 pkgver=24.0.0
-pkgrel=1
+pkgrel=2
 # parquet-testing and arrow-testing projects have no releases, commits may need to be updated on pkgver bumps
 _parquet_testing_commit=92d45b0752487a4b55fb7f1581c8126ee3e73b0d
 _arrow_testing_commit=7b641152dcb0f9e197ebe24a1986151849250959
