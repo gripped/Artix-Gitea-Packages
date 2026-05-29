@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
+# Maintainer: Massimiliano Torromeo <massimiliano.torromeo@gmail.com>
 
 pkgbase=percona-server
 pkgname=('libperconaserverclient' 'percona-server-clients' 'percona-server')
 pkgver=8.4.8_8
 _pkgver=${pkgver/_/-}
 _myver=${pkgver/_rel*}
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 makedepends=('cmake' 'zlib' 'lz4' 'zstd' 'libaio' 'pam' 'numactl' 'jemalloc' 'openssl'
              'rpcsvc-proto' 'doxygen' 'graphviz' 'libevent' 'libfido2')
