@@ -1,7 +1,7 @@
 ---
 actions:
   addRepo: null
-  removeRepo: world
+  removeRepo: galaxy
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
