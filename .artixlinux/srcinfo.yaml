@@ -1,8 +1,8 @@
 ---
-version: 7.0.8-1
+version: 7.0.10-1
 pkgbase:
   name: linux-tools
-  pkgver: 7.0.8
+  pkgver: 7.0.10
   pkgrel: 1
   url: https://www.kernel.org
   arch:
@@ -48,13 +48,13 @@ pkgbase:
     - '!strip'
     - '!lto'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.8.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.8.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.10.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.10.tar.sign
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 1945afb22c9f4f7c78d971210f3bbb7deb09f5d8c41a38bfac772de25f6dcb22
+    - 094977eb62c20e3d1939fe81a92958a1f987f339446e532fa86963b2804e32dc
     - SKIP
 pkgname:
   - name: bootconfig
