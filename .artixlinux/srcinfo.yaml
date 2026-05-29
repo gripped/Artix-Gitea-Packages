@@ -1,10 +1,10 @@
 ---
-version: 1.5.2-2
+version: 1.6.0-1
 pkgbase:
   name: marknote
   pkgdesc: A simple markdown note management app
-  pkgver: 1.5.2
-  pkgrel: 2
+  pkgver: 1.6.0
+  pkgrel: 1
   url: https://apps.kde.org/marknote/
   arch:
     - x86_64
@@ -19,7 +19,6 @@ pkgbase:
     - kconfig
     - kcoreaddons
     - ki18n
-    - kiconthemes
     - kirigami
     - kirigami-addons
     - kmime
@@ -30,13 +29,14 @@ pkgbase:
     - qqc2-desktop-style
     - qt6-base
     - qt6-declarative
+    - syntax-highlighting
   source:
-    - https://download.kde.org/stable/marknote/marknote-1.5.2.tar.xz
-    - https://download.kde.org/stable/marknote/marknote-1.5.2.tar.xz.sig
+    - https://download.kde.org/stable/marknote/marknote-1.6.0.tar.xz
+    - https://download.kde.org/stable/marknote/marknote-1.6.0.tar.xz.sig
   validpgpkeys:
     - 39FFA93CAE9C6AFC212AD00202325448204E452A
   sha256sums:
-    - bc5a0a82be7a24cdbcfb8b28e41c4a2003e0254d6a898296b74347b476e3eeb7
+    - d3bb39614e22fd1a8ddd74bcfb4c384cbffe25685ec01116f694e470816284a9
     - SKIP
 pkgname:
   - name: marknote
