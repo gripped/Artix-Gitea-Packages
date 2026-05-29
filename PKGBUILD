@@ -42,7 +42,7 @@ b2sums=('77a484ba476041614ffd363d626641df4704d672b2dc7369a98c3bfa40b98449c050e27
 
 
 build() {
-  artix-meson -Dman-pages=enabled "$pkgname" build
+  artix-meson -Dman-pages=enabled -Dsystemd-session=disabled "$pkgname" build
   meson compile -C build
 }
 
