@@ -1,10 +1,10 @@
 ---
-version: 148.0.8-1
+version: 148.0.8-2
 pkgbase:
   name: cef
   pkgdesc: Chromium Embedded Framework (CEF), simple framework for embedding Chromium-based browsers in other applications
   pkgver: 148.0.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://chromiumembedded.github.io/cef
   arch:
     - x86_64
@@ -44,6 +44,7 @@ pkgbase:
     - mesa
     - nss
     - pango
+    - libudev
     - fontconfig
     - brotli
     - libjpeg-turbo
