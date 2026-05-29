@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-3
+version: 2.3.0-4
 pkgbase:
   name: apache-orc
   pkgdesc: Columnar storage for Hadoop workloads.
   pkgver: 2.3.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://orc.apache.org
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - 458ec83da45446442a32dd5bd21b8569a2f20c4cef07fd03ec0044f5604260ea
 pkgname:
   - name: apache-orc
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
