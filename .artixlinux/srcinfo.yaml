@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.13-1
+version: 1:1.0.14-1
 pkgbase:
   name: cosmic-launcher
   pkgdesc: Layer Shell frontend for Pop Launcher
-  pkgver: 1.0.13
+  pkgver: 1.0.14
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-launcher
@@ -28,7 +28,7 @@ pkgbase:
     - pop-launcher
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-launcher.git#tag=epoch-1.0.13
+    - git+https://github.com/pop-os/cosmic-launcher.git#tag=epoch-1.0.14
     - cosmic-launcher-lto.patch
   b2sums:
     - 56a48cf5f9ab1172c28fe57a218f9cb2ddf6905228f2021369f63e036062a547f54e022880ecf9421c7d096c01f88bb1683152fc704a3ab86143c66155a73e3b
