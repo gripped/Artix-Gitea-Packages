@@ -53,10 +53,10 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.0.8.zen1-1
+    version: 7.0.10.zen1-1
     packages:
-      - linux-zen-7.0.8.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-headers-7.0.8.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-docs-7.0.8.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-7.0.10.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-headers-7.0.10.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-docs-7.0.10.zen1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
