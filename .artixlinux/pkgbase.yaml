@@ -25,13 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 12.3.2-1
+    version: 12.3.2-2
     packages:
-      - mariadb-libs-12.3.2-1-x86_64.pkg.tar.zst
-      - mariadb-clients-12.3.2-1-x86_64.pkg.tar.zst
-      - mariadb-12.3.2-1-x86_64.pkg.tar.zst
-      - mariadb-mytop-12.3.2-1-x86_64.pkg.tar.zst
-      - mariadb-pam-12.3.2-1-x86_64.pkg.tar.zst
+      - mariadb-libs-12.3.2-2-x86_64.pkg.tar.zst
+      - mariadb-clients-12.3.2-2-x86_64.pkg.tar.zst
+      - mariadb-12.3.2-2-x86_64.pkg.tar.zst
+      - mariadb-mytop-12.3.2-2-x86_64.pkg.tar.zst
+      - mariadb-pam-12.3.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 12.2.2-2

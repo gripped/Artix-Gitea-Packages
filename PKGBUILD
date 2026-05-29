@@ -18,7 +18,7 @@ pkgname=(
   'mariadb-pam')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=12.3.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -223,7 +223,7 @@ package_mariadb() {
               'curl: for ha_s3 plugin'
               'galera: for MariaDB cluster with Galera WSREP'
               'judy: for Open Query GRAPH (OQGraph) computation engine'
-              'mariadb-lts-pam: for PAM authentication'
+              'mariadb-pam: for PAM authentication'
               'perl-dbd-mariadb: for mariadb-hotcopy, mariadb-convert-table-format and mariadb-setpermission'
               'python-mysqlclient: for myrocks_hotbackup'
               'xz: lzma provider')

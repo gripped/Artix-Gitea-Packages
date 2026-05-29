@@ -1,10 +1,10 @@
 ---
-version: 12.3.2-1
+version: 12.3.2-2
 pkgbase:
   name: mariadb
   pkgdesc: Fast SQL database server, derived from MySQL
   pkgver: 12.3.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://mariadb.org/
   arch:
     - x86_64
@@ -113,7 +113,7 @@ pkgname:
       - 'curl: for ha_s3 plugin'
       - 'galera: for MariaDB cluster with Galera WSREP'
       - 'judy: for Open Query GRAPH (OQGraph) computation engine'
-      - 'mariadb-lts-pam: for PAM authentication'
+      - 'mariadb-pam: for PAM authentication'
       - 'perl-dbd-mariadb: for mariadb-hotcopy, mariadb-convert-table-format and mariadb-setpermission'
       - 'python-mysqlclient: for myrocks_hotbackup'
       - 'xz: lzma provider'
