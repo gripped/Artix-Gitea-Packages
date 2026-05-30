@@ -1,0 +1,6 @@
+[artixlinux-appstream-data]
+source = "gitea"
+gitea = "corysanin/appstream-data-pkgbuild"
+host = "gitea.artixlinux.org"
+prefix = "v"
+use_max_tag = true
