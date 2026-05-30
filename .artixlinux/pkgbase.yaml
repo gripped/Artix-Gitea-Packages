@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.287-2
+    version: 0.288-1
     packages:
-      - mame-0.287-2-x86_64.pkg.tar.zst
-      - mame-tools-0.287-2-x86_64.pkg.tar.zst
+      - mame-0.288-1-x86_64.pkg.tar.zst
+      - mame-tools-0.288-1-x86_64.pkg.tar.zst
     debug: []

@@ -1,10 +1,10 @@
 ---
-version: 0.287-2
+version: 0.288-1
 pkgbase:
   name: mame
   pkgdesc: Port of the popular Multiple Arcade Machine Emulator using SDL with OpenGL support
-  pkgver: 0.287
-  pkgrel: 2
+  pkgver: 0.288
+  pkgrel: 1
   url: https://mamedev.org/
   arch:
     - x86_64
@@ -39,7 +39,7 @@ pkgbase:
     - '!debug'
     - '!lto'
   source:
-    - git+https://github.com/mamedev/mame#tag=mame0287?signed
+    - git+https://github.com/mamedev/mame#tag=mame0288?signed
     - mame.desktop
     - mame.sh
     - mame.svg
@@ -47,7 +47,7 @@ pkgbase:
   validpgpkeys:
     - D0362DB01844E0433ADBBFBAC174B1018C40710E
   sha256sums:
-    - 5cc8f275f2156c8ab73e3e658a582cb9f729bd4db7771e40f969309ec31f8398
+    - 83c0c5ef9b3f1bd2078e924036a900542690390d90801898893786ec9d01e960
     - 0e5e93f84673c2d17a1bf7a6b256cfa54ef89a086a828df19bc054c12776d821
     - ee1c59bafc5e5441e99fa4c58108a3e18048e60672f34de865c8a5a976094dba
     - 17c442c933d764175e4ce1de50a80c0c2ddd5d733caf09c3cd5e6ba697ac43f4
@@ -63,6 +63,7 @@ pkgname:
       - libglvnd
       - libjpeg-turbo
       - libpulse
+      - libstdc++
       - libutf8proc
       - libx11
       - libxi
@@ -87,6 +88,7 @@ pkgname:
       - flac
       - glibc
       - libgcc
+      - libstdc++
       - libutf8proc
       - sdl2
       - zlib
