@@ -3,14 +3,15 @@
 
 pkgname=kseexpr
 pkgver=6.0.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='An embeddable expression evaluation engine (Krita fork)'
 arch=(x86_64)
 url='https://krita.org'
 license=(GPL-3.0-or-later)
-depends=(gcc-libs
-         glibc
+depends=(glibc
          ki18n
+         libgcc
+         libstdc++
          qt6-base)
 makedepends=(extra-cmake-modules
              git
