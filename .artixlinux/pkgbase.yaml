@@ -2,7 +2,7 @@
 actions:
   addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.4.10-3
+    version: 3.4.10-3.1
     packages:
-      - pix-3.4.10-3-x86_64.pkg.tar.zst
+      - pix-3.4.10-3.1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

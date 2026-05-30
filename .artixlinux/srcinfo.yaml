@@ -1,10 +1,10 @@
 ---
-version: 3.4.10-3
+version: 3.4.10-3.1
 pkgbase:
   name: pix
   pkgdesc: Image viewer and browser based on gthumb. X-Apps Project.
   pkgver: 3.4.10
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/linuxmint/pix
   arch:
     - i686
