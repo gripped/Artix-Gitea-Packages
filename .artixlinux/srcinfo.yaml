@@ -1,10 +1,10 @@
 ---
-version: 5.1.1-1
+version: 5.1.1-2
 pkgbase:
   name: kio-fuse
   pkgdesc: FUSE interface for KIO
   pkgver: 5.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/
   arch:
     - x86_64
@@ -14,10 +14,10 @@ pkgbase:
     - extra-cmake-modules
   depends:
     - fuse3
-    - gcc-libs
     - glibc
     - kcoreaddons
     - kio
+    - libstdc++
     - qt6-base
   source:
     - https://download.kde.org/stable/kio-fuse/kio-fuse-5.1.1.tar.xz
@@ -29,4 +29,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kio-fuse
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
