@@ -1,10 +1,10 @@
 ---
-version: 3.2.0-1
+version: 3.2.0-2
 pkgbase:
   name: qbs
   pkgdesc: Cross platform build tool
   pkgver: 3.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.qt.io/Qbs
   arch:
     - x86_64
@@ -14,8 +14,9 @@ pkgbase:
     - cmake
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - qt6-base
     - qt6-5compat
   source:
@@ -26,4 +27,4 @@ pkgbase:
     - 463fc358c4693048b7db61ad5f6ba2801c54e1ead5daa4f8fc4ca8d70558088b
 pkgname:
   - name: qbs
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
