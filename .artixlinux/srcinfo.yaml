@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-1
+version: 2.4.1-1
 pkgbase:
   name: lxqt-panel
   pkgdesc: The LXQt desktop panel
-  pkgver: 2.4.0
+  pkgver: 2.4.1
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-panel
   arch:
@@ -38,13 +38,13 @@ pkgbase:
     - 'libsysstat: System Statistics plugin'
     - 'lm_sensors: Sensors plugin'
   source:
-    - https://github.com/lxqt/lxqt-panel/releases/download/2.4.0/lxqt-panel-2.4.0.tar.xz
-    - https://github.com/lxqt/lxqt-panel/releases/download/2.4.0/lxqt-panel-2.4.0.tar.xz.asc
+    - https://github.com/lxqt/lxqt-panel/releases/download/2.4.1/lxqt-panel-2.4.1.tar.xz
+    - https://github.com/lxqt/lxqt-panel/releases/download/2.4.1/lxqt-panel-2.4.1.tar.xz.asc
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
     - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - 23b9cda6e6ad47df61d2e813de2fced52597fd547de120d2eae8df5db4573702
+    - 7828d7e8fabf66ef1491e50b609b8eb041d74c433554f7d073ac07af26843d02
     - SKIP
 pkgname:
   - name: lxqt-panel
