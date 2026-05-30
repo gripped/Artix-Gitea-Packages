@@ -1,10 +1,10 @@
 ---
-version: 3.4.2-4
+version: 3.4.2-5
 pkgbase:
   name: calamares
   pkgdesc: Distribution-independent installer framework
   pkgver: 3.4.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://codeberg.org/Calamares/calamares
   arch:
     - x86_64
@@ -22,6 +22,7 @@ pkgbase:
     - qt6-translations
     - git
   depends:
+    - appstream-qt
     - bash
     - glibc
     - libgcc

@@ -5,7 +5,7 @@ _artix_url=https://gitea.artixlinux.org/artix/calamares
 
 pkgname=calamares
 pkgver=3.4.2
-pkgrel=4
+pkgrel=5
 pkgdesc='Distribution-independent installer framework'
 arch=('x86_64')
 url="https://codeberg.org/Calamares/calamares"
@@ -18,7 +18,7 @@ license=(
     'LGPL-3.0-or-later'
     'MIT')
 depends=(
-    #'appstream-qt6'
+    'appstream-qt'
     'bash'
     'glibc'
     'libgcc'
@@ -79,6 +79,8 @@ prepare() {
     git apply ../0001-packagechooser-customize-qrc.patch
     git apply ../0002-if-license.patch
     git apply ../0003-packagechooser-add-if-png.patch
+
+    sed -e 's|${qtname}|Qt|g' -i  CMakeModules/AppStreamHelper.cmake
 }
 
 build() {
@@ -90,7 +92,7 @@ build() {
         -DINSTALL_CONFIG:BOOL=ON \
         -DINSTALL_POLKIT:BOOL=ON \
         -DBUILD_APPDATA:BOOL=OFF \
-        -DBUILD_APPSTREAM:BOOL=OFF \
+        -DBUILD_APPSTREAM:BOOL=ON \
         -DWITH_QT6:BOOL=ON \
         -DSKIP_MODULES="\
             services-systemd \
