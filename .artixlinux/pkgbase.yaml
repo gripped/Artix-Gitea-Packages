@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1:140.11.0.102rc5-1
+    version: 1:140.11.0.102rc6-1
     packages:
-      - konform-browser-1:140.11.0.102rc5-1-x86_64.pkg.tar.zst
+      - konform-browser-1:140.11.0.102rc6-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 140.11.0.101-1
