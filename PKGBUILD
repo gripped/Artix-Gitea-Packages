@@ -1,9 +1,10 @@
-# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=fontconfig
 pkgver=2.18.0
-pkgrel=2
+pkgrel=3
 epoch=2
 pkgdesc="Library for configuring and customizing font access"
 url=https://www.freedesktop.org/wiki/Software/fontconfig/
@@ -30,13 +31,11 @@ backup=(etc/fonts/fonts.conf)
 install=fontconfig.install
 source=(
   "git+https://gitlab.freedesktop.org/fontconfig/fontconfig.git?signed#tag=$pkgver"
-  0001-Fix-a-null-pointer-dereference-when-computing-a-patt.patch
   40-fontconfig-config.hook
   40-fontconfig-config.script
   fontconfig.hook
 )
 b2sums=('b345126ee3216aaa0feb79a4bb9d41c33b116862242e547eab9c217db2220205edbdd67893d1d8917c4a469da5a75cce0526d31b4c792b38815e4a70b4c6b750'
-        '345b57e76bcec4990287399157ec47ab3233191f946d86bcbd8a825dc3fc5583868576644c02c31e7912d26664ab05056ac0eb0f4ad5be6edb8f2b42a2edaa68'
         'b06b3f2b8c0c38139a9247c26a641e6dc01d50b530478dd14133175a603f60b0af901af16c9fcf1ce73d23786ea14bfdbacd39f1dcfd88f6382965ad22be1411'
         '7fb63e76ab126bc0a7decfd74c53429ad1ce6d13de2f14037259616d8d4150b8fa4601c7f02b75918ccd5995d424816dc9d01a5fe7e39dc3dd1fcc83dfdb0fe8'
         'dfbf47c069c88da7687511356cef5bb94b7190e558a6f08390d6976fa7065ba7137ccb0a5ca1defdef655091afe74eb8a3d33fb9f3e0633409aa79f753ad276d')
@@ -60,7 +59,11 @@ prepare() {
   # Fix Firefox crash
   # https://gitlab.archlinux.org/archlinux/packaging/packages/fontconfig/-/work_items/7
   # https://gitlab.freedesktop.org/fontconfig/fontconfig/-/merge_requests/521
-  git apply -3 ../0001-Fix-a-null-pointer-dereference-when-computing-a-patt.patch
+  git cherry-pick -n 80191ec6a13e1d2172ee9e70e2d50d1e04b6fb0e
+
+  # More font matching fixes
+  git cherry-pick -n e17806afda817cf8ba2fe6e0d063617994dcdc0f
+  git cherry-pick -n 66757ccdbd43260bba3195265311cf8ca268f0d4
 }
 
 build() {
