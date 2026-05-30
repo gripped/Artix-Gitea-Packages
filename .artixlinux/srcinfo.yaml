@@ -1,10 +1,10 @@
 ---
-version: 4.13.0-6
+version: 4.13.0-8
 pkgbase:
   name: opencv
   pkgdesc: Open Source Computer Vision Library
   pkgver: 4.13.0
-  pkgrel: 6
+  pkgrel: 8
   url: https://opencv.org/
   arch:
     - x86_64
@@ -36,7 +36,6 @@ pkgbase:
     - cblas
     - ffmpeg
     - freetype2
-    - gcc-libs
     - glib2
     - glibc
     - gst-plugins-base
@@ -45,10 +44,12 @@ pkgbase:
     - harfbuzz
     - lapack
     - libdc1394
+    - libgcc
     - libglvnd
     - libjpeg-turbo
     - libjxl
     - libpng
+    - libstdc++
     - libtiff
     - libwebp
     - openexr
@@ -75,6 +76,7 @@ pkgbase:
     - fix-cudacodec-dependencies.patch
     - fix-cccl-namespace.patch
     - fix-std.patch
+    - fix-thrust-tuple.patch
   sha256sums:
     - efc754fc3888944007586133fc225f0136d1767020564b81e4d90f51e9d68b60
     - 3fc521a16314978de02d5b33e657a09a9567429d5801d3fb94e35581ea44d729
@@ -83,6 +85,7 @@ pkgbase:
     - fbb10b75ca7849f85ea2f118aa017f00e34445d80ed76619f13ae1e4e9504ae4
     - b757be8df583cb3fa0059e47594eeb680638c572d3ae02bc1a5f7636e71ce5be
     - c05fe7572ee5193cf3de7f02a500f446f3457ec20c315590a326bf1bfb5552cc
+    - 6379b0f23ba4068d2daa43ec158e515f58ef36242138eb10f752a93dc1cec375
 pkgname:
   - name: opencv
   - name: opencv-samples
@@ -94,8 +97,11 @@ pkgname:
     depends:
       - fmt
       - glew
+      - glibc
       - hdf5
       - jsoncpp
+      - libgcc
+      - libstdc++
       - opencv
       - openmpi
       - pugixml
@@ -109,7 +115,6 @@ pkgname:
       - cblas
       - ffmpeg
       - freetype2
-      - gcc-libs
       - glib2
       - glibc
       - gst-plugins-base
@@ -118,10 +123,12 @@ pkgname:
       - harfbuzz
       - lapack
       - libdc1394
+      - libgcc
       - libglvnd
       - libjpeg-turbo
       - libjxl
       - libpng
+      - libstdc++
       - libtiff
       - libwebp
       - openexr
