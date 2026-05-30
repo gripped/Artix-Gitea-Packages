@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.1.1-9
+    version: 0.1.1-10
     packages:
-      - moksha-module-forecasts-0.1.1-9-x86_64.pkg.tar.zst
+      - moksha-module-forecasts-0.1.1-10-x86_64.pkg.tar.zst
     debug: []

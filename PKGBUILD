@@ -4,7 +4,7 @@ _module='forecasts'
 _fullmodule='forecast_e'
 pkgname="moksha-module-${_module}"
 pkgver=0.1.1
-pkgrel=9
+pkgrel=10
 pkgdesc="The forecasts gadget will display the current weather conditions plus a few days forecast."
 _group=('moksha-modules-extra')
 arch=('x86_64')
@@ -12,8 +12,8 @@ url="http://mokshadesktop.org"
 license=('BSD')
 depends=('moksha')
 makedepends=('git')
-source=("${_fullmodule}::git+https://github.com/thewaiter/$_fullmodule.git#commit=a3a25b16cebeebf070e76ee07aa44df4b46f3f81")
-sha256sums=('39ce46b98e441b3bcbc7f28457cdd13ca95943a723e26bd0630b00887a18494e')
+source=("${_fullmodule}::git+https://github.com/thewaiter/$_fullmodule.git#commit=8a3b0f8f7ebfb47663b24dc59960655f47af5993")
+sha256sums=('6c2b7c4753055c036069133409aa3674b255df3e2d808e9b46dbb1f09fa84e78')
 
 build() {
     cd "${srcdir}/${_fullmodule}"

@@ -1,10 +1,10 @@
 ---
-version: 0.1.1-9
+version: 0.1.1-10
 pkgbase:
   name: moksha-module-forecasts
   pkgdesc: The forecasts gadget will display the current weather conditions plus a few days forecast.
   pkgver: 0.1.1
-  pkgrel: 9
+  pkgrel: 10
   url: http://mokshadesktop.org
   arch:
     - x86_64
@@ -15,9 +15,9 @@ pkgbase:
   depends:
     - moksha
   source:
-    - forecast_e::git+https://github.com/thewaiter/forecast_e.git#commit=a3a25b16cebeebf070e76ee07aa44df4b46f3f81
+    - forecast_e::git+https://github.com/thewaiter/forecast_e.git#commit=8a3b0f8f7ebfb47663b24dc59960655f47af5993
   sha256sums:
-    - 39ce46b98e441b3bcbc7f28457cdd13ca95943a723e26bd0630b00887a18494e
+    - 6c2b7c4753055c036069133409aa3674b255df3e2d808e9b46dbb1f09fa84e78
 pkgname:
   - name: moksha-module-forecasts
 # generated with artixpkg 0.38.5-1-any
