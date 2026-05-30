@@ -65,7 +65,7 @@ pkgbase:
     - telegram-tdlib::git+https://github.com/tdlib/td.git
     - 0001-revert-cmake-patch.patch
   sha256sums:
-    - edfa7b1448f15d05d5ea8295d0a51618d6b66de17cff70f0383049acbc61c421
+    - 291f3d7c0a3d2fe2da7e8f32fc5d2baf9a1543557bf977a73eec9f1c4fdd685c
     - SKIP
     - cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861
 pkgname:

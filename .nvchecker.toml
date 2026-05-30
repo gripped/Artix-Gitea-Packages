@@ -1,3 +1,4 @@
 [forkgram]
-source = "aur"
-strip_release = true
+source = "git"
+git = "https://github.com/Forkgram/tdesktop.git"
+prefix = "v"
