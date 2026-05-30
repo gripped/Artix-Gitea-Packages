@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,8 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 5.15.208-1
+    packages:
+      - linux-lts515-5.15.208-1-x86_64.pkg.tar.zst
+      - linux-lts515-headers-5.15.208-1-x86_64.pkg.tar.zst
+      - linux-lts515-docs-5.15.208-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 5.15.207-1
