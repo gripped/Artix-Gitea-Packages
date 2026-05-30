@@ -1,9 +1,9 @@
 ---
-version: 3.2.10-1
+version: 3.2.10-2
 pkgbase:
   name: wxwidgets
   pkgver: 3.2.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://wxwidgets.org
   arch:
     - x86_64
@@ -29,11 +29,12 @@ pkgname:
     pkgdesc: Common libraries and headers for wxwidgets
     depends:
       - curl
-      - gcc-libs
       - glib2
       - glibc
       - expat
+      - libgcc
       - libsecret
+      - libstdc++
       - pcre2
       - xz
       - zlib
@@ -47,19 +48,20 @@ pkgname:
       - bash
       - cairo
       - fontconfig
-      - gcc-libs
       - gdk-pixbuf2
       - glib2
       - glibc
       - gst-plugins-bad-libs
       - gstreamer
       - gtk3
+      - libgcc
       - libglvnd
       - libjpeg-turbo
       - libnotify
       - libmspack
       - libpng
       - libsm
+      - libstdc++
       - libtiff
       - libx11
       - libxkbcommon
@@ -74,16 +76,17 @@ pkgname:
     pkgdesc: Qt5 implementation of wxWidgets API for GUI
     depends:
       - bash
-      - gcc-libs
       - glibc
+      - libgcc
       - libglvnd
       - libjpeg-turbo
       - libmspack
       - libpng
+      - libstdc++
       - libtiff
       - qt5-base
       - sdl2
       - wxwidgets-common
     provides:
       - wxwidgets
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
