@@ -1,10 +1,10 @@
 ---
-version: 5.0.0git20251013-1
+version: 5.0.0git20251013-2
 pkgbase:
   name: jkqtplotter
   pkgdesc: A Qt Plotting Library
   pkgver: 5.0.0git20251013
-  pkgrel: 1
+  pkgrel: 2
   url: http://jkriege2.github.io/JKQtPlotter/
   arch:
     - x86_64
@@ -14,8 +14,9 @@ pkgbase:
     - cmake
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
     - qt6-base
     - qt6-svg
   source:
@@ -24,4 +25,4 @@ pkgbase:
     - f5fdc43c64ad5ddb9be9c7b9a33098848d8103d15b3633c0242090579f82d5bb
 pkgname:
   - name: jkqtplotter
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
