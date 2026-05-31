@@ -1,17 +1,16 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Elmar Klausmeier <Elmar.Klausmeier@gmail.com>
 
 pkgname=sundials
 pkgver=7.7.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Suite of nonlinear differential/algebraic equation solvers'
 arch=(x86_64)
 url='https://computing.llnl.gov/projects/sundials'
 license=(BSD-3-Clause)
-depends=(gcc-libs
-         glibc
+depends=(glibc
          lapack
+         libgomp
          openmpi
          suitesparse)
 makedepends=(cmake

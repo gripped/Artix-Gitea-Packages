@@ -1,10 +1,10 @@
 ---
-version: 7.7.0-1
+version: 7.7.0-2
 pkgbase:
   name: sundials
   pkgdesc: Suite of nonlinear differential/algebraic equation solvers
   pkgver: 7.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://computing.llnl.gov/projects/sundials
   arch:
     - x86_64
@@ -16,9 +16,9 @@ pkgbase:
     - git
     - python
   depends:
-    - gcc-libs
     - glibc
     - lapack
+    - libgomp
     - openmpi
     - suitesparse
   optdepends:
@@ -30,4 +30,4 @@ pkgbase:
     - 397a862dd2a374b2fb97e422fd62d0661338f6b112a49e28877be23fcbb48527
 pkgname:
   - name: sundials
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
