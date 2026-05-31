@@ -1,10 +1,10 @@
 ---
-version: 7.12.2-1
+version: 7.12.2-2
 pkgbase:
   name: suitesparse
   pkgdesc: A collection of sparse matrix libraries
   pkgver: 7.12.2
-  pkgrel: 1
+  pkgrel: 2
   url: http://faculty.cse.tamu.edu/davis/suitesparse.html
   arch:
     - x86_64
@@ -16,10 +16,12 @@ pkgbase:
     - git
   depends:
     - blas
-    - gcc-libs
     - glibc
     - gmp
     - lapack
+    - libgcc
+    - libgomp
+    - libstdc++
     - mpfr
   replaces:
     - suitesparse64<7.1.0
@@ -32,6 +34,7 @@ pkgname:
   - name: suitesparse-graphblas
     pkgdesc: Graph algorithms in the language of linear algebra
     depends:
-      - gcc-libs
       - glibc
-# generated with artixpkg 0.37.6-1-any
+      - libgcc
+      - libgomp
+# generated with artixpkg 0.38.5-1-any
