@@ -1,10 +1,10 @@
 ---
-version: 26.134.222-1
+version: 26.134.222-2
 pkgbase:
   name: plymouth
   pkgdesc: Graphical boot splash screen
   pkgver: 26.134.222
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.freedesktop.org/wiki/Software/Plymouth/
   install: plymouth.install
   arch:

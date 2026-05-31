@@ -6,7 +6,7 @@
 
 pkgname=plymouth
 pkgver=26.134.222
-pkgrel=1
+pkgrel=2
 pkgdesc='Graphical boot splash screen'
 arch=(x86_64)
 url='https://www.freedesktop.org/wiki/Software/Plymouth/'
@@ -55,6 +55,10 @@ b2sums=('5130dbb16d4634915b7f68542b6c29d664bd8c26f4508adf536833e93f2c78aee287208
 
 prepare() {
   cd $pkgname
+
+  # Fix default XKB keymap fallback overriding KEYMAP
+  # https://gitlab.freedesktop.org/plymouth/plymouth/-/merge_requests/388
+  git cherry-pick -n cea90be39d263e388003a07d125b469c0803d55c
 
   # Use mkinitcpio to update initrd
   sed -i 's/^dracut -f$/mkinitcpio -P/' scripts/plymouth-update-initrd
