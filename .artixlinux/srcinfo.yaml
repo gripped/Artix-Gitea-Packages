@@ -1,10 +1,10 @@
 ---
-version: 0.1.10-3
+version: 0.1.11-1
 pkgbase:
   name: libvisio
   pkgdesc: Library providing ability to interpret and import visio diagrams
-  pkgver: 0.1.10
-  pkgrel: 3
+  pkgver: 0.1.11
+  pkgrel: 1
   url: https://wiki.documentfoundation.org/DLP/Libraries/libvisio
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
     - libstdc++
     - libgcc
   source:
-    - https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.10.tar.xz
+    - https://dev-www.libreoffice.org/src/libvisio/libvisio-0.1.11.tar.xz
   sha256sums:
-    - 9e9eff75112d4d92d92262ad7fc2599c21e26f8fc5ba54900efdc83c0501e472
+    - 2a6efd40b6d9dbcb70fba3be53112366882ba97b57151df3698dfa478c8d8dd3
 pkgname:
   - name: libvisio
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
