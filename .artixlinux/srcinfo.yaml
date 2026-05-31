@@ -1,10 +1,10 @@
 ---
-version: 6.26.0-1
+version: 6.26.0-2
 pkgbase:
   name: kwindowsystem
   pkgdesc: Access to the windowing system
   pkgver: 6.26.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -21,8 +21,8 @@ pkgbase:
     - qt6-tools
     - wayland-protocols
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
     - libx11
     - libxcb
     - libxfixes
