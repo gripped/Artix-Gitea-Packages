@@ -1,9 +1,9 @@
 ---
-version: 2.35.1-1
+version: 2.36.0-1
 pkgbase:
   name: python-fakeredis
   pkgdesc: Fake implementation of redis API (redis-py) for testing purposes
-  pkgver: 2.35.1
+  pkgver: 2.36.0
   pkgrel: 1
   url: https://github.com/dsoftwareinc/fakeredis-py
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - 'python-packaging: for aioredis support'
     - 'python-lupa: for lua scripting support'
   source:
-    - https://files.pythonhosted.org/packages/source/f/fakeredis/fakeredis-2.35.1.tar.gz
+    - https://files.pythonhosted.org/packages/source/f/fakeredis/fakeredis-2.36.0.tar.gz
   sha256sums:
-    - 5bae5eba7b9d93cb968944ac40936373cf2397ff71667d4b595df65c3d2e413f
+    - 66d00953c9bfd3e345266ded342a2e54c611417344f43ad1467cb68f30bc8354
 pkgname:
   - name: python-fakeredis
 # generated with artixpkg 0.38.5-1-any
