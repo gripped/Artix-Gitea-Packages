@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,8 +50,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2026.2-1
+    packages:
+      - mullvad-vpn-2026.2-1-x86_64.pkg.tar.zst
+      - mullvad-vpn-daemon-2026.2-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 2026.1-1

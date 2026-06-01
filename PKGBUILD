@@ -1,4 +1,4 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 # Contributor: Matthew McGinn <mamcgi at gmail dot com>
 # Contributor: alicewww <almw at protonmail dot com>
@@ -7,10 +7,10 @@
 
 pkgbase=mullvad-vpn
 pkgname=(
-    mullvad-vpn
-    mullvad-vpn-daemon
+  mullvad-vpn
+  mullvad-vpn-daemon
 )
-pkgver=2026.1
+pkgver=2026.2
 pkgrel=1
 pkgdesc="Mullvad VPN client"
 arch=('x86_64')
@@ -18,160 +18,164 @@ url="https://www.mullvad.net"
 license=('GPL-3.0-or-later')
 _electronver=39
 makedepends=(
-    "electron$_electronver"
-    cargo
-    dbus
-    git
-    glibc
-    go
-    hicolor-icon-theme
-    libgcc
-    npm
-    protobuf
+  "electron$_electronver"
+  cargo
+  dbus
+  git
+  glibc
+  go
+  hicolor-icon-theme
+  libgcc
+  npm
+  protobuf
 )
 options=('!lto')
 source=(
-    "git+https://github.com/mullvad/mullvadvpn-app.git#tag=$pkgver?signed"
-    "git+https://github.com/mullvad/mullvadvpn-app-binaries.git"
-    "git+https://github.com/mullvad/wireguard-go.git"
-    "$pkgbase.sh"
-    "$pkgbase.desktop"
-    "electron-builder.yml"
+  "git+https://github.com/mullvad/mullvadvpn-app.git#tag=$pkgver?signed"
+  "git+https://github.com/mullvad/mullvadvpn-app-binaries.git"
+  "git+https://github.com/mullvad/wireguard-go.git"
+  "$pkgbase.sh"
+  "$pkgbase.desktop"
+  "electron-builder.yml"
 )
-b2sums=('97ef78aad925546e955814856d929215022a962893bfab34c1a734df5216b1d03e05540a516e9ad00245d0a770cce9d935fbce83aaed5d5efbb8153b8e162a18'
-    'SKIP'
-    'SKIP'
-    'c3534bf98bc9c5977e14865a8b4e41bb509a42cb006f8ada3f11bdff704e347d132797425b95ca3f709308703ade5f3aa46e7e7c4ef5e73911f9de78df14b1a9'
-    '1aaf1403601110fee9a5d56ff363c790403e16e316231c084ef1ea90399750bd9b2781d63e5f0e00ded3bfd9b44621dfef1f1920aebe457ea69641418ca97030'
-    '23fd106bbe2d01b3095625bebc97f65f0154095f4e7d19c54f0f2b2a5cf91865585ec29007a2eaca9d8fea8d336c9c33cd1bad1856c5ca5df13f692d4c175252')
+b2sums=('1bf806c45958ab036d655de09ea972723a9b42fbe762b93ac3f0bb2bc9333c10461e2afc3c7cdc69c4639bf26b3f91e1f9aece923d6a9794b4446ecf1d6a0606'
+        'SKIP'
+        'SKIP'
+        'c3534bf98bc9c5977e14865a8b4e41bb509a42cb006f8ada3f11bdff704e347d132797425b95ca3f709308703ade5f3aa46e7e7c4ef5e73911f9de78df14b1a9'
+        '1aaf1403601110fee9a5d56ff363c790403e16e316231c084ef1ea90399750bd9b2781d63e5f0e00ded3bfd9b44621dfef1f1920aebe457ea69641418ca97030'
+        'a2fc04186ab66c9fb348dbd6c83958bf58389c7b0a94a29f9d1adf8fdf3aa9071a71239302aa8f98015e0120917241de265d671eec428ca59b843128ae18aabb')
 validpgpkeys=(
-    '225E40C8F1C8DEB7977ABF59F293063FECE2E8ED' # Linus Färnstrand <linus@mullvad.net>
-    '7ED98188F8F9AFF15D49E41BEB8D8AD83E8DA7BC' # David Lönnhager <david.l@mullvad.net>
-    '1D0026CBD1F1858DF8DB54DFCB87E2B919A6454C' # Oskar Nyberg <oskar@mullvad.net>
-    '049F58CC80D9C78452151EE6EF0CCD68D0E5B9B1' # Emīls Piņķis <emils@mullvad.net>
+  '225E40C8F1C8DEB7977ABF59F293063FECE2E8ED' # Linus Färnstrand <linus@mullvad.net>
+  '7ED98188F8F9AFF15D49E41BEB8D8AD83E8DA7BC' # David Lönnhager <david.l@mullvad.net>
+  '1D0026CBD1F1858DF8DB54DFCB87E2B919A6454C' # Oskar Nyberg <oskar@mullvad.net>
+  '049F58CC80D9C78452151EE6EF0CCD68D0E5B9B1' # Emīls Piņķis <emils@mullvad.net>
 )
 
 prepare() {
-    sed -i "s/@_electronver@/$_electronver/" "$pkgbase.sh"
+  sed -i "s/@_electronver@/$_electronver/" "$pkgbase.sh"
 
-    cd mullvadvpn-app
+  cd mullvadvpn-app
 
-    grep -qE '"electron": "\^?'$_electronver desktop/packages/mullvad-vpn/package.json ||
-        (
-            echo "Electron version mismatch in package.json"
-            exit 1
-        )
+  grep -qE '"electron": "\^?'$_electronver desktop/packages/mullvad-vpn/package.json \
+    || ( echo "Electron version mismatch in package.json"; exit 1 )
 
-    install -vDm644 -t desktop/packages/mullvad-vpn ../electron-builder.yml
+  install -vDm644 -t desktop/packages/mullvad-vpn ../electron-builder.yml
 
-    git submodule init
-    git config submodule.dist-assets/binaries.url ../mullvadvpn-app-binaries
-    git config submodule.wireguard-go-rs/libwg/wireguard-go.url ../wireguard-go
-    git -c protocol.file.allow=always submodule update \
-        dist-assets/binaries \
-        wireguard-go-rs/libwg/wireguard-go
+  # Patch systemd service to use /usr/lib/mullvad-vpn for resources
+  sed -i 's|/opt/Mullvad\\x20VPN/resources/|/usr/lib/mullvad-vpn|g' \
+    dist-assets/linux/mullvad-daemon.service
 
-    export RUSTUP_TOOLCHAIN=stable
-    cargo fetch --locked --target "$(rustc --print host-tuple)"
+  git submodule init
+  git config submodule.dist-assets/binaries.url ../mullvadvpn-app-binaries
+  git config submodule.wireguard-go-rs/libwg/wireguard-go.url ../wireguard-go
+  git -c protocol.file.allow=always submodule update \
+    dist-assets/binaries \
+    wireguard-go-rs/libwg/wireguard-go
 
-    (
-        cd desktop
-        npm clean-install --ignore-scripts
-        npm rebuild grpc-tools
-        npm run build -w management-interface
-        npm run build-typescript -w windows-utils
-    )
-    (
-        cd wireguard-go-rs/libwg
-        GOFLAGS="-mod=readonly" go mod vendor -v
-        # Copy maybenot-ffi header to vendor path for DAITA support
-        cp -vr wireguard-go/maybenot-ffi vendor/golang.zx2c4.com/wireguard/
-    )
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+
+  (
+    cd desktop
+    npm clean-install --ignore-scripts
+    npm run build-typescript -w nseventforwarder
+    npm run build-typescript -w windows-utils
+  )
+  (
+    cd wireguard-go-rs/libwg
+    GOFLAGS="-mod=readonly" go mod vendor -v
+    # Copy maybenot-ffi header to vendor path for DAITA support
+    cp -vr wireguard-go/maybenot-ffi vendor/golang.zx2c4.com/wireguard/
+  )
 }
 
 build() {
-    cd mullvadvpn-app
+  cd mullvadvpn-app
 
-    (
-        cd wireguard-go-rs/libwg
-        export CGO_LDFLAGS="$LDFLAGS"
-        export CGO_CFLAGS="$CFLAGS"
-        export CGO_CPPFLAGS="$CPPFLAGS"
-        export CGO_CXXFLAGS="$CXXFLAGS"
-        export GOFLAGS="-buildmode=pie -mod=vendor -modcacherw"
-        export GOPATH="$srcdir"
-        local ld_flags="-compressdwarf=false -linkmode=external"
-        go build \
-            -ldflags "$ld_flags" \
-            -o "../../build/lib/$CARCH-unknown-linux-gnu/libwg.a" \
-            -buildmode c-archive
-    )
+  (
+    cd wireguard-go-rs/libwg
+    export CGO_LDFLAGS="$LDFLAGS"
+    export CGO_CFLAGS="$CFLAGS"
+    export CGO_CPPFLAGS="$CPPFLAGS"
+    export CGO_CXXFLAGS="$CXXFLAGS"
+    export GOFLAGS="-buildmode=pie -mod=vendor -modcacherw"
+    export GOPATH="$srcdir"
+    local ld_flags="-compressdwarf=false -linkmode=external"
+    go build \
+      -ldflags "$ld_flags" \
+      -o "../../build/lib/$CARCH-unknown-linux-gnu/libwg.a" \
+      -buildmode c-archive
+  )
 
-    cargo build --frozen --release \
-        -p mullvad-daemon --bin mullvad-daemon \
-        -p mullvad-cli --bin mullvad \
-        -p mullvad-setup --bin mullvad-setup \
-        -p mullvad-problem-report --bin mullvad-problem-report \
-        -p mullvad-exclude --bin mullvad-exclude
+  cargo build --frozen --release \
+    -p mullvad-daemon --bin mullvad-daemon \
+    -p mullvad-cli --bin mullvad \
+    -p mullvad-setup --bin mullvad-setup \
+    -p mullvad-problem-report --bin mullvad-problem-report \
+    -p mullvad-exclude --bin mullvad-exclude \
 
-    for sh in bash zsh fish; do
-        target/release/mullvad shell-completions $sh build/
-    done
+  for sh in bash zsh fish; do
+    target/release/mullvad shell-completions $sh build/
+  done
 
-    cd desktop/packages/mullvad-vpn
-    npm run build
-    npx electron-builder --linux dir \
-        -c.electronDist=/usr/lib/electron$_electronver \
-        -c.electronVersion=$_electronver \
-        -c.extraMetadata.version=$pkgver
+  cd desktop/packages/mullvad-vpn
+  npm run build
+  npx electron-builder --linux dir \
+    -c.electronDist=/usr/lib/electron$_electronver \
+    -c.electronVersion=$_electronver \
+    -c.extraMetadata.version=$pkgver
 }
 
 package_mullvad-vpn-daemon() {
-    pkgdesc+=" (daemon and CLI)"
-    depends=(
-        dbus
-        glibc
-        libgcc
-    )
-    install=$pkgname.install
+  pkgdesc+=" (daemon and CLI)"
+  depends=(
+    dbus
+    glibc
+    libgcc
+  )
+  install=$pkgname.install
 
-    cd mullvadvpn-app
-    install -vDm755 -t "$pkgdir/usr/lib/$pkgbase" \
-        target/release/mullvad-setup
-    install -vDm644 -t "$pkgdir/usr/lib/$pkgbase" dist-assets/ca.crt
+  cd mullvadvpn-app
+  install -vDm755 -t "$pkgdir/usr/lib/$pkgbase" \
+    target/release/mullvad-setup
+  install -vDm644 -t "$pkgdir/usr/lib/$pkgbase" dist-assets/ca.crt
 
-    install -vDm755 -t "$pkgdir/usr/bin" \
-        target/release/mullvad \
-        target/release/mullvad-daemon \
-        target/release/mullvad-problem-report
-    install -vDm4755 -t "$pkgdir/usr/bin" \
-        target/release/mullvad-exclude
+  install -vDm755 -t "$pkgdir/usr/bin" \
+    target/release/mullvad \
+    target/release/mullvad-daemon \
+    target/release/mullvad-problem-report
+  install -vDm4755 -t "$pkgdir/usr/bin" \
+    target/release/mullvad-exclude
 
-    install -vDm644 build/mullvad.bash \
-        "$pkgdir/usr/share/bash-completion/completions/mullvad"
-    install -vDm644 build/_mullvad -t "$pkgdir/usr/share/zsh/site-functions/"
-    install -vDm644 build/mullvad.fish -t "$pkgdir/usr/share/fish/vendor_completions.d/"
+  install -vDm644 -t "$pkgdir/usr/lib/systemd/system" \
+    dist-assets/linux/mullvad-daemon.service \
+    dist-assets/linux/mullvad-early-boot-blocking.service
 
-    install -vDm644 dist-assets/linux/apparmor_mullvad "$pkgdir/etc/apparmor.d/mullvad"
+  install -vDm644 build/mullvad.bash \
+    "$pkgdir/usr/share/bash-completion/completions/mullvad"
+  install -vDm644 build/_mullvad -t "$pkgdir/usr/share/zsh/site-functions/"
+  install -vDm644 build/mullvad.fish -t "$pkgdir/usr/share/fish/vendor_completions.d/"
+
+  install -vDm644 dist-assets/linux/apparmor_mullvad "$pkgdir/etc/apparmor.d/mullvad"
 }
 
 package_mullvad-vpn() {
-    pkgdesc+=" (desktop application)"
-    depends=(
-        "electron$_electronver"
-        hicolor-icon-theme
-        mullvad-vpn-daemon
-    )
-    optdepends=('libappindicator-gtk3: tray icon')
+  pkgdesc+=" (desktop application)"
+  depends=(
+    "electron$_electronver"
+    hicolor-icon-theme
+    mullvad-vpn-daemon
+  )
+  optdepends=('libappindicator-gtk3: tray icon')
 
-    cd mullvadvpn-app
-    install -vDm644 -t "$pkgdir/usr/lib/$pkgbase" \
-        desktop/packages/mullvad-vpn/dist/linux-unpacked/resources/app.asar
-    install -vDm755 "../$pkgbase.sh" "$pkgdir/usr/bin/$pkgname"
-    install -vDm644 -t "$pkgdir/usr/share/applications" "../$pkgbase.desktop"
+  cd mullvadvpn-app
+  install -vDm644 -t "$pkgdir/usr/lib/$pkgbase" \
+    desktop/packages/mullvad-vpn/dist/linux-unpacked/resources/app.asar
+  install -vDm755 "../$pkgbase.sh" "$pkgdir/usr/bin/$pkgname"
+  install -vDm644 -t "$pkgdir/usr/share/applications" "../$pkgbase.desktop"
 
-    for icon_size in 16 32 128 256 512; do
-        install -vDm644 "graphics/macOS/icon-$icon_size.png" \
-            "$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/$pkgname.png"
-    done
+  for icon_size in 16 32 128 256 512; do
+    install -vDm644 "graphics/macOS/icon-$icon_size.png" \
+      "$pkgdir/usr/share/icons/hicolor/${icon_size}x${icon_size}/apps/$pkgname.png"
+  done
 }
