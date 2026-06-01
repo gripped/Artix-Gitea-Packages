@@ -1,0 +1,37 @@
+---
+version: 2.21.2-1
+pkgbase:
+  name: python-narwhals
+  pkgdesc: Extremely lightweight and extensible compatibility layer between dataframe libraries
+  pkgver: 2.21.2
+  pkgrel: 1
+  url: https://narwhals-dev.github.io/narwhals/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-env
+    - python-hypothesis
+    - python-pandas
+    - python-pyarrow
+    - python-polars
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-hatchling
+  depends:
+    - python
+  optdepends:
+    - 'python-pandas: for Pandas support'
+    - 'python-pyarrow: for PyArrows support'
+    - 'python-polars: for Polars support'
+  source:
+    - python-narwhals-2.21.2.tar.gz::https://github.com/narwhals-dev/narwhals/archive/refs/tags/v2.21.2.tar.gz
+  sha256sums:
+    - 0b77980360863ca4b19c21e8487ed02eab220efc52b811e97e8a6c198f224686
+pkgname:
+  - name: python-narwhals
+# generated with artixpkg 0.38.5-1-any

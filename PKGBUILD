@@ -1,0 +1,45 @@
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
+
+pkgname=python-narwhals
+_name=${pkgname#python-}
+pkgver=2.21.2
+pkgrel=1
+pkgdesc="Extremely lightweight and extensible compatibility layer between dataframe libraries"
+arch=('any')
+url="https://narwhals-dev.github.io/narwhals/"
+license=('MIT')
+depends=(python)
+makedepends=(python-build python-installer python-wheel python-hatchling)
+# Not included, as it's not currently packaged for [extra]: duckdb
+optdepends=('python-pandas: for Pandas support'
+            'python-pyarrow: for PyArrows support'
+            'python-polars: for Polars support')
+checkdepends=(
+	python-pytest{,-env}
+	python-hypothesis
+	python-pandas
+	python-pyarrow
+	python-polars
+)
+source=($pkgname-$pkgver.tar.gz::https://github.com/narwhals-dev/narwhals/archive/refs/tags/v$pkgver.tar.gz)
+sha256sums=('0b77980360863ca4b19c21e8487ed02eab220efc52b811e97e8a6c198f224686')
+
+build() {
+  cd "$_name-$pkgver"
+  python -m build --wheel --no-isolation
+}
+
+check() {
+  cd "$_name-$pkgver"
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  # Not all supported data frames are packaged, only run tests for those
+  # that are
+  test-env/bin/python -P -m pytest --constructors "pandas,pandas[pyarrow],polars[eager],pyarrow"
+}
+
+package() {
+  cd "$_name-$pkgver"
+  python -m installer --destdir="$pkgdir" dist/*.whl
+  install -Dm644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE.md
+}
