@@ -1,9 +1,9 @@
 ---
-version: 2026.0-1
+version: 2026.0-2
 pkgbase:
   name: texlive-bin
   pkgver: 2026.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://tug.org/texlive/
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
     - ffcall
     - fontconfig
     - freetype2
-    - gcc-libs
     - gd
     - git
     - glibc
@@ -31,7 +30,6 @@ pkgbase:
     - libunistring
     - libx11
     - libxaw
-    - libxcrypt
     - libxmu
     - libxpm
     - libxt
@@ -48,10 +46,12 @@ pkgbase:
     - git+https://github.com/Tex-Live/texlive-source.git#commit=f26cc5ed05a1f784d1e694fe5b9cfc3ce992c03d
     - ptex-debug-print.patch
     - lua-root.patch
+    - b50e042b.patch
   sha256sums:
     - f598cebd38804428d1ec6435d898cb3b7602f8430519540ce2f7925fab63f185
     - aa838f09003c62c2efb5770a8de66f99b409df049fbd65098d80fd1957d06c50
     - c2d6a8b14dd8197874c1d894e70df80ad076f28ee4d1cff81e3b7811d9264fb9
+    - 9ada4d69072d6a432fa4e0bd50928909cf5884e939b6c8ce2b158dadd9b5d326
 pkgname:
   - name: texlive-bin
     pkgdesc: TeX Live binaries
@@ -61,21 +61,21 @@ pkgname:
       - ffcall
       - fontconfig
       - freetype2
-      - gcc-libs
       - gd
       - glibc
       - gmp
       - graphite
       - harfbuzz
       - icu
+      - libgcc
       - libpaper
       - libpng
       - libsigsegv
+      - libstdc++
       - libsynctex
       - libunistring
       - libx11
       - libxaw
-      - libxcrypt
       - libxmu
       - libxpm
       - libxt
@@ -103,4 +103,4 @@ pkgname:
       - zlib
     provides:
       - libsynctex.so
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
