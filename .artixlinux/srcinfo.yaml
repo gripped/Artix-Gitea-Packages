@@ -1,0 +1,48 @@
+---
+version: 6.1.0-1
+pkgbase:
+  name: python-altair
+  pkgdesc: Declarative statistical visualization library for Python
+  pkgver: 6.1.0
+  pkgrel: 1
+  url: https://altair-viz.github.io/
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - ipython
+    - python-anywidget
+    - python-mistune
+    - python-numpy
+    - python-pandas
+    - python-polars
+    - python-pytest
+    - python-pytest-xdist
+    - python-vl-convert
+  makedepends:
+    - python-build
+    - python-hatchling
+    - python-installer
+    - python-wheel
+  depends:
+    - python
+    - python-jinja
+    - python-jsonschema
+    - python-narwhals
+    - python-packaging
+    - python-typing_extensions
+  optdepends:
+    - 'python-anywidget: for using JupyterChart widget'
+    - 'python-numpy: for NumPy and Pandas imports'
+    - 'python-pandas: for Pandas imports'
+    - 'python-polars: for Polars imports'
+    - 'python-pyarrow: for PyArrow imports'
+    - 'python-vl-convert: PNG and SVG export via Vega-Lite specifications'
+  source:
+    - altair-6.1.0.tar.gz::https://github.com/vega/altair/archive/refs/tags/v6.1.0.tar.gz
+  b2sums:
+    - 31473cfe53f97d990649d1932ebef720a65ea4d916589b626b266f1af0e4644ca36d81f305ac5046bff8ea9d1f16aee88a8f31bb8c5d28b51047c602a26f8e40
+pkgname:
+  - name: python-altair
+# generated with artixpkg 0.38.5-1-any
