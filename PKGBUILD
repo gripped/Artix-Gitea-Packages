@@ -1,4 +1,4 @@
-# Maintainer:
+# Maintainer: capezotte <capezotte@artixlinux.org>
 # Contributor: Rafael Dominiquini <rafaeldominiquini at gmail dot com>
 # Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: David Runge <dvzrv@archlinux.org>
@@ -8,7 +8,7 @@
 
 pkgname=libopenshot
 pkgver=0.7.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A video editing, animation, and playback library for C++, Python, and Ruby"
 arch=(x86_64)
 url="https://github.com/openshot/libopenshot"
