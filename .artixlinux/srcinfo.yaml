@@ -1,10 +1,10 @@
 ---
-version: 2.10.1-1
+version: 2.10.1-2
 pkgbase:
   name: nlopt
   pkgdesc: Nonlinear optimization library
   pkgver: 2.10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://nlopt.readthedocs.io/en/latest/
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 30d13ce16da119db3e987784f7864e35a562ec62c186352fae55cd003e6c58ff
 pkgname:
   - name: nlopt
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any

@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.10.1-1
+    version: 2.10.1-2
     packages:
-      - nlopt-2.10.1-1-x86_64.pkg.tar.zst
+      - nlopt-2.10.1-2-x86_64.pkg.tar.zst
     debug: []
