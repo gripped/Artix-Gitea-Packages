@@ -18,7 +18,7 @@ pkgname=(
   ruby-libguestfs
 )
 pkgver=1.58.1
-pkgrel=2
+pkgrel=3
 pkgdesc="Access and modify virtual machine disk images"
 arch=(x86_64)
 url="https://libguestfs.org/"
@@ -46,6 +46,7 @@ _appliancedeps=(
   mdadm
   mtools
   nilfs-utils
+  ntfs-3g
   ntfsprogs
   openssh
   pciutils
@@ -144,6 +145,8 @@ build() {
     --prefix=/usr
     --sbindir=/usr/bin
     --sysconfdir=/etc
+    # NOTE: ntfsprogs only needed because it is not yet added to appliance/packagelist.in
+    # https://github.com/libguestfs/libguestfs/issues/362
     --with-guestfs-path=/usr/lib/guestfs
   )
 
@@ -274,6 +277,8 @@ package_perl-libguestfs() {
   )
 
   mv -v $pkgname/* "$pkgdir"
+  # NOTE: Ensure that the shared object is stripped: https://github.com/libguestfs/libguestfs/issues/358
+  find "$pkgdir" -type f -iname "*.so" -exec chmod 755 {} \;
 }
 
 package_php-libguestfs() {
