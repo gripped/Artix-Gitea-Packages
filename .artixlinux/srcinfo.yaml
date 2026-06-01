@@ -1,9 +1,9 @@
 ---
-version: 3.6.5-1
+version: 3.6.6-1
 pkgbase:
   name: opensips
   pkgdesc: An Open Source SIP Server able to act as a SIP proxy, registrar, location server, redirect server ...
-  pkgver: 3.6.5
+  pkgver: 3.6.6
   pkgrel: 1
   url: https://www.opensips.org
   arch:
@@ -39,9 +39,9 @@ pkgbase:
     - etc/opensips/osipsconsolerc
     - etc/opensips/opensipsctlrc
   source:
-    - https://opensips.org/pub/opensips/3.6.5/opensips-3.6.5.tar.gz
+    - https://opensips.org/pub/opensips/3.6.6/opensips-3.6.6.tar.gz
   sha256sums:
-    - d73cb0b2b387ecaa046e3c831da439ba87b97c9658581b8c7f904fe35dd6200e
+    - bdb921f50838d7227668eb329171e50bc61e5e4fc3c2d623647734cabaa17429
 pkgname:
   - name: opensips
 # generated with artixpkg 0.38.5-1-any
