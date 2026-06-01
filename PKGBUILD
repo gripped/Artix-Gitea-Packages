@@ -3,15 +3,15 @@
 
 _pkgname=ReGreet
 pkgname=greetd-${_pkgname,,}
-pkgver=0.3.0
-pkgrel=2
+pkgver=0.4.0
+pkgrel=1
 pkgdesc='Clean and customizable greeter for greetd'
 url="https://github.com/rharish101/$_pkgname"
 license=(GPL-3.0-or-later)
 arch=(x86_64)
 depends=(wayland-compositor
-         accountsservice
          greetd
+         accountsservice
          cairo
          libgcc
          gdk-pixbuf2
@@ -26,7 +26,7 @@ install=$pkgname.install
 _archive="$_pkgname-$pkgver"
 source=("$url/archive/$pkgver/$_archive.tar.gz"
         "${_pkgname,,}.toml")
-sha256sums=('0d8855b98c868f89f62ed1ce0eff2e34c5eba903040fcf8acd96e6b18ab69dc6'
+sha256sums=('dd11f6dc82a929ac51a51750b3268028fe5aa46e5fe1d1cbd11b43ad57b3006a'
             '7780028e5774347793e8073c86bde7f38b70a9736dc7c5b0566d93aa7f0c252b')
 
 prepare() {
@@ -36,7 +36,6 @@ prepare() {
 }
 
 build() {
-	export REBOOT_CMD="loginctl reboot" POWEROFF_CMD="loginctl poweroff"
 	cd "$_archive"
 	cargo build --frozen --release --all-features
 }
