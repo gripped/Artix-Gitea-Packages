@@ -1,10 +1,10 @@
 ---
-version: 23.08.5-3
+version: 23.08.5-4
 pkgbase:
   name: okularpart5
   pkgdesc: Qt5 Okular KPart
   pkgver: 23.08.5
-  pkgrel: 3
+  pkgrel: 4
   url: https://apps.kde.org/okular/
   arch:
     - x86_64
@@ -19,7 +19,6 @@ pkgbase:
     - discount
     - djvulibre
     - freetype2
-    - gcc-libs
     - glibc
     - karchive5
     - kbookmarks5
@@ -40,6 +39,7 @@ pkgbase:
     - kxmlgui5
     - libjpeg-turbo
     - libspectre
+    - libstdc++
     - libtiff
     - poppler-qt5
     - qt5-base
@@ -62,4 +62,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: okularpart5
-# generated with artixpkg 0.37.1-1-any
+# generated with artixpkg 0.38.5-1-any

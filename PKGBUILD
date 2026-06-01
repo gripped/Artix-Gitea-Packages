@@ -3,7 +3,7 @@
 
 pkgname=okularpart5
 pkgver=23.08.5
-pkgrel=3
+pkgrel=4
 pkgdesc='Qt5 Okular KPart'
 arch=(x86_64)
 url='https://apps.kde.org/okular/'
@@ -11,7 +11,6 @@ license=(GPL LGPL FDL)
 depends=(discount
          djvulibre
          freetype2
-         gcc-libs
          glibc
          karchive5
          kbookmarks5
@@ -32,6 +31,7 @@ depends=(discount
          kxmlgui5
          libjpeg-turbo
          libspectre
+         libstdc++
          libtiff
          poppler-qt5
          qt5-base
