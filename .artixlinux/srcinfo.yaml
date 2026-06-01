@@ -1,10 +1,10 @@
 ---
-version: 23.08.5-4
+version: 23.08.5-5
 pkgbase:
   name: konsolepart5
   pkgdesc: KDE terminal emulator
   pkgver: 23.08.5
-  pkgrel: 4
+  pkgrel: 5
   url: https://apps.kde.org/konsole/
   arch:
     - x86_64
@@ -15,7 +15,6 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
   depends:
-    - gcc-libs
     - glibc
     - icu
     - kbookmarks5
@@ -39,6 +38,7 @@ pkgbase:
     - kwidgetsaddons5
     - kwindowsystem5
     - kxmlgui5
+    - libstdc++
     - qt5-base
     - qt5-multimedia
   conflicts:
@@ -55,4 +55,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: konsolepart5
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
