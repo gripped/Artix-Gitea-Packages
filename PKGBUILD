@@ -4,7 +4,7 @@ pkgbase=vis
 pkgname=(vis vis-lexers)
 _commit='6efb844b79c78cf20af033591c461c3cbb907ded'
 pkgver=0.9.r420.g6efb844b
-pkgrel=2
+pkgrel=2.1
 pkgdesc='modern, legacy free, simple yet efficient vim-like editor'
 arch=('x86_64')
 url='https://github.com/martanne/vis#vis-a-vim-like-text-editor'
@@ -17,9 +17,10 @@ depends=(
   'lua' #'liblua.so'
   'ncurses' 'libncursesw.so'
   'tre' #'libtre.so'
+  'lua-lpeg' # will print large error message if not installed
 )
 makedepends=('git')
-checkdepends=('vim' 'lua-lpeg')
+checkdepends=('vim')
 license=('custom:ISC')
 validpgpkeys=('54A47F12462D26A7D078A932C83A52CD1962562C') # Marc André Tanner <mat@brain-dump.org>
 # TODO: can we have signed tag back?

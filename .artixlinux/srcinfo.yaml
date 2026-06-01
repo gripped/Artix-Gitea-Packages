@@ -1,10 +1,10 @@
 ---
-version: 0.9.r420.g6efb844b-2
+version: 0.9.r420.g6efb844b-2.1
 pkgbase:
   name: vis
   pkgdesc: modern, legacy free, simple yet efficient vim-like editor
   pkgver: 0.9.r420.g6efb844b
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://github.com/martanne/vis#vis-a-vim-like-text-editor
   arch:
     - x86_64
@@ -12,7 +12,6 @@ pkgbase:
     - custom:ISC
   checkdepends:
     - vim
-    - lua-lpeg
   makedepends:
     - git
   depends:
@@ -27,6 +26,7 @@ pkgbase:
     - ncurses
     - libncursesw.so
     - tre
+    - lua-lpeg
   source:
     - git+https://github.com/martanne/vis.git#commit=6efb844b79c78cf20af033591c461c3cbb907ded
   validpgpkeys:
