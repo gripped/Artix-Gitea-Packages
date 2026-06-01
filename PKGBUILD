@@ -1,8 +1,8 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: HurricanePootis <hurricanepootis@protonmail.com>
 
 pkgname=goverlay
-pkgver=1.8.1
+pkgver=1.8.2
 _pkgver=${pkgver//_/-}
 pkgrel=1
 pkgdesc="A GUI to help manage Vulkan/OpenGL overlays"
@@ -13,23 +13,23 @@ depends=('glu' 'qt6pas' 'mangohud' '7zip' 'wget')
 makedepends=('git' 'lazarus')
 checkdepends=('appstream' 'desktop-file-utils')
 optdepends=('mesa-utils: OpenGL preview'
-  'vulkan-tools: Vulkan preview'
-  'vkbasalt: Configure vkBasalt'
-  'git: Clone reshade repository')
+            'vulkan-tools: Vulkan preview'
+            'vkbasalt: Configure vkBasalt'
+            'git: Clone reshade repository')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${_pkgver}.tar.gz")
-sha256sums=('c6970949a8b5ea652a6923d540f25eaeba951ff20bd8d8786c3124cfbb3717a6')
+sha256sums=('e5663202f22dfa57310fd86d3ba8fe7e497e3859ef630318424f982a02cdc05f')
 
 build() {
-  cd "${pkgname}-${_pkgver}"
-  make LAZBUILDOPTS=--lazarusdir=/usr/lib/lazarus
+	cd "${pkgname}-${_pkgver}"
+	make LAZBUILDOPTS=--lazarusdir=/usr/lib/lazarus
 }
 
 check() {
-  cd "${pkgname}-${_pkgver}"
-  make tests
+	cd "${pkgname}-${_pkgver}"
+	make tests
 }
 
 package() {
-  cd "${pkgname}-${_pkgver}"
-  make prefix=/usr libexecdir=/lib DESTDIR="${pkgdir}" install
+	cd "${pkgname}-${_pkgver}"
+	make prefix=/usr libexecdir=/lib DESTDIR="${pkgdir}" install
 }
