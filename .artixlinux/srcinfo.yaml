@@ -1,9 +1,9 @@
 ---
-version: 3.37.0-1
+version: 3.38.0-1
 pkgbase:
   name: liblouis
   pkgdesc: Braille translator and back-translator library
-  pkgver: 3.37.0
+  pkgver: 3.38.0
   pkgrel: 1
   url: https://liblouis.io/
   arch:
@@ -23,11 +23,11 @@ pkgbase:
   optdepends:
     - 'python: Python bindings'
   source:
-    - git+https://github.com/liblouis/liblouis.git#tag=v3.37.0
+    - git+https://github.com/liblouis/liblouis.git#tag=v3.38.0
   validpgpkeys:
     - E9DDC8901A42F78B79CDC46042A55BD5EA40AB1A
   b2sums:
-    - 228772fa9ceeb7c20c1710614ac427fd04f6dda4e3f4ff77875b5ff3d7d7001cbf75d7ab4e5a7cedc1184781423e4c8e1d65310aec78e56d2fe9e7571467d5da
+    - 28c9518f7796c4f5e1465a34a65a57f6b483a52cde16b27f3921576b07a0beb854690caf04d8942e20f49454c8ab5965d890071c764c145f81188d7c331458e3
 pkgname:
   - name: liblouis
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
