@@ -1,10 +1,10 @@
 ---
-version: 6.8.4-1
+version: 6.8.4-2
 pkgbase:
   name: forkgram
   pkgdesc: Fork of the Telegram Desktop messaging app
   pkgver: 6.8.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Forkgram/tdesktop
   arch:
     - x86_64

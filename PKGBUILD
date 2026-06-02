@@ -9,7 +9,7 @@
 _pkgname="forkgram"
 pkgname="$_pkgname"
 pkgver=6.8.4
-pkgrel=1
+pkgrel=2
 pkgdesc="Fork of the Telegram Desktop messaging app"
 url="https://github.com/Forkgram/tdesktop"
 license=('GPL-3.0-or-later')
