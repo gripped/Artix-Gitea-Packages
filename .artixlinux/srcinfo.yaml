@@ -1,10 +1,10 @@
 ---
-version: 4.11.0-3
+version: 4.11.0-4
 pkgbase:
   name: syslog-ng
   pkgdesc: Next-generation syslogd with advanced networking and filtering capabilities
   pkgver: 4.11.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/syslog-ng/syslog-ng
   arch:
     - x86_64
@@ -201,4 +201,4 @@ pkgname:
       - libdbi
       - openssl
       - syslog-ng
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
