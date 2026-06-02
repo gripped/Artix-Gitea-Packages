@@ -1,9 +1,9 @@
 ---
-version: 7.2.3-1
+version: 7.2.4-1
 pkgbase:
   name: rccl
   pkgdesc: ROCm Communication Collectives Library
-  pkgver: 7.2.3
+  pkgver: 7.2.4
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rccl/en/latest/index.html
   arch:
@@ -14,6 +14,7 @@ pkgbase:
     - git
     - cmake
     - rocm-cmake
+    - rocm-llvm
     - hipify-clang
     - python
   depends:
@@ -25,7 +26,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rccl::git+https://github.com/ROCm/rccl#tag=rocm-7.2.3
+    - rccl::git+https://github.com/ROCm/rccl#tag=rocm-7.2.4
     - rccl-json::git+https://github.com/nlohmann/json.git
     - rccl-mscclpp::git+https://github.com/microsoft/mscclpp.git
   sha256sums:
