@@ -1,9 +1,9 @@
 ---
-version: 0.16.1-1
+version: 0.16.2-1
 pkgbase:
   name: python-pycrdt-websocket
   pkgdesc: CRDTs based on Yrs
-  pkgver: 0.16.1
+  pkgver: 0.16.2
   pkgrel: 1
   url: https://github.com/y-crdt/pycrdt-websocket
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - python-pycrdt
     - python-pycrdt-store
   source:
-    - git+https://github.com/y-crdt/pycrdt-websocket#tag=0.16.1
+    - git+https://github.com/y-crdt/pycrdt-websocket#tag=0.16.2
   sha256sums:
-    - b214529813daff81f0470cf77a04d9c6c91e89cb2d185651446a76d55a34ee4d
+    - e3b26fcf4546f9c9f5ef298f46e7346e1213706ced804c2e09fb574b58e52553
 pkgname:
   - name: python-pycrdt-websocket
 # generated with artixpkg 0.38.5-1-any
