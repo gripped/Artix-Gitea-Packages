@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[remote "origin"]
+	url = https://gitlab.freedesktop.org/xorg/xserver.git
+	tagOpt = --no-tags
+	fetch = +refs/*:refs/*
+	mirror = true
