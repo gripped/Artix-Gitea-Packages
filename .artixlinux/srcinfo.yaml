@@ -1,10 +1,10 @@
 ---
-version: 6.0.0-1
+version: 6.0.0-2
 pkgbase:
   name: bleachbit
   pkgdesc: Deletes unneeded files to free disk space and maintain privacy
   pkgver: 6.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.bleachbit.org/
   arch:
     - any
@@ -13,10 +13,15 @@ pkgbase:
   makedepends:
     - git
   depends:
+    - glib2
     - gtk3
+    - pango
     - python
+    - python-chardet
     - python-gobject
     - python-psutil
+    - python-requests
+    - python-urllib3
   source:
     - git+https://github.com/bleachbit/bleachbit.git#tag=v6.0.0?signed
   validpgpkeys:
