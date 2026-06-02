@@ -2,7 +2,7 @@
 
 pkgname=xorg-server-tearfree
 pkgver=21.1.22
-pkgrel=2.2
+pkgrel=3
 arch=('x86_64')
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause'
