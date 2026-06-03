@@ -1,10 +1,10 @@
 ---
-version: 2:2025.11.05-4
+version: 2:2025.11.05-5
 pkgbase:
   name: re2
   pkgdesc: Fast, safe, thread-friendly regular expression engine
   pkgver: 2025.11.05
-  pkgrel: 4
+  pkgrel: 5
   epoch: 2
   url: https://github.com/google/re2
   arch:
