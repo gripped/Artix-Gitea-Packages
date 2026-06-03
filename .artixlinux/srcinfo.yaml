@@ -1,9 +1,9 @@
 ---
-version: 0.26.1-1
+version: 0.26.5-1
 pkgbase:
   name: python-typer
   pkgdesc: Build great CLIs. Easy to code. Based on Python type hints
-  pkgver: 0.26.1
+  pkgver: 0.26.5
   pkgrel: 1
   url: https://typer.tiangolo.com/
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - python-shellingham
     - python-annotated-doc
   source:
-    - python-typer-0.26.1.tar.gz::https://github.com/tiangolo/typer/archive/0.26.1.tar.gz
+    - python-typer-0.26.5.tar.gz::https://github.com/tiangolo/typer/archive/0.26.5.tar.gz
   sha512sums:
-    - 8699eb74dac32c25dcc0edfa3c9148ec87c5182a1fbbab41436ee3f7e67bc9d94f5fe4b160704b9d36d279d91c2896a8c0f862f4406dc3f1d97154e06e4ad70a
+    - 60fcc8f7e6456b506aa7f885b8437cec47e9cebacda2312cfc64492e26ad83c6c8685a61c707634d10668095adbc7b90533e58997353c2c48406d46bb66c6253
 pkgname:
   - name: python-typer
 # generated with artixpkg 0.38.5-1-any
