@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.14-1
+version: 1:1.0.15-1
 pkgbase:
   name: cosmic-greeter
   pkgdesc: COSMIC greeter for greetd
-  pkgver: 1.0.14
+  pkgver: 1.0.15
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-greeter
@@ -30,7 +30,7 @@ pkgbase:
     - pam
     - wayland
   source:
-    - git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-1.0.14
+    - git+https://github.com/pop-os/cosmic-greeter.git#tag=epoch-1.0.15
     - cosmic-greeter-display-manager.patch
     - cosmic-greeter-lto.patch
   b2sums:
