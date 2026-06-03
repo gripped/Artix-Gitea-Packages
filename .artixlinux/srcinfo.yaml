@@ -1,10 +1,10 @@
 ---
-version: 35.0.2-26
+version: 35.0.2-27
 pkgbase:
   name: android-tools
   pkgdesc: Android platform tools
   pkgver: 35.0.2
-  pkgrel: 26
+  pkgrel: 27
   url: https://developer.android.com/tools
   arch:
     - x86_64
