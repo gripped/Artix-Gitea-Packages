@@ -4,7 +4,7 @@
 # Contributor: Aleksandar Trifunović <akstrfn at gmail dot com>
 
 pkgname=abseil-cpp
-pkgver=20260107.1
+pkgver=20260526.0
 pkgrel=1
 pkgdesc="Collection of C++ library code designed to augment the C++ standard library"
 arch=('x86_64')
@@ -14,7 +14,7 @@ depends=('glibc' 'gtest' 'libgcc' 'libstdc++')
 makedepends=('cmake')
 source=("https://github.com/abseil/abseil-cpp/archive/$pkgver/$pkgname-$pkgver.tar.gz"
          scoped-mock-log.patch)
-sha256sums=('4314e2a7cbac89cac25a2f2322870f343d81579756ceff7f431803c2c9090195'
+sha256sums=('6e1aee535473414164bf83e4ebc40240dec71a4701f8a642d906e95bea1aea0c'
             'a6cbc612a2b96fcbd52d081e03e8581107ceb4827edb19d96510a31c568e1396')
 
 prepare() {

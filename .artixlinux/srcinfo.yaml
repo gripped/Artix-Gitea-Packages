@@ -1,9 +1,9 @@
 ---
-version: 20260107.1-1
+version: 20260526.0-1
 pkgbase:
   name: abseil-cpp
   pkgdesc: Collection of C++ library code designed to augment the C++ standard library
-  pkgver: 20260107.1
+  pkgver: 20260526.0
   pkgrel: 1
   url: https://abseil.io
   arch:
@@ -18,11 +18,11 @@ pkgbase:
     - libgcc
     - libstdc++
   source:
-    - https://github.com/abseil/abseil-cpp/archive/20260107.1/abseil-cpp-20260107.1.tar.gz
+    - https://github.com/abseil/abseil-cpp/archive/20260526.0/abseil-cpp-20260526.0.tar.gz
     - scoped-mock-log.patch
   sha256sums:
-    - 4314e2a7cbac89cac25a2f2322870f343d81579756ceff7f431803c2c9090195
+    - 6e1aee535473414164bf83e4ebc40240dec71a4701f8a642d906e95bea1aea0c
     - a6cbc612a2b96fcbd52d081e03e8581107ceb4827edb19d96510a31c568e1396
 pkgname:
   - name: abseil-cpp
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
