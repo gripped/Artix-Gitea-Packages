@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world-gremlins
-  removeRepo: null
+  addRepo: null
+  removeRepo: world
   triggersBuild: false
-  triggersRebuild: true
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRebuild: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -34,12 +34,8 @@ repos:
       - mariadb-pam-12.3.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
-    version: 12.2.2-2
-    packages:
-      - mariadb-libs-12.2.2-2-x86_64.pkg.tar.zst
-      - mariadb-clients-12.2.2-2-x86_64.pkg.tar.zst
-      - mariadb-12.2.2-2-x86_64.pkg.tar.zst
-      - mytop-12.2.2-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
