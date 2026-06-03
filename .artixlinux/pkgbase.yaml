@@ -2,8 +2,8 @@
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20260530-1
+    version: 20260531-1
     packages:
-      - artixlinux-appstream-data-20260530-1-any.pkg.tar.zst
+      - artixlinux-appstream-data-20260531-1-any.pkg.tar.zst
     debug: []
   world:
     version: 20250825-1
