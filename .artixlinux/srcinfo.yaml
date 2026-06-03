@@ -1,10 +1,10 @@
 ---
-version: 35.0-1
+version: 35.0-2
 pkgbase:
   name: protobuf
   pkgdesc: Protocol Buffers - Google's data interchange format
   pkgver: 35.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://developers.google.com/protocol-buffers/
   arch:
     - x86_64
