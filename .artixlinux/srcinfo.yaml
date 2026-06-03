@@ -1,10 +1,10 @@
 ---
-version: 0.6.2-9
+version: 0.6.3-1
 pkgbase:
   name: libcmis
   pkgdesc: a C/C++ client library for the CMIS protocol
-  pkgver: 0.6.2
-  pkgrel: 9
+  pkgver: 0.6.3
+  pkgrel: 1
   url: https://github.com/tdf/libcmis
   arch:
     - x86_64
@@ -13,9 +13,11 @@ pkgbase:
     - LGPL-2.1-or-later
     - MPL-1.1
   makedepends:
-    - docbook2x
     - cppunit
     - boost
+    - xmlto
+    - docbook-xml
+    - docbook-xsl
   depends:
     - boost-libs
     - curl
@@ -24,13 +26,11 @@ pkgbase:
     - libstdc++
     - libgcc
   source:
-    - https://github.com/tdf/libcmis/releases/download/v0.6.2/libcmis-0.6.2.tar.xz
-    - libxml2-2.12.patch
-    - boost-1.86.0.patch
+    - https://github.com/tdf/libcmis/releases/download/v0.6.3/libcmis-0.6.3.tar.xz
+    - buildfix.patch
   sha256sums:
-    - 1b5c2d7258ff93eb5f9958ff0e4dfd7332dc75a071bb717dde2217a26602a644
-    - ac3f846139ce8548256711304d85fa56bb7531a45582883cfcfa560601461588
-    - ab89f91f2f61cc3a3f63bb51296d3333182b5a41811368d734a26d9d73f7a45e
+    - e2e151fdd47a345b6ef72cae1d8ecf3099bb90420f276761f2793ec317809307
+    - b9de2e09f1cc0eba51041fc50ac267027405f9fa8de28741d35665cf8a56e9d4
 pkgname:
   - name: libcmis
 # generated with artixpkg 0.38.5-1-any
