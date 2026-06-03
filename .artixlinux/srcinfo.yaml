@@ -1,0 +1,39 @@
+---
+version: 0.9.21-2
+pkgbase:
+  name: python-anywidget
+  pkgdesc: Reusable widgets made easy
+  pkgver: 0.9.21
+  pkgrel: 2
+  url: https://anywidget.dev/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pydantic
+    - python-watchfiles
+  makedepends:
+    - python-build
+    - python-installer
+    - python-hatchling
+    - python-hatch-jupyter-builder
+    - pnpm
+  depends:
+    - ipython
+    - python
+    - python-comm
+    - python-ipywidgets
+    - python-psygnal
+    - python-traitlets
+    - python-typing_extensions
+  optdepends:
+    - 'python-watchfiles: for live reloading during development'
+  source:
+    - anywidget-0.9.21.tar.gz::https://github.com/manzt/anywidget/archive/refs/tags/anywidget@0.9.21.tar.gz
+  b2sums:
+    - dc8a11a45de43b4685968f7976131ed5f4f9f3f53521c71a6ed3328bf148c8c358acb8b4e96ecc5016576116b187816474102b052b3dabcee5612c67c139542f
+pkgname:
+  - name: python-anywidget
+# generated with artixpkg 0.38.5-1-any
