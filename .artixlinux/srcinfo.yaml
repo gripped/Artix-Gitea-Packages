@@ -1,9 +1,9 @@
 ---
-version: 2.1.15-1
+version: 2.1.16-1
 pkgbase:
   name: dnscrypt-proxy
   pkgdesc: A flexible DNS proxy, with support for encrypted DNS protocols
-  pkgver: 2.1.15
+  pkgver: 2.1.16
   pkgrel: 1
   url: https://github.com/DNSCrypt/dnscrypt-proxy
   arch:
@@ -29,22 +29,22 @@ pkgbase:
     - etc/dnscrypt-proxy/cloaking-rules.txt
     - etc/dnscrypt-proxy/forwarding-rules.txt
   source:
-    - git+https://github.com/DNSCrypt/dnscrypt-proxy#tag=2.1.15?signed
+    - git+https://github.com/DNSCrypt/dnscrypt-proxy#tag=2.1.16?signed
     - 0001-Make-configuration-file-hierarchy-compliant.patch
     - tmpfiles.d
     - sysusers.d
   validpgpkeys:
     - 54A2B8892CC3D6A597B92B6C210627AABA709FE1
   sha512sums:
-    - 024ce8f04cd4f2c2f2ba1d2ab87f5e83b2db75fa815e80c3d67e5c7b03c7e8be80bdf35a8830e842c18f143f3af73b10a7333877ab02879b4cb032248f4405a1
-    - 2684f4f9f6e308dde4186ce15c8b14de2eb4d289d039ed9e10c04985c809165cc995b56cc9a2c22c5b8c80413ea2eb41a13ae589874ae6b6056195da85b323ad
+    - ff67f26f713f4f587d92f17721b570198154361e3c7a41a3c8fc0995071a5503fc169657838fc5c8b11bb6672e7d27ee471355ce35b941de64d6e3e8cd7b83cf
+    - 34e6cc5f292015dc906ed01f123520c8bb0190836149d82e98c00294db8f6b3fc8f83a9e5eef36343ce28c27a3510cb95babb3a83c53b996542111d5696412d9
     - 005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151
     - 888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8
   b2sums:
-    - ba2ee39fd4beaab57e8399d9290cde6192aec779dfd64d344de786472f98bc407d9c076bd83d807844b88f08e0a1ce770f5ac0de553f025250b93926dbceddbd
-    - 4e41d1486584d95e02e009750f496f7d332ccaf4c60cfa82910ea1359861476b73bd1eda9d0b855deb97a732237bd9cfb30913bb2a2992c79bfec40530b68c66
+    - 4a4cc28f4f06b2533cc8541f644e9a4e5c7a59ef44866a70868ea3806fff2a4645e3bb79600fb2779e092ce6839d8e9f82465ca84af9e289d5c3a7b97faf91b8
+    - 555f8cbf64b9f5f33cae810c5d3d94fb20449dd325b3ac6f7824da0e88a302d9a5e8fde14209df2685308a75a3f038caf6d3cdf9449a93f1f8b95b778a331e0d
     - 2c83832dd8ce63608e4a948deb0a55f2857a7e3f53b3fb8ea67a4c807f7dc7245305bf63fdb35009089df90a070cd95cb6a8f31f79e243d8c97a442554aeb428
     - 6340a1f5011145642ce2352e8be4bfa50cdf74889e608471519934d814ca64b03461bc21e347feafe98256d7b8b281c1034dd0b8890e1155bdc3dd044ae18e80
 pkgname:
   - name: dnscrypt-proxy
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
