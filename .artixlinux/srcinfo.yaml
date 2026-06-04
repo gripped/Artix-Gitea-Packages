@@ -1,9 +1,9 @@
 ---
-version: 6.12.91.rt18.artix1-1
+version: 6.12.92.rt18.artix1-1
 pkgbase:
   name: linux-rt-lts
   pkgdesc: Linux RT LTS
-  pkgver: 6.12.91.rt18.artix1
+  pkgver: 6.12.92.rt18.artix1
   pkgrel: 1
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts
   arch:
@@ -37,36 +37,36 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.91.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.91.tar.sign
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.91-rt18-arch1/downloads/linux-rt-lts-v6.12.91-rt18.patch.sig
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.91-rt18-arch1/downloads/linux-rt-lts-v6.12.91-rt18.patch.zst
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.91-rt18-arch1/downloads/linux-rt-lts-v6.12.91-rt18-arch1.patch.sig
-    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.91-rt18-arch1/downloads/linux-rt-lts-v6.12.91-rt18-arch1.patch.zst
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.92.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.92.tar.sign
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.92-rt18-arch1/downloads/linux-rt-lts-v6.12.92-rt18.patch.sig
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.92-rt18-arch1/downloads/linux-rt-lts-v6.12.92-rt18.patch.zst
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.92-rt18-arch1/downloads/linux-rt-lts-v6.12.92-rt18-arch1.patch.sig
+    - https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt-lts/-/releases/v6.12.92-rt18-arch1/downloads/linux-rt-lts-v6.12.92-rt18-arch1.patch.zst
   validpgpkeys:
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - D5653EA39C8675DA4BD5971C13B55DD07C53B851
     - 991F6E3F0765CF6295888586139B09DA5BF0D338
   sha512sums:
-    - 2700134c731e5c9c398816d621728a4787e9328d598ddda6c95a569bd07180cbfc27c3326ed4abbb16396f458481f142af41c420e1b786092951182e84ee6946
+    - 1ab9803e532822cbad21b049dba320711763a56274e932de7c30fddafb6b7e0d928bc6561f42b5bb990f86ffe2f9f6b2f619628bbbd5529a3a6a33e39af031b7
     - SKIP
     - SKIP
-    - 7668f7f524f241cf8a1febfd3af3781905151233035bc97cd0f9048fbef24f41b7834df8966ed21608137041cc2a00b9d2c41cc159ec44949aab82bfb1cc4824
+    - 8a6a74aa5975e63617c550cc2996f3a946d1b51d5906567c3225bb5e1f0f2a449cf5a64a63677b4d00829e04aa1e1a0273f7c15265b676f84fa625a7e8c7911a
     - SKIP
-    - 071ec7dbe930514168716d62152b95101155234143dbc603f742571b95a6fbffa7929a7b5d427bd6033be8efce46e689297dd40b22ea0dd6dab1bc79911875c1
+    - 8e32577aa5f9cc88133bf64b879ff3404396a83693b393ead7b8c5085f527510b7ba2d7e29ae3f8f44cadb61a5e78af1893fbc6fb825ba17bffdd7382f96bce1
   b2sums:
-    - 66a6406001ad609d848145df850cf8a910cd8051025dcd4967bce7ff02c9a41add1e81847df673ec5e90bd0b4edaf7e445813eb35c2fb1a15387e1e2413dedd9
+    - f1406bbfe440cfc2ee08c3676d63158e237cac6571a08e83017f342134f91587ccf042eb340b843e2969fbe88e197649e5590d877a419f4d3d06e6af889fdc2a
     - SKIP
     - SKIP
-    - f8e7e1c62262d384bbe40c9910ffc2c7568c163aeb468e1560ee0877ed80120f6c29a60c23fc3a1230a480311dc37dea41dac964fa98233f10f50925b28f3c1e
+    - 51d1a131e8cbe2730431fd0dcec1e9d59cb11a29b9c56d1b6af01c9625e35244d3c43f24e8f329f1aaecf0368d6177ae8e10f6b8d8110e51cada5a037665a49e
     - SKIP
-    - c9fed4622f6c09bbcba78b077c6c414e648831ee597b27c21bd2837a9e6cce1120c3eead927546d347f4dcc55ec5ad3bfea2592956195291412118a2c50dfdd4
+    - b2ec30bb2640a22369aa68cf3edc25248d74049ab2290e27081bd20756fc1d7640a2063f62aca75d418030a66f77f4b227d7a229dc2da1713aa9f684c517e2a5
   source_x86_64:
     - config.x86_64
   sha512sums_x86_64:
-    - c91be97a7453942cb822b32521a921d8c85b3f62e1f8765b9f9c23bf0e6cad7bc429f13df8d9ac50222cccce86eae31846da0188193e41c13b896dd8a10f1cc0
+    - f2b3382ddd8e586cc6e08d41f7f75483303427032cdcc52d5c56c191f0898e532ce879829bd4ccc643b571d93e00839227eb4dc53f09dfce93e32bea3e512d2d
   b2sums_x86_64:
-    - 6167fe26c63fbd36e0d60e4113c508ef91774f481163a1e15ae34e4919219a605ea889e8d19a7947b6582bb6d8813c40aaff87f6bb9e64ba9690400cedd88c3c
+    - b85712da835dc9192f6ba7728d54918f38409b9e423dd5210c180a498c871b3ae2ed0a9ef33cada436a0429860af3d7e9231b1ed7a8e11b38c9c76564a406df1
 pkgname:
   - name: linux-rt-lts
     pkgdesc: The Linux RT LTS kernel and modules
