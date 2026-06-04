@@ -1,10 +1,10 @@
 ---
-version: 2.88.0-1
+version: 2.88.0-2
 pkgbase:
   name: glibmm-2.68
   pkgdesc: C++ bindings for GLib
   pkgver: 2.88.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gtkmm.org/
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
   makedepends:
     - clang
     - git
+    - libsigc++-3.0-docs
     - meson
     - mm-common
     - perl-xml-parser
@@ -43,9 +44,10 @@ pkgname:
       - libsigc-3.0.so
     provides:
       - libglibmm-2.68.so
+      - libgiomm-2.68.so
   - name: glibmm-2.68-docs
     pkgdesc: C++ bindings for GLib (documentation)
     depends: []
     options:
       - '!strip'
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
