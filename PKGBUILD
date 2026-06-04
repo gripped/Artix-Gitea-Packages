@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=messagelib
-pkgver=26.04.1
+pkgver=26.04.2
 pkgrel=1
 pkgdesc='KDE PIM messaging library'
 arch=(x86_64)
@@ -12,7 +12,6 @@ depends=(akonadi
          akonadi-contacts
          akonadi-mime
          akonadi-search
-         gcc-libs
          glibc
          gpgmepp
          grantleetheme
@@ -43,9 +42,11 @@ depends=(akonadi
          ktextwidgets
          kwidgetsaddons
          kxmlgui
+         libgcc
          libgravatar
          libkdepim
          libkleo
+         libstdc++
          openssl
          pimcommon
          qgpgme
@@ -55,7 +56,7 @@ depends=(akonadi
          syntax-highlighting)
 makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('3b00a06032995097f84cb1b56efb9778fc35bf94fbd6a4ea2f7999e5cc663c6c'
+sha256sums=('abf7bf08d9bf82fad7886e29877f1e26b762345026c667de56b4f70e69166f85'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
