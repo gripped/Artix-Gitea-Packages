@@ -11,7 +11,7 @@ __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
-pkgver=140.11.0.102
+pkgver=140.11.0.103rc4
 pkgrel=1
 _ffbuild=2
 _ffsrcver="${pkgver%.*}"
@@ -134,7 +134,7 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('fe2dffda969a96c10a89cb967003fae5f70dbff374136a57fc7759a128bcd7cf'
+sha256sums=('8fec08a039f5a0a68ac58412bfce9e73713fd1239711b6c0951d175731f6f112'
             '1b034d2117356fda24807a151055132315c6ba58ad2bdf7ec71ee707fac5e028'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
