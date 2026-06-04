@@ -4,7 +4,7 @@
 # Contributor: Adrián Chaves Fernández (Gallaecio) <adriyetichaves@gmail.com>
 pkgname=0ad
 pkgver=0.28.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Cross-platform, 3D and historically-based real-time strategy game"
 arch=('x86_64')
 url="http://play0ad.com/"
@@ -53,5 +53,6 @@ package() {
 
   install -Dm755 build/resources/${pkgname}.sh "${pkgdir}/usr/bin/${pkgname}"
   install -Dm644 build/resources/${pkgname}.desktop "${pkgdir}/usr/share/applications/${pkgname}.desktop"
+  install -Dm644 build/resources/${pkgname}.appdata.xml "${pkgdir}/usr/share/metainfo/${pkgname}.appdata.xml"
   install -Dm644 build/resources/${pkgname}.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
 }
