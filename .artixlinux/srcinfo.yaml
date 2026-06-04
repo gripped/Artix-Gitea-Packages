@@ -1,10 +1,10 @@
 ---
-version: 0.9.21-2
+version: 0.9.21-2.1
 pkgbase:
   name: python-anywidget
   pkgdesc: Reusable widgets made easy
   pkgver: 0.9.21
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://anywidget.dev/
   arch:
     - any

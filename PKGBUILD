@@ -3,7 +3,7 @@
 _name=anywidget
 pkgname=python-$_name
 pkgver=0.9.21
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Reusable widgets made easy"
 arch=(any)
 url="https://anywidget.dev/"
