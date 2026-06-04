@@ -1,10 +1,10 @@
 ---
-version: 4.22.0-1
+version: 4.22.0-2
 pkgbase:
   name: gtkmm-4.0
   pkgdesc: C++ bindings for GTK 4
   pkgver: 4.22.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gtkmm.org/
   arch:
     - x86_64
@@ -67,4 +67,4 @@ pkgname:
     depends: []
     options:
       - '!strip'
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
