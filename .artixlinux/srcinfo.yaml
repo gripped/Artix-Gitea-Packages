@@ -1,10 +1,10 @@
 ---
-version: 2.28.5-1
+version: 2.28.5-2
 pkgbase:
   name: atkmm
   pkgdesc: C++ bindings for ATK
   pkgver: 2.28.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gtkmm.org/
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - git
     - glibmm-docs
+    - libsigc++-docs
     - meson
     - mm-common
   depends:
@@ -21,6 +22,7 @@ pkgbase:
     - glibc
     - glibmm
     - libgcc
+    - libsigc++
     - libstdc++
   options:
     - '!emptydirs'
@@ -36,6 +38,7 @@ pkgname:
       - glibc
       - glibmm
       - libgcc
+      - libsigc++
       - libstdc++
       - libglibmm-2.4.so
       - libsigc-2.0.so
