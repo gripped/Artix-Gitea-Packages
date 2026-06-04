@@ -1,9 +1,9 @@
 ---
-version: 1:2512-2
+version: 1:2603.1-2
 pkgbase:
   name: dolphin-emu
   pkgdesc: A Gamecube and Wii emulator
-  pkgver: 2512
+  pkgver: 2603.1
   pkgrel: 2
   epoch: 1
   url: https://dolphin-emu.org
@@ -29,17 +29,19 @@ pkgbase:
     - bluez-libs
     - bzip2
     - enet
-    - gcc-libs
     - glibc
+    - glslang
     - hidapi
     - libavcodec.so
     - libavformat.so
     - libavutil.so
     - libcurl.so
+    - libgcc
     - libgl
     - libsfml-network.so
     - libsfml-system.so
     - libspng.so
+    - libstdc++
     - libswscale.so
     - libusb-1.0.so
     - libx11
@@ -49,10 +51,12 @@ pkgbase:
     - lzo
     - mbedtls2
     - pugixml
-    - sdl2
+    - sdl3
     - speexdsp
     - xxhash
     - xz
+    - zlib
+    - zlib-ng
     - zstd
   optdepends:
     - 'pulseaudio: PulseAudio backend'
@@ -60,7 +64,7 @@ pkgbase:
     - '!emptydirs'
     - '!lto'
   source:
-    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=2614969fa80dfeb87d2a4ad3bdaa703237127074
+    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=2603a
     - git+https://github.com/mutouyun/cpp-ipc.git
     - git+https://github.com/weisslj/cpp-optparse.git
     - git+https://github.com/mozilla/cubeb.git
@@ -77,7 +81,7 @@ pkgbase:
     - git+https://github.com/e-dant/watcher.git
     - git+https://github.com/zlib-ng/zlib-ng.git
   b2sums:
-    - 290af3a2d6825ccb17578e6c6105cdf29b8708a8dd59982693d1c5bbc56f06f4d82a069d8615a1a55908f7dbc1e460f7b43f883ad96381ee13ca9c7448caad47
+    - 8e43c8c34c355a36fea357307a01423a549ce43d2dadf4b782166fe9c62faa9de49798f59d386a599ce964cb8b063a0e5977c218124cfc2345b33776324dcfdb
     - SKIP
     - SKIP
     - SKIP
@@ -99,17 +103,19 @@ pkgname:
       - bluez-libs
       - bzip2
       - enet
-      - gcc-libs
       - glibc
+      - glslang
       - hidapi
       - libavcodec.so
       - libavformat.so
       - libavutil.so
       - libcurl.so
+      - libgcc
       - libgl
       - libsfml-network.so
       - libsfml-system.so
       - libspng.so
+      - libstdc++
       - libswscale.so
       - libusb-1.0.so
       - libx11
@@ -119,10 +125,12 @@ pkgname:
       - lzo
       - mbedtls2
       - pugixml
-      - sdl2
+      - sdl3
       - speexdsp
       - xxhash
       - xz
+      - zlib
+      - zlib-ng
       - zstd
       - alsa-lib
       - hicolor-icon-theme
@@ -137,17 +145,19 @@ pkgname:
       - bluez-libs
       - bzip2
       - enet
-      - gcc-libs
       - glibc
+      - glslang
       - hidapi
       - libavcodec.so
       - libavformat.so
       - libavutil.so
       - libcurl.so
+      - libgcc
       - libgl
       - libsfml-network.so
       - libsfml-system.so
       - libspng.so
+      - libstdc++
       - libswscale.so
       - libusb-1.0.so
       - libx11
@@ -157,10 +167,12 @@ pkgname:
       - lzo
       - mbedtls2
       - pugixml
-      - sdl2
+      - sdl3
       - speexdsp
       - xxhash
       - xz
+      - zlib
+      - zlib-ng
       - zstd
       - alsa-lib
       - libevdev
