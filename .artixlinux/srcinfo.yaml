@@ -1,11 +1,12 @@
 ---
-version: 5.13.9-1
+version: 5.13.9-2
 pkgbase:
   name: gpu-screen-recorder
   pkgdesc: A shadowplay-like screen recorder for Linux. The fastest screen recorder for Linux
   pkgver: 5.13.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://git.dec05eba.com/gpu-screen-recorder
+  install: gpu-screen-recorder.install
   arch:
     - x86_64
   license:
