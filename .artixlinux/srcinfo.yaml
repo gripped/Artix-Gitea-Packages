@@ -1,0 +1,36 @@
+---
+version: 0.15.1-1
+pkgbase:
+  name: python-psygnal
+  pkgdesc: Python observer pattern (callback/event system) modeled after Qt Signals & Slots (but independent of Qt)
+  pkgver: 0.15.1
+  pkgrel: 1
+  url: https://github.com/pyapp-kit/psygnal
+  arch:
+    - any
+  license:
+    - BSD-3-Clause
+  checkdepends:
+    - python-pytest
+    - python-pytest-asyncio
+    - python-anyio
+    - python-attrs
+    - python-dask
+    - python-numpy
+    - python-pydantic
+    - python-toolz
+    - python-wrapt
+  makedepends:
+    - python-build
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+  source:
+    - python-psygnal-0.15.1.tar.gz::https://github.com/pyapp-kit/psygnal/archive/refs/tags/v0.15.1.tar.gz
+  b2sums:
+    - 62e732f40a58acb8816e5642462f285808b6831cad94197902f05fbd1fb5c416f02b742c0de262e19c80aaabbc2a1146d65535a6020c0d170dc70d4be53252bf
+pkgname:
+  - name: python-psygnal
+# generated with artixpkg 0.38.5-1-any
