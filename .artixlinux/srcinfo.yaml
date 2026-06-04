@@ -1,0 +1,69 @@
+---
+version: 3.24.10-2
+pkgbase:
+  name: gtkmm3
+  pkgdesc: C++ bindings for GTK+ 3
+  pkgver: 3.24.10
+  pkgrel: 2
+  url: https://www.gtkmm.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - xorg-server-xvfb
+  makedepends:
+    - atkmm-docs
+    - cairomm-docs
+    - git
+    - glibmm-docs
+    - libsigc++-docs
+    - meson
+    - mm-common
+    - pangomm-docs
+  depends:
+    - atkmm
+    - cairomm
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - glibmm
+    - gtk3
+    - libgcc
+    - libsigc++
+    - libstdc++
+    - pangomm
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gtkmm.git#tag=3.24.10
+  b2sums:
+    - b19ef42b6e29035a2ce5475333de9aefb2f91e7daa42cd0632ca1cbf6bbd4b3ebae900094eec1e35180185c65b9077396de5cb5d8d5c40d990578e76b8901e4b
+pkgname:
+  - name: gtkmm3
+    depends:
+      - atkmm
+      - cairomm
+      - gdk-pixbuf2
+      - glib2
+      - glibc
+      - glibmm
+      - gtk3
+      - libgcc
+      - libsigc++
+      - libstdc++
+      - pangomm
+      - libatkmm-1.6.so
+      - libcairomm-1.0.so
+      - libglibmm-2.4.so
+      - libpangomm-1.4.so
+      - libsigc-2.0.so
+    provides:
+      - libgdkmm-3.0.so
+      - libgtkmm-3.0.so
+  - name: gtkmm3-docs
+    pkgdesc: C++ bindings for GTK+ 3 (documentation)
+    depends: []
+    options:
+      - '!strip'
+# generated with artixpkg 0.38.5-1-any
