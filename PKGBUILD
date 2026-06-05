@@ -2,7 +2,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=merkuro
-pkgver=26.04.1
+pkgver=26.04.2
 pkgrel=1
 pkgdesc='Application suite designed to handle emails, calendars, contacts and tasks'
 arch=(x86_64)
@@ -13,7 +13,6 @@ depends=(akonadi
          akonadi-contacts
          akonadi-mime
          akonadi-search
-         gcc-libs
          glibc
          gpgmepp
          kcalendarcore
@@ -41,9 +40,11 @@ depends=(akonadi
          ksvg
          kwidgetsaddons
          kwindowsystem
+         libgcc
          libkdepim
          libkleo
          libplasma
+         libstdc++
          mailcommon
          messagelib
          mimetreeparser
@@ -62,7 +63,7 @@ replaces=(kalendar)
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('619dba797c7c80137ed698fafa1118ad01b00ff5486840c6b4895a561382274c'
+sha256sums=('b48e3d5fa59ea6b4606680b6b2ff8160a04dbe3229cb52d2664983faa3c3443b'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
