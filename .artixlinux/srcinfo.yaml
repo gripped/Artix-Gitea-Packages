@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: alligator
   pkgdesc: Kirigami-based RSS reader
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/alligator/
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - python
   depends:
-    - gcc-libs
     - glibc
     - kcolorscheme
     - kconfig
@@ -27,19 +26,21 @@ pkgbase:
     - ki18n
     - kirigami
     - kirigami-addons
+    - libgcc
+    - libstdc++
     - qqc2-desktop-style
     - qt6-base
     - qt6-declarative
     - syndication
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/alligator-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/alligator-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/alligator-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/alligator-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 75fd1bea0a1b8a905614db3d7f17c072c0246249f5158ddc85b7c74b54c2b559
+    - 6502c1763c43bc6e6e79d9c313dd67a72b87a3571d79bfd86084da0de5913d40
     - SKIP
 pkgname:
   - name: alligator
