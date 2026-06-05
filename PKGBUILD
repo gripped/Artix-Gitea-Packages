@@ -3,7 +3,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=pim-data-exporter
-pkgver=26.04.1
+pkgver=26.04.2
 pkgrel=1
 pkgdesc='Import and export KDE PIM settings'
 arch=(x86_64)
@@ -11,7 +11,6 @@ url='https://apps.kde.org/pimdataexporter/'
 license=(GPL-2.0-or-later)
 depends=(akonadi
          akonadi-mime
-         gcc-libs
          glibc
          karchive
          kcalendarcore
@@ -33,6 +32,8 @@ depends=(akonadi
          kuserfeedback
          kwidgetsaddons
          kxmlgui
+         libgcc
+         libstdc++
          mailcommon
          pimcommon
          qt6-base)
@@ -41,7 +42,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d0007d11ffb3bc020379abdd36e4c4e2418f9deb511c36db9891dc710a5b56b6'
+sha256sums=('89628c08048a4a511d1b608051c8510ef6ebf7edd0879f7245bdbc9ba795f59c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
