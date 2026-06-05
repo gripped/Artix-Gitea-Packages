@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: kde-dev-scripts
   pkgdesc: Scripts and setting files useful during development of KDE software
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://www.kde.org/
   arch:
@@ -22,14 +22,14 @@ pkgbase:
     - python
     - sh
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/kde-dev-scripts-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/kde-dev-scripts-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/kde-dev-scripts-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/kde-dev-scripts-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 429471a6c16be568601f9735c1810bde512b16dd84b37a8c61a5178dc1ed3db2
+    - b52be11b5e1749b3ec40a064ecdebd2682c0ab35ea34c9e1f14ffde08c93b8da
     - SKIP
 pkgname:
   - name: kde-dev-scripts
