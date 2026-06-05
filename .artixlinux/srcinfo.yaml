@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: kshisen
   pkgdesc: A solitaire-like game played using the standard set of Mahjong tiles
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/kshisen/
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
     - kconfig
     - kconfigwidgets
@@ -31,16 +30,17 @@ pkgbase:
     - kxmlgui
     - libkdegames
     - libkmahjongg
+    - libstdc++
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/kshisen-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/kshisen-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/kshisen-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/kshisen-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9aad3554a5da1259dfdb44b404b490fba40f47a79e34cc7425523ef2975b9ddb
+    - 64dee4b63058ade9abb8a55371c99f38f88c048c3dc0c03674f7ae005d53e141
     - SKIP
 pkgname:
   - name: kshisen
