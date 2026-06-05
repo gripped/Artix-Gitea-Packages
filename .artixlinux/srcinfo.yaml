@@ -1,10 +1,11 @@
 ---
-version: 150.0.2-1
+version: 1:151.0.3_1-1
 pkgbase:
   name: librewolf
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom.
-  pkgver: 150.0.2
+  pkgver: 151.0.3_1
   pkgrel: 1
+  epoch: 1
   url: https://librewolf.net/
   install: librewolf.install
   arch:
@@ -83,23 +84,17 @@ pkgbase:
     - usr/lib/librewolf/librewolf.cfg
     - usr/lib/librewolf/distribution/policies.json
   source:
-    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/150.0.2-1/librewolf-150.0.2-1.source.tar.gz
-    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/150.0.2-1/librewolf-150.0.2-1.source.tar.gz.sig
-    - 0001-rust-build.patch::https://codeberg.org/librewolf/source/raw/commit/163cb7eb83b340f0c30ef8832fd72f02a88a1b3e/patches/rust-build.patch
-    - 0002-Bug-2033279-Make-enable-rust-simd-work-with-Rust-1.9.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/79485441f8b5875d618f0a121fd6c4b5e0c9bbd2/0002-Bug-2033279-Make-enable-rust-simd-work-with-Rust-1.9.patch
-    - 0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/79485441f8b5875d618f0a121fd6c4b5e0c9bbd2/0003-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-    - 0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/79485441f8b5875d618f0a121fd6c4b5e0c9bbd2/0004-Bug-2023597-Use-wasm32-wasip1-target-for-clang-22.1-.patch
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/151.0.3-1/librewolf-151.0.3-1.source.tar.gz
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/151.0.3-1/librewolf-151.0.3-1.source.tar.gz.sig
+    - 0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/bf1f16abe7b20cecaedc71c6fa44bb7069f06880/0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
     - librewolf.desktop
     - default192x192.png
   validpgpkeys:
     - 662E3CDD6FE329002D0CA5BB40339DD82B12EF16
   sha256sums:
-    - 9483d41b4a1efdf00919dce60db4be9d1e05c378839f1c47f48660175c521f22
+    - a06d854cff9131120ba81bb31aaf05b41623c82806ea8842e0ef73d75f103aa3
     - SKIP
-    - 972c400f09b51d1638ca4bc534c84798393cee5aaabad71cd1843e9d4d2d2489
-    - 9baae0f2313efdfdbfce9464e89f1fe21571890fd9746212b54cf56a3391c1c1
-    - 83857f3531688885b62be0b06583f6815f236edbc43a942830395ec3cbdc7934
-    - d6e1dbafe56bc52c8ab6cbf9542cf80e89c1857a71ce08bbbd82804909bcb76f
+    - c7d6572fe1ac76f6adbfb10102f284fd55690396ac0a275a5cfea9a2efa22b58
     - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
     - 959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1
 pkgname:
