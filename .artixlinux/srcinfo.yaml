@@ -1,10 +1,10 @@
 ---
-version: 2.92.rel2-2
+version: 2.93-1
 pkgbase:
   name: dnsmasq
   pkgdesc: Lightweight, easy to configure DNS forwarder and DHCP server
-  pkgver: 2.92.rel2
-  pkgrel: 2
+  pkgver: 2.93
+  pkgrel: 1
   url: http://www.thekelleys.org.uk/dnsmasq/doc.html
   arch:
     - x86_64
@@ -25,16 +25,14 @@ pkgbase:
   backup:
     - etc/dnsmasq.conf
   source:
-    - http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.92rel2.tar.xz
-    - http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.92rel2.tar.xz.asc
-    - 0001-nettle-4-0.patch
+    - http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.93.tar.xz
+    - http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.93.tar.xz.asc
     - dnsmasq.sysusers
   validpgpkeys:
     - D6EACBD6EE46B834248D111215CDDA6AE19135A2
   sha256sums:
-    - 43d72b8c129bdf33d17bafedc98823f63e46b5005128066bf0d2a472a32ce06a
+    - 0c00d4e5c97c8306e5fb932b348b34269c9c29a0e7df0e8e82958b407092bc19
     - SKIP
-    - bec0c353e33efcf259a29f2f5a566edfb57b6cf2371c1680d553a62c63006193
     - e805d41b291dfe6988d6896d311ff2fa62d8291067572f3db1059b0217f31aff
 pkgname:
   - name: dnsmasq
