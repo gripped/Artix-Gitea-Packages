@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: partitionmanager
   pkgdesc: A KDE utility that allows you to manage disks, partitions, and file systems
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/partitionmanager/
   arch:
@@ -17,7 +17,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
     - kcolorscheme
     - kconfig
@@ -31,17 +30,18 @@ pkgbase:
     - kwidgetsaddons
     - kwindowsystem
     - kxmlgui
+    - libstdc++
     - polkit-qt6
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/partitionmanager-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/partitionmanager-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/partitionmanager-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/partitionmanager-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 4b0f2fd3883f6b8fa5607ed620dc7b422b33b87829c11e6597a869ea2cd5aa74
+    - 27e10f6f9ade3b08eda8be1807e1f1470d6db22196422be06224c951c5593cb5
     - SKIP
 pkgname:
   - name: partitionmanager
