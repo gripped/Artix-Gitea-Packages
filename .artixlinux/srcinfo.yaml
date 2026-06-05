@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: knights
   pkgdesc: Chess board by KDE with XBoard protocol support
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/knights/
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
     - kcompletion
     - kconfig
@@ -34,19 +33,20 @@ pkgbase:
     - kxmlgui
     - libkdegames
     - libplasma
+    - libstdc++
     - qt6-base
     - qt6-speech
   optdepends:
     - 'gnuchess: for playing against the computer'
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/knights-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/knights-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/knights-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/knights-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 41ba896a61045a8246bfdbc8a1f26b330a96a330d07686a04360cb77c69f433f
+    - 12e468394ce066c473db4475e417665e4a52ae0d19995ffb2c8359417f635801
     - SKIP
 pkgname:
   - name: knights
