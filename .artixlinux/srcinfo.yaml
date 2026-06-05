@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: akonadiconsole
   pkgdesc: Akonadi management and debugging console
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -21,7 +21,6 @@ pkgbase:
     - akonadi-contacts
     - akonadi-search
     - calendarsupport
-    - gcc-libs
     - glibc
     - kcalendarcore
     - kcolorscheme
@@ -38,20 +37,22 @@ pkgbase:
     - ktextwidgets
     - kwidgetsaddons
     - kxmlgui
+    - libgcc
     - libkdepim
+    - libstdc++
     - messagelib
     - qgpgme
     - qt6-base
     - xapian-core
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/akonadiconsole-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/akonadiconsole-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/akonadiconsole-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/akonadiconsole-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 7c6d0eece3a18f1defd9f9e577a8eb05784dfdc28542513db3cc8aee82961b00
+    - fa3d577c41feb3c6a889e5590b042d1383fd8072b8d7374b634b526e0eb790b0
     - SKIP
 pkgname:
   - name: akonadiconsole
