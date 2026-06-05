@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: kasts
   pkgdesc: Kirigami-based podcast player
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/kasts/
   arch:
@@ -19,7 +19,6 @@ pkgbase:
     - python
   depends:
     - breeze-icons
-    - gcc-libs
     - glibc
     - kcolorscheme
     - kconfig
@@ -31,6 +30,8 @@ pkgbase:
     - kirigami
     - kirigami-addons
     - kwindowsystem
+    - libgcc
+    - libstdc++
     - libvlc
     - qqc2-desktop-style
     - qt6-base
@@ -42,14 +43,14 @@ pkgbase:
     - threadweaver
     - vlc-plugins-base
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/kasts-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/kasts-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/kasts-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/kasts-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - a59741617f1e708146c5e344206ffac0051255c18031f09631886804fdb487c4
+    - fa7f98a68f856d93d4e479ab0344c219b3aed9779eff1c3cdfcab48323a6a491
     - SKIP
 pkgname:
   - name: kasts
