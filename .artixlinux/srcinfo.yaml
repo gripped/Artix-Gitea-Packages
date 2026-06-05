@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: ksirk
   pkgdesc: A computerized version of a well known strategy game
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/ksirk/
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
     - kcompletion
     - kconfig
@@ -30,20 +29,22 @@ pkgbase:
     - knewstuff
     - kwidgetsaddons
     - kxmlgui
+    - libgcc
     - libkdegames
+    - libstdc++
     - qt6-5compat
     - qt6-base
     - qt6-multimedia
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/ksirk-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/ksirk-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/ksirk-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/ksirk-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 3a8d7c02e2f5efcdfb0cacd3f027dc49caf97ac8a7103852110d9fcf20b9d073
+    - 0ac8772caf3634716d1aa68b3f6e0fe3fe64396f4ba3eaa9c7f5203a8da40150
     - SKIP
 pkgname:
   - name: ksirk
