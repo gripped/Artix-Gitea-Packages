@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,15 +30,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 25.1.5-5
-    packages:
-      - xlibre-xserver-beta-25.1.5-5-x86_64.pkg.tar.zst
-      - xlibre-xserver-xephyr-beta-25.1.5-5-x86_64.pkg.tar.zst
-      - xlibre-xserver-xvfb-beta-25.1.5-5-x86_64.pkg.tar.zst
-      - xlibre-xserver-xnest-beta-25.1.5-5-x86_64.pkg.tar.zst
-      - xlibre-xserver-common-beta-25.1.5-5-x86_64.pkg.tar.zst
-      - xlibre-xserver-devel-beta-25.1.5-5-x86_64.pkg.tar.zst
-      - xlibre-xserver-src-beta-25.1.5-5-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
