@@ -3,7 +3,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=kalarm
-pkgver=26.04.1
+pkgver=26.04.2
 pkgrel=1
 pkgdesc='Personal alarm scheduler'
 arch=(x86_64)
@@ -12,7 +12,6 @@ license=(GPL-2.0-or-later)
 depends=(akonadi
          akonadi-contacts
          akonadi-mime
-         gcc-libs
          glibc
          kauth
          kcalendarcore
@@ -44,6 +43,8 @@ depends=(akonadi
          kwidgetsaddons
          kwindowsystem
          kxmlgui
+         libgcc
+         libstdc++
          qt6-base)
 makedepends=(extra-cmake-modules
              kdoctools
@@ -54,7 +55,7 @@ optdepends=('mpv: MPV audio backend'
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('45c144398b380f03424159a8333f50e7f67e8058c0baef1b605e5bb7f5036e9c'
+sha256sums=('e1df450ae1436b63381b75766d23b2af01f2395e8ed6d45fbdfc160b15e92533'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
