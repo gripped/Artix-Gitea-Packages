@@ -6,7 +6,7 @@
 # Contributor: Gustavo Alvarez <sl1pkn07@gmail.com>
 
 pkgname=kdenlive
-pkgver=26.04.1
+pkgver=26.04.2
 pkgrel=1
 pkgdesc='A non-linear video editor for Linux using the MLT video framework'
 arch=(x86_64)
@@ -14,7 +14,6 @@ url='https://apps.kde.org/kdenlive/'
 license=(GPL-2.0-or-later)
 depends=(ffmpeg
          frei0r-plugins
-         gcc-libs
          glibc
          karchive
          kbookmarks
@@ -39,6 +38,7 @@ depends=(ffmpeg
          ktextwidgets
          kwidgetsaddons
          kxmlgui
+         libstdc++
          mlt
          opentimelineio
          purpose
@@ -66,7 +66,7 @@ optdepends=('bigsh0t: VR360 effects'
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('fd515a827f66f5e2c8d60272001e993fb96ebccf7c7d21f78adb16ff210530ac'
+sha256sums=('272dbf81fc4b85d270dedbe38bc57fd37540b812baa3f2b48535031f2c37ab18'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
