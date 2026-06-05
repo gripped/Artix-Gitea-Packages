@@ -11,7 +11,7 @@ pkgname=(marble
          marble-common
          marble-maps
          marble-qt)
-pkgver=26.04.1
+pkgver=26.04.2
 pkgrel=2
 pkgdesc='Desktop Globe'
 arch=(x86_64)
@@ -32,7 +32,7 @@ makedepends=(extra-cmake-modules
              qt6-webengine
              shapelib)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgbase-$pkgver.tar.xz{,.sig})
-sha256sums=('174bebba04548939f84a274553994f1231917ce437405f0f62050dfd7704ff11'
+sha256sums=('8b1f4b1fba722c42852150427803bb28f800e5c217d9a2a8549b122646ef2d44'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -55,8 +55,8 @@ build() {
 package_marble-common() {
   pkgdesc='Common libraries and plugins for Marble'
   depends=(abseil-cpp
-           gcc-libs
            glibc
+           libstdc++
            phonon-qt6
            protobuf
            qt6-5compat
@@ -83,8 +83,8 @@ package_marble-common() {
 
 package_marble-qt() {
   pkgdesc+=' (Qt version)'
-  depends=(gcc-libs
-           glibc
+  depends=(glibc
+           libstdc++
            marble-common
            qt6-base)
 
@@ -92,8 +92,7 @@ package_marble-qt() {
 }
 
 package_marble() {
-  depends=(gcc-libs
-           glibc
+  depends=(glibc
            kconfig
            kconfigwidgets
            kcoreaddons
@@ -102,6 +101,7 @@ package_marble() {
            kparts
            kwidgetsaddons
            kxmlgui
+           libstdc++
            marble-common
            qt6-base)
   optdepends=('kcmutils: Plasma applets'
@@ -120,14 +120,14 @@ package_marble() {
 package_marble-maps() {
   pkgdesc='OpenStreetMap Navigation'
   url='https://apps.kde.org/marble.maps/'
-  depends=(gcc-libs
-           glibc
+  depends=(glibc
            kconfig
            kcoreaddons
            kcrash
            ki18n
            kirigami
            kirigami-addons
+           libstdc++
            marble-common
            qt6-base
            qt6-declarative
@@ -139,12 +139,12 @@ package_marble-maps() {
 package_marble-behaim() {
   pkgdesc='Behaim Globe'
   url='https://apps.kde.org/marble.behaim/'
-  depends=(gcc-libs
-           glibc
+  depends=(glibc
            kcoreaddons
            kcrash
            ki18n
            kirigami-addons
+           libstdc++
            marble-common
            qt6-base
            qt6-declarative
