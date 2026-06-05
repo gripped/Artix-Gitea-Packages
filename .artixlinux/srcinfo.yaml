@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: kapptemplate
   pkgdesc: KDE Template Generator
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/kapptemplate/
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
     - karchive
     - kconfig
@@ -28,18 +27,19 @@ pkgbase:
     - kiconthemes
     - kirigami
     - kirigami-addons
+    - libstdc++
     - qqc2-desktop-style
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/kapptemplate-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/kapptemplate-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/kapptemplate-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/kapptemplate-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 6fade94eed9645f86308fca24f8fc3f317845aa9b9c0eb22bd97bc187b7a4d1b
+    - fd0654f86bd5e8731e709b7c08716db40168dfd1d2b3c676e7a5fd091d6bae9e
     - SKIP
 pkgname:
   - name: kapptemplate
