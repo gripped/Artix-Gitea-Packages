@@ -1,10 +1,10 @@
 ---
-version: 1.4.0-30
+version: 1.4.0-31
 pkgbase:
   name: mosh
   pkgdesc: Mobile shell, surviving disconnects with local echo and line editing
   pkgver: 1.4.0
-  pkgrel: 30
+  pkgrel: 31
   url: https://mosh.org/
   arch:
     - x86_64
