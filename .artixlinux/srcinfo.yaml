@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: kongress
   pkgdesc: Companion application for conferences
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/kongress/
   arch:
@@ -18,7 +18,6 @@ pkgbase:
     - extra-cmake-modules
     - python
   depends:
-    - gcc-libs
     - glibc
     - kcalendarcore
     - kconfig
@@ -31,20 +30,21 @@ pkgbase:
     - kirigami-addons
     - knotifications
     - kosmindoormap
+    - libstdc++
     - qqc2-desktop-style
     - qt6-base
     - qt6-declarative
     - qt6-location
     - qt6-positioning
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/kongress-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/kongress-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/kongress-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/kongress-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 341341514a02b315ff90590b8eb9569edcfc1f1c8a29c64a31b86bb7a5171e37
+    - f4c3f5b90e28647b84159e91900cafe3ff832fcf618bfda1a1d52f4b8b913745
     - SKIP
 pkgname:
   - name: kongress
