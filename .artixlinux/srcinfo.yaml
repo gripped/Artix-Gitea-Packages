@@ -1,9 +1,9 @@
 ---
-version: 26.04.1-1
+version: 26.04.2-1
 pkgbase:
   name: yakuake
   pkgdesc: A drop-down terminal emulator based on KDE konsole technology
-  pkgver: 26.04.1
+  pkgver: 26.04.2
   pkgrel: 1
   url: https://apps.kde.org/yakuake/
   arch:
@@ -17,7 +17,6 @@ pkgbase:
     - extra-cmake-modules
     - plasma-wayland-protocols
   depends:
-    - gcc-libs
     - glibc
     - karchive
     - kcolorscheme
@@ -40,19 +39,20 @@ pkgbase:
     - kwidgetsaddons
     - kwindowsystem
     - kxmlgui
+    - libstdc++
     - libx11
     - libxcb
     - qt6-base
     - wayland
   source:
-    - https://download.kde.org/stable/release-service/26.04.1/src/yakuake-26.04.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.1/src/yakuake-26.04.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.2/src/yakuake-26.04.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.2/src/yakuake-26.04.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 1aa75d75169ae74c806c9db056cc3df32b1586ab6c6d78344e82411386efa457
+    - dd853206eb325b96866cf14d2804088a0988d80fe2236f5240fb7a8f4f71676f
     - SKIP
 pkgname:
   - name: yakuake
