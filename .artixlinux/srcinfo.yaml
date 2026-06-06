@@ -1,9 +1,9 @@
 ---
-version: 0.35.0-1
+version: 0.36.0-1
 pkgbase:
   name: python-owslib
   pkgdesc: Python package for client programming with Open Geospatial Consortium (OGC) web service interface standards, and their related content models
-  pkgver: 0.35.0
+  pkgver: 0.36.0
   pkgrel: 1
   url: https://geopython.github.io/OWSLib/
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python-requests
     - python-yaml
   source:
-    - https://github.com/geopython/OWSLib/archive/0.35.0/python-owslib-0.35.0.tar.gz
+    - https://github.com/geopython/OWSLib/archive/0.36.0/python-owslib-0.36.0.tar.gz
   sha256sums:
-    - f355481fa0dc4660707f3979d0de5dce480b515370a5a2ffb6488f84667541ea
+    - 1aa07c28742dafbb8da070e8f6b2fbd5d2181ae86eb7dadf0bde2dae1b8c7515
 pkgname:
   - name: python-owslib
 # generated with artixpkg 0.38.5-1-any
