@@ -1,10 +1,10 @@
 ---
-version: 3.9.7-2
+version: 3.10.0-1
 pkgbase:
   name: kid3
   pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor
-  pkgver: 3.9.7
-  pkgrel: 2
+  pkgver: 3.10.0
+  pkgrel: 1
   url: https://kid3.kde.org/
   changelog: kid3.changelog
   arch:
@@ -27,12 +27,12 @@ pkgbase:
     - kxmlgui
     - kio
   source:
-    - https://prdownloads.sourceforge.net/kid3/kid3-3.9.7.tar.gz
-    - https://prdownloads.sourceforge.net/kid3/kid3-3.9.7.tar.gz.sig
+    - https://prdownloads.sourceforge.net/kid3/kid3-3.10.0.tar.gz
+    - https://prdownloads.sourceforge.net/kid3/kid3-3.10.0.tar.gz.sig
   validpgpkeys:
     - 7D09794C2812F62194B081C14CAD34426E354DD2
   sha256sums:
-    - 392aafb176cc8dc9fdf08364f9bb754913725447b8f3e0e581c1d96c2fc30ae4
+    - e6c21e40bbd9336d15e81b4ff8c4f730bcdfd6f7f000b903ad352d78388558d5
     - SKIP
 pkgname:
   - name: kid3-common
@@ -51,15 +51,15 @@ pkgname:
   - name: kid3-qt
     pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor, Qt version
     depends:
-      - kid3-common=3.9.7
+      - kid3-common=3.10.0
       - qt6-declarative
       - qt6-multimedia
   - name: kid3
     pkgdesc: An MP3, Ogg/Vorbis and FLAC tag editor, KDE version
     depends:
-      - kid3-common=3.9.7
+      - kid3-common=3.10.0
       - kxmlgui
       - qt6-declarative
       - qt6-multimedia
       - kio
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
