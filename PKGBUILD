@@ -5,7 +5,7 @@
 # Contributor: jlkon13 <internet@devpi.de>
 
 pkgname=coturn
-pkgver=4.9.0
+pkgver=4.12.0
 pkgrel=1
 pkgdesc='Open-source implementation of TURN and STUN server'
 arch=(x86_64)
@@ -14,15 +14,17 @@ license=(BSD)
 depends=(libevent postgresql-libs libmariadbclient hiredis sqlite)
 backup=(etc/turnserver/turnserver.conf)
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz
+        turnserver.service
         turnserver.sysusers
         turnserver.tmpfiles)
-sha256sums=('e01c0701792231d67768e0e314ebad6395501759ea56772dc7e36d3badec5549'
+sha256sums=('5374811d50548e2eb1982c0591a55c79c95d78633c17fd211bef13206087e95b'
+            '9fbc3e2f2bc7d43dad2ea6cac8a2c86ccf7a02b35220fcc1bbbc9fb761811e61'
             '11514a04ca93195502d48374d6163e8e17f6f00043d92b20180fa8f570f2e25a'
             'd765d14ff3a6527498257e4dc9e76231742cd41d8fe658004e171b8937db6a75')
 
 build() {
   cd coturn-$pkgver
-  export CFLAGS="$CFLAGS -ffat-lto-objects"
+  export CFLAGS="$CFLAGS -ffat-lto-objects -D_GNU_SOURCE"
   ./configure \
     --prefix=/usr \
     --manprefix=/usr/share \
@@ -37,8 +39,10 @@ check() {
 }
 
 package() {
+  install -Dm 644 turnserver.service -t "$pkgdir"/usr/lib/systemd/system
   install -Dm 644 turnserver.sysusers "$pkgdir"/usr/lib/sysusers.d/turnserver.conf
   install -Dm 644 turnserver.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/turnserver.conf
+  ln -s turnserver.service "$pkgdir"/usr/lib/systemd/system/coturn.service
 
   cd coturn-$pkgver
 
@@ -54,7 +58,6 @@ package() {
   mv {usr/etc/turnserver.conf.default,etc/turnserver/turnserver.conf}
   sed \
     -e '/^#log-file=\/var\/tmp\/turn.log$/c log-file=\/var\/log\/turnserver\/turn.log' \
-    -e '/^#pidfile="\/var\/run\/turnserver.pid"$/c pidfile=\/run\/turnserver\/turnserver.pid' \
     -i etc/turnserver/turnserver.conf
   rmdir usr/etc
 
