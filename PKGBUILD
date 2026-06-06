@@ -8,7 +8,7 @@
 
 pkgbase=dropbear
 pkgname=(dropbear dropbear-scp)
-pkgver=2025.89
+pkgver=2026.91
 pkgrel=1
 pkgdesc='Lightweight SSH server'
 arch=(x86_64)
@@ -20,7 +20,7 @@ makedepends=(git)
 validpgpkeys=('F7347EF2EE2E07A267628CA944931494F29C6773')
 source=("git+$url#tag=DROPBEAR_$pkgver"
         localoptions.h)
-b2sums=('18244535f30b122658b81333cc89db85e51572fd717bb2d6a2a06bc2fe90049127e59687b54321b48c7362d9c0c3a448d0e84ff4fab7c5713dd0b90ab23d49c0'
+b2sums=('ea70dc07a5e8bc20b77935897bf15e2bb91ab3900109d75542f686ec813291668fde25418b40239774973b950dc19f150083a87a0a1ccb923eef2a481c46192d'
         '49628bbce0d26eb33598de276ede705bd592a38b7892c9db0ceebfb0598a1ee6e7e84ed03dbf255ee1adcad0c5214d38dc03e6c04176a405f59a19765cb28388')
 
 prepare() {
