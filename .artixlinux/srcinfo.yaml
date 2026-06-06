@@ -1,10 +1,10 @@
 ---
-version: 1.15.0-3
+version: 1.16.1-1
 pkgbase:
   name: python-smbprotocol
   pkgdesc: SMBv2 and v3 client
-  pkgver: 1.15.0
-  pkgrel: 3
+  pkgver: 1.16.1
+  pkgrel: 1
   url: https://github.com/jborean93/smbprotocol
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - f675c3d7da954954cb1e51e35e638cb2c4734fa3df16e17586c2f0e7cd4a8fb1
 pkgname:
   - name: python-smbprotocol
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
