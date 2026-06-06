@@ -1,10 +1,10 @@
 ---
-version: 0.32-2
+version: 0.33-1
 pkgbase:
   name: python-pyelftools
   pkgdesc: Python library for analyzing ELF files and DWARF debugging information
-  pkgver: 0.32
-  pkgrel: 2
+  pkgver: 0.33
+  pkgrel: 1
   url: https://github.com/eliben/pyelftools
   arch:
     - any
@@ -21,11 +21,11 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - https://github.com/eliben/pyelftools/archive/v0.32/pyelftools-0.32.tar.gz
+    - https://github.com/eliben/pyelftools/archive/v0.33/pyelftools-0.33.tar.gz
   sha512sums:
-    - 798da482d97bb759e9d54aa6c1be80bcfc118b7c0b2011b053564763ba3866946da8ad4b472a0b28c4e71f2b9023130ff044886f5d665d143b4922dbd87ba47e
+    - 9bd46b2f302599d3c86bd0f221bc3f527f8e5964dc35679e6f1af0106654d073bdaf099fbfa4189288166a06114cff05305a031fbb9ac71c94e81d7b1231c2e3
   b2sums:
-    - 4763302d019acf8904b4ca4d8114eacc4c9bb9a7128f040951a190e619ba384967a0999b437e4e32135edc519ea0c0766934c6a4b2a699fd9227b4519a41685e
+    - 221966cfa02a120e6bde768042755cc2fe75f7dbf090ee24588157e8eeed1241b868762bd7119758f4e113cd7160151f1e57edeb477ee8c8109218f8cdd3de74
 pkgname:
   - name: python-pyelftools
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
