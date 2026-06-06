@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 9.6-1
+    version: 9.7-1
     packages:
-      - ardour-9.6-1-x86_64.pkg.tar.zst
+      - ardour-9.7-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 9.5-1
