@@ -6,7 +6,7 @@
 
 pkgname=coturn
 pkgver=4.12.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Open-source implementation of TURN and STUN server'
 arch=(x86_64)
 url=https://github.com/coturn/coturn
@@ -14,7 +14,6 @@ license=(BSD)
 depends=(libevent postgresql-libs libmariadbclient hiredis sqlite)
 backup=(etc/turnserver/turnserver.conf)
 source=($pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz
-        turnserver.service
         turnserver.sysusers
         turnserver.tmpfiles)
 sha256sums=('5374811d50548e2eb1982c0591a55c79c95d78633c17fd211bef13206087e95b'
@@ -39,10 +38,8 @@ check() {
 }
 
 package() {
-  install -Dm 644 turnserver.service -t "$pkgdir"/usr/lib/systemd/system
   install -Dm 644 turnserver.sysusers "$pkgdir"/usr/lib/sysusers.d/turnserver.conf
   install -Dm 644 turnserver.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/turnserver.conf
-  ln -s turnserver.service "$pkgdir"/usr/lib/systemd/system/coturn.service
 
   cd coturn-$pkgver
 

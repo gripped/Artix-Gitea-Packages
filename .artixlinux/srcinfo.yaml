@@ -1,10 +1,10 @@
 ---
-version: 4.12.0-1.1
+version: 4.12.0-1.2
 pkgbase:
   name: coturn
   pkgdesc: Open-source implementation of TURN and STUN server
   pkgver: 4.12.0
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://github.com/coturn/coturn
   arch:
     - x86_64
@@ -20,7 +20,6 @@ pkgbase:
     - etc/turnserver/turnserver.conf
   source:
     - coturn-4.12.0.tar.gz::https://github.com/coturn/coturn/archive/4.12.0.tar.gz
-    - turnserver.service
     - turnserver.sysusers
     - turnserver.tmpfiles
   sha256sums:
