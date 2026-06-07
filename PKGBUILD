@@ -6,7 +6,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=exim
-pkgver=4.99.3
+pkgver=4.99.4
 pkgrel=1
 pkgdesc='Message Transfer Agent'
 arch=(x86_64)
@@ -35,13 +35,14 @@ provides=(smtp-server
 conflicts=(smtp-server
            smtp-forwarder)
 _archive="$pkgname-$pkgver"
-source=("https://downloads.exim.org/exim4/$_archive.tar.bz2" #{,.asc}
+source=("https://downloads.exim.org/exim4/$_archive.tar.bz2"{,.asc}
         aliases
         exim.logrotate
         exim.Makefile
         exim.sysusers
         exim.tmpfiles)
-sha512sums=('49df763c667e1a9fd03d3ff4584190cf04dfdb6f241a42aa199f1c936478fd9ea2e057038e474cb96aedf81c14e96af060ad24b02f354d44ffcbbc800026b2f5'
+sha512sums=('2d74e4f07c1d7eaee3a415a5369ac83b9b846c21750358fe4f847ad60cba55a0c13abd79c72e349794f04a7fca0ac7e1385ee2810d06f699ce62f07c5be7fe65'
+            'SKIP'
             '6494d9aae71a630935f3946a136855aadede54fd10b7b3cd7df47972d320ae142410076871e839f6caca8e02ec136604464b0b9c593721db243d8edf75c2f17f'
             'd8e3b466e0bba8175cfe762058dec49018495a260aa5efd139f4ef435284c305958cbd7fc514e81042146368b749ae38f0bf276fc0b4b91918ef33126900aa81'
             '7fd7d364473bec032ddd685c80e38dd8fcb4130ba960cc2a8b5747c35c2a0757229e95a9c86cb601b7d60344989bb187d3a35f2d2fdc718bb8587af971146c1c'
