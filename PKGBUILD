@@ -48,9 +48,6 @@ b2sums=('SKIP'
         '9c531f9f605e1739e13c39c1cac22daddd9574f3082f18bcf0b9dfaa4c41f2485d55be03a9ed12fb4504d509f0d5ac63980a9d9349e3f80a06595c6430c78096')
 provides=(
   gtk2=2.24.33
-  libgailutil.so
-  libgdk-x11-2.0.so
-  libgtk-x11-2.0.so
 )
 conflicts=('gtk2')
 replaces=('gtk2')
@@ -95,6 +92,12 @@ build() {
 }
 
 package() {
+  provides+=(
+    libgailutil.so
+    libgdk-x11-2.0.so
+    libgtk-x11-2.0.so
+  )
+
   make -C gtk2-ng DESTDIR="$pkgdir" install
 
   install -Dm644 /dev/stdin "$pkgdir/usr/share/gtk-2.0/gtkrc" <<END
