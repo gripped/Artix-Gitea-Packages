@@ -1,0 +1,22 @@
+---
+version: 1.6-3
+pkgbase:
+  name: hexedit
+  pkgdesc: View and edit files in hexadecimal or in ASCII
+  pkgver: 1.6
+  pkgrel: 3
+  url: https://rigaux.org/hexedit.html
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - glibc
+    - ncurses
+  source:
+    - hexedit-1.6.tar.gz::https://github.com/pixel/hexedit/archive/1.6.tar.gz
+  sha256sums:
+    - 598906131934f88003a6a937fab10542686ce5f661134bc336053e978c4baae3
+pkgname:
+  - name: hexedit
+# generated with artixpkg 0.38.5-1-any
