@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Orhun Parmaksız <orhun@archlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: bbx0 <39773919+bbx0@users.noreply.github.com>
 # Contributor: Raphael Amorim <rapha850@gmail.com>
 
@@ -21,6 +20,7 @@ depends=(
   'hicolor-icon-theme'
   'libgcc'
   'libstdc++'
+  'oniguruma'
   'vulkan-driver'
 )
 makedepends=(
@@ -42,13 +42,13 @@ prepare() {
 
 build() {
   cd "${pkgname}-${pkgver}"
-  cargo build --frozen --release --all-features
+  RUSTONIG_DYNAMIC_LIBONIG=1 cargo build --frozen --release --all-features
   make -C extra/man
 }
 
 check() {
   cd "${pkgname}-${pkgver}"
-  cargo test --frozen --workspace
+  RUSTONIG_DYNAMIC_LIBONIG=1 cargo test --frozen --workspace
 }
 
 package() {

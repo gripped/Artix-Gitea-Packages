@@ -26,6 +26,7 @@ pkgbase:
     - hicolor-icon-theme
     - libgcc
     - libstdc++
+    - oniguruma
     - vulkan-driver
   options:
     - '!lto'
