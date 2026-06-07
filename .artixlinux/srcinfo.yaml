@@ -1,10 +1,10 @@
 ---
-version: 1.18.1-1
+version: 1.18.1-2
 pkgbase:
   name: libkrun
   pkgdesc: A dynamic library providing Virtualization-based process isolation capabilities
   pkgver: 1.18.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/containers/libkrun
   arch:
     - x86_64
