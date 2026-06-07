@@ -12,6 +12,7 @@
 
 pkg/
 src/
+gtk2-ng/
 
 *.service
 *.timer

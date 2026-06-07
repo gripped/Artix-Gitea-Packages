@@ -1,9 +1,9 @@
 ---
-version: 2.24.260512-1
+version: 2.24.260606-1
 pkgbase:
   name: gtk2-ng-git
   pkgdesc: GObject-based multi-platform GUI toolkit (community-maintained fork)
-  pkgver: 2.24.260512
+  pkgver: 2.24.260606
   pkgrel: 1
   url: https://www.gtk.org/
   install: gtk2.install

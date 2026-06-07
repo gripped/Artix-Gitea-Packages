@@ -1,9 +1,10 @@
-# Maintainer: Andreas Baumann <mail@andreasbaumann.cc>
+# Maintainer: capezotte <capezotte@artixlinux.org>
+# Contributor: Andreas Baumann <mail@andreasbaumann.cc>
 # Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gtk2-ng-git
-pkgver=2.24.260512
+pkgver=2.24.260606
 pkgrel=1
 pkgdesc="GObject-based multi-platform GUI toolkit (community-maintained fork)"
 url="https://www.gtk.org/"
@@ -62,12 +63,12 @@ optdepends=(
 install=gtk2.install
 
 
-pkgver() {
-  cd gtk2-ng
-  ( set -o pipefail
-    git show HEAD -s --format='%as' | sed 's/-//g;s/^../2.24./'
-  )
-}
+#pkgver() {
+#  cd gtk2-ng
+#  ( set -o pipefail
+#    git show HEAD -s --format='%as' | sed 's/-//g;s/^../2.24./'
+#  )
+#}
 
 prepare() {
   cd gtk2-ng
