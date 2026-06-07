@@ -3,7 +3,7 @@
 
 pkgname=fastfetch
 pkgver=2.64.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A feature-rich and performance oriented neofetch like system information tool"
 url="https://github.com/fastfetch-cli/fastfetch"
 arch=('x86_64')
