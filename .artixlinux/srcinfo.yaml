@@ -1,9 +1,9 @@
 ---
-version: 4-1
+version: 7-1
 pkgbase:
   name: python-pipcl
   pkgdesc: Python packaging operations for use by a setup.py
-  pkgver: 4
+  pkgver: 7
   pkgrel: 1
   url: https://github.com/ArtifexSoftware/pipcl
   arch:
@@ -19,9 +19,9 @@ pkgbase:
   depends:
     - python
   source:
-    - python-pipcl-4.tar.gz::https://github.com/ArtifexSoftware/pipcl/archive/refs/tags/v4.tar.gz
+    - python-pipcl-7.tar.gz::https://github.com/ArtifexSoftware/pipcl/archive/refs/tags/v7.tar.gz
   sha256sums:
-    - 6a7a53197323cb1e65f75405ca7a93cf988beb839ba483f7fa8b7d28f21440fc
+    - 97efa5056885bef6a0a659d2d25bc7a74222e9bb89f79e918af68213673158b4
 pkgname:
   - name: python-pipcl
 # generated with artixpkg 0.38.5-1-any
