@@ -6,7 +6,7 @@
 
 pkgname=coturn
 pkgver=4.12.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Open-source implementation of TURN and STUN server'
 arch=(x86_64)
 url=https://github.com/coturn/coturn

@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.12.0-1
+    version: 4.12.0-1.1
     packages:
-      - coturn-4.12.0-1-x86_64.pkg.tar.zst
+      - coturn-4.12.0-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 4.9.0-1
