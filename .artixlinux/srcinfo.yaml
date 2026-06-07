@@ -1,10 +1,10 @@
 ---
-version: 1:0.9.33-8
+version: 1:0.9.33-9
 pkgbase:
   name: rasqal
   pkgdesc: A library handling RDF query syntaxes, construction and execution
   pkgver: 0.9.33
-  pkgrel: 8
+  pkgrel: 9
   epoch: 1
   url: https://librdf.org/rasqal
   arch:
@@ -17,7 +17,6 @@ pkgbase:
     - util-linux
   depends:
     - glibc
-    - libgcrypt
     - mpfr
     - pcre2
     - sh
@@ -41,12 +40,9 @@ pkgname:
   - name: rasqal
     depends:
       - glibc
-      - libgcrypt
       - mpfr
       - pcre2
       - sh
       - raptor
       - libraptor2.so
-      - util-linux-libs
-      - libuuid.so
 # generated with artixpkg 0.38.5-1-any
