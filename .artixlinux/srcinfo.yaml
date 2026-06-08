@@ -1,9 +1,9 @@
 ---
-version: 5.7.284-1
+version: 6.0.227-1
 pkgbase:
   name: pdfjs
   pkgdesc: PDF reader in javascript
-  pkgver: 5.7.284
+  pkgver: 6.0.227
   pkgrel: 1
   url: https://mozilla.github.io/pdf.js/
   arch:
@@ -13,9 +13,9 @@ pkgbase:
   conflicts:
     - pdfjs-legacy
   source:
-    - https://github.com/mozilla/pdf.js/releases/download/v5.7.284/pdfjs-5.7.284-dist.zip
+    - https://github.com/mozilla/pdf.js/releases/download/v6.0.227/pdfjs-6.0.227-dist.zip
   sha256sums:
-    - 6d1b81252d76358df5831567d7d551f40ebae0cd8e0a554694bc4df0d3db8715
+    - f94782e933ce03a101bb5a5f032f0b275458184a07d0b52434dca759c0a0afaa
 pkgname:
   - name: pdfjs
 # generated with artixpkg 0.38.5-1-any
