@@ -1,0 +1,49 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
+# Contributor: Eduard "bekks" Warkentin <eduard.warkentin@gmail.com>
+# Contributor: Henning Garus <henning.garus@gmail.com>
+
+pkgname=xdelta3
+pkgver=3.1.0
+pkgrel=9
+pkgdesc='Diff utility for binary files'
+arch=(x86_64)
+url='https://github.com/jmacd/xdelta'
+license=(Apache)
+depends=(ncompress)
+makedepends=(git python python-fissix)
+source=("git+$url#tag=v$pkgver")
+b2sums=('290bc609fb6631ab73d2739452fd6f4b5378ff50e6cdcd0f719dc4955fea7520ea1d1228cb3e419ada4a76c72850ec850e06d94ebccba52e7d624e0c70070dbc')
+
+build() {
+  cd xdelta/xdelta3
+
+  export CFLAGS="$CFLAGS -w"
+  export CXXFLAGS="$CFLAGS -w"
+
+  aclocal
+  autoreconf --install
+  libtoolize
+  autoconf
+  autoheader
+  automake --add-missing
+  automake
+
+  ./configure --disable-dependency-tracking --prefix=/usr --with-liblzma
+  make
+}
+
+check() {
+  cd xdelta/xdelta3/testing
+
+  # Thanks Gentoo <3
+  python -m fissix -w -n --no-diffs *.py
+  sed -i -e '/python/s:2.6:2:' xdelta3-regtest.py
+  sed -i -e '/python/s:2.7:2:' xdelta3-test.py
+  ../xdelta3regtest
+}
+
+package() {
+  DESTDIR="$pkgdir" make -C xdelta/xdelta3 install
+}
