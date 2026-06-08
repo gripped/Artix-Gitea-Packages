@@ -1,0 +1,42 @@
+---
+version: 4.0.1-1
+pkgbase:
+  name: openslide
+  pkgdesc: C library for reading virtual slide images
+  pkgver: 4.0.1
+  pkgrel: 1
+  url: https://openslide.org/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-only
+  makedepends:
+    - git
+    - meson
+    - doxygen
+    - xdelta3
+  depends:
+    - cairo
+    - openjpeg2
+    - sqlite
+    - libdicom
+    - libjpeg-turbo
+    - zlib
+    - libxml2
+    - glib2
+    - libtiff
+    - libpng
+    - libgcc
+    - glibc
+    - zstd
+  provides:
+    - libopenslide.so
+  source:
+    - openslide::git+https://github.com/openslide/openslide#tag=v4.0.1
+  sha512sums:
+    - a91e1f242ee17681d1b820fe79a0bb1d3135f99ce9939f440ff5ac3b88ee73dd14d733d88b3a67990191252e01739580871a87e337b9faad4d3f2ac14edf5784
+  b2sums:
+    - 4456309764a7d3dea3fd0b770bf82917c1f4fe07274f5f24854e0e8be89a5155fd0ad5fd870a7607683de67f072ebdc3936993377993283b2ba62cda48f19758
+pkgname:
+  - name: openslide
+# generated with artixpkg 0.38.5-1-any
