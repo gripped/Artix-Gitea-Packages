@@ -7,47 +7,44 @@
 
 pkgname=amule
 epoch=1
-pkgver=2.3.3
-pkgrel=12
+pkgver=3.0.0
+pkgrel=1
 pkgdesc='An eMule-like client for ed2k p2p network'
 arch=(x86_64)
 url='http://www.amule.org'
 license=(GPL-2.0-or-later)
-depends=(crypto++
-         geoip
+depends=(binutils
+         crypto++
+         curl
+         gd
+         glib2
          glibc
+         gtk3
+         libayatana-appindicator
          libgcc
+         libmaxminddb
          libpng
          libstdc++
          libupnp
          readline
          wxwidgets-common
          wxwidgets-gtk3
-         zlib)
+         zlib
+         zstd)
 makedepends=(boost
              cmake
-             gd
              git)
 provides=(amule-daemon)
 source=(git+https://github.com/amule-project/amule#tag=$pkgver
         amule.sysusers
         amule.tmpfiles)
 options=(!lto)
-sha256sums=('9e28bde45b432bb966a2972141f8a445c9cdfe8a808d9874cfa4d67f277ce153'
+sha256sums=('4ebc7b98840d91ad43d4f4952837b770fdfdac9a772a02adf2b117ddd2198503'
             '1a1780d3010f338b16ace33fac6af8480bb0830402001f95f12c2e98afbd1b60'
             'e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d')
 
 prepare() {
   cd $pkgname
-  git cherry-pick -n 9bcd201 # Fix translations install
-  git cherry-pick -n 8085232
-  git cherry-pick -n f186b3a
-  git cherry-pick -n d22e057 # Fix build
-  git cherry-pick -n 212b189 # Boost.Asio API updates (Boost 1.87+)
-  git cherry-pick -n 8ad387d # Boost 1.89 deadline_timer includes
-  git cherry-pick -n 0cd4412 # CMake 4 compatibility in ec abstracts
-  git cherry-pick -n 9e1d9eb
-  git cherry-pick -n a667c61 # Install icons
   rm -fr .git
 }
 
@@ -73,4 +70,5 @@ package() {
 
   install -Dm644 "$srcdir"/amule.sysusers "$pkgdir"/usr/lib/sysusers.d/amule.conf
   install -Dm644 "$srcdir"/amule.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/amule.conf
+  rm "$pkgdir"/usr/share/LICENSE.md
 }
