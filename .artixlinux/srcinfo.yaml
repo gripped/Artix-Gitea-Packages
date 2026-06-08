@@ -1,10 +1,10 @@
 ---
-version: 2.21.0-1
+version: 2.21.0-2
 pkgbase:
   name: ansible-core
   pkgdesc: Radically simple IT automation platform
   pkgver: 2.21.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.ansible.com
   arch:
     - any
@@ -36,7 +36,6 @@ pkgbase:
     - python-packaging
     - python-pyyaml
     - python-resolvelib
-    - python-paramiko
     - python-typing_extensions
   optdepends:
     - 'python-argcomplete: shell completions'
