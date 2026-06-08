@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jiachen YANG <farseerfc at archlinux dot org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Jiachen YANG <farseerfc at archlinux dot org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 
 pkgname=libtg_owt
 # It seems the currently desired version can be gotten from
 # https://github.com/telegramdesktop/tdesktop/blob/dev/Telegram/build/docker/centos_env/Dockerfile
 _commit=26068e29bfa8d74a9dc9c8f7f94172fafbc262b8
 pkgver=0.git33.${_commit:0:7}
-pkgrel=2
+pkgrel=3
 pkgdesc='WebRTC library'
 arch=('x86_64')
 url='https://github.com/desktop-app/tg_owt'
@@ -21,12 +20,14 @@ source=("git+${url}.git#commit=${_commit}"
         "git+https://chromium.googlesource.com/libyuv/libyuv/"
         "git+https://github.com/google/crc32c"
         "git+https://github.com/abseil/abseil-cpp"
-        "git+https://github.com/cisco/libsrtp")
+        "git+https://github.com/cisco/libsrtp"
+         gcc-16.patch)
 b2sums=('72ae286f854a8f7cdc141663554d72946ab78f790df55b22af6ede1e3ad66f1757d0f89ce49d938d0884b12a47516406e418794dc1dd0c37bc1e0ceb46d6d283'
         'SKIP'
         'SKIP'
         'SKIP'
-        'SKIP')
+        'SKIP'
+        '469c9e44ff655d68d1606335d0a2f5ca02d99edf17e8124af5e211bc60b8b38289edbe4dd7de7b71d93145e4e8429646b239f9e5e769ccb277623d4f58a100cc')
 
 prepare() {
   cd tg_owt
@@ -36,6 +37,8 @@ prepare() {
   git submodule set-url src/third_party/abseil-cpp "$srcdir"/abseil-cpp
   git submodule set-url src/third_party/libsrtp "$srcdir"/libsrtp
   git -c protocol.file.allow=always submodule update
+
+  patch -p1 -i ../gcc-16.patch
 }
 
 build() {
