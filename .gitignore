@@ -12,6 +12,7 @@
 
 pkg/
 src/
+telegram-tdlib/
 
 *.service
 *.timer
