@@ -5,7 +5,7 @@
 
 pkgname=filezilla
 pkgver=3.70.6
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Fast and reliable FTP, FTPS and SFTP client"
 url="https://filezilla-project.org"
 arch=('x86_64')
