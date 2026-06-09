@@ -1,10 +1,10 @@
 ---
-version: 0.26.7-1
+version: 0.26.7-2
 pkgbase:
   name: python-typer
   pkgdesc: Build great CLIs. Easy to code. Based on Python type hints
   pkgver: 0.26.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://typer.tiangolo.com/
   arch:
     - any
@@ -17,7 +17,6 @@ pkgbase:
     - python-flit-core
     - python-pdm-backend
   depends:
-    - python-click
     - python-rich
     - python-shellingham
     - python-annotated-doc
