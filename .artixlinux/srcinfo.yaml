@@ -1,10 +1,10 @@
 ---
-version: 6.3.0-3
+version: 6.4.0-1
 pkgbase:
   name: python-bleach
   pkgdesc: An easy whitelist-based HTML-sanitizing tool
-  pkgver: 6.3.0
-  pkgrel: 3
+  pkgver: 6.4.0
+  pkgrel: 1
   url: https://pypi.org/project/bleach/
   arch:
     - any
@@ -24,9 +24,9 @@ pkgbase:
   optdepends:
     - 'python-tinycss2: for CSS sanitisation'
   source:
-    - https://pypi.org/packages/source/b/bleach/bleach-6.3.0.tar.gz
+    - https://pypi.org/packages/source/b/bleach/bleach-6.4.0.tar.gz
   sha256sums:
-    - 6f3b91b1c0a02bb9a78b5a454c92506aa0fdf197e1d5e114d2e00c6f64306d22
+    - 4202482733d85cedd04e59fcb2f89f4e4c7c385a78d3c3c23c30446843a37452
 pkgname:
   - name: python-bleach
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
