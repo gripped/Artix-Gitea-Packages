@@ -1,10 +1,10 @@
 ---
-version: 0.9.r420.g6efb844b-2.1
+version: 0.9.r463.ge9791c2c-1
 pkgbase:
   name: vis
   pkgdesc: modern, legacy free, simple yet efficient vim-like editor
-  pkgver: 0.9.r420.g6efb844b
-  pkgrel: 2.1
+  pkgver: 0.9.r463.ge9791c2c
+  pkgrel: 1
   url: https://github.com/martanne/vis#vis-a-vim-like-text-editor
   arch:
     - x86_64
@@ -20,19 +20,17 @@ pkgbase:
     - bash
     - file
     - glibc
-    - libtermkey
-    - libtermkey.so
     - lua
     - ncurses
     - libncursesw.so
     - tre
     - lua-lpeg
   source:
-    - git+https://github.com/martanne/vis.git#commit=6efb844b79c78cf20af033591c461c3cbb907ded
+    - git+https://github.com/martanne/vis.git#commit=e9791c2c70c54daa708ef3a3081402ff55d54faf
   validpgpkeys:
     - 54A47F12462D26A7D078A932C83A52CD1962562C
   sha256sums:
-    - d3bcddf87f980e9e0a52b57e01fd3b4c6e1eec002700ea9248469e3f69565a6a
+    - 98bc2798174349d646d221169095036a8b254533cf4a98e484e90ef4cecd370d
 pkgname:
   - name: vis
     optdepends:

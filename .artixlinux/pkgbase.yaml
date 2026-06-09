@@ -54,8 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.9.r420.g6efb844b-2.1
+    version: 0.9.r463.ge9791c2c-1
     packages:
-      - vis-0.9.r420.g6efb844b-2.1-x86_64.pkg.tar.zst
-      - vis-lexers-0.9.r420.g6efb844b-2.1-x86_64.pkg.tar.zst
+      - vis-0.9.r463.ge9791c2c-1-x86_64.pkg.tar.zst
+      - vis-lexers-0.9.r463.ge9791c2c-1-x86_64.pkg.tar.zst
     debug: []
