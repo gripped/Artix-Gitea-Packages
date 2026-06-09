@@ -6,7 +6,7 @@ _alpm=2.4.5
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
 pkgver=0.22.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
 url="https://github.com/davmac314/dinit"
@@ -23,10 +23,14 @@ source=("git+$url.git#tag=v${pkgver}"
         "dinit-init")
 sha256sums=('36f20dad36baaeda030fd9633874ed7df57b8d6c28db5fb2ede0a37579e7802b'
             '987e908f28a06ef4c577e4dda286d9111a226837c92d44b659ca8b164caf9ea4'
-            'e65c299e04c9184dc1f68388670dacc89a4df2445d3f41a640b18dae24eaf03b')
+            '312e71de8dcf8eb1055b7ed46012bd6f54546c500434426ecf813536be078502')
 
 build() {
     make -C "$pkgname" CXXFLAGS+="-std=c++17"
+}
+
+check() {
+    make -C "$pkgname" check
 }
 
 package_dinit-base() {
