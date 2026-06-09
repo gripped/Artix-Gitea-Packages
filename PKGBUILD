@@ -6,7 +6,7 @@
 pkgname=libfilezilla
 epoch=1
 pkgver=0.56.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs"
 url="https://lib.filezilla-project.org/"
 arch=('x86_64')

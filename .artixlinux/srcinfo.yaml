@@ -1,10 +1,10 @@
 ---
-version: 1:0.56.1-1
+version: 1:0.56.1-1.1
 pkgbase:
   name: libfilezilla
   pkgdesc: Small and modern C++ library, offering some basic functionality to build high-performing, platform-independent programs
   pkgver: 0.56.1
-  pkgrel: 1
+  pkgrel: 1.1
   epoch: 1
   url: https://lib.filezilla-project.org/
   arch:
