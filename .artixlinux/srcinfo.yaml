@@ -1,10 +1,10 @@
 ---
-version: 6.6.5-1
+version: 6.6.5-1.1
 pkgbase:
   name: discover
   pkgdesc: KDE and Plasma resources management GUI
   pkgver: 6.6.5
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://apps.kde.org/discover/
   arch:
     - x86_64
@@ -19,7 +19,7 @@ pkgbase:
     - packagekit-qt6
   depends:
     - appstream-qt
-    - archlinux-appstream-data
+    - artixlinux-appstream-data
     - attica
     - discount
     - gcc-libs

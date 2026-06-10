@@ -3,13 +3,13 @@
 pkgname=discover
 pkgver=6.6.5
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='KDE and Plasma resources management GUI'
 arch=(x86_64)
 url='https://apps.kde.org/discover/'
 license=(LGPL-2.0-or-later)
 depends=(appstream-qt
-         archlinux-appstream-data
+         artixlinux-appstream-data
          attica
          discount
          gcc-libs
