@@ -78,10 +78,12 @@ source=(
   "$_pkgname-$pkgver.$_pkgext"::"$url/releases/download/v$pkgver/$_pkgsrc.$_pkgext"
   "$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git"
   '0001-revert-cmake-patch.patch'
+  '0002-fix-webview.patch'
 )
 sha256sums=('2d5452c83f050e60f2474fca7da16b834f74af759718b469f737c609f5f54d52'
             'SKIP'
-            'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861')
+            'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861'
+            '57ba98f9d977f640b94e477c454e1c499c1f67307b8c7b83997d7d92c7bbe856')
 
 prepare() {
   cd "$_pkgsrc"
@@ -113,6 +115,7 @@ prepare() {
     Telegram/SourceFiles/platform/linux/specific_linux.cpp \
     Telegram/SourceFiles/platform/mac/specific_mac.mm \
     Telegram/SourceFiles/platform/win/specific_win.cpp
+
 }
 
 build() {
