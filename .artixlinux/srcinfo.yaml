@@ -1,9 +1,9 @@
 ---
-version: 20260406-1
+version: 20260610-1
 pkgbase:
   name: archlinux-mirrorlist
   pkgdesc: Arch Linux mirror list for use by pacman
-  pkgver: 20260406
+  pkgver: 20260610
   pkgrel: 1
   url: https://www.archlinux.org/mirrorlist/
   arch:
@@ -15,7 +15,7 @@ pkgbase:
   source:
     - mirrorlist
   b2sums:
-    - 614cff2da5cb9f25063ee4b6dd757d96b65fe3b57cc8cbd61568800f2c1dcf845b7f8db465960bcd9dcba78004120b21c2d9f3a59d0662536066ed78de948733
+    - c227e4ae1321e5f286bd8c305fe115ff9e1228e95fd484f196feda10b4a93d45dedc6654880bfa79aecfc448217b97e96082141cd5d02b7098866b373d358ae7
 pkgname:
   - name: archlinux-mirrorlist
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any

@@ -3,7 +3,7 @@
 # Contributor: Dan McGee <dan@archlinux.org>
 
 pkgname=archlinux-mirrorlist
-pkgver=20260406
+pkgver=20260610
 pkgrel=1
 pkgdesc="Arch Linux mirror list for use by pacman"
 arch=('any')
@@ -11,7 +11,7 @@ url="https://www.archlinux.org/mirrorlist/"
 license=('GPL-2.0-or-later')
 backup=(etc/pacman.d/mirrorlist-arch)
 source=(mirrorlist)
-b2sums=('614cff2da5cb9f25063ee4b6dd757d96b65fe3b57cc8cbd61568800f2c1dcf845b7f8db465960bcd9dcba78004120b21c2d9f3a59d0662536066ed78de948733')
+b2sums=('c227e4ae1321e5f286bd8c305fe115ff9e1228e95fd484f196feda10b4a93d45dedc6654880bfa79aecfc448217b97e96082141cd5d02b7098866b373d358ae7')
 
 # NOTE on building this package:
 # * Run bash -c ". PKGBUILD; updatelist"
