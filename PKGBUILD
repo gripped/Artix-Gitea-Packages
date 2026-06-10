@@ -2,7 +2,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=apparmor
-pkgver=5.0.0
+pkgver=5.0.1
 pkgrel=1
 pkgdesc="Mandatory Access Control (MAC) using Linux Security Module (LSM)"
 arch=(x86_64)
@@ -59,8 +59,8 @@ backup=(
 source=(
   git+$url.git#tag=v$pkgver?signed
 )
-sha512sums=('fb49cd5c01236f7e7c29662de495e0a06b6120917bc00387b892b125baac74b696e29b36d91e9c912b07f36049961e49165c0519b93c55ae1cc914c8111748e0')
-b2sums=('e69491a8378eae4c0e75d54c62eee856e990de1138cbc9a9b690c7a0c7bd42e2fa7d88bbdcd18dd29c4e5058a673d0780be7649f3e4e122f481574a164f622e0')
+sha512sums=('0b9d6e81ce53e88d68fcb44a2abda95c8287e1153fb64f3307ca5d6a1bce4a216c4b6152984080cbbe9e97f23c19428a0f4b6c90738f0bb4e52489b20a7fc47b')
+b2sums=('d3e5e6244e049328c2f6e889cdac0a9d40937c24a5796284026e27ed8a80b4ea4ef67f8e61888e165cbc1e73c523ecc410d1ef7a83563bc9f211cdb590e2dcd5')
 validpgpkeys=('3ECDCBA5FB34D254961CC53F6689E64E3D3664BB'  # AppArmor Development Team (AppArmor signing key) <apparmor@lists.ubuntu.com>
               'EDC4830FBD39AB6AC51047FB052F367018D5C3D8') # John Johansen <john@jjmx.net> <john.johansen@canonical.com>
 _core_perl="/usr/bin/core_perl"
