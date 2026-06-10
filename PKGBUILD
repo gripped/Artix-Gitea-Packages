@@ -42,7 +42,8 @@ makedepends=(
   "clang${_llvm_ver:-}"
   "lld${_llvm_ver:-}"
   "llvm${_llvm_ver:-}"
-  "wasi-compiler-rt${_llvm_ver:-}"
+  #"wasi-compiler-rt${_llvm_ver:-}"
+  wasi-compiler-rt
   cargo
   cbindgen
   diffutils

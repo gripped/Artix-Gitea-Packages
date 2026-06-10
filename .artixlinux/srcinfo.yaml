@@ -14,7 +14,7 @@ pkgbase:
     - clang21
     - lld21
     - llvm21
-    - wasi-compiler-rt21
+    - wasi-compiler-rt
     - cargo
     - cbindgen
     - diffutils
