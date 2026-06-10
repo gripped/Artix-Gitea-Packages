@@ -26,7 +26,7 @@ depends=(
   libjxl
   libvpx
   libxdamage
-  minizip-ng
+  minizip
   openal
   openh264
   opus
