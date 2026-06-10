@@ -102,7 +102,7 @@ prepare() {
   # force system minizip-ng
   rm -rf "Telegram/ThirdParty/minizip"
   sed -E -e '/pkg_check_modules/s&\bminizip\b&minizip-ng&' -i "cmake/external/minizip/CMakeLists.txt"
-  find Telegram -name '*.[ch]pp' -exec sed -i '/^#include /s@minizip/@minizip-ng/@g' {} +
+  find Telegram \( -name '*.[ch]pp' -o -name '*.[ch]' \) -exec sed -i '/^#include /s@minizip/@minizip-ng/@g' {} +
 
   # add missing headers for gcc 16
   sed -E -e '1i #include <cstdint>' -i \
