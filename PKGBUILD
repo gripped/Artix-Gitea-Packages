@@ -26,7 +26,7 @@ depends=(
   libjxl
   libvpx
   libxdamage
-  minizip
+  minizip-ng
   openal
   openh264
   opus
@@ -102,6 +102,7 @@ prepare() {
   # force system minizip-ng
   rm -rf "Telegram/ThirdParty/minizip"
   sed -E -e '/pkg_check_modules/s&\bminizip\b&minizip-ng&' -i "cmake/external/minizip/CMakeLists.txt"
+  find Telegram -name '*.[ch]pp' -exec sed -i '/^#include /s@minizip/@minizip-ng/@g' {} +
 
   # add missing headers for gcc 16
   sed -E -e '1i #include <cstdint>' -i \
