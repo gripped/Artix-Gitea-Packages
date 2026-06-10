@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 6.6.14-21
+    version: 6.6.14-1
     packages:
-      - waterfox-6.6.14-21-x86_64.pkg.tar.zst
+      - waterfox-6.6.14-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 6.6.13-1

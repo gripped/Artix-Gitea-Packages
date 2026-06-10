@@ -1,89 +1,37 @@
 ---
-version: 6.6.14-21
+version: 6.6.14-1
 pkgbase:
   name: waterfox
-  pkgdesc: A customizable, privacy‑focused web browser
+  pkgdesc: Current/modern generation of customizable privacy-conscious web browser.
   pkgver: 6.6.14
-  pkgrel: 21
-  url: https://github.com/BrowserWorks/waterfox
+  pkgrel: 1
+  url: https://www.waterfox.net
   arch:
     - x86_64
   license:
     - MPL-2.0
-  makedepends:
-    - clang21
-    - lld21
-    - llvm21
-    - wasi-compiler-rt
-    - cargo
-    - cbindgen
-    - diffutils
-    - dump_syms
-    - git
-    - imake
-    - inetutils
-    - jack
-    - mercurial
-    - mesa
-    - nasm
-    - nodejs
-    - python
-    - python-setuptools
-    - unzip
-    - wasi-libc
-    - wasi-libc++
-    - wasi-libc++abi
-    - yasm
-    - zip
-    - xorg-server-xvfb
   depends:
-    - dbus
-    - ffmpeg
     - gtk3
-    - libevent
-    - libjpeg
-    - libpulse
-    - libvpx.so
-    - libwebp.so
-    - libxss
     - libxt
+    - startup-notification
     - mime-types
-    - nspr
-    - nss
+    - dbus-glib
+    - ffmpeg
     - ttf-font
-    - zlib
+    - hicolor-icon-theme
   optdepends:
-    - 'hunspell-dictionary: Spell checking'
-    - 'libnotify: Notification integration'
     - 'networkmanager: Location detection via available WiFi networks'
+    - 'libnotify: Notification integration'
+    - 'pulseaudio: Audio support'
+    - 'alsa-lib: Audio support'
     - 'speech-dispatcher: Text-to-Speech'
-    - 'xdg-desktop-portal: Screensharing with Wayland'
-  options:
-    - '!debug'
-    - '!emptydirs'
-    - '!lto'
-    - '!makeflags'
-    - '!strip'
+    - 'hunspell-en_US: Spell checking, American English'
   source:
-    - waterfox-6.6.14.tar.gz::https://github.com/BrowserWorks/waterfox/archive/refs/tags/6.6.14.tar.gz
-    - waterfox-6.6.14-locales.tar.gz::https://github.com/BrowserWorks/l10n/archive/a2e5c9bf6e41c5d23e645d89ac61009383e4ace9.tar.gz
+    - waterfox-6.6.14-1.tar.bz2::https://cdn.waterfox.com/waterfox/releases/6.6.14/Linux_x86_64/waterfox-6.6.14.tar.bz2
     - waterfox.desktop
-    - policies.json
-    - 9000-remove-organization-policy-banner.patch
-    - 9001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-    - 9002-Fix-sandbox-to-build-with-glibc-2.43.patch
-    - 9003.enable_reader_mode_hotkey.patch
-    - 9004.rebind_screenshot_key_to_ctrl_alt_s.patch
-  sha256sums:
-    - 148fc4ecc545f3e6f373a87c774c86fee5e94badd438e1445e6b502a72a0ffa9
-    - e3f532fb33a31233a9c24e6f649cfaf77c2d1a0d0d916960c7c1f3a6418db8b7
-    - 0c9b86632bee6866a06ec8edd3d3a523ee036c1dca94217f781610834d56a088
-    - 886b6ec53344f4b8d6bbee97a9c35af2438616d6bfc48afcc3b4d23805e15d41
-    - 21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2
-    - 157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852
-    - 404e780b1488625989c6dd8e2234e50ed01401b7cb1e99e79dee87f4f4f584f8
-    - 0abdfbbf6040f694507c5e33bc3d2d06ddffdf309ce6f6da9484ae268382f731
-    - 8626d64e0250e8121255029097ba5f67e47a9d427e0143b8b8d1df3460a03be6
+  sha512sums:
+    - c6d7b13602d9e29b53b384f5273605e55140971c47043d3c16cd95e253d3532f47d82228f94ead3305effc87623f23e0af9012bf5116521786816a5ac1e57f7e
+    - d0237cffceb1f22bcef3479ee192360c069052534cbe6f452bf88e671ba26b7d8d04f6cdbb4f34647277b64136093d703b5f9ac8071fe0d3c80d70b1e1395a84
 pkgname:
   - name: waterfox
 # generated with artixpkg 0.38.5-1-any
