@@ -4,7 +4,7 @@
 
 pkgname=tigervnc
 pkgver=1.16.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Suite of VNC servers and clients based on the VNC 4 branch of TightVNC"
 arch=('x86_64')
 url="https://www.tigervnc.org"
@@ -13,8 +13,6 @@ depends=(
   'bash'
   'ffmpeg'
   'fltk1.3'
-  'gcc-libs'
-  'glibc'
   'gmp'
   'gnutls'
   'hicolor-icon-theme'
@@ -88,6 +86,9 @@ sha256sums=('a864342f3164e8d857db3c21291f94acfc561b655951be30eacc158a82173369'
 
 prepare() {
   cd ${pkgname}
+
+  echo >java/cmake/SignJar.cmake
+
   patch -p1 -i ../more-xsessions.patch
   patch -p1 -i ../remove-selinux.patch
 
