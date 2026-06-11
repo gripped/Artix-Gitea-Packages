@@ -1,10 +1,10 @@
 ---
-version: 7.2.3-1
+version: 7.2.4-2
 pkgbase:
   name: rocblas
   pkgdesc: Next generation BLAS implementation for ROCm platform
-  pkgver: 7.2.3
-  pkgrel: 1
+  pkgver: 7.2.4
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - MIT
   makedepends:
     - cmake
+    - ninja
     - gcc-fortran
     - git
     - msgpack-cxx
@@ -25,6 +26,7 @@ pkgbase:
     - python-wheel
     - rocm-cmake
     - rocm-toolchain
+    - rocm-llvm
     - rocm-smi-lib
     - gtest
   depends:
@@ -42,9 +44,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - rocm-libraries-7.2.3.tar.gz::https://github.com/ROCm/rocm-libraries/archive/refs/tags/rocm-7.2.3.tar.gz
+    - rocm-libraries::git+https://github.com/ROCm/rocm-libraries#tag=rocm-7.2.4
   sha256sums:
-    - 300cc50720d40bad7c7ed1f6d67e8c5ebecaba62c07a6ea1cc5813c0ea2e41b5
+    - b476acbcd0f4017c800e4b05533e6dfb875bde32242729c8df557d4624379623
 pkgname:
   - name: rocblas
 # generated with artixpkg 0.38.5-1-any
