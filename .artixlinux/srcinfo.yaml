@@ -1,9 +1,9 @@
 ---
-version: 26.2.4-1
+version: 26.2.4-2
 pkgbase:
   name: libreoffice-fresh
   pkgver: 26.2.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -167,6 +167,7 @@ pkgbase:
     - soffice-template.desktop.in
     - libreoffice-fresh.sh
     - libreoffice-fresh.csh
+    - https://github.com/LibreOffice/core/commit/b08afae7e41fd5ca3a4101de07366783b17b3887.patch
   validpgpkeys:
     - C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3
   sha256sums:
@@ -201,6 +202,7 @@ pkgbase:
     - d0be8099cbee3c9dfda694a828149b881c345b204ab68826f317580aafb50879
     - d7aae12edf82a2a20192ef153ca5132450ae0c6cb9df829b271a2c489c700641
     - e1d7887e815970f3d21e07f58a7a3a4efc823768a1628307c516f14a506ae7dc
+    - 75b5ff2fea8ffa8a36ce8f713f2f8c899972cfd8f21d62bfa0552e42888dfa7e
 pkgname:
   - name: libreoffice-fresh-sdk
     pkgdesc: Software Development Kit for LibreOffice Fresh
