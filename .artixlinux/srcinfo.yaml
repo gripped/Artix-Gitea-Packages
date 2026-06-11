@@ -1,10 +1,10 @@
 ---
-version: 2.4.6-1
+version: 2.4.6-2
 pkgbase:
   name: gajim
   pkgdesc: Full featured and easy to use XMPP (Jabber) client
   pkgver: 2.4.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gajim.org/
   arch:
     - any
@@ -59,7 +59,7 @@ pkgbase:
     - 'gst-libav: for video and audio calls'
     - 'gst-plugin-gtk4: for video and audio calls'
     - 'libxss: for idle time checking on X11'
-    - 'python-gnupg: encrypting chat messages with OpenPGP'
+    - 'python-gpgme: encrypting chat messages with OpenPGP'
   source:
     - https://dev.gajim.org/gajim/gajim/-/archive/2.4.6/gajim-2.4.6.tar.gz
   sha512sums:
