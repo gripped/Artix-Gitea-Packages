@@ -1,14 +1,14 @@
 # Maintainer: Eric Bélanger <eric@archlinux.org>
 
 pkgname=rrdtool
-pkgver=1.10.0
+pkgver=1.10.2
 pkgrel=1
 pkgdesc="Data logging and graphing application"
 arch=('x86_64')
 url="https://www.rrdtool.org"
 license=('GPL-2.0-or-later')
 depends=('libxml2' 'pango' 'ttf-dejavu')
-makedepends=('git' 'intltool' 'ruby' 'python-setuptools' 'tcl' 'lua51' 'udev')
+makedepends=('git' 'intltool' 'ruby' 'python-setuptools' 'python-wheel' 'python-installer' 'tcl' 'lua51' 'udev')
 optdepends=('perl: to use corresponding binding'
             'tcl: to use corresponding binding'
             'python: to use corresponding binding'
@@ -16,10 +16,20 @@ optdepends=('perl: to use corresponding binding'
             'lua51: to use corresponding binding')
 options=('!emptydirs' '!makeflags')
 source=("git+https://github.com/oetiker/rrdtool-1.x.git#tag=v$pkgver")
-sha256sums=('ee7c33f112deac491682dff2b6523a536ce220b8d930dc34dd47263a1e1b6bcf')
+sha256sums=('578cf2cb3eb9801a4a84ee2b189026e2551af5169840e9b582e074501714e600')
 
 prepare() {
   cd rrdtool-1.x
+
+  # https://github.com/oetiker/rrdtool-1.x/pull/1332
+  git show --format= bbb85a157261e896a4964ff826674dd2035632c5 -- src/rrd_graph_helper.c | git apply -3
+
+  # Use Arch's Python install scheme instead of upstream's fixed /usr/lib/python3 target.
+  sed -i \
+    -e 's|$(PYTHON) -m pip install --upgrade --no-index --no-deps|$(PYTHON) -m installer --destdir=$(DESTDIR)|' \
+    -e '/--no-cache-dir --disable-pip-version-check/d' \
+    -e '/--target=$(DESTDIR)$(libdir)\/python3\/site-packages/d' \
+    bindings/Makefile.am
 
   # fix FS#28521 make ruby install to vendor_ruby instead of site_ruby
   sed -e 's/$(RUBY) ${abs_srcdir}\/ruby\/extconf.rb/& --vendor/' -i bindings/Makefile.am

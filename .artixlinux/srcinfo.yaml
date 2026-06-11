@@ -1,9 +1,9 @@
 ---
-version: 1.10.0-1
+version: 1.10.2-1
 pkgbase:
   name: rrdtool
   pkgdesc: Data logging and graphing application
-  pkgver: 1.10.0
+  pkgver: 1.10.2
   pkgrel: 1
   url: https://www.rrdtool.org
   arch:
@@ -15,6 +15,8 @@ pkgbase:
     - intltool
     - ruby
     - python-setuptools
+    - python-wheel
+    - python-installer
     - tcl
     - lua51
     - udev
@@ -32,9 +34,9 @@ pkgbase:
     - '!emptydirs'
     - '!makeflags'
   source:
-    - git+https://github.com/oetiker/rrdtool-1.x.git#tag=v1.10.0
+    - git+https://github.com/oetiker/rrdtool-1.x.git#tag=v1.10.2
   sha256sums:
-    - ee7c33f112deac491682dff2b6523a536ce220b8d930dc34dd47263a1e1b6bcf
+    - 578cf2cb3eb9801a4a84ee2b189026e2551af5169840e9b582e074501714e600
 pkgname:
   - name: rrdtool
 # generated with artixpkg 0.38.5-1-any
