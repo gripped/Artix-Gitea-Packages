@@ -3,7 +3,7 @@
 
 pkgname=haproxy
 pkgver=3.4.0
-pkgrel=1
+pkgrel=2
 
 # Each release serie has its own repository. This is handled automatically in
 # PKGBUILD, but nvchecker configuration needs to be updated on bump!
@@ -79,6 +79,7 @@ package() {
 
   install -D -m0644 ../haproxy.sysusers "$pkgdir"/usr/lib/sysusers.d/haproxy.conf
   install -D -m0644 ../haproxy.cfg "$pkgdir"/etc/haproxy/haproxy.cfg
+  install -d -m0755 "$pkgdir"/etc/haproxy/conf.d
   install -D -m0644 admin/syntax-highlight/haproxy.vim \
     "$pkgdir"/usr/share/nvim/runtime/syntax/haproxy.vim
   cp -r examples "$pkgdir"/usr/share/haproxy/examples
