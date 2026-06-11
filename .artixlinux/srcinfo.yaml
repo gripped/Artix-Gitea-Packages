@@ -1,9 +1,9 @@
 ---
-version: 2.4.67-1
+version: 2.4.68-1
 pkgbase:
   name: apache
   pkgdesc: A high performance Unix-based HTTP server
-  pkgver: 2.4.67
+  pkgver: 2.4.68
   pkgrel: 1
   url: https://www.apache.org/dist/httpd
   arch:
@@ -58,8 +58,8 @@ pkgbase:
     - etc/httpd/conf/magic
     - etc/logrotate.d/httpd
   source:
-    - https://www.apache.org/dist/httpd/httpd-2.4.67.tar.bz2
-    - https://www.apache.org/dist/httpd/httpd-2.4.67.tar.bz2.asc
+    - https://www.apache.org/dist/httpd/httpd-2.4.68.tar.bz2
+    - https://www.apache.org/dist/httpd/httpd-2.4.68.tar.bz2.asc
     - apache.tmpfiles
     - httpd.logrotate
     - artix.layout
@@ -71,7 +71,7 @@ pkgbase:
     - E3480043595621FE56105F112AB12A7ADC55C003
     - 65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA
   sha256sums:
-    - 66cd206637b0d5c446fa7dabe75fe03525da8fb55855876c46288cd88b136aa4
+    - 68c74d4df38c26bed4dfbdb8f3baf1eb532f3872357becc1bba5d136f6b63c06
     - SKIP
     - 63da1a420f4714a3e7af2672d28384419cc7eedbe7bf35baebd02938fabc15bf
     - 0bbbfae23a917b2fce0bf8f900f60319b50769224a96314e9301a75ccd078e16
