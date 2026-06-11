@@ -1,9 +1,9 @@
 ---
-version: 1.7.0-1
+version: 1.8.0-1
 pkgbase:
   name: openucc
   pkgdesc: Unified Collective Communication Library
-  pkgver: 1.7.0
+  pkgver: 1.8.0
   pkgrel: 1
   url: https://github.com/openucx/ucc
   arch:
@@ -15,6 +15,7 @@ pkgbase:
   makedepends:
     - cuda
     - hip-runtime-amd
+    - rocm-llvm
     - nccl
     - rccl
     - rdma-core
@@ -31,9 +32,9 @@ pkgbase:
   provides:
     - libucc.so
   source:
-    - openucc-1.7.0.tar.gz::https://github.com/openucx/ucc/archive/refs/tags/v1.7.0.tar.gz
+    - openucc-1.8.0.tar.gz::https://github.com/openucx/ucc/archive/refs/tags/v1.8.0.tar.gz
   b2sums:
-    - f3bf5bcaed9d461013531e9e816c8cf5060d0cd88e7eb66d2f983df0182849218a6bd1f2cd15603121d860602b9b8892e159bc85ff2edd0baca23b3f5733c8fe
+    - 9fc537aae7f7daafa821ac5d1938f8af332579cdd78ed472f68d2083d1e053cc05034d7c3036fc5e9298b276329a1e935e8877bf9a510af6541eb35f8848823c
 pkgname:
   - name: openucc
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
