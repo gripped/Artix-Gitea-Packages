@@ -8,7 +8,7 @@
 
 pkgname=scribus
 pkgver=1.6.6
-pkgrel=5.1
+pkgrel=5
 pkgdesc="Desktop publishing software"
 arch=(x86_64)
 url="https://www.scribus.net/"
@@ -75,7 +75,7 @@ pkgver() {
 
 prepare() {
 	cd "$_archive"
-	#patch -Np1 -i "$srcdir/fix_build_with_poppler_26.05.patch"
+	patch -Np1 -i "$srcdir/fix_build_with_poppler_26.05.patch"
 	patch -Np1 --binary -i ../2b9405a00a96a09e0183190ddc9f83d44963d4e0.patch # Fix build with poppler 26.06
 }
 
