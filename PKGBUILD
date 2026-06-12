@@ -8,7 +8,7 @@ pkgname=(
   fwupd
   fwupd-docs
 )
-pkgver=2.1.3
+pkgver=2.1.5
 pkgrel=1
 pkgdesc="Simple daemon to allow session software to update firmware"
 arch=(x86_64)
@@ -18,7 +18,6 @@ depends=(
   bash
   bluez
   curl
-  flashrom
   fwupd-efi
   glib2
   glibc
@@ -70,9 +69,9 @@ source=(
   "git+https://github.com/fwupd/fwupd.git#tag=${pkgver}?signed"
   fwupd.sysusers
 )
-sha512sums=('cd3715931e5353081f54ff0440f13d475bc1dc6cb8a468192ada65a67109799dc1c094b9fcb1f0d1d9dcf77071138e9886d312459e53a0ef952e63ede5ac60ab'
+sha512sums=('48c9bd7f0cc32a9adba0083d907252aa06d88f2416d94bbbe0d75039416a38393ae5789343600bc05e6420f88db970632be49860be82ffa686ed11b6e6a104d4'
             'f9a99c60786a2b98e0de439a9288af61b2c0716f8339a4c93e2df7108d2a7f9ef8128967dcaa1e12022ffa647945bf5eb3749e38cac83e00a28cbc5b015fbee9')
-b2sums=('81c1f3ec02f087a8565e8cfde099c1fe6e4e1532de5bdecd16b3722e45e01833947b1e5106d7fd782d98d00f850f46fc67e9a6b18ba4ac38ca187e3d75aa59c2'
+b2sums=('77543c4bd19efd048953e469b2e585cd8b6e8577468863bb9afd81db908b2c0491da1883ad50c65fc052b137d5e5fb019bf1bf730c77a4359a82f030b1c65032'
         'c294c6dd324c0ad0d752affdc459d427d34f4bf865def099ac0e25db6b5dfbfcf645ca325e4e7732d1256e75c624ff27094d5c814726909c7e348128a9dd93f9')
 validpgpkeys=(163EB50119225DB3DF8F49EA17ACBA8DFA970E17) # Richard Hughes <richard@hughsie.com>
 
