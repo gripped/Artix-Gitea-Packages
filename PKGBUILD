@@ -8,7 +8,7 @@
 
 pkgname=scribus
 pkgver=1.6.6
-pkgrel=5
+pkgrel=5.1
 pkgdesc="Desktop publishing software"
 arch=(x86_64)
 url="https://www.scribus.net/"
