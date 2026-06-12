@@ -76,7 +76,7 @@ pkgver() {
 prepare() {
 	cd "$_archive"
 	patch -Np1 -i "$srcdir/fix_build_with_poppler_26.05.patch"
-	patch -Np1 --binary -i ../2b9405a00a96a09e0183190ddc9f83d44963d4e0.patch # Fix build with poppler 26.06
+	patch -Np1 -i ../2b9405a00a96a09e0183190ddc9f83d44963d4e0.patch # Fix build with poppler 26.06
 }
 
 build() {
