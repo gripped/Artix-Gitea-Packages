@@ -1,10 +1,10 @@
 ---
-version: 1.4.4-3
+version: 1.4.4-3.1
 pkgbase:
   name: inkscape
   pkgdesc: Professional vector graphics editor
   pkgver: 1.4.4
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://inkscape.org/
   arch:
     - x86_64
