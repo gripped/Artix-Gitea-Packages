@@ -1,6 +1,4 @@
-# Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
-# Contributor: Allan McRae <allan@archlinux.org>
-# Contributor: Jochem Kossen <j.kossen@home.nl>
+# Maintainer: artist for Artix Linux
 
 pkgname=fakeroot
 epoch=1
@@ -14,11 +12,15 @@ install=fakeroot.install
 depends=('glibc' 'filesystem' 'sed' 'util-linux' 'sh')
 makedepends=('git' 'udev' 'po4a')
 checkdepends=('sharutils')
-source=("git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/${pkgver}")
-sha256sums=('8b347d814185d51f459b3122681931205cbda3f5ac34ab8995e1089f81f762a3')
+source=("git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/${pkgver}"
+        "https://sources.debian.org/data/main/f/fakeroot/1.37.1.1-1/wrapawk")
+sha256sums=('8b347d814185d51f459b3122681931205cbda3f5ac34ab8995e1089f81f762a3'
+            'd28fbe22bfd67c87746a39c916d4a284eda2ec26b67b181bbc7a5abd8e587ace')
 
 prepare() {
   cd "${pkgname}"
+
+  cp ../wrapawk ./
 
   autoreconf -fi
 }

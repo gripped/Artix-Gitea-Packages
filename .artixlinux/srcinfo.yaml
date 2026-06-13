@@ -26,8 +26,10 @@ pkgbase:
     - sh
   source:
     - git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/1.37.2
+    - https://sources.debian.org/data/main/f/fakeroot/1.37.1.1-1/wrapawk
   sha256sums:
     - 8b347d814185d51f459b3122681931205cbda3f5ac34ab8995e1089f81f762a3
+    - d28fbe22bfd67c87746a39c916d4a284eda2ec26b67b181bbc7a5abd8e587ace
 pkgname:
   - name: fakeroot
 # generated with artixpkg 0.38.5-1-any
