@@ -1,0 +1,16 @@
+diff --git a/browser/base/content/browser-sets.inc b/browser/base/content/browser-sets.inc
+index cb71918..36c230f 100644
+--- a/browser/base/content/browser-sets.inc
++++ b/browser/base/content/browser-sets.inc
+@@ -229,9 +229,9 @@
+          data-l10n-id="reader-mode-toggle-shortcut-windows"
+ #else
+          data-l10n-id="reader-mode-toggle-shortcut-other"
+-         modifiers="accel,alt"
++         modifiers="alt"
+ #endif
+-         disabled="true"/>
++         />
+ 
+ #ifndef XP_MACOSX
+     <key id="key_togglePictureInPicture" data-l10n-id="picture-in-picture-toggle-shortcut" command="View:PictureInPicture" modifiers="accel,shift"/>
