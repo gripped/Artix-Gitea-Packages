@@ -27,7 +27,7 @@ pkgbase:
   source:
     - git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/1.37.2
   sha256sums:
-    - 07c197aa17714ea979cabaadf584afeb1e9e1862613b53250c5a9abb245a384b
+    - 8b347d814185d51f459b3122681931205cbda3f5ac34ab8995e1089f81f762a3
 pkgname:
   - name: fakeroot
 # generated with artixpkg 0.38.5-1-any

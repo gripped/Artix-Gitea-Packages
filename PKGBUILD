@@ -15,7 +15,7 @@ depends=('glibc' 'filesystem' 'sed' 'util-linux' 'sh')
 makedepends=('git' 'udev' 'po4a')
 checkdepends=('sharutils')
 source=("git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/${pkgver}")
-sha256sums=('07c197aa17714ea979cabaadf584afeb1e9e1862613b53250c5a9abb245a384b')
+sha256sums=('8b347d814185d51f459b3122681931205cbda3f5ac34ab8995e1089f81f762a3')
 
 prepare() {
   cd "${pkgname}"
