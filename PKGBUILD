@@ -1,14 +1,14 @@
 # Based on extra/chromium, with ungoogled-chromium patches
 
 pkgname=ungoogled-chromium
-pkgver=149.0.7827.102
+pkgver=149.0.7827.114
 pkgrel=1
 _launcher_ver=8
 _manual_clone=0
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
-_uc_ver=149.0.7827.102-1
+_uc_ver=149.0.7827.114-1
 pkgdesc="A lightweight approach to removing Google web service dependency"
 arch=('x86_64')
 url="https://github.com/ungoogled-software/ungoogled-chromium"
@@ -90,8 +90,8 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         increase-fortify-level.patch
         use-oauth2-client-switches-as-default.patch
         glibc-2.42-baud-rate-fix.patch)
-sha256sums=('19cce3a8b933a943054d2f02814a11c80056e90731ce3246b4e93a8acc200d00'
-            '0687267dfc57b85217dfe9655983deff390015f839b5dd5572082eef6ba564e5'
+sha256sums=('6d31995447d1b505ce007cea67d5f66d10710e1660a1c304d0ae5c54aeca4eff'
+            'a6d882a5739515cfca122e8f3393e104078071c79a9f0e4eb8c5065bc04e4a58'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
