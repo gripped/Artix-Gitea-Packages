@@ -1,9 +1,9 @@
 ---
-version: 15.2.1+r934+gbcd3e3ff5aa7-1
+version: 15.3.0+r0.g4db0e8df15be-1
 pkgbase:
   name: gcc15
   pkgdesc: The GNU Compiler Collection (15.x.x)
-  pkgver: 15.2.1+r934+gbcd3e3ff5aa7
+  pkgver: 15.3.0+r0.g4db0e8df15be
   pkgrel: 1
   url: https://gcc.gnu.org
   arch:
@@ -29,14 +29,14 @@ pkgbase:
     - '!emptydirs'
     - '!lto'
   source:
-    - gcc15::git+https://sourceware.org/git/gcc.git#commit=bcd3e3ff5aa7bdbc529ae3935d05a28a1c902a64
+    - gcc15::git+https://sourceware.org/git/gcc.git#commit=4db0e8df15bef836558857c291c323add11d035c
     - c89
     - c99
   validpgpkeys:
     - 13975A70E63C361C73AE69EF6EEB81F8981C74C7
     - D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62
   sha256sums:
-    - 866fd7f8e95e4bd105edcbbf12f5542ab5a329b4dd98cbfb72f417e9b9065153
+    - 6cce0aa5835edac76fa3d45d5a3b7b8e1828b7bc6be4fd4c9038c548cf7b0cc2
     - 7b09ec947f90b98315397af675369a1e3dfc527fa70013062e6e85c4be0275ab
     - 44ea973558842f3f4bd666bdaf6e810fd7b7c7bd36b5cc4c69f93d2cd0124fc7
 pkgname:
