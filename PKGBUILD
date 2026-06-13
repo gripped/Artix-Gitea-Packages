@@ -1,0 +1,72 @@
+pkgname=waterfox-bin
+_pkgname=waterfox
+pkgver=6.6.14
+pkgrel=2
+pkgdesc="Current/modern generation of customizable privacy-conscious web browser."
+arch=('x86_64')
+url="https://www.waterfox.net"
+license=('MPL-2.0')
+depends=('gtk3' 'libxt' 'startup-notification' 'mime-types' 'dbus-glib' 'ffmpeg'
+  'ttf-font' 'hicolor-icon-theme')
+optdepends=('networkmanager: Location detection via available WiFi networks'
+  'libnotify: Notification integration'
+  'pulseaudio: Audio support'
+  'alsa-lib: Audio support'
+  'speech-dispatcher: Text-to-Speech'
+  'hunspell-en_US: Spell checking, American English')
+conflicts=('waterfox')
+provides=('waterfox')
+source=("waterfox-${pkgver}-${pkgrel}.tar.bz2::https://cdn.waterfox.com/waterfox/releases/${pkgver}/Linux_x86_64/waterfox-${pkgver}.tar.bz2"
+  "waterfox.desktop")
+
+package() {
+  # Create the necessary directories.
+  install -d "${pkgdir}"/usr/{bin,lib,share/applications}
+
+  # Install the desktop files.
+  install -m644 "${srcdir}"/waterfox.desktop "${pkgdir}"/usr/share/applications/
+
+  # Copy the extracted directory to /usr/lib/.
+  cp -r waterfox "${pkgdir}"/usr/lib/waterfox
+
+  # Install icons
+  for i in 16 32 48 64 128; do
+    install -d "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps"
+    ln -Ts /usr/lib/waterfox/browser/chrome/icons/default/default$i.png \
+      "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/waterfox.png"
+  done
+
+  # Add additional useful settings
+  install -Dm644 /dev/stdin "$pkgdir/usr/lib/waterfox/browser/defaults/preferences/vendor.js" <<END
+// Disable default browser checking
+pref("browser.shell.checkDefaultBrowser", false);
+
+// Use LANG environment variable to choose locale
+pref("intl.locale.requested", "");
+
+// Automatic installation of updates won't work on root, so disable this
+pref("app.update.auto", false);
+
+// Use system-provided dictionaries
+pref("spellchecker.dictionary_path", "/usr/share/hunspell");
+END
+
+  # Disable automatic updates and update notifications and allow only for manual update checking
+  install -Dm644 /dev/stdin "$pkgdir/usr/lib/waterfox/distribution/policies.json" <<END
+{
+    "policies": {
+        "AppAutoUpdate": false,
+        "ManualAppUpdateOnly": true
+    }
+}
+END
+
+  # Symlink the binary to /usr/bin/.
+  ln -s /usr/lib/waterfox/waterfox "${pkgdir}"/usr/bin/waterfox
+  # Backward compatibility symlink
+  ln -s /usr/lib/waterfox/waterfox "${pkgdir}"/usr/bin/waterfox-g
+}
+
+sha512sums=('c6d7b13602d9e29b53b384f5273605e55140971c47043d3c16cd95e253d3532f47d82228f94ead3305effc87623f23e0af9012bf5116521786816a5ac1e57f7e'
+            'd0237cffceb1f22bcef3479ee192360c069052534cbe6f452bf88e671ba26b7d8d04f6cdbb4f34647277b64136093d703b5f9ac8071fe0d3c80d70b1e1395a84')
+
