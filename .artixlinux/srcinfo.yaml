@@ -1,10 +1,10 @@
 ---
-version: 7.74-1
+version: 7.74-2
 pkgbase:
   name: reaper
   pkgdesc: A complete digital audio production application for computers
   pkgver: 7.74
-  pkgrel: 1
+  pkgrel: 2
   url: https://reaper.fm
   arch:
     - aarch64
@@ -16,7 +16,6 @@ pkgbase:
   makedepends:
     - xdg-utils
   depends:
-    - aribb24
     - alsa-lib
     - libasound.so
     - fontconfig
@@ -28,7 +27,7 @@ pkgbase:
     - libx11
     - libxi
   optdepends:
-    - 'ffmpeg4.4: for video rendering'
+    - 'ffmpeg: for video rendering'
     - 'jack: for JACK support'
     - 'pulseaudio: for PulseAudio support'
     - 'python: for Python plugins'
