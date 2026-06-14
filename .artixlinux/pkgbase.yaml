@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -17,9 +17,9 @@ repos:
     packages: []
     debug: []
   system:
-    version: 20260511-1
+    version: 20260530-1
     packages:
-      - iana-etc-20260511-1-any.pkg.tar.zst
+      - iana-etc-20260530-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
