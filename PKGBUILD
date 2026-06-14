@@ -6,7 +6,7 @@
 pkgname=sway
 pkgver=1.12
 epoch=1
-pkgrel=1
+pkgrel=3
 pkgdesc='Tiling Wayland compositor and replacement for the i3 window manager'
 arch=(x86_64)
 url='https://swaywm.org/'
@@ -40,6 +40,7 @@ optdepends=(
   'i3status: Status line generation'
   'libpulse: Volume adjustment tool (pactl) used in the default configuration'
   'mako: Lightweight notification daemon'
+  'playerctl: Media player controller used in the default configuration'
   'polkit: System privilege control. Required if not using seatd service'
   'swaybg: Wallpaper tool for sway'
   'sway-contrib: Collection of user-contributed scripts for sway'
@@ -53,10 +54,12 @@ optdepends=(
 )
 source=("git+https://github.com/swaywm/sway.git#tag=$pkgver?signed"
         "sway-portals.conf"
+        "sway-session.target"
         "remove_git_version_format.patch")
 install=sway.install
 sha512sums=('03a71801d2345d98e8b7618356a8fb1259b7f5a3d98b22d4d97d7b5a8724e696a0596b311e4792772618296baa8e95cd6db5d4650b61fc3fb6d07e59e5ebbb57'
             '4f9576b7218aef8152eb60e646985e96b13540b7a4fd34ba68fdc490199cf7a7b46bbee85587e41bffe81fc730222cf408d5712e6251edc85a0a0b0408c1a2df'
+            '7123147922ff79d173f26468ed6e106bb664ed0d473a2d73ab36bde0bba27c5e6c71e433ed0a5b76dc131fc3c97ac2cdd8c657b769552f88f5f24df0dfdc1b09'
             'c3a450d3411b5ec6d4bcb485744213a49ee95698d3237804a7bf93258e091753de4666a2245ffe74129151749ec296be4d7741814380133b673f3fd2ec71932b')
 validpgpkeys=('34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48'  # Simon Ser
               '9DDA3B9FA5D58DD5392C78E652CB6609B22DA89A') # Drew DeVault
@@ -77,6 +80,7 @@ package() {
   DESTDIR="$pkgdir" ninja -C build install
   install -Dm644 "$pkgname/LICENSE" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
   install -Dm644 sway-portals.conf "$pkgdir/usr/share/xdg-desktop-portal/sway-portals.conf"
+  install -Dm644 sway-session.target "$pkgdir/usr/lib/systemd/user/sway-session.target"
 }
 
 # vim: ts=2 sw=2 et
