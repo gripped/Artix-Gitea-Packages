@@ -55,6 +55,6 @@ repos:
   galaxy:
     version: 1:151.0.4_1-1
     packages:
-      - librewolf-bin-1:151.0.4_1-1-x86_64.pkg.tar.zst
+      - librewolf-1:151.0.4_1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
