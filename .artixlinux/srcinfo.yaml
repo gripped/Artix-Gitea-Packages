@@ -1,102 +1,91 @@
 ---
-version: 1:151.0.3_1-1
+version: 1:151.0.4_1-1
 pkgbase:
-  name: librewolf
+  name: librewolf-bin
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom.
-  pkgver: 151.0.3_1
+  pkgver: 151.0.4_1
   pkgrel: 1
   epoch: 1
   url: https://librewolf.net/
-  install: librewolf.install
+  install: librewolf-bin.install
   arch:
     - x86_64
     - aarch64
   license:
     - MPL-2.0
   makedepends:
-    - binutils
-    - cbindgen
-    - clang
-    - diffutils
     - git
-    - imake
-    - inetutils
-    - jack
-    - jq
-    - lld
-    - llvm
-    - mesa
-    - nasm
-    - nodejs
-    - pciutils
-    - python
-    - python-setuptools
-    - rust
-    - unzip
-    - wasi-compiler-rt
-    - wasi-libc++
-    - wasi-libc++abi
-    - wasi-libc
-    - yasm
-    - zip
-    - xorg-server-xvfb
   depends:
-    - dbus
-    - alsa-lib
-    - at-spi2-core
-    - bash
-    - cairo
-    - ffmpeg
-    - fontconfig
-    - freetype2
-    - gdk-pixbuf2
-    - glib2
-    - glibc
     - gtk3
-    - hicolor-icon-theme
-    - libpulse
-    - libx11
-    - libxcb
-    - libxcomposite
-    - libxdamage
-    - libxext
-    - libxfixes
-    - libxrandr
-    - libxss
     - libxt
+    - startup-notification
     - mime-types
-    - nspr
+    - dbus
     - nss
-    - pango
     - ttf-font
+    - libpulse
+    - ffmpeg
+    - hicolor-icon-theme
+    - libxdamage
+    - libxi
+    - alsa-lib
+    - libxrender
+    - libxcursor
+    - gdk-pixbuf2
+    - libxrandr
+    - pango
+    - freetype2
+    - glibc
+    - bash
+    - fontconfig
+    - libxcomposite
+    - glib2
+    - gcc-libs
+    - libx11
+    - libxfixes
+    - at-spi2-core
+    - libxcb
+    - cairo
+    - nspr
+    - libxext
   optdepends:
-    - 'hunspell-dictionary: Spell checking'
+    - 'hunspell-en_US: Spell checking, American English'
     - 'libnotify: Notification integration'
     - 'networkmanager: Location detection via available WiFi networks'
+    - 'pulseaudio: Audio support'
     - 'speech-dispatcher: Text-to-Speech'
     - 'xdg-desktop-portal: Screensharing with Wayland'
+  provides:
+    - librewolf
+  conflicts:
+    - librewolf
   options:
-    - '!debug'
     - '!emptydirs'
-    - '!lto'
-    - '!makeflags'
   backup:
     - usr/lib/librewolf/librewolf.cfg
     - usr/lib/librewolf/distribution/policies.json
   source:
-    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/151.0.3-1/librewolf-151.0.3-1.source.tar.gz
-    - https://codeberg.org/api/packages/librewolf/generic/librewolf-source/151.0.3-1/librewolf-151.0.3-1.source.tar.gz.sig
-    - 0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/bf1f16abe7b20cecaedc71c6fa44bb7069f06880/0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-    - librewolf.desktop
+    - git+https://codeberg.org/librewolf/source.git#tag=151.0.4-1
     - default192x192.png
+    - librewolf.desktop
   validpgpkeys:
     - 662E3CDD6FE329002D0CA5BB40339DD82B12EF16
   sha256sums:
-    - a06d854cff9131120ba81bb31aaf05b41623c82806ea8842e0ef73d75f103aa3
-    - SKIP
-    - c7d6572fe1ac76f6adbfb10102f284fd55690396ac0a275a5cfea9a2efa22b58
-    - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
+    - ecc001ecdfb8f241950aed8b6a0f484d3fdea413d0e6bffa583e925507678fed
     - 959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1
+    - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
+  source_x86_64:
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf/151.0.4-1/librewolf-151.0.4-1-linux-x86_64-package.tar.xz
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf/151.0.4-1/librewolf-151.0.4-1-linux-x86_64-package.tar.xz.sig
+  sha256sums_x86_64:
+    - fd301af689535ba6a8d9b3b91745077f8e60b0b37d320b2aa3f6d390e8f899e8
+    - SKIP
+  source_aarch64:
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf/151.0.4-1/librewolf-151.0.4-1-linux-arm64-package.tar.xz
+    - https://codeberg.org/api/packages/librewolf/generic/librewolf/151.0.4-1/librewolf-151.0.4-1-linux-arm64-package.tar.xz.sig
+  sha256sums_aarch64:
+    - bfb08a1b86803671d3a9c3850c979568bd9e898efb2cca5d73d13197e5599400
+    - SKIP
 pkgname:
-  - name: librewolf
+  - name: librewolf-bin
 # generated with artixpkg 0.38.5-1-any
