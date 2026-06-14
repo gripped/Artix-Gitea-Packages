@@ -1,0 +1,29 @@
+---
+version: 0.9-2
+pkgbase:
+  name: litehtml0.9
+  pkgdesc: Fast and lightweight HTML/CSS rendering engine
+  pkgver: 0.9
+  pkgrel: 2
+  url: http://www.litehtml.com/
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+    - git
+  depends:
+    - glibc
+    - gumbo-parser
+    - libgcc
+    - libstdc++
+  source:
+    - git+https://github.com/litehtml/litehtml#tag=v0.9
+    - coinstallability.patch
+  sha256sums:
+    - 75eca510af3a80fb429a6ec926ec883cfb73ab3aefb7b3cd867fb585d43ed387
+    - 819c4b2d8a02a215c50387c7b9e1df6f693a600322c5a5f5a0ef128b4e292d72
+pkgname:
+  - name: litehtml0.9
+# generated with artixpkg 0.38.5-1-any
