@@ -15,7 +15,7 @@ license=(GPL-3.0-only
 pkgdesc='A cross-platform application and UI framework (Development Tools, QtHelp)'
 depends=(glibc
          libstdc++
-         litehtml0.9
+         litehtml
          qt6-base
          zstd)
 makedepends=(clang
