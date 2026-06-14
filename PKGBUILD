@@ -24,7 +24,8 @@ provides=('initramfs')
 backup=('etc/mkinitcpio.conf')
 source=("https://sources.archlinux.org/other/$pkgname/$pkgname-$pkgver.tar.xz"{,.sig}
         "patch-udev.patch"
-        "install-encrypt-add-dlopen-ed-libcryptsetup.patch"
+        # artist - this patch is patch is not needed as the code gets deleted by 0001-no-systemd.patch :
+        #"install-encrypt-add-dlopen-ed-libcryptsetup.patch"
         '0001-no-systemd.patch'
         '0002-no-systemd-meson.patch'
 )
@@ -46,7 +47,8 @@ validpgpkeys=('ECCAC84C1BA08A6CC8E63FBBF22FB1D78A77AEAB'    # Giancarlo Razzolin
 prepare() {
   cd "${pkgname}-${pkgver}"
   patch -Np1 < "$srcdir/patch-udev.patch"
-  patch -Np1 < "$srcdir/install-encrypt-add-dlopen-ed-libcryptsetup.patch"
+  # artist - this patch is patch is not needed as the code gets deleted by 0001-no-systemd.patch :
+  #patch -Np1 < "$srcdir/install-encrypt-add-dlopen-ed-libcryptsetup.patch"
 
   patch -Np1 -i ../0001-no-systemd.patch
   patch -Np1 -i ../0002-no-systemd-meson.patch

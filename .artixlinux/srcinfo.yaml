@@ -47,7 +47,6 @@ pkgbase:
     - https://sources.archlinux.org/other/mkinitcpio/mkinitcpio-41.tar.xz
     - https://sources.archlinux.org/other/mkinitcpio/mkinitcpio-41.tar.xz.sig
     - patch-udev.patch
-    - install-encrypt-add-dlopen-ed-libcryptsetup.patch
     - 0001-no-systemd.patch
     - 0002-no-systemd-meson.patch
   validpgpkeys:
