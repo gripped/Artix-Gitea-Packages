@@ -2,8 +2,8 @@
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 
 pkgname=pambase
-pkgver=20250719
-pkgrel=1.3
+pkgver=20260614
+pkgrel=1
 pkgdesc="Base PAM configuration for services"
 arch=(any)
 url="https://www.artixlinux.org"
