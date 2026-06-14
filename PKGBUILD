@@ -16,26 +16,20 @@ replaces=('portmap')
 source=(https://downloads.sourceforge.net/sourceforge/$pkgname/$pkgname-$pkgver.tar.bz2
         rpcbind-sunrpc.patch
         tmpfiles.d
-        sysusers.d
-        CVE-2017-8779.diff)
+        sysusers.d)
 sha1sums=('2f733aba26075ca91fda3787890232da3d07c06e'
           '1b997ce76f9727efc8c72fc5f97189591c9a60e2'
           'eb8b7375a4ca31b3f61fa726f387884d5e4ca7a3'
-          'b81b2d3798fc88359aaa0f08b2d3c2f809a19fc1'
-          '38044ce8f3376a0b69da8e078e988fd1645bd435')
+          'b81b2d3798fc88359aaa0f08b2d3c2f809a19fc1')
 sha256sums=('964132c389918e8964d7334936b6dd10ef025b300c6b29e693ba0f29550e3de5'
             '7a32111c74e708ad431b7114580c60d7405c591273e6cc00baf5baff05952573'
             '08b04f4da12b34d66cc8fefa0a6dcac239019b0de0090e08d61cb18cc36a6045'
-            '392ee0af235f58b48bca068ea71a29aad912001e57d68184a03bf6c15bc2587e'
-            'bfb7f022b44ca83309dec6dfcb1ff4a5e0b0a40078e3688a2c7ceaaaa19a9686')
+            '392ee0af235f58b48bca068ea71a29aad912001e57d68184a03bf6c15bc2587e')
 
 prepare() {
   cd $pkgname-$pkgver
   # patch for iana services file # FS#20273
   patch -Np1 -i ../rpcbind-sunrpc.patch
-  # use distro config file; FS#52058
-  # http://seclists.org/oss-sec/2017/q2/209
-  patch -Np1 -i ../CVE-2017-8779.diff
 }
 
 build() {
