@@ -1,9 +1,9 @@
 ---
-version: 1.13.3-1
+version: 1.14.0-1
 pkgbase:
   name: maturin
   pkgdesc: Build and publish crates with pyo3, rust-cpython and cffi bindings
-  pkgver: 1.13.3
+  pkgver: 1.14.0
   pkgrel: 1
   url: https://github.com/PyO3/maturin
   arch:
@@ -28,11 +28,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/PyO3/maturin.git#tag=v1.13.3
+    - git+https://github.com/PyO3/maturin.git#tag=v1.14.0
   sha512sums:
-    - 2f18e5b56d3b47ff6171a5759da247e779859d46c055a230bd29ef50058f593f0f79e658ecf9cc0f1b3cecb4fc23c8fcf62a96133c3f81db356ff96d4cc81e71
+    - 81ce8303bd813c78d1c343d19a6a4b5b57665d3bf8d1b70325981d8e4a6792765574da7fc55e04334c26b1e072699e13bd8f97eb491dcf421c0ffd4498f816be
   b2sums:
-    - ed7d1ab08d82686a50de4b34e1a8999a380badb9bf2c91365f16297b050eb1c1b45eb4bed727267e88a8750d0c850563d6bb6907fcf6d24dbce84090bb65a8b5
+    - 9c6559f011750243e60e6ff95b1d34f02b505670c9a2fe04dacfcff5c85f89ee02dca2c7f008d6e5e5214f5c313f9ba4b3d54045703fabb6d28997f98b3731e0
 pkgname:
   - name: maturin
     depends:
@@ -45,6 +45,6 @@ pkgname:
     groups:
       - python-build-backend
     depends:
-      - maturin=1.13.3
+      - maturin=1.14.0
       - python
 # generated with artixpkg 0.38.5-1-any

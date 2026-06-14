@@ -6,7 +6,7 @@ pkgname=(
   maturin
   python-maturin
 )
-pkgver=1.13.3
+pkgver=1.14.0
 pkgrel=1
 pkgdesc="Build and publish crates with pyo3, rust-cpython and cffi bindings"
 url="https://github.com/PyO3/maturin"
@@ -33,13 +33,11 @@ checkdepends=(
 # https://github.com/briansmith/ring/issues/1444
 options=(!lto)
 source=("git+$url.git#tag=v$pkgver")
-sha512sums=('2f18e5b56d3b47ff6171a5759da247e779859d46c055a230bd29ef50058f593f0f79e658ecf9cc0f1b3cecb4fc23c8fcf62a96133c3f81db356ff96d4cc81e71')
-b2sums=('ed7d1ab08d82686a50de4b34e1a8999a380badb9bf2c91365f16297b050eb1c1b45eb4bed727267e88a8750d0c850563d6bb6907fcf6d24dbce84090bb65a8b5')
+sha512sums=('81ce8303bd813c78d1c343d19a6a4b5b57665d3bf8d1b70325981d8e4a6792765574da7fc55e04334c26b1e072699e13bd8f97eb491dcf421c0ffd4498f816be')
+b2sums=('9c6559f011750243e60e6ff95b1d34f02b505670c9a2fe04dacfcff5c85f89ee02dca2c7f008d6e5e5214f5c313f9ba4b3d54045703fabb6d28997f98b3731e0')
 
 prepare() {
   cd $pkgbase
-  # Fix issue with non-serialised test: https://github.com/PyO3/maturin/issues/3184
-  git cherry-pick -n ea48b34e94e6d905339e6ffd2fc4ab7d3b96eaeb
   cargo fetch --locked --target "$(rustc --print host-tuple)"
 }
 
@@ -54,10 +52,6 @@ check() {
   local cargo_skip_args=(
     # Requires wasm32-wasip1 target
     --skip=integration_wasm_hello_world
-    # https://github.com/PyO3/maturin/issues/3127
-    --skip=write_dist_info_uses_license_file_sources
-    # https://github.com/PyO3/maturin/issues/3128
-    --skip=lib_with_target_path_dep_sdist
   )
   # Using --all-features here causes test failures due to:
   #   Cause: unsupported Zip archive: Unsupported compression level
