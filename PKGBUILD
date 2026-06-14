@@ -23,7 +23,7 @@ depends=(clang
          libelf
          libgcc
          libstdc++
-         litehtml0.9
+         litehtml
          llvm-libs
          python
          qt6-base
