@@ -96,7 +96,7 @@ pkgbase:
     - SKIP
     - c7d6572fe1ac76f6adbfb10102f284fd55690396ac0a275a5cfea9a2efa22b58
     - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
-    - 959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1
+    - 9a1696e7589200e926616533897d87e08b1d1b460304c880a42b67bf8fa59a14
 pkgname:
   - name: librewolf
 # generated with artixpkg 0.38.5-1-any
