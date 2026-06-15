@@ -1,10 +1,10 @@
 ---
-version: 15.3.0+r0.g4db0e8df15be-2
+version: 15.3.0+r0.g4db0e8df15be-2.1
 pkgbase:
   name: gcc15
   pkgdesc: The GNU Compiler Collection (15.x.x)
   pkgver: 15.3.0+r0.g4db0e8df15be
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://gcc.gnu.org
   arch:
     - x86_64

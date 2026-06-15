@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,11 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 15.3.0+r0.g4db0e8df15be-1
+    version: 15.3.0+r0.g4db0e8df15be-2.1
     packages:
-      - gcc15-15.3.0+r0.g4db0e8df15be-1-x86_64.pkg.tar.zst
-      - gcc15-libs-15.3.0+r0.g4db0e8df15be-1-x86_64.pkg.tar.zst
-      - gcc15-fortran-15.3.0+r0.g4db0e8df15be-1-x86_64.pkg.tar.zst
+      - gcc15-15.3.0+r0.g4db0e8df15be-2.1-x86_64.pkg.tar.zst
+      - gcc15-libs-15.3.0+r0.g4db0e8df15be-2.1-x86_64.pkg.tar.zst
+      - gcc15-fortran-15.3.0+r0.g4db0e8df15be-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 15.3.0+r0.g4db0e8df15be-2
