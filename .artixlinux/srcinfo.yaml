@@ -1,10 +1,10 @@
 ---
-version: 4.0.6-1
+version: 4.0.6-2
 pkgbase:
   name: procps-ng
   pkgdesc: Utilities for monitoring your system and its processes
   pkgver: 4.0.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/procps-ng/procps
   arch:
     - x86_64
@@ -34,7 +34,7 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://gitlab.com/procps-ng/procps.git#tag=v4.0.6?signed
+    - git+https://gitlab.com/procps-ng/procps.git?signed#tag=v4.0.6
   validpgpkeys:
     - 5D2FB320B825D93904D205193938F96BDF50FEA5
   sha256sums:
@@ -43,4 +43,4 @@ pkgbase:
     - fe36c3c3c38882e09c47f7865015c5f8fc82e7432cb427ca21ad3712a112025daeba395b118ba81245727443407fb6666cf4ffea1f2ce1f605a8c5bbe8508db2
 pkgname:
   - name: procps-ng
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
