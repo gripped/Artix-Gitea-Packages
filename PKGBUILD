@@ -1,0 +1,39 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Jerome Leclanche <jerome@leclan.ch>
+
+pkgname=foliate
+pkgver=3.3.0
+pkgrel=2
+pkgdesc='A simple and modern GTK eBook reader'
+arch=(any)
+url="https://johnfactotum.github.io/$pkgname/"
+_url="https://github.com/johnfactotum/$pkgname"
+license=(GPL-3.0-or-later)
+depends=(gjs
+         gtk4
+         libadwaita
+         # iso-codes
+         webkitgtk-6.0)
+makedepends=(gettext
+             meson
+             ninja)
+optdepends=(#'dictd: Offline dictionary support'
+            'gspell: Spell-checking support'
+            'hyphen: Auto-hyphenation support'
+            'speech-dispatcher: Text-to-speech support (in turn requires a voice package and an audio driver)'
+            'tracker3')
+_archive="com.github.johnfactotum.${pkgname^}-$pkgver"
+source=("$_url/releases/download/$pkgver/$_archive.tar.xz")
+sha256sums=('09d0cc0a34426a2e57af25d67147dfe9b77ebf638a5a041b9f5c42499c4db672')
+
+build() {
+	cd "$_archive"
+	meson build --prefix=/usr
+	ninja -C build
+}
+
+package() {
+	cd "$_archive"
+	DESTDIR="$pkgdir" ninja -C build install
+}

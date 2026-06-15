@@ -1,0 +1,33 @@
+---
+version: 3.3.0-2
+pkgbase:
+  name: foliate
+  pkgdesc: A simple and modern GTK eBook reader
+  pkgver: 3.3.0
+  pkgrel: 2
+  url: https://johnfactotum.github.io/foliate/
+  arch:
+    - any
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - gettext
+    - meson
+    - ninja
+  depends:
+    - gjs
+    - gtk4
+    - libadwaita
+    - webkitgtk-6.0
+  optdepends:
+    - 'gspell: Spell-checking support'
+    - 'hyphen: Auto-hyphenation support'
+    - 'speech-dispatcher: Text-to-speech support (in turn requires a voice package and an audio driver)'
+    - tracker3
+  source:
+    - https://github.com/johnfactotum/foliate/releases/download/3.3.0/com.github.johnfactotum.Foliate-3.3.0.tar.xz
+  sha256sums:
+    - 09d0cc0a34426a2e57af25d67147dfe9b77ebf638a5a041b9f5c42499c4db672
+pkgname:
+  - name: foliate
+# generated with artixpkg 0.38.5-1-any
