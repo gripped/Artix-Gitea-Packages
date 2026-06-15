@@ -1,0 +1,28 @@
+---
+version: 1.9.0-1
+pkgbase:
+  name: xfce4-places-plugin
+  pkgdesc: A menu with quick access to folders, documents, and removable media
+  pkgver: 1.9.0
+  pkgrel: 1
+  url: https://docs.xfce.org/panel-plugins/xfce4-places-plugin/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4-goodies
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - meson
+    - xfce4-dev-tools
+  depends:
+    - libnotify
+    - xfce4-panel
+  source:
+    - git+https://gitlab.xfce.org/panel-plugins/xfce4-places-plugin.git#tag=xfce4-places-plugin-1.9.0
+  sha256sums:
+    - 4d17dedc900a642cc5f53917140464abda7d362046e06415557b0b6f3a803f8e
+pkgname:
+  - name: xfce4-places-plugin
+# generated with artixpkg 0.38.5-1-any
