@@ -1,10 +1,10 @@
 ---
-version: 26.04.2-1
+version: 26.04.2-2
 pkgbase:
   name: korganizer
   pkgdesc: Calendar and scheduling Program
   pkgver: 26.04.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/korganizer/
   arch:
     - x86_64
