@@ -3,7 +3,7 @@
 
 pkgname=dino
 pkgver=0.5.1
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc="Modern XMPP (Jabber) chat client written in Vala"
 url="https://dino.im"
 arch=('x86_64')

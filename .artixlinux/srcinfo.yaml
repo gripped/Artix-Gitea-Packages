@@ -1,10 +1,10 @@
 ---
-version: 0.5.1-2.1
+version: 0.5.1-2.2
 pkgbase:
   name: dino
   pkgdesc: Modern XMPP (Jabber) chat client written in Vala
   pkgver: 0.5.1
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://dino.im
   arch:
     - x86_64

@@ -3,8 +3,8 @@ team: galaxy
 actions:
   addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.5.1-2.1
+    version: 0.5.1-2.2
     packages:
-      - dino-0.5.1-2.1-x86_64.pkg.tar.zst
+      - dino-0.5.1-2.2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.5.1-2
