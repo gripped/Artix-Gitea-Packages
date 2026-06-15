@@ -1,10 +1,10 @@
 ---
-version: 0.9.4-2
+version: 0.9.5-1
 pkgbase:
   name: libayatana-indicator
   pkgdesc: Ayatana Indicators shared library
-  pkgver: 0.9.4
-  pkgrel: 2
+  pkgver: 0.9.5
+  pkgrel: 1
   url: https://github.com/AyatanaIndicators/libayatana-indicator
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
     - glibc
     - gtk3
   source:
-    - git+https://github.com/AyatanaIndicators/libayatana-indicator#tag=0.9.4
+    - git+https://github.com/AyatanaIndicators/libayatana-indicator#tag=0.9.5
   sha256sums:
-    - d96f57213a8b4fb165ef99b1f537dca294b79f0fda1431652141813a0fd36aae
+    - 606eafd8e6e6b50a9f294b9ed114f8a28728b4cf97fc4de9d3eea1047e4a69ca
 pkgname:
   - name: libayatana-indicator
 # generated with artixpkg 0.38.5-1-any
