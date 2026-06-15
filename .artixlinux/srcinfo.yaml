@@ -1,10 +1,10 @@
 ---
-version: 26.04.2-1
+version: 26.04.2-2
 pkgbase:
   name: merkuro
   pkgdesc: Application suite designed to handle emails, calendars, contacts and tasks
   pkgver: 26.04.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/merkuro/
   arch:
     - x86_64
