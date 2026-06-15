@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,12 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 6.9.3-1
-    packages:
-      - forkgram-6.9.3-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy:
-    version: 6.9.0-1
+    version: 6.9.1-1
     packages:
-      - forkgram-6.9.0-1-x86_64.pkg.tar.zst
+      - forkgram-6.9.1-1-x86_64.pkg.tar.zst
     debug: []
