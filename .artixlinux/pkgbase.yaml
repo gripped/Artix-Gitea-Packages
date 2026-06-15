@@ -29,18 +29,18 @@ repos:
     packages: []
     debug: []
   world:
-    version: 4.11.0-4
+    version: 4.11.0-5
     packages:
-      - syslog-ng-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-python-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-amqp-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-geoip2-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-kafka-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-mongodb-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-redis-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-smtp-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-snmp-4.11.0-4-x86_64.pkg.tar.zst
-      - syslog-ng-sql-4.11.0-4-x86_64.pkg.tar.zst
+      - syslog-ng-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-python-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-amqp-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-geoip2-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-kafka-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-mongodb-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-redis-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-smtp-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-snmp-4.11.0-5-x86_64.pkg.tar.zst
+      - syslog-ng-sql-4.11.0-5-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
