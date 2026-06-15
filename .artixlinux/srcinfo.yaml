@@ -1,9 +1,9 @@
 ---
-version: 3.2.0-1
+version: 3.2.1-1
 pkgbase:
   name: ruby-facets
   pkgdesc: Premiere collection of general purpose method extensions and standard additions for the Ruby programming language
-  pkgver: 3.2.0
+  pkgver: 3.2.1
   pkgrel: 1
   url: https://github.com/rubyworks/facets
   arch:
@@ -24,9 +24,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/rubyworks/facets.git#tag=v3.2.0
+    - git+https://github.com/rubyworks/facets.git#tag=3.2.1
   sha256sums:
-    - 26b3069f390983c1c719db73cd593a8865b3b56a02d9436ff4263edbbca51353
+    - 560e50d48ae58b5b086e3c99c46af8c5b8102f98d995c0cc163ec332c92ea773
 pkgname:
   - name: ruby-facets
 # generated with artixpkg 0.38.5-1-any
