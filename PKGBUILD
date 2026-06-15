@@ -7,10 +7,10 @@
 
 pkgname=salt
 pkgver=3007.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Central system and configuration manager'
 arch=('any')
-url='http://saltstack.org/'
+url='https://saltproject.io/'
 license=('Apache')
 replaces=('salt-zmq' 'salt-raet')
 conflicts=('salt-zmq' 'salt-raet')

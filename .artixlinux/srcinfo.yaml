@@ -1,11 +1,11 @@
 ---
-version: 3007.1-1
+version: 3007.1-1.1
 pkgbase:
   name: salt
   pkgdesc: Central system and configuration manager
   pkgver: 3007.1
-  pkgrel: 1
-  url: http://saltstack.org/
+  pkgrel: 1.1
+  url: https://saltproject.io/
   install: salt.install
   arch:
     - any
@@ -49,4 +49,4 @@ pkgbase:
     - abecc3c1be124c4afffaaeb3ba32b60dfee8ba6dc32189edfa2ad154ecb7a215
 pkgname:
   - name: salt
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.5-1-any
