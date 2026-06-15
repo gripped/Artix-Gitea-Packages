@@ -9,7 +9,7 @@
 pkgbase=uv
 pkgname=("$pkgbase" "python-$pkgbase"{,-build})
 pkgver=0.11.21
-pkgrel=1
+pkgrel=2
 pkgdesc='An extremely fast Python package installer and resolver written in Rust'
 arch=('x86_64')
 url="https://github.com/astral-sh/uv"
@@ -18,6 +18,8 @@ depends=(
   'bzip2'
   'gcc-libs'
   'glibc'
+  'jemalloc'
+  'zstd'
 )
 makedepends=(
   'cargo'
@@ -45,6 +47,10 @@ build() {
 
   # https://github.com/gnzlbg/jemallocator/issues/170
   [[ $CARCH == "aarch64" ]] && export JEMALLOC_SYS_WITH_LG_PAGE=16
+
+  export ZSTD_SYS_USE_PKG_CONFIG=1
+  export JEMALLOC_OVERRIDE=/usr/lib/libjemalloc.so
+  export CARGO_FEATURE_UNPREFIXED_MALLOC_ON_SUPPORTED_PLATFORMS=1
 
   # Note: do not use --all-features as in enables a self-updater
   maturin build --locked --release --target "$tripple" --strip --compatibility linux
@@ -74,9 +80,11 @@ _package_common() {
 
 package_uv() {
   depends=(
+    bzip2
     gcc-libs
     glibc
-    bzip2
+    jemalloc
+    zstd
   )
 
   cd "$pkgbase"
