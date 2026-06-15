@@ -8,7 +8,7 @@
 
 _pkgname="forkgram"
 pkgname="$_pkgname"
-pkgver=6.9.1
+pkgver=6.9.3
 pkgrel=1
 pkgdesc="Fork of the Telegram Desktop messaging app"
 url="https://github.com/Forkgram/tdesktop"
@@ -78,10 +78,15 @@ source=(
   "$_pkgname-$pkgver.$_pkgext"::"$url/releases/download/v$pkgver/$_pkgsrc.$_pkgext"
   "$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git"
   '0001-revert-cmake-patch.patch'
+  '0002-auto-dispatch.patch'
+  'crl-upgrade.tar.gz::https://github.com/desktop-app/lib_crl/archive/d9bb81f932646fd6b832bd9f1207fa1d09ecbcd9.tar.gz'
 )
-sha256sums=('7f248db6f22ed0b6d3197ff18fe332b3eba7688b20d6d784ca1315c3906418e2'
+noextract=(crl-upgrade.tar.gz)
+sha256sums=('7b52a88d141e8848a7356e25e59c1337d4c4177221f76ff9165d6ee1a07f29cf'
             'SKIP'
-	    'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861')
+            'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861'
+            'ae4e26d092d51ba93115f509f188b5c9bc0637ed0f2cdcd2ec2730786f74dd74'
+            'e361ef6bcce1e634611ce1ed097620f6490d1d89c984f5af7b0b3ba8e501f4f8')
 
 prepare() {
   cd "$_pkgsrc"
@@ -115,6 +120,9 @@ prepare() {
     Telegram/SourceFiles/platform/mac/specific_mac.mm \
     Telegram/SourceFiles/platform/win/specific_win.cpp
 
+  # FIXME: upgrade bundled libcrl to use libdispatch
+  rm -r Telegram/lib_crl/*
+  bsdtar -C Telegram/lib_crl --strip-components 1 -xvf "$srcdir/crl-upgrade.tar.gz"
 }
 
 build() {
@@ -147,6 +155,8 @@ build() {
     -DTDESKTOP_API_ID=611335
     -DTDESKTOP_API_HASH=d524b414d21f4d37f08684c1df41ac9c
     -DDESKTOP_APP_USE_PACKAGED_FONTS=OFF
+    -DCRL_USE_DISPATCH=ON
+    -DCRL_USE_TMC=OFF
     -Wno-dev
   )
 
