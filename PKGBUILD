@@ -4,7 +4,7 @@
 
 pkgname=kalarm
 pkgver=26.04.2
-pkgrel=1
+pkgrel=3
 pkgdesc='Personal alarm scheduler'
 arch=(x86_64)
 url='https://apps.kde.org/kalarm/'
