@@ -1,10 +1,10 @@
 ---
-version: 26.04.2-1
+version: 26.04.2-2
 pkgbase:
   name: akregator
   pkgdesc: A Feed Reader by KDE
   pkgver: 26.04.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/akregator/
   arch:
     - x86_64
