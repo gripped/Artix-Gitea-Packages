@@ -41,24 +41,24 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1:26.1.2-1
+    version: 1:26.1.2-2
     packages:
-      - lib32-mesa-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-opencl-mesa-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-asahi-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-broadcom-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-dzn-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-freedreno-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-gfxstream-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-intel-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-nouveau-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-panfrost-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-powervr-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-radeon-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-swrast-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-virtio-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-mesa-implicit-layers-1:26.1.2-1-x86_64.pkg.tar.zst
-      - lib32-vulkan-mesa-layers-1:26.1.2-1-x86_64.pkg.tar.zst
+      - lib32-mesa-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-opencl-mesa-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-asahi-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-broadcom-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-dzn-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-freedreno-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-gfxstream-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-intel-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-nouveau-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-panfrost-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-powervr-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-radeon-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-swrast-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-virtio-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-mesa-implicit-layers-1:26.1.2-2-x86_64.pkg.tar.zst
+      - lib32-vulkan-mesa-layers-1:26.1.2-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
