@@ -1,10 +1,10 @@
 ---
-version: 1.3.13-6
+version: 1.3.13-7
 pkgbase:
   name: postorius
   pkgdesc: The New Mailman Web UI
   pkgver: 1.3.13
-  pkgrel: 6
+  pkgrel: 7
   url: https://gitlab.com/mailman/postorius
   install: postorius.install
   arch:
@@ -25,7 +25,7 @@ pkgbase:
     - python-pdm-backend
   depends:
     - python
-    - python-cmarkgfm
+    - python-comrak
     - python-django
     - python-django-allauth
     - python-django-mailman3
