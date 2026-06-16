@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: plasma-mobile
   pkgdesc: Plasma shell for mobile devices
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://plasma-mobile.org/
   arch:
@@ -14,6 +14,7 @@ pkgbase:
     - cmake
     - extra-cmake-modules
     - plasma-wayland-protocols
+    - vulkan-headers
   depends:
     - bash
     - bluez-qt
@@ -60,22 +61,22 @@ pkgbase:
     - qt6-declarative
     - qt6-sensors
     - solid
-    - libudev
+    - udev-libs
     - wayland
   optdepends:
     - 'bluedevil: Bluetooth management'
     - 'kscreen: Screen management'
     - 'plasma-settings: System settings'
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-mobile-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-mobile-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-mobile-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-mobile-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 164380a6e1d75dc6fb072090caa3c4e5fb80bbb3f188d305bce767c90b9e4600
+    - 3426aa0b629b945b076eace130c4abbc6fff6f6c5dd1c2bff7ff0d7b2d477e42
     - SKIP
 pkgname:
   - name: plasma-mobile
