@@ -38,7 +38,7 @@ pkgbase:
     - qt6-base
     - qt6-declarative
     - solid
-    - systemd-libs
+    - libudev
   source:
     - https://download.kde.org/stable/plasma/6.7.0/libksysguard-6.7.0.tar.xz
     - https://download.kde.org/stable/plasma/6.7.0/libksysguard-6.7.0.tar.xz.sig

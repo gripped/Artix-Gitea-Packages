@@ -32,7 +32,7 @@ depends=(glibc
          qt6-base
          qt6-declarative
          solid
-         systemd-libs)
+         libudev)
 makedepends=(extra-cmake-modules
              qt6-tools)
 groups=(plasma)
