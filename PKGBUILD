@@ -108,6 +108,7 @@ install='librewolf.install'
 source=(
   https://codeberg.org/api/packages/librewolf/generic/librewolf-source/$_firefoxver-$_librewolfver/librewolf-$_firefoxver-$_librewolfver.source.tar.gz{,.sig}
   0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch::https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/bf1f16abe7b20cecaedc71c6fa44bb7069f06880/0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+  0007-cbindgen-0_29_4.patch
   $pkgname.desktop
   "default192x192.png"
 )
@@ -115,6 +116,7 @@ source=(
 sha256sums=('c270c1ab946c71e458f41b9eb8db88b76f30b98c4b87cbd9c23cce8d91925b92'
             'SKIP'
             'c7d6572fe1ac76f6adbfb10102f284fd55690396ac0a275a5cfea9a2efa22b58'
+            '198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f'
             '3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae'
             '9a1696e7589200e926616533897d87e08b1d1b460304c880a42b67bf8fa59a14')
 
@@ -199,6 +201,8 @@ fi
   # Fix build with glibc 2.43
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
   patch -Np1 -i ../0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+
+  patch -Np1 -i ../0007-cbindgen-0_29_4.patch
 }
 
 
