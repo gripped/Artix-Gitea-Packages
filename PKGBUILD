@@ -2,8 +2,8 @@
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=metalog
-pkgver=20230719
-pkgrel=2
+pkgver=20260221
+pkgrel=1
 pkgdesc="A modern replacement for syslogd and klogd"
 url="http://metalog.sourceforge.net"
 license=('GPL-2.0-only')
@@ -15,18 +15,18 @@ depends=(
 )
 provides=('logger')
 backup=('etc/metalog.conf')
-source=("https://github.com/hvisage/metalog/archive/metalog-${pkgver}.tar.gz")
-sha256sums=('563b41409ee9e396c3709f002b59ccd9aff901b7d7e3adee6344e4b599a02105')
+source=("https://github.com/hvisage/metalog/archive/refs/tags/$pkgver.tar.gz")
+sha256sums=('74758d711cf264aa8eb78caf4887998cb7bea0876c34d8ec19bd59fb8991349f')
 
 build() {
-  cd $pkgname-$pkgname-${pkgver}
+  cd $pkgname-${pkgver}
   ./autogen.sh
   ./configure --prefix=/usr --sysconfdir=/etc --sbin=/usr/bin
   make
 }
 
 package() {
-  cd $pkgname-$pkgname-${pkgver}
+  cd $pkgname-${pkgver}
   make DESTDIR="$pkgdir" install
   install -D -m644 metalog.conf "$pkgdir/etc/metalog.conf"
 }

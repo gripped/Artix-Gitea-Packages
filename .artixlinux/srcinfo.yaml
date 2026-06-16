@@ -1,0 +1,28 @@
+---
+version: 20260221-1
+pkgbase:
+  name: metalog
+  pkgdesc: A modern replacement for syslogd and klogd
+  pkgver: 20260221
+  pkgrel: 1
+  url: http://metalog.sourceforge.net
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - autoconf-archive
+  depends:
+    - glibc
+    - pcre2
+  provides:
+    - logger
+  backup:
+    - etc/metalog.conf
+  source:
+    - https://github.com/hvisage/metalog/archive/refs/tags/20260221.tar.gz
+  sha256sums:
+    - 74758d711cf264aa8eb78caf4887998cb7bea0876c34d8ec19bd59fb8991349f
+pkgname:
+  - name: metalog
+# generated with artixpkg 0.38.5-1-any
