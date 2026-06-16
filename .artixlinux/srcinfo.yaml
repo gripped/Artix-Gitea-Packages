@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: wacomtablet
   pkgdesc: GUI for Wacom Linux drivers that supports different button/pen layout profiles
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -16,7 +16,6 @@ pkgbase:
     - extra-cmake-modules
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
     - kcmutils
     - kconfig
@@ -32,6 +31,7 @@ pkgbase:
     - kwidgetsaddons
     - kwindowsystem
     - kxmlgui
+    - libstdc++
     - libwacom
     - libxcb
     - libxi
@@ -45,15 +45,15 @@ pkgbase:
   replaces:
     - kcm-wacomtablet
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/wacomtablet-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/wacomtablet-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/wacomtablet-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/wacomtablet-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 44b65f00d9b03236d39bae0fe413d9f53137d9cb96ae969b4710e0fb114a0f1e
+    - e25046708a26ec929b91361c3d864082ede6feda0382b7129ed38a9754a2c0ac
     - SKIP
 pkgname:
   - name: wacomtablet
