@@ -1,9 +1,9 @@
 ---
-version: 8.0.0-1
+version: 8.1.0-1
 pkgbase:
   name: python-hacking
   pkgdesc: OpenStack Hacking Guideline Enforcement
-  pkgver: 8.0.0
+  pkgver: 8.1.0
   pkgrel: 1
   url: https://docs.openstack.org/developer/hacking
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   depends:
     - flake8
   source:
-    - git+https://github.com/openstack/hacking.git#tag=8.0.0
+    - git+https://github.com/openstack/hacking.git#tag=8.1.0
   sha512sums:
-    - 72cf3ff7288ab215b2810ff945b2b10e63d29c19d81851a5e2c29adf00d63a8cb07f14702af41887d939e4449d7c84d7f6578aa54e7c2e66b945fdebb70882e2
+    - 4ac7cbf0c188c0d1fdf3ddefb20d32ea4b6503525e7968632a2e175df458bd4fca9f87b6c61d2f80d3ce3f7e3fcd64ba8e36964e07b0087580f5bffdf2992d14
 pkgname:
   - name: python-hacking
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
