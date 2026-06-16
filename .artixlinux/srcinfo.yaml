@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: kdeplasma-addons
   pkgdesc: All kind of addons to improve your Plasma experience
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -13,11 +13,11 @@ pkgbase:
   license:
     - LGPL-2.0-or-later
   makedepends:
+    - corrosion
     - extra-cmake-modules
     - networkmanager-qt
     - qt6-webengine
   depends:
-    - gcc-libs
     - glibc
     - icu
     - kauth
@@ -27,6 +27,7 @@ pkgbase:
     - kdbusaddons
     - kdeclarative
     - kglobalaccel
+    - kguiaddons
     - kholidays
     - ki18n
     - kiconthemes
@@ -46,27 +47,32 @@ pkgbase:
     - kwin
     - kwindowsystem
     - kxmlgui
+    - libgcc
     - libplasma
+    - libstdc++
     - plasma-workspace
     - qt6-5compat
     - qt6-base
     - qt6-declarative
     - qt6-quick3d
     - sonnet
+    - systemd-libs
   optdepends:
     - 'networkmanager-qt: POTD wallpaper'
     - 'qt6-webengine: dictionary and webbrowser applets'
     - 'quota-tools: disk quota applet'
+  options:
+    - '!lto'
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/kdeplasma-addons-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/kdeplasma-addons-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/kdeplasma-addons-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/kdeplasma-addons-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 48fdae7cfaa26042a59027fbe8df83789b172458bc2af0a23a015a04b8071af9
+    - 8b86b0b79b0af2da097d81dce099913d43574e08c4428a7925870692178b4298
     - SKIP
 pkgname:
   - name: kdeplasma-addons
