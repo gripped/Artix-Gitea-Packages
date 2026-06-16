@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: plasma-desktop
   pkgdesc: KDE Plasma Desktop
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -27,9 +27,7 @@ pkgbase:
     - attica
     - baloo
     - emoji-font
-    - gcc-libs
     - glibc
-    - kauth
     - kbookmarks
     - kcmutils
     - kcodecs
@@ -64,6 +62,7 @@ pkgbase:
     - kxmlgui
     - libcanberra
     - libksysguard
+    - libstdc++
     - libwacom
     - libx11
     - libxcb
@@ -101,15 +100,15 @@ pkgbase:
     - 'plasma-pa: Audio volume applet'
     - 'scim: kimpanel SCIM support'
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-desktop-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-desktop-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-desktop-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-desktop-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 1d758dffcc42e1d3fbbfea0500009d3dc795cf1313b93b574da83624177085f3
+    - 63513b54f6f60b3cd7ec35ca2f0962bdf25669729388e8515ac1d3b8899ee47f
     - SKIP
 pkgname:
   - name: plasma-desktop
