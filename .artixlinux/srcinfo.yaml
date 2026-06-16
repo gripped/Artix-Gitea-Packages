@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: xdg-desktop-portal-kde
   pkgdesc: A backend implementation for xdg-desktop-portal using Qt/KF5
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -17,13 +17,13 @@ pkgbase:
     - plasma-wayland-protocols
     - wayland-protocols
   depends:
-    - gcc-libs
     - glibc
+    - kcmutils
     - kconfig
     - kcoreaddons
     - kcrash
+    - kdeclarative
     - kglobalaccel
-    - kguiaddons
     - kiconthemes
     - ki18n
     - kio
@@ -37,6 +37,7 @@ pkgbase:
     - kstatusnotifieritem
     - kwayland
     - kwindowsystem
+    - libstdc++
     - libxkbcommon
     - plasma-workspace
     - qt6-base
@@ -46,15 +47,15 @@ pkgbase:
   provides:
     - xdg-desktop-portal-impl
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/xdg-desktop-portal-kde-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/xdg-desktop-portal-kde-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/xdg-desktop-portal-kde-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/xdg-desktop-portal-kde-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 21d699585294064fce7c74dee685c2093ef73dd095797913e68ef14780856b27
+    - f5afc06f948b73b2a0103d9ee6e57744a9884a3f2e0810807776ec4bf7102ada
     - SKIP
 pkgname:
   - name: xdg-desktop-portal-kde
