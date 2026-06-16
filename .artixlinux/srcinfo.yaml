@@ -1,9 +1,9 @@
 ---
-version: 1:6.6.5-1
+version: 1:6.7.0-1
 pkgbase:
   name: spectacle
   pkgdesc: KDE screenshot capture utility
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   epoch: 1
   url: https://kde.org/plasma-desktop/
@@ -18,7 +18,6 @@ pkgbase:
     - kdoctools
     - plasma-wayland-protocols
   depends:
-    - gcc-libs
     - glibc
     - kconfig
     - kconfigwidgets
@@ -40,6 +39,8 @@ pkgbase:
     - kwindowsystem
     - kxmlgui
     - layer-shell-qt
+    - libgcc
+    - libstdc++
     - libxcb
     - opencv
     - prison
@@ -48,22 +49,21 @@ pkgbase:
     - qt6-declarative
     - qt6-imageformats
     - qt6-multimedia
+    - tesseract
     - wayland
     - xcb-util
     - xcb-util-cursor
     - xcb-util-image
-  optdepends:
-    - 'tesseract: OCR text extraction'
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/spectacle-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/spectacle-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/spectacle-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/spectacle-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - a37df7731a6bc89bc23ac08ad1f995ce9f1efb330f3ebad9bf926dca6ebb5fc7
+    - 4b0e49de21b218ff5f1302d0cde6e06720bc4524396c8500d36cd644c9d50c64
     - SKIP
 pkgname:
   - name: spectacle
