@@ -56,7 +56,7 @@ pkgbase:
     - qt6-declarative
     - qt6-quick3d
     - sonnet
-    - liblibudev
+    - libudev
   optdepends:
     - 'networkmanager-qt: POTD wallpaper'
     - 'qt6-webengine: dictionary and webbrowser applets'
