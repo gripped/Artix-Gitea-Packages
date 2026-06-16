@@ -1,10 +1,10 @@
 ---
-version: 14.2.0-2
+version: 16.1.0-1
 pkgbase:
   name: arm-none-eabi-gcc
   pkgdesc: The GNU Compiler Collection - cross compiler for ARM EABI (bare-metal) target
-  pkgver: 14.2.0
-  pkgrel: 2
+  pkgver: 16.1.0
+  pkgrel: 1
   url: https://gcc.gnu.org/
   arch:
     - x86_64
@@ -28,15 +28,15 @@ pkgbase:
     - '!emptydirs'
     - '!lto'
   source:
-    - https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz
-    - https://ftp.gnu.org/gnu/gcc/gcc-14.2.0/gcc-14.2.0.tar.xz.sig
+    - https://ftp.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz
+    - https://ftp.gnu.org/gnu/gcc/gcc-16.1.0/gcc-16.1.0.tar.xz.sig
   validpgpkeys:
     - 33C235A34C46AA3FFB293709A328C3A2C3C45C06
     - D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62
     - 13975A70E63C361C73AE69EF6EEB81F8981C74C7
   sha256sums:
-    - a7b39bc69cbf9e25826c5a60ab26477001f7c08d85cec04bc0e29cabed6f3cc9
+    - 50efb4d94c3397aff3b0d61a5abd748b4dd31d9d3f2ab7be05b171d36a510f79
     - SKIP
 pkgname:
   - name: arm-none-eabi-gcc
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
