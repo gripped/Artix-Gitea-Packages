@@ -1,10 +1,10 @@
 ---
-version: 5.0.10-1
+version: 5.0.10-2
 pkgbase:
   name: openpmix
   pkgdesc: Extended version of the PMI standard
   pkgver: 5.0.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openpmix/openpmix
   arch:
     - x86_64
@@ -15,8 +15,6 @@ pkgbase:
     - hwloc
     - perl
     - libevent
-    - libevent_core-2.1.so
-    - libevent_pthreads-2.1.so
     - python
     - zlib
   options:
@@ -45,4 +43,4 @@ pkgname:
       - etc/openpmix/pmix-mca-params.conf
   - name: openpmix-docs
     pkgdesc: Extended version of the PMI standard - documentation
-# generated with artixpkg 0.38.1-1-any
+# generated with artixpkg 0.38.5-1-any
