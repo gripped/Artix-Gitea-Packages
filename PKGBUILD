@@ -1,7 +1,10 @@
-# Maintainer: artist
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
+# Contributor: Ionut Biru <ibiru@archlinux.org>
+# Contributor: Jakub Schmidtke <sjakub@gmail.com>
 
 pkgname=firefox
-pkgver=151.0.4
+pkgver=152.0
 pkgrel=1
 pkgdesc="Fast, Private & Safe Web Browser"
 url="https://www.mozilla.org/firefox/"
@@ -50,7 +53,6 @@ makedepends=(
   mesa
   nasm
   nodejs
-  #onnxruntime
   python
   rust
   unzip
@@ -80,36 +82,28 @@ source=(
   $pkgname.desktop
   org.mozilla.$pkgname.metainfo.xml
   0001-Install-under-remoting-name.patch
-  0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
   policies.json
-  preferences.patch
-  preferences2.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
   # https://blog.mozilla.org/security/2025/04/01/updated-gpg-key-for-signing-firefox-releases-2/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
-sha256sums=('ffda1991cc3b9b35d3c034314d253a51d6a20f603b693db2f55a00fa840e83a7'
+sha256sums=('5e5f9acb550d065a43934e0fcd11ed3ec22f7266fc9ad63df757406b432a5127'
             'SKIP'
             'a9b8b4a0a1f4a7b4af77d5fc70c2686d624038909263c795ecc81e0aec7711e9'
             '2a51d57d98fbda86f094bc991e1ad4dd6e8a9d32fd0836b1183bf70ec4b68915'
             '23f557fa7989adcae03cc9458d94716981dbcf0e9d6d52a289a2426e50b4b785'
-            'f0118f1b092e471fe3c81c1e8b49a76a37f72f3263d00a18e939dcde80c90dac'
-            'c7d6572fe1ac76f6adbfb10102f284fd55690396ac0a275a5cfea9a2efa22b58'
-            '5a04df0214fbce0ff7c68ed8bfea6b4544a515a76a223bfe11c2c853254841ae'
-            '21dfd320408ffd57239eabf13df493fe7d575be6b12b07554f8454c233750ab2'
-            '7802a6e1c6fb2d117041671b7853d376cebc5e7d76001159ed960fc557d2a0f5')
-b2sums=('59218facbd6860431f7361153091e2b2f22c4b39ee88fff4d45cc6f3cf63001d0472ffd43180fd533cd4ef25c4e00598e304061d1d6d9355138f90887c959e31'
+            '075ecdf42fa429d6c4b273c52d406f4335484c31b38f76fe3cc2e33ead7750cc'
+            '5a04df0214fbce0ff7c68ed8bfea6b4544a515a76a223bfe11c2c853254841ae')
+b2sums=('526bb2b2b83bc20561de86f200e3e4922d7ffc5e25ed6a342350399c390bfddf39db5421d843d3803ebbc7c4abd981ae55aa67c82e9158beb6510c091a111319'
         'SKIP'
         '63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34'
         '63c62c85ee70e22b02e9ea34e69f04f50403b7634b99fb0e996a83c963916dc4224041a0b265e54f6c224bd1777ddfdeb255037e3e30fec288695f3050278b05'
         '1a7fc030b1051df00df1b2f5b247b8c658de6cdfba0788041c830da3aaaa6ac974ab684e05feb80672aa2d2c22294cacfa93a71dc664b3e60becdd65e879fcee'
-        'c1cbb2de5011ed88e77c22c6abbc944ac2bd0f6c95bddb75f668f40566e6cad8d0090e65a5ff498055612a359f82484b41202f74e1312236e17d099e71bbc952'
-        '0420be311ae633c05d3a110b9fe5a8da288530d918ec9435c1a54d8d13bbbd06f5ee90977a9ee71d39e68bc26deb20264e712816e1dc5d7374b64a920e51b353'
-        '90b2f517dfaae7f4138090e1a24bcf9f9d6eca69f5a04c051fd99e4541a7e2360c80fa907aa44e64e7edf033bdfd19660db5f8feff7cc358562d5f8e452186c3'
-        '3a6d97231824c9c2d97bd15023faa4cdd25ae59a34c1961e6cd12bb5d172ede95594fd1f7e3dbed7d79a645cf734961a4b7d2bdedaee55c716d49f0e7fdfc3a4'
-        'e4c6d14fbfde0237da9fad63289c2dc55084378e1edc805e39c207595dc71c12e731934b83fbf0286635f520832774c6c33398a47b11288dd4c34e431e8f6ffd')
+        'b9fb91bb2d9513aa4dd7d9492738c873871fa9f0866a63a4897f08194bde05e98c8cdb278aef6635dd54982b97ce6e951b5d9f8e71b91a2a83b2f8093c57ba04'
+        '90b2f517dfaae7f4138090e1a24bcf9f9d6eca69f5a04c051fd99e4541a7e2360c80fa907aa44e64e7edf033bdfd19660db5f8feff7cc358562d5f8e452186c3')
+
 
 prepare() {
   mkdir mozbuild
@@ -118,11 +112,7 @@ prepare() {
   # Make different channels installable in parallel
   patch -Np1 -i ../0001-Install-under-remoting-name.patch
 
-  # Fix build with glibc 2.43
-  # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
-  patch -Np1 -i ../0002-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-
-  echo -n "" >google-api-key
+  echo -n "$_google_api_key" >google-api-key
 
   cat >../mozconfig <<END
 ac_add_options --enable-application=browser
@@ -147,6 +137,7 @@ ac_add_options --allow-addon-sideload
 export MOZILLA_OFFICIAL=1
 export MOZ_APP_REMOTINGNAME=$pkgname
 
+
 # System libraries
 ac_add_options --with-system-nspr
 ac_add_options --with-system-nss
@@ -154,7 +145,7 @@ ac_add_options --with-system-nss
 # Features
 ac_add_options --enable-alsa
 ac_add_options --enable-jack
-ac_add_options --disable-crashreporter
+ac_add_options --enable-crashreporter
 ac_add_options --disable-updater
 ac_add_options --disable-tests
 END
@@ -184,7 +175,6 @@ build() {
   cat >.mozconfig ../mozconfig - <<END
 ac_add_options --enable-profile-generate=cross
 END
- #sed -i 's|wasm32-wasi|wasm32-wasip1|' build/moz.configure/toolchain.configure
   ./mach build --priority normal
 
   echo "Profiling instrumented browser..."
@@ -216,7 +206,9 @@ END
 package() {
   cd firefox-$pkgver
   DESTDIR="$pkgdir" ./mach install
+
   local appdir="$pkgdir/usr/lib/$pkgname"
+  touch "$appdir/is-packaged-app"
 
   install -Dvm644 /dev/stdin "$appdir/browser/defaults/preferences/vendor.js" <<END
 // Use LANG environment variable to choose locale
@@ -237,21 +229,16 @@ END
 
   install -Dvm644 /dev/stdin "$appdir/distribution/distribution.ini" <<END
 [Global]
-id=archlinux
+id=artixlinux
 version=1.0
-about=Mozilla Firefox for Arch Linux
+about=Mozilla Firefox for Artix Linux
 
 [Preferences]
-app.distributor=archlinux
+app.distributor=artixlinux
 app.distributor.channel=$pkgname
-app.partner.archlinux=artixlinux
-startup.homepage_welcome_url.additional=""
-startup.homepage_override_url=""
-startup.homepage_welcome_url=""
+app.partner.artixlinux=artixlinux
 END
 
-  # Link up system ONNX runtime
-  ln -srv "$pkgdir/usr/lib/libonnxruntime.so" -t "$appdir"
 
   # Install desktop icons and metadata
   local i theme=official
@@ -295,3 +282,5 @@ ObjectPath=/org/mozilla/${pkgname//-/_}/SearchProvider
 Version=2
 END
 }
+
+# vim:set sw=2 sts=-1 et:
