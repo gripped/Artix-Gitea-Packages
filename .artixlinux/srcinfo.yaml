@@ -1,10 +1,10 @@
 ---
-version: 4.2.0-2
+version: 4.3.0-1
 pkgbase:
   name: python-falcon
   pkgdesc: Web API framework for fast and reliable microservices, proxies, and app backends
-  pkgver: 4.2.0
-  pkgrel: 2
+  pkgver: 4.3.0
+  pkgrel: 1
   url: https://falconframework.org/
   arch:
     - x86_64
@@ -49,11 +49,11 @@ pkgbase:
     - 'python-pecan: for falcon-bench'
     - 'python-pprofile: for falcon-bench'
   source:
-    - falcon-4.2.0.tar.gz::https://github.com/falconry/falcon/archive/refs/tags/4.2.0.tar.gz
+    - falcon-4.3.0.tar.gz::https://github.com/falconry/falcon/archive/refs/tags/4.3.0.tar.gz
   sha512sums:
-    - d94aab3af180bceb55bbf49c6ce69b2639a994e39b945fa5f3e7cb1a77bfbd03293e3d8591edb73de932c5a58775b961eec15952a3ee9cd00c4d3973865cd370
+    - 50511d490bf235f3d5766b4e3e340161720ecdacd169b4959999764e346434ce0acb56479932751ec1fe17d0c9e8d022ba254370b20a871ca3ff5a5d4862d67f
   b2sums:
-    - 2f0105fd2e05cba1406d0f0d17c479d1b6ee5d7cf813aaa35aaa86988a7a6d54e469015ad04a4523c3aafa6b84f216e0d310e86898bbe053b559ea4e723f077c
+    - da73af59cd2274c0a07f0c95c6e5871e8a213e6c1c62dae4a98a343668779568618aa76ea5fd9e260f696ad6797524dcab363ce3ce22a91655c2d1561e7a90e2
 pkgname:
   - name: python-falcon
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
