@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: oxygen
   pkgdesc: KDE Oxygen style
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -24,7 +24,6 @@ pkgbase:
     - libplasma
   depends:
     - frameworkintegration
-    - gcc-libs
     - glibc
     - kcmutils
     - kcolorscheme
@@ -37,6 +36,7 @@ pkgbase:
     - ki18n
     - kwidgetsaddons
     - kwindowsystem
+    - libstdc++
     - libxcb
     - oxygen-icons
     - qt6-base
@@ -44,21 +44,20 @@ pkgbase:
   optdepends:
     - 'oxygen5: Oxygen widget style for Qt5 applications'
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/oxygen-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/oxygen-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/oxygen-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/oxygen-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 40348c7beb911ec61cb96c4cbb5ea2e611e189faf4e4c9d2b29813bc28f72b4a
+    - 111fb62bc3d9f3a959e77fd35fe5562ca34ad783cbcdc0c164587f56495cff0c
     - SKIP
 pkgname:
   - name: oxygen
     depends:
       - frameworkintegration
-      - gcc-libs
       - glibc
       - kcmutils
       - kcolorscheme
@@ -71,6 +70,7 @@ pkgname:
       - ki18n
       - kwidgetsaddons
       - kwindowsystem
+      - libstdc++
       - libxcb
       - oxygen-icons
       - qt6-base
@@ -81,7 +81,6 @@ pkgname:
     groups: []
     depends:
       - oxygen
-      - gcc-libs
       - glibc
       - frameworkintegration5
       - kcompletion5
@@ -91,6 +90,7 @@ pkgname:
       - ki18n5
       - kwidgetsaddons5
       - kwindowsystem5
+      - libstdc++
       - libxcb
       - qt5-base
       - qt5-declarative
