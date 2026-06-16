@@ -2,7 +2,7 @@
 # Contributor: Dave Reisner <dreisner@archlinux.org>
 
 pkgname=pambase
-pkgver=20260614
+pkgver=20260616
 pkgrel=1
 pkgdesc="Base PAM configuration for services"
 arch=(any)
