@@ -1,7 +1,7 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=voa
-pkgver=0.7.3
+pkgver=0.7.4
 pkgrel=1
 pkgdesc="CLI for interacting with the File Hierarchy for the Verification of OS Artifacts (VOA)"
 arch=(x86_64)
@@ -9,8 +9,8 @@ url="https://voa.archlinux.page"
 _url="https://gitlab.archlinux.org/archlinux/alpm/voa"
 license=('Apache-2.0 OR MIT')
 depends=(
-  gcc-libs
   glibc
+  libgcc
 )
 makedepends=(
   git
@@ -25,8 +25,8 @@ checkdepends=(
 source=(
   $pkgname::git+${_url}.git?signed#tag=$pkgname/$pkgver
 )
-sha512sums=('0ba74ce4c1c883840474b03c9d9b3735d7e388cc85649382c6a96ff2c096865dd612b1a476cdff78d263353b143982e19c675e90d6207c2748c4e3a4fb58e8bc')
-b2sums=('1fad1804dd33e8cecf3b9b7e9b822f27f91cd1f7ae0b8eff8b7c48e169fa9dc45a6c65d478d01ed0e1ffbfaa81ffc7703f32edd12957fe2a7feee2a4aba61cfc')
+sha512sums=('85800411d4cb278162c69dbd85eecf92ddeedfa06ec465532efc98bf1f8cd437435b4695f3514a2adda95a588b660a447ddd09108578baeaec05b43c5f0cc2b2')
+b2sums=('fb532d8d04a0312429b542be7f507b8340876c1f8016f74cb17fc8aa5bdc348a23dc7fcde2162e24b90691a6105175f203bc0d21d3f3ef41249f31f04efd750a')
 validpgpkeys=(991F6E3F0765CF6295888586139B09DA5BF0D338)  # David Runge <dvzrv@archlinux.org>
 
 prepare() {
