@@ -1,10 +1,10 @@
 ---
-version: 1:26.1.2-1
+version: 1:26.1.2-2
 pkgbase:
   name: mesa
   pkgdesc: Open-source OpenGL drivers
   pkgver: 26.1.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.mesa3d.org/
   arch:
@@ -65,35 +65,35 @@ pkgbase:
   source:
     - https://archive.mesa3d.org/mesa-26.1.2.tar.xz
     - https://archive.mesa3d.org/mesa-26.1.2.tar.xz.sig
-    - zerocopy-0.8.13.tar.gz::https://crates.io/api/v1/crates/zerocopy/0.8.13/download
-    - ucd-trie-0.1.6.tar.gz::https://crates.io/api/v1/crates/ucd-trie/0.1.6/download
-    - pest_meta-2.8.0.tar.gz::https://crates.io/api/v1/crates/pest_meta/2.8.0/download
-    - libc-0.2.171.tar.gz::https://crates.io/api/v1/crates/libc/0.2.171/download
-    - indexmap-2.2.6.tar.gz::https://crates.io/api/v1/crates/indexmap/2.2.6/download
-    - hashbrown-0.14.1.tar.gz::https://crates.io/api/v1/crates/hashbrown/0.14.1/download
-    - log-0.4.27.tar.gz::https://crates.io/api/v1/crates/log/0.4.27/download
-    - zerocopy-derive-0.8.13.tar.gz::https://crates.io/api/v1/crates/zerocopy-derive/0.8.13/download
-    - windows-link-0.2.0.tar.gz::https://crates.io/api/v1/crates/windows-link/0.2.0/download
-    - rustc-hash-2.1.1.tar.gz::https://crates.io/api/v1/crates/rustc-hash/2.1.1/download
-    - cfg-if-1.0.0.tar.gz::https://crates.io/api/v1/crates/cfg-if/1.0.0/download
-    - remain-0.2.12.tar.gz::https://crates.io/api/v1/crates/remain/0.2.12/download
-    - proc-macro2-1.0.86.tar.gz::https://crates.io/api/v1/crates/proc-macro2/1.0.86/download
-    - pest_derive-2.8.0.tar.gz::https://crates.io/api/v1/crates/pest_derive/2.8.0/download
-    - thiserror-impl-2.0.11.tar.gz::https://crates.io/api/v1/crates/thiserror-impl/2.0.11/download
-    - unicode-ident-1.0.12.tar.gz::https://crates.io/api/v1/crates/unicode-ident/1.0.12/download
-    - bitflags-2.9.1.tar.gz::https://crates.io/api/v1/crates/bitflags/2.9.1/download
-    - windows-sys-0.61.1.tar.gz::https://crates.io/api/v1/crates/windows-sys/0.61.1/download
-    - quote-1.0.35.tar.gz::https://crates.io/api/v1/crates/quote/1.0.35/download
-    - roxmltree-0.20.0.tar.gz::https://crates.io/api/v1/crates/roxmltree/0.20.0/download
-    - paste-1.0.14.tar.gz::https://crates.io/api/v1/crates/paste/1.0.14/download
-    - errno-0.3.12.tar.gz::https://crates.io/api/v1/crates/errno/0.3.12/download
-    - rustix-1.1.2.tar.gz::https://crates.io/api/v1/crates/rustix/1.1.2/download
-    - pest-2.8.0.tar.gz::https://crates.io/api/v1/crates/pest/2.8.0/download
-    - thiserror-2.0.11.tar.gz::https://crates.io/api/v1/crates/thiserror/2.0.11/download
-    - equivalent-1.0.1.tar.gz::https://crates.io/api/v1/crates/equivalent/1.0.1/download
-    - pest_generator-2.8.0.tar.gz::https://crates.io/api/v1/crates/pest_generator/2.8.0/download
-    - once_cell-1.8.0.tar.gz::https://crates.io/api/v1/crates/once_cell/1.8.0/download
-    - syn-2.0.87.tar.gz::https://crates.io/api/v1/crates/syn/2.0.87/download
+    - zerocopy-0.8.13.tar.gz::https://static.crates.io/crates/zerocopy/0.8.13/download
+    - ucd-trie-0.1.6.tar.gz::https://static.crates.io/crates/ucd-trie/0.1.6/download
+    - pest_meta-2.8.0.tar.gz::https://static.crates.io/crates/pest_meta/2.8.0/download
+    - libc-0.2.171.tar.gz::https://static.crates.io/crates/libc/0.2.171/download
+    - indexmap-2.2.6.tar.gz::https://static.crates.io/crates/indexmap/2.2.6/download
+    - hashbrown-0.14.1.tar.gz::https://static.crates.io/crates/hashbrown/0.14.1/download
+    - log-0.4.27.tar.gz::https://static.crates.io/crates/log/0.4.27/download
+    - zerocopy-derive-0.8.13.tar.gz::https://static.crates.io/crates/zerocopy-derive/0.8.13/download
+    - windows-link-0.2.0.tar.gz::https://static.crates.io/crates/windows-link/0.2.0/download
+    - rustc-hash-2.1.1.tar.gz::https://static.crates.io/crates/rustc-hash/2.1.1/download
+    - cfg-if-1.0.0.tar.gz::https://static.crates.io/crates/cfg-if/1.0.0/download
+    - remain-0.2.12.tar.gz::https://static.crates.io/crates/remain/0.2.12/download
+    - proc-macro2-1.0.86.tar.gz::https://static.crates.io/crates/proc-macro2/1.0.86/download
+    - pest_derive-2.8.0.tar.gz::https://static.crates.io/crates/pest_derive/2.8.0/download
+    - thiserror-impl-2.0.11.tar.gz::https://static.crates.io/crates/thiserror-impl/2.0.11/download
+    - unicode-ident-1.0.12.tar.gz::https://static.crates.io/crates/unicode-ident/1.0.12/download
+    - bitflags-2.9.1.tar.gz::https://static.crates.io/crates/bitflags/2.9.1/download
+    - windows-sys-0.61.1.tar.gz::https://static.crates.io/crates/windows-sys/0.61.1/download
+    - quote-1.0.35.tar.gz::https://static.crates.io/crates/quote/1.0.35/download
+    - roxmltree-0.20.0.tar.gz::https://static.crates.io/crates/roxmltree/0.20.0/download
+    - paste-1.0.14.tar.gz::https://static.crates.io/crates/paste/1.0.14/download
+    - errno-0.3.12.tar.gz::https://static.crates.io/crates/errno/0.3.12/download
+    - rustix-1.1.2.tar.gz::https://static.crates.io/crates/rustix/1.1.2/download
+    - pest-2.8.0.tar.gz::https://static.crates.io/crates/pest/2.8.0/download
+    - thiserror-2.0.11.tar.gz::https://static.crates.io/crates/thiserror/2.0.11/download
+    - equivalent-1.0.1.tar.gz::https://static.crates.io/crates/equivalent/1.0.1/download
+    - pest_generator-2.8.0.tar.gz::https://static.crates.io/crates/pest_generator/2.8.0/download
+    - once_cell-1.8.0.tar.gz::https://static.crates.io/crates/once_cell/1.8.0/download
+    - syn-2.0.87.tar.gz::https://static.crates.io/crates/syn/2.0.87/download
   validpgpkeys:
     - 946D09B5E4C9845E63075FF1D961C596A7203456
     - 71C4B75620BC75708B4BDB254C95FAAB3EB073EC
@@ -189,8 +189,8 @@ pkgname:
     optdepends:
       - 'opengl-man-pages: for the OpenGL API man pages'
     provides:
-      - libva-mesa-driver=1:26.1.2-1
-      - mesa-libgl=1:26.1.2-1
+      - libva-mesa-driver=1:26.1.2-2
+      - mesa-libgl=1:26.1.2-2
       - libva-driver
       - opengl-driver
     conflicts:
