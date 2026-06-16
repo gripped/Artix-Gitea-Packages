@@ -48,7 +48,7 @@ depends=(glibc
          qt6-declarative
          qt6-quick3d
          sonnet
-         systemd-libs)
+         liblibudev)
 makedepends=(corrosion
              extra-cmake-modules
              networkmanager-qt
