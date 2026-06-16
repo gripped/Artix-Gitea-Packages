@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: kscreen
   pkgdesc: KDE screen management software
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -16,7 +16,6 @@ pkgbase:
     - extra-cmake-modules
     - wayland-protocols
   depends:
-    - gcc-libs
     - glibc
     - kcmutils
     - kconfig
@@ -31,6 +30,7 @@ pkgbase:
     - kwindowsystem
     - layer-shell-qt
     - libkscreen
+    - libstdc++
     - libx11
     - libxcb
     - libxi
@@ -40,15 +40,15 @@ pkgbase:
     - qt6-declarative
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/kscreen-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/kscreen-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/kscreen-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/kscreen-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 753ebc00cf75359c2e7ba3aabb20ff3596d0fbbe2f0b6d3ed6098d27282a3276
+    - ad57a4326a64979a68aa5068a7151702d9b02db0720670e4be3e178905beda56
     - SKIP
 pkgname:
   - name: kscreen
