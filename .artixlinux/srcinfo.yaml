@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: plasma-activities
   pkgdesc: Core components for KDE Activities
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -17,10 +17,10 @@ pkgbase:
     - qt6-declarative
     - qt6-tools
   depends:
-    - gcc-libs
     - glibc
     - kconfig
     - kcoreaddons
+    - libstdc++
     - qt6-base
   optdepends:
     - 'qt6-declarative: QML bindings'
@@ -29,15 +29,15 @@ pkgbase:
   replaces:
     - kactivities
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-activities-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-activities-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-activities-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-activities-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 54d06a22a5765aa1e92834885d02abc7ce1bf8d6bda9533bb3472d4fef575562
+    - 38ff957996a09c15236e93b035ba123480a58aff74894b61b7df1020ec442b59
     - SKIP
 pkgname:
   - name: plasma-activities
