@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-1
+version: 6.7.0-1
 pkgbase:
   name: kscreenlocker
   pkgdesc: Library and components for secure lock screen architecture
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -14,11 +14,10 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
-    - kcmutils
     - kdoctools
   depends:
-    - gcc-libs
     - glibc
+    - kcmutils
     - kconfig
     - kcoreaddons
     - kcrash
@@ -35,6 +34,7 @@ pkgbase:
     - kxmlgui
     - layer-shell-qt
     - libkscreen
+    - libstdc++
     - libx11
     - libxcb
     - libxi
@@ -44,11 +44,9 @@ pkgbase:
     - qt6-declarative
     - wayland
     - xcb-util-keysyms
-  optdepends:
-    - 'kcmutils: configuration module'
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/kscreenlocker-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/kscreenlocker-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/kscreenlocker-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/kscreenlocker-6.7.0.tar.xz.sig
     - kde.pam
     - kde-fingerprint.pam
     - kde-smartcard.pam
@@ -58,7 +56,7 @@ pkgbase:
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 9ba0aee32364051eeb213d48dd3c208ae0ce7062190a30f855735ba4efe389cc
+    - c3154b68a885ed55d4cd577f813f5553ea0b31dbdd31b32b3744905550fec3d1
     - SKIP
     - adba7bb7c27eb3a572e5e9d3cea0dbeebe59d3634472d1863d14fe892cb13b2b
     - 32734b4e1ec8b7f7e32b6cb2d68285c5c4f15f53736bba085096e76095181241
