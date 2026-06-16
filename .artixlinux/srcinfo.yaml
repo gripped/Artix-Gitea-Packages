@@ -1,9 +1,9 @@
 ---
-version: 6.6.5-2
+version: 6.7.0-2
 pkgbase:
   name: plasma-integration
   pkgdesc: Qt Platform Theme integration plugins for the Plasma workspaces
-  pkgver: 6.6.5
+  pkgver: 6.7.0
   pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
@@ -22,17 +22,14 @@ pkgbase:
     - knotifications5
     - kwayland5
     - kwindowsystem5
-    - kxmlgui5
     - qt5-base
     - qt5-declarative
     - qt5-quickcontrols2
     - qt5-wayland
     - qt5-x11extras
   depends:
-    - gcc-libs
     - glibc
     - kcolorscheme
-    - kcompletion
     - kconfig
     - kcoreaddons
     - kguiaddons
@@ -44,7 +41,7 @@ pkgbase:
     - kstatusnotifieritem
     - kwidgetsaddons
     - kwindowsystem
-    - kxmlgui
+    - libstdc++
     - libxcb
     - libxcursor
     - qqc2-breeze-style
@@ -53,23 +50,21 @@ pkgbase:
     - qt6-declarative
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-integration-6.6.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.6.5/plasma-integration-6.6.5.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-integration-6.7.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.0/plasma-integration-6.7.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - c28482dc8d3387b9a770fdc999dd13480b14714568395c8d86bd568b0181920a
+    - 537b05cd4bab1b0706fb31f9823f8666df7295e647e75614f02b6bf1458eff1d
     - SKIP
 pkgname:
   - name: plasma-integration
     depends:
-      - gcc-libs
       - glibc
       - kcolorscheme
-      - kcompletion
       - kconfig
       - kcoreaddons
       - kguiaddons
@@ -81,7 +76,7 @@ pkgname:
       - kstatusnotifieritem
       - kwidgetsaddons
       - kwindowsystem
-      - kxmlgui
+      - libstdc++
       - libxcb
       - libxcursor
       - qqc2-breeze-style
@@ -96,9 +91,7 @@ pkgname:
     pkgdesc: Qt5 Platform Theme integration plugins for the Plasma workspaces
     groups: []
     depends:
-      - gcc-libs
       - glibc
-      - kcompletion5
       - kconfig5
       - kconfigwidgets5
       - kcoreaddons5
@@ -111,7 +104,7 @@ pkgname:
       - kwayland5
       - kwidgetsaddons5
       - kwindowsystem5
-      - kxmlgui5
+      - libstdc++
       - libxcb
       - libxcursor
       - qt5-base
