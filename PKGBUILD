@@ -2,8 +2,8 @@
 
 pkgname=python-svglib
 _name="${pkgname#python-}"
-pkgver=1.6.0
-pkgrel=2
+pkgver=2.0.0
+pkgrel=1
 pkgdesc="Read SVG files and convert them to other formats"
 arch=(any)
 url="https://github.com/deeplook/svglib"
@@ -11,6 +11,7 @@ license=(LGPL-3.0-only)
 depends=(
   python
   python-lxml
+  python-pillow  # used directly, but pulled in by python-reportlab: https://github.com/deeplook/svglib/issues/463
   python-reportlab
   python-tinycss2
   python-cssselect2
@@ -21,12 +22,11 @@ makedepends=(
   python-installer
 )
 checkdepends=(
-  python-pillow
   python-pytest
 )
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('089e867e04256282d2e7b2877fb49b9713f39449dd1df3d38eba25ae4f12e8ac6884da0826c7ca658425482a42940b9ee88112d7a7ac9b6e9d7aa2ef519fbb14')
-b2sums=('ca71c83bc803dd582849d5a0db07345fced468873d09818e08ac77f0baaa4168f0fbeaa6a6e39288e716ce9de5e6a761ecb96a205cf29194d6026e5e0be0c77d')
+sha512sums=('8ce5e187ec3e25634a51a081219d98e882363139abf0046933a1ff188ed020220f8c64ec8aefb0f7993db1c959cf3b43fc3a22f36fb335e821455f37ec6727f9')
+b2sums=('d72a14cf74049a870d9c3bd875dfd46ef2614bd7878d5246047e7f08c23a2836ce36757128d92856e891e2d70c1f3111905b744e053de11a0f2758a54287eb4a')
 
 build() {
   cd $_name-$pkgver
@@ -48,5 +48,5 @@ check() {
 package() {
   cd $_name-$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -vDm 644 {CHANGELOG,CONTRIBUTORS,README}.rst -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 {CHANGELOG,CONTRIBUTORS,README}.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
