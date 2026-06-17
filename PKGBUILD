@@ -11,7 +11,7 @@ pkgname=('virtualbox'
          'virtualbox-sdk')
 pkgver=7.2.10
 _tarver=${pkgver}
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url='https://virtualbox.org/'
 license=('GPL-3.0-only AND (GPL-3.0-only OR CDDL-1.0)')
@@ -54,7 +54,6 @@ makedepends=('alsa-lib'
              'yasm')
 source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarver}.tar.bz2"
         'virtualbox-host-dkms.conf'
-        'virtualbox.modprobe'
         'virtualbox.sysusers'
         'virtualbox-guest-utils.sysusers'
         '60-vboxdrv.rules'
@@ -71,7 +70,6 @@ source=("https://download.virtualbox.org/virtualbox/${pkgver}/VirtualBox-${_tarv
         '0020-python-3-12.patch')
 sha256sums=('203a02e3c33ed02fdd75211a58bc9e77c9a8042ad4fa91ddc2914afbd2d67125'
             'f753501352054576c510aa81e83f4935079ea620e601057784b02b4d4d1eeb04'
-            '49554ea53523dc634fbb641d114ea7b0db4312e3faf05eeaeb8e1346ce0b5940'
             '2101ebb58233bbfadf3aa74381f22f7e7e508559d2b46387114bc2d8e308554c'
             'da4c49f6ca94e047e196cdbcba2c321199f4760056ea66e0fbc659353e128c9e'
             'f876e9f55243eded423fda4fc2ffe3b174dca90380a6315f7c9b3cd1c9d07206'
@@ -161,7 +159,6 @@ package_virtualbox() {
                 'virtualbox-ext-vnc: VNC server support'
                 'virtualbox-sdk: Developer kit')
     backup=('etc/vbox/vbox.cfg')
-    install=virtualbox.install
     replaces=('virtualbox-ose')
     conflicts=('virtualbox-ose')
 
@@ -244,9 +241,6 @@ package_virtualbox() {
     # install module reloading shortcut (with a symlink with default helper)
     install -D -m0755 vboxreload "${pkgdir}/usr/bin"
     ln -s vboxreload "${pkgdir}/usr/bin/rcvboxdrv"
-
-    # do not enable KVM virtualization on module load
-    install -D -m0644 virtualbox.modprobe "${pkgdir}/usr/lib/modprobe.d/virtualbox.conf"
 }
 
 package_virtualbox-ext-vnc() {
