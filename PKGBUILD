@@ -2,7 +2,7 @@
 
 _name=falcon
 pkgname=python-falcon
-pkgver=4.3.0
+pkgver=4.3.1
 pkgrel=1
 pkgdesc="Web API framework for fast and reliable microservices, proxies, and app backends"
 arch=(x86_64)
@@ -53,8 +53,8 @@ optdepends=(
   'python-pprofile: for falcon-bench'
 )
 source=($_name-$pkgver.tar.gz::$_url/archive/refs/tags/$pkgver.tar.gz)
-sha512sums=('50511d490bf235f3d5766b4e3e340161720ecdacd169b4959999764e346434ce0acb56479932751ec1fe17d0c9e8d022ba254370b20a871ca3ff5a5d4862d67f')
-b2sums=('da73af59cd2274c0a07f0c95c6e5871e8a213e6c1c62dae4a98a343668779568618aa76ea5fd9e260f696ad6797524dcab363ce3ce22a91655c2d1561e7a90e2')
+sha512sums=('bcde0bcf3166a431756bd2659222df9d6a22be8220b12d5b8b9cdb50163a8c38fdacc6a9b389d3e02d694b0dd3592d5c3bb5ef15ec389f84451444fb8a44427b')
+b2sums=('bf9bb3cc64a6e55a89f3cdfaa23427944a92fc0590b1d4404752a4a893f7b1a17090bedc39995237ab8a1ec3d71b3e849d5aa7b400df68528fd2c12b839a7e3e')
 
 prepare() {
   cd $_name-$pkgver
@@ -68,9 +68,6 @@ build() {
 check() {
   local pytest_options=(
     -vv
-    # Tests against cbor2 6.x are not compatible with the test setup (yet): https://github.com/falconry/falcon/issues/2663
-    --deselect 'tests/asgi/test_ws.py::test_media[True-True]'
-    --deselect 'tests/asgi/test_ws.py::test_media[True-False]'
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
