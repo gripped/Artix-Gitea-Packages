@@ -2,7 +2,7 @@
 # Maintainer: Eli schwartz <eschwartz@archlinux.org>
 
 pkgname=firefox-noscript
-pkgver=13.6.19
+pkgver=13.6.23
 pkgrel=1
 pkgdesc="Extension for firefox which disables javascript"
 arch=('any')
@@ -13,9 +13,9 @@ makedepends=('nodejs' 'git' 'npm')
 groups=('firefox-addons')
 source=("git+https://github.com/hackademix/noscript.git#tag=$pkgver"
 	"nscl.git::git+https://github.com/hackademix/nscl.git")
-sha256sums=('b02bb681523a05984bad921cca6ca8a9fd91c1b52c1f99213b720386c59453f0'
+sha256sums=('cfdc85bc05d95119b535606bb6e6570d140e63e541c25d27f9c323a7302bc6f9'
             'SKIP')
-b2sums=('e634e1517212b28152aec1bdc0e9b26d7ea08a12899f6a196d5d413b945e28dbc9f3fdb5dfc7eb9172e005251b3818e1d82c3a8f454c8fc3cc49fef02ca080bb'
+b2sums=('fd0bf31975f28777346ab4c9416c492987a6acb3b6b564a7181065a944479b25cc821ac07401f51d541728b603b8991a4742b031a706ece039157b260470d9aa'
         'SKIP')
 
 prepare() {
@@ -30,7 +30,7 @@ build() {
 }
 
 package() {
-  optdepends=('firefox' 'konform-browser')
+  depends=('firefox')
   _extension_id="{73a6fe31-595d-460b-a920-fcc0f8843232}"
   _extension_dest="${pkgdir}/usr/lib/firefox/browser/extensions/${_extension_id}"
   install -Dm644 noscript/xpi/noscript-$pkgver.xpi "${_extension_dest}.xpi"
