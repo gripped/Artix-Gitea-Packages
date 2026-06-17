@@ -7,8 +7,8 @@
 
 pkgname=python-tzlocal
 _name=${pkgname#python-}
-pkgver=5.3.1
-pkgrel=2
+pkgver=5.4
+pkgrel=1
 epoch=1
 pkgdesc="Tzinfo object for the local timezone"
 arch=('any')
@@ -27,14 +27,7 @@ checkdepends=(
   'python-pytest-mock'
 )
 source=("git+$url.git#tag=$pkgver")
-b2sums=('c67272ea16b95fc8c479f5033072bdf06f6ecb1960869f0afda795d7a77f94521e4fc9765a07d705fbbb830da6771fded7d18b0bb4bda56bb987672421f18188')
-
-prepare() {
-  cd "$_name"
-  # fix symlink, required for test: https://github.com/regebro/tzlocal/issues/53
-  cd tests/test_data/symlink_localtime/etc
-  ln -sfv ../usr/share/zoneinfo/Africa/Harare localtime
-}
+b2sums=('39a2e16868fc48ea5a72deb4e83da7f445f85005bd788f8a7dba12f3c01c287624fe91a8cfa2f78c62db99aff28d69e0263258d6fe4f57794a13edc9dcc4a751')
 
 build() {
   cd "$_name"
@@ -53,12 +46,10 @@ package() {
   # docs
   install -vDm 644 {CHANGES.txt,README.rst} \
     -t "$pkgdir/usr/share/doc/$_name"
-
-  # symlink license file
+  install -vDm 644 LICENSE.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
+  # remove unneeded test files: https://github.com/regebro/tzlocal/issues/146
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  install -d "$pkgdir"/usr/share/licenses/$pkgname
-  ln -s "$site_packages"/"$_name"-$pkgver.dist-info/LICENSE.txt \
-    "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.txt
+  rm -frv "$pkgdir/$site_packages/$_name/tests/"
 }
 
 # vim:set ts=2 sw=2 et:
