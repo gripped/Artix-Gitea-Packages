@@ -2,7 +2,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=plasma-meta
-pkgver=6.6
+pkgver=6.7
 pkgrel=2
 pkgdesc='Meta package to install KDE Plasma'
 arch=(any)
@@ -23,6 +23,7 @@ depends=(aurorae
          kinfocenter
          kmenuedit
          knighttime
+         konsole
          kpipewire
          krdp
          kscreen
@@ -59,7 +60,6 @@ depends=(aurorae
          polkit-kde-agent
          powerdevil
          print-manager
-         sddm-kcm
          spectacle
          systemsettings
          xdg-desktop-portal-kde
@@ -73,4 +73,5 @@ optdepends=('breeze-grub: Breeze theme for GRUB'
             'plasma-sdk: Development tools'
             'plasma-workspace-wallpapers: Additional wallpapers'
             'sddm-kcm: SDDM configuration module'
+            'union: Next generation QtQuick/QtWidgets style engine'
             'wacomtablet: Drawing tablet settings on X')

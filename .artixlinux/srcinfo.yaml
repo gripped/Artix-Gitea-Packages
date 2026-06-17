@@ -1,9 +1,9 @@
 ---
-version: 6.6-2
+version: 6.7-2
 pkgbase:
   name: plasma-meta
   pkgdesc: Meta package to install KDE Plasma
-  pkgver: 6.6
+  pkgver: 6.7
   pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
@@ -26,6 +26,7 @@ pkgbase:
     - kinfocenter
     - kmenuedit
     - knighttime
+    - konsole
     - kpipewire
     - krdp
     - kscreen
@@ -62,7 +63,6 @@ pkgbase:
     - polkit-kde-agent
     - powerdevil
     - print-manager
-    - sddm-kcm
     - spectacle
     - systemsettings
     - xdg-desktop-portal-kde
@@ -76,7 +76,8 @@ pkgbase:
     - 'plasma-sdk: Development tools'
     - 'plasma-workspace-wallpapers: Additional wallpapers'
     - 'sddm-kcm: SDDM configuration module'
+    - 'union: Next generation QtQuick/QtWidgets style engine'
     - 'wacomtablet: Drawing tablet settings on X'
 pkgname:
   - name: plasma-meta
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
