@@ -1,10 +1,11 @@
 ---
-version: 1.38.1-1
+version: 1:1.37.2-2
 pkgbase:
   name: lib32-fakeroot
   pkgdesc: Tool for simulating superuser privileges (32-bit)
-  pkgver: 1.38.1
-  pkgrel: 1
+  pkgver: 1.37.2
+  pkgrel: 2
+  epoch: 1
   url: https://tracker.debian.org/pkg/fakeroot
   install: fakeroot.install
   arch:
@@ -18,9 +19,9 @@ pkgbase:
     - lib32-glibc
     - fakeroot
   source:
-    - git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/1.38.1
-  sha512sums:
-    - d68c7741a0ffb4b3812bffd62c1dc370e8a7f9ee323edd5d5a89da7712f0347d0bb3824081818030657489e7350eed094d6666a304abb954132008e000952598
+    - fakeroot-archive::git+https://github.com/eworm-de/fakeroot.git#tag=upstream/1.37.2-2026-01-17
+  sha256sums:
+    - 46f44681cc939dd3f127761717830c0bfa72e1568191d4df071ae297013591e3
 pkgname:
   - name: lib32-fakeroot
 # generated with artixpkg 0.38.5-1-any
