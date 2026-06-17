@@ -1,9 +1,9 @@
 ---
-version: 2.1.2-1
+version: 2.2.0-1
 pkgbase:
   name: python-wrapt
   pkgdesc: A Python module for decorators, wrappers and monkey patching
-  pkgver: 2.1.2
+  pkgver: 2.2.0
   pkgrel: 1
   url: https://github.com/GrahamDumpleton/wrapt
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/GrahamDumpleton/wrapt.git#tag=2.1.2
+    - git+https://github.com/GrahamDumpleton/wrapt.git#tag=2.2.0
   sha512sums:
-    - ad9bab39af92455637fca3651ca47540de56bbbaae3c8f221a568dcfac8270564dbadc87774e06cd18c7cc95f5a4b225e210d8ecdaeafaf37d649ccc7c03fb7d
+    - da699910c842e37d8f972689c4c06b089862f1b5c65fd75d153874ff2a8295b62b5c8799e0729f9a712e604641663cbf1b683e74697e4fd8ecf539452d1b777d
 pkgname:
   - name: python-wrapt
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
