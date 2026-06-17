@@ -1,24 +1,24 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=hyprshutdown
-pkgver=0.1.0
-pkgrel=2
+pkgver=0.1.1
+pkgrel=3
 pkgdesc='A graceful shutdown utility for Hyprland '
 arch=(x86_64)
 url="https://github.com/hyprwm/$pkgname"
 license=(BSD-3-Clause)
-depends=(glaze
-         glibc # libc.so libm.so
+depends=(glibc # libc.so libm.so
          hyprtoolkit libhyprtoolkit.so
          hyprutils libhyprutils.so
          libdrm # libdrm.so
          libgcc libgcc_s.so
          libstdc++ libstdc++.so
          pixman)
-makedepends=(cmake)
+makedepends=(cmake
+             glaze)
 _archive="$pkgname-$pkgver"
 source=("$url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('28b125c6d8406029b59beacb77aa080d5d8905239b1006c94c7307f1997e6819')
+sha256sums=('32adb385b7bfe22398d45cd5325416bf0ac3ae4a5bd89678353dae96f92ba638')
 
 build() {
 	cd "$_archive"
