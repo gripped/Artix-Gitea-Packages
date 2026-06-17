@@ -5,7 +5,7 @@
 # Contributor: solsTiCe d'Hiver <solstice.dhiver@gmail.com>
 
 pkgname=lesspipe
-pkgver=2.25
+pkgver=2.27
 pkgrel=1
 pkgdesc='an input filter for the pager less'
 depends=('less')
@@ -33,7 +33,7 @@ optdepends=('rpmextract: support for rpm files'
 url="https://www-zeuthen.desy.de/~friebel/unix/lesspipe.html"
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/wofr06/lesspipe/archive/refs/tags/v${pkgver}.tar.gz"
         'lesspipe.sh')
-b2sums=('12ef72e5dca056cb486acacb53e1f4efe29356cb4bec79ab98448b558bab3befcfa0d0846b4c84c22436623f0ded6aa2abf2f5a2dd442dea903e860dee77dee9'
+b2sums=('7b86f89b68bfe7e95ba4f45788e318173befd6c5d0f69326eb4e4d855f409e2d0c52754413b62dee4e186d04d9fc6cf6e40a015a8a65df30090d499f390e3f0b'
         'bf7dfbd8e00257995e1be518e1c46619139635e33dd4f6fbb89340b6a94494f076095efd6351829d390eaf0ed6e119dbc3fba3a7bc39d8e83f093c458df792b2')
 
 build() {
