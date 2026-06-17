@@ -1,10 +1,10 @@
 ---
-version: 0.8.1-1
+version: 0.8.1-2
 pkgbase:
   name: xwayland-satellite
   pkgdesc: Xwayland outside your Wayland
   pkgver: 0.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Supreeeme/xwayland-satellite
   arch:
     - x86_64
@@ -14,8 +14,8 @@ pkgbase:
     - clang
     - rust
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - libxcb
     - xcb-util-cursor
     - xorg-xwayland
@@ -27,4 +27,4 @@ pkgbase:
     - 3a1407fb3c0c1876114ec337199314f1fa9e347c2ed4f3ced46158c859d7a23a7fcc6041844480b95485c4982eb3dcee41855d61b88ce9cf63ea58759c286079
 pkgname:
   - name: xwayland-satellite
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
