@@ -30,4 +30,4 @@ pkgbase:
     - 11b5b5fcbb4f427486e83ee042cd3f2b030bcf8238f5d1925942416067d0254b
 pkgname:
   - name: libfreehand
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
