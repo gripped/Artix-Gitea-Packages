@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-apm
 pkgver=25.0.0
-pkgrel=6
+pkgrel=7
 pkgdesc="XLibre fork of X.Org SVGA server for Alliance Promotion graphics chipsets"
 arch=(x86_64 aarch64)
 license=('MIT')
