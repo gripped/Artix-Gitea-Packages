@@ -2,7 +2,7 @@
 
 pkgname=xlibre-input-synaptics
 pkgver=25.0.0
-pkgrel=6
+pkgrel=7
 pkgdesc="XLibre fork of X.Org Synaptics driver for notebook touchpads"
 arch=(x86_64 aarch64)
 license=('MIT')
