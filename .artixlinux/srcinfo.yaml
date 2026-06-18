@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-input-mouse
   pkgdesc: XLibre fork of X.Org mouse input driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-input-mouse
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - cdec62f256d0e343b0c80cba78a016f2c65073fe2073fd771a220436e3aa669b
 pkgname:
   - name: xlibre-input-mouse
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
