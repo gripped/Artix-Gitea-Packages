@@ -1,10 +1,10 @@
 ---
-version: 1:2.2.0-2.1
+version: 1:2.2.0-3
 pkgbase:
   name: deluge
   pkgdesc: BitTorrent client with multiple user interfaces in a client/server model
   pkgver: 2.2.0
-  pkgrel: 2.1
+  pkgrel: 3
   epoch: 1
   url: https://deluge-torrent.org/
   arch:
@@ -39,11 +39,12 @@ pkgbase:
     - python-geoip
     - python-idna
     - python-ifaddr
+    - python-incremental
     - python-mako
     - python-pillow
+    - python-pyasn1
     - python-pyopenssl
     - python-rencode
-    - python-incremental
     - python-service-identity
     - python-setproctitle
     - python-setuptools
@@ -71,7 +72,7 @@ pkgname:
       - python-cairo
       - python-gobject
       - xdg-utils
-      - deluge=1:2.2.0-2.1
+      - deluge=1:2.2.0-3
       - python
       - python-rencode
       - python-setproctitle
@@ -82,4 +83,4 @@ pkgname:
       - 'libnotify: desktop notifications'
     replaces:
       - deluge<2.0.4.dev23+g2f1c008a2-2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
