@@ -1,10 +1,10 @@
 ---
-version: 4.7.2-1
+version: 4.7.2-2
 pkgbase:
   name: electrum
   pkgdesc: Lightweight Bitcoin wallet
   pkgver: 4.7.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://electrum.org
   arch:
     - any
@@ -63,4 +63,4 @@ pkgbase:
     - 9faa19e6442e1f736ec05499f7a66839c9791c5487ac8edd8d3ccb13b6ad070fba7a3625d9aa5040962aa336567409c2720fb933829eedc027cb3ceac5d6e479
 pkgname:
   - name: electrum
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
