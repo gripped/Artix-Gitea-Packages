@@ -1,9 +1,9 @@
 ---
-version: 25.12.2-1
+version: 26.6.1-1
 pkgbase:
   name: python-txaio
   pkgdesc: Compatibility API between asyncio/Twisted/Trollius
-  pkgver: 25.12.2
+  pkgver: 26.6.1
   pkgrel: 1
   url: https://github.com/crossbario/txaio
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - 'python-twisted: Twisted support'
     - 'python-zope-interface: Twisted support'
   source:
-    - git+https://github.com/crossbario/txaio.git#tag=v25.12.2
+    - git+https://github.com/crossbario/txaio.git#tag=v26.6.1
   sha512sums:
-    - 1b5201e01b78f3ae4a81c4246e4817d16ad7f31a67432968f24d226baa4e0a1b18763650cdceecd8a609023ddc10bb9196d676b955fe2e372ac314a3b3ab0567
+    - d760aec24b5dabaa76fcfd0d0b757661da09e154342c85792b06bb26d55821f7b5326e2afb0b1010d028b1f42f2b7722baaa4da9f9a799d8c463183c91b8f96a
 pkgname:
   - name: python-txaio
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
