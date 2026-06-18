@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-2
+version: 25.0.0-3
 pkgbase:
   name: xlibre-input-egalax
   pkgdesc: XLibre fork of X.Org input driver for eGalax touchscreen devices
   pkgver: 25.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/X11Libre/xf86-input-egalax
   arch:
     - x86_64
