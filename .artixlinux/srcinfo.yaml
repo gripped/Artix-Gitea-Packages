@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-1
+version: 25.0.0-2
 pkgbase:
   name: xlibre-video-openchrome
   pkgdesc: XLibre fork of X.Org OpenChrome DDX drivers
   pkgver: 25.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/X11Libre/xf86-video-openchrome
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 8e14401a2160c6a7174b09875b4f87d2ad92cecad51e4762fc8739a536cb835a
 pkgname:
   - name: xlibre-video-openchrome
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
