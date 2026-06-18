@@ -1,9 +1,9 @@
 ---
-version: 0.137.1-1
+version: 0.137.2-1
 pkgbase:
   name: python-fastapi
   pkgdesc: FastAPI framework, high performance, easy to learn, fast to code, ready for production
-  pkgver: 0.137.1
+  pkgver: 0.137.2
   pkgrel: 1
   url: https://github.com/fastapi/fastapi
   arch:
@@ -65,11 +65,11 @@ pkgbase:
     - 'python-ujson: for faster JSON parsing and UJSONResponse'
     - 'uvicorn: for Uvicorn as ASGI server'
   source:
-    - fastapi-0.137.1.tar.gz::https://github.com/fastapi/fastapi/archive/0.137.1.tar.gz
+    - fastapi-0.137.2.tar.gz::https://github.com/fastapi/fastapi/archive/0.137.2.tar.gz
   sha512sums:
-    - 4c82e28ddc773198505d29bf95802e7c7c8f3d9bbf09dd2cfae3d4c89660e19c2e16ff237fe91d1da1f9e6a20ee1261cad2495ca8135ab259e0173a8f35de53f
+    - 65c8589bc2305dcffb4185911b9faef1a4d1fce84f271cabc85f626b85f0833a19e9c5ac9c6d6f4be593d0d08679afbe31eceeabd12f600411c0959f5e59e953
   b2sums:
-    - 952dfd24618025cb402b39209ebb3dd57b4742ea939f69ba91064a3cdca213f9baf4e24895b2267adab25c7471393aa87df87da067c0cfadf80657bc328b14d1
+    - 3974f74367e411eb602e51690b55c7c7b019a803025c68996bf81a9e9f5f7f71e3a6555d45bf143eb0224a0620c3f765b4718466311dacf03420a3bc57522006
 pkgname:
   - name: python-fastapi
 # generated with artixpkg 0.38.5-1-any
