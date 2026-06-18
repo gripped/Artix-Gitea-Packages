@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-input-keyboard
   pkgdesc: XLibre fork of X.Org keyboard input driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-input-keyboard
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 2bc6d81090ce305645d24724252e8510e832cf252d4e1c53ecf86ff8cf7bdb4e
 pkgname:
   - name: xlibre-input-keyboard
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
