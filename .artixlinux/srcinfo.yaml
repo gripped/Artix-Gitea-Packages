@@ -1,10 +1,10 @@
 ---
-version: 3.1.0-1
+version: 3.1.0-2
 pkgbase:
   name: jaq
   pkgdesc: A jq clone focussed on correctness, speed, and simplicity
   pkgver: 3.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/01mf02/jaq
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - MIT
   makedepends:
     - cargo
+    - pandoc
   depends:
     - gcc-libs
     - glibc
