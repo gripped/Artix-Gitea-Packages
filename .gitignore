@@ -12,6 +12,8 @@
 
 pkg/
 src/
+noscript/
+nscl.git/
 
 *.service
 *.timer

@@ -54,7 +54,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 13.6.23-1
+    version: 13.6.24-1
     packages:
-      - firefox-noscript-13.6.23-1-any.pkg.tar.zst
-    debug: []
+      - firefox-noscript-13.6.24-1-any.pkg.tar.zst
+    debug:
+      - firefox-noscript-debug-13.6.24-1-any.pkg.tar.zst
