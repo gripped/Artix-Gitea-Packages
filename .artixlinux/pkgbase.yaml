@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.0.0-1
+    version: 25.0.0-2
     packages:
-      - xlibre-input-egalax-25.0.0-1-x86_64.pkg.tar.zst
+      - xlibre-input-egalax-25.0.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.0.0-1

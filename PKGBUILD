@@ -2,7 +2,7 @@
 
 pkgname=xlibre-input-egalax
 pkgver=25.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="XLibre fork of X.Org input driver for eGalax touchscreen devices"
 arch=(x86_64 aarch64)
 _pkgname="${pkgname//xlibre/xf86}"
