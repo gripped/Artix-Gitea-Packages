@@ -2,7 +2,7 @@
 
 pkgname=xlibre-input-vmmouse
 pkgver=25.0.0
-pkgrel=7
+pkgrel=8
 pkgdesc="XLibre fork of X.Org VMWare Mouse input driver"
 arch=(x86_64 aarch64)
 license=('custom')

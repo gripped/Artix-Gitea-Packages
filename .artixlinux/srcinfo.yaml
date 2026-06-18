@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-7
+version: 25.0.0-8
 pkgbase:
   name: xlibre-input-vmmouse
   pkgdesc: XLibre fork of X.Org VMWare Mouse input driver
   pkgver: 25.0.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/X11Libre/xf86-input-vmmouse
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 41c760d547989d0b120b76e299c2b2611f13fb063838fb6c3fa7fe26eb756fbe
 pkgname:
   - name: xlibre-input-vmmouse
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
