@@ -27,4 +27,4 @@ pkgbase:
     - 874c2f673e6317590ae317f00b99b1bbc69d8dcc46855051d71c364314d74d31
 pkgname:
   - name: xlibre-input-egalax
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
