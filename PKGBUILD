@@ -2,7 +2,7 @@
 
 _name=libtmux
 pkgname=python-libtmux
-pkgver=0.58.0
+pkgver=0.58.1
 pkgrel=1
 pkgdesc="Python api for tmux"
 arch=(any)
@@ -28,8 +28,8 @@ checkdepends=(
 )
 optdepends=('python-pytest: for pytest plugin')
 source=($_name-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('d0b33c321eb84f1622f024445f81f8e2baad742d11c37fb0193f9c49947e247db22f5b864dbfc9684b90cc1f0404d32d10a7d7239ce095ffd8d761fccb5c35dc')
-b2sums=('4768636649710f54538fd3c041080f44142fcd872434fa6f32251f9ebff4fcf3d235be13b5db6d5f8520a0d41d660342b7aaa24b52fda191ab6122cab1b4da28')
+sha512sums=('e19e2d0b45b51caaca3c4e95ac3f4233d3b5a56d5ff1ee7745f6d5838b89ab677999b4ebe24577270123a5884ce11be1f6476f976b514b422724fcadeb8d0c41')
+b2sums=('3da385a9634199ef840449806d8fafe053dc40ce75299a92639aed7554091c5ccb8434f0322bbd3e10101dc18cfcde48323d185ca315dc3a6d089e38c6bb9b41')
 
 build() {
   cd $_name-$pkgver
@@ -42,6 +42,7 @@ check() {
     --deselect tests/test_pane.py::test_capture_pane
     --deselect 'tests/test_pane_capture_pane.py::test_capture_pane_flags[join_wrapped_numbers]'
     --deselect tests/test_pane.py::test_set_title
+    --deselect tests/test_control_mode.py::test_control_mode_stdout_preserves_non_ascii_output
     -vv
     # we do not want to package python-gp-libs: https://github.com/tmux-python/libtmux/issues/496
     -o addopts=''

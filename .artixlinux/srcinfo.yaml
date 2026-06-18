@@ -1,9 +1,9 @@
 ---
-version: 0.58.0-1
+version: 0.58.1-1
 pkgbase:
   name: python-libtmux
   pkgdesc: Python api for tmux
-  pkgver: 0.58.0
+  pkgver: 0.58.1
   pkgrel: 1
   url: https://libtmux.git-pull.com/
   arch:
@@ -27,11 +27,11 @@ pkgbase:
   optdepends:
     - 'python-pytest: for pytest plugin'
   source:
-    - libtmux-0.58.0.tar.gz::https://github.com/tmux-python/libtmux/archive/refs/tags/v0.58.0.tar.gz
+    - libtmux-0.58.1.tar.gz::https://github.com/tmux-python/libtmux/archive/refs/tags/v0.58.1.tar.gz
   sha512sums:
-    - d0b33c321eb84f1622f024445f81f8e2baad742d11c37fb0193f9c49947e247db22f5b864dbfc9684b90cc1f0404d32d10a7d7239ce095ffd8d761fccb5c35dc
+    - e19e2d0b45b51caaca3c4e95ac3f4233d3b5a56d5ff1ee7745f6d5838b89ab677999b4ebe24577270123a5884ce11be1f6476f976b514b422724fcadeb8d0c41
   b2sums:
-    - 4768636649710f54538fd3c041080f44142fcd872434fa6f32251f9ebff4fcf3d235be13b5db6d5f8520a0d41d660342b7aaa24b52fda191ab6122cab1b4da28
+    - 3da385a9634199ef840449806d8fafe053dc40ce75299a92639aed7554091c5ccb8434f0322bbd3e10101dc18cfcde48323d185ca315dc3a6d089e38c6bb9b41
 pkgname:
   - name: python-libtmux
 # generated with artixpkg 0.38.5-1-any
