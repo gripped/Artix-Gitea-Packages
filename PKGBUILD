@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-protocol-http
-pkgver=0.61.0
+pkgver=0.62.0
 pkgrel=1
 pkgdesc='Provides abstractions to handle HTTP protocols'
 arch=(any)
@@ -28,16 +28,13 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=("git+${url}.git#tag=v${pkgver}")
-sha512sums=('9ce4a787cfa2c8c193bd1b3e7ce05899d69d57570852582e47e405c6e47c9b19bf1561fdfe430f897934ef541ae4afcde48594fbc5228a2cba5321bf33cede64')
-b2sums=('0bd3f15e5f481b8c2a30e628f7a07623c12838121b8c95b97eb01d7f5366e3fe45046ecf2596c0b901ca32fc509e20138a1e70dc78559d6eefe91801410d5e1a')
+sha512sums=('cddb41bf31ce897caaa3d672295e21287c4a2e20a65f216beb86f1c1443a0ca6c00c7939f5be3a387d6cb020d5e299878896a38523e1cb082fcef749d61e5b8b')
+b2sums=('6db11e4893d795779896734aeab40b6dc8fa15733b64d22d55962fc5c0794a520bc7fc1d64f1db793e691fcc320e8049635a3fae71cf7799248fa19f2def5a08')
 
 prepare() {
   cd protocol-http
 
-  sed -r \
-    -e 's|~>|>=|g' \
-    -e '/signing_key/d' \
-    -i protocol-http.gemspec
+  sed -i '/signing_key/d' protocol-http.gemspec
 
   sed --in-place \
     --expression '/group :maintenance/,/end/d' \
