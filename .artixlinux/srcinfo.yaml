@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-video-omap
   pkgdesc: XLibre fork of omap video driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-video-omap
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - e3030c8506505af308bd6059477ba0a0186bbc99e1f270e9f7e5c62fb5ae0628
 pkgname:
   - name: xlibre-video-omap
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
