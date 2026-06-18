@@ -23,9 +23,9 @@ pkgname=(
   lib32-vulkan-mesa-implicit-layers
   lib32-vulkan-mesa-layers
 )
-pkgver=26.1.2
+pkgver=26.1.3
 _pkgver=${pkgver/[a-z]/-&}
-pkgrel=2
+pkgrel=1
 epoch=1
 pkgdesc="Open-source OpenGL drivers - 32-bit"
 url="https://www.mesa3d.org/"
@@ -146,7 +146,7 @@ for _crate in "${!_crates[@]}"; do
   )
 done
 
-b2sums=('d78778c2905db11f95d09a0b29eb35fe0fe4eb83cf64746d423b28047720c11f9bae9cdac50dea5c3b22889a7bda137a6a44e2a9db6c71621266ee6929210ab9'
+b2sums=('faccf9aeb76b0920c1746cf911e9d4de2d0b1a41eb1efe5f74a3f5957700e098acf8ef379149a8f844cc39c0e49503223cda7a2a164bb382e8b65480c0626921'
         'SKIP'
         '431439d31632d177aeb15f910b4f546efa76d54fc74fc8e140399dc5e54eca33fd606f11dbfb48fa83067c8474ee512e62751895d5948367b65ab08b984284e5'
         'a6d47c903be6094423d89b8ec3ca899d0a84df6dbd6e76632bb6c9b9f40ad9c216f8fa400310753d392f85072756b43ac3892e0a2c4d55f87ab6463002554823'
@@ -179,7 +179,7 @@ b2sums=('d78778c2905db11f95d09a0b29eb35fe0fe4eb83cf64746d423b28047720c11f9bae9cd
         '93385f64103fdb482bec34c7912474ae7a5935948715e6eb9a54907e0db5c39f089f6cd393bab33c935c59a1bbb0f4099431f206343811c1a450554d96a35756')
 
 # https://docs.mesa3d.org/relnotes.html
-sha256sums=('bac2bca9121897a2b8162e79636b50ac998fca799c8e6cf914edd85962babdf0'
+sha256sums=('7725004e724b34c6d4fbaf5c48fc6c6223aa9f2741d6d7782c699b049356fc45'
             'SKIP'
             '67914ab451f3bfd2e69e5e9d2ef3858484e7074d63f204fd166ec391b54de21d'
             'ed646292ffc8188ef8ea4d1e0e0150fb15a5c2e12ad9b8fc191ae7a8a7f3c4b9'
