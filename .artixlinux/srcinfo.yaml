@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-video-mach64
   pkgdesc: XLibre fork of mach64 video driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-video-mach64
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 8118cd54d51163fe9c6246a4f02a9457d5696167a469607fd9539a02b3a2e9af
 pkgname:
   - name: xlibre-video-mach64
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
