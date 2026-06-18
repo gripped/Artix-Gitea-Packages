@@ -15,7 +15,7 @@ makedepends=('git')
 groups=('qt5')
 _pkgfqn=${pkgname/5-/}
 source=("kde-$_pkgfqn::git+https://invent.kde.org/qt/qt/$_pkgfqn.git/#commit=$_commit"
-  "git+https://invent.kde.org/qt/qt/qtlocation-mapboxgl.git/#branch=master")
+  "git+https://invent.kde.org/qt/qt/qtlocation-mapboxgl.git/#commit=f2778251c97ba3403582b9c04290c50f927fd338") #branch=master
 sha256sums=('bbcc33e52756f878d3e776644cd2ee6f27c686ec171c73b5a90d598789d5bdc0'
             'd01b1322cceee31e7a9a5953a2abae3ccdc5d0d3fdf8ebe15dd5d28dc8be844f')
 
