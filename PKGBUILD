@@ -12,7 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 pkgver=140.12.0.100
-pkgrel=1
+pkgrel=2
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
 _lwrelver="${pkgver##*.}"
@@ -133,6 +133,7 @@ source=(
   "0002-Use-wasm32-wasip1-target.patch"
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
+  "0005-cbindgen-0_29_4.patch"
 )
 sha256sums=('c297d87275f7f76e556bbfa3f844791ff78eeca6cb174802191520462da6e079'
             '85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62'
@@ -143,7 +144,8 @@ sha256sums=('c297d87275f7f76e556bbfa3f844791ff78eeca6cb174802191520462da6e079'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
+            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760'
+            '198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -159,7 +161,7 @@ _languages=(
 )
 
 prepare() {
-  _lw_srcdir=$srcdir/src/librewolf-$_ffsrcver-$_lwrelver
+  _lw_srcdir=$srcdir/src/source-$_ffsrcver
   ## <srcprep>
   cp -p *.desktop *.png src/
 
@@ -167,8 +169,9 @@ prepare() {
   mkdir -p mozbuild
   echo "${_lwrelver}" > release
   git submodule update --init --recursive
-  rm -rf "${_lw_srcdir}"
-  mv "${srcdir}/firefox-${_ffsrcver}" "$_lw_srcdir"
+  rm -rf "${_lw_srcdir}/"* "${_lw_srcdir}/".*
+  mkdir -p "${_lw_srcdir}"
+  mv "${srcdir}/firefox-${_ffsrcver%b*}"/* "${srcdir}/firefox-${_ffsrcver%b*}"/.* "${_lw_srcdir}/"
   mkdir -p "${_lw_srcdir}/lw"
   mv "../firefox-l10n-${_l10n_commit}" "${_lw_srcdir}/lw/l10n"
 
@@ -180,37 +183,10 @@ prepare() {
   mv mozconfig ../mozconfig || true
 
   cat >>../mozconfig <<END
-##### main archlinux-firefox 136
-ac_add_options --enable-hardening
 ac_add_options --disable-install-strip
-ac_add_options --allow-addon-sideload
-
-
-##### Kon
-export MOZ_REQUIRE_SIGNING=
-export MOZ_DATA_REPORTING=
-export MOZ_TELEMETRY_ON_BY_DEFAULT=
-
-mk_add_options MOZ_CRASHREPORTER=
-mk_add_options MOZ_DATA_REPORTING=
-mk_add_options MOZ_SERVICES_HEALTHREPORT=
-mk_add_options MOZ_TELEMETRY_REPORTING=
-mk_add_options MOZ_TELEMETRY_ON_BY_DEFAULT=
-
-mk_add_options MOZ_REQUIRE_SIGNING=
-
-ac_add_options --enable-rust-simd
-ac_add_options --disable-tests
-ac_add_options --disable-crashreporter
-ac_add_options --disable-updater
 ac_add_options --enable-system-pixman
-
-##### /Kon
-
 ac_add_options --enable-linker=lld
-
 ac_add_options --prefix=/usr
-
 ac_add_options --disable-bootstrap
 
 export CC='clang'
@@ -276,11 +252,12 @@ fi
   patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
   xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
   xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
+  patch -B .patchorigin -Np1 -i ../../0005-cbindgen-0_29_4.patch
 }
 
 
 build() {
-  _lw_srcdir=$srcdir/src/librewolf-$_ffsrcver-$_lwrelver
+  _lw_srcdir=$srcdir/src/source-$_ffsrcver
   cd "${_lw_srcdir}"
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
@@ -397,7 +374,7 @@ END
 }
 
 package() {
-  _lw_srcdir=$srcdir/src/librewolf-$_ffsrcver-$_lwrelver
+  _lw_srcdir=$srcdir/src/source-$_ffsrcver
   cd "${_lw_srcdir}"
   MOZ_PKG_FORMAT=tar ./mach pack-multi-locale --locales ${_languages[@]}
   DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[*]}" ./mach install

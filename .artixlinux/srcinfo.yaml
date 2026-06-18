@@ -1,10 +1,10 @@
 ---
-version: 1:140.12.0.100-1
+version: 1:140.12.0.100-2
 pkgbase:
   name: konform-browser
   pkgdesc: Firefox ESR fork with increased security, privacy, and customizability
   pkgver: 140.12.0.100
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://konform-browser.codeberg.page
   install: konform.install
@@ -109,6 +109,7 @@ pkgbase:
     - 0002-Use-wasm32-wasip1-target.patch
     - 0003-update-rust-bindgen-to-fix-clang22-build.patch.xz
     - 0004-skia-m142-update.patch.xz
+    - 0005-cbindgen-0_29_4.patch
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
@@ -122,6 +123,7 @@ pkgbase:
     - baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba
     - 8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d
     - e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760
+    - 198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f
 pkgname:
   - name: konform-browser
 # generated with artixpkg 0.38.5-1-any
