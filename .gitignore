@@ -12,6 +12,7 @@
 
 pkg/
 src/
+waylock/
 
 *.service
 *.timer
