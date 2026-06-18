@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-input-joystick
   pkgdesc: XLibre fork of X.Org joystick input driver for the XLibre X server
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-input-joystick
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - af821e11477d8c1bdb08ee2cbadfd556159d42b394699b2c980aa5c818441520
 pkgname:
   - name: xlibre-input-joystick
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
