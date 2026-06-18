@@ -1,9 +1,9 @@
 ---
-version: 2785-1
+version: 20260614.062305.gd460f8342060-1
 pkgbase:
   name: libretro-beetle-psx
   pkgdesc: Sony PlayStation core
-  pkgver: 2785
+  pkgver: 20260614.062305.gd460f8342060
   pkgrel: 1
   url: https://github.com/libretro/beetle-psx-libretro
   arch:
@@ -11,24 +11,28 @@ pkgbase:
   groups:
     - libretro
   license:
-    - GPL2
+    - GPL-2.0-only
   makedepends:
     - git
     - libglvnd
     - mesa
     - vulkan-icd-loader
   depends:
+    - libgcc
     - libretro-core-info
+    - libstdc++
     - zlib
   source:
-    - libretro-beetle-psx::git+https://github.com/libretro/beetle-psx-libretro.git#commit=1420c90299b1d9f4ef59373b3e5fa538a1e17a65
-  sha256sums:
-    - 26ddb6cef7c8ecc07b1e1b2b9f41457af2e82ef3a047565ada3e835e864204ff
+    - libretro-beetle-psx::git+https://github.com/libretro/beetle-psx-libretro.git#commit=d460f8342060
+  b2sums:
+    - d9a181380349d9709afb90b2ed5c98e0101e31f3074fcdab0b83d341a222c33dc3671bc1580d98d1f30a0397e40a3899e6dcba2e015a7bc51c5a63444418450e
 pkgname:
   - name: libretro-beetle-psx
   - name: libretro-beetle-psx-hw
     depends:
+      - libgcc
       - libretro-core-info
+      - libstdc++
       - zlib
       - libgl
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
