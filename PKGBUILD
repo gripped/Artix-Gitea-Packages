@@ -1,19 +1,20 @@
 # Maintainer: Anatol Pomozov <anatol.pomozov@gmail.com>
+# Contributor: Mike Lei <mikelei@duck.com>
 
 pkgname=shairport-sync
 pkgver=5.0.4
-pkgrel=1
-pkgdesc='Emulates an AirPort Express for the purpose of streaming music from iTunes and compatible iPods and iPhones'
+pkgrel=2
+pkgdesc='AirPlay and AirPlay 2 audio player'
 url='https://github.com/mikebrady/shairport-sync'
 arch=(x86_64)
-license=(GPL)
+license=(GPL-2.0-only)
 backup=(etc/shairport-sync.conf)
-depends=(openssl avahi libsoxr popt alsa-lib libconfig libpipewire libpulse jack mosquitto)
+depends=(openssl avahi libsoxr popt alsa-lib libconfig libpipewire libpulse jack mosquitto ffmpeg nqptp libplist)
 makedepends=(glib2-devel xmltoman vim) # vim for xxd tool
-source=(shairport-sync-$pkgver.zip::https://github.com/mikebrady/shairport-sync/archive/$pkgver.zip
+source=(shairport-sync-$pkgver.tar.gz::https://github.com/mikebrady/shairport-sync/archive/refs/tags/$pkgver.tar.gz
         shairport-sync.sysusers
-        remove_useradd.patch)
-sha256sums=('9631ec74c1537bdf0b67c0336e1db09c38907e76cd4b4db6d722b661737ef6e0'
+	remove_useradd.patch)
+sha256sums=('b89d4af74cffadd83d1be6eaf4e967180aa5a6aed32f561c937ae1d787909c25'
             'bc2d92254910996e837d1c4c7dd81eddfb96a9f5f0cb2faad9fcb0414ea79a1d'
             'b10bcba9dbe0988868ceabe1b6e1d6d9dbce385661a76a139f0c365966db45f2')
 
@@ -30,10 +31,11 @@ build() {
   configure_args=(
     --prefix=/usr
     --sysconfdir=/etc
+    --with-airplay-2
     # Audio Output
     --with-alsa
-    --with-pa
-    --with-pw
+    --with-pipewire
+    --with-pulseaudio
     --with-jack
     --with-stdout
     --with-pipe
@@ -57,7 +59,6 @@ build() {
   )
   ./configure "${configure_args[@]}"
   make
-
 }
 
 package() {
