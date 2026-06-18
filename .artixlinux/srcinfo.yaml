@@ -1,8 +1,8 @@
 ---
-version: 10.0.8.sdk108-1
+version: 10.0.9.sdk109-1
 pkgbase:
   name: dotnet-core
-  pkgver: 10.0.8.sdk108
+  pkgver: 10.0.9.sdk109
   pkgrel: 1
   url: https://dotnet.microsoft.com
   arch:
@@ -34,9 +34,9 @@ pkgbase:
     - '!lto'
     - staticlibs
   source:
-    - git+https://github.com/dotnet/dotnet.git#tag=94ea82652cdd4e0f8046b5bd5becbd11461482ca
+    - git+https://github.com/dotnet/dotnet.git#tag=v10.0.109
   b2sums:
-    - 0eb4a3d96e400231b94b7905e19f95e00c6890e31a849078f08ea500b2275634beb7546e916d719120cb0988e44d81a7b1c6d509164962f38c49e4b550e6d434
+    - 78b70986ac532d4ab22feae5f4ca31b1c39b5e7b283be8962b964ddeb1a93fac0e2ef79220f69e2e07ec965291ea18126785aaca08623f028be536118696c953
 pkgname:
   - name: dotnet-host
     pkgdesc: A generic driver for the .NET Core Command Line Interface
