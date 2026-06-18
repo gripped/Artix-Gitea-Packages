@@ -1,8 +1,8 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
@@ -49,9 +49,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 5.15.19+kde+r7-1
+    packages:
+      - qt5-location-5.15.19+kde+r7-1-x86_64.pkg.tar.zst
+    debug:
+      - qt5-location-debug-5.15.19+kde+r7-1-x86_64.pkg.tar.zst
   galaxy:
     version: 5.15.18+kde+r7-2
     packages:

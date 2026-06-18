@@ -12,7 +12,8 @@
 
 pkg/
 src/
-
+kde-qtlocation/
+qtlocation-mapboxgl/
 
 # ---> Archives
 *.7z
