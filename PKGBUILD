@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=8.1.2
-pkgrel=5.2
+pkgrel=5.3
 epoch=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
@@ -92,7 +92,7 @@ makedepends=(
   avisynthplus
   clang
   ffnvcodec-headers
-  frei0r-plugins
+  #frei0r-plugins
   git
   ladspa
   mesa
@@ -145,7 +145,6 @@ build() {
     --enable-cuda-llvm \
     --enable-lto \
     --enable-fontconfig \
-    --enable-frei0r \
     --enable-gmp \
     --enable-gnutls \
     --enable-gpl \
@@ -208,6 +207,7 @@ build() {
     --enable-vapoursynth \
     --enable-version3 \
     --enable-vulkan
+#    --enable-frei0r \
   make
   make tools/qt-faststart
   make doc/ff{mpeg,play}.1
