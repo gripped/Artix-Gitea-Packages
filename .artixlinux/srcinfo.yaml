@@ -41,4 +41,4 @@ pkgname:
       - libavformat.so
       - libavutil.so
       - libswresample.so
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
