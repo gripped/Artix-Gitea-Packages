@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-video-tdfx
   pkgdesc: XLibre fork of tdfx video driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-video-tdfx
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 07441d1c89aba23be11500c011891cc57067eb823b1a6618612533b1beb897c3
 pkgname:
   - name: xlibre-video-tdfx
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
