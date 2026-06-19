@@ -1,9 +1,9 @@
 ---
-version: 2026.2-1
+version: 2026.3-1
 pkgbase:
   name: mullvad-vpn
   pkgdesc: Mullvad VPN client
-  pkgver: 2026.2
+  pkgver: 2026.3
   pkgrel: 1
   url: https://www.mullvad.net
   arch:
@@ -24,7 +24,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/mullvad/mullvadvpn-app.git#tag=2026.2?signed
+    - git+https://github.com/mullvad/mullvadvpn-app.git#tag=2026.3?signed
     - git+https://github.com/mullvad/mullvadvpn-app-binaries.git
     - git+https://github.com/mullvad/wireguard-go.git
     - mullvad-vpn.sh
@@ -36,7 +36,7 @@ pkgbase:
     - 1D0026CBD1F1858DF8DB54DFCB87E2B919A6454C
     - 049F58CC80D9C78452151EE6EF0CCD68D0E5B9B1
   b2sums:
-    - 1bf806c45958ab036d655de09ea972723a9b42fbe762b93ac3f0bb2bc9333c10461e2afc3c7cdc69c4639bf26b3f91e1f9aece923d6a9794b4446ecf1d6a0606
+    - 2844535b99a50d0b53f173db8b4c88a46a383d64a6a65c0f72676ecc94005f9315b0c8b18d402e39ddd77ef3e5f44aa4d11eddea762082ef86060e73c97d3eba
     - SKIP
     - SKIP
     - c3534bf98bc9c5977e14865a8b4e41bb509a42cb006f8ada3f11bdff704e347d132797425b95ca3f709308703ade5f3aa46e7e7c4ef5e73911f9de78df14b1a9
