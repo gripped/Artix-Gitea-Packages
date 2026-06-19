@@ -4,7 +4,7 @@
 
 pkgname=x265
 pkgver=4.2
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Open Source H265/HEVC video encoder'
 arch=(x86_64)
 url=https://www.x265.org/
