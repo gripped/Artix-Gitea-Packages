@@ -5,8 +5,8 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=spirv-headers
-pkgver=1.4.350.0
-pkgrel=1
+pkgver=1.4.350.1
+pkgrel=2
 epoch=1
 pkgdesc="SPIR-V header files and registry"
 url="https://www.khronos.org/spirv/"
