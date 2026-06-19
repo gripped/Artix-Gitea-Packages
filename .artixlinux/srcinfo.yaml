@@ -1,10 +1,10 @@
 ---
-version: 2.6.6-8
+version: 2.6.6-9
 pkgbase:
   name: fceux
   pkgdesc: Fast and ultra-compatible NES/Famicom emulator
   pkgver: 2.6.6
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/TASEmulators/fceux
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
     - glu
     - mesa-libgl
     - setconf
-    - scons
   depends:
     - gd
     - libarchive
@@ -32,4 +31,4 @@ pkgbase:
     - df1b8706f3639c52ec5905a542052ee0eb7c5a727c9ee27af7c9f53b2b9f97b0445c6c6ff9f9504cef51a90cddc97b08b7f92ee7882de1bfb2baf879eac613c1
 pkgname:
   - name: fceux
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
