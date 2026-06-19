@@ -1,10 +1,10 @@
 ---
-version: 2026.2-1
+version: 2026.2-2
 pkgbase:
   name: shaderc
   pkgdesc: Collection of tools, libraries and tests for shader compilation
   pkgver: 2026.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/google/shaderc
   arch:
     - x86_64
