@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-video-s3virge
   pkgdesc: XLibre fork of s3virge video driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-video-s3virge
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - eee7cf3dc9859e037dfa3bf82cc14cdbea4ccdf7813bd0f59a8a837886d68943
 pkgname:
   - name: xlibre-video-s3virge
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any

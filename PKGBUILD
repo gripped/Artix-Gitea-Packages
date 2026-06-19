@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-s3virge
 pkgver=25.0.0
-pkgrel=6
+pkgrel=7
 pkgdesc="XLibre fork of s3virge video driver"
 arch=(x86_64 aarch64)
 license=('X11')
