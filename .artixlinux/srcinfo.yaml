@@ -1,10 +1,10 @@
 ---
-version: 1:1.37.2-1
+version: 1:1.37.2-2
 pkgbase:
   name: fakeroot
   pkgdesc: Tool for simulating superuser privileges
   pkgver: 1.37.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://tracker.debian.org/pkg/fakeroot
   install: fakeroot.install
