@@ -1,9 +1,9 @@
 ---
-version: 1.1.2-1
+version: 1.1.3-1
 pkgbase:
   name: appstream
   pkgdesc: Provides a standard for creating app stores across distributions
-  pkgver: 1.1.2
+  pkgver: 1.1.3
   pkgrel: 1
   url: https://distributions.freedesktop.org/wiki/AppStream
   arch:
@@ -27,11 +27,12 @@ pkgbase:
     - curl
     - fontconfig
     - freetype2
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
+    - libblake3
     - libfyaml
+    - libgcc
     - librsvg
     - libstemmer
     - libxml2
@@ -39,12 +40,12 @@ pkgbase:
     - pango
     - zstd
   source:
-    - git+https://github.com/ximion/appstream#tag=v1.1.2?signed
+    - git+https://github.com/ximion/appstream#tag=v1.1.3?signed
     - update-appstream-cache.hook
   validpgpkeys:
     - D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB
   sha256sums:
-    - ddc40e0d569bc900eee1b6d35eb6d936901dacac632c37c46f0c3178289f00a3
+    - bdac66f1dfb34d56409b16e41592e0fe49c13711d6281288cc57923a977e6e78
     - edc632e4a76ebe5efc76a56fe5f797e5c981cca6f2f0111c7ce0170d1330c788
 pkgname:
   - name: appstream
@@ -52,8 +53,9 @@ pkgname:
     pkgdesc: Qt6 interface for AppStream
     depends:
       - appstream
-      - gcc-libs
       - glib2
       - glibc
+      - libgcc
+      - libstdc++
       - qt6-base
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
