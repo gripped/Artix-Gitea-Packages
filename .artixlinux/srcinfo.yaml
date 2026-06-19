@@ -1,0 +1,23 @@
+---
+version: 20260619-1
+pkgbase:
+  name: tuned-openrc
+  pkgdesc: openrc service script for pipewire
+  pkgver: 20260619
+  pkgrel: 1
+  url: https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-apps/tuned
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL-2.0-only
+  depends:
+    - tuned
+  source:
+    - tuned.initd
+  sha256sums:
+    - ee234417a3db82a1129a8fffccf3028da97ee21fbf802ecdc0e21fbbe5145883
+pkgname:
+  - name: tuned-openrc
+# generated with artixpkg 0.38.5-1-any
