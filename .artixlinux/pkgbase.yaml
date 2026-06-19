@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260619-2
+    version: 20260619-1
     packages:
-      - tuned-openrc-20260619-2-any.pkg.tar.zst
+      - tuned-openrc-20260619-1-any.pkg.tar.zst
     debug: []

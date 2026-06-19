@@ -2,7 +2,7 @@
 
 pkgname=tuned-openrc
 pkgver=20260619
-pkgrel=2
+pkgrel=1
 pkgdesc="openrc service script for tuned"
 arch=('any')
 url="https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-apps/tuned"

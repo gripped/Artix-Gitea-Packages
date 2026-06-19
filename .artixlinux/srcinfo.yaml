@@ -1,10 +1,10 @@
 ---
-version: 20260619-2
+version: 20260619-1
 pkgbase:
   name: tuned-openrc
   pkgdesc: openrc service script for tuned
   pkgver: 20260619
-  pkgrel: 2
+  pkgrel: 1
   url: https://gitweb.gentoo.org/repo/gentoo.git/tree/sys-apps/tuned
   arch:
     - any
