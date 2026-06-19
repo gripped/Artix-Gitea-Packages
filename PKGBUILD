@@ -2,7 +2,7 @@
 
 pkgname=libdrm
 pkgver=2.4.134
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Userspace interface to kernel DRM services"
 url="https://dri.freedesktop.org/"
 arch=(x86_64)
@@ -31,9 +31,9 @@ build() {
   artix-meson $pkgname-$pkgver build \
     -D udev=true \
     -D etnaviv=disabled \
-    -D freedreno=disabled \
+    -D freedreno=enabled \
     -D vc4=disabled \
-    -D omap=disabled \
+    -D omap=enabled \
     -D exynos=disabled \
     -D tegra=disabled \
     -D valgrind=disabled \
