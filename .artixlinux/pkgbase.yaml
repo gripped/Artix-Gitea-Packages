@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2:8.1.2-5.3
+    version: 2:8.1.2-6
     packages:
-      - ffmpeg-2:8.1.2-5.3-x86_64.pkg.tar.zst
+      - ffmpeg-2:8.1.2-6-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2:8.1.1-2
