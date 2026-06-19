@@ -2,8 +2,8 @@
 # Contributor: Lex Black <autumn-wind@web.de>
 
 pkgname=labwc
-pkgver=0.20.0
-pkgrel=2
+pkgver=0.20.1
+pkgrel=1
 pkgdesc='stacking wayland compositor with look and feel from openbox'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
@@ -38,11 +38,11 @@ optdepends=(
   "xorg-xwayland: X11 application support"
 )
 source=("git+https://github.com/labwc/labwc#tag=${pkgver}")
-b2sums=('77a484ba476041614ffd363d626641df4704d672b2dc7369a98c3bfa40b98449c050e272ebd685c906f8bd108fbc6ce528f843d99e53504b1b57cea8b80ad1a4')
+b2sums=('c925f1b07ff5fc3d2acc47c14d1725ea0c4675ac408357afb0bd28ca8d04742765269bc03720086d3c3147037fa1e6b7bc88e033035a7d795f3d8f94fe446d46')
 
 
 build() {
-  artix-meson -Dman-pages=enabled -Dsystemd-session=disabled "$pkgname" build
+  artix-meson -Dsystemd-session=disabled -Dman-pages=enabled "$pkgname" build
   meson compile -C build
 }
 
