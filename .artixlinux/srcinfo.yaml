@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-6
+version: 25.0.0-7
 pkgbase:
   name: xlibre-video-rendition
   pkgdesc: XLibre fork of rendition video driver
   pkgver: 25.0.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/X11Libre/xf86-video-rendition
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 528a1ec41e17552d09f69718fca4568afb5574962a0927f9d2ec1ba3f49f75ca
 pkgname:
   - name: xlibre-video-rendition
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
