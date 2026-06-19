@@ -1,22 +1,22 @@
 ---
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+    debug: []
+  system-gremlins:
     version: 2.42.2-1
     packages:
       - util-linux-2.42.2-1-x86_64.pkg.tar.zst
       - util-linux-libs-2.42.2-1-x86_64.pkg.tar.zst
-    debug: []
-  system-gremlins:
-    version: null
-    packages: []
     debug: []
   system:
     version: 2.42.1-1
