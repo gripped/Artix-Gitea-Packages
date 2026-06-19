@@ -1,0 +1,62 @@
+---
+version: 2.27.0-1
+pkgbase:
+  name: tuned
+  pkgdesc: Daemon that performs monitoring and adaptive configuration of devices in the system
+  pkgver: 2.27.0
+  pkgrel: 1
+  url: https://github.com/redhat-performance/tuned
+  arch:
+    - any
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - desktop-file-utils
+  depends:
+    - ethtool
+    - gawk
+    - hdparm
+    - polkit
+    - perf
+    - python-configobj
+    - python-dbus
+    - python-gobject
+    - python-linux-procfs
+    - python-pyudev
+  source:
+    - https://github.com/redhat-performance/tuned/archive/v2.27.0/tuned-2.27.0.tar.gz
+    - gui-no-init-system.patch
+  sha512sums:
+    - 7471d073879a688da66e72c4f5c562d1a732d6bfb562d8c033874a8edbad2bab3cf3c7dc387270bf99ae6b1b35ffc451173122e32023116709567e529e09dc52
+    - 99305ef167894decb48a8cae54e2eef7e7b809449c51fd3c48bd31bc95f1dc7540eb33bf1c25693761fc13f57e20c9dda7dc305f4d9a9bcb02f6950ac4d1eab4
+pkgname:
+  - name: tuned
+    optdepends:
+      - 'virt-what: Virtual machine detection'
+      - 'systemtap: Detailed system monitoring'
+      - 'tuned-ppd: power-profiles-daemon api translation'
+      - 'wireless_tools: Wireless device power management'
+      - 'x86_energy_perf_policy: Energy Performance Bias (EPB) support'
+    backup:
+      - etc/tuned/active_profile
+      - etc/tuned/bootcmdline
+      - etc/tuned/cpu-partitioning-powersave-variables.conf
+      - etc/tuned/cpu-partitioning-variables.conf
+      - etc/tuned/post_loaded_profile
+      - etc/tuned/profile_mode
+      - etc/tuned/realtime-variables.conf
+      - etc/tuned/realtime-virtual-guest-variables.conf
+      - etc/tuned/realtime-virtual-host-variables.conf
+      - etc/tuned/tuned-main.conf
+  - name: tuned-ppd
+    pkgdesc: Daemon that allows applications to easily transition to TuneD from power-profiles-daemon (PPD)
+    depends:
+      - tuned
+      - python-pyinotify
+    provides:
+      - power-profiles-daemon
+    conflicts:
+      - power-profiles-daemon
+    backup:
+      - etc/tuned/ppd.conf
+# generated with artixpkg 0.38.5-1-any

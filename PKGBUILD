@@ -1,0 +1,75 @@
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Contributor: Manuel Hüsers <aur@huesers.de>
+# Contributor: Iwan Timmer <irtimmer@gmail.com>
+# Contributor: Timothée Ravier <tim at siosm dot fr>
+# Contributor: Tom <reztho at archlinux dot org>
+
+pkgbase=tuned
+pkgname=("${pkgbase}" "${pkgbase}-ppd")
+pkgver=2.27.0
+pkgrel=1
+pkgdesc='Daemon that performs monitoring and adaptive configuration of devices in the system'
+arch=('any')
+url="https://github.com/redhat-performance/${pkgbase}"
+license=('GPL-2.0-or-later')
+depends=('ethtool' 'gawk' 'hdparm' 'polkit' 'perf' 'python-configobj'
+         'python-dbus' 'python-gobject' 'python-linux-procfs' 'python-pyudev')
+makedepends=('desktop-file-utils')
+source=("https://github.com/redhat-performance/${pkgbase}/archive/v${pkgver}/${pkgbase}-${pkgver}.tar.gz"
+	'gui-no-init-system.patch')
+sha512sums=('7471d073879a688da66e72c4f5c562d1a732d6bfb562d8c033874a8edbad2bab3cf3c7dc387270bf99ae6b1b35ffc451173122e32023116709567e529e09dc52'
+            '99305ef167894decb48a8cae54e2eef7e7b809449c51fd3c48bd31bc95f1dc7540eb33bf1c25693761fc13f57e20c9dda7dc305f4d9a9bcb02f6950ac4d1eab4')
+
+prepare() {
+  cd "${pkgbase}-${pkgver}"
+
+  patch -p1 < "$srcdir/gui-no-init-system.patch"
+
+  sed -i 's|/sbin/|/bin/|g' tuned.service tuned-gui.py tuned-gui.desktop tuned/ppd/tuned-ppd.service
+}
+
+package_tuned() {
+  optdepends=(
+    'virt-what: Virtual machine detection'
+    'systemtap: Detailed system monitoring'
+    'tuned-ppd: power-profiles-daemon api translation'
+    'wireless_tools: Wireless device power management'
+    'x86_energy_perf_policy: Energy Performance Bias (EPB) support')
+  backup=(
+    'etc/tuned/active_profile'
+    'etc/tuned/bootcmdline'
+    'etc/tuned/cpu-partitioning-powersave-variables.conf'
+    'etc/tuned/cpu-partitioning-variables.conf'
+    'etc/tuned/post_loaded_profile'
+    'etc/tuned/profile_mode'
+    'etc/tuned/realtime-variables.conf'
+    'etc/tuned/realtime-virtual-guest-variables.conf'
+    'etc/tuned/realtime-virtual-host-variables.conf'
+    'etc/tuned/tuned-main.conf')
+
+  cd "${pkgbase}-${pkgver}"
+
+  make DESTDIR="${pkgdir}" SBINDIR="/usr/bin" LIBEXECDIR="/usr/lib" install
+  rm -rv "${pkgdir}"/{run,var}
+
+  # make SYSTEMD_DISABLED=1 doesn't actually work :P
+  rm -rv "$pkgdir/usr/lib/systemd"
+  rm -rv "$pkgdir/usr/lib/python3.14/site-packages/tuned/plugins/plugin_systemd.py"
+
+  python -m compileall -d /usr/lib "${pkgdir}/usr/lib"
+  python -O -m compileall -d /usr/lib "${pkgdir}/usr/lib"
+}
+
+package_tuned-ppd() {
+  pkgdesc='Daemon that allows applications to easily transition to TuneD from power-profiles-daemon (PPD)'
+  depends=('tuned' 'python-pyinotify')
+  provides=('power-profiles-daemon')
+  conflicts=('power-profiles-daemon')
+  backup=('etc/tuned/ppd.conf')
+
+  cd "${pkgbase}-${pkgver}"
+
+  make DESTDIR="${pkgdir}" SBINDIR="/usr/bin" LIBEXECDIR="/usr/lib" install-ppd
+
+  rm -rf "$pkgdir/usr/lib/systemd"
+}
