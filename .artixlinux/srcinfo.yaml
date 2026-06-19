@@ -1,0 +1,28 @@
+---
+version: 20260619-1
+pkgbase:
+  name: tuned-dinit
+  pkgdesc: dinit service scripts for tuned
+  pkgver: 20260619
+  pkgrel: 1
+  url: https://auris.artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-galaxy
+  license:
+    - 0BSD
+  depends:
+    - tuned
+    - dinit
+  provides:
+    - init-tuned
+  conflicts:
+    - init-tuned
+  source:
+    - tuned
+  sha256sums:
+    - c903506fd838535116a544d7f6cb5c944edbb4c1123b3614f8a893d552794eb8
+pkgname:
+  - name: tuned-dinit
+# generated with artixpkg 0.38.5-1-any

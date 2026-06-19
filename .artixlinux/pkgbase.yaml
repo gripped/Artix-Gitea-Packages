@@ -3,9 +3,9 @@ team: null
 actions:
   addRepo: null
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -56,4 +56,9 @@ repos:
   galaxy:
     version: null
     packages: []
+    debug: []
+  "null":
+    version: 20260619-1
+    packages:
+      - tuned-dinit-20260619-1-any.pkg.tar.zst
     debug: []
