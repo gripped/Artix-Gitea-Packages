@@ -1,9 +1,9 @@
 ---
-version: 0.5.14-1
+version: 0.5.15-1
 pkgbase:
   name: wireplumber
   pkgdesc: Session / policy manager implementation for PipeWire
-  pkgver: 0.5.14
+  pkgver: 0.5.15
   pkgrel: 1
   url: https://pipewire.pages.freedesktop.org/wireplumber/
   arch:
@@ -30,13 +30,13 @@ pkgbase:
     - python-sphinx
     - python-sphinx_rtd_theme
   source:
-    - git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#tag=0.5.14
+    - git+https://gitlab.freedesktop.org/pipewire/wireplumber.git#tag=0.5.15
   b2sums:
-    - bdf2b17806b2ac30f4f40b4e1e35a9aecdf0660b24f75978e546e59d525bf4a97ad079a13d5b08d76d2d79d8b89f7093b777c5d92590ce2681490e3e114938e7
+    - 303838f09331f4c551d6a14b6d7c7e7cf91e6f58f90214397b07010ed0ab652a6cbde2ef9492bf6522a08a33b60f82ed3715e073ca0fb9602a76623ea6159932
 pkgname:
   - name: wireplumber
     depends:
-      - libwireplumber=0.5.14-1
+      - libwireplumber=0.5.15-1
       - glibc
       - libgcc
       - libglib-2.0.so
@@ -66,4 +66,4 @@ pkgname:
       - libwireplumber-0.5.so
   - name: wireplumber-docs
     pkgdesc: Session / policy manager implementation for PipeWire - documentation
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
