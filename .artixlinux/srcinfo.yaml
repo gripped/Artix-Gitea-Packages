@@ -1,0 +1,36 @@
+---
+version: 0.16.0-1
+pkgbase:
+  name: ruby-pry
+  pkgdesc: A runtime developer console and IRB alternative with powerful introspection capabilities
+  pkgver: 0.16.0
+  pkgrel: 1
+  url: https://pry.github.io/
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+    - ruby-irb
+    - ruby-rake
+    - ruby-rspec
+    - ruby-yard
+  makedepends:
+    - git
+  depends:
+    - ruby
+    - ruby-coderay
+    - ruby-method_source
+    - ruby-reline
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/pry/pry.git#tag=v0.16.0
+  sha512sums:
+    - 05d3d27a4e69fb6708b4319bcb120be06aedaf50175bf880b9c4c3f527139dfa251b06d277181bedf5ba06d5e99075ec49658064f16bb0be17cff46180c5ce31
+  b2sums:
+    - c9400f37fa0af300a9dc28eaf25f0fa575796bdfc9e5ccf4a3d312b4649f26c1e9e05787f2517f70757dd5d35e968ef6e60db4478e027d723e7c0a7345203aec
+pkgname:
+  - name: ruby-pry
+# generated with artixpkg 0.38.5-1-any
