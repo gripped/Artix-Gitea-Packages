@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-ati
 pkgver=25.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc="XLibre fork of X.Org ati video driver"
 arch=(x86_64 aarch64)
 _pkgname="${pkgname//xlibre/xf86}"
@@ -10,7 +10,7 @@ url="https://github.com/X11Libre/${_pkgname}"
 depends=("xlibre-xserver>=${pkgver%.*}" 'glibc')
 makedepends=("xlibre-xserver-devel>=${pkgver%.*}" 'xorgproto')
 conflicts=("${_pkgname}")
-provides=("${_pkgname}")
+provides=("${pkgname//xlibre/xlibre-xf86}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
 depends+=('mesa' 'libpciaccess' 'libdrm')
