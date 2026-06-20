@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-7
+version: 25.0.0-8
 pkgbase:
   name: xlibre-video-nouveau
   pkgdesc: XLibre fork of X.Org Open Source 3D acceleration driver for nVidia cards
   pkgver: 25.0.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/X11Libre/xf86-video-nouveau
   arch:
     - x86_64
@@ -22,7 +22,7 @@ pkgbase:
     - mesa
     - libdrm
   provides:
-    - xf86-video-nouveau
+    - xlibre-xf86-video-nouveau
   conflicts:
     - xf86-video-nouveau
   source:

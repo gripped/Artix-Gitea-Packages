@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 25.0.0-7
+    version: 25.0.0-8
     packages:
-      - xlibre-video-nouveau-25.0.0-7-x86_64.pkg.tar.zst
+      - xlibre-video-nouveau-25.0.0-8-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 25.0.0-6

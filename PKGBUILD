@@ -2,7 +2,7 @@
 
 pkgname=xlibre-video-nouveau
 pkgver=25.0.0
-pkgrel=7
+pkgrel=8
 pkgdesc="XLibre fork of X.Org Open Source 3D acceleration driver for nVidia cards"
 arch=(x86_64 aarch64)
 license=('MIT')
@@ -11,7 +11,7 @@ url="https://github.com/X11Libre/${_pkgname}"
 depends=("xlibre-xserver>=${pkgver%.*}" 'glibc')
 makedepends=("xlibre-xserver-devel>=${pkgver%.*}" 'xorgproto')
 conflicts=("${_pkgname}")
-provides=("${_pkgname}")
+provides=("${pkgname//xlibre/xlibre-xf86}")
 source=("${url}/archive/refs/tags/xlibre-${_pkgname}-${pkgver}.tar.gz")
 groups=('xlibre-drivers')
 depends+=('mesa' 'libdrm')
