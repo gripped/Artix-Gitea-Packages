@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='260.2'
+_tag='261'
 
 pkgbase=udev
 pkgname=(
@@ -54,10 +54,10 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-udev-standalone-install.patch
 )
-sha512sums=('ef2268a157abe0cf1678e3eb6bb45ba2e1083f4911176a1099b2ab7bae2eecb03d48bc2057139d13740f79835bcb0cdfd762451563f29405a53685e1c49bc236'
+sha512sums=('2283e0e05eedd60ade44e64a0b820c55e8e3ed7bf67a8df79185d63facf577487df75c081c35729719ebacffbd48ecb967cfd25656987177d1044636ae3d8361'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            'b683608daf50bc3b6e4c4e9bf774ff18b68328a69b5b5ca2d488f740ed616bc44c8a2722594b19806dbcb61abb327e44a8cd636d79c71dcbb642c973cd4cf0b0')
+            '43f77dad07b4926d12731c1ff85d2439a6accb067d267bff2923a080ed8daba194d78b6893d0e75f222dd0a720817b5f39052c3d94d4f68f4ca0052bf87f7ead')
 
 _backports=(
     # hwdb/keyboard: fix match for for X+ Piccolo, again
@@ -222,6 +222,7 @@ build() {
         -Dnsresourced=false
         -Dmountfsd=false
         -Dnspawn=disabled
+        -Dimds=disabled
     )
 
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
