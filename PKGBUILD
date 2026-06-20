@@ -1,0 +1,51 @@
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Julien Nicoulaud <julien.nicoulaud@gmail.com>
+
+pkgname=zellij
+pkgver=0.44.3
+pkgrel=1
+pkgdesc="A terminal multiplexer"
+arch=('x86_64' 'i686' 'armv6h' 'armv7h')
+url="https://zellij.dev"
+license=('MIT')
+depends=(curl libcurl.so
+         glibc # libc.so libm.so
+         libgcc libgcc_s.so
+         zlib libz.so)
+makedepends=(cargo
+             mandown)
+options=(!lto)
+source=("${pkgname}-${pkgver}.tar.gz::https://github.com/zellij-org/${pkgname}/archive/v${pkgver}.tar.gz")
+sha512sums=('5b5f14f8ed6ae9aea962e163b05504b8f999f004ddbf61f7ed789670e234d829b86d000385aec052d73097cbe0dfb23cff6beb191c7291b525b6e9f52f908863')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  cargo fetch --locked --target host-tuple
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  cargo build --release --frozen
+  ./target/release/zellij setup --generate-completion bash > target/zellij.bash
+  ./target/release/zellij setup --generate-completion elvish > target/zellij.elv
+  ./target/release/zellij setup --generate-completion fish > target/zellij.fish
+  ./target/release/zellij setup --generate-completion zsh > target/zellij.zsh
+  mandown docs/MANPAGE.md > assets/zellij.1
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  install -Dm755 target/release/zellij -t "${pkgdir}/usr/bin"
+  install -Dm644 GOVERNANCE.md README.md -t "${pkgdir}/usr/share/doc/zellij"
+  install -Dm644 LICENSE.md -t "${pkgdir}/usr/share/licenses/zellij"
+  install -Dm644 target/zellij.bash "${pkgdir}/usr/share/bash-completion/completions/zellij"
+  install -Dm644 target/zellij.elv "${pkgdir}/usr/share/elvish/lib/zellij.elv"
+  install -Dm644 target/zellij.fish "${pkgdir}/usr/share/fish/vendor_completions.d/zellij.fish"
+  install -Dm644 target/zellij.zsh "${pkgdir}/usr/share/zsh/site-functions/_zellij"
+  install -Dm644 assets/zellij.1 "${pkgdir}/usr/share/man/man1/zellij.1"
+  install -Dm644 assets/zellij.desktop "${pkgdir}/usr/share/applications/zellij.desktop"
+  install -Dm644 assets/logo.png "${pkgdir}/usr/share/pixmaps/zellij.png"
+}
+
+# vim: ts=2 sw=2 et:

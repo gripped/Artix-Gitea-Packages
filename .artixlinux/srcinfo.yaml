@@ -1,0 +1,35 @@
+---
+version: 0.44.3-1
+pkgbase:
+  name: zellij
+  pkgdesc: A terminal multiplexer
+  pkgver: 0.44.3
+  pkgrel: 1
+  url: https://zellij.dev
+  arch:
+    - x86_64
+    - i686
+    - armv6h
+    - armv7h
+  license:
+    - MIT
+  makedepends:
+    - cargo
+    - mandown
+  depends:
+    - curl
+    - libcurl.so
+    - glibc
+    - libgcc
+    - libgcc_s.so
+    - zlib
+    - libz.so
+  options:
+    - '!lto'
+  source:
+    - zellij-0.44.3.tar.gz::https://github.com/zellij-org/zellij/archive/v0.44.3.tar.gz
+  sha512sums:
+    - 5b5f14f8ed6ae9aea962e163b05504b8f999f004ddbf61f7ed789670e234d829b86d000385aec052d73097cbe0dfb23cff6beb191c7291b525b6e9f52f908863
+pkgname:
+  - name: zellij
+# generated with artixpkg 0.38.5-1-any
