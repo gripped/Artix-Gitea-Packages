@@ -8,8 +8,8 @@
 
 pkgbase=uv
 pkgname=("$pkgbase" "python-$pkgbase"{,-build})
-pkgver=0.11.21
-pkgrel=2
+pkgver=0.11.22
+pkgrel=1
 pkgdesc='An extremely fast Python package installer and resolver written in Rust'
 arch=('x86_64')
 url="https://github.com/astral-sh/uv"
@@ -31,7 +31,7 @@ makedepends=(
 )
 options=('!lto')
 source=("git+$url.git#tag=$pkgver")
-sha256sums=('1a91a378c4a98ebec5a66fe75dbba03c5aa2a027c35ff8813a7645e97497577f')
+sha256sums=('7155e1e0fc4657e5d8f9a70be3bab28e3bb92e3b7b1ac9c9d307201f6b7e0094')
 
 prepare() {
   cd "$pkgbase"
@@ -44,9 +44,6 @@ prepare() {
 build() {
   cd "$pkgbase"
   local tripple="$(rustc --print host-tuple)"
-
-  # https://github.com/gnzlbg/jemallocator/issues/170
-  [[ $CARCH == "aarch64" ]] && export JEMALLOC_SYS_WITH_LG_PAGE=16
 
   export ZSTD_SYS_USE_PKG_CONFIG=1
   export JEMALLOC_OVERRIDE=/usr/lib/libjemalloc.so
