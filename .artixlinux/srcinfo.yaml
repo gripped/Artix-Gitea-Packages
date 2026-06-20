@@ -1,10 +1,10 @@
 ---
-version: 4.0.3-1
+version: 4.0.3-2
 pkgbase:
   name: libical
   pkgdesc: An open source reference implementation of the icalendar data type and serialization format
   pkgver: 4.0.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/libical/libical
   arch:
     - x86_64
@@ -34,4 +34,15 @@ pkgbase:
     - 520d4104b7e2fb3ca1d41cf7918dc5e6237d3651cb6f201207f64957fe42fe9cd0adbcd22b1e15c6acd0826c93d26de29dc1121c3ede5093bbc2725013b80b9a
 pkgname:
   - name: libical
+    provides:
+      - libical.so
+      - libical-glib.so
+      - libical_cxx.so
+      - libicalss.so
+      - libicalss_cxx.so
+      - libicalvcal.so
+      - libicalvcard.so
+  - name: libical-docs
+    pkgdesc: An open source reference implementation of the icalendar data type and serialization format (documentation)
+    depends: []
 # generated with artixpkg 0.38.5-1-any
