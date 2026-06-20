@@ -1,9 +1,9 @@
 ---
-version: 5.1.19-1
+version: 5.1.20-1
 pkgbase:
   name: fcitx5
-  pkgdesc: Next generation of fcitx
-  pkgver: 5.1.19
+  pkgdesc: Next generation of fcitx, cross-platform input method framework
+  pkgver: 5.1.20
   pkgrel: 1
   url: https://github.com/fcitx/fcitx5
   arch:
@@ -17,6 +17,7 @@ pkgbase:
     - extra-cmake-modules
     - ninja
     - nlohmann-json
+    - plasma-wayland-protocols
     - wayland-protocols
   depends:
     - cairo
@@ -38,13 +39,13 @@ pkgbase:
   noextract:
     - en_dict-20121020.tar.gz
   source:
-    - git+https://github.com/fcitx/fcitx5.git#tag=5.1.19?signed
+    - git+https://github.com/fcitx/fcitx5.git#tag=5.1.20?signed
     - https://download.fcitx-im.org/data/en_dict-20121020.tar.gz
   validpgpkeys:
     - 2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9
   sha512sums:
-    - 5f62b9330477cb4c1754e2dc7738c2b81bd5fa9554913560b10559e7a67f1e2f4751edcdeed6ee625357aac3b4a089e252245e3b0fd5ea2ff47425267f4d631a
+    - 981a067a83a9aa9aba789c60ff11b88603d12c203c9f6ec86e08f3c9cafd088882faac3082c595762a804b537bafee0f51cde635f7597b312cf89d417c5b89a6
     - 8418bd02492bfd786c0fab93be4400ef027ec8e9fac02220cc1f653f5eb67f54573a6a84a15baba19bb34ab892745c87df16499d6304ea75009131e2ab3b97f2
 pkgname:
   - name: fcitx5
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
