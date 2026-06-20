@@ -1,7 +1,7 @@
-From bd7bb56706f3190d9f1d85561a05d794240cd425 Mon Sep 17 00:00:00 2001
+From 3f9648e89ecfd382e7760a630be70bd074cc13d4 Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Fri, 15 May 2026 14:54:41 +0200
-Subject: [PATCH 1/1] esys-utils standalone install
+Date: Sat, 20 Jun 2026 13:08:22 +0200
+Subject: [PATCH] esys-utils standalone install
 
 ---
  factory/templates/meson.build  |  2 ++
@@ -42,10 +42,10 @@ index 0f53217a48..071cfc9547 100644
  
  if conf.get('ENABLE_NSS') == 1
 diff --git a/meson.build b/meson.build
-index 3672005d75..609f0d94a8 100644
+index ff11c0c10c..c820bc7c83 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -121,7 +121,7 @@ includedir = prefixdir / get_option('includedir')
+@@ -128,7 +128,7 @@ includedir = prefixdir / get_option('includedir')
  datadir = prefixdir / get_option('datadir')
  localstatedir = '/' / get_option('localstatedir')
  
@@ -54,7 +54,7 @@ index 3672005d75..609f0d94a8 100644
  libexecdir_to_bin = '../../bin/'
  pkglibdir = libdir / 'systemd'
  
-@@ -169,7 +169,7 @@ catalogdir = libexecdir / 'catalog'
+@@ -176,7 +176,7 @@ catalogdir = libexecdir / 'catalog'
  kerneldir = prefixdir / 'lib/kernel'
  kernelinstalldir = kerneldir / 'install.d'
  factorydir = datadir / 'factory'
@@ -63,7 +63,7 @@ index 3672005d75..609f0d94a8 100644
  testsdir = libexecdir / 'tests'
  unittestsdir = testsdir / 'unit-tests'
  testdata_dir = testsdir / 'testdata'
-@@ -2732,6 +2732,7 @@ ukify = custom_target(
+@@ -2398,6 +2398,7 @@ ukify = custom_target(
          install : want_ukify,
          install_mode : 'rwxr-xr-x',
          depends : ukify_depends,
@@ -71,7 +71,7 @@ index 3672005d75..609f0d94a8 100644
          install_dir : bindir)
  if want_ukify
          public_programs += ukify
-@@ -2821,6 +2822,21 @@ install_data('LICENSE.GPL2',
+@@ -2487,6 +2488,21 @@ install_data('LICENSE.GPL2',
  install_subdir('LICENSES',
                 install_dir : docdir)
  
@@ -93,7 +93,7 @@ index 3672005d75..609f0d94a8 100644
  #####################################################################
  
  # Ensure that changes to the docs/ directory do not break the
-@@ -3199,6 +3215,7 @@ foreach tuple : [
+@@ -2902,6 +2918,7 @@ foreach tuple : [
          ['fuzz tests',             want_fuzz_tests],
          ['install tests',          install_tests],
          ['link-udev-shared',       get_option('link-udev-shared')],
@@ -102,10 +102,10 @@ index 3672005d75..609f0d94a8 100644
          ['link-networkd-shared',   get_option('link-networkd-shared')],
          ['link-timesyncd-shared',  get_option('link-timesyncd-shared')],
 diff --git a/meson_options.txt b/meson_options.txt
-index c1af7ce237..7c50067240 100644
+index b5856dd8f8..5a519ac481 100644
 --- a/meson_options.txt
 +++ b/meson_options.txt
-@@ -568,3 +568,5 @@ option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
+@@ -576,3 +576,5 @@ option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
  
  option('default-oci-registry', type : 'string', value : 'docker.io',
         description : 'Default OCI registry name')
@@ -150,10 +150,10 @@ index ae814f1b29..9706c0a08d 100644
          },
  ]
 diff --git a/src/boot/meson.build b/src/boot/meson.build
-index 06c8146a9e..7009fa8e53 100644
+index 6da1ae6e2f..64fb5ab3ea 100644
 --- a/src/boot/meson.build
 +++ b/src/boot/meson.build
-@@ -417,7 +417,7 @@ foreach archspec : efi_archspecs
+@@ -429,7 +429,7 @@ foreach archspec : efi_archspecs
          }
  
          efi_elf_binaries += executable(
@@ -162,7 +162,7 @@ index 06c8146a9e..7009fa8e53 100644
                  sources : [systemd_boot_sources, version_h],
                  link_with : libefi,
                  name_suffix : 'elf',
-@@ -439,7 +439,7 @@ endforeach
+@@ -451,7 +451,7 @@ endforeach
  
  foreach efi_elf_binary : efi_elf_binaries
          name = efi_elf_binary.name()
@@ -171,7 +171,7 @@ index 06c8146a9e..7009fa8e53 100644
  
          # For the addon, given it's empty, we need to explicitly reserve space in the header to account for
          # the sections that ukify will add.
-@@ -456,7 +456,7 @@ foreach efi_elf_binary : efi_elf_binaries
+@@ -468,7 +468,7 @@ foreach efi_elf_binary : efi_elf_binaries
                  input : efi_elf_binary,
                  install : true,
                  install_dir : bootlibdir,
@@ -180,30 +180,31 @@ index 06c8146a9e..7009fa8e53 100644
                  command : [
                          elf2efi_py,
                          f'--version-major=@project_major_version@',
-@@ -485,4 +485,4 @@ foreach efi_elf_binary : efi_elf_binaries
+@@ -497,4 +497,4 @@ foreach efi_elf_binary : efi_elf_binaries
               suite : 'boot')
  endforeach
  
 -alias_target('systemd-boot', boot_targets)
 +alias_target('eboot', boot_targets)
 diff --git a/src/bootctl/meson.build b/src/bootctl/meson.build
-index 8cfbb7c14a..52b06de737 100644
+index 06137bdae0..637697c1e2 100644
 --- a/src/bootctl/meson.build
 +++ b/src/bootctl/meson.build
-@@ -24,5 +24,8 @@ executables += [
+@@ -25,6 +25,9 @@ executables += [
                  'sources' : bootctl_sources,
                  'link_with' : boot_link_with,
-                 'dependencies' : [libopenssl],
+                 'dependencies' : [libopenssl_cflags],
 +                'install' : true,
 +                'install_tag' : 'eboot',
 +                'install_dir' : bindir,
          },
- ]
+         test_template + {
+                 'sources' : files(
 diff --git a/src/core/meson.build b/src/core/meson.build
-index e703cc3728..d6719d2c9c 100644
+index af50a2a4fa..c24a37b725 100644
 --- a/src/core/meson.build
 +++ b/src/core/meson.build
-@@ -295,11 +295,6 @@ if install_sysconfdir
+@@ -304,11 +304,6 @@ if install_sysconfdir
                          install_dir : sysconfdir / 'xdg/systemd')
  endif
  
@@ -344,7 +345,7 @@ index 2a7728c295..9ef5f1729a 100644
          test_template + {
                  'sources' : files('test-offline-passwd.c') +
 diff --git a/sysusers.d/meson.build b/sysusers.d/meson.build
-index 84fadfe3f7..22dfd09c05 100644
+index 3c2e450a18..bc97bfd6d1 100644
 --- a/sysusers.d/meson.build
 +++ b/sysusers.d/meson.build
 @@ -7,12 +7,11 @@ files = [['README',                true],
@@ -360,8 +361,8 @@ index 84fadfe3f7..22dfd09c05 100644
 -            ['systemd-journal.conf',  true],
              ['systemd-network.conf',  conf.get('ENABLE_NETWORKD') == 1],
              ['systemd-resolve.conf',  conf.get('ENABLE_RESOLVE') == 1],
-             ['systemd-timesync.conf', conf.get('ENABLE_TIMESYNCD') == 1]]
-@@ -24,5 +23,6 @@ foreach tuple : in_files
+             ['systemd-timesync.conf', conf.get('ENABLE_TIMESYNCD') == 1],
+@@ -25,5 +24,6 @@ foreach tuple : in_files
                  output: file,
                  command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
                  install : enable_sysusers and tuple[1],
@@ -369,7 +370,7 @@ index 84fadfe3f7..22dfd09c05 100644
                  install_dir : sysusersdir)
  endforeach
 diff --git a/test/meson.build b/test/meson.build
-index 7bf557cc19..1c192c9134 100644
+index fd3dba3a60..4755961f61 100644
 --- a/test/meson.build
 +++ b/test/meson.build
 @@ -17,7 +17,7 @@ if conf.get('ENABLE_SYSUSERS') == 1
@@ -402,13 +403,13 @@ index 7036c12b7c..80120b04b4 100644
 -L$ /var/log/README - - - - ../..{{DOC_DIR}}/README.logs
 -{% endif %}
 diff --git a/tmpfiles.d/meson.build b/tmpfiles.d/meson.build
-index c8f9015b2e..8398efbca8 100644
+index 83839dd627..2e6e521223 100644
 --- a/tmpfiles.d/meson.build
 +++ b/tmpfiles.d/meson.build
-@@ -6,15 +6,12 @@ endif
- 
+@@ -7,15 +7,12 @@ endif
  files = [['README'                                  ],
           ['home.conf'                               ],
+          ['root.conf'                               ],
 -         ['journal-nocow.conf'                      ],
           ['portables.conf',       'ENABLE_PORTABLED'],
           ['systemd-network.conf', 'ENABLE_NETWORKD' ],
@@ -421,7 +422,7 @@ index c8f9015b2e..8398efbca8 100644
           ['tmp.conf'                                ],
           ['x11.conf'                                ],
           ['provision.conf'                          ],
-@@ -23,7 +20,7 @@ files = [['README'                                  ],
+@@ -24,7 +21,7 @@ files = [['README'                                  ],
  
  foreach f : files
          if f.length() == 1 or conf.get(f[1]) == 1
@@ -430,7 +431,7 @@ index c8f9015b2e..8398efbca8 100644
          else
                  message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
                          .format(f[0], f[1], conf.get(f[1], 0)))
-@@ -34,12 +31,10 @@ in_files = [
+@@ -35,12 +32,10 @@ in_files = [
          ['20-systemd-shell-extra.conf',   'LINK_SHELL_EXTRA_DROPIN'      ],
          ['20-systemd-osc-context.conf',   'LINK_OSC_CONTEXT_DROPIN'      ],
          ['20-systemd-ssh-generator.conf', 'ENABLE_SSH_PROXY_CONFIG'      ],
@@ -443,7 +444,7 @@ index c8f9015b2e..8398efbca8 100644
          ['var.conf'                                                      ],
  ]
  
-@@ -50,6 +45,7 @@ foreach f : in_files
+@@ -51,6 +46,7 @@ foreach f : in_files
                          output: f[0],
                          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
                          install : true,
@@ -451,12 +452,12 @@ index c8f9015b2e..8398efbca8 100644
                          install_dir : tmpfilesdir)
          else
                  message('Not installing tmpfiles.d/@0@ because @1@ is @2@'
-@@ -58,7 +54,7 @@ foreach f : in_files
+@@ -59,7 +55,7 @@ foreach f : in_files
  endforeach
  
  if install_sysconfdir
 -        install_emptydir(sysconfdir / 'tmpfiles.d')
-+        install_emptydir(sysconfdir / 'tmpfiles.d', install_tag : 'etmpfiles')
++        install_emptydir(sysconfdir / 'tmpfiles.d', install_tag : 'etmpfiles',)
  endif
  
  subdir('user')
