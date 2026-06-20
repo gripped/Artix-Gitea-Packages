@@ -3,7 +3,7 @@
 # Maintainer: Tom Gundersen <teg@jklm.no>
 
 _pkgbase=systemd
-_tag='260.2'
+_tag='261'
 
 pkgname=lib32-udev
 pkgver="${_tag/[-~]/}"
@@ -45,8 +45,8 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
               '5C251B5FC54EB2F80F407AAAC54CA336CFEB557E') # Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-udev-standalone-install.patch)
-sha512sums=('ef2268a157abe0cf1678e3eb6bb45ba2e1083f4911176a1099b2ab7bae2eecb03d48bc2057139d13740f79835bcb0cdfd762451563f29405a53685e1c49bc236'
-            'b683608daf50bc3b6e4c4e9bf774ff18b68328a69b5b5ca2d488f740ed616bc44c8a2722594b19806dbcb61abb327e44a8cd636d79c71dcbb642c973cd4cf0b0')
+sha512sums=('2283e0e05eedd60ade44e64a0b820c55e8e3ed7bf67a8df79185d63facf577487df75c081c35729719ebacffbd48ecb967cfd25656987177d1044636ae3d8361'
+            '43f77dad07b4926d12731c1ff85d2439a6accb067d267bff2923a080ed8daba194d78b6893d0e75f222dd0a720817b5f39052c3d94d4f68f4ca0052bf87f7ead')
 
 _backports=(
 )
@@ -204,6 +204,7 @@ build() {
         -Dnss-mymachines=false
         -Dukify=false
         -Dtpm2=false
+        -Dimds=disabled
     )
 
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
