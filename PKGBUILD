@@ -3,8 +3,8 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=mate-utils
-pkgver=1.28.0
-pkgrel=2
+pkgver=1.28.1
+pkgrel=1
 pkgdesc="Common MATE utilities for viewing disk usage, logs and fonts, taking screenshots, managing dictionaries and searching files"
 url="http://mate-desktop.org"
 arch=('x86_64')
@@ -17,7 +17,7 @@ conflicts=('mate-utils-gtk3')
 replaces=('mate-utils-gtk3')
 source=("git+https://github.com/mate-desktop/mate-utils.git#tag=v${pkgver}"
         git+https://github.com/mate-desktop/mate-submodules.git)
-sha256sums=('1b6863d8d6d48e4dc88bb68710c5a98c9ef80db9595d4a71183d679c525eeaa8'
+sha256sums=('13f3f19761ca97bba876b863c1f5fba2cd6553d9cbfa032bdaa155240c850f56'
             'SKIP')
 prepare() {
 	cd "${pkgname}"
