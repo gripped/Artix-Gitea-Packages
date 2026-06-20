@@ -17,11 +17,11 @@ repos:
     packages: []
     debug: []
   system:
-    version: 6.18.35-1
+    version: 6.18.36-1
     packages:
-      - linux-lts-6.18.35-1-x86_64.pkg.tar.zst
-      - linux-lts-headers-6.18.35-1-x86_64.pkg.tar.zst
-      - linux-lts-docs-6.18.35-1-x86_64.pkg.tar.zst
+      - linux-lts-6.18.36-1-x86_64.pkg.tar.zst
+      - linux-lts-headers-6.18.36-1-x86_64.pkg.tar.zst
+      - linux-lts-docs-6.18.36-1-x86_64.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
