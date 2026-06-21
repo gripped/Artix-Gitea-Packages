@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: libretro-sameboy
-  version: 1720-3
-  arch:
-    - x86_64
-  pkgname:
-    - libretro-sameboy
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 1720-3
+    version: 20260420.173536.g06c184f0b186-1
     packages:
-      - libretro-sameboy-1720-3-x86_64.pkg.tar.zst
+      - libretro-sameboy-20260420.173536.g06c184f0b186-1-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
