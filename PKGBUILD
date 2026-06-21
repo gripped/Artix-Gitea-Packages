@@ -2,20 +2,21 @@
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 
 pkgname=libretro-mupen64plus-next
-pkgver=454
+pkgver=20260520.104813.g98c1b0d87754
 pkgrel=1
 epoch=1
 pkgdesc='Nintendo 64 core'
 arch=(x86_64)
 url=https://github.com/libretro/mupen64plus-libretro-nx
-license=(GPL2)
+license=(GPL-2.0-only)
 groups=(libretro)
 depends=(
-  gcc-libs
   glibc
+  libgcc
   libgl
   libpng
   libretro-core-info
+  libstdc++
   minizip
   xxhash
   zlib
@@ -26,29 +27,13 @@ makedepends=(
   nasm
 )
 replaces=(libretro-mupen64plus)
-_commit=4d270850bd09f8630110da701b73107e45a6e202
-source=(libretro-mupen64plus-next::git+https://github.com/libretro/mupen64plus-libretro-nx.git#commit=${_commit}
-        stdexcept.patch::https://github.com/libretro/mupen64plus-libretro-nx/commit/26fd1edd640ff3db49dd5ebb7e54f0de6600fc45.diff
-        cstdint.patch::https://github.com/libretro/mupen64plus-libretro-nx/commit/2c7af614ed3da27565cc5616c908134fdd908820.diff)
-sha256sums=('SKIP'
-            '4df9c237e63f0052a1dc538df3c6fd1ad362a93dccca4e1ba2ff81773ff45961'
-            '358031eb721d5fd337ada75a4dfa9511cf7ac7ceca2ca9cf63c0d15d2df88e4d')
+source=(libretro-mupen64plus-next::git+https://github.com/libretro/mupen64plus-libretro-nx.git#commit=${pkgver##*.g})
+b2sums=('6e00f3639738d7aa801d648e5cc4d0609cefc916784ec8ba4aa57275d3e264f1df11e42a4cf2f008612354d7b5654460ab3a3edefcd81c6436770c272f6cf568')
 options=(!lto)
 
-pkgver() {
-  cd libretro-mupen64plus-next
-
-  git rev-list --count HEAD
-}
-
-prepare() {
-  cd libretro-mupen64plus-next
-
-  patch --strip=1 --input=../stdexcept.patch
-  patch --strip=1 --input=../cstdint.patch
-}
-
 build() {
+  export CFLAGS+=' -I/usr/include/minizip'
+  export CXXFLAGS+=' -I/usr/include/minizip'
   make \
     WITH_DYNAREC=x86_64 \
     HAVE_PARALLEL_RDP=1 \
@@ -64,5 +49,3 @@ build() {
 package() {
   install -Dm 644 libretro-mupen64plus-next/mupen64plus_next_libretro.so -t "${pkgdir}"/usr/lib/libretro/
 }
-
-# vim: ts=2 sw=2 et:
