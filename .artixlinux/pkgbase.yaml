@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.0212-1
+    version: 2.0213-1
     packages:
-      - perl-xml-libxml-2.0212-1-x86_64.pkg.tar.zst
+      - perl-xml-libxml-2.0213-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
