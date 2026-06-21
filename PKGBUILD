@@ -3,14 +3,14 @@
 
 pkgname=xf86-video-nouveau
 pkgver=1.0.18
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Open Source 3D acceleration driver for nVidia cards"
 arch=('x86_64')
 url="https://nouveau.freedesktop.org/"
 license=('MIT')
 depends=('libudev' 'mesa' 'libdrm' 'glibc')
 makedepends=('xorg-server-devel' 'X-ABI-VIDEODRV_VERSION=25.2' 'udev')
-conflicts=('xlibre-xf86-video-nouveau' 'xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
+conflicts=('xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
 groups=('xorg-drivers')
 source=(https://xorg.freedesktop.org/archive/individual/driver/$pkgname-$pkgver.tar.xz{,.sig})
 sha512sums=('1330fa72f76a6fdc13e7bfa932627091d2735ddb277f6a24d4fefa79fad5f354c6bb661093f26b33770275deca435c3b018f451a6e6254fe35892c59c13e28dc'
