@@ -1,18 +1,19 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=perl-test-mockmodule
-pkgver=0.180.0
-pkgrel=2
+pkgver=0.185.0
+pkgrel=1
 pkgdesc="Override subroutines in a module for unit testing"
 arch=('any')
-license=('PerlArtistic' 'GPL')
+license=('Artistic-1.0-Perl' 'GPL-1.0-or-later')
 options=('!emptydirs')
 depends=('perl-super')
 makedepends=('perl-module-build')
-checkdepends=('perl-test-pod' 'perl-test-pod-coverage' 'perl-test-warnings')
+checkdepends=('perl-class-load' 'perl-moose' 'perl-mouse' 'perl-test-exception' 'perl-test-pod'
+              'perl-test-pod-coverage' 'perl-test-warnings')
 url='https://search.cpan.org/dist/Test-MockModule'
 source=("https://search.cpan.org/CPAN/authors/id/G/GF/GFRANKS/Test-MockModule-v$pkgver.tar.gz")
-sha512sums=('41d98bc108f41d2e66469bb3ab840f61347cf222add0549a345db6b73e7b8c0fd59f0717d90a22f84534bde36c7361cb772455f8e13d8f25bf2800cd534a13bf')
+sha512sums=('8f8eaa1fd815f7831ad9a39c845cb65c1e02acc3be8bd0be3b4973693fa8fd0c2be577a2e679d647d567b40c81cb45ee017d7149a6dbdc5d3faea0fc54045a56')
 
 build() {
   cd "$srcdir/Test-MockModule-v$pkgver"
