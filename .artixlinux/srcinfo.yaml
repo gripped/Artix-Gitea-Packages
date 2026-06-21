@@ -1,10 +1,10 @@
 ---
-version: 4.0.0-2
+version: 5.0.0-1
 pkgbase:
   name: python-paramiko
   pkgdesc: Python module that implements the SSH2 protocol
-  pkgver: 4.0.0
-  pkgrel: 2
+  pkgver: 5.0.0
+  pkgrel: 1
   url: https://github.com/paramiko/paramiko/
   arch:
     - any
@@ -12,10 +12,9 @@ pkgbase:
     - LGPL-2.1-only
   checkdepends:
     - python-pytest-relaxed
-    - python-pyasn1
-    - python-gssapi
     - python-icecream
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-wheel
@@ -25,13 +24,10 @@ pkgbase:
     - python-cryptography
     - python-pynacl
     - python-invoke
-  optdepends:
-    - 'python-gssapi: GSS-API/SSPI support'
-    - 'python-pyasn1: GSS-API/SSPI support'
   source:
-    - https://github.com/paramiko/paramiko/archive/4.0.0/python-paramiko-4.0.0.tar.gz
+    - git+https://github.com/paramiko/paramiko.git#tag=5.0.0
   sha512sums:
-    - 5a6d4cf000f13e1a9ee2558f18a942e3b7f334807b007bed77cfb9d50f15d423b3490a0deca08f82749391092d2514c44cd7d8dda2dc66436db3816c2501c72a
+    - 8ddb1c243e10f6d7c2ed666d616c74d9daec9ad311eb68eb5091276df2db482de5b157271a4ef8430ec467809ba341ca3bbd209c8a6bffd261ff4815981a7e83
 pkgname:
   - name: python-paramiko
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
