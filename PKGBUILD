@@ -2,8 +2,8 @@
 
 pkgname=jupyterlab
 _pipname=jupyterlab
-pkgver=4.5.9
-pkgrel=1
+pkgver=4.6.0
+pkgrel=2
 pkgdesc='JupyterLab computational environment'
 arch=(any)
 url='https://github.com/jupyterlab/jupyterlab'
@@ -13,8 +13,8 @@ depends=(jupyter-notebook-shim
          python
          python-async-lru
          python-httpx
-         python-importlib-metadata
          python-ipykernel
+         python-jupyter-builder
          python-jupyter-core
          python-jupyterlab-server
          python-packaging
@@ -33,7 +33,7 @@ checkdepends=(npm
               python-pytest-jupyter
               python-pytest-tornasync)
 source=(git+https://github.com/jupyterlab/jupyterlab#tag=v$pkgver)
-sha256sums=('d6ffc32d9c22b01f873efe0d56a6a14e37873abd7bfc4ecf20666e6bb49af84f')
+sha256sums=('9ac7f286727f22281fbc168c8a470868ba09af69d5faf1a0b3bfa9d932464c6f')
 
 build() {
   cd $pkgname
