@@ -1,3 +1,9 @@
 #!/bin/sh
 
+if [ ! -d "${XDG_CONFIG_HOME:-$HOME/.config}"/dinit.d/boot.d ]; then
+    mkdir -p "${XDG_CONFIG_HOME:-$HOME/.config}"/dinit.d/boot.d
+    cp -r /etc/xdg/userspawn/boot.user.d "${XDG_CONFIG_HOME:-$HOME/.config}"/dinit.d/boot.d
+fi
+
+
 exec dinit --user

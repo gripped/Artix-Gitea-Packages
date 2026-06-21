@@ -4,7 +4,7 @@
 _alpm=2.4.6
 
 pkgname=userspawn-dinit
-pkgver=20260528
+pkgver=20260621
 pkgrel=1
 pkgdesc='dinit service script for userspawn'
 arch=('any')
@@ -42,14 +42,18 @@ source=(
     "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
     'userspawn.dinit'
     'userspawnrc'
+    'boot.user'
 )
 sha256sums=('934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5'
             'd8c25ab527c654c6c6c808033a7575165c54f2a834e92e0a7b7f55ded22f0fce'
-            '67e9cc520c4d0f5dc57ec7219b21ed8db8723c128043a5902426408430afaeda')
+            '310694e9cc9b4aab753a7843c66874e59c1675ec9a605216dad4926f2a9f37f5'
+            '48fcee93339f496f9d0330cd71540c6cb301a287160a229b11e42a2a34dc5a6f')
 
 package() {
-    install -d "$pkgdir"/etc/{dinit.d/boot.d,xdg/userspawn}
+    install -d "$pkgdir"/etc/{dinit.d/boot.d,xdg/userspawn/boot.user.d}
     install -m755 userspawnrc "$pkgdir"/etc/xdg/userspawn/userspawnrc
+    install -m644 boot.user "$pkgdir"/etc/xdg/userspawn/boot.user.d/boot
+
     install -m644 userspawn.dinit "$pkgdir"/etc/dinit.d/userspawn
     ln -s ../userspawn "$pkgdir"/etc/dinit.d/boot.d/
 
