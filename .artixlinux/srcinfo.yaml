@@ -1,9 +1,9 @@
 ---
-version: 0.089-1
+version: 0.090-1
 pkgbase:
   name: perl-cryptx
   pkgdesc: Cryptographic toolkit
-  pkgver: 0.089
+  pkgver: 0.090
   pkgrel: 1
   url: https://metacpan.org/release/CryptX
   arch:
@@ -16,11 +16,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://cpan.metacpan.org/authors/id/M/MI/MIK/CryptX-0.089.tar.gz
+    - https://cpan.metacpan.org/authors/id/M/MI/MIK/CryptX-0.090.tar.gz
   md5sums:
-    - db4060fa186a82b0659deefac256d885
+    - ad4a5da92653ced972b73c568e6ed77d
   sha512sums:
-    - 315d32b29d7f98906f394c09255db588d6bb0c91dcffc35a7e416b7cf4ce7b2bd93d19a9ee875f2d486a2dcaddaf3009580d1b7bda6aea665f046920acb8b394
+    - dd26c8b7f6661fdba9c8c22e3286427f703bf07513ef794b4751c29344967d0826893637476a4ae78498f37ace418f4c27f183a8b10e511675f21099d18e371b
 pkgname:
   - name: perl-cryptx
 # generated with artixpkg 0.38.5-1-any
