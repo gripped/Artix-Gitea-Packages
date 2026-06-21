@@ -1,0 +1,30 @@
+---
+version: 0.18-6
+pkgbase:
+  name: perl-package-deprecationmanager
+  pkgdesc: Manage deprecation warnings for your distribution
+  pkgver: 0.18
+  pkgrel: 6
+  url: https://metacpan.org/release/Package-DeprecationManager
+  arch:
+    - any
+  license:
+    - Artistic2.0
+  checkdepends:
+    - perl-test-fatal
+    - perl-test-warnings
+  depends:
+    - perl-params-util
+    - perl-sub-install
+    - perl-package-stash
+    - perl-module-implementation
+    - perl-namespace-autoclean
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/D/DR/DROLSKY/Package-DeprecationManager-0.18.tar.gz
+  sha256sums:
+    - b68d3f0ced55b7615fddbb6029b89f92a34fe0dd8c6fd6bceffc157d56834fe8
+pkgname:
+  - name: perl-package-deprecationmanager
+# generated with artixpkg 0.38.5-1-any
