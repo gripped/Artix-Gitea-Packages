@@ -1,9 +1,9 @@
 ---
-version: 1.28.2-1
+version: 1.28.6-1
 pkgbase:
   name: level-zero
   pkgdesc: API for accessing low level interfaces in oneAPI platform devices
-  pkgver: 1.28.2
+  pkgver: 1.28.6
   pkgrel: 1
   url: https://github.com/oneapi-src/level-zero/
   arch:
@@ -16,9 +16,9 @@ pkgbase:
     - opencl-headers
     - spdlog
   source:
-    - https://github.com/oneapi-src/level-zero/archive/v1.28.2/level-zero-1.28.2.tar.gz
+    - https://github.com/oneapi-src/level-zero/archive/v1.28.6/level-zero-1.28.6.tar.gz
   sha256sums:
-    - 8133525fbf9a089ea633f6fa1f5a93a36848ec6572e255415643de031ed14429
+    - 02b26cc37181e792a39cef5c962e9732550fa767737b9932f6f1da137e1c2ac4
 pkgname:
   - name: level-zero-headers
     pkgdesc: API for accessing low level interfaces in oneAPI platform devices (headers)
