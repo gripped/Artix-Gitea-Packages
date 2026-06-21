@@ -5,7 +5,7 @@
 
 pkgname=retroarch
 pkgver=1.22.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Reference frontend for the libretro API'
 arch=(x86_64)
 url=http://www.libretro.com/
@@ -18,13 +18,14 @@ depends=(
   #flac
   fontconfig
   fribidi
-  gcc-libs
   glibc
   libass.so
   libdrm
   libfreetype.so
+  libgcc
   libgl
   libpulse
+  libstdc++
   libudev.so
   libusb
   libx11
@@ -42,6 +43,7 @@ depends=(
   v4l-utils
   wayland
   zlib
+  xz
 )
 makedepends=(
   gamemode
@@ -56,22 +58,17 @@ optdepends=(
   'libretro-overlays: Collection of overlays'
   'libretro-shaders: Collection of shaders'
   'python: retroarch-cg2glsl'
+  'retroarch-assets-ozone: GLUI menu assets'
   'retroarch-assets-ozone: Ozone menu assets'
   'retroarch-assets-xmb: XMB menu assets'
 )
 backup=(etc/retroarch.cfg)
-_tag=69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576
 source=(
-  git+https://github.com/libretro/RetroArch.git#tag=${_tag}
+  git+https://github.com/libretro/RetroArch.git#tag=v${pkgver}
   retroarch-config.patch
 )
 b2sums=('001cf261cda10fc42e9261d9eae56452d23904cba544f906fa96db8db149bf3f4cd5ce5a84f90c591b5501cd3e7637be131a2a25342dca745b2ad0161a4755f6'
         '5ecbe57126c7f9b66bdf189f0af2f1cec031cb68ea85bb9609847ba9beb0e720c902cd3330d7c286901a73e6c2e272c3f04166cf9a47bb6f80097f19dde8ce3a')
-
-pkgver() {
-  cd RetroArch
-  git describe --tags | sed 's/^v//'
-}
 
 prepare() {
   cd RetroArch
