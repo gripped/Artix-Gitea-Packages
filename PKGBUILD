@@ -3,7 +3,7 @@
 
 pkgname=libretro-mesen
 pkgver=20241218.081837.ge1180957b319
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Nintendo Entertainment System core'
 arch=(x86_64)
 url=https://github.com/SourMesen/Mesen
