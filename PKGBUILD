@@ -6,7 +6,7 @@
 
 pkgname=ddclient
 pkgver=4.0.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Update dynamic DNS entries for accounts on many dynamic DNS services"
 url="https://github.com/ddclient/ddclient"
 arch=('any')
@@ -52,7 +52,6 @@ package() {
   cd ${pkgname}
   make DESTDIR="${pkgdir}" install
 
-  install -Dm644 sample-etc_systemd.service "$pkgdir"/usr/lib/systemd/system/ddclient.service
   install -d "$pkgdir"/var/cache/ddclient
 
   install -Dm644 README.cisco "$pkgdir"/usr/share/doc/ddclient/README.cisco
