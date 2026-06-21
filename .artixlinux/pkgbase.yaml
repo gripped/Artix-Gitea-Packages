@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 9840-1
+    version: 20260403.212340.g6dce57eef127-1
     packages:
-      - libretro-mgba-9840-1-x86_64.pkg.tar.zst
+      - libretro-mgba-20260403.212340.g6dce57eef127-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
