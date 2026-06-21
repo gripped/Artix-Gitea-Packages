@@ -1,12 +1,12 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
-_tag=257.14
+_tag=257.16
 _req=257
 
 pkgbase=elogind
 pkgname=('elogind' 'libelogind')
 pkgver=${_tag/-r/.}
-pkgrel=4
+pkgrel=1
 pkgdesc="The systemd project's logind, extracted to a standalone package"
 arch=('x86_64')
 url="https://github.com/elogind/elogind"
@@ -33,10 +33,8 @@ makedepends=(
 )
 source=(
     "git+https://github.com/elogind/elogind.git#tag=v${_tag}"
-    0001-fix-logind-dbus-install.patch
 )
-sha256sums=('79c4d514403bbbf824b33f11d697b2f37b8fcc47484075baedca2d0faa9cb3b9'
-            '1036c6d3311846cc6b95540681cd0bcd19a99f8d29c1620427a68eb62dc9079e')
+sha256sums=('8053805755c892c62ff89e8f2ab05ad27ee7b5c303e66eaa5b28979f6b54ec82')
 
 _backports=(
 )
@@ -56,8 +54,6 @@ prepare() {
         git log --oneline -1 "${_c}"
         git revert -n "${_c}"
     done
-
-    patch -Np1 -i ../0001-fix-logind-dbus-install.patch
 
     sed -e "s/#RemoveIPC=yes/RemoveIPC=no/" -i src/login/logind.conf.in
 }

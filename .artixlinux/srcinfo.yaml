@@ -1,10 +1,10 @@
 ---
-version: 257.14-4
+version: 257.16-1
 pkgbase:
   name: elogind
   pkgdesc: The systemd project's logind, extracted to a standalone package
-  pkgver: 257.14
-  pkgrel: 4
+  pkgver: 257.16
+  pkgrel: 1
   url: https://github.com/elogind/elogind
   arch:
     - x86_64
@@ -28,11 +28,9 @@ pkgbase:
     - libgcc
     - glibc
   source:
-    - git+https://github.com/elogind/elogind.git#tag=v257.14
-    - 0001-fix-logind-dbus-install.patch
+    - git+https://github.com/elogind/elogind.git#tag=v257.16
   sha256sums:
-    - 79c4d514403bbbf824b33f11d697b2f37b8fcc47484075baedca2d0faa9cb3b9
-    - 1036c6d3311846cc6b95540681cd0bcd19a99f8d29c1620427a68eb62dc9079e
+    - 8053805755c892c62ff89e8f2ab05ad27ee7b5c303e66eaa5b28979f6b54ec82
 pkgname:
   - name: elogind
     pkgdesc: The systemd project's logind, extracted to a standalone package
@@ -50,7 +48,7 @@ pkgname:
       - kexec-tools
       - libcap
       - libcap.so
-      - libelogind=257.14
+      - libelogind=257.16
       - pam
       - udev>=257
       - util-linux
@@ -58,7 +56,7 @@ pkgname:
     optdepends:
       - 'polkit: allow administration as unprivileged user'
     provides:
-      - logind=257.14
+      - logind=257.16
     backup:
       - etc/elogind/logind.conf
       - etc/elogind/sleep.conf
@@ -76,5 +74,5 @@ pkgname:
       - libudev>=257
     provides:
       - libelogind.so
-      - liblogind=257.14
+      - liblogind=257.16
 # generated with artixpkg 0.38.5-1-any
