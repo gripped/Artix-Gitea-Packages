@@ -1,9 +1,9 @@
 ---
-version: 1:538-1
+version: 1:20260411.201626.gcd17f64cff4e-1
 pkgbase:
   name: retroarch-assets
-  pkgdesc: XMB menu assets for RetroArch
-  pkgver: 538
+  pkgdesc: UI/UX assets for RetroArch
+  pkgver: 20260411.201626.gcd17f64cff4e
   pkgrel: 1
   epoch: 1
   url: http://www.libretro.com/
@@ -12,23 +12,26 @@ pkgbase:
   groups:
     - libretro
   license:
-    - GPL
+    - CC-BY-4.0
   makedepends:
     - git
   depends:
     - retroarch
   source:
-    - git+https://github.com/libretro/retroarch-assets.git#commit=a7b711dfd74871e9985ba3b2fe2c15048a928aaf
-  sha256sums:
-    - 6faecf1b60a1af34daadc2cceb294a5180d64320f15161537f12ade0d6807b7c
+    - git+https://github.com/libretro/retroarch-assets.git#commit=cd17f64cff4e
+  b2sums:
+    - 6ba368af18b4d5f7ff3870412b3153f67549747ffb2528748e411fb98395c8fd60bf199e7582fc92e4f9396b41fa21c15937f3e267f8b730917abd556b20cc2c
 pkgname:
   - name: retroarch-assets-glui
+    pkgdesc: GLUI UI/UX assets for RetroArch
     depends:
       - retroarch
       - retroarch-assets-xmb
   - name: retroarch-assets-ozone
+    pkgdesc: Ozone UI/UX assets for RetroArch
     depends:
       - retroarch
       - retroarch-assets-xmb
   - name: retroarch-assets-xmb
-# generated with artixpkg 0.37.4-1-any
+    pkgdesc: XMB UI/UX assets for RetroArch
+# generated with artixpkg 0.38.5-1-any
