@@ -55,6 +55,7 @@ prepare() {
 build() {
   cd ${pkgbase}-${pkgver}
   ./gradlew installAll \
+    --debug \
     --info \
     -Porg.gradle.java.installations.paths=/usr/lib/jvm/java-21-openjdk \
     -Porg.gradle.java.installations.auto-download=false \
