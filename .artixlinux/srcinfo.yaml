@@ -1,9 +1,9 @@
 ---
-version: 20260530-1
+version: 20260617-1
 pkgbase:
   name: iana-etc
   pkgdesc: /etc/protocols and /etc/services provided by IANA
-  pkgver: 20260530
+  pkgver: 20260617
   pkgrel: 1
   url: https://www.iana.org/protocols
   arch:
@@ -14,11 +14,11 @@ pkgbase:
     - etc/protocols
     - etc/services
   source:
-    - https://sources.archlinux.org/other/packages/iana-etc/service-names-port-numbers-20260530.xml
+    - https://sources.archlinux.org/other/packages/iana-etc/service-names-port-numbers-20260617.xml
     - https://sources.archlinux.org/other/packages/iana-etc/protocol-numbers-20260310.xml
     - license-from-upstream
   sha256sums:
-    - ae7697a32197f8d8f01afa905f571d49083424509a54f4a2ec0c1a471262e19b
+    - 047bb1ad8117869c7d899ad24cd509c1182987d1eab17fa81554b60dc6633edc
     - 59cdd7930cd6152bd11713b8883503511fffb2add72345d21d043cecb969803b
     - dd37e92942d5a4024f1c77df49d61ca77fc6284691814903a741785df61f78cb
 pkgname:
