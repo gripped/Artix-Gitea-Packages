@@ -5,7 +5,7 @@
 
 pkgname=retroarch
 pkgver=1.22.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Reference frontend for the libretro API'
 arch=(x86_64)
 url=http://www.libretro.com/
@@ -24,6 +24,7 @@ depends=(
   libfreetype.so
   libgcc
   libgl
+  libpipewire
   libpulse
   libstdc++
   libudev.so
@@ -58,9 +59,9 @@ optdepends=(
   'libretro-overlays: Collection of overlays'
   'libretro-shaders: Collection of shaders'
   'python: retroarch-cg2glsl'
-  'retroarch-assets-ozone: GLUI menu assets'
-  'retroarch-assets-ozone: Ozone menu assets'
-  'retroarch-assets-xmb: XMB menu assets'
+  'retroarch-assets-ozone: GLUI UI/UX assets'
+  'retroarch-assets-ozone: Ozone UI/UX assets'
+  'retroarch-assets-xmb: XMB UI/UX assets'
 )
 backup=(etc/retroarch.cfg)
 source=(

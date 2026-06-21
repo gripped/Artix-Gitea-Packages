@@ -1,10 +1,10 @@
 ---
-version: 1.22.2-2
+version: 1.22.2-3
 pkgbase:
   name: retroarch
   pkgdesc: Reference frontend for the libretro API
   pkgver: 1.22.2
-  pkgrel: 2
+  pkgrel: 3
   url: http://www.libretro.com/
   arch:
     - x86_64
@@ -30,6 +30,7 @@ pkgbase:
     - libfreetype.so
     - libgcc
     - libgl
+    - libpipewire
     - libpulse
     - libstdc++
     - libudev.so
@@ -56,9 +57,9 @@ pkgbase:
     - 'libretro-overlays: Collection of overlays'
     - 'libretro-shaders: Collection of shaders'
     - 'python: retroarch-cg2glsl'
-    - 'retroarch-assets-ozone: GLUI menu assets'
-    - 'retroarch-assets-ozone: Ozone menu assets'
-    - 'retroarch-assets-xmb: XMB menu assets'
+    - 'retroarch-assets-ozone: GLUI UI/UX assets'
+    - 'retroarch-assets-ozone: Ozone UI/UX assets'
+    - 'retroarch-assets-xmb: XMB UI/UX assets'
   backup:
     - etc/retroarch.cfg
   source:
