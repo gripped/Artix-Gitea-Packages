@@ -1,9 +1,9 @@
 ---
-version: 1:3.1.2-1
+version: 1:3.1.3-1
 pkgbase:
   name: python-pygal
   pkgdesc: A Python SVG graph plotting library
-  pkgver: 3.1.2
+  pkgver: 3.1.3
   pkgrel: 1
   epoch: 1
   url: https://www.pygal.org/en/stable/
@@ -29,9 +29,9 @@ pkgbase:
     - 'python-lxml: for XML output through lxml instead of xml.etree'
     - 'python-cairosvg: for PNG output'
   source:
-    - git+https://github.com/Kozea/pygal.git#tag=3.1.2
+    - git+https://github.com/Kozea/pygal.git#tag=3.1.3
   sha256sums:
-    - 697b31f8509dd876c7b600e14fe041981d937bdf9fdc01614bb2c0ae3fab6d61
+    - 862aa9485ce81f5dcca9de6617a7d8226dccdb137d9ae7b42ad17fcf428db907
 pkgname:
   - name: python-pygal
 # generated with artixpkg 0.38.5-1-any
