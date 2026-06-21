@@ -1,10 +1,10 @@
 ---
-version: 22.22.2-1
+version: 22.23.0-1
 pkgbase:
   name: nodejs-lts-jod
   pkgdesc:
     Evented I/O for V8 javascript (LTS release: Jod)
-  pkgver: 22.22.2
+  pkgver: 22.23.0
   pkgrel: 1
   url: https://nodejs.org/
   arch:
@@ -23,20 +23,21 @@ pkgbase:
     - c-ares
     - brotli
     - libnghttp2
+    - zstd
   optdepends:
     - 'npm: nodejs package manager'
   provides:
-    - nodejs=22.22.2
+    - nodejs=22.23.0
   conflicts:
     - nodejs
   options:
     - '!lto'
   source:
-    - https://nodejs.org/dist/v22.22.2/node-v22.22.2.tar.xz
+    - https://nodejs.org/dist/v22.23.0/node-v22.23.0.tar.xz
     - update-icu-tests.patch
   sha256sums:
-    - b6bedd3a8cacd5df7df015a5088264b12c74a277ba60684cb9642ae8eb743132
+    - 3acfae100c7b855a4c76520ee0f95cadcace3f4254f16b7d4887f178fc95d4a0
     - 43da0fb7469e34a239b2711876475f303a4012151e44f72e636a5a7fcf21bff8
 pkgname:
   - name: nodejs-lts-jod
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
