@@ -4,7 +4,7 @@
 
 pkgname=matrix-synapse
 pkgver=1.151.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
 arch=('x86_64')
@@ -97,7 +97,6 @@ package() {
 	python -m installer --destdir="$pkgdir" dist/*.whl
 
 	install -vdm755 -o 198 -g 198 "$pkgdir"/etc/synapse
-	install -vDm644 contrib/systemd/log_config.yaml "$pkgdir"/etc/synapse/log_config.yaml
 	install -vDm644 "$srcdir"/generic_worker.yaml.example "$pkgdir"/etc/synapse/workers/generic_worker.yaml.example
 
 	install -vDm644 "$srcdir"/sysusers-synapse.conf "$pkgdir"/usr/lib/sysusers.d/synapse.conf

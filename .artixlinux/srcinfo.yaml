@@ -1,10 +1,10 @@
 ---
-version: 1.151.0-1
+version: 1.151.0-1.1
 pkgbase:
   name: matrix-synapse
   pkgdesc: Matrix reference homeserver
   pkgver: 1.151.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/element-hq/synapse
   install: synapse.install
   arch:
