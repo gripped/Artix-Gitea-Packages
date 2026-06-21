@@ -6,7 +6,7 @@
 
 pkgname=rspamd
 pkgver=4.1.1
-pkgrel=1
+pkgrel=2
 epoch=
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
@@ -28,7 +28,9 @@ depends=(
   openssl
   pcre2
   sqlite
+  xxhash
   zlib
+  zstd
 )
 makedepends=(
   cmake
@@ -156,7 +158,9 @@ build() {
     -DENABLE_BLAS=ON \
     -DENABLE_HYPERSCAN=ON \
     -DENABLE_JEMALLOC=ON \
-    -DENABLE_OPTIMIZATION=ON
+    -DENABLE_OPTIMIZATION=ON \
+    -DSYSTEM_XXHASH=ON \
+    -DSYSTEM_ZSTD=ON
   cmake --build build
 }
 

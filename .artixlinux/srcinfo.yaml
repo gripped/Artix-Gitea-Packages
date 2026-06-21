@@ -1,10 +1,10 @@
 ---
-version: 4.1.1-1
+version: 4.1.1-2
 pkgbase:
   name: rspamd
   pkgdesc: Fast, free and open-source spam filtering system
   pkgver: 4.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://rspamd.com
   install: rspamd.install
   arch:
@@ -34,7 +34,9 @@ pkgbase:
     - openssl
     - pcre2
     - sqlite
+    - xxhash
     - zlib
+    - zstd
   optdepends:
     - 'perl: rspamd stats script'
     - 'valkey: redis cache and data storage'
