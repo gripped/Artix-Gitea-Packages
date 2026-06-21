@@ -1,0 +1,42 @@
+---
+version: 0.21.0-1
+pkgbase:
+  name: ruby-protocol-websocket
+  pkgdesc: A low level implementation of the WebSocket protocol
+  pkgver: 0.21.0
+  pkgrel: 1
+  url: https://github.com/socketry/protocol-websocket
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-async-http
+    - ruby-async-websocket
+    - ruby-bake
+    - ruby-bake-test
+    - ruby-bake-test-external
+    - ruby-bundler
+    - ruby-covered
+    - ruby-decode
+    - ruby-falcon
+    - ruby-sus
+    - ruby-sus-fixtures-async
+    - ruby-sus-fixtures-async-http
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+    - ruby-protocol-http
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/socketry/protocol-websocket.git#tag=v0.21.0
+  sha512sums:
+    - e462f3d7d4bf738449f71ae4521522f1d24e6644b3fb2203505fd22e81ec18e49c04c974e844b95ed4e99187b00109995930240e6bf3696590465f8a6a5270dd
+  b2sums:
+    - d057e5ce7559eb8aba2350f4066b91a199009bbb55e4f4c346f61c0bda0a2f93fc7011aa5e32f825d3be7a7e091ad9c86f4d907edaf4f51b42f9e945ee42e19d
+pkgname:
+  - name: ruby-protocol-websocket
+# generated with artixpkg 0.38.5-1-any
