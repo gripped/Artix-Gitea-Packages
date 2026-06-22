@@ -1,10 +1,10 @@
 ---
-version: 3.8.1-1
+version: 3.8.1-2
 pkgbase:
   name: php-imagick
   pkgdesc: PHP extension to create and modify images using the ImageMagick library
   pkgver: 3.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/imagick/imagick
   arch:
     - x86_64
@@ -58,4 +58,4 @@ pkgname:
       - php-legacy
     backup:
       - etc/php-legacy/conf.d/imagick.ini
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
