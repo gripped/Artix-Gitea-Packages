@@ -1,9 +1,9 @@
 ---
-version: 1.4.0-1
+version: 1.4.1-1
 pkgbase:
   name: ruby-ffi-compiler
   pkgdesc: Ruby library for automating compilation of native libraries for use with ffi
-  pkgver: 1.4.0
+  pkgver: 1.4.1
   pkgrel: 1
   url: https://github.com/ffi/ffi-compiler
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/ffi/ffi-compiler.git#tag=1.4.0
+    - git+https://github.com/ffi/ffi-compiler.git#tag=1.4.1
   sha256sums:
-    - 04dff80a0a57e638b7b8a1b51f3ef6cb9d9360b98bfcc691b39149061b1d9e01
+    - 3e1adf3e40313c18f5636fed80124af09e8458aa1a0e830c2091823e9d817169
 pkgname:
   - name: ruby-ffi-compiler
 # generated with artixpkg 0.38.5-1-any
