@@ -1,9 +1,9 @@
 ---
-version: 9.0.32-1
+version: 9.0.33-1
 pkgbase:
   name: python-phonenumbers
   pkgdesc: Python library for parsing, formatting, storing and validating phone numbers
-  pkgver: 9.0.32
+  pkgver: 9.0.33
   pkgrel: 1
   url: https://github.com/daviddrysdale/python-phonenumbers
   arch:
@@ -21,11 +21,11 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/daviddrysdale/python-phonenumbers.git#tag=v9.0.32
+    - git+https://github.com/daviddrysdale/python-phonenumbers.git#tag=v9.0.33
   sha512sums:
-    - ba85242d10e316c438c7295497b7af6d7c7e73c1182a25538a011b6a725c593231c51eed0ef59fea70e94ae00e25227048d0ebfa894a113bc9b5e8c59794efe5
+    - 75fb0b357e2e1a8a84b75e0b6bbd185ebeb6aeab4eae898e0a24e35b3834baddd5da230975818f91a51c4dfd27934ece9cea209b880950ca9cdaad193d9bddd2
   b2sums:
-    - 30c26c963eea42c8e336abc59fbe29db2be659a2efabd7e158d5f26e1223c025bce7f8eba0f167d45ef12601bd3d00779c46303c6afdca7b84af73d65fb74d3e
+    - d3e5aae9aba3ab92ece9746ff0dcb908b3f63773e310fb71fb841c0f031591cbbbcd5ba920911c07c5f522f2114dad9c027716930ff68621510553def153079d
 pkgname:
   - name: python-phonenumbers
 # generated with artixpkg 0.38.5-1-any
