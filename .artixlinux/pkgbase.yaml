@@ -1,5 +1,5 @@
 ---
-team: null
+team: galaxy
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.1.10-1
+    version: 5.1.11-1
     packages:
-      - fcitx5-unikey-5.1.10-1-x86_64.pkg.tar.zst
+      - fcitx5-unikey-5.1.11-1-x86_64.pkg.tar.zst
     debug: []
