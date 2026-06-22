@@ -5,19 +5,19 @@
 
 pkgname=python-mistune
 _pkgname=mistune
-pkgver=3.3.0
-pkgrel=1
+pkgver=3.3.1
+pkgrel=2
 epoch=1
 pkgdesc="A fast yet powerful Python Markdown parser with renderers and plugins"
 url="https://mistune.lepture.com"
 arch=('any')
 license=('BSD-3-Clause')
-depends=('python')
+depends=('python' 'python-typing_extensions')
 makedepends=('python-build' 'python-installer' 'python-setuptools' 'python-wheel')
 checkdepends=('python-pytest')
 source=("https://github.com/lepture/mistune/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha512sums=('e515b26bf37b4f0e75110a766a0479f79444b3c6da89194e85a1b4ab7942427f94ef8085310441106c1e9595f3d5a5537328e541ddc85d304a3c521cb65dbb3d')
-b2sums=('fced71e4b7f9c71a58eaabfa8974f93e4b58679f3d85f86ea87c10f2f9752dfac1768d44a6d7d4b363967fead44c52a3e5a132d19deff65a5d4485fe0c023295')
+sha512sums=('80b84ce86e1905b202006a8112f3c56ffe17d610e479b16c92bb2be32041895bea477a20612960fbb5376aa5485f7cdb3a686ae00acb7e7d503f8902197ad290')
+b2sums=('fc137ed1ecfd12e77cc86ae6fa718f64ec46ee76a0148dbce0643f4612a19e5edf62472e56f08f6aab2a121e77b9ec679a03f2bf66caf66ca90e66a7224ddfc0')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
