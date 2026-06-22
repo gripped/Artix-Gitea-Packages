@@ -1,10 +1,10 @@
 ---
-version: 8.18.3-1
+version: 8.18.3-2
 pkgbase:
   name: libvips
   pkgdesc: A fast image processing library with low memory needs
   pkgver: 8.18.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://libvips.github.io/libvips/
   arch:
     - x86_64
