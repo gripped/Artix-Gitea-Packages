@@ -1,9 +1,9 @@
 ---
-version: 1.3.11-1
+version: 1.3.12-1
 pkgbase:
   name: xmlsec
   pkgdesc: XML Security Library is a C library based on LibXML2
-  pkgver: 1.3.11
+  pkgver: 1.3.12
   pkgrel: 1
   url: https://www.aleksey.com/xmlsec/index.html
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - libxmlsec1-nss.so
     - libxmlsec1-gnutls.so
   source:
-    - https://github.com/lsh123/xmlsec/releases/download/1.3.11/xmlsec1-1.3.11.tar.gz
+    - https://github.com/lsh123/xmlsec/releases/download/1.3.12/xmlsec1-1.3.12.tar.gz
   sha256sums:
-    - 53675e98fa83b48201d24f7bfbcaeaa1b51496b8b19ff969785856bdeb196af3
+    - 24045199af12d93fe5fdbbbf7e386e823e4842071e9432e2b90ac108b889a923
 pkgname:
   - name: xmlsec
 # generated with artixpkg 0.38.5-1-any
