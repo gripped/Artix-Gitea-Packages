@@ -1,9 +1,9 @@
 ---
-version: 0.30.0-1
+version: 0.30.1-1
 pkgbase:
   name: openjph
   pkgdesc: Open-source implementation of JPEG2000 Part-15
-  pkgver: 0.30.0
+  pkgver: 0.30.1
   pkgrel: 1
   url: https://github.com/aous72/OpenJPH/
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - git
     - libtiff
   source:
-    - git+https://github.com/aous72/OpenJPH#tag=0.30.0
+    - git+https://github.com/aous72/OpenJPH#tag=0.30.1
   sha256sums:
-    - b9b0b0465888b5401fc22d99dfdcc97d98c62ba133c4b1e0b1278ca8a6df76da
+    - 0013ccf42a932ba86ed4856b315156a81ef38eb4dead492a1d97a175745513db
 pkgname:
   - name: openjph
     depends:
