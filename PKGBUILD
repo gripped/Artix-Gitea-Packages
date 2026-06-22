@@ -3,7 +3,7 @@
 
 _gemname='falcon'
 pkgname="ruby-${_gemname}"
-pkgver=0.55.0
+pkgver=0.55.1
 pkgrel=1
 pkgdesc='A fast, asynchronous, rack-compatible web server'
 arch=(any)
@@ -45,8 +45,8 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=("git+https://github.com/socketry/falcon.git#tag=v$pkgver")
-sha512sums=('bb1b892b94c4aba50be7bb0c23e88e0d4b1d61b2ecc9d4b08a91dc0ff951b9c840376313616e63c13a52e66d52e76de8abb6313ae13974660022016d1b80d3d3')
-b2sums=('a9c9e449d10b686c3a1be95469f9b31162abb3a52ab7c59e07b9df1a2d6184c77b0cbf98c8a63d78f9c6e9ccb53cf15f98bbd9b35b5ccf7dbf264d11672c2620')
+sha512sums=('33ff24cd1a385b7c841e826e47927aee2c9238a814303f21bed504c39ae6e6385ba3e5ddc3ecddd07614c9a867d324b2bfeb964fa54c3c87f3d2d40d634ee028')
+b2sums=('64c083cf72049fd4ad2049e1b701dab33df3d562b25c6be90ee1aee0a7d3660de02316e4e1a5715e99d4546d61d0cce1be9844eb79d40f0c0e71ac523a17960c')
 
 prepare() {
   cd "${_gemname}"
