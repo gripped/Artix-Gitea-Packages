@@ -1,10 +1,10 @@
 ---
-version: 2.13.3-1
+version: 2.13.3-2
 pkgbase:
   name: pqiv
   pkgdesc: Powerful image viewer with minimal UI
   pkgver: 2.13.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/phillipberndt/pqiv
   arch:
     - x86_64
@@ -55,4 +55,4 @@ pkgbase:
     - f0ffaa33e93299b38058c507da2945976a4b350c92cf1c4b3649586444395dfd
 pkgname:
   - name: pqiv
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
