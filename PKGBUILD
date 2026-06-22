@@ -1,7 +1,7 @@
 # Maintainer: arc-d3v <arc-d3v@artixlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
-pkgver=42
+pkgver=40
 pkgrel=1
 epoch=1
 pkgname=electron

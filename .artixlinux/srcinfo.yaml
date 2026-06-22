@@ -1,9 +1,9 @@
 ---
-version: 1:42-1
+version: 1:40-1
 pkgbase:
   name: electron
   pkgdesc: Meta package providing the latest available stable Electron build
-  pkgver: 42
+  pkgver: 40
   pkgrel: 1
   epoch: 1
   url: https://electronjs.org
@@ -12,7 +12,7 @@ pkgbase:
   license:
     - MIT
   depends:
-    - electron42
+    - electron40
 pkgname:
   - name: electron
 # generated with artixpkg 0.38.5-1-any
