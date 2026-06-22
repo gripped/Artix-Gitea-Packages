@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260606.165008.gee1334610cb2-1
+    version: 20260622.165905.g1e4f393f3c52-1
     packages:
-      - libretro-play-20260606.165008.gee1334610cb2-1-x86_64.pkg.tar.zst
+      - libretro-play-20260622.165905.g1e4f393f3c52-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
