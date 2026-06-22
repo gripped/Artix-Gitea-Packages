@@ -1,0 +1,2 @@
+# python-curl-adapter
+
