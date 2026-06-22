@@ -1,0 +1,117 @@
+# Maintainer: George Rawlinson <grawlinson@archlinux.org>
+
+pkgname=curl-impersonate
+pkgver=1.5.6
+pkgrel=1
+pkgdesc='A build of curl that impersonates four major browsers: Chrome, Edge, Safari & Firefox'
+arch=(x86_64)
+url='https://github.com/lexiforest/curl-impersonate'
+license=(MIT)
+depends=(
+  glibc
+  libgcc
+  libstdc++
+  bash
+)
+makedepends=(
+  git
+  cmake
+  go
+  ninja
+  unzip
+  chrpath
+)
+_brotli_version=1.2.0
+_boringssl_commit=673e61fc215b178a90c0e67858bbf162c8158993
+_nghttp2_version=1.63.0
+_ngtcp2_version=1.20.0
+_nghttp3_version=1.15.0
+_curl_version=curl-8_15_0
+_zlib_version=1.3.1
+_zstd_version=1.5.6
+_libunistring_version=1.1
+_libidn2_version=2.3.7
+source=(
+  "$pkgname::git+$url#tag=v$pkgver"
+  "brotli-${_brotli_version}.tar.gz::https://github.com/google/brotli/archive/refs/tags/v${_brotli_version}.tar.gz"
+  "boringssl-${_boringssl_commit}.zip::https://github.com/google/boringssl/archive/${_boringssl_commit}.zip"
+  "nghttp2-${_nghttp2_version}.tar.bz2::https://github.com/nghttp2/nghttp2/releases/download/v${_nghttp2_version}/nghttp2-${_nghttp2_version}.tar.bz2"
+  "ngtcp2-${_ngtcp2_version}.tar.bz2::https://github.com/ngtcp2/ngtcp2/releases/download/v${_ngtcp2_version}/ngtcp2-${_ngtcp2_version}.tar.bz2"
+  "nghttp3-${_nghttp3_version}.tar.bz2::https://github.com/ngtcp2/nghttp3/releases/download/v${_nghttp3_version}/nghttp3-${_nghttp3_version}.tar.bz2"
+  "${_curl_version}.tar.gz::https://github.com/curl/curl/archive/${_curl_version}.tar.gz"
+  "zlib-${_zlib_version}.tar.gz::https://github.com/madler/zlib/releases/download/v${_zlib_version}/zlib-${_zlib_version}.tar.gz"
+  "zstd-${_zstd_version}.tar.gz::https://github.com/facebook/zstd/releases/download/v${_zstd_version}/zstd-${_zstd_version}.tar.gz"
+  "libunistring-${_libunistring_version}.tar.gz::https://ftp.gnu.org/gnu/libunistring/libunistring-${_libunistring_version}.tar.gz"
+  "libidn2-${_libidn2_version}.tar.gz::https://ftp.gnu.org/gnu/libidn/libidn2-${_libidn2_version}.tar.gz"
+  no-download.patch
+)
+sha512sums=('6b625c1eb73c98d8afecd40b19c61ca956c3c3ed2a5e9c720ea86da42380713a2e3ad7e2383f3b52fe100e3543004de4e85d29ca6c9c9370eba33f52fe34c6b7'
+            'f94542afd2ecd96cc41fd21a805a3da314281ae558c10650f3e6d9ca732b8425bba8fde312823f0a564c7de3993bdaab5b43378edab65ebb798cefb6fd702256'
+            'cb542c349ab6f51451de6fbe20483690965bdb36eb315970b3d1faf3d64968863e5fb59fb6cd2fc945126668fd526f4976077b13b03590ac32b1ca100ed1ee35'
+            'a328b4642c6ca4395adfcaaf4e6eb6dbd39fa7bd86f872a76260af59a5a830e0ff5ad015865d6bc00e0baa8e4d0d9a67b4b97e9d78e5e05d1c53522364e5e235'
+            'fead05300f91fe79bbacb1f57ca7f5e390ec0af5f847bcf2800434e0fa9a895851b71cc9774b0ac04cdd4d660bb1c02ddfa88cb08287649f57ce327a434b4262'
+            'e2de0402f3b75f081f421052e8fc72d7a679fbab67b8b1ba383bbfc61c90e7ff58e475c563747712a680e367af237c47f3f890326a55440bfdd2e51d0ea1fb6c'
+            'd4a560e225d0110133f44ed57cf5394c1710530c5fec395d02baafaac9ea2186dd543047ae27fd7542894b8744070760516ae611602105b1b40605abbf84e684'
+            '580677aad97093829090d4b605ac81c50327e74a6c2de0b85dd2e8525553f3ddde17556ea46f8f007f89e435493c9a20bc997d1ef1c1c2c23274528e3c46b94f'
+            '54a578f2484da0520a6e9a24f501b9540a3fe3806785d6bc9db79fc095b7c142a7c121387c7eecd460ca71446603584ef1ba4d29a33ca90873338c9ffbd04f14'
+            '9cb1acc8b39096f30e77ad2f4c6127c3ff01588dbf41389ff294e9b89616d54d6a76cad5748f8dcb70b78ec28100fc1272d4eb9e6527b52e89a1ecac25b43647'
+            'eab5702bc0baed45492f8dde43a4d2ea3560ad80645e5f9e0cfa8d3b57bccd7fd782d04638e000ba07924a5d9f85e760095b55189188c4017b94705bef9b4a66'
+            'eb96764d478fe619112c30008ab948a085fb32b6ef89e2eb64a82f97bd7a4cde5dd43823f643948832d9f609394670c34ce0712d2238fcb87d500efe85f26dfd')
+b2sums=('8ecce88b86e4d8a8e01d143e69a028cbe1c8beca299c00f29b35aa257eda58c31da7108f245e4f1137816ddfc04d956643962bc0231556e03fe1681cdb38f819'
+        'e38ea35f4abe47b2113ccc0778bb7b0be77dcf4d26ce248347ecc4cfdea7ba40d17e0b175cad6f82055d07b1ec9976ffea649f59065866db2c36116c77e59824'
+        'e31b039f0161bb2ad50b62ea588c319b4cbb7bf3cab59dafcf40f88defc2f27d42744edb88b04e2ce97789a81fefd6657601024811bf38e3ed1170f4920247a1'
+        '8caab3602d79abe03f0b266feba07edbdcc95288824d41b39c672a74a9ef9c97e9421138eba4fc04c87aaaa0f26a7ce3779831825629f421f293481fa9f315e3'
+        'cb5fa78f07c8fe1dfe5890894e1f7811ae5750f7afc77bd6ff83b7086cd0654882f6acc58f2611af2a69827125a6f58d6e11721958a1d2ebd7b4fd092ba6a5eb'
+        '95064a8c9025822937af77da74b6f9b3bb6bef012678d20a2daf20c16b9f242c0a637f2dac009da82addb359200a72614efa1e2cbb2b464ae164d58c4d6f3f02'
+        '5f2d2e5f498495744e3b28ea375596f3e4213f32b5eb45ea9942c0339ad1541d0d98b1d4a774bfa4ce431fe23d81f860f4c150f325610d61286f2aea0a93f770'
+        '872ef9cc41ba57e9809ab5714ffa15cc9d3ef6c4a948c57107f800fc373bcfe2475136407203cb9aa33b189994336f36f2757b7a582e065ad477bfd49260184b'
+        'fe17cf0950f8ee2cc07bfa2b41e97f36a1832e396386cb94a55bede975dc974920578cf147b39eecbc5b53ff06fe0dc1fe781a4cab9bc9f767ea28c0e786422e'
+        'c15e996aff5eb19f5f9f5c2358a4b86edb27f119c7bd40da78736ba05c971aca403fd8126a75449f0cb006bb7301dd22c442f254633a15368c5e1656a3f69ad4'
+        '40fde88e6be1e4665738855608a65c949834728463a3fb466192403f1076e99f7d399b9631308ff6776a28915251a0136ddfe6a67e8e010c7ccdb7fc64125d39'
+        'ad6478073229835a9d87bcc209b866be2d0ee9e0b719a5635858ca54c6ca0dc4a977f85b5b9a75099e97ae75580beaa5aa61e8face2cedaa4fe973d5cdd0e2ae')
+
+prepare() {
+  cd "$pkgname"
+
+  # do not download dependencies
+  patch -p1 -i "$srcdir/no-download.patch"
+
+  # shuffle around dependencies to match folder structure expected in Makefile
+  mv "$srcdir/brotli-${_brotli_version}" .
+  mv "$srcdir/boringssl-${_boringssl_commit}" .
+  mv "$srcdir/nghttp2-${_nghttp2_version}" .
+  mv "$srcdir/ngtcp2-${_ngtcp2_version}" .
+  mv "$srcdir/nghttp3-${_nghttp3_version}" .
+  mv "$srcdir/curl-${_curl_version}" "${_curl_version}"
+  mv "${srcdir}/zlib-${_zlib_version}" .
+  mv "${srcdir}/zstd-${_zstd_version}" .
+  mv "${srcdir}/libunistring-${_libunistring_version}" .
+  mv "${srcdir}/libidn2-${_libidn2_version}" .
+
+  autoreconf -vfi
+}
+
+build() {
+  cd "$pkgname"
+
+  ./configure --prefix=/usr
+
+  make build -j1
+}
+
+package() {
+  cd "$pkgname"
+
+  make DESTDIR="$pkgdir" install
+
+  # remove unnecessary files
+  rm -rf "$pkgdir/usr/include"
+
+  # remove unsafe rpath
+  chrpath --delete \
+    "$pkgdir/usr/lib/libcurl-impersonate.so" \
+    "$pkgdir/usr/bin/curl-impersonate"
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
