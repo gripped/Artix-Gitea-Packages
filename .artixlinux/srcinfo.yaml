@@ -1,10 +1,10 @@
 ---
-version: 1.2.2-1
+version: 1.2.2-2
 pkgbase:
   name: pdfmixtool
   pkgdesc: Application to split, merge, rotate and mix PDF files
   pkgver: 1.2.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://scarpetta.eu/pdfmixtool
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 5feccbc7d797920bede35a39526cb0093052f38e2bfc17c0c609e6129aba82de
 pkgname:
   - name: pdfmixtool
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
