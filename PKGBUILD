@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=print-manager
-pkgver=6.7.0
+pkgver=6.7.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 epoch=1
@@ -35,7 +35,7 @@ makedepends=(extra-cmake-modules
 optdepends=('system-config-printer: auto-detect the printer driver')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('bf7b6a930edc1b83de77ae585743bda4e1a3a582ade6d202a2fba2616adca5b3'
+sha256sums=('63bbebeeded45fdead0c3b70fc8166fb3ad21dd7ab2a97cdcd37a8daa3b4c429'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
