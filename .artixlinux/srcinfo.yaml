@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: powerdevil
   pkgdesc: Manages the power consumption settings of a Plasma Shell
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -51,15 +51,15 @@ pkgbase:
     - 'power-profiles-daemon: power profiles support'
     - 'tlp: alternative power profiles support'
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/powerdevil-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/powerdevil-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/powerdevil-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/powerdevil-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 7635efffd503e78d92bcc03033d5681e51577ec92bc6da72f2ab2828bb0a34db
+    - fa82624127f95267f69467610a57c3cba562fa0673052b2ff7f9db7f053d9e5a
     - SKIP
 pkgname:
   - name: powerdevil
