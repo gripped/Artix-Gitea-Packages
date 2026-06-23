@@ -1,0 +1,33 @@
+---
+version: 0.1.34-1
+pkgbase:
+  name: python-pysequoia
+  pkgdesc: Provides OpenPGP facilities in Python through the Sequoia PGP library
+  pkgver: 0.1.34
+  pkgrel: 1
+  url: https://github.com/wiktor-k/pysequoia
+  arch:
+    - x86_64
+  groups:
+    - sequoia
+  license:
+    - Apache-2.0
+  makedepends:
+    - clang
+    - python-build
+    - python-installer
+    - python-maturin
+    - python-wheel
+  depends:
+    - libgcc
+    - glibc
+    - python
+  source:
+    - pysequoia-0.1.34.tar.gz::https://github.com/wiktor-k/pysequoia/archive/v0.1.34.tar.gz
+  sha512sums:
+    - 460ca8079d087aa80678b3ff3d592fa0c06ca2c1c4ef64a85df7b3c6ab7594471badb1f786cacf6b41d4a9f0d154a004a4914857a5fa5837fbdef7fcc0d57780
+  b2sums:
+    - 24c83c4ce82ae4d88349b950f6633f7b5bdd2a55f8afc8f7f709be726240a4b2f22734bb64de2f33185989ba4f41cbaf79d09ced1df0009432b22d3e7999b09c
+pkgname:
+  - name: python-pysequoia
+# generated with artixpkg 0.38.5-1-any
