@@ -4,7 +4,7 @@
 # Contributor: Stefan Tatschner <stefan@rumpelsepp.org>
 
 pkgname=xdg-desktop-portal-wlr
-pkgver=0.8.2
+pkgver=0.8.3
 pkgrel=1
 pkgdesc='xdg-desktop-portal backend for wlroots'
 arch=('x86_64')
@@ -34,7 +34,7 @@ source=(
   "$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz"
   wlr-portals.conf
 )
-sha512sums=('5ecb38da97dae07424004dfaffa10b88bf826b50559adb22adb4c96f6b28f00354f01b801459bc314dd56ae279f17983ed0d0843068954eccd880fa073b969c1'
+sha512sums=('58b168df29f60b981830aba1663a3e4a1f482d0635e5eff12e212b24a259f2acd4547feb5a17ba1ce3364125817351b5d6849f8fc62401e06ed901fd59a42e16'
             '71f3383c3f62100dc669c519d107614a4566e808deddf66a179dd2bf175dc272a2390965cf38cd11dc4f0db0dc5cc7104712805034b9bced5874d62b03a579c2')
 
 build() {
