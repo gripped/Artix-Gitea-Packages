@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-2
+version: 6.7.1-2
 pkgbase:
   name: plasma-integration
   pkgdesc: Qt Platform Theme integration plugins for the Plasma workspaces
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
@@ -50,15 +50,15 @@ pkgbase:
     - qt6-declarative
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/plasma-integration-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/plasma-integration-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/plasma-integration-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/plasma-integration-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 537b05cd4bab1b0706fb31f9823f8666df7295e647e75614f02b6bf1458eff1d
+    - 1aab0581d0bfd9369e73f9967482f4593c590cf058c34a1f0bc911115d0c58fc
     - SKIP
 pkgname:
   - name: plasma-integration
