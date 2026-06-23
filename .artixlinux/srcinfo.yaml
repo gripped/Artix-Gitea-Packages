@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: plasma-systemmonitor
   pkgdesc: An interface for monitoring system sensors, process information and other system resources
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://apps.kde.org/plasma-systemmonitor/
   arch:
@@ -41,8 +41,8 @@ pkgbase:
   replaces:
     - ksysguard
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/plasma-systemmonitor-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/plasma-systemmonitor-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/plasma-systemmonitor-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/plasma-systemmonitor-6.7.1.tar.xz.sig
     - https://raw.githubusercontent.com/chimera-linux/cports/604026ab38185f2c6008752cb59153f831c4952b/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
@@ -50,7 +50,7 @@ pkgbase:
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - f65b61c975886edc5749956700a5a4c4059e7915c4978685788fe818a1714b42
+    - bb876e2b7e2e9450e4207438d2564282d28514d48b9e1f16534099821f3b72fb
     - SKIP
     - 89399fc8b29361c460a4efa8d63503f8384827a40653ad330c4aac4e6dfc2e67
 pkgname:
