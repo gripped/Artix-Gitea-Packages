@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: libkscreen
   pkgdesc: KDE screen management software
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -24,15 +24,15 @@ pkgbase:
     - qt6-base
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/libkscreen-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/libkscreen-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/libkscreen-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/libkscreen-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 6efba58057a2635da6f1855ba6b08e57e636c976421ba5e3f5f667e6a57b0ce1
+    - c6b13a761e6ee865f1d0ab72b126b32fbf360f74e802a14315e5a2c7e1b7e51e
     - SKIP
 pkgname:
   - name: libkscreen
