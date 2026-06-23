@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
-  removeRepo: galaxy
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -54,6 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 41.8.0-1
+    packages:
+      - electron41-41.8.0-1-x86_64.pkg.tar.zst
     debug: []
