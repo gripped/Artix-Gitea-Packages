@@ -1,10 +1,10 @@
 ---
-version: 0.3.0-13
+version: 0.3.0-14
 pkgbase:
   name: ocaml-stdlib-shims
   pkgdesc: Shim to substitute `Pervasives` with `Stdlib` before 4.08
   pkgver: 0.3.0
-  pkgrel: 13
+  pkgrel: 14
   url: https://github.com/ocaml/stdlib-shims
   arch:
     - x86_64
@@ -18,9 +18,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - ocaml-stdlib-shims-0.3.0-13.tar.gz::https://github.com/ocaml/stdlib-shims/archive/0.3.0.tar.gz
+    - ocaml-stdlib-shims-0.3.0-14.tar.gz::https://github.com/ocaml/stdlib-shims/archive/0.3.0.tar.gz
   sha256sums:
     - 6d0386313a021146300011549180fcd4e94f7ac3c3bf021ff165f6558608f0c2
 pkgname:
   - name: ocaml-stdlib-shims
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
