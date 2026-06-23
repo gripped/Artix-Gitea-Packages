@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,12 +50,14 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
-  galaxy:
-    version: 13.6.24-1
+    version: 13.6.25-1
     packages:
-      - firefox-noscript-13.6.24-1-any.pkg.tar.zst
+      - firefox-noscript-13.6.25-1-any.pkg.tar.zst
     debug:
-      - firefox-noscript-debug-13.6.24-1-any.pkg.tar.zst
+      - firefox-noscript-debug-13.6.25-1-any.pkg.tar.zst
+  galaxy:
+    version: 13.6.23.901-1
+    packages:
+      - firefox-noscript-13.6.23.901-1-any.pkg.tar.zst
+    debug:
+      - firefox-noscript-debug-13.6.23.901-1-any.pkg.tar.zst
