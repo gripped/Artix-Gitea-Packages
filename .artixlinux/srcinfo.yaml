@@ -44,7 +44,6 @@ pkgbase:
     - libogg
     - libtheora
     - mariadb-libs
-    - onnxruntime
     - opencascade
     - openimagedenoise
     - openvdb
@@ -95,7 +94,6 @@ pkgbase:
     - 'freetype2: rendering fonts'
     - 'gl2ps: rendering to PostScript, PDF, and SVG'
     - 'anari-sdk: ANARI rendering module'
-    - 'onnxruntime: ONNX filter for AI-related computation'
     - 'openvr: rendering for virtual reality'
     - 'openxr: rendering for virtual and augmented reality'
     - 'openimagedenoise: rendering with raytracing support'
