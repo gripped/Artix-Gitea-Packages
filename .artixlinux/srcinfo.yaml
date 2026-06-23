@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: oxygen-sounds
   pkgdesc: The Oxygen Sound Theme
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -15,15 +15,15 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/oxygen-sounds-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/oxygen-sounds-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/oxygen-sounds-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/oxygen-sounds-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 62a3dd7a88a570d69c370a71a261c8dd04d92daf90250ca2a9d23c29e67e1c8a
+    - bff16bf69f9d7657237c67e0ec32c21188cdc96f004157c0c7f3dbb8d39c8894
     - SKIP
 pkgname:
   - name: oxygen-sounds
