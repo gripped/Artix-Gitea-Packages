@@ -1,10 +1,10 @@
 ---
-version: 5.0.1-11
+version: 5.0.1-13
 pkgbase:
   name: camlp-streams
   pkgdesc: The Stream and Genlex libraries for use with Camlp4 and Camlp5.
   pkgver: 5.0.1
-  pkgrel: 11
+  pkgrel: 13
   url: https://github.com/ocaml/camlp-streams
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - ad71f62406e9bb4e7fb5d4593ede2af6c68f8b0d96f25574446e142c3eb0d9a4
 pkgname:
   - name: camlp-streams
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
