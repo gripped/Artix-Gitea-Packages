@@ -1,10 +1,10 @@
 ---
-version: 1.5-16
+version: 1.5-17
 pkgbase:
   name: ocaml-result
   pkgdesc: Compatibility Result module
   pkgver: 1.5
-  pkgrel: 16
+  pkgrel: 17
   url: https://github.com/janestreet/result
   arch:
     - i686
@@ -26,4 +26,4 @@ pkgbase:
     - 1072a8b0b35bd6df939c0670add33027f981e4f69a53233cb006b442fa12af30
 pkgname:
   - name: ocaml-result
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
