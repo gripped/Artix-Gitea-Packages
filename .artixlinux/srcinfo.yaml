@@ -1,11 +1,11 @@
 ---
-version: 2.0.0-5
+version: 2.0.0-6
 pkgbase:
   name: ocaml-pp
   pkgdesc:
     OCaml Pretty printing: a lean alternative to the Format module of the OCaml standard library.
   pkgver: 2.0.0
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/ocaml-dune/pp
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 0a407e2674e71050ba17b768e473e9e856c7a050c7e9d712e7649424b9207d272a0091f97452ae8939693c74d5007e2616398a2dc7e9de6c5880588510887d29
 pkgname:
   - name: ocaml-pp
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
