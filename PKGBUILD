@@ -1,8 +1,8 @@
 # Maintainer: arc-d3v <arc-d3v@artixlinux.org>
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
-pkgver=40
-pkgrel=1
+pkgver=41
+pkgrel=2
 epoch=1
 pkgname=electron
 pkgdesc='Meta package providing the latest available stable Electron build'
