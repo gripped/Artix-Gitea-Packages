@@ -1,10 +1,10 @@
 ---
-version: 0.9.16-1
+version: 0.9.16-2
 pkgbase:
   name: python-fastimport
   pkgdesc: VCS fastimport/fastexport parser
   pkgver: 0.9.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jelmer/python-fastimport
   arch:
     - any
@@ -12,7 +12,10 @@ pkgbase:
     - GPL-2.0-only
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
