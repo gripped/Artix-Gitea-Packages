@@ -2,7 +2,7 @@
 # Contributor: Devin Lin <devin@kde.org>
 
 pkgname=plasma-mobile
-pkgver=6.7.0
+pkgver=6.7.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='Plasma shell for mobile devices'
@@ -55,7 +55,7 @@ depends=(
   qt6-declarative
   qt6-sensors
   solid
-  libudev
+  udev-libs
   wayland
 )
 makedepends=(
@@ -70,7 +70,7 @@ optdepends=(
   'plasma-settings: System settings'
 )
 source=("https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('3426aa0b629b945b076eace130c4abbc6fff6f6c5dd1c2bff7ff0d7b2d477e42'
+sha256sums=('3e29de1f06423b3364cb7550de37adf76621497df13a6abaf89a6647cb8f4bfe'
             'SKIP')
 validpgpkeys=(
   E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
