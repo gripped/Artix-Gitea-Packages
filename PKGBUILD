@@ -11,7 +11,7 @@
 pkgname=vtk
 # May need bootstrapping on upgrades due to circular vtk <-> opencascade dependency
 pkgver=9.6.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Software system for 3D computer graphics, image processing, and visualization"
 arch=(x86_64)
 url="https://www.vtk.org"
@@ -77,6 +77,7 @@ makedepends=(
   libogg                  # libvtkIOOggTheora.so (1 direct lib, 2 total libs)
   libtheora               # libvtkIOOggTheora.so (1 direct lib, 2 total libs)
   mariadb-libs            # libvtkIOMySQL.so (1 direct lib, 2 total libs)
+  onnxruntime             # libvtkFiltersONNX.so.1 (1 direct lib, 2 total libs)
   opencascade             # libvtkIOOCCT.so (1 direct lib, 2 total libs)
   openimagedenoise        # libvtkRenderingRayTracing.so (1 direct lib, 2 total libs)
   openvdb                 # libvtkIOOpenVDB.so (1 direct lib, 2 total libs)
@@ -117,6 +118,7 @@ optdepends=(
   'freetype2: rendering fonts'
   'gl2ps: rendering to PostScript, PDF, and SVG'
   'anari-sdk: ANARI rendering module'
+  'onnxruntime: ONNX filter for AI-related computation'
   'openvr: rendering for virtual reality'
   'openxr: rendering for virtual and augmented reality'
   'openimagedenoise: rendering with raytracing support'
@@ -153,11 +155,14 @@ options=(staticlibs)
 source=(
   $url/files/release/${pkgver%.*}/VTK-$pkgver.tar.gz
   gdal-3.13.patch
+  fmt-12.2.patch
 )
 sha256sums=('aed12cec12a9609179bf66329070266627ca64244a10856a452b2a17ffb04a1d'
-            'b56f176de0fdf233f37d61bc41514ede03492987c50dc7cdb633adaa5d9f433c')
+            'b56f176de0fdf233f37d61bc41514ede03492987c50dc7cdb633adaa5d9f433c'
+            'b784782cac02e11a129da68cc9feef2175b1cabb9dcc7b6c036f60becf77d8f6')
 b2sums=('343e3ee333ec0f5541014faf07fb66ac00f935e389af3dc588e1d75a023b77b2ecb2b57d8522ef46f77f0060811ee7c1c417becca5b605282704bcdf2bc750db'
-        '3492d04286f15ed5978bb7c39fcdf0e9a4922b57c580da8056ffc10c38226c01abfb6dc5d1018db4fab51896ed1d298330a1ab96e40ce33803fdb59caf11d770')
+        '3492d04286f15ed5978bb7c39fcdf0e9a4922b57c580da8056ffc10c38226c01abfb6dc5d1018db4fab51896ed1d298330a1ab96e40ce33803fdb59caf11d770'
+        'db47a96696f124de4588b289d01f01d1fb28c6b2408d68b505cb59f38244ae2c2e75787a9f43d4820441bf074e3f47246d7a5de9248cb8d3ff2dcaaa0b545640')
 
 prepare() {
   cd ${pkgname^^}-${pkgver}
@@ -168,6 +173,9 @@ prepare() {
   sed -e '/FindHDF5/d' -i CMake/vtkInstallCMakePackage.cmake
 
   patch -p1 -i ../gdal-3.13.patch # Fix build with GDAL 3.13
+
+  # Fix build with fmt 12.2.0 https://gitlab.kitware.com/vtk/vtk/-/work_items/20092
+  patch -p1 -i ../fmt-12.2.patch
 }
 
 build() {
@@ -212,7 +220,6 @@ build() {
     -DVTK_MODULE_ENABLE_VTK_DomainsMicroscopy=NO
     -DVTK_MODULE_ENABLE_VTK_FiltersOpenTURNS=NO
     -DVTK_MODULE_ENABLE_VTK_IOCatalystConduit=YES
-    -DVTK_MODULE_ENABLE_VTK_FiltersONNX=NO
     # building with the usd package does not work: https://gitlab.archlinux.org/archlinux/packaging/packages/usd/-/issues/7
     -DVTK_MODULE_ENABLE_VTK_IOUSD=NO
     -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON
