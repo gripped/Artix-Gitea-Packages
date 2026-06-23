@@ -1,10 +1,10 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-2
 pkgbase:
   name: kwin-x11
   pkgdesc: An easy to use, but flexible, X Window Manager
-  pkgver: 6.7.0
-  pkgrel: 1
+  pkgver: 6.7.1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -75,8 +75,8 @@ pkgbase:
     - xcb-util-keysyms
     - xcb-util-wm
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/kwin-x11-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/kwin-x11-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/kwin-x11-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/kwin-x11-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
@@ -84,7 +84,7 @@ pkgbase:
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 9ac0b85b59016dfb91587f8c1970fbd5c6f215d12c9a419acd0bf7d0f0493606
+    - 0bb4031c870733ba03acdebfbb199caa4945d1914a1670045dfa8d3b53b4e05f
     - SKIP
 pkgname:
   - name: kwin-x11
