@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: kactivitymanagerd
   pkgdesc: System service to manage user activities and track the usage patterns
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -28,15 +28,15 @@ pkgbase:
     - libstdc++
     - qt6-base
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/kactivitymanagerd-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/kactivitymanagerd-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/kactivitymanagerd-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/kactivitymanagerd-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - ed065c2d76c85cf8e10dd72ff8f89e72136fc4c85561a6c985eb97dc518446a1
+    - 480bd3ba2a3315b413084dc9f60c55252f2bf9eba29f3dc579b7e150e6805b0b
     - SKIP
 pkgname:
   - name: kactivitymanagerd
