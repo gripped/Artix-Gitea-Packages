@@ -1,10 +1,10 @@
 ---
-version: 0.7.0-11
+version: 0.8.0-1
 pkgbase:
   name: ocaml-integers
   pkgdesc: Various signed and unsigned integer types for OCaml
-  pkgver: 0.7.0
-  pkgrel: 11
+  pkgver: 0.8.0
+  pkgrel: 1
   url: https://github.com/ocamllabs/ocaml-integers
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
     - '!strip'
     - '!debug'
   source:
-    - ocaml-integers-0.7.0.tar.gz::https://github.com/ocamllabs/ocaml-integers/archive/0.7.0.tar.gz
+    - ocaml-integers-0.8.0.tar.gz::https://github.com/ocamllabs/ocaml-integers/archive/0.8.0.tar.gz
   sha256sums:
-    - 8bb517fa9a1818246eb8c4ce34ee1489fbebb4b92defa3a25d13cab8d23ec685
+    - 04a1a6d5cc1ecfd3f354a83caed27e59995bb26adec64d88193ccc36268929fa
 pkgname:
   - name: ocaml-integers
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
