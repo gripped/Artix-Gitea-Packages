@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: aurorae
   pkgdesc: A themeable window decoration for KWin
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - qt6-tools
     - sh
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/aurorae-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/aurorae-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/aurorae-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/aurorae-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 538223ebe7521305d29873c278f85e7910eb7810a31d2a69698ede76a5c0da3c
+    - abef91b84d364114a45f28bc4cb087ccf242650e77373081f2aa2e25d00f11a4
     - SKIP
 pkgname:
   - name: aurorae
