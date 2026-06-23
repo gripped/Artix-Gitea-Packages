@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-ffi-compiler
-pkgver=1.4.1
+pkgver=1.4.2
 pkgrel=1
 pkgdesc='Ruby library for automating compilation of native libraries for use with ffi'
 arch=(any)
@@ -12,7 +12,7 @@ depends=(ruby-ffi ruby-rake)
 makedepends=(git ruby-rspec ruby-rubygems-tasks ruby-rdoc)
 options=(!emptydirs)
 source=(git+https://github.com/ffi/ffi-compiler.git#tag=$pkgver)
-sha256sums=('3e1adf3e40313c18f5636fed80124af09e8458aa1a0e830c2091823e9d817169')
+sha256sums=('fe8fa4cdc86eba083780713ee66397fb712e0f6c69c64f378a220e20e803bae6')
 
 build() {
   local _gemdir="$(gem env gemdir)"
