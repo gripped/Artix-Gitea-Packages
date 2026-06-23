@@ -1,10 +1,10 @@
 ---
-version: 2.4.7-1
+version: 2.4.7-1.1
 pkgbase:
   name: gajim
   pkgdesc: Full featured and easy to use XMPP (Jabber) client
   pkgver: 2.4.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://gajim.org/
   arch:
     - any
