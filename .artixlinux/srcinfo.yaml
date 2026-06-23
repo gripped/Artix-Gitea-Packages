@@ -1,9 +1,9 @@
 ---
-version: 0.163.2-1
+version: 0.163.3-1
 pkgbase:
   name: hugo
   pkgdesc: Fast and Flexible Static Site Generator in Go
-  pkgver: 0.163.2
+  pkgver: 0.163.3
   pkgrel: 1
   url: https://gohugo.io/
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - 'dart-sass: required to transpile Sass to CSS'
     - 'python-docutils: required for reStructuredText support'
   source:
-    - hugo-0.163.2.tar.gz::https://github.com/gohugoio/hugo/archive/v0.163.2.tar.gz
+    - hugo-0.163.3.tar.gz::https://github.com/gohugoio/hugo/archive/v0.163.3.tar.gz
   sha512sums:
-    - 8cece488bc58f4f458f302f1362339b3c0a6a52bf76ee15bf84e121bfb6e7ad90c138634d422d9b5c663498619ef07501c4ff2b08839e0fff925c9fb302a1f6c
+    - 8f36ef3259a8de42e1e4f748e85b73c8a8271210d69225a372c914833141ca533e32c19ae406efee6d900c8b142c74f9da20989f2367d56c85608fbabc679b48
 pkgname:
   - name: hugo
 # generated with artixpkg 0.38.5-1-any
