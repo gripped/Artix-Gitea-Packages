@@ -1,9 +1,9 @@
 ---
-version: 6.7.0-1
+version: 6.7.1-1
 pkgbase:
   name: plasma-keyboard
   pkgdesc: Virtual Keyboard for Qt based desktops
-  pkgver: 6.7.0
+  pkgver: 6.7.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -34,15 +34,15 @@ pkgbase:
     - qt6-virtualkeyboard
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.7.0/plasma-keyboard-6.7.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.0/plasma-keyboard-6.7.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.1/plasma-keyboard-6.7.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.1/plasma-keyboard-6.7.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 831195f308d0811b8d78b4c845815dca1648bb3fec83c9ec637d1be25b53ab74
+    - acf36a8d36150c6a0ecee2eeb0f70c4f1226cae3fedf47f38e06d765b6388047
     - SKIP
 pkgname:
   - name: plasma-keyboard
