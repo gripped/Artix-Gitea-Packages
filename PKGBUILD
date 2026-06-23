@@ -2,8 +2,8 @@
 # Contributor: Immae <ismael.bouya@normalesup.org>
 
 pkgname=editline
-pkgver=1.17.1
-pkgrel=4
+pkgver=2.0.0
+pkgrel=1
 pkgdesc='A readline() replacement for UNIX without termcap (ncurses)'
 arch=('x86_64')
 url='http://troglobit.com/editline.html'
@@ -13,16 +13,11 @@ makedepends=(git)
 provides=(libeditline.so)
 install="$pkgname.install"
 source=("$pkgname::git+https://github.com/troglobit/editline#tag=$pkgver")
-sha512sums=('63d51f65112448a9ed71ab2dcc37c25c345176ca28ff3bead5020ff82f442fe7221dae935bc0e62d254aeb4edabbc86cf66b3b7016511b758297ea13ca040efe')
-b2sums=('94ad085b15facbe50d40ab498d4247efd6e26d53a1bb3580c15d72a4be74c04b81b45babe46336275d11e952de93d4843b91b0216c0b5711d5739ff8cde99a06')
+sha512sums=('3fc6d415cfba1282154f0e570ecc25453e95d94237e729d4bf4a52e5f02848a694d0848d426579f0589b0bc0fe620fdeec871ac5ff5812d5f3606c333545d618')
+b2sums=('9aaf061c9d0fa5caa007f887b1378268035c551e178ab5960826dceb822acb04963d871c9ff49b068fb88884cb78273110b05005af78317052df948a859dd34e')
 
 build () {
   cd "$pkgname"
-
-  # Fix FTBFS (remove on next release)
-  git cherry-pick --no-commit \
-    f444a316f5178b8e20fe31e7b2d979e651da077e \
-    f53bebdbe98c4dbfc9cc959032a071415324dde2
 
   ./autogen.sh
 

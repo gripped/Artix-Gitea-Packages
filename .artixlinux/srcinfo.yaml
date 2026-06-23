@@ -1,10 +1,10 @@
 ---
-version: 1.17.1-4
+version: 2.0.0-1
 pkgbase:
   name: editline
   pkgdesc: A readline() replacement for UNIX without termcap (ncurses)
-  pkgver: 1.17.1
-  pkgrel: 4
+  pkgver: 2.0.0
+  pkgrel: 1
   url: http://troglobit.com/editline.html
   install: editline.install
   arch:
@@ -18,11 +18,11 @@ pkgbase:
   provides:
     - libeditline.so
   source:
-    - editline::git+https://github.com/troglobit/editline#tag=1.17.1
+    - editline::git+https://github.com/troglobit/editline#tag=2.0.0
   sha512sums:
-    - 63d51f65112448a9ed71ab2dcc37c25c345176ca28ff3bead5020ff82f442fe7221dae935bc0e62d254aeb4edabbc86cf66b3b7016511b758297ea13ca040efe
+    - 3fc6d415cfba1282154f0e570ecc25453e95d94237e729d4bf4a52e5f02848a694d0848d426579f0589b0bc0fe620fdeec871ac5ff5812d5f3606c333545d618
   b2sums:
-    - 94ad085b15facbe50d40ab498d4247efd6e26d53a1bb3580c15d72a4be74c04b81b45babe46336275d11e952de93d4843b91b0216c0b5711d5739ff8cde99a06
+    - 9aaf061c9d0fa5caa007f887b1378268035c551e178ab5960826dceb822acb04963d871c9ff49b068fb88884cb78273110b05005af78317052df948a859dd34e
 pkgname:
   - name: editline
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.5-1-any
