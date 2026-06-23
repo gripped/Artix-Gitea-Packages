@@ -1,10 +1,10 @@
 ---
-version: 1.9.8-6
+version: 1.9.8-7
 pkgbase:
   name: ocaml-findlib
   pkgdesc: OCaml package manager
   pkgver: 1.9.8
-  pkgrel: 6
+  pkgrel: 7
   url: http://projects.camlcity.org/projects/findlib.html
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - 2483d2b833d566508680a5b9b3949aef187c290ab5602ef423ede214cb57f4b8f61dfeb9cc712499d8c7d0590388bf5e481263bbc841488e1fb62e866f9b64d8
 pkgname:
   - name: ocaml-findlib
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
