@@ -1,10 +1,10 @@
 ---
-version: 3.17.0-2
+version: 3.18.0-1
 pkgbase:
   name: python-prettytable
   pkgdesc: A simple Python library for easily displaying tabular data
-  pkgver: 3.17.0
-  pkgrel: 2
+  pkgver: 3.18.0
+  pkgrel: 1
   url: https://github.com/jazzband/prettytable
   arch:
     - any
@@ -24,9 +24,9 @@ pkgbase:
   conflicts:
     - python-ptable
   source:
-    - git+https://github.com/jazzband/prettytable.git#tag=3.17.0
+    - git+https://github.com/jazzband/prettytable.git#tag=3.18.0
   sha512sums:
-    - 1af9d7611562bb040bf6951d71f9a131eea6d79f260503e78fbc7c681ed8ee8dee48cbd7f823287dcd19f92f7025537feed919f8a2f327789e00df685890f868
+    - 3421f37700134aa6ce17ef2ffe37570458734845e198007498e0aaaf4fe8f30c7d1a3051440a48b0ed3a44f7a439229e04090b9bb447d1aba65679acc0ec1e39
 pkgname:
   - name: python-prettytable
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
