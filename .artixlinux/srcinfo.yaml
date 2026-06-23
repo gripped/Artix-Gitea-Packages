@@ -1,10 +1,10 @@
 ---
-version: 0.7-2
+version: 0.7-3
 pkgbase:
   name: ocaml-augeas
   pkgdesc: OCaml bindings for Augeas
   pkgver: 0.7
-  pkgrel: 2
+  pkgrel: 3
   url: https://people.redhat.com/~rjones/augeas/
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: ocaml-augeas
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
