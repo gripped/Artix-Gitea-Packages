@@ -1,9 +1,9 @@
 ---
-version: 7.8.2-1
+version: 8.0.0-1
 pkgbase:
   name: python-praw
   pkgdesc: Python Reddit API Wrapper that allows for simple access to Reddit's API
-  pkgver: 7.8.2
+  pkgver: 8.0.0
   pkgrel: 1
   url: https://praw.readthedocs.org
   arch:
@@ -11,24 +11,21 @@ pkgbase:
   license:
     - BSD-2-Clause
   checkdepends:
-    - python-betamax-serializers
-    - python-betamax-matchers
     - python-pytest
+    - python-vcrpy
   makedepends:
     - python-build
     - python-installer
-    - python-flit-core
-    - python-wheel
+    - python-hatchling
   depends:
+    - python-defusedxml
     - python-prawcore
     - python-update-checker
     - python-websocket-client
   source:
-    - https://github.com/praw-dev/praw/archive/v7.8.2/python-praw-7.8.2.tar.gz
-    - python-praw-python-3.14.patch
+    - https://github.com/praw-dev/praw/archive/v8.0.0/python-praw-8.0.0.tar.gz
   sha512sums:
-    - 5beca411ce1cbc2a18f8371932ae31ab40bac0f8a2c813ab753cf1f8974d335940bfb57897fb6687e5f9240d73a11eb33b98196666bd3459d406b5850051ce4f
-    - a2316c9f6e41b888ad41b02b951d895e7d4ddc8c27d6dbf081e3a505803a36c168d882ef3c6571b6e88e6aa7a443c927cb30db50de1ceba9ac03fb4fc8c4a77a
+    - b1c9705c8c9b057f8285d5a5f35f96a89c40263c17f3c442f9e7e6fcca301f50bc05e9a05c20d404ac091dc604dfc230538b156a203e3ce4934bfe8e63b49d5b
 pkgname:
   - name: python-praw
 # generated with artixpkg 0.38.5-1-any
