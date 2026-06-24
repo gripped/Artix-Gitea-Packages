@@ -1,10 +1,10 @@
 ---
-version: 1.30.0-1
+version: 1.30.0-1.1
 pkgbase:
   name: limine-snapper-sync
   pkgdesc: Integrates Limine boot entries with Snapper snapshots.
   pkgver: 1.30.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://gitlab.com/Zesko/limine-snapper-sync
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
     - gradle
   depends:
     - bash
+    - inotify-tools
     - limine
     - snapper
     - btrfs-progs

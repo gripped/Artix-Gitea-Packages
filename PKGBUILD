@@ -2,7 +2,7 @@
 
 pkgname="limine-snapper-sync"
 pkgver=1.30.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Integrates Limine boot entries with Snapper snapshots."
 arch=('x86_64' 'aarch64')
 url="https://gitlab.com/Zesko/limine-snapper-sync"
@@ -14,6 +14,7 @@ options=(!debug !strip)
 _graalvm_version=graalvm_ce_jdk25
 makedepends=('gradle')
 depends=('bash'
+         'inotify-tools'
          'limine'
          'snapper'
          'btrfs-progs'
