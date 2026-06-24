@@ -6,8 +6,8 @@
 # Contributer: nightuser <nightuser.android at gmail.com>
 
 pkgname=lxd
-pkgver=6.8
-pkgrel=2
+pkgver=6.9
+pkgrel=1
 pkgdesc="Daemon based on liblxc offering a REST API to manage containers"
 arch=('x86_64')
 url="https://ubuntu.com/lxd"
@@ -53,7 +53,7 @@ source=("https://github.com/canonical/lxd/releases/download/${pkgname}-${pkgver}
         "lxd.sysusers")
 validpgpkeys=('602F567663E593BCBD14F338C638974D64792D67'  # Stéphane Graber <stgraber@stgraber.org>
               'ED1CA1E7A6F80E22E5CB2DA84ACE106615754614') # Thomas Parrott <tomp@tomp.uk>
-sha256sums=('4ccfd62b4364bab41f537d5602f2c16f86dbe57f218ac225afaeba86b5decb3b'
+sha256sums=('c13dff67aa400d3cc4ef3a20344a500fa691263132ad9de843c5485caffe47dd'
             'SKIP'
             'd0184d9c4bb485e3aad0d4ac25ea7e85ac0f7ed6ddc96333e74fcd393a5b5ec4')
 
