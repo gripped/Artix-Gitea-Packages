@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-4
+version: 0.4.2-4.1
 pkgbase:
   name: libvdpau-va-gl
   pkgdesc: VDPAU driver with OpenGL/VAAPI backend
   pkgver: 0.4.2
-  pkgrel: 4
+  pkgrel: 4.1
   url: https://github.com/i-rinat/libvdpau-va-gl
   arch:
     - x86_64
