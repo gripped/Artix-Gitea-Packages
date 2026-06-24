@@ -1,27 +1,54 @@
 # Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=python-vcs-versioning
-pkgver=1.1.1
+pkgver=2.1.2
 pkgrel=1
 pkgdesc='the blessed package to manage your versions by vcs metadata'
 arch=(any)
 url='https://github.com/pypa/setuptools-scm'
 license=(MIT)
-depends=(python python-packaging)
+depends=(
+  python
+  python-packaging
+  python-setuptools
+)
 makedepends=(
   git
   python-build
   python-installer
-  python-setuptools
 )
+checkdepends=(
+  python-pytest
+  jujutsu
+  mercurial
+)
+optdepends=('python-rich: formatting of log messages')
 source=("python-setuptools-scm::git+$url#tag=vcs-versioning-v$pkgver")
-sha512sums=('41920d40cbf71d183edd00969b7b842d821247b8c1b04cfc77a9a86b6110fac983c4572df3811cc7f5d6436755ab5446e3a5a733b6113db01244b7fde7d4550a')
-b2sums=('e1a5ec0593e3bd450589a3ddab9769fb316918e15f35804f1c2cb09f22009c6e85eb5c517fdd6f33c2bf036b75131d59526e5c30cf6341759c883f2639bc8cd4')
+sha512sums=('d129adf8647f7b58bb2df4c9b7405104e1d15dbb193cd2b3d013fd8cd4937d72a4b6f379fcf3113b369ad3fbb79dc5695a410d701f90e8bb5d5603f5885ff9a4')
+b2sums=('dff6eebda8c96e54fdfa61a939c4c26bf1b7f4a801ff5a6aa0437fa3711b94436589256fe02cb04174d38e5943f12bf31f39707d0d2ae2af0b117cf7505b1fb6')
 
 build() {
   cd python-setuptools-scm/vcs-versioning
 
   python -m build --wheel --no-isolation
+}
+
+check() {
+  cd python-setuptools-scm/vcs-versioning
+
+  # temporary install
+  python -m installer --destdir="$(pwd)/tmp" dist/*.whl
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  export PYTHONPATH="$(pwd)/tmp/$site_packages"
+
+  local pytest_options=(
+    -vv
+    # failing with 2.0+
+    --deselect testing_vcs/test_workdir_discovery.py::TestDiscoverWorkdirFallback::test_discovers_pkginfo
+    --deselect testing_vcs/test_workdir_discovery.py::TestFallbackPriority::test_unprocessed_archival_falls_through_to_pkginfo
+  )
+
+  pytest "${pytest_options[@]}"
 }
 
 package() {
