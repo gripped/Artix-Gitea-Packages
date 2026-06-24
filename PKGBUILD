@@ -4,7 +4,7 @@
 # Contributor: pootzko <pootzko at gmail dot com>
 
 pkgname=haveged
-pkgver=1.9.24
+pkgver=1.9.25
 pkgrel=1
 pkgdesc='Entropy harvesting daemon using CPU timings'
 arch=('x86_64')
@@ -13,7 +13,7 @@ license=('GPL-3.0-or-later')
 depends=('glibc')
 validpgpkeys=('8F6B7293B03E5AC5762B65CE2E2F252B05CCA168') # Jirka Hladky <hladky.jiri@gmail.com>
 source=("$pkgname-$pkgver.tar.gz::https://github.com/jirka-h/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('76f2f77547e4b7dafe78352b4c96fa27cd6f03afc7cecf2ed37c7c7b32b679d7')
+sha256sums=('dca4be45cb491ed0a603f8acb7f317b3d7638ae5b11acfd981291a38db0812b0')
 
 build() {
   cd $pkgname-$pkgver
