@@ -27,6 +27,7 @@ build() {
 
   cmake ../libvdpau-va-gl-${pkgver} \
     -DCMAKE_BUILD_TYPE='Release' \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DCMAKE_INSTALL_PREFIX='/usr'
   make
 }
