@@ -3,7 +3,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-settings-daemon
-pkgver=1.0.16
+pkgver=1.1.0
 pkgrel=1
 epoch=1
 pkgdesc='Cosmic settings daemon'
@@ -21,6 +21,7 @@ depends=(
   glibc
   libinput
   libpulse
+  libpipewire
   playerctl
   pop-sound-theme
   qt6ct
@@ -29,10 +30,11 @@ depends=(
   xdg-utils
 )
 makedepends=(
+  clang
   cargo
   git
   libxkbcommon
-  lld
+  mold
 )
 optdepends=(
   'pulseaudio-alsa: Media keys support'
@@ -42,7 +44,7 @@ source=(
   git+https://github.com/pop-os/cosmic-settings-daemon.git#tag=epoch-${pkgver}
   cosmic-settings-daemon-lto.patch
 )
-b2sums=('26f5428a6fdb521ff248894a60a25f04b30fde03974bcecea938fc3ac101b68779cf032883bb78ecb06502f2fb1c8f0ff61422111e4e4d60c74a9f94d8f55a41'
+b2sums=('621417d34200a0dd21517c445f8a284c6c8fbe72326c8e59099f94b0d9d7fd65ddcc693b6bc2485e1fa50572f4c31d2c267bc127b4b4f4ea8d8ca9401c5c0c4d'
         '935604b934c6fb805fdef20a716838373c1c9463ddc215af9c9bd162ebacc422181f1c227f37b59bc617496a60b88f8b16132fac001f61a2c777179abd8c634a')
 
 prepare() {
@@ -57,7 +59,7 @@ build() {
   cd cosmic-settings-daemon
   export GEOCLUE_AGENT="/usr/lib/geoclue-2.0/demos/agent"
 
-  RUSTFLAGS+=" -C link-arg=-fuse-ld=lld"
+  RUSTFLAGS+=" -C link-arg=-fuse-ld=mold"
   make ARGS+=" --frozen --release" geoclue_agent='/usr/lib/geoclue-2.0/demos/agent'
 }
 

@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.16-1
+version: 1:1.1.0-1
 pkgbase:
   name: cosmic-settings-daemon
   pkgdesc: Cosmic settings daemon
-  pkgver: 1.0.16
+  pkgver: 1.1.0
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-settings-daemon
@@ -14,10 +14,11 @@ pkgbase:
   license:
     - GPL-3.0-only
   makedepends:
+    - clang
     - cargo
     - git
     - libxkbcommon
-    - lld
+    - mold
   depends:
     - acpid
     - adw-gtk-theme
@@ -28,6 +29,7 @@ pkgbase:
     - glibc
     - libinput
     - libpulse
+    - libpipewire
     - playerctl
     - pop-sound-theme
     - qt6ct
@@ -38,10 +40,10 @@ pkgbase:
     - 'pulseaudio-alsa: Media keys support'
     - 'qt5ct: Theming support for Qt5 apps'
   source:
-    - git+https://github.com/pop-os/cosmic-settings-daemon.git#tag=epoch-1.0.16
+    - git+https://github.com/pop-os/cosmic-settings-daemon.git#tag=epoch-1.1.0
     - cosmic-settings-daemon-lto.patch
   b2sums:
-    - 26f5428a6fdb521ff248894a60a25f04b30fde03974bcecea938fc3ac101b68779cf032883bb78ecb06502f2fb1c8f0ff61422111e4e4d60c74a9f94d8f55a41
+    - 621417d34200a0dd21517c445f8a284c6c8fbe72326c8e59099f94b0d9d7fd65ddcc693b6bc2485e1fa50572f4c31d2c267bc127b4b4f4ea8d8ca9401c5c0c4d
     - 935604b934c6fb805fdef20a716838373c1c9463ddc215af9c9bd162ebacc422181f1c227f37b59bc617496a60b88f8b16132fac001f61a2c777179abd8c634a
 pkgname:
   - name: cosmic-settings-daemon
