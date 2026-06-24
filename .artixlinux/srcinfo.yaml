@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.16-1
+version: 1:1.1.0-1
 pkgbase:
   name: cosmic-app-library
   pkgdesc: Cosmic App Library
-  pkgver: 1.0.16
+  pkgver: 1.1.0
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-applibrary
@@ -24,9 +24,9 @@ pkgbase:
     - glibc
     - libxkbcommon
   source:
-    - git+https://github.com/pop-os/cosmic-applibrary.git#tag=epoch-1.0.16
+    - git+https://github.com/pop-os/cosmic-applibrary.git#tag=epoch-1.1.0
   b2sums:
-    - b81c782fae4728a4abea5cefd8e1ab07b92dde7ba21015b0511dd0be15a648ab55461b654a587b6bf506167a6462b5948133cf4706567f5a7426a06510a33d46
+    - eb085553a93aca5ea89e26c5798637e21db96badb8fff6dbf57f7141d27c615c830a748d34008a85a4927794c9becce1d542df2dfeba1027f3e488e347375695
 pkgname:
   - name: cosmic-app-library
 # generated with artixpkg 0.38.5-1-any
