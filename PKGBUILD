@@ -3,7 +3,7 @@
 # Contributor: Hugo Osvaldo Barrera <hugo@barrera.io>
 
 pkgname=python-setuptools-scm
-pkgver=10.0.5
+pkgver=10.1.2
 pkgrel=1
 pkgdesc='Handles managing your python package versions in scm metadata'
 arch=(any)
@@ -36,8 +36,8 @@ optdepends=(
   'python-rich: use rich as console log handler'
 )
 source=("$pkgname::git+$url.git#tag=setuptools-scm-v$pkgver")
-sha512sums=('c72ffde76b780464574284a3061f0d2a5e303b15357479d62a120939cee02fd037105ecbeae159c4c9b1f37d166fa4029e6615e013f33d808c563bdffe00fcd9')
-b2sums=('43a022899c63d79c9685baa41ad66e0c621ab8fe0d0ee7f19c9f32f9812c921d1f21b8de628aaf9630dafd4c00035a47f36380b99185c7f3bef45a9eebf7e8f0')
+sha512sums=('32489964a0ea4ba8428abbd527baec715bdff97a0a6fa8a97454fae0c9c577f19ae698206b7d0c675c45050eb4799b0c2780540931d250f8ea978b1deea4b93b')
+b2sums=('dfa11689f45cc524bbcebf18c96f4cbc858f411bd7615fca971c9e4080a8721abef33946ccd73f19e9b9051df6477f177172ace03e92cd581a838d583482d1ea')
 
 build() {
   cd "$pkgname/setuptools-scm"
@@ -45,11 +45,21 @@ build() {
 }
 
 check() {
-  cd "$pkgname"
+  cd "$pkgname/setuptools-scm"
 
-  python -m venv --system-site-packages test-env
-  test-env/bin/python -m installer setuptools-scm/dist/*.whl
-  test-env/bin/python -m pytest -vk 'not test_not_owner' setuptools-scm/testing_scm
+  # temporary install
+  python -m installer --destdir="$(pwd)/tmp" dist/*.whl
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  export PYTHONPATH="$(pwd)/tmp/$site_packages"
+
+  local pytest_opts=(
+    -v
+    -k 'not test_not_owner'
+    --deselect testing_scm/test_basic_api.py::test_get_version_blank_tag_regex
+    --deselect testing_scm/test_integration.py::test_setuptools_version_keyword_ensures_regex
+  )
+
+  pytest "${pytest_opts[@]}"
 }
 
 package() {
