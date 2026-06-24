@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.16-1
+version: 1:1.1.0-1
 pkgbase:
   name: cosmic-player
   pkgdesc: WIP COSMIC media player
-  pkgver: 1.0.16
+  pkgver: 1.1.0
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-player
@@ -29,9 +29,9 @@ pkgbase:
     - gstreamer
     - libxkbcommon
   source:
-    - git+https://github.com/pop-os/cosmic-player.git#tag=epoch-1.0.16
+    - git+https://github.com/pop-os/cosmic-player.git#tag=epoch-1.1.0
   sha256sums:
-    - eb481174f7e61a1e9b6af0cf40f026906acd8d8a2a636ce4f1e95522bf8552e3
+    - 0e95d6de988cf51a074663c94d4696625a7015518f0462a52c31f0091f8484e5
 pkgname:
   - name: cosmic-player
 # generated with artixpkg 0.38.5-1-any
