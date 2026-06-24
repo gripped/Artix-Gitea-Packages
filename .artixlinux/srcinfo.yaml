@@ -1,10 +1,10 @@
 ---
-version: 4.1.0-3
+version: 4.2.0-1
 pkgbase:
   name: python-hpack
   pkgdesc: Pure-Python HPACK header compression
-  pkgver: 4.1.0
-  pkgrel: 3
+  pkgver: 4.2.0
+  pkgrel: 1
   url: https://hyper.rtfd.org/
   arch:
     - any
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/python-hyper/hpack.git#tag=v4.1.0
+    - git+https://github.com/python-hyper/hpack.git#tag=v4.2.0
   sha512sums:
-    - 8720b30e65ce48b2d085699d172b14d362f19e9d85aab20c6bed47a3665f2f371e09e093f9cca58e443d735a54765596a32daf918cc121624b5c2f209b62d457
+    - 01b6b0a2d41bd429724d88dc9fa46119cd6512ab1b891bb202b7bc1e4e2969f369018ba66c07f2cfc6f6f5f73f878807ecab5ec403c0c677bf82a69caaa5b69d
 pkgname:
   - name: python-hpack
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
