@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.14.0-1
+    version: 1.14.1-1
     packages:
-      - maturin-1.14.0-1-x86_64.pkg.tar.zst
-      - python-maturin-1.14.0-1-x86_64.pkg.tar.zst
+      - maturin-1.14.1-1-x86_64.pkg.tar.zst
+      - python-maturin-1.14.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.13.3-1
