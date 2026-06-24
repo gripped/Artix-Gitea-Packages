@@ -1,4 +1,5 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: loqs <bugs-archlinux@entropy-collector.net>
 # Contributor: kxxt <rsworktech@outlook.com>
 
@@ -8,7 +9,7 @@
 # Note: source array can be synced with an Electron release after updating $pkgver with:
 # bash -c 'source PKGBUILD; _update_sources'
 
-pkgver=40.10.0
+pkgver=40.10.4
 _gcc_patches=144
 pkgrel=1
 _major_ver=${pkgver%%.*}
@@ -47,15 +48,13 @@ makedepends=(clang
              pipewire
              python
              python-requests
-             qt5-base
              rsync
              rustup
              rust-bindgen
              wget
              yarn)
-optdepends=('kde-cli-tools: file deletion support (kioclient5)'
+optdepends=('kde-cli-tools: file deletion support (kioclient)'
             'pipewire: WebRTC desktop sharing under Wayland'
-            'qt5-base: enable Qt5 with --enable-features=AllowQt'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
             'trash-cli: file deletion support (trash-put)'
             'xdg-utils: open URLs with desktop’s default (xdg-email, xdg-open)')
@@ -233,7 +232,7 @@ source=("git+https://github.com/electron/electron.git#tag=v$pkgver"
         chromium-mirror_third_party_openscreen_src_third_party_tinycbor_src::git+https://chromium.googlesource.com/external/github.com/intel/tinycbor.git#commit=d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7
         # END managed sources
         )
-sha256sums=('67d87b4a646be87eca65b1754db3ebbea8161bb79a8614f8344d62ef4b1918d6'
+sha256sums=('8ab4ad3497222a011cf3d8328f526aa7e39455bb34a7525b920b79c14df31b5c'
             '6ae8622ea5d7e95e6bfcd5da5d7695056841254646616268875b99288cbf3433'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '5abc8611463b3097fc5ce58017ef918af8b70d616ad093b8b486d017d021bbdf'
