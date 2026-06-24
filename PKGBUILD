@@ -1,13 +1,13 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=limine-snapper-sync-openrc
-pkgver=20260420
-pkgrel=2
+pkgver=20260624
+pkgrel=1
 pkgdesc="OpenRC limine-snapper-sync init script"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
-depends=('inotify-tools')
+depends=('limine-snapper-sync')
 groups=('openrc-world')
 source=("limine-snapper-sync.initd")
 
