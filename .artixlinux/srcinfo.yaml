@@ -1,9 +1,9 @@
 ---
-version: 1.3.2-1
+version: 2.0.0-1
 pkgbase:
   name: ruby-ruby_memcheck
   pkgdesc: Use Valgrind memcheck without going crazy
-  pkgver: 1.3.2
+  pkgver: 2.0.0
   pkgrel: 1
   url: https://github.com/Shopify/ruby_memcheck
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/Shopify/ruby_memcheck.git#tag=1.3.2
+    - git+https://github.com/Shopify/ruby_memcheck.git#tag=2.0.0
   sha256sums:
-    - b3118ea2a080c8b952dcf02f028a8564cc02e6e032360287cba2740c46239565
+    - f6bb65d506b83239e35b0aa756ce2cd72126e2f612accd51499a733cf62da16e
 pkgname:
   - name: ruby-ruby_memcheck
 # generated with artixpkg 0.38.5-1-any
