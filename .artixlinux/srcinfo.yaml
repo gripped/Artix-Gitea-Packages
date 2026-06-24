@@ -1,9 +1,9 @@
 ---
-version: 1:1.0.16-1
+version: 1:1.1.0-1
 pkgbase:
   name: cosmic-icon-theme
   pkgdesc: Cosmic icon theme
-  pkgver: 1.0.16
+  pkgver: 1.1.0
   pkgrel: 1
   epoch: 1
   url: https://github.com/pop-os/cosmic-icons
@@ -19,9 +19,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-1.0.16
+    - git+https://github.com/pop-os/cosmic-icons.git#tag=epoch-1.1.0
   b2sums:
-    - 905ba4ccb08ec25c4bc1dc8ba004521235db9ef635e903fd533636bcdcec016b391752db53da7251d470d659bef7fec22705c148637d57887a6d72a47f4ed956
+    - 6ac81e3d6e15e92a33458b608ed884b3fd0122851ff6f36942781fb7c81870c598a6919dac964a9a3ea44f71387ee9811b8de4c7ea74d7b1c3c76b654d8fb153
 pkgname:
   - name: cosmic-icon-theme
 # generated with artixpkg 0.38.5-1-any
