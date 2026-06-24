@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260624-1
+    version: 20260624-1.1
     packages:
-      - limine-snapper-sync-openrc-20260624-1-any.pkg.tar.zst
+      - limine-snapper-sync-openrc-20260624-1.1-any.pkg.tar.zst
     debug: []
