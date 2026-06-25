@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 6.155.3-1
+    version: 6.155.7-1
     packages:
-      - python-hypothesis-6.155.3-1-any.pkg.tar.zst
+      - python-hypothesis-6.155.7-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
