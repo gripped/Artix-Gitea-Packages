@@ -2,7 +2,7 @@
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 
 pkgname=python-cmd2
-pkgver=3.1.0
+pkgver=3.1.1
 pkgrel=1
 pkgdesc="A tool for building interactive command line apps"
 arch=('any')
@@ -12,13 +12,10 @@ depends=('python-pyperclip' 'python-rich' 'python-rich-argparse')
 makedepends=('git' 'python-setuptools-scm' 'python-build' 'python-installer' 'python-wheel')
 checkdepends=('python-pytest' 'python-pytest-mock' 'vi')
 source=("git+https://github.com/python-cmd2/cmd2.git#tag=$pkgver")
-sha512sums=('a1a0125b474c58abd9ab5d30e46f80655d86c12676fed53ad3ed81f911a747fd1e41611d072a3be20fe9ec1a8f09cea7bf62b8eab6a0b6bd49fb8b9976af028f')
+sha512sums=('065c290309dc531e6d66156c96e62a39cf377747a2211e09261c49b3a8f3c173b7555286d62c9320213f76e4be760f05adeeb8a9deccf6f75628df71a5b20064')
 
 prepare() {
   cd cmd2
-
-  # Rich 14.3 fixed styled newline handling; upstream removed cmd2's workaround in PR #1560.
-  git cherry-pick -n 926636a38156e4a7e07dc1cee04bca7b019776ec
 
   # Python 3.14 removed argparse.HelpFormatter._format_actions_usage; upstream
   # dropped these private overrides in https://github.com/python-cmd2/cmd2/pull/1571.
