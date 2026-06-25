@@ -7,7 +7,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.20.1-2.1
+    version: 0.21.0-1
     packages:
-      - khard-0.20.1-2.1-any.pkg.tar.zst
+      - khard-0.21.0-1-any.pkg.tar.zst
     debug: []
