@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Operation= Remove
+Type = Path
+Target = usr/share/evi/evifiles/doc/
+
+[Action]
+Description = Updating Vim help tags...
+Exec = /usr/bin/evi -es --cmd ":helptags /usr/share/evi/evifiles/doc" --cmd ":q"
+When = PostTransaction

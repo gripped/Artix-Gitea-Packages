@@ -1,0 +1,92 @@
+---
+version: 10.0-65.4
+pkgbase:
+  name: evi
+  pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project.
+  pkgver: 10.0
+  pkgrel: 65.4
+  url: https://codeberg.org/evi-editor/evi
+  arch:
+    - x86_64
+  license:
+    - custom:vim
+  makedepends:
+    - gawk
+    - git
+    - glibc
+    - gpm
+    - gtk3
+    - libcanberra
+    - libgcrypt
+    - libxt
+    - lua
+    - perl
+    - python
+    - ruby
+    - tcl
+    - zlib
+  source:
+    - git+https://codeberg.org/evi-editor/evi.git#commit=34df8a851b5a82521ba1a73829251cb3f094201a
+    - evirc
+    - artixlinux.vim
+    - evidoc.hook
+  sha256sums:
+    - 82a30695969d007ee25eacd4fa381095fd7b9fdd050844aaee2a04d3a76ae81c
+    - b16e85e457397ab2043a7ee0a3c84307c6b4eac157fd0b721694761f25b3ed5b
+    - cc3d931129854c298eb22e993ec14c2ad86cc1e70a08a64496f5e06559289972
+    - f230cf5feb2f24e4848f68d0555183c7b758b4e78635c40879abb761b6225d31
+pkgname:
+  - name: evi
+    depends:
+      - evi-runtime=10.0-65.4
+      - gpm
+      - acl
+      - glibc
+      - libgcrypt
+      - zlib
+    provides:
+      - vim
+      - xxd
+      - vim-minimal
+      - vim-plugin-runtime
+    conflicts:
+      - vim
+      - gvim
+      - vim-minimal
+    replaces:
+      - vim-minimal
+  - name: evi-runtime
+    pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project. (shared runtime)
+    optdepends:
+      - 'sh: support for some tools and macros'
+      - 'python: demoserver example tool'
+      - 'gawk: mve tools upport'
+    conflicts:
+      - vim-runtime
+    backup:
+      - etc/evirc
+  - name: egvi
+    pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project. (with advanced features, such as a GUI)
+    depends:
+      - evi-runtime=10.0-65.4
+      - gpm
+      - libxt
+      - gtk3
+      - glibc
+      - libgcrypt
+      - zlib
+      - libcanberra
+    optdepends:
+      - 'python: Python language support'
+      - 'ruby: Ruby language support'
+      - 'lua: Lua language support'
+      - 'perl: Perl language support'
+      - 'tcl: Tcl language support'
+    provides:
+      - evi=10.0-65.4
+      - xxd
+      - vim-plugin-runtime
+    conflicts:
+      - vim-minimal
+      - vim
+# generated with artixpkg 0.38.5-1-any
