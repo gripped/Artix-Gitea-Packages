@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.7.2-1
+    version: 1.8.2-1
     packages:
-      - zed-1.7.2-1-x86_64.pkg.tar.zst
+      - zed-1.8.2-1-x86_64.pkg.tar.zst
     debug: []
