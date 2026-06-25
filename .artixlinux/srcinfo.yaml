@@ -1,9 +1,9 @@
 ---
-version: 2.23-1
+version: 2.25-1
 pkgbase:
   name: libmpdclient
   pkgdesc: C library to implement a MPD client
-  pkgver: 2.23
+  pkgver: 2.25
   pkgrel: 1
   url: https://www.musicpd.org/libs/libmpdclient/
   arch:
@@ -19,13 +19,13 @@ pkgbase:
   provides:
     - libmpdclient.so
   source:
-    - git+https://github.com/MusicPlayerDaemon/libmpdclient.git?signed#tag=v2.23
+    - git+https://github.com/MusicPlayerDaemon/libmpdclient.git?signed#tag=v2.25
   validpgpkeys:
     - 0392335A78083894A4301C43236E8A58C6DB4512
   sha512sums:
-    - 6cf0997c45ac75a0d4a9427dbf30975a0899dbc36ec4436843861160cf9c664af0e2aae4dfd6586d3fe71e81ca1405c4c3239349a8a9d239c8781a24050aa5ce
+    - 9ab92e2828944f73ec14f7709b7f3b7c6f8e20d7dbb735e52abbe488053cd10d8e1ce2bcbd841cc0d889abceeca03e8a746200c7b0c1158e9cbe4864f0e64dc3
   b2sums:
-    - 0e20a14d7be586d1407fc07da02c87bc8f671f4a00030ecb91c232eebe0fa88a7c7fdc12f9d6cfb218402ca898c46fbb966e46c6f1c8167b118c0af6763bbd35
+    - 933f80a65c3bfc161abb17f71060e1c6f0ab4219266ba1006f86d27310ca12d32185dfe4d4448cf89b6c37388cea57aaa3acf2a5f986f75c771539aee561fe9b
 pkgname:
   - name: libmpdclient
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.5-1-any
