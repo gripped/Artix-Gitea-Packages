@@ -1,9 +1,9 @@
 ---
-version: 10.1.2-1
+version: 10.2.0-1
 pkgbase:
   name: python-setuptools-scm
   pkgdesc: Handles managing your python package versions in scm metadata
-  pkgver: 10.1.2
+  pkgver: 10.2.0
   pkgrel: 1
   url: https://github.com/pypa/setuptools-scm
   arch:
@@ -29,11 +29,11 @@ pkgbase:
   optdepends:
     - 'python-rich: use rich as console log handler'
   source:
-    - python-setuptools-scm::git+https://github.com/pypa/setuptools-scm.git#tag=setuptools-scm-v10.1.2
+    - python-setuptools-scm::git+https://github.com/pypa/setuptools-scm.git#tag=setuptools-scm-v10.2.0
   sha512sums:
-    - 32489964a0ea4ba8428abbd527baec715bdff97a0a6fa8a97454fae0c9c577f19ae698206b7d0c675c45050eb4799b0c2780540931d250f8ea978b1deea4b93b
+    - 7dfb0026bcc623a1973b97a5ec92e82ff636c43799d017b412ec2c669f48d174538a4a8f1c36ccff542ae620a65f61f9fa8b2a3ecb48b8b8626b7a304dd8201d
   b2sums:
-    - dfa11689f45cc524bbcebf18c96f4cbc858f411bd7615fca971c9e4080a8721abef33946ccd73f19e9b9051df6477f177172ace03e92cd581a838d583482d1ea
+    - 1d1074b2f14c22a94533d5ab1a3eecdb45f629743cfcdceb19a11cc5f1e23c6884c775b085294e51c3fb8a665e038d4c29d76fcca7b86ca8e58e3c0509f4e538
 pkgname:
   - name: python-setuptools-scm
 # generated with artixpkg 0.38.5-1-any

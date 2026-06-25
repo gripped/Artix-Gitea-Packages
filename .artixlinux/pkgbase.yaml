@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 10.1.2-1
+    version: 10.2.0-1
     packages:
-      - python-setuptools-scm-10.1.2-1-any.pkg.tar.zst
+      - python-setuptools-scm-10.2.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 10.0.5-1
