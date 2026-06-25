@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg4.4
 pkgver=4.4.8
-pkgrel=1
+pkgrel=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
 url=https://ffmpeg.org/
@@ -165,7 +165,8 @@ build() {
     --enable-libxvid \
     --enable-libzimg \
     --enable-shared \
-    --enable-version3
+    --enable-version3 \
+    --disable-decoder=magicyuv # pixelsmash
 
   make
   make tools/qt-faststart
