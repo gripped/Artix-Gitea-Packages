@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.11-3
+    version: 1.11-4
     packages:
-      - sway-contrib-1.11-3-any.pkg.tar.zst
+      - sway-contrib-1.11-4-any.pkg.tar.zst
     debug: []

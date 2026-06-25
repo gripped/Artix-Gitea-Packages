@@ -3,7 +3,7 @@
 
 pkgname=sway-contrib
 pkgver=1.11
-pkgrel=3
+pkgrel=4
 pkgdesc="A collection of user-contributed scripts for sway"
 arch=('any')
 url="https://github.com/OctopusET/sway-contrib"
