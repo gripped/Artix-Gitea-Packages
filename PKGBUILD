@@ -21,7 +21,7 @@ makedepends=('git')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/realvolk/ArtixForge/archive/refs/tags/v${pkgver}.tar.gz"
         "forge-gui-0.4.0.tar.gz::https://github.com/realvolk/forge-gui/archive/refs/tags/v0.4.0.tar.gz")
 sha256sums=('ff6bc2c0e6f245e8ca651995055daa48c549b1f0bdb75492c8cb86ccfa1a51a7'
-            '181c3f132a36eb5cbfbec5d7417ba02f48c1651bcf80cb8d72683fc08db6a2e9')
+            '15d5359c8c8d7666eab6dc7ba7b9c5ec14d04882a440d4dc1bcb5b9bdce9984b')
 
 package() {
     install -dm755 "${pkgdir}/usr/share/artixforge"
