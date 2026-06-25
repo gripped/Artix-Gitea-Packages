@@ -1,10 +1,10 @@
 ---
-version: 0.10.0-3
+version: 0.10.0-4
 pkgbase:
   name: wcm
   pkgdesc: GTK application to configure Wayfire
   pkgver: 0.10.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/WayfireWM/wcm
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgbase:
     - b76e5467d02cc5926ae7efe300c6d017aa9a0410b2c720e16ebb53fce03560c111ab9e664f4e164881bee2c1237d45e14c5b8ab18ddc0265e319f718867985a5
 pkgname:
   - name: wcm
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
