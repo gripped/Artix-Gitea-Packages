@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bert Peters <bertptrs@archlinux.org>
+# Maintainer: Bert Peters <bertptrs@archlinux.org>
 # Contributor: Dylan Delgado <dylan1496 at live dot com>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Dmitry N. Shilov <stormblast@land.ru>
 
 pkgname=sakura
 pkgver=3.8.9
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A terminal emulator based on GTK and VTE"
 arch=('x86_64')
 url="https://launchpad.net/sakura"

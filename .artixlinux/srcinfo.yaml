@@ -1,10 +1,10 @@
 ---
-version: 3.8.9-1
+version: 3.8.9-1.1
 pkgbase:
   name: sakura
   pkgdesc: A terminal emulator based on GTK and VTE
   pkgver: 3.8.9
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://launchpad.net/sakura
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgbase:
     - 53b41c9b5dd62802d172c78f8af302768192e438af0dc0d65871d04a330b0a27
 pkgname:
   - name: sakura
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.38.5-1-any
