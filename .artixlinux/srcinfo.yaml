@@ -1,9 +1,9 @@
 ---
-version: 3.33.6239.2-1
+version: 3.34.6239.2-1
 pkgbase:
   name: fcitx5-mozc
   pkgdesc: Fcitx5 Module of A Japanese Input Method for Chromium OS, Windows, Mac and Linux (the Open Source Edition of Google Japanese Input)
-  pkgver: 3.33.6239.2
+  pkgver: 3.34.6239.2
   pkgrel: 1
   url: https://github.com/google/mozc
   arch:
@@ -60,7 +60,7 @@ pkgbase:
     - protoc-34.1-linux-aarch_64.zip
     - protoc-34.1-linux-x86_64.zip
   source:
-    - git+https://github.com/fcitx/mozc.git#commit=767a4de69
+    - git+https://github.com/fcitx/mozc.git#commit=35898ee6c
     - git+https://github.com/bazelbuild/bazel-central-registry#commit=b0cb0e8ec
     - https://github.com/abseil/abseil-cpp/releases/download/20260107.1/abseil-cpp-20260107.1.tar.gz
     - https://github.com/astral-sh/python-build-standalone/releases/download/20251031/cpython-3.11.14+20251031-aarch64-unknown-linux-gnu-install_only.tar.gz
@@ -95,7 +95,7 @@ pkgbase:
   validpgpkeys:
     - 2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9
   sha512sums:
-    - a263264c2fbb057329c04f70bda66c147297952db75dd4f1a1ce711fdc8ec21adc4a5ccc050957dc49c105006bbb6acef5e047409275cdb725d5649dbc0d0e84
+    - 99bb157ddc794c2a13c314c315f7a6ad4e3e5b67cbbe97fb388183dfe997ea9819524e33037a56b21b44424dd83612f5708ba267d8c659603d9146e2298f9e92
     - ed7cd6082f6ca62e4d6564881d383009a8f6f3dd2cf7c0b6bb4733d4b18325d995187fa1539e3dc75a6605577e2a8258a31574d54ac950e4a7a3b5127b188366
     - f5012885d6b6844a9cf5ed92ad5468b8757db33dfe1364bfb232fff928e06c550c7eb4557f45186a8ac4d18b178df9be267681abab4a6de40823b574afbe9960
     - 171ecb5ca4c30adc9297245209b2bf4a2d8baa25d3c28e5ef3e415f9cb08367f18cf4a2e39469d1c1eb4e674339f66576c36842d18e5e56c570bbd1e49851983
