@@ -1,8 +1,8 @@
 ---
-version: 2.4.2-1
+version: 2.4.3-1
 pkgbase:
   name: firewalld
-  pkgver: 2.4.2
+  pkgver: 2.4.3
   pkgrel: 1
   url: https://firewalld.org
   arch:
@@ -16,11 +16,11 @@ pkgbase:
     - python
     - iptables
   source:
-    - git+https://github.com/firewalld/firewalld.git#tag=v2.4.2
+    - git+https://github.com/firewalld/firewalld.git#tag=v2.4.3
     - firewalld-sysconfigdir.patch
     - fix_gettext_macros_path.patch
   sha256sums:
-    - 48b564a466f1673aeb65a6265ce9e8af257cf3286b0d64aa045745be39ed5d3b
+    - 46a355a484930bb4372307530c44d2f8b1e9ae70c468231712eb47298dc6fd2c
     - 3b2e00f67680c2e620804eb28620d7370b4096851bcb5f6fec22460a21941ad9
     - 49f793aeaf2e87c834c734b37dc926c9579cc2ec0782e5fe297ee286df6c7ef6
 pkgname:
