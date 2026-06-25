@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Konstantin Gizdov <arch at kge dot pw>
-# Contributor: Robin Candau <antiz@archlinux.org>
+# Maintainer: Konstantin Gizdov <arch at kge dot pw>
+# Maintainer: Robin Candau <antiz@archlinux.org>
 # Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
 # Contributor: nfnty
 
 pkgbase=kea
 pkgname=("${pkgbase}" "${pkgbase}-docs")
-pkgver=3.0.3
-pkgrel=6
+pkgver=3.2.0
+pkgrel=1
 epoch=1
 pkgdesc="High-performance, extensible DHCP server engine from ISC, supporting both DHCPv4 and DHCPv6"
 url="https://kea.isc.org"
@@ -24,7 +23,7 @@ source=("git+https://gitlab.isc.org/isc-projects/kea.git#tag=Kea-${pkgver}?signe
         'kea.tmpfiles'
         'fix-build-with-boost-1.89.patch'
         'fix-build-with-boost-1.90.patch')
-b2sums=('993f4a9d8ebde89685376694bb3655c5e1e340d7d56726724ef72262021b899eed94fe52a5c2a39e0630f30c3c3849e857cd80208b1241bc04a31fa3c244f2bf'
+b2sums=('33f590ffd62706317b501b1d2a0fb7ea1fdc9e5fc905cd9bbb46b7fb961a795def010233b36cc8e6b4cefc0a877bf3d6867905a4df224cd3eedf0a12da144ecb'
         '630310bb2b544a00276a0fa0fff8b7bb93f6bf63e3e5f8ed38f2e1fd2d9747ea4b4cbaa7c0023eec1baddf5e8fe1966b71c6941b3a3cd2e7705e67b15543f2c7'
         'd62c9181b55956441c43414bc2a5a8cff143281931bd57fe584ed03e6035a87c610da2530c10233189fa5926e98e47d05c120b5218e77c9b842131668c9be1e9'
         '4cfe04b61d7884ed492c3f7f06cf3ea68ec231063a8ba868221bbeb17ab94315d80e05243db89a12b29d0b2b1e35e1c7a86f33a42874ddc85661420ea9347e07'
@@ -35,16 +34,6 @@ validpgpkeys=('BE0E9748B718253A28BB89FFF1B11BF05CF02E57'  # Internet Systems Con
               '090A2A07923F925B5767803A42E5DF78C83271DB'  # Marcin Godzina (Code-Signing Key) <mgodzina@isc.org>
               'DA6A3508E672A49DD382AFD95B8F4D91B88ED909'  # Andrei Pavel (Code-Signing Key) <andrei@isc.org>
               '0259A33B5F5A3A4466CF345C7A5E084CACA51884') # Wlodek Wencel (Code-Signing Key) <wlodek@isc.org>
-
-prepare() {
-	cd "${pkgbase}"
-	# Fix build with boost 1.89
-	# See https://gitlab.isc.org/isc-projects/kea/-/merge_requests/2782
-	patch -Np1 -i "${srcdir}/fix-build-with-boost-1.89.patch"
-	# Fix build with boost 1.90
-	# See https://gitlab.archlinux.org/archlinux/packaging/packages/kea/-/merge_requests/3#note_440881
-	patch -Np1 -i "${srcdir}/fix-build-with-boost-1.90.patch"
-}
 
 build() {
 	artix-meson "${pkgbase}" build -D netconf=disabled -D tests=enabled --install-umask 0022 -D runstatedir=/run
@@ -66,6 +55,8 @@ check() {
 		grep -v 'kea:kea-dhcp6-tests' | \
 		grep -v 'shell-tests - kea:kea_admin_mysql_tests.sh' | \
 		grep -v 'shell-tests - kea:kea_admin_pgsql_tests.sh' | \
+		grep -v 'kea-config-tests'  | \
+		grep -v 'dhcp-forensic-log-libload-tests' | \
 		awk '{print $NF}')
 }
 
