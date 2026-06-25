@@ -1,0 +1,85 @@
+---
+version: 1:7.1.4p1-2
+pkgbase:
+  name: jellyfin-ffmpeg
+  pkgdesc: Jellyfin fork of ffmpeg
+  pkgver: 7.1.4p1
+  pkgrel: 2
+  epoch: 1
+  url: https://github.com/jellyfin/jellyfin-ffmpeg
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - nasm
+    - clang
+    - ffnvcodec-headers
+    - amf-headers
+    - opencl-headers
+    - vulkan-headers
+  depends:
+    - glibc
+    - alsa-lib
+    - bzip2
+    - fontconfig
+    - fribidi
+    - gmp
+    - gnutls
+    - lame
+    - libass.so
+    - libbluray.so
+    - libchromaprint.so
+    - libdav1d.so
+    - libdrm
+    - libfreetype.so
+    - libopenmpt.so
+    - libplacebo.so
+    - libtheora
+    - libva.so
+    - libva-drm.so
+    - libvdpau
+    - libvorbisenc.so
+    - libvorbis.so
+    - libvpx.so
+    - libwebp
+    - libx11
+    - libx264.so
+    - libx265.so
+    - libxext
+    - libxml2
+    - libzimg.so
+    - ocl-icd
+    - onevpl
+    - opus
+    - shaderc
+    - sndio
+    - srt
+    - svt-av1
+    - vulkan-icd-loader
+    - xz
+    - zlib
+    - zvbi
+  optdepends:
+    - 'intel-media-driver: for Intel VAAPI support (Broadwell and newer)'
+    - 'intel-media-sdk: for Intel Quick Sync Video'
+    - 'onevpl-intel-gpu: for Intel Quick Sync Video (Alder Lake and newer)'
+    - 'intel-compute-runtime: for Intel OpenCL runtime based tonemapping'
+    - 'libva-intel-driver: for Intel legacy VAAPI support (Comet Lake and older)'
+    - 'libva-mesa-driver: for AMD VAAPI support'
+    - 'nvidia-utils: for Nvidia NVDEC/NVENC support'
+    - 'opencl-amd: for AMD OpenCL runtime based Tonemapping'
+    - 'vulkan-radeon: for AMD RADV Vulkan support'
+    - 'vulkan-intel: for Intel ANV Vulkan support'
+  options:
+    - '!lto'
+  source:
+    - jellyfin-ffmpeg::git+https://github.com/jellyfin/jellyfin-ffmpeg#tag=v7.1.4-1
+  sha512sums:
+    - f77cd5732b7d5dfdfd35c9f0c1d7e2c40b87b2683be5489a12f2f22ad959f52dcd972e326f512f82ea7c481cd0da33599531901aa4c1c5e7af58a9a1d1797b4d
+  b2sums:
+    - 52d212de10cc2e78f6de519dc63ff2b9130b4c1650f0c5fa83a165791cc6f4ef7e0487f0bbe2c20ee72615e73271109f59c7ef76348a6c5139ec34a17628bab6
+pkgname:
+  - name: jellyfin-ffmpeg
+# generated with artixpkg 0.38.5-1-any
