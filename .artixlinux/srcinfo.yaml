@@ -1,10 +1,10 @@
 ---
-version: 0.2.6-5
+version: 0.3.0-1
 pkgbase:
   name: ruby-rubygems-tasks
-  pkgdesc: Agnostic and unobtrusive Rake tasks for managing and releasing Ruby Gems
-  pkgver: 0.2.6
-  pkgrel: 5
+  pkgdesc: Rake tasks for building and releasing Ruby Gems
+  pkgver: 0.3.0
+  pkgrel: 1
   url: https://github.com/postmodern/rubygems-tasks
   arch:
     - any
@@ -21,9 +21,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/postmodern/rubygems-tasks.git#commit=d25aebe54b96786fde7226c88d9e158948c9d84a
+    - git+https://github.com/postmodern/rubygems-tasks.git#tag=v0.3.0
   sha256sums:
-    - SKIP
+    - 4e55777b95f3cd340da8453f3f3ff77ecfaefea6dc7cef1b220e0ffbaf1404d7
 pkgname:
   - name: ruby-rubygems-tasks
-# generated with artixpkg 0.36.1-1-any
+# generated with artixpkg 0.38.5-1-any
