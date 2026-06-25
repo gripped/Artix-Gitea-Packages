@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,18 +29,18 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.60.0-2
+    version: 1.60.1-1
     packages:
-      - gvfs-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-afc-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-dnssd-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-goa-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-gphoto2-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-mtp-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-nfs-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-onedrive-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-smb-1.60.0-2-x86_64.pkg.tar.zst
-      - gvfs-wsdd-1.60.0-2-x86_64.pkg.tar.zst
+      - gvfs-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-afc-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-dnssd-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-goa-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-gphoto2-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-mtp-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-nfs-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-onedrive-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-smb-1.60.1-1-x86_64.pkg.tar.zst
+      - gvfs-wsdd-1.60.1-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
