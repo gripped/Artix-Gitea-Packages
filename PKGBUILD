@@ -13,7 +13,7 @@ pkgname=(
   networkmanager-docs
 )
 pkgver=1.56.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Network connection manager and user applications"
 url="https://networkmanager.dev/"
 arch=(x86_64)
@@ -63,7 +63,7 @@ checkdepends=(
   python-dbus
 )
 source=(
-  "git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git?signed#tag=${pkgver/[a-z]/-&}"
+  "git+https://gitlab.freedesktop.org/NetworkManager/NetworkManager.git#tag=${pkgver/[a-z]/-&}"
 )
 b2sums=('fbd3fd7ca98b75cddc61c85e888f10f103dfed2405e9798a6bfc988788312b47b3b5f011664db303939c75ca404e258a23b8515a308cbf77ecfc29188524e20e')
 validpgpkeys=(
@@ -94,7 +94,7 @@ build() {
     -D dist_version="$pkgver-$pkgrel"
     -D session_tracking_consolekit=false
     -D suspend_resume=elogind
-    -D modify_system=true
+
     -D polkit_noauth_group=wheel
     -D selinux=false
     -D systemdsystemunitdir=no
