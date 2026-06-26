@@ -1,9 +1,9 @@
 ---
-version: 4.14.0-1
+version: 4.14.1-1
 pkgbase:
   name: python-anyio
   pkgdesc: High level compatibility layer for multiple asynchronous event loop implementations
-  pkgver: 4.14.0
+  pkgver: 4.14.1
   pkgrel: 1
   url: https://github.com/agronholm/anyio
   arch:
@@ -36,9 +36,9 @@ pkgbase:
     - 'python-uvloop: use uvloop for asyncio backend'
     - 'python-pytest: pytest plugin'
   source:
-    - git+https://github.com/agronholm/anyio.git#tag=4.14.0
+    - git+https://github.com/agronholm/anyio.git#tag=4.14.1
   sha256sums:
-    - 9d8a5371494904952514935f44df9fc10de3cea61c58610944dfc85e1b187b1d
+    - c8651ad95fe907c8481cd5a5a3693986f878902badd919f42188d4731fd9aa49
 pkgname:
   - name: python-anyio
 # generated with artixpkg 0.38.5-1-any
