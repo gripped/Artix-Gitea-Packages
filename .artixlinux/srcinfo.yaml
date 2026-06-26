@@ -1,10 +1,10 @@
 ---
-version: 1.23.0-2.2
+version: 1.23.1-1
 pkgbase:
   name: libheif
   pkgdesc: An HEIF and AVIF file format decoder and encoder
-  pkgver: 1.23.0
-  pkgrel: 2.2
+  pkgver: 1.23.1
+  pkgrel: 1
   url: https://github.com/strukturag/libheif
   arch:
     - x86_64
@@ -53,9 +53,9 @@ pkgbase:
   provides:
     - libheif.so
   source:
-    - git+https://github.com/strukturag/libheif#tag=v1.23.0
+    - git+https://github.com/strukturag/libheif#tag=v1.23.1
   sha256sums:
-    - 4ff7a2ffb6ed3f72ef69fc2ad1c498fff2c65d17ca853ce7d53d4d87e055dde3
+    - 9ebeaab3549100ab622c5bb8ddfee612c4615a145685404ce358522c00a1bb48
 pkgname:
   - name: libheif
 # generated with artixpkg 0.38.5-1-any
