@@ -1,8 +1,8 @@
 # Maintainer: Christian Hesse <eworm@archlinux.org>
 
 pkgname='virtualbox-host-modules-artix'
-pkgver=7.2.8
-pkgrel=20
+pkgver=7.2.10
+pkgrel=2
 pkgdesc='Virtualbox host kernel modules for Artix Kernel'
 arch=('x86_64')
 url='https://virtualbox.org/'
