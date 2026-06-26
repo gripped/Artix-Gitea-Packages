@@ -1,0 +1,27 @@
+---
+version: 0.0.1-1
+pkgbase:
+  name: sysinfo
+  pkgdesc: A simple yad based System Info application
+  pkgver: 0.0.1
+  pkgrel: 1
+  url: http://mokshadesktop.org
+  arch:
+    - x86_64
+  license:
+    - BSD
+  makedepends:
+    - intltool
+    - git
+  depends:
+    - moksha
+    - yad
+  source:
+    - sysinfo-0.0.1::git+https://github.com/BodhiDev/sysinfo.git
+    - undo-strip-modification.patch
+  sha256sums:
+    - SKIP
+    - b3fd15bbfd8a36bcfe9be2b5fa6afd8c13f7968a6248d271e3369b88b8704ec6
+pkgname:
+  - name: sysinfo
+# generated with artixpkg 0.38.5-1-any

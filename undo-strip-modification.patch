@@ -1,0 +1,13 @@
+--- a/Makefile	2026-06-26 19:38:33.255603317 +0200
++++ b/Makefile	2026-06-26 19:39:08.782135916 +0200
+@@ -7,8 +7,8 @@
+ localedir = $(datadir)/locale
+ 
+ INSTALL = install -c
+-INSTALL_DATA = $(INSTALL) -s -m 644
+-INSTALL_PROGRAM = $(INSTALL) -s -m 755
++INSTALL_DATA = $(INSTALL) -m 644
++INSTALL_PROGRAM = $(INSTALL) -m 755
+ MKDIR_P = mkdir -p
+ 
+ INTLTOOL_MERGE = intltool-merge
