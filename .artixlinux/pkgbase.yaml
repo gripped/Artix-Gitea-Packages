@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260619.121446.g4832d33cc342-1
+    version: 20260626.114630.g7bc6861b2395-1
     packages:
-      - libretro-gambatte-20260619.121446.g4832d33cc342-1-x86_64.pkg.tar.zst
+      - libretro-gambatte-20260626.114630.g7bc6861b2395-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
