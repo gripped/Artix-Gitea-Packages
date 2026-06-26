@@ -55,6 +55,11 @@ prepare() {
 
 build() {
   cd ${pkgbase}-${pkgver}
+
+  mkdir /tmp/gradle
+  export GRADLE_OPTS+=" -Djava.io.tmpdir=/tmp/gradle"
+  export GRADLE_USER_HOME="/tmp/gradle"
+
   ./gradlew installAll \
     --info \
     --stacktrace \
