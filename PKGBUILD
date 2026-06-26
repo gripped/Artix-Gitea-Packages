@@ -2,12 +2,12 @@
 
 # WARNING: This upstream **does not** guarantee ABI stability. Expect soname changes in patch-level version bumps (https://github.com/wolfSSL/wolfssl/issues/6928)
 pkgname=wolfssl
-pkgver=5.8.4
+pkgver=5.9.2
 pkgrel=1
 pkgdesc="Lightweight, portable, C-language-based SSL/TLS library"
 arch=(x86_64)
 url="https://www.wolfssl.com/"
-license=(GPL-2.0-or-later)
+license=(GPL-3.0-or-later)
 depends=(glibc)
 makedepends=(cmake)
 provides=(libwolfssl.so)
@@ -15,9 +15,9 @@ source=(
   $pkgname-$pkgver-stable.tar.gz::https://github.com/$pkgname/$pkgname/archive/refs/tags/v$pkgver-stable.tar.gz
   https://github.com/$pkgname/$pkgname/releases/download/v$pkgver-stable/$pkgname-$pkgver-stable.tar.gz.asc
 )
-sha512sums=('6f191c218b270bd4dc90d6f07a80416e6bc8d049f3f49ea84c38a2af40ae9588a4fe306860fbb8696c5af15c4ca359818e3955069389d33269eee0101c270439'
+sha512sums=('ed0f6bff353b1a835e1f1c15e1863eda9e04030962211be64d7c764f8373b016778e04ea9538ca6cf2f58d55d0f855c2af1739d776f9697b2f4a13a5e489d85f'
             'SKIP')
-b2sums=('38afff3fcdfcff40f5d52feb8efd24d74f9a641cd028a270835cc680cf27cecd9a8119ca3d5a04510cfdb39aacce00fe884a8c8d6c74a92990204da2aca79454'
+b2sums=('4e47fb590a0420231e4219ace3095ba2e0f8d188da19ae6e984eb80825bcc90211bed56e931920dbad5cf797655aeb63c7b3cda0924569a41096e590f60be1d9'
         'SKIP')
 validpgpkeys=(
   A2A48E7BCB96C5BECB987314EBC80E415CA29677  # wolfSSL <secure@wolfssl.com>
