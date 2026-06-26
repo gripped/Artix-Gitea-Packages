@@ -3,7 +3,7 @@
 
 _name=mutagen
 pkgname=python-mutagen
-pkgver=1.48.0
+pkgver=1.48.1
 pkgrel=1
 arch=(any)
 pkgdesc="An audio metadata tag reader and writer (python library)"
@@ -23,9 +23,9 @@ checkdepends=(
   python-pytest
 )
 source=($url/releases/download/release-$pkgver/$_name-$pkgver.tar.gz{,.sig})
-sha512sums=('99b5fec18980e27dd85318c406928bc1d349df2f3c5d89bdd561700b2f1f1502739a98f1aba8cf9c7545dba2cfe68d765c94d957adc6de56bf9cb99951510e82'
+sha512sums=('ce19c5752b8d5b5c92de082df9d78c2aae6d1b4b54694416fbc92b6460776b409d1eab0296018f88759bf642b8994c8b0cd67e068afad8193354069b37e29a90'
             'SKIP')
-b2sums=('4d87616520c6a2fac34b92fba396593e16c6ec9dc0635fd514482b036a57483970e1540c45a3708d96909ebb6335e9b1722b0d77cac28570afbe40438ba437e2'
+b2sums=('437bd257fcf615e27410678394b2699fe9bfe66156355823d0b18d1975c5e50fc62b09b3ff0cfe9b9c7ea9ca6ca9a00f31ea4a63c1fd0c11da6bb85a55f19896'
         'SKIP')
 validpgpkeys=('0EBF782C5D53F7E5FB02A66746BD761F7A49B0EC') # Christoph Reiter <reiter.christoph@gmail.com>
 

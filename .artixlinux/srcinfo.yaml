@@ -1,9 +1,9 @@
 ---
-version: 1.48.0-1
+version: 1.48.1-1
 pkgbase:
   name: python-mutagen
   pkgdesc: An audio metadata tag reader and writer (python library)
-  pkgver: 1.48.0
+  pkgver: 1.48.1
   pkgrel: 1
   url: https://github.com/quodlibet/mutagen
   arch:
@@ -23,15 +23,15 @@ pkgbase:
   depends:
     - python
   source:
-    - https://github.com/quodlibet/mutagen/releases/download/release-1.48.0/mutagen-1.48.0.tar.gz
-    - https://github.com/quodlibet/mutagen/releases/download/release-1.48.0/mutagen-1.48.0.tar.gz.sig
+    - https://github.com/quodlibet/mutagen/releases/download/release-1.48.1/mutagen-1.48.1.tar.gz
+    - https://github.com/quodlibet/mutagen/releases/download/release-1.48.1/mutagen-1.48.1.tar.gz.sig
   validpgpkeys:
     - 0EBF782C5D53F7E5FB02A66746BD761F7A49B0EC
   sha512sums:
-    - 99b5fec18980e27dd85318c406928bc1d349df2f3c5d89bdd561700b2f1f1502739a98f1aba8cf9c7545dba2cfe68d765c94d957adc6de56bf9cb99951510e82
+    - ce19c5752b8d5b5c92de082df9d78c2aae6d1b4b54694416fbc92b6460776b409d1eab0296018f88759bf642b8994c8b0cd67e068afad8193354069b37e29a90
     - SKIP
   b2sums:
-    - 4d87616520c6a2fac34b92fba396593e16c6ec9dc0635fd514482b036a57483970e1540c45a3708d96909ebb6335e9b1722b0d77cac28570afbe40438ba437e2
+    - 437bd257fcf615e27410678394b2699fe9bfe66156355823d0b18d1975c5e50fc62b09b3ff0cfe9b9c7ea9ca6ca9a00f31ea4a63c1fd0c11da6bb85a55f19896
     - SKIP
 pkgname:
   - name: python-mutagen
