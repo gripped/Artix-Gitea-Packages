@@ -1,10 +1,10 @@
 ---
-version: 1:1.21.0-4
+version: 1:1.22.0-1
 pkgbase:
   name: onnx
   pkgdesc: Open standard for machine learning interoperability
-  pkgver: 1.21.0
-  pkgrel: 4
+  pkgver: 1.22.0
+  pkgrel: 1
   epoch: 1
   url: https://onnx.ai
   arch:
@@ -14,35 +14,37 @@ pkgbase:
   makedepends:
     - cmake
     - git
+    - nanobind
+    - ninja
     - protobuf
-    - pybind11
     - python
     - python-build
     - python-installer
     - python-ml-dtypes
     - python-numpy
     - python-protobuf
-    - python-setuptools
-    - python-wheel
+    - python-scikit-build-core
   source:
-    - onnx::git+https://github.com/onnx/onnx.git#tag=v1.21.0
+    - onnx::git+https://github.com/onnx/onnx.git#tag=v1.22.0
   sha512sums:
-    - 72d1225f0cc622b22dec29e6dad56a97a95bfd55ba3d9f4fe23814b3dd5ae33034785d463c47f011c458220cc19dba6bf795e17620d9237d6eefd8cb949eaf00
+    - e29de087026762281a85f6717bf609117ee2a88b603b46a6213f7a4c924ca8e437d5819a9c45042aa8da4b90dfcf2df562e9a2104031398ba3f1377ba976ed62
 pkgname:
   - name: onnx
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - abseil-cpp
       - protobuf
   - name: python-onnx
     depends:
-      - onnx
       - python
       - glibc
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - protobuf
       - python-protobuf
       - python-ml-dtypes
       - python-numpy
+      - python-typing_extensions
 # generated with artixpkg 0.38.5-1-any
