@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260622.173742.gae13b9b3e1e8-1
+    version: 20260626.001958.gdee3cbac84f5-1
     packages:
-      - libretro-ppsspp-20260622.173742.gae13b9b3e1e8-1-x86_64.pkg.tar.zst
+      - libretro-ppsspp-20260626.001958.gdee3cbac84f5-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

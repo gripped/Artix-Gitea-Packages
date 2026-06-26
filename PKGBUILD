@@ -4,7 +4,7 @@
 # Contributor: Duck Hunt <vaporeon@tfwno.gf>
 
 pkgname=libretro-ppsspp
-pkgver=20260622.173742.gae13b9b3e1e8
+pkgver=20260626.001958.gdee3cbac84f5
 pkgrel=1
 pkgdesc='Sony PlayStation Portable core'
 arch=(x86_64)
@@ -43,7 +43,7 @@ source=(
   git+https://github.com/facebook/zstd.git
   libretro-ppsspp-assets-path.patch
 )
-b2sums=('e26e47b7020fd7b23bc3166b75f8175cea3d822abc956b7af45842b4c11315b774d990a1f72fd6e2aef55cf4f09f222473107a9b43769f7ae03041732cfa9059'
+b2sums=('bb7604eb8d2436d409eb26ca7f29d7939aa1769dae10996a2e71e0bca841bb13056d925c7fb879bc2fd5f6b834915483cfa0818a31d8ad095da298a91fa29e51'
         'SKIP'
         'SKIP'
         'SKIP'
