@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260615.014545.gcb16af00ef70-1
+    version: 20260624.142726.gd89fb7f05d65-1
     packages:
-      - libretro-overlays-20260615.014545.gcb16af00ef70-1-any.pkg.tar.zst
+      - libretro-overlays-20260624.142726.gd89fb7f05d65-1-any.pkg.tar.zst
     debug: []
 team: galaxy
