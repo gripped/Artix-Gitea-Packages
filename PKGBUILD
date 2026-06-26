@@ -1,0 +1,72 @@
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Orhun Parmaksız <orhun@archlinux.org>
+# Contributor: Carl Smedstad <carl.smedstad at protonmail dot com>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+# Contributor: Thomas <thomas at 6f dot io>
+
+pkgname=jujutsu
+_pkgname=jj
+pkgver=0.42.0
+pkgrel=1
+pkgdesc='Git-compatible VCS that is both simple and powerful'
+arch=(x86_64)
+url="https://github.com/jj-vcs/$_pkgname"
+license=(Apache-2.0)
+depends=(libgcc # libgcc_s.so ld-linux-x86-64.so
+         git
+         glibc # libc.so libm.so
+         zstd)
+replaces=("$pkgname-bin")
+optdepends=('git: for push/clone/fetch actions when using git.subprocess = true')
+makedepends=(cargo
+             cargo-edit
+             cmake) # builds vendored libz-ng
+checkdepends=(git)
+_archive="$_pkgname-$pkgver"
+source=("$url/archive/refs/tags/v$pkgver/$_archive.tar.gz")
+sha256sums=('ee495c2853bb2bca7403215e8102cbb9a136a73e18a9dfc07067789d38e14efc')
+
+prepare() {
+	cd "$_archive"
+	cargo fetch --locked --target "$(rustc --print host-tuple)"
+	mkdir -p completions manpages
+}
+
+build() {
+	cd "$_archive"
+	CFLAGS+=' -ffat-lto-objects'
+	cargo build --frozen --release --all-features --package jj-cli
+	local jj=target/release/jj
+	$jj util completion bash > completions/jj
+	$jj util completion elvish > completions/jj.elv
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/jujutsu/-/issues/2
+	# $jj util completion fish > completions/jj.fish
+	$jj util completion zsh > completions/_jj
+	$jj util install-man-pages manpages
+}
+
+check() {
+	cd "$_archive"
+	export useNextest=false
+	local skipped=(
+		test_diff_command # relies on config of external command
+		test_acls::test_diff # relies on assumptions about tty
+	)
+	cargo test --frozen --all-features --package jj-cli -- \
+		${skipped[@]/#/--skip }
+}
+
+package() {
+	cd "$_archive"
+	install -Dm0755 -t "$pkgdir/usr/bin" target/release/jj
+	install -Dm0644 -t "$pkgdir/usr/share/bash-completion/completions/" completions/jj
+	install -Dm0644 -t "$pkgdir/usr/share/elvish/lib/" completions/jj.elv
+	# https://gitlab.archlinux.org/archlinux/packaging/packages/jujutsu/-/issues/2
+	# install -Dm0644 -t "$pkgdir/usr/share/fish/vendor_completions.d/" completions/jj.fish
+	install -Dm0644 -t "$pkgdir/usr/share/zsh/site-functions/" completions/_jj
+	install -Dm0644 -t "$pkgdir/usr/share/man/man1/" manpages/man1/*
+	install -Dm0644 -t "$pkgdir/usr/share/doc/$pkgname" ./*.md
+	cp -at "$pkgdir/usr/share/doc/$pkgname" docs
+	# Avoid namcap warning for dead symlink
+	rm "$pkgdir/usr/share/doc/jujutsu/docs/cli-reference.md"
+}

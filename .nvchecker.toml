@@ -1,0 +1,5 @@
+[jujutsu]
+source = "github"
+github = "jj-vcs/jj"
+prefix = "v"
+use_latest_release = true
