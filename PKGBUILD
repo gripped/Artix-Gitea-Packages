@@ -6,7 +6,7 @@
 pkgbase=gradle
 pkgname=('gradle' 'gradle-doc' 'gradle-src')
 pkgver=9.6.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Powerful build system for the JVM'
 url='https://gradle.org/'
 arch=('any')
@@ -25,7 +25,8 @@ makedepends=(
   'groovy'
   'java-environment=11'
   'java-environment=17'
-  'java-environment=21'
+  #'java-environment=21'
+  'jdk21-openjdk'
   'xmlto'
 )
 source=(https://services.gradle.org/distributions/${pkgbase}-${pkgver}-src.zip
@@ -55,8 +56,8 @@ prepare() {
 build() {
   cd ${pkgbase}-${pkgver}
   ./gradlew installAll \
-    --debug \
     --info \
+    --stacktrace \
     -Porg.gradle.java.installations.paths=/usr/lib/jvm/java-21-openjdk \
     -Porg.gradle.java.installations.auto-download=false \
     -PfinalRelease=true \

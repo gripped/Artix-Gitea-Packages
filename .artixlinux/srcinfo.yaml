@@ -1,10 +1,10 @@
 ---
-version: 9.6.0-1
+version: 9.6.0-1.1
 pkgbase:
   name: gradle
   pkgdesc: Powerful build system for the JVM
   pkgver: 9.6.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://gradle.org/
   arch:
     - any
@@ -16,7 +16,7 @@ pkgbase:
     - groovy
     - java-environment=11
     - java-environment=17
-    - java-environment=21
+    - jdk21-openjdk
     - xmlto
   depends:
     - bash
