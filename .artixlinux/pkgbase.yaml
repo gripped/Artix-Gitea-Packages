@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.7.0-2
+    version: 7.8.0-1
     packages:
-      - sundials-7.7.0-2-x86_64.pkg.tar.zst
+      - sundials-7.8.0-1-x86_64.pkg.tar.zst
     debug: []
