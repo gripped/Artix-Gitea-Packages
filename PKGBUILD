@@ -4,15 +4,17 @@
 
 pkgname=libva
 pkgver=2.23.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Video Acceleration (VA) API for Linux'
 arch=(x86_64)
-url=https://01.org/linuxmedia/vaapi
+url=https://intel.github.io/libva/
 license=(MIT)
 depends=(
+  glibc
   libdrm
   libgl
   libx11
+  libxcb
   libxext
   libxfixes
   wayland
@@ -36,14 +38,8 @@ provides=(
   libva.so
 )
 backup=(etc/libva.conf)
-_tag=dbf83dc3b1ce6bad46e1628aaf2da5ef731157b8
-source=(git+https://github.com/intel/libva.git#tag=${_tag})
+source=(git+https://github.com/intel/libva.git#tag=${pkgver})
 b2sums=('010fa62fd2ee0b17678614bacacff0316a649e2305075bab76692d2d02634a76696bd0084184e4e07a61b65544882ee0b7b2e843fb69b6e1b156dc1d79b5679e')
-
-pkgver() {
-  cd libva
-  git describe --tags | sed 's/[^-]*-g/r&/;s/-/+/g'
-}
 
 build() {
   CFLAGS+=" -DENABLE_VA_MESSAGING" # Option missing
@@ -58,5 +54,3 @@ package() {
 LIBVA_MESSAGING_LEVEL=1
 END
 }
-
-# vim:set sw=2 sts=-1 et:
