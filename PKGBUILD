@@ -7,17 +7,12 @@ pkgname=(
   liblightdm-qt5
 )
 pkgver=1.32.0
-pkgrel=6.2
+pkgrel=8
 epoch=1
 pkgdesc='A lightweight display manager'
 arch=(x86_64)
 url=https://github.com/canonical/lightdm
-license=(
-  # liblightdm is under "LGPL 2 or 3"
-  'GPL-3.0-or-later AND (LGPL-2.0-only OR LGPL-3.0-only)'
-)
 makedepends=(
-  elogind
   glib2
   git
   gobject-introspection
@@ -33,43 +28,37 @@ makedepends=(
   polkit
   qt5-base
   vala
-  x11win-server
+  xorg-server
   xorg-xmodmap
   xorg-xrdb
   yelp-tools
 )
-_tag=9e72b5b3072ff9990211f35aa2a48e971ff710c7
 source=(
-  git+https://github.com/CanonicalLtd/lightdm.git?signed#tag=${_tag}
+  git+https://github.com/CanonicalLtd/lightdm.git?signed#tag=${pkgver}
+  lightdm.service
   lightdm.sysusers
   lightdm.tmpfiles
   lightdm.pam
   lightdm-autologin.pam
   lightdm.rules
   lightdm-default-config.patch
-  lightdm-greeter.pam
   Xsession
 )
 validpgpkeys=(497851B5D455C606543F2B9318EAA1890F7C882E) # Robert Ancell <robert.ancell@gmail.com>
-b2sums=('SKIP'
-        '901702d0bc471de1f8f796576f4d3b451daf632dd703fecc3be7228f9b8deb911d834cd53e8fd5ee24227f46be6a4789b1983a96ec7c32d170d7427ef00c5293'
+b2sums=('37c05b309ee82185201e6803261dcfa1d1252c7f6aba5012b2eee508b24aa965ef569c4f878a6e618ef0efad87d088f3ce5de82a9ff4a4e4e4376ca7b3256fbf'
+        'edf722759d922428f5aba6793923e3b1846ddcfab67fe3e2bac109edf16219e037242aa5536fbab346e04295069b4fc0fa98062e3006088ec9780c58e503463a'
+        'a484bfb37e932136b432ca9786acd80fe261927428029c7429a233b2d5c9aa99a34fcfd016cea05f9ee5e43c1dc72d8b418be59cf9428cdcbe7a24d11810d738'
         '8d04b2f9b861a65707bc1965a80f64d4e03cfe09c84addda27e8dca74b40f4fe85c43773e41dcb972772df7684d4bfc2aacd32c9bc1ac9fa1c2a8d6c27cd02b2'
         '0ad4cff08634a22ece4a2a37832ff080fcf57dcea4eb7551535f7068e38f55c6c60886dc9f82e8b8370f3f92bc00c7848a40978fe0493885e6ab6d5fb048bf1a'
         'eb8341389e8654ecad5c9608c133f6d5c2c7611c75c97ad0b3244281b7f6d7605757207eaae29b4793fbe2ede9131df5cfe0c144abd52070ee93cf3e88c04974'
         '9e7b4f2adacfa18e9c029f93b922da45e3326266495a1919465f299fa630d769eaaa2101d76966cea496f66c4bd8469c73ef55acde5cd19fa559921c192acd04'
         'd404466a551a42ac486564c5016baaae2276ec4126ae237538836e27e58b645dccf3ad3197c5c89d637d9bb678c3d7c0568a114d22fea2abec2d5e4eb0fb2721'
-        'fa181e01cf0fd24bd67b2e5a4f218a95d95e9dff040e0e5f2a72e4d7513b7c82e073eb4e6d5007957be00073b1059604bb17ba73ea6fd08cae262de481f413a7'
         'c376a6426bfd9c8eddcd9cdd9fcde9d137ba297e467b6c3b24a0ca155accf9530d6f526f0338da22559e1e151e238192d3c47752d70e899f11eec1a768d1a822')
 
 prepare() {
   cd lightdm
   patch -Np1 -i ../lightdm-default-config.patch
   NOCONFIGURE=1 ./autogen.sh
-}
-
-pkgver() {
-  cd lightdm
-  git describe --tags
 }
 
 build() {
@@ -90,8 +79,13 @@ build() {
 }
 
 package_lightdm() {
+  license=(GPL-3.0-only)
   depends=(
+    audit
+    bash
     glib2
+    glibc
+    libgcc
     libgcrypt
     libx11
     libxcb
@@ -118,7 +112,7 @@ package_lightdm() {
     etc/pam.d/lightdm-autologin
     etc/pam.d/lightdm-greeter
   )
-  provides=(display-manager)
+
   cd lightdm
 
   make DESTDIR="${pkgdir}" install
@@ -130,7 +124,6 @@ package_lightdm() {
   # PAM
   install -m 644 ../lightdm.pam "${pkgdir}"/etc/pam.d/lightdm
   install -m 644 ../lightdm-autologin.pam "${pkgdir}"/etc/pam.d/lightdm-autologin
-  install -m 644 ../lightdm-greeter.pam "${pkgdir}"/etc/pam.d/lightdm-greeter
 
   # PolicyKit
   install -dm 755 "${pkgdir}"/usr/share/polkit-1/rules.d
@@ -138,14 +131,21 @@ package_lightdm() {
 
   # Systemd
   install -dm 755 "${pkgdir}"/usr/lib/{systemd/system,sysusers.d,tmpfiles.d}
+  install -m 644 ../lightdm.service "${pkgdir}"/usr/lib/systemd/system/lightdm.service
   install -m 644 ../lightdm.sysusers "${pkgdir}"/usr/lib/sysusers.d/lightdm.conf
   install -m 644 ../lightdm.tmpfiles "${pkgdir}"/usr/lib/tmpfiles.d/lightdm.conf
 }
 
 package_liblightdm-qt5() {
   pkgdesc='LightDM Qt client library'
-  license=('LGPL-2.0-only OR LGPL-3.0-only')
+  license=(
+    LGPL-2.0-only
+    LGPL-3.0-only
+  )
   depends=(
+    glibc
+    libgcc
+    libstdc++
     lightdm
     qt5-base
   )
@@ -159,5 +159,3 @@ package_liblightdm-qt5() {
   find "${pkgdir}" -type f  -name *qt[!5]* -exec rm {} +
   find "${pkgdir}" -type l  -name *qt[!5]* -exec rm {} +
 }
-
-# vim: ts=2 sw=2 et:

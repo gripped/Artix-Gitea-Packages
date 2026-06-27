@@ -1,1 +1,1 @@
-u lightdm - "Light Display Manager" /var/lib/lightdm
+u! lightdm - "Light Display Manager" /var/lib/lightdm
