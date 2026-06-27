@@ -4,8 +4,8 @@
 # Contributor: xduugu
 
 pkgname=patchelf
-pkgver=0.18.0
-pkgrel=4
+pkgver=0.19.0
+pkgrel=1
 pkgdesc='Small utility to modify the dynamic linker and RPATH of ELF executables'
 url='https://nixos.org/patchelf.html'
 arch=('x86_64')
@@ -13,13 +13,11 @@ license=('GPL-3.0-or-later')
 makedepends=('git')
 depends=('gcc-libs')
 source=(git+https://github.com/NixOS/patchelf.git#tag=${pkgver})
-sha512sums=('aaef42f053ad423cc7319d8e91a9cdab4370c53e1b222b87656815332cb578a71794dca18a4265e51dba500b1c641c65002e78d08ebdd8aade05c125d6697236')
-b2sums=('53ab064726205671c511698359a617aca78f86cf5af9529649b8dda5f505a44bf8f8a4ed06272fe3eb923f9e34ff4de5dfc6f43b33fa8d22a9ff24076aa5b6c7')
+sha512sums=('d2c0741ead24ba0740d9d9eaae11795471409bc54b22ac2ff16770029acd0b37d96ea33a9c551219940831f6649cf729b582d68fa95b82d2733dc62d47237099')
+b2sums=('9aa5af03a417f832e45a745365517dc734d96ec6cf633f5807363ae40647412eadf4a4e74526d384487bd9b660f9622a4a94d8c1df9419a6941d7a59ee5a05e1')
 
 prepare() {
   cd ${pkgname}
-  # Fix alignment problem when rewriting sections
-  git cherry-pick -n 0e338941fc730c1e7080ca04fc1ee18b9ae2854b
   autoreconf -fiv
 }
 
