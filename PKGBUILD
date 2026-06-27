@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=pop-launcher
 pkgver=1.2.7
-pkgrel=1.3
+pkgrel=2
 pkgdesc='Modular IPC-based desktop launcher service'
 arch=(x86_64)
 url=https://github.com/pop-os/launcher
@@ -12,9 +11,9 @@ license=(MPL-2.0)
 depends=(
   dbus
   fd
-  gcc-libs
   glibc
   libegl
+  libgcc
   libqalculate
   libxkbcommon
   pop-icon-theme
@@ -52,5 +51,3 @@ package() {
   cd launcher
   just rootdir="${pkgdir}" install
 }
-
-# vim: ts=2 sw=2 et:
