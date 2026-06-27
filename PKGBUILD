@@ -125,7 +125,7 @@ package_lightdm() {
   # PAM
   install -m 644 ../lightdm.pam "${pkgdir}"/etc/pam.d/lightdm
   install -m 644 ../lightdm-autologin.pam "${pkgdir}"/etc/pam.d/lightdm-autologin
-  install -m 644 ../lightdm-greeter.pam ""/etc/pam.d/lightdm-greeter
+  install -m 644 ../lightdm-greeter.pam "${pkgdir}"/etc/pam.d/lightdm-greeter
 
   # PolicyKit
   install -dm 755 "${pkgdir}"/usr/share/polkit-1/rules.d
