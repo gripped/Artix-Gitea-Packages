@@ -1,7 +1,7 @@
 # Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=python-rpds-py
-pkgver=2026.5.1
+pkgver=2026.6.2
 pkgrel=1
 pkgdesc='Python bindings to the Rust rpds crate for persistent data structures'
 arch=(x86_64)
@@ -19,8 +19,8 @@ makedepends=(
   python-installer
 )
 source=("$pkgname::git+$url#tag=v$pkgver")
-sha512sums=('5c9c01a2d09da474036cd9dfddba6fed47f67f86f5d04273bbfaa21b5cdcf816f0ac4c5c12786b864377ba6f5b15dcd533a88a7bae3689de8170f5ee2e3b6ce9')
-b2sums=('9bd400c289fcd915047905c06be588d85dc27e4e65e57dad3b8499dece23f3ece59c88aad28c6a018d78a6e06d8a5bc3ff67735908d0bf325f2d397cd49925ce')
+sha512sums=('739f027abfc7ae3a3edb2271dbb1275e83b02f66a48577353d001922a65f7d3dcd7b5c20e3b1bffa33db8ddc9f2d13f68bc66826a13f8e625c299d2c712b0ae6')
+b2sums=('47c363450235ab8ec49bee38351fc6bbc763062d95c0ffb527c6fe1079291cc6877558ec9349b3ce63d2d5519080eec0d2e5834203cdc677b4250e3b60e24b25')
 
 prepare() {
   cd "$pkgname"
