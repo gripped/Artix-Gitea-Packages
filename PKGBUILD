@@ -8,7 +8,7 @@
 
 pkgbase=uv
 pkgname=("$pkgbase" "python-$pkgbase"{,-build})
-pkgver=0.11.24
+pkgver=0.11.25
 pkgrel=1
 pkgdesc='An extremely fast Python package installer and resolver written in Rust'
 arch=('x86_64')
@@ -16,7 +16,7 @@ url="https://github.com/astral-sh/uv"
 license=('MIT' 'Apache-2.0')
 depends=(
   'bzip2'
-  'gcc-libs'
+  'libgcc'
   'glibc'
   'jemalloc'
   'zstd'
@@ -31,7 +31,7 @@ makedepends=(
 )
 options=('!lto')
 source=("git+$url.git#tag=$pkgver")
-sha256sums=('af75c5e9b529fe509d9b7aef67386693069fec6e763fb711d220a66d2c1efcd1')
+sha256sums=('871734c0781a62c3e7dfd46f1a136f8ca592832e4139818ecac24662287f2052')
 
 prepare() {
   cd "$pkgbase"
@@ -78,7 +78,7 @@ _package_common() {
 package_uv() {
   depends=(
     bzip2
-    gcc-libs
+    libgcc
     glibc
     jemalloc
     zstd
@@ -112,7 +112,7 @@ package_python-uv-build() {
   pkgdesc+=' - Python build backend'
   depends=(
     bzip2
-    gcc-libs
+    libgcc
     glibc
     python
     xz
