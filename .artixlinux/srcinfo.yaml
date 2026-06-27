@@ -1,10 +1,10 @@
 ---
-version: 2.6.1-1
+version: 2.6.1-2
 pkgbase:
   name: libtool
   pkgdesc: A generic library support script
   pkgver: 2.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/libtool
   arch:
     - aarch64
@@ -14,7 +14,7 @@ pkgbase:
   checkdepends:
     - gcc-fortran
   makedepends:
-    - gcc>=16.1.1
+    - gcc>=16
     - git
     - glibc
     - lib32-gcc-libs
