@@ -3,49 +3,60 @@
 
 pkgname=ruby-rbtree
 _pkgname="${pkgname#ruby-}"
-pkgver=0.4.6
-pkgrel=7
+pkgver=0.4.7
+pkgrel=1
 pkgdesc='A sorted associative collection that is implemented with a Red-Black Tree'
 arch=('x86_64')
 url='https://github.com/mame/rbtree'
 license=('MIT')
 depends=('ruby')
 makedepends=('git')
+checkdepends=('ruby-bundler' 'ruby-rake' 'ruby-test-unit')
 options=('!emptydirs')
 source=("$pkgname::git+$url#tag=v$pkgver")
-sha512sums=('3c99b3e3b111f437308ae65edfbd6c156e16ad989f380317093d56852a9c1daa31c870ad9d3645ec350e1330895b0b7d61e74fe3c48edf1bbb649baf741ebffa')
-b2sums=('0c7b9f1efeffe89c1a395599b4e33dc12f57d9e38d50b689c257bbe02a737b591a916cfd6cba57c5a20e2aaec419edf478704a3207b5eb0b84578ec1bc0cf418')
+sha512sums=('460730e946e9d306747d5078e79d3ddd499a5b4bee36997d19f1d4bb122e6a0f1ada267e8b26b4c2e1a3b0d2dce4e037c4a5e9395c5d86b0b4e96f271a295577')
+b2sums=('118db5ea4569ebdf8794a72bf499e97d23c6dee41aa444846f409954e1b881e3e036e9ca7730b377e4ce60f394079212d94d1bb6af4def07b8202eaa7599faef')
 
 build() {
   cd "$pkgname"
 
-  gem build "$_pkgname.gemspec"
-}
-
-package() {
-  cd "$pkgname"
-
   local _gemdir="$(gem env gemdir)"
+
+  gem build "$_pkgname.gemspec"
 
   gem install \
     --local \
     --verbose \
     --ignore-dependencies \
     --no-user-install \
-    --install-dir "$pkgdir/$_gemdir" \
-    --bindir "$pkgdir/usr/bin" \
+    --install-dir "tmp_install/$_gemdir" \
+    --bindir "$tmp_install/usr/bin" \
     "$_pkgname-$pkgver.gem"
 
   # delete unnecessary files/folders
-  rm -rf "$pkgdir/$_gemdir/cache"
-  find "$pkgdir" \
+  rm -rf "tmp_install/$_gemdir/cache"
+  find "tmp_install" \
     -type f \
     -name '*.o' -delete -o \
     -name 'gem_make.out' -delete -o \
     -name 'mkmf.log' -delete
-  rm -rf "$pkgdir/$_gemdir/gems/$_pkgname-$pkgver/$_pkgname.so"
+  rm -rf "tmp_install/$_gemdir/gems/$_pkgname-$pkgver/$_pkgname.so"
 
   # license
-  install -vd "$pkgdir/usr/share/licenses/$pkgname"
-  ln -sf "$_gemdir/gems/$_pkgname-$pkgver/LICENSE" "$pkgdir/usr/share/licenses/$pkgname"
+  install -vd "tmp_install/usr/share/licenses/$pkgname"
+  ln -sf "$_gemdir/gems/$_pkgname-$pkgver/LICENSE" "tmp_install/usr/share/licenses/$pkgname"
+}
+
+check() {
+  cd "$pkgname"
+
+  local _gemdir="$(ruby -e'puts Gem.default_dir')"
+
+  GEM_HOME="tmp_install${_gemdir}" rake test
+}
+
+package() {
+  cd "$pkgname"
+
+  cp --archive --verbose tmp_install/* "${pkgdir}"
 }
