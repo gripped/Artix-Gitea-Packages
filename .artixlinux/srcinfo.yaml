@@ -1,10 +1,10 @@
 ---
-version: 1.3.4-4
+version: 1.3.4-5
 pkgbase:
   name: python-mergedeep
   pkgdesc: A deep merge function for Python
   pkgver: 1.3.4
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/clarketm/mergedeep
   arch:
     - any
@@ -12,13 +12,16 @@ pkgbase:
     - MIT
   makedepends:
     - git
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
-    - git+https://github.com/clarketm/mergedeep.git#tag=ab871aff9eccb5e1bf0ea237c3cff8f6787ebc56
+    - git+https://github.com/clarketm/mergedeep.git#tag=v1.3.4
   b2sums:
     - 82cceebc42d8a7f429f281b197c90a58f2a95f11590f21e833be0e09d43ebac03b4b4670576c5194afa2c0cd682640a0c4c99784631ba9ed4432256524cf6978
 pkgname:
   - name: python-mergedeep
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
