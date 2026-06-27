@@ -1,0 +1,59 @@
+---
+version: 0.13.6.1-1
+pkgbase:
+  name: helium-browser
+  pkgdesc: Private, fast, and honest web browser based on - Ungoogled - Chromium
+  pkgver: 0.13.6.1
+  pkgrel: 1
+  url: https://github.com/imputnet/helium
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - ninja
+    - nodejs
+    - python-pillow
+    - lld
+    - gperf
+    - git
+  depends:
+    - gtk3
+    - nss
+    - alsa-lib
+    - xdg-utils
+    - libxss
+    - libcups
+    - libgcrypt
+    - ttf-liberation
+    - udev
+    - dbus
+    - libpulse
+    - pciutils
+    - libva
+    - libffi
+    - desktop-file-utils
+    - hicolor-icon-theme
+  optdepends:
+    - 'pipewire: WebRTC desktop sharing under Wayland'
+    - 'kdialog: support for native dialogs in Plasma'
+    - 'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
+    - 'org.freedesktop.secrets: password storage backend on GNOME / Xfce'
+    - 'kwallet: support for storing passwords in KWallet on Plasma'
+  provides:
+    - chromium
+  conflicts:
+    - chromium
+  options:
+    - '!lto'
+  source:
+    - https://github.com/imputnet/helium/archive/refs/tags/0.13.6.tar.gz
+    - https://github.com/imputnet/helium-linux/archive/refs/tags/0.13.6.1.tar.gz
+    - helium-browser.desktop
+  sha256sums:
+    - ff55eb11f825406b911b3ab571f6c6a26e7bdce98ecee844a24aca1a67b979e8
+    - 5535275121c29dce5c85d86abc823da7d6fb48a5533b8336b0b20890b5a8bc69
+    - 934b84f8f55e8461c3e47651c632d5e8e2d23ec1d71113dd7384d845ffa16a27
+pkgname:
+  - name: helium-browser
+# generated with artixpkg 0.38.5-1-any
