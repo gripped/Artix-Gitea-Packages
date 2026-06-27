@@ -1,10 +1,10 @@
 ---
-version: 7.0.13.zen1-1
+version: 7.0.13.zen1-2
 pkgbase:
   name: linux-zen
   pkgdesc: Linux ZEN
   pkgver: 7.0.13.zen1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/zen-kernel/zen-kernel
   arch:
     - x86_64
