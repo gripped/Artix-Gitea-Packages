@@ -29,6 +29,7 @@ pkgname=(
   libgo
   libgomp
   libgphobos
+  libhwasan
   libitm
   liblsan
   libobjc
@@ -38,8 +39,8 @@ pkgname=(
   libubsan
   lto-dump
 )
-pkgver=16.1.1+r12+g301eb08fa2c5
-_commit=301eb08fa2c5b6f3045260bf1294c2e2bacbcd90
+pkgver=16.1.1+r346+g4e03491b401d
+_commit=4e03491b401dce0658543dd90524ddb92063836e
 pkgrel=1
 pkgdesc='The GNU Compiler Collection'
 arch=(x86_64)
@@ -54,8 +55,8 @@ makedepends=(
   gcc-ada
   gcc-d
   git
-  lib32-glibc
   lib32-gcc-libs
+  lib32-glibc
   libisl
   libmpc
   python
@@ -70,23 +71,27 @@ checkdepends=(
   tcl
 )
 options=(
+  debug
   !emptydirs
   !lto
-  debug
 )
-_libdir=usr/lib/gcc/$CHOST/${pkgver%%+*}
-source=(git+https://sourceware.org/git/gcc.git#commit=$_commit
-        c89 c99
-        gcc-ada-repro.patch
+_libdir=usr/lib/gcc/$CHOST/${pkgver%%.*}
+source=(
+  git+https://sourceware.org/git/gcc.git#commit=$_commit
+  c89
+  c99
+  gcc-ada-repro.patch
+  tune_branch_prediction_cost.patch
 )
 validpgpkeys=(F3691687D867B81B51CE07D9BBE43771487328A9  # bpiotrowski@archlinux.org
               86CFFCA918CF3AF47147588051E8B148A9999C34  # foutrelis@archlinux.org
               13975A70E63C361C73AE69EF6EEB81F8981C74C7  # richard.guenther@gmail.com
               D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62) # Jakub Jelinek <jakub@redhat.com>
-sha256sums=('e7641bfddebaada298ca0a631183ef8d81bb3c5dfd3aef30bc7d4223f1c0e450'
+sha256sums=('73dca834e44d5e4501efa3f68a190a902d0a83c66f4cf4fd5b3da24e2cefdaf4'
             '7b09ec947f90b98315397af675369a1e3dfc527fa70013062e6e85c4be0275ab'
             '44ea973558842f3f4bd666bdaf6e810fd7b7c7bd36b5cc4c69f93d2cd0124fc7'
-            '1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f')
+            '1773f5137f08ac1f48f0f7297e324d5d868d55201c03068670ee4602babdef2f'
+            '838e14d4ef76079107a5373316598025915eaf747a10522ec9f8842125ca9a8e')
 
 prepare() {
   [[ ! -d gcc ]] && ln -s gcc-${pkgver/+/-} gcc
@@ -97,6 +102,9 @@ prepare() {
 
   # Reproducible gcc-ada
   patch -Np0 < "$srcdir/gcc-ada-repro.patch"
+
+  # tune branch prediction cost
+  patch -Np1 < ../tune_branch_prediction_cost.patch
 
   mkdir -p "$srcdir/gcc-build"
   mkdir -p "$srcdir/libgccjit-build"
@@ -111,6 +119,7 @@ build() {
       --infodir=/usr/share/info
       --with-bugurl=https://gitea.artixlinux.org/packages/gcc/issues
       --with-build-config=bootstrap-lto
+      --with-gcc-major-version-only
       --with-linker-hash-style=gnu
       --with-system-zlib
       --enable-cet=auto
@@ -128,10 +137,10 @@ build() {
       --enable-plugin
       --enable-shared
       --enable-threads=posix
+      --disable-fixincludes
       --disable-libssp
       --disable-libstdcxx-pch
       --disable-werror
-      --disable-fixincludes
   )
 
   cd gcc-build
@@ -142,7 +151,7 @@ build() {
   CFLAGS=${CFLAGS/-Werror=format-security/}
   CXXFLAGS=${CXXFLAGS/-Werror=format-security/}
 
-  "$srcdir/gcc/configure" \
+  ../gcc/configure \
     --enable-languages=ada,c,c++,d,fortran,go,lto,m2,objc,obj-c++,rust,cobol \
     --enable-bootstrap \
     "${_confflags[@]:?_confflags unset}"
@@ -161,18 +170,13 @@ build() {
   # which brings a performance penalty
   cd "$srcdir"/libgccjit-build
 
-  "$srcdir/gcc/configure" \
+  ../gcc/configure \
     --enable-languages=jit \
     --disable-bootstrap \
     --enable-host-shared \
     "${_confflags[@]:?_confflags unset}"
 
-  # see https://bugs.archlinux.org/task/71777 for rationale re *FLAGS handling
-  make -O STAGE1_CFLAGS="-O2" \
-          BOOT_CFLAGS="$CFLAGS" \
-          BOOT_LDFLAGS="$LDFLAGS" \
-          LDFLAGS_FOR_TARGET="$LDFLAGS" \
-          all-gcc
+  make -O all-gcc
 
   cp -a gcc/libgccjit.so* ../gcc-build/gcc/
 }
@@ -199,6 +203,7 @@ package_gcc() {
   depends=(
     "libasan=$pkgver-$pkgrel"
     "libgcc=$pkgver-$pkgrel"
+    "libhwasan=$pkgver-$pkgrel"
     "liblsan=$pkgver-$pkgrel"
     "libstdc++=$pkgver-$pkgrel"
     "libtsan=$pkgver-$pkgrel"
@@ -222,6 +227,7 @@ package_gcc() {
     $pkgname-multilib
   )
   options=(
+    debug
     !emptydirs
     staticlibs
   )
@@ -253,6 +259,8 @@ package_gcc() {
     "$pkgdir/usr/share/gdb/auto-load/usr/lib/"
   rm "$pkgdir"/usr/lib{,32}/libstdc++.so*
   rm "$pkgdir"/usr/lib{,32}/libatomic.so*
+  mv -v "$pkgdir"/usr/lib/libatomic* "$pkgdir/$_libdir/"
+  mv -v "$pkgdir"/usr/lib32/libatomic* "$pkgdir/$_libdir/32"
 
   make DESTDIR="$pkgdir" install-fixincludes
   make -C gcc DESTDIR="$pkgdir" install-mkheaders
@@ -267,6 +275,7 @@ package_gcc() {
   make -C $CHOST/libquadmath DESTDIR="$pkgdir" install-nodist_libsubincludeHEADERS
   make -C $CHOST/libsanitizer DESTDIR="$pkgdir" install-nodist_{saninclude,toolexeclib}HEADERS
   make -C $CHOST/libsanitizer/asan DESTDIR="$pkgdir" install-nodist_toolexeclibHEADERS
+  make -C $CHOST/libsanitizer/hwasan DESTDIR="$pkgdir" install-nodist_toolexeclibHEADERS
   make -C $CHOST/libsanitizer/tsan DESTDIR="$pkgdir" install-nodist_toolexeclibHEADERS
   make -C $CHOST/libsanitizer/lsan DESTDIR="$pkgdir" install-nodist_toolexeclibHEADERS
   make -C $CHOST/32/libgomp DESTDIR="$pkgdir" install-nodist_toolexeclibHEADERS
@@ -288,7 +297,7 @@ package_gcc() {
   # create cc-rs compatible symlinks
   # https://github.com/rust-lang/cc-rs/blob/1.0.73/src/lib.rs#L2578-L2581
   for binary in {c++,g++,gcc,gcc-ar,gcc-nm,gcc-ranlib}; do
-    ln -s /usr/bin/$binary "$pkgdir"/usr/bin/x86_64-linux-gnu-$binary
+    ln -s "/usr/bin/$binary" "$pkgdir/usr/bin/$CARCH-linux-gnu-$binary"
   done
 
   # POSIX conformance launcher scripts for c89 and c99
@@ -329,6 +338,7 @@ package_gcc-ada() {
     $pkgname-multilib
   )
   options=(
+    debug
     !emptydirs
     staticlibs
   )
@@ -382,6 +392,7 @@ package_gcc-d() {
     gdc
   )
   options=(
+    debug
     !emptydirs
     staticlibs
   )
@@ -503,6 +514,7 @@ package_gcc-libs() {
     libgcc
     libgfortran
     libgomp
+    libhwasan
     liblsan
     libobjc
     libquadmath
@@ -607,6 +619,7 @@ package_lib32-gcc-libs() {
     libubsan.so
   )
   options=(
+    debug
     !emptydirs
   )
 
@@ -614,6 +627,7 @@ package_lib32-gcc-libs() {
 
   make -C $CHOST/32/libgcc DESTDIR="$pkgdir" install-shared
   rm -f "$pkgdir/$_libdir/32/libgcc_eh.a"
+  mv -v "$pkgdir"/usr/lib32/libgcc_s{,_asneeded}.so "$pkgdir/$_libdir/32"
 
   for lib in libatomic \
              libgcobol \
@@ -684,6 +698,7 @@ package_libgcc() {
   cd gcc-build
   make -C $CHOST/libgcc DESTDIR="$pkgdir" install-shared
   rm -f "$pkgdir/$_libdir/libgcc_eh.a"
+  mv -v "$pkgdir"/usr/lib/libgcc_s{,_asneeded}.so "$pkgdir/$_libdir/"
 
   _install_runtime_library_exception
 }
@@ -743,40 +758,6 @@ package_libgfortran() {
   _install_runtime_library_exception
 }
 
-package_libgo() {
-  pkgdesc='Go runtime libraries shipped by GCC'
-  depends=(
-    'glibc>=2.27'
-    libgcc
-  )
-  provides=(
-    libgo.so
-  )
-
-  cd gcc-build
-  make -C $CHOST/libgo DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
-
-  _install_runtime_library_exception
-}
-
-
-package_libgomp() {
-  pkgdesc='OpenMP library shipped by GCC'
-  depends=(
-    'glibc>=2.27'
-  )
-  provides=(
-    libgomp.so
-  )
-
-  cd gcc-build
-
-  make -C $CHOST/libgomp DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
-  make -C $CHOST/libgomp DESTDIR="$pkgdir" install-info
-
-  _install_runtime_library_exception
-}
-
 package_libgm2() {
   pkgdesc='Modula-2 runtime libraries shipped by GCC'
   depends=(
@@ -800,6 +781,39 @@ package_libgm2() {
   _install_runtime_library_exception
 }
 
+package_libgo() {
+  pkgdesc='Go runtime libraries shipped by GCC'
+  depends=(
+    'glibc>=2.27'
+    libgcc
+  )
+  provides=(
+    libgo.so
+  )
+
+  cd gcc-build
+  make -C $CHOST/libgo DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
+
+  _install_runtime_library_exception
+}
+
+package_libgomp() {
+  pkgdesc='OpenMP library shipped by GCC'
+  depends=(
+    'glibc>=2.27'
+  )
+  provides=(
+    libgomp.so
+  )
+
+  cd gcc-build
+
+  make -C $CHOST/libgomp DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
+  make -C $CHOST/libgomp DESTDIR="$pkgdir" install-info
+
+  _install_runtime_library_exception
+}
+
 package_libgphobos() {
   pkgdesc='D runtime libraries shipped by GCC'
   depends=(
@@ -819,6 +833,24 @@ package_libgphobos() {
 
   # remove files provided by lib32-gcc-libs
   rm -rf "$pkgdir"/usr/lib32/
+
+  _install_runtime_library_exception
+}
+
+package_libhwasan() {
+  pkgdesc='Hardware-assisted Address Sanitizer runtime library shipped by GCC'
+  depends=(
+    'glibc>=2.27'
+    libgcc
+    libstdc++
+  )
+  provides=(
+    libhwasan.so
+  )
+
+  cd gcc-build
+
+  make -C $CHOST/libsanitizer/hwasan DESTDIR="$pkgdir" install-toolexeclibLTLIBRARIES
 
   _install_runtime_library_exception
 }
