@@ -4,7 +4,7 @@
 
 pkgname=nng
 pkgver=1.11
-pkgrel=2
+pkgrel=3
 pkgdesc='A lightweight, broker-less messaging library'
 arch=('x86_64')
 url='https://nng.nanomsg.org/'
