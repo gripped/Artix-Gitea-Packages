@@ -4,7 +4,7 @@
 
 pkgname=cosmic-greeter
 pkgver=1.1.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc='COSMIC greeter for greetd'
 arch=(x86_64)
@@ -50,6 +50,7 @@ prepare() {
   cargo fetch --locked
   patch -Np1 -i ../cosmic-greeter-display-manager.patch
   patch -Np1 -i ../cosmic-greeter-lto.patch
+  sed 's/^u /u!/' -i debian/cosmic-greeter.sysusers
 }
 
 build() {
@@ -63,5 +64,3 @@ package() {
   just rootdir="${pkgdir}" install
   install -Dm 644 cosmic-greeter.toml -t "${pkgdir}"/etc/greetd/
 }
-
-# vim: ts=2 sw=2 et:
