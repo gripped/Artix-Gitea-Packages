@@ -1,7 +1,7 @@
 # Maintainer: George Rawlinson <grawlinson@archlinux.org>
 
 pkgname=python-vcs-versioning
-pkgver=2.1.2
+pkgver=2.2.0
 pkgrel=1
 pkgdesc='the blessed package to manage your versions by vcs metadata'
 arch=(any)
@@ -24,8 +24,8 @@ checkdepends=(
 )
 optdepends=('python-rich: formatting of log messages')
 source=("python-setuptools-scm::git+$url#tag=vcs-versioning-v$pkgver")
-sha512sums=('d129adf8647f7b58bb2df4c9b7405104e1d15dbb193cd2b3d013fd8cd4937d72a4b6f379fcf3113b369ad3fbb79dc5695a410d701f90e8bb5d5603f5885ff9a4')
-b2sums=('dff6eebda8c96e54fdfa61a939c4c26bf1b7f4a801ff5a6aa0437fa3711b94436589256fe02cb04174d38e5943f12bf31f39707d0d2ae2af0b117cf7505b1fb6')
+sha512sums=('7dfb0026bcc623a1973b97a5ec92e82ff636c43799d017b412ec2c669f48d174538a4a8f1c36ccff542ae620a65f61f9fa8b2a3ecb48b8b8626b7a304dd8201d')
+b2sums=('1d1074b2f14c22a94533d5ab1a3eecdb45f629743cfcdceb19a11cc5f1e23c6884c775b085294e51c3fb8a665e038d4c29d76fcca7b86ca8e58e3c0509f4e538')
 
 build() {
   cd python-setuptools-scm/vcs-versioning
@@ -43,9 +43,6 @@ check() {
 
   local pytest_options=(
     -vv
-    # failing with 2.0+
-    --deselect testing_vcs/test_workdir_discovery.py::TestDiscoverWorkdirFallback::test_discovers_pkginfo
-    --deselect testing_vcs/test_workdir_discovery.py::TestFallbackPriority::test_unprocessed_archival_falls_through_to_pkginfo
   )
 
   pytest "${pytest_options[@]}"
