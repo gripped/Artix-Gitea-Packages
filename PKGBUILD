@@ -3,7 +3,7 @@
 pkgname=helium-browser
 pkgver=0.13.6.1
 _hlmver="${pkgver%.*}"
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
 arch=('x86_64')
 url="https://github.com/imputnet/helium"
@@ -60,7 +60,7 @@ package() {
 
   install -Dm755 helium "${pkgdir}/usr/lib/${pkgname}/${pkgname}"
   install -Dm755 chromedriver "${pkgdir}/usr/bin/${pkgname}/chromedriver"
-  ln -s "/usr/lib/${pkgname}/${pkgname}" "${pkgdir}/usr/bin/${pkgname}"
+  ln -s "/usr/lib/$pkgname/$pkgname" "$pkgdir/usr/bin/$pkgname"
 
   install -Dm755 "${_libfiles[@]}" "${pkgdir}/usr/lib/${pkgname}/"
 
