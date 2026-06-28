@@ -1,13 +1,13 @@
 # Maintainer: artist for Artix Linux
 
-_ver=7.0.13
+_ver=7.1.2
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=2
+pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(
@@ -58,16 +58,16 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-sha256sums=('3c81edd0f716aca3dd48dff691681827580cc53d35a8eec3be47d346d1f89913'
+sha256sums=('37198c93727be247c9fb5309bb86cd5e496c61e5322cd8c4eca9476bb0b5883f'
             'SKIP'
-            'd37578467eefea5a8bb8e9832fd7cce73d1cb4a974ea3e13efe5dd65ad23821b'
+            '8af76b8c229277084e6349e6a8b029001eddc8ef10593cf6ccd49672c0744ec4'
             'SKIP')
-sha256sums_x86_64=('2dfd60cf33033150df934353e0ddc9b18c2504925fabc88f3c39aa419869d76e')
-b2sums=('c92878038062d7f41f805fa8d2bcbc4f1621c7d07e6b210b0ed03b3aa078832b4978761c391db3583459902acb1b22072ee5ebbcd6e37e9e263308b9c9521a5d'
+sha256sums_x86_64=('a0c0830e2e7537832d36d71501c0e0231858b1c8b7becc969741fcaea99c703f')
+b2sums=('0d6e9ff535af085190da7df50887b20f395cd4d6befb7158c9993bf77fe92459a9982877ce944ca522192daa5a54c952c3d368def04b579796ba7109a972453b'
         'SKIP'
-        'ae188d8aea54fcf1d0851951d44071914171c880fb635467fd11e10585b886b65cf4f7313b6005c050c1eceb8f640d2a22bcc0699ecda9847fdec050765baef4'
+        '7ad356f1e9e7ca48ee156389b36b43927a65e2c058978fe50719f5a676baaf2863bc97acb9b15fdfac8ca2f689bb53cd1a6eeed10a11c68823ec744ebee40e0c'
         'SKIP')
-b2sums_x86_64=('21317ff5a9eb7f3f2c846fd20eb4ecc9d49b16e273373e7184598abc714fde0069c8e220baf871edb875a19f31cc2fce2f0fb7e8b3bcdef150bd570de8cc6f0e')
+b2sums_x86_64=('6f051e04961d52877423e74e4d35db369b3a41e90607e6acc906c97720f732dbad4a56c2e12265647559e29955bdbbf5a6c6309346139d4b541be1e3e30e6d4e')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
