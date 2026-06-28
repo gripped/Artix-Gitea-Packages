@@ -7,7 +7,7 @@
 
 pkgbase=transmission
 pkgname=(transmission-cli transmission-gtk transmission-qt)
-pkgver=4.1.1
+pkgver=4.1.2
 pkgrel=1
 arch=(x86_64)
 url="http://www.transmissionbt.com/"
@@ -34,7 +34,7 @@ _archive="$pkgbase-$pkgver"
 source=("https://github.com/transmission/transmission/releases/download/$pkgver/$_archive.tar.xz"
         transmission-cli.sysusers
         transmission-cli.tmpfiles)
-sha256sums=('e743283ee03a42c4d0b08fed2bd52b554aa6c9f65b4d4d45b795c32d98762a79'
+sha256sums=('4c6070bdfae264a629cb2b0f1eaf567cb9c6208f9218aa446c0aee883eb0f1fc'
             '641310fb0590d40e00bea1b5b9c843953ab78edf019109f276be9c6a7bdaf5b2'
             '1266032bb07e47d6bcdc7dabd74df2557cc466c33bf983a5881316a4cc098451')
 
@@ -56,6 +56,7 @@ build() {
 		-D ENABLE_UTILS=ON \
 		-D ENABLE_UTP=ON \
 		-D INSTALL_LIB=ON \
+		-D RUN_CLANG_TIDY=OFF \
 		-D USE_SYSTEM_B64=ON \
 		-D USE_SYSTEM_DEFLATE=ON \
 		-D USE_SYSTEM_DHT=ON \
