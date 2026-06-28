@@ -1,7 +1,7 @@
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 # Maintainer: Jonathan Grotelüschen <tippfehlr@archlinux.org>
 # Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
-
+#
 # Note: This PKGBUILD and the chromium PKGBUILD are loosely kept in sync to ease maintenance.
 # As such care should be taken to minimize the differences between these PKGBUILDs.
 pkgname=cef
