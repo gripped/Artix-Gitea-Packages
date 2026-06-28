@@ -1,9 +1,9 @@
 ---
-version: 1:1.57.1-1
+version: 1:1.58.0-1
 pkgbase:
   name: lib32-pango
   pkgdesc: A library for layout and rendering of text (32-bit)
-  pkgver: 1.57.1
+  pkgver: 1.58.0
   pkgrel: 1
   epoch: 1
   url: https://www.pango.org/
@@ -30,9 +30,9 @@ pkgbase:
     - lib32-libxrender
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/pango.git#tag=1.57.1
+    - git+https://gitlab.gnome.org/GNOME/pango.git#tag=1.58.0
   b2sums:
-    - efbfcb103f471a01f9acb177aa57f89c2c646dd75934c65adcb33c578321d749b96d5b6a822ef005385158d7c7ee4079aa8032216b9f3e336e176fb59cf6b086
+    - 7dd0165514f32f1167c7960e3d92227570527732daf5f3fa4645e48f72657494df080d6e07f2f8bc0a3983a20888d1439d57a46d7feb406b18c7da000644ab69
 pkgname:
   - name: lib32-pango
     provides:
@@ -40,4 +40,4 @@ pkgname:
       - libpangocairo-1.0.so
       - libpangoft2-1.0.so
       - libpangoxft-1.0.so
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
