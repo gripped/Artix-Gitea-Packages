@@ -3,7 +3,7 @@
 
 pkgbase=python-polars
 pkgname=($pkgbase $pkgbase-runtime-{32,64,compat})
-pkgver=1.41.2
+pkgver=1.42.0
 pkgrel=1
 pkgdesc="Blazingly fast DataFrames library using Apache Arrow Columnar Format as memory model"
 arch=("x86_64")
@@ -39,19 +39,21 @@ checkdepends=('python-pytest'
 _name=${pkgname#python-}
 _tag="py-$pkgver"
 source=("https://github.com/pola-rs/polars/archive/refs/tags/$_tag.tar.gz")
-b2sums=('1cf79e4e5eeb4838c8e5f22f926fe5a15b5a85d1027763d35a9632d6815503d1d9231bed9ea70554ce7c15c686292cc0f92a315f335234b84803419048a907a4')
+b2sums=('060c6fbe14c91b2c7465a269d06b38c00be4a05b2783c4541a59ff79eb96dc8492e81787a16629f1686d7f3f089fa54cbf5a92760a713dfff7c272dd4ddab324')
 
 prepare() {
     cd polars-$_tag/py-polars
-    cargo fetch --locked --target "$(rustc --print host-tuple)"
+
+    cargo fetch --locked --target "$(rustc --print host-tuple)" --manifest-path runtime/polars-runtime-32/Cargo.toml
 }
 
 build() {
     local runtime
     cd polars-$_tag/py-polars
     python -m build --wheel --no-isolation
+
     for runtime in 32 64 compat; do
-        maturin build -o dist --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-$runtime/Cargo.toml
+        maturin build -o dist --compression-enable-large-file-support --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-$runtime/Cargo.toml
     done
 }
 
@@ -83,6 +85,8 @@ check() {
         --ignore tests/unit/io/test_iceberg.py
         # Requires unpackaged python-connectorx
         --deselect "tests/unit/io/database/test_read.py::test_read_database_cx_credentials"
+        # Deprecation warning, yet to be fixed
+        -W ignore::DeprecationWarning
     )
 
     test-env/bin/python -P -m pytest tests/unit "${_pytest_args[@]}"
