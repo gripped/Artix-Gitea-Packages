@@ -4,12 +4,12 @@
 pkgname=goverlay
 pkgver=1.8.4
 _pkgver=${pkgver//_/-}
-pkgrel=1
+pkgrel=2
 pkgdesc="A GUI to help manage Vulkan/OpenGL overlays"
 url="https://github.com/benjamimgois/goverlay"
 arch=('x86_64')
 license=('GPL-3.0-or-later')
-depends=('glu' 'qt6pas' 'mangohud' '7zip' 'wget' 'fontconfig' 'sdl2-compat')
+depends=('glu' 'qt6pas' 'mangohud' '7zip' 'wget' 'fontconfig' 'sdl2-compat' 'ttf-font-nerd')
 makedepends=('git' 'lazarus')
 checkdepends=('appstream' 'desktop-file-utils')
 optdepends=('mesa-utils: OpenGL preview'
