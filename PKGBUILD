@@ -4,7 +4,7 @@
 
 pkgname=fig2dev
 pkgver=3.2.9
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Format conversion utility that can be used with xfig"
 arch=('x86_64')
 url="http://mcj.sourceforge.net/"
