@@ -1,10 +1,10 @@
 ---
-version: 1.5.1.1-1
+version: 1.5.1.1-2
 pkgbase:
   name: qxlsx
   pkgdesc: Excel file reader/writer library using Qt
   pkgver: 1.5.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/QtExcel/QXlsx
   arch:
     - x86_64
