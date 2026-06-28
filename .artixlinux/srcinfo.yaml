@@ -1,10 +1,10 @@
 ---
-version: 1.20.4-1
+version: 1.20.4-2
 pkgbase:
   name: ppsspp
   pkgdesc: A PSP emulator written in C++
   pkgver: 1.20.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.ppsspp.org/
   arch:
     - x86_64
@@ -31,7 +31,7 @@ pkgbase:
     - snappy
     - zlib
   source:
-    - git+https://github.com/hrydgard/ppsspp.git#tag=3a31057b7e44270b4d5cef8c31b6559d51802a3b
+    - git+https://github.com/hrydgard/ppsspp.git#tag=v1.20.4
     - git+https://github.com/Kethen/aemu_postoffice.git
     - git+https://github.com/Kingcom/armips.git
     - git+https://github.com/google/cpu_features.git
@@ -76,12 +76,13 @@ pkgname:
   - name: ppsspp
     depends:
       - fontconfig
-      - gcc-libs
       - glew
       - glibc
       - hicolor-icon-theme
+      - libgcc
       - libgl
       - libpng
+      - libstdc++
       - libzip
       - miniupnpc
       - openxr
