@@ -1,9 +1,9 @@
 ---
-version: 1:2603.1-2
+version: 1:2606-2
 pkgbase:
   name: dolphin-emu
   pkgdesc: A Gamecube and Wii emulator
-  pkgver: 2603.1
+  pkgver: 2606
   pkgrel: 2
   epoch: 1
   url: https://dolphin-emu.org
@@ -16,42 +16,35 @@ pkgbase:
     - cmake
     - git
     - libevdev
-    - libminiupnpc.so
+    - miniupnpc
     - libpulse
-    - libudev.so
     - ninja
     - python
     - qt6-base
     - qt6-svg
-    - sfml
     - vulkan-headers
   depends:
     - bluez-libs
     - bzip2
+    - curl
     - enet
+    - ffmpeg
     - glibc
     - glslang
     - hidapi
-    - libavcodec.so
-    - libavformat.so
-    - libavutil.so
-    - libcurl.so
     - libgcc
     - libgl
-    - libsfml-network.so
-    - libsfml-system.so
-    - libspng.so
+    - libspng
     - libstdc++
-    - libswscale.so
-    - libusb-1.0.so
+    - libusb
     - libx11
     - libxi
     - libxrandr
     - lz4
     - lzo
-    - mbedtls2
     - pugixml
     - sdl3
+    - sfml
     - speexdsp
     - xxhash
     - xz
@@ -64,7 +57,7 @@ pkgbase:
     - '!emptydirs'
     - '!lto'
   source:
-    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=2603a
+    - dolphin-emu::git+https://github.com/dolphin-emu/dolphin.git#tag=2606
     - git+https://github.com/mutouyun/cpp-ipc.git
     - git+https://github.com/weisslj/cpp-optparse.git
     - git+https://github.com/mozilla/cubeb.git
@@ -81,7 +74,7 @@ pkgbase:
     - git+https://github.com/e-dant/watcher.git
     - git+https://github.com/zlib-ng/zlib-ng.git
   b2sums:
-    - 8e43c8c34c355a36fea357307a01423a549ce43d2dadf4b782166fe9c62faa9de49798f59d386a599ce964cb8b063a0e5977c218124cfc2345b33776324dcfdb
+    - 58cafa4be711983441462b5565131b889152a6e8fc40a478da415eaacd21d6780281339657d7564969417e360b3f080ae94a104793967ba5ded0b8ac66067a8e
     - SKIP
     - SKIP
     - SKIP
@@ -102,30 +95,25 @@ pkgname:
     depends:
       - bluez-libs
       - bzip2
+      - curl
       - enet
+      - ffmpeg
       - glibc
       - glslang
       - hidapi
-      - libavcodec.so
-      - libavformat.so
-      - libavutil.so
-      - libcurl.so
       - libgcc
       - libgl
-      - libsfml-network.so
-      - libsfml-system.so
-      - libspng.so
+      - libspng
       - libstdc++
-      - libswscale.so
-      - libusb-1.0.so
+      - libusb
       - libx11
       - libxi
       - libxrandr
       - lz4
       - lzo
-      - mbedtls2
       - pugixml
       - sdl3
+      - sfml
       - speexdsp
       - xxhash
       - xz
@@ -135,39 +123,33 @@ pkgname:
       - alsa-lib
       - hicolor-icon-theme
       - libevdev
-      - libminiupnpc.so
+      - miniupnpc
       - libpulse
-      - libudev.so
       - qt6-base
       - qt6-svg
   - name: dolphin-emu-tool
     depends:
       - bluez-libs
       - bzip2
+      - curl
       - enet
+      - ffmpeg
       - glibc
       - glslang
       - hidapi
-      - libavcodec.so
-      - libavformat.so
-      - libavutil.so
-      - libcurl.so
       - libgcc
       - libgl
-      - libsfml-network.so
-      - libsfml-system.so
-      - libspng.so
+      - libspng
       - libstdc++
-      - libswscale.so
-      - libusb-1.0.so
+      - libusb
       - libx11
       - libxi
       - libxrandr
       - lz4
       - lzo
-      - mbedtls2
       - pugixml
       - sdl3
+      - sfml
       - speexdsp
       - xxhash
       - xz
@@ -177,6 +159,5 @@ pkgname:
       - alsa-lib
       - libevdev
       - libpulse
-      - libudev.so
       - qt6-base
 # generated with artixpkg 0.38.5-1-any
