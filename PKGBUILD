@@ -9,7 +9,7 @@
 # Contributor: jebaum <jebaum at ucla dot edu>
 
 pkgname=fzf
-pkgver=0.72.0
+pkgver=0.73.1
 pkgrel=1
 pkgdesc='Command-line fuzzy finder'
 arch=('x86_64')
@@ -23,8 +23,10 @@ optdepends=('fish: fish keybindings'
             'zsh: zsh keybindings')
 options=(!lto)
 source=("git+https://github.com/junegunn/fzf.git#tag=v${pkgver}?signed")
-validpgpkeys=('23F9CCD32FBC4A8D4E822AB8D9770615D226D94C') # Junegunn Choi <junegunn.c@gmail.com>
-sha512sums=('3eba6825f5304d7d6e3892897f8e60a670e702118a45053f4b79a28e05b824feb2e022e4633a77cb267049c4d7370ee374258010eedb971fad3eef26c078ad8f')
+validpgpkeys=(
+	'B5FB4AB5F32EC1A0C9DE9637254BC280FEF9C627'
+	'23F9CCD32FBC4A8D4E822AB8D9770615D226D94C') # Junegunn Choi <junegunn.c@gmail.com>
+sha512sums=('085ece74ff95f99f61f3f3b392a13634270c5b5c3226844e94e4ce423d9483598f13ed1c1964309d2dfb8b505e87cdb6afae193777aecc5c23e7cc33aec3dd43')
 
 prepare() {
 	cd "${pkgname}"
