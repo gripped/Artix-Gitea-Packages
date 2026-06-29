@@ -1,9 +1,9 @@
 ---
-version: 7.1.2.artix1-1
+version: 7.1.2.artix2-1
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 7.1.2.artix1
+  pkgver: 7.1.2.artix2
   pkgrel: 1
   url: https://github.com/archlinux/linux
   arch:
@@ -41,8 +41,8 @@ pkgbase:
   source:
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.2.tar.xz
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.2.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v7.1.2-arch1/linux-v7.1.2-arch1.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v7.1.2-arch1/linux-v7.1.2-arch1.patch.zst.sig
+    - https://github.com/archlinux/linux/releases/download/v7.1.2-arch2/linux-v7.1.2-arch2.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v7.1.2-arch2/linux-v7.1.2-arch2.patch.zst.sig
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
@@ -50,19 +50,19 @@ pkgbase:
   sha256sums:
     - 37198c93727be247c9fb5309bb86cd5e496c61e5322cd8c4eca9476bb0b5883f
     - SKIP
-    - 8af76b8c229277084e6349e6a8b029001eddc8ef10593cf6ccd49672c0744ec4
+    - 4e8f63e6242bbef51b85725d032669de3f6781d4ab217c997447c9b43f935b59
     - SKIP
   b2sums:
     - 0d6e9ff535af085190da7df50887b20f395cd4d6befb7158c9993bf77fe92459a9982877ce944ca522192daa5a54c952c3d368def04b579796ba7109a972453b
     - SKIP
-    - 7ad356f1e9e7ca48ee156389b36b43927a65e2c058978fe50719f5a676baaf2863bc97acb9b15fdfac8ca2f689bb53cd1a6eeed10a11c68823ec744ebee40e0c
+    - 574d2fd6a2921aa1396ab855b60398abf786971a1871254244dfbf22d1bb2a5969d4d39042efe14fb4b1479f7db36b1345f9b331d567f0ef963c28c8d5fcb78b
     - SKIP
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
-    - a0c0830e2e7537832d36d71501c0e0231858b1c8b7becc969741fcaea99c703f
+    - 90a400b98c8fda6553d8b45874ca9a20fb74247b124e852be87e8b8a257243db
   b2sums_x86_64:
-    - 6f051e04961d52877423e74e4d35db369b3a41e90607e6acc906c97720f732dbad4a56c2e12265647559e29955bdbbf5a6c6309346139d4b541be1e3e30e6d4e
+    - bdf12d2b3e9628c8265d55c769d9794c3b00ba3d7722df462874603fdfd38a65abe6499424f0257448f82daf89d77dcff2a26eb1a03c4424cee4bb78a6bd96d6
 pkgname:
   - name: linux
     pkgdesc: The Linux kernel and modules
