@@ -2,7 +2,7 @@
 # Contributor: Sean V Kelley <seanvk@posteo.de>
 
 pkgname=libva-utils
-pkgver=2.22.0
+pkgver=2.23.0
 pkgrel=1
 pkgdesc="Intel VA-API Media Applications and Scripts for libva"
 arch=(x86_64)

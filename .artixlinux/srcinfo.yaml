@@ -1,0 +1,24 @@
+---
+version: 2.23.0-1
+pkgbase:
+  name: libva-utils
+  pkgdesc: Intel VA-API Media Applications and Scripts for libva
+  pkgver: 2.23.0
+  pkgrel: 1
+  url: https://github.com/intel/libva-utils
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - mesa
+    - meson
+  depends:
+    - libva
+  source:
+    - https://github.com/intel/libva-utils/archive/2.23.0/libva-utils-2.23.0.tar.gz
+  sha256sums:
+    - 7b57615c130427ec134bb5d2b80af516ce5bb19a40e89b1dab46a0d59760d96c
+pkgname:
+  - name: libva-utils
+# generated with artixpkg 0.38.5-1-any
