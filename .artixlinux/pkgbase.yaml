@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 580.173.02-3
+    version: 580.173.02-4
     packages:
-      - nvidia-580xx-580.173.02-3-x86_64.pkg.tar.zst
+      - nvidia-580xx-580.173.02-4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 580.173.02-2.1
