@@ -2,10 +2,10 @@
 
 pkgbase=evi
 pkgname=('evi' 'evi-runtime' 'egvi')
-pkgver=10.1
+pkgver=10.0
 _commit=34df8a851b5a82521ba1a73829251cb3f094201a
 _versiondir=100
-pkgrel=65.4
+pkgrel=65.5
 pkgdesc='EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project.'
 url='https://codeberg.org/evi-editor/evi'
 arch=('x86_64')

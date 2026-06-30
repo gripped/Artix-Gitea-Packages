@@ -1,10 +1,10 @@
 ---
-version: 10.1-65.4
+version: 10.0-65.5
 pkgbase:
   name: evi
   pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project.
-  pkgver: 10.1
-  pkgrel: 65.4
+  pkgver: 10.0
+  pkgrel: 65.5
   url: https://codeberg.org/evi-editor/evi
   arch:
     - x86_64
@@ -38,7 +38,7 @@ pkgbase:
 pkgname:
   - name: evi
     depends:
-      - evi-runtime=10.1-65.4
+      - evi-runtime=10.0-65.5
       - gpm
       - acl
       - glibc
@@ -68,7 +68,7 @@ pkgname:
   - name: egvi
     pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project. (with advanced features, such as a GUI)
     depends:
-      - evi-runtime=10.1-65.4
+      - evi-runtime=10.0-65.5
       - gpm
       - libxt
       - gtk3
@@ -83,7 +83,7 @@ pkgname:
       - 'perl: Perl language support'
       - 'tcl: Tcl language support'
     provides:
-      - evi=10.1-65.4
+      - evi=10.0-65.5
       - xxd
       - vim-plugin-runtime
     conflicts:
