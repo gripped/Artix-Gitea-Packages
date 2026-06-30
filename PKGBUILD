@@ -3,7 +3,7 @@
 
 pkgname=gnome-session-sysvinit
 pkgver=50.0.20260410
-pkgrel=1
+pkgrel=2
 pkgdesc="Init agnostic GNOME session handler from Porteus"
 url="https://github.com/fulalas/gnome-session-sysvinit/"
 arch=(x86_64)
@@ -18,7 +18,11 @@ makedepends=(
   git
   meson
 )
-conflicts=(gnome-session-leader)
+conflicts=(
+  gnome-session-leader
+  # needs two modes
+  gdm
+)
 replaces=()
 provides=(gnome-session-leader)
 source=("git+https://github.com/capezotte/gnome-session-sysvinit#branch=standalone")
