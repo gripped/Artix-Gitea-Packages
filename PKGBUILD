@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-async-container
-pkgver=0.36.0
+pkgver=0.37.0
 pkgrel=1
 pkgdesc='Abstract container-based parallelism using threads and processes where appropriate'
 arch=(any)
@@ -23,10 +23,11 @@ checkdepends=(
   ruby-covered
   ruby-metrics
   ruby-sus
+  ruby-sus-fixtures-async
 )
 options=(!emptydirs)
 source=(git+https://github.com/socketry/async-container.git#tag=v$pkgver)
-sha256sums=('a1c298b7f2615bf5c4814aa3243edddc68c473d4336ceccea0754451010592df')
+sha256sums=('402bad1ad0846d5b80a39db7ddc72119b9c9ef9798cd629bfb0fc3aad13a7897')
 
 prepare() {
   cd async-container
