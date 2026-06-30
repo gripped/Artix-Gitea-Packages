@@ -1,10 +1,10 @@
 ---
-version: 1.94.10-1
+version: 1.94.10-2
 pkgbase:
   name: libfprint
   pkgdesc: Library for fingerprint readers
   pkgver: 1.94.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://fprint.freedesktop.org/
   arch:
     - x86_64
@@ -24,7 +24,7 @@ pkgbase:
     - python-cairo
     - python-gobject
   depends:
-    - gcc-libs
+    - libgcc
     - glib2
     - glibc
     - libgudev
@@ -41,4 +41,4 @@ pkgbase:
     - b7ec89f429c4a6e51697c7d5813c948317fa48576ce722b36a0ffacee77ed050cdd4fca993ab15cb781b93faf442c10c76ff9cb19368e7d215b16e6be4da66dd
 pkgname:
   - name: libfprint
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
