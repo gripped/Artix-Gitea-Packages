@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.3.7-4
+    version: 0.3.9-1
     packages:
-      - torbrowser-launcher-0.3.7-4-any.pkg.tar.zst
+      - torbrowser-launcher-0.3.9-1-any.pkg.tar.zst
     debug: []
 team: galaxy
