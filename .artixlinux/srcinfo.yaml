@@ -1,10 +1,10 @@
 ---
-version: 8.7.0-12
+version: 9.10.0-1
 pkgbase:
   name: calibre
   pkgdesc: Ebook management application
-  pkgver: 8.7.0
-  pkgrel: 12
+  pkgver: 9.10.0
+  pkgrel: 1
   url: https://calibre-ebook.com
   arch:
     - x86_64
@@ -23,17 +23,24 @@ pkgbase:
     - sip
     - xdg-utils
   depends:
+    - espeak-ng
+    - ffmpeg
+    - hicolor-icon-theme
     - hunspell
     - hyphen
     - icu
     - jxrlib
     - libmtp
+    - libstdc++
     - libstemmer
     - libusb
     - libwmf
     - mtdev
+    - onnxruntime
+    - openssl
     - optipng
     - podofo
+    - protobuf
     - python-apsw
     - python-beautifulsoup4
     - python-css-parser
@@ -48,6 +55,7 @@ pkgbase:
     - python-lxml
     - python-lxml-html-clean
     - python-markdown
+    - python-html5lib
     - python-mechanize
     - python-msgpack
     - python-netifaces
@@ -62,10 +70,13 @@ pkgbase:
     - python-pyqt6
     - python-pyqt6-webengine
     - python-regex
+    - python-tzlocal
+    - python-tzdata
     - python-unrardll
     - python-xxhash
     - python-zeroconf
     - python-zstandard
+    - python
     - qt6-imageformats
     - qt6-multimedia
     - qt6-speech
@@ -86,15 +97,15 @@ pkgbase:
     - calibre-common
     - calibre-python3
   source:
-    - https://download.calibre-ebook.com/8.7.0/calibre-8.7.0.tar.xz
-    - https://calibre-ebook.com/signatures/calibre-8.7.0.tar.xz.sig
-    - qt-6.10.patch
+    - https://download.calibre-ebook.com/9.10.0/calibre-9.10.0.tar.xz
+    - https://calibre-ebook.com/signatures/calibre-9.10.0.tar.xz.sig
+    - tts-piper-remove-withterminator.patch
   validpgpkeys:
     - 3CE1780F78DD88DF45194FD706BC317B515ACE7C
   sha256sums:
-    - 2cfe587e3773d8607fe8bbefbcd77b5cfb816124cac89e491353deb8f2fa9324
+    - 53b8a277c766e6c3fb5dfb26fa29119f4a129bf8f9a954b4235a963c8a30c301
     - SKIP
-    - 5b1b0b0d60400727136e929b941bac0b32125c9636600c2f9ec1a1d7fd74db64
+    - 128dad5dda9175ee9d8a798cdac0514e228821dca11b746b54682a9cc787d3da
 pkgname:
   - name: calibre
 # generated with artixpkg 0.38.5-1-any

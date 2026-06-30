@@ -1,4 +1,5 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Jonathan Grotelüschen <tippfehlr@archlinux.org>
 # Contributor: Jelle van der Waa <jelle@vdwaa.nl>
 # Contributor: Eli Schwartz <eschwartz@archlinux.org>
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
@@ -8,8 +9,8 @@
 # Contributor: Larry Hajali <larryhaja@gmail.com>
 
 pkgname=calibre
-pkgver=8.7.0
-pkgrel=12
+pkgver=9.10.0
+pkgrel=1
 pkgdesc='Ebook management application'
 arch=(x86_64)
 url=https://calibre-ebook.com
@@ -28,6 +29,7 @@ _pydeps=(apsw
          lxml
          lxml-html-clean
          markdown
+         html5lib
          mechanize
          msgpack
          netifaces
@@ -42,23 +44,33 @@ _pydeps=(apsw
          pyqt6
          pyqt6-webengine
          regex
+         tzlocal
+         tzdata
          unrardll
          xxhash
          zeroconf
          zstandard)
-depends=(hunspell
+depends=(espeak-ng
+         ffmpeg
+         hicolor-icon-theme
+         hunspell
          hyphen
          icu
          jxrlib
          libmtp
+         libstdc++
          libstemmer
          libusb
          libwmf
 #        mathjax
          mtdev
+         onnxruntime
+         openssl
          optipng
          podofo
+         protobuf
          "${_pydeps[@]/#/python-}"
+         python
          qt6-imageformats
          qt6-multimedia
          qt6-speech
@@ -87,10 +99,10 @@ replaces=("${conflicts[@]}")
 _archive="$pkgname-$pkgver"
 source=("https://download.calibre-ebook.com/$pkgver/$_archive.tar.xz"
         "$url/signatures/$_archive.tar.xz.sig"
-         qt-6.10.patch)
-sha256sums=('2cfe587e3773d8607fe8bbefbcd77b5cfb816124cac89e491353deb8f2fa9324'
+        "tts-piper-remove-withterminator.patch")
+sha256sums=('53b8a277c766e6c3fb5dfb26fa29119f4a129bf8f9a954b4235a963c8a30c301'
             'SKIP'
-            '5b1b0b0d60400727136e929b941bac0b32125c9636600c2f9ec1a1d7fd74db64')
+            '128dad5dda9175ee9d8a798cdac0514e228821dca11b746b54682a9cc787d3da')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
 
 prepare(){
@@ -101,10 +113,12 @@ prepare(){
 		-e "s/'ctc-posml'/'text' not in mt and 'pdf' not in mt and 'xhtml'/" \
 		-e "s/^Name=calibre/Name=Calibre/g" \
 		-i  src/calibre/linux.py
+
 	# Remove unneeded files
 	rm -f resources/$pkgname-portable.*
 
-        patch -p1 -i ../qt-6.10.patch
+	# espeak-ng headers do not provide espeak_TextToPhonemesWithTerminator
+	patch -Np1 -i ../tts-piper-remove-withterminator.patch
 }
 
 build() {
