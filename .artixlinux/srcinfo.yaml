@@ -1,10 +1,10 @@
 ---
-version: 1.8.2-1
+version: 1.8.2-2
 pkgbase:
   name: zed
   pkgdesc: A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
   pkgver: 1.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://zed.dev
   arch:
     - x86_64
@@ -25,6 +25,7 @@ pkgbase:
     - libasound.so
     - curl
     - fontconfig
+    - git
     - glib2
     - libgio-2.0.so
     - libglib-2.0.so
@@ -32,8 +33,6 @@ pkgbase:
     - glibc
     - libgcc
     - libgcc_s.so
-    - libgit2
-    - libgit2.so
     - libstdc++
     - libstdc++.so
     - libxcb
@@ -51,8 +50,6 @@ pkgbase:
     - vulkan-icd-loader
     - vulkan-tools
     - wayland
-    - zlib
-    - libz.so
     - zstd
     - libzstd.so
   optdepends:
