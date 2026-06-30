@@ -3,8 +3,8 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt-lts
-pkgver=6.12.93.rt18.artix1
-archpkgver=6.12.93.rt18.arch1
+pkgver=6.12.94.rt18.artix1
+archpkgver=6.12.94.rt18.arch1
 pkgrel=1
 pkgdesc='Linux RT LTS'
 arch=(x86_64)
@@ -61,24 +61,25 @@ source=(
   $url/-/releases/v${_distro_patch_ver}/downloads/$pkgbase-v${_distro_patch_ver}.patch.{sig,zst}
 )
 source_x86_64=(config.x86_64)
-sha512sums=('b289b9441f2ed874cef9dd6e7ca49f76b71b0b3da9d790e1782f1c0e623e58afe8cb367251143b1ed0300c607e435ef72d7a1324a73dd3087b2b62e182fdf2dd'
+sha512sums=('9368813d7c2b17d0a893c1becd0d631dac9030a81c0505b463ad4d8c72edbdaeada53c24bc36ada0b84ff0ff78ae363bdf9aeeb8cff6a0d01bc6fc00b2fa275b'
             'SKIP'
             'SKIP'
-            'a2828927eff1d265dd38476d973955de2f41dda4a1e6c24acec53cfb94c8478db8dad7b4075bdd6837b9ab5f586cdb1931542d7eca42b9b5b2b753b6198a2999'
+            '6083c9277455537dcb6a11d989c50aeef908397a05478cde5762eb77967ad3a8f909278c021ca33c16ec32a9da8089493537cfe041b8ce40836728703003b59c'
             'SKIP'
-            'b6b3c43fca95062d794269457527817a04a141b22958b424e0a46dc74f72df8fcc7d727880a46c6f68c77a9bb388068b716a4afc7e61395cd402b060ea7f92cc')
+            '39546d49247f9cbd0fa2f770cb0369c498190d86b34fc1e7086d00573da2e430e83bbe4974e97f1562089c952194e7bfff1fe0cf43babda87880b70f3e341a61')
 sha512sums_x86_64=('c51588dbcd9f3c40e7c668bfe80eccb7f32a24cbb24e94588cb87e33b0b7c579bbc94d16b42b0651e641d9d351f8c74f3086a18297aa885261c77de2ca0785f2')
-b2sums=('eccca4a84c2cad0783b4eb71b426db33c086907f01418fed40ef1b5e65ba6941142e3609588b5dfe7c0df7e0214dd5e1ab30026c68595d8c2f6d31f479acf061'
+b2sums=('449180d9913a48b0fe777fc830b4e95af720793ff2a50d02d839077dffd439ec0c926e4cd8181c6b5912010e7e107456756aba65713eca9c4fdc6c57cb8c14dc'
         'SKIP'
         'SKIP'
-        '2c703e5aa47042cf3578b21e5dbcad9ac463b90d2d108ed8e0a677c58d8c980e4c65cae49faeb9c3472486fc32a26ff4598b638948db96ca96e4e871f7ed91fe'
+        '9386ed3d8651fdadc45028551935bda7ee491063ee6cf10bcb7d8605096e0f3a642377b646b594e90ce0099c33488d7096fb80db278015df0086665ebfeb1744'
         'SKIP'
-        '20f8922410a5072231b45b2185e755f0b29568cbc7ce795e5ca589469684d1717c33376c801fe3e824e638b2493c557e833c6f52df055b3e4ce14f14d2ae9342')
+        'b661e0f21e7ee59e1c84d0a6f294fc76494cb78811e9c6633f23db4227ee7f9bcb90c3e380cfca37d9aed5e9e13a462b17f2ef59c51e2482fb963df59d57d8a4')
 b2sums_x86_64=('3c346ce4d3b8cbd5e124432ca06d6652ee598446fc832060f79c921403ec3147e305b9ec6aa635d86b39c0791d4e13c83aaa7dd9dbaff366adb94975bfa57455')
 validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman <gregkh@linuxfoundation.org>
   D5653EA39C8675DA4BD5971C13B55DD07C53B851  # Clark Williams (Kernel Correspondence) <clrkwllms@kernel.org>
   991F6E3F0765CF6295888586139B09DA5BF0D338  # David Runge <dvzrv@archlinux.org>
+  05C7775A9E8B977407FE08E69D4C5AA15426DA0A  # Frederik Schwan <freswa@archlinux.org>
 )
 
 export KBUILD_BUILD_HOST=artixlinux
