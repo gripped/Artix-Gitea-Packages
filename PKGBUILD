@@ -5,7 +5,7 @@ pkgname=xorg-xfontsel
 pkgver=1.1.2
 pkgrel=1
 pkgdesc='Point and click selection of X11 font names'
-url='https://xorg.freedesktop.org/'
+url="https://gitlab.freedesktop.org/xorg/app/xfontsel"
 arch=('x86_64')
 # The entire source is X11, except the following files that are not installed
 # or belong to the build system and therefore do not contribute to the license
@@ -22,7 +22,7 @@ depends=('libxaw' 'libxmu' 'libxt' 'libx11' 'glibc')
 source=(https://xorg.freedesktop.org/archive/individual/app/xfontsel-${pkgver}.tar.xz{,.sig})
 sha512sums=('377ef4e95f68411716a9cd202f4b2468ef5638d53ebd058518bdf97319f8008052f2cb76154503a1eae76aae3ce27dfa7334428b66f738a087d0915bef69c603'
             'SKIP')
-validpgpkeys=('4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E') # "Alan Coopersmith <alan.coopersmith@oracle.com>"
+validpgpkeys=('3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2') # "Alan Coopersmith <alan.coopersmith@oracle.com>"
 
 build() {
   cd xfontsel-${pkgver}
