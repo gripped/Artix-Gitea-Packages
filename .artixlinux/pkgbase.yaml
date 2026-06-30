@@ -54,9 +54,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 10.0-65.4
+    version: 10.1-65.4
     packages:
-      - evi-10.0-65.4-x86_64.pkg.tar.zst
-      - evi-runtime-10.0-65.4-x86_64.pkg.tar.zst
-      - egvi-10.0-65.4-x86_64.pkg.tar.zst
+      - evi-10.1-65.4-x86_64.pkg.tar.zst
+      - evi-runtime-10.1-65.4-x86_64.pkg.tar.zst
+      - egvi-10.1-65.4-x86_64.pkg.tar.zst
     debug: []

@@ -1,9 +1,9 @@
 ---
-version: 10.0-65.4
+version: 10.1-65.4
 pkgbase:
   name: evi
   pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project.
-  pkgver: 10.0
+  pkgver: 10.1
   pkgrel: 65.4
   url: https://codeberg.org/evi-editor/evi
   arch:
@@ -32,13 +32,13 @@ pkgbase:
     - evidoc.hook
   sha256sums:
     - 82a30695969d007ee25eacd4fa381095fd7b9fdd050844aaee2a04d3a76ae81c
-    - b16e85e457397ab2043a7ee0a3c84307c6b4eac157fd0b721694761f25b3ed5b
+    - d8f783313b92b2abc6e259ce645e997b073306f6b1683c28a5b175670a2fa72b
     - cc3d931129854c298eb22e993ec14c2ad86cc1e70a08a64496f5e06559289972
     - f230cf5feb2f24e4848f68d0555183c7b758b4e78635c40879abb761b6225d31
 pkgname:
   - name: evi
     depends:
-      - evi-runtime=10.0-65.4
+      - evi-runtime=10.1-65.4
       - gpm
       - acl
       - glibc
@@ -68,7 +68,7 @@ pkgname:
   - name: egvi
     pkgdesc: EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project. (with advanced features, such as a GUI)
     depends:
-      - evi-runtime=10.0-65.4
+      - evi-runtime=10.1-65.4
       - gpm
       - libxt
       - gtk3
@@ -83,7 +83,7 @@ pkgname:
       - 'perl: Perl language support'
       - 'tcl: Tcl language support'
     provides:
-      - evi=10.0-65.4
+      - evi=10.1-65.4
       - xxd
       - vim-plugin-runtime
     conflicts:
