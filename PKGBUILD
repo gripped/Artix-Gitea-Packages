@@ -3,27 +3,19 @@
 
 pkgname=containers-common
 _upstream=container-libs
-pkgver=0.67.1
-pkgrel=3
+pkgver=0.68.0
+pkgrel=1
 epoch=1
-_buildah_pkgver=1.43.2
-_podman_pkgver=5.8.3
+_buildah_pkgver=1.44.0
+_podman_pkgver=6.0.0
 _shortnames_pkgver=2025.03.19
-_skopeo_pkgver=1.22.2
+_skopeo_pkgver=1.23.0
 pkgdesc="Configuration files and manpages for containers"
 arch=(any)
 url="https://github.com/podman-container-tools/container-libs"
 license=(Apache-2.0)
 depends=('container-network-stack>1')
 makedepends=(go-md2man)
-backup=(
-  etc/containers/containers.conf
-  etc/containers/mounts.conf
-  etc/containers/policy.json
-  etc/containers/registries.conf
-  etc/containers/seccomp.json
-  etc/containers/storage.conf
-)
 # configuration override directories need to exist
 options=(emptydirs)
 _src_dir="$_upstream-common-v$pkgver"
@@ -33,32 +25,32 @@ source=(
   podman-$_podman_pkgver.tar.gz::https://github.com/podman-container-tools/podman/archive/v$_podman_pkgver.tar.gz
   skopeo-$_skopeo_pkgver.tar.gz::https://github.com/podman-container-tools/skopeo/archive/v$_skopeo_pkgver.tar.gz
   shortnames-$_shortnames_pkgver.tar.gz::https://github.com/containers/shortnames/archive/refs/tags/v$_shortnames_pkgver.tar.gz
-  mounts.conf
   tmpfiles.conf
+  00-containers-arch.conf
+  00-storage-arch.conf
   $pkgname-0.48.0-init_path.patch
 )
-sha512sums=('65b2592f4384bcdad55a934bb9be2a01fae19ec5b40006a18481b3c7e4ae4bcd77ea20a51df892e8e72f92f03c853b66b06f99cc6cb5c08db0b045eda9877f70'
-            '17009c78c713eb397cc7d791edb7e0470a3c2d6032fc0706af8aabf81a7849ed4abd420b3afbc67ce2c9464ae5ddccccd7a52bc9426a73e1d72884403d4a14d4'
-            '1dd626f1b761bdeb1c87836dfc94ed036db420863512abaabf21c1015c433216f8d7192fbb8d4f7b634797ea50b2f4a8fcf61a724da2962aeaa47dad5f75defe'
-            'd65134f568bf49cabc1ec7564bc98a5debb9e6b16a6e5351cebc583534a56b6a16c0eb69356f8466681e68df5445172c34c9d34bcb362bc2a89bfe9288002066'
+sha512sums=('2725689c41904886c22de3d70a0fdcc93f36e588f2a49970d5ad94dfbcc2029581c3ef824ca7f9f01a52935a9703e41fa184132c61e1daac3f221966326bea40'
+            '660f29ff9b8c8f7f3776e96391bb803feb54622c92aaf78f5ac37783bdc77573353acd5f692502b61169ad58f6b89a8e8268ec41c0cb080dfec3f8466dd6419e'
+            'fc79bd666b2a500b89846ab8f20c9cdb3d25359ea96de5f1416821aa16fa54e60348a2250b42f775bee3ea0b26ec36c3cc72c9ebd1f4e88beeeea8bdb9b7791e'
+            '0985ac478b27bace31f5f2710bae44d214b90f160e61400d6d345e728779389103a3b9c4bcfd048f0d7d12d4dc7dcd8e0b2e20b1a8c18bdef652faa153fe0726'
             'edadadda8920ac4880f2c44f396e5d4c844bf15c964d7ef5d14c68637ac43e0df91f4efd2be747bca74bd0da959ea21cc3200ab14b2b57aba5975cff8f2fbefa'
-            '11fa515bbb0686d2b49c4fd2ab35348cb19f9c6780d6eb951a33b07ed7b7c72a676627f36e8c74e1a2d15e306d4537178f0e127fd3490f6131d078e56b46d5e1'
             '2b187c119db95cda439f36509545fd0f45530c69d9139823387f9aa68ea2e9c4b3dee8ee21a517daa73a88ac63cc694e0e170061bfc1503425c21868b2ccf7dd'
+            '852275de0f5852e5568b172148fd19b1caa0e20890b81d97830336f011bd9c84cd5827d501d099f20ac4a17906f7c8e08209dda936c30a11c0e02007a43715dd'
+            'ecf6dbc030bfccaf13ccdce7224bdc7f662ebdd6f24a1675a608070dc03e34aee9b95f59f095ac3075636a6332a81f6684bc84c2c5eef47184eb2c02db067245'
             '4a6526d01f192f0eb4dcbd28c019a2b0db6dc2128af644e8e89992e5dcfa45a02c739b06ee01e22606b5cb847213c002f8ab5f87a576846ac73f73eed9b2b469')
-b2sums=('a5eaf86d9bcf7e5652ba9694df07ccc44da60edd1c39d0e36652ae831947848a41abe215ed7857c9c610ea248f4022df505f0f62ed9b3dbbe07f22683c32040d'
-        'a0169a0d4194764be2f389da3403ca53a61f5282408a2e6dcd2f3cdf8f2fc2471207a314bb79bdc7d242c171f86aeb8dd103b52488c2378bbee866ea83021fd7'
-        '0ec9df78a0e21a5f78bb279b422d7262cf8bb1ee25fc1e433bc8e8730c131454bd1b0b0c74b97fb83a425eb7d99f9565d168d310f8584e76e28cbf74d22a70a8'
-        'f3c6d5eafe98c54b0e8f4b69d75472cfe4367152a915ed4daf16dc8d0604547863d62acaf3ef3c50d82a7ab4996d9ee9c25b87300aefccbebc74c664de4ee515'
+b2sums=('73a578c45cd2fcf5d1481a17406c2b15472d2ae51d34154e847750fc32a5a8b6631404ef2bd261dec1d35a65fbe8b38d0d0053c6d1b0ecf31197025955d16173'
+        '409046d73dbc4ffb835a37e26c28111f6c1f28c165ab6c979738fc6459b81edfdcfe468337b39a2edce018cb568df32b2868e6c46a5b414eb005cfb4d2546b8c'
+        'fd522279dedb6fefbb9da9bd8b8000e696ff97f66b8b0816b5ecdb7b7b312b9466068d23fc396e9d7539e7700f0ececc43a55a5bd28e8a6dd1624aa7f2cfc214'
+        '17f51bc19c45f8250830a111cae973947f76d204d5e92517466312f716692080b900163dec3969a0492b799eb462f5e07f652cdd6e8be51186735cd5d4cee7a0'
         'a72160f65aa13316c33b984173e151f0519720ec9617395980f0d7c5f25dc14b400aafbcb2fa8769eace9c1e51d4f1ddbe783e68fc0e40280743f90fbce30aa9'
-        '2f4b0af3271103362a898e7fcc3ec05f06755902ad664ac3107bb8debb8b2ac0d50de311d5fc651279a817a56e3ff05864a7e77c0d8fc628ff7411bfb98c9b69'
         '1cd6884f06269c3e6cbdfa542bdf8e178574062ec11252defc48187b60a98d0193353cc8a12ba186d338ce7da6b879a1e9dc249d2f40c28fe997c433c91e8e0e'
+        '3270faf98171379655357462c7ee9e1233434866f72410a8101df12d0c3ffce3fbac0bdd6ee6e1fa4c216044a1bfb3bb683f85a1b40ce5530b8797d34a004d42'
+        '42d026cf93d01f5f8d0012ca874550744dda079cd2d28212bdda650605d6d8f3853d1dec4da6315a37884fb7db256a2be9a8fd780a646ca75414df33c2271fd9'
         '89e95f468785f6ca1309b0de37921702bd4eb6fb191afc0d93454bec7b7096a1b84e19408b5a0abcdfd89ce2ebd228879cbc42a0d409425fb41caab6a8f049f5')
 
 prepare() {
-  sed -r 's/(GOMD2MAN = ).*/\1 go-md2man/' -i $_src_dir/storage/docs/Makefile
   patch -Np1 -d $_src_dir/common -i ../../$pkgname-0.48.0-init_path.patch
-  # systemd >= 259 no longer supports iptables, so we switch from the implicit default on iptables to nftables:
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/containers-common/-/issues/7
   mkdir -vp build/{man1,man5}
 }
 
@@ -68,10 +60,10 @@ build() {
     printf "Creating common man pages...\n"
     cd $_src_dir/common
     for _man_page in docs/*.md pkg/hooks/docs/*.md; do
-      go-md2man -in "$_man_page" -out ../../build/man5/"$(basename "${_man_page//.md}")"
+      go-md2man -in "$_man_page" -out ../../build/man5/"$(basename "${_man_page}" .md)"
     done
   )
-
+ 
   (
     printf "Creating image man pages...\n"
     cd $_src_dir/image
@@ -84,11 +76,12 @@ build() {
       go-md2man -in "$_man_page" -out ../../build/man5/"$(basename "${_man_page//.md}")"
     done
   )
-
+ 
   (
     printf "Creating storage documentation...\n"
-    make -C $_src_dir/storage/docs
+    GOMD2MAN="go-md2man" make -C $_src_dir/storage/docs
   )
+
 }
 
 check() {
@@ -114,15 +107,25 @@ check() {
 }
 
 package() {
-  # directories
+  # User configs files
   install -vdm 755 "$pkgdir/etc/containers/containers.conf.d/"
+  install -vdm 755 "$pkgdir/etc/containers/certs.d/"
   install -vdm 755 "$pkgdir/etc/containers/oci/hooks.d/"
+  install -vdm 755 "$pkgdir/etc/containers/networks/"
+  install -vdm 755 "$pkgdir/etc/containers/systemd/"
   install -vdm 755 "$pkgdir/etc/containers/registries.conf.d/"
-  install -vdm 755 "$pkgdir/usr/share/containers/oci/hooks.d/"
+  install -vdm 755 "$pkgdir/etc/containers/registries.d/"
+
+  # System directories
+  install -vdm 755 "$pkgdir/var/lib/containers/sigstore/"
+  install -vdm 755 "$pkgdir/usr/share/containers/systemd/"
+
+  # tmpfiles
   install -vDm 644 tmpfiles.conf "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
 
-  # configs
-  install -vDm 644 mounts.conf -t "$pkgdir/etc/containers/"
+  # Arch defaults
+  install -vDm 644 00-containers-arch.conf "$pkgdir/usr/share/containers/containers.conf.d/00-containers-arch.conf"
+  install -vDm 644 00-storage-arch.conf "$pkgdir/usr/share/containers/storage.conf.d/00-storage-arch.conf"
 
   # Persist the version, so that consumers can rely on it.
   printf '%s\n' "$pkgver" > "$pkgdir/usr/share/containers/container-libs.version"
@@ -130,35 +133,33 @@ package() {
   (
     cd $_src_dir/common
     # configs
-    install -vDm 644 pkg/config/containers.conf -t "$pkgdir/etc/containers/"
     install -vDm 644 pkg/config/containers.conf -t "$pkgdir/usr/share/containers/"
-    install -vDm 644 pkg/seccomp/seccomp.json -t "$pkgdir/etc/containers/"
     install -vDm 644 pkg/seccomp/seccomp.json -t "$pkgdir/usr/share/containers/"
   )
+
   (
     cd $_src_dir/image
     # configs
-    install -vDm 644 registries.conf -t "$pkgdir/etc/containers/"
+    install -vDm 644 registries.conf -t "$pkgdir/usr/share/containers/"
+    install -vDm 644 default-policy.json "$pkgdir/usr/share/containers/policy.json"
+    install -vDm 644 default.yaml -t "$pkgdir/usr/share/containers/registries.d/"
+
+    # TODO: Remove when cri-o has been updated
+    install -vDm 644 default-policy.json "$pkgdir/etc/containers/policy.json"
   )
+
   (
     cd $_src_dir/storage
-    # configs
-    install -vDm 644 storage.conf -t "$pkgdir/etc/containers/"
     install -vDm 644 storage.conf -t "$pkgdir/usr/share/containers/"
-    # man pages
     install -vDm 644 docs/*.1 -t "$pkgdir/usr/share/man/man1/"
     install -vDm 644 docs/*.5 -t "$pkgdir/usr/share/man/man5/"
   )
+
   (
     cd shortnames-$_shortnames_pkgver
-    install -vDm 644 shortnames.conf "$pkgdir/etc/containers/registries.conf.d/00-shortnames.conf"
+    install -vDm 644 shortnames.conf "$pkgdir/usr/share/containers/registries.conf.d/00-shortnames.conf"
   )
-  (
-    cd skopeo-$_skopeo_pkgver
-    # configs
-    install -vDm 644 default-policy.json "$pkgdir/etc/containers/policy.json"
-    install -vDm 644 default.yaml -t "$pkgdir/etc/containers/registries.d/"
-  )
+
   # man pages
   install -vDm 644 build/man1/*.1 "$pkgdir/usr/share/man/man1/"
   install -vDm 644 build/man5/*.5 "$pkgdir/usr/share/man/man5/"
