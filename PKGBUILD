@@ -8,7 +8,7 @@ pkgname=(
 )
 
 pkgbase=firefox-tridactyl
-pkgver=1.24.5
+pkgver=1.24.6
 pkgrel=1
 arch=(any)
 url=https://github.com/tridactyl/tridactyl
@@ -21,7 +21,7 @@ makedepends=(
   yarn
 )
 source=("git+$url.git#commit=$pkgver?signed")
-b2sums=('6b4fb4b70d5a83136e33dbf484e981175ef4d53df08a3113a2bfa2e507384a3329237a60253458e782476031579b683eaa3123ef79974368c77641d1c76fe7a2')
+b2sums=('ed418936ac7832c971e7c92ff34926dbd19fb4c198e5f49ea438d0d2fdca1047d340615cbdeee3fb0d12a9c7106a562b275f0ba1904a02c75cdc32d2c42bacbc')
 validpgpkeys=(15D03C86837936A0A638AA2D2BB8C36BB504BFF3) # Oliver Blanthorn <freedom4cows@gmail.com>
 
 prepare() {
