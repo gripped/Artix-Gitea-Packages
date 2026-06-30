@@ -11,7 +11,7 @@ __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
-pkgver=140.12.0.101
+pkgver=140.12.0.102
 pkgrel=1
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
@@ -120,7 +120,6 @@ options=(
   !makeflags
 )
 
-install='konform.install'
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
 source=(
   "src"::"git+https://codeberg.org/konform-browser/source.git#tag=${pkgver}"
@@ -135,7 +134,7 @@ source=(
   "0004-skia-m142-update.patch.xz"
   "0005-cbindgen-0_29_4.patch"
 )
-sha256sums=('580f8cf8d3acaf116d1b25c97744c1269b6a16eeba03f276167e843c90287d41'
+sha256sums=('bc4a8e8a2286536a05fd24c29f008bc79c42986063ed3bdbbff79fcb9620020e'
             '85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
@@ -175,7 +174,7 @@ prepare() {
   mkdir -p "${_lw_srcdir}/lw"
   mv "../firefox-l10n-${_l10n_commit}" "${_lw_srcdir}/lw/l10n"
 
-  python3 scripts/librewolf-patches.py "${_ffsrcver}" "${_lwrelver}"
+  python3 scripts/apply-patches.py "${_ffsrcver}" "${_lwrelver}"
 
   ## </srcprep>
 
@@ -363,7 +362,7 @@ END
     # reenable ublock-origin
     cp "$srcdir/policies.json" "lw/policies.json"
     # disable nimbus telemetry
-    cp "$srcdir/src/settings/librewolf.cfg" "lw/librewolf.cfg"
+    cp "$srcdir/src/browser/app/profile/librewolf.cfg" "lw/librewolf.cfg"
 
   else
     cat >.mozconfig ../mozconfig
@@ -403,14 +402,14 @@ app.partner.konform=${_pkgname}
 END
 
   for i in 16 32 48 64 128; do
-    install -Dvm644 browser/branding/librewolf/default$i.png \
+    install -Dvm644 browser/branding/vendor/default$i.png \
       "$pkgdir/usr/share/icons/hicolor/${i}x${i}/apps/$__pkgname.png"
   done
   install -Dvm644 ${srcdir}/default192x192.png \
     "$pkgdir/usr/share/icons/hicolor/192x192/apps/$__pkgname.png"
 
   # arch upstream provides a separate svg for this. we don't have that, so let's re-use 16.png
-  install -Dvm644 browser/branding/librewolf/default16.png \
+  install -Dvm644 browser/branding/vendor/default16.png \
     "$pkgdir/usr/share/icons/hicolor/symbolic/apps/$__pkgname-symbolic.png"
 
   install -Dvm644 ${srcdir}/$__pkgname.desktop \
