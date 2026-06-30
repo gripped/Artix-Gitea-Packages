@@ -1,9 +1,9 @@
 ---
-version: 6.7.1-1
+version: 6.7.2-1
 pkgbase:
   name: libplasma
   pkgdesc: Plasma library and runtime components
-  pkgver: 6.7.1
+  pkgver: 6.7.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -48,15 +48,15 @@ pkgbase:
   replaces:
     - plasma-framework
   source:
-    - https://download.kde.org/stable/plasma/6.7.1/libplasma-6.7.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.1/libplasma-6.7.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.2/libplasma-6.7.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.2/libplasma-6.7.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - fac96344e91e22f1acac29f9050f8dccd497a658735733cff90e479cda1bd5b3
+    - 133d8de5f00ad0d15b515ea9f13bc64fac7f7f52d077243dc8dfee16323f9f8c
     - SKIP
 pkgname:
   - name: libplasma
