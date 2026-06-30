@@ -1,9 +1,9 @@
 ---
-version: 6.7.1-1
+version: 6.7.2-1
 pkgbase:
   name: discover
   pkgdesc: KDE and Plasma resources management GUI
-  pkgver: 6.7.1
+  pkgver: 6.7.2
   pkgrel: 1
   url: https://apps.kde.org/discover/
   arch:
@@ -56,15 +56,15 @@ pkgbase:
     - 'fwupd: firmware update support'
     - 'packagekit-qt6: to manage packages from Arch Linux repositories (not recommended, use at your own risk)'
   source:
-    - https://download.kde.org/stable/plasma/6.7.1/discover-6.7.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.1/discover-6.7.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.2/discover-6.7.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.2/discover-6.7.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 257a5c4a83a194161978d407cc66ce1481b5848b1fa77f1f9fbb27d2116b41f9
+    - facb7cfce3c948ddf8f8ff0a7281f821e0e3ace50dee90fbb9efe486836b948e
     - SKIP
 pkgname:
   - name: discover
