@@ -1,9 +1,9 @@
 ---
-version: 1.28.5-1
+version: 1.28.6-1
 pkgbase:
   name: atril
   pkgdesc: A document viewer for MATE
-  pkgver: 1.28.5
+  pkgver: 1.28.6
   pkgrel: 1
   url: https://mate-desktop.org
   arch:
@@ -42,10 +42,10 @@ pkgbase:
   replaces:
     - atril-gtk3
   source:
-    - git+https://github.com/mate-desktop/atril.git#tag=v1.28.5
+    - git+https://github.com/mate-desktop/atril.git#tag=v1.28.6
     - git+https://github.com/mate-desktop/mate-submodules.git
   sha256sums:
-    - fb2a3c92e96346534fd3b75749c2be2a66aead6b573ef5a8d4098ca423ec3645
+    - 2bc04954205371b4327c2c54066e907a2e31d1d13c782ed5376e414e1cc88855
     - SKIP
 pkgname:
   - name: atril

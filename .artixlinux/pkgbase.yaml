@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.5-1
+    version: 1.28.6-1
     packages:
-      - atril-1.28.5-1-x86_64.pkg.tar.zst
+      - atril-1.28.6-1-x86_64.pkg.tar.zst
     debug:
-      - atril-debug-1.28.5-1-x86_64.pkg.tar.zst
+      - atril-debug-1.28.6-1-x86_64.pkg.tar.zst
 team: galaxy
