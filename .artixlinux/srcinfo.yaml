@@ -1,9 +1,9 @@
 ---
-version: 0.55.3-1
+version: 0.55.4-1
 pkgbase:
   name: ruby-falcon
   pkgdesc: A fast, asynchronous, rack-compatible web server
-  pkgver: 0.55.3
+  pkgver: 0.55.4
   pkgrel: 1
   url: https://github.com/socketry/falcon
   arch:
@@ -44,11 +44,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/socketry/falcon.git#tag=v0.55.3
+    - git+https://github.com/socketry/falcon.git#tag=v0.55.4
   sha512sums:
-    - 29c56c574822253f02534f53e0e2b40cbd2de9ab1f8dc975a702ceeb76e0a725667b7597f50f0cbdcf6aa082c7d944b9b8b50cbb793beee1f31ad34653944c33
+    - 6f3466acdda26937742e15ce556d9f02733d0af57caec1c9f348b5b66cc3d16179c7ccbbe7a6a8883cea521456330385149489d0780bdab5fe3f72116552ea3a
   b2sums:
-    - 8ad60aea84ab1de727ab03cdc30f80d83d4077d6b78f83da537a74031865ee84ae761b20a498520cd4553b2749659fdc30240ee1c8e5b5393097b87b049bffe2
+    - 8e675ed116e77a50d4797c585b3f24676cd2b3fb107fb5ccd079d9e26c61b4630d043b939fe0a58b84a1f7b868fad406e5bd3e8be5d5922bbe5180086d432932
 pkgname:
   - name: ruby-falcon
 # generated with artixpkg 0.38.5-1-any
