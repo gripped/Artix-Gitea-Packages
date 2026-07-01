@@ -1,9 +1,9 @@
 ---
-version: 4.0.0-1
+version: 4.1.0-1
 pkgbase:
   name: python-jupyter-ydoc
   pkgdesc: Document structures for collaborative editing using Ypy
-  pkgver: 4.0.0
+  pkgver: 4.1.0
   pkgrel: 1
   url: https://jupyter.org/
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - python-anyio
     - python-pycrdt
   source:
-    - git+https://github.com/jupyter-server/jupyter_ydoc#tag=v4.0.0
+    - git+https://github.com/jupyter-server/jupyter_ydoc#tag=v4.1.0
   sha256sums:
-    - b9b4b41609fd0aeda5c81c0b2083204434e47cdb1b721227e40ba642f113b2f9
+    - 95f81042e92e41cb0b81224127cc16ff30b541812508250e76e200ee00503d9a
 pkgname:
   - name: python-jupyter-ydoc
 # generated with artixpkg 0.38.5-1-any
