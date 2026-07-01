@@ -3,7 +3,7 @@
 # Contributor: Sarah Hay <sarah@archlinux.org>
 
 pkgname=gpgme
-pkgver=2.1.0
+pkgver=2.1.2
 pkgrel=1
 pkgdesc='C wrapper library for GnuPG'
 arch=('x86_64')
@@ -26,7 +26,7 @@ validpgpkeys=('6DAA6E64A76D2840571B4902528897B826403ADA'  # Werner Koch (dist si
 source=(
         #"git+https://dev.gnupg.org/source/gpgme.git#tag=${pkgname}-${pkgver}?signed"
         git+https://github.com/gpg/gpgme.git#tag=${pkgname}-${pkgver}?signed)
-sha256sums=('f4dfc119a607476eb77cb1152182783f94378c9fc8a86de3f05f6f99eb8c145a')
+sha256sums=('23978faa976c05e9fcdf78a8109fb56f9e11afdad5b20a132bcbd59c4b07b52f')
 
 prepare() {
   cd ${pkgname}
