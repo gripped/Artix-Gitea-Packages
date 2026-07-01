@@ -1,9 +1,9 @@
 ---
-version: 3.7.1-1
+version: 3.8.0-1
 pkgbase:
   name: python-xxhash
   pkgdesc: Python binding for xxHash
-  pkgver: 3.7.1
+  pkgver: 3.8.0
   pkgrel: 1
   url: https://github.com/ifduyue/python-xxhash
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python
     - xxhash
   source:
-    - python-xxhash::git+https://github.com/ifduyue/python-xxhash.git#tag=v3.7.1
+    - python-xxhash::git+https://github.com/ifduyue/python-xxhash.git#tag=v3.8.0
   b2sums:
-    - 81363fd837bc3c35f623c470043df87be8630de84f91ffe4b1e3438ca75c32dd01769ecc2e69bc0f2c8e6cd804c52da609fc9c5e03a01e234f7ad62362b0160b
+    - 79821d7c3566ae6d53f5dea921b0f1085362e159a77e8b7fa70dce74cc9758e22f34d6c3c632feea4592b3fcaab9957c0e0750267f09befd4effe2632a9d753e
 pkgname:
   - name: python-xxhash
 # generated with artixpkg 0.38.5-1-any
