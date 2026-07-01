@@ -1,7 +1,7 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-praw
-pkgver=8.0.1
+pkgver=8.0.2
 pkgrel=1
 pkgdesc="Python Reddit API Wrapper that allows for simple access to Reddit's API"
 arch=('any')
@@ -11,7 +11,7 @@ depends=('python-defusedxml' 'python-prawcore' 'python-update-checker' 'python-w
 makedepends=('python-build' 'python-installer' 'python-hatchling')
 checkdepends=('python-pytest' 'python-vcrpy')
 source=("https://github.com/praw-dev/praw/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('de3dfc278d3ee2d264d7f73c99cf961689b35b835b48eb01e94866ff41aca2a768be7fc0ea75cf9ceb4c8f285b43ad3ec2d84c791279f02231d5e1ead6bb2e0d')
+sha512sums=('6d0e8b6b35b944e2014b53d3dd0b6d45ad3daece8832351a1a0487600f879768968b0aa4c6a63a1a5cc158dbfc3e059ca7212151e2547c25b9d248d52489e680')
 
 build() {
   cd praw-$pkgver
