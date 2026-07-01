@@ -1,9 +1,9 @@
 ---
-version: 7.75-1
+version: 7.76-1
 pkgbase:
   name: reaper
   pkgdesc: A complete digital audio production application for computers
-  pkgver: 7.75
+  pkgver: 7.76
   pkgrel: 1
   url: https://reaper.fm
   arch:
@@ -47,17 +47,17 @@ pkgbase:
   b2sums:
     - ddbf47cb04ad9e9fb937b09a0ea0c88d4416ceaabc4e420750ff9303447a50a323060f018bd9f52907a1a5e4ea3ebe685eb336d1b6f4bbbc89a12e2370be8728
   source_aarch64:
-    - https://reaper.fm/files/7.x/reaper775_linux_aarch64.tar.xz
+    - https://reaper.fm/files/7.x/reaper776_linux_aarch64.tar.xz
   sha512sums_aarch64:
-    - a776877f6a2fc63a00e21c5963f706a43534b9ca5847320dffb7e8b1da5bf1189fc96203db2acb80defb559d2081ed5e17e0ec24c8dc7c9ce2b7811f1248c9e9
+    - 8230237f50c6a55b3b26393b0e250129b3490384e22de8bc0c1481f5763ee57bb7db0f92c752e0f4fa7e921b9d681af59a3126e47b3e584d13931d4021e6e54d
   b2sums_aarch64:
-    - 6d73e26541f27912e6ba9e7cc9f40205925b6af3cbec5f5370c912b423c5c458a6ea37735f36c37eaf21809374d218590f70a1c66d078b58793aeb9566d3338c
+    - e7962bfcae24c4558f99b1c3d8acc5f006ab08cd1b44ad6c3d851b49ccf6087b645c6f084f80a105259c16d7a626a21337fa92e78cb5d45abca5da50b7019391
   source_x86_64:
-    - https://reaper.fm/files/7.x/reaper775_linux_x86_64.tar.xz
+    - https://reaper.fm/files/7.x/reaper776_linux_x86_64.tar.xz
   sha512sums_x86_64:
-    - d36dc034547b6f324d4dad76b97f237a8ebd2b4404944253722281c31f2bc5867b32134511d6f6ccda92d93c1646beeef585fbef295aa6f7459dbbdc0661e42c
+    - f6847db05094b3d02b658e5b4ea0a1df881817802d42eeff3d042b478b084695859f9f9c574a31d2a92af834ab2e802bcd13ba074891c189d133ff2d188b7dfb
   b2sums_x86_64:
-    - c57275c1c0d9852f90c2022e13f6d890299beb48954ff6f7f82faececd843d774cfd1e5f5d17be0b053054b08dd1973162cada2831d704e19ac2e0ff4fa3bc1b
+    - 733646a6e24eec2b7e7c8e7e6ebceefb92c77beff4861c464b886d426fde041997389c63e2d225486e938b5ac32f54304a98af6cc1174926b58baecde613bf74
 pkgname:
   - name: reaper
 # generated with artixpkg 0.38.5-1-any
