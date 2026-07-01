@@ -1,9 +1,9 @@
 ---
-version: 6.7.1-1
+version: 6.7.2-1
 pkgbase:
   name: plasma-nano
   pkgdesc: A minimal Plasma shell package intended for embedded devices
-  pkgver: 6.7.1
+  pkgver: 6.7.2
   pkgrel: 1
   url: https://invent.kde.org/plasma/plasma-nano
   arch:
@@ -30,15 +30,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.7.1/plasma-nano-6.7.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.1/plasma-nano-6.7.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.2/plasma-nano-6.7.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.2/plasma-nano-6.7.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 0b7712d1603565c8b6fd62802eca4f07919a82a5b327abdf4e9937be4a6eccf4
+    - e862aeee77236163954e92db0c5edc33c5e99244adfb680c0138cf72b20a5e2f
     - SKIP
 pkgname:
   - name: plasma-nano

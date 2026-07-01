@@ -3,7 +3,7 @@
 # Contributor: Devin Lin <devin@kde.org>
 
 pkgname=plasma-nano
-pkgver=6.7.1
+pkgver=6.7.2
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='A minimal Plasma shell package intended for embedded devices'
@@ -32,7 +32,7 @@ makedepends=(
   extra-cmake-modules
 )
 source=("https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz"{,.sig})
-sha256sums=('0b7712d1603565c8b6fd62802eca4f07919a82a5b327abdf4e9937be4a6eccf4'
+sha256sums=('e862aeee77236163954e92db0c5edc33c5e99244adfb680c0138cf72b20a5e2f'
             'SKIP')
 validpgpkeys=(
   E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
