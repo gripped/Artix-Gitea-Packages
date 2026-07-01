@@ -1,9 +1,9 @@
 ---
-version: 6.7.1-1
+version: 6.7.2-1
 pkgbase:
   name: plasma-vault
   pkgdesc: Plasma applet and services for creating encrypted vaults
-  pkgver: 6.7.1
+  pkgver: 6.7.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -40,15 +40,15 @@ pkgbase:
     - 'cryfs: to open old vaults created with CryFS'
     - 'encfs: to open old vaults created with EncFS'
   source:
-    - https://download.kde.org/stable/plasma/6.7.1/plasma-vault-6.7.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.1/plasma-vault-6.7.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.2/plasma-vault-6.7.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.2/plasma-vault-6.7.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - e517c4fcc2be37316dad57c70c1ae8a10df46781479b598ba1eb3e23667fdf82
+    - 21f5d55abd0629c4a5e79bb7761b6451aeb3b348646d8cb1da40ed9d1df098d5
     - SKIP
 pkgname:
   - name: plasma-vault
