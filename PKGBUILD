@@ -4,7 +4,7 @@
 
 pkgname=tmux
 pkgver=3.7_a
-pkgrel=1
+pkgrel=2
 pkgdesc='Terminal multiplexer'
 url='https://github.com/tmux/tmux/wiki'
 arch=('x86_64')
@@ -19,6 +19,10 @@ sha256sums=('6f3aab5f96d01cb7af53de47b2305a147f7e5765b11a23c95d28a1cbe118233f')
 
 prepare() {
 	cd "$pkgname"
+
+	# Fix so that the end of a synchronized update again triggers a redraw.
+	git cherry-pick -n \
+	  'e802909de06012a4df6209d55e86487c56223163'
 
 	sh autogen.sh
 }

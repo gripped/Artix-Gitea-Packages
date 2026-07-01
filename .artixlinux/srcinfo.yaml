@@ -1,10 +1,10 @@
 ---
-version: 3.7_a-1
+version: 3.7_a-2
 pkgbase:
   name: tmux
   pkgdesc: Terminal multiplexer
   pkgver: 3.7_a
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tmux/tmux/wiki
   arch:
     - x86_64
