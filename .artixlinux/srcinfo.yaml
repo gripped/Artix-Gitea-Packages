@@ -1,9 +1,9 @@
 ---
-version: 1.70.1-1
+version: 1.73.0-1
 pkgbase:
   name: tmuxp
   pkgdesc: Tmux session manager built on libtmux
-  pkgver: 1.70.1
+  pkgver: 1.73.0
   pkgrel: 1
   url: https://tmuxp.git-pull.com/en/latest/
   arch:
@@ -34,11 +34,11 @@ pkgbase:
     - 'python-prompt_toolkit: for alternative CLI'
     - 'bpython: for alternative CLI'
   source:
-    - tmuxp-1.70.1.tar.gz::https://github.com/tmux-python/tmuxp/archive/refs/tags/v1.70.1.tar.gz
+    - tmuxp-1.73.0.tar.gz::https://github.com/tmux-python/tmuxp/archive/refs/tags/v1.73.0.tar.gz
   sha512sums:
-    - d3ec7b76244f00033d56523f911b6ce2561e4bafed9487b384256b91dfa015f4766c52b0088fdc5e06630e1d914a4709985fd8ebf18d7d9ad72d722c872633f2
+    - c59056b438ca729f140bc0a77ea23ae73b755695234435d168a75859f25c6a34c72edfab50a64bd227398a69461fdd4b953b4503f85833c08bc140f606de3274
   b2sums:
-    - b3b52467690244f38e0655cdb8d73cffd8cfb5683fc5c7fe29582018e30f1adc04e77f139492f36c69be4725119655c4d6bfc0990e5ee6915cabed7719451a72
+    - f96dc8b32770fe86492683e9089ecec12f9b5d5e44c28b24be093255139ddcdf6358bf4bb81bdb2de6591a29f77ae7a061c7a22b353df137d74f75a4bcc3b9c5
 pkgname:
   - name: tmuxp
 # generated with artixpkg 0.38.5-1-any

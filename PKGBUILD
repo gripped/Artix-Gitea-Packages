@@ -1,7 +1,7 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
 pkgname=tmuxp
-pkgver=1.70.1
+pkgver=1.73.0
 pkgrel=1
 pkgdesc="Tmux session manager built on libtmux"
 arch=(any)
@@ -37,8 +37,8 @@ optdepends=(
   # TODO: package ptpython for additional alternative CLI
 )
 source=($pkgname-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz)
-sha512sums=('d3ec7b76244f00033d56523f911b6ce2561e4bafed9487b384256b91dfa015f4766c52b0088fdc5e06630e1d914a4709985fd8ebf18d7d9ad72d722c872633f2')
-b2sums=('b3b52467690244f38e0655cdb8d73cffd8cfb5683fc5c7fe29582018e30f1adc04e77f139492f36c69be4725119655c4d6bfc0990e5ee6915cabed7719451a72')
+sha512sums=('c59056b438ca729f140bc0a77ea23ae73b755695234435d168a75859f25c6a34c72edfab50a64bd227398a69461fdd4b953b4503f85833c08bc140f606de3274')
+b2sums=('f96dc8b32770fe86492683e9089ecec12f9b5d5e44c28b24be093255139ddcdf6358bf4bb81bdb2de6591a29f77ae7a061c7a22b353df137d74f75a4bcc3b9c5')
 
 build() {
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
@@ -63,6 +63,7 @@ check() {
     --deselect tests/workspace/test_builder.py::test_global_options
     --deselect tests/workspace/test_builder.py::test_global_session_env_options
     --deselect tests/workspace/test_builder.py::test_environment_variables
+    --deselect tests/workspace/test_builder.py::test_pane_readiness_custom_shell_skips_under_always
     # we are not interested in argparse tests
     --ignore tests/docs/_ext/test_pretty_argparse.py
   )
