@@ -1,9 +1,9 @@
 ---
-version: 3.7-1
+version: 3.7_a-1
 pkgbase:
   name: tmux
   pkgdesc: Terminal multiplexer
-  pkgver: 3.7
+  pkgver: 3.7_a
   pkgrel: 1
   url: https://github.com/tmux/tmux/wiki
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - libncursesw.so
     - libudev.so
   source:
-    - git+https://github.com/tmux/tmux.git#tag=3.7
+    - git+https://github.com/tmux/tmux.git#tag=3.7a
   sha256sums:
-    - 1cf6d242919e70e3e0256dc36b221b4dc41a7be361bb536e397aaf8d8a8159a0
+    - 6f3aab5f96d01cb7af53de47b2305a147f7e5765b11a23c95d28a1cbe118233f
 pkgname:
   - name: tmux
 # generated with artixpkg 0.38.5-1-any
