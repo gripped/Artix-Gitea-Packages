@@ -1,9 +1,9 @@
 ---
-version: 0.6.2-1
+version: 0.6.2.1-1
 pkgbase:
   name: kquickimageeditor
   pkgdesc: QML image editing components
-  pkgver: 0.6.2
+  pkgver: 0.6.2.1
   pkgrel: 1
   url: https://invent.kde.org/libraries/kquickimageeditor
   arch:
@@ -22,16 +22,14 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.6.2.tar.xz
-    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.6.2.tar.xz.sig
-    - opencv.patch
+    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.6.2.1.tar.xz
+    - https://download.kde.org/stable/kquickimageeditor/kquickimageeditor-0.6.2.1.tar.xz.sig
   validpgpkeys:
     - 39FFA93CAE9C6AFC212AD00202325448204E452A
     - 931703E04546328CEE35B5A51F7428FFC412A679
   sha256sums:
-    - dfa8d0c8e41404937f3361c41b19cf541bb746e1b4b6970886de639122f1c9bb
+    - 6d37a479463dcd16e4746d8b43d4adb05640e8b49056baabc82c865e2e1a4c85
     - SKIP
-    - b050b45c9c4c1ffbb28f36eac5198073532d53f4ed4aae44b8d0b36e0be3e6df
 pkgname:
   - name: kquickimageeditor
 # generated with artixpkg 0.38.5-1-any
