@@ -1,9 +1,9 @@
 ---
-version: 7.46.0-1
+version: 7.47.0-1
 pkgbase:
   name: python-pycurl
   pkgdesc: A Python 3.x interface to libcurl
-  pkgver: 7.46.0
+  pkgver: 7.47.0
   pkgrel: 1
   url: https://github.com/pycurl/pycurl
   arch:
@@ -15,8 +15,11 @@ pkgbase:
     - python-flaky
     - python-flask
     - python-numpy
+    - python-paramiko
     - python-pyflakes
     - python-pytest
+    - python-pytest-run-parallel
+    - python-pytest-timeout
     - python-websockets
     - vsftpd
   makedepends:
@@ -31,9 +34,9 @@ pkgbase:
     - openssl
     - python
   source:
-    - git+https://github.com/pycurl/pycurl.git#tag=REL_7_46_0
+    - git+https://github.com/pycurl/pycurl.git#tag=REL_7_47_0
   sha512sums:
-    - 4df5eaa4fa81c5e1b04fa7d7c35e4d195be0a0b5c5fb3d3c40e24a9b1ccc0966717956de09804624c38f50c56ddb7f5588674a7fb69067def5a08554473f4400
+    - bf279502b9a3269e2d44cb93ab6a979babad3d775d608c6f1de9235025597d4a5f389cc087b1d90c831e454bd42c729f4123594e58cf06bf41350cb796d82212
 pkgname:
   - name: python-pycurl
 # generated with artixpkg 0.38.5-1-any
