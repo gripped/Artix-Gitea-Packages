@@ -1,9 +1,9 @@
 ---
-version: 6.7.1-1
+version: 6.7.2-1
 pkgbase:
   name: plasma-mobile
   pkgdesc: Plasma shell for mobile devices
-  pkgver: 6.7.1
+  pkgver: 6.7.2
   pkgrel: 1
   url: https://plasma-mobile.org/
   arch:
@@ -68,15 +68,15 @@ pkgbase:
     - 'kscreen: Screen management'
     - 'plasma-settings: System settings'
   source:
-    - https://download.kde.org/stable/plasma/6.7.1/plasma-mobile-6.7.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.1/plasma-mobile-6.7.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.2/plasma-mobile-6.7.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.2/plasma-mobile-6.7.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 3e29de1f06423b3364cb7550de37adf76621497df13a6abaf89a6647cb8f4bfe
+    - 5844b148ffc3acf7ffc38f13a706f5436559c095286ef5cd0291b4244f2fbe08
     - SKIP
 pkgname:
   - name: plasma-mobile
