@@ -14,7 +14,7 @@ optdepends=('ansible: check official ansible collections'
             'docker: To use docker as a container runtime'
             'podman: To use podman as a container runtime')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('603780cd943f2a7284226e2ad5e3f8341a490384546f6467b701213353231994')
+sha256sums=('686cc38a120c2308b5240a4fb80c824b7f2339c6724b4d3caa598c881f2dd2c0')
 
 build() {
 	cd "${pkgname}-${pkgver}"

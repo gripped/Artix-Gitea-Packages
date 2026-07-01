@@ -29,7 +29,7 @@ pkgbase:
   source:
     - ansible-navigator-26.6.0.tar.gz::https://github.com/ansible/ansible-navigator/archive/refs/tags/v26.6.0.tar.gz
   sha256sums:
-    - 603780cd943f2a7284226e2ad5e3f8341a490384546f6467b701213353231994
+    - 686cc38a120c2308b5240a4fb80c824b7f2339c6724b4d3caa598c881f2dd2c0
 pkgname:
   - name: ansible-navigator
 # generated with artixpkg 0.38.5-1-any
