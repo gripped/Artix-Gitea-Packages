@@ -1,9 +1,9 @@
 ---
-version: 0.24.4-1
+version: 0.24.5-1
 pkgbase:
   name: libdatachannel
   pkgdesc: C/C++ WebRTC network library featuring Data Channels, Media Transport, and WebSockets
-  pkgver: 0.24.4
+  pkgver: 0.24.5
   pkgrel: 1
   url: https://github.com/paullouisageneau/libdatachannel
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - libjuice
     - libsrtp
   source:
-    - git+https://github.com/paullouisageneau/libdatachannel.git#tag=v0.24.4
+    - git+https://github.com/paullouisageneau/libdatachannel.git#tag=v0.24.5
   sha512sums:
-    - f62e96ff22b95fa88e4e24a5ad8f65837daf564c8b567b9889ee5a6e0f53ae04e5886b6ce1235b4b7bd6ec07415056df85a53b3c6bac5777e4a8aa165886e78c
+    - 2e09dab20823700bb4cba3ebc2ac8988fd0829bf0fa4dc687806dddd229bed14e7a50dd1a20117921ec9bb65c6793c9086c755e52bffe2785130fed23c5f5e78
 pkgname:
   - name: libdatachannel
 # generated with artixpkg 0.38.5-1-any
