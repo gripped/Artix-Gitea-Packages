@@ -1,10 +1,10 @@
 ---
-version: 5.1.13-1
+version: 5.1.13-2
 pkgbase:
   name: fcitx5-chinese-addons
   pkgdesc: Addons related to Chinese, including IME previous bundled inside fcitx4
   pkgver: 5.1.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/fcitx/fcitx5-chinese-addons
   arch:
     - x86_64
