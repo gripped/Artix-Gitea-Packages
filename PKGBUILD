@@ -1,0 +1,28 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Frederik Schwan <freswa at archlinux dot org>
+
+pkgname=autotiling-rs
+pkgver=0.1.8
+pkgrel=2
+pkgdesc='Automatically alternates container layouts between horizontal and vertical'
+arch=('x86_64')
+url='https://github.com/ammgws/autotiling-rs'
+license=('MIT')
+makedepends=('rust')
+source=("https://github.com/ammgws/autotiling-rs/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz")
+b2sums=('67015260921c7d38b7294ae870f8a7b1f7d0007829b7dff60e8db60b95a71494b84a946d9cebf04d97d7606638cb5dd44f341c1444646372c2dd899d4f9c428e')
+
+prepare() {
+  cd ${pkgname}-${pkgver}
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+  cd ${pkgname}-${pkgver}
+  cargo build --release --locked
+}
+
+package() {
+  cd ${pkgname}-${pkgver}
+  install -Dm755 target/release/${pkgname} "${pkgdir}"/usr/bin/${pkgname}
+}
