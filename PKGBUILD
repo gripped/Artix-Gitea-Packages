@@ -1,9 +1,10 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=libmpdclient
-pkgver=2.25
+pkgver=2.26
 pkgrel=1
 pkgdesc="C library to implement a MPD client"
 arch=(x86_64)
@@ -13,8 +14,8 @@ depends=(glibc)
 makedepends=(git meson)
 provides=(libmpdclient.so)
 source=(git+https://github.com/MusicPlayerDaemon/libmpdclient.git?signed#tag=v${pkgver})
-sha512sums=('9ab92e2828944f73ec14f7709b7f3b7c6f8e20d7dbb735e52abbe488053cd10d8e1ce2bcbd841cc0d889abceeca03e8a746200c7b0c1158e9cbe4864f0e64dc3')
-b2sums=('933f80a65c3bfc161abb17f71060e1c6f0ab4219266ba1006f86d27310ca12d32185dfe4d4448cf89b6c37388cea57aaa3acf2a5f986f75c771539aee561fe9b')
+sha512sums=('f5aa136d0e1ec5cffb9c25608e9e0022058f82ad8a21349b6d0d6ea9716b655ce3922c83aee7975908273b03208af4f0d3feeaafbeea2aecdcfa085b43cb466b')
+b2sums=('8999ec3964cea27564c6c1d2c01243dc59bf5cee7cd3fd6ecb194c2849954080f301bd8ab88d8fd37e0bf3f9489ee0d945de1bcb922c2c8b3eb4dbb519b30218')
 validpgpkeys=('0392335A78083894A4301C43236E8A58C6DB4512') # Max Kellermann <max@blarg.de>
 
 build() {
