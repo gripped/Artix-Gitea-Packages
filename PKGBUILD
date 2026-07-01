@@ -7,7 +7,7 @@
 
 pkgname=python-tzlocal
 _name=${pkgname#python-}
-pkgver=5.4.3
+pkgver=5.4.4
 pkgrel=1
 epoch=1
 pkgdesc="Tzinfo object for the local timezone"
@@ -27,7 +27,7 @@ checkdepends=(
   'python-pytest-mock'
 )
 source=("git+$url.git#tag=$pkgver")
-b2sums=('5c87568ebe3f9becdeddcf89d9371e8f36d452ee756c166ab64e9837f17e6f564f458a262757140e4961604e3628bda98dfdf662595f8c14be24eee6464b035a')
+b2sums=('f2fca957d2b32969a54d828eaee586e060eec771172eaec9636cf28a58a768c62f173dcaf9de5e6ccf90ec19b0bdf1445291c3a5b7dc3071f2348e2059bfcb75')
 
 build() {
   cd "$_name"

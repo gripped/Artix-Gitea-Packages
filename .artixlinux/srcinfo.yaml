@@ -1,9 +1,9 @@
 ---
-version: 1:5.4.3-1
+version: 1:5.4.4-1
 pkgbase:
   name: python-tzlocal
   pkgdesc: Tzinfo object for the local timezone
-  pkgver: 5.4.3
+  pkgver: 5.4.4
   pkgrel: 1
   epoch: 1
   url: https://github.com/regebro/tzlocal
@@ -23,9 +23,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/regebro/tzlocal.git#tag=5.4.3
+    - git+https://github.com/regebro/tzlocal.git#tag=5.4.4
   b2sums:
-    - 5c87568ebe3f9becdeddcf89d9371e8f36d452ee756c166ab64e9837f17e6f564f458a262757140e4961604e3628bda98dfdf662595f8c14be24eee6464b035a
+    - f2fca957d2b32969a54d828eaee586e060eec771172eaec9636cf28a58a768c62f173dcaf9de5e6ccf90ec19b0bdf1445291c3a5b7dc3071f2348e2059bfcb75
 pkgname:
   - name: python-tzlocal
 # generated with artixpkg 0.38.5-1-any
