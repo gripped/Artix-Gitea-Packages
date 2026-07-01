@@ -1,9 +1,9 @@
 ---
-version: 11.0.1-1
+version: 11.0.2-1
 pkgbase:
   name: qemu
   pkgdesc: A generic and open source machine emulator and virtualizer
-  pkgver: 11.0.1
+  pkgver: 11.0.2
   pkgrel: 1
   url: https://www.qemu.org/
   arch:
@@ -98,8 +98,8 @@ pkgbase:
     - zlib-static
     - zstd
   source:
-    - https://download.qemu.org/qemu-11.0.1.tar.xz
-    - https://download.qemu.org/qemu-11.0.1.tar.xz.sig
+    - https://download.qemu.org/qemu-11.0.2.tar.xz
+    - https://download.qemu.org/qemu-11.0.2.tar.xz.sig
     - bridge.conf
     - qemu-ga.conf
     - qemu-sysusers.conf
@@ -109,7 +109,7 @@ pkgbase:
   validpgpkeys:
     - CEACC9E15534EBABB82D3FA03353C9CEF108B584
   sha512sums:
-    - 50fdc0bef3b179d8858ea07656244257b46475ec8bcd8b5a428f8dec3cae7f4a6ba8ba621a0a965ddacae314890191a3a9c58e16752bd3bf0ef78aaf6aa659eb
+    - 23d64d05381eaefc8894bb0ece2213d068594b42600931c4b32eb7a5c851e0539977449fb0f9940f58af6489bb15aa2dc8f27472e4fa2d7de8983232136eed00
     - SKIP
     - 7b412ffa5dcda47b0a4ec9e2c5e5e1d9eaaaf0a087b7ea3ead3e706ba4c9cafb919beadd088a0299b6f7aab753b81a5eafb545b4842ee5f26646d16544dd02a7
     - 6e838773d63ae0ffdffe2b891bf611d8f5f3c67a9bc4cbbedf8363c150c2c9971c8e44d92270bc581af40eb0ece02192760bcdd6aee229fff55635f3a4825afa
@@ -118,7 +118,7 @@ pkgbase:
     - 93b905046fcea8a0a89513b9259c222494ab3b91319dde23baebcb40dc17376a56661b159b99785d6e816831974a0f3cbd7b2f7d89e5fc3c258f88f4492f3839
     - c7d086a951e9a378434ea95a843a4b01f0eb2ae430135a81365147cf6806a7ba1b49014a3aa66904970853ba84a4a28dbaded7bccb99a0bc3730572c80fb8b12
   b2sums:
-    - 6764bfac209eaa3dacda951f20c660a0d2a96312b8e1e07be60b74288e371cb98a6402acf40deeb145625bc8188d8296f0e6f56e657a7912553317bce6b03054
+    - 3e42b4fe086edef16e32758d5d46fdf3a48629abb782dbe2b739845315d3b29397152e376d52d418e68c7ccf63c868dacf3d2ab2ce67db96cc743ed9bdc6473b
     - SKIP
     - b1eca364aa60f130ff5e649f5d004d3fcb75356d3421a4542efdfc410d39b40d9434d15e1dd7bbdbd315cb72b5290d3ea5f77f9c41961a5601cd28ef7bbe72e8
     - 2102e4a34e11e406e9606c97e026e7b92e887e296a7f77b9cede1b37119d0df33735f3588628167b2b8e32244c196c491bfab623e2caddac9014d445aa2a6d98
@@ -150,7 +150,7 @@ pkgname:
       - alsa-lib
       - libasound.so
       - glibc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-audio-dbus
     pkgdesc: QEMU D-Bus audio driver
     depends:
@@ -160,7 +160,7 @@ pkgname:
       - libgobject-2.0.so
       - libglib-2.0.so
       - glibc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-audio-jack
     pkgdesc: QEMU JACK audio driver
     depends:
@@ -168,19 +168,19 @@ pkgname:
       - jack
       - libgcc
       - libjack.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-audio-oss
     pkgdesc: QEMU OSS audio driver
     depends:
       - glibc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-audio-pa
     pkgdesc: QEMU PulseAudio audio driver
     depends:
       - glibc
       - libpulse
       - libpulse.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-audio-pipewire
     pkgdesc: QEMU PipeWire audio driver
     depends:
@@ -188,19 +188,19 @@ pkgname:
       - libgcc
       - libpipewire
       - libpipewire-0.3.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-audio-sdl
     pkgdesc: QEMU SDL audio driver
     depends:
       - glibc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - sdl2
   - name: qemu-audio-spice
     pkgdesc: QEMU spice audio driver
     depends:
       - glibc
-      - qemu-common=11.0.1-1
-      - qemu-ui-spice-core=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-ui-spice-core=11.0.2-1
       - spice
       - libspice-server.so
   - name: qemu-block-curl
@@ -210,35 +210,35 @@ pkgname:
       - libcurl.so
       - glibc
       - libgcc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-block-dmg
     pkgdesc: QEMU DMG block driver
     depends:
       - bzip2
       - libbz2.so
       - glibc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-block-gluster
     pkgdesc: QEMU Gluster block driver
     depends:
       - glibc
       - glusterfs
       - libgcc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-block-iscsi
     pkgdesc: QEMU iSCSI block driver
     depends:
       - glibc
       - libgcc
       - libiscsi
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-block-nfs
     pkgdesc: QEMU NFS block driver
     depends:
       - glibc
       - libgcc
       - libnfs
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-block-ssh
     pkgdesc: QEMU SSH block driver
     depends:
@@ -246,7 +246,7 @@ pkgname:
       - libgcc
       - libssh
       - libssh.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-chardev-baum
     pkgdesc: QEMU Baum chardev driver
     depends:
@@ -254,13 +254,13 @@ pkgname:
       - libbrlapi.so
       - glibc
       - libgcc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-chardev-spice
     pkgdesc: QEMU spice chardev driver
     depends:
       - glibc
-      - qemu-common=11.0.1-1
-      - qemu-ui-spice-core=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-ui-spice-core=11.0.2-1
       - spice
       - libspice-server.so
   - name: qemu-docs
@@ -291,8 +291,8 @@ pkgname:
       - pixman
       - libgcc
       - libpixman-1.so
-      - qemu-common=11.0.1-1
-      - qemu-ui-spice-core=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-ui-spice-core=11.0.2-1
       - spice
       - libspice-server.so
   - name: qemu-hw-display-virtio-gpu
@@ -301,13 +301,13 @@ pkgname:
       - glibc
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-display-virtio-gpu-gl
     pkgdesc: QEMU virtio-gpu-gl display device
     depends:
       - glibc
       - libgcc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - virglrenderer
   - name: qemu-hw-display-virtio-gpu-rutabaga
     pkgdesc: QEMU virtio-gpu-rutabaga display device
@@ -316,56 +316,56 @@ pkgname:
       - pixman
       - libgcc
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rutabaga-ffi
   - name: qemu-hw-display-virtio-gpu-pci
     pkgdesc: QEMU virtio-gpu-pci display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-display-virtio-gpu-pci-gl
     pkgdesc: QEMU virtio-gpu-pci-gl display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-display-virtio-gpu-pci-rutabaga
     pkgdesc: QEMU virtio-gpu-pci-rutabaga display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-display-virtio-vga
     pkgdesc: QEMU virtio-vga display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-display-virtio-vga-gl
     pkgdesc: QEMU virtio-vga-gl display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-display-virtio-vga-rutabaga
     pkgdesc: QEMU virtio-vga-rutabaga display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-s390x-virtio-gpu-ccw
     pkgdesc: QEMU s390x-virtio-gpu-ccw display device
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-uefi-vars
     pkgdesc: QEMU UEFI vars handling
     depends:
       - glibc
       - gnutls
       - libgcc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-usb-host
     pkgdesc: QEMU USB host device
     depends:
       - glibc
       - libusb
       - libusb-1.0.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-hw-usb-redirect
     pkgdesc: QEMU usbredir device
     depends:
       - glibc
       - libgcc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - usbredir
   - name: qemu-hw-usb-smartcard
     pkgdesc: QEMU USB smartcard device
@@ -375,7 +375,7 @@ pkgname:
       - libgcc
       - libglib-2.0.so
       - glibc
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-img
     pkgdesc: QEMU tooling for manipulating disk images
     depends:
@@ -414,7 +414,7 @@ pkgname:
       - libnuma.so
       - pam
       - libpam.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - libudev
   - name: qemu-system-aarch64
     pkgdesc: QEMU system emulator for AARCH64
@@ -453,7 +453,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -500,14 +500,14 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
       - zlib
       - zstd
       - libzstd.so
-      - qemu-system-alpha-firmware=11.0.1-1
+      - qemu-system-alpha-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-arm
@@ -547,7 +547,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -555,7 +555,7 @@ pkgname:
       - zstd
       - libzstd.so
       - dtc
-      - qemu-system-arm-firmware=11.0.1-1
+      - qemu-system-arm-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-avr
@@ -595,7 +595,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -639,14 +639,14 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
       - zlib
       - zstd
       - libzstd.so
-      - qemu-system-hppa-firmware=11.0.1-1
+      - qemu-system-hppa-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-loongarch64
@@ -686,7 +686,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -732,7 +732,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -776,7 +776,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -784,7 +784,7 @@ pkgname:
       - zstd
       - libzstd.so
       - dtc
-      - qemu-system-microblaze-firmware=11.0.1-1
+      - qemu-system-microblaze-firmware=11.0.2-1
   - name: qemu-system-mips
     pkgdesc: QEMU system emulator for MIPS
     depends:
@@ -822,7 +822,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -869,7 +869,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -915,7 +915,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -923,7 +923,7 @@ pkgname:
       - zstd
       - libzstd.so
       - dtc
-      - qemu-system-ppc-firmware=11.0.1-1
+      - qemu-system-ppc-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-riscv
@@ -963,7 +963,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -972,7 +972,7 @@ pkgname:
       - libzstd.so
       - dtc
       - edk2-riscv64
-      - qemu-system-riscv-firmware=11.0.1-1
+      - qemu-system-riscv-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-rx
@@ -1012,7 +1012,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -1057,14 +1057,14 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
       - zlib
       - zstd
       - libzstd.so
-      - qemu-system-s390x-firmware=11.0.1-1
+      - qemu-system-s390x-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-sh4
@@ -1104,7 +1104,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -1150,14 +1150,14 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
       - zlib
       - zstd
       - libzstd.so
-      - qemu-system-sparc-firmware=11.0.1-1
+      - qemu-system-sparc-firmware=11.0.2-1
       - libudev
       - libudev.so
   - name: qemu-system-tricore
@@ -1197,7 +1197,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -1241,7 +1241,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -1252,7 +1252,7 @@ pkgname:
       - edk2-ovmf
       - libcbor
       - libcbor.so
-      - qemu-system-x86-firmware=11.0.1-1
+      - qemu-system-x86-firmware=11.0.2-1
       - seabios
       - libudev
       - libudev.so
@@ -1293,7 +1293,7 @@ pkgname:
       - libpam.so
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - rdma-core
       - snappy
       - vde2
@@ -1346,7 +1346,7 @@ pkgname:
   - name: qemu-tests
     pkgdesc: QEMU tests
     depends:
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-tools
     pkgdesc: QEMU tools
     depends:
@@ -1360,7 +1360,7 @@ pkgname:
       - libxkbcommon
       - libxkbcommon.so
       - python
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-ui-curses
     pkgdesc: QEMU curses UI driver
     depends:
@@ -1370,7 +1370,7 @@ pkgname:
       - glibc
       - ncurses
       - libncursesw.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-ui-dbus
     pkgdesc: QEMU D-Bus UI driver
     depends:
@@ -1383,16 +1383,15 @@ pkgname:
       - libepoxy
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-ui-egl-headless
     pkgdesc: QEMU EGL headless UI driver
     depends:
       - glibc
-      - libepoxy
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
-      - qemu-ui-opengl=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-ui-opengl=11.0.2-1
   - name: qemu-ui-gtk
     pkgdesc: QEMU GTK UI driver
     depends:
@@ -1410,7 +1409,7 @@ pkgname:
       - libx11
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - qemu-ui-opengl
       - vte3
       - libvte-2.91.so
@@ -1423,7 +1422,7 @@ pkgname:
       - mesa
       - pixman
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-ui-sdl
     pkgdesc: QEMU SDL UI driver
     depends:
@@ -1432,8 +1431,9 @@ pkgname:
       - glibc
       - libx11
       - pixman
+      - libepoxy
       - libpixman-1.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - sdl2_image
       - sdl2
   - name: qemu-ui-spice-app
@@ -1443,9 +1443,9 @@ pkgname:
       - libgio-2.0.so
       - libglib-2.0.so
       - glibc
-      - qemu-common=11.0.1-1
-      - qemu-chardev-spice=11.0.1-1
-      - qemu-ui-spice-core=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-chardev-spice=11.0.2-1
+      - qemu-ui-spice-core=11.0.2-1
   - name: qemu-ui-spice-core
     pkgdesc: QEMU spice core UI driver
     depends:
@@ -1453,8 +1453,8 @@ pkgname:
       - pixman
       - libgcc
       - libpixman-1.so
-      - qemu-common=11.0.1-1
-      - qemu-ui-opengl=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-ui-opengl=11.0.2-1
       - spice
       - libspice-server.so
   - name: qemu-user
@@ -1472,14 +1472,14 @@ pkgname:
       - liburing.so
       - numactl
       - libnuma.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - zlib
     optdepends:
       - 'qemu-user-binfmt: for binary format rules'
   - name: qemu-user-binfmt
     pkgdesc: Binary format rules for QEMU user mode emulation
     depends:
-      - qemu-user=11.0.1-1
+      - qemu-user=11.0.2-1
     provides:
       - qemu-user-binfmt-provider
     conflicts:
@@ -1491,7 +1491,7 @@ pkgname:
   - name: qemu-user-static-binfmt
     pkgdesc: Binary format rules for QEMU static user mode emulation
     depends:
-      - qemu-user-static=11.0.1-1
+      - qemu-user-static=11.0.2-1
     provides:
       - qemu-user-binfmt-provider
     conflicts:
@@ -1510,7 +1510,7 @@ pkgname:
       - mesa
       - numactl
       - libnuma.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
       - virglrenderer
   - name: qemu-vmsr-helper
     pkgdesc: QEMU persistent reservation utility
@@ -1531,13 +1531,13 @@ pkgname:
       - libnuma.so
       - pam
       - libpam.so
-      - qemu-common=11.0.1-1
+      - qemu-common=11.0.2-1
   - name: qemu-base
     pkgdesc: A basic QEMU setup for headless environments
     depends:
-      - qemu-common=11.0.1-1
-      - qemu-img=11.0.1-1
-      - qemu-system-x86=11.0.1-1
+      - qemu-common=11.0.2-1
+      - qemu-img=11.0.2-1
+      - qemu-system-x86=11.0.2-1
       - virtiofsd
     optdepends:
       - 'qemu-user-static: for static user mode emulation of QEMU targets'
@@ -1609,49 +1609,49 @@ pkgname:
       - 'qemu-user: for user mode emulation of QEMU targets'
       - 'qemu-vhost-user-gpu: for vhost-user-gpu display device'
     provides:
-      - qemu=11.0.1
+      - qemu=11.0.2
     optdepends_x86_64:
       - 'qemu-vmsr-helper: for accessing the Running Average Power Limit (RAPL) MSR'
   - name: qemu-desktop
     pkgdesc: A QEMU setup for desktop environments
     depends:
-      - qemu-base=11.0.1-1
-      - qemu-audio-alsa=11.0.1-1
-      - qemu-audio-dbus=11.0.1-1
-      - qemu-audio-jack=11.0.1-1
-      - qemu-audio-oss=11.0.1-1
-      - qemu-audio-pa=11.0.1-1
-      - qemu-audio-pipewire=11.0.1-1
-      - qemu-audio-sdl=11.0.1-1
-      - qemu-audio-spice=11.0.1-1
-      - qemu-block-curl=11.0.1-1
-      - qemu-block-dmg=11.0.1-1
-      - qemu-block-nfs=11.0.1-1
-      - qemu-block-ssh=11.0.1-1
-      - qemu-chardev-spice=11.0.1-1
-      - qemu-hw-display-qxl=11.0.1-1
-      - qemu-hw-display-virtio-gpu=11.0.1-1
-      - qemu-hw-display-virtio-gpu-gl=11.0.1-1
-      - qemu-hw-display-virtio-gpu-rutabaga=11.0.1-1
-      - qemu-hw-display-virtio-gpu-pci=11.0.1-1
-      - qemu-hw-display-virtio-gpu-pci-gl=11.0.1-1
-      - qemu-hw-display-virtio-gpu-pci-rutabaga=11.0.1-1
-      - qemu-hw-display-virtio-vga=11.0.1-1
-      - qemu-hw-display-virtio-vga-gl=11.0.1-1
-      - qemu-hw-display-virtio-vga-rutabaga=11.0.1-1
-      - qemu-hw-uefi-vars=11.0.1-1
-      - qemu-hw-usb-host=11.0.1-1
-      - qemu-hw-usb-redirect=11.0.1-1
-      - qemu-hw-usb-smartcard=11.0.1-1
-      - qemu-ui-curses=11.0.1-1
-      - qemu-ui-dbus=11.0.1-1
-      - qemu-ui-egl-headless=11.0.1-1
-      - qemu-ui-gtk=11.0.1-1
-      - qemu-ui-opengl=11.0.1-1
-      - qemu-ui-sdl=11.0.1-1
-      - qemu-ui-spice-app=11.0.1-1
-      - qemu-ui-spice-core=11.0.1-1
-      - qemu-vhost-user-gpu=11.0.1-1
+      - qemu-base=11.0.2-1
+      - qemu-audio-alsa=11.0.2-1
+      - qemu-audio-dbus=11.0.2-1
+      - qemu-audio-jack=11.0.2-1
+      - qemu-audio-oss=11.0.2-1
+      - qemu-audio-pa=11.0.2-1
+      - qemu-audio-pipewire=11.0.2-1
+      - qemu-audio-sdl=11.0.2-1
+      - qemu-audio-spice=11.0.2-1
+      - qemu-block-curl=11.0.2-1
+      - qemu-block-dmg=11.0.2-1
+      - qemu-block-nfs=11.0.2-1
+      - qemu-block-ssh=11.0.2-1
+      - qemu-chardev-spice=11.0.2-1
+      - qemu-hw-display-qxl=11.0.2-1
+      - qemu-hw-display-virtio-gpu=11.0.2-1
+      - qemu-hw-display-virtio-gpu-gl=11.0.2-1
+      - qemu-hw-display-virtio-gpu-rutabaga=11.0.2-1
+      - qemu-hw-display-virtio-gpu-pci=11.0.2-1
+      - qemu-hw-display-virtio-gpu-pci-gl=11.0.2-1
+      - qemu-hw-display-virtio-gpu-pci-rutabaga=11.0.2-1
+      - qemu-hw-display-virtio-vga=11.0.2-1
+      - qemu-hw-display-virtio-vga-gl=11.0.2-1
+      - qemu-hw-display-virtio-vga-rutabaga=11.0.2-1
+      - qemu-hw-uefi-vars=11.0.2-1
+      - qemu-hw-usb-host=11.0.2-1
+      - qemu-hw-usb-redirect=11.0.2-1
+      - qemu-hw-usb-smartcard=11.0.2-1
+      - qemu-ui-curses=11.0.2-1
+      - qemu-ui-dbus=11.0.2-1
+      - qemu-ui-egl-headless=11.0.2-1
+      - qemu-ui-gtk=11.0.2-1
+      - qemu-ui-opengl=11.0.2-1
+      - qemu-ui-sdl=11.0.2-1
+      - qemu-ui-spice-app=11.0.2-1
+      - qemu-ui-spice-core=11.0.2-1
+      - qemu-vhost-user-gpu=11.0.2-1
     optdepends:
       - 'qemu-user-static: for static user mode emulation of QEMU targets'
       - 'samba: for SMB/CIFS server support'
@@ -1684,58 +1684,58 @@ pkgname:
       - 'qemu-tools: for QEMU tools'
       - 'qemu-user: for user mode emulation of QEMU targets'
     provides:
-      - qemu=11.0.1
+      - qemu=11.0.2
     optdepends_x86_64:
       - 'qemu-vmsr-helper: for accessing the Running Average Power Limit (RAPL) MSR'
   - name: qemu-emulators-full
     pkgdesc: All QEMU user mode and system emulators
     depends:
-      - qemu-system-aarch64=11.0.1-1
-      - qemu-system-alpha=11.0.1-1
-      - qemu-system-arm=11.0.1-1
-      - qemu-system-avr=11.0.1-1
-      - qemu-system-hppa=11.0.1-1
-      - qemu-system-loongarch64=11.0.1-1
-      - qemu-system-m68k=11.0.1-1
-      - qemu-system-microblaze=11.0.1-1
-      - qemu-system-mips=11.0.1-1
-      - qemu-system-or1k=11.0.1-1
-      - qemu-system-ppc=11.0.1-1
-      - qemu-system-riscv=11.0.1-1
-      - qemu-system-rx=11.0.1-1
-      - qemu-system-s390x=11.0.1-1
-      - qemu-system-sh4=11.0.1-1
-      - qemu-system-sparc=11.0.1-1
-      - qemu-system-tricore=11.0.1-1
-      - qemu-system-x86=11.0.1-1
-      - qemu-system-xtensa=11.0.1-1
-      - qemu-user=11.0.1-1
+      - qemu-system-aarch64=11.0.2-1
+      - qemu-system-alpha=11.0.2-1
+      - qemu-system-arm=11.0.2-1
+      - qemu-system-avr=11.0.2-1
+      - qemu-system-hppa=11.0.2-1
+      - qemu-system-loongarch64=11.0.2-1
+      - qemu-system-m68k=11.0.2-1
+      - qemu-system-microblaze=11.0.2-1
+      - qemu-system-mips=11.0.2-1
+      - qemu-system-or1k=11.0.2-1
+      - qemu-system-ppc=11.0.2-1
+      - qemu-system-riscv=11.0.2-1
+      - qemu-system-rx=11.0.2-1
+      - qemu-system-s390x=11.0.2-1
+      - qemu-system-sh4=11.0.2-1
+      - qemu-system-sparc=11.0.2-1
+      - qemu-system-tricore=11.0.2-1
+      - qemu-system-x86=11.0.2-1
+      - qemu-system-xtensa=11.0.2-1
+      - qemu-user=11.0.2-1
   - name: qemu-full
     pkgdesc: A full QEMU setup
     depends:
-      - qemu-audio-alsa=11.0.1-1
-      - qemu-audio-dbus=11.0.1-1
-      - qemu-audio-jack=11.0.1-1
-      - qemu-audio-oss=11.0.1-1
-      - qemu-audio-pa=11.0.1-1
-      - qemu-audio-sdl=11.0.1-1
-      - qemu-audio-spice=11.0.1-1
-      - qemu-block-gluster=11.0.1-1
-      - qemu-block-iscsi=11.0.1-1
-      - qemu-chardev-baum=11.0.1-1
-      - qemu-desktop=11.0.1-1
-      - qemu-docs=11.0.1-1
-      - qemu-emulators-full=11.0.1-1
-      - qemu-hw-s390x-virtio-gpu-ccw=11.0.1-1
-      - qemu-pr-helper=11.0.1-1
-      - qemu-tests=11.0.1-1
-      - qemu-tools=11.0.1-1
-      - qemu-user=11.0.1-1
+      - qemu-audio-alsa=11.0.2-1
+      - qemu-audio-dbus=11.0.2-1
+      - qemu-audio-jack=11.0.2-1
+      - qemu-audio-oss=11.0.2-1
+      - qemu-audio-pa=11.0.2-1
+      - qemu-audio-sdl=11.0.2-1
+      - qemu-audio-spice=11.0.2-1
+      - qemu-block-gluster=11.0.2-1
+      - qemu-block-iscsi=11.0.2-1
+      - qemu-chardev-baum=11.0.2-1
+      - qemu-desktop=11.0.2-1
+      - qemu-docs=11.0.2-1
+      - qemu-emulators-full=11.0.2-1
+      - qemu-hw-s390x-virtio-gpu-ccw=11.0.2-1
+      - qemu-pr-helper=11.0.2-1
+      - qemu-tests=11.0.2-1
+      - qemu-tools=11.0.2-1
+      - qemu-user=11.0.2-1
     optdepends:
       - 'qemu-user-static: for static user mode emulation of QEMU targets'
       - 'samba: for SMB/CIFS server support'
     provides:
-      - qemu=11.0.1
+      - qemu=11.0.2
     depends_x86_64:
-      - qemu-vmsr-helper=11.0.1-1
+      - qemu-vmsr-helper=11.0.2-1
 # generated with artixpkg 0.38.5-1-any
