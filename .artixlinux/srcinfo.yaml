@@ -1,9 +1,9 @@
 ---
-version: 84-1
+version: 85-1
 pkgbase:
   name: ndctl
   pkgdesc: Utility library for managing the libnvdimm (non-volatile memory device) sub-system in the Linux kernel
-  pkgver: 84
+  pkgver: 85
   pkgrel: 1
   url: https://github.com/pmem/ndctl
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - libudev
     - util-linux-libs
   source:
-    - git+https://github.com/pmem/ndctl.git#tag=v84
+    - git+https://github.com/pmem/ndctl.git#tag=v85
   sha512sums:
-    - 864b53df51d630528e405c112b26764c707f9e9ccf5ea69bc9c11344b59161660b34ed60c1c33880c1e9d57c440e09bcde1fc74ce0a2759e6e93f93850ebf1cb
+    - 1ccc9ce6b440cc54e9da20c293134fcbeee02cbd23e223417c24ecd13577382efa382602419c69b2a4541a1a28244f62c85f67d09b72127c71c9777d41b5e1f0
 pkgname:
   - name: ndctl
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
