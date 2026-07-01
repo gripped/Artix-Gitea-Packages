@@ -3,7 +3,7 @@
 
 pkgbase=python-polars
 pkgname=($pkgbase $pkgbase-runtime-{32,64,compat})
-pkgver=1.42.0
+pkgver=1.42.1
 pkgrel=1
 pkgdesc="Blazingly fast DataFrames library using Apache Arrow Columnar Format as memory model"
 arch=("x86_64")
@@ -11,6 +11,8 @@ url="https://www.pola.rs/"
 license=('MIT')
 options=('!lto')
 makedepends=(
+    # Dep for the runtime
+    'zstd'
     # For building the native extensions
     'maturin'
     'rustup'
@@ -39,7 +41,7 @@ checkdepends=('python-pytest'
 _name=${pkgname#python-}
 _tag="py-$pkgver"
 source=("https://github.com/pola-rs/polars/archive/refs/tags/$_tag.tar.gz")
-b2sums=('060c6fbe14c91b2c7465a269d06b38c00be4a05b2783c4541a59ff79eb96dc8492e81787a16629f1686d7f3f089fa54cbf5a92760a713dfff7c272dd4ddab324')
+b2sums=('8eb91480d4e3e692472b07f2f692ee677c9cead47090011b5bc791ed0c6754b2b5104c50316c0c2f357eb1fd546b1e4326ec351ec1599e14c3b6b1834df1895d')
 
 prepare() {
     cd polars-$_tag/py-polars
@@ -52,6 +54,7 @@ build() {
     cd polars-$_tag/py-polars
     python -m build --wheel --no-isolation
 
+    export ZSTD_SYS_USE_PKG_CONFIG=1
     for runtime in 32 64 compat; do
         maturin build -o dist --compression-enable-large-file-support --release --locked --strip --compatibility linux --manifest-path runtime/polars-runtime-$runtime/Cargo.toml
     done
@@ -109,7 +112,7 @@ package_python-polars() {
 _package_runtime() {
     local runtime=$1
     arch=("x86_64")
-    depends=('python')
+    depends=('zstd' 'glibc' 'libgcc' 'python')
     provides=(python-polars-runtime)
     pkgdesc="$pkgdesc, runtime libraries$2"
 
