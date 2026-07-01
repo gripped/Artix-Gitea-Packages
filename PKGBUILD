@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-ruby_memcheck
-pkgver=2.1.0
+pkgver=2.1.1
 pkgrel=1
 pkgdesc='Use Valgrind memcheck without going crazy'
 arch=(any)
@@ -26,7 +26,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/Shopify/ruby_memcheck.git#tag=$pkgver)
-sha256sums=('58b81b749d64ff6a1cd4e9555aa6d0dbbbd73ac68d91407a92d3e338d7df44ab')
+sha256sums=('6fd552bccac8596c112791488eed9a4ead8de570188c80052ad1cf3d138c4f14')
 
 prepare() {
   cd ruby_memcheck
