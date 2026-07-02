@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.999-6.3
+    version: 0.999-6.4
     packages:
-      - xsane-0.999-6.3-x86_64.pkg.tar.zst
-      - xsane-gimp-0.999-6.3-x86_64.pkg.tar.zst
+      - xsane-0.999-6.4-x86_64.pkg.tar.zst
+      - xsane-gimp-0.999-6.4-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
