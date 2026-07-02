@@ -29,13 +29,15 @@ validpgpkeys=(2BCCE14F5C6725AA2EA8AEB7B9C9DC824AA5BDD5
               818D87CD1AC180C394C86E633A33DE460D9EC39F  # Pulkit Goyal <7895pulkit@gmail.com>
               1F66F8CDF654E905C11DA061A11E01CD0E05D956  # Raphaël Gomès <alphare@raphaelgomes.dev>
               ED213E486B23249BDC107B5945CAA92A71CA027B) # Pierre-Yves David <pierre-yves.david@ens-lyon.org>
-source=(https://www.mercurial-scm.org/release/${pkgname}-${pkgver}.tar.gz{,.asc}
+#source=(https://www.mercurial-scm.org/release/${pkgname}-${pkgver}.tar.gz{,.asc}
+makedepends+=(mercurial)
+source=("hg+https://www.mercurial-scm.org/repo/hg#tag=$pkgver"
         mercurial.profile)
-sha512sums=('bc45397354d24e40fc59708995c1bbaaa04b8ac2fbd9ac5fcb94716c6d94a55071f4b586e5fc3295fb7b59906d96bbc8072d3ec8df811d95a5cc946e8b554ec1'
-            'SKIP'
+sha512sums=('ca3e0a0213f945542f22c925a0c16a3c924aee43dd8ba43850fa2cb6d755b4b35307f0f65fc2752622301852fb9021ca415080deefcbc2fa43ea43653dd28315'
             '710dcddb24d928efc97370e869d9caa083107929ed9a1086dd2a3ae0caaf2c71e2f29060597e29315b6b15b1616251c42412e268ce737109c48ae4d7aa1b9555')
 
 build() {
+  mv hg $pkgname-$pkgver
   cd $pkgname-$pkgver
   python -m build -wn
   make -C contrib/chg
