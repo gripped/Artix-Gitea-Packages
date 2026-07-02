@@ -1,9 +1,9 @@
 #! Maintainer: artist for Artix Linux
 
 pkgname=helium-browser
-pkgver=0.13.6.1
+pkgver=0.14.2.1
 _hlmver="${pkgver%.*}"
-pkgrel=1.2
+pkgrel=1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
 arch=('x86_64')
 url="https://github.com/imputnet/helium"
@@ -24,8 +24,8 @@ source=("${url}/archive/refs/tags/${_hlmver}.tar.gz"
         "${url}-linux/archive/refs/tags/${pkgver}.tar.gz"
         "${pkgname}.desktop")
 
-sha256sums=('ff55eb11f825406b911b3ab571f6c6a26e7bdce98ecee844a24aca1a67b979e8'
-            '5535275121c29dce5c85d86abc823da7d6fb48a5533b8336b0b20890b5a8bc69'
+sha256sums=('f1c25a104f80e4cf59297de441af59625f6f16be8671eb9d6094a9bf706de55a'
+            '7c83c4d2e50755690a1d926fbee8a82e26386052703d5d9d7935925ea0a71d9a'
             '934b84f8f55e8461c3e47651c632d5e8e2d23ec1d71113dd7384d845ffa16a27')
 
 prepare() {
@@ -69,7 +69,7 @@ package() {
   install -Dm644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
   install -Dm644 product_logo_256.png "${pkgdir}/usr/share/icons/hicolor/256x256/apps/${pkgname}.png"
   install -Dm644 product_logo_256.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
-  install -Dm644 -t "${pkgdir}/usr/lib/${_pkgname}/resources/ublock" \
+  install -Dm644 -t "${pkgdir}/usr/lib/${pkgname}/resources/ublock" \
     "${srcdir}/helium-linux-${pkgver}/build/src/third_party/ublock/managed_storage.json"
 
   install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "${srcdir}/helium-linux-${pkgver}/LICENSE"*
