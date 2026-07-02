@@ -4,7 +4,7 @@
 pkgname=containers-common
 _upstream=container-libs
 pkgver=0.68.0
-pkgrel=1
+pkgrel=2
 epoch=1
 _buildah_pkgver=1.44.0
 _podman_pkgver=6.0.0
@@ -28,6 +28,8 @@ source=(
   tmpfiles.conf
   00-containers-arch.conf
   00-storage-arch.conf
+  00-storage-arch-rootless.conf
+  00-storage-arch-rootful.conf
   $pkgname-0.48.0-init_path.patch
 )
 sha512sums=('2725689c41904886c22de3d70a0fdcc93f36e588f2a49970d5ad94dfbcc2029581c3ef824ca7f9f01a52935a9703e41fa184132c61e1daac3f221966326bea40'
@@ -37,7 +39,9 @@ sha512sums=('2725689c41904886c22de3d70a0fdcc93f36e588f2a49970d5ad94dfbcc2029581c
             'edadadda8920ac4880f2c44f396e5d4c844bf15c964d7ef5d14c68637ac43e0df91f4efd2be747bca74bd0da959ea21cc3200ab14b2b57aba5975cff8f2fbefa'
             '2b187c119db95cda439f36509545fd0f45530c69d9139823387f9aa68ea2e9c4b3dee8ee21a517daa73a88ac63cc694e0e170061bfc1503425c21868b2ccf7dd'
             '852275de0f5852e5568b172148fd19b1caa0e20890b81d97830336f011bd9c84cd5827d501d099f20ac4a17906f7c8e08209dda936c30a11c0e02007a43715dd'
-            'ecf6dbc030bfccaf13ccdce7224bdc7f662ebdd6f24a1675a608070dc03e34aee9b95f59f095ac3075636a6332a81f6684bc84c2c5eef47184eb2c02db067245'
+            '575a4fa1f483390d1594d4378cc772441e553ac200855fe8387c121a97240a0c674cb9730d916c67729713351f3c39dff4aedfebd002a554b294ada684d60523'
+            'a5778dd2c04c7735336066777d0f8c46685db00de8825efa52bd818d5c33dfe1959d5531207b551f5e780d19f873ee8441a8c42e568e0d7ce3b8df6e3bc1bc2b'
+            'a12ef437c392503ed5a895a3cfbdd6882ea969d76cad163ab403c6534bad966bab3c4824e163e56117580d888ed88f6cc96ebed6ba80e91f1b63675f4bd81f95'
             '4a6526d01f192f0eb4dcbd28c019a2b0db6dc2128af644e8e89992e5dcfa45a02c739b06ee01e22606b5cb847213c002f8ab5f87a576846ac73f73eed9b2b469')
 b2sums=('73a578c45cd2fcf5d1481a17406c2b15472d2ae51d34154e847750fc32a5a8b6631404ef2bd261dec1d35a65fbe8b38d0d0053c6d1b0ecf31197025955d16173'
         '409046d73dbc4ffb835a37e26c28111f6c1f28c165ab6c979738fc6459b81edfdcfe468337b39a2edce018cb568df32b2868e6c46a5b414eb005cfb4d2546b8c'
@@ -46,7 +50,9 @@ b2sums=('73a578c45cd2fcf5d1481a17406c2b15472d2ae51d34154e847750fc32a5a8b6631404e
         'a72160f65aa13316c33b984173e151f0519720ec9617395980f0d7c5f25dc14b400aafbcb2fa8769eace9c1e51d4f1ddbe783e68fc0e40280743f90fbce30aa9'
         '1cd6884f06269c3e6cbdfa542bdf8e178574062ec11252defc48187b60a98d0193353cc8a12ba186d338ce7da6b879a1e9dc249d2f40c28fe997c433c91e8e0e'
         '3270faf98171379655357462c7ee9e1233434866f72410a8101df12d0c3ffce3fbac0bdd6ee6e1fa4c216044a1bfb3bb683f85a1b40ce5530b8797d34a004d42'
-        '42d026cf93d01f5f8d0012ca874550744dda079cd2d28212bdda650605d6d8f3853d1dec4da6315a37884fb7db256a2be9a8fd780a646ca75414df33c2271fd9'
+        'e9f87dbcc159ff09884f6a28b9464d3d50031f569114a800e05e62d8b54741545fe2eb9947ce892e7445ad4638e6f311ce642fadf81128e5bc0a4a0f587e0279'
+        '2d6b02d91102e7b409fd4a621814453aa42fa85740a640bdc442d3c34f7a5aeafaf445be87b796173a74e9c981290060ab3465ceac45707456627657d30abd9b'
+        '849f1b42216ec5e80c695b59a2ef90748b05212d22ef35ffbeb64ab89098cde0c7f40fcd666efc9f18c402c441ddaed5bc892d54db3f8a00cb9e99ba890cf073'
         '89e95f468785f6ca1309b0de37921702bd4eb6fb191afc0d93454bec7b7096a1b84e19408b5a0abcdfd89ce2ebd228879cbc42a0d409425fb41caab6a8f049f5')
 
 prepare() {
@@ -126,6 +132,8 @@ package() {
   # Arch defaults
   install -vDm 644 00-containers-arch.conf "$pkgdir/usr/share/containers/containers.conf.d/00-containers-arch.conf"
   install -vDm 644 00-storage-arch.conf "$pkgdir/usr/share/containers/storage.conf.d/00-storage-arch.conf"
+  install -vDm 644 00-storage-arch-rootful.conf "$pkgdir/usr/share/containers/storage.rootful.conf.d/00-storage-arch-rootful.conf"
+  install -vDm 644 00-storage-arch-rootless.conf "$pkgdir/usr/share/containers/storage.rootless.conf.d/00-storage-arch-rootless.conf"
 
   # Persist the version, so that consumers can rely on it.
   printf '%s\n' "$pkgver" > "$pkgdir/usr/share/containers/container-libs.version"
