@@ -1,9 +1,9 @@
 ---
-version: 26.04.2-1
+version: 26.04.3-1
 pkgbase:
   name: kmailtransport
   pkgdesc: Mail Transport Service
-  pkgver: 26.04.2
+  pkgver: 26.04.3
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -27,14 +27,14 @@ pkgbase:
     - qt6-base
     - qtkeychain-qt6
   source:
-    - https://download.kde.org/stable/release-service/26.04.2/src/kmailtransport-26.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.2/src/kmailtransport-26.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.3/src/kmailtransport-26.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.3/src/kmailtransport-26.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - b8a74f3a4b94f2278e570c29107e80599e48a34c3db9bc70780bedc3e3f24e7b
+    - fea7cd107ddc2199e8c104eba00eb8469ffaaccd67ce4e403917971d23e4c675
     - SKIP
 pkgname:
   - name: kmailtransport
