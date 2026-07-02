@@ -1,9 +1,9 @@
 ---
-version: 26.04.2-1
+version: 26.04.3-1
 pkgbase:
   name: klettres
   pkgdesc: Learn The Alphabet
-  pkgver: 26.04.2
+  pkgver: 26.04.3
   pkgrel: 1
   url: https://apps.kde.org/klettres/
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - qt6-multimedia
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/26.04.2/src/klettres-26.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.2/src/klettres-26.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.3/src/klettres-26.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.3/src/klettres-26.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 4f6b6758119c2869949d1288c9b344bc97f27dfa74179c5a7167860962b3ac02
+    - 7e52d8215df8cd47c91b64f70df474658b783258060aa61e7fffa25b1b1150c1
     - SKIP
 pkgname:
   - name: klettres
