@@ -1,10 +1,10 @@
 ---
-version: 7.1.2.artix2-1
+version: 7.1.2.artix2-1.1
 pkgbase:
   name: linux
   pkgdesc: Linux
   pkgver: 7.1.2.artix2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/archlinux/linux
   arch:
     - x86_64
@@ -43,6 +43,7 @@ pkgbase:
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.2.tar.sign
     - https://github.com/archlinux/linux/releases/download/v7.1.2-arch2/linux-v7.1.2-arch2.patch.zst
     - https://github.com/archlinux/linux/releases/download/v7.1.2-arch2/linux-v7.1.2-arch2.patch.zst.sig
+    - 631849ff5d603841e74f19f4a5e30fe1f7d7cf30.patch
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
@@ -52,11 +53,13 @@ pkgbase:
     - SKIP
     - 4e8f63e6242bbef51b85725d032669de3f6781d4ab217c997447c9b43f935b59
     - SKIP
+    - e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7
   b2sums:
     - 0d6e9ff535af085190da7df50887b20f395cd4d6befb7158c9993bf77fe92459a9982877ce944ca522192daa5a54c952c3d368def04b579796ba7109a972453b
     - SKIP
     - 574d2fd6a2921aa1396ab855b60398abf786971a1871254244dfbf22d1bb2a5969d4d39042efe14fb4b1479f7db36b1345f9b331d567f0ef963c28c8d5fcb78b
     - SKIP
+    - 9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
