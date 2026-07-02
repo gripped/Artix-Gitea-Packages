@@ -7,7 +7,7 @@
 pkgbase=gmic
 pkgname=(gmic
          gimp-plugin-gmic)
-pkgver=4.0.0
+pkgver=4.0.1
 pkgrel=1
 arch=(x86_64)
 url='https://gmic.eu/'
@@ -28,7 +28,7 @@ makedepends=(cmake
              qt6-base
              qt6-tools)
 source=(https://gmic.eu/files/source/gmic_$pkgver.tar.gz)
-sha256sums=('c032605b340f289cebec744c6c900d0a4f9e35b52177a7f33ba84283910e20f1')
+sha256sums=('127a5e4a82d61958b6d2ffadbde57c68baff2b45886c2946ebd462a62306f7e1')
 
 build() {
   cmake -B build -S gmic-$pkgver \
