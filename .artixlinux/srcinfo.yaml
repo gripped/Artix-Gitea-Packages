@@ -1,9 +1,9 @@
 ---
-version: 0.999-6.2
+version: 0.999-6.3
 pkgbase:
   name: xsane
   pkgver: 0.999
-  pkgrel: 6.2
+  pkgrel: 6.3
   url: https://gitlab.com/sane-project/frontend/xsane
   arch:
     - x86_64
@@ -14,7 +14,7 @@ pkgbase:
     - lcms2
     - sane
     - zlib
-    - libjpeg
+    - libjpeg-turbo
     - gimp
   source:
     - http://http.debian.net/debian/pool/main/x/xsane/xsane_0.999.orig.tar.gz
@@ -31,13 +31,12 @@ pkgbase:
 pkgname:
   - name: xsane
     pkgdesc: A GTK-based X11 frontend for SANE and plugin for Gimp.
-    install: xsane.install
     depends:
       - gtk2
       - lcms2
       - sane
       - zlib
-      - libjpeg
+      - libjpeg-turbo
     optdepends:
       - 'xsane-gimp: for gimp plugin support'
   - name: xsane-gimp
@@ -45,4 +44,4 @@ pkgname:
     depends:
       - xsane
       - gimp
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.38.5-1-any

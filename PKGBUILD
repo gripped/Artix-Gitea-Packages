@@ -4,11 +4,11 @@
 pkgbase=xsane
 pkgname=('xsane' 'xsane-gimp')
 pkgver=0.999
-pkgrel=6.2
+pkgrel=6.3
 arch=(x86_64)
 url="https://gitlab.com/sane-project/frontend/xsane"
 license=('GPL2')
-makedepends=('gtk2' 'lcms2' 'sane' 'zlib' 'libjpeg' 'gimp')
+makedepends=('gtk2' 'lcms2' 'sane' 'zlib' 'libjpeg-turbo' 'gimp')
 source=(http://http.debian.net/debian/pool/main/x/$pkgname/${pkgname}_$pkgver.orig.tar.gz
 	xsane-0.995-xdg-open.patch
 	0165-xsane-0.999-lcms2.patch
@@ -47,8 +47,8 @@ build() {
 
 package_xsane() {
   pkgdesc="A GTK-based X11 frontend for SANE and plugin for Gimp."
-  install=$pkgname.install
-  depends=('gtk2' 'lcms2' 'sane' 'zlib' 'libjpeg')  
+  bnstall=$pkgname.install
+  depends=('gtk2' 'lcms2' 'sane' 'zlib' 'libjpeg-turbo')  
   optdepends=('xsane-gimp: for gimp plugin support')
   cd "$srcdir/$pkgbase-$pkgver"
   make DESTDIR="$pkgdir" install
