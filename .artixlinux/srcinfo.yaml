@@ -1,9 +1,9 @@
 ---
-version: 26.04.2-1
+version: 26.04.3-1
 pkgbase:
   name: minuet
   pkgdesc: A KDE Software for Music Education
-  pkgver: 26.04.2
+  pkgver: 26.04.3
   pkgrel: 1
   url: https://apps.kde.org/minuet/
   arch:
@@ -30,14 +30,14 @@ pkgbase:
     - qt6-declarative
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/26.04.2/src/minuet-26.04.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.2/src/minuet-26.04.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.04.3/src/minuet-26.04.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.04.3/src/minuet-26.04.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - d870e4a36d748d603268d6aab90f2e0005beb743b8d3cfd7a93ccd65e2682dee
+    - 2fdbc21f80090274181bef800b15e6c3583c535768c1a5a66a9b00417f6462b1
     - SKIP
 pkgname:
   - name: minuet
