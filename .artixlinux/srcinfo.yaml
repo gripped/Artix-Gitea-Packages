@@ -1,9 +1,9 @@
 ---
-version: 4.0.1-1
+version: 4.0.1-2
 pkgbase:
   name: gmic
   pkgver: 4.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gmic.eu/
   arch:
     - x86_64
