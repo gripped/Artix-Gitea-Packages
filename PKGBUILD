@@ -8,7 +8,7 @@
 pkgname=darktable
 epoch=2
 pkgver=5.6.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Utility to organize and develop raw images'
 arch=(x86_64)
 url='https://darktable.org'
@@ -36,11 +36,12 @@ depends=(colord-gtk
          pugixml
          zlib)
 optdepends=('dcraw: base curve script'
-            'perl-image-exiftool: base curve script'
-            'imagemagick: base curve and noise profile scripts'
             'ghostscript: noise profile script'
-            'portmidi: game and midi controller input devices'
-            'gnuplot: noise profile script')
+            'gnuplot: noise profile script'
+            'imagemagick: base curve and noise profile scripts'
+            'opencl-driver: hardware accelerated image processing'
+            'perl-image-exiftool: base curve script'
+            'portmidi: game and midi controller input devices')
 makedepends=(clang
              cmake
              desktop-file-utils
@@ -72,7 +73,7 @@ build() {
         BUILD_USERMANUAL=Off
         RAWSPEED_ENABLE_LTO=On
     )
-    cmake -B build -S "$_archive" "${cmake_flags[@]/#/-D }"
+    cmake -B build -S "$_archive" ${cmake_flags[@]/#/-D }
     make -C build
 }
 

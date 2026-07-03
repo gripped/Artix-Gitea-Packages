@@ -1,10 +1,10 @@
 ---
-version: 2:5.6.0-2
+version: 2:5.6.0-3
 pkgbase:
   name: darktable
   pkgdesc: Utility to organize and develop raw images
   pkgver: 5.6.0
-  pkgrel: 2
+  pkgrel: 3
   epoch: 2
   url: https://darktable.org
   arch:
@@ -45,11 +45,12 @@ pkgbase:
     - zlib
   optdepends:
     - 'dcraw: base curve script'
-    - 'perl-image-exiftool: base curve script'
-    - 'imagemagick: base curve and noise profile scripts'
     - 'ghostscript: noise profile script'
-    - 'portmidi: game and midi controller input devices'
     - 'gnuplot: noise profile script'
+    - 'imagemagick: base curve and noise profile scripts'
+    - 'opencl-driver: hardware accelerated image processing'
+    - 'perl-image-exiftool: base curve script'
+    - 'portmidi: game and midi controller input devices'
   source:
     - https://github.com/darktable-org/darktable/releases/download/release-5.6.0/darktable-5.6.0.tar.xz
     - https://github.com/darktable-org/darktable/releases/download/release-5.6.0/darktable-5.6.0.tar.xz.asc
