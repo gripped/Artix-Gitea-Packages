@@ -1,9 +1,9 @@
 ---
-version: 5.2.0-1
+version: 5.2.1-1
 pkgbase:
   name: rssguard
   pkgdesc: Simple (yet powerful) Qt feed reader
-  pkgver: 5.2.0
+  pkgver: 5.2.1
   pkgrel: 1
   url: https://github.com/martinrotter/rssguard
   arch:
@@ -33,12 +33,12 @@ pkgbase:
   replaces:
     - rssguard-lite
   source:
-    - git+https://github.com/martinrotter/rssguard#tag=5.2.0
+    - git+https://github.com/martinrotter/rssguard#tag=5.2.1
     - git+https://github.com/martinrotter/qtlinq
     - git+https://codeberg.org/gumbo-parser/gumbo-parser
     - git+https://github.com/martinrotter/qt-publicsuffix
   sha256sums:
-    - 61baca1cde896edb307270118e749d8b4db53d3e607069a492530bec8d2fdc91
+    - 61943abf0df5bad7640cfbc52e14bbf332a1ba50da3482ead2a41588f6e89b44
     - SKIP
     - SKIP
     - SKIP
