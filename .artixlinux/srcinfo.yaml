@@ -1,10 +1,10 @@
 ---
-version: 2.5.2-2
+version: 2.6.0-1
 pkgbase:
   name: lib32-attr
   pkgdesc: Extended attribute support library for ACL support (32-bit)
-  pkgver: 2.5.2
-  pkgrel: 2
+  pkgver: 2.6.0
+  pkgrel: 1
   url: https://savannah.nongnu.org/projects/attr
   arch:
     - x86_64
@@ -20,13 +20,13 @@ pkgbase:
   provides:
     - libattr.so
   source:
-    - git+https://git.savannah.nongnu.org/git/attr.git#tag=v2.5.2?signed
+    - git+https://git.savannah.nongnu.org/git/attr.git?signed#tag=v2.6.0
   validpgpkeys:
     - 600CD204FBCEA418BD2CA74F154343260542DF34
     - B902B5271325F892AC251AD441633B9FE837F581
     - 259B3792B3D6D319212CC4DCD5BF9FEB0313653A
   sha256sums:
-    - 406ba69eb08ef5a246b0c2f3b247f880ed56136a140343f668285129e699fa7b
+    - ccd84181352d72d01efd1eb72ec99c539f23eb483406100a10747509477cf644
 pkgname:
   - name: lib32-attr
 # generated with artixpkg 0.38.5-1-any
