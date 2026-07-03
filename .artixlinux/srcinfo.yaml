@@ -1,9 +1,9 @@
 ---
-version: 0.907.0-1
+version: 0.910.0-1
 pkgbase:
   name: perl-yaml-libyaml
   pkgdesc: Perl YAML Serialization using XS and libyaml
-  pkgver: 0.907.0
+  pkgver: 0.910.0
   pkgrel: 1
   url: https://search.cpan.org/dist/YAML-LibYAML/
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v0.907.0.tar.gz
+    - https://cpan.metacpan.org/authors/id/T/TI/TINITA/YAML-LibYAML-v0.910.0.tar.gz
   sha256sums:
-    - 6ba087224911389e76fa198b149cec83f065b0ac75ddc52618f3490942cd9506
+    - 04310e9840b918383a5b9ae9ca4b3bde1b2771ec786c758bd2fffd79d409332b
 pkgname:
   - name: perl-yaml-libyaml
 # generated with artixpkg 0.38.5-1-any
