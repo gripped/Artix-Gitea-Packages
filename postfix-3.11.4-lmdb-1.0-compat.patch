@@ -1,0 +1,99 @@
+From c2e9644f278ff31cd664c7638d7f5672a71aab33 Mon Sep 17 00:00:00 2001
+From: Christian Pfeiffer <cpfeiffer@rev-crew.info>
+Date: Wed, 1 Jul 2026 19:59:03 +0200
+Subject: [PATCH] Postfix: Resolve LMDB 1.0 compatibility
+
+---
+ postfix/src/util/slmdb.c | 69 ++++++++++++++++++++++++----------------
+ 1 file changed, 42 insertions(+), 27 deletions(-)
+
+diff --git a/postfix/src/util/slmdb.c b/postfix/src/util/slmdb.c
+index e1b8fd64c..e30aeee80 100644
+--- a/postfix/src/util/slmdb.c
++++ b/postfix/src/util/slmdb.c
+@@ -381,40 +381,55 @@ static int slmdb_saved_key_assign(SLMDB *slmdb, MDB_val *key_val)
+ 
+ static int slmdb_prepare(SLMDB *slmdb)
+ {
+-    int     status = 0;
++    int status = 0;
+ 
+-    /*
+-     * This is called before accessing the database, or after recovery from
+-     * an LMDB error. Note: this code cannot recover from errors itself.
+-     * slmdb->txn is either the database open() transaction or a
+-     * freshly-created bulk-mode transaction. When slmdb_prepare() commits or
+-     * aborts commits a transaction, it must set slmdb->txn to null to avoid
+-     * a use-after-free error in slmdb_close().
+-     * 
+-     * - With O_TRUNC we make a "drop" request before updating the database.
+-     * 
+-     * - With a bulk-mode transaction we commit when the database is closed.
+-     */
+     if (slmdb->open_flags & O_TRUNC) {
+-	if ((status = mdb_drop(slmdb->txn, slmdb->dbi, 0)) != 0) {
+-	    mdb_txn_abort(slmdb->txn);
+-	    slmdb->txn = 0;
+-	    return (status);
+-	}
+-	if ((slmdb->slmdb_flags & SLMDB_FLAG_BULK) == 0) {
+-	    status = mdb_txn_commit(slmdb->txn);
+-	    slmdb->txn = 0;
+-	    if (status != 0)
+-		return (status);
+-	}
++
++        /* Drop the main DB — this dirties the transaction */
++        status = mdb_drop(slmdb->txn, slmdb->dbi, 0);
++
++        /* Regardless of success, this txn MUST be aborted */
++        mdb_txn_abort(slmdb->txn);
++        slmdb->txn = 0;
++
++        if (status != 0)
++            return status;
++
++        /*
++         * Now reopen the main DB in a fresh transaction.
++         * This replaces the old DBI handle.
++         */
++        MDB_txn *txn2;
++        status = mdb_txn_begin(slmdb->env, NULL, 0, &txn2);
++        if (status != 0)
++            return status;
++
++        status = mdb_dbi_open(txn2, NULL, 0, &slmdb->dbi);
++        if (status != 0) {
++            mdb_txn_abort(txn2);
++            return status;
++        }
++
++        /* Commit the DBI re-open unless bulk mode defers it */
++        if ((slmdb->slmdb_flags & SLMDB_FLAG_BULK) == 0) {
++            status = mdb_txn_commit(txn2);
++            if (status != 0)
++                return status;
++        } else {
++            slmdb->txn = txn2;  /* bulk mode keeps txn open */
++        }
++
+     } else if ((slmdb->slmdb_flags & SLMDB_FLAG_BULK) == 0) {
+-	mdb_txn_abort(slmdb->txn);
+-	slmdb->txn = 0;
++        /* Normal case: abort the open transaction */
++        mdb_txn_abort(slmdb->txn);
++        slmdb->txn = 0;
+     }
++
+     slmdb->api_retry_count = 0;
+-    return (status);
++    return status;
+ }
+ 
++
+ /* slmdb_recover - recover from LMDB errors */
+ 
+ static int slmdb_recover(SLMDB *slmdb, int status)
+-- 
+2.55.0
+
