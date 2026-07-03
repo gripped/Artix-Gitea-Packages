@@ -5,7 +5,7 @@
 pkgname=gitea-runner
 _pkgname=runner
 pkgver=1.0.8
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Official runner for Gitea"
 url="https://gitea.com/gitea/runner"
 arch=('x86_64')
