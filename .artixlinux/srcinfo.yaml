@@ -1,9 +1,9 @@
 ---
-version: 1.7.2-1
+version: 1.8.0-1
 pkgbase:
   name: leancrypto
   pkgdesc: Lean cryptographic library usable for bare-metal environments
-  pkgver: 1.7.2
+  pkgver: 1.8.0
   pkgrel: 1
   url: https://leancrypto.org
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - leancrypto-1.7.2.tar.gz::https://github.com/smuellerDD/leancrypto/archive/refs/tags/v1.7.2.tar.gz
+    - leancrypto-1.8.0.tar.gz::https://github.com/smuellerDD/leancrypto/archive/refs/tags/v1.8.0.tar.gz
   sha256sums:
-    - 9aff52dfc5c4fdb0b7d4849ad0e002430e83d6880e4136b72a3098c801224fc3
+    - 9d7cb5e0584d3c60814df90c0a9e800e2e77d54ca0b74be3b6e02475803210de
 pkgname:
   - name: leancrypto
 # generated with artixpkg 0.38.5-1-any
