@@ -1,9 +1,9 @@
 ---
-version: 0.16.15-1
+version: 0.16.16-1
 pkgbase:
   name: libtorrent
   pkgdesc: BitTorrent library with a focus on high performance
-  pkgver: 0.16.15
+  pkgver: 0.16.16
   pkgrel: 1
   url: https://rakshasa.github.io/rtorrent/
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   depends:
     - openssl
   source:
-    - git+https://github.com/rakshasa/libtorrent.git#tag=v0.16.15
+    - git+https://github.com/rakshasa/libtorrent.git#tag=v0.16.16
   sha256sums:
-    - 5744222aaccbc484fd3c9486a514e41a8cf10f57ab4cf3a5861c892c3c687ed9
+    - 8e5d34c67e2225f8315644df7f4634879b3dae92ec302f850dfee23ee92eca8b
 pkgname:
   - name: libtorrent
 # generated with artixpkg 0.38.5-1-any
