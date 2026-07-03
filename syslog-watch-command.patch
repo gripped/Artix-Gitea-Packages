@@ -1,5 +1,5 @@
---- a/install/arch-linux/usr/bin/limine-snapper-notify	2026-05-06 18:48:31.421229032 +0200
-+++ b/install/arch-linux/usr/bin/limine-snapper-notify	2026-05-06 18:41:01.727550464 +0200
+--- a/install/arch-linux/usr/bin/limine-snapper-notify	2026-07-03 10:27:58.875810137 +0200
++++ b/install/arch-linux/usr/bin/limine-snapper-notify	2026-07-03 10:43:37.273490931 +0200
 @@ -92,7 +92,7 @@
  		# Store last notification state
  		last_notify_time=$(date +%s)
@@ -14,8 +14,8 @@
  fi
  
 -if ! command -v journalctl &>/dev/null; then
--	echo -e "\033[91mjournalctl is not installed.\033[0m" >&2
--	exit 1
+-	echo -e "journalctl is not installed." >&2
+-	exit 0
 +if [ -f /usr/bin/metalog ] ; then
 +  logfile="/var/log/everything/current"
 +  if [ -r "$logfile" ] ; then
@@ -26,7 +26,7 @@
 +    exit
 +  fi
 +else
-+  "Currently the only suported logger is 'metalog'"
++  "Syslog file must be available as /var/log/everything/current."
 +  exit
  fi
  
