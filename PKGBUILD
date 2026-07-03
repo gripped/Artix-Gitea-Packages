@@ -20,7 +20,7 @@ install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
         "${pkgname}.sysusers"
         "${pkgname}.tmpfiles")
-sha256sums=('dea9eb4681bf3f8e6d3c5abf3d72be37642a8d235f3e9caf45b073ccc99d11b6'
+sha256sums=('9d5b1c79149ecbf8f985f36295e766487cb2e22b0a43f778e276286e0b4cf95a'
             'd7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d'
             '476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37')
 
