@@ -2,7 +2,7 @@
 # Contributor: Alexander Jacocks <alexander@redhat.com>
 
 pkgname=ansible-creator
-pkgver=26.6.0
+pkgver=26.6.1
 pkgrel=1
 pkgdesc="A CLI tool for scaffolding all your Ansible Content"
 arch=('any')
@@ -14,7 +14,7 @@ optdepends=('ansible: check official ansible collections'
             'docker: To use docker as a container runtime'
             'podman: To use podman as a container runtime')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('1cca94c43c31de0d2333eb0f2cb6b17d3df50c9be4336bc9572ff83d83c33f6b')
+sha256sums=('7b56677ef0275e5a65f1e8c6a3efd6ef03a89636990499b19c9f505a2b17d5ff')
 
 build() {
 	cd "${pkgname}-${pkgver}"
