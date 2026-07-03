@@ -1,10 +1,10 @@
 ---
-version: 2.4-3
+version: 2.5.1-1
 pkgbase:
   name: shared-mime-info
   pkgdesc: Freedesktop.org Shared MIME Info
-  pkgver: 2.4
-  pkgrel: 3
+  pkgver: 2.5.1
+  pkgrel: 1
   url: https://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec/
   install: shared-mime-info.install
   arch:
@@ -15,7 +15,6 @@ pkgbase:
     - gettext
     - xmlto
     - docbook-xsl
-    - git
     - meson
   depends:
     - libxml2
@@ -26,13 +25,11 @@ pkgbase:
   options:
     - '!makeflags'
   source:
-    - git+https://gitlab.freedesktop.org/xdg/shared-mime-info.git#commit=9a6d6b8e963935f145f3a1ef446552de6996dada
-    - git+https://gitlab.freedesktop.org/xdg/xdgmime.git#commit=92f6a09fda2b23c2ab95cede8eb0612ca96bd0f7
+    - https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.5.1/shared-mime-info-2.5.1.tar.bz2
     - update-mime-database.hook
   sha256sums:
-    - SKIP
-    - SKIP
+    - b75b420da9b0be9a3d99b1bee6ed87957b56ab54583ac1a97fbd0dc98ddddb25
     - f08efbcbac9d2bd18a805b8dcf3ed06d7763b97eca5935aa64d65593774b6501
 pkgname:
   - name: shared-mime-info
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
