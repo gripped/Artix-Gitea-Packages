@@ -3,8 +3,8 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-greeter
-pkgver=1.1.0
-pkgrel=3
+pkgver=1.2.0
+pkgrel=1
 epoch=1
 pkgdesc='COSMIC greeter for greetd'
 arch=(x86_64)
@@ -35,7 +35,7 @@ source=(
   cosmic-greeter-display-manager.patch
   cosmic-greeter-lto.patch
 )
-b2sums=('80968b28e1dff6a50cae51871f8e8dc20165157bee40a545397af2d37807fb9d9fcd489a39a8e2f850ff05bdfe5f85a2142b34cd801be7331fcf213047d7faae'
+b2sums=('2a669f16257d52d51949d7d27a0fc36c39366ecfab6c251104ce0dcfb9a2fc8c4b63ef3f539ae0f2f5a3500d801497f6574ee6478fb7086e9b62d39e19577cc6'
         '8b5c32a991e31cf102b1b07e06d37e979f19106b82e8cab7dc8df81789ab6b24587605aa3387254057732a268368c4074f92461f6f5125bc1cba4e62e18cef27'
         '89ca262c95713e773662fb81e379bc2b63d2c93072b909f8f1eaaafee5289359fd729a476eb66568f893986a53e9c689dccfc4aeeeef62cb736cff466c463f7d')
 
