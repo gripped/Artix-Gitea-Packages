@@ -5,7 +5,7 @@
 
 pkgname=(texlive-bin libsynctex)
 pkgver=2026.0
-pkgrel=2
+pkgrel=2.1
 license=(GPL-2.0-or-later)
 arch=(x86_64)
 makedepends=(bash
@@ -80,7 +80,7 @@ build() {
     --datadir=/usr/share \
     --mandir=/usr/share/man \
     --disable-native-texlive-build \
-    --with-banner-add="/Arch Linux" \
+    --with-banner-add="/Artix Linux" \
     --disable-multiplatform \
     --disable-dialog \
     --disable-psutils \
