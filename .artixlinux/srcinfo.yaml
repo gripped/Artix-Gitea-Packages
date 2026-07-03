@@ -1,9 +1,9 @@
 ---
-version: 2.0.0-1
+version: 2.1.0-1
 pkgbase:
   name: marked-man
   pkgdesc: Wrapper adding manpage output to 'marked', inspired by 'ronn'
-  pkgver: 2.0.0
+  pkgver: 2.1.0
   pkgrel: 1
   url: https://github.com/kapouer/marked-man
   arch:
@@ -16,11 +16,11 @@ pkgbase:
     - marked
     - nodejs
   noextract:
-    - marked-man-2.0.0.tgz
+    - marked-man-2.1.0.tgz
   source:
-    - https://registry.npmjs.org/marked-man/-/marked-man-2.0.0.tgz
+    - https://registry.npmjs.org/marked-man/-/marked-man-2.1.0.tgz
   sha512sums:
-    - f0defa5c7494cf6fd006f7fc6a27d458d5a888ab961ceba1c7fedebc8791062872e1caf198efe7217a372a57e3074e06da35e7533b6638a643e5a65947bd02f1
+    - b475bd711cf7c52d39ccfa251ebeaa3f969682ecdc7c126f3118e0dd10e738dc6ce6137189f16ff53c88a17e3b6133ab728dc054aec421b874ad6810d18a2790
 pkgname:
   - name: marked-man
 # generated with artixpkg 0.38.5-1-any
