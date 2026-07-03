@@ -92,7 +92,7 @@ prepare() {
   popd
 
   pushd opencv_contrib
-  patch -p1 < ../fix-std.patch
+  patch -p1 < ../fix-std.patch 
 }
 
 build() {
