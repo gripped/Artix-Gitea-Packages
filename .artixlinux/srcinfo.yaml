@@ -1,10 +1,10 @@
 ---
-version: 25.11.1-1
+version: 25.11.1-2
 pkgbase:
   name: dpdk
   pkgdesc: A set of libraries and drivers for fast packet processing
   pkgver: 25.11.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://dpdk.org
   arch:
     - x86_64
