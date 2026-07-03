@@ -28,7 +28,7 @@ source=("git+https://git.haproxy.org/git/haproxy-${pkgver%.*}.git?signed#tag=v${
         'haproxy.sysusers'
         '0001-Use-CFLAGS-and-LDFLAGS-when-building-admin.patch')
 
-sha256sums=('65ea6c08c7a3829c5c419a21d46f0f4f0fd7d7590d2b0f47d0981d224b84168c'
+sha256sums=('7cecd4ba8483d0d05e3cf76cb704dcc8cc3f6a57c03d80ab762975ccc8e3faa6'
             'f6babef513b99a3fa0e50f2b144c73c980f1b78b119874ffa2580af1e651e7a9'
             'c6e716ea59272a8e871af53703726dd2a75b56c82dacf097d4bf08ac5e841a0d'
             'a1e3a1c2923465081383eb431bae55ff9841d89909469311cdba4b394ec4a998')
