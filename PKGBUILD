@@ -4,7 +4,7 @@
 pkgname=limine
 _pkgname=Limine
 pkgver=12.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="An advanced, portable, multiprotocol bootloader"
 url="https://github.com/Limine-Bootloader/Limine"
 arch=('x86_64')
