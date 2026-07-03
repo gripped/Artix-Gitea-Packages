@@ -14,7 +14,8 @@ makedepends=('git' 'nasm' 'mtools' 'llvm' 'lld' 'clang')
 install="${pkgname}.install"
 source=("git+${url}.git#tag=v${pkgver}?signed")
 sha256sums=('28dc4911620f312db4a7d82ab7bdfebe3fb80b3a1e3093cd0b4ca9780ce515ef')
-validpgpkeys=('05D29860D0A0668AAEFB9D691F3C021BECA23821') # Mintsuki <mintsuki@protonmail.com>
+validpgpkeys=('05D29860D0A0668AAEFB9D691F3C021BECA23821'  # Mintsuki <mintsuki@protonmail.com>
+              '6C222EA6B2BD216AA406516AC868F0B6DE38409D') # Kamila Szewczyk <k@iczelia.net>
 
 prepare() {
 	cd "${_pkgname}"
