@@ -2,7 +2,7 @@
 # Contributor: Mark Wagie <mark dot wagie at proton dot me>
 
 pkgname=cosmic-initial-setup
-pkgver=1.1.0
+pkgver=1.2.0
 pkgrel=1
 epoch=1
 pkgdesc="COSMIC Initial Setup"
