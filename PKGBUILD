@@ -3,7 +3,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=xdg-desktop-portal-cosmic
-pkgver=1.1.0
+pkgver=1.2.0
 pkgrel=1
 epoch=1
 pkgdesc='A backend implementation for xdg-desktop-portal for the COSMIC desktop environment'
@@ -25,13 +25,14 @@ makedepends=(
   cargo
   clang
   git
+  just
   mold
 )
 provides=(xdg-desktop-portal-impl)
 source=(
   git+https://github.com/pop-os/xdg-desktop-portal-cosmic.git#tag=epoch-${pkgver}
 )
-b2sums=('ef3d09d733622ca5f1f16b25ca057fbc3f725f99a3dbbabdfc611069b74488a5a8086a732a8dcaa3652e5b9cd7ac44e71a0b27c3827315c4a4b5962267c24143')
+b2sums=('5428aff8477d4445c5529d782e9b7c222f7e37c7f70ef3271f4f9d96ec3ea9a90436bde84eb59566399300962821fa7b1732075740914519e654cff80358b5c2')
 
 prepare() {
   cd xdg-desktop-portal-cosmic
@@ -41,12 +42,12 @@ prepare() {
 build() {
   cd xdg-desktop-portal-cosmic
   RUSTFLAGS+=" -C link-arg=-fuse-ld=mold"
-  make ARGS+=" --frozen --release"
+  CARGO_NET_OFFLINE=true just build
 }
 
 package() {
   cd xdg-desktop-portal-cosmic
-  make prefix='/usr' libexecdir='/usr/lib' DESTDIR="${pkgdir}" install
+  just rootdir="${pkgdir}" prefix='/usr' libexecdir='/usr/lib' install
 }
 
 # vim: ts=2 sw=2 et:
