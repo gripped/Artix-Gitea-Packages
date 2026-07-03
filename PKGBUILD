@@ -3,7 +3,7 @@
 # Contributor: Mark Wagie <mark.wagie@proton.me>
 
 pkgname=cosmic-session
-pkgver=1.1.0
+pkgver=1.2.0
 pkgrel=1
 epoch=1
 pkgdesc='Session manager for the COSMIC desktop environment'
@@ -60,7 +60,7 @@ source=(
   cosmic-session-lto.patch
 
   no_journald-systemctl.patch)
-b2sums=('fc7656ddb9320f29737675e411c0904f0cea47fbe4da8fcd4bbbc53288c788027dc570420de4d3e8335de72a7e7c44c54a87d4365c597c8110f1cfa4169bad97'
+b2sums=('54835ca1d8928081b2ba7d04ef7ffcf209dac2aa607195eeb3dc492ef79bb4ccd0aaaea161e9f96aada7541223193822358dce974685a9de8d68b9b3dbe7720f'
         '8b1a6ba7e159831e24d4e2abe1ee82c3b9a1f7c34af982a0ec20f5941c816922213cbc6bda3a7c2419ace2adf5cdfea131fab76045454b6ad800e18df0368307'
         '7c9db3b6d2456e5c303da6f72a8169207ce35ca9fcb9beffb548cd55b3fe0cb9019b719c85540159075444cdd7bffce117a19cad57f3b8d766ae27cc47615f79')
 
