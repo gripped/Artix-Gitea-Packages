@@ -1,9 +1,9 @@
 ---
-version: 3.1.3-1
+version: 3.2.0-1
 pkgbase:
   name: python-cmd2
   pkgdesc: A tool for building interactive command line apps
-  pkgver: 3.1.3
+  pkgver: 3.2.0
   pkgrel: 1
   url: https://github.com/python-cmd2/cmd2
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - python-rich
     - python-rich-argparse
   source:
-    - git+https://github.com/python-cmd2/cmd2.git#tag=3.1.3
+    - git+https://github.com/python-cmd2/cmd2.git#tag=3.2.0
   sha512sums:
-    - e970f1f773245c1582f6078ed5f23703417b1cb9f15114df1980264e8a388270083390fa6297546ef48fef8a2f945837d5c5c64e95dff5ae8a3a0a148cfd1699
+    - eab26e2ad43c32bc336e576e81b3cd66b1a26d59e1261d617ece6c996ba21b8cf6db3cec70de240fe880207717f67e82bd36358aa1210da30c2137bc00387ddb
 pkgname:
   - name: python-cmd2
 # generated with artixpkg 0.38.5-1-any
