@@ -12,7 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 pkgver=140.12.0.103rc1
-pkgrel=1
+pkgrel=2
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
 _lwrelver="${pkgver##*.}"
@@ -38,7 +38,7 @@ depends=(
   gtk3
   hicolor-icon-theme
   libpulse
-  'libevent<2.1.13'
+  libevent
   libvpx.so
   libx11
   libxcb
@@ -133,6 +133,7 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
   "0005-cbindgen-0_29_4.patch"
+  "0006-libevent-2_1_13-compat.patch"
 )
 sha256sums=('57079b64558f1152be7e951fdd47ef34ae81819ecd20261b1219f700ac90788b'
             '85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62'
@@ -144,7 +145,8 @@ sha256sums=('57079b64558f1152be7e951fdd47ef34ae81819ecd20261b1219f700ac90788b'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
             'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760'
-            '198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f')
+            '198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f'
+            '6ef88598c61c308bbdea6a20a1253ffad140d339dc9df445c1bb76d5d78b056c')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -251,6 +253,7 @@ fi
   xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
   xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
   patch -B .patchorigin -Np1 -i ../../0005-cbindgen-0_29_4.patch
+  patch -B .patchorigin -Np1 -i ../../0006-libevent-2_1_13-compat.patch
 }
 
 
