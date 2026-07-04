@@ -1,10 +1,10 @@
 ---
-version: 0.8.0-1
+version: 0.8.0-2
 pkgbase:
   name: ouch
   pkgdesc: A command line utility for easily compressing and decompressing files and directories
   pkgver: 0.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ouch-org/ouch
   arch:
     - x86_64
@@ -15,11 +15,12 @@ pkgbase:
   makedepends:
     - cargo
     - clang
-    - cmake
   depends:
-    - xz
-    - bzip2
-    - zlib
+    - bzip3
+    - glibc
+    - libgcc
+    - libstdc++
+    - zstd
   options:
     - '!lto'
   source:
