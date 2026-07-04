@@ -49,11 +49,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 7.1.2.zen2-1
+    version: 7.1.2.zen3-1
     packages:
-      - linux-zen-7.1.2.zen2-1-x86_64.pkg.tar.zst
-      - linux-zen-headers-7.1.2.zen2-1-x86_64.pkg.tar.zst
-      - linux-zen-docs-7.1.2.zen2-1-x86_64.pkg.tar.zst
+      - linux-zen-7.1.2.zen3-1-x86_64.pkg.tar.zst
+      - linux-zen-headers-7.1.2.zen3-1-x86_64.pkg.tar.zst
+      - linux-zen-docs-7.1.2.zen3-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 7.0.14.zen1-1
