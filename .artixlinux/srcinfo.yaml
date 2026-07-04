@@ -1,10 +1,10 @@
 ---
-version: 4.7-1
+version: 4.7-2
 pkgbase:
   name: godot
   pkgdesc: Advanced cross-platform 2D and 3D game engine
   pkgver: 4.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://godotengine.org/
   arch:
     - x86_64
@@ -12,7 +12,7 @@ pkgbase:
     - MIT
   makedepends:
     - alsa-lib
-    - dotnet-sdk-8.0
+    - dotnet-sdk
     - git
     - nuget
     - pulse-native-provider
@@ -69,5 +69,5 @@ pkgname:
       - miniupnpc
       - openxr
       - pcre2
-      - dotnet-sdk-8.0
+      - dotnet-sdk
 # generated with artixpkg 0.38.5-1-any
