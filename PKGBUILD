@@ -2,7 +2,7 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=accountsservice
-pkgver=26.26.9
+pkgver=26.27.3
 pkgrel=1
 pkgdesc="D-Bus interface for user account query and manipulation"
 url="https://gitlab.freedesktop.org/accountsservice/accountsservice"
@@ -37,7 +37,7 @@ source=(
   accounts-daemon-restart.hook
   0001-tests-Drop-check-format-test.patch
 )
-b2sums=('f22d870d629b168d450b5d5197b0515674d49acc01a829502dd44c8b6c660dd6edeb18baac07a3432de992056db1fd907240ad8924d632f8a603b12c026d6547'
+b2sums=('8d69d3238ebe41733f32c39e752826ebff06b084f848f1a8fe3cc93d733a400dab2039fd747b8487b145a11d9ad745dce1d9f6f05389e2b8e0961b156f88c599'
         '62f69bafdfc08a9a43c3d2bd8e66461960603a91826d1b42001eb6f320e4b6b39bbe99fa715c08a995c295bf0626a88e35b2ef4f0fc96ff4ced6dfe805f1a2a2'
         'e59a6c0d092a28d34cc9f7260aa58cbe73e2a4d5d303f5676fcc929764cd1158e59c330cbd0115e895ca0cae52ed31e4f3ad2e2549fb7dbf618bf8327f1c438d')
 
