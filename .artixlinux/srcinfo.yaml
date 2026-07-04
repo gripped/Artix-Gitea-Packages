@@ -1,9 +1,9 @@
 ---
-version: 6.1-1
+version: 6.2-1
 pkgbase:
   name: python-zope-testing
   pkgdesc: Zope testing helpers
-  pkgver: 6.1
+  pkgver: 6.2
   pkgrel: 1
   url: https://github.com/zopefoundation/zope.testing
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - python
     - python-zope-testrunner
   source:
-    - python-zope-testing-6.1.tar.gz::https://github.com/zopefoundation/zope.testing/archive/6.1.tar.gz
+    - python-zope-testing-6.2.tar.gz::https://github.com/zopefoundation/zope.testing/archive/6.2.tar.gz
   sha512sums:
-    - 20cc4006fee44a9d86fd3a7f26507247731c1a32541a5676ab45bd74e75199fb856cd9382cd80bf75eb6ba50b7f18bd3718cdfec005e78ba75d250875c890e33
+    - e86120865508536762ef78510aaf54d541d62aba974bd2dffd6a08eb0d4d7e1706062c7926780a0005aea699aa62fb7e0e3a4962f1908ffc0552127b25e0e823
 pkgname:
   - name: python-zope-testing
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
