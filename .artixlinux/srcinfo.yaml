@@ -1,10 +1,10 @@
 ---
-version: 0.16.2-1
+version: 0.16.2-2
 pkgbase:
   name: neovide
   pkgdesc: No Nonsense Neovim Client in Rust
   pkgver: 0.16.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/neovide/neovide
   arch:
     - x86_64
@@ -19,7 +19,8 @@ pkgbase:
     - ninja
     - clang
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - fontconfig
     - libfontconfig.so
     - freetype2
@@ -28,20 +29,16 @@ pkgbase:
     - hicolor-icon-theme
     - libglvnd
     - libjpeg-turbo
-    - libjpeg.so
     - libxkbcommon
     - neovim
     - sndio
     - libpng
-    - libpng16.so
     - harfbuzz
     - libharfbuzz.so
     - icu
     - libicuuc.so
     - expat
-    - libexpat.so
     - zlib
-    - libz.so
   optdepends:
     - 'vulkan-intel: vulkan support for intel'
     - 'libxkbcommon-x11: run on X11 (not needed for wayland)'

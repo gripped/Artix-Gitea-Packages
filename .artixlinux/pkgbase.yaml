@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.16.2-1
+    version: 0.16.2-2
     packages:
-      - neovide-0.16.2-1-x86_64.pkg.tar.zst
+      - neovide-0.16.2-2-x86_64.pkg.tar.zst
     debug: []
