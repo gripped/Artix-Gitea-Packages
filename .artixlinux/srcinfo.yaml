@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-2
 pkgbase:
   name: senpai
   pkgdesc: A modern terminal IRC client
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://git.sr.ht/~delthas/senpai
   arch:
     - x86_64
@@ -16,6 +16,8 @@ pkgbase:
     - scdoc
   depends:
     - glibc
+  optdepends:
+    - 'harper: spell checking'
   options:
     - '!lto'
   source:
