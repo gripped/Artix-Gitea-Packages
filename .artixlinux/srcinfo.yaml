@@ -1,10 +1,10 @@
 ---
-version: 2.4.10-3
+version: 2.4.10-4
 pkgbase:
   name: python-proxy.py
   pkgdesc: Lightweight HTTP, HTTPS, HTTP2 and WebSockets proxy server
   pkgver: 2.4.10
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/abhinavsingh/proxy.py
   arch:
     - any
@@ -20,11 +20,11 @@ pkgbase:
     - git
     - python-build
     - python-installer
+    - python-setuptools
     - python-setuptools-scm
     - python-wheel
   depends:
     - python
-    - python-setuptools
   optdepends:
     - 'python-httpx: Cloudflare DNS resolver plugin support'
     - 'python-paramiko: proxy over SSH tunnel support'
@@ -39,4 +39,4 @@ pkgbase:
     - e27437a6c507d977c24b81fe9b0f35ee5c5eef5896717bd21ed5faa2e9b03026bc79bfe095291c3a01dfe3b24e1f0ecc4b3fe7d511c5af3f77e2840a97daa353
 pkgname:
   - name: python-proxy.py
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
