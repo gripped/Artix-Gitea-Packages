@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 _ver=7.1.2
-_rel=2
+_rel=3
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
@@ -49,7 +49,8 @@ options=(
 _srcname=linux-${_ver}
 _srctag=v${_ver}-${_arch}
 source=(
-  https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
+  #https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
+  https://artist.ydns.eu/artist/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
   631849ff5d603841e74f19f4a5e30fe1f7d7cf30.patch
 )
@@ -61,16 +62,16 @@ validpgpkeys=(
 )
 sha256sums=('37198c93727be247c9fb5309bb86cd5e496c61e5322cd8c4eca9476bb0b5883f'
             'SKIP'
-            '4e8f63e6242bbef51b85725d032669de3f6781d4ab217c997447c9b43f935b59'
+            '192f924ebf6b64838b8447a967acee494fe897c3d84145434358b65305aebd9a'
             'SKIP'
             'e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7')
-sha256sums_x86_64=('90a400b98c8fda6553d8b45874ca9a20fb74247b124e852be87e8b8a257243db')
+sha256sums_x86_64=('9e2577d9d3eccfcde6af8ab5103324d5aaae7faa6b61f2b23d43295bdccdbb56')
 b2sums=('0d6e9ff535af085190da7df50887b20f395cd4d6befb7158c9993bf77fe92459a9982877ce944ca522192daa5a54c952c3d368def04b579796ba7109a972453b'
         'SKIP'
-        '574d2fd6a2921aa1396ab855b60398abf786971a1871254244dfbf22d1bb2a5969d4d39042efe14fb4b1479f7db36b1345f9b331d567f0ef963c28c8d5fcb78b'
+        '4fab0cea48c5457bc5dfef0b55194d1a2ad316ffbfea7d64b94d36d7e43b1636256e3b54213c65d42e4ec8bcf79022efe78e9525620476859dd08aba9cdb77e8'
         'SKIP'
         '9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725')
-b2sums_x86_64=('bdf12d2b3e9628c8265d55c769d9794c3b00ba3d7722df462874603fdfd38a65abe6499424f0257448f82daf89d77dcff2a26eb1a03c4424cee4bb78a6bd96d6')
+b2sums_x86_64=('c602be8fa8252cfb5cabb2b37bd4cc808b9af537a340ecff9b5d3ee6757e5615db4ef2e6fa8721a07a9602c0765f1a626555e8404b5f34d0bb31edcff5fb298d')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
