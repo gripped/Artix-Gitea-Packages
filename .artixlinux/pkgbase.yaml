@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: system-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -13,8 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 610.43.02-10
+    packages:
+      - nvidia-open-610.43.02-10-x86_64.pkg.tar.zst
     debug: []
   system:
     version: null
