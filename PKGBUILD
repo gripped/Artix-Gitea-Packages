@@ -11,7 +11,7 @@ __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
-pkgver=140.12.0.102
+pkgver=140.12.0.103rc1
 pkgrel=1
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
@@ -134,7 +134,7 @@ source=(
   "0004-skia-m142-update.patch.xz"
   "0005-cbindgen-0_29_4.patch"
 )
-sha256sums=('bc4a8e8a2286536a05fd24c29f008bc79c42986063ed3bdbbff79fcb9620020e'
+sha256sums=('57079b64558f1152be7e951fdd47ef34ae81819ecd20261b1219f700ac90788b'
             '85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
@@ -167,7 +167,6 @@ prepare() {
   cd src
   mkdir -p mozbuild
   echo "${_lwrelver}" > release
-  git submodule update --init --recursive
   rm -rf "${_lw_srcdir}/"* "${_lw_srcdir}/".*
   mkdir -p "${_lw_srcdir}"
   mv "${srcdir}/firefox-${_ffsrcver%b*}"/* "${srcdir}/firefox-${_ffsrcver%b*}"/.* "${_lw_srcdir}/"
@@ -298,10 +297,10 @@ END
     fi
 
     # temporarily disable ublock-origin, interferes with profiling
-    cp "lw/policies.json" "$srcdir/policies.json"
-    jq 'del(.policies.Extensions.Install)' "$srcdir/policies.json" > "lw/policies.json"
+    cp "browser/components/enterprisepolicies/defaults/policies.json" "$srcdir/policies.json"
+    jq 'del(.policies.Extensions.Install)' "$srcdir/policies.json" > "browser/components/enterprisepolicies/defaults/policies.json"
     # temporarily enable nimbus telemetry for profiling
-    sed -i 's#^.*nimbus\.#// \0#' "lw/librewolf.cfg"
+    sed -i 's#^.*nimbus\.#// \0#' "browser/app/profile/librewolf.cfg"
 
     echo "Building instrumented browser..."
 
@@ -359,10 +358,10 @@ END
       echo "Jar log not found."
     fi
 
-    # reenable ublock-origin
-    cp "$srcdir/policies.json" "lw/policies.json"
+    # reenable non-profiling policies
+    cp "$srcdir/policies.json" "browser/components/enterprisepolicies/defaults/policies.json"
     # disable nimbus telemetry
-    cp "$srcdir/src/browser/app/profile/librewolf.cfg" "lw/librewolf.cfg"
+    cp "$srcdir/src/browser/app/profile/librewolf.cfg" "browser/app/profile/librewolf.cfg"
 
   else
     cat >.mozconfig ../mozconfig
