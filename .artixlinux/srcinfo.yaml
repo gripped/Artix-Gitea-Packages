@@ -58,7 +58,6 @@ pkgbase:
     - gtk3
     - hicolor-icon-theme
     - libpulse
-    - libevent
     - libvpx.so
     - libx11
     - libxcb
@@ -109,7 +108,6 @@ pkgbase:
     - 0003-update-rust-bindgen-to-fix-clang22-build.patch.xz
     - 0004-skia-m142-update.patch.xz
     - 0005-cbindgen-0_29_4.patch
-    - 0006-libevent-2_1_13-compat.patch
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
@@ -124,7 +122,6 @@ pkgbase:
     - 8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d
     - e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760
     - 198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f
-    - 6ef88598c61c308bbdea6a20a1253ffad140d339dc9df445c1bb76d5d78b056c
 pkgname:
   - name: konform-browser
 # generated with artixpkg 0.38.5-1-any
