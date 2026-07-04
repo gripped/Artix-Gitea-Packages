@@ -1,10 +1,10 @@
 ---
-version: 2.9.8-3
+version: 2.9.8-4
 pkgbase:
   name: ueberzugpp
   pkgdesc: Command line utility which allows to display images in the terminal, written in C++
   pkgver: 2.9.8
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/jstkdng/ueberzugpp
   arch:
     - x86_64
@@ -32,7 +32,8 @@ pkgbase:
     - wayland
     - onetbb
     - glibc
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - xcb-util-errors
   provides:
     - ueberzug
@@ -44,4 +45,4 @@ pkgbase:
     - 96bf3a16af7be233be2706481e340d5e085d7eb555f660062652358315085075
 pkgname:
   - name: ueberzugpp
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.38.5-1-any
