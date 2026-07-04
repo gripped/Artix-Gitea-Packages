@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.45-77
+    version: 0.45-81
     packages:
-      - tp_smapi-0.45-77-x86_64.pkg.tar.zst
+      - tp_smapi-0.45-81-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.45-74
