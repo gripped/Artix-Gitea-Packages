@@ -1,9 +1,9 @@
 ---
-version: 5.14.0-1
+version: 5.15.0-1
 pkgbase:
   name: python-keystoneauth1
   pkgdesc: Authentication Library for OpenStack Identity
-  pkgver: 5.14.0
+  pkgver: 5.15.0
   pkgrel: 1
   url: https://docs.openstack.org/keystoneauth/latest/
   arch:
@@ -29,10 +29,10 @@ pkgbase:
     - git
     - python-build
     - python-installer
+    - python-pbr
     - python-setuptools
     - python-wheel
   depends:
-    - python-pbr
     - python-iso8601
     - python-stevedore
     - python-os-service-types
@@ -46,9 +46,9 @@ pkgbase:
     - 'python-fixtures: for betamax support'
     - 'python-yaml: for betamax support'
   source:
-    - git+https://github.com/openstack/keystoneauth.git#tag=5.14.0
+    - git+https://github.com/openstack/keystoneauth.git#tag=5.15.0
   sha512sums:
-    - 41beb6f7bd70122b7f9b9b32e9c09e6f5225720f480e40fe875507a39d379cf2aca70f41f051aa9a288f8ed5b70308666bafd3865d5b42d696c4d42b3c0feb00
+    - 49d48ef7901c993148deedbfc9f743130aee3aae3e9f6d3583f6896f812dcfcce86a8e404446587defc7a4e5de7eef533e5894ca6d3d6aa4a035071df4ff68c2
 pkgname:
   - name: python-keystoneauth1
 # generated with artixpkg 0.38.5-1-any
