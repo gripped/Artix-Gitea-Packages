@@ -38,7 +38,7 @@ depends=(
   gtk3
   hicolor-icon-theme
   libpulse
-  libevent-2.1.so=7-64
+  'libevent<2.1.13'
   libvpx.so
   libx11
   libxcb
