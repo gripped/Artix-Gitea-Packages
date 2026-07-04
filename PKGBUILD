@@ -11,7 +11,7 @@
 
 pkgbase=vim
 pkgname=('vim' 'gvim' 'vim-runtime')
-pkgver=9.2.0699
+pkgver=9.2.0735
 _versiondir=92
 pkgrel=1
 pkgdesc='Vi Improved, a highly configurable, improved version of the vi text editor'
@@ -38,7 +38,7 @@ source=(git+https://github.com/vim/vim.git?signed#tag=v${pkgver}
         vimrc
         archlinux.vim
         vimdoc.hook)
-sha256sums=('a96e8956b05c93c22a235f65c5842cfa0e35dd069d32824c57954824aae94aba'
+sha256sums=('b0cfdf1c682e362b8e2d5015499a8b5184534cdec264f295b6cef0edc4a4f69e'
             'b16e85e457397ab2043a7ee0a3c84307c6b4eac157fd0b721694761f25b3ed5b'
             'cc3d931129854c298eb22e993ec14c2ad86cc1e70a08a64496f5e06559289972'
             '8e9656934d9d7793063230d15a689e10455e6db9b9fe73afa0f294792795d8ae')
@@ -103,10 +103,10 @@ build() {
   )
 }
 
-#check() {
-#  cd vim
-#  TERM=xterm make -j1 test
-#}
+check() {
+  cd vim
+  TERM=xterm make -j1 test || :
+}
 
 package_vim-runtime() {
   pkgdesc+=' (shared runtime)'
