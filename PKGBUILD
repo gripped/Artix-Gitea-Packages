@@ -7,12 +7,12 @@
 pkgbase=obs-studio
 pkgname=('obs-studio' 'obs-studio-plugin-browser')
 pkgver=32.1.2
-pkgrel=7
+pkgrel=8
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
 license=('GPL-2.0-only')
-depends=('ffmpeg' 'jansson' 'libxinerama' 'libxkbcommon-x11' 'mbedtls' 'rnnoise' 'pciutils'
+depends=('ffmpeg' 'jansson' 'libxinerama' 'libxkbcommon-x11' 'mbedtls3' 'rnnoise' 'pciutils'
          'qt6-svg' 'curl' 'jack' 'gtk-update-icon-cache' 'pipewire' 'libxcomposite'
          'libdatachannel' 'uthash' 'simde' 'qrcodegencpp-cmake' 'python')
 makedepends=('cef' 'cmake' 'libfdk-aac' 'x264' 'swig' 'luajit' 'sndio' 'nlohmann-json'
@@ -68,6 +68,12 @@ build() {
     -B build
     -S $pkgname
     -DCMAKE_INSTALL_PREFIX="/usr"
+    # mbedtls 4 not supported yet
+    # https://github.com/obsproject/obs-studio/issues/13601
+    -DMbedTLS_INCLUDE_DIR="/usr/include/mbedtls3"
+    -DMbedtls_LIBRARY="/usr/lib/mbedtls3/libmbedtls.so"
+    -DMbedcrypto_LIBRARY="/usr/lib/mbedtls3/libmbedcrypto.so"
+    -DMbedx509_LIBRARY="/usr/lib/mbedtls3/libmbedx509.so"
     -DENABLE_BROWSER=ON
     -DCEF_API_VERSION=$_cef_api_version
     -DENABLE_VST=ON
