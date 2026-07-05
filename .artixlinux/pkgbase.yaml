@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.8.4-2
+    version: 1.8.5-1
     packages:
-      - goverlay-1.8.4-2-x86_64.pkg.tar.zst
+      - goverlay-1.8.5-1-x86_64.pkg.tar.zst
     debug: []
