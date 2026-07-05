@@ -11,8 +11,8 @@
 # Contributor: Eric Forgeot < http://esclinux.tk >
 
 pkgname=qgis
-pkgver=4.0.3
-pkgrel=3
+pkgver=4.2.0
+pkgrel=1
 pkgdesc='Geographic Information System (GIS) that supports vector, raster & database formats'
 arch=(x86_64)
 url='https://qgis.org/'
@@ -22,14 +22,14 @@ depends=(
   draco
   exiv2
   expat
-  gcc-libs
+  libgcc
+  libstdc++
   gdal
   geos
   glibc
   gsl
   hdf5
   hicolor-icon-theme
-# libspatialindex
   libspatialite
   libxml2
   libzip
@@ -81,7 +81,7 @@ optdepends=(
   'gpsbabel: GPS Tools plugin'
 )
 source=("https://qgis.org/downloads/$pkgname-$pkgver.tar.bz2")
-sha256sums=('e3c1d06d6b195aba99daf0a0562331d62359afd728666634ce4095ce99a844f4')
+sha256sums=('1e53c74d80ce6e32b2aa6e015c36dde1fd08669ef9cfda334b29bd2091c7904e')
 
 build() {
   cmake -S $pkgname-$pkgver -B build -G Ninja \
