@@ -1,10 +1,10 @@
 ---
-version: 1.8.10-1
+version: 1.8.10-2
 pkgbase:
   name: python-webob
   pkgdesc: WSGI request and response object
   pkgver: 1.8.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://webob.org/
   arch:
     - any
