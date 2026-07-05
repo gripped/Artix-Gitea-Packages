@@ -2,7 +2,7 @@
 
 pkgname=python-vcs-versioning
 pkgver=2.2.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc='the blessed package to manage your versions by vcs metadata'
 arch=(any)
 url='https://github.com/pypa/setuptools-scm'
