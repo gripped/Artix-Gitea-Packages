@@ -1,10 +1,10 @@
 ---
-version: 1.20.4-3
+version: 1.20.4-4
 pkgbase:
   name: ppsspp
   pkgdesc: A PSP emulator written in C++
   pkgver: 1.20.4
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.ppsspp.org/
   arch:
     - x86_64
