@@ -2,7 +2,7 @@
 # Contributor: Immae <ismael.bouya@normalesup.org>
 
 pkgname=editline
-pkgver=2.0.0
+pkgver=2.1.0
 pkgrel=1
 pkgdesc='A readline() replacement for UNIX without termcap (ncurses)'
 arch=('x86_64')
@@ -13,8 +13,8 @@ makedepends=(git)
 provides=(libeditline.so)
 install="$pkgname.install"
 source=("$pkgname::git+https://github.com/troglobit/editline#tag=$pkgver")
-sha512sums=('3fc6d415cfba1282154f0e570ecc25453e95d94237e729d4bf4a52e5f02848a694d0848d426579f0589b0bc0fe620fdeec871ac5ff5812d5f3606c333545d618')
-b2sums=('9aaf061c9d0fa5caa007f887b1378268035c551e178ab5960826dceb822acb04963d871c9ff49b068fb88884cb78273110b05005af78317052df948a859dd34e')
+sha512sums=('a09fd54f4281f2c920e15489675cfa1e1485e43e8c48436017561ac6de0d52ee1cd6d8c7b36395e335e99ed59e817348300897a8652046b63774f6a6f1bf229b')
+b2sums=('fc280e5fdb6b5d9f086fa1e58f8b6b3766aefe0215f86619fa071e0f2d4198d23a3c48a17b58a42ca2b7a59167b471fa020aae7da090ba0bc42898f37f31fbff')
 
 build () {
   cd "$pkgname"
