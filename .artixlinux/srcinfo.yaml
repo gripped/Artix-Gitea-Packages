@@ -1,10 +1,10 @@
 ---
-version: 1.12.6-1
+version: 1.12.6-2
 pkgbase:
   name: imlib2
   pkgdesc: Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support
   pkgver: 1.12.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://sourceforge.net/projects/enlightenment/
   arch:
     - x86_64
@@ -36,6 +36,8 @@ pkgbase:
     - 'libspectre: PS loader'
     - 'libwebp: WEBP loader'
     - 'openjpeg2: J2K loader'
+  provides:
+    - libImlib2.so
   source:
     - https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.12.6/imlib2-1.12.6.tar.xz
   sha256sums:
@@ -44,4 +46,4 @@ pkgbase:
     - e62b7e89f6d75fb6a649a589f06fea34d08bba696c68d9ece59ee9500558af874c1073ffecae2d1cadd6d603f1acf4d071a415dbf2ba73b505ccf11fe45eea62
 pkgname:
   - name: imlib2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
