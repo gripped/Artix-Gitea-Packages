@@ -18,14 +18,14 @@ pkgname=(
   'mariadb-pam')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=12.3.2
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
 makedepends=('git' 'boost' 'bzip2' 'cmake' 'cracklib' 'curl' 'jemalloc' 'judy' 'krb5' 'liburing'
              'libxcrypt' 'libxml2' 'lz4' 'openssl' 'pcre2' 'zlib' 'zstd' 'xz')
 validpgpkeys=('177F4010FE56CA3336300305F1656F24C74CD1D8') # MariaDB Signing Key <signing-key@mariadb.org>
-source=("mariadb::git+https://github.com/MariaDB/server.git#tag=mariadb-${pkgver}?signed"
+source=("mariadb::git+https://github.com/MariaDB/server.git?signed#tag=mariadb-${pkgver}"
         'git+https://github.com/MariaDB/mariadb-connector-c.git'
         'git+https://github.com/facebook/rocksdb.git'
         'git+https://github.com/codership/wsrep-lib.git'
@@ -105,8 +105,13 @@ build() {
     -DDEFAULT_CHARSET=utf8mb4
     -DDEFAULT_COLLATION=utf8mb4_unicode_ci
 
+    #    /\    WARNING: This option is kind of insane... One expects that AUTO does allow the
+    #   /\7\     build system to decide. Actually this is not true: Every value (ON / AUTO / OFF)
+    #  /_()_\    sets different default values for the build. Let's go with the most secure,
+    #            should be possible to enable at run time for all components.
+    -DENABLED_LOCAL_INFILE=OFF
+
     # features
-    -DENABLED_LOCAL_INFILE=ON
     -DPLUGIN_EXAMPLE=NO
     -DPLUGIN_FEDERATED=NO
     -DPLUGIN_FEEDBACK=NO
