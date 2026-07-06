@@ -1,9 +1,9 @@
 ---
-version: 2.23.0-2
+version: 2.24.0-2
 pkgbase:
   name: libva
   pkgdesc: Video Acceleration (VA) API for Linux
-  pkgver: 2.23.0
+  pkgver: 2.24.0
   pkgrel: 2
   url: https://intel.github.io/libva/
   arch:
@@ -37,9 +37,9 @@ pkgbase:
   backup:
     - etc/libva.conf
   source:
-    - git+https://github.com/intel/libva.git#tag=2.23.0
+    - git+https://github.com/intel/libva.git#tag=2.24.0
   b2sums:
-    - 010fa62fd2ee0b17678614bacacff0316a649e2305075bab76692d2d02634a76696bd0084184e4e07a61b65544882ee0b7b2e843fb69b6e1b156dc1d79b5679e
+    - 17613d834f6be6bf1c1d5502bed8ab64c6665b7870b5aa74176fcc1f23cad5f255c2326e4f3be49025c4d79a4fa5a53a8800d108e89ddfb856b0bee3620dddb1
 pkgname:
   - name: libva
 # generated with artixpkg 0.38.5-1-any
