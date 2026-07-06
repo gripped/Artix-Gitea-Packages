@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.5.2-1
+    version: 0.5.3-1
     packages:
-      - openrct2-0.5.2-1-x86_64.pkg.tar.zst
+      - openrct2-0.5.3-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
