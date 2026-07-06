@@ -1,10 +1,10 @@
 ---
-version: 5.0.1-1
+version: 5.0.1-2
 pkgbase:
   name: imv
   pkgdesc: Image viewer for Wayland and X11
   pkgver: 5.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://sr.ht/~exec64/imv/
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - 8fc7fd566b24decb4cc06e95223d4ec42fed62e1fdca879437f5e5319652479cc2e6e6ab3d804fb5848cbacd33bcc6e4f30076940f5a7b4ead5fd3dc44b03992
 pkgname:
   - name: imv
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
