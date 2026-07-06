@@ -8,7 +8,7 @@
 
 _pkgname="forkgram"
 pkgname="$_pkgname"
-pkgver=6.9.3
+pkgver=6.9.4
 pkgrel=1
 pkgdesc="Fork of the Telegram Desktop messaging app"
 url="https://github.com/Forkgram/tdesktop"
@@ -26,7 +26,7 @@ depends=(
   libjxl
   libvpx
   libxdamage
-  minizip-ng
+  minizip
   openal
   openh264
   opus
@@ -78,15 +78,10 @@ source=(
   "$_pkgname-$pkgver.$_pkgext"::"$url/releases/download/v$pkgver/$_pkgsrc.$_pkgext"
   "$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git"
   '0001-revert-cmake-patch.patch'
-  '0002-auto-dispatch.patch'
-  'crl-upgrade.tar.gz::https://github.com/desktop-app/lib_crl/archive/d9bb81f932646fd6b832bd9f1207fa1d09ecbcd9.tar.gz'
 )
-noextract=(crl-upgrade.tar.gz)
-sha256sums=('7b52a88d141e8848a7356e25e59c1337d4c4177221f76ff9165d6ee1a07f29cf'
+sha256sums=('79eceb02b67c35073bba42e3829db9182e771a0bf9fde55cab1d9bab138f7a89'
             'SKIP'
-            'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861'
-            'ae4e26d092d51ba93115f509f188b5c9bc0637ed0f2cdcd2ec2730786f74dd74'
-            'e361ef6bcce1e634611ce1ed097620f6490d1d89c984f5af7b0b3ba8e501f4f8')
+            'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861')
 
 prepare() {
   cd "$_pkgsrc"
@@ -102,16 +97,8 @@ prepare() {
     fi
   done
 
-  # force system minizip-ng
+  # force system minizip
   rm -rf "Telegram/ThirdParty/minizip"
-  sed -E -e '/pkg_check_modules/s&\bminizip\b&minizip-ng&' -i "cmake/external/minizip/CMakeLists.txt"
-  find Telegram \( -name '*.[ch]pp' -o -name '*.[ch]' \) -exec sed -i '/^#include /s@minizip/@minizip-ng/@g' {} +
-
-  # add missing headers for gcc 16
-  sed -E -e '1i #include <cstdint>' -i \
-    "Telegram/ThirdParty/tgcalls/tgcalls/DirectConnectionChannel.h" \
-    "Telegram/ThirdParty/tgcalls/tgcalls/third-party/json11.cpp" \
-    "Telegram/ThirdParty/tgcalls/tgcalls/v2/SignalingConnection.h"
 
   # disable RHI; breaks image rendering
   sed -E -e '/qputenv\("QT_WIDGETS_RHI"/d' -i \
@@ -119,10 +106,6 @@ prepare() {
     Telegram/SourceFiles/platform/linux/specific_linux.cpp \
     Telegram/SourceFiles/platform/mac/specific_mac.mm \
     Telegram/SourceFiles/platform/win/specific_win.cpp
-
-  # FIXME: upgrade bundled libcrl to use libdispatch
-  rm -r Telegram/lib_crl/*
-  bsdtar -C Telegram/lib_crl --strip-components 1 -xvf "$srcdir/crl-upgrade.tar.gz"
 }
 
 build() {
