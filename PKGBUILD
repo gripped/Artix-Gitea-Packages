@@ -9,7 +9,7 @@ pkgname=(opencv
          opencv-cuda
          python-opencv-cuda)
 pkgver=5.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Open Source Computer Vision Library'
 arch=(x86_64)
 license=(Apache-2.0)
@@ -92,7 +92,7 @@ prepare() {
   popd
 
   pushd opencv_contrib
-  patch -p1 < ../fix-std.patch 
+  patch -p1 < ../fix-std.patch
 }
 
 build() {
@@ -113,8 +113,6 @@ build() {
     -DINSTALL_C_EXAMPLES=ON
     -DINSTALL_PYTHON_EXAMPLES=ON
     -DCMAKE_INSTALL_PREFIX=/usr
-    -DCPU_BASELINE_DISABLE=SSE3
-    -DCPU_BASELINE_REQUIRE=SSE2
     -DOPENCV_EXTRA_MODULES_PATH="$srcdir"/opencv_contrib/modules
     -DOPENCV_SKIP_PYTHON_LOADER=ON
     # cmake's FindLAPACK doesn't add cblas to LAPACK_LIBRARIES, so we need to specify them manually
@@ -129,6 +127,13 @@ build() {
     -Dprotobuf_MODULE_COMPATIBLE=ON
     -DHDF5_NO_FIND_PACKAGE_CONFIG_FILE=ON
   )
+
+  if [[ ${CARCH} == x86_64* ]]; then
+    cmake_options+=(
+      -DCPU_BASELINE_DISABLE=SSE3
+      -DCPU_BASELINE_REQUIRE=SSE2
+    )
+  fi
 
   cmake -B build -S $pkgname "${cmake_options[@]}" \
     -DBUILD_WITH_DEBUG_INFO=ON
