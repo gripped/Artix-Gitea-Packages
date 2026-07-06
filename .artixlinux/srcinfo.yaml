@@ -1,9 +1,9 @@
 ---
-version: 19.3.44-1
+version: 19.3.46-1
 pkgbase:
   name: ruby-chef-utils
   pkgdesc: Basic utility functions for Core Chef Infra development
-  pkgver: 19.3.44
+  pkgver: 19.3.46
   pkgrel: 1
   url: https://github.com/chef/chef
   arch:
@@ -21,11 +21,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - ruby-chef-utils::git+https://github.com/chef/chef#tag=v19.3.44
+    - ruby-chef-utils::git+https://github.com/chef/chef#tag=v19.3.46
   sha512sums:
-    - 6f2e9740422e7a699fa3c211b12bfd440a58ddcf6f8c9d810838e9820a872228d3aeba78718c3d88d79c1e5da04d864a9e0c448d4733d62f5a3f60d641de2b6f
+    - 2d2244293522311da8d88fc395665563445bcab0d5cde0227904d5f3ef4b306272d02f1b5488354c8bd67b78b6b911eebbf617483dec8d91ecf0ab4ad8d91bfb
   b2sums:
-    - 7b141ed1a4eb3d254db5f512c4bdfffd755366af352f0b2e893f1f248a5920b13d29fcb4edfe717769bbb3d1c66dcd7b0c07f58a3054710da4ab1b20c265cff2
+    - 8e5562a220a99f6eac637f3d36eafdd26b322c3830d409c818b1d7a1f858881182f77e2c80ce6164de20114cac5ef5859e6c70575a807c48938f0157ebaae601
 pkgname:
   - name: ruby-chef-utils
 # generated with artixpkg 0.38.5-1-any
