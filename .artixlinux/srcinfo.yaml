@@ -1,10 +1,10 @@
 ---
-version: 2.1.5-1
+version: 2.1.5-2
 pkgbase:
   name: glycin
   pkgdesc: Sandboxed and extendable image decoding
   pkgver: 2.1.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://gnome.pages.gitlab.gnome.org/glycin/
   arch:
     - x86_64
@@ -17,9 +17,10 @@ pkgbase:
     - svt-av1
   makedepends:
     - clang
+    - gi-docgen
     - git
-    - gtk4
     - gobject-introspection
+    - gtk4
     - libheif
     - meson
     - rust
@@ -60,4 +61,7 @@ pkgname:
       - libseccomp
     provides:
       - libglycin-gtk4-2.so
+  - name: glycin-docs
+    pkgdesc: Sandboxed and extendable image decoding - documentation
+    depends: []
 # generated with artixpkg 0.38.5-1-any
