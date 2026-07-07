@@ -1,9 +1,9 @@
 ---
-version: 0.19.0-1
+version: 0.19.1-1
 pkgbase:
   name: patchelf
   pkgdesc: Small utility to modify the dynamic linker and RPATH of ELF executables
-  pkgver: 0.19.0
+  pkgver: 0.19.1
   pkgrel: 1
   url: https://nixos.org/patchelf.html
   arch:
@@ -13,13 +13,14 @@ pkgbase:
   makedepends:
     - git
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
   source:
-    - git+https://github.com/NixOS/patchelf.git#tag=0.19.0
+    - git+https://github.com/NixOS/patchelf.git#tag=0.19.1
   sha512sums:
-    - d2c0741ead24ba0740d9d9eaae11795471409bc54b22ac2ff16770029acd0b37d96ea33a9c551219940831f6649cf729b582d68fa95b82d2733dc62d47237099
+    - 521824ede56be8e5f51cceb2921d05ede4f4c7e3588937a17d25ae85d3abc7502145ea1de15c529283ccdc6d7bcbe6c13a9ef8b85f7d6240bd420cc4906d5f2e
   b2sums:
-    - 9aa5af03a417f832e45a745365517dc734d96ec6cf633f5807363ae40647412eadf4a4e74526d384487bd9b660f9622a4a94d8c1df9419a6941d7a59ee5a05e1
+    - e9196b800c5927346ea4e8268bc55de304cc33b18dd54de136f190d4103342f47934e65f33cf376799240199a7b32ef596819909bdb321ae4c029ba531966c08
 pkgname:
   - name: patchelf
 # generated with artixpkg 0.38.5-1-any
