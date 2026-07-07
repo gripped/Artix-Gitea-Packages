@@ -28,7 +28,6 @@ depends=(
   python
   python-gobject
   python-setproctitle
-  systemd-libs
   xapp
 )
 optdepends=('cinnamon-translations: i18n')
