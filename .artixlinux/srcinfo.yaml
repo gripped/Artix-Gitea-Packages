@@ -1,21 +1,21 @@
 ---
-version: 35.0.2-28
+version: 36.0.1-2
 pkgbase:
   name: android-tools
   pkgdesc: Android platform tools
-  pkgver: 35.0.2
-  pkgrel: 28
+  pkgver: 36.0.1
+  pkgrel: 2
   url: https://developer.android.com/tools
   arch:
     - x86_64
   license:
     - Apache-2.0 AND BSD-3-Clause AND GPL-2.0-or-later AND LGPL-2.1-or-later AND MIT AND libselinux-1.0
   makedepends:
-    - gtest
     - cmake
-    - go
-    - ninja
     - git
+    - go
+    - gtest
+    - ninja
   depends:
     - abseil-cpp
     - brotli
@@ -24,6 +24,7 @@ pkgbase:
     - libgcc
     - libstdc++
     - libudev.so
+    - libusb
     - lz4
     - pcre2
     - protobuf
@@ -33,13 +34,9 @@ pkgbase:
     - 'python: {mk,unpack_,repack_}bootimg and mkdtboimg support'
     - 'android-udev: optional additional device udev rules'
   source:
-    - https://github.com/nmeum/android-tools/releases/download/35.0.2/android-tools-35.0.2.tar.xz
-    - android-tools-35.0.2-fix-protobuf-30.0-compilation.patch
-    - gcc-16.patch
+    - https://github.com/nmeum/android-tools/releases/download/36.0.1/android-tools-36.0.1.tar.xz
   sha256sums:
-    - d2c3222280315f36d8bfa5c02d7632b47e365bfe2e77e99a3564fb6576f04097
-    - cd2034ca35c3b5ca82f095106cd099abdbc5a682b7b9892eb0ebead616370e96
-    - c6d130d15ad96c751a477e68f1e4f14ec3b946d0581ea23ceefd82f6e50a9f0c
+    - 38e8a84b739480141de0836bf6d581b3339ac7d53d0f7ce8c044a3368c8c2f8f
 pkgname:
   - name: android-tools
 # generated with artixpkg 0.38.5-1-any
