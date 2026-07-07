@@ -3,7 +3,7 @@
 
 pkgname=libvips
 pkgver=8.18.3
-pkgrel=2
+pkgrel=3
 pkgdesc="A fast image processing library with low memory needs"
 arch=('x86_64')
 license=('LGPL-2.1-or-later')
