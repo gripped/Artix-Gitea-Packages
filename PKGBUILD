@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Thore Bödecker <foxxx0@archlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Justin Kromlinger <hashworks@archlinux.org>
+# Maintainer: Thore Bödecker <foxxx0@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=consul
-pkgver=1.22.6
-pkgrel=2
+pkgver=2.0.1
+pkgrel=1
 pkgdesc="A tool for service discovery, monitoring and configuration."
 arch=('x86_64')
 url="https://www.consul.io"
@@ -20,7 +19,7 @@ source=("git+https://github.com/hashicorp/consul#tag=v${pkgver}"
         )
 install=consul.install
 backup=('etc/default/consul')
-sha512sums=('da9f7489e797e77f2aeea5f4aed0b7277b1fccf8ac2626b558c9f904db1f31f3e555e49770f4785cab470f0dcb86a3a26928ba611d809dbcf8a57c2a10b62910'
+sha512sums=('dd7a9402232cc9f18d799e1517c84a05bfb354124a3d0cc48cb3f9c72b2cd5e94935f76cda04aa15abfd8338099d03afb6222da78308b5e14b4c52edf021ccb1'
             'ec5a800529a297c709fa383c094ecf106351cf0f8ac7b613b972d415d77fe001088902d7ab805e63e78a8e6360323fec1b795db5a4446df1e21b9b4ed31e7079'
             'f6d66e970f7cdbba2f1a3d15d89df5dfa33810d6330dae0aaf42dee0938354667a505c39c65db74fe3c06c8f753bc6155a64419fa31b4445ccbe23f5e6a685c6'
             'c4292b8f56ee955ed7385a49843fd90d6434029891b3e1e724cb2fc841514c06e2554a26d3937c114371b18c2168c4e64319eb2cbd726ee8b35870df19089348')
