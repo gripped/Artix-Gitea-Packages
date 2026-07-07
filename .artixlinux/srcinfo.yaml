@@ -1,9 +1,9 @@
 ---
-version: 5.3.0-1
+version: 5.3.1-1
 pkgbase:
   name: docker-compose
   pkgdesc: Fast, isolated development environments using Docker
-  pkgver: 5.3.0
+  pkgver: 5.3.1
   pkgrel: 1
   url: https://www.docker.com/
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   makedepends:
     - go
   source:
-    - docker-compose-5.3.0.tar.gz::https://github.com/docker/compose/archive/v5.3.0.tar.gz
+    - docker-compose-5.3.1.tar.gz::https://github.com/docker/compose/archive/v5.3.1.tar.gz
   b2sums:
-    - fc7b24ecd8cad8dbab12f7bb3b3ab59f49a9704b84bfd6638f08a6c523df29569e8901b3374e6fe3d11b4aea530b8f5e87cdd3fdb1a18e80fb89ea4621556a35
+    - 745fb4835a22e99ace74e4b22a9beccb0dde65537e1cfbe79d248220c2a20cbb748d701c8966a79724a736d84b189723b8525fdbac6ac9215f9d593092576bae
 pkgname:
   - name: docker-compose
 # generated with artixpkg 0.38.5-1-any
