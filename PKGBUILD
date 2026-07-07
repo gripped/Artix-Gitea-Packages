@@ -3,7 +3,7 @@
 
 pkgname=conmon
 pkgver=2.2.1
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='OCI container runtime monitor'
 arch=(x86_64)
@@ -18,7 +18,7 @@ b2sums=('eeb41e92494d2464af1bc47c4c7fda14256336e0ad16ef7c708e302b2b8fbd0537b7584
 
 build() {
   cd conmon
-  make PREFIX=/usr LIBEXECDIR=/usr/lib DESTDIR="$pkgdir"
+  make DISABLE_SYSTEMD=1 PREFIX=/usr LIBEXECDIR=/usr/lib DESTDIR="$pkgdir"
 }
 
 package() {
