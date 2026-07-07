@@ -1,10 +1,10 @@
 ---
-version: 10.4p1-1
+version: 10.4p1-2
 pkgbase:
   name: openssh
   pkgdesc: SSH protocol implementation for remote login, command execution and file transfer
   pkgver: 10.4p1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.openssh.com/portable.html
   arch:
     - x86_64
@@ -38,6 +38,7 @@ pkgbase:
   source:
     - https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.4p1.tar.gz
     - https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.4p1.tar.gz.asc
+    - 0001-fix-GSSAPI-option-names.patch
     - 99-artixlinux.conf
     - openssh.tmpfiles
     - sshd.pam
@@ -47,6 +48,7 @@ pkgbase:
   sha256sums:
     - ef6026dd2aea8d56059638d5d3262902c892ceba9f88395835e0d06d3fb63238
     - SKIP
+    - 67ad6f713dc45f8a746c726319e085db76e7aa1b46761cde21980f610b130181
     - 907a6b8012214218d2bc505fded0fde6cbf7aa863cce630048e1c9b4c9189e48
     - 96735b6bde1339e6f456c4184b66c2dd2f59675335f6f401beed9195995a8a9b
     - 633e24cbfcb045ba777d3e06d5f85dfaa06d44f4727d38c7fb2187c57498221d
@@ -54,6 +56,7 @@ pkgbase:
   b2sums:
     - 3051a345fd24333708277a1de781deca9094dd07cc55e613e93715b1266d80d59043bf5cdb2282d02c797cb9446916020e70fbd4c7a2470da7ab98eb612f6b74
     - SKIP
+    - a443d46d1e38ff36ec76ca43b5327e72063266bdbe04394acb53880a437c3a8e3e8ede0c7f4f989ac4ca19beb57ba4ecad884a86890e76f7de3e121a3fa82367
     - 3d195606c6ca9d254ccecad974f1e729e338c160861ba52d9e2d0f07b297618f11b93049085df960a4d06106d54d90b9a92521efa5a9a08ea7f52d0512942e68
     - 5d8e61300ab9771b240f06e62a1191d9b316dd474dd43aafd596e008c8e73b92748deef110059f1bd7fae6844b30c87d005f15666297fed29aa6e95955c7fcaa
     - 1d24cc029eccf71cee54dda84371cf9aa8d805433e751575ab237df654055dd869024b50facd8b73390717e63100c76bca28b493e0c8be9791c76a2e0d60990a
