@@ -3,8 +3,8 @@
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 
 pkgname=pinentry
-pkgver=1.3.2
-pkgrel=2
+pkgver=1.3.3
+pkgrel=1
 pkgdesc='Collection of simple PIN or passphrase entry dialogs which utilize the Assuan protocol'
 url='https://gnupg.org/related_software/pinentry/'
 arch=('x86_64')
@@ -23,7 +23,7 @@ optdepends=(
 )
 source=("https://www.gnupg.org/ftp/gcrypt/${pkgname}/${pkgname}-${pkgver}.tar.bz2"{,.sig}
         'pinentry')
-sha256sums=('8e986ed88561b4da6e9efe0c54fa4ca8923035c99264df0b0464497c5fb94e9e'
+sha256sums=('c2970f16d6afb66ecddfca767d743936c86239bff936eed7fd7597a678414b63'
             'SKIP'
             'fae5557563bc9102cdc87d580f962b5261c506b321e299c926b1282e876f85f9')
 validpgpkeys=(
@@ -34,7 +34,7 @@ validpgpkeys=(
 
 build() {
   cd "${pkgname}-${pkgver}"
-  ./configure \
+  CXXFLAGS="-std=c++17" ./configure \
     --prefix=/usr \
     --enable-pinentry-tty \
     --enable-pinentry-curses \
