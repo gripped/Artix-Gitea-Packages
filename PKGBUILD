@@ -10,7 +10,7 @@ pkgname=(
   postfix-{cdb,ldap,lmdb,mongodb,mysql,pcre,pgsql,sqlite}
 )
 pkgver=3.11.5
-pkgrel=1
+pkgrel=2
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
 url="https://www.postfix.org/"
@@ -38,20 +38,20 @@ source=(
   https://www.artfiles.org/postfix.org/postfix-release/official/$pkgbase-$pkgver.tar.gz
   https://www.artfiles.org/postfix.org/postfix-release/official/$pkgbase-$pkgver.tar.gz.gpg2
   $pkgbase-3.5.8-main_defaults.patch
-  $pkgbase-3.11.4-lmdb-1.0-compat.patch
+  $pkgbase-3.11.5-lmdb-1.0-compat.patch
   $pkgbase.sysusers
   $pkgbase.tmpfiles
 )
 sha512sums=('af9d3678844afcbdf77c228e29138255a935c63988c3b8dff31bb2a66315f376d94d782b5545829e1491c6a1335172ad194b7f8fd02038db35cd6527cff82087'
             '7e8fe9ace6ada3168cf7f1f6611879c5a0015c0114d5da07ed46e6d9455847be4963c79dcfdf60b53b07b2a7dadf24d6e2449c81a72e966bc75613ef83f4a7b8'
             '4630bb84206e0534723f50e4fb0e6f83a47cfd33187801eede052962d332b2754af8761a8d2b81f52cba9d07a7a0335eef06e22347ec7bc69b86f561685bd575'
-            'dafc028d3a0d57b0fc20b89244859e6248ccf5aca4d951ca24df6aad0b065867542eb218391cea25e3562bbda484acfb6ff90714aac8c72e3ac62477937b5ab9'
+            'dd87dd1f0af39f0674f966c9fb8f97639d30df98b3f436e33aec52f0e31a631a2f5c4d1b9f0c264157d9682487e684c93ddc70c5a10c9ed00efb78b608e4448b'
             '4094996d0bc9820feaae098524c6b45bd39a71b0ad9342afb301339a176efe1f5b205829be43f9b10bdf220371450fe1db0461e19e7f6edb8ed9c9ed15ae8572'
             'd08574a6acd595fc146513c92dc1bb341c3432d67de1e93ab73a7ce60e385dd34f3a55e3d3d7aec5f358ac4aae260f028599ac47650ebc663cea3043a760a7bc')
 b2sums=('c677014019ce0851e45b103e5d6a88972a10cd3685d4c68b47f6b94ee318b9e81fb017f5b15f4307f3b8c6719afcbba33f4fc1c31a4fb65fe040522d6af38704'
         '410b111707ebd9539e8be33a9bd2605d7515c0931d971cbaf0114e3f8f505e759d6c9c25350080becebb77532ca03ece647c14ce15b2d10f5e938bd08e6f76a3'
         'e101c31ff9b68ec025183cbb199109d5bc94135d247c06fa903b97ccea6d3255b39b2780f3d1e3848ea68109ba91cdde5886d0a18d547b2f41d9643d2ac5bf5f'
-        'e09d3fe016beb3095fb37c0293bf7e20cb5de63792edc333e85154f9c45ae69d2c269420fb0f59a9bd013fededd081ed7312c7587f28c90059f0942e76af6043'
+        '2e50e4c2f15538662a018a9db3240a4f644cc6a05e8c23f9a29a47dc52aa81dc1e230c701ed1d38056d22e127f0014bede66b1b388fb3ae887513d0176849159'
         'd2605f8720a4cb9b666ac70f1f060840d66c848ae2f884ac5288aed0c80b69f22a799d187fd899c2064cc24cf33c1baf94ceb13192eb3c6fc932d3128111da4d'
         'de31693cea5f452a9c8c0d1cf5210a6e67c0176f8b1a4d74106f2e803911569e9fdbb2301b3b5dc7ad6a6da285026b1a3ed3de52117d216b030cf0d92348909d')
 validpgpkeys=('622C7C012254C186677469C50C0B590E80CA15A7') # Wietse Venema <wietse@porcupine.org>
@@ -71,7 +71,8 @@ prepare() {
   patch -Np1 -d $pkgbase-$pkgver -i ../$pkgbase-3.5.8-main_defaults.patch
 
   # resolve LMDB 1.0 compatibility problem
-  patch -Np2 -d $pkgbase-$pkgver -i ../$pkgbase-3.11.4-lmdb-1.0-compat.patch
+  # https://www.mail-archive.com/postfix-users@postfix.org/msg108095.html
+  patch -Np1 -d $pkgbase-$pkgver -i ../$pkgbase-3.11.5-lmdb-1.0-compat.patch
 }
 
 build() {

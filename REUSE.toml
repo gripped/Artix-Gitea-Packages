@@ -27,7 +27,7 @@ SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
 path = [
-    "postfix-3.11.4-lmdb-1.0-compat.patch",
+    "postfix-3.11.5-lmdb-1.0-compat.patch",
 ]
 SPDX-FileCopyrightText = "postfix contributors"
 SPDX-License-Identifier = "EPL-2.0 OR IPL-1.0"

@@ -25,17 +25,17 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.11.5-1
+    version: 3.11.5-2
     packages:
-      - postfix-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-cdb-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-ldap-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-lmdb-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-mongodb-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-mysql-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-pcre-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-pgsql-3.11.5-1-x86_64.pkg.tar.zst
-      - postfix-sqlite-3.11.5-1-x86_64.pkg.tar.zst
+      - postfix-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-cdb-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-ldap-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-lmdb-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-mongodb-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-mysql-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-pcre-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-pgsql-3.11.5-2-x86_64.pkg.tar.zst
+      - postfix-sqlite-3.11.5-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.11.4-1
