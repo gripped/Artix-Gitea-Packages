@@ -3,7 +3,7 @@
 # Contributor: Gordian Edenhofer <gordian.edenhofer[at]yahoo[dot]de>
 
 pkgname=certbot
-pkgver=5.6.0
+pkgver=5.7.0
 pkgrel=1
 pkgdesc='An ACME client'
 arch=(any)
@@ -17,6 +17,7 @@ depends=(
   python-configobj
   python-cryptography
   python-distro
+  python-josepy
   python-parsedatetime
   python-pyrfc3339
 )
@@ -50,15 +51,20 @@ source=(
   "$_repo::git+https://github.com/certbot/certbot#tag=v$pkgver"
   tmpfiles.conf
 )
-sha512sums=('6ede8da67b7f6c50336ade33d385976364ad6a8b7e24473847301f46dea62da4b02f4bc06b0df5fbee4c89c1ba016fa79b4d164fe489c378184911237a8b0db9'
+sha512sums=('8bf169295968b9a54dbf2be45239ba46d758fa4e1fa72f468f750b7ed001028f583f564204a95dd277743b5efc1c5202d6fc7d9948579e39be1c853193ade9dd'
             'fbb7bb4591876aeb2e118c3f3fc8ff507b6a3127de0f921c689e1d74c70320b4f2b8bf05b488ec4f714259701f1ac54e64a9f6181475da6bd6d1e3da3a602217')
-b2sums=('b63ff547309041cc7171a4ccac9b6e57329b25daa960955039d8382d6dc139baf6496824f1ee9e0ec38c76f3c254c2189857cd724d7e531cdb86232833f2f61b'
+b2sums=('366ef334b4cfdd48b138a8b5f6fe15b6ffd97af2ba575e246fe92fb1f5a80eb4e1b8e7d350f5483309ee5ce70b7af0e55774e719b98fbe1f3c8066da00ce3c83'
         '7d2c26a9953d3b5a899053bdd7bd77051c67abe6480af2bfaaee06f20a399b0b4ccccc0af35cfe9e6d2b1fc833dbff928ba46771a9127720073dda29aef9a2e0')
 
 build() {
   cd "$_repo/$pkgname"
 
   python -m build --wheel --no-isolation
+
+  # install to temporary directory
+  python -m installer --destdir="$PWD/tmp_install" dist/*.whl
+  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  export PYTHONPATH="$PWD/tmp_install$site_packages"
 
   # create man pages
   make -C docs man
@@ -68,9 +74,9 @@ check() {
   cd "$_repo/$pkgname"
 
   # install to temporary directory
-  python -m installer --destdir="$PWD/tmp_install" dist/*.whl
-  local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-  export PYTHONPATH="$PWD/tmp_install$site_packages"
+  #python -m installer --destdir="$PWD/tmp_install" dist/*.whl
+  #local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
+  #export PYTHONPATH="$PWD/tmp_install$site_packages"
 
   # https://github.com/certbot/certbot/issues/9606
   python \
