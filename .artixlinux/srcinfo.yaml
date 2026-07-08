@@ -1,9 +1,9 @@
 ---
-version: 3.6.0-1
+version: 3.7.0-1
 pkgbase:
   name: libffi
   pkgdesc: Portable foreign function interface library
-  pkgver: 3.6.0
+  pkgver: 3.7.0
   pkgrel: 1
   url: https://sourceware.org/libffi/
   arch:
@@ -17,11 +17,11 @@ pkgbase:
   provides:
     - libffi.so
   source:
-    - libffi-3.6.0.tar.gz::https://github.com/libffi/libffi/archive/refs/tags/v3.6.0.tar.gz
+    - libffi-3.7.0.tar.gz::https://github.com/libffi/libffi/archive/refs/tags/v3.7.0.tar.gz
   sha256sums:
-    - 5ad876a153a6ad0d706fcb5a53af1e43efe3be88668f78d833b49353bd51a939
+    - 85a2f10a52644b63313307b53051147f159cc7b61a1e71c23b8634c900a8982d
   b2sums:
-    - f76b0caa8972feade8da43a1a2e057785f02d034ae3fdf646b564c0d084b9a6a36909eda5b525ba7d45be0686cdb51d1c984a3a514425c8cfadd300d45794105
+    - 0d067b011727173398b2ef36dd3a89bf7a941f708f98edb1dbffb9d5d7f8ff63cf1b7bca3283a7a34a540decdf7dce316da9493dee0154b04566e5cd50691f90
 pkgname:
   - name: libffi
 # generated with artixpkg 0.38.5-1-any
