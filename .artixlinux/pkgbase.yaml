@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.0.7-5
+    version: 0.0.8-1
     packages:
-      - libstaroffice-0.0.7-5-x86_64.pkg.tar.zst
-      - libstaroffice-doc-0.0.7-5-x86_64.pkg.tar.zst
+      - libstaroffice-0.0.8-1-x86_64.pkg.tar.zst
+      - libstaroffice-doc-0.0.8-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

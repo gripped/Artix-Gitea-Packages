@@ -1,10 +1,10 @@
 ---
-version: 0.0.7-5
+version: 0.0.8-1
 pkgbase:
   name: libstaroffice
   pkgdesc: filter for old StarOffice documents(.sdc, .sdw, ...) based on librevenge
-  pkgver: 0.0.7
-  pkgrel: 5
+  pkgver: 0.0.8
+  pkgrel: 1
   url: https://github.com/fosnola/libstaroffice
   arch:
     - x86_64
@@ -17,9 +17,9 @@ pkgbase:
     - gcc-libs
     - glibc
   source:
-    - https://github.com/fosnola/libstaroffice/releases/download/0.0.7/libstaroffice-0.0.7.tar.xz
+    - https://github.com/fosnola/libstaroffice/releases/download/0.0.8/libstaroffice-0.0.8.tar.xz
   sha256sums:
-    - f94fb0ad8216f97127bedef163a45886b43c62deac5e5b0f5e628e234220c8db
+    - bbca92882e96c55bd1527670866d6bc7529ccb12786da55a2398b60a063378da
 pkgname:
   - name: libstaroffice
     depends:
@@ -30,4 +30,4 @@ pkgname:
       - libgcc
   - name: libstaroffice-doc
     pkgdesc: filter for old StarOffice documents(.sdc, .sdw, ...) based on librevenge - documentation
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
