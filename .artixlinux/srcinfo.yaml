@@ -1,10 +1,10 @@
 ---
-version: 6.0.2.1-1
+version: 6.0.2.1-2
 pkgbase:
   name: krita
   pkgdesc: Edit and paint images
   pkgver: 6.0.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://krita.org
   arch:
     - x86_64
