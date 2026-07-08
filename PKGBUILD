@@ -3,8 +3,8 @@
 # Contributor: Ionut Biru <ibiru@archlinux.org>
 
 pkgname=libva
-pkgver=2.24.0
-pkgrel=2
+pkgver=2.24.1
+pkgrel=1
 pkgdesc='Video Acceleration (VA) API for Linux'
 arch=(x86_64)
 url=https://intel.github.io/libva/
@@ -39,7 +39,7 @@ provides=(
 )
 backup=(etc/libva.conf)
 source=(git+https://github.com/intel/libva.git#tag=${pkgver})
-b2sums=('17613d834f6be6bf1c1d5502bed8ab64c6665b7870b5aa74176fcc1f23cad5f255c2326e4f3be49025c4d79a4fa5a53a8800d108e89ddfb856b0bee3620dddb1')
+b2sums=('5e7b85e1c16a68432069cbad3e11096311b97e4532061e97f247c0abbe16c2e991771860b9976f459000247bbc280b4825241a5c0b09571cac6be9b432ab3eaa')
 
 build() {
   CFLAGS+=" -DENABLE_VA_MESSAGING" # Option missing
