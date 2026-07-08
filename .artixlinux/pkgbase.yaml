@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.73.0-1
+    version: 1.74.0-1
     packages:
-      - tmuxp-1.73.0-1-any.pkg.tar.zst
+      - tmuxp-1.74.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.70.1-1
