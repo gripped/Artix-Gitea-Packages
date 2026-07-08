@@ -1,10 +1,10 @@
 ---
-version: 020-6
+version: 020-1
 pkgbase:
   name: b43-fwcutter
   pkgdesc: firmware extractor for the b43 kernel module
   pkgver: 020
-  pkgrel: 6
+  pkgrel: 1
   url: https://wireless.docs.kernel.org/en/latest/en/users/drivers/b43.html
   arch:
     - x86_64
