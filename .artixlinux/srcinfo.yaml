@@ -1,9 +1,9 @@
 ---
-version: 1.0.5-1
+version: 1.0.6-1
 pkgbase:
   name: libmicrohttpd
   pkgdesc: a small C library that is supposed to make it easy to run an HTTP server as part of another application.
-  pkgver: 1.0.5
+  pkgver: 1.0.6
   pkgrel: 1
   url: https://www.gnu.org/software/libmicrohttpd/
   arch:
@@ -17,13 +17,13 @@ pkgbase:
   provides:
     - libmicrohttpd.so
   source:
-    - https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz
-    - https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.5.tar.gz.sig
+    - https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.6.tar.gz
+    - https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-1.0.6.tar.gz.sig
   validpgpkeys:
     - EA812DBEFA5A7EF17DA8F2C1460A317C3326D2AE
     - D8423BCB326C7907033929C7939E6BE1E29FC3CC
   sha256sums:
-    - b46d00f58efa6f497b97d2e782c4ee66301d412ddd855dd3068518b3a2cd3ea2
+    - bb5cfcadfc52dbd5eb512d6e2995e0361351c33e97a87aba426d3a4a7ba6cf70
     - SKIP
 pkgname:
   - name: libmicrohttpd
