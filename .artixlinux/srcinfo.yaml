@@ -1,9 +1,9 @@
 ---
-version: 41.10.0-1
+version: 41.10.1-1
 pkgbase:
   name: electron41
   pkgdesc: Build cross platform desktop apps with web technologies
-  pkgver: 41.10.0
+  pkgver: 41.10.1
   pkgrel: 1
   url: https://electronjs.org
   arch:
@@ -78,7 +78,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/electron/electron.git#tag=v41.10.0
+    - git+https://github.com/electron/electron.git#tag=v41.10.1
     - https://gitlab.com/Matt.Jolly/chromium-patches/-/archive/146/chromium-patches-146.tar.bz2
     - chromium-138-nodejs-version-check.patch
     - chromium-138-rust-1.86-mismatched_lifetime_syntaxes.patch
@@ -252,7 +252,7 @@ pkgbase:
     - chromium-mirror_third_party_dawn_third_party_partition_alloc::git+https://chromium.googlesource.com/chromium/src/base/allocator/partition_allocator.git#commit=51b41d1d8503d591014d98df29bdd94db18279a9
     - chromium-mirror_third_party_openscreen_src_third_party_tinycbor_src::git+https://chromium.googlesource.com/external/github.com/intel/tinycbor.git#commit=d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7
   sha256sums:
-    - 5e2e7732947cce686374c92d5e3e47fdb5870c6e2da6167c6c00c7008153d5aa
+    - 33be957253caecc064c9a3caad2201a2aa7594b97ef0188976a8408b2c1c51d7
     - 606259094fe5ac5f5b2befcb7a8e89ccc973a302b948d6531e2498daa2e2cf46
     - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
     - 5abc8611463b3097fc5ce58017ef918af8b70d616ad093b8b486d017d021bbdf

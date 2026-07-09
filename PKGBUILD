@@ -9,7 +9,7 @@
 # Note: source array can be synced with an Electron release after updating $pkgver with:
 # bash -c 'source PKGBUILD; _update_sources'
 
-pkgver=41.10.0
+pkgver=41.10.1
 _gcc_patches=146
 pkgrel=1
 _major_ver=${pkgver%%.*}
@@ -18,8 +18,7 @@ pkgdesc='Build cross platform desktop apps with web technologies'
 arch=(x86_64)
 url='https://electronjs.org'
 license=(MIT BSD-3-Clause)
-depends=(
-         c-ares
+depends=(c-ares
          libgcc
          glibc # libc.so libm.so
          gtk3 libgtk-3.so
@@ -27,8 +26,7 @@ depends=(
          libffi libffi.so
          libpulse libpulse.so
          nss # libnss3.so
-         zlib libz.so
-)
+         zlib libz.so)
 makedepends=(clang
              compiler-rt
              git
@@ -239,7 +237,7 @@ source=("git+https://github.com/electron/electron.git#tag=v$pkgver"
         chromium-mirror_third_party_openscreen_src_third_party_tinycbor_src::git+https://chromium.googlesource.com/external/github.com/intel/tinycbor.git#commit=d393c16f3eb30d0c47e6f9d92db62272f0ec4dc7
         # END managed sources
         )
-sha256sums=('5e2e7732947cce686374c92d5e3e47fdb5870c6e2da6167c6c00c7008153d5aa'
+sha256sums=('33be957253caecc064c9a3caad2201a2aa7594b97ef0188976a8408b2c1c51d7'
             '606259094fe5ac5f5b2befcb7a8e89ccc973a302b948d6531e2498daa2e2cf46'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '5abc8611463b3097fc5ce58017ef918af8b70d616ad093b8b486d017d021bbdf'
