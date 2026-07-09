@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.4.9-1
+    version: 0.4.10-2
     packages:
-      - rio-0.4.9-1-x86_64.pkg.tar.zst
+      - rio-0.4.10-2-x86_64.pkg.tar.zst
     debug: []
