@@ -1,10 +1,10 @@
 ---
-version: 26.04.3-1
+version: 26.04.3-2
 pkgbase:
   name: calligra
   pkgdesc: A set of applications for productivity and creative usage
   pkgver: 26.04.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.calligra-suite.org/
   arch:
     - x86_64
