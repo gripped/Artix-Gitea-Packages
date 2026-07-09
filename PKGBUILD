@@ -10,7 +10,7 @@
 
 pkgname=tenacity
 pkgver=1.3.5
-pkgrel=1
+pkgrel=2
 pkgdesc="An easy-to-use multi-track audio editor and recorder, forked from Audacity"
 arch=(x86_64)
 url="https://tenacityaudio.org"
