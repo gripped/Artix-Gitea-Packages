@@ -59,7 +59,7 @@ source=("https://downloads.sourceforge.net/${pkgname}/$_archive.tar.xz"{,.asc}
 sha256sums=('fdfe3e7cbe84b760b38d0561ed8736f9d25d4923adde6e15e03760d83be6166d'
             'SKIP'
             'e84b3f12333cac812c942b85f06403669ad3792bdae821a7e95fa9a3258e1cda'
-            'dffd5d9aabd1ae3c8c95832ceb4f3113c5d320ce185770fb961584bbe7bf4bc2'
+            'be100d3e6e3b7228261d5d7dbc6094e9e02dc0a00f7919b9fe1b3b9196916a9a'
             '4238d53ae3cb4d545a7c0835a6a0cf082c3b51a3adb74f8cb3dd82977595b4b1')
 validpgpkeys=(5086B8D68E70FDDF4C40045AEF7B95E7F60166DA  # Peter Linnell <plinnell@scribus.net>
               757F5E9B13DD648887AD50092D47C099E782504E  # The Scribus Team (www.scribus.net) <the_scribus_team@scribus.net>
