@@ -1,10 +1,10 @@
 ---
-version: 32.1.2-8
+version: 32.1.2-9
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
   pkgver: 32.1.2
-  pkgrel: 8
+  pkgrel: 9
   url: https://obsproject.com
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
     - libfdk-aac
     - x264
     - swig
-    - luajit
     - sndio
     - nlohmann-json
     - ffnvcodec-headers
@@ -43,6 +42,7 @@ pkgbase:
     - simde
     - qrcodegencpp-cmake
     - python
+    - luajit
   source:
     - obs-studio::git+https://github.com/obsproject/obs-studio#tag=32.1.2
     - obs-studio-libdshowcapture::git+https://github.com/obsproject/libdshowcapture.git
@@ -64,7 +64,6 @@ pkgname:
       - 'libva-intel-driver: hardware encoding for older Intel GPUs'
       - 'intel-media-driver: hardware encoding for recent Intel GPUs'
       - 'libva-mesa-driver: hardware encoding'
-      - 'luajit: scripting support'
       - 'sndio: Sndio input client'
       - 'v4l2loopback-dkms: virtual camera support'
       - 'xdg-desktop-portal-impl: Wayland window/screen capture'

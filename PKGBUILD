@@ -7,15 +7,15 @@
 pkgbase=obs-studio
 pkgname=('obs-studio' 'obs-studio-plugin-browser')
 pkgver=32.1.2
-pkgrel=8
+pkgrel=9
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
 license=('GPL-2.0-only')
 depends=('ffmpeg' 'jansson' 'libxinerama' 'libxkbcommon-x11' 'mbedtls3' 'rnnoise' 'pciutils'
          'qt6-svg' 'curl' 'jack' 'gtk-update-icon-cache' 'pipewire' 'libxcomposite'
-         'libdatachannel' 'uthash' 'simde' 'qrcodegencpp-cmake' 'python')
-makedepends=('cef' 'cmake' 'libfdk-aac' 'x264' 'swig' 'luajit' 'sndio' 'nlohmann-json'
+         'libdatachannel' 'uthash' 'simde' 'qrcodegencpp-cmake' 'python' 'luajit')
+makedepends=('cef' 'cmake' 'libfdk-aac' 'x264' 'swig' 'sndio' 'nlohmann-json'
              'ffnvcodec-headers' 'websocketpp' 'asio' 'extra-cmake-modules'
              'git')
 source=(
@@ -97,7 +97,6 @@ package_obs-studio() {
               'libva-intel-driver: hardware encoding for older Intel GPUs'
               'intel-media-driver: hardware encoding for recent Intel GPUs'
               'libva-mesa-driver: hardware encoding'
-              'luajit: scripting support'
               'sndio: Sndio input client'
               'v4l2loopback-dkms: virtual camera support'
               'xdg-desktop-portal-impl: Wayland window/screen capture'

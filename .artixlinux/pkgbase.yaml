@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 32.1.2-8
+    version: 32.1.2-9
     packages:
-      - obs-studio-32.1.2-8-x86_64.pkg.tar.zst
-      - obs-studio-plugin-browser-32.1.2-8-x86_64.pkg.tar.zst
+      - obs-studio-32.1.2-9-x86_64.pkg.tar.zst
+      - obs-studio-plugin-browser-32.1.2-9-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
