@@ -1,0 +1,5 @@
+[jellyfin-server]
+source = "git"
+git = "https://github.com/jellyfin/jellyfin.git"
+prefix = "v"
+exclude_regex = ".*rc.*"
