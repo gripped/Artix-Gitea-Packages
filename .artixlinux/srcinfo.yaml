@@ -1,10 +1,10 @@
 ---
-version: 1.4.4-3.1
+version: 1.4.4-4
 pkgbase:
   name: inkscape
   pkgdesc: Professional vector graphics editor
   pkgver: 1.4.4
-  pkgrel: 3.1
+  pkgrel: 4
   url: https://inkscape.org/
   arch:
     - x86_64
@@ -138,6 +138,7 @@ pkgbase:
     - inkscape-extras-extension-curve::git+https://gitlab.com/inkscape/extras/extension-curve.git
     - fix_build_with_poppler_26.05.patch
     - fix_build_with_poppler_26.06.patch
+    - fix_build_with_poppler_26.07.patch
   sha256sums:
     - 591b78df3a26a9129d526439a34fa1619a3d79ea70f5ac46d1e982c0c42e9544
     - SKIP
@@ -151,6 +152,7 @@ pkgbase:
     - SKIP
     - 59e17621493f16fa0ab43ddf5df555aa1d66ddc0b848cffd9a65bcd4ac0eb7f8
     - f2530a60d2c437a650c2625bc1bc23afb524d11573ab68db6143d08b0eeaa942
+    - 19a35e13461c90a2180224f712766ce4891d121142bc8c4f39ccda376e3fb5c7
 pkgname:
   - name: inkscape
 # generated with artixpkg 0.38.5-1-any
