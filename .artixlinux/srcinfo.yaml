@@ -1,10 +1,10 @@
 ---
-version: 16.1.1+r346+g4e03491b401d-1
+version: 16.1.1+r346+g4e03491b401d-3
 pkgbase:
   name: gcc
   pkgdesc: The GNU Compiler Collection
   pkgver: 16.1.1+r346+g4e03491b401d
-  pkgrel: 1
+  pkgrel: 3
   url: https://gcc.gnu.org
   arch:
     - x86_64
@@ -40,11 +40,6 @@ pkgbase:
     - c99
     - gcc-ada-repro.patch
     - tune_branch_prediction_cost.patch
-  validpgpkeys:
-    - F3691687D867B81B51CE07D9BBE43771487328A9
-    - 86CFFCA918CF3AF47147588051E8B148A9999C34
-    - 13975A70E63C361C73AE69EF6EEB81F8981C74C7
-    - D3A93CAD751C2AF4F8C7AD516C35B99309B5FA62
   sha256sums:
     - 73dca834e44d5e4501efa3f68a190a902d0a83c66f4cf4fd5b3da24e2cefdaf4
     - 7b09ec947f90b98315397af675369a1e3dfc527fa70013062e6e85c4be0275ab
@@ -55,13 +50,13 @@ pkgname:
   - name: gcc
     pkgdesc: The GNU Compiler Collection - C and C++ frontends
     depends:
-      - libasan=16.1.1+r346+g4e03491b401d-1
-      - libgcc=16.1.1+r346+g4e03491b401d-1
-      - libhwasan=16.1.1+r346+g4e03491b401d-1
-      - liblsan=16.1.1+r346+g4e03491b401d-1
-      - libstdc++=16.1.1+r346+g4e03491b401d-1
-      - libtsan=16.1.1+r346+g4e03491b401d-1
-      - libubsan=16.1.1+r346+g4e03491b401d-1
+      - libasan=16.1.1+r346+g4e03491b401d-3
+      - libgcc=16.1.1+r346+g4e03491b401d-3
+      - libhwasan=16.1.1+r346+g4e03491b401d-3
+      - liblsan=16.1.1+r346+g4e03491b401d-3
+      - libstdc++=16.1.1+r346+g4e03491b401d-3
+      - libtsan=16.1.1+r346+g4e03491b401d-3
+      - libubsan=16.1.1+r346+g4e03491b401d-3
       - binutils>=2.28
       - glibc>=2.27
       - gmp
@@ -83,7 +78,7 @@ pkgname:
   - name: gcc-ada
     pkgdesc: Ada front-end for GCC (GNAT)
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libgcc
@@ -103,7 +98,7 @@ pkgname:
   - name: gcc-d
     pkgdesc: D frontend for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libgphobos
@@ -123,7 +118,7 @@ pkgname:
   - name: gcc-fortran
     pkgdesc: Fortran front-end for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libgfortran
@@ -139,7 +134,7 @@ pkgname:
   - name: gcc-gcobol
     pkgdesc: Cobol frontend for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libgcobol
@@ -151,7 +146,7 @@ pkgname:
   - name: gcc-go
     pkgdesc: Go front-end for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libgo
@@ -188,7 +183,7 @@ pkgname:
   - name: gcc-m2
     pkgdesc: Modula-2 frontend for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libgm2
@@ -200,7 +195,7 @@ pkgname:
   - name: gcc-objc
     pkgdesc: Objective-C front-end for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libisl.so
@@ -216,7 +211,7 @@ pkgname:
   - name: gcc-rust
     pkgdesc: Rust frontend for GCC
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libisl.so
@@ -266,7 +261,7 @@ pkgname:
   - name: libgccjit
     pkgdesc: Just-In-Time Compilation with GCC backend
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libisl.so
@@ -385,7 +380,7 @@ pkgname:
   - name: lto-dump
     pkgdesc: Dump link time optimization object files
     depends:
-      - gcc=16.1.1+r346+g4e03491b401d-1
+      - gcc=16.1.1+r346+g4e03491b401d-3
       - glibc>=2.27
       - gmp
       - libisl.so
