@@ -8,7 +8,7 @@
 pkgname=code
 pkgdesc='The Open Source build of Visual Studio Code (vscode) editor'
 # Important: Remember to check https://github.com/microsoft/vscode/wiki/How-to-Contribute#prerequisites for target node version
-_electron=41
+_electron=electron41
 pkgver=1.127.0
 pkgrel=1
 arch=('x86_64')

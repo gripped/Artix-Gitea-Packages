@@ -19,7 +19,7 @@ pkgbase:
     - zip
     - jq
   depends:
-    - "41"
+    - electron41
     - libsecret
     - libx11
     - libxkbfile
