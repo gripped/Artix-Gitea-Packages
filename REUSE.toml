@@ -1,0 +1,19 @@
+version = 1
+
+[[annotations]]
+path = [
+    "PKGBUILD",
+    ".SRCINFO",
+    ".nvchecker.toml",
+    "sysusers.conf",
+    "tmpfiles.conf",
+]
+SPDX-FileCopyrightText = "Arch Linux contributors"
+SPDX-License-Identifier = "0BSD"
+
+[[annotations]]
+path = [
+    "systemd-service.patch",
+]
+SPDX-FileCopyrightText = "forgejo-runner contributors"
+SPDX-License-Identifier = "Apache-2.0"

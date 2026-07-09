@@ -1,0 +1,79 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: George Rawlinson <grawlinson@archlinux.org>
+
+pkgname=forgejo-runner
+pkgver=12.13.0
+pkgrel=1
+pkgdesc='Continuous integration for Forgejo'
+arch=(x86_64)
+url='https://code.forgejo.org/forgejo/runner'
+license=(MIT Apache-2.0)
+depends=(glibc)
+makedepends=(git go)
+backup=(etc/forgejo-runner/config.yaml)
+source=(
+  "$pkgname::git+$url#tag=v$pkgver"
+  systemd-service.patch
+  sysusers.conf
+  tmpfiles.conf
+)
+sha512sums=('80f86ef0da82ace759c55838e14f608c44463ef4b2e3018529f77d06b62d1385908b81c8c010aed8b2885be0dc3298162b924e87a5451daa128db175398b14c6'
+            'd04a8bc145f11225a35fdc47ed047b7cb7a4267e002f3caf8f288ef4f48226bc12de26007853da966f478d103471dcbf690db5665d032d756c37fc4c7a7fd68c'
+            '383a5cb2e6c8cf267dc1cd2de2fa97994b332521d449a9d903a639eaa466335756e8dd2fd13a8b3e233f4ceec6da2d293ba54e0fdbd09c54c6bc77d0314a7c49'
+            'e96d43feb05007371d1a876f112c5f687fb99f75e90ac41447577dfdd98bab69ff3ddede4350df3022955aba1775feb11d1696fa17084824b688567b01d557fc')
+b2sums=('2ef8e0bd91331b2f2d3de75aeddf6cc346c29e5ae6e520b2377168d50ed0db91a4319c70be690976efe50dfcb0bc105670b536aee5ad900594a26974904316d7'
+        'bef8cde724d210d9eb7adefa4039b86f7b84f2b2f64a4df15c8abd8813eb8d9e422819251f4caf675366117d924487b12b4faa028f2a428f13f60c637840d078'
+        'f3f86bb89290926ffddb76f3362ce3f1f1c880f0685e52995d23860c25a8ce93cff52c9ae06c741f54ca7f8749ff3049bad85db5651edf0a2de3d0e3b41377a5'
+        'd900883bb5bf529ccae64a1411e2d0123f9dde633b5ca0091924cc1dcf3d0956630bb40c3aede57924614942b6d95e1626b90f3cfade3daa3cb5a717a8a7921d')
+
+prepare() {
+  cd "$pkgname"
+
+  # create directory for build output
+  mkdir build
+
+  # download dependencies
+  export GOPATH="${srcdir}"
+  go mod download
+
+  patch -p1 -i "$srcdir/systemd-service.patch"
+}
+
+build() {
+  cd "$pkgname"
+
+  # set Go flags
+  export CGO_CPPFLAGS="${CPPFLAGS}"
+  export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
+  export GOPATH="${srcdir}"
+
+  go build -v \
+    -buildmode=pie \
+    -mod=readonly \
+    -modcacherw \
+    -ldflags "-compressdwarf=false \
+    -linkmode external \
+    -s -w -buildid='' \
+    -extldflags '${LDFLAGS}' \
+    -X code.forgejo.org/forgejo/runner/v${pkgver%%.*}/internal/pkg/ver.version=v$pkgver" \
+    -o build/forgejo-runner \
+    .
+
+  ./build/forgejo-runner generate-config > config.yaml
+}
+
+package() {
+  cd "$pkgname"
+
+  # binary
+  install -vDm755 -t "$pkgdir/usr/bin" build/forgejo-runner
+
+  # systemd integration
+  install -vDm640 -t "$pkgdir/etc/forgejo-runner" config.yaml
+  install -vDm644 "$srcdir/sysusers.conf" "$pkgdir/usr/lib/sysusers.d/forgejo-runner.conf"
+  install -vDm644 "$srcdir/tmpfiles.conf" "$pkgdir/usr/lib/tmpfiles.d/forgejo-runner.conf"
+
+  # license
+  install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE
+}
