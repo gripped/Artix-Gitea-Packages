@@ -16,8 +16,8 @@ depends=(glibc)
 checkdepends=(dejagnu)
 provides=(libffi.so)
 source=($pkgname-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz)
-sha256sums=('85a2f10a52644b63313307b53051147f159cc7b61a1e71c23b8634c900a8982d')
-b2sums=('0d067b011727173398b2ef36dd3a89bf7a941f708f98edb1dbffb9d5d7f8ff63cf1b7bca3283a7a34a540decdf7dce316da9493dee0154b04566e5cd50691f90')
+sha256sums=('9259ec3542db31c7fe35f83bab557acc3c773a34da7ebc68780b3522f2e04052')
+b2sums=('f6cd0bbc9be369fd767da280aac73ba8b9902c5b5fb2a7d12bda089cbf4466096a95de108dd948d22b65d1b59262dd373cce3805ec1bedc15ab17a1289184ab4')
 
 prepare() {
   cd $pkgname-$pkgver
