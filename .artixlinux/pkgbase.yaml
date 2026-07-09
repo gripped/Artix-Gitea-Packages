@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: false
-  triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRebuild: true
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -50,8 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 1.127.0-1
+    packages:
+      - code-1.127.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null

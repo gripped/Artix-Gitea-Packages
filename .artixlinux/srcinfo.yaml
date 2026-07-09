@@ -1,0 +1,52 @@
+---
+version: 1.127.0-1
+pkgbase:
+  name: code
+  pkgdesc: The Open Source build of Visual Studio Code (vscode) editor
+  pkgver: 1.127.0
+  pkgrel: 1
+  url: https://github.com/microsoft/vscode
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - nodejs-lts-krypton
+    - npm
+    - python
+    - desktop-file-utils
+    - zip
+    - jq
+  depends:
+    - "41"
+    - libsecret
+    - libx11
+    - libxkbfile
+    - ripgrep
+  optdepends:
+    - 'bash-completion: Bash completions'
+    - 'zsh-completions: ZSH completitons'
+    - 'x11-ssh-askpass: SSH authentication'
+  provides:
+    - vscode
+  options:
+    - '!strip'
+    - '!debug'
+  source:
+    - vscode::git+https://github.com/microsoft/vscode.git#tag=1.127.0
+    - code.mjs
+    - code.sh
+    - product_json.diff
+    - clipath.patch
+    - 0009-openvsx-extension-signature.patch
+  sha512sums:
+    - 413c0d798cf791b5cd57f35601c2f268ebdd12cad698de69f74da0d8b72afca21ae3d0b415f831f0c97205775061915a79701d8843c1953c93370de5334e899c
+    - 793f9ff6306e3992ac89802d98110cba288ea1181a901467333293b7d76182ef9792c2a39ff49d9347a18a174b1f42bc58862091dff583f4146c2704eea28033
+    - 937299c6cb6be2f8d25f7dbc95cf77423875c5f8353b8bd6cd7cc8e5603cbf8405b14dbf8bd615db2e3b36ed680fc8e1909410815f7f8587b7267a699e00ab37
+    - b1aa0d7c5b3e3e8ba1172822d75ea38e90efc431b270e0b4ca9e45bf9c0be0f60922c8618969ef071b5b6dbd9ac9f030294f1bf49bcc28c187b46d113dca63a7
+    - e570b30cd470190aa56596913478d5fb8ba265a0f8c9d1408ea2118612cc69a360cc55e4523c3dc9c65f73e3dea53fc6620c97f6592fb9f86c3aca51ad3d9744
+    - bfd1a1feb9e6250e086c5a8513f325a2623e6724c094f2125f0c6fb36b88d8416745bd5f5e21a7f6e82bc45104d8ea0050210a7ba46befcb99f39052bf7ece13
+pkgname:
+  - name: code
+# generated with artixpkg 0.38.5-1-any
