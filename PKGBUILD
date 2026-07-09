@@ -4,7 +4,7 @@
 
 pkgbase=zabbix
 pkgname=('zabbix-common' 'zabbix-server' 'zabbix-frontend-php' 'zabbix-web-service' 'zabbix-proxy' 'zabbix-agent' 'zabbix-agent2')
-pkgver=7.4.11
+pkgver=7.4.12
 pkgrel=1
 pkgdesc="The universal, open-source observability solution for IT & OT"
 url="https://cdn.zabbix.com/zabbix"
@@ -22,7 +22,7 @@ source=("$pkgbase-$pkgver.tar.gz::$url/sources/stable/7.4/$pkgbase-$pkgver.tar.g
         'write_log_to_syslog.patch'
         'set_socket_paths.patch'
         'reproducible_build.patch')
-sha512sums=('47d07d3acdbf6cb2c726e49ce3bd5f72558e1ce90f1f27fb62a28a7bb81bb5fe4dd181d4f88a4cf9c79864258bd959947bfc898bb63777e584ff08fbe6e497b2'
+sha512sums=('1b1711a8a03e1bf0e62397a6b97981793d241461ae72b4d866a5263017fe4f715c2a670c57fe0e219f44ee56729bd660577348c3c32be93259940d27d08e319d'
             '8570843ad927d900f9e9aa95dfa8a24ebb0f01beda3073b24c5963aedd92e3ebed75bbb6139127830eaf289df233c2734d81b52b25a1b8f4db57336152514194'
             '7c39d1cb1d269e8a2a22c634612c7d110e9e67c170f32add33312f97bc2e7f8f19bf5bb1d1c71df43afc893043472069b9f828dfc5a9f2946606798ed54c73a0'
             'c82056591146e7ef0020a3cd9865322407a116e20beb1ddd6fc2afdec09306b6d249d9a2afe8d9234932861b506b3b50a3b528944ab3889c076e5088cd7e63ed'
