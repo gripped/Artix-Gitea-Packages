@@ -1,9 +1,9 @@
 ---
-version: 0.16.0-1
+version: 0.17.0-1
 pkgbase:
   name: qtkeychain
   pkgdesc: Provides support for secure credentials storage
-  pkgver: 0.16.0
+  pkgver: 0.17.0
   pkgrel: 1
   url: https://github.com/frankosterfeld/qtkeychain
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - org.freedesktop.secrets
     - qt6-base
   source:
-    - git+https://github.com/frankosterfeld/qtkeychain#tag=0.16.0
+    - git+https://github.com/frankosterfeld/qtkeychain#tag=0.17.0
   sha256sums:
-    - 27cb78ca44c9395a8b5e1e59dbc68896842d8b39a11d88973833afda1447cf76
+    - 1280e7c57c69cab2aec45a02702840c0ad387ffab3de306f1c12772af9fc83d4
 pkgname:
   - name: qtkeychain-qt6
 # generated with artixpkg 0.38.5-1-any
