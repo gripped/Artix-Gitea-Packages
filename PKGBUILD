@@ -2,7 +2,7 @@
 # Contributor: Konstantin Gizdov <arch at kge dot pw>
 
 pkgname=python-xxhash
-pkgver=3.8.0
+pkgver=3.8.1
 pkgrel=1
 pkgdesc='Python binding for xxHash'
 arch=(x86_64)
@@ -21,7 +21,7 @@ makedepends=(
     python-wheel
 )
 source=("$pkgname::git+$url.git#tag=v$pkgver")
-b2sums=('79821d7c3566ae6d53f5dea921b0f1085362e159a77e8b7fa70dce74cc9758e22f34d6c3c632feea4592b3fcaab9957c0e0750267f09befd4effe2632a9d753e')
+b2sums=('89a858f5efffcafbf1e02592d2798920786d933467ec0e98fba8f6e2f9d513bcfd07ec6a711163cb42142badba40871b9ab0bab1bee20abdbb9183a701ffa73d')
 
 prepare() {
     # benchmark imports pytest, all other tests rely on the unittest module
