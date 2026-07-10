@@ -1,0 +1,112 @@
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Ivan Shapovalov <intelfx@intelfx.name>
+
+pkgname=radicle
+pkgver=1.9.1
+pkgrel=3
+pkgdesc="open source, peer-to-peer code collaboration stack built on Git"
+url="https://radicle.dev"
+arch=('x86_64')
+license=('Apache-2.0 OR MIT')
+depends=(
+  'glibc'
+  'libgcc' 'libgcc_s.so'
+  'libgit2' 'libgit2.so'
+)
+makedepends=(
+  'git'
+  'cargo'
+  'asciidoctor'
+)
+provides=('radicle-node' 'radicle-cli')
+conflicts=('radicle-node' 'radicle-cli')
+replaces=('radicle-node' 'radicle-cli')
+source=(
+  "radicle::git+https://seed.radicle.dev/z3gqcJUoA1n9HaHKufZs5FCSGazv5.git#tag=releases/${pkgver}"
+)
+sha256sums=('6fac84aeac26580f2a2fd2b774ff72293d01a9a8c4b0e0c81005f706ca640780')
+b2sums=('2ea2084fd8e100063519e69cfa9bdb5f0521344734b29ead53cbc26de5b113f9b3cbd650fc539291ab02af07ba262030da21e896f266b4c3789fd1b9c7ab50bc')
+
+prepare() {
+  cd "${pkgname}"
+  cargo fetch --locked --target host-tuple
+}
+
+build() {
+  cd "${pkgname}"
+
+  # _Disable_ cross-toolchain LTO because we are using different toolchains
+  # for C/C++ and Rust code (i.e., LLVM LTO is incompatible with GCC LTO).
+  # In this project, C/C++ code is linked into Rust code. Therefore, apply
+  # a workaround to force generation of normal object code on C side:
+  CFLAGS+=" -ffat-lto-objects"
+  CXXFLAGS+=" -ffat-lto-objects"
+
+  export LIBGIT2_NO_VENDOR=1
+
+  export RADICLE_VERSION="${pkgver}"
+  cargo build \
+    -p radicle-cli \
+    -p radicle-node \
+    -p radicle-remote-helper \
+    --frozen \
+    --release \
+    --bins
+
+  mkdir -p target/release/man
+  scripts/build-man-pages.sh target/release/man *.adoc
+}
+
+check() {
+  local _test_skips=(
+    # https://radicle.zulipchat.com/#narrow/stream/369277-heartwood/topic/Flaky.20tests/near/438352360
+    "tests::e2e::test_connection_crossing"
+    # https://radicle.zulipchat.com/#narrow/stream/369277-heartwood/topic/Clone.20Partial.20Fail.20Flake
+    rad_clone_partial_fail
+    # this test seems flaky
+    rad_init_sync_preferred
+  )
+
+  cd "${pkgname}"
+
+  # Tests want to open many files.
+  ulimit -n hard
+
+  # Tests require the newly built tools, add them to $PATH
+  PATH="$PWD/target/release:$PATH"
+  cargo test \
+    --frozen \
+    -- \
+    "${_test_skips[@]/#/--skip=}"
+}
+
+package() {
+  cd radicle
+
+  install -Dm755 \
+    target/release/rad \
+    target/release/radicle-node \
+    target/release/git-remote-rad \
+    -t "${pkgdir}/usr/bin"
+
+  # Man pages
+  install -Dm644 \
+    target/release/man/*.1 \
+    -t "${pkgdir}/usr/share/man/man1"
+
+  # Completions
+  install -d "${pkgdir}/usr/share/bash-completion/completions" \
+             "${pkgdir}/usr/share/zsh/site-functions" \
+             "${pkgdir}/usr/share/fish/vendor_completions.d"
+  "${pkgdir}/usr/bin/rad" completion bash > "${pkgdir}/usr/share/bash-completion/completions/rad"
+  "${pkgdir}/usr/bin/rad" completion zsh > "${pkgdir}/usr/share/zsh/site-functions/_rad"
+  "${pkgdir}/usr/bin/rad" completion fish > "${pkgdir}/usr/share/fish/vendor_completions.d/rad.fish"
+
+  # License
+  install -Dm644 \
+    LICENSE-MIT \
+    LICENSE-APACHE \
+    -t "${pkgdir}/usr/share/licenses/${pkgname}"
+}
+
+# vim: ts=2 sw=2 et:
