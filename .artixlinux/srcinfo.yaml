@@ -1,10 +1,10 @@
 ---
-version: 7.1.3.artix2-1
+version: 7.1.3.artix1-2
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 7.1.3.artix2
-  pkgrel: 1
+  pkgver: 7.1.3.artix1
+  pkgrel: 2
   url: https://github.com/archlinux/linux
   arch:
     - x86_64
@@ -41,8 +41,8 @@ pkgbase:
   source:
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v7.1.3-arch2/linux-v7.1.3-arch2.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v7.1.3-arch2/linux-v7.1.3-arch2.patch.zst.sig
+    - https://github.com/archlinux/linux/releases/download/v7.1.3-arch1/linux-v7.1.3-arch1.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v7.1.3-arch1/linux-v7.1.3-arch1.patch.zst.sig
     - 631849ff5d603841e74f19f4a5e30fe1f7d7cf30.patch
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
