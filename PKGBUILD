@@ -59,7 +59,7 @@ source=("https://downloads.sourceforge.net/${pkgname}/$_archive.tar.xz"{,.asc}
 sha256sums=('fdfe3e7cbe84b760b38d0561ed8736f9d25d4923adde6e15e03760d83be6166d'
             'SKIP'
             'e84b3f12333cac812c942b85f06403669ad3792bdae821a7e95fa9a3258e1cda'
-            'be100d3e6e3b7228261d5d7dbc6094e9e02dc0a00f7919b9fe1b3b9196916a9a'
+            '4a4b00951b9469eb833bb80837e321e44fa77b1c04e21275d8e71556637fa502'
             '4238d53ae3cb4d545a7c0835a6a0cf082c3b51a3adb74f8cb3dd82977595b4b1')
 validpgpkeys=(5086B8D68E70FDDF4C40045AEF7B95E7F60166DA  # Peter Linnell <plinnell@scribus.net>
               757F5E9B13DD648887AD50092D47C099E782504E  # The Scribus Team (www.scribus.net) <the_scribus_team@scribus.net>
@@ -78,7 +78,7 @@ pkgver() {
 prepare() {
 	cd "$_archive"
 	patch -Np1 -i "$srcdir/fix_build_with_poppler_26.05.patch"
-	patch -Np1 --binary -i ../2b9405a00a96a09e0183190ddc9f83d44963d4e0.patch # Fix build with poppler 26.06
+        patch -Np1 -i "$srcdir/2b9405a00a96a09e0183190ddc9f83d44963d4e0.patch" # Fix build with poppler 26.06
 	patch -Np1 -i "$srcdir/fix_build_with_poppler_26.07.patch"
 }
 
