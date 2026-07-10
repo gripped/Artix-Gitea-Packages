@@ -1,5 +1,4 @@
-# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
-# Contributor: Ivan Shapovalov <intelfx@intelfx.name>
+# Maintainer: commandk <commandk@artix>
 
 pkgname=radicle
 pkgver=1.9.1
