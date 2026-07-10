@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
       - zathura-ps-2026.02.03-8-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 2026.02.03-7.1
+    version: 2026.02.03-8.1
     packages:
-      - zathura-ps-2026.02.03-7.1-x86_64.pkg.tar.zst
+      - zathura-ps-2026.02.03-8.1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
