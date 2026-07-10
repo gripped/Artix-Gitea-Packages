@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
       - zathura-djvu-2026.05.10-5-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 2026.05.10-4.1
+    version: 2026.05.10-5.1
     packages:
-      - zathura-djvu-2026.05.10-4.1-x86_64.pkg.tar.zst
+      - zathura-djvu-2026.05.10-5.1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
