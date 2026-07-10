@@ -1,10 +1,10 @@
 ---
-version: 6.0.0-1.1
+version: 6.0.1-1
 pkgbase:
   name: podman
   pkgdesc: A tool for managing OCI containers and pods.
-  pkgver: 6.0.0
-  pkgrel: 1.1
+  pkgver: 6.0.1
+  pkgrel: 1
   url: https://github.com/podman-container-tools/podman
   arch:
     - x86_64
@@ -27,16 +27,18 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/podman-container-tools/podman?signed#tag=v6.0.0
+    - git+https://github.com/podman-container-tools/podman?signed#tag=v6.0.1
     - logdriver.conf
   validpgpkeys:
     - B7DBDCA456F7335E91F1C25CD3624C551D0515C4
     - 7CE1E6F8C90CB53E7E4D8F2D502E08DB0BBF8EEE
     - 9E33DD8704CC03E2DEB84D9A1C1EDD7CC7C3A0DD
   sha512sums:
-    - 9a3265f6ecc6423bb097c534e739f3c31692dfa03db14b9cdb0c8226da0493c1b12762b2f9b5d639880cd91d9172581bd2d05f407f0defdb4d5b02218a17d83d
+    - 4c9fdd580c9118745c6d1883079ef2791a3b08739e7c5655452a927e797a3c225cb8415e94ce8be57204fca003f604ca2f471be18e3139e2f98e46fda5e99ce6
+    - 45d52273ab0e728931bf05162481dbb7eb50c30e1525a1ea0bb2622cbe513f8210a4d4496a74b838748cd28a493710efcc09c30d1817c00612eb09b593458157
   b2sums:
-    - 4c6eda2b287ecc32ba6a4c2b12b393cda29fccd14fc5f666f4610fe116ef44f19c9342f51add410a4d7cd602cb55dc53cb9fb5250c3ab4f6f47f0e97a5905515
+    - c0f553a77d70eb8905b03c321f33fdc78651eca2adbe8aeaa2ed524a850dae8c47a54210c26fc6b9e992233e8859d4d20d7f6efefae8fbdcf5ad12f0ce0134a3
+    - 72542f4d0d1610d96ca23faa1d313b9884b4d3c559d28113970f8c4135ef608ca5b1559e671590a0946fb46d93daaa0aae14f32883bac4901066809e0e2c7262
 pkgname:
   - name: podman
     depends:
