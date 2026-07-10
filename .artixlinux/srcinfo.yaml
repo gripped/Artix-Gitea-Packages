@@ -1,10 +1,10 @@
 ---
-version: 3.8.1-2
+version: 3.8.1-3
 pkgbase:
   name: php-imagick
   pkgdesc: PHP extension to create and modify images using the ImageMagick library
   pkgver: 3.8.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/imagick/imagick
   arch:
     - x86_64
@@ -18,7 +18,7 @@ pkgbase:
     - php
     - php-legacy
   depends:
-    - gcc-libs
+    - libgomp
     - glibc
     - imagemagick
     - ttf-font
@@ -42,7 +42,7 @@ pkgbase:
 pkgname:
   - name: php-imagick
     depends:
-      - gcc-libs
+      - libgomp
       - glibc
       - imagemagick
       - ttf-font
@@ -51,7 +51,7 @@ pkgname:
       - etc/php/conf.d/imagick.ini
   - name: php-legacy-imagick
     depends:
-      - gcc-libs
+      - libgomp
       - glibc
       - imagemagick
       - ttf-font
