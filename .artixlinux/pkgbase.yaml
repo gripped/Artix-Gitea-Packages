@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.14.4.1-1
+    version: 0.14.5.1-1
     packages:
-      - helium-browser-0.14.4.1-1-x86_64.pkg.tar.zst
+      - helium-browser-0.14.5.1-1-x86_64.pkg.tar.zst
     debug: []
