@@ -1,10 +1,10 @@
 ---
-version: 2.53.0-1
+version: 2.55.2-2
 pkgbase:
   name: python-google-auth
   pkgdesc: Google Authentication Library
-  pkgver: 2.53.0
-  pkgrel: 1
+  pkgver: 2.55.2
+  pkgrel: 2
   url: https://github.com/googleapis/google-cloud-python
   arch:
     - any
@@ -13,9 +13,9 @@ pkgbase:
   checkdepends:
     - python-aiohttp
     - python-aioresponses
-    - python-cryptography
     - python-flask
     - python-freezegun
+    - python-grpcio
     - python-pyjwt
     - python-pyopenssl
     - python-pytest
@@ -23,8 +23,8 @@ pkgbase:
     - python-pytest-localserver
     - python-pyu2f
     - python-requests
-    - python-requests-mock
     - python-responses
+    - python-urllib3
   makedepends:
     - python-build
     - python-installer
@@ -32,26 +32,21 @@ pkgbase:
     - python-wheel
   depends:
     - python
-    - python-cachetools
-    - python-certifi
-    - python-cgi
-    - python-oauth2client
-    - python-packaging
+    - python-cryptography
     - python-pyasn1-modules
-    - python-rsa
   optdepends:
     - 'python-aiohttp: for async HTTP support'
-    - 'python-cryptography: for TLS support'
+    - 'python-packaging: for HTTP support'
     - 'python-pyjwt: for JSON Web Key support'
     - 'python-pyopenssl: for TLS support'
     - 'python-pyu2f: for reauthentication support'
     - 'python-requests: for async HTTP support'
+    - 'python-rsa: for RSA support'
+    - 'python-urllib3: for HTTP support'
   source:
-    - https://github.com/googleapis/google-cloud-python/archive/refs/tags/google-auth-v2.53.0.tar.gz
-    - python-pyopenssl-compatibility.patch
+    - https://github.com/googleapis/google-cloud-python/archive/refs/tags/google-auth-v2.55.2.tar.gz
   sha512sums:
-    - 0b1c9204c6abc058bfb7f01613d1cac4e8ff8787f1332d6fd2d5d2358af0ea06328d7683ad1b240f6665b6e26f3066232ed401febcb879cd25ac15f33612fc64
-    - 4e23dfaeec6933b1fb6736b6402f1f3cce0fedc0967e527879bc1b3e6215d94c986c28ab9d6b9b4ba975f39316eb0159bb74144aca1f27345b0a9174857fcfff
+    - 2efc265aa52f15b89dadf0c070825f95354906336a137ef371f1d22d5fd8e8fdfe703b977c567c9d43ff85b9aff922ac8781be6e00376ec2f7b7b167936b3607
 pkgname:
   - name: python-google-auth
 # generated with artixpkg 0.38.5-1-any
