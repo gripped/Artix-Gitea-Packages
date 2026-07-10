@@ -41,14 +41,14 @@ sha256sums=('SKIP')
 prepare() {
   cd "$pkgname"
 
-  npm install
+  npm ci --ignore-scripts
   cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
 }
 
 build() {
   cd "$pkgname"
 
-  npx tauri build --bundles deb
+  ./node_modules/.bin/tauri  build --bundles deb
 }
 
 package() {
