@@ -1,10 +1,10 @@
 ---
-version: 4.15.0-2
+version: 4.16.0-1
 pkgbase:
   name: python-humanize
   pkgdesc: Common humanization utilities for Python
-  pkgver: 4.15.0
-  pkgrel: 2
+  pkgver: 4.16.0
+  pkgrel: 1
   url: https://github.com/python-humanize/humanize
   arch:
     - any
@@ -23,9 +23,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://pypi.python.org/packages/source/h/humanize/humanize-4.15.0.tar.gz
+    - https://pypi.python.org/packages/source/h/humanize/humanize-4.16.0.tar.gz
   sha256sums:
-    - 1dd098483eb1c7ee8e32eb2e99ad1910baefa4b75c3aff3a82f4d78688993b10
+    - 7dc2244a2f84a4bfb1d36c37bac80cd78e35cdc5c119206d87b018e1445f3a3f
 pkgname:
   - name: python-humanize
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
