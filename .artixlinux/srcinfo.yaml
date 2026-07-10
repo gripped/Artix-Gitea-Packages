@@ -1,0 +1,31 @@
+---
+version: 20260710-1
+pkgbase:
+  name: forgejo-runner-openrc
+  pkgdesc: OpenRC forgejo-runner init script
+  pkgver: 20260710
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/packages
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  depends:
+    - openrc
+    - forgejo-runner
+  provides:
+    - init-forgejo-runner
+    - forgejo-runner-openrc
+  conflicts:
+    - init-forgejo-runner
+  source:
+    - forgejo-runner.initd
+    - forgejo-runner.confd
+  sha256sums:
+    - 49bb924e1b49509e4044b52068fce6a2f9fd79b52b306cfb15f208f01aa5a704
+    - 3e98cbc9a5e922787ca4d83cf14672b9bb93ce26f7f49da8f8e9a64850f9ffe0
+pkgname:
+  - name: forgejo-runner-openrc
+# generated with artixpkg 0.38.5-1-any

@@ -1,0 +1,7 @@
+# config file for /etc/init.d/forgejo-runner
+
+RUNNER_CONFIG="/etc/forgejo-runner/config.yaml"
+
+RUNNER_DIR="/var/lib/forgejo-runner"
+
+RUNNER_USER="forgejo-runner"

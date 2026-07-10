@@ -1,0 +1,33 @@
+#!/sbin/openrc-run
+# modified from https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/community/forgejo-runner/forgejo-runner.initd
+
+description="Forgejo CI Runner"
+name="Forgejo Runner"
+
+: ${RUNNER_CONFIG:="/etc/forgejo-runner/config.yaml"}
+: ${RUNNER_DIR:="/var/lib/forgejo-runner"}
+: ${RUNNER_USER:="forgejo-runner"}
+
+command="/usr/bin/forgejo-runner"
+command_args="daemon --config $RUNNER_CONFIG"
+command_background="yes"
+directory="$RUNNER_DIR"
+pidfile="/run/forgejo-runner/$RC_SVCNAME.pid"
+
+depend() {
+	need net
+	use dns logger
+}
+
+start_pre() {
+	checkpath -d -o "$RUNNER_USER" /etc/forgejo-runner
+	checkpath -d -o "$RUNNER_USER" "$RUNNER_DIR"
+
+	if ! [ -e "$RUNNER_CONFIG" ]; then
+		eerror "Config file $RUNNER_CONFIG doesn't exist."
+		eerror "You can generate it with: forgejo-runner generate-config,"
+		eerror "or use the auto-generated one in /etc/forgejo-runner/config.example.yaml"
+		return 1
+	fi
+
+}
