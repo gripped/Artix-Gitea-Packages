@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 _ver=7.1.3
-_rel=1
+_rel=2
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
