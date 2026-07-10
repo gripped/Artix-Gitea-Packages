@@ -10,7 +10,7 @@ license=(Unlicense)
 depends=(python)
 makedepends=(git python-build python-hatchling python-hatch-vcs python-installer)
 source=("git+https://github.com/sanic-org/html5tagger#tag=v$pkgver")
-sha256sums=('57cd799c103f1d61ba1fd1ecafa596b0d26f8b930afc25786846212ae732dd3b')
+sha256sums=('f7d9508433fcc2f040b4b09c11fc499f5bbedf57c46cdf7c4b12864122ea5d92')
 
 build() {
     cd html5tagger
