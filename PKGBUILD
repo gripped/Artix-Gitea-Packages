@@ -16,7 +16,7 @@ pkgname=(
   'usbip'
   'x86_energy_perf_policy'
 )
-pkgver=7.0.10
+pkgver=7.1.3
 pkgrel=1
 _srcname=linux-${pkgver}
 license=('GPL-2.0-only')
@@ -50,7 +50,7 @@ validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
-sha256sums=('094977eb62c20e3d1939fe81a92958a1f987f339446e532fa86963b2804e32dc'
+sha256sums=('be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc'
             'SKIP')
 
 prepare() {
@@ -178,7 +178,7 @@ package_perf() {
   pkgdesc='Linux kernel performance auditing tool'
   depends=('glibc' 'perl' 'python' 'slang' 'elfutils' 'libunwind' 'binutils'
            'numactl' 'audit' 'coreutils' 'glib2' 'xz' 'zlib' 'libelf' 'bash'
-           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm21-libs' 'libpfm')
+           'zstd' 'libcap' 'libtraceevent' 'openssl' 'libsframe.so' 'llvm-libs' 'libpfm')
 
   cd "$_srcname"/tools/perf
   make -f Makefile.perf \
@@ -271,7 +271,7 @@ package_hyperv() {
 
 package_bpf() {
   pkgdesc='BPF tools'
-  depends=('glibc' 'readline' 'zlib' 'libelf' 'libcap' 'zstd' 'llvm21-libs' 'binutils' 'libsframe.so')
+  depends=('glibc' 'readline' 'zlib' 'libelf' 'libcap' 'zstd' 'llvm-libs' 'binutils' 'libsframe.so')
 
   cd "$_srcname"/tools/bpf
   # skip runsqlower until disabled in build

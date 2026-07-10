@@ -1,8 +1,8 @@
 ---
-version: 7.0.10-1
+version: 7.1.3-1
 pkgbase:
   name: linux-tools
-  pkgver: 7.0.10
+  pkgver: 7.1.3
   pkgrel: 1
   url: https://www.kernel.org
   arch:
@@ -48,13 +48,13 @@ pkgbase:
     - '!strip'
     - '!lto'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.10.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.0.10.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.sign
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 094977eb62c20e3d1939fe81a92958a1f987f339446e532fa86963b2804e32dc
+    - be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc
     - SKIP
 pkgname:
   - name: bootconfig
@@ -70,7 +70,7 @@ pkgname:
       - libelf
       - libcap
       - zstd
-      - llvm21-libs
+      - llvm-libs
       - binutils
       - libsframe.so
   - name: cpupower
@@ -137,7 +137,7 @@ pkgname:
       - libtraceevent
       - openssl
       - libsframe.so
-      - llvm21-libs
+      - llvm-libs
       - libpfm
   - name: tmon
     pkgdesc: Monitoring and Testing Tool for Linux kernel thermal subsystem
