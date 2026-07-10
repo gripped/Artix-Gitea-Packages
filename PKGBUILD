@@ -42,7 +42,8 @@ b2sums=('3312c5d67c29096e1d9e4af9a226c0b75d39cf863107292882c8e7dcf2d35b434203f31
 
 build() {
   artix-meson $pkgname build \
-    --libexecdir=lib/$pkgname
+    --libexecdir=lib/$pkgname \
+    -D systemd=disabled
   meson compile -C build
 }
 
