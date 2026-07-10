@@ -1,10 +1,10 @@
 ---
-version: 12.13.0-1.1
+version: 12.13.0-1.2
 pkgbase:
   name: forgejo-runner
   pkgdesc: Continuous integration for Forgejo
   pkgver: 12.13.0
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://code.forgejo.org/forgejo/runner
   arch:
     - x86_64

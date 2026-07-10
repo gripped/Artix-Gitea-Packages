@@ -3,7 +3,7 @@
 
 pkgname=forgejo-runner
 pkgver=12.13.0
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Continuous integration for Forgejo'
 arch=(x86_64)
 url='https://code.forgejo.org/forgejo/runner'
@@ -60,7 +60,7 @@ build() {
     -o build/forgejo-runner \
     .
 
-  ./build/forgejo-runner generate-config > config.yaml
+  ./build/forgejo-runner generate-config | sed -E "s|^([^#]+)\.runner|\1/var/lib/forgejo-runner/.runner|" > config.yaml
 }
 
 package() {
