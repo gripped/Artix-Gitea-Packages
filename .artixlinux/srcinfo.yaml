@@ -1,9 +1,9 @@
 ---
-version: 10.2.1-1
+version: 11.0-1
 pkgbase:
   name: python-wcmatch
   pkgdesc: Wilcard File Name matching library
-  pkgver: 10.2.1
+  pkgver: 11.0
   pkgrel: 1
   url: https://github.com/facelessuser/wcmatch
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   depends:
     - python-bracex
   source:
-    - https://github.com/facelessuser/wcmatch/archive/10.2.1/wcmatch-10.2.1.tar.gz
+    - https://github.com/facelessuser/wcmatch/archive/11.0/wcmatch-11.0.tar.gz
   b2sums:
-    - 73675cae60fb0b77dc3b8dd06f9d64afe7936f69f232e6202820407af5c9a367b6216e121f3efae6dcb4416f19222124318364b66207b3de9c8f010ca1cc28ab
+    - 800a6ba2c4aefdef6f68292427fd8250e358344fd0d8720360e83a11139713c9f657bb4feddf832b97bd893acf5092f3fa354ba41ef70fe6d3791085cf6fbc7c
 pkgname:
   - name: python-wcmatch
 # generated with artixpkg 0.38.5-1-any
