@@ -23,7 +23,7 @@ pkgname=(
   pipewire-session-manager
   pulse-native-provider
 )
-pkgver=1.6.7
+pkgver=1.6.8
 pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
@@ -82,7 +82,7 @@ source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
   systemd.patch artix-pipewire-launcher
 )
-b2sums=('3f78ea22d5cd5ed949b678cfe3d0565e35bc82b36363699f848d81989d7ceea69928d8ea7f759f350e59f332550a5228fced2b2edef8fd2d2dc82569e698861b'
+b2sums=('f4425c8fa9ab33918e52bb0c1272079dd510e1c08b1d228802ad60e7080629f1e82ec30f19dd9e344cd6476803773d79f50957ddfeecfc01d657550a712fd6ba'
         'a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789'
         '697fc71055e3e8fc50787fe8d69a85eea585ce1afcb90048a528c34ae4639f05b0711efc54a8fd5d8dea41772074e32199f6a282156fdfbfa83fad0134d6d6d4')
 
