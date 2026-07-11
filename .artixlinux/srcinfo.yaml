@@ -1,10 +1,10 @@
 ---
-version: 0.5.15-1
+version: 0.5.15-1.1
 pkgbase:
   name: wireplumber
   pkgdesc: Session / policy manager implementation for PipeWire
   pkgver: 0.5.15
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://pipewire.pages.freedesktop.org/wireplumber/
   arch:
     - x86_64
@@ -40,7 +40,7 @@ pkgbase:
 pkgname:
   - name: wireplumber
     depends:
-      - libwireplumber=0.5.15-1
+      - libwireplumber=0.5.15-1.1
       - glibc
       - libgcc
       - libglib-2.0.so
