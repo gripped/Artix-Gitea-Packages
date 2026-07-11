@@ -12,6 +12,7 @@
 
 pkg/
 src/
+radicle-explorer/
 
 *.service
 *.timer
