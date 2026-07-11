@@ -1,10 +1,10 @@
 ---
-version: 1:3.7.7-3
+version: 1:4.1.1-1
 pkgbase:
   name: opendht
   pkgdesc: C++17 Distributed Hash Table (DHT) implementation
-  pkgver: 3.7.7
-  pkgrel: 3
+  pkgver: 4.1.1
+  pkgrel: 1
   epoch: 1
   url: https://github.com/savoirfairelinux/opendht
   arch:
@@ -14,35 +14,35 @@ pkgbase:
   checkdepends:
     - cppunit
   makedepends:
-    - git
-    - cmake
-    - msgpack-cxx
-    - restinio
     - asio
+    - cmake
     - cython
+    - git
+    - msgpack-cxx
     - python-build
     - python-installer
     - python-setuptools
+    - restinio
   depends:
+    - argon2
+    - fmt
     - glibc
     - gnutls
-    - nettle
-    - readline
-    - argon2
     - jsoncpp
-    - libjsoncpp.so
-    - fmt
-    - openssl
+    - libgcc
+    - libstdc++
     - llhttp
+    - nettle
+    - openssl
+    - readline
+    - simdutf
   optdepends:
     - 'python: to use the Python bindings'
     - 'msgpack-cxx: linking against opendht'
   source:
-    - git+https://github.com/savoirfairelinux/opendht#tag=v3.7.7
-    - nettle-4.patch
+    - git+https://github.com/savoirfairelinux/opendht#tag=v4.1.1
   sha256sums:
-    - 87166fec8598fd685bd6f1f1d37740c709bccace30cb6099dd241245d30c00de
-    - 88556b2a0cf071971a565ea312be9164356747656078d3537d3910bc38af8880
+    - ae3d0c79729a70126af385168cfeaba512743684693c008ed5acadf3a9a470cc
 pkgname:
   - name: opendht
 # generated with artixpkg 0.38.5-1-any
