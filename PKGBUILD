@@ -23,8 +23,6 @@ source=(
 	"radicle-explorer::git+https://$_node/${_rid#rad:}.git#tag=$_tag"
 	"radicle-explorer.config.json"
 	"radicle-explorer.nginx.conf"
-	"radicle-httpd.system.service"
-	"radicle-httpd.user.service"
 )
 b2sums=('739f243a7d4af747a38fe753bf40457cef90dd57cb39ea828f6b29dcd1ca13a74c90cdd49c3ec80c98aef94b3567d5a48ec6494484d864aa0883e4fc413887ef'
         'd29bf8a4344d407cdc19cce3d6d8ef2f28e97454c07978301ef1009a995ba8f352ad706b7230f33d290d7b055d8a8c80c80164625463adc4e0b1191b1c4573f2'
@@ -135,12 +133,6 @@ package_radicle-httpd() {
 		target/dist/man/radicle-httpd.1 \
 		-t "$pkgdir/usr/share/man/man1"
 
-	install -Dm644 \
-		"$srcdir/radicle-httpd.system.service" \
-		"$pkgdir/usr/lib/systemd/system/radicle-httpd.service"
-	install -Dm644 \
-		"$srcdir/radicle-httpd.user.service" \
-		"$pkgdir/usr/lib/systemd/user/radicle-httpd.service"
 	install -Dm644 \
 		"$srcdir/radicle-explorer.nginx.conf" \
 		"$pkgdir/usr/share/doc/$pkgname/nginx/radicle-explorer.conf"
