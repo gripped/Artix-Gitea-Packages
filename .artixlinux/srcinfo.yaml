@@ -1,9 +1,9 @@
 ---
-version: 3.7.0-1
+version: 3.7.1-1
 pkgbase:
   name: lib32-libffi
   pkgdesc: Portable foreign function interface library (32-bit)
-  pkgver: 3.7.0
+  pkgver: 3.7.1
   pkgrel: 1
   url: https://sourceware.org/libffi/
   arch:
@@ -12,15 +12,15 @@ pkgbase:
     - MIT
   depends:
     - lib32-glibc
-    - libffi=3.7.0
+    - libffi=3.7.1
   provides:
     - libffi.so
   source:
-    - libffi-3.7.0.tar.gz::https://github.com/libffi/libffi/archive/refs/tags/v3.7.0.tar.gz
+    - libffi-3.7.1.tar.gz::https://github.com/libffi/libffi/archive/refs/tags/v3.7.1.tar.gz
   sha256sums:
-    - 9259ec3542db31c7fe35f83bab557acc3c773a34da7ebc68780b3522f2e04052
+    - df80a3ff1d3421ac2ae0e368575f82f30383f932481ecf2dd1d5f7f88c92f547
   b2sums:
-    - f6cd0bbc9be369fd767da280aac73ba8b9902c5b5fb2a7d12bda089cbf4466096a95de108dd948d22b65d1b59262dd373cce3805ec1bedc15ab17a1289184ab4
+    - c7527bf092321198065151f12f8651b0ae1266dbea5d3cced9dc164c5e89a1d1d6e4d34649ab6feb574a7756f7628f495a3832b1a4913c12095c95c913443952
 pkgname:
   - name: lib32-libffi
 # generated with artixpkg 0.38.5-1-any

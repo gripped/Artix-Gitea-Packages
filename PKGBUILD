@@ -3,7 +3,7 @@
 
 pkgname=lib32-libffi
 _name=libffi
-pkgver=3.7.0
+pkgver=3.7.1
 pkgrel=1
 pkgdesc="Portable foreign function interface library (32-bit)"
 arch=(x86_64)
@@ -13,8 +13,8 @@ license=(MIT)
 depends=(lib32-glibc $_name=$pkgver)
 provides=(libffi.so)
 source=($_name-$pkgver.tar.gz::$_url/archive/refs/tags/v$pkgver.tar.gz)
-sha256sums=('9259ec3542db31c7fe35f83bab557acc3c773a34da7ebc68780b3522f2e04052')
-b2sums=('f6cd0bbc9be369fd767da280aac73ba8b9902c5b5fb2a7d12bda089cbf4466096a95de108dd948d22b65d1b59262dd373cce3805ec1bedc15ab17a1289184ab4')
+sha256sums=('df80a3ff1d3421ac2ae0e368575f82f30383f932481ecf2dd1d5f7f88c92f547')
+b2sums=('c7527bf092321198065151f12f8651b0ae1266dbea5d3cced9dc164c5e89a1d1d6e4d34649ab6feb574a7756f7628f495a3832b1a4913c12095c95c913443952')
 
 prepare() {
   cd $_name-$pkgver
