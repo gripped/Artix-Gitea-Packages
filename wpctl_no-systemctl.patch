@@ -1,0 +1,14 @@
+--- a/src/tools/wpctl.c	2026-07-11 11:10:06.500070517 +0200
++++ b/src/tools/wpctl.c	2026-07-11 12:03:03.245340846 +0200
+@@ -1902,6 +1902,11 @@
+   gint exit_status;
+   g_autoptr (GError) error = NULL;
+ 
++  /* artist */
++  fprintf (stderr, "Action %s for user service %s cannot be performed: not implemented in wpctl\n",
++    action, service);
++  return FALSE;
++
+   if (!g_spawn_sync (NULL, (gchar **) argv, NULL,
+           G_SPAWN_SEARCH_PATH | G_SPAWN_STDOUT_TO_DEV_NULL | G_SPAWN_STDERR_TO_DEV_NULL,
+           NULL, NULL, NULL, NULL, &exit_status, &error)) {

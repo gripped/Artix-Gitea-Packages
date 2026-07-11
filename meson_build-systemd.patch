@@ -1,0 +1,12 @@
+--- a/meson.build	2026-07-11 11:12:34.432794945 +0200
++++ b/meson.build	2026-07-11 11:14:10.567610622 +0200
+@@ -123,6 +123,9 @@
+           'libsystemd': libsystemd_dep.found(),
+           'libelogind': libelogind_dep.found()}, bool_yn: true)
+ endif
++if get_option('systemd').enabled()
++  common_args += ['-DSYSTEMD']
++endif
+ 
+ gnome = import('gnome')
+ pkgconfig = import('pkgconfig')
