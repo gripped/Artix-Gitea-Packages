@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,13 +49,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 2026.02.03-8
     packages:
       - zathura-ps-2026.02.03-8-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 2026.02.03-8.1
-    packages:
-      - zathura-ps-2026.02.03-8.1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
