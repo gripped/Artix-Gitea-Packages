@@ -16,7 +16,6 @@ makedepends=(
 	'asciidoctor'
 	'nodejs'
 	'npm'
-	'pnpm'
 	'libgit2'
 )
 _tag="releases/$pkgver"
@@ -35,11 +34,7 @@ b2sums=('739f243a7d4af747a38fe753bf40457cef90dd57cb39ea828f6b29dcd1ca13a74c90cdd
 
 prepare() {
 	cd radicle-explorer
-	pnpm import
-	pnpm install \
-		--shamefully-hoist \
-		--dangerously-allow-all-builds \
-		# EOL
+	npm ci --ignore-scripts
 
 	cd radicle-httpd
 	cargo fetch --locked --target "$(rustc --print host-tuple)"
@@ -48,7 +43,7 @@ prepare() {
 build() {
 	cd radicle-explorer
 	export VITE_RUNTIME_CONFIG=true
-	pnpm --config.verifyDepsBeforeRun=false \
+	npm run \
 		build
 
 	# _Disable_ cross-toolchain LTO because we are using different toolchains
