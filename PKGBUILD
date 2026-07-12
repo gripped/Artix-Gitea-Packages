@@ -4,7 +4,7 @@ pkgname="limine-mkinitcpio-hook"
 _pkgver=1.37.0
 _extver=""
 pkgver="${_pkgver}${_extver}"
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Install kernels for the Limine bootloader."
 arch=('x86_64' 'aarch64')
 url="https://gitlab.com/Zesko/limine-entry-tool"
@@ -72,4 +72,6 @@ package() {
 	# limine hook symlinks
 	ln -sf /usr/bin/limine-reset-enroll "$pkgdir/etc/boot/hooks/pre.d/10-limine-reset-enroll"
 	ln -sf /usr/bin/limine-enroll-config "$pkgdir/etc/boot/hooks/post.d/90-limine-enroll-config"
+
+  rm -r $pkgdir/usr/lib/systemd
 }

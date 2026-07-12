@@ -1,10 +1,10 @@
 ---
-version: 1.37.0-1
+version: 1.37.0-1.1
 pkgbase:
   name: limine-mkinitcpio-hook
   pkgdesc: Install kernels for the Limine bootloader.
   pkgver: 1.37.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://gitlab.com/Zesko/limine-entry-tool
   arch:
     - x86_64

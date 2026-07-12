@@ -2,11 +2,11 @@
 team: galaxy
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.37.0-1
+    version: 1.37.0-1.1
     packages:
-      - limine-mkinitcpio-hook-1.37.0-1-x86_64.pkg.tar.zst
+      - limine-mkinitcpio-hook-1.37.0-1.1-x86_64.pkg.tar.zst
     debug: []
