@@ -1,10 +1,10 @@
 ---
-version: 1:1.32.0-9
+version: 1:1.32.0-9.1
 pkgbase:
   name: lightdm
   pkgdesc: A lightweight display manager
   pkgver: 1.32.0
-  pkgrel: 9
+  pkgrel: 9.1
   epoch: 1
   url: https://github.com/canonical/lightdm
   arch:
@@ -26,6 +26,7 @@ pkgbase:
     - polkit
     - qt5-base
     - vala
+    - x11win-server
     - xorg-server
     - xorg-xmodmap
     - xorg-xrdb

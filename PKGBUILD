@@ -7,7 +7,7 @@ pkgname=(
   liblightdm-qt5
 )
 pkgver=1.32.0
-pkgrel=9
+pkgrel=9.1
 epoch=1
 pkgdesc='A lightweight display manager'
 arch=(x86_64)
@@ -29,6 +29,7 @@ makedepends=(
   polkit
   qt5-base
   vala
+  x11win-server
   xorg-server
   xorg-xmodmap
   xorg-xrdb
