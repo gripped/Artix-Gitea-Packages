@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,13 +50,13 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 0.25.0-1
     packages:
       - radicle-explorer-0.25.0-1-x86_64.pkg.tar.zst
       - radicle-httpd-0.25.0-1-x86_64.pkg.tar.zst
     debug:
       - radicle-explorer-debug-0.25.0-1-x86_64.pkg.tar.zst
-  galaxy:
-    version: null
-    packages: []
-    debug: []
