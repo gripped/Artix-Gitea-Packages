@@ -2,7 +2,6 @@
 #
 # shellcheck shell=bash disable=SC2034 disable=SC2154 disable=SC2164
 
-_commit=e7b6d054d420e6bf2fe877155d7f1fc7a046b672
 pkgname=radicle-desktop
 pkgver='0.13.0'
 pkgrel='1'
@@ -37,9 +36,10 @@ makedepends=(
 optdepends=(
   'radicle-node'
 )
+_tag="releases/${pkgver}"
 options=('!strip' '!emptydirs' '!lto')
-source=("$pkgname::git+https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git#commit=$_commit")
-sha256sums=('SKIP')
+source=("$pkgname::git+https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git#tag=$_tag")
+sha256sums=('f72f2fbfeee33b4d9e83cdfb41647a91b44c8dc17698f25cc07be580b487e00e')
 
 prepare() {
   cd "$pkgname"
