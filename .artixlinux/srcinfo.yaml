@@ -1,9 +1,9 @@
 ---
-version: 0.20.4-1
+version: 0.22.2-1
 pkgbase:
   name: blueprint-compiler
   pkgdesc: Markup language and compiler for GTK 4 user interfaces
-  pkgver: 0.20.4
+  pkgver: 0.22.2
   pkgrel: 1
   url: https://gnome.pages.gitlab.gnome.org/blueprint-compiler/
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - python
     - python-gobject
   source:
-    - git+https://gitlab.gnome.org/GNOME/blueprint-compiler.git#tag=v0.20.4
+    - git+https://gitlab.gnome.org/GNOME/blueprint-compiler.git#tag=v0.22.2
   b2sums:
-    - 372000343a8d260325e30d02da4491a30f02d2d69bf808860f649d7766cc788622c8ca122f9d87d821db62b8f57d144223c912e13b6d92ce645d890b6caf3fef
+    - 3ab2919c3d9dc207ce7383f9393bca1a85760523b93e0529c056407b036fb7b68104e248bc95fe546d7f30be1bec3f63462f3b366a92d6b4df80855cd74087a9
 pkgname:
   - name: blueprint-compiler
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
