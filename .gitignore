@@ -10,11 +10,10 @@
 *.log.*
 *.sig
 
-pkg/
-src/
+/pkg
+/src
+/radicle-desktop
 
 *.service
 *.timer
 *.socket
-
-
