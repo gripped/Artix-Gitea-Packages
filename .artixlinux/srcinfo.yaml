@@ -1,12 +1,11 @@
 ---
-version: 5.35.1-1
+version: 5.37.3-1
 pkgbase:
   name: yaz
   pkgdesc: A toolkit supporting the development of Z39.50/SRW/SRU clients and servers
-  pkgver: 5.35.1
+  pkgver: 5.37.3
   pkgrel: 1
   url: https://www.indexdata.dk/yaz
-  changelog: yaz.changelog
   arch:
     - x86_64
   license:
@@ -18,9 +17,9 @@ pkgbase:
     - libxslt
     - icu
   source:
-    - http://ftp.indexdata.dk/pub/yaz/yaz-5.35.1.tar.gz
+    - http://ftp.indexdata.dk/pub/yaz/yaz-5.37.3.tar.gz
   sha256sums:
-    - db030d6d66880398a44215e26132630ee94f5e462d838809e43f97e6399c1353
+    - 975d7878b272cc999e5acbd02dc272a46607f95e6ee4f35ac655e8e4d333bf2b
 pkgname:
   - name: yaz
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
