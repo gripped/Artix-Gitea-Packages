@@ -3,23 +3,53 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.151.0
-pkgrel=1.1
+pkgver=1.156.0
+pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
 arch=('x86_64')
 license=('AGPL-3.0-or-later')
-depends=('gcc-libs' 'glibc' 'libwebp' 'python' 'python-ijson' 'python-jsonschema' 'python-twisted'
-         'python-pyopenssl' 'python-yaml' 'python-pyasn1' 'python-pynacl'
-         'python-bcrypt' 'python-immutabledict'
-         'python-pillow' 'python-pysaml2' 'python-pydantic'
-         'python-unpaddedbase64' 'python-canonicaljson'
-         'python-signedjson' 'python-pymacaroons'
-         'python-service-identity' 'python-msgpack'
-         'python-phonenumbers' 'python-prometheus_client'
-         'python-attrs' 'python-netaddr' 'python-sortedcontainers' 'python-pyparsing' 'python-pyrsistent'
-         'python-treq' 'python-idna' 'python-jinja' 'python-matrix-common'
-         'python-bleach' 'python-typing_extensions' 'python-python-multipart')
+depends=(
+  'libgcc'
+  'glibc'
+  'libwebp'
+  'python'
+  'python-ijson'
+  'python-jsonschema'
+  'python-twisted'
+  'python-pyopenssl'
+  'python-yaml'
+  'python-pyasn1'
+  'python-pyasn1-modules'
+  'python-pynacl'
+  'python-bcrypt'
+  'python-immutabledict'
+  'python-pillow'
+  'python-pysaml2'
+  'python-pydantic'
+ 
+  'python-unpaddedbase64'
+  'python-canonicaljson'
+  'python-signedjson'
+  'python-pymacaroons'
+  'python-service-identity'
+  'python-msgpack'
+  'python-phonenumbers'
+  'python-prometheus_client'
+  'python-attrs'
+  'python-netaddr'
+  'python-sortedcontainers'
+  'python-pyparsing'
+  'python-pyrsistent'
+  'python-treq'
+  'python-idna'
+  'python-jinja'
+  'python-matrix-common'
+  'python-bleach'
+  'python-typing_extensions'
+  'python-python-multipart'
+ 
+)
 makedepends=(git python-build python-installer python-wheel python-poetry-core python-maturin)
 checkdepends=('python-pip' 'python-authlib' 'python-pyjwt' 'python-lxml' 'python-parameterized'
               'python-txredisapi' 'python-hiredis' 'postgresql' 'python-pyicu')
@@ -39,7 +69,7 @@ source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf'
         )
-sha256sums=('828b0c028e5cb6e0464c48b7c58671e16ccb2d59fba500717bc46d584daf1a9a'
+sha256sums=('7aae28626a3e5620eaaff5054c1fa8548a4ff6c8fb13c83fef50bed8f3e7fd6a'
             '751d0cb122b3c17cb4a2142461ac99bbaec798f1e4b357dd41ec4041e5623d35'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             '574175c27a4f07d4ce6a676d86b697c82c36b796442d0955881da588b6f4bb65'
@@ -97,6 +127,7 @@ package() {
 	python -m installer --destdir="$pkgdir" dist/*.whl
 
 	install -vdm755 -o 198 -g 198 "$pkgdir"/etc/synapse
+	install -vDm644 contrib/systemd/log_config.yaml "$pkgdir"/etc/synapse/log_config.yaml
 	install -vDm644 "$srcdir"/generic_worker.yaml.example "$pkgdir"/etc/synapse/workers/generic_worker.yaml.example
 
 	install -vDm644 "$srcdir"/sysusers-synapse.conf "$pkgdir"/usr/lib/sysusers.d/synapse.conf

@@ -1,10 +1,10 @@
 ---
-version: 1.151.0-1.1
+version: 1.156.0-1
 pkgbase:
   name: matrix-synapse
   pkgdesc: Matrix reference homeserver
-  pkgver: 1.151.0
-  pkgrel: 1.1
+  pkgver: 1.156.0
+  pkgrel: 1
   url: https://github.com/element-hq/synapse
   install: synapse.install
   arch:
@@ -29,7 +29,7 @@ pkgbase:
     - python-poetry-core
     - python-maturin
   depends:
-    - gcc-libs
+    - libgcc
     - glibc
     - libwebp
     - python
@@ -39,6 +39,7 @@ pkgbase:
     - python-pyopenssl
     - python-yaml
     - python-pyasn1
+    - python-pyasn1-modules
     - python-pynacl
     - python-bcrypt
     - python-immutabledict
@@ -80,7 +81,7 @@ pkgbase:
   backup:
     - etc/synapse/log_config.yaml
   source:
-    - matrix-synapse::git+https://github.com/element-hq/synapse.git#tag=v1.151.0
+    - matrix-synapse::git+https://github.com/element-hq/synapse.git#tag=v1.156.0
     - matrix-synapse-fix-worker-test-race.patch
     - generic_worker.yaml.example
     - sysusers-synapse.conf
@@ -96,7 +97,7 @@ pkgbase:
     - F124520CEEE062448FE1C8442D2EFA2F32FBE047
     - 177B595E4DFCB510C556750833FC58F6A7113048
   sha256sums:
-    - 828b0c028e5cb6e0464c48b7c58671e16ccb2d59fba500717bc46d584daf1a9a
+    - 7aae28626a3e5620eaaff5054c1fa8548a4ff6c8fb13c83fef50bed8f3e7fd6a
     - 751d0cb122b3c17cb4a2142461ac99bbaec798f1e4b357dd41ec4041e5623d35
     - f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e
     - 574175c27a4f07d4ce6a676d86b697c82c36b796442d0955881da588b6f4bb65

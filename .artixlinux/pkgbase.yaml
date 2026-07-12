@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.151.0-1.1
+    version: 1.156.0-1
     packages:
-      - matrix-synapse-1.151.0-1.1-x86_64.pkg.tar.zst
+      - matrix-synapse-1.156.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.150.0-1
