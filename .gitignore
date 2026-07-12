@@ -12,9 +12,9 @@
 
 pkg/
 src/
+radicle-artifact/
+radicle/
 
 *.service
 *.timer
 *.socket
-
-

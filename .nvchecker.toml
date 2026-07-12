@@ -1,0 +1,5 @@
+[radicle]
+source = "git"
+git = "https://iris.radicle.xyz/z4VYyJ9KuwMNkXGQnmKuGPGKw3inv.git"
+prefix = "releases/"
+exclude_regex = ".*rc.*"
