@@ -17,8 +17,8 @@ pkgname=(
   python-libguestfs
   ruby-libguestfs
 )
-pkgver=1.58.1
-pkgrel=4
+pkgver=1.60.0
+pkgrel=2
 pkgdesc="Access and modify virtual machine disk images"
 arch=(x86_64)
 url="https://libguestfs.org/"
@@ -28,15 +28,17 @@ license=(
 )
 # NOTE: see appliance/packagelist.in
 _appliancedeps=(
-  btrfs-progs
+  binutils
+  clevis
   dhcpcd
-  dosfstools
+  diffutils
   exfatprogs
   f2fs-tools
   gptfdisk
   iproute2
   iputils
   jfsutils
+  less
   libldm
   lrzip
   lsof
@@ -49,28 +51,34 @@ _appliancedeps=(
   ntfs-3g
   ntfsprogs
   openssh
+  parted
   pciutils
   procps-ng
   psmisc
+  rpm-tools
   rsync
   squashfs-tools
   strace
   syslinux
   vim
   xfsprogs
-  yara
+)
+_appliancedeps_essential=(
+  btrfs-progs
+  dosfstools
 )
 _libguest_deps=(
+  acl
   augeas
   bash
   fuse2
-  libgcc
   glib2
   glibc
   hivex
   json-c
-  sleuthkit
+  libcap
   libconfig
+  libgcc
   libtirpc
   libvirt
   libxml2
@@ -78,61 +86,56 @@ _libguest_deps=(
   pcre2
   qemu
   readline
+  sleuthkit
   supermin
-  "${_appliancedeps[@]}"
+  yara
+  "${_appliancedeps_essential[@]}"
 )
 makedepends=(
   bash-completion
   cdrtools
   cpio
   erlang-erl_interface
-  # ghc  # TODO: build haskell bindings
   go
-  gobject-introspection
   gperf
+  java-environment
+  lua
   ocaml
   ocaml-augeas
   ocaml-compiler-libs
   ocaml-findlib
   perl-libintl-perl
   perl-module-build
-  python
-  java-environment
-  lua
   php
+  python
   ruby
   ruby-rake
   ruby-rdoc
   rust
-  vala
+  "${_appliancedeps[@]}"
   "${_libguest_deps[@]}"
 )
 checkdepends=(
   linux-lts  # test against LTS kernel: https://github.com/libguestfs/libguestfs/issues/139
-  ruby-test-unit
+  libvirt-python
   ruby-minitest
+  ruby-test-unit
 )
 source=(
   https://download.libguestfs.org/${pkgver%.*}-stable/$pkgname-$pkgver.tar.gz{,.sig}
   $pkgname-1.48.1-disable_php_tests.patch
-  $pkgname-1.58.1-ocaml.patch::https://github.com/libguestfs/libguestfs/commit/07ea5915766d829b62255fb2a94239a28f433159.patch
 )
-sha512sums=('56e8f21592b4c63a14cfaa3255180c3d83bea7d3cc1a404befb121513b7287dd09ae96477b80b3f8794b2cde49febb1909b9716c3b896a313e4445f7f2a5072a'
+sha512sums=('6df335305feaa9b9f90882819c839dffb4aee4bf9b92e75541d00e80ee3893a2de26c9853776b5e02b9d9c0fc76d51ff8aea95706b8e55f9a2084a59f007f739'
             'SKIP'
-            'd59cad07e275f1fa5e82448993db5b3a6dc8cdd1fc97a8839ef0403ad3f1753a5d13df27b184d6c73fa8dda8bd75e63ad68aaad26001986682d5bc7eeb58273a'
-            '38abc2fec1ae9cac6da15760b95e2c40d2552d1a9b296c80fc6cf18ffbe78c720ad8a39c3f557e3135b833df9e3f419afa41d13c250d96df8e2ef2d88ea4087b')
-b2sums=('53899808635e281ed85b01a0faf2b8053c7f1c46c2a5d73f8ec060e9ea74f95ca88e0a41f3d5c4dfafa2419e65ec5975ac6fbda0480c7d2f5929c65a82d4e392'
+            'd59cad07e275f1fa5e82448993db5b3a6dc8cdd1fc97a8839ef0403ad3f1753a5d13df27b184d6c73fa8dda8bd75e63ad68aaad26001986682d5bc7eeb58273a')
+b2sums=('61690846c8381cae0791d5ca6c972eedc62d6c59cb78c704b33c7b7bef6ddac1caa53413811c5c4f2d214a89dc84162d07c3dbc17f8cd393ac188cf57ba35fc1'
         'SKIP'
-        '2f7c429875d80b2b3a70286f83764ce6ed8be86055232fc059ab55ebf8393f9d29a2241401c7ab55af7ba9180ea85909647fe06ca51880f93bc66b488bcec78c'
-        '636bb27aab2302762166cf55e029fde590afee07bc5dc2e50e73b2ba6568344757d11b8d26464f5cc56ec0e7952b685fe41fcf1d7e6be957154549b3e6760489')
+        '2f7c429875d80b2b3a70286f83764ce6ed8be86055232fc059ab55ebf8393f9d29a2241401c7ab55af7ba9180ea85909647fe06ca51880f93bc66b488bcec78c')
 validpgpkeys=('F7774FB1AD074A7E8C8767EA91738F73E1B768A0') # Richard W.M. Jones <rjones@redhat.com>
 
 prepare() {
   # disable php tests, as missing arginfo definition makes them fail: https://github.com/libguestfs/libguestfs/issues/78
   patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-1.48.1-disable_php_tests.patch
-
-  # Fix OCaml macro issues: https://github.com/libguestfs/libguestfs/issues/290
-  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-1.58.1-ocaml.patch
 
   cd $pkgname-$pkgver
   autoreconf -fiv -I /usr/share/gettext/m4
@@ -180,10 +183,42 @@ package_libguestfs() {
     'php-libguestfs: for PHP support'
     'python-libguestfs: for Python support'
     'ruby-libguestfs: for Ruby support'
+    'binutils: for binutils tools in the VM appliance'
+    'clevis: for automated encryption framework support in the VM appliance'
+    'dhcpcd: for DHCP support in the VM appliance'
+    'exfatprogs: for exFAT support in the VM appliance'
+    'f2fs-tools: for F2FS support in the VM appliance'
+    'gptfdisk: for GPT disk support in the VM appliance'
+    'iproute2: for iproute2 tools in the VM appliance'
+    'iputils: for iputils tools in the VM appliance'
+    'jfsutils: for JFS support in the VM appliance'
+    'less: for less tool in the VM appliance'
+    'libldm: for Microsoft Dynamic Disk support in the VM appliance'
+    'lrzip: for ZIP support in the VM appliance'
+    'lsof: for making lsof available in the VM appliance'
+    'lsscsi: for listing SCSI devices in the VM appliance'
+    'lvm2: for LVM2 block device support in the VM appliance'
+    'lzop: for LZO compression support in the VM appliance'
+    'mdadm: for MD-RAID support in the VM appliance'
+    'mtools: for MS-DOS disk support in the VM appliance'
+    'nilfs-utils: for NILFS support in the VM appliance'
+    'ntfs-3g: for NTFS FUSE support in the VM appliance'
+    'ntfsprogs: for NTFS support in the VM appliance'
+    'openssh: for SSH support in the VM appliance'
+    'parted: for partition handling support in the VM appliance'
+    'pciutils: for PCI bus support in the VM appliance'
+    'procps-ng: for system monitoring support in the VM appliance'
+    'psmisc: for procfs support in the VM appliance'
+    'rpm-tools: for librpm support in the VM appliance'
+    'rsync: for rsync support in the VM appliance'
+    'squashfs-tools: for squashfs support in the VM appliance'
+    'strace: for tracing support in the VM appliance'
+    'syslinux: for syslinux support in the VM appliance'
+    'vim: for vim support in the VM appliance'
+    'xfsprogs: for XFS support in the VM appliance'
   )
   provides=(
     libguestfs.so
-    libguestfs-gobject-1.0.so
   )
   backup=(etc/libguestfs-tools.conf)
 
@@ -217,8 +252,6 @@ package_libguestfs() {
 
     _pick ruby-libguestfs usr/lib/ruby/
     _pick ruby-libguestfs usr/share/man/man3/guestfs-ruby.3*
-
-    _pick vala-libguestfs usr/share/vala/
   )
 }
 
@@ -249,7 +282,6 @@ package_lua-libguestfs() {
   pkgdesc+=" - Lua support"
   depends=(
     glibc
-    libxml2 libxml2.so  # NOTE: potentially not required: https://github.com/libguestfs/libguestfs/issues/359
     libguestfs=$pkgver libguestfs.so
     lua
   )
