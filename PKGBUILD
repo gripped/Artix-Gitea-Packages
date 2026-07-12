@@ -1,12 +1,13 @@
-# Maintainer: Konstantin Gizdov <arch at kge dot pw>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Konstantin Gizdov <arch at kge dot pw>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
 # Contributor: nfnty
 
 pkgbase=kea
 pkgname=("${pkgbase}" "${pkgbase}-docs")
 pkgver=3.2.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="High-performance, extensible DHCP server engine from ISC, supporting both DHCPv4 and DHCPv6"
 url="https://kea.isc.org"
