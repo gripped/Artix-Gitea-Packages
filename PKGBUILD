@@ -4,7 +4,7 @@
 
 pkgname=zathura-cb
 pkgver=2026.07.08
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Adds comic book support to zathura"
 url="https://pwmt.org/projects/zathura-cb/"
 arch=('x86_64')
