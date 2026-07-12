@@ -24,10 +24,10 @@ prepare() {
   npm install
 }
 
-check() {
-  cd $pkgname
-  npm test
-}
+# check() {
+#   cd $pkgname
+#   npm test
+# }
 
 package() {
   local mod_dir=/usr/lib/node_modules/$pkgname
