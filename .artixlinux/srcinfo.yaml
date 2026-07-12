@@ -1,12 +1,11 @@
 ---
-version: 2.4.9-1
+version: 2.4.9-2
 pkgbase:
   name: gnupg
   pkgdesc: Complete and free implementation of the OpenPGP standard
   pkgver: 2.4.9
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnupg.org/
-  install: gnupg.install
   arch:
     - x86_64
   license:
@@ -48,7 +47,7 @@ pkgbase:
   optdepends:
     - 'pcsclite: for using scdaemon not with the gnupg internal card driver'
   source:
-    - git+https://dev.gnupg.org/source/gnupg.git?signed#tag=gnupg-2.4.9
+    - git+https://github.com/gpg/gnupg.git?signed#tag=gnupg-2.4.9
     - keyboxd.8
     - gnupg-2.4-avoid_beta_warning.patch
     - 0001-gpg-accept-subkeys-with-a-good-revocation-but-no-sel.patch
@@ -159,4 +158,4 @@ pkgname:
       - libnpth.so
       - readline
       - libreadline.so
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any

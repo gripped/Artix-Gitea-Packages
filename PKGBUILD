@@ -8,7 +8,7 @@
 
 pkgname=gnupg
 pkgver=2.4.9
-pkgrel=1
+pkgrel=2
 pkgdesc='Complete and free implementation of the OpenPGP standard'
 arch=(x86_64)
 url='https://www.gnupg.org/'
@@ -53,9 +53,8 @@ checkdepends=(openssh)
 optdepends=(
   'pcsclite: for using scdaemon not with the gnupg internal card driver'
 )
-install=$pkgname.install
 source=(
-  git+https://dev.gnupg.org/source/gnupg.git?signed#tag=${pkgname}-${pkgver}
+  git+https://github.com/gpg/gnupg.git?signed#tag=${pkgname}-${pkgver}
   keyboxd.8
   $pkgname-2.4-avoid_beta_warning.patch  # do not emit beta warnings (due to misbehaving build system)
   # patches maintained by freepg project: https://gitlab.com/freepg/gnupg/-/commits/gnupg-2.4.9-freepg
