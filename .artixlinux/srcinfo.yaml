@@ -52,7 +52,7 @@ pkgbase:
     - python-xdg
     - python-zope-interface
   source:
-    - git+https://git.deluge-torrent.org/deluge?signed#tag=deluge-2.2.0
+    - git+https://github.com/deluge-torrent/deluge?signed#tag=deluge-2.2.0
     - 0001-Fix-data-installation-when-building-wheel.patch
   validpgpkeys:
     - EA01185D0E8AA00D6323A30890597A687B836BA3
