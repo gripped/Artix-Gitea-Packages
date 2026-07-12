@@ -3,7 +3,7 @@
 
 pkgname=open-isns
 pkgver=0.103
-pkgrel=1
+pkgrel=1.1
 pkgdesc='iSNS server and client for Linux'
 arch=('x86_64')
 depends=('openssl')
@@ -27,4 +27,6 @@ build() {
 
 package() {
   DESTDIR="${pkgdir}" meson install -C build
+
+  rm -r $pkgdir/usr/lib/systemd
 }
