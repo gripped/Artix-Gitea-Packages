@@ -5,7 +5,7 @@
 
 pkgname=pcsclite
 pkgver=2.5.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="PC/SC Architecture smartcard middleware library"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
@@ -67,6 +67,8 @@ package() {
   install -D -m0644 LICENSE.* -t "${pkgdir}"/usr/share/licenses/$pkgname
   install -D -m0644 PCSC/doc/org.debian.pcsc-lite.policy -t "${pkgdir}"/usr/share/polkit-1/actions/
   install -d "${pkgdir}"/usr/lib/pcsc/drivers
+  
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set sw=2 sts=-1 et:
