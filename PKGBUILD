@@ -18,6 +18,7 @@ depends=(
   'glib2'
   'gtk3'
   'hicolor-icon-theme'
+  'libjxl.so=0.12'
   'libsoup3'
   'pango'
   'webkit2gtk-4.1'
