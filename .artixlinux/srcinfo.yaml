@@ -1,10 +1,10 @@
 ---
-version: 13.0.0-1
+version: 13.0.0-2
 pkgbase:
   name: openvdb
   pkgdesc: A large suite of tools for the efficient storage and manipulation of sparse volumetric data discretized on three-dimensional grids
   pkgver: 13.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/AcademySoftwareFoundation/openvdb
   arch:
     - x86_64
@@ -31,6 +31,9 @@ pkgbase:
     - log4cplus
     - imath
     - robin-map
+    - libgcc
+    - libstdc++
+    - glibc
   optdepends:
     - 'glfw: for tools'
     - 'glu: for tools'
