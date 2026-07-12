@@ -1,9 +1,9 @@
 ---
-version: 0.26.2-1
+version: 0.26.4-1
 pkgbase:
   name: lib32-p11-kit
   pkgdesc: Loads and enumerates PKCS#11 modules (32-bit library)
-  pkgver: 0.26.2
+  pkgver: 0.26.4
   pkgrel: 1
   url: https://p11-glue.freedesktop.org
   arch:
@@ -21,17 +21,17 @@ pkgbase:
     - lib32-libtasn1
     - libp11-kit
   source:
-    - git+https://github.com/p11-glue/p11-kit?signed#tag=0.26.2
+    - git+https://github.com/p11-glue/p11-kit?signed#tag=0.26.4
     - git+https://github.com/p11-glue/pkcs11-json
   validpgpkeys:
     - C0F67099B808FB063E2C81117BFB1108D92765AF
     - 462225C3B46F34879FC8496CD605848ED7E69871
     - 5D46CB0F763405A7053556F47A75A648B3F9220C
   b2sums:
-    - 461ad3b3bcae0b4237a689dcdefa35ef846bb7370999665c88dc0d0abb14d3f8089b0b357d183d503ab31f054f0252faae7e7b351abf4a69882acb57abf4d1be
+    - 7b72b5bb3d9bc4fe9f3f40ea1b8c054bb99eb2bbdc8072dc2abc0f196c416340bff14866ba3dfd92666db235e8061f822e19cd8032d1ab4a05ac457b1d1a36d7
     - SKIP
 pkgname:
   - name: lib32-p11-kit
     provides:
       - libp11-kit.so
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
