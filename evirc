@@ -1,18 +1,18 @@
-" All system-wide defaults are set in $VIMRUNTIME/artixllinux.vim (usually just
-" /usr/share/vim/vimfiles/artixllinux.vim) and sourced by the call to :runtime
+" All system-wide defaults are set in $VIMRUNTIME/artixlinux.evi (usually just
+" /usr/share/evi/evifiles/artixlinux.evi) and sourced by the call to :runtime
 " you can find below.  If you wish to change any of those settings, you should
-" do it in this file (/etc/vimrc), since artixllinux.vim will be overwritten
-" everytime an upgrade of the vim packages is performed.  It is recommended to
-" make changes after sourcing artixllinux.vim since it alters the value of the
+" do it in this file (/etc/evirc), since artixlinux.evi will be overwritten
+" everytime an upgrade of the evi packages is performed.  It is recommended to
+" make changes after sourcing artixlinux.evi since it alters the value of the
 " 'compatible' option.
 
 " This line should not be removed as it ensures that various options are
 " properly set to work with the Vim-related packages.
-runtime! artixllinux.vim
+runtime! artixlinux.evi
 
-" If you prefer the old-style vim functionalty, add 'runtime! vimrc_example.vim'
-" Or better yet, read /usr/share/vim/vim80/vimrc_example.vim or the vim manual
-" and configure vim to your own liking!
+" If you prefer the old-style evi functionalty, add 'runtime! evirc_example.evi'
+" Or better yet, read /usr/share/evi/evi100/evirc_example.evi or the evi manual
+" and configure evi to your own liking!
 
-" do not load defaults if ~/.vimrc is missing
-"let skip_defaults_vim=1
+" do not load defaults if ~/.evirc is missing
+"let skip_defaults_evi=1

@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,8 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 10.0-65.6
+    packages:
+      - evi-10.0-65.6-x86_64.pkg.tar.zst
+      - evi-runtime-10.0-65.6-x86_64.pkg.tar.zst
+      - egvi-10.0-65.6-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 10.0-65.5

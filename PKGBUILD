@@ -5,7 +5,7 @@ pkgname=('evi' 'evi-runtime' 'egvi')
 pkgver=10.0
 _commit=34df8a851b5a82521ba1a73829251cb3f094201a
 _versiondir=100
-pkgrel=65.5
+pkgrel=65.6
 pkgdesc='EVi, a hard-fork of Vim v9.1.0 (Jan 2024) before AI was used in the project.'
 url='https://codeberg.org/evi-editor/evi'
 arch=('x86_64')
@@ -28,10 +28,10 @@ makedepends=(
 )
 source=("git+${url}.git#commit=${_commit}"
         evirc
-        artixlinux.vim
+        artixlinux.evi
         evidoc.hook)
 sha256sums=('82a30695969d007ee25eacd4fa381095fd7b9fdd050844aaee2a04d3a76ae81c'
-            'd8f783313b92b2abc6e259ce645e997b073306f6b1683c28a5b175670a2fa72b'
+            'cd887e2fd87c24b00d1123085ea2a27f1076a2c708a456d361da0b447c70533d'
             'cc3d931129854c298eb22e993ec14c2ad86cc1e70a08a64496f5e06559289972'
             'f230cf5feb2f24e4848f68d0555183c7b758b4e78635c40879abb761b6225d31')
 
@@ -122,8 +122,8 @@ package_evi-runtime() {
 
   # rc files
   install -Dm 644 "${srcdir}"/evirc "${pkgdir}"/etc/evirc
-  install -Dm 644 "${srcdir}"/artixlinux.vim \
-    "${pkgdir}"/usr/share/evi/evifiles/artixlinux.vim
+  install -Dm 644 "${srcdir}"/artixlinux.evi \
+    "${pkgdir}"/usr/share/evi/evifiles/artixlinux.evi
 
   # no desktop files and icons
   rm -r "${pkgdir}"/usr/share/{applications,icons}
