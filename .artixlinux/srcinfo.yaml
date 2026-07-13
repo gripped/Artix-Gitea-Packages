@@ -1,0 +1,29 @@
+---
+version: 4.20.0-2.1
+pkgbase:
+  name: xfconf
+  pkgdesc: D-Bus-based configuration storage system
+  pkgver: 4.20.0
+  pkgrel: 2.1
+  url: https://docs.xfce.org/xfce/xfconf/start
+  arch:
+    - x86_64
+  groups:
+    - xfce4
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - vala
+    - xfce4-dev-tools
+  depends:
+    - libxfce4util
+  source:
+    - git+https://gitlab.xfce.org/xfce/xfconf.git#tag=xfconf-4.20.0
+  sha256sums:
+    - be231e33ce8ce45800f05407843c598b55ec33714931bdc92202ab96bb40b38a
+pkgname:
+  - name: xfconf
+# generated with artixpkg 0.38.5-1-any

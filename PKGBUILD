@@ -4,7 +4,7 @@
 
 pkgname=xfconf
 pkgver=4.20.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="D-Bus-based configuration storage system"
 arch=('x86_64')
 url="https://docs.xfce.org/xfce/xfconf/start"
@@ -34,6 +34,8 @@ build() {
 package() {
   cd $pkgname
   make DESTDIR="$pkgdir" install
+
+  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set ts=2 sw=2 et:
