@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 5.0.1-1
+    version: 5.0.2-1
     packages:
-      - apparmor-5.0.1-1-x86_64.pkg.tar.zst
+      - apparmor-5.0.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 4.1.7-1
