@@ -8,7 +8,7 @@ pkgver=13.3.1
 # Before upgrading, make sure that we ship at least this version of
 # nvidia-utils as otherwise we'll get stuff such as #7.
 _driverver=610.43.02
-pkgrel=1
+pkgrel=1.1
 pkgdesc="NVIDIA's GPU programming toolkit"
 arch=(x86_64 aarch64)
 url="https://developer.nvidia.com/cuda-zone"
