@@ -18,7 +18,7 @@ pkgname=(
   ruby-libguestfs
 )
 pkgver=1.60.0
-pkgrel=2
+pkgrel=3
 pkgdesc="Access and modify virtual machine disk images"
 arch=(x86_64)
 url="https://libguestfs.org/"
@@ -55,7 +55,6 @@ _appliancedeps=(
   pciutils
   procps-ng
   psmisc
-  rpm-tools
   rsync
   squashfs-tools
   strace
@@ -67,6 +66,10 @@ _appliancedeps_essential=(
   btrfs-progs
   dosfstools
 )
+# NOTE: The dependencies of the `guestfsd` executable in `/usr/lib/guestfs/supermin.d/daemon.tar.gz` need to honored here as well!
+# Use e.g. the following in a temporary location to inspect the hard dependencies:
+# tar --force-local --extract --gzip --file=daemon.tar.gz
+# readelf -d usr/bin/guestfsd | grep NEEDED
 _libguest_deps=(
   acl
   augeas
@@ -86,6 +89,7 @@ _libguest_deps=(
   pcre2
   qemu
   readline
+  rpm-tools
   sleuthkit
   supermin
   yara
@@ -209,7 +213,6 @@ package_libguestfs() {
     'pciutils: for PCI bus support in the VM appliance'
     'procps-ng: for system monitoring support in the VM appliance'
     'psmisc: for procfs support in the VM appliance'
-    'rpm-tools: for librpm support in the VM appliance'
     'rsync: for rsync support in the VM appliance'
     'squashfs-tools: for squashfs support in the VM appliance'
     'strace: for tracing support in the VM appliance'

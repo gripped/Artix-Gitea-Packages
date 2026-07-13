@@ -25,17 +25,17 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.60.0-2
+    version: 1.60.0-3
     packages:
-      - libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - erlang-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - java-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - lua-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - ocaml-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - perl-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - php-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - python-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
-      - ruby-libguestfs-1.60.0-2-x86_64.pkg.tar.zst
+      - libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - erlang-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - java-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - lua-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - ocaml-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - perl-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - php-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - python-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
+      - ruby-libguestfs-1.60.0-3-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.58.1-4
