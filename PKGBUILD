@@ -11,7 +11,7 @@ pkgname=(
   python-libcamera
 )
 pkgver=0.7.2
-pkgrel=1
+pkgrel=2
 pkgdesc="A complex camera support library for Linux, Android, and ChromeOS"
 arch=(x86_64)
 url="https://libcamera.org/"
@@ -64,6 +64,10 @@ _pick() {
 
 prepare() {
   cd $pkgbase
+  # Revert commit introducing a crash with wireplumber:
+  # https://gitlab.archlinux.org/archlinux/packaging/packages/libcamera/-/work_items/9
+  git revert --mainline 1 --no-commit de49bc35602857628cedcd51234055ccb05836bb
+
   patch -Np1 < ../$pkgbase-fix-python3.14-macro-redefinition.patch
 
   # add version, so that utils/gen-version.sh may rely on it
