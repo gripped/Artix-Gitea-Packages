@@ -1,11 +1,11 @@
 ---
-version: 6.27.0-1
+version: 6.28.0-1
 pkgbase:
   name: kcodecs
   pkgdesc: Provide a collection of methods to manipulate strings using various encodings
-  pkgver: 6.27.0
+  pkgver: 6.28.0
   pkgrel: 1
-  url: https://community.kde.org/Frameworks
+  url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64
   groups:
@@ -23,14 +23,13 @@ pkgbase:
     - glibc
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.27/kcodecs-6.27.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.27/kcodecs-6.27.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.28/kcodecs-6.28.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.28/kcodecs-6.28.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
-    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 77f51f7586e8b457534d95dd241280e8b7475915c656e661dc37b1e8a773c595
+    - b0a9ae34b389c6460adad5323d21bb9e43638acb58da9685f8dc8d821c38a4d8
     - SKIP
 pkgname:
   - name: kcodecs
