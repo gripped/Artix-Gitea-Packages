@@ -1,11 +1,11 @@
 ---
-version: 6.27.0-1
+version: 6.28.0-1
 pkgbase:
   name: kguiaddons
   pkgdesc: Addons to QtGui
-  pkgver: 6.27.0
+  pkgver: 6.28.0
   pkgrel: 1
-  url: https://community.kde.org/Frameworks
+  url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64
   groups:
@@ -22,6 +22,7 @@ pkgbase:
     - python-setuptools
     - qt6-declarative
     - qt6-tools
+    - shiboken6-generator
     - wayland-protocols
   depends:
     - glibc
@@ -33,14 +34,13 @@ pkgbase:
     - 'pyside6: Python bindings'
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.27/kguiaddons-6.27.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.27/kguiaddons-6.27.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.28/kguiaddons-6.28.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.28/kguiaddons-6.28.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
-    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 29b043480c45d3e51c57cac74fd83589cc7729c907a6585b72880cbf07feaf82
+    - f46aeca80707e774fcffe8aa82e464a81056ce84f613347a5c9cc24c1c9a8432
     - SKIP
 pkgname:
   - name: kguiaddons
