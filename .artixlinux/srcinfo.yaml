@@ -1,10 +1,10 @@
 ---
-version: 12.1.0-1
+version: 12.1.0-2
 pkgbase:
   name: python-dropbox
   pkgdesc: Python SDK for Dropbox Core APIs
   pkgver: 12.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/dropbox/dropbox-sdk-python
   arch:
     - any
@@ -24,7 +24,6 @@ pkgbase:
   depends:
     - python
     - python-requests
-    - python-six
     - python-stone
     - python-urllib3
   source:

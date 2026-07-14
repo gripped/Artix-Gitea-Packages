@@ -4,7 +4,7 @@
 
 pkgname=python-dropbox
 pkgver=12.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Python SDK for Dropbox Core APIs"
 url="https://github.com/dropbox/dropbox-sdk-python"
 arch=(any)
@@ -12,7 +12,6 @@ license=(MIT)
 depends=(
   python
   python-requests
-  python-six
   python-stone
   python-urllib3
 )
@@ -35,6 +34,10 @@ b2sums=('a1ba96601f815347e10784bfacdf7b7be4f3082675bf74dd8ba9587728d78799feee781
 
 prepare() {
   cd "$pkgname"
+
+  # yeet six
+  # https://github.com/dropbox/dropbox-sdk-python/pull/532
+  git cherry-pick --no-commit 6c4f78eb5dd021164c395608619efc312830117e
 
   # remove strict version dependencies
   # remove broken version specifiers
