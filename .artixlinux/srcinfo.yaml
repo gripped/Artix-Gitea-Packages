@@ -1,10 +1,10 @@
 ---
-version: 20260707.0-1
+version: 20260707.0-2
 pkgbase:
   name: jami-qt
   pkgdesc: Free and universal communication platform which preserves the users’ privacy and freedoms (Qt client)
   pkgver: 20260707.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://jami.net
   arch:
     - x86_64
