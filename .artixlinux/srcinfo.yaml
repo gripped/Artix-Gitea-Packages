@@ -1,9 +1,9 @@
 ---
-version: 610.43.03-2
+version: 610.43.03-3
 pkgbase:
   name: nvidia-utils
   pkgver: 610.43.03
-  pkgrel: 2
+  pkgrel: 3
   url: http://www.nvidia.com/
   arch:
     - aarch64
