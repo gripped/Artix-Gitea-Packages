@@ -1,11 +1,11 @@
 ---
-version: 6.27.0-1
+version: 6.28.0-1
 pkgbase:
   name: kconfig
   pkgdesc: Configuration system
-  pkgver: 6.27.0
+  pkgver: 6.28.0
   pkgrel: 1
-  url: https://community.kde.org/Frameworks
+  url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64
   groups:
@@ -23,14 +23,13 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/frameworks/6.27/kconfig-6.27.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.27/kconfig-6.27.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.28/kconfig-6.28.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.28/kconfig-6.28.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
-    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - e19728b80e6cc017502fcb50fe6d7e9b5ba9727871ac3a4e9811875e01cb5fe9
+    - 24e26e516b7904a26661eab7d2064bee1ac57165571e85b4da6020fd36f14322
     - SKIP
 pkgname:
   - name: kconfig
