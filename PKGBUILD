@@ -8,7 +8,7 @@ pkgname=(
   wireplumber-docs
 )
 pkgver=0.5.15
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
 arch=(x86_64)
@@ -35,16 +35,16 @@ checkdepends=(pipewire-audio)
 source=(
   "git+https://gitlab.freedesktop.org/pipewire/$pkgbase.git#tag=$pkgver"
   meson_build-systemd.patch
-  wpctl_no-systemctl.patch
+  wpctl-inits.patch
 )
 b2sums=('303838f09331f4c551d6a14b6d7c7e7cf91e6f58f90214397b07010ed0ab652a6cbde2ef9492bf6522a08a33b60f82ed3715e073ca0fb9602a76623ea6159932'
         '035a6887388d7ee41ffd07444e2667dfd3e0fa5edbfd67a7054ef6e74ef046bea21e763bf6ee724c48a2a13d59c32676647b323d1f1a00d9b6688bd39cf778cb'
-        'd78ca12d75ce1a761b1b3f8014e02b846288fbc4833bde97f851c137504b1aef5b87cacd86c7ebdb397ffa4dd67ee4b70f29ca7514a9c2db7235113e1497959c')
+        '74efe388182b11a12280ce23e0efa05a2ca548460245b5a60000848d189bcc9d75b9e1dd130b6352890ca29785b8ba82aefe5f0383d3e4df7a8c49742e3fc083')
 
 prepare() {
   cd $pkgbase
   patch -Np1 -i ../meson_build-systemd.patch
-  patch -Np1 -i ../wpctl_no-systemctl.patch
+  patch -Np1 -i ../wpctl-inits.patch
 }
 
 build() {

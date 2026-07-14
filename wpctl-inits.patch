@@ -1,0 +1,83 @@
+--- a/src/tools/wpctl.c	2026-07-14 13:41:10.284079515 +0200
++++ b/src/tools/wpctl.c	2026-07-14 14:35:47.277252761 +0200
+@@ -1896,20 +1896,53 @@
+ }
+ 
+ static gboolean
+-systemctl_user (const gchar *action, const gchar *service)
++initctl_user (const gchar *action, const gchar *service)
+ {
+-  const gchar *argv[] = { "systemctl", "--user", action, service, NULL };
++  const char *fn = "/proc/1/comm";
++  char ch;
++  FILE *fl;
++  fl = fopen(fn, "r");
++  ch=fgetc(fl);
++  fclose(fl);
++
++  gchar *argv[] = { "", "--user", "", "", NULL };
++  switch ((char)ch)
++  {
++    case 'i':
++      argv[0] = "rc-service";
++      argv[2] = service;
++      argv[3] = action;
++      break;
++    case 'd':
++      argv[0] = "dinitctl";
++      argv[2] = action;
++      argv[3] = service;
++      break;
++    case 'r':
++      printf("Cannot perform action %s for user service %s on runit init\n", action, service);
++      return FALSE;
++      break;
++    case 's':
++      printf("Cannot perform action %s for user service %s on s6 init\n", action, service);
++      break;
++      return FALSE;
++    default:
++      printf("Cannot perform action %s for user service %s on unknown init\n", action, service); 
++      return FALSE;
++      break;
++  }
++
+   gint exit_status;
+   g_autoptr (GError) error = NULL;
+ 
+   if (!g_spawn_sync (NULL, (gchar **) argv, NULL,
+           G_SPAWN_SEARCH_PATH | G_SPAWN_STDOUT_TO_DEV_NULL | G_SPAWN_STDERR_TO_DEV_NULL,
+           NULL, NULL, NULL, NULL, &exit_status, &error)) {
+-    fprintf (stderr, "Warning: could not run systemctl: %s\n", error->message);
++    fprintf (stderr, "Warning: could not run %s: %s\n", argv[0], error->message);
+     return FALSE;
+   }
+   if (!g_spawn_check_exit_status (exit_status, &error)) {
+-    fprintf (stderr, "Warning: systemctl --user %s %s failed: %s\n",
++    fprintf (stderr, "Warning: action %s for user service %s failed: %s\n",
+         action, service, error->message);
+     return FALSE;
+   }
+@@ -1998,7 +2031,7 @@
+ 
+   /* Stop wireplumber before removing its files */
+   if (do_restart)
+-    systemctl_user ("stop", "wireplumber");
++    initctl_user ("stop", "wireplumber");
+ 
+   /* Delete all collected paths in order (children before their parent) */
+   for (guint i = 0; i < paths->len; i++) {
+@@ -2013,11 +2046,11 @@
+ 
+   /* Restart pipewire if its config was removed */
+   if (do_restart && remove_pw_config)
+-    systemctl_user ("restart", "pipewire");
++    initctl_user ("restart", "pipewire");
+ 
+   /* Start wireplumber again */
+   if (do_restart)
+-    systemctl_user ("start", "wireplumber");
++    initctl_user ("start", "wireplumber");
+ }
+ 
+ #define N_ENTRIES 6
