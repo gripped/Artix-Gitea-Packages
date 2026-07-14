@@ -8,8 +8,8 @@ _pkgname=pcsclite
 pkgname=lib32-$_pkgname
 # https://gitlab.archlinux.org/archlinux/packaging/packages/pcsclite/-/commits/main
 # https://salsa.debian.org/rousseau/PCSC/blob/master/ChangeLog
-pkgver=2.4.1
-pkgrel=1.1
+pkgver=2.5.1
+pkgrel=1
 pkgdesc="PC/SC Architecture smartcard middleware library (32-bit)"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
@@ -21,7 +21,8 @@ license=(
   '0BSD'                # src/simclist.c, src/simclist.h
 )
 depends=(
-  'libudev.so' 'lib32-udev'
+  'libudev.so'
+   lib32-udev
   'libpolkit-gobject-1.so'
   $_pkgname
 )
@@ -37,12 +38,12 @@ provides=(
 )
 validpgpkeys=('F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E') # Ludovic Rousseau <rousseau@debian.org>
 source=(
-  "git+https://github.com/LudovicRousseau/PCSC.git#tag=${pkgver}?signed"
+  "git+https://github.com/LudovicRousseau/PCSC.git?signed#tag=${pkgver}"
   "program-suffix.patch"
   "systemd-unit-conflicts.diff"
   "0001-Allow-to-run-32-bit-pcscd-on-64-bit-systems.patch"
 )
-sha256sums=('0347f8dbc250f465dfaf2a9c58779f47fd193fbcf73e6ef64bdc3b47bd069f7a'
+sha256sums=('fb396681125b89569e3513e80b11f8636dba144dae6b49d480fe292cbb759b1d'
             '782db4be00202c5a8ea305bfbf6c8a6da17ccdbf370b3b79bb0c0eea3f4c6bf1'
             '207a2109c954ae75ba31e607f8da587f7053c6fe2f9e3ae17090acfb0c680b36'
             '6623cfd64ce75c3c8a4274210a437f3d192908bd3b5505f5c529c2aebd581581')
@@ -60,9 +61,9 @@ build() {
     --cross-file lib32
     -D program_suffix="-32"
     -D libudev=true
+    -D libsystemd=false
     -D polkit=true
     -D serial=true
-    -D libsystemd=false
     -D usbdropdir=/usr/lib32/pcsc/drivers
   )
   artix-meson PCSC build "${meson_options[@]}"
@@ -79,8 +80,7 @@ package() {
   meson install -C build --destdir "${pkgdir}"
 
   # Remove files shared with pcsclite
-  #rm -rv "$pkgdir"/{etc,usr/{include,share}}
-  rm -rv "$pkgdir"/{etc,usr/{include,sysusers.d,share}}
+  rm -rv "$pkgdir"/{etc,usr/{include,lib/sysusers.d,share}}
   # pcsc-spy is just a Python script, and thus the one from 64-bit pcsclite works with this package
   rm -v "$pkgdir"/usr/bin/pcsc-spy
   # Keep pcscd-32 as it's useful for using with 32-bit only drivers
