@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 50.3-1
+    version: 50.3-2
     packages:
-      - gnome-sudoku-50.3-1-x86_64.pkg.tar.zst
+      - gnome-sudoku-50.3-2-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null

@@ -1,10 +1,10 @@
 ---
-version: 50.3-1
+version: 50.3-2
 pkgbase:
   name: gnome-sudoku
   pkgdesc: Test your logic skills in this number grid puzzle
   pkgver: 50.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/gnome-sudoku/-/wikis/home
   arch:
     - x86_64
