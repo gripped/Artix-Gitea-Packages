@@ -1,10 +1,10 @@
 ---
-version: 5.15.211-1
+version: 5.15.211-2
 pkgbase:
   name: linux-lts515
   pkgdesc: LTS Linux 5.15.x
   pkgver: 5.15.211
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kernel.org/
   arch:
     - x86_64
