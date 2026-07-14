@@ -22,7 +22,7 @@ pkgbase:
     - lib32-udev
     - libpolkit-gobject-1.so
     - pcsclite
-    - libelogind.so
+    - lib32-elogind
   provides:
     - libpcsclite.so
     - libpcsclite_real.so

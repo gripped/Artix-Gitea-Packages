@@ -25,7 +25,7 @@ depends=(
    lib32-udev
   'libpolkit-gobject-1.so'
   $_pkgname
-  'libelogind.so'
+  lib32-elogind
 )
 makedepends=(
   'git'
