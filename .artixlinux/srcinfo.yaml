@@ -1,11 +1,11 @@
 ---
-version: 6.27.0-1
+version: 6.28.0-1
 pkgbase:
   name: kwallet
   pkgdesc: Secure and unified container for user passwords
-  pkgver: 6.27.0
+  pkgver: 6.28.0
   pkgrel: 1
-  url: https://community.kde.org/Frameworks
+  url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64
   groups:
@@ -43,14 +43,13 @@ pkgbase:
   provides:
     - org.freedesktop.secrets
   source:
-    - https://download.kde.org/stable/frameworks/6.27/kwallet-6.27.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.27/kwallet-6.27.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.28/kwallet-6.28.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.28/kwallet-6.28.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
-    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - daa03acc40eec873bb450fd8116ae7c788b86a7ceebc9fa555b4a166feeb7983
+    - e21130c86ffa0be49065648f4e753d63d3d786fab876f511d9d09da16480f691
     - SKIP
 pkgname:
   - name: kwallet
