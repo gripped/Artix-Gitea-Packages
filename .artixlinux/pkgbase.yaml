@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.163.3-1
+    version: 0.164.0-1
     packages:
-      - hugo-0.163.3-1-x86_64.pkg.tar.zst
+      - hugo-0.164.0-1-x86_64.pkg.tar.zst
     debug: []
