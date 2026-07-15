@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2026-04-28 by artix-mlg
+## Generated on 2026-07-13 by artix-mlg
 ##
 
 # Artix mirrors
@@ -50,8 +50,6 @@ Server = https://artix.sakamoto.pl/$repo/os/$arch
 Server = https://hitman.go.ro/mirror/artix-linux/$repo/os/$arch
 # Sweden
 Server = https://ftp.ludd.ltu.se/mirrors/artix/$repo/os/$arch
-# Switzerland
-Server = https://artix.kurdy.org/$repo/os/$arch
 # United Kingdom
 Server = https://mirror.vinehost.net/artix-linux/$repo/os/$arch
 
