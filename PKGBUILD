@@ -11,7 +11,7 @@ pkgname=(
   python-libcamera
 )
 pkgver=0.7.2
-pkgrel=2
+pkgrel=3
 pkgdesc="A complex camera support library for Linux, Android, and ChromeOS"
 arch=(x86_64)
 url="https://libcamera.org/"
@@ -25,7 +25,9 @@ makedepends=(
   gst-plugins-base
   gtest
   libdrm
+  libgcc
   libjpeg-turbo
+  libstdc++
   libtiff
   libyaml
   libyuv
@@ -64,10 +66,6 @@ _pick() {
 
 prepare() {
   cd $pkgbase
-  # Revert commit introducing a crash with wireplumber:
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/libcamera/-/work_items/9
-  git revert --mainline 1 --no-commit de49bc35602857628cedcd51234055ccb05836bb
-
   patch -Np1 < ../$pkgbase-fix-python3.14-macro-redefinition.patch
 
   # add version, so that utils/gen-version.sh may rely on it
@@ -94,7 +92,7 @@ check() {
       | grep -v memory_lifetime_test \
   )
   # shellcheck disable=SC2068
-#  meson test -C build ${tests[@]}
+  meson test -C build ${tests[@]}
 }
 
 package_libcamera() {
@@ -114,6 +112,7 @@ package_libcamera() {
     libelf
     libgcc
     libglvnd
+    libstdc++
     libunwind
     libyaml
     libyuv
@@ -167,6 +166,7 @@ package_libcamera-ipa() {
     glibc
     libcamera libcamera.so libcamera-base.so
     libgcc
+    libstdc++
   )
   # stripping requires re-signing of IPA libs, so we do it manually
   options=(!strip)
@@ -195,6 +195,7 @@ package_libcamera-tools() {
     libevent libevent-2.1.so libevent_pthreads-2.1.so
     libgcc
     libjpeg-turbo libjpeg.so
+    libstdc++
     libtiff libtiff.so
     libyaml
     qt6-base
@@ -220,6 +221,7 @@ package_gst-plugin-libcamera() {
     gstreamer
     libcamera libcamera.so libcamera-base.so
     libgcc
+    libstdc++
   )
 
   mv -v $pkgname/* "$pkgdir"
@@ -235,6 +237,7 @@ package_python-libcamera() {
     glibc
     libcamera
     libgcc
+    libstdc++
     python
   )
 

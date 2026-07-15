@@ -1,10 +1,10 @@
 ---
-version: 0.7.2-2
+version: 0.7.2-3
 pkgbase:
   name: libcamera
   pkgdesc: A complex camera support library for Linux, Android, and ChromeOS
   pkgver: 0.7.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://libcamera.org/
   arch:
     - x86_64
@@ -17,7 +17,9 @@ pkgbase:
     - gst-plugins-base
     - gtest
     - libdrm
+    - libgcc
     - libjpeg-turbo
+    - libstdc++
     - libtiff
     - libyaml
     - libyuv
@@ -60,6 +62,7 @@ pkgname:
       - libelf
       - libgcc
       - libglvnd
+      - libstdc++
       - libunwind
       - libyaml
       - libyuv
@@ -93,6 +96,7 @@ pkgname:
       - libcamera.so
       - libcamera-base.so
       - libgcc
+      - libstdc++
     options:
       - '!strip'
   - name: libcamera-tools
@@ -115,6 +119,7 @@ pkgname:
       - libgcc
       - libjpeg-turbo
       - libjpeg.so
+      - libstdc++
       - libtiff
       - libtiff.so
       - libyaml
@@ -140,6 +145,7 @@ pkgname:
       - libcamera.so
       - libcamera-base.so
       - libgcc
+      - libstdc++
   - name: python-libcamera
     pkgdesc: A complex camera support library for Linux, Android, and ChromeOS - Python integration
     license:
@@ -149,5 +155,6 @@ pkgname:
       - glibc
       - libcamera
       - libgcc
+      - libstdc++
       - python
 # generated with artixpkg 0.38.5-1-any
