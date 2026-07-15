@@ -1,10 +1,10 @@
 ---
-version: 7.1.3.zen1-3
+version: 7.1.3.zen2-1
 pkgbase:
   name: linux-zen
   pkgdesc: Linux ZEN
-  pkgver: 7.1.3.zen1
-  pkgrel: 3
+  pkgver: 7.1.3.zen2
+  pkgrel: 1
   url: https://github.com/zen-kernel/zen-kernel
   arch:
     - x86_64
@@ -41,8 +41,8 @@ pkgbase:
   source:
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.xz
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.3.tar.sign
-    - https://github.com/zen-kernel/zen-kernel/releases/download/v7.1.3-zen1/linux-v7.1.3-zen1.patch.zst
-    - https://github.com/zen-kernel/zen-kernel/releases/download/v7.1.3-zen1/linux-v7.1.3-zen1.patch.zst.sig
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v7.1.3-zen2/linux-v7.1.3-zen2.patch.zst
+    - https://github.com/zen-kernel/zen-kernel/releases/download/v7.1.3-zen2/linux-v7.1.3-zen2.patch.zst.sig
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
@@ -50,17 +50,17 @@ pkgbase:
   sha256sums:
     - be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc
     - SKIP
-    - 35c98d32621e15d96d0151f5c3d56f6c5bd34f959639d74df25ff212bd74a8cc
+    - 78ecb385736d6e59790e80b7a59a5116b3cb2a1c2da280564432f8937db03a23
     - SKIP
   b2sums:
     - b6466e2798627522f0339c670a223b21266f4d4ede39163867c0f122295e54c5d24093abb51d5c6c6c917de0cb199836e81f45f7c391a5cc138cac2a519438e8
     - SKIP
-    - 6461423fe6626b613a3e90a968e124f2b957db922d9a550e364b37a9cc89209f3fd4a521cec09813b34cec9252e5c22ba6cc12994363ed7cce5af482bf93f03b
+    - cb113cb637d9bc2ba60215c6ecd4d5c62c8fe2add15ff6eff38bd421b0f7da62b5e8f4a1c29b348eb37587a48162e14264f1775d702ff05b61eb83d058bf4a09
     - SKIP
   source_x86_64:
     - config.x86_64
   b2sums_x86_64:
-    - 74f84e26bc5660d791d483fe215d49ea9d8fb96e12ee4429c6f7f6ddbad7ad2d983c72c18ebf8e6f4aced6377d3f7afe12e0ed5331b0eb065d6a5726191b7493
+    - 9bcd5c30c0289f055a610cd9949ebc45d1e302d384d79a2b23689c131638c7fc39cd5c36ab2bcdcdfe1f89b60aa7da155053e6d26f1bc5c8707aee5cb7a4f0f7
 pkgname:
   - name: linux-zen
     pkgdesc: The Linux ZEN kernel and modules
