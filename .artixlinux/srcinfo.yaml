@@ -1,9 +1,9 @@
 ---
-version: 2.4.2-1
+version: 2.4.3-1
 pkgbase:
   name: codespell
   pkgdesc: check code for common misspellings
-  pkgver: 2.4.2
+  pkgver: 2.4.3
   pkgrel: 1
   url: https://github.com/codespell-project/codespell
   arch:
@@ -21,11 +21,11 @@ pkgbase:
   depends:
     - python-chardet
   source:
-    - git+https://github.com/codespell-project/codespell.git#tag=v2.4.2
+    - git+https://github.com/codespell-project/codespell.git#tag=v2.4.3
     - remove-check-test_command.patch
   sha256sums:
-    - 9a2cefdf45e19041cca62c685e47fce9b3b611735e98822c057b3213de43e904
+    - 8497ba71437cf25167b849c4ee60cfab345a6c4cc675156ea4d07c7db938c745
     - 17a5390c0123480c794d293e0a6b95a9f941ea9d5d9168649746dd55faf0b833
 pkgname:
   - name: codespell
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
