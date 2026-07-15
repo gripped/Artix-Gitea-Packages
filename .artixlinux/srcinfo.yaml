@@ -1,10 +1,10 @@
 ---
-version: 6.28.0-1
+version: 6.28.0-1.1
 pkgbase:
   name: baloo
   pkgdesc: A framework for searching and managing metadata
   pkgver: 6.28.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64

@@ -4,7 +4,7 @@
 
 pkgname=baloo
 pkgver=6.28.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A framework for searching and managing metadata'
 arch=(x86_64)
 url='https://develop.kde.org/products/frameworks/'
