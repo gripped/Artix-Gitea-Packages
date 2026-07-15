@@ -1,10 +1,10 @@
 ---
-version: 12.1.0-2
+version: 12.2.0-1
 pkgbase:
   name: python-dropbox
   pkgdesc: Python SDK for Dropbox Core APIs
-  pkgver: 12.1.0
-  pkgrel: 2
+  pkgver: 12.2.0
+  pkgrel: 1
   url: https://github.com/dropbox/dropbox-sdk-python
   arch:
     - any
@@ -27,11 +27,11 @@ pkgbase:
     - python-stone
     - python-urllib3
   source:
-    - python-dropbox::git+https://github.com/dropbox/dropbox-sdk-python#tag=v12.1.0
+    - python-dropbox::git+https://github.com/dropbox/dropbox-sdk-python#tag=v12.2.0
   sha512sums:
-    - 44ad653f243e84da4fb547e4f3387b3a1a2fa760cc6fb15f3bfcaf09a696129cf7373e5abda12167a8018f68fb9ec2bc0c9b48ab5537ee2afb2f3b266e0cbd68
+    - 53d4469f90473b079e0d8043dd4b98321fbe157e858cf74eb08da4aa6047f961d6292c3a72298d79de0828d8a10c4031b411a1b23ea47bac42777da513c3d73f
   b2sums:
-    - a1ba96601f815347e10784bfacdf7b7be4f3082675bf74dd8ba9587728d78799feee781b52eb3c49b0abccb881d756be02e9b8851ec2f9957c76eccfbe3a5e4e
+    - b8c5420771dc407fb60182c0632cc3ee952432136ef648e7d7dc9a2d2c37b08cfd651202fe438821ac047b92cc674e6976757af29987a7b13e7a2f0faba70463
 pkgname:
   - name: python-dropbox
 # generated with artixpkg 0.38.5-1-any
