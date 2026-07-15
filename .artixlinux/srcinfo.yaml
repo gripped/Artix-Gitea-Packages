@@ -1,10 +1,10 @@
 ---
-version: 1.74.0-1
+version: 1.74.0-1.1
 pkgbase:
   name: tmuxp
   pkgdesc: Tmux session manager built on libtmux
   pkgver: 1.74.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://tmuxp.git-pull.com/en/latest/
   arch:
     - any
