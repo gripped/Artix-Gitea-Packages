@@ -11,7 +11,7 @@ __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
-pkgver=140.12.0.103
+pkgver=140.12.0.104
 pkgrel=1
 _ffbuild=1
 _ffsrcver="${pkgver%.*}"
@@ -131,9 +131,8 @@ source=(
   "0002-Use-wasm32-wasip1-target.patch"
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
-  "0005-cbindgen-0_29_4.patch"
 )
-sha256sums=('8d4b389ba90f567c0ebc9d11e2eb01f822333c857fd4e7e7b5123591af85b0a1'
+sha256sums=('e364e67c1c4167018ff03e3a1f56e4ffca14a26444daa6160dba7022e1e0a13f'
             '85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
@@ -142,8 +141,7 @@ sha256sums=('8d4b389ba90f567c0ebc9d11e2eb01f822333c857fd4e7e7b5123591af85b0a1'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760'
-            '198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f')
+            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -248,7 +246,6 @@ fi
   patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
   xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
   xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
-  patch -B .patchorigin -Np1 -i ../../0005-cbindgen-0_29_4.patch
 }
 
 

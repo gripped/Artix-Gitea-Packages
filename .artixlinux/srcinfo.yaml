@@ -1,9 +1,9 @@
 ---
-version: 1:140.12.0.103-1
+version: 1:140.12.0.104-1
 pkgbase:
   name: konform-browser
   pkgdesc: Firefox ESR fork with increased security, privacy, and customizability
-  pkgver: 140.12.0.103
+  pkgver: 140.12.0.104
   pkgrel: 1
   epoch: 1
   url: https://konform-browser.codeberg.page
@@ -97,7 +97,7 @@ pkgbase:
     - usr/lib/konform/librewolf.cfg
     - usr/lib/konform/distribution/policies.json
   source:
-    - src::git+https://codeberg.org/konform-browser/source.git#tag=140.12.0.103
+    - src::git+https://codeberg.org/konform-browser/source.git#tag=140.12.0.104
     - firefox-140.12.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/140.12.0esr-candidates/build1/source/firefox-140.12.0esr.source.tar.xz
     - firefox-140.12.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/140.12.0esr-candidates/build1/source/firefox-140.12.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz
@@ -107,11 +107,10 @@ pkgbase:
     - 0002-Use-wasm32-wasip1-target.patch
     - 0003-update-rust-bindgen-to-fix-clang22-build.patch.xz
     - 0004-skia-m142-update.patch.xz
-    - 0005-cbindgen-0_29_4.patch
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - 8d4b389ba90f567c0ebc9d11e2eb01f822333c857fd4e7e7b5123591af85b0a1
+    - e364e67c1c4167018ff03e3a1f56e4ffca14a26444daa6160dba7022e1e0a13f
     - 85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62
     - SKIP
     - 50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512
@@ -121,7 +120,6 @@ pkgbase:
     - baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba
     - 8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d
     - e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760
-    - 198a797558d58d8cb68870fc1ff30dead271f5f1a3be0bce9a627d728a37da9f
 pkgname:
   - name: konform-browser
 # generated with artixpkg 0.38.5-1-any
