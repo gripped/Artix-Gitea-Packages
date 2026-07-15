@@ -3,7 +3,7 @@
 # Maintainer: Orhun Parmaksız <orhun@archlinux.org>
 
 pkgname=cargo-edit
-pkgver=0.13.11
+pkgver=0.13.12
 pkgrel=1
 pkgdesc='Managing cargo dependencies from the command line'
 url='https://github.com/killercup/cargo-edit/releases'
@@ -11,23 +11,33 @@ arch=('x86_64')
 license=('MIT' 'Apache-2.0')
 depends=('cargo' 'libssh2' 'openssl')
 source=(https://github.com/killercup/${pkgname}/archive/v${pkgver}/${pkgname}-${pkgver}.tar.gz)
-sha512sums=('d9dd13164c353bc0c7694c0e74805be02f4d3abfbb13b846f3434aef8262531923790cc2fbafe9df6193ee50c344318f5e2fcc315f667f2558afc8f2650f41cb')
-b2sums=('50839a4a86a74ed4df7cf89222d080a4cf45231a5e961adfe3273f44b94e0be1e8237af61f502ea7b4b5551bcf53ac76b1245768e8098cbd26cc6f20300a7f81')
+sha512sums=('9c8d61093e110d9a5d7cdbd7e1890239469fac5821f6faaf18a9d2b1bb1871a2a25820c4c09c90d28174bc45469b21573f7faf26388ef7ad73dfcdf92c70ac05')
+b2sums=('693554e18213714fe8bf54bdf990984d80a11bd9767df5afa96b9512f063e2d57c486e96cc0cb2a80e588254ac360d5826b953395156a579e0a796c2eac938f3')
+
+_srcenv() {
+  cd ${pkgname}-${pkgver}
+  export CARGO_HOME="$srcdir"
+  export CARGO_PROFILE_RELEASE_DEBUG=2
+  export CARGO_PROFILE_RELEASE_STRIP=false
+  export CARGO_PROFILE_RELEASE_LTO=true
+  export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+  export CARGO_PROFILE_RELEASE_OPT_LEVEL=3
+  CFLAGS+=' -ffat-lto-objects'
+  export LIBSSH2_SYS_USE_PKG_CONFIG=1
+}
 
 prepare() {
-  cd "${pkgname}-${pkgver}"
-  cargo fetch --locked --target "$(rustc --print host-tuple)"
+  _srcenv
+  cargo fetch --locked --target host-tuple
 }
 
 build() {
-  cd ${pkgname}-${pkgver}
-  CFLAGS+=' -ffat-lto-objects'
-  export LIBSSH2_SYS_USE_PKG_CONFIG=1
+  _srcenv
   cargo build --frozen --release
 }
 
 check() {
-  cd ${pkgname}-${pkgver}
+  _srcenv
   # Note: Rust 1.78 started warning for deprecated config file names, something
   # being used extensively in tests, build with older rust from the package
   # archive if you want to run checks, e.g.:
@@ -45,7 +55,6 @@ check() {
     workspace_inheritance::case
     workspace_member_cwd::case
   )
-  export LIBSSH2_SYS_USE_PKG_CONFIG=1
   cargo test --frozen -- ${skipped[@]/#/--skip }
 }
 

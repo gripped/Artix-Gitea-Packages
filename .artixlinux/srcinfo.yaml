@@ -1,9 +1,9 @@
 ---
-version: 0.13.11-1
+version: 0.13.12-1
 pkgbase:
   name: cargo-edit
   pkgdesc: Managing cargo dependencies from the command line
-  pkgver: 0.13.11
+  pkgver: 0.13.12
   pkgrel: 1
   url: https://github.com/killercup/cargo-edit/releases
   arch:
@@ -16,11 +16,11 @@ pkgbase:
     - libssh2
     - openssl
   source:
-    - https://github.com/killercup/cargo-edit/archive/v0.13.11/cargo-edit-0.13.11.tar.gz
+    - https://github.com/killercup/cargo-edit/archive/v0.13.12/cargo-edit-0.13.12.tar.gz
   sha512sums:
-    - d9dd13164c353bc0c7694c0e74805be02f4d3abfbb13b846f3434aef8262531923790cc2fbafe9df6193ee50c344318f5e2fcc315f667f2558afc8f2650f41cb
+    - 9c8d61093e110d9a5d7cdbd7e1890239469fac5821f6faaf18a9d2b1bb1871a2a25820c4c09c90d28174bc45469b21573f7faf26388ef7ad73dfcdf92c70ac05
   b2sums:
-    - 50839a4a86a74ed4df7cf89222d080a4cf45231a5e961adfe3273f44b94e0be1e8237af61f502ea7b4b5551bcf53ac76b1245768e8098cbd26cc6f20300a7f81
+    - 693554e18213714fe8bf54bdf990984d80a11bd9767df5afa96b9512f063e2d57c486e96cc0cb2a80e588254ac360d5826b953395156a579e0a796c2eac938f3
 pkgname:
   - name: cargo-edit
 # generated with artixpkg 0.38.5-1-any
