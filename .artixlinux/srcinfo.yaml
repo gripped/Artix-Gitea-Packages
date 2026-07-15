@@ -1,9 +1,9 @@
 ---
-version: 152.0.5-1
+version: 152.0.6-1
 pkgbase:
   name: firefox
   pkgdesc: Fast, Private & Safe Web Browser
-  pkgver: 152.0.5
+  pkgver: 152.0.6
   pkgrel: 1
   url: https://www.mozilla.org/firefox/
   arch:
@@ -73,8 +73,8 @@ pkgbase:
     - '!lto'
     - '!makeflags'
   source:
-    - https://archive.mozilla.org/pub/firefox/releases/152.0.5/source/firefox-152.0.5.source.tar.xz
-    - https://archive.mozilla.org/pub/firefox/releases/152.0.5/source/firefox-152.0.5.source.tar.xz.asc
+    - https://archive.mozilla.org/pub/firefox/releases/152.0.6/source/firefox-152.0.6.source.tar.xz
+    - https://archive.mozilla.org/pub/firefox/releases/152.0.6/source/firefox-152.0.6.source.tar.xz.asc
     - firefox-symbolic.svg
     - firefox.desktop
     - org.mozilla.firefox.metainfo.xml
@@ -83,7 +83,7 @@ pkgbase:
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - 0a0341b05ac68834c4071665fe11f1e6729084b4e4ffcd70241097b0ad2cb224
+    - ea220c4f8d19d4edaa20e6dadfd3c4aeb07dbed017ade2828fd814d660660f0e
     - SKIP
     - a9b8b4a0a1f4a7b4af77d5fc70c2686d624038909263c795ecc81e0aec7711e9
     - 2a51d57d98fbda86f094bc991e1ad4dd6e8a9d32fd0836b1183bf70ec4b68915
@@ -91,7 +91,7 @@ pkgbase:
     - 075ecdf42fa429d6c4b273c52d406f4335484c31b38f76fe3cc2e33ead7750cc
     - 5a04df0214fbce0ff7c68ed8bfea6b4544a515a76a223bfe11c2c853254841ae
   b2sums:
-    - 011cae8194c98ada33d47f468ce3e23c7c3056f09c9ee0c69cd8eb58007d88002436a374bcb8eb9cbffbbde27b083004c53b752a5a4b6d342af220193ab2e7f7
+    - d0a55f6f30a78516d244037d593ccb08f6803498b582508af35d5b2811097f00584c5b1760c488ae6e7073837b88087ff94ab36eee9af8d7a110350515fc94eb
     - SKIP
     - 63a8dd9d8910f9efb353bed452d8b4b2a2da435857ccee083fc0c557f8c4c1339ca593b463db320f70387a1b63f1a79e709e9d12c69520993e26d85a3d742e34
     - 63c62c85ee70e22b02e9ea34e69f04f50403b7634b99fb0e996a83c963916dc4224041a0b265e54f6c224bd1777ddfdeb255037e3e30fec288695f3050278b05
