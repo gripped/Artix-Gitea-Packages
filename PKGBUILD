@@ -9,8 +9,8 @@
 # Contributor: Larry Hajali <larryhaja@gmail.com>
 
 pkgname=calibre
-pkgver=9.10.0
-pkgrel=1
+pkgver=9.11.0
+pkgrel=2
 pkgdesc='Ebook management application'
 arch=(x86_64)
 url=https://calibre-ebook.com
@@ -64,7 +64,6 @@ depends=(espeak-ng
          libwmf
 #        mathjax
          mtdev
-         onnxruntime
          openssl
          optipng
          podofo
@@ -81,6 +80,7 @@ depends=(espeak-ng
          udisks2
          zstd)
 makedepends=(cmake
+             onnxruntime
              pyqt-builder
              rapydscript-ng
              sip
@@ -90,7 +90,8 @@ checkdepends=(poppler
               python-pyzstd
               speech-dispatcher
               tk)
-optdepends=('poppler: required for converting pdf to html'
+optdepends=('onnxruntime: required for text-to-speech'
+            'poppler: required for converting pdf to html'
             'python-fonttools: required for font subset feature in epub editor'
             'speech-dispatcher: TTS support in the viewer')
 conflicts=(calibre-common
@@ -100,7 +101,7 @@ _archive="$pkgname-$pkgver"
 source=("https://download.calibre-ebook.com/$pkgver/$_archive.tar.xz"
         "$url/signatures/$_archive.tar.xz.sig"
         "tts-piper-remove-withterminator.patch")
-sha256sums=('53b8a277c766e6c3fb5dfb26fa29119f4a129bf8f9a954b4235a963c8a30c301'
+sha256sums=('50d42e3b32ec5116f6b1df099537f4becaf36bfedecf9f581b743f11d8b6cb36'
             'SKIP'
             '128dad5dda9175ee9d8a798cdac0514e228821dca11b746b54682a9cc787d3da')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
@@ -129,8 +130,8 @@ build() {
 	python setup.py iso3166
         # the liberation fonts directory is deleted later, but this step is necessary to prevent the setup from downloading them
 	python setup.py liberation_fonts --system-liberation_fonts --path-to-liberation_fonts /usr/share/fonts/liberation
-#	MathJax 4 not supported
-#	python setup.py mathjax --system-mathjax --path-to-mathjax /usr/share/mathjax
+	# MathJax 4 not supported
+	# python setup.py mathjax --system-mathjax --path-to-mathjax /usr/share/mathjax
 	python setup.py mathjax
 	python setup.py gui
 }

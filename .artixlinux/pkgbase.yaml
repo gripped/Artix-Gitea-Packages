@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 9.10.0-1
+    version: 9.11.0-2
     packages:
-      - calibre-9.10.0-1-x86_64.pkg.tar.zst
+      - calibre-9.11.0-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 8.7.0-12
