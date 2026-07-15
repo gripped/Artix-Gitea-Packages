@@ -4,7 +4,7 @@
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.26.4
+pkgver=1.27.0
 pkgrel=1
 pkgdesc="Painless self-hosted Git service, community managed."
 url="https://gitea.io"
@@ -27,7 +27,7 @@ backup=("etc/${pkgname}/app.ini")
 source=("git+https://github.com/go-gitea/gitea.git#tag=v${pkgver}?signed"
         "${pkgname}.tmpfiles"
         "${pkgname}.sysusers")
-sha256sums=('ef6051a89cd03ca2801126cd3af61ba3ea6a89200fe7fe5ddd3d9b25d4df6a65'
+sha256sums=('885a612a1e9d8603d77cd1a4a8a18e3b048b7b8c8d8a85f06694319079f8f918'
             '1521fd7edc3830c695698ffe9835709f1408040b5ec989f07410972c894fa8ba'
             'e29dcc74b2f52e32d3931103d03f202d1cafe18e7eb9a271da0f50ef61dc8446')
 validpgpkeys=(B56E3C7437A49E136862F5DE9D8A57ADAA232E95  # Matti Ranta <matti@mdranta.net>, retrieved from https://github.com/techknowlogick.gpg
@@ -63,7 +63,8 @@ check() {
 	# This test expects .gitconfig path to be "$HOME/.gitconfig" (which isn't the case due to the above workaround)
 	rm -f modules/git/config_test.go
 	# `-p 1` to prevent race conditions from go tests when trying to lock the gitconfig file
-	make test GOTESTFLAGS="-p 1"
+	make test-frontend
+	make test-backend GOTEST_FLAGS="-p 1"
 }
 
 package() {
