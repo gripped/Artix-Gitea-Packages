@@ -1,13 +1,13 @@
 # Maintainer: artist for Artix Linux
 
 _ver=7.1.3
-_rel=1
+_rel=2
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=3
+pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(
@@ -61,16 +61,16 @@ validpgpkeys=(
 )
 sha256sums=('be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc'
             'SKIP'
-            '861ea54a40c1d25296422fd48eac2e02b46e0071b3d99a6c28555ae3acc8edd7'
+            '741ca7140c73d9c8a065cc20fbbb881ce4ca700466ad8e819bc80d7f2e52d2c4'
             'SKIP'
             'e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7')
-sha256sums_x86_64=('d3992f3bf66dd0044a71a55e7c9531a3bcb2d584eb47573f6f4d5d1c8a34e7bc')
+sha256sums_x86_64=('3eac5a6739cfabcdc45d6381c057dda82f7d7a6bff4c87a43e73fbeefe8d5a66')
 b2sums=('b6466e2798627522f0339c670a223b21266f4d4ede39163867c0f122295e54c5d24093abb51d5c6c6c917de0cb199836e81f45f7c391a5cc138cac2a519438e8'
         'SKIP'
-        'b402dbf0b29131c2c3fe80406c5560e3e1a5c1384d6a1ba670793b343d57300ec312da7d3a4f7b3f44a6615b015d7fbebb2c7df832a99aa0e1941faef0481baa'
+        '3a6a946d93a0f31847ad3c58230d4c1700f7611bc5b1a9af9e33ec180c007a47158eb00220edfaa7d5e1467d0ad496a0468d6e5c58606cfc38d9d7dc33dcef3d'
         'SKIP'
         '9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725')
-b2sums_x86_64=('51c095bf4df2ced373eb13e18cecbff1fb7f4010a4980fb1aa7926b57a13e54e7715a69eedc7c975c13c0be98174c3d299a0b3ced5662a429a9eda6ecdfe8644')
+b2sums_x86_64=('eccd81c5c4cd4cdceb0b75ffda049c6982d8ce2c726cf6539263a5538dd332c8e6ecaacc06478ae21364377e8bfc6284142c379d9bfd07d291d73df243c2ce1c')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
