@@ -33,5 +33,6 @@ package() {
   optdepends=('firefox' 'konform-browser')
   _extension_id="{73a6fe31-595d-460b-a920-fcc0f8843232}"
   _extension_dest="${pkgdir}/usr/lib/firefox/browser/extensions/${_extension_id}"
-  install -Dm644 noscript/xpi/noscript-$pkgver.xpi "${_extension_dest}.xpi"
+
+  install -Dm644 noscript/latest.xpi "${_extension_dest}.xpi"
 }
