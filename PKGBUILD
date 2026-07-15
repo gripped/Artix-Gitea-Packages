@@ -2,7 +2,7 @@
 # Contributor: Tom Hacohen <tom@stosb.com>
 pkgname=acme-tiny
 pkgver=5.0.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A tiny script to issue and renew TLS certs from Let's Encrypt"
 url="https://github.com/diafygi/acme-tiny"
 depends=('python' 'openssl')
