@@ -1,9 +1,9 @@
 ---
-version: 6.7.2-1
+version: 6.7.3-1
 pkgbase:
   name: systemsettings
   pkgdesc: KDE system manager for hardware, software, and workspaces
-  pkgver: 6.7.2
+  pkgver: 6.7.3
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -41,15 +41,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.7.2/systemsettings-6.7.2.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.2/systemsettings-6.7.2.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.3/systemsettings-6.7.3.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.3/systemsettings-6.7.3.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 6b72787a2143c5cb17cc507ef2e97cde3a6d1c5cd8157f59cc681b6552d7ce45
+    - 9729cd487a838c80c8a5adc98b50d84ba4231cb47f55b5efa8972213b88e1640
     - SKIP
 pkgname:
   - name: systemsettings
