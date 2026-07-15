@@ -1,9 +1,9 @@
 ---
-version: 3.2.0-1
+version: 3.2.1-1
 pkgbase:
   name: openbabel
   pkgdesc: A library designed to interconvert between many file formats used in molecular modeling and computational chemistry
-  pkgver: 3.2.0
+  pkgver: 3.2.1
   pkgrel: 1
   url: https://openbabel.org/
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - libstdc++
     - glibc
   source:
-    - git+https://github.com/openbabel/openbabel#tag=openbabel-3-2-0
+    - git+https://github.com/openbabel/openbabel#tag=openbabel-3-2-1
   sha256sums:
-    - a749611c7599b1631fd9fa136cd584c2cdc90a8ac4bac803d17d1c7a79ba75a0
+    - ea037205e22522f87af2dd7f717d3af6511319b778223eb6e39f968309f983a2
 pkgname:
   - name: openbabel
     depends:
