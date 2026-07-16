@@ -1,5 +1,5 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Robin Broda <coderobe @ archlinux.org>
+# Contributor: Robin Broda <coderobe @ archlinux.org>
 # Contributor: Peter Wu <peter@lekensteyn.nl>
 # Contributor: Evaggelos Balaskas <eblaskas _AT_ ebalaskas _DOT_ gr>
 # Contributor: Xiao-Long Chen <chenxiaolong@cxl.epac.to>
@@ -17,8 +17,8 @@ pkgname=(
   python-libguestfs
   ruby-libguestfs
 )
-pkgver=1.60.0
-pkgrel=3
+pkgver=1.60.1
+pkgrel=1
 pkgdesc="Access and modify virtual machine disk images"
 arch=(x86_64)
 url="https://libguestfs.org/"
@@ -129,10 +129,10 @@ source=(
   https://download.libguestfs.org/${pkgver%.*}-stable/$pkgname-$pkgver.tar.gz{,.sig}
   $pkgname-1.48.1-disable_php_tests.patch
 )
-sha512sums=('6df335305feaa9b9f90882819c839dffb4aee4bf9b92e75541d00e80ee3893a2de26c9853776b5e02b9d9c0fc76d51ff8aea95706b8e55f9a2084a59f007f739'
+sha512sums=('8e613d5847fe7a47b1169352c29916d5fb7cf6aa6dfc73aa99850f0d4a0512da7b518cbacadadeb67fe9680a2b425f69b1c3c97be4a3c257492f13b253a3d59d'
             'SKIP'
             'd59cad07e275f1fa5e82448993db5b3a6dc8cdd1fc97a8839ef0403ad3f1753a5d13df27b184d6c73fa8dda8bd75e63ad68aaad26001986682d5bc7eeb58273a')
-b2sums=('61690846c8381cae0791d5ca6c972eedc62d6c59cb78c704b33c7b7bef6ddac1caa53413811c5c4f2d214a89dc84162d07c3dbc17f8cd393ac188cf57ba35fc1'
+b2sums=('881fd44bfcd76275652a391566bcb19381db8d594d477bf6b219d418bc05894c9457ab827439a10361e6b16af099551ffb45e68fdef0e904c4dd65b4d11ec3d9'
         'SKIP'
         '2f7c429875d80b2b3a70286f83764ce6ed8be86055232fc059ab55ebf8393f9d29a2241401c7ab55af7ba9180ea85909647fe06ca51880f93bc66b488bcec78c')
 validpgpkeys=('F7774FB1AD074A7E8C8767EA91738F73E1B768A0') # Richard W.M. Jones <rjones@redhat.com>
@@ -152,8 +152,6 @@ build() {
     --prefix=/usr
     --sbindir=/usr/bin
     --sysconfdir=/etc
-    # NOTE: ntfsprogs only needed because it is not yet added to appliance/packagelist.in
-    # https://github.com/libguestfs/libguestfs/issues/362
     --with-guestfs-path=/usr/lib/guestfs
   )
 
