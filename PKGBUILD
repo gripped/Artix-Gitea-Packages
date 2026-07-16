@@ -6,7 +6,7 @@
 
 pkgbase=linux-hardened
 pkgver=7.1.3.hardened1
-pkgrel=3
+pkgrel=4
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
 arch=(
