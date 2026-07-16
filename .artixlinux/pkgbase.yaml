@@ -2,8 +2,8 @@
 actions:
   addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -49,11 +49,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 7.0.14.rt2.artix1-2
+    version: 7.0.14.rt2.artix1-3
     packages:
-      - linux-rt-7.0.14.rt2.artix1-2-x86_64.pkg.tar.zst
-      - linux-rt-headers-7.0.14.rt2.artix1-2-x86_64.pkg.tar.zst
-      - linux-rt-docs-7.0.14.rt2.artix1-2-x86_64.pkg.tar.zst
+      - linux-rt-7.0.14.rt2.artix1-3-x86_64.pkg.tar.zst
+      - linux-rt-headers-7.0.14.rt2.artix1-3-x86_64.pkg.tar.zst
+      - linux-rt-docs-7.0.14.rt2.artix1-3-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 7.0.14.rt2.artix1-1
