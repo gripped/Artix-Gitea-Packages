@@ -1,9 +1,9 @@
 ---
-version: 0.19.7-1
+version: 0.19.8-1
 pkgbase:
   name: umockdev
   pkgdesc: Record/mock hardware devices for bug reports and regression tests
-  pkgver: 0.19.7
+  pkgver: 0.19.8
   pkgrel: 1
   url: https://github.com/martinpitt/umockdev/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - libgudev
     - libpcap
   source:
-    - https://github.com/martinpitt/umockdev/releases/download/0.19.7/umockdev-0.19.7.tar.xz
+    - https://github.com/martinpitt/umockdev/releases/download/0.19.8/umockdev-0.19.8.tar.xz
   sha256sums:
-    - c8f72e151913bc0e94c575f8f12109082f72392442b28ed8ea47a0a379210870
+    - 9d57c917a32dc696877ab525eb510971a8109899d5b92d986e7bac32573125b0
 pkgname:
   - name: umockdev
 # generated with artixpkg 0.38.5-1-any
