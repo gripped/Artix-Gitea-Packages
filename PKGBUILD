@@ -7,7 +7,7 @@ _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(
@@ -64,13 +64,13 @@ sha256sums=('be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc'
             '741ca7140c73d9c8a065cc20fbbb881ce4ca700466ad8e819bc80d7f2e52d2c4'
             'SKIP'
             'e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7')
-sha256sums_x86_64=('3eac5a6739cfabcdc45d6381c057dda82f7d7a6bff4c87a43e73fbeefe8d5a66')
+sha256sums_x86_64=('d2dd1a67ff8fb2876eea642046410457cf31f0e7e57f8d7888a6a657692bfa52')
 b2sums=('b6466e2798627522f0339c670a223b21266f4d4ede39163867c0f122295e54c5d24093abb51d5c6c6c917de0cb199836e81f45f7c391a5cc138cac2a519438e8'
         'SKIP'
         '3a6a946d93a0f31847ad3c58230d4c1700f7611bc5b1a9af9e33ec180c007a47158eb00220edfaa7d5e1467d0ad496a0468d6e5c58606cfc38d9d7dc33dcef3d'
         'SKIP'
         '9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725')
-b2sums_x86_64=('eccd81c5c4cd4cdceb0b75ffda049c6982d8ce2c726cf6539263a5538dd332c8e6ecaacc06478ae21364377e8bfc6284142c379d9bfd07d291d73df243c2ce1c')
+b2sums_x86_64=('08c2350b8adb209688c1e44dab21f91432b3589dae0b7d3e28d4c31df173a99e27d92922d5261fb9697f3a16355cd1ab76e2151cdcfd14cc10970f0b9a571489')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
@@ -108,9 +108,13 @@ prepare() {
 
 build() {
   cd $_srcname
+
+  make htmldocs SPHINXOPTS=-QT &
+  local pid_docs=$!
+
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  make htmldocs SPHINXOPTS=-QT
+  wait $pid_docs
 }
 
 _package() {
@@ -218,8 +222,8 @@ _package-headers() {
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
 
-  echo "Installing Rust files..."
   if [[ $(scripts/config -s CONFIG_RUST) = y ]]; then
+    echo "Installing Rust files..."
     install -Dt "$builddir/rust" -m644 rust/*.rmeta
     install -Dt "$builddir/rust" rust/*.so
   fi
