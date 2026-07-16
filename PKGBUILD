@@ -35,10 +35,10 @@ makedepends=(
   xorgproto
 )
 optdepends=('upower: Power management support')
-source=("git+https://github.com/the-cavalry/light-locker.git#tag=${pkgver}"
+source=("git+https://github.com/the-cavalry/light-locker.git#tag=v${pkgver}"
         "0001-remove-systemd.patch")
-sha256sums=('SKIP'
-            '97256d217b9a28dbc3890bca8112c8e7edda3cba40522c8ab9609873c0d73833')
+b2sums=('3dbb10c1121160a004a27b679d8cd7437a6a594ef8543599f840df94317f13604896b04f15d3c018610dd5c1e7dbdb92fe8a2831909dbcae3c77e9d688fc6021'
+        '72f001d8f8244debbd750e71fae2d0690e817e62ae8209717a63e51e18e1dce8872fc585f9aeb6a829dc030237cffd0e5d6ac8238c879ce8f3c7962aa820f3a8')
 
 pkgver() {
   cd light-locker
