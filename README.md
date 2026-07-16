@@ -1,0 +1,2 @@
+# dotnet-core-10.0
+
