@@ -1,10 +1,10 @@
 ---
-version: 0.47.0-2
+version: 0.47.0-4
 pkgbase:
   name: resvg
   pkgdesc: SVG rendering library and CLI
   pkgver: 0.47.0
-  pkgrel: 2
+  pkgrel: 4
   url: https://github.com/linebender/resvg
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
     - MIT
   makedepends:
     - cargo
+    - cargo-c
     - clang
     - qt5-base
     - qt5-tools
@@ -29,4 +30,4 @@ pkgbase:
     - 7869119fd822983b0a0bc2469bc94d59e7908fc12165fa67a105a4fa25087f9a
 pkgname:
   - name: resvg
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
