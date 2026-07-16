@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.4.7-1
+    version: 0.4.7-2
     packages:
-      - uptimed-0.4.7-1-x86_64.pkg.tar.zst
+      - uptimed-0.4.7-2-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
