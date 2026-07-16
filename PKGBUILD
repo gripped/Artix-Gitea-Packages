@@ -3,7 +3,7 @@
 # Contributor: Diab Neiroukh <lazerl0rd@thezest.dev>
 
 pkgname=mimalloc
-pkgver=3.3.2
+pkgver=3.4.1
 pkgrel=1
 pkgdesc='General-purpose allocator with excellent performance characteristics'
 arch=(x86_64)
@@ -13,8 +13,8 @@ depends=(glibc)
 makedepends=(git cmake ninja)
 options=(staticlibs)
 source=("$pkgname::git+$url#tag=v$pkgver")
-sha512sums=('cf98ab5ed1332a682eea9fa9688e9aff7306ad4ffbdf39da28decfda39ba06386cd392ebd5f10a2235eb1dcb2d59285e5de266327b889abe4962aed1e7e90023')
-b2sums=('2b0d652ff568a17c20917283772863feda27e001c6a0488fd5132168eda2fce495470363bd2a57ef900a5f44aad24f55a09d91f89429e77340a7ff8f46779356')
+sha512sums=('611fcfbff735e62ec0077aac21f7d481d69227a935122aa399c27dc657604e1d8d009fea10a9ce2c330db1d954cff55c676c932789606853a0c616a0fb458537')
+b2sums=('31c1c0d03d642ce1d691e7f778de8d33af59d54c3bf07e9075a125599c5bbf6403c09a941a86fa9dc864a8298a731c215bf5749c8c1eeeb43ebf6289f8e3dd58')
 
 build() {
   local cmake_options=(
