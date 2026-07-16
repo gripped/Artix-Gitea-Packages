@@ -14,7 +14,7 @@ pkgname=(
   dotnet-source-built-artifacts-10.0
 )
 pkgver=10.0.10.sdk110
-pkgrel=0
+pkgrel=1
 arch=(x86_64)
 url=https://dotnet.microsoft.com
 license=(MIT)
@@ -22,8 +22,8 @@ makedepends=(
   bash
   clang20
   cmake
-  dotnet-sdk
-  dotnet-source-built-artifacts
+  dotnet-sdk-10.0
+  dotnet-source-built-artifacts-10.0
   git
   icu
   krb5
@@ -112,7 +112,7 @@ package_dotnet-runtime-10.0() {
 
 package_aspnet-runtime-10.0() {
   pkgdesc='The ASP.NET Core runtime'
-  depends=(dotnet-runtime)
+  depends=(dotnet-runtime-10.0)
   provides=(aspnet-runtime=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
@@ -123,8 +123,8 @@ package_aspnet-runtime-10.0() {
 package_dotnet-sdk-10.0() {
   pkgdesc='The .NET Core SDK'
   depends=(
-    dotnet-runtime
-    dotnet-targeting-pack
+    dotnet-runtime-10.0
+    dotnet-targeting-pack-10.0
     glibc
     libgcc
     libstdc++
@@ -150,7 +150,7 @@ package_dotnet-targeting-pack-10.0() {
 
 package_aspnet-targeting-pack-10.0() {
   pkgdesc='The ASP.NET Core targeting pack'
-  depends=(dotnet-targeting-pack)
+  depends=(dotnet-targeting-pack-10.0)
   provides=(aspnet-targeting-pack=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
