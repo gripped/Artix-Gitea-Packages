@@ -1,0 +1,48 @@
+---
+version: 1.9.0-6
+pkgbase:
+  name: light-locker
+  pkgdesc: A simple session locker for LightDM
+  pkgver: 1.9.0
+  pkgrel: 6
+  url: https://github.com/the-cavalry/light-locker
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - git
+    - glib2-devel
+    - gnome-common
+    - intltool
+    - meson
+    - upower
+    - xorgproto
+  depends:
+    - cairo
+    - dbus-glib
+    - dconf
+    - glibc
+    - libdbus-1.so
+    - libgdk-3.so
+    - libgio-2.0.so
+    - libglib-2.0.so
+    - libgobject-2.0.so
+    - libgtk-3.so
+    - libpango-1.0.so
+    - libpangocairo-1.0.so
+    - libelogind.so
+    - libx11
+    - libxext
+    - libxss
+  optdepends:
+    - 'upower: Power management support'
+  source:
+    - git+https://github.com/the-cavalry/light-locker.git#tag=1.9.0
+    - 0001-remove-systemd.patch
+  sha256sums:
+    - SKIP
+    - 97256d217b9a28dbc3890bca8112c8e7edda3cba40522c8ab9609873c0d73833
+pkgname:
+  - name: light-locker
+# generated with artixpkg 0.38.5-1-any

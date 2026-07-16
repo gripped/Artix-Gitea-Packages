@@ -2,14 +2,15 @@
 
 pkgname=light-locker
 pkgver=1.9.0
-pkgrel=5
+pkgrel=6
 pkgdesc='A simple session locker for LightDM'
 arch=(x86_64)
 url=https://github.com/the-cavalry/light-locker
-license=(GPL2)
+license=(GPL-2.0-only)
 depends=(
   cairo
   dbus-glib
+  dconf
   glibc
   libdbus-1.so
   libgdk-3.so
@@ -26,6 +27,7 @@ depends=(
 )
 makedepends=(
   git
+  glib2-devel
   gnome-common
   intltool
   meson
@@ -33,8 +35,7 @@ makedepends=(
   xorgproto
 )
 optdepends=('upower: Power management support')
-_tag=7a96e9f87dc95c794cd45fd0378a62f45308ea87
-source=("git+https://github.com/the-cavalry/light-locker.git#tag=${_tag}"
+source=("git+https://github.com/the-cavalry/light-locker.git#tag=${pkgver}"
         "0001-remove-systemd.patch")
 sha256sums=('SKIP'
             '97256d217b9a28dbc3890bca8112c8e7edda3cba40522c8ab9609873c0d73833')
