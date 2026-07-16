@@ -10,7 +10,7 @@ pkgname=(
   postfix-{cdb,ldap,lmdb,mongodb,mysql,pcre,pgsql,sqlite}
 )
 pkgver=3.11.5
-pkgrel=2
+pkgrel=3
 pkgdesc="Fast, easy to administer, secure mail server"
 arch=(x86_64)
 url="https://www.postfix.org/"
@@ -72,7 +72,7 @@ prepare() {
 
   # resolve LMDB 1.0 compatibility problem
   # https://www.mail-archive.com/postfix-users@postfix.org/msg108095.html
-  patch -Np1 -d $pkgbase-$pkgver -i ../$pkgbase-3.11.5-lmdb-1.0-compat.patch
+  # patch -Np1 -d $pkgbase-$pkgver -i ../$pkgbase-3.11.5-lmdb-1.0-compat.patch
 }
 
 build() {
