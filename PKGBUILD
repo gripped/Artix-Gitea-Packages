@@ -3,7 +3,7 @@
 
 pkgname=wayvnc
 pkgver=0.10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='VNC server for wlroots-based Wayland compositors'
 arch=(x86_64)
 url=https://github.com/any1/wayvnc
@@ -16,6 +16,7 @@ depends=(
   libneatvnc.so
   libpixman-1.so
   libxkbcommon.so
+  mesa
   wayland
 )
 makedepends=(
@@ -26,10 +27,7 @@ makedepends=(
   scdoc
 )
 optdepends=('pam: PAM authentication')
-_tag=23fa174e3832841b5730789ded7fe38caf6bce88
-source=(
-  git+https://github.com/any1/wayvnc.git#tag=${_tag}
-)
+source=(git+https://github.com/any1/wayvnc.git#tag=v${pkgver})
 b2sums=('cf572306cc49e8c881c88ba4ff082189f4f99e163ff9db96257eebb37a5d529a55655251d1fb2388b6849916d0440f73e5c4db27c61cb2cd5adac236cff741d0')
 
 build() {
@@ -44,5 +42,3 @@ package() {
   install -Dm 644 wayvnc/wayvnc.pam "${pkgdir}"/etc/pam.d/wayvnc
   install -Dm 644 wayvnc/COPYING -t "${pkgdir}"/usr/share/licenses/wayvnc
 }
-
-# vim: ts=2 sw=2 et:
