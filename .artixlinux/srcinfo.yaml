@@ -1,8 +1,8 @@
 ---
-version: 10.0.9.sdk109-1
+version: 10.0.10.sdk110-1
 pkgbase:
   name: dotnet-core
-  pkgver: 10.0.9.sdk109
+  pkgver: 10.0.10.sdk110
   pkgrel: 1
   url: https://dotnet.microsoft.com
   arch:
@@ -34,31 +34,34 @@ pkgbase:
     - '!lto'
     - staticlibs
   source:
-    - git+https://github.com/dotnet/dotnet.git#tag=v10.0.109
+    - git+https://github.com/dotnet/dotnet.git#tag=v10.0.110
   b2sums:
-    - 78b70986ac532d4ab22feae5f4ca31b1c39b5e7b283be8962b964ddeb1a93fac0e2ef79220f69e2e07ec965291ea18126785aaca08623f028be536118696c953
+    - 550f21787221b23756c5958b0b613bcd2a727c5ea9a230174cb6fdedac9c475f43995e5152ec19283f4a212c1deb9ae7a76f0fee2cf8521bc2c015d876d3ea90
 pkgname:
   - name: dotnet-host
     pkgdesc: A generic driver for the .NET Core Command Line Interface
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
     optdepends:
       - 'bash-completion: Bash completion support'
   - name: dotnet-runtime
     pkgdesc: The .NET Core runtime
     depends:
       - dotnet-host
-      - gcc-libs
       - glibc
       - icu
       - krb5
+      - libgcc
+      - libstdc++
       - libunwind
       - zlib
       - openssl
     optdepends:
       - 'lttng-ust2.12: CoreCLR tracing'
     provides:
+      - dotnet-runtime=10.0
       - dotnet-runtime-10.0
     conflicts:
       - dotnet-runtime-10.0
@@ -67,6 +70,7 @@ pkgname:
     depends:
       - dotnet-runtime
     provides:
+      - aspnet-runtime=10.0
       - aspnet-runtime-10.0
     conflicts:
       - aspnet-runtime-10.0
@@ -76,16 +80,19 @@ pkgname:
       - dotnet-runtime
       - dotnet-targeting-pack
       - glibc
-      - gcc-libs
+      - libgcc
+      - libstdc++
     optdepends:
       - 'aspnet-targeting-pack: Build ASP.NET Core applications'
     provides:
+      - dotnet-sdk=10.0
       - dotnet-sdk-10.0
     conflicts:
       - dotnet-sdk-10.0
   - name: dotnet-targeting-pack
     pkgdesc: The .NET Core targeting pack
     provides:
+      - dotnet-targeting-pack=10.0
       - dotnet-targeting-pack-10.0
     conflicts:
       - dotnet-targeting-pack-10.0
@@ -94,12 +101,14 @@ pkgname:
     depends:
       - dotnet-targeting-pack
     provides:
+      - aspnet-targeting-pack=10.0
       - aspnet-targeting-pack-10.0
     conflicts:
       - aspnet-targeting-pack-10.0
   - name: dotnet-source-built-artifacts
     pkgdesc: Internal package for building the .NET Core SDK
     provides:
+      - dotnet-source-built-artifacts=10.0
       - dotnet-source-built-artifacts-10.0
     conflicts:
       - dotnet-source-built-artifacts-10.0
