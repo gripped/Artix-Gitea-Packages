@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.0.39-1
+    version: 1.0.40-1
     packages:
-      - ttf-sarasa-gothic-1.0.39-1-any.pkg.tar.zst
+      - ttf-sarasa-gothic-1.0.40-1-any.pkg.tar.zst
     debug: []
