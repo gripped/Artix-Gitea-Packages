@@ -9,7 +9,7 @@ pkgname=lib32-$_pkgname
 # https://gitlab.archlinux.org/archlinux/packaging/packages/pcsclite/-/commits/main
 # https://salsa.debian.org/rousseau/PCSC/blob/master/ChangeLog
 pkgver=2.5.1
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="PC/SC Architecture smartcard middleware library (32-bit)"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
@@ -81,7 +81,7 @@ package() {
   meson install -C build --destdir "${pkgdir}"
 
   # Remove files shared with pcsclite
-  rm -rv "$pkgdir"/{etc,usr/{include,lib/sysusers.d,share}} 
+  rm -rv "$pkgdir"/{etc,usr/{lib,include,sysusers.d,share}}
   # pcsc-spy is just a Python script, and thus the one from 64-bit pcsclite works with this package
   rm -v "$pkgdir"/usr/bin/pcsc-spy
   # Keep pcscd-32 as it's useful for using with 32-bit only drivers
