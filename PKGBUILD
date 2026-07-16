@@ -11,7 +11,7 @@
 
 pkgname=prismlauncher
 pkgver=11.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Minecraft launcher with ability to manage multiple instances"
 arch=(x86_64)
 url='https://prismlauncher.org'
