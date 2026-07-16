@@ -4,7 +4,7 @@
 
 pkgname=cmake
 pkgver=4.4.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
@@ -43,6 +43,7 @@ validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@k
 prepare() {
   cd $pkgname
   git cherry-pick -n 261b7b933c6604095687d473503e24bae6ec0d6f # Support LUA 5.5
+  git revert -n 240481490cdf44f2f615d58e03add98324b15cf7 # Fix a regression with some builds
   git apply ../artix-cmake.patch
 
   rm -fr .git # Avoid dirty version number
