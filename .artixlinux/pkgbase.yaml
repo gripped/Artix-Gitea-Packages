@@ -1,10 +1,10 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -50,8 +50,14 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 10.0.10.sdk110-0
+    packages:
+      - dotnet-runtime-10.0-10.0.10.sdk110-0-x86_64.pkg.tar.zst
+      - aspnet-runtime-10.0-10.0.10.sdk110-0-x86_64.pkg.tar.zst
+      - dotnet-sdk-10.0-10.0.10.sdk110-0-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-10.0-10.0.10.sdk110-0-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-10.0-10.0.10.sdk110-0-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-10.0-10.0.10.sdk110-0-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 10.0.10.sdk110-1

@@ -14,7 +14,7 @@ pkgname=(
   dotnet-source-built-artifacts-10.0
 )
 pkgver=10.0.10.sdk110
-pkgrel=1
+pkgrel=0
 arch=(x86_64)
 url=https://dotnet.microsoft.com
 license=(MIT)
@@ -22,8 +22,8 @@ makedepends=(
   bash
   clang20
   cmake
-  dotnet-sdk-10.0
-  dotnet-source-built-artifacts-10.0
+  dotnet-sdk
+  dotnet-source-built-artifacts
   git
   icu
   krb5
@@ -35,7 +35,7 @@ makedepends=(
   lttng-ust2.12
   nodejs
   openssl
-  systemd
+  udev
   zlib
 )
 optdepends=('bash-completion: Bash completion support')
@@ -63,6 +63,7 @@ prepare() {
 }
 
 build() {
+  export DOTNET_CLI_TELEMETRY_OPTOUT=1
   cd dotnet
 
   export COMPlus_LTTng=0
@@ -105,25 +106,25 @@ package_dotnet-runtime-10.0() {
   provides=(dotnet-runtime=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.NETCore.App
+  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.NETCore.App
   ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-runtime-10.0
 }
 
 package_aspnet-runtime-10.0() {
   pkgdesc='The ASP.NET Core runtime'
-  depends=(dotnet-runtime-10.0)
+  depends=(dotnet-runtime)
   provides=(aspnet-runtime=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.AspNetCore.App
+  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner shared/Microsoft.AspNetCore.App
   ln -s dotnet-host "${pkgdir}"/usr/share/licenses/aspnet-runtime-10.0
 }
 
 package_dotnet-sdk-10.0() {
   pkgdesc='The .NET Core SDK'
   depends=(
-    dotnet-runtime-10.0
-    dotnet-targeting-pack-10.0
+    dotnet-runtime
+    dotnet-targeting-pack
     glibc
     libgcc
     libstdc++
@@ -132,7 +133,7 @@ package_dotnet-sdk-10.0() {
   provides=(dotnet-sdk=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner sdk sdk-manifests templates
+  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner sdk sdk-manifests templates
   install -dm 755 "${pkgdir}"/usr/share/dotnet/metadata/workloads/${pkgver%.*.sdk*}.${pkgver#*.sdk}
   touch "${pkgdir}"/usr/share/dotnet/metadata/workloads/${pkgver%.*.sdk*}.${pkgver#*.sdk}/userlocal
   ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-sdk-10.0
@@ -143,17 +144,17 @@ package_dotnet-targeting-pack-10.0() {
   provides=(dotnet-targeting-pack=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.NETCore.App.{Host.arch-*,Ref}
+  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.NETCore.App.{Host.artix-*,Ref}
   ln -s dotnet-host "${pkgdir}"/usr/share/licenses/dotnet-targeting-pack-10.0
 }
 
 package_aspnet-targeting-pack-10.0() {
   pkgdesc='The ASP.NET Core targeting pack'
-  depends=(dotnet-targeting-pack-10.0)
+  depends=(dotnet-targeting-pack)
   provides=(aspnet-targeting-pack=${pkgver%.*.sdk*})
 
   install -dm 755 "${pkgdir}"/usr/share/{dotnet,licenses}
-  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-arch-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.AspNetCore.App.Ref
+  bsdtar -xf dotnet/artifacts/assets/Release/dotnet-sdk-${pkgver%.*.sdk*}.${pkgver#*sdk}-artix-*.tar.gz -C "${pkgdir}"/usr/share/dotnet/ --no-same-owner packs/Microsoft.AspNetCore.App.Ref
   ln -s dotnet-host "${pkgdir}"/usr/share/licenses/aspnet-targeting-pack-10.0
 }
 

@@ -1,9 +1,9 @@
 ---
-version: 10.0.10.sdk110-1
+version: 10.0.10.sdk110-0
 pkgbase:
   name: dotnet-core-10.0
   pkgver: 10.0.10.sdk110
-  pkgrel: 1
+  pkgrel: 0
   url: https://dotnet.microsoft.com
   arch:
     - x86_64
@@ -13,8 +13,8 @@ pkgbase:
     - bash
     - clang20
     - cmake
-    - dotnet-sdk-10.0
-    - dotnet-source-built-artifacts-10.0
+    - dotnet-sdk
+    - dotnet-source-built-artifacts
     - git
     - icu
     - krb5
@@ -26,7 +26,7 @@ pkgbase:
     - lttng-ust2.12
     - nodejs
     - openssl
-    - systemd
+    - udev
     - zlib
   optdepends:
     - 'bash-completion: Bash completion support'
@@ -57,14 +57,14 @@ pkgname:
   - name: aspnet-runtime-10.0
     pkgdesc: The ASP.NET Core runtime
     depends:
-      - dotnet-runtime-10.0
+      - dotnet-runtime
     provides:
       - aspnet-runtime=10.0
   - name: dotnet-sdk-10.0
     pkgdesc: The .NET Core SDK
     depends:
-      - dotnet-runtime-10.0
-      - dotnet-targeting-pack-10.0
+      - dotnet-runtime
+      - dotnet-targeting-pack
       - glibc
       - libgcc
       - libstdc++
@@ -79,7 +79,7 @@ pkgname:
   - name: aspnet-targeting-pack-10.0
     pkgdesc: The ASP.NET Core targeting pack
     depends:
-      - dotnet-targeting-pack-10.0
+      - dotnet-targeting-pack
     provides:
       - aspnet-targeting-pack=10.0
   - name: dotnet-source-built-artifacts-10.0
