@@ -1,8 +1,8 @@
 ---
-version: 9.0.17.sdk118-1
+version: 9.0.18.sdk119-1
 pkgbase:
   name: dotnet-core-9.0
-  pkgver: 9.0.17.sdk118
+  pkgver: 9.0.18.sdk119
   pkgrel: 1
   url: https://dotnet.microsoft.com
   arch:
@@ -34,16 +34,17 @@ pkgbase:
     - '!lto'
     - staticlibs
   source:
-    - git+https://github.com/dotnet/dotnet.git#tag=v9.0.118
+    - git+https://github.com/dotnet/dotnet.git#tag=v9.0.119
   b2sums:
-    - bdd6a0470cf6d36f398f947f15bb5a9eea434453b06a95c425c093537be6151d0d83a7f381132562f400a69bd640f97952b76ce44699faa412891c8134b38619
+    - 671a7c3ee9b7e86ce48e5a2441a6f45438de223a9de366ea55bf198d9abf8fedc54a3861577f332e26cf3993a39b7d0c2b5393566ccb67bd8cdbd656b437420b
 pkgname:
   - name: dotnet-runtime-9.0
     pkgdesc: The .NET Core runtime
     depends:
       - dotnet-host
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - icu
       - krb5
       - libunwind
@@ -51,28 +52,41 @@ pkgname:
       - openssl
     optdepends:
       - 'lttng-ust2.12: CoreCLR tracing'
+    provides:
+      - dotnet-runtime=9.0
   - name: aspnet-runtime-9.0
     pkgdesc: The ASP.NET Core runtime
     depends:
       - dotnet-runtime-9.0
+    provides:
+      - aspnet-runtime=9.0
   - name: dotnet-sdk-9.0
     pkgdesc: The .NET Core SDK
     depends:
       - dotnet-runtime-9.0
       - dotnet-targeting-pack-9.0
       - glibc
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - netstandard-targeting-pack
     optdepends:
       - 'aspnet-targeting-pack: Build ASP.NET Core applications'
+    provides:
+      - dotnet-sdk=9.0
   - name: dotnet-targeting-pack-9.0
     pkgdesc: The .NET Core targeting pack
     depends:
       - netstandard-targeting-pack
+    provides:
+      - dotnet-targeting-pack=9.0
   - name: aspnet-targeting-pack-9.0
     pkgdesc: The ASP.NET Core targeting pack
     depends:
       - dotnet-targeting-pack-9.0
+    provides:
+      - aspnet-targeting-pack=9.0
   - name: dotnet-source-built-artifacts-9.0
     pkgdesc: Internal package for building the .NET Core SDK
+    provides:
+      - dotnet-source-built-artifacts=9.0
 # generated with artixpkg 0.38.5-1-any
