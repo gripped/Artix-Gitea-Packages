@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.37.1-1
+    packages:
+      - limine-mkinitcpio-hook-1.37.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null
