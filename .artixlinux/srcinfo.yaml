@@ -97,7 +97,7 @@ pkgbase:
     - usr/lib/konform/librewolf.cfg
     - usr/lib/konform/distribution/policies.json
   source:
-    - src::git+https://codeberg.org/konform-browser/konform-next.git#tag=153.0.0.100a1
+    - src-153::git+https://codeberg.org/konform-browser/konform-next.git#tag=153.0.0.100a1
     - firefox-153.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/153.0esr-candidates/build1/source/firefox-153.0esr.source.tar.xz
     - firefox-153.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/153.0esr-candidates/build1/source/firefox-153.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz

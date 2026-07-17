@@ -127,11 +127,13 @@ options=(
 
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
 _src_repo=https://codeberg.org/konform-browser/source.git
+_src_dir="src"
 if [[ "${_ffsrcver%%.*}" -gt 150  ]]; then
   _src_repo=https://codeberg.org/konform-browser/konform-next.git
+  _src_dir="src-${_ffsrcver%%.*}"
 fi
 source=(
-  "src"::"git+${_src_repo}#tag=${pkgver}"
+  "${_src_dir}"::"git+${_src_repo}#tag=${pkgver}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
@@ -167,11 +169,11 @@ _languages=(
 )
 
 prepare() {
-  _lw_srcdir=$srcdir/src/source-$_srcver
+  _lw_srcdir="$srcdir/${_src_dir}/source-$_srcver"
   ## <srcprep>
-  cp -p *.desktop *.png src/
+  cp -p *.desktop *.png "${_src_dir}"
 
-  cd src
+  cd "${_src_dir}"
   mkdir -p mozbuild
   echo "${_lwrelver}" > release
   rm -rf "${_lw_srcdir}/"* "${_lw_srcdir}/".*
@@ -262,7 +264,7 @@ fi
 
 
 build() {
-  _lw_srcdir=$srcdir/src/source-$_srcver
+  _lw_srcdir="$srcdir/${_src_dir}/source-$_srcver"
   cd "${_lw_srcdir}"
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
@@ -368,7 +370,7 @@ END
     # reenable non-profiling policies
     cp "$srcdir/policies.json" "browser/components/enterprisepolicies/defaults/policies.json"
     # disable nimbus telemetry
-    cp "$srcdir/src/browser/app/profile/librewolf.cfg" "browser/app/profile/librewolf.cfg"
+    cp "${_lw_srcdir}/browser/app/profile/librewolf.cfg" "browser/app/profile/librewolf.cfg"
 
   else
     cat >.mozconfig ../mozconfig
@@ -379,7 +381,7 @@ END
 }
 
 package() {
-  _lw_srcdir=$srcdir/src/source-$_srcver
+  _lw_srcdir="$srcdir/${_src_dir}/source-$_srcver"
   cd "${_lw_srcdir}"
   MOZ_PKG_FORMAT=tar ./mach pack-multi-locale --locales ${_languages[@]}
   DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[*]}" ./mach install
