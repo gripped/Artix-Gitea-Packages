@@ -1,12 +1,11 @@
 ---
-version: 1.2.4-1
+version: 1.2.4-2
 pkgbase:
   name: xorg-mkfontscale
   pkgdesc: Create an index of scalable font files for X
   pkgver: 1.2.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/xorg/app/mkfontscale
-  install: xorg-mkfontscale.install
   arch:
     - x86_64
   groups:
@@ -25,6 +24,7 @@ pkgbase:
     - libfontenc
     - zlib
     - glibc
+    - sh
   provides:
     - xorg-mkfontdir
   conflicts:
