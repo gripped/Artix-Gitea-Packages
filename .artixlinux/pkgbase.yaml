@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.23.93-6
+    version: 0.23.93-7
     packages:
-      - zbar-0.23.93-6-x86_64.pkg.tar.zst
+      - zbar-0.23.93-7-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
