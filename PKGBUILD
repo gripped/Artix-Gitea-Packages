@@ -3,7 +3,7 @@
 
 pkgname=man-db
 pkgver=2.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc="A utility for reading man pages"
 arch=('x86_64')
 url="https://gitlab.com/man-db/man-db"
@@ -15,15 +15,15 @@ backup=('etc/man_db.conf')
 conflicts=('man')
 provides=('man')
 replaces=('man')
-install=${pkgname}.install
 source=(#https://savannah.nongnu.org/download/man-db/$pkgname-$pkgver.tar.xz{,.asc}
         # fallback should be used within first 24h after a release
-        https://download-mirror.savannah.gnu.org/releases/man-db/$pkgname-$pkgver.tar.xz{,.asc} 
-        convert-mans)
+        https://download-mirror.savannah.gnu.org/releases/man-db/$pkgname-$pkgver.tar.xz{,.asc}
+        $pkgname-remove-cache.hook
+)
 validpgpkeys=('AC0A4FF12611B6FCCF01C111393587D97D86500B') # Colin Watson <cjwatson@debian.org>
 sha512sums=('9b39f512fe940e648ca7f47803f42e473064253b67eb96995d28da30fd322de31a4466bf821e9391e6041af2318a6d2c2d74102b73f4b42a63966b41d2df0578'
             'SKIP'
-            '0b159285da20008f0fc0afb21f1eaebd39e8df5b0594880aa0e8a913b656608b8d16bb8d279d9e62d7aae52f62cb9b2fc49e237c6711f4a5170972b38d345535')
+            '5aec4f7d1c8cfacd23287dd60905cb27ff36b9e7ff38be9d7d98537678ec2c402330b453f1475c545261c13dc8b3d02cf4c76d7d12af30b8992cd1c53da1b5f5')
 
 build() {
   cd ${pkgname}-${pkgver}
@@ -31,7 +31,7 @@ build() {
     --sbindir=/usr/bin \
     --sysconfdir=/etc \
     --libexecdir=/usr/lib \
-    --with-systemdsystemunitdir=no \
+    --with-systemdsystemunitdir=/usr/lib/systemd/system \
     --with-snapdir=/var/lib/snapd/snap \
     --with-db=gdbm \
     --disable-setuid \
@@ -51,8 +51,9 @@ package() {
   make DESTDIR=${pkgdir} install
 
   # part of groff pkg
-  rm -f ${pkgdir}/usr/bin/zsoelim
+  rm -f "${pkgdir}/usr/bin/zsoelim"
 
-
-  install -D -m755 ${srcdir}/convert-mans  ${pkgdir}/usr/bin/convert-mans
+  install -d -m755 "${pkgdir}/usr/lib/systemd/system/timers.target.wants"
+  ln -s ../man-db.timer "${pkgdir}/usr/lib/systemd/system/timers.target.wants/man-db.timer"
+  install -vDm 644 ../$pkgname-remove-cache.hook -t "$pkgdir/usr/share/libalpm/hooks/"
 }
