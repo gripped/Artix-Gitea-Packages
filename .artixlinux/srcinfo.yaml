@@ -1,9 +1,9 @@
 ---
-version: 2.23.0-1
+version: 2.24.0-1
 pkgbase:
   name: python-narwhals
   pkgdesc: Extremely lightweight and extensible compatibility layer between dataframe libraries
-  pkgver: 2.23.0
+  pkgver: 2.24.0
   pkgrel: 1
   url: https://narwhals-dev.github.io/narwhals/
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - 'python-pyarrow: for PyArrows support'
     - 'python-polars: for Polars support'
   source:
-    - python-narwhals-2.23.0.tar.gz::https://github.com/narwhals-dev/narwhals/archive/refs/tags/v2.23.0.tar.gz
+    - python-narwhals-2.24.0.tar.gz::https://github.com/narwhals-dev/narwhals/archive/refs/tags/v2.24.0.tar.gz
   sha256sums:
-    - 604c4f4ed4835319073645ac91bacdd3ce7a2e63feb464c6d36d718dd446da4b
+    - 41ff477bec443680817d4c1b411d25574319ca0422e3d4a5930876e4b727d563
 pkgname:
   - name: python-narwhals
 # generated with artixpkg 0.38.5-1-any
