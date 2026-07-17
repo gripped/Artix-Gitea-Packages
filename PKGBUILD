@@ -3,7 +3,7 @@
 
 pkgname=gnome-panel
 pkgver=3.58.1
-pkgrel=3
+pkgrel=4
 pkgdesc='Panel of GNOME Flashback'
 arch=(x86_64)
 url='https://wiki.gnome.org/Projects/GnomePanel'
@@ -52,6 +52,7 @@ source=(
   gnome-panel-79.patch
   gnome-panel-80.patch
   gnome-panel-can-shutdown.patch
+  gnome-panel-84.patch
   libical-4.patch
 )
 b2sums=('064a73442407f16d4676099472a129e3d7fbda31b5963631656a667c40b928e9b41f55e5b9c2f2cec0963806d9a12dbda7e1c75a56d751ba2944b9df011560b8'
@@ -62,6 +63,7 @@ b2sums=('064a73442407f16d4676099472a129e3d7fbda31b5963631656a667c40b928e9b41f55e
         '4f1fcb16b8c770637575ae29277e13c6c7b44636b55dd4dc48a90248936b125a8988332141ec9f90eb1c4754ad676c8f473e6751908d45db88d596705f5700cb'
         '77a95c896bc541ade2b5118f27c0d2428cd8cd0d70c0b85aec5834035b66ce6f348958f5b928718a3b5b58fd1d8677a76df414141cf7d37116200a40b57e94e4'
         'ad46619306ae24b4e20792b54e314b720619fcbd4198e16482e001c0adc8ad39b1e06d7a4e714c5164cd2b52add793465ebf63ad926204cfbb0e2901fb71b0ef'
+        'fc716ebdd3b4c8efb74ed45de20f0ee57ca814082076b024c463b8c683d54d20673620b9fca6bd28064c0f62bf2f95984d4c5e3d7097f18626b64648013e0ffb'
         'e0d48e8eeee6fcb9031a2ad5726979b5a5632804235f91fff93a5bfd34d076e64e6a3ba96998659e19c729f957bbfb4adb3c91a32716a4fde6394a2a4b1ef5dc')
 validpgpkeys=(7B44FD78E49334EC10B3B288A3D013EC303E1894) # Alberts Muktupāvels <alberts.muktupavels@gmail.com>
 
@@ -86,6 +88,10 @@ prepare() {
   # Update CanShutdown method for GNOME 50
   # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/83
   git apply -3 ../gnome-panel-can-shutdown.patch
+
+  # Validate IconPixmap type before parsing it
+  # https://gitlab.gnome.org/GNOME/gnome-panel/-/merge_requests/84
+  git apply -3 ../gnome-panel-84.patch
 
   # Fix build with libical 4
   patch -p1 -i ../libical-4.patch
