@@ -1,10 +1,10 @@
 ---
-version: 0.4.2-4
+version: 0.4.2-5
 pkgbase:
   name: moksha
   pkgdesc: Moksha Desktop and Window Manager for Artix Linux, fork of Enlightenment DR17
   pkgver: 0.4.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://wiki.artixlinux.org/Site/MokshaDesktopForArtix
   arch:
     - x86_64
@@ -30,7 +30,7 @@ pkgbase:
   options:
     - lto
   source:
-    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=d63f2de5205fcb4f45496a5d76039dedc4336262
+    - moksha::git+https://github.com/JeffHoogland/moksha.git#commit=b11ceca00c556a9b6b5f1211cd0f5165d3a3b4b8
     - moksha-artix::git+https://gitea.artixlinux.org/artix/moksha-artix.git
     - page_000.patch
     - page_040.patch
@@ -45,7 +45,7 @@ pkgbase:
     - background.edc
     - artix-icon.png
   sha256sums:
-    - 649d8f5f1233c2ca63dbf31b4de44f44d40908396208b99b3b3023e1ee0965e5
+    - 4b70e2c32f140170fc2555505123a2944a2f04041bdd0ba07a14e75be018aca2
     - SKIP
     - f7ade68c19149e31cbc1cfa3bcdab8bb01796d5a67b047b3e0db42d2daab4fdb
     - aded00b469ef83305cd914be30f5b36b4134658f00e87c094b9435a9750d9f98
