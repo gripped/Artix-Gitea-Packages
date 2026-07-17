@@ -1,6 +1,6 @@
 --- a/src/tools/wpctl.c	2026-07-14 13:41:10.284079515 +0200
-+++ b/src/tools/wpctl.c	2026-07-17 11:23:25.133568347 +0200
-@@ -1896,20 +1896,59 @@
++++ b/src/tools/wpctl.c	2026-07-17 15:32:44.996205884 +0200
+@@ -1896,21 +1896,60 @@
  }
  
  static gboolean
@@ -60,10 +60,12 @@
    }
    if (!g_spawn_check_exit_status (exit_status, &error)) {
 -    fprintf (stderr, "Warning: systemctl --user %s %s failed: %s\n",
-+    fprintf (stderr, "Warning: action %s for user service %s failed: %s\n",
-         action, service, error->message);
+-        action, service, error->message);
++    fprintf (stderr, "Warning: %s %s %s %s failed: %s\n",
++        argv[0], argv[1], argv[2], argv[3], error->message);
      return FALSE;
    }
+   return TRUE;
 @@ -1998,7 +2037,7 @@
  
    /* Stop wireplumber before removing its files */
