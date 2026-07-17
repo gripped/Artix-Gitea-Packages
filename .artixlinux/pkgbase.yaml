@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,8 +25,16 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.30.4-1
+    packages:
+      - nginx-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-mod-geoip-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-mod-image-filter-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-mod-mail-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-mod-perl-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-mod-stream-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-mod-xslt-1.30.4-1-x86_64.pkg.tar.zst
+      - nginx-src-1.30.4-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.30.3-1
