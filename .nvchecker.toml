@@ -1,4 +1,4 @@
-[radicle]
+[radicle-explorer]
 source = "git"
 git = "https://seed.radicle.xyz/z4V1sjrXqjvFdnCUbxPFqd5p4DtH5.git"
 prefix = "releases/"
