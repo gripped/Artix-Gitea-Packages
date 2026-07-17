@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.37.1-1
+    version: 1.37.1-1.1
     packages:
-      - limine-mkinitcpio-hook-1.37.1-1-x86_64.pkg.tar.zst
+      - limine-mkinitcpio-hook-1.37.1-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null
