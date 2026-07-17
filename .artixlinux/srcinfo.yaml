@@ -1,10 +1,10 @@
 ---
-version: 2.2.2-11
+version: 2.2.2-12
 pkgbase:
   name: python-pdftotext
   pkgdesc: Simple PDF text extraction
   pkgver: 2.2.2
-  pkgrel: 11
+  pkgrel: 12
   url: https://github.com/jalan/pdftotext
   arch:
     - x86_64
@@ -25,4 +25,12 @@ pkgbase:
     - f7e6735e37b9b0395ed6fd50b7138903a7d1120049d6bc0c7f1511acbd0c9150c82aaf704e37b92d85504ec4c532c1829de1d3a4d774b94846b7c69f4fa32f13
 pkgname:
   - name: python-pdftotext
-# generated with artixpkg 0.37.4-1-any
+    depends:
+      - poppler
+      - python
+      - glibc
+      - libgcc
+      - libgcc_s.so
+      - libstdc++
+      - libstdc++.so
+# generated with artixpkg 0.38.5-1-any
