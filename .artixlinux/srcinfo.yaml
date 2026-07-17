@@ -1,9 +1,9 @@
 ---
-version: 0.4.0-1
+version: 0.5.0-1
 pkgbase:
   name: greetd-regreet
   pkgdesc: Clean and customizable greeter for greetd
-  pkgver: 0.4.0
+  pkgver: 0.5.0
   pkgrel: 1
   url: https://github.com/rharish101/ReGreet
   install: greetd-regreet.install
@@ -29,10 +29,10 @@ pkgbase:
   backup:
     - etc/greetd/regreet.toml
   source:
-    - https://github.com/rharish101/ReGreet/archive/0.4.0/ReGreet-0.4.0.tar.gz
+    - https://github.com/rharish101/ReGreet/archive/0.5.0/ReGreet-0.5.0.tar.gz
     - regreet.toml
   sha256sums:
-    - dd11f6dc82a929ac51a51750b3268028fe5aa46e5fe1d1cbd11b43ad57b3006a
+    - 7e26799dffdede183fc62d12aedbda5fea92d7d9802a180755d8a1d1fd93f2f7
     - 7780028e5774347793e8073c86bde7f38b70a9736dc7c5b0566d93aa7f0c252b
 pkgname:
   - name: greetd-regreet
