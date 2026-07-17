@@ -1,9 +1,9 @@
 ---
-version: 0.3.33-1
+version: 0.3.34-1
 pkgbase:
   name: openblas
   pkgdesc: An optimized BLAS library based on GotoBLAS2 1.13 BSD
-  pkgver: 0.3.33
+  pkgver: 0.3.34
   pkgrel: 1
   url: https://www.openblas.net/
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - libgfortran
     - libgomp
   source:
-    - git+https://github.com/OpenMathLib/OpenBLAS.git#tag=v0.3.33
+    - git+https://github.com/OpenMathLib/OpenBLAS.git#tag=v0.3.34
   sha512sums:
-    - 2f601c07506eedc3af860392c3d4c0177df9c1b42a45249fa03d168ee2b26e879ba4b672935e40e98743d0125da976fd9e5b377304b618ae9f8b53cd1074c96d
+    - c89c35a615a51bd3602562215ea6e8cb0f185bfa2ae1ac0051d5760074bc05931c82d979e5e63cac3eb5c5616a0494fd0f15b66f9d9d062508da1d8853ca58c8
 pkgname:
   - name: openblas
   - name: openblas64
@@ -37,7 +37,7 @@ pkgname:
       - cblas=3.12.0
       - lapack=3.12.0
       - lapacke=3.12.0
-      - openblas-lapack=0.3.33
+      - openblas-lapack=0.3.34
     conflicts:
       - blas
       - cblas
