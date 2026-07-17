@@ -1,9 +1,9 @@
 ---
-version: 1.649-1
+version: 1.651-1
 pkgbase:
   name: perl-dbi
   pkgdesc: Database independent interface for Perl
-  pkgver: 1.649
+  pkgver: 1.651
   pkgrel: 1
   url: https://metacpan.org/release/DBI
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-1.649.tgz
+    - https://cpan.metacpan.org/authors/id/H/HM/HMBRAND/DBI-1.651.tgz
   sha512sums:
-    - 71f2a1e2a36b5aa2a69adbbdcb6b985f6bd1f2c0953530ad0e957826f526ca5c48b858e1c59dc85f546b4aee0fa5dbe50469c06b55efcc4a63f784cdb8c59e13
+    - 551ec29b88055a0c5380ba3a23105f33d64ab66a24833e6174e793d97583650719b50304255de54f967fac72f61e06cf0976483caaa340b6e725f6f45bfc24ba
 pkgname:
   - name: perl-dbi
 # generated with artixpkg 0.38.5-1-any
