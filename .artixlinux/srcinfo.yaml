@@ -1,9 +1,9 @@
 ---
-version: 2.0.1-1
+version: 2.1.0-1
 pkgbase:
   name: gitea-runner
   pkgdesc: Official runner for Gitea
-  pkgver: 2.0.1
+  pkgver: 2.1.0
   pkgrel: 1
   url: https://gitea.com/gitea/runner
   install: gitea-runner.install
@@ -20,18 +20,16 @@ pkgbase:
     - 'docker: To run runners in containers'
   provides:
     - act_runner
-    - act-runner
   replaces:
     - act_runner
-    - act-runner
   backup:
     - etc/gitea-runner/config.yaml
   source:
-    - gitea-runner-2.0.1.tar.gz::https://gitea.com/gitea/runner/archive/v2.0.1.tar.gz
+    - gitea-runner-2.1.0.tar.gz::https://gitea.com/gitea/runner/archive/v2.1.0.tar.gz
     - gitea-runner.sysusers
     - gitea-runner.tmpfiles
   sha256sums:
-    - bf1ddf19ed237936370b4225a91c932a84b169fbdb068ec2a7ede975193d91b3
+    - dad85587fbe697d62cefa7773ade942318a0c291edbcc7f7a17bf80d52b76798
     - d7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d
     - 476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37
 pkgname:

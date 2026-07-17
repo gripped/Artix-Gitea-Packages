@@ -4,7 +4,7 @@
 
 pkgname=gitea-runner
 _pkgname=runner
-pkgver=2.0.1
+pkgver=2.1.0
 pkgrel=1
 pkgdesc="Official runner for Gitea"
 url="https://gitea.com/gitea/runner"
@@ -13,14 +13,14 @@ license=('MIT')
 depends=('glibc' 'git')
 makedepends=('go')
 optdepends=('docker: To run runners in containers')
-provides=('act_runner' 'act-runner')
-replaces=('act_runner' 'act-runner')
+provides=('act_runner')
+replaces=('act_runner')
 backup=("etc/${pkgname}/config.yaml")
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
         "${pkgname}.sysusers"
         "${pkgname}.tmpfiles")
-sha256sums=('bf1ddf19ed237936370b4225a91c932a84b169fbdb068ec2a7ede975193d91b3'
+sha256sums=('dad85587fbe697d62cefa7773ade942318a0c291edbcc7f7a17bf80d52b76798'
             'd7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d'
             '476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37')
 
