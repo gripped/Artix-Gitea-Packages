@@ -11,10 +11,16 @@ __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
-pkgver=140.12.0.104
+
+# upgrade note: 153 only for testing/gremlins  until konform browser 153.0.0-100 released.
+# in the meantime, 140.x upgrades should still be followed for galaxy.
+pkgver=153.0.0.100a1
+# pkgver=140.12.0.104
+
 pkgrel=1
 _ffbuild=1
-_ffsrcver="${pkgver%.*}"
+_srcver="${pkgver%.*}"
+_ffsrcver="${_srcver/.0.0/.0}"
 _lwrelver="${pkgver##*.}"
 if [[ "$_ffbuild" == "0" ]]; then
   : "${_ffsrcurl:="https://archive.mozilla.org/pub/firefox/releases/${_ffsrcver}esr"}"
@@ -120,8 +126,12 @@ options=(
 )
 
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
+_src_repo=https://codeberg.org/konform-browser/source.git
+if [[ "${_ffsrcver%%.*}" -gt 150  ]]; then
+  _src_repo=https://codeberg.org/konform-browser/konform-next.git
+fi
 source=(
-  "src"::"git+https://codeberg.org/konform-browser/source.git#tag=${pkgver}"
+  "src"::"git+${_src_repo}#tag=${pkgver}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
@@ -132,8 +142,8 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('e364e67c1c4167018ff03e3a1f56e4ffca14a26444daa6160dba7022e1e0a13f'
-            '85dfb9f6021152b4302b8968ef485d958c8c471cb02415a19853daaad5acce62'
+sha256sums=('bf9fadd4aa2bcac9209727db92065d161a2c5c8924fd0beab22e0dcbeefa3f42'
+            'dbe3d9dedcb118a4b623688c559c6f2de280ea3be171e3ff256504cc01626cb5'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
@@ -157,7 +167,7 @@ _languages=(
 )
 
 prepare() {
-  _lw_srcdir=$srcdir/src/source-$_ffsrcver
+  _lw_srcdir=$srcdir/src/source-$_srcver
   ## <srcprep>
   cp -p *.desktop *.png src/
 
@@ -170,7 +180,7 @@ prepare() {
   mkdir -p "${_lw_srcdir}/lw"
   mv "../firefox-l10n-${_l10n_commit}" "${_lw_srcdir}/lw/l10n"
 
-  python3 scripts/apply-patches.py "${_ffsrcver}" "${_lwrelver}"
+  python3 scripts/apply-patches.py "${_srcver}" "${_lwrelver}"
 
   ## </srcprep>
 
@@ -240,17 +250,19 @@ fi
   # reduce chance of builds failung during linking due to running out of memory
   export LDFLAGS+=" -Wl,--no-keep-memory"
 
-  # Fix build with glibc 2.43
-  # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
-  patch -B .patchorigin -Np1 -i ../../0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-  patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
-  xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
-  xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
+  if [[ "${_ffsrcver%%.*}" -lt 149  ]]; then
+    # Fix build with glibc 2.43
+    # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
+    patch -B .patchorigin -Np1 -i ../../0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
+    patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
+    xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
+    xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
+  fi
 }
 
 
 build() {
-  _lw_srcdir=$srcdir/src/source-$_ffsrcver
+  _lw_srcdir=$srcdir/src/source-$_srcver
   cd "${_lw_srcdir}"
 
   export MACH_BUILD_PYTHON_NATIVE_PACKAGE_SOURCE=pip
@@ -367,7 +379,7 @@ END
 }
 
 package() {
-  _lw_srcdir=$srcdir/src/source-$_ffsrcver
+  _lw_srcdir=$srcdir/src/source-$_srcver
   cd "${_lw_srcdir}"
   MOZ_PKG_FORMAT=tar ./mach pack-multi-locale --locales ${_languages[@]}
   DESTDIR="$pkgdir" MOZ_CHROME_MULTILOCALE="${_languages[*]}" ./mach install
