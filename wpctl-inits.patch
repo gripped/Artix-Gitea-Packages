@@ -1,21 +1,27 @@
 --- a/src/tools/wpctl.c	2026-07-14 13:41:10.284079515 +0200
-+++ b/src/tools/wpctl.c	2026-07-14 14:35:47.277252761 +0200
-@@ -1896,20 +1896,53 @@
++++ b/src/tools/wpctl.c	2026-07-17 11:23:25.133568347 +0200
+@@ -1896,20 +1896,59 @@
  }
  
  static gboolean
 -systemctl_user (const gchar *action, const gchar *service)
-+initctl_user (const gchar *action, const gchar *service)
++initctl_user (gchar *action, gchar *service)
  {
 -  const gchar *argv[] = { "systemctl", "--user", action, service, NULL };
 +  const char *fn = "/proc/1/comm";
-+  char ch;
 +  FILE *fl;
++
 +  fl = fopen(fn, "r");
++  if (fl == NULL) {
++    fprintf (stderr, "Cannot determine init system\n");
++    return FALSE;
++  }
++  char ch;
 +  ch=fgetc(fl);
 +  fclose(fl);
 +
 +  gchar *argv[] = { "", "--user", "", "", NULL };
++
 +  switch ((char)ch)
 +  {
 +    case 'i':
@@ -58,7 +64,7 @@
          action, service, error->message);
      return FALSE;
    }
-@@ -1998,7 +2031,7 @@
+@@ -1998,7 +2037,7 @@
  
    /* Stop wireplumber before removing its files */
    if (do_restart)
@@ -67,7 +73,7 @@
  
    /* Delete all collected paths in order (children before their parent) */
    for (guint i = 0; i < paths->len; i++) {
-@@ -2013,11 +2046,11 @@
+@@ -2013,11 +2052,11 @@
  
    /* Restart pipewire if its config was removed */
    if (do_restart && remove_pw_config)
