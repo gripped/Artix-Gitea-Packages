@@ -32,7 +32,7 @@ prepare() {
 	cd radicle-explorer
 	npm ci --ignore-scripts
 
-	cd radicle-httpd
+	cd crates/radicle-httpd
 	cargo fetch --locked --target "$(rustc --print host-tuple)"
 }
 
@@ -51,7 +51,7 @@ build() {
 
 	export LIBGIT2_NO_VENDOR=1
 
-	cd radicle-httpd
+	cd crates/radicle-httpd
 	export RADICLE_VERSION="$pkgver"
 	cargo build \
 		--frozen \
@@ -69,7 +69,7 @@ build() {
 }
 
 check() {
-	cd radicle-explorer/radicle-httpd
+	cd radicle-explorer/crates/radicle-httpd
 	(
 	# Ideally, we'd use `env -i`, but `cargo test` forces a recompilation
 	# if build flags don't match (+ we want to test what we ship anyway).
