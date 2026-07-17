@@ -1,12 +1,13 @@
 ---
-version: 1:153.0.0.100a1-1
+version: 1:153.0.0.100b1-1
 pkgbase:
   name: konform-browser
   pkgdesc: Firefox ESR fork with increased security, privacy, and customizability
-  pkgver: 153.0.0.100a1
+  pkgver: 153.0.0.100b1
   pkgrel: 1
   epoch: 1
   url: https://konform-browser.codeberg.page
+  install: konform-browser-testing.install
   arch:
     - x86_64
     - aarch64
@@ -97,11 +98,12 @@ pkgbase:
     - usr/lib/konform/librewolf.cfg
     - usr/lib/konform/distribution/policies.json
   source:
-    - src-153::git+https://codeberg.org/konform-browser/konform-next.git#tag=153.0.0.100a1
+    - src-153::git+https://codeberg.org/konform-browser/konform-next.git#tag=153.0.0.100b1
     - firefox-153.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/153.0esr-candidates/build1/source/firefox-153.0esr.source.tar.xz
     - firefox-153.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/153.0esr-candidates/build1/source/firefox-153.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz
     - konform.desktop
+    - konform-browser-testing.install
     - default192x192.png
     - 0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
     - 0002-Use-wasm32-wasip1-target.patch
@@ -110,11 +112,12 @@ pkgbase:
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - bf9fadd4aa2bcac9209727db92065d161a2c5c8924fd0beab22e0dcbeefa3f42
+    - 67c7659b38c1d64db99ecb13ef3a5950ec0477df50dd433aaffa351ad8c5256a
     - dbe3d9dedcb118a4b623688c559c6f2de280ea3be171e3ff256504cc01626cb5
     - SKIP
     - 50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512
     - 68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4
+    - 1242299c0a3e90a6b1f1c2bcc6bfa32e7c914a88a9c98fb879b016e6a1505c84
     - b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b
     - 157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852
     - baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba

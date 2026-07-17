@@ -1,0 +1,9 @@
+post_upgrade() {
+  echo "---    This is a TESTING release of Konform Browser. For production, use galaxy/konform-browser."
+  echo "---    Profile upgrades are supported but downgrades are not."
+  echo "---    If you have profile from a previous version, backing up is advised."
+}
+
+post_install() {
+  post_upgrade
+}
