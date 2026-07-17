@@ -1,10 +1,10 @@
 ---
-version: 9.2.0-1
+version: 9.2.0-2
 pkgbase:
   name: bazel
   pkgdesc: Correct, reproducible, and fast builds for everyone
   pkgver: 9.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://bazel.build/
   arch:
     - x86_64
