@@ -1,0 +1,34 @@
+---
+version: 2.1.12-1
+pkgbase:
+  name: open-iscsi
+  pkgdesc: iSCSI userland tools
+  pkgver: 2.1.12
+  pkgrel: 1
+  url: https://www.open-iscsi.com/
+  install: open-iscsi.install
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - meson
+    - udev
+  depends:
+    - libudev
+    - util-linux-libs
+    - kmod
+    - openssl
+    - open-isns
+  options:
+    - docs
+  backup:
+    - etc/iscsi/iscsid.conf
+    - etc/iscsi/initiatorname.iscsi
+  source:
+    - open-iscsi-2.1.12.tar.gz::https://github.com/open-iscsi/open-iscsi/archive/2.1.12.tar.gz
+  sha256sums:
+    - e2441b61e4b05cd5f0f94b35dcdf460e8d542e40d71b480882628170d6462d9a
+pkgname:
+  - name: open-iscsi
+# generated with artixpkg 0.38.5-1-any
