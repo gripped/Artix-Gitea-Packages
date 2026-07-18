@@ -1,10 +1,10 @@
 ---
-version: 0.3.1-2
+version: 0.3.1-3
 pkgbase:
   name: hyprwire
   pkgdesc: A fast and consistent wire protocol for IPC
   pkgver: 0.3.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hyprwm/hyprwire
   arch:
     - x86_64
@@ -13,7 +13,8 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - hyprutils
     - libhyprutils.so
@@ -28,4 +29,4 @@ pkgbase:
     - 92a673d40ae6a7d66fbcd0a34ec071e026e17eaeeb0040c3375e4b2a80dba737
 pkgname:
   - name: hyprwire
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
