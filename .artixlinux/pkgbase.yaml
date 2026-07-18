@@ -1,9 +1,9 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,8 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.4.10-1
+    packages:
+      - ruby-3.4.10-1-x86_64.pkg.tar.zst
+      - ruby-docs-3.4.10-1-x86_64.pkg.tar.zst
+      - ruby-default-gems-3.4.10-1-x86_64.pkg.tar.zst
+      - ruby-bundled-gems-3.4.10-1-x86_64.pkg.tar.zst
+      - ruby-stdlib-3.4.10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.4.8-2
