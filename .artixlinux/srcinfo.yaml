@@ -12,8 +12,6 @@ pkgbase:
     - ISC
   depends:
     - glibc
-  provides:
-    - libexecline.so
   source:
     - https://skarnet.org/software/execline/execline-2.9.9.2.tar.gz
   sha256sums:
@@ -24,4 +22,6 @@ pkgname:
       - glibc
       - skalibs
       - libskarnet.so
+    provides:
+      - libexecline.so
 # generated with artixpkg 0.39-1-any

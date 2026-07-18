@@ -7,7 +7,6 @@ arch=('x86_64')
 url='https://skarnet.org/software/execline'
 license=('ISC')
 depends=('glibc')
-provides=('libexecline.so')
 source=(https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz)
 sha256sums=('908ed4db3a6b3a23a205d8fd4cf2a71089156f2aeae0f54656045aafad2dee32')
 
@@ -24,6 +23,7 @@ build() {
 }
 
 package() {
+  provides=('libexecline.so')
   depends+=('skalibs' 'libskarnet.so')
   cd ${pkgname}-${pkgver}
   make DESTDIR="$pkgdir" install
