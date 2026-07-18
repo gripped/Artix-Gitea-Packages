@@ -1,10 +1,10 @@
 ---
-version: 0.5.4-2
+version: 0.5.4-3
 pkgbase:
   name: hyprtoolkit
   pkgdesc: A modern C++ Wayland-native GUI toolkit
   pkgver: 0.5.4
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hyprwm/hyprtoolkit
   arch:
     - x86_64
@@ -13,7 +13,8 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - aquamarine
     - libaquamarine.so
     - cairo
@@ -50,4 +51,4 @@ pkgbase:
     - 2fb59789f231c1c4e9154ceffc1e7524c0cae154807c0d57e6166806255b570f
 pkgname:
   - name: hyprtoolkit
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
