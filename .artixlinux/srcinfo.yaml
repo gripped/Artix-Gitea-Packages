@@ -22,4 +22,4 @@ pkgbase:
     - 418ee935c36152f8f153c79824bb93eaf6f0f7984bae31d3f48f350b9183501a
 pkgname:
   - name: python-virtualenv-clone
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
