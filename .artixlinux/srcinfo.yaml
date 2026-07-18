@@ -1,10 +1,10 @@
 ---
-version: 3.10-2
+version: 3.10-3
 pkgbase:
   name: vice
   pkgdesc: Versatile Commodore Emulator
   pkgver: 3.10
-  pkgrel: 2
+  pkgrel: 3
   url: https://vice-emu.sourceforge.io/
   arch:
     - x86_64
@@ -12,9 +12,10 @@ pkgbase:
     - GPL-2.0-only
   makedepends:
     - dos2unix
-    - giflib
+    - glew
     - glib2-devel
     - gtk3
+    - libevdev
     - libjpeg-turbo
     - libpcap
     - libxaw
@@ -22,14 +23,15 @@ pkgbase:
     - sdl2
     - sdl2_image
     - xa
+    - xdg-utils
     - xorg-bdftopcf
     - xorg-mkfontscale
   depends:
     - alsa-lib
-    - glew
-    - libevdev
+    - giflib
     - libpng
     - libpulse
+    - libusb
   source:
     - https://downloads.sourceforge.net/project/vice-emu/releases/vice-3.10.tar.gz
     - disable-fc-cache.patch
@@ -41,12 +43,13 @@ pkgname:
     pkgdesc: Versatile Commodore Emulator (GTK3)
     depends:
       - alsa-lib
-      - glew
-      - libevdev
+      - giflib
       - libpng
       - libpulse
-      - giflib
+      - libusb
+      - glew
       - gtk3
+      - libevdev
     provides:
       - vice
     conflicts:
@@ -55,15 +58,14 @@ pkgname:
     pkgdesc: Versatile Commodore Emulator (SDL2)
     depends:
       - alsa-lib
-      - glew
-      - libevdev
+      - giflib
       - libpng
       - libpulse
-      - giflib
+      - libusb
       - sdl2
       - sdl2_image
     provides:
       - vice
     conflicts:
       - vice
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
