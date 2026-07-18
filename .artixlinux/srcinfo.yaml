@@ -1,12 +1,11 @@
 ---
-version: 2.5.1-1
+version: 2.5.1-2
 pkgbase:
   name: shared-mime-info
   pkgdesc: Freedesktop.org Shared MIME Info
   pkgver: 2.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec/
-  install: shared-mime-info.install
   arch:
     - x86_64
   license:
@@ -27,9 +26,11 @@ pkgbase:
   source:
     - https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/2.5.1/shared-mime-info-2.5.1.tar.bz2
     - update-mime-database.hook
+    - shared-mime-info-remove-cache.hook
   sha256sums:
     - b75b420da9b0be9a3d99b1bee6ed87957b56ab54583ac1a97fbd0dc98ddddb25
     - f08efbcbac9d2bd18a805b8dcf3ed06d7763b97eca5935aa64d65593774b6501
+    - e67071897ecc61bae05a66874dedfb31d64f28f36e9fcf84bacc6e4dbd23636c
 pkgname:
   - name: shared-mime-info
 # generated with artixpkg 0.38.5-1-any
