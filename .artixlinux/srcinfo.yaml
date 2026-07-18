@@ -43,7 +43,6 @@ pkgbase:
     - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.4.tar.sign
     - https://github.com/archlinux/linux/releases/download/v7.1.4-arch1/linux-v7.1.4-arch1.patch.zst
     - https://github.com/archlinux/linux/releases/download/v7.1.4-arch1/linux-v7.1.4-arch1.patch.zst.sig
-    - 631849ff5d603841e74f19f4a5e30fe1f7d7cf30.patch
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
@@ -53,13 +52,11 @@ pkgbase:
     - SKIP
     - 81545d08b85442bbb0e660f0bd4b2bb237afe87d207231156c742cf588522f7b
     - SKIP
-    - e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7
   b2sums:
     - bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628
     - SKIP
     - 7fb742ad1f2a3388cb136fcfaa4dd08112f38b8681e14c913f9ab7ebedbb083b878c29bec3cd194a7b59dcf869f3f6fd3b5de25d74b85014e635c2a8c687b722
     - SKIP
-    - 9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:

@@ -51,7 +51,6 @@ _srctag=v${_ver}-${_arch}
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${_ver%%.*}.x/${_srcname}.tar.{xz,sign}
   $url/releases/download/$_srctag/linux-$_srctag.patch.zst{,.sig}
-  631849ff5d603841e74f19f4a5e30fe1f7d7cf30.patch
 )
 source_x86_64=(config.x86_64)
 validpgpkeys=(
@@ -62,14 +61,12 @@ validpgpkeys=(
 sha256sums=('1c63922a119675d38e3ae0f8f6ee07f15c41a786ab9ed66563749bb8c9a08e2e'
             'SKIP'
             '81545d08b85442bbb0e660f0bd4b2bb237afe87d207231156c742cf588522f7b'
-            'SKIP'
-            'e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7')
+            'SKIP')
 sha256sums_x86_64=('03f7bb93fab27c4a3619148a620d175932b6db3a97601132a37ca073c58023e6')
 b2sums=('bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628'
         'SKIP'
         '7fb742ad1f2a3388cb136fcfaa4dd08112f38b8681e14c913f9ab7ebedbb083b878c29bec3cd194a7b59dcf869f3f6fd3b5de25d74b85014e635c2a8c687b722'
-        'SKIP'
-        '9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725')
+        'SKIP')
 b2sums_x86_64=('96f96efcd381c42de0dc586aaa720d9998c44307c0960574e1c178ad847f37e5b01332dcda6d7626922db92f2f51f43569e3c4a986eee7770c0eba5677ebb97c')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
