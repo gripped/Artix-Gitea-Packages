@@ -2,18 +2,21 @@
 
 pkgname=hyprland-guiutils
 pkgver=0.2.1
-pkgrel=6
+pkgrel=7
 pkgdesc='Hyprland GUI utilities'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/$pkgname"
 license=(BSD-3-Clause)
-depends=(gcc-libs # libgcc_s.so libstdc++.so
+depends=(
+         libgcc
+         libstdc++
          glibc # libc.so libm.so
          hyprlang
          hyprtoolkit libhyprtoolkit.so
          hyprutils libhyprutils.so
          libdrm
-         pixman)
+         pixman
+)
 makedepends=(cmake)
 replaces=(hyprland-qtutils)
 _archive="$pkgname-$pkgver"

@@ -1,10 +1,10 @@
 ---
-version: 0.2.1-6
+version: 0.2.1-7
 pkgbase:
   name: hyprland-guiutils
   pkgdesc: Hyprland GUI utilities
   pkgver: 0.2.1
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/hyprwm/hyprland-guiutils
   arch:
     - x86_64
@@ -14,7 +14,8 @@ pkgbase:
   makedepends:
     - cmake
   depends:
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - hyprlang
     - hyprtoolkit
@@ -31,4 +32,4 @@ pkgbase:
     - 8de6ab7295dd120bab6b6b3e884b27b3c6ccc38ae345f3144bf9b5ad79251bcb
 pkgname:
   - name: hyprland-guiutils
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
