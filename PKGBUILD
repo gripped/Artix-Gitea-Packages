@@ -1,13 +1,13 @@
 # Maintainer: artist for Artix Linux
 
-_ver=7.1.3
-_rel=2
+_ver=7.1.4
+_rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=2
+pkgrel=1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(
@@ -59,18 +59,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-sha256sums=('be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc'
+sha256sums=('1c63922a119675d38e3ae0f8f6ee07f15c41a786ab9ed66563749bb8c9a08e2e'
             'SKIP'
-            '741ca7140c73d9c8a065cc20fbbb881ce4ca700466ad8e819bc80d7f2e52d2c4'
+            '81545d08b85442bbb0e660f0bd4b2bb237afe87d207231156c742cf588522f7b'
             'SKIP'
             'e5ff2861c9b1d8cc68176b1be06bad7e4b10fbfcae3c5f4d4264674976a989f7')
-sha256sums_x86_64=('d2dd1a67ff8fb2876eea642046410457cf31f0e7e57f8d7888a6a657692bfa52')
-b2sums=('b6466e2798627522f0339c670a223b21266f4d4ede39163867c0f122295e54c5d24093abb51d5c6c6c917de0cb199836e81f45f7c391a5cc138cac2a519438e8'
+sha256sums_x86_64=('03f7bb93fab27c4a3619148a620d175932b6db3a97601132a37ca073c58023e6')
+b2sums=('bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628'
         'SKIP'
-        '3a6a946d93a0f31847ad3c58230d4c1700f7611bc5b1a9af9e33ec180c007a47158eb00220edfaa7d5e1467d0ad496a0468d6e5c58606cfc38d9d7dc33dcef3d'
+        '7fb742ad1f2a3388cb136fcfaa4dd08112f38b8681e14c913f9ab7ebedbb083b878c29bec3cd194a7b59dcf869f3f6fd3b5de25d74b85014e635c2a8c687b722'
         'SKIP'
         '9ec0dba5c8544659386201fcbfa445069f0201cdd413e2a51f14208f39ca15ac6cd451fb1468ee79946438641d06a4869ded207c82e701463f260a6136760725')
-b2sums_x86_64=('08c2350b8adb209688c1e44dab21f91432b3589dae0b7d3e28d4c31df173a99e27d92922d5261fb9697f3a16355cd1ab76e2151cdcfd14cc10970f0b9a571489')
+b2sums_x86_64=('96f96efcd381c42de0dc586aaa720d9998c44307c0960574e1c178ad847f37e5b01332dcda6d7626922db92f2f51f43569e3c4a986eee7770c0eba5677ebb97c')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
