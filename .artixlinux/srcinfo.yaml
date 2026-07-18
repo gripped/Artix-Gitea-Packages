@@ -1,10 +1,10 @@
 ---
-version: 0.1.7-9
+version: 0.1.7-10
 pkgbase:
   name: hypridle
   pkgdesc: hyprland’s idle daemon
   pkgver: 0.1.7
-  pkgrel: 9
+  pkgrel: 10
   url: https://github.com/hyprwm/hypridle
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - c4ef2e2894fc2082cfdabe7db086b1f246e3f0de571f7f2c6b26d7c0d9a5f8f3
 pkgname:
   - name: hypridle
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
