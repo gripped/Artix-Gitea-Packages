@@ -1,16 +1,17 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: system-goblins
-  triggersBuild: false
+  addRepo: system-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.15.1.0-1
+    packages:
+      - skalibs-2.15.1.0-1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
