@@ -1,10 +1,10 @@
 ---
-version: 0.4.0-2
+version: 0.4.0-3
 pkgbase:
   name: hyprsunset
   pkgdesc: An application to enable a blue-light filter on Hyprland
   pkgver: 0.4.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hyprwm/hyprsunset
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 5980e65ec650010e36c52e5f5acc0df9fd2d20051c63b89305bdc13276f237a6
 pkgname:
   - name: hyprsunset
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
