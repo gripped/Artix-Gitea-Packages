@@ -1,9 +1,9 @@
 ---
-version: 0.6.1.1-1
+version: 0.7.0.0-1
 pkgbase:
   name: s6-rc
   pkgdesc: A complete service manager for s6 systems.
-  pkgver: 0.6.1.1
+  pkgver: 0.7.0.0
   pkgrel: 1
   url: https://skarnet.org/software/s6-rc/
   arch:
@@ -13,14 +13,18 @@ pkgbase:
   makedepends:
     - git
   depends:
+    - glibc
     - s6
-    - libs6.so
   provides:
     - libs6rc.so
   source:
-    - https://skarnet.org/software/s6-rc/s6-rc-0.6.1.1.tar.gz
+    - https://skarnet.org/software/s6-rc/s6-rc-0.7.0.0.tar.gz
   sha256sums:
-    - b54f226a35be1ee56a228bf1a4c39437f072bc64e69dbf356e733e606a86402d
+    - bf5b8ce0da5a4ee70d642b818b61d9916a7a9b64a457595f388113e54a188688
 pkgname:
   - name: s6-rc
-# generated with artixpkg 0.38.5-1-any
+    depends:
+      - glibc
+      - s6
+      - libs6.so
+# generated with artixpkg 0.39-1-any
