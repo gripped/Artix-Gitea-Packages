@@ -1,9 +1,9 @@
 ---
-version: 9.2.0735-1
+version: 9.2.0804-1
 pkgbase:
   name: vim
   pkgdesc: Vi Improved, a highly configurable, improved version of the vi text editor
-  pkgver: 9.2.0735
+  pkgver: 9.2.0804
   pkgrel: 1
   url: https://www.vim.org
   arch:
@@ -26,21 +26,21 @@ pkgbase:
     - tcl
     - zlib
   source:
-    - git+https://github.com/vim/vim.git?signed#tag=v9.2.0735
+    - git+https://github.com/vim/vim.git?signed#tag=v9.2.0804
     - vimrc
     - archlinux.vim
     - vimdoc.hook
   validpgpkeys:
     - 4F19708816918E19AAE19DEEF3F92DA383FDDE09
   sha256sums:
-    - b0cfdf1c682e362b8e2d5015499a8b5184534cdec264f295b6cef0edc4a4f69e
+    - 63ad6d4556e8c93277de314666b0381daedd80a1c26215eab322fa9f9a8b5f32
     - b16e85e457397ab2043a7ee0a3c84307c6b4eac157fd0b721694761f25b3ed5b
     - cc3d931129854c298eb22e993ec14c2ad86cc1e70a08a64496f5e06559289972
     - 8e9656934d9d7793063230d15a689e10455e6db9b9fe73afa0f294792795d8ae
 pkgname:
   - name: vim
     depends:
-      - vim-runtime=9.2.0735-1
+      - vim-runtime=9.2.0804-1
       - gpm
       - acl
       - glibc
@@ -64,7 +64,7 @@ pkgname:
   - name: gvim
     pkgdesc: Vi Improved, a highly configurable, improved version of the vi text editor (with advanced features, such as a GUI)
     depends:
-      - vim-runtime=9.2.0735-1
+      - vim-runtime=9.2.0804-1
       - gpm
       - libxt
       - gtk3
@@ -79,7 +79,7 @@ pkgname:
       - 'perl: Perl language support'
       - 'tcl: Tcl language support'
     provides:
-      - vim=9.2.0735-1
+      - vim=9.2.0804-1
       - xxd
       - vim-plugin-runtime
     conflicts:
