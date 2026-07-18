@@ -28,4 +28,4 @@ pkgbase:
     - 409323f84f919064f758ad06bccf526d1aafac7aee791b9fd35908081ad13cbd252ca49cefbfdc870e5526da82e641750ee46f0103e53c10f0e9b35f9483982f
 pkgname:
   - name: python-websockets
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
