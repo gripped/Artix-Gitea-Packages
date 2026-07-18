@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=7.1.3.zen2
+pkgver=7.1.4.zen1
 pkgrel=1
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
@@ -53,16 +53,16 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('b6466e2798627522f0339c670a223b21266f4d4ede39163867c0f122295e54c5d24093abb51d5c6c6c917de0cb199836e81f45f7c391a5cc138cac2a519438e8'
+b2sums=('bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628'
         'SKIP'
-        'cb113cb637d9bc2ba60215c6ecd4d5c62c8fe2add15ff6eff38bd421b0f7da62b5e8f4a1c29b348eb37587a48162e14264f1775d702ff05b61eb83d058bf4a09'
+        '0ac867999730158e75283983c38c91e6b9e94e9f3964b39bb15dcda8e5bbc9d13683f0e7bf3af61d4364e0bb9cf8f519214f43348e90e0913cfb676f9f23625f'
         'SKIP')
-b2sums_x86_64=('9bcd5c30c0289f055a610cd9949ebc45d1e302d384d79a2b23689c131638c7fc39cd5c36ab2bcdcdfe1f89b60aa7da155053e6d26f1bc5c8707aee5cb7a4f0f7')
+b2sums_x86_64=('a11d157bc449e714b63d40106601cc74620e102372cd82e0a1493bc640bddb50b8cee22deae49c93b4fc53e8e3a5e243b316985e6e94e1792f785f7b3083f2f1')
 
 # https://www.kernel.org/pub/linux/kernel/v7.x/sha256sums.asc
-sha256sums=('be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc'
+sha256sums=('1c63922a119675d38e3ae0f8f6ee07f15c41a786ab9ed66563749bb8c9a08e2e'
             'SKIP'
-            '78ecb385736d6e59790e80b7a59a5116b3cb2a1c2da280564432f8937db03a23'
+            'b9807636885af4ba97f9fbab40a18ee9dddf0bfd58ce30991844dab76ad5ec44'
             'SKIP')
 
 export KBUILD_BUILD_HOST=artixlinux
@@ -97,9 +97,13 @@ prepare() {
 
 build() {
   cd $_srcname
+
+  make htmldocs SPHINXOPTS=-QT &
+  local pid_docs=$!
+
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  make htmldocs SPHINXOPTS=-QT
+  wait $pid_docs
 }
 
 _package() {
@@ -206,8 +210,8 @@ _package-headers() {
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
 
-  echo "Installing Rust files..."
   if [[ $(scripts/config -s CONFIG_RUST) = y ]]; then
+    echo "Installing Rust files..."
     install -Dt "$builddir/rust" -m644 rust/*.rmeta
     install -Dt "$builddir/rust" rust/*.so
   fi
