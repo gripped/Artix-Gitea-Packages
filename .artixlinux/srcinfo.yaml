@@ -23,4 +23,4 @@ pkgbase:
     - 5263b7b2d0f5a8de2eb409421284947df6229b67bca0055fa10da38153835815
 pkgname:
   - name: python-wcag-contrast-ratio
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
