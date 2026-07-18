@@ -1,9 +1,9 @@
 ---
-version: 2.15.0.0-1
+version: 2.15.1.0-1
 pkgbase:
   name: s6
   pkgdesc: skarnet.org's small & secure supervision software suite. Comes with an ultra-fast init replacement, process management tools, an asynchronous locking library, and more.
-  pkgver: 2.15.0.0
+  pkgver: 2.15.1.0
   pkgrel: 1
   url: https://skarnet.org/software/s6/
   arch:
@@ -11,18 +11,23 @@ pkgbase:
   license:
     - ISC
   depends:
+    - glibc
     - skalibs
     - execline
-    - libskarnet.so
-    - libexecline.so
   provides:
     - libs6.so
   source:
-    - https://skarnet.org/software/s6/s6-2.15.0.0.tar.gz
+    - https://skarnet.org/software/s6/s6-2.15.1.0.tar.gz
     - s6log.conf
   sha256sums:
-    - 27dff73d626285540133e075e75887087f5117fd51de59503ef7d29e96f69e4c
+    - eab9c46e22b66b16135f9a05ec68a0ea287d9060b84d10defaaa2caad158ab52
     - cb6cc5ca87185ab72aa00857752b6b5436f7653e3d8812dc2704df020c212822
 pkgname:
   - name: s6
-# generated with artixpkg 0.38.5-1-any
+    depends:
+      - glibc
+      - skalibs
+      - execline
+      - libskarnet.so
+      - libexecline.so
+# generated with artixpkg 0.39-1-any
