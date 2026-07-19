@@ -1,9 +1,9 @@
 ---
-version: 3.0.2-1
+version: 4.0.0-1
 pkgbase:
   name: ruby-mustermann
   pkgdesc: Your personal string matching expert
-  pkgver: 3.0.2
+  pkgver: 4.0.0
   pkgrel: 1
   url: https://github.com/sinatra/mustermann
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - ruby-mustermann-3.0.2.tar.gz::https://github.com/sinatra/mustermann/archive/v3.0.2.tar.gz
+    - ruby-mustermann-4.0.0.tar.gz::https://github.com/sinatra/mustermann/archive/v4.0.0.tar.gz
   sha256sums:
-    - 6cb652b57822fdab73858a6c9a944ec248f288cb662f23fa1e3fc1996f5c9b42
+    - ca11fee9a0a00202c1be2bf261245f1a2b3692690f252f336a44514cf28b5281
 pkgname:
   - name: ruby-mustermann
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
