@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 2026.05.10-6
+    version: 2026.07.18-1
     packages:
-      - zathura-pdf-mupdf-2026.05.10-6-x86_64.pkg.tar.zst
+      - zathura-pdf-mupdf-2026.07.18-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 2026.05.10-5.2
