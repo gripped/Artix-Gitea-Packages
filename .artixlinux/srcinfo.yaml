@@ -1,9 +1,9 @@
 ---
-version: 2026.2.25-1
+version: 2026.7.7-1
 pkgbase:
   name: ntfs-3g
   pkgdesc: NTFS filesystem driver and utilities
-  pkgver: 2026.2.25
+  pkgver: 2026.7.7
   pkgrel: 1
   url: https://www.tuxera.com/community/open-source-ntfs-3g/
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/tuxera/ntfs-3g.git#tag=2026.2.25
+    - git+https://github.com/tuxera/ntfs-3g.git#tag=2026.7.7
   sha256sums:
-    - ceac9cb01f928dc50bb90eec90387e20889c74eefad00e1efad2742b8d36685f
+    - 9ad0d731973c684aa177a8cd31a098fcb2a75d89820f67156a132169e16d8c65
 pkgname:
   - name: ntfs-3g
     pkgdesc: NTFS FUSE driver
