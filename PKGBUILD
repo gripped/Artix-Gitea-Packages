@@ -4,11 +4,11 @@
 
 _url=https://gitea.artixlinux.org/artix/alpm-hooks
 
-_commit=6f71237f632b745ebc8ee73249c9b92dae25dee7
+_commit=5e07cfec1400c96480cdff29859bb4668418027a
 
 pkgname=base
 pkgver=3
-pkgrel=6.1
+pkgrel=6.2
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
