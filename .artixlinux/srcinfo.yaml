@@ -1,10 +1,10 @@
 ---
-version: 5.0.3-2.1
+version: 5.0.3-2.2
 pkgbase:
   name: acme-tiny
   pkgdesc: A tiny script to issue and renew TLS certs from Let's Encrypt
   pkgver: 5.0.3
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://github.com/diafygi/acme-tiny
   arch:
     - any
