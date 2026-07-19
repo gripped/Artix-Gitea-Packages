@@ -1,10 +1,10 @@
 ---
-version: 0.5.22-1
+version: 0.5.22-2
 pkgbase:
   name: lutris
   pkgdesc: Open Gaming Platform
   pkgver: 0.5.22
-  pkgrel: 1
+  pkgrel: 2
   url: https://lutris.net
   arch:
     - any
@@ -60,7 +60,7 @@ pkgbase:
     - 'gamemode: Allows games to request a temporary set of optimisations'
     - 'gvfs: GVFS backend'
     - 'innoextract: Extract Inno Setup installers'
-    - 'libayatana-appindicator: tray icon support'
+    - 'libappindicator: tray icon support'
     - 'lib32-gamemode: Allows games to request a temporary set of optimisations'
     - 'lib32-gnutls: Required to login to some game platforms (e.g. Ubisoft Connect, EA Origin and GOG)'
     - 'lib32-mesa-libgl: OpenGL support'
@@ -83,4 +83,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lutris
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
