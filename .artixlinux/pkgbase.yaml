@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 3-6
+    version: 3-6.1
     packages:
-      - base-3-6-any.pkg.tar.zst
+      - base-3-6.1-any.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null

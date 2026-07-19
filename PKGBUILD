@@ -8,7 +8,7 @@ _commit=6f71237f632b745ebc8ee73249c9b92dae25dee7
 
 pkgname=base
 pkgver=3
-pkgrel=6
+pkgrel=6.1
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
