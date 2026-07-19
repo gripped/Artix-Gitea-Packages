@@ -1,21 +1,21 @@
 ---
-version: 0.5.7-7
+version: 0.5.7-8
 pkgbase:
   name: python-virtualenv-clone
   pkgdesc: A script for cloning a non-relocatable virtualenv.
   pkgver: 0.5.7
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/edwardgeorge/virtualenv-clone
   arch:
     - any
   license:
-    - GPL
+    - MIT
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
   depends:
     - python
-  options:
-    - '!emptydirs'
   source:
     - https://files.pythonhosted.org/packages/source/v/virtualenv-clone/virtualenv-clone-0.5.7.tar.gz
   sha256sums:
