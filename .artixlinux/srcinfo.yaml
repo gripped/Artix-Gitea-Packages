@@ -1,9 +1,9 @@
 ---
-version: 5.1.0-3
+version: 5.1.0-4
 pkgbase:
   name: virt-manager
   pkgver: 5.1.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://virt-manager.org/
   arch:
     - any
@@ -14,7 +14,7 @@ pkgbase:
     - meson
     - python-docutils
   optdepends:
-    - 'libayatana-appindicator: tray icon'
+    - 'libappindicator: SNI tray icon'
     - 'x11-ssh-askpass: provide password for remote machines connected via ssh tunnel'
   source:
     - git+https://github.com/virt-manager/virt-manager.git#tag=v5.1.0
@@ -43,4 +43,4 @@ pkgname:
       - vte3
       - python-cairo
       - gtksourceview4
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
