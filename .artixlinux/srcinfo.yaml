@@ -1,9 +1,9 @@
 ---
-version: 2.8.0.0-1
+version: 2.8.0.1-1
 pkgbase:
   name: s6-networking
   pkgdesc: A suite of small networking tools for UNIX systems.
-  pkgver: 2.8.0.0
+  pkgver: 2.8.0.1
   pkgrel: 1
   url: https://skarnet.org/software/s6-networking/
   arch:
@@ -14,14 +14,18 @@ pkgbase:
     - s6
     - s6-dns
     - bearssl
-    - libs6.so
-    - libs6dns.so
   provides:
     - libs6net.so
   source:
-    - https://skarnet.org/software/s6-networking/s6-networking-2.8.0.0.tar.gz
+    - https://skarnet.org/software/s6-networking/s6-networking-2.8.0.1.tar.gz
   sha256sums:
-    - ac4f65840fcec1624f7bf9c632fb40553851bc902957ff956b2a1f2281a45cd4
+    - 6f011c33ba0586ce58feee0cf854a0b087e9082fdbd24abb786148463830f341
 pkgname:
   - name: s6-networking
-# generated with artixpkg 0.38.5-1-any
+    depends:
+      - s6
+      - s6-dns
+      - bearssl
+      - libs6.so
+      - libs6dns.so
+# generated with artixpkg 0.39-1-any
