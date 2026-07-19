@@ -1,10 +1,10 @@
 ---
-version: 0.9-7
+version: 0.9-8
 pkgbase:
   name: python-wcag-contrast-ratio
   pkgdesc: Library for computing contrast ratios, as required by WCAG 2.0
   pkgver: 0.9
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/gsnedders/wcag-contrast-ratio
   arch:
     - any
@@ -14,7 +14,10 @@ pkgbase:
     - python-pytest
     - python-hypothesis
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
