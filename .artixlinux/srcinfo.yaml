@@ -1,10 +1,10 @@
 ---
-version: 2026.02.03-8.2
+version: 2026.07.18-1
 pkgbase:
   name: zathura-ps
   pkgdesc: Adds ps support to zathura by using the libspectre library
-  pkgver: 2026.02.03
-  pkgrel: 8.2
+  pkgver: 2026.07.18
+  pkgrel: 1
   url: https://pwmt.org/projects/zathura-ps
   arch:
     - x86_64
@@ -14,15 +14,14 @@ pkgbase:
     - meson
     - ninja
     - appstream
-    - appstream-glib
+    - desktop-file-utils
   depends:
     - libspectre
     - zathura
-    - desktop-file-utils
   source:
-    - zathura-ps-2026.02.03.tar.gz::https://github.com/pwmt/zathura-ps/archive/refs/tags/2026.02.03.tar.gz
+    - zathura-ps-2026.07.18.tar.gz::https://github.com/pwmt/zathura-ps/archive/refs/tags/2026.07.18.tar.gz
   sha512sums:
-    - 38be5cce09a6d7dd008c12dc0f2dcf053d55b23792148add94d616b61b0e4ad2e2f395203a9391c6c7e0d46ddf4f9a62d106d917d5444e709cc963b511e78a95
+    - 6d823b2ad1dee7ffd9c74c77610f871a71e8a1e911ba5fea50650287afdb5c25c63fb1bd65df9a73e6bb469579e91fd6577fb39dde8513bfbaf0b8763a346aec
 pkgname:
   - name: zathura-ps
 # generated with artixpkg 0.38.5-1-any
