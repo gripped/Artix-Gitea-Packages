@@ -1,9 +1,9 @@
 ---
-version: 4.1.2-1
+version: 4.1.3-1
 pkgbase:
   name: mathjax
   pkgdesc: An open source JavaScript display engine for mathematics that works in all modern browsers
-  pkgver: 4.1.2
+  pkgver: 4.1.3
   pkgrel: 1
   url: https://www.mathjax.org/
   arch:
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - git
   source:
-    - git+https://github.com/mathjax/MathJax#tag=4.1.2
+    - git+https://github.com/mathjax/MathJax#tag=4.1.3
   sha256sums:
-    - 48dc8e902fed3c4c7a798fd985817f1cc1369b3b5f0614ae9f510d28a24721fd
+    - 168e090295bea0741f7a3f7ec271a2fdede95150732a32e9e3685cde9bf5d65f
 pkgname:
   - name: mathjax
 # generated with artixpkg 0.38.5-1-any
