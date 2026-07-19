@@ -1,0 +1,52 @@
+---
+version: 3-6
+pkgbase:
+  name: base
+  pkgdesc: Minimal package set to define a basic Artix Linux installation
+  pkgver: 3
+  pkgrel: 6
+  url: https://www.artixlinux.org
+  arch:
+    - any
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - filesystem
+    - gcc-libs
+    - glibc
+    - bash
+    - coreutils
+    - file
+    - findutils
+    - gawk
+    - grep
+    - procps-ng
+    - sed
+    - tar
+    - gettext
+    - pciutils
+    - psmisc
+    - shadow
+    - util-linux
+    - bzip2
+    - gzip
+    - xz
+    - licenses
+    - pacman
+    - artix-keyring
+    - init-logind
+    - esysusers
+    - etmpfiles
+    - iputils
+    - iproute2
+  optdepends:
+    - 'linux: bare metal support'
+  source:
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=6f71237f632b745ebc8ee73249c9b92dae25dee7
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: base
+# generated with artixpkg 0.38.5-1-any
