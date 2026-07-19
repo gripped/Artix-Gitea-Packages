@@ -1,10 +1,10 @@
 ---
-version: 5.13.0-1
+version: 5.13.0-0
 pkgbase:
   name: ruby-liquid
   pkgdesc: Liquid markup language. Safe, customer facing template language for flexible web apps
   pkgver: 5.13.0
-  pkgrel: 1
+  pkgrel: 0
   url: https://shopify.github.io/liquid/
   arch:
     - any

@@ -5,7 +5,7 @@
 _name=liquid
 pkgname=ruby-$_name
 pkgver=5.13.0
-pkgrel=1
+pkgrel=0
 pkgdesc='Liquid markup language. Safe, customer facing template language for flexible web apps'
 url='https://shopify.github.io/liquid/'
 arch=('any')
