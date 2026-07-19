@@ -1,0 +1,70 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Santiago Torres-Arias <santiago@archlinux.org>
+# Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
+
+pkgname=cosign
+pkgver=3.1.0
+pkgrel=1
+pkgdesc="Container Signing with support for ephemeral keys and Sigstore signing"
+arch=('x86_64')
+url="https://github.com/sigstore/cosign"
+license=('Apache-2.0')
+depends=('glibc')
+makedepends=(
+  'go'
+  'git'
+)
+checkdepends=('go-tools')
+options=('!lto')
+source=("git+$url.git#tag=v$pkgver")
+sha512sums=('64fe257993da8b45d8ffa088c7dabeef9aa8f2c801dafb69338e6aacfd3c3ad1f3f4eacc46e9d7937f99574b6d13c8520114fbdbac2d65fe773a22e51275f750')
+b2sums=('d6328b42c79b46a81d26a9ea57b380ec946ead435f901da3d322bf98360736adef420e586ff74b64417fd885d57a2daef31147ee84ba4e9fb14748222da2d5d9')
+
+prepare() {
+  cd $pkgname
+  GOFLAGS="-mod=readonly" go mod vendor -v
+}
+
+build() {
+  cd $pkgname
+  export CGO_LDFLAGS="$LDFLAGS"
+  export CGO_CFLAGS="$CFLAGS"
+  export CGO_CPPFLAGS="$CPPFLAGS"
+  export CGO_CXXFLAGS="$CXXFLAGS"
+  export GOFLAGS="-buildmode=pie -mod=vendor -modcacherw"
+  export GOPATH="$srcdir"
+  local ld_flags=" \
+    -X sigs.k8s.io/release-utils/version.gitVersion=v$pkgver \
+    -compressdwarf=false  \
+    -linkmode=external \
+  "
+  go build -v -ldflags="$ld_flags" ./cmd/cosign
+}
+
+check() {
+  cd $pkgname
+  local unit_tests=$(
+    go list ./... \
+      | grep -v github.com/sigstore/cosign/v3/cmd/cosign/cli/attest \
+      | grep -v github.com/sigstore/cosign/v3/cmd/cosign/cli/bundle \
+      | grep -v github.com/sigstore/cosign/v3/cmd/cosign/cli/fulcio \
+      | grep -v github.com/sigstore/cosign/v3/cmd/cosign/cli/sign \
+      | grep -v github.com/sigstore/cosign/v3/cmd/cosign/cli/verify \
+      | grep -v github.com/sigstore/cosign/v3/internal/pkg/cosign/tsa \
+      | grep -v github.com/sigstore/cosign/v3/pkg/cosign
+  )
+  # shellcheck disable=SC2086
+  go test -v $unit_tests
+}
+
+package() {
+  cd $pkgname
+  install -vDm755 -t "$pkgdir/usr/bin" cosign
+  "$pkgdir/usr/bin/cosign" completion bash \
+    | install -vDm644 /dev/stdin "$pkgdir/usr/share/bash-completion/completions/cosign"
+  "$pkgdir/usr/bin/cosign" completion zsh \
+    | install -vDm644 /dev/stdin "$pkgdir/usr/share/zsh/site-functions/_cosign"
+  "$pkgdir/usr/bin/cosign" completion fish \
+    | install -vDm644 /dev/stdin "$pkgdir/usr/share/fish/vendor_completions.d/cosign.fish"
+}
