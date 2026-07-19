@@ -1,0 +1,23 @@
+---
+version: 1.1.0-1
+pkgbase:
+  name: ruby-lru_redux
+  pkgdesc: An efficient, thread safe LRU cache.
+  pkgver: 1.1.0
+  pkgrel: 1
+  url: https://github.com/SamSaffron/lru_redux
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - ruby-rdoc
+  depends:
+    - ruby
+  source:
+    - ruby-lru_redux-1.1.0.tar.gz::https://github.com/SamSaffron/lru_redux/archive/refs/tags/v1.1.0.tar.gz
+  sha256sums:
+    - 3140a388582ee08620f3da33fa744f2e71b0938548a3e564cc6aa6558940dba6
+pkgname:
+  - name: ruby-lru_redux
+# generated with artixpkg 0.38.5-1-any
