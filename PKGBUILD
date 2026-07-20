@@ -5,8 +5,8 @@
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
 pkgbase=linux-hardened
-pkgver=7.1.3.hardened1
-pkgrel=4
+pkgver=7.1.4.hardened1
+pkgrel=1
 pkgdesc='Security-Hardened Linux'
 url='https://github.com/anthraxx/linux-hardened'
 arch=(
@@ -15,9 +15,13 @@ arch=(
 license=(GPL-2.0-only)
 makedepends=(
   bc
+  binutils
   cpio
   gettext
+  glibc
   libelf
+  libgcc
+  openssl
   pahole
   perl
   python
@@ -25,7 +29,10 @@ makedepends=(
   rust-bindgen
   rust-src
   tar
+  xxhash
   xz
+  zlib
+  zstd
 
   # htmldocs
   graphviz
@@ -50,17 +57,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   E240B57E2C4630BA768E2F26FC1B547C8D8172C8  # Levente Polyak
 )
-# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
-sha256sums=('be41c068e88f5242a19bccdbffbe077b18c47b45f627e2325504b4fab79dd1dc'
+sha256sums=('1c63922a119675d38e3ae0f8f6ee07f15c41a786ab9ed66563749bb8c9a08e2e'
             'SKIP'
-            'f80f65c15d26201d817aaa0070e0765aa2a894f0eef68c2f669172b3137eba0b'
+            '75484ae8f2e8657b7a8d238ef8265f2ead01e3bc320c44d9905b804cdb597c18'
             'SKIP')
-sha256sums_x86_64=('14a1d592896d27c574a8f4c8bd71bc17509e3248d62c7ffe55dfbbe58b90f30f')
-b2sums=('b6466e2798627522f0339c670a223b21266f4d4ede39163867c0f122295e54c5d24093abb51d5c6c6c917de0cb199836e81f45f7c391a5cc138cac2a519438e8'
+sha256sums_x86_64=('b3d9bf7100bbd12c0f64883d089e127b64f147ad7e5d435542ee52ba0bbe96e4')
+b2sums=('bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628'
         'SKIP'
-        '96ca72fdf77492d73d6022733ae8d54455bbc0731336e7630fbe3c688a2bf6f7753a88bbe730b8c017dea927f126dfab784f223a8ecd8235e635f349b878eb5e'
+        '59a87929dc86ef03452a04bc62081d9ad1f3ef90cd452e13bdd93844dd9201f8e23a5e27935e2a40a13d4ba0cf1d7969dd895132a4afab6fc76f03329119843c'
         'SKIP')
-b2sums_x86_64=('5246badcef8f1176888de8bb28721b1161f206b29b08929b725a4d0b906ed218aa8507926588c206c650d664a3fa04ff7f3f254f0711ae634172f33764c0c174')
+b2sums_x86_64=('c954741fcea57f998d64f4c49cc8c7d6460f3237d1235297f55efe288899c7148329b4092d1bd41c5b35760f24576ae9531b4cd8f5a4451c128003cfe939ccc0')
+
+# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -100,7 +108,7 @@ build() {
 
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  wait "${pid_docs}"
+  wait $pid_docs
 }
 
 _package() {
@@ -147,7 +155,17 @@ _package() {
 
 _package-headers() {
   pkgdesc="Headers and scripts for building modules for the $pkgdesc kernel"
-  depends=(pahole)
+  depends=(
+    binutils
+    glibc
+    libelf
+    libgcc
+    openssl
+    pahole
+    xxhash
+    zlib
+    zstd
+  )
   provides=(LINUX-HEADERS)
 
   cd $_srcname
@@ -197,11 +215,11 @@ _package-headers() {
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
 
-  # echo "Installing Rust files..."
-  # if [[ $(scripts/config -s CONFIG_RUST) = y ]]; then
-  # install -Dt "$builddir/rust" -m644 rust/*.rmeta
-  # install -Dt "$builddir/rust" rust/*.so
-  # fi
+  if [[ $(scripts/config -s CONFIG_RUST) = y ]]; then
+    echo "Installing Rust files..."
+    install -Dt "$builddir/rust" -m644 rust/*.rmeta
+    install -Dt "$builddir/rust" rust/*.so
+  fi
 
   echo "Installing unstripped VDSO..."
   make INSTALL_MOD_PATH="$pkgdir/usr" vdso_install \
