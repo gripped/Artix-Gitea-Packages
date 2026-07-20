@@ -3,9 +3,9 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=7.0.14.rt2.artix1
-archpkgver=7.0.14.rt2.arch1
-pkgrel=3
+pkgver=7.1.4.rt1.artix1
+archpkgver=7.1.4.rt1.arch1
+pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
 url='https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt'
@@ -61,20 +61,20 @@ source=(
   $url/-/releases/v${_distro_patch_ver}/downloads/$pkgbase-v${_distro_patch_ver}.patch.{sig,zst}
 )
 source_x86_64=(config.x86_64)
-sha512sums=('924b4a348a441e628769cbc2aadc0386a40abb9538e6c3b54730c7277b5fb7d7caf080ab2f4f0bf2e507a1b13125f5de35a532f6c3be6649f5f5d1b28cf5a375'
+sha512sums=('753b53b3f9a240b5838fe1156ad61f2356e2042941e571450492b5c8c46fd32140aede34fd4b074705650bac503deccec20ad9b8caee9d4c5fdc575401c76cc4'
             'SKIP'
             'SKIP'
-            '30d98f109958bab38fdc853837df1f648c3d25a50c5883fd8148c90c9525a96c960457ef449ac963b54117a00d01a2b2cbe8a3844d29d6670306551375c04cb9'
+            'fd4c40939f9d32255a134a76a4fb66bf422ad1266ab8d28fe59a395d2ff75771db4a05de3aba727f0cd9dad5e6d0954189a599fa52ce36999bc09ab6e8396c29'
             'SKIP'
-            '3ef0fc47b25d72f97a5cfe098ca001396e942dd3cb1d05b55f8154d97aad44e987dc0e144379497ab3a6137ef537700e280c25081cfd724594db5d4d28189b01')
-sha512sums_x86_64=('27261be2ace5d5d6eb7ce7bf69a864fb8323c7f4ce8f0cd38f53b80ef7e04d08b7dd288b9defef994f49d12332ef2e5366d3c77aa6caf43c4402ac957cf7ece0')
-b2sums=('f313eb3360dc5cd0e611758b84f9d8d7a984f28b6f832d45823619f66679c56823a18a55eaf7b4704d903b031704cc624f1e055ce25752daa5bf77966839c2d2'
+            '318241d515ed62ccc0876f44067ca52657ebd993bbd5f81ecdad60c5cf6610ac0f3e92d45eb583a4039b82cba7cb850f88e7fd4a2dd3a8cd8f5ff4860bfdf079')
+sha512sums_x86_64=('a26a00cdc77ad29e85c922dfd23644857f6c25a7cfacbd3afb0991ed70a3db38cc5f79a6bff738c4b318c9144b1c5fec65f35c9d6fde18b4a2acfa955daf2cc9')
+b2sums=('bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628'
         'SKIP'
         'SKIP'
-        'aa7b94b454ee46865ef97389cf2a5926d6edc872b4be4e5c97a1ac8f0e12517a2baf6e44c43bd74d7e9375f844ef0d505925e7b37f15cfff3a6f9a517a905fa9'
+        'bdf3e7320440caa820391d38ce9a5f0fc5a792231a627d253c5846b70c250214ecc32650bb85382ffcdece409bcacb8feab71271ea5d7b06f0d950deaffa214f'
         'SKIP'
-        'c1566f11fb52426865425dfd6cac9a8f94b3fc1ba997e648e5c612aa9b5021dd61cc98910aeba6fe8e28145e1b59b4557cd751a506f12e6b8ea4d5479f14fa9e')
-b2sums_x86_64=('7103c6785c2f97b87f2441bec4fd142e6efa4222574ac9807c00605b0fea9529d13f483ddab1fe5921cccc597e135a91222c2e996df513b3828fa44b197f854e')
+        '2827b3615d31fd871174a4b3e230ae6289366e1b9c69bb60c84a1e12c9b68d791683e4dad41eb0f54f22a913f808454452249479065a667e0c7bb9083d7932a9')
+b2sums_x86_64=('ea26d0c1f6bf741ec0b2af4d4e96ac00a95ca02b7eb159a7dd174c34a29345c6f399634c08cb95171fbd66b7596be88f55bff5dac4b3ce4acad079f659318e36')
 validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman <gregkh@kernel.org>
   64254695FFF0AA4466CC19E67B96E8162A8CF5D1  # Sebastian Andrzej Siewior
@@ -115,9 +115,13 @@ prepare() {
 
 build() {
   cd $_srcname
+
+  make htmldocs SPHINXOPTS=-QT &
+  local pid_docs=$!
+
   make all
   make -C tools/bpf/bpftool vmlinux.h feature-clang-bpf-co-re=1
-  make htmldocs SPHINXOPTS=-QT
+  wait $pid_docs
 }
 
 _package() {
@@ -305,8 +309,8 @@ _package-headers() {
   echo "Installing KConfig files..."
   find . -name 'Kconfig*' -exec install -Dm644 {} "$builddir/{}" \;
 
-  echo "Installing Rust files..."
   if [[ $(scripts/config -s CONFIG_RUST) = y ]]; then
+    echo "Installing Rust files..."
     install -Dt "$builddir/rust" -m644 rust/*.rmeta
     install -Dt "$builddir/rust" rust/*.so
   fi
