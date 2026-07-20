@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,20 +29,20 @@ repos:
     packages: []
     debug: []
   world:
-    version: 7.1.3-1
+    version: 7.1.4-1
     packages:
-      - bootconfig-7.1.3-1-x86_64.pkg.tar.zst
-      - bpf-7.1.3-1-x86_64.pkg.tar.zst
-      - cpupower-7.1.3-1-x86_64.pkg.tar.zst
-      - hyperv-7.1.3-1-x86_64.pkg.tar.zst
-      - intel-speed-select-7.1.3-1-x86_64.pkg.tar.zst
-      - kcpuid-7.1.3-1-x86_64.pkg.tar.zst
-      - linux-tools-meta-7.1.3-1-x86_64.pkg.tar.zst
-      - perf-7.1.3-1-x86_64.pkg.tar.zst
-      - tmon-7.1.3-1-x86_64.pkg.tar.zst
-      - turbostat-7.1.3-1-x86_64.pkg.tar.zst
-      - usbip-7.1.3-1-x86_64.pkg.tar.zst
-      - x86_energy_perf_policy-7.1.3-1-x86_64.pkg.tar.zst
+      - bootconfig-7.1.4-1-x86_64.pkg.tar.zst
+      - bpf-7.1.4-1-x86_64.pkg.tar.zst
+      - cpupower-7.1.4-1-x86_64.pkg.tar.zst
+      - hyperv-7.1.4-1-x86_64.pkg.tar.zst
+      - intel-speed-select-7.1.4-1-x86_64.pkg.tar.zst
+      - kcpuid-7.1.4-1-x86_64.pkg.tar.zst
+      - linux-tools-meta-7.1.4-1-x86_64.pkg.tar.zst
+      - perf-7.1.4-1-x86_64.pkg.tar.zst
+      - tmon-7.1.4-1-x86_64.pkg.tar.zst
+      - turbostat-7.1.4-1-x86_64.pkg.tar.zst
+      - usbip-7.1.4-1-x86_64.pkg.tar.zst
+      - x86_energy_perf_policy-7.1.4-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
