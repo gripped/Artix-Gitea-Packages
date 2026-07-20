@@ -1,8 +1,8 @@
 ---
-version: 4.0.2-1
+version: 4.0.3-1
 pkgbase:
   name: gmic
-  pkgver: 4.0.2
+  pkgver: 4.0.3
   pkgrel: 1
   url: https://gmic.eu/
   arch:
@@ -27,9 +27,11 @@ pkgbase:
     - libx11
     - zlib
   source:
-    - https://gmic.eu/files/source/gmic_4.0.2.tar.gz
+    - https://gmic.eu/files/source/gmic_4.0.3.tar.gz
+    - opencv-5.patch
   sha256sums:
-    - 41a601616e81cd28ee67a8a6aaead8062c8b3530854ae3d96e032a6a8e223887
+    - c40ce56328ec2ddd9287ae4ceeb1c03995c1b66e4407e5d616791fadff012c00
+    - 6abf00f622ea89ec126c4180532be8f7204e00ca56305b5d10c013d908721f53
 pkgname:
   - name: gmic
     pkgdesc:
@@ -70,4 +72,4 @@ pkgname:
       - glib2
       - gmic
       - qt6-base
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
