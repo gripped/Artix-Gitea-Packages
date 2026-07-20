@@ -1,10 +1,10 @@
 ---
-version: 0.8-4
+version: 0.8-5
 pkgbase:
   name: piper
   pkgdesc: GTK application to configure gaming mice
   pkgver: 0.8
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/libratbag/piper
   arch:
     - any
@@ -15,8 +15,7 @@ pkgbase:
     - meson
     - appstream
   depends:
-    - desktop-file-utils
-    - gtk-update-icon-cache
+    - gtk3
     - python
     - python-gobject
     - libratbag
