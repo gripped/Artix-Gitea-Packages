@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260227-1
+    version: 20260719-1
     packages:
-      - mg-20260227-1-x86_64.pkg.tar.zst
+      - mg-20260719-1-x86_64.pkg.tar.zst
     debug: []
