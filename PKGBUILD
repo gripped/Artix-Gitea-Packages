@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-protocol-http2
-pkgver=0.26.0
+pkgver=0.26.1
 pkgrel=1
 pkgdesc='A low level implementation of the HTTP/2 protocol'
 arch=(any)
@@ -23,14 +23,13 @@ checkdepends=(
   ruby-bake-test-external
   ruby-bundler
   ruby-covered
-  ruby-decode
   ruby-metrics
   ruby-sus
   ruby-traces
 )
 options=(!emptydirs)
 source=("git+${url}.git#tag=v${pkgver}")
-sha256sums=('309e88fabad40daf11bcb3129129a1d2c178728747738b827eb1db4ad65058ab')
+sha256sums=('a394b256e6327b5b98a76ea1d312e5474f801ebd6424b34ae591022b4efb776b')
 
 prepare() {
   cd protocol-http2

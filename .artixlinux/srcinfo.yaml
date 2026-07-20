@@ -1,9 +1,9 @@
 ---
-version: 0.26.0-1
+version: 0.26.1-1
 pkgbase:
   name: ruby-protocol-http2
   pkgdesc: A low level implementation of the HTTP/2 protocol
-  pkgver: 0.26.0
+  pkgver: 0.26.1
   pkgrel: 1
   url: https://github.com/socketry/protocol-http2
   arch:
@@ -16,7 +16,6 @@ pkgbase:
     - ruby-bake-test-external
     - ruby-bundler
     - ruby-covered
-    - ruby-decode
     - ruby-metrics
     - ruby-sus
     - ruby-traces
@@ -30,9 +29,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/socketry/protocol-http2.git#tag=v0.26.0
+    - git+https://github.com/socketry/protocol-http2.git#tag=v0.26.1
   sha256sums:
-    - 309e88fabad40daf11bcb3129129a1d2c178728747738b827eb1db4ad65058ab
+    - a394b256e6327b5b98a76ea1d312e5474f801ebd6424b34ae591022b4efb776b
 pkgname:
   - name: ruby-protocol-http2
 # generated with artixpkg 0.38.5-1-any
