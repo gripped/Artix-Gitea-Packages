@@ -1,9 +1,9 @@
 ---
-version: 2.1.17-1
+version: 2.1.18-1
 pkgbase:
   name: dnscrypt-proxy
   pkgdesc: A flexible DNS proxy, with support for encrypted DNS protocols
-  pkgver: 2.1.17
+  pkgver: 2.1.18
   pkgrel: 1
   url: https://github.com/DNSCrypt/dnscrypt-proxy
   arch:
@@ -29,20 +29,20 @@ pkgbase:
     - etc/dnscrypt-proxy/cloaking-rules.txt
     - etc/dnscrypt-proxy/forwarding-rules.txt
   source:
-    - git+https://github.com/DNSCrypt/dnscrypt-proxy#tag=2.1.17?signed
+    - git+https://github.com/DNSCrypt/dnscrypt-proxy#tag=2.1.18?signed
     - 0001-Make-configuration-file-hierarchy-compliant.patch
     - tmpfiles.d
     - sysusers.d
   validpgpkeys:
     - 54A2B8892CC3D6A597B92B6C210627AABA709FE1
   sha512sums:
-    - 2c436608df381994879fb5b57fab771ca0ca30d6b69ee5356516c2fd589319abf4b9b22e8b99cef64a8b5d785a0d7fa5274aa809634885632dd9bda821592211
-    - 2b2cad47f38c301f903e1d02ba024bcc41146c7d3a4921dd68cf301eae81516467c43d757a9fb284bc40676201d4f8c1fe2294fe591efd6343f96d3a2d74383b
+    - 3879c99366b8670cb6b7726442036ea6b226625674e9b599e6c0848cfe761b26aadaace0f55543a94615e0d0cd2d22d27ef0b9909adc555937e2f41def2ce038
+    - 518fb95e3a04dedf78fc6714a1ea94cc73c44a2c871792073cf86f97893c4250eabea20187be9186baf8af9c5d5b9dcd7e4eeb5ad6993e050ebb9121f67dd544
     - 005f8077c2c99a3bd86d814a0c05c0f5142952445e32a615302dc1fc7d4bf66d9f7c661ebd8ef218e890b80bfe0d014dd2e7b47fcebba69f217cec631195f151
     - 888da497ac3a09cd975b9a8de8cad22aabdc40213086b9683715292f6032259929714fd120ac952f91e3af5ada6f4a843054c880a5724c5eb8e6d31664c43ec8
   b2sums:
-    - a3dbbfba732c0adbb527d6865fab60fa298e0817bef4eb6077833a8ff817898778c6882c0d0bb920836825c30ec48612a86e6ace202e3b314741ae53420c61e5
-    - 00c4d7145b9127703d22be7bb1c05581a44dfff2e09854e138887a6fddb10f7911eb0d8c57322542a90082079e004fb49e940bd9da89d2afea07e111334d18b7
+    - bfebbd72f4e3070862670e8ac0af0d00098c5cdf1e4f39bf09aede3e1b67aa6f22e6495fb99624223a8bdcd18d4103db3db5e5ce2e42876a94699a70a011dc91
+    - 59b1b77d04bd0a4cbaf7518e64ecb032222f353f0aac2f02c6ea53a5f79387366665168d28f4ca3bff883b3fdb213f7ff24289ba0116d445b615c308e27345e9
     - 2c83832dd8ce63608e4a948deb0a55f2857a7e3f53b3fb8ea67a4c807f7dc7245305bf63fdb35009089df90a070cd95cb6a8f31f79e243d8c97a442554aeb428
     - 6340a1f5011145642ce2352e8be4bfa50cdf74889e608471519934d814ca64b03461bc21e347feafe98256d7b8b281c1034dd0b8890e1155bdc3dd044ae18e80
 pkgname:
