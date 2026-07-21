@@ -1,6 +1,6 @@
 pkgname=waterfox-bin
 _pkgname=waterfox
-pkgver=6.6.15
+pkgver=6.6.17
 pkgrel=1
 pkgdesc="Current/modern generation of customizable privacy-conscious web browser."
 arch=('x86_64')
@@ -67,6 +67,6 @@ END
   ln -s /usr/lib/waterfox/waterfox "${pkgdir}"/usr/bin/waterfox-g
 }
 
-sha512sums=('7f1b1075385e0ac9f59017a69731a0d6fee27054ea9f594251a58b3851f3fc27de5365194e35bc20cf262b6dab9be64c45d48513532fb838bfb004860f25913a'
+sha512sums=('580e88f93995e315eb8d514c596b3f55f047451a630ece854ed1a6b9c9d787465ef8bc20475f9f9c36a6b71f1b8fafbd8929fe3b25af433b44ef8e8365fe9c6f'
             'd0237cffceb1f22bcef3479ee192360c069052534cbe6f452bf88e671ba26b7d8d04f6cdbb4f34647277b64136093d703b5f9ac8071fe0d3c80d70b1e1395a84')
 

@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 6.6.15-1
+    version: 6.6.17-1
     packages:
-      - waterfox-bin-6.6.15-1-x86_64.pkg.tar.zst
+      - waterfox-bin-6.6.17-1-x86_64.pkg.tar.zst
     debug: []
