@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,9 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 1.13.0-1
+    packages:
+      - python-jellyfin-apiclient-1.13.0-1-any.pkg.tar.zst
+    debug:
+      - python-jellyfin-apiclient-debug-1.13.0-1-any.pkg.tar.zst
   galaxy:
     version: 1.12.0-1
     packages:
