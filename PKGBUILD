@@ -6,7 +6,7 @@
 
 pkgname=cairo-dock
 pkgver=3.6.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Light eye-candy fully themable animated dock"
 arch=('x86_64')
 url="https://github.com/Cairo-Dock/${pkgname}-core"
@@ -43,8 +43,8 @@ build() {
 		-S "${pkgname}-core-${pkgver}" \
 		-D CMAKE_BUILD_TYPE=None \
 		-D CMAKE_INSTALL_PREFIX=/usr \
-		-D enable-desktop-manager=True \
-		-D enable-systemd-service=True
+		-D enable-desktop-manager=False \
+		-D enable-systemd-service=False
 
 	cmake --build build
 }

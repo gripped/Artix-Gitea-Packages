@@ -1,10 +1,10 @@
 ---
-version: 3.6.2-1
+version: 3.6.2-1.1
 pkgbase:
   name: cairo-dock
   pkgdesc: Light eye-candy fully themable animated dock
   pkgver: 3.6.2
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/Cairo-Dock/cairo-dock-core
   arch:
     - x86_64
