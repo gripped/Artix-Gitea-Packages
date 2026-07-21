@@ -1,6 +1,6 @@
 --- a/src/tools/wpctl.c	2026-07-14 13:41:10.284079515 +0200
-+++ b/src/tools/wpctl.c	2026-07-17 15:32:44.996205884 +0200
-@@ -1896,21 +1896,60 @@
++++ b/src/tools/wpctl.c	2026-07-21 11:00:06.295666790 +0200
+@@ -1896,21 +1896,74 @@
  }
  
  static gboolean
@@ -20,28 +20,42 @@
 +  ch=fgetc(fl);
 +  fclose(fl);
 +
-+  gchar *argv[] = { "", "--user", "", "", NULL };
++  gchar *argv[] = { "", NULL, "", "", NULL };
 +
 +  switch ((char)ch)
 +  {
 +    case 'i':
 +      argv[0] = "rc-service";
++      argv[1] = "--user";
 +      argv[2] = service;
 +      argv[3] = action;
 +      break;
 +    case 'd':
 +      argv[0] = "dinitctl";
++      argv[1] = "--user";
 +      argv[2] = action;
 +      argv[3] = service;
 +      break;
 +    case 'r':
-+      printf("Cannot perform action %s for user service %s on runit init\n", action, service);
-+      return FALSE;
++      argv[0] = "sv";
++      /* argv[1] = NULL; */
++      argv[2] = action;
++      argv[3] = service;
 +      break;
 +    case 's':
-+      printf("Cannot perform action %s for user service %s on s6 init\n", action, service);
++      /* s6-rc -l /tmp/${USER}/s6-rc -u change udiskie */
++      /* the -l argument needs to be supplied in order to point to the correct database */
++      gchar *command = "s6-rc -l /tmp/";
++      strcat(command, g_getenv ("USER"));
++      strcat(command, "/s6-rc");
++      argv[0] = command;
++      /* argv[1] = NULL; */
++      if (&action == "start")
++         argv[2] = "-u change";
++      else
++         argv[2] = "-d change";
++      argv[3] = service;
 +      break;
-+      return FALSE;
 +    default:
 +      printf("Cannot perform action %s for user service %s on unknown init\n", action, service); 
 +      return FALSE;
@@ -66,7 +80,7 @@
      return FALSE;
    }
    return TRUE;
-@@ -1998,7 +2037,7 @@
+@@ -1998,7 +2051,7 @@
  
    /* Stop wireplumber before removing its files */
    if (do_restart)
@@ -75,12 +89,17 @@
  
    /* Delete all collected paths in order (children before their parent) */
    for (guint i = 0; i < paths->len; i++) {
-@@ -2013,11 +2052,11 @@
+@@ -2012,12 +2065,15 @@
+   }
  
    /* Restart pipewire if its config was removed */
-   if (do_restart && remove_pw_config)
+-  if (do_restart && remove_pw_config)
 -    systemctl_user ("restart", "pipewire");
-+    initctl_user ("restart", "pipewire");
++  if (do_restart && remove_pw_config) {
++    /* initctl_user ("restart", "pipewire"); */
++    initctl_user ("stop", "pipewire");
++    initctl_user ("start", "pipewire");
++  }
  
    /* Start wireplumber again */
    if (do_restart)
