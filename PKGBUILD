@@ -1,0 +1,77 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
+# Contributor: Frederik Schwan <freswa at archlinux dot org>
+# Contributor: Justin Kromlinger <hashworks@archlinux.org>
+# Contributor: Wellington <wellingtonwallace@gmail.com>
+# Contributor: robertfoster
+
+pkgname=easyeffects
+pkgver=8.2.7
+pkgrel=1
+pkgdesc='Audio Effects for Pipewire applications'
+arch=('x86_64')
+url='https://github.com/wwmm/easyeffects'
+license=('GPL-3.0-only')
+depends=(
+  'kirigami'
+  'kirigami-addons'
+  'kiconthemes'
+  'kconfigwidgets'
+  'qqc2-desktop-style'
+  'breeze-icons'
+  'qt6-base'
+  'qt6-graphs'
+  'pipewire-pulse'
+  'lilv'
+  'libsamplerate'
+  'libsndfile'
+  'zita-convolver'
+  'libebur128'
+  'rnnoise'
+  'soundtouch'
+  'libbs2b'
+  'nlohmann-json'
+  'tbb'
+  'speexdsp'
+  'gsl'
+  'webrtc-audio-processing'
+)
+makedepends=(
+  'cmake'
+  'extra-cmake-modules'
+  'ninja'
+  'intltool'
+  'appstream'
+  'ladspa'
+)
+optdepends=(
+  'calf: limiter, exciter, bass enhancer and others'
+  'lsp-plugins-lv2: equalizer, compressor, delay, loudness'
+  'mda.lv2: bass loudness plugin'
+  'x42-plugins-lv2: autotune plugin'
+  'yelp: in-app help'
+  'zam-plugins-lv2: maximizer'
+)
+install="${pkgname}.install"
+source=(
+  "${url}/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz"
+  "${pkgname}.install"
+)
+sha512sums=('32068d91cea277ba8b6b15b117250b91b9828c350c94dbc297eac3c85cbab70bd464374dae15337df03c28ab648304c655161ea7256f25568f316353f54ab357'
+            'ed1a19b500c8a969d5c4ddc86ff6d7c3de1d7b7cd133de5801427bdb0eb45340f982e562cd9f85593cf87576defda1593c4bb1f09f653c3169b3d7e7ed034c79')
+
+build() {
+  local cmake_options=(
+    -B build
+    -S "${pkgname}-${pkgver}"
+    -W no-dev
+    -D CMAKE_BUILD_TYPE=None
+    -D CMAKE_INSTALL_PREFIX=/usr
+  )
+  cmake "${cmake_options[@]}"
+  cmake --build build
+}
+
+package() {
+  DESTDIR="${pkgdir}" cmake --install build
+}
