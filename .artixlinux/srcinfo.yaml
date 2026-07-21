@@ -1,0 +1,46 @@
+---
+version: 3.6.2-1
+pkgbase:
+  name: cairo-dock
+  pkgdesc: Light eye-candy fully themable animated dock
+  pkgver: 3.6.2
+  pkgrel: 1
+  url: https://github.com/Cairo-Dock/cairo-dock-core
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - cmake
+    - extra-cmake-modules
+    - wayland-protocols
+  depends:
+    - gtk3
+    - gdk-pixbuf2
+    - glib2
+    - cairo
+    - pango
+    - librsvg
+    - dbus
+    - dbus-glib
+    - libxml2
+    - libxrender
+    - glu
+    - curl
+    - libx11
+    - libxtst
+    - libxcomposite
+    - libxrandr
+    - libxinerama
+    - wayland
+    - json-c
+    - gtk-layer-shell
+  optdepends:
+    - 'cairo-dock-plug-ins: Plugins for Cairo-Dock'
+  source:
+    - cairo-dock-3.6.2.tar.gz::https://github.com/Cairo-Dock/cairo-dock-core/archive/3.6.2.tar.gz
+  sha256sums:
+    - 71e351d904d86f04d489e5b58c510fe2276ab129aee9ba98308508abf2dcfa87
+pkgname:
+  - name: cairo-dock
+# generated with artixpkg 0.38.5-1-any
