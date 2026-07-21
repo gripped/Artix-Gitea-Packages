@@ -3,7 +3,7 @@
 
 pkgname=jellyfin-mpv-shim
 pkgver=2.10.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Cast media from Jellyfin Mobile and Web apps to MPV'
 arch=(any)
 url='https://github.com/jellyfin/jellyfin-mpv-shim'
@@ -11,7 +11,7 @@ license=(MIT)
 depends=(mpv 'python>=3.6' hicolor-icon-theme python-mpv python-requests 'python-mpv-jsonipc>=1.1.9' 'python-jellyfin-apiclient>=1.8.1' tk)
 makedepends=(python-build python-installer python-wheel gettext python-setuptools)
 optdepends=(
-  'python-pystray: systray support'
+  'python-pystray: GUI support'
   'python-pillow: TrickPlay thumbnail previews'
   'python-jinja: display mirroring support'
   'python-pywebview>=3.3.1: display mirroring support'
