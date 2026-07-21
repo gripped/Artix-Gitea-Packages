@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,9 +50,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 2.10.0-2
+    packages:
+      - jellyfin-mpv-shim-2.10.0-2-any.pkg.tar.zst
+    debug:
+      - jellyfin-mpv-shim-debug-2.10.0-2-any.pkg.tar.zst
   galaxy:
     version: 2.10.0-1
     packages:
