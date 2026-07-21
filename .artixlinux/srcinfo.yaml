@@ -1,0 +1,37 @@
+---
+version: 0.19.5-7
+pkgbase:
+  name: python-pystray
+  pkgdesc: Allows to create a system tray icon
+  pkgver: 0.19.5
+  pkgrel: 7
+  url: https://github.com/moses-palmer/pystray
+  arch:
+    - any
+  license:
+    - GPL-3.0-only
+    - LGPL-3.0-only
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  depends:
+    - glib2
+    - python-six
+    - python-pillow
+    - python-xlib>=0.17
+    - libappindicator-gtk3
+    - python-gobject
+    - gtk3
+    - python
+    - gobject-introspection-runtime
+  source:
+    - python-pystray-0.19.5.tar.gz::https://github.com/moses-palmer/pystray/archive/v0.19.5.tar.gz
+    - 001-skip-docs.patch
+  b2sums:
+    - 34bea3d14cfde7ee7a7d2594da2386265fba34b36f4699b5877ea393dbf7e844fe441a1bda384bb6b3f279a544cba897e04509f7c47d69cb5168793665ae73d4
+    - 2ef7577f18503b439b11cafce04fa82fa03048b19da9461bd59b691a0766acfdf6f61aa20d12f0d2cb3be2cc742b80ba237c56b7bd57af9b8bd369ba7424dc24
+pkgname:
+  - name: python-pystray
+# generated with artixpkg 0.38.5-1-any
