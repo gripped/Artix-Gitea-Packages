@@ -1,9 +1,9 @@
 ---
-version: 6.28.0-1
+version: 6.28.1-1
 pkgbase:
   name: syntax-highlighting
   pkgdesc: Syntax highlighting engine for structured text and code
-  pkgver: 6.28.0
+  pkgver: 6.28.1
   pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
@@ -24,13 +24,13 @@ pkgbase:
   optdepends:
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.28/syntax-highlighting-6.28.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.28/syntax-highlighting-6.28.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.28/syntax-highlighting-6.28.1.tar.xz
+    - https://download.kde.org/stable/frameworks/6.28/syntax-highlighting-6.28.1.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - b9d90a03b4e9a48170a14f7a4a79c44f0aae9f14e1b94b7b1fc75d5c3fb31d3a
+    - fe0d4133af62c6b9c0cf7728928c64d2deb55fe808a264a5de871f4b6bc86f65
     - SKIP
 pkgname:
   - name: syntax-highlighting
