@@ -1,10 +1,10 @@
 ---
-version: 38542-6
+version: 38542-8
 pkgbase:
   name: mplayer
   pkgdesc: Media player for Linux
   pkgver: 38542
-  pkgrel: 6
+  pkgrel: 8
   url: http://www.mplayerhq.hu/
   arch:
     - x86_64
@@ -21,15 +21,12 @@ pkgbase:
     - aalib
     - jack
     - libcaca
-    - faac
     - faad2
     - lirc
     - libxv
-    - libxvmc
     - enca
     - libdca
     - a52dec
-    - libvpx
     - unzip
     - mesa
     - yasm
@@ -41,7 +38,6 @@ pkgbase:
     - libcdio-paranoia
     - subversion
     - x264
-    - rtmpdump
     - libdvdcss
     - libdvdread
     - libdvdnav
@@ -67,15 +63,14 @@ pkgbase:
     - freetype2
     - libx11
     - libxext
-    - libvdpau
     - libgl
     - lame
-    - desktop-file-utils
     - ttf-font
     - openal
     - speex
     - libmpeg2
     - nasm
+    - sndio
   options:
     - '!emptydirs'
     - '!lto'
@@ -95,14 +90,11 @@ pkgname:
   - name: mplayer
     pkgdesc: Media player for Linux
     depends:
-      - desktop-file-utils
       - ttf-font
       - enca
       - libxss
       - a52dec
-      - libvpx
       - lirc
-      - x264
       - libmng
       - libdca
       - aalib
@@ -112,15 +104,12 @@ pkgname:
       - libmad
       - libcaca
       - libxxf86vm
-      - faac
       - faad2
       - libxv
-      - libxvmc
       - mpg123
       - libx11
       - libcdio
       - libcdio-paranoia
-      - rtmpdump
       - libdvdread
       - libdvdnav
       - ffmpeg
@@ -149,11 +138,11 @@ pkgname:
       - fontconfig
       - freetype2
       - libxext
-      - libvdpau
       - libgl
       - openal
       - speex
       - libmpeg2
+      - sndio
     backup:
       - etc/mplayer/codecs.conf
       - etc/mplayer/input.conf
@@ -163,19 +152,16 @@ pkgname:
       - glibc
       - enca
       - a52dec
-      - libvpx
       - x264
       - libx264.so
       - libmng
       - libdca
       - smbclient
       - libmad
-      - faac
       - faad2
       - mpg123
       - libcdio
       - libcdio-paranoia
-      - rtmpdump
       - libdvdread
       - libdvdnav
       - ffmpeg
@@ -189,6 +175,7 @@ pkgname:
       - fribidi
       - giflib
       - libgif.so
+      - libogg
       - libvorbis
       - libvorbis.so
       - libpng
@@ -201,7 +188,6 @@ pkgname:
       - libtheora
       - xvidcore
       - libxvidcore.so
-      - openal
       - speex
       - libmpeg2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39-1-any
