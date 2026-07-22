@@ -1,8 +1,8 @@
 ---
-version: 26.0.1.u8-1
+version: 26.0.2.u10-1
 pkgbase:
   name: java-openjdk
-  pkgver: 26.0.1.u8
+  pkgver: 26.0.2.u10
   pkgrel: 1
   url: https://openjdk.java.net/
   arch:
@@ -39,12 +39,12 @@ pkgbase:
   optdepends:
     - 'gvfs: open links e.g. hyperlinks'
   source:
-    - https://github.com/openjdk/jdk26u/archive/jdk-26.0.1+8.tar.gz
+    - https://github.com/openjdk/jdk26u/archive/jdk-26.0.2+10.tar.gz
     - freedesktop-java.desktop
     - freedesktop-jconsole.desktop
     - freedesktop-jshell.desktop
   sha256sums:
-    - f5d5496a2f9a81605681209d93fc99726313e5d9a9a2af059f1adaa3914b862d
+    - dc7301511e010b22b28f2953c005b1e5bd7845c025440396f940c5c73d4b73d0
     - 87d952d0d5d59ccf605ba582f6338eea7b42e8be2df1680634a7a5fb25443afb
     - 41548bd89c1300bf5aaae07acb3add82a0a179a2b1c0591e936a9608c718d3c0
     - a3db68d377d5b6541096849404130a07a222859cd61d77eadc0defd09dec9de8
@@ -91,13 +91,13 @@ pkgname:
     provides:
       - java-environment=26
       - java-environment-openjdk=26
-      - jdk26-openjdk=26.0.1.u8-1
+      - jdk26-openjdk=26.0.2.u10-1
       - java-runtime=26
       - java-runtime-openjdk=26
-      - jre26-openjdk=26.0.1.u8-1
+      - jre26-openjdk=26.0.2.u10-1
       - java-runtime-headless=26
       - java-runtime-headless-openjdk=26
-      - jre26-openjdk-headless=26.0.1.u8-1
+      - jre26-openjdk-headless=26.0.2.u10-1
     conflicts:
       - jre-openjdk
       - jre-openjdk-headless
@@ -144,10 +144,10 @@ pkgname:
     provides:
       - java-runtime=26
       - java-runtime-openjdk=26
-      - jre26-openjdk=26.0.1.u8-1
+      - jre26-openjdk=26.0.2.u10-1
       - java-runtime-headless=26
       - java-runtime-headless-openjdk=26
-      - jre26-openjdk-headless=26.0.1.u8-1
+      - jre26-openjdk-headless=26.0.2.u10-1
     conflicts:
       - jdk-openjdk
       - jre-openjdk-headless
@@ -190,7 +190,7 @@ pkgname:
     provides:
       - java-runtime-headless=26
       - java-runtime-headless-openjdk=26
-      - jre26-openjdk-headless=26.0.1.u8-1
+      - jre26-openjdk-headless=26.0.2.u10-1
     conflicts:
       - jdk-openjdk
       - jre-openjdk
@@ -212,13 +212,13 @@ pkgname:
   - name: openjdk-doc
     pkgdesc: OpenJDK Java 26 documentation
     depends:
-      - jdk26-openjdk=26.0.1.u8-1
+      - jdk26-openjdk=26.0.2.u10-1
     provides:
-      - openjdk26-doc=26.0.1.u8-1
+      - openjdk26-doc=26.0.2.u10-1
   - name: openjdk-src
     pkgdesc: OpenJDK Java 26 sources
     depends:
-      - jdk26-openjdk=26.0.1.u8-1
+      - jdk26-openjdk=26.0.2.u10-1
     provides:
-      - openjdk26-src=26.0.1.u8-1
+      - openjdk26-src=26.0.2.u10-1
 # generated with artixpkg 0.38.5-1-any
