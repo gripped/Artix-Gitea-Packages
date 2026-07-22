@@ -6,7 +6,7 @@
 
 pkgname=girara
 pkgver=2026.07.18
-pkgrel=1
+pkgrel=1.1
 pkgdesc="User interface library focused on simplicity and minimalism"
 url="https://pwmt.org/projects/girara"
 arch=('x86_64')
