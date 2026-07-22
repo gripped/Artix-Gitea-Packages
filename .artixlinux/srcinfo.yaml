@@ -167,6 +167,7 @@ pkgbase:
     - firefox-esr-i18n-153.0-zh-CN.xpi
     - firefox-esr-i18n-153.0-zh-TW.xpi
   options:
+    - '!debug'
     - '!emptydirs'
     - '!lto'
     - '!makeflags'

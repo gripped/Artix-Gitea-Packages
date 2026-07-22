@@ -79,6 +79,7 @@ optdepends=(
   'xdg-desktop-portal: Screensharing with Wayland'
 )
 options=(
+  !debug
   !emptydirs
   !lto
   !makeflags
@@ -124,7 +125,6 @@ ac_add_options --enable-hardening
 ac_add_options --enable-optimize
 ac_add_options --enable-rust-simd
 ac_add_options --enable-linker=lld
-ac_add_options --disable-install-strip
 ac_add_options --disable-bootstrap
 ac_add_options --with-wasi-sysroot=/usr/share/wasi-sysroot
 
@@ -209,8 +209,9 @@ package_firefox-esr() {
   cd firefox-$pkgver
   DESTDIR="$pkgdir" ./mach install
 
-  ls "$pkgdir"/usr/bin
-  ls "$pkgdir"/usr/lib
+  mv "$pkgdir"/usr/bin/firefox "$pkgdir/usr/bin/$pkgname"
+  mv "$pkgdir"/usr/lib/firefox "$pkgdir/usr/lib/$pkgname"
+
   local appdir="$pkgdir/usr/lib/$pkgname"
   touch "$appdir/is-packaged-app"
 
