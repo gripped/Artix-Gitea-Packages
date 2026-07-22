@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.2.6-2
+    version: 1.2.6-3
     packages:
-      - reapack-1.2.6-2-x86_64.pkg.tar.zst
+      - reapack-1.2.6-3-x86_64.pkg.tar.zst
     debug: []
