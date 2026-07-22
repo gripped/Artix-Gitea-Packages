@@ -1,9 +1,9 @@
 ---
-version: 150.0.11-1
+version: 150.0.14-1
 pkgbase:
   name: cef
   pkgdesc: Chromium Embedded Framework (CEF), simple framework for embedding Chromium-based browsers in other applications
-  pkgver: 150.0.11
+  pkgver: 150.0.14
   pkgrel: 1
   url: https://chromiumembedded.github.io/cef
   arch:
@@ -62,8 +62,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - chromium-150.0.7871.115-lite.tar.xz::https://commondatastorage.googleapis.com/chromium-browser-official/chromium-150.0.7871.115-lite.tar.xz
-    - cef::git+https://github.com/chromiumembedded/cef.git#commit=b88780525f76c1c1d67d30b87e3b16bb37955175
+    - chromium-150.0.7871.129-lite.tar.xz::https://commondatastorage.googleapis.com/chromium-browser-official/chromium-150.0.7871.129-lite.tar.xz
+    - cef::git+https://github.com/chromiumembedded/cef.git#commit=7c1aa68455db1f1fad159c2b83070ad318212b3d
     - chromium-138-nodejs-version-check.patch
     - chromium-145-fix-SYS_SECCOMP.patch
     - chromium-147-revert-clang-no-lifetime-dse-flag.patch
@@ -83,8 +83,8 @@ pkgbase:
     - chromium-disable-font-tests.patch
     - FindCEF.cmake
   sha256sums:
-    - 59e1be0fcb8a35945c65a136849c9dd652fd86ec2c472d86a2a85f7b3295f743
-    - 9ac7c45b70dfb238c44f15ce957dd1bf96dba9be5940460c19a9ce71d69a0ebf
+    - 851ced572bf2dc41c1afaad4a64975f6b6aa2d9d6a7fafc4cb2484ca09067aaa
+    - 85878445be27590f372e3628384b8f2d2a89eac51712d46ed8e8c9e1007c23c3
     - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
     - 4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e
     - c382830318c5b37826ecf44f3ba9def6be8affdad1bce819ecb83f3222ff4b3a
@@ -105,4 +105,4 @@ pkgbase:
     - e576250c4d0f3dd307bd22c6d4f9f7aba54fdf4d5899520c0bd1c3527aec65ed
 pkgname:
   - name: cef
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
