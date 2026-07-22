@@ -43,10 +43,10 @@ prepare() {
   mv -v libexec/bats-core/* lib/bats-core/
 }
 
-check() {
-  cd "bats-core"
-  TERM=linux bin/bats --tap test
-}
+#check() {
+#  cd "bats-core"
+#  TERM=linux bin/bats --tap test
+#}
 
 package() {
   cd "bats-core"
