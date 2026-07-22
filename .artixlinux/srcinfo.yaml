@@ -1,9 +1,9 @@
 ---
-version: 2.8.6-1
+version: 2.8.7-1
 pkgbase:
   name: cryptsetup
   pkgdesc: Userspace setup tool for transparent encryption of block devices using dm-crypt
-  pkgver: 2.8.6
+  pkgver: 2.8.7
   pkgrel: 1
   url: https://gitlab.com/cryptsetup/cryptsetup/
   arch:
@@ -36,13 +36,13 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://www.kernel.org/pub/linux/utils/cryptsetup/v2.8/cryptsetup-2.8.6.tar.xz
-    - https://www.kernel.org/pub/linux/utils/cryptsetup/v2.8/cryptsetup-2.8.6.tar.sign
+    - https://www.kernel.org/pub/linux/utils/cryptsetup/v2.8/cryptsetup-2.8.7.tar.xz
+    - https://www.kernel.org/pub/linux/utils/cryptsetup/v2.8/cryptsetup-2.8.7.tar.sign
   validpgpkeys:
     - 2A2918243FDE46648D0686F9D9B0577BD93E98FC
   sha256sums:
-    - 8004265fd993885d08f7b633dbe056851de1a210307613a4ebddc743fccefe5a
+    - e776f0d381e86ca61042c457069491fe8e0ac286780c7c3b1e4f9921abc961da
     - SKIP
 pkgname:
   - name: cryptsetup
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
