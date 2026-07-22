@@ -1,10 +1,10 @@
 ---
-version: 1.4.0-1
+version: 1.4.0-2
 pkgbase:
   name: sequoia-sq
   pkgdesc: Command-line frontends for Sequoia
   pkgver: 1.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://sequoia-pgp.org/
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgname:
       - openssl
       - libcrypto.so
       - libssl.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
