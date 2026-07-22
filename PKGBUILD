@@ -71,7 +71,8 @@ build() {
     -D session_tracking_consolekit=false
     -D session_tracking=no
     -D systemd_journal=false
-    -D systemdsystemunitdir=no
+    -D systemdsystemunitdir=no 
+    -D systemdsystemgeneratordir=no
     -D polkit_noauth_group=wheel
     -D selinux=false
 
