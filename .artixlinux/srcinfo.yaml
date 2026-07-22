@@ -1,9 +1,9 @@
 ---
-version: 3.1.0-1
+version: 3.2.0-1
 pkgbase:
   name: vmaf
   pkgdesc: Perceptual video quality assessment algorithm based on multi-method fusion
-  pkgver: 3.1.0
+  pkgver: 3.2.0
   pkgrel: 1
   url: https://github.com/Netflix/vmaf/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - libgcc
     - libstdc++
   source:
-    - https://github.com/Netflix/vmaf/archive/v3.1.0/vmaf-3.1.0.tar.gz
+    - https://github.com/Netflix/vmaf/archive/v3.2.0/vmaf-3.2.0.tar.gz
   sha256sums:
-    - 80090e29d7fd0db472ddc663513f5be89bc936815e62b767e630c1d627279fe2
+    - a28f93f3b4fa65601be324587072e32a6a704a304ba7b1aec9b70b3f709bc1dc
 pkgname:
   - name: vmaf
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.39-1-any
