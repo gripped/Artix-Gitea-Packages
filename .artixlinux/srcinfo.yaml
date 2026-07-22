@@ -1,9 +1,9 @@
 ---
-version: 3.101.r6531-1
+version: 4.0-1
 pkgbase:
   name: lame
   pkgdesc: A high quality MPEG Audio Layer III (MP3) encoder
-  pkgver: 3.101.r6531
+  pkgver: 4.0
   pkgrel: 1
   url: http://lame.sourceforge.net/
   arch:
@@ -12,7 +12,6 @@ pkgbase:
     - LGPL-2.0-only
   makedepends:
     - nasm
-    - subversion
   depends:
     - glibc
     - mpg123
@@ -20,13 +19,13 @@ pkgbase:
   provides:
     - libmp3lame.so
   source:
-    - svn+https://svn.code.sf.net/p/lame/svn/trunk/lame#revision=6531
+    - https://sourceforge.net/projects/lame/files/lame/4.0/lame-4.0.tar.gz
     - lame-symbols.patch
     - lame-cbr-abr-quality-settings-clamp.patch
   b2sums:
-    - SKIP
+    - 9e05275c28bc6d086011362f211edc2e2cd831429ca4d2daa1bc0ae7084ebd9bec3c3db93e1cab638570a9f624468372b9ff39f3dc9e7d0b105dbba7f248b2df
     - c8cc00f560515231dba1bf9393d056ecb11c2268bafae4923e8c2594b92de473b94e6e5cbef1e52b4843ddd36bb4e06ea6b24ac4a18aa682b2ab7c5ef6deb73c
     - 217cf6611f13cb91997856c3af9c30b7c23fa3744126d27f71768001b6799a4a100c9c0baec34beb656fee1c8c519c86b1a9c549e2ea6befe197eb930f70caaa
 pkgname:
   - name: lame
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
