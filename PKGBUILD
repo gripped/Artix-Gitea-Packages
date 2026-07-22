@@ -209,6 +209,7 @@ package_firefox-esr() {
   cd firefox-$pkgver
   DESTDIR="$pkgdir" ./mach install
 
+  ls "$pkgdir"
   local appdir="$pkgdir/usr/lib/$pkgname"
   touch "$appdir/is-packaged-app"
 
