@@ -30,13 +30,13 @@ repos:
     packages: []
     debug: []
   world:
-    version: 25.0.3.u9-1
+    version: 25.0.4.u7-1
     packages:
-      - jdk25-openjdk-25.0.3.u9-1-x86_64.pkg.tar.zst
-      - jre25-openjdk-25.0.3.u9-1-x86_64.pkg.tar.zst
-      - jre25-openjdk-headless-25.0.3.u9-1-x86_64.pkg.tar.zst
-      - openjdk25-doc-25.0.3.u9-1-x86_64.pkg.tar.zst
-      - openjdk25-src-25.0.3.u9-1-x86_64.pkg.tar.zst
+      - jdk25-openjdk-25.0.4.u7-1-x86_64.pkg.tar.zst
+      - jre25-openjdk-25.0.4.u7-1-x86_64.pkg.tar.zst
+      - jre25-openjdk-headless-25.0.4.u7-1-x86_64.pkg.tar.zst
+      - openjdk25-doc-25.0.4.u7-1-x86_64.pkg.tar.zst
+      - openjdk25-src-25.0.4.u7-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
