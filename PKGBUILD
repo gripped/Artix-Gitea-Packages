@@ -11,22 +11,24 @@
 
 pkgver=39.8.10
 _gcc_patches=142
-pkgrel=1
+pkgrel=2
 _major_ver=${pkgver%%.*}
 pkgname="electron${_major_ver}"
 pkgdesc='Build cross platform desktop apps with web technologies'
 arch=(x86_64)
 url='https://electronjs.org'
 license=(MIT BSD-3-Clause)
-depends=(c-ares
-         gcc-libs # libgcc_s.so
+depends=(
+         c-ares
+         libgcc
          glibc # libc.so libm.so
          gtk3 libgtk-3.so
          libevent
          libffi libffi.so
          libpulse libpulse.so
          nss # libnss3.so
-         zlib libz.so)
+         zlib libz.so
+)
 makedepends=(clang
              compiler-rt
              git
@@ -41,22 +43,20 @@ makedepends=(clang
              ninja
              # Electron ships a vendored nodejs. Meanwhile the npm dependency pulls in nodejs which is Arch's freshest version.
              # Pinning the closest LTS here makes the build environment more consistent with the vendored copy.
-             nodejs-lts-iron
+             nodejs-lts-jod
              npm
              patchutils
              pciutils
              pipewire
              python
              python-requests
-             qt5-base
              rsync
              rustup
              rust-bindgen
              wget
              yarn)
-optdepends=('kde-cli-tools: file deletion support (kioclient5)'
+optdepends=('kde-cli-tools: file deletion support (kioclient)'
             'pipewire: WebRTC desktop sharing under Wayland'
-            'qt5-base: enable Qt5 with --enable-features=AllowQt'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
             'trash-cli: file deletion support (trash-put)'
             'xdg-utils: open URLs with desktop’s default (xdg-email, xdg-open)')

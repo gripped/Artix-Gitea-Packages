@@ -1,10 +1,10 @@
 ---
-version: 39.8.10-1
+version: 39.8.10-2
 pkgbase:
   name: electron39
   pkgdesc: Build cross platform desktop apps with web technologies
   pkgver: 39.8.10
-  pkgrel: 1
+  pkgrel: 2
   url: https://electronjs.org
   arch:
     - x86_64
@@ -23,14 +23,13 @@ pkgbase:
     - lld
     - llvm
     - ninja
-    - nodejs-lts-iron
+    - nodejs-lts-jod
     - npm
     - patchutils
     - pciutils
     - pipewire
     - python
     - python-requests
-    - qt5-base
     - rsync
     - rustup
     - rust-bindgen
@@ -38,7 +37,7 @@ pkgbase:
     - yarn
   depends:
     - c-ares
-    - gcc-libs
+    - libgcc
     - glibc
     - gtk3
     - libgtk-3.so
@@ -73,9 +72,8 @@ pkgbase:
     - freetype2
     - libfreetype.so
   optdepends:
-    - 'kde-cli-tools: file deletion support (kioclient5)'
+    - 'kde-cli-tools: file deletion support (kioclient)'
     - 'pipewire: WebRTC desktop sharing under Wayland'
-    - 'qt5-base: enable Qt5 with --enable-features=AllowQt'
     - 'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
     - 'trash-cli: file deletion support (trash-put)'
     - 'xdg-utils: open URLs with desktop’s default (xdg-email, xdg-open)'
