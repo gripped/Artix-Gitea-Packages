@@ -1,0 +1,4 @@
+[qdirstat]
+source = "github"
+github = "shundhammer/qdirstat"
+use_max_tag = true
