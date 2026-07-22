@@ -102,6 +102,7 @@ build() {
     -D polkit_noauth_group=wheel
     -D selinux=false
     -D systemdsystemunitdir=no
+    -D systemdsystemgeneratordir=no
     -D session_tracking=elogind
     -D systemd_journal=false
 
