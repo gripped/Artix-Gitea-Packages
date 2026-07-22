@@ -1,9 +1,9 @@
 ---
-version: 1.42.1-1
+version: 1.43.0-1
 pkgbase:
   name: python-polars
   pkgdesc: Blazingly fast DataFrames library using Apache Arrow Columnar Format as memory model
-  pkgver: 1.42.1
+  pkgver: 1.43.0
   pkgrel: 1
   url: https://www.pola.rs/
   arch:
@@ -38,9 +38,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/pola-rs/polars/archive/refs/tags/py-1.42.1.tar.gz
+    - https://github.com/pola-rs/polars/archive/refs/tags/py-1.43.0.tar.gz
   b2sums:
-    - 8eb91480d4e3e692472b07f2f692ee677c9cead47090011b5bc791ed0c6754b2b5104c50316c0c2f357eb1fd546b1e4326ec351ec1599e14c3b6b1834df1895d
+    - 7a2851b4bd576e576cc4c8239900e4954f49a407fea2ebcc5a2476a4cd7adc59703443fd844bef95cc5c7347a1926524ec0ddc0b107e390b32948ef5def4b180
 pkgname:
   - name: python-polars
     depends:
