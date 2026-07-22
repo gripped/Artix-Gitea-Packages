@@ -52,6 +52,7 @@ makedepends=(
   cbindgen
   clang
   diffutils
+  dump_syms
   imake
   jack
   lld
