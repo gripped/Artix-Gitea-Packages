@@ -1,10 +1,10 @@
 ---
-version: 1.27.0-1
+version: 1.27.0-2
 pkgbase:
   name: foot
   pkgdesc: Fast, lightweight, and minimalistic Wayland terminal emulator
   pkgver: 1.27.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://codeberg.org/dnkl/foot
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - fcft
     - fontconfig
+    - git
     - libutf8proc
     - libxkbcommon
     - llvm
@@ -31,9 +32,9 @@ pkgbase:
   backup:
     - etc/xdg/foot/foot.ini
   source:
-    - foot-1.27.0.tar.gz::https://codeberg.org/dnkl/foot/archive/1.27.0.tar.gz
+    - foot::git+https://codeberg.org/dnkl/foot.git#tag=1.27.0
   sha256sums:
-    - 4e6131cc859ec6a36569f1978cf3617cc3836a681d13d228ded1b4885dab7770
+    - cce2ba627e49615fb022b6d5ecf85a4cf0bb4d0a3ee1e128d99fa61ac767f547
 pkgname:
   - name: foot
     depends:
@@ -53,4 +54,4 @@ pkgname:
     pkgdesc: Extra non-standard terminfo files for foot, a Wayland terminal emulator
     depends:
       - ncurses
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
