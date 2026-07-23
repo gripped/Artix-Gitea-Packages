@@ -5,8 +5,8 @@
 pkgbase=appstream
 pkgname=(appstream
          appstream-qt)
-pkgver=1.1.3
-pkgrel=1
+pkgver=1.1.4
+pkgrel=2
 pkgdesc='Provides a standard for creating app stores across distributions'
 arch=(x86_64)
 url='https://distributions.freedesktop.org/wiki/AppStream'
@@ -40,12 +40,12 @@ makedepends=(bash-completion
              xmlto)
 source=(git+https://github.com/ximion/appstream#tag=v$pkgver?signed
         update-appstream-cache.hook)
-sha256sums=('bdac66f1dfb34d56409b16e41592e0fe49c13711d6281288cc57923a977e6e78'
+sha256sums=('445e541f679bb0106a872f3817804339922c6efda2d7395767b28aa7e4329f49'
             'edc632e4a76ebe5efc76a56fe5f797e5c981cca6f2f0111c7ce0170d1330c788')
 validpgpkeys=(D33A3F0CA16B0ACC51A60738494C8A5FBF4DECEB) # Matthias Klumpp <matthias@tenstral.net>
 
 prepare() {
-  git -C appstream cherry-pick -n 510ec119e36a660d10db64be0bdadd2909434e53 # Fix build with freetype 2.18
+  git -C appstream cherry-pick -n 28cb9d3401086614412508d8a67d64752df8e37e # Restore ABI
 }
 
 build() {
