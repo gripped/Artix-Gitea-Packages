@@ -1,0 +1,43 @@
+---
+version: 2.24.1-1
+pkgbase:
+  name: lib32-libva
+  pkgdesc: Video Acceleration (VA) API for Linux (32-bit)
+  pkgver: 2.24.1
+  pkgrel: 1
+  url: https://intel.github.io/libva/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - lib32-libglvnd
+    - lib32-mesa
+    - meson
+  depends:
+    - lib32-glibc
+    - lib32-libdrm
+    - lib32-libgl
+    - lib32-libx11
+    - lib32-libxcb
+    - lib32-libxext
+    - lib32-libxfixes
+    - lib32-wayland
+    - libva
+  optdepends:
+    - 'lib32-libva-intel-driver: backend for Intel GPUs (<= Haswell)'
+    - 'lib32-libva-mesa-driver: backend for AMD and NVIDIA GPUs'
+  provides:
+    - libva-drm.so
+    - libva-glx.so
+    - libva-wayland.so
+    - libva-x11.so
+    - libva.so
+  source:
+    - git+https://github.com/intel/libva.git#tag=2.24.1
+  b2sums:
+    - 5e7b85e1c16a68432069cbad3e11096311b97e4532061e97f247c0abbe16c2e991771860b9976f459000247bbc280b4825241a5c0b09571cac6be9b432ab3eaa
+pkgname:
+  - name: lib32-libva
+# generated with artixpkg 0.39-1-any
