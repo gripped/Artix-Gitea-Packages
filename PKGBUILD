@@ -6,7 +6,7 @@
 # Contributor: nofxx <x@<nick>.com>
 
 pkgname=valkey
-pkgver=9.1.0
+pkgver=9.1.1
 pkgrel=1
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
@@ -48,7 +48,7 @@ source=(
   valkey.conf-sane-defaults.patch
   valkey-5.0-use-system-jemalloc.patch
 )
-sha512sums=('e22914dfbe2811948c90eea8ef28144c3e757be0af539514adbfd5f3cb3cdf0d081222e25e051c54ed2634e832d1c470335d6ba538144cc6445f47ee5393d08b'
+sha512sums=('cd6060387204f550d26d5cdddfc407a585cb3da4e9669967fbbd365e5aa937e544f617b1f8da2f0136a31a46ee6ec81deeb482795e7ec567b175b9ac86878659'
             'd47185f700293304b5c23caf59999fecda2d1485a28a5eeff3a2922906f0184794d3eeeeeaac2ca415b865d7c4b5d74f88e694d34eeb6d1ee3a6bedbcd6edfdd'
             '11cf6d6999329af7a9fa4bcbbcf22242b461cec0c16ad949cc6b0383703f19417092782569bf6224f94167a560de0b4ba53ec0d8522683736a14f01bc5986b28'
             '032b19af22dd96c7898aa3dcae76d63fd8566c1d35ccb069e22fd0b76612d3285cd318f26ad5994b4f761f44a23c091d5322dec975b9a5a8cc65455399576045'
