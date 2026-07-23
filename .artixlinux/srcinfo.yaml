@@ -1,9 +1,9 @@
 ---
-version: 12.5.1-1
+version: 12.5.2-1
 pkgbase:
   name: limine
   pkgdesc: An advanced, portable, multiprotocol bootloader
-  pkgver: 12.5.1
+  pkgver: 12.5.2
   pkgrel: 1
   url: https://github.com/Limine-Bootloader/Limine
   install: limine.install
@@ -21,12 +21,12 @@ pkgbase:
   depends:
     - glibc
   source:
-    - git+https://github.com/Limine-Bootloader/Limine.git#tag=v12.5.1?signed
+    - git+https://github.com/Limine-Bootloader/Limine.git#tag=v12.5.2?signed
   validpgpkeys:
     - 05D29860D0A0668AAEFB9D691F3C021BECA23821
     - 6C222EA6B2BD216AA406516AC868F0B6DE38409D
   sha256sums:
-    - fd77d490a9299270fa27d5af02c0bfa8b8600b9ddef08474178792a1e5838f30
+    - b0c43201c719d18625c1e4f856537284111f327de4a15bba1ababab7061e7bca
 pkgname:
   - name: limine
 # generated with artixpkg 0.38.5-1-any
