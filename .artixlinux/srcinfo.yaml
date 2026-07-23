@@ -1,48 +1,47 @@
 ---
-version: 2.8.1-11
+version: 2.8.1-12
 pkgbase:
   name: avidemux
   pkgdesc: Graphical tool to edit video (filter/re-encode/split)
   pkgver: 2.8.1
-  pkgrel: 11
+  pkgrel: 12
   url: http://fixounet.free.fr/avidemux/
   arch:
     - x86_64
   license:
-    - GPL2
+    - GPL-2.0-or-later
   makedepends:
-    - cmake
-    - libxslt
-    - qt5-base
-    - jack
-    - libvorbis
-    - libxv
-    - opus
-    - desktop-file-utils
     - alsa-lib
-    - lame
-    - xvidcore
+    - cmake
+    - desktop-file-utils
     - faad2
-    - faac
-    - x264
-    - x265
-    - libsamplerate
-    - opencore-amr
-    - yasm
-    - mesa
-    - libvpx
-    - libpulse
-    - libva
-    - intltool
-    - sqlite
-    - libvdpau
-    - libdca
     - fribidi
     - glu
-    - qt5-tools
-    - twolame
-    - libfdk-aac
+    - intltool
+    - jack
+    - lame
     - libass
+    - libdca
+    - libfdk-aac
+    - libpulse
+    - libsamplerate
+    - libva
+    - libvdpau
+    - libvorbis
+    - libvpx
+    - libxslt
+    - libxv
+    - mesa
+    - opencore-amr
+    - opus
+    - qt5-base
+    - qt5-tools
+    - sqlite
+    - twolame
+    - x264
+    - x265
+    - xvidcore
+    - yasm
   options:
     - '!emptydirs'
   source:
@@ -63,40 +62,48 @@ pkgbase:
 pkgname:
   - name: avidemux-cli
     depends:
-      - libxml2
       - fontconfig
-      - sqlite
-      - libvpx
+      - glibc
+      - libgcc
+      - libstdc++
       - libva
       - libvdpau
+      - libvpx
+      - sqlite
+      - zlib
     optdepends:
-      - 'lame: for the corresponding audio encoder plugin'
-      - 'faac: for the corresponding audio encoder plugin'
       - 'faad2: for the corresponding audio decoder plugin'
-      - 'opus: for the corresponding audio decoder plugin'
-      - 'opencore-amr: for the corresponding audio decoder plugin'
+      - 'fribidi: for the corresponding video filter plugin'
       - 'jack: for the corresponding audio device plugin'
-      - 'libpulse: for the corresponding audio device plugin'
-      - 'x264: for the corresponding video encoder plugin'
-      - 'libx264: for the corresponding video encoder plugin'
-      - 'x265: for the corresponding video encoder plugin'
-      - 'xvidcore: for the corresponding video encoder plugin'
-      - 'qt5-base: for the QtScript scripting support'
+      - 'lame: for the corresponding audio encoder plugin'
+      - 'libass: for the corresponding video filter plugin'
       - 'libdca: for the corresponding audio decoder plugin'
       - 'libfdk-aac: for the corresponding audio decoder plugin'
+      - 'libpulse: for the corresponding audio device plugin'
+      - 'libx264: for the corresponding video encoder plugin'
+      - 'opencore-amr: for the corresponding audio decoder plugin'
+      - 'opus: for the corresponding audio decoder plugin'
+      - 'qt5-base: for the QtScript scripting support'
       - 'twolame: for the corresponding audio decoder plugin'
-      - 'libass: for the corresponding video filter plugin'
-      - 'fribidi: for the corresponding video filter plugin'
+      - 'x264: for the corresponding video encoder plugin'
+      - 'x265: for the corresponding video encoder plugin'
+      - 'xvidcore: for the corresponding video encoder plugin'
   - name: avidemux-qt
     pkgdesc: Graphical tool to edit video (filter/re-encode/split) - Qt GUI
     depends:
       - avidemux-cli=2.8.1
+      - glibc
+      - glu
+      - hicolor-icon-theme
+      - libgcc
+      - libglvnd
+      - libstdc++
+      - libx11
+      - libxext
+      - libxv
       - qt5-base
       - x264
       - x265
-      - glu
-      - libxv
-      - desktop-file-utils
     replaces:
       - avidemux-gtk
 # generated with artixpkg 0.38.5-1-any
