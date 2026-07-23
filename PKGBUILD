@@ -11,7 +11,7 @@
 pkgbase=firefox-esr
 pkgname=(firefox-esr)
 pkgver=153.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Standalone web browser from mozilla.org, Extended Support Release"
 arch=(x86_64)
 license=(MPL-2.0)
@@ -211,6 +211,7 @@ package_firefox-esr() {
 
   mv "$pkgdir"/usr/bin/firefox "$pkgdir/usr/bin/$pkgname"
   mv "$pkgdir"/usr/lib/firefox "$pkgdir/usr/lib/$pkgname"
+  mv "$pkgdir/us/lib/$pkgname/firefox" "$pkgdir/usr/lib/$pkgname/$pkgname"
 
   local appdir="$pkgdir/usr/lib/$pkgname"
   touch "$appdir/is-packaged-app"

@@ -1,10 +1,10 @@
 ---
-version: 153.0-1
+version: 153.0-2
 pkgbase:
   name: firefox-esr
   pkgdesc: Standalone web browser from mozilla.org, Extended Support Release
   pkgver: 153.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.mozilla.org/en-US/firefox/enterprise/
   arch:
     - x86_64
