@@ -211,7 +211,7 @@ package_firefox-esr() {
 
   mv "$pkgdir"/usr/bin/firefox "$pkgdir/usr/bin/$pkgname"
   mv "$pkgdir"/usr/lib/firefox "$pkgdir/usr/lib/$pkgname"
-  mv "$pkgdir/us/lib/$pkgname/firefox" "$pkgdir/usr/lib/$pkgname/$pkgname"
+  mv "$pkgdir/usr/lib/$pkgname/firefox" "$pkgdir/usr/lib/$pkgname/$pkgname"
 
   local appdir="$pkgdir/usr/lib/$pkgname"
   touch "$appdir/is-packaged-app"
