@@ -1,10 +1,10 @@
 ---
-version: 1:2.0.13-1
+version: 1:2.1.0-3
 pkgbase:
   name: libtorrent-rasterbar
   pkgdesc: An efficient and feature complete C++ BitTorrent library implementation
-  pkgver: 2.0.13
-  pkgrel: 1
+  pkgver: 2.1.0
+  pkgrel: 3
   epoch: 1
   url: https://www.rasterbar.com/products/libtorrent/
   arch:
@@ -24,17 +24,29 @@ pkgbase:
     - libstdc++
     - openssl
   source:
-    - libtorrent-rasterbar::git+https://github.com/arvidn/libtorrent.git#tag=v2.0.13
+    - libtorrent-rasterbar::git+https://github.com/arvidn/libtorrent.git#tag=v2.1.0
     - git+https://github.com/arvidn/libsimulator.git
     - git+https://github.com/arvidn/try_signal.git
     - git+https://github.com/paullouisageneau/boost-asio-gnutls.git
+    - git+https://github.com/paullouisageneau/libdatachannel.git
+    - git+https://github.com/SergiusTheBest/plog.git
+    - git+https://github.com/paullouisageneau/usrsctp.git
+    - git+https://github.com/paullouisageneau/libjuice.git
+    - git+https://github.com/nlohmann/json.git
+    - git+https://github.com/cisco/libsrtp.git
     - 010-libtorrent-rasterbar-fix-for-fortify-source-3.patch
   sha512sums:
-    - 8bfe4bfafc97f78fd82430dfd29a1d1a9d995332ea1d465e576010eb2454fef5dc8c681df66b6815e00a6f1189ba59331359ccf9f1f4f5fe1d1fadd1a181459d
+    - 04fadaf23bc70833347416ab149a77720d38ab889d3388e4d74a8c749664144e56f088fc96e3ade60f9995eb4c00706891bcae28dc425906a2558e5f16c35719
     - SKIP
     - SKIP
     - SKIP
-    - 9f18a2e71b3924897f88b1c4148d3afe3bb29d1fe41a3166f0e3dfb64f1641f50ac25551e942241c7207e6692e4765df53e160ea9d3a8eca30879d6e299e9e1d
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - SKIP
+    - c0ddab473428658b816f5b832dd6a431d64e5698f85d97c6090bee1b247bddef37850d53e19f1019cc37f25fad33da1294df9ecbbf616be7570d94545c771f7e
 pkgname:
   - name: libtorrent-rasterbar
 # generated with artixpkg 0.38.5-1-any
