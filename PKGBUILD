@@ -31,9 +31,7 @@ makedepends=(boost
              qt6-tools)
 optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver)
-sha256sums=('e0142e716098aa7047bf5160eee1dd839d84feaa30ec2c01b988c9bca16bd831'
-            '0f148c97cc5fae83fc5022b5f2da374b60a1e2f62a4faf01265e73a9f208825a'
-            '8bd2274ba9a6d414cd0170c8855cd6823fa026158ce7ed5eb74d661f21457238')
+sha256sums=('e3656e156f08645db67f4f9c2eaab6a7a094791d91e7559d983228edac10ab55')
 validpgpkeys=('D8F3DA77AAC6741053599C136E4A2D025B7CC9A2') # sledgehammer999 <sledgehammer999@qbittorrent.org>
 
 prepare() {
