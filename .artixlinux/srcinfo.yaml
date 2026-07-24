@@ -1,12 +1,11 @@
 ---
-version: 4.0.2-1
+version: 4.0.2-2
 pkgbase:
   name: spamassassin
   pkgdesc: A mail filter to identify spam
   pkgver: 4.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://spamassassin.apache.org
-  install: spamassassin.install
   arch:
     - x86_64
   license:
@@ -17,7 +16,11 @@ pkgbase:
     - perl-dbi
     - razor
   depends:
+    - gcc
+    - glibc
+    - make
     - openssl
+    - perl
     - perl-http-message
     - perl-io-socket-inet6
     - perl-io-socket-ssl
@@ -30,8 +33,6 @@ pkgbase:
     - zlib
   optdepends:
     - 'razor: to identify collaborately-flagged spam'
-    - 'make: to use sa-compile'
-    - 'gcc: to use sa-compile'
   backup:
     - etc/mail/spamassassin/local.cf
     - etc/mail/spamassassin/init.pre
@@ -49,13 +50,15 @@ pkgbase:
   source:
     - https://ftp.fau.de/apache/spamassassin/source/Mail-SpamAssassin-4.0.2.tar.gz
     - https://www.apache.org/dist/spamassassin/source/Mail-SpamAssassin-4.0.2.tar.gz.asc
-    - spamassassin.tmpfiles.d
+    - spamassassin.sysusers
+    - spamassassin.tmpfiles
   validpgpkeys:
     - D8099BC79E17D7E49BC21E31FDE52F40F7D39814
   sha256sums:
     - c521be978cef3d49b1e139477ca60a0bd498345fc98274796e44161fae49a17f
     - SKIP
-    - a4abb06b42d29e76ab90b1b40a7e761fae320586b6be8a491f648cd1def77d6b
+    - 219ffc09a3373a026f82073075de386dd4dc0b88449f93e41db353485f5be5f6
+    - bdcc77abe545289e9fabbb5c353ae07929feab662b5885cd09f0cdb106ab47f7
 pkgname:
   - name: spamassassin
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
