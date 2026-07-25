@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-frontend
 pkgver=0.1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A higher-level interface to the s6 ecosystem.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-frontend'
@@ -9,6 +9,7 @@ license=('ISC')
 depends=('s6' 's6-rc' 's6-linux-init')
 makedepends=('git')
 backup=('etc/s6-frontend.conf')
+install=s6-frontend.install
 source=("https://skarnet.org/software/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "s6-frontend.conf")
 sha256sums=('ed7bba6f2c13dd16ebf17fda0d482f4ba4848d80f5b4d7edd22d8b60a869f994'
