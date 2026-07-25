@@ -1,4 +1,5 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 # Contributor: Steef Hegeman <mail@steefhegeman.com>
 # Contributor: Luca Weiss <luca (at) z3ntu (dot) xyz>
 # Contributor: Julian Schacher <jspp@posteo.net>
@@ -6,8 +7,8 @@
 _electron=electron41
 pkgbase=element.io
 pkgname=(element-web element-desktop)
-pkgver=1.12.18
-pkgrel=3
+pkgver=1.12.23
+pkgrel=1
 pkgdesc="Glossy Matrix collaboration client — "
 arch=(x86_64)
 url="https://element.io"
@@ -31,7 +32,7 @@ source=(git+https://github.com/element-hq/element-web.git#tag=v${pkgver}?signed
         io.element.Element.desktop
         element-desktop.sh
         autolaunch.patch)
-sha256sums=('477c74c3712450fa412fea2b3880b2c2be2abc7f7d1da8dee6ffb20d96fd912e'
+sha256sums=('58c696b95b405504b2eaf464acad083e074f5f84fb66d6e3e5f9a225e3a4f000'
             '16a21cd4ad144641e0f4cbe18ed1b665565ed6f3f3e67d5bccba2806491674a9'
             '324c80ee48cb6bcf048874c833e5cd8f36ee2a0e848d4eb70dcf751352452bee'
             '978a6bd3becc6dbd0886a8d1b2a3b6b247c1f5867465bfebfcb7374dca79ed79')
@@ -44,7 +45,6 @@ prepare() {
   # Check if we depend on the correct electron version
   if [ "${_electron}" != "electron${_electron_major}" ] ; then
     echo "Error: Incorrect electron version detected. Please change the value of \"_electron\" from \"${_electron}\" to \"electron${_electron_major}\"."
-    return 1
   fi
 
   # Specify electron version in launcher
@@ -52,6 +52,7 @@ prepare() {
 
   cd element-web
   patch -p1 < "${srcdir}/autolaunch.patch"
+  sed -e 's|"error"|"warn"|' -i package.json
   pnpm install
 
   cd apps/desktop
