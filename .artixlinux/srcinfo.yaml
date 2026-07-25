@@ -1,9 +1,9 @@
 ---
-version: 0.34-1
+version: 0.36-1
 pkgbase:
   name: newsraft
   pkgdesc: Feed reader with text-based user interface
-  pkgver: 0.34
+  pkgver: 0.36
   pkgrel: 1
   url: https://codeberg.org/newsraft/newsraft
   arch:
@@ -16,9 +16,9 @@ pkgbase:
     - expat
     - gumbo-parser
   source:
-    - https://codeberg.org/newsraft/newsraft/archive/newsraft-0.34.tar.gz
+    - https://codeberg.org/newsraft/newsraft/archive/newsraft-0.36.tar.gz
   sha256sums:
-    - 8d55441ddfc2e7d49ad3ff36c384ad4c1533de97d92a9fcaf3f6753b49b37c7c
+    - d6aeebd3f1b2c897c8c9b29e1f5ed91751969681d1deafc31a9d85d139793ad5
 pkgname:
   - name: newsraft
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
