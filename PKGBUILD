@@ -5,7 +5,7 @@
 
 pkgname=cosmic-text-editor
 pkgver=1.4.0
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc='Text editor for the COSMIC desktop'
 arch=(x86_64)
