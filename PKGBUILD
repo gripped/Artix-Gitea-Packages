@@ -8,41 +8,48 @@
 
 pkgbase=uv
 pkgname=("$pkgbase" "python-$pkgbase"{,-build})
-pkgver=0.11.29
+pkgver=0.11.32
 pkgrel=1
 pkgdesc='An extremely fast Python package installer and resolver written in Rust'
 arch=('x86_64')
 url="https://github.com/astral-sh/uv"
 license=('MIT' 'Apache-2.0')
-depends=(
-  'bzip2'
-  'libgcc'
-  'glibc'
-  'jemalloc'
-  'zstd'
-)
-makedepends=(
-  'cargo'
-  'cmake'
-  'git'
-  'maturin'
-  'python-installer'
-  'xz'
-)
-options=('!lto')
+makedepends=(bzip2
+             cargo
+             cmake
+             git
+             glibc
+             jemalloc
+             libgcc
+             maturin
+             python
+             python-installer
+             xz
+             zstd)
 source=("git+$url.git#tag=$pkgver")
-sha256sums=('0a252c5aaac48b41f56355b4610478dd24b7c76ca7cc2acecd4b450d8ccb1518')
+sha256sums=('75230ceac909ac78d0e65c8d3aa10aa0c4ebd09bb5612261c77c40b9f5c532e1')
+
+_srcenv() {
+  cd "$pkgbase"
+  export CARGO_HOME="$srcdir"
+  export CARGO_PROFILE_RELEASE_DEBUG=2
+  export CARGO_PROFILE_RELEASE_STRIP=false
+  export CARGO_PROFILE_RELEASE_LTO=true
+  export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+  export CARGO_PROFILE_RELEASE_OPT_LEVEL=3
+  CFLAGS+=' -ffat-lto-objects'
+}
 
 prepare() {
-  cd "$pkgbase"
-  cargo fetch --locked --target "$(rustc --print host-tuple)"
+  _srcenv
+  cargo fetch --locked --target host-tuple
   mkdir -p completions
 }
 
 # Note --frozen doesn't work here because cargo fetch didn't get everything
 # maturin ends up trying to use so we make do with --locked ...
 build() {
-  cd "$pkgbase"
+  _srcenv
   local tripple="$(rustc --print host-tuple)"
 
   export ZSTD_SYS_USE_PKG_CONFIG=1
@@ -60,7 +67,7 @@ build() {
 }
 
 check() {
-  cd "$pkgbase"
+  _srcenv
   # The upstream cargo tests are unit tests against a matrix of Python versions
   # using vendored Python installs. Even collapsing the matrix to match our
   # system Python version and patching around the path issues to use it,
@@ -97,13 +104,9 @@ package_uv() {
 
 package_python-uv() {
   pkgdesc+=' - Python wrapper'
-  depends=(
-    python
-  )
-
+  depends=(python "$pkgbase=$pkgver")
   cd "$pkgbase"
   _package_common
-  depends=(python "$pkgbase=$pkgver")
   python -m installer -d "$pkgdir" target/wheels/uv-$pkgver-*.whl
   rm -rf "$pkgdir/usr/bin"
 }
