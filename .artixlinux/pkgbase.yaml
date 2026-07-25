@@ -1,23 +1,23 @@
 ---
 actions:
-  addRepo: system-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: system-gremlins
+  removeRepo: system-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
+    version: null
+    packages: []
+    debug: []
+  system-gremlins:
     version: 2.46.1+r3+g046eeeef4721-2
     packages:
       - binutils-2.46.1+r3+g046eeeef4721-2-x86_64.pkg.tar.zst
     debug:
       - binutils-debug-2.46.1+r3+g046eeeef4721-2-x86_64.pkg.tar.zst
-  system-gremlins:
-    version: null
-    packages: []
-    debug: []
   system:
     version: 2.46.1+r3+g046eeeef4721-1
     packages:
