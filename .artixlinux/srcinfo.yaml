@@ -1,9 +1,9 @@
 ---
-version: 5.5.2-1
+version: 5.5.3-1
 pkgbase:
   name: tesseract
   pkgdesc: An OCR program
-  pkgver: 5.5.2
+  pkgver: 5.5.3
   pkgrel: 1
   url: https://github.com/tesseract-ocr/tesseract
   arch:
@@ -15,7 +15,9 @@ pkgbase:
     - pango
     - asciidoc
   depends:
-    - gcc-libs
+    - libgcc
+    - libgomp
+    - libstdc++
     - curl
     - libarchive
     - leptonica
@@ -151,16 +153,18 @@ pkgbase:
   provides:
     - libtesseract.so
   source:
-    - https://github.com/tesseract-ocr/tesseract/archive/5.5.2/tesseract-5.5.2.tar.gz
+    - https://github.com/tesseract-ocr/tesseract/archive/5.5.3/tesseract-5.5.3.tar.gz
   sha256sums:
-    - 6235ea0dae45ea137f59c09320406f5888383741924d98855bd2ce0d16b54f21
+    - 9218e62793116d42a9f6d14cd9348518b27f382096eea3d0f2d1a24616bb5884
 pkgname:
   - name: tesseract
     depends:
-      - gcc-libs
+      - libgcc
+      - libgomp
+      - libstdc++
       - curl
       - libarchive
       - leptonica
       - tessdata
       - tesseract-data-osd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
