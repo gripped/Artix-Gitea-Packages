@@ -1,13 +1,13 @@
 ---
-version: 0.4.0-1
+version: 0.4.0-2
 pkgbase:
   name: ruby-syslog
   pkgdesc: Ruby interface for the POSIX system logging facility
   pkgver: 0.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ruby/syslog
   arch:
-    - any
+    - x86_64
   license:
     - Ruby
     - BSD-2-Clause
@@ -30,4 +30,4 @@ pkgbase:
     - c5b8a9f5db9cbdd3494d5905226f9dc9165db7e8d3d231180c21ebc2c8d7baf3999f0f2f38a55ba1dd219bb3c563ac1c18cdb3cac7dddc807d0f3372eb213cd1
 pkgname:
   - name: ruby-syslog
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
