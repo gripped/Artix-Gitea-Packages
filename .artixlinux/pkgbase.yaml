@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.9.3-4
+    version: 1.9.4-1
     packages:
-      - autotiling-1.9.3-4-any.pkg.tar.zst
+      - autotiling-1.9.4-1-any.pkg.tar.zst
     debug: []
