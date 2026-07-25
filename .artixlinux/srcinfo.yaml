@@ -1,10 +1,10 @@
 ---
-version: 2.46.1+r3+g046eeeef4721-1
+version: 2.46.1+r3+g046eeeef4721-2
 pkgbase:
   name: binutils
   pkgdesc: A set of programs to assemble and manipulate binary and object files
   pkgver: 2.46.1+r3+g046eeeef4721
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/binutils/
   arch:
     - x86_64
@@ -59,4 +59,4 @@ pkgbase:
     - cd1816becb0e992ebc09f2ff66050e4b92fad33f0b7acc833cf513f4e4791d1a
 pkgname:
   - name: binutils
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
