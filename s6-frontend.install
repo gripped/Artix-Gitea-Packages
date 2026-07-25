@@ -5,8 +5,8 @@ post_upgrade() {
     echo "Major upgrade of s6-rc and s6-frontend."
     echo "The s6-rc database will be recompiled and then upgraded to the new format."
     s6 set commit -f
-    PATH=$(find /etc/s6/repo/compiled -type d -name ".current*")
-    s6-rc-format-upgrade ${PATH}
+    DBPATH=$(find /etc/s6/repo/compiled -type d -name ".current*")
+    s6-rc-format-upgrade ${DBPATH}
     s6 live install
   fi
 }

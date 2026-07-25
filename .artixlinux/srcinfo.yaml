@@ -1,10 +1,10 @@
 ---
-version: 0.1.0.0-2
+version: 0.1.0.0-3
 pkgbase:
   name: s6-frontend
   pkgdesc: A higher-level interface to the s6 ecosystem.
   pkgver: 0.1.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://skarnet.org/software/s6-frontend
   install: s6-frontend.install
   arch:
