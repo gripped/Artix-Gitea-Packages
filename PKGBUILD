@@ -3,7 +3,7 @@
 
 pkgname=ruby-async-service-supervisor
 pkgver=0.18.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A supervisor for managing multiple container processes'
 arch=(any)
 url='https://github.com/socketry/async-service-supervisor'

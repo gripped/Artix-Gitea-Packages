@@ -1,10 +1,10 @@
 ---
-version: 0.18.0-1
+version: 0.18.0-1.1
 pkgbase:
   name: ruby-async-service-supervisor
   pkgdesc: A supervisor for managing multiple container processes
   pkgver: 0.18.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/socketry/async-service-supervisor
   arch:
     - any
