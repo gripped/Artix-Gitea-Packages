@@ -1,10 +1,10 @@
 ---
-version: 0.1.7-10
+version: 0.1.8-1
 pkgbase:
   name: hypridle
   pkgdesc: hyprland’s idle daemon
-  pkgver: 0.1.7
-  pkgrel: 10
+  pkgver: 0.1.8
+  pkgrel: 1
   url: https://github.com/hyprwm/hypridle
   arch:
     - x86_64
@@ -27,9 +27,9 @@ pkgbase:
     - libwayland-client.so
     - wayland-protocols
   source:
-    - https://github.com/hyprwm/hypridle/archive/v0.1.7/hypridle-0.1.7.tar.gz
+    - https://github.com/hyprwm/hypridle/archive/v0.1.8/hypridle-0.1.8.tar.gz
   sha256sums:
-    - c4ef2e2894fc2082cfdabe7db086b1f246e3f0de571f7f2c6b26d7c0d9a5f8f3
+    - 08703613cc33cc796c2179bcaa6076e8618113f67b938daaf7535f90c7d39595
 pkgname:
   - name: hypridle
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
