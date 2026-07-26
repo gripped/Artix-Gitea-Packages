@@ -1,10 +1,10 @@
 ---
-version: 4.3.0-3
+version: 4.4.0-1
 pkgbase:
   name: python-h2
   pkgdesc: HTTP/2 State-Machine based protocol implementation
-  pkgver: 4.3.0
-  pkgrel: 3
+  pkgver: 4.4.0
+  pkgrel: 1
   url: https://hyper.rtfd.org
   arch:
     - any
@@ -23,9 +23,9 @@ pkgbase:
     - python-hpack
     - python-hyperframe
   source:
-    - git+https://github.com/python-hyper/h2.git#tag=v4.3.0
+    - git+https://github.com/python-hyper/h2.git#tag=v4.4.0
   sha512sums:
-    - 8d2ae5ec4b96cc60def583cc879f40717e611df1520fea01c1912f2b1bfd457b8c794e7c0708d365fa77348cea30eb8591352f3c27135d2d4a5c243c727695f4
+    - 8f91735ab8773698013b99748c9b08d8fb0e7f850d1bc2751224819b3bf4c79b62236a970b3dc60edcc1e223c2a86406c7cfbef65cdc017b2ba8c669173276c8
 pkgname:
   - name: python-h2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
