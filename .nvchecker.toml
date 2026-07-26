@@ -1,3 +1,4 @@
 [joyutils]
-source = "git"
-git = "https://git.code.sf.net/p/linuxconsole/code"
+source = "regex"
+url = "https://sourceforge.net/projects/linuxconsole/files"
+regex = 'linuxconsoletools-(\d+\.\d+\.\d+)\.tar\.bz2'

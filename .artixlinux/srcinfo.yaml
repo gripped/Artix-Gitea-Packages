@@ -1,10 +1,10 @@
 ---
-version: 1.8.1-3
+version: 1.8.1-4
 pkgbase:
   name: joyutils
-  pkgdesc: jscal, jstest, and jsattach utilities for the Linux joystick driver
+  pkgdesc: jscal, jstest and jsattach utilities for the Linux joystick driver
   pkgver: 1.8.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://sourceforge.net/projects/linuxconsole
   arch:
     - x86_64
@@ -22,4 +22,4 @@ pkgbase:
     - 2192fa56f44676528cac98090d16c9748250bbf0e77a0878fc40cdb662dd530c6afe2374f718e794150b643aeb0f82e7cf5e1f36b3c2949ba7255a053d1facad
 pkgname:
   - name: joyutils
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
