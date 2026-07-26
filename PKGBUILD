@@ -12,7 +12,7 @@ pkgname=('artix-live-base'
         'artix-live-s6'
         'artix-live-dinit'
         'artix-grub-live')
-pkgver=2026.05
+pkgver=2026.07
 pkgrel=1
 pkgdesc='Artix live session'
 arch=('any')

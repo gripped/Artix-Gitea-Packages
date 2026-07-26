@@ -1,9 +1,9 @@
 ---
-version: 2026.05-1
+version: 2026.07-1
 pkgbase:
   name: artix-live
   pkgdesc: Artix live session
-  pkgver: 2026.05
+  pkgver: 2026.07
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/artix-live
   arch:
