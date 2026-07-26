@@ -1,10 +1,10 @@
 ---
-version: 3.2-2
+version: 3.3-1
 pkgbase:
   name: s6-base
   pkgdesc: Packages, hooks, and scripts to define a basic s6 init system implementation for Artix Linux.
-  pkgver: 3.2
-  pkgrel: 2
+  pkgver: 3.3
+  pkgrel: 1
   url: https://gitea.artixlinux.org/artix/alpm-hooks
   arch:
     - any
@@ -22,9 +22,9 @@ pkgbase:
     - svc-manager
     - init-rc
   source:
-    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=b1f5dfe9b7169dabf6e28a228f3de29fe19923a9
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=1aad7478e9b622418eb27ddd96fd4ac52d74a80d
   sha256sums:
-    - f82ca8b6e76fa676789eb888e05950a20cc4b498c9df44491d0430f3559b375c
+    - cd381056ffe2256035579524d7d15a9ca710538dc261a19f39bc8cd3102fca4f
 pkgname:
   - name: s6-base
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39-2-any
