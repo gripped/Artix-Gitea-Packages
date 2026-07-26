@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,6 +13,10 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 16.1.1+r581+gb73ad535acaa-1
     packages:
       - gcc-16.1.1+r581+gb73ad535acaa-1-x86_64.pkg.tar.zst
@@ -47,41 +51,6 @@ repos:
       - lto-dump-16.1.1+r581+gb73ad535acaa-1-x86_64.pkg.tar.zst
     debug:
       - gcc-debug-16.1.1+r581+gb73ad535acaa-1-x86_64.pkg.tar.zst
-  system:
-    version: 16.1.1+r346+g4e03491b401d-4
-    packages:
-      - gcc-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-ada-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-d-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-fortran-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-gcobol-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-go-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-libs-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-m2-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-objc-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - gcc-rust-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - lib32-gcc-libs-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libasan-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libatomic-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgcc-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgccjit-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgcobol-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgfortran-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgm2-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgo-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgomp-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libgphobos-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libhwasan-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libitm-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - liblsan-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libobjc-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libquadmath-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libstdc++-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libtsan-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - libubsan-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-      - lto-dump-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
-    debug:
-      - gcc-debug-16.1.1+r346+g4e03491b401d-4-x86_64.pkg.tar.zst
   world-goblins:
     version: null
     packages: []
