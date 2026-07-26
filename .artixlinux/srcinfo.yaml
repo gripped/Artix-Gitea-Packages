@@ -1,10 +1,10 @@
 ---
-version: 1.82.0-1
+version: 1.82.0-2
 pkgbase:
   name: rubocop
   pkgdesc: A Ruby code style checking and code formatting tool
   pkgver: 1.82.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://rubocop.org/
   arch:
     - any
@@ -51,4 +51,4 @@ pkgbase:
     - 7a8fa23c9bed195202fe6ebd1882cf32c906fa033f6f5dbe7efaadb58a51afff2a55cad91483c01e373622cb3ed7cc3567f48e75f93acfbe54a32762c4406119
 pkgname:
   - name: rubocop
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.38.5-1-any
