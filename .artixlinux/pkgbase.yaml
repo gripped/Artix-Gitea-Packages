@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.39-1
+    version: 0.39-2
     packages:
-      - artools-base-0.39-1-any.pkg.tar.zst
-      - artools-pkg-0.39-1-any.pkg.tar.zst
-      - artools-iso-0.39-1-any.pkg.tar.zst
+      - artools-base-0.39-2-any.pkg.tar.zst
+      - artools-pkg-0.39-2-any.pkg.tar.zst
+      - artools-iso-0.39-2-any.pkg.tar.zst
     debug: []
   world:
     version: 0.38.5-1

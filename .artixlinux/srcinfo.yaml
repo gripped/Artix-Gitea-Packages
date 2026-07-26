@@ -1,10 +1,10 @@
 ---
-version: 0.39-1
+version: 0.39-2
 pkgbase:
   name: artools
   pkgdesc: Development tools for Artix
   pkgver: 0.39
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artix/artools
   arch:
     - any
@@ -80,4 +80,4 @@ pkgname:
       - squashfs-tools
     backup:
       - etc/artools/artools-iso.conf
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
