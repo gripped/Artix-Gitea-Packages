@@ -6,8 +6,8 @@ ENABLE_FAKE_GNOME_SOFTWARE=0
 _cli_ver=11.7.4
 
 pkgname=pamac
-pkgver=11.7.4
-pkgrel=4
+pkgver=11.7.5
+pkgrel=1
 pkgdesc="A Gtk3 frontend, Package Manager based on libalpm with AUR and Appstream support"
 arch=('x86_64')
 url="https://github.com/manjaro/pamac"
@@ -47,7 +47,7 @@ source=(
     "git+https://github.com/manjaro/pamac.git#tag=v$pkgver"
     "git+https://github.com/manjaro/pamac-cli.git#tag=$_cli_ver"
 )
-sha256sums=('465f0bfa3aa0ac536c9838ffc934f2ee9bbf0ee403ed202fa86ce2ecfd601707'
+sha256sums=('a1e82520739403d1b769c87731355ac5f5710b5626fbf77dce8eabea8506c4c1'
             'a347066c47a3e6ad8d32f6b947f4568592bd1bf038ea9b72a387b6f81a95c0ee')
 
 _meson_options=()
@@ -69,4 +69,5 @@ package() {
     meson install -C build-cli --destdir "$pkgdir"
 
     install -Dm644 "$pkgname/COPYING" "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+    rm -r $pkgdir/usr/lib/systemd
 }
