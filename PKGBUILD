@@ -12,10 +12,10 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
-# upgrade note: 153 only for testing/gremlins  until konform browser 153.0.0-100 released.
+# upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-pkgver=153.0.0.100b1
-# pkgver=140.12.0.104
+#pkgver=153.0.0.100b1
+pkgver=140.13.0.100
 
 pkgrel=1
 _ffbuild=1
@@ -146,8 +146,8 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('67c7659b38c1d64db99ecb13ef3a5950ec0477df50dd433aaffa351ad8c5256a'
-            'dbe3d9dedcb118a4b623688c559c6f2de280ea3be171e3ff256504cc01626cb5'
+sha256sums=('abe5dce7b32c9ef5757b93626bfc5e942e109ba9df994ff3384b375b6812c393'
+            'f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'

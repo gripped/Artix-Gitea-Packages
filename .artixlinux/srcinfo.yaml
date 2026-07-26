@@ -1,13 +1,12 @@
 ---
-version: 1:153.0.0.100b1-1
+version: 1:140.13.0.100-1
 pkgbase:
   name: konform-browser
   pkgdesc: Firefox ESR fork with increased security, privacy, and customizability
-  pkgver: 153.0.0.100b1
+  pkgver: 140.13.0.100
   pkgrel: 1
   epoch: 1
   url: https://konform-browser.codeberg.page
-  install: konform-browser-testing.install
   arch:
     - x86_64
     - aarch64
@@ -98,9 +97,9 @@ pkgbase:
     - usr/lib/konform/librewolf.cfg
     - usr/lib/konform/distribution/policies.json
   source:
-    - src-153::git+https://codeberg.org/konform-browser/konform-next.git#tag=153.0.0.100b1
-    - firefox-153.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/153.0esr-candidates/build1/source/firefox-153.0esr.source.tar.xz
-    - firefox-153.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/153.0esr-candidates/build1/source/firefox-153.0esr.source.tar.xz.asc
+    - src::git+https://codeberg.org/konform-browser/source.git#tag=140.13.0.100
+    - firefox-140.13.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/140.13.0esr-candidates/build1/source/firefox-140.13.0esr.source.tar.xz
+    - firefox-140.13.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/140.13.0esr-candidates/build1/source/firefox-140.13.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz
     - konform.desktop
     - konform-browser-testing.install
@@ -112,8 +111,8 @@ pkgbase:
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - 67c7659b38c1d64db99ecb13ef3a5950ec0477df50dd433aaffa351ad8c5256a
-    - dbe3d9dedcb118a4b623688c559c6f2de280ea3be171e3ff256504cc01626cb5
+    - abe5dce7b32c9ef5757b93626bfc5e942e109ba9df994ff3384b375b6812c393
+    - f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01
     - SKIP
     - 50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512
     - 68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4
