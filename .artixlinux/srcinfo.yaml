@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-1
+version: 0.5.0-1.1
 pkgbase:
   name: wildmidi
   pkgdesc: Simple software MIDI player which has a core softsynth library
   pkgver: 0.5.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/Mindwerks/wildmidi
   arch:
     - x86_64

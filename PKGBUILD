@@ -5,7 +5,7 @@
 
 pkgname=wildmidi
 pkgver=0.5.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Simple software MIDI player which has a core softsynth library'
 arch=(x86_64)
 url='https://github.com/Mindwerks/wildmidi'
