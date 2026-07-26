@@ -15,9 +15,9 @@ pkgbase:
     - bash
     - artools-base
   source:
-    - git+https://gitea.artixlinux.org/artix/artix-live.git#tag=0.14.1
+    - git+https://gitea.artixlinux.org/artix/artix-live.git#tag=0.15
   sha256sums:
-    - 99828c04eada8d01f19a85dee9a274bca257d62a3856b24907602398bb36f7bb
+    - d3c9485b30d3d267cc95fb26a96928e35f778b88512b0037417ba421ee709197
 pkgname:
   - name: artix-live-base
     pkgdesc: Artix live base scripts
@@ -58,4 +58,4 @@ pkgname:
       - init-artix-live
   - name: artix-grub-live
     pkgdesc: Artix grub live
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39-1-any
