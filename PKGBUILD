@@ -4,11 +4,11 @@
 
 _url=https://gitea.artixlinux.org/artix/alpm-hooks
 
-_commit=5e07cfec1400c96480cdff29859bb4668418027a
+_commit=1aad7478e9b622418eb27ddd96fd4ac52d74a80d
 
 pkgname=base
 pkgver=3
-pkgrel=6.2
+pkgrel=6.3
 pkgdesc='Minimal package set to define a basic Artix Linux installation'
 url='https://www.artixlinux.org'
 arch=('any')
@@ -34,7 +34,7 @@ optdepends=('linux: bare metal support')
 source=(
     "git+$_url.git#commit=$_commit"
 )
-sha256sums=('SKIP')
+sha256sums=('cd381056ffe2256035579524d7d15a9ca710538dc261a19f39bc8cd3102fca4f')
 
 package() {
     # pacman hooks
