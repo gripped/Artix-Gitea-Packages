@@ -1,9 +1,9 @@
 ---
-version: 20260707.1-1
+version: 20260727-1
 pkgbase:
   name: archlinux-keyring
   pkgdesc: Arch Linux PGP keyring
-  pkgver: 20260707.1
+  pkgver: 20260727
   pkgrel: 1
   url: https://gitlab.archlinux.org/archlinux/archlinux-keyring/
   arch:
@@ -20,7 +20,7 @@ pkgbase:
     - pkgconf
     - voa
   source:
-    - archlinux-keyring::git+https://gitlab.archlinux.org/archlinux/archlinux-keyring.git?signed#tag=20260707.1
+    - archlinux-keyring::git+https://gitlab.archlinux.org/archlinux/archlinux-keyring.git?signed#tag=20260727
   validpgpkeys:
     - 02FD1C7A934E614545849F19A6234074498E9CEE
     - F00B96D15228013FFC9C9D0393B11DAA4C197E3D
@@ -30,7 +30,7 @@ pkgbase:
     - E240B57E2C4630BA768E2F26FC1B547C8D8172C8
     - C100346676634E80C940FB9E9C02FF419FECBE16
   sha256sums:
-    - 9bb2854453efd41f83589504f7e0d5026c821df47edf3df493f25c3d7e813395
+    - bf7784175259fad611b7713ee3b948dd426efafe368a19df3a4b9674f9e74727
 pkgname:
   - name: archlinux-keyring
     install: archlinux-keyring.install
@@ -38,4 +38,4 @@ pkgname:
       - pacman
   - name: voa-verifiers-arch
     pkgdesc: Arch Linux verifiers for the Hierarchy for the Verification of OS Artifacts (VOA)
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
