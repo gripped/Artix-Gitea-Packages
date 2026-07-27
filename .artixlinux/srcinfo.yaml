@@ -1,9 +1,9 @@
 ---
-version: 0.12.0-1
+version: 0.13.1-1
 pkgbase:
   name: libchewing
   pkgdesc: Intelligent Chinese phonetic input method
-  pkgver: 0.12.0
+  pkgver: 0.13.1
   pkgrel: 1
   url: https://chewing.im/
   arch:
@@ -19,13 +19,13 @@ pkgbase:
   optdepends:
     - 'chewing-editor: view and modify libchewing user phrases database'
   source:
-    - https://codeberg.org/chewing/libchewing/releases/download/v0.12.0/libchewing-0.12.0.tar.zst
-    - https://codeberg.org/chewing/libchewing/releases/download/v0.12.0/libchewing-0.12.0.tar.zst.asc
+    - https://codeberg.org/chewing/libchewing/releases/download/v0.13.1/libchewing-0.13.1.tar.zst
+    - https://codeberg.org/chewing/libchewing/releases/download/v0.13.1/libchewing-0.13.1.tar.zst.asc
   validpgpkeys:
     - 083B3CAB64267E5BAB7159673EF0C673DADCC30C
   sha256sums:
-    - 6a7fae4aaa6e6ce2bd9f70f0016c553585ed5aca1e086476749a03ac5c3f4cb0
+    - c897a5d0aadfdeb07784e1411ceac0efef2c97bea8143fb3b1dcde8274e14fc0
     - SKIP
 pkgname:
   - name: libchewing
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
