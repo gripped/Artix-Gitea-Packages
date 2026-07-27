@@ -12,7 +12,7 @@ pkgbase=qbittorrent
 pkgname=(qbittorrent
          qbittorrent-nox)
 pkgver=5.2.3
-pkgrel=3
+pkgrel=3.1
 arch=(x86_64)
 url='https://www.qbittorrent.org'
 license=(GPL-2.0-or-later
