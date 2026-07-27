@@ -10,7 +10,7 @@ pkgdesc='The Open Source build of Visual Studio Code (vscode) editor'
 # Important: Remember to check https://github.com/microsoft/vscode/wiki/How-to-Contribute#prerequisites for target node version
 _electron=electron41
 pkgver=1.130.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://github.com/microsoft/vscode'
 license=('MIT')
@@ -19,6 +19,7 @@ depends=(
   'libsecret'
   'libx11'
   'libxkbfile'
+  # Devendored dependenies to stop the bloat a bit
   'ripgrep')
 optdepends=('bash-completion: Bash completions'
             'zsh-completions: ZSH completitons'
@@ -163,6 +164,7 @@ package() {
   # Replace included ripgrep with system copy
   # The package includes quite a few so just detect and replace
   find "$pkgdir" -name rg -print0 | xargs --null --replace ln -s -vsf /usr/bin/rg {}
+
 
   # Install binary
   install -Dm 755 code.sh "$pkgdir"/usr/bin/code-oss
