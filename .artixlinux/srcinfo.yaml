@@ -1,10 +1,10 @@
 ---
-version: 20200613-3
+version: 20260727-1
 pkgbase:
   name: cronie-runit
   pkgdesc: runit service scripts for cronie
-  pkgver: 20200613
-  pkgrel: 3
+  pkgver: 20260727
+  pkgrel: 1
   url: https://artixlinux.org
   arch:
     - any
@@ -12,6 +12,8 @@ pkgbase:
     - runit-system
   license:
     - BSD
+  makedepends:
+    - git
   depends:
     - cronie
     - runit
@@ -23,9 +25,11 @@ pkgbase:
     - init-cronie
     - init-cron
   source:
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=3.0
     - cronie.run
   sha256sums:
+    - 9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee
     - 882836bff4df1d856a40c4d288d88f8e00685f0683e545bc5193bf754be0e1d6
 pkgname:
   - name: cronie-runit
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
