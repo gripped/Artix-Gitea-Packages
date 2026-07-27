@@ -1,10 +1,10 @@
 ---
-version: 1:3.0.1-1
+version: 1:3.0.1-2
 pkgbase:
   name: amule
   pkgdesc: An eMule-like client for ed2k p2p network
   pkgver: 3.0.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://amule-org.github.io/
   arch:
@@ -15,6 +15,7 @@ pkgbase:
     - boost
     - cmake
     - git
+    - po4a
   depends:
     - binutils
     - crypto++
