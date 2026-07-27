@@ -2,7 +2,7 @@
 
 pkgbase=xlibre-xserver
 pkgname=($pkgbase $pkgbase-xephyr $pkgbase-xvfb $pkgbase-xnest $pkgbase-common $pkgbase-devel $pkgbase-src)
-pkgver=25.0.0.24
+pkgver=25.0.0.25
 pkgrel=1
 arch=(x86_64 aarch64)
 license=('LicenseRef-Adobe-Display-PostScript'
@@ -210,6 +210,6 @@ package_xlibre-xserver-src() {
   rm -rf ${pkgbase}/{.*,*.md,COPYING,NEWS,usr/share}
 }
 
-sha256sums=('facc0060b7908ec37afce7279f7343a24f257b87a54c938712f28e6de6c47fe6'
+sha256sums=('fa55ae214d1075bec155146cb10d46866e4a5f0ba7432fadcdf9ed16a4518d2c'
             '27ce50f4432e5549e662db857118761fa9cd74c6900aac52c4db768c956838db'
             '2460adccd3362fefd4cdc5f1c70f332d7b578091fb9167bf88b5f91265bbd776')
