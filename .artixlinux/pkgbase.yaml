@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: system-gremlins
-  removeRepo: system-goblins
+  addRepo: system
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -13,14 +13,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
+    version: null
+    packages: []
+    debug: []
+  system:
     version: 3-6.3
     packages:
       - base-3-6.3-any.pkg.tar.zst
-    debug: []
-  system:
-    version: 3-5
-    packages:
-      - base-3-5-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null
