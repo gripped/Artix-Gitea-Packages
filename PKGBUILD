@@ -3,7 +3,7 @@
 # Contributor: Johannes Dewender   arch at JonnyJD dot net
 
 pkgname=distro-info
-pkgver=1.15
+pkgver=1.17
 pkgrel=1
 pkgdesc="Information about all releases of Debian and Ubuntu"
 arch=('x86_64')
@@ -29,7 +29,7 @@ provides=('python-distro-info' 'perl-distro-info')
 conflicts=('python-distro-info' 'perl-distro-info')
 options=('!emptydirs')
 source=("git+https://salsa.debian.org/debian/distro-info.git#tag=debian/$pkgver")
-sha256sums=('fe11e1361a74f17f96501a64037725132c0f1356113e24bcaaa09573662a972f')
+sha256sums=('8d74440938fc2d24c3bf60c13648c980684db5655c3c120cbff4e679e29be371')
 
 prepare() {
   cd $pkgname
@@ -37,7 +37,6 @@ prepare() {
     -e 's/^\(CFLAGS = .*\)/\1 '"${CFLAGS}/" \
     -e 's/^\(CPPFLAGS = .*\)/\1 '"${CPPFLAGS}/" \
     -e 's/^\(LDFLAGS = .*\)/\1 '"${LDFLAGS}/" \
-    -e '/python3 setup.py install/d' \
     Makefile
 }
 
