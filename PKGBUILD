@@ -2,7 +2,7 @@
 
 pkgbase=xlibre-xserver
 pkgname=($pkgbase $pkgbase-xephyr $pkgbase-xvfb $pkgbase-xnest $pkgbase-common $pkgbase-devel $pkgbase-src)
-pkgver=25.0.0.25
+pkgver=25.1.9
 pkgrel=1
 arch=(x86_64 aarch64)
 license=('LicenseRef-Adobe-Display-PostScript'
@@ -27,8 +27,8 @@ makedepends=('xorgproto' 'pixman' 'libx11' 'mesa' 'mesa-libgl'
              'libxmu' 'libxrender' 'libxi' 'libxaw' 'libxtst' 'libxres'
              'xorg-xkbcomp' 'xorg-util-macros' 'xorg-font-util' 'libepoxy'
              'xcb-util' 'xcb-util-image' 'xcb-util-renderutil' 'xcb-util-wm' 'xcb-util-keysyms'
-             'libxshmfence' 'libunwind' 'meson' 'dbus' 'xtrans')
-source=("${url}/archive/refs/tags/${pkgname}-${pkgver}.tar.gz"
+             'libxshmfence' 'libunwind' 'meson' 'dbus')
+source=("${url}/archive/refs/tags/${pkgbase}-${pkgver}.tar.gz"
         xvfb-run # with updates from FC master
         xvfb-run.1)
 
@@ -63,7 +63,7 @@ build() {
   export CXXFLAGS="${CXXFLAGS}"
   export LDFLAGS="${LDFLAGS}"
 
-  arch-meson xserver-${pkgbase}-${pkgver} build \
+  artix-meson xserver-${pkgbase}-${pkgver} build \
     --buildtype=release \
     -D ipv6=true \
     -D xvfb=true \
@@ -71,6 +71,7 @@ build() {
     -D xcsecurity=true \
     -D xorg=true \
     -D xephyr=true \
+    -D xfbdev=true \
     -D glamor=true \
     -D udev=true \
     -D udev_kms=true \
@@ -78,6 +79,8 @@ build() {
     -D systemd_logind=true \
     -D suid_wrapper=true \
     -D linux_acpi=false \
+    -D legacy_nvidia_padding=true \
+    -D legacy_nvidia_340x=true \
     -D xkb_dir=/usr/share/X11/xkb \
     -D xkb_output_dir=/var/lib/xkb \
     -D libunwind=true 
@@ -122,11 +125,11 @@ package_xlibre-xserver() {
   conflicts=('xorg-server' 'nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting')
   replaces=('glamor-egl' 'xf86-video-modesetting')
 
-  _install fakeinstall/usr/bin/{X,Xorg,gtf}
+  _install fakeinstall/usr/bin/{X,Xorg,gtf,Xfbdev}
   _install fakeinstall/usr/lib/Xorg{,.wrap}
   _install fakeinstall/usr/lib/xorg/modules/*
-  _install fakeinstall/usr/share/X11/xorg.conf.d/10-quirks.conf
-  _install fakeinstall/usr/share/man/man1/{Xorg,Xorg.wrap,gtf}.1
+  _install fakeinstall/usr/share/X11/xorg.conf.d/10-{nvidia,nvidia-modules,quirks}.conf
+  _install fakeinstall/usr/share/man/man1/{Xorg,Xorg.wrap,gtf,Xfbdev}.1
   _install fakeinstall/usr/share/man/man4/{exa,fbdevhw,inputtestdrv,modesetting}.4
   _install fakeinstall/usr/share/man/man5/{Xwrapper.config,xorg.conf,xorg.conf.d}.5
 
@@ -196,6 +199,8 @@ package_xlibre-xserver-devel() {
 
   install -m644 -Dt "${pkgdir}/usr/share/licenses/${pkgname}" "xserver-${pkgbase}-${pkgver}"/COPYING
 
+  rm fakeinstall/etc/X11/xorg.conf.d/10-nvidia.conf.debian
+  rm fakeinstall/etc/X11/xorg.conf.d/10-nvidia-modules.conf.debian
   find fakeinstall -depth -print0 | xargs -0 rmdir
 }
 
@@ -210,6 +215,7 @@ package_xlibre-xserver-src() {
   rm -rf ${pkgbase}/{.*,*.md,COPYING,NEWS,usr/share}
 }
 
-sha256sums=('fa55ae214d1075bec155146cb10d46866e4a5f0ba7432fadcdf9ed16a4518d2c'
+sha256sums=('be30a5ede7975995b196717af190664eb07aa43e3608eaf9c582386941715f8e'
             '27ce50f4432e5549e662db857118761fa9cd74c6900aac52c4db768c956838db'
             '2460adccd3362fefd4cdc5f1c70f332d7b578091fb9167bf88b5f91265bbd776')
+ 
