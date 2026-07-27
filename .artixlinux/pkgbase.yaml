@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20260527-1
+    version: 20260727-1
     packages:
-      - dbus-runit-20260527-1-any.pkg.tar.zst
+      - dbus-runit-20260727-1-any.pkg.tar.zst
     debug: []
   world:
     version: 20220314-1
