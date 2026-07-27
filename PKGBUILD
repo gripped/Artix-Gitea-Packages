@@ -7,11 +7,11 @@
 
 pkgname=amule
 epoch=1
-pkgver=3.0.0
+pkgver=3.0.1
 pkgrel=1
 pkgdesc='An eMule-like client for ed2k p2p network'
 arch=(x86_64)
-url='http://www.amule.org'
+url='https://amule-org.github.io/'
 license=(GPL-2.0-or-later)
 depends=(binutils
          crypto++
@@ -35,11 +35,11 @@ makedepends=(boost
              cmake
              git)
 provides=(amule-daemon)
-source=(git+https://github.com/amule-project/amule#tag=$pkgver
+source=(git+https://github.com/amule-org/amule#tag=$pkgver
         amule.sysusers
         amule.tmpfiles)
 options=(!lto)
-sha256sums=('4ebc7b98840d91ad43d4f4952837b770fdfdac9a772a02adf2b117ddd2198503'
+sha256sums=('985d14564a2ba8d5f1c8edfd2f5048aa496001a43f8b049e7125fe95c7fd2f50'
             '1a1780d3010f338b16ace33fac6af8480bb0830402001f95f12c2e98afbd1b60'
             'e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d')
 
@@ -70,5 +70,4 @@ package() {
 
   install -Dm644 "$srcdir"/amule.sysusers "$pkgdir"/usr/lib/sysusers.d/amule.conf
   install -Dm644 "$srcdir"/amule.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/amule.conf
-  rm "$pkgdir"/usr/share/LICENSE.md
 }
