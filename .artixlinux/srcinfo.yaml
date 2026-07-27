@@ -1,0 +1,19 @@
+---
+version: 1.10-3
+pkgbase:
+  name: netsurf-buildsystem
+  pkgdesc: NetSurf build system files
+  pkgver: 1.10
+  pkgrel: 3
+  url: https://download.netsurf-browser.org/libs/releases/
+  arch:
+    - any
+  license:
+    - MIT
+  source:
+    - https://download.netsurf-browser.org/libs/releases//buildsystem-1.10.tar.gz
+  b2sums:
+    - 99843f0af4c57af2edc78a5ba1a4d0e3988fa622234235b4adc6f556e0550916187f385d2017cbeb42aa8136ee9cb5a987f6b29919b6b37b6b19ec58e62a0a5d
+pkgname:
+  - name: netsurf-buildsystem
+# generated with artixpkg 0.38.5-1-any
