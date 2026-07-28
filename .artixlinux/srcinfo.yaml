@@ -1,10 +1,10 @@
 ---
-version: 50.0-3
+version: 50.0-4
 pkgbase:
   name: sysprof
   pkgdesc: Kernel based performance profiler
   pkgver: 50.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://apps.gnome.org/Sysprof/
   arch:
     - x86_64
@@ -63,4 +63,4 @@ pkgname:
     license:
       - BSD-2-Clause-Patent
     depends: []
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
