@@ -4,12 +4,12 @@
 
 _url=https://gitea.artixlinux.org/artix
 _extra=1.3
-_alpm=2.4.4
+_alpm=3.0
 
 pkgbase=openrc
 pkgname=('openrc' 'libeinfo')
 pkgver=0.63.3
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
@@ -33,7 +33,7 @@ sha256sums=('25f3dcbfcc8ad172af266eac69f40811b2b6b5d4bbe501ea1d64023a1e6b5528'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
             '0cb9b79b2e044c3641b20ec701a396dd5575bb5b1c48586ab57de9c2b7d24308'
             'e83f678c3e3d03067d0e5602bad82382cf74c8dc4fd7a1c18f3a3ceb3a21f0be'
-            'e33444dba1b0a185eead8460a77f763bc99bca8cb072dbb90e90a29393d4f865'
+            '9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee'
             '3ad4a809807312c4489c744ce4ad9b5d18bc37caea09f52e90580c1ae457997d')
 
 prepare() {
@@ -79,6 +79,7 @@ build(){
 package_openrc() {
     pkgdesc="Universal init system"
     depends=(
+        'artix-cgroups'
         'audit' #'libaudit.so'
         'bash'
         'glibc'
