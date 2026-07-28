@@ -6,8 +6,8 @@
 
 pkgbase=obs-studio
 pkgname=('obs-studio' 'obs-studio-plugin-browser')
-pkgver=32.1.2
-pkgrel=9
+pkgver=32.2.1
+pkgrel=1
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
 url="https://obsproject.com"
@@ -26,12 +26,12 @@ source=(
   "obs-browser-Update-to-C-20.patch"
   "obs-browser-enable-support-for-CEF-6613+.patch"
 )
-sha256sums=('5d515107c68006319c91d24a3a661f6fc4c1a619ebbac85a567fb6f5fec1e2c4'
+sha256sums=('5b11ccf5468654d19537db108443812db12767084eba295ee532d81c4834492a'
             'SKIP'
             'SKIP'
             'SKIP'
-            '474832a156d29224eabc77bc78ca33b0e6116cb00dc2786b5869744bae8f72c3'
-            '6ae679a3dfc3ab36ed03dcbc89de02f8075de26a0f01ea0176aa5aa8fbf499cd')
+            '3f40b66cdde76f4ecd62fa852663b556e07b2be98f4d3e3293019547e260d2fb'
+            '3b1d89c7a43e198985407dc9b8cc0e2625fb3879614ccce05c337791793e7f28')
 
 prepare() {
   cd $pkgname
