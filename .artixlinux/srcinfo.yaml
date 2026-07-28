@@ -1,10 +1,10 @@
 ---
-version: 1.6.3-18
+version: 1.6.3-19
 pkgbase:
   name: dejagnu
   pkgdesc: Framework for testing other programs
   pkgver: 1.6.3
-  pkgrel: 18
+  pkgrel: 19
   url: https://www.gnu.org/software/dejagnu/
   arch:
     - any
@@ -26,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: dejagnu
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
