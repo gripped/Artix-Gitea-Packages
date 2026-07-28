@@ -1,9 +1,9 @@
 ---
-version: 2:2025.07.22-1
+version: 2:2026.05.29-1
 pkgbase:
   name: opencl-headers
   pkgdesc: OpenCL (Open Computing Language) header files
-  pkgver: 2025.07.22
+  pkgver: 2026.05.29
   pkgrel: 1
   epoch: 2
   url: https://www.khronos.org/registry/cl/
@@ -17,9 +17,9 @@ pkgbase:
   optdepends:
     - 'opencl-clhpp: C++ support'
   source:
-    - opencl-headers-2025.07.22.tar.gz::https://github.com/KhronosGroup/OpenCL-Headers/archive/v2025.07.22.tar.gz
+    - opencl-headers-2026.05.29.tar.gz::https://github.com/KhronosGroup/OpenCL-Headers/archive/v2026.05.29.tar.gz
   sha256sums:
-    - 98f0a3ea26b4aec051e533cb1750db2998ab8e82eda97269ed6efe66ec94a240
+    - d9e6c48357de5002da11ce45de600e0c3ffe6ab4f628a3b9fe2b38603161658a
 pkgname:
   - name: opencl-headers
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.39.1-1-any
