@@ -1,8 +1,8 @@
-# Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
+# Maintainer: artist for Artix Linux
 
 pkgname=xlibre-video-amdgpu
-pkgver=25.1.1
-pkgrel=6
+pkgver=25.1.2
+pkgrel=1
 pkgdesc="XLibre fork of X.Org amdgpu video driver"
 arch=(x86_64 aarch64)
 _pkgname="${pkgname//xlibre/xf86}"
@@ -90,5 +90,5 @@ xpackage() {
   install -Dm644 "${srcdir}"/${_pkgname}-xlibre-${_pkgname}-${pkgver}/COPYING "${pkgdir}"/usr/share/licenses/${pkgname}/LICENSE
 }
 
-sha256sums=('345eba3d701b0dd3be240038ee8c05c7306f19f643c2bd8d08232752862ac264')
+sha256sums=('16feeea266c556cc8cb964aad01a565ebb24e900392245120de504cd0495af46')
 
