@@ -1,10 +1,10 @@
 ---
-version: 3.4.3-1
+version: 3.4.3-2
 pkgbase:
   name: mimalloc
   pkgdesc: General-purpose allocator with excellent performance characteristics
   pkgver: 3.4.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/microsoft/mimalloc
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - ecc14861ab49fedf8b24ab3c51936496ecd43860666c2fbf84acb259fd6f2dee1d8c868c6642755cbe3bbbb9d4a528f77297a09cce9490d52f5433410926a97b
 pkgname:
   - name: mimalloc
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
