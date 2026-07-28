@@ -1,43 +1,55 @@
 ---
-version: 3.8.8-2
+version: 3.8.9-1
 pkgbase:
   name: libarchive
   pkgdesc: Multi-format archive and compression library
-  pkgver: 3.8.8
-  pkgrel: 2
+  pkgver: 3.8.9
+  pkgrel: 1
   url: https://libarchive.org/
   arch:
     - x86_64
   license:
     - BSD-2-Clause
+    - BSD-4-Clause-UC
+    - Apache-2.0 OR CC0-1.0 OR OpenSSL
   makedepends:
     - git
   depends:
     - acl
-    - libacl.so
     - bzip2
-    - libbz2.so
     - glibc
     - libxml2
-    - libxml2.so
     - lz4
     - openssl
-    - libcrypto.so
     - xz
-    - liblzma.so
     - zlib
-    - libz.so
     - zstd
-    - libzstd.so
   provides:
     - libarchive.so
   source:
-    - git+https://github.com/libarchive/libarchive.git?signed#tag=v3.8.8
+    - git+https://github.com/libarchive/libarchive.git?signed#tag=v3.8.9
   validpgpkeys:
     - DB2C7CF1B4C265FAEF56E3FC5848A18B8F14184B
     - 659C84C0E23EA1FA97E0B58CC040B508D63D2B36
   sha256sums:
-    - 188b50a8533d6ef46d1fe3b974c660ffe0ce7ef6daa35089010e7a9fe9ddc571
+    - 033f8b22a755d01f87a79a5723ce4faed4d3772ab703f739c26ce32c6b1da0fd
 pkgname:
   - name: libarchive
-# generated with artixpkg 0.38.5-1-any
+    depends:
+      - acl
+      - bzip2
+      - glibc
+      - libxml2
+      - lz4
+      - openssl
+      - xz
+      - zlib
+      - zstd
+      - libacl.so
+      - libbz2.so
+      - libxml2.so
+      - libcrypto.so
+      - liblzma.so
+      - libz.so
+      - libzstd.so
+# generated with artixpkg 0.39.1-1-any
