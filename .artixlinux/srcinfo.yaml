@@ -1,10 +1,10 @@
 ---
-version: 7.12.2-2
+version: 7.12.3-1
 pkgbase:
   name: suitesparse
   pkgdesc: A collection of sparse matrix libraries
-  pkgver: 7.12.2
-  pkgrel: 2
+  pkgver: 7.12.3
+  pkgrel: 1
   url: http://faculty.cse.tamu.edu/davis/suitesparse.html
   arch:
     - x86_64
@@ -26,9 +26,9 @@ pkgbase:
   replaces:
     - suitesparse64<7.1.0
   source:
-    - git+https://github.com/DrTimothyAldenDavis/SuiteSparse#tag=v7.12.2
+    - git+https://github.com/DrTimothyAldenDavis/SuiteSparse#tag=v7.12.3
   sha256sums:
-    - ab598c5e010e48a5013d5c35a4fb177673e1ea0595b51d4dbc83ed138fb09d0b
+    - f2c513b9b063f96e6e23fa191ab8091aa3bf118f4814cdae230dfbe0bc7cf210
 pkgname:
   - name: suitesparse
   - name: suitesparse-graphblas
@@ -37,4 +37,4 @@ pkgname:
       - glibc
       - libgcc
       - libgomp
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
