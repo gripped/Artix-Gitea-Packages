@@ -1,15 +1,15 @@
 ---
-version: 2.3.3-1
+version: 2.3.5-1
 pkgbase:
   name: lib32-ocl-icd
   pkgdesc: OpenCL ICD Bindings (32-bit)
-  pkgver: 2.3.3
+  pkgver: 2.3.5
   pkgrel: 1
   url: https://github.com/OCL-dev/ocl-icd
   arch:
     - x86_64
   license:
-    - BSD
+    - BSD-2-Clause
   makedepends:
     - ruby
     - lib32-mesa
@@ -26,9 +26,9 @@ pkgbase:
   replaces:
     - lib32-libcl
   source:
-    - ocl-icd-2.3.3.tar.gz::https://github.com/OCL-dev/ocl-icd/archive/v2.3.3.tar.gz
+    - ocl-icd-2.3.5.tar.gz::https://github.com/OCL-dev/ocl-icd/archive/v2.3.5.tar.gz
   sha256sums:
-    - 8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d
+    - cdd7984425fa92d37273eee4180b5f57b047eda6dd8fd623e58498f844b09b75
 pkgname:
   - name: lib32-ocl-icd
-# generated with artixpkg 0.36.1-3-any
+# generated with artixpkg 0.39.1-1-any
