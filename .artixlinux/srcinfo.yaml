@@ -1,10 +1,10 @@
 ---
-version: 0.8.3-4
+version: 0.8.4-1
 pkgbase:
   name: appstream-glib
   pkgdesc: Objects and methods for reading and writing AppStream metadata
-  pkgver: 0.8.3
-  pkgrel: 4
+  pkgver: 0.8.4
+  pkgrel: 1
   url: https://people.freedesktop.org/~hughsient/appstream-glib/
   arch:
     - x86_64
@@ -40,11 +40,11 @@ pkgbase:
   replaces:
     - appdata-tools
   source:
-    - git+https://github.com/hughsie/appstream-glib?signed#tag=appstream_glib_0_8_3
+    - git+https://github.com/hughsie/appstream-glib?signed#tag=appstream_glib_0_8_4
   validpgpkeys:
     - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
   b2sums:
-    - a356111d3daa1b62e8f0c67b4328c937f913b96fcc066d45a27a9bf0269db7aa3c71bfe5a4d11e0272aa7857c028766413adf293f8e8fdbc263162da6df4c6d1
+    - e9504358185dfa018081ac1e32f48ae85e7f4041c5c4f9f37d97e87058c8c55bb7300805fb33c075cd1642de4c40f3bb47f9a374a720b91a77881f1b4354a955
 pkgname:
   - name: appstream-glib
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
