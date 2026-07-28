@@ -10,11 +10,11 @@ _pkgver=20210904
 _servicedir=/run/runit/service
 
 # alpm-hooks
-_commit=08a2c08bd62b978cf782c43758968745b1dc9a22
+_tag=3.0
 
 pkgname=runit
 pkgver=2.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc='a cross-platform Unix init scheme with service supervision'
 arch=('x86_64')
 url='http://smarden.org/runit/'
@@ -28,14 +28,14 @@ conflicts=('svc-manager' 'eudev-runit')
 replaces=('eudev-runit')
 source=("http://smarden.org/${pkgname}/${pkgname}-${pkgver}.tar.gz"
         "${_pkgname}-${_pkgver}.tar.gz::${_url}/archive/${_pkgver}.tar.gz"
-        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit"
+        "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_tag"
         "halt.c"
         "shutdown"
         "clearmem.patch"
         "svlogd.patch")
 b2sums=('5c3ffa1bcddcbea4e6f859602070803f793ac7b104f9e7c441d3f089af79c2783ed8b49a936b08ccc09f940600a6856dd5eb861c9c7a0b6dd4721c466a71a555'
         'a6c4d9847de044ff27790aa7289a6c3f4907699175ff99611343aff37580f8600f3a1fbd42320a38dc46df07ad151f637c031d0dcc14e1fd21162e9e85ee92f8'
-        'cc807edc8370bb00d08c141aa3c59c4d8f11cfab409accc85ba8797c5e825d8524f3048ac9e7f15e76a1bb11fabb978e0abf75ba844f65044d85b4a5b828b3d4'
+        '654b9166c85afd17ccaf4deed1803669b2a38fa36399dc83e399aa7b6261f6a58fe79609d3840cec55a84cbe2e7e5e403569412baedc274988d37ca8693bf14e'
         '4008be93260a5df13f1d1199864c9f5e724643a670d69ed3ee980f35a83cad8bd97bb09614a7847d991b4ac0434ed563a3c5af6a74297b9590ad0e5b47749219'
         'e782155bd99bd4cd049a88fa9c0bfbd1d4ef4c61669e97a6b3d482c9ab52666ad736d38ccfc4486a152fd8446ab9703f99ff5ccef9ded3ba055aa412ec18de3a'
         'af632c732ec8e3942fc27e6450cb04fc539ca4a91bc1ea8e926784922acf8455b00725a082686475e13605a1d897ce17e7fd3bb975f48ffa9619daaaf2774911'
