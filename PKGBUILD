@@ -1,13 +1,13 @@
 # Maintainer: artist for Artix Linux
 
-_ver=7.1.4
+_ver=7.1.5
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=1
+pkgrel=2
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(
@@ -58,16 +58,16 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-sha256sums=('1c63922a119675d38e3ae0f8f6ee07f15c41a786ab9ed66563749bb8c9a08e2e'
+sha256sums=('22a0196b3cbcdf34dc27b77561f4d040585fd3447edc9ab3531a1ac79e3041e7'
             'SKIP'
-            '81545d08b85442bbb0e660f0bd4b2bb237afe87d207231156c742cf588522f7b'
+            '04efe829f7b0df735f18fd8c4a0f5025fb2811012a3c8cd20b6c88350171437d'
             'SKIP')
-sha256sums_x86_64=('03f7bb93fab27c4a3619148a620d175932b6db3a97601132a37ca073c58023e6')
-b2sums=('bb2b7d559325ce4138c46ad286335725b215ea2049e784efb55547bd3ff7883e508d2ef8c2fe20048b1a3b524e30b231fd06e5e81136a9e3a626e89e0a804628'
+sha256sums_x86_64=('86d41fec5638f28a81efac7e4c315286483ee4e3313d759bd519c11ced33821e')
+b2sums=('d1dcf9b2a7ba1ed431d2b2c785ffc9a4ce729e4a004629061a73451a471316f437212004fe128157b5fc56b58bb06e60e758124a88c408e0b9124592c6a2d886'
         'SKIP'
-        '7fb742ad1f2a3388cb136fcfaa4dd08112f38b8681e14c913f9ab7ebedbb083b878c29bec3cd194a7b59dcf869f3f6fd3b5de25d74b85014e635c2a8c687b722'
+        'a4c870cb5a22b410432d0aa773b591ed7778e8ef5ac46f589a26518d0c0650d7cd2e34566cf850dc827eb0b21f19957a4e50179298ca69c3a55da9a178d942e8'
         'SKIP')
-b2sums_x86_64=('96f96efcd381c42de0dc586aaa720d9998c44307c0960574e1c178ad847f37e5b01332dcda6d7626922db92f2f51f43569e3c4a986eee7770c0eba5677ebb97c')
+b2sums_x86_64=('d4eabfe15310a4a440ccc8e73d7df07290c94d624f55ce2bbf7bc7f2a6c37f623d7d6b5d9f88f3368e5c2d07e4bcd0835c2cd120d930c662c9fe77c4e4dd2262')
 
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
@@ -281,7 +281,10 @@ _package-docs() {
     dst="${src#Documentation/}"
     dst="$builddir/Documentation/${dst#output/}"
     install -Dm644 "$src" "$dst"
-  done < <(find Documentation -name '.*' -prune -o ! -type d -print0)
+  done < <(
+    find Documentation \( -name '.*' -o -name __pycache__ \) -prune \
+      -o \! -type d -print0
+  )
 
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/share/doc"
