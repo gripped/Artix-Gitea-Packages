@@ -5,8 +5,10 @@
     <project_license>GPL-2.0</project_license>
     <name>forgejo-runner-openrc</name>
     <summary>openrc init script for forgejo-runner</summary>
+    <launchable type="service">forgejo-runner</launchable>
     <categories>
         <category>System</category>
         <category>InitScript</category>
     </categories>
+    <url type="homepage">https://artixlinux.org/</url>
 </component>

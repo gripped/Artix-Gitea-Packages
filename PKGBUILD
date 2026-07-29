@@ -1,7 +1,7 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 
 pkgname=forgejo-runner-openrc
-pkgver=20260727
+pkgver=20260729
 pkgrel=1
 pkgdesc="OpenRC forgejo-runner init script"
 arch=('any')
@@ -20,7 +20,7 @@ source=(forgejo-runner.{initd,confd}
         org.artixlinux.services.openrc.forgejo-runner.metainfo.xml)
 sha256sums=('49bb924e1b49509e4044b52068fce6a2f9fd79b52b306cfb15f208f01aa5a704'
             '3e98cbc9a5e922787ca4d83cf14672b9bb93ce26f7f49da8f8e9a64850f9ffe0'
-            'c14d300002674ec8d6f5c700b5080278b5824266d8f5f59a2f8a353fe3ed2b61')
+            'b8f15ad5da9b1fe488e99ff4d6b4d559bf45a24c9896e58784dd3481f3589599')
 
 package() {
     install -Dm755 "${srcdir}"/forgejo-runner.initd "${pkgdir}"/etc/init.d/forgejo-runner
