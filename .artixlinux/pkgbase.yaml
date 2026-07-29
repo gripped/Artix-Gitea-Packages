@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 0.74-1.1
+    version: 0.74-1.2
     packages:
-      - po4a-0.74-1.1-any.pkg.tar.zst
+      - po4a-0.74-1.2-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
