@@ -1,10 +1,10 @@
 ---
-version: 0.0.4-2
+version: 0.0.5-1
 pkgbase:
   name: python-annotated-doc
   pkgdesc: Document parameters, class attributes, return types, and variables inline, with Annotated
-  pkgver: 0.0.4
-  pkgrel: 2
+  pkgver: 0.0.5
+  pkgrel: 1
   url: https://github.com/fastapi/annotated-doc
   arch:
     - any
@@ -13,6 +13,7 @@ pkgbase:
   checkdepends:
     - python-pytest
     - python-typing_extensions
+    - python-typer
   makedepends:
     - python-build
     - python-installer
@@ -21,9 +22,9 @@ pkgbase:
   depends:
     - python
   source:
-    - annotated-doc-0.0.4.tar.gz::https://github.com/fastapi/annotated-doc/archive/0.0.4.tar.gz
+    - annotated-doc-0.0.5.tar.gz::https://github.com/fastapi/annotated-doc/archive/0.0.5.tar.gz
   sha256sums:
-    - f23767d1df005c26f25a1fc203d89b5d46b75a120227c97dd1094d1e16733336
+    - b1df640b7d5658b8d3807b42d51291ed3f24e43d4a059092c11495a3f7714fc9
 pkgname:
   - name: python-annotated-doc
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
