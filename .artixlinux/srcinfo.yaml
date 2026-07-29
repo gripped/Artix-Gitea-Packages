@@ -1,9 +1,9 @@
 ---
-version: 20260727-1
+version: 20260729-1
 pkgbase:
   name: at-runit
   pkgdesc: Runit service script for at
-  pkgver: 20260727
+  pkgver: 20260729
   pkgrel: 1
   url: https://artixlinux.org
   arch:
@@ -23,7 +23,7 @@ pkgbase:
     - init-at
   source:
     - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=3.0
-    - at.run
+    - atd.run
   sha256sums:
     - 9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee
     - 6db3f1cedfe7d89d08514be052c45a4276b172263a368d3a25c11f97bc6777bb

@@ -3,7 +3,7 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=at-runit
-pkgver=20260727
+pkgver=20260729
 pkgrel=1
 pkgdesc="Runit service script for at"
 arch=('any')
@@ -16,7 +16,7 @@ provides=('init-at')
 conflicts=('init-at')
 _alpm_tag=3.0
 source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm_tag"
-        "at.run")
+        "atd.run")
 sha256sums=('9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee'
             '6db3f1cedfe7d89d08514be052c45a4276b172263a368d3a25c11f97bc6777bb')
 
@@ -43,7 +43,7 @@ _inst_sv() {
 }
 
 package() {
-    _inst_sv 'at'
+    _inst_sv 'atd'
     cd "${srcdir}"/alpm-hooks
     make DESTDIR="${pkgdir}" install_runit_at
 }
