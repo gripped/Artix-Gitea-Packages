@@ -1,9 +1,9 @@
 ---
-version: 1.4.350.1-1
+version: 1.4.357.0-1
 pkgbase:
   name: vulkan-validation-layers
   pkgdesc: Vulkan Validation Layers
-  pkgver: 1.4.350.1
+  pkgver: 1.4.357.0
   pkgrel: 1
   url: https://www.vulkan.org/
   arch:
@@ -31,9 +31,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/KhronosGroup/Vulkan-ValidationLayers#tag=vulkan-sdk-1.4.350.1
+    - git+https://github.com/KhronosGroup/Vulkan-ValidationLayers#tag=vulkan-sdk-1.4.357.0
   b2sums:
-    - 0e85f2ea7d015979218838f4ac7ff5ba23491e559419176898223144d795ad3c724eb4586b38152f50e7c8768c9e55e270910b7252ae5d2d63e685c86b795152
+    - 16b7b5b675dc743f17291794469d37cc957e39766591088cf366511570024125cf6a91be48a5ff26b28777063b9127e79021ad05ef525244eb46b40825d08104
 pkgname:
   - name: vulkan-validation-layers
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
