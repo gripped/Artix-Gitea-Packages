@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="service">
+    <id>org.artixlinux.services.s6.chrony</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>GPL-3.0</project_license>
+    <name>chrony-s6</name>
+    <summary>s6-rc init script for chrony</summary>
+    <categories>
+        <category>System</category>
+        <category>InitScript</category>
+    </categories>
+</component>
