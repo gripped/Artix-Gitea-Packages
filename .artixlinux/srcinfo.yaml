@@ -31,4 +31,4 @@ pkgbase:
     - 6e390eb7707501a86f2e648d78fddb0d211d1e8699aa1ee201176e9f966a798b
 pkgname:
   - name: po4a
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
