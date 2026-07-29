@@ -1,26 +1,26 @@
-# Maintainer: artist for Artix Linux
+# Maintainer:  Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
+# Contributor: Allan McRae <allan@archlinux.org>
+# Contributor: Jochem Kossen <j.kossen@home.nl>
 
 pkgname=fakeroot
 epoch=1
 pkgver=1.37.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Tool for simulating superuser privileges'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
 url='https://tracker.debian.org/pkg/fakeroot'
-install=fakeroot.install
 depends=('glibc' 'filesystem' 'sed' 'util-linux' 'sh')
 makedepends=('git' 'udev' 'po4a')
 checkdepends=('sharutils')
-source=("git+https://salsa.debian.org/clint/fakeroot.git#tag=upstream/${pkgver}"
-        "https://sources.debian.org/data/main/f/fakeroot/1.37.1.1-1/wrapawk")
-sha256sums=('8b347d814185d51f459b3122681931205cbda3f5ac34ab8995e1089f81f762a3'
-            'd28fbe22bfd67c87746a39c916d4a284eda2ec26b67b181bbc7a5abd8e587ace')
+# Build from my mirror with original commit and historical tags
+# unter upstream manages to do a proper release...
+source=("fakeroot-archive::git+https://github.com/eworm-de/fakeroot.git#tag=upstream/${pkgver}-2026-01-17-8d7bc2eb")
+sha256sums=('46f44681cc939dd3f127761717830c0bfa72e1568191d4df071ae297013591e3')
 
 prepare() {
+  ln -s fakeroot-archive fakeroot
   cd "${pkgname}"
-
-  cp ../wrapawk ./
 
   autoreconf -fi
 }
