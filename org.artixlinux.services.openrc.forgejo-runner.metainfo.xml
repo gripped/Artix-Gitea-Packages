@@ -8,7 +8,7 @@
     <launchable type="service">forgejo-runner</launchable>
     <categories>
         <category>System</category>
-        <category>InitScript</category>
+        <category>ConsoleOnly</category>
     </categories>
     <url type="homepage">https://artixlinux.org/</url>
 </component>
