@@ -7,7 +7,7 @@
 
 pkgname=po4a
 pkgver=0.74
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Tools for helping translation of documentation"
 arch=('any')
 url="https://po4a.org/"
