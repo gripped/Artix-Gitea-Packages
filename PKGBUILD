@@ -1,0 +1,38 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=appstream-generator
+pkgver=0.10.2
+pkgrel=2
+pkgdesc='A fast AppStream metadata generator'
+arch=(x86_64)
+url='https://github.com/ximion/appstream-generator'
+license=(LGPL-3.0-only)
+depends=(appstream
+         curl
+         glib2
+         glibc
+         libarchive
+         libfyaml
+         libgcc
+         libstdc++
+         libxml2
+         lmdb
+         onetbb
+         optipng)
+makedepends=(catch2
+             docbook-xsl
+             inja
+             meson)
+source=(https://github.com/ximion/appstream-generator/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
+sha256sums=('cfafd3de39e124208123591e83f3165e40196edb9aa6acc536dc2cea5662ec81')
+
+build() {
+  artix-meson $pkgname-$pkgver build \
+    -D download-js=false
+  meson compile -C build
+}
+
+package() {
+  meson install -C build --destdir="$pkgdir"
+}
