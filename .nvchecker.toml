@@ -1,3 +1,4 @@
 [skalibs]
 source = "git"
 git = "https://git.skarnet.org/cgit/skalibs/"
+prefix = "v"
