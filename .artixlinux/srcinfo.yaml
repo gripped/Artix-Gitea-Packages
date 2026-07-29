@@ -1,10 +1,10 @@
 ---
-version: 7.1.5.rt1.artix1-1
+version: 7.1.5.rt1.artix1-3
 pkgbase:
   name: linux-rt
   pkgdesc: Linux RT
   pkgver: 7.1.5.rt1.artix1
-  pkgrel: 1
+  pkgrel: 3
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt
   arch:
     - x86_64
