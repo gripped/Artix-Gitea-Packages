@@ -1,15 +1,15 @@
 ---
-version: 610.43.03-3
+version: 610.43.03-5
 pkgbase:
   name: nvidia-utils
   pkgver: 610.43.03
-  pkgrel: 3
-  url: http://www.nvidia.com/
+  pkgrel: 5
+  url: https://www.nvidia.com/
   arch:
     - aarch64
     - x86_64
   license:
-    - custom
+    - LicenseRef-NVIDIA-Driver-License-Agreement
   options:
     - '!strip'
   source:

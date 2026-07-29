@@ -7,10 +7,10 @@
 pkgbase=nvidia-utils
 pkgname=('nvidia-utils' 'opencl-nvidia' 'nvidia-open-dkms')
 pkgver=610.43.03
-pkgrel=3
+pkgrel=5
 arch=('aarch64' 'x86_64')
-url="http://www.nvidia.com/"
-license=('custom')
+url="https://www.nvidia.com/"
+license=('LicenseRef-NVIDIA-Driver-License-Agreement')
 options=('!strip')
 _pkg_open="NVIDIA-kernel-module-source-${pkgver}"
 source_aarch64=("https://download.nvidia.com/XFree86/Linux-aarch64/${pkgver}/NVIDIA-Linux-aarch64-${pkgver}.run")
@@ -256,6 +256,7 @@ package_nvidia-utils() {
     install -Dm755 systemd/system-sleep/nvidia "${pkgdir}/usr/lib/elogind/system-sleep/nvidia"
     install -Dm755 systemd/nvidia-sleep.sh "${pkgdir}/usr/bin/nvidia-sleep.sh"
     install -Dm755 nvidia-powerd "${pkgdir}/usr/bin/nvidia-powerd"
+    install -Dm644 dlsnetparams.csv "${pkgdir}/usr/share/nvidia/nvidia-powerd/dlsnetparams.csv"
     install -Dm644 nvidia-dbus.conf "${pkgdir}/usr/share/dbus-1/system.d/nvidia-dbus.conf"
 
     # distro specific files must be installed in /usr/share/X11/xorg.conf.d
