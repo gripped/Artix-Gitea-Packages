@@ -54,8 +54,8 @@ repos:
       - konform-browser-1:153.0.0.100b1-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 1:140.13.0.100-1
+    version: 1:140.13.0.101-1
     packages:
-      - konform-browser-1:140.13.0.100-1-x86_64.pkg.tar.zst
+      - konform-browser-1:140.13.0.101-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
