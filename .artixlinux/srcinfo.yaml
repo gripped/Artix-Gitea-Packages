@@ -1,9 +1,9 @@
 ---
-version: 1.16.7-1
+version: 1.16.12-1
 pkgbase:
   name: liferea
   pkgdesc: A desktop news aggregator for online news feeds and weblogs
-  pkgver: 1.16.7
+  pkgver: 1.16.12
   pkgrel: 1
   url: https://lzone.de/liferea
   arch:
@@ -37,7 +37,7 @@ pkgbase:
     - zlib
     - python
     - at-spi2-core
-    - gcc-libs
+    - libgcc
     - python-cairo
     - harfbuzz
     - libnotify
@@ -48,9 +48,9 @@ pkgbase:
     - 'gst-plugins-bad: for media player plugin support'
     - 'gst-libav: for media player plugin support'
   source:
-    - https://github.com/lwindolf/liferea/releases/download/v1.16.7/liferea-1.16.7.tar.bz2
+    - https://github.com/lwindolf/liferea/releases/download/v1.16.12/liferea-1.16.12.tar.bz2
   sha256sums:
-    - e7bd66c44aa73d5bee27fafc854e1baed2618953f16c138f5e158bdd75a65132
+    - f540d8bd4b8885acf7d6f82adfb285b6c7c7dc1d88ceccf331a6bf55237c256f
 pkgname:
   - name: liferea
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
