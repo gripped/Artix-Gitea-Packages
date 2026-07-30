@@ -5,5 +5,6 @@ set -e
 envdir="${XDG_RUNTIME_DIR}/runit/env"
 addr="unix:path=${XDG_RUNTIME_DIR}/bus"
 
+mkdir -p "$envdir"
 echo "$addr" > "$envdir/DBUS_SESSION_BUS_ADDRESS"
 exec dbus-daemon --session --nofork --nopidfile --address="$addr"
