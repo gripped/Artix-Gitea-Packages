@@ -19,10 +19,10 @@ _user_service_note() {
     cat <<'EOF'
 
 A per-user session bus service is now provided as a template at
-/etc/runit/user/sv/dbus. To enable it under a userspawn-runit per-user
-runsvdir (~/.config/service):
+/etc/runit/user/sv/dbus. To enable it, install 'userspawn-runit' first,
+then copy the template to your user service directory:
 
-    ln -s /etc/runit/user/sv/dbus ~/.config/service/dbus
+    cp -a /etc/runit/user/sv/dbus ~/.config/service/dbus
 
 The service writes DBUS_SESSION_BUS_ADDRESS to a chpst(1) envdir at
 ${XDG_RUNTIME_DIR}/runit/env, so other per-user services can consume it with:
