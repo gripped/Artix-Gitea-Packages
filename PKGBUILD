@@ -5,7 +5,7 @@
 # Contributor: Mathias Rohnstock <linksoft@gmx.de>
 
 pkgname=libmicrohttpd
-pkgver=1.0.8
+pkgver=1.0.9
 pkgrel=1
 pkgdesc='a small C library that is supposed to make it easy to run an HTTP server as part of another application.'
 arch=('x86_64')
@@ -17,7 +17,7 @@ provides=('libmicrohttpd.so')
 validpgpkeys=('EA812DBEFA5A7EF17DA8F2C1460A317C3326D2AE'  # Evgeny Grin (Karlson2k) <k2k@yandex.ru>
               'D8423BCB326C7907033929C7939E6BE1E29FC3CC') # Christian Grothoff <christian.grothoff@bfh.ch>
 source=("https://ftp.gnu.org/gnu/libmicrohttpd/$pkgname-$pkgver.tar.gz"{,.sig})
-sha256sums=('0763970a0e39f8f382123366e3cf5d03f70aa1e2208d3101e84da3e2cd674703'
+sha256sums=('6e9adc446b08083ec03d40317fb66ca6f2e03e4f6170aef33a6e59bb08db2012'
             'SKIP')
 
 prepare() {
