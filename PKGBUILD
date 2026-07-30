@@ -14,8 +14,8 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-#pkgver=153.0.0.100b1
-pkgver=140.13.0.101
+pkgver=153.0.0.100b2
+#pkgver=140.13.0.101
 
 pkgrel=1
 _ffbuild=1
