@@ -16,7 +16,7 @@ _commit=cce58829fcb5b466563749ffd7038719be0c3328
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit"
         "org.artixlinux.services.s6.chrony.metainfo.xml")
 sha256sums=('40b264fb9b639dfd215ad4c1d4c2bcfe670c0b66fbc6b9b13182a559a2412c58'
-            '61f5b769338abe8aa253da1502418188a8d61943e755bd97b588e55b1639f0c0')
+            'e0763a9c2105d2cf3cc36e7b41f72b92eb394b5f303019b0aada87c4b03c0b62')
 
 package() {
     cd "${srcdir}"/s6-services
