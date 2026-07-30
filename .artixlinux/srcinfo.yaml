@@ -1,10 +1,10 @@
 ---
-version: 0.18.5.1-1
+version: 0.18.5.2-1
 pkgbase:
   name: monero-gui
   pkgdesc:
     Qt GUI wallet for Monero: the secure, private, untraceable peer-to-peer currency
-  pkgver: 0.18.5.1
+  pkgver: 0.18.5.2
   pkgrel: 1
   url: https://getmonero.org/
   arch:
@@ -42,7 +42,7 @@ pkgbase:
     - qt5-svg
     - qt5-xmlpatterns
   source:
-    - git+https://github.com/monero-project/monero-gui?signed#tag=v0.18.5.1
+    - git+https://github.com/monero-project/monero-gui?signed#tag=v0.18.5.2
     - git+https://github.com/monero-project/monero
     - git+https://github.com/dlbeer/quirc.git
     - git+https://github.com/miniupnp/miniupnp.git
@@ -54,7 +54,7 @@ pkgbase:
     - 8777AB8F778EE89487A2F8E7F4ACA0183641E010
     - 487277A8BD0A209C16B700F3C64552D877C32479
   sha512sums:
-    - 684504b169d65970e9d1b2c37c41347b7dfb2e981d9ba388a7dabb7924f4c99006338d5a43b853b0063962dd73a1ea5a307392721ea135ff4e509189db9ea722
+    - 1ae447929d031824d223149b198c620c21463469462bc41a880b718cf9945923c983e1287f5ebbca9ca2632afb7f0f8f7cd259b115f9996058c8dab8bbe6504b
     - SKIP
     - SKIP
     - SKIP
@@ -64,4 +64,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: monero-gui
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
