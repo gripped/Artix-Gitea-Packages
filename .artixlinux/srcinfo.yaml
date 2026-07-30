@@ -1,9 +1,9 @@
 ---
-version: 20260729-1
+version: 20260730-1
 pkgbase:
   name: chrony-s6
   pkgdesc: s6-rc service scripts for chrony
-  pkgver: 20260729
+  pkgver: 20260730
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/s6-services
   arch:

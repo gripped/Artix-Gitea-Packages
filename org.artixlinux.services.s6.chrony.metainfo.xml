@@ -5,8 +5,10 @@
     <project_license>GPL-3.0</project_license>
     <name>chrony-s6</name>
     <summary>s6-rc init script for chrony</summary>
+    <launchable type="service">chronyd</launchable>
     <categories>
         <category>System</category>
-        <category>InitScript</category>
+        <category>ConsoleOnly</category>
     </categories>
+    <url type="homepage">https://artixlinux.org/</url>
 </component>

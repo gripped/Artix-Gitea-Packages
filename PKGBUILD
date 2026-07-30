@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: Nathan <ndowens@artixlinux.org>
 pkgname=chrony-s6
-pkgver=20260729
+pkgver=20260730
 pkgrel=1
 pkgdesc="s6-rc service scripts for chrony"
 arch=('any')
