@@ -1,0 +1,53 @@
+---
+version: 46.1-3
+pkgbase:
+  name: gnome-disk-utility
+  pkgdesc: Disk Management Utility for GNOME
+  pkgver: 46.1
+  pkgrel: 3
+  url: https://apps.gnome.org/DiskUtility/
+  arch:
+    - x86_64
+  groups:
+    - gnome
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - appstream
+    - docbook-xsl
+    - git
+    - glib2-devel
+    - meson
+    - elogind
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libcanberra
+    - libdvdread
+    - libgcc
+    - libhandy
+    - libnotify
+    - libpwquality
+    - libsecret
+    - pango
+    - parted
+    - libelogind
+    - udisks2
+    - xz
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-disk-utility.git#tag=46.1
+    - 0001-Raise-existing-window-instead-of-opening-new-one-on-.patch
+    - 0002-Set-prgname-to-application-ID.patch
+  b2sums:
+    - 4eabd5a5bfd62289700228ed36b4ee49a73474d307da8f82216c65f4efec9bbc4f0f51abd74a1eacc466ca7488444ffd92fd98523a0631bc800cf4ff40f617ae
+    - 0cdc916b1d1bfdc44f952c8ae18b1e200074ec32b3df96adde5ac063eb88267350e4c997e603258e90a3d8b126f09250f0adc40102637b0595cc2e90b6710917
+    - 51544b3cb2663f0ca0fe71a654c0e9952e31a0f17bf82d7e17e1e27a1290743436961ce322fb969cab0ec792bdca0cd9d88570b6f7475a20de3931edab6c56ef
+pkgname:
+  - name: gnome-disk-utility
+# generated with artixpkg 0.39.1-1-any
