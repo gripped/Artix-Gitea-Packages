@@ -11,8 +11,6 @@ makedepends=(
     'git'
 )
 depends=(
-    'dbus'
-    'dbus-runit'
     'runit'
     'sh'
     'userspawn'
