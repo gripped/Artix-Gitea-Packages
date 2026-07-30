@@ -1,9 +1,9 @@
 ---
-version: 20260727-1
+version: 20260730-1
 pkgbase:
   name: dbus-runit
   pkgdesc: runit service scripts for dbus
-  pkgver: 20260727
+  pkgver: 20260730
   pkgrel: 1
   url: https://artixlinux.org
   install: dbus-runit.install
@@ -16,6 +16,8 @@ pkgbase:
   depends:
     - dbus
     - runit
+  optdepends:
+    - 'userspawn-runit: per-user runsvdir for the session bus template'
   provides:
     - dbus-runscripts
     - init-dbus

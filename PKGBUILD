@@ -2,7 +2,7 @@
 # Contributor: Muhammad Herdiansyah <koni@artixlinux.org>
 
 pkgname=dbus-runit
-pkgver=20260727
+pkgver=20260730
 pkgrel=1
 pkgdesc='runit service scripts for dbus'
 arch=('any')

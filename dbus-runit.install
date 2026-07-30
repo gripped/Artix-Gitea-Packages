@@ -9,7 +9,7 @@ post_upgrade() {
         echo -e '\033[31mDBUS-RUNIT\033[0m: The service now also provides a xinitrc script'
         echo -e '\033[31mDBUS-RUNIT\033[0m: The service now has a log service, see svlogd(8)'
     fi
-    if [ ${2%-*} -lt 20260527 ]; then
+    if [ ${2%-*} -lt 20260730 ]; then
         _user_service_note
         _xinitrc_note
     fi
