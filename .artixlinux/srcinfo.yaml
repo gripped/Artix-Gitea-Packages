@@ -1,9 +1,9 @@
 ---
-version: 20260527-1
+version: 20260730-1
 pkgbase:
   name: userspawn-runit
   pkgdesc: Launch anything, upon any user login
-  pkgver: 20260527
+  pkgver: 20260730
   pkgrel: 1
   url: https://github.com/Mayware/userspawn
   install: userspawn-runit.install
@@ -14,8 +14,6 @@ pkgbase:
   makedepends:
     - git
   depends:
-    - dbus
-    - dbus-runit
     - runit
     - sh
     - userspawn
@@ -34,4 +32,4 @@ pkgbase:
     - 60ad911bec48c174eba7f976b7221bef78d6cf5bd1eb09030be44b4debf2124e
 pkgname:
   - name: userspawn-runit
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any

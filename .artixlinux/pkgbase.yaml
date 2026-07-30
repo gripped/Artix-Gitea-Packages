@@ -2,11 +2,11 @@
 team: system
 actions:
   addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -18,9 +18,9 @@ repos:
     packages: []
     debug: []
   system:
-    version: 20260527-1
+    version: 20260730-1
     packages:
-      - userspawn-runit-20260527-1-any.pkg.tar.zst
+      - userspawn-runit-20260730-1-any.pkg.tar.zst
     debug: []
   world-goblins:
     version: null

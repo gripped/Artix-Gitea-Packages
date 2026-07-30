@@ -1,7 +1,7 @@
 # Maintainer: aartoni <aartoni@artixlinux.org>
 
 pkgname=userspawn-runit
-pkgver=20260527
+pkgver=20260730
 pkgrel=1
 pkgdesc='Launch anything, upon any user login'
 arch=('any')
