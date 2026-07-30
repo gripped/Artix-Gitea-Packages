@@ -9,6 +9,7 @@ arch=('any')
 url='https://artixlinux.org'
 license=('BSD')
 depends=('dbus' 'runit')
+optdepends=('userspawn-runit: per-user runsvdir for the session bus template')
 makedepends=('git')
 provides=('dbus-runscripts' 'init-dbus')
 conflicts=('init-dbus')
