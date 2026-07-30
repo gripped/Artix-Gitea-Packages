@@ -1,10 +1,10 @@
 ---
-version: 22.1.8-1
+version: 22.1.8-2
 pkgbase:
   name: libclc
   pkgdesc: Library requirements of the OpenCL C programming language
   pkgver: 22.1.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://libclc.llvm.org/
   arch:
     - any
@@ -20,6 +20,7 @@ pkgbase:
   source:
     - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz
     - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz.sig
+    - 0001-libclc-mark-clc-flush-denormal-if-not-supported-as-s.patch
   validpgpkeys:
     - 474E22316ABF4785A88C6E8EA2C794A986419D8A
     - D574BD5D1D0E98895E3BF90044F2485E45D59042
@@ -28,6 +29,7 @@ pkgbase:
   sha256sums:
     - 922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888
     - SKIP
+    - a4f8dee6d2d9ee35576b6f05b93e673b524e366d0115c1e051c7e809a7a0ffff
 pkgname:
   - name: libclc
 # generated with artixpkg 0.38.5-1-any
