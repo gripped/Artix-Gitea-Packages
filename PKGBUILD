@@ -23,16 +23,9 @@ makedepends=(
   qt6-tools
   libudev
 )
-source=($url/-/archive/v$pkgver/$pkgname-v$pkgver.tar.gz
-        qastools-1_4_0-fix-manpage-reproducibility.patch)
-sha512sums=('cd34dc931e109c3bb1e5c103c1e15191f013cddd74ae7c72aee141de394c72908b34081639b3cae833a3c5724f6b619b4be5b201f50720a54a4b51fe7ad629db'
-            '2610b60f0a2c99cd55d56b98a21da29672785e74b0409f226d673ee7b4cd9980e87eb9e771061645a5ed3b83a7458e66e1e1393723c66961d99472c8102c0935')
-b2sums=('bc95ad666b5fa976c3bd3a47842e6dfc17f49821a47ffe27564becc95c423812dae38c167745551915ff4a6c8a1e6252fb9abce57d4f782fdd87e68e63aef227'
-        'cdd8dbafca897322c594d9ba8ba802d339f6c87d521f10f0dd1f0cf294913dc9ad674d66fab064a99749b4fe830193114a17b27459dbb7c499e44f52c26db8d8')
-
-prepare() {
-  patch -Np 1 -d $pkgname-v$pkgver -i ../qastools-1_4_0-fix-manpage-reproducibility.patch
-}
+source=($url/-/archive/v$pkgver/$pkgname-v$pkgver.tar.gz)
+sha512sums=('cd34dc931e109c3bb1e5c103c1e15191f013cddd74ae7c72aee141de394c72908b34081639b3cae833a3c5724f6b619b4be5b201f50720a54a4b51fe7ad629db')
+b2sums=('bc95ad666b5fa976c3bd3a47842e6dfc17f49821a47ffe27564becc95c423812dae38c167745551915ff4a6c8a1e6252fb9abce57d4f782fdd87e68e63aef227')
 
 build() {
   local cmake_options=(
