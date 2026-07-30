@@ -1,9 +1,9 @@
 ---
-version: 0.14.3-1
+version: 0.15.0-1
 pkgbase:
   name: multipath-tools
   pkgdesc: Multipath tools for Linux (including kpartx)
-  pkgver: 0.14.3
+  pkgver: 0.15.0
   pkgrel: 1
   url: https://github.com/opensvc/multipath-tools
   arch:
@@ -18,17 +18,24 @@ pkgbase:
     - udev
   depends:
     - glibc
-    - gcc-libs
-    - libaio
     - device-mapper
+    - libdevmapper.so
     - json-c
+    - libjson-c.so
+    - libaio
+    - libaio.so
+    - libgcc
+    - libgcc_s.so
     - liburcu
     - libudev
+    - libudev.so
+    - libudev.so
     - util-linux-libs
+    - libmount.so
   source:
-    - multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=0.14.3
+    - multipath-tools::git+https://github.com/opensvc/multipath-tools#tag=0.15.0
   sha256sums:
-    - f7489066879598c7d8c4af5f168dc85fbce5b92b9d1c96a7c815415443fa32af
+    - 8089da3cf93d8c1d3bc5b9337db0f46e2545e31583b45df1d5640b29abf5fe65
 pkgname:
   - name: multipath-tools
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.39.1-1-any
