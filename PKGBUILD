@@ -3,7 +3,7 @@
 pkgname=helium-browser
 pkgver=0.15.1.1
 _hlmver="${pkgver%.*}"
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
 arch=('x86_64')
 url="https://github.com/imputnet/helium"
@@ -11,7 +11,7 @@ license=('GPL-3.0-only')
 depends=('gtk3' 'nss' 'alsa-lib' 'xdg-utils' 'libxss' 'libcups' 'libgcrypt'
          'ttf-liberation' 'udev' 'dbus' 'libpulse' 'pciutils' 'libva'
          'libffi' 'desktop-file-utils' 'hicolor-icon-theme')
-makedepends=('ninja' 'nodejs' 'python-pillow' 'lld' 'gperf' 'git')
+makedepends=('ninja' 'nodejs' 'python-pillow' 'lld' 'gperf' 'mold')
 optdepends=('pipewire: WebRTC desktop sharing under Wayland'
             'kdialog: support for native dialogs in Plasma'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
