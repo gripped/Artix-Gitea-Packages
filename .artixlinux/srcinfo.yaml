@@ -1,0 +1,30 @@
+---
+version: 2.0.1-1
+pkgbase:
+  name: python-feedparser-sgmllib
+  pkgdesc: Provides sgmllib from Python 2
+  pkgver: 2.0.1
+  pkgrel: 1
+  url: https://github.com/python-syndication/feedparser-sgmllib
+  arch:
+    - any
+  license:
+    - PSF-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-poetry-core
+  depends:
+    - python
+  source:
+    - python-feedparser-sgmllib::git+https://github.com/python-syndication/feedparser-sgmllib#tag=v2.0.1
+  sha512sums:
+    - 4e3c34389e5229107499f6f80c766fbecf95810f3fb67a024761acc617a25ba23410bb8ecbb914164bf17ccadacdf40c4cc17dd3870386b55228ecef8de564cb
+  b2sums:
+    - 3bc0e668c8671d86ec661d6335f0e232c0d91cdb8d9781270bc3ea25c6fce4360a8d8f63b04e09f8f51e22219f6b42dbcac552fa2b5a8c7dc18b9d9fee26a381
+pkgname:
+  - name: python-feedparser-sgmllib
+# generated with artixpkg 0.38.5-1-any
