@@ -1,16 +1,18 @@
 ---
-version: 1:5.3.1-2
+version: 1:5.3.1-3
 pkgbase:
   name: jemalloc
   pkgdesc: General-purpose scalable concurrent malloc implementation
   pkgver: 5.3.1
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://jemalloc.net/
   arch:
     - x86_64
   license:
     - BSD-2-Clause
+  makedepends:
+    - git
   depends:
     - glibc
     - libgcc
@@ -22,9 +24,9 @@ pkgbase:
   provides:
     - libjemalloc.so
   source:
-    - https://github.com/jemalloc/jemalloc/releases/download/5.3.1/jemalloc-5.3.1.tar.bz2
+    - git+https://github.com/jemalloc/jemalloc.git#tag=5.3.1
   sha256sums:
-    - 3826bc80232f22ed5c4662f3034f799ca316e819103bdc7bb99018a421706f92
+    - a398d44ca763f5836313a67a54d3eb5ed89c99cc95d7d675c9da67df9b2059e3
 pkgname:
   - name: jemalloc
 # generated with artixpkg 0.38.5-1-any
