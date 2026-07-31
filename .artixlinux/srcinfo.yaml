@@ -1,10 +1,10 @@
 ---
-version: 20260730-1
+version: 20260730-1.1
 pkgbase:
   name: dbus-runit
   pkgdesc: runit service scripts for dbus
   pkgver: 20260730
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://artixlinux.org
   install: dbus-runit.install
   arch:

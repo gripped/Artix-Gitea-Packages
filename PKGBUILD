@@ -3,7 +3,7 @@
 
 pkgname=dbus-runit
 pkgver=20260730
-pkgrel=1
+pkgrel=1.1
 pkgdesc='runit service scripts for dbus'
 arch=('any')
 url='https://artixlinux.org'
