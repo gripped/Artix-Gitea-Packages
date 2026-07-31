@@ -23,7 +23,6 @@ depends=(
   libev
   libuv
   openssl
-  systemd-libs
   zlib
 )
 makedepends=(cmake)
@@ -72,7 +71,7 @@ build() {
     -D LWS_WITH_LIBUV=ON
     -D LWS_WITH_LWSAC=ON
     -D LWS_WITH_RANGES=ON
-    -D LWS_WITH_SDEVENT=ON
+    -D LWS_WITH_SDEVENT=OFF
     -D LWS_WITH_SOCKS5=ON
     -D LWS_WITH_STATIC=OFF
     -D LWS_WITH_THREADPOOL=ON
