@@ -1,9 +1,9 @@
 ---
-version: 3.3.0-1
+version: 3.3.1-1
 pkgbase:
   name: qbs
   pkgdesc: Cross platform build tool
-  pkgver: 3.3.0
+  pkgver: 3.3.1
   pkgrel: 1
   url: https://wiki.qt.io/Qbs
   arch:
@@ -20,11 +20,11 @@ pkgbase:
     - qt6-base
     - qt6-5compat
   source:
-    - git+https://code.qt.io/qbs/qbs#tag=v3.3.0
+    - git+https://code.qt.io/qbs/qbs#tag=v3.3.1
     - qt-6.10.patch
   sha256sums:
-    - 898d290b85e45e18821f1550809eb1b8c672151568251f077dcbb6fb86389e6f
+    - a8da288699897592fd376b06fda8d2802d6dae2325b33cfe89603221b7ae276a
     - 463fc358c4693048b7db61ad5f6ba2801c54e1ead5daa4f8fc4ca8d70558088b
 pkgname:
   - name: qbs
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
