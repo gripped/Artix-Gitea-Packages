@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,8 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 6.2.108-1
+    packages:
+      - pdfjs-6.2.108-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 6.0.227-1
