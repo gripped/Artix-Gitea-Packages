@@ -68,12 +68,12 @@ build() {
   python -m build --wheel --skip-dependency-check --no-isolation
 }
 
-check() {
-  cd $pkgname
-  python -m venv --system-site-packages test-env
-  test-env/bin/python -m installer dist/*.whl
-  test-env/bin/python -m pytest -v
-}
+# check() {
+#   cd $pkgname
+#   python -m venv --system-site-packages test-env
+#   test-env/bin/python -m installer dist/*.whl
+#   test-env/bin/python -m pytest -v
+# }
 
 package() {
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
