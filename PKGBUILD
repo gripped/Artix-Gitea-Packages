@@ -2,7 +2,7 @@
 # Contributor: Daniel Wallace <danielwallace at gtmanfred dot com>
 
 pkgname=python-cmd2
-pkgver=3.3.0
+pkgver=3.5.0
 pkgrel=1
 pkgdesc="A tool for building interactive command line apps"
 arch=('any')
@@ -12,7 +12,7 @@ depends=('python-pyperclip' 'python-rich' 'python-rich-argparse')
 makedepends=('git' 'python-setuptools-scm' 'python-build' 'python-installer' 'python-wheel')
 checkdepends=('python-pytest' 'python-pytest-mock' 'vi')
 source=("git+https://github.com/python-cmd2/cmd2.git#tag=$pkgver")
-sha512sums=('41c28511c325137d70eee753f897860fc3f69af81eeaf8e4266e2452123ae39e02419ad16320bdbddf0a9fcf1e6430818c2a6937a94a3732f0bb1456d78dc435')
+sha512sums=('6dffe562a995ee25dd6610a687dde36d02985bab91a2879277790b69aaa1fa96999c9fb0d12e2506c0a99b8795718d65a0dd095cbf1eb522d8afdaf190237363')
 
 prepare() {
   cd cmd2
@@ -32,8 +32,7 @@ build() {
 
 check() {
   cd cmd2
-  PYTHONPATH="$PWD/cmd2" pytest --override-ini="addopts=" \
-    --deselect tests/test_rich_utils.py::test_from_ansi_wrapper
+  PYTHONPATH="$PWD/cmd2" pytest --override-ini="addopts="
 }
 
 package() {
