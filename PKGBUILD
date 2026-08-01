@@ -14,7 +14,7 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-pkgver=153.0.0.100b2
+pkgver=153.0.0.100b3
 #pkgver=140.13.0.101
 
 pkgrel=1
@@ -146,7 +146,7 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('9f89ad9a783116c261f6cd1c7e4f28d097b267961493640bbfd689103e27b612'
+sha256sums=('6c758e741be825b0832aab22e36d86a13fa918d6bd1894d03b7d78e85c78fe7c'
             'dbe3d9dedcb118a4b623688c559c6f2de280ea3be171e3ff256504cc01626cb5'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
@@ -407,10 +407,13 @@ version=1.0
 about="Konform Browser"
 
 [Preferences]
-app.distributor="Konform Konsortium"
+app.distributor="Artix Linux"
 app.distributor.channel=${_pkgname}
-app.partner.konform=${_pkgname}
+app.partner.artixlinux=artixlinux
 END
+
+  # Link up system ONNX runtime
+  ln -srv "$pkgdir/usr/lib/libonnxruntime.so" -t "$appdir"
 
   for i in 16 32 48 64 128; do
     install -Dvm644 browser/branding/vendor/default$i.png \
