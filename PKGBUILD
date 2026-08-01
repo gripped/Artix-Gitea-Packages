@@ -413,7 +413,7 @@ app.partner.artixlinux=artixlinux
 END
 
   # Link up system ONNX runtime
-  ln -srv "$pkgdir/usr/lib/libonnxruntime.so" -t "$appdir"
+  ln -sv "/usr/lib/libonnxruntime.so" -t "${pkgdir}/usr/lib/${__pkgname}/"
 
   for i in 16 32 48 64 128; do
     install -Dvm644 browser/branding/vendor/default$i.png \
