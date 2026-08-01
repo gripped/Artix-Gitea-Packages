@@ -1,8 +1,8 @@
 ---
-version: 8.3.32-1
+version: 8.3.33-1
 pkgbase:
   name: php-legacy
-  pkgver: 8.3.32
+  pkgver: 8.3.33
   pkgrel: 1
   url: https://www.php.net/
   arch:
@@ -37,8 +37,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://php.net/distributions/php-8.3.32.tar.xz
-    - https://php.net/distributions/php-8.3.32.tar.xz.asc
+    - https://php.net/distributions/php-8.3.33.tar.xz
+    - https://php.net/distributions/php-8.3.33.tar.xz.asc
     - apache.conf
     - php-fpm.tmpfiles
     - apache.patch
@@ -50,7 +50,7 @@ pkgbase:
     - AFD8691FDAEDF03BDF6E460563F15A9B715376CA
     - C28D937575603EB4ABB725861C0779DC5C0A9DE4
   sha256sums:
-    - 8698ec1f9402fa5e5e872ae3d0916b62f5f27503c1fbfc9cc3521e113355ea92
+    - e293ed620cec74651bb4a071317892a478aa6840fab22db45c72d77cd42f9676
     - SKIP
     - 4a2add00d93fa991ccdf6356090264c1059c79935642afff6e8d4a2107fa037e
     - f3236ca866095d5e42e51e3fa600082ccd0afcfb7f1aecbeb286ef9d4f0dd564
@@ -70,7 +70,7 @@ pkgname:
       - oniguruma
     provides:
       - php-interpreter=8.3
-      - php-legacy-intl=8.3.32
+      - php-legacy-intl=8.3.33
     conflicts:
       - php-legacy-intl
     replaces:
@@ -196,4 +196,4 @@ pkgname:
       - libxslt
     provides:
       - php-xsl-interpreter=8.3
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
