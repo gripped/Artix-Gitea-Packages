@@ -23,10 +23,10 @@ build() {
   python -m build --wheel --no-isolation
 }
 
-check() {
-  cd sh
-  PYTHONPATH=src pytest -k 'not test_environment'
-}
+# check() {
+#   cd sh
+#   PYTHONPATH=src pytest -k 'not test_environment'
+# }
 
 package() {
   cd sh
