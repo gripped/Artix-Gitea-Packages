@@ -1,0 +1,45 @@
+---
+version: 3.7.10-3
+pkgbase:
+  name: zeroc-ice
+  pkgdesc: An object-oriented middleware that provides RPC functionality
+  pkgver: 3.7.10
+  pkgrel: 3
+  url: https://zeroc.com
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+    - LicenseRef-ICE
+  makedepends:
+    - java-environment=11
+  depends:
+    - mcpp
+    - lmdb
+    - libedit
+    - expat
+    - bzip2
+    - openssl
+    - libxcrypt
+    - libstdc++
+    - libgcc
+    - glibc
+  source:
+    - ice-3.7.10.tar.gz::https://github.com/zeroc-ice/ice/archive/v3.7.10.tar.gz
+    - ice-packaging-3.7.10.tar.gz::https://github.com/zeroc-ice/ice-packaging/archive/v3.7.10.tar.gz
+    - zeroc-ice.sysusers
+  sha256sums:
+    - b90e9015ca9124a9eadfdfc49c5fba24d3550c547f166f3c9b2b5914c00fb1df
+    - a7d4b8f3732062de769e53531ed7b34765c9f95f60c294a09fcce65edf24703d
+    - 6815c1bbc07d68cdc2a5ff1d479617ca02307f17455636a6db20ccb89dc5ab01
+pkgname:
+  - name: zeroc-ice
+    backup:
+      - etc/glacier2router.conf
+      - etc/icegridnode.conf
+      - etc/icegridregistry.conf
+  - name: zeroc-ice-java
+    depends:
+      - zeroc-ice
+      - java-environment
+# generated with artixpkg 0.38.5-1-any
