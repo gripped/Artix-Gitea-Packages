@@ -1,9 +1,9 @@
 ---
-version: 20250501-1
+version: 20260801-1
 pkgbase:
   name: papirus-icon-theme
   pkgdesc: Papirus icon theme
-  pkgver: 20250501
+  pkgver: 20260801
   pkgrel: 1
   url: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/20250501/papirus-icon-theme-20250501.tar.gz
+    - https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/20260801/papirus-icon-theme-20260801.tar.gz
   sha512sums:
-    - 0eca50c296a548733d9cb97f0d9b62cac99d6b1bb473bf016e33188986334b9fc84bc0682e9a6e5339d3d247f2cfefd24a1de3f901de9ffbc9e8a7ad1b5d39f8
+    - b26363aef40f0a51344197c72576a08a0e66b63bad8d99ec983842258464c0649e9d72459f3dfcb2589d0209bf8103281be76db903fb305dbf5e14e79d0844ce
 pkgname:
   - name: papirus-icon-theme
-# generated with artixpkg 0.36.0-2-any
+# generated with artixpkg 0.39.1-1-any
