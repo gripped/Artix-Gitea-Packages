@@ -1,10 +1,10 @@
 ---
-version: 2.20.1-4.1
+version: 2.20.1-5
 pkgbase:
   name: fakechroot
   pkgdesc: Gives a fake chroot environment
   pkgver: 2.20.1
-  pkgrel: 4.1
+  pkgrel: 5
   url: https://github.com/dex4er/fakechroot/wiki
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - 6a176a6a123efe5ff554b22dc0492a819f71581bdc38bc14a45ff61f163b8f2c6536bd1d559e2554bb08d4b7a59b87889bc99315995bfc8e2da1b28cf92c8def
 pkgname:
   - name: fakechroot
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any

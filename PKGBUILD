@@ -4,7 +4,7 @@
 
 pkgname=fakechroot
 pkgver=2.20.1
-pkgrel=4.1
+pkgrel=5
 pkgdesc="Gives a fake chroot environment"
 arch=('x86_64')
 url="https://github.com/dex4er/fakechroot/wiki"
