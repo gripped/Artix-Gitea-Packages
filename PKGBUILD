@@ -5,8 +5,8 @@
 
 _pkgbase=systemd
 
-_alpm=2.4.5
-_tag='261'
+_alpm=3.0
+_tag='261.2'
 
 pkgbase=udev
 pkgname=(
@@ -15,7 +15,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=2
+pkgrel=1
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -54,8 +54,8 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-udev-standalone-install.patch
 )
-sha512sums=('2283e0e05eedd60ade44e64a0b820c55e8e3ed7bf67a8df79185d63facf577487df75c081c35729719ebacffbd48ecb967cfd25656987177d1044636ae3d8361'
-            'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
+sha512sums=('1c2a3aed0b7c613040722ef1bd063a1f35d2f3993e0f678701ef5e4d42d31628804df477158e5fa2bb47e523a9969d01cfb7622762cf32ff44e0367e5f432368'
+            'e5fec179ae4753b7ed844906d140d3efe525cfdf6675435e80e13a548dd087b0973e262011da5a41b3278edd967aadc5c800fcfddf41987c00fa02c4fdcc91c0'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             '43f77dad07b4926d12731c1ff85d2439a6accb067d267bff2923a080ed8daba194d78b6893d0e75f222dd0a720817b5f39052c3d94d4f68f4ca0052bf87f7ead')
 
@@ -254,7 +254,6 @@ build() {
         test-udev-spawn
 
         test-fido-id-desc
-        test-link-config-tables
     )
     meson compile -C build "${_targets[@]}"
 }
@@ -278,7 +277,6 @@ check() {
         test-udev-spawn
 
         test-fido-id-desc
-        test-link-config-tables
 
         dmidecode_HP-Z600
         dmidecode_Lenovo-ThinkPad-X280
