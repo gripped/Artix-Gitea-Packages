@@ -3,7 +3,7 @@
 # Maintainer: Tom Gundersen <teg@jklm.no>
 
 _pkgbase=systemd
-_tag='261'
+_tag='261.2'
 
 pkgname=lib32-udev
 pkgver="${_tag/[-~]/}"
@@ -45,7 +45,7 @@ validpgpkeys=('63CDA1E5D3FC22B998D20DD6327F26951A015CC4'  # Lennart Poettering <
               '5C251B5FC54EB2F80F407AAAC54CA336CFEB557E') # Zbigniew Jędrzejewski-Szmek <zbyszek@in.waw.pl>
 source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-udev-standalone-install.patch)
-sha512sums=('2283e0e05eedd60ade44e64a0b820c55e8e3ed7bf67a8df79185d63facf577487df75c081c35729719ebacffbd48ecb967cfd25656987177d1044636ae3d8361'
+sha512sums=('1c2a3aed0b7c613040722ef1bd063a1f35d2f3993e0f678701ef5e4d42d31628804df477158e5fa2bb47e523a9969d01cfb7622762cf32ff44e0367e5f432368'
             '43f77dad07b4926d12731c1ff85d2439a6accb067d267bff2923a080ed8daba194d78b6893d0e75f222dd0a720817b5f39052c3d94d4f68f4ca0052bf87f7ead')
 
 _backports=(
