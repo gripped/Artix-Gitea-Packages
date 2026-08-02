@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='261'
+_tag='261.2'
 
 pkgbase=esys-utils
 pkgname=(
@@ -57,7 +57,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         loader.conf
         splash-artix.bmp
 )
-sha512sums=('2283e0e05eedd60ade44e64a0b820c55e8e3ed7bf67a8df79185d63facf577487df75c081c35729719ebacffbd48ecb967cfd25656987177d1044636ae3d8361'
+sha512sums=('1c2a3aed0b7c613040722ef1bd063a1f35d2f3993e0f678701ef5e4d42d31628804df477158e5fa2bb47e523a9969d01cfb7622762cf32ff44e0367e5f432368'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             '6401d234ab2e9403a9a8ed0444e34b5429d214428c1ba5efcbd6f21994936947570eab213b919b58b30c0bd0f59a678aa538a8feabb60bb882711e69bce9f7c4'
