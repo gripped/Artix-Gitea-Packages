@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="service">
+    <id>org.artixlinux.services.runit.userspawn</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LGPL-3.0-or-later</project_license>
+    <name>userspawn-runit</name>
+    <summary>runit init script for userspawn</summary>
+    <launchable type="service">userspawn</launchable>
+    <categories>
+        <category>System</category>
+        <category>ConsoleOnly</category>
+    </categories>
+    <url type="homepage">https://artixlinux.org/</url>
+</component>
