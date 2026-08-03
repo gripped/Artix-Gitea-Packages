@@ -2,17 +2,17 @@
 
 pkgname=python-pipcl
 _pkgname=${pkgname#python-}
-pkgver=7
+pkgver=12
 pkgrel=1
 pkgdesc="Python packaging operations for use by a setup.py"
 url="https://github.com/ArtifexSoftware/pipcl"
 arch=('any')
 license=('AGPL-3.0-only')
-depends=('python')
+depends=('python' 'python-packaging')
 makedepends=('python-build' 'python-installer' 'python-wheel')
 checkdepends=('python-pytest')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha256sums=('97efa5056885bef6a0a659d2d25bc7a74222e9bb89f79e918af68213673158b4')
+sha256sums=('b0f5b04b6992fbd10d1517dcde9b4e12b20bafd42b32e3f180c73a08df2ea021')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
@@ -23,7 +23,8 @@ check() {
 	cd "${_pkgname}-${pkgver}"
 	python -m venv --system-site-packages test-env
 	test-env/bin/python -m installer dist/*.whl
-	PATH="${PWD}/test-env/bin:${PATH}" test-env/bin/python -m pytest
+	PATH="${PWD}/test-env/bin:${PATH}" test-env/bin/python -m pytest \
+		--deselect tests/test_lint.py::test_codespell # We don't care about linting
 }
 
 package() {
