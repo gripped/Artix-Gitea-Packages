@@ -1,9 +1,9 @@
 ---
-version: 0.10.5-1
+version: 0.11.0-1
 pkgbase:
   name: libraqm
   pkgdesc: A library that encapsulates the logic for complex text layout
-  pkgver: 0.10.5
+  pkgver: 0.11.0
   pkgrel: 1
   url: https://github.com/HOST-Oman/libraqm/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - glibc
     - harfbuzz
   source:
-    - git+https://github.com/HOST-Oman/libraqm#tag=v0.10.5
+    - git+https://github.com/HOST-Oman/libraqm#tag=v0.11.0
   sha256sums:
-    - 778c71f6d4f8708d019a1da1ef666492b3c1e5dea4ba86663f47d5e21b431f61
+    - 6f3ddc83bc6de239fc992ce2ed8f69397813ca7977c7067c6d20e822122c6782
 pkgname:
   - name: libraqm
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.39.1-1-any
