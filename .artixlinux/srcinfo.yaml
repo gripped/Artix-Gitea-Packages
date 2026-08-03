@@ -1,13 +1,15 @@
 ---
-version: 50.0-1
+version: 50.0-2
 pkgbase:
   name: iagno
   pkgdesc: Dominate the board in a classic version of Reversi
   pkgver: 50.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Reversi
   arch:
     - x86_64
+  groups:
+    - gnome-extra
   license:
     - GPL-3.0-or-later
   makedepends:
@@ -31,4 +33,4 @@ pkgbase:
     - e844f4223f15cdd4ac519ac47729a5369be75f841c66557b947d3df4689666614ff65241e8cd9415d86798c613e9467270f151e85ad1d49d08f46df0929c1c85
 pkgname:
   - name: iagno
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.39.1-1-any
