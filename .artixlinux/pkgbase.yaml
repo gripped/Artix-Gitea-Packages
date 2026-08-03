@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 12.13.2-1
+    version: 13.0.0-1
     packages:
-      - forgejo-runner-12.13.2-1-x86_64.pkg.tar.zst
+      - forgejo-runner-13.0.0-1-x86_64.pkg.tar.zst
     debug: []
