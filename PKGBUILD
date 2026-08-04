@@ -1,7 +1,7 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20260324
+pkgver=20260804
 pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
@@ -26,7 +26,7 @@ source=(
 )
 sha256sums=('3801358d1fe65db3711851c4a2d7c491c8750c899d8effdf37eb64d34683e91b'
             '986fc9a81aa5381d9009be9ca0ea98b473b1d4834ff1c832d5cb5ff347d4de7b'
-            '517cb12a30f84ba9580532d5485ce219ad96668480db99fcd4954c7017a0ea47'
+            'bae01ca12fb81fc3a08df7953d29d3d443f8729645b16be77df48b501b60a8d2'
             'bf25148ef002d25695571c02487776a583d6b0d3e1e0aa4de3f44a51e213b3a6')
 
 package() {
