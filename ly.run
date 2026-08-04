@@ -1,6 +1,12 @@
 #!/bin/sh
 
-sv start elogind || exit 1
+if [[ -L /run/runit/elogind ]]; then
+  sv start elogind || exit 1
+fi
+
+if [[ -L /run/runit/seatd ]]; then
+  sv start seatd || exit 1
+fi
 
 ## Get the tty from the conf file
 CONFTTY=$(cat /etc/ly/config.ini | sed -n 's/^tty.*=[^1-9]*// p')
