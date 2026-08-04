@@ -1,8 +1,8 @@
 # Maintainer: artist for Artix Linux and XLibre <artist@artixlinux.org>
 
 pkgname=xlibre-video-nouveau
-pkgver=25.0.0
-pkgrel=8
+pkgver=25.0.1
+pkgrel=1
 pkgdesc="XLibre fork of X.Org Open Source 3D acceleration driver for nVidia cards"
 arch=(x86_64 aarch64)
 license=('MIT')
@@ -60,4 +60,4 @@ package() {
   install -m755 -d "${pkgdir}/usr/share/licenses/xlibre-${_pkgname}"
 }
 
-sha256sums=('bc56f320ba6ce4d068351ac259cdb87571a05e03402afad02352bcb62be7b040')
+sha256sums=('72fa7b3401d14a77590ca3fcac9cbb0e58cf88b1d5fd676945c41cac9a9b6b2e')
