@@ -1,10 +1,10 @@
 ---
-version: 4.2-2.1
+version: 4.3-1
 pkgbase:
   name: x265
   pkgdesc: Open Source H265/HEVC video encoder
-  pkgver: 4.2
-  pkgrel: 2.1
+  pkgver: 4.3
+  pkgrel: 1
   url: https://www.x265.org/
   arch:
     - x86_64
@@ -22,11 +22,11 @@ pkgbase:
   provides:
     - libx265.so
   source:
-    - git+https://github.com/Multicorewareinc/x265.git#tag=4.2
+    - git+https://github.com/Multicorewareinc/x265.git#tag=4.3
     - 0001-Fix-build-with-GCC-15.patch
   b2sums:
-    - 1ad111130a64ca822b5b78dc84e0078e30bbadb67a9db16bdd6a860a4210c17701ae5681930e10ec3e6335ea767ac01391fc1a68ce5ca72450c4a075b664a348
+    - bbbe9e0e595c1de114ddc08c4f13f6ce1e7490837749cb389682a9aaa28fe42707abcdea856aebb5fe805ea5c0500c4350c35afe90b7280fd1ea295fd5d469ab
     - af2ee0460c0c2f6f36e4f124a9ac16610e3884001262a6f08043fa1de4a85e2b5fd4fb12c64b8c94cfb59c3031bb7a1324e307fa2049e3378e2add9a58f5bd9e
 pkgname:
   - name: x265
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
