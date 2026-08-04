@@ -3,7 +3,7 @@
 
 pkgname=blosc2
 pkgver=3.3.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A fast, compressed, persistent binary data store library for C'
 arch=(x86_64)
 url='https://www.blosc.org'
