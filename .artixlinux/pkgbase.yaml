@@ -1,5 +1,5 @@
 ---
-team: null
+team: galaxy
 actions:
   addRepo: galaxy
   removeRepo: null
