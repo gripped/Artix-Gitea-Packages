@@ -2,7 +2,7 @@
 # Contributor: hexchain <i@hexchain.org>
 
 pkgname=telegram-desktop
-pkgver=7.0.7
+pkgver=7.0.8
 _td_commit=022d60202e446ad1287b9fb68e687c8a0760788b
 pkgrel=1
 pkgdesc='Official Telegram Desktop client'
@@ -77,7 +77,7 @@ source=(
   "https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
   "git+https://github.com/tdlib/td.git#commit=${_td_commit}"
 )
-sha512sums=('481b5a3f544ccc662c81262e0c98c536851192213868d2a6bc47e6a6c38def197ffbfbd11dc4c9d641ecdd6792a73cd413d8be35e30ba1a756addf29453add86'
+sha512sums=('3b42a27fe997da838352ce64ed0f975bb43634982bb7a6ed87a76d9d186bd82707b536a4450b84d790726c3f556eaa58f089a2ab79e742d4ef03f601efde53d5'
             '45ef8f69708c46aef8e8d0301b8710467a208e43a9ebb5918152b49d24f9d6c8b69ca9a94f19c4e401f44e8d60706cd840832ce442ca1a839df942a7b88afde2')
 
 build() {
