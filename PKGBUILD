@@ -2,7 +2,7 @@
 
 pkgname=dbus-openrc
 pkgver=20260804
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC dbus init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -26,7 +26,7 @@ source=(
 )
 sha256sums=('3801358d1fe65db3711851c4a2d7c491c8750c899d8effdf37eb64d34683e91b'
             '986fc9a81aa5381d9009be9ca0ea98b473b1d4834ff1c832d5cb5ff347d4de7b'
-            'bae01ca12fb81fc3a08df7953d29d3d443f8729645b16be77df48b501b60a8d2'
+            'c47870299da442a44972c5ffe2fdaeb19dfdb300aaa1e83ea15cffcb45983953'
             'bf25148ef002d25695571c02487776a583d6b0d3e1e0aa4de3f44a51e213b3a6')
 
 package() {
