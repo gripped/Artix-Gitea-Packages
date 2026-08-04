@@ -1,10 +1,10 @@
 ---
-version: 8.18.4-2
+version: 8.18.5-1
 pkgbase:
   name: libvips
   pkgdesc: A fast image processing library with low memory needs
-  pkgver: 8.18.4
-  pkgrel: 2
+  pkgver: 8.18.5
+  pkgrel: 1
   url: https://libvips.github.io/libvips/
   arch:
     - x86_64
@@ -46,9 +46,9 @@ pkgbase:
     - 'python: for vipsprofile'
     - 'libjxl: for jxl module'
   source:
-    - https://github.com/libvips/libvips/releases/download/v8.18.4/vips-8.18.4.tar.xz
+    - https://github.com/libvips/libvips/releases/download/v8.18.5/vips-8.18.5.tar.xz
   sha512sums:
-    - 19eeafcb8bef187b056242c0852038a432672481476d16aabab97f2fd44e97852c96d28c730e32e60cf89d0afa3f4698a14c66f0bac5c04eceef082af6a69be8
+    - 0351887a74f530a8c1f46093e305cff245bd90473f3016e83de550d102f3631da3d2351d055f9ade8b440e636c4aa20b42ed0bc9eec952a440ef668d2ecdd45d
 pkgname:
   - name: libvips
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
