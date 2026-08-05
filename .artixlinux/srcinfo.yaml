@@ -1,10 +1,10 @@
 ---
-version: 2.8.1-12
+version: 2.8.1-13
 pkgbase:
   name: avidemux
   pkgdesc: Graphical tool to edit video (filter/re-encode/split)
   pkgver: 2.8.1
-  pkgrel: 12
+  pkgrel: 13
   url: http://fixounet.free.fr/avidemux/
   arch:
     - x86_64
@@ -106,4 +106,4 @@ pkgname:
       - x265
     replaces:
       - avidemux-gtk
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
