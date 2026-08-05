@@ -1,10 +1,10 @@
 ---
-version: 1.6.1-1
+version: 1.6.1-2
 pkgbase:
   name: chromaprint
   pkgdesc: Library for extracting fingerprints from any audio source
   pkgver: 1.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://acoustid.org/chromaprint
   arch:
     - x86_64
@@ -41,4 +41,4 @@ pkgname:
       - libavformat.so
       - libavutil.so
       - libswresample.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
