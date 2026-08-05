@@ -1,0 +1,36 @@
+---
+version: 20260805-1
+pkgbase:
+  name: at-openrc
+  pkgdesc: OpenRC at init script
+  pkgver: 20260805
+  pkgrel: 1
+  url: https://gitea.artixlinux.org/artixlinux/packages-openrc
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  makedepends:
+    - git
+  depends:
+    - openrc
+    - at
+  provides:
+    - init-atd
+  conflicts:
+    - init-atd
+  backup:
+    - etc/conf.d/atd
+  source:
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=3.0
+    - atd.confd
+    - atd.initd
+  sha256sums:
+    - 9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee
+    - ab023e245103b6e0786ad1888143fdb87933ff5937114ac086f0616d6b620c02
+    - d0a18f3dc45e42074fa071e915a847a5bb84faa1365e5a667bafea607f178526
+pkgname:
+  - name: at-openrc
+# generated with artixpkg 0.39.1-1-any
