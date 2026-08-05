@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.46.1-1
+    version: 2.47-1
     packages:
-      - mingw-w64-binutils-2.46.1-1-x86_64.pkg.tar.zst
+      - mingw-w64-binutils-2.47-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.46.0-1
