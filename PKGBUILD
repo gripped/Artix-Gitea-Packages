@@ -2,7 +2,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=prometheus
-pkgver=3.12.0
+pkgver=3.13.2
 pkgrel=1
 
 pkgdesc='An open-source systems monitoring and alerting toolkit'
@@ -11,7 +11,7 @@ arch=('x86_64')
 license=('Apache-2.0')
 
 depends=('glibc')
-makedepends=('go' 'git' 'npm' 'nodejs' 'yamllint' 'typescript' 'yarn')
+makedepends=('go' 'git' 'pnpm' 'nodejs' 'yamllint' 'typescript' 'yarn')
 
 options=(!lto)
 backup=('etc/prometheus/prometheus.yml')
@@ -20,7 +20,7 @@ source=("prometheus-v$pkgver.tar.gz::https://github.com/prometheus/prometheus/ar
         prometheus.sysusers
         )
 
-sha256sums=('ca7a8dd2c57048bb952a493a2957811c6f380089c2b158c2def484b874c3b6d7'
+sha256sums=('fb8eb45635c29b120cf54aa19a1b724348d49e385062ff519b8e0b4f457c26e1'
             '0d995040e441e07bae7517d852fdc1bce2e1f3ae9ae206a1e1e127563e122015')
 
 prepare() {
@@ -47,7 +47,6 @@ build() {
   # Build the react app
   make ui-install # run install first as otherwise the makefile has a race condition......
   make assets
-  make npm_licenses
   make assets-compress
 
   go generate -tags plugins ./plugins
@@ -69,7 +68,8 @@ build() {
 check() {
   cd prometheus-$pkgver
 
-  GODEBUG=x509sha1=1 go test -short ./... || :
+  # TestHeadCompactionWhileScraping: https://github.com/prometheus/prometheus/issues/17956
+  GODEBUG=x509sha1=1 go test -short -skip TestHeadCompactionWhileScraping ./...
 }
 
 package() {
