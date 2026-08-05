@@ -1,10 +1,10 @@
 ---
-version: 9.6.2-4
+version: 9.6.2-5
 pkgbase:
   name: vtk
   pkgdesc: Software system for 3D computer graphics, image processing, and visualization
   pkgver: 9.6.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.vtk.org
   arch:
     - x86_64
@@ -44,6 +44,7 @@ pkgbase:
     - libogg
     - libtheora
     - mariadb-libs
+    - onnxruntime
     - opencascade
     - openimagedenoise
     - openvdb
@@ -94,6 +95,7 @@ pkgbase:
     - 'freetype2: rendering fonts'
     - 'gl2ps: rendering to PostScript, PDF, and SVG'
     - 'anari-sdk: ANARI rendering module'
+    - 'onnxruntime: ONNX filter for AI-related computation'
     - 'openvr: rendering for virtual reality'
     - 'openxr: rendering for virtual and augmented reality'
     - 'openimagedenoise: rendering with raytracing support'
@@ -140,4 +142,4 @@ pkgbase:
     - db47a96696f124de4588b289d01f01d1fb28c6b2408d68b505cb59f38244ae2c2e75787a9f43d4820441bf074e3f47246d7a5de9248cb8d3ff2dcaaa0b545640
 pkgname:
   - name: vtk
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
