@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,11 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 2.2.2-4
+    packages:
+      - guvcview-2.2.2-4-x86_64.pkg.tar.zst
+      - guvcview-common-2.2.2-4-x86_64.pkg.tar.zst
+      - guvcview-qt-2.2.2-4-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null

@@ -1,10 +1,10 @@
 ---
-version: 2.2.2-3
+version: 2.2.2-4
 pkgbase:
   name: guvcview
   pkgdesc: Simple interface for capturing and viewing video from V4L2 devices
   pkgver: 2.2.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://guvcview.sourceforge.net/
   arch:
     - x86_64
@@ -66,4 +66,4 @@ pkgname:
       - libgcc
       - libstdc++
       - qt6-base
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
