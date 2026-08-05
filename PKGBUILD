@@ -1,8 +1,8 @@
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=dbus-openrc
-pkgver=20260804
-pkgrel=2
+pkgver=20260805
+pkgrel=1
 pkgdesc="OpenRC dbus init script"
 arch=('any')
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
@@ -11,6 +11,7 @@ depends=(
     'dbus'
     'openrc'
 )
+makedepends=('git')
 provides=(
     'init-dbus'
     'init-user-dbus'
@@ -19,14 +20,15 @@ conflicts=(
     'init-dbus'
     'init-user-dbus'
 )
+_alpm_tag=3.0
 source=(
+    "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm_tag"
     dbus{,.user}.initd
-    'dbus-reload.hook'
     '80-dbus'
 )
-sha256sums=('3801358d1fe65db3711851c4a2d7c491c8750c899d8effdf37eb64d34683e91b'
+sha256sums=('9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee'
+            '3801358d1fe65db3711851c4a2d7c491c8750c899d8effdf37eb64d34683e91b'
             '986fc9a81aa5381d9009be9ca0ea98b473b1d4834ff1c832d5cb5ff347d4de7b'
-            'c47870299da442a44972c5ffe2fdaeb19dfdb300aaa1e83ea15cffcb45983953'
             'bf25148ef002d25695571c02487776a583d6b0d3e1e0aa4de3f44a51e213b3a6')
 
 package() {
@@ -37,7 +39,8 @@ package() {
 
     install -Dm755 "${srcdir}"/dbus.user.initd "${pkgdir}"/etc/user/init.d/dbus
 
-    install -Dt "${pkgdir}"/usr/share/libalpm/hooks -m644 *.hook
-
     install -Dm755 "${srcdir}"/80-dbus "${pkgdir}"/etc/X11/xinit/xinitrc.d/80-dbus.sh
+
+    cd "${srcdir}"/alpm-hooks
+    make DESTDIR="${pkgdir}" install_openrc_dbus
 }

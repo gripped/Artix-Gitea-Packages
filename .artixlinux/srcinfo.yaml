@@ -1,15 +1,17 @@
 ---
-version: 20260804-2
+version: 20260805-1
 pkgbase:
   name: dbus-openrc
   pkgdesc: OpenRC dbus init script
-  pkgver: 20260804
-  pkgrel: 2
+  pkgver: 20260805
+  pkgrel: 1
   url: https://gitea.artixlinux.org/artixlinux/packages-openrc
   arch:
     - any
   license:
     - GPL2
+  makedepends:
+    - git
   depends:
     - dbus
     - openrc
@@ -20,15 +22,15 @@ pkgbase:
     - init-dbus
     - init-user-dbus
   source:
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=3.0
     - dbus.initd
     - dbus.user.initd
-    - dbus-reload.hook
     - 80-dbus
   sha256sums:
+    - 9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee
     - 3801358d1fe65db3711851c4a2d7c491c8750c899d8effdf37eb64d34683e91b
     - 986fc9a81aa5381d9009be9ca0ea98b473b1d4834ff1c832d5cb5ff347d4de7b
-    - c47870299da442a44972c5ffe2fdaeb19dfdb300aaa1e83ea15cffcb45983953
     - bf25148ef002d25695571c02487776a583d6b0d3e1e0aa4de3f44a51e213b3a6
 pkgname:
   - name: dbus-openrc
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
