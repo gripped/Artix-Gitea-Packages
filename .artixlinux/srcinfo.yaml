@@ -1,10 +1,10 @@
 ---
-version: 11.14-2
+version: 11.14-3
 pkgbase:
   name: wine-staging
   pkgdesc: A compatibility layer for running Windows programs - Staging branch
   pkgver: 11.14
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.wine-staging.com
   install: wine.install
   arch:
@@ -104,4 +104,4 @@ pkgbase:
     - bdde7ae015d8a98ba55e84b86dc05aca1d4f8de85be7e4bd6187054bfe4ac83b5a20538945b63fb073caab78022141e9545685e4e3698c97ff173cf30859e285
 pkgname:
   - name: wine-staging
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
