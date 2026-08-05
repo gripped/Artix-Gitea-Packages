@@ -1,9 +1,9 @@
 ---
-version: 0.48.1-1
+version: 0.48.2-1
 pkgbase:
   name: kitty
   pkgdesc: A modern, hackable, featureful, OpenGL-based terminal emulator
-  pkgver: 0.48.1
+  pkgver: 0.48.2
   pkgrel: 1
   url: https://github.com/kovidgoyal/kitty
   arch:
@@ -41,12 +41,12 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/kovidgoyal/kitty/releases/download/v0.48.1/kitty-0.48.1.tar.xz
-    - https://github.com/kovidgoyal/kitty/releases/download/v0.48.1/kitty-0.48.1.tar.xz.sig
+    - https://github.com/kovidgoyal/kitty/releases/download/v0.48.2/kitty-0.48.2.tar.xz
+    - https://github.com/kovidgoyal/kitty/releases/download/v0.48.2/kitty-0.48.2.tar.xz.sig
   validpgpkeys:
     - 3CE1780F78DD88DF45194FD706BC317B515ACE7C
   b2sums:
-    - 4067d6385e65fafa2ec472129cc5936602f3ad4a3f1a7ee05b33f055a3bf7a55bbc9660e0c71c60b0d465df6da9eae1f3fe5b3a0480cb90393706d72cf2b67a0
+    - 59b5c3fef9448918dc9f6d16a351b16973a99cceac0c08457a362c66a6c8ed9854ef1ce816b099cdbdb76be60ff506562b209cefec510a83b630989c7eb3389b
     - SKIP
 pkgname:
   - name: kitty
@@ -89,4 +89,4 @@ pkgname:
       - 'bash: Bash completions'
       - 'zsh: ZSH completions'
       - 'fish: Fish completions'
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
