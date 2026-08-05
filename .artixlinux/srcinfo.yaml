@@ -1,9 +1,9 @@
 ---
-version: 6.7.3-1
+version: 6.7.4-1
 pkgbase:
   name: plasma-pa
   pkgdesc: Plasma applet for audio volume management using PulseAudio
-  pkgver: 6.7.3
+  pkgver: 6.7.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -40,15 +40,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/plasma/6.7.3/plasma-pa-6.7.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.3/plasma-pa-6.7.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.4/plasma-pa-6.7.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.4/plasma-pa-6.7.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - c97e985d37494c3617afcbe1d43e039de0068ed53e237083f27dc046e20d1665
+    - 419c3cfe15f2f3093c4255d84a24708dd7ad28da2ce80cfee3521f761ba6937e
     - SKIP
 pkgname:
   - name: plasma-pa
