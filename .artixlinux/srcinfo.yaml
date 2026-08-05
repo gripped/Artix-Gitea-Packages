@@ -1,9 +1,9 @@
 ---
-version: 6.7.3-1
+version: 6.7.4-1
 pkgbase:
   name: plasma-browser-integration
   pkgdesc: Components necessary to integrate browsers into the Plasma Desktop
-  pkgver: 6.7.3
+  pkgver: 6.7.4
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -32,15 +32,15 @@ pkgbase:
     - purpose
     - qt6-base
   source:
-    - https://download.kde.org/stable/plasma/6.7.3/plasma-browser-integration-6.7.3.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.3/plasma-browser-integration-6.7.3.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.7.4/plasma-browser-integration-6.7.4.tar.xz
+    - https://download.kde.org/stable/plasma/6.7.4/plasma-browser-integration-6.7.4.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 9a97ec66c29b9817e5081259b7a2c8974aebf60f0aa1323f3f7f3fbb247674d2
+    - 298ee5e14c935dd811ad3686a2a6422fe8d2ea7f0b6946595268c6ac6b252325
     - SKIP
 pkgname:
   - name: plasma-browser-integration
