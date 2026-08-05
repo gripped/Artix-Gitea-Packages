@@ -1,10 +1,10 @@
 ---
-version: 1:0.41.0-3
+version: 1:0.41.0-4
 pkgbase:
   name: mpv
   pkgdesc: a free, open source, and cross-platform media player
   pkgver: 0.41.0
-  pkgrel: 3
+  pkgrel: 4
   epoch: 1
   url: https://mpv.io/
   arch:
@@ -71,7 +71,7 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/mpv-player/mpv.git#tag=v0.41.0?signed
+    - git+https://github.com/mpv-player/mpv.git?signed#tag=v0.41.0
   validpgpkeys:
     - 145077D82501AA20152CACCE8D769208D5E31419
   sha256sums:
@@ -146,4 +146,4 @@ pkgname:
       - libva-x11.so
       - libxkbcommon.so
       - librubberband.so
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.39.1-1-any
