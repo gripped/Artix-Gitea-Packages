@@ -1,10 +1,10 @@
 #!/bin/sh
 
-if [[ -L /run/runit/elogind ]]; then
+if [[ -L /run/runit/service/elogind ]]; then
   sv start elogind || exit 1
 fi
 
-if [[ -L /run/runit/seatd ]]; then
+if [[ -L /run/runit/service/seatd ]]; then
   sv start seatd || exit 1
 fi
 
