@@ -1,10 +1,10 @@
 ---
-version: 1:7.1.4p1-2
+version: 1:7.1.4p1-3
 pkgbase:
   name: jellyfin-ffmpeg
   pkgdesc: Jellyfin fork of ffmpeg
   pkgver: 7.1.4p1
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://github.com/jellyfin/jellyfin-ffmpeg
   arch:
@@ -82,4 +82,4 @@ pkgbase:
     - 52d212de10cc2e78f6de519dc63ff2b9130b4c1650f0c5fa83a165791cc6f4ef7e0487f0bbe2c20ee72615e73271109f59c7ef76348a6c5139ec34a17628bab6
 pkgname:
   - name: jellyfin-ffmpeg
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
