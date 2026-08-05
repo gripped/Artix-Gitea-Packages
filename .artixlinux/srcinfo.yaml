@@ -1,10 +1,10 @@
 ---
-version: 2:3.30.0-1
+version: 2:3.30.0-2
 pkgbase:
   name: freerdp
   pkgdesc: Free implementation of the Remote Desktop Protocol (RDP)
   pkgver: 3.30.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://www.freerdp.com/
   arch:
@@ -126,4 +126,4 @@ pkgname:
       - libpam.so
       - zlib
       - libz.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
