@@ -1,10 +1,10 @@
 ---
-version: 0.12.0-3
+version: 0.13.0-1
 pkgbase:
   name: python-tiktoken
   pkgdesc: A fast BPE tokeniser for use with OpenAI's models
-  pkgver: 0.12.0
-  pkgrel: 3
+  pkgver: 0.13.0
+  pkgrel: 1
   url: https://github.com/openai/tiktoken
   arch:
     - x86_64
@@ -28,9 +28,9 @@ pkgbase:
   optdepends:
     - 'python-blobfile: for reading blobfiles'
   source:
-    - python-tiktoken-0.12.0.tar.gz::https://github.com/openai/tiktoken/archive/refs/tags/0.12.0.tar.gz
+    - python-tiktoken-0.13.0.tar.gz::https://github.com/openai/tiktoken/archive/refs/tags/0.13.0.tar.gz
   sha256sums:
-    - 2e1ad31b47086480b168460c3c5794e868544bfcd7c781343599f72179794cbe
+    - 76a503662cb5cb3adace6660d9938c1d66130efeb859ce0e45c8460bb1665f74
 pkgname:
   - name: python-tiktoken
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
