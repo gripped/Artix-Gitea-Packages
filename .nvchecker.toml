@@ -1,0 +1,4 @@
+[qdirstat]
+source = "github"
+github = "atweiden/zramen"
+use_max_tag = true
