@@ -1,9 +1,9 @@
 ---
-version: 2.1.0-1
+version: 2.1.1-1
 pkgbase:
   name: python-cffi
   pkgdesc: Foreign Function Interface for Python calling C code
-  pkgver: 2.1.0
+  pkgver: 2.1.1
   pkgrel: 1
   url: https://cffi.readthedocs.org/
   arch:
@@ -23,9 +23,9 @@ pkgbase:
   optdepends:
     - 'python-setuptools: "limited api" version checking in cffi.setuptools_ext'
   source:
-    - git+https://github.com/python-cffi/cffi.git#tag=v2.1.0
+    - git+https://github.com/python-cffi/cffi.git#tag=v2.1.1
   sha512sums:
-    - 16fd910aadc3cc720e80e03e85f28a49bac5e3577d5a55320aba5eb7eb3b19a8486b89b16dd7ac36acaff9fbbd99b4d481023063cf6363e9fb9a8e065f8bdb5f
+    - d608a63bdae41ce93f4abee3e8f772337740c3859d50d7592943a03dea3f3007aeefee2084f5d715ef9b795a2c5fe7c29f55fce7b9397d529e4309f6c12d56ad
 pkgname:
   - name: python-cffi
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
