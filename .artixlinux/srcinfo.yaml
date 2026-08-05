@@ -1,10 +1,10 @@
 ---
-version: 4.1-1
+version: 4.1-2
 pkgbase:
   name: scrcpy
   pkgdesc: Display and control your Android device
   pkgver: 4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Genymobile/scrcpy
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 2125c2ab5986d1f457636c92f24fb9aab25a43e3885badc35d399d29e23f81f2588cc2aec381a2686ae931668ab150f47789a70b729509f47887a25273d2b879
 pkgname:
   - name: scrcpy
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
