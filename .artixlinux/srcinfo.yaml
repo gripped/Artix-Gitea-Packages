@@ -1,10 +1,10 @@
 ---
-version: 6.11.1-1
+version: 6.11.1-2
 pkgbase:
   name: qt6-multimedia
   pkgdesc: Classes for audio, video, radio and camera functionality
   pkgver: 6.11.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -29,9 +29,10 @@ pkgbase:
     - qt6-shadertools
     - vulkan-headers
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
     - libpulse
+    - libstdc++
     - pipewire
     - qt6-base
   source:
@@ -41,9 +42,10 @@ pkgbase:
 pkgname:
   - name: qt6-multimedia
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
       - libpulse
+      - libstdc++
       - pipewire
       - qt6-base
       - qt6-multimedia-backend
@@ -55,9 +57,11 @@ pkgname:
     groups: []
     depends:
       - ffmpeg
-      - gcc-libs
       - glibc
+      - libgcc
       - libglvnd
+      - libstdc++
+      - libva
       - libx11
       - libxext
       - libxrandr
@@ -70,7 +74,6 @@ pkgname:
     pkgdesc: Gstreamer backend for qt6-multimedia
     groups: []
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gst-libav
@@ -80,6 +83,7 @@ pkgname:
       - gstreamer
       - libglvnd
       - libpulse
+      - libstdc++
       - qt6-base
       - qt6-multimedia
     optdepends:
