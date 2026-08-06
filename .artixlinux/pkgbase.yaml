@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.24.13-2
+    version: 0.24.13-3
     packages:
-      - mpd-0.24.13-2-x86_64.pkg.tar.zst
+      - mpd-0.24.13-3-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.24.13-1
