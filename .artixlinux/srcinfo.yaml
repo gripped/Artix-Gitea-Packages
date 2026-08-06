@@ -1,16 +1,16 @@
 ---
-version: 1:2.2.0-4
+version: 1:2.2.0-5
 pkgbase:
   name: deluge
   pkgdesc: BitTorrent client with multiple user interfaces in a client/server model
   pkgver: 2.2.0
-  pkgrel: 4
+  pkgrel: 5
   epoch: 1
   url: https://deluge-torrent.org/
   arch:
-    - any
+    - x86_64
   license:
-    - GPL-3.0-only WITH cryptsetup-OpenSSL-exception
+    - GPL-3.0-or-later WITH GPL-3.0-linking-exception
   makedepends:
     - glib2
     - gtk3
@@ -20,20 +20,27 @@ pkgbase:
     - python-cairo
     - python-gobject
     - xdg-utils
+    - boost
+    - cmake
     - git
     - intltool
     - libappindicator-gtk3
     - libnotify
+    - ninja
     - python-build
     - python-installer
     - python-pygame
     - python-rjsmin
     - python-wheel
   depends:
-    - libtorrent-rasterbar
+    - boost-libs
+    - glibc
+    - libgcc
+    - libstdc++
     - openssl
     - python
     - python-chardet
+    - python-cryptography
     - python-dbus
     - python-distro
     - python-geoip
@@ -53,12 +60,32 @@ pkgbase:
     - python-zope-interface
   source:
     - git+https://github.com/deluge-torrent/deluge?signed#tag=deluge-2.2.0
+    - libtorrent-rasterbar::git+https://github.com/arvidn/libtorrent.git#tag=v2.0.13
+    - git+https://github.com/arvidn/libsimulator.git
+    - git+https://github.com/arvidn/try_signal.git
+    - git+https://github.com/paullouisageneau/boost-asio-gnutls.git
+    - 010-libtorrent-rasterbar-fix-for-fortify-source-3.patch
     - 0001-Fix-data-installation-when-building-wheel.patch
+    - 0002-tests-plugins-new-tests-for-plugin-discovery-and-loa.patch
+    - 0003-feat-ui-use-importlib-in-entrypoint-instead-of-pkg_r.patch
+    - 0004-feat-pluginmanager-new-plugin-finder-using-stdlib-wi.patch
+    - 0005-feat-plugins-replace-common.py-pkg_resources-with-im.patch
+    - 0006-replace-deprecated-calls-in-certificate-generation.patch
   validpgpkeys:
     - EA01185D0E8AA00D6323A30890597A687B836BA3
   b2sums:
     - 2dad4c8e05e1b0d7f3b1ece0ea2d184a8d584b1bae377d3aee8a19003829f204516125cc5d17acf6f1c33b099190ff606ee2f352374897214498e6311815a854
+    - 5d320b7072ecfb019abeb3b9d5cffc2d412ebed4093eae2d3eb0626577bbf1dcd7fe15c915d4ef754ea2b5b8bd5112143bd85793001e333adba44db116b9e883
+    - SKIP
+    - SKIP
+    - SKIP
+    - cc2fb23db916df86fb692c743718ebabcb35172f4868e8b9d2819b3323ee538d75f122f60ffcf1064dd147ca299cdd208924bde97e46eda8e1ea3c3480c43071
     - 01fd93dd75ec5d7317f03fb8fcbcc46ac39737c8e751560b51476b038879dde3de4194393c556dea2ec74c443c0d1a8d67a12e2121b8cc4bb581e3a16495999d
+    - e6ff2a91a299e77759a5d0a68bcb1d871e396f756007642efb425925a5e5e26ca75de408ad2aca72390119653e485e9c61b9d0d3ec9fd3b52a5bea61f7d7faf5
+    - d473dd3987bf4a29606c5e91b68fa87ee68688414616c209faf0a9be5e05d3a38b945c48c37dad50537e2b06b0b211a51088437b02249c2410d2c874c0d2e38a
+    - c67b97dc2d9fb2de2f33bb2ba8425be4d8777e1c31b188ace8705d5c3fe76c804b65011e2c290e29c6e18e844b246a8da2ca41010dbfff3f833e61a8fec9c16c
+    - f3f30a2b95afda85e538b5fba4a9e0f60f8f62842c53dbb90b215f919a547a6ded945cbce2b9d2416713198314d176810060c6ca2cfd32655752090f7080462d
+    - 20c600df11374175c1770688a05bd7ef9b61e8f178633e724a77af47eee51227b6c49f35af4a8044f6a574dde12311ea8307f747a6f21c7f17509d188848a02b
 pkgname:
   - name: deluge
   - name: deluge-gtk
@@ -72,7 +99,7 @@ pkgname:
       - python-cairo
       - python-gobject
       - xdg-utils
-      - deluge=1:2.2.0-4
+      - deluge=1:2.2.0-5
       - python
       - python-rencode
       - python-setproctitle
@@ -83,4 +110,4 @@ pkgname:
       - 'libnotify: desktop notifications'
     replaces:
       - deluge<2.0.4.dev23+g2f1c008a2-2
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
