@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Balló György <ballogyor+arch at gmail dot com>
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 # Contributor: Alexander F. Rødseth <xyproto@archlinux.org>
 # Contributor: Storm Dragon <stormdragon2976@gmail.com>
 # Contributor: Aaron 'venisonslurpee' Laursen <venisonslurpee@gmail.com>
@@ -11,7 +10,7 @@
 
 pkgname=xmms2
 pkgver=0.9.7
-pkgrel=1
+pkgrel=2
 pkgdesc='X-platform Music Multiplexing System 2'
 arch=(x86_64)
 url='https://github.com/xmms2/wiki/wiki'
