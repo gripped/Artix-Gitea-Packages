@@ -13,6 +13,7 @@ pkgbase:
     - BSD-3-Clause
   makedepends:
     - cmake
+    - git
     - glaze
     - hyprland-protocols
     - meson
