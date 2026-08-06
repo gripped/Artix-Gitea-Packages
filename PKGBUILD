@@ -6,7 +6,7 @@
 
 pkgname=jujutsu
 _pkgname=jj
-pkgver=0.43.0
+pkgver=0.44.0
 pkgrel=1
 pkgdesc='Git-compatible VCS that is both simple and powerful'
 arch=(x86_64)
@@ -24,7 +24,7 @@ makedepends=(cargo
 checkdepends=(git)
 _archive="$_pkgname-$pkgver"
 source=("$url/archive/refs/tags/v$pkgver/$_archive.tar.gz")
-sha256sums=('5d230327737ee506b716c6ae5ac824c49951c34e117a024dc7aa38819809ea6c')
+sha256sums=('cd72ac1040c93d474dcafd8dd7f8d91d7407f9358bc9ffd4a6b72f4017112eab')
 
 prepare() {
 	cd "$_archive"
