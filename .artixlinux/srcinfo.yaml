@@ -1,10 +1,10 @@
 ---
-version: 0.44.0-1
+version: 0.44.0-2
 pkgbase:
   name: jujutsu
   pkgdesc: Git-compatible VCS that is both simple and powerful
   pkgver: 0.44.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jj-vcs/jj
   arch:
     - x86_64
@@ -17,14 +17,12 @@ pkgbase:
     - cargo-edit
     - cmake
   depends:
-    - libgcc
-    - git
     - glibc
-    - zstd
+    - git
+    - libgcc
+    - libgcc_s.so
   optdepends:
     - 'git: for push/clone/fetch actions when using git.subprocess = true'
-  replaces:
-    - jujutsu-bin
   source:
     - https://github.com/jj-vcs/jj/archive/refs/tags/v0.44.0/jj-0.44.0.tar.gz
   sha256sums:
