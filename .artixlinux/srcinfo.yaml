@@ -1,10 +1,10 @@
 ---
-version: 0.git35.19d51d3-1
+version: 0.git35.19d51d3-2
 pkgbase:
   name: libtg_owt
   pkgdesc: WebRTC library
   pkgver: 0.git35.19d51d3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/desktop-app/tg_owt
   arch:
     - x86_64
@@ -28,6 +28,7 @@ pkgbase:
     - libxtst
     - libepoxy
     - openh264
+    - abseil-cpp
     - libsrtp
   depends:
     - libdrm
@@ -38,11 +39,9 @@ pkgbase:
     - git+https://github.com/desktop-app/tg_owt.git#commit=19d51d3c19632a63fdbe17c62f10332d978cb940
     - git+https://chromium.googlesource.com/libyuv/libyuv/
     - git+https://github.com/google/crc32c
-    - git+https://github.com/abseil/abseil-cpp
     - gcc-16.patch
   b2sums:
     - ab235f2cefdc4501c71fd67e6878a9e80aa567d701f8ef9bdf4f2c6f4d2d222a7dc9ec94bfc2a9a990659831690a082d186a8f0752f66984fbd31cb9da763d18
-    - SKIP
     - SKIP
     - SKIP
     - 469c9e44ff655d68d1606335d0a2f5ca02d99edf17e8124af5e211bc60b8b38289edbe4dd7de7b71d93145e4e8429646b239f9e5e769ccb277623d4f58a100cc
