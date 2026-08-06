@@ -21,13 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 5.0.0-8
+    version: 5.0.0-9
     packages:
-      - opencv-5.0.0-8-x86_64.pkg.tar.zst
-      - opencv-samples-5.0.0-8-x86_64.pkg.tar.zst
-      - python-opencv-5.0.0-8-x86_64.pkg.tar.zst
-      - opencv-cuda-5.0.0-8-x86_64.pkg.tar.zst
-      - python-opencv-cuda-5.0.0-8-x86_64.pkg.tar.zst
+      - opencv-5.0.0-9-x86_64.pkg.tar.zst
+      - opencv-samples-5.0.0-9-x86_64.pkg.tar.zst
+      - python-opencv-5.0.0-9-x86_64.pkg.tar.zst
+      - opencv-cuda-5.0.0-9-x86_64.pkg.tar.zst
+      - python-opencv-cuda-5.0.0-9-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
