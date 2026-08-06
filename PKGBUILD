@@ -7,7 +7,7 @@ pkgbase=lib32-pango
 pkgname=(
   lib32-pango
 )
-pkgver=1.58.0
+pkgver=1.58.2
 pkgrel=1
 epoch=1
 pkgdesc="A library for layout and rendering of text (32-bit)"
@@ -35,7 +35,7 @@ makedepends=(
   meson
 )
 source=("git+https://gitlab.gnome.org/GNOME/pango.git#tag=$pkgver")
-b2sums=('7dd0165514f32f1167c7960e3d92227570527732daf5f3fa4645e48f72657494df080d6e07f2f8bc0a3983a20888d1439d57a46d7feb406b18c7da000644ab69')
+b2sums=('4f5c5f63dc741f9357028863052ee5065f6198fe8e0e9720d6ed0a8c04452c693defb13d688cc3151a9efc0c41392f3c224fac6b0b75f8519682236764152d7d')
 
 prepare() {
   cd pango
