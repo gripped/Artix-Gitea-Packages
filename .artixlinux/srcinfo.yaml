@@ -1,10 +1,10 @@
 ---
-version: 1.6.0-6
+version: 1.7.0-1
 pkgbase:
   name: python-pytest-forked
   pkgdesc: run tests in isolated forked subprocesses
-  pkgver: 1.6.0
-  pkgrel: 6
+  pkgver: 1.7.0
+  pkgrel: 1
   url: https://github.com/pytest-dev/pytest-forked
   arch:
     - any
@@ -16,14 +16,12 @@ pkgbase:
     - python-setuptools
     - python-build
     - python-installer
-    - python-wheel
   depends:
-    - python-py
     - python-pytest
   source:
-    - git+https://github.com/pytest-dev/pytest-forked.git#commit=ec46db382116f82d36ebc4ceba453b903be7174b
+    - git+https://github.com/pytest-dev/pytest-forked.git#tag=v1.7.0
   sha512sums:
-    - SKIP
+    - fca81c098aca2a8dcd59c482b2f5981b694dd24fe26acdd1663e2d6906f95ecf80735f71f62ba0d1455325673d066a5dc7996dc734f3dc61c962ca1968a2aab0
 pkgname:
   - name: python-pytest-forked
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
