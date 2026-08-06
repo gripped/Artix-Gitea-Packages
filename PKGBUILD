@@ -29,7 +29,7 @@ pkgname=(
   gstreamer-docs
 )
 pkgver=1.28.5
-pkgrel=4
+pkgrel=5
 pkgdesc="Multimedia graph framework"
 url="https://gstreamer.freedesktop.org/"
 arch=(x86_64)
@@ -208,6 +208,7 @@ source=(
   "https://gstreamer.freedesktop.org/src/gstreamer-docs/gstreamer-docs-$pkgver.tar.xz"{,.asc}
   0001-HACK-meson-Disable-broken-tests.patch
   0002-opencv-5.patch
+  0003-disable-test_audioenc_16_channels-test.patch
   gstreamer-1.28.5-faac-2.0-compatibility.patch
 )
 b2sums=('af4c921e40f58cd61d62dfc1420dfd4d9c0b678f8c17f9504b5f3b6fdbdbd81139a9e5c4397453795ab9fd57f6212f3eee672fc27ad37a4c2f241560dec5c1cd'
@@ -215,6 +216,7 @@ b2sums=('af4c921e40f58cd61d62dfc1420dfd4d9c0b678f8c17f9504b5f3b6fdbdbd81139a9e5c
         'SKIP'
         '9183804b3a66ad17b3c8c10b4e219f861c83ee6e4363b1aa9d73e80dc486a30d5301c736e4f32638ced16e18f1e9174856267c6e86c91d88123cda15abb3e365'
         'e5109516420bdf85ecae01e1f76c063a08f7930988a31160ff520d204053b47e6b4ea10c4a34743cc963be9550623a7608d55b05aa64d514f55b971ae3584d4a'
+        '139f35c22b5373dac3695b57beb2a1e7917127923acdda99829c25b19c459e98148cb276cfdc47a4963519820900bdf6efef9ecc26438cbce906182d9f908480'
         'd8541239b5ef7f221ba3638f9763cd4c467a266b38654a227d5607530ef90db99911b0b519af68eee725f140aa049dbb8e25321e7acc91aeccc2c36ba41b14be')
 validpgpkeys=(
   D637032E45B8C6585B9456565D2EEE6F6F349D7C # Tim Müller <tim@gstreamer-foundation.org>
@@ -231,6 +233,12 @@ prepare() {
 
   # Support for faac >= 2.0: https://gitlab.freedesktop.org/gstreamer/gstreamer/-/merge_requests/12148
   patch -p1 -i ../gstreamer-1.28.5-faac-2.0-compatibility.patch
+
+  # Disable test that fails with FFmpeg 9 due to hexadecagonal layout removal from aacenc https://github.com/FFmpeg/FFmpeg/commit/c92c6cbf
+  patch -p1 -i ../0003-disable-test_audioenc_16_channels-test.patch
+
+  # Support FFmpeg 9
+  git cherry-pick -n be9bdb67f4fc868977f1f74e95b6ebe19ef792ec
 }
 
 build() {
