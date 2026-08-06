@@ -1,10 +1,10 @@
 ---
-version: 8.2.8-1
+version: 8.2.8-2
 pkgbase:
   name: python-textual
   pkgdesc: Modern Text User Interface framework
   pkgver: 8.2.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/Textualize/textual
   arch:
     - any
@@ -26,10 +26,11 @@ pkgbase:
     - python-linkify-it-py
     - python-typing_extensions
     - python-platformdirs
+    - python-mdit_py_plugins
   source:
     - textual-8.2.8.tar.gz::https://github.com/Textualize/textual/archive/v8.2.8.tar.gz
   sha512sums:
     - 9df65735cc2e84386bb94f6120c6b11036d9cd92a51409a53b1c272f373cd74954411ae40f24fe81046973c0e3ad1dd95c7dc6f7965bea9a2b697f245580a674
 pkgname:
   - name: python-textual
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
