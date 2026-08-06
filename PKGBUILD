@@ -1,26 +1,25 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Christian Rebischke <Chris.Rebischke@archlinux.org>
-# Contributor: Justin Kromlinger <hashworks@archlinux.org>
+# Maintainer: Christian Rebischke <Chris.Rebischke@archlinux.org>
+# Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 # Contributor: Tim Meusel <tim@bastelfreak.de>
 # Contributor: Sebastian Rakel <sebastian@devunit.eu>
 # Contributor: Andrew Tyler <assimilat@gmail.com>
 
 pkgname=vault
 pkgdesc='A tool for managing secrets'
-pkgver=1.21.4
-pkgrel=2
+pkgver=2.0.4
+pkgrel=1
 url="https://vaultproject.io/"
 license=('BUSL-1.1')
 arch=('x86_64')
 depends=('esysusers' 'etmpfiles' 'glibc')
-makedepends=('go' 'git' 'yarn' 'nodejs-lts-jod' 'npm')
+makedepends=('go' 'git' 'nodejs-lts-jod' 'pnpm' 'npm')
 install=vault.install
 backup=('etc/vault.hcl' 'etc/default/vault')
 source=("git+https://github.com/hashicorp/vault#tag=v${pkgver}"
   'vault.sysusers'
   'vault.tmpfiles'
   'vault.hcl')
-sha512sums=('93082e087944a0980adb4bb1013b6185528511d548fee50028965ac0d7e9fc73099c0ff5fa4e0795cc1f45e3b1057fad98b0d13a0124bccf89b284d22bb1de29'
+sha512sums=('54b7ad9c8066afd2f0fe93b50d370e7f055d9b93149546e88a35b75e16d325f4b661c35e8cf558501dcca5e84a5c8c2d7d61aa483deb1a8b65a02319c7565f33'
             '598d673a7d86cd4948855adda005c0d4dd4fc494173221306b1c0eebc359bb881b5272f3166ea46ca23b54983ebfba2b1799c6f827ed8dbaa864f03cf06acb00'
             'db327aae6f821ee1ea608abdb3fc82aeeae72ce873d78ada44461644add32afd6c0197019427734498bc28ae187b6f741a02196e40a620caab597e5eef32ca7a'
             '75d654ec4eadfe983f57951d470fff8b9eb953b42c08e7b6b3a1baaa0721fd7a9d5be37480b0e4f4fd8518f375348bdd8394848f0fb27cb1d425279acb67f693')
@@ -34,9 +33,7 @@ pkgver() {
 build() {
   mkdir -p "${srcdir}/vault/http/web_ui"
   cd "${srcdir}/vault/ui"
-  yarn install
-  npm rebuild node-sass
-  yarn run build
+  pnpm build
 
   cd "${srcdir}/vault"
   export CGO_CPPFLAGS="${CPPFLAGS}"
