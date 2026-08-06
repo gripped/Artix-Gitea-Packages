@@ -8,7 +8,7 @@
 
 _pkgname="forkgram"
 pkgname="$_pkgname"
-pkgver=7.0.3
+pkgver=7.0.9
 pkgrel=1
 pkgdesc="Fork of the Telegram Desktop messaging app"
 url="https://github.com/Forkgram/tdesktop"
@@ -79,7 +79,7 @@ source=(
   "$_pkgsrc_tdlib"::"git+https://github.com/tdlib/td.git"
   '0001-revert-cmake-patch.patch'
 )
-sha256sums=('9734206669170189614f81db5f56c402ec2c6db381f43236076b166701c62678'
+sha256sums=('d1e9df4930fe2aea8d85aa15b4efa65b4bad52fad1ed0be451b133c5c0efe541'
             'SKIP'
             'cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861')
 
