@@ -1,20 +1,20 @@
 ---
-version: 5.10.4-4
+version: 5.11.0-1
 pkgbase:
   name: jupyter-nbformat
   pkgdesc: The base implementation of the Jupyter Notebook format and Python APIs for working with notebooks
-  pkgver: 5.10.4
-  pkgrel: 4
+  pkgver: 5.11.0
+  pkgrel: 1
   url: https://pypi.python.org/pypi/nbformat
   arch:
     - any
   license:
     - BSD-3-Clause
   checkdepends:
-    - python-pep440
     - python-pytest
     - python-testpath
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-hatch-nodejs-version
@@ -25,9 +25,9 @@ pkgbase:
     - python-jupyter-core
     - python-traitlets
   source:
-    - https://github.com/jupyter/nbformat/archive/v5.10.4/nbformat-5.10.4.tar.gz
+    - git+https://github.com/jupyter/nbformat#tag=v5.11.0
   sha256sums:
-    - 90dc0d2a26fb04093647e20e47708fe1ba4b7cafa086a1bf86052a1dceb6ffc2
+    - 67e4787379fe6c98fe32cc2aff4779705c78f61d7c3aac0addbab5f7d88d3a28
 pkgname:
   - name: jupyter-nbformat
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
