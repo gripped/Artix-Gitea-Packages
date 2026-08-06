@@ -1,9 +1,9 @@
 ---
-version: 2.0.8-1
+version: 2.0.9-1
 pkgbase:
   name: libxfont2
   pkgdesc: X11 font rasterisation library
-  pkgver: 2.0.8
+  pkgver: 2.0.9
   pkgrel: 1
   url: https://xorg.freedesktop.org/
   arch:
@@ -16,6 +16,7 @@ pkgbase:
     - SMLNJ
     - X11
   makedepends:
+    - git
     - xorg-util-macros
     - xtrans
   depends:
@@ -25,13 +26,11 @@ pkgbase:
     - zlib
     - glibc
   source:
-    - https://xorg.freedesktop.org//archive/individual/lib/libXfont2-2.0.8.tar.xz
-    - https://xorg.freedesktop.org//archive/individual/lib/libXfont2-2.0.8.tar.xz.sig
+    - git+https://gitlab.freedesktop.org/xorg/lib/libxfont.git?signed#tag=libXfont2-2.0.9
   validpgpkeys:
     - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
   sha512sums:
-    - e14cc3fa03d7baa4554ee5754ab33f69ac1da3d509c686a5f705fde8cd07772be564d68cc18d9fd0beb5ed7b2f864fcd7f6bf4983f5c0db08a9c747d0e001531
-    - SKIP
+    - 169d9a62b6706d40991b14221b13777852fcef9f56692a1bfc9638b168d7b3f0438524cbfd85b36dc24ceec1a04626a2470c73f34d5570a7ecb70791db3ee332
 pkgname:
   - name: libxfont2
 # generated with artixpkg 0.38.5-1-any
