@@ -1,10 +1,10 @@
 ---
-version: 1:26.04.3-1
+version: 1:26.04.3-2
 pkgbase:
   name: k3b
   pkgdesc: Feature-rich and easy to handle CD burning application
   pkgver: 26.04.3
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://apps.kde.org/k3b/
   arch:
@@ -73,4 +73,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: k3b
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
