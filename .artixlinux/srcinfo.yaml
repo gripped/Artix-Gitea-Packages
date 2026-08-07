@@ -1,10 +1,10 @@
 ---
-version: 4.0.8-1
+version: 4.0.8-2
 pkgbase:
   name: python-urwid
   pkgdesc: Curses-based user interface library
   pkgver: 4.0.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://urwid.org/
   arch:
     - any
@@ -27,6 +27,7 @@ pkgbase:
   depends:
     - glib2
     - python
+    - python-typing_extensions
     - python-wcwidth
   optdepends:
     - 'python-gobject: for gobject integration'
@@ -43,4 +44,4 @@ pkgbase:
     - 2fa3007b88b59cf464230540f3c7565f8be8aede09d01ef7da01210827ba7fb1bc59e4c27fb29c278e685c56efd81692323a42cd749358833c5389893c3c47fa
 pkgname:
   - name: python-urwid
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
