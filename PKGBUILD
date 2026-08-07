@@ -7,7 +7,7 @@
 # Contributor: Sparadox <etienne.lafarge at gmail.com>
 
 pkgname=cloud-init
-pkgver=26.1
+pkgver=26.2
 pkgrel=1
 pkgdesc="Cloud instance initialization"
 arch=(any)
@@ -27,6 +27,7 @@ depends=(
   python-oauthlib
   python-pyserial
   python-pyyaml
+  python-referencing  # transitive dependency via python-jsonschema: https://github.com/canonical/cloud-init/issues/6986
   python-requests
   python-typing_extensions
   sudo
@@ -35,12 +36,12 @@ makedepends=(
   bash-completion
   meson
 #  netplan
-  udev
 )
 checkdepends=(
   procps-ng
   python-httpretty
   python-passlib
+  python-pyfakefs
   python-pytest
   python-pytest-mock
   python-responses
@@ -56,21 +57,13 @@ backup=(
   etc/cloud/cloud.cfg.d/05_logging.cfg
 )
 source=(
-  $_url/archive/$pkgver/$pkgname-$pkgver.tar.gz
-  $pkgname-25.3-skip_openrc_check.patch
+  $pkgname-$pkgver.tar.gz::$_url/archive/refs/tags/$pkgver.tar.gz
 )
-
-sha512sums=('3ba85590c9205562a36bb779f7f4ebd8827d68d09c880282924af14cc46a54d3da18db456aa8b0fff8b0a8135927c28e5e96b54090d836229ca508204dc43614'
-            '64a49d8359fe7d51a5cf8449abab792b00d1bc910ab7928201af6f2fec87486a3658ee6d06e13c789b40618428bf209be56cd5c79dbdf3736f99ef85db08783c')
-b2sums=('adcbe735d988de081a18f0928ee6efbff96219261556f2c4c50617527b9dca865e8af8cd592503d9f9ecf4c3b31865cc3c46cd259a0ad248dcd3c2a794ff047b'
-        'b4805b7842bae79105d8963776f635067d4b0c9aab5a5c9ac311f6d754082923f2ab1faa9a867e4bcbc91923d0512d38f21527712a5b25b3ad431a189ca60c07')
-
-prepare() {
-  patch -Np1 -d $pkgname-$pkgver -i ../$pkgname-25.3-skip_openrc_check.patch
-}
+sha512sums=('8826c2fba9ef4125121792390314a1b151ea9e004ad2db11a030881b99754884eb14c158eb497cf4c311e3b8cb5161ea5d9906838719666216f4a6430c9e18f4')
+b2sums=('4efb181700014b906b12e39b47a9d64efea7871ad5fc6176cb3709b6c6523c1175fdaea36f6e91fc03abe405dce6fb27e9151e6d5520da5cba7bcbb1914c2cc6')
 
 build() {
-  artix-meson $pkgname-$pkgver build -Dinit_system=sysvinit_openrc
+  artix-meson $pkgname-$pkgver build
   meson compile -C build
 }
 
