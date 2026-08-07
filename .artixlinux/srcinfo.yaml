@@ -1,10 +1,10 @@
 ---
-version: 9.1.0-6
+version: 9.1.0-7
 pkgbase:
   name: digikam
   pkgdesc: An advanced digital photo management application
   pkgver: 9.1.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://www.digikam.org/
   arch:
     - x86_64
@@ -88,4 +88,4 @@ pkgbase:
     - bdf108388e667f26877aeb48a1e021fdb55472cb37d077787e227e45c1cebb9a
 pkgname:
   - name: digikam
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
