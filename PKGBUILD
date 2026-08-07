@@ -3,7 +3,7 @@
 # Contributor: Bert Peters <bertptrs@archlinux.org>
 
 pkgname=ruby-cucumber-ci-environment
-pkgver=14.0.0
+pkgver=15.0.0
 pkgrel=1
 pkgdesc='Detect CI Environment from environment variables'
 arch=(any)
@@ -20,7 +20,7 @@ makedepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/cucumber/ci-environment.git#tag=v$pkgver)
-sha256sums=('8ff3fdc6594765e144bf32eb69317c926a22d8aa649e37e6b31698d8464b0bfe')
+sha256sums=('1d140507b601b2432ba5f471ee9ed28b16bc1496b665cdf54ab5e35fc7f1b44b')
 
 prepare() {
   cd ci-environment/ruby
@@ -31,7 +31,6 @@ prepare() {
 build() {
   local _gemdir="$(gem env gemdir)"
   cd ci-environment/ruby
-  rake ci_environments
   gem build cucumber-ci-environment.gemspec
   gem install \
     --local \

@@ -1,9 +1,9 @@
 ---
-version: 14.0.0-1
+version: 15.0.0-1
 pkgbase:
   name: ruby-cucumber-ci-environment
   pkgdesc: Detect CI Environment from environment variables
-  pkgver: 14.0.0
+  pkgver: 15.0.0
   pkgrel: 1
   url: https://github.com/cucumber/ci-environment
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/cucumber/ci-environment.git#tag=v14.0.0
+    - git+https://github.com/cucumber/ci-environment.git#tag=v15.0.0
   sha256sums:
-    - 8ff3fdc6594765e144bf32eb69317c926a22d8aa649e37e6b31698d8464b0bfe
+    - 1d140507b601b2432ba5f471ee9ed28b16bc1496b665cdf54ab5e35fc7f1b44b
 pkgname:
   - name: ruby-cucumber-ci-environment
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
