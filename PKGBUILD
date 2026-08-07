@@ -5,13 +5,13 @@
 pkgbase=gexiv2
 pkgname=(
   gexiv2
+  gexiv2-common
   gexiv2-docs
 )
-pkgver=50.0
-pkgver=0.16.1
-pkgrel=1
-pkgdesc='GObject-based wrapper around the Exiv2 library'
-url='https://gitlab.gnome.org/GNOME/gexiv2'
+pkgver=0.16.2
+pkgrel=2
+pkgdesc="GObject-based wrapper around the Exiv2 library"
+url="https://gitlab.gnome.org/GNOME/gexiv2"
 arch=(x86_64)
 license=(GPL-2.0-or-later)
 depends=(
@@ -27,22 +27,23 @@ makedepends=(
   glib2-devel
   gobject-introspection
   meson
+  python-gobject
   vala
 )
 source=("git+$url.git?signed#tag=$pkgver")
-b2sums=('7e04030f4e122be52154c09fafa8c251e5bbab80a4c877273304bd253f3288537738b9a91d69412888e250b6ba12ad0eb42c269048e891755e0896b69c06a6cb')
+b2sums=('f61d643f25a42218c3711d9f39173ade201c2ddb7777e5b8450e5b171247a84cc2b10db2747c1dc348d8baef363f9aae4e222157e516f303de5d95c9aa79db40')
 validpgpkeys=(AC9CD4E32D7C7F6357BA8ADD10F6E970175D29E1) # Jens Georg <mail@jensge.org>
 
 build() {
   local meson_options=(
     -D gtk_doc=true
     -D tests=true
-    # Keep python binding disabled for now, it conflicts with 'libexiv2'
-    ## https://gitlab.gnome.org/GNOME/gexiv2/-/issues/88
-    -D python3=false
+
+    # Shared with libgexiv2 (via gexiv2-common)
+    -D python3=true
   )
 
-  artix-meson $pkgname build "${meson_options[@]}"
+  artix-meson gexiv2 build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -50,22 +51,43 @@ check() {
   meson test -C build --print-errorlogs
 }
 
+_pick() {
+  local p="$1" f d; shift
+  for f; do
+    d="$srcdir/$p/${f#$pkgdir/}"
+    mkdir -p "$(dirname "$d")"
+    mv "$f" "$d"
+    rmdir -p --ignore-fail-on-non-empty "$(dirname "$f")"
+  done
+}
+
 package_gexiv2() {
   depends+=(
-    libg{lib,object,io}-2.0.so
+    "gexiv2-common>=$pkgver-$pkgrel"
     libexiv2.so
+    libg{lib,object,io}-2.0.so
   )
   provides+=(libgexiv2-0.16.so)
 
   meson install -C build --destdir "$pkgdir"
 
-  mkdir -p doc/usr/share
-  mv {"$pkgdir",doc}/usr/share/doc
+  cd "$pkgdir"
+  _pick common usr/lib/python*
+  _pick docs usr/share/doc
+}
+
+package_gexiv2-common() {
+  pkgdesc+=" (common files)"
+  depends=()
+
+  mv common/* "$pkgdir"
 }
 
 package_gexiv2-docs() {
   pkgdesc+=" (documentation)"
   depends=()
 
-  mv doc/* "$pkgdir"
+  mv docs/* "$pkgdir"
 }
+
+# vim:set sw=2 sts=-1 et:
