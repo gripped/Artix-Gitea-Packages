@@ -1,8 +1,8 @@
 ---
-version: 7.1.5-1
+version: 7.1.7-1
 pkgbase:
   name: linux-tools
-  pkgver: 7.1.5
+  pkgver: 7.1.7
   pkgrel: 1
   url: https://www.kernel.org
   arch:
@@ -40,22 +40,26 @@ pkgbase:
     - libelf
     - libcap
     - python-docutils
-    - libcap
     - llvm
     - clang
-    - libnl
   options:
     - '!strip'
     - '!lto'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.5.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.5.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.7.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.1.7.tar.sign
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 22a0196b3cbcdf34dc27b77561f4d040585fd3447edc9ab3531a1ac79e3041e7
+    - ca8f2a6884a4d62043e9ab93ac1ab15efc2b6630fe8f768b2ef2ffdf4b5e26df
     - SKIP
+    - 2e187734d8aec58a3046d79883510d779aa93fb3ab20bd3132c1a607ebe5498f
+    - b1315cb77a35454e1af9172f821a52e2a0cb18561be05a340d21cf337b01ae61
+    - 2d5e2f8d40b6f19bf2e1dead57ca105d72098fb0b418c09ff2e0cb91089710af
+  makedepends_x86_64:
+    - libcap
+    - libnl
 pkgname:
   - name: bootconfig
     pkgdesc: Apply, delete or show boot config to initrd
@@ -91,10 +95,14 @@ pkgname:
       - glibc
   - name: intel-speed-select
     pkgdesc: Intel Speed Select
+    arch:
+      - x86_64
     depends:
       - libnl
   - name: kcpuid
     pkgdesc: Kernel tool for various cpu debug outputs
+    arch:
+      - x86_64
     depends:
       - glibc
   - name: linux-tools-meta
@@ -105,15 +113,16 @@ pkgname:
       - bpf
       - cpupower
       - hyperv
-      - intel-speed-select
-      - kcpuid
       - perf
       - tmon
-      - turbostat
       - usbip
-      - x86_energy_perf_policy
     conflicts:
       - acpidump
+    depends_x86_64:
+      - intel-speed-select
+      - kcpuid
+      - turbostat
+      - x86_energy_perf_policy
   - name: perf
     pkgdesc: Linux kernel performance auditing tool
     depends:
@@ -146,6 +155,8 @@ pkgname:
       - ncurses
   - name: turbostat
     pkgdesc: Report processor frequency and idle statistics
+    arch:
+      - x86_64
     depends:
       - glibc
       - libcap
@@ -158,6 +169,8 @@ pkgname:
       - libudev
   - name: x86_energy_perf_policy
     pkgdesc: Read or write MSR_IA32_ENERGY_PERF_BIAS
+    arch:
+      - x86_64
     depends:
       - glibc
 # generated with artixpkg 0.38.5-1-any
