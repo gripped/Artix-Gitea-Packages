@@ -1,10 +1,10 @@
 ---
-version: 25-2
+version: 26-1
 pkgbase:
   name: pkgfile
   pkgdesc: A tool to search for files in official repository packages
-  pkgver: 25
-  pkgrel: 2
+  pkgver: 26
+  pkgrel: 1
   url: https://github.com/falconindy/pkgfile/
   install: pkgfile.install
   arch:
@@ -27,11 +27,11 @@ pkgbase:
     - pacman
     - pcre
   source:
-    - git+https://github.com/falconindy/pkgfile.git#tag=v25?signed
+    - git+https://github.com/falconindy/pkgfile.git#tag=v26?signed
   validpgpkeys:
     - 487EACC08557AD082088DABA1EB2638FF56C0C53
   sha256sums:
-    - 3b247c9e0647ddf93682b7b9fedee5822004b9b4b57af37be82351f1cdca3b81
+    - e09965c7a6abef75d7fb4e572eedae31aa87b171dbc7f47f7c162d796f17f879
 pkgname:
   - name: pkgfile
-# generated with artixpkg 0.38-1-any
+# generated with artixpkg 0.38.5-1-any
