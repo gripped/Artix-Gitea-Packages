@@ -3,8 +3,8 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=4.4.0
-pkgrel=1.1
+pkgver=4.4.2
+pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
@@ -32,20 +32,17 @@ optdepends=(
   'ninja: for ninja generator'
   'qt6-base: cmake-gui'
 )
-source=(
-    git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
-    artix-cmake.patch
-)
-sha512sums=('00afae8df8edfa1173c779a744d295d2eafdba37ed48a1e3862d2ff615346b62396a961e3d14961902119f02690ea17663c44100a337c2432586c814ca7809de'
+source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
+        artix-cmake.patch)
+sha512sums=('66cd5b06c5bf86805d4ae84071e30d085ff9058271187947d7f48806a81e038df44ab7c099a2c675bb08f141c2e87c3291f7de14b622059734f86b850318306e'
             '56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
 prepare() {
   cd $pkgname
-  git cherry-pick -n 261b7b933c6604095687d473503e24bae6ec0d6f # Support LUA 5.5
-  git revert -n 240481490cdf44f2f615d58e03add98324b15cf7 # Fix a regression with some builds
+  git cherry-pick -n 39cc425791394dd8c48e132fb8789ccea8249500 # Unbreak meson
   git apply ../artix-cmake.patch
-
+ 
   rm -fr .git # Avoid dirty version number
 }
 
