@@ -1,22 +1,19 @@
 ---
-version: 15.0-1
+version: 15.0-2
 pkgbase:
   name: yad
   pkgdesc: A fork of zenity - display graphical dialogs from shell scripts or command line
   pkgver: 15.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/v1cont/yad
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later
-  makedepends:
-    - autoconf
-    - automake
   depends:
     - gtk3
     - webkit2gtk-4.1
-    - gtksourceview3
+    - gtksourceview4
     - gspell
   source:
     - https://github.com/v1cont/yad/releases/download/v15.0/yad-15.0.tar.xz
