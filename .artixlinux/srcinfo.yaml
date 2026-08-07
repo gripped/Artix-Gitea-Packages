@@ -1,9 +1,9 @@
 ---
-version: 0.39.0-1
+version: 0.40.1-1
 pkgbase:
   name: ruby-protocol-http1
   pkgdesc: A low level implementation of the HTTP/1 protocol
-  pkgver: 0.39.0
+  pkgver: 0.40.1
   pkgrel: 1
   url: https://github.com/socketry/protocol-http1
   arch:
@@ -16,7 +16,6 @@ pkgbase:
     - ruby-bake-test-external
     - ruby-bundler
     - ruby-covered
-    - ruby-decode
     - ruby-sus
     - ruby-traces
   makedepends:
@@ -28,9 +27,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/socketry/protocol-http1.git#tag=v0.39.0
+    - git+https://github.com/socketry/protocol-http1.git#tag=v0.40.1
   sha512sums:
-    - eb73d63c2d9f1259d1e2a87639da5414183e36b629f97aaf7501a9b3eb57a30a883ab573bba2dca54f37c91b2badd64ceb1c00b8dcc9924c580cb64c931aa6f6
+    - 3c894812a7a670acd94fdc320aab5061eccf108fc6d970615265800a61941a22d067aa137fb44b4a61db0cb123f1c8a24a6ad5ca7ab888df219083ab1fe916e5
 pkgname:
   - name: ruby-protocol-http1
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
