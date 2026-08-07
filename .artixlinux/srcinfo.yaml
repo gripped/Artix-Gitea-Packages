@@ -28,7 +28,7 @@ pkgbase:
   backup:
     - etc/xdg/fuzzel/fuzzel.ini
   source:
-    - fuzzel-1.14.1.tar.gz::https://codeberg.org/dnkl/fuzzel/archive/1.14.1.tar.gz
+    - fuzzel-1.14.1-2.tar.gz::https://codeberg.org/dnkl/fuzzel/archive/1.14.1.tar.gz
   sha256sums:
     - 4b8a914d7a065e34da7db4cc6ae4f02c773445e41b724b28b8b7385636b449ee
 pkgname:

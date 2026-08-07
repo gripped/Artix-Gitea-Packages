@@ -23,7 +23,7 @@ makedepends=(meson
              tllist
              wayland-protocols)
 backup=('etc/xdg/fuzzel/fuzzel.ini')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
+source=("$pkgname-$pkgver-$pkgrel.tar.gz::$url/archive/$pkgver.tar.gz")
 sha256sums=('4b8a914d7a065e34da7db4cc6ae4f02c773445e41b724b28b8b7385636b449ee')
 
 build() {
