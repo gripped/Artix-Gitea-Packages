@@ -24,6 +24,7 @@ depends=(
   libdispatch
   libheif
   libjxl
+  libsrtp
   libvpx
   libxdamage
   minizip
