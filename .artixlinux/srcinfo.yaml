@@ -1,10 +1,10 @@
 ---
-version: 2.7.0-1
+version: 2.7.0-2
 pkgbase:
   name: udiskie
   pkgdesc: Removable disk automounter using udisks
   pkgver: 2.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://pypi.python.org/pypi/udiskie
   arch:
     - any
@@ -24,7 +24,6 @@ pkgbase:
     - python-docopt
     - gtk3
     - libnotify
-    - python-keyutils
   optdepends:
     - 'libappindicator-gtk3: --appindicator support'
   source:
