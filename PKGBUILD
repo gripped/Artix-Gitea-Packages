@@ -3,7 +3,7 @@
 pkgname=kpipewire
 pkgver=6.7.4
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=5
+pkgrel=5.1
 pkgdesc='Components relating to pipewire use in Plasma'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'

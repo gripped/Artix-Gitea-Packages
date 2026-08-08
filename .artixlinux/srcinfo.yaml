@@ -1,10 +1,10 @@
 ---
-version: 6.7.4-5
+version: 6.7.4-5.1
 pkgbase:
   name: kpipewire
   pkgdesc: Components relating to pipewire use in Plasma
   pkgver: 6.7.4
-  pkgrel: 5
+  pkgrel: 5.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -41,4 +41,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kpipewire
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
