@@ -1,10 +1,10 @@
 ---
-version: 3.11.1-2
+version: 3.11.1-2.1
 pkgbase:
   name: localsearch
   pkgdesc: Filesystem indexer and metadata extractor
   pkgver: 3.11.1
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://gnome.pages.gitlab.gnome.org/localsearch/
   arch:
     - x86_64
