@@ -1,10 +1,10 @@
 ---
-version: 1:3.7.8-2
+version: 1:3.7.8-3
 pkgbase:
   name: audacity
   pkgdesc: A program that lets you manipulate digital audio waveforms
   pkgver: 3.7.8
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://audacityteam.org
   arch:
@@ -27,7 +27,6 @@ pkgbase:
     - jack
     - lame
     - libid3tag
-    - libmad
     - libogg
     - libsbsms
     - libsndfile
@@ -37,6 +36,7 @@ pkgbase:
     - lilv
     - lv2
     - mpg123
+    - opus
     - opusfile
     - portaudio
     - portmidi
@@ -92,7 +92,6 @@ pkgname:
       - libgcc
       - libid3tag
       - libid3tag.so
-      - libmad
       - libogg
       - libogg.so
       - libsbsms
@@ -110,6 +109,8 @@ pkgname:
       - liblilv-0.so
       - mpg123
       - libmpg123.so
+      - opus
+      - libopus.so
       - opusfile
       - portaudio
       - libportaudio.so
@@ -117,7 +118,6 @@ pkgname:
       - libportmidi.so
       - portsmf
       - libportSMF.so
-      - python
       - soundtouch
       - sqlite
       - libsqlite3.so
@@ -145,4 +145,4 @@ pkgname:
     license:
       - GPL-3.0-or-later
       - CC-BY-3.0
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
