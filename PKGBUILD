@@ -36,6 +36,7 @@ makedepends=(
   bash-completion
   meson
 #  netplan
+  udev
 )
 checkdepends=(
   procps-ng
@@ -58,9 +59,12 @@ backup=(
 )
 source=(
   $pkgname-$pkgver.tar.gz::$_url/archive/refs/tags/$pkgver.tar.gz
+  $pkgname-25.3-skip_openrc_check.patch
 )
-sha512sums=('8826c2fba9ef4125121792390314a1b151ea9e004ad2db11a030881b99754884eb14c158eb497cf4c311e3b8cb5161ea5d9906838719666216f4a6430c9e18f4')
-b2sums=('4efb181700014b906b12e39b47a9d64efea7871ad5fc6176cb3709b6c6523c1175fdaea36f6e91fc03abe405dce6fb27e9151e6d5520da5cba7bcbb1914c2cc6')
+sha512sums=('8826c2fba9ef4125121792390314a1b151ea9e004ad2db11a030881b99754884eb14c158eb497cf4c311e3b8cb5161ea5d9906838719666216f4a6430c9e18f4'
+            '64a49d8359fe7d51a5cf8449abab792b00d1bc910ab7928201af6f2fec87486a3658ee6d06e13c789b40618428bf209be56cd5c79dbdf3736f99ef85db08783c')
+b2sums=('4efb181700014b906b12e39b47a9d64efea7871ad5fc6176cb3709b6c6523c1175fdaea36f6e91fc03abe405dce6fb27e9151e6d5520da5cba7bcbb1914c2cc6'
+        'b4805b7842bae79105d8963776f635067d4b0c9aab5a5c9ac311f6d754082923f2ab1faa9a867e4bcbc91923d0512d38f21527712a5b25b3ad431a189ca60c07')
 
 build() {
   artix-meson $pkgname-$pkgver build
@@ -84,5 +88,5 @@ check() {
 }
 
 package() {
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build --destdir "$pkgdir" -Dinit_system=sysvinit_openrc
 }
