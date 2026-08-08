@@ -1,10 +1,10 @@
 ---
-version: 2:9.0-4.1
+version: 2:9.0-5
 pkgbase:
   name: ffmpeg
   pkgdesc: Complete solution to record, convert and stream audio and video
   pkgver: 9.0
-  pkgrel: 4.1
+  pkgrel: 5
   epoch: 2
   url: https://ffmpeg.org
   arch:
@@ -22,6 +22,7 @@ pkgbase:
     - mesa
     - nasm
     - opencl-headers
+    - spirv-headers
     - vulkan-headers
   depends:
     - alsa-lib

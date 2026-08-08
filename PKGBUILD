@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=9.0
-pkgrel=4.1
+pkgrel=5
 epoch=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
@@ -97,6 +97,7 @@ makedepends=(
   mesa
   nasm
   opencl-headers
+  spirv-headers
   vulkan-headers
 )
 optdepends=(
