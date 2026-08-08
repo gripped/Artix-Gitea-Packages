@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=helium-browser
-pkgver=0.15.2.1
+pkgver=0.15.3.1
 _hlmver="${pkgver%.*}"
 pkgrel=1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
