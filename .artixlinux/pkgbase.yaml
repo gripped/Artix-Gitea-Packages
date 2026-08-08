@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 151.3.14-2
+    packages:
+      - cef-151.3.14-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 150.0.14-1
