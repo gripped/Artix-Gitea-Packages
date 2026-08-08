@@ -26,6 +26,7 @@ pkgbase:
     - qt6-shadertools
     - range-v3
     - tl-expected
+    - vulkan-headers
   depends:
     - ada
     - ffmpeg
@@ -71,4 +72,4 @@ pkgbase:
     - cf669c8a03f8ffcfb0898534c394324f9d59909e0526b86d63190d662a3dd861
 pkgname:
   - name: forkgram
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any

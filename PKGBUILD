@@ -62,6 +62,7 @@ makedepends=(
   qt6-shadertools
   range-v3
   tl-expected
+  vulkan-headers # for tdesktop libui
 )
 optdepends=(
   'webkit2gtk: embedded browser features'
