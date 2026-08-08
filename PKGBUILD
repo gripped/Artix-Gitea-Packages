@@ -6,8 +6,8 @@
 
 pkgname=minidlna
 pkgver=1.3.3
-pkgrel=6
-pkgdesc="A DLNA/UPnP-AV Media server (aka ReadyDLNA)"
+pkgrel=7
+pkgdesc="A DLNA/UPnP-AV Media server (aka ReadyMedia)"
 arch=('x86_64')
 url="https://sourceforge.net/projects/minidlna/"
 license=('GPL')
@@ -44,7 +44,10 @@ build() {
 package() {
   cd "$srcdir/$pkgname"
   DESTDIR="$pkgdir" make install
-  install -Dm644 minidlna.conf "$pkgdir"/etc/minidlna.conf
+
+  install -Dm0644 "$srcdir"/minidlna.sysusers "$pkgdir"/usr/lib/sysusers.d/minidlna.conf
+  install -Dm0644 "$srcdir"/minidlna.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/minidlna.conf
+
   install -Dm644 "$srcdir"/$pkgname/minidlna.conf.5 "$pkgdir"/usr/share/man/man5/minidlna.conf.5
   install -Dm644 "$srcdir"/$pkgname/minidlnad.8 "$pkgdir"/usr/share/man/man8/minidlnad.8
 }
