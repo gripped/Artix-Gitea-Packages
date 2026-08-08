@@ -5,7 +5,7 @@
 
 pkgname=motion
 pkgver=4.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Monitor and record video signals from many types of cameras"
 arch=('x86_64')
 license=('GPL')
@@ -14,11 +14,13 @@ depends=('sqlite' 'ffmpeg' 'libmicrohttpd' 'libwebp' 'mariadb-libs')
 optdepends=('gettext: native language support')
 backup=('etc/motion/motion.conf')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/Motion-Project/motion/archive/release-$pkgver.tar.gz"
-  'motion.sysusers'
-  'motion.tmpfiles')
+        'motion.service'
+        'motion.sysusers'
+        'motion.tmpfiles')
 sha512sums=('77f6f18d7313db5643bf0162f57e2f5ac5ecafb245c55a8a94bb96105b295b3c81ef1482731a01cfadd3479ce1926cff1a61d7fad2d82aa644c22c310d15fd86'
-  '6223040c71d5d8e1a67ad99276342cb43549554191fba6492803f6d7069ea87afd378fec7a4c5332821a366d5a669fbd21f2aa16bb8911eabb45f44a18a65de5'
-  'cae88686417c31984c56d0df6625fb4ee62c2910d7f45b0e46dc1de6775b1a7b5463efc3ad1299e44746317332100c6afb6526b68fa6abea23e86b62d897460b')
+            '817590421b313f468b0ecc783048affa2a97e82701c6c18ab14b0215a5ed66bd5e66fe584441f161cdea334323e998151a255ebb615f15d5118bc6981876f273'
+            '6223040c71d5d8e1a67ad99276342cb43549554191fba6492803f6d7069ea87afd378fec7a4c5332821a366d5a669fbd21f2aa16bb8911eabb45f44a18a65de5'
+            'cae88686417c31984c56d0df6625fb4ee62c2910d7f45b0e46dc1de6775b1a7b5463efc3ad1299e44746317332100c6afb6526b68fa6abea23e86b62d897460b')
 
 build() {
   cd $pkgname-release-$pkgver
@@ -32,10 +34,11 @@ build() {
   make
 }
 
-package() {
+package(){
   cd $pkgname-release-$pkgver
   make DESTDIR="$pkgdir" install
   install -Dm644 data/motion-dist.conf "$pkgdir"/etc/motion/motion.conf
+  install -Dm644 "$srcdir"/motion.service "$pkgdir"/usr/lib/systemd/system/motion.service
   install -Dm644 "$srcdir"/motion.sysusers "$pkgdir"/usr/lib/sysusers.d/motion.conf
   install -Dm644 "$srcdir"/motion.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/motion.conf
 }
