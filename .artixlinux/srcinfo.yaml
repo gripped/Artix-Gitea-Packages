@@ -1,10 +1,10 @@
 ---
-version: 26.05-3
+version: 26.05-4
 pkgbase:
   name: usd
   pkgdesc: 3D VFX pipeline interchange file format
   pkgver: 26.05
-  pkgrel: 3
+  pkgrel: 4
   url: https://openusd.org
   arch:
     - x86_64
@@ -64,4 +64,4 @@ pkgbase:
     - 6b880a1dc44ee3286a19b3347f65be5337192d00bccd55fa549598db90a887da
 pkgname:
   - name: usd
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any

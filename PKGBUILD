@@ -7,7 +7,7 @@
 
 pkgname=usd
 pkgver=26.05
-pkgrel=3
+pkgrel=4
 arch=(x86_64)
 url='https://openusd.org'
 pkgdesc='3D VFX pipeline interchange file format'
