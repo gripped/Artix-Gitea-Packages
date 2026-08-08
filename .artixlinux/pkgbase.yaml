@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,11 +29,11 @@ repos:
     packages: []
     debug: []
   world:
-    version: 1.2.13-2
+    version: 1.2.16-2
     packages:
-      - tinycompress-1.2.13-2-x86_64.pkg.tar.zst
+      - tinycompress-1.2.16-2-x86_64.pkg.tar.zst
     debug:
-      - tinycompress-debug-1.2.13-2-x86_64.pkg.tar.zst
+      - tinycompress-debug-1.2.16-2-x86_64.pkg.tar.zst
   lib32-goblins:
     version: null
     packages: []
