@@ -1,10 +1,10 @@
 ---
-version: 0.8.4-5
+version: 0.8.4-6
 pkgbase:
   name: hyprpaper
   pkgdesc: a blazing fast wayland wallpaper utility with IPC controls
   pkgver: 0.8.4
-  pkgrel: 5
+  pkgrel: 6
   url: https://github.com/hyprwm/hyprpaper
   arch:
     - x86_64
@@ -15,8 +15,6 @@ pkgbase:
     - wayland-protocols
     - xorgproto
   depends:
-    - cairo
-    - libcairo.so
     - file
     - libmagic.so
     - glibc
@@ -24,8 +22,6 @@ pkgbase:
     - libgcc_s.so
     - libstdc++
     - libstdc++.so
-    - hyprgraphics
-    - libhyprgraphics.so
     - hyprlang
     - libhyprlang.so
     - hyprtoolkit
@@ -37,7 +33,6 @@ pkgbase:
     - libhyprwire.so
     - libglvnd
     - libGLESv2.so
-    - pango
     - wayland
   source:
     - https://github.com/hyprwm/hyprpaper/archive/v0.8.4/hyprpaper-0.8.4.tar.gz
