@@ -19,7 +19,7 @@ makedepends=(cmake
 source=(git+https://github.com/google/libultrahdr#tag=v$pkgver
         unbundle-gtest.patch)
 sha256sums=('fc6d647ba86459438e8b3e5ff4f8e0230652fe058014f4b0cc25e6a9911e0a69'
-            'af6713ff9550016929f6a284a0e8b04fb8afffb14a15126095e1ca3f9c2ce57a')
+            '37810565294952afea08b8e4cb0f2cb6d3f67019f7f9a7f59acd883e1a0edb67')
 
 prepare() {
   patch -d libultrahdr -p1 < unbundle-gtest.patch
