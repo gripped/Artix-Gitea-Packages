@@ -3,8 +3,8 @@
 # Contributor: Marcell Pardavi <marcell.pardavi@gmail.com>
 
 pkgname=zed
-pkgver=1.11.3
-pkgrel=1
+pkgver=1.14.2
+pkgrel=2
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
 url=https://zed.dev
@@ -42,7 +42,7 @@ optdepends=('org.freedesktop.secrets: to keep you logged into your Zed account')
 replaces=(zed-editor)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('c62f43fb5ea5ca38bb8a82960b2577bc03d48d1a3fba6937a51132521c3a7e6b')
+sha256sums=('2a76e45be06708e719d71aa37cab887c2fcf34e5d5cad8c41ef2be5b70ba2e02')
 
 _binname=zeditor
 _appid=dev.zed.Zed
@@ -52,7 +52,7 @@ _srcenv() {
 	export CARGO_HOME="$srcdir"
 	export CARGO_PROFILE_RELEASE_DEBUG=2
 	export CARGO_PROFILE_RELEASE_STRIP=false
-	export CARGO_PROFILE_RELEASE_LTO=true
+	export CARGO_PROFILE_RELEASE_LTO=thin
 	export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 	export CARGO_PROFILE_RELEASE_OPT_LEVEL=3
 	CFLAGS+=' -ffat-lto-objects'
