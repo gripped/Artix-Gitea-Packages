@@ -8,15 +8,16 @@ pkgname=(
   librsvg-noglycin
   librsvg-noglycin-docs
 )
-pkgver=2.61.4
-pkgrel=1.1
+pkgver=2.62.3
+pkgrel=1
 pkgdesc="SVG rendering library, compatible with gdk-pixbuf2-noglycin"
-url="https://wiki.gnome.org/Projects/LibRsvg"
+url="https://gitlab.gnome.org/GNOME/librsvg"
 arch=(x86_64)
 license=(LGPL-2.1-or-later)
 depends=(
   cairo
   dav1d
+  fontconfig
   freetype2
   gdk-pixbuf2-noglycin
   glib2
@@ -42,7 +43,7 @@ source=(
   # librsvg tags use SSH signatures which makepkg doesn't understand
   "git+https://gitlab.gnome.org/GNOME/librsvg.git#tag=$pkgver"
 )
-b2sums=('2e3839de21a227b1f548ee879fdf67eb60422a0632ba06ae6192997876504beead18248825d6b76336fb3435d7aadc291c788ad7fdc8d93058e140059edf8116')
+b2sums=('63d921e517bb95362259f477cacfbafcf788ed9f40fe15697f10b0dfdff32831c7963eb4fce65ab03ad94790555741f6450f275713a9ae9aca7ceb27af653e85')
 
 # Use debug
 export CARGO_PROFILE_RELEASE_DEBUG=2 CARGO_PROFILE_RELEASE_STRIP=false
@@ -61,7 +62,7 @@ build() {
     -D pixbuf-loader=enabled
   )
 
-  arch-meson librsvg build "${meson_options[@]}"
+  artix-meson librsvg build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -73,7 +74,6 @@ package_librsvg-noglycin() {
   conflicts=(
     librsvg
   )
-  install=librsvg-noglycin.install
 
   meson install -C build --destdir "$pkgdir" --no-rebuild
 
