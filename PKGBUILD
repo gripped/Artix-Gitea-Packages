@@ -7,10 +7,10 @@ pkgname=(
   gdk-pixbuf2-noglycin
   gdk-pixbuf2-noglycin-docs
 )
-pkgver=2.44.4
-pkgrel=2
+pkgver=2.44.7
+pkgrel=1
 pkgdesc="An image loading library, without glycin"
-url="https://wiki.gnome.org/Projects/GdkPixbuf"
+url="https://gitlab.gnome.org/GNOME/gdk-pixbuf"
 arch=(x86_64)
 license=(LGPL-2.0-or-later)
 depends=(
@@ -33,7 +33,7 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/gdk-pixbuf.git#tag=$pkgver"
   gdk-pixbuf-query-loaders.hook
 )
-b2sums=('c25b8070b944aaa3c27301dce8a991b8525a764c32e5ec673933de611ce7acb4f7963405ac715e5deb7a547b22352676fa024f77dd4a9e1cb821495f61f4cb26'
+b2sums=('0a0c801939c6cc6f647714962491bc0d4673349899fb99c4760782c99f56ca3cc16c1159a2de389372f5b6eab12ad9eb7c9f6521ee9b983a4c8435a70da22639'
         '5a00d34888e207d70d02369015d029f4c0450fc5a02b4b257de8e5df04380dc550723f351433859224c96c3c6390896f2166673af65e8a09eb57024f5a34301b')
 
 prepare() {
@@ -58,7 +58,7 @@ build() {
     -D tiff=enabled
   )
 
-  arch-meson gdk-pixbuf build "${meson_options[@]}"
+  artix-meson gdk-pixbuf build "${meson_options[@]}"
   meson compile -C build
 }
 
