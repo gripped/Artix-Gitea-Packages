@@ -5,7 +5,7 @@
 # Contributor: Raphael Amorim <rapha850@gmail.com>
 
 pkgname=rio
-pkgver=0.5.5
+pkgver=0.5.19
 pkgrel=1
 pkgdesc="A hardware-accelerated GPU terminal emulator powered by WebGPU"
 arch=('x86_64')
@@ -28,14 +28,14 @@ makedepends=(cargo
              python
              scdoc)
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
-sha512sums=('d584275b39f7c59469edfb3b08e7cac960069430fd489a7ac1878bc85cab14498c4a32a5921078cd6cb0092ff7bc2a23118530af3a65e48efc402cffb5c25506')
+sha512sums=('b03c202c3480b26c6fa5358e2f776ee2a2b470e3d3bffe5f7e23b40566e01a8c013bd8c9a136f71df1c600fb39749d275eb8d8675ad785979b445d56027040fc')
 
 _srcenv() {
   cd "${pkgname}-${pkgver}"
   export CARGO_HOME="$srcdir"
   export CARGO_PROFILE_RELEASE_DEBUG=2
   export CARGO_PROFILE_RELEASE_STRIP=false
-  export CARGO_PROFILE_RELEASE_LTO=true
+  export CARGO_PROFILE_RELEASE_LTO=thin
   export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
   export CARGO_PROFILE_RELEASE_OPT_LEVEL=3
   CFLAGS+=' -ffat-lto-objects'
