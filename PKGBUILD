@@ -5,9 +5,10 @@ pkgbase=lightdm
 pkgname=(
   lightdm
   liblightdm-qt5
+  liblightdm-qt6
 )
-pkgver=1.32.0
-pkgrel=9.1
+pkgver=1.33.0
+pkgrel=1
 epoch=1
 pkgdesc='A lightweight display manager'
 arch=(x86_64)
@@ -28,15 +29,15 @@ makedepends=(
   pam
   polkit
   qt5-base
+  qt6-base
   vala
-  x11win-server
   xorg-server
   xorg-xmodmap
   xorg-xrdb
   yelp-tools
 )
 source=(
-  git+https://github.com/CanonicalLtd/lightdm.git?signed#tag=${pkgver}
+  git+https://github.com/CanonicalLtd/lightdm.git#tag=${pkgver}
   lightdm.sysusers
   lightdm.tmpfiles
   lightdm.pam
@@ -45,8 +46,11 @@ source=(
   lightdm-default-config.patch
   Xsession
   lightdm-greeter.pam)
-validpgpkeys=(497851B5D455C606543F2B9318EAA1890F7C882E) # Robert Ancell <robert.ancell@gmail.com>
-b2sums=('37c05b309ee82185201e6803261dcfa1d1252c7f6aba5012b2eee508b24aa965ef569c4f878a6e618ef0efad87d088f3ce5de82a9ff4a4e4e4376ca7b3256fbf'
+validpgpkeys=(
+  497851B5D455C606543F2B9318EAA1890F7C882E # Robert Ancell <robert.ancell@gmail.com>
+  226D0F1861081C139D899D7741C3D4189AFEDB5A # Joshua Peisach <jpeisach@ubuntu.com>
+)
+b2sums=('08ea38f132b2ca34aa860e4495b05950a4f82140449ddc846576ac56a36c3de4529744bc9dff2eb7ccc43deae0cc5414bed84f50dad2c9b00144d4ba31708f15'
         '901702d0bc471de1f8f796576f4d3b451daf632dd703fecc3be7228f9b8deb911d834cd53e8fd5ee24227f46be6a4789b1983a96ec7c32d170d7427ef00c5293'
         '8d04b2f9b861a65707bc1965a80f64d4e03cfe09c84addda27e8dca74b40f4fe85c43773e41dcb972772df7684d4bfc2aacd32c9bc1ac9fa1c2a8d6c27cd02b2'
         '0ad4cff08634a22ece4a2a37832ff080fcf57dcea4eb7551535f7068e38f55c6c60886dc9f82e8b8370f3f92bc00c7848a40978fe0493885e6ab6d5fb048bf1a'
@@ -64,7 +68,6 @@ prepare() {
 
 build() {
   cd lightdm
-  export MOC5=moc-qt5
   ./configure \
     --prefix=/usr \
     --libexecdir=/usr/lib/lightdm \
@@ -74,6 +77,8 @@ build() {
     --disable-static \
     --disable-tests \
     --enable-gtk-doc \
+    --enable-liblightdm-qt5 \
+    --enable-liblightdm-qt6 \
     --with-greeter-user=lightdm \
     --with-greeter-session=lightdm-gtk-greeter
   make
@@ -121,7 +126,7 @@ package_lightdm() {
   make DESTDIR="${pkgdir}" -C liblightdm-qt uninstall
   install -m 755 ../Xsession "${pkgdir}"/etc/lightdm/Xsession
   rm -rf "${pkgdir}"/etc/init
-  rm -rf "${pkgdir}"/usr/include/lightdm-qt{,5}-*
+  rm -rf "${pkgdir}"/usr/include/lightdm-qt{,5,6}-*
 
   # PAM
   install -m 644 ../lightdm.pam "${pkgdir}"/etc/pam.d/lightdm
@@ -139,7 +144,7 @@ package_lightdm() {
 }
 
 package_liblightdm-qt5() {
-  pkgdesc='LightDM Qt client library'
+  pkgdesc='LightDM Qt 5 client library'
   license=(
     LGPL-2.0-only
     LGPL-3.0-only
@@ -160,4 +165,28 @@ package_liblightdm-qt5() {
   find "${pkgdir}" -type d -name *qt[!5]* -exec rm -rf {} +
   find "${pkgdir}" -type f  -name *qt[!5]* -exec rm {} +
   find "${pkgdir}" -type l  -name *qt[!5]* -exec rm {} +
+}
+
+package_liblightdm-qt6() {
+  pkgdesc='LightDM Qt 6 client library'
+  license=(
+    LGPL-2.0-only
+    LGPL-3.0-only
+  )
+  depends=(
+    glibc
+    libgcc
+    libstdc++
+    lightdm
+    qt6-base
+  )
+  options=(!emptydirs)
+
+  cd lightdm
+  make DESTDIR="${pkgdir}" -C liblightdm-gobject install
+  make DESTDIR="${pkgdir}" -C liblightdm-qt install
+  make DESTDIR="${pkgdir}" -C liblightdm-gobject uninstall
+  find "${pkgdir}" -type d -name *qt[!6]* -exec rm -rf {} +
+  find "${pkgdir}" -type f  -name *qt[!6]* -exec rm {} +
+  find "${pkgdir}" -type l  -name *qt[!6]* -exec rm {} +
 }
