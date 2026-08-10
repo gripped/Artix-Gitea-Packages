@@ -3,7 +3,7 @@
 
 pkgname=aardvark-dns
 pkgver=2.1.0
-pkgrel=1
+pkgrel=3
 pkgdesc="Authoritative dns server for A/AAAA container records"
 arch=(x86_64)
 url="https://github.com/containers/aardvark-dns"
