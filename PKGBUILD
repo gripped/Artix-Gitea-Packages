@@ -108,12 +108,14 @@ source=(
   https://codeberg.org/api/packages/librewolf/generic/librewolf-source/$_firefoxver-$_librewolfver/librewolf-$_firefoxver-$_librewolfver.source.tar.gz{,.sig}
   $pkgname.desktop
   "default192x192.png"
+  0002-Bug-2057577-DOM-Media-Add-FFmpeg-63-support.-r-alwu-.patch
 )
 
 sha256sums=('ab4283ce8eb6765e9df0f4586b2f4fb0a05de186398f2b944f6f5c791541321f'
             'SKIP'
             '3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae'
-            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1')
+            '959c94c68cab8d5a8cff185ddf4dca92e84c18dccc6dc7c8fe11c78549cdc2f1'
+            '55aeec4d098990e91f881de32126ea91576b0d185e322b561241c513ea5b9fcd')
 
 validpgpkeys=('662E3CDD6FE329002D0CA5BB40339DD82B12EF16') # https://rpm.librewolf.net/pubkey.gpg
 
@@ -121,6 +123,8 @@ validpgpkeys=('662E3CDD6FE329002D0CA5BB40339DD82B12EF16') # https://rpm.librewol
 prepare() {
   mkdir -p mozbuild
   cd librewolf-$_firefoxver-$_librewolfver
+
+  patch -Np1 -i ../0002-Bug-2057577-DOM-Media-Add-FFmpeg-63-support.-r-alwu-.patch
 
   mv mozconfig ../mozconfig
 
