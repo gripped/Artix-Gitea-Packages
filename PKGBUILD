@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 # Contributor: artoo <artoo@artixlinux.org> 
 pkgname=s6-base
-pkgver=3.3.1 
+pkgver=3.3.2
 pkgrel=1
 pkgdesc='Packages, hooks, and scripts to define a basic s6 init system implementation for Artix Linux.'
 url='https://gitea.artixlinux.org/artix/alpm-hooks'
@@ -11,9 +11,9 @@ depends=('s6-contrib' 's6-frontend')
 makedepends=('git')
 provides=('svc-manager' 'init-rc')
 conflicts=('svc-manager' 'init-rc')
-_commit=08a2c08bd62b978cf782c43758968745b1dc9a22
-source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=$_commit")
-sha256sums=('8cac63769d3692e869243eaa7ead5dae534e52740ef14b614c292a2a35533ae1')
+_tag=3.1
+source=("git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_tag")
+sha256sums=('602559d7a07817c90f297503687e467b2fd12fd5ca85231eca98f1fd07844302')
 
 package() {
     cd "${srcdir}"/alpm-hooks
