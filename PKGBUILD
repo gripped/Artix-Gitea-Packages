@@ -2,7 +2,7 @@
 
 pkgname=xorg-server-tearfree
 pkgver=21.1.24
-pkgrel=1
+pkgrel=1.1
 arch=('x86_64')
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause'
@@ -98,7 +98,7 @@ _install() {
 
 package_xorg-server-tearfree() {
   pkgdesc="Xorg X server with the tearfree patch for the modesetting driver (enabled by default)"
-  depends=(libepoxy libxfont2 pixman "xorg-server-common=$pkgver" 'xf86-input-libinput<2.0.0'
+  depends=(libepoxy libxfont2 pixman xorg-server-common 'xf86-input-libinput<2.0.0'
            dbus libgl libunwind nettle libxdmcp sh glibc libxau libelogind libtirpc
            libpciaccess libdrm libxshmfence libxcvt)   # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on

@@ -1,9 +1,9 @@
 ---
-version: 21.1.24-1
+version: 21.1.24-1.1
 pkgbase:
   name: xorg-server-tearfree
   pkgver: 21.1.24
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://xorg.freedesktop.org
   arch:
     - x86_64
@@ -79,7 +79,7 @@ pkgname:
       - libepoxy
       - libxfont2
       - pixman
-      - xorg-server-common=21.1.24
+      - xorg-server-common
       - xf86-input-libinput<2.0.0
       - dbus
       - libgl
