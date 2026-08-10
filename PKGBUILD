@@ -5,7 +5,7 @@ _alpm=3.1
 
 pkgname=userspawn-dinit
 pkgver=20260810
-pkgrel=2
+pkgrel=1
 pkgdesc='dinit service script for userspawn'
 arch=('any')
 url='https://github.com/Mayware/userspawn'
