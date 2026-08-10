@@ -14,10 +14,10 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-pkgver=153.0.0.100b3
-#pkgver=140.13.0.101
+#pkgver=153.0.0.100b3
+pkgver=140.13.0.101
 
-pkgrel=1
+pkgrel=2
 _ffbuild=1
 _srcver="${pkgver%.*}"
 _ffsrcver="${_srcver/.0.0/.0}"
@@ -145,9 +145,11 @@ source=(
   "0002-Use-wasm32-wasip1-target.patch"
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
+  "0005-ffmpeg-soname-version-assert.patch"
+  "0006-ffmpeg-9-compat.patch"
 )
-sha256sums=('6c758e741be825b0832aab22e36d86a13fa918d6bd1894d03b7d78e85c78fe7c'
-            'dbe3d9dedcb118a4b623688c559c6f2de280ea3be171e3ff256504cc01626cb5'
+sha256sums=('e8fd486c3f4859cde87ba2437824e6bb598caf6a8fcfb5e529b36347075a162c'
+            'f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
@@ -156,7 +158,9 @@ sha256sums=('6c758e741be825b0832aab22e36d86a13fa918d6bd1894d03b7d78e85c78fe7c'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
+            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760'
+            '259cf11de2da313bc00b34e7d725afb9d9f4594addf2e82a587b2b97cd134cb0'
+            'a842f2ab9ed7651a075c735b505f8b4e723430fc481d65ded191b4b511e14c66')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -262,6 +266,8 @@ fi
     patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
     xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
     xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
+    patch -B .patchorigin -Np1 -i ../../0005-ffmpeg-soname-version-assert.patch
+    patch -B .patchorigin -Np1 -i ../../0006-ffmpeg-9-compat.patch
   fi
 }
 

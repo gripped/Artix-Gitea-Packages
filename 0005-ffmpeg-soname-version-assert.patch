@@ -1,0 +1,87 @@
+commit 6ba279282fc74a4536a713594a35a94d982d1368
+tree f5ae8c9fdd3a1081b596c4733cd725301bc1fc0d
+parent e5302e88d8cabb3acd5e2e7e4e6c38f4202910e5
+author Paul Adenot <paul@paul.cx> 1777990393 +0000
+committer padenot@mozilla.com <padenot@mozilla.com> 1778001127 +0000
+
+    Bug 2037097 - Assert FFMPEG_MAX_MAJOR_VERSION stays in sync with sonames and AV_FUNC bindings. r=azebrowski,media-playback-reviewers
+    
+    This has bitten us when rebasing on branches.
+    
+    This defined FFMPEG_MAX_MAJOR_VERSION to encode the highest supported
+    libavcodec major version in one place. The first entry in sLibs[] is
+    derived from it via stringify macros, so the soname for the max version
+    is never omitted.
+    
+    Two static_asserts in FFmpegLibWrapper::Link() enforce that the macro matches
+    AV_FUNC_AVCODEC_ALL: one checks the version's bit is present, another checks no
+    higher version bit was added without bumping the macro.
+    
+    With this, forgetting to update the so list but changing other bits will
+    fail to compile.
+    
+    Differential Revision: https://phabricator.services.mozilla.com/D298307
+
+diff --git a/dom/media/platforms/ffmpeg/FFmpegLibWrapper.cpp b/dom/media/platforms/ffmpeg/FFmpegLibWrapper.cpp
+index 68df7e9..deca372 100644
+--- a/dom/media/platforms/ffmpeg/FFmpegLibWrapper.cpp
++++ b/dom/media/platforms/ffmpeg/FFmpegLibWrapper.cpp
+@@ -87,6 +87,16 @@ FFmpegLibWrapper::LinkResult FFmpegLibWrapper::Link() {
+                           AV_FUNC_61 | AV_FUNC_62,
+     AV_FUNC_AVUTIL_ALL = AV_FUNC_AVCODEC_ALL | AV_FUNC_AVUTIL_MASK
+   };
++  // AV_FUNC_N = 1 << (N - 53), so these two checks enforce that
++  // FFMPEG_MAX_MAJOR_VERSION matches AV_FUNC_AVCODEC_ALL exactly.
++  static_assert(
++      (AV_FUNC_AVCODEC_ALL & (1 << (FFMPEG_MAX_MAJOR_VERSION - 53))) != 0,
++      "FFMPEG_MAX_MAJOR_VERSION has no AV_FUNC entry; add bindings or lower "
++      "the version");
++  static_assert(
++      (AV_FUNC_AVCODEC_ALL & (1 << (FFMPEG_MAX_MAJOR_VERSION - 53 + 1))) == 0,
++      "New FFmpeg version added to AV_FUNC_AVCODEC_ALL; bump "
++      "FFMPEG_MAX_MAJOR_VERSION");
+ 
+   switch (macro) {
+     case 53:
+diff --git a/dom/media/platforms/ffmpeg/FFmpegLibWrapper.h b/dom/media/platforms/ffmpeg/FFmpegLibWrapper.h
+index 0f8fb95..fed6ab0 100644
+--- a/dom/media/platforms/ffmpeg/FFmpegLibWrapper.h
++++ b/dom/media/platforms/ffmpeg/FFmpegLibWrapper.h
+@@ -5,6 +5,15 @@
+ #ifndef __FFmpegLibWrapper_h__
+ #define __FFmpegLibWrapper_h__
+ 
++// The highest libavcodec major version we support. When bumping this for a new
++// FFmpeg release, the AV_FUNC_NN bindings, case NN dispatch, and the ffmpegNN/
++// subdirectory in FFmpegLibWrapper.cpp / FFmpegRuntimeLinker.cpp must all be
++// updated. Static asserts in FFmpegLibWrapper::Link() enforce consistency.
++#define FFMPEG_MAX_MAJOR_VERSION 62
++#define FFMPEG_MAX_MAJOR_VERSION_STR_HELPER(x) #x
++#define FFMPEG_MAX_MAJOR_VERSION_STR(x) FFMPEG_MAX_MAJOR_VERSION_STR_HELPER(x)
++
++
+ #include "mozilla/Attributes.h"
+ #include "mozilla/DefineEnum.h"
+ #include "mozilla/Types.h"
+diff --git a/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp b/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+index 75bda66..f324de0 100644
+--- a/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
++++ b/dom/media/platforms/ffmpeg/FFmpegRuntimeLinker.cpp
+@@ -35,7 +35,7 @@ static FFmpegLibWrapper sLibAV;
+ static const char* sLibs[] = {
+ // clang-format off
+ #if defined(XP_DARWIN)
+-  "libavcodec.62.dylib",
++  "libavcodec." FFMPEG_MAX_MAJOR_VERSION_STR(FFMPEG_MAX_MAJOR_VERSION) ".dylib",
+   "libavcodec.61.dylib",
+   "libavcodec.60.dylib",
+   "libavcodec.59.dylib",
+@@ -49,7 +49,7 @@ static const char* sLibs[] = {
+   "libavcodec.so", // OpenBSD hardly controls the major/minor library version
+                    // of ffmpeg and update it regulary on ABI/API changes
+ #else
+-  "libavcodec.so.62",
++  "libavcodec.so." FFMPEG_MAX_MAJOR_VERSION_STR(FFMPEG_MAX_MAJOR_VERSION),
+   "libavcodec.so.61",
+   "libavcodec.so.60",
+   "libavcodec.so.59",

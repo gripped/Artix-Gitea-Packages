@@ -12,6 +12,7 @@
 
 pkg/
 src/
+src-*/
 
 *.service
 *.timer
