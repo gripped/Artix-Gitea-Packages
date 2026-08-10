@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-6
+version: 0.14.0-7
 pkgbase:
   name: python-hidapi
   pkgdesc: A Cython interface to the hidapi from signal11/hidapi
   pkgver: 0.14.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/trezor/cython-hidapi
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - 1ed50361ba6c32f12b97bec837855e3728dbeb3f94f0c012837d343d85814a81543285068ce63167890687b274f14abe30ee845ed0460592b1623a736a229d83
 pkgname:
   - name: python-hidapi
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
