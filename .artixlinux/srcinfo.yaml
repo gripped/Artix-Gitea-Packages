@@ -1,10 +1,10 @@
 ---
-version: 1.7-1
+version: 1.7-2
 pkgbase:
   name: fsverity-utils
   pkgdesc: Userspace utilities for fs-verity
   pkgver: 1.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://git.kernel.org/pub/scm/fs/fsverity/fsverity-utils.git
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 686de715e27c30b579d468ab02d7a841ab2a1f553975754fd134ebf627b26149
 pkgname:
   - name: fsverity-utils
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
