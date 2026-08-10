@@ -1,10 +1,10 @@
 ---
-version: 3.9.1-4
+version: 3.9.1-5
 pkgbase:
   name: python-nltk
   pkgdesc: Natural language processing in Python
   pkgver: 3.9.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.nltk.org/
   arch:
     - any
@@ -33,4 +33,4 @@ pkgbase:
     - 03e06c8c13e352133962c4395ebe0696905c9f1fbdead2d19deae37ba48eb47c
 pkgname:
   - name: python-nltk
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
