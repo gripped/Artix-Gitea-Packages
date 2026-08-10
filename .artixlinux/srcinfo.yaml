@@ -1,10 +1,10 @@
 ---
-version: 0.9.11-1
+version: 0.9.11-3
 pkgbase:
   name: bolt
   pkgdesc: Thunderbolt 3 device manager
   pkgver: 0.9.11
-  pkgrel: 1
+  pkgrel: 3
   url: https://gitlab.freedesktop.org/bolt/bolt
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - cde4fc6d4a188e37d088cf59a5b2d174ac4b03d57bf9d084d711ba92105c33c0
 pkgname:
   - name: bolt
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.39.1-1-any
