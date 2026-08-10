@@ -59,3 +59,4 @@ package() {
 
     make -C alpm-hooks DESTDIR="$pkgdir/" install_dinit_user
 }
+
