@@ -1,10 +1,10 @@
 ---
-version: 10.4p1-3
+version: 10.4p1-4
 pkgbase:
   name: openssh
   pkgdesc: SSH protocol implementation for remote login, command execution and file transfer
   pkgver: 10.4p1
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.openssh.com/portable.html
   arch:
     - x86_64
