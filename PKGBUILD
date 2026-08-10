@@ -1,10 +1,10 @@
 # Maintainer: Artoo <artoo@artixlinux.org>
 # Contributor: kingdomkind <kingdomkind@protonmail.com>
 
-_alpm=2.4.6
+_alpm=3.1
 
 pkgname=userspawn-dinit
-pkgver=20260621
+pkgver=20260810
 pkgrel=2
 pkgdesc='dinit service script for userspawn'
 arch=('any')
@@ -44,9 +44,9 @@ source=(
     'userspawnrc'
     'boot.user'
 )
-sha256sums=('934d6f553f3bd6e941449f8700ae7f427182b4ed1e736b42bfb095da78df72a5'
+sha256sums=('602559d7a07817c90f297503687e467b2fd12fd5ca85231eca98f1fd07844302'
             'd8c25ab527c654c6c6c808033a7575165c54f2a834e92e0a7b7f55ded22f0fce'
-            'faff6a588e7a2bcc2f8ec9aa0e92ecc23993b5d1e744db564e9f665897149ccf'
+            '17723a3e1e8db763792d67fba7c5a64068152bc0ec7c1d4adea5717880e5005e'
             '48fcee93339f496f9d0330cd71540c6cb301a287160a229b11e42a2a34dc5a6f')
 
 package() {
