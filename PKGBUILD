@@ -118,8 +118,6 @@ package() {
   rm "$pkgdir"/usr/share/man/man8/wpa_{priv,gui}.8
 
   install -Dm644 ../README "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
-
-  rm -r $pkgdir/usr/lib/systemd
 }
 
 # vim:set sw=2 sts=-1 et:
