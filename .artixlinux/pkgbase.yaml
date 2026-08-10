@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 2:2.11-6
+    version: 2:2.12-1
     packages:
-      - wpa_supplicant-2:2.11-6-x86_64.pkg.tar.zst
+      - wpa_supplicant-2:2.12-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 2:2.11-5
