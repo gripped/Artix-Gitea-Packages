@@ -1,10 +1,10 @@
 ---
-version: 20-1
+version: 20-2
 pkgbase:
   name: libmakepkg-dropins
   pkgdesc: Features that can be dropped into libmakepkg to extend the functionality of makepkg
   pkgver: 20
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.archlinux.org/pacman/libmakepkg-dropins
   arch:
     - any
@@ -30,4 +30,4 @@ pkgbase:
     - 73e075a3e062791cd3a163145e05541e6a20060f770683f3d7f4c3ea865e6177348a511c7d502d1f1f387e3d1afc51b00177829cfb3d5931bbd5b0cbaa70a32c
 pkgname:
   - name: libmakepkg-dropins
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
