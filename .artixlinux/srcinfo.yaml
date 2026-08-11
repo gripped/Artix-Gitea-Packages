@@ -1,9 +1,9 @@
 ---
-version: 2.66.9-1
+version: 2.66.10-1
 pkgbase:
   name: glibmm
   pkgdesc: C++ bindings for GLib
-  pkgver: 2.66.9
+  pkgver: 2.66.10
   pkgrel: 1
   url: https://www.gtkmm.org/
   arch:
@@ -29,9 +29,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://gitlab.gnome.org/GNOME/glibmm.git#tag=2.66.9
+    - git+https://gitlab.gnome.org/GNOME/glibmm.git#tag=2.66.10
   b2sums:
-    - 0731911eea80983713eb269ae02717659a525f96f79287802a5280ae207c64d49c914a6f41c4d59ab193c209d33074fcd7b17fdd33023e488c96551e609e1b6b
+    - 6075c2243eff2abfd991aaf822b69e2df4935f3773834b64865d1eb69a563b48d5c7ea6419e3cc5d59d20e12eb73153821150f86e8ed25fae658a6e910420e7e
 pkgname:
   - name: glibmm
     depends:
@@ -50,4 +50,4 @@ pkgname:
     depends: []
     options:
       - '!strip'
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
