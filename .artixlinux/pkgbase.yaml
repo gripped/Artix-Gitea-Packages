@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.2.2-376
+    version: 1.2.2-377
     packages:
-      - acpi_call-1.2.2-376-x86_64.pkg.tar.zst
+      - acpi_call-1.2.2-377-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.2.2-374
