@@ -1,14 +1,14 @@
 ---
-version: 8.4.10_10-1
+version: 9.7.1_1-1
 pkgbase:
   name: percona-server
-  pkgver: 8.4.10_10
+  pkgver: 9.7.1_1
   pkgrel: 1
   url: https://www.percona.com/software/mysql-database/percona-server
   arch:
     - x86_64
   license:
-    - GPL
+    - GPL-2.0-only
   makedepends:
     - cmake
     - zlib
@@ -24,46 +24,50 @@ pkgbase:
     - graphviz
     - libevent
     - libfido2
+    - protobuf
+    - editline
   source:
-    - https://www.percona.com/downloads/Percona-Server-8.4/Percona-Server-8.4.10-10/source/tarball/percona-server-8.4.10-10.tar.gz
+    - https://www.percona.com/downloads/Percona-Server-9.7/Percona-Server-9.7.1-1/source/tarball/percona-server-9.7.1-1.tar.gz
     - gcc-14.patch
     - my.cnf
     - mysql-user.conf
     - mysqlrouter-user.conf
   sha256sums:
-    - 2231de7e561cdc031dea13570c461e8179b5e308f2b7d857de0215b4e4336ae5
+    - cfa835f66b415a46e64420d515096281f42a7bcf189bda0f6c434ea5a55d63ee
     - eeb9c6c8f70dd5eb05f735df0cdfc294365b393e5819f26029320e38714069a6
     - b467b04d6d06152b2abc33f2a6de63fef0fc922dd5119d2ee1d07d3c1a489731
     - b4e357a0e2e3a7dc01f9459efcbed77ce3229f8d94273e3ff464bcd67c9413fc
     - 4c8bdd0bc71b4ab9d69485b7e51937bf45f1c87323e380290db357483c154505
 pkgname:
-  - name: libperconaserverclient
-    pkgdesc: Percona Server client libraries
-    depends:
-      - zlib
-      - zstd
-      - openssl
-      - libfido2
-    optdepends:
-      - 'libsasl: authentication_ldap_sasl_client plugin'
   - name: percona-server-clients
     pkgdesc: Percona Server client tools
     depends:
-      - libperconaserverclient
+      - glibc
+      - libgcc
+      - libstdc++
       - zlib
       - zstd
-      - lz4
       - openssl
       - jemalloc
-      - readline
+      - libfido2
+      - libedit
+    optdepends:
+      - 'libsasl: authentication_ldap_sasl_client plugin'
+      - 'krb5: authentication_kerberos_client plugin'
     provides:
-      - mysql-clients=8.4.10_10
-      - mariadb-clients=8.4.10_10
+      - mysql-clients=9.7.1_1
+      - mariadb-clients=9.7.1_1
     conflicts:
       - mysql-clients
+      - libperconaserverclient
+    replaces:
+      - libperconaserverclient
   - name: percona-server
     pkgdesc: Drop-in replacement for MySQL that provides improved performance, diagnostics, instrumentation and MyRocks storage engine
     depends:
+      - glibc
+      - libgcc
+      - libstdc++
       - libaio
       - pam
       - jemalloc
@@ -75,11 +79,14 @@ pkgname:
       - curl
       - libevent
       - icu
+      - protobuf
+      - zlib
+      - libldap
     optdepends:
       - perl-dbd-mysql
     provides:
-      - mysql=8.4.10_10
-      - mariadb=8.4.10_10
+      - mysql=9.7.1_1
+      - mariadb=9.7.1_1
     conflicts:
       - mysql
     options:
@@ -87,4 +94,5 @@ pkgname:
     backup:
       - etc/mysql/my.cnf
       - etc/mysqlrouter/mysqlrouter.conf
+      - etc/conf.d/mysql
 # generated with artixpkg 0.38.5-1-any
