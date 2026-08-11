@@ -24,8 +24,8 @@ optdepends=('xz: Use lzma or xz compression for the initramfs image'
 provides=('initramfs')
 backup=('etc/mkinitcpio.conf')
 source=("git+$url.git#tag=v${pkgver}?signed"
-         '0001-no-systemd.patch'
-         '0002-no-systemd-meson.patch'
+        '0001-no-systemd.patch'
+        '0002-no-systemd-meson.patch'
 )
 sha512sums=('6a795ada3522b12e2e5d04d47314c8479eb4a7095b588d8fb6464569c2e7ec2014e5baae55c2138be0b6b8ba805bff34a029ab42a3fedc950d6e34bbb80db93b'
             'bba2bd7e7b4354b90b3f8146b0fb1b24f8281bffcde6dfd96498150b4b4793056cc9d900b332a3153eb54dba34ff9e42ad82b7f856ec12abe11505f9d07fd9b5'
@@ -38,7 +38,7 @@ validpgpkeys=('ECCAC84C1BA08A6CC8E63FBBF22FB1D78A77AEAB'    # Giancarlo Razzolin
 	      'BB8E6F1B81CF0BB301D74D1CBF425A01E68B38EF')   # nl6720
 
 prepare() {
-  cd "${pkgname}-${pkgver}"
+  cd "${pkgname}"
   patch -Np1 -i ../0001-no-systemd.patch
   patch -Np1 -i ../0002-no-systemd-meson.patch
 }
