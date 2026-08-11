@@ -1,0 +1,4 @@
+[snooze]
+source = "git"
+git = "https://github.com/leahneukirchen/snooze.git"
+prefix = "v"
