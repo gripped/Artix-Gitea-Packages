@@ -15,9 +15,9 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
 #pkgver=153.0.0.100b3
-pkgver=140.13.0.101
+pkgver=140.13.0.102
 
-pkgrel=2
+pkgrel=1
 _ffbuild=1
 _srcver="${pkgver%.*}"
 _ffsrcver="${_srcver/.0.0/.0}"
@@ -148,7 +148,7 @@ source=(
   "0005-ffmpeg-soname-version-assert.patch"
   "0006-ffmpeg-9-compat.patch"
 )
-sha256sums=('e8fd486c3f4859cde87ba2437824e6bb598caf6a8fcfb5e529b36347075a162c'
+sha256sums=('38e59c9106a54fc3967dd8dd062eee6953b691c78751e0deb7683ebbf5fdf95c'
             'f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
