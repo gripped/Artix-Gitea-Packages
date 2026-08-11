@@ -1,10 +1,10 @@
 ---
-version: 4.6.1-2
+version: 4.6.1-4
 pkgbase:
   name: audacious-plugins
   pkgdesc: Plugins for Audacious
   pkgver: 4.6.1
-  pkgrel: 2
+  pkgrel: 4
   url: https://audacious-media-player.org/
   arch:
     - x86_64
@@ -12,44 +12,64 @@ pkgbase:
     - BSD-2-Clause
   makedepends:
     - audacious>=4.6.1
-    - meson
+    - git
     - glib2-devel
+    - meson
   depends:
     - alsa-lib
+    - cairo
     - curl
     - faad2
     - ffmpeg
     - flac
     - fluidsynth
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
     - jack
+    - json-glib
     - lame
+    - libbs2b
+    - libcddb
+    - libcdio
     - libcdio-paranoia
     - libcue
+    - libgcc
+    - libglvnd
     - libmms
     - libmodplug
-    - libmtp
-    - libpulse
     - libnotify
+    - libogg
+    - libopenmpt
+    - libpipewire
+    - libpulse
     - libsamplerate
     - libsidplayfp
+    - libsndfile
+    - libsoxr
+    - libstdc++
     - libvorbis
+    - libx11
+    - libxcomposite
+    - libxml2
+    - libxrender
     - lirc
     - mpg123
     - neon
-    - wavpack
-    - libbs2b
-    - libopenmpt
-    - libcddb
     - opusfile
-    - libpipewire
-    - libstdc++
-    - libgcc
+    - pango
+    - qt6-base
+    - sdl3
+    - sndio
+    - wavpack
+    - zlib
   source:
-    - https://distfiles.audacious-media-player.org/audacious-plugins-4.6.1.tar.bz2
+    - git+https://github.com/audacious-media-player/audacious-plugins.git#tag=audacious-plugins-4.6.1
     - sidplay-rom-paths.patch
-  sha256sums:
-    - 22e58a8a2c3f3caa9687434353618c822963cc8846cd239de36d4e8e5bd166a6
-    - c32cd36f75dd18db082f9b9447f1c0982279703b9d648f5695295ff25c9b678d
+  b2sums:
+    - 41574a2bc9b954c1cbb27f7a071319cc8390c846895702e23a8faf744a32c1debd2af5ceb4c6121c9384debb32a5dde418a4f5e0bb2550e9b5f561d803619cd8
+    - 1b8fa3ecc1954de27ecd41fa364d9c59f07810dd6265e9b2865b267792040082852955b6819fb627c4f9a5146f13051685dfd84b149bdee6699a304a807e4197
 pkgname:
   - name: audacious-plugins
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
