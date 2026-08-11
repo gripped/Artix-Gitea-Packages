@@ -1,3 +1,3 @@
 # artix-dark-theme
 
-Dark theme for the community ISOs of Artix Linux. GTK2/3, QT5, Plasma splash.
+Dark theme for the Artix Linux ISOs. Gtk2/3/4, Qt5/6, Plasma splash.
