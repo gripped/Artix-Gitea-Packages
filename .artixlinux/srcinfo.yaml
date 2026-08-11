@@ -1,9 +1,9 @@
 ---
-version: 20260209-1
+version: 20260811-1
 pkgbase:
   name: artix-dark-theme
-  pkgdesc: Dark theme for the community ISOs of Artix Linux. Gtk2/3/4, Qt5, Plasma splash.
-  pkgver: 20260209
+  pkgdesc: Dark theme for the Artix Linux ISOs. Gtk2/3/4, Qt5/6, Plasma splash.
+  pkgver: 20260811
   pkgrel: 1
   url: https://gitea.artixlinux.org/nous/artix-dark-theme
   arch:
@@ -22,16 +22,19 @@ pkgbase:
     - gtk2
     - gtk3
     - qt5
+    - qt6
     - plasma
     - gtk-engines
     - xcursor-premium
     - qt5ct
+    - qt6ct
     - openbox
     - gtk-engine-murrine
+    - qt6gtk2
   source:
     - git+https://gitea.artixlinux.org/artix/artix-dark-theme.git
   sha256sums:
     - SKIP
 pkgname:
   - name: artix-dark-theme
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.38.5-1-any
