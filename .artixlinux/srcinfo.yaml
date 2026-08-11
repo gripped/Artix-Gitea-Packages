@@ -1,9 +1,9 @@
 ---
-version: 1.25.0-1
+version: 1.26.0-1
 pkgbase:
   name: lib32-wayland
   pkgdesc: A computer display server protocol
-  pkgver: 1.25.0
+  pkgver: 1.26.0
   pkgrel: 1
   url: https://wayland.freedesktop.org
   arch:
@@ -24,15 +24,15 @@ pkgbase:
     - libwayland-egl.so
     - libwayland-server.so
   source:
-    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.25.0/downloads/wayland-1.25.0.tar.xz
-    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.25.0/downloads/wayland-1.25.0.tar.xz.sig
+    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.26.0/downloads/wayland-1.26.0.tar.xz
+    - https://gitlab.freedesktop.org/wayland/wayland/-/releases/1.26.0/downloads/wayland-1.26.0.tar.xz.sig
   validpgpkeys:
     - C7223EBE4EF66513B892598911A30156E0E67611
     - C0066D7DB8E9AC6844D728715E54498E697F11D7
     - 34FF9526CFEF0E97A340E2E40FDE7BE0E88F5E48
   b2sums:
-    - d763149c9b06b431435e5b81aac32214774a1667bc85386befc2a2fef795c9c2df44e3e1fc9743c79fa5a491e44ea47f067ca92c9f3e31f57a6b999cbe781bf4
+    - f5a9179f5e82d564812dfdc0bbca2e4bed6ff9963b9a1ff181489774eb10946a37f5ec004a87354bf1e8ac012553926dcc6e65feb9eacdb9a18cbc034590a325
     - SKIP
 pkgname:
   - name: lib32-wayland
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
