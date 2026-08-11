@@ -6,8 +6,8 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=openssh
-pkgver=10.4p1
-pkgrel=4
+pkgver=10.5p1
+pkgrel=1
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=(x86_64)
 url='https://www.openssh.com/portable.html'
@@ -45,22 +45,19 @@ backup=(
 )
 source=(
   https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$pkgname-$pkgver.tar.gz{,.asc}
-  0001-fix-GSSAPI-option-names.patch
   99-artixlinux.conf
   $pkgname.tmpfiles
   sshd.pam
   LICENSE
 )
-sha256sums=('ef6026dd2aea8d56059638d5d3262902c892ceba9f88395835e0d06d3fb63238'
+sha256sums=('d44d28a839ea9daf969cc69150fde59910b2b39361dad81a3bd6cbd19218db11'
             'SKIP'
-            '67ad6f713dc45f8a746c726319e085db76e7aa1b46761cde21980f610b130181'
             '907a6b8012214218d2bc505fded0fde6cbf7aa863cce630048e1c9b4c9189e48'
             '96735b6bde1339e6f456c4184b66c2dd2f59675335f6f401beed9195995a8a9b'
             '633e24cbfcb045ba777d3e06d5f85dfaa06d44f4727d38c7fb2187c57498221d'
             '7056c04df17a4e0f0bac9f787f347c9cd892cee6323d1c89528090afd0b934a3')
-b2sums=('3051a345fd24333708277a1de781deca9094dd07cc55e613e93715b1266d80d59043bf5cdb2282d02c797cb9446916020e70fbd4c7a2470da7ab98eb612f6b74'
+b2sums=('8e8be4e4aff6b5f16e19f85b994fcc9b7679021cf639fad4323dc15f6bc0041b45370024a5f51065e2a92d965428cf3787323957f2c41f4d27fc1146dc3690cf'
         'SKIP'
-        'a443d46d1e38ff36ec76ca43b5327e72063266bdbe04394acb53880a437c3a8e3e8ede0c7f4f989ac4ca19beb57ba4ecad884a86890e76f7de3e121a3fa82367'
         '3d195606c6ca9d254ccecad974f1e729e338c160861ba52d9e2d0f07b297618f11b93049085df960a4d06106d54d90b9a92521efa5a9a08ea7f52d0512942e68'
         '5d8e61300ab9771b240f06e62a1191d9b316dd474dd43aafd596e008c8e73b92748deef110059f1bd7fae6844b30c87d005f15666297fed29aa6e95955c7fcaa'
         '1d24cc029eccf71cee54dda84371cf9aa8d805433e751575ab237df654055dd869024b50facd8b73390717e63100c76bca28b493e0c8be9791c76a2e0d60990a'
@@ -90,9 +87,6 @@ prepare() {
   sed -n '280,308p' LICENCE > ../openbsd-compat.MIT.txt
   sed -n '310,338p' LICENCE > ../blowfish.BSD-3-Clause.txt
   sed -n '340,368p' LICENCE > ../replacement.BSD-2-Clause.txt
-
-  # fix GSSAPI option name
-  patch -Np1 < ../0001-fix-GSSAPI-option-names.patch
 }
 
 build() {
