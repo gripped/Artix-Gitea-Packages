@@ -1,8 +1,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgbase=linux-zen
-pkgver=7.1.7.zen1
-pkgrel=1
+pkgver=7.1.8.zen1
+pkgrel=3
 pkgdesc='Linux ZEN'
 url='https://github.com/zen-kernel/zen-kernel'
 arch=(
@@ -53,16 +53,16 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-b2sums=('1a1884d4ac6e5b2a49b5f4835635c47b33552568a01b2cd65186a252da00e0578af2830c60a88208ec0834f718779815663dd7be148903b58f72e22ac8673e94'
+b2sums=('84b59e5572d91f5ea1bb603aa7691851bd9549e1bf18a6bec8e27eb8a6e2de2e33da2ad3e3aad501c793e9756e70245a16545e76b65a44ee52b33ccf5c3dd8e7'
         'SKIP'
-        '0137d055a332117dfd405220165915af25341d75de9ccf4b4e56ac66021eed744f8a097398e1bc88cff37bca04e93c69d63ab5279f6be1f4942ac6fb8e29cd83'
+        'e586e241d3e89764192c34176ef34c4ecd06c48a668723f2c6d233ab0b7e99768a8ee6c354de5c6be9d85e9e96d9fbcbb4ee576a4dc50dbc92663f54e5e316cb'
         'SKIP')
-b2sums_x86_64=('5c23cd46c888042af7750171fbc6967a45fabd3827538d163363f39ae8523b138a30d01b9231a223e1b100ee91b4d69fa69a7f8e8b3d0de0e2d407df959f4309')
+b2sums_x86_64=('fa9d09c7a2e89dbc8868e0d6d8e290d4115ec5032d4d2a1a5fa32d4166340f4d54de33793b0f8f8f4403b6a871b73a80a140a95a251b7bce83756c0850097879')
 
 # https://www.kernel.org/pub/linux/kernel/v7.x/sha256sums.asc
-sha256sums=('ca8f2a6884a4d62043e9ab93ac1ab15efc2b6630fe8f768b2ef2ffdf4b5e26df'
+sha256sums=('ff01dcb449279d5b4cfccdb01fee639cf5ff1803f1749a77844dd33915422c49'
             'SKIP'
-            '547cf35aec7be8329e2a5892b61a77581127b63541269100c01676e0479cf959'
+            'a20a2dc103dea463cebb313cba7e25d519b214e723da6e0187de56cf45981a5b'
             'SKIP')
 
 export KBUILD_BUILD_HOST=artixlinux
