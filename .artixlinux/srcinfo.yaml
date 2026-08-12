@@ -1,9 +1,9 @@
 ---
-version: 0.12.2-1
+version: 0.12.3-1
 pkgbase:
   name: uv
   pkgdesc: An extremely fast Python package installer and resolver written in Rust
-  pkgver: 0.12.2
+  pkgver: 0.12.3
   pkgrel: 1
   url: https://github.com/astral-sh/uv
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - xz
     - zstd
   source:
-    - git+https://github.com/astral-sh/uv.git#tag=0.12.2
+    - git+https://github.com/astral-sh/uv.git#tag=0.12.3
   sha256sums:
-    - bb5404ddfebc298e18c10ed264fe49bcfe894faf444d940966f13e91b41de19c
+    - 9f3962e85a58767019992c8e3fa7422e025e5dbef746572c568180d93a34d362
 pkgname:
   - name: uv
     depends:
@@ -40,7 +40,7 @@ pkgname:
     pkgdesc: An extremely fast Python package installer and resolver written in Rust - Python wrapper
     depends:
       - python
-      - uv=0.12.2
+      - uv=0.12.3
   - name: python-uv-build
     pkgdesc: An extremely fast Python package installer and resolver written in Rust - Python build backend
     groups:
