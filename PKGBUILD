@@ -23,10 +23,10 @@ makedepends=(
   'asciidoc'
   'git'
   'groovy'
+  'java-environment=8'
   'java-environment=11'
   'java-environment=17'
-  #'java-environment=21'
-  'jdk25-openjdk'
+  'java-environment=25'
   'xmlto'
 )
 source=(https://services.gradle.org/distributions/${pkgbase}-${pkgver}-src.zip
@@ -55,14 +55,8 @@ prepare() {
 
 build() {
   cd ${pkgbase}-${pkgver}
-
-  mkdir /tmp/gradle
-  export GRADLE_OPTS+=" -Djava.io.tmpdir=/tmp/gradle"
-  export GRADLE_USER_HOME="/tmp/gradle"
-
   ./gradlew installAll \
     --info \
-    --stacktrace \
     -Porg.gradle.java.installations.paths=/usr/lib/jvm/java-21-openjdk \
     -Porg.gradle.java.installations.auto-download=false \
     -PfinalRelease=true \

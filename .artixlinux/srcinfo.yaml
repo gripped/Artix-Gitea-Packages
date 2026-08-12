@@ -14,9 +14,10 @@ pkgbase:
     - asciidoc
     - git
     - groovy
+    - java-environment=8
     - java-environment=11
     - java-environment=17
-    - jdk25-openjdk
+    - java-environment=25
     - xmlto
   depends:
     - bash
