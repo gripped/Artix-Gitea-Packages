@@ -1,9 +1,9 @@
 ---
-version: 26.6.0-1
+version: 26.8.0-1
 pkgbase:
   name: ansible-navigator
   pkgdesc: A text-based user interface (TUI) for Ansible
-  pkgver: 26.6.0
+  pkgver: 26.8.0
   pkgrel: 1
   url: https://github.com/ansible/ansible-navigator
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - 'docker: To use docker as a container runtime'
     - 'podman: To use podman as a container runtime'
   source:
-    - ansible-navigator-26.6.0.tar.gz::https://github.com/ansible/ansible-navigator/archive/refs/tags/v26.6.0.tar.gz
+    - ansible-navigator-26.8.0.tar.gz::https://github.com/ansible/ansible-navigator/archive/refs/tags/v26.8.0.tar.gz
   sha256sums:
-    - 686cc38a120c2308b5240a4fb80c824b7f2339c6724b4d3caa598c881f2dd2c0
+    - a90f6b9f1571be4e694cd90beee9e80e7bd85a8bfdff197abc012a952f3df99b
 pkgname:
   - name: ansible-navigator
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
