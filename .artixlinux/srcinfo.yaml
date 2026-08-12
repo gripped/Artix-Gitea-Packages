@@ -1,10 +1,10 @@
 ---
-version: 37.0.0-1
+version: 37.0.0-2
 pkgbase:
   name: android-tools
   pkgdesc: Android platform tools
   pkgver: 37.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.android.com/tools
   arch:
     - x86_64
@@ -23,7 +23,6 @@ pkgbase:
     - glibc
     - libgcc
     - libstdc++
-    - libudev.so
     - libusb
     - lz4
     - pcre2
