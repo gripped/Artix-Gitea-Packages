@@ -6,13 +6,18 @@
 
 pkgname=musescore
 pkgver=4.7.4
-pkgrel=1
+pkgrel=2
 pkgdesc='Create, play and print beautiful sheet music'
 arch=(x86_64)
 url=https://musescore.org/
 license=(GPL-3.0-only)
 groups=(pro-audio)
 depends=(
+  alsa-lib libasound.so
+  freetype2 libfreetype.so
+  libsndfile
+  libgcc libgcc_s.so
+  libstdc++ libstdc++.so
   glibc
   flac
   harfbuzz
@@ -40,9 +45,6 @@ makedepends=(
   python
   qt6-tools
   vulkan-headers
-  libsndfile
-  alsa-lib
-  freetype2
 )
 optdepends=('lame: MP3 export')
 options=(!lto)
@@ -112,13 +114,6 @@ build() {
 }
 
 package() {
-  depends+=(
-    alsa-lib libasound.so
-    freetype2 libfreetype.so
-    libsndfile libsndfile.so
-    libgcc libgcc_s.so
-    libstdc++ libstdc++.so
-  )
   DESTDIR="$pkgdir" cmake --install build
 
   # install wrapper script
