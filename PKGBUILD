@@ -18,6 +18,7 @@ makedepends=(
   git
   meson
 )
+checkdepends=(dbus)
 source=("git+$url#tag=$pkgver")
 b2sums=('69b4ad2ae007072c117493bb5801086ae2a341096a0930a6176d614d8a09f17d23211795550a2221dc957772177889a0b8816ccc61a7454525be9b6337b18db2')
 
