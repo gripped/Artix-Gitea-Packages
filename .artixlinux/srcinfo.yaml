@@ -1,10 +1,10 @@
 ---
-version: 25.10.2-4
+version: 26.7.1-1
 pkgbase:
   name: python-autobahn
   pkgdesc: Real-time framework for Web, Mobile & Internet of Things
-  pkgver: 25.10.2
-  pkgrel: 4
+  pkgver: 26.7.1
+  pkgrel: 1
   url: https://github.com/crossbario/autobahn-python/
   arch:
     - x86_64
@@ -35,6 +35,7 @@ pkgbase:
     - python-snappy
     - python-click
     - python-txtorcon
+    - python-hatchling
   depends:
     - glibc
     - python
@@ -64,11 +65,13 @@ pkgbase:
     - 'python-click: for text highlights'
     - 'python-txtorcon: connections to Tor Onion services'
   source:
-    - git+https://github.com/crossbario/autobahn-python.git#tag=v25.10.2
+    - git+https://github.com/crossbario/autobahn-python.git#tag=v26.7.1
     - remove-march-flags-for-safe-builds.patch
+    - fix-max-message-size-test.patch
   sha256sums:
-    - 68e263cf4c8210dafd0368485ea6831620fea9dba2ae62a417638cdd12fa9e9a
-    - 292450d9ee4b5be7b62ff5767380f42fa31854f1a1890cdaafed0cd3f4b71ed4
+    - 6b21f854f40496cf2ab328c7ecf8dfa6f3c346e4ca5f9b1fbaf6f460a45ccc22
+    - a27e5bb67aee427a2bd038a9d1bc0d2d2d34a90521fed1a5288a3cec5bfc9f7c
+    - 62f54753720289c14055822067d4b08fe37450572e0d3dd723a9e0bf42409405
 pkgname:
   - name: python-autobahn
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.39.1-1-any
