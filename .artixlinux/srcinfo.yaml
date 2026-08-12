@@ -1,10 +1,10 @@
 ---
-version: 5.42.2-1
+version: 5.42.2-2
 pkgbase:
   name: perl
   pkgdesc: A highly capable, feature-rich programming language
   pkgver: 5.42.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.perl.org
   arch:
     - x86_64
@@ -158,4 +158,4 @@ pkgbase:
     - 1af97d598f8d2e7e818ee5fe9b4bf0a82b480385b383df3cf53d636d8a882b9f474f54e6b26712ddf533a1ab6f870bca6f4edfd75331f5e2514a4d6668c234b1
 pkgname:
   - name: perl
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.38.5-1-any
