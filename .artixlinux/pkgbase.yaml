@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 20260804102240-1
+    version: 20260807145230-1
     packages:
-      - v2ray-domain-list-community-20260804102240-1-any.pkg.tar.zst
+      - v2ray-domain-list-community-20260807145230-1-any.pkg.tar.zst
     debug: []
   world:
     version: 20260730073441-1
