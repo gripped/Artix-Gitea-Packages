@@ -1,10 +1,10 @@
 ---
-version: 0.13.1-2
+version: 0.13.1-3
 pkgbase:
   name: snapper
   pkgdesc: A tool for managing BTRFS and LVM snapshots
   pkgver: 0.13.1
-  pkgrel: 2
+  pkgrel: 3
   url: http://snapper.io
   arch:
     - x86_64
