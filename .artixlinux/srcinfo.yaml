@@ -1,9 +1,9 @@
 ---
-version: 26.2.5-1
+version: 26.2.5-2
 pkgbase:
   name: libreoffice-fresh
   pkgver: 26.2.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -297,6 +297,7 @@ pkgname:
       - argon2
       - md4c
     optdepends:
+      - 'libreoffice-fresh-i18n: Localizations'
       - 'java-runtime:     adds java support'
       - 'java-environment>=17: required by extension-wiki-publisher and extension-nlpsolver'
       - 'pstoedit:         translates PostScript and PDF graphics into other vector formats'
