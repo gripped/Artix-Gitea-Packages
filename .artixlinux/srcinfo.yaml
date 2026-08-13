@@ -1,10 +1,10 @@
 ---
-version: 5.1.4-2
+version: 5.1.4-3
 pkgbase:
   name: powerdns
   pkgdesc: Authoritative DNS server
   pkgver: 5.1.4
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.powerdns.com/
   arch:
     - x86_64
