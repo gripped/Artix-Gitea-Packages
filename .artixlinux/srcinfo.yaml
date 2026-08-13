@@ -1,10 +1,10 @@
 ---
-version: 580.173.02-8
+version: 580.178.04-1
 pkgbase:
   name: nvidia-580xx
   pkgdesc: NVIDIA kernel modules
-  pkgver: 580.173.02
-  pkgrel: 8
+  pkgver: 580.178.04
+  pkgrel: 1
   url: https://www.nvidia.com/
   arch:
     - x86_64
@@ -12,7 +12,7 @@ pkgbase:
     - LicenseRef-custom
   makedepends:
     - linux-headers
-    - nvidia-580xx-dkms=580.173.02
+    - nvidia-580xx-dkms=580.178.04
   provides:
     - NVIDIA-MODULE
     - nvidia
@@ -29,6 +29,6 @@ pkgname:
   - name: nvidia-580xx
     depends:
       - linux
-      - nvidia-utils=580.173.02
+      - nvidia-utils=580.178.04
       - libglvnd
 # generated with artixpkg 0.38.5-1-any
