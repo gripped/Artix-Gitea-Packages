@@ -1,9 +1,9 @@
 ---
-version: 0.5.19-1
+version: 0.5.20-1
 pkgbase:
   name: rio
   pkgdesc: A hardware-accelerated GPU terminal emulator powered by WebGPU
-  pkgver: 0.5.19
+  pkgver: 0.5.20
   pkgrel: 1
   url: https://github.com/raphamorim/rio
   arch:
@@ -20,23 +20,24 @@ pkgbase:
     - scdoc
   depends:
     - alsa-lib
-    - libasound.so
     - fontconfig
-    - libfontconfig.so
     - freetype2
-    - libfreetype.so
     - glibc
     - hicolor-icon-theme
     - libgcc
-    - libgcc_s.so
     - libstdc++
-    - libstdc++.so
     - oniguruma
     - vulkan-driver
   source:
-    - rio-0.5.19.tar.gz::https://github.com/raphamorim/rio/archive/refs/tags/v0.5.19.tar.gz
+    - https://github.com/raphamorim/rio/archive/refs/tags/v0.5.20/rio-0.5.20.tar.gz
   sha512sums:
-    - b03c202c3480b26c6fa5358e2f776ee2a2b470e3d3bffe5f7e23b40566e01a8c013bd8c9a136f71df1c600fb39749d275eb8d8675ad785979b445d56027040fc
+    - cf91a3b05ec8dfa4053968eaad19d1bca20c411e8565d25476ae05eeb6a2e8b4f04463dcff8da522ecbcc77a3ad781afa440aff6870905e965c1a52bab3977bc
 pkgname:
   - name: rio
+    depends:
+      - libasound.so
+      - libfontconfig.so
+      - libfreetype.so
+      - libgcc_s.so
+      - libstdc++.so
 # generated with artixpkg 0.39.1-1-any
