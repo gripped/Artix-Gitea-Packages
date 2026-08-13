@@ -2,11 +2,11 @@
 team: galaxy
 actions:
   addRepo: galaxy
-  removeRepo: world
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -54,13 +54,13 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 10.0.10.sdk110-1
+    version: 10.0.11.sdk111-1
     packages:
-      - dotnet-host-10.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-runtime-10.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-10.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-10.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-10.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-10.0.10.sdk110-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-10.0.10.sdk110-1-x86_64.pkg.tar.zst
+      - dotnet-host-10.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-10.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-10.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-10.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-10.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-10.0.11.sdk111-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-10.0.11.sdk111-1-x86_64.pkg.tar.zst
     debug: []
