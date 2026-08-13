@@ -1,10 +1,10 @@
 ---
-version: 1:0.18.2-1
+version: 1:0.18.2-2
 pkgbase:
   name: profanity
   pkgdesc: Console based XMPP client
   pkgver: 0.18.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://profanity-im.github.io
   arch:
@@ -14,27 +14,27 @@ pkgbase:
   checkdepends:
     - cmocka
   makedepends:
-    - libcurl.so
-    - libncursesw.so
+    - meson
     - expat
     - glib2
-    - libotr
-    - libnotify.so
-    - libgpgme.so
-    - python
-    - libgcrypt
-    - libsignal-protocol-c
     - glibc
-    - libreadline.so
     - libassuan
+    - libcurl.so
+    - libgcrypt
     - libgpg-error
+    - libgpgme.so
+    - libncursesw.so
+    - libnotify.so
+    - libotr
+    - libreadline.so
+    - libsignal-protocol-c
     - libstrophe.so
-    - libgtk-3.so
-    - libxss
-    - libx11
-    - gdk-pixbuf2
+    - python
     - cairo
-    - meson
+    - gdk-pixbuf2
+    - libgtk-3.so
+    - libx11
+    - libxss
   source:
     - https://github.com/profanity-im/profanity/archive/0.18.2/profanity-0.18.2.tar.gz
   sha256sums:
@@ -46,44 +46,44 @@ pkgbase:
 pkgname:
   - name: profanity
     depends:
-      - libcurl.so
-      - libncursesw.so
       - expat
       - glib2
-      - libotr
-      - libnotify.so
-      - libgpgme.so
-      - python
-      - libgcrypt
-      - libsignal-protocol-c
       - glibc
-      - libreadline.so
       - libassuan
+      - libcurl.so
+      - libgcrypt
       - libgpg-error
+      - libgpgme.so
+      - libncursesw.so
+      - libnotify.so
+      - libotr
+      - libreadline.so
+      - libsignal-protocol-c
       - libstrophe.so
+      - python
   - name: profanity-gtk
     pkgdesc: Console based XMPP client (gtk support)
     depends:
-      - libcurl.so
-      - libncursesw.so
       - expat
       - glib2
-      - libotr
-      - libnotify.so
-      - libgpgme.so
-      - python
-      - libgcrypt
-      - libsignal-protocol-c
       - glibc
-      - libreadline.so
       - libassuan
+      - libcurl.so
+      - libgcrypt
       - libgpg-error
+      - libgpgme.so
+      - libncursesw.so
+      - libnotify.so
+      - libotr
+      - libreadline.so
+      - libsignal-protocol-c
       - libstrophe.so
-      - libgtk-3.so
-      - libxss
-      - libx11
-      - gdk-pixbuf2
+      - python
       - cairo
+      - gdk-pixbuf2
+      - libgtk-3.so
+      - libx11
+      - libxss
     provides:
       - profanity
     conflicts:
