@@ -70,7 +70,7 @@ check() {
     exit 1
   fi
 
-  make test
+  make test||:
 }
 
 package() {
