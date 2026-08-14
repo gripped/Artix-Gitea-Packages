@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Morten Linderud <foxboron@archlinux.org>
 
 pkgname=git-lfs
 pkgver=3.7.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Git extension for versioning large files"
 arch=('x86_64' 'aarch64')
 url="https://git-lfs.github.com"
