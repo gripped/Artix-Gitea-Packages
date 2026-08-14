@@ -5,7 +5,7 @@
 _pkgbase=desktop-presets
 
 pkgname=artix-gtk-presets
-pkgver=20240803
+pkgver=20260814
 pkgrel=1
 pkgdesc='Artix GTK presets (MATE, LXDE, XFCE and Cinnamon)'
 arch=('any')
@@ -13,7 +13,7 @@ url="https://gitea.artixlinux.org/artix/desktop-presets"
 license=('GPL')
 provides=('desktop-presets')
 depends=('artix-desktop-presets' 'mate-icon-theme-faenza' 'qt5-styleplugins')
-optdepends=('qt5ct')
+optdepends=('qt5ct' 'qt6ct' 'qt6gtk2')
 conflicts=('artix-lxde-presets' 'artix-mate-presets' 'artix-cinnamon-presets')
 replaces=('artix-lxde-presets' 'artix-mate-presets' 'artix-cinnamon-presets') # when refactor merges into master
 groups=('artix-branding')
