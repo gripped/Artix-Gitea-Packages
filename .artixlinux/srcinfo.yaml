@@ -1,10 +1,10 @@
 ---
-version: 3-6.3
+version: 3-6.4
 pkgbase:
   name: base
   pkgdesc: Minimal package set to define a basic Artix Linux installation
   pkgver: 3
-  pkgrel: 6.3
+  pkgrel: 6.4
   url: https://www.artixlinux.org
   arch:
     - any
@@ -44,9 +44,9 @@ pkgbase:
   optdepends:
     - 'linux: bare metal support'
   source:
-    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=1aad7478e9b622418eb27ddd96fd4ac52d74a80d
+    - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#commit=125b7cff48b85a2790c513fb28b500d2f36bea84
   sha256sums:
-    - cd381056ffe2256035579524d7d15a9ca710538dc261a19f39bc8cd3102fca4f
+    - 75cd3191046c19a5b48b8319c132d3868c36aa7f25a147c08fb2e246ed9b9efc
 pkgname:
   - name: base
-# generated with artixpkg 0.39-2-any
+# generated with artixpkg 0.38.5-1-any
