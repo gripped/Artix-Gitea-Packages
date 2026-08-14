@@ -1,8 +1,8 @@
 ---
-version: 580.173.02-1
+version: 580.178.04-1
 pkgbase:
   name: lib32-nvidia-580xx-utils
-  pkgver: 580.173.02
+  pkgver: 580.178.04
   pkgrel: 1
   url: http://www.nvidia.com/
   arch:
@@ -12,7 +12,7 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - https://us.download.nvidia.com/XFree86/Linux-x86_64/580.173.02/NVIDIA-Linux-x86_64-580.173.02.run
+    - https://us.download.nvidia.com/XFree86/Linux-x86_64/580.178.04/NVIDIA-Linux-x86_64-580.178.04.run
   sha512sums:
     - SKIP
 pkgname:
@@ -28,7 +28,7 @@ pkgname:
       - lib32-vulkan-driver
       - lib32-opengl-driver
       - lib32-nvidia-libgl
-      - lib32-nvidia-utils=580.173.02
+      - lib32-nvidia-utils=580.178.04
     conflicts:
       - lib32-nvidia-libgl
       - lib32-nvidia-utils
@@ -43,7 +43,7 @@ pkgname:
       - 'opencl-headers: headers necessary for OpenCL development'
     provides:
       - lib32-opencl-driver
-      - lib32-opencl-nvidia=580.173.02
+      - lib32-opencl-nvidia=580.178.04
     conflicts:
       - lib32-opencl-nvidia
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
