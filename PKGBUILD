@@ -10,7 +10,7 @@ pkgdesc='The Open Source build of Visual Studio Code (vscode) editor'
 # Important: Remember to check https://github.com/microsoft/vscode/wiki/How-to-Contribute#prerequisites for target node version
 _electron=electron41
 pkgver=1.131.0
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://github.com/microsoft/vscode'
 license=('MIT')
@@ -78,7 +78,7 @@ prepare() {
   if [[ "electron$_electronver" != "$_electron" ]]; then
     echo "Wrong electron dependency. Change _electron to $_electronver"
   fi
-  _electronver=41.10.3
+  _electronver=41.10.5
 
   # Change electron binary name to the target electron
   sed -e "s|name=electron|name=$_electron |" \
