@@ -1,0 +1,3 @@
+pre_remove() {
+    dinitctl disable tlp 2>/dev/null || rm -f /etc/dinit.d/boot.d/tlp
+} 
