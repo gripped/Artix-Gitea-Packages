@@ -1,7 +1,8 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
+# Maintainer: Dovloran <dovloran@artixlinux.org>
 pkgname=tlp-dinit
-pkgver=20211103
-pkgrel=2
+pkgver=20260814
+pkgrel=1
 pkgdesc="dinit service scripts for tlp"
 arch=('any')
 url="https://artixlinux.org"
@@ -10,6 +11,7 @@ groups=('dinit-world')
 depends=('tlp' 'dinit')
 conflicts=('init-tlp')
 provides=('init-tlp')
+install='tlp-dinit.install'
 source=("tlp")
 sha256sums=('e96d800fdd15b500948ae615974c7e7339f9f99797c00b17a3eb59aff39d8f15')
 

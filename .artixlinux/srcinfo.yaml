@@ -1,0 +1,29 @@
+---
+version: 20260814-1
+pkgbase:
+  name: tlp-dinit
+  pkgdesc: dinit service scripts for tlp
+  pkgver: 20260814
+  pkgrel: 1
+  url: https://artixlinux.org
+  install: tlp-dinit.install
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - tlp
+    - dinit
+  provides:
+    - init-tlp
+  conflicts:
+    - init-tlp
+  source:
+    - tlp
+  sha256sums:
+    - e96d800fdd15b500948ae615974c7e7339f9f99797c00b17a3eb59aff39d8f15
+pkgname:
+  - name: tlp-dinit
+# generated with artixpkg 0.39.1-1-any
