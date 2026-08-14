@@ -1,10 +1,10 @@
 ---
-version: 153.0.2-1
+version: 153.0.2-2
 pkgbase:
   name: thunderbird
   pkgdesc: Standalone mail and news reader from mozilla.org
   pkgver: 153.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.thunderbird.net/
   arch:
     - x86_64
