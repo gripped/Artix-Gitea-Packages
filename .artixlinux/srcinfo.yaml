@@ -1,10 +1,10 @@
 ---
-version: 2.0.1-1
+version: 2.0.1-2
 pkgbase:
   name: python-pygraphviz
   pkgdesc: Python interface to Graphviz
   pkgver: 2.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://pygraphviz.github.io
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgname:
       - graphviz
       - python
       - glibc
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
