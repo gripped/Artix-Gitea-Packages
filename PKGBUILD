@@ -5,7 +5,7 @@
 pkgname=opendht
 epoch=1
 pkgver=4.2.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="C++17 Distributed Hash Table (DHT) implementation"
 arch=(x86_64)
 url="https://github.com/savoirfairelinux/opendht"

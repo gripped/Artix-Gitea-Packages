@@ -1,10 +1,10 @@
 ---
-version: 1:4.2.1-1
+version: 1:4.2.1-1.1
 pkgbase:
   name: opendht
   pkgdesc: C++17 Distributed Hash Table (DHT) implementation
   pkgver: 4.2.1
-  pkgrel: 1
+  pkgrel: 1.1
   epoch: 1
   url: https://github.com/savoirfairelinux/opendht
   arch:
