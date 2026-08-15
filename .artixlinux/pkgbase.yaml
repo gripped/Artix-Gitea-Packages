@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - graphviz-14.1.4-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 16.0.0-1
+    packages:
+      - graphviz-16.0.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 15.1.1-1
