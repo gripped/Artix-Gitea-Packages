@@ -1,9 +1,9 @@
 ---
-version: 6.15.0-1
+version: 6.16.1-1
 pkgbase:
   name: python-pypdf
   pkgdesc: Python library for manipulating pages of PDF files
-  pkgver: 6.15.0
+  pkgver: 6.16.1
   pkgrel: 1
   url: https://github.com/py-pdf/pypdf
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python-cryptography
     - python-pillow
   source:
-    - https://github.com/py-pdf/pypdf/archive/6.15.0/pypdf-6.15.0.tar.gz
+    - https://github.com/py-pdf/pypdf/archive/6.16.1/pypdf-6.16.1.tar.gz
   sha256sums:
-    - cc5d45108e82e7210a9ae671641aca368024523d141021b398b6caf624368b08
+    - 68daddaacea36ee53d0f94a6d220beb9e78fea3c6024a108916565bc4c2ae100
 pkgname:
   - name: python-pypdf
 # generated with artixpkg 0.39.1-1-any
