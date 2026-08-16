@@ -16,6 +16,7 @@ pkgbase:
     - python-pillow
     - python-httplib2
     - python-pysocks
+    - python-python-socks
     - lld
     - gperf
     - mold
