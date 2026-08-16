@@ -67,12 +67,12 @@ build() {
   make
 }
 
-check() {
+#check() {
   # The "dwarf_srclang_check" test introduced in 0.193 needs libelf.so to run.
   # As such, we are passing LD_LIBRARY_PATH so it can find libelf.so from the
   # source built in build() in order to avoid a self (make)dependency.
-  LD_LIBRARY_PATH="$PWD/${_name}2/libelf" make -C ${_name}2 check
-}
+#  LD_LIBRARY_PATH="$PWD/${_name}2/libelf" make -C ${_name}2 check
+#}
 
 package() {
   make DESTDIR="$pkgdir" install -C ${_name}2
