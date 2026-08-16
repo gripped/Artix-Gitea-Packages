@@ -4,7 +4,7 @@
 pkgbase=crun
 pkgname=(crun krun)
 pkgver=1.29.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="A fast and lightweight fully featured OCI runtime and C library for running containers"
 url="https://github.com/containers/crun"
 license=('LGPL-2.1-or-later')
