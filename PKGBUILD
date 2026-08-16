@@ -37,7 +37,7 @@ prepare() {
 build() {
   cd "helium-linux-${pkgver}/scripts"
 
-  ./build.sh
+  ./build.sh -c --pgo
 }
 
 package() {
