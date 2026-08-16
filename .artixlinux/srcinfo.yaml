@@ -1,0 +1,32 @@
+---
+version: 7.2.2-1
+pkgbase:
+  name: python-icalendar
+  pkgdesc: A parser/generator of iCalendar files (RFC 2445)
+  pkgver: 7.2.2
+  pkgrel: 1
+  url: https://github.com/collective/icalendar
+  arch:
+    - any
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - python-hypothesis
+    - python-pytest
+    - python-pytz
+  makedepends:
+    - git
+    - python-build
+    - python-hatch-vcs
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-dateutil
+  source:
+    - git+https://github.com/collective/icalendar.git#tag=v7.2.2
+  b2sums:
+    - 5f3a489f05b39c5a97472e936ace0d33b5b381504ee85995a8eecdb37885e0740fa5947f0b6d65c5aa6141fc4de0d623068b6fc3208db63ef86ca8cdefbac096
+pkgname:
+  - name: python-icalendar
+# generated with artixpkg 0.39.1-1-any
