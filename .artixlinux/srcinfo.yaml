@@ -1,8 +1,8 @@
 ---
-version: 9.0.18.sdk119-1
+version: 9.0.19.sdk120-1
 pkgbase:
   name: dotnet-core-9.0
-  pkgver: 9.0.18.sdk119
+  pkgver: 9.0.19.sdk120
   pkgrel: 1
   url: https://dotnet.microsoft.com
   arch:
@@ -34,9 +34,9 @@ pkgbase:
     - '!lto'
     - staticlibs
   source:
-    - git+https://github.com/dotnet/dotnet.git#tag=v9.0.119
+    - git+https://github.com/dotnet/dotnet.git#tag=v9.0.120
   b2sums:
-    - 671a7c3ee9b7e86ce48e5a2441a6f45438de223a9de366ea55bf198d9abf8fedc54a3861577f332e26cf3993a39b7d0c2b5393566ccb67bd8cdbd656b437420b
+    - 784752e017a39cdc338f1409840321fc2ee8e36fb5e679e77a93e33cc05896b0e6fa5e8b6c51cbd0f37dbb35669e83fc66a916d347d8681fecffc4fc1f1f564f
 pkgname:
   - name: dotnet-runtime-9.0
     pkgdesc: The .NET Core runtime
@@ -89,4 +89,4 @@ pkgname:
     pkgdesc: Internal package for building the .NET Core SDK
     provides:
       - dotnet-source-built-artifacts=9.0
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
