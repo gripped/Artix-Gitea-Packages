@@ -1,10 +1,10 @@
 ---
-version: 3.1.1-1
+version: 3.1.1-1.1
 pkgbase:
   name: mcomix
   pkgdesc: GTK comic book viewer
   pkgver: 3.1.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://sourceforge.net/p/mcomix/wiki/Home/
   arch:
     - any
@@ -34,4 +34,4 @@ pkgbase:
     - a10aaaed7bc07deb74efde93bf9a8a27e1bcbf1824a0519b264cfee582becef8
 pkgname:
   - name: mcomix
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
