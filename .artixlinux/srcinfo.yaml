@@ -14,6 +14,7 @@ pkgbase:
     - ninja
     - nodejs
     - python-pillow
+    - python-httplib2
     - lld
     - gperf
     - mold
