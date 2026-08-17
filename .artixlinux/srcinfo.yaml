@@ -1,10 +1,10 @@
 ---
-version: 26.04.3-1
+version: 26.04.3-2
 pkgbase:
   name: kgraphviewer
   pkgdesc: A Graphviz dot graph file viewer
   pkgver: 26.04.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kgraphviewer/
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kgraphviewer
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
