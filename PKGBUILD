@@ -2,7 +2,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=ansible
-pkgver=14.3.0
+pkgver=14.3.1
 pkgrel=1
 pkgdesc='Official assortment of Ansible collections'
 arch=('any')
@@ -28,7 +28,7 @@ optdepends=('python-argcomplete: shell completions'
 makedepends=('python-build' 'python-installer' 'python-wheel' 'python-setuptools')
 source=("https://pypi.python.org/packages/source/a/ansible/ansible-${pkgver}.tar.gz"
         "ansible-13.4.0-remove-pkg_resources.patch")
-sha512sums=('ebd26d4641a936dca970a106e00a44cfb333030677dff37372fed3ca663f7bbac304732bb19cc3a57f3c33ca4ac27751cee2013d01e5a2a1bb5e71e5fb8e45fe'
+sha512sums=('35b147ca15ffb7ed683243f6921bee2c97d82593fac2678eb0d686d20e67992ee3ad41d7a48b87e31b1c8846dfdc30f49b78e204af409a19f540f028be4ea3ed'
             '8055d481ca3f4705822ce22fc3057129150fd647817ac1fad3937382b3af6a3f0379274aff9e9c4c8039266971302c7daea0311ddd8dea4b2ce2150bce06f82d')
 
 prepare() {
