@@ -1,14 +1,14 @@
 ---
-version: 1.4-6
+version: 1.4-7
 pkgbase:
   name: hspell
   pkgver: 1.4
-  pkgrel: 6
-  url: http://www.ivrix.org.il/projects/spell-checker/
+  pkgrel: 7
+  url: http://www.ivrix.org.il/
   arch:
     - x86_64
   license:
-    - GPL
+    - AGPL-3.0-only
   makedepends:
     - glibc
     - zlib
@@ -37,4 +37,4 @@ pkgname:
     pkgdesc: Hebrew hunspell dictionary
     provides:
       - hunspell-dictionary
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
