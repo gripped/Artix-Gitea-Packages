@@ -1,10 +1,10 @@
 ---
-version: 2.4.0-2
+version: 2.5.0-1
 pkgbase:
   name: python-pytest-timeout
   pkgdesc: py.test plugin to abort hanging tests
-  pkgver: 2.4.0
-  pkgrel: 2
+  pkgver: 2.5.0
+  pkgrel: 1
   url: https://github.com/pytest-dev/pytest-timeout
   arch:
     - any
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python-pytest
   source:
-    - git+https://github.com/pytest-dev/pytest-timeout.git#tag=2.4.0
+    - git+https://github.com/pytest-dev/pytest-timeout.git#tag=2.5.0
   sha512sums:
-    - 473d800ff9d3668d4933b0db86f1785709ac4eab0204a98168952fe50850d2c873978888ba396634461fda1be9b33b2f794e16ad7051120dc779b6c97c7d2b6b
+    - 604791e3b171b3f505c763ca5cf5c223262c044a3414c02f42d8b9643c635c1b9cba534170a17dd703cc8f03373a9643f38b15dc00d29aa7aa8ef343a31b6ac6
 pkgname:
   - name: python-pytest-timeout
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
