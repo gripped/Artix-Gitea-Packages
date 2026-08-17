@@ -1,0 +1,5 @@
+[newsraft]
+source = "git"
+git = "https://codeberg.org/newsraft/newsraft.git"
+prefix = "newsraft-"
+include_regex = "^newsraft-.+"
