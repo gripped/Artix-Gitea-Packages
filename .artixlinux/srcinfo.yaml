@@ -1,0 +1,31 @@
+---
+version: 0.9.12-1
+pkgbase:
+  name: lib32-libxrender
+  pkgdesc: X Rendering Extension client library (32-bit)
+  pkgver: 0.9.12
+  pkgrel: 1
+  url: https://xorg.freedesktop.org/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - pkgconfig
+    - gcc-multilib
+    - xorgproto
+  depends:
+    - lib32-libx11>=1.3.4
+    - libxrender
+  source:
+    - https://xorg.freedesktop.org//releases/individual/lib/libXrender-0.9.12.tar.xz
+    - https://xorg.freedesktop.org//releases/individual/lib/libXrender-0.9.12.tar.xz.sig
+  validpgpkeys:
+    - 4A193C06D35E7C670FA4EF0BA2FB9E081F2D130E
+    - C41C985FDCF1E5364576638B687393EE37D128F8
+  sha256sums:
+    - b832128da48b39c8d608224481743403ad1691bf4e554e4be9c174df171d1b97
+    - SKIP
+pkgname:
+  - name: lib32-libxrender
+# generated with artixpkg 0.39.1-1-any
