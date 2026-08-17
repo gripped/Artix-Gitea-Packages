@@ -4,7 +4,7 @@
 
 pkgname=btrfs-assistant
 pkgver=2.3
-pkgrel=1
+pkgrel=2
 pkgdesc="An application for managing BTRFS subvolumes and Snapper snapshots"
 arch=('x86_64')
 url="https://gitlab.com/${pkgname}/${pkgname}"
