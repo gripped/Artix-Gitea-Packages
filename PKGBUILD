@@ -71,6 +71,7 @@ source=(https://archive.mozilla.org/pub/thunderbird/releases/${pkgver}/source/th
 validpgpkeys=(
   14F26682D0916CDD81E37B6D61B7B526D98F0353 # Mozilla Software Releases <release@mozilla.com>
   4360FE2109C49763186F8E21EBE41E90F6F12F6D # Mozilla Software Releases <release@mozilla.com>
+  09BEED63F3462A2DFFAB3B875ECB6497C1A20256 # For now adding key...
 )
 
 # Google API keys (see http://www.chromium.org/developers/how-tos/api-keys)
