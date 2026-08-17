@@ -1,9 +1,9 @@
 ---
-version: 2.6.2-1
+version: 2.6.3-1
 pkgbase:
   name: python-tracerite
   pkgdesc: Pythonic HTML generation/templating (no template files)
-  pkgver: 2.6.2
+  pkgver: 2.6.3
   pkgrel: 1
   url: https://github.com/sanic-org/tracerite
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - python
     - python-html5tagger
   source:
-    - git+https://github.com/sanic-org/tracerite.git#tag=v2.6.2
+    - git+https://github.com/sanic-org/tracerite.git#tag=v2.6.3
   sha256sums:
-    - becb8bcd84fc45a50a1a56a2424c209cd4d7d863b31a975e7df9254e882d8900
+    - 7da09fec7effdff498e4ae42b7d31c628b1d491b602e8280aad6072bd2c337f7
 pkgname:
   - name: python-tracerite
 # generated with artixpkg 0.39.1-1-any
