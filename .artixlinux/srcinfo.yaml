@@ -1,10 +1,10 @@
 ---
-version: 0.5.24-1
+version: 0.5.24-2
 pkgbase:
   name: rio
   pkgdesc: A hardware-accelerated GPU terminal emulator powered by WebGPU
   pkgver: 0.5.24
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/raphamorim/rio
   arch:
     - x86_64
@@ -35,9 +35,12 @@ pkgbase:
 pkgname:
   - name: rio
     depends:
+      - hicolor-icon-theme
       - libasound.so
       - libfontconfig.so
       - libfreetype.so
       - libgcc_s.so
       - libstdc++.so
+      - oniguruma
+      - vulkan-driver
 # generated with artixpkg 0.39.1-1-any
