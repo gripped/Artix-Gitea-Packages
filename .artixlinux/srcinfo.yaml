@@ -1,9 +1,9 @@
 ---
-version: 6.11.1-1
+version: 6.11.2-1
 pkgbase:
   name: qt6-virtualkeyboard
   pkgdesc: Virtual keyboard framework
-  pkgver: 6.11.1
+  pkgver: 6.11.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -20,17 +20,17 @@ pkgbase:
     - git
     - ninja
   depends:
-    - gcc-libs
     - glibc
     - hunspell
+    - libstdc++
     - qt6-base
     - qt6-declarative
     - qt6-multimedia
     - qt6-svg
   source:
-    - git+https://code.qt.io/qt/qtvirtualkeyboard#tag=v6.11.1
+    - git+https://code.qt.io/qt/qtvirtualkeyboard#tag=v6.11.2
   sha256sums:
-    - f597085d53b9ec1e67ea1c656695a7000a30828950c2c9e4b93c47baf0f7e183
+    - 6636effeb1a526761289532385930d6b422d5f2cbfda22d3584987f7c1aa312f
 pkgname:
   - name: qt6-virtualkeyboard
 # generated with artixpkg 0.38.5-1-any
