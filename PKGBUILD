@@ -14,8 +14,8 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-#pkgver=153.0.0.100b3
-pkgver=140.13.0.102
+pkgver=153.1.0.100b2
+#pkgver=140.13.0.102
 
 pkgrel=1
 _ffbuild=1
@@ -147,8 +147,8 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('38e59c9106a54fc3967dd8dd062eee6953b691c78751e0deb7683ebbf5fdf95c'
-            'f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01'
+sha256sums=('2c78488aaf7281c9551ad58cf3cc5c1bfd53d1bb937301b909508396692c7ba8'
+            '77adcb2664dda25ca1f01f5a795ae695ed0a0a1464a268c4f13159956407c7ad'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '0c21f80ad1b3796c49429949e6a3d52cbe9c3b5b4c317690a749d80076396d0c'
@@ -158,7 +158,7 @@ sha256sums=('38e59c9106a54fc3967dd8dd062eee6953b691c78751e0deb7683ebbf5fdf95c'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-	    'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
+            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
