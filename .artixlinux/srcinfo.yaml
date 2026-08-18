@@ -1,9 +1,9 @@
 ---
-version: 6.11.1-1
+version: 6.11.2-1
 pkgbase:
   name: qt6-canvaspainter
   pkgdesc: Accelerated 2D painting solution for Qt Quick and QRhi-based render targets
-  pkgver: 6.11.1
+  pkgver: 6.11.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -21,14 +21,14 @@ pkgbase:
     - ninja
     - qt6-shadertools
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
     - qt6-base
     - qt6-declarative
   source:
-    - git+https://code.qt.io/qt/qtcanvaspainter#tag=v6.11.1
+    - git+https://code.qt.io/qt/qtcanvaspainter#tag=v6.11.2
   sha256sums:
-    - 18b505f811c47e7351c04c52660a55266f2ef15860f14af8557c4532f6ff474e
+    - 560bb5ad7c64273d0b9dbf1cf2c11fe25c6902926251617041ade9bb25df3fc2
 pkgname:
   - name: qt6-canvaspainter
 # generated with artixpkg 0.38.5-1-any
