@@ -2,7 +2,7 @@
 # Contributor: Konstantin Gizdov <arch at kge dot pw>
 
 pkgname=python-xxhash
-pkgver=4.0.0
+pkgver=4.0.1
 pkgrel=1
 pkgdesc='Python binding for xxHash'
 arch=(x86_64)
@@ -22,7 +22,7 @@ makedepends=(
 )
 source=("$pkgname::git+$url.git#tag=v$pkgver"
         test_interpreters.patch)
-b2sums=('b7b4d1ff403f8df85934a212032ccff876b7900b55947b858d9bdfed993dd4a73a5257b75c52d6a1d876d28a9b74c29356c39c1c9d2084982cd50cc7748a89c8'
+b2sums=('f55a09689d1baeb8ba309300157577629dd6771298e3ea2a005459bb6fbe813f69929a0406e4084f7b1de6093ad991810dbc32c5e874d7bb08ce86a970dadb72'
         'e0f340fc85ab1726f7b8fca1473dfc2cf576574d90799db7e4f20010df1d24c4d17e47b7dedaf79a3aa5f9ba52f4acebd06cd0755934c1acc1ead5bc55ba459e')
 
 prepare() {
