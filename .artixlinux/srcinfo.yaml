@@ -1,9 +1,9 @@
 ---
-version: 6.11.1-1
+version: 6.11.2-1
 pkgbase:
   name: qt6-graphs
   pkgdesc: Qt Graphs for data visualization
-  pkgver: 6.11.1
+  pkgver: 6.11.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -21,15 +21,15 @@ pkgbase:
     - ninja
     - qt6-shadertools
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
     - qt6-base
     - qt6-declarative
     - qt6-quick3d
   source:
-    - git+https://code.qt.io/qt/qtgraphs#tag=v6.11.1
+    - git+https://code.qt.io/qt/qtgraphs#tag=v6.11.2
   sha256sums:
-    - 2b820f929b6ec3590580d10c6f424fb246dc56bd6e3818de871fcf04685312b6
+    - 049db351efb94a21258ebab805d822454fa3394ec812f5916fa75566ef13a1c6
 pkgname:
   - name: qt6-graphs
 # generated with artixpkg 0.38.5-1-any
