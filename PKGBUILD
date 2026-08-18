@@ -1,22 +1,28 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgname=libcupsfilters
-pkgver=2.1.1
-pkgrel=4
+pkgver=2.2.1
+pkgrel=1
 pkgdesc="OpenPrinting CUPS Filters - contains all the code of the filters of the former cups-filters package as library functions"
 arch=('x86_64')
 url="https://github.com/OpenPrinting/libcupsfilters"
 license=('Apache-2.0 WITH LLVM-exception')
-depends=('libcups' 'libexif' 'qpdf' 'poppler'
+# keep poppler for pdftoppm
+depends=('libcups' 'libexif' 'pdfio' 'libjxl' 'poppler'
          'libjpeg-turbo' 'libpng' 'libtiff' 'lcms2'
-         'fontconfig' 'glibc' 'libstdc++' 'libgcc' 'dbus')
+         'fontconfig' 'glibc' 'dbus')
 makedepends=(
 	'ghostscript' 
 #        'mupdf-tools' ???
 )
 checkdepends=('ttf-dejavu') # ttf-dejavu for make check
 source=("https://github.com/OpenPrinting/libcupsfilters/releases/download/$pkgver/$pkgname-$pkgver.tar.xz")
-sha256sums=('6c303e36cfde05a6c88fb940c62b6a18e7cdbfb91f077733ebc98f104925ce36')
+sha256sums=('0a22b849d5068c4c86b20fbb4192d3faa3dabcc9ee844c8fd73710ed821d4860')
+
+prepare() {
+  cd "$pkgname"-$pkgver
+  autoreconf -vfi
+}
 
 build() {
   cd "$pkgname"-$pkgver
@@ -25,7 +31,6 @@ build() {
     --sbindir=/usr/bin \
     --localstatedir=/var \
     --disable-mutool
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
 
