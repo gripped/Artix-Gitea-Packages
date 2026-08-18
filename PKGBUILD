@@ -2,8 +2,8 @@
 
 pkgbase=vis
 pkgname=(vis vis-lexers)
-_commit='e9791c2c70c54daa708ef3a3081402ff55d54faf'
-pkgver=0.9.r463.ge9791c2c
+_commit='ad0f1deb6879954f1138c2ae5d3c4a18a76733ea'
+pkgver=0.9.r498.gad0f1deb
 pkgrel=1
 pkgdesc='modern, legacy free, simple yet efficient vim-like editor'
 arch=('x86_64')
@@ -24,7 +24,7 @@ license=('custom:ISC')
 validpgpkeys=('54A47F12462D26A7D078A932C83A52CD1962562C') # Marc André Tanner <mat@brain-dump.org>
 # TODO: can we have signed tag back?
 source=("git+https://github.com/martanne/vis.git#commit=${_commit}")
-sha256sums=('98bc2798174349d646d221169095036a8b254533cf4a98e484e90ef4cecd370d')
+sha256sums=('74d4560265a9e129de714f15c0800e50e80fc57541bfa6d18b021c0437346282')
 
 _backports=(
 )
