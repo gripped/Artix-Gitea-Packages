@@ -126,18 +126,19 @@ options=(
 )
 
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
-_src_repo=https://codeberg.org/konform-browser/source.git
+_src_repo=https://codeberg.org/konform-browser/source
 _src_dir="src"
 if [[ "${_ffsrcver%%.*}" -gt 150  ]]; then
-  _src_repo=https://codeberg.org/konform-browser/konform-next.git
+  _src_repo=https://codeberg.org/konform-browser/konform-next
   _src_dir="src-${_ffsrcver%%.*}"
   install=konform-browser-testing.install
 fi
 source=(
-  "${_src_dir}"::"git+${_src_repo}#tag=${pkgver}"
+  "${_src_dir}"::"git+${_src_repo}.git#tag=${pkgver}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
+  "security-state--intermediates.zip::https://codeberg.org/konform-browser/konform-next/releases/download/${pkgver}/security-state--intermediates.zip"
   "${__pkgname}.desktop"
   "konform-browser-testing.install"
   "default192x192.png"
@@ -150,6 +151,7 @@ sha256sums=('38e59c9106a54fc3967dd8dd062eee6953b691c78751e0deb7683ebbf5fdf95c'
             'f53b9dc6942abda1185aa7d79048f59fc075020da36b4dd6b31f668b88714d01'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
+            '0c21f80ad1b3796c49429949e6a3d52cbe9c3b5b4c317690a749d80076396d0c'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
             '1242299c0a3e90a6b1f1c2bcc6bfa32e7c914a88a9c98fb879b016e6a1505c84'
             'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
@@ -163,6 +165,7 @@ validpgpkeys=(
   # https://blog.mozilla.org/security/2023/05/11/updated-gpg-key-for-signing-firefox-releases/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
+noextract=("security-state--intermediates.zip")
 _languages=(
     ach af an ar ast az be bg bn br bs ca-valencia ca cak cs cy da de dsb el
     en-CA en-GB en-US eo es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE
@@ -184,6 +187,7 @@ prepare() {
   mv "${srcdir}/firefox-${_ffsrcver%b*}"/* "${srcdir}/firefox-${_ffsrcver%b*}"/.* "${_lw_srcdir}/"
   mkdir -p "${_lw_srcdir}/lw"
   mv "../firefox-l10n-${_l10n_commit}" "${_lw_srcdir}/lw/l10n"
+  mv "../security-state--intermediates.zip" "services/settings/dumps/security-state/intermediates/security-state--intermediates.zip"
 
   python3 scripts/apply-patches.py "${_srcver}" "${_lwrelver}"
 
