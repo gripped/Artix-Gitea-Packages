@@ -1,9 +1,9 @@
 ---
-version: 153.0.4_1-1
+version: 154.0_2-1
 pkgbase:
   name: librewolf
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom
-  pkgver: 153.0.4_1
+  pkgver: 154.0_2
   pkgrel: 1
   url: https://librewolf.net/
   arch:
@@ -76,17 +76,15 @@ pkgbase:
     - '!lto'
     - '!makeflags'
   source:
-    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/153.0.4-1/librewolf-153.0.4-1.source.tar.gz
-    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/153.0.4-1/librewolf-153.0.4-1.source.tar.gz.sig
+    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/154.0-2/librewolf-154.0-2.source.tar.gz
+    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/154.0-2/librewolf-154.0-2.source.tar.gz.sig
     - librewolf.desktop
-    - https://gitlab.archlinux.org/archlinux/packaging/packages/firefox/-/raw/153.0.3-2/0002-Bug-2057577-DOM-Media-Add-FFmpeg-63-support.-r-alwu-.patch
   validpgpkeys:
     - 662E3CDD6FE329002D0CA5BB40339DD82B12EF16
   sha256sums:
-    - 2a985ec674e1472282eefc34d5334f6e711a5d9a21e76c3d50b57972f45fe45f
+    - 7e6c340882f2e2ffc09a24d9f53b91de063c15a1ae0e6214b5a08119244a7a4c
     - SKIP
     - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
-    - 55aeec4d098990e91f881de32126ea91576b0d185e322b561241c513ea5b9fcd
 pkgname:
   - name: librewolf
 # generated with artixpkg 0.38.5-1-any
