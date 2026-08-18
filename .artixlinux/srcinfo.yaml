@@ -50,4 +50,4 @@ pkgbase:
     - 411b25296ed19f033270fe62afe12fe635c6c11e7d5d078188c76bef193e28ec2b461450d1366c80e2edad919baf730342ca84f02d9adbfbe7f3bce912884d88
 pkgname:
   - name: python-pymupdf
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
