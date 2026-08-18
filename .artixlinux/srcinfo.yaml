@@ -1,9 +1,9 @@
 ---
-version: 6.11.1-1
+version: 6.11.2-1
 pkgbase:
   name: qt6-speech
   pkgdesc: Qt Speech support
-  pkgver: 6.11.1
+  pkgver: 6.11.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -23,8 +23,8 @@ pkgbase:
     - qt6-declarative
     - speech-dispatcher
   depends:
-    - gcc-libs
     - glibc
+    - libstdc++
     - qt6-base
     - qt6-multimedia
   optdepends:
@@ -32,9 +32,9 @@ pkgbase:
     - 'speech-dispatcher: speech-dispatcher TTS backend'
     - 'qt6-declarative: QML bindings'
   source:
-    - git+https://code.qt.io/qt/qtspeech#tag=v6.11.1
+    - git+https://code.qt.io/qt/qtspeech#tag=v6.11.2
   sha256sums:
-    - 48a67f4db1235e2e15e922594037dcc3d0efccebb9930f3971b7aa1b1aa2eed9
+    - e9a27722da618e702fd4ca1f8883af46f704e4c4f7ddafd9542375ebbf9f1039
 pkgname:
   - name: qt6-speech
 # generated with artixpkg 0.38.5-1-any
