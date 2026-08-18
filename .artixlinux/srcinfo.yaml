@@ -1,9 +1,9 @@
 ---
-version: 6.11.1-1
+version: 6.11.2-1
 pkgbase:
   name: qt6-5compat
   pkgdesc: Module that contains unsupported Qt 5 APIs
-  pkgver: 6.11.1
+  pkgver: 6.11.2
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -21,17 +21,17 @@ pkgbase:
     - ninja
     - qt6-declarative
   depends:
-    - gcc-libs
     - glibc
     - icu
+    - libstdc++
     - qt6-base
     - qt6-shadertools
   optdepends:
     - 'qt6-declarative: for QtGraphicalEffects'
   source:
-    - git+https://code.qt.io/qt/qt5compat#tag=v6.11.1
+    - git+https://code.qt.io/qt/qt5compat#tag=v6.11.2
   sha256sums:
-    - e4a06e9883de9f55342c6280c7567509c24513864991ab97c6e97992fa9f6b55
+    - 0f78f55352f328a44c9dd4a1ebb44da032038561d9e2d4683efc7d50e9a0b930
 pkgname:
   - name: qt6-5compat
 # generated with artixpkg 0.38.5-1-any
