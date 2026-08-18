@@ -1,10 +1,10 @@
 ---
-version: 8.1.8-2
+version: 8.1.9-1
 pkgbase:
   name: python-ipywidgets
   pkgdesc: IPython HTML widgets for Jupyter
-  pkgver: 8.1.8
-  pkgrel: 2
+  pkgver: 8.1.9
+  pkgrel: 1
   url: https://github.com/ipython/ipywidgets
   arch:
     - any
@@ -31,9 +31,9 @@ pkgbase:
   optdepends:
     - 'jupyterlab-widgets: widgets for Jupyter lab'
   source:
-    - git+https://github.com/jupyter-widgets/ipywidgets#tag=8.1.8
+    - git+https://github.com/jupyter-widgets/ipywidgets#tag=8.1.9
   sha256sums:
-    - 72fa8a592f0f3df97fe3d708132a224f994cdf764325757b9053c76679c6f5e6
+    - 327c99c274edf1d287675928d1117129126ac38e54ad2abdcd42c349ac6b90dc
 pkgname:
   - name: python-ipywidgets
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
