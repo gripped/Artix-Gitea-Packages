@@ -5,7 +5,7 @@
 # Contributor: Judd Vinet <jvinet.zeroflux.org>
 
 pkgname=dhcpcd
-pkgver=10.5.0
+pkgver=10.5.2
 pkgrel=1
 pkgdesc="DHCP/ IPv4LL/ IPv6RA/ DHCPv6 client"
 url="https://roy.marples.name/projects/dhcpcd/"
@@ -27,11 +27,11 @@ source=(
   $pkgname.sysusers
   $pkgname.tmpfiles
 )
-sha256sums=('1fac7f914161c09e379c696c8c599f26b116f00fc695f999ca8365d144b61f8f'
+sha256sums=('3e476657fdb6eeb38b277da3a48d0ac0113ecce5858ebdcddff2b629faed52b4'
             'SKIP'
             '32cecb466f491d73aec546f72f37048ee3042b00c35df3d2dde43296e7505c9e'
             '1ca593a91d537766d073e71cfab87881e6f6a2ccb5236a45531d5520b3af7a31')
-b2sums=('0b685acc78243b94f045fad33f10142e65c7883010e61a0f62f19c6ba080418dbf3ea939d7a22dd432ae6e9af8da90bd70da89d5e802ca481c797b03e1f41417'
+b2sums=('5852f07fc163137ec5e3224a7043de9b792551f13509bb20b5740be77f08280335eeb92cd22f98fb40a2d527d4190fffcda9ddde009412aad62f286ad069ebb4'
         'SKIP'
         'f9b6e9f9a9f6ca781c3993d9dbccbb2a5a7f9c471c4b736b4b21511ce28a0e44c23e60ef6b74cbe7141942cde55115feb9e78df5ab389af7e064685521e40916'
         'fab9f56a694b2bcaa26ebd4040984778ea4a3cccd57f17a0eb724a9fc4750157d97d9d0db747932c3b386938fe2bf1d6a4ba609cc5cc3a6b0e1ae39404ba21be')
