@@ -1,9 +1,9 @@
 ---
-version: 3.3.2-1
+version: 3.4.0-1
 pkgbase:
   name: frei0r-plugins
   pkgdesc: Collection of video effect plugins
-  pkgver: 3.3.2
+  pkgver: 3.4.0
   pkgrel: 1
   url: https://frei0r.dyne.org/
   arch:
@@ -21,12 +21,12 @@ pkgbase:
     - libstdc++
     - opencv
   source:
-    - git+https://github.com/dyne/frei0r#tag=v3.3.2
+    - git+https://github.com/dyne/frei0r#tag=v3.4.0
     - opencv-5.patch
   validpgpkeys:
     - 6113D89CA825C5CEDD02C87273B35DA54ACB7D10
   b2sums:
-    - 9319a669f3a46e3e5419821abb374374e8a3cf6f54033e20d8424ee2cf53e9a730517d80e58de157c69c1f877b39138a85fbc5b85000a52b6ebe05c6c3f2bc67
+    - 8799c25e2ee7b4531d91cfa05cbcded0aa07315ea6978cafeae391989bf95d485b7afca0afab68ecea843583c79502af625bc51c644700cbba09f88e9fcbc411
     - 8a4d4b1e87b5c5ba553a687dc74d6d8b7af1566fba5ed59175cc9867894f0776442acfff8d0dbebe5b72a1f23ad8de80bd8853bfc4f024a250e6c666b28b5384
 pkgname:
   - name: frei0r-plugins
