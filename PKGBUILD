@@ -7,7 +7,7 @@ pkgname=(qt6-base
          qt6-xcb-private-headers)
 _pkgver=6.11.2
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -127,6 +127,7 @@ build() {
     -DFEATURE_system_xcb_xinput=ON \
     -DFEATURE_no_direct_extern_access=$_no_direct_extern_access \
     -DFEATURE_mimetype_database=OFF \
+    -DFEATURE_openssl_hash=ON \
     -DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON \
     -DCMAKE_MESSAGE_LOG_LEVEL=STATUS
   cmake --build build
