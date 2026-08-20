@@ -1,10 +1,10 @@
 ---
-version: 35.1-1
+version: 35.1-2
 pkgbase:
   name: protobuf
   pkgdesc: Protocol Buffers - Google's data interchange format
   pkgver: 35.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://developers.google.com/protocol-buffers/
   arch:
     - x86_64
@@ -61,4 +61,4 @@ pkgname:
       - ruby
       - ruby-bigdecimal
       - ruby-rake
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
