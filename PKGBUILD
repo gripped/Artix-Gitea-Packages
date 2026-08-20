@@ -23,7 +23,7 @@ pkgname=(
   lib32-vulkan-mesa-implicit-layers
   lib32-vulkan-mesa-layers
 )
-pkgver=26.1.7
+pkgver=26.1.8
 _pkgver=${pkgver/[a-z]/-&}
 pkgrel=1
 epoch=1
@@ -101,41 +101,41 @@ validpgpkeys=(
 # Rust crates for NVK, used as Meson subprojects
 # shellcheck disable=SC2190
 declare -A _crates=(
-  bitflags         2.9.1
-  cfg-if           1.0.0
-  equivalent       1.0.1
-  errno            0.3.12
-  hashbrown        0.14.1
-  indexmap         2.2.6
-  libc             0.2.171
-  log              0.4.27
-  once_cell        1.8.0
-  paste            1.0.14
-  pest             2.8.0
-  pest_derive      2.8.0
-  pest_generator   2.8.0
-  pest_meta        2.8.0
-  proc-macro2      1.0.86
-  quote            1.0.35
-  remain           0.2.12
-  roxmltree        0.20.0
-  rustc-hash       2.1.1
-  rustix           1.1.2
-  syn              2.0.87
-  thiserror        2.0.11
-  thiserror-impl   2.0.11
-  ucd-trie         0.1.6
-  unicode-ident    1.0.12
-  windows-link     0.2.0
-  windows-sys      0.61.1
-  zerocopy         0.8.13
-  zerocopy-derive  0.8.13
+  bitflags 2.9.1
+  cfg-if 1.0.0
+  equivalent 1.0.1
+  errno 0.3.12
+  hashbrown 0.14.1
+  indexmap 2.2.6
+  libc 0.2.171
+  log 0.4.27
+  once_cell 1.8.0
+  paste 1.0.14
+  pest 2.8.0
+  pest_derive 2.8.0
+  pest_generator 2.8.0
+  pest_meta 2.8.0
+  proc-macro2 1.0.86
+  quote 1.0.35
+  remain 0.2.12
+  roxmltree 0.20.0
+  rustc-hash 2.1.1
+  rustix 1.1.2
+  syn 2.0.87
+  thiserror 2.0.11
+  thiserror-impl 2.0.11
+  ucd-trie 0.1.6
+  unicode-ident 1.0.12
+  windows-link 0.2.0
+  windows-sys 0.61.1
+  zerocopy 0.8.13
+  zerocopy-derive 0.8.13
 )
 
 # Used to generate the above table
 _gencrates() {
-  grep '^source_url' subprojects/*-rs.wrap | \
-    sed -r 's|.*crates/([^/]+)/([0-9.]+)/download|\1 \2|' | \
+  grep '^source_url' subprojects/*-rs.wrap |
+    sed -r 's|.*crates/([^/]+)/([0-9.]+)/download|\1 \2|' |
     column -t -S 2 | sed 's/^/  /'
 }
 
@@ -146,7 +146,38 @@ for _crate in "${!_crates[@]}"; do
   )
 done
 
-b2sums=('1418efe5171982eca1560891f18a8be8249b00c9305e461fe68f6dc7f02ec8eb093f67f02c602a96c77bbc7434cad8129ecf8def686b2528cda5892340c8d2db'
+sha256sums=('b320f65874fd9653ac6c0bd1616605387344e1247411a50c797b5f3fb9dc0b55'
+            'SKIP'
+            '67914ab451f3bfd2e69e5e9d2ef3858484e7074d63f204fd166ec391b54de21d'
+            'ed646292ffc8188ef8ea4d1e0e0150fb15a5c2e12ad9b8fc191ae7a8a7f3c4b9'
+            '7f9f832470494906d1fca5329f8ab5791cc60beb230c74815dff541cbd2b5ca0'
+            'c19937216e9d3aa9956d9bb8dfc0b0c8beb6058fc4f7a4dc4d850edf86a237d6'
+            '168fb715dda47215e360912c096649d23d58bf392ac62f73919e831745e40f26'
+            '7dfda62a12f55daeae5015f81b0baea145391cb4520f86c248fc615d72640d12'
+            '13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94'
+            '7988d73a4303ca289df03316bc490e934accf371af6bc745393cf3c2c5c4f25d'
+            '45e46c0661abb7180e7b9c281db115305d49ca1709ab8242adf09666d2173c65'
+            '357703d41365b4b27c590e3ed91eabb1b663f07c4c084095e60cbed4362dff0d'
+            'baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd'
+            '1ad5e011230cad274d0532460c5ab69828ea47ae75681b42a841663efffaf794'
+            '5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77'
+            'd725d9cfd79e87dccc9341a2ef39d1b6f6353d68c4b33c177febbe1a402c97c5'
+            '26afc1baea8a989337eeb52b6e72a039780ce45c3edfcc9c5b9d112feeb173c2'
+            '3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b'
+            '1b8e56985ec62d17e9c1001dc89c88ecd7dc08e47eba5ec7c29c7b5eeecde967'
+            '6f109e41dd4a3c848907eb83d5a42ea98b3769495597450cf6d153507b166f0f'
+            '291ec9ab5efd934aaf503a6466c5d5251535d108ee747472c3977cc5acc868ef'
+            '6c20b6793b5c2fa6553b250154b78d6d0db37e72700ae35fad9387a46f487c97'
+            'de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c'
+            'cea14ef9355e3beab063703aa9dab15afd25f0667c341310c1e5274bb1d0da18'
+            'cd15f8a2c5551a84d56efdc1cd049089e409ac19a3072d5037a17fd70719ff3e'
+            '198db74531d58c70a361c42201efde7e2591e976d518caf7662a47dc5720e7b6'
+            'd452f284b73e6d76dd36758a0c8684b1d5be31f92b89d07fd5822175732206fc'
+            '5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5'
+            'db7d01726be8ab66ab32f9df467ae8b1148906685bbe75c82d1e65d7f5b3f841'
+            '692fcb63b64b1758029e0a96ee63e049ce8c5948587f2f7208df04625e5f6b56'
+            '25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d')
+b2sums=('173997a90bbb27d8f6b1e4c349430d063a9264efddf03c9449f93b9e0438fa38948dfbfecddb798cd57818070953b8c525cb3796807101632b1b642c4d6b0361'
         'SKIP'
         '431439d31632d177aeb15f910b4f546efa76d54fc74fc8e140399dc5e54eca33fd606f11dbfb48fa83067c8474ee512e62751895d5948367b65ab08b984284e5'
         'a6d47c903be6094423d89b8ec3ca899d0a84df6dbd6e76632bb6c9b9f40ad9c216f8fa400310753d392f85072756b43ac3892e0a2c4d55f87ab6463002554823'
@@ -179,37 +210,6 @@ b2sums=('1418efe5171982eca1560891f18a8be8249b00c9305e461fe68f6dc7f02ec8eb093f67f
         '93385f64103fdb482bec34c7912474ae7a5935948715e6eb9a54907e0db5c39f089f6cd393bab33c935c59a1bbb0f4099431f206343811c1a450554d96a35756')
 
 # https://docs.mesa3d.org/relnotes.html
-sha256sums=('25e0a669e6638c3563e7be32a0a09f1888317e6eed0d047dc41d49dc8de26c7d'
-            'SKIP'
-            '67914ab451f3bfd2e69e5e9d2ef3858484e7074d63f204fd166ec391b54de21d'
-            'ed646292ffc8188ef8ea4d1e0e0150fb15a5c2e12ad9b8fc191ae7a8a7f3c4b9'
-            '7f9f832470494906d1fca5329f8ab5791cc60beb230c74815dff541cbd2b5ca0'
-            'c19937216e9d3aa9956d9bb8dfc0b0c8beb6058fc4f7a4dc4d850edf86a237d6'
-            '168fb715dda47215e360912c096649d23d58bf392ac62f73919e831745e40f26'
-            '7dfda62a12f55daeae5015f81b0baea145391cb4520f86c248fc615d72640d12'
-            '13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94'
-            '7988d73a4303ca289df03316bc490e934accf371af6bc745393cf3c2c5c4f25d'
-            '45e46c0661abb7180e7b9c281db115305d49ca1709ab8242adf09666d2173c65'
-            '357703d41365b4b27c590e3ed91eabb1b663f07c4c084095e60cbed4362dff0d'
-            'baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd'
-            '1ad5e011230cad274d0532460c5ab69828ea47ae75681b42a841663efffaf794'
-            '5e719e8df665df0d1c8fbfd238015744736151d4445ec0836b8e628aae103b77'
-            'd725d9cfd79e87dccc9341a2ef39d1b6f6353d68c4b33c177febbe1a402c97c5'
-            '26afc1baea8a989337eeb52b6e72a039780ce45c3edfcc9c5b9d112feeb173c2'
-            '3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b'
-            '1b8e56985ec62d17e9c1001dc89c88ecd7dc08e47eba5ec7c29c7b5eeecde967'
-            '6f109e41dd4a3c848907eb83d5a42ea98b3769495597450cf6d153507b166f0f'
-            '291ec9ab5efd934aaf503a6466c5d5251535d108ee747472c3977cc5acc868ef'
-            '6c20b6793b5c2fa6553b250154b78d6d0db37e72700ae35fad9387a46f487c97'
-            'de3145af08024dea9fa9914f381a17b8fc6034dfb00f3a84013f7ff43f29ed4c'
-            'cea14ef9355e3beab063703aa9dab15afd25f0667c341310c1e5274bb1d0da18'
-            'cd15f8a2c5551a84d56efdc1cd049089e409ac19a3072d5037a17fd70719ff3e'
-            '198db74531d58c70a361c42201efde7e2591e976d518caf7662a47dc5720e7b6'
-            'd452f284b73e6d76dd36758a0c8684b1d5be31f92b89d07fd5822175732206fc'
-            '5443807d6dff69373d433ab9ef5378ad8df50ca6298caf15de6e52e24aaf54d5'
-            'db7d01726be8ab66ab32f9df467ae8b1148906685bbe75c82d1e65d7f5b3f841'
-            '692fcb63b64b1758029e0a96ee63e049ce8c5948587f2f7208df04625e5f6b56'
-            '25aa4ce346d03a6dcd68dd8b4010bcb74e54e62c90c573f394c46eae99aba32d')
 
 prepare() {
   cd mesa-$_pkgver
@@ -221,7 +221,7 @@ prepare() {
     src="${src%.zst}"
     [[ $src = *.patch ]] || continue
     echo "Applying patch $src..."
-    patch -Np1 < "../$src"
+    patch -Np1 <"../$src"
   done
 
   # Include package release in version string so Chromium invalidates
@@ -265,7 +265,8 @@ build() {
 }
 
 _pick() {
-  local p="$1" f d; shift
+  local p="$1" f d
+  shift
   for f; do
     d="$srcdir/$p/${f#$pkgdir/}"
     mkdir -p "$(dirname "$d")"
