@@ -1,10 +1,10 @@
 ---
-version: 1:1.22.0-1
+version: 1:1.22.0-2
 pkgbase:
   name: onnx
   pkgdesc: Open standard for machine learning interoperability
   pkgver: 1.22.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://onnx.ai
   arch:
@@ -47,4 +47,4 @@ pkgname:
       - python-ml-dtypes
       - python-numpy
       - python-typing_extensions
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
