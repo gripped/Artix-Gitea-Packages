@@ -12,7 +12,30 @@ git-svn-id: svn://scribus.net/trunk/Scribus@27627 11d20701-8431-0410-a711-e3c959
  4 files changed, 148 insertions(+), 20 deletions(-)
 
 diff --git a/scribus/plugins/import/pdf/importpdf.cpp b/scribus/plugins/import/pdf/importpdf.cpp
-index 9e77dc7585327d425953cf48783861bc82a7ddbc..e8add5a2f9e2ff8927152f646fe0e86408e9e55f 100644
+index 9e77dc7585..e8add5a2f9 100644
+--- a/scribus/plugins/import/pdf/importpdf.cpp
++++ b/scribus/plugins/import/pdf/importpdf.cpp
+@@ -163,13 +163,13 @@ bool PdfPlug::importFile(const QString& fNameIn, const TransactionSettings& trSe
+ 		m_Doc->setPage(docWidth, docHeight, 0, 0, 0, 0, 0, 0, false, false);
+ 		m_Doc->addPage(0);
+ 		m_Doc->view()->addPage(0, true);
+-	}
+-	else if (!m_Doc || (flags & LoadSavePlugin::lfCreateDoc))
+-	{
+-		m_Doc = ScCore->primaryMainWindow()->doFileNew(docWidth, docHeight, 0, 0, 0, 0, 0, 0, false, 0, 0, 0, 0, 1, "Custom", true);
+-		ScCore->primaryMainWindow()->HaveNewDoc();
+-		ret = true;
+-	}
++	}
++	else if (!m_Doc || (flags & LoadSavePlugin::lfCreateDoc))
++	{
++		m_Doc = ScCore->primaryMainWindow()->doFileNew(docWidth, docHeight, 0, 0, 0, 0, 0, 0, false, 0, 0, 0, 0, 1, "Custom", true);
++		ScCore->primaryMainWindow()->HaveNewDoc();
++		ret = true;
++	}
+ 
+ 	if (ret || !m_interactive)
+ 	{
 @@ -350,8 +350,13 @@ bool PdfPlug::convert(const QString& fn)
  			bool useMediaBox = true;
  			bool crop = true;
@@ -58,7 +81,7 @@ index 9e77dc7585327d425953cf48783861bc82a7ddbc..e8add5a2f9e2ff8927152f646fe0e864
  
  QString PdfPlug::UnicodeParsedString(const GooString *s1) const
 diff --git a/scribus/plugins/import/pdf/importpdfconfig.h b/scribus/plugins/import/pdf/importpdfconfig.h
-index cbd5a7e00da314f4f8232565365e2d72eb398eef..04bd710f4e6e99460113ceb8e5d3c3ec3030dbe0 100644
+index cbd5a7e00d..04bd710f4e 100644
 --- a/scribus/plugins/import/pdf/importpdfconfig.h
 +++ b/scribus/plugins/import/pdf/importpdfconfig.h
 @@ -25,4 +25,10 @@ for which a new license (GPL+exception) is in place.
@@ -73,7 +96,7 @@ index cbd5a7e00da314f4f8232565365e2d72eb398eef..04bd710f4e6e99460113ceb8e5d3c3ec
 +
  #endif
 diff --git a/scribus/plugins/import/pdf/slaoutput.cpp b/scribus/plugins/import/pdf/slaoutput.cpp
-index 30f82eebf0810809a9132db86b9bbd806f384f9c..cb5bebbe4ad5bf8235551dbb59dea9df7632c286 100644
+index 30f82eebf0..cb5bebbe4a 100644
 --- a/scribus/plugins/import/pdf/slaoutput.cpp
 +++ b/scribus/plugins/import/pdf/slaoutput.cpp
 @@ -15,6 +15,7 @@ for which a new license (GPL+exception) is in place.
@@ -117,19 +140,19 @@ index 30f82eebf0810809a9132db86b9bbd806f384f9c..cb5bebbe4ad5bf8235551dbb59dea9df
  			bool fgFound = false;
  			bool bgFound = false;
  			if (achar)
-@@ -705,9 +705,9 @@
- 			if (apa || !achar)
- 			{
- 				auto annotOutDev = std::make_shared<AnoOutputDev>(m_doc, m_importedColors);
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(22, 4, 0)
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 6, 0)
+@@ -685,7 +694,11 @@ bool SlaOutputDev::handleWidgetAnnot(Annot* annota, double xCoor, double yCoor,
+ 				auto annotOutDev = std::make_unique<AnoOutputDev>(m_doc, m_importedColors);
+ #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(22, 4, 0)
  				const PDFRectangle& annotaRect = annota->getRect();
--				auto gfx = std::make_shared<Gfx>(m_pdfDoc, annotOutDev.get(), m_pdfDoc->getPage(m_actPage)->getResourceDict(), &annotaRect, nullptr);
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 6, 0)
 +				auto gfx = std::make_shared<Gfx>(m_pdfDoc, annotOutDev.get(), m_pdfDoc->getPage(m_actPage)->getResourceDict(), annotaRect, nullptr);
++#else
+ 				auto gfx = std::make_shared<Gfx>(m_pdfDoc, annotOutDev.get(), m_pdfDoc->getPage(m_actPage)->getResourceDict(), &annotaRect, nullptr);
++#endif
  #else
  				auto gfx = std::make_shared<Gfx>(m_pdfDoc, annotOutDev.get(), m_pdfDoc->getPage(m_actPage)->getResourceDict(), annota->getRect(), nullptr);
  #endif
-@@ -732,7 +732,7 @@
+@@ -741,7 +741,7 @@
  			}
  			ite->setIsAnnotation(true);
  			ite->AutoName = false;
@@ -175,7 +198,7 @@ index 30f82eebf0810809a9132db86b9bbd806f384f9c..cb5bebbe4ad5bf8235551dbb59dea9df
  	QTransform mmx = mm * m_ctm;
  
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(26, 6, 0)
-+	auto gfx = std::make_unique<Gfx>(m_pdfDoc, this, resDict, box, nullptr);
++	auto gfx = std::make_shared<Gfx>(m_pdfDoc, this, resDict, box, nullptr);
 +#else
  	auto gfx = std::make_shared<Gfx>(m_pdfDoc, this, resDict, &box, nullptr);
 +#endif
@@ -359,7 +382,7 @@ index 30f82eebf0810809a9132db86b9bbd806f384f9c..cb5bebbe4ad5bf8235551dbb59dea9df
  {
  #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 10, 0)
 diff --git a/scribus/plugins/import/pdf/slaoutput.h b/scribus/plugins/import/pdf/slaoutput.h
-index 2ff2f02335ca80db38e2976d62ce5c2a4f8492e4..98ee5abc5987a2a18d00f95344785b6f0bd85ec2 100644
+index 2ff2f02335..98ee5abc59 100644
 --- a/scribus/plugins/import/pdf/slaoutput.h
 +++ b/scribus/plugins/import/pdf/slaoutput.h
 @@ -22,6 +22,7 @@ for which a new license (GPL+exception) is in place.
