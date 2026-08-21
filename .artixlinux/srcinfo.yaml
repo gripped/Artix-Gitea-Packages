@@ -1,10 +1,10 @@
 ---
-version: 37.0.0-2
+version: 37.0.0-3
 pkgbase:
   name: android-tools
   pkgdesc: Android platform tools
   pkgver: 37.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://developer.android.com/tools
   arch:
     - x86_64
