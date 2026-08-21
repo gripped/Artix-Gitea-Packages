@@ -1,8 +1,8 @@
 ---
-version: 26.07.0-1
+version: 26.08.0-1
 pkgbase:
   name: poppler
-  pkgver: 26.07.0
+  pkgver: 26.08.0
   pkgrel: 1
   url: https://poppler.freedesktop.org/
   arch:
@@ -41,12 +41,12 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://gitlab.freedesktop.org/poppler/poppler.git#tag=poppler-26.07.0?signed
+    - git+https://gitlab.freedesktop.org/poppler/poppler.git#tag=poppler-26.08.0?signed
     - test::git+https://gitlab.freedesktop.org/poppler/test.git#commit=46785c9a414d8918d8d4c55d3498258c7eac86c3
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
   sha256sums:
-    - 16e63577115440869b6e8a62932244f4b031494d4cbdaa32b7a5226a1959f90d
+    - 939a14fd5fd7181a4dfba29785a417b47215f7c0e18c23318bd1c59c3aa1883a
     - 982f8d137e8210a699a22b3615cafef85ded5810a9ac4a6d145944e764f29b9b
 pkgname:
   - name: poppler
@@ -74,12 +74,12 @@ pkgname:
       - libpoppler.so
       - libpoppler-cpp.so
     conflicts:
-      - poppler-qt3<26.07.0
-      - poppler-qt4<26.07.0
+      - poppler-qt3<26.08.0
+      - poppler-qt4<26.08.0
   - name: poppler-glib
     pkgdesc: Poppler glib bindings
     depends:
-      - poppler=26.07.0
+      - poppler=26.08.0
       - glib2
       - libgcc
       - libstdc++
@@ -91,7 +91,7 @@ pkgname:
   - name: poppler-qt5
     pkgdesc: Poppler Qt5 bindings
     depends:
-      - poppler=26.07.0
+      - poppler=26.08.0
       - qt5-base
       - lcms2
       - freetype2
@@ -103,7 +103,7 @@ pkgname:
   - name: poppler-qt6
     pkgdesc: Poppler Qt6 bindings
     depends:
-      - poppler=26.07.0
+      - poppler=26.08.0
       - qt6-base
       - lcms2
       - freetype2
@@ -112,4 +112,4 @@ pkgname:
       - glibc
     provides:
       - libpoppler-qt6.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
