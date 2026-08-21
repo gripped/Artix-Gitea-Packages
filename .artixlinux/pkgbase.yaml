@@ -1,5 +1,5 @@
 ---
-team: world
+team: lib32
 actions:
   addRepo: lib32
   removeRepo: null
@@ -42,9 +42,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 4.3.5-1
+    version: 4.3.5-1.1
     packages:
-      - lib32-zeromq-4.3.5-1-x86_64.pkg.tar.zst
+      - lib32-zeromq-4.3.5-1.1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null

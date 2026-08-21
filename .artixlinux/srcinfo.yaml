@@ -1,10 +1,10 @@
 ---
-version: 4.3.5-1
+version: 4.3.5-1.1
 pkgbase:
   name: lib32-zeromq
   pkgdesc: Fast messaging system built on sockets
   pkgver: 4.3.5
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.zeromq.org
   arch:
     - x86_64

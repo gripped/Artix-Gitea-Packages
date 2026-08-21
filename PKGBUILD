@@ -4,7 +4,7 @@
 
 pkgname=lib32-zeromq
 pkgver=4.3.5
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Fast messaging system built on sockets'
 arch=(x86_64)
 url=https://www.zeromq.org
@@ -49,6 +49,7 @@ build() {
   cmake -S libzmq -B build -G Ninja \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=lib32 \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DWITH_DOC=OFF \
     -DWITH_LIBSODIUM=ON \
     -DWITH_OPENPGM=ON \
