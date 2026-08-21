@@ -1,0 +1,26 @@
+---
+version: 1.0.22-1
+pkgbase:
+  name: lib32-libsodium
+  pkgdesc: A modern, portable, easy to use crypto library
+  pkgver: 1.0.22
+  pkgrel: 1
+  url: https://github.com/jedisct1/libsodium
+  arch:
+    - x86_64
+  license:
+    - custom:ISC
+  makedepends:
+    - git
+  depends:
+    - lib32-glibc
+    - libsodium
+  provides:
+    - libsodium.so
+  source:
+    - git+https://github.com/jedisct1/libsodium.git#tag=bc5892beb87c388e123baa7c8f4862f30d9206a7
+  b2sums:
+    - 6711197c82da7bfaf6afd5e2a9895c28fb070325adfec7d0b687d9185febf217fadb18422ce397f3d39ee8b2b563685950fb5ee13d5d3e25e6a56ba81ca7fc82
+pkgname:
+  - name: lib32-libsodium
+# generated with artixpkg 0.39.1-1-any
