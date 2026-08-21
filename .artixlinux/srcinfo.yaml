@@ -1,8 +1,8 @@
 ---
-version: 25.08-1
+version: 26.08-1
 pkgbase:
   name: kde-applications-meta
-  pkgver: 25.08
+  pkgver: 26.08
   pkgrel: 1
   url: https://www.archlinux.org/
   arch:
@@ -75,6 +75,7 @@ pkgname:
       - kbounce
       - kbreakout
       - kdiamond
+      - kdominate
       - kfourinline
       - kgoldrunner
       - kigo
@@ -240,6 +241,7 @@ pkgname:
       - kdf
       - kdialog
       - keditbookmarks
+      - keepsecret
       - keysmith
       - kfind
       - kgpg
@@ -265,4 +267,4 @@ pkgname:
       - kdevelop
       - kdevelop-php
       - kdevelop-python
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.39.1-1-any
