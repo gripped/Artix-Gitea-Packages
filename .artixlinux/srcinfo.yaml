@@ -1,9 +1,9 @@
 ---
-version: 26.04.3-1
+version: 26.08.0-1
 pkgbase:
   name: knights
   pkgdesc: Chess board by KDE with XBoard protocol support
-  pkgver: 26.04.3
+  pkgver: 26.08.0
   pkgrel: 1
   url: https://apps.kde.org/knights/
   arch:
@@ -39,15 +39,15 @@ pkgbase:
   optdepends:
     - 'gnuchess: for playing against the computer'
   source:
-    - https://download.kde.org/stable/release-service/26.04.3/src/knights-26.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.3/src/knights-26.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.0/src/knights-26.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.0/src/knights-26.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 62720ad9f00177e836b1616f76cadaa55a1a12636fd4c7d6d94b9ee1fe9b4c5d
+    - 266b1cdeeec159134bf4230f4aeefe8287e05e87f4d67a903c09832330ebe021
     - SKIP
 pkgname:
   - name: knights
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
