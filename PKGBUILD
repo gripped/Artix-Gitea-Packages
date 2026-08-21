@@ -5,14 +5,14 @@
 pkgbase=greetd
 pkgname=($pkgbase $pkgbase-agreety)
 pkgver=0.10.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Generic greeter daemon'
 arch=(x86_64)
 url="https://git.sr.ht/~kennylevinsen/$pkgbase"
 license=(GPL-3.0-only)
 depends=(glibc
          libgcc
-         elogind)
+         esysusers)
 makedepends=(cargo
              scdoc)
 # optdepends=('greetd-gtkgreet: Simple GTK based greeter'

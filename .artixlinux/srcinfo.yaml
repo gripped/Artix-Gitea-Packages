@@ -1,10 +1,10 @@
 ---
-version: 0.10.3-2
+version: 0.10.3-2.1
 pkgbase:
   name: greetd
   pkgdesc: Generic greeter daemon
   pkgver: 0.10.3
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://git.sr.ht/~kennylevinsen/greetd
   arch:
     - x86_64
@@ -16,7 +16,7 @@ pkgbase:
   depends:
     - glibc
     - libgcc
-    - elogind
+    - esysusers
   source:
     - greetd-0.10.3.tar.gz::https://git.sr.ht/~kennylevinsen/greetd/archive/0.10.3.tar.gz
     - greetd.sysusers
@@ -30,7 +30,7 @@ pkgname:
     depends:
       - glibc
       - libgcc
-      - elogind
+      - esysusers
       - greetd-agreety
       - greetd-greeter
       - pam
@@ -44,4 +44,4 @@ pkgname:
       - greetd
     provides:
       - greetd-greeter
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
