@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.2.1-1
+    version: 2.2.1-2
     packages:
-      - libcupsfilters-2.2.1-1-x86_64.pkg.tar.zst
+      - libcupsfilters-2.2.1-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.1.1-4

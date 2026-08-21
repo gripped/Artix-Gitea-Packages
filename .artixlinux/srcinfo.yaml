@@ -1,10 +1,10 @@
 ---
-version: 2.2.1-1
+version: 2.2.1-2
 pkgbase:
   name: libcupsfilters
   pkgdesc: OpenPrinting CUPS Filters - contains all the code of the filters of the former cups-filters package as library functions
   pkgver: 2.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/OpenPrinting/libcupsfilters
   arch:
     - x86_64
@@ -29,8 +29,10 @@ pkgbase:
     - dbus
   source:
     - https://github.com/OpenPrinting/libcupsfilters/releases/download/2.2.1/libcupsfilters-2.2.1.tar.xz
+    - libcupsfilters-PR167.patch::https://github.com/OpenPrinting/libcupsfilters/pull/167.patch
   sha256sums:
     - 0a22b849d5068c4c86b20fbb4192d3faa3dabcc9ee844c8fd73710ed821d4860
+    - fa77ba778dcbea8826edcf87c4d022a11c073d288b39a1eaf06e0eaf3376f525
 pkgname:
   - name: libcupsfilters
 # generated with artixpkg 0.38.5-1-any
