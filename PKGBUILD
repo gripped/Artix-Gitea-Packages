@@ -3,22 +3,22 @@
 # Contributor: Matt Monaco <net 0x01b dgbaley27>
 
 pkgname=openvswitch
-pkgver=3.7.1
-pkgrel=2
+pkgver=4.0.0
+pkgrel=1
 pkgdesc="Production Quality, Multilayer Open Virtual Switch"
 url="http://openvswitch.org"
 license=('Apache-2.0')
 arch=(x86_64)
 install=openvswitch.install
 source=("http://openvswitch.org/releases/openvswitch-$pkgver.tar.gz"
-	    openvswitch.tmpfiles)
+	openvswitch.tmpfiles)
 depends=('openssl' 'libcap-ng' 'dpdk')
 makedepends=('python')
-sha256sums=('b8936c2e95a024d37123536ca843648bc2f1d2520921f991dd3d06248859b70f'
-            'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9')
+sha256sums=('6c94e1e019a7f36ef40a9ae34fb21ab2534dbb78e5bea83338452e07a11becf2'
+	    'e8dc21e50fc886bfd6aa55991bdb3cb66907e11b071045452bb12de01a3ecbd9')
 
 prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
   sed -i \
     -e 's|$(sysconfdir)/bash_completion.d|/usr/share/bash-completion/completions|g' \
     -e '/if grep warning:/d' \
@@ -26,7 +26,7 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
   ./boot.sh
   export CFLAGS="$CFLAGS -ffat-lto-objects"
   ./configure \
@@ -41,9 +41,9 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$pkgname-$pkgver"
   make DESTDIR="$pkgdir" install
-  install -Dm0644 "$srcdir"/openvswitch.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/openvswitch.conf"
+  install -Dm0644 ../openvswitch.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/openvswitch.conf"
   install -dm0755 "$pkgdir/etc/openvswitch"
   rm -rf "$pkgdir"/run
 }
