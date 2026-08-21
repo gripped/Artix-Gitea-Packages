@@ -1,9 +1,9 @@
 ---
-version: 26.04.3-1
+version: 26.08.0-1
 pkgbase:
   name: itinerary
   pkgdesc: Itinerary and boarding pass management application
-  pkgver: 26.04.3
+  pkgver: 26.08.0
   pkgrel: 1
   url: https://apps.kde.org/itinerary/
   arch:
@@ -25,6 +25,7 @@ pkgbase:
     - kcrash
     - kdbusaddons
     - kfilemetadata
+    - kguiaddons
     - khealthcertificate
     - kholidays
     - ki18n
@@ -52,15 +53,15 @@ pkgbase:
     - qtkeychain-qt6
     - zlib
   source:
-    - https://download.kde.org/stable/release-service/26.04.3/src/itinerary-26.04.3.tar.xz
-    - https://download.kde.org/stable/release-service/26.04.3/src/itinerary-26.04.3.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.0/src/itinerary-26.08.0.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.0/src/itinerary-26.08.0.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9ad5a9228cea5042e293e01a8bb61f643ea5efe6ea4dfdf7f3a62bf4f5b07293
+    - 21df6501f6eb723eb0522e73a919346847a714383a55f241d5bc6f2a5061892e
     - SKIP
 pkgname:
   - name: itinerary
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
