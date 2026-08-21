@@ -1,10 +1,10 @@
 ---
-version: 7.0.9-2
+version: 7.0.9-3
 pkgbase:
   name: telegram-desktop
   pkgdesc: Official Telegram Desktop client
   pkgver: 7.0.9
-  pkgrel: 2
+  pkgrel: 3
   url: https://desktop.telegram.org/
   arch:
     - x86_64
@@ -81,4 +81,4 @@ pkgbase:
     - 45ef8f69708c46aef8e8d0301b8710467a208e43a9ebb5918152b49d24f9d6c8b69ca9a94f19c4e401f44e8d60706cd840832ce442ca1a839df942a7b88afde2
 pkgname:
   - name: telegram-desktop
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.38.5-1-any

@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.0.9-2
+    version: 7.0.9-3
     packages:
-      - telegram-desktop-7.0.9-2-x86_64.pkg.tar.zst
+      - telegram-desktop-7.0.9-3-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
