@@ -1,10 +1,10 @@
 ---
-version: 26.08.0-1
+version: 26.08.0-3
 pkgbase:
   name: dolphin
   pkgdesc: KDE File Manager
   pkgver: 26.08.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://apps.kde.org/dolphin/
   arch:
     - x86_64
@@ -65,6 +65,8 @@ pkgbase:
   source:
     - https://download.kde.org/stable/release-service/26.08.0/src/dolphin-26.08.0.tar.xz
     - https://download.kde.org/stable/release-service/26.08.0/src/dolphin-26.08.0.tar.xz.sig
+    - https://invent.kde.org/system/dolphin/-/commit/27696ee6.patch
+    - https://invent.kde.org/system/dolphin/-/commit/9765915b.patch
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
@@ -72,6 +74,8 @@ pkgbase:
   sha256sums:
     - a7e4ec09c25cb971d098875c8d3db1f0aded69d995fd5ec3769e18548eb2ad7e
     - SKIP
+    - c8abbdd7e84e7ab5f0c7d70bba38c5b2a4838bf11fda3fe01bfdb872df5f174b
+    - 15ba50e4c9db8deeb4b9f834f5cfb1ec86491b77a366eefce440149310f6c1aa
 pkgname:
   - name: dolphin
 # generated with artixpkg 0.38.5-1-any
