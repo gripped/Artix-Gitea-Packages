@@ -70,7 +70,7 @@ b2sums=('363dd675d4a3c5bd9b856a8174f5d46d89d0504326130861a8fe79146198e27c05bdbee
 prepare() {
   cd "$pkgname"
 
-  git cherry-pick 2149e5e2333e7edf71f92e41bf39a70e5849c490 # Fix build with swig 4.5
+  git cherry-pick -n 2149e5e2333e7edf71f92e41bf39a70e5849c490 # Fix build with swig 4.5
   patch -p1 -i "$srcdir/fix-version-string.patch"
 }
 
