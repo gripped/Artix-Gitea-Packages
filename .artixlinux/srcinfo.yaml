@@ -1,10 +1,10 @@
 ---
-version: 0.99.3-2
+version: 0.99.4-1
 pkgbase:
   name: lxde-common
   pkgdesc: Common files of the LXDE Desktop
-  pkgver: 0.99.3
-  pkgrel: 2
+  pkgver: 0.99.4
+  pkgrel: 1
   url: https://github.com/lxde/lxde-common
   arch:
     - any
@@ -26,13 +26,13 @@ pkgbase:
     - etc/xdg/openbox/LXDE/rc.xml
     - etc/xdg/pcmanfm/LXDE/pcmanfm.conf
   source:
-    - git+https://github.com/lxde/lxde-common.git#tag=0.99.3
+    - git+https://github.com/lxde/lxde-common.git#tag=0.99.4
     - dbus-update-environment.patch
     - default-config.patch
   b2sums:
-    - 2a242d11f931e57d0355716f2883bc79893de6412746bd929b211bd53aa07a88aa014f149e988ae9fc3187b0aedc47f6b597511ba663be7f33689e6c64ee2194
+    - 52568eaee99df6c5da2ca82cb923c26b38bbb4b8751a644b0867cd8f0ad134c97069e93e2548602e3b9223de4ad007ecccca40a0465ce6723620ea96b4bd51cd
     - 8aceb3a1aba8ca686e6cf2650049c809485ca0c9591cd65e3a0d971f3cb6c87bcc78531f592e60eb73f9620046827c88fba1670556f54730ebd9bb69a6f2da6e
     - 9ff14cbdcfcc875b441abe8b9047bb1634a98b41ff46f30a5d776d02b29933902808e13d396d794d0e81611d3d8479260671d00fed48330dfbb4bb4012df2218
 pkgname:
   - name: lxde-common
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
