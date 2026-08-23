@@ -2,11 +2,11 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Thomas Baechler <thomas@archlinux.org>
 
-# Linux: linux-7.1.9.artix1-2
+# Linux: linux-7.1.10.artix1-1
 
 pkgname=nvidia-580xx
 pkgver=580.178.04
-pkgrel=2
+pkgrel=3
 pkgdesc="NVIDIA kernel modules"
 arch=('x86_64')
 url="https://www.nvidia.com/"
