@@ -1,9 +1,9 @@
 ---
-version: 1.15.2-1
+version: 1.15.3-1
 pkgbase:
   name: rkcommon
   pkgdesc: Intel RenderKit common C++/CMake infrastructure
-  pkgver: 1.15.2
+  pkgver: 1.15.3
   pkgrel: 1
   url: https://github.com/ospray/rkcommon/
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - libstdc++
     - onetbb
   source:
-    - https://github.com/ospray/rkcommon/archive/v1.15.2/rkcommon-1.15.2.tar.gz
+    - https://github.com/ospray/rkcommon/archive/v1.15.3/rkcommon-1.15.3.tar.gz
   sha256sums:
-    - 9128642e5187b963385dbf1655f3b143d3ef46310cc2e27114d220b347d0e2f2
+    - 31925481d189dcdddadf651dd37021108e5acaa8d39bd639de8c098157ad07b7
 pkgname:
   - name: rkcommon
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.39.1-1-any
