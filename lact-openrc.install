@@ -1,7 +1,6 @@
 post_upgrade() {
 local symlink runlevel
 
-
 for symlink in /etc/runlevels/*/lactd; do
     [ -L "$symlink" ] || continue
 
