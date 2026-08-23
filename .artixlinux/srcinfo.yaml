@@ -1,10 +1,10 @@
 ---
-version: 35.1-2
+version: 36.0-1
 pkgbase:
   name: protobuf
   pkgdesc: Protocol Buffers - Google's data interchange format
-  pkgver: 35.1
-  pkgrel: 2
+  pkgver: 36.0
+  pkgrel: 1
   url: https://developers.google.com/protocol-buffers/
   arch:
     - x86_64
@@ -36,10 +36,10 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/protocolbuffers/protobuf.git#tag=v35.1
+    - git+https://github.com/protocolbuffers/protobuf.git#tag=v36.0
     - protobuf-fix-build-type-none.patch
   sha512sums:
-    - 70104fd3ae0d13fc5afc2d2835d10d4a45949d528ecb15b88dc29cc6e52ecea1d62dbbcb17a49fd129a53bb78243051b4f10e6b90552146403898d517272df68
+    - e1ebed47daa921e304a038e0b90412cda2d4614d3add0f70ce5e17553623b2aabd739b0aa7c134f78e0fe901b7afb037c1a7656046de79e3f6ff5b284ab5dedf
     - 18bc71031bbcbc3810a9985fa670465040f06a6c104ab8079b56bdfc499bb6cec40805a0cefd455031142490a576dc60aa8000523877ac0353b93558e9beabbd
 pkgname:
   - name: protobuf
@@ -52,7 +52,7 @@ pkgname:
   - name: python-protobuf
     pkgdesc: Python 3 bindings for Google Protocol Buffers
     depends:
-      - protobuf=35.1
+      - protobuf=36.0
       - python
   - name: ruby-google-protobuf
     pkgdesc: Ruby bindings for Google Protocol Buffers
