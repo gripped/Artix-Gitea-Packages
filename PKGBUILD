@@ -2,7 +2,7 @@
 
 pkgname=qbittorrent-openrc
 pkgver=20260823
-pkgrel=1
+pkgrel=1.1
 pkgdesc="OpenRC qBittorrent client"
 url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
 arch=(any)
@@ -14,7 +14,7 @@ source=("qbittorrent-nox.initd"
 
 package() {
     install -Dm644 "${srcdir}"/qbittorrent-nox.confd "${pkgdir}"/etc/conf.d/qbittorrent
-    install -Dm644 "${srcdir}"/qbittorrent-nox.initd "${pkgdir}"/etc/init.d/qbittorrent
+    install -Dm755 "${srcdir}"/qbittorrent-nox.initd "${pkgdir}"/etc/init.d/qbittorrent
 }
 
 sha256sums=('4243ebde845be8fcc9a2432806463f3adb06ddd9b7d41e126a7e831d7590dbdf'
