@@ -1,10 +1,10 @@
 ---
-version: 3.5.1-1
+version: 3.5.1-2
 pkgbase:
   name: nerd-fonts
   pkgdesc: Iconic font aggregator, collection, and patcher
   pkgver: 3.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ryanoasis/nerd-fonts
   arch:
     - any
@@ -20,6 +20,7 @@ pkgbase:
     - 3270-3.5.1.tar.xz
     - adwaitamono-3.5.1.tar.xz
     - agave-3.5.1.tar.xz
+    - annotationmono-3.5.1.tar.xz
     - anonymouspro-3.5.1.tar.xz
     - arimo-3.5.1.tar.xz
     - atkinsonhyperlegiblemono-3.5.1.tar.xz
@@ -43,6 +44,7 @@ pkgbase:
     - geistmono-3.5.1.tar.xz
     - go-3.5.1.tar.xz
     - gohu-3.5.1.tar.xz
+    - googlesanscode-3.5.1.tar.xz
     - hack-3.5.1.tar.xz
     - hasklig-3.5.1.tar.xz
     - heavydata-3.5.1.tar.xz
@@ -91,6 +93,7 @@ pkgbase:
     - 3270-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/3270.tar.xz
     - adwaitamono-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/AdwaitaMono.tar.xz
     - agave-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Agave.tar.xz
+    - annotationmono-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/AnnotationMono.tar.xz
     - anonymouspro-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/AnonymousPro.tar.xz
     - arimo-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Arimo.tar.xz
     - atkinsonhyperlegiblemono-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/AtkinsonHyperlegibleMono.tar.xz
@@ -114,6 +117,7 @@ pkgbase:
     - geistmono-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/GeistMono.tar.xz
     - go-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Go-Mono.tar.xz
     - gohu-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Gohu.tar.xz
+    - googlesanscode-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/GoogleSansCode.tar.xz
     - hack-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hack.tar.xz
     - hasklig-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/Hasklig.tar.xz
     - heavydata-3.5.1.tar.xz::https://github.com/ryanoasis/nerd-fonts/releases/download/v3.5.1/HeavyData.tar.xz
@@ -159,6 +163,7 @@ pkgbase:
     - 0be3de53807798fc5bdca90eb972225b0b3880bdd9b505121b3c06750a08b698
     - 409118887ec166a2342c184ade6734faf5d236a097742cb7085ff42826a1dd94
     - 0b29420ed47a4cc9bc2743d454ef17ea645ae31e6c348e86154d994b6ccc756e
+    - bae334fde071ee7450cc8bbdc20fc5663a81466dce54d66f93815a48f59a308c
     - f84f067b4de991a14afdbd498e106239c429a553a27e76a364048638f2e1de70
     - 997706a5e98185d9b0b74ef9593c65c6c3bf775721ade614f0bd156aeca6bace
     - a0fd13eb48ff2c7522f652369d2add4d285903f600525c6bb72be5cf2448ef55
@@ -182,6 +187,7 @@ pkgbase:
     - d3ba4a7418cde16963fda0caa4f7ae866c509e0a864ec21e393455e1906e070c
     - d993c556cf0e7c4b2455628063a5adb441b3517a297783185c262d77900d70dd
     - b56a359a7562beebcc443d2a1c3f57a29e1ac7ffb47da17eca1fa028a0017b5a
+    - b5a2a79b6ac0f021049c63b67bb42a1dcf81d5bc4e447fc6205c79d969605f42
     - cdd389472e10e2261520140ff1b382b4f8a226af5fd0b2735b975d31151d9c3c
     - 25f73bb44cf786939f6fe13914ce220ac0d8a1ffde7fc7ee87090854c0f3d83c
     - 5137500fe224d8f7876557352136c0c9eef94b371ccea78cdee6aa0160e2e254
@@ -316,6 +322,10 @@ pkgname:
       - nerd-fonts-agave
     replaces:
       - nerd-fonts-agave
+  - name: ttf-annotationmono-nerd
+    pkgdesc: Patched font Annotation Mono from nerd fonts library
+    license:
+      - OFL-1.1
   - name: ttf-anonymouspro-nerd
     pkgdesc: Patched font Anonymous Pro (Anonymice) from nerd fonts library
     license:
@@ -409,6 +419,10 @@ pkgname:
     pkgdesc: Patched font Gohufont from nerd fonts library
     license:
       - WTFPL
+  - name: ttf-googlesanscode-nerd
+    pkgdesc: Patched font Google Sans Code from nerd fonts library
+    license:
+      - OFL-1.1
   - name: ttf-hack-nerd
     pkgdesc: Patched font Hack from nerd fonts library
     license:
