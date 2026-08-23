@@ -3,7 +3,7 @@
 _pkgname=lact-openrc
 pkgname="${_pkgname}"
 pkgver=20260823
-pkgrel=1
+pkgrel=1.1
 pkgdesc='OpenRC init script for lact.'
 url="https://github.com/ilya-zlobintsev/LACT"
 license=('GPL-3.0-or-later')
