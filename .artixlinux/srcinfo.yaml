@@ -1,10 +1,10 @@
 ---
-version: 9.20.27-1.1
+version: 9.20.27-1.2
 pkgbase:
   name: bind
   pkgdesc: A complete, highly portable implementation of the DNS protocol
   pkgver: 9.20.27
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://www.isc.org/software/bind/
   install: bind.install
   arch:

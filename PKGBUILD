@@ -6,7 +6,7 @@
 
 pkgname=bind
 pkgver=9.20.27
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='A complete, highly portable implementation of the DNS protocol'
 url='https://www.isc.org/software/bind/'
 license=('MPL2')
