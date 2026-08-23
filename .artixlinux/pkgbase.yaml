@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20250404.01-1
+    version: 20260823-1
     packages:
-      - lact-openrc-20250404.01-1-any.pkg.tar.zst
+      - lact-openrc-20260823-1-any.pkg.tar.zst
     debug: []
