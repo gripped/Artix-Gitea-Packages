@@ -16,5 +16,5 @@ depend() {
 }
 
 start_pre() {
-	checkpath -d -o $command_user "$directory"
+	checkpath -d -o "$command_user" "$directory"
 }
