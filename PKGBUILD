@@ -2,7 +2,7 @@
 
 pkgname=opensips
 pkgver=4.0.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc="An Open Source SIP Server able to act as a SIP proxy, registrar, location server, redirect server ..."
 url="https://www.opensips.org"
 depends=()
@@ -24,8 +24,7 @@ license=('GPL-2.0-only')
 options=('!emptydirs' '!makeflags')
 #source=(https://opensips.org/pub/opensips/${pkgver}/opensips-${pkgver}.tar.gz)
 source=("git+https://github.com/OpenSIPS/opensips.git#tag=$pkgver")
-sha256sums=('7824ac679c7ed6bc257ed715e5e4017d90cd3d3faaa516efa9b7a3c736d3baa5'
-            'c2fec4be085b108db10834fa9832e98d696c2de6408f85f96cf89c13bf6be819')
+sha256sums=('7824ac679c7ed6bc257ed715e5e4017d90cd3d3faaa516efa9b7a3c736d3baa5')
 
 _modules="db_http db_mysql db_postgres db_unixodbc h350 httpd ldap presence presence_xml proto_tls tls_mgm tls_openssl tm rr"
 
