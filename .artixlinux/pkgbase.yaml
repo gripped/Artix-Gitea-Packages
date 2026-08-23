@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,8 +30,13 @@ repos:
       - marble-qt-26.08.0-2.1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 26.08.0-2.1
+    packages:
+      - marble-26.08.0-2.1-x86_64.pkg.tar.zst
+      - marble-behaim-26.08.0-2.1-x86_64.pkg.tar.zst
+      - marble-common-26.08.0-2.1-x86_64.pkg.tar.zst
+      - marble-maps-26.08.0-2.1-x86_64.pkg.tar.zst
+      - marble-qt-26.08.0-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 26.08.0-2
