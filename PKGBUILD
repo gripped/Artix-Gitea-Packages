@@ -6,7 +6,7 @@
 
 pkgbase=tuned
 pkgname=("${pkgbase}" "${pkgbase}-ppd")
-pkgver=2.27.0
+pkgver=2.28.0
 pkgrel=1
 pkgdesc='Daemon that performs monitoring and adaptive configuration of devices in the system'
 arch=('any')
@@ -17,7 +17,7 @@ depends=('ethtool' 'gawk' 'hdparm' 'polkit' 'perf' 'python-configobj'
 makedepends=('desktop-file-utils')
 source=("https://github.com/redhat-performance/${pkgbase}/archive/v${pkgver}/${pkgbase}-${pkgver}.tar.gz"
 	'gui-no-init-system.patch')
-sha512sums=('7471d073879a688da66e72c4f5c562d1a732d6bfb562d8c033874a8edbad2bab3cf3c7dc387270bf99ae6b1b35ffc451173122e32023116709567e529e09dc52'
+sha512sums=('3bdefbcc45afa651eecf5d59625babd83d5bed73594eb1db17e56edd0f1a25d60f346e7cb7bb8061a98833b228440e14730126b7f9b9ac5c97841d068574b27f'
             '99305ef167894decb48a8cae54e2eef7e7b809449c51fd3c48bd31bc95f1dc7540eb33bf1c25693761fc13f57e20c9dda7dc305f4d9a9bcb02f6950ac4d1eab4')
 
 prepare() {
