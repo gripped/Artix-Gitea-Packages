@@ -1,10 +1,10 @@
 ---
-version: 25.0.0-8
+version: 25.0.0-9
 pkgbase:
   name: xlibre-video-dummy
   pkgdesc: XLibre fork of X.Org dummy video driver
   pkgver: 25.0.0
-  pkgrel: 8
+  pkgrel: 9
   url: https://github.com/X11Libre/xf86-video-dummy
   arch:
     - x86_64
@@ -18,7 +18,7 @@ pkgbase:
     - xlibre-xserver>=25.0
     - glibc
   provides:
-    - xlibre-xf86-video-dummy
+    - xf86-video-dummy
     - x11win-video-dummy
   conflicts:
     - xf86-video-dummy
