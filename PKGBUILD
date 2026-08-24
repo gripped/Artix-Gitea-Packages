@@ -9,7 +9,7 @@
 pkgbase=kicad
 pkgname=('kicad' 'kicad-demos')
 pkgver=10.0.5
-pkgrel=3.1
+pkgrel=3.2
 pkgdesc='Electronic schematic and printed circuit board (PCB) design tools'
 arch=(x86_64)
 url='http://kicad.org/'
