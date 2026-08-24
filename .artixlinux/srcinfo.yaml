@@ -1,11 +1,11 @@
 ---
-version: 10.1.1-1
+version: 10.2.0-1
 pkgbase:
   name: python-oslo-utils
   pkgdesc: Oslo Utility library
-  pkgver: 10.1.1
+  pkgver: 10.2.0
   pkgrel: 1
-  url: https://pypi.python.org/pypi/oslo.utils/10.1.1
+  url: https://pypi.python.org/pypi/oslo.utils/10.2.0
   arch:
     - any
   license:
@@ -36,9 +36,9 @@ pkgbase:
   optdepends:
     - 'python-cryptography: LUKS image inspection support'
   source:
-    - git+https://github.com/openstack/oslo.utils.git#tag=10.1.1
+    - git+https://github.com/openstack/oslo.utils.git#tag=10.2.0
   sha512sums:
-    - 1ab535cc28906009c5df0464cf2dc24800ca3eb46e17ceb01f84a74dd54dc9bc1b80b5fc37891453db5d7d5dc2a257effd2e797ac3c579064f3bd20d21bf2201
+    - 045bdff409c11cf6e7f9d680b7636732d5ad39ead2eb39b32f9e0a335bbd65b4ba718795b89f6a9882a4d461c9d6400c0ef403b5979aef6812f455ab200e020a
 pkgname:
   - name: python-oslo-utils
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
