@@ -5,7 +5,7 @@
 _name=elfutils
 pkgname=lib32-libelf
 pkgver=0.196
-pkgrel=1
+pkgrel=2
 pkgdesc="Handle ELF object files and DWARF debugging information (libraries, 32-bit)"
 arch=(x86_64)
 url="https://sourceware.org/elfutils/"
@@ -23,20 +23,19 @@ depends=(
 )
 makedepends=(
   git
-  lib32-libarchive
   lib32-gcc-libs
 )
 # NOTE: the shared objects can not be added to provides as they are not versioned
-source=(${_name}2::git+$_url#tag=${_name}-$pkgver)
+source=($_name::git+$_url?signed#tag=$_name-$pkgver)
 sha512sums=('ea440d94638326902e89506ab4a6e878f7ec9ae4c3672360bcc67511ca28b31fca8c0c7ef4ad1ae3463f635250ec745d55ce6afe3861ff63c90eb503ac63a47a')
 b2sums=('08adddadcac1194c73d244f3ac25fb3e4300e782ea304119016bfe056ca8f3c3a3a7492b992091a35b1a9e430d1dcaf0d77e49585fcefcee5bd10526ba03c200')
 validpgpkeys=(
-  'EC3CFE88F6CA0788774F5C1D1AA44BE649DE760A' # Mark Wielaard <mjw@gnu.org>
-  '6C2B631563B8D330578D3CB474FD3FA2779E7073' # Aaron Merey <amerey@redhat.com>
+  'EC3CFE88F6CA0788774F5C1D1AA44BE649DE760A'  # Mark Wielaard <mjw@gnu.org>
+  '6C2B631563B8D330578D3CB474FD3FA2779E7073'  # Aaron Merey <amerey@redhat.com>
 )
 
 prepare() {
-  cd ${_name}2
+  cd $_name
   autoreconf -fiv
 }
 
@@ -62,20 +61,20 @@ build() {
   # debugging information is required for test-suite
   CFLAGS+=" -g"
 
-  cd ${_name}2
+  cd $_name
   ./configure "${configure_options[@]}"
   make
 }
 
-#check() {
+check() {
   # The "dwarf_srclang_check" test introduced in 0.193 needs libelf.so to run.
   # As such, we are passing LD_LIBRARY_PATH so it can find libelf.so from the
   # source built in build() in order to avoid a self (make)dependency.
-#  LD_LIBRARY_PATH="$PWD/${_name}2/libelf" make -C ${_name}2 check
-#}
+  LD_LIBRARY_PATH="$PWD/$_name/libelf" make -C $_name check
+}
 
 package() {
-  make DESTDIR="$pkgdir" install -C ${_name}2
+  make DESTDIR="$pkgdir" install -C $_name
 
   # remove anything that would conflict with elfutils' packages
   rm -rf "$pkgdir/"{etc,usr/{bin,include,share}}

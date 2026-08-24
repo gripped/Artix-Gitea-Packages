@@ -1,10 +1,10 @@
 ---
-version: 0.196-1
+version: 0.196-2
 pkgbase:
   name: lib32-libelf
   pkgdesc: Handle ELF object files and DWARF debugging information (libraries, 32-bit)
   pkgver: 0.196
-  pkgrel: 1
+  pkgrel: 2
   url: https://sourceware.org/elfutils/
   arch:
     - x86_64
@@ -12,7 +12,6 @@ pkgbase:
     - GPL-2.0-or-later OR LGPL-3.0-or-later
   makedepends:
     - git
-    - lib32-libarchive
     - lib32-gcc-libs
   depends:
     - libelf=0.196
@@ -24,7 +23,7 @@ pkgbase:
     - lib32-zlib
     - lib32-zstd
   source:
-    - elfutils2::git+https://forge.sourceware.org/elfutils/elfutils-mirror.git#tag=elfutils-0.196
+    - elfutils::git+https://forge.sourceware.org/elfutils/elfutils-mirror.git?signed#tag=elfutils-0.196
   validpgpkeys:
     - EC3CFE88F6CA0788774F5C1D1AA44BE649DE760A
     - 6C2B631563B8D330578D3CB474FD3FA2779E7073
