@@ -1,10 +1,10 @@
 ---
-version: 26.08.0-2.1
+version: 26.08.0-3
 pkgbase:
   name: marble
   pkgdesc: Desktop Globe
   pkgver: 26.08.0
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://apps.kde.org/marble/
   arch:
     - x86_64
