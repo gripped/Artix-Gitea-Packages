@@ -4,13 +4,13 @@
 
 pkgname=zed
 pkgver=1.16.1
-pkgrel=1
+pkgrel=3
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
 url=https://zed.dev
 _url="https://github.com/zed-industries/$pkgname"
 license=(GPL-3.0-or-later AGPL-3.0-or-later Apache-2.0)
-depends=(alsa-lib libasound.so
+depends=(alsa-lib
          curl
          fontconfig
          git
@@ -86,6 +86,9 @@ build() {
 	export PROTOC=/usr/bin/protoc
 	export PROTOC_INCLUDE=/usr/include
 	cargo build --release --frozen --package zed --package cli
+	target/release/cli --completions bash > completions.bash
+	target/release/cli --completions fish > completions.fish
+	target/release/cli --completions zsh > completions.zsh
 }
 
 # Tests assume access to vulkan video drivers, Wayland window creation,
@@ -97,7 +100,8 @@ check() {
 }
 
 package() {
-	depends+=(libgio-2.0.so libglib-2.0.so libgobject-2.0.so
+	depends+=(libasound.so
+	          libgio-2.0.so libglib-2.0.so libgobject-2.0.so
 	          libgcc_s.so
 	          libstdc++.so
 	          libxkbcommon.so
@@ -110,4 +114,7 @@ package() {
 	install -Dm0644 -t "$pkgdir/usr/share/applications/" "$_appid.desktop"
 	install -Dm0644 -t "$pkgdir/usr/share/metainfo/" "$_appid.metainfo.xml"
 	install -Dm0644 crates/zed/resources/app-icon.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/$pkgname.png"
+	install -Dm0644 completions.bash "$pkgdir/usr/share/bash-completion/completions/$_binname"
+	install -Dm0644 completions.fish "$pkgdir/usr/share/fish/vendor_completions.d/$_binname.fish"
+	install -Dm0644 completions.zsh "$pkgdir/usr/share/zsh/site-functions/_$_binname"
 }
