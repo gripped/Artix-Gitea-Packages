@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.05-5
+    version: 5.05-6
     packages:
-      - sl-5.05-5-x86_64.pkg.tar.zst
+      - sl-5.05-6-x86_64.pkg.tar.zst
     debug: []
