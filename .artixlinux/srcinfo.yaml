@@ -1,10 +1,10 @@
 ---
-version: 1.58.1-1
+version: 1.58.1-2
 pkgbase:
   name: lib32-libnm
   pkgdesc: NetworkManager client library (32-bit)
   pkgver: 1.58.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://networkmanager.dev/
   arch:
     - x86_64
@@ -16,7 +16,6 @@ pkgbase:
     - lib32-dbus
     - lib32-libndp
     - lib32-libpsl
-    - lib32-polkit
     - lib32-util-linux
     - libxslt
     - meson
