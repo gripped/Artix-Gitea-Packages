@@ -2,8 +2,8 @@
 
 _pkgname=lact-openrc
 pkgname="${_pkgname}"
-pkgver=20260823
-pkgrel=1.2
+pkgver=20260824
+pkgrel=1
 pkgdesc='OpenRC init script for lact.'
 url="https://github.com/ilya-zlobintsev/LACT"
 license=('GPL-3.0-or-later')
@@ -13,6 +13,7 @@ depends=(
   'openrc'
 )
 backup=('etc/init.d/lact')
+install='lact-openrc.install'
 options=('!emptydirs')
 source=(
   'lact.openrc-init'

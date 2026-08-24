@@ -1,14 +1,15 @@
 post_upgrade() {
-local symlink runlevel
+    local symlink runlevel
 
-for symlink in /etc/runlevels/*/lactd; do
-    [ -L "$symlink" ] || continue
+    rm -f /etc/init.d/lactd
 
-    runlevel=${symlink%/*}
-    runlevel=${runlevel##*/}
+    for symlink in /etc/runlevels/*/lactd; do
+        [ -L "$symlink" ] || continue
 
-    rc-update del lactd "$runlevel"
-    rc-update add lact "$runlevel"
-done
+        runlevel=${symlink%/*}
+        runlevel=${runlevel##*/}
 
+        rm -f "$symlink"
+        rc-update add lact "$runlevel"
+    done
 }

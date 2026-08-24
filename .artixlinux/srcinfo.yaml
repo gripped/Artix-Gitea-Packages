@@ -1,11 +1,12 @@
 ---
-version: 20260823-1.2
+version: 20260824-1
 pkgbase:
   name: lact-openrc
   pkgdesc: OpenRC init script for lact.
-  pkgver: 20260823
-  pkgrel: 1.2
+  pkgver: 20260824
+  pkgrel: 1
   url: https://github.com/ilya-zlobintsev/LACT
+  install: lact-openrc.install
   arch:
     - any
   license:
