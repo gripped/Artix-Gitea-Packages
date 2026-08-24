@@ -1,9 +1,9 @@
 ---
-version: 0.6.2-1
+version: 0.6.3-1
 pkgbase:
   name: squashfuse
   pkgdesc: FUSE filesystem to mount squashfs archives
-  pkgver: 0.6.2
+  pkgver: 0.6.3
   pkgrel: 1
   url: https://github.com/vasi/squashfuse
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - zstd
     - xz
   source:
-    - git+https://github.com/vasi/squashfuse#tag=0.6.2
+    - git+https://github.com/vasi/squashfuse#tag=0.6.3
   sha256sums:
-    - 4b9cb76973dd3abf9a767479252c7c7bfc68f5d578651ad675f8649cbd6ee73c
+    - 85552dd21ad05caee9a9b6f31438dd2afa0ae6c9378ecd173119142bcea09043
 pkgname:
   - name: squashfuse
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
