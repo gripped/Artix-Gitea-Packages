@@ -1,10 +1,10 @@
 ---
-version: 6.29.0-1
+version: 6.29.0-2
 pkgbase:
   name: kio
   pkgdesc: Resource and network access abstraction
   pkgver: 6.29.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64
@@ -54,12 +54,14 @@ pkgbase:
   source:
     - https://download.kde.org/stable/frameworks/6.29/kio-6.29.0.tar.xz
     - https://download.kde.org/stable/frameworks/6.29/kio-6.29.0.tar.xz.sig
+    - https://invent.kde.org/frameworks/kio/-/commit/774defb9.patch
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
     - 9f06313cd7d6cdde8db43067126d650fc5cc904b6f0b89159274a03e4805a91a
     - SKIP
+    - 92d057d00f07b52cd7d3b5fda4b415463945dfb7a321936b192612bb270e92be
 pkgname:
   - name: kio
 # generated with artixpkg 0.38.5-1-any
