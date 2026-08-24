@@ -1,10 +1,10 @@
 ---
-version: 3.2.0-1
+version: 3.2.0-2
 pkgbase:
   name: screengrab
   pkgdesc: Crossplatform tool for grabbing screenshots of your desktop.
   pkgver: 3.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/screengrab
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: screengrab
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
