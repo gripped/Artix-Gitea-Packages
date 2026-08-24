@@ -12,6 +12,7 @@
 
 pkg/
 src/
+s6-services
 
 *.service
 *.timer
