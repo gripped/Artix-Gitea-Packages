@@ -7,7 +7,7 @@
 pkgbase=emacs
 pkgname=(emacs emacs-nox emacs-wayland)
 pkgver=31.1
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://www.gnu.org/software/emacs/emacs.html'
 license=(GPL-3.0-or-later)
@@ -16,12 +16,8 @@ depends=(
   gnutls
   lcms2
   libgccjit
-  libice
   libotf
   libpng
-  libsm
-  libxfixes
-  m17n-lib
   zlib
 )
 makedepends=(
@@ -90,7 +86,6 @@ package_emacs() {
   pkgdesc='The extensible, customizable, self-documenting real-time display editor'
   depends+=(
     libacl.so
-    libasound.so
     libdbus-1.so
     libfontconfig.so
     libfreetype.so
@@ -100,9 +95,9 @@ package_emacs() {
     libgio-2.0.so
     libglib-2.0.so
     libgobject-2.0.so
-    libgpm.so
     libgtk-3.so
     libharfbuzz.so
+    libtree-sitter.so
   )
   replaces=(emacs-nativecomp)
 
@@ -123,7 +118,6 @@ package_emacs-nox() {
     libacl.so
     libdbus-1.so
     libgccjit
-    libgpm.so
     libncursesw.so
     libtree-sitter.so
     libxml2.so
@@ -143,7 +137,6 @@ package_emacs-wayland() {
   pkgdesc='The extensible, customizable, self-documenting real-time display editor with PGTK enabled'
   depends+=(
     libacl.so
-    libasound.so
     libdbus-1.so
     libfontconfig.so
     libfreetype.so
@@ -153,9 +146,9 @@ package_emacs-wayland() {
     libgio-2.0.so
     libglib-2.0.so
     libgobject-2.0.so
-    libgpm.so
     libgtk-3.so
     libharfbuzz.so
+    libtree-sitter.so
   )
   provides=(emacs)
   conflicts=(emacs)

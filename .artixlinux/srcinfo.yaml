@@ -1,9 +1,9 @@
 ---
-version: 31.1-1
+version: 31.1-2
 pkgbase:
   name: emacs
   pkgver: 31.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.gnu.org/software/emacs/emacs.html
   arch:
     - x86_64
@@ -18,12 +18,8 @@ pkgbase:
     - gnutls
     - lcms2
     - libgccjit
-    - libice
     - libotf
     - libpng
-    - libsm
-    - libxfixes
-    - m17n-lib
     - zlib
   source:
     - https://ftp.gnu.org/gnu/emacs/emacs-31.1.tar.xz
@@ -47,15 +43,10 @@ pkgname:
       - gnutls
       - lcms2
       - libgccjit
-      - libice
       - libotf
       - libpng
-      - libsm
-      - libxfixes
-      - m17n-lib
       - zlib
       - libacl.so
-      - libasound.so
       - libdbus-1.so
       - libfontconfig.so
       - libfreetype.so
@@ -65,9 +56,9 @@ pkgname:
       - libgio-2.0.so
       - libglib-2.0.so
       - libgobject-2.0.so
-      - libgpm.so
       - libgtk-3.so
       - libharfbuzz.so
+      - libtree-sitter.so
     replaces:
       - emacs-nativecomp
   - name: emacs-nox
@@ -80,7 +71,6 @@ pkgname:
       - libacl.so
       - libdbus-1.so
       - libgccjit
-      - libgpm.so
       - libncursesw.so
       - libtree-sitter.so
       - libxml2.so
@@ -96,15 +86,10 @@ pkgname:
       - gnutls
       - lcms2
       - libgccjit
-      - libice
       - libotf
       - libpng
-      - libsm
-      - libxfixes
-      - m17n-lib
       - zlib
       - libacl.so
-      - libasound.so
       - libdbus-1.so
       - libfontconfig.so
       - libfreetype.so
@@ -114,9 +99,9 @@ pkgname:
       - libgio-2.0.so
       - libglib-2.0.so
       - libgobject-2.0.so
-      - libgpm.so
       - libgtk-3.so
       - libharfbuzz.so
+      - libtree-sitter.so
     provides:
       - emacs
     conflicts:
