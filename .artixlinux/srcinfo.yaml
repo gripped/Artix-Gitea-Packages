@@ -1,10 +1,10 @@
 ---
-version: 26.08.0-1
+version: 26.08.0-2
 pkgbase:
   name: okular
   pkgdesc: Document Viewer
   pkgver: 26.08.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/okular/
   arch:
     - x86_64
@@ -64,6 +64,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/release-service/26.08.0/src/okular-26.08.0.tar.xz
     - https://download.kde.org/stable/release-service/26.08.0/src/okular-26.08.0.tar.xz.sig
+    - https://invent.kde.org/graphics/okular/-/commit/e322356c.patch
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
@@ -71,6 +72,7 @@ pkgbase:
   sha256sums:
     - 235e8e761f949b81953582e3ff6e45b8832d0d551b71bd1b5098c1ad663511e4
     - SKIP
+    - 8850f191cee5e5312fce2aa0d8415a7ab8b8ffabbd07176275bcd375087ca561
 pkgname:
   - name: okular
 # generated with artixpkg 0.39.1-1-any
