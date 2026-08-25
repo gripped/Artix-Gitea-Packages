@@ -1,10 +1,10 @@
 ---
-version: 0.5.6-3
+version: 0.5.6-4
 pkgbase:
   name: bamf
   pkgdesc: Application matching framework
   pkgver: 0.5.6
-  pkgrel: 3
+  pkgrel: 4
   url: https://launchpad.net/bamf
   arch:
     - x86_64
@@ -15,7 +15,6 @@ pkgbase:
   makedepends:
     - git
     - glib2-devel
-    - gnome-common
     - gobject-introspection
     - vala
   depends:
@@ -36,4 +35,4 @@ pkgbase:
     - 54a4aeb5a06efec8e8209a8456d873880694f2a6001ab7124763a20509cbbcc585dc6e732d5fac925acff29a878ccdc4adcacde9fa303eb994dfc2a94c6c5217
 pkgname:
   - name: bamf
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
