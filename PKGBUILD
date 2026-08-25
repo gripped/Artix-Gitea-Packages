@@ -2,9 +2,9 @@
 # Contributor: hexchain <i@hexchain.org>
 
 pkgname=telegram-desktop
-pkgver=7.0.9
+pkgver=7.1.0
 _td_commit=022d60202e446ad1287b9fb68e687c8a0760788b
-pkgrel=5
+pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
@@ -12,7 +12,6 @@ license=('GPL-3.0-or-later WITH OpenSSL-exception')
 depends=(
   'abseil-cpp'
   'ada'
-  'cmark-gfm'
   'ffmpeg'
   'glib2'
   'glibc'
@@ -79,8 +78,16 @@ source=(
   "https://github.com/telegramdesktop/tdesktop/releases/download/v${pkgver}/tdesktop-${pkgver}-full.tar.gz"
   "git+https://github.com/tdlib/td.git#commit=${_td_commit}"
 )
-sha512sums=('c5e97a146c903b3398b53a7451d86efcbb5f87a989586d20753c83e2cb1452b964ab1175b88977eb590b04bcffc14fc678eb9f6a629b7f6f7af522a0da811780'
+sha512sums=('2cb3cd81dc203590631d2978b22cb61727b7f784dbd029b9fab383c09bc6a36c540589cd96932a17dd0768d4348b1256d5b3152896c9ea3a75111b75af08fe97'
             '45ef8f69708c46aef8e8d0301b8710467a208e43a9ebb5918152b49d24f9d6c8b69ca9a94f19c4e401f44e8d60706cd840832ce442ca1a839df942a7b88afde2')
+
+prepare() {
+  cd tdesktop-$pkgver-full
+
+  # Upstream lib_webview 3db630a: add the missing GioUnix alias.
+  sed -i '/namespace Gio = gi::repository::Gio;/a #if __has_include(<giounix/giounix.hpp>)\nnamespace GioUnix = gi::repository::GioUnix;\n#endif // __has_include(<giounix/giounix.hpp>)' \
+    Telegram/lib_webview/webview/platform/linux/webview_linux_webkitgtk.cpp
+}
 
 build() {
   cmake -S td -B td/build \
