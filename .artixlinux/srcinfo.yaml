@@ -1,9 +1,9 @@
 ---
-version: 1.10.3-1
+version: 1.11.0-1
 pkgbase:
   name: rrdtool
   pkgdesc: Data logging and graphing application
-  pkgver: 1.10.3
+  pkgver: 1.11.0
   pkgrel: 1
   url: https://www.rrdtool.org
   arch:
@@ -34,9 +34,9 @@ pkgbase:
     - '!emptydirs'
     - '!makeflags'
   source:
-    - git+https://github.com/oetiker/rrdtool-1.x.git#tag=v1.10.3
+    - git+https://github.com/oetiker/rrdtool-1.x.git#tag=v1.11.0
   sha256sums:
-    - 6e0162ff2d4248d7dcf40197aa8d7350983cef660d080c862250b89c96f690d2
+    - 54588fd00b28bc6592ad757f03a942db948aeb340dc854f11ea0b8de617ed41c
 pkgname:
   - name: rrdtool
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
