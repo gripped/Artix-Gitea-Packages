@@ -10,7 +10,7 @@ pkgbase=glibc
 pkgname=(glibc lib32-glibc glibc-locales)
 pkgver=2.44+r24+g16be1518495f
 _commit=16be1518495f1fa05481b0182c4e4c24927c62df
-pkgrel=1
+pkgrel=1.1
 arch=(x86_64 aarch64)
 url='https://www.gnu.org/software/libc'
 license=(GPL-2.0-or-later LGPL-2.1-or-later)
@@ -23,6 +23,7 @@ makedepends_x86_64=(
   lib32-gcc-libs
 )
 options=(
+  debug
   staticlibs
   !lto
 )

@@ -1,9 +1,9 @@
 ---
-version: 2.44+r24+g16be1518495f-1
+version: 2.44+r24+g16be1518495f-1.1
 pkgbase:
   name: glibc
   pkgver: 2.44+r24+g16be1518495f
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.gnu.org/software/libc
   arch:
     - x86_64
@@ -16,6 +16,7 @@ pkgbase:
     - git
     - python
   options:
+    - debug
     - staticlibs
     - '!lto'
   source:
@@ -79,6 +80,7 @@ pkgname:
     depends:
       - glibc=2.44+r24+g16be1518495f
     options:
+      - debug
       - staticlibs
       - '!lto'
       - '!emptydirs'
