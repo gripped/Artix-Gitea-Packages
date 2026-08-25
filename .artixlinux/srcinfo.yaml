@@ -1,10 +1,10 @@
 ---
-version: 12.10.1-1
+version: 12.10.1-2
 pkgbase:
   name: libappindicator
   pkgdesc: Allow applications to extend a menu via Ayatana indicators in Unity, KDE or Systray
   pkgver: 12.10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://launchpad.net/libappindicator
   arch:
     - x86_64
@@ -13,7 +13,6 @@ pkgbase:
   makedepends:
     - dbus-glib
     - glib2-devel
-    - gnome-common
     - gobject-introspection
     - gtk-doc
     - vala
@@ -41,4 +40,4 @@ pkgbase:
     - ace190fea1b0e21fb164ff531788ce8c2ad9fc00c23227a75d844b1c89f78e8da705f35dac09677f92f053561f89a9c0a73b23af07cb22f9fdaa28afbd10a516
 pkgname:
   - name: libappindicator
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
