@@ -1,10 +1,10 @@
 ---
-version: 3.12.3+r44+gdea4990b-1
+version: 3.12.3+r44+gdea4990b-2
 pkgbase:
   name: brasero
   pkgdesc: CD/DVD mastering tool
   pkgver: 3.12.3+r44+gdea4990b
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Brasero
   arch:
     - x86_64
@@ -14,7 +14,6 @@ pkgbase:
     - docbook-xsl
     - git
     - glib2-devel
-    - gnome-common
     - gobject-introspection
     - gtk-doc
     - intltool
@@ -68,4 +67,4 @@ pkgbase:
     - e631169739d178365affc0a6370de5e3dbca5e0ec2a25c4a03aa85cf2b4abb1cb1ab168b36713f01e3b4490f26b6acdbab2c6435272474c10e4f3bd5d1cced71
 pkgname:
   - name: brasero
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.39.1-1-any
