@@ -1,10 +1,10 @@
 ---
-version: 1:46.0-8
+version: 1:46.0-9
 pkgbase:
   name: geary
   pkgdesc: A lightweight email client for the GNOME desktop
   pkgver: 46.0
-  pkgrel: 8
+  pkgrel: 9
   epoch: 1
   url: https://wiki.gnome.org/Apps/Geary
   arch:
@@ -13,8 +13,15 @@ pkgbase:
     - CC-BY-3.0
     - CC-BY-SA-3.0
     - LGPL-2.1-or-later
+  checkdepends:
+    - aspell
+    - hspell
+    - hunspell
+    - libvoikko
+    - nuspell
+    - xorg-server-xvfb
   makedepends:
-    - appstream-glib
+    - appstream
     - cmake
     - git
     - gobject-introspection
@@ -65,4 +72,4 @@ pkgbase:
     - dd7b967cac55b781eaa7476e1dc03136369a16fbb18da7bc8e0bbdd02780dca4b36a2ed8cbab81676ce6a97f99599ce3e0538926700953eacef01bf282a231a5
 pkgname:
   - name: geary
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.39.1-1-any
