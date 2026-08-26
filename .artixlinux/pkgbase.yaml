@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.7.4-1
+    version: 0.8.0-1
     packages:
-      - impala-0.7.4-1-x86_64.pkg.tar.zst
+      - impala-0.8.0-1-x86_64.pkg.tar.zst
     debug: []
