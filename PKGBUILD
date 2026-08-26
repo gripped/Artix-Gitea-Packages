@@ -17,7 +17,7 @@ pkgname=(
   'mariadb-pam')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=12.3.3
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -81,7 +81,7 @@ build() {
     -DINSTALL_SYSCONFDIR=/etc
     -DINSTALL_SYSCONF2DIR=/etc/my.cnf.d
     # /run
-    -DINSTALL_RUNDATADIR=/run/mariadb
+    -DINSTALL_RUNDIR=/run
     -DINSTALL_UNIX_ADDRDIR=/run/mysqld/mysqld.sock
     # /usr
     -DCMAKE_INSTALL_PREFIX=/usr
