@@ -1,9 +1,9 @@
 ---
-version: 1.5.6-1
+version: 1.5.7-1
 pkgbase:
   name: srt
   pkgdesc: Secure Reliable Transport library
-  pkgver: 1.5.6
+  pkgver: 1.5.7
   pkgrel: 1
   url: https://www.srtalliance.org/
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - libstdc++
     - openssl
   source:
-    - git+https://github.com/Haivision/srt#tag=v1.5.6
+    - git+https://github.com/Haivision/srt#tag=v1.5.7
   b2sums:
-    - a14d9fb011c1276454d825ee4a52fa7738d5532ee9a131bd21398ba300db99c22a038dd808da11affdfa1deec90db87e9924f01d4f32c8a56c43a4c95d29aead
+    - b2016a1f664ee4c338de5537c4215cc5b8e91e93106801b077c6e3f3f79ac4048173e1dad2bf0b82812db1b134d496d84756b489ee81257197c412783f7d5301
 pkgname:
   - name: srt
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
