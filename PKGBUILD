@@ -1,13 +1,13 @@
 # Maintainer: Muhammad Herdiansyah <koni@artixlinux.org>
 pkgname=iwd-dinit
 pkgver=20240622
-pkgrel=1
+pkgrel=2
 pkgdesc="dinit service scripts for iwd"
 arch=('any')
 url="https://artixlinux.org"
 license=('BSD')
 groups=('dinit-world')
-depends=('iwd' 'dinit')
+depends=('iwd' 'dinit' 'dbus-dinit')
 conflicts=('init-iwd')
 provides=('init-iwd')
 source=("iwd" "ead")

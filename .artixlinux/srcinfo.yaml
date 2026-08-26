@@ -1,0 +1,31 @@
+---
+version: 20240622-2
+pkgbase:
+  name: iwd-dinit
+  pkgdesc: dinit service scripts for iwd
+  pkgver: 20240622
+  pkgrel: 2
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - dinit-world
+  license:
+    - BSD
+  depends:
+    - iwd
+    - dinit
+    - dbus-dinit
+  provides:
+    - init-iwd
+  conflicts:
+    - init-iwd
+  source:
+    - iwd
+    - ead
+  sha256sums:
+    - 3e0413b7a9e89f9cc30f81b3c634066905a141a372dfa1b6df09a2f398eff035
+    - bc647d57643faf5e9972c71ffd74c05d4b3151c5a02b190ea9a7b0e7c1aa58f9
+pkgname:
+  - name: iwd-dinit
+# generated with artixpkg 0.39.1-1-any
