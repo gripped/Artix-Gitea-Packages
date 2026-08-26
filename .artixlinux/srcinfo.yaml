@@ -1,9 +1,9 @@
 ---
-version: 202605-1
+version: 202608-1
 pkgbase:
   name: edk2
   pkgdesc: Modern, feature-rich firmware development environment for the UEFI specifications
-  pkgver: 202605
+  pkgver: 202608
   pkgrel: 1
   url: https://github.com/tianocore/edk2
   arch:
@@ -23,7 +23,7 @@ pkgbase:
   options:
     - '!makeflags'
   source:
-    - git+https://github.com/tianocore/edk2#tag=edk2-stable202605
+    - git+https://github.com/tianocore/edk2#tag=edk2-stable202608
     - openssl::git+https://github.com/openssl/openssl.git
     - pyca-cryptography::git+https://github.com/pyca/cryptography.git
     - krb5::git+https://github.com/krb5/krb5.git
@@ -51,7 +51,7 @@ pkgbase:
     - 80-edk2-ovmf-ia32-on-x86_64-secure-4m.json
     - 81-edk2-ovmf-ia32-on-x86_64-4m.json
   sha512sums:
-    - 44c6beba8431b458cacbb4689b1ee454754667f0a2397ec5ab92e69a71e171b46f15cff8e850d7beebb50a34f86b1e9569a2c9aa26a86f65c4935ecd43d434cd
+    - 6143e7da19cb1c2b81e462afbcd118d35d415126a0daefa71fbbc3b56d1ef5f44b1cfc454e28f83be6f19e52228ba63337d1555b4f475b1a516bfff3fec326fb
     - SKIP
     - SKIP
     - SKIP
@@ -79,7 +79,7 @@ pkgbase:
     - 95661c2182112a76652507de84b7d0f9bb0d21f6b3b62134952bd7aada8df5cfc727658d11b71a7780a22049d9cafc4361d9a1d515b68d1463e7082465fd4f7e
     - c9dbe7b2b6b8c18b7b8fdfef5bc329d9142c442f2f3dbae3ca4919255dcaf2ab576cd305648228d5dd48040ca3b14f44ee33b05cb6ca13b49e2836947b78ea53
   b2sums:
-    - b4da81b8c1b813bbe4a50ffad5557f63b4c06a7a161d743135d4aaf44c60ede4b81e6fc669a77c9e98c6b2a27b3c159ea5f752531b5d9ff8bf4c26bca33cb6f2
+    - 29f444c69831debfc48583a5c6c60a3dcfdc44987ca127232a10091f4547289de33feea20aa1dc6333f02d9d3fb149719e65ce5bf389d6e4a912ac61fb1d8be0
     - SKIP
     - SKIP
     - SKIP
@@ -133,4 +133,4 @@ pkgname:
       - ovmf
     replaces:
       - ovmf
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any

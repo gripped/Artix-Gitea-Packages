@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,12 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 202608-1
+    packages:
+      - edk2-aarch64-202608-1-any.pkg.tar.zst
+      - edk2-riscv64-202608-1-any.pkg.tar.zst
+      - edk2-shell-202608-1-any.pkg.tar.zst
+      - edk2-ovmf-202608-1-any.pkg.tar.zst
     debug: []
   world:
     version: 202605-1
