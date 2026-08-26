@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: galaxy
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -55,7 +55,6 @@ repos:
       - forkgram-7.1.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 7.0.9-2
-    packages:
-      - forkgram-7.0.9-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
