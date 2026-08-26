@@ -2,8 +2,8 @@
 # Contributor: Jake Leahy <jake (at) leahy (dot) dev
 
 pkgname=pdfio
-pkgver=1.6.4
-pkgrel=2
+pkgver=1.6.5
+pkgrel=1
 pkgdesc="Simple C library for reading and writing PDF files"
 arch=('x86_64')
 url="https://github.com/michaelrsweet/pdfio"
@@ -13,7 +13,7 @@ depends=('libpng' 'zlib' 'glibc')
 # makedepends=('libwebp')
 source=("pdfio-$pkgver.tar.gz::https://github.com/michaelrsweet/pdfio/releases/download/v$pkgver/pdfio-$pkgver.tar.gz"
         "pdfio-$pkgver.tar.gz.sig::https://github.com/michaelrsweet/pdfio/releases/download/v$pkgver/pdfio-$pkgver.tar.gz.sig")
-sha256sums=('1b5e5e945f4fc214b55d575554c1aec11d7ba91b397cef92ffe877462155af06'
+sha256sums=('2b9e1db7c4a72cbc896098a6682a1e51fc2bfb979f00bec8bb515ee79c338084'
             'SKIP')
 validpgpkeys=('9086C3CDC66C3F563CF8F405BE67C75EC81F3244') # Michael R Sweet <msweet@msweet.org>
 

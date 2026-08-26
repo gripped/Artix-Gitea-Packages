@@ -1,10 +1,10 @@
 ---
-version: 1.6.4-2
+version: 1.6.5-1
 pkgbase:
   name: pdfio
   pkgdesc: Simple C library for reading and writing PDF files
-  pkgver: 1.6.4
-  pkgrel: 2
+  pkgver: 1.6.5
+  pkgrel: 1
   url: https://github.com/michaelrsweet/pdfio
   arch:
     - x86_64
@@ -15,13 +15,13 @@ pkgbase:
     - zlib
     - glibc
   source:
-    - pdfio-1.6.4.tar.gz::https://github.com/michaelrsweet/pdfio/releases/download/v1.6.4/pdfio-1.6.4.tar.gz
-    - pdfio-1.6.4.tar.gz.sig::https://github.com/michaelrsweet/pdfio/releases/download/v1.6.4/pdfio-1.6.4.tar.gz.sig
+    - pdfio-1.6.5.tar.gz::https://github.com/michaelrsweet/pdfio/releases/download/v1.6.5/pdfio-1.6.5.tar.gz
+    - pdfio-1.6.5.tar.gz.sig::https://github.com/michaelrsweet/pdfio/releases/download/v1.6.5/pdfio-1.6.5.tar.gz.sig
   validpgpkeys:
     - 9086C3CDC66C3F563CF8F405BE67C75EC81F3244
   sha256sums:
-    - 1b5e5e945f4fc214b55d575554c1aec11d7ba91b397cef92ffe877462155af06
+    - 2b9e1db7c4a72cbc896098a6682a1e51fc2bfb979f00bec8bb515ee79c338084
     - SKIP
 pkgname:
   - name: pdfio
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
