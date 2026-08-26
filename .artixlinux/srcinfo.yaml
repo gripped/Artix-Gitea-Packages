@@ -1,10 +1,10 @@
 ---
-version: 8.2-2
+version: 8.3-1
 pkgbase:
   name: python-zope-i18nmessageid
   pkgdesc: Message Identifiers for internationalization
-  pkgver: 8.2
-  pkgrel: 2
+  pkgver: 8.3
+  pkgrel: 1
   url: https://github.com/zopefoundation/zope.i18nmessageid
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   checkdepends:
     - python-zope-testrunner
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-setuptools
@@ -21,9 +22,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - python-zope-i18nmessageid-8.2.tar.gz::https://github.com/zopefoundation/zope.i18nmessageid/archive/8.2.tar.gz
+    - git+https://github.com/zopefoundation/zope.i18nmessageid.git#tag=8.3
   sha512sums:
-    - 7e53f91129d41288b21af4cb34ee23a73a41f5afb1ff5becefae2bb854c25a6a37ca98817420c4ac6f84fb9b299016820587d594c676c41a654370287678b376
+    - d0e65b187e752d80c9ce30d98742f38ef7de857f1eb5f83a700d53a57de208a90ed9da37fda94db53b503687319147f8af387687a724e62ccbbd13f92c676ebf
 pkgname:
   - name: python-zope-i18nmessageid
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
