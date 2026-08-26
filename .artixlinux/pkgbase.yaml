@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 8.2.0-2
+    version: 9.0.0-1
     packages:
-      - elementary-icon-theme-8.2.0-2-any.pkg.tar.zst
+      - elementary-icon-theme-9.0.0-1-any.pkg.tar.zst
     debug: []
 team: galaxy

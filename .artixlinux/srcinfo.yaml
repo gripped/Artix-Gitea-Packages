@@ -1,17 +1,17 @@
 ---
-version: 8.2.0-2
+version: 9.0.0-1
 pkgbase:
   name: elementary-icon-theme
   pkgdesc: Named, vector icons for elementary OS
-  pkgver: 8.2.0
-  pkgrel: 2
+  pkgver: 9.0.0
+  pkgrel: 1
   url: https://github.com/elementary/icons
   arch:
     - any
   groups:
     - pantheon
   license:
-    - GPL3
+    - GPL-3.0-only
   makedepends:
     - git
     - librsvg
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - hicolor-icon-theme
   source:
-    - elementary-icon-theme::git+https://github.com/elementary/icons.git#tag=6ddbb535af70a5ceeff5e1fec05d9b0562641b2a
-  sha256sums:
-    - 910e2e8cb75cc9d5a66e69fc9b2d5a40e98cdb2fd001d18b65e7b86281f07122
+    - elementary-icon-theme::git+https://github.com/elementary/icons.git#tag=9.0.0
+  b2sums:
+    - 51a2e90a956117314a7fb2f7e8e37aa002429c32650d7523227327cfad25b5ac529ce482c0ca8b8272c4ba924c86559659e6453c8e3c35a6f45db939dbb00ba2
 pkgname:
   - name: elementary-icon-theme
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
