@@ -1,10 +1,10 @@
 ---
-version: 0.6.6-1
+version: 0.6.6-2
 pkgbase:
   name: spotify-launcher
   pkgdesc: Client for spotify's apt repository in Rust for Arch Linux
   pkgver: 0.6.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/kpcyrd/spotify-launcher
   arch:
     - x86_64
@@ -16,10 +16,12 @@ pkgbase:
   depends:
     - alsa-lib>=1.0.14
     - at-spi2-atk
+    - ayatana-ido
     - glibc
     - gtk3
     - hicolor-icon-theme
     - libayatana-appindicator
+    - libayatana-indicator
     - libcurl-gnutls
     - libgcc
     - libgcc_s.so
@@ -47,4 +49,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: spotify-launcher
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
