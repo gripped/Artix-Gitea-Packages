@@ -2,7 +2,7 @@
 # Contributor: capezotte <capezotte@artixlinux.org>
 
 pkgname=power-profiles-daemon-s6
-pkgver=20260824
+pkgver=20260826
 pkgrel=1
 pkgdesc="s6-rc service scripts for power-profiles-daemon"
 arch=('any')
@@ -13,9 +13,9 @@ conflicts=('init-power-profiles-daemon')
 depends=('power-profiles-daemon' 'dbus-s6' 's6-base')
 makedepends=('git')
 backup=('etc/s6/config/power-profiles-daemon.conf')
-_commit=5ea9f17d8d3ea6de722b6762e752bf51c421157a
+_commit=1e9cfbb2fdcfeafed3f7ea897fece8aaf419b756
 source=("git+https://gitea.artixlinux.org/artix/s6-services.git#commit=$_commit")
-sha256sums=('4694b118a8fcbbc6a66647e93a5906d9e9809da9b1a04a1ebcf75ac2a376dc35')
+sha256sums=('3b25fad860b5ce664b5b4841249cd23fa195c4861d704d46729b6207fec9f663')
 
 package() {
     cd "${srcdir}"/s6-services
