@@ -1,0 +1,25 @@
+---
+version: 2.9.9.1.1-1
+pkgbase:
+  name: execline-man-pages
+  pkgdesc: Manual pages for execline
+  pkgver: 2.9.9.1.1
+  pkgrel: 1
+  url: https://git.sr.ht/~humm/execline-man-pages
+  arch:
+    - any
+  groups:
+    - skarnet-man-pages
+  license:
+    - ISC
+  makedepends:
+    - git
+  optdepends:
+    - 'execline: package documented by these man pages'
+  source:
+    - git+https://git.sr.ht/~humm/execline-man-pages#tag=v2.9.9.1.1
+  sha256sums:
+    - 0dfc32caa92a04a0409fd31be8e93a30d7d8bc9a7f4e033708afae8059deb884
+pkgname:
+  - name: execline-man-pages
+# generated with artixpkg 0.39.1-1-any

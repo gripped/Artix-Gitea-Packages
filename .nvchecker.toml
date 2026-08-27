@@ -1,0 +1,4 @@
+[execline-man-pages]
+source = "git"
+git = "https://git.sr.ht/~humm/execline-man-pages"
+prefix = "v"
