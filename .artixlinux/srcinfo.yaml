@@ -1,0 +1,25 @@
+---
+version: 0.6.1.1.1-1
+pkgbase:
+  name: s6-rc-man-pages
+  pkgdesc: Manual pages for s6-rc
+  pkgver: 0.6.1.1.1
+  pkgrel: 1
+  url: https://git.sr.ht/~humm/s6-rc-man-pages
+  arch:
+    - any
+  groups:
+    - skarnet-man-pages
+  license:
+    - ISC
+  makedepends:
+    - git
+  optdepends:
+    - 's6-rc: package documented by these man pages'
+  source:
+    - git+https://git.sr.ht/~humm/s6-rc-man-pages#tag=v0.6.1.1.1
+  sha256sums:
+    - 00f101873a8472835f3687b87fab955ae7dac610640fa36a5dee799ca204a6c6
+pkgname:
+  - name: s6-rc-man-pages
+# generated with artixpkg 0.39.1-1-any
