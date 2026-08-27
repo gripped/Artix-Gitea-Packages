@@ -1,0 +1,25 @@
+---
+version: 2.3.1.2.1-1
+pkgbase:
+  name: s6-portable-utils-man-pages
+  pkgdesc: Manual pages for s6-portable-utils
+  pkgver: 2.3.1.2.1
+  pkgrel: 1
+  url: https://git.sr.ht/~humm/s6-portable-utils-man-pages
+  arch:
+    - any
+  groups:
+    - skarnet-man-pages
+  license:
+    - ISC
+  makedepends:
+    - git
+  optdepends:
+    - 's6-portable-utils: package documented by these man pages'
+  source:
+    - git+https://git.sr.ht/~humm/s6-portable-utils-man-pages#tag=v2.3.1.2.1
+  sha256sums:
+    - b6b00bba244837871d00d1743a0e12c644ce959eb9ed97a7e163fc5c7e8a0f6e
+pkgname:
+  - name: s6-portable-utils-man-pages
+# generated with artixpkg 0.39.1-1-any

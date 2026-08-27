@@ -10,6 +10,7 @@
 *.log.*
 *.sig
 
+s6-portable-utils-man-pages/
 pkg/
 src/
 

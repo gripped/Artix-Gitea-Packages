@@ -1,0 +1,4 @@
+[s6-portable-utils-man-pages]
+source = "git"
+git = "https://git.sr.ht/~humm/s6-portable-utils-man-pages"
+prefix = "v"
