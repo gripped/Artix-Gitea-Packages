@@ -10,6 +10,7 @@
 *.log.*
 *.sig
 
+s6-frontend-man-pages/
 pkg/
 src/
 

@@ -1,0 +1,4 @@
+[s6-frontend-man-pages]
+source = "git"
+git = "https://git.sr.ht/~humm/s6-frontend-man-pages"
+prefix = "v"
