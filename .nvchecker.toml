@@ -1,0 +1,4 @@
+[s6-networking-man-pages]
+source = "git"
+git = "https://git.sr.ht/~humm/s6-networking-man-pages"
+prefix = "v"
