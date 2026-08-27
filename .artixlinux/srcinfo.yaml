@@ -1,0 +1,36 @@
+---
+version: 0.5.1-1
+pkgbase:
+  name: gnome-autoar
+  pkgdesc: Automatic archives creating and extracting library
+  pkgver: 0.5.1
+  pkgrel: 1
+  url: https://gnome.pages.gitlab.gnome.org/gnome-autoar/
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - vala
+  depends:
+    - glib2
+    - glibc
+    - libarchive
+    - libgcc
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gnome-autoar.git#tag=0.5.1
+  b2sums:
+    - 2759c402756ec3e58c93f6a41a8991fb2713f6026c5fde8937efc672ef7a4161c04fa612a81c3c45b5fbf568e4dfd55490f6d96f301aa3919172e27fb82ec2be
+pkgname:
+  - name: gnome-autoar
+    provides:
+      - libgnome-autoar-0.so
+  - name: gnome-autoar-docs
+    pkgdesc: Automatic archives creating and extracting library (documentation)
+    depends: []
+# generated with artixpkg 0.39.1-1-any
