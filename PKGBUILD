@@ -20,4 +20,3 @@ package() {
 	make DESTDIR="$pkgdir" PREFIX="/usr" install
 	install -Dm0644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
-
