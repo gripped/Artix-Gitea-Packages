@@ -1,6 +1,6 @@
 ##
 ## Artix Linux repository mirrorlist
-## Generated on 2026-07-13 by artix-mlg
+## Generated on 2026-08-27 by artix-mlg
 ##
 
 # Artix mirrors
@@ -70,6 +70,7 @@ Server = https://gnlug.org/pub/artix-linux/$repo/os/$arch
 Server = https://mirror.sanin.dev/artix-linux/$repo/os/$arch
 Server = https://mirrors.lug.mtu.edu/artixlinux/$repo/os/$arch
 Server = https://mirrors.cicku.me/artix/$repo/os/$arch
+Server = https://mirror.lug.umbc.edu/artix-linux/$repo/os/$arch
 
 ## South America
 # Brazil
