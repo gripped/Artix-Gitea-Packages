@@ -30,4 +30,4 @@ pkgbase:
     - fc09340ad932ac0803a5b813b9c4219bec50d2b0f1e5e07e0a5bcc86fc0fc751
 pkgname:
   - name: libayatana-appindicator
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
