@@ -1,10 +1,10 @@
 ---
-version: 1.52.1-1
+version: 1.52.1-2
 pkgbase:
   name: libuv
   pkgdesc: Multi-platform support library with a focus on asynchronous I/O
   pkgver: 1.52.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/libuv/libuv
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 8c7d80b0e6af45350ad6675cf68eef51142918f1fc8646ad87701e9081f63766d1eeb76a19c925abfa8e7813144842343df30b9fb3e7c234048ba334a48b03e2
 pkgname:
   - name: libuv
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
