@@ -1,9 +1,9 @@
 ---
-version: 0.16.20-1
+version: 0.16.21-1
 pkgbase:
   name: rtorrent
   pkgdesc: Ncurses BitTorrent client based on libTorrent
-  pkgver: 0.16.20
+  pkgver: 0.16.21
   pkgrel: 1
   url: https://rakshasa.github.io/rtorrent/
   arch:
@@ -13,13 +13,13 @@ pkgbase:
   makedepends:
     - git
   depends:
-    - libtorrent=0.16.20
+    - libtorrent=0.16.21
     - curl
     - tinyxml2
   source:
-    - git+https://github.com/rakshasa/rtorrent.git#tag=v0.16.20
+    - git+https://github.com/rakshasa/rtorrent.git#tag=v0.16.21
   sha256sums:
-    - 6ac7edf7b5b2e29bbb88b6f21c97cc398cc7f35040a5b9bcf7e66be400241742
+    - b28c7b0cfd87a816b95ff25a873fb0157ce406bfdcd97fb5e77ddff6a1235635
 pkgname:
   - name: rtorrent
 # generated with artixpkg 0.38.5-1-any
