@@ -111,6 +111,7 @@ pkgbase:
     - 0002-Use-wasm32-wasip1-target.patch
     - 0003-update-rust-bindgen-to-fix-clang22-build.patch.xz
     - 0004-skia-m142-update.patch.xz
+    - 0005-rust-1_98-compat.patch
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
@@ -126,6 +127,7 @@ pkgbase:
     - baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba
     - 8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d
     - 01b8c0b1064f746ecd186e4b92767e92e4028519cfd3e0ea0637fb786cdec644
+    - 1ff4813485ad035f0b42dce03f86acd021a0acf7d0cb51c6477dec38cade47ef
 pkgname:
   - name: konform-browser
 # generated with artixpkg 0.39.1-1-any
