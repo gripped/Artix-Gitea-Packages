@@ -4,7 +4,7 @@
 
 pkgname=nanobind
 pkgdesc="Tiny and efficient C++/Python bindings"
-pkgver=3.0.0
+pkgver=3.0.1
 pkgrel=1
 arch=(any)
 url="https://github.com/wjakob/nanobind"
@@ -30,7 +30,7 @@ checkdepends=(
 source=(
   "git+$url.git#tag=v$pkgver"
 )
-b2sums=('96e2bbde18bdf2444f082fe9817124587afc8f964d7e95028f14527d5de80cb92ab5afc36b2cb31aa87236ac30034238869e2e7922b26c0be820e430d3291a5d')
+b2sums=('b0e0aca41f34976ef0f51f85fe6cad9b8431bcdcd2fd5805f521377e6b613f7acc91043585c283ff85ea5c1a9c6fd0683533c2286801cdfb12771869f9a5cfed')
 
 build() {
   cd $pkgname

@@ -3,8 +3,8 @@ team: world
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.0.0-1
+    version: 3.0.1-1
     packages:
-      - nanobind-3.0.0-1-any.pkg.tar.zst
+      - nanobind-3.0.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.15.0-1
