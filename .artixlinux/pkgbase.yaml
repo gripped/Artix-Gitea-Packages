@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 7.1.0-1
+    version: 7.1.2-1
     packages:
-      - telegram-desktop-7.1.0-1-x86_64.pkg.tar.zst
+      - telegram-desktop-7.1.2-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 7.0.9-4
