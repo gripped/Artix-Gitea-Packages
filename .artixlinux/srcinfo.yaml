@@ -1,10 +1,10 @@
 ---
-version: 37.0.0-3
+version: 37.0.0-4
 pkgbase:
   name: android-tools
   pkgdesc: Android platform tools
   pkgver: 37.0.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://developer.android.com/tools
   arch:
     - x86_64
@@ -34,8 +34,10 @@ pkgbase:
     - 'android-udev: optional additional device udev rules'
   source:
     - https://github.com/nmeum/android-tools/releases/download/37.0.0/android-tools-37.0.0.tar.xz
+    - protobuf-36-absl-log-macros.patch
   sha256sums:
     - 2725d09f892a3a38e534429f47a321f58ecf6a3169caa42c915fb2cb7d46be0e
+    - ba52b2227c093b56290f07b2be8238201a4e6a2de6de9ba54c3a82e4d6c890a0
 pkgname:
   - name: android-tools
 # generated with artixpkg 0.38.5-1-any
