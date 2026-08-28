@@ -158,7 +158,7 @@ sha256sums=('a964d5bc5fcecb35701396493dcdaad6ddbc6dffe80d17051e82b15178e8d5a9'
             '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
             'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
             '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-            'e11aba9839824096f07ca5dc17c9fd5bfa09209f8261ab09f7e473f350a82760')
+            '01b8c0b1064f746ecd186e4b92767e92e4028519cfd3e0ea0637fb786cdec644')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
