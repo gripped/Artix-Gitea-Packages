@@ -1,9 +1,9 @@
 ---
-version: 0.8.1-1
+version: 0.9.0-1
 pkgbase:
   name: impala
   pkgdesc: TUI for managing wifi
-  pkgver: 0.8.1
+  pkgver: 0.9.0
   pkgrel: 1
   url: https://github.com/pythops/impala
   arch:
@@ -17,9 +17,14 @@ pkgbase:
     - glibc
     - iwd
   source:
-    - impala-0.8.1.tar.gz::https://github.com/pythops/impala/archive/v0.8.1.tar.gz
+    - impala-0.9.0.tar.gz::https://github.com/pythops/impala/archive/v0.9.0.tar.gz
   sha512sums:
-    - f6ced2449c69e6814246335ca505807544c66309fb55b4ea5fd31f5f47563cf72a3c49bbcc807e212cb72b403102968871570d44c350079980a40b9b87cb4850
+    - 52428dc343a4fa0165d220752cc7f79460b2308cfa3f07a9142be3d73b7251bc2e0b3133450259c30e5626c0a3d9fad26c09d51707dc6570a2b251c19918035d
 pkgname:
   - name: impala
-# generated with artixpkg 0.38.5-1-any
+    depends:
+      - libgcc
+      - glibc
+      - iwd
+      - libgcc_s.so
+# generated with artixpkg 0.39.1-1-any
