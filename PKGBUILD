@@ -138,7 +138,7 @@ source=(
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
-  "security-state--intermediates.zip::${_src_repo}/releases/download/${pkgver}/security-state--intermediates.zip"
+  "security-state--intermediates-${pkgver}.zip::${_src_repo}/releases/download/${pkgver}/security-state--intermediates.zip"
   "${__pkgname}.desktop"
   "konform-browser-testing.install"
   "default192x192.png"
@@ -165,7 +165,7 @@ validpgpkeys=(
   # https://blog.mozilla.org/security/2023/05/11/updated-gpg-key-for-signing-firefox-releases/
   14F26682D0916CDD81E37B6D61B7B526D98F0353
 )
-noextract=("security-state--intermediates.zip")
+noextract=("security-state--intermediates-${pkgver}.zip")
 _languages=(
     ach af an ar ast az be bg bn br bs ca-valencia ca cak cs cy da de dsb el
     en-CA en-GB en-US eo es-AR es-CL es-ES es-MX et eu fa ff fi fr fy-NL ga-IE
@@ -187,7 +187,7 @@ prepare() {
   mv "${srcdir}/firefox-${_ffsrcver%b*}"/* "${srcdir}/firefox-${_ffsrcver%b*}"/.* "${_lw_srcdir}/"
   mkdir -p "${_lw_srcdir}/lw"
   mv "../firefox-l10n-${_l10n_commit}" "${_lw_srcdir}/lw/l10n"
-  mv "../security-state--intermediates.zip" "services/settings/dumps/security-state/intermediates/security-state--intermediates.zip"
+  mv "../security-state--intermediates-${pkgver}.zip" "services/settings/dumps/security-state/intermediates/security-state--intermediates.zip"
 
   python3 scripts/apply-patches.py "${_srcver}" "${_lwrelver}"
 

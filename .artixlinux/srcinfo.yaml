@@ -89,7 +89,7 @@ pkgbase:
   provides:
     - konform-browser
   noextract:
-    - security-state--intermediates.zip
+    - security-state--intermediates-140.14.0.100.zip
   options:
     - '!debug'
     - '!emptydirs'
@@ -103,7 +103,7 @@ pkgbase:
     - firefox-140.14.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/140.14.0esr-candidates/build1/source/firefox-140.14.0esr.source.tar.xz
     - firefox-140.14.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/140.14.0esr-candidates/build1/source/firefox-140.14.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz
-    - security-state--intermediates.zip::https://codeberg.org/konform-browser/source/releases/download/140.14.0.100/security-state--intermediates.zip
+    - security-state--intermediates-140.14.0.100.zip::https://codeberg.org/konform-browser/source/releases/download/140.14.0.100/security-state--intermediates.zip
     - konform.desktop
     - konform-browser-testing.install
     - default192x192.png
