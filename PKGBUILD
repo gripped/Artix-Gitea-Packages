@@ -14,8 +14,8 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-pkgver=153.1.0.100b2
-#pkgver=140.13.0.102
+#pkgver=153.1.0.100b2
+pkgver=140.14.0.100
 
 pkgrel=1
 _ffbuild=1
@@ -147,8 +147,8 @@ source=(
   "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
   "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('2c78488aaf7281c9551ad58cf3cc5c1bfd53d1bb937301b909508396692c7ba8'
-            '77adcb2664dda25ca1f01f5a795ae695ed0a0a1464a268c4f13159956407c7ad'
+sha256sums=('a964d5bc5fcecb35701396493dcdaad6ddbc6dffe80d17051e82b15178e8d5a9'
+            '28006bd454e703932e1ea804918165774a1e21478b18e551cd1b38111d664239'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '0c21f80ad1b3796c49429949e6a3d52cbe9c3b5b4c317690a749d80076396d0c'
