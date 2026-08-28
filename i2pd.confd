@@ -1,0 +1,11 @@
+# Select i2pd log type.
+# Can be either:
+# syslog
+# stdout
+
+# `stdout` can be used alongside OpenRC logging settings, such as
+# `output_log` or `output_logger`.
+I2PD_LOG='syslog'
+
+# Select i2pd log level: debug, info, warn, error, none
+# I2PD_LOGLEVEL='info'
