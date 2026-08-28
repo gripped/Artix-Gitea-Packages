@@ -4,7 +4,7 @@
 
 pkgname=libcdio-paranoia
 pkgver=10.2+2.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc='Compact Disc Digital Audio (CDDA) extraction tool using libcdio for CDROM access'
 arch=(x86_64)
 url='https://www.gnu.org/software/libcdio/'
@@ -24,7 +24,7 @@ prepare() {
   # Update tests to make them compatible with newer libcdio
   git checkout 53718dbe36ee9fd42e97527188a788f2754288c0 -- test
 
-  autoreconf -fi
+  autoreconf -fiv
 }
 
 build() {
