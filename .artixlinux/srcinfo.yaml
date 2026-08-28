@@ -1,10 +1,10 @@
 ---
-version: 38542-10
+version: 38542-11
 pkgbase:
   name: mplayer
   pkgdesc: Media player for Linux
   pkgver: 38542
-  pkgrel: 10
+  pkgrel: 11
   url: http://www.mplayerhq.hu/
   arch:
     - x86_64
