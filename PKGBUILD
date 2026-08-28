@@ -1,7 +1,7 @@
 # Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 
 pkgname=qmmp
-pkgver=2.3.2
+pkgver=2.4.1
 pkgrel=1
 pkgdesc="Qt based audio-player"
 arch=('x86_64')
@@ -32,7 +32,7 @@ optdepends=('mpg123: to play MP3 files'
             'ffmpeg' 'libsamplerate' 'wavpack')
 changelog=$pkgname.changelog
 source=(http://qmmp.ylsoftware.com/files/$pkgname/${pkgver%.*}/$pkgname-$pkgver.tar.bz2)
-sha512sums=('1ef515561642cc3801a1dfc77402be189752708b25c07d476afe1560744490629ded68ec3299db28d8f30f557c734624ac6acb1b4d22d1841a0729671a51a063')
+sha512sums=('cb911294a47075f61d89bb1c95ddb583e61af63fd1bb7f35e9432278ad359f2c77cb3b27305f8451bbfe335553d05bf15bf3a25d2656139cc16a4b1c27536a5b')
 
 build() {
   cd "${srcdir}"/$pkgname-$pkgver
