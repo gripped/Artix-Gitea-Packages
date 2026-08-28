@@ -1,0 +1,29 @@
+---
+version: 2.0.1-8
+pkgbase:
+  name: vcdimager
+  pkgdesc: A full-featured mastering suite for authoring disassembling and analyzing Video CD's and Super Video CD's
+  pkgver: 2.0.1
+  pkgrel: 8
+  url: https://www.gnu.org/software/vcdimager/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - libcdio
+    - libxml2
+    - popt
+  source:
+    - https://ftp.gnu.org/gnu/vcdimager/vcdimager-2.0.1.tar.gz
+    - https://ftp.gnu.org/gnu/vcdimager/vcdimager-2.0.1.tar.gz.sig
+    - libxml214.diff
+  validpgpkeys:
+    - DAA63BC2582034A02B923D521A8DE5008275EC21
+  sha256sums:
+    - 67515fefb9829d054beae40f3e840309be60cda7d68753cafdd526727758f67a
+    - SKIP
+    - a2fcf16c20df908889f8bc4287666dec54d1e2921a15d6edea5625c9579e8172
+pkgname:
+  - name: vcdimager
+# generated with artixpkg 0.39.1-1-any
