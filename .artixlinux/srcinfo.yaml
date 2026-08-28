@@ -1,10 +1,10 @@
 ---
-version: 20260828-1
+version: 20260828-2
 pkgbase:
   name: i2pd-openrc
   pkgdesc: i2pd OpenRC init script
   pkgver: 20260828
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitea.artixlinux.org/artixlinux/packages-openrc
   arch:
     - any
@@ -19,12 +19,14 @@ pkgbase:
     - init-i2pd
   conflicts:
     - init-i2pd
+  backup:
+    - etc/conf.d/i2pd
   source:
     - i2pd.initd
     - i2pd.confd
   b2sums:
     - 20a30acc0109ebcc1e865e56e0b05769fd5aa9abe282869a61d39ca79e755a6774c009220119c10dd07e1559b77884961f9c2c1c93eefbb47c9e52411f19d50b
-    - e86d1fbce66287cde249e29fe5c16643c526946261522460b64953f74d4b462c4639697d282002ef0a8c73d6be0940f87b5de7596298e2b360eb8992740915f2
+    - 8bc1c1ccc404b5f39b173d839c8f55a6ec0d589bee7b5bacff7c7a554d6a83d00976e66de1acc879433762ec442257dae996661c16899ef3e16fe98f9732e5cd
 pkgname:
   - name: i2pd-openrc
 # generated with artixpkg 0.39.1-1-any
