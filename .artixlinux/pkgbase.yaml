@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 0.1.13-3
+    packages:
+      - libetonyek-0.1.13-3-x86_64.pkg.tar.zst
+      - libetonyek-doc-0.1.13-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
