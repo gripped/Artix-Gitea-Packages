@@ -138,7 +138,7 @@ source=(
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz.asc"::"${_ffsrcurl}/source/${_ff_source_tarball}.asc"
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
-  "security-state--intermediates.zip::https://codeberg.org/konform-browser/konform-next/releases/download/${pkgver}/security-state--intermediates.zip"
+  "security-state--intermediates.zip::${_src_repo}/releases/download/${pkgver}/security-state--intermediates.zip"
   "${__pkgname}.desktop"
   "konform-browser-testing.install"
   "default192x192.png"
@@ -151,7 +151,7 @@ sha256sums=('a964d5bc5fcecb35701396493dcdaad6ddbc6dffe80d17051e82b15178e8d5a9'
             '28006bd454e703932e1ea804918165774a1e21478b18e551cd1b38111d664239'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
-            '0c21f80ad1b3796c49429949e6a3d52cbe9c3b5b4c317690a749d80076396d0c'
+            '724db1742a08265e82bfbdffd7ee3ea2d323dae0c4ef55bc3497e5c6d663f2eb'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
             '1242299c0a3e90a6b1f1c2bcc6bfa32e7c914a88a9c98fb879b016e6a1505c84'
             'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
