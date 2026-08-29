@@ -1,0 +1,38 @@
+---
+version: 20260827-1
+pkgbase:
+  name: s6-shell-completion
+  pkgdesc: Shell completion for s6 frontend and s6-rc
+  pkgver: 20260827
+  pkgrel: 1
+  url: https://github.com/capezotte/s6-shell-completion
+  arch:
+    - any
+  license:
+    - CC0-1.0
+  makedepends:
+    - git
+  depends:
+    - s6
+    - s6-frontend
+    - s6-rc
+  source:
+    - git+https://github.com/capezotte/s6-shell-completion#commit=a1bc48e130f66e489fd60619a386f5f3342b3128
+  sha256sums:
+    - 6da16fe36770f244d9e08f50cfa912c9f05ec146aa05336794888905a991b9b7
+pkgname:
+  - name: s6-bash-completion
+    pkgdesc: Shell completion for s6 frontend and s6-rc (bash)
+    depends:
+      - s6
+      - s6-frontend
+      - s6-rc
+      - bash
+  - name: s6-zsh-completion
+    pkgdesc: Shell completion for s6 frontend and s6-rc (zsh)
+    depends:
+      - s6
+      - s6-frontend
+      - s6-rc
+      - zsh
+# generated with artixpkg 0.39.1-1-any
