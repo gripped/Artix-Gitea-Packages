@@ -3,11 +3,11 @@
 _commit=d2592c8782a850964c307a0d1357482017f7ce3f
 pkgname=s6-fish-completion
 pkgver=20260731
-pkgrel=1
+pkgrel=2
 pkgdesc="Shell completion for s6 frontend and s6-rc (fish)"
 arch=(any)
 url="https://git.informatics.coop/nix/slam"
-license=('CC0-1.0')
+license=('LicenseRef-PPL')
 depends=(s6 s6-frontend s6-rc fish)
 makedepends=(git pkg-config)
 source=("git+${url}#commit=${_commit}")

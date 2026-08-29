@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260731-1
+    version: 20260731-2
     packages:
-      - s6-fish-completion-20260731-1-any.pkg.tar.zst
+      - s6-fish-completion-20260731-2-any.pkg.tar.zst
     debug: []
