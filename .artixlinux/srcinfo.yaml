@@ -1,0 +1,41 @@
+---
+version: 8.45-5
+pkgbase:
+  name: pcre
+  pkgdesc: A deprecated library that implements Perl 5-style regular expressions
+  pkgver: 8.45
+  pkgrel: 5
+  url: https://www.pcre.org/
+  arch:
+    - x86_64
+  license:
+    - BSD
+  depends:
+    - glibc
+    - libgcc
+    - libstdc++
+    - readline
+    - zlib
+    - bzip2
+    - bash
+  provides:
+    - libpcre.so
+    - libpcre16.so
+    - libpcre32.so
+    - libpcreposix.so
+    - libpcrecpp.so
+  source:
+    - https://sourceforge.net/projects/pcre/files/pcre/8.45/pcre-8.45.tar.bz2
+    - https://sourceforge.net/projects/pcre/files/pcre/8.45/pcre-8.45.tar.bz2.sig
+    - 0001-pcre-JIT-compiler-update-for-Intel-CET.patch
+    - 0002-pcre-Pass-mshstk-to-the-compiler-when-Intel-CET-is-enable.patch
+  validpgpkeys:
+    - 45F68D54BBE23FB3039B46E59766E084FB0F43D8
+  sha256sums:
+    - 4dae6fdcd2bb0bb6c37b5f97c33c2be954da743985369cddac3546e3218bffb8
+    - SKIP
+    - 86e2fe1193f2dfaa5e3f3866c6be42a9cd0dddc5623f1658203a4dc73a4526f7
+    - a44ffb942d585c2c95036f91529063738b1c373fcd26a3e2dc95ae76b1f3c3db
+pkgname:
+  - name: pcre
+# generated with artixpkg 0.39.1-1-any
