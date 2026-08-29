@@ -1,10 +1,10 @@
 ---
-version: 1.12.6-2
+version: 1.12.7-3
 pkgbase:
   name: imlib2
   pkgdesc: Library that does image file loading and saving as well as rendering, manipulation, arbitrary polygon support
-  pkgver: 1.12.6
-  pkgrel: 2
+  pkgver: 1.12.7
+  pkgrel: 3
   url: https://sourceforge.net/projects/enlightenment/
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - BSD
   makedepends:
     - highway
+    - git
     - libheif
     - libid3tag
     - libjxl
@@ -39,11 +40,9 @@ pkgbase:
   provides:
     - libImlib2.so
   source:
-    - https://downloads.sourceforge.net/project/enlightenment/imlib2-src/1.12.6/imlib2-1.12.6.tar.xz
-  sha256sums:
-    - 250f9752f69dc522e529a81aaa9395705f7fc312ff2453e5de59ac2ba1f2858f
+    - imlib2::git+https://git.enlightenment.org/old/legacy-imlib2.git#tag=v1.12.7
   sha512sums:
-    - e62b7e89f6d75fb6a649a589f06fea34d08bba696c68d9ece59ee9500558af874c1073ffecae2d1cadd6d603f1acf4d071a415dbf2ba73b505ccf11fe45eea62
+    - 47a77967bdd96b779794c4b35947984dfa0890e646e20a2c6498e73f40a95025de09513ef730fe5ff92a4c0556ab36e54e6c8e588f2a6844e0a6e3ffc228f01e
 pkgname:
   - name: imlib2
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
