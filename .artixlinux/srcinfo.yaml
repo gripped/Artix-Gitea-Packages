@@ -1,0 +1,27 @@
+---
+version: 20260731-1
+pkgbase:
+  name: s6-fish-completion
+  pkgdesc: Shell completion for s6 frontend and s6-rc (fish)
+  pkgver: 20260731
+  pkgrel: 1
+  url: https://git.informatics.coop/nix/slam
+  arch:
+    - any
+  license:
+    - CC0-1.0
+  makedepends:
+    - git
+    - pkg-config
+  depends:
+    - s6
+    - s6-frontend
+    - s6-rc
+    - fish
+  source:
+    - git+https://git.informatics.coop/nix/slam#commit=d2592c8782a850964c307a0d1357482017f7ce3f
+  sha256sums:
+    - 2535d4084f387e59347ac08a8fbd5201cb3b35b63d2ad7e48df641c3788f9f40
+pkgname:
+  - name: s6-fish-completion
+# generated with artixpkg 0.39.1-1-any
