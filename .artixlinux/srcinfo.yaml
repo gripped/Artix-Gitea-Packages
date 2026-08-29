@@ -1,10 +1,10 @@
 ---
-version: 7.2.2.artix1-1
+version: 7.2.2.artix1-1.1
 pkgbase:
   name: linux
   pkgdesc: Linux
   pkgver: 7.2.2.artix1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/archlinux/linux
   arch:
     - x86_64
@@ -60,9 +60,9 @@ pkgbase:
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
-    - 1bc3bd067fc98dee24456413b8a59b5509a57bd814db00af246dd719727d51b8
+    - 096425ea585be1141dddafa40a52fc20dd1674dc8892fdfe1408cc584ed35374
   b2sums_x86_64:
-    - b3495c3bceb9a603d660c7f8b012405bbdb7bedc2ea7a820c01798d873e416d76cba32ea3a0c0e5855616ce6c4d8ef67fa6e650d4d71b3a3f7569040afa89589
+    - dc43900d5d708f7923c80296709321f8cb68ed3d3acc97bd0e8c42ea0de62e9527e37e1e743231f806556bdab8bec4ab36c3a2ba3b030f7e20df06a0d31d8998
 pkgname:
   - name: linux
     pkgdesc: The Linux kernel and modules

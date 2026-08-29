@@ -7,7 +7,7 @@ _artix=${_arch/arch/artix}
 
 pkgbase=linux
 pkgver=${_ver}.${_artix}
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Linux'
 url='https://github.com/archlinux/linux'
 arch=(
@@ -62,12 +62,12 @@ sha256sums=('7d0e7ce14f98c43efe880cffbf354a59be45928fdf7170d7333c374ae91c0d83'
             'SKIP'
             'e8f3e197bd64985922150873c4af09301088a7437217f519243ce74ba6a691f4'
             'SKIP')
-sha256sums_x86_64=('1bc3bd067fc98dee24456413b8a59b5509a57bd814db00af246dd719727d51b8')
+sha256sums_x86_64=('096425ea585be1141dddafa40a52fc20dd1674dc8892fdfe1408cc584ed35374')
 b2sums=('7d3904933ddca054bc085d34c2941d0ed74280c3691716b55369197a0f40dad8d116abaca22fcea71476bd52e9396d80d066d3e859bc945dfdb9e305baff59ab'
         'SKIP'
         '3953137079a786967230b6f5f2b4ccaa7cb5a2b09ef533ea5b9b8ca83fa4d8795a2fd8430bb5fc1dd280396571685e3fa06fe6aaa4fc64ad9484008457218713'
         'SKIP')
-b2sums_x86_64=('b3495c3bceb9a603d660c7f8b012405bbdb7bedc2ea7a820c01798d873e416d76cba32ea3a0c0e5855616ce6c4d8ef67fa6e650d4d71b3a3f7569040afa89589')
+b2sums_x86_64=('dc43900d5d708f7923c80296709321f8cb68ed3d3acc97bd0e8c42ea0de62e9527e37e1e743231f806556bdab8bec4ab36c3a2ba3b030f7e20df06a0d31d8998')
 
 # https://www.kernel.org/pub/linux/kernel/v7.x/sha256sums.asc
 
