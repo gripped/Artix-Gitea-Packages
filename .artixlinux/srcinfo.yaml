@@ -170,4 +170,4 @@ pkgname:
       - x86_64
     depends:
       - glibc
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
