@@ -1,6 +1,6 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
-_ver=7.1.10
+_ver=7.2.2
 _rel=1
 _arch=arch${_rel}
 _artix=${_arch/arch/artix}
@@ -58,18 +58,18 @@ validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
   83BC8889351B5DEBBB68416EB8AC08600F108CDF  # Jan Alexander Steffens (heftig)
 )
-sha256sums=('67d2f4697a02f3bec98e744b1bdc307e920c24bb4e88b5ee97dc9a34e9aa9999'
+sha256sums=('7d0e7ce14f98c43efe880cffbf354a59be45928fdf7170d7333c374ae91c0d83'
             'SKIP'
-            'fbd5815ca26d02fe65bdeacad71b22eaa9cb0ddd02b13b6637b94b5d02fd325f'
+            'e8f3e197bd64985922150873c4af09301088a7437217f519243ce74ba6a691f4'
             'SKIP')
-sha256sums_x86_64=('e990760808fdb2d0dfd283c7219e4012e975a2b013289731c8ebb7d80ea8be19')
-b2sums=('fd433e456a207ba881c085d9743dcee706cadc9eed577bb5893419569cc10e494607116fd1bede2bda5c35d9ef76d32e3160473d5d9e7ea378de248a296914dd'
+sha256sums_x86_64=('1bc3bd067fc98dee24456413b8a59b5509a57bd814db00af246dd719727d51b8')
+b2sums=('7d3904933ddca054bc085d34c2941d0ed74280c3691716b55369197a0f40dad8d116abaca22fcea71476bd52e9396d80d066d3e859bc945dfdb9e305baff59ab'
         'SKIP'
-        '93e99c1e404d59ddf801d416facfb0f471b7284c55e362d481cb0df9d360bf10b214b4b609c683b2f0832efb6140c8c3849a37b36a8904ce452e96687bd75c6f'
+        '3953137079a786967230b6f5f2b4ccaa7cb5a2b09ef533ea5b9b8ca83fa4d8795a2fd8430bb5fc1dd280396571685e3fa06fe6aaa4fc64ad9484008457218713'
         'SKIP')
-b2sums_x86_64=('1c6e5158adc8fa3fd2f545bafbe7f44272496b7074ffc2b887b2a45535b1ea53777449b2129087cc001c7ac906b88b3f03e10495f700249df61b9fc724ceaa10')
+b2sums_x86_64=('b3495c3bceb9a603d660c7f8b012405bbdb7bedc2ea7a820c01798d873e416d76cba32ea3a0c0e5855616ce6c4d8ef67fa6e650d4d71b3a3f7569040afa89589')
 
-# https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
+# https://www.kernel.org/pub/linux/kernel/v7.x/sha256sums.asc
 
 export KBUILD_BUILD_HOST=artixlinux
 export KBUILD_BUILD_USER=$pkgbase
@@ -91,7 +91,6 @@ prepare() {
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
   done
-
   sed -i -r "s/EXTRAVERSION = -${_arch}/EXTRAVERSION = -${_artix}/" "Makefile"
 
   echo "Setting config..."
