@@ -10,6 +10,7 @@
 *.log.*
 *.sig
 
+wireplumber/
 pkg/
 src/
 
