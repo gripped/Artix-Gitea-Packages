@@ -52,10 +52,7 @@ validpgpkeys=(
   '647F28654894E3BD457199BE38DBBDC86092693E'  # Greg Kroah-Hartman
 )
 sha256sums=('7d0e7ce14f98c43efe880cffbf354a59be45928fdf7170d7333c374ae91c0d83'
-            'SKIP'
-            '2e187734d8aec58a3046d79883510d779aa93fb3ab20bd3132c1a607ebe5498f'
-            'b1315cb77a35454e1af9172f821a52e2a0cb18561be05a340d21cf337b01ae61'
-            '2d5e2f8d40b6f19bf2e1dead57ca105d72098fb0b418c09ff2e0cb91089710af')
+            'SKIP')
 
 prepare() {
   cd "$_srcname"
