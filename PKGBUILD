@@ -18,11 +18,9 @@ replaces=('act_runner')
 backup=("etc/${pkgname}/config.yaml")
 install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
-        "${pkgname}.service"
         "${pkgname}.sysusers"
         "${pkgname}.tmpfiles")
 sha256sums=('a0146974eacddbb167e8316350a4b1fc1fa3010730866ec646ea660c008dfc67'
-            '84f1d7c8f6311689b935ab16037d9b1bb6fae0155a54a6a19d3edabe8856e5cf'
             'd7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d'
             '476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37')
 
@@ -46,5 +44,4 @@ package() {
 	install -Dm 644 "${srcdir}/${pkgname}-config.yaml" "${pkgdir}/etc/${pkgname}/config.yaml"
 	install -Dm 644 "${srcdir}/${pkgname}.sysusers" "${pkgdir}/usr/lib/sysusers.d/${pkgname}.conf"
 	install -Dm 644 "${srcdir}/${pkgname}.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/${pkgname}.conf"
-	install -Dm 644 "${srcdir}/${pkgname}.service" "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
 }
