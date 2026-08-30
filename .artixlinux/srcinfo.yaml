@@ -1,9 +1,9 @@
 ---
-version: 7.13.5-1
+version: 7.14.1-1
 pkgbase:
   name: python-coverage
   pkgdesc: A tool for measuring code coverage of Python programs
-  pkgver: 7.13.5
+  pkgver: 7.14.1
   pkgrel: 1
   url: https://coverage.readthedocs.io/en/latest/
   arch:
@@ -24,11 +24,11 @@ pkgbase:
     - glibc
     - python
   source:
-    - git+https://github.com/nedbat/coveragepy.git#tag=7.13.5
+    - git+https://github.com/nedbat/coveragepy.git#tag=7.14.1
   sha512sums:
-    - 4ba95dcba3f81cb330b635d3cbe79eeeea1301fd0ce75a407c9f2590e6bd8a3e16e3b36ccb04b7c8955ed04ea908228c39f767900a18c32753f4d1df408b6346
+    - 7a22807f030890d5ebad6e7cb8c3ecd8646fc4b6fdc3f745905a42c1b099e81de1e0e4405c826dcd96321f6bfc8bb634b7bc8442e49c5586cc5f04b25420d735
   b2sums:
-    - c08eca86c512a73180a01cbb2c143b3017dff911fdedc0402818816bcc6f43496b048bbdcf327d413dda29357cdb5379ae2f5f02a9b375f7563d51690378b3ef
+    - e499b11deb02787d530d88a4d7db77897a774ea1b914c800289f82934e861029305b051145cd2fb2325eb87dd69ee4c9f0f71e34b2cbf2dcf505bf422f475438
 pkgname:
   - name: python-coverage
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
