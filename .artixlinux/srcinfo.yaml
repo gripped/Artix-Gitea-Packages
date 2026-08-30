@@ -1,17 +1,16 @@
 ---
-version: 0.6.2-1
+version: 0.6.2-2
 pkgbase:
   name: helvum
   pkgdesc: GTK patchbay for PipeWire
   pkgver: 0.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/pipewire/helvum
   arch:
     - x86_64
   license:
     - GPL-3.0-only
   makedepends:
-    - appstream-glib
     - cargo
     - clang
     - meson
@@ -36,4 +35,4 @@ pkgbase:
     - 2079ee149795b5d010f79c27b6e530fd117e649640561eb0df8fdc1210fcc9a87d2f0d5c6d27bbdfbff717826c8239fc9669c3c98c00f9a5a692e583cd72edd5
 pkgname:
   - name: helvum
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
