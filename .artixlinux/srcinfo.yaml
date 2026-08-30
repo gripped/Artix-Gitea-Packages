@@ -1,10 +1,10 @@
 ---
-version: 2.8.15-2
+version: 2.8.16-1
 pkgbase:
   name: enchant
   pkgdesc: A wrapper library for generic spell checking
-  pkgver: 2.8.15
-  pkgrel: 2
+  pkgver: 2.8.16
+  pkgrel: 1
   url: https://rrthomas.github.io/enchant/
   arch:
     - x86_64
@@ -34,13 +34,13 @@ pkgbase:
   provides:
     - libenchant-2.so
   source:
-    - git+https://github.com/rrthomas/enchant#tag=v2.8.15
+    - git+https://github.com/rrthomas/enchant#tag=v2.8.16
     - git+https://git.savannah.gnu.org/git/gnulib.git
     - git+https://github.com/gnulib-modules/bootstrap.git
   b2sums:
-    - 148e77510bc258317c8b5e0564eb4475dba9ecea803baf8e3a0c40ecf632e68d76459f0296e1350fb68697327b8cd6c0f89753332375af0bffd21c63c7d5d1e4
+    - 32001293b5112fcd3810740e3c438b73d5d4c72f7dbaf5340200e5892f7ba91bee5d359b6d8fbfd6d2e271af10e8e30e1d3e700729486fba57ac4ee9975cd911
     - SKIP
     - SKIP
 pkgname:
   - name: enchant
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
