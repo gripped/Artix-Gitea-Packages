@@ -1,10 +1,10 @@
 ---
-version: 24.19.0-1
+version: 24.20.0-1
 pkgbase:
   name: nodejs-lts-krypton
   pkgdesc:
     Evented I/O for V8 javascript ("Active LTS" release: Krypton)
-  pkgver: 24.19.0
+  pkgver: 24.20.0
   pkgrel: 1
   url: https://nodejs.org/
   arch:
@@ -32,12 +32,13 @@ pkgbase:
   optdepends:
     - 'npm: nodejs package manager'
   provides:
-    - nodejs=24.19.0
+    - nodejs=24.20.0
     - nodejs-lts
   conflicts:
     - nodejs
   source:
-    - git+https://github.com/nodejs/node.git#tag=v24.19.0?signed
+    - git+https://github.com/nodejs/node.git#tag=v24.20.0?signed
+    - 0001-test-account-for-varied-OpenSSL-CCM-final-behaviours.patch
   validpgpkeys:
     - 8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600
     - 890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4
@@ -48,7 +49,8 @@ pkgbase:
     - 108F52B48DB57BB0CC439B2997B01419BD92F80A
     - DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7
   b2sums:
-    - ae09ed7efd324938eb234a7c409f40d85e96c2262c4a9aaa03374928a0d436f112d0c5258c4db43942a2695e3998c3f71edd50949e5fc2f7cc3e7c858685bf6e
+    - a4e5287d10c437d5ee501ec2c8ce96f0fd6df0d190d361f223edc2e433e4fc23439c6417cb56f361975745089c179edbc48b0c6c83172c3c685328c5a7ad1821
+    - 970519acd0adacbe647ecadd7536e2564e11475cb0334e9cedf6f370585a942ac9b13504969205cf59f147ff3e9bf52d7d0e932773420cef38cf30add5e5b38b
 pkgname:
   - name: nodejs-lts-krypton
 # generated with artixpkg 0.39.1-1-any
