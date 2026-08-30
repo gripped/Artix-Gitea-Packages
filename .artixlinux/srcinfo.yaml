@@ -1,10 +1,10 @@
 ---
-version: 6.7.4-1
+version: 6.7.4-2
 pkgbase:
   name: oxygen
   pkgdesc: KDE Oxygen style
   pkgver: 6.7.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -17,7 +17,6 @@ pkgbase:
     - frameworkintegration5
     - kconfigwidgets5
     - kiconthemes5
-    - kirigami2
     - kwindowsystem5
     - kservice5
     - kcompletion5
@@ -104,4 +103,4 @@ pkgname:
     pkgdesc: Oxygen cursors
     depends: []
     optdepends: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
