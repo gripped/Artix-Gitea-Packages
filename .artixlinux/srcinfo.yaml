@@ -1,0 +1,27 @@
+---
+version: 3.13.1-1
+pkgbase:
+  name: shfmt
+  pkgdesc: Format shell programs
+  pkgver: 3.13.1
+  pkgrel: 1
+  url: https://github.com/mvdan/sh
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - git
+    - go
+    - scdoc
+  depends:
+    - glibc
+  options:
+    - '!lto'
+  source:
+    - git+https://github.com/mvdan/sh.git#tag=v3.13.1
+  b2sums:
+    - ea2cd6e69ac3f18624ce6769161041de7a799a4f8b4a6aaefdbbaba842eca7e518b048d6dc3648edf59fcc5113e4ed4d8028028eeadaf1627091281491af7bd8
+pkgname:
+  - name: shfmt
+# generated with artixpkg 0.39.1-1-any
