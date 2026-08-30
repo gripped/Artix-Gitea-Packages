@@ -1,9 +1,9 @@
 ---
-version: 1.0.2-1
+version: 1.1.0-1
 pkgbase:
   name: python-requests-futures
   pkgdesc: Asynchronous Python HTTP Requests for Humans using Futures
-  pkgver: 1.0.2
+  pkgver: 1.1.0
   pkgrel: 1
   url: https://github.com/ross/requests-futures
   arch:
@@ -13,7 +13,6 @@ pkgbase:
   checkdepends:
     - python-pytest
     - python-pytest-httpbin
-    - python-werkzeug
   makedepends:
     - git
     - python-build
@@ -23,9 +22,9 @@ pkgbase:
   depends:
     - python-requests
   source:
-    - git+https://github.com/ross/requests-futures.git#tag=v1.0.2
+    - git+https://github.com/ross/requests-futures.git#tag=v1.1.0
   sha256sums:
-    - 02bff1dc474b1158be47e042c5e03a07996bb046a245e8ce3c0699c87f09dcd1
+    - 9bcb4dfb71c7e8eaee90e3b8b0028b91cb1b5c900945aa217cc75f9cd049c47f
 pkgname:
   - name: python-requests-futures
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.39.1-1-any
