@@ -1,24 +1,50 @@
-# Maintainer: "Amhairghin" Oscar Garcia Amor (https://ogarcia.me)
+# Maintainer: Balló György <ballogyor+arch at gmail dot com>
 
 pkgname=refine
-pkgver=0.6.0
+pkgver=0.8.0
 pkgrel=1
-pkgdesc='Tweak advanced settings in GNOME'
-arch=('any')
+pkgdesc='Tweak various aspects of GNOME'
+arch=(any)
 url='https://tesk.page/refine/'
-license=('GPL-3.0-or-later')
-depends=('libadwaita' 'python' 'python-gobject')
-makedepends=('blueprint-compiler' 'git' 'meson')
-source=("${pkgname}::git+https://gitlab.gnome.org/TheEvilSkeleton/Refine.git#tag=${pkgver}")
-b2sums=('3b18370bf3e841558b572705de23c190fc627e4f403a81fefba7b8a4af19d7f8875c65fbd2486cf3301061f9a9eee5280cc4fcd7eb4c3f901ead3d5ae25ab31a')
+license=(GPL-3.0-or-later)
+depends=(
+  dconf
+  glib2
+  gtk4
+  hicolor-icon-theme
+  libadwaita
+  libportal
+  pango
+  python
+  python-gobject
+)
+makedepends=(
+  appstream
+  blueprint-compiler
+  git
+  meson
+)
+source=("git+https://gitlab.gnome.org/TheEvilSkeleton/Refine.git?signed#tag=$pkgver")
+b2sums=(23e79d7092ec2077aff2a5c6f1bf7e0a6bc5fc68c42d29d3e56a9a29ef27530fb6485f2372cc1aae366704db129661a49d9dd0f118f7bff896364eefc6d92724)
+validpgpkeys=(78EA2EFEF2F55C87D776F0BAFA9B0DB2217599CA) # TheEvilSkeleton <theevilskeleton@riseup.net>
+
+prepare() {
+  cd Refine
+}
 
 build() {
-  artix-meson "${pkgname}" build -Dexec_name_as_base_id=true
+  artix-meson Refine build \
+    -D exec_name_as_base_id=true
   meson compile -C build
 }
 
+check() {
+  meson test -C build --print-errorlogs
+}
+
 package() {
-  meson install -C build --destdir "${pkgdir}"
-  install -Dm644 "${pkgname}/COPYING" \
-    "${pkgdir}/usr/share/licenses/${pkgname}/COPYING"
+  meson install -C build --destdir "$pkgdir"
+
+  python -m compileall -d /usr/share "$pkgdir/usr/share"
+  python -O -m compileall -d /usr/share "$pkgdir/usr/share"
 }
