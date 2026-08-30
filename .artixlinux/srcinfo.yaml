@@ -1,10 +1,10 @@
 ---
-version: 0.14.0-2
+version: 0.15.0-1
 pkgbase:
   name: aquamarine
   pkgdesc: a very light linux rendering backend library
-  pkgver: 0.14.0
-  pkgrel: 2
+  pkgver: 0.15.0
+  pkgrel: 1
   url: https://github.com/hyprwm/aquamarine
   arch:
     - x86_64
@@ -39,9 +39,9 @@ pkgbase:
   provides:
     - libaquamarine.so
   source:
-    - https://github.com/hyprwm/aquamarine/archive/v0.14.0/aquamarine-0.14.0.tar.gz
+    - https://github.com/hyprwm/aquamarine/archive/v0.15.0/aquamarine-0.15.0.tar.gz
   sha256sums:
-    - 5dcf0b17f7dd51539fd7e79d68484f04240b3b63cf9f5f21d5b6dea0088168f9
+    - bb5323f58cd2f379cb11c39893336e49980fe2e9fb101745addd87cebde3d13d
 pkgname:
   - name: aquamarine
 # generated with artixpkg 0.39.1-1-any
