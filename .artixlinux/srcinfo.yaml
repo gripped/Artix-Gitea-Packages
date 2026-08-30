@@ -1,10 +1,10 @@
 ---
-version: 6.7.4-1
+version: 6.7.4-2
 pkgbase:
   name: breeze
   pkgdesc: Artwork, styles and assets for the Breeze visual style for the Plasma Desktop
   pkgver: 6.7.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -17,7 +17,6 @@ pkgbase:
     - frameworkintegration5
     - kconfigwidgets5
     - kiconthemes5
-    - kirigami2
     - kwindowsystem5
   depends:
     - breeze-icons
@@ -86,7 +85,6 @@ pkgname:
       - kconfigwidgets5
       - kguiaddons5
       - kiconthemes5
-      - kirigami2
       - kwindowsystem5
       - libstdc++
       - qt5-base
@@ -100,4 +98,4 @@ pkgname:
     pkgdesc: Breeze cursors
     depends: []
     optdepends: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
