@@ -3,7 +3,7 @@
 # Contributor: dudemanguy <dudemanguy@artixlinux.org>
 
 #_commit=cbf7211a23a86974dded28df127def9131281714
-_tag=0.15.2
+_tag=0.15.4
 
 pkgbase=artix-live
 pkgname=('artix-live-base'
@@ -13,7 +13,7 @@ pkgname=('artix-live-base'
         'artix-live-dinit'
         'artix-grub-live')
 pkgver=2026.08
-pkgrel=3
+pkgrel=4
 pkgdesc='Artix live session'
 arch=('any')
 url="https://gitea.artixlinux.org/artix/artix-live"
@@ -23,7 +23,7 @@ source=(
     # "git+$url.git#commit=$_commit"
     "git+$url.git#tag=$_tag"
 )
-sha256sums=('597370cfe5fa9de9bb1951fe7a46be23d95da4dfbbdf5ec5bb11646d02dc7d38')
+sha256sums=('eef490358d42c848f26f5180c6cf2e097f4f0039e83af88f939d7eecc0165309')
 
 pkgver() {
    date +%Y.%m
