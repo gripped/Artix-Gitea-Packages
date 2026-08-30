@@ -1,18 +1,17 @@
 ---
-version: 43.0-4
+version: 43.0-5
 pkgbase:
   name: devhelp
   pkgdesc: API documentation browser for GNOME
   pkgver: 43.0
-  pkgrel: 4
-  url: https://gitlab.gnome.org/GNOME/devhelp
+  pkgrel: 5
+  url: https://gitlab.gnome.org/Archive/devhelp
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later
   makedepends:
     - git
-    - appstream-glib
     - gobject-introspection
     - meson
     - yelp-tools
@@ -21,7 +20,7 @@ pkgbase:
   depends:
     - webkit2gtk-4.1
   source:
-    - git+https://gitlab.gnome.org/GNOME/devhelp.git?signed#tag=43.0
+    - git+https://gitlab.gnome.org/Archive/devhelp.git?signed#tag=43.0
     - devhelp-prgname.patch
     - devhelp-new-window.patch
   validpgpkeys:
@@ -35,4 +34,4 @@ pkgname:
   - name: devhelp-docs
     pkgdesc: API documentation browser for GNOME (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
