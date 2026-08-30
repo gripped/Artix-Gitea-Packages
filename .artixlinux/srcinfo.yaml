@@ -1,9 +1,9 @@
 ---
-version: 0.44.3-1
+version: 0.45.1-1
 pkgbase:
   name: zellij
   pkgdesc: A terminal multiplexer
-  pkgver: 0.44.3
+  pkgver: 0.45.1
   pkgrel: 1
   url: https://zellij.dev
   arch:
@@ -18,18 +18,23 @@ pkgbase:
     - mandown
   depends:
     - curl
-    - libcurl.so
     - glibc
     - libgcc
-    - libgcc_s.so
     - zlib
-    - libz.so
   options:
     - '!lto'
   source:
-    - zellij-0.44.3.tar.gz::https://github.com/zellij-org/zellij/archive/v0.44.3.tar.gz
+    - https://github.com/zellij-org/zellij/archive/refs/tags/v0.45.1/zellij-0.45.1.tar.gz
   sha512sums:
-    - 5b5f14f8ed6ae9aea962e163b05504b8f999f004ddbf61f7ed789670e234d829b86d000385aec052d73097cbe0dfb23cff6beb191c7291b525b6e9f52f908863
+    - 1fa550fe243d8b18a87ff1983631a9a76eb9dde9d1d2c59f0aa6e1bb8b1a677168c469e143de7cc4fcc9ff3a0799c1dc566553ed74bcadab345282b81c105fc8
 pkgname:
   - name: zellij
-# generated with artixpkg 0.38.5-1-any
+    depends:
+      - curl
+      - glibc
+      - libgcc
+      - zlib
+      - libcurl.so
+      - libgcc_s.so
+      - libz.so
+# generated with artixpkg 0.39.1-1-any
