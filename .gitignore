@@ -10,6 +10,7 @@
 *.log.*
 *.sig
 
+libopenshot-audio/
 pkg/
 src/
 

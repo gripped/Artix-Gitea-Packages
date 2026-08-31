@@ -12,13 +12,14 @@ pkgname=(
   libopenshot-audio
   libopenshot-audio-docs
 )
-pkgver=0.6.0
+pkgver=1.0.0
 pkgrel=1
 pkgdesc="A high-quality audio editing and playback library used by libopenshot."
 arch=(x86_64)
 url="https://github.com/openshot/libopenshot-audio"
 license=(GPL-3.0-only)
 makedepends=(
+  git
   alsa-lib
   cmake
   doxygen
@@ -27,9 +28,9 @@ makedepends=(
   python
   zlib
 )
-source=($url/archive/v$pkgver/$pkgname-v$pkgver.tar.gz)
-sha512sums=('b6f9e6a206c177778041d7897b86c3512b79038113d906422c491509c45a494edbf50b0ce448cffecdd8173937cf5d8e8f13590c69d372d0991caaa83e71c6aa')
-b2sums=('497646faa0227d7872bb611ed308b9fe28d95708ce28adbf717ec4d07efb49214378395527ce13f250e2978d041edacb8fdd23869b58dd4d753e1ebbafad3120')
+source=("git+${url}#tag=v${pkgver}")
+sha512sums=('35015df88d02c2e09d8b24e8c20cad9546489006116a6fb99488b953d19052b5d2a8167b6fb658d5d01ce329779f55ab0a76e0db98aaa34e1a564fb5941e185e')
+b2sums=('5475e17b22f708abd2d2de41f606f25e4ad3b5dac925a0d6b1f23643ff40d2009f51e385aea91dff504785095ccca0513df48a00549c0a9151dcd2be2beb2a6f')
 
 _pick() {
   local p="$1" f d; shift
@@ -46,7 +47,7 @@ build() {
     -B build
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
-    -S $pkgname-$pkgver
+    -S "$pkgbase"
     -W no-dev
   )
 
@@ -76,11 +77,11 @@ package_libopenshot-audio() {
     _pick libopenshot-audio-docs usr/share/doc/
   )
 
-  install -vDm 644 $pkgname-$pkgver/{AUTHORS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 -t "$pkgdir/usr/share/doc/$pkgname" "$pkgbase"/{AUTHORS,README.md}
 }
 
 package_libopenshot-audio-docs() {
   pkgdesc+=" - documentation"
 
-  mv -v $pkgname/* "$pkgdir"
+  mv -v "$pkgname"/* "$pkgdir"
 }
