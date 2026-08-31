@@ -1,10 +1,10 @@
 ---
-version: 20260817.0-1
+version: 20260817.0-2
 pkgbase:
   name: abseil-cpp
   pkgdesc: Collection of C++ library code designed to augment the C++ standard library
   pkgver: 20260817.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://abseil.io
   arch:
     - x86_64
