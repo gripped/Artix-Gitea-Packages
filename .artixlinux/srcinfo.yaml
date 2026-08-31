@@ -1,10 +1,10 @@
 ---
-version: 11.16-1
+version: 11.16-2
 pkgbase:
   name: wine
   pkgdesc: A compatibility layer for running Windows programs
   pkgver: 11.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.winehq.org
   install: wine.install
   arch:
