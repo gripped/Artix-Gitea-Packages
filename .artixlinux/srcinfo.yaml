@@ -1,10 +1,10 @@
 ---
-version: 580.178.04-3
+version: 580.178.04-4
 pkgbase:
   name: nvidia-580xx
   pkgdesc: NVIDIA kernel modules
   pkgver: 580.178.04
-  pkgrel: 3
+  pkgrel: 4
   url: https://www.nvidia.com/
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgname:
       - linux
       - nvidia-utils=580.178.04
       - libglvnd
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
