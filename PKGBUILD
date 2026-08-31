@@ -3,7 +3,7 @@
 
 pkgname=v2ray
 pkgver=5.52.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc="A platform for building proxies to bypass network restrictions"
 arch=('x86_64')
 url="https://github.com/v2fly/v2ray-core"
