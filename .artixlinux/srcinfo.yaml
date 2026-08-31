@@ -1,9 +1,9 @@
 ---
-version: 4.1.1-1
+version: 4.2.0-1
 pkgbase:
   name: utf8cpp
   pkgdesc: UTF-8 with C++ in a Portable Way
-  pkgver: 4.1.1
+  pkgver: 4.2.0
   pkgrel: 1
   url: https://github.com/nemtrif/utfcpp
   arch:
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - cmake
   source:
-    - https://github.com/nemtrif/utfcpp/archive/v4.1.1/utf8cpp-4.1.1.tar.gz
+    - https://github.com/nemtrif/utfcpp/archive/v4.2.0/utf8cpp-4.2.0.tar.gz
   sha256sums:
-    - 1ca68016f0abc24172998e39ce0d8f8e2b7a26f7579a0ff85d4e1b9a7aea56f8
+    - 54a8e96ea835a7359e8e53d03e30e9833d51350cc4615ff53f8449ef19ee46ab
 pkgname:
   - name: utf8cpp
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
