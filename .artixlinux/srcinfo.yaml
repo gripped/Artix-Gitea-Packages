@@ -1,15 +1,15 @@
 ---
-version: 4.14.0-1
+version: 4.17.2-1
 pkgbase:
   name: coturn
   pkgdesc: Open-source implementation of TURN and STUN server
-  pkgver: 4.14.0
+  pkgver: 4.17.2
   pkgrel: 1
   url: https://github.com/coturn/coturn
   arch:
     - x86_64
   license:
-    - BSD
+    - LicenseRef-coturn
   depends:
     - libevent
     - postgresql-libs
@@ -19,13 +19,13 @@ pkgbase:
   backup:
     - etc/turnserver/turnserver.conf
   source:
-    - coturn-4.14.0.tar.gz::https://github.com/coturn/coturn/archive/4.14.0.tar.gz
+    - coturn-4.17.2.tar.gz::https://github.com/coturn/coturn/archive/4.17.2.tar.gz
     - turnserver.sysusers
     - turnserver.tmpfiles
   sha256sums:
-    - dc575988326274eb46256b04ef8dad698df8c8e053a35d9e5596fa8f2208bf81
+    - 645a1beaeeba2684139d9b342d30320ac57a415577b6356dad9df20025cf5315
     - 11514a04ca93195502d48374d6163e8e17f6f00043d92b20180fa8f570f2e25a
-    - d765d14ff3a6527498257e4dc9e76231742cd41d8fe658004e171b8937db6a75
+    - 5b45a75cf3aff6fb39a673918aed40a36dd953aacdc9f9d50494107e236f5c0e
 pkgname:
   - name: coturn
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
