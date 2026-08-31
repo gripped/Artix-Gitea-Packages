@@ -1,9 +1,9 @@
 ---
-version: 1:2.112.1-2
+version: 1:2.113.0-2
 pkgbase:
   name: dmd
   pkgdesc: D programming language compiler and standard library
-  pkgver: 2.112.1
+  pkgver: 2.113.0
   pkgrel: 2
   epoch: 1
   url: https://www.dlang.org
@@ -16,12 +16,12 @@ pkgbase:
     - git
     - ldc
   noextract:
-    - dmd.2.112.0.linux.tar.xz
+    - dmd.2.113.0.linux.tar.xz
   source:
-    - git+https://github.com/dlang/dmd.git#tag=v2.112.1
-    - git+https://github.com/dlang/phobos.git#tag=v2.112.0
-    - http://downloads.dlang.org/releases/2.x/2.112.0/dmd.2.112.0.linux.tar.xz
-    - http://downloads.dlang.org/releases/2.x/2.112.0/dmd.2.112.0.linux.tar.xz.sig
+    - git+https://github.com/dlang/dmd.git#tag=v2.113.0
+    - git+https://github.com/dlang/phobos.git#tag=v2.113.0
+    - http://downloads.dlang.org/releases/2.x/2.113.0/dmd.2.113.0.linux.tar.xz
+    - http://downloads.dlang.org/releases/2.x/2.113.0/dmd.2.113.0.linux.tar.xz.sig
     - dmd.conf
     - dmd-doc.desktop
   validpgpkeys:
@@ -29,9 +29,9 @@ pkgbase:
     - F8A26D5D7572ECA06EC7973182C52E37A8BC8393
     - 30AE2FC45DE4153268ED91754CF5FA5326CC62EB
   sha256sums:
-    - 385a3407d71d80e0c7b44f3e1bfd6a8e3d0f952aeb1dd29cb386491df84f4842
-    - 853a68c3e5644562104c8a7be63ede5fcdb98735f2a67c628848daf0c47a63cf
-    - 4556ecde412c6c43662cd1c6e7cec5c6d567b7e74508287a8a0c3c6c506a7e94
+    - 931881817185ca39237ef51a494fb33eff20d9c76d89b9343462df527698c4c8
+    - ae1420ac7a80c790a95dddc43dbe3df0a5ab4b39ba0d58b7431aa7e8f7a11ebf
+    - b342ab8bd40cc0c46407692b31d7cd69661ff01da686234f426949e881727294
     - SKIP
     - 3d639e89528fed1da90006f4dfb2b0fdc41308da5a96d953381ff4ccf257c035
     - 4b7b8722b3fa11082f0f332397b1b66c85b30ce773c43c3fedcba5768a1484b1
@@ -48,7 +48,7 @@ pkgname:
       - 'gcc-multilib: to cross-compile 32-bit applications'
       - 'dmd-docs: documentation and sample code for D'
     provides:
-      - d-compiler=2.112.1
+      - d-compiler=2.113.0
     backup:
       - etc/dmd.conf
   - name: dmd-docs
@@ -62,9 +62,9 @@ pkgname:
     license:
       - BSL-1.0
     provides:
-      - d-runtime=2.112.1
-      - d-stdlib=2.112.1
-      - libphobos-devel=2.112.1
+      - d-runtime=2.113.0
+      - d-stdlib=2.113.0
+      - libphobos-devel=2.113.0
     conflicts:
       - libphobos-devel
     replaces:
@@ -72,4 +72,4 @@ pkgname:
     options:
       - staticlibs
       - '!strip'
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.39.1-1-any
