@@ -4,8 +4,8 @@
 
 _target=riscv64-linux-gnu
 pkgname=$_target-glibc
-pkgver=2.41
-pkgrel=2
+pkgver=2.44
+pkgrel=1
 pkgdesc='GNU C Library RISCV target'
 arch=(any)
 url='https://www.gnu.org/software/libc/'
@@ -15,9 +15,9 @@ groups=(risc-v)
 makedepends=(python)
 options=(!buildflags !strip staticlibs)
 source=(https://ftp.gnu.org/gnu/libc/glibc-$pkgver.tar.xz{,.sig})
-sha256sums=('a5a26b22f545d6b7d7b3dd828e11e428f24f4fac43c934fb071b6a7d0828e901'
+sha256sums=('37f600f2bef3c5e8300147059568b2a2e40a7ad6ccc65ce942556d49429cc667'
             'SKIP')
-b2sums=('4da62f489ba7a95bb069c2cfea8cf78e4d37e3a5f7e1736239670ba1dca12b69aa77bd00ced078c27d91b1e622c58cbd70258161a9d18c5b3bcc95863b8d744d'
+b2sums=('f943e302ad4e44a204e4c5d85460653bec030717c2a502f16764d74bd6d87c280e126f37820b96ec726aff611a8c4e0dba95a7b4d72907adcb0aa88d304e4823'
         'SKIP')
 validpgpkeys=(7273542B39962DF7B299931416792B4EA25340F8  # "Carlos O'Donell <carlos@systemhalted.org>"
               BC7C7372637EC10C57D7AA6579C43DFBF1CF2187  # Siddhesh Poyarekar <siddhesh@gotplt.org>
