@@ -1,11 +1,11 @@
 ---
-version: 7.5.6-1
+version: 7.5.7-1
 pkgbase:
   name: dos2unix
   pkgdesc: Text file format converter
-  pkgver: 7.5.6
+  pkgver: 7.5.7
   pkgrel: 1
-  url: https://waterlan.home.xs4all.nl/dos2unix.html
+  url: https://waterlander.net/dos2unix/
   arch:
     - x86_64
   license:
@@ -20,9 +20,9 @@ pkgbase:
   conflicts:
     - hd2u
   source:
-    - git+https://git.code.sf.net/p/dos2unix/dos2unix.git#tag=dos2unix-7.5.6
+    - git+https://git.code.sf.net/p/dos2unix/dos2unix.git#tag=dos2unix-7.5.7
   sha256sums:
-    - 7ee592bb6ce6d287e849b4dc307b1960cf0e741dcfe92da71b227863f85b7e1d
+    - eae2c52e5715452a09ee11078e54f1ad46b38c7d57497617c96fb7660d6a252f
 pkgname:
   - name: dos2unix
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
