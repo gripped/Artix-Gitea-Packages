@@ -54,10 +54,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.72.2-1
+    version: 1.74.0-1
     packages:
-      - firefox-ublock-origin-1.72.2-1-any.pkg.tar.zst
-      - thunderbird-ublock-origin-1.72.2-1-any.pkg.tar.zst
-      - ublock-origin-1.72.2-1-any.pkg.tar.zst
-    debug:
-      - ublock-origin-debug-1.72.2-1-any.pkg.tar.zst
+      - firefox-ublock-origin-1.74.0-1-any.pkg.tar.zst
+      - thunderbird-ublock-origin-1.74.0-1-any.pkg.tar.zst
+      - ublock-origin-1.74.0-1-any.pkg.tar.zst
+    debug: []
