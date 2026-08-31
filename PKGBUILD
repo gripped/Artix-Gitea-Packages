@@ -11,7 +11,7 @@ pkgname=(
   python-libcamera
 )
 pkgver=0.7.2
-pkgrel=3
+pkgrel=4
 pkgdesc="A complex camera support library for Linux, Android, and ChromeOS"
 arch=(x86_64)
 url="https://libcamera.org/"
@@ -92,7 +92,7 @@ check() {
       | grep -v memory_lifetime_test \
   )
   # shellcheck disable=SC2068
-#  meson test -C build ${tests[@]}
+  meson test -C build ${tests[@]}
 }
 
 package_libcamera() {
