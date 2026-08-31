@@ -1,9 +1,9 @@
 ---
-version: 2026.91-1
+version: 2026.94-1
 pkgbase:
   name: dropbear
   pkgdesc: Lightweight SSH server
-  pkgver: 2026.91
+  pkgver: 2026.94
   pkgrel: 1
   url: https://github.com/mkj/dropbear
   arch:
@@ -17,12 +17,12 @@ pkgbase:
   options:
     - emptydirs
   source:
-    - git+https://github.com/mkj/dropbear#tag=DROPBEAR_2026.91
+    - git+https://github.com/mkj/dropbear#tag=DROPBEAR_2026.94
     - localoptions.h
   validpgpkeys:
     - F7347EF2EE2E07A267628CA944931494F29C6773
   b2sums:
-    - ea70dc07a5e8bc20b77935897bf15e2bb91ab3900109d75542f686ec813291668fde25418b40239774973b950dc19f150083a87a0a1ccb923eef2a481c46192d
+    - b8fd474f119e711933d9033b877c9e59aa0ac58c71825ae5c7caa90a86a0e99ee0aeb751d153d607fec202b623eb45723fb58db720d8d0f3581beb8927f9b8b3
     - 49628bbce0d26eb33598de276ede705bd592a38b7892c9db0ceebfb0598a1ee6e7e84ed03dbf255ee1adcad0c5214d38dc03e6c04176a405f59a19765cb28388
 pkgname:
   - name: dropbear
@@ -36,4 +36,4 @@ pkgname:
       - scp
     conflicts:
       - openssh
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
