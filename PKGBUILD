@@ -12,7 +12,7 @@ depends=('gtk3' 'nss' 'alsa-lib' 'xdg-utils' 'libxss' 'libcups' 'libgcrypt'
          'ttf-liberation' 'udev' 'dbus' 'libpulse' 'pciutils' 'libva'
          'libffi' 'desktop-file-utils' 'hicolor-icon-theme')
 makedepends=('ninja' 'nodejs' 'python-pillow' 'python-httplib2' 'python-pysocks'
-             'python-python-socks' 'lld' 'gperf' 'mold' 'go' 'git')
+             'python-python-socks' 'lld' 'gperf' 'mold' 'go' 'git' 'clang')
 optdepends=('pipewire: WebRTC desktop sharing under Wayland'
             'kdialog: support for native dialogs in Plasma'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'

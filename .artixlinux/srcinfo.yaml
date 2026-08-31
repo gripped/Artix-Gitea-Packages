@@ -22,6 +22,7 @@ pkgbase:
     - mold
     - go
     - git
+    - clang
   depends:
     - gtk3
     - nss
