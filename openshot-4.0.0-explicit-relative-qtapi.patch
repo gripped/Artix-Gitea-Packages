@@ -1,0 +1,13 @@
+diff --git a/src/launch.py b/src/launch.py
+index d1fd5c5b8..9013eef76 100755
+--- a/src/launch.py
++++ b/src/launch.py
+@@ -83,7 +83,7 @@ scale = max(0.5, min(3.0, scale))
+ if scale != 1.0:
+     os.environ["QT_SCALE_FACTOR"] = str(scale)
+ 
+-from qt_api import QtCore, QtWidgets
++from .qt_api import QtCore, QtWidgets
+ 
+ Qt = QtCore.Qt
+ QApplication = QtWidgets.QApplication
