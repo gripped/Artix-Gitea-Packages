@@ -3,7 +3,7 @@
 
 pkgname=v2ray
 pkgver=5.52.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A platform for building proxies to bypass network restrictions"
 arch=('x86_64')
 url="https://github.com/v2fly/v2ray-core"
@@ -14,18 +14,27 @@ backup=(etc/v2ray/config.json)
 source=("git+https://github.com/v2fly/v2ray-core.git#tag=v$pkgver")
 sha512sums=('dd145d4556e16e557541e3726a57f903362a68ba8753bc16be3190e1bd0cb5711876a5b089cd700e7ec68f87072860d9a21dfa14802a1fc9188017b485fd743e')
 
+prepare() {
+  cd v2ray-core
+
+  export GOPATH="${srcdir}"
+  go mod download -modcacherw -x
+}
+
 build() {
   cd v2ray-core
-  export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external"
+  export GOPATH="${srcdir}"
+  export GOFLAGS="-buildmode=pie -mod=readonly -modcacherw"
   export CGO_LDFLAGS="${LDFLAGS}"
   export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_CPPFLAGS="${CPPFLAGS}"
-  go build -o v2ray ./main
+  go build -ldflags "-compressdwarf=false -linkmode external" -o v2ray ./main
 }
 
 check() {
   cd v2ray-core
-  go test -p 1 -tags json -v -timeout 30m ./...
+  go test -tags json -v -timeout 30m ./...
 }
 
 package() {
