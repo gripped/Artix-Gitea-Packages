@@ -1,0 +1,12 @@
+diff --git a/tests/BeatSync.cpp b/tests/BeatSync.cpp
+index a17f717f..6b88362c 100644
+--- a/tests/BeatSync.cpp
++++ b/tests/BeatSync.cpp
+@@ -17,6 +17,7 @@
+ #include <QColor>
+ #include <QImage>
+ 
++#include "Exceptions.h"
+ #include "EffectInfo.h"
+ #include "Frame.h"
+ #include "Timeline.h"

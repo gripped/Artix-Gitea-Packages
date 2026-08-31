@@ -1,0 +1,72 @@
+From 8608beab5388e2ff0b5640b51fbb0c10dcaa87cb Mon Sep 17 00:00:00 2001
+From: Chzrz89 <308380384+Chzrz89@users.noreply.github.com>
+Date: Wed, 26 Aug 2026 02:45:18 +0200
+Subject: [PATCH] Fix non-OpenCV build: guard TrackedObjectBBox usage, move
+ EffectMask test
+
+Two issues break builds with ENABLE_OPENCV=OFF:
+
+1. EffectBase::TrackedObjectMask() dereferences TrackedObjectBBox
+   methods unconditionally, but TrackedObjectBBox.cpp is only compiled
+   when OpenCV is enabled (it is in OPENSHOT_CV_SOURCES). This causes
+   undefined-reference linker errors on every non-OpenCV build.
+
+   Guard the method body with #ifndef USE_OPENCV and return an empty
+   mask: bounding boxes are only ever produced by OpenCV-based
+   trackers, so there is nothing to draw when OpenCV is absent.
+   Behavior is unchanged for OpenCV builds.
+
+2. tests/EffectMask.cpp includes <opencv2/dnn.hpp> unconditionally,
+   but was registered in OPENSHOT_TESTS outside the HAVE_OPENCV block,
+   failing compilation of the test suite without OpenCV. Move it into
+   the existing if($CACHE{HAVE_OPENCV}) list.
+---
+ src/EffectBase.cpp   | 7 +++++++
+ tests/CMakeLists.txt | 2 +-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/src/EffectBase.cpp b/src/EffectBase.cpp
+index 2fb9b10b5..ee918e54d 100644
+--- a/src/EffectBase.cpp
++++ b/src/EffectBase.cpp
+@@ -548,6 +548,12 @@ std::shared_ptr<QImage> EffectBase::GetMaskImage(std::shared_ptr<QImage> target_
+ }
+ 
+ std::shared_ptr<QImage> EffectBase::TrackedObjectMask(std::shared_ptr<QImage> target_image, int64_t frame_number) const {
++#ifndef USE_OPENCV
++	// Tracked-object bounding boxes are only produced by OpenCV-based
++	// trackers; without OpenCV there is nothing to draw a mask for.
++	(void)frame_number;
++	return {};
++#else
+ 	if (!target_image || target_image->isNull() || trackedObjects.empty())
+ 		return {};
+ 
+@@ -595,6 +601,7 @@ std::shared_ptr<QImage> EffectBase::TrackedObjectMask(std::shared_ptr<QImage> ta
+ 	if (!drew_any_box)
+ 		return {};
+ 	return mask_image;
++#endif
+ }
+ 
+ void EffectBase::BlendWithMask(std::shared_ptr<QImage> original_image, std::shared_ptr<QImage> effected_image,
+diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
+index 6815c9246..6a866ac94 100644
+--- a/tests/CMakeLists.txt
++++ b/tests/CMakeLists.txt
+@@ -69,7 +69,6 @@ set(OPENSHOT_TESTS
+   LensFlare
+   AnalogTape
+   BenchmarkArgs
+-  EffectMask
+   Mask
+   Pixelate
+   Saturation
+@@ -96,6 +95,7 @@ if($CACHE{HAVE_OPENCV})
+     CVStabilizer
+     CVOutline
+     ObjectMask
++    EffectMask
+     # CVObjectDetection
+   )
+ endif()

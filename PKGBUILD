@@ -7,8 +7,8 @@
 # Contributor: Jonathan Thomas <jonathan@openshot.org>
 
 pkgname=libopenshot
-pkgver=0.7.0
-pkgrel=1.4
+pkgver=1.0.0
+pkgrel=1
 pkgdesc="A video editing, animation, and playback library for C++, Python, and Ruby"
 arch=(x86_64)
 url="https://github.com/openshot/libopenshot"
@@ -20,11 +20,12 @@ depends=(
   libgcc
   glibc
   libmagick
-  opencv
+  # opencv - requires version 4, but we package v5
   python
-  qt5-base
+  qt6-base
 )
 makedepends=(
+  git
   catch2
   cmake
   cppzmq
@@ -38,16 +39,29 @@ makedepends=(
   unittestpp
   xorg-server-xvfb
   zeromq
-  qt5-svg
+  qt6-svg
 )
 provides=(libopenshot.so)
-source=($url/archive/v$pkgver/$pkgname-$pkgver.tar.gz)
-sha512sums=('d36ad17e65534c890358ea7a12b039e94296327341835f39c5d76d257f5be5e8f874124b51005cd710cfc668a44dd898f63de2c674544d30b5a9d012273f56ce')
-b2sums=('3c11f13d881b798e173c685f20700a2e060606a852834905547d971a569d85ccd7951753f4de2d119caebfacd1917df30c8038c6b69f3c9d31560c92e9b361d4')
+source=(
+  "git+$url#tag=v${pkgver}"
+  "$pkgname-1.0.0-opencv4-off.patch"
+  "$pkgname-1.0.0-beatsync-except.patch"
+)
+sha512sums=('e17f8295dba8defad07b44d53bac254318c4796b5366b55b07bdc4ffd896327dc3d16a30ca97382e5f3c19f9d61b05902001dc27f3ead9be2e60d397138a343c'
+            '0b0898525aee02ab90d3534042f8e5f064a21253a0d99ba51e96be5b57d31060dc8dd75f8984661fa36dadde4a496a865c3b498d402fa4968baeb219f65b4c4d'
+            '1a90815dfcf8ce3b2c4c98b343659ed9d5f126fabdcbcf994958c6893bb0b4fdc05b89bfa80e9b13a7d0f5bb7494f727b071cd92b4b1dd822a6319cd1e779821')
+b2sums=('7938e83bc8bb728a614de31926f115812ce274f8a99fe522fa2c2802b966565961a77b572ee5936c7c0a5086f0d4f8e5dfaef4c7aaecaf150ee47067c854864e'
+        'de35bdc7fee5d001c093f79c0273a0fe498d62ee45d58098b0f463edff539308bcfce1b11924571177790a915b147f5c4fa70000bd381ff70e0d83a8f3180a2b'
+        '24914858eba2037acb02a323caea1334c2d1566e0fe0dc24302222451b911243d925ea205533c8b5b39cb2c02f64d782009cbbb226c2f04ca413e6f7685ef0fe')
 
 prepare() {
-# protobuf 23 requiers C++17
-  sed -e 's|CMAKE_CXX_STANDARD 14|CMAKE_CXX_STANDARD 17|' -i $pkgname-$pkgver/CMakeLists.txt
+  cd "$pkgname"
+  # protobuf 23 requiers C++17
+  sed -e 's|CMAKE_CXX_STANDARD 14|CMAKE_CXX_STANDARD 17|' -i CMakeLists.txt
+  # Requires OpenCV 4, but we package 5. Still tries to build demos with OpenCV despite being disabled.
+  patch -Np1 < "$srcdir/$pkgname-1.0.0-opencv4-off.patch"
+  # fix building tests
+  patch -Np1 < "$srcdir/$pkgname-1.0.0-beatsync-except.patch"
 }
 
 build() {
@@ -57,10 +71,11 @@ build() {
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
     -D ENABLE_RUBY=OFF
-    -D PYTHON_INCLUDE_DIRS=/usr/include/python$python_version
+    -D PYTHON_INCLUDE_DIRS="/usr/include/python$python_version"
     -D PYTHON_LIBRARIES=/usr/lib/libpython3.so
     -D USE_SYSTEM_JSONCPP=ON
-    -S $pkgname-$pkgver
+    -D USE_QT6=ON
+    -S "$pkgname"
     -W no-dev
   )
 
@@ -94,5 +109,7 @@ package() {
   )
 
   DESTDIR="$pkgdir" cmake --install build
-  install -vDm 644 $pkgname-$pkgver/{AUTHORS,README.md} -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 -t "$pkgdir/usr/share/doc/$pkgname/" "$pkgname"/{AUTHORS,README.md}
 }
+
+# vim: sw=2 et
