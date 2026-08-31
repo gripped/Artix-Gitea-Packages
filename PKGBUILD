@@ -1,7 +1,7 @@
 # Maintainer: artist for Artix Linux
 
 pkgname=helium-browser
-pkgver=0.15.5.1
+pkgver=0.16.2.1
 _hlmver="${pkgver%.*}"
 pkgrel=1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
@@ -12,7 +12,7 @@ depends=('gtk3' 'nss' 'alsa-lib' 'xdg-utils' 'libxss' 'libcups' 'libgcrypt'
          'ttf-liberation' 'udev' 'dbus' 'libpulse' 'pciutils' 'libva'
          'libffi' 'desktop-file-utils' 'hicolor-icon-theme')
 makedepends=('ninja' 'nodejs' 'python-pillow' 'python-httplib2' 'python-pysocks'
-             'python-python-socks' 'lld' 'gperf' 'mold' 'go')
+             'python-python-socks' 'lld' 'gperf' 'mold' 'go' 'git')
 optdepends=('pipewire: WebRTC desktop sharing under Wayland'
             'kdialog: support for native dialogs in Plasma'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
@@ -25,8 +25,8 @@ source=("${url}/archive/refs/tags/${_hlmver}.tar.gz"
         "${url}-linux/archive/refs/tags/${pkgver}.tar.gz"
         "${pkgname}.desktop")
 
-sha256sums=('0dd3c1275577d8fe9260ed3b6b402cf120a054bf4033cc09f89baffc1359fd6d'
-            'fe1f8080960e60abc8623f92c8e55b6df23b7051297981a3f78314fbd700bd0d'
+sha256sums=('26ecf04764cc899bd5d4a75111b6fdcf0d3319128d2fc99d2e36b668355d69f7'
+            '01b09b0b3f1dd55bb162d1a4c5311a53367f9b4da9221ec43124bffe54d66ab2'
             '934b84f8f55e8461c3e47651c632d5e8e2d23ec1d71113dd7384d845ffa16a27')
 
 prepare() {
@@ -36,8 +36,22 @@ prepare() {
 
 build() {
   cd "helium-linux-${pkgver}/scripts"
-
-  ./build.sh -c --pgo
+  
+  # Start in background
+  ./build.sh -c --pgo &
+  BUILD_PID=$! # store PID
+  
+  # Wait the problematic file gerrit_util.py be created
+  while [ ! -f "../build/src/third_party/depot_tools/gerrit_util.py" ]; do
+    sleep 3 # Zzz...
+  done
+  
+  # Fix with sed...
+  sed -i 's/import httplib2.socks/import socks/g' \
+    "../build/src/third_party/depot_tools/gerrit_util.py"
+  
+  # Wait the build to finish
+  wait $BUILD_PID
 }
 
 package() {
@@ -75,4 +89,3 @@ package() {
 
   install -Dm644 -t "${pkgdir}/usr/share/licenses/${pkgname}" "${srcdir}/helium-linux-${pkgver}/LICENSE"*
 }
-
