@@ -1,10 +1,10 @@
 ---
-version: 1:4.2.1-1.1
+version: 1:4.3.1-1
 pkgbase:
   name: opendht
   pkgdesc: C++17 Distributed Hash Table (DHT) implementation
-  pkgver: 4.2.1
-  pkgrel: 1.1
+  pkgver: 4.3.1
+  pkgrel: 1
   epoch: 1
   url: https://github.com/savoirfairelinux/opendht
   arch:
@@ -40,9 +40,9 @@ pkgbase:
     - 'python: to use the Python bindings'
     - 'msgpack-cxx: linking against opendht'
   source:
-    - git+https://github.com/savoirfairelinux/opendht#tag=v4.2.1
+    - git+https://github.com/savoirfairelinux/opendht#tag=v4.3.1
   sha256sums:
-    - d50b350185520c8e56e746c4dbeb2a9802a5efff3a2f459ed51abb582331d7b0
+    - 794cddcacd7a168c038994efbc44c5715a91b78e6c5e943080b4cfcc2355d27f
 pkgname:
   - name: opendht
 # generated with artixpkg 0.39.1-1-any
