@@ -1,9 +1,9 @@
 ---
-version: 0.11.0-1
+version: 0.11.2-1
 pkgbase:
   name: waypipe
   pkgdesc: A proxy for Wayland protocol applications; like ssh -X
-  pkgver: 0.11.0
+  pkgver: 0.11.2
   pkgrel: 1
   url: https://gitlab.freedesktop.org/mstoeckl/waypipe
   arch:
@@ -29,9 +29,9 @@ pkgbase:
   optdepends:
     - 'openssh: recommended transport'
   source:
-    - https://gitlab.freedesktop.org/mstoeckl/waypipe/-/archive/v0.11.0/waypipe-v0.11.0.tar.gz
+    - https://gitlab.freedesktop.org/mstoeckl/waypipe/-/archive/v0.11.2/waypipe-v0.11.2.tar.gz
   sha256sums:
-    - dc4741bd4435666b4b45ef9b8354c9f742e9c2c5fb99bb49b2ac4f32a371bcd7
+    - 70914b590b2b9a74a16fe9936bb7dba6b3eb59466ed17aaba2613c9fa09b8dad
 pkgname:
   - name: waypipe
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
