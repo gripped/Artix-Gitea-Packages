@@ -4,7 +4,7 @@
 # Contributor: Martin Wimpress <code@flexion.org>
 
 pkgname=atril
-pkgver=1.28.6
+pkgver=1.28.7
 pkgrel=1
 pkgdesc="A document viewer for MATE"
 url="https://mate-desktop.org"
@@ -19,7 +19,7 @@ conflicts=('atril-gtk3')
 replaces=('atril-gtk3')
 source=("git+https://github.com/mate-desktop/atril.git#tag=v${pkgver}"
         git+https://github.com/mate-desktop/mate-submodules.git)
-sha256sums=('2bc04954205371b4327c2c54066e907a2e31d1d13c782ed5376e414e1cc88855'
+sha256sums=('911c09957a8c4c6d8db4ac96d7c83f40f9607f6b1b3233de9bb7b1fbd9955038'
             'SKIP')
 
 prepare() {
