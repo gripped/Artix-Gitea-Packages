@@ -1,0 +1,44 @@
+---
+version: 0.22.00-1
+pkgbase:
+  name: stress-ng
+  pkgdesc: Software to stress test a computer system in various selectable ways
+  pkgver: 0.22.00
+  pkgrel: 1
+  url: https://github.com/ColinIanKing/stress-ng
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - attr
+    - eigen
+    - keyutils
+    - libaio
+    - libcap
+    - libgcrypt
+    - libmd
+  depends:
+    - acl
+    - apparmor
+    - gmp
+    - judy
+    - kmod
+    - libbsd
+    - libjpeg-turbo
+    - lksctp-tools
+    - mpfr
+    - xxhash
+  optdepends:
+    - 'intel-ipsec-mb: support for IPsec tests'
+    - 'linux-headers: include some headers from the Arch kernel'
+    - 'linux-lts-headers: include some headers from the LTS kernel'
+    - 'linux-zen-headers: include some headers from the ZEN kernel'
+    - 'linux-hardened-headers: include some headers from the HARDENED kernel'
+  source:
+    - stress-ng-0.22.00.tar.gz::https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.22.00.tar.gz
+  b2sums:
+    - 496d5a1cc7052a0408ac183a395003857c57b45797cda8294f043e458f1bb99ba0917fee9011d9348f4b4625eb1037dfda5094de4b39bd7c4ec9b38cfdcb0b31
+pkgname:
+  - name: stress-ng
+# generated with artixpkg 0.39.1-1-any
