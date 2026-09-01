@@ -3,7 +3,7 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=4.4.2
+pkgver=4.4.3
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
@@ -34,20 +34,13 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('66cd5b06c5bf86805d4ae84071e30d085ff9058271187947d7f48806a81e038df44ab7c099a2c675bb08f141c2e87c3291f7de14b622059734f86b850318306e'
+sha512sums=('031a1544690f8980066519f410784f823644f70e1725fbdd52b505bf4d7f924586fa847abd119bacc80ee769ef3c51aaaea98fda9b904c1ff502d996528297b2'
             '56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
-prepare() {
-  cd $pkgname
-  git cherry-pick -n 39cc425791394dd8c48e132fb8789ccea8249500 # Unbreak meson
-  git apply ../artix-cmake.patch
- 
-  rm -fr .git # Avoid dirty version number
-}
-
 build() {
   cd ${pkgname}
+  git apply ../artix-cmake.patch
   ./bootstrap --prefix=/usr \
     --mandir=/share/man \
     --docdir=/share/doc/cmake \
