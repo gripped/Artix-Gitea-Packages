@@ -1,10 +1,10 @@
 ---
-version: 0.56.2-1
+version: 0.56.2-2
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
   pkgver: 0.56.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -13,7 +13,6 @@ pkgbase:
     - BSD-3-Clause
   makedepends:
     - cmake
-    - git
     - glaze
     - hyprland-protocols
     - meson

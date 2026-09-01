@@ -5,7 +5,7 @@
 
 pkgname=hyprland
 pkgver=0.56.2
-pkgrel=1
+pkgrel=2
 pkgdesc='a highly customizable dynamic tiling Wayland compositor'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/${pkgname^}"
@@ -55,7 +55,6 @@ depends=(cairo # libcairo.so
          xcb-util-wm # libxcb-ewmh.so  libxcb-icccm.so 
          xorg-xwayland)
 makedepends=(cmake
-             git
              glaze
              hyprland-protocols
              meson
@@ -77,6 +76,7 @@ prepare() {
 	ln -sf hyprland-source "$_archive"
 	cd "$_archive"
 	sed -i -e '/^release:/{n;s/-D/-DCMAKE_SKIP_RPATH=ON -D/}' Makefile
+	sed -i -e '/find_package.glaze/s/7...<8 //' {.,hyprpm,start}/CMakeLists.txt
 }
 
 build() {
