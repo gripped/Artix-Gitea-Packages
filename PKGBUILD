@@ -89,6 +89,10 @@ source=(
   firefox-esr-${pkgver}esr.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/releases/${pkgver}esr/source/firefox-${pkgver}esr.source.tar.xz.asc
   $pkgname.desktop
   identity-icons-brand.svg
+  # Make different channels installable in parallel
+  0001-Install-under-remoting-name.patch
+  # Fix build with Rust 1.98
+  0002-Bug-2053518-Handle-the-oe-linux-rust-targets-added-i.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -414,6 +418,8 @@ sha512sums=('a8cd4784bb52ca89c0fe37404e894c044f6145c62e9fcdeffe621fde81ae4602078
             'SKIP'
             '4b53ee133a4ecaf068e240f6a05a1ebf4b788d67fe9141cc5b3561e1128907c8c3edb49bf2b24ba89daf1552f94ac48adf682dbe7dd070cffe7f78d98f2b3338'
             'b579b73176c72a5ecf36e3f63bba08fdb8041ae99d54e5cab906660fed6a9cf2311f7ca1ec1649e451cc6d5a4b1e6060b974b1d7befe9c8df3c5a89c50383c17'
+            '2b06a2398e862fa4e61ee5e41971930a9c50a90fad4ee99231fa9f8d94d07e3f31a044d2a306a73e28367f654ad5568bf4a64ea42898a5001969022e3bc8e992'
+            'da7ecd2cfb729a532126569eada73a54086e140fcfef7e99189988e2a06e7911bb7c1b4642b7b557053718dc9681ccaeb17a9880aaf6d6c637d1e2b385431c99'
             '3818e98bf76e994e0968f696537e0638a62b01b00344dbc16c1321966807b1950d161302683cb41ff256fee4753b2f9b5a87fb4250e1aa6bd941e2c44b69be36'
             '018948f56dba0ce0475bfb2d1261679edc18311e799f5787f1718d27c49ba554fb3af5f4d21b67eedd446a9df71cb8e722fac83e939f93838b4df2838e4a8470'
             '04a1f47c2e60ce90696a989a0b3445005ce1885f5606dc18bb6624ed1305b64c0b759ca08d9f670fdca373faa5bef7992e9c176ca66f64f121295a056eb17ff5'
