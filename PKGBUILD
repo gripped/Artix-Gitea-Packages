@@ -3,7 +3,7 @@
 
 pkgname=xf86-input-libinput
 pkgver=1.5.0
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Generic input driver for the X.Org server based on libinput"
 arch=('x86_64')
 license=('MIT')
@@ -11,6 +11,7 @@ url="http://xorg.freedesktop.org/"
 depends=('libinput' 'glibc')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'libxi' 'libx11' 'xorgproto')
 conflicts=('xorg-server<1.19.0' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25')
+replaces=(${pkgname//xf86/xlibre})
 provides=("x11win-input-libinput")
 groups=('xorg-drivers')
 source=(https://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
