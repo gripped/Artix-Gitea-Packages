@@ -1,26 +1,26 @@
 ---
-version: 10.5.0-1
+version: 10.5.0-3
 pkgbase:
   name: fd
   pkgdesc: Simple, fast and user-friendly alternative to find
   pkgver: 10.5.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/sharkdp/fd
   arch:
     - x86_64
   license:
-    - MIT
-    - Apache-2.0
+    - MIT OR Apache-2.0
   makedepends:
+    - git
     - rust
   depends:
     - glibc
     - jemalloc
     - libgcc
   source:
-    - fd-10.5.0.tar.gz::https://github.com/sharkdp/fd/archive/v10.5.0.tar.gz
-  sha512sums:
-    - 7c4503a48c135952846248c5cff1e7fb168f0591c3dde7711148eba2099af9b4848aa8c7b115922c105a80a54da4923fa3214cbf3d736f5641c8e14d0f957024
+    - git+https://github.com/sharkdp/fd.git#tag=v10.5.0
+  b2sums:
+    - 876486be6070edbd71040416c54a5592609666e7485108fc230014a6de780383fffc37acf6b300a00c7a9a1778dfed3db7ac9a3123636d07c33bf7dd5bf99f66
 pkgname:
   - name: fd
 # generated with artixpkg 0.39.1-1-any
