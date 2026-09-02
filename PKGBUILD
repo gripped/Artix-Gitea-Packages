@@ -4,7 +4,7 @@
 
 pkgname=xf86-input-evdev
 pkgver=2.11.0
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="X.org evdev input driver"
 arch=(x86_64)
 url="https://xorg.freedesktop.org/"
@@ -12,6 +12,7 @@ license=('HPND-sell-variant AND MIT')
 depends=('libudev' 'mtdev' 'libevdev' 'glibc')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'xorgproto')
 conflicts=('xorg-server<21.1.1' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25')
+replaces=(${pkgname//xf86/xlibre})
 # options=('!makeflags')
 groups=('xorg-drivers')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
