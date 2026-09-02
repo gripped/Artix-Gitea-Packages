@@ -1,10 +1,10 @@
 ---
-version: 0.9.7-6
+version: 0.9.7-6.2
 pkgbase:
   name: xf86-video-sisusb
   pkgdesc: X.org SiS USB video driver
   pkgver: 0.9.7
-  pkgrel: 6
+  pkgrel: 6.2
   url: https://xorg.freedesktop.org/
   arch:
     - x86_64
@@ -19,6 +19,8 @@ pkgbase:
     - xorg-server<21.1.1
     - X-ABI-VIDEODRV_VERSION<25
     - X-ABI-VIDEODRV_VERSION>=26
+  replaces:
+    - xlibre-video-sisusb
   source:
     - https://xorg.freedesktop.org//releases/individual/driver/xf86-video-sisusb-0.9.7.tar.bz2
   sha256sums:
