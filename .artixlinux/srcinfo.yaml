@@ -1,13 +1,12 @@
 ---
-version: 1:1.1.6-3
+version: 1:1.1.7-3
 pkgbase:
   name: nftables
   pkgdesc: Netfilter tables userspace tools
-  pkgver: 1.1.6
+  pkgver: 1.1.7
   pkgrel: 3
   epoch: 1
   url: https://netfilter.org/projects/nftables/
-  install: nftables.install
   arch:
     - x86_64
   license:
@@ -33,13 +32,13 @@ pkgbase:
   backup:
     - etc/nftables.conf
   source:
-    - git+https://git.netfilter.org/nftables.git#tag=v1.1.6?signed
+    - git+https://git.netfilter.org/nftables.git?signed#tag=v1.1.7
     - nftables.conf
   validpgpkeys:
     - 8C5F7146A1757A65E2422A94D70D1A666ACF2B21
   sha256sums:
-    - 2874c264df80d770d95e2a93f15cddf65ee642fad8977777c12e745bf3eb8d61
+    - f2e877f7cd67fb473f5ea4b3b1ab7c9227e939a00d64207979ee9236e1db6570
     - fa2f984794025339cf2d26d329f9b0bf83a39b9fa310d06b4cc40a0c1b0c8f46
 pkgname:
   - name: nftables
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
