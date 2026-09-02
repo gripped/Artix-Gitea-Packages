@@ -69,7 +69,6 @@ makedepends=(
   mesa
   nasm
   nodejs
-  onnxruntime
   python
   rust
   unzip
