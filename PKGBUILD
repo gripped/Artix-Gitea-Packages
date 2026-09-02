@@ -2,7 +2,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-filelock
-pkgver=3.30.0
+pkgver=3.30.2
 pkgrel=1
 pkgdesc="A platform-independent file lock"
 arch=('any')
@@ -26,7 +26,7 @@ checkdepends=(
   'python-virtualenv'
 )
 source=("git+$url.git#tag=$pkgver")
-b2sums=('e786922943d7c09208e978fe8a289e011c61e9ea7c2eef0e43783a4110dbe0d682c5bf68660aaeed9661382815f6cce03d2421931a62422a851a030d81c5c709')
+b2sums=('7eff05f0216b2ef17e640b6e7a04cd55825632ed8ddea5e98a2aab6a1cb763306c7c7b44d18a3ffe08a4e2ad8884423d7b4a3a2fcaacdae97ea06dc89d8e147b')
 
 build() {
   cd ${pkgname#python-}
