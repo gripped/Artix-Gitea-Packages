@@ -12,7 +12,7 @@
 
 pkgbase=util-linux
 pkgname=(util-linux util-linux-libs)
-pkgver=2.42.2
+pkgver=2.42.3
 pkgrel=1
 pkgdesc='Miscellaneous system utilities for Linux'
 url='https://github.com/util-linux/util-linux'
@@ -22,8 +22,6 @@ makedepends=('asciidoctor'
              'cryptsetup'
              'git'
              'libcap-ng'
-             'libelogind'
-             'libutempter'
              'libxcrypt'
              'meson'
              'po4a'
@@ -43,29 +41,28 @@ license=(
 )
 options=('strip')
 validpgpkeys=('B0C64D14301CC6EFAEDF60E4E4B71D5EEC39C284')  # Karel Zak
-source=("git+https://github.com/util-linux/util-linux#tag=v${pkgver/rc/-rc}?signed"
+source=("git+https://github.com/util-linux/util-linux?signed#tag=v${pkgver/rc/-rc}"
         $pkgbase-BSD-2-Clause.txt::https://raw.githubusercontent.com/Cyan4973/xxHash/f035303b8a86c1db9be70cbb638678ef6ef4cb2d/LICENSE
         {login,common,remote,runuser,su}.pam
         'util-linux.sysusers'
         '60-rfkill.rules'
-        0001-util-linux-optional-elogind-support.patch)
-sha256sums=('b12ee0ba37ccaf6c88f767637a4519d5fdf76ddd1acbf7e6fc29e9eeeea30d8f'
+        0001-util-linux-tmpfiles.patch)
+sha256sums=('691a9bbc2d75642f3f299959c3b358983ec6d70a41439a2c5b283c5de2ff0035'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
             '57e057758944f4557762c6def939410c04ca5803cbdd2bfa2153ce47ffe7a4af'
             '8bfbee453618ba44d60ba7fb00eced6c62edebfc592f2e75dede08e769ed8931'
             '48d6fba767631e3dd3620cf02a71a74c5d65a525d4c4ce4b5a0b7d9f41ebfea1'
-            '3f54249ac2db44945d6d12ec728dcd0d69af0735787a8b078eacd2c67e38155b'
+            '5f4d36be03cc980930ba0a0e109d6b5625201f88a4ae7f913d632f5ab5866b87'
             '4a0b3dd8aa6d34dd29e1d153f396cacf908b0d64f7218276cbcab684587c0a0a'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            'd830210ac8805ca44cd61139ed8df01c67ea8cf6eb8be225f2844c15c5cd623b')
+            '8ccec10a22523f6b9d55e0d6cbf91905a39881446710aa083e935e8073323376'
+            'a22e0a037e702170c7d88460cc9c9c2ab1d3e5c54a6985cd4a164ea7beff1b36')
 
 _backports=(
 )
 
 _reverts=(
-  # fincore: (tests) fix tmpfs detection for out-of-tree builds
-  'ec2e371da56a8d69d6787eff856a36ddab9e12f0'
 )
 
 prepare() {
@@ -83,17 +80,15 @@ prepare() {
     git revert --mainline 1 --no-commit "${_c}"
   done
 
-  git apply ../0001-util-linux-optional-elogind-support.patch
-
   # do not mark dirty
-  sed -i '/dirty=/c dirty=' tools/git-version-gen
+  git apply ../0001-util-linux-tmpfiles.patch; sed -i '/dirty=/c dirty=' tools/git-version-gen
 }
 
 build() {
   local _meson_options=(
+    -Dsystemd=disabled
     -Dfs-search-path=/usr/bin:/usr/local/bin
 
-    -Dsystemd=disabled
     -Dlibuser=disabled
     -Dlibutempter=enabled
     -Dncurses=disabled
@@ -106,10 +101,6 @@ build() {
     -Dbuild-newgrp=enabled
     -Dbuild-vipw=enabled
     -Dbuild-write=enabled
-
-    -Delogind=enabled
-    -Dsysusersdir=/usr/lib/sysusers.d
-    -Dtmpfilesdir=/usr/lib/tmpfiles.d
   )
 
   artix-meson "${pkgbase}" build "${_meson_options[@]}"
@@ -119,7 +110,7 @@ build() {
 
 check() {
   cd build
-  ../util-linux/tests/run.sh --show-diff --exclude='lsfd/assoc-pidfs'
+  ../util-linux/tests/run.sh --show-diff
 }
 
 package_util-linux() {
@@ -131,15 +122,13 @@ package_util-linux() {
            'file' 'libmagic.so'
            'glibc'
            'libcap-ng'
-           'libelogind'
            'libgcc' 'libgcc_s.so'
            'libxcrypt' 'libcrypt.so'
            'ncurses' 'libncursesw.so'
            'pam'
            'readline'
            'shadow'
-           'libudev' # 'libudev.so'
-           'libutempter'
+           'libudev' 'libudev.so' 'libudev.so'
            'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
@@ -171,6 +160,8 @@ package_util-linux() {
   install -Dm0644 su.pam "${pkgdir}/etc/pam.d/su"
   install -Dm0644 su.pam "${pkgdir}/etc/pam.d/su-l"
 
+  # TODO(dreisner): offer this upstream?
+
   # runtime libs are shipped as part of util-linux-libs
   install -d -m0755 util-linux-libs/lib/
   mv "$pkgdir"/usr/lib/lib*.so* util-linux-libs/lib/
@@ -187,6 +178,7 @@ package_util-linux() {
   install -Dm0644 60-rfkill.rules \
     "${pkgdir}/usr/lib/udev/rules.d/60-rfkill.rules"
 
+
   install -vDm 644 $pkgbase/Documentation/licenses/COPYING.{BSD*,ISC} -t "$pkgdir/usr/share/licenses/$pkgname/"
   install -vDm 644 $pkgbase-BSD-2-Clause.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
@@ -194,7 +186,6 @@ package_util-linux() {
 package_util-linux-libs() {
   pkgdesc='util-linux runtime libraries'
   depends=('glibc'
-           'libelogind'
            'sqlite')
   provides=('libutil-linux' 'libblkid.so' 'libfdisk.so' 'libmount.so' 'libsmartcols.so' 'libuuid.so')
   conflicts=('libutil-linux')
