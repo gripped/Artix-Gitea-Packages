@@ -21,15 +21,15 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 21.1.24-1.1
+    version: 21.1.24-1.2
     packages:
-      - xorg-server-21.1.24-1.1-x86_64.pkg.tar.zst
-      - xorg-server-xephyr-21.1.24-1.1-x86_64.pkg.tar.zst
-      - xorg-server-xvfb-21.1.24-1.1-x86_64.pkg.tar.zst
-      - xorg-server-xnest-21.1.24-1.1-x86_64.pkg.tar.zst
-      - xorg-server-common-21.1.24-1.1-x86_64.pkg.tar.zst
-      - xorg-server-devel-21.1.24-1.1-x86_64.pkg.tar.zst
-      - xorg-server-src-21.1.24-1.1-x86_64.pkg.tar.zst
+      - xorg-server-21.1.24-1.2-x86_64.pkg.tar.zst
+      - xorg-server-xephyr-21.1.24-1.2-x86_64.pkg.tar.zst
+      - xorg-server-xvfb-21.1.24-1.2-x86_64.pkg.tar.zst
+      - xorg-server-xnest-21.1.24-1.2-x86_64.pkg.tar.zst
+      - xorg-server-common-21.1.24-1.2-x86_64.pkg.tar.zst
+      - xorg-server-devel-21.1.24-1.2-x86_64.pkg.tar.zst
+      - xorg-server-src-21.1.24-1.2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null

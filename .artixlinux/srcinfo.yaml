@@ -1,9 +1,9 @@
 ---
-version: 21.1.24-1.1
+version: 21.1.24-1.2
 pkgbase:
   name: xorg-server
   pkgver: 21.1.24
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://xorg.freedesktop.org
   arch:
     - x86_64
@@ -131,6 +131,8 @@ pkgname:
       - libxau
       - libxshmfence
       - glibc
+    replaces:
+      - xlibre-xserver-xephyr
   - name: xorg-server-xvfb
     pkgdesc: Virtual framebuffer X server
     license:
@@ -150,6 +152,8 @@ pkgname:
       - sh
       - glibc
       - libxau
+    replaces:
+      - xlibre-xserver-xvfb
   - name: xorg-server-xnest
     pkgdesc: A nested X server that runs as an X application
     depends:
@@ -165,12 +169,16 @@ pkgname:
       - glibc
       - libx11
       - libxau
+    replaces:
+      - xlibre-xserver-xnest
   - name: xorg-server-common
     pkgdesc: Xorg server common files
     depends:
       - xkeyboard-config
       - xorg-xkbcomp
       - xorg-setxkbmap
+    replaces:
+      - xlibre-xserver-common
   - name: xorg-server-devel
     pkgdesc: Development files for the X.Org X server
     depends:
@@ -179,6 +187,10 @@ pkgname:
       - libpciaccess
       - pixman
       - xorg-util-macros
+    replaces:
+      - xlibre-xserver-devel
   - name: xorg-server-src
     pkgdesc: Source files of the X.Org X server
+    replaces:
+      - xlibre-xserver-src
 # generated with artixpkg 0.38.5-1-any

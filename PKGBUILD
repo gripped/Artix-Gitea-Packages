@@ -5,7 +5,7 @@ pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-common' 'xorg-server-devel' 'xorg-server-src')
 pkgver=21.1.24
-pkgrel=1.1
+pkgrel=1.2
 arch=('x86_64')
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause' 
@@ -102,6 +102,7 @@ _install() {
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
   depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
   _install fakeinstall/usr/share/man/man1/Xserver.1
@@ -121,7 +122,7 @@ package_xorg-server() {
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
   provides=('X-ABI-VIDEODRV_VERSION=25.2' 'X-ABI-XINPUT_VERSION=24.4' 'X-ABI-EXTENSION_VERSION=10.0' 'x-server' 'x11win-server')
   conflicts=('nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting' 'xlibre-xserver')
-  replaces=('glamor-egl' 'xf86-video-modesetting' 'xlibre-xserver')
+  replaces=('glamor-egl' 'xf86-video-modesetting' ${pkgname//xorg-/xlibre-x})
   install=xorg-server.install
 
   _install fakeinstall/usr/bin/{X,Xorg,gtf}
@@ -145,6 +146,7 @@ package_xorg-server-xephyr() {
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc
            xcb-util libxdmcp libx11 libxau libxshmfence glibc)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xephyr
   _install fakeinstall/usr/share/man/man1/Xephyr.1
@@ -160,6 +162,7 @@ package_xorg-server-xvfb() {
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
            libgl nettle libtirpc libelogind
            libxdmcp sh glibc libxau)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xvfb
   _install fakeinstall/usr/share/man/man1/Xvfb.1
@@ -176,6 +179,7 @@ package_xorg-server-xnest() {
   depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle
            libtirpc libelogind
            libxdmcp glibc libx11 libxau)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xnest
   _install fakeinstall/usr/share/man/man1/Xnest.1
@@ -189,6 +193,7 @@ package_xorg-server-devel() {
   depends=('xorgproto' 'mesa' 'libpciaccess' 'pixman'
            # not technically required but almost every Xorg pkg needs it to build
            'xorg-util-macros')
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/include/xorg/*
   _install fakeinstall/usr/lib/pkgconfig/xorg-server.pc
@@ -203,6 +208,7 @@ package_xorg-server-devel() {
 
 package_xorg-server-src() {
   pkgdesc="Source files of the X.Org X server"
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   install -d "${pkgdir}"/usr/src/
   cd "${pkgdir}"/usr/src/
