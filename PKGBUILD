@@ -2,7 +2,7 @@
 
 pkgname=xf86-video-amdgpu
 pkgver=25.0.0
-pkgrel=1
+pkgrel=1.2
 pkgdesc="X.org amdgpu video driver"
 arch=('x86_64')
 url="https://xorg.freedesktop.org/"
@@ -10,6 +10,7 @@ license=('MIT')
 depends=('libudev' 'mesa' 'libdrm' 'glibc')
 makedepends=('xorg-server-devel' 'udev' 'X-ABI-VIDEODRV_VERSION=25.2' 'meson')
 conflicts=('xorg-server<1.20.0' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26')
+replaces=(${pkgname//xf86/xlibre})
 groups=('xorg-drivers')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
 sha512sums=('d143294fead7073c14100299ccab20d1f5eab8b7e36c1770b12aaade958211e1961f4353dc47123c3b9af9f7a911d913def71d25b83dab3dee1d289043869891'
