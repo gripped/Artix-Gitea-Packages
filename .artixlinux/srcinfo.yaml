@@ -1,10 +1,10 @@
 ---
-version: 1.87.0-1
+version: 1.87.0-2
 pkgbase:
   name: leptonica
   pkgdesc: Software that is broadly useful for image processing and image analysis applications
   pkgver: 1.87.0
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.leptonica.com
   arch:
     - x86_64
@@ -24,7 +24,6 @@ pkgbase:
     - libwebp
     - libwebp.so
     - libwebpmux.so
-    - libsharpyuv.so
     - openjpeg2
     - zlib
     - libz.so
@@ -34,4 +33,4 @@ pkgbase:
     - fa2b40c5caea96d1bb93a97486262aed8731b69ce25a84a6bf5d25323e33f631
 pkgname:
   - name: leptonica
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
