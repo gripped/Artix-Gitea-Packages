@@ -6,7 +6,7 @@ pkgname=xf86-video-intel
 # https://gitlab.freedesktop.org/xorg/driver/xf86-video-intel/commits/master
 _commit=4a64400ec6a7d8c0aba0e6a39b16a5e86d0af843 # master 2025-03-21
 pkgver=2.99.917+939+g4a64400e
-pkgrel=1
+pkgrel=1.2
 epoch=1
 arch=(x86_64)
 url="https://gitlab.freedesktop.org/xorg/driver/xf86-video-intel"
@@ -26,7 +26,7 @@ optdepends=('libxrandr: for intel-virtual-output'
             'libxcursor: for intel-virtual-output'
             'libxtst: for intel-virtual-output'
             'libxss: for intel-virtual-output')
-replaces=('xf86-video-intel-uxa' 'xf86-video-intel-sna')
+replaces=('xf86-video-intel-uxa' 'xf86-video-intel-sna' ${pkgname//xf86/xlibre})
 provides=('xf86-video-intel-uxa' 'xf86-video-intel-sna')
 conflicts=('xorg-server<21.1.1' 'X-ABI-VIDEODRV_VERSION<25' 'X-ABI-VIDEODRV_VERSION>=26'
            'xf86-video-intel-sna' 'xf86-video-intel-uxa' 'xf86-video-i810' 'xf86-video-intel-legacy')

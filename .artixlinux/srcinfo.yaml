@@ -1,10 +1,10 @@
 ---
-version: 1:2.99.917+939+g4a64400e-1
+version: 1:2.99.917+939+g4a64400e-1.2
 pkgbase:
   name: xf86-video-intel
   pkgdesc: X.org Intel i810/i830/i915/945G/G965+ video drivers
   pkgver: 2.99.917+939+g4a64400e
-  pkgrel: 1
+  pkgrel: 1.2
   epoch: 1
   url: https://gitlab.freedesktop.org/xorg/driver/xf86-video-intel
   install: xf86-video-intel.install
@@ -60,6 +60,7 @@ pkgbase:
   replaces:
     - xf86-video-intel-uxa
     - xf86-video-intel-sna
+    - xlibre-video-intel
   options:
     - '!lto'
   source:
