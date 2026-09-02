@@ -3,7 +3,7 @@
 
 pkgname=xf86-input-void
 pkgver=1.4.2
-pkgrel=2.2
+pkgrel=2.3
 pkgdesc="X.org void input driver"
 arch=(x86_64)
 license=('custom')
@@ -11,6 +11,7 @@ url="https://xorg.freedesktop.org/"
 depends=('glibc')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'xorgproto')
 conflicts=('xorg-server<21.1.1' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25')
+replaces=(${pkgname//xf86/xlibre})
 groups=('xorg-drivers')
 source=(${url}/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
 sha512sums=('f266494bd0ab62d2e20048d5557cb4724cc704be06b7f04f55970aad070887ca8940341c4a4929bb48a46b4d040e03c4d09ce3ae85b94ce23c70faf28486005d'
