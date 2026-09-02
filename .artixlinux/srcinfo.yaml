@@ -1,10 +1,10 @@
 ---
-version: 1:22.0.0-3
+version: 1:22.0.0-3.2
 pkgbase:
   name: xf86-video-ati
   pkgdesc: X.org ati video driver
   pkgver: 22.0.0
-  pkgrel: 3
+  pkgrel: 3.2
   epoch: 1
   url: https://xorg.freedesktop.org/
   arch:
@@ -27,6 +27,8 @@ pkgbase:
     - xorg-server<21.1.1
     - X-ABI-VIDEODRV_VERSION<25
     - X-ABI-VIDEODRV_VERSION>=26
+  replaces:
+    - xlibre-video-ati
   source:
     - https://xorg.freedesktop.org//releases/individual/driver/xf86-video-ati-22.0.0.tar.xz
     - https://xorg.freedesktop.org//releases/individual/driver/xf86-video-ati-22.0.0.tar.xz.sig
