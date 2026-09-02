@@ -3,7 +3,7 @@
 
 pkgname=xf86-input-elographics
 pkgver=1.4.4
-pkgrel=2
+pkgrel=2.2
 pkgdesc="X.org Elographics TouchScreen input driver"
 arch=(x86_64)
 license=('MIT')
@@ -11,6 +11,7 @@ url="https://gitlab.freedesktop.org/xorg/driver/xf86-input-elographics"
 depends=('glibc')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'xorgproto')
 conflicts=('xorg-server<21.1.1' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25')
+replaces=(${pkgname//xf86/xlibre})
 source=(https://xorg.freedesktop.org/releases/individual/driver/${pkgname}-${pkgver}.tar.xz{,.sig})
 sha512sums=('6e3d43d020a0805aca626b1f86027f5b76abf1c7aa8c062715e81dc35d3ac61a079c0f9d8c36a74babafdd64b81bebf453e1d11bfda07d436538b7664aa23ae6'
             'SKIP')

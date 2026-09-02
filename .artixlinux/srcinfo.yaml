@@ -1,10 +1,10 @@
 ---
-version: 1.4.4-2
+version: 1.4.4-2.2
 pkgbase:
   name: xf86-input-elographics
   pkgdesc: X.org Elographics TouchScreen input driver
   pkgver: 1.4.4
-  pkgrel: 2
+  pkgrel: 2.2
   url: https://gitlab.freedesktop.org/xorg/driver/xf86-input-elographics
   arch:
     - x86_64
@@ -20,6 +20,8 @@ pkgbase:
     - xorg-server<21.1.1
     - X-ABI-XINPUT_VERSION<24
     - X-ABI-XINPUT_VERSION>=25
+  replaces:
+    - xlibre-input-elographics
   source:
     - https://xorg.freedesktop.org/releases/individual/driver/xf86-input-elographics-1.4.4.tar.xz
     - https://xorg.freedesktop.org/releases/individual/driver/xf86-input-elographics-1.4.4.tar.xz.sig
