@@ -6,7 +6,7 @@
 
 pkgname=xf86-input-synaptics
 pkgver=1.10.0
-pkgrel=1.2
+pkgrel=1.3
 pkgdesc="Synaptics driver for notebook touchpads"
 arch=('x86_64')
 license=('MIT')
@@ -14,7 +14,7 @@ url="https://xorg.freedesktop.org/"
 depends=('libxtst' 'libevdev' 'libx11' 'libxi' 'glibc')
 makedepends=('xorg-server-devel' 'X-ABI-XINPUT_VERSION=24.4' 'xorgproto')
 conflicts=('xorg-server<21.1.2' 'X-ABI-XINPUT_VERSION<24' 'X-ABI-XINPUT_VERSION>=25' 'synaptics')
-replaces=('synaptics')
+replaces=('synaptics' ${pkgname//xf86/xlibre})
 provides=('synaptics')
 groups=('xorg-drivers')
 install=xf86-input-synaptics.install
