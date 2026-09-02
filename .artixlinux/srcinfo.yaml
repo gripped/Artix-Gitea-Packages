@@ -1,10 +1,10 @@
 ---
-version: 1.1.60-1
+version: 1.1.60-2
 pkgbase:
   name: openxr
   pkgdesc: An open standard for virtual reality and augmented reality platforms and devices
   pkgver: 1.1.60
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.khronos.org/openxr/
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: openxr
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
