@@ -1,9 +1,9 @@
 ---
-version: 3:1.42.0-1
+version: 3:1.43.0-1
 pkgbase:
   name: ldc
   pkgdesc: A D Compiler based on the LLVM Compiler Infrastructure including D runtime and libphobos2
-  pkgver: 1.42.0
+  pkgver: 1.43.0
   pkgrel: 1
   epoch: 3
   url: https://github.com/ldc-developers/ldc
@@ -17,30 +17,35 @@ pkgbase:
   makedepends:
     - git
     - cmake
-    - llvm21
+    - llvm
     - lld
     - ldc
     - ninja
   options:
     - '!lto'
   source:
-    - git+https://github.com/ldc-developers/ldc#commit=3d5bafdf0e6f0d4619f04baad80d2b8afb6ba8ad
+    - git+https://github.com/ldc-developers/ldc#commit=ad42ba07be491c79a16a04e17ce54c06d8943c03
     - ldc-phobos::git+https://github.com/ldc-developers/phobos.git
   sha256sums:
-    - c30b46ce86759290cc2fc7e9da3357fa34a322a78c079b43876f7f0d935f3c1a
+    - c994bbe93257350a9fdbb599c3ed035b5da250f30c6d818932080a2536686ccb
     - SKIP
 pkgname:
   - name: ldc
     depends:
       - liblphobos
-      - llvm21-libs
+      - llvm-libs
       - gcc
-      - compiler-rt21
+      - compiler-rt
       - curl
     provides:
-      - d-compiler=2.112.1
+      - d-compiler=2.113.0
     backup:
-      - etc/ldc2.conf
+      - etc/ldc2.conf/00-docs.conf
+      - etc/ldc2.conf/30-compiler.conf
+      - etc/ldc2.conf/50-target-default.conf
+      - etc/ldc2.conf/51-target-wasm-base.conf
+      - etc/ldc2.conf/55-target-wasm-naked.conf
+      - etc/ldc2.conf/70-compiler-rt.conf
   - name: liblphobos
     depends:
       - curl
@@ -49,4 +54,4 @@ pkgname:
       - d-stdlib
     options:
       - staticlibs
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
