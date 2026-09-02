@@ -1,10 +1,10 @@
 ---
-version: 1:3.0.1-2
+version: 1:3.0.1-3
 pkgbase:
   name: amule
   pkgdesc: An eMule-like client for ed2k p2p network
   pkgver: 3.0.1
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://amule-org.github.io/
   arch:
@@ -24,7 +24,7 @@ pkgbase:
     - glib2
     - glibc
     - gtk3
-    - libayatana-appindicator
+    - libappindicator
     - libgcc
     - libmaxminddb
     - libpng
@@ -49,4 +49,4 @@ pkgbase:
     - e9d1b7019c7075b0f8616c6507a767b87de8f899936680e9ff5829d8cbba224d
 pkgname:
   - name: amule
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
