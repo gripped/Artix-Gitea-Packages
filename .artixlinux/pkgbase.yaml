@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,8 +49,72 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 155.0-1
+    packages:
+      - thunderbird-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-af-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ar-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ast-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-be-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-bg-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-br-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ca-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cak-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cs-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cy-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-da-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-de-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-dsb-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-el-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-gb-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-us-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-ar-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-es-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-et-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-eu-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fi-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fr-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fy-nl-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ga-ie-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gd-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gl-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-he-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hr-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hsb-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hu-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hy-am-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-id-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-is-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-it-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ja-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ka-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kab-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kk-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ko-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-lt-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ms-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nb-no-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nl-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nn-no-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pa-in-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pl-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-br-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-pt-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-rm-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ro-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ru-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sk-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sl-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sq-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sr-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sv-se-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-th-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-tr-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uk-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uz-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-vi-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-cn-155.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-tw-155.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 154.0-2
