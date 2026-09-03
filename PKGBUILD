@@ -6,7 +6,7 @@
 pkgbase=podman
 pkgname=(podman podman-docker)
 pkgver=6.1.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A tool for managing OCI containers and pods.'
 arch=(x86_64)
 url='https://github.com/podman-container-tools/podman'
@@ -93,6 +93,8 @@ package_podman() {
   make install install.completions DESTDIR="$pkgdir" PREFIX=/usr LIBEXECDIR=/usr/lib -C $pkgbase
 
   rm -r $pkgdir/usr/lib/systemd
+  # work around podman really wanting journald logging
+  install -Dm644 "$srcdir/logdriver.conf" "$pkgdir/etc/containers/containers.conf.d/000-logdriver.conf"
 }
 
 package_podman-docker() {
