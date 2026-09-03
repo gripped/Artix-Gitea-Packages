@@ -4,13 +4,13 @@
 # Contributor: Evine Deng <evinedeng@hotmail.com>
 
 pkgname=yazi
-pkgver=26.8.15
+pkgver=26.9.1
 pkgrel=1
 pkgdesc="Blazing fast terminal file manager written in Rust, based on async I/O"
 url="https://github.com/sxyazi/yazi"
 arch=("x86_64")
 license=('MIT')
-depends=('glibc' 'hicolor-icon-theme' 'libgcc' 'lua' 'oniguruma' 'ttf-font-nerd')
+depends=('glibc' 'hicolor-icon-theme' 'libgcc' 'lua' 'oniguruma')
 optdepends=(
 	'ffmpeg: for video thumbnails'
 	'7zip: for archive extraction and preview'
@@ -27,10 +27,11 @@ optdepends=(
 	'wl-clipboard: for Wayland clipboard support'
 	'chafa: for ASCII image preview as fallback'
 	'git: for Yazi package management'
+	'ttf-font-nerd: for icons'
 )
 makedepends=('cargo' 'imagemagick')
 source=("$pkgname-$pkgver.tar.gz::https://github.com/sxyazi/$pkgname/archive/v$pkgver.tar.gz")
-sha256sums=('60bd4ca56398f0f6ea6dcf88cc18e325583bf5328aeec51d396070944a9495c8')
+sha256sums=('66857f1b670469daf258edd0bb2ea51d9ad3e2cab4eea9684028c80059fd6862')
 options=('!lto')
 
 prepare() {
