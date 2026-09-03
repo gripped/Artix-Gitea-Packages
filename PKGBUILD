@@ -1,10 +1,11 @@
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgbase=podman
 pkgname=(podman podman-docker)
-pkgver=6.1.0
+pkgver=6.1.1
 pkgrel=1
 pkgdesc='A tool for managing OCI containers and pods.'
 arch=(x86_64)
@@ -29,7 +30,6 @@ makedepends=(
 options=(!lto)
 source=(
   "git+$url?signed#tag=v$pkgver"
-  logdriver.conf
 )
 # See the release-keys repository
 # https://github.com/containers/release-keys
@@ -38,10 +38,8 @@ validpgpkeys=(
   7CE1E6F8C90CB53E7E4D8F2D502E08DB0BBF8EEE  # Ashley Cui <acui@redhat.com>
   9E33DD8704CC03E2DEB84D9A1C1EDD7CC7C3A0DD  # Lokesh Mandvekar <lsm5@redhat.com>
 )
-sha512sums=('3422c99a09e15855483703efc1e60a19abba1f80c0ba9be1054c8e162b16e96e53b21947c653b3f631a2fc4af7ed39cd24efe0e0456495de80953a4dbc43b096'
-            '45d52273ab0e728931bf05162481dbb7eb50c30e1525a1ea0bb2622cbe513f8210a4d4496a74b838748cd28a493710efcc09c30d1817c00612eb09b593458157')
-b2sums=('56e28336f9949ae28815bfc607cf4b5e935a602ad9aac7a32e640dcbfccb3fa890920d17b85c9ccc0cca7a1af56bafebb7b3b049fd1a0bbd9c2760eb99b6e405'
-        '72542f4d0d1610d96ca23faa1d313b9884b4d3c559d28113970f8c4135ef608ca5b1559e671590a0946fb46d93daaa0aae14f32883bac4901066809e0e2c7262')
+sha512sums=('37de59bafa8feeaa00d20db85dc630c06594566d42b7182bdc4bde8de391f9c56fd1844f2989aced737debcfd4ea9f1abc732f4cd19055017e5e2819dd6c004d')
+b2sums=('ab8a6d60f577d8c2b008ea44436cde9b81deb4fd162a69b37de079e9b44a150bd78d1cb78020fe7da207133a7ffb4124ee3a7ce3779ef127334e059975a4e40f')
 
 build() {
   export CGO_CPPFLAGS="${CPPFLAGS}"
@@ -95,8 +93,6 @@ package_podman() {
   make install install.completions DESTDIR="$pkgdir" PREFIX=/usr LIBEXECDIR=/usr/lib -C $pkgbase
 
   rm -r $pkgdir/usr/lib/systemd
-  # work around podman really wanting journald logging
-  install -Dm644 "$srcdir/logdriver.conf" "$pkgdir/etc/containers/containers.conf.d/000-logdriver.conf"
 }
 
 package_podman-docker() {
