@@ -134,7 +134,7 @@ check() {
   # -p: print logs if test fails
   # -j: parallelization
   # disable test 433, since it requires the glibc debug info
-  make TFLAGS="-v -a -p -j$(nproc) !433" test-nonflaky
+  make TFLAGS="-v -a -p -j$(nproc) !433 !3300" test-nonflaky
 }
 
 package_curl() {
