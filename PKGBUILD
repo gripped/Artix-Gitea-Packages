@@ -30,6 +30,7 @@ makedepends=(
 options=(!lto)
 source=(
   "git+$url?signed#tag=v$pkgver"
+  logdriver.conf
 )
 # See the release-keys repository
 # https://github.com/containers/release-keys
