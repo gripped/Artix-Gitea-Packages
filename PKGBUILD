@@ -1,0 +1,26 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+
+pkgname=quill
+pkgver=13.0.0
+pkgrel=1
+pkgdesc='Ultra-low-latency asynchronous C++17 logging and metrics library for performance-critical applications'
+arch=(any)
+url='https://quillcpp.readthedocs.io/'
+license=(MIT)
+depends=()
+makedepends=(cmake
+             git)
+source=(git+https://github.com/odygrd/quill#tag=v$pkgver)
+sha256sums=('9f3e97e04fc6a485ae9bd7b1c162cdad72af7058e1d197dba45f21d2d3489c1d')
+
+build() {
+  cmake -B build -S $pkgname \
+    -DCMAKE_INSTALL_PREFIX=/usr
+  cmake --build build
+}
+
+package() {
+  DESTDIR="$pkgdir" cmake --install build
+  install -Dm644 $pkgname/LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname
+}

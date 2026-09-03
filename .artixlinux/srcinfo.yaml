@@ -1,0 +1,22 @@
+---
+version: 13.0.0-1
+pkgbase:
+  name: quill
+  pkgdesc: Ultra-low-latency asynchronous C++17 logging and metrics library for performance-critical applications
+  pkgver: 13.0.0
+  pkgrel: 1
+  url: https://quillcpp.readthedocs.io/
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - cmake
+    - git
+  source:
+    - git+https://github.com/odygrd/quill#tag=v13.0.0
+  sha256sums:
+    - 9f3e97e04fc6a485ae9bd7b1c162cdad72af7058e1d197dba45f21d2d3489c1d
+pkgname:
+  - name: quill
+# generated with artixpkg 0.39.1-1-any
