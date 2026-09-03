@@ -1,9 +1,9 @@
 ---
-version: 20260814-1
+version: 20260903-1
 pkgbase:
   name: artix-gtk-presets
   pkgdesc: Artix GTK presets (MATE, LXDE, XFCE and Cinnamon)
-  pkgver: 20260814
+  pkgver: 20260903
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/desktop-presets
   arch:
