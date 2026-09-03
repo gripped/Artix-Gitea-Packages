@@ -1,10 +1,10 @@
 ---
-version: 1.0.0-1
+version: 1.0.0-2
 pkgbase:
   name: libopenshot
   pkgdesc: A video editing, animation, and playback library for C++, Python, and Ruby
   pkgver: 1.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/openshot/libopenshot
   arch:
     - x86_64
