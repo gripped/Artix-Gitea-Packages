@@ -5,8 +5,8 @@
 # Contributor: mezcal
 
 pkgname=rspamd
-pkgver=4.1.1
-pkgrel=4
+pkgver=4.1.5
+pkgrel=1
 pkgdesc='Fast, free and open-source spam filtering system'
 arch=(x86_64)
 url=https://rspamd.com
@@ -135,7 +135,7 @@ source=(
   rspamd.logrotate
   rspamd-hyperscan.hook
 )
-b2sums=('6f8e8562dc9fadb72b4e013ba501d35fa9071ce7c2c09bf5e9f95d5203b099de3fd1ff0f81aceac4312da94794eb5baf883d63af7c7b78ccac43922a0b4b1e29'
+b2sums=('a1b68eb4c1167da55e3a2adc78a6d92f54251cc0e7c6b0cbc4d8954ec0cfdfb1824d374a43c2ed416534b7ac6ac788c46e087e27f5308c629ad738d0c1935f4a'
         '6b1b4220444d382d01fe981acf51580c397363a873507fdb508fd5109adae2609c03e629ecdd6e48c13f068d0c3530be4d0fb55b3084c33522619dd29f70a40c'
         'ef0b4d0418dc043ebbbd4d976fa40620b550343c2d973a72b5833010620d8254d2b272d90a5843bb18b73ce2e4833c63646114f33d3ec9d1c3d8a9789b32b97b'
         '88c05d2ca66f3361e519226e25bf812d37916631cfca856a8129de4ff3ae48446a25b741d06b080a9aba30a1e77de83456a8f78d27e5ea9653c5a78f68d6a608'
