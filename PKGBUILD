@@ -7,7 +7,7 @@ pkgbase=artix-artwork
 pkgname=('artix-icons'
         'artix-backgrounds'
         'artix-wallpapers')
-pkgver=2026.05
+pkgver=2026.09
 pkgrel=1
 pkgdesc='Artix icons, backgrounds and wallpapers'
 arch=('any')

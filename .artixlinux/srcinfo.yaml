@@ -1,9 +1,9 @@
 ---
-version: 2026.05-1
+version: 2026.09-1
 pkgbase:
   name: artix-artwork
   pkgdesc: Artix icons, backgrounds and wallpapers
-  pkgver: 2026.05
+  pkgver: 2026.09
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/artwork
   arch:
