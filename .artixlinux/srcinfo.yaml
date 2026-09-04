@@ -1,10 +1,10 @@
 ---
-version: 1.4.1-1
+version: 1.4.1-2
 pkgbase:
   name: xdg-desktop-portal-hyprland
   pkgdesc: xdg-desktop-portal backend for hyprland
   pkgver: 1.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/xdg-desktop-portal-hyprland
   arch:
     - x86_64
@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - cmake
     - hyprland-protocols
+    - hyprwayland-scanner
     - wayland
     - wayland-protocols
   depends:
@@ -23,7 +24,6 @@ pkgbase:
     - libhyprlang.so
     - hyprutils
     - libhyprutils.so
-    - hyprwayland-scanner
     - libinih
     - pipewire
     - qt6-base
@@ -45,4 +45,4 @@ pkgbase:
     - 5f6be4d870e94314f05ec7ff9c9c1f028748230ff80a7f89aeaf66c08e5c70e0
 pkgname:
   - name: xdg-desktop-portal-hyprland
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.39.1
