@@ -139,19 +139,12 @@
             "example.org","192.168.*", "localhost"
         ],
         "NetworkPrediction": false,
-        "PopupBlocking": {
-            "Allow": [
-                "http://example.org/"
-            ],
-            "Default": true,
-            "Locked": true
-        },
         "PostQuantumKeyAgreementEnabled": true,
         "UserMessaging": {
             "ExtensionRecommendations": false,
             "UrlbarInterventions": false,
             "MoreFromMozilla": false,
-            "FirefoxLabs": true
+            "FirefoxLabs": false
         },
         "Extensions": {
             "Install": [
