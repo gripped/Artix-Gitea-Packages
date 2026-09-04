@@ -1,10 +1,10 @@
 ---
-version: 0.4.7-3
+version: 0.4.7-4
 pkgbase:
   name: hyprpicker
   pkgdesc: A wlroots-compatible Wayland color picker that does not suck
   pkgver: 0.4.7
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/hyprwm/hyprpicker
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - BSD-3-Clause
   makedepends:
     - cmake
+    - hyprwayland-scanner
     - libglvnd
     - libjpeg-turbo
     - ninja
@@ -21,7 +22,6 @@ pkgbase:
     - cairo
     - glibc
     - hyprutils
-    - hyprwayland-scanner
     - libgcc
     - libstdc++
     - libxkbcommon
@@ -34,4 +34,4 @@ pkgbase:
     - cde02b92abe372187c9d59a7cb2ca07ede5c3e1a8c81ed8b209dc0d3ac5f0339
 pkgname:
   - name: hyprpicker
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.39.1
