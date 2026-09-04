@@ -1,9 +1,9 @@
 ---
-version: 4.0.6-1
+version: 4.0.7-1
 pkgbase:
   name: smb4k
   pkgdesc: A KDE program that browses samba shares
-  pkgver: 4.0.6
+  pkgver: 4.0.7
   pkgrel: 1
   url: https://smb4k.sourceforge.net/
   arch:
@@ -25,7 +25,7 @@ pkgbase:
     - kcrash
     - kdbusaddons
     - kdnssd
-    - kdsoap-qt6
+    - kdsoap
     - kdsoap-ws-discovery-client
     - ki18n
     - kiconthemes
@@ -44,9 +44,9 @@ pkgbase:
     - smbclient
     - solid
   source:
-    - https://downloads.sourceforge.net/project/smb4k/4.0.6/smb4k-4.0.6.tar.xz
+    - https://downloads.sourceforge.net/project/smb4k/4.0.7/smb4k-4.0.7.tar.xz
   sha256sums:
-    - 5ae52e1f1a66bd7d0f1a9bcaccc80447e0b8ea181c40c87119b2427546ed0e26
+    - 1c3809591bb8070f47b97f4c36fc18e49bd041427f0014f35a9050af84c4dc97
 pkgname:
   - name: smb4k
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.39.1-1-any
