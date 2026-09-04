@@ -14,8 +14,8 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-#pkgver=153.1.0.100b2
-pkgver=140.15.0.100
+pkgver=153.2.0.100b1
+#pkgver=140.15.0.100
 
 pkgrel=1
 _ffbuild=1
@@ -148,11 +148,11 @@ source=(
   "0004-skia-m142-update.patch.xz"
   "0005-rust-1_98-compat.patch"
 )
-sha256sums=('5a0229695e522b1da22dad9cc2a8522b2e68b2308e3a81a146c57f778cc0ee52'
-            '358bb03c550f95172f1e31694e4287da3411560df91e931cb25210efdf90e524'
+sha256sums=('10f1a5bc72317209825fdfc0d84d89c83281883c95cacc5b6319bd065caf09be'
+            'c443c99704aadaf60fb267d709c42bc283e49e82292084f976369c8327ad833c'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
-            '8d399a10e4ed10ea4b6ef4c9ab01e56d34d5482b48b284ce10b71aaaa8de3fd0'
+            '8679245b0915d024751aa2ee17c6eec65c8638e19a0a6aaf9f05c966f27ebcf4'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
             '1242299c0a3e90a6b1f1c2bcc6bfa32e7c914a88a9c98fb879b016e6a1505c84'
             'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
@@ -268,8 +268,8 @@ fi
     patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
     xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
     xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
-    patch -B .patchorigin -Np1 -i ../../0005-rust-1_98-compat.patch
   fi
+  patch -B .patchorigin -Np1 -i ../../0005-rust-1_98-compat.patch
 }
 
 

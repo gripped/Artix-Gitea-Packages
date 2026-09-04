@@ -1,12 +1,13 @@
 ---
-version: 1:140.15.0.100-1
+version: 1:153.2.0.100b1-1
 pkgbase:
   name: konform-browser
   pkgdesc: Firefox ESR fork with increased security, privacy, and customizability
-  pkgver: 140.15.0.100
+  pkgver: 153.2.0.100b1
   pkgrel: 1
   epoch: 1
   url: https://konform-browser.codeberg.page
+  install: konform-browser-testing.install
   arch:
     - x86_64
     - aarch64
@@ -89,7 +90,7 @@ pkgbase:
   provides:
     - konform-browser
   noextract:
-    - security-state--intermediates-140.15.0.100.zip
+    - security-state--intermediates-153.2.0.100b1.zip
   options:
     - '!debug'
     - '!emptydirs'
@@ -99,11 +100,11 @@ pkgbase:
     - usr/lib/konform/librewolf.cfg
     - usr/lib/konform/distribution/policies.json
   source:
-    - src::git+https://codeberg.org/konform-browser/source.git#tag=140.15.0.100
-    - firefox-140.15.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/140.15.0esr-candidates/build1/source/firefox-140.15.0esr.source.tar.xz
-    - firefox-140.15.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/140.15.0esr-candidates/build1/source/firefox-140.15.0esr.source.tar.xz.asc
+    - src-153::git+https://codeberg.org/konform-browser/konform-next.git#tag=153.2.0.100b1
+    - firefox-153.2.0esr-1.source.tar.xz::https://archive.mozilla.org/pub/firefox/candidates/153.2.0esr-candidates/build1/source/firefox-153.2.0esr.source.tar.xz
+    - firefox-153.2.0esr-1.source.tar.xz.asc::https://archive.mozilla.org/pub/firefox/candidates/153.2.0esr-candidates/build1/source/firefox-153.2.0esr.source.tar.xz.asc
     - firefox-l10n-5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz::https://github.com/mozilla-l10n/firefox-l10n/archive/5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1.tar.gz
-    - security-state--intermediates-140.15.0.100.zip::https://codeberg.org/konform-browser/source/releases/download/140.15.0.100/security-state--intermediates.zip
+    - security-state--intermediates-153.2.0.100b1.zip::https://codeberg.org/konform-browser/konform-next/releases/download/153.2.0.100b1/security-state--intermediates.zip
     - konform.desktop
     - konform-browser-testing.install
     - default192x192.png
@@ -115,11 +116,11 @@ pkgbase:
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - 5a0229695e522b1da22dad9cc2a8522b2e68b2308e3a81a146c57f778cc0ee52
-    - 358bb03c550f95172f1e31694e4287da3411560df91e931cb25210efdf90e524
+    - 10f1a5bc72317209825fdfc0d84d89c83281883c95cacc5b6319bd065caf09be
+    - c443c99704aadaf60fb267d709c42bc283e49e82292084f976369c8327ad833c
     - SKIP
     - 50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512
-    - 8d399a10e4ed10ea4b6ef4c9ab01e56d34d5482b48b284ce10b71aaaa8de3fd0
+    - 8679245b0915d024751aa2ee17c6eec65c8638e19a0a6aaf9f05c966f27ebcf4
     - 68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4
     - 1242299c0a3e90a6b1f1c2bcc6bfa32e7c914a88a9c98fb879b016e6a1505c84
     - b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b

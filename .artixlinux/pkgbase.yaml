@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 1:153.1.0.100b2-1
+    version: 1:153.2.0.100b1-1
     packages:
-      - konform-browser-1:153.1.0.100b2-1-x86_64.pkg.tar.zst
+      - konform-browser-1:153.2.0.100b1-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 1:140.15.0.100-1
