@@ -1,8 +1,9 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Aaron Blasko <blaskoazzolaaaron [at] gmail.com>
 
 pkgname=aquamarine
 pkgver=0.15.0
-pkgrel=1
+pkgrel=2
 pkgdesc='a very light linux rendering backend library'
 arch=(x86_64 aarch64)
 url="https://github.com/hyprwm/$pkgname"
@@ -11,7 +12,6 @@ depends=(libgcc
          libstdc++
          glibc # libc.so libm.so
          hyprutils libhyprutils.so
-         hyprwayland-scanner
          libdisplay-info libdisplay-info.so
          libdrm # libdrm.so
          libglvnd libEGL.so
@@ -23,7 +23,8 @@ depends=(libgcc
          libudev libudev.so
          wayland libwayland-client.so
          wayland-protocols)
-makedepends=(cmake)
+makedepends=(cmake
+             hyprwayland-scanner)
 provides=("lib$pkgname.so")
 _archive="$pkgname-$pkgver"
 source=("$url/archive/v$pkgver/$_archive.tar.gz")

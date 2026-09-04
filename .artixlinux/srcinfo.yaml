@@ -1,10 +1,10 @@
 ---
-version: 0.15.0-1
+version: 0.15.0-2
 pkgbase:
   name: aquamarine
   pkgdesc: a very light linux rendering backend library
   pkgver: 0.15.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/aquamarine
   arch:
     - x86_64
@@ -13,13 +13,13 @@ pkgbase:
     - BSD-3-Clause
   makedepends:
     - cmake
+    - hyprwayland-scanner
   depends:
     - libgcc
     - libstdc++
     - glibc
     - hyprutils
     - libhyprutils.so
-    - hyprwayland-scanner
     - libdisplay-info
     - libdisplay-info.so
     - libdrm
@@ -44,4 +44,4 @@ pkgbase:
     - bb5323f58cd2f379cb11c39893336e49980fe2e9fb101745addd87cebde3d13d
 pkgname:
   - name: aquamarine
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.39.1
