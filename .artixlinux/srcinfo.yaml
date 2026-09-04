@@ -1,9 +1,9 @@
 ---
-version: 6.0.1-1
+version: 6.1.0-1
 pkgbase:
   name: gpu-screen-recorder
   pkgdesc: A shadowplay-like screen recorder for Linux. The fastest screen recorder for Linux
-  pkgver: 6.0.1
+  pkgver: 6.1.0
   pkgrel: 1
   url: https://git.dec05eba.com/gpu-screen-recorder
   install: gpu-screen-recorder.install
@@ -45,9 +45,9 @@ pkgbase:
     - 'intel-media-driver: Required to record your screen on Intel Broadwell or later iGPUs or Intel Arc'
     - 'linux-firmware-intel: Required to record your screen on Intel Skylake or later iGPUs'
   source:
-    - git+https://repo.dec05eba.com/gpu-screen-recorder#tag=6.0.1
+    - git+https://repo.dec05eba.com/gpu-screen-recorder#tag=6.1.0
   sha512sums:
-    - 279febaf83b1323bf0d786206dd268e7a9de07a84f03a37a9dff530b9ac2cbbf3d867addbeac6554928e10f981e4d5f7fe67d9aea3312509a166aa879bbbade9
+    - 9521851495e85884a53d71351b3ebf30b8013d036846dbd3b427b49df0752c9e9afa952fdc0683c8fe791ef12ad294f92f1bb98de01b778f21fd4ab81980bd9b
 pkgname:
   - name: gpu-screen-recorder
 # generated with artixpkg 0.39.1-1-any
