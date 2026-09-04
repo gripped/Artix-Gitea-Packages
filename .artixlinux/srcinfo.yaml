@@ -1,10 +1,10 @@
 ---
-version: 0.56.2-2
+version: 0.56.2-3
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
   pkgver: 0.56.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -15,6 +15,7 @@ pkgbase:
     - cmake
     - glaze
     - hyprland-protocols
+    - hyprwayland-scanner
     - meson
     - ninja
     - xorgproto
@@ -38,7 +39,6 @@ pkgbase:
     - libhyprlang.so
     - hyprutils
     - libhyprutils.so
-    - hyprwayland-scanner
     - hyprwire
     - libhyprwire.so
     - lcms2
@@ -83,12 +83,8 @@ pkgbase:
     - xcb-util-wm
     - xorg-xwayland
   optdepends:
-    - 'cmake: to build and install plugins using hyprpm'
-    - 'cpio: to build and install plugins using hyprpm'
-    - 'glaze: to build and install plugins using hyprpm'
-    - 'hyprland-protocols: to build and install plugins using hyprpm'
+    - 'hyprpm: build and install plugins'
     - 'hyprshutdown: clean logout and shutdown helper'
-    - 'meson: to build and install plugins using hyprpm'
     - 'xdg-desktop-portal-hyprland: xdg-desktop-portal backend for hyprland'
   provides:
     - wayland-compositor
@@ -98,4 +94,14 @@ pkgbase:
     - 03ad3f5ef152ff44116ffd56fcf808486211ecabf4f0ba567108ee746ba5cd2e
 pkgname:
   - name: hyprland
-# generated with artixpkg 0.39.1-1-any
+  - name: hyprpm
+    pkgdesc: Plugin manager for Hyprland
+    depends:
+      - cmake
+      - cpio
+      - glaze
+      - hyprland
+      - hyprland-protocols
+      - hyprwayland-scanner
+      - meson
+# generated with artixpkg 0.39.1
