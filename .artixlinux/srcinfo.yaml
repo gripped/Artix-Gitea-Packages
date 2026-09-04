@@ -1,10 +1,10 @@
 ---
-version: 1.27.0-2
+version: 1.28.0-1
 pkgbase:
   name: foot
   pkgdesc: Fast, lightweight, and minimalistic Wayland terminal emulator
-  pkgver: 1.27.0
-  pkgrel: 2
+  pkgver: 1.28.0
+  pkgrel: 1
   url: https://codeberg.org/dnkl/foot
   arch:
     - x86_64
@@ -32,9 +32,9 @@ pkgbase:
   backup:
     - etc/xdg/foot/foot.ini
   source:
-    - foot::git+https://codeberg.org/dnkl/foot.git#tag=1.27.0
+    - foot::git+https://codeberg.org/dnkl/foot.git#tag=1.28.0
   sha256sums:
-    - cce2ba627e49615fb022b6d5ecf85a4cf0bb4d0a3ee1e128d99fa61ac767f547
+    - 05a057b1145507625d9f548ae546705d58ba60cbb26a8958ce72f0b9c1bdee46
 pkgname:
   - name: foot
     depends:
@@ -54,4 +54,4 @@ pkgname:
     pkgdesc: Extra non-standard terminfo files for foot, a Wayland terminal emulator
     depends:
       - ncurses
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.39.1-1-any
