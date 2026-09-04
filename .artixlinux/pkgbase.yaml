@@ -1,7 +1,7 @@
 ---
 actions:
   addRepo: null
-  removeRepo: world-gremlins
+  removeRepo: system-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: false
@@ -13,10 +13,8 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 2.42.3-1
-    packages:
-      - util-linux-2.42.3-1-x86_64.pkg.tar.zst
-      - util-linux-libs-2.42.3-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   system:
     version: 2.42.2-1
