@@ -1,3 +1,4 @@
+# Maintainer: Dovloran <dovloran@artixlinux.org>
 # Maintainer: artist for Artix Linux
 
 # Maintainer: Ungoogled Software Contributors
@@ -13,14 +14,14 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=ungoogled-chromium
-pkgver=150.0.7871.186
+pkgver=152.0.7977.75
 pkgrel=1
 _launcher_ver=8
-_manual_clone=1
+_manual_clone=0
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
-_uc_ver=150.0.7871.186-1
+_uc_ver=152.0.7977.75-1
 pkgdesc="A lightweight approach to removing Google web service dependency"
 arch=('x86_64')
 url="https://github.com/ungoogled-software/ungoogled-chromium"
@@ -68,6 +69,7 @@ makedepends=(
   'compiler-rt'
   'git'
   'gn'
+  'go'
   'gperf'
   'java-runtime-headless'
   'lld'
@@ -96,11 +98,13 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         chromium-147-revert-clang-no-lifetime-dse-flag.patch
         chromium-147-rust-1.95-bytemuck.patch
         chromium-149-drop-unknown-clang-flag.patch
-        chromium-149-unbundle-minizip-undo-unicode.patch
         chromium-149-use-of-undeclared-identifier-ERROR.patch
-        chromium-150-fix-ar-unbundle.patch
-        chromium-150-fix-sysroot-path-error.patch
         chromium-150-revert-avx-flag-change.patch
+        chromium-152-crubit.patch
+        chromium-152-dawn-llvm-22.patch
+        chromium-152-fix-gn-no-public_inputs.patch
+        chromium-152-unbundle-minizip-undo-unicode.patch
+        chromium-152-unbundle-opus-devtools.patch
         compiler-rt-adjust-paths.patch
         increase-fortify-level.patch
         enable-widevine-arm64.patch
@@ -114,15 +118,17 @@ sha256sums=('2e2f36e3cd1ebc4ad57fd310774a5e5e9db77883d5f9374fedeaabd3c103b819'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             'c382830318c5b37826ecf44f3ba9def6be8affdad1bce819ecb83f3222ff4b3a'
             'b9e6339221efe03540ffb360c161d93604a1fc93a5a1c53e5e9849066f987d05'
-            '5ade4cdba7afebfcc09fa969f15bf27404579beac5b7bafb59a0214d407e4ad2'
-            'c22338d13f12772cdbcb5cfc1ace94438b9f9c72353cdb165a3ff3ef3d677c78'
+            'e25cf8fb60f5958127053c515b8decc2b45acceebf9a57654066d093df11f8e9'
             '951514535be65f0e2f84e82305d96292be1da353c1427ba1048ea24be70003c4'
-            'f056d12571823d06c2a938158734fb4c7eeccb5c6f68228634d0c73d75feaa78'
-            '5c42260b11b87dd01c4ef11598033e9687bdf384af2e45adab2fd00964e977e8'
             '5f6ccb7b945c8a13c690493723bad816b36f2f25792d47e677b56f8200907e60'
+            '6cf0b76bc5d9c9bb82ecde1fa87ed1f4380b4bbd29ea485261e5f2aada5d71ea'
+            '5e465d199c1a28d58078af08bcab151561d6423f43c6dba57d4db3f5de534140'
+            '5c4640a211d02ba8249299842ea2999ccc239d85bfd59a0f7c302483683adc07'
+            '890e5d98088ef1c7c075a551442f03385d1db266cad8a65576704a22720683f9'
+            '3276453f2ce655b6286476f48d4df837be952d9447afa46583f79ec71f2288c3'
             'ec8e49b7114e2fa2d359155c9ef722ff1ba5fe2c518fa48e30863d71d3b82863'
             'd634d2ce1fc63da7ac41f432b1e84c59b7cceabf19d510848a7cff40c8025342'
-            '33d1650e183a86cc2d0e9b0fcc08a5da76c7354d25a419921e9d2dc02b8b3854'
+            '5ee4bb69379ac0cea7946c9f8f4ca9e20e0a9e4ee2ee9121eb0ebbb94dd7e928'
             '9343afa1a4308a7cfb3317229f5aff7778688debcc03c4a74a85908aa1d0cc3a'
             '1c1898f263eaacbc069a8e1a3e732852350350d1dad4cb1a6bba430e3b796cd0')
 
@@ -223,22 +229,22 @@ prepare() {
   # https://crbug.com/456677057
   patch -Np1 -i ../glibc-2.42-baud-rate-fix.patch
 
-  # Chromium bundles a patched minizip with extra features.
-  patch -Np1 -i ../chromium-149-unbundle-minizip-undo-unicode.patch
-
   patch -Np1 -i ../chromium-149-use-of-undeclared-identifier-ERROR.patch
-
-  # Fix issue about missing AR file
-  # Credit: https://github.com/ungoogled-software/ungoogled-chromium/pull/3837
-  patch -Np1 -i ../chromium-150-fix-ar-unbundle.patch
-
-  # Fix issue about missing sysroot path
-  # Credit: https://github.com/ungoogled-software/ungoogled-chromium/pull/3837#issuecomment-4836756738
-  patch -Np1 -i ../chromium-150-fix-sysroot-path-error.patch
 
   # Fix issue about missing AVX functions
   # Credit: https://github.com/ungoogled-software/ungoogled-chromium/pull/3837
   patch -Np1 -i ../chromium-150-revert-avx-flag-change.patch
+
+  patch -Np1 -i ../chromium-152-crubit.patch
+
+  patch -Np1 -i ../chromium-152-dawn-llvm-22.patch
+
+  # Just the reverted commit 8dab8b761385b7946588232e4e2a8c116f9293c3
+  patch -Np1 -i "$srcdir/chromium-152-fix-gn-no-public_inputs.patch" -d third_party/devtools-frontend/src
+
+  patch -Np1 -i ../chromium-152-unbundle-minizip-undo-unicode.patch
+
+  patch -Np1 -i ../chromium-152-unbundle-opus-devtools.patch
 
   if (( !_system_clang )); then
     # Use prebuilt rust as system rust cannot be used due to the error:
@@ -264,12 +270,14 @@ prepare() {
   mkdir -p third_party/node/linux/node-linux-x64/bin \
            third_party/rust-toolchain/bin \
            third_party/jdk/current/bin \
-           third_party/gperf/cipd/bin
+           third_party/gperf/cipd/bin \
+           third_party/dawn/tools/golang/linux-amd64/bin
 
   ln -s /usr/bin/node third_party/node/linux/node-linux-x64/bin/
   ln -s /usr/bin/java third_party/jdk/current/bin/
   ln -s /usr/bin/rustc third_party/rust-toolchain/bin/
   ln -s /usr/bin/gperf third_party/gperf/cipd/bin/
+  ln -s /usr/bin/go third_party/dawn/tools/golang/linux-amd64/bin/
 
   # Remove bundled libraries for which we will use the system copies; this
   # *should* do what the remove_bundled_libraries.py script does, with the
@@ -433,7 +441,7 @@ package() {
     info_file=chrome/installer/linux/common/chromium-browser.info
     . $info_file; PACKAGE=chromium
     export $(grep -o '^[A-Z_]*' $info_file)
-    sed -E -e 's/([A-Z_]*)@@/\${\1}/g' -e '/<update_contact>/d' $tmpl_file | envsubst
+    sed -E -e 's/@@([A-Z_]*)/\${\1}/g' -e '/<update_contact>/d' $tmpl_file | envsubst
   ) \
   | install -Dvm644 /dev/stdin "$pkgdir/usr/share/metainfo/chromium.appdata.xml"
 
