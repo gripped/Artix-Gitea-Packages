@@ -1,10 +1,10 @@
 ---
-version: 152.0.7977.75-1
+version: 152.0.7977.75-1.1
 pkgbase:
   name: ungoogled-chromium
   pkgdesc: A lightweight approach to removing Google web service dependency
   pkgver: 152.0.7977.75
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/ungoogled-software/ungoogled-chromium
   install: ungoogled-chromium.install
   arch:
