@@ -1,9 +1,9 @@
 ---
-version: 2.8.0.0.1-1
+version: 2.8.0.1.1-1
 pkgbase:
   name: s6-networking-man-pages
   pkgdesc: Manual pages for s6-networking
-  pkgver: 2.8.0.0.1
+  pkgver: 2.8.0.1.1
   pkgrel: 1
   url: https://git.sr.ht/~humm/s6-networking-man-pages
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   optdepends:
     - 's6-networking: package documented by these man pages'
   source:
-    - git+https://git.sr.ht/~humm/s6-networking-man-pages#tag=v2.8.0.0.1
+    - git+https://git.sr.ht/~humm/s6-networking-man-pages#tag=v2.8.0.1.1
   sha256sums:
-    - 28c5f8b46aa0c98438dc7016468a0a9460c5fde31aacd5eded7986f1312d8f2f
+    - 2ba616384aa6b7dfef3fd7df62cbff5e695965ebbcf8e87190e9ade38ff7c5c7
 pkgname:
   - name: s6-networking-man-pages
 # generated with artixpkg 0.39.1-1-any
