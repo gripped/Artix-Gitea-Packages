@@ -15,7 +15,7 @@
 
 pkgname=ungoogled-chromium
 pkgver=152.0.7977.75
-pkgrel=1.3
+pkgrel=1.4
 _launcher_ver=8
 _manual_clone=1
 _system_clang=1
@@ -112,7 +112,7 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         glibc-2.42-baud-rate-fix.patch)
 install=$pkgname.install
 sha256sums=('2e2f36e3cd1ebc4ad57fd310774a5e5e9db77883d5f9374fedeaabd3c103b819'
-            'f40444c3f7ecf63ed5bfe01944e23ebe9d0d6246ce99f5d2adad0728dc35164f'
+            '0754581d607ab3806cb5dbb319f28d0bb0cddfe6c64015b59dff7d40c859cddb'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
