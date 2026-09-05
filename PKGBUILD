@@ -15,9 +15,9 @@
 
 pkgname=ungoogled-chromium
 pkgver=152.0.7977.75
-pkgrel=1.2
+pkgrel=1.3
 _launcher_ver=8
-_manual_clone=0
+_manual_clone=1
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
