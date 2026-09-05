@@ -13,7 +13,6 @@
 pkg/
 src/
 
-
 # ---> Archives
 *.7z
 *.rar
@@ -34,3 +33,10 @@ src/
 *.service
 *.timer
 *.socket
+
+# --> git sources
+
+syslog-ng/
+opentelemetry-proto/
+jwt-cpp/
+ivykis/
