@@ -1,9 +1,9 @@
 ---
-version: 0.0.1.2.1-1
+version: 0.1.0.0.1-1
 pkgbase:
   name: s6-frontend-man-pages
   pkgdesc: Manual pages for s6-frontend
-  pkgver: 0.0.1.2.1
+  pkgver: 0.1.0.0.1
   pkgrel: 1
   url: https://git.sr.ht/~humm/s6-frontend-man-pages
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   optdepends:
     - 's6-frontend: package documented by these man pages'
   source:
-    - git+https://git.sr.ht/~humm/s6-frontend-man-pages#tag=v0.0.1.2.1
+    - git+https://git.sr.ht/~humm/s6-frontend-man-pages#tag=v0.1.0.0.1
   sha256sums:
-    - 4670573bf5d9652d06b97df4e2b1101e2ceb4c9f8088fd2ec154679dccc1054f
+    - a1aabc4f8d84878a25ed4b0d56ead2277c33f9bac8abe7bb739dc1ab7dfc63a6
 pkgname:
   - name: s6-frontend-man-pages
 # generated with artixpkg 0.39.1-1-any
