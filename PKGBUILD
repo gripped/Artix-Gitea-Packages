@@ -15,7 +15,7 @@
 
 pkgname=ungoogled-chromium
 pkgver=152.0.7977.75
-pkgrel=1.1
+pkgrel=1.2
 _launcher_ver=8
 _manual_clone=0
 _system_clang=1
