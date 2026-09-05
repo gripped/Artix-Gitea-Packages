@@ -1,10 +1,10 @@
 ---
-version: 152.0.7977.75-1.2
+version: 152.0.7977.75-1.3
 pkgbase:
   name: ungoogled-chromium
   pkgdesc: A lightweight approach to removing Google web service dependency
   pkgver: 152.0.7977.75
-  pkgrel: 1.2
+  pkgrel: 1.3
   url: https://github.com/ungoogled-software/ungoogled-chromium
   install: ungoogled-chromium.install
   arch:
@@ -27,6 +27,11 @@ pkgbase:
     - qt6-base
     - rust-bindgen
     - rust
+    - python-httplib2
+    - python-pyparsing
+    - python-six
+    - npm
+    - rsync
   depends:
     - alsa-lib
     - at-spi2-core
@@ -95,7 +100,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://commondatastorage.googleapis.com/chromium-browser-official/chromium-152.0.7977.75-lite.tar.xz
+    - fetch-chromium-release
     - ungoogled-chromium-152.0.7977.75-1.tar.gz::https://github.com/ungoogled-software/ungoogled-chromium/archive/152.0.7977.75-1.tar.gz
     - https://github.com/foutrelis/chromium-launcher/archive/v8/chromium-launcher-8.tar.gz
     - chromium-138-nodejs-version-check.patch
