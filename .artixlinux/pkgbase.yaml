@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 2.9.9.1.1-1
+    version: 2.9.9.2.1-1
     packages:
-      - execline-man-pages-2.9.9.1.1-1-any.pkg.tar.zst
+      - execline-man-pages-2.9.9.2.1-1-any.pkg.tar.zst
     debug: []

@@ -2,7 +2,7 @@
 # Based on AUR package by: Lazerbeak12345 <lazerbeak12345 at users dot noreply dot github dot com>
 
 pkgname=execline-man-pages
-pkgver=2.9.9.1.1
+pkgver=2.9.9.2.1
 pkgrel=1
 pkgdesc="Manual pages for ${pkgname%-man-pages}"
 arch=('any')
@@ -13,7 +13,7 @@ depends=()
 makedepends=(git)
 optdepends=("${pkgname%-man-pages}: package documented by these man pages")
 source=("git+${url}#tag=v${pkgver}")
-sha256sums=('0dfc32caa92a04a0409fd31be8e93a30d7d8bc9a7f4e033708afae8059deb884')
+sha256sums=('9b4a3e477c9788794fa24eadea2f1f503b3409b93888c606aee0cb74d9ee8aa8')
 
 package() {
 	cd "$pkgname"
