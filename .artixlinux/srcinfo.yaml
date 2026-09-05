@@ -1,0 +1,43 @@
+---
+version: 13.4.0-4.3
+pkgbase:
+  name: xf86-video-vmware
+  pkgdesc: X.org vmware video driver
+  pkgver: 13.4.0
+  pkgrel: 4.3
+  url: https://xorg.freedesktop.org/
+  arch:
+    - x86_64
+  groups:
+    - xorg-drivers
+  license:
+    - MIT AND X11
+  makedepends:
+    - xorg-server-devel
+    - X-ABI-VIDEODRV_VERSION=25.2
+  depends:
+    - mesa
+    - libudev
+    - libxext
+    - libx11
+    - libdrm
+    - glibc
+  conflicts:
+    - xorg-server<21.1.1
+    - X-ABI-VIDEODRV_VERSION<25
+    - X-ABI-VIDEODRV_VERSION>=26
+  replaces:
+    - xlibre-video-vmware
+  options:
+    - '!emptydirs'
+  source:
+    - https://xorg.freedesktop.org//releases/individual/driver/xf86-video-vmware-13.4.0.tar.xz
+    - https://xorg.freedesktop.org//releases/individual/driver/xf86-video-vmware-13.4.0.tar.xz.sig
+  validpgpkeys:
+    - 3C2C43D9447D5938EF4551EBE23B7E70B467F0BF
+  sha512sums:
+    - 7cacde21a490501dd9c2e9121040274c1f6ef64e6dc0ef49946b400f6297fab73a6e9548e45fe8930cee9028e65e45aaff9ba489dd69ac75a5133114726bf55d
+    - SKIP
+pkgname:
+  - name: xf86-video-vmware
+# generated with artixpkg 0.38.5-1-any
