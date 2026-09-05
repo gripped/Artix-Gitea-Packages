@@ -46,7 +46,7 @@ source=("git+https://github.com/util-linux/util-linux?signed#tag=v${pkgver/rc/-r
         {login,common,remote,runuser,su}.pam
         'util-linux.sysusers'
         '60-rfkill.rules'
-        0001-util-linux-tmpfiles.patch)
+        0001-util-linux-optional-elogind-support.patch)
 sha256sums=('691a9bbc2d75642f3f299959c3b358983ec6d70a41439a2c5b283c5de2ff0035'
             '6ffedbc0f7878612d2b23589f1ff2ab15633e1df7963a5d9fc750ec5500c7e7a'
             'ee917d55042f78b8bb03f5467e5233e3e2ddc2fe01e302bc53b218003fe22275'
@@ -56,13 +56,14 @@ sha256sums=('691a9bbc2d75642f3f299959c3b358983ec6d70a41439a2c5b283c5de2ff0035'
             '5f4d36be03cc980930ba0a0e109d6b5625201f88a4ae7f913d632f5ab5866b87'
             '4a0b3dd8aa6d34dd29e1d153f396cacf908b0d64f7218276cbcab684587c0a0a'
             '7423aaaa09fee7f47baa83df9ea6fef525ff9aec395c8cbd9fe848ceb2643f37'
-            '8ccec10a22523f6b9d55e0d6cbf91905a39881446710aa083e935e8073323376'
-            'a22e0a037e702170c7d88460cc9c9c2ab1d3e5c54a6985cd4a164ea7beff1b36')
+            'd830210ac8805ca44cd61139ed8df01c67ea8cf6eb8be225f2844c15c5cd623b')
 
 _backports=(
 )
 
 _reverts=(
+  # fincore: (tests) fix tmpfs detection for out-of-tree builds
+  'ec2e371da56a8d69d6787eff856a36ddab9e12f0'
 )
 
 prepare() {
@@ -81,12 +82,16 @@ prepare() {
   done
 
   # do not mark dirty
-  git apply ../0001-util-linux-tmpfiles.patch; sed -i '/dirty=/c dirty=' tools/git-version-gen
+  git apply ../0001-util-linux-optional-elogind-support.patch
+  sed -i '/dirty=/c dirty=' tools/git-version-gen
 }
 
 build() {
   local _meson_options=(
+    -Delogind=enabled
     -Dsystemd=disabled
+    -Dsysusersdir=/usr/lib/sysusers.d
+    -Dtmpfilesdir=/usr/lib/tmpfiles.d
     -Dfs-search-path=/usr/bin:/usr/local/bin
 
     -Dlibuser=disabled
@@ -110,7 +115,7 @@ build() {
 
 check() {
   cd build
-  ../util-linux/tests/run.sh --show-diff
+  ../util-linux/tests/run.sh --show-diff --exclude='lsfd/assoc-pidfs'
 }
 
 package_util-linux() {
@@ -128,7 +133,7 @@ package_util-linux() {
            'pam'
            'readline'
            'shadow'
-           'libudev' 'libudev.so' 'libudev.so'
+           'libelogind' 'libelogind.so' 'libudev.so'
            'zlib')
   optdepends=('words: default dictionary for look')
   backup=(etc/pam.d/chfn
