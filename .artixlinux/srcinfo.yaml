@@ -1,9 +1,9 @@
 ---
-version: 5.1.14-1
+version: 5.1.15-1
 pkgbase:
   name: fcitx5-configtool
   pkgdesc: Configuration Tool for Fcitx5
-  pkgver: 5.1.14
+  pkgver: 5.1.15
   pkgrel: 1
   url: https://github.com/fcitx/fcitx5-configtool
   arch:
@@ -12,6 +12,7 @@ pkgbase:
     - fcitx5-im
   license:
     - GPL-2.0-or-later
+    - LGPL-2.1-or-later
   makedepends:
     - git
     - extra-cmake-modules
@@ -43,11 +44,11 @@ pkgbase:
   replaces:
     - kcm-fcitx5
   source:
-    - git+https://github.com/fcitx/fcitx5-configtool.git#tag=5.1.14?signed
+    - git+https://github.com/fcitx/fcitx5-configtool.git#tag=5.1.15?signed
   validpgpkeys:
     - 2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9
   sha512sums:
-    - 831ea450f4e49cce111b12629f9dab31096e5c7f5f4a188eccbb8dcdf3e45d0f1c212915c04a3c13fe1979742e1832715988914347e70d05a512411d0fdfcdd5
+    - ac49559b7957d9ee6993c6d0a9bf033f81c286417b0070ccbc6635f3164862f3b9d9e7cbf4f1ffed6029b5c3846307a578cf0aa92dcedaeb8d68ea33ce600170
 pkgname:
   - name: fcitx5-configtool
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
