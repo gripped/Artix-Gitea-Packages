@@ -1,17 +1,19 @@
 ---
-version: 5.1.14-2
+version: 5.1.15-1
 pkgbase:
   name: fcitx5-qt
   pkgdesc: Fcitx5 Qt Library (Qt5 & Qt6 integrations)
-  pkgver: 5.1.14
-  pkgrel: 2
+  pkgver: 5.1.15
+  pkgrel: 1
   url: https://github.com/fcitx/fcitx5-qt
   arch:
     - x86_64
   groups:
     - fcitx5-im
   license:
-    - LGPL-2.1-or-later AND BSD-3-Clause
+    - LGPL-2.1-or-later
+    - BSD-3-Clause
+    - GPL-2.0-or-later
   makedepends:
     - git
     - extra-cmake-modules
@@ -27,11 +29,11 @@ pkgbase:
     - qt6-base
     - wayland
   source:
-    - git+https://github.com/fcitx/fcitx5-qt.git#tag=5.1.14?signed
+    - git+https://github.com/fcitx/fcitx5-qt.git#tag=5.1.15?signed
   validpgpkeys:
     - 2CC8A0609AD2A479C65B6D5C8E8B898CBF2412F9
   sha512sums:
-    - 3471711e3c3e82ad467d56d7b521eb68b1ce5b3608c8effcbc5bf550d1f251209e45e91c45b21e0ca750bf1f3d91259a62f078e7e36c78b8d0417667658b6619
+    - 822340eacb17d2523012dace5fac14d8b578ad1bbf58ca285032f569e8014c5781799ab68936290140999da84a7fce3ad64fb32f79b0f6a0aff8cafd21387125
 pkgname:
   - name: fcitx5-qt
 # generated with artixpkg 0.39.1-1-any
