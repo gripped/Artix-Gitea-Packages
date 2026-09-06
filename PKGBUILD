@@ -1,4 +1,5 @@
-# Maintainer: Carlos Eduardo <carana2099@gmail.com>
+# Maintainer: capezotte <capezotte@artixlinux.org>
+
 pkgbase=xchpst
 pkgname=(xchpst xchpst-compat)
 pkgver=0.8.5
