@@ -1,9 +1,9 @@
 ---
-version: 0.6.1.1.1-1
+version: 0.7.0.0.1-1
 pkgbase:
   name: s6-rc-man-pages
   pkgdesc: Manual pages for s6-rc
-  pkgver: 0.6.1.1.1
+  pkgver: 0.7.0.0.1
   pkgrel: 1
   url: https://git.sr.ht/~humm/s6-rc-man-pages
   arch:
@@ -17,9 +17,9 @@ pkgbase:
   optdepends:
     - 's6-rc: package documented by these man pages'
   source:
-    - git+https://git.sr.ht/~humm/s6-rc-man-pages#tag=v0.6.1.1.1
+    - git+https://git.sr.ht/~humm/s6-rc-man-pages#tag=v0.7.0.0.1
   sha256sums:
-    - 00f101873a8472835f3687b87fab955ae7dac610640fa36a5dee799ca204a6c6
+    - 719766358054fe52dd5a17013d8a3cde3bfa981128f03a56ee73431854838cbc
 pkgname:
   - name: s6-rc-man-pages
 # generated with artixpkg 0.39.1-1-any

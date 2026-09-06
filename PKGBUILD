@@ -2,7 +2,7 @@
 # Based on AUR package by: Lazerbeak12345 <lazerbeak12345 at users dot noreply dot github dot com>
 
 pkgname=s6-rc-man-pages
-pkgver=0.6.1.1.1
+pkgver=0.7.0.0.1
 pkgrel=1
 pkgdesc="Manual pages for ${pkgname%-man-pages}"
 arch=('any')
@@ -13,7 +13,7 @@ depends=()
 makedepends=(git)
 optdepends=("${pkgname%-man-pages}: package documented by these man pages")
 source=("git+${url}#tag=v${pkgver}")
-sha256sums=('00f101873a8472835f3687b87fab955ae7dac610640fa36a5dee799ca204a6c6')
+sha256sums=('719766358054fe52dd5a17013d8a3cde3bfa981128f03a56ee73431854838cbc')
 
 package() {
 	cd "$pkgname"
