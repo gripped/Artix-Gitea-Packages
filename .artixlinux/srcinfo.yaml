@@ -1,10 +1,10 @@
 ---
-version: 3.8.13-2
+version: 3.8.13-3
 pkgbase:
   name: gnutls
   pkgdesc: A library which provides a secure layer over a reliable transport layer
   pkgver: 3.8.13
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.gnutls.org/
   arch:
     - x86_64
@@ -49,4 +49,4 @@ pkgbase:
     - 22e614510fe52defe8c233ce3e5ead2205739fd967657ce3176ca121f3c562b5
 pkgname:
   - name: gnutls
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1
