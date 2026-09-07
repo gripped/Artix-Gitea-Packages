@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260420.173536.g06c184f0b186-1
+    version: 20260722.225329.gaa158a889a48-1
     packages:
-      - libretro-sameboy-20260420.173536.g06c184f0b186-1-x86_64.pkg.tar.zst
+      - libretro-sameboy-20260722.225329.gaa158a889a48-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
