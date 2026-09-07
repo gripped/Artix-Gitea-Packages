@@ -8,7 +8,7 @@
 
 pkgname=libopenshot
 pkgver=1.0.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="A video editing, animation, and playback library for C++, Python, and Ruby"
 arch=(x86_64)
 url="https://github.com/openshot/libopenshot"
@@ -22,7 +22,7 @@ depends=(
   libmagick
   # opencv - requires version 4, but we package v5
   python
-  qt5-base
+  qt6-base
 )
 makedepends=(
   git
@@ -39,7 +39,7 @@ makedepends=(
   unittestpp
   xorg-server-xvfb
   zeromq
-  qt5-svg
+  qt6-svg
 )
 provides=(libopenshot.so)
 source=(
@@ -74,7 +74,7 @@ build() {
     -D PYTHON_INCLUDE_DIRS="/usr/include/python$python_version"
     -D PYTHON_LIBRARIES=/usr/lib/libpython3.so
     -D USE_SYSTEM_JSONCPP=ON
-    -D USE_QT6=OFF
+    -D USE_QT6=ON
     -S "$pkgname"
     -W no-dev
   )

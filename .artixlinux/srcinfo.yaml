@@ -1,10 +1,10 @@
 ---
-version: 1.0.0-3
+version: 1.0.0-3.1
 pkgbase:
   name: libopenshot
   pkgdesc: A video editing, animation, and playback library for C++, Python, and Ruby
   pkgver: 1.0.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/openshot/libopenshot
   arch:
     - x86_64
@@ -25,7 +25,7 @@ pkgbase:
     - unittestpp
     - xorg-server-xvfb
     - zeromq
-    - qt5-svg
+    - qt6-svg
   depends:
     - babl
     - libgomp
@@ -34,7 +34,7 @@ pkgbase:
     - glibc
     - libmagick
     - python
-    - qt5-base
+    - qt6-base
   provides:
     - libopenshot.so
   source:
@@ -59,7 +59,7 @@ pkgname:
       - glibc
       - libmagick
       - python
-      - qt5-base
+      - qt6-base
       - ffmpeg4.4
       - libavcodec.so
       - libavformat.so
