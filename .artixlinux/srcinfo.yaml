@@ -1,0 +1,65 @@
+---
+version: 5.0.1-1
+pkgbase:
+  name: noctalia
+  pkgdesc: A sleek, customizable desktop shell crafted for Wayland
+  pkgver: 5.0.1
+  pkgrel: 1
+  url: https://github.com/noctalia-dev/noctalia
+  arch:
+    - x86_64
+    - aarch64
+  license:
+    - MIT
+  makedepends:
+    - meson
+    - ninja
+    - nlohmann-json
+    - pkgconf
+    - stb
+    - wayland-protocols
+  depends:
+    - bash
+    - cairo
+    - curl
+    - fontconfig
+    - freetype2
+    - git
+    - glib2
+    - glibc
+    - harfbuzz
+    - hicolor-icon-theme
+    - jemalloc
+    - libgcc
+    - libglvnd
+    - libical
+    - libjxl
+    - libpipewire
+    - libqalculate
+    - librsvg
+    - libsecret
+    - libsndfile
+    - libsodium
+    - libstdc++
+    - libwebp
+    - libwireplumber
+    - libxkbcommon
+    - libxml2
+    - md4c
+    - pam
+    - polkit
+    - pango
+    - sdbus-cpp
+    - tomlplusplus
+    - wayland
+  optdepends:
+    - 'ddcutil: monitor brightness control'
+    - 'power-profiles-daemon: power profile management'
+    - 'upower: battery and power device integration'
+  source:
+    - noctalia-5.0.1.tar.gz::https://github.com/noctalia-dev/noctalia/archive/refs/tags/v5.0.1.tar.gz
+  sha256sums:
+    - ed8334f294e9f94f4744e315b674511fc51203a6a56c561af8803a6eb6884698
+pkgname:
+  - name: noctalia
+# generated with artixpkg 0.39.1-1-any
