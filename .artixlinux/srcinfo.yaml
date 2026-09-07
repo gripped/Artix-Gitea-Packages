@@ -1,23 +1,23 @@
 ---
-version: 0.4.70-3
+version: 0.4.72-2
 pkgbase:
   name: gegl
   pkgdesc: Graph based image processing framework
-  pkgver: 0.4.70
-  pkgrel: 3
+  pkgver: 0.4.72
+  pkgrel: 2
   url: https://www.gegl.org/
   arch:
     - x86_64
   license:
     - GPL-3.0-or-later OR LGPL-3.0-or-later
   makedepends:
-    - ffmpeg
     - git
     - gobject-introspection
     - libgexiv2
     - meson
     - python-gobject
-    - sdl2
+    - sdl3
+    - v4l-utils
     - vala
     - gi-docgen
   depends:
@@ -67,17 +67,16 @@ pkgbase:
     - libpoppler-glib.so
     - suitesparse
   optdepends:
-    - 'ffmpeg: FFmpeg Frame Loader and FFmpeg Frame Saver plugins'
     - 'graphviz: for gegl-introspect'
-    - 'sdl2: SDL2 Display plugin'
+    - 'sdl3: SDL3 Display plugin'
   provides:
     - libgegl-0.4.so
     - libgegl-npd-0.4.so
     - libgegl-sc-0.4.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/gegl.git#tag=GEGL_0_4_70
+    - git+https://gitlab.gnome.org/GNOME/gegl.git#tag=GEGL_0_4_72
   sha256sums:
-    - 2d1d8e77b18be3db417b37247b80e798d51cfc2ac27cc881f30089f9723899df
+    - b3af4073606a33df19bd08cfb4fb736c00a0e7f036e7b186d8aa0892392ec2ed
 pkgname:
   - name: gegl
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.39.1
