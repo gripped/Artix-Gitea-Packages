@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 50.1-1
+    version: 50.2-1
     packages:
-      - gnote-50.1-1-x86_64.pkg.tar.zst
+      - gnote-50.2-1-x86_64.pkg.tar.zst
     debug: []
