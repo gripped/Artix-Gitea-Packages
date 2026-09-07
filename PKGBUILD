@@ -1,13 +1,12 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: David Runge <dvzrv@archlinux.org>
-# Contributor: Lukas Fleischer <lfleischer@archlinux.org>
+# Maintainer: David Runge <dvzrv@archlinux.org>
+# Maintainer: Lukas Fleischer <lfleischer@archlinux.org>
 # Contributor: Ali H. Caliskan <ali.h.caliskan AT gmail DOT com>
 # Contributor: Ryan Coyner <rcoyner@gmail.com>
 # Contributor: Stefan Husmann <stefan-husmann@t-online.de>
 
 pkgname=mixxx
 pkgver=2.5.6
-pkgrel=6
+pkgrel=7
 pkgdesc="Free, open source software for digital DJing"
 arch=(x86_64)
 url="https://www.mixxx.org"
