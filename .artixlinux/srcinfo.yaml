@@ -1,10 +1,10 @@
 ---
-version: 4.2.1-3
+version: 4.2.2-1
 pkgbase:
   name: qgis
   pkgdesc: Geographic Information System (GIS) that supports vector, raster & database formats
-  pkgver: 4.2.1
-  pkgrel: 3
+  pkgver: 4.2.2
+  pkgrel: 1
   url: https://qgis.org/
   arch:
     - x86_64
@@ -71,9 +71,9 @@ pkgbase:
     - 'fcgi: Map server'
     - 'gpsbabel: GPS Tools plugin'
   source:
-    - https://qgis.org/downloads/qgis-4.2.1.tar.bz2
+    - https://qgis.org/downloads/qgis-4.2.2.tar.bz2
   sha256sums:
-    - 96a9d229f527b31090cedf5e6068eab8e48d366bdae35dcfc1dbd81db6b70457
+    - 45c3a85b359ec1acd11725a9af8c66b90ee7ca0e85f14df18ed9792f1b9becf0
 pkgname:
   - name: qgis
 # generated with artixpkg 0.39.1-1-any
