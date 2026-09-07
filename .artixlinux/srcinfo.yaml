@@ -1,10 +1,10 @@
 ---
-version: 4.0.0-1
+version: 4.0.0-2.1
 pkgbase:
   name: openshot
   pkgdesc: An award-winning free and open-source video editor
   pkgver: 4.0.0
-  pkgrel: 1
+  pkgrel: 2.1
   url: https://www.openshot.org/
   arch:
     - any
@@ -13,12 +13,12 @@ pkgbase:
   checkdepends:
     - xorg-server-xvfb
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-setuptools
     - python-wheel
   depends:
-    - git
     - ffmpeg
     - hicolor-icon-theme
     - libopenshot
@@ -27,8 +27,15 @@ pkgbase:
     - python-pyqt6
     - python-pyzmq
     - python-requests
+    - python-certifi
+    - python-defusedxml
+    - python-distro
+    - python-numpy
+    - python-opengl
+    - python-pillow
     - qt6-base
     - qt6-svg
+    - qt6-scxml
   optdepends:
     - 'faac: for exporting audio using AAC'
     - 'python-pyqt5-webengine: older, JavaScript based UI'

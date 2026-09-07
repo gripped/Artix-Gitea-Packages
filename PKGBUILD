@@ -1,4 +1,5 @@
-# Maintainer: Rafael Dominiquini <rafaeldominiquini at gmail dot com>
+# Maintainer: capezotte <capezotte@artixlinux.org>
+# Contributor: Rafael Dominiquini <rafaeldominiquini at gmail dot com>
 # Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: David Runge <dvzrv@archlinux.org>
 # Contributor: Bruno Pagani <archange@archlinux.org>
@@ -8,13 +9,12 @@
 
 pkgname=openshot
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2.1
 pkgdesc="An award-winning free and open-source video editor"
 arch=(any)
 url="https://www.openshot.org/"
 license=(GPL-3.0-only)
 depends=(
-  git
   ffmpeg
   hicolor-icon-theme
   libopenshot
@@ -23,10 +23,18 @@ depends=(
   python-pyqt6
   python-pyzmq
   python-requests
+  python-certifi
+  python-defusedxml
+  python-distro
+  python-numpy
+  python-opengl
+  python-pillow
   qt6-base
   qt6-svg
+  qt6-scxml
 )
 makedepends=(
+  git
   python-build
   python-installer
   python-setuptools
