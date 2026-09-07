@@ -1,9 +1,9 @@
 ---
-version: 1.4.1-1
+version: 1.4.2-1
 pkgbase:
   name: vncdotool
   pkgdesc: A command line VNC client
-  pkgver: 1.4.1
+  pkgver: 1.4.2
   pkgrel: 1
   url: https://github.com/sibson/vncdotool
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - python-twisted
     - python-pycryptodomex
   source:
-    - vncdotool-1.4.1.tar.gz::https://github.com/sibson/vncdotool/archive/v1.4.1.tar.gz
+    - vncdotool-1.4.2.tar.gz::https://github.com/sibson/vncdotool/archive/v1.4.2.tar.gz
   sha512sums:
-    - 58690ddeb90c83813cea0f0b7bf169c98cb4d25ea7fcd0c6d2a525cf27692a8f32020b6beb9df660086bfd453a1fdf5bd38f04f4c0cbdda389850abd3b0fb39f
+    - 7ca83a661a1d034d684ed77fc9a67a13e6f1321c393676d53be386b2b2d65bad173fd6d567f99335dfa1f351a3dda4df509c6f3d60b6f090d63e202ca90addfa
 pkgname:
   - name: vncdotool
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
