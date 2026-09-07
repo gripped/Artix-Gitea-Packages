@@ -1,12 +1,13 @@
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Hans-Nikolai Viessmann <hans AT viess DOT mn>
 
 pkgname=plocate
-pkgver=1.1.24
-pkgrel=2
+pkgver=1.1.25
+pkgrel=1
 pkgdesc="Alternative to locate, faster and compatible with mlocate's database."
-arch=('x86_64')
 url="https://plocate.sesse.net"
+arch=('x86_64')
 license=('GPL-2.0-or-later' 'GPL-2.0-only')
 depends=('zstd' 'liburing')
 makedepends=('meson')
@@ -18,37 +19,34 @@ source=("${url}/download/${pkgname}-${pkgver}.tar.gz"
         'plocate.sysusers'
         'plocate.tmpfiles'
         'updatedb.conf')
-sha256sums=('e55a757af1d7efb15ea674993224da4f0258479f8f720bd3dae0925d27dc04a2'
+sha256sums=('68c1d5fbb11864403ae39c1a5937f13afd80b03e68041368831ef58cb613578e'
             '1713a8fc8b81f4a390bf8597c4c0e917474379002dcc984aad2f44218d10c82a'
             'adda399ac42f0faa002caab5bf932777c0006ae7c4387add859c9f77321b4202'
             'd00796741e2194032d0185b40de70ff5c8a11fda416a70434eb0aa2020981f91')
 
-prepare() {
-    cd $pkgname-$pkgver
-}
-
 build() {
-    cd $pkgname-$pkgver
-    artix-meson \
-        -Dinstall_cron=false \
-        -Dinstall_systemd=false \
-        -Dlocategroup=locate \
-        ../build
-    meson compile -C ../build
+	#cd "${pkgname}-${pkgver}"
+	artix-meson \
+		-Dinstall_cron=false \
+		-Dinstall_systemd=false \
+		-Dlocategroup=locate \
+		"${srcdir}/build"
+	meson compile -C "${srcdir}/build"
 }
 
 package() {
-    cd $pkgname-$pkgver
-    DESTDIR="$pkgdir" meson install -C ../build
+	#cd "${pkgname}-${pkgver}"
+	DESTDIR="${pkgdir}" meson install -C "${srcdir}/build"
 
-    chgrp 21 "${pkgdir}/usr/bin/plocate"
-    chmod 2755 "${pkgdir}/usr/bin/plocate"
+	chgrp 21 "${pkgdir}/usr/bin/plocate"
+	chmod 2755 "${pkgdir}/usr/bin/plocate"
 
-    install -Dm644 ../plocate.tmpfiles "$pkgdir/usr/lib/tmpfiles.d/plocate.conf"
-    install -Dm644 ../plocate.sysusers "$pkgdir/usr/lib/sysusers.d/plocate.conf"
-    install -Dm644 ../updatedb.conf "${pkgdir}/etc/updatedb.conf"
-    ln -sf /usr/bin/plocate "$pkgdir/usr/bin/mlocate"
-    ln -sf /usr/bin/plocate "$pkgdir/usr/bin/locate"
-    ln -sf /usr/share/man/man1/locate.1.gz "$pkgdir/usr/share/man/man1/plocate.1.gz"
+	install -Dm 644 "${srcdir}/plocate.tmpfiles" "${pkgdir}/usr/lib/tmpfiles.d/plocate.conf"
+	install -Dm 644 "${srcdir}/plocate.sysusers" "${pkgdir}/usr/lib/sysusers.d/plocate.conf"
+	install -Dm 644 "${srcdir}/updatedb.conf" "${pkgdir}/etc/updatedb.conf"
+
+	ln -sf /usr/bin/plocate "${pkgdir}/usr/bin/mlocate"
+	ln -sf /usr/bin/plocate "${pkgdir}/usr/bin/locate"
+	ln -sf /usr/share/man/man1/locate.1.gz "${pkgdir}/usr/share/man/man1/plocate.1.gz"
 
 }
