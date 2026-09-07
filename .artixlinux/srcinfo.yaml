@@ -1,9 +1,9 @@
 ---
-version: 0.15.0-1
+version: 0.16.0-1
 pkgbase:
   name: anari-sdk
   pkgdesc: ANARI Software Development Kit (SDK)
-  pkgver: 0.15.0
+  pkgver: 0.16.0
   pkgrel: 1
   url: https://github.com/KhronosGroup/ANARI-SDK
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - libstdc++
     - python
   source:
-    - git+https://github.com/KhronosGroup/ANARI-SDK#tag=v0.15.0
+    - git+https://github.com/KhronosGroup/ANARI-SDK#tag=v0.16.0
   sha256sums:
-    - c565c005b39bf1d78f2666ac5912ba14c2475d71f71ea8c2fff46b96a588050e
+    - cabd884e761c79bc9c14f8153bc9044849ba0dc7277c05ddc39e9d925324349e
 pkgname:
   - name: anari-sdk
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
