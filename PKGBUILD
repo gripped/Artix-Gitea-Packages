@@ -4,7 +4,7 @@
 pkgname=libphonenumber
 pkgver=9.0.38
 pkgrel=1
-epoch=1
+epoch=2
 pkgdesc="Google's common library for parsing, formatting, and validating international phone numbers"
 url="https://github.com/googlei18n/libphonenumber"
 arch=(x86_64)
