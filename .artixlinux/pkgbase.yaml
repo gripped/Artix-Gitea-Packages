@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1:20260420.172910.g185488cd83aa-1
+    version: 1:20260816.181733.g890b5d445538-1
     packages:
-      - libretro-snes9x-1:20260420.172910.g185488cd83aa-1-x86_64.pkg.tar.zst
+      - libretro-snes9x-1:20260816.181733.g890b5d445538-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
