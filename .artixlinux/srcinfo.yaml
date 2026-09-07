@@ -1,9 +1,9 @@
 ---
-version: 20260626.001958.gdee3cbac84f5-1
+version: 20260903.192221.g410939fc5eed-1
 pkgbase:
   name: libretro-ppsspp
   pkgdesc: Sony PlayStation Portable core
-  pkgver: 20260626.001958.gdee3cbac84f5
+  pkgver: 20260903.192221.g410939fc5eed
   pkgrel: 1
   url: https://github.com/hrydgard/ppsspp
   arch:
@@ -23,7 +23,7 @@ pkgbase:
     - libstdc++
     - ppsspp-assets
   source:
-    - libretro-ppsspp::git+https://github.com/hrydgard/ppsspp.git#commit=dee3cbac84f5
+    - libretro-ppsspp::git+https://github.com/hrydgard/ppsspp.git#commit=410939fc5eed
     - git+https://github.com/Kethen/aemu_postoffice.git
     - git+https://github.com/Kingcom/armips.git
     - git+https://github.com/google/cpu_features.git
@@ -42,7 +42,7 @@ pkgbase:
     - git+https://github.com/facebook/zstd.git
     - libretro-ppsspp-assets-path.patch
   b2sums:
-    - bb7604eb8d2436d409eb26ca7f29d7939aa1769dae10996a2e71e0bca841bb13056d925c7fb879bc2fd5f6b834915483cfa0818a31d8ad095da298a91fa29e51
+    - 1a8ec36db9a98b60ddb33de1c8fe548ea253a058b95b688378d93947fae83c7c5096b89459da2e4b6c3059deed16d69b262babf08d4796ae73610034d083dfb8
     - SKIP
     - SKIP
     - SKIP
@@ -62,4 +62,4 @@ pkgbase:
     - b46c8f4a147f1b8fddb8664982c4568e9cac74afad65cb16adbccaba26b93baf0f59dd51693a422bd64782c4a95cf8e2ff55e848701b2fb1e1e785ca611d1dc6
 pkgname:
   - name: libretro-ppsspp
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
