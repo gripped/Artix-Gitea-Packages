@@ -1,17 +1,30 @@
-# nous, 2025
+# Contributor: capezotte
+# Contributor: ndowens
+# Contributor: nous
 
-pkgname=zramen
+pkgbase=zramen
+pkgname=(zramen zramen-runit)
 pkgdesc="Manage zram swap space"
-pkgver=1.0.0
+pkgver=1.0.1
 pkgrel=1
 arch=('any')
 url="https://github.com/atweiden/zramen"
 license=('Unlicense')
+depends=(bash)
 source=("$url/releases/download/${pkgver}/zramen-${pkgver}.tar.gz")
-sha256sums=('f93a7aa13cb94905fc62e5bf2967b5ea070b855aa89e6edff4177e4d57b8b486')
+sha256sums=('01e7d90891151e08dc3a6630c15da5795d4ed7a7ebabfbb585ecfe6defa8130d')
 
-package() {
-    echo "${srcdir}/${pkgname}-${pkgver}"
+package_zramen() {
     cd "${srcdir}/${pkgname}-${pkgver}"
-    install -Dm 755 zramen -t "$pkgdir/usr/bin/"
+    install -Dm 755 -t "$pkgdir/usr/bin/" -- zramen
 }
+
+package_zramen-runit() {
+    depends+=(zramen runit)
+    backup=(etc/runit/sv/zramen/conf)
+    cd "${srcdir}/${pkgbase}-${pkgver}"
+    mkdir -p -- "$pkgdir/etc/runit/"
+    cp -a -- sv "$pkgdir/etc/runit"
+}
+
+# vim: sw=4 et

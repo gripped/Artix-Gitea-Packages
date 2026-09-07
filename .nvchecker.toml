@@ -1,4 +1,3 @@
-[qdirstat]
-source = "github"
-github = "atweiden/zramen"
-use_max_tag = true
+[zramen]
+source = "git"
+git = "https://github.com/atweiden/zramen.git"

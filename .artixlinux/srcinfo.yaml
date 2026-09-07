@@ -1,19 +1,28 @@
 ---
-version: 1.0.0-1
+version: 1.0.1-1
 pkgbase:
   name: zramen
   pkgdesc: Manage zram swap space
-  pkgver: 1.0.0
+  pkgver: 1.0.1
   pkgrel: 1
   url: https://github.com/atweiden/zramen
   arch:
     - any
   license:
     - Unlicense
+  depends:
+    - bash
   source:
-    - https://github.com/atweiden/zramen/releases/download/1.0.0/zramen-1.0.0.tar.gz
+    - https://github.com/atweiden/zramen/releases/download/1.0.1/zramen-1.0.1.tar.gz
   sha256sums:
-    - f93a7aa13cb94905fc62e5bf2967b5ea070b855aa89e6edff4177e4d57b8b486
+    - 01e7d90891151e08dc3a6630c15da5795d4ed7a7ebabfbb585ecfe6defa8130d
 pkgname:
   - name: zramen
-# generated with artixpkg 0.36.4-1-any
+  - name: zramen-runit
+    depends:
+      - bash
+      - zramen
+      - runit
+    backup:
+      - etc/runit/sv/zramen/conf
+# generated with artixpkg 0.39.1-1-any
