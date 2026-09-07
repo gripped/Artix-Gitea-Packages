@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kosmindoormap
 pkgver=26.08.0
-pkgrel=3
+pkgrel=4
 pkgdesc='OSM multi-floor indoor map renderer'
 arch=(x86_64)
 url='https://www.kde.org'
