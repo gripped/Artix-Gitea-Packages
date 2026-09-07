@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Guillaume Horel <guillaume.horel@gmail.com>
 
 _pkg=orc
 pkgname=apache-${_pkg}
 pkgver=2.3.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Columnar storage for Hadoop workloads."
 arch=(x86_64)
 url="https://orc.apache.org"
