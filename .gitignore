@@ -10,6 +10,7 @@
 *.log.*
 *.sig
 
+xchpst/
 pkg/
 src/
 

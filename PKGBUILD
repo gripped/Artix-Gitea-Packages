@@ -2,8 +2,8 @@
 
 pkgbase=xchpst
 pkgname=(xchpst xchpst-compat)
-pkgver=0.8.5
-pkgrel=3
+pkgver=0.8.6
+pkgrel=1
 pkgdesc="A backwards-compatible chpst implementation with new hardening options using namespaces and capabilities"
 arch=(x86_64)
 url="https://gitlab.com/init-tools/xchpst"
@@ -12,7 +12,7 @@ groups=()
 depends=(glibc libcap)
 makedepends=(make git)
 source=("git+https://gitlab.com/init-tools/xchpst.git#tag=v$pkgver?signed")
-sha256sums=('64303ff1e0ea477e092f491bb295099998d03c4b98260e2d9e719896663bc2e4')
+sha256sums=('6fb7577d021fc1213bc941599242aa315ad33eb2e32550686d915321bd344d62')
 validpgpkeys=('06AB786E936C6C73F6D8130C4510339430FC9F34')
 
 build() {
