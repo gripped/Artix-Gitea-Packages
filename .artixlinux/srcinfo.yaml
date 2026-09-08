@@ -1,9 +1,9 @@
 ---
-version: 7.1-1
+version: 7.2-1
 pkgbase:
   name: strace
   pkgdesc: A diagnostic, debugging and instructional userspace tracer
-  pkgver: 7.1
+  pkgver: 7.2
   pkgrel: 1
   url: https://strace.io/
   arch:
@@ -14,14 +14,14 @@ pkgbase:
     - glibc
     - libunwind
   source:
-    - https://github.com/strace/strace/releases/download/v7.1/strace-7.1.tar.xz
-    - https://github.com/strace/strace/releases/download/v7.1/strace-7.1.tar.xz.asc
+    - https://github.com/strace/strace/releases/download/v7.2/strace-7.2.tar.xz
+    - https://github.com/strace/strace/releases/download/v7.2/strace-7.2.tar.xz.asc
   validpgpkeys:
     - 296D6F29A020808E8717A8842DB5BD89A340AEB7
     - 7BECFE3AF7B280BB52FF77F104BA4521C996DDE1
   sha256sums:
-    - 81743ecf2a5b44186b2f5038afdc8beda7e5c70aed15b4fbfbcc6e9ece24490f
+    - 4bde6246926890dcee824f6e6ac42a06752f47d77e5097d86e3c0d6d4b709fe5
     - SKIP
 pkgname:
   - name: strace
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
