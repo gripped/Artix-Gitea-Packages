@@ -53,9 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260902.124635.gb4bca9f86817-1
+    version: 20260907.040201.g82d8e051d1c7-1
     packages:
-      - libretro-beetle-psx-20260902.124635.gb4bca9f86817-1-x86_64.pkg.tar.zst
-      - libretro-beetle-psx-hw-20260902.124635.gb4bca9f86817-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-20260907.040201.g82d8e051d1c7-1-x86_64.pkg.tar.zst
+      - libretro-beetle-psx-hw-20260907.040201.g82d8e051d1c7-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
