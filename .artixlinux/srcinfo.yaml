@@ -1,9 +1,9 @@
 ---
-version: 25.11.1-2
+version: 25.11.3-2
 pkgbase:
   name: dpdk
   pkgdesc: A set of libraries and drivers for fast packet processing
-  pkgver: 25.11.1
+  pkgver: 25.11.3
   pkgrel: 2
   url: https://dpdk.org
   arch:
@@ -16,7 +16,6 @@ pkgbase:
     - linux-headers
     - meson
     - ninja
-    - python-pyelftools
   depends:
     - bash
     - dtc
@@ -29,11 +28,13 @@ pkgbase:
     - libpcap
     - numactl
     - openssl
+    - python
+    - python-pyelftools
     - zlib
   source:
-    - git+https://dpdk.org/git/dpdk-stable#tag=v25.11.1
+    - git+https://dpdk.org/git/dpdk-stable#tag=v25.11.3
   b2sums:
-    - eb5ce563cb1bd42395ab819693009b2349237a49e4a867f3986b8bf3632e7602150d82db71aad7aad74be10a0b08bc530d5ceed181c7404481428c3c1c6e7795
+    - 6a1e19b464ac7fdb5856d4db57eadaf6ef3e75c30c781c9a3988f72d7f3d952cccc7b697163ace6b7e9e8ddb07d4c8a8e678d017790a4e3cbc5983cf980dce87
 pkgname:
   - name: dpdk
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
