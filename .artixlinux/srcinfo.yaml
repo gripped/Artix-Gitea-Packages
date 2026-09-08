@@ -1,10 +1,10 @@
 ---
-version: 26.8.0-1
+version: 26.8.0-2
 pkgbase:
   name: ansible-lint
   pkgdesc: Checks playbooks for practices and behaviour that could potentially be improved.
   pkgver: 26.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ansible/ansible-lint
   arch:
     - any
@@ -32,11 +32,18 @@ pkgbase:
     - yamllint
     - python-ansible-compat
     - python-black
+    - python-cffi
+    - python-cryptography
+    - python-distro
     - python-filelock
     - python-jsonschema
     - python-packaging
+    - python-pathspec
+    - python-referencing
     - python-ruamel-yaml
+    - python-subprocess-tee
     - python-wcmatch
+    - python-yaml
     - python-importlib-metadata
   optdepends:
     - 'ansible: check official ansible collections'
@@ -50,4 +57,4 @@ pkgbase:
     - 8e419c65642bdbd60aa81d1e204139e69fc4c86aaddde4131fbfe3c21f5751e608a5a635d3ec4f518d3d5dc9d254a84b302e09bb4f873e21628e2f014b151516
 pkgname:
   - name: ansible-lint
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
