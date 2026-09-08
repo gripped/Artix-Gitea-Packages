@@ -14,14 +14,14 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=ungoogled-chromium
-pkgver=152.0.7977.75
-pkgrel=1.4
+pkgver=152.0.7977.82
+pkgrel=1
 _launcher_ver=8
 _manual_clone=1
 _system_clang=1
 # ungoogled chromium variables
 _uc_usr=ungoogled-software
-_uc_ver=152.0.7977.75-1
+_uc_ver=152.0.7977.82-1
 pkgdesc="A lightweight approach to removing Google web service dependency"
 arch=('x86_64')
 url="https://github.com/ungoogled-software/ungoogled-chromium"
@@ -112,7 +112,7 @@ source=(https://commondatastorage.googleapis.com/chromium-browser-official/chrom
         glibc-2.42-baud-rate-fix.patch)
 install=$pkgname.install
 sha256sums=('2e2f36e3cd1ebc4ad57fd310774a5e5e9db77883d5f9374fedeaabd3c103b819'
-            '0754581d607ab3806cb5dbb319f28d0bb0cddfe6c64015b59dff7d40c859cddb'
+            'a672d1a84b0a7744e2bb6c9d038a2aace269db51bcf99e76895fb169a7e0c218'
             '213e50f48b67feb4441078d50b0fd431df34323be15be97c55302d3fdac4483a'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
