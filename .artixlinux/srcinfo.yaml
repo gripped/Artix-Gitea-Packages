@@ -1,10 +1,10 @@
 ---
-version: 0.40.7-1
+version: 0.40.7-1.1
 pkgbase:
   name: nvm
   pkgdesc: Node Version Manager - Simple bash script to manage multiple active node.js versions
   pkgver: 0.40.7
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/nvm-sh/nvm
   install: nvm.install
   arch:

@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -49,9 +49,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.40.7-1
+    version: 0.40.7-1.1
     packages:
-      - nvm-0.40.7-1-any.pkg.tar.zst
+      - nvm-0.40.7-1.1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 0.40.5-1
