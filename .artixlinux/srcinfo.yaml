@@ -1,10 +1,10 @@
 ---
-version: 0.16.2-2
+version: 0.16.3-1
 pkgbase:
   name: toxic
   pkgdesc: CLI Tox client
-  pkgver: 0.16.2
-  pkgrel: 2
+  pkgver: 0.16.3
+  pkgrel: 1
   url: https://github.com/JFreegman/toxic
   arch:
     - x86_64
@@ -26,11 +26,11 @@ pkgbase:
     - qrencode
     - toxcore
   source:
-    - git+https://github.com/JFreegman/toxic?signed#tag=v0.16.2
+    - git+https://github.com/JFreegman/toxic?signed#tag=v0.16.3
   validpgpkeys:
     - BABD00573A065BFA90D53D563627F3144076AE63
   sha512sums:
-    - c53f47b6577890da49ff9a5fdf6de3a43a83a2d37cb655fb140eee71512d1317cc330857d433e45e75a5790f53a9eae675afd51af2d3ae6212b4a5229dffad47
+    - 2e3415127af7bf8a2d5614ccd1213b5078dd9c9a5ef59f1500cb587d4a284daab48a2e20d226b4ea12eab2bc833f0a11edd3ea0fdc271a66a5cf322a63d1b25d
 pkgname:
   - name: toxic
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1
