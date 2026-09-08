@@ -1,9 +1,9 @@
 ---
-version: 3.1.1-1
+version: 3.1.3-1
 pkgbase:
   name: cosign
   pkgdesc: Container Signing with support for ephemeral keys and Sigstore signing
-  pkgver: 3.1.1
+  pkgver: 3.1.3
   pkgrel: 1
   url: https://github.com/sigstore/cosign
   arch:
@@ -20,11 +20,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/sigstore/cosign.git#tag=v3.1.1
+    - git+https://github.com/sigstore/cosign.git#tag=v3.1.3
   sha512sums:
-    - a55233fe6be6f18e5af9fa4c055a778fae19a91704983546302e81540d548c63764bbf396a2d1bc6cdb58c93010dc1a26c55ce1d7c2eaadefe75ecf9f15200dd
+    - 3a1de197ca90e6d7efc1205d19d670f058da483f4941c1bda05d23145e3b8143c6a8e3710a9b4a3ebd66d9d80f0e56e519c48a32d839494a2897e91ffb3ec6c2
   b2sums:
-    - e0449a5908da66c3fec78404da2572f0b038ad250e9c6ee698e251d9306bf8258ef2902a7dc4ac5207acec27d204dd030a2127529e8a4acf6f71fc529406929e
+    - 6a6c6757c25809ee9ab67caf926e6a7241f2a19c151b295ba43da33c5b15540624c61e9bc62449aaa2e331a722f802894d358bcdea3c04e880858b7f59a66746
 pkgname:
   - name: cosign
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
