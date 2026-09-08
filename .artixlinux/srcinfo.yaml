@@ -1,10 +1,10 @@
 ---
-version: 1.28.0-1
+version: 1.28.0-2
 pkgbase:
   name: foot
   pkgdesc: Fast, lightweight, and minimalistic Wayland terminal emulator
   pkgver: 1.28.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://codeberg.org/dnkl/foot
   arch:
     - x86_64
@@ -29,8 +29,6 @@ pkgbase:
     - wayland-protocols
   optdepends:
     - 'libutempter: utmp logging'
-  backup:
-    - etc/xdg/foot/foot.ini
   source:
     - foot::git+https://codeberg.org/dnkl/foot.git#tag=1.28.0
   sha256sums:
@@ -50,6 +48,8 @@ pkgname:
       - 'foot-terminfo: extra non-standard features over terminfo included in ncurses'
       - 'libnotify: desktop notifications'
       - 'xdg-utils: URI launching'
+    backup:
+      - etc/xdg/foot/foot.ini
   - name: foot-terminfo
     pkgdesc: Extra non-standard terminfo files for foot, a Wayland terminal emulator
     depends:
