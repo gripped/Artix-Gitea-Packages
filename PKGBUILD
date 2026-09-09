@@ -2,7 +2,7 @@
 # Contributor: Fabio 'Lolix' Loli <lolix@disroot.org> -> https://github.com/FabioLolix
 
 pkgname=strawberry
-pkgver=1.2.28
+pkgver=1.2.29
 pkgrel=2
 pkgdesc='A music player aimed at audio enthusiasts and music collectors'
 arch=(x86_64)
@@ -28,6 +28,7 @@ depends=(alsa-lib
          libpulse
          libstdc++
          libx11
+         openssl
          qt6-base
          sqlite
          taglib
@@ -41,8 +42,15 @@ makedepends=(boost
 optdepends=('gst-libav: additional codecs'
             'gst-plugins-bad: additional codecs'
             'gst-plugins-ugly: additional codecs')
-source=(git+https://github.com/strawberrymusicplayer/strawberry#tag=$pkgver)
-sha256sums=('f074e2938537de03bc70b610999aa2222d59d6fc95ff97bc5c3a8f6f61ac5f18')
+source=(git+https://github.com/strawberrymusicplayer/strawberry#tag=$pkgver
+        https://github.com/strawberrymusicplayer/strawberry/releases/download/$pkgver/$pkgname-$pkgver.tar.xz)
+sha256sums=('909523daf62e4f7ab533a1f5ffb44debae2f531a51ffabfd1d02793c45fb9f86'
+            'f5fa02477e25cf1b2d501ee1b0a31521fc7ba74ea13055ab5f934793eb7dc264')
+
+prepare() {
+# Get API credentials from release tarball
+  cp $pkgname-$pkgver/src/apicredentials.h $pkgname/src
+}
 
 build() {
   cmake -B build -S $pkgname \

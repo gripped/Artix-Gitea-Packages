@@ -1,9 +1,9 @@
 ---
-version: 1.2.28-2
+version: 1.2.29-2
 pkgbase:
   name: strawberry
   pkgdesc: A music player aimed at audio enthusiasts and music collectors
-  pkgver: 1.2.28
+  pkgver: 1.2.29
   pkgrel: 2
   url: https://www.strawberrymusicplayer.org/
   arch:
@@ -38,6 +38,7 @@ pkgbase:
     - libpulse
     - libstdc++
     - libx11
+    - openssl
     - qt6-base
     - sqlite
     - taglib
@@ -47,9 +48,11 @@ pkgbase:
     - 'gst-plugins-bad: additional codecs'
     - 'gst-plugins-ugly: additional codecs'
   source:
-    - git+https://github.com/strawberrymusicplayer/strawberry#tag=1.2.28
+    - git+https://github.com/strawberrymusicplayer/strawberry#tag=1.2.29
+    - https://github.com/strawberrymusicplayer/strawberry/releases/download/1.2.29/strawberry-1.2.29.tar.xz
   sha256sums:
-    - f074e2938537de03bc70b610999aa2222d59d6fc95ff97bc5c3a8f6f61ac5f18
+    - 909523daf62e4f7ab533a1f5ffb44debae2f531a51ffabfd1d02793c45fb9f86
+    - f5fa02477e25cf1b2d501ee1b0a31521fc7ba74ea13055ab5f934793eb7dc264
 pkgname:
   - name: strawberry
 # generated with artixpkg 0.39.1-1-any
