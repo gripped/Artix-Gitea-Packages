@@ -1,11 +1,11 @@
 ---
-version: 0.10.10-2
+version: 0.10.10-3
 pkgbase:
   name: ripgrep-all
   pkgdesc:
     rga: ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, etc.
   pkgver: 0.10.10
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/phiresky/ripgrep-all
   arch:
     - x86_64
@@ -26,10 +26,8 @@ pkgbase:
     - zstd
   optdepends:
     - 'ffmpeg: for the ffmpeg adapter'
-    - 'graphicsmagick: for the pdfpages adapter'
     - 'pandoc: for the pandoc adapter'
     - 'poppler: for the poppler adapter'
-    - 'tesseract: for the tesseract adapter'
   source:
     - ripgrep-all-0.10.10.tar.gz::https://github.com/phiresky/ripgrep-all/archive/refs/tags/v0.10.10.tar.gz
   b2sums:
