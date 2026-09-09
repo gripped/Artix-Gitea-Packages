@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-1
+version: 2.4.1-1
 pkgbase:
   name: qt-sudo
   pkgdesc: A clone of LXQt sudo tool, without LXQt libs
-  pkgver: 2.4.0
+  pkgver: 2.4.1
   pkgrel: 1
   url: https://github.com/aarnt/qt-sudo.git
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - qt6-base
     - sudo
   source:
-    - git+https://github.com/aarnt/qt-sudo.git#tag=v2.4.0
+    - git+https://github.com/aarnt/qt-sudo.git#tag=v2.4.1
   sha256sums:
-    - e8adc845fa68d17c3ed666f78397b8e6aec76c56924beb43c480a4a507f6c38a
+    - f859d9485170454b0ed156d44c44e56a30ef566be261ae105077eacbba24e61f
 pkgname:
   - name: qt-sudo
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any

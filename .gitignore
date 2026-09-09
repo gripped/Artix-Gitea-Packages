@@ -10,6 +10,7 @@
 *.log.*
 *.sig
 
+qt-sudo/
 pkg/
 src/
 
