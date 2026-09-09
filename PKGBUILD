@@ -3,11 +3,11 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=extra-cmake-modules
-pkgver=6.29.0
+pkgver=6.30.0
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=(any)
-url='https://community.kde.org/Frameworks'
+url='https://develop.kde.org/products/frameworks/'
 license=(LGPL)
 depends=(cmake)
 makedepends=(python-requests
@@ -17,14 +17,11 @@ optdepends=('python-pyxdg: to generate fastlane metadata for Android apps'
             'python-requests: to generate fastlane metadata for Android apps'
             'python-yaml: to generate fastlane metadata for Android apps')
 groups=(kf6)
-source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
-        artix.patch)
-sha256sums=('aaf2542edd5c5af9ea56a46468892d38a7978af65f0f3518379fa8ce66cad2b8'
-            'SKIP'
-            '65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f')
+source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('22c9f7ff930dae7329faebf2942d2424f4a298c43bb3f11e217be6b12f227f6e'
+            'SKIP')
             
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
-              E0A3EB202F8E57528E13E72FD7574483BB57B18D # Jonathan Esk-Riddell <jr@jriddell.org>
               90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1 # Nicolas Fella <nicolas.fella@kde.org>
               )
 
