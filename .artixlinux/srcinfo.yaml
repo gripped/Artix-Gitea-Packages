@@ -1,9 +1,9 @@
 ---
-version: 2.1.12-1
+version: 2.1.13-1
 pkgbase:
   name: open-iscsi
   pkgdesc: iSCSI userland tools
-  pkgver: 2.1.12
+  pkgver: 2.1.13
   pkgrel: 1
   url: https://www.open-iscsi.com/
   install: open-iscsi.install
@@ -26,9 +26,9 @@ pkgbase:
     - etc/iscsi/iscsid.conf
     - etc/iscsi/initiatorname.iscsi
   source:
-    - open-iscsi-2.1.12.tar.gz::https://github.com/open-iscsi/open-iscsi/archive/2.1.12.tar.gz
+    - open-iscsi-2.1.13.tar.gz::https://github.com/open-iscsi/open-iscsi/archive/2.1.13.tar.gz
   sha256sums:
-    - e2441b61e4b05cd5f0f94b35dcdf460e8d542e40d71b480882628170d6462d9a
+    - 1c3a8ad7d86e57d247a08c013f5055ef695b3a07ed760d1aea7d90b9f9011602
 pkgname:
   - name: open-iscsi
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
