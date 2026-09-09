@@ -20,7 +20,8 @@ groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
         artix.patch)
 sha256sums=('22c9f7ff930dae7329faebf2942d2424f4a298c43bb3f11e217be6b12f227f6e'
-            'SKIP')
+            'SKIP'
+            '65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f')
             
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
               90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1 # Nicolas Fella <nicolas.fella@kde.org>
