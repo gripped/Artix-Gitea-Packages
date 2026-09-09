@@ -26,7 +26,7 @@ pkgname=(
   linux-firmware-realtek
 )
 pkgver=20260810
-pkgrel=2
+pkgrel=3
 pkgdesc="Firmware files for Linux"
 url="https://gitlab.com/kernel-firmware/linux-firmware"
 license=(LicenseRef-WHENCE)
@@ -68,11 +68,6 @@ prepare() {
     echo Reverting $(git log --oneline -1 "${c}")
     git revert -n "${c}"
   done
-
-  # amdgpu decoding glitches
-  # https://gitlab.archlinux.org/archlinux/packaging/packages/linux-firmware/-/work_items/49
-  git checkout 20260622 amdgpu/*vcn*
-  git diff --staged --stat
 }
 
 build() {
