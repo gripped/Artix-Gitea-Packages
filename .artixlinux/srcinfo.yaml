@@ -1,9 +1,9 @@
 ---
-version: 2:1.27.0-1
+version: 2:1.27.1-1
 pkgbase:
   name: go
   pkgdesc: Core compiler tools for the Go programming language
-  pkgver: 1.27.0
+  pkgver: 1.27.1
   pkgrel: 1
   epoch: 2
   url: https://go.dev/
@@ -22,13 +22,13 @@ pkgbase:
     - '!strip'
     - staticlibs
   source:
-    - https://go.dev/dl/go1.27.0.src.tar.gz
-    - https://go.dev/dl/go1.27.0.src.tar.gz.asc
+    - https://go.dev/dl/go1.27.1.src.tar.gz
+    - https://go.dev/dl/go1.27.1.src.tar.gz.asc
   validpgpkeys:
     - EB4C1BFD4F042F6DDDCCEC917721F63BD38B4796
   sha256sums:
-    - 7002403d7cc44529ef6d26f69a44818263395ead7c16c05a5808ae047ebeb0e5
+    - 4e408abae126d916b6164627193f2c54f0e3ca1312d693b86db45f862ab238b1
     - SKIP
 pkgname:
   - name: go
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
