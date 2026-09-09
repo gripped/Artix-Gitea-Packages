@@ -16,7 +16,7 @@ makedepends=(
   liburing
   meson
   numactl
-  systemd
+  udev
 )
 options=(!emptydirs)
 source=($url/archive/refs/tags/fuse-$pkgver.tar.gz)
