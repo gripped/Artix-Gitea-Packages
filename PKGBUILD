@@ -3,7 +3,7 @@
 
 pkgbase=openldap
 pkgname=('openldap' 'libldap')
-pkgver=2.7.0
+pkgver=2.7.1
 pkgrel=1
 arch=('x86_64')
 url="https://www.openldap.org/"
@@ -14,7 +14,7 @@ source=(
   https://www.openldap.org/software/download/OpenLDAP/openldap-release/${pkgbase}-${pkgver}.tgz{,.asc}
   openldap.tmpfiles
   openldap.sysusers)
-sha256sums=('9e86f37da375aa948a1b478dd76fe87b02090e47c21facae19223588e3407922'
+sha256sums=('253db80f301258ea69cda1184766d57395b836aaabf41157eb0316eb0fac1341'
             'SKIP'
             '0be46138e53ff2fa6d4b4c06bfbdd2100426e0bd2ed29bf3419ade6b5974e9a0'
             'e4af9009982808d04fd10bd5d9559cec193efc7a05c6807367473da33392edab')
@@ -119,7 +119,7 @@ package_openldap() {
   cd ${pkgbase}-${pkgver}
   for dir in clients servers doc/man/man{1,5,8}; do
     pushd ${dir}
-    make DESTDIR="${pkgdir}" install
+    make DESTDIR="${pkgdir}" install STRIP_OPTS=
     popd
   done
 
