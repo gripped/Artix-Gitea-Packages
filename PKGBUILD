@@ -1,25 +1,27 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgbase=oxygen-icons
 pkgname=(oxygen-icons
          oxygen-icons-svg)
-pkgver=6.1.0
+pkgver=6.29.0
 epoch=1
-pkgrel=2
+pkgrel=1
 pkgdesc='The Oxygen Icon Theme'
 arch=(any)
-url='https://community.kde.org/Frameworks'
+url='https://develop.kde.org/products/frameworks/'
 license=(LGPL-2.1-or-later)
 makedepends=(extra-cmake-modules
              qt6-base)
-source=(https://download.kde.org/stable/$pkgbase/$pkgbase-$pkgver.tar.xz{,.sig})
-sha256sums=('16ca971079c5067c4507cabf1b619dc87dd6b326fd5c2dd9f5d43810f2174d68'
+groups=(kf6)
+source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
+sha256sums=('3d365f052087de1b5f870a4ecee083a6eb6e5f9174925152331110025113367a'
             'SKIP')
-validpgpkeys=(E0A3EB202F8E57528E13E72FD7574483BB57B18D) # Jonathan Esk-Riddell <jr@jriddell.org>
+validpgpkeys=('39FFA93CAE9C6AFC212AD00202325448204E452A' # Carl Schwan <carl@carlschwan.eu>
+              '90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1' # Nicolas Fella
+)
 
 build() {
   cmake -B build -S $pkgbase-$pkgver
