@@ -1,9 +1,9 @@
 ---
-version: 6.29.0-1
+version: 6.30.0-1
 pkgbase:
   name: kpty
   pkgdesc: Pty abstraction
-  pkgver: 6.29.0
+  pkgver: 6.30.0
   pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
@@ -25,14 +25,14 @@ pkgbase:
     - libutempter
     - qt6-base
   source:
-    - https://download.kde.org/stable/frameworks/6.29/kpty-6.29.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.29/kpty-6.29.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.30/kpty-6.30.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.30/kpty-6.30.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - e0ae0fe539a94cf9a01d3526c17eb74bfe1fc7a263bb780b33e0b6b005deb607
+    - ad66149c20470de29d483f0ccdcb057d42ccf778f3f8cc8e68aefca5380bace7
     - SKIP
 pkgname:
   - name: kpty
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
