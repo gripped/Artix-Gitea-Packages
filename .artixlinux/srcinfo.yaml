@@ -1,9 +1,9 @@
 ---
-version: 26.08.0-1
+version: 26.08.1-1
 pkgbase:
   name: krecorder
   pkgdesc: Audio recorder for Plasma Mobile and other platforms
-  pkgver: 26.08.0
+  pkgver: 26.08.1
   pkgrel: 1
   url: https://apps.kde.org/krecorder/
   arch:
@@ -31,14 +31,14 @@ pkgbase:
     - qt6-multimedia
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/26.08.0/src/krecorder-26.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.0/src/krecorder-26.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.1/src/krecorder-26.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.1/src/krecorder-26.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 9c47ad183d222500e8b76dc85e7841adc7d0f1bf907f0d1ffa2a3b3c985fdb47
+    - bbf1e147e9f89d222404eda2be3ad146ca0ed7c7415a03f96183c84db28ea4b4
     - SKIP
 pkgname:
   - name: krecorder
