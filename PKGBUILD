@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kamera
-pkgver=26.08.0
+pkgver=26.08.1
 pkgrel=1
 pkgdesc='KDE integration for gphoto2 cameras'
 url='https://apps.kde.org/kamera/'
@@ -26,7 +25,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-graphics)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f3cc7f7fc819d716bc2a53cf4fd9d71171cfa3f9bfa50e45d8e6a60388587994'
+sha256sums=('3a81883e06889a3aefd97da8a7b7a0d0ecfeb7501d068c25e59fa606922e5e11'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
