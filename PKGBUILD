@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Tom Gundersen <teg@jklm.no>
 # Contributor: Stéphane Gaudreault <stephane@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
@@ -7,7 +6,7 @@
 # Contributor: Sergio Jovani Guzman <moret@paretux.org>
 
 pkgname=konversation
-pkgver=26.08.0
+pkgver=26.08.1
 pkgrel=1
 pkgdesc='A user-friendly and fully-featured IRC client'
 arch=(x86_64)
@@ -54,7 +53,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('11e9f6bd368cf8eb59fb5ab6b83ae50903ab5792b935a0fc5ae37bdd15591bbf'
+sha256sums=('0ee0926868f312379f5a51e9f81897f1a8b122d01207733393b3804a8f9ef886'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
