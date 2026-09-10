@@ -1,9 +1,9 @@
 ---
-version: 26.08.0-1
+version: 26.08.1-1
 pkgbase:
   name: keepsecret
   pkgdesc: Password manager
-  pkgver: 26.08.0
+  pkgver: 26.08.1
   pkgrel: 1
   url: https://apps.kde.org/keepsecret/
   arch:
@@ -35,14 +35,14 @@ pkgbase:
     - qt6-declarative
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/26.08.0/src/keepsecret-26.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.0/src/keepsecret-26.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.1/src/keepsecret-26.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.1/src/keepsecret-26.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - ce0391e5b09b44a5bb88a08d5e6b39126cf880404f4d90044057ff09f10a38d8
+    - a17a277eb8361cb911fc813c92c9e8132ca5f5b02daa1c1c22eb5a458bd039a9
     - SKIP
 pkgname:
   - name: keepsecret
