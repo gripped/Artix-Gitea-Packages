@@ -1,10 +1,10 @@
 ---
-version: 0.10.0-4
+version: 0.11.0-1
 pkgbase:
   name: wcm
   pkgdesc: GTK application to configure Wayfire
-  pkgver: 0.10.0
-  pkgrel: 4
+  pkgver: 0.11.0
+  pkgrel: 1
   url: https://github.com/WayfireWM/wcm
   arch:
     - x86_64
@@ -14,16 +14,18 @@ pkgbase:
     - git
     - glm
     - meson
-    - wayfire>=0.10.0
+    - wayfire>=0.11.0
     - wayland-protocols
-    - wf-shell>=0.10.0
+    - wf-shell>=0.11.0
   depends:
     - atkmm
+    - fmt
     - glib2
     - glibc
     - glibmm
     - gtk3
     - gtkmm3
+    - hicolor-icon-theme
     - libevdev
     - libgcc
     - libsigc++
@@ -31,13 +33,15 @@ pkgbase:
     - libxkbcommon
     - libxml2
     - wayland
-    - wf-config>=0.10.0
+    - wf-config>=0.11.0
   optdepends:
     - 'wdisplays: Display configuration tool'
   source:
-    - git+https://github.com/WayfireWM/wcm.git#tag=v0.10.0
+    - git+https://github.com/WayfireWM/wcm.git#tag=v0.11.0
+    - wcm-install-icon.patch
   b2sums:
-    - b76e5467d02cc5926ae7efe300c6d017aa9a0410b2c720e16ebb53fce03560c111ab9e664f4e164881bee2c1237d45e14c5b8ab18ddc0265e319f718867985a5
+    - c554f436cb2a887d7c594af9f77a67a719d2c5f8ec3b4f53195e57e765044b6917dfb9d25d44037571c695d60f3ba3bbf541ac89d1e75661584febb0181daf88
+    - cc5fc8a58e8f109730ed8cbda8ea33b5a878a16595bd4cde871f39018218d8a5bff6e19deed572ef09deacdeae092614e3a9482d2fddab80a0888836606a9f9a
 pkgname:
   - name: wcm
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
