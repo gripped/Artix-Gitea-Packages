@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux,org>
+# Maintainer: Antonio Rojas <arojas@archlinux,org>
 # Contributor: Elvis Angelaccio <elvis.angelaccio@kdemail.net>
 # Contributor: Gustavo alvarez <sl1pkn07@gmail.com>
 
 pkgname=kwave
-pkgver=26.08.0
+pkgver=26.08.1
 pkgrel=1
 pkgdesc='A sound editor'
 arch=(x86_64)
@@ -47,7 +46,7 @@ optdepends=('opus: OGG plugin')
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('2181b1cf87a1ee5a2c25eff2029692bb9ecb85c8cd640c31cda94642b85b1c04'
+sha256sums=('7f64ac6a23a8e3d7600451f05e610e7d028220a1f0aedcbdcf7e249c3bab3f15'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
