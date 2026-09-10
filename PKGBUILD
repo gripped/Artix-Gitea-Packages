@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org> 
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org> 
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=ark
-pkgver=26.08.0
+pkgver=26.08.1
 pkgrel=1
 pkgdesc='Archiving Tool'
 arch=(x86_64)
@@ -46,7 +45,7 @@ optdepends=('arj: ARJ format support'
 groups=(kde-applications
         kde-utilities)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('d4627791d17d17f0c4472f8bc464778d7b5526adeca9bba27565e77ff8b44db7'
+sha256sums=('0b277a28263074359ce1a1b994c83e974187c0901e320dcbac6042e104b4d8ce'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
@@ -61,3 +60,4 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 }
+
