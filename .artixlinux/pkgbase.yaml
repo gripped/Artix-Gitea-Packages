@@ -50,11 +50,12 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 3.2.0-1
+    packages:
+      - libmodbus-3.2.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 3.1.12-1
+    version: 3.2.0-1
     packages:
-      - libmodbus-3.1.12-1-x86_64.pkg.tar.zst
+      - libmodbus-3.2.0-1-x86_64.pkg.tar.zst
     debug: []
