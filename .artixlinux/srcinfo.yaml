@@ -1,9 +1,9 @@
 ---
-version: 26.08.0-1
+version: 26.08.1-1
 pkgbase:
   name: kdialog
   pkgdesc: A utility for displaying dialog boxes from shell scripts
-  pkgver: 26.08.0
+  pkgver: 26.08.1
   pkgrel: 1
   url: https://kde.org/
   arch:
@@ -31,14 +31,14 @@ pkgbase:
     - libx11
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.08.0/src/kdialog-26.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.0/src/kdialog-26.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.1/src/kdialog-26.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.1/src/kdialog-26.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 523dfdd55c9f465081ea20023e3c9a5522b948ebfc758e66454b808f63931f52
+    - e7142c812d2b4b202abd12bea054f8368fdba9bb0552a9f46d3a7d7283339c72
     - SKIP
 pkgname:
   - name: kdialog
