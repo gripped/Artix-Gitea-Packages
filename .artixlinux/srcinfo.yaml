@@ -1,9 +1,9 @@
 ---
-version: 2025.10.12-1
+version: 2026.09.10-1
 pkgbase:
   name: filesystem
   pkgdesc: Base Artix Linux files
-  pkgver: 2025.10.12
+  pkgver: 2026.09.10
   pkgrel: 1
   url: https://artixlinux.org
   arch:
@@ -75,7 +75,7 @@ pkgbase:
     - fcb6d3b106c0c5966ee5a87499da0eeb14e3c24329d132c1efca80c75de39524
     - 785c6c3614a27ae6115a27c1ca55bbf333654780997c4ba7e181172b021d1bf3
     - 153d848ed51f2774e5a1578ea08e0c8586ecc63f7562697e035b84247edb2f82
-    - 62855224620a1e6dcfb2373460387bf0b7870ebe0595a61bbbc74919710d7641
+    - 4deeaddc63edd517dab46598c80ccc1d58b2b800346114034ba403a3e749a2f3
     - 4dd21fdcb71ca78b3ebe3adf06bbc9052dff90c8686f8d7f1f898f6ba49b5605
     - 13e2783884783ef46b8345fbcdf7880f0414c0a9c42e2b2fc6a2b048cbc2d86e
     - 80dcbd14a5d96521fcbbe662fc23f5a79c9a8964123c79db3c8e04ec16e7cf8b
@@ -90,4 +90,4 @@ pkgbase:
     - e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
 pkgname:
   - name: filesystem
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.38.5-1-any
