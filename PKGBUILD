@@ -1,0 +1,39 @@
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Contributor: Nikita Almakov <nikita.almakov@gmail.com>
+
+pkgname=rate-mirrors
+pkgver=0.29.0
+pkgrel=1
+pkgdesc="Everyday-use client-side map-aware mirror ranking tool"
+arch=('x86_64')
+url="https://github.com/westandskif/rate-mirrors"
+license=('CC-BY-NC-SA-3.0')
+depends=(
+  'glibc'
+  'libgcc'
+  'openssl'
+)
+makedepends=('cargo')
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+b2sums=('5873d195e0432cdc0bc8b7ac461102d041f69c7131a90b0634b521b0d9c76e4684344ab648188d011730574a0ae20ee34f4d1ae58430297e9564d6df8be0ff3b')
+
+prepare() {
+  cd $pkgname-$pkgver
+  cargo fetch --locked --target "$(rustc --print host-tuple)"
+}
+
+build() {
+  cd $pkgname-$pkgver
+  OPENSSL_NO_VENDOR=true cargo build --frozen --release
+}
+
+check() {
+  cd $pkgname-$pkgver
+  OPENSSL_NO_VENDOR=true cargo test --frozen
+}
+
+package() {
+  cd $pkgname-$pkgver
+  install -vDm755 target/release/rate_mirrors "$pkgdir/usr/bin/rate-mirrors"
+}

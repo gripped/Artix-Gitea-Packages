@@ -1,0 +1,25 @@
+---
+version: 0.29.0-1
+pkgbase:
+  name: rate-mirrors
+  pkgdesc: Everyday-use client-side map-aware mirror ranking tool
+  pkgver: 0.29.0
+  pkgrel: 1
+  url: https://github.com/westandskif/rate-mirrors
+  arch:
+    - x86_64
+  license:
+    - CC-BY-NC-SA-3.0
+  makedepends:
+    - cargo
+  depends:
+    - glibc
+    - libgcc
+    - openssl
+  source:
+    - https://github.com/westandskif/rate-mirrors/archive/v0.29.0/rate-mirrors-0.29.0.tar.gz
+  b2sums:
+    - 5873d195e0432cdc0bc8b7ac461102d041f69c7131a90b0634b521b0d9c76e4684344ab648188d011730574a0ae20ee34f4d1ae58430297e9564d6df8be0ff3b
+pkgname:
+  - name: rate-mirrors
+# generated with artixpkg 0.39.1-1-any
