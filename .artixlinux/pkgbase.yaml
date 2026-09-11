@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.23.10-1
+    version: 1.23.11-1
     packages:
-      - dpkg-1.23.10-1-x86_64.pkg.tar.zst
+      - dpkg-1.23.11-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.23.7-1

@@ -13,7 +13,7 @@
 # Contributor: hugelgupf <ckoch (at) cs.nmt.edu>
 
 pkgname=dpkg
-pkgver=1.23.10
+pkgver=1.23.11
 pkgrel=1
 pkgdesc='The Debian Package Manager tools'
 arch=('x86_64')
@@ -47,7 +47,7 @@ source=(
   origin.archlinux
   origin.artixlinux
 )
-b2sums=('0383265f4b85a7101cf8e88dd9b0887ca750b966effc04f70dbcd199c9ec9e44f4387a1ede813076df62e4d937e54393f3de0650e124865ee83db69fe7104f18'
+b2sums=('9e65912c25268dd00a54db9b0414055b611095bad1f82f6572864dcbe1c3d588f10af0fbaf5efedd5fe24bf01984117fa0359622ebd0a86a6b4b301bc4125595'
         '03555ab4aad197ea9d6492268ffdf6727ada21b50275eb7530f6a4647d8ea8dc32a7f67f2cad049ab9a70fe4010da528ea6aedc07279c2fe0403a2bcdf921811'
         '3c0fa14a5a49805829b5ff80a21083d933c42766b7a361288af2817b6d442f0969fa9d1386383b48765adbe49db2232a18992c7217e7b55659c0580002a42ac1')
 validpgpkeys=('4F3E74F436050C10F5696574B972BF3EA4AE57A3') # Guillem Jover <guillem@hadrons.org>
