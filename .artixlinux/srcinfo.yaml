@@ -1,9 +1,9 @@
 ---
-version: 1.20.2-1
+version: 1.20.4-1
 pkgbase:
   name: elixir
   pkgdesc: A dynamic, functional language for building scalable and maintainable applications
-  pkgver: 1.20.2
+  pkgver: 1.20.4
   pkgrel: 1
   url: https://elixir-lang.org
   arch:
@@ -30,9 +30,9 @@ pkgbase:
   depends:
     - erlang-core
   source:
-    - git+https://github.com/elixir-lang/elixir.git#tag=v1.20.2
+    - git+https://github.com/elixir-lang/elixir.git#tag=v1.20.4
   sha512sums:
-    - cc0cea402b2ea8bdd215a9080d77137f6b314fbdd3b138800affa89bdb8e6a4b20b783f0751f7d34d5b0b3cf4783e1fc670955a0d2171d895c7d14daf4a23de1
+    - 4142452cfbec69c0e869c1debfe9694bf7e17cb698a0c3920debe513e6594e75788af6554f4bb7b0814319e873de042ff9a762999fbc85cd8938a97be758e2cc
 pkgname:
   - name: elixir
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
