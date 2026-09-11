@@ -1,9 +1,9 @@
 ---
-version: 0.25.3-1
+version: 0.26-1
 pkgbase:
   name: python-pint
   pkgdesc: A unit library for Python
-  pkgver: 0.25.3
+  pkgver: 0.26
   pkgrel: 1
   url: https://pint.readthedocs.org
   arch:
@@ -20,9 +20,6 @@ pkgbase:
     - git
     - python-build
     - python-installer
-    - python-setuptools
-    - python-setuptools-scm
-    - python-wheel
     - python-hatchling
     - python-hatch-vcs
   depends:
@@ -30,10 +27,11 @@ pkgbase:
     - python-flexcache
     - python-flexparser
     - python-platformdirs
+    - python-typing_extensions
   source:
-    - git+https://github.com/hgrecco/pint.git#tag=0.25.3
+    - git+https://github.com/hgrecco/pint.git#tag=0.26
   sha512sums:
-    - e8debffa0581f5daaca42caf84c72084282066821ed762f047157c295316b80e2b81b13c6b45447bed67e8362188ac71f49a767c2171c0c13ba4e32b3282eb2c
+    - 39c7f6c49d1872bfe646ebc07ddda01c7f24c1e6e2f9cd0f5b686ea8440e92fe10ee3b4b22cd854028a92d5db9a7d7327b3c14e2dbf752fb41f9d79d90e2af8a
 pkgname:
   - name: python-pint
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
