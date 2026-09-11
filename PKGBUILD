@@ -55,7 +55,7 @@ depends=(
   qt6-declarative
   qt6-sensors
   solid
-  udev-libs
+  libudev
   wayland
 )
 makedepends=(
