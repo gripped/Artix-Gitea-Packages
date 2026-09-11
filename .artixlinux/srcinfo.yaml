@@ -1,11 +1,11 @@
 ---
-version: 8.3.1-1
+version: 8.3.2-1
 pkgbase:
   name: python-oslo-log
   pkgdesc: Oslo Logging Library
-  pkgver: 8.3.1
+  pkgver: 8.3.2
   pkgrel: 1
-  url: https://pypi.python.org/pypi/oslo.log/8.3.1
+  url: https://pypi.python.org/pypi/oslo.log/8.3.2
   arch:
     - any
   license:
@@ -29,9 +29,9 @@ pkgbase:
     - python-debtcollector
     - python-dateutil
   source:
-    - git+https://github.com/openstack/oslo.log.git#tag=8.3.1
+    - git+https://github.com/openstack/oslo.log.git#tag=8.3.2
   sha512sums:
-    - 9c05e0549e544ff0bb99d1f07357dc9e322edf3dc54f7ceafc61d7fe0a02f772bf56ba030eb35fedba0459eff79c3550c6f38b7d95e794f938a996458b74a24a
+    - 42219da7221e5ee9f5674739b2a5ebbdbfbd5a952b16a331cd23c9e928d3247416de1e1dd58726c3679de3d4056095bf90376a250dca18d097991f31939bcb14
 pkgname:
   - name: python-oslo-log
 # generated with artixpkg 0.39.1-1-any
