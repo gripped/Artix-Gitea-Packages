@@ -1,9 +1,9 @@
 ---
-version: 26.08.0-1
+version: 26.08.1-1
 pkgbase:
   name: koko
   pkgdesc: Image gallery application
-  pkgver: 26.08.0
+  pkgver: 26.08.1
   pkgrel: 1
   url: https://apps.kde.org/koko/
   arch:
@@ -44,14 +44,14 @@ pkgbase:
     - qt6-positioning
     - qt6-svg
   source:
-    - https://download.kde.org/stable/release-service/26.08.0/src/koko-26.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.0/src/koko-26.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.1/src/koko-26.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.1/src/koko-26.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 674c9930e4dde448638c2f2ae1b6df2563757106652ccbe67f90a80999c14917
+    - 3afae9b103150e2093c221779c32e0d2ce0e8295cf39e4f59bb40a11944e8c0f
     - SKIP
 pkgname:
   - name: koko
