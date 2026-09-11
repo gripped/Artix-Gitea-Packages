@@ -1,8 +1,8 @@
 ---
-version: 1.9.1-1
+version: 1.10.2-1
 pkgbase:
   name: tlp
-  pkgver: 1.9.1
+  pkgver: 1.10.2
   pkgrel: 1
   url: https://linrunner.de/en/tlp/tlp.html
   install: tlp.install
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - git
   source:
-    - git+https://github.com/linrunner/TLP.git#tag=fc87251e2c5325acfbc2d59f4063f74d80916f76
+    - git+https://github.com/linrunner/TLP.git#tag=1.10.2
   sha256sums:
-    - bc9538c688efa51f84ff8a1e990f7469fa343e64b5b50deed9959d178cf49c71
+    - 614c941f8c269c0b47b269d974ec817d952956b4199c6ce878c4bcbabf509012
 pkgname:
   - name: tlp
     pkgdesc: Linux Advanced Power Management
@@ -41,7 +41,6 @@ pkgname:
     depends:
       - glib2
       - python
-      - python-dbus
       - python-gobject
       - python-shtab
       - tlp
@@ -56,4 +55,4 @@ pkgname:
       - bash
       - networkmanager
       - tlp
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any

@@ -7,21 +7,16 @@ pkgname=(
   tlp-pd
   tlp-rdw
 )
-pkgver=1.9.1
+pkgver=1.10.2
 pkgrel=1
 arch=(any)
 url=https://linrunner.de/en/tlp/tlp.html
 license=(GPL-2.0-or-later)
 makedepends=(git)
-_tag=fc87251e2c5325acfbc2d59f4063f74d80916f76
-source=(git+https://github.com/linrunner/TLP.git#tag=${_tag})
-sha256sums=('bc9538c688efa51f84ff8a1e990f7469fa343e64b5b50deed9959d178cf49c71')
+source=(git+https://github.com/linrunner/TLP.git#tag=${pkgver})
+sha256sums=('614c941f8c269c0b47b269d974ec817d952956b4199c6ce878c4bcbabf509012')
 install=tlp.install
 
-pkgver() {
-  cd TLP
-  git describe --tags
-}
 
 package_tlp() {
   pkgdesc='Linux Advanced Power Management'
@@ -56,7 +51,6 @@ package_tlp-pd() {
   depends=(
     glib2
     python
-    python-dbus
     python-gobject
     python-shtab
     tlp
