@@ -2,7 +2,7 @@
 
 _name=psygnal
 pkgname=python-$_name
-pkgver=0.16.0
+pkgver=0.16.1
 pkgrel=1
 pkgdesc="Python observer pattern (callback/event system) modeled after Qt Signals & Slots (but independent of Qt)"
 arch=(any)
@@ -29,7 +29,7 @@ checkdepends=(
   python-wrapt
 )
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-b2sums=('7a0c01590bb314bec4b0e885d58f3969d25ae4997b9fb937ea2cfd20edc0ea78712857a07199b7fc977958192c1948b2aa0b1b9f041457da8b0d51b668826dd7')
+b2sums=('27fd996a4bd3a5741c8e355cabc1d9e422430bc2aa1c628dc7a122c99c6c190733304ff4da78d7a159e623caaf928073b3a0003fd82b81e0677bd9e6697e7031')
 
 build() {
   cd $_name-$pkgver
