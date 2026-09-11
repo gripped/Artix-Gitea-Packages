@@ -6,7 +6,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=exim
-pkgver=4.99.4
+pkgver=4.100
 pkgrel=1
 pkgdesc='Message Transfer Agent'
 arch=(x86_64)
@@ -41,7 +41,7 @@ source=("https://downloads.exim.org/exim4/$_archive.tar.bz2"{,.asc}
         exim.Makefile
         exim.sysusers
         exim.tmpfiles)
-sha512sums=('2d74e4f07c1d7eaee3a415a5369ac83b9b846c21750358fe4f847ad60cba55a0c13abd79c72e349794f04a7fca0ac7e1385ee2810d06f699ce62f07c5be7fe65'
+sha512sums=('fa5e6448861e964b57ed3e3889f60b85a7c1cdd4c32bf379551bfc64f9aa2bfdf70f929f6f0dd6bbb0f674b431d3d88a85aed61b24d11e662077ca75165eff82'
             'SKIP'
             '6494d9aae71a630935f3946a136855aadede54fd10b7b3cd7df47972d320ae142410076871e839f6caca8e02ec136604464b0b9c593721db243d8edf75c2f17f'
             'd8e3b466e0bba8175cfe762058dec49018495a260aa5efd139f4ef435284c305958cbd7fc514e81042146368b749ae38f0bf276fc0b4b91918ef33126900aa81'
