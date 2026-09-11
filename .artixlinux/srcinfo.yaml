@@ -1,9 +1,9 @@
 ---
-version: 26.08.0-1
+version: 26.08.1-1
 pkgbase:
   name: yakuake
   pkgdesc: A drop-down terminal emulator based on KDE konsole technology
-  pkgver: 26.08.0
+  pkgver: 26.08.1
   pkgrel: 1
   url: https://apps.kde.org/yakuake/
   arch:
@@ -45,14 +45,14 @@ pkgbase:
     - qt6-base
     - wayland
   source:
-    - https://download.kde.org/stable/release-service/26.08.0/src/yakuake-26.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.0/src/yakuake-26.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.1/src/yakuake-26.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.1/src/yakuake-26.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 7ce707aa3609a318bd65533b3fc0a8cbcb1713372a8b769bf09876f51652686e
+    - 723a806681faeb3d4aa2fbc93e11392f6fbb66d8bfadcc5508c355d2eaa893ee
     - SKIP
 pkgname:
   - name: yakuake
