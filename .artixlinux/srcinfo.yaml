@@ -1,8 +1,8 @@
 ---
-version: 18.1.7.5-1
+version: 20.1.8.2-1
 pkgbase:
   name: llvm-julia
-  pkgver: 18.1.7.5
+  pkgver: 20.1.8.2
   pkgrel: 1
   url: https://julialang.org/
   arch:
@@ -15,7 +15,6 @@ pkgbase:
     - libedit
     - libffi
     - libxml2
-    - ncurses
     - ninja
     - python
   depends:
@@ -27,9 +26,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - llvm-julia::git+https://github.com/JuliaLang/llvm-project#tag=julia-18.1.7-5
+    - llvm-julia::git+https://github.com/JuliaLang/llvm-project#tag=julia-20.1.8-2
   sha256sums:
-    - 74f73bfe1f46546a6ae317f825904e5c2a3776ba47d88a073bf7664b484f5872
+    - 285da7f6315118d3da1bab8ab306fddd668903dea5ae91a89e0747a5d8ad2d8c
 pkgname:
   - name: llvm-julia
     pkgdesc: Compiler infrastructure - Julia fork
@@ -51,5 +50,4 @@ pkgname:
       - libedit
       - libffi
       - libxml2
-      - ncurses
 # generated with artixpkg 0.39.1-1-any
