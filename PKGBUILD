@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
-# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=pim-data-exporter
-pkgver=26.08.0
+pkgver=26.08.1
 pkgrel=1
 pkgdesc='Import and export KDE PIM settings'
 arch=(x86_64)
@@ -42,7 +41,7 @@ makedepends=(extra-cmake-modules
 groups=(kde-applications
         kde-pim)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('edcfab6c898f4278db3f1d8612ceb4f08b5e4deca6d2ed85352e408325892598'
+sha256sums=('597b9a5c4bf5d643d9da967ba58770aaf6a42ecb5e08dc11860a1cf37384d651'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
