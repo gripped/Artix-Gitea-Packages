@@ -3,7 +3,7 @@
 
 pkgname=python-sentry_sdk
 _pkgname=sentry-python
-pkgver=2.69.0
+pkgver=2.69.1
 pkgrel=1
 pkgdesc="The official Python SDK for Sentry.io"
 arch=('any')
@@ -31,7 +31,7 @@ optdepends=('python-aiohttp: adds support for the AIOHTTP-Server Web Framework'
             'python-pure-eval: for richer stacktraces & additional variables'
             'python-executing: for richer stacktraces & better function names')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/getsentry/sentry-python/archive/refs/tags/${pkgver}.tar.gz")
-sha256sums=('9737350a6617ea233ce764f6053e40c93d39c49e2450ae1d05a0759e8a33462a')
+sha256sums=('277eef25d055187333d610d3769c19ff23717dde3364fdbb1c72ff9115a1ffcb')
 
 build() {
 	cd "${_pkgname}-${pkgver}"
