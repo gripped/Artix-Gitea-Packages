@@ -61,7 +61,7 @@ index 46ae333..9877d1e 100644
 -if want_systemd_hooks
 -    hooks = 'base systemd autodetect microcode modconf kms keyboard sd-vconsole block filesystems fsck'
 +if want_udev_hooks
-+    hooks = 'base udev autodetect microcode modconf kms keyboard sd-vconsole block filesystems fsck'
++    hooks = 'base udev autodetect microcode modconf kms keyboard consolefont block filesystems fsck'
  endif
  
  conf_data = configuration_data({
