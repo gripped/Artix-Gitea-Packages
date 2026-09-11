@@ -1,9 +1,9 @@
 ---
-version: 7.2.7-1
+version: 7.2.8-1
 pkgbase:
   name: telegram-desktop
   pkgdesc: Official Telegram Desktop client
-  pkgver: 7.2.7
+  pkgver: 7.2.8
   pkgrel: 1
   url: https://desktop.telegram.org/
   arch:
@@ -44,6 +44,7 @@ pkgbase:
     - libpipewire
     - libsrtp
     - libstdc++
+    - libvpx
     - libxcb
     - libxcomposite
     - libxdamage
@@ -57,8 +58,10 @@ pkgbase:
     - openal
     - openh264
     - openssl
+    - opus
     - pipewire
     - qt6-base
+    - qt6-declarative
     - qt6-imageformats
     - qt6-svg
     - qt6-wayland
@@ -73,10 +76,10 @@ pkgbase:
     - 'webkitgtk-6.0: embedded browser features provided by webkitgtk-6.0 (gtk4)'
     - 'xdg-desktop-portal: desktop integration'
   source:
-    - https://github.com/telegramdesktop/tdesktop/releases/download/v7.2.7/tdesktop-7.2.7-full.tar.gz
+    - https://github.com/telegramdesktop/tdesktop/releases/download/v7.2.8/tdesktop-7.2.8-full.tar.gz
     - git+https://github.com/tdlib/td.git#commit=bc9c263e2bfee06aaab41e82db51a103376030bc
   sha512sums:
-    - 3e1c267b2fbdd440d65f2c4082ad3c98b8e1b352000ec1f562fc5515d86334587ad3761778c5e5910140db3b6e7435b9655cd5aecac664a009d6e994c6583605
+    - 87197b2704fb4a39657af726f9bbbdf1d4a9c8884a3301d682c02728ee5e3067722633e314808045eab8ef8a009b243556087661b5ccec1442d2334cba319fdc
     - 12d3b77dbb2a7b7deaef0e173626b9d16acfbdde5b1df4bd58a70a7541a5d8032f25ecbc14604b0e47aa3d6d76704c56409d432717412c6046efebd0ab6180f1
 pkgname:
   - name: telegram-desktop
