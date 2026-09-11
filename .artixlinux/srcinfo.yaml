@@ -1,9 +1,9 @@
 ---
-version: 3.13.5-1
+version: 3.14.3-1
 pkgbase:
   name: python-aiohttp
   pkgdesc: HTTP client/server for asyncio
-  pkgver: 3.13.5
+  pkgver: 3.14.3
   pkgrel: 1
   url: https://aiohttp.readthedocs.io
   arch:
@@ -15,12 +15,14 @@ pkgbase:
     - python-aiodns
     - python-blockbuster
     - python-brotli
+    - python-coverage
     - python-freezegun
     - python-isal
     - python-proxy.py
     - python-pytest
     - python-pytest-codspeed
     - python-pytest-mock
+    - python-pytest-timeout
     - python-pytest-xdist
     - python-re-assert
     - python-time-machine
@@ -52,9 +54,9 @@ pkgbase:
     - 'python-aiodns: for fast DNS resolving'
     - 'python-brotli: for Brotli transfer-encodings support'
   source:
-    - python-aiohttp::git+https://github.com/aio-libs/aiohttp#tag=v3.13.5
+    - python-aiohttp::git+https://github.com/aio-libs/aiohttp#tag=v3.14.3
   b2sums:
-    - 812b02bac69cc1ee1203572673be6a491872210f2841878e9308409559c7450ec2a31a0b378045eedc8d04f5ebebd75e5b04226805333385df70f96e408eaf5a
+    - fc16578f3c41ebfc9bba6cd9eecf555f2206292e0a167684660d92102a7f0ad2b6c20276e77a6668623370c4a047ab551a85d6d7069f888c0dcff86e9ab92b68
 pkgname:
   - name: python-aiohttp
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
