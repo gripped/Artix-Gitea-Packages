@@ -7,7 +7,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 13-1
+    version: 13-2
     packages:
-      - python-pipcl-13-1-any.pkg.tar.zst
+      - python-pipcl-13-2-any.pkg.tar.zst
     debug: []
   world:
     version: 12-1
