@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 1.2.6-2
+    packages:
+      - musl-1.2.6-2-x86_64.pkg.tar.zst
+      - musl-aarch64-1.2.6-2-x86_64.pkg.tar.zst
+      - musl-riscv64-1.2.6-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.2.6-1

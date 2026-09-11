@@ -1,10 +1,10 @@
 ---
-version: 1.2.6-1
+version: 1.2.6-2
 pkgbase:
   name: musl
   pkgdesc: Lightweight implementation of C standard library
   pkgver: 1.2.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.musl-libc.org/
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgname:
   - name: musl
   - name: musl-aarch64
   - name: musl-riscv64
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
