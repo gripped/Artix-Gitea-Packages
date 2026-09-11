@@ -46,3 +46,22 @@ index 46ae333..21172bd 100644
 -- 
 2.54.0
 
+diff --git a/meson.build b/meson.build
+index 46ae333..9877d1e 100644
+--- a/meson.build
++++ b/meson.build
+@@ -34,11 +34,11 @@ want_alpm = get_option('alpm')
+ want_presets = get_option('presets')
+ want_docs = get_option('docs')
+ vconsole_conf = get_option('vconsole_conf')
+-want_systemd_hooks = get_option('systemd_hooks')
++want_udev_hooks = get_option('udev_hooks')
+ 
+ hooks = 'base udev autodetect microcode modconf kms keyboard keymap consolefont block filesystems fsck'
+-if want_systemd_hooks
+-    hooks = 'base systemd autodetect microcode modconf kms keyboard sd-vconsole block filesystems fsck'
++if want_udev_hooks
++    hooks = 'base udev autodetect microcode modconf kms keyboard sd-vconsole block filesystems fsck'
+ endif
+ 
+ conf_data = configuration_data({
