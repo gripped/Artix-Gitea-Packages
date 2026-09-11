@@ -6,7 +6,7 @@ actions:
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.15.3-1
+    version: 7.15.4-1
     packages:
-      - python-coverage-7.15.3-1-x86_64.pkg.tar.zst
+      - python-coverage-7.15.4-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.15.2-1
