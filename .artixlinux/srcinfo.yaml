@@ -1,10 +1,10 @@
 ---
-version: 20260810-3
+version: 20260910-1
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
-  pkgver: 20260810
-  pkgrel: 3
+  pkgver: 20260910
+  pkgrel: 1
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
     - any
@@ -19,17 +19,18 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20260810
+    - git+https://gitlab.com/kernel-firmware/linux-firmware.git?signed#tag=20260910
   validpgpkeys:
     - 4CDE8575E547BF835FE15807A31B6BD72486CFD6
   b2sums:
-    - 96b1388d651acf67c1a6d9ad3761403791a85ebffbc0847d95e5b7c01461febf998ab05455acc13fc8bd74256ee0c7a971a7465f199e8a06aa2a5ce0ef21e97b
+    - edb6c64cb4c839dba1330e0929d8b82ea67a55f8016c0c914deb5fbc2db201cd898d18753a0867aabbf2f6f066cec2d4a78f7cf0940c692d1e75674c79e9a6ba
 pkgname:
   - name: linux-firmware
     pkgdesc: Firmware files for Linux - Default set
     license:
       - CC0-1.0
     depends:
+      - linux-firmware-amd
       - linux-firmware-amdgpu
       - linux-firmware-atheros
       - linux-firmware-broadcom
@@ -40,6 +41,7 @@ pkgname:
       - linux-firmware-other
       - linux-firmware-radeon
       - linux-firmware-realtek
+      - linux-firmware-ti
     optdepends:
       - 'linux-firmware-liquidio: Firmware for Cavium LiquidIO server adapters'
       - 'linux-firmware-marvell: Firmware for Marvell devices'
@@ -55,6 +57,13 @@ pkgname:
     pkgdesc: Microcode update image for AMD CPUs
     license:
       - LicenseRef-amd-ucode
+  - name: linux-firmware-amd
+    pkgdesc: Firmware files for Linux - Firmware for non-GPU AMD devices
+    license:
+      - LicenseRef-WHENCE
+      - LicenseRef-amd
+    depends:
+      - linux-firmware-whence
   - name: linux-firmware-amdgpu
     pkgdesc: Firmware files for Linux - Firmware for AMD Radeon GPUs
     license:
@@ -167,6 +176,14 @@ pkgname:
     license:
       - LicenseRef-WHENCE
       - LicenseRef-realtek
+    depends:
+      - linux-firmware-whence
+  - name: linux-firmware-ti
+    pkgdesc: Firmware files for Linux - Firmware for Texas Instruments devices
+    license:
+      - LicenseRef-WHENCE
+      - GPL-2.0-or-later
+      - LicenseRef-ti
     depends:
       - linux-firmware-whence
 # generated with artixpkg 0.39.1-1-any
