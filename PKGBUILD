@@ -5,7 +5,7 @@
 # Contributor: Thomas Bächler <thomas@archlinux.org>
 
 pkgname=mkinitcpio
-pkgver=41.1
+pkgver=42
 pkgrel=1
 pkgdesc="Modular initramfs image creation utility"
 arch=('any')
@@ -19,42 +19,40 @@ optdepends=('xz: Use lzma or xz compression for the initramfs image'
             'bzip2: Use bzip2 compression for the initramfs image'
             'lzop: Use lzo compression for the initramfs image'
             'lz4: Use lz4 compression for the initramfs image'
-            'mkinitcpio-nfs-utils: Support for root filesystem on NFS'
-            'eukify: alternative UKI generator')
+            'mkinitcpio-nfs-utils: Support for root filesystem on NFS')
 provides=('initramfs')
 backup=('etc/mkinitcpio.conf')
 source=("git+$url.git#tag=v${pkgver}?signed"
         '0001-no-systemd.patch'
-        '0002-no-systemd-meson.patch'
-)
-sha512sums=('6a795ada3522b12e2e5d04d47314c8479eb4a7095b588d8fb6464569c2e7ec2014e5baae55c2138be0b6b8ba805bff34a029ab42a3fedc950d6e34bbb80db93b'
-            '60984660082df3a76ba3f9fca2e6ffb2b09d9721d1a6cfd3ca554a935d49a58cbfabc7b65d0f1f2d7980c31c5ddd3d609603d69d67a299ad1221eeeaf7cd1ec3'
+	'0002-no-systemd-meson.patch')
+sha512sums=('bb8b7b2153c6c73c3e8829b0d2beed9c9096830cf21ec9f97fc993384f0e174e66c412ced96589fcf8244e17b8427db346310d50ab8335fb489d7842ba7fe0c9'
+            'a21cacf34ab69124c95d1523dce82091ad982348894f89f7fae3e3a07a27c005ff29ce89ba10469476642bb3aba24ceeeb685eae5d287b6d7fbff86e61d4e134'
             '5e337b886604ac1f62922acd618574cc26889e2e02fabd601db15e34b9c0551456c9e1e7683b9f9aa22a88a5b83aba8164b0d4b4385d0eb181b2d19c591fc126')
-b2sums=('bda091e49685ddf242305e39e310d49f636c284c9d9e51882a55352e6fa9d9635422c94b30e94c42b2e07e8be633eb65bdfe96d2c9d90b2989351a9b5cfce4cc'
-        'e02aea96ed2849debeeb86df6443a3e63a1a3f9902477d9dd8432091d74ace67617765736ed961def94270a8f0122fa79539f227e1b01c5e4db86dff110fae46'
+b2sums=('fad80b4d2abe0eecb001b6369103a6ed079c6dbb724821498a635ce51cf4731a46831fe4aaf05e860782ab0a69ad0ba09e11f314a0a1ac452d1b9001df38cd4b'
+        '70f2d226ab6025c7e804481564c34db4ff2d617c5c95761e3a903ba50dabff26823c5b79511e3fbda788239570e45a5c0372f80c7f1d07b6aa929bb75268d42c'
         '49b9da35d55d48a62cb866c58e29366d7ee865e03c4b51b34862b7bd450cd7b53bdd40156f7e376342540b051cabb9a57fc8b3f2c62b50dac7e27470875a792a')
 validpgpkeys=('ECCAC84C1BA08A6CC8E63FBBF22FB1D78A77AEAB'    # Giancarlo Razzolini
-              'C100346676634E80C940FB9E9C02FF419FECBE16'    # Morten Linderud
-	      'BB8E6F1B81CF0BB301D74D1CBF425A01E68B38EF')   # nl6720
+              'BB8E6F1B81CF0BB301D74D1CBF425A01E68B38EF')   # nl6720
 
 prepare() {
-  cd "${pkgname}"
-  patch -Np1 -i ../0001-no-systemd.patch
-  patch -Np1 -i ../0002-no-systemd-meson.patch
+	cd "$pkgname"
+	patch -Np1 -i ../0001-no-systemd.patch
+	rm -rf install/sd-vconsole
+	
+	sed -e 's,systemd_hooks,udev_hooks,g' \
+	    -i meson.build \
+	    -i meson.options
 }
 
 build(){
-	cd "$pkgname"
-	artix-meson -Dsystemd=disabled ../build
-	meson compile -C ../build
+	artix-meson -Dudev_hooks=true -D systemd=disabled "$pkgname" build
+	meson compile -C build
 }
 
 check() {
-	cd "$pkgname"
-	meson test -C ../build
+	meson test -C build
 }
 
 package() {
-	cd "$pkgname"
-	meson install -C ../build --destdir "$pkgdir"
+	meson install -C build --destdir "$pkgdir"
 }
