@@ -1,9 +1,9 @@
 ---
-version: 2:1.12.7-1
+version: 2:1.13.0-1
 pkgbase:
   name: julia
   pkgdesc: High-level, high-performance, dynamic programming language
-  pkgver: 1.12.7
+  pkgver: 1.13.0
   pkgrel: 1
   epoch: 2
   url: https://julialang.org/
@@ -20,7 +20,9 @@ pkgbase:
     - python
   depends:
     - blas64-openblas
+    - dsfmt
     - fftw
+    - libatomic
     - libblastrampoline
     - libgit2
     - libnghttp2
@@ -33,6 +35,7 @@ pkgbase:
     - 7zip
     - pcre2
     - suitesparse
+    - zstd
   optdepends:
     - 'gnuplot: If using the Gaston Package from julia'
   options:
@@ -40,19 +43,21 @@ pkgbase:
   backup:
     - etc/julia/startup.jl
   source:
-    - https://github.com/JuliaLang/julia/releases/download/v1.12.7/julia-1.12.7-full.tar.gz
-    - https://github.com/JuliaLang/julia/releases/download/v1.12.7/julia-1.12.7-full.tar.gz.asc
+    - https://github.com/JuliaLang/julia/releases/download/v1.13.0/julia-1.13.0-full.tar.gz
+    - https://github.com/JuliaLang/julia/releases/download/v1.13.0/julia-1.13.0-full.tar.gz.asc
     - c12e8515.patch
     - julia-hardcoded-libs.patch
-    - glibc-2.44.patch
+    - system-llvm.patch
+    - system-zstd.patch
   validpgpkeys:
     - 64B779A570972FFF7BFC2B54EAD471E1A1F2C10A
   sha256sums:
-    - 5c7d85b771de3185eeca9fbc2e6173d8bcf6d74f68418622a9e9c43ad752af51
+    - 6b7f8eecb208b2fffc95cec6713a06c94f51bcbc5616630c30b42bd9221cb26e
     - SKIP
     - 2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367
     - 120c3b77a1aecfdb045ac64902164210ea8dd139d2fb8e8b098155b344a8e1fb
-    - 54685e7c0dffaca2ed791dc62c42333b98fd29662101188348df3a146868c5fd
+    - 263e3d23109c8f8170dfc1418a6c31e0c86c089ba622a46ce861cd874e6dca8e
+    - 3dfa4890ad82d6c30d7f9db1dcef6f8f5c5cdf147ec622f102f555b714d57978
 pkgname:
   - name: julia
 # generated with artixpkg 0.39.1-1-any
