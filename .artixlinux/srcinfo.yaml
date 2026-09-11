@@ -1,9 +1,9 @@
 ---
-version: 1.103.1-1
+version: 1.104.0-1
 pkgbase:
   name: ruby-sass-embedded
   pkgdesc: Embedded Sass Host for Ruby
-  pkgver: 1.103.1
+  pkgver: 1.104.0
   pkgrel: 1
   url: https://github.com/sass-contrib/sass-embedded-host-ruby
   arch:
@@ -23,10 +23,10 @@ pkgbase:
     - ruby-google-protobuf
     - ruby-rake
   source:
-    - ruby-sass-embedded-1.103.1::https://github.com/sass-contrib/sass-embedded-host-ruby/archive/refs/tags/v1.103.1.tar.gz
+    - ruby-sass-embedded-1.104.0::https://github.com/sass-contrib/sass-embedded-host-ruby/archive/refs/tags/v1.104.0.tar.gz
     - no-rubocop-build.patch
   sha256sums:
-    - 786bc24b9355f5c01f61369db311b7d7a3e6e14c552413203a9b5361f78775c8
+    - cea739e92dfda1e62df8ffcd0ac14e69a3d0e590ba36cb588e509c9240b14e47
     - 400bf05b863d1e29245c48a211b524b12ec72e0f11ee65cca2e5a5fc052ea042
 pkgname:
   - name: ruby-sass-embedded
