@@ -5,7 +5,7 @@
 
 pkgname=python-pandas
 pkgver=2.3.3
-pkgrel=2
+pkgrel=4
 pkgdesc='High-performance, easy-to-use data structures and data analysis tools for Python'
 arch=(x86_64)
 url="https://pandas.pydata.org/"
@@ -105,8 +105,14 @@ checkdepends=(
 )
 # No test data in upstream tarballs
 #source=(https://github.com/pandas-dev/pandas/releases/download/v${pkgver}/pandas-${pkgver}.tar.gz)
-source=(git+https://github.com/pandas-dev/pandas#tag=v${pkgver})
-sha256sums=('f1f3717c1c89eacb247c7f36e460f628cfc7d34e1e38116fee1c9cdd1afdce02')
+source=(git+https://github.com/pandas-dev/pandas#tag=v${pkgver}
+        fix-pickle.patch::https://github.com/pandas-dev/pandas/pull/62832.patch)
+sha256sums=('f1f3717c1c89eacb247c7f36e460f628cfc7d34e1e38116fee1c9cdd1afdce02'
+            '9cab9bf008ca1e5827a2ff17f96a7aed5409ea6c800797d401189e2a9151d2df')
+
+prepare() {
+  patch -Np1 -d pandas < fix-pickle.patch
+}
 
 build() {
   cd pandas
