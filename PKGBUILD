@@ -1,22 +1,23 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=stellarsolver
-pkgver=2.7
-pkgrel=2
+pkgver=2.8
+pkgrel=1
 pkgdesc='The cross platform Sextractor and Astrometry.net-Based internal astrometric solver'
 arch=(x86_64)
 url='https://github.com/rlancaste/stellarsolver'
 license=(GPL-3.0-or-later)
 depends=(cfitsio
-         gcc-libs
          glibc
          gsl
+         libgcc
+         libstdc++
          qt6-base
          wcslib)
 makedepends=(cmake
              git)
 source=(git+https://github.com/rlancaste/stellarsolver#tag=$pkgver)
-sha256sums=('53ba85b18f1a2c2b87830fa7c6d5acdadc115ae0be70a23ea0bb4aa288114466')
+sha256sums=('bb0e5324e6eac61c55a453c1c411db6c00eb947a923eb448c0512e7689d18ad5')
 
 prepare() {
   cd $pkgname
