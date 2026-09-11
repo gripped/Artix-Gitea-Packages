@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: system-goblins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -13,8 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 42-1
+    packages:
+      - mkinitcpio-42-1-any.pkg.tar.zst
     debug: []
   system:
     version: 41.1-1
