@@ -1,15 +1,15 @@
 ---
-version: 9.1.1.4-1
+version: 9.4.0.0-1
 pkgbase:
   name: artixforge
-  pkgdesc: Modular TUI/GUI installer framework for Artix Linux
-  pkgver: 9.1.1.4
+  pkgdesc: Modular TUI installer framework for Artix Linux
+  pkgver: 9.4.0.0
   pkgrel: 1
   url: https://github.com/realvolk/ArtixForge
   arch:
     - any
   license:
-    - custom:Forge Attribution License 1.0
+    - custom:IRX License 1.0
   makedepends:
     - git
   depends:
@@ -20,20 +20,16 @@ pkgbase:
     - openssl
     - rsync
     - coreutils
+    - iso-profiles
   optdepends:
     - 'pacman-contrib: mirror ranking support'
     - 'artools: ISO build support'
-    - 'gtk4: GUI installer'
-    - 'libadwaita: GUI installer'
-    - 'python-gobject: GUI installer'
-    - 'python-virtualenv: GUI installer'
-    - 'python-jsonschema: GUI installer'
+    - 'jq: state file parsing and JSON handling'
+    - 'gpg: encrypted state presets'
   source:
-    - artixforge-9.1.1.4.tar.gz::https://github.com/realvolk/ArtixForge/archive/refs/tags/v9.1.1.4.tar.gz
-    - forge-gui-0.4.0.tar.gz::https://github.com/realvolk/forge-gui/archive/refs/tags/v0.4.0.tar.gz
+    - artixforge-9.4.0.0.tar.gz::https://github.com/realvolk/ArtixForge/archive/refs/tags/v9.4.0.0.tar.gz
   sha256sums:
-    - ff6bc2c0e6f245e8ca651995055daa48c549b1f0bdb75492c8cb86ccfa1a51a7
-    - 15d5359c8c8d7666eab6dc7ba7b9c5ec14d04882a440d4dc1bcb5b9bdce9984b
+    - SKIP
 pkgname:
   - name: artixforge
 # generated with artixpkg 0.38.5-1-any
