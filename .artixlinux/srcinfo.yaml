@@ -1,10 +1,10 @@
 ---
-version: 0.4.1-2
+version: 0.5.2-1
 pkgbase:
   name: python-propcache
   pkgdesc: Fast property caching
-  pkgver: 0.4.1
-  pkgrel: 2
+  pkgver: 0.5.2
+  pkgrel: 1
   url: https://github.com/aio-libs/propcache
   arch:
     - x86_64
@@ -23,9 +23,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - https://github.com/aio-libs/propcache/archive/v0.4.1/propcache-0.4.1.tar.gz
+    - https://github.com/aio-libs/propcache/archive/v0.5.2/propcache-0.5.2.tar.gz
   sha512sums:
-    - b7bc1e7f41c42e0f6e22a3fe4e4bbccf44f30ac19af274c74b1acd8430f24c201363b1dfb909bdbbb12b4aaf9fb12eb32d611e09865d3df11fde379cfeb62103
+    - 9793c89695f1631f0b7c0076a1efffb0adfe9e83e7899e45b968afe9e00bcb721c88eed0b712570d81b25571cc6b0745a79b2e23f345fdd7ddc991fdfa4b3731
 pkgname:
   - name: python-propcache
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
