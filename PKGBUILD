@@ -6,7 +6,7 @@
 
 pkgname=vhba-module
 pkgver=20260313
-pkgrel=41
+pkgrel=46
 pkgdesc="Virtual SCSI adapter - Linux modules"
 url="https://cdemu.sourceforge.io/"
 arch=(x86_64)
