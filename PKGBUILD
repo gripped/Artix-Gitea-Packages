@@ -5,7 +5,7 @@
 
 pkgname=python-pandas
 pkgver=2.3.3
-pkgrel=4
+pkgrel=5
 pkgdesc='High-performance, easy-to-use data structures and data analysis tools for Python'
 arch=(x86_64)
 url="https://pandas.pydata.org/"
@@ -106,12 +106,14 @@ checkdepends=(
 # No test data in upstream tarballs
 #source=(https://github.com/pandas-dev/pandas/releases/download/v${pkgver}/pandas-${pkgver}.tar.gz)
 source=(git+https://github.com/pandas-dev/pandas#tag=v${pkgver}
-        fix-pickle.patch::https://github.com/pandas-dev/pandas/pull/62832.patch)
+        numpy-2.5.patch)
 sha256sums=('f1f3717c1c89eacb247c7f36e460f628cfc7d34e1e38116fee1c9cdd1afdce02'
-            '9cab9bf008ca1e5827a2ff17f96a7aed5409ea6c800797d401189e2a9151d2df')
+            'fcfe4c91fc1bd6bd11525096e4754dac0d98067800d6a07760570f63aed11abb')
 
 prepare() {
-  patch -Np1 -d pandas < fix-pickle.patch
+  cd pandas
+  git cherry-pick -n 7d16e541ddd903c14cac18732b38baa4a6925559 # fix pickle
+  patch -p1 -i ../numpy-2.5.patch # Fix crash with numpy 2.5
 }
 
 build() {
