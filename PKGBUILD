@@ -29,7 +29,7 @@ checkdepends=(
   python-wrapt
 )
 source=($pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz)
-b2sums=('7623690bfce4834ac0cfc2c6dd263ed9d5945f99223e4728b01d38da60187097794d72dc908d0ae8c71630c3e4cecd7e62d97847f2937a94eeed3077cc24b20f')
+b2sums=('7a0c01590bb314bec4b0e885d58f3969d25ae4997b9fb937ea2cfd20edc0ea78712857a07199b7fc977958192c1948b2aa0b1b9f041457da8b0d51b668826dd7')
 
 build() {
   cd $_name-$pkgver
