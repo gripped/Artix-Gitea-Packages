@@ -1,9 +1,9 @@
 ---
-version: 26.08.0-1
+version: 26.08.1-1
 pkgbase:
   name: pimcommon
   pkgdesc: Common libraries for KDE PIM
-  pkgver: 26.08.0
+  pkgver: 26.08.1
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -41,14 +41,14 @@ pkgbase:
     - purpose
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.08.0/src/pimcommon-26.08.0.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.0/src/pimcommon-26.08.0.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.1/src/pimcommon-26.08.1.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.1/src/pimcommon-26.08.1.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - c137ea4e57f5caf9926bd29ebd38a61c47affefd3e19d921499c2ba60cf8edc7
+    - 67ea0976c8a3d37c224e0f2a5db08dcb88342f0c77378f28b7aef6f502fccb7e
     - SKIP
 pkgname:
   - name: pimcommon
