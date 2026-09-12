@@ -1,0 +1,32 @@
+---
+version: 20260912-1
+pkgbase:
+  name: prometheus-openrc
+  pkgdesc: OpenRC prometheus init script
+  pkgver: 20260912
+  pkgrel: 1
+  url: https://gitweb.gentoo.org/repo/gentoo.git/tree/app-metrics/prometheus
+  arch:
+    - any
+  groups:
+    - openrc-world
+  license:
+    - GPL-2.0-only
+  depends:
+    - openrc
+    - prometheus
+  provides:
+    - init-prometheus
+  conflicts:
+    - init-prometheus
+  backup:
+    - etc/conf.d/prometheus
+  source:
+    - prometheus.confd
+    - prometheus.initd
+  sha256sums:
+    - 6ade8e80662c89f4f4533a4494e5d603f91f50f9785d4158c3a611905c084946
+    - 76e3b2fea25685dab786dc5f0f3d499f9a84d4cc9c6534af79020b041301bab2
+pkgname:
+  - name: prometheus-openrc
+# generated with artixpkg 0.39.1-1-any

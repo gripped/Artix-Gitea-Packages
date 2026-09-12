@@ -1,22 +1,23 @@
-# Maintainer: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
+# Contributor: Rafli Akmal <rafliakmaltejakusuma@gmail.com>
 # Contributor: artoo <artoo@artixlinux.org>
 # Contributor: Oscar Campos <damnwidget@artixlinux.org>
+# Contributor: capezotte <capezotte@artixlinux.org>
 
 pkgname=prometheus-openrc
-pkgver=20210505
-pkgrel=2
+pkgver=20260912
+pkgrel=1
 pkgdesc="OpenRC prometheus init script"
 arch=('any')
-url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
-license=('GPL2')
+url="https://gitweb.gentoo.org/repo/gentoo.git/tree/app-metrics/prometheus"
+license=('GPL-2.0-only')
 groups=('openrc-world')
 provides=('init-prometheus')
 depends=('openrc' 'prometheus')
 conflicts=('init-prometheus')
 backup=('etc/conf.d/prometheus')
 source=("prometheus".{confd,initd})
-sha256sums=('940f1a3ad08f0eb370951b1a42c29a9217cba9ae2f5cb6cc675bdec1d51e8309'
-            'fc364f22e586a80c1541049d7f18ea5f6068545403227519fd4ebc72968bc5af')
+sha256sums=('6ade8e80662c89f4f4533a4494e5d603f91f50f9785d4158c3a611905c084946'
+            '76e3b2fea25685dab786dc5f0f3d499f9a84d4cc9c6534af79020b041301bab2')
 
 package() {
     install -Dm755 "$srcdir/prometheus.initd" "$pkgdir/etc/init.d/prometheus"
