@@ -1,9 +1,9 @@
 ---
-version: 1.13.8-1
+version: 1.13.9-1
 pkgbase:
   name: gpu-screen-recorder-ui
   pkgdesc: A fullscreen overlay UI for GPU Screen Recorder in the style of ShadowPlay
-  pkgver: 1.13.8
+  pkgver: 1.13.9
   pkgrel: 1
   url: https://git.dec05eba.com/gpu-screen-recorder-ui
   install: gpu-screen-recorder-ui.install
@@ -42,9 +42,9 @@ pkgbase:
     - freetype2
     - glib2
   source:
-    - git+https://repo.dec05eba.com/gpu-screen-recorder-ui#tag=1.13.8
+    - git+https://repo.dec05eba.com/gpu-screen-recorder-ui#tag=1.13.9
   sha512sums:
-    - 372ff95ca766627baa37c704bae744efea01020e893589f87755325b1cd1992219c384b76fae6f8e4aac28bb3ae91a9ff60f0b6ce32c6729cce0df9ffa225be6
+    - 962229e24aaf543e9ee564793be979abd8060c7f43938276f3a4e387eca5d450ed87216d259543aa657f472e1675b42e5240f37aab9b126128c7893360ce3a9a
 pkgname:
   - name: gpu-screen-recorder-ui
 # generated with artixpkg 0.39.1-1-any
