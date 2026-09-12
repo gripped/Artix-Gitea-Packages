@@ -1,10 +1,10 @@
 ---
-version: 0.3.17-1
+version: 0.3.17-2
 pkgbase:
   name: river-classic
   pkgdesc: A dynamic tiling wayland compositor
   pkgver: 0.3.17
-  pkgrel: 1
+  pkgrel: 2
   url: https://codeberg.org/river/river-classic
   arch:
     - x86_64
@@ -41,4 +41,4 @@ pkgbase:
     - af6f536e0c1d049316e17f46941d07b92b035632cfbf38ae6ac6182917d8da13
 pkgname:
   - name: river-classic
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
