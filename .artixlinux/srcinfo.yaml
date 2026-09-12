@@ -1,9 +1,9 @@
 ---
-version: 0.10.0-1
+version: 0.11.0-1
 pkgbase:
   name: libportal
   pkgdesc: GIO-style async APIs for most Flatpak portals
-  pkgver: 0.10.0
+  pkgver: 0.11.0
   pkgrel: 1
   url: https://github.com/flatpak/libportal
   arch:
@@ -35,9 +35,9 @@ pkgbase:
     - glibc
     - libgcc
   source:
-    - git+https://github.com/flatpak/libportal#tag=0.10.0
+    - git+https://github.com/flatpak/libportal#tag=0.11.0
   b2sums:
-    - 30d2ff9493c028cc064d644bf5f420c748bef5f8e77c470340316fd3341a4583dc29096475c04872be980c7493b88ca675ca5f180fc4e5e3e14425260878974e
+    - 91396a9583cb46e36bb182d7815082b650a50249b302e65b9fe1d453ba587b4d491cda408b076be626289d89889484d58d46c0bfcc3eaf3305476ce2f0666d47
 pkgname:
   - name: libportal
     depends:
@@ -62,7 +62,7 @@ pkgname:
       - glib2
       - glibc
       - libgcc
-      - libportal=0.10.0-1
+      - libportal=0.11.0-1
       - gtk3
       - libgdk-3.so
       - libgtk-3.so
@@ -74,7 +74,7 @@ pkgname:
       - glib2
       - glibc
       - libgcc
-      - libportal=0.10.0-1
+      - libportal=0.11.0-1
       - gtk4
       - libgtk-4.so
     provides:
@@ -85,7 +85,7 @@ pkgname:
       - glib2
       - glibc
       - libgcc
-      - libportal=0.10.0-1
+      - libportal=0.11.0-1
       - libstdc++
       - qt5-base
       - qt5-x11extras
@@ -97,7 +97,7 @@ pkgname:
       - glib2
       - glibc
       - libgcc
-      - libportal=0.10.0-1
+      - libportal=0.11.0-1
       - libstdc++
       - qt6-base
     provides:
@@ -105,4 +105,4 @@ pkgname:
   - name: libportal-docs
     pkgdesc: GIO-style async APIs for most Flatpak portals - API documentation
     depends: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
