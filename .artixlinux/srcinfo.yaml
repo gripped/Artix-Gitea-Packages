@@ -1,9 +1,9 @@
 ---
-version: 1.12.3-1
+version: 1.12.4-1
 pkgbase:
   name: lib32-libgcrypt
   pkgdesc: General purpose cryptographic library based on the code from GnuPG (32-bit)
-  pkgver: 1.12.3
+  pkgver: 1.12.4
   pkgrel: 1
   url: https://www.gnupg.org
   arch:
@@ -25,16 +25,16 @@ pkgbase:
     - lib32-glibc
     - libgcrypt
   source:
-    - https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.3.tar.bz2
-    - https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.3.tar.bz2.sig
+    - https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.4.tar.bz2
+    - https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.12.4.tar.bz2.sig
   validpgpkeys:
     - 6DAA6E64A76D2840571B4902528897B826403ADA
   sha1sums:
-    - b4654d75f0e5d0850cc699f02c9b44a06367502f
+    - 2907251e1dc68001fcdbeb0b73c2233fdd2dd786
     - SKIP
   sha256sums:
-    - 98d1b0b3202d2b03fa754a35aa3cbbfcf526a3260d8d2ee213748001b1043006
+    - d77f68f48879510e79a2f65977ccc68981781ea0923e5bdffac2a193ea3d660e
     - SKIP
 pkgname:
   - name: lib32-libgcrypt
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
