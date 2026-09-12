@@ -37,7 +37,7 @@ makedepends=('po4a')
 changelog=$pkgbase.changelog
 options=('!emptydirs')
 source=("$url/-/archive/$pkgver/manpages-l10n-$pkgver.tar.gz")
-sha256sums=('67a3a4b63bb89c9905a11dd17ba56ffcdc460474a2909a9595fd1e5ca068464e')
+sha256sums=('1e11d02294c6b587ccf357b99420321443ebd78e2d8f614e42dcdce437edccc0')
 
 build() {
   cd manpages-l10n-$pkgver
