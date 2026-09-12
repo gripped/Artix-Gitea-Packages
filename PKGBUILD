@@ -15,7 +15,7 @@ pkgname=(
   gvfs-smb
   gvfs-wsdd
 )
-pkgver=1.61.91
+pkgver=1.60.3
 pkgrel=1
 pkgdesc="Virtual filesystem implementation for GIO"
 url="https://gitlab.gnome.org/GNOME/gvfs"
@@ -65,7 +65,7 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/gvfs.git#tag=$pkgver"
   gvfsd.hook
 )
-b2sums=('ae20c295dececd5baf9d4255ad915c09caae7375ab0bcbef7103a0281ea31d223aa1311ce3dcb2e7d19505a9da6ad8246298382c8840cc710475c0958117bbd0'
+b2sums=('68ceed359b2cfc6891ab36b1f6f5c8ece2d20a78d837abb04c7986d5fc67a0db09477cc98d85ffc724bce95398d7c5213c5538158f62681cacd1481ddcf16207'
         'a0356a49c419dc69466c591d5e69701b865bb97ca336ea6d8bca0f0d9173b832b73d9f2c701d572a0245957d39c9a38ab6dff4ea7c737c34f2a1a28d93c0427f')
 
 prepare() {
