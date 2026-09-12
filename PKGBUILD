@@ -5,7 +5,7 @@
 
 pkgname=python-pandas
 pkgver=2.3.3
-pkgrel=6
+pkgrel=7
 pkgdesc='High-performance, easy-to-use data structures and data analysis tools for Python'
 arch=(x86_64)
 url="https://pandas.pydata.org/"
@@ -116,7 +116,8 @@ prepare() {
   patch -p1 -i ../numpy-2.5.patch # Fix crash with numpy 2.5
 
 # Prevent dirty version number
-  echo "__version__='$pkgver'" > _version_meson.py
+  _git_version=$(git rev-parse HEAD)
+  echo -e "__version__='$pkgver'\n__git_version__='$_git_version'" > _version_meson.py
 }
 
 build() {
