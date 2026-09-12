@@ -1,9 +1,9 @@
 ---
-version: 3.2.2-1
+version: 3.2.3-1
 pkgbase:
   name: xapp
   pkgdesc: Common library for X-Apps project
-  pkgver: 3.2.2
+  pkgver: 3.2.3
   pkgrel: 1
   url: https://github.com/linuxmint/xapp
   arch:
@@ -20,7 +20,7 @@ pkgbase:
     - bash
     - cairo
     - dconf
-    - gcc-libs
+    - libgcc
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -42,11 +42,11 @@ pkgbase:
   replaces:
     - xapps
   source:
-    - git+https://github.com/linuxmint/xapp.git#tag=3.2.2
+    - git+https://github.com/linuxmint/xapp.git#tag=3.2.3
   sha256sums:
-    - a13acc0cd27bc82c23b1cf076dde9d27589eef4cb22fa89064c00ab0f6aa87ff
+    - 0d34cdd60428bb1b0d77e596df511ed7fd08118a87912e037bd12375f87edfda
   b2sums:
-    - 9ef85da1092ee7b751fd8dd7e9f5ad151a8efb958d3abd0289913f85149ab551675fe29a45f23b15f15ad0fd4b1ede2d72829be1b1ac56f88874ad939cf7b535
+    - d1716222f03c7cd91c85bd4fe756c48f8f909de13fdfb681823d8911774009b933d649bfad73e751f3680e455f4b7dff63aeacd0bb270cc6f05fd1129d60fc48
 pkgname:
   - name: xapp
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
