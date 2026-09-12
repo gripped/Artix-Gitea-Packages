@@ -1,9 +1,9 @@
 ---
-version: 1.9.1-1
+version: 1.9.2-1
 pkgbase:
   name: goverlay
   pkgdesc: A GUI to help manage Vulkan/OpenGL overlays
-  pkgver: 1.9.1
+  pkgver: 1.9.2
   pkgrel: 1
   url: https://github.com/benjamimgois/goverlay
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - 'vkbasalt: Configure vkBasalt'
     - 'git: Clone reshade repository'
   source:
-    - goverlay-1.9.1.tar.gz::https://github.com/benjamimgois/goverlay/archive/1.9.1.tar.gz
+    - goverlay-1.9.2.tar.gz::https://github.com/benjamimgois/goverlay/archive/1.9.2.tar.gz
   sha256sums:
-    - 3a5314fe27a6e652f3419fcaed9e4c8433fffe363af96204c307341c3829ae7d
+    - 7bf4bbacea0ebf6062ab7b6389fcdb3dcdf612dac8425ed2d10f00001390dd22
 pkgname:
   - name: goverlay
 # generated with artixpkg 0.39.1-1-any
