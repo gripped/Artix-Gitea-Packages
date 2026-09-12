@@ -1,9 +1,9 @@
 ---
-version: 9.4.0.0-1
+version: 9.5.0.6-1
 pkgbase:
   name: artixforge
   pkgdesc: Modular TUI installer framework for Artix Linux
-  pkgver: 9.4.0.0
+  pkgver: 9.5.0.6
   pkgrel: 1
   url: https://github.com/realvolk/ArtixForge
   arch:
@@ -20,16 +20,16 @@ pkgbase:
     - openssl
     - rsync
     - coreutils
+    - jq
     - iso-profiles
   optdepends:
     - 'pacman-contrib: mirror ranking support'
     - 'artools: ISO build support'
-    - 'jq: state file parsing and JSON handling'
     - 'gpg: encrypted state presets'
   source:
-    - artixforge-9.4.0.0.tar.gz::https://github.com/realvolk/ArtixForge/archive/refs/tags/v9.4.0.0.tar.gz
+    - artixforge-9.5.0.6.tar.gz::https://github.com/realvolk/ArtixForge/archive/refs/tags/v9.5.0.6.tar.gz
   sha256sums:
-    - SKIP
+    - 5291e210064769e4ae8d08a4fcebff97f8fe6787f960daaa82c4328a7970244c
 pkgname:
   - name: artixforge
 # generated with artixpkg 0.38.5-1-any
