@@ -1,10 +1,10 @@
 ---
-version: 4.0.4-1
+version: 4.0.4-2
 pkgbase:
   name: python-nbdime
   pkgdesc: Diff and merge of Jupyter Notebooks
   pkgver: 4.0.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/jupyter/nbdime
   arch:
     - any
@@ -35,7 +35,6 @@ pkgbase:
     - python-requests
     - python-gitpython
     - jupyter-server
-    - jupyter-server-mathjax
     - python-jinja
     - python-traitlets
     - python-jupyter-core
@@ -52,4 +51,4 @@ pkgbase:
     - 9ff1963446d06748a0e9419f6137cbe7d4134af9fea54b8659a355d6c48046c4
 pkgname:
   - name: python-nbdime
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.39.1-1-any
