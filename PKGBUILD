@@ -1,8 +1,8 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts
-pkgver=6.18.50
-pkgrel=2
+pkgver=6.18.51
+pkgrel=1
 pkgdesc='LTS Linux'
 url='https://www.kernel.org'
 arch=(
@@ -53,19 +53,18 @@ validpgpkeys=(
   ABAF11C65A2970B130ABE3C479BE3E4300411886  # Linus Torvalds
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman
 )
-sha256sums=('d2fc041dab4e11d9645e3ba53be058faa52b8ce28a8a97c889bb2cacee170461'
+sha256sums=('ba2f60f858bf4d1f929101faa356c93dc8b925b17aaa9f95eabd4627758df613'
             'SKIP'
             '0bb3b4cda53db35c10e0a34defb5f52f3c91895d7b4a9f93b3f40f5401a71e02'
             '70d54dfde13e52ea1109c4222a987a29ada68feec35dca9ce4afd6f7977e8740'
             '44caa7c6a79055539f16ab118bece58934cdf93557643a50017634366c864b91')
-sha256sums_x86_64=('4c37c667a2017c3431e9796349130f633852733c90d4def3c661f27816f7d542')
-b2sums=('f2bafe037541a25fae70910534ef9a5d7d41bee0db85a56caa5be9992d23acf336bf5adb016182c37e4d5720b932b5e284df91d8ee4e148893f5448f15455691'
+sha256sums_x86_64=('c110408027a0b25a786315a40bf19881079d1c35f6a2e3c19c37ac7f9d16624e')
+b2sums=('76ef8f305ed9f5bd23ba30d90df4928cb45f877a0b9961fccf601d03aa4734c4905a4af384cd1728388b70c199fbaae8134c6acb51bcce385ef4bb72b2dc2227'
         'SKIP'
         'f98f4a2e714f7c9e05740caaad2bf014065ec950c096df74a3dee8b2ce6549f034adf6f87a76168f513aa68eb738edbdb6fe1a3f1b3a5104201c65199b5b931e'
         '6ca246df80fa85f9c21d090f87ee31e33acb02f3c1147944750e0896ebf199bc0cf427a164dacbdd9baa26dbdbce2fabd89ebdb6a8ce5dae83fc455b27a56cc8'
         'a612d5ea58485eeaa5cce0b30074ab3188f4321c4759448780de2f3f656821356d640df433e31bd4e8f2c9719c8e275374ddea29b9504335ed0981be5ac7bf7b')
-b2sums_x86_64=('7bfbaf6f0784d68dd10341fc031af169dfe11f0190f829a2b52730dd55b18d3f23a71e2023f0f411e4ae90fdf34dd824fe2c977294ca2beaf539dbc27dca83d8')
-
+b2sums_x86_64=('166936091eb9dac79a3e1e776171580f94c8c7f77e84339143d435b4cc6279edb683dae56fdb88e1937e49b92f33607c8e6b804d3c1068899b49efc2b36eefc2')
 # https://www.kernel.org/pub/linux/kernel/v6.x/sha256sums.asc
 
 export KBUILD_BUILD_HOST=artixlinux
@@ -93,7 +92,7 @@ prepare() {
   cp ../config.$CARCH .config
   make olddefconfig
   diff -u ../config.$CARCH .config || :
-  
+
   make -s kernelrelease > version
   echo "Prepared $pkgbase version $(<version)"
 }
