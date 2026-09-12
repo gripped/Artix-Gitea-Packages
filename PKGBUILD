@@ -5,7 +5,7 @@
 
 pkgname=python-pandas
 pkgver=2.3.3
-pkgrel=5
+pkgrel=6
 pkgdesc='High-performance, easy-to-use data structures and data analysis tools for Python'
 arch=(x86_64)
 url="https://pandas.pydata.org/"
@@ -114,6 +114,9 @@ prepare() {
   cd pandas
   git cherry-pick -n 7d16e541ddd903c14cac18732b38baa4a6925559 # fix pickle
   patch -p1 -i ../numpy-2.5.patch # Fix crash with numpy 2.5
+
+# Prevent dirty version number
+  echo "__version__='$pkgver'" > _version_meson.py
 }
 
 build() {
