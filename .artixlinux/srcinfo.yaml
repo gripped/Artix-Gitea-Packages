@@ -1,0 +1,32 @@
+---
+version: 20260912-1
+pkgbase:
+  name: grafana-openrc
+  pkgdesc: OpenRC grafana init script
+  pkgver: 20260912
+  pkgrel: 1
+  url: https://gitweb.gentoo.org/repo/gentoo.git/tree/www-apps/grafana-bin
+  arch:
+    - any
+  groups:
+    - openrc-galaxy
+  license:
+    - GPL2
+  depends:
+    - openrc
+    - grafana
+  provides:
+    - init-grafana
+  conflicts:
+    - init-grafana
+  backup:
+    - etc/conf.d/grafana
+  source:
+    - grafana.confd
+    - grafana.initd
+  sha256sums:
+    - cfe4a2f32d7ad8ed4c2f09f0cb29f3a133a32eac4eb2d36a8442702b620b23a8
+    - 75eadb20b0db712ef82b48dce6a08cafd348f53016812aed0fb9faad5dee93f1
+pkgname:
+  - name: grafana-openrc
+# generated with artixpkg 0.39.1-1-any
