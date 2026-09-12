@@ -1,9 +1,9 @@
 ---
-version: 0.21.0-1
+version: 0.21.1-1
 pkgbase:
   name: meson-python
   pkgdesc: Meson PEP 517 Python build backend
-  pkgver: 0.21.0
+  pkgver: 0.21.1
   pkgrel: 1
   url: https://github.com/mesonbuild/meson-python
   arch:
@@ -33,9 +33,9 @@ pkgbase:
   optdepends:
     - 'python-colorama: colored output'
   source:
-    - git+https://github.com/mesonbuild/meson-python#tag=0.21.0
+    - git+https://github.com/mesonbuild/meson-python#tag=0.21.1
   sha256sums:
-    - 2ec8e012108d383b844feb82c67b72b6dcecc93783f9ad927789d6a2d421c804
+    - e7d0b3b794947968585dc339e0b1e79b8ae2a100adbc69784dc8d16636be4517
 pkgname:
   - name: meson-python
 # generated with artixpkg 0.39.1-1-any
