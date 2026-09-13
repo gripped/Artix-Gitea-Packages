@@ -33,7 +33,7 @@ prepare() {
   # use distro config file; FS#52058
 
   # fix version number reporting
-  sed -i "s:AC_INIT(rpcbind, 1.2.9):AC_INIT(rpcbind, 1.3.1):" configure --with-systemdsystemunitdir=no.ac
+  sed -i "s:AC_INIT(rpcbind, 1.2.9):AC_INIT(rpcbind, 1.3.1):" configure.ac
   autoreconf -vfi
 }
 
