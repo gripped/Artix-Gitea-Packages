@@ -16,7 +16,7 @@ pkgname=(
   syslog-ng-sql
 )
 pkgver=4.12.0
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Next-generation syslogd with advanced networking and filtering capabilities"
 arch=(x86_64)
 url="https://github.com/syslog-ng/syslog-ng"
@@ -74,10 +74,10 @@ makedepends=(
   python-urllib3
   python-websocket-client
   zlib
+  gperf
 )
 checkdepends=(
   criterion
-  gperf
   python-pytest
   python-pytest-mock
   qpdf
