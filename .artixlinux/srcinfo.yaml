@@ -1,10 +1,10 @@
 ---
-version: 0.12.0-2
+version: 0.13.0-1
 pkgbase:
   name: python-quart-trio
   pkgdesc: Extension for Quart to support the Trio event loop
-  pkgver: 0.12.0
-  pkgrel: 2
+  pkgver: 0.13.0
+  pkgrel: 1
   url: https://github.com/pgjones/quart-trio
   arch:
     - any
@@ -25,9 +25,9 @@ pkgbase:
     - python-trio
     - python-werkzeug
   source:
-    - https://github.com/pgjones/quart-trio/archive/0.12.0/quart-trio-0.12.0.tar.gz
+    - https://github.com/pgjones/quart-trio/archive/0.13.0/quart-trio-0.13.0.tar.gz
   sha256sums:
-    - 9062eef2a4b0f29089bed4d56d635280fda79f0f45a32e2e7073bbe78c795924
+    - a383e17d912e512d20de0bb096d8c21331bd28e1c8a9273e6e75f3c48c7ee85c
 pkgname:
   - name: python-quart-trio
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.39.1-1-any
