@@ -1,10 +1,10 @@
 ---
-version: 2.7.12-4.1
+version: 2.7.12-5
 pkgbase:
   name: keepassxc
   pkgdesc: Cross-platform community-driven port of Keepass password manager
   pkgver: 2.7.12
-  pkgrel: 4.1
+  pkgrel: 5
   url: https://keepassxc.org/
   arch:
     - x86_64
@@ -13,7 +13,6 @@ pkgbase:
   checkdepends:
     - xclip
     - xorg-server-xvfb
-    - xclip
   makedepends:
     - asciidoctor
     - cmake
@@ -22,14 +21,21 @@ pkgbase:
   depends:
     - argon2
     - botan
+    - glibc
     - hicolor-icon-theme
+    - libgcc
+    - libstdc++
+    - libusb
     - libxtst
+    - libx11
     - minizip
     - pcsclite
     - qrencode
+    - qt5-base
     - qt5-svg
     - qt5-x11extras
-    - libusb
+    - readline
+    - zlib
   optdepends:
     - 'xclip: keepassxc-cli clipboard support under X server'
     - 'wl-clipboard: keepassxc-cli clipboard support under Wayland'
