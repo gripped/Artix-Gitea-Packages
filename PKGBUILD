@@ -36,8 +36,10 @@ depends=('man')
 makedepends=('po4a')
 changelog=$pkgbase.changelog
 options=('!emptydirs')
-source=("$url/-/archive/$pkgver/manpages-l10n-$pkgver.tar.gz")
-sha256sums=('SKIP')
+_fname="${pkgbase/-}-${pkgver}.tar.bz2"
+_dir=$(echo -n "$_fname" | b2sum | head -c2)
+source=("http://gentoo.mirrors.tera-byte.com/distfiles/${_dir}/${_fname}")
+sha256sums=('473b9dd8251ed2e28527b540770cdaeeb5dc499ddeda4925dbeb98d97e841505')
 
 build() {
   cd manpages-l10n-$pkgver
