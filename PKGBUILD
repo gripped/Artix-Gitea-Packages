@@ -3,7 +3,7 @@
 
 pkgname=rpcbind
 pkgver=1.3.1
-pkgrel=1
+pkgrel=2
 pkgdesc="portmap replacement which supports RPC over various protocols"
 arch=(x86_64)
 url="http://rpcbind.sourceforge.net"
@@ -31,6 +31,10 @@ prepare() {
   # patch for iana services file # FS#20273
   patch -Np1 -i ../rpcbind-sunrpc.patch
   # use distro config file; FS#52058
+
+  # fix version number reporting
+  sed -i "s:AC_INIT(rpcbind, 1.2.9):AC_INIT(rpcbind, 1.3.1):" configure --with-systemdsystemunitdir=no.ac
+  autoreconf -vfi
 }
 
 build() {
