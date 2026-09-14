@@ -1,9 +1,9 @@
 ---
-version: 7.8.0p1-1
+version: 7.9.0p0-1
 pkgbase:
   name: opensmtpd
   pkgdesc: Free implementation of the server-side SMTP protocol
-  pkgver: 7.8.0p1
+  pkgver: 7.9.0p0
   pkgrel: 1
   url: https://www.opensmtpd.org
   install: opensmtpd.install
@@ -33,11 +33,11 @@ pkgbase:
     - etc/smtpd/smtpd.conf
     - etc/smtpd/aliases
   source:
-    - git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=7.8.0p1
+    - git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=7.9.0p0
     - opensmtpd.sysusers
   sha256sums:
-    - 3c8081ef03b07b366d516ada002a3ae932e5839b41c5b57381aa903a6ce21afc
+    - 795e32516ebb590954873231b5b0432b61568d6f971aa7b399362339d1288da4
     - 955e25043dbbc266a496db10c5d5f25f70d5342bba0550915932c04068a4ca01
 pkgname:
   - name: opensmtpd
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any

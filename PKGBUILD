@@ -5,13 +5,13 @@
 # Contributor: parchd <parchd@archlinux.info>
 
 pkgname=opensmtpd
-pkgver=7.8.0p1
+pkgver=7.9.0p0
 pkgrel=1
 pkgdesc="Free implementation of the server-side SMTP protocol"
 arch=(x86_64)
 url="https://www.opensmtpd.org"
 license=(custom)
-depends=(libevent libxcrypt openssl pam  zlib)
+depends=(libevent libxcrypt openssl pam zlib)
 optdepends=('opensmtpd-filter-rspamd: rspamd integration')
 makedepends=(git)
 provides=(smtp-server smtp-forwarder)
@@ -20,7 +20,7 @@ backup=(etc/smtpd/smtpd.conf etc/smtpd/aliases)
 options=(emptydirs)
 source=("git+https://github.com/OpenSMTPD/OpenSMTPD.git#tag=${pkgver}"
         opensmtpd.sysusers)
-sha256sums=('3c8081ef03b07b366d516ada002a3ae932e5839b41c5b57381aa903a6ce21afc'
+sha256sums=('795e32516ebb590954873231b5b0432b61568d6f971aa7b399362339d1288da4'
             '955e25043dbbc266a496db10c5d5f25f70d5342bba0550915932c04068a4ca01')
 install="${pkgname}.install"
 
