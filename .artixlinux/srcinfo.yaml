@@ -1,10 +1,10 @@
 ---
-version: 20260910-1
+version: 20260910-2
 pkgbase:
   name: linux-firmware
   pkgdesc: Firmware files for Linux
   pkgver: 20260910
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/kernel-firmware/linux-firmware
   arch:
     - any
@@ -186,4 +186,4 @@ pkgname:
       - LicenseRef-ti
     depends:
       - linux-firmware-whence
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
