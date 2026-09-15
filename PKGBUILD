@@ -1,8 +1,8 @@
 # Maintainer: BlackIkeEagle <ike DOT devolder AT gmail DOT com>
 
 pkgname=libnfs
-pkgver=6.0.2
-pkgrel=5
+pkgver=7.0.2
+pkgrel=1
 pkgdesc="client library for accessing NFS shares"
 arch=('x86_64')
 url="https://github.com/sahlberg/libnfs"
@@ -13,7 +13,7 @@ makedepends=('cmake' 'ninja')
 source=(
     "https://github.com/sahlberg/$pkgname/archive/$pkgname-$pkgver.tar.gz"
 )
-sha512sums=('539790ab98aac7b2f25755b745d1f5e016518f1adb3748b8c58df187048bc31e091915d59e6359bb95c49dd986361cbbf2536edcda02598b0fac236762b61a46')
+sha512sums=('b1f34d95119a5e8aeef55b9a8fe4b1d394f94bf66da8c66a24a99fb457316ef124574a8ebda340e0be6f29809ed4f4824eef0b064f67af46e90e2307085979c5')
 
 #prepare() {
     #cd "$pkgname-$pkgname-$pkgver"
