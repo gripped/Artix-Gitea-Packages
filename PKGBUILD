@@ -8,7 +8,7 @@
 pkgname=darktable
 epoch=2
 pkgver=5.6.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Utility to organize and develop raw images'
 arch=(x86_64)
 url='https://darktable.org'
@@ -65,6 +65,7 @@ build() {
         CMAKE_INSTALL_LIBEXECDIR=/usr/lib
         CMAKE_BUILD_TYPE=Release
         BINARY_PACKAGE_BUILD=1
+        ONNXRUNTIME_OFFLINE=On
         USE_AI=On
         USE_COLORD=On
         USE_LIBSECRET=On
