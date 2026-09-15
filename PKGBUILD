@@ -9,7 +9,7 @@ pkgname=(
   gtk-update-icon-cache
 )
 pkgver=4.22.5
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -58,7 +58,6 @@ depends=(
   libxrender
   pango
   shared-mime-info
-  tinysparql
   vulkan-icd-loader
   wayland
   xdg-desktop-portal-gtk
@@ -186,7 +185,6 @@ package_gtk4-demos() {
     libxkbcommon
     libxrandr
     pango
-    tinysparql
     vulkan-icd-loader
     wayland
   )
