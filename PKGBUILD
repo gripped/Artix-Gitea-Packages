@@ -8,7 +8,7 @@ pkgname=(
   gtk3-docs
 )
 pkgver=3.24.52
-pkgrel=1
+pkgrel=1.1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
@@ -48,7 +48,6 @@ depends=(
   libxrender
   pango
   shared-mime-info
-  tinysparql
   wayland
   zlib
 )
