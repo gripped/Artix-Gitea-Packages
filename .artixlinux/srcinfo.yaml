@@ -1,10 +1,10 @@
 ---
-version: 2.6.0-3
+version: 2.6.0-4
 pkgbase:
   name: gajim
   pkgdesc: Full featured and easy to use XMPP (Jabber) client
   pkgver: 2.6.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://gajim.org/
   arch:
     - any
@@ -47,7 +47,7 @@ pkgbase:
     - python-pysequoia
   optdepends:
     - 'python-dbus: to have gajim-remote working'
-    - 'python-sentry_sdk: for Sentry error reporting to dev.gajim.org (users decide whether to send reports or not)'
+    - 'python-sentry_sdk: for Sentry error reporting (users decide whether to send reports or not)'
     - 'libspelling: for spell checking support'
     - 'libsecret: for GNOME Keyring or KDE support as password storage'
     - 'gupnp-igd: for better NAT traversing'
