@@ -1,0 +1,31 @@
+---
+version: 2.2-1
+pkgbase:
+  name: python-stdnum
+  pkgdesc: Python module to handle standardized numbers and codes
+  pkgver: 2.2
+  pkgrel: 1
+  url: https://arthurdejong.org/python-stdnum/
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  checkdepends:
+    - python-pytest
+    - python-pytest-cov
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+  depends:
+    - python
+  optdepends:
+    - 'python-zeep: SOAP-based online number validation'
+  source:
+    - git+https://github.com/arthurdejong/python-stdnum.git#tag=2.2
+  sha512sums:
+    - 881eec86a86515be16669ad6ffa73decde655f54ef23ca05131487715734373ca899c1006839d5241d0eaf4a9f7d0e96fc8d9178f79d02ca36a002128147687e
+pkgname:
+  - name: python-stdnum
+# generated with artixpkg 0.39.1-1-any
