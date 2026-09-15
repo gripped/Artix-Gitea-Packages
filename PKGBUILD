@@ -2,7 +2,7 @@
 
 pkgname=libnfs
 pkgver=7.0.2
-pkgrel=1
+pkgrel=1.1
 pkgdesc="client library for accessing NFS shares"
 arch=('x86_64')
 url="https://github.com/sahlberg/libnfs"
@@ -24,6 +24,7 @@ build() {
 
     cmake \
         -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
         -DENABLE_DOCUMENTATION=ON \
         -DENABLE_UTILS=ON \
         -DENABLE_MULTITHREADING=ON \
