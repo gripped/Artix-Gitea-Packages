@@ -4,8 +4,8 @@
 # Contributor: Eric Johnson <eric@coding-zone.com>
 
 pkgname=perl-dbd-mysql
-pkgver=4.052
-pkgrel=3
+pkgver=4.055
+pkgrel=1
 pkgdesc='Perl/CPAN DBD::mysql module for interacting with MySQL via DBD'
 arch=('x86_64')
 license=('GPL' 'PerlArtistic')
@@ -15,7 +15,7 @@ makedepends=('perl-devel-checklib')
 checkdepends=('mariadb' 'perl-test-deep')
 options=('!emptydirs')
 source=(https://search.cpan.org/CPAN/authors/id/D/DV/DVEEDEN/DBD-mysql-${pkgver}.tar.gz)
-sha512sums=('7dd04209e656cc0221a757fa79bb979f4baf7834c2235b43754346792b416db7886df2907376b0c40f2def567d7c3ec153266ab5d57beb01f4eb2613a7467619')
+sha512sums=('4dd86152932ea1e5c13758ecde3f00f992c3f5f81c17631fb5466b796287f9f7b8507810ac109e1996cd07b665233806372787ba1834e5884b1a01daf298a8b9')
 
 build() {
   cd DBD-mysql-$pkgver
