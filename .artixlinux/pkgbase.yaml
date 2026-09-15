@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
-  removeRepo: world
-  triggersBuild: false
+  addRepo: galaxy
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -54,12 +54,12 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 8.0.30.sdk130-1
+    version: 8.0.31.sdk131-1
     packages:
-      - dotnet-runtime-8.0-8.0.30.sdk130-1-x86_64.pkg.tar.zst
-      - aspnet-runtime-8.0-8.0.30.sdk130-1-x86_64.pkg.tar.zst
-      - dotnet-sdk-8.0-8.0.30.sdk130-1-x86_64.pkg.tar.zst
-      - dotnet-targeting-pack-8.0-8.0.30.sdk130-1-x86_64.pkg.tar.zst
-      - aspnet-targeting-pack-8.0-8.0.30.sdk130-1-x86_64.pkg.tar.zst
-      - dotnet-source-built-artifacts-8.0-8.0.30.sdk130-1-x86_64.pkg.tar.zst
+      - dotnet-runtime-8.0-8.0.31.sdk131-1-x86_64.pkg.tar.zst
+      - aspnet-runtime-8.0-8.0.31.sdk131-1-x86_64.pkg.tar.zst
+      - dotnet-sdk-8.0-8.0.31.sdk131-1-x86_64.pkg.tar.zst
+      - dotnet-targeting-pack-8.0-8.0.31.sdk131-1-x86_64.pkg.tar.zst
+      - aspnet-targeting-pack-8.0-8.0.31.sdk131-1-x86_64.pkg.tar.zst
+      - dotnet-source-built-artifacts-8.0-8.0.31.sdk131-1-x86_64.pkg.tar.zst
     debug: []
