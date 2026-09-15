@@ -13,7 +13,7 @@ makedepends=('cmake' 'ninja')
 source=(
     "https://github.com/sahlberg/$pkgname/archive/$pkgname-$pkgver.tar.gz"
 )
-sha512sums=('b1f34d95119a5e8aeef55b9a8fe4b1d394f94bf66da8c66a24a99fb457316ef124574a8ebda340e0be6f29809ed4f4824eef0b064f67af46e90e2307085979c5')
+sha512sums=('722d7a65090153a9892749fc7b9513d86a75534f7ea49ad4ce18c3360c3740b0c7255e4510fd956215eb25f807fbdc668c1af0262a4cc87de678561198448f8b')
 
 #prepare() {
     #cd "$pkgname-$pkgname-$pkgver"
