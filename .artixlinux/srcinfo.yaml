@@ -1,9 +1,9 @@
 ---
-version: 1:8.1.2p4-1
+version: 1:8.1.2p5-1
 pkgbase:
   name: jellyfin-ffmpeg
   pkgdesc: Jellyfin fork of ffmpeg
-  pkgver: 8.1.2p4
+  pkgver: 8.1.2p5
   pkgrel: 1
   epoch: 1
   url: https://github.com/jellyfin/jellyfin-ffmpeg
@@ -76,11 +76,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - jellyfin-ffmpeg::git+https://github.com/jellyfin/jellyfin-ffmpeg#tag=v8.1.2-4
+    - jellyfin-ffmpeg::git+https://github.com/jellyfin/jellyfin-ffmpeg#tag=v8.1.2-5
   sha512sums:
-    - 8b66bb66bf1dd93490e3be0558528c0849f581181b2a91c436b6defd0843ad5dfeb5d4efb4688945ae10df4c65d5552384bf5a4f9ede5b41639d781bf552d935
+    - a9e9f43aa9fa21b7e93b9fd111aebe7eba94a5b190603e1174178ca917adef5f863c59115304f8a2997f51523829dc4e6d3928c030772f1ab5f33992bc918efe
   b2sums:
-    - 6e28a7b3b7e1f5e667d0dbcfa494755d006cb230e106d5c5809257260dbf19fda40d0cd58b9f62d33077ea44de6a8d76653e4fd205396e031789a7e71bed0a45
+    - 6f5eb70f0ec85768db9e25c270c5e9c1263e72fa9440b5ec918b77141e29e1ca1834ab95398fe76caaab42526beb189bca469f739f9675491ea51d8eaca65617
 pkgname:
   - name: jellyfin-ffmpeg
 # generated with artixpkg 0.39.1-1-any
