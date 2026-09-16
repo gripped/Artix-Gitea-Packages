@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 12.0-1
+    version: 12.1-1
     packages:
-      - jellyfin-server-12.0-1-x86_64.pkg.tar.zst
+      - jellyfin-server-12.1-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 10.11.11-1
