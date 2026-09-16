@@ -14,8 +14,8 @@ _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
 # upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
 # in the meantime, 140.x upgrades should still be followed for galaxy.
-#pkgver=153.2.0.100b1
-pkgver=140.16.0.100
+pkgver=153.3.0.100b1
+#pkgver=140.16.0.100
 
 pkgrel=1
 _ffbuild=1
@@ -148,8 +148,8 @@ source=(
   "0004-skia-m142-update.patch.xz"
   "0005-rust-1_98-compat.patch"
 )
-sha256sums=('9316e16958e1c717977f2dbb5cb584af9073f9d7df636b0ea572d4aae84656f3'
-            '15d2d359b8571ecd0898faa6e05aa902b0de7cb34aadfc4d94adf6c8428f84df'
+sha256sums=('6fc224aa92c5e72451f11564d56478dc9582d25228842013a6a6cdca618d122a'
+            '69f1335e78d2a340fc13fcf265c0a72bdce2df8774c9d4d49ee77d1726236df5'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
             '9f1e30912efa87a9f722e3465702f94fbc2049cbcf30d2ef7348ed46701e61ac'
