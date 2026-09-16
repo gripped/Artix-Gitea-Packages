@@ -1,10 +1,10 @@
 ---
-version: 1.58.1-1
+version: 1.58.1-2
 pkgbase:
   name: networkmanager
   pkgdesc: Network connection manager and user applications
   pkgver: 1.58.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://networkmanager.dev/
   arch:
     - x86_64
@@ -146,4 +146,4 @@ pkgname:
   - name: networkmanager-docs
     pkgdesc: Network connection manager and user applications (API documentation)
     depends: []
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
