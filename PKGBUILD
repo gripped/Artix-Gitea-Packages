@@ -11,7 +11,7 @@
 # Contributor: Dave Pretty <david dot pretty at gmail dot com>
 
 pkgname=anki
-pkgver=26.09
+pkgver=26.09.2
 pkgrel=1
 pkgdesc="A smart spaced repetition flashcard program"
 arch=('x86_64')
@@ -68,7 +68,7 @@ source=(
   "no-corepack.patch"
   "reproducible-sveltekit.patch"
 )
-b2sums=('5198840937be9ec5fabbb268aae16f3ab9e6cc94816e652332c622e57ec9eb74e91cb69646a655c1c4cc1132d51ef8599cfd6b1c3e469b951272b8d2dd07b5ce'
+b2sums=('d7940000464897aeb4febd581a6d19e37e22425d23d6c64460643e3805a7550bc310c5671d9c802dcff746fc62a0a73c979ebc5a1616462ba8845e9c130ecd39'
         'SKIP'
         'SKIP'
         '0f3ce855e9eaea67ef461668c296ae08cad0d31a7a2bf9ea7006220b44c2cb2e132dfb656140828141fbf21dde2b686a4a3248b92bb3fa46217f1a987425ffa3'
