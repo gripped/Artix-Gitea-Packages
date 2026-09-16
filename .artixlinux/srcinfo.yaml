@@ -1,9 +1,9 @@
 ---
-version: 6.5.9-1
+version: 6.5.10-1
 pkgbase:
   name: python-tornado
   pkgdesc: open source version of the scalable, non-blocking web server and tools
-  pkgver: 6.5.9
+  pkgver: 6.5.10
   pkgrel: 1
   url: https://www.tornadoweb.org/
   arch:
@@ -27,9 +27,9 @@ pkgbase:
     - 'python-pycurl: for tornado.curl_httpclient'
     - 'python-twisted: for tornado.platform.twisted'
   source:
-    - git+https://github.com/tornadoweb/tornado.git#tag=v6.5.9
+    - git+https://github.com/tornadoweb/tornado.git#tag=v6.5.10
   sha512sums:
-    - 003a349789455e0ce9a0e601f9c5959f92aad60e65f3af2b118cdc2f0f6bbe843889b3d64ea9328a82b284a5205e0497d3a8e1b7ea0baa513bb9e6e564d7fc4f
+    - 4463aa53ac1541d60cbe4fdd85b2cbee9e3b92245f60d92fc4994ee888a31530cfdc315a9a7d5c0831b5d9a7744d7b8416806b884186a224d7011c254eff0fcf
 pkgname:
   - name: python-tornado
 # generated with artixpkg 0.39.1-1-any
