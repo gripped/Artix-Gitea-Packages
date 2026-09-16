@@ -53,10 +53,10 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 7.2.3.zen1-2
+    version: 7.2.6.zen2-1
     packages:
-      - linux-zen-7.2.3.zen1-2-x86_64.pkg.tar.zst
-      - linux-zen-headers-7.2.3.zen1-2-x86_64.pkg.tar.zst
-      - linux-zen-docs-7.2.3.zen1-2-x86_64.pkg.tar.zst
+      - linux-zen-7.2.6.zen2-1-x86_64.pkg.tar.zst
+      - linux-zen-headers-7.2.6.zen2-1-x86_64.pkg.tar.zst
+      - linux-zen-docs-7.2.6.zen2-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
