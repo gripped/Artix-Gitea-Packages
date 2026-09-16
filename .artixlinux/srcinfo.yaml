@@ -44,4 +44,4 @@ pkgbase:
     - cc5fc8a58e8f109730ed8cbda8ea33b5a878a16595bd4cde871f39018218d8a5bff6e19deed572ef09deacdeae092614e3a9482d2fddab80a0888836606a9f9a
 pkgname:
   - name: wcm
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
