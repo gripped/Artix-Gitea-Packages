@@ -1,9 +1,9 @@
 ---
-version: 5.3.15-1
+version: 5.3.20-1
 pkgbase:
   name: bash
   pkgdesc: The GNU Bourne Again shell
-  pkgver: 5.3.15
+  pkgver: 5.3.20
   pkgrel: 1
   url: https://www.gnu.org/software/bash/bash.html
   install: bash.install
@@ -65,6 +65,16 @@ pkgbase:
     - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-014.sig
     - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-015
     - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-015.sig
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-016
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-016.sig
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-017
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-017.sig
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-018
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-018.sig
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-019
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-019.sig
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-020
+    - https://ftp.gnu.org/gnu/bash/bash-5.3-patches/bash53-020.sig
   validpgpkeys:
     - 7C0135FB088AAF6C66C650B9BB5869F064EA74AB
   b2sums:
@@ -106,6 +116,16 @@ pkgbase:
     - SKIP
     - 5d333c73b891910df4bf13c28fa0cc493dcadadb5c51a240501c5ab450b83673d75baece5c8112b937520cacfc726248ede1d30dba6b60075b88408b585b9f3f
     - SKIP
+    - 42c5f37c53609fe672956d55be1e26720e4b96715982b221350f60d01faeac61322839cc34b419915aa838945c7b5fba5bfbf1e5635d1fd65ae7b24fba99d574
+    - SKIP
+    - 1420ec8d92896a57e4aabf7f2bff32d2e13363d4e6031f0cfb2812f6baa5e4ed67d02110d431849c6d9003bb460ad458557278783786d9c7ec9fda7ea858572e
+    - SKIP
+    - 6171f26a58db132d0705b27e0195f58b9fb71df8a46bfba309201ea9f2a2dfa0489ee9279ce7ba6f74733e6e8adad063435a6141d660f5287132bc4f4dd4333d
+    - SKIP
+    - e22297d57a7822fbe7faecd5fd44b221855a281c79b97feb7633677c9ab7cd10b63f7670ac534bee606e9f4272da9bdf1cda0588d737ad8c6fea179672e54060
+    - SKIP
+    - dc01513a3d4b6bf30f1b1d6d549dd21bc05231848d325b53336970f3ed7984b6344f51c7af803fb8f99a430548137cae9672c939f928c916a83368b79e9af516
+    - SKIP
 pkgname:
   - name: bash
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
