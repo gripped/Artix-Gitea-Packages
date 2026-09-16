@@ -1,10 +1,10 @@
 ---
-version: 22.1.8-2
+version: 23.1.1-1
 pkgbase:
   name: libclc
   pkgdesc: Library requirements of the OpenCL C programming language
-  pkgver: 22.1.8
-  pkgrel: 2
+  pkgver: 23.1.1
+  pkgrel: 1
   url: https://libclc.llvm.org/
   arch:
     - any
@@ -18,18 +18,16 @@ pkgbase:
     - python
     - spirv-llvm-translator
   source:
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz
-    - https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/llvm-project-22.1.8.src.tar.xz.sig
-    - 0001-libclc-mark-clc-flush-denormal-if-not-supported-as-s.patch
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz.sig
   validpgpkeys:
     - 474E22316ABF4785A88C6E8EA2C794A986419D8A
     - D574BD5D1D0E98895E3BF90044F2485E45D59042
     - FFB3368980F3E6BB5737145A316C56D064CACBA5
     - 71046D1E9C6656BDD61171873E83BABF4A4F9E85
   sha256sums:
-    - 922f1817a0df7b1489272d18134ee0087a8b068828f87ac63b9861b1a9965888
+    - ebe9be46fe8756d58c5b198ffad0fa2a766257add81a4dc52179bfacc7888ee6
     - SKIP
-    - a4f8dee6d2d9ee35576b6f05b93e673b524e366d0115c1e051c7e809a7a0ffff
 pkgname:
   - name: libclc
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
