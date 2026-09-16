@@ -4,7 +4,7 @@
 pkgname=helium-browser
 pkgver=0.17.0.1
 _hlmver="${pkgver%.*}"
-pkgrel=1
+pkgrel=2
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
 arch=('x86_64')
 url="https://github.com/imputnet/helium"
@@ -12,8 +12,8 @@ license=('GPL-3.0-only')
 depends=('gtk3' 'nss' 'alsa-lib' 'xdg-utils' 'libxss' 'libcups' 'libgcrypt'
          'ttf-liberation' 'udev' 'dbus' 'libpulse' 'pciutils' 'libva'
          'libffi' 'desktop-file-utils' 'hicolor-icon-theme')
-makedepends=('ninja' 'nodejs' 'python-pillow' 'python-httplib2' 'python-pysocks'
-             'python-python-socks' 'lld' 'gperf' 'mold' 'go' 'git' 'clang')
+makedepends=('ninja' 'nodejs' 'python-pillow' 'python-httplib2' 'lld' 
+             'gperf' 'mold' 'go' 'git' 'clang')
 optdepends=('pipewire: WebRTC desktop sharing under Wayland'
             'kdialog: support for native dialogs in Plasma'
             'gtk4: for --gtk-version=4 (GTK4 IME might work better on Wayland)'
@@ -23,12 +23,10 @@ provides=("chromium")
 conflicts=("chromium")
 options=('!lto')
 source=("${url}/archive/refs/tags/${_hlmver}.tar.gz"
-        "${url}-linux/archive/refs/tags/${pkgver}.tar.gz"
-        "${pkgname}.desktop")
+        "${url}-linux/archive/refs/tags/${pkgver}.tar.gz")
 
 sha256sums=('5666ac55f154eaa56e206d7fb992ec5a237fd3f938b76b6873a9b4b9d023cd3c'
-            'f72c58541c0a1e666b21cec147fab8f973dd658e9e89714bd424697e3021b41a'
-            '934b84f8f55e8461c3e47651c632d5e8e2d23ec1d71113dd7384d845ffa16a27')
+            'f72c58541c0a1e666b21cec147fab8f973dd658e9e89714bd424697e3021b41a')
 
 prepare() {
   mv -v "helium-${_hlmver}" helium-chromium
@@ -37,22 +35,7 @@ prepare() {
 
 build() {
   cd "helium-linux-${pkgver}/scripts"
-  
-  # Start in background
-  ./build.sh -c --pgo &
-  BUILD_PID=$! # store PID
-  
-  # Wait the problematic file gerrit_util.py be created
-  while [ ! -f "../build/src/third_party/depot_tools/gerrit_util.py" ]; do
-    sleep 3 # Zzz...
-  done
-  
-  # Fix with sed...
-  sed -i 's/import httplib2.socks/import socks/g' \
-    "../build/src/third_party/depot_tools/gerrit_util.py"
-  
-  # Wait the build to finish
-  wait $BUILD_PID
+  ./build.sh -c --pgo
 }
 
 package() {
@@ -77,14 +60,17 @@ package() {
   install -Dm755 helium "${pkgdir}/usr/lib/${pkgname}/${pkgname}"
   install -Dm755 chromedriver "${pkgdir}/usr/bin/chromedriver"
   ln -s "/usr/lib/$pkgname/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  ln -s "/usr/lib/$pkgname/$pkgname" "$pkgdir/usr/bin/helium"
 
   install -Dm755 "${_libfiles[@]}" "${pkgdir}/usr/lib/${pkgname}/"
 
   install -Dm644 -t "${pkgdir}/usr/lib/${pkgname}/locales" locales/*.pak
+  
+  install -Dm644 "${srcdir}/helium-linux-${pkgver}/package/helium.desktop" \
+    "${pkgdir}/usr/share/applications/helium.desktop"
 
-  install -Dm644 "${srcdir}/${pkgname}.desktop" "${pkgdir}/usr/share/applications/${pkgname}.desktop"
-  install -Dm644 product_logo_256.png "${pkgdir}/usr/share/icons/hicolor/256x256/apps/${pkgname}.png"
-  install -Dm644 product_logo_256.png "${pkgdir}/usr/share/pixmaps/${pkgname}.png"
+  install -Dm644 product_logo_256.png "${pkgdir}/usr/share/icons/hicolor/256x256/apps/helium.png"
+  install -Dm644 product_logo_256.png "${pkgdir}/usr/share/pixmaps/helium.png"
   install -Dm644 -t "${pkgdir}/usr/lib/${pkgname}/resources/ublock" \
     "${srcdir}/helium-linux-${pkgver}/build/src/third_party/ublock/managed_storage.json"
 
