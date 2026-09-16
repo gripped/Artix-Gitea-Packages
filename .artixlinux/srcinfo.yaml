@@ -1,16 +1,16 @@
 ---
-version: 2.5.3-1
+version: 2.5.4-1
 pkgbase:
   name: ppp
   pkgdesc: A daemon which implements the Point-to-Point Protocol for dial-up networking
-  pkgver: 2.5.3
+  pkgver: 2.5.4
   pkgrel: 1
   url: https://www.samba.org/ppp/
   arch:
     - x86_64
   license:
-    - GPL
-    - BSD
+    - GPL-2.0-or-later
+    - BSD-3-Clause
   makedepends:
     - git
   depends:
@@ -30,7 +30,7 @@ pkgbase:
     - etc/ppp/options
     - etc/ppp/pap-secrets
   source:
-    - git+https://github.com/ppp-project/ppp.git?signed#tag=v2.5.3
+    - git+https://github.com/ppp-project/ppp.git?signed#tag=v2.5.4
     - options
     - ip-up
     - ip-down
@@ -44,7 +44,7 @@ pkgbase:
     - DE8E01561D8276A4DBFAEFCC040F1D49EC9DBB8C
     - BF454B7D76B69BD78AB9A4699D9AEA772C63719F
   sha512sums:
-    - 080b61a597a4f26e4b7d74b8c3dcf84cd4e254c95f937f713c84d109ab9407cb545fbcedeb6cb13b1b1681bf08ee4eab82a974c1dc6a1400ee579f2293d05a19
+    - 1f11e86524935cdbffd363e49ed00f7417883aabe64f9bd42fc45feb59380709ea9ccfad11b2ef7d8ac5d654832cc40d1237f1c324e7698b04efdc061684e545
     - 4324a9abe79b20735b87de2158bb73b6449415a4760f06a06b648dfb53517f8d9907b094a88d1b492b24c8720cfd9b17d491fbe236fbd51ba9042af60483b231
     - bdaaac792dd448ff31da6da2749d8c2f9c4e0311b1d4639de7c68038fcaa333cc28e25f5a6308de0ecb24b60b2e7284a811482df990da5f54d5581a746964f3c
     - 92f3a5e383f2c888938e891ba831042e7f8c026b0ddf5ce8c3523d06ac32fa81742e638a4c665975cbc79868b98806d92574ee2ee8e034e33b065a90ee3ab28b
@@ -55,4 +55,4 @@ pkgbase:
     - 5b92a05bcf3ad4b7a88434546884e088069ce7c16a10c472589ca5ecc648f86ca02c2f608fb856ac6cb6ef14b508c2e0dec146c953128693bfb6c988f1963de8
 pkgname:
   - name: ppp
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
