@@ -1,9 +1,9 @@
 ---
-version: 1.19.2-1
+version: 1.20.2-1
 pkgbase:
   name: zed
   pkgdesc: A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
-  pkgver: 1.19.2
+  pkgver: 1.20.2
   pkgrel: 1
   url: https://zed.dev
   arch:
@@ -47,9 +47,9 @@ pkgbase:
   replaces:
     - zed-editor
   source:
-    - https://github.com/zed-industries/zed/archive/v1.19.2/zed-1.19.2.tar.gz
+    - https://github.com/zed-industries/zed/archive/v1.20.2/zed-1.20.2.tar.gz
   sha256sums:
-    - 4f5ee171225f659b5e2a479549321301a4e0749e926c46953d48f600f81007a7
+    - 497f190a21908e962df47a3f8095d0d67f67331bdf89992b198adc58458b469e
 pkgname:
   - name: zed
     depends:
