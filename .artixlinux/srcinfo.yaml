@@ -1,9 +1,9 @@
 ---
-version: 1.13.1-1
+version: 1.14.0-1
 pkgbase:
   name: kirigami-addons
   pkgdesc: Add-ons for the Kirigami framework
-  pkgver: 1.13.1
+  pkgver: 1.14.0
   pkgrel: 1
   url: https://invent.kde.org/libraries/kirigami-addons
   arch:
@@ -32,14 +32,14 @@ pkgbase:
     - qt6-multimedia
     - sonnet
   source:
-    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.13.1.tar.xz
-    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.13.1.tar.xz.sig
+    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.14.0.tar.xz
+    - https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.14.0.tar.xz.sig
   validpgpkeys:
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - 39FFA93CAE9C6AFC212AD00202325448204E452A
   sha256sums:
-    - 76026f0abe8c948208ce75a02a9ecac60c618ac5288ca546e09da64bc4af7050
+    - 4ae9ef9cf1fc55fef59328d25a70b28572b6f6a787394c3d292f5ed378f19840
     - SKIP
 pkgname:
   - name: kirigami-addons
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
