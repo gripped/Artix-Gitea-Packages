@@ -1,10 +1,10 @@
 ---
-version: 580.178.04-4
+version: 580.178.04-5
 pkgbase:
   name: nvidia-580xx
   pkgdesc: NVIDIA kernel modules
   pkgver: 580.178.04
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.nvidia.com/
   arch:
     - x86_64
