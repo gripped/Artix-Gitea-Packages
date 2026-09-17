@@ -1,9 +1,9 @@
 ---
-version: 3.16.28-1
+version: 3.16.29-1
 pkgbase:
   name: gamescope
   pkgdesc: SteamOS session compositing window manager
-  pkgver: 3.16.28
+  pkgver: 3.16.29
   pkgrel: 1
   url: https://github.com/ValveSoftware/gamescope
   arch:
@@ -59,7 +59,7 @@ pkgbase:
     - xcb-util-wm
     - xorg-server-xwayland
   source:
-    - git+https://github.com/ValveSoftware/gamescope.git#commit=3.16.28
+    - git+https://github.com/ValveSoftware/gamescope.git#commit=3.16.29
     - git+https://gitlab.freedesktop.org/emersion/libdisplay-info.git
     - git+https://gitlab.freedesktop.org/emersion/libliftoff.git
     - git+https://github.com/ValveSoftware/openvr.git
@@ -68,7 +68,7 @@ pkgbase:
     - git+https://github.com/Joshua-Ashton/vkroots.git
     - git+https://gitlab.freedesktop.org/wlroots/wlroots.git
   b2sums:
-    - f78220d752626a25625ddde5601c51d8795a1a54075e3cd8c9884d7cbe549902d4ad9bb58afd632dabd3003e263e134d86116ccc103654219ee15a048f31678f
+    - 1cffbc0ae2bde5b6cfa3fbd99223819795ef4e15ed11f5d939c5590de5ac71eed5b3cbe3630645ce9a57c13029a5029a0a206957660e712879dcc95e3d2e925a
     - SKIP
     - SKIP
     - SKIP
@@ -78,4 +78,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: gamescope
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
