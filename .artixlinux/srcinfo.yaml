@@ -1,10 +1,10 @@
 ---
-version: 7.0.2-1.1
+version: 7.0.2-2
 pkgbase:
   name: libnfs
   pkgdesc: client library for accessing NFS shares
   pkgver: 7.0.2
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/sahlberg/libnfs
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - GPL
   makedepends:
     - cmake
+    - docbook-xsl
     - ninja
   depends:
     - gnutls
@@ -24,4 +25,4 @@ pkgbase:
     - 722d7a65090153a9892749fc7b9513d86a75534f7ea49ad4ce18c3360c3740b0c7255e4510fd956215eb25f807fbdc668c1af0262a4cc87de678561198448f8b
 pkgname:
   - name: libnfs
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.39.1-1-any

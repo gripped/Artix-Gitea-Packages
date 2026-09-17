@@ -2,14 +2,14 @@
 
 pkgname=libnfs
 pkgver=7.0.2
-pkgrel=1.1
+pkgrel=2
 pkgdesc="client library for accessing NFS shares"
 arch=('x86_64')
 url="https://github.com/sahlberg/libnfs"
 license=('GPL')
-options=('debug')
 depends=('gnutls' 'krb5')
-makedepends=('cmake' 'ninja')
+makedepends=('cmake' 'docbook-xsl' 'ninja')
+options=('debug')
 source=(
     "https://github.com/sahlberg/$pkgname/archive/$pkgname-$pkgver.tar.gz"
 )
@@ -24,7 +24,6 @@ build() {
 
     cmake \
         -DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_INSTALL_LIBDIR=lib \
         -DENABLE_DOCUMENTATION=ON \
         -DENABLE_UTILS=ON \
         -DENABLE_MULTITHREADING=ON \
@@ -37,4 +36,3 @@ package() {
     cd "$pkgname-$pkgname-$pkgver"
     DESTDIR="$pkgdir" ninja -v -C build install
 }
-
