@@ -1,24 +1,22 @@
 ---
-version: 0.17.0.1-2
+version: 0.17.1.1-1
 pkgbase:
   name: helium-browser
   pkgdesc: Private, fast, and honest web browser based on - Ungoogled - Chromium
-  pkgver: 0.17.0.1
-  pkgrel: 2
+  pkgver: 0.17.1.1
+  pkgrel: 1
   url: https://github.com/imputnet/helium
   arch:
     - x86_64
   license:
     - GPL-3.0-only
   makedepends:
-    - ninja
     - nodejs
     - python-pillow
     - python-httplib2
     - lld
     - gperf
     - mold
-    - go
     - git
     - clang
   depends:
@@ -51,8 +49,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/imputnet/helium/archive/refs/tags/0.17.0.tar.gz
-    - https://github.com/imputnet/helium-linux/archive/refs/tags/0.17.0.1.tar.gz
+    - https://github.com/imputnet/helium/archive/refs/tags/0.17.1.tar.gz
+    - https://github.com/imputnet/helium-linux/archive/refs/tags/0.17.1.1.tar.gz
   sha256sums:
     - 5666ac55f154eaa56e206d7fb992ec5a237fd3f938b76b6873a9b4b9d023cd3c
     - f72c58541c0a1e666b21cec147fab8f973dd658e9e89714bd424697e3021b41a
