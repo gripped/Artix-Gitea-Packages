@@ -50,13 +50,13 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 21.3-11
+    version: 21.3-12
     packages:
-      - kodi-21.3-11-x86_64.pkg.tar.zst
-      - kodi-gles-21.3-11-x86_64.pkg.tar.zst
-      - kodi-eventclients-21.3-11-x86_64.pkg.tar.zst
-      - kodi-tools-texturepacker-21.3-11-x86_64.pkg.tar.zst
-      - kodi-dev-21.3-11-x86_64.pkg.tar.zst
+      - kodi-21.3-12-x86_64.pkg.tar.zst
+      - kodi-gles-21.3-12-x86_64.pkg.tar.zst
+      - kodi-eventclients-21.3-12-x86_64.pkg.tar.zst
+      - kodi-tools-texturepacker-21.3-12-x86_64.pkg.tar.zst
+      - kodi-dev-21.3-12-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 21.3-8

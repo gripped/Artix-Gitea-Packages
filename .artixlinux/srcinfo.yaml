@@ -1,9 +1,9 @@
 ---
-version: 21.3-11
+version: 21.3-12
 pkgbase:
   name: kodi
   pkgver: 21.3
-  pkgrel: 11
+  pkgrel: 12
   url: https://kodi.tv
   arch:
     - x86_64
