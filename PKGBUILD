@@ -25,8 +25,8 @@ options=('!lto')
 source=("${url}/archive/refs/tags/${_hlmver}.tar.gz"
         "${url}-linux/archive/refs/tags/${pkgver}.tar.gz")
 
-sha256sums=('5666ac55f154eaa56e206d7fb992ec5a237fd3f938b76b6873a9b4b9d023cd3c'
-            'f72c58541c0a1e666b21cec147fab8f973dd658e9e89714bd424697e3021b41a')
+sha256sums=('ced3e09ed5ddf6b0fc9fef77d6e93b918e53004a061dfd823df78c709fa6547f'
+            'b7271d60ed576c2e5009779d93733185459a919e9b889dc34000f7ea20aaab27')
 
 prepare() {
   mv -v "helium-${_hlmver}" helium-chromium

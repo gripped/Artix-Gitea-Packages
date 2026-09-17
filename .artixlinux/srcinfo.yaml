@@ -52,8 +52,8 @@ pkgbase:
     - https://github.com/imputnet/helium/archive/refs/tags/0.17.1.tar.gz
     - https://github.com/imputnet/helium-linux/archive/refs/tags/0.17.1.1.tar.gz
   sha256sums:
-    - 5666ac55f154eaa56e206d7fb992ec5a237fd3f938b76b6873a9b4b9d023cd3c
-    - f72c58541c0a1e666b21cec147fab8f973dd658e9e89714bd424697e3021b41a
+    - ced3e09ed5ddf6b0fc9fef77d6e93b918e53004a061dfd823df78c709fa6547f
+    - b7271d60ed576c2e5009779d93733185459a919e9b889dc34000f7ea20aaab27
 pkgname:
   - name: helium-browser
 # generated with artixpkg 0.39.1-1-any
