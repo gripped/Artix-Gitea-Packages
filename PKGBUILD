@@ -9,7 +9,7 @@
 
 pkgname=openshot
 pkgver=4.0.0
-pkgrel=2.1
+pkgrel=3
 pkgdesc="An award-winning free and open-source video editor"
 arch=(any)
 url="https://www.openshot.org/"
@@ -50,18 +50,18 @@ optdepends=(
 source=(
   "git+https://github.com/OpenShot/openshot-qt#tag=v${pkgver}"
   "$pkgname-2.6.1-no_metric_default.patch"
-  "$pkgname-4.0.0-explicit-relative-qtapi.patch"
 )
 sha512sums=('c87755d61386c890b557debabbe9cc47801d9711958ada0a4d209424d6e79d6fded7c505df1f01eb17515a8663d2a86d7e0c8384e14d82d39a7129efb30d4fee'
-            'd52441559897ce0de476a6120b7e36b082bbcb0722436a77c1a60456a86d02f370df6bc58384c838a3ad2df47c1603a6fabd5044c303284bac2ea75a99a76a8a'
-            'e2357bd8fbdba9130997fad13b8fc595ee7638fb38b5cfa3c74e787509c80ebbae108d7bff6deae842e99378bc72400ba71343eaf065fb610d7ce8abea621178')
+            'd52441559897ce0de476a6120b7e36b082bbcb0722436a77c1a60456a86d02f370df6bc58384c838a3ad2df47c1603a6fabd5044c303284bac2ea75a99a76a8a')
 
 prepare() {
 	cd "$pkgname-qt"
 	# disable default metric collection with google analytics
 	patch -Np1 -i ../"$pkgname-2.6.1-no_metric_default.patch"
 	# fix launch
-	patch -Np1 -i ../"$pkgname-4.0.0-explicit-relative-qtapi.patch"
+	sed -i 's/from qt_api/from .qt_api/' src/launch.py
+	# fix crash during crop
+	git cherry-pick -n 67bb9e3960cbfd5ce1256399531efd3955d71981
 }
 
 build() {
