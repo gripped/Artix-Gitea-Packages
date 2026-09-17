@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 7.0.2-2
+    version: 7.0.2-2.1
     packages:
-      - libnfs-7.0.2-2-x86_64.pkg.tar.zst
+      - libnfs-7.0.2-2.1-x86_64.pkg.tar.zst
     debug:
-      - libnfs-debug-7.0.2-2-x86_64.pkg.tar.zst
+      - libnfs-debug-7.0.2-2.1-x86_64.pkg.tar.zst
   world:
     version: 6.0.2-5
     packages:
