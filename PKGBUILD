@@ -535,8 +535,6 @@ package_pipewire-system-services() {
     "pipewire=$epoch:$pkgver-$pkgrel"
   )
 
-  mv system/* "$pkgdir"
-
   install -Dm644 pipewire-sysusers.conf \
     "$pkgdir/usr/lib/sysusers.d/pipewire.conf"
 
