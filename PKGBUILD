@@ -2,7 +2,7 @@
 
 pkgname=libclc
 pkgver=23.1.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Library requirements of the OpenCL C programming language"
 arch=('any')
 url="https://libclc.llvm.org/"
@@ -72,6 +72,19 @@ package() {
   # than the new per-triple layout above.
   ln -s spirv32-unknown-unknown/libclc.spv "$pkgdir/usr/share/clc/spirv-mesa3d-.spv"
   ln -s spirv64-unknown-unknown/libclc.spv "$pkgdir/usr/share/clc/spirv64-mesa3d-.spv"
+
+  # Mesa also wants a pkg-config file.
+  install -Dm644 /dev/stdin "$pkgdir/usr/share/pkgconfig/libclc.pc" <<END
+prefix=/usr
+datarootdir=/usr/share
+datadir=/usr/share
+pkgdatadir=\${datadir}/clc
+libexecdir=\${pkgdatadir}
+
+Name: libclc
+Description: Library requirements of the OpenCL C programming language
+Version: $pkgver
+END
 
   install -Dm644 LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }

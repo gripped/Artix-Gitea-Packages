@@ -1,10 +1,10 @@
 ---
-version: 23.1.1-1
+version: 23.1.1-2
 pkgbase:
   name: libclc
   pkgdesc: Library requirements of the OpenCL C programming language
   pkgver: 23.1.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://libclc.llvm.org/
   arch:
     - any
