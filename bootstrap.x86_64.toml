@@ -71,7 +71,7 @@ compression-formats = ["gz"]
 compression-profile = "fast"
 
 [target.x86_64-unknown-linux-gnu]
-llvm-config = "/usr/bin/llvm-config-22"
+llvm-config = "/usr/bin/llvm-config"
 optimized-compiler-builtins = "%clangdir%/lib/linux/libclang_rt.builtins-x86_64.a"
 
 [target.x86_64-unknown-linux-musl]

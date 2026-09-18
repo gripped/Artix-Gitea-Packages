@@ -1,10 +1,10 @@
 ---
-version: 1:1.98.1-1.1
+version: 1:1.98.1-2
 pkgbase:
   name: rust
   pkgdesc: Systems programming language focused on safety, speed and concurrency
   pkgver: 1.98.1
-  pkgrel: 1.1
+  pkgrel: 2
   epoch: 1
   url: https://www.rust-lang.org/
   arch:
@@ -18,10 +18,10 @@ pkgbase:
     - gdb
     - procps-ng
   makedepends:
-    - clang
+    - clang=23.1.1
+    - llvm=23.1.1
     - cmake
     - libffi
-    - llvm22
     - musl
     - ninja
     - perl
@@ -30,8 +30,10 @@ pkgbase:
     - wasi-libc
     - wasm-component-ld
   depends:
+    - compiler-rt=23.1.1
+    - lld=23.1.1
+    - llvm-libs=23.1.1
     - bash
-    - compiler-rt
     - curl
     - gcc
     - glibc
@@ -39,8 +41,6 @@ pkgbase:
     - libgit2
     - libssh2
     - libstdc++
-    - lld
-    - llvm22-libs
     - openssl
     - sqlite
     - zlib
@@ -58,6 +58,10 @@ pkgbase:
     - 0006-compiler-Use-target-specific-GCC-linkers.patch
     - 0007-compiler-Link-riscv64-musl-statically.patch
     - 0008-compiler-Swap-primary-and-secondary-lib-dirs.patch
+    - 0009-cleanup-upstream-dropped-AMX-TF32.patch
+    - 0010-cleanup-upstream-dropped-AMX-TF32.patch
+    - 0011-Reapply-LLVM-23-Run-AssignGUIDPass-in-some-places.patch
+    - https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.1/llvm-project-23.1.1.src.tar.xz
   validpgpkeys:
     - 108F66205EAEB0AAA8DD5E1C85AB96E6FA1BE5FE
   b2sums:
@@ -71,6 +75,10 @@ pkgbase:
     - 4af24662267a24abf05cc7afba60e7e42d7d3ca1e1f44cbba4c47dc6a6414e252d8df55fdc9be04ceca030a89eb52cb0ac0fd17f7ba515f72e1f8f00163df7af
     - d9b974154aa5615f4ca0c8956405974d3a8458a5b267e5d1105793b2bbc092be1fba5b579fd7fa97c7eac9d0840cb87090f2cce2091c62ec70a5e121bac84002
     - d5fcda00c46e1e1ea9ed1d269d3ef549d4ad96148d7d0744acd673de802b3bf3747ceec1fa506d3e7c128cdff742410b1e69218d59ef20a5f246755c1bd02694
+    - 20d51f44286949100b526658be091c8ad2efe6fe495d433ca27aeeb2b16a9206633d773437037d867341342c52859f2191b04270fcce34c6d9d9097337f84471
+    - 68cad7cbcce272454e6a5db473d64ef182c93915c166459d27c02fadc49018c9369afa17084045730a76d7041e673d7a3744a18a1076175556e7e64ba0507960
+    - bff50b3156476ec19383199d0d68f3c6235ff77cf7fd5d87fcba3d3accf1524e8bb1243e8618da73418ec58175191543390906603d1e7b2de1c1bdb200d15614
+    - 31d0ad202f4ad38d001baaf638a756508b164229b02a6e41b9689508a33b3a7baecaa10398e20f3661cacb712663fe379eeb94e50e017e40ae546a7e7de8049d
   source_aarch64:
     - bootstrap.aarch64.toml
   b2sums_aarch64:
@@ -102,12 +110,14 @@ pkgbase:
     - lib32-glibc
     - musl-aarch64
   b2sums_x86_64:
-    - eb50774c3c3985568b77164c7b97e9c04a9a914ce0e47fb3c164f7f49f2c072bafebb04199578ce02c299d7a8cf8903b889b7ae05be0d51af5eeea9a6224eafc
+    - c568b08b8696ba42efc1ce9e3f24e717cde6652c7cab48a2cacfad6a54e9b0b490f8475058347cae9d382ff5ca199b3f36ff46298749df0c1c7fde8b6091b9ca
 pkgname:
   - name: rust
     depends:
+      - compiler-rt=23.1.1
+      - lld=23.1.1
+      - llvm-libs=23.1.1
       - bash
-      - compiler-rt
       - curl
       - gcc
       - glibc
@@ -115,8 +125,6 @@ pkgname:
       - libgit2
       - libssh2
       - libstdc++
-      - lld
-      - llvm22-libs
       - openssl
       - sqlite
       - zlib
