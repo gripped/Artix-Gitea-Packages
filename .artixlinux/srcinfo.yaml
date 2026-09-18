@@ -1,10 +1,10 @@
 ---
-version: 1.0.4.5-15
+version: 1.0.4.5-16
 pkgbase:
   name: libappimage
   pkgdesc: Reference implementation of the AppImage specification
   pkgver: 1.0.4.5
-  pkgrel: 15
+  pkgrel: 16
   url: https://appimage.org/
   arch:
     - x86_64
@@ -17,7 +17,6 @@ pkgbase:
     - git
     - vim
     - wget
-    - xdg-utils-cxx
   depends:
     - boost-libs
     - cairo
@@ -28,6 +27,7 @@ pkgbase:
     - librsvg
     - libstdc++
     - squashfuse
+    - xdg-utils-cxx
   source:
     - git+https://github.com/AppImage/libappimage#tag=v1.0.4-5
     - cmake-4.patch
