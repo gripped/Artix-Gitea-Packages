@@ -2,23 +2,39 @@
 # Contributor: Jason Hall <cakersq@gmail.com>
 
 pkgname=thin-provisioning-tools
-pkgver=1.3.3
+pkgver=1.3.4
 pkgrel=1
 pkgdesc='Suite of tools for manipulating the metadata of the dm-thin device-mapper target'
 arch=('x86_64')
 url='https://github.com/jthornber/thin-provisioning-tools'
-license=('GPL-3.0-or-later')
+license=('GPL-3.0-only')
 depends=('glibc'
          'libgcc' 'libgcc_s.so'
          'libudev.so')
 makedepends=('git' 'cargo' 'clang' 'device-mapper')
 source=("git+https://github.com/jthornber/thin-provisioning-tools#tag=v${pkgver}")
-sha256sums=('fdd73436d4f70165cdc3753d1082d630845a7a1dbd773a73ac99595b97a5aa93')
+sha256sums=('e5614cfe9065509afb7eb614ccdc5ef3f6a4c0571e3228cffb3d0f1cc664f7d0')
+
+prepare() {
+  cd "${srcdir}/${pkgname}"
+
+  cargo fetch --locked --target host-tuple
+}
 
 build() {
   cd "${srcdir}/${pkgname}"
 
-  cargo build --release
+  # Use LTO
+  export CARGO_PROFILE_RELEASE_LTO=true
+  export CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+
+  cargo build --frozen --release
+}
+
+check() {
+  cd "${srcdir}/${pkgname}"
+
+  cargo test --frozen --all-features
 }
 
 package() {
