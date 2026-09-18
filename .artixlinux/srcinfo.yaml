@@ -1,10 +1,10 @@
 ---
-version: 1:0+659+2e6fb9d8-1
+version: 1:0+659+2e6fb9d8-2
 pkgbase:
   name: wasi-libc
   pkgdesc: WASI libc implementation for WebAssembly
   pkgver: 0+659+2e6fb9d8
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/WebAssembly/wasi-libc
   arch:
@@ -31,4 +31,4 @@ pkgbase:
     - 136e908a5565e8e59e22ffcd87f5b03b9b72f4b178c04a49fa728589e0934159d7188b615c7b3cf699a1c0dd1269c1a6719c0d633db13676af58f6359b221f81
 pkgname:
   - name: wasi-libc
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
