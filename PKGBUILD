@@ -1,4 +1,5 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: capezotte@artixlinux.org
+# Contributor: artist for Artix Linux
 
 pkgbase=wireplumber
 pkgname=(
@@ -7,7 +8,7 @@ pkgname=(
   wireplumber-docs
 )
 pkgver=0.5.17
-pkgrel=1
+pkgrel=2
 pkgdesc="Session / policy manager implementation for PipeWire"
 url="https://pipewire.pages.freedesktop.org/wireplumber/"
 arch=(x86_64)
