@@ -17,7 +17,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=7.2.6
-pkgrel=1
+pkgrel=2
 _srcname=linux-${pkgver}
 license=('GPL-2.0-only')
 arch=('x86_64')
@@ -29,7 +29,7 @@ makedepends=('git')
 makedepends+=('asciidoc' 'xmlto')
 # perf deps
 makedepends+=('perl' 'python' 'python-setuptools' 'slang' 'elfutils' 'libunwind'
-  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang21' 'llvm21-libs' 'libpfm')
+  'numactl' 'audit' 'zstd' 'libcap' 'libtraceevent' 'openssl' 'clang' 'llvm-libs' 'libpfm')
 # cpupower deps
 makedepends+=('pciutils')
 # usbip deps
@@ -90,8 +90,7 @@ build() {
     NO_LIBLLVM=1 \
     PYTHON_CONFIG=python-config \
     LIBPFM4=1 \
-    DESTDIR="$pkgdir" \
-    CLANG=/usr/lib/llvm21/bin/clang
+    DESTDIR="$pkgdir"
   popd
 
   echo ':: cpupower'

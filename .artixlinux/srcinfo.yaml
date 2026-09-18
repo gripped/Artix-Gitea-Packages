@@ -1,9 +1,9 @@
 ---
-version: 7.2.6-1
+version: 7.2.6-2
 pkgbase:
   name: linux-tools
   pkgver: 7.2.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -27,8 +27,8 @@ pkgbase:
     - libcap
     - libtraceevent
     - openssl
-    - clang21
-    - llvm21-libs
+    - clang
+    - llvm-libs
     - libpfm
     - pciutils
     - glib2
