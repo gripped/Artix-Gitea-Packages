@@ -16,6 +16,3 @@ src/
 *.service
 *.timer
 *.socket
-
-# from github
-replace*.patch

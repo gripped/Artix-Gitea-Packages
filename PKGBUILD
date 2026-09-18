@@ -45,7 +45,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
 
 prepare() {
   cd "$pkgname-$pkgver"
-  patch -p1 < "$srcdir/replace-unsupported-applications-view-with-processes.patch"
+  patch -Np1 < "$srcdir/replace-unsupported-applications-view-with-processes.patch"
 }
 
 build() {
