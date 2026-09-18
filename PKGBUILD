@@ -19,7 +19,7 @@ pkgname=(
   rust-aarch64-musl
 )
 pkgver=1.98.1
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Systems programming language focused on safety, speed and concurrency"
 url=https://www.rust-lang.org/
@@ -30,9 +30,12 @@ arch=(
   x86_64
 )
 license=("Apache-2.0 OR MIT")
+_llvmver=23.1.1
 depends=(
+  "compiler-rt=$_llvmver"
+  "lld=$_llvmver"
+  "llvm-libs=$_llvmver"
   bash
-  compiler-rt
   curl
   gcc
   glibc
@@ -40,17 +43,15 @@ depends=(
   libgit2
   libssh2
   libstdc++
-  lld
-  llvm-libs
   openssl
   sqlite
   zlib
 )
 makedepends=(
-  clang
+  "clang=$_llvmver"
+  "llvm=$_llvmver"
   cmake
   libffi
-  llvm
   musl
   ninja
   perl
@@ -114,6 +115,12 @@ source=(
 
   # Prefer "lib" over "lib64"
   0008-compiler-Swap-primary-and-secondary-lib-dirs.patch
+
+  # Fix build with LLVM 23
+  0009-cleanup-upstream-dropped-AMX-TF32.patch
+  0010-cleanup-upstream-dropped-AMX-TF32.patch
+  0011-Reapply-LLVM-23-Run-AssignGUIDPass-in-some-places.patch
+  "https://github.com/llvm/llvm-project/releases/download/llvmorg-$_llvmver/llvm-project-$_llvmver.src.tar.xz"
 )
 source_aarch64=(bootstrap.aarch64.toml)
 source_loong64=(bootstrap.loong64.toml)
@@ -128,11 +135,15 @@ b2sums=('a055c8341556f29a6e2ca5137ca7943365d61d3b7dc30b182c5c62907659d16ad0caf8c
         'c215f7533beae11ce038fca383638ef84c7aa365609ae3ac65dae32894cf13a1eb96ab3e476b2c4a37fff2bdc0b14b9e01d23899ea04c4e17770d99898b5b7fd'
         '4af24662267a24abf05cc7afba60e7e42d7d3ca1e1f44cbba4c47dc6a6414e252d8df55fdc9be04ceca030a89eb52cb0ac0fd17f7ba515f72e1f8f00163df7af'
         'd9b974154aa5615f4ca0c8956405974d3a8458a5b267e5d1105793b2bbc092be1fba5b579fd7fa97c7eac9d0840cb87090f2cce2091c62ec70a5e121bac84002'
-        'd5fcda00c46e1e1ea9ed1d269d3ef549d4ad96148d7d0744acd673de802b3bf3747ceec1fa506d3e7c128cdff742410b1e69218d59ef20a5f246755c1bd02694')
-b2sums_aarch64=('40e105f88ad18c28c5634574aa3f5a07d77b40aa06c80bbfd2bbfbf55d5fa98301f31d52e58d39c7331213fec71285af05019b13c850d3bbdaa4f2d225b7b15f')
-b2sums_loong64=('a611e20959eaa0ce4c42e5f6caf1531a0a1f5089f5734d3161f66933995de3d24e0f645b8220d9f9ab6ebf28f10bdc85425539387bf8bfae3d2e676ea0229c53')
-b2sums_riscv64=('a6c671ddd136a6f259e42b87d4443962bfb0e2313dfe9acd9a3bf1c07094f75319c4c0c53c864d89aa3aef6c0e1acd8ce65b5dc20bc514c9d4b450f898266a1e')
-b2sums_x86_64=('c1bd1c53cdaf4e7a54c757a490945cb4d7b120c01f32ae06d707aa64aa71431e1ce88e0e759b817cb566e56748b51a5d508719274dc7a1e02734b6505858a4de')
+        'd5fcda00c46e1e1ea9ed1d269d3ef549d4ad96148d7d0744acd673de802b3bf3747ceec1fa506d3e7c128cdff742410b1e69218d59ef20a5f246755c1bd02694'
+        '20d51f44286949100b526658be091c8ad2efe6fe495d433ca27aeeb2b16a9206633d773437037d867341342c52859f2191b04270fcce34c6d9d9097337f84471'
+        '68cad7cbcce272454e6a5db473d64ef182c93915c166459d27c02fadc49018c9369afa17084045730a76d7041e673d7a3744a18a1076175556e7e64ba0507960'
+        'bff50b3156476ec19383199d0d68f3c6235ff77cf7fd5d87fcba3d3accf1524e8bb1243e8618da73418ec58175191543390906603d1e7b2de1c1bdb200d15614'
+        '31d0ad202f4ad38d001baaf638a756508b164229b02a6e41b9689508a33b3a7baecaa10398e20f3661cacb712663fe379eeb94e50e017e40ae546a7e7de8049d')
+b2sums_aarch64=('11eba996d307a415913e21a71adfb8c24ffa65ca71291d37f78244aa3deb07c50f7887bb8924174569527f9dc101ecaf0874e2bddc508a51be337caeaf45de2f')
+b2sums_loong64=('7b252bcef31a2350145aba7a80ba122e673c714f64bdedeb0e996a6dc69bb784f2a78185278344c57d91d3ad26b1bcd9a62f398d25bb92875d1704f8aabaad6c')
+b2sums_riscv64=('1b35f3ef54cd81e56952de9e544ec230fedf56ac5cd3d19dc88b4f6483c534492f59cf8320b607d81f89747dd8c4d788cbde06e47b805c49b3858892a1d43107')
+b2sums_x86_64=('c568b08b8696ba42efc1ce9e3f24e717cde6652c7cab48a2cacfad6a54e9b0b490f8475058347cae9d382ff5ca199b3f36ff46298749df0c1c7fde8b6091b9ca')
 validpgpkeys=(
   108F66205EAEB0AAA8DD5E1C85AB96E6FA1BE5FE  # Rust Language (Tag and Release Signing Key) <rust-key@rust-lang.org>
 )
@@ -152,6 +163,9 @@ prepare() {
     echo "Applying patch $src..."
     patch -Np1 < "../$src"
   done
+
+  rm -rf src/llvm-project
+  ln -sr "$srcdir/llvm-project-$_llvmver.src" src/llvm-project
 
   local clangdir
   clangdir="$(clang -print-resource-dir)"
