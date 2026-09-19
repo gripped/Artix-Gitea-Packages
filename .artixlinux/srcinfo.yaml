@@ -1,10 +1,10 @@
 ---
-version: 5.15.19+kde+r3-1
+version: 5.15.19+kde+r3-2
 pkgbase:
   name: qt5-tools
   pkgdesc: A cross-platform application and UI framework (Development Tools, QtHelp)
   pkgver: 5.15.19+kde+r3
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgbase:
     - 3ebda6953d46ecb154d50b68085971a95fdd72c4cc2634b867adcac8d1030b1a
 pkgname:
   - name: qt5-tools
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
