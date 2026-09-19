@@ -1,10 +1,10 @@
 ---
-version: 4.20.2-1
+version: 4.20.2-2
 pkgbase:
   name: tumbler
   pkgdesc: Thumbnail service implementing the thumbnail management D-Bus specification
   pkgver: 4.20.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/xfce/tumbler/start
   arch:
     - x86_64
@@ -28,7 +28,7 @@ pkgbase:
     - gdk-pixbuf2
     - hicolor-icon-theme
   optdepends:
-    - 'ffmpegthumbnailer: video thumbnails'
+    - 'ffmpegthumbnailer: audio and video thumbnails'
     - 'poppler-glib: PDF thumbnails'
     - 'libgsf: ODF thumbnails'
     - 'libgepub: EPUB thumbnails'
@@ -42,4 +42,4 @@ pkgbase:
     - 35be9343828acc0269ea2036276ae1087bcb0dd036e74c76a571f63d9b868ad3
 pkgname:
   - name: tumbler
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
