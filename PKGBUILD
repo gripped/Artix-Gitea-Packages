@@ -1,13 +1,15 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: dovloran
+# Contributor: artist for Artix Linux
+# Contributor: capezotte
 
 pkgname=qbittorrent-openrc
 pkgver=20260823
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="OpenRC qBittorrent client"
-url="https://gitea.artixlinux.org/artixlinux/packages-openrc"
+url="https://gitea.artixlinux.org/packages"
 arch=(any)
-license=(GPL2)
-depends=(qbittorrent openrc)
+license=(GPL-2.0-only)
+depends=(qbittorrent-nox openrc)
 backup=('etc/conf.d/qbittorrent')
 source=("qbittorrent-nox.initd"
 	"qbittorrent-nox.confd")

@@ -1,17 +1,17 @@
 ---
-version: 20260823-1.1
+version: 20260823-1.2
 pkgbase:
   name: qbittorrent-openrc
   pkgdesc: OpenRC qBittorrent client
   pkgver: 20260823
-  pkgrel: 1.1
-  url: https://gitea.artixlinux.org/artixlinux/packages-openrc
+  pkgrel: 1.2
+  url: https://gitea.artixlinux.org/packages
   arch:
     - any
   license:
-    - GPL2
+    - GPL-2.0-only
   depends:
-    - qbittorrent
+    - qbittorrent-nox
     - openrc
   backup:
     - etc/conf.d/qbittorrent
@@ -23,4 +23,4 @@ pkgbase:
     - fb2aa41fbf07361160b98e00f267ab386c433d522dfba12bbeb01ce80ebf8564
 pkgname:
   - name: qbittorrent-openrc
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
