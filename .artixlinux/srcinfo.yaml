@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.11.2-2
 pkgbase:
   name: pyside6
   pkgver: 6.11.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -111,4 +111,4 @@ pkgname:
       - llvm
       - python
       - qt6-base
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
