@@ -1,4 +1,6 @@
-# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Hyacinthe Cartiaux <hyacinthe@archlinux.org>
+# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Jaroslaw Swierczynski <swiergot@aur.archlinux.org>
 # Contributor: Sven Kauber, <celeon@gmail.com>
@@ -6,7 +8,7 @@
 
 pkgname=encfs
 pkgver=1.9.5
-pkgrel=9
+pkgrel=10
 pkgdesc='Encrypted filesystem in user-space'
 arch=('x86_64')
 url='https://vgough.github.io/encfs/'
@@ -24,7 +26,8 @@ build() {
       -DUSE_INTERNAL_TINYXML=OFF \
       -DINSTALL_LIBENCFS=ON \
       -DBUILD_SHARED_LIBS=ON \
-      -DCMAKE_INSTALL_PREFIX=/usr
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_POLICY_VERSION_MINIMUM=3.5
   cmake --build build
 }
 
