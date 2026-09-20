@@ -1,9 +1,9 @@
 ---
-version: 20260820-1
+version: 20260920-1
 pkgbase:
   name: artixlinux-appstream-data
   pkgdesc: Artix Linux application database for AppStream-based software centers
-  pkgver: 20260820
+  pkgver: 20260920
   pkgrel: 1
   url: https://www.artixlinux.org
   arch:
@@ -11,56 +11,56 @@ pkgbase:
   license:
     - GPL
   noextract:
-    - system.xml.gz-20260820
-    - system-icons-48x48-20260820.tar.gz
-    - system-icons-64x64-20260820.tar.gz
-    - system-icons-128x128-20260820.tar.gz
-    - world.xml.gz-20260820
-    - world-icons-48x48-20260820.tar.gz
-    - world-icons-64x64-20260820.tar.gz
-    - world-icons-128x128-20260820.tar.gz
-    - galaxy.xml.gz-20260820
-    - galaxy-icons-48x48-20260820.tar.gz
-    - galaxy-icons-64x64-20260820.tar.gz
-    - galaxy-icons-128x128-20260820.tar.gz
-    - lib32.xml.gz-20260820
-    - lib32-icons-48x48-20260820.tar.gz
-    - lib32-icons-64x64-20260820.tar.gz
-    - lib32-icons-128x128-20260820.tar.gz
+    - system.xml.gz-20260920
+    - system-icons-48x48-20260920.tar.gz
+    - system-icons-64x64-20260920.tar.gz
+    - system-icons-128x128-20260920.tar.gz
+    - world.xml.gz-20260920
+    - world-icons-48x48-20260920.tar.gz
+    - world-icons-64x64-20260920.tar.gz
+    - world-icons-128x128-20260920.tar.gz
+    - galaxy.xml.gz-20260920
+    - galaxy-icons-48x48-20260920.tar.gz
+    - galaxy-icons-64x64-20260920.tar.gz
+    - galaxy-icons-128x128-20260920.tar.gz
+    - lib32.xml.gz-20260920
+    - lib32-icons-48x48-20260920.tar.gz
+    - lib32-icons-64x64-20260920.tar.gz
+    - lib32-icons-128x128-20260920.tar.gz
   source:
-    - system-20260820.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/system-Components-x86_64.xml.gz
-    - system-icons-48x48-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/system-icons-48x48.tar.gz
-    - system-icons-64x64-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/system-icons-64x64.tar.gz
-    - system-icons-128x128-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/system-icons-128x128.tar.gz
-    - world-20260820.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/world-Components-x86_64.xml.gz
-    - world-icons-48x48-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/world-icons-48x48.tar.gz
-    - world-icons-64x64-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/world-icons-64x64.tar.gz
-    - world-icons-128x128-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/world-icons-128x128.tar.gz
-    - galaxy-20260820.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/galaxy-Components-x86_64.xml.gz
-    - galaxy-icons-48x48-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/galaxy-icons-48x48.tar.gz
-    - galaxy-icons-64x64-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/galaxy-icons-64x64.tar.gz
-    - galaxy-icons-128x128-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/galaxy-icons-128x128.tar.gz
-    - lib32-20260820.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/lib32-Components-x86_64.xml.gz
-    - lib32-icons-48x48-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/lib32-icons-48x48.tar.gz
-    - lib32-icons-64x64-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/lib32-icons-64x64.tar.gz
-    - lib32-icons-128x128-20260820.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260820/lib32-icons-128x128.tar.gz
+    - system-20260920.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/system-Components-x86_64.xml.gz
+    - system-icons-48x48-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/system-icons-48x48.tar.gz
+    - system-icons-64x64-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/system-icons-64x64.tar.gz
+    - system-icons-128x128-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/system-icons-128x128.tar.gz
+    - world-20260920.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/world-Components-x86_64.xml.gz
+    - world-icons-48x48-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/world-icons-48x48.tar.gz
+    - world-icons-64x64-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/world-icons-64x64.tar.gz
+    - world-icons-128x128-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/world-icons-128x128.tar.gz
+    - galaxy-20260920.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/galaxy-Components-x86_64.xml.gz
+    - galaxy-icons-48x48-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/galaxy-icons-48x48.tar.gz
+    - galaxy-icons-64x64-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/galaxy-icons-64x64.tar.gz
+    - galaxy-icons-128x128-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/galaxy-icons-128x128.tar.gz
+    - lib32-20260920.xml.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/lib32-Components-x86_64.xml.gz
+    - lib32-icons-48x48-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/lib32-icons-48x48.tar.gz
+    - lib32-icons-64x64-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/lib32-icons-64x64.tar.gz
+    - lib32-icons-128x128-20260920.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v20260920/lib32-icons-128x128.tar.gz
   sha256sums:
-    - ade1207da69c327c5bf78f3ca8d80a892ee25e4a15ca374bfac6e1cbb441e815
+    - 66b4c6b1f230be2a0d83ad1af5ba90bdb024528e85b67b717a747b6751743e73
     - 7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c
-    - ea21d1cf845fc255fd9103f734f865c3bcdb9fba6e1ac62cf68ef8597816f84b
     - 7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c
-    - ee879057379f6c3736b891ffffb7fc9cc43d2e0a9d7332e273bef7bf64623e04
-    - e661f10a2c739e34a4118edd05aff11ccebf350d1245f82192265ed4cad8e197
-    - 322d162fc923bb917aaa28ee43f82a58cd2795d5c80654ea3d4bf1e6c07fdb5c
-    - 16789c400eb15bd681140ea9c8b60bd0ddc5ded368a030f88352d7595fd86fcd
-    - 3c5769f862f4e98da7bdb688e39265b07fbc885de57e766171c0c677ce36bd81
-    - 0d6f45c5ebbd8ae2690bfde5099af1092d3f556948450d03db788f91f43ab714
-    - cf1aa484ca3ee2bafe2d8e036b16613c34133402eefba1170a049e606c61ec0a
-    - 04a207bba47ce1b0a9cb9654832def8a6821d8ae2a10fef26c598778d6238bf1
-    - 02cb2f70342ae5673e7c6c9c09fbe6c71376ccaa9f329f289752752b8f4cb4f4
-    - 89847b87e18e303c151bffaa7a933a12eb09c8d4b705a73385086da6fbadd335
-    - 31c35a9f1d80329088f1aaf1d461f20e22d7bc2b743212b2c58eff349e60a566
-    - 2e5ceff6be45da4ce44e4e7b92030fd2dd5c9d6ecffceb2be809b34fab15e784
+    - 7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c
+    - 5e6686c0a1a22c2a7547afbdc1485b59523206c9d236fa3ddd5d6e5a1351bc87
+    - 6c5af0da86b5f8b601ad8b3892f20d6994e148fbade1c4bd3f034ec1d2f3fe60
+    - 1cf2baa3947f85e1f5ac7856d7834407c86c5b2205cb7c9021dfbd1aa78b91ac
+    - 41885df8f9ca914a3f19e8c4abb100963d7d1bab3cdcfd17543012cf1169fe52
+    - 687329ddd4441577599c4fe4d2c9fef9f11136a567b357760d8d503979a01abd
+    - 750d6bf9dbabd3d7d03e2a9cce2dd6b468607e1b9d0816e6510863f19b50a9b4
+    - e500b6cd5e8e9c0fc9826d340d65ae72c171af60678601029b979164b8fd5088
+    - 127acc7e5c27ff7117cea4a97f51dd3647958b96950c93e556031c788bc73adc
+    - 9c2c5b19b3ab504ec0351fbfb3790fdd91c1b94cee0137c05c5fc059d63ffe18
+    - d269eb8c93ec52b117083a5a0493eb27ff58d4ffe2a3cbbe6f473762b1a9eada
+    - 7e6c9c491ad15d99e72c7a7250e6a80952d39dc7648758ca3a759a50ea1cf872
+    - 7abb223b00878f03126b7634e5bd9ba591180c4b7ca2eaaf5de977558be1f3b8
 pkgname:
   - name: artixlinux-appstream-data
 # generated with artixpkg 0.39.1-1-any
