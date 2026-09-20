@@ -1,10 +1,10 @@
 ---
-version: 2.5.1-1.1
+version: 2.5.2-1
 pkgbase:
   name: pcsclite
   pkgdesc: PC/SC Architecture smartcard middleware library
-  pkgver: 2.5.1
-  pkgrel: 1.1
+  pkgver: 2.5.2
+  pkgrel: 1
   url: https://pcsclite.apdu.fr/
   arch:
     - x86_64
@@ -31,11 +31,11 @@ pkgbase:
   backup:
     - '#etc/default/pcscd'
   source:
-    - git+https://github.com/LudovicRousseau/PCSC.git?signed#tag=2.5.1
+    - git+https://github.com/LudovicRousseau/PCSC.git?signed#tag=2.5.2
   validpgpkeys:
     - F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E
   sha256sums:
-    - fb396681125b89569e3513e80b11f8636dba144dae6b49d480fe292cbb759b1d
+    - 8c90df528c74ee1424787ca5a21793e3e9a9ccbd779216d3bd59fe365365120d
 pkgname:
   - name: pcsclite
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
