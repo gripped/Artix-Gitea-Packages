@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.7.9-1
+    version: 1.7.10-1
     packages:
-      - s2n-tls-1.7.9-1-x86_64.pkg.tar.zst
+      - s2n-tls-1.7.10-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.7.2-1
