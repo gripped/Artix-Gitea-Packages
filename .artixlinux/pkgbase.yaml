@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,17 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 2:7.2.4-3
+    packages:
+      - rocm-llvm-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-llvm-libs-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-mlir-libs-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-llvm-tools-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-llvm-headers-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-llvm-static-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-flang-2:7.2.4-3-x86_64.pkg.tar.zst
+      - rocm-device-libs-2:7.2.4-3-x86_64.pkg.tar.zst
+      - comgr-2:7.2.4-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
