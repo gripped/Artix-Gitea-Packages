@@ -1,9 +1,9 @@
 ---
-version: 5.5.0-1
+version: 5.6.1-1
 pkgbase:
   name: libkrunfw
   pkgdesc: A dynamic library bundling the guest payload consumed by libkrun
-  pkgver: 5.5.0
+  pkgver: 5.6.1
   pkgrel: 1
   url: https://github.com/containers/libkrunfw
   arch:
@@ -22,11 +22,11 @@ pkgbase:
   options:
     - '!debug'
   source:
-    - https://github.com/containers/libkrunfw/archive/refs/tags/v5.5.0/libkrunfw-5.5.0.tar.gz
+    - https://github.com/containers/libkrunfw/archive/refs/tags/v5.6.1/libkrunfw-5.6.1.tar.gz
     - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.12.68.tar.xz
   sha256sums:
-    - b0cbf1450269c80aea1dccbf440011deb2762a098b338c234079a6ef06456ead
+    - b8ec9f2205f1092a5fcd8ab8ecb8e1a939dea15bb842d844da99c5a062e3f453
     - d367c7504bd4da520dd01eb08125d2d0ac088bc8af4cd56d236f2074dd4225b7
 pkgname:
   - name: libkrunfw
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
