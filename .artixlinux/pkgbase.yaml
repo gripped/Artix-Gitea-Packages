@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -49,8 +49,72 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 156.0-1
+    packages:
+      - thunderbird-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-af-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ar-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ast-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-be-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-bg-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-br-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ca-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cak-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cs-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-cy-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-da-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-de-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-dsb-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-el-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-gb-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-en-us-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-ar-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-es-es-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-et-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-eu-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fi-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fr-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-fy-nl-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ga-ie-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gd-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-gl-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-he-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hr-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hsb-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hu-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-hy-am-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-id-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-is-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-it-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ja-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ka-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kab-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-kk-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ko-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-lt-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ms-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nb-no-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nl-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-nn-no-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pa-in-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pl-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-br-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-pt-pt-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-rm-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ro-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-ru-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sk-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sl-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sq-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sr-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-sv-se-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-th-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-tr-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uk-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-uz-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-vi-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-cn-156.0-1-x86_64.pkg.tar.zst
+      - thunderbird-i18n-zh-tw-156.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 155.0.1-1
