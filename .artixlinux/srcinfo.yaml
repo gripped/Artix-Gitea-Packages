@@ -1,9 +1,9 @@
 ---
-version: 7.2.6-2.1
+version: 7.2.7-2
 pkgbase:
   name: linux-tools
-  pkgver: 7.2.6
-  pkgrel: 2.1
+  pkgver: 7.2.7
+  pkgrel: 2
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -46,13 +46,13 @@ pkgbase:
     - '!strip'
     - '!lto'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.6.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.6.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.7.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.7.tar.sign
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 039aef84f2b0994aeda3f4fcfc3d02ec9d7a9bbb9020ea264c43f446c860f606
+    - 4ac34c47db2540ffb2713943f8d891ff1702e0ba6934525a493b7d1cad43145a
     - SKIP
   makedepends_x86_64:
     - libcap
