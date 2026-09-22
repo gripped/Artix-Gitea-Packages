@@ -17,7 +17,7 @@ pkgname=(
   'x86_energy_perf_policy'
 )
 pkgver=7.2.6
-pkgrel=2
+pkgrel=2.1
 _srcname=linux-${pkgver}
 license=('GPL-2.0-only')
 arch=('x86_64')
