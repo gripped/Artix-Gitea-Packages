@@ -1,0 +1,38 @@
+---
+version: 1.15-1
+pkgbase:
+  name: gzip
+  pkgdesc: GNU compression utility
+  pkgver: 1.15
+  pkgrel: 1
+  url: https://www.gnu.org/software/gzip/
+  arch:
+    - x86_64
+  license:
+    - GPL-3.0-or-later
+  makedepends:
+    - git
+    - less
+    - python
+    - wget
+  depends:
+    - glibc
+    - sh
+    - coreutils
+    - sed
+  optdepends:
+    - 'diffutils: zdiff/zcmp support'
+    - 'grep: zegrep/zfgrep/zforce/zgrep support'
+    - 'less: zless support'
+    - 'util-linux: zmore support'
+  source:
+    - git+https://git.savannah.gnu.org/git/gzip.git?signed#tag=v1.15
+    - git+https://git.savannah.gnu.org/git/gnulib.git
+  validpgpkeys:
+    - 155D3FC500C834486D1EEA677FD9FCCB000BEEEE
+  sha256sums:
+    - 1496b08cdd5320634b59860b09c6c5048ebb04b32a723fa39a3652f08102e2ba
+    - SKIP
+pkgname:
+  - name: gzip
+# generated with artixpkg 0.40.0-1-any
