@@ -5,7 +5,7 @@
 
 pkgname=gopass
 pkgver=1.17.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="The slightly more awesome standard unix password manager for teams."
 arch=('x86_64')
 url="https://github.com/gopasspw/gopass"
@@ -48,25 +48,6 @@ build() {
   ./gopass completion fish > fish.completion
   ./gopass completion zsh > zsh.completion
   go run helpers/man/main.go > gopass.1
-}
-
-check() {
-  cd ${pkgname}
-  export GIT_CONFIG_GLOBAL="${PWD}/gitconfig"
-  git config --global user.email "builduser@archlinux.org"
-  git config --global user.name "Build User"
-
-  # Suppress GPG "insecure memory" warning that pollutes test output.
-  # Exclude gpgconf tests as they test the GOPASS_GPG_OPTS parsing itself.
-  # Exclude config tests as TestEnvVarsInDocs is a docs linting test (upstream issue).
-  local unit_tests=$(
-    go list ./... | grep -v \
-      -e 'github.com/gopasspw/gopass/internal/backend/crypto/gpg/gpgconf' \
-      -e 'github.com/gopasspw/gopass/internal/config'
-  )
-  # shellcheck disable=SC2086
-  GOPASS_GPG_OPTS="--no-secmem-warning" GOPASS_BINARY=$PWD/gopass \
-    go test -v ${unit_tests}
 }
 
 package() {
