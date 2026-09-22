@@ -1,10 +1,10 @@
 ---
-version: 0.8-854.1
+version: 0.8-854.2
 pkgbase:
   name: bbswitch
   pkgdesc: Kernel module allowing to switch dedicated graphics card on Optimus laptops
   pkgver: 0.8
-  pkgrel: 854.1
+  pkgrel: 854.2
   url: https://github.com/Bumblebee-Project/bbswitch
   arch:
     - x86_64
