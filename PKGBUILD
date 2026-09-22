@@ -2,7 +2,7 @@
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 
 pkgname=rsync
-pkgver=3.5.0
+pkgver=3.5.1
 pkgrel=1
 pkgdesc='A fast and versatile file copying tool for remote and local files'
 arch=('x86_64')
@@ -12,15 +12,15 @@ depends=('acl' 'libacl.so' 'lz4' 'openssl' 'popt' 'xxhash' 'libxxhash.so'
          'zlib' 'zstd')
 optdepends=('python: for rrsync')
 makedepends=('git' 'python-commonmark')
-backup=(
-    'etc/rsyncd.conf'
-    'etc/xinetd.d/rsync'
-)
+backup=('etc/rsyncd.conf'
+        'etc/xinetd.d/rsync')
 validpgpkeys=('0048C8B026D4C96F0E589C2F6C859FB14B96A8C5'  # Wayne Davison <wayned@users.sourceforge.net>
-              '9FEF112DCE19A0DC7E882CB81BB24997A8535F6F') # Andrew Tridgell <andrew@tridgell.net
+              '9FEF112DCE19A0DC7E882CB81BB24997A8535F6F'  # Andrew Tridgell <andrew@tridgell.net
+              'C0E1054505704F757D925AB26A64E8AA2EFBCF5D') # Zen Dodd <mail@steadytao.com>
+              
 source=("git+https://github.com/RsyncProject/rsync.git?signed#tag=v${pkgver}"
         'rsyncd.conf')
-sha256sums=('d19b9582e87d31f71780fb7ad7971e12a6034ca51323c2e4a2982ba31f4ad9b1'
+sha256sums=('0544af624869e1759f37fe4ec0ab26b99805a9c288ce698ccb5a5b93fb920041'
             '733ccb571721433c3a6262c58b658253ca6553bec79c2bdd0011810bb4f2156b')
 
 _backports=(
@@ -45,6 +45,7 @@ prepare() {
     git log --oneline -1 "${_c}"
     git revert -n "${_c}"
   done
+
 }
 
 build() {
@@ -65,12 +66,12 @@ check() {
 
   # check for IPv6 support
   # https://gitlab.archlinux.org/archlinux/packaging/packages/rsync/-/commit/8936e33b245da170e7b5488b4ca35727ac9c4b68
-  if rsync -V | grep -q 'no IPv6'; then
+  if ./rsync -V | grep -q 'no IPv6'; then
     echo 'Built without IPv6 support!' >&2
     exit 1
   fi
 
-  make test||:
+  make test
 }
 
 package() {
@@ -82,6 +83,6 @@ package() {
     install -Dm0644 "$i" "$pkgdir/usr/share/doc/rsync/$i"
   done
   install -Dm0644 "tech_report.tex" "$pkgdir/usr/share/doc/rsync/tech_report.tex"
+  install -Dm0644 packaging/lsb/rsync.xinetd $pkgdir/etc/xinetd.d/rsync
   install -Dm0644 ../rsyncd.conf "$pkgdir/etc/rsyncd.conf"
-  install -Dm0644 packaging/lsb/rsync.xinetd "$pkgdir/etc/xinetd.d/rsync"
 }
