@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.4.15-2
+    version: 3.5.0-2
     packages:
-      - openexr-3.4.15-2-x86_64.pkg.tar.zst
+      - openexr-3.5.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
