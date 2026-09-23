@@ -3,7 +3,7 @@
 # Contributor: Kaizhao Zhang <zhangkaizhao@gmail.com>
 
 pkgname=python-hatchling
-pkgver=1.32.0
+pkgver=1.32.3
 pkgrel=1
 pkgdesc="Extensible, standards compliant build backend used by Hatch"
 arch=('any')
@@ -34,7 +34,7 @@ checkdepends=(
   'python-uv'
 )
 source=("https://github.com/pypa/hatch/archive/hatchling-v$pkgver.tar.gz")
-b2sums=('a3eea27c39600ccf7b45e1b8de28112f3b92380f80579049013101cefde5f734225d71ac330d1b76a6c39c8f2e4a6e8b116f548b5eab305852a71d6d0b6c0094')
+b2sums=('6e88de250bd737d5e97f8e256c2312cf98c508ca5f963439894c7d76833a5fa0e0cf9b0ef05a7e6567b3f38fde7c01012a688fca150279f62f1258572c3aeb2c')
 
 build() {
   cd hatch-hatchling-v$pkgver
