@@ -2,7 +2,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-yarl
-pkgver=1.24.5
+pkgver=1.25.1
 pkgrel=1
 pkgdesc='Yet another URL library'
 arch=('x86_64')
@@ -28,8 +28,8 @@ checkdepends=(
   'python-pytest'
 )
 source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('0af5b02b769d16933e5918e7e8f2bcd78361388d45078a0ca12ca40e8601c0d799119a5344763bd7134bb28bf5f292e46ebe7c2625d66c4a3e39650ef0e68132')
-b2sums=('f869680b7faf86a3fa205d80793ec70fa3f30b46d1648937a21350dabd90879d080dfb1c75ffd47aa0f06f44561a9843f3ac4f570196b749ea83d1d92122c939')
+sha512sums=('0fac24fd47acab64951bfe5e3854d90338b8bb5a64324638e7831a0c76b36d06775a44460ab39e93163dd2d669acb649e9ffece63bea96d815d8a660317342b7')
+b2sums=('b8d5fee02f4888290d979194b510783314ca8b148cb21e79663ac0a4327f21cffc41e9979778da0bcfc9aa482738b732cddf030f8f5bdc626f46fe60731b37fa')
 
 build() {
   cd ${pkgname#python-}-$pkgver
