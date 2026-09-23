@@ -1,44 +1,41 @@
 # Maintainer: David Runge <dvzrv@archlinux.org>
 
-_name=public
 pkgname=python-atpublic
-pkgver=7.0.0
-pkgrel=2
+_name="${pkgname#python-}"
+_upstream=public
+pkgver=8.0.0
+pkgrel=1
 pkgdesc="@public decorator for Python"
 arch=(any)
-url="https://gitlab.com/warsaw/public"
+url="https://gitlab.com/flufl/public"
 license=(Apache-2.0)
 depends=(python)
 makedepends=(
   python-build
-  python-hatchling
   python-installer
+  python-setuptools
+  python-wheel
 )
 checkdepends=(
   python-pytest
   python-sybil
 )
-source=($url/-/archive/$pkgver/$_name-$pkgver.tar.gz)
-sha512sums=('7f92967243716d493d046048034eac2f1ede8985af8a6752b1b258a252f43ff8c5e6f85cd3fd7cc52f91468547f47c2435f07cba99d7db5f28880156cfbdc4ab')
-b2sums=('9e6e0b26fcaabc430534575da232807fa8f314de6762a60ae997aa982da16bdc237aa28da23e8ecb1ae35950292dcd10e840c59ef737b7bd0f4dd3f36c020c90')
+source=($url/-/archive/$_name@$pkgver/$_upstream-$_name@$pkgver.tar.gz)
+sha512sums=('cc370179ff97e3879fc5f2702613cb7fd75b361c376760a2fbf822debe5b24943cef1ce10432f741f8554c9391348f280a01133f8ef8f171964505e75729e783')
+b2sums=('367d8a11d9781926dbc876881c86ce7f7fd9d62c00c420cf92ba5cf2c14853da908fb46bf63c70d4f1e262d65ccd5de5e3e4be2914a4da93d890fab65930c136')
 
 build() {
-  cd $_name-$pkgver
+  cd $_upstream-$_name@$pkgver
   python -m build --wheel --no-isolation
 }
 
 check() {
-  local _site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
-
-  cd $_name-$pkgver
-  # install to temporary location, as importlib is used
-  python -m installer --destdir=test_dir dist/*.whl
-  export PYTHONPATH="test_dir/$_site_packages:$PYTHONPATH"
-  pytest -vv -c /dev/null
+  cd $_upstream-$_name@$pkgver
+  PYTHONPATH="$PWD/packages/$_name/src" pytest -vv
 }
 
 package() {
-  cd $_name-$pkgver
+  cd $_upstream-$_name@$pkgver
   python -m installer --destdir="$pkgdir" dist/*.whl
-  install -vDm 644 README.rst -t "$pkgdir/usr/share/doc/$pkgname/"
+  install -vDm 644 README.md -t "$pkgdir/usr/share/doc/$pkgname/"
 }
