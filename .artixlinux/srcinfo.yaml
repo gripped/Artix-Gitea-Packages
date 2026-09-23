@@ -1,10 +1,10 @@
 ---
-version: 1.38.1-1
+version: 1.38.1-2
 pkgbase:
   name: libpeas
   pkgdesc: GObject Plugin System
   pkgver: 1.38.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/libpeas
   arch:
     - x86_64
@@ -18,17 +18,16 @@ pkgbase:
     - glade
     - glib2-devel
     - gobject-introspection
-    - lua51
-    - lua51-lgi
-    - luajit
     - meson
+    - python
+    - python-gobject
+    - python-setuptools
     - vala
   depends:
     - glib2
     - glibc
     - gtk3
     - hicolor-icon-theme
-    - libgirepository
   source:
     - git+https://gitlab.gnome.org/GNOME/libpeas.git#tag=libpeas-1.38.1
   b2sums:
@@ -36,7 +35,7 @@ pkgbase:
 pkgname:
   - name: libpeas
     optdepends:
-      - 'lua51-lgi: Lua loader'
+      - 'python-gobject: Python loader'
     provides:
       - libpeas-1.0.so
       - libpeas-gtk-1.0.so
@@ -46,9 +45,9 @@ pkgname:
       - glib2
       - glibc
       - gtk3
-      - libgirepository
       - libpeas
+      - python-gobject
   - name: libpeas-docs
     pkgdesc: GObject Plugin System (documentation)
     depends: []
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
