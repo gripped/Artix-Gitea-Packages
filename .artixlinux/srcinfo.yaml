@@ -1,0 +1,30 @@
+---
+version: 20240326-4
+pkgbase:
+  name: tailscale-runit
+  pkgdesc: Runit service script for tailscale
+  pkgver: 20240326
+  pkgrel: 4
+  url: https://artixlinux.org
+  arch:
+    - any
+  groups:
+    - runit-world
+  license:
+    - BSD-3-Clause
+  depends:
+    - tailscale
+    - runit
+  provides:
+    - init-tailscale
+  conflicts:
+    - init-tailscale
+  source:
+    - tailscale.run
+    - tailscale.log.run
+  sha256sums:
+    - ff4e39fe3268bc93898b732796de7f9b8c2f63ba7366b339d08c05f49a5a28e7
+    - 18ca5cdd928b36cde46d5964b4fbed7c1b9f4c38de29c5a3a6ff4f4e0f5075b6
+pkgname:
+  - name: tailscale-runit
+# generated with artixpkg 0.40.0-1-any
