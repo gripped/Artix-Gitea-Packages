@@ -1,7 +1,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-blockbuster
-pkgver=1.5.27
+pkgver=1.5.28
 pkgrel=1
 pkgdesc='Utility to detect blocking calls in the async event loop'
 arch=(any)
@@ -25,7 +25,7 @@ checkdepends=(
   python-requests
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('0bca69c722013c53d30a3928eef8e8c062b03fe2d91cd3a134d259337895000e4231f537539da7baae788d7170c0feb1777b422efeea6e1498a1aca23186d43b')
+b2sums=('ed688db8a24276675d871cf992051d490b768f4eb038296e017b2ade68d8abfe652a53bc1292fed5339f263143580aa0b3c8dca40610145210f2beebf823a09d')
 
 build() {
   cd ${pkgname#python-}
