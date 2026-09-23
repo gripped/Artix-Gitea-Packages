@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,12 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 0.37.0-2
+    packages:
+      - bcc-0.37.0-2-x86_64.pkg.tar.zst
+      - bcc-libbpf-tools-0.37.0-2-x86_64.pkg.tar.zst
+      - bcc-examples-0.37.0-2-x86_64.pkg.tar.zst
+      - python-bcc-0.37.0-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
