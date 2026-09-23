@@ -1,9 +1,9 @@
 ---
-version: 0.36.3-1
+version: 0.36.4-1
 pkgbase:
   name: python-awscrt
   pkgdesc: A common runtime for AWS Python projects
-  pkgver: 0.36.3
+  pkgver: 0.36.4
   pkgrel: 1
   url: https://github.com/awslabs/aws-crt-python
   arch:
@@ -32,9 +32,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - python-awscrt::git+https://github.com/awslabs/aws-crt-python.git#tag=v0.36.3
+    - python-awscrt::git+https://github.com/awslabs/aws-crt-python.git#tag=v0.36.4
   b2sums:
-    - f5639200dc4559cff4ace22c19ae0c1cde5f2c70bd7c1bc538fe22792b2a26c4b279605865593a853600bede7ca144537ded2cdb8f8ce16582d42dbab31f871d
+    - 1cca041d95048996c58055904dc7db18802643f7027643b02da3f80bba18aec38fb418d6453350ed0a152c7cb789427262ea24332f5a9ad90b29e501fa62dace
 pkgname:
   - name: python-awscrt
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
