@@ -1,9 +1,9 @@
 ---
-version: 156.0-1
+version: 156.0.1-1
 pkgbase:
   name: firefox
   pkgdesc: Fast, Private & Safe Web Browser
-  pkgver: 156.0
+  pkgver: 156.0.1
   pkgrel: 1
   url: https://www.firefox.com/
   arch:
@@ -74,8 +74,8 @@ pkgbase:
     - '!lto'
     - '!makeflags'
   source:
-    - https://archive.mozilla.org/pub/firefox/releases/156.0/source/firefox-156.0.source.tar.xz
-    - https://archive.mozilla.org/pub/firefox/releases/156.0/source/firefox-156.0.source.tar.xz.asc
+    - https://archive.mozilla.org/pub/firefox/releases/156.0.1/source/firefox-156.0.1.source.tar.xz
+    - https://archive.mozilla.org/pub/firefox/releases/156.0.1/source/firefox-156.0.1.source.tar.xz.asc
     - firefox-symbolic.svg
     - firefox.desktop
     - org.mozilla.firefox.metainfo.xml
@@ -84,7 +84,7 @@ pkgbase:
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
-    - 1f2768c043510009abaa3f078123664e106d3ab9dfce75d1819ad96b2145aab9
+    - f8b0bf733efebebf9af98ead537598c2cf56c2c1b9c06bf89220ea6731b64724
     - SKIP
     - cb00ea359d6daf37900102307be4f515f1b7ef9c98825c64cc55bb562449d0d8
     - 2a51d57d98fbda86f094bc991e1ad4dd6e8a9d32fd0836b1183bf70ec4b68915
@@ -92,7 +92,7 @@ pkgbase:
     - 8886b9f6109c1ec1d1f041d786e6a431766e2a06359f930ce07aaa6b84c6bef1
     - 7befe94be661cd74f8f8888d7fd2540add3021d374c630573ee7efe5efc4d460
   b2sums:
-    - 19be7acf988ee6b7bf27ea292ce36a3a491d7cf4aad2f0c6bdff2f333cf1da540c0fcd5904d5618b7f64624508d0457bd7418b570a8b72d3ae242d5e40fea4d7
+    - 95448cb8fb4628f0fbb63a3dd71daac64b72ecbf181f8796f24ff8f0ddbcc477650362d5f8f21929446bddb9931b4efca100c23bcc88bf08c04b2b64cea9be3d
     - SKIP
     - f2a9cfb758692584dd8057ab30d0ed9d22f5356d0021e1c8111a061866ee66d6b2d891351e11064f904fe8c90032e78f9def61ed54ae4208c8be4de6b4226277
     - 63c62c85ee70e22b02e9ea34e69f04f50403b7634b99fb0e996a83c963916dc4224041a0b265e54f6c224bd1777ddfdeb255037e3e30fec288695f3050278b05
@@ -101,4 +101,4 @@ pkgbase:
     - af7ee7547b56ace4305eed7c19f9fc827a09215397c744e7648c71b75aa35d1d8345ec76826960df32db15bfd26e80c5d71c73a7ccc4edb20d56ed3a0377e0ec
 pkgname:
   - name: firefox
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
