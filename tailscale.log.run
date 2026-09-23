@@ -1,0 +1,2 @@
+#!/bin/sh
+install -dm755 /var/log/tailscale && exec svlogd -tt /var/log/tailscale
