@@ -26,10 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.12.0-1
+    version: 2.13.0-1
     packages:
-      - python-httpx2-2.12.0-1-any.pkg.tar.zst
-      - python-httpcore2-2.12.0-1-any.pkg.tar.zst
+      - python-httpx2-2.13.0-1-any.pkg.tar.zst
+      - python-httpcore2-2.13.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.3.0-1

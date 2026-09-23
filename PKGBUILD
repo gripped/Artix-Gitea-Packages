@@ -5,7 +5,7 @@ pkgname=(
   python-httpx2
   python-httpcore2
 )
-pkgver=2.12.0
+pkgver=2.13.0
 pkgrel=1
 pkgdesc="A next generation HTTP client for Python"
 arch=(any)
@@ -46,8 +46,8 @@ checkdepends=(
   uvicorn
 )
 source=("$pkgbase::git+$url#tag=v$pkgver")
-sha512sums=('125af9ef14e03a252215b6e7e9bca1bb953378f177583e5a42ee9390a281742a7e6ec9900a692fe172d957eacbc7164a8aba780d5c6973ecb9feb66b1f5ce843')
-b2sums=('eb6b85b0d3673cc1066d9aa70f4d1744a627e270acd322b947da77aee4120dc01b5ca4869c27015ca433db9e0b3d9dd7a31da6788a26bd368d146458586c9278')
+sha512sums=('eb5d0865feff22b322e4656d8265ffcd6c286f0923c8ca76928d2335fd0c55ed9ffec163c122f1deb95fa102b286f4ad5773cb623ac4b6d9fd9abba9222497f8')
+b2sums=('043e52b7e6e70105a7336dfcdaf93e4972da061167bb2c9c8ee01e8fa29b4fde78c742b71258e81bd08c1ad1e9aad500c51ea71ad45efc7115e1aa45cdbd7e30')
 
 build() {
   cd $pkgbase
