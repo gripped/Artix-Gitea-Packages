@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.4.16-2
+    version: 3.4.17-1
     packages:
-      - xviewer-3.4.16-2-x86_64.pkg.tar.zst
+      - xviewer-3.4.17-1-x86_64.pkg.tar.zst
     debug: []
