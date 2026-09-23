@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 20.0.1-3
+    version: 20.0.2-2
     packages:
-      - qtcreator-20.0.1-3-x86_64.pkg.tar.zst
-      - qtcreator-devel-20.0.1-3-x86_64.pkg.tar.zst
+      - qtcreator-20.0.2-2-x86_64.pkg.tar.zst
+      - qtcreator-devel-20.0.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
