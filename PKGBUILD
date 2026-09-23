@@ -1,4 +1,5 @@
 # Maintainer: commandk <handle@artixlinuxorg>
+# Maintainer: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=(
   firefox-tridactyl
@@ -8,11 +9,13 @@ pkgname=(
 )
 
 pkgbase=firefox-tridactyl
-pkgver=1.24.6
+pkgver=1.25.0
 pkgrel=1
+pkgdesc="Replace Firefox's control mechanism with one modelled on Vim"
 arch=(any)
 url=https://github.com/tridactyl/tridactyl
 license=(Apache-2.0)
+groups=(firefox-addons)
 makedepends=(
   git
   node-gyp
@@ -21,7 +24,7 @@ makedepends=(
   yarn
 )
 source=("git+$url.git#commit=$pkgver?signed")
-b2sums=('ed418936ac7832c971e7c92ff34926dbd19fb4c198e5f49ea438d0d2fdca1047d340615cbdeee3fb0d12a9c7106a562b275f0ba1904a02c75cdc32d2c42bacbc')
+b2sums=('1b9164b5ef0d4a0ef955882f6b4078f2542d67293b3319484692b1f14bab43ea5da27cf7fc3c848a8f5eb7865916385109437d269cc561059c1a3833a895cb3f')
 validpgpkeys=(15D03C86837936A0A638AA2D2BB8C36BB504BFF3) # Oliver Blanthorn <freedom4cows@gmail.com>
 
 prepare() {

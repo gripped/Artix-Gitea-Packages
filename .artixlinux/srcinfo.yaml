@@ -1,12 +1,15 @@
 ---
-version: 1.24.6-1
+version: 1.25.0-1
 pkgbase:
   name: firefox-tridactyl
-  pkgver: 1.24.6
+  pkgdesc: Replace Firefox's control mechanism with one modelled on Vim
+  pkgver: 1.25.0
   pkgrel: 1
   url: https://github.com/tridactyl/tridactyl
   arch:
     - any
+  groups:
+    - firefox-addons
   license:
     - Apache-2.0
   makedepends:
@@ -16,14 +19,14 @@ pkgbase:
     - strip-nondeterminism
     - yarn
   source:
-    - git+https://github.com/tridactyl/tridactyl.git#commit=1.24.6?signed
+    - git+https://github.com/tridactyl/tridactyl.git#commit=1.25.0?signed
   validpgpkeys:
     - 15D03C86837936A0A638AA2D2BB8C36BB504BFF3
   b2sums:
-    - ed418936ac7832c971e7c92ff34926dbd19fb4c198e5f49ea438d0d2fdca1047d340615cbdeee3fb0d12a9c7106a562b275f0ba1904a02c75cdc32d2c42bacbc
+    - 1b9164b5ef0d4a0ef955882f6b4078f2542d67293b3319484692b1f14bab43ea5da27cf7fc3c848a8f5eb7865916385109437d269cc561059c1a3833a895cb3f
 pkgname:
   - name: firefox-tridactyl
   - name: firefox-developer-edition-tridactyl
   - name: firefox-esr-tridactyl
   - name: konform-browser-tridactyl
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
