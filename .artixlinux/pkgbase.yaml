@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.11.1-1
+    version: 0.11.2-1
     packages:
-      - python-ast-serialize-0.11.1-1-x86_64.pkg.tar.zst
+      - python-ast-serialize-0.11.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.3.0-2
