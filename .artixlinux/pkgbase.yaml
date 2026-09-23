@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-gremlins
+  addRepo: world
   removeRepo: null
   triggersBuild: false
   triggersRebuild: false
