@@ -1,9 +1,9 @@
 ---
-version: 3.15.0-1
+version: 3.15.1-1
 pkgbase:
   name: aom
   pkgdesc: Alliance for Open Media video codec
-  pkgver: 3.15.0
+  pkgver: 3.15.1
   pkgrel: 1
   url: https://aomedia.org/
   arch:
@@ -20,12 +20,12 @@ pkgbase:
     - libgcc
     - libstdc++
   source:
-    - https://storage.googleapis.com/aom-releases/libaom-3.15.0.tar.gz
-    - https://storage.googleapis.com/aom-releases/libaom-3.15.0.tar.gz.asc
+    - https://storage.googleapis.com/aom-releases/libaom-3.15.1.tar.gz
+    - https://storage.googleapis.com/aom-releases/libaom-3.15.1.tar.gz.asc
   validpgpkeys:
     - B002F08B74A148DAA01F7123A48E86DB0B830498
   b2sums:
-    - f6952a94bb9d503af790723dad1166f2ae3252a9eb3daa882aa3111009fb3110b101b854d1a420fdd8aa02e4e14da16c833835337d2cca5a2dd2b336a3fbd3d3
+    - 34022872af58c52183f7f371e7518faa47cd87b58387b7ee07ef24acf9af60207cb0f0091a25105a9699a83d4039d3cb4b60221ec48a8b72ab1f95d5af5a4575
     - SKIP
 pkgname:
   - name: aom
@@ -34,4 +34,4 @@ pkgname:
   - name: aom-docs
     pkgdesc: Alliance for Open Media video codec (documentation)
     depends: []
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
