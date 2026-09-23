@@ -1,10 +1,10 @@
 ---
-version: 20.0.1-3
+version: 20.0.2-1
 pkgbase:
   name: qtcreator
   pkgdesc: Lightweight, cross-platform integrated development environment
-  pkgver: 20.0.1
-  pkgrel: 3
+  pkgver: 20.0.2
+  pkgrel: 1
   url: https://www.qt.io
   arch:
     - x86_64
@@ -54,11 +54,11 @@ pkgbase:
   options:
     - docs
   source:
-    - git+https://code.qt.io/qt-creator/qt-creator#tag=v20.0.1
+    - git+https://code.qt.io/qt-creator/qt-creator#tag=v20.0.2
     - git+https://code.qt.io/qt-creator/perfparser
     - git+https://code.qt.io/playground/qlitehtml
   sha256sums:
-    - d35956f1854a927e119e40f971c47316ddcd16c319c52a93cbd8aa1c03c377ef
+    - 30b7ed7f25b1dc16945f15e1581a6ac96f01dbcaa8453d0bef70205ce996762f
     - SKIP
     - SKIP
 pkgname:
