@@ -1,3 +1,4 @@
+# Maintainer : Christian Hesse <mail@eworm.de>
 # Maintainer : Tobias Powalowski <tpowa@archlinux.org>
 # Contributor: Ronald van Haren <ronald.archlinux.org>
 # Contributor: Keshav Amburay <(the ddoott ridikulus ddoott rat) (aatt) (gemmaeiil) (ddoott) (ccoomm)>
@@ -5,11 +6,11 @@
 pkgname=grub
 pkgdesc='GNU GRand Unified Bootloader (2)'
 epoch=2
-_pkgver=2.14
-_unifont_ver=17.0.03
+_pkgver=2.16
+_unifont_ver=17.0.05
 pkgver=${_pkgver/-/}
 pkgrel=1
-url='https://www.gnu.org/software/grub/'
+url='https://gnu-grub.freedesktop.org/'
 arch=('x86_64')
 license=('GPL-3.0-or-later')
 backup=(
@@ -18,23 +19,29 @@ backup=(
 )
 install="${pkgname}.install"
 conflicts=(
-  grub-bios
   grub-common
-  grub-efi-x86_64
   grub-emu
   grub-legacy
 )
+conflicts_x86_64=(
+  grub-bios
+  grub-efi-x86_64
+)
 replaces=(
   grub-common
+  grub-emu
+)
+replaces_x86_64=(
   grub-bios
-  grub-emu 
   grub-efi-x86_64
 )
 provides=(
-  grub-bios
   grub-common
-  grub-efi-x86_64
   grub-emu
+)
+provides_x86_64=(
+  grub-bios
+  grub-efi-x86_64
 )
 makedepends=(
   autogen
@@ -72,22 +79,27 @@ optdepends=(
   'sdl: For grub-emu SDL support'
 )
 validpgpkeys=(
-  'E53D497F3FA42AD8C9B4D1E835A93B74E82E4209'  # Vladimir 'phcoder' Serbinenko <phcoder@gmail.com>
-  'BE5C23209ACDDACEB20DB0A28C8189F1988C2166'  # Daniel Kiper <dkiper@net-space.pl>
-  '95D2E9AB8740D8046387FD151A09227B1F435A33') # Paul Hardy <unifoundry@unifoundry.com>
-source=(
-  git+https://git.savannah.gnu.org/git/grub.git#tag=grub-${_pkgver}?signed
-  git+https://git.savannah.gnu.org/git/gnulib.git
-  https://ftp.gnu.org/gnu/unifont/unifont-${_unifont_ver}/unifont-${_unifont_ver}.bdf.gz{,.sig}
-  0001-00_header-add-GRUB_COLOR_-variables.patch
-  0002-10_linux-detect-archlinux-initramfs.patch
-  0003-support-dropins-for-default-configuration.patch
-  grub.default
-  sbat.csv
+  '95D2E9AB8740D8046387FD151A09227B1F435A33' # Paul Hardy <unifoundry@unifoundry.com>
+  'DFB62CC1A987E6C76EBF8143916EC0708CDFDDFD' # Leonardo Sandoval Gonzalez <lsandova@redhat.com>
 )
-b2sums=('45cfac7487264e323522e58b87dd1bf70c5c5c87feaf3f70e20e4c484de94be8369bd011ab53ba72959ec9bc9c9159b3327e4965c9ae5a795b20a29fef9eacd1'
+source=(
+  update-grub
+  "git+https://gitlab.freedesktop.org/gnu-grub/grub.git?signed#tag=grub-${_pkgver}"
+  "git+https://git.savannah.gnu.org/git/gnulib.git"
+  "https://gitlab.freedesktop.org/api/v4/projects/26558/packages/generic/source-assets/${pkgname}-${pkgver}/${pkgname}-${pkgver}.tar.xz"{,.sig}
+  "https://ftp.gnu.org/gnu/unifont/unifont-${_unifont_ver}/unifont-${_unifont_ver}.bdf.gz"{,.sig}
+  '0001-00_header-add-GRUB_COLOR_-variables.patch'
+  '0002-10_linux-detect-archlinux-initramfs.patch'
+  '0003-support-dropins-for-default-configuration.patch'
+  'grub.default'
+  'sbat.csv'
+)
+b2sums=('20adcdd5b05402609c9f25034a4fc8935058864b00dc6b9d962af14859b866b0bfe326ca9b5d5df454b9dd01c4b769c6ffcdbc0f2481a4cb5fd16599a1163a29'
+        'cf40f930d92ba79ee8ad1facb774ead1d899ea77b44fcd46d646580af499ad1917e2fccb47eeaf0d75cb70933c29fd9aa922914440427e60763c79bf14b2d268'
         'SKIP'
-        'b824e469522adeb5780a2976f45b262c335fdfb142b638f915bdc309e932c7a0f7bfbdd8731cf84b5e19b5e0cae2a5ca1754a580e8dae7603f907f94bceec397'
+        '74437966a70854ec29f3d80715ac3436f4340e6f69ccd084b8762dd36f80a30e707333d2102639372ce421b79179a1fa043cbb6a2d25e568d035b916b228fca1'
+        'SKIP'
+        '3bf679a6fb0114891b5f7d8061b2fb0e6156e538c50d85e281d0814ee9421a2c235839ed36cf28c33daad12462edfc21892eb54844b9a35be2eaa8288d6756b0'
         'SKIP'
         '992c71790785304c28fbaf0dba21dab3e283b199509f0e7e1aa0df08126da75e15b6626c3638279ff2ecaa59b925096d7dbd67d6a53cebd0ce4326ff3719d25b'
         'b4cd9ac976a579eca19d54c0b31c8d6324525fe5a0b9f5405deb63845367ac1adaa80ece4c166dfd5304608c41aa44b4f64efe235c03f437523b993be06e06e3'
@@ -99,11 +111,6 @@ _backports=(
 )
 
 _reverts=(
-  # configure: Check linker for --image-base support
-  '1a5417f39a0ccefcdd5440f2a67f84d2d2e26960'
-  # configure: Print a more helpful error if autoconf-archive is not installed
-  'ac042f3f58d33ce9cd5ff61750f06da1a1d7b0eb'
-
 )
 
 prepare() {
@@ -144,15 +151,18 @@ prepare() {
   echo "Fix OS naming FS#33393..."
   sed 's|GNU/Linux|Linux|' -i "util/grub.d/10_linux.in"
 
-  #echo "Pull in latest language files..."
-  #./linguas.sh
-
   echo "Avoid problem with unifont during compile of grub..."
   # http://savannah.gnu.org/bugs/?40330 and https://bugs.archlinux.org/task/37847
   gzip -cd "${srcdir}/unifont-${_unifont_ver}.bdf.gz" > "unifont.bdf"
 
   echo "Run bootstrap..."
-  ./bootstrap --gnulib-srcdir="${srcdir}/gnulib"
+  ./bootstrap \
+    --gnulib-srcdir="${srcdir}/gnulib" \
+    --skip-po
+
+  echo "Copy translations from source tarball..."
+  rm --recursive --force po/
+  cp -a "${srcdir}/${pkgname}-${pkgver}/po" po/
 
   echo "Make translations reproducible..."
   sed -i '1i /^PO-Revision-Date:/ d' po/*.sed
@@ -178,6 +188,9 @@ _platform=(
   i386-efi
   x86_64-efi
 )
+
+# disable cross-compilation when building for aarch64
+[[ $CARCH == "aarch64" ]] && _platform=(aarch64-efi)
 
 build() {
   for i in ${_platform[@]}; do
@@ -218,11 +231,7 @@ package() {
     rm -f "${pkgdir}/usr/lib/grub/${i}"/{kernel.exec,gdb_grub,gmodule.pl}
   done
   echo "Install /etc/default/grub (used by grub-mkconfig)..."
+  install -Dm755 $srcdir/update-grub $pkgdir/usr/bin/update-grub
   install -D -m0644 "${srcdir}/grub.default" "${pkgdir}/etc/default/grub"
   sed -e "s/%PKGVER%/${epoch}:${pkgver}-${pkgrel}/" < "${srcdir}/sbat.csv" > "${pkgdir}/usr/share/grub/sbat.csv"
-
-  install -m0755 /dev/stdin "${pkgdir}"/usr/bin/update-grub <<END
-#!/bin/sh
-grub-mkconfig -o /boot/grub/grub.cfg
-END
 }
