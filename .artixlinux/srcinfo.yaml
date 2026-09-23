@@ -1,10 +1,10 @@
 ---
-version: 2.14.0-2
+version: 2.15.0-1
 pkgbase:
   name: python-pycodestyle
   pkgdesc: Python style guide checker
-  pkgver: 2.14.0
-  pkgrel: 2
+  pkgver: 2.15.0
+  pkgrel: 1
   url: https://pycodestyle.pycqa.org
   arch:
     - any
@@ -20,9 +20,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://github.com/PyCQA/pycodestyle/archive/2.14.0/python-pycodestyle-2.14.0.tar.gz
+    - https://github.com/PyCQA/pycodestyle/archive/2.15.0/python-pycodestyle-2.15.0.tar.gz
   sha512sums:
-    - 0c81febffaf0f23ff4a8f7168202a05917aef913bdd92f0a45b1d595272b8206e79987c43eefbdc850b94a467f25f43067209320b60be628d46788c3cc1ad618
+    - fdf6719a49283e46388dd9cf790c344041ce913c565ee6120f3bcafe650f2d181af9a11670de883fb64d1bfb2fab46ab81d73c640dcf478d7c216a7b4df0c7dd
 pkgname:
   - name: python-pycodestyle
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
