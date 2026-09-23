@@ -3,7 +3,7 @@
 # Contributor: Stijn Segers <francesco dot borromini at gmail dot com>
 
 pkgname=freerdp
-pkgver=3.31.1
+pkgver=3.32.0
 _libver=${pkgver/.*/}
 pkgrel=1
 epoch=2
@@ -69,8 +69,8 @@ provides=(
 source=(
   "git+https://github.com/$pkgname/$pkgname#tag=$pkgver"
 )
-sha512sums=('bbd7e16b37eb3672ce2faa64c1e2cf878efa44ec2bf4e6310d78303bd4eebe66773c6aa2276bedb0b066c52742e482472f7e6902d08e6ec5cf5a66e918202766')
-b2sums=('4b4a05161608ac98c1779145a15235c72f362339e42d89a77b457a569e7d8ff99331bbbb247225eddd9383793d690c34dfbc23f13db23a484c341a1f64c76db3')
+sha512sums=('3804842514e39c4fa09d5e6348a08ac37e5c6f8d95e62a721ed141fb3b3cfced6eeedf9c06cf04c6af9066343b77e11c0fbde22d7caeaf4dee7adbbfaedc089b')
+b2sums=('fdc25bcf8ba9f3714e092a10ca856a59c1604b2a6ced2304bf05f7fcc5a80963f1587b52c75e8439eb8d80573653c8ad0ba101af305efcc392989cd63ac1ff84')
 
 build() {
   # gcc14 buildfix
