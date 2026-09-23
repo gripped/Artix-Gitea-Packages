@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world-goblins
-  removeRepo: null
+  addRepo: world
+  removeRepo: world-goblins
   triggersBuild: false
-  triggersRebuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -22,20 +22,18 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.32.0-1
-    packages:
-      - openjph-0.32.0-1-x86_64.pkg.tar.zst
-      - openjph-doc-0.32.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   world-gremlins:
     version: null
     packages: []
     debug: []
   world:
-    version: 0.31.0-1
+    version: 0.32.0-1
     packages:
-      - openjph-0.31.0-1-x86_64.pkg.tar.zst
-      - openjph-doc-0.31.0-1-x86_64.pkg.tar.zst
+      - openjph-0.32.0-1-x86_64.pkg.tar.zst
+      - openjph-doc-0.32.0-1-x86_64.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
