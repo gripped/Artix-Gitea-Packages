@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.56.3-1
+    version: 1.57.0-1
     packages:
-      - python-cfn-lint-1.56.3-1-any.pkg.tar.zst
+      - python-cfn-lint-1.57.0-1-any.pkg.tar.zst
     debug: []
   world:
     version: 1.48.1-1
