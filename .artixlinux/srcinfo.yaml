@@ -1,9 +1,9 @@
 ---
-version: 4.13.0-1
+version: 4.13.1-1
 pkgbase:
   name: python-blosc2
   pkgdesc: Wrapper for the blosc2 compressor
-  pkgver: 4.13.0
+  pkgver: 4.13.1
   pkgrel: 1
   url: https://github.com/Blosc/python-blosc2
   arch:
@@ -39,11 +39,14 @@ pkgbase:
     - python-rich
     - python-threadpoolctl
   source:
-    - python-blosc2::git+https://github.com/Blosc/python-blosc2#tag=v4.13.0
+    - python-blosc2::git+https://github.com/Blosc/python-blosc2#tag=v4.13.1
+    - argh.patch
   sha512sums:
-    - a2b813b6716092643ee2336ef3c1e14f8c6d6a1fc16e31de289fcb88a1cea580d6661da6c3a50f8e9166e795abf738294bfe9dc9bd6955f4ec9bedced0da58ec
+    - a30054d917062f337d40d1c732e3103a4c4c33b46ecf0dffb3e4fd96a210b79fc88e577e501dabb43e4342e47e149d589548b6a4ee4b9a92c267d3fe7b915395
+    - 88f486cd6385055da9bad586bc885ea852c4deb745fd429dc63e104cb579190115746932664ebad1b435df83cc1b6134b42ee5107db3dc92fb67cf7a3fd7acb0
   b2sums:
-    - 210916cfb0770ac8a382f600eaf20f77a03f38f994b28da45af453728373c0f38157926f209d7f3ac724f0885e8dfe227fe42f5bc1ab82c7aaf56aa4831b4a9b
+    - 313851713e7420111362ef8e0903d90a43d5e0370045f4a0c2c62e0ef5f3fd77876867b92cee67441fe68b39bebd6ddf9960063a7027e1e694f58e47512110c6
+    - 1595af3fe29e7410996a180d0456d276abae8f243eb6ec9497cb98979ccf03456f4c94e825375f70c2377987cc7d554e0df794e75c66830a05ecc7f4beb27864
 pkgname:
   - name: python-blosc2
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any

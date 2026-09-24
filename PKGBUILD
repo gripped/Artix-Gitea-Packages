@@ -2,7 +2,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-blosc2
-pkgver=4.13.0
+pkgver=4.13.1
 pkgrel=1
 pkgdesc='Wrapper for the blosc2 compressor'
 arch=(x86_64)
@@ -39,9 +39,20 @@ checkdepends=(
   python-requests
   python-aiohttp
 )
-source=("$pkgname::git+$url#tag=v$pkgver")
-sha512sums=('a2b813b6716092643ee2336ef3c1e14f8c6d6a1fc16e31de289fcb88a1cea580d6661da6c3a50f8e9166e795abf738294bfe9dc9bd6955f4ec9bedced0da58ec')
-b2sums=('210916cfb0770ac8a382f600eaf20f77a03f38f994b28da45af453728373c0f38157926f209d7f3ac724f0885e8dfe227fe42f5bc1ab82c7aaf56aa4831b4a9b')
+source=(
+  "$pkgname::git+$url#tag=v$pkgver"
+  argh.patch
+)
+sha512sums=('a30054d917062f337d40d1c732e3103a4c4c33b46ecf0dffb3e4fd96a210b79fc88e577e501dabb43e4342e47e149d589548b6a4ee4b9a92c267d3fe7b915395'
+            '88f486cd6385055da9bad586bc885ea852c4deb745fd429dc63e104cb579190115746932664ebad1b435df83cc1b6134b42ee5107db3dc92fb67cf7a3fd7acb0')
+b2sums=('313851713e7420111362ef8e0903d90a43d5e0370045f4a0c2c62e0ef5f3fd77876867b92cee67441fe68b39bebd6ddf9960063a7027e1e694f58e47512110c6'
+        '1595af3fe29e7410996a180d0456d276abae8f243eb6ec9497cb98979ccf03456f4c94e825375f70c2377987cc7d554e0df794e75c66830a05ecc7f4beb27864')
+
+prepare() {
+  cd "$pkgname"
+
+  patch -p1 -i "$srcdir/argh.patch"
+}
 
 build() {
   cd $pkgname
