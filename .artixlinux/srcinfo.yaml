@@ -1,9 +1,9 @@
 ---
-version: 6.2.2-1
+version: 6.3.0-1
 pkgbase:
   name: python-altair
   pkgdesc: Declarative statistical visualization library for Python
-  pkgver: 6.2.2
+  pkgver: 6.3.0
   pkgrel: 1
   url: https://altair-viz.github.io/
   arch:
@@ -41,9 +41,9 @@ pkgbase:
     - 'python-pyarrow: for PyArrow imports'
     - 'python-vl-convert: PNG and SVG export via Vega-Lite specifications'
   source:
-    - altair-6.2.2.tar.gz::https://github.com/vega/altair/archive/refs/tags/v6.2.2.tar.gz
+    - altair-6.3.0.tar.gz::https://github.com/vega/altair/archive/refs/tags/v6.3.0.tar.gz
   b2sums:
-    - fea31c7ca8269b79302429363d59384feca8eb408e8a904beb18c507112e2a0be8ed3e5e132b1aa00698643140173f74fc25d27565433da2c9be8118d91d196b
+    - 3b7f52103ef0dc1e68e93e534675d412e2fe5a89192f1cc91b70c2e8e27267cd4a5bfbc8353f135cf93e5c755fcd0ca975cfcbee93667dc7d0aa12032dfb6d24
 pkgname:
   - name: python-altair
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
