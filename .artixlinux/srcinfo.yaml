@@ -1,9 +1,9 @@
 ---
-version: 0.5.3-1
+version: 0.6.0-1
 pkgbase:
   name: md4c
   pkgdesc: C Markdown parser
-  pkgver: 0.5.3
+  pkgver: 0.6.0
   pkgrel: 1
   url: https://github.com/mity/md4c
   arch:
@@ -12,12 +12,13 @@ pkgbase:
     - MIT
   makedepends:
     - cmake
+    - git
   depends:
     - glibc
   source:
-    - md4c-0.5.3.tar.gz::https://github.com/mity/md4c/archive/release-0.5.3.tar.gz
+    - git+https://github.com/mity/md4c#tag=v0.6.0
   sha256sums:
-    - 353c346f376b87c954a13f3415ede2d51264cc61dc5abcd38ff1d2aa0d059b9e
+    - ba116066ad10556631c6109eebea3217785080954d7b7068eb8b6dab4f6e78c4
 pkgname:
   - name: md4c
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
