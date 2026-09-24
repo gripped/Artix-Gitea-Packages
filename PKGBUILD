@@ -1,13 +1,13 @@
 # Maintainer: marzosh <marzosh@artixlinux.org>
-# Maintainer: artist for Artix Linux
+# Contributor: artist for Artix Linux
 
 pkgname=helium-browser
-pkgver=0.17.1.1
+pkgver=0.18.1.1
 _hlmver="${pkgver%.*}"
 pkgrel=1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
 arch=('x86_64')
-url="https://github.com/imputnet/helium"
+url="https://github.com/imputnet/helium-linux"
 license=('GPL-3.0-only')
 depends=('gtk3' 'nss' 'alsa-lib' 'xdg-utils' 'libxss' 'libcups' 'libgcrypt'
          'ttf-liberation' 'udev' 'dbus' 'libpulse' 'pciutils' 'libva'
@@ -22,11 +22,13 @@ optdepends=('pipewire: WebRTC desktop sharing under Wayland'
 provides=("chromium")
 conflicts=("chromium")
 options=('!lto')
-source=("${url}/archive/refs/tags/${_hlmver}.tar.gz"
-        "${url}-linux/archive/refs/tags/${pkgver}.tar.gz")
+_url_main="https://github.com/imputnet/helium"
+_url_linux="https://github.com/imputnet/helium-linux"
+source=("${_url_main}/archive/refs/tags/${_hlmver}.tar.gz"
+        "${_url_linux}/archive/refs/tags/${pkgver}.tar.gz")
 
-sha256sums=('ced3e09ed5ddf6b0fc9fef77d6e93b918e53004a061dfd823df78c709fa6547f'
-            'b7271d60ed576c2e5009779d93733185459a919e9b889dc34000f7ea20aaab27')
+sha256sums=('42a69b79723f7acbc1c8406fe2225a8edd0dd1bf9d0e3bee623d6cee55480e03'
+            '612489cfe9d8759c764a71a3df4c35b374e3647a12093748f2f52cbad7dd3def')
 
 prepare() {
   mv -v "helium-${_hlmver}" helium-chromium

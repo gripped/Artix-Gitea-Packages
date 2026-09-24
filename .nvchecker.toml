@@ -1,0 +1,5 @@
+[helium-browser]
+source = "git"
+git = "https://github.com/imputnet/helium-linux.git"
+use_max_tag = true
+prefix = "v"
