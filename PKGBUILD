@@ -32,7 +32,7 @@ checkdepends=(python-autobahn
               python-requests)
 source=(git+https://github.com/microsoft/$_name#tag=v$pkgver
         https://registry.npmjs.org/playwright-core/-/playwright-core-$pkgver.tgz)
-sha256sums=('5372a9f6625ab4446a7d0591cd8bd2bbcbf0fb3664036c45af28015e13bd254c'
+sha256sums=('f462726d9223038841d7a94dfed4038fe25e0455af77a0fedf00f5a00f5a336b'
             '208593d4e1bcd8f8fe5f869cad1cc332dc7f1d70dc1d58c102dc3ac36e30f26c')
 
 prepare() {
