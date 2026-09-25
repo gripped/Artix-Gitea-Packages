@@ -1,8 +1,10 @@
 # Maintainer: commandk <commandk@artix>
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=radicle
-pkgver=1.9.1
-pkgrel=3
+pkgver=1.10.3
+pkgrel=1
 pkgdesc="open source, peer-to-peer code collaboration stack built on Git"
 url="https://radicle.dev"
 arch=('x86_64')
@@ -23,8 +25,8 @@ replaces=('radicle-node' 'radicle-cli')
 source=(
   "radicle::git+https://seed.radicle.dev/z3gqcJUoA1n9HaHKufZs5FCSGazv5.git#tag=releases/${pkgver}"
 )
-sha256sums=('6fac84aeac26580f2a2fd2b774ff72293d01a9a8c4b0e0c81005f706ca640780')
-b2sums=('2ea2084fd8e100063519e69cfa9bdb5f0521344734b29ead53cbc26de5b113f9b3cbd650fc539291ab02af07ba262030da21e896f266b4c3789fd1b9c7ab50bc')
+sha256sums=('b911fabefd7357608cb8f96c4eb4c963c6babcb1bd5636cc27219990c73f52f6')
+b2sums=('cf5fed0fdef0defce6db1c4909457f8ef8ec19699dafc0a2d6de54f82509652ed563539865caa6daf86ceb64c2f9d1734b56861fa223c9e40e545f75d3fe57ec')
 
 prepare() {
   cd "${pkgname}"
