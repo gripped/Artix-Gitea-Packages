@@ -2,7 +2,7 @@
 
 pkgname=ipp-usb
 pkgver=0.9.34
-pkgrel=2
+pkgrel=2.1
 pkgdesc="allows using the IPP protocol, normally designed for network printers, to be used with USB printers as well"
 arch=('x86_64')
 url="https://github.com/OpenPrinting/ipp-usb"
@@ -11,16 +11,14 @@ depends=('avahi' 'libusb' 'glibc')
 makedepends=('go')
 backup=(etc/ipp-usb/ipp-usb.conf)
 source=("$pkgname-$pkgver.tar.gz"::https://github.com/OpenPrinting/ipp-usb/archive/$pkgver.tar.gz
-        systemd-service.patch
-        reproducible-build.patch)
+        reproducible-build.patch
+71-ipp-usb.rules)
 sha256sums=('4f0ada8593fda3f4239a50fcf24a625842143039de97708281e7b8c0cdff201a'
-            '8cec95d5de1fcc95187c6521971a0239a5503bbc08162e5d67cfef2439e07a76'
-            'afa56ba5499c0039ee7bb2c46199cd4d19fa1e9780c2b6de38a72b06a8943cfa')
+            'afa56ba5499c0039ee7bb2c46199cd4d19fa1e9780c2b6de38a72b06a8943cfa'
+            '5bf381668ed8460d0ecee38482aa76c7c130570a4bfa8a02c78916b9791cc4eb')
 
 prepare() {
     cd "$pkgname-$pkgver"
-    # fix systemd service file; FS#67526
-    patch -Np1 -i ../systemd-service.patch
     # make Go linker build ID reproducible
     patch -Np1 -i ../reproducible-build.patch
 }
@@ -53,7 +51,7 @@ package() {
 
     install -Dm755 $pkgname "$pkgdir"/usr/bin/$pkgname
     install -Dm644 ipp-usb.conf "$pkgdir"/etc/ipp-usb/ipp-usb.conf
-    install -Dm644 systemd-udev/71-ipp-usb.rules "$pkgdir"/usr/lib/udev/rules.d/71-ipp-usb.rules
+    install -Dm644 "$srcdir"/71-ipp-usb.rules "$pkgdir"/usr/lib/udev/rules.d/71-ipp-usb.rules
     install -Dm644 ipp-usb.8 "$pkgdir"/usr/share/man/man8/ipp-usb.8
     install -Dm644 ipp-usb-quirks/* -t "$pkgdir"/usr/share/ipp-usb/quirks
     

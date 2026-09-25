@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.9.34-2
+    version: 0.9.34-2.1
     packages:
-      - ipp-usb-0.9.34-2-x86_64.pkg.tar.zst
+      - ipp-usb-0.9.34-2.1-x86_64.pkg.tar.zst
     debug: []
