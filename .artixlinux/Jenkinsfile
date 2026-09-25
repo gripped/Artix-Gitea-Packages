@@ -1,0 +1,7 @@
+@Library('artix-ci@production') _
+
+import org.artixlinux.RepoPackage
+
+String runOn = ''
+
+PackagePipeline(new RepoPackage(this), runOn)
