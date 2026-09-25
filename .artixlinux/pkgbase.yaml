@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2026.9.18-1
+    packages:
+      - ntfs-3g-2026.9.18-1-x86_64.pkg.tar.zst
+      - ntfsprogs-2026.9.18-1-x86_64.pkg.tar.zst
+      - libntfs-3g-2026.9.18-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2026.7.7-1
