@@ -3,9 +3,9 @@ team: null
 actions:
   addRepo: null
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -56,4 +56,9 @@ repos:
   galaxy:
     version: null
     packages: []
+    debug: []
+  "null":
+    version: 0.9.34-2
+    packages:
+      - ipp-usb-0.9.34-2-x86_64.pkg.tar.zst
     debug: []
