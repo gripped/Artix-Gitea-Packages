@@ -1,10 +1,10 @@
 ---
-version: 7.2-4
+version: 7.2-5
 pkgbase:
   name: testdisk
   pkgdesc: Checks and undeletes partitions + PhotoRec, signature based recovery tool
   pkgver: 7.2
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.cgsecurity.org/index.html?testdisk.html
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - GPL-3.0-or-later
   depends:
     - libjpeg-turbo
+    - libntfs-3g
     - openssl
     - ntfsprogs
   source:
@@ -20,4 +21,4 @@ pkgbase:
     - f8343be20cb4001c5d91a2e3bcd918398f00ae6d8310894a5a9f2feb813c283f
 pkgname:
   - name: testdisk
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
