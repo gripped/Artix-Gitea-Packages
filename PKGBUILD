@@ -14,8 +14,7 @@ depends=('openrc' 'ipp-usb')
 conflicts=('init-ipp-usb')
 backup=('etc/conf.d/ipp-usb')
 source=(ipp-usb.initd)
-sha256sums=('6ade8e80662c89f4f4533a4494e5d603f91f50f9785d4158c3a611905c084946'
-            '76e3b2fea25685dab786dc5f0f3d499f9a84d4cc9c6534af79020b041301bab2')
+sha256sums=('106e551e94686d32c9bfde468d1c3262d3b4715a011b932182c9ed26402bcff3')
 
 package() {
     install -Dm755 "$srcdir/ipp-usb.initd" "$pkgdir/etc/init.d/ipp-usb"

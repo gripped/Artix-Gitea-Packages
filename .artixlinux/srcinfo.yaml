@@ -24,8 +24,7 @@ pkgbase:
   source:
     - ipp-usb.initd
   sha256sums:
-    - 6ade8e80662c89f4f4533a4494e5d603f91f50f9785d4158c3a611905c084946
-    - 76e3b2fea25685dab786dc5f0f3d499f9a84d4cc9c6534af79020b041301bab2
+    - 106e551e94686d32c9bfde468d1c3262d3b4715a011b932182c9ed26402bcff3
 pkgname:
   - name: ipp-usb-openrc
 # generated with artixpkg 0.40.0-1-any
