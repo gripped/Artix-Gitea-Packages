@@ -1,5 +1,5 @@
-[radicle]
+[radicle-desktop]
 source = "git"
-git = "https://seed.radicle.xyz/z4D5UCArafTzTQpDZNQRuqswh3ury.git"
+git = "https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git"
 prefix = "releases/"
 exclude_regex = ".*rc.*"

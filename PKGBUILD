@@ -1,59 +1,54 @@
-# Maintainer: Thomas Scholtes <geigerzaehler@axiom.fm>
-#
-# shellcheck shell=bash disable=SC2034 disable=SC2154 disable=SC2164
+# Maintainer: kpcyrd <kpcyrd[at]archlinux[dot]org>
+# Contributor: Thomas Scholtes <geigerzaehler@axiom.fm>
 
 pkgname=radicle-desktop
-pkgver='0.13.0'
-pkgrel='1'
+pkgver=0.16.0
+pkgrel=1
 pkgdesc='Radicle desktop app'
+url='https://radicle.network/desktop'
 arch=('x86_64')
-url='https://radicle.dev/'
 license=('GPL-3.0-only')
 depends=(
-  # See https://v2.tauri.app/distribute/aur/#building-from-source
-  'cairo'
-  'desktop-file-utils'
-  'gdk-pixbuf2'
-  'glib2'
-  'gtk3'
+  'cairo' 'libcairo.so'
+  'dbus' 'libdbus-1.so'
+  'gdk-pixbuf2' 'libgdk_pixbuf-2.0.so'
+  'glib2' 'libgio-2.0.so' 'libglib-2.0.so' 'libgobject-2.0.so'
+  'glibc'
+  'gtk3' 'libgdk-3.so' 'libgtk-3.so'
   'hicolor-icon-theme'
-  'libjxl.so=0.12'
-  'libsoup3'
-  'pango'
-  'webkit2gtk-4.1'
+  'libgcc' 'libgcc_s.so'
+  'libsoup3' 'libsoup-3.0.so'
+  'radicle'
+  'webkit2gtk-4.1' 'libjavascriptcoregtk-4.1.so' 'libwebkit2gtk-4.1.so'
+  'zlib' 'libz.so'
 )
 makedepends=(
-  # See https://v2.tauri.app/distribute/aur/#building-from-source
-  'git'
-  'openssl'
-  'appmenu-gtk-module'
-  'libappindicator-gtk3'
-  'librsvg'
   'cargo'
+  'cargo-tauri'
+  'git'
   'npm'
-  'nodejs'
+  'pango'
 )
-optdepends=(
-  'radicle-node'
+source=(
+  "radicle-desktop::git+https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git#tag=releases/${pkgver}"
 )
-_tag="releases/${pkgver}"
-options=('!strip' '!emptydirs' '!lto')
-source=("$pkgname::git+https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git#tag=$_tag")
-sha256sums=('f72f2fbfeee33b4d9e83cdfb41647a91b44c8dc17698f25cc07be580b487e00e')
+sha256sums=('4473faa7799c8305c8449e398e63b26e56d7a7247358f1708f6ed6dc0c75d2db')
+b2sums=('06f0d862a1f231a3f7d97b38119c43cf03669d5d5578ea1987d35d0686c4ff4061497e2558f1e7a2d502208541c85d4c5c051a1b446c87076e3a528bd6581521')
 
 prepare() {
-  cd "$pkgname"
-
-  npm ci --ignore-scripts
-  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+  cd "${pkgname}"
+  cargo fetch --locked --target host-tuple
+  npm ci
 }
 
 build() {
-  cd "$pkgname"
-
-  ./node_modules/.bin/tauri  build --bundles deb
+  cd "${pkgname}"
+  export CFLAGS+=" -ffat-lto-objects"
+  cargo tauri build -b deb --ci
 }
 
 package() {
-  cp -a $pkgname/target/release/bundle/deb/${pkgname}_${pkgver}_*/data/* "${pkgdir}"
+  mv -v "${pkgname}"/target/release/bundle/deb/radicle-desktop_*/data/usr "${pkgdir}"
 }
+
+# vim: ts=2 sw=2 et:

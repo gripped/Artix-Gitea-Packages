@@ -1,45 +1,53 @@
 ---
-version: 0.13.0-1
+version: 0.16.0-1
 pkgbase:
   name: radicle-desktop
   pkgdesc: Radicle desktop app
-  pkgver: 0.13.0
+  pkgver: 0.16.0
   pkgrel: 1
-  url: https://radicle.dev/
+  url: https://radicle.network/desktop
   arch:
     - x86_64
   license:
     - GPL-3.0-only
   makedepends:
-    - git
-    - openssl
-    - appmenu-gtk-module
-    - libappindicator-gtk3
-    - librsvg
     - cargo
+    - cargo-tauri
+    - git
     - npm
-    - nodejs
+    - pango
   depends:
     - cairo
-    - desktop-file-utils
+    - libcairo.so
+    - dbus
+    - libdbus-1.so
     - gdk-pixbuf2
+    - libgdk_pixbuf-2.0.so
     - glib2
+    - libgio-2.0.so
+    - libglib-2.0.so
+    - libgobject-2.0.so
+    - glibc
     - gtk3
+    - libgdk-3.so
+    - libgtk-3.so
     - hicolor-icon-theme
-    - libjxl.so=0.12
+    - libgcc
+    - libgcc_s.so
     - libsoup3
-    - pango
+    - libsoup-3.0.so
+    - radicle
     - webkit2gtk-4.1
-  optdepends:
-    - radicle-node
-  options:
-    - '!strip'
-    - '!emptydirs'
-    - '!lto'
+    - libjavascriptcoregtk-4.1.so
+    - libwebkit2gtk-4.1.so
+    - zlib
+    - libz.so
   source:
-    - radicle-desktop::git+https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git#tag=releases/0.13.0
+    - radicle-desktop::git+https://seed.radicle.dev/z4D5UCArafTzTQpDZNQRuqswh3ury.git#tag=releases/0.16.0
   sha256sums:
-    - f72f2fbfeee33b4d9e83cdfb41647a91b44c8dc17698f25cc07be580b487e00e
+    - 4473faa7799c8305c8449e398e63b26e56d7a7247358f1708f6ed6dc0c75d2db
+  b2sums:
+    - 06f0d862a1f231a3f7d97b38119c43cf03669d5d5578ea1987d35d0686c4ff4061497e2558f1e7a2d502208541c85d4c5c051a1b446c87076e3a528bd6581521
 pkgname:
   - name: radicle-desktop
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
