@@ -1,10 +1,10 @@
 ---
-version: 0.16.0-1
+version: 0.16.0-2
 pkgbase:
   name: radicle-desktop
   pkgdesc: Radicle desktop app
   pkgver: 0.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://radicle.network/desktop
   arch:
     - x86_64

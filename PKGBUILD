@@ -3,7 +3,7 @@
 
 pkgname=radicle-desktop
 pkgver=0.16.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Radicle desktop app'
 url='https://radicle.network/desktop'
 arch=('x86_64')
