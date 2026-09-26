@@ -10,9 +10,6 @@ pkgbase:
     - any
   license:
     - Apache-2.0
-  checkdepends:
-    - python-opentelemetry-test-utils
-    - python-pytest
   makedepends:
     - git
     - python-build
