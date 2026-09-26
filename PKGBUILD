@@ -4,7 +4,7 @@
 # Contributor: David Birks <david@birks.dev>
 
 pkgname=aws-cli-v2
-pkgver=2.36.44
+pkgver=2.36.49
 pkgrel=1
 pkgdesc='Universal Command Line Interface for Amazon Web Services (version 2)'
 arch=('any')
@@ -43,7 +43,7 @@ source=(
   "$pkgname-python-prompt-toolkit-3.0.52-compat.patch"
   "$pkgname-pytest-9.1-compat.patch"
 )
-b2sums=('9661cc1b2e2c70db238554bd4a3bc1b8a92b131878de543b76351e2561be78d736fe30485981c6d1011e19eea95809908a3fe53ce5912e2a0cbb01a2de180cec'
+b2sums=('ae52358a78407c2d9fd07ba7cb04cb7578516bf9e1597893886642bd7a7ed8dd0101d4d426d759e8f600524af14a432d4a25de0f83917e03cc021d51817b05af'
         'd6c778ff47b20a9f48b80931c6972033dca30caff71edd189c4ee857cb911f65c0618b3396ac63f3d57034e3a1f87d34b4e0201bd684715fd5e348c57369c252'
         '8ed841cd47fa04082fe766388492bd2dff69a7ee3642be640301c64adfa5eca2223cca531fbfedcaf7828fd3dc037ed2d068e8f004afd42be3c0b0c9f309b5d6')
 

@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.36.44-1
+    version: 2.36.49-1
     packages:
-      - aws-cli-v2-2.36.44-1-any.pkg.tar.zst
+      - aws-cli-v2-2.36.49-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.34.32-1
