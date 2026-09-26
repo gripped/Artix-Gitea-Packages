@@ -3,7 +3,7 @@
 
 pkgname=fcitx5-configtool
 pkgver=5.1.16
-pkgrel=1
+pkgrel=2
 pkgdesc="Configuration Tool for Fcitx5"
 arch=('x86_64')
 url="https://github.com/fcitx/fcitx5-configtool"
@@ -33,6 +33,7 @@ build() {
 
   cmake \
     -GNinja \
+    -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DCMAKE_INSTALL_LIBDIR=/usr/lib \
     -DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
