@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 8.0.0-1
+    version: 8.0.1-1
     packages:
-      - python-atpublic-8.0.0-1-any.pkg.tar.zst
+      - python-atpublic-8.0.1-1-any.pkg.tar.zst
     debug: []
   world:
     version: 7.0.0-2
