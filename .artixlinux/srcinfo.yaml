@@ -1,10 +1,10 @@
 ---
-version: 2.2.8-2
+version: 2.3.0-1
 pkgbase:
   name: python-mysqlclient
   pkgdesc: Fork of MySQL-python with support for Python 3
-  pkgver: 2.2.8
-  pkgrel: 2
+  pkgver: 2.3.0
+  pkgrel: 1
   url: https://github.com/PyMySQL/mysqlclient-python
   arch:
     - x86_64
@@ -24,9 +24,9 @@ pkgbase:
     - python
     - mariadb-libs
   source:
-    - https://files.pythonhosted.org/packages/source/m/mysqlclient/mysqlclient-2.2.8.tar.gz
+    - https://files.pythonhosted.org/packages/source/m/mysqlclient/mysqlclient-2.3.0.tar.gz
   sha256sums:
-    - 8ed20c5615a915da451bb308c7d0306648a4fd9a2809ba95c992690006306199
+    - bea8294964266f6486f1ca514ccfcdbc54d4fe0d32882b38c1d4594df870be8b
 pkgname:
   - name: python-mysqlclient
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.39.1-1-any
