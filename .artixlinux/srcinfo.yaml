@@ -1,10 +1,10 @@
 ---
-version: 3.3.41.1-1
+version: 3.3.41.1-2
 pkgbase:
   name: inxi
   pkgdesc: Full featured CLI system information tool
   pkgver: 3.3.41.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://smxi.org/docs/inxi.htm
   arch:
     - any
@@ -56,4 +56,4 @@ pkgbase:
     - 5052a1812bd6ff4aa86128ec763490b1c781aa0105e543f3d6ed4b4729daa3720b54bb1c44267fe489a777ff290a22c4f43c974c9004984988f513d153965b27
 pkgname:
   - name: inxi
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
