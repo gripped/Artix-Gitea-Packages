@@ -6,7 +6,7 @@
 
 pkgname=nvidia-580xx
 pkgver=580.178.04
-pkgrel=6
+pkgrel=6.1
 pkgdesc="NVIDIA kernel modules"
 arch=('x86_64')
 url="https://www.nvidia.com/"
