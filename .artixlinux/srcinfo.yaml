@@ -1,9 +1,9 @@
 ---
-version: 3.0.1-1
+version: 3.1.0-1
 pkgbase:
   name: nanobind
   pkgdesc: Tiny and efficient C++/Python bindings
-  pkgver: 3.0.1
+  pkgver: 3.1.0
   pkgrel: 1
   url: https://github.com/wjakob/nanobind
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - python
     - robin-map
   source:
-    - git+https://github.com/wjakob/nanobind.git#tag=v3.0.1
+    - git+https://github.com/wjakob/nanobind.git#tag=v3.1.0
   b2sums:
-    - b0e0aca41f34976ef0f51f85fe6cad9b8431bcdcd2fd5805f521377e6b613f7acc91043585c283ff85ea5c1a9c6fd0683533c2286801cdfb12771869f9a5cfed
+    - 5c359706d9ccb056451bb9248a6c1eabf9c75f1da48e94778992f9b9502d65b23d174a2ab6ea85ebdc0d630f36777b0b612530b528dcbbddf4f67e9b9959dce7
 pkgname:
   - name: nanobind
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
