@@ -1,0 +1,32 @@
+---
+version: 1.44.0-1
+pkgbase:
+  name: python-opentelemetry-test-utils
+  pkgdesc: Test utilities for OpenTelemetry unit tests
+  pkgver: 1.44.0
+  pkgrel: 1
+  url: https://github.com/open-telemetry/opentelemetry-python/tests/opentelemetry-test-utils
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-asgiref
+    - python-opentelemetry-api
+    - python-opentelemetry-sdk
+    - python-requests
+  source:
+    - git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v1.44.0
+  sha256sums:
+    - de185f6c14474a3bee91ea09e14bbc41efef7fb9724c0bf98b7600cfdaee7529
+pkgname:
+  - name: python-opentelemetry-test-utils
+# generated with artixpkg 0.39.1-1-any
