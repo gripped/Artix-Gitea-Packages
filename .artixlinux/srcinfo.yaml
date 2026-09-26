@@ -1,0 +1,30 @@
+---
+version: 1.45.0-1
+pkgbase:
+  name: python-opentelemetry-semantic-conventions
+  pkgdesc: OpenTelemetry Semantic Conventions
+  pkgver: 1.45.0
+  pkgrel: 1
+  url: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-semantic-conventions
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-opentelemetry-api
+    - python-typing_extensions
+  source:
+    - git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v1.45.0
+  sha256sums:
+    - 3d755f45a07ce6070bf3885012d90a8853685fbf9710fbb84420d2377a313092
+pkgname:
+  - name: python-opentelemetry-semantic-conventions
+# generated with artixpkg 0.39.1-1-any
