@@ -4,7 +4,7 @@
 
 pkgname=cython
 pkgver=3.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc='C-Extensions for Python'
 arch=(x86_64)
 url='https://cython.org'
@@ -28,6 +28,7 @@ sha256sums=('89b5fcbb67c01e6c8fd079da74be1290c6f36ef10201dd7281eee8d6c17abe41')
 prepare() {
   cd cython
   git cherry-pick -n 2ea7297e5f732e1bfa6e562662df145170bb0bfc # Fix int comparison with GCC+LTO
+  git cherry-pick -n f4b7aafeac5325098f71af0cff3127392e6a844c # Fix conflicts with C++ types
 }
 
 build() {
