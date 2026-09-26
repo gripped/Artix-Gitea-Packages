@@ -50,11 +50,10 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 0.17.0-1
+    version: 0.20.0-1
     packages:
-      - radicle-artifact-0.17.0-1-x86_64.pkg.tar.zst
-    debug:
-      - radicle-artifact-debug-0.17.0-1-x86_64.pkg.tar.zst
+      - radicle-artifact-0.20.0-1-x86_64.pkg.tar.zst
+    debug: []
   galaxy:
     version: null
     packages: []
