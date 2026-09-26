@@ -1,0 +1,39 @@
+---
+version: 2.11.5-1
+pkgbase:
+  name: cargo-tauri
+  pkgdesc: Command line interface for building Tauri apps
+  pkgver: 2.11.5
+  pkgrel: 1
+  url: https://github.com/tauri-apps/tauri
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - Apache-2.0
+  depends:
+    - appmenu-gtk-module
+    - base-devel
+    - bzip2
+    - libbz2.so
+    - cargo
+    - curl
+    - file
+    - glibc
+    - libappindicator-gtk3
+    - libgcc
+    - librsvg
+    - openssl
+    - wget
+    - xdotool
+    - xz
+    - liblzma.so
+  options:
+    - '!lto'
+  source:
+    - cargo-tauri-2.11.5.tar.gz::https://github.com/tauri-apps/tauri/archive/tauri-v2.11.5.tar.gz
+  sha512sums:
+    - 666248aa1708e6920750a28e9365a2f480e0a660076d2dbc092e29a20764b586520d994575537a8fca08c2fe0ac9463be425a766cc3940224f9b3770cef0faa0
+pkgname:
+  - name: cargo-tauri
+# generated with artixpkg 0.40.0-1-any
