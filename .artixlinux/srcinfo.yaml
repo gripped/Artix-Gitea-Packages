@@ -1,15 +1,19 @@
 ---
-version: 1.44.0-1
+version: 1.44.0-1.1
 pkgbase:
   name: python-opentelemetry-sdk
   pkgdesc: OpenTelemetry Python SDK
   pkgver: 1.44.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-sdk
   arch:
     - any
   license:
     - Apache-2.0
+  checkdepends:
+    - python-opentelemetry-test-utils
+    - python-pytest
+    - python-pytest-benchmark
   makedepends:
     - git
     - python-build
