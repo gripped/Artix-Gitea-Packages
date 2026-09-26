@@ -1,7 +1,7 @@
 # Maintainer: Justin Kromlinger <hashworks@archlinux.org>
 
 pkgname=go-ethereum
-pkgver=1.17.5
+pkgver=1.17.6
 pkgrel=1
 pkgdesc='Official Go implementation of the Ethereum protocol'
 arch=('x86_64')
@@ -14,7 +14,7 @@ conflicts=('geth')
 replaces=('geth')
 source=("git+https://github.com/ethereum/go-ethereum.git#tag=v${pkgver}"
         )
-sha256sums=('0e8219b9bfe154a8bc28d5e08f1c5b1cda903d7c252f007b94571f967619470a')
+sha256sums=('5b6d3cfa59ce71a08d3a0faa73bfff07e04ffda30312dd34e6ae361b4281ed3a')
 
 build() {
     cd ${pkgname}
@@ -28,6 +28,6 @@ package() {
     cd ${pkgname}
 
     install -Dm755 -t "${pkgdir}"/usr/bin build/bin/*
-    install -Dm644 build/deb/ethereum/completions/bash/geth -t "$pkgdir"/usr/share/bash-completion/completions
-    install -Dm644 build/deb/ethereum/completions/zsh/_geth -t "$pkgdir"/usr/share/zsh/site-functions
+    install -Dm644 build/completions/bash/geth -t "$pkgdir"/usr/share/bash-completion/completions
+    install -Dm644 build/completions/zsh/_geth -t "$pkgdir"/usr/share/zsh/site-functions
 }
