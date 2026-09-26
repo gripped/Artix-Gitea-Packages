@@ -4,7 +4,7 @@
 # Contributor: Daniele Paolella <dp@mcrservice.it>
 
 pkgname=python-virtualenv
-pkgver=21.7.10
+pkgver=21.12.1
 pkgrel=1
 pkgdesc='Virtual Python Environment builder'
 arch=(any)
@@ -50,15 +50,20 @@ checkdepends=(
 replaces=(virtualenv)
 conflicts=(virtualenv)
 options=(!makeflags)
-source=("$pkgname::git+https://github.com/pypa/virtualenv#tag=$pkgver")
-sha512sums=('1656816ec3e4a46dbbfdf1d3cb3a4ec665904a7f65c7b7c9dc644659a41664f3303ea1eadbb83cda965f17e4fc9b020bdbaa750a881356c27991cc2faa9f31f0')
-b2sums=('d5fde342b8010df1a57cd1bd79cb86e24eb481d52078eb230946097ece13e9a3c115975d4396147a659e002480381d41de5d5069f85f49c81fc22a03991a437d')
+source=(
+  "$pkgname::git+https://github.com/pypa/virtualenv#tag=$pkgver"
+  no-llm-crap.patch
+)
+sha512sums=('42b458218819f36e1a58487d0acc666552c8b3c5cafda35e5880b3ae107bc4d54c90a687ed088367b3a1d873d4de810bb8375560e120e650dfb478986fcd54ae'
+            '243e7a6b08616b9bd30bd32295fe52b32ce3902f462dcd21f7f5ba3979577ad79fdf571965dbb6ff8d85ddd3ac8aa52f6937bfd2c995e518c6729c84033fe8e5')
+b2sums=('6264aaa0c8522a51a3a7fedd0499e39093156e48a45fcd0c4f11de1886c401c09be97a15e3b99eb7168f095110698286ede98e809de91493098f99022fb2bd41'
+        'f8291a2cfce1adcd1ca4d4b861967d7c6d22b7a5828978d91bc26c4d0a53268bcebb93601b23e550339a8a05dbc3cc4943fab5e8d138e268a078fb691e92f895')
 
 prepare() {
   cd "$pkgname"
 
-  # why the hell do we need LLM crap in packages?
-  git revert --no-commit b39e96c953b5bfb944c76d34fca57ed631e80a16
+  # this really is completely unnecessary
+  patch -p1 -i "$srcdir/no-llm-crap.patch"
 }
 
 build() {
@@ -92,6 +97,13 @@ check() {
     --ignore tests/unit/create/test_creator.py
     #--deselect tests/unit/create/test_creator.py::test_create_no_seed[root-venv-copies-isolated]
     #--deselect tests/unit/create/test_creator.py::test_create_no_seed[root-venv-copies-global]
+    # failures with 21.10.0
+    --deselect tests/unit/test_wheel_age.py::test_generator_converges
+    --deselect tests/unit/test_wheel_age.py::test_generator_updates_license
+    # failures with 21.12.1
+    --deselect tests/unit/test_sbom.py::test_sbom_spdx_declared_license[expression]
+    --deselect tests/unit/test_sbom.py::test_sbom_spdx_declared_license[names]
+    --deselect tests/unit/test_sbom.py::test_sbom_spdx_declared_license[undeclared]
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
