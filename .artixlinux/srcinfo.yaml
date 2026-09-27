@@ -1,0 +1,27 @@
+---
+version: 1.2.12-10
+pkgbase:
+  name: sdl_image
+  pkgdesc: A simple library to load images of various formats as SDL surfaces
+  pkgver: 1.2.12
+  pkgrel: 10
+  url: https://github.com/libsdl-org/SDL_image
+  arch:
+    - x86_64
+  license:
+    - LicenseRef-SDL
+  depends:
+    - sdl>=1.2.13
+    - libpng
+    - libjpeg-turbo
+    - libtiff
+    - zlib
+  provides:
+    - libSDL_image-1.2.so
+  source:
+    - https://www.libsdl.org/projects/SDL_image/release/SDL_image-1.2.12.tar.gz
+  sha256sums:
+    - 0b90722984561004de84847744d566809dbb9daf732a9e503b91a1b5a84e5699
+pkgname:
+  - name: sdl_image
+# generated with artixpkg 0.40.0-1-any
