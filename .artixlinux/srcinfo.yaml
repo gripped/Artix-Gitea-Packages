@@ -1,10 +1,10 @@
 ---
-version: 0.49.0-1
+version: 0.49.0-2
 pkgbase:
   name: python-llvmlite
   pkgdesc: A lightweight LLVM Python binding for writing JIT compilers
   pkgver: 0.49.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/numba/llvmlite
   arch:
     - x86_64
@@ -15,7 +15,7 @@ pkgbase:
   makedepends:
     - cmake
     - git
-    - llvm
+    - llvm22
     - python-build
     - python-installer
     - python-setuptools-scm
@@ -24,7 +24,7 @@ pkgbase:
     - glibc
     - libgcc
     - libstdc++
-    - llvm-libs
+    - llvm22-libs
     - python
   source:
     - git+https://github.com/numba/llvmlite.git#tag=v0.49.0
