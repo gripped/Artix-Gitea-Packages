@@ -4,8 +4,8 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=apr-util
-pkgver=1.6.3
-pkgrel=2
+pkgver=1.6.5
+pkgrel=1
 pkgdesc="The Apache Portable Runtime"
 arch=(x86_64)
 url="https://apr.apache.org/"
@@ -43,7 +43,7 @@ source=(
   "https://www.apache.org/dist/apr/apr-util-$pkgver.tar.bz2"{,.asc}
   "disable-failing-nss-tests.patch"
 )
-sha256sums=('a41076e3710746326c3945042994ad9a4fcac0ce0277dd8fea076fec3c9772b5'
+sha256sums=('96de1dd6f6a0476d2d2e7964926d8c1ddc3bb0e210e1b1812d3ba5a454a392e2'
             'SKIP'
             'fa1646e1d9fa579dfe3cb91fa3acb3d699111e656eb12bfc057d48e7dae9015b')
 validpgpkeys=(
