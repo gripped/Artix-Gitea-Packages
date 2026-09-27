@@ -2,7 +2,7 @@
 
 pkgname=hyprshutdown
 pkgver=0.1.1
-pkgrel=8
+pkgrel=8.1
 pkgdesc='A graceful shutdown utility for Hyprland '
 arch=(x86_64)
 url="https://github.com/hyprwm/$pkgname"
