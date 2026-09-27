@@ -10,7 +10,7 @@ pkgname=(
   mullvad-vpn
   mullvad-vpn-daemon
 )
-pkgver=2026.4
+pkgver=2026.5
 pkgrel=1
 pkgdesc="Mullvad VPN client"
 arch=('x86_64')
@@ -36,7 +36,7 @@ source=(
   "$pkgbase.desktop"
   "electron-builder.yml"
 )
-b2sums=('616e76bc44fcbbf27114af5b11180a254b4fc8e2c4d4baa3d612c6dda711863dff67d98326a890e8c7304ff22831f801e8aa9324ce09bd2ec2873e3df83ac2d3'
+b2sums=('7059ff613d70b8a1ab40de0a78e77f5d7852187eacd487e44487215936ba3ec05d0fad20c3f90b7dcc8f9554dc3ce2fc8954ab657a3fbe0f56632a3e47f769f5'
         'SKIP'
         'c3534bf98bc9c5977e14865a8b4e41bb509a42cb006f8ada3f11bdff704e347d132797425b95ca3f709308703ade5f3aa46e7e7c4ef5e73911f9de78df14b1a9'
         '1aaf1403601110fee9a5d56ff363c790403e16e316231c084ef1ea90399750bd9b2781d63e5f0e00ded3bfd9b44621dfef1f1920aebe457ea69641418ca97030'
@@ -53,9 +53,6 @@ prepare() {
 
   cd mullvadvpn-app
 
-  # We don't have the resources to package multiple electron versions
-  #grep -qE '"electron": "\^?'$_electronver desktop/packages/mullvad-vpn/package.json \
-  #  || ( echo "Electron version mismatch in package.json"; exit 1 )
 
   install -vDm644 -t desktop/packages/mullvad-vpn ../electron-builder.yml
 
@@ -123,9 +120,6 @@ package_mullvad-vpn-daemon() {
   install -vDm4755 -t "$pkgdir/usr/bin" \
     target/release/mullvad-exclude
 
-  #install -vDm644 -t "$pkgdir/usr/lib/systemd/system" \
-  #  dist-assets/linux/mullvad-daemon.service \
-  #  dist-assets/linux/mullvad-early-boot-blocking.service
 
   install -vDm644 build/mullvad.bash \
     "$pkgdir/usr/share/bash-completion/completions/mullvad"

@@ -1,9 +1,9 @@
 ---
-version: 2026.4-1
+version: 2026.5-1
 pkgbase:
   name: mullvad-vpn
   pkgdesc: Mullvad VPN client
-  pkgver: 2026.4
+  pkgver: 2026.5
   pkgrel: 1
   url: https://www.mullvad.net
   arch:
@@ -23,7 +23,7 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/mullvad/mullvadvpn-app.git#tag=2026.4?signed
+    - git+https://github.com/mullvad/mullvadvpn-app.git#tag=2026.5?signed
     - git+https://github.com/mullvad/mullvadvpn-app-binaries.git
     - mullvad-vpn.sh
     - mullvad-vpn.desktop
@@ -34,7 +34,7 @@ pkgbase:
     - 1D0026CBD1F1858DF8DB54DFCB87E2B919A6454C
     - 049F58CC80D9C78452151EE6EF0CCD68D0E5B9B1
   b2sums:
-    - 616e76bc44fcbbf27114af5b11180a254b4fc8e2c4d4baa3d612c6dda711863dff67d98326a890e8c7304ff22831f801e8aa9324ce09bd2ec2873e3df83ac2d3
+    - 7059ff613d70b8a1ab40de0a78e77f5d7852187eacd487e44487215936ba3ec05d0fad20c3f90b7dcc8f9554dc3ce2fc8954ab657a3fbe0f56632a3e47f769f5
     - SKIP
     - c3534bf98bc9c5977e14865a8b4e41bb509a42cb006f8ada3f11bdff704e347d132797425b95ca3f709308703ade5f3aa46e7e7c4ef5e73911f9de78df14b1a9
     - 1aaf1403601110fee9a5d56ff363c790403e16e316231c084ef1ea90399750bd9b2781d63e5f0e00ded3bfd9b44621dfef1f1920aebe457ea69641418ca97030
@@ -55,4 +55,4 @@ pkgname:
       - dbus
       - glibc
       - libgcc
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
