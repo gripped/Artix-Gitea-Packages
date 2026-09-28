@@ -1,10 +1,10 @@
 ---
-version: 2.3.3-9
+version: 2.3.3-10
 pkgbase:
   name: vde2
   pkgdesc: Virtual Distributed Ethernet for emulators like qemu
   pkgver: 2.3.3
-  pkgrel: 9
+  pkgrel: 10
   url: https://github.com/virtualsquare/vde-2
   arch:
     - x86_64
@@ -35,4 +35,4 @@ pkgname:
       - libpcap.so
       - wolfssl
       - libwolfssl.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
