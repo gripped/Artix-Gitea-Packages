@@ -17,7 +17,7 @@ pkgname=(
   'mariadb-pam')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=13.0.2
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -65,6 +65,11 @@ prepare() {
   #  * force preloading jemalloc for memory management
   #  * make systemd-tmpfiles create MYSQL_DATADIR
   patch -Np1 < ../0001-arch-specific.patch
+
+  # CONC-821: Avoid resetting length pointer for variable-length types in mysql_stmt_bind_result
+  cd libmariadb
+  git cherry-pick -n \
+    'ead038dc8a2b3d7819f87af33e14f105325f8cf9'
 }
 
 build() {

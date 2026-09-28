@@ -1,10 +1,10 @@
 ---
-version: 13.0.2-1
+version: 13.0.2-2
 pkgbase:
   name: mariadb
   pkgdesc: Fast SQL database server, derived from MySQL
   pkgver: 13.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://mariadb.org/
   arch:
     - x86_64
@@ -157,4 +157,4 @@ pkgname:
       - libpam.so
     backup:
       - etc/security/user_map.conf
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
