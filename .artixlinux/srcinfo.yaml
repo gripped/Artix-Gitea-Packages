@@ -1,9 +1,9 @@
 ---
-version: 26.09.2-1
+version: 26.09.3-1
 pkgbase:
   name: anki
   pkgdesc: A smart spaced repetition flashcard program
-  pkgver: 26.09.2
+  pkgver: 26.09.3
   pkgrel: 1
   url: https://apps.ankiweb.net/
   arch:
@@ -49,7 +49,7 @@ pkgbase:
     - 'mplayer: play sound'
     - 'texlive-most: render LaTex in cards'
   source:
-    - git+https://github.com/ankitects/anki.git#tag=26.09.2
+    - git+https://github.com/ankitects/anki.git#tag=26.09.3
     - git+https://github.com/ankitects/anki-core-i18n.git
     - git+https://github.com/ankitects/anki-desktop-ftl.git
     - no-update.patch
@@ -58,7 +58,7 @@ pkgbase:
     - no-corepack.patch
     - reproducible-sveltekit.patch
   b2sums:
-    - d7940000464897aeb4febd581a6d19e37e22425d23d6c64460643e3805a7550bc310c5671d9c802dcff746fc62a0a73c979ebc5a1616462ba8845e9c130ecd39
+    - 01fdb1ce1e5fc7dcbc4fb687d6548528df661171c8c2a0f278a2a1ba8f2125ffb8372bc205120edb088fd81e2e41ed31352e0ab03a11cb61fe5407bcc72bc3c4
     - SKIP
     - SKIP
     - 0f3ce855e9eaea67ef461668c296ae08cad0d31a7a2bf9ea7006220b44c2cb2e132dfb656140828141fbf21dde2b686a4a3248b92bb3fa46217f1a987425ffa3
@@ -68,4 +68,4 @@ pkgbase:
     - 1dede904fbc5c0b499251d3d11a39ad2f467d644ad742d6d162dc4cd60a120f445e0b5f0fb9758ace1d95372ad48a86bbd6cad3200d97f19f4c62bb0620dc8c4
 pkgname:
   - name: anki
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
