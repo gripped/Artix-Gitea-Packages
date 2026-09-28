@@ -1,10 +1,10 @@
 ---
-version: 26.08.1-1
+version: 26.08.1-2
 pkgbase:
   name: kmail
   pkgdesc: KDE mail client
   pkgver: 26.08.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/kmail2/
   arch:
     - x86_64
@@ -96,4 +96,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: kmail
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
