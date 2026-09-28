@@ -1,0 +1,35 @@
+---
+version: 0.1.2-9
+pkgbase:
+  name: hyprpwcenter
+  pkgdesc: A GUI Pipewire control center
+  pkgver: 0.1.2
+  pkgrel: 9
+  url: https://github.com/hyprwm/hyprpwcenter
+  arch:
+    - x86_64
+  license:
+    - BSD-3-Clause
+  makedepends:
+    - cmake
+  depends:
+    - libgcc
+    - libstdc++
+    - glibc
+    - hyprtoolkit
+    - libhyprtoolkit.so
+    - hyprutils
+    - libhyprutils.so
+    - libdrm
+    - libpipewire
+    - libpipewire-0.3.so
+    - pixman
+  optdepends:
+    - 'ttf-material-symbols-variable: Recommended font for icons'
+  source:
+    - https://github.com/hyprwm/hyprpwcenter/archive/v0.1.2/hyprpwcenter-0.1.2.tar.gz
+  sha256sums:
+    - ab4cfd4710566b07e98973d6723c24802d95774aa9c02aca839ff03e3bf09659
+pkgname:
+  - name: hyprpwcenter
+# generated with artixpkg 0.40.0-1-any
