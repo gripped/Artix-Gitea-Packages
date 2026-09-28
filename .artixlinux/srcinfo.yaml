@@ -1,0 +1,37 @@
+---
+version: 1.9.0-1
+pkgbase:
+  name: cosmic-viewer
+  pkgdesc: Image viewer for the COSMIC desktop environment
+  pkgver: 1.9.0
+  pkgrel: 1
+  url: https://github.com/pop-os/cosmic-viewer
+  arch:
+    - x86_64
+  groups:
+    - cosmic
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - cargo
+    - clang
+    - cmake
+    - git
+    - just
+    - lld
+  depends:
+    - dav1d
+    - libgcc
+    - glibc
+    - hicolor-icon-theme
+    - libde265
+    - libjpeg-turbo
+    - libstdc++
+    - libxkbcommon
+  source:
+    - git+https://github.com/pop-os/cosmic-viewer.git#tag=epoch-1.9.0
+  b2sums:
+    - baf5b4f897ba54e41bb0890d2ea88bdb46a7aa5debfde8301acfcc9920c7b76d5b8569763c13a788e787dcba42f4cff8b4e3aa5dfba70c1ae3192c60f6fd4573
+pkgname:
+  - name: cosmic-viewer
+# generated with artixpkg 0.40.0-1-any
