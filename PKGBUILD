@@ -1,9 +1,10 @@
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=korganizer
 pkgver=26.08.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Calendar and scheduling Program'
 arch=(x86_64)
 url='https://apps.kde.org/korganizer/'
