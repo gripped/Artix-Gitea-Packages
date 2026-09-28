@@ -1,8 +1,9 @@
-# Maintainer: arc-d3v <arc-d3v@artixlinux.org>
-# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Bruno Pagani <archange@archlinux.org>
 
-pkgver=41
-pkgrel=2
+pkgver=42
+pkgrel=1
 epoch=1
 pkgname=electron
 pkgdesc='Meta package providing the latest available stable Electron build'
@@ -12,7 +13,7 @@ license=(MIT)
 depends=("electron$pkgver")
 
 package() {
-  mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/lib"
-  ln -sf "${depends[0]}" "$pkgdir/usr/bin/$pkgname"
-  ln -sf "${depends[0]}" "$pkgdir/usr/lib/$pkgname"
+	mkdir -p "$pkgdir/usr/bin" "$pkgdir/usr/lib"
+	ln -sf "${depends[0]}" "$pkgdir/usr/bin/$pkgname"
+	ln -sf "${depends[0]}" "$pkgdir/usr/lib/$pkgname"
 }
