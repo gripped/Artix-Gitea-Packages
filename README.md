@@ -1,0 +1,2 @@
+# hyprlauncher
+
