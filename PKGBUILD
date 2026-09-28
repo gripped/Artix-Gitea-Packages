@@ -6,7 +6,7 @@
 
 pkgname=lib32-libpgm
 pkgver=5.3.128
-pkgrel=3
+pkgrel=4
 pkgdesc='An implementation of the PGM reliable multicast protocol'
 arch=('x86_64')
 url='https://github.com/steve-o/openpgm'

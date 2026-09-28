@@ -1,5 +1,5 @@
 ---
-team: world
+team: lib32
 actions:
   addRepo: lib32
   removeRepo: null
@@ -42,9 +42,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 5.3.128-3
+    version: 5.3.128-4
     packages:
-      - lib32-libpgm-5.3.128-3-x86_64.pkg.tar.zst
+      - lib32-libpgm-5.3.128-4-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null

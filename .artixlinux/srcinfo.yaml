@@ -1,10 +1,10 @@
 ---
-version: 5.3.128-3
+version: 5.3.128-4
 pkgbase:
   name: lib32-libpgm
   pkgdesc: An implementation of the PGM reliable multicast protocol
   pkgver: 5.3.128
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/steve-o/openpgm
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - ea0b6c3f51316d5c76b9d04e187ed99b44829f89a5075b0edcaaeffe26482b31
 pkgname:
   - name: lib32-libpgm
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
