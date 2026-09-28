@@ -1,9 +1,9 @@
 ---
-version: 2.1.2-1
+version: 2.2.0-1
 pkgbase:
   name: ktextaddons
   pkgdesc: Various text handling addons
-  pkgver: 2.1.2
+  pkgver: 2.2.0
   pkgrel: 1
   url: https://invent.kde.org/libraries/ktextaddons
   arch:
@@ -28,6 +28,7 @@ pkgbase:
     - kwidgetsaddons
     - libstdc++
     - qt6-base
+    - qt6-multimedia
     - qt6-speech
     - qtkeychain-qt6
     - sonnet
@@ -37,13 +38,13 @@ pkgbase:
     - 'grammalecte: French grammar checking'
     - 'libreoffice: Use autocorrection data from LibreOffice'
   source:
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.1.2.tar.xz
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.1.2.tar.xz.sig
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.2.0.tar.xz
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.2.0.tar.xz.sig
   validpgpkeys:
     - 90A774939A973FF1ECC827788FFE4352ED54BB8A
   sha256sums:
-    - f3b4448904f1656d6d7cd5a557d22fe1c50624eb32ed369f34726beff9ce0589
+    - 26b78fab82ce76fa19d8d2a47757631d21dcaddb6814442b6dd2853e65cd5a81
     - SKIP
 pkgname:
   - name: ktextaddons
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
