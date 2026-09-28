@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2:3.32.0-1
+    version: 2:3.32.1-1
     packages:
-      - freerdp-2:3.32.0-1-x86_64.pkg.tar.zst
+      - freerdp-2:3.32.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2:3.31.1-1
