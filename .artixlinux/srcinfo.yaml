@@ -1,9 +1,9 @@
 ---
-version: 49.1-1
+version: 49.2-1
 pkgbase:
   name: yelp
   pkgdesc: Get help with GNOME
-  pkgver: 49.1
+  pkgver: 49.2
   pkgrel: 1
   url: https://apps.gnome.org/Yelp
   arch:
@@ -36,9 +36,9 @@ pkgbase:
   provides:
     - libyelp-1.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/yelp.git#tag=49.1
+    - git+https://gitlab.gnome.org/GNOME/yelp.git#tag=49.2
   b2sums:
-    - 1adba81b0de5154b00b563ecc14a1802a822c8f256f4f948d1366069aa540a2541670a04c8c83e0e1416befe0ee78fc14be1c72b53364bab5bada3b3be45dca7
+    - 797f50c2210b88db0d192e0fd2822551e0017b91ebf9c0ad511580a04b453ed30ac095c4b26f7aabca320e000d0c8c67e983264c020dc862bdfb389408f7f3b2
 pkgname:
   - name: yelp
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
