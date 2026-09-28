@@ -44,4 +44,4 @@ pkgbase:
     - bb79f73ce440f96d8250f59c8afc3b8dda5c7b4fe9cc190796393b994af1e3ca
 pkgname:
   - name: znc
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
