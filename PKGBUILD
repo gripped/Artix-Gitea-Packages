@@ -1,0 +1,42 @@
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+
+pkgname=hyprlauncher
+pkgver=0.1.6
+pkgrel=9
+pkgdesc='A multipurpose and versatile launcher / picker for Hyprland'
+arch=(x86_64)
+url="https://github.com/hyprwm/$pkgname"
+license=(BSD-3-Clause)
+depends=(fontconfig libfontconfig.so
+         glibc # libc.so libm.so
+         hyprlang libhyprlang.so
+         hyprutils libhyprutils.so
+         hyprwire libhyprwire.so
+         icu libicuuc.so
+         # libdrm # libdrm.so
+         libgcc libgcc_s.so
+         libqalculate # libqalculate.so
+         libstdc++ libstdc++.so
+         hyprtoolkit libhyprtoolkit.so
+         wayland # libwayland-cursor.so libwayland-client.so
+         wl-clipboard)
+makedepends=(cmake)
+_archive="$pkgname-$pkgver"
+source=("$url/archive/v$pkgver/$_archive.tar.gz")
+sha256sums=('f02f93584e1017d7a466d0cafed910f630be39eba6b433922e645c834c4abf59')
+
+build() {
+	cd "$_archive"
+	local cmake_options=(
+		-D CMAKE_BUILD_TYPE=None
+		-D CMAKE_INSTALL_PREFIX=/usr
+	)
+	cmake -B build -W no-dev ${cmake_options[@]}
+	cmake --build build
+}
+
+package() {
+	cd "$_archive"
+	DESTDIR="$pkgdir" cmake --install build
+	install -Dm0644 -t "$pkgdir/usr/share/licenses/$pkgname/" LICENSE
+}
