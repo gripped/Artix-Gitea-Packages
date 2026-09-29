@@ -12,6 +12,7 @@
 
 pkg/
 src/
+qBittorrent/
 
 *.service
 *.timer
