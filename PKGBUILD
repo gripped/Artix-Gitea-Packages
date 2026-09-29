@@ -11,8 +11,8 @@
 pkgbase=qbittorrent
 pkgname=(qbittorrent
          qbittorrent-nox)
-pkgver=5.2.3
-pkgrel=3.1
+pkgver=5.2.4
+pkgrel=1
 arch=(x86_64)
 url='https://www.qbittorrent.org'
 license=(GPL-2.0-or-later
@@ -31,7 +31,7 @@ makedepends=(boost
              qt6-tools)
 optdepends=('python: needed for torrent search tab')
 source=(git+https://github.com/qbittorrent/qBittorrent/#tag=release-$pkgver)
-sha256sums=('e3656e156f08645db67f4f9c2eaab6a7a094791d91e7559d983228edac10ab55')
+sha256sums=('11a44c40f90dbf755459d831e00b284cd802e2f7198bf1aca76c8a56ab6c8b12')
 validpgpkeys=('D8F3DA77AAC6741053599C136E4A2D025B7CC9A2') # sledgehammer999 <sledgehammer999@qbittorrent.org>
 
 prepare() {
@@ -42,12 +42,14 @@ prepare() {
 build() {
   cmake -B build -S qBittorrent \
     -DCMAKE_INSTALL_PREFIX=/usr
+
   cmake --build build
 
   cmake -B build-nox -S qBittorrent \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -DGUI=OFF \
     -DSYSTEMD=OFF
+
   cmake --build build-nox
 }
 
@@ -65,3 +67,4 @@ package_qbittorrent-nox() {
   DESTDIR="$pkgdir" cmake --install build-nox
   install -Dm644 qBittorrent/COPYING -t "$pkgdir"/usr/share/licenses/$pkgname
 }
+
