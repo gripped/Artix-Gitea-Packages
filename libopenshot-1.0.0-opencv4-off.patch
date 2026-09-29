@@ -25,31 +25,6 @@ Two issues break builds with ENABLE_OPENCV=OFF:
  tests/CMakeLists.txt | 2 +-
  2 files changed, 8 insertions(+), 1 deletion(-)
 
-diff --git a/src/EffectBase.cpp b/src/EffectBase.cpp
-index 2fb9b10b5..ee918e54d 100644
---- a/src/EffectBase.cpp
-+++ b/src/EffectBase.cpp
-@@ -548,6 +548,12 @@ std::shared_ptr<QImage> EffectBase::GetMaskImage(std::shared_ptr<QImage> target_
- }
- 
- std::shared_ptr<QImage> EffectBase::TrackedObjectMask(std::shared_ptr<QImage> target_image, int64_t frame_number) const {
-+#ifndef USE_OPENCV
-+	// Tracked-object bounding boxes are only produced by OpenCV-based
-+	// trackers; without OpenCV there is nothing to draw a mask for.
-+	(void)frame_number;
-+	return {};
-+#else
- 	if (!target_image || target_image->isNull() || trackedObjects.empty())
- 		return {};
- 
-@@ -595,6 +601,7 @@ std::shared_ptr<QImage> EffectBase::TrackedObjectMask(std::shared_ptr<QImage> ta
- 	if (!drew_any_box)
- 		return {};
- 	return mask_image;
-+#endif
- }
- 
- void EffectBase::BlendWithMask(std::shared_ptr<QImage> original_image, std::shared_ptr<QImage> effected_image,
 diff --git a/tests/CMakeLists.txt b/tests/CMakeLists.txt
 index 6815c9246..6a866ac94 100644
 --- a/tests/CMakeLists.txt
