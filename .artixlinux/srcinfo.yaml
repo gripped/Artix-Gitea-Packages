@@ -1,9 +1,9 @@
 ---
-version: 2:2.62.3-1
+version: 2:2.62.4-1
 pkgbase:
   name: librsvg
   pkgdesc: SVG rendering library
-  pkgver: 2.62.3
+  pkgver: 2.62.4
   pkgrel: 1
   epoch: 2
   url: https://gitlab.gnome.org/GNOME/librsvg
@@ -36,9 +36,9 @@ pkgbase:
     - libxml2
     - pango
   source:
-    - git+https://gitlab.gnome.org/GNOME/librsvg.git#tag=2.62.3
+    - git+https://gitlab.gnome.org/GNOME/librsvg.git#tag=2.62.4
   b2sums:
-    - 63d921e517bb95362259f477cacfbafcf788ed9f40fe15697f10b0dfdff32831c7963eb4fce65ab03ad94790555741f6450f275713a9ae9aca7ceb27af653e85
+    - c5619041a8596da34bd58bf3f01088036b58d58d7b5ea0ff17bbc6cb14e1afad167cbd10f3ccb60446a4f46f812e69dd5d7e69cb74d1788809e0c47c486f7d83
 pkgname:
   - name: librsvg
     provides:
@@ -46,4 +46,4 @@ pkgname:
   - name: librsvg-docs
     pkgdesc: SVG rendering library (documentation)
     depends: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
