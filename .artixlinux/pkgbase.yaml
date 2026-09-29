@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,8 +49,111 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 157.0-1
+    packages:
+      - firefox-i18n-ach-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-af-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-an-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ar-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ast-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-az-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-be-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-bg-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-bn-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-br-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-bs-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ca-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ca-valencia-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-cak-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-cs-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-cy-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-da-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-de-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-dsb-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-el-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-en-ca-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-en-gb-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-en-us-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-eo-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-es-ar-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-es-cl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-es-es-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-es-mx-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-et-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-eu-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-fa-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ff-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-fi-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-fr-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-fur-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-fy-nl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ga-ie-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-gd-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-gl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-gn-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-gu-in-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-he-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-hi-in-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-hr-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-hsb-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-hu-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-hy-am-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ia-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-id-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-is-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-it-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ja-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ka-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-kab-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-kk-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-km-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-kn-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ko-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-lij-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-lt-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-lv-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-mk-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-mr-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ms-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-my-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-nb-no-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ne-np-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-nl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-nn-no-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-oc-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-pa-in-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-pl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-pt-br-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-pt-pt-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-rm-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ro-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ru-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sat-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sc-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sco-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-si-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sk-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-skr-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-son-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sq-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sr-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-sv-se-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-szl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ta-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-te-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-tg-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-th-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-tl-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-tr-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-trs-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-uk-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-ur-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-uz-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-vi-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-xh-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-zh-cn-157.0-1-any.pkg.tar.zst
+      - firefox-i18n-zh-tw-157.0-1-any.pkg.tar.zst
     debug: []
   galaxy:
     version: 156.0.1-1
