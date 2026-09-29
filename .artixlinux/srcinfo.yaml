@@ -1,9 +1,9 @@
 ---
-version: 7.3.0-1
+version: 7.4.0-1
 pkgbase:
   name: python-ipykernel
   pkgdesc: The ipython kernel for Jupyter
-  pkgver: 7.3.0
+  pkgver: 7.4.0
   pkgrel: 1
   url: https://pypi.org/project/ipykernel/
   arch:
@@ -38,9 +38,9 @@ pkgbase:
   optdepends:
     - 'python-debugpy: debugger support'
   source:
-    - git+https://github.com/ipython/ipykernel#tag=v7.3.0
+    - git+https://github.com/ipython/ipykernel#tag=v7.4.0
   sha256sums:
-    - f61869af964940b63be777d8cc560a8d887a9af8b248a6dee01125e6ee4b06fe
+    - e5b830b889bc55ca81e84e7d7b4e76811d8c02a17f54aa1545984a4bab799040
 pkgname:
   - name: python-ipykernel
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.39.1-1-any
