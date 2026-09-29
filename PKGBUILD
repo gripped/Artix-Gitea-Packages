@@ -2,8 +2,8 @@
 # Contributor: Artoo <artoo@artixlinux.org>
 
 pkgname=dinit-rc
-pkgver=0.6.6
-pkgrel=2
+pkgver=0.6.7
+pkgrel=1
 pkgdesc="rc files for dinit"
 arch=('x86_64')
 url="https://gitea.artixlinux.org/artix/dinit-rc"
@@ -43,7 +43,7 @@ source=(
     "git+${url}.git#tag=$pkgver"
     rc.{local,shutdown}
 )
-sha256sums=('5af1f57924767e4780a9cc3ac7208efee075ae321c4b886af580bdd7ba966aee'
+sha256sums=('bb07b7ae286870885d93e20fa7cf810261a044092fd02be7ce80bfaad5d71ee1'
             '8530a1b856190a15517f9d4f70b79f349af91db51cf6d5dafc77dfb2cce6496e'
             'c3b64a2fe063bd19692d0cab55f5bc6021d097843aa14b3982069aaefeab9a5c')
 
