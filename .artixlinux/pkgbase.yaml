@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: lib32
-  removeRepo: lib32-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,9 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.6.58-2
+    version: 1.6.59-1
     packages:
-      - lib32-libpng-1.6.58-2-x86_64.pkg.tar.zst
+      - lib32-libpng-1.6.59-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
