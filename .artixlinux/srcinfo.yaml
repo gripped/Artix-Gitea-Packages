@@ -1,8 +1,8 @@
 ---
-version: 1.2.8-1
+version: 1.2.9-1
 pkgbase:
   name: doublecmd
-  pkgver: 1.2.8
+  pkgver: 1.2.9
   pkgrel: 1
   url: http://doublecmd.sourceforge.net/
   arch:
@@ -34,9 +34,9 @@ pkgbase:
   provides:
     - doublecmd
   source:
-    - https://downloads.sourceforge.net/project/doublecmd/Double%20Commander%20Source/doublecmd-1.2.8-src.tar.gz
+    - https://downloads.sourceforge.net/project/doublecmd/Double%20Commander%20Source/doublecmd-1.2.9-src.tar.gz
   sha512sums:
-    - 55432468baae690e58f3ae90d4a4a6bcd91233aee38225813f833b743d2ff1c19bc1f5d413e411c36a9480254d90336a75da7655daf857156cd3105de2586e7b
+    - 7c39cc28431a00b1869dbce4b4369e7dc596ad8d4e3e6b89897e17d6268b13f52092f2d96bd141d9788d7ca1513b9b06a8b425cc6f6c8ee20a43c4f2e1ef59de
 pkgname:
   - name: doublecmd-qt5
     pkgdesc: twin-panel (commander-style) file manager (Qt5)
@@ -62,4 +62,4 @@ pkgname:
     conflicts:
       - doublecmd-gtk2
       - doublecmd-qt5
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
