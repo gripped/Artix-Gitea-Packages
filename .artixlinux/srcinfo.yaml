@@ -1,9 +1,9 @@
 ---
-version: 9.7.1_1-6
+version: 9.7.2_2-1
 pkgbase:
   name: percona-server
-  pkgver: 9.7.1_1
-  pkgrel: 6
+  pkgver: 9.7.2_2
+  pkgrel: 1
   url: https://www.percona.com/software/mysql-database/percona-server
   arch:
     - x86_64
@@ -27,13 +27,13 @@ pkgbase:
     - protobuf
     - editline
   source:
-    - https://www.percona.com/downloads/Percona-Server-9.7/Percona-Server-9.7.1-1/source/tarball/percona-server-9.7.1-1.tar.gz
+    - https://www.percona.com/downloads/Percona-Server-9.7/Percona-Server-9.7.2-2/source/tarball/percona-server-9.7.2-2.tar.gz
     - gcc-14.patch
     - my.cnf
     - mysql-user.conf
     - mysqlrouter-user.conf
   sha256sums:
-    - cfa835f66b415a46e64420d515096281f42a7bcf189bda0f6c434ea5a55d63ee
+    - 39bffcd0330c9c260ce97e5cd0f598696aa7943bf1f03f97da3fcc566954f427
     - eeb9c6c8f70dd5eb05f735df0cdfc294365b393e5819f26029320e38714069a6
     - b467b04d6d06152b2abc33f2a6de63fef0fc922dd5119d2ee1d07d3c1a489731
     - b4e357a0e2e3a7dc01f9459efcbed77ce3229f8d94273e3ff464bcd67c9413fc
@@ -55,8 +55,8 @@ pkgname:
       - 'libsasl: authentication_ldap_sasl_client plugin'
       - 'krb5: authentication_kerberos_client plugin'
     provides:
-      - mysql-clients=9.7.1_1
-      - mariadb-clients=9.7.1_1
+      - mysql-clients=9.7.2_2
+      - mariadb-clients=9.7.2_2
     conflicts:
       - mysql-clients
       - libperconaserverclient
@@ -85,8 +85,8 @@ pkgname:
     optdepends:
       - perl-dbd-mysql
     provides:
-      - mysql=9.7.1_1
-      - mariadb=9.7.1_1
+      - mysql=9.7.2_2
+      - mariadb=9.7.2_2
     conflicts:
       - mysql
     options:
@@ -95,4 +95,4 @@ pkgname:
       - etc/mysql/my.cnf
       - etc/mysqlrouter/mysqlrouter.conf
       - etc/conf.d/mysql
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
