@@ -4,7 +4,7 @@
 pkgbase=lvm2
 pkgdesc='Device mapper and Logical Volume Manager'
 pkgname=('lvm2' 'device-mapper')
-pkgver=2.03.42
+pkgver=2.03.43
 pkgrel=1
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
@@ -13,7 +13,7 @@ makedepends=('git' 'udev' 'libaio' 'thin-provisioning-tools')
 validpgpkeys=('88437EF5C077BD113D3B7224228191C1567E2C17'  # Alasdair G Kergon <agk@redhat.com>
               'D501A478440AE2FD130A1BE8B9112431E509039F') # Marian Csontos <marian.csontos@gmail.com>
 source=("git+https://gitlab.com/lvmteam/lvm2.git?signed#tag=v${pkgver//./_}")
-sha256sums=('5b53f000244e1acb28c94526546f39f172f2b4396238a5bc4d6b86036f1cbb08')
+sha256sums=('2167736de4920c7cabbcde864e3d2ea0c0bd3a9cda82bdc9e368a1346ace9928')
 
 _backports=(
 )
@@ -26,6 +26,7 @@ prepare() {
     git log --oneline -1 "${_c}"
     git show "${_c}" -- ':(exclude)WHATS_NEW' | git apply
   done
+
 }
 
 build() {
