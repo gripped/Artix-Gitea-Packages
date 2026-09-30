@@ -91,8 +91,6 @@ source=(
   identity-icons-brand.svg
   # Make different channels installable in parallel
   0001-Install-under-remoting-name.patch
-  # Fix build with Rust 1.98
-  0002-Bug-2053518-Handle-the-oe-linux-rust-targets-added-i.patch
 )
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -419,7 +417,6 @@ sha512sums=('79e1f2a0f8c4d156c80b8f4c580aa944600d49cc811f961a3eca251113241638991
             '4b53ee133a4ecaf068e240f6a05a1ebf4b788d67fe9141cc5b3561e1128907c8c3edb49bf2b24ba89daf1552f94ac48adf682dbe7dd070cffe7f78d98f2b3338'
             'b579b73176c72a5ecf36e3f63bba08fdb8041ae99d54e5cab906660fed6a9cf2311f7ca1ec1649e451cc6d5a4b1e6060b974b1d7befe9c8df3c5a89c50383c17'
             '2b06a2398e862fa4e61ee5e41971930a9c50a90fad4ee99231fa9f8d94d07e3f31a044d2a306a73e28367f654ad5568bf4a64ea42898a5001969022e3bc8e992'
-            'da7ecd2cfb729a532126569eada73a54086e140fcfef7e99189988e2a06e7911bb7c1b4642b7b557053718dc9681ccaeb17a9880aaf6d6c637d1e2b385431c99'
             '9ffdf13dda72f6c6224e5d755cc7e15fb31a317c0514d4eb5c2f51381dd26398d86d07d5c0018a1b91c2b95e8de8b60bd4a070da3efa81985fd03314987cff01'
             '821c698c72791cc31ca990c61fbf054c76095fc2691b8a7ca566b8d5ef78bef992b96d362afe64793a2d3b0f54060a7fe7d2c7a2569b0e3e3fc4a9a0e0d62579'
             '1c68476a55d5ecb9530126eaa2e6c79e5ca445c6fb926f007dfffb5b9beefaaf1ab3c76f7ad5584fb5c93003cd1e55bbc01adf7404ee00d41c09922b1f8ede67'
