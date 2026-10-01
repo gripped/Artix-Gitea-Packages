@@ -1,9 +1,9 @@
 ---
-version: 26.2.4-1
+version: 26.3.5-1
 pkgbase:
   name: intel-media-driver
   pkgdesc: Intel Media Driver for VAAPI — Broadwell+ iGPUs
-  pkgver: 26.2.4
+  pkgver: 26.3.5
   pkgrel: 1
   url: https://github.com/intel/media-driver/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - libstdc++
     - libva
   source:
-    - https://github.com/intel/media-driver/archive/intel-media-26.2.4/intel-media-driver-26.2.4.tar.gz
+    - https://github.com/intel/media-driver/archive/intel-media-26.3.5/intel-media-driver-26.3.5.tar.gz
   sha256sums:
-    - a23185fca05c8fa8bdec09ea9ee8a20361163c87035ec978de4e2bb048a55534
+    - 76f41c06cefc91d57e0b7d366b7a91b8420ec77939326491795f9fb26afca7e7
 pkgname:
   - name: intel-media-driver
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
