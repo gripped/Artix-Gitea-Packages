@@ -78,7 +78,7 @@ for arch in x86_64 i686 i486 pentium4; do
   echo "--- diff for $cfgfile ---"
   diff -u "$cfgfile" "${cfgfile}.new"
   mv "${cfgfile}.new" "$cfgfile"
-
+  sed -i s/archlinux/artixlinux/g "$cfgfile"
   # The x86_64 'config' file is also present, unmodified, in every 32-bit
   # arch's source list (source_i686/i486/pentium4 only *add* config.$arch,
   # they don't replace the shared 'config' entry -- see PKGBUILD). So the
@@ -87,6 +87,7 @@ for arch in x86_64 i686 i486 pentium4; do
   # sources -- otherwise i686/i486/pentium4 fail with a checksum mismatch
   # on 'config' (content changed, PKGBUILD's sha256sums entry stale).
   if [ "$arch" = "x86_64" ]; then
+    sed -i s/archlinux/artixlinux/g config
     echo "=== Updating main config checksum in PKGBUILD ==="
     OLDCFGSUM=$(grep -F 'sha256sums[${i}]' PKGBUILD | grep -oE '[0-9a-f]{64}')
     NEWCFGSUM=$(sha256sum config | cut -d' ' -f1)
@@ -112,3 +113,7 @@ makepkg --printsrcinfo > .SRCINFO
 
 echo "=== Done. Review with: git diff -- PKGBUILD .SRCINFO config config.i686 config.i486 config.pentium4 ==="
 echo "=== Then test-build each arch: sudo extra-<arch>-build ==="
+
+echo
+echo "===> Replacing arch with artix"
+sed -i s/HOST=archlinux/HOST=artixlinux/g PKGBUILD
