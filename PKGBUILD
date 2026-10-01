@@ -4,7 +4,7 @@
 
 pkgname=gitea-runner
 _pkgname=runner
-pkgver=4.0.0
+pkgver=4.0.1
 pkgrel=1
 pkgdesc="Official runner for Gitea"
 url="https://gitea.com/gitea/runner"
@@ -20,7 +20,7 @@ install="${pkgname}.install"
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/v${pkgver}.tar.gz"
         "${pkgname}.sysusers"
         "${pkgname}.tmpfiles")
-sha256sums=('9cc055e08861040b7e485e1a955198ff0f1dc601abea5be2533b995dc12e2d87'
+sha256sums=('9a88166a950018ebefc83977add24ed34eeee29938d62241d9c3ed941f40b5b5'
             'd7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d'
             '476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37')
 
