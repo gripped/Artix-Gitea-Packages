@@ -3,7 +3,7 @@
 # Maintainer: Bruno Pagani <archange@archlinux.org>
 
 pkgname=spirv-llvm-translator
-pkgver=23.1.1
+pkgver=23.1.2
 pkgrel=1
 pkgdesc="LLVM <-> SPIR-V converter for compilers targeting SPIR-V"
 url="https://www.khronos.org/spirv/"
@@ -29,7 +29,7 @@ checkdepends=(
 source=(
   git+https://github.com/KhronosGroup/SPIRV-LLVM-Translator#tag=v$pkgver
 )
-b2sums=('467f062a15e8148dea0c853535bc5d8cd9f70b45ef2184bdee7b590d323ba8644c9e014b0c8fece450c49ff5f17f9c00fefcec5f5f9c54d2a4cb7a7853b46b59')
+b2sums=('de830357b3ce992a14703b5c70f3f41173de4c1798ad64b684b547a0f9f7fbedeed4b72afcd0f5f10c80d97ce93cc111df546b8e07050fbe90130f0f08cf0d0c')
 
 build() {
   local cmake_options=(
