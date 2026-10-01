@@ -1,10 +1,10 @@
 ---
-version: 0.2.8-2.1
+version: 0.2.8-3
 pkgbase:
   name: lxlauncher
   pkgdesc: Clone of the Asus launcher for EeePC
   pkgver: 0.2.8
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://github.com/lxde/lxlauncher
   arch:
     - x86_64
@@ -35,8 +35,10 @@ pkgbase:
     - etc/xdg/lxlauncher/settings.conf
   source:
     - git+https://github.com/lxde/lxlauncher.git#tag=0.2.8
+    - lxlauncher-no-decoration.patch
   b2sums:
     - 260cb4ad514381bc9cb4230f98227d9f43dd4237a031604fdcf93de47d680bc2b0127833de6008b113839277fbd1a39db7239d5b42a5855bbbb8b9df6dca7847
+    - 6bf2f542bf4ad0fdba152638bf2e474daf2ec1c98029c178799d6c45193733d600e6f0b9318391f3cf51b4a55b5672af0d93c47f00f30c4098344c6cd6c2196d
 pkgname:
   - name: lxlauncher
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
