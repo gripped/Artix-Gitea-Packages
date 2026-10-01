@@ -5,7 +5,7 @@ pkgbase=lvm2
 pkgdesc='Device mapper and Logical Volume Manager'
 pkgname=('lvm2' 'device-mapper')
 pkgver=2.03.43
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://sourceware.org/lvm2/'
 license=('GPL-2.0-only' 'LGPL-2.1-only')
@@ -16,6 +16,8 @@ source=("git+https://gitlab.com/lvmteam/lvm2.git?signed#tag=v${pkgver//./_}")
 sha256sums=('2167736de4920c7cabbcde864e3d2ea0c0bd3a9cda82bdc9e368a1346ace9928')
 
 _backports=(
+  # pvscan: preserve preferred device name when importing DEVLINKS
+  '0b1cb8bcb3bf8bd666521a63c0be1e9da51e2337'
 )
 
 prepare() {

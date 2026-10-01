@@ -1,10 +1,10 @@
 ---
-version: 2.03.43-1
+version: 2.03.43-2
 pkgbase:
   name: lvm2
   pkgdesc: Device mapper and Logical Volume Manager
   pkgver: 2.03.43
-  pkgrel: 1
+  pkgrel: 2
   url: https://sourceware.org/lvm2/
   arch:
     - x86_64
