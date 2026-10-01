@@ -1,0 +1,84 @@
+---
+version: 101.0-1
+pkgbase:
+  name: mkvtoolnix
+  pkgdesc: Set of tools to create, edit and inspect Matroska files
+  pkgver: 101.0
+  pkgrel: 1
+  url: https://mkvtoolnix.download/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-only
+  makedepends:
+    - boost
+    - cmark
+    - docbook-xsl
+    - git
+    - po4a
+    - qt6-multimedia
+    - qt6-svg
+    - qt6-tools
+    - ruby-erb
+    - ruby-rake
+    - zlib
+  depends:
+    - boost-libs
+    - flac
+    - fmt
+    - glibc
+    - gmp
+    - libdvdread
+    - libgcc
+    - libebml
+    - libmatroska
+    - libvorbis
+    - libstdc++
+    - pugixml
+    - qt6-base
+  source:
+    - git+https://codeberg.org/mbunkus/mkvtoolnix.git?signed#tag=release-101.0
+  validpgpkeys:
+    - D9199745B0545F2E8197062B0F92290A445B9007
+  b2sums:
+    - 015b5f5ec52eaad9fec323dd4f633645b6cfdc06d2dab789ab73de2a307011d41b5f9481bc4290a2ff1aba1cd4d670b5729c2478dc145ba4ec116801995bb833
+pkgname:
+  - name: mkvtoolnix-cli
+    depends:
+      - boost-libs
+      - flac
+      - fmt
+      - glibc
+      - gmp
+      - libdvdread
+      - libgcc
+      - libebml
+      - libmatroska
+      - libvorbis
+      - libstdc++
+      - pugixml
+      - qt6-base
+      - libogg
+      - libvorbis
+      - zlib
+  - name: mkvtoolnix-gui
+    depends:
+      - boost-libs
+      - flac
+      - fmt
+      - glibc
+      - gmp
+      - libdvdread
+      - libgcc
+      - libebml
+      - libmatroska
+      - libvorbis
+      - libstdc++
+      - pugixml
+      - qt6-base
+      - cmark
+      - hicolor-icon-theme
+      - mkvtoolnix-cli
+      - qt6-multimedia
+      - qt6-svg
+# generated with artixpkg 0.38.5-1-any
