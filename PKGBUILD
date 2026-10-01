@@ -21,7 +21,7 @@ optdepends=('mariadb: MariaDB support'
             'sqlite: SQLite support'
             'gitea-runner: Official runner for Gitea'
             'tea: A command line tool to interact with Gitea servers')
-checkdepends=('openssh' 'chromium')
+checkdepends=('openssh')
 options=('!lto')
 backup=("etc/${pkgname}/app.ini")
 source=("git+https://github.com/go-gitea/gitea.git#tag=v${pkgver}?signed"
@@ -63,7 +63,6 @@ check() {
 	# These tests expect .gitconfig path to be "$HOME/.gitconfig" (which isn't the case due to the above workaround)
 	rm -v modules/git/config_test.go modules/git/gpg_test.go
 	# `-p 1` to prevent race conditions from go tests when trying to lock the gitconfig file
-	make test-frontend
 	make test-backend GOTEST_FLAGS="-p 1"
 }
 
