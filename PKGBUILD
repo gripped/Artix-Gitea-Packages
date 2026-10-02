@@ -3,8 +3,8 @@
 # Contributor: Roshless <pkg@roshless.com>
 
 pkgname=lagrange
-pkgver=1.21.1
-pkgrel=2
+pkgver=1.21.2
+pkgrel=1
 pkgdesc="Beautiful Gemini Client"
 url="https://github.com/skyjake/lagrange"
 arch=('x86_64')
@@ -29,7 +29,7 @@ optdepends=(
     "libwebp: Webp decode support"
 )
 source=("${url}/releases/download/v$pkgver/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('49389240e34fb9e79cebb9566af24723ae15f9ba2ca8e8933ffdd5c3e034953c')
+sha256sums=('ae9439b26d569d1d3efa682f591cc0e34eb5314f13ef18840c18a2d57e8cd677')
 
 build() {
     cmake -B build -S "$pkgname-${pkgver}" \
