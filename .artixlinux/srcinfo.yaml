@@ -1,10 +1,10 @@
 ---
-version: 12.8.2-1
+version: 12.8.2-2
 pkgbase:
   name: pnpm
   pkgdesc: Fast, disk space efficient package manager
   pkgver: 12.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://pnpm.io
   arch:
     - any
@@ -13,18 +13,17 @@ pkgbase:
   makedepends:
     - git
     - rust
+    - pnpm
+    - npm
+    - python
   depends:
     - node-gyp
-  noextract:
-    - pnpm-linux-x64-v12.8.2.tar.gz
   source:
     - git+https://github.com/pnpm/pnpm.git#tag=v12.8.2?signed
-    - pnpm-linux-x64-v12.8.2.tar.gz::https://github.com/pnpm/pnpm/releases/download/v12.8.2/pnpm-linux-x64.tar.gz
   validpgpkeys:
     - 7B74D1299568B586BA9962B5649E4D4AF74E7DEC
   b2sums:
     - 8fcf056f5188a2c1bf340f0dee67e9ceb2b7874e2c6d730f16362343a07b13003a1fdbb83e1a1d03c83bfc387632e610bde4698bd9b4547c026ffbc90f39a0c1
-    - 00d5d3498ddffc3e1092298a49fe7cb028f0d338be07923a8679cab1a198efd68a68293f8d8fb94a03cf494a3a8e04c4f59d1ebb8c0f1106775788ed75a8b6f5
 pkgname:
   - name: pnpm
 # generated with artixpkg 0.40.0-1-any
