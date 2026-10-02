@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 3.22.26-3
+    version: 3.22.26-4
     packages:
-      - mate-themes-3.22.26-3-any.pkg.tar.zst
+      - mate-themes-3.22.26-4-any.pkg.tar.zst
     debug: []
 team: galaxy
