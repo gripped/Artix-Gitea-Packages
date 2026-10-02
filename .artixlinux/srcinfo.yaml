@@ -1,9 +1,9 @@
 ---
-version: 7.2.4-1
+version: 10.0-1
 pkgbase:
   name: rocm-cmake
   pkgdesc: CMake modules for common build tasks needed for the ROCm software stack
-  pkgver: 7.2.4
+  pkgver: 10.0
   pkgrel: 1
   url: https://github.com/ROCm/rocm-cmake
   arch:
@@ -17,9 +17,9 @@ pkgbase:
     - rocm-core
     - cmake
   source:
-    - rocm-cmake-7.2.4.tar.gz::https://github.com/ROCm/rocm-cmake/archive/rocm-7.2.4.tar.gz
+    - rocm-cmake-10.0.tar.gz::https://github.com/ROCm/rocm-cmake/archive/therock-10.0.tar.gz
   sha256sums:
-    - e7a28cb4baf8afbc21204d37e132dae7e12b2d980a2600948fe35cc4d8ac8087
+    - f832a52ead9788c9cc6d40e2fb84818c3e8e82b06079f26623a719cd891efd61
 pkgname:
   - name: rocm-cmake
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any

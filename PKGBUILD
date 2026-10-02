@@ -6,7 +6,7 @@
 # Contributor: Greg Land <landjgregory at gmail dot com>
 
 pkgname=rocm-cmake
-pkgver=7.2.4
+pkgver=10.0
 pkgrel=1
 pkgdesc='CMake modules for common build tasks needed for the ROCm software stack'
 arch=('any')
@@ -14,12 +14,14 @@ url='https://github.com/ROCm/rocm-cmake'
 license=('MIT')
 depends=('rocm-core' 'cmake')
 checkdepends=('git' 'rocm-llvm')
-source=("${pkgname}-${pkgver}.tar.gz::$url/archive/rocm-$pkgver.tar.gz")
-sha256sums=('e7a28cb4baf8afbc21204d37e132dae7e12b2d980a2600948fe35cc4d8ac8087')
+source=("${pkgname}-${pkgver}.tar.gz::$url/archive/therock-$pkgver.tar.gz")
+sha256sums=('f832a52ead9788c9cc6d40e2fb84818c3e8e82b06079f26623a719cd891efd61')
 _dirname="$(basename "$url")-$(basename "${source[0]}" .tar.gz)"
 
 prepare() {
     cd "$_dirname"
+    # Silence warnings that turn into errors with recent cmake versions
+    sed -i 's/-Werror=dev/& -Wno-error=install-absolute-destination/' test/test.cmake
     # Git version tests fail because we're not working in a local git checkout
     rm test/pass/{version-norepo.cmake,version-parent.cmake}
     # sphinx tests require a python module named rocm_docs,
