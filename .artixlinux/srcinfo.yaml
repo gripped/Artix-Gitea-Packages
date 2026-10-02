@@ -1,10 +1,10 @@
 ---
-version: 50.0-6
+version: 51.0-1
 pkgbase:
   name: sysprof
   pkgdesc: Kernel based performance profiler
-  pkgver: 50.0
-  pkgrel: 6
+  pkgver: 51.0
+  pkgrel: 1
   url: https://apps.gnome.org/Sysprof/
   arch:
     - x86_64
@@ -33,9 +33,9 @@ pkgbase:
     - pango
     - polkit
   source:
-    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=50.0
+    - git+https://gitlab.gnome.org/GNOME/sysprof.git#tag=51.0
   b2sums:
-    - dcdc3157710f9eb72afda82b22475694180e36b45b96c07bda13d23bd05bdf51036d39f22aba586ffc09b706f13c880e704f1a3c7c48124f8e01e8e37791a14d
+    - fa2b9621ba867609eec782b6e8cd9690ceb42d2a6fade139a49a908adfb5c35fb0dac38997a0c835871711b38336c935b2284d8965af27efa675f7ee9684084a
 pkgname:
   - name: sysprof
     groups:
@@ -63,4 +63,4 @@ pkgname:
     license:
       - BSD-2-Clause-Patent
     depends: []
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
