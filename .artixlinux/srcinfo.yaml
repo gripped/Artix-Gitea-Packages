@@ -1,9 +1,9 @@
 ---
-version: 5.8-1
+version: 5.9-1
 pkgbase:
   name: entr
   pkgdesc: Run arbitrary commands when files change
-  pkgver: 5.8
+  pkgver: 5.9
   pkgrel: 1
   url: http://eradman.com/entrproject
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - entr-5.8.tar.gz::https://github.com/eradman/entr/archive/refs/tags/5.8.tar.gz
+    - entr-5.9.tar.gz::https://github.com/eradman/entr/archive/refs/tags/5.9.tar.gz
   sha512sums:
-    - ceae34406930cffc931d139857cde17757fe1fc5727d9b0d278d9615f93cb007c238378ed4f852db40a62e1031e5c8f7f6569de75a50f11b518c1eefdccafbe8
+    - 60b46312c3aa3bf9193ad2f594a3d6e97d8fb3a90e22921cefb30bfcf6f37e3d4230d74d22aeab2aa6b9cc106fd4eed4f91c58fdbbbc3410915c6a8c6c685172
 pkgname:
   - name: entr
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
