@@ -1,0 +1,4 @@
+[deltachat-desktop]
+source = "git"
+git = "https://github.com/deltachat/deltachat-desktop"
+prefix = "v"
