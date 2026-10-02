@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2026.18.2-2.3
+    version: 2026.18.2-2.4
     packages:
-      - shader-slang-2026.18.2-2.3-x86_64.pkg.tar.zst
+      - shader-slang-2026.18.2-2.4-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null
