@@ -1,10 +1,10 @@
 ---
-version: 2.1.5-2.1
+version: 2.2.1-2
 pkgbase:
   name: glycin
   pkgdesc: Sandboxed and extendable image decoding
-  pkgver: 2.1.5
-  pkgrel: 2.1
+  pkgver: 2.2.1
+  pkgrel: 2
   url: https://gnome.pages.gitlab.gnome.org/glycin/
   arch:
     - x86_64
@@ -37,10 +37,10 @@ pkgbase:
     - librsvg
     - libseccomp
   source:
-    - git+https://gitlab.gnome.org/GNOME/glycin.git#tag=2.1.5
+    - git+https://gitlab.gnome.org/GNOME/glycin.git#tag=2.2.1
     - git+https://gitlab.gnome.org/sophie-h/test-images.git
   b2sums:
-    - d3e6740c617fbf33339ec0118e0d6cb9a2bf6ab782d46d9de8f77ffb8b0f4d2132dc09b4decab13c94db341e4aa25ad6a3f47184918f6df732e097944905f848
+    - f3df13b4a2c19adcecf771455521c52bf70e6e71ef3fda9ce9a6ef5bb8f56edade41591a4d9ffde16b9b1be026b1b3db3239cb5be87996254010267cc6002884
     - SKIP
 pkgname:
   - name: glycin
@@ -64,4 +64,4 @@ pkgname:
   - name: glycin-docs
     pkgdesc: Sandboxed and extendable image decoding - documentation
     depends: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
