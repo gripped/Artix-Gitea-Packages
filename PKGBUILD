@@ -3,7 +3,7 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.157.2
+pkgver=1.162.0
 pkgrel=1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
@@ -64,13 +64,11 @@ optdepends=('perl: sync_room_to_group.pl'
             'python-authlib: OpenID SSO support')
 options=(!lto)
 source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
-        "$pkgname-fix-worker-test-race.patch"
         'generic_worker.yaml.example'
         'sysusers-synapse.conf'
         'tmpfiles-synapse.conf'
         )
-sha256sums=('48aac777a8c51267dc941fb4cdb96eb4626a2341a92a56482819a895408d2ec1'
-            '751d0cb122b3c17cb4a2142461ac99bbaec798f1e4b357dd41ec4041e5623d35'
+sha256sums=('82fab0001de1b859be44641055e2339081e5a810a75497c4153520182bd291c1'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
             '574175c27a4f07d4ce6a676d86b697c82c36b796442d0955881da588b6f4bb65'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
@@ -89,20 +87,11 @@ validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
 prepare() {
 	cd $pkgname
 
-	# Required to make synapse work with lxml 6.0
-	git cherry-pick --no-commit 4555f61db5d6caf3cbbe03dfd3051e72c1b9c221
-
-	# Required to make synapse work with prometheus_client 0.24
-	git cherry-pick --no-commit 8b36740bad82d421b4e93f2b78611eb6958c36e9
-
-	# allow any poetry-core to be used
-	sed 's/poetry-core>=2.0.0,<=2.1.3/poetry-core>=1.1.0/' -i pyproject.toml
-	sed 's/setuptools_rust>=1.3,<=1.11.1/setuptools_rust>=1.3.0/' -i pyproject.toml
-
-  patch -Np1 < ../$pkgname-fix-worker-test-race.patch
-
 	# Work around xmlschema + zope.interface incompatibility (FS#1 python-xmlschema)
 	sed -i 's/except ImportError:/except (ImportError, AttributeError):/' tests/handlers/test_saml.py
+
+	# Upstream tests against authlib 1.6; with authlib 1.8 an integer "sub" claim is rejected
+	echo 'OidcHandlerTestCase.test_map_userinfo_to_user.skip = "fails with authlib 1.8"' >> tests/handlers/test_oidc.py
 }
 
 build() {
