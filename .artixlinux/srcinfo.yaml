@@ -1,9 +1,9 @@
 ---
-version: 3.11.2-1
+version: 3.12.0-1
 pkgbase:
   name: localsearch
   pkgdesc: Filesystem indexer and metadata extractor
-  pkgver: 3.11.2
+  pkgver: 3.12.0
   pkgrel: 1
   url: https://gnome.pages.gitlab.gnome.org/localsearch/
   arch:
@@ -40,9 +40,11 @@ pkgbase:
     - libgxps
     - libiptcdata
     - libjpeg-turbo
+    - libmediainfo
     - libosinfo
     - libpng
     - libseccomp
+    - libstdc++
     - libtiff
     - libwebp
     - libxml2
@@ -52,9 +54,9 @@ pkgbase:
     - totem-plparser
     - upower
   source:
-    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.11.2
+    - git+https://gitlab.gnome.org/GNOME/localsearch.git#tag=3.12.0
   b2sums:
-    - d23b268453d000d66fbdd66fd1a69197ccf4fa2f3d9c455abf5808c5b797ee6bda1cc9f74f3401d26964643cc5b043b1e5a2ce8e6fcceb9f085e66927363e4bf
+    - f72e010830ec9a6362a5c265d9322c886ad67f842fd19df48f24e001da57292076c32141e6487b338d461226b7a503fd9940626f8ad56540b1942fd8b4cc6529
 pkgname:
   - name: localsearch
     depends:
@@ -77,9 +79,11 @@ pkgname:
       - libgxps
       - libiptcdata
       - libjpeg-turbo
+      - libmediainfo
       - libosinfo
       - libpng
       - libseccomp
+      - libstdc++
       - libtiff
       - libwebp
       - libxml2
@@ -90,7 +94,7 @@ pkgname:
       - upower
       - libtinysparql-3.0.so
     provides:
-      - tracker3-miners=3.11.2
+      - tracker3-miners=3.12.0
     conflicts:
       - tracker3-miners<=3.7.3-2
     replaces:
@@ -103,4 +107,4 @@ pkgname:
       - python
       - python-gobject
       - tinysparql
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
