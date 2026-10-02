@@ -2,7 +2,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-session
-pkgver=50.1
+pkgver=51.0
 pkgrel=1
 pkgdesc="The GNOME Session Handler"
 url="https://gitlab.gnome.org/GNOME/gnome-session"
@@ -33,7 +33,7 @@ provides=(gnome-mimeapps)
 groups=(gnome)
 source=("git+https://gitlab.gnome.org/GNOME/gnome-session.git#tag=${pkgver/[a-z]/.&}"
         0001-meson-allow-building-with-elogind.patch)
-b2sums=('9804f39813633708d2d5178e528260e3cec8b8807b6c5f589f79202f51175af7492ea7422faa6632a9543cc1b29a2fc05488e00cb757fbc950a8306ebeed3733'
+b2sums=('341be544f20ccb5b7e919fea5d62b2455772d64b9e20f7f26dbe98932e65fad59f350b70a28170fd8d1ee3bb9731dabefb2512d82f4eab4ca7a44f8030eb5fc2'
         '0685ff053573841b23fe427e79bc9e42aaef92017f479b59347645083830efbe9a08a27d62afb74d0cdc1b5e341be5139b3d8eeb194d3b322f272aaf0d40da4f')
 
 prepare() {
@@ -56,7 +56,7 @@ check() {
 }
 
 package() {
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build --no-rebuild --destdir "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
