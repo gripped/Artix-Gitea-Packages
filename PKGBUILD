@@ -3,7 +3,7 @@
 # Contributor: Jan de Groot <jgc@archlinux.org>
 
 pkgname=gnome-system-monitor
-pkgver=50.0
+pkgver=51.0
 pkgrel=1
 pkgdesc="View current processes and monitor system state"
 url="https://apps.gnome.org/SystemMonitor"
@@ -39,7 +39,7 @@ makedepends=(
 )
 groups=(gnome)
 source=("git+https://gitlab.gnome.org/GNOME/gnome-system-monitor.git#tag=${pkgver/[a-z]/.&}")
-b2sums=('1bd1a881986dabbf48e71dc162f67b03d9704aff322d1f2cc56bb070a3b828e8e9c589293f03111315476db2ea8c678b036f11092b6b6a6805184224f7ccfed2')
+b2sums=('fc6c5bdd8282bdceb330b655935cfb2ad9cd80fe80a98dcf51ad8bf9fea9cc3a11749c43ad5ed271ae307d68fc05db7bcb6cad85b6f895b6bcb1e393f37dab9b')
 
 prepare() {
   cd $pkgname
@@ -55,7 +55,7 @@ check() {
 }
 
 package() {
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build --no-rebuild --destdir "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
