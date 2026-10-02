@@ -1,9 +1,9 @@
 ---
-version: 2.2.4.2-1
+version: 2.2.5-1
 pkgbase:
   name: libindi
   pkgdesc: A distributed control protocol designed to operate astronomical instrumentation
-  pkgver: 2.2.4.2
+  pkgver: 2.2.5
   pkgrel: 1
   url: https://www.indilib.org/index.php?title=Main_Page
   arch:
@@ -35,9 +35,9 @@ pkgbase:
   optdepends:
     - 'qt6-base: Qt client library'
   source:
-    - git+https://github.com/indilib/indi#tag=v2.2.4.2
+    - git+https://github.com/indilib/indi#tag=v2.2.5
   sha256sums:
-    - 68b25e29399bd1ee12a74bc7be5c97242a1d965c5f842faed8367aec858aa354
+    - 41ed5a419fae0abfb02f5c0e77abbf356e00f040e41d51009d6e109b6095abe2
 pkgname:
   - name: libindi
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
