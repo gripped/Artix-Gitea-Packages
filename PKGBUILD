@@ -8,18 +8,17 @@
 pkgbase=nvidia-580xx-utils
 pkgname=('nvidia-580xx-utils' 'opencl-nvidia-580xx' 'nvidia-580xx-dkms')
 pkgver=580.178.04
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
 options=('!strip')
-makedepends=('patchelf')
 _pkg="NVIDIA-Linux-x86_64-${pkgver}"
 _pkg_open="NVIDIA-kernel-module-source-${pkgver}"
 source=('nvidia-drm-outputclass.conf'
         'nvidia-utils.sysusers'
         'nvidia.rules'
-        'nvidia-sleep.conf'
+        'nvidia-580xx-utils.conf'
         "https://download.nvidia.com/XFree86/Linux-x86_64/${pkgver}/${_pkg}.run"
         '0001-Enable-atomic-kernel-modesetting-by-default.patch'
         '0002-Fix-hardware-cursor-crash.patch'
@@ -29,7 +28,7 @@ source=('nvidia-drm-outputclass.conf'
 sha256sums=('be99ff3def641bb900c2486cce96530394c5dc60548fc4642f19d3a4c784134d'
             'f77a5247a3ba63e9fad3a3b2822d0fcfa51e0f79b5a90bd79bf08ea34b64ab07'
             '0e54249a7754b668b436f0f7aa7e95fff68edbb12a93dbee4660e09a8c695f84'
-            '12d31a5425aba66be9e9129012cde82755ad4d5b7ce9933df8fc398c4fa8d631'
+            'ca8a5fdb8ea9ad868d3313fa00b1d4eec5272c4369f84f7e711e1e70a5358f9e'
             '5975a86ee45bffcb626f51ae33d1169b108186a2ea47ad651e72f13fa4b6d6f9'
             '163c57160cc1033020680f638b44ebd94b496152dcd8951e87d5077d4d5c2009'
             'c1a1cf05dd12efd67858180461ad97a6ebe206b55b56df207854b322ce734613'
@@ -62,9 +61,6 @@ prepare() {
     # https://forums.developer.nvidia.com/t/580-release-feedback-discussion/341205/1058
     patch -Np1 -i "${srcdir}/0002-Fix-hardware-cursor-crash.patch" -d "${srcdir}/${_pkg}/kernel"
 
-    # Fix compilation for 7.0
-    # patch -Np1 -i "${srcdir}/0003-kernel-7.0.patch" -d "${srcdir}/${_pkg}/kernel"
-    
     # Fix system sleep
     patch -Np1 -i "${srcdir}/nvidia-sleep.patch" -d "${srcdir}/${_pkg}/systemd/system-sleep"
 
@@ -285,17 +281,9 @@ package_nvidia-580xx-utils() {
 
     install -Dm644 "${srcdir}/nvidia.rules" "$pkgdir"/usr/lib/udev/rules.d/60-nvidia.rules
 
-    # Blacklist nouveau and nova
-    install -Dm644 /dev/stdin "${pkgdir}/usr/lib/modprobe.d/${pkgname}.conf" <<END
-blacklist nouveau
-blacklist nova_core
-blacklist nova_drm
-END
-    echo "nvidia-uvm" | install -Dm644 /dev/stdin "${pkgdir}/usr/lib/modules-load.d/${pkgname}.conf"
-
     # Enable PreserveVideoMemoryAllocations and TemporaryFilePath
     # Fixes Wayland Sleep, when restoring the session
-    install -Dm644 "${srcdir}/nvidia-sleep.conf" "${pkgdir}/usr/lib/modprobe.d/nvidia-sleep.conf"
+    install -Dm644 "${srcdir}/nvidia-580xx-utils.conf" "${pkgdir}/usr/lib/modprobe.d/nvidia-580xx-utils.conf"
 
     # Lists NVIDIA driver files for container runtimes like nvidia-container-toolkit
     install -Dm644 sandboxutils-filelist.json "${pkgdir}/usr/share/nvidia/files.d/sandboxutils-filelist.json"
