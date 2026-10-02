@@ -1,9 +1,9 @@
 ---
-version: 1.4.1-1
+version: 1.5.0-1
 pkgbase:
   name: python-google-auth-oauthlib
   pkgdesc: oauthlib integration for Google auth.
-  pkgver: 1.4.1
+  pkgver: 1.5.0
   pkgrel: 1
   url: http://google-auth-oauthlib.readthedocs.io/en/latest/
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   optdepends:
     - python-click
   source:
-    - python-google-auth-oauthlib-1.4.1.tar.gz::https://github.com/googleapis/google-cloud-python/archive/refs/tags/google-auth-oauthlib-v1.4.1.tar.gz
+    - python-google-auth-oauthlib-1.5.0.tar.gz::https://github.com/googleapis/google-cloud-python/archive/refs/tags/google-auth-oauthlib-v1.5.0.tar.gz
   sha256sums:
-    - 0c57e38f714c408f6ecf3182a5f671ecaf65126842c7e1272ba064b2fe0dbeda
+    - be7ef79df515911101feb5dd0b4f5f6926a9de7eba3c165b075cc4b781ab9939
 pkgname:
   - name: python-google-auth-oauthlib
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
