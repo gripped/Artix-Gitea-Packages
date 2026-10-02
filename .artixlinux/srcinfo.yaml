@@ -1,9 +1,9 @@
 ---
-version: 50.0-1
+version: 51.0-1
 pkgbase:
   name: gnome-calculator
   pkgdesc: GNOME Scientific calculator
-  pkgver: 50.0
+  pkgver: 51.0
   pkgrel: 1
   url: https://apps.gnome.org/Calculator
   arch:
@@ -23,6 +23,7 @@ pkgbase:
     - dconf
     - glib2
     - glibc
+    - gmp
     - gtk4
     - gtksourceview5
     - hicolor-icon-theme
@@ -36,9 +37,9 @@ pkgbase:
     - libgcalc-2.so
     - libgci-1.so
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-calculator.git#tag=50.0
+    - git+https://gitlab.gnome.org/GNOME/gnome-calculator.git#tag=51.0
   b2sums:
-    - 0f83432e40e0714799adc25127c597e7d1bff6465c0591a30651a0fb578b1e33248ed51b445f8a3846193ec7c72d3e1e54b9cffcbe74c8bcc87feee0cea85d52
+    - b456e4da55214c81adee7b992cabc49e51066ca965e97661c5c6e3999862010aec97fe0d3c755248d0bd75efd5124e156e344805043da01bab2d14f7cdaad199
 pkgname:
   - name: gnome-calculator
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
