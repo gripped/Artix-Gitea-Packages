@@ -51,4 +51,4 @@ pkgbase:
     - 6d3f26cfda79e037402f5170be3503700fdbe5c19027bacbf4e75364ff24f337bcc43f5d87082457ddf07149e0b40da8266f7f6df4b51a40844902f8c7bd7b06
 pkgname:
   - name: nodejs-lts-krypton
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
