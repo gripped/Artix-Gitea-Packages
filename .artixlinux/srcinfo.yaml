@@ -1,10 +1,10 @@
 ---
-version: 8.1.0-3
+version: 9.0.0-1
 pkgbase:
   name: python-pytest-bdd
   pkgdesc: BDD library for the pytest runner
-  pkgver: 8.1.0
-  pkgrel: 3
+  pkgver: 9.0.0
+  pkgrel: 1
   url: https://github.com/pytest-dev/pytest-bdd
   arch:
     - any
@@ -16,7 +16,7 @@ pkgbase:
     - git
     - python-build
     - python-installer
-    - python-poetry-core
+    - python-uv-build
   depends:
     - python
     - python-gherkin
@@ -28,9 +28,9 @@ pkgbase:
     - python-pytest
     - python-typing_extensions
   source:
-    - git+https://github.com/pytest-dev/pytest-bdd.git#tag=8.1.0
+    - git+https://github.com/pytest-dev/pytest-bdd.git#tag=9.0.0
   sha512sums:
-    - a8b22b0b9e34469fb927c9a748214cf96b009c14a91de5afed623c7f8286f23011e2c2425a7fb98ccbc466c67eb21af21918d79d2da3bf2a7ae270410f121510
+    - 3fdd564619771a6b109c1eade9718f8745bec7d87f27d7075a0875221a670644bbdb87734cd3c9c1d94feca7a8c0e1629f08334bbe4e6319a74a18cb184dac1c
 pkgname:
   - name: python-pytest-bdd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
