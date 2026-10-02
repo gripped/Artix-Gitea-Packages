@@ -1,0 +1,5 @@
+[nvidia-580xx-utils]
+source = "regex"
+url = "https://download.nvidia.com/XFree86/Linux-x86_64/"
+regex = '>(\d+\.\d+\.\d+)/<'
+include_regex = '^580\.\d+\.\d+$'

@@ -8,7 +8,7 @@
 pkgbase=nvidia-580xx-utils
 pkgname=('nvidia-580xx-utils' 'opencl-nvidia-580xx' 'nvidia-580xx-dkms')
 pkgver=580.178.04
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 url="http://www.nvidia.com/"
 license=('custom')
