@@ -1,35 +1,36 @@
-From 8fe1b550905c906afa6e8ffd0e1bb93e661763c4 Mon Sep 17 00:00:00 2001
+From 79abb94656850d9e1dee50c8ff6a2900252f2c81 Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Sat, 20 Jun 2026 12:47:27 +0200
-Subject: [PATCH] udev standalone install
+Date: Wed, 30 Sep 2026 21:13:51 +0200
+Subject: [PATCH] udev standalone
 
 ---
- meson.build                       | 13 ++++++----
+ meson.build                       | 16 +++++++++---
  meson_options.txt                 |  3 +++
- rules.d/meson.build               |  4 ++--
- shell-completion/bash/meson.build | 40 -------------------------------
- shell-completion/zsh/meson.build  | 33 -------------------------
- src/core/meson.build              |  5 ----
+ rules.d/meson.build               |  2 +-
+ shell-completion/bash/meson.build | 42 -------------------------------
+ shell-completion/zsh/meson.build  | 36 --------------------------
+ src/core/meson.build              | 14 ++---------
  src/hwdb/meson.build              |  2 +-
  src/libudev/meson.build           |  9 ++++++-
- src/udev/meson.build              |  8 +++----
+ src/udev/meson.build              |  8 +++---
  src/udev/udevd.c                  |  2 +-
  test/meson.build                  |  2 +-
- 11 files changed, 29 insertions(+), 92 deletions(-)
+ units/meson.build                 |  4 ---
+ 12 files changed, 33 insertions(+), 107 deletions(-)
 
 diff --git a/meson.build b/meson.build
-index ff11c0c10c..172bd1dc96 100644
+index 2db5138147..93ad855395 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -96,6 +96,7 @@ conf.set10('HAVE_SPLIT_BIN', split_bin,
-            description : 'bin and sbin directories are separate')
- 
- have_standalone_binaries = get_option('standalone-binaries')
+@@ -103,6 +103,7 @@ standalone_binaries = get_option('standalone-binaries').split(',')
+ if standalone_binaries == ['']
+         standalone_binaries = []
+ endif
 +have_standalone_udev = get_option('standalone-udev')
  
  conf.set10('CREATE_LOG_DIRS', get_option('create-log-dirs'))
  
-@@ -128,7 +129,7 @@ includedir = prefixdir / get_option('includedir')
+@@ -135,7 +136,7 @@ includedir = prefixdir / get_option('includedir')
  datadir = prefixdir / get_option('datadir')
  localstatedir = '/' / get_option('localstatedir')
  
@@ -38,27 +39,30 @@ index ff11c0c10c..172bd1dc96 100644
  libexecdir_to_bin = '../../bin/'
  pkglibdir = libdir / 'systemd'
  
-@@ -2465,7 +2466,6 @@ subdir('shell-completion/zsh')
- subdir('sysctl.d')
- subdir('sysusers.d')
- subdir('tmpfiles.d')
--subdir('units')
+@@ -2133,7 +2134,7 @@ module_additional_kwargs = {
  
- install_subdir('factory/etc',
-                install_dir : factorydir)
-@@ -2487,6 +2487,11 @@ install_data('LICENSE.GPL2',
+ # 'src/core' embeds a built-in copy of some unit files, so the unit file list
+ # from 'units' must be defined first.
+-subdir('units')
++
+ # systemd-analyze requires 'libcore'
+ subdir('src/core')
+ # systemd-networkd requires 'libsystemd_network'
+@@ -2745,6 +2746,13 @@ install_data('LICENSE.GPL2',
  install_subdir('LICENSES',
                 install_dir : docdir)
  
-+install_data('LICENSE.GPL2',
++if have_standalone_udev
++        install_data('LICENSE.GPL2',
 +             'LICENSE.LGPL2.1',
 +             install_tag : 'udev',
 +             install_dir : datadir / 'doc/udev')
++endif
 +
  #####################################################################
  
  # Ensure that changes to the docs/ directory do not break the
-@@ -2700,10 +2705,10 @@ udev_targets = []
+@@ -2960,10 +2968,10 @@ udev_targets = []
  foreach bin : udev_binaries
          udev_targets += executables_by_name.get(bin, [])
  endforeach
@@ -72,10 +76,10 @@ index ff11c0c10c..172bd1dc96 100644
  
  alt_time_epoch = run_command('date', '-Is', '-u', '-d', f'@@time_epoch@', check : false)
 diff --git a/meson_options.txt b/meson_options.txt
-index b5856dd8f8..868048ad7c 100644
+index 007780664e..9df71f918a 100644
 --- a/meson_options.txt
 +++ b/meson_options.txt
-@@ -576,3 +576,6 @@ option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
+@@ -580,3 +580,6 @@ option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
  
  option('default-oci-registry', type : 'string', value : 'docker.io',
         description : 'Default OCI registry name')
@@ -83,20 +87,18 @@ index b5856dd8f8..868048ad7c 100644
 +option('standalone-udev', type : 'boolean', value : false,
 +       description : 'build standalone version of udev')
 diff --git a/rules.d/meson.build b/rules.d/meson.build
-index aa469ef7a7..8c56d96b04 100644
+index b47bc781de..f965edaec0 100644
 --- a/rules.d/meson.build
 +++ b/rules.d/meson.build
-@@ -2,7 +2,8 @@
+@@ -2,6 +2,7 @@
  
  install_data(
          'README',
--        install_dir : udevrulesdir)
-+        install_dir : udevrulesdir,
-+        install_tag : 'udev')
++        install_tag : 'udev',
+         install_dir : udevrulesdir)
  
  rules = [
-         [files('60-autosuspend.rules',
-@@ -67,7 +68,6 @@ rules_in = [
+@@ -70,7 +71,6 @@ rules_in = [
          ['50-udev-default.rules'],
          ['60-persistent-storage.rules'],
          ['64-btrfs.rules'],
@@ -105,10 +107,10 @@ index aa469ef7a7..8c56d96b04 100644
          ['70-uaccess.rules',   conf.get('ENABLE_LOGIND') == 1 and conf.get('HAVE_ACL') == 1],
          ['71-seat.rules',      conf.get('ENABLE_LOGIND') == 1],
 diff --git a/shell-completion/bash/meson.build b/shell-completion/bash/meson.build
-index cddf742059..0181111975 100644
+index 1b8000e8a2..0181111975 100644
 --- a/shell-completion/bash/meson.build
 +++ b/shell-completion/bash/meson.build
-@@ -20,47 +20,7 @@ custom_target(
+@@ -20,49 +20,7 @@ custom_target(
          install_dir : bashcompletiondir)
  
  foreach item : [
@@ -147,20 +149,22 @@ index cddf742059..0181111975 100644
 -        ['systemd-run',         ''],
 -        ['systemd-sysext',      'ENABLE_SYSEXT'],
 -        ['systemd-sysinstall',  'ENABLE_SYSINSTALL'],
+-        ['systemd-sysupdate',   'ENABLE_SYSUPDATE'],
 -        ['systemd-vmspawn',     'ENABLE_VMSPAWN'],
 -        ['systemd-vpick',       ''],
 -        ['timedatectl',         'ENABLE_TIMEDATED'],
          ['udevadm',             ''],
+-        ['updatectl',           'ENABLE_SYSUPDATED'],
 -        ['userdbctl',           'ENABLE_USERDB'],
 -        ['varlinkctl',          ''],
  ]
  
          if item[1] == '' or conf.get(item[1]) == 1
 diff --git a/shell-completion/zsh/meson.build b/shell-completion/zsh/meson.build
-index f10ba7be61..5758d95479 100644
+index e8add29e82..5758d95479 100644
 --- a/shell-completion/zsh/meson.build
 +++ b/shell-completion/zsh/meson.build
-@@ -15,40 +15,7 @@ custom_target(
+@@ -15,43 +15,7 @@ custom_target(
          install_dir : zshcompletiondir)
  
  foreach item : [
@@ -185,6 +189,7 @@ index f10ba7be61..5758d95479 100644
 -        ['_storagectl',               ''],
 -        ['_systemd',                  ''],
 -        ['_systemd-analyze',          ''],
+-        ['_systemd-cryptenroll',      'HAVE_LIBCRYPTSETUP'],
 -        ['_systemd-delta',            ''],
 -        ['_systemd-hwdb',             'ENABLE_HWDB'],
 -        ['_systemd-id128',            ''],
@@ -193,19 +198,45 @@ index f10ba7be61..5758d95479 100644
 -        ['_systemd-path',             ''],
 -        ['_systemd-run',              ''],
 -        ['_systemd-sysinstall',       'ENABLE_SYSINSTALL'],
+-        ['_systemd-sysupdate',        'ENABLE_SYSUPDATE'],
 -        ['_systemd-tmpfiles',         'ENABLE_TMPFILES'],
 -        ['_timedatectl',              'ENABLE_TIMEDATED'],
          ['_udevadm',                  ''],
+-        ['_updatectl',                'ENABLE_SYSUPDATED'],
 -        ['_userdbctl',                ''],
 -        ['_varlinkctl',               ''],
  ]
  
          if item[1] == '' or conf.get(item[1]) == 1
 diff --git a/src/core/meson.build b/src/core/meson.build
-index af50a2a4fa..c24a37b725 100644
+index e8d6563803..ccb720edf2 100644
 --- a/src/core/meson.build
 +++ b/src/core/meson.build
-@@ -304,11 +304,6 @@ if install_sysconfdir
+@@ -135,12 +135,6 @@ load_fragment_gperf_nulstr_c = custom_target(
+         command : [awk, '-f', '@INPUT0@', '@INPUT1@'],
+         capture : true)
+ 
+-generate_builtin_units = files('generate-builtin-units.py')
+-builtin_units_inc = custom_target(
+-        input : [generate_builtin_units, embedded_units],
+-        output : 'builtin-units.inc',
+-        command : [python, generate_builtin_units, embedded_units],
+-        capture : true)
+ 
+ generate_bpf_delegate_configs = files('generate-bpf-delegate-configs.py')
+ bpf_delegate_configs_inc = custom_target(
+@@ -162,8 +156,8 @@ bpf_delegate_xml = custom_target(
+         capture : true)
+ man_page_depends += bpf_delegate_xml
+ 
+-generated_sources += [load_fragment_gperf_c, load_fragment_gperf_nulstr_c, bpf_delegate_configs_inc, builtin_units_inc]
+-libcore_sources += [load_fragment_gperf_c, load_fragment_gperf_nulstr_c, bpf_delegate_configs_inc, builtin_units_inc]
++generated_sources += [load_fragment_gperf_c, load_fragment_gperf_nulstr_c, bpf_delegate_configs_inc]
++libcore_sources += [load_fragment_gperf_c, load_fragment_gperf_nulstr_c, bpf_delegate_configs_inc]
+ libcore_build_dir = meson.current_build_dir()
+ libcore_name = 'systemd-core-@0@'.format(shared_lib_tag)
+ core_includes = [include_directories('.'), includes]
+@@ -334,10 +328,6 @@ if install_sysconfdir
                          install_dir : sysconfdir / 'xdg/systemd')
  endif
  
@@ -213,12 +244,11 @@ index af50a2a4fa..c24a37b725 100644
 -install_symlink('init',
 -                pointing_to : '../lib/systemd/systemd',
 -                install_dir : sbindir)
--
+ 
  ############################################################
  
- core_test_template = test_template + {
 diff --git a/src/hwdb/meson.build b/src/hwdb/meson.build
-index 57ace3ad44..96c0b185d0 100644
+index cb1d3562bd..064b55192b 100644
 --- a/src/hwdb/meson.build
 +++ b/src/hwdb/meson.build
 @@ -2,7 +2,7 @@
@@ -256,10 +286,10 @@ index 854628aed4..ffed0018e6 100644
 +        install_tag : 'libudev-devel',
          install_dir : pkgconfiglibdir)
 diff --git a/src/udev/meson.build b/src/udev/meson.build
-index 375645e759..ea353f5600 100644
+index 15d140398b..a6032f57c4 100644
 --- a/src/udev/meson.build
 +++ b/src/udev/meson.build
-@@ -256,9 +256,9 @@ executables += [
+@@ -244,9 +244,9 @@ executables += [
          },
  ]
  
@@ -272,7 +302,7 @@ index 375645e759..ea353f5600 100644
                  install_tag : 'udev')
  
  if install_sysconfdir_samples
-@@ -275,7 +275,7 @@ udev_pc = custom_target(
+@@ -263,7 +263,7 @@ udev_pc = custom_target(
          output : 'udev.pc',
          command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
          install : pkgconfigdatadir != 'no',
@@ -282,7 +312,7 @@ index 375645e759..ea353f5600 100644
  
  if install_sysconfdir
 diff --git a/src/udev/udevd.c b/src/udev/udevd.c
-index 4cbc481c76..ca2e207ead 100644
+index 593eee89b8..1e11406e92 100644
 --- a/src/udev/udevd.c
 +++ b/src/udev/udevd.c
 @@ -67,7 +67,7 @@ int run_udevd(int argc, char *argv[]) {
@@ -295,7 +325,7 @@ index 4cbc481c76..ca2e207ead 100644
                  /* connect /dev/null to stdin, stdout, stderr */
                  if (log_get_max_level() < LOG_DEBUG) {
 diff --git a/test/meson.build b/test/meson.build
-index fd3dba3a60..8284b24615 100644
+index d58ff3a637..202295db40 100644
 --- a/test/meson.build
 +++ b/test/meson.build
 @@ -40,7 +40,7 @@ endif
@@ -307,6 +337,21 @@ index fd3dba3a60..8284b24615 100644
          test('hwdb-test',
               files('hwdb-test.sh'),
               suite : 'dist',
+diff --git a/units/meson.build b/units/meson.build
+index 9f8f8d0e41..bae7b105b4 100644
+--- a/units/meson.build
++++ b/units/meson.build
+@@ -1174,10 +1174,6 @@ foreach unit : units
+                              install_tag : unit.get('install_tag', ''))
+         endif
+ 
+-        if name in embedded_unit_names
+-                # Embed either the processed output or the original file.
+-                embedded_units += needs_jinja ? processed : source
+-        endif
+ 
+         if install
+                 foreach target : unit.get('symlinks', [])
 -- 
-2.54.0
+2.55.0
 
