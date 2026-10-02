@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -52,8 +52,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: null
-    packages: []
+    version: 2026.18.2-2.5
+    packages:
+      - shader-slang-2026.18.2-2.5-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: null
