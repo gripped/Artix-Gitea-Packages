@@ -1,10 +1,10 @@
 ---
-version: 8.6.1-1
+version: 8.6.1-2
 pkgbase:
   name: gala
   pkgdesc: The Pantheon Window Manager
   pkgver: 8.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/elementary/gala
   arch:
     - x86_64
@@ -36,7 +36,7 @@ pkgbase:
     - libibus
     - libxext
     - libxfixes
-    - mutter
+    - mutter49
     - pango
     - sqlite
     - wayland
@@ -48,4 +48,4 @@ pkgbase:
     - 6d4cbb74d681d76c1522b5461ff126ce6b1ebd7f716a76135dd5f207dbf18e776c919d06ba2a16b9a67e66f64c5d003b0c07483b2f57884adb78df86250cb5f4
 pkgname:
   - name: gala
-# generated with artixpkg 0.39.1
+# generated with artixpkg 0.40.0-1-any
