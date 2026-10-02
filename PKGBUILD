@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=3.0
-_tag='261.3'
+_tag='262'
 
 pkgbase=udev
 pkgname=(
@@ -54,10 +54,10 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-udev-standalone-install.patch
 )
-sha512sums=('d0cb1518becf7f105c2ce60f794bcddf4f8330174f56fcdfbd6b5f5e65fa94acb4098631ffe9d60a8b4e3c04b878f32c222b42dd827b5ff052bd460f4a30652a'
+sha512sums=('7f6b18684e8e696e0fa6fff45213d64a9bd54e6075d8950f8e5679fe14c92737cdc3a54b58a60f68867d95bad8736584e8036fc09bbd5752ee8026308f76493f'
             'e5fec179ae4753b7ed844906d140d3efe525cfdf6675435e80e13a548dd087b0973e262011da5a41b3278edd967aadc5c800fcfddf41987c00fa02c4fdcc91c0'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            '43f77dad07b4926d12731c1ff85d2439a6accb067d267bff2923a080ed8daba194d78b6893d0e75f222dd0a720817b5f39052c3d94d4f68f4ca0052bf87f7ead')
+            '266a9da1f2aedaaa96dd46842779e27021543a858b4f2b0e80bdcb865bfe5887a710fe9c68473b5394ffd6aa85091c61744ca9fa546905f875eab10d15f4edeb')
 
 _backports=(
     # hwdb/keyboard: fix match for for X+ Piccolo, again
@@ -120,7 +120,7 @@ build() {
 
         -Ddefault-keymap='us'
 
-        -Dstandalone-binaries=false
+        -Dstandalone-binaries=''
         -Dsysusers=false
         -Dtmpfiles=false
 
