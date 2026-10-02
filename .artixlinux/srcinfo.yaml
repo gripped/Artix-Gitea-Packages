@@ -1,9 +1,9 @@
 ---
-version: 1.6.3-1
+version: 1.7.0-1
 pkgbase:
   name: libshumate
   pkgdesc: Map widget for GTK 4
-  pkgver: 1.6.3
+  pkgver: 1.7.0
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/libshumate
   arch:
@@ -35,11 +35,11 @@ pkgbase:
     - protobuf-c
     - sqlite
   source:
-    - git+https://gitlab.gnome.org/GNOME/libshumate.git?signed#tag=1.6.3
+    - git+https://gitlab.gnome.org/GNOME/libshumate.git?signed#tag=1.7.0
   validpgpkeys:
     - 7448F128A4B18AB2EF87F092FA6624580A420D5D
   b2sums:
-    - bbd2e732ec191d8c060c64625aa6009ae031f611a3c88e590d64bbd1e78b6bac66007e29da2b0cd1157c569ba5a01ab910fa4b7b8967db8c5f3430919f1e4d7e
+    - 2c3e236405e9cdf7e63140c63fcfdf0a75690c70ac1478c86c07ad10c835bfd75a7383c463e6792721b0e9259f33248e58e1f53edc31f799566cba594d4bbcea
 pkgname:
   - name: libshumate
     provides:
@@ -47,4 +47,4 @@ pkgname:
   - name: libshumate-docs
     pkgdesc: Map widget for GTK 4 (documentation)
     depends: []
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
