@@ -80,7 +80,7 @@ build() {
         -Dshared-lib-tag="${pkgver}-${pkgrel}"
         -Dmode=release
 
-        -Dstandalone-binaries=false
+        -Dstandalone-binaries=''
         -Dsysusers=false
         -Dtmpfiles=false
 
@@ -112,8 +112,6 @@ build() {
         -Dntp-servers=''
         -Defi=false
 
-        -Dsysvinit-path=
-        -Dsysvrcnd-path=
         -Ddefault-dnssec=no
 
         -Ddefault-llmnr=no
@@ -149,9 +147,7 @@ build() {
         -Dlibcryptsetup=disabled
         -Dlibcurl=disabled
         -Dlibfido2=disabled
-        -Dlibidn=disabled
         -Dlibidn2=disabled
-        -Dlibiptc=disabled
         -Dlocaled=false
         -Dlogind=false
         -Dlz4=disabled
