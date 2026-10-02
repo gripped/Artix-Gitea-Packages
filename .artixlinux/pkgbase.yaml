@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,8 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 51.0-1
+    packages:
+      - mutter-51.0-1-x86_64.pkg.tar.zst
+      - mutter-devkit-51.0-1-x86_64.pkg.tar.zst
+      - mutter-docs-51.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 50.5-1
