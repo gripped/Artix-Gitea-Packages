@@ -1,10 +1,10 @@
 ---
-version: 1.1.0-1
+version: 1.1.0-1.1
 pkgbase:
   name: kirigami-app-components
   pkgdesc: Kirigami addons and modules necessary to do a full featured KDE application
   pkgver: 1.1.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://invent.kde.org/libraries/kirigami-app-components
   arch:
     - x86_64

@@ -2,7 +2,7 @@
 
 pkgname=kirigami-app-components
 pkgver=1.1.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Kirigami addons and modules necessary to do a full featured KDE application'
 url='https://invent.kde.org/libraries/kirigami-app-components'
 arch=(x86_64)
