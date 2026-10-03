@@ -1,9 +1,9 @@
 ---
-version: 50.2-1
+version: 51.0-1
 pkgbase:
   name: gnote
   pkgdesc: A note taking application
-  pkgver: 50.2
+  pkgver: 51.0
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/gnote/-/wikis/Gnote
   arch:
@@ -34,9 +34,9 @@ pkgbase:
     - pangomm-2.48
     - util-linux-libs
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnote.git#tag=50.2
+    - git+https://gitlab.gnome.org/GNOME/gnote.git#tag=51.0
   b2sums:
-    - b55237bae73cdd38de69a14964d37fc9e8c825e6a0ba19ed2597e69d3c5b169983205091fcd3dec12ce5c5570adbcdb6277c408b07e9d4fd72973c79041a56b8
+    - 12127798e2caef46c4cc23485e12d299c6312920f57829bbfcbc615ee711b03e8859d5bd0650f6a24072bcf7dfb29ab977794da9100ee6f3d63b3df62616adb4
 pkgname:
   - name: gnote
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
