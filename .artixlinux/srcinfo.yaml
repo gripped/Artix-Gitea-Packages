@@ -1,9 +1,9 @@
 ---
-version: 2:7.2.4-3
+version: 2:10.0-1
 pkgbase:
   name: rocm-llvm
-  pkgver: 7.2.4
-  pkgrel: 3
+  pkgver: 10.0
+  pkgrel: 1
   epoch: 2
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
@@ -28,11 +28,9 @@ pkgbase:
     - staticlibs
     - '!lto'
   source:
-    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=rocm-7.2.4
-    - 0001-compiler-rt-sanitizer-Remove-linux-scc.h.patch
+    - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=therock-10.0
   sha256sums:
-    - cda215d04dfb6ede38c542d4604711d4a4623267df0f3d678491cd9fbcc32fd9
-    - 3592a157f9c8c748a5f75d79c9e328f1c359ec6609d260a58d4b68ba97f7fe9b
+    - 55ade468dfcb50bc6dbfd6c3a53c801744893cbd6d685d6d1da421d399e2cf58
 pkgname:
   - name: rocm-llvm
     pkgdesc: Radeon Open Compute - LLVM toolchain (clang, lld)
@@ -85,7 +83,7 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:7.2.4-3
+      - rocm-llvm=2:10.0-1
       - rocm-llvm-libs
       - rocm-mlir-libs
   - name: rocm-llvm-headers
@@ -93,14 +91,14 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:7.2.4-3
+      - rocm-llvm=2:10.0-1
   - name: rocm-llvm-static
     pkgdesc: Radeon Open Compute - LLVM static libraries and CMake configuration
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm-headers=2:7.2.4-3
-      - rocm-llvm-tools=2:7.2.4-3
+      - rocm-llvm-headers=2:10.0-1
+      - rocm-llvm-tools=2:10.0-1
     optdepends:
       - 'rocm-flang: find_package(Flang)'
   - name: rocm-flang
@@ -108,7 +106,7 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:7.2.4-3
+      - rocm-llvm=2:10.0-1
       - rocm-llvm-libs
       - rocm-mlir-libs
       - gcc-libs

@@ -6,22 +6,15 @@ pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-llvm-libs rocm-mlir-libs rocm-llvm-tools rocm-llvm-headers
          rocm-llvm-static rocm-flang rocm-device-libs comgr)
 epoch=2
-pkgver=7.2.4
-pkgrel=3
+pkgver=10.0
+pkgrel=1
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
              'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
-source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=rocm-$pkgver"
-        '0001-compiler-rt-sanitizer-Remove-linux-scc.h.patch')
-sha256sums=('cda215d04dfb6ede38c542d4604711d4a4623267df0f3d678491cd9fbcc32fd9'
-            '3592a157f9c8c748a5f75d79c9e328f1c359ec6609d260a58d4b68ba97f7fe9b')
+source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=therock-$pkgver")
+sha256sums=('55ade468dfcb50bc6dbfd6c3a53c801744893cbd6d685d6d1da421d399e2cf58')
 options=(staticlibs !lto)
-
-prepare() {
-    # linux/scc.h is gone from linux-api-headers >= 7.1
-    patch -Np1 -d "$pkgbase" -i "$srcdir/0001-compiler-rt-sanitizer-Remove-linux-scc.h.patch"
-}
 
 build() {
     # Build only minimal debug info to reduce size
