@@ -5,7 +5,7 @@ pkgname=(
   wpewebkit
   wpewebkit-docs
 )
-pkgver=2.52.6
+pkgver=2.54.0
 pkgrel=1
 pkgdesc="Embeddable web content engine"
 url="https://wpewebkit.org"
@@ -42,6 +42,7 @@ depends=(
   atk
   bubblewrap
   cairo
+  enchant
   expat
   fontconfig
   freetype2
@@ -103,9 +104,9 @@ makedepends=(
 source=(
   $url/releases/wpewebkit-$pkgver.tar.xz{,.asc}
 )
-sha256sums=('b2bafef2751625b7fdf530f230ff0f542ff0eeba3590c3a989d931b2a55c858e'
+sha256sums=('efa9bcc3cb891c2d88f50eec710d9ccee71cbdf1040420361eb98c17355eb452'
             'SKIP')
-b2sums=('cd7be4cb535f3f0abf23191407c11770bc1a4135d72e0be62b909fc506f2557942ba3c94dc7aa6a84c019add0dc964f40dca432111d2b8e0860147df6ebf475a'
+b2sums=('095b4c47f6154257242b3dfcd3ea0adba5e39b7683f953dda6c875061bb62f2dc4a7e450c7df033b1bd2d197fd5765a91a8cf22365ecdd8417f7293f7e8166bc'
         'SKIP')
 validpgpkeys=(
   # https://wpewebkit.org/release/verify/

@@ -1,9 +1,9 @@
 ---
-version: 2.52.6-1
+version: 2.54.0-1
 pkgbase:
   name: wpewebkit
   pkgdesc: Embeddable web content engine
-  pkgver: 2.52.6
+  pkgver: 2.54.0
   pkgrel: 1
   url: https://wpewebkit.org
   arch:
@@ -53,6 +53,7 @@ pkgbase:
     - atk
     - bubblewrap
     - cairo
+    - enchant
     - expat
     - fontconfig
     - freetype2
@@ -95,16 +96,16 @@ pkgbase:
     - xdg-dbus-proxy
     - zlib
   source:
-    - https://wpewebkit.org/releases/wpewebkit-2.52.6.tar.xz
-    - https://wpewebkit.org/releases/wpewebkit-2.52.6.tar.xz.asc
+    - https://wpewebkit.org/releases/wpewebkit-2.54.0.tar.xz
+    - https://wpewebkit.org/releases/wpewebkit-2.54.0.tar.xz.asc
   validpgpkeys:
     - 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
     - 013A0127AC9C65B34FFA62526C1009B693975393
   sha256sums:
-    - b2bafef2751625b7fdf530f230ff0f542ff0eeba3590c3a989d931b2a55c858e
+    - efa9bcc3cb891c2d88f50eec710d9ccee71cbdf1040420361eb98c17355eb452
     - SKIP
   b2sums:
-    - cd7be4cb535f3f0abf23191407c11770bc1a4135d72e0be62b909fc506f2557942ba3c94dc7aa6a84c019add0dc964f40dca432111d2b8e0860147df6ebf475a
+    - 095b4c47f6154257242b3dfcd3ea0adba5e39b7683f953dda6c875061bb62f2dc4a7e450c7df033b1bd2d197fd5765a91a8cf22365ecdd8417f7293f7e8166bc
     - SKIP
 pkgname:
   - name: wpewebkit
@@ -113,6 +114,7 @@ pkgname:
       - atk
       - bubblewrap
       - cairo
+      - enchant
       - expat
       - fontconfig
       - freetype2
@@ -166,4 +168,4 @@ pkgname:
   - name: wpewebkit-docs
     pkgdesc: Embeddable web content engine (documentation)
     depends: []
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
