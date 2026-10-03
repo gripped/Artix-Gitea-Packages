@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260903.191659.g2f3bf60dcd96-1
+    version: 20260930.000807.g0bd516ee793b-1
     packages:
-      - libretro-parallel-n64-20260903.191659.g2f3bf60dcd96-1-x86_64.pkg.tar.zst
+      - libretro-parallel-n64-20260930.000807.g0bd516ee793b-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
