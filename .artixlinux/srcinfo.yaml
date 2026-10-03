@@ -1,10 +1,10 @@
 ---
-version: 3.58.1-4
+version: 3.58.1-5
 pkgbase:
   name: gnome-panel
   pkgdesc: Panel of GNOME Flashback
   pkgver: 3.58.1
-  pkgrel: 4
+  pkgrel: 5
   url: https://wiki.gnome.org/Projects/GnomePanel
   arch:
     - x86_64
@@ -67,4 +67,4 @@ pkgbase:
     - e0d48e8eeee6fcb9031a2ad5726979b5a5632804235f91fff93a5bfd34d076e64e6a3ba96998659e19c729f957bbfb4adb3c91a32716a4fde6394a2a4b1ef5dc
 pkgname:
   - name: gnome-panel
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
