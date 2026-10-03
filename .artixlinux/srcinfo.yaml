@@ -1,10 +1,10 @@
 ---
-version: 1.63-1
+version: 1.63-2
 pkgbase:
   name: snes9x
   pkgdesc: Portable Super Nintendo Entertainment System (TM) emulator
   pkgver: 1.63
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.snes9x.com/
   arch:
     - x86_64
@@ -38,12 +38,12 @@ pkgbase:
     - sdl2
     - zlib
   source:
-    - git+https://github.com/snes9xgit/snes9x.git#tag=e53e2b43e6cd83ba98d77478955f547cbf1eab14
+    - git+https://github.com/snes9xgit/snes9x.git#tag=921f9f7b83660eb44ad263022a57a4a029057c37
     - git+https://github.com/KhronosGroup/glslang.git
     - git+https://github.com/KhronosGroup/SPIRV-Cross.git
     - git+https://github.com/KhronosGroup/Vulkan-Headers.git
   b2sums:
-    - 56819bc7c717701e816fa765fb065f21cf5909b065f6e02f2cf2c6f2419ca63c87c2935858c9db6181873a94fda5f73b6826380ee21d7448bfe19d537368b3f7
+    - 4537107313fdfd2491c80601df185e0e5779306010f6d2ce370a80cc0faf5cbd74da7b8452a112ee4a89c744715181603de13d3b8f5bd35b06187082e8103f7b
     - SKIP
     - SKIP
     - SKIP
@@ -79,4 +79,4 @@ pkgname:
       - portaudio
       - sdl2
       - zlib
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any

@@ -1,4 +1,6 @@
-# Maintainer: Maxime Gauduin <alucryd@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Maxime Gauduin <alucryd@archlinux.org>
+# Contributor: Hyacinthe Cartiaux <hyacinthe@archlinux.org>
 # Contributor: Eric Bélanger <eric@archlinux.org>
 
 pkgbase=snes9x
@@ -7,7 +9,7 @@ pkgname=(
   snes9x-gtk
 )
 pkgver=1.63
-pkgrel=1
+pkgrel=2
 pkgdesc='Portable Super Nintendo Entertainment System (TM) emulator'
 arch=(x86_64)
 url=http://www.snes9x.com/
@@ -40,14 +42,14 @@ makedepends=(
   sdl2
   zlib
 )
-_tag=e53e2b43e6cd83ba98d77478955f547cbf1eab14
+_tag=921f9f7b83660eb44ad263022a57a4a029057c37
 source=(
   git+https://github.com/snes9xgit/snes9x.git#tag=${_tag}
   git+https://github.com/KhronosGroup/glslang.git
   git+https://github.com/KhronosGroup/SPIRV-Cross.git
   git+https://github.com/KhronosGroup/Vulkan-Headers.git
 )
-b2sums=('56819bc7c717701e816fa765fb065f21cf5909b065f6e02f2cf2c6f2419ca63c87c2935858c9db6181873a94fda5f73b6826380ee21d7448bfe19d537368b3f7'
+b2sums=('4537107313fdfd2491c80601df185e0e5779306010f6d2ce370a80cc0faf5cbd74da7b8452a112ee4a89c744715181603de13d3b8f5bd35b06187082e8103f7b'
         'SKIP'
         'SKIP'
         'SKIP')
@@ -66,18 +68,24 @@ prepare() {
   autoreconf -fiv
 }
 
+pkgver() {
+  cd snes9x
+  git describe --tags
+}
+
 build() {
   export CC=clang
   export CXX=clang++
   export CFLAGS+=' -Wno-format-security'
-  export CXXFLAGS+=' -Wno-format-security'
+  export CXXFLAGS+=' -Wno-format-security -I/usr/include/minizip -include stdint.h'
   pushd snes9x/unix
   ./configure \
     --prefix='/usr' \
     --enable-netplay
   make
   popd
-  cmake -S snes9x/gtk -B build build -G Ninja \
+  cmake -S snes9x/gtk -B build -G Ninja \
+    -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
     -DCMAKE_BUILD_TYPE=None \
     -DCMAKE_INSTALL_PREFIX=/usr \
     -Wno-dev
