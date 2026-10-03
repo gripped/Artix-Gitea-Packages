@@ -1,16 +1,17 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Lukas Fleischer <lfleischer@archlinux.org>
+# Contributor: Hyacinthe Cartiaux <hyacinthe@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 # Contributor: Paul Mattal <paul@archlinux.org>
 # Contributor: Tom Newsom <Jeepster@gmx.co.uk>
 
 pkgname=ncftp
 pkgver=3.3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A set of free application programs implementing FTP"
 url="https://www.ncftp.com/"
 arch=('x86_64')
-license=('custom')
+license=('ClArtistic')
 depends=('ncurses')
 source=(https://www.ncftp.com/public_ftp/ncftp/ncftp-$pkgver-src.tar.gz
         ncftp-reproducible.patch)
