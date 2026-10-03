@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 20260902.223111.ge1e6d25fa139-1
+    version: 20260927.201651.g4d23cf151640-1
     packages:
-      - libretro-dolphin-20260902.223111.ge1e6d25fa139-1-x86_64.pkg.tar.zst
+      - libretro-dolphin-20260927.201651.g4d23cf151640-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
