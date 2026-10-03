@@ -4,7 +4,7 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocm-opencl-runtime
-pkgver=7.2.4
+pkgver=10.0
 pkgrel=1
 pkgdesc='OpenCL implementation for AMD'
 arch=('x86_64')
@@ -24,8 +24,8 @@ depends=(
 makedepends=('git' 'rocm-cmake')
 provides=('opencl-driver')
 _git='https://github.com/ROCm/rocm-systems'
-source=("rocm-systems::git+$_git#tag=rocm-$pkgver")
-sha256sums=('a619465777d59fd484a1e37cb975c738e0122b37804296598130ac3fb6d93314')
+source=("rocm-systems::git+$_git#tag=therock-$pkgver")
+sha256sums=('3d90b4be5dc38a7bc818c58ea71d59639d29be4f620528955c6c0337594fa9c9')
 _dir_name='rocm-systems/projects/clr'
 
 build() {
@@ -44,8 +44,11 @@ build() {
 package() {
     DESTDIR="$pkgdir" cmake --install build
 
-    install -Dm644 "$_dir_name/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+    # Place OpenCL configuration into standard search path
+    mkdir -p "$pkgdir"/etc/{OpenCL,ld.so.conf.d}
+    mv -vt "$pkgdir"/etc/OpenCL "$pkgdir"/opt/rocm/etc/OpenCL/*
+    mv -vt "$pkgdir"/etc/ld.so.conf.d "$pkgdir"/opt/rocm/etc/ld.so.conf.d/*
+    rm -r "$pkgdir"/opt/rocm/etc
 
-    echo '/opt/rocm/lib/libamdocl64.so' > 'amdocl64.icd'
-    install -Dm644 'amdocl64.icd' "$pkgdir/etc/OpenCL/vendors/amdocl64.icd"
+    install -Dm644 "$_dir_name/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
