@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.12.0-1
 pkgbase:
   name: qt6-sensors
   pkgdesc: Provides access to sensor hardware and motion gesture recognition
-  pkgver: 6.11.2
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -28,9 +28,9 @@ pkgbase:
     - 'qt6-declarative: QML bindings'
     - 'iio-sensor-proxy: iio-sensor-proxy backend'
   source:
-    - git+https://code.qt.io/qt/qtsensors#tag=v6.11.2
+    - git+https://code.qt.io/qt/qtsensors#tag=v6.12.0
   sha256sums:
-    - 50afb314a62e5a7e21420c8ff5a5851723049b7b20340fbf58f48244f1144b9a
+    - 5b842783fb7ed4139b0d5df7e5f006a571fe484bd7ad7163a4d206ef2bd84fb8
 pkgname:
   - name: qt6-sensors
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
