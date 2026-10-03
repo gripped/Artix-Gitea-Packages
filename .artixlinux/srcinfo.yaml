@@ -20,4 +20,4 @@ pkgbase:
     - 63073bfc05498b40106bc3a2eab7b10c9355943eb3296048fc0bf4585270e95fd72edf1323c78272068794ea15128d7dd2ec93bfb10dba066e84db7352f1a0c3
 pkgname:
   - name: libmodbus
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
