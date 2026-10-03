@@ -1,11 +1,11 @@
 ---
 actions:
   addRepo: galaxy
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.0-2
+    version: 1.28.0-3
     packages:
-      - libmatekbd-1.28.0-2-x86_64.pkg.tar.zst
+      - libmatekbd-1.28.0-3-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
