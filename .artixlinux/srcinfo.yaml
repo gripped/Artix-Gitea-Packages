@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.12.0-1
 pkgbase:
   name: qt6-quicktimeline
   pkgdesc: Qt module for keyframe-based timeline construction
-  pkgver: 6.11.2
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - git+https://code.qt.io/qt/qtquicktimeline#tag=v6.11.2
+    - git+https://code.qt.io/qt/qtquicktimeline#tag=v6.12.0
   sha256sums:
-    - 609a9016a17d2399ca7428d88e54124cd410a98cd60b19277c9d5aa16e6da3b2
+    - 9913005962b0679eb8517893e32dc73e1c0b65b9ca3e4fef60b8fb15a3576c2c
 pkgname:
   - name: qt6-quicktimeline
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
