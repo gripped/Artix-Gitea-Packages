@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.12.0-1
 pkgbase:
   name: qt6-connectivity
   pkgdesc: Provides access to Bluetooth hardware
-  pkgver: 6.11.2
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - pcsclite
     - qt6-base
   source:
-    - git+https://code.qt.io/qt/qtconnectivity#tag=v6.11.2
+    - git+https://code.qt.io/qt/qtconnectivity#tag=v6.12.0
   sha256sums:
-    - 482d46228d9fbbbc7c2255e488fa0ec42f9bf6a1907541838e3025f5d486796c
+    - 6091009293f55ce2a2d3a6360d85eacf6b85d6b9874ebad97287e08df68cd603
 pkgname:
   - name: qt6-connectivity
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
