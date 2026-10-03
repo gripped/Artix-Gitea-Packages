@@ -1,9 +1,9 @@
 ---
-version: 4.5.2-1
+version: 4.6.0-1
 pkgbase:
   name: gnome-nibbles
   pkgdesc: Guide a worm around a maze
-  pkgver: 4.5.2
+  pkgver: 4.6.0
   pkgrel: 1
   url: https://wiki.gnome.org/Apps/Nibbles
   arch:
@@ -17,25 +17,28 @@ pkgbase:
     - git
     - gobject-introspection
     - meson
-    - vala
     - yelp-tools
   depends:
     - dconf
     - glib2
     - glibc
+    - glibmm-2.68
     - gsound
     - gtk4
+    - gtkmm-4.0
     - hicolor-icon-theme
-    - libadwaita
-    - libgee
+    - libgcc
+    - libsigc++-3.0
+    - libstdc++
     - pango
+    - pangomm-2.48
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-nibbles.git?signed#tag=4.5.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-nibbles.git?signed#tag=4.6.0
   validpgpkeys:
     - 31F449AE968CBE194119A3AD1F1DC770CE79E68B
     - 9CE6D700965C6A1D6F7B4A1C18B04BB8340E3EC5
   b2sums:
-    - f0098e16533ca634f9011ae18db78aa14aa872ead7599f65121b391b74d9102ee60bd005b7189e332878c13b66accfe5eb1b99efb2f74e773ee902ae56ddc05d
+    - 3ea9ebf9bc21d4d1bfc61f09fd2ceb54612331def9332421cac5c773edc4c55883de3a12e5abefd7967aae22e5f59181a95d35079a73364766901793e6a1dfdb
 pkgname:
   - name: gnome-nibbles
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
