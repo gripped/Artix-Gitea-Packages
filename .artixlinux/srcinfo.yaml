@@ -1,11 +1,11 @@
 ---
-version: 1.28.1-1
+version: 1.28.1-2
 pkgbase:
   name: mate-menus
   pkgdesc: MATE menu specifications
   pkgver: 1.28.1
-  pkgrel: 1
-  url: https://mate-desktop.org
+  pkgrel: 2
+  url: https://github.com/mate-desktop/mate-menus
   arch:
     - x86_64
   groups:
@@ -13,15 +13,16 @@ pkgbase:
   license:
     - GPL-2.0-or-later AND LGPL-2.0-or-later
   makedepends:
-    - autoconf-archive
-    - mate-common
+    - git
     - gobject-introspection
+    - mate-common
   depends:
     - glib2
+    - glibc
   source:
-    - mate-menus-1.28.1.tar.gz::https://github.com/mate-desktop/mate-menus/archive/refs/tags/v1.28.1.tar.gz
-  sha256sums:
-    - 665b088155b28b7cd17bfae49f6cbf9cb6a29635e18183536636c383ec877e24
+    - git+https://github.com/mate-desktop/mate-menus.git#tag=v1.28.1
+  b2sums:
+    - 54e8e4e837c1b06a850b8300e85b69ff0bd4d497d8ce62d29860f7f2d585d1d4233125c0ba3f7f9010cd9441cd75f682462ff63737940566a3e8c1366e6312cd
 pkgname:
   - name: mate-menus
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
