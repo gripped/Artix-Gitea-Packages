@@ -1,9 +1,9 @@
 ---
-version: 1.0.2-1
+version: 1.1.0-1
 pkgbase:
   name: kirigami-app-components
   pkgdesc: Kirigami addons and modules necessary to do a full featured KDE application
-  pkgver: 1.0.2
+  pkgver: 1.1.0
   pkgrel: 1
   url: https://invent.kde.org/libraries/kirigami-app-components
   arch:
@@ -16,6 +16,7 @@ pkgbase:
   depends:
     - glibc
     - kconfig
+    - kcoreaddons
     - kguiaddons
     - ki18n
     - kirigami
@@ -24,13 +25,13 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/kirigami-app-components/kirigami-app-components-1.0.2.tar.xz
-    - https://download.kde.org/stable/kirigami-app-components/kirigami-app-components-1.0.2.tar.xz.sig
+    - https://download.kde.org/stable/kirigami-app-components/kirigami-app-components-1.1.0.tar.xz
+    - https://download.kde.org/stable/kirigami-app-components/kirigami-app-components-1.1.0.tar.xz.sig
   validpgpkeys:
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 6bfd9e0a3a4b7d17505f0c3c0c395628165973b6f4cf1e4a7a1f3342873b44d0
+    - f83f92ecfab89fa8b75867c47c291f1619e1a3970afc30437b3374aa75f6530f
     - SKIP
 pkgname:
   - name: kirigami-app-components
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
