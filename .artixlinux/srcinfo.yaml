@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.12.0-1
 pkgbase:
   name: qt6-charts
   pkgdesc: Provides a set of easy to use chart components
-  pkgver: 6.11.2
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - git+https://code.qt.io/qt/qtcharts#tag=v6.11.2
+    - git+https://code.qt.io/qt/qtcharts#tag=v6.12.0
   sha256sums:
-    - b511653481818fba60bc3ae71f3f47f7c1ba66a45a46eed4737c53ed2e2f1301
+    - 7f3193fb3455f855a7d34b361e95017ed7a82bbbdd6fc2bd93f79f27782f4b35
 pkgname:
   - name: qt6-charts
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
