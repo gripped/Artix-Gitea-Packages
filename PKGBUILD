@@ -1,6 +1,5 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Jaroslav Lichtblau <svetlemodry@archlinux.org>
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Jaroslav Lichtblau <svetlemodry@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: Laurent Carlier <lordheavym@gmail.com>
 # Contributor: Vamp898 <vamp898@web.de>
 # Contributor: Jaroslaw Swierczynski <swiergot@aur.archlinux.org>
@@ -9,7 +8,7 @@
 
 pkgname=kmymoney
 pkgver=5.2.2
-pkgrel=7
+pkgrel=8
 pkgdesc="Personal finance manager for KDE which operates similarly to MS-Money or Quicken"
 arch=('x86_64')
 url="https://kmymoney.org/"
