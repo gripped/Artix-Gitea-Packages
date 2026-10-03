@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.12.0-1
 pkgbase:
   name: qt6-languageserver
   pkgdesc: An implementation of the Language Server Protocol
-  pkgver: 6.11.2
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - qt6-base
   source:
-    - git+https://code.qt.io/qt/qtlanguageserver#tag=v6.11.2
+    - git+https://code.qt.io/qt/qtlanguageserver#tag=v6.12.0
   sha256sums:
-    - 836faffa3f45be626ce5a8a8c1ae76e76bad3679c8ef9166e1ec2dad4cd93650
+    - f42afd60d342324e1e696608a403d8f186a289162165165740627716137f7890
 pkgname:
   - name: qt6-languageserver
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
