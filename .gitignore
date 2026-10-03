@@ -18,3 +18,26 @@ src/
 *.socket
 
 
+wayvnc/HEAD
+wayvnc/config
+wayvnc/description
+wayvnc/hooks/applypatch-msg.sample
+wayvnc/hooks/commit-msg.sample
+wayvnc/hooks/fsmonitor-watchman.sample
+wayvnc/hooks/post-update.sample
+wayvnc/hooks/pre-applypatch.sample
+wayvnc/hooks/pre-commit.sample
+wayvnc/hooks/pre-merge-commit.sample
+wayvnc/hooks/pre-push.sample
+wayvnc/hooks/pre-rebase.sample
+wayvnc/hooks/pre-receive.sample
+wayvnc/hooks/prepare-commit-msg.sample
+wayvnc/hooks/push-to-checkout.sample
+wayvnc/hooks/sendemail-validate.sample
+wayvnc/hooks/update.sample
+wayvnc/info/attributes
+wayvnc/info/exclude
+wayvnc/objects/pack/pack-ec9e8a293e93cbedf4b650a8a216726cee44ba08.idx
+wayvnc/objects/pack/pack-ec9e8a293e93cbedf4b650a8a216726cee44ba08.pack
+wayvnc/objects/pack/pack-ec9e8a293e93cbedf4b650a8a216726cee44ba08.rev
+wayvnc/packed-refs
