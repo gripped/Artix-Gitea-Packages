@@ -1,0 +1,32 @@
+---
+version: 1.28.1-4
+pkgbase:
+  name: mate-polkit
+  pkgdesc: PolicyKit integration for the MATE desktop
+  pkgver: 1.28.1
+  pkgrel: 4
+  url: https://github.com/mate-desktop/mate-polkit
+  arch:
+    - x86_64
+  groups:
+    - mate
+  license:
+    - LGPL-2.0-or-later
+  makedepends:
+    - git
+    - mate-common
+  depends:
+    - accountsservice
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - libappindicator
+    - polkit
+  source:
+    - git+https://github.com/mate-desktop/mate-polkit.git#tag=v1.28.1
+  b2sums:
+    - 0c1b5f170f4368570bfb41473394ce7fe00d5d0a9f100dbacb3f2324ebf73dcd27906db416bdb0992a942f55a4550332ad891de081cad2d3614821adfd522ecb
+pkgname:
+  - name: mate-polkit
+# generated with artixpkg 0.40.0-1-any
