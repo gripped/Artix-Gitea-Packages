@@ -8,7 +8,7 @@
 # Contributor: Alexandru M Stan <alex@hypertriangle.com>
 
 pkgname=hsa-rocr
-pkgver=7.2.4
+pkgver=10.0
 pkgrel=1
 pkgdesc='HSA Runtime API and runtime for ROCm'
 arch=('x86_64')
@@ -27,10 +27,10 @@ depends=(
 )
 provides=("hsakmt-roct=$pkgver")
 replaces=('hsakmt-roct')
-makedepends=('cmake' 'rocm-llvm' 'xxd')
-source=("rocm-${pkgver}.tar.gz::$url/archive/rocm-$pkgver.tar.gz")
-sha256sums=('817f9c136125b8d162757a18cdc25b18b1efeb8ef36a948c85e4a672fd149de5')
-_dirname="$(basename "$url")-rocm-$pkgver"/projects/rocr-runtime/
+makedepends=('cmake' 'rocm-llvm' 'rocm-llvm-static' 'xxd')
+source=("rocm-${pkgver}.tar.gz::$url/archive/therock-$pkgver.tar.gz")
+sha256sums=('f30517ed6d9e18cde104eb487f173e62fed0175083a9498ca383f8136a9f4eec')
+_dirname="$(basename "$url")-therock-$pkgver"/projects/rocr-runtime/
 options=(!lto)
 
 build() {
@@ -43,6 +43,8 @@ build() {
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/opt/rocm
     -D CMAKE_PREFIX_PATH=/opt/rocm
+    -D Clang_DIR=/opt/rocm/lib/llvm/lib/cmake/clang
+    -D LLVM_DIR=/opt/rocm/lib/llvm/lib/cmake/llvm
     -D CMAKE_CXX_FLAGS="$CXXFLAGS -DNDEBUG"
     -DBUILD_SHARED_LIBS=ON)
   cmake "${cmake_args[@]}"
