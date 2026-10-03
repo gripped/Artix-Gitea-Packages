@@ -7,7 +7,7 @@
 
 pkgname=vokoscreen
 _pkgname=vokoscreenNG
-pkgver=4.9.0
+pkgver=4.11.0
 pkgrel=1
 pkgdesc="Easy to use screencast creator"
 arch=('x86_64')
@@ -28,14 +28,16 @@ depends=(
 	'libx11'
 	'qt6-base'
 	'qt6-multimedia'
+	'qt6-webengine'
+	'qt6-websockets'
 	'wayland'
 )
 makedepends=('qt6-tools')
 optdepends=('gst-plugin-pipewire: Wayland support')
 source=("${pkgname}-${pkgver}.tar.gz::https://github.com/vkohaupt/${_pkgname}/archive/${pkgver}.tar.gz"
 	"vokoscreenNG.appdata.xml")
-sha256sums=('644978f0fd3a1c8caccf8cc18145cfa9108dc38d4facee75e336b2a5390bdd69'
-            'b40fdfaf0166e1735be00a08bc55091176df758af7aff6585be4122423c73dda')
+sha256sums=('5313f029af3d7e8dfa08344d30ef619d405fa4e6f6db2ba6e021fc0db07b1842'
+            '7ca66de57de1bb0eb15794656ae340864f0ce7d377cf2902466cc8a976aeddfe')
 
 build() {
 	cd "${_pkgname}-${pkgver}/"
