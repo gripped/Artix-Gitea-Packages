@@ -2,7 +2,7 @@
 
 pkgname=gnome-notes
 pkgver=40.2
-pkgrel=2
+pkgrel=3
 pkgdesc="Write out notes, every detail matters"
 url="https://wiki.gnome.org/Apps/Notes"
 arch=(x86_64)
@@ -12,7 +12,7 @@ depends=(
   curl
   dconf
   evolution-data-server
-  gcc-libs
+  libgcc
   glib2
   glibc
   gnome-online-accounts

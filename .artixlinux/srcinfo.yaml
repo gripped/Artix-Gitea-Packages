@@ -1,10 +1,10 @@
 ---
-version: 40.2-2
+version: 40.2-3
 pkgbase:
   name: gnome-notes
   pkgdesc: Write out notes, every detail matters
   pkgver: 40.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://wiki.gnome.org/Apps/Notes
   arch:
     - x86_64
@@ -20,7 +20,7 @@ pkgbase:
     - curl
     - dconf
     - evolution-data-server
-    - gcc-libs
+    - libgcc
     - glib2
     - glibc
     - gnome-online-accounts
@@ -48,4 +48,4 @@ pkgbase:
     - ac166fb29f5fa8744766be7c93d04413b36084f8363129e378a5535ac98f56777ffb51c85e7e21aa52c43b5427ad7c7a86b85fa7349cee994affde6718e18afa
 pkgname:
   - name: gnome-notes
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
