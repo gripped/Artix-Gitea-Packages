@@ -7,7 +7,7 @@ pkgbase=lib32-glib2
 pkgname=(
   lib32-glib2
 )
-pkgver=2.88.3
+pkgver=2.90.0
 pkgrel=1
 pkgdesc="Low level core library - 32-bit"
 url="https://gitlab.gnome.org/GNOME/glib"
@@ -45,10 +45,10 @@ source=(
   gio-querymodules-32.hook
   gio-remove-module-cache-32.hook
 )
-b2sums=('9239e87c1133864340fda4ba99c53cd1684f421f7fb9a90299b6a25f582db3f70e7aab6988a7943934ece0d48246bc61c764cd08ef98f6bec3d4383a3f1bf679'
+b2sums=('9e31a27fd7c277deeb8695f77772ac39ff8ab14987d3b22ce4522aa671a707fdad8060957582db4d7c8a05780372ad59b7a0cbc13a944e38531c527e3aaa44ad'
         'SKIP'
         '4ddbd31f5f466fce99d82890292ff922555a9ab379d22202aeea5127f58798668f871dea0485cc0f458069276ad512412285ede6c8f3e36bea899358f49e931a'
-        'f749220228e18f49c38a03d9b42ebbd2c8723c0f668eedf966339176ad946a82e0f0c605e6cb8f4a0d0ccc1777fc12dece36f4e9015c24879d48889a9e944c91'
+        '194275a464f96d3539d26d7ae83f88b616e7de7beda0ba82714e4ffbab7a09cf1acee792c9d8278095f097074a5f4eaaa95490b11748f2ad85204fef3f04ccb4'
         '678ea2d010fd64b6c55106510096363c54c357d65615c666e9cc3a0e280c0878257a45e646dd88f6bdd0623f7268c4afd2d4f98f82a5489bbfc028c5864252f1'
         '0971103c526d72196bd56fe4733bb1edd104e198ad2371929dd90745f5717e650bd2340e3040b720bcf3741946f1dcf2ab246b7837a25312932c0e008c558a39')
 validpgpkeys=(
@@ -108,7 +108,7 @@ package_lib32-glib2() {
   )
   provides+=(libg{lib,io,irepository,module,object,thread}-2.0.so)
 
-  meson install -C build --destdir "$pkgdir"
+  meson install -C build --no-rebuild --destdir "$pkgdir"
 
   rm -r "$pkgdir"/usr/{lib,share,include}
   find "$pkgdir/usr/bin" -type f -not -name gio-querymodules -printf 'Removing %P\n' -delete
