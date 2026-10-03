@@ -1,9 +1,9 @@
 ---
-version: 6.11.2-1
+version: 6.12.0-1
 pkgbase:
   name: qt6-svg
   pkgdesc: Classes for displaying the contents of SVG files
-  pkgver: 6.11.2
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.qt.io
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - qt6-base
     - zlib
   source:
-    - git+https://code.qt.io/qt/qtsvg#tag=v6.11.2
+    - git+https://code.qt.io/qt/qtsvg#tag=v6.12.0
   sha256sums:
-    - 9f72f7dda1f9977ce9564747c1760f55c7417c1dadbe613e1aac6b1fa102df93
+    - 9e745b3990062e00570812a5e01117a5d0f4770bca945884c6f0afab73a0b9db
 pkgname:
   - name: qt6-svg
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
