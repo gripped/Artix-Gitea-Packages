@@ -1,0 +1,40 @@
+---
+version: 1.28.2-3
+pkgbase:
+  name: mate-desktop
+  pkgdesc: Library with common API for various MATE modules
+  pkgver: 1.28.2
+  pkgrel: 3
+  url: https://github.com/mate-desktop/mate-desktop
+  arch:
+    - x86_64
+  groups:
+    - mate
+  license:
+    - GPL-2.0-or-later AND LGPL-2.0-or-later
+  makedepends:
+    - git
+    - gobject-introspection
+    - gtk-doc
+    - mate-common
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - iso-codes
+    - libgcc
+    - libx11
+    - libxrandr
+    - startup-notification
+  source:
+    - git+https://github.com/mate-desktop/mate-desktop.git#tag=v1.28.2
+  b2sums:
+    - 6a333d1a6f671c5a1cc262d04db38fc7c9b4c86529c7c6e831e7eaf41bff470b7543e3a2905080de226e76810378d0c7e0510920f3280258aa19a7f6e94f1723
+pkgname:
+  - name: mate-desktop
+# generated with artixpkg 0.40.0-1-any
