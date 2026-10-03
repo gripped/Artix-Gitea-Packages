@@ -70,7 +70,7 @@ depends=(
   python-dbus
   python-gobject
   startup-notification
-  systemd-libs
+  libelogind
   wayland
   xorg-xwayland
 )
