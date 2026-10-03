@@ -6,8 +6,8 @@ pkgbase=lib32-gdk-pixbuf2
 pkgname=(
   lib32-gdk-pixbuf2
 )
-pkgver=2.44.7
-pkgrel=1
+pkgver=2.44.8
+pkgrel=2
 pkgdesc="An image loading library (32-bit)"
 url="https://gitlab.gnome.org/GNOME/gdk-pixbuf"
 arch=(x86_64)
@@ -29,9 +29,11 @@ makedepends=(
 source=(
   "git+https://gitlab.gnome.org/GNOME/gdk-pixbuf.git#tag=$pkgver"
   gdk-pixbuf-query-loaders-32.hook
+  gdk-pixbuf-remove-loaders-cache-32.hook
 )
-b2sums=('0a0c801939c6cc6f647714962491bc0d4673349899fb99c4760782c99f56ca3cc16c1159a2de389372f5b6eab12ad9eb7c9f6521ee9b983a4c8435a70da22639'
-        '0b432bdeb31acdd66c8a861551cabf4f83efd3c441614dbb64b7ac11fdbb97c76412b5706bb18ff1ed890de0a4c51bf02bb531eb4693e6d68021b5372cb5897a')
+b2sums=('d553cb0654965cb153cd38385d39d6edafc5b9890661a7fce14713d40f53129057c4ba81970774bd449029a52aa3b06033a22dc9cfe5c263eb87f35095251340'
+        '5d2073e3aae29c174634f610def710efe4fe54ba5ba75ecb76cbc3d1638d10fba41ff392655ff0ae5b2c2b55c362f5c4666011e3f1a0b9e0bb0501fdd78ca906'
+        'defda0c7274d95fa4f847f12afb6ad76570de2adc2f17c2b5bc16398e6c146691bcbd32f15ae06c8204c8b3a7608e5448cb28400b481c0c5cb5440ea47549435')
 
 prepare() {
   cd gdk-pixbuf
@@ -66,7 +68,6 @@ package() {
     "lib32-librsvg: Load .svg, .svgz and .svg.gz"
   )
   provides=(libgdk_pixbuf-2.0.so)
-  install=lib32-gdk-pixbuf2.install
 
   meson install -C build --destdir "$pkgdir"
 
