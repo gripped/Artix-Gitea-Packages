@@ -5,9 +5,9 @@
 pkgbase=qt6-base
 pkgname=(qt6-base
          qt6-xcb-private-headers)
-_pkgver=6.12.0-beta4
+_pkgver=6.12.0
 pkgver=${_pkgver/-/}
-pkgrel=1
+pkgrel=2
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
@@ -91,13 +91,16 @@ _pkgfn=${pkgbase/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver
         qt6-base-cflags.patch
         qt6-base-nostrip.patch)
-sha256sums=('36c2c583a01889e2768a74db4992c16f2623a5c861102d7be267402efd31e4e6'
+sha256sums=('d97ef157dc50bdf0425337e9adede8135ab508a4ab2f1abae7e9cfc42c5f86db'
             '5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78'
             '4b93f6a79039e676a56f9d6990a324a64a36f143916065973ded89adc621e094')
 
 prepare() {
   patch -d $_pkgfn -p1 < qt6-base-cflags.patch # Use system CFLAGS
   patch -d $_pkgfn -p1 < qt6-base-nostrip.patch # Don't strip binaries with qmake
+
+  git -C $_pkgfn cherry-pick -n e320c929207aaea0d4c8fb2cd29b16de6cbd2b2c # Fix QtWebEngine detection in cmake
+  git -C $_pkgfn cherry-pick -n 032643f99e090e0304ef935c2ee11c109d55c8a1 # Fix build with md4c 0.6
 }
 
 build() {

@@ -25,10 +25,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.12.0beta4-1
+    version: 6.12.0-2
     packages:
-      - qt6-base-6.12.0beta4-1-x86_64.pkg.tar.zst
-      - qt6-xcb-private-headers-6.12.0beta4-1-x86_64.pkg.tar.zst
+      - qt6-base-6.12.0-2-x86_64.pkg.tar.zst
+      - qt6-xcb-private-headers-6.12.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.11.2-3
