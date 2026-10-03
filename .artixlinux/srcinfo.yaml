@@ -1,10 +1,10 @@
 ---
-version: 9.2.1-1
+version: 9.2.1-2
 pkgbase:
   name: simdutf
   pkgdesc: Unicode routines (UTF8, UTF16, UTF32) and Base64
   pkgver: 9.2.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://simdutf.github.io/simdutf/
   arch:
     - x86_64
