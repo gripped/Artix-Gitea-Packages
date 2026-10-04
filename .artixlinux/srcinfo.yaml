@@ -1,10 +1,10 @@
 ---
-version: 7.40.0-3
+version: 7.42.0-1
 pkgbase:
   name: mlt
   pkgdesc: An open source multimedia framework
-  pkgver: 7.40.0
-  pkgrel: 3
+  pkgver: 7.42.0
+  pkgrel: 1
   url: https://www.mltframework.org
   arch:
     - x86_64
@@ -23,6 +23,7 @@ pkgbase:
     - libdv
     - libexif
     - libsamplerate
+    - lilv
     - movit
     - opencv
     - pango
@@ -36,6 +37,7 @@ pkgbase:
     - sdl_image
     - swig
     - vid.stab
+    - vulkan-headers
   depends:
     - glibc
     - libebur128
@@ -53,10 +55,12 @@ pkgbase:
     - 'libepoxy: opengl plugin'
     - 'libexif: auto rotate plugin'
     - 'libglvnd: opengl plugin'
+    - 'libplacebo: libplacebo plugin'
     - 'libsamplerate: libavresample plugin'
     - 'libvorbis: vorbis plugin'
     - 'libx11: SDL1 plugin'
     - 'libxml2: XML plugin'
+    - 'lilv: LADSPA plugin'
     - 'movit: opengl plugin'
     - 'opencv: openCV plugin'
     - 'qt6-5compat: Qt6 plugin'
@@ -74,15 +78,13 @@ pkgbase:
     - 'vid.stab: video stabilize plugin'
     - 'zlib: glaxnimate plugin'
   source:
-    - git+https://github.com/mltframework/mlt#tag=v7.40.0
+    - git+https://github.com/mltframework/mlt#tag=v7.42.0
     - git+https://invent.kde.org/graphics/glaxnimate.git
     - git+https://github.com/mbasaglia/thorvg.git
-    - ffmpeg-9.patch
   sha256sums:
-    - 99f6370263714259200af2cdc381205610247767ca6eb0ef5d1d2ebba2901a4f
+    - 64d056c11ff0e9872f35fd3c7fc1145b5092d8faf944b2a339b54af3732a2b5f
     - SKIP
     - SKIP
-    - b1b1710b9978dd502fcc0ba06db7ede63a737df06508f82d42c9f67a6d82f6cd
 pkgname:
   - name: mlt
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
