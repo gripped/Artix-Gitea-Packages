@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Carl Smedstad <carsme@archlinux.org>
 # Contributor: László Várady <laszlo.varady93@gmail.com>
 # Contributor: Snaipe
 
 pkgname=criterion
 _pkgname=Criterion
-pkgver=2.4.3
+pkgver=2.5.0
 pkgrel=1
 pkgdesc="A cross-platform C and C++ unit testing framework for the 21st century"
 arch=(x86_64)
@@ -24,8 +23,8 @@ makedepends=(
 )
 checkdepends=(python-cram)
 options=(!lto)
-source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz")
-sha256sums=('6d924ee5eeaaaed7762ab968f560b9ff543fc3473aa949bf53ac56a2a1a9416c')
+source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
+b2sums=('825823bc598e1cecc44f9cc51f340e72397e5fd698e0bf9acf67ad995fa185d520b95a99561265e6e4c4b251b53250d149c2fd0e3d8c13cf409c3b9b6081fdc2')
 
 prepare() {
   cd $_pkgname-$pkgver
@@ -37,9 +36,6 @@ prepare() {
   # Download of nanopb produces an error as it does not contain a meson.build
   # file. A meson.build file is not necessary, so ignore the error.
   meson subprojects download || :
-
-  # Fix FTBS
-  sed -i '/#ifdef __cplusplus/a # include <cstdint>' include/criterion/alloc.h
 }
 
 build() {
