@@ -1,9 +1,9 @@
 ---
-version: 3.2.0-1
+version: 3.2.0-2
 pkgbase:
   name: gimp-help
   pkgver: 3.2.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.gimp.org/
   arch:
     - any
@@ -52,4 +52,4 @@ pkgname:
   - name: gimp-help-tr
   - name: gimp-help-uk
   - name: gimp-help-zh_cn
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
