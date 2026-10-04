@@ -1,10 +1,10 @@
 ---
-version: 51.0-1
+version: 51.0-2
 pkgbase:
   name: gnome-system-monitor
   pkgdesc: View current processes and monitor system state
   pkgver: 51.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.gnome.org/SystemMonitor
   arch:
     - x86_64
