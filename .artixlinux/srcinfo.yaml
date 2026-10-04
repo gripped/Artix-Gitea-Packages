@@ -1,10 +1,10 @@
 ---
-version: 1.13.2-2
+version: 1.13.2-3
 pkgbase:
   name: dunst
   pkgdesc: Customizable and lightweight notification-daemon
   pkgver: 1.13.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://dunst-project.org/
   arch:
     - x86_64
@@ -25,8 +25,6 @@ pkgbase:
     - glib2
   optdepends:
     - 'libnotify: dunstify'
-  provides:
-    - notification-daemon
   backup:
     - etc/dunst/dunstrc
   source:
@@ -35,4 +33,4 @@ pkgbase:
     - c68645cecef4a45840cd67c19a18a3a21ecae6b331e9864c2b745c31aee5fc85
 pkgname:
   - name: dunst
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
