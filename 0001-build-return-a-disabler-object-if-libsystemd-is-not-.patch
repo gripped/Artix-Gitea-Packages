@@ -1,0 +1,29 @@
+From 2b5b066fd791c4cb9d53656313c968487fe931db Mon Sep 17 00:00:00 2001
+From: Dudemanguy <random342@airmail.cc>
+Date: Sun, 4 Oct 2026 10:23:14 -0500
+Subject: [PATCH 1/2] build: return a disabler object if libsystemd is not
+ found
+
+The grd-pcscd daemon and library both require libsystemd as a
+dependency, so building them should only be attempted if the library is
+actually found.
+---
+ meson.build | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/meson.build b/meson.build
+index eb8bcaa..8e92476 100644
+--- a/meson.build
++++ b/meson.build
+@@ -28,7 +28,7 @@ gio_unix_dep = dependency('gio-unix-2.0')
+ libei_dep = dependency('libei-1.0', version: libei_req)
+ libnotify_dep = dependency('libnotify')
+ libsecret_dep = dependency('libsecret-1')
+-libsystemd_dep = dependency('libsystemd', required: false)
++libsystemd_dep = dependency('libsystemd', required: false, disabler: true)
+ krb5_dep = dependency('krb5')
+ pipewire_dep = dependency('libpipewire-0.3', version: '>= 1.2.0')
+ systemd_dep = dependency('systemd', required: get_option('systemd'))
+-- 
+2.56.0
+

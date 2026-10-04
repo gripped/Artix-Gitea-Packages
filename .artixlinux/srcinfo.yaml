@@ -45,11 +45,15 @@ pkgbase:
     - vulkan-icd-loader
   source:
     - git+https://gitlab.gnome.org/GNOME/gnome-remote-desktop.git?signed#tag=51.0
+    - 0001-build-return-a-disabler-object-if-libsystemd-is-not-.patch
+    - 0002-rdp-smartcard-guard-logind-usage.patch
   validpgpkeys:
     - 8307C0A224BABDA1BABD0EB9A6EEEC9E0136164A
     - E60DADB5546D3F01AF35B87289F540EAB24513E2
   b2sums:
     - 360cc3b47fdd674ac448634018a646447f17966ec91b842112626fe88f802e6201878ca47639678a8b04c0de56e74445bc17f067787f587d072a31e4fed06e40
+    - f21d7fa55e1d1f1cd7dce530b904e7fdef34ad720262400b5187f64f9a3778b7ce68f2e210ecd08a3f337dc378f97af3e7745cc08df30d35dd1c295d097a9d80
+    - 5a02bd48e735576d146b8a123b6887f9dd4604996322bed72a9d0778a91579c1227579b97140319062c970109cac66edde4de2dd7c039edf35e1bcf0ddd3ca9c
 pkgname:
   - name: gnome-remote-desktop
 # generated with artixpkg 0.40.0-1-any
