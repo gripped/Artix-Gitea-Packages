@@ -34,3 +34,6 @@ src/
 *.service
 *.timer
 *.socket
+perfparser/
+qlitehtml/
+qt-creator/

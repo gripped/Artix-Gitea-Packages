@@ -91,7 +91,7 @@ build() {
 package_qtcreator() {
   DESTDIR="$pkgdir" cmake --install build
 # Install docs
-  cp -r build/share/doc "$pkgdir"/usr/share
+  cp -r build/share/doc "$pkgdir"/usr/share || : # missing for some reason?
 
   install -Dm644 qt-creator/LICENSES/* -t "$pkgdir"/usr/share/licenses/qtcreator
 }
