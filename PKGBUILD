@@ -9,7 +9,7 @@ shopt -s extglob
 
 pkgbase=python
 pkgname=(python python-tests)
-pkgver=3.14.7
+pkgver=3.14.8
 pkgrel=1
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
@@ -19,9 +19,11 @@ url="https://www.python.org/"
 depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal' 'zstd')
 makedepends=('tk' 'sqlite' 'bluez-libs' 'llvm' 'gdb' 'xorg-server-xvfb' 'ttf-font')
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"
-        EXTERNALLY-MANAGED)
-sha512sums=('3d4e2e2f983b320dec47005c408d7178d3656a6de0c4430ce21514797174b972f461200898b25d3dfac2a455019ef87e45d0fb2bb6ec2ca887124d10037a2a07'
-            '62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0')
+        EXTERNALLY-MANAGED
+        python-posix-2024.patch::https://github.com/python/cpython/commit/927eb448aad6436d794ec9f55780013e25609600.patch)
+sha512sums=('f9e6809b0c45d90fcc174b8051e15058a3037981c9136c598d110a118a22cbbb8263fbd677e07b2b9d93e1aa83cd9cb835b61b6af898fd301d1080a29c2156fe'
+            '62a6fbfbaeaa3ba7c54e109d9c3b7f67e73bb21986da4c1fcc5d28cca83d71e0fcae28e1fc70ee8ddce7dea8cd0b64e18d1031dae3a2eae5eaa379c53efd53a0'
+            '4068d770c906757e7db1f16672f19d31bc75c73eec542c9eb9a7181ff486b898a97874f798bc655b0390cf4880096da1659b0012fad7bea587a1713c9ab8efc7')
 validpgpkeys=('0D96DF4D4110E5C43FBFB17F2D347EA6AA65421D'  # Ned Deily (Python release signing key) <nad@python.org>
               'E3FF2839C048B25C084DEBE9B26995E310250568'  # Łukasz Langa (GPG langa.pl) <lukasz@langa.pl>
               'A035C8C19219BA821ECEA86B64E628F8D684696D'  # Pablo Galindo Salgado <pablogsal@gmail.com>
@@ -34,6 +36,9 @@ prepare() {
   # rather than copies shipped in the tarball
   rm -r Modules/expat
   rm -r Modules/_decimal/libmpdec
+
+  # Build Python with POSIX 2024 https://github.com/python/cpython/commit/927eb448aad6436d794ec9f55780013e25609600
+  patch -p1 < ../python-posix-2024.patch
 }
 
 build() {
@@ -60,8 +65,7 @@ build() {
   export servernum=99
   while ! xvfb-run -a -n "$servernum" /bin/true 2>/dev/null; do servernum=$((servernum+1)); done
 
-  LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" make EXTRA_CFLAGS="$CFLAGS" \
-    PROFILE_TASK="-m test --pgo -x test_generators" -j $(nproc)
+  LC_CTYPE=en_US.UTF-8 xvfb-run -s "-screen 0 1920x1080x16 -ac +extension GLX" -a -n "$servernum" make EXTRA_CFLAGS="$CFLAGS"
 }
 
 check() {
@@ -94,7 +98,7 @@ check() {
 package_python() {
   optdepends=('python-setuptools: for building Python packages using tooling that is usually bundled with Python'
               'python-pip: for installing Python packages using tooling that is usually bundled with Python'
-              'python-pipx: for installing Python software not packaged on Artix Linux'
+              'python-pipx: for installing Python software not packaged on Arch Linux'
               'sqlite: for a default database integration'
               'xz: for lzma'
               'tk: for tkinter')
