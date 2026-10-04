@@ -1,10 +1,10 @@
 ---
-version: 2.4.0-1
+version: 2.4.0-2
 pkgbase:
   name: lxqt-notificationd
   pkgdesc: LXQt notification daemon and library.
   pkgver: 2.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/lxqt-notificationd
   arch:
     - x86_64
@@ -21,8 +21,6 @@ pkgbase:
     - kwindowsystem
     - libQt6Xdg.so
     - layer-shell-qt
-  provides:
-    - notification-daemon
   source:
     - https://github.com/lxqt/lxqt-notificationd/releases/download/2.4.0/lxqt-notificationd-2.4.0.tar.xz
     - https://github.com/lxqt/lxqt-notificationd/releases/download/2.4.0/lxqt-notificationd-2.4.0.tar.xz.asc
@@ -36,4 +34,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lxqt-notificationd
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
