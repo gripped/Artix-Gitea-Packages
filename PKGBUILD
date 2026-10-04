@@ -119,7 +119,7 @@ validpgpkeys=(
 
 prepare() {
   cd wpewebkit-$pkgver
-  git apply -3 ../15f070cb5326701a9b57d3da5f3e29544a9c4ac7.patch
+  patch -Np1 -i ../15f070cb5326701a9b57d3da5f3e29544a9c4ac7.patch
 }
 
 build() {
