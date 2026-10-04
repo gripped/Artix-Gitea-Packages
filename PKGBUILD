@@ -1,4 +1,5 @@
 # Maintainer: Andreas Radke <andyrtr@archlinux.org>
+#
 
 pkgname=tzdata
 pkgver=2026e
