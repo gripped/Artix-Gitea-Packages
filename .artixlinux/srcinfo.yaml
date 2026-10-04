@@ -1,10 +1,10 @@
 ---
-version: 0.10-1
+version: 0.10-2
 pkgbase:
   name: litehtml
   pkgdesc: Fast and lightweight HTML/CSS rendering engine
   pkgver: 0.10
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.litehtml.com/
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgbase:
     - 7700eced92847d34ad9846b138cf195a9c974b519be70de58797880ae9da649e
 pkgname:
   - name: litehtml
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
