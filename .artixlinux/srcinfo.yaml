@@ -1,9 +1,9 @@
 ---
-version: 1.3.12-1
+version: 1.4.3-1
 pkgbase:
   name: python-mako
   pkgdesc: A template library written in Python
-  pkgver: 1.3.12
+  pkgver: 1.4.3
   pkgrel: 1
   url: https://github.com/sqlalchemy/mako
   arch:
@@ -32,9 +32,9 @@ pkgbase:
     - 'python-pygments: for syntax highlighting'
     - 'python-pytest: for testing utilities'
   source:
-    - python-mako::git+https://github.com/sqlalchemy/mako.git#tag=rel_1_3_12
+    - python-mako::git+https://github.com/sqlalchemy/mako.git#tag=rel_1_4_3
   sha512sums:
-    - af0695c90fcbc51380f1c550cfe8e068e4aa3bbaf8760f974644242fbb4ecedcf5e9c367f283be491c68c042b89d3e0da0ed1dc02f402fb0991b43142f3b81bc
+    - c4ac12587d58777eae263441622385713c6f551dbd12afb9f73d8830a459bd24bd8a6b627f4733231eb52028ddf20c26833463cfca357e33adeedbd49cfa7a15
 pkgname:
   - name: python-mako
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
