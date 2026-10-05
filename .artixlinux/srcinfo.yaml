@@ -1,10 +1,10 @@
 ---
-version: 1.29.0-2
+version: 1.29.0-3
 pkgbase:
   name: mate-notification-daemon
   pkgdesc: Notification daemon for MATE
   pkgver: 1.29.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/mate-desktop/mate-notification-daemon
   arch:
     - x86_64
