@@ -1,10 +1,10 @@
 ---
-version: 0.5.22-2
+version: 0.5.22-3
 pkgbase:
   name: lutris
   pkgdesc: Open Gaming Platform
   pkgver: 0.5.22
-  pkgrel: 2
+  pkgrel: 3
   url: https://lutris.net
   arch:
     - any
@@ -30,7 +30,6 @@ pkgbase:
     - curl
     - gdk-pixbuf2
     - glib2
-    - gnome-desktop
     - gobject-introspection-runtime
     - gtk3
     - hicolor-icon-theme
@@ -83,4 +82,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lutris
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
