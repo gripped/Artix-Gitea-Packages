@@ -1,10 +1,10 @@
 ---
-version: 0.9.7-2
+version: 0.9.7-3
 pkgbase:
   name: xfce4-notifyd
   pkgdesc: Notification daemon for the Xfce desktop
   pkgver: 0.9.7
-  pkgrel: 2
+  pkgrel: 3
   url: https://docs.xfce.org/apps/notifyd/start
   arch:
     - x86_64
@@ -26,12 +26,10 @@ pkgbase:
     - libcanberra
     - gtk-layer-shell
     - hicolor-icon-theme
-  provides:
-    - notification-daemon
   source:
     - git+https://gitlab.xfce.org/apps/xfce4-notifyd.git#tag=xfce4-notifyd-0.9.7
   sha256sums:
     - 76dec9b137b06860402badfb820bccf6d2c7e6b00925e2cbb4d06c2674811d8f
 pkgname:
   - name: xfce4-notifyd
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
