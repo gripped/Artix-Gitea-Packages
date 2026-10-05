@@ -5,7 +5,7 @@
 # https://github.com/deltachat/deltachat-desktop/blob/main/pnpm-lock.yaml
 pkgname=deltachat-desktop
 pkgver=2.62.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Decentralized private messenger with chat-shared tools and games for Desktop"
 arch=(any)
 url="https://github.com/deltachat/deltachat-desktop"
