@@ -1,9 +1,9 @@
 ---
-version: 2.13.0-1
+version: 2.13.1-1
 pkgbase:
   name: python-httpx2
   pkgdesc: A next generation HTTP client for Python
-  pkgver: 2.13.0
+  pkgver: 2.13.1
   pkgrel: 1
   url: https://github.com/pydantic/httpx2
   arch:
@@ -33,7 +33,6 @@ pkgbase:
     - python-websockets
     - python-werkzeug
     - python-wsproto
-    - python-zstandard
     - uvicorn
   makedepends:
     - git
@@ -43,15 +42,16 @@ pkgbase:
     - python-installer
     - python-uv-dynamic-versioning
   source:
-    - python-httpx2::git+https://github.com/pydantic/httpx2#tag=v2.13.0
+    - python-httpx2::git+https://github.com/pydantic/httpx2#tag=v2.13.1
   sha512sums:
-    - eb5d0865feff22b322e4656d8265ffcd6c286f0923c8ca76928d2335fd0c55ed9ffec163c122f1deb95fa102b286f4ad5773cb623ac4b6d9fd9abba9222497f8
+    - eb70f5c837d761832df8c9e40149aed05a5b84f067b824f05c66074f238102bc1888b0790425d791ce545312e498f49d4f09cbedcccb376435b519a4d33a8cfe
   b2sums:
-    - 043e52b7e6e70105a7336dfcdaf93e4972da061167bb2c9c8ee01e8fa29b4fde78c742b71258e81bd08c1ad1e9aad500c51ea71ad45efc7115e1aa45cdbd7e30
+    - af9be26e678a11d96bbc464fbf0e994d22ecf6060e8f2c16867ee773bfa8ee904e787bc35e729d9805c6f092b938b6479aea302ac3a0fd52ff069a4d38771328
 pkgname:
   - name: python-httpx2
     depends:
       - python
+      - python-anyio
       - python-httpcore2
       - python-idna
       - python-truststore
@@ -65,7 +65,6 @@ pkgname:
       - 'python-socksio: SOCKS proxy support'
       - 'python-trio: alternative async library'
       - 'python-wsproto: WebSocket support'
-      - 'python-zstandard: for zstd response decompression'
   - name: python-httpcore2
     pkgdesc: A minimal low-level HTTP client for Python
     depends:
