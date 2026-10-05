@@ -1,9 +1,9 @@
 ---
-version: 7.2.4-1
+version: 10.0-2
 pkgbase:
   name: hip-runtime
-  pkgver: 7.2.4
-  pkgrel: 1
+  pkgver: 10.0
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/HIP/en/latest/
   arch:
     - x86_64
@@ -14,6 +14,7 @@ pkgbase:
     - cmake
     - python
     - python-cppheaderparser
+    - rocm-llvm-static
     - rocm-core
     - bash
     - perl
@@ -30,11 +31,17 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rocm-7.2.4.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/rocm-7.2.4.tar.gz
-    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=rocm-7.2.4
+    - hip-runtime-clr-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/clr.tar.gz
+    - hip-runtime-hip-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/hip.tar.gz
+    - hip-runtime-hipother-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/hipother.tar.gz
+    - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=therock-10.0
+    - hip-runtime-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch
   sha256sums:
-    - 817f9c136125b8d162757a18cdc25b18b1efeb8ef36a948c85e4a672fd149de5
-    - cda215d04dfb6ede38c542d4604711d4a4623267df0f3d678491cd9fbcc32fd9
+    - 07caed9d726232008a2120da24f4e4bbc4998accbeadd309181fce04a9da9f99
+    - 373958090db3cab854fa8a0baa5e4f9afe0ea423def204b241bfcbe74f6ce0ca
+    - 6a9c7fe1d61b2682be9287c512d95c4e37773c8ffd6ab3752bc87a515567d1c8
+    - 55ade468dfcb50bc6dbfd6c3a53c801744893cbd6d685d6d1da421d399e2cf58
+    - eebeb2ae0ec4c33627b2a445eb97832d737f4ec77d4cd74c55d4b9348bded591
 pkgname:
   - name: hip-runtime-amd
     pkgdesc: Heterogeneous Interface for Portability (AMD runtime)
@@ -55,11 +62,11 @@ pkgname:
       - 'inetutils: Print hostname in hipconfig'
       - 'cuda: Cross compile for nvidia'
     provides:
-      - hip=7.2.4
+      - hip=10.0
     replaces:
       - hip
   - name: hip-runtime-nvidia
     pkgdesc: Heterogeneous Interface for Portability (Nvidia runtime)
     depends:
       - cuda
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
