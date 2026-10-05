@@ -1,9 +1,9 @@
 ---
-version: 580.178.04-2.1
+version: 580.178.04-3
 pkgbase:
   name: nvidia-580xx-utils
   pkgver: 580.178.04
-  pkgrel: 2.1
+  pkgrel: 3
   url: http://www.nvidia.com/
   arch:
     - x86_64
@@ -38,6 +38,7 @@ pkgname:
     depends:
       - libglvnd
       - egl-wayland
+      - egl-wayland2
       - egl-gbm
       - egl-x11
     optdepends:
