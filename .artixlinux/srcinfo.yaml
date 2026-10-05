@@ -1,9 +1,9 @@
 ---
-version: 2.3.0-1
+version: 3.0.0-1
 pkgbase:
   name: python-lmdb
   pkgdesc: Universal Python binding for the LMDB Lightning Database
-  pkgver: 2.3.0
+  pkgver: 3.0.0
   pkgrel: 1
   url: https://github.com/jnwatson/py-lmdb/
   arch:
@@ -23,11 +23,11 @@ pkgbase:
     - python
     - python-cffi
   source:
-    - https://github.com/jnwatson/py-lmdb/archive/py-lmdb_2.3.0/python-lmdb-2.3.0.tar.gz
+    - https://github.com/jnwatson/py-lmdb/archive/py-lmdb_3.0.0/python-lmdb-3.0.0.tar.gz
     - 010-python-lmdb-replace-pkg_resources-due-to-deprecation-in-setuptools-82.patch
   sha256sums:
-    - 674474011f9947c5b22b24e5cc8995d8c759d8e697cf273770dff3984f88a9ec
+    - caa270cf73d05f6687972530f28d1ce3c5a2d60fa2d921b14bf590ecebe15d62
     - 93fb3d5d09ec8de3edb3641881dc69831c6570bf25346bc65304041e73c26098
 pkgname:
   - name: python-lmdb
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
