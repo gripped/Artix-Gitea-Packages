@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
-# Contributor: Christian Heusel <gromit@archlinux.org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Christian Heusel <gromit@archlinux.org>
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocm-smi-lib
-pkgver=7.2.0
-pkgrel=2
+pkgver=10.0
+pkgrel=1
 pkgdesc='ROCm System Management Interface Library'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocm_smi_lib/en/latest'
@@ -19,15 +18,14 @@ depends=(
 )
 makedepends=('cmake')
 _git='https://github.com/ROCm/rocm-systems'
-source=("rocm-$pkgver.tar.gz::$_git/archive/rocm-$pkgver.tar.gz")
-sha256sums=('728ea7e9bf16e6ed217a0fd1a8c9afaba2dae2e7908fa4e27201e67c803c5638')
+source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
+sha256sums=('031cdcf1649bc0bf22d0c326e709ba78ad67b8e4c8c5f27023624b03a056c525')
 options=(!lto)
-_dirname="rocm-systems-rocm-$pkgver/projects/rocm-smi-lib"
 
 build() {
   local cmake_args=(
     -Wno-dev
-    -S "$_dirname"
+    -S "$pkgname"
     -B build
     -D CMAKE_INSTALL_PREFIX=/opt/rocm
     -D CMAKE_BUILD_TYPE=None
@@ -38,5 +36,5 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-  install -Dm644 "$srcdir/$_dirname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$srcdir/$pkgname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
