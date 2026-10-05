@@ -1,9 +1,9 @@
 ---
-version: 1.91.4-1
+version: 1.91.5-1
 pkgbase:
   name: upower
   pkgdesc: Abstraction for enumerating power devices, listening to device events and querying history and statistics
-  pkgver: 1.91.4
+  pkgver: 1.91.5
   pkgrel: 1
   url: https://upower.freedesktop.org
   arch:
@@ -39,9 +39,9 @@ pkgbase:
   backup:
     - etc/UPower/UPower.conf
   source:
-    - git+https://gitlab.freedesktop.org/upower/upower.git#tag=v1.91.4
+    - git+https://gitlab.freedesktop.org/upower/upower.git#tag=v1.91.5
   b2sums:
-    - ed239ed6d754e20e57f1f8fcab8d02126b505816c48c6e2ee2c9c004fa54fb275c0f24380e1b8df3547a5f6280e03a8b1432f8d40a822cc4eb82ab8a9f549309
+    - db7dc8e9e42f6806a905eb271a4c3cff59e73d24617ca7012b10a71a3b047052d518dc4dae91438058ad5f688323e2e264aa97f2cb88246c113fa79e59f234df
 pkgname:
   - name: upower
     depends:
@@ -57,4 +57,4 @@ pkgname:
       - libgio-2.0.so
     provides:
       - libupower-glib.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
