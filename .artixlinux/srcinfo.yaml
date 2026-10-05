@@ -1,37 +1,30 @@
 ---
-version: 2.42.1-1
+version: 3.0.0-2
 pkgbase:
   name: mold
   pkgdesc: A Modern Linker
-  pkgver: 2.42.1
-  pkgrel: 1
+  pkgver: 3.0.0
+  pkgrel: 2
   url: https://github.com/rui314/mold
   arch:
     - x86_64
   license:
     - MIT
-  checkdepends:
-    - clang
-    - libdwarf
   makedepends:
-    - cmake
-    - ninja
     - git
-    - mold
-    - python
+    - rust
   depends:
     - glibc
-    - libblake3
-    - libstdc++
-    - tbb
+    - libgcc
     - zlib
-    - zstd
+  options:
+    - '!lto'
   source:
-    - mold::git+https://github.com/rui314/mold.git#tag=v2.42.1
+    - mold::git+https://github.com/rui314/mold.git#tag=v3.0.0
   sha512sums:
-    - 5c814aecf420de9c523b86584651e687e36f1e8afc0c5a2c62c62b5e7cd52e4b5af75b120332a99f070d0b35110fce3c3f23fc75db59c99568505f340d5c4b46
+    - 70c1bd175355665242abbfedba14ac85ffe8f9d03ae77bff488cfb73175f75d3458e3dae0ce4f6f25ec7618f8ef8599b598138c606802adedd7b02ce953c0b3f
   b2sums:
-    - 74edddf9760b7f556ad96b1616c19419157fa2500445c4fb9aeea51eaf66dcae56cca2ee451ec40489870658fc33793dba898e859b99a421c4778b320b968df0
+    - ef8d5860d6175085492b4af3edc5058cf23ae3ffe6634fd0232876e838333e09a8e0c47746950d8ecf555e838f987263e291b9825c6eca2a64f9df0e2a56c76a
 pkgname:
   - name: mold
-# generated with artixpkg 0.39.1
+# generated with artixpkg 0.40.0-1-any
