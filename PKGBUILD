@@ -12,7 +12,7 @@
 # Contributor: Jacob Bang <julemand101@archlinux.dk>
 
 pkgname=dart
-pkgver=3.13.2
+pkgver=3.13.5
 pkgrel=1
 pkgdesc='The dart programming language SDK'
 arch=('x86_64')
@@ -30,7 +30,7 @@ makedepends=(
 # https://gitlab.archlinux.org/archlinux/packaging/packages/dart/-/merge_requests/14#note_335643
 #
 # Should be updated with latest commit on origin/main when new version of Dart are released.
-_depotver='50dfc838053981ae5d84530fce6822c30f37a9ab'  # As of 2026-08-26
+_depotver='08f34739d842dbef086f2a4459bd29d29c0dfd4e'  # As of 2026-10-02
 source=(
   "git+https://github.com/dart-lang/sdk.git#tag=$pkgver"
   "git+https://chromium.googlesource.com/chromium/tools/depot_tools.git#commit=$_depotver"
@@ -38,8 +38,8 @@ source=(
   "0001-ignore-warnings-in-binaryen.patch"
 )
 
-sha256sums=('95051fafe25190cf900fd10768293f341ac184186a8877e3e949904d4752af58'
-            'a429be34b36b68419d7b0670b4700af187b9966af430c4ae2d0685a7141a4f8d'
+sha256sums=('a04c0f55ccd0feecaa7d616e5bc1f5429d8948f3e17945c089d04cb1fa7d811a'
+            '6429bb1603cad3fdfea4fa101e6fe3f8e94977583dfc118584740ae8f467ad35'
             'a5b1901a606517ffad2dcc51c13da6d479837e9383dbc729710cabf5115b8d78'
             'b444edf6da2aa9f8e3ddafb7be2e359eec62ab61106b8845a39e62e62bb9ffc4')
 
@@ -82,12 +82,26 @@ build() {
 
   # gn args --list out
 
-  /usr/bin/gn gen -qv out --args='
-                        target_cpu = "x64"
+  # GN uses its own CPU names; map from $CARCH instead of hardcoding x64. Pinning
+  # x64 made the *default* (target) toolchain x64 on other arches, and since
+  # prepare() strips that toolchain's cross prefix GN then invoked the native g++
+  # with -m64 -march=x86-64 -msse2 and the build died. Everything else already
+  # compiles via dart's arch-appropriate toolchain. The build injects the arch.
+  local _target_cpu
+  case "$CARCH" in
+    x86_64)  _target_cpu=x64 ;;
+    aarch64) _target_cpu=arm64 ;;
+    armv7h)  _target_cpu=arm ;;
+    riscv64) _target_cpu=riscv64 ;;
+    *)       _target_cpu=$CARCH ;;
+  esac
+
+  /usr/bin/gn gen -qv out --args="
+                        target_cpu = \"$_target_cpu\"
                         is_debug = false
                         is_release = true
                         is_clang = false
-                        verify_sdk_hash = false'
+                        verify_sdk_hash = false"
   ninja create_sdk -v -C out
 }
 
