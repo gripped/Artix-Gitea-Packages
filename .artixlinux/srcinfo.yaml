@@ -1,0 +1,42 @@
+---
+version: 10.0-1
+pkgbase:
+  name: amdsmi
+  pkgdesc: AMD System Management Interface library
+  pkgver: 10.0
+  pkgrel: 1
+  url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
+  arch:
+    - x86_64
+  license:
+    - MIT
+    - NCSA
+    - GPL-2.0-only WITH Linux-syscall-note
+  makedepends:
+    - cmake
+    - python-wheel
+    - python-setuptools
+    - python-build
+    - python-installer
+    - python-wheel
+  depends:
+    - rocm-core
+    - libnl
+    - libmnl
+    - glibc
+    - libgcc
+    - libdrm
+    - libstdc++
+    - python
+    - python-yaml
+  options:
+    - '!lto'
+  source:
+    - amdsmi-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/amdsmi.tar.gz
+    - amdsmi-esmi-d494a3194ceb4cc4dbb2debf9fcbe8773c6d3bef.tar.gz::https://github.com/amd/esmi_ib_library/archive/d494a3194ceb4cc4dbb2debf9fcbe8773c6d3bef.tar.gz
+  sha256sums:
+    - 7f394f1b956f912be17103625c3731c84ddc11be687a821396aa36439632c137
+    - 8f9cf10922276ca35872ca0bc27e29e717a472ba704a575c5497622b62049e75
+pkgname:
+  - name: amdsmi
+# generated with artixpkg 0.40.0-1-any
