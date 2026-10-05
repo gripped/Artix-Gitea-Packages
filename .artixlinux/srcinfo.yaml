@@ -1,0 +1,183 @@
+---
+version: 1.2.35-1
+pkgbase:
+  name: lsp-plugins
+  pkgdesc: Collection of open-source plugins
+  pkgver: 1.2.35
+  pkgrel: 1
+  url: https://lsp-plug.in
+  arch:
+    - x86_64
+  license:
+    - LGPL-3.0-or-later
+  checkdepends:
+    - jq
+    - lv2lint
+  makedepends:
+    - cairo
+    - gcc-libs
+    - glibc
+    - gstreamer
+    - gst-plugins-base
+    - hicolor-icon-theme
+    - libglvnd
+    - libx11
+    - libxrandr
+    - jack
+    - ladspa
+    - libsndfile
+    - libpipewire
+    - lv2
+    - php
+  source:
+    - https://github.com/lsp-plugins/lsp-plugins//releases/download/1.2.35/lsp-plugins-src-1.2.35.tar.gz
+  sha512sums:
+    - 9cdbe7492989b7fd3326d5abcf8df49de18c4d378f78f62c96b0ca0c29a91c972754c129e9d750a324a0980697699969614b322f51c4a7761b74bb3fb58f804f
+  b2sums:
+    - 1dd5b67836d81c41068641b10c2ab2cd388c2b8116bf36d5026bf292cd2a59d4e21012a2ec3331df23e495461c819696c90525ffe9abd92340a67d56543cac1c
+pkgname:
+  - name: lsp-plugins
+    depends:
+      - lsp-plugins-clap
+      - lsp-plugins-gst
+      - lsp-plugins-ladspa
+      - lsp-plugins-lv2
+      - lsp-plugins-standalone
+      - lsp-plugins-vst
+      - lsp-plugins-vst3
+    optdepends:
+      - 'lsp-plugins-docs: for documentation'
+  - name: lsp-plugins-clap
+    pkgdesc: Collection of open-source plugins - CLAP
+    groups:
+      - clap-plugins
+    depends:
+      - cairo
+      - clap-host
+      - fontconfig
+      - freetype2
+      - glibc
+      - libglvnd
+      - libGL.so
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+      - libx11
+      - libxrandr
+  - name: lsp-plugins-docs
+    pkgdesc: Collection of open-source plugins (documentation)
+  - name: lsp-plugins-gst
+    pkgdesc: Collection of open-source plugins - GStreamer
+    groups:
+      - gstreamer-plugins
+    depends:
+      - glib2
+      - libglib-2.0.so
+      - libgobject-2.0.so
+      - glibc
+      - gstreamer
+      - gst-plugins-base-libs
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+  - name: lsp-plugins-ladspa
+    pkgdesc: Collection of open-source plugins - LADSPA
+    groups:
+      - ladspa-plugins
+    depends:
+      - glibc
+      - ladspa-host
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+  - name: lsp-plugins-lv2
+    pkgdesc: Collection of open-source plugins - LV2
+    groups:
+      - lv2-plugins
+    depends:
+      - cairo
+      - fontconfig
+      - freetype2
+      - glibc
+      - libglvnd
+      - libGL.so
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+      - libx11
+      - libxrandr
+      - lv2-host
+  - name: lsp-plugins-standalone
+    pkgdesc: Collection of open-source plugins - JACK standalone
+    groups:
+      - pro-audio
+    depends:
+      - cairo
+      - fontconfig
+      - freetype2
+      - glibc
+      - hicolor-icon-theme
+      - libglvnd
+      - libGL.so
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+      - libx11
+      - libxrandr
+    optdepends:
+      - 'liblsp-audio-pipewire-lib: for PipeWire support'
+      - 'liblsp-audio-jack-lib: for JACK support'
+  - name: lsp-plugins-vst
+    pkgdesc: Collection of open-source plugins - VST2
+    groups:
+      - vst-plugins
+    depends:
+      - cairo
+      - fontconfig
+      - freetype2
+      - glibc
+      - libglvnd
+      - libGL.so
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+      - libx11
+      - libxrandr
+      - vst-host
+  - name: lsp-plugins-vst3
+    pkgdesc: Collection of open-source plugins - VST3
+    groups:
+      - vst3-plugins
+    depends:
+      - cairo
+      - fontconfig
+      - freetype2
+      - glibc
+      - libglvnd
+      - libGL.so
+      - libsndfile
+      - libsndfile.so
+      - libstdc++
+      - libx11
+      - libxrandr
+      - vst3-host
+  - name: liblsp-audio-jack-lib
+    pkgdesc: Audio backend for JACK
+    depends:
+      - glibc
+      - jack
+      - libjack.so
+  - name: liblsp-audio-pipewire-lib
+    pkgdesc: Audio backend for PipeWire
+    depends:
+      - glibc
+      - libpipewire
+      - libpipewire-0.3.so
+  - name: liblsp-r3d-glx-lib
+    pkgdesc: GLX-based 3D backend library for rendering scenes
+    depends:
+      - glibc
+      - libglvnd
+      - libGL.so
+      - libx11
+# generated with artixpkg 0.40.0-1-any
