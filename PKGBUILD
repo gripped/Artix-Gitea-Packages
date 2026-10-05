@@ -3,7 +3,7 @@
 # Contributor: renek <aur@spaceshore.net>
 
 pkgname=python-multidict
-pkgver=6.9.1
+pkgver=7.0.0
 pkgrel=1
 pkgdesc='Asyncio-based multidict implementation for Python'
 arch=('x86_64')
@@ -29,8 +29,8 @@ checkdepends=(
   'python-pytest-codspeed'
 )
 source=("$url/archive/v$pkgver/$pkgname-$pkgver.tar.gz")
-sha512sums=('b3c14370c98a34c03c8aceec54c3f1784c1e294209db8bc5363c3db7ed2836fa8384e1ffceb959597e646ca275f47eaecc82352608863ba60e4fe69dc2a17e36')
-b2sums=('8962c996894570489321e312ea765d9fb2da84817b465adfbf27195b6e383c9bd1b0cfcd9b93f0a2e2824db7a9de070dd47e0ac2c99164fc4818ec52b24ee1e2')
+sha512sums=('7521ab5a512138aaeaacebeecb9f5c016071157392886750a284b86bb23553e528e818ebcc3fe51d6c53f4fce05408366db38ebc5965aa964b32b345af67333c')
+b2sums=('1d89bf9ec9c28487598e1bbaaa12d451cc6c05f0bd62ddbabeb4beea5e11b6a5515cdf0188d0bc01df6b5a2f73c5c360a7c6e8d5266354a3a50c441ddccf1cbb')
 
 build() {
   cd ${pkgname#python-}-$pkgver
