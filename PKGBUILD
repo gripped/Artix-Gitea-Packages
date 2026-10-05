@@ -3,8 +3,9 @@
 # Contributor: Arne Hoch <arne@derhoch.de>
 
 pkgname=dbeaver
-pkgver=26.2.0
-pkgrel=2
+pkgver=26.2.2
+pkgrel=1
+_DATADAM_API_COMMIT_ID='afb5477ab9ab6f90ba8aad27fb0231c6e1727ca3'
 pkgdesc="Free universal SQL Client for developers and database administrators (community edition)"
 arch=('x86_64')
 url="https://dbeaver.io/"
@@ -16,6 +17,7 @@ replaces=('dbeaver-plugin-sshj-lib' 'dbeaver-plugin-apache-poi' 'dbeaver-plugin-
 source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver/archive/${pkgver}.tar.gz"
         "dbeaver-common-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver-common/archive/release_${pkgver//./_}.tar.gz"
         "dbeaver-jdbc-libsql-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver-jdbc-libsql/archive/release_${pkgver//./_}.tar.gz"
+        "datadam-api-${_DATADAM_API_COMMIT_ID}.tar.gz"::"https://github.com/dbeaver/datadam-api/archive/${_DATADAM_API_COMMIT_ID}.tar.gz"
         "https://repo.maven.apache.org/maven2/org/apache/commons/commons-compress/1.28.0/commons-compress-1.28.0.jar"
         "https://repo.maven.apache.org/maven2/org/apache/commons/commons-lang3/3.19.0/commons-lang3-3.19.0.jar"
         "io.${pkgname}.DBeaver.desktop"
@@ -23,9 +25,10 @@ source=("${pkgname}-${pkgver}.tar.gz"::"https://github.com/dbeaver/dbeaver/archi
         "${pkgname}.profile.gz"
         "${pkgname}.hook"
         "${pkgname}-remove.hook")
-sha256sums=('7fa7c4e3e0558284f4533aef1a0506281597bf48d7bc531e08d781644aca64da'
-            'a5059a7acbf387f31fd7d1c49aa6ba86cdf09468d31ec0ba8d0f1811c8c6e899'
-            '1379baf0ae069f7bd55c28070a6a23b2b6c53c74037a7dee4b44be827db6e5ce'
+sha256sums=('942448e9bcc541f69fc929088ebc2167e01f2541fcf441547ecdd0adbc7c223d'
+            '7ed6491e052543e730669faca99a7ba93fb14faf09680d4bdf648505dec2498f'
+            'eca04f51261e16fd2a0ebd1e51d311f372c859ce072872a7900d0e737751128d'
+            '043b6dd35b7462b56a84a49ca351cf40008cb1412cb991b90165b4089df1d4fb'
             'e1522945218456f3649a39bc4afd70ce4bd466221519dba7d378f2141a4642ca'
             '32733ab4bc90b45b63eb72677d886961003fd4ed113e07b1028f9877cb2ac735'
             '9480a7d08f680e10c399db070c5a04cbabf282442602a2ef83d1159fe7c3e88b'
@@ -43,6 +46,7 @@ prepare() {
   # Fix dependencies path
   ln -sf "dbeaver-common-release_${pkgver//./_}" dbeaver-common
   ln -sf "dbeaver-jdbc-libsql-release_${pkgver//./_}" dbeaver-jdbc-libsql
+  ln -sf "datadam-api-${_DATADAM_API_COMMIT_ID}" datadam-api
 
   cd "${srcdir}/${pkgname}-${pkgver}"
 
@@ -78,15 +82,10 @@ package() {
   cd "target/products/org.jkiss.dbeaver.core.product/linux/gtk/${CARCH}"
 
   # Removed different architectures libraries
-  for _dir in aix-ppc aix-ppc64 darwin-aarch64 darwin-x86-64 \
-    dragonflybsd-x86-64 freebsd-aarch64 freebsd-x86 freebsd-x86-64 \
-    linux-aarch64 linux-arm linux-armel linux-loongarch64 linux-mips64el \
-    linux-ppc linux-ppc64le linux-riscv64 linux-s390x linux-x86 \
-    openbsd-x86 openbsd-x86-64 \
-    sunos-sparc sunos-sparcv9 sunos-x86 sunos-x86-64 \
+  for _dir in openbsd-x86-64 sunos-sparc sunos-sparcv9 sunos-x86 sunos-x86-64 \
     win32 win32-aarch64 win32-x86 win32-x86-64
   do
-    rm -r "dbeaver/plugins/com.sun.jna_5.18.1.v20251001-0800/com/sun/jna/${_dir}"
+    rm -r "dbeaver/plugins/com.sun.jna_5.19.1.v20260612-1000/com/sun/jna/${_dir}"
   done
   # Initially install everything into /usr/lib/dbeaver
   install -m 755 -d "${pkgdir}/usr/lib"
