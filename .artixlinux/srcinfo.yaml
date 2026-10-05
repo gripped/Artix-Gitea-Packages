@@ -1,0 +1,50 @@
+---
+version: 1.28.0-3
+pkgbase:
+  name: mate-settings-daemon
+  pkgdesc: The MATE Settings daemon
+  pkgver: 1.28.0
+  pkgrel: 3
+  url: https://github.com/mate-desktop/mate-settings-daemon
+  arch:
+    - x86_64
+  groups:
+    - mate
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - glib2-devel
+    - mate-common
+  depends:
+    - at-spi2-core
+    - cairo
+    - dbus
+    - dbus-glib
+    - dconf
+    - fontconfig
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libcanberra
+    - libgcc
+    - libmatekbd
+    - libmatemixer
+    - libnotify
+    - libpulse
+    - libx11
+    - libxi
+    - libxklavier
+    - mate-desktop
+    - nspr
+    - nss
+    - polkit
+  source:
+    - git+https://github.com/mate-desktop/mate-settings-daemon.git#tag=v1.28.0
+  b2sums:
+    - a47dd2ba4efc3043de52d858228e5084bd0e240628e4c10566818eaa2ae8e22e54c0a43f2e2df0411f78acf6ed276897adab20648322b004ff95e1ca49b3d839
+pkgname:
+  - name: mate-settings-daemon
+# generated with artixpkg 0.40.0-1-any
