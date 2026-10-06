@@ -1,0 +1,55 @@
+---
+version: 2.9.94-3
+pkgbase:
+  name: kile
+  pkgdesc: A user friendly TeX/LaTeX frontend for KDE
+  pkgver: 2.9.94
+  pkgrel: 3
+  url: https://apps.kde.org/kile/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - extra-cmake-modules
+    - kdoctools
+  depends:
+    - glibc
+    - kcodecs
+    - kcolorscheme
+    - kcompletion
+    - kconfig
+    - kconfigwidgets
+    - kcoreaddons
+    - kcrash
+    - kdbusaddons
+    - kguiaddons
+    - ki18n
+    - kiconthemes
+    - kio
+    - kparts
+    - kservice
+    - ktexteditor
+    - ktextwidgets
+    - kwidgetsaddons
+    - kwindowsystem
+    - kxmlgui
+    - libgcc
+    - libstdc++
+    - okular
+    - perl
+    - poppler-qt6
+    - qt6-5compat
+    - qt6-base
+    - qt6-declarative
+    - texlive-basic
+  optdepends:
+    - 'imagemagick: for some file type conversions'
+    - 'konsole: embedded terminal'
+  source:
+    - https://downloads.sourceforge.net/kile/kile-2.9.94.tar.bz2
+  sha256sums:
+    - 53c6742bd83fb095cbdc898b03fdf8e15ab680a81693ccaf9c5076b93ad1a3ca
+pkgname:
+  - name: kile
+# generated with artixpkg 0.40.0-1-any
