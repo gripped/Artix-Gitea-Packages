@@ -1,10 +1,10 @@
 ---
-version: 5.116.0-4
+version: 5.116.0-5
 pkgbase:
   name: knewstuff5
   pkgdesc: Support for downloading application assets from the network
   pkgver: 5.116.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://community.kde.org/Frameworks
   arch:
     - x86_64
@@ -14,12 +14,9 @@ pkgbase:
     - LGPL
   makedepends:
     - extra-cmake-modules
-    - qt5-declarative
     - qt5-tools
   depends:
-    - kdeclarative5
     - kio5
-    - kirigami2
     - kpackage5
     - attica5
     - syndication5
@@ -37,4 +34,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: knewstuff5
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
