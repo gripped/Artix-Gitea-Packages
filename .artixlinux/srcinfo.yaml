@@ -1,0 +1,30 @@
+---
+version: 1.4.1-3
+pkgbase:
+  name: lua-say
+  pkgdesc: Lua string hashing library, useful for internationalization
+  pkgver: 1.4.1
+  pkgrel: 3
+  url: https://github.com/lunarmodules/say
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - luarocks
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - lua
+  source:
+    - https://github.com/lunarmodules/say/archive/v1.4.1/say-1.4.1.tar.gz
+  sha256sums:
+    - ce07547ca49ef42cc799e2a30b3c65ce77039978e32e7961799a252d61a56486
+pkgname:
+  - name: lua-say
+  - name: lua51-say
+  - name: lua52-say
+  - name: lua53-say
+  - name: lua54-say
+# generated with artixpkg 0.40.0-1-any
