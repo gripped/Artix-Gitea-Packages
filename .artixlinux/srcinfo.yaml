@@ -1,9 +1,9 @@
 ---
-version: 101.0-1
+version: 102.0-1
 pkgbase:
   name: mkvtoolnix
   pkgdesc: Set of tools to create, edit and inspect Matroska files
-  pkgver: 101.0
+  pkgver: 102.0
   pkgrel: 1
   url: https://mkvtoolnix.download/
   arch:
@@ -37,11 +37,11 @@ pkgbase:
     - pugixml
     - qt6-base
   source:
-    - git+https://codeberg.org/mbunkus/mkvtoolnix.git?signed#tag=release-101.0
+    - git+https://codeberg.org/mbunkus/mkvtoolnix.git?signed#tag=release-102.0
   validpgpkeys:
     - D9199745B0545F2E8197062B0F92290A445B9007
   b2sums:
-    - 015b5f5ec52eaad9fec323dd4f633645b6cfdc06d2dab789ab73de2a307011d41b5f9481bc4290a2ff1aba1cd4d670b5729c2478dc145ba4ec116801995bb833
+    - 510ede1023c28a49f5e5615a5043c73ff527878c8634f4b655fb840ae322d50013af216f5414cfcd07131d65b9ef76b55e21df4ebd1e49a84941b25a5e1eff06
 pkgname:
   - name: mkvtoolnix-cli
     depends:
@@ -81,4 +81,4 @@ pkgname:
       - mkvtoolnix-cli
       - qt6-multimedia
       - qt6-svg
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
