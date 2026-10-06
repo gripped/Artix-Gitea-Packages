@@ -1,0 +1,30 @@
+---
+version: 1.1-2
+pkgbase:
+  name: lua-inifile
+  pkgdesc: a simple, complete ini parser for lua
+  pkgver: 1.1
+  pkgrel: 2
+  url: https://github.com/bartbes/inifile
+  arch:
+    - any
+  license:
+    - BSD
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - luarocks
+  source:
+    - https://github.com/bartbes/inifile/archive/v1.1/inifile-1.1.tar.gz
+  sha256sums:
+    - 3beb7db2d8ade8658152329c3644c8403300dc780d2dba346e612e45ef01ac24
+pkgname:
+  - name: lua-inifile
+  - name: lua51-inifile
+  - name: lua52-inifile
+  - name: lua53-inifile
+  - name: lua54-inifile
+# generated with artixpkg 0.40.0-1-any
