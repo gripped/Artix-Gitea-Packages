@@ -5,7 +5,7 @@ _rockname=${pkgbase#lua-}
 pkgname=("$pkgbase" "lua51-$_rockname" "lua52-$_rockname" "lua53-$_rockname" "lua54-$_rockname")
 pkgver=1.2.1
 _rockrel=1
-pkgrel=3.2
+pkgrel=3.3
 pkgdesc='an implementation of semantic versioning (semver.org 2.0.0) in pure Lua'
 arch=(any)
 url="https://github.com/kikito/$_rockname.lua"
@@ -16,7 +16,7 @@ makedepends=(lua
              lua53
              lua54
              luarocks)
-# checkdepends=(busted)
+checkdepends=(busted)
 _archive="$_rockname.lua-$pkgver"
 _rockspec="$_rockname-$pkgver-$_rockrel.rockspec"
 source=("$url/archive/v$pkgver/$_archive.tar.gz")
@@ -24,7 +24,7 @@ sha256sums=('ea750211171046d23cdfb501738f45a15ec91a67779722b8627d761c18daf323')
 
 check() {
 	cd "$_archive"
-	# busted
+	busted
 }
 
 _package() {
