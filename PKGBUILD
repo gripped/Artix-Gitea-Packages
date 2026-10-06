@@ -9,7 +9,7 @@
 
 pkgname=awesome
 pkgver=4.3
-pkgrel=7
+pkgrel=7.1
 pkgdesc='Highly configurable framework window manager'
 url='https://awesomewm.org'
 arch=(x86_64)
