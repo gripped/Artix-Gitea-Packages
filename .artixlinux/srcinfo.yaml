@@ -1,17 +1,16 @@
 ---
-version: 3.0.2-2.2
+version: 3.0.2-2.3
 pkgbase:
   name: lua-cliargs
   pkgdesc: A command-line argument parser
   pkgver: 3.0.2
-  pkgrel: 2.2
+  pkgrel: 2.3
   url: https://github.com/amireh/lua_cliargs
   arch:
     - any
   license:
     - MIT
   checkdepends:
-    - busted
     - lua-inifile
     - lua-yaml
   makedepends:

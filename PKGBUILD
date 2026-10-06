@@ -4,7 +4,7 @@ pkgbase=lua-cliargs
 _rockname=${pkgbase#lua-}
 pkgname=("$pkgbase" "lua51-$_rockname" "lua52-$_rockname" "lua53-$_rockname" "lua54-$_rockname")
 pkgver=3.0.2
-pkgrel=2.2
+pkgrel=2.3
 _rockrel=1
 pkgdesc='A command-line argument parser'
 arch=(any)
@@ -16,8 +16,8 @@ makedepends=(lua
              lua53
              lua54
              luarocks)
-checkdepends=(busted
-              lua-inifile
+checkdepends=(lua-inifile
+			  #busted
               lua-yaml)
 _optdepends=('inifile: load config file from INI'
              'yaml: load config file from YAML')
