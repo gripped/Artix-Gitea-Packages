@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -30,14 +30,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 2.3.0-3
-    packages:
-      - busted-2.3.0-3-any.pkg.tar.zst
-      - lua-busted-2.3.0-3-any.pkg.tar.zst
-      - lua54-busted-2.3.0-3-any.pkg.tar.zst
-      - lua53-busted-2.3.0-3-any.pkg.tar.zst
-      - lua52-busted-2.3.0-3-any.pkg.tar.zst
-      - lua51-busted-2.3.0-3-any.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
