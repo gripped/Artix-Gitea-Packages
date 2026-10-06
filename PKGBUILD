@@ -9,7 +9,7 @@
 pkgbase=penlight
 pkgname=('lua-penlight' 'lua54-penlight' 'lua53-penlight' 'lua52-penlight' 'lua51-penlight')
 pkgver=1.15.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Lua libraries focusing on input data handling'
 url='https://github.com/lunarmodules/Penlight'
 arch=('any')

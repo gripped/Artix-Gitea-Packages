@@ -1,10 +1,10 @@
 ---
-version: 1.15.0-3
+version: 1.15.0-3.1
 pkgbase:
   name: penlight
   pkgdesc: Lua libraries focusing on input data handling
   pkgver: 1.15.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/lunarmodules/Penlight
   arch:
     - any
