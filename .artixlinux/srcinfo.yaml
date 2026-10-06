@@ -1,9 +1,9 @@
 ---
-version: 5.12.0-1
+version: 5.13.0-1
 pkgbase:
   name: qalculate-gtk
   pkgdesc: GTK frontend for libqalculate
-  pkgver: 5.12.0
+  pkgver: 5.13.0
   pkgrel: 1
   url: https://qalculate.github.io/
   arch:
@@ -16,7 +16,6 @@ pkgbase:
     - glib2-devel
   depends:
     - cairo
-    - gdk-pixbuf2
     - glib2
     - glibc
     - gtk3
@@ -25,9 +24,9 @@ pkgbase:
     - libstdc++
     - pango
   source:
-    - git+https://github.com/Qalculate/qalculate-gtk#tag=v5.12.0
+    - git+https://github.com/Qalculate/qalculate-gtk#tag=v5.13.0
   sha256sums:
-    - bbc3f781230396af00dae538a975e074781aa8ca82959cde35ec060590e8a959
+    - d6ded8437cb09cc88283e8d7f24c9b1cb7c5d995f717ed16515b2da06f15bba8
 pkgname:
   - name: qalculate-gtk
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
