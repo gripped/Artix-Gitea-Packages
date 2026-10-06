@@ -1,15 +1,17 @@
 ---
-version: 1.1.2-8.1
+version: 1.1.2-8.2
 pkgbase:
   name: lua-mediator
   pkgdesc: Event handling through channels
   pkgver: 1.1.2
-  pkgrel: 8.1
+  pkgrel: 8.2
   url: https://olivinelabs.com/mediator_lua/
   arch:
     - any
   license:
     - MIT
+  checkdepends:
+    - busted
   makedepends:
     - lua
     - lua51
