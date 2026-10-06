@@ -1,22 +1,21 @@
-# Maintainer: kenobi <kenobi@artixlinux.org>
-# Contributor: Daurnimator <quae@archlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
-# Contributor: Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Maintainer: Daurnimator <quae@archlinux.org>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
 # Contributor: Sébastien Luttringer
 # Contributor: SpepS <dreamspepser at yahoo dot it>
 # Contributor: Laszlo Papp <djszapi at archlinux us>
 # Contributor: Donald Ephraim Curtis <dcurtis@gmail.com>
 
 pkgbase=penlight
-pkgname=('lua-penlight' 'lua53-penlight' 'lua52-penlight' 'lua51-penlight')
-pkgver=1.14.0
-pkgrel=1
+pkgname=('lua-penlight' 'lua54-penlight' 'lua53-penlight' 'lua52-penlight' 'lua51-penlight')
+pkgver=1.15.0
+pkgrel=3
 pkgdesc='Lua libraries focusing on input data handling'
 url='https://github.com/lunarmodules/Penlight'
 arch=('any')
 license=('MIT')
 makedepends=('luarocks'
-             'lua51' 'lua52' 'lua53' 'lua') # https://github.com/luarocks/luarocks/issues/1275
+             'lua51' 'lua52' 'lua53' 'lua54' 'lua') # https://github.com/luarocks/luarocks/issues/1275
 checkdepends=('busted'
               'lua51-busted'
               'lua51-filesystem'
@@ -24,16 +23,18 @@ checkdepends=('busted'
               'lua52-filesystem'
               'lua53-busted'
               'lua53-filesystem'
+              'lua54-busted'
+              'lua54-filesystem'
               'lua-busted'
               'lua-filesystem')
 source=("https://github.com/lunarmodules/Penlight/archive/${pkgver}/${pkgname}-${pkgver}.tar.gz")
-sha256sums=('2387431c0e83c4189cccb35b989141a3280d735cb5d42bacf3451af9869bebf7')
+sha256sums=('b7a2c3e65799a649d29e9927a337f99cca2a5fc46367a0ce101435be74e53b39')
 
 build() {
   cd Penlight-${pkgver}
 
   local _version
-  for _version in 5.1 5.2 5.3 5.4; do
+  for _version in 5.1 5.2 5.3 5.4 5.5; do
     mkdir -p "$_version/"
     luarocks make --pack-binary-rock --lua-version="$_version" --deps-mode=none \
       rockspecs/penlight-"$pkgver"-1.rockspec
@@ -45,7 +46,7 @@ check() {
   cd Penlight-${pkgver}
 
   local _version
-  for _version in 5.1 5.2 5.3 5.4; do
+  for _version in 5.1 5.2 5.3 5.4 5.5; do
     # Upstream is migrating to busted, run.lua is legacy format tests
     env LUA_PATH="${PWD}/lua/?/init.lua;${PWD}/lua/?.lua;;" \
       "lua${_version}" run.lua
@@ -68,28 +69,29 @@ _package() {
   install -Dm 644 LICENSE.md -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
 
+package_lua-penlight() {
+  depends=("lua-filesystem")
+  _package 5.5
+}
+
+package_lua54-penlight() {
+  depends=("lua54-filesystem")
+  _package 5.4
+}
+
 package_lua53-penlight() {
   depends=("lua53-filesystem")
-
   _package 5.3
 }
 
 package_lua52-penlight() {
   depends=("lua52-filesystem")
-
   _package 5.2
 }
 
 package_lua51-penlight() {
   depends=("lua51-filesystem")
-
   _package 5.1
-}
-
-package_lua-penlight() {
-  depends=("lua-filesystem")
-
-  _package 5.4
 }
 
 # vim: ts=2 sw=2 et:
