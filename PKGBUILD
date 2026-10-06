@@ -6,7 +6,7 @@ _project=$_rockname.lua
 pkgname=("$pkgbase" "lua51-$_rockname" "lua52-$_rockname" "lua53-$_rockname" "lua54-$_rockname")
 pkgver=2.3.2
 _rockrel=1 # upstream rockrel 2 is only needed for installing with Luarocks 2.x
-pkgrel=3.2
+pkgrel=3.3
 pkgdesc='The cassowary constraint solver'
 arch=(any)
 url="https://github.com/sile-typesetter/$_project"
@@ -18,14 +18,14 @@ makedepends=(lua
              lua53
              lua54
              luarocks)
-# checkdepends=(busted)
+checkdepends=(busted)
 _archive="$_project-$pkgver"
 source=("$url/archive/v$pkgver/$_archive.tar.gz")
 sha256sums=('20fe7309f59004ce59e6c65d69ed9993de907267fd0314fc224f40e017d59798')
 
 check() {
 	cd "$_archive"
-	# busted
+	busted
 }
 
 _package() {
