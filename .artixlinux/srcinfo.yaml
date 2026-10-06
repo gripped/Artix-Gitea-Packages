@@ -1,9 +1,9 @@
 ---
-version: 0.21.0-1
+version: 0.22.0-1
 pkgbase:
   name: khard
   pkgdesc: Console address book manager
-  pkgver: 0.21.0
+  pkgver: 0.22.0
   pkgrel: 1
   url: https://github.com/lucc/khard
   arch:
@@ -17,6 +17,9 @@ pkgbase:
     - python-build
     - python-installer
     - python-setuptools-scm
+    - python-sphinx
+    - python-sphinx-argparse
+    - python-sphinx-autoapi
     - python-wheel
   depends:
     - python
@@ -27,9 +30,9 @@ pkgbase:
     - 'diffutils: Using sdiff_khard_wrapper.sh'
     - 'vdirsyncer: Synchronization of address books with a DAV server'
   source:
-    - git+https://github.com/lucc/khard.git#tag=v0.21.0
+    - git+https://github.com/lucc/khard.git#tag=v0.22.0
   b2sums:
-    - 01c74061e46b93de2c7d862f525d7c4f7d8993d5b27e35999957241b85bbe942aeae89068a20c0e00689e853d5b473d3392b524b40c618efae351f74e68d34d5
+    - cf4505ef4c57154f4f705b94d6971cf4a48467e819a5876749e9e79020bbb252bc6f2eaa76be028947edbbe7764f2cadf0b63c726f1385aeae487d0711f734b5
 pkgname:
   - name: khard
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
