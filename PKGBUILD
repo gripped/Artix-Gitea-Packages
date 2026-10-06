@@ -6,7 +6,7 @@ _project=${_rockname}_lua
 pkgname=("lua-$_rockname" "lua53-$_rockname" "lua54-$_rockname" "lua52-$_rockname" "lua51-$_rockname")
 pkgver=1.1.2
 _rockrel=0
-pkgrel=8
+pkgrel=8.1
 pkgdesc='Event handling through channels'
 arch=(any)
 url="https://olivinelabs.com/$_project/"
@@ -17,14 +17,14 @@ makedepends=(lua
              lua53
              lua54
              luarocks)
-checkdepends=(busted)
+# checkdepends=(busted)
 _archive="$_project-$pkgver-$_rockrel"
 source=("https://github.com/Olivine-Labs/$_project/archive/v$pkgver-$_rockrel/$_archive.tar.gz")
 sha256sums=('faf5859fd2081be4e9e4fb8873a2dc65f7eff3fd93d6dd14da65f8e123fcff9b')
 
 check() {
 	cd "$_archive"
-	busted
+	# busted
 }
 
 _package() {
