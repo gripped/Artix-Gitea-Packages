@@ -1,11 +1,11 @@
 ---
-version: 1.28.1-1
+version: 1.28.1-2
 pkgbase:
   name: eom
   pkgdesc: An image viewer for MATE
   pkgver: 1.28.1
-  pkgrel: 1
-  url: https://mate-desktop.org
+  pkgrel: 2
+  url: https://github.com/mate-desktop/eom
   arch:
     - x86_64
   groups:
@@ -13,32 +13,35 @@ pkgbase:
   license:
     - GPL-2.0-or-later
   makedepends:
-    - autoconf-archive
+    - git
     - glib2-devel
     - gobject-introspection
+    - gtk-doc
     - mate-common
-    - itstool
     - yelp-tools
   depends:
-    - dbus-glib
-    - gobject-introspection-runtime
-    - gettext
+    - at-spi2-core
+    - cairo
+    - dconf
     - exempi
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
     - lcms2
     - libexif
     - libjpeg-turbo
-    - mate-desktop
     - libpeas
-  optdepends:
-    - 'webp-pixbuf-loader: webp image format support'
-  conflicts:
-    - eom-gtk3
-  replaces:
-    - eom-gtk3
+    - librsvg
+    - libx11
+    - libxml2
+    - mate-desktop
+    - zlib
   source:
-    - eom-1.28.1.tar.gz::https://github.com/mate-desktop/eom/archive/refs/tags/v1.28.1.tar.gz
-  sha256sums:
-    - 5adc899e98f48d95aef95b02981c30fd0ecadac194bf0764b0aa157595922046
+    - git+https://github.com/mate-desktop/eom.git#tag=v1.28.1
+  b2sums:
+    - 67e24cc9909df842c802a67ce1fae197c0aa44ae01d39be6096aef2979182329015f1dc3aabf7ae3669fcc504a55e6c599e3bb6d9f54132fc3769dbe52062719
 pkgname:
   - name: eom
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
