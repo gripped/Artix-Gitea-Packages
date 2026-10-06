@@ -1,20 +1,26 @@
 ---
-version: 1.15.0-3.4
+version: 1.15.0-3.5
 pkgbase:
   name: penlight
   pkgdesc: Lua libraries focusing on input data handling
   pkgver: 1.15.0
-  pkgrel: 3.4
+  pkgrel: 3.5
   url: https://github.com/lunarmodules/Penlight
   arch:
     - any
   license:
     - MIT
   checkdepends:
+    - busted
+    - lua51-busted
     - lua51-filesystem
+    - lua52-busted
     - lua52-filesystem
+    - lua53-busted
     - lua53-filesystem
+    - lua54-busted
     - lua54-filesystem
+    - lua-busted
     - lua-filesystem
   makedepends:
     - luarocks
