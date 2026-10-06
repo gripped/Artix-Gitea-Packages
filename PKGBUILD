@@ -6,7 +6,7 @@
 
 pkgname=ldoc
 pkgver=1.5.0
-pkgrel=5
+pkgrel=5.1
 _rockrel=1
 pkgdesc='LuaDoc-compatible documentation generation system'
 url="https://github.com/lunarmodules/$pkgname"
