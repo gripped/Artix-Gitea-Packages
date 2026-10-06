@@ -9,7 +9,7 @@
 pkgbase=penlight
 pkgname=('lua-penlight' 'lua54-penlight' 'lua53-penlight' 'lua52-penlight' 'lua51-penlight')
 pkgver=1.15.0
-pkgrel=3.3
+pkgrel=3.4
 pkgdesc='Lua libraries focusing on input data handling'
 url='https://github.com/lunarmodules/Penlight'
 arch=('any')
@@ -17,13 +17,13 @@ license=('MIT')
 makedepends=('luarocks'
              'lua51' 'lua52' 'lua53' 'lua54' 'lua') # https://github.com/luarocks/luarocks/issues/1275
 checkdepends=(#'busted'
-              'lua51-busted'
+              # 'lua51-busted'
               'lua51-filesystem'
-              'lua52-busted'
+              # 'lua52-busted'
               'lua52-filesystem'
-              'lua53-busted'
+              # 'lua53-busted'
               'lua53-filesystem'
-              'lua54-busted'
+              # 'lua54-busted'
               'lua54-filesystem'
               # 'lua-busted'
               'lua-filesystem')
