@@ -1,0 +1,33 @@
+---
+version: 0.7.1-1
+pkgbase:
+  name: lua-system
+  pkgdesc: Platform independent system calls for Lua
+  pkgver: 0.7.1
+  pkgrel: 1
+  url: https://github.com/lunarmodules/luasystem
+  arch:
+    - x86_64
+    - i686
+  license:
+    - MIT
+  checkdepends:
+    - busted
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - luarocks
+  source:
+    - https://github.com/lunarmodules/luasystem/archive/v0.7.1/luasystem-0.7.1.tar.gz
+  sha256sums:
+    - c85fb1e05ba5059a767ee0f6c8db8b9a30b86760224085b687ffbdf4892895cd
+pkgname:
+  - name: lua-system
+  - name: lua51-system
+  - name: lua52-system
+  - name: lua53-system
+  - name: lua54-system
+# generated with artixpkg 0.40.0-1-any

@@ -1,0 +1,5 @@
+[lua-system]
+source = "github"
+github = "lunarmodules/luasystem"
+prefix = "v"
+use_max_tag = true
