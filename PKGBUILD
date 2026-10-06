@@ -4,7 +4,7 @@
 
 pkgname=matrix-synapse
 pkgver=1.162.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
 arch=('x86_64')
@@ -27,7 +27,7 @@ depends=(
   'python-pillow'
   'python-pysaml2'
   'python-pydantic'
- 
+
   'python-unpaddedbase64'
   'python-canonicaljson'
   'python-signedjson'
@@ -48,7 +48,7 @@ depends=(
   'python-bleach'
   'python-typing_extensions'
   'python-python-multipart'
- 
+
 )
 makedepends=(git python-build python-installer python-wheel python-poetry-core python-maturin)
 checkdepends=('python-pip' 'python-authlib' 'python-pyjwt' 'python-lxml' 'python-parameterized'
