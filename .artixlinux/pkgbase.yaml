@@ -1,11 +1,11 @@
 ---
 team: galaxy
 actions:
-  addRepo: null
+  addRepo: galaxy
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -54,6 +54,11 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 2.11-1
+    packages:
+      - lua-dkjson-2.11-1-any.pkg.tar.zst
+      - lua54-dkjson-2.11-1-any.pkg.tar.zst
+      - lua53-dkjson-2.11-1-any.pkg.tar.zst
+      - lua52-dkjson-2.11-1-any.pkg.tar.zst
+      - lua51-dkjson-2.11-1-any.pkg.tar.zst
     debug: []
