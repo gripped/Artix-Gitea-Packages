@@ -1,0 +1,34 @@
+---
+version: 1.1.2-9
+pkgbase:
+  name: lua-yaml
+  pkgdesc: LibYAML binding for Lua
+  pkgver: 1.1.2
+  pkgrel: 9
+  url: https://lubyk.github.io/lubyk/yaml.html
+  arch:
+    - x86_64
+    - i686
+  license:
+    - MIT
+  checkdepends:
+    - lua-lub
+    - lua-lut
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - luarocks
+  source:
+    - https://github.com/lubyk/yaml/archive/REL-1.1.2/yaml-REL-1.1.2.tar.gz
+  sha256sums:
+    - b4391d182677ab644403bf1ac028c7421c2605db124f9792193013c582a273ec
+pkgname:
+  - name: lua-yaml
+  - name: lua51-yaml
+  - name: lua52-yaml
+  - name: lua53-yaml
+  - name: lua54-yaml
+# generated with artixpkg 0.40.0-1-any
