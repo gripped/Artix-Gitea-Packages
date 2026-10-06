@@ -1,0 +1,30 @@
+---
+version: 1.9.0-3
+pkgbase:
+  name: lua-luassert
+  pkgdesc: Assertion library for Lua
+  pkgver: 1.9.0
+  pkgrel: 3
+  url: https://github.com/lunarmodules/luassert
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - luarocks
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - lua
+  source:
+    - https://github.com/lunarmodules/luassert/archive/v1.9.0/luassert-1.9.0.tar.gz
+  sha256sums:
+    - 1db0fabf1bd87392860375b89a8a37d17b687325c988be0df8c42e7e96e7ed73
+pkgname:
+  - name: lua-luassert
+  - name: lua54-luassert
+  - name: lua53-luassert
+  - name: lua52-luassert
+  - name: lua51-luassert
+# generated with artixpkg 0.40.0-1-any
