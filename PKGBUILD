@@ -1,6 +1,6 @@
 # Maintainer: Levente Polyak <anthraxx[at]archlinux[dot]org>
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
 # Maintainer: T.J. Townsend <blakkheim@archlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Anatol Pomozov <anatol.pomozov@gmail.com>
 # Contributor: Thomas Dziedzic <gostrc@gmail.com>
 # Contributor: Jan "heftig" Steffens <jan.steffens@gmail.com>
@@ -13,7 +13,7 @@ pkgbase=vim
 pkgname=('vim' 'gvim' 'vim-runtime')
 pkgver=9.2.1164
 _versiondir=92
-pkgrel=1
+pkgrel=2
 pkgdesc='Vi Improved, a highly configurable, improved version of the vi text editor'
 url='https://www.vim.org'
 arch=('x86_64')
@@ -67,6 +67,7 @@ build() {
       --enable-acl \
       --with-x=no \
       --disable-gui \
+      --disable-pixman \
       --enable-multibyte \
       --enable-cscope \
       --enable-netbeans \
@@ -181,7 +182,7 @@ package_vim() {
 package_gvim() {
   pkgdesc+=' (with advanced features, such as a GUI)'
   depends=("vim-runtime=${pkgver}-${pkgrel}" 'gpm' 'libxt' 'gtk3' 'glibc' 'libgcrypt'
-           'zlib' 'libcanberra')
+           'zlib' 'libcanberra' 'pixman')
   optdepends=('python: Python language support'
               'ruby: Ruby language support'
               'lua: Lua language support'
