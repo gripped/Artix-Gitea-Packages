@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Adam Fontenot <fontenot@ucla.edu>
 
 pkgname=libheif
-pkgver=1.23.5
+pkgver=1.23.6
 pkgrel=1
 pkgdesc='An HEIF and AVIF file format decoder and encoder'
 arch=(x86_64)
@@ -39,7 +38,7 @@ optdepends=('libjpeg-turbo: for heif-dec and heif-enc'
             'rav1e: rav1e encoder'
             'svt-av1: svt-av1 encoder')
 source=(git+https://github.com/strukturag/libheif#tag=v$pkgver)
-sha256sums=('8e376d931d85ee96e1414af93a0157b572034582dba60a56b7a91b3bd49bb73e')
+sha256sums=('3a14caa51845aabc12da553bd0b19320e31e5fe02ad4f9aae2181d2068f6154f')
 
 build() {
   cmake -B build -S $pkgname \
