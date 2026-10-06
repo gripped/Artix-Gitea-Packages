@@ -1,10 +1,10 @@
 ---
-version: 2.3.0-3
+version: 2.3.0-3.1
 pkgbase:
   name: busted
   pkgdesc: Elegant Lua unit testing
   pkgver: 2.3.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://lunarmodules.github.io/busted/
   arch:
     - any
