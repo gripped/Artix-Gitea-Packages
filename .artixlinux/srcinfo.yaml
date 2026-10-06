@@ -1,0 +1,34 @@
+---
+version: 3.0.2-2
+pkgbase:
+  name: lua-cliargs
+  pkgdesc: A command-line argument parser
+  pkgver: 3.0.2
+  pkgrel: 2
+  url: https://github.com/amireh/lua_cliargs
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - busted
+    - lua-inifile
+    - lua-yaml
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - luarocks
+  source:
+    - https://github.com/amireh/lua_cliargs/archive/v3.0.2/lua_cliargs-3.0.2.tar.gz
+  sha256sums:
+    - a7a57ab9c73f6c44040a78305b6dc7780ca1565cc4c9057d74a6608cb0443af4
+pkgname:
+  - name: lua-cliargs
+  - name: lua51-cliargs
+  - name: lua52-cliargs
+  - name: lua53-cliargs
+  - name: lua54-cliargs
+# generated with artixpkg 0.40.0-1-any
