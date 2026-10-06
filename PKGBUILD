@@ -5,7 +5,7 @@ _rockname=${pkgbase#lua-}
 pkgname=("$pkgbase" "lua51-$_rockname" "lua52-$_rockname" "lua53-$_rockname" "lua54-$_rockname")
 pkgver=0.7.1
 _rockrel=1
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='Platform independent system calls for Lua'
 arch=(x86_64 i686)
 url="https://github.com/lunarmodules/${pkgbase/-/}"
@@ -16,7 +16,7 @@ makedepends=(lua
              lua53
              lua54
              luarocks)
-# checkdepends=(busted)
+checkdepends=(busted)
 _archive="${pkgbase/-/}-$pkgver"
 _rock="$_archive-$_rockrel.linux-$CARCH.rock"
 _rockspec="rockspecs/$_archive-$_rockrel.rockspec"

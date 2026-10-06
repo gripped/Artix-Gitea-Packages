@@ -1,16 +1,18 @@
 ---
-version: 0.7.1-1.1
+version: 0.7.1-1.2
 pkgbase:
   name: lua-system
   pkgdesc: Platform independent system calls for Lua
   pkgver: 0.7.1
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://github.com/lunarmodules/luasystem
   arch:
     - x86_64
     - i686
   license:
     - MIT
+  checkdepends:
+    - busted
   makedepends:
     - lua
     - lua51
