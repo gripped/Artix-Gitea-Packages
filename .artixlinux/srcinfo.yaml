@@ -1,9 +1,9 @@
 ---
-version: 8.0.1-1
+version: 8.0.1-2
 pkgbase:
   name: python-atpublic
   pkgver: 8.0.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.com/flufl/public
   arch:
     - any
@@ -14,9 +14,8 @@ pkgbase:
     - python-sybil
   makedepends:
     - python-build
+    - python-hatchling
     - python-installer
-    - python-setuptools
-    - python-wheel
   depends:
     - python
   source:
@@ -27,4 +26,4 @@ pkgbase:
     - 8d8ebb277e35c3f0b630f852c11bb9d1e034323ca42e923de8b87095a3a1ecb1c37404e84522e1ee8f649df8810d4518437d4bf19076ea5888058f8df6946b8b
 pkgname:
   - name: python-atpublic
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
