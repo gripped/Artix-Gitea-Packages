@@ -1,0 +1,90 @@
+---
+version: 2.3.0-3
+pkgbase:
+  name: busted
+  pkgdesc: Elegant Lua unit testing
+  pkgver: 2.3.0
+  pkgrel: 3
+  url: https://lunarmodules.github.io/busted/
+  arch:
+    - any
+  license:
+    - MIT
+  makedepends:
+    - lua
+    - lua51
+    - lua52
+    - lua53
+    - lua54
+    - luarocks
+  source:
+    - https://github.com/lunarmodules/busted/archive/v2.3.0/busted-2.3.0.tar.gz
+  sha256sums:
+    - 1669a4f59ff9e08ad4b38d4212ad8cdd4519209101e3af5459a596d5ad9a7d24
+pkgname:
+  - name: busted
+    pkgdesc: Elegant Lua unit testing (CLI)
+    depends:
+      - lua
+      - lua-busted
+  - name: lua-busted
+    depends:
+      - lua
+      - lua-cliargs
+      - lua-dkjson
+      - lua-filesystem
+      - lua-luassert
+      - lua-mediator
+      - lua-penlight
+      - lua-say
+      - lua-system
+      - lua-term
+  - name: lua54-busted
+    depends:
+      - lua54
+      - lua54-cliargs
+      - lua54-dkjson
+      - lua54-filesystem
+      - lua54-luassert
+      - lua54-mediator
+      - lua54-penlight
+      - lua54-say
+      - lua54-system
+      - lua54-term
+  - name: lua53-busted
+    depends:
+      - lua53
+      - lua53-cliargs
+      - lua53-dkjson
+      - lua53-filesystem
+      - lua53-luassert
+      - lua53-mediator
+      - lua53-penlight
+      - lua53-say
+      - lua53-system
+      - lua53-term
+  - name: lua52-busted
+    depends:
+      - lua52
+      - lua52-cliargs
+      - lua52-dkjson
+      - lua52-filesystem
+      - lua52-luassert
+      - lua52-mediator
+      - lua52-penlight
+      - lua52-say
+      - lua52-system
+      - lua52-term
+  - name: lua51-busted
+    depends:
+      - lua51
+      - lua51-cliargs
+      - lua51-dkjson
+      - lua51-filesystem
+      - lua51-luassert
+      - lua51-mediator
+      - lua51-penlight
+      - lua51-say
+      - lua51-system
+      - lua51-term
+# generated with artixpkg 0.40.0-1-any
