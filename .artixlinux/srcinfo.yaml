@@ -1,10 +1,10 @@
 ---
-version: 51.0-2
+version: 51.1-1
 pkgbase:
   name: gnome-system-monitor
   pkgdesc: View current processes and monitor system state
-  pkgver: 51.0
-  pkgrel: 2
+  pkgver: 51.1
+  pkgrel: 1
   url: https://apps.gnome.org/SystemMonitor
   arch:
     - x86_64
@@ -39,9 +39,9 @@ pkgbase:
     - pango
     - polkit
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-system-monitor.git#tag=51.0
+    - git+https://gitlab.gnome.org/GNOME/gnome-system-monitor.git#tag=51.1
   b2sums:
-    - fc6c5bdd8282bdceb330b655935cfb2ad9cd80fe80a98dcf51ad8bf9fea9cc3a11749c43ad5ed271ae307d68fc05db7bcb6cad85b6f895b6bcb1e393f37dab9b
+    - 09e4a0793e3f1e8912f5f74154ee2a059effa5812416e34c244635cb7cd2803d0019a7313fe40bdbb0e788f8dd50ac1a501e31e89aab760f053dacdf776458ca
 pkgname:
   - name: gnome-system-monitor
 # generated with artixpkg 0.40.0-1-any
