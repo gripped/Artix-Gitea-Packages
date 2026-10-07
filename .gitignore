@@ -57,3 +57,9 @@ gstreamer/objects/pack/pack-2ee0fc5c3d296d6a10cf617c669f8c89210581bc.idx
 gstreamer/objects/pack/pack-2ee0fc5c3d296d6a10cf617c669f8c89210581bc.pack
 gstreamer/objects/pack/pack-2ee0fc5c3d296d6a10cf617c669f8c89210581bc.rev
 gstreamer/packed-refs
+gstreamer/FETCH_HEAD
+gstreamer/objects/info/commit-graphs/commit-graph-chain
+gstreamer/objects/info/commit-graphs/graph-76bd59656db5704af60c9032f2bd272c339d4eb1.graph
+gstreamer/objects/pack/pack-25358b6095c2a960bca2d0bbd35f6bbb106d7025.idx
+gstreamer/objects/pack/pack-25358b6095c2a960bca2d0bbd35f6bbb106d7025.pack
+gstreamer/objects/pack/pack-25358b6095c2a960bca2d0bbd35f6bbb106d7025.rev

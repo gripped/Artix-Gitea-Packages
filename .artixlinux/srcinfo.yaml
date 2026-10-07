@@ -1,10 +1,10 @@
 ---
-version: 1.28.7-2
+version: 1.28.7-3
 pkgbase:
   name: gstreamer
   pkgdesc: Multimedia graph framework
   pkgver: 1.28.7
-  pkgrel: 2
+  pkgrel: 3
   url: https://gstreamer.freedesktop.org/
   arch:
     - x86_64
@@ -97,7 +97,6 @@ pkgbase:
     - libvpl
     - libvpx
     - libwebp
-    - libwpe
     - libx11
     - libxcb
     - libxdamage
@@ -170,7 +169,6 @@ pkgbase:
     - wayland-protocols
     - webrtc-audio-processing-1
     - wildmidi
-    - wpebackend-fdo
     - wpewebkit
     - x264
     - x265
@@ -212,8 +210,8 @@ pkgname:
   - name: gst-plugins-bad-libs
     pkgdesc: Multimedia graph framework - bad
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libdrm
@@ -237,7 +235,7 @@ pkgname:
   - name: gst-plugins-base-libs
     pkgdesc: Multimedia graph framework - base
     depends:
-      - gstreamer=1.28.7-2
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - graphene
@@ -259,8 +257,8 @@ pkgname:
   - name: gst-plugins-base
     pkgdesc: Multimedia graph framework - base plugins
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - alsa-lib
       - cairo
       - cdparanoia
@@ -275,8 +273,8 @@ pkgname:
   - name: gst-plugins-good
     pkgdesc: Multimedia graph framework - good plugins
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - aalib
       - bzip2
       - cairo
@@ -320,9 +318,9 @@ pkgname:
   - name: gst-plugins-bad
     pkgdesc: Multimedia graph framework - bad plugins
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - aom
       - bzip2
       - cairo
@@ -396,14 +394,14 @@ pkgname:
       - 'gst-plugin-qmlgl: qmlgl plugin'
       - 'gst-plugin-qsv: qsv plugin'
       - 'gst-plugin-va: va plugin'
-      - 'gst-plugin-wpe: wpe plugin'
+      - 'gst-plugin-wpe2: wpe2 plugin'
     optdepends_x86_64:
       - 'gst-plugin-svthevcenc: svthevcenc plugin'
   - name: gst-plugins-ugly
     pkgdesc: Multimedia graph framework - ugly plugins
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - a52dec
       - glib2
       - glibc
@@ -414,19 +412,19 @@ pkgname:
   - name: gst-libav
     pkgdesc: Multimedia graph framework - libav plugin
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - ffmpeg
       - glib2
       - glibc
     provides:
-      - gst-ffmpeg=1.28.7-2
+      - gst-ffmpeg=1.28.7-3
   - name: gst-plugin-gtk
     pkgdesc: Multimedia graph framework - gtk plugin
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - cairo
       - glib2
       - glibc
@@ -435,9 +433,9 @@ pkgname:
   - name: gst-plugin-hip
     pkgdesc: Multimedia graph framework - hip plugin and library
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libdrm
@@ -451,9 +449,9 @@ pkgname:
   - name: gst-plugin-msdk
     pkgdesc: Multimedia graph framework - msdk plugin
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libdrm
@@ -463,8 +461,8 @@ pkgname:
   - name: gst-plugin-opencv
     pkgdesc: Multimedia graph framework - opencv plugin and library
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libgcc
@@ -473,8 +471,8 @@ pkgname:
   - name: gst-plugin-qml6
     pkgdesc: Multimedia graph framework - qml6 plugin
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libgcc
@@ -485,8 +483,8 @@ pkgname:
   - name: gst-plugin-qmlgl
     pkgdesc: Multimedia graph framework - qmlgl plugin
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libgcc
@@ -499,9 +497,9 @@ pkgname:
   - name: gst-plugin-qsv
     pkgdesc: Multimedia graph framework - qsv plugin
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libgcc
@@ -514,43 +512,29 @@ pkgname:
     arch:
       - x86_64
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - svt-hevc
   - name: gst-plugin-va
     pkgdesc: Multimedia graph framework - va plugin
     depends:
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libgudev
       - libva
     replaces:
       - gstreamer-vaapi<=1.26.10-5
-  - name: gst-plugin-wpe
-    pkgdesc: Multimedia graph framework - wpe plugin
-    depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
-      - glib2
-      - glibc
-      - libgcc
-      - libstdc++
-      - libwpe
-      - libxkbcommon
-      - wayland
-      - wpebackend-fdo
-      - wpewebkit
   - name: gst-plugin-wpe2
     pkgdesc: Multimedia graph framework - wpe2 plugin
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - libgcc
@@ -561,8 +545,8 @@ pkgname:
   - name: gst-devtools-libs
     pkgdesc: Multimedia graph framework - development and debugging libraries
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - json-glib
@@ -571,11 +555,11 @@ pkgname:
   - name: gst-devtools
     pkgdesc: Multimedia graph framework - development and debugging tools
     depends:
-      - gst-devtools-libs=1.28.7-2
-      - gst-plugins-bad-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gst-rtsp-server=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-devtools-libs=1.28.7-3
+      - gst-plugins-bad-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gst-rtsp-server=1.28.7-3
+      - gstreamer=1.28.7-3
       - cairo
       - glib2
       - glibc
@@ -591,8 +575,8 @@ pkgname:
   - name: gst-rtsp-server
     pkgdesc: Multimedia graph framework - rtsp server
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - orc
@@ -600,10 +584,10 @@ pkgname:
   - name: gst-editing-services
     pkgdesc: Multimedia graph framework - editing services
     depends:
-      - gst-devtools-libs=1.28.7-2
-      - gst-plugins-base-libs=1.28.7-2
-      - gst-python=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-devtools-libs=1.28.7-3
+      - gst-plugins-base-libs=1.28.7-3
+      - gst-python=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - json-glib
@@ -617,8 +601,8 @@ pkgname:
   - name: gst-python
     pkgdesc: Multimedia graph framework - python plugin
     depends:
-      - gst-plugins-base-libs=1.28.7-2
-      - gstreamer=1.28.7-2
+      - gst-plugins-base-libs=1.28.7-3
+      - gstreamer=1.28.7-3
       - glib2
       - glibc
       - python
