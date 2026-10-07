@@ -8,8 +8,8 @@
 # Contributor: Asa Marco <marcoasa90[at]gmail[.]com>
 
 pkgname=openshot
-pkgver=4.0.0
-pkgrel=3
+pkgver=4.0.1
+pkgrel=1
 pkgdesc="An award-winning free and open-source video editor"
 arch=(any)
 url="https://www.openshot.org/"
@@ -51,7 +51,7 @@ source=(
   "git+https://github.com/OpenShot/openshot-qt#tag=v${pkgver}"
   "$pkgname-2.6.1-no_metric_default.patch"
 )
-sha512sums=('c87755d61386c890b557debabbe9cc47801d9711958ada0a4d209424d6e79d6fded7c505df1f01eb17515a8663d2a86d7e0c8384e14d82d39a7129efb30d4fee'
+sha512sums=('ba1ca859a591bb075b670943711e2c2347df503c43bb16b227b02a1ae5b6a94d101bef1d9ed6367c3754a12e1e3a4651cc8905e0b99691f712d511efeefd0f27'
             'd52441559897ce0de476a6120b7e36b082bbcb0722436a77c1a60456a86d02f370df6bc58384c838a3ad2df47c1603a6fabd5044c303284bac2ea75a99a76a8a')
 
 prepare() {
@@ -60,8 +60,6 @@ prepare() {
 	patch -Np1 -i ../"$pkgname-2.6.1-no_metric_default.patch"
 	# fix launch
 	sed -i 's/from qt_api/from .qt_api/' src/launch.py
-	# fix crash during crop
-	git cherry-pick -n 67bb9e3960cbfd5ce1256399531efd3955d71981
 }
 
 build() {
