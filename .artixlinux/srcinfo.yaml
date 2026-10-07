@@ -1,9 +1,9 @@
 ---
-version: 2.90.0-1
+version: 2.90.1-1
 pkgbase:
   name: glib2
   pkgdesc: Low level core library
-  pkgver: 2.90.0
+  pkgver: 2.90.1
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/glib
   arch:
@@ -36,7 +36,7 @@ pkgbase:
     - util-linux-libs
     - zlib
   source:
-    - git+https://gitlab.gnome.org/GNOME/glib.git?signed#tag=2.90.0
+    - git+https://gitlab.gnome.org/GNOME/glib.git?signed#tag=2.90.1
     - git+https://gitlab.gnome.org/GNOME/gvdb.git
     - 0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
     - 0002-gdesktopappinfo-Add-more-known-terminals.patch
@@ -48,7 +48,7 @@ pkgbase:
     - 53EF3DC3B63E2899271BD26322E8091EEA11BBB7
     - 923B7025EE03C1C59F42684CF0942E894B2EAFA0
   b2sums:
-    - 9e31a27fd7c277deeb8695f77772ac39ff8ab14987d3b22ce4522aa671a707fdad8060957582db4d7c8a05780372ad59b7a0cbc13a944e38531c527e3aaa44ad
+    - d2a3b7c9745b4473621bc77d1fa690c062510cb53dd24555abceb0216ddb9c3f18214774a6c4a948daf0edcf4738db9ed1cba47ec92481d4eee18906bc0e78a3
     - SKIP
     - 4ddbd31f5f466fce99d82890292ff922555a9ab379d22202aeea5127f58798668f871dea0485cc0f458069276ad512412285ede6c8f3e36bea899358f49e931a
     - 194275a464f96d3539d26d7ae83f88b616e7de7beda0ba82714e4ffbab7a09cf1acee792c9d8278095f097074a5f4eaaa95490b11748f2ad85204fef3f04ccb4
