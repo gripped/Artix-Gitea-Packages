@@ -8,7 +8,7 @@ pkgname=(
   gtk3-docs
 )
 pkgver=3.24.52
-pkgrel=2
+pkgrel=2.1
 epoch=1
 pkgdesc="GObject-based multi-platform GUI toolkit"
 url="https://www.gtk.org/"
