@@ -1,8 +1,8 @@
 # Maintainer: commandk <commandk@artix>
 
 pkgname=radicle-artifact
-_commit=3010f3da67668ec3b6e5a423a00d17b6e653e4be
-pkgver=0.20.0
+_commit=65878e72a2fb4a9bbbbf33bbb93838499075ccc1
+pkgver=0.22.0
 pkgrel=1
 pkgdesc="Secure artifact distribution for Radicle"
 url="https://radicle.network/nodes/iris.radicle.network/rad:z4VYyJ9KuwMNkXGQnmKuGPGKw3inv"
@@ -21,7 +21,7 @@ source=(
   #"radicle-artifact::git+https://iris.radicle.network/z4VYyJ9KuwMNkXGQnmKuGPGKw3inv.git#tag=releases/${pkgver}"
   "radicle-artifact::git+https://iris.radicle.network/z4VYyJ9KuwMNkXGQnmKuGPGKw3inv.git#commit=${_commit}"
 )
-sha512sums=('e0382a82bc5b97c46decc387297736016f1a4bd2e3a34836b422301de94ead0325973ece53007cd628caa6bbee8ebb4885dd62548632533a3f9b81dbcc525674')
+sha512sums=('7933e76e29544ef2a26db17d3d7e33b99b21fc325618b094338a4fcaaafb586df082e6a55a04952f4e65e1b8ec823f37cbe7bf93a7ff51e26fd0406efbfb5094')
 
 prepare() {
   cd "${pkgname}"
