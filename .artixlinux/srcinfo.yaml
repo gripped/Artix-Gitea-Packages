@@ -1,10 +1,10 @@
 ---
-version: 2.1.0-1
+version: 2.1.0-2
 pkgbase:
   name: paraview-catalyst
   pkgdesc: API specification developed for simulations (and other scientific data producers) to analyze and visualize data in situ
   pkgver: 2.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.kitware.com/paraview/catalyst
   arch:
     - x86_64
@@ -19,6 +19,7 @@ pkgbase:
     - ninja
     - python-numpy
   depends:
+    - conduit-llnl
     - glibc
     - libgcc
     - libgfortran
@@ -33,4 +34,4 @@ pkgbase:
     - c68e24313cfb0c3d7b9e841f1132ca06b4d1a474d578202a3b98004000010d84d0a79c54853fc406571082e5fce28d80af551fd0c739b69901fa25a5365484ab
 pkgname:
   - name: paraview-catalyst
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
