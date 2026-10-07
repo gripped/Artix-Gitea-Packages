@@ -1,9 +1,9 @@
 ---
-version: 4:1.1.23-1
+version: 4:1.1.24-1
 pkgbase:
   name: egl-wayland
   pkgdesc: EGLStream-based Wayland external platform
-  pkgver: 1.1.23
+  pkgver: 1.1.24
   pkgrel: 1
   epoch: 4
   url: https://github.com/NVIDIA/egl-wayland
@@ -24,9 +24,9 @@ pkgbase:
   provides:
     - libnvidia-egl-wayland.so
   source:
-    - git+https://github.com/NVIDIA/egl-wayland#tag=1.1.23
+    - git+https://github.com/NVIDIA/egl-wayland#tag=1.1.24
   b2sums:
-    - f308b5ecef9ab481c1de53781f77a9d41cb3081edef83a131f668aa6d84c784dc805ac7190f5f8a4dba4d0c5f853cffb4ad7704e1bd1d8b54a8775abcae17318
+    - 40fd70fc922491e90ef161bd9a7080d6ef67b2fc7c439928290233cc0670f3bbc3a1e8ab892e50c6c9f35c0aae87050afdccb5d18f720ee569bd14bda068fe0d
 pkgname:
   - name: egl-wayland
 # generated with artixpkg 0.40.0-1-any
