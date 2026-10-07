@@ -7,7 +7,7 @@ pkgbase=lib32-glib2
 pkgname=(
   lib32-glib2
 )
-pkgver=2.90.0
+pkgver=2.90.1
 pkgrel=1
 pkgdesc="Low level core library - 32-bit"
 url="https://gitlab.gnome.org/GNOME/glib"
@@ -42,13 +42,15 @@ source=(
   "git+https://gitlab.gnome.org/GNOME/gvdb.git"
   0001-glib-compile-schemas-Remove-noisy-deprecation-warnin.patch
   0002-gdesktopappinfo-Add-more-known-terminals.patch
+  0003-build-Mark-timer-test-as-flaky-on-x86.patch
   gio-querymodules-32.hook
   gio-remove-module-cache-32.hook
 )
-b2sums=('9e31a27fd7c277deeb8695f77772ac39ff8ab14987d3b22ce4522aa671a707fdad8060957582db4d7c8a05780372ad59b7a0cbc13a944e38531c527e3aaa44ad'
+b2sums=('d2a3b7c9745b4473621bc77d1fa690c062510cb53dd24555abceb0216ddb9c3f18214774a6c4a948daf0edcf4738db9ed1cba47ec92481d4eee18906bc0e78a3'
         'SKIP'
         '4ddbd31f5f466fce99d82890292ff922555a9ab379d22202aeea5127f58798668f871dea0485cc0f458069276ad512412285ede6c8f3e36bea899358f49e931a'
         '194275a464f96d3539d26d7ae83f88b616e7de7beda0ba82714e4ffbab7a09cf1acee792c9d8278095f097074a5f4eaaa95490b11748f2ad85204fef3f04ccb4'
+        'aebe30447936ef52f31ae71c3f1b0b76d5adb3a7c33d86c45644a32eaf41f227f4e028d1dd11000c7896b28277da3d581ff252eb0db9a983e51c0e2fe31ee36c'
         '678ea2d010fd64b6c55106510096363c54c357d65615c666e9cc3a0e280c0878257a45e646dd88f6bdd0623f7268c4afd2d4f98f82a5489bbfc028c5864252f1'
         '0971103c526d72196bd56fe4733bb1edd104e198ad2371929dd90745f5717e650bd2340e3040b720bcf3741946f1dcf2ab246b7837a25312932c0e008c558a39')
 validpgpkeys=(
@@ -66,6 +68,10 @@ prepare() {
   # This is a downstream only patch; GNOME will not add new terminal emulators.
   # https://gitlab.gnome.org/GNOME/glib/-/issues/338#note_1076172
   git apply -3 ../0002-gdesktopappinfo-Add-more-known-terminals.patch
+
+  # Timer test doesn't work right on i686
+  # https://gitlab.gnome.org/GNOME/glib/-/work_items/820
+  git apply -3 ../0003-build-Mark-timer-test-as-flaky-on-x86.patch
 
   git submodule init
   git submodule set-url subprojects/gvdb "$srcdir/gvdb"
