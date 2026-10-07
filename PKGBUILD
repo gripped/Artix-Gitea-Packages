@@ -5,7 +5,7 @@
 
 pkgname=libmediainfo
 pkgver=26.10
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Shared library for MediaInfo'
 arch=(x86_64)
 url='https://mediaarea.net'
