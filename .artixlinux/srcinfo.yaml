@@ -54,7 +54,7 @@ pkgbase:
     - xcb-util-keysyms
     - libxshmfence
     - libunwind
-    - systemd
+    - elogind
     - meson
     - git
   source:
@@ -88,7 +88,7 @@ pkgname:
       - sh
       - glibc
       - libxau
-      - systemd-libs
+      - libelogind
       - libtirpc
       - libpciaccess
       - libdrm
@@ -99,13 +99,16 @@ pkgname:
       - X-ABI-XINPUT_VERSION=24.4
       - X-ABI-EXTENSION_VERSION=10.0
       - x-server
+      - x11win-server
     conflicts:
       - nvidia-utils<=331.20
       - glamor-egl
       - xf86-video-modesetting
+      - xlibre-xserver
     replaces:
       - glamor-egl
       - xf86-video-modesetting
+      - xlibre-xserver
   - name: xorg-server-xephyr
     pkgdesc: A nested X server that runs as an X application
     depends:
@@ -113,7 +116,7 @@ pkgname:
       - libgl
       - libepoxy
       - libunwind
-      - systemd-libs
+      - libelogind
       - pixman
       - xorg-server-common
       - xcb-util-image
@@ -128,6 +131,8 @@ pkgname:
       - libxau
       - libxshmfence
       - glibc
+    replaces:
+      - xlibre-xserver-xephyr
   - name: xorg-server-xvfb
     pkgdesc: Virtual framebuffer X server
     license:
@@ -142,11 +147,13 @@ pkgname:
       - libgl
       - nettle
       - libtirpc
-      - systemd-libs
+      - libelogind
       - libxdmcp
       - sh
       - glibc
       - libxau
+    replaces:
+      - xlibre-xserver-xvfb
   - name: xorg-server-xnest
     pkgdesc: A nested X server that runs as an X application
     depends:
@@ -157,17 +164,21 @@ pkgname:
       - xorg-server-common
       - nettle
       - libtirpc
-      - systemd-libs
+      - libelogind
       - libxdmcp
       - glibc
       - libx11
       - libxau
+    replaces:
+      - xlibre-xserver-xnest
   - name: xorg-server-common
     pkgdesc: Xorg server common files
     depends:
       - xkeyboard-config
       - xorg-xkbcomp
       - xorg-setxkbmap
+    replaces:
+      - xlibre-xserver-common
   - name: xorg-server-devel
     pkgdesc: Development files for the X.Org X server
     depends:
@@ -176,6 +187,10 @@ pkgname:
       - libpciaccess
       - pixman
       - xorg-util-macros
+    replaces:
+      - xlibre-xserver-devel
   - name: xorg-server-src
     pkgdesc: Source files of the X.Org X server
+    replaces:
+      - xlibre-xserver-src
 # generated with artixpkg 0.40.0-1-any

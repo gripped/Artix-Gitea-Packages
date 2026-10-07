@@ -30,7 +30,7 @@ makedepends=('xorgproto' 'pixman' 'libx11' 'mesa' 'mesa-libgl' 'xtrans'
              'libxmu' 'libxrender' 'libxi' 'libxaw' 'libxtst' 'libxres'
              'xorg-xkbcomp' 'xorg-util-macros' 'xorg-font-util' 'libepoxy'
              'xcb-util' 'xcb-util-image' 'xcb-util-renderutil' 'xcb-util-wm' 'xcb-util-keysyms'
-             'libxshmfence' 'libunwind' 'systemd' 'meson' 'git')
+             'libxshmfence' 'libunwind' 'elogind' 'meson' 'git')
 source=(${pkgbase}::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=${pkgbase}-${pkgver}
         xvfb-run # with updates from FC master
         xvfb-run.1
@@ -102,6 +102,7 @@ _install() {
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
   depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
   _install fakeinstall/usr/share/man/man1/Xserver.1
@@ -115,13 +116,13 @@ package_xorg-server() {
   pkgdesc="Xorg X server"
   depends=(libepoxy libxfont2 pixman xorg-server-common libunwind
            dbus libgl xf86-input-libinput nettle
-           libxdmcp sh glibc libxau systemd-libs libtirpc
+           libxdmcp sh glibc libxau libelogind libtirpc
            libpciaccess libdrm libxshmfence libxcvt) # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
-  provides=('X-ABI-VIDEODRV_VERSION=25.2' 'X-ABI-XINPUT_VERSION=24.4' 'X-ABI-EXTENSION_VERSION=10.0' 'x-server')
-  conflicts=('nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting')
-  replaces=('glamor-egl' 'xf86-video-modesetting')
+  provides=('X-ABI-VIDEODRV_VERSION=25.2' 'X-ABI-XINPUT_VERSION=24.4' 'X-ABI-EXTENSION_VERSION=10.0' 'x-server' 'x11win-server')
+  conflicts=('nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting' 'xlibre-xserver')
+  replaces=('glamor-egl' 'xf86-video-modesetting' ${pkgname//xorg-/xlibre-x})
   install=xorg-server.install
 
   _install fakeinstall/usr/bin/{X,Xorg,gtf}
@@ -141,10 +142,11 @@ package_xorg-server() {
 
 package_xorg-server-xephyr() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libgl libepoxy libunwind systemd-libs pixman xorg-server-common
+  depends=(libxfont2 libgl libepoxy libunwind libelogind pixman xorg-server-common
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc
            xcb-util libxdmcp libx11 libxau libxshmfence glibc)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xephyr
   _install fakeinstall/usr/share/man/man1/Xephyr.1
@@ -158,8 +160,9 @@ package_xorg-server-xvfb() {
   # xvfb-run is GPLv2, rest is MIT
   license=('MIT' 'GPL-2.0-only')
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
-           libgl nettle libtirpc systemd-libs
+           libgl nettle libtirpc libelogind
            libxdmcp sh glibc libxau)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xvfb
   _install fakeinstall/usr/share/man/man1/Xvfb.1
@@ -174,8 +177,9 @@ package_xorg-server-xvfb() {
 package_xorg-server-xnest() {
   pkgdesc="A nested X server that runs as an X application"
   depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle
-           libtirpc systemd-libs
+           libtirpc libelogind
            libxdmcp glibc libx11 libxau)
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xnest
   _install fakeinstall/usr/share/man/man1/Xnest.1
@@ -189,6 +193,7 @@ package_xorg-server-devel() {
   depends=('xorgproto' 'mesa' 'libpciaccess' 'pixman'
            # not technically required but almost every Xorg pkg needs it to build
            'xorg-util-macros')
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/include/xorg/*
   _install fakeinstall/usr/lib/pkgconfig/xorg-server.pc
@@ -203,6 +208,7 @@ package_xorg-server-devel() {
 
 package_xorg-server-src() {
   pkgdesc="Source files of the X.Org X server"
+  replaces=(${pkgname//xorg-/xlibre-x})
 
   install -d "${pkgdir}"/usr/src/
   cd "${pkgdir}"/usr/src/
