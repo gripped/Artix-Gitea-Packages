@@ -3,7 +3,7 @@
 
 pkgname=newsraft
 pkgver=0.38
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Feed reader with text-based user interface'
 url='https://codeberg.org/newsraft/newsraft'
 arch=('x86_64')
