@@ -5,8 +5,8 @@ pkgname=(
   wpewebkit
   wpewebkit-docs
 )
-pkgver=2.54.0
-pkgrel=1
+pkgver=2.54.1
+pkgrel=2
 pkgdesc="Embeddable web content engine"
 url="https://wpewebkit.org"
 arch=(x86_64)
@@ -71,7 +71,6 @@ depends=(
   libstdc++
   libtasn1
   libwebp
-  libwpe
   libxkbcommon
   libxml2
   libxslt
@@ -81,7 +80,6 @@ depends=(
   ttf-font
   wayland
   woff2
-  wpebackend-fdo
   xdg-dbus-proxy
   zlib
 )
@@ -103,14 +101,11 @@ makedepends=(
 )
 source=(
   $url/releases/wpewebkit-$pkgver.tar.xz{,.asc}
-  15f070cb5326701a9b57d3da5f3e29544a9c4ac7.patch
 )
-sha256sums=('efa9bcc3cb891c2d88f50eec710d9ccee71cbdf1040420361eb98c17355eb452'
-            'SKIP'
-            '8f10ae79a43bfd499b4d75fcd1017d18ad7c15d872bac09183f7e93c75338c7e')
-b2sums=('095b4c47f6154257242b3dfcd3ea0adba5e39b7683f953dda6c875061bb62f2dc4a7e450c7df033b1bd2d197fd5765a91a8cf22365ecdd8417f7293f7e8166bc'
-        'SKIP'
-        'e1de40de14ee7f86a3adccc483a4604c27ce9a01c2d225c0bbdffa5e49260753d1c87cd0f698e4a64b798c171c8f3dc2ad47cc94d3f2edf85ae16194c224e9a1')
+sha256sums=('0de8bdfba011f9cd63ba9a9171fa6038dd2c08237894f4082abbb821f29d3fe9'
+            'SKIP')
+b2sums=('1f40b659a7fa664807c5331fde669464da0038ee9c353be0dab6c2c661b961bd5e9f97fcfb62d3ef7e40e8f8a2ac80c0f9456e5b9a7c73c79d7247f06f236f11'
+        'SKIP')
 validpgpkeys=(
   # https://wpewebkit.org/release/verify/
   5AA3BC334FD7E3369E7C77B291C559DBE4C9123B # Adrián Pérez de Castro <aperez@igalia.com>
@@ -119,7 +114,6 @@ validpgpkeys=(
 
 prepare() {
   cd wpewebkit-$pkgver
-  patch -Np1 -i ../15f070cb5326701a9b57d3da5f3e29544a9c4ac7.patch
 }
 
 build() {
@@ -135,6 +129,7 @@ build() {
     -D ENABLE_MINIBROWSER=ON
     -D ENABLE_SPEECH_SYNTHESIS=OFF
     -D ENABLE_WPE_PLATFORM=ON
+    -D ENABLE_WPE_LEGACY_API=OFF
     -D PORT=WPE
     -D USE_FLITE=OFF
     -D USE_LIBBACKTRACE=OFF
@@ -158,19 +153,13 @@ build() {
 }
 
 package_wpewebkit() {
-  depends+=(
-    libWPEBackend-fdo-1.0.so
-    libwpe-1.0.so
-  )
-  provides+=(
-    libWPEWebKit-2.0.so
-  )
   optdepends=(
     'geoclue: Geolocation support'
     'gst-libav: nonfree media decoding'
     'gst-plugins-bad: media decoding'
     'gst-plugins-good: media decoding'
   )
+  provides=(libWPEWebKit-2.0.so)
 
   DESTDIR="$pkgdir" cmake --install build
 

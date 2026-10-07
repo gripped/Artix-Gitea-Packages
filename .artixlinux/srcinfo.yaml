@@ -1,10 +1,10 @@
 ---
-version: 2.54.0-1
+version: 2.54.1-2
 pkgbase:
   name: wpewebkit
   pkgdesc: Embeddable web content engine
-  pkgver: 2.54.0
-  pkgrel: 1
+  pkgver: 2.54.1
+  pkgrel: 2
   url: https://wpewebkit.org
   arch:
     - x86_64
@@ -82,7 +82,6 @@ pkgbase:
     - libstdc++
     - libtasn1
     - libwebp
-    - libwpe
     - libxkbcommon
     - libxml2
     - libxslt
@@ -92,75 +91,22 @@ pkgbase:
     - ttf-font
     - wayland
     - woff2
-    - wpebackend-fdo
     - xdg-dbus-proxy
     - zlib
   source:
-    - https://wpewebkit.org/releases/wpewebkit-2.54.0.tar.xz
-    - https://wpewebkit.org/releases/wpewebkit-2.54.0.tar.xz.asc
-    - 15f070cb5326701a9b57d3da5f3e29544a9c4ac7.patch
+    - https://wpewebkit.org/releases/wpewebkit-2.54.1.tar.xz
+    - https://wpewebkit.org/releases/wpewebkit-2.54.1.tar.xz.asc
   validpgpkeys:
     - 5AA3BC334FD7E3369E7C77B291C559DBE4C9123B
     - 013A0127AC9C65B34FFA62526C1009B693975393
   sha256sums:
-    - efa9bcc3cb891c2d88f50eec710d9ccee71cbdf1040420361eb98c17355eb452
+    - 0de8bdfba011f9cd63ba9a9171fa6038dd2c08237894f4082abbb821f29d3fe9
     - SKIP
-    - 8f10ae79a43bfd499b4d75fcd1017d18ad7c15d872bac09183f7e93c75338c7e
   b2sums:
-    - 095b4c47f6154257242b3dfcd3ea0adba5e39b7683f953dda6c875061bb62f2dc4a7e450c7df033b1bd2d197fd5765a91a8cf22365ecdd8417f7293f7e8166bc
+    - 1f40b659a7fa664807c5331fde669464da0038ee9c353be0dab6c2c661b961bd5e9f97fcfb62d3ef7e40e8f8a2ac80c0f9456e5b9a7c73c79d7247f06f236f11
     - SKIP
-    - e1de40de14ee7f86a3adccc483a4604c27ce9a01c2d225c0bbdffa5e49260753d1c87cd0f698e4a64b798c171c8f3dc2ad47cc94d3f2edf85ae16194c224e9a1
 pkgname:
   - name: wpewebkit
-    depends:
-      - at-spi2-core
-      - atk
-      - bubblewrap
-      - cairo
-      - enchant
-      - expat
-      - fontconfig
-      - freetype2
-      - glib2
-      - glibc
-      - gst-plugins-bad-libs
-      - gst-plugins-base-libs
-      - gstreamer
-      - harfbuzz
-      - harfbuzz-icu
-      - hyphen
-      - icu
-      - lcms2
-      - libatomic
-      - libavif
-      - libdrm
-      - libepoxy
-      - libgcc
-      - libgcrypt
-      - libinput
-      - libjpeg-turbo
-      - libjxl
-      - libpng
-      - libseccomp
-      - libsoup3
-      - libstdc++
-      - libtasn1
-      - libwebp
-      - libwpe
-      - libxkbcommon
-      - libxml2
-      - libxslt
-      - mesa
-      - openjpeg2
-      - sqlite
-      - ttf-font
-      - wayland
-      - woff2
-      - wpebackend-fdo
-      - xdg-dbus-proxy
-      - zlib
-      - libWPEBackend-fdo-1.0.so
-      - libwpe-1.0.so
     optdepends:
       - 'geoclue: Geolocation support'
       - 'gst-libav: nonfree media decoding'
