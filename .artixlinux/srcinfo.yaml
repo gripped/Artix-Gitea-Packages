@@ -1,10 +1,10 @@
 ---
-version: 0.38-1.1
+version: 0.38-2
 pkgbase:
   name: newsraft
   pkgdesc: Feed reader with text-based user interface
   pkgver: 0.38
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://codeberg.org/newsraft/newsraft
   arch:
     - x86_64
