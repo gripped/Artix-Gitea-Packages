@@ -3,7 +3,7 @@
 
 pkgname=rsync
 pkgver=3.5.1
-pkgrel=1
+pkgrel=2
 pkgdesc='A fast and versatile file copying tool for remote and local files'
 arch=('x86_64')
 url='https://rsync.samba.org/'
@@ -27,6 +27,7 @@ _backports=(
 )
 
 _reverts=(
+    7ee931c7b9b02051ba46a2c05bf85300c556c301 # https://github.com/RsyncProject/rsync/issues/1119
 )
 
 prepare() {
