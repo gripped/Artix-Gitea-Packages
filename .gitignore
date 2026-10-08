@@ -9,6 +9,8 @@
 *.log
 *.log.*
 *.sig
+DATASET-LICENSES.md
+LICENSE-OVERVIEW.md
 
 pkg/
 src/
