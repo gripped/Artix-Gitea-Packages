@@ -57,4 +57,13 @@ pkgbase:
     - b4805b7842bae79105d8963776f635067d4b0c9aab5a5c9ac311f6d754082923f2ab1faa9a867e4bcbc91923d0512d38f21527712a5b25b3ad431a189ca60c07
 pkgname:
   - name: cloud-init
-# generated with artixpkg 0.39.1-1-any
+  - name: cloud-init-openrc
+    pkgdesc: Cloud instance initialization (OpenRC service files)
+    depends:
+      - cloud-init
+      - openrc
+    optdepends: []
+    provides:
+      - init-cloud-init
+    backup: []
+# generated with artixpkg 0.40.0-1-any
