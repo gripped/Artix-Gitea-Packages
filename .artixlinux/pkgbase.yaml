@@ -25,11 +25,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.12.0-1
+    version: 6.12.0-1.1
     packages:
-      - qt6-multimedia-6.12.0-1-x86_64.pkg.tar.zst
-      - qt6-multimedia-ffmpeg-6.12.0-1-x86_64.pkg.tar.zst
-      - qt6-multimedia-gstreamer-6.12.0-1-x86_64.pkg.tar.zst
+      - qt6-multimedia-6.12.0-1.1-x86_64.pkg.tar.zst
+      - qt6-multimedia-ffmpeg-6.12.0-1.1-x86_64.pkg.tar.zst
+      - qt6-multimedia-gstreamer-6.12.0-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.11.2-1
