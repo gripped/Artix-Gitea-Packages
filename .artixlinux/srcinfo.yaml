@@ -1,9 +1,9 @@
 ---
-version: 0.37.2-1
+version: 0.38.0-1
 pkgbase:
   name: docker-buildx
   pkgdesc: Docker CLI plugin for extended build capabilities with BuildKit
-  pkgver: 0.37.2
+  pkgver: 0.38.0
   pkgrel: 1
   url: https://github.com/docker/buildx
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - git+https://github.com/docker/buildx.git#tag=v0.37.2
+    - git+https://github.com/docker/buildx.git#tag=v0.38.0
   sha512sums:
-    - 764cb99c40230e068d95e05386db520482806780dae5683ffbc605365890b1d28437d3b6fbaec0a8774462281242713da3f2e197368cd8602e26ff3329523049
+    - 63988677f232020ef112cb0a089189397b1bad854ce140f6a08389639830c402b00522d1e8a6dd4c87f47c1f05c4ce31f9c5cb2ac0cb6066fd9edb039e6cc8f7
 pkgname:
   - name: docker-buildx
 # generated with artixpkg 0.40.0-1-any
