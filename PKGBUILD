@@ -71,6 +71,7 @@ build() {
         --enable-wayland \
         --enable-gtk-doc \
         --disable-gtk2 \
+        --disable-systemd-services \
         --enable-gtk4 \
         --disable-memconf \
         --enable-ui \
