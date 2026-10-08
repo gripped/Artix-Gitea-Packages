@@ -4,7 +4,7 @@
 # Contributor: Dmytro Aleksandrov <alkersan@gmail.com>
 
 pkgname=rpi-imager
-pkgver=2.0.11.1
+pkgver=2.0.12
 pkgrel=1
 pkgdesc="Raspberry Pi Imaging Utility"
 depends=(
@@ -40,7 +40,7 @@ source=("git+https://github.com/raspberrypi/rpi-imager.git#tag=v${pkgver}"
         "remove-vendoring.patch"
         "set-archlinux-version-suffix.patch")
 
-b2sums=('28f4e052e1505cacc37847c39125896417c0a1cf8b8d661aaea1931d052fab4ee731270329dc662027ef02e747f1e69e0d965e232236965e555065b573de726c'
+b2sums=('1ecd353f4d1e25cbf21dab431d7754d9bc1e20a2aa2b2769a932fc59fbf07b9d3f70186f8e26f1c6e25653eb4aac5a67c1af3158dd2159f8c228d1bb3d0990e4'
         'c74100eb29fce2bd5e54e4b7b96475b2e024e28d09098aeee573099034eaf5c406cf2e638fce85758d97ace92a35238b9fbcbe073fdf7084bbda40e900ec9a6a'
         'c9b47da8b73c5838a1b0636fc76d58a999c05b2a785d9bfc070adb1e39ea44def6798b58e663f30c92a395f3df488e995ae8586b16e1c81f94d5d07e1a84418b')
 

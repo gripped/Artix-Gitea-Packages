@@ -18,3 +18,26 @@ src/
 *.socket
 
 
+rpi-imager/HEAD
+rpi-imager/config
+rpi-imager/description
+rpi-imager/hooks/applypatch-msg.sample
+rpi-imager/hooks/commit-msg.sample
+rpi-imager/hooks/fsmonitor-watchman.sample
+rpi-imager/hooks/post-update.sample
+rpi-imager/hooks/pre-applypatch.sample
+rpi-imager/hooks/pre-commit.sample
+rpi-imager/hooks/pre-merge-commit.sample
+rpi-imager/hooks/pre-push.sample
+rpi-imager/hooks/pre-rebase.sample
+rpi-imager/hooks/pre-receive.sample
+rpi-imager/hooks/prepare-commit-msg.sample
+rpi-imager/hooks/push-to-checkout.sample
+rpi-imager/hooks/sendemail-validate.sample
+rpi-imager/hooks/update.sample
+rpi-imager/info/attributes
+rpi-imager/info/exclude
+rpi-imager/objects/pack/pack-8939b4650f84827b269564b1dd1f8baae47ba958.idx
+rpi-imager/objects/pack/pack-8939b4650f84827b269564b1dd1f8baae47ba958.pack
+rpi-imager/objects/pack/pack-8939b4650f84827b269564b1dd1f8baae47ba958.rev
+rpi-imager/packed-refs
