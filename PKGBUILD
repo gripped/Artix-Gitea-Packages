@@ -4,7 +4,7 @@
 
 pkgname=mate-session-manager
 pkgver=1.28.0
-pkgrel=3
+pkgrel=3.1
 pkgdesc="The MATE Session Handler"
 arch=(x86_64)
 url='https://github.com/mate-desktop/mate-session-manager'
@@ -49,7 +49,7 @@ optdepends=(
 groups=(mate)
 source=(
   "git+https://github.com/mate-desktop/mate-session-manager.git#tag=v$pkgver"
-  git+https://github.com/mate-desktop/mate-submodules.git
+  "git+https://github.com/mate-desktop/mate-submodules.git"
 )
 b2sums=(
   5f4bd2e402e658bb1c93b9466965d8e9887a157a3c55084c6f63772fefc4100f8fb10be669fc86bb18fa719f4c8ef23965b99c63ac43b1aaa77e0115ae9b2f1b
@@ -72,7 +72,8 @@ build() {
     --prefix=/usr \
     --libexecdir="/usr/lib/$pkgname" \
     --sysconfdir=/etc \
-    --localstatedir=/var
+    --localstatedir=/var \
+    --with-elogind=yes
   make
 }
 

@@ -1,10 +1,10 @@
 ---
-version: 1.28.0-3
+version: 1.28.0-3.1
 pkgbase:
   name: mate-session-manager
   pkgdesc: The MATE Session Handler
   pkgver: 1.28.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/mate-desktop/mate-session-manager
   arch:
     - x86_64
