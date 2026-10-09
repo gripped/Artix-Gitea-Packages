@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=audiocd-kio
-pkgver=26.08.1
+pkgver=26.08.2
 pkgrel=1
 pkgdesc='Kioslave for accessing audio CDs'
 url='https://apps.kde.org/kio_audiocd/'
@@ -33,7 +34,7 @@ optdepends=('opus-tools: encoding to opus format')
 groups=(kde-applications
         kde-multimedia)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('936f972b6cf6f06c05998f194afbbcf7d8144945305245ae7d5f1d3e598be521'
+sha256sums=('f936e813eaa5515a2365b10f6238613229f6a17fa10a866d7ca20d4f95c0778c'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
