@@ -1,17 +1,17 @@
 ---
-version: 1.12.25-1
+version: 1.12.25-1.1
 pkgbase:
   name: element.io
   pkgdesc: Glossy Matrix collaboration client —
   pkgver: 1.12.25
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://element.io
   arch:
     - x86_64
   license:
     - Apache
   makedepends:
-    - electron43
+    - electron42
     - git
     - jq
     - libxcrypt-compat
@@ -45,7 +45,7 @@ pkgname:
     pkgdesc: Glossy Matrix collaboration client — desktop version.
     depends:
       - element-web=1.12.25
-      - electron43
+      - electron42
       - libsecret
     replaces:
       - riot-desktop

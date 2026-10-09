@@ -4,11 +4,11 @@
 # Contributor: Luca Weiss <luca (at) z3ntu (dot) xyz>
 # Contributor: Julian Schacher <jspp@posteo.net>
 
-_electron=electron43
+_electron=electron42
 pkgbase=element.io
 pkgname=(element-web element-desktop)
 pkgver=1.12.25
-pkgrel=1
+pkgrel=1.1
 pkgdesc="Glossy Matrix collaboration client — "
 arch=(x86_64)
 url="https://element.io"
