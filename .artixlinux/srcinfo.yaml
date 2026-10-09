@@ -1,9 +1,9 @@
 ---
-version: 0.3.1-1
+version: 0.3.2-1
 pkgbase:
   name: quickshell
   pkgdesc: Flexible toolkit for making desktop shells with QtQuick
-  pkgver: 0.3.1
+  pkgver: 0.3.2
   pkgrel: 1
   url: https://git.outfoxxed.me/quickshell/quickshell
   arch:
@@ -48,9 +48,9 @@ pkgbase:
     - wayland
     - libwayland-client.so
   source:
-    - quickshell-0.3.1.tar.gz::https://git.outfoxxed.me/quickshell/quickshell/archive/v0.3.1.tar.gz
+    - quickshell-0.3.2.tar.gz::https://git.outfoxxed.me/quickshell/quickshell/archive/v0.3.2.tar.gz
   sha256sums:
-    - d60592622f1aa1cbb853d4814f605dfde827bc692befbfecffaccf4c90e352d8
+    - f14115a73c9fff6aa6399f924b632e88c3ce2cead2657f814a7825341f35baad
 pkgname:
   - name: quickshell
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
