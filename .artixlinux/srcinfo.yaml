@@ -1,9 +1,9 @@
 ---
-version: 1.21.0-1
+version: 2.0.0-1
 pkgbase:
   name: hyperfine
   pkgdesc: A command-line benchmarking tool
-  pkgver: 1.21.0
+  pkgver: 2.0.0
   pkgrel: 1
   url: https://github.com/sharkdp/hyperfine
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   options:
     - zipman
   source:
-    - hyperfine-1.21.0.tar.gz::https://github.com/sharkdp/hyperfine/archive/v1.21.0.tar.gz
+    - hyperfine-2.0.0.tar.gz::https://github.com/sharkdp/hyperfine/archive/v2.0.0.tar.gz
   sha256sums:
-    - aee01125074fd5a6a556818db7bba0577edae94cbe85165daae0e778aa28348d
+    - f4b71df3c78e4cf752ca6fb6ebc4b025f7ea6a5ca5c48fea75f8a1fdb4c7d721
 pkgname:
   - name: hyperfine
 # generated with artixpkg 0.40.0-1-any
