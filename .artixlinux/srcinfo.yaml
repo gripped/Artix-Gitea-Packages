@@ -1,9 +1,9 @@
 ---
-version: 26.08.1-1
+version: 26.08.2-1
 pkgbase:
   name: telly-skout
   pkgdesc: Convergent TV guide based on Kirigami
-  pkgver: 26.08.1
+  pkgver: 26.08.2
   pkgrel: 1
   url: https://apps.kde.org/telly-skout/
   arch:
@@ -29,15 +29,15 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/release-service/26.08.1/src/telly-skout-26.08.1.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.1/src/telly-skout-26.08.1.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.2/src/telly-skout-26.08.2.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.2/src/telly-skout-26.08.2.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 811e6abb3d48e91e74024aee2003a761e0927900b5219baaae872c8fd10c569f
+    - 9797f13d7a9bb37b6f79695e94a757d03895a332bb911b85abb10d3b6db5bb0d
     - SKIP
 pkgname:
   - name: telly-skout
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
