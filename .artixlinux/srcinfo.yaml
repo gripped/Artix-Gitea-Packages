@@ -1,9 +1,9 @@
 ---
-version: 157.0.0_1-1
+version: 157.0.1_1-1
 pkgbase:
   name: librewolf
   pkgdesc: Community-maintained fork of Firefox, focused on privacy, security and freedom
-  pkgver: 157.0.0_1
+  pkgver: 157.0.1_1
   pkgrel: 1
   url: https://librewolf.net/
   arch:
@@ -76,13 +76,13 @@ pkgbase:
     - '!lto'
     - '!makeflags'
   source:
-    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/157.0-1/librewolf-157.0-1.source.tar.gz
-    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/157.0-1/librewolf-157.0-1.source.tar.gz.sig
+    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/157.0.1-1/librewolf-157.0.1-1.source.tar.gz
+    - https://librewolf.dev/api/packages/librewolf/generic/librewolf-source/157.0.1-1/librewolf-157.0.1-1.source.tar.gz.sig
     - librewolf.desktop
   validpgpkeys:
     - 662E3CDD6FE329002D0CA5BB40339DD82B12EF16
   sha256sums:
-    - bea3cc7c57f3fb8928d583a0603b0f40130b02f662e032746345a51e0f55ffb3
+    - 4b363d2c85eda694c671bda98fc1f0a0ad9cfa030c975ae4fd0e1092a3f59eb2
     - SKIP
     - 3d6ac59ae9d5ba4c9fe15f95c1338fa68214dec6119f8432336403e3be50f8ae
 pkgname:
