@@ -1,10 +1,10 @@
 ---
-version: 1.12.25-1.1
+version: 1.12.25-1.2
 pkgbase:
   name: element.io
   pkgdesc: Glossy Matrix collaboration client —
   pkgver: 1.12.25
-  pkgrel: 1.1
+  pkgrel: 1.2
   url: https://element.io
   arch:
     - x86_64

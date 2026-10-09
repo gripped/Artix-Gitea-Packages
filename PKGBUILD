@@ -8,7 +8,7 @@ _electron=electron42
 pkgbase=element.io
 pkgname=(element-web element-desktop)
 pkgver=1.12.25
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc="Glossy Matrix collaboration client — "
 arch=(x86_64)
 url="https://element.io"
@@ -50,6 +50,10 @@ prepare() {
   # Specify electron version in launcher
   sed -i "s|@ELECTRON@|${_electron}|" element-desktop.sh
 
+  # nx daemon gets stuck in a loop, disabling it does not hurt one time builds
+  export CI=true
+  export NX_DAEMON=false
+
   cd element-web
   patch -p1 < "${srcdir}/autolaunch.patch"
   sed -e 's|"error"|"warn"|' -i package.json
@@ -63,6 +67,9 @@ prepare() {
 
 build() {
   export NODE_OPTIONS=--openssl-legacy-provider
+  export CI=true
+  export NX_DAEMON=false
+
   cd element-web/apps/web
   VERSION=${pkgver} pnpm run build
 
