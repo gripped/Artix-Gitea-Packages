@@ -1,9 +1,9 @@
 ---
-version: 0.9.0-1
+version: 0.10.0-1
 pkgbase:
   name: python-pytest-playwright
   pkgdesc: Pytest plugin to write end-to-end browser tests with Playwright
-  pkgver: 0.9.0
+  pkgver: 0.10.0
   pkgrel: 1
   url: https://github.com/microsoft/playwright-pytest
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python-pytest
     - python-slugify
   source:
-    - git+https://github.com/microsoft/playwright-pytest#tag=v0.9.0
+    - git+https://github.com/microsoft/playwright-pytest#tag=v0.10.0
   sha256sums:
-    - cfc94203ac69920dbb0cb2db1b788a048f82e5ca648c0be0f2a54e4c6457a69d
+    - 6e71530352e494df8bbc371955b8eccc1fd578d30a24445d73eee0e5e56b86b2
 pkgname:
   - name: python-pytest-playwright
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
