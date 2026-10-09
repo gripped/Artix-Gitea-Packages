@@ -1,9 +1,9 @@
 ---
-version: 3.00-1
+version: 3.01-1
 pkgbase:
   name: python-pycparser
   pkgdesc: C parser and AST generator written in Python
-  pkgver: 3.00
+  pkgver: 3.01
   pkgrel: 1
   url: https://github.com/eliben/pycparser
   arch:
@@ -15,13 +15,12 @@ pkgbase:
     - python-build
     - python-installer
     - python-setuptools
-    - python-wheel
   depends:
     - python
   source:
-    - git+https://github.com/eliben/pycparser.git#tag=release_v3.00
+    - git+https://github.com/eliben/pycparser.git#tag=release_v3.01
   sha512sums:
-    - 73752c7d1356968511fa532edfa7dc8acf1b342799ca3200c1c48173ddb835bce95a3113f6230bf8f54b254f250417b2acb80dcbab398b2ca3c5394347aca57d
+    - 8e4d918f13ab22c41c5bddf4703eadddc63c0cbbb3ac1e65a52fe41a20387e6505f82c369fc36b408e5d5ec7e80788e78e33e28ecf2b89fc8c441096e5ae165f
 pkgname:
   - name: python-pycparser
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
