@@ -1,9 +1,10 @@
-# Maintainer: Felix Yan <felixonmars@archlinux.org>
-# Maintainer: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Felix Yan <felixonmars@archlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux.org>
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kdeedu-data
-pkgver=26.08.1
+pkgver=26.08.2
 pkgrel=1
 pkgdesc='Common data for KDE Edu applications'
 url='https://kde.org/'
@@ -14,7 +15,7 @@ depends=(hicolor-icon-theme)
 makedepends=(extra-cmake-modules
              qt6-base)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('df6a0ccadfdade621fe2948de90ae23cc3e25480d61fba8279a06c860398da90'
+sha256sums=('3d2f1134bea020a0d237d186dc3b30ef69f6c313a2ca31d020b6797bdeae1813'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
