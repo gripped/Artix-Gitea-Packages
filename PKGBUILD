@@ -21,7 +21,7 @@ source=(
     'sysctl.conf'
     'openrc-user.pam'
     "openrc-rc-conf-artix.patch"
-    "openrc-artix-meson.patch"
+    '0001-arrtix-openrc-meson-install.patch'
     "git+${_url}/openrc-extra.git#tag=${_extra}"
     "git+${_url}/alpm-hooks.git#tag=${_alpm}"
     "0001-install-agetty-conf.patch"
@@ -31,7 +31,7 @@ sha256sums=('fac131161beb4a15f662fc68571fe66dbf6de8b8a6ac9378aedda4916997088c'
             '874e50bd217fef3a2e3d0a18eb316b9b3ddb109b93f3cbf45407170c5bec1d6d'
             '5b6a7ceb46f057581dcdce76794c045b711ff2a8f063ced0dba682697da9ef06'
             '1f6f7a11e6937a1c9d23959e4bf4a6b04937f955a21e4e0e5be9e9e480835bcd'
-            '0cb9b79b2e044c3641b20ec701a396dd5575bb5b1c48586ab57de9c2b7d24308'
+            '7f91e70c3763c58727a2558a76139d6945fcfcdd32439ab295446f6a6558e486'
             'e83f678c3e3d03067d0e5602bad82382cf74c8dc4fd7a1c18f3a3ceb3a21f0be'
             '9ac686c2d7caaf9bd96122db26c5b2af82a308dcbee331f3ce0b807ef5b800ee'
             '3ad4a809807312c4489c744ce4ad9b5d18bc37caea09f52e90580c1ae457997d')
