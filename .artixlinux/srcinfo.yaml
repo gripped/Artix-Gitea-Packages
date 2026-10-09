@@ -1,9 +1,9 @@
 ---
-version: 3.1.0-1
+version: 3.2.0-1
 pkgbase:
   name: python-setuptools-git-versioning
   pkgdesc: Use Git repo data for building a version number according to PEP 440.
-  pkgver: 3.1.0
+  pkgver: 3.2.0
   pkgrel: 1
   url: https://github.com/dolfinus/setuptools-git-versioning
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - python-setuptools
     - python-packaging
   source:
-    - https://pypi.io/packages/source/s/setuptools_git_versioning/setuptools_git_versioning-3.1.0.tar.gz
+    - https://pypi.io/packages/source/s/setuptools_git_versioning/setuptools_git_versioning-3.2.0.tar.gz
   sha256sums:
-    - 612dfcf184addac9e1c2216f4f229724b2390e5bf613fb925ae80b84f2529172
+    - 27aa1ad0409b632ee49947ea592cc27e16fbb2a1605cc22efeb7c353fd790b31
 pkgname:
   - name: python-setuptools-git-versioning
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
