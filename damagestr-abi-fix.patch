@@ -1,0 +1,31 @@
+diff --git a/miext/damage/damagestr.h b/miext/damage/damagestr.h
+index 19624192ebdae1a8ef509adfc9cc9d472dfb4de4..69cdf5c89e286bd837e8797aee388d3929311ff2 100644
+--- a/miext/damage/damagestr.h
++++ b/miext/damage/damagestr.h
+@@ -35,12 +35,6 @@
+ typedef struct _damage {
+     DamagePtr pNext;
+     DamagePtr pNextWin;
+-    /*
+-     * Head of the pNext list this damage is currently linked on, or NULL if it is not linked on any list.  Recorded at
+-     * insertion time so that removal always unlinks from the list the damage actually went onto; see
+-     * damageInsertDamage().
+-     */
+-    DamagePtr *pListHead;
+     RegionRec damage;
+ 
+     DamageReportLevel damageLevel;
+@@ -55,6 +49,13 @@ typedef struct _damage {
+     Bool reportAfter;
+     RegionRec pendingDamage;    /* will be flushed post submission at the latest */
+     ScreenPtr pScreen;
++
++    /*
++     * Head of the pNext list this damage is currently linked on, or NULL if it is not linked on any list.  Recorded at
++     * insertion time so that removal always unlinks from the list the damage actually went onto; see
++     * damageInsertDamage().
++     */
++    DamagePtr *pListHead;
+ } DamageRec;
+ 
+ typedef struct _damageScrPriv {
