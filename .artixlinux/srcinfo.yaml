@@ -1,10 +1,10 @@
 ---
-version: 0.1.8-2
+version: 0.2.0-1
 pkgbase:
   name: autotiling-rs
   pkgdesc: Automatically alternates container layouts between horizontal and vertical
-  pkgver: 0.1.8
-  pkgrel: 2
+  pkgver: 0.2.0
+  pkgrel: 1
   url: https://github.com/ammgws/autotiling-rs
   arch:
     - x86_64
@@ -13,9 +13,9 @@ pkgbase:
   makedepends:
     - rust
   source:
-    - https://github.com/ammgws/autotiling-rs/archive/v0.1.8/autotiling-rs-0.1.8.tar.gz
+    - https://github.com/ammgws/autotiling-rs/archive/v0.2.0/autotiling-rs-0.2.0.tar.gz
   b2sums:
-    - 67015260921c7d38b7294ae870f8a7b1f7d0007829b7dff60e8db60b95a71494b84a946d9cebf04d97d7606638cb5dd44f341c1444646372c2dd899d4f9c428e
+    - 2224206b5857b9c6ab1457bc8f438919783162da5b596ff4722af073d71ae1e0d1d250d6ad62afd2d7d51fffdcd9995450df6bfeec5f2fd31706f0eb1b261392
 pkgname:
   - name: autotiling-rs
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
