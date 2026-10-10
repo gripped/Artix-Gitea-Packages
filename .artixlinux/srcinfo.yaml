@@ -1,9 +1,9 @@
 ---
-version: 0.26.0-1
+version: 0.28.0-1
 pkgbase:
   name: radicle-explorer
   pkgdesc: open source, peer-to-peer code collaboration stack built on Git
-  pkgver: 0.26.0
+  pkgver: 0.28.0
   pkgrel: 1
   url: https://app.radicle.xyz/nodes/seed.radicle.xyz/rad:z4V1sjrXqjvFdnCUbxPFqd5p4DtH5
   arch:
@@ -19,11 +19,11 @@ pkgbase:
     - npm
     - libgit2
   source:
-    - radicle-explorer::git+https://seed.radicle.xyz/z4V1sjrXqjvFdnCUbxPFqd5p4DtH5.git#tag=releases/0.26.0
+    - radicle-explorer::git+https://seed.radicle.xyz/z4V1sjrXqjvFdnCUbxPFqd5p4DtH5.git#tag=releases/0.28.0
     - radicle-explorer.config.json
     - radicle-explorer.nginx.conf
   b2sums:
-    - 6b4d1cbd07894924a5189515d0154d10c6d91b8b026eff1ebe759a8630be308031e7aa74a3a0c0c7ad755fa3b003e425b3f4fd58b3e2637c53d7c1b034c27728
+    - 1fb8fa2ef52265829c9ffcbaec8bd042e8fe349a333fda02d5e1513fbf849e2a04e0a6a2797a3674e3ffada1a004a810d1f2062d28e3a3f3bd31baf7ad843f2a
     - d29bf8a4344d407cdc19cce3d6d8ef2f28e97454c07978301ef1009a995ba8f352ad706b7230f33d290d7b055d8a8c80c80164625463adc4e0b1191b1c4573f2
     - 5735a8bae977e1fde93a294de1a7f738542f8c4d12d8efeed940c0a8f79f05a59c70101cf9faaa7207f034915e2ac189b0e4af7f0285610dbd9ecc0305d2601c
 pkgname:
@@ -45,4 +45,4 @@ pkgname:
       - libgit2.so
       - zlib
       - radicle-node
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
