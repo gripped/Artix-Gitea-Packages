@@ -1,9 +1,9 @@
 ---
-version: 0.22.0-1
+version: 0.23.0-1
 pkgbase:
   name: radicle-artifact
   pkgdesc: Secure artifact distribution for Radicle
-  pkgver: 0.22.0
+  pkgver: 0.23.0
   pkgrel: 1
   url: https://radicle.network/nodes/iris.radicle.network/rad:z4VYyJ9KuwMNkXGQnmKuGPGKw3inv
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - libgcc
     - libgcc_s.so
   source:
-    - radicle-artifact::git+https://iris.radicle.network/z4VYyJ9KuwMNkXGQnmKuGPGKw3inv.git#commit=65878e72a2fb4a9bbbbf33bbb93838499075ccc1
+    - radicle-artifact::git+https://iris.radicle.network/z4VYyJ9KuwMNkXGQnmKuGPGKw3inv.git#commit=ed79ebbb8bc711243cc203a8faf6db5f0987601b
   sha512sums:
-    - 7933e76e29544ef2a26db17d3d7e33b99b21fc325618b094338a4fcaaafb586df082e6a55a04952f4e65e1b8ec823f37cbe7bf93a7ff51e26fd0406efbfb5094
+    - 955885bb2ed660ca86cf67a6d1e298284008144c7cc6adfd7a906501a47753aac36ec1bc37a5727603f77327458afdab6dae30a8dc7a8903fc2e95fa84ec174d
 pkgname:
   - name: radicle-artifact
 # generated with artixpkg 0.40.0-1-any
