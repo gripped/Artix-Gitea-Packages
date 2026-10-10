@@ -1,10 +1,10 @@
 ---
-version: 1:2.8.0-3
+version: 1:2.9.0-1
 pkgbase:
   name: python-dnspython
   pkgdesc: A DNS toolkit for Python
-  pkgver: 2.8.0
-  pkgrel: 3
+  pkgver: 2.9.0
+  pkgrel: 1
   epoch: 1
   url: http://www.dnspython.org
   arch:
@@ -18,22 +18,23 @@ pkgbase:
     - python-trio
   makedepends:
     - python-build
-    - python-hatchling
+    - python-uv-build
     - python-installer
     - python-wheel
   depends:
     - python
   optdepends:
     - 'python-cryptography: DNSSEC support'
-    - 'python-requests-toolbelt: DoH support'
+    - 'python-httpx2: DoH support'
+    - 'python-aioquic: DNS-over-QUIC support'
     - 'python-idna: support for updated IDNA 2008'
     - 'python-curio: async support'
     - 'python-trio: async support'
     - 'python-sniffio: async support'
   source:
-    - https://github.com/rthalley/dnspython/archive/v2.8.0/dnspython-2.8.0.tar.gz
+    - https://github.com/rthalley/dnspython/archive/v2.9.0/dnspython-2.9.0.tar.gz
   sha256sums:
-    - 8b21c64bd780d461aa96c5e082db78537c675813b58ef5753056907a602ef2ce
+    - e4e013282359619999b7b79e96734d07e6684c56db8f9f7828efd18b0bbc7dcc
 pkgname:
   - name: python-dnspython
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
