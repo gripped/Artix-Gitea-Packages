@@ -17,7 +17,7 @@
 
 pkgname=freecad
 pkgver=1.1.4
-pkgrel=3
+pkgrel=3.1
 pkgdesc='Feature based parametric 3D CAD modeler'
 arch=(x86_64)
 url='https://www.freecad.org'
@@ -102,7 +102,7 @@ prepare() {
   git cherry-pick --no-commit e3e56059865849c6b1c85161f69183ad872414e3
 
   # fix build with PySide 6.12
-  sed -e 's|signalmanager.h|pyobjectwrapper.h|' -i src/Gui/PythonWrapper.cpp
+  # sed -e 's|signalmanager.h|pyobjectwrapper.h|' -i src/Gui/PythonWrapper.cpp
 
   git submodule update --init --recursive
 }
