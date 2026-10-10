@@ -55,7 +55,7 @@ repos:
       - vhba-module-20260313-41-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 20260313-46
+    version: 20260313-54
     packages:
-      - vhba-module-20260313-46-x86_64.pkg.tar.zst
+      - vhba-module-20260313-54-x86_64.pkg.tar.zst
     debug: []
