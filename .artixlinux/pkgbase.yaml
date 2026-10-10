@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 5.3.1-1
+    version: 5.3.2-1
     packages:
-      - unordered_dense-5.3.1-1-any.pkg.tar.zst
+      - unordered_dense-5.3.2-1-any.pkg.tar.zst
     debug: []
