@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.19.0-1
+    version: 1.20.1-1
     packages:
-      - python-jellyfin-apiclient-1.19.0-1-any.pkg.tar.zst
+      - python-jellyfin-apiclient-1.20.1-1-any.pkg.tar.zst
     debug: []
