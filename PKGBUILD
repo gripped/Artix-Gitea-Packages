@@ -4,7 +4,7 @@
 pkgbase=pipewire-openrc
 pkgname=(pipewire-openrc pipewire-pulse-openrc)
 pkgver=20260426
-pkgrel=1
+pkgrel=2
 pkgdesc="openrc user service script for pipewire"
 arch=('any')
 url="https://artixlinux.org"

@@ -1,10 +1,10 @@
 ---
-version: 20260426-1
+version: 20260426-2
 pkgbase:
   name: pipewire-openrc
   pkgdesc: openrc user service script for pipewire
   pkgver: 20260426
-  pkgrel: 1
+  pkgrel: 2
   url: https://artixlinux.org
   arch:
     - any
