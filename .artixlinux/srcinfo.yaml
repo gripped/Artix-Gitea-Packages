@@ -1,9 +1,9 @@
 ---
-version: 7.0.1-1
+version: 7.0.2-1
 pkgbase:
   name: msgpack-c
   pkgdesc: An efficient object serialization library
-  pkgver: 7.0.1
+  pkgver: 7.0.2
   pkgrel: 1
   url: https://msgpack.org/
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   provides:
     - libmsgpack-c.so
   source:
-    - msgpack-c-7.0.1.tar.gz::https://github.com/msgpack/msgpack-c/archive/c-7.0.1.tar.gz
+    - msgpack-c-7.0.2.tar.gz::https://github.com/msgpack/msgpack-c/archive/c-7.0.2.tar.gz
   b2sums:
-    - 9bd6942ed9f47ba18ec3b3300b4afcd342b13ba54ebf05c90b6c3970cf941e0c80a122814101c714a8ba88928e80be512570d88ab828580687938a0aaf4d9a16
+    - d347d430473ee2a153a779446555e1de89bba90936365e9171505eb179c828b15f3952b24e720061c33da75bb115d690e57d419b3bc691611ca435ec97d83710
 pkgname:
   - name: msgpack-c
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
