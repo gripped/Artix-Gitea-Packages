@@ -1,9 +1,9 @@
 ---
-version: 1.3.10-1
+version: 1.3.11-1
 pkgbase:
   name: pax-utils
   pkgdesc: ELF utils that can check files for security relevant properties
-  pkgver: 1.3.10
+  pkgver: 1.3.11
   pkgrel: 1
   url: https://wiki.gentoo.org/wiki/Hardened/PaX_Utilities
   arch:
@@ -25,12 +25,12 @@ pkgbase:
     - python
     - python-pyelftools
   source:
-    - git+https://anongit.gentoo.org/git/proj/pax-utils.git?signed#tag=v1.3.10
+    - git+https://anongit.gentoo.org/git/proj/pax-utils.git?signed#tag=v1.3.11
   validpgpkeys:
     - 5EF3A41171BB77E6110ED2D01F3D03348DB1A3E2
     - 226DE4AA4B9704A49DEF6B9B1A333AEFBD714C02
   sha512sums:
-    - d5285539c7d2659fdc6774916e6a70cd9b0ecc78183aa28fe83b5e8715ff690ec577a12490d1faa370f413679150596b7584e86da0d3b24399f297628f8848bc
+    - 5b2528e2b5cbc18e2cfc78cfcf237d810acaeafc7845a6953a8213c8d69ed72467014531866f5a4d440e50f05ca5c6a8e9064ac24b119930835587d34de8b1a8
 pkgname:
   - name: pax-utils
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
