@@ -17,7 +17,7 @@ optdepends=('mesa-utils: OpenGL preview'
             'vkbasalt: Configure vkBasalt'
             'git: Clone reshade repository')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${_pkgver}.tar.gz")
-sha256sums=('4de8d05b9fd113dd3216be00f0c1149eb53449e27bc4916b327886d6114e9f9c')
+sha256sums=('4c66c06591c2add165db5e7c0bce569491a026692d6057f1bdcae34ff1d7369c')
 
 build() {
 	cd "${pkgname}-${_pkgver}"
