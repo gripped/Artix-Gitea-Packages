@@ -26,7 +26,6 @@ pkgbase:
     - cups
     - libusb
     - python-setuptools
-    - ipp-usb
   depends:
     - python-dbus
     - python-distro

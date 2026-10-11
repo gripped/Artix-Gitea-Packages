@@ -24,7 +24,7 @@ depends=('python-dbus' 'python-distro' 'ghostscript' 'net-snmp'
          'libstdc++' 'libgcc' 'avahi' 'python' 'xdg-utils' 'zlib' 'libcups'
          'glibc' 'sh')
 makedepends=('python-pyqt5' 'sane' 'rpcbind' 'cups' 'libusb'
-             'python-setuptools' 'ipp-usb')
+             'python-setuptools')
 optdepends=('cups: for printing support'
             'sane: for scanner support'
             'python-pillow: for commandline scanning support'
