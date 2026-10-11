@@ -19,7 +19,7 @@ makedepends=(
 source=(
     pipewire{,-pulse}.user.initd
 )
-sha256sums=('aec5c27ac7b47314b9a368e34c73c35341a77d900b1cede09070bfb593afb746'
+sha256sums=('1d5df6519a97322c16153d650aa2ef864eea8397d388018234c25abc8cb07c1f'
             'e7af2160c453ff797db3aa3aace61e0f27dc88d90239b6be318762588cf483cd')
 
 package_pipewire-openrc() {
