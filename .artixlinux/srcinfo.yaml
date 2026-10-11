@@ -1,11 +1,11 @@
 ---
-version: 3.48.0-2
+version: 3.48.0-3
 pkgbase:
   name: accerciser
   pkgdesc: Interactive Python accessibility explorer for the GNOME desktop
   pkgver: 3.48.0
-  pkgrel: 2
-  url: https://wiki.gnome.org/Apps/Accerciser
+  pkgrel: 3
+  url: https://gitlab.gnome.org/GNOME/accerciser
   arch:
     - any
   license:
@@ -14,6 +14,7 @@ pkgbase:
     - appstream
     - git
     - meson
+    - python-setuptools
     - yelp-tools
   depends:
     - at-spi2-core
@@ -31,7 +32,7 @@ pkgbase:
     - python-cairo
     - python-dbus
     - python-gobject
-    - python-setuptools
+    - python-packaging
     - python-traitlets
     - python-xdg
   source:
@@ -40,4 +41,4 @@ pkgbase:
     - 9c1ce897e9a5d3eac9f3cb59b9de9476b36bc99fd44a7079fb94297c5ece91dee24810cf5785f10d6455c7d6580b117357cdcd602c655737b5421eb8b8902ef5
 pkgname:
   - name: accerciser
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
