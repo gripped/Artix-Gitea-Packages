@@ -1,9 +1,9 @@
 ---
-version: 20260107-1
+version: 20260918-1
 pkgbase:
   name: libuninameslist
   pkgdesc: Large, sparse array mapping each unicode code point to the annotation data for it
-  pkgver: 20260107
+  pkgver: 20260918
   pkgrel: 1
   url: https://github.com/fontforge/libuninameslist
   arch:
@@ -12,9 +12,9 @@ pkgbase:
     - BSD-3-Clause
     - GPL-2.0-only
   source:
-    - https://github.com/fontforge/libuninameslist/releases/download/20260107/libuninameslist-dist-20260107.tar.gz
+    - https://github.com/fontforge/libuninameslist/releases/download/20260918/libuninameslist-dist-20260918.tar.gz
   sha256sums:
-    - aadfaf62a96f20914d8dd248e8f19325471ead0cf3133b2f8ae0624c2da3657b
+    - deb2ec02640c232a4bc333c2cd301ee6b286914eeeb0ccc31ccafe326aed0029
 pkgname:
   - name: libuninameslist
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
