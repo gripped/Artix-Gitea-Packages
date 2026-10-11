@@ -1,9 +1,9 @@
 ---
-version: 5.15.220-1
+version: 5.15.222-1
 pkgbase:
   name: linux-lts515
   pkgdesc: LTS Linux 5.15.x
-  pkgver: 5.15.220
+  pkgver: 5.15.222
   pkgrel: 1
   url: https://www.kernel.org/
   arch:
@@ -26,8 +26,8 @@ pkgbase:
   options:
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.220.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.220.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.222.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.222.tar.sign
     - config
     - 0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
     - 0002-PCI-Add-more-NVIDIA-controllers-to-the-MSI-masking-q.patch
@@ -38,9 +38,9 @@ pkgbase:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - b5b2992505120ac864cd9ccf7cc44541684df46c5a0b09ccdec93fb7f9aa6723
+    - 4d6ec07679bd008524391cb67597106018646c6378b3953c23ec69b9259cdf84
     - SKIP
-    - 00b2845e3d5047e422a78f370c1b7562bd65bb6ca7f626b5eb4e30f04e74eee8
+    - c79717139f3b2db5d43f2a6552c0f9c77054899a2ad3dd17898f6302e243c164
     - 3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd
     - 2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431
     - 8357f000b2b622e73dcfd41c2bad42b5e99fffe8f7ee64f774aa771f86cef43c
@@ -68,4 +68,4 @@ pkgname:
       - pahole
   - name: linux-lts515-docs
     pkgdesc: Documentation for the LTS Linux 5.15.x kernel
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
