@@ -1,9 +1,9 @@
 ---
-version: 1.17-1
+version: 1.19-1
 pkgbase:
   name: distro-info
   pkgdesc: Information about all releases of Debian and Ubuntu
-  pkgver: 1.17
+  pkgver: 1.19
   pkgrel: 1
   url: https://salsa.debian.org/debian/distro-info
   arch:
@@ -36,9 +36,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.17
+    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.19
   sha256sums:
-    - 8d74440938fc2d24c3bf60c13648c980684db5655c3c120cbff4e679e29be371
+    - 39bfd20ba5c22451ec3f5479fc44ff8076f93e9d2a7d7091274b651ad377f30d
 pkgname:
   - name: distro-info
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
