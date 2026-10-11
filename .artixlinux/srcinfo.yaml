@@ -1,9 +1,9 @@
 ---
-version: 7.2.4-1
+version: 10.0-1
 pkgbase:
   name: roctracer
   pkgdesc: ROCm tracer library for performance tracing
-  pkgver: 7.2.4
+  pkgver: 10.0
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/roctracer/en/latest
   arch:
@@ -14,6 +14,7 @@ pkgbase:
     - cmake
     - python-cppheaderparser
     - python-ply
+    - rocm-llvm-static
   depends:
     - rocm-core
     - glibc
@@ -24,9 +25,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rocm-7.2.4.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/rocm-7.2.4.tar.gz
+    - roctracer-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/roctracer.tar.gz
   sha256sums:
-    - 817f9c136125b8d162757a18cdc25b18b1efeb8ef36a948c85e4a672fd149de5
+    - b5beb2987b1fde3b32fb482406123382e43589fb370275cd9bbb9101accc35d2
 pkgname:
   - name: roctracer
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
