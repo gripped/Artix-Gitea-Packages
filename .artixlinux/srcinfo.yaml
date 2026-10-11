@@ -1,10 +1,10 @@
 ---
-version: 0.4.8-2
+version: 0.5.0-1
 pkgbase:
   name: river
   pkgdesc: a non-monolithic Wayland compositor
-  pkgver: 0.4.8
-  pkgrel: 2
+  pkgver: 0.5.0
+  pkgrel: 1
   url: https://isaacfreund.com/software/river/
   arch:
     - x86_64
@@ -31,11 +31,11 @@ pkgbase:
   conflicts:
     - river-classic
   source:
-    - git+https://codeberg.org/river/river.git#tag=v0.4.8?signed
+    - git+https://codeberg.org/river/river.git#tag=v0.5.0?signed
   validpgpkeys:
     - 5FBDF84DD2278DB2B8AD8A5286DED400DDFD7A11
   sha256sums:
-    - 9890026682b50dc53d8ac05c7f093a66daf932610e8468150ed5c08cd677a017
+    - 4ebf58cb64a9cb21838c241233edcde0d2274c2f8175d222cb147b993b2d7e7d
 pkgname:
   - name: river
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
