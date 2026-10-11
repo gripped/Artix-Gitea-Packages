@@ -1,9 +1,9 @@
 ---
-version: 2.3.1-1
+version: 2.3.2-1
 pkgbase:
   name: btrfs-assistant
   pkgdesc: An application for managing BTRFS subvolumes and Snapper snapshots
-  pkgver: 2.3.1
+  pkgver: 2.3.2
   pkgrel: 1
   url: https://gitlab.com/btrfs-assistant/btrfs-assistant
   arch:
@@ -31,9 +31,9 @@ pkgbase:
   backup:
     - etc/btrfs-assistant.conf
   source:
-    - https://gitlab.com/btrfs-assistant/btrfs-assistant/-/archive/2.3.1/btrfs-assistant-2.3.1.tar.gz
+    - https://gitlab.com/btrfs-assistant/btrfs-assistant/-/archive/2.3.2/btrfs-assistant-2.3.2.tar.gz
   sha256sums:
-    - 1dcf140132b88e82d2d3c189464978af0a0c28dd5b8a82f23f4311b5b0211e15
+    - 82458451558e28a5f527a973d3008d0b36ecbf77f2a689d7f42b6a20ff21259c
 pkgname:
   - name: btrfs-assistant
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
