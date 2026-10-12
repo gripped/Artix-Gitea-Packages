@@ -1,10 +1,10 @@
 ---
-version: 7.2.8.hardened1-2
+version: 7.2.10.hardened1-1
 pkgbase:
   name: linux-hardened
   pkgdesc: Security-Hardened Linux
-  pkgver: 7.2.8.hardened1
-  pkgrel: 2
+  pkgver: 7.2.10.hardened1
+  pkgrel: 1
   url: https://github.com/anthraxx/linux-hardened
   arch:
     - x86_64
@@ -39,30 +39,30 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.8.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.8.tar.sign
-    - https://github.com/anthraxx/linux-hardened/releases/download/v7.2.8-hardened1/linux-hardened-v7.2.8-hardened1.patch
-    - https://github.com/anthraxx/linux-hardened/releases/download/v7.2.8-hardened1/linux-hardened-v7.2.8-hardened1.patch.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.10.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.10.tar.sign
+    - https://github.com/anthraxx/linux-hardened/releases/download/v7.2.10-hardened1/linux-hardened-v7.2.10-hardened1.patch
+    - https://github.com/anthraxx/linux-hardened/releases/download/v7.2.10-hardened1/linux-hardened-v7.2.10-hardened1.patch.sig
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - E240B57E2C4630BA768E2F26FC1B547C8D8172C8
   sha256sums:
-    - 12e8d5a973d1ad7c5a5c69882e4022b131ed715db7003fdcd760ddf8c3e51941
+    - 2feaa70453e91f541be6a5c9078d8168e081af45a3d9718054850538cff2ebf3
     - SKIP
-    - 63942de199fc65462d96febf6b4e4d35c142445d758c4f40dfa7bf3dfface2b1
+    - 2dff8808c673a57a7692ea997ca85aeda492c6f4ef0084fab48ad35274a96ae7
     - SKIP
   b2sums:
-    - 5326dde778eb945f282740ef0d8765b46fbd198f1209cdfd7b91e5dac1312fc01f8bf0b2bc67b16a76de736edd8ea21b38b6c91e696ec0c4b39746cd21a15214
+    - f6fa406d0764f0ab9ed199747420e45c422f1cb1a74e5eff1d488b8ad8aa33660440dab2bf15303638e70a9798574ac49550e0fa03bc7550284028548c34cdce
     - SKIP
-    - 5c7d31aaad6de70414fc1f7716271813198af75a337424285af5608bc53a5875945a81a0a661cabf4b9caa81facb5f3cf2b4f3b0f433722eca89b781a8e19bed
+    - 8166eb03f5c2d87b6aebb843f97779acee0e79e997733d1b0a6edddaed76b7d9bfb067214e5fe1ef982ae21c45a5f4b560033ceae132a39b7616f0d5ccc89e6b
     - SKIP
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
-    - cae3d5f317e270a2d0528a3d502136c486e86c1f73127cb1346052760e8ff972
+    - 705fa33e394d265ad2895208ef4bf2e8f1ee7fe23de428f6a8f6e0cff0e94a4d
   b2sums_x86_64:
-    - d7d16f68b99374aad81310990277a513590b385b93538f7dd7b0cc25e74478fd2e52f11d5aec723902a4b37e7d4edf172796a897c73420aa353c32d2d5f08def
+    - 1b9ead8efc7f5389dfa5f3d2b2f3efbc82fe497446e166a34e85a94d813850c8c468df1e5644ee1a93d7d86a587b241a34720702374f92f653bcebdb7e04cf65
 pkgname:
   - name: linux-hardened
     pkgdesc: The Security-Hardened Linux kernel and modules
