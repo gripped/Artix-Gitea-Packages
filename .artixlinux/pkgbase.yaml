@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: world-gremlins
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -25,13 +25,13 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
-    debug: []
-  world:
     version: 6.140.0rc-1
     packages:
       - qt6-webengine-6.140.0rc-1-x86_64.pkg.tar.zst
+    debug: []
+  world:
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
