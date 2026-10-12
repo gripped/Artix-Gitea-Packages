@@ -1,10 +1,10 @@
 ---
-version: 0.7.1-10
+version: 0.7.1-11
 pkgbase:
   name: python-helpdev
   pkgdesc: Helping users and developers to get information about the environment to report bugs
   pkgver: 0.7.1
-  pkgrel: 10
+  pkgrel: 11
   url: https://gitlab.com/dpizetta/helpdev
   arch:
     - any
@@ -15,7 +15,10 @@ pkgbase:
     - python-pytest
     - python-pip
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python-psutil
   source:
@@ -24,4 +27,4 @@ pkgbase:
     - b52f83d6d3935500da42b434747569660d526cd36e88069bd67a8747cca488fc
 pkgname:
   - name: python-helpdev
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
