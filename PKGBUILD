@@ -4,7 +4,7 @@
 _name=pydantic-core
 pkgname=python-pydantic-core
 # WARNING: this package is pinned down to the patch-level version in python-pydantic and should only be updated in lock-step with it
-pkgver=2.46.5
+pkgver=2.50.0
 pkgrel=1
 epoch=3
 pkgdesc="Core validation logic for pydantic written in rust "
@@ -40,8 +40,8 @@ source=(
     "pydantic::git+https://github.com/pydantic/pydantic.git#tag=core-v${pkgver}"
 )
 
-sha512sums=('77adaf98c0f22d7fd21b3f2dfe500293c8c12ae1c11a193daf912af8c3b25862387d9e36f1ca00109a008401afec216a437bfefe37dce1ffe2247d71f9c7cd4f')
-b2sums=('dd04858c892929e0ed32738d7f44f3c382bceb2d51c4baa3b84aa06ea4cef9bac9a708ebbc63eeaf286e43879f14302ce298d97aed551ad9146679cc041b6cbd')
+sha512sums=('bc658d00a821cf1eff79a00169dba3a833c2eaacbed43be2afa172b9300823277a03aa7ac553a49c423e58eff189cc3489ec9a6e692d0dab0b116c155637297d')
+b2sums=('9787c8d3ed80348ce27e0327d62e4d5179c2236b77ee35e61f1c60729591dd8ea457577f528cb834b66e59833811a5358813d0a84b2388f1259f821657da1cd5')
 
 build() {
   cd "pydantic/$_name"
@@ -52,6 +52,7 @@ check() {
   local pytest_options=(
     -vv
     --ignore tests/test_docstrings.py  # we are not interested in linting/ formatting with ruff
+    --ignore tests/test_tzinfo.py  # requires python-pydantic
   )
   local site_packages=$(python -c "import site; print(site.getsitepackages()[0])")
 
