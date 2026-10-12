@@ -1,9 +1,9 @@
 ---
-version: 6.30.0-1
+version: 6.31.0-1
 pkgbase:
   name: kdeclarative
   pkgdesc: Provides integration of QML and KDE Frameworks
-  pkgver: 6.30.0
+  pkgver: 6.31.0
   pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
@@ -30,14 +30,14 @@ pkgbase:
     - qt6-base
     - qt6-declarative
   source:
-    - https://download.kde.org/stable/frameworks/6.30/kdeclarative-6.30.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.30/kdeclarative-6.30.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.31/kdeclarative-6.31.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.31/kdeclarative-6.31.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 7ec3583a2cf2cd7143e39936ffb39e22d20563f4c87a8462e0e9d12c59ea89a6
+    - 458eb2b6e15cd368292fb2a9a6c49621d006c306d7c37ca3bd3090520989401e
     - SKIP
 pkgname:
   - name: kdeclarative
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
