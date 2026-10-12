@@ -1,9 +1,9 @@
 ---
-version: 3.24.0-1
+version: 3.24.1-1
 pkgbase:
   name: python-pycryptodome
   pkgdesc: Collection of cryptographic algorithms and protocols, implemented for use from Python 3.
-  pkgver: 3.24.0
+  pkgver: 3.24.1
   pkgrel: 1
   url: https://www.pycryptodome.org/
   arch:
@@ -27,9 +27,9 @@ pkgbase:
   replaces:
     - python-crypto
   source:
-    - git+https://github.com/Legrandin/pycryptodome.git#tag=v3.24.0
+    - git+https://github.com/Legrandin/pycryptodome.git#tag=v3.24.1
   sha512sums:
-    - 46372bffe23c54a563856c9eb7df8ea283aa9f5c28651591b433c7491df9912cb8978ed7149257c6bf57925a8b1200cc39a7cbf6f44d6874ad4d9ccc2d95280f
+    - b297557a761f5ca7b6e3e3de33e69969963fc3e4f976c5e1273f73b1030a6a6d7d1f547b08e91aed6aba1b75b766ce59bd67deb23416c6ff6f10a4f584c6390e
 pkgname:
   - name: python-pycryptodome
 # generated with artixpkg 0.40.0-1-any
