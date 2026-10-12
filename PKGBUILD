@@ -3,8 +3,8 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio
-pkgver=6.30.0
-pkgrel=1.1
+pkgver=6.31.0
+pkgrel=1
 pkgdesc='Resource and network access abstraction'
 arch=(x86_64)
 url='https://develop.kde.org/products/frameworks/'
@@ -47,7 +47,7 @@ optdepends=('audiocd-kio: for accessing audio CDs'
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
 "https://raw.githubusercontent.com/chimera-linux/cports/49e238206daeb6bc3336a8526df26d3b06bee324/main/kio/patches/nosystemdscope.patch")
-sha256sums=('c19cbd4878347b67a9e05ee6541083f51dd90f9e58ee245b4d7634e09f9c04b2'
+sha256sums=('cdc8e3787be1f4a5c8f8a45fabab5cf540ef6380c549c6fd984f15f093b5eac0'
             'SKIP'
             'eca03d2185a66b284a2271d6e5bcfcb22d5759c805fbebe03e75b26cbcd91846')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
