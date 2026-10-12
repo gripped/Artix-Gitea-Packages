@@ -1,9 +1,9 @@
 ---
-version: 6.17.0-1
+version: 6.17.1-1
 pkgbase:
   name: sip
   pkgdesc: A tool that makes it easy to create Python bindings for C and C++ libraries
-  pkgver: 6.17.0
+  pkgver: 6.17.1
   pkgrel: 1
   url: https://www.riverbankcomputing.com/
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python-packaging
     - python-setuptools
   source:
-    - git+https://github.com/Python-SIP/sip#tag=6.17.0
+    - git+https://github.com/Python-SIP/sip#tag=6.17.1
   sha256sums:
-    - c31137035ac86474469afb638d9dd3075d8d477763179dd98267b53993d1842c
+    - 83eaa08093fae870be6d41015a0e4493ea32c6baf7de58266d3b512a6bf246a5
 pkgname:
   - name: sip
 # generated with artixpkg 0.40.0-1-any
