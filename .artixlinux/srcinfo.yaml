@@ -1,9 +1,9 @@
 ---
-version: 2.1.0-1
+version: 2.1.1-1
 pkgbase:
   name: python-pyrfc3339
   pkgdesc: Parses and generates RFC 3339-compliant timestamps using Python datetime.datetime objects.
-  pkgver: 2.1.0
+  pkgver: 2.1.1
   pkgrel: 1
   url: https://github.com/kurtraschke/pyRFC3339
   arch:
@@ -22,11 +22,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/kurtraschke/pyRFC3339.git#tag=v2.1.0
-    - 4fa081a3.patch
+    - git+https://github.com/kurtraschke/pyRFC3339.git#tag=v2.1.1
   sha512sums:
-    - bada030fc86d2e9e47890c08868205c60bc26d5ad14cb0465aa5f751bf869b97e026073e4afbda58173deed3b5f339b0fb0b0b419cd2055b6b9b063e7bd23b69
-    - ad1dc8066e9aa2881e57d11d012edbced8a790abd2eb4a7f0b06b668df3975e9d176fb87d752877e25b91579ac308fba8e400dcd0c44264e0a22416a9ed78ef8
+    - 91da92a7f66672337df86b582645da06f015a3220ee6d3af7270d999ecb60cb4086c42d4d454b8cf60df214274d3d994f5ff871ea055ce927ddd861ca939a46f
 pkgname:
   - name: python-pyrfc3339
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
