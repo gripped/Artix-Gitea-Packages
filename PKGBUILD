@@ -5,7 +5,7 @@
 _name=pydantic
 pkgname=python-$_name
 # WARNING: upstream pins pydantic-core down to the patch-level and using other versions breaks tests! only update in lock-step with python-pydantic-core!
-pkgver=2.13.5
+pkgver=2.14.0
 pkgrel=1
 pkgdesc='Data parsing and validation using Python type hints'
 arch=(any)
@@ -47,6 +47,7 @@ checkdepends=(
   python-pytest-timeout
   python-pytz
   python-sqlalchemy
+  python-time-machine
 )
 optdepends=(
   'mypy: for type validation with mypy'
@@ -57,8 +58,8 @@ optdepends=(
 source=(
   $url/archive/v$pkgver/$_name-v$pkgver.tar.gz
 )
-sha512sums=('fd607e9bb5599737638401e9dedb4baa454b7f308b461319d59913b603f6e072354c40b161802c8198ee0961052207a2a4da7b861da6fbfd14f2dbb0f61ba762')
-b2sums=('df98b886d99a0f0df8e01f0c1081082aa6ede063ddda27a11d1d5e640dc05080599ad9fd6346786cf77caa9d28291969b68881d21118c1218ec39821596d4f27')
+sha512sums=('ac4e6f6a79714098fdb2728f1eb71e8fde34854dddc398624f54b15a0889c5fb3a76b56f0959ad9a1a3260a0cf2291e8908e0063dddd6fa7ee05c7c00d9e5a94')
+b2sums=('8a4e641556e4def8184893fe64be8da6c23f737e2467a213400970256432abbc54f63a1670e41478ef1bd03558b55e6e42387c5bb6fe313244799fb81d87d8fc')
 
 build() {
   cd $_name-$pkgver
