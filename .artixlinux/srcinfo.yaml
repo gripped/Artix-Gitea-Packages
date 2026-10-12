@@ -1,29 +1,30 @@
 ---
-version: 12.10.1-1
+version: 12.12.1-2
 pkgbase:
   name: pnpm
   pkgdesc: Fast, disk space efficient package manager
-  pkgver: 12.10.1
-  pkgrel: 1
+  pkgver: 12.12.1
+  pkgrel: 2
   url: https://pnpm.io
   arch:
-    - any
+    - x86_64
   license:
     - MIT
   makedepends:
+    - cargo
     - git
-    - rust
-    - pnpm
+    - mold
     - npm
-    - python
   depends:
-    - node-gyp
+    - sh
+    - glibc
+    - libgcc
   source:
-    - git+https://github.com/pnpm/pnpm.git#tag=v12.10.1?signed
+    - git+https://github.com/pnpm/pnpm.git#tag=v12.12.1?signed
   validpgpkeys:
     - 7B74D1299568B586BA9962B5649E4D4AF74E7DEC
   b2sums:
-    - 83a10a56e1980d34a9126da1ed72d9103bb295e6d9ca898ab1af0b6533644b1e855b630871207cbf12a17f219c14eb375749ee337a2e605425c195beab15f0d3
+    - 4d48d9d15061ddb3e842b1fc4ee391116a200e51fbda4c24fca0f9c80a42b8cb49b641cb8ae13677bd59b831855a32b696b99f7440c1a10c88aa4933478fa64e
 pkgname:
   - name: pnpm
 # generated with artixpkg 0.40.0-1-any

@@ -3,64 +3,51 @@
 # Contributor: Severen Redwood <me@severen.dev>
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
-_bootstrap=0
 pkgname=pnpm
-pkgver=12.10.1
-pkgrel=1
+pkgver=12.12.1
+pkgrel=2
 pkgdesc='Fast, disk space efficient package manager'
-arch=(any)
+arch=(x86_64)
 url=https://pnpm.io
 license=(MIT)
-depends=(node-gyp)
-makedepends=(git rust)
-(( _bootstrap == 0 )) && makedepends+=(pnpm npm python)
+depends=(sh glibc libgcc)
+makedepends=(cargo git mold npm)
 source=("git+https://github.com/$pkgname/$pkgname.git#tag=v$pkgver?signed")
-if (( _bootstrap == 1 )); then
-  source+=("pnpm-linux-x64-v$pkgver.tar.gz::https://github.com/pnpm/pnpm/releases/download/v$pkgver/pnpm-linux-x64.tar.gz")
-  noextract=("pnpm-linux-x64-v$pkgver.tar.gz")
-fi
-b2sums=('83a10a56e1980d34a9126da1ed72d9103bb295e6d9ca898ab1af0b6533644b1e855b630871207cbf12a17f219c14eb375749ee337a2e605425c195beab15f0d3')
+b2sums=('4d48d9d15061ddb3e842b1fc4ee391116a200e51fbda4c24fca0f9c80a42b8cb49b641cb8ae13677bd59b831855a32b696b99f7440c1a10c88aa4933478fa64e')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
 
 prepare() {
-  if (( _bootstrap == 1 )); then
-    mkdir tmp
-    bsdtar xf pnpm-linux-x64-v$pkgver.tar.gz -C tmp
-    ln -sr tmp/pn{pm,}
-    # pnx/pnpx are just `pnpm dlx`; wrap them so nothing falls through to the system pnpm
-    for bin in pnx pnpx; do
-      printf '#!/bin/sh\nexec "%s/tmp/pnpm" dlx "$@"\n' "$srcdir" > tmp/$bin
-      chmod +x tmp/$bin
-    done
-    export PATH="$srcdir/tmp:$PATH"
-  fi
+  cd $pkgname
 
-  cd $pkgname/${pkgname}11/$pkgname
-  pnpm install --frozen-lockfile
+  # Generate pnpm/crates/deps-restorer/src/cas-loader.mjs.inc.
+  catalog() { awk -v p="$1" '/^catalog:/{c=1;next} /^[^ #]/{c=0} c && $1==p":"{print $2}' pnpm-workspace.yaml; }
+  npm install --prefix "$srcdir/deps" --ignore-scripts --no-audit --no-fund \
+    "enhanced-resolve@$(catalog enhanced-resolve)" "esbuild@$(catalog esbuild)"
+  ln -s "$srcdir/deps/node_modules" pnpm/esm-loader/node_modules
+  node pnpm/esm-loader/scripts/bundle-runtime.mjs
 
+  cargo fetch --locked --target host-tuple
 }
 
 build() {
-  if (( _bootstrap == 1 )); then
-    export PATH="$srcdir/tmp:$PATH"
-  fi
-
-  cd $pkgname/${pkgname}11/$pkgname
-  pnpm run compile
+  cd $pkgname
+  export RUSTFLAGS+=" -C link-args=-fuse-ld=mold"
+  cargo build --frozen --release --all-features -p pnpm-cli --bin pnpm
 }
 
 package() {
-  local mod_dir=/usr/lib/node_modules/$pkgname
-
-  install -d "$pkgdir"/{usr/bin,$mod_dir/dist}
-  ln -s $mod_dir/bin/$pkgname.mjs "$pkgdir"/usr/bin/$pkgname
-  ln -s $mod_dir/bin/$pkgname.mjs "$pkgdir"/usr/bin/pn
-  ln -s $mod_dir/bin/pnpx.mjs "$pkgdir"/usr/bin/pnpx
-  ln -s $mod_dir/bin/pnpx.mjs "$pkgdir"/usr/bin/pnx
-
-  cd $pkgname/${pkgname}11/$pkgname
-  cp -r bin package.json "$pkgdir"/$mod_dir
+  cd $pkgname
+  install -Dm0755 -t "$pkgdir/usr/bin/" "target/release/$pkgname"
   install -Dt "$pkgdir"/usr/share/licenses/$pkgname LICENSE
-  cd dist
-  cp -r $pkgname.mjs pnpmrc templates worker.js "$pkgdir"/$mod_dir/dist
+
+  install -Dm0644 <(target/release/pnpm completion bash) "$pkgdir/usr/share/bash-completion/completions/$pkgname"
+  install -Dm0644 <(target/release/pnpm completion fish) "$pkgdir/usr/share/fish/vendor_completions.d/$pkgname.fish"
+  install -Dm0644 <(target/release/pnpm completion zsh) "$pkgdir/usr/share/zsh/site-functions/_$pkgname"
+
+  # Create common aliases
+  cd "$pkgdir/usr/bin"
+  ln -s pnpm pn
+  # pnx/pnpx are just `pnpm dlx` wrapper
+  install -Dm0755 <(echo -e '#!/bin/sh\nexec /usr/bin/pnpm dlx "$@"') pnpx
+  ln -s pnpx pnx
 }
