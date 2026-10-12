@@ -1,20 +1,23 @@
 ---
-version: 1.1-7
+version: 1.1-8
 pkgbase:
   name: python-entrypoint2
   pkgdesc: Easy to use command-line interface for python modules
   pkgver: 1.1
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/ponty/entrypoint2
   arch:
     - any
   license:
-    - BSD
+    - BSD-2-Clause
   checkdepends:
     - python-pytest
     - python-easyprocess
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
@@ -23,4 +26,4 @@ pkgbase:
     - fc0b7fe7b21acdab47a585ab9407ca7e5c4f96cb6888575db6b0ceb91f0e105a
 pkgname:
   - name: python-entrypoint2
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
