@@ -1,10 +1,10 @@
 ---
-version: 6.30.0-2
+version: 6.31.0-1
 pkgbase:
   name: kimageformats
   pkgdesc: Image format plugins for Qt 6
-  pkgver: 6.30.0
-  pkgrel: 2
+  pkgver: 6.31.0
+  pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64
@@ -39,13 +39,13 @@ pkgbase:
     - 'openjpeg2: JPEG 2000 format support'
     - 'openexr: EXR format support'
   source:
-    - https://download.kde.org/stable/frameworks/6.30/kimageformats-6.30.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.30/kimageformats-6.30.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.31/kimageformats-6.31.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.31/kimageformats-6.31.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - f74ea9ede7877afb66f4d7dea567f074bf63d806a824c87a9d9067d05848a316
+    - 62a0a92b6b7e117256c0ad115f1c7cc8ef343bb3b80b721cc9240cfa76657c8c
     - SKIP
 pkgname:
   - name: kimageformats
