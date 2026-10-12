@@ -1,10 +1,10 @@
 ---
-version: 6.140.0rc-1
+version: 6.11.2-2
 pkgbase:
   name: qt6-webengine
   pkgdesc: Provides support for web applications using the Chromium browser project
-  pkgver: 6.140.0rc
-  pkgrel: 1
+  pkgver: 6.11.2
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -81,10 +81,10 @@ pkgbase:
   optdepends:
     - 'pipewire: WebRTC desktop sharing under Wayland'
   source:
-    - git+https://code.qt.io/qt/qtwebengine#tag=v6.140.0-rc
+    - git+https://code.qt.io/qt/qtwebengine#tag=v6.11.2
     - git+https://code.qt.io/qt/qtwebengine-chromium
   sha256sums:
-    - a72f775d9eac8f7ac832d8ad36b90b215d7a747d130d42ce0eafdaf8f075b172
+    - 056f15a095db905f60034b6c58f332843d46b01c8a8b12c00dcac2e0ef8c69a2
     - SKIP
 pkgname:
   - name: qt6-webengine
