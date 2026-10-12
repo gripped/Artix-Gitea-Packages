@@ -1,10 +1,10 @@
 ---
-version: 6.31.0-2
+version: 6.31.0-1
 pkgbase:
   name: kcalendarcore
   pkgdesc: The KDE calendar access library
   pkgver: 6.31.0
-  pkgrel: 2
+  pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
     - x86_64

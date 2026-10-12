@@ -2,7 +2,7 @@
 
 pkgname=kcalendarcore
 pkgver=6.31.0
-pkgrel=2
+pkgrel=1
 pkgdesc='The KDE calendar access library'
 arch=(x86_64)
 url='https://develop.kde.org/products/frameworks/'
