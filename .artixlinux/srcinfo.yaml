@@ -1,15 +1,19 @@
 ---
-version: 3.3-11
+version: 3.3-12
 pkgbase:
   name: python-hexdump
   pkgdesc: Library and tool to work with hex and binary data
   pkgver: 3.3
-  pkgrel: 11
+  pkgrel: 12
   url: https://pypi.org/project/hexdump/
   arch:
     - any
   license:
     - Public Domain
+  makedepends:
+    - python-build
+    - python-installer
+    - python-wheel
   depends:
     - python
     - python-setuptools
@@ -19,4 +23,4 @@ pkgbase:
     - 3299f6a29dcf4293616c5ea652397429ee844ca30964ee0fc784fb2a93252b75eb28fb797640e26477eb6b291aa38e14ad5046d8b4488dc4e03bd79b9449898b
 pkgname:
   - name: python-hexdump
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
