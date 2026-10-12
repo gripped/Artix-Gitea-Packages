@@ -1,8 +1,8 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-opentelemetry-api
-pkgver=1.44.0
-pkgrel=1.1
+pkgver=1.45.1
+pkgrel=1
 pkgdesc="OpenTelemetry Python API"
 arch=('any')
 url="https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-api"
@@ -22,7 +22,7 @@ checkdepends=(
   'python-pytest'
 )
 source=("git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v${pkgver}")
-sha256sums=('de185f6c14474a3bee91ea09e14bbc41efef7fb9724c0bf98b7600cfdaee7529')
+sha256sums=('c56494b52a4241a2a34e0a6d0f3eb539fddecdd8ebf92f6cd7fda21ee1111851')
 
 build() {
   cd opentelemetry-python/opentelemetry-api
