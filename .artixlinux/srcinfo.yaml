@@ -1,9 +1,9 @@
 ---
-version: 0.141.1-1
+version: 0.143.0-1
 pkgbase:
   name: python-fastapi
   pkgdesc: FastAPI framework, high performance, easy to learn, fast to code, ready for production
-  pkgver: 0.141.1
+  pkgver: 0.143.0
   pkgrel: 1
   url: https://github.com/fastapi/fastapi
   arch:
@@ -11,14 +11,19 @@ pkgbase:
   license:
     - MIT
   checkdepends:
+    - git
     - python-aiosqlite
     - python-a2wsgi
     - python-anyio
     - python-flask
     - python-httpx
+    - python-httpx2
     - python-inline-snapshot
     - python-peewee
     - python-pytest
+    - python-pytest-timeout
+    - python-pytest-xdist
+    - python-sentry_sdk
     - python-sqlalchemy
     - python-sqlmodel
     - python-trio
@@ -26,6 +31,8 @@ pkgbase:
     - python-email-validator
     - python-itsdangerous
     - python-jinja
+    - python-opentelemetry-sdk
+    - python-opentelemetry-exporter-otlp-proto-http
     - python-orjson
     - python-python-multipart
     - python-pyyaml
@@ -52,11 +59,14 @@ pkgbase:
     - python-pydantic-settings
     - python-starlette
     - python-typing_extensions
+    - python-opentelemetry-api
   optdepends:
     - 'hypercorn: for Hypercorn as ASGI server'
     - 'python-email-validator: for email validation'
     - 'python-itsdangerous: for SessionMiddleware support'
     - 'python-jinja: for default starlette template configuration'
+    - 'python-opentelemetry-sdk: OpenTelemetry instrumentation and telemetry processing'
+    - 'python-opentelemetry-exporter-otlp-proto-http: export telemetry over OTLP/HTTP'
     - 'python-orjson: for ORJSONResponse'
     - 'python-python-multipart: for form parsing support'
     - 'python-pyyaml: for starlette SchemaGenerator support'
@@ -65,11 +75,11 @@ pkgbase:
     - 'python-ujson: for faster JSON parsing and UJSONResponse'
     - 'uvicorn: for Uvicorn as ASGI server'
   source:
-    - fastapi-0.141.1.tar.gz::https://github.com/fastapi/fastapi/archive/0.141.1.tar.gz
+    - fastapi-0.143.0.tar.gz::https://github.com/fastapi/fastapi/archive/0.143.0.tar.gz
   sha512sums:
-    - c57b4319b6fc9ecc16543a499dd16f5bbbdf83ab283c5af02043b7955ada5346d2e53d2be40e989322b802ec04cbfb5f7dd80040f8325c55803f82895c7e394e
+    - 96091936fc0b98d94dfead9ef3108dab01c4b5eda1195829351a74582c08b80658b571560a66adf5628e12aa46742f44fe39efd3eb4ca796233a098a13b6e640
   b2sums:
-    - faba02ea526eff1e745e3fd6e5259da768e5ca8ee6923e0f8e92fd02da3fa256fd4e4782a16160a541011bfa223561dce3347a5ab48210ca9459c0d636ef9c90
+    - 8acf66b2a3ef07b677756f1d16cbf63cf2c22a00434143cf79273a91052bca111c17b7d6df204e2c09f932ddace4b487b7803b2645785034529252686f24f260
 pkgname:
   - name: python-fastapi
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
