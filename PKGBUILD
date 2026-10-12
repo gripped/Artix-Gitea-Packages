@@ -19,7 +19,7 @@ pkgname=(
   rust-aarch64-musl
 )
 pkgver=1.99.0
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Systems programming language focused on safety, speed and concurrency"
 url=https://www.rust-lang.org/
@@ -30,12 +30,9 @@ arch=(
   x86_64
 )
 license=("Apache-2.0 OR MIT")
-_llvmver=23.1.1
 depends=(
-  "compiler-rt=$_llvmver"
-  "lld=$_llvmver"
-  "llvm-libs=$_llvmver"
   bash
+  compiler-rt
   curl
   gcc
   glibc
@@ -43,10 +40,13 @@ depends=(
   libgit2
   libssh2
   libstdc++
+  lld
+  llvm-libs
   openssl
   sqlite
   zlib
 )
+_llvmver=23.1.1
 makedepends=(
   "clang=$_llvmver"
   "llvm=$_llvmver"
