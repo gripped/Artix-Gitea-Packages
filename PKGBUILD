@@ -19,7 +19,7 @@ optdepends=('python-pyxdg: to generate fastlane metadata for Android apps'
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
         artix.patch)
-sha256sums=('22c9f7ff930dae7329faebf2942d2424f4a298c43bb3f11e217be6b12f227f6e'
+sha256sums=('8f74af329e4c918358bfe54316f8cf4d530c28444595a3e2fb15075f72877f17'
             'SKIP'
             '65b541e9f4144adb7c7d3612071b66ebb811c59cef0a7712c1d92345044d618f')
             
