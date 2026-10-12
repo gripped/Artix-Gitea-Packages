@@ -1,9 +1,9 @@
 ---
-version: 1.44.2-1
+version: 2.0.0-1
 pkgbase:
   name: python-polars
   pkgdesc: Blazingly fast DataFrames library using Apache Arrow Columnar Format as memory model
-  pkgver: 1.44.2
+  pkgver: 2.0.0
   pkgrel: 1
   url: https://www.pola.rs/
   arch:
@@ -15,6 +15,9 @@ pkgbase:
     - python-pytest-xdist
     - python-matplotlib
     - python-hypothesis
+    - python-moto
+    - python-flask
+    - python-flask-cors
     - python-pandas
     - python-pyarrow
     - python-pydantic
@@ -38,9 +41,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/pola-rs/polars/archive/refs/tags/py-1.44.2.tar.gz
+    - https://github.com/pola-rs/polars/archive/refs/tags/py-2.0.0.tar.gz
   b2sums:
-    - 0e1f5dc10f83d11b144dd2b63181986054c44e510883b6a6bdd6cc6768e366c37edf4e2a62408835474d098ae40e357556243e1120bf2395bc4d327c37f00c0f
+    - 245425d225b89f9554e4eb704d0451d3a7ca6054ce6c5f5f88c2d2f9847e32a2b6473b26258f679ca7924dd15c649341903b6a35f88e24b50e18b041f454b5ba
 pkgname:
   - name: python-polars
     depends:
@@ -55,4 +58,4 @@ pkgname:
   - name: python-polars-runtime-32
   - name: python-polars-runtime-64
   - name: python-polars-runtime-compat
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
