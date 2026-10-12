@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=extra-cmake-modules
-pkgver=6.30.0
+pkgver=6.31.0
 pkgrel=1
 pkgdesc='Extra modules and scripts for CMake'
 arch=(any)
