@@ -1,10 +1,10 @@
 ---
-version: 1.44.0-1.1
+version: 1.45.1-1
 pkgbase:
   name: python-opentelemetry-sdk
   pkgdesc: OpenTelemetry Python SDK
-  pkgver: 1.44.0
-  pkgrel: 1.1
+  pkgver: 1.45.1
+  pkgrel: 1
   url: https://github.com/open-telemetry/opentelemetry-python/tree/main/opentelemetry-sdk
   arch:
     - any
@@ -25,9 +25,9 @@ pkgbase:
     - python-opentelemetry-semantic-conventions
     - python-typing_extensions
   source:
-    - git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v1.44.0
+    - git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v1.45.1
   sha256sums:
-    - de185f6c14474a3bee91ea09e14bbc41efef7fb9724c0bf98b7600cfdaee7529
+    - c56494b52a4241a2a34e0a6d0f3eb539fddecdd8ebf92f6cd7fda21ee1111851
 pkgname:
   - name: python-opentelemetry-sdk
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
