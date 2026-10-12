@@ -1,15 +1,15 @@
 ---
-version: 3.0.0-5
+version: 3.0.0-7
 pkgbase:
   name: python-zict
   pkgdesc: Useful Mutable Mappings
   pkgver: 3.0.0
-  pkgrel: 5
+  pkgrel: 7
   url: https://github.com/dask/zict/
   arch:
     - any
   license:
-    - BSD
+    - BSD-3-Clause
   checkdepends:
     - python-pytest-timeout
     - python-pytest-repeat
@@ -17,10 +17,12 @@ pkgbase:
     - python-lmdb
     - python-psutil
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
-    - python-heapdict
   source:
     - https://files.pythonhosted.org/packages/source/z/zict/zict-3.0.0.tar.gz
     - https://github.com/dask/zict/commit/b142286c.patch
@@ -29,4 +31,4 @@ pkgbase:
     - 5dcc494602737d1f3d67e0604f6f2a67120d385a0bb0946cd82f41afdf4db13a
 pkgname:
   - name: python-zict
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
