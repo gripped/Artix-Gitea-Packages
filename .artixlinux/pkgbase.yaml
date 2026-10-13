@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -55,7 +55,7 @@ repos:
       - artixforge-9.5.0.6-1-any.pkg.tar.zst
     debug: []
   galaxy:
-    version: 9.1.1.4-1
+    version: 9.5.1.0-1
     packages:
-      - artixforge-9.1.1.4-1-any.pkg.tar.zst
+      - artixforge-9.5.1.0-1-any.pkg.tar.zst
     debug: []
