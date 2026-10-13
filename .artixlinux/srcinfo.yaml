@@ -1,9 +1,9 @@
 ---
-version: 1.1.2-1
+version: 1.2.0-1
 pkgbase:
   name: nwg-look
   pkgdesc: GTK settings editor adapted to work on wlroots-based compositors
-  pkgver: 1.1.2
+  pkgver: 1.2.0
   pkgrel: 1
   url: https://github.com/nwg-piotr/nwg-look
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - zlib
     - xcur2png
   source:
-    - https://github.com/nwg-piotr/nwg-look/archive/v1.1.2/nwg-look-1.1.2.tar.gz
+    - https://github.com/nwg-piotr/nwg-look/archive/v1.2.0/nwg-look-1.2.0.tar.gz
   sha256sums:
-    - 2db9bf20042beec0e9e9bba5769c08e34197e3a0da595b743c39b384aa0e0af0
+    - 76c522473fbb07718a867ac12b9d752465003512b33760566391f8c7ce71438a
 pkgname:
   - name: nwg-look
 # generated with artixpkg 0.40.0-1-any
