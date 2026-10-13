@@ -19,7 +19,7 @@ pkgname=(
   rust-aarch64-musl
 )
 pkgver=1.99.0
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="Systems programming language focused on safety, speed and concurrency"
 url=https://www.rust-lang.org/
@@ -46,7 +46,7 @@ depends=(
   sqlite
   zlib
 )
-_llvmver=23.1.1
+_llvmver=23.1.3
 makedepends=(
   "clang=$_llvmver"
   "llvm=$_llvmver"
@@ -123,7 +123,7 @@ source_riscv64=(bootstrap.riscv64.toml)
 source_x86_64=(bootstrap.x86_64.toml)
 b2sums=('f4e2d97047c42067d11c31484d320f9daaaf881c78d22473b7f9ac2289a8f5979de6e75c277c49a0e3e33cd80f18aecace39f25ae78645976945798f3e512f16'
         'SKIP'
-        '31d0ad202f4ad38d001baaf638a756508b164229b02a6e41b9689508a33b3a7baecaa10398e20f3661cacb712663fe379eeb94e50e017e40ae546a7e7de8049d'
+        '1ce328590eb86e5a8d117a1d5c2c4b691d9c1a897f239ba197e14f47b660e927313133e94a518c43ceed163fc081760d5d33e2685a94af1031184a0960ffb5c7'
         '3736aa3f6f891cb94dbe549d5b2c74bc56e9d484a1598c2a446fbfd4db10a90a34f2e371c65743cf01e1266470fd6fe2fc52cbc365564c62ba61e20ea11c8e22'
         'eb57683802be1114452d0864bdabd1f2a42f83c0c45532ff968c693cb98dd5cf61342880bd75e731e91fde318b0f61cc30183374348a56db883ba32c900a4949'
         'd39a31a9260ba1e60e34f2481a4ef19ce18178736539450e57df19b9a3364a35f23b9055eecb36175de0e01a154b04f86c2645cffc7d637aab8b38dbf2eb0832'
