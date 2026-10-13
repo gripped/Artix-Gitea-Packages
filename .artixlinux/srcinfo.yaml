@@ -1,9 +1,9 @@
 ---
-version: 23.1.3-2
+version: 23.1.3-2.1
 pkgbase:
   name: llvm
   pkgver: 23.1.3
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://llvm.org/
   arch:
     - x86_64
@@ -170,7 +170,7 @@ pkgname:
   - name: libc++
     pkgdesc: LLVM C++ standard library
     depends:
-      - libc++abi=23.1.3-2
+      - libc++abi=23.1.3-2.1
       - libgcc
       - glibc
   - name: libc++abi
@@ -189,7 +189,7 @@ pkgname:
     depends:
       - wasi-libc
       - wasi-compiler-rt
-      - wasi-libc++abi=23.1.3-2
+      - wasi-libc++abi=23.1.3-2.1
   - name: wasi-libc++abi
     pkgdesc: Low level support for the LLVM C++ standard library (WASI)
     depends:

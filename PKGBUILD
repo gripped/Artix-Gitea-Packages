@@ -6,7 +6,7 @@
 pkgbase=llvm
 pkgname=('llvm' 'llvm-libs' 'llvm-lit' 'clang' 'compiler-rt' 'lld' 'lldb' 'polly' 'openmp' 'offload' 'libc++' 'libc++abi' 'libclc' 'wasi-compiler-rt' 'wasi-libc++' 'wasi-libc++abi')
 pkgver=23.1.3
-pkgrel=2
+pkgrel=2.1
 arch=('x86_64')
 url="https://llvm.org/"
 license=('Apache-2.0 WITH LLVM-exception')
