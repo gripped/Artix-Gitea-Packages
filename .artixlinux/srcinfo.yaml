@@ -1,20 +1,23 @@
 ---
-version: 0.9.2-8
+version: 0.9.2-9
 pkgbase:
   name: keystone
   pkgdesc: Lightweight multi-platform, multi-architecture assembler framework
   pkgver: 0.9.2
-  pkgrel: 8
+  pkgrel: 9
   url: https://www.keystone-engine.org/
   arch:
     - x86_64
   license:
-    - GPL2
+    - GPL-2.0-only
   makedepends:
     - cmake
     - ninja
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - python
+    - python-build
+    - python-installer
     - python-setuptools
   options:
     - staticlibs
@@ -31,13 +34,14 @@ pkgbase:
 pkgname:
   - name: keystone
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
     provides:
       - libkeystone.so
   - name: python-keystone
     license:
-      - BSD
+      - BSD-3-Clause
     depends:
       - python
       - keystone
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any

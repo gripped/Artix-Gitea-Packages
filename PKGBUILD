@@ -3,12 +3,21 @@
 pkgbase=keystone
 pkgname=('keystone' 'python-keystone')
 pkgver=0.9.2
-pkgrel=8
+pkgrel=9
 pkgdesc='Lightweight multi-platform, multi-architecture assembler framework'
 url='https://www.keystone-engine.org/'
 arch=('x86_64')
-license=('GPL2')
-makedepends=('cmake' 'ninja' 'gcc-libs' 'python' 'python-setuptools')
+license=('GPL-2.0-only')
+makedepends=(
+  'cmake'
+  'ninja'
+  'libgcc'
+  'libstdc++'
+  'python'
+  'python-build'
+  'python-installer'
+  'python-setuptools'
+)
 options=('staticlibs' '!emptydirs')
 source=(https://github.com/keystone-engine/keystone/archive/${pkgver}/${pkgbase}-${pkgver}.tar.gz
         gcc-15.patch)
@@ -52,12 +61,15 @@ build() {
     -GNinja .
   ninja -C build-static
   (cd bindings/python
-    python setup.py build
+    python -m build --wheel --no-isolation
   )
 }
 
 package_keystone() {
-  depends=('gcc-libs')
+  depends=(
+    'libgcc'
+    'libstdc++'
+  )
   provides=('libkeystone.so')
   cd ${pkgbase}-${pkgver}
   DESTDIR="${pkgdir}" ninja -C build-shared install
@@ -67,9 +79,9 @@ package_keystone() {
 
 package_python-keystone() {
   depends=('python' 'keystone')
-  license=('BSD')
+  license=('BSD-3-Clause')
   cd ${pkgbase}-${pkgver}/bindings/python
-  python setup.py install --root="${pkgdir}" -O1 --skip-build
+  python -m installer --destdir="${pkgdir}" dist/*.whl
   install -Dm 755 sample.py -t "${pkgdir}/usr/share/doc/${pkgname}"
   install -Dm 644 LICENSE.TXT -t "${pkgdir}/usr/share/licenses/${pkgname}"
 }
