@@ -1,0 +1,40 @@
+---
+version: 1.28.0-3
+pkgbase:
+  name: mate-user-share
+  pkgdesc: User level public file sharing via WebDAV for MATE
+  pkgver: 1.28.0
+  pkgrel: 3
+  url: https://github.com/mate-desktop/mate-user-share
+  arch:
+    - x86_64
+  groups:
+    - mate-extra
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - caja
+    - dbus-glib
+    - git
+    - glib2-devel
+    - libcanberra
+    - libnotify
+    - mate-common
+    - yelp-tools
+  depends:
+    - dconf
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
+    - libx11
+    - mod_dnssd
+  optdepends:
+    - 'caja: File sharing extension'
+  source:
+    - git+https://github.com/mate-desktop/mate-user-share.git#tag=v1.28.0
+  b2sums:
+    - 1a3c3adc09ca732eb25991433282ef16cdc0be1e27c628e6362694ac2ce50dbbaec200e5b431e58110f7088249fedf2ac13d1384c3207a48b2699c90216a4735
+pkgname:
+  - name: mate-user-share
+# generated with artixpkg 0.40.0-1-any
