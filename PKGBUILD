@@ -16,13 +16,16 @@ depends=(freerdp
          kcrash
          kguiaddons
          ki18n
+         kirigami
          kirigami-addons
          kpipewire
          kstatusnotifieritem
+         libei
          libstdc++
          libxkbcommon
          pam
          qt6-base
+         qt6-declarative
          qtkeychain-qt6
          libelogind
          wayland)
