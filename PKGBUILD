@@ -102,5 +102,5 @@ package() {
   DESTDIR="$pkgdir" cmake --install build
   setcap CAP_SYS_NICE=+ep "$pkgdir"/usr/bin/kwin_wayland
 
-  rm -r $pkgdir/usr/lib/systemd
+  rm -rf $pkgdir/usr/lib/systemd
 }
