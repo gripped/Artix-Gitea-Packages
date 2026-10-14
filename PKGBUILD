@@ -11,7 +11,8 @@ arch=(any)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL-2.0-or-later)
 depends=()
-makedepends=(extra-cmake-modules)
+makedepends=(extra-cmake-modules
+             qt6-base)
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('76160a3a63cf615b84e9ab354bd1752a8bda2f00b403c58b0e51de65cbacee46'

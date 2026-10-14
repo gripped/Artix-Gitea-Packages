@@ -14,6 +14,7 @@ pkgbase:
     - LGPL-2.0-or-later
   makedepends:
     - extra-cmake-modules
+    - qt6-base
   source:
     - https://download.kde.org/stable/plasma/6.8.0/oxygen-sounds-6.8.0.tar.xz
     - https://download.kde.org/stable/plasma/6.8.0/oxygen-sounds-6.8.0.tar.xz.sig
