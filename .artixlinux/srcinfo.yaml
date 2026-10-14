@@ -1,11 +1,11 @@
 ---
-version: 1.28.1-1
+version: 1.28.1-2
 pkgbase:
   name: pluma
   pkgdesc: A powerful text editor for MATE
   pkgver: 1.28.1
-  pkgrel: 1
-  url: https://mate-desktop.org
+  pkgrel: 2
+  url: https://github.com/mate-desktop/pluma
   arch:
     - x86_64
   groups:
@@ -13,36 +13,38 @@ pkgbase:
   license:
     - GPL-2.0-or-later
   makedepends:
-    - itstool
     - git
     - glib2-devel
     - gobject-introspection
-    - python
+    - gtk-doc
     - mate-common
     - yelp-tools
-    - autoconf-archive
   depends:
-    - iso-codes
-    - mate-desktop
-    - zenity
-    - gtksourceview4
-    - libpeas
-    - python
-    - gettext
+    - at-spi2-core
+    - cairo
+    - dconf
     - enchant
+    - gdk-pixbuf2
+    - glibc
+    - gtk3
+    - gtksourceview4
+    - iso-codes
+    - libice
+    - libpeas
     - libsm
+    - libx11
+    - libxml2
+    - mate-desktop
+    - pango
+    - zenity
   optdepends:
-    - 'python-gobject: to use the python plugins'
-  conflicts:
-    - pluma-gtk3
-  replaces:
-    - pluma-gtk3
+    - 'python-gobject: for External Tools, Python Console, Quick Open, Snippets plugins'
   source:
     - git+https://github.com/mate-desktop/pluma.git#tag=v1.28.1
     - git+https://github.com/mate-desktop/mate-submodules.git
-  sha512sums:
-    - 8e6f152c92cfba1736f1a95ef027ba8e857ba554955ce6198f083058ee602c3531e3a5ee3e69f191be81a543780c4b4aa0a2c6c8728984f8256e42f3481fdd92
+  b2sums:
+    - ad2789a065bd7b211b35f0f2a6a73006e774558312ffc92b3dbd69e2e1c6c58578ff3c358ba1ec11280f6536b2e4927d82ac3265c9d97057033133ccf1e046e7
     - SKIP
 pkgname:
   - name: pluma
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
