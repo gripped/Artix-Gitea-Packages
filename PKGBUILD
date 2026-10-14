@@ -11,6 +11,7 @@ arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
 license=(LGPL-2.0-or-later)
 depends=(aurorae
+         knighttime
          breeze
          glibc
          iio-sensor-proxy

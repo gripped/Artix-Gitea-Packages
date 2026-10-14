@@ -23,6 +23,7 @@ pkgbase:
     - xorg-xwayland
   depends:
     - aurorae
+    - knighttime
     - breeze
     - glibc
     - iio-sensor-proxy
