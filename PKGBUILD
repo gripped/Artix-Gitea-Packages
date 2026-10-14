@@ -3,7 +3,7 @@
 # Contributor: Luca Weiss <luca (at) z3ntu (dot) xyz>
 
 pkgname=lmdbxx
-pkgver=1.0.2
+pkgver=1.0.3
 pkgrel=1
 pkgdesc="C++17 wrapper for the LMDB embedded B+ tree database library"
 arch=('x86_64')
@@ -11,8 +11,8 @@ url="https://github.com/hoytech/lmdbxx"
 license=('Unlicense')
 depends=(lmdb)
 source=("https://github.com/hoytech/lmdbxx/archive/$pkgver/lmdbxx-$pkgver.tar.gz")
-sha512sums=('2e30dd439729f2947649be7ef3aa10e07a0feb073000128ece2948b857bf43debc84d7093472180798b62994d70810c7a4febd3f85ae9efda2483e55207df4a2')
-b2sums=('e9a7599398de6995c1af9e09df7ac2f031fbfba93f0d71842f0a598412fd7291a0030aeb8e2e1a45b4d2dffc166fb146f2136b7904da5335089135e03ae3ac5c')
+sha512sums=('0902b2a2e81b121e1c1e9af76beeb4173e0cf785025a0cdb2909122d666f49b508f409d1f698fedb1aec6d2dc85b67887ce6822d453d985891a0d62aa8664551')
+b2sums=('fc1a680f10a30ab6129b46a33af51f98ee80eee1c3206b7fdfcc33ac87a7555cdbf59ded3057b660d5af3fd96c81b076f7a5192f29435e9d12f0fcc0dc62b2a1')
 
 check() {
   cd "${pkgname}-${pkgver}"

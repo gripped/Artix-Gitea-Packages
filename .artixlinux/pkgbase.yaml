@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.0.2-1
+    version: 1.0.3-1
     packages:
-      - lmdbxx-1.0.2-1-x86_64.pkg.tar.zst
+      - lmdbxx-1.0.3-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.0.0-3
