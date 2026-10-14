@@ -6,8 +6,8 @@
 
 pkgbase=kea
 pkgname=("${pkgbase}" "${pkgbase}-docs")
-pkgver=3.2.0
-pkgrel=2
+pkgver=3.2.1
+pkgrel=1
 epoch=1
 pkgdesc="High-performance, extensible DHCP server engine from ISC, supporting both DHCPv4 and DHCPv6"
 url="https://kea.isc.org"
@@ -21,14 +21,10 @@ checkdepends=('procps-ng')
 install="${pkgbase}.install"
 source=("git+https://gitlab.isc.org/isc-projects/kea.git#tag=Kea-${pkgver}?signed"
         'kea.sysusers'
-        'kea.tmpfiles'
-        'fix-build-with-boost-1.89.patch'
-        'fix-build-with-boost-1.90.patch')
-b2sums=('33f590ffd62706317b501b1d2a0fb7ea1fdc9e5fc905cd9bbb46b7fb961a795def010233b36cc8e6b4cefc0a877bf3d6867905a4df224cd3eedf0a12da144ecb'
+        'kea.tmpfiles')
+b2sums=('1b28712f62c9e19b1eee03d08f370c84c7c95e3d96815652c2409294740bc667b8d8aa59ca00c5318a28e8771e06c2e01da280d6b76676eb0b6666a17e89696a'
         '630310bb2b544a00276a0fa0fff8b7bb93f6bf63e3e5f8ed38f2e1fd2d9747ea4b4cbaa7c0023eec1baddf5e8fe1966b71c6941b3a3cd2e7705e67b15543f2c7'
-        'd62c9181b55956441c43414bc2a5a8cff143281931bd57fe584ed03e6035a87c610da2530c10233189fa5926e98e47d05c120b5218e77c9b842131668c9be1e9'
-        '4cfe04b61d7884ed492c3f7f06cf3ea68ec231063a8ba868221bbeb17ab94315d80e05243db89a12b29d0b2b1e35e1c7a86f33a42874ddc85661420ea9347e07'
-        '1258a72d82eedd1d428b65079cbf66e1efb1bd7fbe26c0029151c9264afd4d526e11f6f7a648fe4165cab52107bfb40577f59e50178e6c82b98efaab328f7e3c')
+        'd62c9181b55956441c43414bc2a5a8cff143281931bd57fe584ed03e6035a87c610da2530c10233189fa5926e98e47d05c120b5218e77c9b842131668c9be1e9')
 validpgpkeys=('BE0E9748B718253A28BB89FFF1B11BF05CF02E57'  # Internet Systems Consortium, Inc. (Signing key, 2017-2018) <codesign@isc.org>
               'AE3FAC796711EC59FC007AA474BB6B9A4CBB3D38'  # Internet Systems Consortium, Inc. (Signing key, 2019-2020) <codesign@isc.org>
               '7E1C91AC8030A5A59D1EFAB9750F3C87723E4012'  # Internet Systems Consortium, Inc. (Signing key, 2021-2022) <codesign@isc.org>
