@@ -1,10 +1,10 @@
 ---
-version: 3.2.10-1
+version: 3.2.10-3
 pkgbase:
   name: freeradius
   pkgdesc: The premier open source RADIUS server
   pkgver: 3.2.10
-  pkgrel: 1
+  pkgrel: 3
   url: https://freeradius.org/
   arch:
     - x86_64
@@ -59,4 +59,4 @@ pkgbase:
     - f536a9aa972e3e42a6b1a6d8ee17166eb721c7cba2e80f60473811497c7bd8bc
 pkgname:
   - name: freeradius
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
