@@ -2,7 +2,7 @@
 # Contributor: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=rebar3
-pkgver=3.27.1
+pkgver=3.27.3
 pkgrel=1
 pkgdesc="Erlang build tool that makes it easy to compile and test Erlang applications and releases"
 arch=('any')
@@ -19,7 +19,7 @@ depends=(
 )
 makedepends=(git)
 source=("git+$url.git#tag=$pkgver")
-b2sums=('e4b7666566711647f60041e0232b3d9cf8e2ba217b597d49f976eba01abf873489eb3c623aacb4be006054c9def5c24dbc6790fb201a2dfd0abe8f9e90fad7a1')
+b2sums=('2bbd87997b4f673ba1522123834aa59bf08432523ecfb32296a98bb2342048b363c6bfe6b795137e2d447d5c10f0abb2f75d41e784f49e31870f617dc28dc9f1')
 
 build() {
   cd $pkgname
