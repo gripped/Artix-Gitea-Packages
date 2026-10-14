@@ -1,13 +1,15 @@
 ---
-version: 0.10.0-3
+version: 6.8.0-1
 pkgbase:
   name: kup
   pkgdesc: A backup software for helping people to keep up-to-date backups
-  pkgver: 0.10.0
-  pkgrel: 3
+  pkgver: 6.8.0
+  pkgrel: 1
   url: https://apps.kde.org/kup/
   arch:
     - x86_64
+  groups:
+    - plasma
   license:
     - GPL-2.0-only
     - GPL-2.0-or-later
@@ -22,6 +24,7 @@ pkgbase:
     - kconfig
     - kconfigwidgets
     - kcoreaddons
+    - kcrash
     - kdbusaddons
     - ki18n
     - kidletime
@@ -30,12 +33,12 @@ pkgbase:
     - kjobwidgets
     - knotifications
     - kwidgetsaddons
+    - kwindowsystem
     - kxmlgui
     - libgcc
     - libgit2
     - libplasma
     - libstdc++
-    - plasma5support
     - qt6-base
     - qt6-declarative
     - solid
@@ -43,13 +46,16 @@ pkgbase:
     - 'bup: bup backend'
     - 'rsync: support for synced backups'
   source:
-    - https://download.kde.org/stable/kup/kup-0.10.0.tar.xz
-    - https://download.kde.org/stable/kup/kup-0.10.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.0/kup-6.8.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.0/kup-6.8.0.tar.xz.sig
   validpgpkeys:
-    - CBA1DCD0B06A2B2E9B133E5C5C7D83CE9812E291
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - ac58f3f789973cac5f2b70a81683294e90f7f84fa3b399116b398bca6eff1b0a
+    - 0879a8edb3becad34613db8d75cb854caf44a6051a53bcfa4d1fb59d0f510d5c
     - SKIP
 pkgname:
   - name: kup
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
