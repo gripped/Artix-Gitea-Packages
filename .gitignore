@@ -16,3 +16,4 @@ src/
 *.service
 *.timer
 *.socket
+replace-unsupported-applications-view-with-processes.patch
