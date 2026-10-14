@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 26.08.2-1
+    version: 26.08.2-2
     packages:
-      - merkuro-26.08.2-1-x86_64.pkg.tar.zst
+      - merkuro-26.08.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 26.08.2-1
