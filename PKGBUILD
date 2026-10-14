@@ -12,6 +12,7 @@ url='https://kde.org/plasma-desktop/'
 license=(GPL-2.0-or-later)
 arch=(x86_64)
 depends=(glibc
+         kconfig
          kcoreaddons
          ki18n
          kwidgetsaddons

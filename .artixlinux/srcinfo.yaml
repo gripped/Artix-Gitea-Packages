@@ -18,6 +18,7 @@ pkgbase:
     - kdoctools
   depends:
     - glibc
+    - kconfig
     - kcoreaddons
     - ki18n
     - kwidgetsaddons
