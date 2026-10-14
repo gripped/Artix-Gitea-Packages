@@ -1,11 +1,4 @@
 ---
-pkgbase:
-  name: mate-sensors-applet
-  version: 1.28.0-4
-  arch:
-    - x86_64
-  pkgname:
-    - mate-sensors-applet
 actions:
   addRepo: galaxy
   removeRepo: null
@@ -18,38 +11,50 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
     version: null
     packages: []
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
-    version: 1.28.0-4
+    version: 1.28.0-5
     packages:
-      - mate-sensors-applet-1.28.0-4-x86_64.pkg.tar.zst
+      - mate-sensors-applet-1.28.0-5-x86_64.pkg.tar.zst
+    debug: []
 team: galaxy
