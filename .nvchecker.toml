@@ -1,2 +1,3 @@
 [breeze-grub]
 source = "manual"
+manual="6.8.0"
