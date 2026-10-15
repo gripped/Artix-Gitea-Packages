@@ -1,9 +1,9 @@
 ---
-version: 1.3.2-1
+version: 1.4.0-1
 pkgbase:
   name: opencc
   pkgdesc: Library for Open Chinese Convert
-  pkgver: 1.3.2
+  pkgver: 1.4.0
   pkgrel: 1
   url: https://github.com/BYVoid/OpenCC
   arch:
@@ -15,7 +15,6 @@ pkgbase:
     - chrpath
     - cmake
     - cppjieba
-    - darts
     - doxygen
     - marisa
     - pybind11
@@ -27,9 +26,9 @@ pkgbase:
     - tclap
     - gtest
   source:
-    - git+https://github.com/BYVoid/OpenCC.git#tag=ver.1.3.2
+    - git+https://github.com/BYVoid/OpenCC.git#tag=ver.1.4.0
   sha512sums:
-    - 674fd09fc4adc02fa13af8737e67a06836c9676a9c25f8c9ed57e97f832b88a71be39800fc4041ff8de207930acc6766ab50cd94286abfdecf0778109406223a
+    - 75a8cbdc1b3facfd8d067fce5c5f1a00861fa46ecc0bf34e7de064bd3c45efea68c5147850025b19223d609ab3ed93050f0caaad2c40107dbd3c654dcd821147
 pkgname:
   - name: opencc
     pkgdesc: Library for Open Chinese Convert
@@ -39,4 +38,4 @@ pkgname:
       - libopencc.so
   - name: opencc-doc
     pkgdesc: Documentation for Library for Open Chinese Convert
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
