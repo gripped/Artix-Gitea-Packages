@@ -28,7 +28,6 @@ repos:
     version: 6.8.0-1
     packages:
       - plasma-workspace-6.8.0-1-x86_64.pkg.tar.zst
-      - plasma-x11-session-6.8.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.7.5-3

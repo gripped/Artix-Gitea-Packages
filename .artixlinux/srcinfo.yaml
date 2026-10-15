@@ -91,8 +91,6 @@ pkgbase:
     - libxau
     - libxcb
     - libxcrypt
-    - libxcursor
-    - libxfixes
     - libxft
     - libxtst
     - milou
@@ -111,6 +109,7 @@ pkgbase:
     - sh
     - solid
     - libelogind
+    - union
     - wayland
     - xcb-util
     - xcb-util-cursor
@@ -120,6 +119,19 @@ pkgbase:
     - xorg-xrdb
     - xorg-xwayland
     - zlib
+  optdepends:
+    - 'appmenu-gtk-module: global menu support for some GTK3 applications'
+    - 'baloo: Baloo search runner'
+    - 'discover: manage applications installation from the launcher'
+    - 'kdepim-addons: displaying PIM events in the calendar'
+    - 'kwayland-integration: Wayland integration for Qt5 applications'
+    - 'networkmanager-qt: IP based geolocation'
+    - 'plasma-workspace-wallpapers: additional wallpapers'
+    - 'plasma5-integration: use Plasma settings in Qt5 applications'
+    - 'xdg-desktop-portal-gtk: sync font settings to Flatpak apps'
+  conflicts:
+    - plasma-wayland-session
+    - plasma-x11-session
   source:
     - https://download.kde.org/stable/plasma/6.8.0/plasma-workspace-6.8.0.tar.xz
     - https://download.kde.org/stable/plasma/6.8.0/plasma-workspace-6.8.0.tar.xz.sig
@@ -205,8 +217,6 @@ pkgname:
       - libxau
       - libxcb
       - libxcrypt
-      - libxcursor
-      - libxfixes
       - libxft
       - libxtst
       - milou
@@ -225,6 +235,7 @@ pkgname:
       - sh
       - solid
       - libelogind
+      - union
       - wayland
       - xcb-util
       - xcb-util-cursor
@@ -234,26 +245,5 @@ pkgname:
       - xorg-xrdb
       - xorg-xwayland
       - zlib
-      - plasma-x11-session
       - plasma-integration
-    optdepends:
-      - 'appmenu-gtk-module: global menu support for some GTK3 applications'
-      - 'baloo: Baloo search runner'
-      - 'discover: manage applications installation from the launcher'
-      - 'kdepim-addons: displaying PIM events in the calendar'
-      - 'kwayland-integration: Wayland integration for Qt5 applications'
-      - 'networkmanager-qt: IP based geolocation'
-      - 'plasma-workspace-wallpapers: additional wallpapers'
-      - 'plasma5-integration: use Plasma settings in Qt5 applications'
-      - 'xdg-desktop-portal-gtk: sync font settings to Flatpak apps'
-    conflicts:
-      - plasma-wayland-session
-    replaces:
-      - plasma-wayland-session
-  - name: plasma-x11-session
-    pkgdesc: Plasma X11 session
-    groups: []
-    depends:
-      - plasma-workspace
-      - kwin-x11
 # generated with artixpkg 0.40.0-1-any
