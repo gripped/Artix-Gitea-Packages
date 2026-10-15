@@ -1,10 +1,10 @@
 ---
-version: 6.7.5-2
+version: 6.8.0-1
 pkgbase:
   name: powerdevil
   pkgdesc: Manages the power consumption settings of a Plasma Shell
-  pkgver: 6.7.5
-  pkgrel: 2
+  pkgver: 6.8.0
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -38,7 +38,6 @@ pkgbase:
     - libkscreen
     - libplasma
     - libstdc++
-    - libxcb
     - plasma-workspace
     - qcoro
     - qt6-base
@@ -51,18 +50,16 @@ pkgbase:
     - 'power-profiles-daemon: power profiles support'
     - 'tlp: alternative power profiles support'
   source:
-    - https://download.kde.org/stable/plasma/6.7.5/powerdevil-6.7.5.tar.xz
-    - https://download.kde.org/stable/plasma/6.7.5/powerdevil-6.7.5.tar.xz.sig
-    - https://invent.kde.org/plasma/powerdevil/-/commit/54f8a4a8.patch
+    - https://download.kde.org/stable/plasma/6.8.0/powerdevil-6.8.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.0/powerdevil-6.8.0.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 6a738fccf01e4d1b10fea68ff8b404a406f95bc36fcb593bcc70fafb1c53258b
+    - 2027b43339faeedd29c89520efba54e1c3f46900d275b2d48fc9c69575b1d57e
     - SKIP
-    - f92b339712096d623c862e31b58d87ce72f381462efeab30893f1937a6634f88
 pkgname:
   - name: powerdevil
 # generated with artixpkg 0.40.0-1-any
