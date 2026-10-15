@@ -1,0 +1,50 @@
+---
+version: 6.8.0-1
+pkgbase:
+  name: union
+  pkgdesc: A Qt style supporting both QtQuick and QtWidgets
+  pkgver: 6.8.0
+  pkgrel: 1
+  url: https://kde.org/plasma-desktop/
+  arch:
+    - x86_64
+  groups:
+    - plasma
+  license:
+    - LGPL-2.1-only
+    - OR
+    - LGPL-3.0-only
+    - OR
+    - LicenseRef-KDE-Accepted-LGPL
+  makedepends:
+    - extra-cmake-modules
+    - git
+    - qt6-shadertools
+  depends:
+    - cxx-rust-cssparser
+    - glibc
+    - kcolorscheme
+    - kconfig
+    - kcoreaddons
+    - kguiaddons
+    - kiconthemes
+    - kirigami
+    - libgcc
+    - libstdc++
+    - qt6-base
+    - qt6-declarative
+    - zlib
+  source:
+    - https://download.kde.org/stable/plasma/6.8.0/union-6.8.0.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.0/union-6.8.0.tar.xz.sig
+  validpgpkeys:
+    - E0A3EB202F8E57528E13E72FD7574483BB57B18D
+    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - D07BD8662C56CB291B316EB2F5675605C74E02CF
+    - 1FA881591C26B276D7A5518EEAAF29B42A678C20
+  sha256sums:
+    - d7340ffe4e269c6ee676acc6c93b928932b06ee2654ae3e7b904b699fb46a46c
+    - SKIP
+pkgname:
+  - name: union
+# generated with artixpkg 0.40.0-1-any
