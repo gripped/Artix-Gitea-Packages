@@ -36,6 +36,7 @@ pkgbase:
     - kwindowsystem
     - libksysguard
     - libstdc++
+    - python
     - qt6-base
     - qt6-declarative
   replaces:
@@ -43,7 +44,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/plasma/6.8.0/plasma-systemmonitor-6.8.0.tar.xz
     - https://download.kde.org/stable/plasma/6.8.0/plasma-systemmonitor-6.8.0.tar.xz.sig
-    - https://raw.githubusercontent.com/chimera-linux/cports/0953fe1e320a569885480f1191082e592266cd76/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch
+    - plasma-systemmonitor-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/604026ab38185f2c6008752cb59153f831c4952b/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
