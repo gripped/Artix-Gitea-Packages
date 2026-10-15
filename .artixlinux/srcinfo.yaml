@@ -1,9 +1,9 @@
 ---
-version: 0.19.2.1-1
+version: 0.19.3.1-1
 pkgbase:
   name: helium-browser
   pkgdesc: Private, fast, and honest web browser based on - Ungoogled - Chromium
-  pkgver: 0.19.2.1
+  pkgver: 0.19.3.1
   pkgrel: 1
   url: https://github.com/imputnet/helium-linux
   arch:
@@ -49,11 +49,11 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/imputnet/helium/archive/refs/tags/0.19.2.tar.gz
-    - https://github.com/imputnet/helium-linux/archive/refs/tags/0.19.2.1.tar.gz
+    - https://github.com/imputnet/helium/archive/refs/tags/0.19.3.tar.gz
+    - https://github.com/imputnet/helium-linux/archive/refs/tags/0.19.3.1.tar.gz
   sha256sums:
-    - 1a58b19b06210eaf2ae9d018340b1ce79728377be23762c8f2354805f54c3aa8
-    - 3536797142c24759ae19b1c0b909594d188da4cc1817203551f1e560226e6af6
+    - 78d8d12a1f96ed7f44080938b1218564dae815ba25eaa790a47bf7e70d4b0748
+    - a25b6ebe355d4960587c2ee12409c011f9172394d26bd6df8ff54bfdbb9e838f
 pkgname:
   - name: helium-browser
 # generated with artixpkg 0.40.0-1-any
