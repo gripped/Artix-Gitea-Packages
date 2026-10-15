@@ -1,9 +1,9 @@
 ---
-version: 7.2.9.artix1-1
+version: 7.2.10.artix1-1
 pkgbase:
   name: linux
   pkgdesc: Linux
-  pkgver: 7.2.9.artix1
+  pkgver: 7.2.10.artix1
   pkgrel: 1
   url: https://github.com/archlinux/linux
   arch:
@@ -39,30 +39,30 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.9.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.9.tar.sign
-    - https://github.com/archlinux/linux/releases/download/v7.2.9-arch1/linux-v7.2.9-arch1.patch.zst
-    - https://github.com/archlinux/linux/releases/download/v7.2.9-arch1/linux-v7.2.9-arch1.patch.zst.sig
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.10.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v7.x/linux-7.2.10.tar.sign
+    - https://github.com/archlinux/linux/releases/download/v7.2.10-arch1/linux-v7.2.10-arch1.patch.zst
+    - https://github.com/archlinux/linux/releases/download/v7.2.10-arch1/linux-v7.2.10-arch1.patch.zst.sig
   validpgpkeys:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
     - 83BC8889351B5DEBBB68416EB8AC08600F108CDF
   sha256sums:
-    - b4c5dfbe51a364a6c7f03869200f88c8e1f77403539005f14b7fc6bc91b8d8ba
+    - 2feaa70453e91f541be6a5c9078d8168e081af45a3d9718054850538cff2ebf3
     - SKIP
-    - 95eac21ec3b619945f86b205af0c2dd3eae2d01c79d1bf7da4b180556097ce03
+    - 8ffe49bd444a895726935c0882cdf6cdae78ddc5181e5e807ae130a754055d68
     - SKIP
   b2sums:
-    - c853d45f0df3b713a84695c487b56e44d40da007fb48700be4bf0180c6aa15e7f087ac2d52f1cf7997b4de262aeae5094c772f36297405de1c7b8985a420328b
+    - f6fa406d0764f0ab9ed199747420e45c422f1cb1a74e5eff1d488b8ad8aa33660440dab2bf15303638e70a9798574ac49550e0fa03bc7550284028548c34cdce
     - SKIP
-    - 16446f9f4a28f4d372c03e42927637a0e13fc6d921d7535ee8cca9e059c27142980ff85ad6d7518f77008394636d3e0f6afc00251347adc8f2ef6d6939846050
+    - ba40e6b37149194c8b953ba904666643a1471331d260ec910fa5038d76453bebfa1c0f5acd12607253f590469a5ce27248f93a308ebb94899902ec7b8ed596f1
     - SKIP
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
-    - 462ca12fb161c8b65b8aba8bb724540b465bd8ad54065765a455887befa6f1d4
+    - 6a4a9aa78770045324c54c3c6c14d28427f0ad9ff11cc89070b4e7754920453d
   b2sums_x86_64:
-    - c2a849b667964154285a9ddd0b489bef0608cbf38517641a5e522ae87560652bda1e4ab14e74187eb4c50c7cd7eb780cf15303ee60cac2b058b52b63dbc8fd1a
+    - df815271cff47a97400f3f9f864261251497f5a91b9c51779383bfd8c33327a856e4e7b0880f97e6b5a4ac36e462c278cd714b65b2ac3018216b5f6363610606
 pkgname:
   - name: linux
     pkgdesc: The Linux kernel and modules
