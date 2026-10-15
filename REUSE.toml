@@ -22,10 +22,3 @@ path = [
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
-
-[[annotations]]
-path = [
-    "remove-mf16c-flag-as-f16-intrinsics.patch",
-]
-SPDX-FileCopyrightText = "rocblas contributors"
-SPDX-License-Identifier = "MIT"

@@ -1,16 +1,17 @@
 ---
-version: 7.2.4-3
+version: 10.0-2
 pkgbase:
   name: rocblas
   pkgdesc: Next generation BLAS implementation for ROCm platform
-  pkgver: 7.2.4
-  pkgrel: 3
+  pkgver: 10.0
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html
   arch:
     - x86_64
   license:
     - MIT
   makedepends:
+    - amdsmi
     - cmake
     - ninja
     - gcc-fortran
@@ -22,12 +23,10 @@ pkgbase:
     - python-msgpack
     - python-pyaml
     - python-tensile
-    - python-virtualenv
     - python-wheel
     - rocm-cmake
     - rocm-toolchain
     - rocm-llvm
-    - rocm-smi-lib
     - gtest
   depends:
     - cblas
@@ -40,13 +39,11 @@ pkgbase:
   optdepends:
     - 'python-yaml: for rocblas-bench and rocblas-gemm-tune'
     - 'gtest: for rocblas-bench and rocblas-gemm-tune'
-    - 'rocm-smi-lib: for rocblas-bench and rocblas-gemm-tune'
-  options:
-    - '!strip'
+    - 'amdsmi: for rocblas-bench and rocblas-gemm-tune'
   source:
-    - rocm-libraries::git+https://github.com/ROCm/rocm-libraries#tag=rocm-7.2.4
+    - rocblas-10.0.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.0/rocblas.tar.gz
   sha256sums:
-    - b476acbcd0f4017c800e4b05533e6dfb875bde32242729c8df557d4624379623
+    - 628dc9a5c43ecb70414da7abb591a0996d215d2bd62d0bc587fe808508731035
 pkgname:
   - name: rocblas
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any

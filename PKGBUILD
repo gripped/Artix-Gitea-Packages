@@ -4,8 +4,8 @@
 # Contributor: Lubosz Sarnecki <lubosz@gmail.com>
 
 pkgname=rocblas
-pkgver=7.2.4
-pkgrel=3
+pkgver=10.0
+pkgrel=2
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
@@ -20,9 +20,11 @@ depends=(
   'roctracer'
 )
 makedepends=(
+  'amdsmi'
   'cmake'
   'ninja'
   'gcc-fortran'
+  # find_package(Git REQUIRED) for the commit ID in the version string
   'git'
   'msgpack-cxx'
   'perl-file-which'
@@ -31,33 +33,20 @@ makedepends=(
   'python-msgpack'
   'python-pyaml'
   'python-tensile'
-  'python-virtualenv'
   'python-wheel'
   'rocm-cmake'
   'rocm-toolchain'
   'rocm-llvm'
-  'rocm-smi-lib'
   'gtest'
 )
 optdepends=(
   'python-yaml: for rocblas-bench and rocblas-gemm-tune'
   'gtest: for rocblas-bench and rocblas-gemm-tune'
-  'rocm-smi-lib: for rocblas-bench and rocblas-gemm-tune'
+  'amdsmi: for rocblas-bench and rocblas-gemm-tune'
 )
-source=("rocm-libraries::git+https://github.com/ROCm/rocm-libraries#tag=rocm-$pkgver")
-sha256sums=('b476acbcd0f4017c800e4b05533e6dfb875bde32242729c8df557d4624379623')
-options=(!strip)
-_dirname="rocm-libraries/projects/$pkgname"
-_tensile_dir="rocm-libraries/shared/tensile"
-
-prepare() {
-  cd ${_dirname}
-  # Add support for gfx103X
-  git cherry-pick -n 43a79e3aee2319377f2e69fe943b52a0c29215e8
-
-  # Add support for gfx115X
-  git cherry-pick -n 7bc1152aeaeaf9b6c0c7d3450be3d8afc571503b
-}
+_git='https://github.com/ROCm/rocm-libraries'
+source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
+sha256sums=('628dc9a5c43ecb70414da7abb591a0996d215d2bd62d0bc587fe808508731035')
 
 build() {
   # Compile source code for supported GPU archs in parallel
@@ -71,7 +60,7 @@ build() {
   # https://rocm.docs.amd.com/projects/llvm-project/en/latest/reference/rocmcc.html#support-status-of-other-clang-options
   local cmake_args=(
     -Wno-dev
-    -S "$_dirname"
+    -S "$pkgname"
     -B build
     -G Ninja
     -D CMAKE_BUILD_TYPE=RelWithDebInfo
@@ -80,16 +69,19 @@ build() {
     -D CMAKE_TOOLCHAIN_FILE=toolchain-linux.cmake
     -D CMAKE_CXX_FLAGS="${CXXFLAGS} -fcf-protection=none"
     -D CMAKE_INSTALL_PREFIX=/opt/rocm
-    -D CMAKE_PREFIX_PATH=/opt/rocm/llvm/lib/cmake/llvm
     -D amd_comgr_DIR=/opt/rocm/lib/cmake/amd_comgr
     # Enable rocblas-bench and rocblas-gemm-tune
     -D BUILD_CLIENTS_BENCHMARKS=ON
+    # The clients default to ILP64 OpenBLAS, which CMake's FindBLAS does not
+    # find in Arch. Use LP64 netlib CBLAS and BLAS through pkg-config instead.
+    -D ROCBLAS_CLIENTS_REFERENCE_ILP64=OFF
+    -D BLA_PREFER_PKGCONFIG=ON
+    -D BLA_PKGCONFIG_BLAS=cblas
     -D HIP_PLATFORM=amd
-    -D BLAS_LIBRARY=cblas
     -D BUILD_WITH_TENSILE=ON
     -D Tensile_LIBRARY_FORMAT=msgpack
-    -D Tensile_TEST_LOCAL_PATH="$srcdir/$_tensile_dir"
     -D Tensile_COMPILER=hipcc
+    # Use the installed python-tensile instead of a virtualenv
     -D BUILD_WITH_PIP=OFF
     # hipblaslt doesn't support all relevant targets
     -D BUILD_WITH_HIPBLASLT=OFF
@@ -102,5 +94,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  install -Dm644 "$_dirname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$pkgname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
