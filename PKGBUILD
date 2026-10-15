@@ -2,7 +2,7 @@
 # Maintainer: Dan McGee <dan@archlinux.org>
 
 pkgname=libarchive
-pkgver=3.8.9
+pkgver=3.8.10
 pkgrel=1
 pkgdesc='Multi-format archive and compression library'
 arch=('x86_64')
@@ -26,12 +26,15 @@ provides=('libarchive.so')
 validpgpkeys=('DB2C7CF1B4C265FAEF56E3FC5848A18B8F14184B'  # Martin Matuska <martin@matuska.org>
               '659C84C0E23EA1FA97E0B58CC040B508D63D2B36') # Martin Matuska <mm@FreeBSD.org>
 source=("git+https://github.com/${pkgname}/${pkgname}.git?signed#tag=v${pkgver}")
-sha256sums=('033f8b22a755d01f87a79a5723ce4faed4d3772ab703f739c26ce32c6b1da0fd')
+sha256sums=('85b5e4f75184468a4c4f043b2ec772e2d6715e89a6c9d3196f02e39dc1a977bb')
 
 _backports=(
 )
 
 _reverts=(
+  # Merge pull request #3545 from stoeckmann/xml_alternatives
+  # xar: Improve XML library detection
+  'fafe82e3502e8e75a6c4146ec977f77244787c6d'
 )
 
 prepare() {
