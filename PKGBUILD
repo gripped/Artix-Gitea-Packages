@@ -9,7 +9,7 @@
 
 pkgname=hsa-rocr
 pkgver=10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='HSA Runtime API and runtime for ROCm'
 arch=('x86_64')
 url='https://github.com/ROCm/rocm-systems'
@@ -28,10 +28,18 @@ depends=(
 provides=("hsakmt-roct=$pkgver")
 replaces=('hsakmt-roct')
 makedepends=('cmake' 'rocm-llvm' 'rocm-llvm-static' 'xxd')
-source=("rocm-${pkgver}.tar.gz::$url/archive/therock-$pkgver.tar.gz")
-sha256sums=('f30517ed6d9e18cde104eb487f173e62fed0175083a9498ca383f8136a9f4eec')
+source=("rocm-${pkgver}.tar.gz::$url/archive/therock-$pkgver.tar.gz"
+        # https://github.com/ROCm/rocm-systems/pull/13277
+        "$pkgname-stripped-symtab.patch::$url/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch")
+sha256sums=('f30517ed6d9e18cde104eb487f173e62fed0175083a9498ca383f8136a9f4eec'
+            'b64cfd84a80cf08b4cf13f827b26068a758bfbbff0d3703add2b446675a30c70')
 _dirname="$(basename "$url")-therock-$pkgver"/projects/rocr-runtime/
 options=(!lto)
+
+prepare() {
+  patch -d "$(basename "$url")-therock-$pkgver" -Np1 --no-backup-if-mismatch \
+    -i "$srcdir/$pkgname-stripped-symtab.patch"
+}
 
 build() {
   # Silence warnings on optional libraries with -DNDEBUG,
