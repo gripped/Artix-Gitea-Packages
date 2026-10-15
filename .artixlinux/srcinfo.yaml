@@ -1,9 +1,9 @@
 ---
-version: 1:r495.9826d0e-1
+version: 1:r500.d1cf250-1
 pkgbase:
   name: libtg_owt
   pkgdesc: WebRTC library
-  pkgver: r495.9826d0e
+  pkgver: r500.d1cf250
   pkgrel: 1
   epoch: 1
   url: https://github.com/desktop-app/tg_owt
@@ -37,11 +37,11 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - git+https://github.com/desktop-app/tg_owt.git#commit=9826d0e27894a575a63d4b15b2acf8e749e3da67
+    - git+https://github.com/desktop-app/tg_owt.git#commit=d1cf250ea73de26c4c1f0a3c8173eb2648efbb04
     - git+https://chromium.googlesource.com/libyuv/libyuv/
     - git+https://github.com/google/crc32c
   b2sums:
-    - 2ac7f2a51807eecc3189abfd34c35741fe98aba16759f063bbcb286f30643f65fa2dd4e9612c29db0bd2c1c3b2555a964e32492f4127cd81302a4e20d5e06e08
+    - 3837e3ba0f236a27780c838afcc5852e2f8aca2cfd78ea5a6658211d676859c2297c758a6d303acbc86742302f64b6bb19beb790f68d65a816809a57133bca35
     - SKIP
     - SKIP
 pkgname:
