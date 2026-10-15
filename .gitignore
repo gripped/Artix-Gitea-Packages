@@ -40,7 +40,9 @@ rspamd/objects/pack/pack-3586161fc2448af56a3c895ae5fda5e19d9f49a8.pack
 rspamd/objects/pack/pack-3586161fc2448af56a3c895ae5fda5e19d9f49a8.rev
 rspamd/packed-refs
 rspamd/FETCH_HEAD
+rspamd/objects/
 rspamd/objects/info/commit-graphs/commit-graph-chain.lock
+rspamd/objects/info/commit-graphs/commit-graph-chain
 rspamd/objects/info/commit-graphs/tmp_graph_smfmYP
 rspamd/objects/maintenance.lock
 rspamd/objects/pack/pack-ecd5f60436716e1e5b46f78f11dfdd52950a627c.idx
