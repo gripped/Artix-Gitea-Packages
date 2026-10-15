@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.0-4
+    version: 1.28.0-5
     packages:
-      - caja-1.28.0-4-x86_64.pkg.tar.zst
+      - caja-1.28.0-5-x86_64.pkg.tar.zst
     debug: []
 team: galaxy

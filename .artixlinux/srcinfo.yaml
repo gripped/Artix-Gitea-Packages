@@ -1,11 +1,11 @@
 ---
-version: 1.28.0-4
+version: 1.28.0-5
 pkgbase:
   name: caja
   pkgdesc: File manager for the MATE desktop
   pkgver: 1.28.0
-  pkgrel: 4
-  url: https://mate-desktop.org
+  pkgrel: 5
+  url: https://github.com/mate-desktop/caja
   arch:
     - x86_64
   groups:
@@ -13,33 +13,42 @@ pkgbase:
   license:
     - GPL-2.0-or-later AND LGPL-2.0-or-later
   makedepends:
-    - autoconf-archive
     - git
     - glib2-devel
     - gobject-introspection
-    - intltool
+    - gtk-doc
     - mate-common
-    - python-packaging
   depends:
+    - at-spi2-core
+    - cairo
+    - dconf
     - exempi
-    - gvfs
-    - libexif
-    - libsm
-    - mate-desktop
-    - libnotify
+    - gdk-pixbuf2
+    - glib2
+    - glibc
     - gtk-layer-shell
+    - gtk3
+    - gvfs
+    - hicolor-icon-theme
+    - libexif
+    - libgcc
+    - libice
+    - libnotify
+    - libsm
+    - libx11
+    - libxml2
+    - mate-desktop
+    - pango
   optdepends:
     - 'gstreamer: automatic media playback when mouseover'
-  conflicts:
-    - caja-gtk3
-  replaces:
-    - caja-gtk3
   source:
     - git+https://github.com/mate-desktop/caja.git#tag=v1.28.0
     - git+https://github.com/mate-desktop/mate-submodules.git
-  sha256sums:
-    - 1d3387cdf0acc9d7c01a563143ab91e097e8201a183a0fcece37beb03e0009f6
+    - caja-csd-window-position.patch
+  b2sums:
+    - 0d45b556f962d9bbfe9803257af5c8114bf8d2ec26d3fb46e05c53ed09c9dd65ef19bd28b290b79e0bba8f21042d1913e1a2451b0eeb7e9e3e62b5b3059e7cce
     - SKIP
+    - 1a0971fda0fef3e6c77ea07facda5cbdb112990e8e20218d965136896a9acfc4e14d3c2702e470a4c52232475c663265f9812ab69fa5e3577a4cbbd5be5ddc26
 pkgname:
   - name: caja
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
