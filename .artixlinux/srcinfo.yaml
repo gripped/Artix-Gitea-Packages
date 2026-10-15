@@ -1,11 +1,11 @@
 ---
-version: 1.28.0-5
+version: 1.28.0-6
 pkgbase:
   name: mozo
   pkgdesc: MATE menu editing tool
   pkgver: 1.28.0
-  pkgrel: 5
-  url: https://mate-desktop.org
+  pkgrel: 6
+  url: https://github.com/mate-desktop/mozo
   arch:
     - any
   groups:
@@ -13,23 +13,20 @@ pkgbase:
   license:
     - LGPL-2.1-or-later
   makedepends:
-    - autoconf-archive
-    - mate-common
+    - git
   depends:
+    - gdk-pixbuf2
+    - glib2
     - gtk3
-    - python>=3.5
+    - hicolor-icon-theme
     - mate-menus
-    - python-gobject
-    - gettext
     - mate-panel
-  conflicts:
-    - mozo-gtk3
-  replaces:
-    - mozo-gtk3
+    - python
+    - python-gobject
   source:
-    - mozo-1.28.0.tar.gz::https://github.com/mate-desktop/mozo/archive/refs/tags/v1.28.0.tar.gz
-  sha256sums:
-    - eb1d5af4ac0c72268e78deca888ae00c604ddfd67d50989ab0f7f82bc8fbcbef
+    - git+https://github.com/mate-desktop/mozo.git#tag=v1.28.0
+  b2sums:
+    - f5022b6df01f999cf34075b128dc3dc54f15c11afaa4dcd2f333459f83843bb3451d3af5f94dea4a655fbaa979db5dcc79daf3383ca9890156b1de3def7918fa
 pkgname:
   - name: mozo
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
