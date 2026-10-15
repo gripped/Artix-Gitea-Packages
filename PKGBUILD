@@ -4,7 +4,7 @@
 pkgname=imagemagick
 pkgver=7.1.2.34
 _pkgver=${pkgver%.*}-${pkgver##*.}
-pkgrel=1
+pkgrel=1.1
 pkgdesc='An image viewing/manipulation program'
 url='https://www.imagemagick.org/'
 arch=(x86_64)
