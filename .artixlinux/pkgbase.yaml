@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 615.78.08-2
+    version: 615.78.08-2.1
     packages:
-      - nvidia-open-615.78.08-2-x86_64.pkg.tar.zst
+      - nvidia-open-615.78.08-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 615.78.08-1
