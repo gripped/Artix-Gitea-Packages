@@ -19,7 +19,7 @@ pkgname=(kde-applications-meta
          kde-utilities-meta
          kdevelop-meta)
 pkgver=26.08
-pkgrel=1
+pkgrel=2
 arch=(any)
 license=(None)
 url='https://www.archlinux.org/'
@@ -127,7 +127,6 @@ package_kde-graphics-meta() {
   pkgdesc='Meta package for KDE graphics applications'
   replaces=(kdegraphics-meta kdewebdev-meta)
   depends=(arianna
-           colord-kde
            gwenview
            kamera
            kcolorchooser

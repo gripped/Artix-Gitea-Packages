@@ -1,9 +1,9 @@
 ---
-version: 26.08-1
+version: 26.08-2
 pkgbase:
   name: kde-applications-meta
   pkgver: 26.08
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.archlinux.org/
   arch:
     - any
@@ -112,7 +112,6 @@ pkgname:
     pkgdesc: Meta package for KDE graphics applications
     depends:
       - arianna
-      - colord-kde
       - gwenview
       - kamera
       - kcolorchooser
@@ -267,4 +266,4 @@ pkgname:
       - kdevelop
       - kdevelop-php
       - kdevelop-python
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
