@@ -1,10 +1,10 @@
 ---
-version: 2.9.7-1
+version: 2.9.7-2
 pkgbase:
   name: deno
   pkgdesc: A secure runtime for JavaScript and TypeScript
   pkgver: 2.9.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://deno.com
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - 658e32634fc7463f79099d19e2e54ef59318811209d1e5f7adf5caae9b57ad06dfe9bbe41d272c47d92cd0ad1c746cc0e04775c495c8e120cbd62c88239d1945
 pkgname:
   - name: deno
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
