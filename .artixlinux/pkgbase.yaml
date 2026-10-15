@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 5.1.15-1
+    version: 5.1.15-2
     packages:
-      - fcitx5-chinese-addons-5.1.15-1-x86_64.pkg.tar.zst
+      - fcitx5-chinese-addons-5.1.15-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 5.1.15-1
