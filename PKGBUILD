@@ -35,10 +35,10 @@ makedepends=(extra-cmake-modules)
 groups=(plasma)
 replaces=(ksysguard)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
-"$pkgname-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/604026ab38185f2c6008752cb59153f831c4952b/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch")
+"$pkgname-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/0953fe1e320a569885480f1191082e592266cd76/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch")
 sha256sums=('3e4d4e91367bce651d3e60cea2d9dbd25adc4653945b32bfcdac094ff031d2c7'
             'SKIP'
-            '89399fc8b29361c460a4efa8d63503f8384827a40653ad330c4aac4e6dfc2e67')
+            'eec9847192fc930dbc8f67b7c66ce3ce16b0664d1d2848f6c05dd771d108f901')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>

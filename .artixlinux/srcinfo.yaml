@@ -44,7 +44,7 @@ pkgbase:
   source:
     - https://download.kde.org/stable/plasma/6.8.0/plasma-systemmonitor-6.8.0.tar.xz
     - https://download.kde.org/stable/plasma/6.8.0/plasma-systemmonitor-6.8.0.tar.xz.sig
-    - plasma-systemmonitor-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/604026ab38185f2c6008752cb59153f831c4952b/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch
+    - plasma-systemmonitor-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/0953fe1e320a569885480f1191082e592266cd76/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
@@ -53,7 +53,7 @@ pkgbase:
   sha256sums:
     - 3e4d4e91367bce651d3e60cea2d9dbd25adc4653945b32bfcdac094ff031d2c7
     - SKIP
-    - 89399fc8b29361c460a4efa8d63503f8384827a40653ad330c4aac4e6dfc2e67
+    - eec9847192fc930dbc8f67b7c66ce3ce16b0664d1d2848f6c05dd771d108f901
 pkgname:
   - name: plasma-systemmonitor
 # generated with artixpkg 0.40.0-1-any
