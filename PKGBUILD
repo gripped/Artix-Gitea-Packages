@@ -5,7 +5,7 @@
 pkgbase=hip-runtime
 pkgname=(hip-runtime-amd hip-runtime-nvidia)
 pkgver=10.0
-pkgrel=2
+pkgrel=3
 _pkgdesc="Heterogeneous Interface for Portability"
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/HIP/en/latest/'
@@ -24,18 +24,23 @@ source=("$pkgbase-clr-$pkgver.tar.gz::$_release/clr.tar.gz"
         "$pkgbase-hipother-$pkgver.tar.gz::$_release/hipother.tar.gz"
         "$pkgbase-hipcc::git+$_hipcc#$_tag"
         # https://github.com/ROCm/rocm-systems/pull/12596
-        "$pkgbase-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch")
+        "$pkgbase-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch"
+        # https://github.com/ROCm/rocm-systems/pull/13277
+        "$pkgbase-stripped-symtab.patch::https://github.com/ROCm/rocm-systems/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch")
 sha256sums=('07caed9d726232008a2120da24f4e4bbc4998accbeadd309181fce04a9da9f99'
             '373958090db3cab854fa8a0baa5e4f9afe0ea423def204b241bfcbe74f6ce0ca'
             '6a9c7fe1d61b2682be9287c512d95c4e37773c8ffd6ab3752bc87a515567d1c8'
             '55ade468dfcb50bc6dbfd6c3a53c801744893cbd6d685d6d1da421d399e2cf58'
-            'eebeb2ae0ec4c33627b2a445eb97832d737f4ec77d4cd74c55d4b9348bded591')
+            'eebeb2ae0ec4c33627b2a445eb97832d737f4ec77d4cd74c55d4b9348bded591'
+            'b64cfd84a80cf08b4cf13f827b26068a758bfbbff0d3703add2b446675a30c70')
 
 options=(!lto)
 
 prepare() {
   # clr installed include dir in bulk, so we need to exclude the *.orig file
   patch -Np2 --no-backup-if-mismatch -i "$srcdir/$pkgbase-no-host-noinline.patch"
+  # The ROCr part goes to hsa-rocr
+  git apply -p2 --include='clr/*' "$srcdir/$pkgbase-stripped-symtab.patch"
 }
 
 build() {

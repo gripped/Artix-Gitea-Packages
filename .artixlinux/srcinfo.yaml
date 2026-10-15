@@ -1,9 +1,9 @@
 ---
-version: 10.0-2
+version: 10.0-3
 pkgbase:
   name: hip-runtime
   pkgver: 10.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://rocm.docs.amd.com/projects/HIP/en/latest/
   arch:
     - x86_64
@@ -36,12 +36,14 @@ pkgbase:
     - hip-runtime-hipother-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/hipother.tar.gz
     - hip-runtime-hipcc::git+https://github.com/ROCm/llvm-project#tag=therock-10.0
     - hip-runtime-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch
+    - hip-runtime-stripped-symtab.patch::https://github.com/ROCm/rocm-systems/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch
   sha256sums:
     - 07caed9d726232008a2120da24f4e4bbc4998accbeadd309181fce04a9da9f99
     - 373958090db3cab854fa8a0baa5e4f9afe0ea423def204b241bfcbe74f6ce0ca
     - 6a9c7fe1d61b2682be9287c512d95c4e37773c8ffd6ab3752bc87a515567d1c8
     - 55ade468dfcb50bc6dbfd6c3a53c801744893cbd6d685d6d1da421d399e2cf58
     - eebeb2ae0ec4c33627b2a445eb97832d737f4ec77d4cd74c55d4b9348bded591
+    - b64cfd84a80cf08b4cf13f827b26068a758bfbbff0d3703add2b446675a30c70
 pkgname:
   - name: hip-runtime-amd
     pkgdesc: Heterogeneous Interface for Portability (AMD runtime)
