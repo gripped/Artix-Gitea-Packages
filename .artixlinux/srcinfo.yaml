@@ -1,10 +1,10 @@
 ---
-version: 26.08.2-2.1
+version: 26.08.2-2.2
 pkgbase:
   name: skanpage
   pkgdesc: Utility to scan images and multi-page documents
   pkgver: 26.08.2
-  pkgrel: 2.1
+  pkgrel: 2.2
   url: https://apps.kde.org/skanpage/
   arch:
     - x86_64
