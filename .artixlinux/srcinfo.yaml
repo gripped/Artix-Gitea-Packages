@@ -35,13 +35,16 @@ pkgbase:
     - kservice
     - libdisplay-info
     - libdrm
+    - libglvnd
     - libpulse
     - libstdc++
     - libusb
+    - libva-utils
     - lm_sensors
     - mesa-utils
     - qt6-base
     - qt6-declarative
+    - qt6-graphs
     - sh
     - solid
     - libelogind

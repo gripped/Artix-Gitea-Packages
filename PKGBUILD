@@ -27,13 +27,16 @@ depends=(aha
          kservice
          libdisplay-info
          libdrm
+         libglvnd
          libpulse # pactl
          libstdc++
          libusb
+         libva-utils
          lm_sensors
          mesa-utils
          qt6-base
          qt6-declarative
+         qt6-graphs
          sh
          solid
          libelogind
@@ -59,7 +62,7 @@ validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell
 build() {
   cmake -B build  -S $pkgname-$pkgver \
     -DBUILD_TESTING=OFF \
-    -DCMAKE_INSTALL_LIBEXECDIR=lib
+    -DKDE_INSTALL_LIBEXECDIR=lib
   cmake --build build
 }
 
