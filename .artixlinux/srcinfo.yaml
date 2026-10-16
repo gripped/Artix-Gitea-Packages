@@ -1,11 +1,11 @@
 ---
-version: 1.28.1-1
+version: 1.28.3-1
 pkgbase:
   name: mate-utils
   pkgdesc: Common MATE utilities for viewing disk usage, logs and fonts, taking screenshots, managing dictionaries and searching files
-  pkgver: 1.28.1
+  pkgver: 1.28.3
   pkgrel: 1
-  url: http://mate-desktop.org
+  url: https://github.com/mate-desktop/mate-utils
   arch:
     - x86_64
   groups:
@@ -13,36 +13,42 @@ pkgbase:
   license:
     - GPL-2.0-or-later
   makedepends:
-    - autoconf-archive
     - git
     - glib2-devel
-    - inkscape
-    - intltool
-    - itstool
+    - gtk-doc
     - mate-common
     - mate-panel
-    - python
     - yelp-tools
   depends:
-    - mate-desktop
-    - gettext
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
     - libcanberra
+    - libgcc
     - libgtop
+    - libice
     - libsm
+    - libx11
+    - libxext
+    - mate-desktop
+    - pango
     - udisks2
-    - libxml2
+    - zlib
   optdepends:
     - 'mate-panel: Look up words in dictionaries from the panel'
-  conflicts:
-    - mate-utils-gtk3
-  replaces:
-    - mate-utils-gtk3
   source:
-    - git+https://github.com/mate-desktop/mate-utils.git#tag=v1.28.1
+    - git+https://github.com/mate-desktop/mate-utils.git#tag=v1.28.3
     - git+https://github.com/mate-desktop/mate-submodules.git
-  sha256sums:
-    - 13f3f19761ca97bba876b863c1f5fba2cd6553d9cbfa032bdaa155240c850f56
+    - mate-utils-fix-window-size.patch
+  b2sums:
+    - 661eac31992be2b44909bf14acad27154ec02960dc3e1d7728022ac44deac7b5422a4cf04a1ffdeebd9b5a185ac130abc9aa75464914f079c0c5c161f5a627e4
     - SKIP
+    - 0570eca0cc99d63cc630b961b5a040e76724b4b6544d3c97f0b463d61a0a264b4632bdd0e3c36ad582c98fe9fb865de7f4a422a4339536e8373f4c317d8c7194
 pkgname:
   - name: mate-utils
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
