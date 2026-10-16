@@ -1,11 +1,11 @@
 ---
-version: 3.3.0-2
+version: 3.3.0-3
 pkgbase:
   name: python-pyenchant
   pkgdesc: Python bindings for the Enchant spellchecker
   pkgver: 3.3.0
-  pkgrel: 2
-  url: https://pyenchant.github.io/pyenchant/
+  pkgrel: 3
+  url: https://github.com/pyenchant/pyenchant
   arch:
     - any
   license:
@@ -33,4 +33,4 @@ pkgname:
   - name: python-pyenchant-docs
     pkgdesc: Developer documentation for python-pyenchant
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
