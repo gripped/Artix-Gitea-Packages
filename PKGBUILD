@@ -2,13 +2,16 @@
 
 pkgname=python-executing
 _name=${pkgname#python-}
-pkgver=2.2.1
-pkgrel=3
+pkgver=2.3.0
+pkgrel=1
 pkgdesc='Get the currently executing AST node of a frame, and other information'
 arch=(any)
 url=https://github.com/alexmojaki/executing
 license=(MIT)
-depends=(python)
+depends=(
+  python
+  python-asttokens
+)
 makedepends=(
   git
   python-build
@@ -23,7 +26,7 @@ checkdepends=(
   python-pytest
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('8091e99fe2f30841c5d54ec302c3eb3498b791c59e2f098412c4f13dec991fb2401758d1b95f8fb7677227bcac4be3ff997d913bd20f678810ea97f954785748')
+b2sums=('2316daa2123cb585b2ffc43b51c9279cb7390ac79c7df5f4dee77aaa2fa420e9f2644b143f6e4f1810871003b934a2535d7125290c22397efc326716bd73f024')
 
 build() {
   cd "$_name"
