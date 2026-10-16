@@ -1,17 +1,20 @@
 ---
-version: 0.6.1-1
+version: 0.6.1-2
 pkgbase:
   name: python-pytest-dependency
   pkgdesc: Manage dependencies of tests
   pkgver: 0.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/RKrahl/pytest-dependency
   arch:
     - any
   license:
-    - Apache
+    - Apache-2.0
   makedepends:
+    - python-build
     - python-setuptools
+    - python-installer
+    - python-wheel
   depends:
     - python-pytest
   source:
@@ -20,4 +23,4 @@ pkgbase:
     - 246c24d2a5fc743a942cec4408853640e56a05ba58d46e5b213a1d4b738a2464
 pkgname:
   - name: python-pytest-dependency
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
