@@ -1,10 +1,10 @@
 ---
-version: 1.4.4-8
+version: 1.5.0-1
 pkgbase:
   name: python-tabview
   pkgdesc: A curses command-line CSV and list (tabular data) viewer
-  pkgver: 1.4.4
-  pkgrel: 8
+  pkgver: 1.5.0
+  pkgrel: 1
   url: https://github.com/TabViewer/tabview
   arch:
     - any
@@ -16,14 +16,13 @@ pkgbase:
     - git
     - python-build
     - python-installer
-    - python-wheel
-    - python-setuptools
+    - python-hatchling
   depends:
     - python
   source:
-    - git+https://github.com/TabViewer/tabview.git#tag=1.4.4
+    - git+https://github.com/TabViewer/tabview.git#tag=1.5.0
   sha512sums:
-    - e08f321e6582e1e11b637b7793da4e08785992f4ddd56300e9edbc14fc2b422729dd8c9f63ae385abc38af9db283354799152f464e79ce5a525f005ab7ddfa61
+    - 5cb6cad2e0aa9db514876cb77cd68e5cc8fc603e768f3ab473f93348bb154438ac7466dc88c613a4927689f00963a11ac9e4567a5ea3ac3b15943222cacd3acb
 pkgname:
   - name: python-tabview
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
