@@ -1,10 +1,10 @@
 ---
-version: 7.17.1-2
+version: 7.17.2-1
 pkgbase:
   name: jupyter-nbconvert
   pkgdesc: Jupyter Notebook Conversion
-  pkgver: 7.17.1
-  pkgrel: 2
+  pkgver: 7.17.2
+  pkgrel: 1
   url: https://pypi.python.org/pypi/nbconvert
   arch:
     - any
@@ -51,9 +51,9 @@ pkgbase:
     - 'pandoc: non-html conversion output'
     - 'python-playwright: for webPDF conversion support'
   source:
-    - git+https://github.com/jupyter/nbconvert#tag=v7.17.1
+    - git+https://github.com/jupyter/nbconvert#tag=v7.17.2
   sha256sums:
-    - 76de72a87b3efe4291c307d0079499c509fb9e6e13204688cf56c57d0d98447f
+    - 02ef0ae41e51c9f8f2a8f8fb2f7a0592376d7cf209cf274818f399beb4303c75
 pkgname:
   - name: jupyter-nbconvert
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
