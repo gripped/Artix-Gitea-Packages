@@ -1,17 +1,20 @@
 ---
-version: 0.0.3-15
+version: 0.0.3-16
 pkgbase:
   name: python-hkdf
   pkgdesc: HMAC-based Extract-and-Expand Key Derivation Function
   pkgver: 0.0.3
-  pkgrel: 15
+  pkgrel: 16
   url: https://github.com/casebeer/python-hkdf
   arch:
     - any
   license:
     - BSD-2-Clause
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
@@ -28,4 +31,4 @@ pkgbase:
     - f383b1e67c0ce1700d175506db5e2becc2cb1bb4994245a16444a7884b8aea7476e86871b68e39cdba8c9b76a676daf7bdd6a403377d66e960d7f0316150ab07
 pkgname:
   - name: python-hkdf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
