@@ -3,7 +3,7 @@
 
 pkgname=pacman
 pkgver=7.1.0.r9.g54d9411
-pkgrel=2
+pkgrel=3
 # use annotated tag and patch level commit from release branch (can be empty for no patches)
 _git_tag=7.1.0
 _git_patch_level_commit=54d94116164b0b2202c6061c4a59c6f3e70820d8
@@ -47,10 +47,11 @@ backup=(etc/pacman.conf
         etc/makepkg.conf.d/rust.conf)
 validpgpkeys=('6645B0A8C7005E78DB1D7864F99FFE0FEAE999BD'  # Allan McRae <allan@archlinux.org>
               'B8151B117037781095514CA7BBDFFC92306B1121') # Andrew Gregory (pacman) <andrew@archlinux.org>
-source=("git+https://gitlab.archlinux.org/pacman/pacman.git#tag=v${_git_tag}?signed"
+source=("git+https://gitlab.archlinux.org/pacman/pacman.git?signed#tag=v${_git_tag}"
         "revertme-makepkg-remove-libdepends-and-libprovides.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/354a300cd26bb1c7e6551473596be5ecced921de.patch"
         "patch-reproducible-builds.patch::https://gitlab.archlinux.org/pacman/pacman/-/commit/f4bdb77470528019aaba4d8b8f947e918c6db17d.patch"
         '0001-libalpm-invalidate-curl-data-in-child.patch'
+        '0002-libalpm-use-curl-s-effective-url-without-authenticat.patch'
         pacman.conf
         makepkg.conf
         alpm.sysusers
@@ -63,6 +64,7 @@ sha256sums=('74cfd4b6d2b10c742f5a4a7cdaeffb01405ab897b11b80681a9063245113a308'
             'b3bce9d662e189e8e49013b818f255d08494a57e13fc264625f852f087d3def2'
             'de428b496a825772ef49ec5555a386a4b23ffa10b9dfd9907f0671d5c1dc2178'
             '9a734e5d75be603d58aa92e8d29a15466b3ac2af6b7d6f6728dd5c3e5ed8758d'
+            '021893dd44ec23251cfc0f2b81c12d832927ea60095d4d2956d9760e8bbfaa58'
             '3489d68d56fd453fd13cc456cb21014c6dd4fcb1075fe82d3f2f5fa09e729cf6'
             '77dbd360964f3c3c86d0a777ca2a6a61ba3f6113578172434cd63515694c708c'
             'c79460e7262faad7505163049da520fc0693fe7672eaffdddc739072218ee939'
