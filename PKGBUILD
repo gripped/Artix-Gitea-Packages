@@ -3,7 +3,7 @@
 # Contributor: Paul Irofti <paul@irofti.net>
 
 pkgname=python-jsonpath-ng
-pkgver=1.8.0
+pkgver=1.10.1
 pkgrel=1
 pkgdesc="JSONPath for Python that aims to be standard compliant"
 arch=('any')
@@ -22,7 +22,7 @@ checkdepends=(
   'python-pytest'
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('90786a347999bd644ad8e6fd5fb6d857c05295e899f0430fbd75dc1741cf2f00cbb8e5f39ce182417154ee12f523ee938e74656b271363a498ad3995af8ca3d2')
+b2sums=('07a9409ef400166c5e5bd38716047d8694424d890a93fa1959565cd13da602780b8ef86196327ab55ed2ea436a101974a95bc33cee37f0bc4fecab68235d1eb6')
 
 build() {
   cd "${pkgname#python-}"
@@ -31,7 +31,10 @@ build() {
 
 check() {
   cd "${pkgname#python-}"
-  pytest
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  # Benchmarks require pytest-codspeed, which is not packaged
+  test-env/bin/python -m pytest --ignore=tests/benchmarks
 }
 
 package() {

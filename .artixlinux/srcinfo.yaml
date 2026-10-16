@@ -1,9 +1,9 @@
 ---
-version: 1.8.0-1
+version: 1.10.1-1
 pkgbase:
   name: python-jsonpath-ng
   pkgdesc: JSONPath for Python that aims to be standard compliant
-  pkgver: 1.8.0
+  pkgver: 1.10.1
   pkgrel: 1
   url: https://github.com/h2non/jsonpath-ng
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/h2non/jsonpath-ng.git#tag=v1.8.0
+    - git+https://github.com/h2non/jsonpath-ng.git#tag=v1.10.1
   b2sums:
-    - 90786a347999bd644ad8e6fd5fb6d857c05295e899f0430fbd75dc1741cf2f00cbb8e5f39ce182417154ee12f523ee938e74656b271363a498ad3995af8ca3d2
+    - 07a9409ef400166c5e5bd38716047d8694424d890a93fa1959565cd13da602780b8ef86196327ab55ed2ea436a101974a95bc33cee37f0bc4fecab68235d1eb6
 pkgname:
   - name: python-jsonpath-ng
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
