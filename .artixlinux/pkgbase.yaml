@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.13.9-1
+    version: 3.13.10-1
     packages:
-      - python-sphinx-autodoc-typehints-3.13.9-1-any.pkg.tar.zst
+      - python-sphinx-autodoc-typehints-3.13.10-1-any.pkg.tar.zst
     debug: []
   world:
     version: 3.13.8-1

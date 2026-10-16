@@ -3,7 +3,7 @@
 # Contributor: Daniel M. Capella <polyzen@archlinux.org>
 
 pkgname=python-sphinx-autodoc-typehints
-pkgver=3.13.9
+pkgver=3.13.10
 pkgrel=1
 pkgdesc='Type hints support for the Sphinx autodoc extension'
 arch=(any)
@@ -26,8 +26,8 @@ checkdepends=(
   python-typing_extensions
 )
 source=("$pkgname::git+$url.git#tag=$pkgver")
-sha512sums=('7e8bce6d0061e90410a3ca7ffef5085edf98e0ca0555760be56b90cc67101c9d9ac10a653bf42dddd9665e7b4ed1b996e8fd6650230a77fe720b82f8ca74b30e')
-b2sums=('5787a45d70b5d1d0cdaa9afc86a787a9533aa31acb972e35947db33cb2edf4b8762cf60118f4a527f0d9eefb1584f90cda6e02af0eafbebe249984036d49645e')
+sha512sums=('2f9744116975a9308049cc5c27d460e1e74f7cc326fa48875f186d2d96099e3dae8c3859f1476c00f4a2b744df03c7a0ab3ad6c65b7d5b74bb013ce553e27cb8')
+b2sums=('f15898d6b1c04796a923b8d84602a96fcadccac650fc7da9b5298898c808aeb3aa1bb6a503f71072214c54d0f1b7ab9a15d7523bdc3c121364f8bb8f0bfcacec')
 
 build() {
   cd "$pkgname"
