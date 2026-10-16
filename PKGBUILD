@@ -7,7 +7,7 @@
 # Check if new updates break python-engineio
 
 pkgname=python-aiohttp
-pkgver=3.14.3
+pkgver=3.14.5
 pkgrel=1
 pkgdesc='HTTP client/server for asyncio'
 arch=(x86_64)
@@ -61,13 +61,16 @@ optdepends=(
   'python-brotli: for Brotli transfer-encodings support'
 )
 source=("$pkgname::git+https://github.com/aio-libs/aiohttp#tag=v$pkgver")
-b2sums=('fc16578f3c41ebfc9bba6cd9eecf555f2206292e0a167684660d92102a7f0ad2b6c20276e77a6668623370c4a047ab551a85d6d7069f888c0dcff86e9ab92b68')
+b2sums=('2a108faad824f29d6013c3a19b6b72551e4f7b41ababfb1d10cdf97f7095e4f9ff13c21bc5f32926a09fc217091d49ba0ee31b61219bb98387819d16472d1413')
 
 prepare() {
   cd $pkgname
   sed 's|.install-cython ||' -i Makefile
-  # Fix Cython 3.3.0 compiler crash when compiling the WebSocket reader
-  git cherry-pick -n baa2709c4ca2365139d335b8542eb87e0ab6e150
+  # Fix Cython 3.3.0 compiler crash when compiling the WebSocket reader,
+  # Final annotations were reintroduced in upstream PR #13393
+  sed -e '/^from typing import Final$/d' \
+    -e 's/: Final\[\(int\|str\)\] =/: \1 =/' \
+    -i aiohttp/_websocket/reader_py.py
 }
 
 build() {
