@@ -1,0 +1,10 @@
+# Fix for NVIDIA 580xx fd leak on KDE Plasma (dmabuf-imported EGLImages).
+# See: https://github.com/NVIDIA/egl-wayland/issues/196
+#
+# Plasma users only:
+#   mkdir -p ~/.config/plasma-workspace/env
+#   cp /usr/share/doc/nvidia/egl-wayland2.sh.example ~/.config/plasma-workspace/env/egl-wayland2.sh
+#
+# Other desktops: no action needed.
+
+export __EGL_EXTERNAL_PLATFORM_CONFIG_FILENAMES=/usr/share/egl/egl_external_platform.d/09_nvidia_wayland2.json:/usr/share/egl/egl_external_platform.d/15_nvidia_gbm.json:/usr/share/egl/egl_external_platform.d/20_nvidia_xcb.json:/usr/share/egl/egl_external_platform.d/20_nvidia_xlib.json
