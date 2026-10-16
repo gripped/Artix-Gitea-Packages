@@ -1,17 +1,21 @@
 ---
-version: 1.5.0-4
+version: 1.5.0-5
 pkgbase:
   name: python-pytest-datadir
   pkgdesc: pytest plugin for test data directories and files
   pkgver: 1.5.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/gabrielcnr/pytest-datadir
   arch:
     - any
   license:
     - MIT
   makedepends:
+    - python-build
+    - python-installer
+    - python-setuptools
     - python-setuptools-scm
+    - python-wheel
   depends:
     - python-pytest
   source:
@@ -20,4 +24,4 @@ pkgbase:
     - d21669d9cc85f571c306b55b061a0573b8cdc0bb02343302d65fc8b47138e82234ed75d85f6d1db24acf8748e189f51e77dfcedc929b102bbc3753a9516d3b82
 pkgname:
   - name: python-pytest-datadir
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
