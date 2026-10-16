@@ -1,9 +1,9 @@
 ---
-version: 0.15.1-1
+version: 0.15.2-1
 pkgbase:
   name: python-tomlkit
   pkgdesc: Style-preserving TOML library for Python
-  pkgver: 0.15.1
+  pkgver: 0.15.2
   pkgrel: 1
   url: https://github.com/sdispater/tomlkit
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://files.pythonhosted.org/packages/source/t/tomlkit/tomlkit-0.15.1.tar.gz
+    - https://files.pythonhosted.org/packages/source/t/tomlkit/tomlkit-0.15.2.tar.gz
   sha256sums:
-    - e25bbf38843005246210a12982776f27f99cb9be67160e14434d0c0d21ee1e97
+    - 83e32755ba1d20d9340bd069ee97e9f6232ba2346b63ffcba425de01f7e327a6
 pkgname:
   - name: python-tomlkit
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
