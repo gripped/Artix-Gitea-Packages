@@ -1,7 +1,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-backrefs
-pkgver=8.0
+pkgver=8.1
 pkgrel=1
 pkgdesc="Wrapper around re or regex that adds additional back references"
 arch=('any')
@@ -20,7 +20,7 @@ checkdepends=(
 )
 optdepends=('python-regex: use regex instead of re')
 source=("$url/archive/$pkgver/${pkgname#python-}-$pkgver.tar.gz")
-b2sums=('e64730d1f82a75b46f9c635e0be5330b99bee41fec6eb19670fb0537ac5f656c0782527cc567ebfdd73c103594af4df00e0da939bf902e6b3bfb5e4b5733f85a')
+b2sums=('db7ad742e2d14a574e0ae15b9594c730fbe69738a0dd684b63071bd2637aa360ee9a66b2f21863427131972626d3985aad4d8d8ae3845164ac82369767fc3031')
 
 build() {
   cd ${pkgname#python-}-$pkgver
