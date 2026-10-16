@@ -1,9 +1,9 @@
 ---
-version: 3.6.0-1
+version: 3.6.1-1
 pkgbase:
   name: knot
   pkgdesc: High-performance authoritative-only DNS server
-  pkgver: 3.6.0
+  pkgver: 3.6.1
   pkgrel: 1
   url: https://www.knot-dns.cz/
   arch:
@@ -33,11 +33,11 @@ pkgbase:
   backup:
     - etc/knot/knot.conf
   source:
-    - git+https://gitlab.nic.cz/knot/knot-dns.git#tag=v3.6.0?signed
+    - git+https://gitlab.nic.cz/knot/knot-dns.git#tag=v3.6.1?signed
   validpgpkeys:
     - 742FA4E95829B6C5EAC6B85710BB7AF6FEBBD6AB
   b2sums:
-    - f54978708189fdeb687ccbc9d864727c764970ed2ebd633a9d36b8c9ece8fa50f3e83a3f23f87f3704175385c0c6787240e0b2ffae43014de4d20e45a5687888
+    - 4739e93565d1508bf1316cf568c1b0f7de241ed3bd7595debba682d25403d41a91548f5d2c78c5ffd5cc06163eef717f5dcf1b0735d663f998b80899c9d7070f
 pkgname:
   - name: knot
 # generated with artixpkg 0.40.0-1-any
