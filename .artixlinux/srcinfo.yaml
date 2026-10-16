@@ -1,19 +1,22 @@
 ---
-version: 2.1.0-6
+version: 2.1.0-7
 pkgbase:
   name: python-sortedcollections
   pkgdesc: Sorted Collections Library
   pkgver: 2.1.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/grantjenks/python-sortedcollections
   arch:
     - any
   license:
-    - Apache
+    - Apache-2.0
   checkdepends:
     - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
     - python-sortedcontainers
@@ -25,4 +28,4 @@ pkgbase:
     - 5de36155858dc055c9412ff410bd70b489aba292a2956216db95641e10dcb249b98e5c005c4d7c4fd00b25c3315c65b3f43f404737591632ac223a4045b775b5
 pkgname:
   - name: python-sortedcollections
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
