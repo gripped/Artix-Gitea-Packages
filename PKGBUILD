@@ -2,8 +2,8 @@
 # Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
 
 pkgname=python-asyncpg
-pkgver=0.31.0
-pkgrel=3
+pkgver=0.32.0
+pkgrel=1
 pkgdesc="A fast PostgreSQL Database Client Library for Python/asyncio"
 arch=(x86_64)
 url="https://github.com/MagicStack/asyncpg"
@@ -31,17 +31,14 @@ source=(
   "git+$url.git#tag=v$pkgver"
   "git+https://github.com/MagicStack/py-pgproto"
 )
-sha256sums=('964ee857c1656a4158faae028123d06c392903c73c544b5a5c765d7fa1c3c68a'
-            'SKIP')
+b2sums=('c7680397ecd1c83ffc59f27b08013f892bde7e2e751f7279731172b5b0261a8380762c6cd0c8f8e505b7c4c58730edb90929a2cfa3641932f704d434654a3da8'
+        'SKIP')
 
 prepare() {
   cd ${pkgname#python-}
   git submodule init
   git config submodule.asyncpg/pgproto.url "$srcdir/py-pgproto"
   git -c protocol.file.allow=always submodule update
-  # Replace pkg_resources with packaging
-  # https://github.com/MagicStack/asyncpg/pull/1308/commits/401524530d31d14501f3e3920061a5d41b5bc7b9
-  git cherry-pick -n 401524530d31d14501f3e3920061a5d41b5bc7b9
 }
 
 build() {

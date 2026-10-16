@@ -1,10 +1,10 @@
 ---
-version: 0.31.0-3
+version: 0.32.0-1
 pkgbase:
   name: python-asyncpg
   pkgdesc: A fast PostgreSQL Database Client Library for Python/asyncio
-  pkgver: 0.31.0
-  pkgrel: 3
+  pkgver: 0.32.0
+  pkgrel: 1
   url: https://github.com/MagicStack/asyncpg
   arch:
     - x86_64
@@ -27,11 +27,11 @@ pkgbase:
     - glibc
     - python
   source:
-    - git+https://github.com/MagicStack/asyncpg.git#tag=v0.31.0
+    - git+https://github.com/MagicStack/asyncpg.git#tag=v0.32.0
     - git+https://github.com/MagicStack/py-pgproto
-  sha256sums:
-    - 964ee857c1656a4158faae028123d06c392903c73c544b5a5c765d7fa1c3c68a
+  b2sums:
+    - c7680397ecd1c83ffc59f27b08013f892bde7e2e751f7279731172b5b0261a8380762c6cd0c8f8e505b7c4c58730edb90929a2cfa3641932f704d434654a3da8
     - SKIP
 pkgname:
   - name: python-asyncpg
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
