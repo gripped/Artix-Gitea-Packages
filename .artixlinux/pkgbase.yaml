@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.0.1-1
+    version: 3.0.3-1
     packages:
-      - python-soupsieve-3.0.1-1-any.pkg.tar.zst
+      - python-soupsieve-3.0.3-1-any.pkg.tar.zst
     debug: []
   world:
     version: 2.10-1

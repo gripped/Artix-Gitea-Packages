@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-soupsieve
-pkgver=3.0.1
+pkgver=3.0.3
 pkgrel=1
 pkgdesc='A CSS4 selector implementation for Beautiful Soup'
 arch=(any)
@@ -21,8 +21,8 @@ checkdepends=(
   python-lxml
 )
 source=("$pkgname::git+$url#tag=$pkgver")
-sha512sums=('3f849448a6bdf779b389302ab2e05d622c439f4a214a1d1a30678bfac4da61cb47284bd132b4833f044e8f27573ae083224fdc13cace1305ddb7779f857346bc')
-b2sums=('f46ff153e75503756bf3822bb111178ba80a6eb32131079561db7a3f4bf9b56a3995834f1b445ad3e2715723e71425c1261de9d24e707c519188efd512cde795')
+sha512sums=('63dcbf8321677a28c1bae327561d40a5bd4e63fe835fdadc8deb8006d9dcef72e5e4a1e10ec425d9384f543b9389b781ae1e7d9c266ff1dd71ff0552f3899268')
+b2sums=('3a843c1bc658aaaf337e6c6b11ca3611d98a5087ba568e38746eef08d23d1bb75abfdc70ad64a242567578910fc87f3d66bc56ba0432ecf24a45000493b74361')
 
 build() {
   cd "$pkgname"
