@@ -1,20 +1,23 @@
 ---
-version: 1.0.0-7
+version: 1.0.0-8
 pkgbase:
   name: python-locket
   pkgdesc: File-based locks for Python
   pkgver: 1.0.0
-  pkgrel: 7
+  pkgrel: 8
   url: https://github.com/mwilliamson/locket.py
   arch:
     - any
   license:
-    - BSD
+    - BSD-2-Clause
   checkdepends:
     - python-pytest
     - python-spur
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
   source:
@@ -23,4 +26,4 @@ pkgbase:
     - 1017278428998ac23c0716660587eeb39f069493d39922b7f5ae6c39c62f86c6
 pkgname:
   - name: python-locket
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
