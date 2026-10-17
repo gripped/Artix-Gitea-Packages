@@ -2,11 +2,11 @@
 team: galaxy
 actions:
   addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -50,9 +50,8 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 4.4.0-6
-    packages:
-      - claws-mail-4.4.0-6-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy:
     version: 4.4.0-6
