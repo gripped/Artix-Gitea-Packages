@@ -1,9 +1,9 @@
 ---
-version: 23.1.3-2.1
+version: 23.1.3-3
 pkgbase:
   name: llvm
   pkgver: 23.1.3
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://llvm.org/
   arch:
     - x86_64
@@ -143,6 +143,14 @@ pkgname:
       - llvm-libs
       - libstdc++
       - glibc
+  - name: llvm-bolt
+    pkgdesc: Post-link optimizer developed to speed up large applications
+    depends:
+      - glibc
+      - libgcc
+      - libstdc++
+      - zlib
+      - zstd
   - name: openmp
     pkgdesc: LLVM OpenMP Runtime Library
     depends:
@@ -170,7 +178,7 @@ pkgname:
   - name: libc++
     pkgdesc: LLVM C++ standard library
     depends:
-      - libc++abi=23.1.3-2.1
+      - libc++abi=23.1.3-3
       - libgcc
       - glibc
   - name: libc++abi
@@ -189,7 +197,7 @@ pkgname:
     depends:
       - wasi-libc
       - wasi-compiler-rt
-      - wasi-libc++abi=23.1.3-2.1
+      - wasi-libc++abi=23.1.3-3
   - name: wasi-libc++abi
     pkgdesc: Low level support for the LLVM C++ standard library (WASI)
     depends:
