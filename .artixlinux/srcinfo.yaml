@@ -1,9 +1,9 @@
 ---
-version: 1.19-1
+version: 1.20-1
 pkgbase:
   name: distro-info
   pkgdesc: Information about all releases of Debian and Ubuntu
-  pkgver: 1.19
+  pkgver: 1.20
   pkgrel: 1
   url: https://salsa.debian.org/debian/distro-info
   arch:
@@ -36,9 +36,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.19
+    - git+https://salsa.debian.org/debian/distro-info.git#tag=debian/1.20
   sha256sums:
-    - 39bfd20ba5c22451ec3f5479fc44ff8076f93e9d2a7d7091274b651ad377f30d
+    - d8e7270114f37e8b0deb4d8aba6e599c2e830817648c22cddca6745081fc8a0c
 pkgname:
   - name: distro-info
 # generated with artixpkg 0.40.0-1-any
