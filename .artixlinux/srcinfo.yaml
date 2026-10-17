@@ -1,10 +1,10 @@
 ---
-version: 8.31.0-1
+version: 8.31.0-2
 pkgbase:
   name: signal-desktop
   pkgdesc: Signal Private Messenger for Linux
   pkgver: 8.31.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://signal.org
   install: signal-desktop.install
   arch:
