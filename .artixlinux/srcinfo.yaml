@@ -1,10 +1,10 @@
 ---
-version: 9.0.2-1
+version: 9.0.2-2
 pkgbase:
   name: python-isort
   pkgdesc: A Python utility / library to sort Python imports
   pkgver: 9.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/PyCQA/isort
   arch:
     - any
@@ -20,6 +20,7 @@ pkgbase:
   depends:
     - python
     - python-colorama
+    - python-mypy_extensions
     - python-setuptools
   source:
     - https://files.pythonhosted.org/packages/source/i/isort/isort-9.0.2.tar.gz
@@ -27,4 +28,4 @@ pkgbase:
     - d2298980ce44350f11d9d24c8150eaef1883431ec203dddbb4e9b5c3ceb54c70
 pkgname:
   - name: python-isort
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
