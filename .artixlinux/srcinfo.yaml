@@ -1,0 +1,33 @@
+---
+version: 2.9.1-4
+pkgbase:
+  name: python-aiohttp-retry
+  pkgdesc: Simple retry client for aiohttp
+  pkgver: 2.9.1
+  pkgrel: 4
+  url: https://github.com/inyutin/aiohttp_retry
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - python-pytest
+    - python-pytest-aiohttp
+    - python-pytest-asyncio
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools
+    - python-wheel
+  depends:
+    - python
+    - python-aiohttp
+    - python-yarl
+  source:
+    - git+https://github.com/inyutin/aiohttp_retry.git#tag=v2.9.1
+  b2sums:
+    - 24efc26daf47ba318a078813233c6d6357eee7684458b97a70b0ec87dcbed65779d2d2e4e7b513661dd572b6d3b3edecff7d5945b829ee766559455da8dd8fa0
+pkgname:
+  - name: python-aiohttp-retry
+# generated with artixpkg 0.40.0-1-any
