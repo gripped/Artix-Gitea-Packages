@@ -1,9 +1,9 @@
 ---
-version: 0.9.146-1
+version: 0.9.148-1
 pkgbase:
   name: cargo-nextest
   pkgdesc: A next-generation test runner for Rust.
-  pkgver: 0.9.146
+  pkgver: 0.9.148
   pkgrel: 1
   url: https://github.com/nextest-rs/nextest
   arch:
@@ -17,11 +17,11 @@ pkgbase:
     - libgcc
     - zstd
   source:
-    - cargo-nextest-0.9.146.tar.gz::https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.146.tar.gz
+    - cargo-nextest-0.9.148.tar.gz::https://github.com/nextest-rs/nextest/archive/refs/tags/cargo-nextest-0.9.148.tar.gz
   sha256sums:
-    - c82aa0dfea628ff44b1f3ded405aa53ae74615c268bc5f760d32238e1b88f6bd
+    - c047e6d430ab7faa807736ccd10245ed60c14c497584c23d5696c156caee43f3
   b2sums:
-    - e0fe87e01cadb70202ad05acbc681e11b86678044724fefdf4dd1a31c61fe69baec993cdb566e200002a27d48166609be71585e15cbccd5a2e408bd283256fc9
+    - 2e55853c07b0f347fb7aef0f17326c45cbfd3564f6794afa9d9413adccf75021ad7f85010b8aa7167b0ae49798b62f4e236c8de81aefc2d9d49838d9bb546c97
 pkgname:
   - name: cargo-nextest
 # generated with artixpkg 0.40.0-1-any
