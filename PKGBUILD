@@ -9,7 +9,7 @@ _alpm=3.0
 pkgbase=openrc
 pkgname=('openrc' 'libeinfo')
 pkgver=0.64.1
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenRC is a dependency-based init system that works with the system-provided init program"
 arch=('x86_64')
 url="https://github.com/OpenRC/openrc"
@@ -99,9 +99,17 @@ package_openrc() {
         'init-rc'
         'svc-manager'
         'librc.so'
+        'backlight-openrc'
     )
-    conflicts=('init-rc' 'svc-manager')
-    replaces=(openrc-{deptree2dot,{bash,zsh}-completions})
+    conflicts=(
+        'init-rc'
+        'svc-manager'
+        'backlight-openrc'
+    )
+    replaces=(
+        openrc-{deptree2dot,{bash,zsh}-completions}
+        'backlight-openrc'
+    )
     backup=(
         'etc/rc.conf'
         'etc/conf.d/consolefont'
