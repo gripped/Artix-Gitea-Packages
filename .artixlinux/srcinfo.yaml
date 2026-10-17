@@ -1,19 +1,22 @@
 ---
-version: 0.3.23-6
+version: 0.3.23-7
 pkgbase:
   name: python-spur
   pkgdesc: Run commands and manipulate files locally or over SSH using the same interface
   pkgver: 0.3.23
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/mwilliamson/spur.py
   arch:
     - any
   license:
-    - BSD
+    - BSD-2-Clause
   checkdepends:
     - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
     - python-paramiko
@@ -23,4 +26,4 @@ pkgbase:
     - 613fcc44f731a041841485a52780c94490e59c353952c2c8491ec045a2e5d805
 pkgname:
   - name: python-spur
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
