@@ -1,9 +1,9 @@
 ---
-version: 8.3-1
+version: 8.4-1
 pkgbase:
   name: python-zope-hookable
   pkgdesc: Represents the core of the Zope hookable Architecture
-  pkgver: 8.3
+  pkgver: 8.4
   pkgrel: 1
   url: https://github.com/zopefoundation/zope.hookable
   arch:
@@ -13,6 +13,7 @@ pkgbase:
   checkdepends:
     - python-zope-testrunner
   makedepends:
+    - git
     - python-build
     - python-installer
     - python-setuptools
@@ -21,9 +22,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - python-zope-hookable-8.3.tar.gz::https://github.com/zopefoundation/zope.hookable/archive/8.3.tar.gz
+    - git+https://github.com/zopefoundation/zope.hookable.git#tag=8.4
   sha512sums:
-    - 80ed58c6a3ccac968bed30b1f2ebe3cc7337530b9f0d1b9904878e37007974ad2d955066760ca996266a93fb42f0f27be10b4ca8a21b3dcb72154d0addecba40
+    - 7de4548208da22d88f90b1978fe0f6e9fc627f6edfeff8004ff9dacb92852920238a4c30e5d06bca86ca71230ad85eb2ba858ecae8df56537d9ac1201fe795df
 pkgname:
   - name: python-zope-hookable
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
