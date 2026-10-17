@@ -1,9 +1,9 @@
 ---
-version: 7.2.4-1
+version: 10.0-1
 pkgbase:
   name: rocsparse
   pkgdesc: BLAS for sparse computation on top of ROCm
-  pkgver: 7.2.4
+  pkgver: 10.0
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rocSPARSE/en/latest/index.html
   arch:
@@ -12,6 +12,7 @@ pkgbase:
     - MIT
   makedepends:
     - cmake
+    - ninja
     - rocm-cmake
     - rocm-toolchain
     - rocm-llvm
@@ -20,17 +21,17 @@ pkgbase:
     - rocm-core
     - glibc
     - libgcc
+    - libstdc++
     - hip-runtime-amd
     - rocprim
     - rocblas
+    - roctracer
   options:
     - '!lto'
-    - '!buildflags'
-    - '!strip'
   source:
-    - rocm-libraries-7.2.4.tar.gz::https://github.com/ROCm/rocm-libraries/archive/refs/tags/rocm-7.2.4.tar.gz
+    - rocsparse-10.0.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.0/rocsparse.tar.gz
   sha256sums:
-    - 50a4090b4ad18b34c375f666e5f71816cf55f89bc2175dc3eba9a7b80f65a15d
+    - 89d3d15ea22554c52d2b50241b62d4b88138bbe189e7cf3fcc34583ac2f15121
 pkgname:
   - name: rocsparse
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
