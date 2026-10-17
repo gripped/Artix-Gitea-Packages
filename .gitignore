@@ -39,3 +39,9 @@ amule/objects/pack/pack-39c2cd8325aa3e09e71a008fd67f93ba4bd2174f.idx
 amule/objects/pack/pack-39c2cd8325aa3e09e71a008fd67f93ba4bd2174f.pack
 amule/objects/pack/pack-39c2cd8325aa3e09e71a008fd67f93ba4bd2174f.rev
 amule/packed-refs
+amule/FETCH_HEAD
+amule/objects/info/commit-graphs/commit-graph-chain
+amule/objects/info/commit-graphs/graph-18ec2e10149f7f25171079ea7df11dbe34bed55a.graph
+amule/objects/pack/pack-712b9c1202e252cfd8892e91ec4f0bc1db66d3e5.idx
+amule/objects/pack/pack-712b9c1202e252cfd8892e91ec4f0bc1db66d3e5.pack
+amule/objects/pack/pack-712b9c1202e252cfd8892e91ec4f0bc1db66d3e5.rev
