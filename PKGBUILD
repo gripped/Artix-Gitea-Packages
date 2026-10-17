@@ -1,11 +1,11 @@
-# Maintainer: Sven-Hendrik Haase <sh@lutzhaase.com>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 
 pkgname=bumblebee
 pkgver=3.2.1
-pkgrel=21
+pkgrel=22
 pkgdesc="NVIDIA Optimus support for Linux through VirtualGL"
 arch=('x86_64')
-depends=('virtualgl' 'glib2' 'mesa-libgl' ''libbsd'')
+depends=('glibc' 'libx11' 'virtualgl' 'glib2' 'mesa-libgl')
 makedepends=('help2man')
 optdepends=('bbswitch: switch on/off discrete card'
             'nvidia: NVIDIA kernel driver'
@@ -15,7 +15,7 @@ optdepends=('bbswitch: switch on/off discrete card'
             'lib32-virtualgl: run 32bit applications with optirun'
             'lib32-primus: faster back-end for optirun')
 url="http://www.bumblebee-project.org"
-license=("GPL3")
+license=("GPL-3.0-only")
 install=bumblebee.install
 backup=('etc/bumblebee/bumblebee.conf'
         'etc/bumblebee/xorg.conf.nouveau'
@@ -44,14 +44,15 @@ sha256sums=('1018703b07e2f607a4641249d69478ce076ae5a1e9dd6cff5694d394fa7ee30e'
             '1bc209c21b4f6d1975ede4091829baf98d20b33100b9d21061393880bb391fd8')
 
 prepare() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
-    for p in ${srcdir}/*.patch; do
-        patch -Np1 -i "$p"
+    cd "${srcdir}"/${pkgname}-${pkgver}
+    for p in "${srcdir}"/*.patch; do
+        patch -Np1 -i "${p}"
     done
+    autoreconf -fiv
 }
 
 build() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
+    cd "${srcdir}"/${pkgname}-${pkgver}
     CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
     ./configure \
         CONF_DRIVER_MODULE_NVIDIA=nvidia \
@@ -66,21 +67,22 @@ build() {
 }
 
 package() {
-    cd "${srcdir}/${pkgname}-${pkgver}"
+    cd "${srcdir}"/${pkgname}-${pkgver}
 
     # Install main app
-    make install DESTDIR="$pkgdir" \
+    make install DESTDIR="${pkgdir}" \
       completiondir=/usr/share/bash-completion/completions
 
     # Blacklist nvidia and nouveau modules
     # Reference: https://github.com/Bumblebee-Project/Bumblebee/issues/719
-    install -Dm644 "${srcdir}/bumblebee.conf" "${pkgdir}/usr/lib/modprobe.d/bumblebee.conf"
+    install -Dm644 "${srcdir}"/bumblebee.conf "${pkgdir}"/usr/lib/modprobe.d/bumblebee.conf
+
 
     # Make bash_completion work
-    mv -v "$pkgdir"/usr/share/bash-completion/completions/{bumblebee,optirun}
+    mv -v "${pkgdir}"/usr/share/bash-completion/completions/{bumblebee,optirun}
 
     # Fix for FS#59312
-    sed -i "s/have/_have/" "${pkgdir}/usr/share/bash-completion/completions/optirun"
+    sed -i "s/have/_have/" "${pkgdir}"/usr/share/bash-completion/completions/optirun
 
-    install -Dm644 "$srcdir"/bumblebee.sysusers "$pkgdir"/usr/lib/sysusers.d/$pkgname.conf
+    install -Dm644 "${srcdir}"/bumblebee.sysusers "${pkgdir}"/usr/lib/sysusers.d/$pkgname.conf
 }
