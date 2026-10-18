@@ -1,25 +1,27 @@
 ---
-version: 1.4.12-1
+version: 1.5.0-1
 pkgbase:
   name: python-txredisapi
   pkgdesc: Non-blocking redis client for python
-  pkgver: 1.4.12
+  pkgver: 1.5.0
   pkgrel: 1
   url: https://pypi.python.org/pypi/txredisapi/
   arch:
     - any
   license:
-    - Apache
+    - Apache-2.0
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python
     - python-twisted
-    - python-six
   source:
-    - https://pypi.org/packages/source/t/txredisapi/txredisapi-1.4.12.tar.gz
+    - https://pypi.org/packages/source/t/txredisapi/txredisapi-1.5.0.tar.gz
   sha256sums:
-    - 98e2440ff2e297c9048c5f9d516e7b1302d447cd9cd4568c986c35a8523de3c7
+    - 6ce8be7f98a3ae347769256b29980da42d3560637206d31682586d78cb9a9570
 pkgname:
   - name: python-txredisapi
 # generated with artixpkg 0.40.0-1-any
