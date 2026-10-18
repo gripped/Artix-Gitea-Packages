@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -21,8 +21,17 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.60.1-2
+    packages:
+      - libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - erlang-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - java-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - lua-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - ocaml-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - perl-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - php-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - python-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
+      - ruby-libguestfs-1.60.1-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
