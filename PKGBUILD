@@ -11,7 +11,7 @@
 
 pkgver=40.10.6
 _gcc_patches=144
-pkgrel=1
+pkgrel=2
 _major_ver=${pkgver%%.*}
 pkgname="electron${_major_ver}"
 pkgdesc='Build cross platform desktop apps with web technologies'
