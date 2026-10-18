@@ -1,10 +1,10 @@
 ---
-version: 0.9.0-6
+version: 0.9.0-7
 pkgbase:
   name: python-typing_inspect
   pkgdesc: Runtime inspection utilities for Python typing module
   pkgver: 0.9.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://github.com/ilevkivskyi/typing_inspect
   arch:
     - any
@@ -13,7 +13,10 @@ pkgbase:
   checkdepends:
     - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python-mypy_extensions
     - python-typing_extensions
@@ -27,4 +30,4 @@ pkgbase:
     - b832b44f6428fbe102f79659e20639435e895aca756fd8c0affd732df78b33cc77b6476ffa35b8e775df860629714db1eb4ed53dea1af43856ee254ff742524f
 pkgname:
   - name: python-typing_inspect
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
