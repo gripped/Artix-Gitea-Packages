@@ -1,10 +1,10 @@
 ---
-version: 0.14-14
+version: 0.14-15
 pkgbase:
   name: perl-sub-identify
   pkgdesc: Retrieve names of code references
   pkgver: 0.14
-  pkgrel: 14
+  pkgrel: 15
   url: https://search.mcpan.org/dist/Sub-Identify
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgbase:
     - f69f542c84c5c3ca1f1c7f5f58fd2cf19279a65229f43117c31f24ab0e49d5f329bef2bc00f22252fd2e52b4e17f16b279dac438920668e046e59f2e22e52c14
 pkgname:
   - name: perl-sub-identify
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
