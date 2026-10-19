@@ -2,7 +2,7 @@
 
 pkgname=gnome-photos
 pkgver=44.0
-pkgrel=7
+pkgrel=8
 epoch=1
 pkgdesc="Access, organize, and share your photos on GNOME"
 url="https://wiki.gnome.org/Apps/Photos"
@@ -14,7 +14,6 @@ depends=(
   cairo
   dconf
   dleyna
-  gcc-libs
   gdk-pixbuf2
   gegl
   geocode-glib-2
@@ -24,6 +23,7 @@ depends=(
   gtk3
   hicolor-icon-theme
   libdazzle
+  libgcc
   libgexiv2
   libgoa
   libhandy
@@ -44,7 +44,7 @@ makedepends=(
   yelp-tools
 )
 source=(
-  "git+https://gitlab.gnome.org/GNOME/gnome-photos.git#tag=${pkgver/[a-z]/.&}"
+  "git+https://gitlab.gnome.org/Archive/gnome-photos.git#tag=${pkgver/[a-z]/.&}"
   "git+https://gitlab.gnome.org/GNOME/libgd.git"
   0001-Don-t-abort-if-failed-to-create-XdpPortal-instance.patch
   0002-Set-default-window-icon.patch

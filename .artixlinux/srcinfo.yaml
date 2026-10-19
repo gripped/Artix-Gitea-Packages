@@ -1,10 +1,10 @@
 ---
-version: 1:44.0-7
+version: 1:44.0-8
 pkgbase:
   name: gnome-photos
   pkgdesc: Access, organize, and share your photos on GNOME
   pkgver: 44.0
-  pkgrel: 7
+  pkgrel: 8
   epoch: 1
   url: https://wiki.gnome.org/Apps/Photos
   arch:
@@ -24,7 +24,6 @@ pkgbase:
     - cairo
     - dconf
     - dleyna
-    - gcc-libs
     - gdk-pixbuf2
     - gegl
     - geocode-glib-2
@@ -34,6 +33,7 @@ pkgbase:
     - gtk3
     - hicolor-icon-theme
     - libdazzle
+    - libgcc
     - libgexiv2
     - libgoa
     - libhandy
@@ -45,7 +45,7 @@ pkgbase:
     - pango
     - tinysparql
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-photos.git#tag=44.0
+    - git+https://gitlab.gnome.org/Archive/gnome-photos.git#tag=44.0
     - git+https://gitlab.gnome.org/GNOME/libgd.git
     - 0001-Don-t-abort-if-failed-to-create-XdpPortal-instance.patch
     - 0002-Set-default-window-icon.patch
@@ -60,4 +60,4 @@ pkgbase:
     - d995691d7e06e1d42c88e28f2fa2ca726e0297e5979c8bcbfc9fef4840410e99a6dc781710bb4685b9517f5fc96b54df913c843aed641376dbac92ee9d9a7ef8
 pkgname:
   - name: gnome-photos
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.40.0-1-any
