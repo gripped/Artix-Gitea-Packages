@@ -1,10 +1,10 @@
 ---
-version: 2019.001-9
+version: 2019.001-10
 pkgbase:
   name: perl-unicode-linebreak
   pkgdesc: UAX #14 Unicode Line Breaking Algorithm
   pkgver: 2019.001
-  pkgrel: 9
+  pkgrel: 10
   url: https://metacpan.org/release/Unicode-LineBreak
   arch:
     - x86_64
@@ -33,4 +33,4 @@ pkgbase:
     - 0cedd6e0f5cadf57ce9cfc96beccfd083b0faa0809a631a777cd25f0316bfabb
 pkgname:
   - name: perl-unicode-linebreak
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
