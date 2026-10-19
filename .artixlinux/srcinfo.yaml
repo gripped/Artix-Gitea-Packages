@@ -1,10 +1,10 @@
 ---
-version: 1.6.6-7
+version: 1.6.6-8
 pkgbase:
   name: scribus
   pkgdesc: Desktop publishing software
   pkgver: 1.6.6
-  pkgrel: 7
+  pkgrel: 8
   url: https://www.scribus.net/
   arch:
     - x86_64
@@ -87,4 +87,4 @@ pkgbase:
     - 4238d53ae3cb4d545a7c0835a6a0cf082c3b51a3adb74f8cb3dd82977595b4b1
 pkgname:
   - name: scribus
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
