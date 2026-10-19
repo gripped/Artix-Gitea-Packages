@@ -1,10 +1,10 @@
 ---
-version: 1.6.3-1.1
+version: 1.6.4-1
 pkgbase:
   name: featherpad
   pkgdesc: Lightweight Qt plain text editor
-  pkgver: 1.6.3
-  pkgrel: 1.1
+  pkgver: 1.6.4
+  pkgrel: 1
   url: https://github.com/tsujan/FeatherPad
   arch:
     - x86_64
@@ -20,11 +20,11 @@ pkgbase:
     - hunspell
     - qt6-svg
   source:
-    - git+https://github.com/tsujan/FeatherPad.git#tag=V1.6.3?signed
+    - git+https://github.com/tsujan/FeatherPad.git#tag=V1.6.4?signed
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
   sha256sums:
-    - 5252d69c3805752b2e8e05f9aaeeea4b31fdd808f5025accb8c5ded9027be5f5
+    - 0ad200b8d0e9b1298a8c39b8415f3467535ffa28b2319e91311bca8fc8526ca3
 pkgname:
   - name: featherpad
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.40.0-1-any
