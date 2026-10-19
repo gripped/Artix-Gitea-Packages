@@ -1,10 +1,10 @@
 ---
-version: 2.09-2
+version: 2.09-2.1
 pkgbase:
   name: perl-crypt-des
   pkgdesc: Perl DES encryption module
   pkgver: 2.09
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://search.cpan.org/~dparis/Crypt-DES
   arch:
     - x86_64
