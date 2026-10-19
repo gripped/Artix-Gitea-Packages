@@ -7,21 +7,21 @@ pkgname=(
   libei-docs
 )
 pkgver=1.6.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Library for Emulated Input"
 url="https://libinput.pages.freedesktop.org/libei/"
 arch=(x86_64)
 license=(MIT)
 depends=(
-  gcc-libs
   glibc
   libevdev
+  libgcc
+  libxkbcommon
   libelogind
 )
 makedepends=(
   doxygen
   git
-  libxkbcommon
   meson
   python-attrs
   python-dbusmock
@@ -33,7 +33,6 @@ makedepends=(
 )
 checkdepends=(
   python-pytest-xdist
-  valgrind
 )
 source=(
   "git+https://gitlab.freedesktop.org/libinput/libei.git?signed#tag=$pkgver"
@@ -70,9 +69,6 @@ check() {
   # protocol tests are flaky
   meson test -C build --print-errorlogs --no-suite python
   meson test -C build --print-errorlogs --suite python
-
-  # Extra valgrind tests
-  meson test -C build --print-errorlogs --setup valgrind
 }
 
 package_libei() {

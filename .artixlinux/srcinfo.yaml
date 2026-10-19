@@ -1,10 +1,10 @@
 ---
-version: 1.6.0-1
+version: 1.6.0-2
 pkgbase:
   name: libei
   pkgdesc: Library for Emulated Input
   pkgver: 1.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://libinput.pages.freedesktop.org/libei/
   arch:
     - x86_64
@@ -12,11 +12,9 @@ pkgbase:
     - MIT
   checkdepends:
     - python-pytest-xdist
-    - valgrind
   makedepends:
     - doxygen
     - git
-    - libxkbcommon
     - meson
     - python-attrs
     - python-dbusmock
@@ -26,9 +24,10 @@ pkgbase:
     - python-yaml
     - elogind
   depends:
-    - gcc-libs
     - glibc
     - libevdev
+    - libgcc
+    - libxkbcommon
     - libelogind
   source:
     - git+https://gitlab.freedesktop.org/libinput/libei.git?signed#tag=1.6.0
@@ -47,4 +46,4 @@ pkgname:
   - name: libei-docs
     pkgdesc: Library for Emulated Input (API documentation)
     depends: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
