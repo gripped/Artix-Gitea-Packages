@@ -3,7 +3,7 @@
 
 pkgname=perl-params-validate
 pkgver=1.31
-pkgrel=5
+pkgrel=6
 pkgdesc="Validate sub params against a spec"
 arch=('x86_64')
 url="https://search.cpan.org/dist/Params-Validate"
@@ -22,6 +22,4 @@ build() {
 package() {
   cd  Params-Validate-${pkgver}
   ./Build install --destdir="$pkgdir"
-  find "$pkgdir" -name '.packlist' -delete
-  find "$pkgdir" -name '*.pod' -delete
 }
