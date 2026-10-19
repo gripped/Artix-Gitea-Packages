@@ -1,10 +1,10 @@
 ---
-version: 1.47-2
+version: 1.47-3
 pkgbase:
   name: perl-term-readline-gnu
   pkgdesc: GNU Readline XS library wrapper
   pkgver: 1.47
-  pkgrel: 2
+  pkgrel: 3
   url: https://search.cpan.org/dist/Term-ReadLine-Gnu
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - f61a3b57e719ff74504cc1b4540111ee677d6d47779f8cba944b3a950b2b5ab0c7a5ffdb7af52b31d881f99f68c9ab36fe5a400cce62396b1a72343713a626d6
 pkgname:
   - name: perl-term-readline-gnu
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any

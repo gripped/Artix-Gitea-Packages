@@ -6,7 +6,7 @@
 
 pkgname=perl-term-readline-gnu
 pkgver=1.47
-pkgrel=2
+pkgrel=3
 pkgdesc="GNU Readline XS library wrapper"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
@@ -37,5 +37,4 @@ check() {
 package() {
   cd "${srcdir}/Term-ReadLine-Gnu-$pkgver"
   make pure_install PERL_INSTALL_ROOT="$pkgdir"
-  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
 }
