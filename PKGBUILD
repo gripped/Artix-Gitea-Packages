@@ -3,7 +3,7 @@
 
 pkgname=perl-string-crc32
 pkgver=2.100
-pkgrel=5
+pkgrel=6
 pkgdesc="Perl/CPAN Module String::CRC32 : ZMODEMlike CRC32 generation"
 arch=("x86_64")
 url="https://search.cpan.org/dist/String-CRC32"
@@ -25,6 +25,4 @@ package() {
 
   make pure_install doc_install DESTDIR="$pkgdir"
 
-  find "$pkgdir" -name '.packlist' -delete
-  find "$pkgdir" -name '*.pod' -delete
 }
