@@ -8,7 +8,7 @@ pkgname=(
   modemmanager-docs
 )
 pkgver=1.24.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Mobile broadband modem management service"
 url="https://www.freedesktop.org/wiki/Software/ModemManager/"
 arch=(x86_64)
@@ -18,10 +18,10 @@ license=(
 )
 depends=(
   bash
-  gcc-libs
   glib2
   glibc
   hicolor-icon-theme
+  libgcc
   libgudev
   libmbim
   libqmi
@@ -120,9 +120,9 @@ package_libmm-glib() {
   pkgdesc="ModemManager library"
   license=(LGPL-2.1-or-later)
   depends=(
-    gcc-libs
     glib2 libg{lib,object,io}-2.0.so
     glibc
+    libgcc
   )
   provides=(libmm-glib.so)
 

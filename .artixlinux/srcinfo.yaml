@@ -1,10 +1,10 @@
 ---
-version: 1.24.2-1
+version: 1.24.2-2
 pkgbase:
   name: modemmanager
   pkgdesc: Mobile broadband modem management service
   pkgver: 1.24.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.freedesktop.org/wiki/Software/ModemManager/
   arch:
     - x86_64
@@ -25,10 +25,10 @@ pkgbase:
     - vala
   depends:
     - bash
-    - gcc-libs
     - glib2
     - glibc
     - hicolor-icon-theme
+    - libgcc
     - libgudev
     - libmbim
     - libqmi
@@ -50,10 +50,10 @@ pkgname:
       - GPL-2.0-or-later
     depends:
       - bash
-      - gcc-libs
       - glib2
       - glibc
       - hicolor-icon-theme
+      - libgcc
       - libgudev
       - libmbim
       - libqmi
@@ -62,7 +62,7 @@ pkgname:
       - polkit
       - ppp
       - libelogind
-      - libmm-glib=1.24.2-1
+      - libmm-glib=1.24.2-2
       - libmm-glib.so
       - libgudev-1.0.so
       - libglib-2.0.so
@@ -79,15 +79,15 @@ pkgname:
     license:
       - LGPL-2.1-or-later
     depends:
-      - gcc-libs
       - glib2
       - libglib-2.0.so
       - libgobject-2.0.so
       - libgio-2.0.so
       - glibc
+      - libgcc
     provides:
       - libmm-glib.so
   - name: modemmanager-docs
     pkgdesc: Mobile broadband modem management service (documentation)
     depends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
