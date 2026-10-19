@@ -1,10 +1,10 @@
 ---
-version: 5.9.5.2-1
+version: 5.9.5.2-2
 pkgbase:
   name: net-snmp
   pkgdesc: A suite of applications used to implement SNMP v1, SNMP v2c and SNMP v3 using both IPv4 and IPv6
   pkgver: 5.9.5.2
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.net-snmp.org/
   arch:
     - x86_64
@@ -37,6 +37,7 @@ pkgbase:
     - '!makeflags'
   source:
     - git+https://github.com/net-snmp/net-snmp.git#tag=v5.9.5.2
+    - net-snmp-5.9.5.2-under-linking.patch
   validpgpkeys:
     - 27CAA4A32E371383A33ED0587D5F9576E0F81533
     - 6E6718AEF1EB5C65C32D1B2A356BC0B552D53CAB
@@ -44,6 +45,7 @@ pkgbase:
     - D0F8F495DA6160C44EFFBF10F07B9D2DACB19FD6
   sha512sums:
     - 782892a7db0ca84ffb3d89f1568d93169bf8cef6d5790783fd2c8f72be2a5d22a0cb0964400046b3e8705a3efba365b7610672aee12e77693d391dc2861d311e
+    - f722c4dd01c9b098e15dd895156755992a3f719c1c044352bab16cc8d612e9ce3bcc1a5a44a26365600b3c6b0abe1fe1ee9209aef557a0cde1884ff2d14fbd0d
 pkgname:
   - name: net-snmp
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any

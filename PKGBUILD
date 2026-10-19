@@ -3,7 +3,7 @@
 
 pkgname=net-snmp
 pkgver=5.9.5.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A suite of applications used to implement SNMP v1, SNMP v2c and SNMP v3 using both IPv4 and IPv6'
 arch=('x86_64')
 url='http://www.net-snmp.org/'
@@ -20,10 +20,10 @@ provides=('libnetsnmpagent.so'
           'libnetsnmptrapd.so'
           'libsnmp.so')
 options=('!emptydirs' '!makeflags')
-source=("git+https://github.com/net-snmp/net-snmp.git#tag=v${pkgver}")
+source=("git+https://github.com/net-snmp/net-snmp.git#tag=v${pkgver}"
+        'net-snmp-5.9.5.2-under-linking.patch')
 sha512sums=('782892a7db0ca84ffb3d89f1568d93169bf8cef6d5790783fd2c8f72be2a5d22a0cb0964400046b3e8705a3efba365b7610672aee12e77693d391dc2861d311e'
-            'f7c4bee084f5fb5a27b6447f6ac52a7e5b9541e048b53d23be5c22f2c6de5e72ba8978f381af54850f3c34fd35a9e73f1c5f58e116dbb03461035095509f5602'
-            '549f555205c303723e98d5c482abe73f20b8a6e8522ebeb5d197750752314d3930ebe08898e45fcc83646290df53d3244ae55b97779f88d206cc6179a58df606')
+            'f722c4dd01c9b098e15dd895156755992a3f719c1c044352bab16cc8d612e9ce3bcc1a5a44a26365600b3c6b0abe1fe1ee9209aef557a0cde1884ff2d14fbd0d')
 validpgpkeys=('27CAA4A32E371383A33ED0587D5F9576E0F81533'
               '6E6718AEF1EB5C65C32D1B2A356BC0B552D53CAB'
               '8AAA779B597B405BBC329B6376CF47B8A77C5329'
@@ -49,6 +49,10 @@ prepare() {
     git log --oneline "${_l}" "${_c}"
     git revert --mainline 1 --no-commit "${_c}"
   done
+
+  # https://github.com/net-snmp/net-snmp/issues/434
+  # patch from Debian
+  patch -Np1 -i ../net-snmp-5.9.5.2-under-linking.patch
 
   autoreconf -i
 }
