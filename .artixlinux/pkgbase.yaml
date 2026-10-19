@@ -13,9 +13,9 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 3.0.9-1
+    version: 3.0.10-1
     packages:
-      - pkgconf-3.0.9-1-x86_64.pkg.tar.zst
+      - pkgconf-3.0.10-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 3.0.8-1
