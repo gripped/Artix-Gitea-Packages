@@ -1,10 +1,10 @@
 ---
-version: 3.40.0-1
+version: 3.40.0-2
 pkgbase:
   name: template-glib
   pkgdesc: Templating library for GLib
   pkgver: 3.40.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/template-glib
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgname:
   - name: template-glib-docs
     pkgdesc: Templating library for GLib (documentation)
     depends: []
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
