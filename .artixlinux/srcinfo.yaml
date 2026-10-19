@@ -1,10 +1,10 @@
 ---
-version: 3.44.2-1
+version: 3.44.2-2
 pkgbase:
   name: jsonrpc-glib
   pkgdesc: JSON-RPC / GVariant RPC library for GLib
   pkgver: 3.44.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/jsonrpc-glib
   arch:
     - x86_64
@@ -18,7 +18,7 @@ pkgbase:
     - meson
     - vala
   depends:
-    - gcc-libs
+    - libgcc
     - glib2
     - glibc
     - json-glib
@@ -33,4 +33,4 @@ pkgname:
   - name: jsonrpc-glib-docs
     pkgdesc: JSON-RPC / GVariant RPC library for GLib (documentation)
     depends: []
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
