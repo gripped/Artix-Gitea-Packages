@@ -4,7 +4,7 @@
 
 pkgname=perl-curses
 pkgver=1.46
-pkgrel=2
+pkgrel=2.1
 pkgdesc="Character screen handling and windowing"
 arch=('x86_64')
 url="https://search.cpan.org/dist/Curses"
