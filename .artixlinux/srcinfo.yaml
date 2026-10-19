@@ -1,9 +1,9 @@
 ---
-version: 0.8.8-1
+version: 0.8.9-1
 pkgbase:
   name: libnotify
   pkgdesc: Library for sending desktop notifications
-  pkgver: 0.8.8
+  pkgver: 0.8.9
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/libnotify
   arch:
@@ -25,17 +25,17 @@ pkgbase:
     - meson
     - xmlto
   depends:
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
+    - libgcc
   source:
-    - git+https://gitlab.gnome.org/GNOME/libnotify.git?signed#tag=0.8.8
+    - git+https://gitlab.gnome.org/GNOME/libnotify.git?signed#tag=0.8.9
   validpgpkeys:
     - 98FF7532A4639119B8FB4F15E520923A38618D6C
     - D4C501DA48EB797A081750939449C2F50996635F
   b2sums:
-    - 47ef6c21881ccd8390f4f226abcb55b685f2a9dfa0aa0fe554c2e39d11deffe36f17eb2c04b9ee5d8e5900f2bb9e646adc8405dc6631e47876878f53e3ce1a2c
+    - e27d0738a43885c4b148d5a3b7cda1b104a9e6c89a8638a62cce2aa9df73d8df08a3e729c4163c4bb95e5fda609760fc1a73442869148ca2bfab82523c0da7d5
 pkgname:
   - name: libnotify
     provides:
@@ -43,4 +43,4 @@ pkgname:
   - name: libnotify-docs
     pkgdesc: Library for sending desktop notifications (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
