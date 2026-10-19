@@ -5,7 +5,7 @@
 pkgname=perl-locale-gettext
 _realname=Locale-gettext
 pkgver=1.07
-pkgrel=16
+pkgrel=17
 pkgdesc="Permits access from Perl to the gettext() family of functions"
 arch=('x86_64')
 license=('GPL' 'PerlArtistic')
@@ -33,7 +33,4 @@ package() {
   cd "${srcdir}/${_realname}-${pkgver}"
   make install DESTDIR="${pkgdir}"
 
-  # remove perllocal.pod and .packlist
-  find "${pkgdir}" -name perllocal.pod -delete
-  find "${pkgdir}" -name .packlist -delete
 }

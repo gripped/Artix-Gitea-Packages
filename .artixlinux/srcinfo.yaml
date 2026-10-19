@@ -1,10 +1,10 @@
 ---
-version: 1.07-16
+version: 1.07-17
 pkgbase:
   name: perl-locale-gettext
   pkgdesc: Permits access from Perl to the gettext() family of functions
   pkgver: 1.07
-  pkgrel: 16
+  pkgrel: 17
   url: https://search.cpan.org/dist/Locale-gettext/
   arch:
     - x86_64
@@ -22,4 +22,4 @@ pkgbase:
     - 909d47954697e7c04218f972915b787bd1244d75e3bd01620bc167d5bbc49c15
 pkgname:
   - name: perl-locale-gettext
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
