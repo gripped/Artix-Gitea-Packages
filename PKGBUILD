@@ -3,7 +3,7 @@
 
 pkgname=perl-text-charwidth
 pkgver=0.04
-pkgrel=25
+pkgrel=26
 pkgdesc="Perl/CPAN Module Text::CharWidth"
 arch=("x86_64")
 url="https://search.cpan.org/dist/Text-CharWidth"
@@ -25,6 +25,4 @@ package() {
 
   make install DESTDIR="$pkgdir"
 
-  find "$pkgdir" -name '.packlist' -delete
-  find "$pkgdir" -name '*.pod' -delete
 }

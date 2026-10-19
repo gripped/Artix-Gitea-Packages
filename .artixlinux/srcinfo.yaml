@@ -1,10 +1,10 @@
 ---
-version: 0.04-25
+version: 0.04-26
 pkgbase:
   name: perl-text-charwidth
   pkgdesc: Perl/CPAN Module Text::CharWidth
   pkgver: 0.04
-  pkgrel: 25
+  pkgrel: 26
   url: https://search.cpan.org/dist/Text-CharWidth
   arch:
     - x86_64
@@ -19,4 +19,4 @@ pkgbase:
     - abded5f4fdd9338e89fd2f1d8271c44989dae5bf50aece41b6179d8e230704f8
 pkgname:
   - name: perl-text-charwidth
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
