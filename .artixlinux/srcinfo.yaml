@@ -1,10 +1,10 @@
 ---
-version: 1.38.0-1
+version: 1.38.0-2
 pkgbase:
   name: libqmi
   pkgdesc: QMI modem protocol helper library
   pkgver: 1.38.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.freedesktop.org/wiki/Software/libqmi/
   arch:
     - x86_64
@@ -19,9 +19,9 @@ pkgbase:
     - meson
   depends:
     - bash
-    - gcc-libs
     - glib2
     - glibc
+    - libgcc
     - libgudev
     - libmbim
     - libqrtr-glib
@@ -39,4 +39,4 @@ pkgname:
   - name: libqmi-docs
     pkgdesc: QMI modem protocol helper library (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
