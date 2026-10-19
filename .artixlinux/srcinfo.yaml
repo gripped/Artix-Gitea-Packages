@@ -1,10 +1,10 @@
 ---
-version: 4.055-1
+version: 4.055-2
 pkgbase:
   name: perl-dbd-mysql
   pkgdesc: Perl/CPAN DBD::mysql module for interacting with MySQL via DBD
   pkgver: 4.055
-  pkgrel: 1
+  pkgrel: 2
   url: http://search.cpan.org/dist/DBD-mysql/
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 4dd86152932ea1e5c13758ecde3f00f992c3f5f81c17631fb5466b796287f9f7b8507810ac109e1996cd07b665233806372787ba1834e5884b1a01daf298a8b9
 pkgname:
   - name: perl-dbd-mysql
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
