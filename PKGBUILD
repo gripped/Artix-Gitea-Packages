@@ -4,19 +4,19 @@
 
 pkgname=xdg-desktop-portal-gtk
 pkgver=1.15.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A backend implementation for xdg-desktop-portal using GTK"
 url="https://github.com/flatpak/xdg-desktop-portal-gtk"
 arch=(x86_64)
 license=(LGPL-2.0-or-later)
 depends=(
   fontconfig
-  gcc-libs
   gdk-pixbuf2
   glib2
   glibc
   gsettings-desktop-schemas
   gtk3
+  libgcc
   xdg-desktop-portal
 )
 makedepends=(
