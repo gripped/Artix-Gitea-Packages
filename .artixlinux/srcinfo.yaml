@@ -1,10 +1,10 @@
 ---
-version: 1.19-1
+version: 1.19-2
 pkgbase:
   name: perl-class-xsaccessor
   pkgdesc: Fast access generation module for Perl
   pkgver: 1.19
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tsee/Class-XSAccessor
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 624d980931232f61080aeccf5ecbc077044ba0157b80c21701366c9d06148c9e6ddbaa43dc28f9b10c343b16d5033f094adefd3e4b07bb74ce32bd1338c27a39
 pkgname:
   - name: perl-class-xsaccessor
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
