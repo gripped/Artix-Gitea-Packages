@@ -1,0 +1,33 @@
+---
+version: 0.7.3-3
+pkgbase:
+  name: libgepub
+  pkgdesc: GObject-based library for handling and rendering epub documents
+  pkgver: 0.7.3
+  pkgrel: 3
+  url: https://gitlab.gnome.org/GNOME/libgepub
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - gobject-introspection
+    - meson
+  depends:
+    - glib2
+    - glibc
+    - libarchive
+    - libgcc
+    - libsoup3
+    - libxml2
+    - webkit2gtk-4.1
+  provides:
+    - libgepub-0.7.so
+  source:
+    - git+https://gitlab.gnome.org/GNOME/libgepub.git#tag=0.7.3
+  b2sums:
+    - 85ccd66c332791360b37227a9afa5bcc37bd164d72b5a60beda9fad0e976da6fd4d0cfb21e8b4e2f12461ec46c528346557e7c5b5be81072dd44ccf661fe2cb5
+pkgname:
+  - name: libgepub
+# generated with artixpkg 0.40.0-1-any
