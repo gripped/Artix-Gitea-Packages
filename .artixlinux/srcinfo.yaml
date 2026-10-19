@@ -1,10 +1,10 @@
 ---
-version: 2.5-7
+version: 2.5-8
 pkgbase:
   name: perl-padwalker
   pkgdesc: Play with other peoples' lexical variables
   pkgver: 2.5
-  pkgrel: 7
+  pkgrel: 8
   url: https://metacpan.org/release/PadWalker
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - 07b26abb841146af32072a8d68cb90176ffb176fd9268e6f2f7d106f817a0cd0
 pkgname:
   - name: perl-padwalker
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
