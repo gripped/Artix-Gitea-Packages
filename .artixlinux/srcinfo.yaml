@@ -1,10 +1,10 @@
 ---
-version: 4.079-17
+version: 4.079-18
 pkgbase:
   name: perl-netaddr-ip
   pkgdesc: Perl module to manage IP addresses and subnets
   pkgver: 4.079
-  pkgrel: 17
+  pkgrel: 18
   url: https://search.cpan.org/dist/NetAddr-IP/
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - ec5a82dfb7028bcd28bb3d569f95d87dd4166cc19867f2184ed3a59f6d6ca0e7
 pkgname:
   - name: perl-netaddr-ip
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
