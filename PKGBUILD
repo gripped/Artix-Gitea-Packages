@@ -4,7 +4,7 @@
 
 pkgname=perl-crypt-openssl-dsa
 pkgver=0.20
-pkgrel=8
+pkgrel=9
 pkgdesc="Digital Signature Algorithm using OpenSSL"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
@@ -29,7 +29,6 @@ package() {
   cd Crypt-OpenSSL-DSA-$pkgver
   make DESTDIR="$pkgdir" install
 
-  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
 }
 
 # vim:set ts=2 sw=2 et:
