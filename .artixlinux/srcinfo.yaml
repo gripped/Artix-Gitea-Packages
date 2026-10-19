@@ -1,10 +1,10 @@
 ---
-version: 3.106-1
+version: 3.106-2
 pkgbase:
   name: perl-template-toolkit
   pkgdesc: Perl template processing system
   pkgver: 3.106
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Template-Toolkit
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - a94bd16aa20050096d3828779dbe9329e5949f516c90cb486ad96024d0b9bc35b97e7fb9206e19ad64a4ccb71485607308fede3fb5e1da2180a55d66cdbc7ca8
 pkgname:
   - name: perl-template-toolkit
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
