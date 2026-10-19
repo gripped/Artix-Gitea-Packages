@@ -5,48 +5,45 @@ pkgbase:
   pkgdesc: Applets for MATE panel
   pkgver: 1.28.1
   pkgrel: 3
-  url: https://mate-desktop.org
+  url: https://github.com/mate-desktop/mate-applets
   arch:
     - x86_64
   groups:
     - mate-extra
   license:
-    - GPL-2.0-or-later AND LGPL-2.0-or-later
+    - GPL-2.0-or-later
   makedepends:
-    - autoconf-archive
-    - intltool
-    - itstool
-    - mate-common
-    - glib2-devel
-    - gucharmap
-    - yelp-tools
-    - libsoup
     - git
+    - glib2-devel
+    - mate-common
+    - yelp-tools
   depends:
+    - at-spi2-core
+    - cairo
     - cpupower
-    - gtksourceview4
+    - dbus-glib
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - hicolor-icon-theme
     - libgtop
+    - libmateweather
+    - libnl
     - libnotify
+    - libwnck3
+    - libx11
+    - libxml2
+    - mate-desktop
     - mate-panel
+    - pango
     - polkit
     - upower
-    - wireless_tools
-    - libnl
-  optdepends:
-    - 'fortune-mod: for displaying fortune cookies in the Wanda the Fish applet'
-    - 'gucharmap: character picker applet'
-  conflicts:
-    - mate-applets-gtk3
-    - mate-netspeed
-    - mate-netspeed-gtk3
-  replaces:
-    - mate-applets-gtk3
-    - mate-netspeed
-    - mate-netspeed-gtk3
   source:
-    - git+https://github.com/mate-desktop/libmateweather.git#branch=1.28
-  sha256sums:
-    - SKIP
+    - git+https://github.com/mate-desktop/mate-applets.git#tag=v1.28.1
+  b2sums:
+    - d7a0e451f38d3112168789160622e941636d097be72f0ed5ee6544b0f238d1f15738ddeb3389e88b9b7f434675211222ebecbfd96f7a2012c7b8d063d5ae1c81
 pkgname:
   - name: mate-applets
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
