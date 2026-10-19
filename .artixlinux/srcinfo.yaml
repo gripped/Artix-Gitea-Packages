@@ -23,4 +23,4 @@ pkgbase:
     - d715f5a86bcc187075de85e7ae5bc07b0714d6edc196a92da43986efa44e5cbb
 pkgname:
   - name: glib-perl
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
