@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.10.3-2
+    version: 1.10.3-2.1
     packages:
-      - znc-1.10.3-2-x86_64.pkg.tar.zst
+      - znc-1.10.3-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.10.3-1

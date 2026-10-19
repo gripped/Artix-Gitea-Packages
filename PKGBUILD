@@ -7,7 +7,7 @@
 
 pkgname=znc
 pkgver=1.10.3
-pkgrel=2
+pkgrel=2.1
 pkgdesc='An IRC bouncer with modules & scripts support'
 url='https://wiki.znc.in/'
 license=('Apache-2.0')
