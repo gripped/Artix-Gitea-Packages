@@ -26,4 +26,4 @@ pkgbase:
     - 50cdb8e628f09440656e337974c0dd87d7b90cbadadc5ba29fa34df31d42916f691134e081296027035dc98a2ce6b8fa241aace898a9613cf3c94b91c3eec500
 pkgname:
   - name: perl-glib-object-introspection
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
