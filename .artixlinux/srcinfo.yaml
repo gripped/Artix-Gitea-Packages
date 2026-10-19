@@ -1,9 +1,9 @@
 ---
-version: 5.0.0-1
+version: 5.1.0-1
 pkgbase:
   name: python-paramiko
   pkgdesc: Python module that implements the SSH2 protocol
-  pkgver: 5.0.0
+  pkgver: 5.1.0
   pkgrel: 1
   url: https://github.com/paramiko/paramiko/
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - python-pynacl
     - python-invoke
   source:
-    - git+https://github.com/paramiko/paramiko.git#tag=5.0.0
+    - git+https://github.com/paramiko/paramiko.git#tag=5.1.0
   sha512sums:
-    - 8ddb1c243e10f6d7c2ed666d616c74d9daec9ad311eb68eb5091276df2db482de5b157271a4ef8430ec467809ba341ca3bbd209c8a6bffd261ff4815981a7e83
+    - 1a9204a2a24f416ab077dd227ec1cde987185d82a403a80fdf76236d0e55af1205dc60d41ed9521c6491524eeecfb2292c54b4738e56129486378a396e31a71e
 pkgname:
   - name: python-paramiko
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
