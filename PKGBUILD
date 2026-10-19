@@ -3,7 +3,7 @@
 
 pkgname=perl-params-util
 pkgver=1.102
-pkgrel=7
+pkgrel=8
 pkgdesc='Simple, compact and correct param-checking functions'
 arch=('x86_64')
 url="https://metacpan.org/release/Params-Util"
@@ -31,7 +31,6 @@ check() {
 package() {
   cd "$srcdir/Params-Util-$pkgver"
   make install INSTALLDIRS=vendor DESTDIR="$pkgdir"
-  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
 }
 
 # Local Variables:
