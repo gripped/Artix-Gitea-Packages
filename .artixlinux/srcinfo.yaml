@@ -1,10 +1,10 @@
 ---
-version: 0.30-5
+version: 0.30-6
 pkgbase:
   name: perl-package-stash-xs
   pkgdesc: Faster and more correct implementation of the Package::Stash API
   pkgver: 0.30
-  pkgrel: 5
+  pkgrel: 6
   url: https://search.cpan.org/dist/Package-Stash-XS
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 528faaefa71c5c37d378a9bedf325babf3b2717024995d166fc77bb1fb1ce1aed11da775608029a1c215c903dcd7ac9f68569cd8fd3690681ccd72b47c51b0a3
 pkgname:
   - name: perl-package-stash-xs
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
