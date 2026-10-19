@@ -1,10 +1,10 @@
 ---
-version: 0.007-5
+version: 0.007-6
 pkgbase:
   name: perl-b-cow
   pkgdesc: B::COW additional B helpers to check COW status
   pkgver: 0.007
-  pkgrel: 5
+  pkgrel: 6
   url: https://metacpan.org/release/B-COW
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 889e5a57f679735f4f064bc59a7e4c1bec994cb123c83742a165e2ba62a17619e36659b3f0125b6dd6a15616da7100a9d04b66de293a8bf700847d294fe0a2c2
 pkgname:
   - name: perl-b-cow
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
