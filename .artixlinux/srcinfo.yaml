@@ -1,10 +1,10 @@
 ---
-version: 0.65-1
+version: 0.65-2
 pkgbase:
   name: perl-variable-magic
   pkgdesc: Associate user-defined magic to variables from Perl.
   pkgver: 0.65
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Variable-Magic
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - 457bfb1b2369e44c0e2ef3e7b61580831107cbeebf0f5d8c4b9b02368550b91e
 pkgname:
   - name: perl-variable-magic
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
