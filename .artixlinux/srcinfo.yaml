@@ -1,19 +1,19 @@
 ---
-version: 3.1.0-10
+version: 3.1.0-11
 pkgbase:
   name: libbs2b
   pkgdesc: Bauer stereophonic-to-binaural DSP effect library
   pkgver: 3.1.0
-  pkgrel: 10
+  pkgrel: 11
   url: http://bs2b.sourceforge.net
   arch:
     - x86_64
   license:
     - MIT
   depends:
-    - gcc-libs
     - glibc
     - libsndfile
+    - libstdc++
   source:
     - https://downloads.sourceforge.net/sourceforge/bs2b/libbs2b-3.1.0.tar.lzma
     - formatsecurity.diff
@@ -29,10 +29,10 @@ pkgbase:
 pkgname:
   - name: libbs2b
     depends:
-      - gcc-libs
       - glibc
       - libsndfile
+      - libstdc++
       - libsndfile.so
     provides:
       - libbs2b.so
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.40.0-1-any
