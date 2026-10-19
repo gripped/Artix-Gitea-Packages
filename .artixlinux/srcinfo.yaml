@@ -1,0 +1,41 @@
+---
+version: 1.27.0-4
+pkgbase:
+  name: mate-netbook
+  pkgdesc: A simple window management tool
+  pkgver: 1.27.0
+  pkgrel: 4
+  url: https://github.com/mate-desktop/mate-netbook
+  arch:
+    - x86_64
+  groups:
+    - mate-extra
+  license:
+    - GPL-3.0-only
+  makedepends:
+    - git
+    - mate-common
+  depends:
+    - at-spi2-core
+    - cairo
+    - dconf
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gtk3
+    - libfakekey
+    - libwnck3
+    - libx11
+    - mate-panel
+    - pango
+  source:
+    - git+https://github.com/mate-desktop/mate-netbook.git#tag=v1.27.0
+    - mate-netbook-fix-undecorating.patch
+    - mate-netbook-window-activate.patch
+  b2sums:
+    - 3c7cc791797f8ba10cce4d84e26f72af7b02d089c28a626616cd5d78e110677822930505234d93b1ee9e0ab87a8b46bd70d8d5a4260d8129d73b23e4cf314bb4
+    - a6a4ce049d8c312d2208dbf6800e75d004aede785837d38d9b44adb51818b1724153df14bc1022ce8b2375497404c67d2cdab5ce09df74ce21b9e8f318943255
+    - 245ece8cdddad29d0705bb0631be5162aafdcacc2241b19b0e49abfeb56f118cde53c18c7176101f4d6971c8aed567c4200080902dc59ec09da26bffbb1a65f6
+pkgname:
+  - name: mate-netbook
+# generated with artixpkg 0.40.0-1-any
