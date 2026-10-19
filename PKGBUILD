@@ -8,7 +8,7 @@ pkgname=(
   deluge-gtk
 )
 pkgver=2.2.0
-pkgrel=7
+pkgrel=8
 epoch=1
 pkgdesc="BitTorrent client with multiple user interfaces in a client/server model"
 url="https://deluge-torrent.org/"
@@ -169,7 +169,7 @@ package_deluge() {
   python -m installer --destdir="$pkgdir" dist/*.whl
 
 
-  echo 'u deluge - "Deluge BitTorrent daemon" /srv/deluge' |
+  echo 'u! deluge - "Deluge BitTorrent daemon" /srv/deluge' |
     install -Dm644 /dev/stdin "$pkgdir/usr/lib/sysusers.d/$pkgname.conf"
   echo 'd /srv/deluge 0770 deluge deluge' |
     install -Dm644 /dev/stdin "$pkgdir/usr/lib/tmpfiles.d/$pkgname.conf"
