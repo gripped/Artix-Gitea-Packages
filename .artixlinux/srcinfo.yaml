@@ -1,10 +1,10 @@
 ---
-version: 1.96-1
+version: 1.96-2
 pkgbase:
   name: perl-net-ssleay
   pkgdesc: Perl bindings for OpenSSL and LibreSSL
   pkgver: 1.96
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Net-SSLeay/
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 9562ac046d7e713ba7eef17593a5246de8a051ea26bd01c42c47c5bb97b7e1ac994e3efeeed3eee5b471e6b9f4ec1e0cf6422fd966a1e985ab6d0f0f7f4302f3
 pkgname:
   - name: perl-net-ssleay
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
