@@ -1,10 +1,10 @@
 ---
-version: 1:1.4.43-3
+version: 1:1.4.43-4
 pkgbase:
   name: remmina
   pkgdesc: Remote desktop client written in GTK+
   pkgver: 1.4.43
-  pkgrel: 3
+  pkgrel: 4
   epoch: 1
   url: https://www.remmina.org
   arch:
@@ -26,6 +26,7 @@ pkgbase:
     - xorgproto
   depends:
     - avahi
+    - avahi-gtk
     - bash
     - cairo
     - curl
@@ -63,4 +64,4 @@ pkgbase:
     - 8d96f4ef89ef36bf6ebb548a5d36a58828c09b54dcc4e76494e6110f3a683d84291f449ed59efc8414b5c4f646fa9f8432d0fa97e9d4ac745d737741c3549c42
 pkgname:
   - name: remmina
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
