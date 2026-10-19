@@ -1,10 +1,10 @@
 ---
-version: 2.6.2-1
+version: 2.6.2-2
 pkgbase:
   name: perl-mouse
   pkgdesc: Moose minus the antlers
   pkgver: 2.6.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/Mouse
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - e28f8e2ce6275ed3ab1e5ee0ee436d6cc3888ef7f752c4aa3d61b6ff97d3486dccbd00f1b5e2b6ac9d16bc8148e7ef27c87097684f68773ce9789878e994065b
 pkgname:
   - name: perl-mouse
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
