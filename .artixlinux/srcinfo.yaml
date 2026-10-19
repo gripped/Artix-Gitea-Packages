@@ -1,10 +1,10 @@
 ---
-version: 7.3-1
+version: 7.3-3
 pkgbase:
   name: texinfo
   pkgdesc: GNU documentation system for on-line information and printed output
   pkgver: 7.3
-  pkgrel: 1
+  pkgrel: 3
   url: https://www.gnu.org/software/texinfo/
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - 913ca8aac84386399b0a83ed0f6b04b5e6322da62f5c1d7ed31e1050ed37c1a9
 pkgname:
   - name: texinfo
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
