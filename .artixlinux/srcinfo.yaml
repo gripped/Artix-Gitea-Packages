@@ -1,0 +1,36 @@
+---
+version: 3.1.0-1
+pkgbase:
+  name: tpm2-abrmd
+  pkgdesc: Trusted Platform Module 2.0 Access Broker and Resource Management Daemon
+  pkgver: 3.1.0
+  pkgrel: 1
+  url: https://github.com/tpm2-software/tpm2-abrmd
+  arch:
+    - x86_64
+  license:
+    - BSD-2-Clause
+  checkdepends:
+    - cmocka
+    - iproute2
+    - swtpm
+  makedepends:
+    - autoconf-archive
+    - glib2-devel
+  depends:
+    - glib2
+    - glibc
+    - libtss2-mu.so
+    - libtss2-rc.so
+    - libtss2-sys.so
+    - libtss2-tctildr.so
+    - tpm2-tss
+  options:
+    - '!lto'
+  source:
+    - https://github.com/tpm2-software/tpm2-abrmd/archive/3.1.0/tpm2-abrmd-3.1.0.tar.gz
+  b2sums:
+    - 91c32f5c22d032e05578dcff9d2da938cec37a9600225d6f0b2f1e96444245fe9f0cb00b6115627bd33c427858ed27409bd7feabcbc7f0b1c636cec7a1399a45
+pkgname:
+  - name: tpm2-abrmd
+# generated with artixpkg 0.40.0-1-any
