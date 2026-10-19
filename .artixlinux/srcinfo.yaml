@@ -1,10 +1,10 @@
 ---
-version: 2.13-22
+version: 2.13-23
 pkgbase:
   name: perl-digest-sha1
   pkgdesc: Perl interface to the SHA-1 Algorithm
   pkgver: 2.13
-  pkgrel: 22
+  pkgrel: 23
   url: https://search.cpan.org/dist/Digest-SHA1/
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 68c1dac2187421f0eb7abf71452a06f190181b8fc4b28ededf5b90296fb943cc
 pkgname:
   - name: perl-digest-sha1
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
