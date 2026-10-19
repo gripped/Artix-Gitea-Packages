@@ -1,10 +1,10 @@
 ---
-version: 238-3
+version: 238-4
 pkgbase:
   name: libgudev
   pkgdesc: GObject bindings for libudev
   pkgver: 238
-  pkgrel: 3
+  pkgrel: 4
   url: https://gitlab.gnome.org/GNOME/libgudev
   arch:
     - x86_64
@@ -21,9 +21,9 @@ pkgbase:
     - umockdev
     - vala
   depends:
-    - gcc-libs
     - glib2
     - glibc
+    - libgcc
     - libudev
   source:
     - git+https://gitlab.gnome.org/GNOME/libgudev.git#tag=238
@@ -32,13 +32,16 @@ pkgbase:
 pkgname:
   - name: libgudev
     depends:
-      - gcc-libs
       - glib2
       - glibc
+      - libgcc
       - libudev
       - libglib-2.0.so
       - libgobject-2.0.so
       - libudev.so
     provides:
       - libgudev-1.0.so
-# generated with artixpkg 0.36.2-1-any
+  - name: libgudev-docs
+    pkgdesc: GObject bindings for libudev (documentation)
+    depends: []
+# generated with artixpkg 0.40.0-1-any
