@@ -1,10 +1,10 @@
 ---
-version: 1.4.5-5
+version: 1.4.5-6
 pkgbase:
   name: irssi
   pkgdesc: Modular text mode IRC client with Perl scripting
   pkgver: 1.4.5
-  pkgrel: 5
+  pkgrel: 6
   url: https://irssi.org/
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgbase:
     - c9273d79543af66ec3d32e87b5b3ed76ddfb415dbe50cd4eb93200eebe941d7a090c3a22e7c8af42c90d7c66e699d6fa7b4ddf5e6bab2e6dff6afca6db1d05e0
 pkgname:
   - name: irssi
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
