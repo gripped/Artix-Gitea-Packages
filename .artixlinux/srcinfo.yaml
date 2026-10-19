@@ -1,10 +1,10 @@
 ---
-version: 1:6.2-1
+version: 1:6.2-2
 pkgbase:
   name: pavucontrol
   pkgdesc: PulseAudio Volume Control
   pkgver: 6.2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://freedesktop.org/software/pulseaudio/pavucontrol/
   arch:
@@ -18,16 +18,18 @@ pkgbase:
     - lynx
     - meson
   depends:
-    - gcc-libs
     - glib2
     - glibc
     - glibmm-2.68
     - gtk4
     - gtkmm-4.0
+    - hicolor-icon-theme
     - json-glib
     - libcanberra
+    - libgcc
     - libpulse
     - libsigc++-3.0
+    - libstdc++
   source:
     - git+https://gitlab.freedesktop.org/pulseaudio/pavucontrol.git?signed#tag=v6.2
   validpgpkeys:
@@ -36,4 +38,4 @@ pkgbase:
     - bcedd14881a304580dd7998d62a89d4e1f7f8fcb9d8c6d3cf773df3716d04b68976665b491606f3cad39d742b8f636e0aa0950931f3045c470151b0c603d0491
 pkgname:
   - name: pavucontrol
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
