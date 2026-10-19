@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -56,10 +56,10 @@ repos:
       - linux-zen-docs-7.2.10.zen1-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 7.2.9.zen1-1
+    version: 7.2.11.zen1-1
     packages:
-      - linux-zen-7.2.9.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-headers-7.2.9.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-docs-7.2.9.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-7.2.11.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-headers-7.2.11.zen1-1-x86_64.pkg.tar.zst
+      - linux-zen-docs-7.2.11.zen1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
