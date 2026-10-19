@@ -1,10 +1,10 @@
 ---
-version: 1:0.022-1
+version: 1:0.022-2
 pkgbase:
   name: perl-io-compress-brotli
   pkgdesc: Read/write Brotli buffers/streams
   pkgver: 0.022
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://metacpan.org/release/IO-Compress-Brotli
   arch:
@@ -26,4 +26,4 @@ pkgbase:
     - 76b94281a1f8a88bdd62d19527626636064bb6174d7c8e7fa83b6bb8ea6f8bd91c632a336e62e9d6d2ee70345243b0fdc8f227e3b87d0dd482c1b46c4dcf269e
 pkgname:
   - name: perl-io-compress-brotli
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
