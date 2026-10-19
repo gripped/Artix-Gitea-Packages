@@ -24,4 +24,4 @@ pkgbase:
     - 8d896444d71e1d0bca3d24e31e5d82bd0d9542aaed91d1fb7eab367bce675c50
 pkgname:
   - name: perl-cairo-gobject
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
