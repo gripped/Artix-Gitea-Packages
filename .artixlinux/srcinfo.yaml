@@ -1,10 +1,10 @@
 ---
-version: 1.70-1
+version: 1.70-2
 pkgbase:
   name: perl-scalar-list-utils
   pkgdesc: A selection of general-utility list subroutines
   pkgver: 1.70
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/release/Scalar-List-Utils
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - e0cc03f9fe3565cdf4d6102654f87bba3bca2d8ff989da38307e857d0ae3c886
 pkgname:
   - name: perl-scalar-list-utils
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
