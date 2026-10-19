@@ -1,10 +1,10 @@
 ---
-version: 0.910.0-1
+version: 0.910.0-2
 pkgbase:
   name: perl-yaml-libyaml
   pkgdesc: Perl YAML Serialization using XS and libyaml
   pkgver: 0.910.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/YAML-LibYAML/
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgbase:
     - 04310e9840b918383a5b9ae9ca4b3bde1b2771ec786c758bd2fffd79d409332b
 pkgname:
   - name: perl-yaml-libyaml
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
