@@ -4,7 +4,7 @@
 
 pkgname=perl-test-leaktrace
 pkgver=0.17
-pkgrel=7
+pkgrel=8
 pkgdesc="Traces memory leaks"
 arch=('x86_64')
 license=('PerlArtistic' 'GPL')
@@ -40,7 +40,6 @@ package() {
   cd "$srcdir/$_distdir"
   make install
 
-  find "$pkgdir" -name .packlist -o -name perllocal.pod -delete
 }
 
 # Local Variables:

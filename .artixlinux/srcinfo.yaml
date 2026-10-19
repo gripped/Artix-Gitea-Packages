@@ -1,10 +1,10 @@
 ---
-version: 0.17-7
+version: 0.17-8
 pkgbase:
   name: perl-test-leaktrace
   pkgdesc: Traces memory leaks
   pkgver: 0.17
-  pkgrel: 7
+  pkgrel: 8
   url: https://search.cpan.org/dist/Test-LeakTrace
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - 57ffd8c64ef871427c04419bda239d73e169f3b6ee268e0d4d7a27942c277d4b1f502e82e2e0df415b1050c0aa11944c2c3acb2e9b353855f77c91d1dfcaf00d
 pkgname:
   - name: perl-test-leaktrace
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
