@@ -1,10 +1,10 @@
 ---
-version: 1.4.0-1
+version: 1.4.0-2
 pkgbase:
   name: libqrtr-glib
   pkgdesc: Qualcomm IPC Router protocol helper library
   pkgver: 1.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib
   arch:
     - x86_64
@@ -16,9 +16,9 @@ pkgbase:
     - gobject-introspection
     - meson
   depends:
-    - gcc-libs
     - glib2
     - glibc
+    - libgcc
   source:
     - git+https://gitlab.freedesktop.org/mobile-broadband/libqrtr-glib.git?signed#tag=1.4.0
   validpgpkeys:
@@ -33,4 +33,4 @@ pkgname:
   - name: libqrtr-glib-docs
     pkgdesc: Qualcomm IPC Router protocol helper library (documentation)
     depends: []
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
