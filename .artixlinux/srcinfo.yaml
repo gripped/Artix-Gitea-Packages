@@ -1,10 +1,10 @@
 ---
-version: 0.91-2
+version: 0.91-3
 pkgbase:
   name: perl-text-bibtex
   pkgdesc: Perl interface to read and parse BibTeX files
   pkgver: 0.91
-  pkgrel: 2
+  pkgrel: 3
   url: https://metacpan.org/release/Text-BibTeX
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 3f0113cf8fe71dc7484636dc8e2a581637ecbcc82d0be29bbd46d0bf3f8cdb37
 pkgname:
   - name: perl-text-bibtex
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
