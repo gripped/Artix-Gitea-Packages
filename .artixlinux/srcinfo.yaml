@@ -1,10 +1,10 @@
 ---
-version: 1.12.5-1
+version: 1.12.5-2
 pkgbase:
   name: networkmanager-openvpn
   pkgdesc: NetworkManager VPN plugin for OpenVPN
   pkgver: 1.12.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://networkmanager.dev/docs/vpn/
   arch:
     - x86_64
@@ -16,10 +16,10 @@ pkgbase:
     - openvpn
     - python
   depends:
-    - gcc-libs
     - glib2
     - glibc
     - gtk4
+    - libgcc
     - libnm
     - libnma-gtk4
     - libsecret
@@ -34,22 +34,22 @@ pkgname:
   - name: networkmanager-openvpn
     pkgdesc: NetworkManager VPN plugin for OpenVPN (with GUI)
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gtk4
+      - libgcc
       - libnm
       - libnma-gtk4
       - libsecret
-      - networkmanager-vpn-plugin-openvpn=1.12.5-1
+      - networkmanager-vpn-plugin-openvpn=1.12.5-2
     optdepends:
       - 'libnma: GUI support (GTK 3)'
   - name: networkmanager-vpn-plugin-openvpn
     pkgdesc: NetworkManager VPN plugin for OpenVPN (VPN plugin only)
     depends:
-      - gcc-libs
       - glib2
       - glibc
+      - libgcc
       - libnm
       - openvpn
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
