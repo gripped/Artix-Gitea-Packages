@@ -3,7 +3,7 @@
 
 pkgname=perl-json-xs
 pkgver=4.04
-pkgrel=1
+pkgrel=2
 pkgdesc="JSON::XS - JSON serialising/deserialising, done correctly and fast"
 url="https://search.cpan.org/dist/JSON-XS/"
 license=("GPL")
@@ -24,6 +24,4 @@ package() {
   cd  "$srcdir"/JSON-XS-$pkgver
   make DESTDIR="$pkgdir" install
 
-  find "$pkgdir" -name '.packlist' -delete && \
-  find "$pkgdir" -name '*.pod' -delete
 }

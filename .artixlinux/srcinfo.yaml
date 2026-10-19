@@ -1,10 +1,10 @@
 ---
-version: 4.04-1
+version: 4.04-2
 pkgbase:
   name: perl-json-xs
   pkgdesc: JSON::XS - JSON serialising/deserialising, done correctly and fast
   pkgver: 4.04
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/JSON-XS/
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 8eff1e9f304c5625b59ab7b42258415f6d3e3681c1ddab6b725518a018a7f5e0
 pkgname:
   - name: perl-json-xs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
