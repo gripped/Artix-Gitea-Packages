@@ -1,0 +1,38 @@
+---
+version: 0.6.76-11
+pkgbase:
+  name: libpst
+  pkgdesc: Outlook .pst file converter
+  pkgver: 0.6.76
+  pkgrel: 11
+  url: https://www.five-ten-sg.com/libpst/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - autoconf-archive
+    - docbook-xsl
+    - doxygen
+    - git
+    - graphviz
+    - xmlto
+  depends:
+    - glib2
+    - glibc
+    - libgcc
+    - libgsf
+    - libstdc++
+    - zlib
+  source:
+    - git+https://github.com/pst-format/libpst#tag=libpst-0.6.76
+  b2sums:
+    - 0644efe8a4b270b891aaf4df72f19d0d47fb074ee7f3c5654182b72923ba2545b02132ba2f0cf65b2776d5fbaa906263f52d6f4177ad7964c9d33d8d6c19de37
+pkgname:
+  - name: libpst
+    provides:
+      - libpst.so
+  - name: libpst-docs
+    pkgdesc: Outlook .pst file converter (documentation)
+    depends: []
+# generated with artixpkg 0.40.0-1-any
