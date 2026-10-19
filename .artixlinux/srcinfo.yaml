@@ -1,10 +1,10 @@
 ---
-version: 3.2-3
+version: 4.0-1
 pkgbase:
   name: python-configupdater
   pkgdesc: Parser like ConfigParser but for updating configuration files
-  pkgver: 3.2
-  pkgrel: 3
+  pkgver: 4.0
+  pkgrel: 1
   url: https://github.com/pyscaffold/configupdater
   arch:
     - any
@@ -14,17 +14,16 @@ pkgbase:
     - python-pytest
   makedepends:
     - git
-    - python-setuptools-scm
-    - python-setuptools
+    - python-hatchling
+    - python-hatch-vcs
     - python-build
     - python-installer
-    - python-wheel
   depends:
     - python
   source:
-    - git+https://github.com/pyscaffold/configupdater.git#tag=v3.2
+    - git+https://github.com/pyscaffold/configupdater.git#tag=v4.0
   sha512sums:
-    - 1cdcce14b8d5445b3c10dde49f3887868db0cf85a1841a4735be36385508c5042418f5b4237e978c6a2136578836b4882c8a62966d6005de6e650f9a85cad5f0
+    - 227a11a3ca6edefa4a939073c50377096ef4e904b0457ee64716f5418b59552f283b8685a977009155cda221276e026f0387a405c542db0517e614222441ceaa
 pkgname:
   - name: python-configupdater
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
