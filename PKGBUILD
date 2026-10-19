@@ -2,18 +2,22 @@
 # Contributor: Mark Wagie <mark dot wagie at tutanota dot com>
 # Contributor: Mantas <grawity at gmail dot com>
 
-pkgname=switcheroo-control
+pkgbase=switcheroo-control
+pkgname=(
+  switcheroo-control
+  switcheroo-control-docs
+)
 pkgver=3.0
-pkgrel=1
+pkgrel=2
 pkgdesc="D-Bus service to check the availability of dual-GPU"
 url="https://gitlab.freedesktop.org/hadess/switcheroo-control"
 arch=(x86_64)
 license=(GPL-3.0-or-later)
 depends=(
-  gcc-libs
   glib2
   glibc
   libdrm
+  libgcc
   libgudev
   python
   python-gobject
@@ -41,7 +45,7 @@ build() {
     -D tests=true
   )
 
-  artix-meson $pkgname build "${meson_options[@]}"
+  artix-meson $pkgbase build "${meson_options[@]}"
   meson compile -C build
 }
 
@@ -49,10 +53,20 @@ check() {
   meson test -C build --print-errorlogs
 }
 
-package() {
+package_switcheroo-control() {
   meson install -C build --destdir "$pkgdir"
 
+  mkdir -p doc/usr/share
+  mv {"$pkgdir",doc}/usr/share/gtk-doc
+
   rm -r $pkgdir/usr/lib/systemd
+}
+
+package_switcheroo-control-docs() {
+  pkgdesc+=" (documentation)"
+  depends=()
+
+  mv doc/* "$pkgdir"
 }
 
 # vim:set sw=2 sts=-1 et:
