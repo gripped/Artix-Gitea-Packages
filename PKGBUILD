@@ -3,7 +3,7 @@
 
 pkgname=messagelib
 pkgver=26.08.2
-pkgrel=2.1
+pkgrel=2.2
 pkgdesc='KDE PIM messaging library'
 arch=(x86_64)
 url='https://kontact.kde.org'
