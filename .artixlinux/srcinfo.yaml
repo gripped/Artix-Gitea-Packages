@@ -1,10 +1,10 @@
 ---
-version: 0.10.2-1
+version: 0.10.2-2
 pkgbase:
   name: librest
   pkgdesc: Library for accessing RESTful web services
   pkgver: 0.10.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://gitlab.gnome.org/GNOME/librest
   arch:
     - x86_64
@@ -21,10 +21,10 @@ pkgbase:
     - meson
     - vala
   depends:
-    - gcc-libs
     - glib2
     - glibc
     - json-glib
+    - libgcc
     - libsoup3
     - libxml2
   source:
@@ -34,10 +34,10 @@ pkgbase:
 pkgname:
   - name: librest
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - json-glib
+      - libgcc
       - libsoup3
       - libxml2
       - libglib-2.0.so
@@ -55,13 +55,13 @@ pkgname:
   - name: librest-demos
     pkgdesc: Library for accessing RESTful web services (demo applications)
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - gtk4
       - gtksourceview5
       - json-glib
       - libadwaita
+      - libgcc
       - librest
       - libsoup3
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.40.0-1-any
