@@ -1,10 +1,10 @@
 ---
-version: 1.31-1
+version: 1.31-2
 pkgbase:
   name: perl-io-tty
   pkgdesc: Provide an interface to TTYs and PTYs
   pkgver: 1.31
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/IO-Tty/
   arch:
     - x86_64
@@ -21,4 +21,4 @@ pkgbase:
     - d597af221628571cbecf35b44520148c44798dfc8a9867774e60453f79d25ff7
 pkgname:
   - name: perl-io-tty
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
