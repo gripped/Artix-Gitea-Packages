@@ -2,15 +2,16 @@
 
 pkgname=woff2
 pkgver=1.0.2
-pkgrel=6
+pkgrel=7
 pkgdesc="Web Open Font Format 2 reference implementation"
 url="https://github.com/google/woff2"
 arch=(x86_64)
 license=(MIT)
 depends=(
   brotli
-  gcc-libs
   glibc
+  libgcc
+  libstdc++
 )
 makedepends=(
   cmake
