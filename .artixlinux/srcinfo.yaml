@@ -1,9 +1,9 @@
 ---
-version: 26.11.1-1
+version: 26.12.0-1
 pkgbase:
   name: nodejs
   pkgdesc: Evented I/O for V8 javascript ("Current" release)
-  pkgver: 26.11.1
+  pkgver: 26.12.0
   pkgrel: 1
   url: https://nodejs.org/
   arch:
@@ -11,6 +11,7 @@ pkgbase:
   license:
     - MIT
   makedepends:
+    - cargo
     - git
     - ninja
     - procps-ng
@@ -33,7 +34,7 @@ pkgbase:
   optdepends:
     - 'npm: nodejs package manager'
   source:
-    - git+https://github.com/nodejs/node.git#tag=v26.11.1?signed
+    - git+https://github.com/nodejs/node.git#tag=v26.12.0?signed
   validpgpkeys:
     - 8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600
     - 890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4
@@ -42,7 +43,7 @@ pkgbase:
     - 5BE8A3F6C8A5C01D106C0AD820B1A390B168D356
     - 108F52B48DB57BB0CC439B2997B01419BD92F80A
   sha512sums:
-    - d7a0735b925f2585b00b6de699498d76338729c39bb6c3e551736a3771cc28bd10fc59085cf85e741543073ae21e35bc49a5f100b71f1f6537ae295227a9db1b
+    - a7f0b65f7b0ca610348c45afe32c3aba2ceb774f4e2a6cab650643416969b4b4110e404c82d5bbf9356f8979dbfea03e6a0516623a5e065fea00fb556b02fa36
 pkgname:
   - name: nodejs
 # generated with artixpkg 0.40.0-1-any
