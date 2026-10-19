@@ -51,7 +51,6 @@ depends=(aurorae
          plasma-firewall
          plasma-integration
          plasma-keyboard
-         plasma-login-manager
          plasma-nm
          plasma-pa
          plasma-systemmonitor
