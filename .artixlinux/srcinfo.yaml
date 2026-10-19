@@ -1,10 +1,10 @@
 ---
-version: 1.4.8-1.1
+version: 1.4.8-2
 pkgbase:
   name: colord
   pkgdesc: System daemon for managing color devices
   pkgver: 1.4.8
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://www.freedesktop.org/software/colord/
   arch:
     - x86_64
@@ -24,10 +24,10 @@ pkgbase:
   depends:
     - dbus
     - dconf
-    - gcc-libs
     - glib2
     - glibc
     - lcms2
+    - libgcc
     - libgudev
     - libgusb
     - polkit
@@ -38,28 +38,28 @@ pkgbase:
     - '!emptydirs'
   source:
     - git+https://github.com/hughsie/colord?signed#tag=1.4.8
-    - 0001-install-sysusers-and-tmpfiles.patch
+    - 0001-Lock-user-account.patch
   validpgpkeys:
     - 163EB50119225DB3DF8F49EA17ACBA8DFA970E17
   b2sums:
     - 451c9571241278fb3347dd928370f3e350645c1cb2736beda37e7e5d3c1d374d49626298f0ab96d457de6ec3633fda1057d992aa833bf4f8042e29fcc4162a66
-    - d3d0cbd22544b0289ca3531f0011883ea4ea19178179a0dfc7be5f115cb6086be04715beb2f25712c9b4c0904cdb204c4dda828c811858d9e184f279c158b591
+    - 1383a097be955cef0bcfe594522e352fc160ac2e8069887b27910d525f383b3d77d7425fd6415d49efd24ca2962ef616f731cba2ec836be9a466fe2027015bec
 pkgname:
   - name: colord
     depends:
       - dbus
       - dconf
-      - gcc-libs
       - glib2
       - glibc
       - lcms2
+      - libgcc
       - libgudev
       - libgusb
       - polkit
       - shared-mime-info
       - sqlite
       - libudev
-      - libcolord=1.4.8-1.1
+      - libcolord=1.4.8-2
     optdepends:
       - 'argyllcms: color profiling'
       - 'colord-sane: SANE support'
@@ -70,25 +70,25 @@ pkgname:
   - name: libcolord
     pkgdesc: System daemon for managing color devices (client library)
     depends:
-      - gcc-libs
       - glib2
       - glibc
       - lcms2
+      - libgcc
       - libudev
     provides:
       - libcolord.so
   - name: colord-sane
     pkgdesc: System daemon for managing color devices (SANE support)
     depends:
-      - colord=1.4.8-1.1
-      - libcolord=1.4.8-1.1
+      - colord=1.4.8-2
+      - libcolord=1.4.8-2
       - dbus
-      - gcc-libs
       - glib2
       - glibc
+      - libgcc
       - libgudev
       - sane
   - name: colord-docs
     pkgdesc: System daemon for managing color devices (API documentation)
     depends: []
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.40.0-1-any

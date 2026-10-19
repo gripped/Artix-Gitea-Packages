@@ -10,7 +10,7 @@ pkgname=(
   colord-docs
 )
 pkgver=1.4.8
-pkgrel=1.1
+pkgrel=2
 pkgdesc="System daemon for managing color devices"
 url="https://www.freedesktop.org/software/colord/"
 arch=(x86_64)
@@ -18,10 +18,10 @@ license=(GPL-2.0-or-later)
 depends=(
   dbus
   dconf
-  gcc-libs
   glib2
   glibc
   lcms2
+  libgcc
   libgudev
   libgusb
   polkit
@@ -43,18 +43,18 @@ makedepends=(
 )
 options=(!emptydirs)
 source=(
-    "git+https://github.com/hughsie/colord?signed#tag=$pkgver"
-    0001-install-sysusers-and-tmpfiles.patch
+  "git+https://github.com/hughsie/colord?signed#tag=$pkgver"
+  0001-Lock-user-account.patch
 )
 b2sums=('451c9571241278fb3347dd928370f3e350645c1cb2736beda37e7e5d3c1d374d49626298f0ab96d457de6ec3633fda1057d992aa833bf4f8042e29fcc4162a66'
-        'd3d0cbd22544b0289ca3531f0011883ea4ea19178179a0dfc7be5f115cb6086be04715beb2f25712c9b4c0904cdb204c4dda828c811858d9e184f279c158b591')
+        '1383a097be955cef0bcfe594522e352fc160ac2e8069887b27910d525f383b3d77d7425fd6415d49efd24ca2962ef616f731cba2ec836be9a466fe2027015bec')
 validpgpkeys=(
   163EB50119225DB3DF8F49EA17ACBA8DFA970E17 # Richard Hughes <richard@hughsie.com>
 )
 
 prepare() {
   cd colord
-  git apply ../0001-install-sysusers-and-tmpfiles.patch
+  git apply -3 ../0001-Lock-user-account.patch
 }
 
 build() {
@@ -113,10 +113,10 @@ package_colord() {
 package_libcolord() {
   pkgdesc+=" (client library)"
   depends=(
-    gcc-libs
     glib2
     glibc
     lcms2
+    libgcc
     libudev
   )
   provides=(libcolord.so)
@@ -129,9 +129,9 @@ package_colord-sane() {
     "colord=$pkgver-$pkgrel"
     "libcolord=$pkgver-$pkgrel"
     dbus
-    gcc-libs
     glib2
     glibc
+    libgcc
     libgudev
     sane
   )
