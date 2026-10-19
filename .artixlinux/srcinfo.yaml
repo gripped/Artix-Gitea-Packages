@@ -1,10 +1,10 @@
 ---
-version: 2.0213-1
+version: 2.0213-2
 pkgbase:
   name: perl-xml-libxml
   pkgdesc: Interface to the libxml library
   pkgver: 2.0213
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/XML-LibXML
   install: perl-xml-libxml.install
   arch:
@@ -35,4 +35,4 @@ pkgbase:
     - 669446176a90f784017576436bee4952c110953b5198e8ad043af9507e97e93bacfc0b29c201bff03322dba77336e4680156052d356c7026c1b804c3f310d8ce
 pkgname:
   - name: perl-xml-libxml
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
