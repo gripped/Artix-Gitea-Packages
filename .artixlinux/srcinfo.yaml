@@ -1,10 +1,10 @@
 ---
-version: 0.17-3
+version: 0.17-4
 pkgbase:
   name: perl-crypt-openssl-random
   pkgdesc: Routines for accessing the OpenSSL pseudo-random number generator
   pkgver: 0.17
-  pkgrel: 3
+  pkgrel: 4
   url: https://metacpan.org/release/Crypt-OpenSSL-Random
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - a73a9c5c7d361467dace1ea34169e211ba7a11e29c84e9a87568a3cccf28c4cf317c39ee9c4b697e06dac408bb4c2446dd948289da9a77daf8283f27abdc2887
 pkgname:
   - name: perl-crypt-openssl-random
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
