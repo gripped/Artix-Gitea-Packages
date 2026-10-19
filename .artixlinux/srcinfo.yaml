@@ -1,10 +1,10 @@
 ---
-version: 0.51-1
+version: 0.51-2
 pkgbase:
   name: perl-clone
   pkgdesc: Recursive copy of nested objects.
   pkgver: 0.51
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/garu/Clone
   arch:
     - x86_64
