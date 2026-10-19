@@ -1,10 +1,10 @@
 ---
-version: 2.91-1
+version: 2.91-2
 pkgbase:
   name: perl-gd
   pkgdesc: Interface to Gd Graphics Library
   pkgver: 2.91
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/GD
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 85b3fb9fdcacfb0950f6763bcf7b1190794370028d3ae52c60e63ce143b2922880843f9fd7b813df89fb531c647b1e6bd4f1483a1ac21027447aa4666d770f0b
 pkgname:
   - name: perl-gd
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
