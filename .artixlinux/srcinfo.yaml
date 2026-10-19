@@ -40,4 +40,4 @@ pkgbase:
     - 855f87b535646939e5dceecbbce9e19cdd6fd36b9f42b2e662a372a9388b6f813e7f666953d53a3ea29f6add7d7558bee13feaf0779cb7fbed6a9d00d90ac7de
 pkgname:
   - name: python-loguru
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
