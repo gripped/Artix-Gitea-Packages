@@ -1,10 +1,10 @@
 ---
-version: 1.28.1-3
+version: 1.28.1-3.1
 pkgbase:
   name: mate-applets
   pkgdesc: Applets for MATE panel
   pkgver: 1.28.1
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/mate-desktop/mate-applets
   arch:
     - x86_64
