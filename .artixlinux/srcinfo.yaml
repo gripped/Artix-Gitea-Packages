@@ -1,10 +1,10 @@
 ---
-version: 2.4001-1
+version: 2.4001-2
 pkgbase:
   name: perl-moose
   pkgdesc: A postmodern object system for Perl 5
   pkgver: 2.4001
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/dist/Moose
   arch:
     - x86_64
