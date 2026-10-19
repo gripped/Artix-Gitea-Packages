@@ -1,10 +1,10 @@
 ---
-version: 1.67-1
+version: 1.67-2
 pkgbase:
   name: perl-datetime
   pkgdesc: A complete, easy to use date and time object
   pkgver: 1.67
-  pkgrel: 1
+  pkgrel: 2
   url: https://search.cpan.org/dist/DateTime
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - 1bc68275a83ae62e69656fa15b93c5b8a9c62551f8bf62e9d36e487e6b33a769849253716b9f991fda374fc209cb0ae3e2356e7d2b3298a73c468966dc3b221c
 pkgname:
   - name: perl-datetime
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
