@@ -1,10 +1,10 @@
 ---
-version: 0.36-1
+version: 0.36-1.1
 pkgbase:
   name: perl-shell-config-generate
   pkgdesc: Portably generate config for any shell
   pkgver: 0.36
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://metacpan.org/release/Shell-Config-Generate
   arch:
     - any
