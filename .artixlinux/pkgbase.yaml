@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 0.910.0-2
+    version: 0.910.0-2.1
     packages:
-      - perl-yaml-libyaml-0.910.0-2-x86_64.pkg.tar.zst
+      - perl-yaml-libyaml-0.910.0-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 0.910.0-2
