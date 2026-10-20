@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 3.2.10-4
+    version: 3.2.10-4.1
     packages:
-      - freeradius-3.2.10-4-x86_64.pkg.tar.zst
+      - freeradius-3.2.10-4.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.2.10-3
