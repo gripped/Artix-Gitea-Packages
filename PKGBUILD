@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Florian Pritz <bluewind@xinu.at>
 # Contributor: Dale Blount <dale@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=spamassassin
 pkgver=4.0.2
-pkgrel=2
+pkgrel=3
 pkgdesc='A mail filter to identify spam'
 arch=(x86_64)
 license=(Apache-2.0)
@@ -55,7 +54,7 @@ validpgpkeys=(D8099BC79E17D7E49BC21E31FDE52F40F7D39814)
 sha256sums=('c521be978cef3d49b1e139477ca60a0bd498345fc98274796e44161fae49a17f'
             'SKIP'
             '219ffc09a3373a026f82073075de386dd4dc0b88449f93e41db353485f5be5f6'
-            'bdcc77abe545289e9fabbb5c353ae07929feab662b5885cd09f0cdb106ab47f7')
+            '5b3137c7ccbe481bdad6f3cac585f728a5977378112f7f5191fe03ba745ab3e0')
 
 prepare() {
 	cd "$_archive"

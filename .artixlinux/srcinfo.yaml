@@ -1,10 +1,10 @@
 ---
-version: 4.0.2-2
+version: 4.0.2-3
 pkgbase:
   name: spamassassin
   pkgdesc: A mail filter to identify spam
   pkgver: 4.0.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://spamassassin.apache.org
   arch:
     - x86_64
@@ -58,7 +58,7 @@ pkgbase:
     - c521be978cef3d49b1e139477ca60a0bd498345fc98274796e44161fae49a17f
     - SKIP
     - 219ffc09a3373a026f82073075de386dd4dc0b88449f93e41db353485f5be5f6
-    - bdcc77abe545289e9fabbb5c353ae07929feab662b5885cd09f0cdb106ab47f7
+    - 5b3137c7ccbe481bdad6f3cac585f728a5977378112f7f5191fe03ba745ab3e0
 pkgname:
   - name: spamassassin
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
