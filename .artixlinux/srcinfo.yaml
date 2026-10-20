@@ -1,10 +1,10 @@
 ---
-version: 0.052-2
+version: 0.052-2.1
 pkgbase:
   name: perl-glib-object-introspection
   pkgdesc: Dynamically create Perl language bindings
   pkgver: 0.052
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://metacpan.org/release/Glib-Object-Introspection
   arch:
     - x86_64
