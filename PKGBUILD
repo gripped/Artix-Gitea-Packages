@@ -10,7 +10,7 @@ url="https://xorg.freedesktop.org"
 depends=('libxext' 'libxfixes' 'libx11' 'glibc' 'xorgproto')
 makedepends=('git' 'xorg-util-macros')
 license=('MIT-open-group' 'SMLNJ' 'MIT')
-source=(git+https://gitlab.freedesktop.org/xorg/lib/libxi.git?signed#tag=libXi-${pkgver})
+source=("git+https://gitlab.freedesktop.org/xorg/lib/libxi.git?signed#tag=libXi-${pkgver}")
 sha512sums=('77bafa1909f4b9b2574c11b37ccebbc41d724e7843fa1aa24ff23650e98ed995bdc75b1e49856fd673d5f390ed3e3863531668057f2d579e4614d97122e779de')
 #validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF') # Peter Hutterer
 validpgpkeys=('3AB285232C46AE43D8E192F4DAB0F78EA6E7E2D2') # Alan Coopersmith <alan.coopersmith@oracle.com>
