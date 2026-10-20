@@ -1,10 +1,10 @@
 ---
-version: 1.11.0-1
+version: 1.11.0-2
 pkgbase:
   name: rrdtool
   pkgdesc: Data logging and graphing application
   pkgver: 1.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.rrdtool.org
   arch:
     - x86_64
@@ -39,4 +39,4 @@ pkgbase:
     - 54588fd00b28bc6592ad757f03a942db948aeb340dc854f11ea0b8de617ed41c
 pkgname:
   - name: rrdtool
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
