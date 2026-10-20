@@ -1,10 +1,10 @@
 ---
-version: 1.14.5-5
+version: 1.14.5-6
 pkgbase:
   name: subversion
   pkgdesc: A Modern Concurrent Version Control System
   pkgver: 1.14.5
-  pkgrel: 5
+  pkgrel: 6
   url: https://subversion.apache.org/
   arch:
     - x86_64
@@ -30,7 +30,8 @@ pkgbase:
     - dbus
     - expat
     - file
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
     - libsasl
     - libutf8proc
@@ -81,4 +82,4 @@ pkgbase:
     - 149abfbebd4ca26c39bd51237802695f3f38c361709983d821d1dba6c7d82dad8b481363bd20d857ba15bdbe334781dcf5c508db7b847305d413957960cef36d
 pkgname:
   - name: subversion
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
