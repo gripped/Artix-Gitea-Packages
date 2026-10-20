@@ -1,9 +1,9 @@
 ---
-version: 2.5.3-1
+version: 2.5.4-1
 pkgbase:
   name: php-mongodb
   pkgdesc: MongoDB driver for PHP
-  pkgver: 2.5.3
+  pkgver: 2.5.4
   pkgrel: 1
   url: https://pecl.php.net/package/mongodb
   arch:
@@ -15,10 +15,10 @@ pkgbase:
     - php
     - re2c
   source:
-    - https://pecl.php.net/get/mongodb-2.5.3.tgz
+    - https://pecl.php.net/get/mongodb-2.5.4.tgz
     - mongodb.ini
   sha512sums:
-    - e0d029376533ff624a1f1318c07b3fe39fd875c1405e9cdb6d1bf06e7323916b3d7bd5e49fe01b6289f23181f463fd230d475e478d3192d976f9e236fce0384d
+    - 0fce800fc62e90c37573205522e10c5224df3955ba68ae8046dec780ad9d3b3c29ec9adf9b84ef372b7bdc3f27d676caf107b966960f74f2c8f4a56ddaac6841
     - 47b167ab4d761f4cf8351fef14e46c714dacae6d9a1b6d281bb87129499ee520f55f35f47c16b55ea2ecf41c67aad12439a99d3363d381b2511659b01f0b6ef0
 pkgname:
   - name: php-mongodb
@@ -33,4 +33,4 @@ pkgname:
       - php-legacy
     backup:
       - etc/php-legacy/conf.d/mongodb.ini
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
