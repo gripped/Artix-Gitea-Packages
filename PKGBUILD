@@ -2,7 +2,7 @@
 # Maintainer: Robin Candau <antiz@archlinux.org>
 
 pkgname=apparmor
-pkgver=4.1.8
+pkgver=5.0.2
 pkgrel=2
 pkgdesc="Mandatory Access Control (MAC) using Linux Security Module (LSM)"
 arch=(x86_64)
@@ -59,8 +59,8 @@ backup=(
 source=(
   git+$url.git#tag=v$pkgver?signed
 )
-sha512sums=('fb74283f58b938878084dc5589a6039526509956c5105e4f54c68093c355ca1f5b7564e70232795648864bb6a102148e9cb5170ebafa3a089ac5620975096cf7')
-b2sums=('aa5c60fc88a271d2d96af92fa8700db4158d569ca44cece9c29332473c1512b501411ed9027da41aed8189e26c53c5b8edfe4928ddb602ec32e2148340bfb0c2')
+sha512sums=('79da035f099b29a973e33afcb0d64241a41d5adba3d83f44d59bd0feec038d93f47fc0a20fa717bcf8fd83630af888c237898e4d9949b634e6d99ae0396aa439')
+b2sums=('a7732e0ba2b22856cfcb51bfdc5c5677debcfec75eb0b30578de68da2a66f1ebc5429cdde4ee9362915d7eaeaf35ab9223cbd908cd58da73d5b000a13ff4f332')
 validpgpkeys=('3ECDCBA5FB34D254961CC53F6689E64E3D3664BB'  # AppArmor Development Team (AppArmor signing key) <apparmor@lists.ubuntu.com>
               'EDC4830FBD39AB6AC51047FB052F367018D5C3D8') # John Johansen <john@jjmx.net> <john.johansen@canonical.com>
 _core_perl="/usr/bin/core_perl"
@@ -68,6 +68,8 @@ _core_perl="/usr/bin/core_perl"
 prepare() {
   cd $pkgname/libraries/libapparmor/
 
+  # Fix build with SWIG 4.5
+  git cherry-pick -n 6b80489953728aab8aeb4f9075283feb26e2e262
   autoreconf -fiv
 }
 
@@ -81,6 +83,10 @@ build() {
   )
 
   cd $pkgname
+
+  # Allow building with newer toolchain
+  # See https://gitlab.archlinux.org/archlinux/packaging/packages/apparmor/-/work_items/12#note_459648
+  export CXXFLAGS+=" -Wno-error=format-security"
 
   # export required perl executable locations
   export MAKEFLAGS+=" POD2MAN=$_core_perl/pod2man"
@@ -130,12 +136,19 @@ check() {
 }
 
 package() {
+  # export required perl executable locations
+  export MAKEFLAGS+=" POD2MAN=$_core_perl/pod2man"
+  export MAKEFLAGS+=" POD2HTML=$_core_perl/pod2html"
+  export MAKEFLAGS+=" PODCHECKER=$_core_perl/podchecker"
+  export MAKEFLAGS+=" PROVE=$_core_perl/prove"
+
   cd $pkgname
   make -C libraries/libapparmor DESTDIR="$pkgdir" install
   make -C changehat/pam_apparmor DESTDIR="$pkgdir/usr" install
   make -C changehat/mod_apparmor DESTDIR="$pkgdir" install
   make -C binutils DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" install
-  make -C parser -j1 DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" APPARMOR_BIN_PREFIX="$pkgdir/usr/lib/apparmor" install install-systemd
+  make -C init -j1 DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" APPARMOR_BIN_PREFIX="$pkgdir/usr/lib/apparmor" install install-systemd
+  make -C parser -j1 DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" install
   make -C profiles DESTDIR="$pkgdir" install
   make -C utils DESTDIR="$pkgdir" SBINDIR="$pkgdir/usr/bin" USR_SBINDIR="$pkgdir/usr/bin" BINDIR="$pkgdir/usr/bin" VIM_INSTALL_PATH="$pkgdir/usr/share/vim/vimfiles/syntax" install
 

@@ -1,9 +1,9 @@
 ---
-version: 4.1.8-2
+version: 5.0.2-2
 pkgbase:
   name: apparmor
   pkgdesc: Mandatory Access Control (MAC) using Linux Security Module (LSM)
-  pkgver: 4.1.8
+  pkgver: 5.0.2
   pkgrel: 2
   url: https://gitlab.com/apparmor/apparmor
   arch:
@@ -53,14 +53,14 @@ pkgbase:
     - etc/apparmor/parser.conf
     - etc/apparmor/severity.db
   source:
-    - git+https://gitlab.com/apparmor/apparmor.git#tag=v4.1.8?signed
+    - git+https://gitlab.com/apparmor/apparmor.git#tag=v5.0.2?signed
   validpgpkeys:
     - 3ECDCBA5FB34D254961CC53F6689E64E3D3664BB
     - EDC4830FBD39AB6AC51047FB052F367018D5C3D8
   sha512sums:
-    - fb74283f58b938878084dc5589a6039526509956c5105e4f54c68093c355ca1f5b7564e70232795648864bb6a102148e9cb5170ebafa3a089ac5620975096cf7
+    - 79da035f099b29a973e33afcb0d64241a41d5adba3d83f44d59bd0feec038d93f47fc0a20fa717bcf8fd83630af888c237898e4d9949b634e6d99ae0396aa439
   b2sums:
-    - aa5c60fc88a271d2d96af92fa8700db4158d569ca44cece9c29332473c1512b501411ed9027da41aed8189e26c53c5b8edfe4928ddb602ec32e2148340bfb0c2
+    - a7732e0ba2b22856cfcb51bfdc5c5677debcfec75eb0b30578de68da2a66f1ebc5429cdde4ee9362915d7eaeaf35ab9223cbd908cd58da73d5b000a13ff4f332
 pkgname:
   - name: apparmor
 # generated with artixpkg 0.40.0-1-any
