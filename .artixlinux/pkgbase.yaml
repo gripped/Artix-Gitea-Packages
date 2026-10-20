@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.91-2
+    version: 2.91-2.1
     packages:
-      - perl-gd-2.91-2-x86_64.pkg.tar.zst
+      - perl-gd-2.91-2.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.91-2
