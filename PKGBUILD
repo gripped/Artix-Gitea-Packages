@@ -3,7 +3,7 @@
 
 pkgname=apparmor
 pkgver=5.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Mandatory Access Control (MAC) using Linux Security Module (LSM)"
 arch=(x86_64)
 url="https://gitlab.com/apparmor/apparmor"
@@ -68,6 +68,8 @@ _core_perl="/usr/bin/core_perl"
 prepare() {
   cd $pkgname/libraries/libapparmor/
 
+  # Fix build with SWIG 4.5
+  git cherry-pick 6b80489953728aab8aeb4f9075283feb26e2e262
   autoreconf -fiv
 }
 
