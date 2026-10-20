@@ -1,12 +1,11 @@
 ---
-version: 4.4.0-9.1
+version: 4.4.0-10
 pkgbase:
   name: backuppc
   pkgdesc: Enterprise-grade system for backing up Linux, Windows and MacOS PCs
   pkgver: 4.4.0
-  pkgrel: 9.1
+  pkgrel: 10
   url: https://github.com/backuppc/
-  install: backuppc.install
   arch:
     - x86_64
   license:
@@ -58,4 +57,4 @@ pkgbase:
     - b4547f90f903d067fd09c4f2c168e204d818b69543defa8cad5dbdd2dfc258eb
 pkgname:
   - name: backuppc
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any

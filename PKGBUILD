@@ -4,7 +4,7 @@ pkgname=backuppc
 pkgver=4.4.0
 _xsver=0.62
 _rbpcver=3.1.3.0
-pkgrel=9.1
+pkgrel=10
 pkgdesc='Enterprise-grade system for backing up Linux, Windows and MacOS PCs'
 url='https://github.com/backuppc/'
 license=('GPL2')
@@ -26,7 +26,6 @@ source=("https://github.com/backuppc/backuppc/releases/download/$pkgver/BackupPC
         "$pkgname.profile.csh"
         "$pkgname.httpd"
         'https://github.com/backuppc/backuppc/commit/2c9270b9b849b2c86ae6301dd722c97757bc9256.patch')
-install=$pkgname.install
 backup=("etc/$pkgname/config.pl"
         "etc/$pkgname/hosts"
         "etc/httpd/conf/extra/$pkgname.conf"
