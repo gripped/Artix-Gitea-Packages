@@ -4,7 +4,7 @@
 pkgname=biber
 epoch=1
 pkgver=2.22
-pkgrel=1.1
+pkgrel=1.2
 pkgdesc='A Unicode-capable BibTeX replacement for biblatex users'
 arch=(any)
 license=(Artistic-2.0)
