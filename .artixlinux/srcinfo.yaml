@@ -1,10 +1,10 @@
 ---
-version: 1.2.0.2-1
+version: 1.2.0.2-2
 pkgbase:
   name: s6-linux-init
   pkgdesc: A tool to automate the creation of suitable stage 1 init binaries for s6-based Linux systems.
   pkgver: 1.2.0.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/s6-linux-init/
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgbase:
     - 60b7dce044295b582da6eecf787c9633b84645e3714a6cc31d1d741c09986449
 pkgname:
   - name: s6-linux-init
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.40.0-1-any

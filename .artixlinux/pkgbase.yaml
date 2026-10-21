@@ -1,16 +1,17 @@
 ---
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 1.2.0.2-2
+    packages:
+      - s6-linux-init-1.2.0.2-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
