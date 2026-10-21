@@ -1,0 +1,4 @@
+[tipidee]
+source = "git"
+git = "https://git.skarnet.org/cgit/tipidee/"
+prefix = "v"
