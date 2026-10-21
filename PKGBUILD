@@ -9,7 +9,7 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs
-pkgver=26.12.0
+pkgver=26.12.1
 pkgrel=1
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
@@ -18,7 +18,7 @@ license=('MIT')
 depends=(
   'abseil-cpp'
   'ada'
-  'brotli'
+#  'brotli'
   'c-ares'
   'icu'
   'libffi'
@@ -44,7 +44,7 @@ makedepends=(
 optdepends=('npm: nodejs package manager')
 source=("git+https://github.com/nodejs/node.git#tag=v$pkgver?signed")
 
-sha512sums=('a7f0b65f7b0ca610348c45afe32c3aba2ceb774f4e2a6cab650643416969b4b4110e404c82d5bbf9356f8979dbfea03e6a0516623a5e065fea00fb556b02fa36')
+sha512sums=('bbf66cd385c68f1bdfa85ea4f9a547a4e9302c59558bc514be87cb0e724bea5bdeda23f7f7cb14c45bf02fafebf2725ad0bd5b275b18d51f93fdea6fe6b061f7')
 validpgpkeys=(
   '8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600' # Michaël Zasso (Targos) <targos@protonmail.com>
   '890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4' # RafaelGSS <rafael.nunu@hotmail.com>
@@ -73,7 +73,6 @@ build() {
     --v8-enable-temporal-support \
     --shared-abseil \
     --shared-ada \
-    --shared-brotli \
     --shared-cares \
     --shared-ffi \
     --shared-libuv \
@@ -84,6 +83,7 @@ build() {
     --shared-simdjson \
     --shared-zlib \
     --shared-zstd
+    # --shared-brotli
     # --shared-http-parser
     # --shared-simdutf
     # --shared-v8
