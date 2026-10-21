@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=3.0
-_tag='262'
+_tag='262.1'
 
 pkgbase=udev
 pkgname=(
@@ -54,7 +54,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-udev-standalone-install.patch
 )
-sha512sums=('7f6b18684e8e696e0fa6fff45213d64a9bd54e6075d8950f8e5679fe14c92737cdc3a54b58a60f68867d95bad8736584e8036fc09bbd5752ee8026308f76493f'
+sha512sums=('7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde'
             'e5fec179ae4753b7ed844906d140d3efe525cfdf6675435e80e13a548dd087b0973e262011da5a41b3278edd967aadc5c800fcfddf41987c00fa02c4fdcc91c0'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             '266a9da1f2aedaaa96dd46842779e27021543a858b4f2b0e80bdcb865bfe5887a710fe9c68473b5394ffd6aa85091c61744ca9fa546905f875eab10d15f4edeb')
