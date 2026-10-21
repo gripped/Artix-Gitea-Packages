@@ -91,11 +91,14 @@ prepare() {
   git submodule init
   git submodule set-url src/3rdparty "$srcdir"/qtwebengine-chromium
   git -c protocol.file.allow=always submodule update
-  git apply -3 ../qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch
 
   # Bump chromium to head of stable branch
   cd src/3rdparty
   [[ -n $_chromium ]] && git checkout $_chromium || true
+
+  # https://emudhra.we-have-a-problem.com/
+  cd ../../
+  git apply -3 ../qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch
 }
 
 build() {
