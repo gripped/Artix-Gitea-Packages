@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-linux-utils
 pkgver=2.6.4.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Tiny Linux-specific utilities.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-linux-utils/'

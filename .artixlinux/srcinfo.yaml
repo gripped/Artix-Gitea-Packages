@@ -1,10 +1,10 @@
 ---
-version: 2.6.4.1-1
+version: 2.6.4.1-2
 pkgbase:
   name: s6-linux-utils
   pkgdesc: Tiny Linux-specific utilities.
   pkgver: 2.6.4.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/s6-linux-utils/
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 16e1a5b5a2b4a98674b4a9719612adb79588e3c20c4083360278ea38f2d32129
 pkgname:
   - name: s6-linux-utils
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
