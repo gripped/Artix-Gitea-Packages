@@ -1,13 +1,13 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,9 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
-    debug: []
+    version: 22.23.4-1
+    packages:
+      - nodejs-lts-jod-22.23.4-1-x86_64.pkg.tar.zst
+    debug:
+      - nodejs-lts-jod-debug-22.23.4-1-x86_64.pkg.tar.zst
   world:
     version: 22.23.3-2
     packages:
