@@ -1,0 +1,4 @@
+[s6-linux-init]
+source = "git"
+git = "https://git.skarnet.org/cgit/s6-linux-init/"
+prefix = "v"
