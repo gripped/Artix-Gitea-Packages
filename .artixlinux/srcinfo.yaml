@@ -1,9 +1,9 @@
 ---
-version: 1.17.7-1
+version: 1.17.9-1
 pkgbase:
   name: go-ethereum
   pkgdesc: Official Go implementation of the Ethereum protocol
-  pkgver: 1.17.7
+  pkgver: 1.17.9
   pkgrel: 1
   url: https://geth.ethereum.org/
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   replaces:
     - geth
   source:
-    - git+https://github.com/ethereum/go-ethereum.git#tag=v1.17.7
+    - git+https://github.com/ethereum/go-ethereum.git#tag=v1.17.9
   sha256sums:
-    - bf2bb47184fcb1f8b9dc8c506c52012469e977dfc6ffce3d3278bc0805f7cf60
+    - f4fb30a25e0ca1d7c2f24dbe4dfa0451f4c6cc2691a093274916280260f07f7d
 pkgname:
   - name: go-ethereum
 # generated with artixpkg 0.40.0-1-any
