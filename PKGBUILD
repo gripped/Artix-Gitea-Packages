@@ -6,14 +6,14 @@ pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-llvm-libs rocm-mlir-libs rocm-llvm-tools rocm-llvm-headers
          rocm-llvm-static rocm-flang rocm-device-libs comgr)
 epoch=2
-pkgver=10.0
-pkgrel=1
+pkgver=10.1
+pkgrel=2
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
              'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
 source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=therock-$pkgver")
-sha256sums=('55ade468dfcb50bc6dbfd6c3a53c801744893cbd6d685d6d1da421d399e2cf58')
+sha256sums=('58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407')
 options=(staticlibs !lto)
 
 build() {
@@ -155,7 +155,7 @@ _core_bin=(amd-llvm-spirv amdgpu-arch amdgpu-offload-arch amdlld amdllvm
            clang-linker-wrapper clang-nvlink-wrapper clang-sycl-linker
            ld64.lld ld.lld lld lld-link wasm-ld
            llc opt llvm-ar llvm-bitcode-strip llvm-dwarfdump llvm-install-name-tool
-           llvm-link llvm-mc llvm-objcopy llvm-objdump llvm-otool llvm-ranlib
+           llvm-link llvm-mc llvm-objcopy llvm-objdump llvm-offload-binary llvm-otool llvm-ranlib
            llvm-readelf llvm-readobj llvm-strip llvm-symbolizer
            nvidia-arch nvptx-arch offload-arch)
 
