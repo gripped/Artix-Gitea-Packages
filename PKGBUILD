@@ -2,7 +2,7 @@
 # Contributor: KokaKiwi <kokakiwi+aur at kokakiwi dot net>
 
 pkgname=cargo-nextest
-pkgver=0.9.148
+pkgver=0.9.149
 pkgrel=1
 pkgdesc="A next-generation test runner for Rust."
 arch=('x86_64')
@@ -10,8 +10,8 @@ url="https://github.com/nextest-rs/nextest"
 license=('Apache-2.0' 'MIT')
 depends=('cargo' 'glibc' 'libgcc' 'zstd')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/cargo-nextest-$pkgver.tar.gz")
-sha256sums=('c047e6d430ab7faa807736ccd10245ed60c14c497584c23d5696c156caee43f3')
-b2sums=('2e55853c07b0f347fb7aef0f17326c45cbfd3564f6794afa9d9413adccf75021ad7f85010b8aa7167b0ae49798b62f4e236c8de81aefc2d9d49838d9bb546c97')
+sha256sums=('3f1519ce8c3ae9e0442c0460995ed6802b70a73597b5876531f96c641577f21a')
+b2sums=('a8d4d29716a9a8809dad62761445578e0be3b63c6c365cb37c92da8bd22d14ee450963ed93d37ed738d31ce67c113dd354a4ab6decddcfe40088766b219dd4ac')
 
 prepare() {
   mv "nextest-$pkgname-$pkgver" "$pkgname-$pkgver"
