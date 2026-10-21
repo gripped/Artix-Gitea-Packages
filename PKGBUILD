@@ -30,7 +30,7 @@ checkdepends=(
 )
 options=('!lto')
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-b2sums=('91c32f5c22d032e05578dcff9d2da938cec37a9600225d6f0b2f1e96444245fe9f0cb00b6115627bd33c427858ed27409bd7feabcbc7f0b1c636cec7a1399a45')
+b2sums=('faa93a23e722dceda66507772e9cc4abe78661e2837f65abc6cea1dfadf341c7be4b78421dd5afb86de1c008281cc661a3b076b913f252e52a188b7c48a924d2')
 
 prepare() {
   cd "$pkgname-$pkgver"
