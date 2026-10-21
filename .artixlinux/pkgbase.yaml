@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
+  addRepo: null
+  removeRepo: null
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoAdd: false
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
