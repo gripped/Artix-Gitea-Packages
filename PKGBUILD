@@ -1,3 +1,4 @@
+#
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 # Maintainer: Jonathan Grotelüschen <tippfehlr@archlinux.org>
 # Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
