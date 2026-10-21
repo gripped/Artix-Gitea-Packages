@@ -98,7 +98,7 @@ prepare() {
 
   # https://emudhra.we-have-a-problem.com/
   cd ../../
-  git apply -3 ../qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch
+  patch -Np1 < ../qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch
 }
 
 build() {
