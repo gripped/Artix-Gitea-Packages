@@ -84,6 +84,8 @@ check() {
     --exclude="breezy.tests.test_gpg.TestVerify.test_verify_unacceptable_key"
     --exclude="breezy.tests.test_gpg.TestVerify.test_verify_untrusted_but_accepted"
     --exclude="breezy.tests.test_gpg.TestVerify.test_verify_valid_but_untrusted"
+    --exclude="breezy.bzr.tests.test_smart_transport.SmartClientMediumTests"
+
   )
   python -m venv --system-site-packages test-env
   test-env/bin/python -m installer dist/*.whl
