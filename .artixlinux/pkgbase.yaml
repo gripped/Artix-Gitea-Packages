@@ -1,13 +1,13 @@
 ---
 team: world
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
-  triggersNoCheck: true
+  triggersNoCheck: false
 repos:
   system-goblins:
     version: null
@@ -26,10 +26,11 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 24.22.0-1
+    version: 24.22.1-1
     packages:
-      - nodejs-lts-krypton-24.22.0-1-x86_64.pkg.tar.zst
-    debug: []
+      - nodejs-lts-krypton-24.22.1-1-x86_64.pkg.tar.zst
+    debug:
+      - nodejs-lts-krypton-debug-24.22.1-1-x86_64.pkg.tar.zst
   world:
     version: 24.22.0-1
     packages:
