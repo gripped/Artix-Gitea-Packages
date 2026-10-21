@@ -4,7 +4,7 @@
 pkgname=qt6-webengine
 _pkgver=6.11.2
 pkgver=${_pkgver/-/}
-pkgrel=2
+pkgrel=2.1
 _chromium=
 arch=(x86_64)
 url='https://www.qt.io'
@@ -80,15 +80,18 @@ optdepends=('pipewire: WebRTC desktop sharing under Wayland')
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver
-        git+https://code.qt.io/qt/qtwebengine-chromium)
+        git+https://code.qt.io/qt/qtwebengine-chromium
+        qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch)
 sha256sums=('056f15a095db905f60034b6c58f332843d46b01c8a8b12c00dcac2e0ef8c69a2'
-            'SKIP')
+            'SKIP'
+            '78764224b2cafb888558c40106b4ed55dbe71be4d5ec73f5ca7bc4cae1795fcf')
 
 prepare() {
   cd $_pkgfn
   git submodule init
   git submodule set-url src/3rdparty "$srcdir"/qtwebengine-chromium
   git -c protocol.file.allow=always submodule update
+  git apply -3 ../qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch
 
   # Bump chromium to head of stable branch
   cd src/3rdparty

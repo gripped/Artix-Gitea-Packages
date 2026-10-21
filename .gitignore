@@ -12,6 +12,8 @@
 
 pkg/
 src/
+qtwebengine/
+qtwebengine-chromium/
 
 *.service
 *.timer
