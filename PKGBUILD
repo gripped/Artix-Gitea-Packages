@@ -5,7 +5,7 @@
 
 pkgbase=php-mongodb
 pkgname=(php-mongodb php-legacy-mongodb)
-pkgver=2.5.4
+pkgver=2.5.5
 pkgrel=1
 pkgdesc="MongoDB driver for PHP"
 arch=("x86_64")
@@ -16,7 +16,7 @@ source=(
 	"https://pecl.php.net/get/mongodb-$pkgver.tgz"
 	"mongodb.ini"
 )
-sha512sums=('0fce800fc62e90c37573205522e10c5224df3955ba68ae8046dec780ad9d3b3c29ec9adf9b84ef372b7bdc3f27d676caf107b966960f74f2c8f4a56ddaac6841'
+sha512sums=('0d3821c8e1560e011ecfa3bfe97b4b041fdc0ffffc3d68a7f03afb7dd300d248121ed40e0a6a2f8e92a025fe7b9308f3c6eed9411a21eea76a13404357490bd9'
             '47b167ab4d761f4cf8351fef14e46c714dacae6d9a1b6d281bb87129499ee520f55f35f47c16b55ea2ecf41c67aad12439a99d3363d381b2511659b01f0b6ef0')
 
 prepare() {
