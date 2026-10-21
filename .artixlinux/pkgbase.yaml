@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: world
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: world
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -29,10 +29,8 @@ repos:
     packages: []
     debug: []
   world:
-    version: 32.2.2-1
-    packages:
-      - obs-studio-32.2.2-1-x86_64.pkg.tar.zst
-      - obs-studio-plugin-browser-32.2.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
@@ -55,7 +53,9 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 32.2.2-1
+    packages:
+      - obs-studio-32.2.2-1-x86_64.pkg.tar.zst
+      - obs-studio-plugin-browser-32.2.2-1-x86_64.pkg.tar.zst
     debug: []
-team: world
+team: galaxy
