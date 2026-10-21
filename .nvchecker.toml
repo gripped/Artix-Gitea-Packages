@@ -1,4 +1,4 @@
-[skalibs]
+[execline]
 source = "git"
 git = "https://git.skarnet.org/cgit/execline/"
 prefix = "v"
