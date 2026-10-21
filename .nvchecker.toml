@@ -1,0 +1,4 @@
+[skalibs]
+source = "git"
+git = "https://git.skarnet.org/cgit/s6-rc/"
+prefix = "v"
