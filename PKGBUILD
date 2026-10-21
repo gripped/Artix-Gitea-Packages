@@ -2,7 +2,7 @@
 # Contributor: Jacob Moody <moody@posixcafe.org>
 pkgname=s6-dns
 pkgver=2.4.1.3
-pkgrel=1
+pkgrel=2
 pkgdesc="A suite of DNS client programs and libraries for UNIX systems"
 arch=('x86_64')
 url="https://skarnet.org/software/s6-dns/"
