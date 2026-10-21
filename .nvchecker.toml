@@ -1,0 +1,4 @@
+[s6-portable-utils]
+source = "git"
+git = "https://git.skarnet.org/cgit/s6-portable-utils/"
+prefix = "v"
