@@ -1,0 +1,28 @@
+---
+version: 0.3.2-1
+pkgbase:
+  name: python-vcsgraph
+  pkgdesc: VCS graph operations
+  pkgver: 0.3.2
+  pkgrel: 1
+  url: https://github.com/breezy-team/vcsgraph
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-setuptools-rust
+  depends:
+    - glibc
+    - libgcc
+    - python
+  source:
+    - git+https://github.com/breezy-team/vcsgraph#tag=v0.3.2
+  sha256sums:
+    - 7f507930fd75eecbc1cfa249df8c68e899091b203605175efa756559f9df9b8d
+pkgname:
+  - name: python-vcsgraph
+# generated with artixpkg 0.40.0-1-any
