@@ -1,10 +1,10 @@
 ---
-version: 0.0.8.0-1
+version: 0.0.8.0-2
 pkgbase:
   name: tipidee
   pkgdesc: A small and fast HTTP/1.1 server.
   pkgver: 0.0.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/tipidee/
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgname:
       - s6-networking
       - bearssl
       - libskarnet.so
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.40.0-1-any

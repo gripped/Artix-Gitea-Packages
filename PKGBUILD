@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=tipidee
 pkgver=0.0.8.0
-pkgrel=1
+pkgrel=2
 pkgdesc="A small and fast HTTP/1.1 server."
 arch=('x86_64')
 url="https://skarnet.org/software/tipidee/"
