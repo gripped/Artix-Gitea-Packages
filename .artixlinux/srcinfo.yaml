@@ -22,9 +22,9 @@ pkgbase:
     - python
   source:
     - loguru-0.7.3.tar.gz::https://github.com/Delgan/loguru/archive/refs/tags/0.7.3.tar.gz
-    - loguru-0.7.3-update_mypy_deps.patch::https://github.com/Delgan/loguru/commit/8bba363a12483b419a27f17212b9368bc3105677.patch?full_index=1
-    - loguru-0.7.3-disable_mypy_tests.patch::https://github.com/Delgan/loguru/commit/e17479bd0701e8fc0b26981339540599dc224d11.patch?full_index=1
-    - loguru-0.7.3-fix_exception_modern.patch::https://github.com/Delgan/loguru/commit/84023e2bd8339de95250470f422f096edcb8f7b7.patch?full_index=1
+    - loguru-0.7.3_update_mypy_deps.patch::https://github.com/Delgan/loguru/commit/8bba363a12483b419a27f17212b9368bc3105677.patch?full_index=1
+    - loguru-0.7.3_disable_mypy_tests.patch::https://github.com/Delgan/loguru/commit/e17479bd0701e8fc0b26981339540599dc224d11.patch?full_index=1
+    - loguru-0.7.3_fix_exception_modern.patch::https://github.com/Delgan/loguru/commit/84023e2bd8339de95250470f422f096edcb8f7b7.patch?full_index=1
     - 0001-Bump-flit-core-build-requirement-to-version-4.patch
   sha256sums:
     - 1cad8860aa0ecf9567125381e4430046526246e075224350a6a624addac05f5e

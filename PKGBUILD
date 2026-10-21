@@ -21,9 +21,9 @@ checkdepends=(
 )
 source=(
   $_name-$pkgver.tar.gz::$url/archive/refs/tags/$pkgver.tar.gz
-  $_name-0.7.3-update_mypy_deps.patch::https://github.com/Delgan/loguru/commit/8bba363a12483b419a27f17212b9368bc3105677.patch?full_index=1
-  $_name-0.7.3-disable_mypy_tests.patch::https://github.com/Delgan/loguru/commit/e17479bd0701e8fc0b26981339540599dc224d11.patch?full_index=1
-  $_name-0.7.3-fix_exception_modern.patch::https://github.com/Delgan/loguru/commit/84023e2bd8339de95250470f422f096edcb8f7b7.patch?full_index=1
+  $_name-0.7.3_update_mypy_deps.patch::https://github.com/Delgan/loguru/commit/8bba363a12483b419a27f17212b9368bc3105677.patch?full_index=1
+  $_name-0.7.3_disable_mypy_tests.patch::https://github.com/Delgan/loguru/commit/e17479bd0701e8fc0b26981339540599dc224d11.patch?full_index=1
+  $_name-0.7.3_fix_exception_modern.patch::https://github.com/Delgan/loguru/commit/84023e2bd8339de95250470f422f096edcb8f7b7.patch?full_index=1
   0001-Bump-flit-core-build-requirement-to-version-4.patch
 )
 sha256sums=('1cad8860aa0ecf9567125381e4430046526246e075224350a6a624addac05f5e'
@@ -38,9 +38,9 @@ b2sums=('7d7cf167e1350814eea6a358cc00bac217ea6b153ae29ffd70c026f3be63cc126fbc184
         '855f87b535646939e5dceecbbce9e19cdd6fd36b9f42b2e662a372a9388b6f813e7f666953d53a3ea29f6add7d7558bee13feaf0779cb7fbed6a9d00d90ac7de')
 
 prepare() {
-  patch -Np1 -d $_name-$pkgver -i ../$_name-0.7.3-update_mypy_deps.patch
-  patch -Np1 -d $_name-$pkgver -i ../$_name-0.7.3-disable_mypy_tests.patch
-  patch -Np1 -d $_name-$pkgver -i ../$_name-0.7.3-fix_exception_modern.patch
+  patch -Np1 -d $_name-$pkgver -i ../$_name-0.7.3_update_mypy_deps.patch
+  patch -Np1 -d $_name-$pkgver -i ../$_name-0.7.3_disable_mypy_tests.patch
+  patch -Np1 -d $_name-$pkgver -i ../$_name-0.7.3_fix_exception_modern.patch
   patch -Np1 -d $_name-$pkgver -i ../0001-Bump-flit-core-build-requirement-to-version-4.patch
 }
 
