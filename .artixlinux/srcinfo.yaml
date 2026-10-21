@@ -1,9 +1,9 @@
 ---
-version: 7.2.0-1
+version: 7.3.0-1
 pkgbase:
   name: iproute2
   pkgdesc: IP Routing Utilities
-  pkgver: 7.2.0
+  pkgver: 7.3.0
   pkgrel: 1
   url: https://git.kernel.org/pub/scm/network/iproute2/iproute2.git
   arch:
@@ -32,13 +32,13 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://git.kernel.org/pub/scm/network/iproute2/iproute2.git#tag=v7.2.0
+    - git+https://git.kernel.org/pub/scm/network/iproute2/iproute2.git#tag=v7.3.0
     - 0001-make-iproute2-fhs-compliant.patch
   validpgpkeys:
     - 9F6FC345B05BE7E766B83C8F80A77F6095CDE47E
   sha256sums:
-    - 8b9f2d5bfb14de8ad18f8009bd4bb5b485e91a1523ababaa2e363c051b77bcbd
+    - ad89c9e89cb74de7d26da8c15f835ab12f840d17e769f6273b0e4ef72a53004c
     - 758b82bd61ed7512d215efafd5fab5ae7a28fbfa6161b85e2ce7373285e56a5d
 pkgname:
   - name: iproute2
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
