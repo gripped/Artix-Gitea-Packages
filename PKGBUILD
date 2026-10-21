@@ -4,14 +4,15 @@
 
 pkgname=libnitrokey
 pkgver=3.8
-pkgrel=3
+pkgrel=4
 pkgdesc='Communicate with Nitrokey stick devices in a clean and easy manner'
 url='https://github.com/Nitrokey/libnitrokey'
 arch=(x86_64)
 license=(LGPL-3.0-or-later)
 depends=(
   glibc
-  gcc-libs
+  libgcc
+  libstdc++
   nitrokey-udev-rules
 )
 makedepends=(
@@ -49,6 +50,7 @@ build() {
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_INSTALL_PREFIX=/usr
     -D CMAKE_INSTALL_LIBDIR=lib
+    -D CMAKE_POLICY_VERSION_MINIMUM=3.5
     -D COMPILE_OFFLINE_TESTS=ON
     -S $pkgname-v$pkgver
     -W no-dev
