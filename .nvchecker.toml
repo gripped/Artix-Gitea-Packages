@@ -1,0 +1,4 @@
+[mdevd]
+source = "git"
+git = "https://git.skarnet.org/cgit/mdevd/"
+prefix = "v"

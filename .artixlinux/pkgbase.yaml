@@ -1,12 +1,12 @@
 ---
 team: system
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
+  addRepo: null
+  removeRepo: null
   triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoAdd: false
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
