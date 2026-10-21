@@ -1,16 +1,23 @@
 ---
-version: 2.5.4-1
+version: 2.5.4-2
 pkgbase:
   name: ppp
   pkgdesc: A daemon which implements the Point-to-Point Protocol for dial-up networking
   pkgver: 2.5.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.samba.org/ppp/
   arch:
     - x86_64
   license:
     - GPL-2.0-or-later
     - BSD-3-Clause
+  checkdepends:
+    - iproute2
+    - iputils
+    - kmod
+    - procps-ng
+    - python
+    - util-linux
   makedepends:
     - git
   depends:
