@@ -21,7 +21,6 @@ pkgbase:
     - icu
     - libuv
     - c-ares
-    - brotli
     - libnghttp2
     - zstd
   optdepends:

@@ -10,7 +10,7 @@ pkgdesc='Evented I/O for V8 javascript (LTS release: Jod)'
 arch=(x86_64)
 url=https://nodejs.org/
 license=(MIT)
-depends=(openssl zlib icu libuv c-ares brotli libnghttp2 zstd) # http-parser v8)
+depends=(openssl zlib icu libuv c-ares libnghttp2 zstd) # brotli http-parser v8)
 makedepends=(python procps-ng ninja)
 optdepends=('npm: nodejs package manager')
 provides=("nodejs=$pkgver")
@@ -50,10 +50,10 @@ build() {
     --shared-zlib \
     --shared-libuv \
     --experimental-http-parser \
-    --shared-brotli \
     --shared-cares \
     --shared-nghttp2 \
     --shared-zstd
+    # --shared-brotli
     # --shared-v8
     # --shared-http-parser
 
