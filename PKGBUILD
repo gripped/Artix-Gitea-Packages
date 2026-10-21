@@ -4,12 +4,12 @@
 
 pkgname=perl-business-isbn-data
 pkgver=20261016.001
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Data pack for Business::ISBN'
 arch=(any)
 url='https://github.com/briandfoy/business-isbn-data'
 license=(Artistic-2.0)
-depends=(perl perl-business-isbn-data)
+depends=(perl)
 makedepends=(git)
 checkdepends=(perl-test-pod)
 optdepends=('perl-libwww: for access to the xISBN service')
