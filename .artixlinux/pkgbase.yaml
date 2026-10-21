@@ -1,16 +1,17 @@
 ---
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.10.0.0-1
+    packages:
+      - execline-2.10.0.0-1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
