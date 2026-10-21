@@ -1,16 +1,17 @@
 ---
-version: 1.8.6-1
+version: 1.8.7-1
 pkgbase:
   name: m17n-lib
   pkgdesc: Multilingual text processing library (runtimes)
-  pkgver: 1.8.6
+  pkgver: 1.8.7
   pkgrel: 1
   url: https://www.nongnu.org/m17n/
   arch:
     - x86_64
   license:
-    - GPL
+    - LGPL-2.1-or-later
   makedepends:
+    - git
     - anthy
     - ispell
   depends:
@@ -28,11 +29,11 @@ pkgbase:
     - '!makeflags'
     - '!emptydirs'
   source:
-    - https://download.savannah.gnu.org/releases/m17n/m17n-lib-1.8.6.tar.gz
+    - git+https://git.savannah.nongnu.org/git/m17n/m17n-lib.git#tag=REL-1-8-7
   validpgpkeys:
     - D68584F9B40A6502FD7C53015F592A4029890630
   sha256sums:
-    - 7129fe3b7ad500f88b8af8605ef07b96c87a75ec986a695fffc0a409f44a7c86
+    - f982ffffd252b08b9be567c9a4431461c674ede76be72a1cafe9d398b6233f42
 pkgname:
   - name: m17n-lib
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.40.0-1-any
