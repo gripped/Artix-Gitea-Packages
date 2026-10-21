@@ -1,4 +1,4 @@
-[skalibs]
+[s6]
 source = "git"
 git = "https://git.skarnet.org/cgit/s6/"
 prefix = "v"
