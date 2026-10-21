@@ -1,0 +1,4 @@
+[s6-dns]
+source = "git"
+git = "https://git.skarnet.org/cgit/s6-dns/"
+prefix = "v"
