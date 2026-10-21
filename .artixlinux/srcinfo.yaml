@@ -1,10 +1,10 @@
 ---
-version: 2.3.1.2-1
+version: 2.3.1.2-2
 pkgbase:
   name: s6-portable-utils
   pkgdesc: Tiny portable generic utilities.
   pkgver: 2.3.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/s6-portable-utils/
   arch:
     - x86_64
@@ -18,4 +18,4 @@ pkgbase:
     - cfb90186d0c0eb204e1e5c6f9379e99413c546bccf38bb6e76177f82371aa3aa
 pkgname:
   - name: s6-portable-utils
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any

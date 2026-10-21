@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-portable-utils
 pkgver=2.3.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Tiny portable generic utilities.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-portable-utils/'
