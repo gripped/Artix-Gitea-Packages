@@ -1,17 +1,18 @@
 ---
 team: system
 actions:
-  addRepo: null
+  addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
+  triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 0.1.8.2-2
+    packages:
+      - mdevd-0.1.8.2-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null

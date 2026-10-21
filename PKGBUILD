@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=mdevd
 pkgver=0.1.8.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A Linux kernel event manager daemon (like udevd) that understands the mdev configuration file format and does not fork.'
 arch=('x86_64')
 url='https://skarnet.org/software/mdevd'

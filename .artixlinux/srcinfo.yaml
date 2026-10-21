@@ -1,10 +1,10 @@
 ---
-version: 0.1.8.2-1
+version: 0.1.8.2-2
 pkgbase:
   name: mdevd
   pkgdesc: A Linux kernel event manager daemon (like udevd) that understands the mdev configuration file format and does not fork.
   pkgver: 0.1.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://skarnet.org/software/mdevd
   arch:
     - x86_64
@@ -19,4 +19,4 @@ pkgbase:
     - ce1ae0149b6a57a34f608218fd6181aa6aa68135cac2f4d931b5b417b072e244
 pkgname:
   - name: mdevd
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
