@@ -1,9 +1,9 @@
 ---
-version: 7.2.3-1
+version: 7.2.4-1
 pkgbase:
   name: python-cachetools
   pkgdesc: Extensible memoizing collections and decorators
-  pkgver: 7.2.3
+  pkgver: 7.2.4
   pkgrel: 1
   url: https://github.com/tkem/cachetools
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/tkem/cachetools.git#tag=v7.2.3
+    - git+https://github.com/tkem/cachetools.git#tag=v7.2.4
   sha512sums:
-    - 737bdaf31e8911211532e04dcd30b8a110831b720504160eaa0164e4a1af306d98ba0b446f0567d05b75a16213b80af4871495ffb756050f71aa2bf4aaebdddc
+    - 8c495f36a07ae0bb08186ac7d176e2a4b4b6ddc347537d829bbe0a89fffd9e95e1ebabc45337d6b9ddf795a94e40a594ad042edefd5da649e19ba08fbdee654b
 pkgname:
   - name: python-cachetools
 # generated with artixpkg 0.40.0-1-any
