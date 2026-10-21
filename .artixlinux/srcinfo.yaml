@@ -1,9 +1,9 @@
 ---
-version: 1.12.0-1
+version: 1.13.0-1
 pkgbase:
   name: python-jq
   pkgdesc: Python bindings for jq
-  pkgver: 1.12.0
+  pkgver: 1.13.0
   pkgrel: 1
   url: https://github.com/mwilliamson/jq.py
   arch:
@@ -23,9 +23,11 @@ pkgbase:
     - jq
     - python
   source:
-    - git+https://github.com/mwilliamson/jq.py.git#tag=1.12.0
+    - python-jq::git+https://github.com/mwilliamson/jq.py.git#tag=1.13.0
+  sha512sums:
+    - 43dd64f391fb0d38dd3dba414f9dec5a9a191f05f4d85190a7f7119961673d6fc5a3c4dc5b35a9bfc68ee2e2f9eb5f0c00968f2e20eeaeaf40d254b3bf3a8e7d
   b2sums:
-    - ea6f336539ebda1971eb85f0b87c161401430a7c5611b390c9185ae5dfe1d4f09877446f623d64b1d10e590304b7be81c3c383709dbb5d039ceb329cd944ff91
+    - 2fb946782296362d69a1e23ede9034c6f8d3027cd6b171bad28b55a283dc45891ac0211f6401eec06c18aaf165b27d3da0262e866c841c75aa2640b6d6d2ae11
 pkgname:
   - name: python-jq
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
