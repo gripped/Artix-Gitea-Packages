@@ -1,10 +1,10 @@
 ---
-version: 1:2.22-1
+version: 1:2.22-1.1
 pkgbase:
   name: biber
   pkgdesc: A Unicode-capable BibTeX replacement for biblatex users
   pkgver: 2.22
-  pkgrel: 1
+  pkgrel: 1.1
   epoch: 1
   url: https://github.com/plk/biber
   arch:
@@ -56,7 +56,7 @@ pkgbase:
   source:
     - git+https://github.com/plk/biber#tag=v2.22
   sha256sums:
-    - 07d21b457d986f19c93570816bf44b749eb65fa5af58c4bcfb1c7c177892c982
+    - bbb9462f38ff081c7e5da7bde85bba1419065715f7925ca4b2372d48983ec5da
 pkgname:
   - name: biber
 # generated with artixpkg 0.40.0-1-any

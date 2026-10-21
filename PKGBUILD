@@ -4,7 +4,7 @@
 pkgname=biber
 epoch=1
 pkgver=2.22
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A Unicode-capable BibTeX replacement for biblatex users'
 arch=(any)
 license=(Artistic-2.0)
@@ -50,7 +50,7 @@ checkdepends=(perl-capture-tiny
 options=(!emptydirs)
 # The sourceforge tarball is missing bblxml.pm
 source=(git+https://github.com/plk/biber#tag=v$pkgver)
-sha256sums=('07d21b457d986f19c93570816bf44b749eb65fa5af58c4bcfb1c7c177892c982')
+sha256sums=('bbb9462f38ff081c7e5da7bde85bba1419065715f7925ca4b2372d48983ec5da')
 
 build() {
   cd $pkgname
