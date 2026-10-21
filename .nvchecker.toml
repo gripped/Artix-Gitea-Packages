@@ -1,0 +1,4 @@
+[s6-networking]
+source = "git"
+git = "https://git.skarnet.org/cgit/s6-networking/"
+prefix = "v"
