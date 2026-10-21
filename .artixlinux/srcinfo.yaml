@@ -1,0 +1,28 @@
+---
+version: 1.29-6
+pkgbase:
+  name: perl-data-compare
+  pkgdesc: compare perl data structures
+  pkgver: 1.29
+  pkgrel: 6
+  url: https://metacpan.org/release/Data-Compare
+  arch:
+    - any
+  license:
+    - PerlArtistic
+    - GPL
+  checkdepends:
+    - perl-test-pod
+    - perl-json
+  depends:
+    - perl-file-find-rule>=0.1
+    - perl-clone
+  options:
+    - '!emptydirs'
+  source:
+    - https://search.cpan.org/CPAN/authors/id/D/DC/DCANTRELL/Data-Compare-1.29.tar.gz
+  sha256sums:
+    - 53c9db3b93263c88aaa3c4072d819eaded024d7a36b38c0c37737d288d5afa8c
+pkgname:
+  - name: perl-data-compare
+# generated with artixpkg 0.40.0-1-any
