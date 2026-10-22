@@ -1,9 +1,9 @@
 ---
-version: 6.8.0-1
+version: 6.8.1-1
 pkgbase:
   name: ocean-sound-theme
   pkgdesc: Ocean Sound Theme for Plasma
-  pkgver: 6.8.0
+  pkgver: 6.8.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -16,15 +16,15 @@ pkgbase:
     - extra-cmake-modules
     - qt6-base
   source:
-    - https://download.kde.org/stable/plasma/6.8.0/ocean-sound-theme-6.8.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.8.0/ocean-sound-theme-6.8.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.1/ocean-sound-theme-6.8.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.1/ocean-sound-theme-6.8.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - dd5e5d254faa90054e2cc3e9325db8202a965c24592921d52f68cd5fca371a4e
+    - a5157cd4314067286b54d64a0eb260b084b07df58dcd4ded9893ce3c05aafc34
     - SKIP
 pkgname:
   - name: ocean-sound-theme
