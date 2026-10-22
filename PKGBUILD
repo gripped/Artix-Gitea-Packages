@@ -6,7 +6,7 @@
 pkgname=plasma-workspace
 pkgver=6.8.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='KDE Plasma Workspace'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -145,7 +145,7 @@ build() {
 }
 
 package() {
-  depends+=(plasma-x11-session plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
+  depends+=(plasma-integration) # Declare runtime dependency here to avoid dependency cycles at build time
   DESTDIR="$pkgdir" cmake --install build
 
   rm -rf "$pkgdir/usr/lib/systemd"

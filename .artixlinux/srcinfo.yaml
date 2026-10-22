@@ -1,10 +1,10 @@
 ---
-version: 6.8.1-1
+version: 6.8.1-1.1
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
   pkgver: 6.8.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -245,6 +245,5 @@ pkgname:
       - xorg-xrdb
       - xorg-xwayland
       - zlib
-      - plasma-x11-session
       - plasma-integration
 # generated with artixpkg 0.40.0-1-any
