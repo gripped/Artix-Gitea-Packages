@@ -1,11 +1,10 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 # Contributor: XavierCLL <xavier.corredor.llano (a) gmail.com>
 # Contributor: Christian Rebischke <chris.rebischke@archlinux.org>
 # PKGBUILD base; Simper < simonpersson1 AT gmail DOT com >
 
 pkgname=kup
-pkgver=6.8.0
+pkgver=6.8.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='A backup software for helping people to keep up-to-date backups'
@@ -44,7 +43,7 @@ optdepends=('bup: bup backend'
             'rsync: support for synced backups')
 groups=(plasma)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('0879a8edb3becad34613db8d75cb854caf44a6051a53bcfa4d1fb59d0f510d5c'
+sha256sums=('867483361720b389fa9d4219e77fd51486157e1fd410587a86ab58b180607a77'
             'SKIP')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
