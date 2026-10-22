@@ -3,77 +3,101 @@
 # Contributor: Ivan Shapovalov <intelfx@intelfx.name>
 
 pkgname=matrix-synapse
-pkgver=1.162.0
-pkgrel=1.1
+pkgver=1.163.0
+pkgrel=2
 pkgdesc="Matrix reference homeserver"
 url="https://github.com/element-hq/synapse"
 arch=('x86_64')
 license=('AGPL-3.0-or-later')
 depends=(
-  'libgcc'
-  'glibc'
-  'libwebp'
-  'python'
-  'python-ijson'
-  'python-jsonschema'
-  'python-twisted'
-  'python-pyopenssl'
-  'python-yaml'
-  'python-pyasn1'
-  'python-pyasn1-modules'
-  'python-pynacl'
-  'python-bcrypt'
-  'python-immutabledict'
-  'python-pillow'
-  'python-pysaml2'
-  'python-pydantic'
+  glibc
+  libgcc
+  libwebp
+  python
+  python-attrs
+  python-bcrypt
+  python-beautifulsoup4
+  python-bleach
+  python-canonicaljson
+  python-idna
+  python-ijson
+  python-immutabledict
+  python-jinja
+  python-jsonschema
+  python-matrix-common
+  python-msgpack
+  python-netaddr
+  python-phonenumbers
+  python-pillow
+  python-prometheus_client
+  python-pyasn1
+  python-pyasn1-modules
+  python-pydantic
+  python-pymacaroons
+  python-pynacl
+  python-pyopenssl
+  python-pyparsing
+  python-pyrsistent
+  python-pysaml2
+  python-python-multipart
+  python-service-identity
+  python-signedjson
+  python-sortedcontainers
 
-  'python-unpaddedbase64'
-  'python-canonicaljson'
-  'python-signedjson'
-  'python-pymacaroons'
-  'python-service-identity'
-  'python-msgpack'
-  'python-phonenumbers'
-  'python-prometheus_client'
-  'python-attrs'
-  'python-netaddr'
-  'python-sortedcontainers'
-  'python-pyparsing'
-  'python-pyrsistent'
-  'python-treq'
-  'python-idna'
-  'python-jinja'
-  'python-matrix-common'
-  'python-bleach'
-  'python-typing_extensions'
-  'python-python-multipart'
+  python-treq
+  python-twisted
+  python-typing_extensions
+  python-unpaddedbase64
+  python-yaml
 
 )
-makedepends=(git python-build python-installer python-wheel python-poetry-core python-maturin)
-checkdepends=('python-pip' 'python-authlib' 'python-pyjwt' 'python-lxml' 'python-parameterized'
-              'python-txredisapi' 'python-hiredis' 'postgresql' 'python-pyicu')
-optdepends=('perl: sync_room_to_group.pl'
-            'python-psycopg2: PostgreSQL support'
-            'python-lxml: URL previewing'
-            'python-psutil: metrics'
-            'python-pyjwt: jwt'
-            'python-txredisapi: redis'
-            'python-hiredis'
-            'python-pyicu: Improve user search for international display names'
-            'python-authlib: OpenID SSO support')
+makedepends=(
+  git
+  python-build
+  python-installer
+  python-maturin
+  python-poetry-core
+  python-wheel
+)
+checkdepends=(
+  postgresql
+  python-authlib
+  python-hiredis
+  python-lxml
+  python-parameterized
+  python-pip
+  python-pyicu
+  python-pyjwt
+  python-txredisapi
+)
+optdepends=(
+  'perl: sync_room_to_group.pl'
+  'python-psycopg2: PostgreSQL support'
+  'python-lxml: URL previewing'
+  'python-psutil: metrics'
+  'python-pyjwt: jwt'
+  'python-txredisapi: redis'
+  'python-hiredis'
+  'python-pyicu: Improve user search for international display names'
+  'python-authlib: OpenID SSO support'
+)
+backup=(
+ etc/synapse/log_config.yaml
+)
 options=(!lto)
-source=("$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
-        'generic_worker.yaml.example'
-        'sysusers-synapse.conf'
-        'tmpfiles-synapse.conf'
-        )
-sha256sums=('82fab0001de1b859be44641055e2339081e5a810a75497c4153520182bd291c1'
+install=synapse.install
+source=(
+  "$pkgname::git+https://github.com/element-hq/synapse.git#tag=v$pkgver"
+  generic_worker.yaml.example
+  sysusers-synapse.conf
+  tmpfiles-synapse.conf
+)
+sha256sums=('4c09d279083555f7a1d90c80d6d4db71140d2ad393bd92eaa0755da5e1a08d32'
             'f67334856609997eac26939d77cfc520e78e98d3755543ab730d83a0f362a35e'
+            '74af0bc2f57e5ced1a44f2438922d420cbb7defedae784cac02ef125f276a2ed'
+            '408527271e1250beb20531f140b91201ed464e42f7eb3f47f02967a2ac23a661'
             '574175c27a4f07d4ce6a676d86b697c82c36b796442d0955881da588b6f4bb65'
             '65588c8c64dfb84cab831cd8d028a295d753cf7322dd63053e8488466047b45f')
-backup=('etc/synapse/log_config.yaml')
-install=synapse.install
 validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
               '053191DFF4670330465227F7A542E4ED1B0FAC09'
               '283F86EA415D64E7D98E085BD5804497C6468FC1'
@@ -85,40 +109,40 @@ validpgpkeys=('02450A9EDDFEE3E0C730B786A7E4A57880C3A4A9'
               '177B595E4DFCB510C556750833FC58F6A7113048')
 
 prepare() {
-	cd $pkgname
+  cd $pkgname
 
-	# Work around xmlschema + zope.interface incompatibility (FS#1 python-xmlschema)
-	sed -i 's/except ImportError:/except (ImportError, AttributeError):/' tests/handlers/test_saml.py
+  # Work around xmlschema + zope.interface incompatibility (FS#1 python-xmlschema)
+  sed -i 's/except ImportError:/except (ImportError, AttributeError):/' tests/handlers/test_saml.py
 
-	# Upstream tests against authlib 1.6; with authlib 1.8 an integer "sub" claim is rejected
-	echo 'OidcHandlerTestCase.test_map_userinfo_to_user.skip = "fails with authlib 1.8"' >> tests/handlers/test_oidc.py
+  # Upstream tests against authlib 1.6; with authlib 1.8 an integer "sub" claim is rejected
+  echo 'OidcHandlerTestCase.test_map_userinfo_to_user.skip = "fails with authlib 1.8"' >> tests/handlers/test_oidc.py
 }
 
 build() {
-	cd $pkgname
-	python -m build --wheel --no-isolation
+  cd $pkgname
+  python -m build --wheel --no-isolation
 }
 
 check() {
-	cd $pkgname
-	local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
-	python -m venv --system-site-packages test-env
-	test-env/bin/python -m installer dist/*.whl
-	pushd target/release
-	ln -sv ../../tests .
-	PYTHONPATH="$PWD" PATH="../../test-env/bin:$PATH" ../../test-env/bin/python -m twisted.trial -j$(nproc) tests
-	rm -r tests _trial_temp
-	popd
+  cd $pkgname
+  local python_version=$(python -c 'import sys; print("".join(map(str, sys.version_info[:2])))')
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  pushd target/release
+  ln -sv ../../tests .
+  PYTHONPATH="$PWD" PATH="../../test-env/bin:$PATH" ../../test-env/bin/python -m twisted.trial -j$(nproc) tests
+  rm -r tests _trial_temp
+  popd
 }
 
 package() {
-	cd $pkgname
-	python -m installer --destdir="$pkgdir" dist/*.whl
+  cd $pkgname
+  python -m installer --destdir="$pkgdir" dist/*.whl
 
-	install -vdm755 -o 198 -g 198 "$pkgdir"/etc/synapse
-	install -vDm644 contrib/systemd/log_config.yaml "$pkgdir"/etc/synapse/log_config.yaml
-	install -vDm644 "$srcdir"/generic_worker.yaml.example "$pkgdir"/etc/synapse/workers/generic_worker.yaml.example
+  install -vdm755 -o 198 -g 198 "$pkgdir"/etc/synapse
+  install -vDm644 contrib/systemd/log_config.yaml "$pkgdir"/etc/synapse/log_config.yaml
+  install -vDm644 "$srcdir"/generic_worker.yaml.example "$pkgdir"/etc/synapse/workers/generic_worker.yaml.example
 
-	install -vDm644 "$srcdir"/sysusers-synapse.conf "$pkgdir"/usr/lib/sysusers.d/synapse.conf
-	install -vDm644 "$srcdir"/tmpfiles-synapse.conf "$pkgdir"/usr/lib/tmpfiles.d/synapse.conf
+  install -vDm644 "$srcdir"/sysusers-synapse.conf "$pkgdir"/usr/lib/sysusers.d/synapse.conf
+  install -vDm644 "$srcdir"/tmpfiles-synapse.conf "$pkgdir"/usr/lib/tmpfiles.d/synapse.conf
 }
