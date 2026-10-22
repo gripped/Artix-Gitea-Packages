@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-systemmonitor
-pkgver=6.8.0
+pkgver=6.8.1
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='An interface for monitoring system sensors, process information and other system resources'
@@ -36,7 +36,7 @@ groups=(plasma)
 replaces=(ksysguard)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
 "$pkgname-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/0953fe1e320a569885480f1191082e592266cd76/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch")
-sha256sums=('3e4d4e91367bce651d3e60cea2d9dbd25adc4653945b32bfcdac094ff031d2c7'
+sha256sums=('3f6718fe2ec7a873bee045a2975682cf488b814840a551e31f71f9edf54486a0'
             'SKIP'
             'eec9847192fc930dbc8f67b7c66ce3ce16b0664d1d2848f6c05dd771d108f901')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
