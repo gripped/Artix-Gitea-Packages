@@ -1,9 +1,9 @@
 ---
-version: 4.2.0-1
+version: 4.3.4-1
 pkgbase:
   name: python-astroid
   pkgdesc: A common base representation of python source code
-  pkgver: 4.2.0
+  pkgver: 4.3.4
   pkgrel: 1
   url: https://github.com/pylint-dev/astroid
   arch:
@@ -31,9 +31,11 @@ pkgbase:
   replaces:
     - python-logilab-astng
   source:
-    - https://github.com/pylint-dev/astroid/archive/v4.2.0/astroid-4.2.0.tar.gz
+    - https://github.com/pylint-dev/astroid/archive/v4.3.4/astroid-4.3.4.tar.gz
+    - astroid-4.2.0-pkg_resources-removal.patch
   sha256sums:
-    - 896274d7fae440746bdf1f4c262dc0c0e2971ef5bb89e66223410df409b6ce09
+    - 8cd3fb0e084c89d69688d3aa4a1abcaf22c84a8167ebb06895bf5f335779a4f5
+    - ac45d2fb054f9b911866192e1a4843786fb8f1eff8d869c4d0f1dccde54465b4
 pkgname:
   - name: python-astroid
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
