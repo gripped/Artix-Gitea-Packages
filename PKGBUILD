@@ -12,7 +12,7 @@ makedepends=('git' 'python-build' 'python-installer' 'python-setuptools')
 checkdepends=('python-pytest' 'python-eth-hash')
 optdepends=('python-eth-hash: for eth_address validator')
 source=("git+https://github.com/python-validators/validators.git#tag=$pkgver")
-sha512sums=('db242203efddca51f215831bae9e56c71d324393da496806b295a71432ac933a93bc0d448005d0d2fc34be994d1ec3cd40aea525c55fe6c9072cd8476a1a3ac1')
+sha512sums=('a3e5993451bba64675806d65d13dec66076562dc1c9a31c735a6efa2d4f6e8340710d61a5bf01336f683add28ac9a40801c4e165ba48aee714068c878cf1dbf6')
 
 build() {
   cd validators
