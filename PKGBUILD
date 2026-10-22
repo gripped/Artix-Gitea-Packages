@@ -9,7 +9,7 @@ pkgname=(
   shiboken6-generator
 )
 pkgver=6.12.0
-pkgrel=2
+pkgrel=3
 arch=(x86_64)
 url='https://www.qt.io'
 license=(GPL-3.0-only
