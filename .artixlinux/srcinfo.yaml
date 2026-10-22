@@ -1,9 +1,9 @@
 ---
-version: 6.8.0-1
+version: 6.8.1-1
 pkgbase:
   name: kscreen
   pkgdesc: KDE screen management software
-  pkgver: 6.8.0
+  pkgver: 6.8.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -21,7 +21,6 @@ pkgbase:
     - kconfig
     - kcoreaddons
     - kcrash
-    - kdbusaddons
     - ki18n
     - kimageformats
     - kirigami
@@ -29,26 +28,24 @@ pkgbase:
     - ksvg
     - kwindowsystem
     - layer-shell-qt
+    - libgcc
     - libkscreen
     - libstdc++
-    - libx11
-    - libxcb
-    - libxi
     - libplasma
     - plasma5support
     - qt6-base
     - qt6-declarative
     - wayland
   source:
-    - https://download.kde.org/stable/plasma/6.8.0/kscreen-6.8.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.8.0/kscreen-6.8.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.1/kscreen-6.8.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.1/kscreen-6.8.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 2c0a1c82e5b050de1cca9ec1e024dd09d8eb37dc1b18a6d4b59124e2e4ca2bc8
+    - 3402b7916853bb194cfeaff28862126df0630db5651143e1b7c77f3861d3102c
     - SKIP
 pkgname:
   - name: kscreen
