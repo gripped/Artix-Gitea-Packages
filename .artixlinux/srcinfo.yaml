@@ -43,4 +43,4 @@ pkgname:
       - spdlog
       - libfmt.so
       - libspdlog.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
