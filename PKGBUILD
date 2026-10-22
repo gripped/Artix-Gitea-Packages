@@ -4,7 +4,7 @@
 
 pkgname=adios2
 pkgver=2.12.1
-pkgrel=6
+pkgrel=7
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
@@ -12,6 +12,7 @@ license=(Apache-2.0)
 depends=(
   blosc2
   bzip2 libbz2.so
+  conduit-llnl
   curl libcurl.so
   glibc
   hdf5
