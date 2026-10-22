@@ -1,9 +1,9 @@
 ---
-version: 6.8.0-1
+version: 6.8.1-1
 pkgbase:
   name: ksshaskpass
   pkgdesc: ssh-add helper that uses kwallet and kpassworddialog
-  pkgver: 6.8.0
+  pkgver: 6.8.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   install: ksshaskpass.install
@@ -28,15 +28,15 @@ pkgbase:
   provides:
     - x11-ssh-askpass
   source:
-    - https://download.kde.org/stable/plasma/6.8.0/ksshaskpass-6.8.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.8.0/ksshaskpass-6.8.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.1/ksshaskpass-6.8.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.1/ksshaskpass-6.8.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 3d38254e4e982ea912e2dcd599e19f207eae0f8d34bfdb1b770980b0168e6f1f
+    - abbc3ad10cd1cdebefd20bdad87224b7dc305c09b8863b6e90c6c838bf3c3122
     - SKIP
 pkgname:
   - name: ksshaskpass
