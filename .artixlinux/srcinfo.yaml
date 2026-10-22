@@ -1,10 +1,10 @@
 ---
-version: 1:0.9rc5-1
+version: 1:0.9rc5-2
 pkgbase:
   name: avahi
   pkgdesc: Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour)
   pkgver: 0.9rc5
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/avahi/avahi
   arch:
@@ -18,9 +18,9 @@ pkgbase:
     - gobject-introspection
     - graphviz
     - gtk3
-    - libevent
     - python-dbus
     - python-gobject
+    - python-twisted
     - xmltoman
   depends:
     - bash
@@ -31,28 +31,6 @@ pkgbase:
     - glibc
     - libcap
     - libdaemon
-  optdepends:
-    - 'gtk3: avahi-discover, avahi-discover-standalone, bshell, bssh, bvnc'
-    - 'libevent: libevent bindings'
-    - 'nss-mdns: NSS support for mDNS'
-    - 'python-dbus: avahi-bookmarks, avahi-discover'
-    - 'python-gobject: avahi-bookmarks, avahi-discover'
-    - 'python-twisted: avahi-bookmarks'
-  provides:
-    - libavahi-client.so
-    - libavahi-common.so
-    - libavahi-core.so
-    - libavahi-glib.so
-    - libavahi-gobject.so
-    - libavahi-libevent.so
-    - libavahi-ui-gtk3.so
-    - libdns_sd.so
-  backup:
-    - etc/avahi/hosts
-    - etc/avahi/avahi-daemon.conf
-    - etc/avahi/avahi-autoipd.action
-    - etc/avahi/avahi-dnsconfd.action
-    - usr/lib/avahi/service-types.db
   source:
     - git+https://github.com/avahi/avahi#tag=v0.9-rc5
     - 0001-HACK-Install-fixes.patch
@@ -71,4 +49,45 @@ pkgname:
       - libcap
       - libdaemon
       - libdbus-1.so
-# generated with artixpkg 0.39.1-1-any
+    optdepends:
+      - 'avahi-bookmarks: avahi-bookmarks'
+      - 'avahi-gtk: avahi-discover, avahi-discover-standalone, bshell, bssh, bvnc'
+      - 'nss-mdns: NSS support for mDNS'
+      - 'python-dbus: Python bindings'
+    provides:
+      - libavahi-client.so
+      - libavahi-common.so
+      - libavahi-core.so
+      - libavahi-glib.so
+      - libavahi-gobject.so
+      - libdns_sd.so
+    backup:
+      - etc/avahi/hosts
+      - etc/avahi/avahi-daemon.conf
+      - etc/avahi/avahi-autoipd.action
+      - etc/avahi/avahi-dnsconfd.action
+      - usr/lib/avahi/service-types.db
+  - name: avahi-bookmarks
+    pkgdesc: Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour) - web page of Zeroconf-announced HTTP/FTP services
+    depends:
+      - avahi=1:0.9rc5-2
+      - glib2
+      - python
+      - python-dbus
+      - python-gobject
+    optdepends:
+      - 'python-twisted: built-in web server (default mode, not -c)'
+  - name: avahi-gtk
+    pkgdesc: Service Discovery for Linux using mDNS/DNS-SD (compatible with Bonjour) - GTK tools and UI library
+    depends:
+      - avahi=1:0.9rc5-2
+      - gdbm
+      - glib2
+      - glibc
+      - gtk3
+      - python
+      - python-dbus
+      - python-gobject
+    provides:
+      - libavahi-ui-gtk3.so
+# generated with artixpkg 0.40.0-1-any
