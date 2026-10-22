@@ -1,9 +1,9 @@
 ---
-version: 6.8.0-1
+version: 6.8.1-1
 pkgbase:
   name: plasma-sdk
   pkgdesc: Applications useful for Plasma development
-  pkgver: 6.8.0
+  pkgver: 6.8.1
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -44,15 +44,15 @@ pkgbase:
     - qt6-declarative
     - sh
   source:
-    - https://download.kde.org/stable/plasma/6.8.0/plasma-sdk-6.8.0.tar.xz
-    - https://download.kde.org/stable/plasma/6.8.0/plasma-sdk-6.8.0.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.1/plasma-sdk-6.8.1.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.1/plasma-sdk-6.8.1.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - dc8aa0997aa18d4d7c8a714a33a6e4ccfa841c6622c05114a07e3f9d94cecef5
+    - 52f0aaff4b36c7800302fc58e8c1671c88456bcc944b3ab657004e2ca304b895
     - SKIP
 pkgname:
   - name: plasma-sdk
