@@ -1,14 +1,14 @@
 ---
-version: 2.7.1-1
+version: 2.7.2-2
 pkgbase:
   name: openldap
-  pkgver: 2.7.1
-  pkgrel: 1
+  pkgver: 2.7.2
+  pkgrel: 2
   url: https://www.openldap.org/
   arch:
     - x86_64
   license:
-    - custom
+    - OLDAP-2.8
   makedepends:
     - libtool
     - libsasl
@@ -21,14 +21,14 @@ pkgbase:
     - emptydirs
     - '!lto'
   source:
-    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.1.tgz
-    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.1.tgz.asc
+    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.2.tgz
+    - https://www.openldap.org/software/download/OpenLDAP/openldap-release/openldap-2.7.2.tgz.asc
     - openldap.tmpfiles
     - openldap.sysusers
   validpgpkeys:
     - 3CE269B5398BC8B785645E987F67D5FD1CE1CBCE
   sha256sums:
-    - 253db80f301258ea69cda1184766d57395b836aaabf41157eb0316eb0fac1341
+    - aad731aa22118ff327b9b4ddfc4b6f18ef9476586205da88a532e90940b523d2
     - SKIP
     - 0be46138e53ff2fa6d4b4c06bfbdd2100426e0bd2ed29bf3419ade6b5974e9a0
     - e4af9009982808d04fd10bd5d9559cec193efc7a05c6807367473da33392edab
@@ -36,18 +36,31 @@ pkgname:
   - name: openldap
     pkgdesc: Lightweight Directory Access Protocol (LDAP) client and server
     depends:
-      - libldap>=2.7.1
-      - libtool
-      - unixodbc
-      - perl
+      - glibc
+      - libldap>=2.7.2
+      - libxcrypt
+      - libcrypt.so
+      - libsasl
+      - libsasl2.so
       - libsodium
+      - libtool
+      - openssl
+      - libcrypto.so
+      - perl
+      - unixodbc
+      - util-linux-libs
+      - libuuid.so
     backup:
       - etc/openldap/slapd.conf
       - etc/openldap/slapd.ldif
   - name: libldap
     pkgdesc: Lightweight Directory Access Protocol (LDAP) client libraries
     depends:
+      - glibc
       - libsasl
+      - libsasl2.so
+      - openssl
+      - libcrypto.so
     backup:
       - etc/openldap/ldap.conf
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any

@@ -3,18 +3,18 @@
 
 pkgbase=openldap
 pkgname=('openldap' 'libldap')
-pkgver=2.7.1
-pkgrel=1
+pkgver=2.7.2
+pkgrel=2
 arch=('x86_64')
 url="https://www.openldap.org/"
-license=('custom')
+license=('OLDAP-2.8')
 makedepends=('libtool' 'libsasl' 'util-linux' 'chrpath' 'unixodbc' 'libsodium')
 options=('!makeflags' 'emptydirs' '!lto')
 source=(
   https://www.openldap.org/software/download/OpenLDAP/openldap-release/${pkgbase}-${pkgver}.tgz{,.asc}
   openldap.tmpfiles
   openldap.sysusers)
-sha256sums=('253db80f301258ea69cda1184766d57395b836aaabf41157eb0316eb0fac1341'
+sha256sums=('aad731aa22118ff327b9b4ddfc4b6f18ef9476586205da88a532e90940b523d2'
             'SKIP'
             '0be46138e53ff2fa6d4b4c06bfbdd2100426e0bd2ed29bf3419ade6b5974e9a0'
             'e4af9009982808d04fd10bd5d9559cec193efc7a05c6807367473da33392edab')
@@ -25,7 +25,10 @@ _extra_modules=(
   'nssov'
   'autogroup'
   'lastbind'
+  'lastmod'
   'passwd/sha2'
+  'passwd/pbkdf2'
+  'passwd/totp'
   'allowed'
   'noopsrch'
 )
@@ -89,7 +92,11 @@ check() {
 
 package_libldap() {
   pkgdesc="Lightweight Directory Access Protocol (LDAP) client libraries"
-  depends=('libsasl')
+  depends=(
+  'glibc'
+  'libsasl' 'libsasl2.so'
+  'openssl' 'libcrypto.so'
+)
   backup=('etc/openldap/ldap.conf')
 
   cd ${pkgbase}-${pkgver}
@@ -113,7 +120,18 @@ package_libldap() {
 
 package_openldap() {
   pkgdesc="Lightweight Directory Access Protocol (LDAP) client and server"
-  depends=("libldap>=${pkgver}" 'libtool' 'unixodbc' 'perl' 'libsodium')
+  depends=(
+    'glibc'
+    "libldap>=${pkgver}"
+    'libxcrypt' 'libcrypt.so'
+    'libsasl' 'libsasl2.so'
+    'libsodium'
+    'libtool'
+    'openssl' 'libcrypto.so'
+    'perl'
+    'unixodbc'
+    'util-linux-libs' 'libuuid.so'
+  )
   backup=('etc/openldap/slapd.conf' 'etc/openldap/slapd.ldif')
 
   cd ${pkgbase}-${pkgver}
