@@ -1,9 +1,9 @@
 ---
-version: 2026.0-2.1
+version: 2026.0-4
 pkgbase:
   name: texlive-bin
   pkgver: 2026.0
-  pkgrel: 2.1
+  pkgrel: 4
   url: https://tug.org/texlive/
   arch:
     - x86_64
@@ -75,10 +75,6 @@ pkgname:
       - libsynctex
       - libunistring
       - libx11
-      - libxaw
-      - libxmu
-      - libxpm
-      - libxt
       - mpfr
       - ncurses
       - perl
@@ -88,6 +84,10 @@ pkgname:
       - zlib
       - zziplib
     optdepends:
+      - 'libxaw: for XDvi'
+      - 'libxmu: fir XDvi'
+      - 'libxpm: fir XDvi'
+      - 'libxt: for XDvi'
       - 'psutils: to manipulate the output of dvips'
     provides:
       - lcdf-typetools
@@ -103,4 +103,4 @@ pkgname:
       - zlib
     provides:
       - libsynctex.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
