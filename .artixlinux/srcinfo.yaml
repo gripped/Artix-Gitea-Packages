@@ -1,10 +1,10 @@
 ---
-version: 5.52.0-2.1
+version: 5.53.0-1
 pkgbase:
   name: v2ray
   pkgdesc: A platform for building proxies to bypass network restrictions
-  pkgver: 5.52.0
-  pkgrel: 2.1
+  pkgver: 5.53.0
+  pkgrel: 1
   url: https://github.com/v2fly/v2ray-core
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
   backup:
     - etc/v2ray/config.json
   source:
-    - git+https://github.com/v2fly/v2ray-core.git#tag=v5.52.0
+    - git+https://github.com/v2fly/v2ray-core.git#tag=v5.53.0
   sha512sums:
-    - dd145d4556e16e557541e3726a57f903362a68ba8753bc16be3190e1bd0cb5711876a5b089cd700e7ec68f87072860d9a21dfa14802a1fc9188017b485fd743e
+    - c3c1903a60f6911ab4d0e40080fd1592e306497b097759ce848d52c8e7d3a3cb1e1a8d962201826fb39ae9ba349c8d03477179aae4c91ca37033a27a82d80a5a
 pkgname:
   - name: v2ray
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
