@@ -1,9 +1,9 @@
 ---
-version: 2.0.0-1
+version: 2.1.0-1
 pkgbase:
   name: avogadrolibs
   pkgdesc: Libraries that provide 3D rendering, visualization, analysis and data processing useful in computational chemistry, molecular modeling, bioinformatics, materials science, and related areas
-  pkgver: 2.0.0
+  pkgver: 2.1.0
   pkgrel: 1
   url: https://two.avogadro.cc/
   arch:
@@ -33,9 +33,9 @@ pkgbase:
     - tbb
     - utf8cpp
   source:
-    - git+https://github.com/OpenChemistry/avogadrolibs#tag=2.0.0
+    - git+https://github.com/OpenChemistry/avogadrolibs#tag=2.1.0
   sha256sums:
-    - 5228c4e6b4eef0ffbcff4d974e5737d67f9e03c38f044b9ec5a2d049232124ce
+    - 6dd220e6d803d0c55e7b4ed4342864ce4a6860f8983cdda715fab9d9465c538a
 pkgname:
   - name: avogadrolibs
     depends:
@@ -69,4 +69,4 @@ pkgname:
       - qt6-svg
     conflicts:
       - avogadrolibs-qt5
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
