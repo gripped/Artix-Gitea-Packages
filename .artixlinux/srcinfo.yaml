@@ -1,10 +1,10 @@
 ---
-version: 1:46.1-1
+version: 1:46.1-2
 pkgbase:
   name: rygel
   pkgdesc: UPnP AV MediaServer and MediaRenderer
   pkgver: 46.1
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://gitlab.gnome.org/GNOME/rygel
   arch:
