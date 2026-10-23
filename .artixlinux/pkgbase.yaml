@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 8.31.0-2
+    version: 8.32.0-1
     packages:
-      - signal-desktop-8.31.0-2-x86_64.pkg.tar.zst
+      - signal-desktop-8.32.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
