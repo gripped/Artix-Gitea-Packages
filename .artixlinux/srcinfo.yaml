@@ -1,8 +1,8 @@
 ---
-version: 8.0.31.sdk131-1
+version: 8.0.32.sdk132-1
 pkgbase:
   name: dotnet-core-8.0
-  pkgver: 8.0.31.sdk131
+  pkgver: 8.0.32.sdk132
   pkgrel: 1
   url: https://dotnet.microsoft.com
   arch:
@@ -35,9 +35,9 @@ pkgbase:
     - '!lto'
     - staticlibs
   source:
-    - git+https://github.com/dotnet/dotnet.git#tag=v8.0.131
+    - git+https://github.com/dotnet/dotnet.git#tag=v8.0.132
   b2sums:
-    - e0345a02ef5c4d8489b7e845727ab33870c8654139f6311031590f9dac2b1cb9b128cb1dfe415dd05b2069f93f5eeb1203801db83cd12ece1852b7945506bc14
+    - f58850e5db92184889e9917609e4d4c4ba6ba0dfb4dfeeb3324f0a8af69ada68b9d4b9febc4bfc0b90b4d06f1001a806ecf6266eaa50aed5c8ab27f705e219a7
 pkgname:
   - name: dotnet-runtime-8.0
     pkgdesc: The .NET Core runtime
@@ -90,4 +90,4 @@ pkgname:
     pkgdesc: Internal package for building the .NET Core SDK
     provides:
       - dotnet-source-built-artifacts=8.0
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
