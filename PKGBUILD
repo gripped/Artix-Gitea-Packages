@@ -62,7 +62,7 @@ source=(
   freedesktop-jconsole.desktop
   freedesktop-jshell.desktop
 )
-sha256sums=('abdbc5b389483d94aba6c3dbd5b5fb41773934079c5222f83c245a8d6f318d80'
+sha256sums=('2f39e68293e3fd3aad04fb0c5aebc0ee8737e82b348f520bd95ebae00f2142e9'
             'b86c1585ecd1ad90f70088a42ff95e9b7a2089d78db1f41233058f57d2ed0d62'
             '13e1223e633440f185720371282e58befc289faa156d4a7233f8c19102311ef5'
             '5673ab7e4d30678d71e513331c6cb03c1972210ba098f25e507974d4cb7ec4e4')
