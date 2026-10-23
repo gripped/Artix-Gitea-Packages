@@ -1,20 +1,21 @@
 ---
-version: 0.6.1-3
+version: 0.6.1-4
 pkgbase:
   name: zita-alsa-pcmi
   pkgdesc: The successor of clalsadrv, provides easy access to ALSA PCM devices.
   pkgver: 0.6.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://kokkinizita.linuxaudio.org/linuxaudio/
   arch:
     - x86_64
   license:
-    - GPL3
+    - GPL-3.0-or-later
   makedepends:
     - alsa-lib
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
+    - libstdc++
   provides:
     - libzita-alsa-pcmi.so
   source:
@@ -32,7 +33,8 @@ pkgbase:
 pkgname:
   - name: zita-alsa-pcmi
     depends:
-      - gcc-libs
       - glibc
+      - libgcc
+      - libstdc++
       - libasound.so
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.40.0-1-any

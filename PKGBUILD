@@ -3,12 +3,16 @@
 
 pkgname=zita-alsa-pcmi
 pkgver=0.6.1
-pkgrel=3
+pkgrel=4
 pkgdesc="The successor of clalsadrv, provides easy access to ALSA PCM devices."
 arch=(x86_64)
 url="https://kokkinizita.linuxaudio.org/linuxaudio/"
-license=(GPL3)
-depends=(gcc-libs glibc)
+license=(GPL-3.0-or-later)
+depends=(
+  glibc
+  libgcc
+  libstdc++
+)
 makedepends=(alsa-lib)
 provides=(libzita-alsa-pcmi.so)
 source=(
