@@ -1,10 +1,10 @@
 ---
-version: 2.5.0-1
+version: 2.5.0-2
 pkgbase:
   name: libffado
   pkgdesc: Driver for FireWire audio devices
   pkgver: 2.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.ffado.org/
   arch:
     - x86_64
@@ -19,12 +19,13 @@ pkgbase:
     - python-setuptools
     - scons
   depends:
-    - gcc-libs
     - glibc
     - glibmm
     - hicolor-icon-theme
     - libiec61883
+    - libgcc
     - libraw1394
+    - libstdc++
     - libxml++
     - python-dbus
   optdepends:
@@ -40,12 +41,13 @@ pkgbase:
 pkgname:
   - name: libffado
     depends:
-      - gcc-libs
       - glibc
       - glibmm
       - hicolor-icon-theme
       - libiec61883
+      - libgcc
       - libraw1394
+      - libstdc++
       - libxml++
       - python-dbus
       - alsa-lib
@@ -54,4 +56,4 @@ pkgname:
       - libdbus-c++-1.so
       - libconfig
       - libconfig++.so
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
