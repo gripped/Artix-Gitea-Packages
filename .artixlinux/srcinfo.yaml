@@ -1,10 +1,10 @@
 ---
-version: 4.0.3-5
+version: 4.0.3-6
 pkgbase:
   name: zita-convolver
   pkgdesc: A fast, partitioned convolution engine library.
   pkgver: 4.0.3
-  pkgrel: 5
+  pkgrel: 6
   url: https://kokkinizita.linuxaudio.org/linuxaudio/
   arch:
     - x86_64
@@ -12,9 +12,9 @@ pkgbase:
     - GPL-3.0-or-later
   depends:
     - fftw
+    - glibc
     - libgcc
     - libstdc++
-    - glibc
   provides:
     - libzita-convolver.so
   source:
@@ -25,4 +25,4 @@ pkgbase:
     - 3bd77cbc46d93c2200329451634dc48b94183aaa17034aa4b3dd03c33ad7982e9bed85e164f5c0e34666a1a6443199afe24222d41477368c4b366335e9767b91
 pkgname:
   - name: zita-convolver
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
