@@ -1,9 +1,9 @@
 ---
-version: 5.3.2-1
+version: 5.3.3-1
 pkgbase:
   name: unordered_dense
   pkgdesc: A fast and densely stored hashmap and hashset
-  pkgver: 5.3.2
+  pkgver: 5.3.3
   pkgrel: 1
   url: https://github.com/martinus/unordered_dense
   arch:
@@ -14,9 +14,9 @@ pkgbase:
     - cmake
     - git
   source:
-    - git+https://github.com/martinus/unordered_dense.git#tag=v5.3.2
+    - git+https://github.com/martinus/unordered_dense.git#tag=v5.3.3
   sha256sums:
-    - ab107b6a90cb699afac0abfe2cf275ba345534f9b8c83fd9bca40589ff6b82ba
+    - 9741985e32ef149abf5a6d318a2c1bb5318dbd9b6ac6e43ccc12a663259c73c3
 pkgname:
   - name: unordered_dense
 # generated with artixpkg 0.40.0-1-any
