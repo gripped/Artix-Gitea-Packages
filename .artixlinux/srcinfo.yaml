@@ -1,0 +1,29 @@
+---
+version: 2.5.0-1
+pkgbase:
+  name: ruby-connection_pool
+  pkgdesc: Generic connection pool for Ruby
+  pkgver: 2.5.0
+  pkgrel: 1
+  url: https://github.com/mperham/connection_pool
+  arch:
+    - any
+  license:
+    - MIT
+  checkdepends:
+    - ruby-bundler
+  makedepends:
+    - git
+    - ruby-minitest
+    - ruby-rake
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/mperham/connection_pool.git#tag=v2.5.0
+  sha256sums:
+    - af57e90f51f874f965c220067b299df94ec2c4d9807f836e8bc2bbcdacac9885
+pkgname:
+  - name: ruby-connection_pool
+# generated with artixpkg 0.40.0-1-any
