@@ -1,9 +1,9 @@
 ---
-version: 9.31-10
+version: 9.31-11
 pkgbase:
   name: rxvt-unicode
   pkgver: 9.31
-  pkgrel: 10
+  pkgrel: 11
   url: https://software.schmorp.de/pkg/rxvt-unicode.html
   arch:
     - x86_64
@@ -60,4 +60,4 @@ pkgname:
       - libxmu
   - name: rxvt-unicode-terminfo
     pkgdesc: Terminfo files for urxvt
-# generated with artixpkg 0.40.0.aur-1-any
+# generated with artixpkg 0.40.0-1-any
