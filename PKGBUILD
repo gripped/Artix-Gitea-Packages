@@ -4,7 +4,7 @@
 
 pkgname=rocsparse
 pkgver=10.0
-pkgrel=1
+pkgrel=2
 pkgdesc='BLAS for sparse computation on top of ROCm'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocSPARSE/en/latest/index.html'

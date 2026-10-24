@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 10.0-1
+    version: 10.0-2
     packages:
-      - rocsparse-10.0-1-x86_64.pkg.tar.zst
+      - rocsparse-10.0-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
