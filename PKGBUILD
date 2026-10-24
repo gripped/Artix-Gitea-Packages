@@ -4,7 +4,7 @@
 pkgbase=marisa
 pkgname=('marisa' 'perl-marisa' 'python-marisa' 'ruby-marisa')
 pkgver=0.3.1
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url="https://github.com/s-yata/marisa-trie"
 license=('BSD-2-Clause OR LGPL-2.1-or-later')
@@ -66,7 +66,10 @@ check() {
 
 package_marisa() {
   pkgdesc="Static and space-efficient trie data structure library"
-  depends=('gcc-libs')
+  depends=(
+    'libgcc'
+    'libstdc++'
+  )
 
   cd marisa-trie
   DESTDIR="$pkgdir" cmake --install build
