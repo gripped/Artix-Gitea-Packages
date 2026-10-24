@@ -1,12 +1,12 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -51,12 +51,11 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 154.0.34-2
     packages:
       - cef-154.0.34-2-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 152.0.6-1
-    packages:
-      - cef-152.0.6-1-x86_64.pkg.tar.zst
     debug: []
