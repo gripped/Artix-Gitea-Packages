@@ -3,7 +3,7 @@
 # Contributor: Markus Näther <naether.markus@gmail.com>
 
 pkgname=hipblas
-pkgver=7.2.4
+pkgver=10.0
 pkgrel=1
 pkgdesc='ROCm BLAS marshalling library'
 arch=('x86_64')
@@ -18,18 +18,17 @@ depends=(
     'rocm-core'
     'rocsolver'
 )
-makedepends=('rocm-cmake' 'git' 'cmake' 'gcc-fortran')
+makedepends=('rocm-cmake' 'git' 'cmake' 'gcc-fortran' 'python')
 _git='https://github.com/ROCm/rocm-libraries'
-source=("rocm-libraries::git+$_git.git#tag=rocm-$pkgver")
-sha256sums=('b476acbcd0f4017c800e4b05533e6dfb875bde32242729c8df557d4624379623')
-_dirname="rocm-libraries/projects/$pkgname"
+source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
+sha256sums=('7faf6074692a52e9e86255a5b88279f3b7982ca8381a9ac4f63539976c388e9f')
 
 build() {
   # -fcf-protection is not supported by HIP, see
   # https://rocm.docs.amd.com/projects/llvm-project/en/latest/reference/rocmcc.html#support-status-of-other-clang-options
   local cmake_args=(
     -Wno-dev
-    -S "$_dirname"
+    -S "$pkgname"
     -B build
     -D CMAKE_BUILD_TYPE=None
     -D CMAKE_CXX_COMPILER=/opt/rocm/bin/hipcc
@@ -42,5 +41,5 @@ build() {
 package() {
   DESTDIR="$pkgdir" cmake --install build
 
-  install -Dm644 "$_dirname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm644 "$pkgname/LICENSE.md" "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
