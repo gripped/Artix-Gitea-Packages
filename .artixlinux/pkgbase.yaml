@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -9,8 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: null
-    packages: []
+    version: 2.5.4-3
+    packages:
+      - ppp-2.5.4-3-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: 2.5.4-2
