@@ -1,9 +1,9 @@
 ---
-version: 20260927.201651.g4d23cf151640-1
+version: 20261023.115053.g3aac3f052f73-1
 pkgbase:
   name: libretro-dolphin
   pkgdesc: Nintendo GC/Wii core
-  pkgver: 20260927.201651.g4d23cf151640
+  pkgver: 20261023.115053.g3aac3f052f73
   pkgrel: 1
   url: https://github.com/libretro/dolphin
   arch:
@@ -44,7 +44,7 @@ pkgbase:
     - zlib-ng
     - zstd
   source:
-    - libretro-dolphin::git+https://github.com/libretro/dolphin.git#commit=4d23cf151640
+    - libretro-dolphin::git+https://github.com/libretro/dolphin.git#commit=3aac3f052f73
     - git+https://github.com/mutouyun/cpp-ipc.git
     - git+https://github.com/weisslj/cpp-optparse.git
     - git+https://github.com/fmtlib/fmt.git
@@ -56,7 +56,7 @@ pkgbase:
     - git+https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git
     - git+https://github.com/e-dant/watcher.git
   b2sums:
-    - 83cde78d15a42d3af55794404473c4984e28fb1606111b9418bf9c72355b5e9281bea30d24e30674d70f884870d612fd4bfc3debcc697a1ad7c22f091d36b0a9
+    - a3a550688bec914838d43bc0c5357aa48f455835bbf3572fe8ac83a0e1bcc634c0c1422be27e2fbeaae4fbc13a45149259ab2de77c4e65e4edeb2f7b083f5717
     - SKIP
     - SKIP
     - SKIP
