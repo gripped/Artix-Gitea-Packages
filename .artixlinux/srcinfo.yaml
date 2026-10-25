@@ -1,9 +1,9 @@
 ---
-version: 3.15.0-1
+version: 3.15.1-1
 pkgbase:
   name: prometheus
   pkgdesc: An open-source systems monitoring and alerting toolkit
-  pkgver: 3.15.0
+  pkgver: 3.15.1
   pkgrel: 1
   url: https://prometheus.io
   arch:
@@ -25,11 +25,11 @@ pkgbase:
   backup:
     - etc/prometheus/prometheus.yml
   source:
-    - prometheus-v3.15.0.tar.gz::https://github.com/prometheus/prometheus/archive/v3.15.0.tar.gz
+    - prometheus-v3.15.1.tar.gz::https://github.com/prometheus/prometheus/archive/v3.15.1.tar.gz
     - prometheus.sysusers
   sha256sums:
-    - d6383dea2f9b26c1673a52859c453653f2c6c046f7fb6d01db59603a65a732eb
+    - dc204963713b5fce7aca92292bc3bf69482b088f9d7a6761e60525750c1ddfd2
     - 0d995040e441e07bae7517d852fdc1bce2e1f3ae9ae206a1e1e127563e122015
 pkgname:
   - name: prometheus
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
