@@ -9,7 +9,7 @@ pkgname=(
   dbus-docs
 )
 pkgver=1.16.2
-pkgrel=1.1
+pkgrel=2
 pkgdesc="Freedesktop.org message bus system"
 url="https://www.freedesktop.org/wiki/Software/dbus/"
 arch=(x86_64)
@@ -20,6 +20,7 @@ depends=(
   glibc
   libcap-ng
   libelogind
+  libx11
 )
 makedepends=(
   docbook-xsl
@@ -37,9 +38,10 @@ makedepends=(
 source=(
   "git+https://gitlab.freedesktop.org/dbus/dbus.git?signed#tag=dbus-$pkgver"
   0001-Arch-Linux-tweaks.patch
-  0001-add-elogind-build-support.patch)
+  0001-add-elogind-build-support.patch
+)
 b2sums=('669cd4203fbac908db3a20c5b51355d9e84b68c9cc94f8de52e35544a636c6d5d1df8ee2bbdfd6dead53a6bd9865db547aa4af0e913bac697b138c698840d3ce'
-        '3896c994aa7afde605aebb88b7123f33c578ad1ede2dc3e76982dbc021d6994874c5c735d31a66c7b3e9d3cba77ebbba7db05013716bbac14948618b1464e4a8'
+        'fbbc5f312864d2c0e61cead42f578cf650ee8a103e9f6e21658d7406e00a9dfb2c70bc4db647f51eb959df1dad7e94ba52af078325c6a18dcd9d0d500fe15fac'
         '8f0c130708f99c5afc2e7722c777334304075017249a98c1e6a309433b87a15ebb80151e3d0c019a150aea8ac20ab40b8d540bfe22036108e7e90f412d9739f9')
 validpgpkeys=(
   DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90  # Simon McVittie <simon.mcvittie@collabora.co.uk>
@@ -47,8 +49,12 @@ validpgpkeys=(
 
 prepare() {
   cd dbus
-  patch -Np1 -i ../0001-Arch-Linux-tweaks.patch
-  patch -Np1 -i ../0001-add-elogind-build-support.patch
+
+  # Lock user account
+  git cherry-pick -n 2cb5882dda27341011a034feb6d1d2b5a7c61a3a
+
+  git apply -3 ../0001-Arch-Linux-tweaks.patch
+  git apply -3 ../0001-add-elogind-build-support.patch
 }
 
 build() {
@@ -101,11 +107,9 @@ package_dbus() {
 
   _pick docs "$pkgdir"/usr/share/doc
 
-
   install -Dt "$pkgdir/usr/share/licenses/$pkgname" -m644 \
     dbus/COPYING dbus/LICENSES/AFL-2.1.txt
 }
-
 
 package_dbus-docs() {
   pkgdesc+=" - Documentation"
