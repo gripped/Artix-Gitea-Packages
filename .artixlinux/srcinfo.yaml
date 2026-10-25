@@ -1,10 +1,10 @@
 ---
-version: 1.9.5-10
+version: 1.9.5-11
 pkgbase:
   name: encfs
   pkgdesc: Encrypted filesystem in user-space
   pkgver: 1.9.5
-  pkgrel: 10
+  pkgrel: 11
   url: https://vgough.github.io/encfs/
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: encfs
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
