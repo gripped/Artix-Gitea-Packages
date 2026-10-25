@@ -1,10 +1,10 @@
 ---
-version: 1.25.0-1
+version: 1.25.0-2
 pkgbase:
   name: libngtcp2
   pkgdesc: Implementation of IETF QUIC protocol
   pkgver: 1.25.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ngtcp2/ngtcp2
   arch:
     - x86_64
@@ -38,4 +38,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: libngtcp2
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
