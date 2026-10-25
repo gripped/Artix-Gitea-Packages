@@ -3,7 +3,7 @@
 # Contributor: Otreblan <otreblain@gmail.com>
 
 pkgname=draco
-pkgver=1.5.8
+pkgver=1.5.9
 pkgrel=1
 pkgdesc="A library for compressing and decompressing 3D geometric meshes and point clouds"
 arch=('x86_64')
@@ -13,7 +13,7 @@ makedepends=('cmake' 'ninja')
 depends=('glibc' 'libgcc' 'libstdc++')
 options=('staticlibs')
 source=("$pkgname-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz")
-sha256sums=('d42d730526c8dd0ed2ac0b3edc6495bda4bc78298031ad5cb4dc94a8bdd93f94')
+sha256sums=('5b84e0e212ccc7b03ace681760a65a66fe2481a5f54df65154cfc8f0cbb87148')
 
 build() {
     cd "$srcdir/$pkgname-$pkgver"
