@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 4.1.0-1
+    version: 4.1.0-0.1
     packages:
-      - openssl-4.1.0-1-x86_64.pkg.tar.zst
+      - openssl-4.1.0-0.1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
