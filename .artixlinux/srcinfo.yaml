@@ -1,10 +1,10 @@
 ---
-version: 4.1.0-0.1
+version: 4.1.0-1
 pkgbase:
   name: openssl
   pkgdesc: The Open Source toolkit for cryptography and Transport Layer Security
   pkgver: 4.1.0
-  pkgrel: 0.1
+  pkgrel: 1
   url: https://www.openssl.org
   arch:
     - x86_64
@@ -40,10 +40,4 @@ pkgbase:
     - 0a32d9ca68e8d985ce0bfef6a4c20b46675e06178cc2d0bf6d91bd6865d648b7
 pkgname:
   - name: openssl
-    depends:
-      - brotli
-      - glibc
-      - zlib
-      - zstd
-      - openssl-3
 # generated with artixpkg 0.40.0-1-any

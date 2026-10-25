@@ -2,7 +2,7 @@
 
 pkgname=openssl
 pkgver=4.1.0
-pkgrel=0.1
+pkgrel=1
 pkgdesc='The Open Source toolkit for cryptography and Transport Layer Security'
 arch=('x86_64')
 url='https://www.openssl.org'
@@ -67,7 +67,6 @@ check() {
 }
 
 package() {
-	depends+=(openssl-3)
 	cd "$srcdir/$pkgname-$pkgver"
 
 	make DESTDIR="$pkgdir" MANDIR=/usr/share/man MANSUFFIX=ssl install_sw install_ssldirs install_man_docs

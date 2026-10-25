@@ -2,16 +2,16 @@
 actions:
   addRepo: system-goblins
   removeRepo: null
-  triggersBuild: false
-  triggersRebuild: true
+  triggersBuild: true
+  triggersRebuild: false
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 4.1.0-0.1
+    version: 4.1.0-1
     packages:
-      - openssl-4.1.0-0.1-x86_64.pkg.tar.zst
+      - openssl-4.1.0-1-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: null
