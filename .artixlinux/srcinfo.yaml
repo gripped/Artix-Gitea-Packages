@@ -1,9 +1,9 @@
 ---
-version: 20260930.000807.g0bd516ee793b-1
+version: 20261023.101947.ga467ddaf904c-1
 pkgbase:
   name: libretro-parallel-n64
   pkgdesc: Nintendo 64 core
-  pkgver: 20260930.000807.g0bd516ee793b
+  pkgver: 20261023.101947.ga467ddaf904c
   pkgrel: 1
   url: https://github.com/libretro/parallel-n64
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - libretro-parallel-n64::git+https://github.com/libretro/parallel-n64.git#commit=0bd516ee793b
+    - libretro-parallel-n64::git+https://github.com/libretro/parallel-n64.git#commit=a467ddaf904c
   b2sums:
-    - 5a58170213a6844f2ef603f69e209aef772155d4c1c8cc224eced6d945e7a7b7aa60db60903b78aeeaa92a7af4b30d153841990faf0ef19e104277547f880653
+    - fe44ece7c2c15139ff655efc1b8aa134bbf8ded78a46fc7ed45dde1a4037c040c06172dce4fae96538879dcdcc6a2bc8408fa2e1992895df34900bda13f61599
 pkgname:
   - name: libretro-parallel-n64
 # generated with artixpkg 0.40.0-1-any
