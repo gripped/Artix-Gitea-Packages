@@ -3,7 +3,7 @@
 
 pkgname=libfido2
 pkgver=1.17.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Library functionality for FIDO 2.0, including communication with a device over USB'
 url='https://developers.yubico.com/libfido2/'
 arch=('x86_64')
@@ -33,6 +33,10 @@ build() {
     -Wno-dev \
     -S .
   make -C build VERBOSE=1
+}
+
+check() {
+  make -C ${pkgname}-${pkgver}/build test
 }
 
 package() {
