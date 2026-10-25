@@ -1,9 +1,9 @@
 ---
-version: 20260821.105908.gd9d6cd06382d-1
+version: 20261023.110651.g7809bb68ee96-1
 pkgbase:
   name: libretro-gambatte
   pkgdesc: Nintendo Game Boy/Game Boy Color core
-  pkgver: 20260821.105908.gd9d6cd06382d
+  pkgver: 20261023.110651.g7809bb68ee96
   pkgrel: 1
   url: https://github.com/libretro/gambatte-libretro
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - libretro-core-info
     - libstdc++
   source:
-    - libretro-gambatte::git+https://github.com/libretro/gambatte-libretro.git#commit=d9d6cd06382d
+    - libretro-gambatte::git+https://github.com/libretro/gambatte-libretro.git#commit=7809bb68ee96
   sha256sums:
-    - 06805d8737c7dadff3d043828160a41b159597e7f9878e6d8565129a6dbd2c01
+    - 86e844fce731bd8d86ab646eedd800406ae8b0964228136186917b7462fe49e5
 pkgname:
   - name: libretro-gambatte
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
