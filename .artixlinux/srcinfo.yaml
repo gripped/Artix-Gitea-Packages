@@ -1,10 +1,10 @@
 ---
-version: 1.11.1-7
+version: 1.11.1-8
 pkgbase:
   name: libssh2
   pkgdesc: A library implementing the SSH2 protocol as defined by Internet Drafts
   pkgver: 1.11.1
-  pkgrel: 7
+  pkgrel: 8
   url: https://www.libssh2.org/
   arch:
     - x86_64
@@ -38,4 +38,4 @@ pkgbase:
     - 8f5fdf8e4b32a5252a648c99dc79cd15c8af2b6bea0eca29888056754d5b257a01a3b1928b0b34e460f4de19f3295182cf906acf73a88908867bcd2ffa91e9d9
 pkgname:
   - name: libssh2
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
