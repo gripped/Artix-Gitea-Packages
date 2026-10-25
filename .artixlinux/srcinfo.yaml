@@ -1,10 +1,10 @@
 ---
-version: 9.1.2-1
+version: 9.1.2-2
 pkgbase:
   name: valkey
   pkgdesc: An in-memory database that persists on disk
   pkgver: 9.1.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://valkey.io/
   install: valkey.install
   arch:
@@ -42,4 +42,4 @@ pkgbase:
     - c6972be1a89bb19d8bae4a92b6549dfb16f1779bd9e3d8f018d62fa388f52022adf347665080879745e5a9571db5461fd59d4383857031ecd74937f3d20566d4
 pkgname:
   - name: valkey
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any

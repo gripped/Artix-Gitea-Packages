@@ -7,7 +7,7 @@
 
 pkgname=valkey
 pkgver=9.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc='An in-memory database that persists on disk'
 arch=('x86_64')
 url='https://valkey.io/'
@@ -63,6 +63,9 @@ prepare() {
   # disable defrag test since defrag is currently disabled as long as the bundled jmalloc is not used
   sed -i '/defragtest.so/d' tests/modules/Makefile
   rm tests/unit/memefficiency.tcl
+
+  # don't make deprecation warnings errors
+  sed -e 's|-Werror=deprecated-declarations||' -i src/Makefile
 
   patch -Np1 < ../valkey.conf-sane-defaults.patch
   patch -Np1 < ../valkey-5.0-use-system-jemalloc.patch
