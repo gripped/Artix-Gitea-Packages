@@ -3,7 +3,7 @@
 
 pkgname=libarchive
 pkgver=3.8.10
-pkgrel=1
+pkgrel=2
 pkgdesc='Multi-format archive and compression library'
 arch=('x86_64')
 url='https://libarchive.org/'
@@ -29,12 +29,11 @@ source=("git+https://github.com/${pkgname}/${pkgname}.git?signed#tag=v${pkgver}"
 sha256sums=('85b5e4f75184468a4c4f043b2ec772e2d6715e89a6c9d3196f02e39dc1a977bb')
 
 _backports=(
+  # autotools: fix libxml2 linking
+  '572494547b6ab34fc624f9efda0b3b28fcf4a4cd'
 )
 
 _reverts=(
-  # Merge pull request #3545 from stoeckmann/xml_alternatives
-  # xar: Improve XML library detection
-  'fafe82e3502e8e75a6c4146ec977f77244787c6d'
 )
 
 prepare() {
