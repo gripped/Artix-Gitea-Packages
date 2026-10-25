@@ -1,10 +1,10 @@
 ---
-version: 2025.12.19-1
+version: 2025.12.19-2
 pkgbase:
   name: python-sphinx-furo
   pkgdesc: Clean customizable documentation theme for Sphinx
   pkgver: 2025.12.19
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pradyunsg/furo
   arch:
     - any
@@ -13,7 +13,7 @@ pkgbase:
   makedepends:
     - expac
     - git
-    - nodejs-lts-iron
+    - nodejs-lts-krypton
     - npm
     - python-build
     - python-flit-core
@@ -32,4 +32,4 @@ pkgbase:
     - 28c18231ed6802330dd824933e9ad70935344f79162a3af1b3d525808eb6be552e7695bccb49b0a8ec186fb376bfaa866cdad245bc565d3add84f8874baddeac
 pkgname:
   - name: python-sphinx-furo
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
