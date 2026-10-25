@@ -1,10 +1,10 @@
 ---
-version: 0.10.6-1
+version: 0.10.6-2
 pkgbase:
   name: podofo
   pkgdesc: A C++ library to work with the PDF file format
   pkgver: 0.10.6
-  pkgrel: 1
+  pkgrel: 2
   url: http://podofo.sourceforge.net
   arch:
     - x86_64
@@ -46,4 +46,4 @@ pkgname:
       - openssl
       - zlib
       - libpodofo.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
