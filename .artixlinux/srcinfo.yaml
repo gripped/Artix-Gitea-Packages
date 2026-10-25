@@ -1,10 +1,10 @@
 ---
-version: 1.5.7-2
+version: 1.5.8-1
 pkgbase:
   name: draco
   pkgdesc: A library for compressing and decompressing 3D geometric meshes and point clouds
-  pkgver: 1.5.7
-  pkgrel: 2
+  pkgver: 1.5.8
+  pkgrel: 1
   url: https://github.com/google/draco
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - staticlibs
   source:
-    - draco-1.5.7.tar.gz::https://github.com/google/draco/archive/1.5.7.tar.gz
+    - draco-1.5.8.tar.gz::https://github.com/google/draco/archive/1.5.8.tar.gz
   sha256sums:
-    - bf6b105b79223eab2b86795363dfe5e5356050006a96521477973aba8f036fe1
+    - d42d730526c8dd0ed2ac0b3edc6495bda4bc78298031ad5cb4dc94a8bdd93f94
 pkgname:
   - name: draco
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
