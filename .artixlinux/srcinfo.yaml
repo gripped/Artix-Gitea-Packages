@@ -1,9 +1,9 @@
 ---
-version: 5.0.1-1
+version: 5.1.0-1
 pkgbase:
   name: python-reportlab
   pkgdesc: A proven industry-strength PDF generating solution
-  pkgver: 5.0.1
+  pkgver: 5.1.0
   pkgrel: 1
   url: https://www.reportlab.com/
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - python-charset-normalizer
     - python-pillow
   source:
-    - https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-5.0.1.tar.gz
+    - https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-5.1.0.tar.gz
   sha256sums:
-    - ebd13154be1c8515e665de70bd2d303ae9ddc3ef47e44afd5116441ca0283a26
+    - 6878200464527e87672d19e9f7cfc6bb890e3a6931e74ac6a1a8d1754aa55671
 pkgname:
   - name: python-reportlab
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
