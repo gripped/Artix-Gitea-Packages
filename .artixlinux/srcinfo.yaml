@@ -1,10 +1,10 @@
 ---
-version: 0.10.26-1
+version: 0.10.26-2
 pkgbase:
   name: cargo-c
   pkgdesc: A cargo subcommand to build and install C-ABI compatible dynamic and static libraries
   pkgver: 0.10.26
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lu-zero/cargo-c/
   arch:
     - x86_64
