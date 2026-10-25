@@ -1,10 +1,10 @@
 ---
-version: 9.12-2
+version: 9.12-3
 pkgbase:
   name: coreutils
   pkgdesc: The basic file, shell and text manipulation utilities of the GNU operating system
   pkgver: 9.12
-  pkgrel: 2
+  pkgrel: 3
   url: https://www.gnu.org/software/coreutils/
   arch:
     - x86_64
