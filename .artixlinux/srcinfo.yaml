@@ -1,10 +1,10 @@
 ---
-version: 2:2.12-1
+version: 2:2.12-2
 pkgbase:
   name: wpa_supplicant
   pkgdesc: A utility providing key negotiation for WPA wireless networks
   pkgver: 2.12
-  pkgrel: 1
+  pkgrel: 2
   epoch: 2
   url: https://w1.fi/wpa_supplicant/
   arch:
@@ -49,4 +49,4 @@ pkgbase:
     - 72742bba49ea105419d510f64c3d728d672efa4a91612bfd7d22d5c46d98e0d496ae7713f971074442621f6e87d5623fa33675b6b329278422f50b3a4afdbf1b
 pkgname:
   - name: wpa_supplicant
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any

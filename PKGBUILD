@@ -5,7 +5,7 @@
 
 pkgname=wpa_supplicant
 pkgver=2.12
-pkgrel=1
+pkgrel=2
 epoch=2
 pkgdesc='A utility providing key negotiation for WPA wireless networks'
 url='https://w1.fi/wpa_supplicant/'
@@ -116,6 +116,7 @@ package() {
   install -Dm644 doc/docbook/*.5 -t "$pkgdir/usr/share/man/man5"
   install -Dm644 doc/docbook/*.8 -t "$pkgdir/usr/share/man/man8"
   rm "$pkgdir"/usr/share/man/man8/wpa_{priv,gui}.8
+
 
   install -Dm644 ../README "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
 }
