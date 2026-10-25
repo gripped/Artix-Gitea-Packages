@@ -1,9 +1,9 @@
 ---
-version: 7.1-1
+version: 7.3-1
 pkgbase:
   name: btrfs-progs
   pkgdesc: Btrfs filesystem utilities
-  pkgver: 7.1
+  pkgver: 7.3
   pkgrel: 1
   url: https://btrfs.readthedocs.io
   arch:
@@ -42,15 +42,15 @@ pkgbase:
   replaces:
     - btrfs-progs-unstable
   source:
-    - git+https://git.kernel.org/pub/scm/linux/kernel/git/kdave/btrfs-progs.git?signed#tag=v7.1
+    - git+https://git.kernel.org/pub/scm/linux/kernel/git/kdave/btrfs-progs.git?signed#tag=v7.3
     - initcpio-install-btrfs
     - initcpio-hook-btrfs
   validpgpkeys:
     - F2B41200C54EFB30380C1756C565D5F9D76D583B
   b2sums:
-    - 52e892f32a2d1895ea36b6c58f2107ad891e8fdc83898c4519c58daac3824e5ff4973551d8b082b47d461921dfa0d99dc866e8d1ea04b8bc108a039786f21292
+    - 81dedabe8333c428abf51d6209315b7f35819076679b586aa5766d97d997d5b0b7bb76a13325afa04b9971c95c0d6c33ccaa215ca7560e953f22f95ec2c87ee5
     - 75659665a24f92bba1175a2fcae942d9851495c9cff88570b88a98dced4eb98fcc9879de044bfc7d560dbe1c71a20d7ae51ca4b7c2649f90d646b414e0864b6e
     - 0d3c25d0cb6fdb8e8777723b5e199835fac25573bc8f7fcb248ccfeea7268752b7100dd2c8284529812f0b1d3943eceb5785f119959f89bffedcf30472a915db
 pkgname:
   - name: btrfs-progs
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
