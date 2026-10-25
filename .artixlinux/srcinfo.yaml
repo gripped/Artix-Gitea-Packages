@@ -1,9 +1,9 @@
 ---
-version: 7.1.2-1
+version: 7.1.3-1
 pkgbase:
   name: python-pbr
   pkgdesc: Python Build Reasonableness
-  pkgver: 7.1.2
+  pkgver: 7.1.3
   pkgrel: 1
   url: https://pypi.python.org/pypi/pbr
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   depends:
     - python-setuptools
   source:
-    - git+https://github.com/openstack-dev/pbr.git#tag=7.1.2
+    - git+https://github.com/openstack-dev/pbr.git#tag=7.1.3
   sha512sums:
-    - a6e7fec64c9435cb9638fe7c3f1c5885ed9f5c07f2332b12cfeb9fb57acfdeee25704e3a9f0950fce644e7be25050efb1d736a3d9b6aa037d580328bdb7d934d
+    - 875c9a36d7e81958db513d9979191a2b492da3d1dca6ef56ecadcd348dde1739995925ecd9fd10debfd7a071d1df0b089718319b004cf8859f3df2155462930b
 pkgname:
   - name: python-pbr
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
