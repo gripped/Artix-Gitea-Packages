@@ -1,10 +1,10 @@
 ---
-version: 5.0.4-3
+version: 5.0.4-4
 pkgbase:
   name: shairport-sync
   pkgdesc: AirPlay and AirPlay 2 audio player
   pkgver: 5.0.4
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/mikebrady/shairport-sync
   arch:
     - x86_64
@@ -40,4 +40,4 @@ pkgbase:
     - b10bcba9dbe0988868ceabe1b6e1d6d9dbce385661a76a139f0c365966db45f2
 pkgname:
   - name: shairport-sync
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
