@@ -1,10 +1,10 @@
 ---
-version: 4.2.0-2
+version: 4.2.0-3
 pkgbase:
   name: tpm2-tss
   pkgdesc: Implementation of the TCG Trusted Platform Module 2.0 Software Stack (TSS2)
   pkgver: 4.2.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/tpm2-software/tpm2-tss
   arch:
     - x86_64
@@ -70,4 +70,4 @@ pkgname:
       - openssl
       - util-linux-libs
       - libjson-c.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
