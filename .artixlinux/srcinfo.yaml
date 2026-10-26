@@ -1,10 +1,10 @@
 ---
-version: 0.9.7-4
+version: 0.9.7-5
 pkgbase:
   name: xmms2
   pkgdesc: X-platform Music Multiplexing System 2
   pkgver: 0.9.7
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/xmms2/wiki/wiki
   arch:
     - x86_64
