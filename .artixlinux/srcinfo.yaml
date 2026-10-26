@@ -1,10 +1,10 @@
 ---
-version: 0.12.2-1
+version: 0.12.2-2
 pkgbase:
   name: libssh
   pkgdesc: Library for accessing ssh client services through C libraries
   pkgver: 0.12.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.libssh.org/
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgname:
     pkgdesc: Documentation for libssh
     depends: []
     provides: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
