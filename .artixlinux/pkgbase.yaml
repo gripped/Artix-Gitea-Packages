@@ -53,15 +53,15 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.0-4
+    version: 1.28.0-5
     packages:
-      - caja-extensions-common-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-audio-video-properties-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-image-converter-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-open-terminal-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-sendto-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-share-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-wallpaper-1.28.0-4-x86_64.pkg.tar.zst
-      - caja-xattr-tags-1.28.0-4-x86_64.pkg.tar.zst
+      - caja-extensions-common-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-audio-video-properties-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-image-converter-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-open-terminal-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-sendto-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-share-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-wallpaper-1.28.0-5-x86_64.pkg.tar.zst
+      - caja-xattr-tags-1.28.0-5-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
