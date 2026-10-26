@@ -1,10 +1,10 @@
 ---
-version: 3.5.0-1
+version: 3.5.0-2
 pkgbase:
   name: argyllcms
   pkgdesc: An ICC compatible color management system with support for different colorimeter hardware
   pkgver: 3.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.argyllcms.com/
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - f8576ce5589fd15620abb73ff049ea31f55ddbd1bba6d1ffa87452658e7bc85f
 pkgname:
   - name: argyllcms
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
