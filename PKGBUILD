@@ -4,7 +4,7 @@
 
 pkgname=openvswitch
 pkgver=4.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc="Production Quality, Multilayer Open Virtual Switch"
 url="http://openvswitch.org"
 license=('Apache-2.0')
