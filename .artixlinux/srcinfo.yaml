@@ -1,10 +1,10 @@
 ---
-version: 5.15.19+kde+r96-1
+version: 5.15.19+kde+r96-2
 pkgbase:
   name: qt5-base
   pkgdesc: A cross-platform application and UI framework
   pkgver: 5.15.19+kde+r96
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.qt.io
   arch:
     - x86_64
@@ -63,10 +63,14 @@ pkgbase:
     - qtchooser
   source:
     - kde-qtbase::git+https://invent.kde.org/qt/qt/qtbase#commit=fbed962c3195ab3952fa54d40e012ad1a4fdc42b
+    - 0001-QSslCertificate-remove-manual-parsing-code-for-ASN.1.patch
+    - 0002-Update-sources-to-support-OpenSSL-4.patch
     - qmake-cflags.patch
     - qmake-config.patch
   sha256sums:
     - fa3b11138b081a1b1f2412fcfa1177962460d05b71240ba01b7ea181eff6acc3
+    - f061ea5385769613f71adff67e5bb30e704577d4bdf503c197d46e7c5f131313
+    - 6ec8a575da75d43dfef1436633254eeef0d8958abce6dd3ea6403e803187da92
     - 5411edbe215c24b30448fac69bd0ba7c882f545e8cf05027b2b6e2227abc5e78
     - 4abc22150fa3e06b2fdcec32146abc9be4e316692aa4d5bd5aa53b4b726783fa
 pkgname:
@@ -102,4 +106,4 @@ pkgname:
       - qt5-base=5.15.19+kde+r96
     optdepends: []
     conflicts: []
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
