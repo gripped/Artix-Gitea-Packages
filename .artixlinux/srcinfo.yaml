@@ -1,10 +1,10 @@
 ---
-version: 4.5.8-1
+version: 4.5.8-2
 pkgbase:
   name: yara
   pkgdesc: Tool aimed at helping malware researchers to identify and classify malware samples
   pkgver: 4.5.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/VirusTotal/yara
   arch:
     - x86_64
@@ -25,4 +25,4 @@ pkgbase:
     - 2e842921aa757d6c592e8eaa2d69cca5d8d8f054b4624ba97b6ac5edd9f56789aa6ad5e64f5ab50986731a42d922dfb2510aa8d6b8676f4cfade3d76bc1aa177
 pkgname:
   - name: yara
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
