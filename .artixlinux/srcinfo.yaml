@@ -1,10 +1,10 @@
 ---
-version: 1:11.2-2
+version: 1:11.2-3
 pkgbase:
   name: glusterfs
   pkgdesc: a cluster file-system capable of scaling to several peta-bytes.
   pkgver: 11.2
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://www.gluster.org/
   install: glusterfs.install
@@ -44,4 +44,4 @@ pkgbase:
     - dd5422c42d977348e0054328d5672bbb6624d856946f9be9c656449132da81ee
 pkgname:
   - name: glusterfs
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
