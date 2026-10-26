@@ -1,10 +1,10 @@
 ---
-version: 10.5.2-1
+version: 10.5.2-2
 pkgbase:
   name: dhcpcd
   pkgdesc: DHCP/ IPv4LL/ IPv6RA/ DHCPv6 client
   pkgver: 10.5.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://roy.marples.name/projects/dhcpcd/
   arch:
     - x86_64
@@ -42,4 +42,4 @@ pkgbase:
     - fab9f56a694b2bcaa26ebd4040984778ea4a3cccd57f17a0eb724a9fc4750157d97d9d0db747932c3b386938fe2bf1d6a4ba609cc5cc3a6b0e1ae39404ba21be
 pkgname:
   - name: dhcpcd
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
