@@ -3,7 +3,7 @@
 _sed_args=(-e 's|/var/run|/run|g' -e 's|/usr/sbin|/usr/bin|g' -e 's|/opt/bin|/usr/bin|g' -e 's|/var/service|/run/runit/service|g' -e 's|/usr/libexec|/usr/lib|g')
 
 pkgname=jenkins-runit
-pkgver=20200613
+pkgver=20261026
 pkgrel=4
 pkgdesc="Runit service script for jenkins"
 arch=('any')
