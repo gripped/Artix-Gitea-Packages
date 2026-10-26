@@ -1,10 +1,10 @@
 ---
-version: 2.2.3-8
+version: 2.2.3-9
 pkgbase:
   name: uget
   pkgdesc: GTK download manager featuring download classification and HTML import
   pkgver: 2.2.3
-  pkgrel: 8
+  pkgrel: 9
   url: https://sourceforge.net/projects/urlget/
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - 613579e179a0918dfeba1ea8c5f5da724ae2f20deb4e7af6bddc38497e14403084a9eb69f496810854d337a07e86feb65b6acfb82281961b13f25e06d5964ffa
 pkgname:
   - name: uget
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
