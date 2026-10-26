@@ -1,11 +1,11 @@
 ---
-version: 2.22-1
+version: 2.22-2
 pkgbase:
   name: pam_mount
   pkgdesc: A PAM module that can mount volumes for a user session
   pkgver: 2.22
-  pkgrel: 1
-  url: http://pam-mount.sourceforge.net/
+  pkgrel: 2
+  url: https://inai.de/projects/pam_mount/
   arch:
     - x86_64
   license:
@@ -37,4 +37,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: pam_mount
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
