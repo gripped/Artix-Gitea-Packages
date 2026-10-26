@@ -2,7 +2,7 @@
 
 pkgname=nsight-compute
 pkgver=2026.3.1.2
-pkgrel=1
+pkgrel=2
 pkgdesc="Interactive profiler for NVIDIA CUDA and OptiX"
 arch=(x86_64 aarch64)
 url="https://developer.nvidia.com/nsight-compute"
