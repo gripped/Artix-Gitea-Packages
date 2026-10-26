@@ -1,5 +1,5 @@
 ---
-version: 2026e-1
+version: "2026e-1"
 pkgbase:
   name: tzdata
   pkgdesc: Sources for time zone and daylight saving time data
