@@ -1,23 +1,30 @@
 ---
-version: 0.660-1
+version: 1:0.7.3-1
 pkgbase:
   name: lrzip
   pkgdesc: Multi-threaded compression with rzip/lzma, lzo, and zpaq
-  pkgver: 0.660
+  pkgver: 0.7.3
   pkgrel: 1
+  epoch: 1
   url: https://github.com/ckolivas/lrzip
+  install: lrzip.install
   arch:
     - x86_64
   license:
-    - GPL
+    - GPL-2.0-or-later
   makedepends:
     - git
   depends:
+    - bash
+    - bzip2
+    - glibc
+    - lz4
     - lzo
+    - zlib
   source:
-    - git+https://github.com/ckolivas/lrzip#tag=v0.660
+    - git+https://github.com/ckolivas/lrzip#tag=v0.7.3
   sha256sums:
-    - 6df7888853e35c5ed396d7261771acfa03d61550de3b5add24914baa766e3b11
+    - c03b81cf3794209edba67ede1f665f62684d268141e078936848fe059d1e4585
 pkgname:
   - name: lrzip
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
