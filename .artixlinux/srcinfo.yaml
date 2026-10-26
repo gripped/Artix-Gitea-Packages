@@ -1,10 +1,10 @@
 ---
-version: 3.8.1-3
+version: 3.8.1-4
 pkgbase:
   name: libretls
   pkgdesc: libtls for OpenSSL
   pkgver: 3.8.1
-  pkgrel: 3
+  pkgrel: 4
   url: https://git.causal.agency/libretls
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - c901a6f48c0a01a26463660edbca1342f457f87c72042ae1c378477f807af3c6545edfe2d845770cd8c63ca6edea2dd9749010aa3021eed6936f56bb5b34309d
 pkgname:
   - name: libretls
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
