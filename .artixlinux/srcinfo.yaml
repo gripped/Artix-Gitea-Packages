@@ -1,9 +1,9 @@
 ---
-version: 21.3-12
+version: 21.3-13
 pkgbase:
   name: kodi
   pkgver: 21.3
-  pkgrel: 12
+  pkgrel: 13
   url: https://kodi.tv
   arch:
     - x86_64
@@ -198,4 +198,4 @@ pkgname:
     depends:
       - kodi
     optdepends: []
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
