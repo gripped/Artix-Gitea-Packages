@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.2-1
+    version: 1.28.2-2
     packages:
-      - mate-control-center-1.28.2-1-x86_64.pkg.tar.zst
+      - mate-control-center-1.28.2-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
