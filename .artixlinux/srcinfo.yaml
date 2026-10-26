@@ -1,10 +1,10 @@
 ---
-version: 2026.3.2.476-1
+version: 2026.3.2.476-2
 pkgbase:
   name: nsight-systems
   pkgdesc: System-wide statistical sampling profiler with tracing features
   pkgver: 2026.3.2.476
-  pkgrel: 1
+  pkgrel: 2
   url: https://developer.nvidia.com/nsight-systems
   arch:
     - x86_64
@@ -52,4 +52,4 @@ pkgbase:
     - 5f4b40a49eb5fce3cf0fe7aeaff0d8f7509a63c1c85d7429c9721812defc78025b8ac4bfc877176ec69b5cf12c2d72f399ff3dbd6222ac3947cc2d6ec77644e5
 pkgname:
   - name: nsight-systems
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any

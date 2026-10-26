@@ -2,7 +2,7 @@
 
 pkgname=nsight-systems
 pkgver=2026.3.2.476
-pkgrel=1
+pkgrel=2
 pkgdesc="System-wide statistical sampling profiler with tracing features"
 arch=(x86_64 aarch64)
 url="https://developer.nvidia.com/nsight-systems"
