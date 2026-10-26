@@ -14,7 +14,7 @@ groups=('runit-galaxy')
 provides=('init-jenkins')
 conflicts=('init-jenkins')
 source=("jenkins.run")
-sha256sums=('67cfd06499b6ef62ceb256c0d6955c91cf28ae9e0fbd8e8c0c2469c4e7586733')
+sha256sums=('29176d8e9d807cb4bae874055ced7598c0ea8f558f1bc4cdaeaaa2fc6583918d')
 
 _inst_logsv() {
     for file in run finish check; do
