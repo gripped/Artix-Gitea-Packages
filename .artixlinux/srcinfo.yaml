@@ -1,10 +1,10 @@
 ---
-version: 6.26.0-1
+version: 6.26.0-2
 pkgbase:
   name: xmrig
   pkgdesc: RandomX, KawPow, CryptoNight, AstroBWT and GhostRider unified CPU/GPU miner and RandomX benchmark
   pkgver: 6.26.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/xmrig/xmrig
   arch:
     - x86_64
@@ -23,9 +23,11 @@ pkgbase:
   source:
     - https://github.com/xmrig/xmrig/archive/v6.26.0/xmrig-6.26.0.tar.gz
     - xmrig.sysusers
+    - xmrig-openssl4.patch::https://github.com/xmrig/xmrig/commit/2c86216a5ce816237c923e6057c5bc9aaa5387c2.patch
   sha256sums:
     - 5005144e78571f26586410c2b2ede2b0c72afe22f97f1708ea24cfb253c3939b
-    - d8f499302fb2b642fe02586c81c410a299e0a6e133aef1cc1c783bcdcb3f44f6
+    - d604cec6eb23d1e27e406d5a170f5da2416566ba128d6536f530855c02058ed0
+    - 7c0cfee5f2c88aa9eb95983e58581a37f00bc12c156b43ee298617b8eeaa304e
 pkgname:
   - name: xmrig
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any

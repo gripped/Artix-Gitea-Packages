@@ -18,3 +18,4 @@ src/
 *.socket
 
 
+xmrig-openssl4.patch
