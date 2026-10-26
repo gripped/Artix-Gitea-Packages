@@ -5,7 +5,7 @@
 
 pkgbase=lib32-nvidia-580xx-utils
 pkgname=('lib32-nvidia-580xx-utils' 'lib32-opencl-nvidia-580xx')
-pkgver=580.178.04
+pkgver=580.196.07
 pkgrel=1
 arch=('x86_64')
 url="http://www.nvidia.com/"
