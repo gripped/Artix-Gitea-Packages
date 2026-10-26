@@ -1,10 +1,10 @@
 ---
-version: 0.4.9.14-1
+version: 0.4.9.14-2
 pkgbase:
   name: tor
   pkgdesc: Anonymizing overlay network.
   pkgver: 0.4.9.14
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.torproject.org/download/tor/
   arch:
     - x86_64
