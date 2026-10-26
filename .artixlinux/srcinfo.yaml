@@ -1,10 +1,10 @@
 ---
-version: 6.8.1-1
+version: 6.8.1-2
 pkgbase:
   name: plasma-nm
   pkgdesc: Plasma applet written in QML for managing network connections
   pkgver: 6.8.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
