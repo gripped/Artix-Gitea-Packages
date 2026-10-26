@@ -1,10 +1,10 @@
 ---
-version: 3.71.1-1
+version: 3.71.1-2
 pkgbase:
   name: filezilla
   pkgdesc: Fast and reliable FTP, FTPS and SFTP client
   pkgver: 3.71.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://filezilla-project.org
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - 44c9c9db88053a1b01ee27ebc9968eabff57d2ba6b23ac44ab080e3def9d5206cb4391dd7e0742bbd6189657a48525cfd5347d34ae87b69ccbd78b29e0101fda
 pkgname:
   - name: filezilla
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
