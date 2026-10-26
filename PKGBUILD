@@ -1,11 +1,12 @@
-# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Caleb Maclennan <caleb@alerque.com>
 # Contributor: Florian Pritz <bluewind@xinu.at>
 # Contributor: Dale Blount <dale@archlinux.org>
 # Contributor: Manolis Tzanidakis
 
 pkgname=spamassassin
 pkgver=4.0.2
-pkgrel=3
+pkgrel=4
 pkgdesc='A mail filter to identify spam'
 arch=(x86_64)
 license=(Apache-2.0)
