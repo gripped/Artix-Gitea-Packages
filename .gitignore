@@ -218,3 +218,11 @@ wsrep-lib/objects/pack/pack-7caada094be745052c3e4116c233994489dc2918.idx
 wsrep-lib/objects/pack/pack-7caada094be745052c3e4116c233994489dc2918.pack
 wsrep-lib/objects/pack/pack-7caada094be745052c3e4116c233994489dc2918.rev
 wsrep-lib/packed-refs
+duckdb/
+libmarias3/
+mariadb-columnstore-engine/
+mariadb-connector-c/
+mariadb/
+rocksdb/
+wolfssl/
+wsrep-lib/

@@ -17,7 +17,7 @@ pkgname=(
   'mariadb-pam')
 pkgdesc='Fast SQL database server, derived from MySQL'
 pkgver=13.0.2
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 license=('GPL-2.0-only')
 url='https://mariadb.org/'
@@ -33,6 +33,8 @@ source=("mariadb::git+https://github.com/MariaDB/server.git?signed#tag=mariadb-$
         'git+https://github.com/MariaDB/mariadb-connector-c.git'
         'git+https://github.com/wolfSSL/wolfssl.git'
         '0001-arch-specific.patch'
+        'mariadb-Environment-jemalloc.conf'
+        'mariadb-PrivateTmp.conf'
 'mariadb.sysusers.conf' 'mariadb.tmpfiles.conf')
 sha256sums=('e61fb5649750e521708fa8331a364cfd1146e667d360694bd4cbc791a99f8f1b'
             'SKIP'
@@ -42,7 +44,9 @@ sha256sums=('e61fb5649750e521708fa8331a364cfd1146e667d360694bd4cbc791a99f8f1b'
             'SKIP'
             'SKIP'
             'SKIP'
-            '9a388374ed0f04a5b576c0177cc93d35075c9d50bb422b9c09ce69f48eefb978'
+            '0420cd146f3bb50801e0642d1f8d10a138cc5f4c3113e09fd82ab1fc67b6f3de'
+            '8ca7ed2d3b2d91a54f781ec9dbf8e9b8941c00686d2a3f9ece0adb9c4fb68009'
+            'b3df8d27b443d4d6ae40f8c0544ee765e618b56bed801e14433f0da0f774a6f2'
             'd21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd'
             '65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555')
 
@@ -174,7 +178,7 @@ package_mariadb-libs() {
   cd build
 
   for dir in libmariadb libmysqld libservices include; do
-    make -C "$dir" DESTDIR="$pkgdir" install
+    make -C "${dir}" DESTDIR="${pkgdir}" install
   done
 
   # remove static libraries
@@ -183,14 +187,14 @@ package_mariadb-libs() {
   # remove man pages
   rm -r "${pkgdir}"/usr/share/man
 
-  ln -s mariadb_config "$pkgdir"/usr/bin/mariadb-config
-  ln -s mariadb_config "$pkgdir"/usr/bin/mysql_config
-  install -D -m0644 "$srcdir"/mariadb/man/mariadb_config.1 "$pkgdir"/usr/share/man/man1/mariadb_config.1
-  ln -s mariadb_config.1 "$pkgdir"/usr/share/man/man1/mariadb-config.1
-  ln -s mariadb_config.1 "$pkgdir"/usr/share/man/man1/mysql_config.1
+  ln -s mariadb_config "${pkgdir}"/usr/bin/mariadb-config
+  ln -s mariadb_config "${pkgdir}"/usr/bin/mysql_config
+  install -D -m0644 "${srcdir}"/mariadb/man/mariadb_config.1 "${pkgdir}"/usr/share/man/man1/mariadb_config.1
+  ln -s mariadb_config.1 "${pkgdir}"/usr/share/man/man1/mariadb-config.1
+  ln -s mariadb_config.1 "${pkgdir}"/usr/share/man/man1/mysql_config.1
 
-  install -D -m0644 support-files/mariadb.pc "$pkgdir"/usr/share/pkgconfig/mariadb.pc
-  install -D -m0644 "$srcdir"/mariadb/support-files/mysql.m4 "$pkgdir"/usr/share/aclocal/mysql.m4
+  install -D -m0644 support-files/mariadb.pc "${pkgdir}"/usr/share/pkgconfig/mariadb.pc
+  install -D -m0644 "${srcdir}"/mariadb/support-files/mysql.m4 "${pkgdir}"/usr/share/aclocal/mysql.m4
 }
 
 package_mariadb-clients() {
@@ -246,9 +250,15 @@ package_mariadb() {
 
   cd build
 
-  make DESTDIR="$pkgdir" install
+  make DESTDIR="${pkgdir}" install
 
-  cd "$pkgdir"
+  # service overrides for jemalloc & private /tmp
+  install -D -m0644 ../mariadb-Environment-jemalloc.conf "${pkgdir}"/usr/lib/systemd/system/mariadb.service.d/Environment-jemalloc.conf
+  install -D -m0644 ../mariadb-Environment-jemalloc.conf "${pkgdir}"/usr/lib/systemd/system/mariadb@.service.d/Environment-jemalloc.conf
+  install -D -m0644 ../mariadb-PrivateTmp.conf "${pkgdir}"/usr/lib/systemd/system/mariadb.service.d/PrivateTmp.conf
+  install -D -m0644 ../mariadb-PrivateTmp.conf "${pkgdir}"/usr/lib/systemd/system/mariadb@.service.d/PrivateTmp.conf
+
+  cd "${pkgdir}"
 
   # no SysV init, please!
   rm -r etc/logrotate.d

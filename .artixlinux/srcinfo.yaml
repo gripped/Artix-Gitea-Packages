@@ -1,10 +1,10 @@
 ---
-version: 13.0.2-2
+version: 13.0.2-3
 pkgbase:
   name: mariadb
   pkgdesc: Fast SQL database server, derived from MySQL
   pkgver: 13.0.2
-  pkgrel: 2
+  pkgrel: 3
   url: https://mariadb.org/
   arch:
     - x86_64
@@ -39,6 +39,8 @@ pkgbase:
     - git+https://github.com/MariaDB/mariadb-connector-c.git
     - git+https://github.com/wolfSSL/wolfssl.git
     - 0001-arch-specific.patch
+    - mariadb-Environment-jemalloc.conf
+    - mariadb-PrivateTmp.conf
     - mariadb.sysusers.conf
     - mariadb.tmpfiles.conf
   validpgpkeys:
@@ -52,7 +54,9 @@ pkgbase:
     - SKIP
     - SKIP
     - SKIP
-    - 9a388374ed0f04a5b576c0177cc93d35075c9d50bb422b9c09ce69f48eefb978
+    - 0420cd146f3bb50801e0642d1f8d10a138cc5f4c3113e09fd82ab1fc67b6f3de
+    - 8ca7ed2d3b2d91a54f781ec9dbf8e9b8941c00686d2a3f9ece0adb9c4fb68009
+    - b3df8d27b443d4d6ae40f8c0544ee765e618b56bed801e14433f0da0f774a6f2
     - d21fa98b57b3f44d1731551ac441bf24b75662fb26393757aa22f9cb92d470cd
     - 65dfade5bfa2338ec201e3fdcddd819ee87a94a27e1c7c293e890927f4ac7555
 pkgname:

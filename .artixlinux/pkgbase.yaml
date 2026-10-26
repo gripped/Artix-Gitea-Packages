@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,13 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 13.0.2-3
+    packages:
+      - mariadb-libs-13.0.2-3-x86_64.pkg.tar.zst
+      - mariadb-clients-13.0.2-3-x86_64.pkg.tar.zst
+      - mariadb-13.0.2-3-x86_64.pkg.tar.zst
+      - mariadb-mytop-13.0.2-3-x86_64.pkg.tar.zst
+      - mariadb-pam-13.0.2-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
