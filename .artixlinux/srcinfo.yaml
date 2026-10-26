@@ -1,10 +1,10 @@
 ---
-version: 1.15.0-1
+version: 1.15.0-2
 pkgbase:
   name: fuzzel
   pkgdesc: Application launcher for wlroots based Wayland compositors
   pkgver: 1.15.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://codeberg.org/dnkl/fuzzel
   arch:
     - x86_64
@@ -33,4 +33,4 @@ pkgbase:
     - 95b6c022fc1f1c7ab586d47c1594417cc311bf41ea8f5f8b5641478da7b5cf3b
 pkgname:
   - name: fuzzel
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any

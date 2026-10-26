@@ -4,7 +4,7 @@
 
 pkgname=fuzzel
 pkgver=1.15.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Application launcher for wlroots based Wayland compositors'
 url="https://codeberg.org/dnkl/$pkgname"
 arch=(x86_64)
