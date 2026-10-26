@@ -1,10 +1,10 @@
 ---
-version: 2026.4-1
+version: 2026.4-2
 pkgbase:
   name: ostree
   pkgdesc: Operating system and container binary deployment and upgrades
   pkgver: 2026.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://ostreedev.github.io/ostree/
   arch:
     - x86_64
@@ -92,4 +92,4 @@ pkgname:
       - libcrypto.so
       - xz
       - liblzma.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
