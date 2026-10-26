@@ -10,13 +10,13 @@ shopt -s extglob
 pkgbase=python
 pkgname=(python python-tests)
 pkgver=3.14.9
-pkgrel=1
+pkgrel=2
 _pybasever=${pkgver%.*}
 pkgdesc="The Python programming language"
 arch=('x86_64')
 license=('PSF-2.0')
 url="https://www.python.org/"
-depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl' 'zlib' 'tzdata' 'mpdecimal' 'zstd')
+depends=('bzip2' 'expat' 'gdbm' 'libffi' 'libnsl' 'libxcrypt' 'openssl-3' 'zlib' 'tzdata' 'mpdecimal' 'zstd')
 makedepends=('tk' 'sqlite' 'bluez-libs' 'llvm' 'gdb' 'xorg-server-xvfb' 'ttf-font')
 source=("https://www.python.org/ftp/python/${pkgver%rc*}/Python-${pkgver}.tar.xz"
         EXTERNALLY-MANAGED
@@ -48,6 +48,7 @@ build() {
   CFLAGS="${CFLAGS/-O2/-O3} -ffat-lto-objects"
 
   # Disable bundled pip & setuptools
+  PKG_CONFIG_PATH=/usr/lib/openssl-3/pkgconfig \
   ./configure --prefix=/usr \
               --enable-shared \
               --with-computed-gotos \
