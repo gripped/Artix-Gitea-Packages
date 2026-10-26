@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.0-6
+    version: 1.28.0-7
     packages:
-      - mozo-1.28.0-6-any.pkg.tar.zst
+      - mozo-1.28.0-7-any.pkg.tar.zst
     debug: []
 team: galaxy
