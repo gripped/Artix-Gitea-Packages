@@ -1,10 +1,10 @@
 ---
-version: 0.43-1
+version: 0.43-2
 pkgbase:
   name: spice-gtk
   pkgdesc: GTK+ client library for SPICE
   pkgver: 0.43
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.spice-space.org/
   install: spice-gtk.install
   arch:
