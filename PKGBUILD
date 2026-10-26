@@ -7,7 +7,7 @@
 
 pkgname=libtorrent
 pkgver=0.16.26
-pkgrel=1
+pkgrel=2
 pkgdesc='BitTorrent library with a focus on high performance'
 url='https://rakshasa.github.io/rtorrent/'
 arch=('x86_64')

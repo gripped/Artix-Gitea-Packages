@@ -1,10 +1,10 @@
 ---
-version: 0.16.26-1
+version: 0.16.26-2
 pkgbase:
   name: libtorrent
   pkgdesc: BitTorrent library with a focus on high performance
   pkgver: 0.16.26
-  pkgrel: 1
+  pkgrel: 2
   url: https://rakshasa.github.io/rtorrent/
   arch:
     - x86_64
