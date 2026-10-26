@@ -1,10 +1,10 @@
 ---
-version: 0.33.0-1
+version: 0.33.0-2
 pkgbase:
   name: rate-mirrors
   pkgdesc: Everyday-use client-side map-aware mirror ranking tool
   pkgver: 0.33.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/westandskif/rate-mirrors
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - d0087b07d6427380887fb7a65cffbeecf26ff94a8ddeaf887cf6b4cc3de024860da11990435e72c4d343972c7879007d38ec462a36bf225d672365d856390790
 pkgname:
   - name: rate-mirrors
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
