@@ -1,10 +1,10 @@
 ---
-version: 4.5.8-3
+version: 4.5.8-4
 pkgbase:
   name: libwebsockets
   pkgdesc: C library for websocket clients and servers
   pkgver: 4.5.8
-  pkgrel: 3
+  pkgrel: 4
   url: https://libwebsockets.org
   arch:
     - x86_64
@@ -24,6 +24,7 @@ pkgbase:
     - libev
     - libuv
     - openssl
+    - systemd-libs
     - zlib
   provides:
     - libwebsockets.so
@@ -42,7 +43,8 @@ pkgname:
       - libev
       - libuv
       - openssl
+      - systemd-libs
       - zlib
       - libcap.so
       - libglib-2.0.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
