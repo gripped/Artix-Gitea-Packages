@@ -3,7 +3,7 @@
 
 pkgname=unrealircd
 pkgver=6.2.7
-pkgrel=1
+pkgrel=2
 pkgdesc="Open Source IRC Server"
 arch=('x86_64')
 url="https://www.unrealircd.org"

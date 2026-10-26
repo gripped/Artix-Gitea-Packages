@@ -1,10 +1,10 @@
 ---
-version: 6.2.7-1
+version: 6.2.7-2
 pkgbase:
   name: unrealircd
   pkgdesc: Open Source IRC Server
   pkgver: 6.2.7
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.unrealircd.org
   install: unrealircd.install
   arch:
@@ -44,4 +44,4 @@ pkgbase:
     - c9a6ee91098f23d050c73f3d079ea5edf05e885bf148a154000d1768f551307b
 pkgname:
   - name: unrealircd
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
