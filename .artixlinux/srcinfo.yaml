@@ -1,10 +1,10 @@
 ---
-version: 0.16.0-4
+version: 0.16.0-5
 pkgbase:
   name: spice
   pkgdesc: SPICE server
   pkgver: 0.16.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.spice-space.org
   arch:
     - x86_64
@@ -47,4 +47,4 @@ pkgbase:
     - 7a9708e00072296882eb330957a4ffd70be69c9f5c7c5e496f6a95208312cce2
 pkgname:
   - name: spice
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
