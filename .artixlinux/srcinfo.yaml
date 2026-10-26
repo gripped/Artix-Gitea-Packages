@@ -1,10 +1,10 @@
 ---
-version: 0.20-9
+version: 0.20-10
 pkgbase:
   name: perl-crypt-openssl-dsa
   pkgdesc: Digital Signature Algorithm using OpenSSL
   pkgver: 0.20
-  pkgrel: 9
+  pkgrel: 10
   url: https://search.cpan.org/dist/Crypt-OpenSSL-DSA
   arch:
     - x86_64
