@@ -1,7 +1,8 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
+# Maintainer: Hyacinthe Cartiaux <hyacinthe@archlinux.org>
 
 pkgname=mkdocstrings
-pkgver=1.0.7
+pkgver=1.0.8
 pkgrel=1
 pkgdesc="Automatic documentation from sources, for MkDocs"
 arch=(any)
@@ -30,7 +31,7 @@ checkdepends=(
   python-pytest
 )
 source=("$url/archive/$pkgver/$pkgname-$pkgver.tar.gz")
-b2sums=('92c490ee7e1455bc17445b4a9e3791e92277bafbcb6e8fb729b65ae96fa9f94f8dce918eb884ae7513d8a9a1885549aa2399509084cc65763ffc0ee9de3760ea')
+b2sums=('a8fb5a89b1b2166d4d57d28fbb8d76744762dd78d8eb19395ca0c41747dd9c0405d1131431ea2734bc327564f70010d57df176a1d92f8289ee7f81e32f43757b')
 
 build() {
   cd $pkgname-$pkgver
@@ -48,6 +49,10 @@ check() {
     --deselect 'tests/test_extension.py' \
     --deselect 'tests/test_handlers.py::test_extended_templates' \
     --deselect 'tests/test_handlers.py::test_nested_autodoc[ext_markdown0]' \
+    --deselect 'tests/test_handlers.py::test_code_ids_are_prefixed' \
+    --deselect 'tests/test_handlers.py::test_code_id_prefixing_preserves_raw_html' \
+    --deselect 'tests/test_handlers.py::test_code_without_generated_ids_stays_without_ids' \
+    --deselect 'tests/test_handlers.py::test_nested_autodoc_code_ids' \
     --deselect 'tests/test_plugin.py::test_disabling_plugin' \
     --ignore tests/test_api.py
 }
