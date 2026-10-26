@@ -5,7 +5,7 @@
 # Contributor: Dobroslaw Kijowski
 
 pkgname=mitmproxy
-pkgver=12.2.3
+pkgver=12.3.1
 pkgrel=1
 pkgdesc='SSL-capable man-in-the-middle HTTP proxy'
 arch=(any)
@@ -62,9 +62,9 @@ source=(
   "$pkgname::git+https://github.com/mitmproxy/mitmproxy#tag=v$pkgver"
   fix-pytest-opts.patch
 )
-sha512sums=('6432a61b6d500714f9a7007824d3f426080b2ea4be5d4151c6c315788159bd6128b7688e6b9716ccb4836e752946b9f9547a8e797775d31482643c5ac67ba7b5'
+sha512sums=('b3943837e3766413de4caf66de5aebc3f639992720f9fcc2c1bbe7a785ef799b235013f93b70a13d1398a805ba2fcdaa83d97895436a1bc26057c80bf72dcc89'
             'ededd8c815f2d69089111c86436f2b2a3607feb2aa82694b2a772fb952ddd77d52a6cb37af914ac38d628ff4dda5e2c50b9672edb2b52560ff5446fde348d842')
-b2sums=('6c588d736a42c5008dcae2634d18cc4713b4fd495c08d97c0d1cc415fc00164866f22640f4d5e3b58ed33f046ee1e72202548459c810d3d00277ca2b203286aa'
+b2sums=('17f9292c370161b011bf06786c3fb326ed264fb55f9444f12f8d795697ad1cc6cbd847cc6adcd618286ce959486100c6293af8d5b0487adad7e76048590db259'
         'b225be51896f8b42ce88ee19e09bbe8cd56bd6455c1ecbb6c914f35ed8c47e5242bfe6af665e3ca783e5a6362be3610929a2baff7e6f0c0a3cf804adf0e50660')
 
 prepare() {
@@ -73,6 +73,13 @@ prepare() {
   # ERROR: pyproject.toml: Cannot use both [tool.pytest] (native TOML types)
   # and [tool.pytest.ini_options] (string-based INI format) simultaneously.
   patch -p1 -i "$srcdir/fix-pytest-opts.patch"
+
+  # Allow Tornado 6.6.0 in the Python package metadata.
+  sed -i 's/tornado>=6\.5\.0,<=6\.5\.10/tornado>=6.5.0,<=6.6.0/' pyproject.toml
+
+  # Support aioquic 1.6's three-argument ClientHello callback.
+  sed -i 's/onertt_buf: QuicBuffer,/onertt_buf: Optional[QuicBuffer] = None,/' \
+    mitmproxy/proxy/layers/quic/_client_hello_parser.py
 }
 
 build() {
@@ -127,6 +134,7 @@ check() {
     --deselect 'test/mitmproxy/proxy/layers/http/test_http3.py::test_early_server_data'
     --deselect 'test/mitmproxy/addons/test_dns_resolver.py'
     --deselect 'test/mitmproxy/proxy/test_mode_servers.py'
+
   )
 
   pytest -vv "${deselected_tests[@]}"
