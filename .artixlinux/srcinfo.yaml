@@ -1,10 +1,10 @@
 ---
-version: 2.7.8-1
+version: 2.7.8-2
 pkgbase:
   name: openvpn
   pkgdesc: An easy-to-use, robust and highly configurable VPN (Virtual Private Network)
   pkgver: 2.7.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://openvpn.net/index.php/open-source.html
   install: openvpn.install
   arch:
