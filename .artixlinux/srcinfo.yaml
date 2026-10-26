@@ -1,10 +1,10 @@
 ---
-version: 1.13.0-1
+version: 1.13.0-2
 pkgbase:
   name: proxytunnel
   pkgdesc: Creates tunnels through HTTP(S) proxies for any TCP based protocol
   pkgver: 1.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/proxytunnel/proxytunnel
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - 478b6929605849c8348c53b15fcb95b5f0a6a66d78e937eab7bc369b8ab13d10923ea5980ec0ab707ecd750283bc787f6edda5a34c1ff64a5bd60c65fe3c8852
 pkgname:
   - name: proxytunnel
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
