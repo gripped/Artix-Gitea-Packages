@@ -1,10 +1,10 @@
 ---
-version: 1.5.0-1
+version: 1.5.0-2
 pkgbase:
   name: capnproto
   pkgdesc: Cap'n Proto serialization/RPC system
   pkgver: 1.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://capnproto.org/
   arch:
     - x86_64
@@ -37,4 +37,4 @@ pkgbase:
     - 2e2170f7610069c5044cb00bf047784b2c8da8b32ee189c2e3f46606c3f11e7318bf1c833a3627f78a186238aa9f36cc5240cf991f97fb4c675ee472f877288b
 pkgname:
   - name: capnproto
-# generated with artixpkg 0.39-1-any
+# generated with artixpkg 0.40.0-1-any
