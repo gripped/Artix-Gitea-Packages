@@ -1,4 +1,3 @@
-# Maintainer: nikolar <nikolar@artixlinux.org>
 # Maintainer: Maxime Gauduin <alucryd@archlinux.org>
 # Maintainer: Santiago Torres <santiago@archlinux.org>
 # Contributor: Alad Wenter <alad@mailbox.org>
@@ -6,25 +5,19 @@
 
 pkgname=cabextract
 pkgver=1.11
-pkgrel=2
+pkgrel=3
 pkgdesc='A program to extract Microsoft cabinet (.CAB) files'
 arch=(x86_64)
-license=(GPL)
+license=(GPL-2.0-or-later)
 url=https://www.cabextract.org.uk/
 depends=(glibc)
 makedepends=(git)
-_tag=305907723a4e7ab2018e58040059ffb5e77db837
-source=(git+https://github.com/kyz/libmspack.git#tag=${_tag})
-b2sums=(SKIP)
+source=(git+https://github.com/kyz/libmspack.git#tag=v${pkgver})
+b2sums=('180c2632b9ed9f2863338ef7c171f2566bc026fd66c5ced367379a24fa3e10b71eb6d6644da595266ca876b6ec1d45380bbb98b1c2060c9cc28f0838254c5368')
 
 prepare() {
   cd libmspack/cabextract
-  ./autogen.sh
-}
-
-pkgver() {
-  cd libmspack
-  git describe --tags | sed 's/^v//'
+  autoreconf -fiv
 }
 
 build() {
@@ -39,5 +32,3 @@ build() {
 package() {
   make DESTDIR="${pkgdir}" -C libmspack/cabextract install
 }
-
-# vim: ts=2 sw=2 et:
