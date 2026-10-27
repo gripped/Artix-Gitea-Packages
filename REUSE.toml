@@ -21,3 +21,9 @@ path = [
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
+
+[[annotations]]
+path = "net-snmp-remove-mail-sender.patch"
+SPDX-FileCopyrightText = "Net-SNMP contributors (see LICENSES/LicenseRef-net-snmp.txt)"
+SPDX-FileContributor = "Josef Ridky <jridky@redhat.com>"
+SPDX-License-Identifier = "LicenseRef-net-snmp"
