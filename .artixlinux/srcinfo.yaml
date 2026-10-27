@@ -1,0 +1,23 @@
+---
+version: 475-6
+pkgbase:
+  name: libreplaygain
+  pkgdesc: A library to adjust audio gain
+  pkgver: 475
+  pkgrel: 6
+  url: https://www.musepack.net/index.php?pg=src
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - cmake
+  depends:
+    - glibc
+  source:
+    - https://files.musepack.net/source/libreplaygain_r475.tar.gz
+  sha512sums:
+    - b5fce8daf6aa8c8e0adb4c80089b43824b6503cb7d11e0c47c779c57a933b32f0c24722ca3fcf49711199fddcbb92c3fc13876f22418ca1521c7b8e27ba9d409
+pkgname:
+  - name: libreplaygain
+# generated with artixpkg 0.40.0-1-any
