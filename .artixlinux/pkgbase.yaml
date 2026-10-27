@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - ostree-2026.4-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2026.5-1
+    packages:
+      - ostree-2026.5-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2026.4-1
