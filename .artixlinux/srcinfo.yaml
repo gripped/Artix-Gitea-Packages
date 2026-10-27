@@ -1,10 +1,10 @@
 ---
-version: 2.6.1-1
+version: 2.6.1-2
 pkgbase:
   name: gocryptfs
   pkgdesc: Encrypted overlay filesystem written in Go.
   pkgver: 2.6.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rfjakob/gocryptfs
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: gocryptfs
-# generated with artixpkg 0.37.3-1-any
+# generated with artixpkg 0.40.0-1-any
