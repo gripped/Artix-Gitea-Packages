@@ -1,10 +1,10 @@
 ---
-version: 1:7.1.2-2
+version: 1:8.0.0-1
 pkgbase:
   name: hashcat
   pkgdesc: Multithreaded advanced password recovery utility
-  pkgver: 7.1.2
-  pkgrel: 2
+  pkgver: 8.0.0
+  pkgrel: 1
   epoch: 1
   url: https://hashcat.net/hashcat
   arch:
@@ -15,22 +15,21 @@ pkgbase:
     - opencl-headers
     - rust
   depends:
+    - clang-libs
+    - minizip
     - ocl-icd
     - xxhash
     - zlib
-    - minizip
   provides:
     - libhashcat.so
   source:
-    - https://hashcat.net/files/hashcat-7.1.2.tar.gz
-    - https://hashcat.net/files/hashcat-7.1.2.tar.gz.asc
-    - hashcat-fix-wrong-crc-include-on-m17220_a3-pure.cl.patch::https://github.com/hashcat/hashcat/commit/66d2f3b9c0e3e75c62c9f10f766d042fecf8f457.patch
+    - https://hashcat.net/files/hashcat-8.0.0.tar.gz
+    - https://hashcat.net/files/hashcat-8.0.0.tar.gz.asc
   validpgpkeys:
     - A70833229D040B4199CC00523C17DA8B8A16544F
   sha512sums:
-    - 89213058aaa2be3aa62dfab8acd5c61a7c8bd58a63ce2c3c1472960e122ca554f63482cb201f4e285acb97d94b1c1038bc93a203d66bd5a428f31ad8c709873c
+    - 8059a20d59852d1bcfcbcd4f36825b71568000c87e3d821e67dd115e17aeecd43d346072a7aee5d6c4de05dccbb395462f6a12c7481691ea60d5ffe3de5e08f3
     - SKIP
-    - 070a83c853716a56adf74ba779c07c4e4850df569116ea58f0ee2adda5c72e0e6b2b452847b6913c46cb5df3ea9f548345d40eb47ad1777cf28767cbb7407ec0
 pkgname:
   - name: hashcat
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.40.0-1-any
