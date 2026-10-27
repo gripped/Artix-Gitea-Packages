@@ -1,10 +1,10 @@
 ---
-version: 1:13.0.7-2
+version: 1:13.0.7-3
 pkgbase:
   name: prosody
   pkgdesc: Lightweight and extensible Jabber/XMPP server written in Lua
   pkgver: 13.0.7
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://prosody.im/
   install: prosody.install
