@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: galaxy-gremlins
-  triggersBuild: false
+  addRepo: galaxy-goblins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -45,8 +45,11 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 7.2.11.zen1-2
+    packages:
+      - linux-zen-7.2.11.zen1-2-x86_64.pkg.tar.zst
+      - linux-zen-headers-7.2.11.zen1-2-x86_64.pkg.tar.zst
+      - linux-zen-docs-7.2.11.zen1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: null
