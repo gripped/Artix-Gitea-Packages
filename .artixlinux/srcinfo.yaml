@@ -24,7 +24,6 @@ pkgbase:
     - libev
     - libuv
     - openssl
-    - systemd-libs
     - zlib
   provides:
     - libwebsockets.so
@@ -43,7 +42,6 @@ pkgname:
       - libev
       - libuv
       - openssl
-      - systemd-libs
       - zlib
       - libcap.so
       - libglib-2.0.so
