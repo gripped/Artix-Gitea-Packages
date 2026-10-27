@@ -8,7 +8,7 @@
 
 pkgname=nut
 pkgver=2.8.5
-pkgrel=2
+pkgrel=3
 pkgdesc='A collection of programs which provide a common interface for monitoring and administering UPS, PDU and SCD hardware'
 arch=(x86_64)
 url=https://networkupstools.org/
@@ -73,7 +73,6 @@ b2sums=('bf2e9b70693f941a52c8499018a825d01bae4e642bf70fedb75b96ebc7204fdf6061419
 
 prepare() {
   cd nut
-  
   ./autogen.sh
 }
 
@@ -94,12 +93,12 @@ build() {
     --with-htmlpath=/usr/share/nut/html \
     --with-pidpath=/run/nut \
     --with-statepath=/var/lib/nut \
-    --with-udev-dir=/usr/lib/udev \
     --with-systemd \
     --with-libsystemd=no \
     --with-systemdsystemunitdir= \
     --with-systemdtmpfilesdir=/usr/lib/tmpfiles.d \
     --with-systemdsysusersdir=/usr/lib/sysusers.d \
+    --with-udev-dir=/usr/lib/udev \
     --with-cgi \
     --with-dev \
     --with-doc=man \
@@ -126,14 +125,12 @@ check() {
 
 package() {
   make DESTDIR="${pkgdir}" -C nut -j1 install
-  find "${pkgdir}/etc/nut" -name '*.sample' -exec rename '.sample' '' {} \;
   local i
   # FIXME: why you no install these
   for i in sysusers tmpfiles; do
     install -vDm 644 -t "${pkgdir}/usr/lib/${i}.d"  "nut/scripts/systemd/nut-common-${i}.conf"
   done
+  find "${pkgdir}/etc/nut" -name '*.sample' -exec rename '.sample' '' {} \;
   install -vDm 644 nut.sysusers "${pkgdir}/usr/lib/sysusers.d/nut.conf"
   install -vDm 644 nut.tmpfiles "${pkgdir}/usr/lib/tmpfiles.d/nut.conf"
 }
-
-# vim: sw=2 expandtab
