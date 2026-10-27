@@ -1,10 +1,10 @@
 ---
-version: 2.7.12-5
+version: 2.8.0-3
 pkgbase:
   name: keepassxc
   pkgdesc: Cross-platform community-driven port of Keepass password manager
-  pkgver: 2.7.12
-  pkgrel: 5
+  pkgver: 2.8.0
+  pkgrel: 3
   url: https://keepassxc.org/
   arch:
     - x86_64
@@ -17,23 +17,23 @@ pkgbase:
     - asciidoctor
     - cmake
     - git
-    - qt5-tools
+    - qt6-tools
   depends:
-    - argon2
     - botan
     - glibc
     - hicolor-icon-theme
+    - keyutils
     - libgcc
     - libstdc++
     - libusb
+    - libxi
     - libxtst
     - libx11
     - minizip
     - pcsclite
     - qrencode
-    - qt5-base
-    - qt5-svg
-    - qt5-x11extras
+    - qt6-base
+    - qt6-svg
     - readline
     - zlib
   optdepends:
@@ -42,8 +42,7 @@ pkgbase:
   provides:
     - org.freedesktop.secrets
   source:
-    - git+https://github.com/keepassxreboot/keepassxc.git#tag=2.7.12?signed
-    - TestEntryModel.patch
+    - git+https://github.com/keepassxreboot/keepassxc.git#tag=2.8.0?signed
   validpgpkeys:
     - 3489040C1F0C3EEAB8D556A5440FC65F2E0C6E01
     - BF5A669F2272CF4324C1FDA8CFB4C2166397D0D2
@@ -51,8 +50,7 @@ pkgbase:
     - AF0AEA44ABAC8F1047733EA7AFF235EEFB5A2517
     - C1E4CBA3AD78D3AFD894F9E0B7A66F03B59076A8
   sha256sums:
-    - 7cfbeb0f0c732b07b99d04a27894c0dbf290192ad1363e3b35475b11b1f456e8
-    - 1448fb616c4eaf7b0f9019ee10f813199d7105442e3f61aea31e901139b87f43
+    - f74d1992f0fc30e6546de8653a72817cd188e0d5742376958d731b72b19e46bb
 pkgname:
   - name: keepassxc
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
