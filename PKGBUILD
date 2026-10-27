@@ -6,7 +6,7 @@
 pkgname=kismet
 pkgver=2025_09_R1
 _realver="${pkgver//_/-}"
-pkgrel=4
+pkgrel=5
 pkgdesc="802.11 layer2 wireless network detector, sniffer, and intrusion detection system"
 url="https://www.kismetwireless.net/"
 arch=(x86_64)
@@ -14,7 +14,8 @@ license=(GPL-2.0-or-later)
 depends=(
   bash
   bluez-libs
-  gcc-libs
+  libgcc
+  libstdc++
   glib2
   glibc
   libcap
