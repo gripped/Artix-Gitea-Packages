@@ -6,16 +6,24 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='261.2'
+_tag='262.1'
+
+_boot=false
+
 
 pkgbase=esys-utils
 pkgname=(
     'esysusers'
     'etmpfiles'
-    'egummiboot'
-    'eukify'
     'eshutdown'
 )
+if $_boot; then
+    pkgname+=(
+        'egummiboot'
+        'eukify'
+    )
+fi
+
 pkgdesc='System utils extracted from systemd'
 pkgver="${_tag/[-~]/}"
 pkgrel=1
@@ -57,10 +65,10 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         loader.conf
         splash-artix.bmp
 )
-sha512sums=('1c2a3aed0b7c613040722ef1bd063a1f35d2f3993e0f678701ef5e4d42d31628804df477158e5fa2bb47e523a9969d01cfb7622762cf32ff44e0367e5f432368'
+sha512sums=('7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            '6401d234ab2e9403a9a8ed0444e34b5429d214428c1ba5efcbd6f21994936947570eab213b919b58b30c0bd0f59a678aa538a8feabb60bb882711e69bce9f7c4'
+            '130f94a943d6d88db72d3901668d2f98385596bdfc743b74e66821088c2f500ddf6d7b33f7ac0caa72011c1766baa829e472866065d86d045818167d8ecab0a0'
             '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
             'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
             'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
@@ -100,7 +108,7 @@ build() {
         -Dshared-lib-tag="${_meson_ver/~/}"
         -Dmode=release
 
-        -Dstandalone-binaries=true
+        -Dstandalone-binaries="esysusers,etmpfiles,eshutdown"
         -Dsysusers=true
         -Dtmpfiles=true
 
@@ -113,13 +121,6 @@ build() {
 
         -Dgshadow=true
 
-        -Defi=true
-
-        -Dbootloader=enabled
-        -Dkernel-install=true
-        -Dukify=enabled
-        -Daudit=enabled
-
         -Dsbat-distro='artix'
         -Dsbat-distro-summary='Artix Linux'
         -Dsbat-distro-pkgname="${pkgbase}"
@@ -127,9 +128,7 @@ build() {
 
         -Dtests=true
 
-        -Dlink-udev-shared=false
-        -Dlink-boot-shared=false
-        -Dlink-kernel-install-shared=false
+        -Daudit=enabled
 
         -Ddefault-keymap='us'
 
@@ -227,17 +226,32 @@ build() {
         -Dtpm2=disabled
         -Dshellprofiledir=no
         -Dimds=disabled
+
+        -Dmountfsd=false
+        -Dnspawn=disabled
+        -Dnsresourced=false
+        -Dsysinstall=false
     )
 
+    if $_boot; then
+        _meson_options+=(
+            -Defi=true
+            -Dbootloader=enabled
+            -Dkernel-install=true
+            -Dukify=enabled
+            -Dlink-boot-shared=false
+            -Dlink-kernel-install-shared=false
+        )
+    else
+        _meson_options+=(
+            -Defi=false
+            -Dbootloader=disabled
+            -Dkernel-install=false
+            -Dukify=disabled
+        )
+    fi
+
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
-
-    local _efi_arch
-
-    case $CARCH in
-        x86_64*) _efi_arch=x64 ;;
-        i686) _efi_arch=ia32 ;;
-    esac
-
 
     _targets+=(
         esysusers
@@ -247,42 +261,48 @@ build() {
         man/{sysusers,tmpfiles}.d.5
         man/systemd-{sysusers,tmpfiles}.8
         factory/templates/{locale,vconsole}.conf
-
-        bootctl
-        man/bootctl.1
-        src/boot/eboot${_efi_arch}.efi
-        src/boot/linux${_efi_arch}.efi.stub
-        src/boot/addon${_efi_arch}.efi.stub
-
-        ebless-boot{,-generator}
-        man/systemd-{boot.7,bless-boot-generator.8}
-
-        kernel-install
-        src/kernel-install/90-loaderentry.install
-        man/kernel-install.8
-
-        ukify
-        src/kernel-install/60-ukify.install
-        man/ukify.1
-
         eshutdown
         man/shutdown.8
-
-        systemd-detect-virt
-        systemd-runtest.env
-
-        test-umount
     )
+
+
+    if $_boot; then
+        local _efi_arch
+
+        case $CARCH in
+            x86_64*) _efi_arch=x64 ;;
+            i686) _efi_arch=ia32 ;;
+        esac
+
+         _targets+=(
+
+            bootctl
+            man/bootctl.1
+            src/boot/eboot${_efi_arch}.efi
+            src/boot/linux${_efi_arch}.efi.stub
+            src/boot/addon${_efi_arch}.efi.stub
+
+            ebless-boot{,-generator}
+            man/systemd-{boot.7,bless-boot-generator.8}
+
+            kernel-install
+            src/kernel-install/90-loaderentry.install
+            man/kernel-install.8
+
+            ukify
+            src/kernel-install/60-ukify.install
+            man/ukify.1
+        )
+    fi
+
     meson compile -C build "${_targets[@]}"
 }
 
 check() {
     local _tests=()
     _tests+=(
-        test-systemd-tmpfiles.standalone
-        test-sysusers.standalone
-
-        test-umount
+        --suite tmpfiles
+        --suite sysusers
     )
 
     meson test -C build --print-errorlogs "${_tests[@]}"
@@ -323,6 +343,14 @@ package_etmpfiles() {
 
     # pacman hooks
     make -C alpm-hooks DESTDIR="${pkgdir}" install_tmpfiles
+}
+
+package_eshutdown() {
+    pkgdesc='the extracted shutdown binary'
+
+    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eshutdown
+
+    _inst_man "shutdown.8"
 }
 
 package_egummiboot() {
@@ -370,10 +398,4 @@ package_eukify() {
     _inst_man "ukify.1"
 }
 
-package_eshutdown() {
-    pkgdesc='the extracted shutdown binary'
 
-    meson install -C build --destdir "$pkgdir" --no-rebuild --tags eshutdown
-
-    _inst_man "shutdown.8"
-}
