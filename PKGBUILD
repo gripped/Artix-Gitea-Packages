@@ -2,7 +2,7 @@
 
 pkgname=opensips
 pkgver=4.0.2
-pkgrel=1
+pkgrel=2
 pkgdesc="An Open Source SIP Server able to act as a SIP proxy, registrar, location server, redirect server ..."
 url="https://www.opensips.org"
 depends=()
@@ -27,6 +27,13 @@ source=("git+https://github.com/OpenSIPS/opensips.git#tag=$pkgver")
 sha256sums=('139e08238ddbf2aaa2a6d6377d943af810936116613f922f9737714668d13947')
 
 _modules="db_http db_mysql db_postgres db_unixodbc h350 httpd ldap presence presence_xml proto_tls tls_mgm tls_openssl tm rr"
+
+prepare() {
+  cd "$srcdir"/$pkgname/
+
+  # Use ASN.1 accessors with OpenSSL 4: https://github.com/OpenSIPS/opensips/pull/3956
+  git cherry-pick -n f07b6dd61611ccd9b7b420d0ebae345d8bf12ca6
+}
 
 build() {
   cd "$srcdir"/$pkgname/
