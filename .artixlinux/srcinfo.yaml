@@ -1,9 +1,9 @@
 ---
-version: 7.2.22-1
+version: 7.2.22-2
 pkgbase:
   name: virtualbox
   pkgver: 7.2.22
-  pkgrel: 1
+  pkgrel: 2
   url: https://virtualbox.org/
   arch:
     - x86_64
