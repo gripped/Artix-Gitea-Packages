@@ -1,10 +1,10 @@
 ---
-version: 0.22.0-6
+version: 0.22.0-7
 pkgbase:
   name: thrift
   pkgdesc: Scalable cross-language services framework for IPC/RPC
   pkgver: 0.22.0
-  pkgrel: 6
+  pkgrel: 7
   url: https://thrift.apache.org
   arch:
     - x86_64
@@ -36,6 +36,7 @@ pkgbase:
     - thrift-python-adapt-tests-to-python3.patch
     - thrift-python-add-TType-UUID.patch
     - thrift-python-disable-failing-tests.patch
+    - thrift-openssl-4.patch
   validpgpkeys:
     - 8CD87F186F06E958EFCA963D76BD340FC4B75865
   b2sums:
@@ -43,6 +44,7 @@ pkgbase:
     - b705ee35826973efb2d5b4eb18ab0e831218786aa73027fe214dcb8011af7ff499c7b7171cde73c423832cb3e3f9760aac14aeb6aba16644409447724adca1ef
     - f4e6530d60647de4c406a8aedf193dbb87644095f492106559766c2a5390584ae1d957f859b0182511e39d5c1b3c2828d043e7f0ca7cc98101f146d87c1dc3d1
     - 179b27617d2650b18268e4cba8efe31afcab6d34f838b48f459aa8875d26d5ac37791b4b8a06536e1abd5a8b76f683d348522e69185331efd950d01b12abc3a4
+    - ce162b93d67248820b466743c752625390afed21b455fa8b2aed5e44493e341b9ab14ec8ee492e1290848de4d30b605ea49f09be5cccb918efdd730d0b50be4f
 pkgname:
   - name: thrift
     depends:
@@ -72,4 +74,4 @@ pkgname:
       - 'python-tornado: for tornado backend'
       - 'python-twisted: for twisted backend'
       - 'python-zope-interface: for twisted backend'
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
