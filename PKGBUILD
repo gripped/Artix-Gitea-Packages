@@ -1,11 +1,12 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Hyacinthe Cartiaux <hyacinthe@archlinux.org>
 # Contributor: Jaroslav Lichtblau <dragonlord@aur.archlinux.org>
 # Contributor: Michal Krenek <mikos@sg1.cz>
 
 pkgbase=boinc
 pkgname=(boinc boinc-nox)
 pkgver=8.2.15
-pkgrel=2
+pkgrel=3
 arch=('x86_64')
 url="https://boinc.berkeley.edu/"
 license=('LGPL-3.0-or-later')
@@ -22,6 +23,9 @@ sha512sums=('b4053866b01cd96b2bb3a60fd85a614547943bd9211fcab30e4b5fe3a849c79b6bf
             'a4d0d8cbede12ae09f5327788a2bbd3a68cdf06b40c99f0011f10ab99c97767dc97cb406c389e1d053bc2b9a19aa01744cb6519bb315ac2cf5b631c34f938ed1')
 
 prepare() {
+  # Fix boinc 8.2.15 with OpenSSL 4
+  sed -i 's/subj = X509_get_subject_name(cert);/subj = (X509_NAME*)X509_get_subject_name(cert);/' boinc/lib/crypt.cpp
+
   # Fix hostanme to archlinux
   sed -i 's/`hostname`/archlinux/' boinc/generate_svn_version.sh
 
