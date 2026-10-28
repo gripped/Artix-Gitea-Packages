@@ -3,7 +3,7 @@
 
 pkgname=keysmith
 pkgver=26.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='OTP client for Plasma Mobile and Desktop'
 url='https://apps.kde.org/keysmith/'
 arch=(x86_64)
