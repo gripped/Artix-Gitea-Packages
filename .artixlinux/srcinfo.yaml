@@ -41,4 +41,4 @@ pkgbase:
     - 49e707105ba13a9e3e19a92fa750b33c85b442a31cb04dc6ff3eb8a185d114a154fb549f6f2f29397a42d9cd287f14f14bb5c453e893ba0762a30cc6462ca9be
 pkgname:
   - name: tmuxp
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
