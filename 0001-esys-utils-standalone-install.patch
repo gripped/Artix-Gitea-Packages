@@ -1,6 +1,6 @@
-From 1253c4e7826d215908e6efe321704058c6f9980e Mon Sep 17 00:00:00 2001
+From 7f18ae7d2f0d7bd1940164802d6c6c1c8163ee53 Mon Sep 17 00:00:00 2001
 From: artoo <artoo@artixlinux.org>
-Date: Tue, 27 Oct 2026 16:49:12 +0100
+Date: Wed, 28 Oct 2026 21:04:52 +0100
 Subject: [PATCH] esys-utils standalone install
 
 ---
@@ -36,31 +36,31 @@ index 0f53217a48..071cfc9547 100644
  
  if conf.get('ENABLE_NSS') == 1
 diff --git a/meson.build b/meson.build
-index 25276e494e..3b263e4558 100644
+index 25276e494e..734b76199e 100644
 --- a/meson.build
 +++ b/meson.build
-@@ -135,7 +135,7 @@ includedir = prefixdir / get_option('includedir')
- datadir = prefixdir / get_option('datadir')
- localstatedir = '/' / get_option('localstatedir')
+@@ -2054,7 +2054,7 @@ generator_template = executable_template + {
+ }
  
--libexecdir = prefixdir / 'lib/systemd'
-+libexecdir = bindir
- libexecdir_to_bin = '../../bin/'
- pkglibdir = libdir / 'systemd'
+ libexec_template = executable_template + {
+-        'install_dir' : libexecdir,
++        'install_dir' : bindir,
+ }
  
+ executable_additional_kwargs = {
 @@ -2744,6 +2744,16 @@ install_data('LICENSE.GPL2',
  install_subdir('LICENSES',
                 install_dir : docdir)
  
 +install_data('LICENSE.GPL2',
-+             'LICENSE.LGPL2.1',
-+             install_tag : 'etmpfiles',
-+             install_dir : datadir / 'doc/etmpfiles')
++        'LICENSE.LGPL2.1',
++        install_tag : 'etmpfiles',
++        install_dir : datadir / 'doc/etmpfiles')
 +
 +install_data('LICENSE.GPL2',
-+             'LICENSE.LGPL2.1',
-+             install_tag : 'esysusers',
-+             install_dir : datadir / 'doc/esysusers')
++        'LICENSE.LGPL2.1',
++        install_tag : 'esysusers',
++        install_dir : datadir / 'doc/esysusers')
 +
  #####################################################################
  
@@ -85,7 +85,7 @@ index 80418bfe57..4c0ea3aebd 100644
  ############################################################
  
 diff --git a/src/shutdown/meson.build b/src/shutdown/meson.build
-index 397c67098f..b935bb6320 100644
+index 397c67098f..9823bb4ecf 100644
 --- a/src/shutdown/meson.build
 +++ b/src/shutdown/meson.build
 @@ -11,7 +11,7 @@ shutdown_detach_sources = files(
@@ -101,8 +101,8 @@ index 397c67098f..b935bb6320 100644
                          'shutdown.c',
                  ) + shutdown_detach_sources,
                  'dependencies' : libmount_cflags,
-+                'install_tag' : 'eshutdown',
 +                'install' : 'static',
++                'install_tag' : 'eshutdown',
          },
          test_template + {
                  'sources' : files('test-umount.c') +

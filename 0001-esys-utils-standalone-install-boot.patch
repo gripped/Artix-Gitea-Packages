@@ -1,0 +1,207 @@
+From debdf4c5e2554a15d63b7d0748beb7761b8a82d5 Mon Sep 17 00:00:00 2001
+From: artoo <artoo@artixlinux.org>
+Date: Wed, 28 Oct 2026 21:29:53 +0100
+Subject: [PATCH] esys-utils standalone install boot
+
+---
+ meson.build                    |  9 ++++++++-
+ meson_options.txt              |  2 ++
+ src/bless-boot/meson.build     | 10 +++++++---
+ src/boot/meson.build           |  8 ++++----
+ src/bootctl/meson.build        |  1 +
+ src/kernel-install/meson.build |  9 ++++++++-
+ 6 files changed, 30 insertions(+), 9 deletions(-)
+
+diff --git a/meson.build b/meson.build
+index 734b76199e..1759097859 100644
+--- a/meson.build
++++ b/meson.build
+@@ -135,7 +135,7 @@ includedir = prefixdir / get_option('includedir')
+ datadir = prefixdir / get_option('datadir')
+ localstatedir = '/' / get_option('localstatedir')
+ 
+-libexecdir = prefixdir / 'lib/systemd'
++libexecdir = prefixdir / 'lib/esys-utils'
+ libexecdir_to_bin = '../../bin/'
+ pkglibdir = libdir / 'systemd'
+ 
+@@ -2655,6 +2655,7 @@ ukify = custom_target(
+         install : want_ukify,
+         install_mode : 'rwxr-xr-x',
+         depends : ukify_depends,
++        install_tag: 'eukify',
+         install_dir : bindir)
+ if want_ukify
+         public_programs += ukify
+@@ -2754,6 +2755,11 @@ install_data('LICENSE.GPL2',
+         install_tag : 'esysusers',
+         install_dir : datadir / 'doc/esysusers')
+ 
++install_data('LICENSE.GPL2',
++             'LICENSE.LGPL2.1',
++             install_tag : 'eboot',
++             install_dir : datadir / 'doc/egummiboot')
++
+ #####################################################################
+ 
+ # Ensure that changes to the docs/ directory do not break the
+@@ -3178,6 +3184,7 @@ foreach tuple : [
+         ['link-journalctl-shared', get_option('link-journalctl-shared')],
+         ['link-boot-shared',       get_option('link-boot-shared')],
+         ['link-portabled-shared',  get_option('link-portabled-shared')],
++        ['link-kernel-install-shared', get_option('link-kernel-install-shared')],
+         ['first-boot-full-preset'],
+         ['fexecve'],
+         ['coverage',               get_option('b_coverage')],
+diff --git a/meson_options.txt b/meson_options.txt
+index 007780664e..d0ab711802 100644
+--- a/meson_options.txt
++++ b/meson_options.txt
+@@ -580,3 +580,5 @@ option('default-mountfsd-trusted-directories', type : 'boolean', value: false,
+ 
+ option('default-oci-registry', type : 'string', value : 'docker.io',
+        description : 'Default OCI registry name')
++option('link-kernel-install-shared', type: 'boolean',
++       description : 'link kernel-install against libsystemd-shared.so')
+diff --git a/src/bless-boot/meson.build b/src/bless-boot/meson.build
+index 737c652c27..d55195e467 100644
+--- a/src/bless-boot/meson.build
++++ b/src/bless-boot/meson.build
+@@ -2,7 +2,7 @@
+ 
+ executables += [
+         libexec_template + {
+-                'name' : 'systemd-bless-boot',
++                'name' : 'ebless-boot',
+                 'public' : true,
+                 'conditions' : [
+                         'HAVE_BLKID',
+@@ -10,18 +10,22 @@ executables += [
+                 ],
+                 'sources' : files('bless-boot.c'),
+                 'install' : get_option('link-boot-shared') ? 'yes' : 'static',
++                'install_tag' : 'ebless',
+         },
+         generator_template + {
+-                'name' : 'systemd-bless-boot-generator',
++                'name' : 'ebless-boot-generator',
+                 'conditions' : [
+                         'HAVE_BLKID',
+                         'ENABLE_BOOTLOADER',
+                 ],
+                 'sources' : files('bless-boot-generator.c'),
+                 'install' : get_option('link-boot-shared') ? 'yes' : 'static',
++                'install_tag' : 'ebless',
+         },
+         libexec_template + {
+-                'name' : 'systemd-boot-check-no-failures',
++                'name' : 'eboot-check-no-failures',
+                 'sources' : files('boot-check-no-failures.c'),
++                'install' : get_option('link-boot-shared') ? 'yes' : 'static',
++                'install_tag' : 'ebless',
+         },
+ ]
+diff --git a/src/boot/meson.build b/src/boot/meson.build
+index 75f5b46dc0..a117e37b65 100644
+--- a/src/boot/meson.build
++++ b/src/boot/meson.build
+@@ -429,7 +429,7 @@ foreach archspec : efi_archspecs
+         }
+ 
+         efi_elf_binaries += executable(
+-                'systemd-boot' + archspec['arch'],
++                'eboot' + archspec['arch'],
+                 sources : [systemd_boot_sources, version_h],
+                 link_with : libefi,
+                 name_suffix : 'elf',
+@@ -451,7 +451,7 @@ endforeach
+ 
+ foreach efi_elf_binary : efi_elf_binaries
+         name = efi_elf_binary.name()
+-        name += name.startswith('systemd-boot') ? '.efi' : '.efi.stub'
++        name += name.startswith('eboot') ? '.efi' : '.efi.stub'
+ 
+         # For the addon, given it's empty, we need to explicitly reserve space in the header to account for
+         # the sections that ukify will add.
+@@ -468,7 +468,7 @@ foreach efi_elf_binary : efi_elf_binaries
+                 input : efi_elf_binary,
+                 install : true,
+                 install_dir : bootlibdir,
+-                install_tag : 'systemd-boot',
++                install_tag : 'eboot',
+                 command : [
+                         elf2efi_py,
+                         f'--version-major=@project_major_version@',
+@@ -497,4 +497,4 @@ foreach efi_elf_binary : efi_elf_binaries
+              suite : 'boot')
+ endforeach
+ 
+-alias_target('systemd-boot', boot_targets)
++alias_target('eboot', boot_targets)
+diff --git a/src/bootctl/meson.build b/src/bootctl/meson.build
+index d312b5e617..e23cf87fc9 100644
+--- a/src/bootctl/meson.build
++++ b/src/bootctl/meson.build
+@@ -28,6 +28,7 @@ executables += [
+                         tpm2_cflags,
+                 ],
+                 'install' : get_option('link-boot-shared') ? 'yes' : 'static',
++                'install_tag' : 'eboot',
+         },
+         test_template + {
+                 'sources' : files(
+diff --git a/src/kernel-install/meson.build b/src/kernel-install/meson.build
+index 46192e9641..2e556fa8ed 100644
+--- a/src/kernel-install/meson.build
++++ b/src/kernel-install/meson.build
+@@ -8,6 +8,8 @@ executables += [
+                 'public' : true,
+                 'conditions' : ['ENABLE_KERNEL_INSTALL'],
+                 'sources' : files('kernel-install.c'),
++                'install' : get_option('link-kernel-install-shared') ? 'yes' : 'static',
++                'install_tag' : 'kernel-install',
+         },
+ ]
+ 
+@@ -17,6 +19,7 @@ ukify_install = custom_target(
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+         install : want_kernel_install and want_ukify,
+         install_mode : 'rwxr-xr-x',
++        install_tag: 'eukify',
+         install_dir : kernelinstalldir)
+ 
+ loaderentry_install = custom_target(
+@@ -25,6 +28,7 @@ loaderentry_install = custom_target(
+         command : [jinja2_cmdline, '@INPUT@', '@OUTPUT@'],
+         install : want_kernel_install,
+         install_mode : 'rwxr-xr-x',
++        install_tag: 'kernel-install',
+         install_dir : kernelinstalldir)
+ 
+ uki_copy_install = files('90-uki-copy.install')
+@@ -36,18 +40,21 @@ kernel_install_files = uki_copy_install + files(
+ if want_kernel_install
+         install_data(kernel_install_files,
+                      install_mode : 'rwxr-xr-x',
++                     install_tag: 'kernel-install',
+                      install_dir : kernelinstalldir)
+ 
+         install_data('install.conf',
++                     install_tag: 'kernel-install',
+                      install_dir : kerneldir)
+ 
+         if want_ukify
+                 install_data('uki.conf',
++                             install_tag: 'kernel-install',
+                              install_dir : kerneldir)
+         endif
+ 
+         if install_sysconfdir
+-                install_emptydir(sysconfdir / 'kernel/install.d')
++                install_emptydir(sysconfdir / 'kernel/install.d', install_tag: 'kernel-install')
+         endif
+ endif
+ 
+-- 
+2.56.0
+

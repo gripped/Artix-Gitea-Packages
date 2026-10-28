@@ -14,11 +14,13 @@ repos:
     packages: []
     debug: []
   system-gremlins:
-    version: 262.1-1
+    version: 262.1-2
     packages:
-      - esysusers-262.1-1-x86_64.pkg.tar.zst
-      - etmpfiles-262.1-1-x86_64.pkg.tar.zst
-      - eshutdown-262.1-1-x86_64.pkg.tar.zst
+      - esysusers-262.1-2-x86_64.pkg.tar.zst
+      - etmpfiles-262.1-2-x86_64.pkg.tar.zst
+      - eshutdown-262.1-2-x86_64.pkg.tar.zst
+      - egummiboot-262.1-2-x86_64.pkg.tar.zst
+      - eukify-262.1-2-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 261.2-1

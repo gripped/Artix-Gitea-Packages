@@ -8,7 +8,7 @@ _pkgbase=systemd
 _alpm=2.4.5
 _tag='262.1'
 
-_boot=false
+_boot=true
 
 
 pkgbase=esys-utils
@@ -26,7 +26,7 @@ fi
 
 pkgdesc='System utils extracted from systemd'
 pkgver="${_tag/[-~]/}"
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -64,14 +64,16 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         artix.conf
         loader.conf
         splash-artix.bmp
+        0001-esys-utils-standalone-install-boot.patch
 )
 sha512sums=('7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            '130f94a943d6d88db72d3901668d2f98385596bdfc743b74e66821088c2f500ddf6d7b33f7ac0caa72011c1766baa829e472866065d86d045818167d8ecab0a0'
+            '7301447a65a582ea53799d63a3fbc9fca7204b572180a5a66954037bf750ceb309c0b3bc2ea7cc351eb3638800d0e516aaef8d4f3b5a6b7bdd3416151b3a095c'
             '982341dc60bcd15c956eddd683e0b42b63c93d9521acc204bd1ad38a7d1183ae91e8e3074a53294b29e5058a17a8b6d257156dd0bfc21facdba1c035fa64f2c5'
             'ff87b29ecb95d88c9048a74aadb84f8971fd1162e18097f74d7d2cfd40e8de0a42580f5a7fd9e393cfec402990b7390908ccaf24bba8bb8fb61653111a80ae58'
-            'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b')
+            'a023a7e151f1fe497ff53811e52e41f25ade1dda6f01a3bae37773f87180132bb87ffd60939d24cac09e8de6b9a0d42399c0504f56871e62eb54aedc131e653b'
+            '9194c515adc7de8237f700dcd4f28d594fa5b2f64a278fdbbc6b833e613d2a37cc09e70cbaf1a0a3172fd042d54cfde53df2dd26da737d066088a9fafc3f2f1c')
 
 _backports=(
 )
@@ -96,6 +98,9 @@ prepare() {
     patch -Np1 -i ../0001-Use-Arch-Linux-device-access-groups.patch
 
     patch -Np1 -i ../0001-esys-utils-standalone-install.patch
+    if $_boot; then
+        patch -Np1 -i ../0001-esys-utils-standalone-install-boot.patch
+    fi
 }
 
 build() {
@@ -267,22 +272,23 @@ build() {
 
 
     if $_boot; then
-        local _efi_arch
-
-        case $CARCH in
-            x86_64*) _efi_arch=x64 ;;
-            i686) _efi_arch=ia32 ;;
-        esac
+        # local _efi_arch
+        #
+        # case $CARCH in
+        #     x86_64*) _efi_arch=x64 ;;
+        #     i686) _efi_arch=ia32 ;;
+        # esac
 
          _targets+=(
 
             bootctl
             man/bootctl.1
-            src/boot/eboot${_efi_arch}.efi
-            src/boot/linux${_efi_arch}.efi.stub
-            src/boot/addon${_efi_arch}.efi.stub
+            src/boot/ebootx64.efi
+            src/boot/linuxx64.efi.stub
+            src/boot/addonx64.efi.stub
 
             ebless-boot{,-generator}
+            eboot-check-no-failures
             man/systemd-{boot.7,bless-boot-generator.8}
 
             kernel-install
@@ -301,8 +307,9 @@ build() {
 check() {
     local _tests=()
     _tests+=(
-        --suite tmpfiles
-        --suite sysusers
+        test-systemd-tmpfiles #.standalone
+        test-sysusers #.standalone
+        test-umount
     )
 
     meson test -C build --print-errorlogs "${_tests[@]}"
