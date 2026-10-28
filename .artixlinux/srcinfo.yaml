@@ -1,0 +1,48 @@
+---
+version: 1.32.0-1
+pkgbase:
+  name: cudnn-frontend
+  pkgdesc: Modern, open-source entry point to the cuDNN library
+  pkgver: 1.32.0
+  pkgrel: 1
+  url: https://docs.nvidia.com/deeplearning/cudnn/latest/
+  arch:
+    - x86_64
+  license:
+    - MIT
+  makedepends:
+    - git
+    - cmake
+    - ninja
+    - cuda
+    - cudnn
+    - catch2
+    - nanobind
+    - python
+    - python-build
+    - python-installer
+    - python-wheel
+    - python-setuptools
+  source:
+    - cudnn-frontend-1.32.0.tar.gz::https://github.com/NVIDIA/cudnn-frontend/archive/refs/tags/v1.32.0.tar.gz
+    - pyproject.patch
+  sha256sums:
+    - f4fe84095f848dd77b148feb592bc4ac4a3b085cd3fe1d9e95e1911e846f7ed1
+    - 9fa9afab152caf6f11dbf850aecfafa18d8cb3d24c298c682a779bcb22a1159f
+pkgname:
+  - name: cudnn-frontend
+    depends:
+      - glibc
+      - libstdc++
+      - libgcc
+      - cuda
+      - cudnn
+  - name: python-cudnn-frontend
+    depends:
+      - glibc
+      - libstdc++
+      - libgcc
+      - python
+      - cuda
+      - cudnn
+# generated with artixpkg 0.40.0-1-any
