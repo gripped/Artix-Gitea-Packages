@@ -1,10 +1,10 @@
 ---
-version: 0.10.2-1
+version: 0.10.2-2
 pkgbase:
   name: swtpm
   pkgdesc: Libtpms-based TPM emulator with socket, character device, and Linux CUSE interface
   pkgver: 0.10.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/stefanberger/swtpm
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - e17927a20ee0612625372a895381094588888d7e9f6d3526388e386ee931905446dd0d0152219ed4315cf8dbacae82fbc0fcd292b3bfa5b52e7628a502b3665b
 pkgname:
   - name: swtpm
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
