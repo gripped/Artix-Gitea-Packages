@@ -5,7 +5,7 @@
 
 pkgname=kdeconnect
 pkgver=26.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Adds communication between KDE and your smartphone'
 url='https://kdeconnect.kde.org/'
 arch=(x86_64)
