@@ -9,8 +9,8 @@
 # Contributor: Larry Hajali <larryhaja@gmail.com>
 
 pkgname=calibre
-pkgver=9.11.0
-pkgrel=3
+pkgver=9.14.0
+pkgrel=6
 pkgdesc='Ebook management application'
 arch=(x86_64)
 url=https://calibre-ebook.com
@@ -33,7 +33,6 @@ _pydeps=(apsw
          mechanize
          msgpack
          netifaces
-         pdftotext
          pillow
          psutil
          py7zr
@@ -67,6 +66,7 @@ depends=(espeak-ng
          openssl
          optipng
          podofo
+         poppler # for pdftotext
          protobuf
          "${_pydeps[@]/#/python-}"
          python
@@ -85,13 +85,12 @@ makedepends=(cmake
              rapydscript-ng
              sip
              xdg-utils)
-checkdepends=(poppler
-              python-fonttools
+checkdepends=(python-fonttools
               python-pyzstd
+              python-sgmllib3k
               speech-dispatcher
               tk)
 optdepends=('onnxruntime: required for text-to-speech'
-            'poppler: required for converting pdf to html'
             'python-fonttools: required for font subset feature in epub editor'
             'speech-dispatcher: TTS support in the viewer')
 conflicts=(calibre-common
@@ -101,9 +100,9 @@ _archive="$pkgname-$pkgver"
 source=("https://download.calibre-ebook.com/$pkgver/$_archive.tar.xz"
         "$url/signatures/$_archive.tar.xz.sig"
         "tts-piper-remove-withterminator.patch")
-sha256sums=('50d42e3b32ec5116f6b1df099537f4becaf36bfedecf9f581b743f11d8b6cb36'
+sha256sums=('d1bc24024b0942429c627e9c5d0b25d51df9c1af1e1d8dca3e572f03b194c561'
             'SKIP'
-            '128dad5dda9175ee9d8a798cdac0514e228821dca11b746b54682a9cc787d3da')
+            'e4c2a5a3885e0476b13b40afd2fa3bceaa08465d900295d5a53111797d12b815')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal (New longer key) <kovid@kovidgoyal.net>
 
 prepare(){

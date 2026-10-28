@@ -1,19 +1,19 @@
 ---
-version: 9.11.0-3
+version: 9.14.0-6
 pkgbase:
   name: calibre
   pkgdesc: Ebook management application
-  pkgver: 9.11.0
-  pkgrel: 3
+  pkgver: 9.14.0
+  pkgrel: 6
   url: https://calibre-ebook.com
   arch:
     - x86_64
   license:
     - GPL-3.0-only
   checkdepends:
-    - poppler
     - python-fonttools
     - python-pyzstd
+    - python-sgmllib3k
     - speech-dispatcher
     - tk
   makedepends:
@@ -40,6 +40,7 @@ pkgbase:
     - openssl
     - optipng
     - podofo
+    - poppler
     - protobuf
     - python-apsw
     - python-beautifulsoup4
@@ -59,7 +60,6 @@ pkgbase:
     - python-mechanize
     - python-msgpack
     - python-netifaces
-    - python-pdftotext
     - python-pillow
     - python-psutil
     - python-py7zr
@@ -88,7 +88,6 @@ pkgbase:
     - zstd
   optdepends:
     - 'onnxruntime: required for text-to-speech'
-    - 'poppler: required for converting pdf to html'
     - 'python-fonttools: required for font subset feature in epub editor'
     - 'speech-dispatcher: TTS support in the viewer'
   conflicts:
@@ -98,15 +97,15 @@ pkgbase:
     - calibre-common
     - calibre-python3
   source:
-    - https://download.calibre-ebook.com/9.11.0/calibre-9.11.0.tar.xz
-    - https://calibre-ebook.com/signatures/calibre-9.11.0.tar.xz.sig
+    - https://download.calibre-ebook.com/9.14.0/calibre-9.14.0.tar.xz
+    - https://calibre-ebook.com/signatures/calibre-9.14.0.tar.xz.sig
     - tts-piper-remove-withterminator.patch
   validpgpkeys:
     - 3CE1780F78DD88DF45194FD706BC317B515ACE7C
   sha256sums:
-    - 50d42e3b32ec5116f6b1df099537f4becaf36bfedecf9f581b743f11d8b6cb36
+    - d1bc24024b0942429c627e9c5d0b25d51df9c1af1e1d8dca3e572f03b194c561
     - SKIP
-    - 128dad5dda9175ee9d8a798cdac0514e228821dca11b746b54682a9cc787d3da
+    - e4c2a5a3885e0476b13b40afd2fa3bceaa08465d900295d5a53111797d12b815
 pkgname:
   - name: calibre
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any

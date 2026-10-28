@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,8 +46,9 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: null
-    packages: []
+    version: 9.14.0-6
+    packages:
+      - calibre-9.14.0-6-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: 9.11.0-3
