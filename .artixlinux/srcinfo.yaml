@@ -1,10 +1,10 @@
 ---
-version: 5.1.0-2
+version: 5.1.0-3
 pkgbase:
   name: shortwave
   pkgdesc: Internet radio player
   pkgver: 5.1.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://apps.gnome.org/Shortwave/
   arch:
     - x86_64
@@ -45,4 +45,4 @@ pkgbase:
     - 5172239d703d73f4b283543f62fbb64dae93ebdadc474e9980800082ecf20a2e4576ee45abc5bcfd9f9376709583dbc3a1261c5bc597e30af9488e02941392c3
 pkgname:
   - name: shortwave
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
