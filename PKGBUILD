@@ -3,7 +3,7 @@
 
 pkgname=khealthcertificate
 pkgver=26.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Handling of digital vaccination, test and recovery certificates'
 arch=(x86_64)
 url='https://www.kde.org'
