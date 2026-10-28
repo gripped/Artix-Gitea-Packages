@@ -5,7 +5,7 @@
 
 pkgname=libktorrent
 pkgver=26.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='A BitTorrent protocol implementation'
 arch=(x86_64)
 url='https://apps.kde.org/ktorrent/'
