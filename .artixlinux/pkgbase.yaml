@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.16.26-2
+    version: 0.16.27-1
     packages:
-      - libtorrent-0.16.26-2-x86_64.pkg.tar.zst
+      - libtorrent-0.16.27-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
