@@ -1,10 +1,10 @@
 ---
-version: 0.103-1.1
+version: 0.103-2
 pkgbase:
   name: open-isns
   pkgdesc: iSNS server and client for Linux
   pkgver: 0.103
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://github.com/gonzoleeman/open-isns
   arch:
     - x86_64
@@ -20,4 +20,4 @@ pkgbase:
     - 47499f3ce87a832840884dcf3eedbec8c039f472fe921a5378e3b206a3fc1a32
 pkgname:
   - name: open-isns
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
