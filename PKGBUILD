@@ -15,7 +15,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=1
+pkgrel=2
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -57,7 +57,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
 sha512sums=('7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde'
             'e5fec179ae4753b7ed844906d140d3efe525cfdf6675435e80e13a548dd087b0973e262011da5a41b3278edd967aadc5c800fcfddf41987c00fa02c4fdcc91c0'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
-            '266a9da1f2aedaaa96dd46842779e27021543a858b4f2b0e80bdcb865bfe5887a710fe9c68473b5394ffd6aa85091c61744ca9fa546905f875eab10d15f4edeb')
+            'afaaca390ff73524e4ccf592549bdca7afbf5ce9ec6e9f9a8ebae1b600016aaec1148f2229721578320504d92e3622e9c15628c33dd6ee93f173217c074cb8ec')
 
 _backports=(
     # hwdb/keyboard: fix match for for X+ Piccolo, again
@@ -223,6 +223,7 @@ build() {
         -Dmountfsd=false
         -Dnspawn=disabled
         -Dimds=disabled
+        -Dsysinstall=false
     )
 
     artix-meson "$_pkgbase" build "${_meson_options[@]}"
