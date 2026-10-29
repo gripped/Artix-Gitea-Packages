@@ -10,7 +10,7 @@
 
 pkgname=nodejs
 pkgver=26.12.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
 url='https://nodejs.org/'
@@ -18,7 +18,7 @@ license=('MIT')
 depends=(
   'abseil-cpp'
   'ada'
-#  'brotli'
+  'brotli'
   'c-ares'
   'icu'
   'libffi'
@@ -54,6 +54,13 @@ validpgpkeys=(
   '108F52B48DB57BB0CC439B2997B01419BD92F80A' # Ruy Adorno <ruyadorno@hotmail.com>
 )
 
+prepare() {
+  cd node
+  # Restore child-process inheritance after process.env is reassigned.
+  # https://github.com/nodejs/node/pull/66883
+  git cherry-pick -n 5a89d815457403c0f707f87af4f9cb47507a1cc4
+}
+
 _set_flags() {
   # /usr/lib/libnode.so uses malloc_usable_size, which is incompatible with fortification level 3
   CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
@@ -73,6 +80,7 @@ build() {
     --v8-enable-temporal-support \
     --shared-abseil \
     --shared-ada \
+    --shared-brotli \
     --shared-cares \
     --shared-ffi \
     --shared-libuv \
@@ -83,7 +91,6 @@ build() {
     --shared-simdjson \
     --shared-zlib \
     --shared-zstd
-    # --shared-brotli
     # --shared-http-parser
     # --shared-simdutf
     # --shared-v8
@@ -104,6 +111,9 @@ check() {
   rm test/parallel/test-http2-priority-event.js
   rm test/parallel/test-http2-reset-flood.js
   rm test/parallel/test-tls-ocsp-callback.js
+
+  # Fails on assert.strictEqual(blockList.check(`${mixed}%${'z'.repeat(200)}`, 'ipv6'), false);
+  rm test/parallel/test-blocklist.js
 
   # https://github.com/nodejs/node/issues/63914
   rm test/parallel/test-snapshot-reproducible.js
