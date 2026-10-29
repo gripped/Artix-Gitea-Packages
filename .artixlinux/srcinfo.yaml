@@ -1,10 +1,10 @@
 ---
-version: 1.2.6-3
+version: 1.2.6-4
 pkgbase:
   name: reapack
   pkgdesc: Package manager for the Reaper DAW
   pkgver: 1.2.6
-  pkgrel: 3
+  pkgrel: 4
   url: https://reapack.com
   arch:
     - x86_64
@@ -45,4 +45,4 @@ pkgbase:
     - 222e37d29c6b9c3b1593545e3e12c40561a6f44b82234e0ba2b8223da541bc74191d955b98a9c72fc29ceac1a09a8e9d8fa24466524a7296e18c148563ee45e8
 pkgname:
   - name: reapack
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
