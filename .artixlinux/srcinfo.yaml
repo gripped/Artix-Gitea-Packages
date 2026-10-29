@@ -1,12 +1,11 @@
 ---
-version: 3.13.3-4
+version: 3.13.3-7
 pkgbase:
   name: gdal
   pkgdesc: A translator library for raster and vector geospatial data formats
   pkgver: 3.13.3
-  pkgrel: 4
+  pkgrel: 7
   url: https://gdal.org/
-  changelog: gdal.changelog
   arch:
     - x86_64
   license:
@@ -80,6 +79,7 @@ pkgname:
       - libfreexl
       - libgcc
       - libgeotiff
+      - libgomp
       - libjpeg-turbo
       - libpng
       - libspatialite
