@@ -1,26 +1,24 @@
-# Maintainer: artist for Artix Linux
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Jovan Lanik <jox969@gmail.com>
 
 pkgname=gtklock
-pkgver=4.0.0
+pkgver=5.0.0
 pkgrel=1
 pkgdesc="GTK-based lockscreen for Wayland"
-arch=('x86_64')
 url="https://github.com/jovanlanik/gtklock"
-license=('GPL3')
-depends=(gtk3 gtk-session-lock wayland pam)
-makedepends=(meson git scdoc)
-provides=('gtklock')
-conflicts=('gtklock')
-source=("$pkgname::git+$url.git")
+arch=('x86_64')
+license=('GPL-3.0-only')
+depends=('pam' 'wayland' 'gtk3' 'gtk-session-lock')
+makedepends=('meson' 'scdoc')
+source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/refs/tags/v${pkgver}.tar.gz")
+sha256sums=('018c50cf1d7b626f823e797750e5b304511b3b359e7277e8abb3383c11e7aed9')
 
 build() {
-	artix-meson "$pkgname" build
+	artix-meson "${pkgname}-${pkgver}" build
 	meson compile -C build
 }
 
 package() {
-	meson install -C build --destdir "$pkgdir"
+	meson install -C build --destdir "${pkgdir}"
 }
-
-sha256sums=('SKIP')
 

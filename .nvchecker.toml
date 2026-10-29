@@ -1,0 +1,5 @@
+[gtklock]
+source = "git"
+git = "https://github.com/jovanlanik/gtklock.git"
+prefix = "v"
+exclude_regex = "2022.*"
