@@ -1,10 +1,10 @@
 ---
-version: 9.1.2-2
+version: 9.1.3-1
 pkgbase:
   name: valkey
   pkgdesc: An in-memory database that persists on disk
-  pkgver: 9.1.2
-  pkgrel: 2
+  pkgver: 9.1.3
+  pkgrel: 1
   url: https://valkey.io/
   install: valkey.install
   arch:
@@ -29,13 +29,13 @@ pkgbase:
     - etc/valkey/valkey.conf
     - etc/valkey/sentinel.conf
   source:
-    - git+https://github.com/valkey-io/valkey.git#tag=9.1.2
+    - git+https://github.com/valkey-io/valkey.git#tag=9.1.3
     - valkey.sysusers
     - valkey.tmpfiles
     - valkey.conf-sane-defaults.patch
     - valkey-5.0-use-system-jemalloc.patch
   sha512sums:
-    - 1f2163a6380110b6201ab3e08781e230430a86d09ae97bbdea9d289c966a5514fddecf0cf01039642dafa8ac13204866839b0221ca3e68abef753a04a0255c26
+    - dae61d636a03178a57cd985d477a496e10f477fe751b386aa01bfec89cc9628a97f19c32405d4bf6e43d9d9f0a89b912be8737f05656276d211d002cb3e0ef6f
     - d47185f700293304b5c23caf59999fecda2d1485a28a5eeff3a2922906f0184794d3eeeeeaac2ca415b865d7c4b5d74f88e694d34eeb6d1ee3a6bedbcd6edfdd
     - 11cf6d6999329af7a9fa4bcbbcf22242b461cec0c16ad949cc6b0383703f19417092782569bf6224f94167a560de0b4ba53ec0d8522683736a14f01bc5986b28
     - 032b19af22dd96c7898aa3dcae76d63fd8566c1d35ccb069e22fd0b76612d3285cd318f26ad5994b4f761f44a23c091d5322dec975b9a5a8cc65455399576045

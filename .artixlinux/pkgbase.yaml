@@ -22,9 +22,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 9.1.2-2
+    version: 9.1.3-1
     packages:
-      - valkey-9.1.2-2-x86_64.pkg.tar.zst
+      - valkey-9.1.3-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
