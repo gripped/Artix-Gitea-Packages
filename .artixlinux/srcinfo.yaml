@@ -1,10 +1,10 @@
 ---
-version: 5.3.0-1
+version: 5.3.0-2
 pkgbase:
   name: python-pytest-benchmark
   pkgdesc: A py.test fixture for benchmarking code
   pkgver: 5.3.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ionelmc/pytest-benchmark
   arch:
     - any
@@ -34,4 +34,4 @@ pkgbase:
     - 9b6ddfeba718130adad9ddc439f8ce20db81d93cde08d24c2af0b5514e548ac58cd0042b998d7e7c1b98fd70c3c219af251bb07d9e52df4be5937043182d0a3c
 pkgname:
   - name: python-pytest-benchmark
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
