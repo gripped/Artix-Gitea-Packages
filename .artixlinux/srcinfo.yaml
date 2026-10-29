@@ -1,10 +1,10 @@
 ---
-version: 2.1.13-1
+version: 2.1.13-2
 pkgbase:
   name: open-iscsi
   pkgdesc: iSCSI userland tools
   pkgver: 2.1.13
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.open-iscsi.com/
   install: open-iscsi.install
   arch:
@@ -31,4 +31,4 @@ pkgbase:
     - 1c3a8ad7d86e57d247a08c013f5055ef695b3a07ed760d1aea7d90b9f9011602
 pkgname:
   - name: open-iscsi
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
