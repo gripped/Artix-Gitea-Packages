@@ -5,7 +5,7 @@
 
 pkgname=squid
 pkgver=7.7
-pkgrel=1
+pkgrel=2
 pkgdesc='Full-featured Web proxy cache server'
 arch=('x86_64')
 url='http://www.squid-cache.org'
@@ -27,20 +27,20 @@ source=("https://github.com/squid-cache/squid/releases/download/SQUID_${pkgver/.
         'squid.pam'
         'squid.tmpfiles'
         'squid.sysusers'
-         nettle-4.patch)
+        'squid-7.7-openssl-4.patch::https://github.com/squid-cache/squid/commit/144a59fec3d7a4bd7f0c3e71934156e1a56ebabc.patch')
 sha256sums=('e3bd613b91b1c498ec2992276063342a85cd6edddd5521294e04f44bc055da9b'
             'SKIP'
             '11fb388f8679fd6461e0de006810ea608a3686fffda16904b0ed71f412be499c'
             '495f54e51f6ec1e4dce87090d76718aea1eb37559c4439d876dd39598163062a'
             'b13c6c17ba8d24fa9414ba3c0aa92863dccce720930a0dd53acc1c0e32041e5a'
-            'd0cef79717db6d547d776eac61195430933ae7a5ffc24403bde44175b3eb373b')
+            '01fa935cabe668d2cc367df4c05e60f9bcb307b38ebb49faf287427997d71079')
 
 prepare() {
   cd "$srcdir/$pkgname-$pkgver"
-  for p in ${source[@]}; do
-    test "${p:(-5)}" == "patch" && patch -p1 -i ../${p:(-46)} || true
-  done
-#  patch -p1 -i ../nettle-4.patch
+  # Fix OpenSSL 4 compatibility: https://github.com/squid-cache/squid/pull/2501
+  patch -p1 -i ../squid-7.7-openssl-4.patch
+  # ASN1_STRING_set() copies the DER buffers; release the originals.
+  sed -i '/ASN1_STRING_set(.*ext_der, ext_len);/s/^\([[:space:]]*\).*/&\n\1OPENSSL_free(ext_der);/' src/ssl/gadgets.cc
 }
 
 build() {
