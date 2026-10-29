@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Baptiste Jonglez <baptiste--aur at jonglez dot org>
 
 pkgname=jami-daemon
 pkgver=20260917
-pkgrel=2
+pkgrel=3
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (daemon component)"
 arch=(x86_64)
 url="https://jami.net"
