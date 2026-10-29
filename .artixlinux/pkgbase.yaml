@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,10 +21,10 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 8.2.15-3
+    version: 8.2.15-5
     packages:
-      - boinc-8.2.15-3-x86_64.pkg.tar.zst
-      - boinc-nox-8.2.15-3-x86_64.pkg.tar.zst
+      - boinc-8.2.15-5-x86_64.pkg.tar.zst
+      - boinc-nox-8.2.15-5-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
