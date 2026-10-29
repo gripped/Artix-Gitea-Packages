@@ -1,10 +1,10 @@
 ---
-version: 1.5.8.2-1
+version: 1.5.8.2-2
 pkgbase:
   name: libisofs
   pkgdesc: Library to pack up hard disk files and directories into a ISO 9660 disk image
   pkgver: 1.5.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://dev.lovelyhq.com/libburnia/libisofs
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 897e2b0a9231bfe42081cf9780d62c63148d63e0d97523deb4867ce83ebd3896754a28aec2f50f5d8312570346e978f6cdeccf8209800f2e5971e5d1196e1b37
 pkgname:
   - name: libisofs
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
