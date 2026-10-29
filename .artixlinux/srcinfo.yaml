@@ -1,10 +1,10 @@
 ---
-version: 0.56.2-4
+version: 0.57.0-1
 pkgbase:
   name: hyprland
   pkgdesc: a highly customizable dynamic tiling Wayland compositor
-  pkgver: 0.56.2
-  pkgrel: 4
+  pkgver: 0.57.0
+  pkgrel: 1
   url: https://github.com/hyprwm/Hyprland
   arch:
     - x86_64
@@ -22,31 +22,22 @@ pkgbase:
   depends:
     - cairo
     - aquamarine
-    - libaquamarine.so
     - libgcc
     - libstdc++
     - glibc
     - glib2
-    - libgio-2.0.so
-    - libgobject-2.0.so
     - glslang
     - hyprcursor
-    - libhyprcursor.so
     - hyprgraphics
-    - libhyprgraphics.so
     - hyprland-guiutils
     - hyprlang
-    - libhyprlang.so
     - hyprutils
-    - libhyprutils.so
     - hyprwire
-    - libhyprwire.so
     - lcms2
-    - liblcms2.so
+    - libcanberra
     - libdrm
+    - libei
     - libglvnd
-    - libEGL.so
-    - libGLESv2.so
     - libinput
     - libx11
     - libxcb
@@ -54,25 +45,18 @@ pkgbase:
     - libxcursor
     - libxfixes
     - libxkbcommon
-    - libxkbcommon.so
     - libxrender
     - lua
     - mesa
     - muparser
     - opengl-driver
     - pango
-    - libpango-1.0.so
-    - libpangocairo-1.0.so
     - pixman
-    - libpixman-1.so
     - re2
-    - libre2.so
+    - sdbus-cpp
     - tomlplusplus
-    - libtomlplusplus.so
     - util-linux-libs
-    - libuuid.so
     - wayland
-    - libwayland-server.so
     - wayland-protocols
     - xcb-proto
     - xcb-util
@@ -89,11 +73,81 @@ pkgbase:
   provides:
     - wayland-compositor
   source:
-    - Hyprland-0.56.2.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.56.2/source-v0.56.2.tar.gz
+    - Hyprland-0.57.0.tar.gz::https://github.com/hyprwm/Hyprland/releases/download/v0.57.0/source-v0.57.0.tar.gz
   sha256sums:
-    - 03ad3f5ef152ff44116ffd56fcf808486211ecabf4f0ba567108ee746ba5cd2e
+    - 82d006ba9264fe67266c7d583c16f1a6c64d51424dbdc472c3e9c9d5ddfcd559
 pkgname:
   - name: hyprland
+    depends:
+      - cairo
+      - aquamarine
+      - libgcc
+      - libstdc++
+      - glibc
+      - glib2
+      - glslang
+      - hyprcursor
+      - hyprgraphics
+      - hyprland-guiutils
+      - hyprlang
+      - hyprutils
+      - hyprwire
+      - lcms2
+      - libcanberra
+      - libdrm
+      - libei
+      - libglvnd
+      - libinput
+      - libx11
+      - libxcb
+      - libxcomposite
+      - libxcursor
+      - libxfixes
+      - libxkbcommon
+      - libxrender
+      - lua
+      - mesa
+      - muparser
+      - opengl-driver
+      - pango
+      - pixman
+      - re2
+      - sdbus-cpp
+      - tomlplusplus
+      - util-linux-libs
+      - wayland
+      - wayland-protocols
+      - xcb-proto
+      - xcb-util
+      - xcb-util-errors
+      - xcb-util-image
+      - xcb-util-keysyms
+      - xcb-util-renderutil
+      - xcb-util-wm
+      - xorg-xwayland
+      - libEGL.so
+      - libGLESv2.so
+      - libaquamarine.so
+      - libcanberra.so
+      - libeis.so
+      - libgio-2.0.so
+      - libgobject-2.0.so
+      - libhyprcursor.so
+      - libhyprgraphics.so
+      - libhyprlang.so
+      - libhyprutils.so
+      - libhyprwire.so
+      - liblcms2.so
+      - libpango-1.0.so
+      - libpangocairo-1.0.so
+      - libpixman-1.so
+      - libre2.so
+      - libreadline.so
+      - libsdbus-c++.so
+      - libtomlplusplus.so
+      - libuuid.so
+      - libwayland-server.so
+      - libxkbcommon.so
   - name: hyprpm
     pkgdesc: Plugin manager for Hyprland
     depends:
