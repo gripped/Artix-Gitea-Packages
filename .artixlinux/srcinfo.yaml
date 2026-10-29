@@ -1,9 +1,9 @@
 ---
-version: 2026.10.21-1
+version: 2026.10.26-1
 pkgbase:
   name: yt-dlp
   pkgdesc: A youtube-dl fork with additional features and fixes
-  pkgver: 2026.10.21
+  pkgver: 2026.10.26
   pkgrel: 1
   url: https://github.com/yt-dlp/yt-dlp
   arch:
@@ -38,9 +38,9 @@ pkgbase:
     - 'python-pyxattr: for writing xattr metadata (alternative option)'
     - 'python-secretstorage: For -cookies-from-browser to access the GNOME keyring while decrypting cookies of Chromium-based browsers'
   source:
-    - yt-dlp-2026.10.21.tar.gz::https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.21/yt-dlp.tar.gz
+    - yt-dlp-2026.10.26.tar.gz::https://github.com/yt-dlp/yt-dlp/releases/download/2026.10.26/yt-dlp.tar.gz
   sha256sums:
-    - 5f1e419f76e49c996061511ef9eacce50d4aa4959c34480539562e9e1295708d
+    - 21f942d258d25cc4e60b4982a25c423460f0bebb835f38e6dfd1fcb140087f95
 pkgname:
   - name: yt-dlp
 # generated with artixpkg 0.40.0-1-any
