@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Antonio Rojas <arojas@archlinux.org>
+# Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasmatube
 pkgver=26.08.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Kirigami YouTube video player based on QtMultimedia and youtube-dl'
 url='https://apps.kde.org/plasmatube/'
 arch=(x86_64)
