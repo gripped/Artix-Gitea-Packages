@@ -1,10 +1,10 @@
 ---
-version: 1.3.1-2
+version: 1.4.0-1
 pkgbase:
   name: ghostty
   pkgdesc: Fast, native, feature-rich terminal emulator pushing modern features
-  pkgver: 1.3.1
-  pkgrel: 2
+  pkgver: 1.4.0
+  pkgrel: 1
   url: https://github.com/ghostty-org/ghostty
   arch:
     - x86_64
@@ -42,9 +42,9 @@ pkgbase:
     - libwayland-client.so
     - zlib
   source:
-    - https://github.com/ghostty-org/ghostty/archive/v1.3.1/ghostty-1.3.1.tar.gz
+    - https://github.com/ghostty-org/ghostty/archive/v1.4.0/ghostty-1.4.0.tar.gz
   sha256sums:
-    - 265837d3026b433f0e6b4e49d43153b915b0a19513f7edd8a8e693c559bd415b
+    - 2e2a2516f9bea89a4991ad7c9401b77682eed366387a5b1d7c629472b5d11a43
 pkgname:
   - name: ghostty
     depends:
@@ -89,4 +89,4 @@ pkgname:
     depends:
       - ghostty
       - nautilus-python
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
