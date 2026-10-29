@@ -1,10 +1,10 @@
 ---
-version: 1.18.4-1
+version: 1.18.4-2
 pkgbase:
   name: python-pipx
   pkgdesc: Install and Run Python Applications in Isolated Environments
   pkgver: 1.18.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/pypa/pipx
   arch:
     - any
@@ -24,6 +24,7 @@ pkgbase:
     - python-argcomplete
     - python-packaging
     - python-platformdirs
+    - python-filelock
   source:
     - git+https://github.com/pypa/pipx.git#tag=1.18.4
   sha512sums:
