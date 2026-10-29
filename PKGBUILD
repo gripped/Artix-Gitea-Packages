@@ -1,5 +1,4 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Sven-Hendrik Haase <svenstaro@archlinux.org>
+# Maintainer: Sven-Hendrik Haase <svenstaro@archlinux.org>
 # Contributor: Sergej Pupykin <arch+pub@sergej.pp.ru>
 # Contributor: Ido Rosen <ido@kernel.org>
 # Contributor: Ross Whitfield <whitfieldre@ornl.gov>
@@ -8,7 +7,7 @@
 
 pkgname=poco
 pkgver=1.15.4
-pkgrel=1
+pkgrel=2
 pkgdesc="C++ class libraries for network-centric, portable applications, complete edition with debug libraries"
 arch=('x86_64')
 url="https://pocoproject.org/"
