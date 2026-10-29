@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
+# Maintainer: Andreas 'Segaja' Schleifer <archlinux at segaja dot de>
 
 _gemname='puma'
 pkgname="ruby-$_gemname"
 pkgver=7.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A Ruby/Rack web server built for concurrency'
 arch=('x86_64')
 url='https://puma.io/'

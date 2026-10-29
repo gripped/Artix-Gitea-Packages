@@ -1,10 +1,10 @@
 ---
-version: 7.1.0-1
+version: 7.1.0-2
 pkgbase:
   name: ruby-puma
   pkgdesc: A Ruby/Rack web server built for concurrency
   pkgver: 7.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://puma.io/
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - be800a0b7ae2850ddbaac3408331956278a13150e20383270f874b404992fe6c80c430658f96fcb29f741c09a966d716f2e80e5fa757943b0bb7f1b4069f5686
 pkgname:
   - name: ruby-puma
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
