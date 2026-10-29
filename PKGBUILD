@@ -77,7 +77,7 @@ prepare() {
   if [[ "electron$_electronver" != "$_electron" ]]; then
     echo "Wrong electron dependency. Change _electron to $_electronver"
   fi
-  _electronver=
+  _electronver=42.11.18
 
   # Change electron binary name to the target electron
   sed -e "s|name=electron|name=$_electron |" \
