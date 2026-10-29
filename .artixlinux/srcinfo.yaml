@@ -1,10 +1,10 @@
 ---
-version: 8.1.0-1
+version: 8.1.0-2
 pkgbase:
   name: python-redis
   pkgdesc: The Python interface to the Redis key-value store
   pkgver: 8.1.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/redis/redis-py
   arch:
     - any
@@ -43,4 +43,4 @@ pkgbase:
     - a3ece7c0664d3ad213cb5e3dd407ea0f1a40becfc8005aadc1a9c855565a9495144b714774cc2feacd44d61ea212db22c79ad89804117bf4e800517fdd8e859e
 pkgname:
   - name: python-redis
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
