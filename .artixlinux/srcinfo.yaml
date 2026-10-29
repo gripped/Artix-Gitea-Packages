@@ -1,10 +1,11 @@
 ---
-version: 4.2.5-1
+version: 1:4.2.5-1
 pkgbase:
   name: python-urwid
   pkgdesc: Curses-based user interface library
   pkgver: 4.2.5
   pkgrel: 1
+  epoch: 1
   url: https://urwid.org/
   arch:
     - any
