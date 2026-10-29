@@ -8,7 +8,7 @@
 
 pkgname=gnupg
 pkgver=2.4.9
-pkgrel=3
+pkgrel=4
 pkgdesc='Complete and free implementation of the OpenPGP standard'
 arch=(x86_64)
 url='https://www.gnupg.org/'
@@ -91,6 +91,7 @@ source=(
   0031-tpm-Fix-possible-buffer-overflow-in-PKDECRYPT.patch
   0032-agent-Fix-the-regression-in-pkdecrypt-with-TPM-RSA.patch
   0033-dirmngr-Fix-a-call-of-calloc.patch
+  0034-agent-Use-SETDATA-apend-for-larger-data-to-communica.patch
 )
 sha256sums=('383fd9720a966825b9d5e45a2b49b3b340ebed356252c73cca242b26dffec0ba'
             '38c66efbd3bffdfa9cb0f226a6db03ae4b226f705dc2d0266a555d8ace823b79'
@@ -127,7 +128,8 @@ sha256sums=('383fd9720a966825b9d5e45a2b49b3b340ebed356252c73cca242b26dffec0ba'
             'b046762dd3230fcb9b503c1857450c34de52f791b993e054a725e8235568a6e7'
             '76e1e92915fd06719f670be51bda4ccd264fde59c85ffe8447b2813aa1d7ae11'
             '401fb135156586d829e2d195860c185f0a4bf7f41d549a602331196da0219aa4'
-            '227ec57201c7ae6835b64b794442be9898438fb006e24e68b8b9318b7343b0a0')
+            '227ec57201c7ae6835b64b794442be9898438fb006e24e68b8b9318b7343b0a0'
+            '5be7d1a34a6df7d3e1e97d48be9d19dd33a8be8d700ffd00f51441659e2d1547')
 b2sums=('c6b16d797b13e91c4f3eb41d28a69a5854e1744eaac662058cc5332b69b90349a79b891895b7460027bd6234394a4caf36f800d20a74c696a049764112f00658'
         '5e4fed3c54785fc0140a1cfe970c6ed6a61c0041961999a9777dfcb0050d45e2b9231b3e5e97e025cefe1461614b599bc7129eea931d1996f4849cd83f546abc'
         '168855b598714abb27e01e52e0ed1e1a01ab14ffb2ee09d759308375359cd28c0a9f96c6b9dee0a2cc5713aec8ea831858d59f56a0a126bca3e1401b078fc7ab'
@@ -163,7 +165,8 @@ b2sums=('c6b16d797b13e91c4f3eb41d28a69a5854e1744eaac662058cc5332b69b90349a79b891
         '13a424659c23c601fac55fff9511493d0d430ac45b8590d883c4069f234cc31da98466b79c85d52f5814f5aba2505ed98f44abbdb4082c5987385ac69930a36c'
         '82ccd0abb816c7fbd9bcd7f9ca28231bf7be8613838abf4f66fbcb2cba4b108193d19559058e31df6f26a1bec14edae56ad48cc1744a030c2177244dc645576c'
         '0fec936cf38f7ddb3a9ee13fb871906277025b542ca98e090b6cfa487f24dee5b516593569d954d8eafab01d52f15572001095a16c3a92b4e0cf98f29fd028b2'
-        '23e657157427919055cd2d95d5c93df98c6f9c933aca6290cf3715a9191606fa4e5014e3a95251fde13e9b775cb929a2c06d299727d64f0cd87e1b0b99ba9102')
+        '23e657157427919055cd2d95d5c93df98c6f9c933aca6290cf3715a9191606fa4e5014e3a95251fde13e9b775cb929a2c06d299727d64f0cd87e1b0b99ba9102'
+        '5e38aeefbe201ab40562f3637008dc5542c6cc2db4abb1bbddb26a4b12ae5043100d74802c2587fcc04846837cdf0b30931bad972e31f3a68cb50486a71b7614')
 validpgpkeys=(
   '5B80C5754298F0CB55D8ED6ABCEF7E294B092E28' # Andre Heinecke (Release Signing Key)
   '6DAA6E64A76D2840571B4902528897B826403ADA' # Werner Koch (dist signing 2020)
@@ -230,3 +233,4 @@ package() {
   install -vDm 644 {BSD-{2,3,4}-Clause,MIT,Unicode-TOU}.txt -t "$pkgdir/usr/share/licenses/$pkgname/"
 }
 
+# vim: ts=2 sw=2 et:
