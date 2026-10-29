@@ -1,9 +1,9 @@
 ---
-version: 8.2.15-3
+version: 8.2.15-4
 pkgbase:
   name: boinc
   pkgver: 8.2.15
-  pkgrel: 3
+  pkgrel: 4
   url: https://boinc.berkeley.edu/
   install: boinc.install
   arch:
@@ -30,6 +30,10 @@ pkgbase:
     - webkit2gtk-4.1
     - wxwidgets-gtk3
     - zlib
+  optdepends:
+    - 'opencl-icd-loader: OpenCL library loader'
+    - 'opencl-driver: OpenCL support for GPU computing'
+    - 'nvidia-utils: CUDA support for NVIDIA GPUs'
   source:
     - git+https://github.com/BOINC/boinc.git#tag=client_release/8.2/8.2.15
     - boinc.bash

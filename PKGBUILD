@@ -6,12 +6,15 @@
 pkgbase=boinc
 pkgname=(boinc boinc-nox)
 pkgver=8.2.15
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 url="https://boinc.berkeley.edu/"
 license=('LGPL-3.0-or-later')
 makedepends=('git' 'curl' 'freeglut' 'glib2' 'glibc' 'glu' 'libgcc' 'libjpeg-turbo' 'libstdc++' 'libnotify' 'libxmu' 'libxslt' 'libxss'
              'mesa' 'openssl' 'perl-xml-sax' 'webkit2gtk-4.1' 'wxwidgets-gtk3' 'zlib')
+optdepends=('opencl-icd-loader: OpenCL library loader'
+            'opencl-driver: OpenCL support for GPU computing'
+            'nvidia-utils: CUDA support for NVIDIA GPUs')
 install=$pkgbase.install
 source=("git+https://github.com/BOINC/boinc.git#tag=client_release/${pkgver%.*}/$pkgver"
         boinc.bash
