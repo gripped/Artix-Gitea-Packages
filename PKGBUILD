@@ -1,12 +1,11 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
 # Contributor: Sergej Pupykin <pupykin.s+arch@gmail.com>
 # Contributor: Vitaliy Berdinskikh ur6lad[at]i.ua
 # Contributor: Michael Fellinger <m.fellinger@gmail.com>
 
 pkgname=couchdb
 pkgver=3.5.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Document-oriented database that can be queried and indexed in a MapReduce fashion using JSON"
 arch=(x86_64)
 url="https://couchdb.apache.org"
