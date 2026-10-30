@@ -1,10 +1,10 @@
 ---
-version: 0.16.0-1
+version: 0.16.0-2
 pkgbase:
   name: librabbitmq-c
   pkgdesc: RabbitMQ(amqp) library written in C-language
   pkgver: 0.16.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/alanxz/rabbitmq-c
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 8058170e512d88cc29fce7f5db158b1fa6513ee71e7aaa842192c536bbd7d94a8b3c106ab187dbda92e0b612f2579c293ac342af896d3e96d4a5369c584177ab
 pkgname:
   - name: librabbitmq-c
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
