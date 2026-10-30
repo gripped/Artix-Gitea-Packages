@@ -1,10 +1,10 @@
 ---
-version: 2.5.5-1
+version: 2.5.5-2
 pkgbase:
   name: mongo-c-driver
   pkgdesc: A client library written in C for MongoDB
   pkgver: 2.5.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/mongodb/mongo-c-driver
   arch:
     - x86_64
