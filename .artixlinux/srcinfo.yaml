@@ -1,9 +1,9 @@
 ---
-version: 1.21-1
+version: 1.22-1
 pkgbase:
   name: noise-suppression-for-voice
   pkgdesc: A real-time noise suppression plugin for voice
-  pkgver: 1.21
+  pkgver: 1.22
   pkgrel: 1
   url: https://github.com/werman/noise-suppression-for-voice
   arch:
@@ -24,9 +24,9 @@ pkgbase:
     - libgcc
     - libstdc++
   source:
-    - git+https://github.com/werman/noise-suppression-for-voice#tag=v1.21
+    - git+https://github.com/werman/noise-suppression-for-voice#tag=v1.22
   sha256sums:
-    - 4ed84e422a709ef98a834b0cb5fc8c445173d3aa05f5a49e8ef3f4577c3a0650
+    - ce52e88878930187234f9588f0c343bb7b35b0f9dbae4283d10f0cba5db41baf
 pkgname:
   - name: noise-suppression-for-voice
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
