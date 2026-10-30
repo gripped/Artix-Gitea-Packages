@@ -1,10 +1,10 @@
 ---
-version: 0.4.9.14-2
+version: 0.4.9.15-1
 pkgbase:
   name: tor
   pkgdesc: Anonymizing overlay network.
-  pkgver: 0.4.9.14
-  pkgrel: 2
+  pkgver: 0.4.9.15
+  pkgrel: 1
   url: https://www.torproject.org/download/tor/
   arch:
     - x86_64
@@ -37,9 +37,9 @@ pkgbase:
   backup:
     - etc/tor/torrc
   source:
-    - https://dist.torproject.org/tor-0.4.9.14.tar.gz
-    - https://dist.torproject.org/tor-0.4.9.14.tar.gz.sha256sum
-    - https://dist.torproject.org/tor-0.4.9.14.tar.gz.sha256sum.asc
+    - https://dist.torproject.org/tor-0.4.9.15.tar.gz
+    - https://dist.torproject.org/tor-0.4.9.15.tar.gz.sha256sum
+    - https://dist.torproject.org/tor-0.4.9.15.tar.gz.sha256sum.asc
     - disable-openssl-dynamic-linking-warning.patch
     - torrc.patch
     - tor.sysusers
@@ -49,16 +49,16 @@ pkgbase:
     - B74417EDDF22AC9F9E90F49142E86A2A11F48D36
     - 1C1BC007A9F607AA8152C040BEA7B180B1491921
   sha256sums:
-    - 182449ac1c8ff43278da27b69b02040e11d03d0327db6d9126e4190ec6235e4a
-    - 7afa503d7654c9280e4ab8e74bb0b543b0b248d83c10ea6d76c049882a53abed
+    - 1911f5b216a6814ed143a08bbcff1c6dc96d2ca3b505df9a21876080a92963f3
+    - 2a083b5cf16e772f9af611a5bf7485532581ec7455e7e9227cb5daabb686efca
     - SKIP
     - 4067f5a6589bfaa97dd2b1a20aa73a9d3f1793bb8862c602c24b4f0cefd05dc9
     - c5c082fd1cda30c95c40043d5be96926fa81e5388a97534373bf0ce100191ade
     - 86dccabaf769a48ffad9dffa37fcd7fbf7ef1712464ddfd12a4b43f2a680cdeb
     - 07bedb17660a3673b31b0005b6505065c90b32f2c6b28b969241da675560f926
   b2sums:
-    - c6a77ccf264bd34dccb6631828723225224861a4ce15f4247d40e3f70a92a95e1d2f4caa71efec493c070268009253564d3083a8f5f96e5456379c2f1640d866
-    - 605742e59b183812e7b45a043bddb933364815ceba3f8eb695e79e8d9836d2fce667f39f44295348df63abf5a5b23f091ee7a24d8e0210fe4d2957fd6485eff8
+    - b3be42c2619998967f1bdb76b33d66689ba15ac683e30561e589558e76c74ecad2690caf4bd5bf16d2f7e85637a766d94528b5dd29ee79f4532d806d54da0738
+    - 74572fd3dc7507fe5ce065521b1b1fe90981091e0e97eba02ee9b0d7a30f2bdb0a472f986b348a8acf678c24bb9699fb964578cfd8a0788579cde31b42098a39
     - SKIP
     - cb9fbdc4bb449975bab57ad11a188ccc0462981132ab9617108d6a92f71e22448e407afc73f252fc4f3f2f6bf9e5c211abd9cdfe6514a76ff2162ef750348b90
     - 98baf96cdac36072086f48bf4701cede6cf31eee207f4a1a4cfc81b483ba53b991082aaf4ed638e50dfd67fb006bbd915af97943ab658df29dfa51ea4aa77dd2

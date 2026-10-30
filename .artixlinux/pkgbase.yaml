@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 0.4.9.14-2
+    version: 0.4.9.15-1
     packages:
-      - tor-0.4.9.14-2-x86_64.pkg.tar.zst
+      - tor-0.4.9.15-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
