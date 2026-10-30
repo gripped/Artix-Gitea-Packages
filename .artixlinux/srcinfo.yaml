@@ -1,10 +1,10 @@
 ---
-version: 0.10.2-1
+version: 0.10.2-2
 pkgbase:
   name: libtpms
   pkgdesc: Library providing a software emulation of a Trusted Platform Module (TPM 1.2 and TPM 2.0)
   pkgver: 0.10.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/stefanberger/libtpms
   arch:
     - x86_64
@@ -23,4 +23,4 @@ pkgbase:
     - 5c809f685b91e34a61c74f8bf9ee74533fbd47a6138e1b2343f93c8d496eb71e237963ab263728a8c204371117221978730b6459e2cde401dff3939c3b2b0777
 pkgname:
   - name: libtpms
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
