@@ -27,7 +27,7 @@ pkgbase:
     - libx11
     - zlib
   source:
-    - https://gmic.eu/files/source/gmic_4.0.7.tar.gz
+    - https://gmic.eu/get_file.php?file=source/gmic_4.0.7.tar.gz
     - opencv-5.patch
   sha256sums:
     - f84b215f40cb00de37bff5ec801103af211679794c3602d39c5430dab76005de

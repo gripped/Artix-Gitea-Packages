@@ -27,7 +27,7 @@ makedepends=(cmake
              openexr
              qt6-base
              qt6-tools)
-source=(https://gmic.eu/files/source/gmic_$pkgver.tar.gz
+source=(https://gmic.eu/get_file.php?file=source/gmic_$pkgver.tar.gz
         opencv-5.patch)
 sha256sums=('f84b215f40cb00de37bff5ec801103af211679794c3602d39c5430dab76005de'
             '6abf00f622ea89ec126c4180532be8f7204e00ca56305b5d10c013d908721f53')
