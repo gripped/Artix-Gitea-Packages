@@ -10,7 +10,7 @@ pkgname=(
   lib32-pipewire-netjack2
   lib32-pipewire-v4l2
 )
-pkgver=1.6.9
+pkgver=1.6.11
 pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor - 32-bit"
@@ -29,7 +29,7 @@ source=(
   "git+https://gitlab.freedesktop.org/pipewire/pipewire.git#tag=$pkgver"
    systemd.patch
 )
-b2sums=('85867001aac9e81a015eb042bc4766cbb6c1755a809d4fdbd838bf5433596648d222f5afb88c9a06786c76901f32a270c6cf5499fa7e2f29890357293fd5d6f7' SKIP)
+b2sums=('2359991befdbc6cf5a2e5ad31cde4a3f1904675fe455b9ab719754549e994ba0538b0f070b9954a4d64619067101eff9ed9e03ea3d5dd4674b3d21e9991da5b2' SKIP)
 
 prepare() {
   cd pipewire
