@@ -1,0 +1,30 @@
+---
+version: 1.45.1-2
+pkgbase:
+  name: python-opentelemetry-exporter-otlp-proto-common
+  pkgdesc: OpenTelemetry Protobuf encoding
+  pkgver: 1.45.1
+  pkgrel: 2
+  url: https://github.com/open-telemetry/opentelemetry-python/tree/main/exporter/opentelemetry-exporter-otlp-proto-common
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-opentelemetry-test-utils
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-opentelemetry-proto
+  source:
+    - git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v1.45.1
+  sha256sums:
+    - c56494b52a4241a2a34e0a6d0f3eb539fddecdd8ebf92f6cd7fda21ee1111851
+pkgname:
+  - name: python-opentelemetry-exporter-otlp-proto-common
+# generated with artixpkg 0.40.0-1-any
