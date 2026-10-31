@@ -1,10 +1,10 @@
 ---
-version: 3.22-1
+version: 3.22-2
 pkgbase:
   name: iperf3
   pkgdesc: TCP, UDP, and SCTP network bandwidth measurement tool
   pkgver: 3.22
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/esnet/iperf
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - 1d867fc313f361e6a81d282632a31674e89a4e00ad115739ea66d502e1d7bd86307fb03e081a0edc606553ddb5be5aedb9a744a3fc71ae2cc23c8d913aa9a761
 pkgname:
   - name: iperf3
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.0-1.1-any
