@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 3.8.10-2
+    version: 3.8.11-2
     packages:
-      - libarchive-3.8.10-2-x86_64.pkg.tar.zst
+      - libarchive-3.8.11-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: 3.8.11-1
