@@ -1,10 +1,10 @@
 ---
-version: 1.5.4-1
+version: 1.5.4-2
 pkgbase:
   name: clamav
   pkgdesc: Anti-virus toolkit for Unix
   pkgver: 1.5.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.clamav.net/
   arch:
     - x86_64
@@ -31,7 +31,7 @@ pkgbase:
     - libstdc++
     - libxml2
     - ncurses
-    - openssl
+    - openssl-3
     - pcre2
     - zlib
   provides:
@@ -72,11 +72,11 @@ pkgname:
       - libstdc++
       - libxml2
       - ncurses
-      - openssl
+      - openssl-3
       - pcre2
       - zlib
       - libncursesw.so
       - libcurl.so
       - libjson-c.so
       - libbz2.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
