@@ -1,10 +1,10 @@
 ---
-version: 0.4-2
+version: 0.4-3
 pkgbase:
   name: python-flexparser
   pkgdesc: A parser by hgrecco
   pkgver: 0.4
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hgrecco/flexparser
   arch:
     - any
@@ -13,7 +13,6 @@ pkgbase:
   checkdepends:
     - python-pytest
     - python-pytest-mpl
-    - python-pytest-subtests
   makedepends:
     - git
     - python-build
@@ -30,4 +29,4 @@ pkgbase:
     - ece9f178317c159f38e06c71f3c8c251b204d0ce29a8481b35f3cf385eb28f1c
 pkgname:
   - name: python-flexparser
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
