@@ -1,16 +1,18 @@
 ---
-version: 2.0.4-4
+version: 2.0.4-5
 pkgbase:
   name: pycups
   pkgdesc: Python bindings for libcups
   pkgver: 2.0.4
-  pkgrel: 4
+  pkgrel: 5
   url: https://github.com/OpenPrinting/pycups
   arch:
     - x86_64
   license:
     - GPL-2.0-or-later
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
   depends:
     - libcups
@@ -24,4 +26,4 @@ pkgbase:
     - 31d9cf62df7884fe430d11970a8c9278282a47a0ff6b1529c58c7d26e8eb4789
 pkgname:
   - name: python-pycups
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
