@@ -1,9 +1,9 @@
 ---
-version: 2.19.1-1
+version: 2.19.2-1
 pkgbase:
   name: gperftools
   pkgdesc: Fast, multi-threaded malloc and nifty performance analysis tools
-  pkgver: 2.19.1
+  pkgver: 2.19.2
   pkgrel: 1
   url: https://github.com/gperftools/gperftools
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - libstdc++
     - libunwind
   source:
-    - git+https://github.com/gperftools/gperftools.git#tag=gperftools-2.19.1
+    - git+https://github.com/gperftools/gperftools.git#tag=gperftools-2.19.2
   b2sums:
-    - 551f79e54a5c8e24d3723a992bae445d85385d366db6fb45a048d958f1ebc1bc2859d1a1ef0eebd5e7a290f1c93ded3b9fe6db9631fb986b955877f8065a30f2
+    - 9c4889ea59c03bde9ecfa85924b4af98ebdb0cfba1f5a127b9770e6419953915dbdcc8465ec1af088ee157e8d15a16db9f6750708dbfca5c0b5cd91bb23d1f49
 pkgname:
   - name: gperftools
 # generated with artixpkg 0.40.0-1-any
