@@ -10,9 +10,9 @@ _pkgname="${pkgname}"
 __pkgname=konform
 pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
-_l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
+_l10n_commit=1e95d1c5f519c3fbde715345ae7beb56a2c79077
 
-pkgver=153.6.0.100
+pkgver=153.6.0.101
 
 pkgrel=1
 _ffbuild=2
@@ -138,14 +138,16 @@ source=(
   "security-state--intermediates-${pkgver}.zip::${_src_repo}/releases/download/${pkgver}/security-state--intermediates.zip"
   "${__pkgname}.desktop"
   "default192x192.png"
+  "entrypoint.sh"
 )
-sha256sums=('69d6ee5a599ba169f25337fba14d9fa7fd66b0590dc77e16d002fc8a7acaf845'
+sha256sums=('6cc2d4299596e589a2f63961a413b1ec33a7f9f22b0ae97ed6532b0250f5b6de'
             '91cb675ddfc678255f57ecd7aad498501961577686d19c1947a82b14edea7f25'
             'SKIP'
-            '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
-            'ab91a4abb6c9aaf116346f6b7d0cc2f5e396829d877aaea18ac218e678d347de'
+            '5cda6675c1d51c6b16395a6be861f980968ed884a404d68d465e8fea87009ef5'
+            '35f7aa8e133eb1afaba6ace59d516d3b60e66fe20e7adc90eb31c522737fc03f'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
-            'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b')
+            'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
+            'c683b93bcb843da6de51ee49dd163c6eb9889f27988357aba3ca8766abd76f2e')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -411,14 +413,11 @@ END
   install -Dvm644 ${srcdir}/$__pkgname.desktop \
     "$pkgdir/usr/share/applications/$__pkgname.desktop"
 
-  # Install a wrapper to avoid confusion about binary path
-  install -Dvm755 /dev/stdin "$pkgdir/usr/bin/$__pkgname" <<END
-#!/bin/sh
-exec /usr/lib/${__pkgname}/${__pkgname} "\$@"
-END
-
   # Replace duplicate binary with wrapper
+  # https://bugzilla.mozilla.org/show_bug.cgi?id=1553771
+  install -Dvm755 "${srcdir}/entrypoint.sh" "$pkgdir/usr/lib/$__pkgname"
+
   # https://bugzilla.mozilla.org/show_bug.cgi?id=658850
-  ln -srfv "${pkgdir}/usr/bin/${__pkgname}" "${pkgdir}/usr/lib/${__pkgname}/${__pkgname}-bin"
+  ln -srfv "${pkgdir}/usr/lib/${__pkgname}" "${pkgdir}/usr/bin/${__pkgname}"
   ln -s "${__pkgname}" "${pkgdir}/usr/bin/${_pkgname}" || true
 }
