@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 12.2-1
+    version: 12.4-1
     packages:
-      - jellyfin-server-12.2-1-x86_64.pkg.tar.zst
+      - jellyfin-server-12.4-1-x86_64.pkg.tar.zst
     debug: []
