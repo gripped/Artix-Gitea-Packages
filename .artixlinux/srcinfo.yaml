@@ -1,9 +1,9 @@
 ---
-version: 26.4.0-1
+version: 26.10.0-1
 pkgbase:
   name: python-twisted
   pkgdesc: Asynchronous networking framework written in Python
-  pkgver: 26.4.0
+  pkgver: 26.10.0
   pkgrel: 1
   url: https://twistedmatrix.com/
   arch:
@@ -67,9 +67,9 @@ pkgbase:
     - 'python-wsproto: for websocket support'
     - 'tk: for using tkconch'
   source:
-    - git+https://github.com/twisted/twisted.git#tag=twisted-26.4.0
+    - git+https://github.com/twisted/twisted.git#tag=twisted-26.10.0
   sha512sums:
-    - a878ddd6b30257d91fde780975d4acd24216f90955583f76f088413fc12c0df2380627a0cac2c453ba1edd74098dca40f54a9c60ecf501c60dfe04d9e488e28a
+    - 26fb40c1141333bfe0a4a93a33c7e4872970c402e85f8d741a5411380c602e3d20d5629aae442fb8a3b29d0c3d8b70ad66f5bb2b0136743db70ecda589125d61
 pkgname:
   - name: python-twisted
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
