@@ -1,10 +1,10 @@
 ---
-version: 5.82-1
+version: 5.82-2
 pkgbase:
   name: stunnel
   pkgdesc: A program that allows you to encrypt arbitrary TCP connections inside SSL
   pkgver: 5.82
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.stunnel.org/
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - cedd3eccd1964dcc86255fca0e47fe692a2619fbcbc576480adf193192a2218972d07961a3ab4d30f095c308844f25fe71cdf285bde201050be24d4ce0ca80d3
 pkgname:
   - name: stunnel
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.0-1.1-any
