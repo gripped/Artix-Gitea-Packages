@@ -1,10 +1,10 @@
 ---
-version: 0.9.5-4
+version: 0.9.5-5
 pkgbase:
   name: sbsigntools
   pkgdesc: Tools to add signatures to EFI binaries and Drivers
   pkgver: 0.9.5
-  pkgrel: 4
+  pkgrel: 5
   url: https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/about
   arch:
     - x86_64
@@ -21,7 +21,7 @@ pkgbase:
     - openssl
   source:
     - git+https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git#tag=8445b18f64e60137408a4867fbcbb9ba112c583a?signed
-    - git+https://git.ozlabs.org/ccan
+    - git+https://github.com/rustyrussell/ccan
   validpgpkeys:
     - D5606E73C8B46271BEAD9ADF814AE47C214854D6
   sha256sums:
@@ -34,4 +34,4 @@ pkgname:
       - openssl
       - util-linux-libs
       - libuuid.so
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.40.0-1-any

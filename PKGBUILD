@@ -6,7 +6,7 @@
 pkgname=sbsigntools
 pkgver=0.9.5
 _commit=8445b18f64e60137408a4867fbcbb9ba112c583a  # refs/tags/v0.9.5
-pkgrel=4
+pkgrel=5
 pkgdesc="Tools to add signatures to EFI binaries and Drivers"
 arch=(x86_64)
 url="https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/about"
@@ -24,7 +24,7 @@ makedepends=(
 )
 source=(
   git+https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git#tag=$_commit?signed
-  git+https://git.ozlabs.org/ccan
+  git+https://github.com/rustyrussell/ccan
 )
 sha256sums=('18d476d5497cab8f7f8acb8710481bdd3de887f6109f2deeed9e6bd2571d3f9d'
             'SKIP')
@@ -32,6 +32,10 @@ validpgpkeys=('D5606E73C8B46271BEAD9ADF814AE47C214854D6') # James Bottomley <jej
 
 prepare() {
   cd $pkgname
+  # Support OpenSSL providers and omit ENGINE calls removed in OpenSSL 4.
+  # https://git.kernel.org/pub/scm/linux/kernel/git/jejb/sbsigntools.git/commit/?id=53922bc1b084922a7434f634ca4a0715a12f65cc
+  git cherry-pick -n 53922bc1b084922a7434f634ca4a0715a12f65cc
+
   git submodule init
   git config submodule."lib/ccan.git".url "$srcdir/ccan"
   git -c protocol.file.allow=always submodule update
