@@ -1,9 +1,9 @@
 ---
-version: 1:2.9.0-1
+version: 1:2.9.1-1
 pkgbase:
   name: python-dnspython
   pkgdesc: A DNS toolkit for Python
-  pkgver: 2.9.0
+  pkgver: 2.9.1
   pkgrel: 1
   epoch: 1
   url: http://www.dnspython.org
@@ -32,9 +32,9 @@ pkgbase:
     - 'python-trio: async support'
     - 'python-sniffio: async support'
   source:
-    - https://github.com/rthalley/dnspython/archive/v2.9.0/dnspython-2.9.0.tar.gz
+    - https://github.com/rthalley/dnspython/archive/v2.9.1/dnspython-2.9.1.tar.gz
   sha256sums:
-    - e4e013282359619999b7b79e96734d07e6684c56db8f9f7828efd18b0bbc7dcc
+    - 422bc311e25c0d99ebb976cbc3d52f34fc72a49b48d81d08f4b44c6af8e0bbad
 pkgname:
   - name: python-dnspython
 # generated with artixpkg 0.40.0-1-any
