@@ -4,8 +4,8 @@
 # Contributor: Mirco Tischler <mt-ml at gmx dot de>
 
 pkgname=ostree
-pkgver=2026.5
-pkgrel=2
+pkgver=2026.6
+pkgrel=1
 pkgdesc="Operating system and container binary deployment and upgrades"
 url="https://ostreedev.github.io/ostree/"
 arch=(x86_64)
@@ -58,7 +58,7 @@ source=(
   git+https://gitlab.gnome.org/GNOME/libglnx.git
   $pkgname-2023.1-use_fuse3.patch
 )
-b2sums=('f308eec5f23821419df5fd138d7a7779bf675a16a0217430ed6e8d1d13945c674f52a64f59b5132ce15a89930d37ea89c400003fdb3e6b092fafce1b11c639f5'
+b2sums=('3e816177bae876085953e429648f83f079d90494072227553d0fbebe5446eb1a4d0a4ce27f4be08e4338f139d7f6699ed185ba01c954c25c36136d1ddcd1a2d6'
         'SKIP'
         'SKIP'
         '94f49d08e18500752a573c2e57339a1bcdc969e821d93fbdf07b7dda4e7f246709fcb7e1456b5f875706be5d073dad32a35282c0abcc686b1ea0cd9af678c483')
