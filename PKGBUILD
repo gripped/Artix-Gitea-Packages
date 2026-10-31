@@ -1,8 +1,8 @@
 # Maintainer: Dave Reisner <dreisner@archlinux.org>
 
 pkgname=kmod
-pkgver=34.2
-pkgrel=2
+pkgver=34.3
+pkgrel=1
 pkgdesc="Linux kernel module management tools and library"
 arch=('x86_64')
 url='https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git'
@@ -13,11 +13,11 @@ makedepends=('git' 'meson' 'scdoc')
 options=('strip')
 provides=('libkmod.so')
 validpgpkeys=('EAB33C9690013C733916AC839BA2A5A630CBEA53')  # Lucas DeMarchi
-source=("git+https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git#tag=v${pkgver}?signed"
+source=("git+https://git.kernel.org/pub/scm/utils/kernel/kmod/kmod.git?signed#tag=v${pkgver}"
         'depmod-search.conf'
         'depmod.hook'
         'depmod.script')
-sha256sums=('7eef327c5cbe2a4649b2487b7a5bec6787cd26c9488bdbb2f35beb15305455b1'
+sha256sums=('29ec295f26790ba5d9298429a7c4f1ebf451730b098ea6ce52facd2fce418053'
             '1a92bfeae870f61ce814577e69d2a147a9c0caf6aed1131243e4179241fcc4a8'
             'c11c2a0f66ea405493e8617689ca10818dc81dd1dddc19bdb220c8b2917119c1'
             '18661aa40c25580f04d2ac3f32e54c2997c0994d1c829905537b413a9d291ac6')
@@ -34,15 +34,15 @@ build() {
   meson compile -C build
 }
 
-# check() {
-#   # As of kmod v20, the test suite needs to build some kernel modules, and thus
-#   # needs headers available in order to run. We depend on linux-headers, but
-#   # this is really only to try and make sure that *some* useable tree of kernel
-#   # headers exist. The first useable tree we find is good enough, as these
-#   # modules will never be loaded by tests.
-#
-#   meson test -C 'build'
-# }
+check() {
+  # As of kmod v20, the test suite needs to build some kernel modules, and thus
+  # needs headers available in order to run. We depend on linux-headers, but
+  # this is really only to try and make sure that *some* useable tree of kernel
+  # headers exist. The first useable tree we find is good enough, as these
+  # modules will never be loaded by tests.
+
+  meson test -C 'build'
+}
 
 package() {
   meson install -C 'build' --destdir "$pkgdir"
