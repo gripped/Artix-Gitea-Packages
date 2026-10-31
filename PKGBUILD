@@ -1,9 +1,10 @@
-# Maintainer: Antonio Rojas <arojas@archlinux,org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: Antonio Rojas <arojas@archlinux,org>
 
 pkgname=krita
 pkgver=6.0.4.1
 _pkgver=${pkgver/beta/-beta}
-pkgrel=2
+pkgrel=3
 pkgdesc='Edit and paint images'
 arch=(x86_64)
 url='https://krita.org'
