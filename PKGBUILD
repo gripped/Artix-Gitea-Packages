@@ -3,7 +3,7 @@
 pkgname=openssl-3
 _pkgname=openssl
 pkgver=3.5.9
-pkgrel=1
+pkgrel=2
 pkgdesc='The Open Source toolkit for cryptography and Transport Layer Security; Version 3.5 LTS'
 arch=('x86_64')
 url='https://www.openssl.org'
@@ -34,12 +34,14 @@ build() {
 
 	make depend
 	make build_libs
+	make build_modules
 }
 
 package() {
 	cd "$srcdir/$_pkgname-$pkgver"
 
 	make DESTDIR="$pkgdir" install_dev
+	make DESTDIR="$pkgdir" install_modules
 
 	# Move some files around
 	install -m755 -d "$pkgdir/usr/include/openssl-3"
