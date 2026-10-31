@@ -11,6 +11,9 @@ pkgbase:
   license:
     - LGPL-2.1-or-later
     - GPL-2.0-or-later
+  checkdepends:
+    - linux-headers
+    - libelf
   makedepends:
     - git
     - meson
