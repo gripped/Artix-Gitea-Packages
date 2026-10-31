@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: true
 repos:
   system-goblins:
-    version: 34.2-2
+    version: 34.3-2
     packages:
-      - kmod-34.2-2-x86_64.pkg.tar.zst
+      - kmod-34.3-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: 34.3-1
