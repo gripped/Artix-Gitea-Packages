@@ -1,10 +1,10 @@
 ---
-version: 0.4.21-1
+version: 0.4.21-2
 pkgbase:
   name: libp11
   pkgdesc: A library implementing a small layer on top of the PKCS11 API
   pkgver: 0.4.21
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/OpenSC/libp11/wiki
   arch:
     - x86_64
