@@ -9,15 +9,15 @@
 # Contributor: TIanyi Cui <tianyicui@gmail.com>
 
 pkgname=nodejs-lts-krypton
-pkgver=24.22.1
-pkgrel=1
+pkgver=24.22.2
+pkgrel=2
 pkgdesc='Evented I/O for V8 javascript ("Active LTS" release: Krypton)'
 arch=(x86_64)
 url=https://nodejs.org/
 license=(MIT)
 depends=(
   ada
-#  brotli
+  brotli
   c-ares
   icu
   libnghttp2
@@ -47,7 +47,7 @@ conflicts=(nodejs)
 source=(
   "git+https://github.com/nodejs/node.git#tag=v$pkgver?signed"
 )
-b2sums=('4da386a4cc5f511f7748d703019a1f03be30c84b0f82d17d681208b9a8854cb9cd54cc5c4518e0e110bd2597aeb5cc27ff0b1f5306fd36d522806c4e96b83eea')
+b2sums=('81979e2b35c62153b446625cb651ad21b259edc648d8f2bdd396b5e8643c8be635fe0bb4c0d9e1b0708682341b6f50a3c11eb1ec9471739d762be0ab5e57a1ee')
 validpgpkeys=(
   8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600 # Michaël Zasso (Targos) <targos@protonmail.com>
   890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4 # RafaelGSS <rafael.nunu@hotmail.com>
@@ -58,6 +58,12 @@ validpgpkeys=(
   108F52B48DB57BB0CC439B2997B01419BD92F80A # Ruy Adorno <ruyadorno@hotmail.com>
   DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7 # Juan José Arboleda <soyjuanarbol@gmail.com>
 )
+
+prepare() {
+  cd node
+  # Adjust test expectations for OpenSSL 4.x.
+  git cherry-pick -n c61ba86ed02dc0c80c51b9333d3fe9e3e4e2f887
+}
 
 _set_flags() {
   # /usr/lib/libnode.so uses malloc_usable_size, which is incompatible with fortification level 3
@@ -77,6 +83,7 @@ build() {
     --without-corepack \
     --without-npm \
     --shared-ada \
+    --shared-brotli \
     --shared-cares \
     --shared-libuv \
     --shared-nghttp2 \
@@ -86,7 +93,6 @@ build() {
     --shared-simdjson \
     --shared-zlib \
     --shared-zstd
-    # --shared-brotli # https://github.com/nodejs/node/issues/66894
     # --shared-http-parser
     # --shared-simdutf
     # --shared-v8
