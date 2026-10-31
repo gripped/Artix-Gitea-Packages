@@ -1,10 +1,10 @@
 ---
-version: 3.8.0-1
+version: 3.8.0-2
 pkgbase:
   name: opensubdiv
   pkgdesc: An Open-Source subdivision surface library
   pkgver: 3.8.0
-  pkgrel: 1
+  pkgrel: 2
   url: http://graphics.pixar.com/opensubdiv
   arch:
     - x86_64
