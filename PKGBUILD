@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-patron
-pkgver=0.13.4
+pkgver=1.0.0
 pkgrel=1
 pkgdesc='Ruby HTTP client library based on libcurl'
 arch=(x86_64)
@@ -14,28 +14,27 @@ depends=(
 )
 makedepends=(
   git
-  ruby-rdoc
-)
-checkdepends=(
-  ruby-base64
   ruby-bundler
   ruby-rake-compiler
-  ruby-rack
+  ruby-rdoc
   ruby-rspec
-  ruby-puma
   ruby-yard
 )
+checkdepends=(
+  ruby-async
+  ruby-rack
+  ruby-puma
+)
 options=(!emptydirs)
-source=(git+https://github.com/toland/patron#tag=v$pkgver
-        $pkgname-puma-5.patch)
-sha256sums=('e9b86510d82b0aed8d57077fdb18fc7557150db24c76f958e510d9fd28562adc'
-            '85977d0082234adb7b31308c4338f870a6ae30c3f2182c81d7c1736c33c0dc25')
+source=(git+https://github.com/toland/patron#tag=v$pkgver)
+sha256sums=('faf41df72483f7e50404ceecfa6b493699cb714dc47f89fedbb38395126967fc')
 
 prepare() {
   cd patron
-  patch -p1 -i ../$pkgname-puma-5.patch
-  # we don't do version pinning
-  sed -r -e 's|~>|>=|g' -i patron.gemspec
+  # Cookie and certificate paths still need Pathname after the 1.0 rewrite.
+  sed -i "/^require 'uri'$/a require 'pathname'" lib/patron/session.rb
+  # Puma 7 lowercases response headers: https://github.com/puma/puma/pull/3704
+  sed -i -E "s/(response\.headers)\[['\"]([^'\"]+)['\"]\]/\1.transform_keys(\&:downcase)['\L\2']/g" spec/{response,session,session_ractor}_spec.rb
 }
 
 build() {
@@ -81,8 +80,7 @@ build() {
 check() {
   local _gemdir="$(gem env gemdir)"
   cd patron
-  # https://github.com/toland/patron/pull/193
-  GEM_HOME="tmp_install/$_gemdir" rake spec || echo "Tests failed"
+  GEM_HOME="tmp_install/$_gemdir" rake spec
 }
 
 package() {

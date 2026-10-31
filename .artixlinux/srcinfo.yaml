@@ -1,0 +1,35 @@
+---
+version: 1.0.0-1
+pkgbase:
+  name: ruby-patron
+  pkgdesc: Ruby HTTP client library based on libcurl
+  pkgver: 1.0.0
+  pkgrel: 1
+  url: https://github.com/toland/patron
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - ruby-async
+    - ruby-rack
+    - ruby-puma
+  makedepends:
+    - git
+    - ruby-bundler
+    - ruby-rake-compiler
+    - ruby-rdoc
+    - ruby-rspec
+    - ruby-yard
+  depends:
+    - curl
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/toland/patron#tag=v1.0.0
+  sha256sums:
+    - faf41df72483f7e50404ceecfa6b493699cb714dc47f89fedbb38395126967fc
+pkgname:
+  - name: ruby-patron
+# generated with artixpkg 0.40.0-1-any
