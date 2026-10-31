@@ -1,0 +1,32 @@
+---
+version: 1.45.1-1
+pkgbase:
+  name: python-opentelemetry-exporter-otlp-common
+  pkgdesc: OpenTelemetry OTLP HTTP export utilities
+  pkgver: 1.45.1
+  pkgrel: 1
+  url: https://github.com/open-telemetry/opentelemetry-python/tree/main/exporter/opentelemetry-exporter-otlp-common
+  arch:
+    - any
+  license:
+    - Apache-2.0
+  checkdepends:
+    - python-mocket
+    - python-opentelemetry-test-utils
+    - python-pytest
+  makedepends:
+    - git
+    - python-build
+    - python-hatchling
+    - python-installer
+  depends:
+    - python
+    - python-opentelemetry-exporter-http-transport
+    - python-opentelemetry-sdk
+  source:
+    - git+https://github.com/open-telemetry/opentelemetry-python.git#tag=v1.45.1
+  sha256sums:
+    - c56494b52a4241a2a34e0a6d0f3eb539fddecdd8ebf92f6cd7fda21ee1111851
+pkgname:
+  - name: python-opentelemetry-exporter-otlp-common
+# generated with artixpkg 0.40.0-1-any
