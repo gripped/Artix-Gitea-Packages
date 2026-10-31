@@ -1,10 +1,10 @@
 ---
-version: 1.10.3-2.1
+version: 1.10.3-3
 pkgbase:
   name: znc
   pkgdesc: An IRC bouncer with modules & scripts support
   pkgver: 1.10.3
-  pkgrel: 2.1
+  pkgrel: 3
   url: https://wiki.znc.in/
   install: znc.install
   arch:
@@ -35,6 +35,7 @@ pkgbase:
     - https://znc.in/releases/archive/znc-1.10.3.tar.gz.sig
     - znc.tmpfiles
     - znc.sysusers
+    - openssl-4.patch::https://github.com/znc/znc/commit/94bcf919e1163564e637df8d437585bc7b55e7aa.patch
   validpgpkeys:
     - D5823CACB477191CAC0075555AE420CC0209989E
   sha256sums:
@@ -42,6 +43,7 @@ pkgbase:
     - SKIP
     - 8cd1b5b011c706fea9dc0c70d4daa75a53bf0966d6e96a3fce3a541777aa2771
     - bb79f73ce440f96d8250f59c8afc3b8dda5c7b4fe9cc190796393b994af1e3ca
+    - 3b161ed359e77437cb6b60f5825bdd256487d77b24aaede10a91d8627f0d92cd
 pkgname:
   - name: znc
 # generated with artixpkg 0.40.0-1-any
