@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.2.7-2
+    version: 1.11.0-1
     packages:
-      - pop-launcher-1.2.7-2-x86_64.pkg.tar.zst
+      - pop-launcher-1.11.0-1-x86_64.pkg.tar.zst
     debug: []
