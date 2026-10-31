@@ -12,10 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=5db0b9bd7b7bdb9a5671cc504da09caf65d5d3b1
 
-# upgrade note: 153 only for testing/gremlins until konform browser 153.0.0-100 released.
-# in the meantime, 140.x upgrades should still be followed for galaxy.
-pkgver=153.6.0.100b2
-#pkgver=140.17.0.102
+pkgver=153.6.0.100
 
 pkgrel=1
 _ffbuild=2
@@ -128,11 +125,11 @@ options=(
 _ff_source_tarball="firefox-${_ffsrcver}esr.source.tar.xz"
 _src_repo=https://codeberg.org/konform-browser/source
 _src_dir="src"
-if [[ "${_ffsrcver%%.*}" -gt 150  ]]; then
-  _src_repo=https://codeberg.org/konform-browser/konform-next
-  _src_dir="src-${_ffsrcver%%.*}"
-  install=konform-browser-testing.install
-fi
+#if [[ "${_ffsrcver%%.*}" -gt 160  ]]; then
+#  _src_repo=https://codeberg.org/konform-browser/konform-next
+#  _src_dir="src-${_ffsrcver%%.*}"
+#  install=konform-browser-testing.install
+#fi
 source=(
   "${_src_dir}"::"git+${_src_repo}.git#tag=${pkgver}"
   "firefox-${_ffsrcver}esr-${_ffbuild}.source.tar.xz"::"${_ffsrcurl}/source/${_ff_source_tarball}"
@@ -140,25 +137,15 @@ source=(
   "firefox-l10n-${_l10n_commit}.tar.gz"::"https://github.com/mozilla-l10n/firefox-l10n/archive/$_l10n_commit.tar.gz"
   "security-state--intermediates-${pkgver}.zip::${_src_repo}/releases/download/${pkgver}/security-state--intermediates.zip"
   "${__pkgname}.desktop"
-  "konform-browser-testing.install"
   "default192x192.png"
-  "0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch"
-  "0002-Use-wasm32-wasip1-target.patch"
-  "0003-update-rust-bindgen-to-fix-clang22-build.patch.xz"
-  "0004-skia-m142-update.patch.xz"
 )
-sha256sums=('97bdd5239b9a7531cd3768e14ea60721b251387c0cdf97c690e1756327bdd619'
+sha256sums=('69d6ee5a599ba169f25337fba14d9fa7fd66b0590dc77e16d002fc8a7acaf845'
             '91cb675ddfc678255f57ecd7aad498501961577686d19c1947a82b14edea7f25'
             'SKIP'
             '50b9d366fb58a45ba7dd3949e08600f6bebf0ead86cc35e9c2f5c20b624de512'
-            '2f366d99bd4871bb6af4b45b330fef2d39f8712d061cb504cbded5cb29a4feb4'
+            'ab91a4abb6c9aaf116346f6b7d0cc2f5e396829d877aaea18ac218e678d347de'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
-            '1242299c0a3e90a6b1f1c2bcc6bfa32e7c914a88a9c98fb879b016e6a1505c84'
-            'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
-            '157976ec4be8d723cd6240988b310bc8e1779b2272a258d886bc08389ceba852'
-            'baad79216200df4ea05a0e5ca26e0c56c4d4a3cd2149d32f15dc8b7c724376ba'
-            '8f9b7458760b37766a73d4d2c0e93dc810e59d3844495b9d52b3b61dde59c05d'
-            '01b8c0b1064f746ecd186e4b92767e92e4028519cfd3e0ea0637fb786cdec644')
+            'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -258,15 +245,6 @@ fi
 
   # reduce chance of builds failung during linking due to running out of memory
   export LDFLAGS+=" -Wl,--no-keep-memory"
-
-  if [[ "${_ffsrcver%%.*}" -lt 149  ]]; then
-    # Fix build with glibc 2.43
-    # https://bugzilla.mozilla.org/show_bug.cgi?id=1999625
-    patch -B .patchorigin -Np1 -i ../../0001-Patch-glsl-optimizer-to-build-with-glibc-2.43.patch
-    patch -B .patchorigin -Np1 -i ../../0002-Use-wasm32-wasip1-target.patch
-    xzcat ../../0003-update-rust-bindgen-to-fix-clang22-build.patch.xz | patch -B .patchorigin -Np1
-    xzcat ../../0004-skia-m142-update.patch.xz | patch -B .patchorigin -Np1
-  fi
 }
 
 
