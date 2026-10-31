@@ -14,7 +14,7 @@
 
 pkgname=dovecot
 pkgver=2.4.5
-pkgrel=1
+pkgrel=2
 pkgdesc="An IMAP and POP3 server written with security primarily in mind"
 url="https://dovecot.org/"
 arch=(x86_64)
@@ -41,7 +41,7 @@ makedepends=(
   libxcrypt
   lz4
   mariadb-libs
-  openssl
+  openssl-3
   pam
   pcre2
   postgresql-libs
@@ -122,6 +122,8 @@ build() {
   export CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
   export CXXFLAGS="${CXXFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
 
+  # Retain CN-only certificate compatibility pending upstream OpenSSL 4.1 changes.
+  PKG_CONFIG_PATH="/usr/lib/openssl-3/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}" \
   ./configure --with-systemdsystemunitdir=no \
     --prefix=/usr \
     --sbindir=/usr/bin \
@@ -178,7 +180,7 @@ package() {
     libxcrypt libcrypt.so
     lz4 liblz4.so
     mariadb-libs libmariadb.so
-    openssl libcrypto.so libssl.so
+    openssl-3 libcrypto.so libssl.so
     pam libpam.so
     pcre2 libpcre2-32.so
     postgresql-libs libpq.so

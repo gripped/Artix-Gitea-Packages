@@ -1,10 +1,10 @@
 ---
-version: 2.4.5-1
+version: 2.4.5-2
 pkgbase:
   name: dovecot
   pkgdesc: An IMAP and POP3 server written with security primarily in mind
   pkgver: 2.4.5
-  pkgrel: 1
+  pkgrel: 2
   url: https://dovecot.org/
   install: dovecot.install
   arch:
@@ -29,7 +29,7 @@ pkgbase:
     - libxcrypt
     - lz4
     - mariadb-libs
-    - openssl
+    - openssl-3
     - pam
     - pcre2
     - postgresql-libs
@@ -112,7 +112,7 @@ pkgname:
       - liblz4.so
       - mariadb-libs
       - libmariadb.so
-      - openssl
+      - openssl-3
       - libcrypto.so
       - libssl.so
       - pam
@@ -127,4 +127,4 @@ pkgname:
       - libz.so
       - zstd
       - libzstd.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
