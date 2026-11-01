@@ -1,9 +1,9 @@
 ---
-version: 2.48-1
+version: 2.49-1
 pkgbase:
   name: xkeyboard-config
   pkgdesc: X keyboard configuration files
-  pkgver: 2.48
+  pkgver: 2.49
   pkgrel: 1
   url: https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config
   arch:
@@ -19,6 +19,7 @@ pkgbase:
     - libxslt
     - python
     - meson
+    - git
   provides:
     - xkbdata
   conflicts:
@@ -26,13 +27,9 @@ pkgbase:
   replaces:
     - xkbdata
   source:
-    - https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.48.tar.xz
-    - https://xorg.freedesktop.org/archive/individual/data/xkeyboard-config/xkeyboard-config-2.48.tar.xz.sig
-  validpgpkeys:
-    - FFB4CCD275AAA422F5F9808E0661D98FC933A145
+    - xkeyboard-config::git+https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git#tag=xkeyboard-config-2.49
   sha256sums:
-    - b77041324f0109f77161ee43743fe04baa485866af8460d31e476ad3f7648fd5
-    - SKIP
+    - b24c5ecde0e834e60c695925676e2e772aeaaf6e73c88d95914727a988955b6a
 pkgname:
   - name: xkeyboard-config
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
