@@ -4,7 +4,7 @@
 
 pkgname=gsoap
 pkgver=2.8.145
-pkgrel=1
+pkgrel=2
 pkgdesc="Offers an XML language binding to ease the development of SOAP/XML Web services in C and C/C++"
 url="https://sourceforge.net/projects/gsoap2/"
 arch=('x86_64')
