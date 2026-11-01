@@ -1,0 +1,39 @@
+---
+version: 1.9.0-1
+pkgbase:
+  name: ruby-character_set
+  pkgdesc: Build, read, write and compare sets of Unicode codepoints
+  pkgver: 1.9.0
+  pkgrel: 1
+  url: https://github.com/jaynetics/character_set
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - ruby-benchmark-ips
+    - ruby-bundler
+    - ruby-csv
+    - ruby-get_process_mem
+    - ruby-leto
+    - ruby-rake
+    - ruby-rake-compiler
+    - ruby-range_compressor
+    - ruby-regexp_parser
+    - ruby-regexp_property_values
+    - ruby-rspec
+    - ruby-warning
+  makedepends:
+    - git
+    - ruby-rdoc
+  depends:
+    - ruby
+  options:
+    - '!emptydirs'
+  source:
+    - git+https://github.com/jaynetics/character_set.git#tag=v1.9.0
+  sha256sums:
+    - e17254aeb4f421779991ee3bad0c0a47876068a5a61d4e2a2e2be4782dafb50d
+pkgname:
+  - name: ruby-character_set
+# generated with artixpkg 0.40.0-1-any
