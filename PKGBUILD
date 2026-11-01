@@ -6,7 +6,7 @@
 # Contributor: robertfoster
 
 pkgname=easyeffects
-pkgver=8.3.0
+pkgver=8.3.2
 pkgrel=1
 pkgdesc='Audio Effects for Pipewire applications'
 arch=('x86_64')
@@ -57,7 +57,7 @@ source=(
   "${url}/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz"
   "${pkgname}.install"
 )
-sha512sums=('271d81b52fdc9aadc1c6173b85b45082a42747e08f9b41ae4155141ff8ae2057cdcae1ec60bbcf6191cad6e054bdf6b5574df0fef8dd40293f6d042b5ebeea0c'
+sha512sums=('4c06a4061693d69e5f438aeb40c7044539742e54c031078f2cbdea467a33bc00b0f96db79a0a097459cd9064f64947ee1984f63cf8497a07f143280ac77c567b'
             'ed1a19b500c8a969d5c4ddc86ff6d7c3de1d7b7cd133de5801427bdb0eb45340f982e562cd9f85593cf87576defda1593c4bb1f09f653c3169b3d7e7ed034c79')
 
 build() {
