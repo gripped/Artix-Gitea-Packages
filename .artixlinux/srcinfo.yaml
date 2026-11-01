@@ -1,10 +1,10 @@
 ---
-version: 0.5.6-1
+version: 0.5.6-2
 pkgbase:
   name: w3m
   pkgdesc: Text-based Web browser as well as pager
   pkgver: 0.5.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://git.sr.ht/~rkta/w3m
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - e99f86e7deaa2081b11f777d8b91024f74fa97ef4eb5dac93ce150057eb69eff4750bb24aa753d93d60e9554e7c272f19bce85aeae53b768055fccbb8739d1a9
 pkgname:
   - name: w3m
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.40.0-1-any
