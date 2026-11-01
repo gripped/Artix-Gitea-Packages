@@ -4,8 +4,8 @@
 # Contributor: Roberto Alsina <ralsina@kde.org>
 
 pkgname=nsd
-pkgver=4.12.0
-pkgrel=1
+pkgver=4.15.3
+pkgrel=2
 pkgdesc="Authoritative only, high performance and simple DNS server"
 arch=(x86_64)
 url="https://www.nlnetlabs.nl/nsd/"
@@ -20,7 +20,7 @@ source=("git+https://github.com/NLnetLabs/nsd.git#tag=NSD_${pkgver//./_}_REL"
         "git+https://github.com/NLnetLabs/simdzone.git"
         nsd.sysusers
         nsd.tmpfiles)
-sha256sums=('374582fc74f5758c4abc8810a0ee85c7d181f0d45477f3b1a07048b9b6d69bc3'
+sha256sums=('b487973a500550f887f693c40755a0fdaa7825831aefb5e35cb0d924c16fbef9'
             'SKIP'
             '12ce2a05fbb23bb38c31933530a7773f796e250691843b9da76f178f5e7c94f5'
             '07a31cecdc787c7ef44018dfc696115bd7b5d44b6e93f56c6c08ed0887d51579')
