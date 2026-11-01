@@ -1,9 +1,9 @@
 ---
-version: 0.98.0-1
+version: 0.99.0-1
 pkgbase:
   name: ruby-async-http
   pkgdesc: A HTTP client and server library
-  pkgver: 0.98.0
+  pkgver: 0.99.0
   pkgrel: 1
   url: https://github.com/socketry/async-http
   arch:
@@ -25,6 +25,7 @@ pkgbase:
     - ruby-sus-fixtures-async
     - ruby-sus-fixtures-async-http
     - ruby-sus-fixtures-benchmark
+    - ruby-sus-fixtures-console
     - ruby-sus-fixtures-openssl
     - ruby-traces
   makedepends:
@@ -43,11 +44,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/socketry/async-http.git#tag=v0.98.0
+    - git+https://github.com/socketry/async-http.git#tag=v0.99.0
   sha512sums:
-    - a6dffb20d91aeb4f952247e2c88bee46615c31bd3e9246f185183953ea59f886ce4bf0a69e3db9b98d24abd01437df1b9a5da76c13f8df27fbbb69703f840782
+    - 7261bcbef0e45b0387f695265d49ddf70148d6a01fae4db5a9d9c9f9d7dda007566623dc20b203b9aed4b975b90467576209c81e6094ffcc2c87d2b2a913c504
   b2sums:
-    - 9bb9cbd433614f037afe1eafd9eb3b9781be4f5e7c9218c9e1dfb9da96289936b1364f3f0a1d06bf619ed1324184f236cdae64281d0686d7aebe790121303995
+    - 960556d7d9593333cea2887aa8631bd6220d5012054e1a5f5d3be67c4eb841fff1664ff9c84b687da219ccc41fde18747937c3229d9b94fd066e82384e1693cd
 pkgname:
   - name: ruby-async-http
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
