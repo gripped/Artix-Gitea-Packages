@@ -1,18 +1,20 @@
 ---
-version: 1.1.13-5
+version: 1.1.13-6
 pkgbase:
   name: pbzip2
   pkgdesc: Parallel implementation of the bzip2 block-sorting file compressor
   pkgver: 1.1.13
-  pkgrel: 5
+  pkgrel: 6
   url: http://compression.great-site.net/pbzip2/
   arch:
     - x86_64
   license:
     - bzip2-1.0.6
   depends:
+    - glibc
     - bzip2
-    - gcc-libs
+    - libgcc
+    - libstdc++
   source:
     - https://launchpad.net/pbzip2/1.1/1.1.13/+download/pbzip2-1.1.13.tar.gz
     - https://launchpad.net/pbzip2/1.1/1.1.13/+download/pbzip2-1.1.13.tar.gz.asc
@@ -23,4 +25,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: pbzip2
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.40.0-1-any
