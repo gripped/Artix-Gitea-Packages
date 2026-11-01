@@ -1,10 +1,10 @@
 ---
-version: 5.8-1
+version: 5.8-2
 pkgbase:
   name: tpm2-tools
   pkgdesc: Trusted Platform Module 2.0 tools based on tpm2-tss
   pkgver: 5.8
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/tpm2-software/tpm2-tools
   arch:
     - x86_64
