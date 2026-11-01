@@ -1,9 +1,9 @@
 ---
-version: 1.8.5-1
+version: 1.8.7-1
 pkgbase:
   name: ruby-msgpack
   pkgdesc: MessagePack implementation for Ruby
-  pkgver: 1.8.5
+  pkgver: 1.8.7
   pkgrel: 1
   url: https://github.com/msgpack/msgpack-ruby
   arch:
@@ -24,11 +24,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - https://github.com/msgpack/msgpack-ruby/archive/v1.8.5/ruby-msgpack-v1.8.5.tar.gz
+    - https://github.com/msgpack/msgpack-ruby/archive/v1.8.7/ruby-msgpack-v1.8.7.tar.gz
   sha512sums:
-    - c56aa86109dbc4fd4e1328126c2995eeef91982cf3cad649a822c58a172f7f55da57b22b74572bfb926583229df62f5fcd11cfee96babffc51afe100c9478d7f
+    - c9152b06536e202f608d5986317f536ff690890f82a098295e9e7acddea01aaf09bc9bf50338641251eed9e3f7264b2e760ddfa963f1569177a09f6bb7f14cb9
   b2sums:
-    - f964eca82fdb8b1c227c7dfebd3aceaf8c765a0db11b6b06898dc3fc85f00bfcf1380e96ec60411034c1680fc0455bd715b70812c9d4e4aad11c206227beb18e
+    - 42e62287ad54239601407248f2bb2307ae1727977ba2bd740a9d4913dfa29658f145296b3baa825469e19719c6f955364892791955196a408ed3dd42a5bb706e
 pkgname:
   - name: ruby-msgpack
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
