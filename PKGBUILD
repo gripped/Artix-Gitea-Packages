@@ -37,6 +37,4 @@ build() {
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
-
-  rm -r $pkgdir/usr/lib/systemd
 }
