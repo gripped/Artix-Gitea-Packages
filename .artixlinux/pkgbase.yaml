@@ -16,9 +16,9 @@ repos:
     packages: []
   world:
     debug: []
-    version: 0.1.6-2.3
+    version: 0.1.6-3
     packages:
-      - xf86-video-qxl-0.1.6-2.3-x86_64.pkg.tar.zst
+      - xf86-video-qxl-0.1.6-3-x86_64.pkg.tar.zst
   lib32-goblins:
     debug: []
   lib32-gremlins:
@@ -37,9 +37,9 @@ repos:
     packages: []
 actions:
   addRepo: world
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
