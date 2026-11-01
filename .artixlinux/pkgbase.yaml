@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -46,9 +46,10 @@ repos:
     packages: []
     debug: []
   galaxy-goblins:
-    version: 1.28.1-5
+    version: 1.29.0-2
     packages:
-      - efl-1.28.1-5-x86_64.pkg.tar.zst
+      - efl-1.29.0-2-x86_64.pkg.tar.zst
+      - efl-docs-1.29.0-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-gremlins:
     version: 1.29.0-1
