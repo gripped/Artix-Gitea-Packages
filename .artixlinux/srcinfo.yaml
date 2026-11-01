@@ -1,10 +1,10 @@
 ---
-version: 1:0.5.3.r557.r241-1
+version: 1:0.5.3.r557.r241-2
 pkgbase:
   name: vpnc
   pkgdesc: VPN client for cisco3000 VPN Concentrators
   pkgver: 0.5.3.r557.r241
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/streambinder/vpnc
   arch:
@@ -37,4 +37,4 @@ pkgbase:
     - ac70712192c01ff638a9badc5cff7105bee5c4fed5d3a3b728e9597661952d156041c82fe1e544e2bab602d193d4105d3689c79c46d964623f6ce38dd89f0ea7
 pkgname:
   - name: vpnc
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
