@@ -5,7 +5,7 @@
 
 pkgname=spotifyd
 pkgver=0.4.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Lightweight spotify streaming daemon with spotify connect support'
 arch=('x86_64')
 url='https://github.com/Spotifyd/spotifyd'
@@ -27,20 +27,18 @@ b2sums=('bf61c133252cddc79ef492836a99da8ab099527f0dc508f8ea29d6057f4dd4ac5603bd4
 
 prepare() {
   cd spotifyd-${pkgver}
-  export RUSTUP_TOOLCHAIN=stable
+  # Update the locked bindings for OpenSSL 4: https://github.com/Spotifyd/spotifyd/issues/1421
+  cargo update -p openssl --precise 0.10.81
   cargo fetch --locked --target "$CARCH-unknown-linux-gnu"
 }
 
 build() {
   cd spotifyd-${pkgver}
-  export RUSTUP_TOOLCHAIN=stable
-  export CARGO_TARGET_DIR=target
   cargo build --release --locked --features pulseaudio_backend,dbus_mpris,rodio_backend
 }
 
 check() {
   cd spotifyd-${pkgver}
-  export RUSTUP_TOOLCHAIN=stable
   cargo test --release --locked --target-dir=target
  }
 
