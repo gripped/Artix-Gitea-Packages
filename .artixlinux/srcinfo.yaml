@@ -1,10 +1,10 @@
 ---
-version: 1.58.1-2
+version: 1.58.1-3
 pkgbase:
   name: networkmanager
   pkgdesc: Network connection manager and user applications
   pkgver: 1.58.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://networkmanager.dev/
   arch:
     - x86_64
