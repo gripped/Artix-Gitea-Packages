@@ -1,0 +1,33 @@
+---
+version: 6.17-4
+pkgbase:
+  name: rng-tools
+  pkgdesc: Random number generator related utilities
+  pkgver: 6.17
+  pkgrel: 4
+  url: https://github.com/nhorman/rng-tools
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  depends:
+    - curl
+    - libxml2
+    - sysfsutils
+    - jitterentropy
+    - libp11
+    - jansson
+    - rtl-sdr
+  optdepends:
+    - 'opensc: PKCS11 entropy engine to gather entropy from smart card readers'
+  backup:
+    - etc/conf.d/rngd
+  source:
+    - https://github.com/nhorman/rng-tools/archive/v6.17/rng-tools-6.17.tar.gz
+    - rngd.conf
+  sha256sums:
+    - 4aa50994232da74499b60b3ebf79118e30a1943be375b7d931dcf18df5442fd3
+    - f4fd197dd682cdab07ddeabe8d3b73b1bc2e1cf322237be238a26b49a7dcb047
+pkgname:
+  - name: rng-tools
+# generated with artixpkg 0.40.0-1-any
