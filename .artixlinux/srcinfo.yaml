@@ -1,9 +1,9 @@
 ---
-version: 2.5.0-1
+version: 2.5.3-1
 pkgbase:
   name: ruby-connection_pool
   pkgdesc: Generic connection pool for Ruby
-  pkgver: 2.5.0
+  pkgver: 2.5.3
   pkgrel: 1
   url: https://github.com/mperham/connection_pool
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/mperham/connection_pool.git#tag=v2.5.0
+    - git+https://github.com/mperham/connection_pool.git#tag=v2.5.3
   sha256sums:
-    - af57e90f51f874f965c220067b299df94ec2c4d9807f836e8bc2bbcdacac9885
+    - 42a3eddfd3a145466712972f8c381541210ffa9b0b70bdfe55f078ec61370f5a
 pkgname:
   - name: ruby-connection_pool
 # generated with artixpkg 0.40.0-1-any
