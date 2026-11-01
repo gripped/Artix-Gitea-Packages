@@ -8,7 +8,7 @@ pkgname=ntp
 _pkgname=ntp #-dev
 _pkgver=4.2.8p18
 pkgver=${_pkgver/p/.p}
-pkgrel=6
+pkgrel=7
 pkgdesc='Network Time Protocol reference implementation'
 url='https://www.ntp.org/'
 license=('custom')
@@ -17,10 +17,14 @@ depends=('openssl' 'perl' 'libcap' 'libedit')
 backup=('etc/ntp.conf')
 source=("https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/${_pkgname}-${_pkgver}.tar.gz"
         ntp-4.2.8.p18-fix-build.patch
+        ntp-4.2.8.p18-glib-2.43.patch
+        openssl4.patch
         'ntp.conf'
         'ntp.sysusers')
 sha256sums=('cf84c5f3fb1a295284942624d823fffa634144e096cfc4f9969ac98ef5f468e5'
             '9c4afa0daed5fd3cc9544ec808b2bb1dd959e5d40c4cae307b7025b16885903c'
+            'e223ea88e2970500e2ae92e8e6f8e7d90fa373cd48806f387b9334dc4a4e1c1d'
+            '0ce0ad0269f5b8c71f093afa6014615f9723d16e432dd63e2e4fbbfd2399ce8a'
             'abccefe0b3a65cd375d5071ce780be8d2d205439aa6d34bcd3c56de6e80ba821'
             'e2684bd1ea1a4eec164619c93eaaed78b1cc5a882c7044436800f9c7cec86636')
 options=('!emptydirs')
@@ -29,6 +33,10 @@ prepare() {
 	cd "${_pkgname}-${_pkgver}"
 
 	patch -Np1 < ../ntp-4.2.8.p18-fix-build.patch
+	patch -Np1 < ../ntp-4.2.8.p18-glib-2.43.patch
+	# Use public ASN.1 APIs and avoid ERR_remove_state(), removed in OpenSSL 4.
+	# https://github.com/ntp-project/ntp/pull/32
+	patch -Np1 < ../openssl4.patch
 	autoreconf -fiv
 }
 
