@@ -4,7 +4,7 @@
 pkgname=ruby-ffi-compiler
 epoch=1
 # WARN: limited to 1.x as 2.x is a different gem
-pkgver=1.4.2
+pkgver=1.4.3
 pkgrel=1
 pkgdesc='Ruby library for automating compilation of native libraries for use with ffi'
 arch=(any)
@@ -14,7 +14,7 @@ depends=(ruby-ffi ruby-rake)
 makedepends=(git ruby-rspec ruby-rubygems-tasks ruby-rdoc)
 options=(!emptydirs)
 source=(git+https://github.com/ffi/ffi-compiler.git#tag=$pkgver)
-sha256sums=('fe8fa4cdc86eba083780713ee66397fb712e0f6c69c64f378a220e20e803bae6')
+sha256sums=('644f479aca6be05e3e58f375ff74592058934061dc1bd1ec88aeecb4e716fc5a')
 
 build() {
   local _gemdir="$(gem env gemdir)"
@@ -43,11 +43,8 @@ build() {
 }
 
 check() {
-  local _gemdir="$(gem env gemdir)"
   cd ffi-compiler
-  # Should output: Example.example=deadbeef
-  # TODO: Disabled because example needs to be built first.
-  # GEM_HOME="tmp_install/$_gemdir" ruby <<< 'require "example/example"; puts "Example.example=#{Example.example.to_s(16)}"'
+  rake spec
 }
 
 package() {
