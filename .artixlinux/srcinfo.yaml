@@ -1,10 +1,10 @@
 ---
-version: 0.37.1-1
+version: 0.37.1-2
 pkgbase:
   name: neon
   pkgdesc: HTTP/1.1 and WebDAV client library
   pkgver: 0.37.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://notroj.github.io/neon/
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 51b19f2d5a506d16bc1b0b76bcddc43d8960fc785499317e93570e7877884e48ae900d9a06dcc1943bb4c72213b6990c11a58caa47c76a17178f588516717e51
 pkgname:
   - name: neon
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
