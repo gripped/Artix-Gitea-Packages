@@ -1,10 +1,10 @@
 ---
-version: 0.11.0-1
+version: 0.11.0-2
 pkgbase:
   name: wf-shell
   pkgdesc: GTK-based panel for Wayfire
   pkgver: 0.11.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/WayfireWM/wf-shell
   arch:
     - x86_64
@@ -57,4 +57,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: wf-shell
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
