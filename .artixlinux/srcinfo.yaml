@@ -1,10 +1,10 @@
 ---
-version: 20260211-1
+version: 20260211-2
 pkgbase:
   name: tnftp
   pkgdesc: NetBSD FTP client with several advanced features
   pkgver: 20260211
-  pkgrel: 1
+  pkgrel: 2
   url: https://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: tnftp
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
