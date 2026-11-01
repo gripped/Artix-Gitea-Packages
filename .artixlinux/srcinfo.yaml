@@ -1,10 +1,10 @@
 ---
-version: 9.2.1-2
+version: 9.2.2-1
 pkgbase:
   name: simdutf
   pkgdesc: Unicode routines (UTF8, UTF16, UTF32) and Base64
-  pkgver: 9.2.1
-  pkgrel: 2
+  pkgver: 9.2.2
+  pkgrel: 1
   url: https://simdutf.github.io/simdutf/
   arch:
     - x86_64
@@ -20,9 +20,9 @@ pkgbase:
   provides:
     - libsimdutf.so
   source:
-    - git+https://github.com/simdutf/simdutf.git#tag=v9.2.1
+    - git+https://github.com/simdutf/simdutf.git#tag=v9.2.2
   sha256sums:
-    - 47cac89e92fcfa3227dddde446c27a74e54b4f5bfd88d752936f91c3a866fb98
+    - 042df50de88d7a50ca27fcd4f7029fe3382f1dac58de08922a286bce4aeb3c89
 pkgname:
   - name: simdutf
 # generated with artixpkg 0.40.0-1-any
