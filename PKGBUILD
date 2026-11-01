@@ -14,7 +14,7 @@ _l10n_commit=1e95d1c5f519c3fbde715345ae7beb56a2c79077
 
 pkgver=153.6.0.101
 
-pkgrel=1
+pkgrel=2
 _ffbuild=2
 _srcver="${pkgver%.*}"
 _ffsrcver="${_srcver/.0.0/.0}"
@@ -415,9 +415,9 @@ END
 
   # Replace duplicate binary with wrapper
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1553771
-  install -Dvm755 "${srcdir}/entrypoint.sh" "$pkgdir/usr/lib/$__pkgname"
+  install -Dvm755 "${srcdir}/entrypoint.sh" "${pkgdir}/usr/lib/${__pkgname}/${__pkgname}"
 
   # https://bugzilla.mozilla.org/show_bug.cgi?id=658850
-  ln -srfv "${pkgdir}/usr/lib/${__pkgname}" "${pkgdir}/usr/bin/${__pkgname}"
+  ln -srfv "${pkgdir}/usr/lib/${__pkgname}/${__pkgname}" "${pkgdir}/usr/bin/${__pkgname}"
   ln -s "${__pkgname}" "${pkgdir}/usr/bin/${_pkgname}" || true
 }
