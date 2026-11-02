@@ -1,10 +1,10 @@
 ---
-version: 0.20.0-1
+version: 0.20.0-2
 pkgbase:
   name: elinks
   pkgdesc: Advanced feature-rich text-mode web browser
   pkgver: 0.20.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/rkd77/elinks
   arch:
     - x86_64
@@ -44,4 +44,4 @@ pkgbase:
     - 6e58c5b6935e1ac7dbaea3b320edfc15025b4ed495eb04614c8917708be78435df91c712c9ad09dc33b1ac86b4b7ba2bb36071c118143bc803fabbd119b23e22
 pkgname:
   - name: elinks
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1.4-any
