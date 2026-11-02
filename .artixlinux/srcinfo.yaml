@@ -1,9 +1,9 @@
 ---
-version: 0.22.2-1
+version: 0.22.3-1
 pkgbase:
   name: libraw
   pkgdesc: A library for reading RAW files obtained from digital photo cameras (CRW/CR2, NEF, RAF, DNG, and others)
-  pkgver: 0.22.2
+  pkgver: 0.22.3
   pkgrel: 1
   url: https://www.libraw.org/
   arch:
@@ -22,9 +22,9 @@ pkgbase:
     - libstdc++
     - zlib
   source:
-    - git+https://github.com/LibRaw/LibRaw#tag=0.22.2
+    - git+https://github.com/LibRaw/LibRaw#tag=0.22.3
   sha256sums:
-    - 3f97ff6de7d10ed9882cf5ffb6c280f1fe5bd8ebb7ebe6523616400a74470921
+    - e2a2cf029c8e7e193db8ee6f60190fa30f52b9448d45c2841577c25417e4e31c
 pkgname:
   - name: libraw
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
