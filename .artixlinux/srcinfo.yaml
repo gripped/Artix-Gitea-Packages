@@ -1,9 +1,9 @@
 ---
-version: 4.0.0-1
+version: 4.0.1-1
 pkgbase:
   name: ruby-facets
   pkgdesc: Premiere collection of general purpose method extensions and standard additions for the Ruby programming language
-  pkgver: 4.0.0
+  pkgver: 4.0.1
   pkgrel: 1
   url: https://github.com/rubyworks/facets
   arch:
@@ -14,7 +14,7 @@ pkgbase:
     - ruby-lemon
     - ruby-qed
     - ruby-rake
-    - ruby-rubytest-cli
+    - ruby-rubytest
     - ruby-simplecov
   makedepends:
     - git
@@ -24,9 +24,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/rubyworks/facets.git#tag=v4.0.0
+    - git+https://github.com/rubyworks/facets.git#tag=4.0.1
   sha256sums:
-    - 857c8386dc8f20515c8fa8670c6eed7c92a6e558d096ed88149bb88beb7e0c29
+    - 3fe386e2743eb49861df8eecd86845f7b45f7475332dc7b7ad433c36cf59e74c
 pkgname:
   - name: ruby-facets
 # generated with artixpkg 0.40.0-1-any
