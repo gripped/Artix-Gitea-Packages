@@ -1,0 +1,31 @@
+---
+version: 6.8-1
+pkgbase:
+  name: languagetool
+  pkgdesc: An open source language checker
+  pkgver: 6.8
+  pkgrel: 1
+  url: https://www.languagetool.org
+  arch:
+    - any
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - git
+    - java-environment=17
+    - maven
+  depends:
+    - java-runtime-headless>=17
+  optdepends:
+    - 'java-runtime: needed for the GUI version'
+    - 'libxtst: needed for the GUI version'
+    - 'gtk3: GTK style for the GUI'
+  source:
+    - git+https://github.com/languagetool-org/languagetool.git#tag=v6.8
+    - languagetool.sh
+  sha256sums:
+    - 1b41ee07038b2d10c8a4f82027bbac86dea222c161d1ed98ac2e03bc92c4ddce
+    - 1230bed5e596ba161a08cddc70764afb46f018e8f483e9934017b3c7b2aaea70
+pkgname:
+  - name: languagetool
+# generated with artixpkg 0.40.0-1-any

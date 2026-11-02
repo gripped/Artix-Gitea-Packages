@@ -3,31 +3,48 @@
 # Contributor: Andrzej Giniewicz <gginiu@gmail.com>
 # Contributor: Julien MISCHKOWITZ <wain@archlinux.fr>
 # Contributor: Panagiotis Papadopoulos pano_90 (AT) gmx (DOT) net
+# Contributor: Matthias Mailänder <matthias@mailaender.name>
 
 pkgname=languagetool
-pkgver=6.6
-pkgrel=2
+pkgver=6.8
+pkgrel=1
 pkgdesc='An open source language checker'
 arch=(any)
 url='https://www.languagetool.org'
 license=(LGPL-2.1-or-later)
-depends=(java-runtime-headless)
-makedepends=(unzip)
+depends=('java-runtime-headless>=17')
+makedepends=(git
+             java-environment=17
+             maven)
 optdepends=('java-runtime: needed for the GUI version'
             'libxtst: needed for the GUI version'
             'gtk3: GTK style for the GUI')
-source=(https://www.languagetool.org/download/LanguageTool-$pkgver.zip
+source=("git+https://github.com/languagetool-org/languagetool.git#tag=v${pkgver}"
         languagetool.sh)
-noextract=($pkgname-$pkgver.zip)
-sha256sums=('53600506b399bb5ffe1e4c8dec794fd378212f14aaf38ccef9b6f89314d11631'
+sha256sums=('1b41ee07038b2d10c8a4f82027bbac86dea222c161d1ed98ac2e03bc92c4ddce'
             '1230bed5e596ba161a08cddc70764afb46f018e8f483e9934017b3c7b2aaea70')
+
+prepare() {
+  cd $pkgname
+  # prevent timeout: repo.languagetool.org is unreachable
+  sed -i '/<repositories>/,/<\/repositories>/d' pom.xml
+}
+
+build() {
+  cd $pkgname
+  export JAVA_HOME=/usr/lib/jvm/java-17-openjdk # Lombok compatibility
+  mvn --batch-mode --no-transfer-progress \
+    -Dmaven.repo.local="$srcdir"/m2 \
+    -DskipTests \
+    --projects languagetool-standalone --also-make \
+    package
+}
 
 package() {
   install -d "$pkgdir"/usr/{bin,share/java/$pkgname/libs}
-  unzip -q LanguageTool-$pkgver.zip -d "$pkgdir"/usr/share
-  cd "$pkgdir"/usr/share/
-  mv LanguageTool-${pkgver/.a/} $pkgname
-  cd $pkgname
+  cp -r $pkgname/languagetool-standalone/target/LanguageTool-$pkgver/LanguageTool-$pkgver \
+    "$pkgdir"/usr/share/$pkgname
+  cd "$pkgdir"/usr/share/$pkgname
   mv *.jar "$pkgdir"/usr/share/java/$pkgname
   mv libs/*.jar "$pkgdir"/usr/share/java/$pkgname/libs
   rm -rf libs
