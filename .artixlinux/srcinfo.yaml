@@ -1,9 +1,9 @@
 ---
-version: 6.8.1-1
+version: 6.8.2-1
 pkgbase:
   name: xdg-desktop-portal-kde
   pkgdesc: A backend implementation for xdg-desktop-portal using Qt/KF5
-  pkgver: 6.8.1
+  pkgver: 6.8.2
   pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
@@ -47,15 +47,15 @@ pkgbase:
   provides:
     - xdg-desktop-portal-impl
   source:
-    - https://download.kde.org/stable/plasma/6.8.1/xdg-desktop-portal-kde-6.8.1.tar.xz
-    - https://download.kde.org/stable/plasma/6.8.1/xdg-desktop-portal-kde-6.8.1.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.2/xdg-desktop-portal-kde-6.8.2.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.2/xdg-desktop-portal-kde-6.8.2.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
     - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 1eb8d64195f3c07a5afec050d51e031b805425a560c061552c1138ee281dbd05
+    - f67e2b7fee07a941b0de6294335d879a9bc0b5dc7dd3b48654dde373c67a9eb6
     - SKIP
 pkgname:
   - name: xdg-desktop-portal-kde
