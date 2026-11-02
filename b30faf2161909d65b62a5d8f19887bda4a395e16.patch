@@ -1,0 +1,25 @@
+From b30faf2161909d65b62a5d8f19887bda4a395e16 Mon Sep 17 00:00:00 2001
+From: Laurent Bercot <ska-skaware@skarnet.org>
+Date: Fri, 30 Oct 2026 22:14:50 +0000
+Subject:  Fix off-by-one in setuptodate
+
+---
+ src/repo/s6rc_repo_setuptodate.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/repo/s6rc_repo_setuptodate.c b/src/repo/s6rc_repo_setuptodate.c
+index bd7261c..9cfef7e 100644
+--- a/src/repo/s6rc_repo_setuptodate.c
++++ b/src/repo/s6rc_repo_setuptodate.c
+@@ -63,7 +63,7 @@ int s6rc_repo_setuptodate (char const *repo, char const *set, unsigned int flags
+       strerr_warnf("invalid symlink: ", dstfn) ;
+       return -1 ;
+     }
+-    snap[repolen + setlen + 53] = 0 ;
++    snap[repolen + setlen + 52] = 0 ;
+     if (stat(snap, &stsnap) == -1)
+     {
+       if (errno == ENOENT) return 0 ;
+-- 
+cgit v1.3.1
+
