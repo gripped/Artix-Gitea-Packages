@@ -1,7 +1,7 @@
 # Maintainer: Dudemanguy <dudemanguy@artixlinux.org>
 pkgname=s6-frontend
 pkgver=0.2.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='A higher-level interface to the s6 ecosystem.'
 arch=('x86_64')
 url='https://skarnet.org/software/s6-frontend'
