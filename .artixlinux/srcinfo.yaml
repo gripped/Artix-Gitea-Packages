@@ -1,9 +1,9 @@
 ---
-version: 6.11.0-1
+version: 6.12.0-1
 pkgbase:
   name: pyqt6-networkauth
   pkgdesc: Python bindings for QtNetworkAuth
-  pkgver: 6.11.0
+  pkgver: 6.12.0
   pkgrel: 1
   url: https://www.riverbankcomputing.com/software/pyqtnetworkauth/intro
   arch:
@@ -23,9 +23,9 @@ pkgbase:
     - qt6-base
     - qt6-networkauth
   source:
-    - https://pypi.python.org/packages/source/P/PyQt6-NetworkAuth/pyqt6_networkauth-6.11.0.tar.gz
+    - https://pypi.python.org/packages/source/P/PyQt6-NetworkAuth/pyqt6_networkauth-6.12.0.tar.gz
   sha256sums:
-    - 03650f0b0d709284f4ede3b31170d78b996864406bf34a4a0e76474b9144ed2a
+    - e2c5fd09a8eb2a536199203ae97d7b42b9ae1578b3db20fd46e8c4f7ec117803
 pkgname:
   - name: python-pyqt6-networkauth
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
