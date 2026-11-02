@@ -1,10 +1,10 @@
 ---
-version: 15-2
+version: 15-3
 pkgbase:
   name: jose
   pkgdesc: C-language implementation of Javascript Object Signing and Encryption
   pkgver: 15
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/latchset/jose
   arch:
     - x86_64
@@ -28,4 +28,4 @@ pkgbase:
     - 37cf2c02c96cf941506ad816373f2e7dfa64e1e2cc3ed785d2f2031716bbb1253974d9b671783feb4b087af5953259cc82aa64a4480e75cc3285dbd2693fcdfd
 pkgname:
   - name: jose
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1.4-any
