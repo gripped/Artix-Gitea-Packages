@@ -16,7 +16,7 @@ sha256sums=('2fc0fcfe1e74b404b132a978eb316668c8bcdbc1104b3b0fe702a3d2d76caef5'
 
 prepare() {
   cd ${pkgname}-${pkgver}
-  patch -Np1 -i b30faf2161909d65b62a5d8f19887bda4a395e16.patch
+  patch -Np1 -i ../b30faf2161909d65b62a5d8f19887bda4a395e16.patch
 }
 
 build() {
