@@ -1,10 +1,10 @@
 ---
-version: 2.7.0-1
+version: 2.7.0-2
 pkgbase:
   name: softhsm
   pkgdesc: Software PKCS#11 store
   pkgver: 2.7.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://opendnssec.readthedocs.io/en/latest/softhsm2/
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - 7ac7a5bbeedc0948600228df80a4381452c0eb812b36fc17da2d7064f273e8b5
 pkgname:
   - name: softhsm
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1.4-any
