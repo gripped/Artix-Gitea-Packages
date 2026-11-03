@@ -5,7 +5,7 @@
 
 pkgname=tpm2-tss
 pkgver=4.2.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Implementation of the TCG Trusted Platform Module 2.0 Software Stack (TSS2)'
 arch=(x86_64)
 url='https://github.com/tpm2-software/tpm2-tss'

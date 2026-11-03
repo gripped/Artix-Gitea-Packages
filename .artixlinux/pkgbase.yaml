@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: system-gremlins
+  addRepo: system-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -9,9 +9,9 @@ actions:
   triggersNoCheck: false
 repos:
   system-goblins:
-    version: 4.2.0-3
+    version: 4.2.1-2
     packages:
-      - tpm2-tss-4.2.0-3-x86_64.pkg.tar.zst
+      - tpm2-tss-4.2.1-2-x86_64.pkg.tar.zst
     debug: []
   system-gremlins:
     version: 4.2.1-1
