@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 3.5.1-4
+    version: 3.5.2-2
     packages:
-      - rsync-3.5.1-4-x86_64.pkg.tar.zst
+      - rsync-3.5.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
