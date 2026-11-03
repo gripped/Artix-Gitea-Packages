@@ -1,10 +1,10 @@
 ---
-version: 1:6.2.0-2
+version: 1:6.2.0-3
 pkgbase:
   name: granite
   pkgdesc: Library that extends GTK
   pkgver: 6.2.0
-  pkgrel: 2
+  pkgrel: 3
   epoch: 1
   url: https://github.com/elementary/granite
   arch:
@@ -23,6 +23,7 @@ pkgbase:
     - gdk-pixbuf2
     - glib2
     - glibc
+    - gsettings-desktop-schemas
     - gtk3
     - hicolor-icon-theme
     - libgee
