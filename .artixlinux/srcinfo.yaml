@@ -1,10 +1,10 @@
 ---
-version: 7.8.1-2
+version: 7.8.1-3
 pkgbase:
   name: granite7
   pkgdesc: Library that extends GTK
   pkgver: 7.8.1
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/elementary/granite
   arch:
     - x86_64
@@ -22,6 +22,7 @@ pkgbase:
   depends:
     - glib2
     - glibc
+    - gsettings-desktop-schemas
     - gtk4
     - hicolor-icon-theme
     - libgee
