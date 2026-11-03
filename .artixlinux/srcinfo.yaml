@@ -1,9 +1,9 @@
 ---
-version: 1:2.057-1
+version: 1:20260924-1
 pkgbase:
   name: noto-fonts-emoji
   pkgdesc: Google Noto Color Emoji font
-  pkgver: 2.057
+  pkgver: 20260924
   pkgrel: 1
   epoch: 1
   url: https://www.google.com/get/noto/
@@ -11,14 +11,17 @@ pkgbase:
     - any
   license:
     - OFL-1.1-no-RFN
-  makedepends:
-    - git
   provides:
     - emoji-font
   source:
-    - git+https://github.com/googlefonts/noto-emoji.git#tag=v2026-09-24-unicode18_0
+    - https://github.com/googlefonts/noto-emoji/raw/refs/tags/v2026-09-24-unicode18_0/2D/fonts/NotoColorEmoji.ttf
+    - https://github.com/googlefonts/noto-emoji/raw/refs/tags/v2026-09-24-unicode18_0/3D/fonts/Noto-3D-192.ttf
+    - noto-fons-emoji.LICENSE::https://github.com/googlefonts/noto-emoji/raw/refs/tags/v2026-09-24-unicode18_0/LICENSE
   sha256sums:
-    - a83b60866b3e82e6bab4a7ffb600cffe711c2eff0be4b4192e3d87b711c10251
+    - 15671215ab769fdc7162a045d56fd7d7e477c51b04e6b3c761d914d8fdd6cc44
+    - 278e14dfc2c7f528f42a7e7d34eb1e302250d6b400e0fceb07a4ad2da72b617a
+    - 500bb1ccf43df7bbb522112f9133a52b16e1c35e809632f5d8609b179152de5b
 pkgname:
   - name: noto-fonts-emoji
+  - name: noto-fonts-emoji-3d
 # generated with artixpkg 0.40.0-1-any
