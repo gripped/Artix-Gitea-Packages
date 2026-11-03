@@ -1,9 +1,9 @@
 ---
-version: 0.20.2-1
+version: 0.20.3-1
 pkgbase:
   name: labwc
   pkgdesc: stacking wayland compositor with look and feel from openbox
-  pkgver: 0.20.2
+  pkgver: 0.20.3
   pkgrel: 1
   url: https://github.com/labwc/labwc
   arch:
@@ -37,9 +37,9 @@ pkgbase:
     - 'bemenu: default launcher via Alt+F3'
     - 'xorg-xwayland: X11 application support'
   source:
-    - git+https://github.com/labwc/labwc#tag=0.20.2
+    - git+https://github.com/labwc/labwc#tag=0.20.3
   b2sums:
-    - 8f8023a5bc31e7fe52d80f1c99b02c59bd9ff9a3779145b9077dac3c2c4a78e291b99dc770039f90ac1ff548ff53adfeddad35de07f5d14d736b4c562ce3554f
+    - 9fc8149b66f27e7cfe62ccdf69c78e50346483d5d884cfd71971b16f86322b68c43cbb0551f415b59b7dbce127200e248965c2d5a6e212d7bf8a650d80265756
 pkgname:
   - name: labwc
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
