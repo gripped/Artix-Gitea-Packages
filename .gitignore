@@ -34,3 +34,5 @@ src/
 *.service
 *.timer
 *.socket
+nginx-tests/
+nginx/

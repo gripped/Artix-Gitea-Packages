@@ -19,9 +19,9 @@ pkgname=(
   nginx-src
 )
 # IMPORTANT: When bumping $pkgver, remember to rebuild NGINX modules nginx-mod-*.
-pkgver=1.30.5
-pkgrel=1
-_tests_commit=4d1de3f357afeb91865d024b27516d6b67aad86e
+pkgver=1.30.6
+pkgrel=3
+_tests_commit=ff61b0ffdb77c4279be2aab1529a5ad06bfcc119
 arch=(x86_64)
 pkgdesc='Lightweight HTTP server and IMAP/POP3 proxy server'
 url='https://nginx.org'
@@ -64,14 +64,29 @@ validpgpkeys=(
   'D6786CE303D9A9022998DC6CC8464D549AF75C0A'  # Sergey Kandaurov <s.kandaurov@f5.com>
   '13C82A63B603576156E30A4EA0EA981B66B0D967'  # Konstantin Pavlov <thresh@nginx.com>
 )
-sha512sums=('abb068c699d0d9493c99bd214b9d7bbefab333275c8cb194ccef8e47fab586c1574ddd0965923c17ba317392e0f35f7a23ed3bceac570854135564922af38771'
-            '827180c353d2765557c9cd85f205d4e79b4a43dc01b150abc32e93b37ff27ac718d339825096396250c4a9b83899f06de39e9622dae10c54b9bd9748112a3016'
+sha512sums=('cd3c52ceb8f62bda3f9fb88d33f24e162069ddd6ec9a7ea05c78a2579c60405350c8d5b0a2b7a2d745a588257f4953feb9d9c2c61ab5fc074a661f06ed5c30c1'
+            'a244c6f5ac3b2441945b7f9f1e497d3f8937d2fa9cada2c66b719d4f0463773f87c04adf0945e40cf7b97d828a066916c4122458efaa9748024027e3f3a61ad0'
             'f707961d716392a0cc5345aa79e0cb1b44d2f1233b26cb77724a2716f1552a766d8aeb5347e20cba801a271e785c9ba1f35ac8e155fbadadd0c145ec222e8e0b')
 
 prepare() {
   cp -r $pkgbase{,-src}
   # Fix ssl_certificate_compression test: loop only checked first algorithm
   sed '/\$has_zlib = 1 if \$algo == 1;/{n;/^\t\t\t\tlast;/d}' -i nginx-tests/ssl_certificate_compression.t
+
+  # OpenSSL 4.1 no longer falls back to the subject CN for hostname checks; give the CN-only test
+  # certificates a matching DNS SAN.
+  cd nginx-tests
+  sed -i '/openssl\.2\.example\.com\.conf/,/^EOF/{
+    s/^encrypt_key = no$/&\nx509_extensions = v3_req/
+    s/^commonName=2\.example\.com$/&\n\n[ v3_req ]\nsubjectAltName = DNS:2.example.com/
+  }' proxy_ssl_verify.t stream_proxy_ssl_verify.t
+  grep -q 'subjectAltName = DNS:2.example.com' proxy_ssl_verify.t stream_proxy_ssl_verify.t
+  sed -i 's/^default_days = 1$/&\ncopy_extensions = copy/' \
+    proxy_ssl_crl.t ssl_cache.t
+  grep -q 'copy_extensions = copy' proxy_ssl_crl.t ssl_cache.t
+  sed -i 's|-config \$d/openssl\.conf -subj /CN=\$name/ "|-config $d/openssl.conf -subj /CN=$name/ -addext subjectAltName=DNS:$name "|' \
+    grpc_ssl.t proxy_ssl_crl.t ssl_cache.t
+  grep -q 'addext subjectAltName' grpc_ssl.t proxy_ssl_crl.t ssl_cache.t
 }
 
 build() {

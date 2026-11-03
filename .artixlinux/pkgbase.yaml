@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,16 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 1.30.6-3
+    packages:
+      - nginx-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-mod-geoip-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-mod-image-filter-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-mod-mail-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-mod-perl-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-mod-stream-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-mod-xslt-1.30.6-3-x86_64.pkg.tar.zst
+      - nginx-src-1.30.6-3-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
