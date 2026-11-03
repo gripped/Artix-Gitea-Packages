@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - freerdp-2:3.32.2-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2:3.33.0-1
+    packages:
+      - freerdp-2:3.33.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2:3.32.2-1
