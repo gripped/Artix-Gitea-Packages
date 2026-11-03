@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,9 +21,9 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: 1.6.5-2
+    version: 1.6.6-2
     packages:
-      - apr-util-1.6.5-2-x86_64.pkg.tar.zst
+      - apr-util-1.6.6-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
