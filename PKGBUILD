@@ -4,13 +4,13 @@
 
 pkgname=ndisc6
 pkgver=1.0.9
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Collection of IPv6 networking utilities'
 arch=('x86_64')
 url='https://www.remlab.net/ndisc6/'
 license=('GPL-2.0-only OR GPL-3.0-only')
 depends=('glibc' 'perl' 'sh')
-makedepends=('gcc' 'systemd')
+makedepends=('gcc')
 options=('!emptydirs')
 source=("https://www.remlab.net/files/ndisc6/$pkgname-$pkgver.tar.bz2"
         'resolvconf-hook')

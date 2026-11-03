@@ -1,10 +1,10 @@
 ---
-version: 1.0.9-1
+version: 1.0.9-1.1
 pkgbase:
   name: ndisc6
   pkgdesc: Collection of IPv6 networking utilities
   pkgver: 1.0.9
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://www.remlab.net/ndisc6/
   arch:
     - x86_64
@@ -12,7 +12,6 @@ pkgbase:
     - GPL-2.0-only OR GPL-3.0-only
   makedepends:
     - gcc
-    - systemd
   depends:
     - glibc
     - perl
