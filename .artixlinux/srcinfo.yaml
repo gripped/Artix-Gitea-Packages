@@ -1,10 +1,10 @@
 ---
-version: 4.14.0-1
+version: 4.18.0-2
 pkgbase:
   name: sqlcipher
   pkgdesc: SQLite extension that provides transparent 256-bit AES encryption of database files
-  pkgver: 4.14.0
-  pkgrel: 1
+  pkgver: 4.18.0
+  pkgrel: 2
   url: https://www.zetetic.net/sqlcipher
   arch:
     - x86_64
@@ -19,13 +19,13 @@ pkgbase:
     - tcl
     - zlib
   source:
-    - https://www.zetetic.net/downloads/sqlcipher/verify/4.14.0/sqlcipher-4.14.0.zip
-    - https://www.zetetic.net/downloads/sqlcipher/verify/4.14.0/sqlcipher-4.14.0.zip.sig
+    - https://www.zetetic.net/downloads/sqlcipher/verify/4.18.0/sqlcipher-4.18.0.zip
+    - https://www.zetetic.net/downloads/sqlcipher/verify/4.18.0/sqlcipher-4.18.0.zip.sig
   validpgpkeys:
     - D83F5F9EB811D6E6B4A0D9C5D1FA3A2A97ED25C2
   b2sums:
-    - cf35d228cd0e726674de51be5ffd55517d625d68174c6af6df068dcc7e076cf812b1822f9fef6b163d883beccd821e5a8dceef0f198cfcbc2ec569ee6ade9e1d
+    - dd0e67309364c459344c3ee4024540ee2ee40470022482237b5bc2b52b4960f4a6599b363b45c583fd037a0cc62521db7ad125965e650ff33346598eb90d68a2
     - SKIP
 pkgname:
   - name: sqlcipher
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
