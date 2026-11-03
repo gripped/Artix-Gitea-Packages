@@ -1,0 +1,36 @@
+---
+version: 3.2-1
+pkgbase:
+  name: phodav
+  pkgdesc: WebDav server implementation using libsoup (RFC 4918)
+  pkgver: 3.2
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/phodav
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - gobject-introspection
+    - meson
+    - scdoc
+  depends:
+    - avahi
+    - glib2
+    - glibc
+    - libgcc
+    - libsoup3
+    - libxml2
+  backup:
+    - etc/conf.d/spice-webdavd
+  source:
+    - git+https://gitlab.gnome.org/GNOME/phodav.git?signed#tag=v3.2
+  validpgpkeys:
+    - 87A9BD933F87C606D276F62DDAE8E10975969CE5
+  b2sums:
+    - 013ac71eacebb779aecbfac5403acb6cf0b2291ce287441dc3732a6ca00d328a172656d2e05439d54db247045850f5ca978f5704ae42bd553a403500a92f0f32
+pkgname:
+  - name: phodav
+# generated with artixpkg 0.40.0-1-any

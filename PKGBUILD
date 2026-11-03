@@ -1,29 +1,30 @@
 # Maintainer: Balló György <ballogyor+arch at gmail dot com>
 
 pkgname=phodav
-pkgver=3.0
-pkgrel=4
+pkgver=3.2
+pkgrel=1
 pkgdesc='WebDav server implementation using libsoup (RFC 4918)'
 arch=(x86_64)
-url='https://wiki.gnome.org/phodav'
+url='https://gitlab.gnome.org/GNOME/phodav'
 license=(LGPL-2.1-or-later)
 depends=(
   avahi
   glib2
   glibc
+  libgcc
   libsoup3
   libxml2
 )
 makedepends=(
-  asciidoc
+  gi-docgen
   git
-  gtk-doc
+  gobject-introspection
   meson
-  xmlto
+  scdoc
 )
 backup=(etc/conf.d/spice-webdavd)
 source=("git+https://gitlab.gnome.org/GNOME/phodav.git?signed#tag=v$pkgver")
-b2sums=('b27ed0f583980460cd51321d38a48f5c755c67a75fe06e4e9f7b7e6b8a68a31edc89ea1197a101dff8088e30dc1c04217035b2c835911dc93dcc8ed871de9411')
+b2sums=(013ac71eacebb779aecbfac5403acb6cf0b2291ce287441dc3732a6ca00d328a172656d2e05439d54db247045850f5ca978f5704ae42bd553a403500a92f0f32)
 validpgpkeys=(87A9BD933F87C606D276F62DDAE8E10975969CE5) # Marc-André Lureau
 
 prepare() {
@@ -33,8 +34,13 @@ prepare() {
 }
 
 build() {
-  artix-meson $pkgname build
+  artix-meson $pkgname build \
+    -D litmus=disabled
   meson compile -C build
+}
+
+check() {
+  meson test -C build --print-errorlogs --exclude test-spice-webdavd
 }
 
 package() {
