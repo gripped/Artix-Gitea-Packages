@@ -1,0 +1,31 @@
+---
+version: 5.8.0-4
+pkgbase:
+  name: tidy
+  pkgdesc: A tool to tidy down your HTML code to a clean style
+  pkgver: 5.8.0
+  pkgrel: 4
+  url: https://www.html-tidy.org/
+  arch:
+    - x86_64
+  license:
+    - custom
+  makedepends:
+    - cmake
+    - git
+    - libxslt
+  depends:
+    - glibc
+  provides:
+    - tidyhtml
+  conflicts:
+    - tidyhtml
+  replaces:
+    - tidyhtml
+  source:
+    - git+https://github.com/htacg/tidy-html5.git#tag=5.8.0
+  sha512sums:
+    - f1618ee2ec72e2e635c4d529b19c2d08eb7a47c6daf5639677b1bcb4e32ce50ffe277ef3cf33cf1f476dc0211ee912c0fda33e9699ca0b5e1a803eb5381c9736
+pkgname:
+  - name: tidy
+# generated with artixpkg 0.40.0-1-any
