@@ -1,15 +1,15 @@
 ---
-version: 3.2.16-6
+version: 3.2.16-7
 pkgbase:
   name: libolm
   pkgdesc: Implementation of the Olm and Megolm cryptographic ratchets
   pkgver: 3.2.16
-  pkgrel: 6
+  pkgrel: 7
   url: https://gitlab.matrix.org/matrix-org/olm
   arch:
     - x86_64
   license:
-    - APACHE
+    - Apache-2.0
   checkdepends:
     - python-aspectlib
     - python-pytest
@@ -31,7 +31,8 @@ pkgbase:
 pkgname:
   - name: libolm
     depends:
-      - gcc-libs
+      - glibc
+      - libstdc++
     provides:
       - libolm.so
   - name: python-olm
@@ -41,4 +42,4 @@ pkgname:
       - python
       - python-cffi
       - libolm.so
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
