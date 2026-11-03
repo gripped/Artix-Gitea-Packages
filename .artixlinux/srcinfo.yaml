@@ -1,10 +1,10 @@
 ---
-version: 0.1.2-9
+version: 0.1.2-11
 pkgbase:
   name: hyprpwcenter
   pkgdesc: A GUI Pipewire control center
   pkgver: 0.1.2
-  pkgrel: 9
+  pkgrel: 11
   url: https://github.com/hyprwm/hyprpwcenter
   arch:
     - x86_64
