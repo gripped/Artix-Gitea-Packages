@@ -1,10 +1,10 @@
 ---
-version: 2.9.3-1
+version: 2.9.3-2
 pkgbase:
   name: lynx
   pkgdesc: A text browser for the World Wide Web
   pkgver: 2.9.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://lynx.invisible-island.net/
   arch:
     - x86_64
@@ -32,4 +32,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lynx
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
