@@ -1,10 +1,10 @@
 ---
-version: 8.23.0-1
+version: 8.23.0-2
 pkgbase:
   name: lib32-curl
   pkgdesc: command line tool and library for transferring data with URLs (32-bit)
   pkgver: 8.23.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://curl.se/
   arch:
     - x86_64
@@ -121,4 +121,4 @@ pkgname:
       - libzstd.so
     provides:
       - libcurl-gnutls.so
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.0-1.4-any
