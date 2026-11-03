@@ -1,10 +1,10 @@
 ---
-version: 1:0.41.0-6
+version: 1:0.41.0-7
 pkgbase:
   name: mpv
   pkgdesc: a free, open source, and cross-platform media player
   pkgver: 0.41.0
-  pkgrel: 6
+  pkgrel: 7
   epoch: 1
   url: https://mpv.io/
   arch:
@@ -72,10 +72,12 @@ pkgbase:
     - '!emptydirs'
   source:
     - git+https://github.com/mpv-player/mpv.git?signed#tag=v0.41.0
+    - fix_GL_fence_leak.patch::https://github.com/mpv-player/mpv/commit/f74adc4243bd9e1a8ee96d187c939e6232510650.patch?full_index=1
   validpgpkeys:
     - 145077D82501AA20152CACCE8D769208D5E31419
   sha256sums:
     - 6d591780b86f20397697d8847e30b9bf864798b62615fa995395b7ce03a1e4f2
+    - d40ddd8ac6cce779aac72d6eb8718386b52250420b12b4a100351554e92630f2
 pkgname:
   - name: mpv
     depends:
@@ -146,4 +148,4 @@ pkgname:
       - libva-x11.so
       - libxkbcommon.so
       - librubberband.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
