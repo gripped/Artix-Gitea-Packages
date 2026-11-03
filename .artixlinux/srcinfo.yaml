@@ -1,10 +1,10 @@
 ---
-version: 0.2.0-1
+version: 0.2.0-3
 pkgbase:
   name: hyprpolkitagent
   pkgdesc: Simple polkit authentication agent for Hyprland, written in QT/QML
   pkgver: 0.2.0
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/hyprwm/hyprpolkitagent
   arch:
     - x86_64
