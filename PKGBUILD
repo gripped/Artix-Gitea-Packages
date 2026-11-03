@@ -12,7 +12,7 @@ pkgname=(
   libopenshot-audio
   libopenshot-audio-docs
 )
-pkgver=1.0.1
+pkgver=1.0.2
 pkgrel=1
 pkgdesc="A high-quality audio editing and playback library used by libopenshot."
 arch=(x86_64)
@@ -29,8 +29,8 @@ makedepends=(
   zlib
 )
 source=("git+${url}#tag=v${pkgver}")
-sha512sums=('cb1f4c5424f6de8805ed9b565f8edb6dc7c1f5cefcf2b276cae4d47de587b8abc20a966f9837038001cfc3e7eb33c29d15ff197ef928af932b945e3c50fd41ae')
-b2sums=('29b1504b5bc6f1f12f6899f52a004bba21236c897c98cc9cc9f0f5b84b899fe8a723dfe5449a0865d39d09e7c2d5bb430840276e171b2798ad9e885d2f4d6e4c')
+sha512sums=('ef9fba4fa837bb7ec76347a0367d51cb90c71491bfff1bf0f5dc9675282424ca435e5d5cedc968fe22b8c63de0bc8efd227fd9653b32e741f1b4cfdeb9df0fda')
+b2sums=('99307fb8e9f08209139d50d9e3273fad4953be8d0f61f5576266c538f7412332ea2f93914b1d789995210f4d3f8c6e1ced78b24451679435685202588c0c454a')
 
 _pick() {
   local p="$1" f d; shift
