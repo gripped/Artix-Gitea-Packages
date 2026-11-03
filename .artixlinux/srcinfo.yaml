@@ -1,10 +1,10 @@
 ---
-version: 17.0+r134+g77d25a1e6-1
+version: 17.0+r134+g77d25a1e6-2
 pkgbase:
   name: pulseaudio
   pkgdesc: A featureful, general-purpose sound server
   pkgver: 17.0+r134+g77d25a1e6
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.freedesktop.org/wiki/Software/PulseAudio/
   arch:
     - x86_64
@@ -65,7 +65,7 @@ pkgbase:
 pkgname:
   - name: pulseaudio
     depends:
-      - libpulse=17.0+r134+g77d25a1e6-1
+      - libpulse=17.0+r134+g77d25a1e6-2
       - alsa-lib
       - bash
       - dbus
@@ -128,29 +128,29 @@ pkgname:
   - name: pulseaudio-zeroconf
     pkgdesc: Zeroconf support for PulseAudio
     depends:
-      - libpulse=17.0+r134+g77d25a1e6-1
-      - pulseaudio=17.0+r134+g77d25a1e6-1
+      - libpulse=17.0+r134+g77d25a1e6-2
+      - pulseaudio=17.0+r134+g77d25a1e6-2
       - avahi
       - dbus
       - glibc
   - name: pulseaudio-lirc
     pkgdesc: IR (lirc) support for PulseAudio
     depends:
-      - pulseaudio=17.0+r134+g77d25a1e6-1
+      - pulseaudio=17.0+r134+g77d25a1e6-2
       - glibc
       - lirc
   - name: pulseaudio-jack
     pkgdesc: Jack support for PulseAudio
     depends:
-      - pulseaudio=17.0+r134+g77d25a1e6-1
+      - pulseaudio=17.0+r134+g77d25a1e6-2
       - dbus
       - glibc
       - jack
   - name: pulseaudio-bluetooth
     pkgdesc: Bluetooth support for PulseAudio
     depends:
-      - libpulse=17.0+r134+g77d25a1e6-1
-      - pulseaudio=17.0+r134+g77d25a1e6-1
+      - libpulse=17.0+r134+g77d25a1e6-2
+      - pulseaudio=17.0+r134+g77d25a1e6-2
       - bluez
       - bluez-libs
       - dbus
@@ -164,7 +164,7 @@ pkgname:
   - name: pulseaudio-equalizer
     pkgdesc: Graphical equalizer for PulseAudio
     depends:
-      - pulseaudio=17.0+r134+g77d25a1e6-1
+      - pulseaudio=17.0+r134+g77d25a1e6-2
       - dbus
       - fftw
       - glibc
@@ -174,8 +174,8 @@ pkgname:
   - name: pulseaudio-rtp
     pkgdesc: RTP and RAOP support for PulseAudio
     depends:
-      - libpulse=17.0+r134+g77d25a1e6-1
-      - pulseaudio=17.0+r134+g77d25a1e6-1
+      - libpulse=17.0+r134+g77d25a1e6-2
+      - pulseaudio=17.0+r134+g77d25a1e6-2
       - glib2
       - glibc
       - gst-plugins-base
@@ -183,4 +183,4 @@ pkgname:
       - gst-plugins-good
       - gstreamer
       - openssl
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.0-1.4-any

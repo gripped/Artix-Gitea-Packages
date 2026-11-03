@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-goblins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -21,8 +21,16 @@ repos:
     packages: []
     debug: []
   world-goblins:
-    version: null
-    packages: []
+    version: 17.0+r134+g77d25a1e6-2
+    packages:
+      - pulseaudio-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - libpulse-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - pulseaudio-zeroconf-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - pulseaudio-lirc-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - pulseaudio-jack-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - pulseaudio-bluetooth-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - pulseaudio-equalizer-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
+      - pulseaudio-rtp-17.0+r134+g77d25a1e6-2-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
     version: null
