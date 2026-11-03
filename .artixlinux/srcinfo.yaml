@@ -1,9 +1,9 @@
 ---
-version: 615.78.08-1
+version: 615.78.08-2
 pkgbase:
   name: nvidia-utils
   pkgver: 615.78.08
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.nvidia.com/
   arch:
     - aarch64
