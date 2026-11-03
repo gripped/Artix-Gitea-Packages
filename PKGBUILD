@@ -3,20 +3,20 @@
 # Contributor: Mark Smith <markzzzsmith@yahoo.com.au>
 
 pkgname=ndisc6
-pkgver=1.0.8
+pkgver=1.0.9
 pkgrel=1
 pkgdesc='Collection of IPv6 networking utilities'
 arch=('x86_64')
 url='https://www.remlab.net/ndisc6/'
-license=('GPL')
-depends=('glibc' 'perl')
-makedepends=('glibc' 'gcc')
+license=('GPL-2.0-only OR GPL-3.0-only')
+depends=('glibc' 'perl' 'sh')
+makedepends=('gcc' 'systemd')
 options=('!emptydirs')
 source=("https://www.remlab.net/files/ndisc6/$pkgname-$pkgver.tar.bz2"
         'resolvconf-hook')
 #Contacted by mail, Rémi was not able to provide its public key.
 #He suggested to only rely on https to trust the source.
-sha256sums=('1f2fb2dc1172770aa5a09d39738a44d8b753cc5e2e25e306ca78682f9fea0b4f'
+sha256sums=('1fdcd2f2abc8a69f182631a53902d0720fc8b00703e2d9131dadab7e327f478b'
             'c485bb8e5ee480dca2897f950ba9854f8b9deaf782480072536fa4f2d0152d24')
 
 prepare() {
