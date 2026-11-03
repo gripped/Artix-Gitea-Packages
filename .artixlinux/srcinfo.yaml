@@ -1,10 +1,10 @@
 ---
-version: 3.2.6-2
+version: 3.2.8-1
 pkgbase:
   name: gimp
   pkgdesc: GNU Image Manipulation Program
-  pkgver: 3.2.6
-  pkgrel: 2
+  pkgver: 3.2.8
+  pkgrel: 1
   url: https://www.gimp.org/
   install: gimp.install
   arch:
@@ -125,14 +125,15 @@ pkgbase:
     - 'bash-completion: for bash completion support'
     - 'cfitsio: for FITS support'
     - 'ghostscript: for PostScript support'
+    - 'gimp-help: for offline help support'
     - 'gjs: for JavaScript scripting support'
     - 'gutenprint: for sophisticated printing only as gimp has built-in cups print support'
     - 'gvfs: for HTTP/S support (and many other schemes)'
   source:
-    - git+https://gitlab.gnome.org/GNOME/gimp.git#tag=GIMP_3_2_6
+    - git+https://gitlab.gnome.org/GNOME/gimp.git#tag=GIMP_3_2_8
     - git+https://gitlab.gnome.org/GNOME/gimp-data.git
   sha256sums:
-    - a6f43eec310dddde776d41e6a572f925d40506c41b8664aed039ec007eab9521
+    - d70f6d304e6376c1ef6fc94ed67f3aca6fe4355bfe57b4931ec81d67b32b5cf6
     - SKIP
 pkgname:
   - name: gimp
