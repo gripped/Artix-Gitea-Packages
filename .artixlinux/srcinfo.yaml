@@ -1,10 +1,10 @@
 ---
-version: 2.7.2-1
+version: 2.7.2-2
 pkgbase:
   name: lib32-libldap
   pkgdesc: Lightweight Directory Access Protocol (LDAP) client libraries (32-bit)
   pkgver: 2.7.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.openldap.org/
   arch:
     - x86_64
@@ -26,4 +26,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: lib32-libldap
-# generated with artixpkg 0.40.0-1.1-any
+# generated with artixpkg 0.40.0-1.4-any
