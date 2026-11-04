@@ -7,7 +7,7 @@
 pkgname=lib32-libshout
 _pkgname=libshout
 pkgver=2.4.6
-pkgrel=4
+pkgrel=5
 epoch=1
 pkgdesc="Library for accessing a shoutcast/icecast server (32 bit)"
 arch=('x86_64')
