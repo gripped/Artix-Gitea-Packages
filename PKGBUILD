@@ -3,7 +3,7 @@
 
 pkgname=libcanberra
 pkgver=0.30+r2+gc0620e4
-pkgrel=6
+pkgrel=1.1
 epoch=1
 pkgdesc="A small and lightweight implementation of the XDG Sound Theme Specification"
 url="https://0pointer.net/lennart/projects/libcanberra/"
@@ -16,7 +16,7 @@ provides=(libcanberra-pulse libcanberra{,-gtk3}.so)
 replaces=("libcanberra-pulse<0.30+2+gc0620e4-4")
 options=(libtool)
 _commit=c0620e432650e81062c1967cc669829dbd29b310  # master
-source=("git+https://git.0pointer.net/clone/libcanberra.git#commit=$_commit"
+source=("git+https://github.com/Distrotech/libcanberra#commit=${_commit}"
         40-libcanberra-gtk-module.sh
         libcanberra-multi-backend.patch)
 sha256sums=('SKIP'
@@ -43,7 +43,7 @@ build() {
   ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
       --disable-static --with-builtin=dso --enable-null --disable-oss \
       --enable-alsa --enable-pulse \
-      --with-systemdsystemunitdir=/usr/lib/systemd/system --enable-gtk-doc
+      --with-systemdsystemunitdir=no --enable-gtk-doc
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
   make
 }
