@@ -94,6 +94,7 @@ prepare() {
   cd src/3rdparty
   [[ -n $_chromium ]] && git checkout $_chromium || true
 # Block compromised certificates
+  git fetch
   git cherry-pick -n b7849cb032f0c5f760454da257f405cef85ffa7e dfe972d1d0a64f68e06954d7b4023700fff8c4b5
 }
 
