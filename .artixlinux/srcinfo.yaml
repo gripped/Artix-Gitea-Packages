@@ -1,10 +1,10 @@
 ---
-version: 0.6-5
+version: 0.6-6
 pkgbase:
   name: opensmtpd-filter-dkimsign
   pkgdesc: OpenSMTPD filter for signing mail with DKIM
   pkgver: 0.6
-  pkgrel: 5
+  pkgrel: 6
   url: https://src.imperialat.at/?action=summary&path=filter-dkimsign
   arch:
     - x86_64
@@ -24,4 +24,4 @@ pkgbase:
     - b92ceec6abc756a39fb3a8da4643d7122ad264f108e8bbdb6cf26624d485e9b8fffbeed33a76d0163f9d9ec37cd141bdaf89152375446cbc5f59ecdeb53aaf18
 pkgname:
   - name: opensmtpd-filter-dkimsign
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1.4-any
