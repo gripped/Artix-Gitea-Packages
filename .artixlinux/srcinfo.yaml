@@ -1,10 +1,10 @@
 ---
-version: 0.0.20-4
+version: 0.0.20-5
 pkgbase:
   name: modem-manager-gui
   pkgdesc: Frontend for ModemManager daemon able to control specific modem functions
   pkgver: 0.0.20
-  pkgrel: 4
+  pkgrel: 5
   url: https://sourceforge.net/projects/modem-manager-gui/
   arch:
     - x86_64
@@ -44,4 +44,4 @@ pkgbase:
     - 3c32707e2bedc49277e691f0323fbd22244ece45792cb9df06fe5373964aad0565a5fb3f987d37b950e2859a7beaf0ce1701f13365e0661b4760e89545fb2451
 pkgname:
   - name: modem-manager-gui
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.0-1.4-any
