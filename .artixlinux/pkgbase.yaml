@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: lib32-goblins
-  removeRepo: null
-  triggersBuild: true
+  addRepo: lib32
+  removeRepo: lib32-goblins
+  triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -33,18 +33,17 @@ repos:
     packages: []
     debug: []
   lib32-goblins:
-    version: 2.0-1
-    packages:
-      - lib32-vkd3d-2.0-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-gremlins:
     version: null
     packages: []
     debug: []
   lib32:
-    version: 1.19-1
+    version: 2.0-1
     packages:
-      - lib32-vkd3d-1.19-1-x86_64.pkg.tar.zst
+      - lib32-vkd3d-2.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
