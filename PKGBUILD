@@ -3,7 +3,7 @@
 
 pkgname=falkon
 pkgver=26.08.2
-pkgrel=6
+pkgrel=6.1
 pkgdesc='Cross-platform QtWebEngine browser'
 arch=(x86_64)
 url='https://www.falkon.org/'
@@ -23,7 +23,12 @@ makedepends=(extra-cmake-modules
              purpose
              pyside6
              qt6-tools
-             shiboken6-generator)
+             shiboken6-generator
+             # Don't use qt6-webengine from gremlins.
+             # Packages built against q-w-e in stable work with the q-w-e in testing, 
+             # but not vice versa 
+             'qt6-webengine<6.13'
+)
 optdepends=('kcoreaddons: KDE integration'
             'kcrash: KDE integration'
             'kio: KDE integration'
