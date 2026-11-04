@@ -1,7 +1,7 @@
 ---
 team: world
 actions:
-  addRepo: world-goblins
+  addRepo: world
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false

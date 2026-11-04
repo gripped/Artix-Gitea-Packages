@@ -1,10 +1,10 @@
 ---
-version: 1.20.1-4
+version: 1.20.1-1
 pkgbase:
   name: openucx
   pkgdesc: Communication framework for data-centric and high-performance applications
   pkgver: 1.20.1
-  pkgrel: 4
+  pkgrel: 1
   url: https://openucx.org/
   arch:
     - x86_64
@@ -13,7 +13,6 @@ pkgbase:
   makedepends:
     - rdma-core
     - cuda
-    - rocm-language-runtime
   depends:
     - binutils
     - glibc

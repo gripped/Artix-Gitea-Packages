@@ -3,7 +3,7 @@
 _name=ucx
 pkgname=openucx
 pkgver=1.20.1
-pkgrel=4
+pkgrel=1
 pkgdesc="Communication framework for data-centric and high-performance applications"
 arch=(x86_64)
 url="https://openucx.org/"
@@ -20,7 +20,7 @@ depends=(
 makedepends=(
   rdma-core
   cuda
-  rocm-language-runtime
+  #rocm-language-runtime
 )
 optdepends=(
   'rdma-core: for InfiniBand and RDMA support'
@@ -53,7 +53,7 @@ build() {
     --prefix=/usr
     --sysconfdir=/etc
     --with-cuda=/opt/cuda
-    --with-rocm=/opt/rocm
+    #--with-rocm=/opt/rocm
     --with-verbs
     --with-rc
     --with-ud
