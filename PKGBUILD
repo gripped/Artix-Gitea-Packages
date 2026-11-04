@@ -7,7 +7,7 @@
 # Contributor: Daniel J Griffiths <ghost1227@archlinux.us>
 
 pkgname=scite
-pkgver=5.6.7
+pkgver=5.6.9
 pkgrel=1
 pkgdesc='Editor with facilities for building and running programs'
 arch=(x86_64)
@@ -31,7 +31,7 @@ source=(
   SciTE.appdata.xml
 )
 b2sums=(
-  c4b9512298f57cd42a5c882224dd9a8cf625f0c05c7f82b13e688b0fd06ea112e86395ce67c2aee14696579374c4d593c4c6acef001c9536e91da0dcaa014430
+  5092c393d51d92cdd80f75ae45beab15cfd6199752b88d43014feb9c501a64a33bb3a15c6d68b23a4080ef8845cef487d4dbfcbdd92c45ccac91afaa78cd6c79
   684e8072881bb507dcdb47159ce69b0c9de017512f80d2bce1efc721ff73afdd503dac69c9e8f8ba9c55ce7dac68a6cf7815b4d7c2638c1a18506ad51edfd58d
 )
 
