@@ -1,0 +1,30 @@
+---
+version: 1:1.11.0-1
+pkgbase:
+  name: lz4
+  pkgdesc: Extremely fast compression algorithm
+  pkgver: 1.11.0
+  pkgrel: 1
+  epoch: 1
+  url: https://lz4.github.io/lz4/
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  checkdepends:
+    - diffutils
+  makedepends:
+    - git
+    - meson
+    - ninja
+  depends:
+    - glibc
+  provides:
+    - liblz4.so
+  source:
+    - git+https://github.com/lz4/lz4.git#tag=v1.11.0
+  sha256sums:
+    - 5597ab3a057acbd7850391a2baa272683c06621c4203d50c9e2b31133af1b707
+pkgname:
+  - name: lz4
+# generated with artixpkg 0.40.0-1-any
