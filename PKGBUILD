@@ -2,9 +2,9 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=qt6-webengine
-_pkgver=6.11.2
+_pkgver=6.11.3
 pkgver=${_pkgver/-/}
-pkgrel=2.1
+pkgrel=2
 _chromium=
 arch=(x86_64)
 url='https://www.qt.io'
@@ -80,11 +80,9 @@ optdepends=('pipewire: WebRTC desktop sharing under Wayland')
 groups=(qt6)
 _pkgfn=${pkgname/6-/}
 source=(git+https://code.qt.io/qt/$_pkgfn#tag=v$_pkgver
-        git+https://code.qt.io/qt/qtwebengine-chromium
-        qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch)
-sha256sums=('056f15a095db905f60034b6c58f332843d46b01c8a8b12c00dcac2e0ef8c69a2'
-            'SKIP'
-            '78764224b2cafb888558c40106b4ed55dbe71be4d5ec73f5ca7bc4cae1795fcf')
+        git+https://code.qt.io/qt/qtwebengine-chromium)
+sha256sums=('4c8bd3e18536a071b58a8c2218647df08468aa0b38eb85891cb67202aac7e7d7'
+            'SKIP')
 
 prepare() {
   cd $_pkgfn
@@ -95,10 +93,8 @@ prepare() {
   # Bump chromium to head of stable branch
   cd src/3rdparty
   [[ -n $_chromium ]] && git checkout $_chromium || true
-
-  # https://emudhra.we-have-a-problem.com/
-  cd ../../
-  patch -Np1 < ../qtwebengine-6.11.2-block-compromised-emudhra-intermediates.patch
+# Block compromised certificates
+  git cherry-pick -n b7849cb032f0c5f760454da257f405cef85ffa7e dfe972d1d0a64f68e06954d7b4023700fff8c4b5
 }
 
 build() {
