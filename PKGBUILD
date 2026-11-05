@@ -3,7 +3,7 @@
 # Contributor: Aleksana QWQ <me@aleksana.moe>
 
 pkgname=hyfetch
-pkgver=2.1.0
+pkgver=2.1.1
 pkgrel=1
 pkgdesc="Neofetch fork with flags"
 url="https://github.com/hykilpikonna/hyfetch"
@@ -13,7 +13,7 @@ makedepends=('cargo')
 optdepends=('fastfetch: Alternative fetch backend'
             'macchina: Alternative fetch backend')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('23e3600093de3daa60dbbfd1edff258504f41f0fcfcb5537ddff78711b0d2eb2')
+sha256sums=('d83708caafa560531ee9dea002aa58123272a0209b4e6b296bae34c87665004a')
 
 prepare() {
 	cd "${pkgname}-${pkgver}"
