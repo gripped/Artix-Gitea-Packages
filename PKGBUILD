@@ -3,7 +3,7 @@
 _name=ucx
 pkgname=openucx
 pkgver=1.20.1
-pkgrel=3
+pkgrel=4
 pkgdesc="Communication framework for data-centric and high-performance applications"
 arch=(x86_64)
 url="https://openucx.org/"
@@ -20,6 +20,7 @@ depends=(
 makedepends=(
   rdma-core
   cuda
+  # tons of deps not satisfied
   #rocm-language-runtime
 )
 optdepends=(
