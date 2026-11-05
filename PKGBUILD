@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-connection_pool
-pkgver=2.5.4
+pkgver=2.5.5
 pkgrel=1
 pkgdesc='Generic connection pool for Ruby'
 arch=(any)
@@ -21,7 +21,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=("git+https://github.com/mperham/connection_pool.git#tag=v$pkgver")
-sha256sums=('003c8411372c597166b37816e1c836d53ba0a28ac5d23ac78b68fa3cb1fd0e17')
+sha256sums=('0a411c6dc3f49aa7d24416d6106f2fcd7933564a1a0b5eee53c9b4290d205bac')
 
 prepare() {
   cd connection_pool
