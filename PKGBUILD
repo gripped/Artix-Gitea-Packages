@@ -3,8 +3,8 @@
 # Contributor:  Joakim Hernberg <jbh@alchemy.lu>
 
 pkgbase=linux-rt
-pkgver=7.2.9.rt3.artix1
-archpkgver=7.2.9.rt3.arch1
+pkgver=7.2.15.rt3.artix1
+archpkgver=7.2.15.rt3.arch1
 pkgrel=1
 pkgdesc='Linux RT'
 arch=(x86_64)
@@ -61,19 +61,19 @@ source=(
   $url/-/releases/v${_distro_patch_ver}/downloads/$pkgbase-v${_distro_patch_ver}.patch.{sig,zst}
 )
 source_x86_64=(config.x86_64)
-sha512sums=('45db368b0cb1a099dd8ee49621dc286398a92df7ef6af4970bde5542637826de3e554113e9a142c7f7775c4021bc774a5ff801e7546e5f9edf18c7a23136abea'
+sha512sums=('43219cf7139b75f463eb98dcb13a17175d441c8d2d401162c6ef7a776d757f5def180c5b32e59c08abd5829b3582aa1f30b48caf1d3d829475967d4e2a9748dc'
             'SKIP'
             'SKIP'
-            'ea400f1e840431fdca6c192264533a3fc4099b3ab080bbe1350f9418625c6eb6cc731339f14de2d0311f965671745888155be1d7bd635698918a728ea98268c3'
+            '441caf18c8baf82c9e531cd8b09c47c15207eef5c0f9ee42f765651f28db2481795aaddf980322ddb0213eab5270d50d711765c5a99b3dc5b41f9e76590995a6'
             'SKIP'
-            'efb4852b0dfbabf37975f5624b11b6b3b6c18bc402463d6f02a86328cc0de4d68f17708574fd3aecad806614cb4ac3e79cd9860f95b3a9914d93377c44a00cd9')
+            '48052b96c54e58bf1200f3c7eb65a039a98df53d353d30ef0f7d214c3207aa7e968153ca90f2bf916bfa5a423d3c4804f449dd302e9bd7cbbdfc83ba7eb91e3a')
 sha512sums_x86_64=('3069afadd3925df0d1018428917ffcc44ce5a0ed407a880683baa4ddd5fd81719c877edfebeba3d1d6d3f010669b5219e017a20aaec3c2c47fdd0e180d32b4aa')
-b2sums=('c853d45f0df3b713a84695c487b56e44d40da007fb48700be4bf0180c6aa15e7f087ac2d52f1cf7997b4de262aeae5094c772f36297405de1c7b8985a420328b'
+b2sums=('a1d1a6572667dfd75f7dde083a8d461db98e08bbc67cdd395e2d73a422ee487bd14392ce69b9511c386b63d9c3c02255978a33149278d6e3bace35937ceda495'
         'SKIP'
         'SKIP'
-        '99e9d7f7853b4a4a11388d87a1db371a6b36455ea228faf63ca13c60b7441bf5f61454244c87741edaf71bbbebb2ee930d566b8b696fa1f70ddf2d5751a4a6b5'
+        '7b539734652b93ae57ab7208e837a1f0c50607ded9bfe87a8c810df32fb21fd328e178fbd68a0c101a238915eb69dc67b522f9f1cff5625222c73ed31a0d2769'
         'SKIP'
-        'd5fc2d1834f3f59f88d87370317c5df891440f15f77abb85161a2a2bae4d6a0c0d1a84579785b604ef92e26f021ca5a5cdc555806c7f43363521c72ca59e0b1e')
+        '5652f254609539db43c0d584ff6e2450e0a52ccbf06fef3798bfcbee92e3947df6bc806f2ae8d57b76ea1ea9071b4bb8bc26e1b19b3a355e31c1f210f55a84bf')
 b2sums_x86_64=('f75f972414605989ddc1b0c4e9b5d2847062efb2f26b61aa567dca088cd922ff85baf00147f9c7b7ae179307337950d55220e5f42673ed62b9855f6a597dd538')
 validpgpkeys=(
   647F28654894E3BD457199BE38DBBDC86092693E  # Greg Kroah-Hartman <gregkh@kernel.org>
@@ -393,7 +393,10 @@ _package-docs() {
     dst="${src#Documentation/}"
     dst="$builddir/Documentation/${dst#output/}"
     install -Dm644 "$src" "$dst"
-  done < <(find Documentation -name '.*' -prune -o ! -type d -print0)
+  done < <(
+    find Documentation \( -name '.*' -o -name __pycache__ \) -prune \
+      -o \! -type d -print0
+  )
 
   echo "Adding symlink..."
   mkdir -p "$pkgdir/usr/share/doc"
