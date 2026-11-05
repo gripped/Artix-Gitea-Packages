@@ -11,8 +11,11 @@ arch=('x86_64')
 conflicts=("pandoc-cli")
 provides=("pandoc=$pkgver" "pandoc-cli=$pkgver")
 optdepends=('texlive-core: for pdf output')
-source=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
-sha256sums=('38aa33b325a2bc96a4c39409631212db55702f564250bcdbead180b3bf646389')
+# The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
+source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz"
+        "$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
+sha256sums=('fbf6044766b0c9be5ccbf18ffe657124449e8563a177d85662ecb6f031f9c308'
+            '38aa33b325a2bc96a4c39409631212db55702f564250bcdbead180b3bf646389')
 
 package() {
   cd "${srcdir}/pandoc-${pkgver}"
@@ -21,6 +24,10 @@ package() {
   # just yoink the binary from static compiled binary distributed by pandoc:
   mkdir -p "${pkgdir}/usr/share/pandoc"
   cp -R bin share "${pkgdir}/usr"
+
+  # We're still missing all the datafiles and so on. We get those from the source tarball...
+  cp -R data "${pkgdir}/usr/share/pandoc/"
+  cp COPYRIGHT MANUAL.txt "${pkgdir}/usr/share/pandoc/"
 
   # License file
   install -Dm644 -t "${pkgdir}/usr/share/licenses/pandoc-cli" COPYING.md
