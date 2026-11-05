@@ -1,9 +1,9 @@
 ---
-version: 26.2.6-3
+version: 26.2.7-1
 pkgbase:
   name: libreoffice-still
-  pkgver: 26.2.6
-  pkgrel: 3
+  pkgver: 26.2.7
+  pkgrel: 1
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -136,12 +136,12 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://download.documentfoundation.org/libreoffice/src/26.2.6/libreoffice-26.2.6.3.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/26.2.6/libreoffice-26.2.6.3.tar.xz.asc
-    - https://download.documentfoundation.org/libreoffice/src/26.2.6/libreoffice-help-26.2.6.3.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/26.2.6/libreoffice-help-26.2.6.3.tar.xz.asc
-    - https://download.documentfoundation.org/libreoffice/src/26.2.6/libreoffice-translations-26.2.6.3.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/26.2.6/libreoffice-translations-26.2.6.3.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/26.2.7/libreoffice-26.2.7.3.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/26.2.7/libreoffice-26.2.7.3.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/26.2.7/libreoffice-help-26.2.7.3.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/26.2.7/libreoffice-help-26.2.7.3.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/26.2.7/libreoffice-translations-26.2.7.3.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/26.2.7/libreoffice-translations-26.2.7.3.tar.xz.asc
     - https://dev-www.libreoffice.org/src/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
     - https://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
     - https://dev-www.libreoffice.org/src/language-subtag-registry-2021-03-05.tar.bz2
@@ -170,11 +170,11 @@ pkgbase:
   validpgpkeys:
     - C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3
   sha256sums:
-    - 3a2570aa7087bf8e0cbdf49ac5bd0e452c2025274af99e07882daa104c5685bd
+    - 61e16d05d18a55c9dcbca84836e1204d73a674fdda2cc62e8ca06032a0c7c4e4
     - SKIP
-    - e1e3ea2507f04e47d528cedd47c1ae5c35ad656652e83399043503cae36a97df
+    - 78fad72edeed1338d1ba86c928274aab9343a76fa52f25deded072488e0aff8a
     - SKIP
-    - ed3575ba14fcd50fd52c61cb8c54ade2b57567cc916aa5c327b3c631192d345b
+    - 7ce3b23ff8176e7cb1063570410ac0d1d3036208e90bdd7d30d7e7805e0eb9b9
     - SKIP
     - 75823776fb51a9c526af904f1503a7afaaab900fba83eda64f8a41073724c870
     - 983941d31ee8d366085cadf28db75eb1f5cb03ba1e5853b98f12f7f51c63b776
