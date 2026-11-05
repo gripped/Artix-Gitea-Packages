@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=2.4.5
-_tag='262.1'
+_tag='262.2'
 
 _boot=true
 
@@ -66,7 +66,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         splash-artix.bmp
         0001-esys-utils-standalone-install-boot.patch
 )
-sha512sums=('7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde'
+sha512sums=('b4d5c9847ce5f724b826ac4226f1f509e88e3f1a5862283177f46f20b00bc91e06681641245dd5b7d049417db93a84f3f16771b293665077da18ff88ec2316ae'
             'e374ba9bb7c9d6427c88215686c44b3a01ffa46d09a87f9a6bda420af663768a237def856e5a771ead4b72a143bdcfe29cc67e8f687ef7c06d34e439dfcb8b79'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             'b7787a4f9dcc84cf88bd87f65e9daaf8788b643fcc597acbbe7234e8538f7b14b2e8af35d62c4097fc2c67e26ade5298bde56a8f550396903ec42f6363b18177'
