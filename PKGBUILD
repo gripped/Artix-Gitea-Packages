@@ -6,7 +6,7 @@
 _pkgbase=systemd
 
 _alpm=3.0
-_tag='262.1'
+_tag='262.2'
 
 pkgbase=udev
 pkgname=(
@@ -15,7 +15,7 @@ pkgname=(
 )
 pkgdesc='Userspace device file manager'
 pkgver="${_tag/[-~]/}"
-pkgrel=2
+pkgrel=1
 arch=('x86_64')
 url='https://www.github.com/systemd/systemd'
 license=(
@@ -54,7 +54,7 @@ source=("git+https://github.com/systemd/systemd#tag=v${_tag}?signed"
         0001-Use-Arch-Linux-device-access-groups.patch
         0001-udev-standalone-install.patch
 )
-sha512sums=('7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde'
+sha512sums=('b4d5c9847ce5f724b826ac4226f1f509e88e3f1a5862283177f46f20b00bc91e06681641245dd5b7d049417db93a84f3f16771b293665077da18ff88ec2316ae'
             'e5fec179ae4753b7ed844906d140d3efe525cfdf6675435e80e13a548dd087b0973e262011da5a41b3278edd967aadc5c800fcfddf41987c00fa02c4fdcc91c0'
             'ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82'
             'afaaca390ff73524e4ccf592549bdca7afbf5ce9ec6e9f9a8ebae1b600016aaec1148f2229721578320504d92e3622e9c15628c33dd6ee93f173217c074cb8ec')

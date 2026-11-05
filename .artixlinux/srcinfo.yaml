@@ -1,10 +1,10 @@
 ---
-version: 262.1-2
+version: 262.2-1
 pkgbase:
   name: udev
   pkgdesc: Userspace device file manager
-  pkgver: 262.1
-  pkgrel: 2
+  pkgver: 262.2
+  pkgrel: 1
   url: https://www.github.com/systemd/systemd
   arch:
     - x86_64
@@ -32,7 +32,7 @@ pkgbase:
     - glibc
     - libgcc
   source:
-    - git+https://github.com/systemd/systemd#tag=v262.1?signed
+    - git+https://github.com/systemd/systemd#tag=v262.2?signed
     - git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=3.0
     - 0001-Use-Arch-Linux-device-access-groups.patch
     - 0001-udev-standalone-install.patch
@@ -42,7 +42,7 @@ pkgbase:
     - 9A774DB5DB996C154EBBFBFDA0099A18E29326E1
     - 5C251B5FC54EB2F80F407AAAC54CA336CFEB557E
   sha512sums:
-    - 7be7a345e35c13dce59db37247146d1a1f3f3ff121e6d655f056ca78834b5ff38ffbb5be53760a5d2339f9389ca2e0f04f4c3f4ce9d2b49f8bcc484f580fbfde
+    - b4d5c9847ce5f724b826ac4226f1f509e88e3f1a5862283177f46f20b00bc91e06681641245dd5b7d049417db93a84f3f16771b293665077da18ff88ec2316ae
     - e5fec179ae4753b7ed844906d140d3efe525cfdf6675435e80e13a548dd087b0973e262011da5a41b3278edd967aadc5c800fcfddf41987c00fa02c4fdcc91c0
     - ddb9401e47d0bf01874f255803a4b2167ec631484189d29d03694101fd9c77724e735f16d99c5f4ffd8061ae78839b2826ff0e0a925a6f0dbca25f2cfb271a82
     - afaaca390ff73524e4ccf592549bdca7afbf5ce9ec6e9f9a8ebae1b600016aaec1148f2229721578320504d92e3622e9c15628c33dd6ee93f173217c074cb8ec
@@ -57,7 +57,7 @@ pkgname:
       - hwdata
       - kbd
       - kmod
-      - libudev=262.1
+      - libudev=262.2
       - util-linux
     optdepends:
       - 'tpm2-tss: unlocking LUKS2 volumes with TPM2'
