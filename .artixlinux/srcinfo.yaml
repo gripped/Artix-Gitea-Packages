@@ -1,8 +1,8 @@
 ---
-version: 2.8.9-1
+version: 2.8.10-1
 pkgbase:
   name: hyphen
-  pkgver: 2.8.9
+  pkgver: 2.8.10
   pkgrel: 1
   url: https://github.com/hunspell/hyphen
   arch:
@@ -13,9 +13,9 @@ pkgbase:
     - glibc
     - perl
   source:
-    - hyphen-2.8.9.tar.gz::https://github.com/hunspell/hyphen/archive/refs/tags/v2.8.9.tar.gz
+    - hyphen-2.8.10.tar.gz::https://github.com/hunspell/hyphen/archive/refs/tags/v2.8.10.tar.gz
   sha256sums:
-    - d6fc75d8500094903b119a45667fed91fe665e5f6f106029a4d3b4e26f3d8d6f
+    - a2333b255c1632cb89c9a369bcca9e07a3f26919e9fe31b2eab2dd9acb41f69d
 pkgname:
   - name: hyphen
     pkgdesc: library for high quality hyphenation and justification
@@ -26,4 +26,4 @@ pkgname:
     pkgdesc: English hyphenation rules
     optdepends:
       - 'hyphen: offers hyphenation library functions'
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
