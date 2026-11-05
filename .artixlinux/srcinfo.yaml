@@ -1,10 +1,10 @@
 ---
-version: 0.9.4-3
+version: 0.9.5-1
 pkgbase:
   name: font-manager
   pkgdesc: A simple font management application for GTK+ Desktop Environments
-  pkgver: 0.9.4
-  pkgrel: 3
+  pkgver: 0.9.5
+  pkgrel: 1
   url: https://fontmanager.github.io
   arch:
     - x86_64
@@ -54,9 +54,9 @@ pkgbase:
     - file-roller
     - libnautilus-extension
   source:
-    - https://github.com/FontManager/font-manager/releases/download/0.9.4/font-manager-0.9.4.tar.xz
+    - https://github.com/FontManager/font-manager/releases/download/0.9.5/font-manager-0.9.5.tar.xz
   sha256sums:
-    - 6a0899ac753f50d0779751828c62fa6220024213ebd2179b6f64a3a9bff51f96
+    - 0eeccb922321fe259ae5d5e84c2876333f57a5ad9e4b9a6c6b38b6ce1e3df9e5
 pkgname:
   - name: font-manager
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
