@@ -1,9 +1,9 @@
 ---
-version: 1:3.3-1
+version: 1:3.9-1
 pkgbase:
   name: libcerf
   pkgdesc: Self-contained numeric library that provides an efficient and accurate implementation of complex error functions
-  pkgver: 3.3
+  pkgver: 3.9
   pkgrel: 1
   epoch: 1
   url: https://jugit.fz-juelich.de/mlz/libcerf/
@@ -15,12 +15,12 @@ pkgbase:
     - cmake
     - git
   depends:
-    - gcc-libs
     - glibc
+    - libgcc
   source:
-    - git+https://jugit.fz-juelich.de/mlz/libcerf#tag=v3.3
+    - git+https://jugit.fz-juelich.de/mlz/libcerf#tag=v3.9
   sha256sums:
-    - 504fd78f65361b6a40a54be4dd48afdbb6c82eab73fff28dea7a2079df726644
+    - d1967807ba085e78f39a719b4a618d82a6b5468566bcb71342244767d3f4ad92
 pkgname:
   - name: libcerf
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
