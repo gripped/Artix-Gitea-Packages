@@ -1,9 +1,9 @@
 ---
-version: 1.16-1
+version: 1.18-1
 pkgbase:
   name: fuse-overlayfs
   pkgdesc: FUSE implementation of overlayfs
-  pkgver: 1.16
+  pkgver: 1.18
   pkgrel: 1
   url: https://github.com/containers/fuse-overlayfs
   arch:
@@ -14,12 +14,14 @@ pkgbase:
     - git
   depends:
     - fuse3
+    - glibc
+    - libgcc
   source:
-    - git+https://github.com/containers/fuse-overlayfs.git#tag=v1.16?signed
+    - git+https://github.com/containers/fuse-overlayfs.git#tag=v1.18?signed
   validpgpkeys:
     - AC404C1C0BF735C63FF4D562263D6DF2E163E1EA
   sha512sums:
-    - 7637ca89ec5742aa883d25eb1335a750712dadedb40e4b594ff38e0fd70b123680bd29143a071511225572c17376d4055f0743eebc99b8c64973ef32d3881554
+    - 42d9923f55d77f1c0855bab73b35c68aa3686ee9cf67eb83829f61ab719a81ebbbbb2564f08cf0244610fcde424a45695e5b87bffcd8b92489dcb60ffd62c024
 pkgname:
   - name: fuse-overlayfs
-# generated with artixpkg 0.37.5-10-any
+# generated with artixpkg 0.40.0-1-any

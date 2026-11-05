@@ -1,22 +1,23 @@
-# Maintainer: Morten Linderud <foxboron@archlinux.org>
+# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Adrian Perez de Castro <aperez@igalia.com>
 
-pkgdesc='FUSE implementation of overlayfs'
 pkgname=fuse-overlayfs
-pkgver=1.16
+pkgdesc="FUSE implementation of overlayfs"
+pkgver=1.18
 pkgrel=1
-arch=(x86_64)
-url=https://github.com/containers/fuse-overlayfs
-license=(GPL-2.0-only)
-depends=(fuse3)
-makedepends=(git)
-source=("git+https://github.com/containers/fuse-overlayfs.git#tag=v$pkgver?signed")
+url="https://github.com/containers/fuse-overlayfs"
+arch=('x86_64')
+license=('GPL-2.0-only')
+depends=('fuse3' 'glibc' 'libgcc')
+makedepends=('git')
+source=("git+${url}.git#tag=v${pkgver}?signed")
 validpgpkeys=('AC404C1C0BF735C63FF4D562263D6DF2E163E1EA')
-sha512sums=('7637ca89ec5742aa883d25eb1335a750712dadedb40e4b594ff38e0fd70b123680bd29143a071511225572c17376d4055f0743eebc99b8c64973ef32d3881554')
+sha512sums=('42d9923f55d77f1c0855bab73b35c68aa3686ee9cf67eb83829f61ab719a81ebbbbb2564f08cf0244610fcde424a45695e5b87bffcd8b92489dcb60ffd62c024')
 
 build () {
 	cd "${pkgname}"
-	autoreconf -fis
+	autoreconf -vfis
 	./configure \
 		--prefix=/usr \
 		--sbindir=/usr/bin
