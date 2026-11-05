@@ -1,7 +1,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=python-ast-serialize
-pkgver=0.12.1
+pkgver=0.13.0
 pkgrel=1
 pkgdesc='Fast Python parser that generates a serialized AST'
 arch=(x86_64)
@@ -20,7 +20,7 @@ makedepends=(
 )
 provides=(python-ast_serialize)
 source=("$pkgname::git+$url.git#tag=v$pkgver")
-b2sums=('5d77cb18ce963347e2d43f98443f79916932731ed6e744405d4bbf8b4eee17da5bf5ded608c8374f5b4584d54f8ece8c093855a5facc8c3c9b751f9f56b1cb65')
+b2sums=('bfc4e4f3dd139226a6c30fae881465636d3bc85152dfec594c128968eaf91f2f75eed6fa03fd9a47d829e61af0386424bccbc96824a962419b890ef36f0de47c')
 
 prepare() {
   cd $pkgname
