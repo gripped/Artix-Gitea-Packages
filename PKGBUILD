@@ -1,7 +1,8 @@
+# Maintainer: capezotte <capezotte@artixlinux.org>
 # Maintainer: artoo <artoo@artixlinux.org>
 
 pkgname=pandoc-bin
-pkgver=3.1.13
+pkgver=3.13
 pkgrel=1
 pkgdesc="Pandoc - executable only, without 750MB Haskell depends/makedepends"
 url="https://pandoc.org"
@@ -10,11 +11,8 @@ arch=('x86_64')
 conflicts=("pandoc-cli")
 provides=("pandoc=$pkgver" "pandoc-cli=$pkgver")
 optdepends=('texlive-core: for pdf output')
-# The binary release doesn't have the datafiles, so we need to yoink those out of the source tarball, too.
-source=("$pkgname-source-$pkgver.tar.gz::https://github.com/jgm/pandoc/archive/${pkgver}.tar.gz"
-        "$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
-sha256sums=('e00265e5aa56ecb214d12fd7781e87d77abf101dd8d02e15c4d648ad50a5ef80'
-            'db556c98cf207d2fddc088d12d2e2f367d9401784d4a3e914b068fa895dcf3f0')
+source=("$pkgname-bin-$pkgver.tar.gz::https://github.com/jgm/pandoc/releases/download/${pkgver}/pandoc-${pkgver}-linux-amd64.tar.gz")
+sha256sums=('38aa33b325a2bc96a4c39409631212db55702f564250bcdbead180b3bf646389')
 
 package() {
   cd "${srcdir}/pandoc-${pkgver}"
@@ -24,7 +22,9 @@ package() {
   mkdir -p "${pkgdir}/usr/share/pandoc"
   cp -R bin share "${pkgdir}/usr"
 
-  # We're still missing all the datafiles and so on. We get those from the source tarball...
-  cp -R data "${pkgdir}/usr/share/pandoc/"
-  cp COPYRIGHT MANUAL.txt "${pkgdir}/usr/share/pandoc/"
+  # License file
+  install -Dm644 -t "${pkgdir}/usr/share/licenses/pandoc-cli" COPYING.md
+
+  # Bash completion
+  ./bin/pandoc --completion=bash | install -Dm644 /dev/stdin "${pkgdir}/usr/share/bash-completion/completions/pandoc"
 }
