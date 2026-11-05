@@ -1,16 +1,23 @@
-# Maintainer: Giovanni Scafora <giovanni@archlinux.org>
+# Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: Hyacinthe Cartiaux <hyacinthe@archlinux.org>
+# Contributor: Giovanni Scafora <giovanni@archlinux.org>
 # Contributor: Jeff Mickey <jeff@archlinux.org>
 # Contributor: Jani Talikka <jani.talikka@gmail.com>
 # Contributor: Ralf Barth <archlinux.org@haggy.org>
 
 pkgname=smartmontools
 pkgver=7.5
-pkgrel=1.1
+pkgrel=2
 pkgdesc='Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives'
 url='https://www.smartmontools.org/'
-license=('GPL')
+license=('GPL-2.0-or-later')
 arch=('x86_64')
-depends=('gcc-libs' 'libcap-ng' 'bash' 'libudev')
+depends=('bash'
+         'glibc'
+         'libgcc' 'libgcc_s.so'
+         'libcap-ng' 'libcap-ng.so'
+         'libstdc++' 'libstdc++.so'
+         'libudev' 'libudev.so')
 makedepends=('udev')
 optdepends=('s-nail: to get mail alerts to work')
 backup=('etc/smartd.conf'
