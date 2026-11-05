@@ -1,9 +1,9 @@
 ---
-version: 2.4.0-1
+version: 2.5.0-1
 pkgbase:
   name: lxqt-themes
   pkgdesc: LXQt themes, graphics and icons.
-  pkgver: 2.4.0
+  pkgver: 2.5.0
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-themes
   arch:
@@ -20,12 +20,12 @@ pkgbase:
   replaces:
     - lxqt-common
   source:
-    - git+https://github.com/lxqt/lxqt-themes.git#tag=2.4.0
+    - git+https://github.com/lxqt/lxqt-themes.git#tag=2.5.0
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
     - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - 393e1d34cfccdabb99463b8c29e61a199fed724eefb92176f404171e2be65385
+    - ce83f222073c99c49b7deccd20b6ffa46d6ee2c5d3f9096c26fbab3997dfc20c
 pkgname:
   - name: lxqt-themes
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
