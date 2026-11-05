@@ -1,10 +1,10 @@
 ---
-version: 1.7.0-5
+version: 1.7.2-1
 pkgbase:
   name: python-texttable
   pkgdesc: Generate a formatted text table using ASCII characters
-  pkgver: 1.7.0
-  pkgrel: 5
+  pkgver: 1.7.2
+  pkgrel: 1
   url: https://pypi.python.org/pypi/texttable/
   arch:
     - any
@@ -24,9 +24,9 @@ pkgbase:
   optdepends:
     - 'python-cjkwrap: for better CJK support'
   source:
-    - git+https://github.com/foutaise/texttable.git#tag=v1.7.0
+    - git+https://github.com/foutaise/texttable.git#tag=v1.7.2
   sha512sums:
-    - 5b39841dc7ecdcaa1c50f39519e3e7a55c2bbf95463b7093c59a66f1891fddf147160426fcda08d6638bd243e1136caef47b9e7072abf427b57d127dab782e75
+    - 86692e95d7c7440449f8b5324f111ee2ebd28dda117a8dd79fa33fd61835cb739cde31ab5a056da0ba1744385776c00ab258f0c032695d2be9e66bc74e1bb509
 pkgname:
   - name: python-texttable
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
