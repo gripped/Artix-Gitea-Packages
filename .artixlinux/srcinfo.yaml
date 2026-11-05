@@ -1,10 +1,10 @@
 ---
-version: 7.4.16-1
+version: 7.4.16-2
 pkgbase:
   name: zabbix
   pkgdesc: The universal, open-source observability solution for IT & OT
   pkgver: 7.4.16
-  pkgrel: 1
+  pkgrel: 2
   url: https://cdn.zabbix.com/zabbix
   arch:
     - x86_64
