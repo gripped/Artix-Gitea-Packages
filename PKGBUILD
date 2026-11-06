@@ -1,10 +1,11 @@
-# Maintainer:
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor:
 # Contributor: Filipe Laíns (FFY00) <lains@archlinux.org>
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=jxrlib
-pkgver=1.4.4
-pkgrel=3
+pkgver=1.4.6
+pkgrel=1
 pkgdesc="Open source implementation of jpegxr"
 arch=('x86_64')
 url='https://github.com/mircomir/jxrlib'
@@ -13,7 +14,7 @@ depends=(glibc)
 makedepends=(cmake
              git)
 source=(git+https://github.com/mircomir/jxrlib#tag=$pkgver)
-sha256sums=('2352722428e94b62c5ef526384a922f8f259e76763dddbc6d69ba098608fb37f')
+sha256sums=('684c8579e49ec727c238e71290a4c795c1101c0c208c4966164ddab0889d32e8')
 
 prepare() {
   cd $pkgname
