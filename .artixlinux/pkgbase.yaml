@@ -1,12 +1,4 @@
 ---
-pkgbase:
-  name: gtk-vnc
-  version: 1.5.0-1
-  arch:
-    - x86_64
-  pkgname:
-    - gtk-vnc
-    - gtk-vnc-docs
 actions:
   addRepo: world
   removeRepo: null
@@ -19,39 +11,51 @@ repos:
   system-goblins:
     version: null
     packages: []
+    debug: []
   system-gremlins:
     version: null
     packages: []
+    debug: []
   system:
     version: null
     packages: []
+    debug: []
   world-goblins:
     version: null
     packages: []
+    debug: []
   world-gremlins:
     version: null
     packages: []
+    debug: []
   world:
-    version: 1.5.0-1
+    version: 1.6.0-1
     packages:
-      - gtk-vnc-1.5.0-1-x86_64.pkg.tar.zst
-      - gtk-vnc-docs-1.5.0-1-x86_64.pkg.tar.zst
+      - gtk-vnc-1.6.0-1-x86_64.pkg.tar.zst
+      - gtk-vnc-docs-1.6.0-1-x86_64.pkg.tar.zst
+    debug: []
   lib32-goblins:
     version: null
     packages: []
+    debug: []
   lib32-gremlins:
     version: null
     packages: []
+    debug: []
   lib32:
     version: null
     packages: []
+    debug: []
   galaxy-goblins:
     version: null
     packages: []
+    debug: []
   galaxy-gremlins:
     version: null
     packages: []
+    debug: []
   galaxy:
     version: null
     packages: []
+    debug: []
 team: world

@@ -1,0 +1,50 @@
+---
+version: 1.6.0-1
+pkgbase:
+  name: gtk-vnc
+  pkgdesc: VNC viewer widget for GTK
+  pkgver: 1.6.0
+  pkgrel: 1
+  url: https://gitlab.gnome.org/GNOME/gtk-vnc
+  arch:
+    - x86_64
+  license:
+    - LGPL-2.1-or-later
+  makedepends:
+    - gi-docgen
+    - git
+    - glib2-devel
+    - gobject-introspection
+    - meson
+    - perl-text-csv
+    - vala
+  depends:
+    - cairo
+    - gdk-pixbuf2
+    - glib2
+    - glibc
+    - gmp
+    - gnutls
+    - gtk3
+    - libpulse
+    - libsasl
+    - libx11
+    - zlib
+  source:
+    - git+https://gitlab.gnome.org/GNOME/gtk-vnc.git?signed#tag=1.6.0
+    - git+https://gitlab.com/keycodemap/keycodemapdb.git
+  validpgpkeys:
+    - DAF3A6FDB26B62912D0E8E3FBE86EBB415104FDF
+  b2sums:
+    - a4f10e4c430456e69aaf805dec1b183d96a778e40ba0f79ee11a8df8c403110ea4033eee826bd0fc8443558cd630169d1615b64b579c4445e3a4b933135e6f19
+    - SKIP
+pkgname:
+  - name: gtk-vnc
+    provides:
+      - libgtk-vnc-2.0.so
+      - libgvnc-1.0.so
+      - libgvncpulse-1.0.so
+  - name: gtk-vnc-docs
+    pkgdesc: VNC viewer widget for GTK (documentation)
+    depends: []
+# generated with artixpkg 0.40.0-1-any
