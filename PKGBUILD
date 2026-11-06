@@ -3,7 +3,7 @@
 
 pkgname=jami-qt
 pkgver=20260917.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Free and universal communication platform which preserves the users’ privacy and freedoms (Qt client)"
 arch=(x86_64)
 url="https://jami.net"
