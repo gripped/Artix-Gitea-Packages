@@ -1,9 +1,9 @@
 ---
-version: 2.13.0-1
+version: 2.14.0-1
 pkgbase:
   name: qps
   pkgdesc: Qt process viewer and manager
-  pkgver: 2.13.0
+  pkgver: 2.14.0
   pkgrel: 1
   url: https://github.com/lxqt/qps
   arch:
@@ -19,14 +19,14 @@ pkgbase:
     - liblxqt
     - qt6-base
   source:
-    - https://github.com/lxqt/qps/releases/download/2.13.0/qps-2.13.0.tar.xz
-    - https://github.com/lxqt/qps/releases/download/2.13.0/qps-2.13.0.tar.xz.asc
+    - https://github.com/lxqt/qps/releases/download/2.14.0/qps-2.14.0.tar.xz
+    - https://github.com/lxqt/qps/releases/download/2.14.0/qps-2.14.0.tar.xz.asc
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
     - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - d6f236fcafe16611b88c468502665dd5e9c73aa18eae0666e8ca9062ef5a471e
+    - a988317c68c177ffb50ae51c1a1fd099ab8f2361763073e1d9b79770e9eb090f
     - SKIP
 pkgname:
   - name: qps
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
