@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
       - telegram-desktop-7.3.5-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 7.3.5-1
+    version: 7.4.0-1
     packages:
-      - telegram-desktop-7.3.5-1-x86_64.pkg.tar.zst
+      - telegram-desktop-7.4.0-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
