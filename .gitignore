@@ -12,6 +12,7 @@
 
 pkg/
 src/
+PCSC/
 
 *.service
 *.timer

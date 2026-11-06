@@ -5,7 +5,7 @@
 
 pkgname=pcsclite
 pkgver=2.5.3
-pkgrel=1
+pkgrel=1.1
 pkgdesc="PC/SC Architecture smartcard middleware library"
 arch=('x86_64')
 url='https://pcsclite.apdu.fr/'
@@ -36,13 +36,17 @@ provides=(
   'libpcscspy.so'
 )
 backup=(
-  '#etc/default/pcscd'
+  'etc/default/pcscd'
 )
 validpgpkeys=('F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E') # Ludovic Rousseau <rousseau@debian.org>
 source=(
   "git+https://github.com/LudovicRousseau/PCSC.git?signed#tag=${pkgver}"
 )
 sha256sums=('483083f36069b21e38f923dbd68dcabfbc669ced97c779deb691631d7e26932f')
+
+prepare() {
+  sed -i '/^[[:blank:]]*sysusersdir[[:blank:]]*=/s%=.*%'"= get_option('prefix') / 'lib' / 'sysusers.d'"'%' PCSC/meson.build
+}
 
 build() {
   local meson_options=(
