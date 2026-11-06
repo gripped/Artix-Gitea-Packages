@@ -3,7 +3,7 @@
 # Contributor: Marcell Pardavi <marcell.pardavi@gmail.com>
 
 pkgname=zed
-pkgver=1.24.3
+pkgver=1.27.0
 pkgrel=1
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
@@ -42,7 +42,7 @@ optdepends=('org.freedesktop.secrets: to keep you logged into your Zed account')
 replaces=(zed-editor)
 _archive="$pkgname-$pkgver"
 source=("$_url/archive/v$pkgver/$_archive.tar.gz")
-sha256sums=('69e06d42fe32af31fc549001e3ccb6397610deacf6ccc3482a2bdb0a629bc269')
+sha256sums=('0e7bec0a4f27ed4d3a9007b136bea8c820e50d60bd96a78a444a93c520726b0a')
 
 _binname=zeditor
 _appid=dev.zed.Zed
@@ -86,9 +86,12 @@ build() {
 	export PROTOC=/usr/bin/protoc
 	export PROTOC_INCLUDE=/usr/include
 	cargo build --release --frozen --package zed --package cli
-	target/release/cli --completions bash > completions.bash
-	target/release/cli --completions fish > completions.fish
-	target/release/cli --completions zsh > completions.zsh
+	cp target/release/cli target/release/$_binname
+	target/release/$_binname --completions bash > completions.bash
+	target/release/$_binname --completions elvish > completions.elvish
+	target/release/$_binname --completions fish > completions.fish
+	target/release/$_binname --completions nushell > completions.nushell
+	target/release/$_binname --completions zsh > completions.zsh
 }
 
 # Tests assume access to vulkan video drivers, Wayland window creation,
@@ -115,6 +118,8 @@ package() {
 	install -Dm0644 -t "$pkgdir/usr/share/metainfo/" "$_appid.metainfo.xml"
 	install -Dm0644 crates/zed/resources/app-icon.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/$pkgname.png"
 	install -Dm0644 completions.bash "$pkgdir/usr/share/bash-completion/completions/$_binname"
+	install -Dm0644 completions.elvish "$pkgdir/usr/share/elvish/lib/$_binname.elv"
 	install -Dm0644 completions.fish "$pkgdir/usr/share/fish/vendor_completions.d/$_binname.fish"
+	install -Dm0644 completions.nushell "$pkgdir/usr/share/nushell/vendor/autoload/$_binname.nu"
 	install -Dm0644 completions.zsh "$pkgdir/usr/share/zsh/site-functions/_$_binname"
 }
