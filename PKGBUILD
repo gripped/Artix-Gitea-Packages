@@ -12,10 +12,10 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=1e95d1c5f519c3fbde715345ae7beb56a2c79077
 
-pkgver=153.6.0.102
+pkgver=153.7.0.100rc2
 
 pkgrel=1
-_ffbuild=2
+_ffbuild=1
 _srcver="${pkgver%.*}"
 _ffsrcver="${_srcver/.0.0/.0}"
 _lwrelver="${pkgver##*.}"
@@ -140,11 +140,11 @@ source=(
   "default192x192.png"
   "entrypoint.sh"
 )
-sha256sums=('974b0b1ee4d069449e829aa92d0ec9b28e2e345b436a02c55c17d830de9a9909'
-            '91cb675ddfc678255f57ecd7aad498501961577686d19c1947a82b14edea7f25'
+sha256sums=('6543cf4597352b744659368a17ca12e4e65507f7cdad9bfda50f174229dbf258'
+            '7f8715ee7de2cf36a156216a9b1c7f26d1653010e65793bb2fce66e12edb6ea0'
             'SKIP'
             '5cda6675c1d51c6b16395a6be861f980968ed884a404d68d465e8fea87009ef5'
-            'ae8968444be8a77b69f219cd6b35eded970010727fef812820df19f254b860ad'
+            'c47817ab93c733d3037e898156f6d00c9ffee66db159565d444c6a8f6c456500'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
             'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
             'c683b93bcb843da6de51ee49dd163c6eb9889f27988357aba3ca8766abd76f2e')
@@ -258,9 +258,6 @@ build() {
   export MOZBUILD_STATE_PATH="$srcdir/mozbuild"
   export MOZ_NOSPAM=1
   export MOZ_REQUIRE_SIGNING=
-
-  # Work around https://bugzilla.mozilla.org/show_bug.cgi?id=1969383
-  export RUST_MIN_STACK=33554432
 
   # malloc_usable_size is used in various parts of the codebase
   CFLAGS="${CFLAGS/_FORTIFY_SOURCE=3/_FORTIFY_SOURCE=2}"
