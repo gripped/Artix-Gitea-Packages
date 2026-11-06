@@ -1,10 +1,10 @@
 ---
-version: 0.15.0-3
+version: 0.16.0-1
 pkgbase:
   name: waybar
   pkgdesc: Highly customizable Wayland bar for Sway and Wlroots based compositors
-  pkgver: 0.15.0
-  pkgrel: 3
+  pkgver: 0.16.0
+  pkgrel: 1
   url: https://github.com/Alexays/Waybar/
   arch:
     - x86_64
@@ -34,6 +34,7 @@ pkgbase:
     - libevdev
     - libgcc
     - libinput
+    - libmm-glib
     - libmpdclient
     - libnl
     - libpipewire
@@ -54,9 +55,9 @@ pkgbase:
     - etc/xdg/waybar/config.jsonc
     - etc/xdg/waybar/style.css
   source:
-    - waybar-0.15.0.tar.gz::https://github.com/Alexays/Waybar/archive/0.15.0.tar.gz
+    - waybar-0.16.0.tar.gz::https://github.com/Alexays/Waybar/archive/0.16.0.tar.gz
   b2sums:
-    - 3f0eb6cbf4ba189ddd37e82678ef87f877f6f48cf0bb699624c5d697c7164b11c3e25bf8fe382564c1e5891a6070d7c7e6d3009f8461a7087294dffccb78de95
+    - 8cb2e1fc35219fa507b5d16d9576e5633f1ba5087196dd93868cefd8f07b37865563dbc7bb4116f7a2da326f310381f0b2e735a983f9981df41c59cd32871087
 pkgname:
   - name: waybar
     depends:
@@ -76,6 +77,7 @@ pkgname:
       - libevdev
       - libgcc
       - libinput
+      - libmm-glib
       - libmpdclient
       - libnl
       - libpipewire
@@ -100,4 +102,4 @@ pkgname:
       - libspdlog.so
       - libudev.so
       - libupower-glib.so
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
