@@ -1,10 +1,10 @@
 ---
-version: 1.22.2-5
+version: 1.22.2-6
 pkgbase:
   name: retroarch
   pkgdesc: Reference frontend for the libretro API
   pkgver: 1.22.2
-  pkgrel: 5
+  pkgrel: 6
   url: http://www.libretro.com/
   arch:
     - x86_64
@@ -72,4 +72,4 @@ pkgbase:
     - b3e9c4d7e3c99d8baba0cb6a602c3f529e2ce4be2e38fc42366806986a47000bc85934362d53eb8385480c43d63c05bc087a93cf59cfa176b8dc1085f0873dc0
 pkgname:
   - name: retroarch
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
