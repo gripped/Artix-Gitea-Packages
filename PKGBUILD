@@ -41,11 +41,13 @@ backup=(
 validpgpkeys=('F5E11B9FFE911146F41D953D78A1B4DFE8F9C57E') # Ludovic Rousseau <rousseau@debian.org>
 source=(
   "git+https://github.com/LudovicRousseau/PCSC.git?signed#tag=${pkgver}"
-)
-sha256sums=('483083f36069b21e38f923dbd68dcabfbc669ced97c779deb691631d7e26932f')
+
+pcsclite-sysusers.patch)
+sha256sums=('483083f36069b21e38f923dbd68dcabfbc669ced97c779deb691631d7e26932f'
+            '0c222b26b3e82c1209644980f1bcfc308e5e787bd1ccdf43a80de321c4bcfdfc')
 
 prepare() {
-  sed -i '/^[[:blank:]]*sysusersdir[[:blank:]]*=/s%=.*%'"= get_option('prefix') / 'lib' / 'sysusers.d'"'%' PCSC/meson.build
+  patch -d PCSC -Np1 < "$srcdir/pcsclite-sysusers.patch"
 }
 
 build() {
@@ -71,7 +73,7 @@ package() {
   install -D -m0644 LICENSE.* -t "${pkgdir}"/usr/share/licenses/$pkgname
   install -D -m0644 PCSC/doc/org.debian.pcsc-lite.policy -t "${pkgdir}"/usr/share/polkit-1/actions/
   install -d "${pkgdir}"/usr/lib/pcsc/drivers
-  
+
   rm -r $pkgdir/usr/lib/systemd
 }
 
