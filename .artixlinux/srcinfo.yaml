@@ -1,10 +1,10 @@
 ---
-version: 3.44.0-2
+version: 3.44.0-3
 pkgbase:
   name: libdazzle
   pkgdesc: A library to delight your users with fancy features
   pkgver: 3.44.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://gitlab.gnome.org/Archive/libdazzle
   arch:
     - x86_64
@@ -16,16 +16,15 @@ pkgbase:
     - git
     - glib2-devel
     - gobject-introspection
-    - gtk-doc
     - meson
     - vala
   depends:
     - cairo
-    - gcc-libs
     - gdk-pixbuf2
     - glib2
     - glibc
     - gtk3
+    - libgcc
     - pango
   provides:
     - libdazzle-1.0.so
@@ -35,4 +34,4 @@ pkgbase:
     - 24cb4cc73cf5e77f1143bd1a49ab40a41e48de11579d01ee64bd4cce9894b0e56a8bbc3ed6441d1899156f81fe71f0eb4638365117372f48f2f0268007bdcf58
 pkgname:
   - name: libdazzle
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.40.0-1-any
