@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 16.0.0-1
+    version: 17.0.0-2
     packages:
-      - copyq-16.0.0-1-x86_64.pkg.tar.zst
+      - copyq-17.0.0-2-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
