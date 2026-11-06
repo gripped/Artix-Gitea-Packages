@@ -1,7 +1,7 @@
 ---
 team: galaxy
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -50,9 +50,9 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 20260313-41
+    version: 20260313-59
     packages:
-      - vhba-module-20260313-41-x86_64.pkg.tar.zst
+      - vhba-module-20260313-59-x86_64.pkg.tar.zst
     debug: []
   galaxy:
     version: 20260313-57
