@@ -1,21 +1,21 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=unicode-emoji
-pkgver=17.0
+pkgver=18.0.0
 pkgrel=1
 pkgdesc="Unicode Emoji Data Files"
 arch=(any)
-license=(BSD)
+license=(Unicode-3.0)
 url="https://www.unicode.org/emoji/"
 depends=('unicode-character-database')
-source=("emoji-sequences-$pkgver.txt::http://www.unicode.org/Public/emoji/$pkgver/emoji-sequences.txt"
-        "emoji-test-$pkgver.txt::http://www.unicode.org/Public/emoji/$pkgver/emoji-test.txt"
-        "emoji-zwj-sequences-$pkgver.txt::http://www.unicode.org/Public/emoji/$pkgver/emoji-zwj-sequences.txt"
+source=("emoji-sequences-$pkgver.txt::http://www.unicode.org/Public/$pkgver/emoji/emoji-sequences.txt"
+        "emoji-test-$pkgver.txt::http://www.unicode.org/Public/$pkgver/emoji/emoji-test.txt"
+        "emoji-zwj-sequences-$pkgver.txt::http://www.unicode.org/Public/$pkgver/emoji/emoji-zwj-sequences.txt"
         license-from-upstream)
-sha512sums=('1b3790ecb10db151bb64975d73cc339c91c1a4ff1921b9b428ac22ccc005bcaf65aeae5aa9e998bf8ad616518c0579a5a9d88fbe010d436660192037e337bca3'
-            '61fc5fd9b944180c13e28e2e83c3f25c019a5f1fea5c9c177e8cdf3f2ccf0b68d3b7d009279f5cdd069d41f94067d026d9df6b232222f208a9675a926ba48bfa'
-            '160be7f89e1bfaa0f6d587ce350b173cb68e324c67a2d2ef9d67941d913f0a48cd9ec8da299c8b9dbe80023488d236dec4eed04e90314e34b1d2f6753a27d726'
-            '9ba78d68ed39745e55538180f132ff47423edb46adde7ac3e62a489870d153808bcf2db57b77e6a7cdae9b4fa03aba99cf228315b9a15be090bedef00b9e69ed')
+sha512sums=('d9a37198a58093dac60a7de7329706faa49f063349e9849b2d86d3902beee4ae7c8d65f7fcb66f6fd2a265a79e63b5a6953a53387285bf019bbff853955020f2'
+            'c4d1a38ddcfe9ed6036865a0494ca9a49fa06ffdf66029b8af6300862137c47c0d96ab8dcfe73b55c670af5de55726a9269682b529ca9b9804b3bb1ed8e30b40'
+            '31981420a37d05c859310b2e0666fc60e50fee2161f434d32dfaad0b91ca05b4a607a2a0ef567eed82afa43d2ecd055d287c09a21f05fa5a1ceb31ca56e2b423'
+            'cb717eb5bf8206b004d2784eb02909365cb4dbe5845198e298ae94f1c666fc5855e4194ca1f3aba4348de6146054c69ea23fd5c8706838bb345bba4deff6549c')
 
 package() {
   for _f in sequences test zwj-sequences; do
