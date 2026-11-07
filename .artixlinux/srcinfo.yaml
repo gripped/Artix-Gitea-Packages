@@ -1,9 +1,9 @@
 ---
-version: 1.6.4-1
+version: 1.9.3-1
 pkgbase:
   name: python-python-discovery
   pkgdesc: Python interpreter discovery
-  pkgver: 1.6.4
+  pkgver: 1.9.3
   pkgrel: 1
   url: https://python-discovery.readthedocs.io
   arch:
@@ -20,17 +20,18 @@ pkgbase:
     - python-installer
     - python-hatchling
     - python-hatch-vcs
+    - python-hatch-fancy-pypi-readme
   depends:
     - python
     - python-filelock
   source:
-    - python-python-discovery::git+https://github.com/tox-dev/python-discovery#tag=1.6.4
+    - python-python-discovery::git+https://github.com/tox-dev/python-discovery#tag=1.9.3
     - no-vermin.patch
   sha512sums:
-    - fc0696304109b867f8c3ff7e58d7460ae9e09b86ec121e691fbe4076d708d4fbbb5da42a10cc19c8fbffc7b5a5e340ee049bcab02e1548fec30257edb7f5763c
+    - e30b57c17dffe1a0abc3827c0983b85c076d383ccc4a49d8a9461bdb27f2955c70e412447d4c9b22e1a4c63d2aa6307fd965aa366d7d126e8a18ba806ea2ad14
     - c9057e2e74dde6819b2f43cf6f29c6f0903da9f12784fc1e84fc24b972a8d114fb55c60630f65106cee1e2c02e043ddfff08f5729c98d3e35a32c0b83ec184cd
   b2sums:
-    - 8caf5dba0c7bac061970745be409128027f1e392d0b5cacd4e4ee07c72e6b1fa62e14153f1434d05f6959578a3f551aef8e80e9c96df046819fb0492d958d946
+    - 039a39d21ae50e6726aaf1eb49f803c5a7ac121f9c41c1a807c439fed84e76def12ac4de11f8d9d7403d6a4e9fea6ab3d8270ccbc59911a6fda502bdacc9473e
     - e23fac44ff0fe6dc0eb4f19da9bef5410c0e4d03b2992d2f79eba45a4b69c81173c11feb13e84d8d440938b67aa65f3ada6fe6583f627f828a83fa70863ec507
 pkgname:
   - name: python-python-discovery
