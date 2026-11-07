@@ -1,9 +1,9 @@
 ---
-version: 8.5.12-2
+version: 8.5.12-4
 pkgbase:
   name: php
   pkgver: 8.5.12
-  pkgrel: 2
+  pkgrel: 4
   url: https://www.php.net/
   arch:
     - x86_64
