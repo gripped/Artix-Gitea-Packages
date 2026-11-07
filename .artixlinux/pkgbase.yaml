@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.5.20-2
+    version: 1.5.21-2
     packages:
-      - freetds-1.5.20-2-x86_64.pkg.tar.zst
+      - freetds-1.5.21-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 1.5.21-1
