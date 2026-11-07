@@ -1,10 +1,10 @@
 ---
-version: 5.02-1
+version: 5.02-2
 pkgbase:
   name: perl-cgi
   pkgdesc: Handle Common Gateway Interface requests and responses
   pkgver: 5.02
-  pkgrel: 1
+  pkgrel: 2
   url: https://metacpan.org/dist/CGI
   arch:
     - any
@@ -15,7 +15,8 @@ pkgbase:
     - perl-test-warn>=0.3
   depends:
     - perl>=5.8.1
-    - perl-html-parser
+    - perl-html-parser>=3.69
+    - perl-uri>=1.76
   options:
     - '!emptydirs'
   source:

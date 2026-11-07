@@ -3,12 +3,12 @@
 
 pkgname=perl-cgi
 pkgver=5.02
-pkgrel=1
+pkgrel=2
 pkgdesc='Handle Common Gateway Interface requests and responses'
 arch=('any')
 url='https://metacpan.org/dist/CGI'
 license=('Artistic-2.0')
-depends=('perl>=5.8.1' 'perl-html-parser')
+depends=('perl>=5.8.1' 'perl-html-parser>=3.69' 'perl-uri>=1.76')
 checkdepends=('perl-test-nowarnings' 'perl-test-warn>=0.3')
 options=('!emptydirs')
 source=("$pkgname-$pkgver.tar.gz::https://cpan.metacpan.org/authors/id/L/LE/LEEJO/CGI-$pkgver.tar.gz")
