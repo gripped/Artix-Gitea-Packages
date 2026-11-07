@@ -37,7 +37,7 @@ makedepends=(
   vala
 )
 source=(
-  "git+$url.git?signed#tag=$pkgver"
+  "git+$url.git#tag=$pkgver"
   "git+https://gitlab.com/keycodemap/keycodemapdb.git"
 )
 b2sums=('a4f10e4c430456e69aaf805dec1b183d96a778e40ba0f79ee11a8df8c403110ea4033eee826bd0fc8443558cd630169d1615b64b579c4445e3a4b933135e6f19'

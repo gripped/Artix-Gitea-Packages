@@ -31,7 +31,7 @@ pkgbase:
     - libx11
     - zlib
   source:
-    - git+https://gitlab.gnome.org/GNOME/gtk-vnc.git?signed#tag=1.6.0
+    - git+https://gitlab.gnome.org/GNOME/gtk-vnc.git#tag=1.6.0
     - git+https://gitlab.com/keycodemap/keycodemapdb.git
   validpgpkeys:
     - DAF3A6FDB26B62912D0E8E3FBE86EBB415104FDF
