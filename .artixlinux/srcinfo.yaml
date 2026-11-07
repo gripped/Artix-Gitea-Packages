@@ -1,10 +1,10 @@
 ---
-version: 3.3.0-2
+version: 3.3.1-1
 pkgbase:
   name: cython
   pkgdesc: C-Extensions for Python
-  pkgver: 3.3.0
-  pkgrel: 2
+  pkgver: 3.3.1
+  pkgrel: 1
   url: https://cython.org
   arch:
     - x86_64
@@ -27,9 +27,9 @@ pkgbase:
     - python-pygments
     - python-setuptools
   source:
-    - git+https://github.com/cython/cython#tag=3.3.0
+    - git+https://github.com/cython/cython#tag=3.3.1
   sha256sums:
-    - 89b5fcbb67c01e6c8fd079da74be1290c6f36ef10201dd7281eee8d6c17abe41
+    - 3b7972f370ee510778ce68a66b27f6a1ebb830b4889d3f7a207476aae6ab1e24
 pkgname:
   - name: cython
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
