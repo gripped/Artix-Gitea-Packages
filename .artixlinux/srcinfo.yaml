@@ -1,10 +1,10 @@
 ---
-version: 26.09.1-1
+version: 26.09.1-2
 pkgbase:
   name: ejabberd
   pkgdesc: Jabber server written in Erlang
   pkgver: 26.09.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.ejabberd.im/
   arch:
     - x86_64
