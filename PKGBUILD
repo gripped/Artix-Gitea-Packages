@@ -4,7 +4,7 @@
 
 _pkgname=coveragepy
 pkgname=python-coverage
-pkgver=7.17.0
+pkgver=7.17.2
 pkgrel=1
 pkgdesc="A tool for measuring code coverage of Python programs"
 arch=('x86_64')
@@ -13,8 +13,14 @@ license=('Apache-2.0')
 depends=('glibc' 'python')
 makedepends=('git' 'python-build' 'python-installer' 'python-setuptools' 'python-wheel' 'python-pytest' 'python-pytest-xdist' 'python-flaky' 'python-hypothesis')
 source=("git+https://github.com/nedbat/coveragepy.git#tag=$pkgver")
-sha512sums=('c04207daf4155401b07a882dd1da6af05a3e5e6220158722eace00e16d0026ea4278005bee14c6df27175559178ddd4a279da099ad96c458e714ea1b02edfa13')
-b2sums=('4b8e2d9ca80011c2d13a32d607a020e157ae8c1480036cc6ca84679af9b4e66a0fe3d151cc04bb60e1a8bf91fccefef72570387f614979c76d120ec01d8d258d')
+sha512sums=('17ba0e7568e1003605ce8ea53d8a234579cba34cd564476fd35a9569cb3a2f8966f91f9137ebcd42d5e894ddee7b148d1ccc874422c61cfd148147f07c0e214d')
+b2sums=('5e638d1493dd22af65daf2c0a69f8d68eb8691586bb056a0135dc6f4c106d9eb0faea171d4cfa3291a08cb88856fc62492632a0cc99c950812a9c477d742dc26')
+
+prepare() {
+  cd $_pkgname
+  # Pytest 9.2 requires an integer for assertion verbosity in native TOML config.
+  sed -i 's/^verbosity_assertions = "5"$/verbosity_assertions = 5/' pyproject.toml
+}
 
 build() {
   cd $_pkgname
