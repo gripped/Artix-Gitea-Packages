@@ -1,9 +1,9 @@
 ---
-version: 1.38-1
+version: 1.42-1
 pkgbase:
   name: python-jsonpatch
   pkgdesc: An implementation of the JSON Patch format
-  pkgver: 1.38
+  pkgver: 1.42
   pkgrel: 1
   url: https://github.com/stefankoegl/python-json-patch
   arch:
@@ -11,7 +11,9 @@ pkgbase:
   license:
     - BSD-3-Clause
   checkdepends:
+    - mypy
     - python-hypothesis
+    - python-simplejson
   makedepends:
     - git
     - python-build
@@ -21,9 +23,9 @@ pkgbase:
   depends:
     - python-jsonpointer
   source:
-    - git+https://github.com/stefankoegl/python-json-patch.git#tag=v1.38
+    - git+https://github.com/stefankoegl/python-json-patch.git#tag=v1.42
   sha512sums:
-    - ad8d348083edd71b58c5fb65dfe155db427574d2a326f80c4756793763a777982bd861daf559b68695181e9ee32bd654afbb7c6f2baba61c3dce55b8f16f7cd6
+    - a44077410be597f8e33b4d2ca03263b0b67911ee2563f81d05a49e26cb3978c993c472f78f479745db7ca70013d8f9cb34d8559cff9fa10c13ee41be52a5b29c
 pkgname:
   - name: python-jsonpatch
 # generated with artixpkg 0.40.0-1-any

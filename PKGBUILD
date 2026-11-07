@@ -3,7 +3,7 @@
 # Contributor: Limao Luo <luolimao+AUR@gmail.com>
 
 pkgname=python-jsonpatch
-pkgver=1.38
+pkgver=1.42
 pkgrel=1
 pkgdesc="An implementation of the JSON Patch format"
 arch=("any")
@@ -11,9 +11,9 @@ url="https://github.com/stefankoegl/python-json-patch"
 license=("BSD-3-Clause")
 depends=("python-jsonpointer")
 makedepends=("git" "python-build" "python-installer" "python-setuptools" "python-wheel")
-checkdepends=("python-hypothesis")
+checkdepends=("mypy" "python-hypothesis" "python-simplejson")
 source=("git+https://github.com/stefankoegl/python-json-patch.git#tag=v$pkgver")
-sha512sums=('ad8d348083edd71b58c5fb65dfe155db427574d2a326f80c4756793763a777982bd861daf559b68695181e9ee32bd654afbb7c6f2baba61c3dce55b8f16f7cd6')
+sha512sums=('a44077410be597f8e33b4d2ca03263b0b67911ee2563f81d05a49e26cb3978c993c472f78f479745db7ca70013d8f9cb34d8559cff9fa10c13ee41be52a5b29c')
 
 build() {
   cd python-json-patch
@@ -24,6 +24,13 @@ check() {
   cd python-json-patch
   PYTHONPATH=. python -m unittest discover -vs .
   python property_tests.py
+
+  # Type checks need the installed jsonpatch-stubs package.
+  python -m venv --system-site-packages --without-pip "$srcdir/test-env"
+  "$srcdir/test-env/bin/python" -m installer dist/*.whl
+  "$srcdir/test-env/bin/python" -m mypy.stubtest --mypy-config-file pyproject.toml jsonpatch
+  cd typetests
+  "$srcdir/test-env/bin/python" -m mypy --config-file ../pyproject.toml usage.py
 }
 
 package() {
