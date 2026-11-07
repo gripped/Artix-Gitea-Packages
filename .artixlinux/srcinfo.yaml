@@ -1,9 +1,9 @@
 ---
-version: 2.7-1
+version: 2.9-1
 pkgbase:
   name: python-copr
   pkgdesc: Python interface for Copr
-  pkgver: 2.7
+  pkgver: 2.9
   pkgrel: 1
   url: https://github.com/fedora-copr/copr
   arch:
@@ -26,9 +26,9 @@ pkgbase:
     - python-requests-gssapi
     - python-requests-toolbelt
   source:
-    - git+https://github.com/fedora-copr/copr.git#tag=python-copr-2.7-1
+    - git+https://github.com/fedora-copr/copr.git#tag=python-copr-2.9-1
   b2sums:
-    - eabb29f5041e0469ae3b0b490d5edcce20960f1d142fb5c07b1164968ab347aa61ba0b4f2a88ff4796dddd8317f41edeb06646243fc5111897bd664ff5a4cec9
+    - cbc24bc40fadd8f977b8b35b5fa8e71822e39ca0f1bcd697663ae13ad1350796574fc32589d11b2b3149ad5080fb02e0e37a5975ddc8b598a212d8e7ed775317
 pkgname:
   - name: python-copr
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
