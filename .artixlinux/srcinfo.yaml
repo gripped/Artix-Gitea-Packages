@@ -1,9 +1,9 @@
 ---
-version: 8.3.36-2
+version: 8.3.36-4
 pkgbase:
   name: php-legacy
   pkgver: 8.3.36
-  pkgrel: 2
+  pkgrel: 4
   url: https://www.php.net/
   arch:
     - x86_64
