@@ -1,9 +1,9 @@
 ---
-version: 0.4.1-1
+version: 0.5.0-1
 pkgbase:
   name: lxqt-wayland-session
   pkgdesc: Files needed for the LXQt Wayland Session
-  pkgver: 0.4.1
+  pkgver: 0.5.0
   pkgrel: 1
   url: https://github.com/lxqt/lxqt-wayland-session
   install: lxqt-wayland-session.install
@@ -35,16 +35,16 @@ pkgbase:
     - river
     - sway
   source:
-    - https://github.com/lxqt/lxqt-wayland-session/releases/download/0.4.1/lxqt-wayland-session-0.4.1.tar.xz
-    - https://github.com/lxqt/lxqt-wayland-session/releases/download/0.4.1/lxqt-wayland-session-0.4.1.tar.xz.asc
+    - https://github.com/lxqt/lxqt-wayland-session/releases/download/0.5.0/lxqt-wayland-session-0.5.0.tar.xz
+    - https://github.com/lxqt/lxqt-wayland-session/releases/download/0.5.0/lxqt-wayland-session-0.5.0.tar.xz.asc
     - lxqt-wayland-session-import-environment.patch
   validpgpkeys:
     - 19DFDF3A579BD509DBB572D8BE793007AD22DF7E
     - 48836EB124A1EAAE695EDFEA229CA0A00A17D258
   sha256sums:
-    - 22de8fbedc8cb584d0b7d388b53c5ff288f9ad419562602f2f1abcad34c821c5
+    - 05f96b6cc27bebfe7776bb62d5375266a310f40996295d0887c3a0c451d21d67
     - SKIP
     - 339637044f205dbd2c730953166b4ed7acca54efd2b50a1aa2fcfed8d63c3feb
 pkgname:
   - name: lxqt-wayland-session
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
