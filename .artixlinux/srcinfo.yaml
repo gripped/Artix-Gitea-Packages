@@ -1,9 +1,9 @@
 ---
-version: 4.0.2-1
+version: 4.1.1-1
 pkgbase:
   name: python-configupdater
   pkgdesc: Parser like ConfigParser but for updating configuration files
-  pkgver: 4.0.2
+  pkgver: 4.1.1
   pkgrel: 1
   url: https://github.com/pyscaffold/configupdater
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/pyscaffold/configupdater.git#tag=v4.0.2
+    - git+https://github.com/pyscaffold/configupdater.git#tag=v4.1.1
   sha512sums:
-    - 6d382979a960076de8a3941ed5c9991d7c220dd5d792bb573e0958ba2ffdfcd1df09717979682df38d23071ea7d891aa4a1bd01ef7f8ecd6346af9dfb28d0100
+    - d1b10cf97677dd668c8fcd51eba71db5d6b4ab1ee7964f5f854735d1f9d817484f4934ba19a6e027d1c69a551bfce96b0a0a19a299cde5836fd3169536f095ef
 pkgname:
   - name: python-configupdater
 # generated with artixpkg 0.40.0-1-any
