@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=falkon
-pkgver=26.08.2
-pkgrel=6.1
+pkgver=26.08.3
+pkgrel=2
 pkgdesc='Cross-platform QtWebEngine browser'
 arch=(x86_64)
 url='https://www.falkon.org/'
@@ -23,12 +23,7 @@ makedepends=(extra-cmake-modules
              purpose
              pyside6
              qt6-tools
-             shiboken6-generator
-             # Don't use qt6-webengine from gremlins.
-             # Packages built against q-w-e in stable work with the q-w-e in testing, 
-             # but not vice versa 
-             'qt6-webengine<6.13'
-)
+             shiboken6-generator)
 optdepends=('kcoreaddons: KDE integration'
             'kcrash: KDE integration'
             'kio: KDE integration'
@@ -39,7 +34,7 @@ optdepends=('kcoreaddons: KDE integration'
 groups=(kde-applications
         kde-network)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('f59ed0b6fb12aee5a3ed310e489104b815e35a19278bd7e80f9c5ef444616f07'
+sha256sums=('ab2deb9c7dcbfde2769ab67565378a260ffa081df5fbd5e5f7d39d500c251c11'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
