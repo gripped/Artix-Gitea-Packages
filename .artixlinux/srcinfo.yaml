@@ -1,10 +1,10 @@
 ---
-version: 26.08.2-2
+version: 26.08.3-1
 pkgbase:
   name: akonadi-calendar
   pkgdesc: Akonadi calendar integration
-  pkgver: 26.08.2
-  pkgrel: 2
+  pkgver: 26.08.3
+  pkgrel: 1
   url: https://kontact.kde.org
   arch:
     - x86_64
@@ -49,14 +49,14 @@ pkgbase:
   optdepends:
     - 'pyside6: Python bindings'
   source:
-    - https://download.kde.org/stable/release-service/26.08.2/src/akonadi-calendar-26.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.2/src/akonadi-calendar-26.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.3/src/akonadi-calendar-26.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.3/src/akonadi-calendar-26.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - efe0c094908a4febe939ff5c96fb191cf251d3821314108b5ebcfdd488c0346b
+    - c4d639b37e0fadf51d2ab97612bbfa1899fdb4810a24c0c9ebd9d5b35ec92d0c
     - SKIP
 pkgname:
   - name: akonadi-calendar
