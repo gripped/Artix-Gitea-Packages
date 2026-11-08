@@ -4,7 +4,7 @@
 # Contributor: Kuba Serafinowski <zizzfizzix(at)gmail(dot)com>
 
 pkgname=kdeconnect
-pkgver=26.08.2
+pkgver=26.08.3
 pkgrel=2
 pkgdesc='Adds communication between KDE and your smartphone'
 url='https://kdeconnect.kde.org/'
@@ -55,13 +55,14 @@ optdepends=('python-nautilus: Nautilus integration'
             'sshfs: remote filesystem browser')
 groups=(kde-applications
         kde-network)
-source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-kde-$pkgver.tar.xz{,.sig})
-sha256sums=('efd9d58deea6857f18d0c77c8bc68192839a83e4d4a518fc829a725459a3dba5'
+source=(
+  https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-kde-$pkgver.tar.xz{,.sig}
+)
+sha256sums=('f554a190cc15039f12af14b1f4ccdb3754a308327623a750bc3f4f59b59239fd'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
               D81C0CB38EB725EF6691C385BB463350D6EF31EF) # Heiko Becker <heiko.becker@kde.org>
-
 
 build() {
   cmake -B build -S $pkgname-kde-$pkgver \
