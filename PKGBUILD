@@ -2,8 +2,8 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=kitinerary
-pkgver=26.08.2
-pkgrel=3
+pkgver=26.08.3
+pkgrel=1
 pkgdesc='Data model and extraction system for travel reservation information'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -26,9 +26,10 @@ depends=(glibc
          qt6-declarative
          zlib
          zxing-cpp)
-makedepends=(extra-cmake-modules)
+makedepends=(extra-cmake-modules
+	'openssl<4')
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('5e1f0aeec768747a8e5e93d2e0759fa220f37191c9ce1ca3ffa15898a98a1f43'
+sha256sums=('ec6361f0ade8f657e9e53494e0c58fb99a4711dbf5665b146894abe5692011c2'
             'SKIP')
 validpgpkeys=(CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7  # Albert Astals Cid <aacid@kde.org>
               F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87  # Christoph Feck <cfeck@kde.org>
