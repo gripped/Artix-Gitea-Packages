@@ -1,9 +1,9 @@
 ---
-version: 26.08.2-1
+version: 26.08.3-1
 pkgbase:
   name: akonadiconsole
   pkgdesc: Akonadi management and debugging console
-  pkgver: 26.08.2
+  pkgver: 26.08.3
   pkgrel: 1
   url: https://kontact.kde.org
   arch:
@@ -44,14 +44,14 @@ pkgbase:
     - qt6-base
     - xapian-core
   source:
-    - https://download.kde.org/stable/release-service/26.08.2/src/akonadiconsole-26.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.2/src/akonadiconsole-26.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.3/src/akonadiconsole-26.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.3/src/akonadiconsole-26.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 2d1fe95758b1878460e91b60bc65267486db308e52199a90f60ef54703210949
+    - 94331e802ebb4dca2583544e17fe506ca8674b74861db5b4b2d718900ea8fc40
     - SKIP
 pkgname:
   - name: akonadiconsole
