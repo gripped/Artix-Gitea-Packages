@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 26.08.3-1
+    version: 26.08.3-2
     packages:
-      - kitinerary-26.08.3-1-x86_64.pkg.tar.zst
+      - kitinerary-26.08.3-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 26.08.2-2

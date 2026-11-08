@@ -3,7 +3,7 @@
 
 pkgname=kitinerary
 pkgver=26.08.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Data model and extraction system for travel reservation information'
 arch=(x86_64)
 url='https://kontact.kde.org'
@@ -26,8 +26,7 @@ depends=(glibc
          qt6-declarative
          zlib
          zxing-cpp)
-makedepends=(extra-cmake-modules
-	'openssl<4')
+makedepends=(extra-cmake-modules)
 source=(https://download.kde.org/stable/release-service/$pkgver/src/$pkgname-$pkgver.tar.xz{,.sig})
 sha256sums=('ec6361f0ade8f657e9e53494e0c58fb99a4711dbf5665b146894abe5692011c2'
             'SKIP')
