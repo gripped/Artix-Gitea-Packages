@@ -1,9 +1,9 @@
 ---
-version: 26.08.2-1
+version: 26.08.3-1
 pkgbase:
   name: kmix
   pkgdesc: KDE volume control program
-  pkgver: 26.08.2
+  pkgver: 26.08.3
   pkgrel: 1
   url: https://apps.kde.org/kmix/
   arch:
@@ -39,14 +39,14 @@ pkgbase:
     - sh
     - solid
   source:
-    - https://download.kde.org/stable/release-service/26.08.2/src/kmix-26.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.2/src/kmix-26.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.3/src/kmix-26.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.3/src/kmix-26.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 25e52a2f513afdec3b6c742bd5a279f227bcfe174555dcb288b6c61e088091a2
+    - 752d49c09ed284a8bb8459e2dfe7d9fe2bea681b172fa7a71609d56013dd6fa8
     - SKIP
 pkgname:
   - name: kmix
