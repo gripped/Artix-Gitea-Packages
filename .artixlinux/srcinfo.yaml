@@ -1,10 +1,10 @@
 ---
-version: 26.08.2-2
+version: 26.08.3-1
 pkgbase:
   name: khelpcenter
   pkgdesc: Application to show KDE Applications documentation
-  pkgver: 26.08.2
-  pkgrel: 2
+  pkgver: 26.08.3
+  pkgrel: 1
   url: https://apps.kde.org/khelpcenter/
   arch:
     - x86_64
@@ -39,14 +39,14 @@ pkgbase:
     - qt6-webengine
     - xapian-core
   source:
-    - https://download.kde.org/stable/release-service/26.08.2/src/khelpcenter-26.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.2/src/khelpcenter-26.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.3/src/khelpcenter-26.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.3/src/khelpcenter-26.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 3be3417b8326ee49a02e83a6187698d777207f97d2ed8973b3375524798eb44c
+    - 8a3119f1ce9b954e2cd9861fab347d584341911c96c313cc63bf069a5ccc384c
     - SKIP
 pkgname:
   - name: khelpcenter
