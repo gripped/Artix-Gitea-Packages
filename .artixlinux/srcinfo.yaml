@@ -1,9 +1,9 @@
 ---
-version: 26.08.2-1
+version: 26.08.3-1
 pkgbase:
   name: skanlite
   pkgdesc: Image Scanning Application
-  pkgver: 26.08.2
+  pkgver: 26.08.3
   pkgrel: 1
   url: https://apps.kde.org/skanlite/
   arch:
@@ -30,14 +30,14 @@ pkgbase:
     - libstdc++
     - qt6-base
   source:
-    - https://download.kde.org/stable/release-service/26.08.2/src/skanlite-26.08.2.tar.xz
-    - https://download.kde.org/stable/release-service/26.08.2/src/skanlite-26.08.2.tar.xz.sig
+    - https://download.kde.org/stable/release-service/26.08.3/src/skanlite-26.08.3.tar.xz
+    - https://download.kde.org/stable/release-service/26.08.3/src/skanlite-26.08.3.tar.xz.sig
   validpgpkeys:
     - CA262C6C83DE4D2FB28A332A3A6A4DB839EAA6D7
     - F23275E4BF10AFC1DF6914A6DBD2CE893E2D1C87
     - D81C0CB38EB725EF6691C385BB463350D6EF31EF
   sha256sums:
-    - 57789835a9bc488e7e8b204e77a636cf5316659229427e357654c85c221df5c2
+    - 0216bdcf517ed5ee9e170cbbb5d43120329499796896f4cfc0740bf7f3508270
     - SKIP
 pkgname:
   - name: skanlite
