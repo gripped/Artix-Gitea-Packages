@@ -12,7 +12,7 @@ pkgbase:
     - i686
     - i486
   license:
-    - GPL2
+    - GPL-2.0-only
   makedepends:
     - bc
     - libelf
@@ -28,6 +28,9 @@ pkgbase:
   source:
     - https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.224.tar.xz
     - https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.15.224.tar.sign
+    - https://raw.githubusercontent.com/torvalds/linux/558bdc45dfb2669e1741384a0c80be9c82fa052c/certs/extract-cert.c
+    - https://raw.githubusercontent.com/torvalds/linux/558bdc45dfb2669e1741384a0c80be9c82fa052c/scripts/sign-file.c
+    - https://raw.githubusercontent.com/torvalds/linux/558bdc45dfb2669e1741384a0c80be9c82fa052c/scripts/ssl-common.h
     - config
     - 0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
     - 0002-PCI-Add-more-NVIDIA-controllers-to-the-MSI-masking-q.patch
@@ -40,6 +43,9 @@ pkgbase:
   sha256sums:
     - 2757f8ad099cf77499ebab0896b5d31a467b74d5bb18c32b62da059d33b30711
     - SKIP
+    - c9d37e5bc407f9673530af3656b9b8e04014404e6bfcd91b5dd6ce2adb16b29d
+    - 38df09deece51decdf5b87c04090d462bcd6adfeb9809e01cc5c1898bc7993d1
+    - 885378f5e4b8008ec0dc62374dd4a34bae8808e3cdd646b3deb53584e1873352
     - dd107ddbf989e77ce68aa12e5fb008d17cc9321ba97a2e79765bd4913599fba2
     - 3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd
     - 2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431

@@ -1,4 +1,5 @@
 # Maintainer: Andreas Baumann <mail@andreasbaumann.cc>
+# Contributor: capezotte <capezotte@artixlinux.org>
 # Contributor: Andreas Radke <andyrtr@archlinux.org>
 
 pkgbase=linux-lts515
@@ -7,7 +8,7 @@ pkgrel=1
 pkgdesc='LTS Linux 5.15.x'
 url="https://www.kernel.org/"
 arch=(x86_64 pentium4 i686 i486)
-license=(GPL2)
+license=(GPL-2.0-only)
 makedepends=(
   bc libelf pahole cpio perl tar xz python gcc
 )
@@ -15,6 +16,10 @@ options=('!strip')
 _srcname=linux-$pkgver
 source=(
   https://cdn.kernel.org/pub/linux/kernel/v${pkgver%%.*}.x/${_srcname}.tar.{xz,sign}
+  # upgrade because ssl4
+  https://raw.githubusercontent.com/torvalds/linux/558bdc45dfb2669e1741384a0c80be9c82fa052c/certs/extract-cert.c
+  https://raw.githubusercontent.com/torvalds/linux/558bdc45dfb2669e1741384a0c80be9c82fa052c/scripts/sign-file.c
+  https://raw.githubusercontent.com/torvalds/linux/558bdc45dfb2669e1741384a0c80be9c82fa052c/scripts/ssl-common.h
   config         # the main kernel config file
   0001-ZEN-Add-sysctl-and-CONFIG-to-disallow-unprivileged-C.patch
   0002-PCI-Add-more-NVIDIA-controllers-to-the-MSI-masking-q.patch
@@ -29,6 +34,9 @@ validpgpkeys=(
 # https://www.kernel.org/pub/linux/kernel/v5.x/sha256sums.asc
 sha256sums=('2757f8ad099cf77499ebab0896b5d31a467b74d5bb18c32b62da059d33b30711'
             'SKIP'
+            'c9d37e5bc407f9673530af3656b9b8e04014404e6bfcd91b5dd6ce2adb16b29d'
+            '38df09deece51decdf5b87c04090d462bcd6adfeb9809e01cc5c1898bc7993d1'
+            '885378f5e4b8008ec0dc62374dd4a34bae8808e3cdd646b3deb53584e1873352'
             'dd107ddbf989e77ce68aa12e5fb008d17cc9321ba97a2e79765bd4913599fba2'
             '3b5cfc9ca9cf778ea2c4b619b933cda26519969df2d764b5a687f63cf59974cd'
             '2af9be5ea71054b709974a8455b65e3ae2de48cd3cf75d2ff7ed4f0ad3c90431'
@@ -52,9 +60,16 @@ prepare() {
   for src in "${source[@]}"; do
     src="${src%%::*}"
     src="${src##*/}"
-    [[ $src = *.patch ]] || continue
-    echo "Applying patch $src..."
-    patch -Np1 < "../$src"
+    case $src in
+      *.patch)
+        echo "Applying patch $src..."
+        patch -Np1 < "../$src"
+        ;;
+      *.[ch])
+        echo "Copying C source file $src..."
+        cp -- "../$src" "scripts/$src"
+        ;;
+    esac
   done
 
   echo "Setting config..."
@@ -226,14 +241,6 @@ if [ "${CARCH}" = "i486" -o  "${CARCH}" = "i686" -o "${CARCH}" = "pentium4" ]; t
   source_pentium4=('config.pentium4')
   source_i686=('config.i686')
   source_i486=('config.i486')
-  # fail if upstream's .config changes
-  for ((i=0; i<${#sha256sums[@]}; i++)); do
-    if [ "${sha256sums[${i}]}" = 'dd107ddbf989e77ce68aa12e5fb008d17cc9321ba97a2e79765bd4913599fba2' ]; then
-      sha256sums_pentium4=('ece1b29799c2b81ecda188492b3d84c797d24c3684b8823b98a1941612f50f7e')
-      sha256sums_i686=('1a5c84d416b83d68e9f282df153ea1f84691fd62448841442da1bed712e26af1')
-      sha256sums_i486=('66349750840ef3762e78d489710c4695c832cb09bb289d80200819c51678940a')
-    fi
-  done
 
   # copy architecture specific config file, not default 'config'
   eval "$(
@@ -257,7 +264,6 @@ if [ "${CARCH}" = "i486" -o  "${CARCH}" = "i686" -o "${CARCH}" = "pentium4" ]; t
 
   # avoid using zstd compression in ultra mode (exhausts virtual memory)
   source+=('no-ultra-zstd.patch')
-  sha256sums+=('3997ce6033fdf950a9960f1db720b38c47b1a2e06ab75fc6712c154f596e7c47')
   # upstream prepare() does already do the *.patch patching
 
   eval "$(
