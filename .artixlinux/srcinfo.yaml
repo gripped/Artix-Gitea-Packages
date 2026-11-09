@@ -37,4 +37,4 @@ pkgbase:
     - 89e36fcc53383bbfa51da820c96d4ae136e060ac55ee53c914888a37e52be06c
 pkgname:
   - name: lib32-clang
-# generated with artixpkg 0.40.0-1.1-any
+# generated with artixpkg 0.40.0-1.5-any
