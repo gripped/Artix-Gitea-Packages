@@ -1,9 +1,9 @@
 ---
-version: 26.35.39758.10-1
+version: 26.40.40196.8-1
 pkgbase:
   name: intel-compute-runtime
   pkgdesc: Intel(R) Graphics Compute Runtime for oneAPI Level Zero and OpenCL(TM) Driver
-  pkgver: 26.35.39758.10
+  pkgver: 26.40.40196.8
   pkgrel: 1
   url: https://github.com/intel/compute-runtime/
   arch:
@@ -12,7 +12,7 @@ pkgbase:
     - MIT
   makedepends:
     - cmake
-    - igsc<1.0.0
+    - igsc<2.0.0
     - level-zero-headers
     - libnl>=3.0.0
     - libnl<4.0.0
@@ -25,7 +25,7 @@ pkgbase:
     - libgcc
     - libstdc++
   optdepends:
-    - 'igsc<1.0.0: for discrete GPU firmware enumeration through Level Zero'
+    - 'igsc<2.0.0: for discrete GPU firmware enumeration through Level Zero'
     - 'libdrm: for cl_intel_va_api_media_sharing OpenCL extension'
     - 'libnl>=3.0.0: for using Fabric related APIs in Level Zero'
     - 'libnl<4.0.0: for using Fabric related APIs in Level Zero'
@@ -34,10 +34,10 @@ pkgbase:
     - level-zero-driver
     - opencl-driver
   source:
-    - https://github.com/intel/compute-runtime/archive/26.35.39758.10/intel-compute-runtime-26.35.39758.10.tar.gz
+    - https://github.com/intel/compute-runtime/archive/26.40.40196.8/intel-compute-runtime-26.40.40196.8.tar.gz
     - 010-intel-compute-runtime-disable-werror.patch
   sha256sums:
-    - c904eb932c82e2a00e9f41dcdf5a560d4869efcc6c22826b733437cf16196e84
+    - 4e543ecef2d2842b42811795120bc3e2f4b8d17f088bb87456104653ab5e274f
     - df9794f17f30ff8d7567a8bc4a953b2aeb0a5ebec393ff552a3a958b186fe304
 pkgname:
   - name: intel-compute-runtime
