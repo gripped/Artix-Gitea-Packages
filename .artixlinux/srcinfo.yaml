@@ -1,9 +1,9 @@
 ---
-version: 0.22.01-1
+version: 0.22.02-1
 pkgbase:
   name: stress-ng
   pkgdesc: Software to stress test a computer system in various selectable ways
-  pkgver: 0.22.01
+  pkgver: 0.22.02
   pkgrel: 1
   url: https://github.com/ColinIanKing/stress-ng
   arch:
@@ -36,9 +36,9 @@ pkgbase:
     - 'linux-zen-headers: include some headers from the ZEN kernel'
     - 'linux-hardened-headers: include some headers from the HARDENED kernel'
   source:
-    - stress-ng-0.22.01.tar.gz::https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.22.01.tar.gz
+    - stress-ng-0.22.02.tar.gz::https://github.com/ColinIanKing/stress-ng/archive/refs/tags/V0.22.02.tar.gz
   b2sums:
-    - 42b39a9a9d85a60eebdb5f2d0aadcb32f190ba9f9bca7d6c4de1cd25e08ce032756eab6fd7d54116b53a8d4878a3cfdbebe0eb2f8da6260b3f41802652cbb0c4
+    - a5f413a05cf0921ee08b9aa6d267f5fa3192f09247b5239bca7cca913da47a6006604385594fbeb073e18fe2f12cc0365d94d2595c90f3dd9252d6a395c9bf4a
 pkgname:
   - name: stress-ng
 # generated with artixpkg 0.40.0-1-any
