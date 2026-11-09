@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2026.3.2.476-2
+    version: 2026.5.2.323-1
     packages:
-      - nsight-systems-2026.3.2.476-2-x86_64.pkg.tar.zst
+      - nsight-systems-2026.5.2.323-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2026.3.2.476-1
