@@ -1,10 +1,10 @@
 ---
-version: 0.5.7-1
+version: 0.5.7-3
 pkgbase:
   name: openrct2
   pkgdesc: Open source re-implementation of Roller Coaster Tycoon 2 (requires full copy of the game)
   pkgver: 0.5.7
-  pkgrel: 1
+  pkgrel: 3
   url: https://openrct2.io
   arch:
     - x86_64
