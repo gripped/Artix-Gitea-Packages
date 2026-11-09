@@ -2,8 +2,8 @@
 # Contributor: Zerial <fernando@zerial.org>
 
 pkgname=unrealircd
-pkgver=6.2.7
-pkgrel=2
+pkgver=6.2.7.1
+pkgrel=1
 pkgdesc="Open Source IRC Server"
 arch=('x86_64')
 url="https://www.unrealircd.org"
@@ -19,7 +19,7 @@ validpgpkeys=('1D2D2B03A0B68ED11D68A24BA7A21B0A108FF4A9'
 source=(https://www.unrealircd.org/unrealircd4/unrealircd-$pkgver.tar.gz{,.asc}
 	unrealircd.tmpfiles
 	unrealircd.sysusers)
-sha256sums=('e075375f469309bf1d54134bc914ec50a4ae3b09da6d2db2c11f9fa88d649370'
+sha256sums=('4e372ba071f3211d34c5a3515af77fc2b275eb692e43e55c423e201b60958c3f'
             'SKIP'
             '91b5e1d623b51ffd4734d73e35cead09be596460c41b9440406f92c9e2b4b9b1'
             'c9a6ee91098f23d050c73f3d079ea5edf05e885bf148a154000d1768f551307b')
