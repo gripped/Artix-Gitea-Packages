@@ -1,9 +1,9 @@
 ---
-version: 3.4.8-1
+version: 3.4.9-1
 pkgbase:
   name: libexttextcat
   pkgdesc: N-Gram-Based Text Categorization library primarily intended for language guessing
-  pkgver: 3.4.8
+  pkgver: 3.4.9
   pkgrel: 1
   url: https://wiki.documentfoundation.org/Libexttextcat
   arch:
@@ -15,11 +15,9 @@ pkgbase:
   provides:
     - libtextcat
   source:
-    - https://dev-www.libreoffice.org/src/libexttextcat-3.4.8.tar.xz
-    - Fix-type-mismatch-between-declaration-and-definition.patch
+    - https://dev-www.libreoffice.org/src/libexttextcat-3.4.9.tar.xz
   sha256sums:
-    - 93eb89fd4fc8f565806354e100e778b3ac9a24e5fc04c24e6a83fb1e9b6c9d59
-    - 35b39e2e84aff6e2856e527c1fdbe08a75fa9266c2495fde7c4409c3464a84df
+    - 71e9a3cc6c4a270efd61d76281664341e1fb0412b591f1939516413a992d1e87
 pkgname:
   - name: libexttextcat
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
