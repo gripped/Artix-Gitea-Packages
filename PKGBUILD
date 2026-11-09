@@ -1,7 +1,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=anubis
-pkgver=1.25.0
+pkgver=1.28.2
 pkgrel=1
 pkgdesc="Reverse proxy to protect against scraper bots"
 url="https://anubis.techaro.lol/"
@@ -9,12 +9,14 @@ arch=(x86_64)
 license=(MIT)
 depends=(glibc)
 makedepends=(
+  binaryen
   brotli
   esbuild
   git
   go
   gzip
   npm
+  rust-wasm
   zstd
 )
 backup=(etc/anubis/default.env)
@@ -26,7 +28,7 @@ options=(
 source=(
   "git+https://github.com/TecharoHQ/anubis?signed#tag=v${pkgver/[a-z]/-&}"
 )
-b2sums=('81cfd31b79cdf54a0aa249cdd28b05ef8df8a73f537d71667ab06d9ae20a74e0d47eb7019304f70d89444fbe9491af2012bf6f36156b1d4001e4cf1324f92e12')
+b2sums=('d50462e5552a2b169353626ebbe2fdfd15f5042f46f3a8b0b257fcbb73ddef19daccfe48c26c1aaf03b9381331b488fc349d34fc0d8b97e2721847fb3fcf702d')
 validpgpkeys=(
   833F64161167B501058C394756375DA2DF02ABFF # Techaro Packages Signatures <gpg+packages@techaro.lol>
 )
@@ -40,14 +42,29 @@ prepare() {
 build() {
   cd anubis
 
-  export CGO_CPPFLAGS="${CPPFLAGS}"
+  local ldflags=(
+    -compressdwarf=false
+    -linkmode=external
+    -X "github.com/TecharoHQ/anubis.Version=$pkgver-arch$pkgrel"
+  ) goflags=(
+    -buildmode=pie
+    -trimpath
+    -mod=readonly
+    -modcacherw
+    "\"-ldflags=${ldflags[*]}\""
+  )
+
   export CGO_CFLAGS="${CFLAGS}"
+  export CGO_CPPFLAGS="${CPPFLAGS}"
   export CGO_CXXFLAGS="${CXXFLAGS}"
   export CGO_LDFLAGS="${LDFLAGS}"
-  export GOFLAGS="-buildmode=pie -trimpath -mod=readonly -modcacherw"
+  export GOFLAGS="${goflags[*]}"
 
-  make assets
-  make prebaked-build
+  # Default rustflags break the wasm build
+  export RUSTFLAGS="-C force-frame-pointers=yes"
+
+  make build
+  go build -o ./var/iplist2rule ./utils/cmd/iplist2rule
 }
 
 package() {
@@ -55,6 +72,7 @@ package() {
 
   install -D var/anubis -t "$pkgdir/usr/bin"
   install -D var/robots2policy "$pkgdir/usr/bin/anubis-robots2policy"
+  install -D var/iplist2rule "$pkgdir/usr/bin/anubis-iplist2rule"
 
   install -Dm644 run/default.env -t "$pkgdir/etc/anubis"
 
