@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 4.0.1-1
+    version: 4.0.2-1
     packages:
-      - gthumb-4.0.1-1-x86_64.pkg.tar.zst
+      - gthumb-4.0.2-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.12.12-1
