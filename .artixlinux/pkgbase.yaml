@@ -29,9 +29,9 @@ repos:
     packages: []
     debug: []
   world:
-    version: 20261106004946-1
+    version: 20261108011013-1
     packages:
-      - v2ray-domain-list-community-20261106004946-1-any.pkg.tar.zst
+      - v2ray-domain-list-community-20261108011013-1-any.pkg.tar.zst
     debug: []
   lib32-goblins:
     version: null
