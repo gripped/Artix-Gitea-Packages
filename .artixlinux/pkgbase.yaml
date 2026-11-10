@@ -1,8 +1,8 @@
 ---
-team: world
+team: galaxy
 actions:
-  addRepo: world
-  removeRepo: galaxy
+  addRepo: galaxy
+  removeRepo: world
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -31,9 +31,8 @@ repos:
       - shader-slang-2026.18.2-2-x86_64.pkg.tar.zst
     debug: []
   world:
-    version: 2026.18.2-2
-    packages:
-      - shader-slang-2026.18.2-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   lib32-goblins:
     version: null
@@ -57,6 +56,7 @@ repos:
       - shader-slang-2026.18.2-2.5-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: null
-    packages: []
+    version: 2026.18.2-2
+    packages:
+      - shader-slang-2026.18.2-2-x86_64.pkg.tar.zst
     debug: []
