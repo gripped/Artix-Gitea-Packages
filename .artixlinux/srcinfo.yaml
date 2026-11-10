@@ -1,9 +1,9 @@
 ---
-version: 3.3.2-1
+version: 3.4.0-1
 pkgbase:
   name: nvtop
   pkgdesc: GPUs process monitoring for AMD, Intel and NVIDIA
-  pkgver: 3.3.2
+  pkgver: 3.4.0
   pkgrel: 1
   url: https://github.com/Syllo/nvtop
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - ncurses
     - libudev
   source:
-    - git+https://github.com/Syllo/nvtop.git#tag=3.3.2
+    - git+https://github.com/Syllo/nvtop.git#tag=3.4.0
   sha512sums:
-    - 048da9d2569f32403559ecf683945aa33a1198f9abfc50a816469f9483aa51da1c0996bbba5310bb1e85f1f6388f36851bd74e570671400ff88416b7550f8795
+    - 420ade60d29177a77b03c6d725099d06a55004597fda30f553826387fcd12789cb76016c6f5d7d77be620e9c6b552bd4a27b8f76cf0a025067bb3183776145a2
 pkgname:
   - name: nvtop
-# generated with artixpkg 0.37.6-1-any
+# generated with artixpkg 0.40.0-1-any
