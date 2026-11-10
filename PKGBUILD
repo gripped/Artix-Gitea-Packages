@@ -5,7 +5,7 @@ _alpm=3.2
 
 pkgbase=dinit
 pkgname=('dinit' 'dinit-base')
-pkgver=0.22.1
+pkgver=0.23.0
 pkgrel=1
 pkgdesc="Service monitoring/init system"
 arch=('x86_64')
@@ -21,7 +21,7 @@ makedepends=(
 source=("git+$url.git#tag=v${pkgver}"
         "git+https://gitea.artixlinux.org/artix/alpm-hooks.git#tag=$_alpm"
         "dinit-init")
-sha256sums=('62935f47d1aa836bc1001191e7c748d4c949732837e6eef7839ac5ea1c02eceb'
+sha256sums=('641d7f119514fc09f846e6131b6a4a154d1d8cb5a65da42b1cc2937db28bdee8'
             '8959015f7fc8075dd5ee0abc53e7dd7e4d65b2feb53d5bb9bcd04535166bf371'
             '312e71de8dcf8eb1055b7ed46012bd6f54546c500434426ecf813536be078502')
 
