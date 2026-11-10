@@ -7,7 +7,7 @@
 
 pkgbase=kitty
 pkgname=(kitty kitty-terminfo kitty-shell-integration)
-pkgver=0.49.1
+pkgver=0.50.0
 pkgrel=1
 pkgdesc="A modern, hackable, featureful, OpenGL-based terminal emulator"
 arch=('x86_64')
@@ -46,7 +46,7 @@ makedepends=(
 )
 options=("!lto")
 source=("https://github.com/kovidgoyal/${pkgbase}/releases/download/v${pkgver}/${pkgbase}-${pkgver}.tar.xz"{,.sig})
-b2sums=('5a3e46276c5295f47438bd9cde9d05a5d9d61a189776390c1b92c23cb8a86c46bdf04df318952ac31f9ec891616db1df60b219894189e4cd0202015ba779cf28'
+b2sums=('291ee2eca3541811ad3adda8b7cca24fd0d46b82446551116613f078e55a8c36a5073dace05dcbd9a7e72f642130cf261ff733dcdeaa0c4852c6194b06712fb2'
         'SKIP')
 validpgpkeys=('3CE1780F78DD88DF45194FD706BC317B515ACE7C') # Kovid Goyal
 
