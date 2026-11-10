@@ -4,17 +4,17 @@
 
 pkgname=shader-slang
 pkgver=2026.18.2
-pkgrel=2.5
+pkgrel=2
 pkgdesc='Making it easier to work with shaders'
 url='https://github.com/shader-slang/slang'
 arch=('x86_64')
 license=('Apache-2.0 WITH LLVM-exception')
-source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz")
-        # "lua::git+https://github.com/lua/lua#commit=3fe7be956f23385aa1950dc31e2f25127ccfc0ea"
-        # "cmark::git+https://github.com/swiftlang/swift-cmark#branch=gfm")
-sha256sums=('78baa79ce7c5d857d6dd2bb9cb1a8da085d8ce424eb1906184d4ba5fdfde0eba')
-            # '265ad53dcb67390ce21acb8165841439ca7bdd1e09a000a6c4e4d38b3a40a598'
-            # 'SKIP')
+source=("$pkgname-$pkgver.tar.gz::$url/archive/refs/tags/v$pkgver.tar.gz"
+        "lua::git+https://github.com/lua/lua#commit=3fe7be956f23385aa1950dc31e2f25127ccfc0ea"
+        "cmark::git+https://github.com/swiftlang/swift-cmark#branch=gfm")
+sha256sums=('78baa79ce7c5d857d6dd2bb9cb1a8da085d8ce424eb1906184d4ba5fdfde0eba'
+            '265ad53dcb67390ce21acb8165841439ca7bdd1e09a000a6c4e4d38b3a40a598'
+            'SKIP')
 makedepends=(cmake fast_float git glm python3 spirv-headers stb unordered_dense vulkan-headers vulkan-icd-loader)
 depends=(glslang libx11 llvm lz4 miniz spirv-tools)
 
