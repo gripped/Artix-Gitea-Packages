@@ -1,9 +1,9 @@
 ---
-version: 10.0.14.sdk114-1
+version: 10.0.14.sdk114-2
 pkgbase:
   name: dotnet-core-10.0
   pkgver: 10.0.14.sdk114
-  pkgrel: 1
+  pkgrel: 2
   url: https://dotnet.microsoft.com
   arch:
     - x86_64
@@ -25,7 +25,7 @@ pkgbase:
     - llvm20
     - lttng-ust2.12
     - nodejs
-    - openssl
+    - openssl-3
     - udev
     - zlib
   optdepends:
@@ -49,7 +49,7 @@ pkgname:
       - krb5
       - libunwind
       - zlib
-      - openssl
+      - openssl-3
     optdepends:
       - 'lttng-ust2.12: CoreCLR tracing'
     provides:
