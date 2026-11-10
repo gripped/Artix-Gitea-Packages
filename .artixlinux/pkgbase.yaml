@@ -1,7 +1,7 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
-  removeRepo: galaxy-goblins
+  addRepo: galaxy
+  removeRepo: galaxy-gremlins
   triggersBuild: false
   triggersRebuild: false
   triggersRepoAdd: true
@@ -49,17 +49,14 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
+    version: null
+    packages: []
+    debug: []
+  galaxy:
     version: 7.2.15.zen1-1
     packages:
       - linux-zen-7.2.15.zen1-1-x86_64.pkg.tar.zst
       - linux-zen-headers-7.2.15.zen1-1-x86_64.pkg.tar.zst
       - linux-zen-docs-7.2.15.zen1-1-x86_64.pkg.tar.zst
-    debug: []
-  galaxy:
-    version: 7.2.14.zen1-1
-    packages:
-      - linux-zen-7.2.14.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-headers-7.2.14.zen1-1-x86_64.pkg.tar.zst
-      - linux-zen-docs-7.2.14.zen1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
