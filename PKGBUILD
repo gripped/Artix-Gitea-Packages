@@ -1,10 +1,9 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Bruno Pagani <archange@archlinux.org>
-# Contributor: Jakub Klinkovský <lahwaacz at archlinux dot org>
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Maintainer: Jakub Klinkovský <lahwaacz at archlinux dot org>
 
 pkgname=adios2
 pkgver=2.12.1
-pkgrel=7
+pkgrel=8
 pkgdesc="The Adaptable Input/Output System version 2"
 arch=(x86_64)
 url="https://adios2.readthedocs.io/en/latest/"
