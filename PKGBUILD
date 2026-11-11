@@ -12,7 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=1e95d1c5f519c3fbde715345ae7beb56a2c79077
 
-pkgver=153.7.0.100rc3
+pkgver=153.7.0.100
 
 pkgrel=1
 _ffbuild=1
@@ -140,11 +140,11 @@ source=(
   "default192x192.png"
   "entrypoint.sh"
 )
-sha256sums=('be8040eec0b85a436e634370ef9b7c3f4ef56f619006128f29f35a3fa6ba695d'
+sha256sums=('dff62dd014e755fa20d57d3cb44cd579791d673a8c6414c201cefdd9ae3e3d43'
             '7f8715ee7de2cf36a156216a9b1c7f26d1653010e65793bb2fce66e12edb6ea0'
             'SKIP'
             '5cda6675c1d51c6b16395a6be861f980968ed884a404d68d465e8fea87009ef5'
-            '6479f3065374bacf330a33964c82d8296a0e36b7aa1bac42fba594ad828c0a46'
+            '287b560ff3eec30a563bf365083cf818b2d257882da6891784610ec6dbec2a40'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
             'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
             'c683b93bcb843da6de51ee49dd163c6eb9889f27988357aba3ca8766abd76f2e')
@@ -293,7 +293,7 @@ END
     cp "browser/components/enterprisepolicies/defaults/policies.json" "$srcdir/policies.json"
     jq 'del(.policies.Extensions.Install)' "$srcdir/policies.json" > "browser/components/enterprisepolicies/defaults/policies.json"
     # temporarily enable nimbus telemetry for profiling
-    sed -i 's#^.*nimbus\.#// \0#' "browser/app/profile/librewolf.cfg"
+    grep -ih '^pref("[^"]*nimbus\.[^"]*enabled' "${_srcdir}/browser/app/profile/"*.js | sed 's/false/true/' > "browser/app/profile/librewolf.cfg"
 
     echo "Building instrumented browser..."
 
@@ -353,7 +353,7 @@ END
 
     # reenable non-profiling policies
     cp "$srcdir/policies.json" "browser/components/enterprisepolicies/defaults/policies.json"
-    # disable nimbus telemetry
+    # re-disable nimbus telemetry
     cp "${_lw_srcdir}/browser/app/profile/librewolf.cfg" "browser/app/profile/librewolf.cfg"
 
   else
