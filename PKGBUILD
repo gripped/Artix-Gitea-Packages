@@ -11,7 +11,7 @@ pkgname=(
   python-opencv-cuda
 )
 pkgver=5.1.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Open Source Computer Vision Library'
 arch=(x86_64)
 license=(Apache-2.0)
