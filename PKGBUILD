@@ -89,7 +89,7 @@ sha256sums=('2853a0ccafc0343ba47a3a848267fd9971c521d594a29c4caa8114bc511f10ab'
             '5d1a53834697beb02ac0555c713b5798f5745b165d9235eb08fc15affe8b11a7')
 
 prepare() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-${pkgver%.1}"
   patch -p1 <../ejabberd.patch
 
   return 0 # just put repos to src-pkg
@@ -105,7 +105,7 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-${pkgver%.1}"
   [ -x configure ] || ./autogen.sh
   ./configure \
     --prefix=/usr \
@@ -130,7 +130,7 @@ build() {
 }
 
 package() {
-  cd "$srcdir/$pkgname-$pkgver"
+  cd "$srcdir/$pkgname-${pkgver%.1}"
   make DESTDIR="$pkgdir" install
 
   sed -i \
