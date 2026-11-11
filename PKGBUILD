@@ -10,7 +10,7 @@
 
 pkgname=nodejs-lts-krypton
 pkgver=24.22.2
-pkgrel=3
+pkgrel=2
 pkgdesc='Evented I/O for V8 javascript ("Active LTS" release: Krypton)'
 arch=(x86_64)
 url=https://nodejs.org/
