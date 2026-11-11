@@ -113,6 +113,9 @@ check() {
   rm test/parallel/test-http2-reset-flood.js
   rm test/parallel/test-tls-ocsp-callback.js
 
+  # Does not work on the Artix container
+  rm test/parallel/test-{http,net}-dns-error.js
+
   make test-only
 }
 
