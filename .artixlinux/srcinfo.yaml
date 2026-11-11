@@ -1,9 +1,9 @@
 ---
-version: 8.0.33.sdk133-1
+version: 8.0.33.sdk133-2
 pkgbase:
   name: dotnet-core-8.0
   pkgver: 8.0.33.sdk133
-  pkgrel: 1
+  pkgrel: 2
   url: https://dotnet.microsoft.com
   arch:
     - x86_64
@@ -25,7 +25,7 @@ pkgbase:
     - llvm20
     - lttng-ust2.12
     - nodejs
-    - openssl
+    - openssl-3
     - udev
     - zlib
   optdepends:
@@ -50,7 +50,7 @@ pkgname:
       - libstdc++
       - libunwind
       - zlib
-      - openssl
+      - openssl-3
     optdepends:
       - 'lttng-ust2.12: CoreCLR tracing'
     provides:
