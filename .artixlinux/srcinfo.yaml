@@ -1,9 +1,9 @@
 ---
-version: 6.6.4-1
+version: 6.8.3-1
 pkgbase:
   name: nemo
   pkgdesc: File manager for Cinnamon (Nautilus fork)
-  pkgver: 6.6.4
+  pkgver: 6.8.3
   pkgrel: 1
   url: https://github.com/linuxmint/nemo
   arch:
@@ -26,12 +26,13 @@ pkgbase:
     - cinnamon-desktop
     - dconf
     - exempi
-    - gcc-libs
+    - libgcc
     - gdk-pixbuf2
     - glib2
     - glibc
+    - gst-plugins-base
+    - gstreamer
     - gtk3
-    - gvfs
     - hicolor-icon-theme
     - json-glib
     - libexif
@@ -52,9 +53,9 @@ pkgbase:
     - 'poppler: search helpers support for PDF files'
     - 'python-xlrd: search helpers support for legacy MS Excel files'
   source:
-    - git+https://github.com/linuxmint/nemo.git#tag=6.6.4
+    - git+https://github.com/linuxmint/nemo.git#tag=6.8.3
   b2sums:
-    - 14ebc3efe1a229180aad7e3d848116622e833263909a467b9810110171e167be8df7eb2999ffc3831671ff4dd90e43e47d4fac9238d554f549fe7d15c9f78457
+    - 65edf8dceb26db6880128565b322170abda7e3ec47d4e652a9027984bb70a79a7f6f0e4f1293605599bf9473b233d2093ed953173a503bbd1de1d32c362298e5
 pkgname:
   - name: nemo
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
