@@ -121,6 +121,9 @@ check() {
   # https://github.com/nodejs/node/issues/63914
   rm test/parallel/test-snapshot-reproducible.js
 
+  # Does not work on the Artix container
+  rm test/parallel/test-{http,net}-dns-error.js
+
   make test-only
 }
 
