@@ -1,9 +1,9 @@
 ---
-version: 3.13.0-1
+version: 3.14.1-1
 pkgbase:
   name: botan
   pkgdesc: Crypto library written in C++
-  pkgver: 3.13.0
+  pkgver: 3.14.1
   pkgrel: 1
   url: https://botan.randombit.net/
   arch:
@@ -25,13 +25,13 @@ pkgbase:
     - 'boost-libs: for the botan executable'
     - 'python: for using botan2.py'
   source:
-    - https://botan.randombit.net/releases/Botan-3.13.0.tar.xz
-    - https://botan.randombit.net/releases/Botan-3.13.0.tar.xz.asc
+    - https://botan.randombit.net/releases/Botan-3.14.1.tar.xz
+    - https://botan.randombit.net/releases/Botan-3.14.1.tar.xz.asc
   validpgpkeys:
     - 621DAF6411E1851C4CF9A2E16211EBF1EFBADFBC
   sha256sums:
-    - 12f5a8358890bbee82edfe9d2e7769b0a610b6dd0e0698aea13d20a675d84620
+    - 5b85cba0f014d344eb8e9919aee0a3bdc31e16acb05816410025be9bee1e0930
     - SKIP
 pkgname:
   - name: botan
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
