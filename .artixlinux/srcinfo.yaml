@@ -1,10 +1,10 @@
 ---
-version: 6.8.0-3
+version: 6.8.0-3.1
 pkgbase:
   name: cinnamon
   pkgdesc: Desktop environment which provides advanced innovative features and a traditional user experience
   pkgver: 6.8.0
-  pkgrel: 3
+  pkgrel: 3.1
   url: https://github.com/linuxmint/cinnamon
   arch:
     - x86_64
