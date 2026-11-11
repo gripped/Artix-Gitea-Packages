@@ -16,3 +16,13 @@ src/
 *.service
 *.timer
 *.socket
+boost-asio-gnutls/
+json/
+libdatachannel/
+libjuice/
+libsimulator/
+libsrtp/
+libtorrent-rasterbar/
+plog/
+try_signal/
+usrsctp/
