@@ -1,9 +1,9 @@
 ---
-version: 6.6.4-1
+version: 6.8.0-1
 pkgbase:
   name: cinnamon-session
   pkgdesc: The Cinnamon session handler
-  pkgver: 6.6.4
+  pkgver: 6.8.0
   pkgrel: 1
   url: https://github.com/linuxmint/cinnamon-session
   arch:
@@ -29,18 +29,18 @@ pkgbase:
     - libice
     - libsm
     - libx11
-    - libxau
     - libxcomposite
     - python
     - python-gobject
     - python-setproctitle
+    - libelogind
     - xapp
   optdepends:
     - 'cinnamon-translations: i18n'
   source:
-    - git+https://github.com/linuxmint/cinnamon-session.git#tag=6.6.4
+    - git+https://github.com/linuxmint/cinnamon-session.git#tag=6.8.0
   b2sums:
-    - 3312c5d67c29096e1d9e4af9a226c0b75d39cf863107292882c8e7dcf2d35b434203f3127ef682f2fc95d22ccd3437a12cbd693e534875803abc4ca755fd55ef
+    - 1c17db0de89aece9a0cf316bb3c15415cbab9db9570529b95a4927b4c3fb494013f95fd44b46ee9916c4a6c741e8d249a0adcf95af05eb4ee7010029ca4f4892
 pkgname:
   - name: cinnamon-session
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
