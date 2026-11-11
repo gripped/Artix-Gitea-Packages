@@ -6,7 +6,7 @@
 
 pkgname=ffmpeg
 pkgver=9.0.2
-pkgrel=3
+pkgrel=5
 epoch=2
 pkgdesc='Complete solution to record, convert and stream audio and video'
 arch=(x86_64)
@@ -223,7 +223,7 @@ package() {
     libharfbuzz.so
 #   libjxl.so
     libopenmpt.so
-    libplacebo.so
+#    libplacebo.so
     librav1e.so
     librsvg-2.so
     librubberband.so
