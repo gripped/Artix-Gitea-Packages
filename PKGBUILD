@@ -14,7 +14,7 @@ _l10n_commit=1e95d1c5f519c3fbde715345ae7beb56a2c79077
 
 pkgver=153.7.0.100
 
-pkgrel=1
+pkgrel=2
 _ffbuild=1
 _srcver="${pkgver%.*}"
 _ffsrcver="${_srcver/.0.0/.0}"
@@ -138,7 +138,6 @@ source=(
   "security-state--intermediates-${pkgver}.zip::${_src_repo}/releases/download/${pkgver}/security-state--intermediates.zip"
   "${__pkgname}.desktop"
   "default192x192.png"
-  "entrypoint.sh"
 )
 sha256sums=('dff62dd014e755fa20d57d3cb44cd579791d673a8c6414c201cefdd9ae3e3d43'
             '7f8715ee7de2cf36a156216a9b1c7f26d1653010e65793bb2fce66e12edb6ea0'
@@ -146,8 +145,7 @@ sha256sums=('dff62dd014e755fa20d57d3cb44cd579791d673a8c6414c201cefdd9ae3e3d43'
             '5cda6675c1d51c6b16395a6be861f980968ed884a404d68d465e8fea87009ef5'
             '287b560ff3eec30a563bf365083cf818b2d257882da6891784610ec6dbec2a40'
             '68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4'
-            'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b'
-            'c683b93bcb843da6de51ee49dd163c6eb9889f27988357aba3ca8766abd76f2e')
+            'b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b')
 
 validpgpkeys=(
   # Mozilla Software Releases <release@mozilla.com>
@@ -412,7 +410,7 @@ END
 
   # Replace duplicate binary with wrapper
   # https://bugzilla.mozilla.org/show_bug.cgi?id=1553771
-  install -Dvm755 "${srcdir}/entrypoint.sh" "${pkgdir}/usr/lib/${__pkgname}/${__pkgname}"
+  install -Dvm755 "${srcdir}/${_src_dir}/assets/entrypoint.sh" "${pkgdir}/usr/lib/${__pkgname}/${__pkgname}"
 
   # https://bugzilla.mozilla.org/show_bug.cgi?id=658850
   ln -srfv "${pkgdir}/usr/lib/${__pkgname}/${__pkgname}" "${pkgdir}/usr/bin/${__pkgname}"

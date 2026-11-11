@@ -1,10 +1,10 @@
 ---
-version: 1:153.7.0.100-1
+version: 1:153.7.0.100-2
 pkgbase:
   name: konform-browser
   pkgdesc: Firefox ESR fork with increased security, privacy, and customizability
   pkgver: 153.7.0.100
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://konform-browser.codeberg.page
   arch:
@@ -106,7 +106,6 @@ pkgbase:
     - security-state--intermediates-153.7.0.100.zip::https://codeberg.org/konform-browser/source/releases/download/153.7.0.100/security-state--intermediates.zip
     - konform.desktop
     - default192x192.png
-    - entrypoint.sh
   validpgpkeys:
     - 14F26682D0916CDD81E37B6D61B7B526D98F0353
   sha256sums:
@@ -117,7 +116,6 @@ pkgbase:
     - 287b560ff3eec30a563bf365083cf818b2d257882da6891784610ec6dbec2a40
     - 68fb47f178d5c3412162d3bb8f74abbfcf1977e0ea4dc69647580ff6f8a93fb4
     - b86ddfc0cec482f7900f296857cdd0f1b736ff5037e0a86712b258ae0092924b
-    - c683b93bcb843da6de51ee49dd163c6eb9889f27988357aba3ca8766abd76f2e
 pkgname:
   - name: konform-browser
 # generated with artixpkg 0.40.0-1-any
