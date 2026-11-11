@@ -1,9 +1,9 @@
 ---
-version: 5.4.1-1
+version: 6.0.0-1
 pkgbase:
   name: gitea-runner
   pkgdesc: Official runner for Gitea
-  pkgver: 5.4.1
+  pkgver: 6.0.0
   pkgrel: 1
   url: https://gitea.com/gitea/runner
   install: gitea-runner.install
@@ -25,11 +25,11 @@ pkgbase:
   backup:
     - etc/gitea-runner/config.yaml
   source:
-    - gitea-runner-5.4.1.tar.gz::https://gitea.com/gitea/runner/archive/v5.4.1.tar.gz
+    - gitea-runner-6.0.0.tar.gz::https://gitea.com/gitea/runner/archive/v6.0.0.tar.gz
     - gitea-runner.sysusers
     - gitea-runner.tmpfiles
   sha256sums:
-    - b5e06ae28b27ec304e4ce2da9c2e51a5be9e1adc9083a1aa1355c8cd2de27bce
+    - 563cdba528c213114c8d00f3b34d049f10049f288ef9f4e0e6d1b6946343d498
     - d7d0ec932b3efd2c5a98b2084d6f13baa74ec458ed244aaa48053cee6628c89d
     - 476e49e002f64e996c1d7d5b0c46a1f850c52273e6f974496eaa71b4446d7f37
 pkgname:
