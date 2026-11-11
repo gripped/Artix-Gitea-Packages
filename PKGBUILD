@@ -3,20 +3,26 @@
 # Contributor: Alexandre Filgueira <alexfilgueira@antergos.com>
 
 pkgname=cinnamon-menus
-pkgver=6.6.0
+pkgver=6.8.0
 pkgrel=1
-pkgdesc="Cinnamon menu specifications"
+pkgdesc='Cinnamon menu specifications'
 arch=(x86_64)
-url="https://github.com/linuxmint/cinnamon-menus"
-license=(GPL LGPL)
-depends=(glib2)
-makedepends=(git gobject-introspection meson)
-source=(git+${url}#tag=$pkgver)
-sha256sums=('480e800d776aaf128032d9abae6aa33069c6b53833d0bd9d235dacbf91033376')
-b2sums=('70a3045b6603e628768b77ea80dac6d12ce4d564f406a6fb73e73e89718f7c751ec8edd2abb368b431eced837de27e2f2e8ef0287dab6f8eda06ede87624abfc')
+url='https://github.com/linuxmint/cinnamon-menus'
+license=(LGPL-2.0-or-later)
+depends=(
+  glib2
+  glibc
+)
+makedepends=(
+  git
+  gobject-introspection
+  meson
+)
+source=("git+https://github.com/linuxmint/cinnamon-menus.git#tag=$pkgver")
+b2sums=('c22da87a3f63ba3c96be3687f2b1a0a5fb3c31ddc06f86be4bff547778fb008f847daea060b9e688492b31e3ae8cc07a1c044199444d19b93e28c70d619624aa')
 
 build() {
-  artix-meson ${pkgname} build
+  artix-meson $pkgname build
   meson compile -C build
 }
 
