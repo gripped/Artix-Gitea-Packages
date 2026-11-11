@@ -1,10 +1,10 @@
 ---
-version: 128.1-2
+version: 140.2-1
 pkgbase:
   name: cjs
   pkgdesc: JavaScript bindings for Cinnamon
-  pkgver: 128.1
-  pkgrel: 2
+  pkgver: 140.2
+  pkgrel: 1
   url: https://github.com/linuxmint/cjs
   arch:
     - x86_64
@@ -16,6 +16,7 @@ pkgbase:
   makedepends:
     - dbus
     - git
+    - glib2-devel
     - gobject-introspection
     - meson
   depends:
@@ -23,7 +24,7 @@ pkgbase:
     - glib2
     - glibc
     - gobject-introspection-runtime
-    - js128
+    - js140
     - libffi
     - libgcc
     - libgirepository
@@ -31,9 +32,9 @@ pkgbase:
     - libx11
     - readline
   source:
-    - git+https://github.com/linuxmint/cjs.git#tag=128.1
+    - git+https://github.com/linuxmint/cjs.git#tag=140.2
   b2sums:
-    - 61c3d5ed155f8cae751525ca0e05d0029196ddd9ff61ec5b110ef85f6c8d572f7ef1ba87f5e670883e9d51240039c98ca3d720e5b57ba66adf91e57e59d0c266
+    - 29a2975dcc87fafb81cd650d65c2f5e49214055dd0e97b0a9900d4ec68b0eb5464e22c7e26355312b84a69fad179a4a68d78b408cdcab488590f3ff50c805c3d
 pkgname:
   - name: cjs
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
