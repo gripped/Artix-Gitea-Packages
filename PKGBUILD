@@ -3,12 +3,18 @@
 
 pkgname=procinfo-ng
 pkgver=2.0.304
-pkgrel=9
+pkgrel=10
 pkgdesc="Displays useful information from /proc"
 arch=('x86_64')
 url="http://procinfo-ng.sourceforge.net/"
 license=('GPL-2.0-only' 'LGPL-2.1-only')
-depends=('glibc' 'gcc-libs' 'ncurses' 'perl')
+depends=(
+  'glibc'
+  'libgcc'
+  'libstdc++'
+  'ncurses'
+  'perl'
+)
 provides=('procinfo')
 conflicts=('procinfo')
 replaces=('procinfo')
