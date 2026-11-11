@@ -10,7 +10,7 @@
 
 pkgname=nodejs
 pkgver=26.13.0
-pkgrel=1
+pkgrel=3
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
 url='https://nodejs.org/'
@@ -59,6 +59,9 @@ prepare() {
   # Restore child-process inheritance after process.env is reassigned.
   # https://github.com/nodejs/node/pull/66883
   git cherry-pick -n 5a89d815457403c0f707f87af4f9cb47507a1cc4
+
+  # Adjust test expectations for OpenSSL 4.x.
+  git cherry-pick -n c61ba86ed02dc0c80c51b9333d3fe9e3e4e2f887
 }
 
 _set_flags() {
