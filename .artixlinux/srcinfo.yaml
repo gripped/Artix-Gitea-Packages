@@ -1,10 +1,10 @@
 ---
-version: 2.16.2-5
+version: 2.16.2-6
 pkgbase:
   name: hexchat
   pkgdesc: A popular and easy to use graphical IRC (chat) client
   pkgver: 2.16.2
-  pkgrel: 5
+  pkgrel: 6
   url: https://hexchat.github.io/
   arch:
     - x86_64
@@ -27,7 +27,7 @@ pkgbase:
     - glib2
     - gtk2
     - libcanberra
-    - openssl
+    - openssl-3
     - pango
     - pciutils
   optdepends:
@@ -42,4 +42,4 @@ pkgbase:
     - 5d9e457ba10ac756b96561db098bbb2bc7e63de4e1552be570f1b5175eddf313
 pkgname:
   - name: hexchat
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any

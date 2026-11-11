@@ -12,6 +12,7 @@
 
 pkg/
 src/
+hexchat/
 
 *.service
 *.timer

@@ -1,17 +1,18 @@
-# Maintainer: Christian Hesse <mail@eworm.de>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Contributor: capezotte <capezotte@artixlinux.org>
+# Contributor: Christian Hesse <mail@eworm.de>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Maxime Gauduin <alucryd@archlinux.org>
 # Contributor: TingPing <tingping@tingping.se>
 
 pkgname=hexchat
 pkgver=2.16.2
-pkgrel=5
+pkgrel=6
 pkgdesc='A popular and easy to use graphical IRC (chat) client'
 arch=('x86_64')
 url='https://hexchat.github.io/'
 license=('GPL-2.0-or-later')
 depends=('dbus-glib' 'desktop-file-utils' 'gdk-pixbuf2' 'glib2' 'gtk2'
-         'libcanberra' 'openssl' 'pango' 'pciutils')
+         'libcanberra' 'openssl-3' 'pango' 'pciutils')
 makedepends=('git' 'glib2-devel' 'intltool' 'iso-codes' 'lua' 'meson' 'perl' 'python-cffi' 'python-setuptools')
 optdepends=('enchant: Spell check'
             'iso-codes: Display language names instead of codes'
@@ -22,10 +23,13 @@ source=("git+https://github.com/hexchat/hexchat.git#tag=v${pkgver}")
 sha256sums=('5d9e457ba10ac756b96561db098bbb2bc7e63de4e1552be570f1b5175eddf313')
 
 prepare() {
-  sed -e "s/ArchLinux/ArtixLinux/g" -i "${srcdir}/hexchat/plugins/sysinfo/unix/parse.c"
+  cd hexchat
+  sed -i 's/ArchLinux/ArtixLinux/g' plugins/sysinfo/unix/parse.c
+  sed -i 's/gnu89/gnu99/g' meson.build
 }
 
 build() {
+  PKG_CONFIG_PATH=/usr/lib/openssl-3/pkgconfig \
   artix-meson hexchat build \
     -Dwith-lua='lua' \
     -Dtext-frontend='true'
