@@ -23,7 +23,7 @@ backup=('etc/ejabberd/ejabberd.yml'
 	'etc/ejabberd/ejabberdctl.cfg'
 	'etc/logrotate.d/ejabberd')
 options=(emptydirs)
-source=("$pkgname-$pkgver.tar.gz::https://github.com/processone/ejabberd/archive/$pkgver.tar.gz"
+source=("$pkgname-$pkgver.tar.gz::https://github.com/processone/ejabberd/archive/${pkgver%.1}.tar.gz"
 	"ejabberd.patch"
 	"erlang-idna::git+https://github.com/benoitc/erlang-idna"
 	"jiffy::git+https://github.com/davisp/jiffy"

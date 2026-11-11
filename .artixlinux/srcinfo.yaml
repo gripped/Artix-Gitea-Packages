@@ -56,7 +56,7 @@ pkgbase:
     - etc/ejabberd/ejabberdctl.cfg
     - etc/logrotate.d/ejabberd
   source:
-    - ejabberd-26.09.1.tar.gz::https://github.com/processone/ejabberd/archive/26.09.1.tar.gz
+    - ejabberd-26.09.1.tar.gz::https://github.com/processone/ejabberd/archive/26.09.tar.gz
     - ejabberd.patch
     - erlang-idna::git+https://github.com/benoitc/erlang-idna
     - jiffy::git+https://github.com/davisp/jiffy
