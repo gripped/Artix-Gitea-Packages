@@ -1,9 +1,9 @@
 ---
-version: 0.7.1-1
+version: 0.9.0-1
 pkgbase:
   name: python-cross-web
   pkgdesc: A universal web framework adapter for Python that lets you write code once and use it across multiple web frameworks
-  pkgver: 0.7.1
+  pkgver: 0.9.0
   pkgrel: 1
   url: https://github.com/usecross/cross-web
   arch:
@@ -30,9 +30,9 @@ pkgbase:
     - python-aiohttp
     - python-sanic
   source:
-    - python-cross-web-0.7.1.tar.gz::https://github.com/usecross/cross-web/archive/refs/tags/0.7.1.tar.gz
+    - python-cross-web-0.9.0.tar.gz::https://github.com/usecross/cross-web/archive/refs/tags/0.9.0.tar.gz
   sha256sums:
-    - 8937aed3f3d3e1da72b9561e9db400fc80ade7b530961d1dd5c1ab0e6c03ee89
+    - 3af53cd4e5d36cf18e5590d2c14610d5bf44aacad907a76d7539c13798721e8e
 pkgname:
   - name: python-cross-web
 # generated with artixpkg 0.40.0-1-any
