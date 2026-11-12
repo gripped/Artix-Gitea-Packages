@@ -1,0 +1,24 @@
+---
+version: 0.16.5-1
+pkgbase:
+  name: libmad
+  pkgdesc: A high-quality MPEG audio decoder
+  pkgver: 0.16.5
+  pkgrel: 1
+  url: https://codeberg.org/tenacityteam/libmad
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - cmake
+    - git
+  depends:
+    - glibc
+  source:
+    - git+https://codeberg.org/tenacityteam/libmad.git#tag=0.16.5
+  b2sums:
+    - 815f38c2617d436adf4b7644fd2fd9aaffb034678f9991b4712dacc0eb459f4c805318b5875b2be31d9eea4d2c0a67019e58d5fa9160c5d0c904da266d046fa6
+pkgname:
+  - name: libmad
+# generated with artixpkg 0.40.0-1-any
