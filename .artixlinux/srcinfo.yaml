@@ -1,10 +1,10 @@
 ---
-version: 2.5.1-1
+version: 2.5.1-2
 pkgbase:
   name: openimagedenoise
   pkgdesc: Intel(R) Open Image Denoise library
   pkgver: 2.5.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://openimagedenoise.github.io
   arch:
     - x86_64
