@@ -4,8 +4,8 @@
 # Contributor: Kevin Piche <kevin@archlinux.org>
 
 pkgname=squid
-pkgver=7.7
-pkgrel=2
+pkgver=7.8
+pkgrel=1
 pkgdesc='Full-featured Web proxy cache server'
 arch=('x86_64')
 url='http://www.squid-cache.org'
@@ -28,7 +28,7 @@ source=("https://github.com/squid-cache/squid/releases/download/SQUID_${pkgver/.
         'squid.tmpfiles'
         'squid.sysusers'
         'squid-7.7-openssl-4.patch::https://github.com/squid-cache/squid/commit/144a59fec3d7a4bd7f0c3e71934156e1a56ebabc.patch')
-sha256sums=('e3bd613b91b1c498ec2992276063342a85cd6edddd5521294e04f44bc055da9b'
+sha256sums=('52cd716f568faccbd3e237d77fd3518cbfe1548dfa2ebd8871b5a112e8ab0063'
             'SKIP'
             '11fb388f8679fd6461e0de006810ea608a3686fffda16904b0ed71f412be499c'
             '495f54e51f6ec1e4dce87090d76718aea1eb37559c4439d876dd39598163062a'
