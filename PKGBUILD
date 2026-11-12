@@ -4,7 +4,7 @@
 # Contributor: Tomasz Jakub Rup <tomasz.rup@gmail.com>
 
 pkgname=pnpm
-pkgver=12.18.0
+pkgver=12.19.0
 pkgrel=1
 pkgdesc='Fast, disk space efficient package manager'
 arch=(x86_64)
@@ -18,7 +18,7 @@ source=(
   pnpm.sh
   pnpm.fish
 )
-b2sums=('7b1b314abc430290f5e92186acf40b3b4a372812092ddade1a5eb55ad7714a29fb532b7ba6e2257c016dcc14f07c2a5babc2af4caf9cffa2567ffd7ac88298ac'
+b2sums=('f8ad8fd01903809a2c8e263b81d0c7d51f1dbadbdb2d723720ce65eb3580ec019465e746bdc77e445088bacea181351fdfdf33a89b52b72e160b090143af228f'
         'f0b7eb8016921175423dc33b7bf2f47a0f79d64fa5870630ed6b423576b3ea16d5021d153f125592e36d3b179d2a6105388dcb741a0503fb7d93c50a795262e8'
         '40bf9fbad001022f2930ae4fdd9946eb3230954a011d1e7bcf86ca7efb839c001204cd342a380c9b965a9f6800d6c1fa4fdbcd116a1d9a251ea6cd1ce7c988b3')
 validpgpkeys=(7B74D1299568B586BA9962B5649E4D4AF74E7DEC) # Zoltan Kochan <z@kochan.io>
