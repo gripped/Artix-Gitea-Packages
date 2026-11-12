@@ -1,10 +1,10 @@
 ---
-version: 5.0.3-2
+version: 5.0.4-1
 pkgbase:
   name: python-pytest-codspeed
   pkgdesc: Pytest plugin to create CodSpeed benchmarks
-  pkgver: 5.0.3
-  pkgrel: 2
+  pkgver: 5.0.4
+  pkgrel: 1
   url: https://github.com/CodSpeedHQ/pytest-codspeed
   arch:
     - any
@@ -27,9 +27,9 @@ pkgbase:
     - 'python-pytest-benchmark: pytest compatibility mode'
     - 'python-pytest-xdist: parallel test execution'
   source:
-    - git+https://github.com/CodSpeedHQ/pytest-codspeed.git#tag=v5.0.3
+    - git+https://github.com/CodSpeedHQ/pytest-codspeed.git#tag=v5.0.4
   b2sums:
-    - 35ac7c15e962996c314ec01e753011458c80d399c93df7737aec0820d2c49582df4787bee50e203c97f3b2691325c818d70a767aa43b0f524cbe532329678638
+    - 8706e441006b80dccfc0f45084f42b8e31805150b997f34fce91900802f53444474aa73a701ab3c0fc2482ff09153ab5d5edbb438ed3ce4776888588eca519f1
 pkgname:
   - name: python-pytest-codspeed
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
