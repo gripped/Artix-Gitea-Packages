@@ -1,9 +1,9 @@
 ---
-version: 20.1.0-1
+version: 20.2.0-1
 pkgbase:
   name: ruby-cucumber-cucumber-expressions
   pkgdesc: Cucumber Expressions - a simpler alternative to Regular Expressions
-  pkgver: 20.1.0
+  pkgver: 20.2.0
   pkgrel: 1
   url: https://github.com/cucumber/cucumber-expressions/tree/main/ruby
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/cucumber/cucumber-expressions.git#tag=v20.1.0
+    - git+https://github.com/cucumber/cucumber-expressions.git#tag=v20.2.0
   sha256sums:
-    - 69a7e88fa6f607b17c7af01762fff10be08339e56fcbbcb3cec933aceb44cc51
+    - d4367a52c8c9f39db8e92b862237d9cfc9d26ac123fe4a68c5d9a487e0d3d8e3
 pkgname:
   - name: ruby-cucumber-cucumber-expressions
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
