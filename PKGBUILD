@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-connection_pool
-pkgver=3.0.0
+pkgver=3.0.2
 pkgrel=1
 pkgdesc='Generic connection pool for Ruby'
 arch=(any)
@@ -21,14 +21,10 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=("git+https://github.com/mperham/connection_pool.git#tag=v$pkgver")
-sha256sums=('219bcea6c2a96b1d2a47b77acad33ce4acf7e7b74b81b9887c63e3bece1222fe')
+sha256sums=('36c44f2bff9ed4251e1cda1b5efbc214a5de5d6c2235f887d98942b5f51b3780')
 
 prepare() {
   cd connection_pool
-
-  # Include the required fork.rb file in the installed gem.
-  # https://github.com/mperham/connection_pool/commit/0dae4dd21acfd5bfbae15c25c7e6031a0bde3fca
-  git diff 0dae4dd21acfd5bfbae15c25c7e6031a0bde3fca^ 0dae4dd21acfd5bfbae15c25c7e6031a0bde3fca -- connection_pool.gemspec | git apply
 
   # Avoid loading formatter, benchmark, and optional coverage tools for tests.
   sed '/standard/d' -i Rakefile
