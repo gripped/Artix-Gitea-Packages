@@ -1,10 +1,10 @@
 ---
-version: 3.5.3-3
+version: 3.5.4-1
 pkgbase:
   name: openexr
   pkgdesc: A high dynamic-range image file format library
-  pkgver: 3.5.3
-  pkgrel: 3
+  pkgver: 3.5.4
+  pkgrel: 1
   url: https://www.openexr.com/
   arch:
     - x86_64
@@ -25,9 +25,9 @@ pkgbase:
   optdepends:
     - 'python: for python bindings'
   source:
-    - git+https://github.com/openexr/openexr#tag=v3.5.3
+    - git+https://github.com/openexr/openexr#tag=v3.5.4
   sha256sums:
-    - 3d1b14e7cedc2cf50aec4209cfdc38ce9323050c1315b0c82e257fdfb0b0bd94
+    - 0a6938feea7fc2dc28972a570b80dc75afd61f26a03a4d6a2a926b69107447fc
 pkgname:
   - name: openexr
 # generated with artixpkg 0.40.0-1-any
