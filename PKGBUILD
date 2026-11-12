@@ -3,12 +3,12 @@
 # Contributor: Pierre Schmitz <pierre@archlinux.de>
 
 pkgname=cmake
-pkgver=4.4.5
+pkgver=4.5.0
 pkgrel=1
 pkgdesc='A cross-platform open-source make system'
 arch=('x86_64')
 url="https://www.cmake.org/"
-license=('BSD-3-Clause')
+license=('BSD-3-Clause' 'MIT')
 depends=(cppdap
          curl
          expat
@@ -34,7 +34,7 @@ optdepends=(
 )
 source=(git+https://gitlab.kitware.com/cmake/cmake.git#tag=v$pkgver?signed
         artix-cmake.patch)
-sha512sums=('e31e3f216675dad9d949a568fb9331208f2828c4c4297f018de039696f3cbf7aa85dd8e871a2935696d1fe5f290dc24c9e33d1fc827aba56dc35ea152cb0ac5d'
+sha512sums=('8a7ce4e934dabbd1ac4d80a0877b224f9c6a582a06de770af46fedba3acf42aef7f8e05a1271dc83060544db1d00233b2165f54b4340c453b1eb0b63c9198abc'
             '56be8c1a7cd7b6520b50f38a5299032b58772758c33faf89dc772ed8cdccdce7e816a797511092867bfbf1ade1486373780c05ff1eb0d42ef3320c73aac8c9a7')
 validpgpkeys=(CBA23971357C2E6590D9EFD3EC8FEF3A7BFB4EDA) # Brad King <brad.king@kitware.com>
 
@@ -60,4 +60,5 @@ package() {
   rm -r "$pkgdir"/usr/share/doc/cmake/html/_sources
   emacs -batch -f batch-byte-compile "${pkgdir}"/usr/share/emacs/site-lisp/cmake-mode.el
   install -Dm644 LICENSE.rst -t "${pkgdir}"/usr/share/licenses/$pkgname
+  install -Dm644 Utilities/cmrapidhash/LICENSE "${pkgdir}"/usr/share/licenses/$pkgname/LICENSE.rapidhash
 }
