@@ -1,10 +1,10 @@
 ---
-version: 0.5.0-2
+version: 0.5.1-1
 pkgbase:
   name: python-beniget
   pkgdesc: A static analyzer for Python code
-  pkgver: 0.5.0
-  pkgrel: 2
+  pkgver: 0.5.1
+  pkgrel: 1
   url: https://github.com/serge-sans-paille/beniget
   arch:
     - any
@@ -20,9 +20,9 @@ pkgbase:
     - python
     - python-gast
   source:
-    - git+https://github.com/serge-sans-paille/beniget#tag=0.5.0
+    - git+https://github.com/serge-sans-paille/beniget#tag=0.5.1
   sha256sums:
-    - b83e50dba3214e7cc1bf24cf104be9ebf5f1bbd3b56f4c2d0b519c511307b834
+    - 8c0200654d3b5e31d1ffbe58c1c174ee5d484506bcff032761fa33c832319a60
 pkgname:
   - name: python-beniget
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
