@@ -1,15 +1,16 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Frederik Schwan <freswa at archlinux dot org>
+# Contributor: Robin Candau <antiz@archlinux.org>
+# Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Sébastien "Seblu" Luttringer
 
 pkgname=runc
-pkgver=1.5.2
+pkgver=1.5.3
 pkgrel=1
 pkgdesc='CLI tool for managing OCI compliant containers'
 arch=(x86_64)
 url='https://runc.io/'
-license=(Apache)
+license=('Apache-2.0')
 provides=('oci-runtime')
 depends=(
   libpathrs
@@ -31,7 +32,7 @@ validpgpkeys=(
   "C9C370B246B09F6DBCFC744C34401015D1D2D386"
   "C2428CD75720FACDCF76B6EA17DE5ECB75A1100E"
 )
-sha256sums=('46eba094e45fc37d96a1b1dc150971fe8d076d6e23bae09dd35443141bed31a1'
+sha256sums=('b46692550bfd6a6d69e15068d153446dfd401810809eecb767481fba90561b59'
             'SKIP')
 
 prepare() {
