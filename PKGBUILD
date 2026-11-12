@@ -4,7 +4,7 @@
 
 pkgbase=z3
 pkgname=(z3 python-z3-solver z3-java)
-pkgver=4.16.0
+pkgver=5.3.3
 pkgrel=1
 pkgdesc='High-performance theorem prover'
 url='https://github.com/Z3Prover/z3'
@@ -28,9 +28,9 @@ source=(
   git+https://github.com/Z3Prover/z3.git#tag=z3-$pkgver
   z3-python-do-not-rebuild.patch
 )
-sha512sums=('bc193bdbf449c42e701ed0e28d2c17dc4bc889c838b3f94f7795aca445d342c6c44e5907bbff7a3a4c78cff25ffe6d182295041a498cb4db410e1617d7d2344e'
+sha512sums=('91d84f5eac7bc8e431e6d479401f2eddb86ba8ccd02af6a8a96395b0d27a13a721982e11dc8010a1aef29980a2fb0c2f19bed551a81c32d59ad8b379ca9f5273'
             'da5dec288c60eb38d92756e2c3a3bc7f507f980f4beed0187c2da5b4c719134908168d9fd6ebac4a96076af362904e784b62a21b3baa49c36228bfe9ef617270')
-b2sums=('b47b0188a4cd3c4fcaf1cbb57027f21a5112715c9e96aa8409f06109ae6648380015207a6670c4abec5c95fc33289bb956ff40d4ffc8322ec05a24a30854e707'
+b2sums=('9b4ddb0ffab007d54b2ba9efddac1f0d0a9f6e5dfa2aba9593a42337e1a4132259046f63d91f5929dffea3c5a2ddf4b0cf6bc49476b4a3251e83152e6d12f965'
         'b86f473fdd084f2324de9af52ab8c12e33c9e3c05d984108593b75e2e2af4256d3040082757619c8aca9125afc81e9eda9aa594142ff6f25829ed8ac2c6a35b8')
 
 prepare() {
@@ -130,6 +130,13 @@ package_python-z3-solver() {
   conflicts=(python-z3)
 
   mv python/* "$pkgdir"
+
+  # Support consumers expecting wheel library layout
+  local _site_packages
+  _site_packages=$(python -c 'import sysconfig; print(sysconfig.get_path("purelib"))')
+  install -dm755 "${pkgdir}${_site_packages}/z3/lib"
+  ln -s /usr/lib/libz3.so "${pkgdir}${_site_packages}/z3/lib/libz3.so"
+
   install -Dm644 z3/LICENSE.txt -t "$pkgdir"/usr/share/licenses/$pkgname
 }
 
