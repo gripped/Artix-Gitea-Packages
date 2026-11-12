@@ -1,10 +1,10 @@
 ---
-version: 0.37.0-3
+version: 0.37.0-4
 pkgbase:
   name: python-referencing
   pkgdesc: An implementation-agnostic implementation of JSON reference resolution
   pkgver: 0.37.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://referencing.readthedocs.io
   arch:
     - any
@@ -12,7 +12,6 @@ pkgbase:
     - MIT
   checkdepends:
     - python-pytest
-    - python-pytest-subtests
     - python-jsonschema
   makedepends:
     - git
@@ -35,4 +34,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-referencing
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
