@@ -1,10 +1,10 @@
 ---
-version: 1:2025.2.7-2
+version: 1:2026.1.4-1
 pkgbase:
   name: python-pyopencl
   pkgdesc: A complete, object-oriented language binding of OpenCL to Python
-  pkgver: 2025.2.7
-  pkgrel: 2
+  pkgver: 2026.1.4
+  pkgrel: 1
   epoch: 1
   url: https://documen.tician.de/pyopencl/
   arch:
@@ -19,7 +19,6 @@ pkgbase:
     - opencl-mesa
     - opencl-nvidia
     - python-pytest
-    - python-six
     - rocm-opencl-runtime
   makedepends:
     - ctags
@@ -28,7 +27,6 @@ pkgbase:
     - ocl-icd
     - opencl-headers
     - pybind11
-    - python-appdirs
     - python-build
     - python-installer
     - python-mako
@@ -37,25 +35,25 @@ pkgbase:
     - python-pytools
     - python-scikit-build-core
   source:
-    - git+https://github.com/inducer/pyopencl.git?signed#tag=v2025.2.7
+    - git+https://github.com/inducer/pyopencl.git?signed#tag=v2026.1.4
     - git+https://github.com/inducer/compyte
   validpgpkeys:
     - 900A958D9A0ACA58B1468F2471AA298BCA171145
   sha256sums:
-    - 43b3cdd3d5c141cecf2f5dd62f05ab3b3703f3c57f501bb9e5f44ae11f51599d
+    - 165a4ca9d853a833658880f2649d7db84e11f40f70c7cadc147256049b80d548
     - SKIP
 pkgname:
   - name: python-pyopencl
     depends:
-      - gcc-libs
+      - libgcc
+      - libstdc++
       - glibc
       - ocl-icd
       - python
-      - python-appdirs
       - python-mako
       - python-numpy
       - python-platformdirs
       - python-pytools
       - python-setuptools
   - name: pyopencl-headers
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
