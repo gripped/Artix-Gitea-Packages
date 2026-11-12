@@ -1,10 +1,10 @@
 ---
-version: 1.0.2-10
+version: 1.0.2-11
 pkgbase:
   name: python-pytest-vcr
   pkgdesc: Py.test plugin for managing VCR.py cassettes
   pkgver: 1.0.2
-  pkgrel: 10
+  pkgrel: 11
   url: https://github.com/ktosiek/pytest-vcr
   arch:
     - any
@@ -14,14 +14,19 @@ pkgbase:
     - python-coverage
     - python-pytest
   makedepends:
+    - python-build
+    - python-installer
     - python-setuptools
+    - python-wheel
   depends:
     - python-pytest
     - python-vcrpy
   source:
     - pytest-vcr-1.0.2.tar.gz::https://github.com/ktosiek/pytest-vcr/archive/1.0.2.tar.gz
+    - print-vcr-mode-values.patch
   sha512sums:
     - 29dceb51092d73f2190b89e82e88b59506591a35cfe4f141bb877c05420d67a8ab2f21f63c2630972c35697d01b242891917d1be19b14fdfa810c1799f8542c2
+    - dc80636e034a832c2cf97815cae731d591d03c2aba087c83fc795b4cbf7d9387e8e7c10a899a710312dbdd57b270543cb74dac36cf4a7b3479913b0e0ff4ec0a
 pkgname:
   - name: python-pytest-vcr
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
