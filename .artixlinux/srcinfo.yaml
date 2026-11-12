@@ -1,10 +1,10 @@
 ---
-version: 4.4.0-1
+version: 4.4.0-2
 pkgbase:
   name: python-bitstring
   pkgdesc: A Python module to help you manage your bits
   pkgver: 4.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/scott-griffiths/bitstring
   arch:
     - any
@@ -22,10 +22,11 @@ pkgbase:
   depends:
     - python
     - python-bitarray
+    - python-tibs
   source:
     - git+https://github.com/scott-griffiths/bitstring.git#tag=4.4.0
   b2sums:
     - 18971e0c67bda9bf83c6a244c864c696f48057c07b26de097979ac5658477cfc95ab1c3578f597a100640afa15abe323120db9a6cf6543f9dc47d17e6bbd31f5
 pkgname:
   - name: python-bitstring
-# generated with artixpkg 0.38.2-1-any
+# generated with artixpkg 0.40.0-1-any
