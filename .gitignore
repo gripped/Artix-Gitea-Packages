@@ -16,3 +16,7 @@ src/
 *.service
 *.timer
 *.socket
+buildah-containers-common/
+container-libs/
+podman-containers-common/
+skopeo-containers-common/
