@@ -1,9 +1,9 @@
 ---
-version: 9.3.2-1
+version: 9.4.2-1
 pkgbase:
   name: python-vcrpy
   pkgdesc: Automatically mock your HTTP interactions to simplify and speed up testing
-  pkgver: 9.3.2
+  pkgver: 9.4.2
   pkgrel: 1
   url: https://github.com/kevin1024/vcrpy
   arch:
@@ -31,9 +31,9 @@ pkgbase:
     - python-pyyaml
     - python-wrapt
   source:
-    - git+https://github.com/kevin1024/vcrpy.git#tag=v9.3.2
+    - git+https://github.com/kevin1024/vcrpy.git#tag=v9.4.2
   sha512sums:
-    - 46a5148932cf75d4b32febf03591d0ce9ac87253e7f63e855c46705ffef570d23673ee2979fcbbf8d40d08b1118aeb24a43864e3c0d0adfe92f01b231b2705f1
+    - f9fdc0f8b8a018470b0ab68b6d82327ad9723e94107904cc7b87290eef219434d2f02ac016ead96310404d0961bc5a916f18799e5268113cf15b7c7dc39e86b9
 pkgname:
   - name: python-vcrpy
 # generated with artixpkg 0.40.0-1-any
