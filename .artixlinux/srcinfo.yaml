@@ -1,10 +1,10 @@
 ---
-version: 1:0.42.0-1
+version: 1:0.42.0-2
 pkgbase:
   name: mpv
   pkgdesc: a free, open source, and cross-platform media player
   pkgver: 0.42.0
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://mpv.io/
   arch:
@@ -21,6 +21,7 @@ pkgbase:
     - vulkan-headers
   depends:
     - alsa-lib
+    - curl
     - desktop-file-utils
     - ffmpeg
     - glibc
@@ -81,6 +82,7 @@ pkgname:
   - name: mpv
     depends:
       - alsa-lib
+      - curl
       - desktop-file-utils
       - ffmpeg
       - glibc
