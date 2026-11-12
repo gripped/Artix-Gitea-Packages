@@ -1,9 +1,9 @@
 ---
-version: 3.1.0-1
+version: 3.3.1-1
 pkgbase:
   name: python-openai
   pkgdesc: Python client library for the OpenAI API
-  pkgver: 3.1.0
+  pkgver: 3.3.1
   pkgrel: 1
   url: https://github.com/openai/openai-python
   arch:
@@ -24,25 +24,21 @@ pkgbase:
     - python-pytest-xdist
     - python-rich
     - python-botocore
-    - python-jsonschema
   makedepends:
     - git
     - python-build
-    - python-hatch-fancy-pypi-readme
     - python-hatchling
     - python-installer
     - python-wheel
   depends:
     - python
     - python-anyio
-    - python-distro
     - python-h2
     - python-httpx2
     - python-jiter
     - python-pydantic
     - python-pydantic-core
     - python-sniffio
-    - python-tqdm
     - python-typing_extensions
   optdepends:
     - 'python-aiohttp: Use aiohttp as HTTP backend'
@@ -52,9 +48,9 @@ pkgbase:
     - 'python-websockets: Realtime support'
     - 'python-botocore: AWS Bedrock OpenAI-compatible API support'
   source:
-    - git+https://github.com/openai/openai-python.git#tag=v3.1.0
+    - git+https://github.com/openai/openai-python.git#tag=v3.3.1
   b2sums:
-    - 2d93b8b50e2e6bb8b0794a4513908c7feef99e588f91c6e8187c15227502918f557cfb8bfb616a3a0b25ba9019d3fc92f614d176bd7b4c33b273731ed9310a6b
+    - 6700bfe1673e119e2bbc118930a3f077dbbea460389805584deed208a3e022df44adb780c60c514de39b734c931fa72b717a341d8b35f767416f8e1b74d4feb4
 pkgname:
   - name: python-openai
 # generated with artixpkg 0.40.0-1-any

@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=3.1.0
+pkgver=3.3.1
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -14,20 +14,17 @@ license=('Apache-2.0' 'BSD-3-Clause')
 depends=(
   'python'
   'python-anyio'
-  'python-distro'
   'python-h2'
   'python-httpx2'
   'python-jiter'
   'python-pydantic'
   'python-pydantic-core'
   'python-sniffio'
-  'python-tqdm'
   'python-typing_extensions'
 )
 makedepends=(
   'git'
   'python-build'
-  'python-hatch-fancy-pypi-readme'
   'python-hatchling'
   'python-installer'
   'python-wheel'
@@ -45,7 +42,6 @@ checkdepends=(
   'python-pytest-xdist'
   'python-rich'
   'python-botocore'
-  'python-jsonschema'
 )
 optdepends=(
   'python-aiohttp: Use aiohttp as HTTP backend'
@@ -58,7 +54,14 @@ optdepends=(
 source=(
   "git+${url}.git#tag=v${pkgver}"
 )
-b2sums=('2d93b8b50e2e6bb8b0794a4513908c7feef99e588f91c6e8187c15227502918f557cfb8bfb616a3a0b25ba9019d3fc92f614d176bd7b4c33b273731ed9310a6b')
+b2sums=('6700bfe1673e119e2bbc118930a3f077dbbea460389805584deed208a3e022df44adb780c60c514de39b734c931fa72b717a341d8b35f767416f8e1b74d4feb4')
+
+prepare() {
+  cd "${_name}"
+  # Run Steady with the packaged Node.js; upstream's launcher requires exactly 22.22.3.
+  sed -i 's|node scripts/utils/node-tooling.cjs steady|npm exec --package=@stdy/cli@0.22.1 -- steady|' \
+    scripts/run-steady
+}
 
 build() {
   cd "${_name}"
