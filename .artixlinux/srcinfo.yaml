@@ -1,11 +1,11 @@
 ---
-version: 24.22.2-3
+version: 24.22.3-1
 pkgbase:
   name: nodejs-lts-krypton
   pkgdesc:
     Evented I/O for V8 javascript ("Active LTS" release: Krypton)
-  pkgver: 24.22.2
-  pkgrel: 3
+  pkgver: 24.22.3
+  pkgrel: 1
   url: https://nodejs.org/
   arch:
     - x86_64
@@ -32,12 +32,12 @@ pkgbase:
   optdepends:
     - 'npm: nodejs package manager'
   provides:
-    - nodejs=24.22.2
+    - nodejs=24.22.3
     - nodejs-lts
   conflicts:
     - nodejs
   source:
-    - git+https://github.com/nodejs/node.git#tag=v24.22.2?signed
+    - git+https://github.com/nodejs/node.git#tag=v24.22.3?signed
   validpgpkeys:
     - 8FCCA13FEF1D0C2E91008E09770F7A9A5AE15600
     - 890C08DB8579162FEE0DF9DB8BEAB4DFCF555EF4
@@ -48,7 +48,7 @@ pkgbase:
     - 108F52B48DB57BB0CC439B2997B01419BD92F80A
     - DD792F5973C6DE52C432CBDAC77ABFA00DDBF2B7
   b2sums:
-    - 81979e2b35c62153b446625cb651ad21b259edc648d8f2bdd396b5e8643c8be635fe0bb4c0d9e1b0708682341b6f50a3c11eb1ec9471739d762be0ab5e57a1ee
+    - fbbbf9db63aa3e1f239e1be2c734e773c662bcee9951a3ac69d199dd0459f29952334dda9332e7d0a74d91f1c91c6e66c490e5f556efeb64ad61ff5704f3f6b9
 pkgname:
   - name: nodejs-lts-krypton
 # generated with artixpkg 0.40.0-1-any
