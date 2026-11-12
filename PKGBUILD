@@ -8,8 +8,8 @@ pkgname=(
   dbus
   dbus-docs
 )
-pkgver=1.16.2
-pkgrel=2
+pkgver=1.16.4
+pkgrel=1
 pkgdesc="Freedesktop.org message bus system"
 url="https://www.freedesktop.org/wiki/Software/dbus/"
 arch=(x86_64)
@@ -40,7 +40,7 @@ source=(
   0001-Arch-Linux-tweaks.patch
   0001-add-elogind-build-support.patch
 )
-b2sums=('669cd4203fbac908db3a20c5b51355d9e84b68c9cc94f8de52e35544a636c6d5d1df8ee2bbdfd6dead53a6bd9865db547aa4af0e913bac697b138c698840d3ce'
+b2sums=('16ede293841e85770e8aaca54ac0066b25d0e3bcd18652b302ac3cf13cb7038efca0543ab4021f11c4e2501c0d9a913563eefdb7cbb49b6289fc3c4c56ad25cd'
         'fbbc5f312864d2c0e61cead42f578cf650ee8a103e9f6e21658d7406e00a9dfb2c70bc4db647f51eb959df1dad7e94ba52af078325c6a18dcd9d0d500fe15fac'
         '8f0c130708f99c5afc2e7722c777334304075017249a98c1e6a309433b87a15ebb80151e3d0c019a150aea8ac20ab40b8d540bfe22036108e7e90f412d9739f9')
 validpgpkeys=(
