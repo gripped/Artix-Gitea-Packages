@@ -6,8 +6,8 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=openssh
-pkgver=10.6p1
-pkgrel=3
+pkgver=10.6p2
+pkgrel=1
 pkgdesc="SSH protocol implementation for remote login, command execution and file transfer"
 arch=(x86_64)
 url='https://www.openssh.com/portable.html'
@@ -44,19 +44,22 @@ backup=(
   etc/ssh/sshd_config
 )
 source=(
-  https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/$pkgname-$pkgver.tar.gz{,.asc}
+  # Use cdn.openbsd.org rather than ftp.openbsd.org for now: the TLS stack at
+  # ftp.openbsd.org rejects the ClientHello sent by OpenSSL 4 with default
+  # settings (decode_error, alert 50).
+  https://cdn.openbsd.org/pub/OpenBSD/OpenSSH/portable/$pkgname-$pkgver.tar.gz{,.asc}
   99-artixlinux.conf
   $pkgname.tmpfiles
   sshd.pam
   LICENSE
 )
-sha256sums=('a9dc9565dffe8640f64d863cd29a32bc4a3dbdec0566a7fc44c5d6ee767d5f39'
+sha256sums=('9ae44872090cf2f06b3cf9ff147e7f16f309671340763ed2f99248398ae29d5b'
             'SKIP'
             '907a6b8012214218d2bc505fded0fde6cbf7aa863cce630048e1c9b4c9189e48'
             '96735b6bde1339e6f456c4184b66c2dd2f59675335f6f401beed9195995a8a9b'
             '633e24cbfcb045ba777d3e06d5f85dfaa06d44f4727d38c7fb2187c57498221d'
             '7056c04df17a4e0f0bac9f787f347c9cd892cee6323d1c89528090afd0b934a3')
-b2sums=('9ccb92fde6319f00373f38d27c9fbd6802c7b94bdf881bacecbace1676ef9909213f70be99184c5f9cdda06c9192196acb56503c5965d4d50ef1c701b029d06d'
+b2sums=('be4ecff2d1b72c7836a7e324b4eb68edcd0bfb4d83b8969fed97ba437c3c72df97c44db0ed9d323677b4bec4681ebcc06935824ce399faa217148bb4b518d739'
         'SKIP'
         '3d195606c6ca9d254ccecad974f1e729e338c160861ba52d9e2d0f07b297618f11b93049085df960a4d06106d54d90b9a92521efa5a9a08ea7f52d0512942e68'
         '5d8e61300ab9771b240f06e62a1191d9b316dd474dd43aafd596e008c8e73b92748deef110059f1bd7fae6844b30c87d005f15666297fed29aa6e95955c7fcaa'
