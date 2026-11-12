@@ -1,35 +1,66 @@
 ---
-version: 2.0.2-1
+version: 2.0.2-2
 pkgbase:
   name: lagrange
   pkgdesc: Beautiful Gemini Client
   pkgver: 2.0.2
-  pkgrel: 1
-  url: https://github.com/skyjake/lagrange
+  pkgrel: 2
+  url: https://git.skyjake.fi/skyjake/lagrange
+  install: lagrange.install
   arch:
     - x86_64
+    - i686
+    - aarch64
+    - armv7h
   license:
-    - BSD-2-Clause
+    - MIT
   makedepends:
     - cmake
-    - zip
-  depends:
     - fribidi
     - harfbuzz
+    - mpg123
+    - ncurses
+    - sdl3
+    - zip
+  depends:
     - hicolor-icon-theme
     - libunistring
-    - mpg123
     - openssl
-    - pcre
-    - sdl2
+    - pcre2
     - zlib
   optdepends:
-    - 'libjxl: JPEG XL image decoding'
     - 'libwebp: Webp decode support'
+    - 'libjxl: JPEG XL image decoding'
   source:
-    - https://github.com/skyjake/lagrange/releases/download/v2.0.2/lagrange-2.0.2.tar.gz
+    - https://git.skyjake.fi/skyjake/lagrange/releases/download/v2.0.2/lagrange-2.0.2.tar.gz
   sha256sums:
     - 7994b41daa6000dfe479a8f5328c36010dba53c873f2399274a029763a77a7a7
 pkgname:
   - name: lagrange
+    depends:
+      - hicolor-icon-theme
+      - libunistring
+      - openssl
+      - pcre2
+      - zlib
+      - freetype2
+      - fribidi
+      - harfbuzz
+      - libx11
+      - sdl3
+      - mpg123
+      - lagrange-common
+  - name: lagrange-common
+    arch:
+      - any
+    depends: []
+  - name: clagrange
+    depends:
+      - hicolor-icon-theme
+      - libunistring
+      - openssl
+      - pcre2
+      - zlib
+      - ncurses
+      - lagrange-common
 # generated with artixpkg 0.40.0-1-any
