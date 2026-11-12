@@ -1,10 +1,10 @@
 ---
-version: 0.1.8-5
+version: 0.1.9-1
 pkgbase:
   name: libodfgen
   pkgdesc: Library for generating documents in Open Document Format
-  pkgver: 0.1.8
-  pkgrel: 5
+  pkgver: 0.1.9
+  pkgrel: 1
   url: https://sourceforge.net/p/libwpd/wiki/libodfgen/
   arch:
     - x86_64
@@ -15,20 +15,20 @@ pkgbase:
     - libetonyek
     - doxygen
   depends:
-    - zlib
     - librevenge
     - libxml2
-    - gcc-libs
+    - libgcc
+    - libstdc++
     - glibc
   source:
-    - https://sourceforge.net/projects/libwpd/files/libodfgen/libodfgen-0.1.8/libodfgen-0.1.8.tar.xz
+    - https://sourceforge.net/projects/libwpd/files/libodfgen/libodfgen-0.1.9/libodfgen-0.1.9.tar.xz
     - includes.patch
   sha1sums:
-    - 9b36d313e64c6ce1026485d521fbdeff7f47594c
+    - ad3922d0dd537abc09bad5f15a641b39313d0f8f
     - 6c6646bc40bf7ee8d88f8eb5d5ba42c4d492f86b
   sha256sums:
-    - 55200027fd46623b9bdddd38d275e7452d1b0ff8aeddcad6f9ae6dc25f610625
+    - b68ec10c23b8ac7abed8dfeb181b8592714c1e5bd33997ced0ee8bd6c4612bc5
     - 35a989309d0a7a480e238703f7f6dcabc5251bda6894c9884d9eb6f3ea7ed8e0
 pkgname:
   - name: libodfgen
-# generated with artixpkg 0.36.5-1-any
+# generated with artixpkg 0.40.0-1-any
