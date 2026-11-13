@@ -53,8 +53,8 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 1.28.1-4
+    version: 1.28.2-1
     packages:
-      - mate-system-monitor-1.28.1-4-x86_64.pkg.tar.zst
+      - mate-system-monitor-1.28.2-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
