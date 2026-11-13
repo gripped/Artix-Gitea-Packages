@@ -2,11 +2,11 @@
 team: world
 actions:
   addRepo: world-gremlins
-  removeRepo: world-goblins
-  triggersBuild: false
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 10.0-2
+    version: 10.1-1
     packages:
-      - rocblas-10.0-2-x86_64.pkg.tar.zst
+      - rocblas-10.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.2.4-3

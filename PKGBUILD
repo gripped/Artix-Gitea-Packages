@@ -4,8 +4,8 @@
 # Contributor: Lubosz Sarnecki <lubosz@gmail.com>
 
 pkgname=rocblas
-pkgver=10.0
-pkgrel=2
+pkgver=10.1
+pkgrel=1
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
@@ -46,7 +46,7 @@ optdepends=(
 )
 _git='https://github.com/ROCm/rocm-libraries'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('628dc9a5c43ecb70414da7abb591a0996d215d2bd62d0bc587fe808508731035')
+sha256sums=('2f75fdc285a80f0e7dfaf807a15288961427c8867141fd39c4dbef0ee6fff802')
 
 build() {
   # Compile source code for supported GPU archs in parallel
