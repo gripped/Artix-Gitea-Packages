@@ -1,10 +1,10 @@
 ---
-version: 1:8.1.3p2-1
+version: 1:8.1.3p2-2
 pkgbase:
   name: jellyfin-ffmpeg
   pkgdesc: Jellyfin fork of ffmpeg
   pkgver: 8.1.3p2
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://github.com/jellyfin/jellyfin-ffmpeg
   arch:
