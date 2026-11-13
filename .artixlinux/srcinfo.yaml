@@ -1,0 +1,23 @@
+---
+version: 0.11.0-1
+pkgbase:
+  name: shellcheck-bin
+  pkgdesc: Shell script analysis tool (binary release)
+  pkgver: 0.11.0
+  pkgrel: 1
+  url: https://shellcheck.net
+  arch:
+    - x86_64
+  license:
+    - AGPL3
+  provides:
+    - shellcheck
+  conflicts:
+    - shellcheck
+  source_x86_64:
+    - https://github.com/koalaman/shellcheck/releases/download/v0.11.0/shellcheck-v0.11.0.linux.x86_64.tar.xz
+  sha512sums_x86_64:
+    - 25df28923d7d89cfdb9fa8aeef762a887f2bd4ebfbcd43ae71068c60e9458d66250b0f8d6fd66b4bc03723e6cdd47983c547e3ab4f3ea2cbc4bc4028842cc7b9
+pkgname:
+  - name: shellcheck-bin
+# generated with artixpkg 0.40.0-1-any
