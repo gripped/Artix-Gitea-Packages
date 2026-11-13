@@ -1,9 +1,9 @@
 ---
-version: 3.0.0-1
+version: 3.0.1-1
 pkgbase:
   name: ruby-qed
   pkgdesc: Quality Ensured Documentation
-  pkgver: 3.0.0
+  pkgver: 3.0.1
   pkgrel: 1
   url: https://github.com/rubyworks/qed
   arch:
@@ -23,9 +23,9 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/rubyworks/qed.git#tag=v3.0.0
+    - git+https://github.com/rubyworks/qed.git#tag=3.0.1
   sha256sums:
-    - 2ed2c4f3e6ec7565c8bba6ca6e83c0fc8ee27801cbc9c49fabb7ad6e457dac8a
+    - ecf32c11960acf13ffaba0c5797e56a72403c5698ee7ff965d2f9b3d3944b649
 pkgname:
   - name: ruby-qed
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
