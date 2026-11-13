@@ -3,7 +3,7 @@
 # Contributor: Markus Näther <naetherm@informatik.uni-freiburg.de>
 
 pkgname=rocprim
-pkgver=10.0
+pkgver=10.1
 pkgrel=1
 pkgdesc='Header-only library providing HIP parallel primitives'
 arch=('any')
@@ -13,7 +13,7 @@ depends=('rocm-core' 'hip-runtime-amd')
 makedepends=('cmake' 'rocm-cmake' 'rocm-toolchain' 'rocm-llvm')
 _git='https://github.com/ROCm/rocm-libraries'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('f4e864b5147f1d50d94117529dd056d0ce3ea2c747bd91a1606ac67bad87223e')
+sha256sums=('feea175561e6c251837e506af93d4567f4793dd2b083ab302bf8edfb295e41bf')
 
 build() {
   # -fcf-protection is not supported by HIP, see
