@@ -6,7 +6,7 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rocminfo
-pkgver=10.0
+pkgver=10.1
 pkgrel=1
 pkgdesc='ROCm Application for Reporting System Info '
 arch=('x86_64')
@@ -22,7 +22,7 @@ depends=(
 )
 makedepends=('cmake' 'rocm-cmake')
 source=("$pkgname-$pkgver.tar.gz::$url/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('c06c4582145b8453f44cdfe9ba1aa48b3d22f9ad73ea5c07ccfb458a70c63586')
+sha256sums=('057f8fcb4fc82d520f266014d6bfb53fb6d5e9413d9e4d71466026696d2c32d1')
 
 build() {
   # ROCRTST_BLD_TYPE=Release fixes a build error regarding _FORTIFY_SOURCE=2
