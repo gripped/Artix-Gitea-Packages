@@ -1,10 +1,10 @@
 ---
-version: 0.23.95-1
+version: 0.23.95-3
 pkgbase:
   name: zbar
   pkgdesc: Application and library for reading bar codes from various sources
   pkgver: 0.23.95
-  pkgrel: 1
+  pkgrel: 3
   url: https://github.com/mchehab/zbar
   arch:
     - x86_64
@@ -23,7 +23,6 @@ pkgbase:
   depends:
     - dbus
     - graphicsmagick
-    - imagemagick
     - libxv
     - v4l-utils
   optdepends:
@@ -50,4 +49,4 @@ pkgbase:
     - f4d7ecd1f497a8baaef6537d13dbf8257a711d997710ea9e975dda44a835b94e0cd5239042049014dba985663e39e81a762027c7790c9fae498df78ae70d658e
 pkgname:
   - name: zbar
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.0-1.7-any
