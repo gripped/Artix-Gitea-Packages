@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -26,8 +26,9 @@ repos:
       - rocm-core-10.0-1-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 10.1-1
+    packages:
+      - rocm-core-10.1-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.2.4-1
