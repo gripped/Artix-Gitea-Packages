@@ -1,0 +1,45 @@
+---
+version: 1.16.4-1
+pkgbase:
+  name: lib32-dbus
+  pkgdesc: Freedesktop.org message bus system - 32-bit
+  pkgver: 1.16.4
+  pkgrel: 1
+  url: https://www.freedesktop.org/wiki/Software/dbus/
+  arch:
+    - x86_64
+  license:
+    - AFL-2.1 OR GPL-2.0-or-later
+  makedepends:
+    - git
+    - lib32-glib2
+    - meson
+    - python
+    - elogind
+  depends:
+    - dbus
+    - lib32-glibc
+    - lib32-elogind
+  source:
+    - git+https://gitlab.freedesktop.org/dbus/dbus.git?signed#tag=dbus-1.16.4
+    - 0001-Arch-Linux-tweaks-lib32.patch
+  validpgpkeys:
+    - DA98F25C0871C49A59EAFF2C4DE8FF2A63C7CC90
+  b2sums:
+    - 16ede293841e85770e8aaca54ac0066b25d0e3bcd18652b302ac3cf13cb7038efca0543ab4021f11c4e2501c0d9a913563eefdb7cbb49b6289fc3c4c56ad25cd
+    - 12f90a951a1f6b23c7bd4b257d3b848c6be9f812344be02fd7113ee977b2eded1434fad920f8f05fe4f9e277e4dd58f38b5ff61dfc36a629d556534a437b6859
+pkgname:
+  - name: lib32-dbus
+    depends:
+      - dbus
+      - lib32-glibc
+      - lib32-elogind
+      - libelogind.so
+    provides:
+      - lib32-libdbus
+      - libdbus-1.so
+    conflicts:
+      - lib32-libdbus
+    replaces:
+      - lib32-libdbus
+# generated with artixpkg 0.40.0-1.6-any
