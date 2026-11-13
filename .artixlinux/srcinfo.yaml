@@ -1,16 +1,17 @@
 ---
-version: 1.4g-4
+version: 1.4g-5
 pkgbase:
   name: autossh
   pkgdesc: Automatically restart SSH sessions and tunnels
   pkgver: 1.4g
-  pkgrel: 4
+  pkgrel: 5
   url: https://www.harding.motd.ca/autossh/
   arch:
     - x86_64
   license:
-    - custom
+    - LicenseRef-autossh
   depends:
+    - glibc
     - libnsl
     - openssh
   source:
@@ -21,4 +22,4 @@ pkgbase:
     - cdbdf804eb6e6480cc2be8a9b170f77f6c58e4ae2a741871cd29308ff10a1d391759bed2576b5f072aa878f9c4ae5ef7e6f9c8f38560b3ebbe4591a7220582f7
 pkgname:
   - name: autossh
-# generated with artixpkg 0.36.4-1-any
+# generated with artixpkg 0.40.0-1-any
