@@ -3,7 +3,7 @@
 # Contributor: judd <jvinet@zeroflux.org>
 
 pkgname=flex
-pkgver=2.6.10
+pkgver=2.6.11
 pkgrel=1
 pkgdesc="A tool for generating text-scanning programs"
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('glibc' 'm4' 'sh')
 makedepends=('help2man')
 checkdepends=('git')
 source=("https://github.com/westes/flex/releases/download/v$pkgver/flex-$pkgver.tar.gz"{,.sig})
-sha256sums=('a20ac08f4b88f7250818cac2b9609cbea29c47d79e42b79c188c23f2236f8145'
+sha256sums=('188e9c96b8fc032b2a0bdd24d4f0b692480c1854511c2fcc3034946f14fdf49a'
             'SKIP')
 validpgpkeys=('56D664C70CC2364CF5164914B7DFE8BB6C241FED'  # Flex Releases
               '56C67868E93390AA1039AD1CE4B29C8D64885307') # Will Estes
