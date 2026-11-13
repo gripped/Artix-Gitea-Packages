@@ -6,7 +6,7 @@
 
 pkgname=nushell
 pkgver=0.117.0
-pkgrel=2
+pkgrel=2.1
 pkgdesc='A new type of shell'
 arch=(x86_64)
 url='https://www.nushell.sh'
