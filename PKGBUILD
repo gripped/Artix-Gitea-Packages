@@ -4,7 +4,7 @@ pkgbase=pyqt6
 pkgname=python-pyqt6
 pkgdesc='A set of Python bindings for the Qt6 toolkit'
 pkgver=6.12.0
-pkgrel=3
+pkgrel=4
 arch=(x86_64)
 url='https://riverbankcomputing.com/software/pyqt/intro'
 license=(GPL)
@@ -28,7 +28,6 @@ optdepends=('qt6-tools: QtHelp, QtDesigner bindings'
             'qt6-serialport: QtSerialPort bindings'
             'qt6-speech: QtTextToSpeech bindings'
             'qt6-webchannel: QtWebChannel bindings'
-            'qt6-webengine: QtPdf bindings'
             'qt6-websockets: QtWebSockets bindings'
             'dbus-python: for python-dbus mainloop support')
 makedepends=(dbus-python
@@ -48,7 +47,6 @@ makedepends=(dbus-python
              qt6-svg
              qt6-tools
              qt6-webchannel
-             qt6-webengine
              qt6-websockets
              sip)
 provides=(qt6-python-bindings)

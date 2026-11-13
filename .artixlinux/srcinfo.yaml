@@ -1,10 +1,10 @@
 ---
-version: 6.12.0-3
+version: 6.12.0-4
 pkgbase:
   name: pyqt6
   pkgdesc: A set of Python bindings for the Qt6 toolkit
   pkgver: 6.12.0
-  pkgrel: 3
+  pkgrel: 4
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
     - x86_64
@@ -30,7 +30,6 @@ pkgbase:
     - qt6-svg
     - qt6-tools
     - qt6-webchannel
-    - qt6-webengine
     - qt6-websockets
     - sip
   depends:
@@ -54,7 +53,6 @@ pkgbase:
     - 'qt6-serialport: QtSerialPort bindings'
     - 'qt6-speech: QtTextToSpeech bindings'
     - 'qt6-webchannel: QtWebChannel bindings'
-    - 'qt6-webengine: QtPdf bindings'
     - 'qt6-websockets: QtWebSockets bindings'
     - 'dbus-python: for python-dbus mainloop support'
   provides:
