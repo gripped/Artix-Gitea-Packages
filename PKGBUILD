@@ -4,7 +4,7 @@
 
 pkgname=rocm-core
 pkgver=10.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='AMD ROCm core package (version files)'
 license=('MIT')
 arch=('x86_64')
