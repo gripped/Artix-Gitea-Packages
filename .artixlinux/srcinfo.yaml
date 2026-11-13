@@ -1,10 +1,10 @@
 ---
-version: 0.16.28-1
+version: 0.16.28-1.1
 pkgbase:
   name: rtorrent
   pkgdesc: Ncurses BitTorrent client based on libTorrent
   pkgver: 0.16.28
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://rakshasa.github.io/rtorrent/
   arch:
     - x86_64
