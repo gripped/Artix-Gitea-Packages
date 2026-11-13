@@ -2,7 +2,7 @@
 
 pkgbase=pyqt6-webengine
 pkgname=(python-pyqt6-webengine)
-pkgver=6.11.0
+pkgver=6.140.0
 pkgrel=1
 pkgdesc='Python bindings for QtWebEngine'
 arch=(x86_64)
@@ -18,7 +18,7 @@ depends=(glibc
 makedepends=(pyqt-builder
              sip)
 source=(https://pypi.python.org/packages/source/P/PyQt6-WebEngine/pyqt6_webengine-$pkgver.tar.gz)
-sha256sums=('15cf49efbbbd4c6bc87653b2c4ae80d6049f800e31620b336734ae2e37cbedae')
+sha256sums=('f48a7838c230f9cba822d3c2afa39f199e74ada5c219075879993760c7f9457c')
 
 build() {
   cd pyqt6_webengine-$pkgver
