@@ -1,9 +1,9 @@
 ---
-version: 13.13.0-1
+version: 13.13.1-1
 pkgbase:
   name: python-pyqt6-sip
   pkgdesc: The sip module support for PyQt6
-  pkgver: 13.13.0
+  pkgver: 13.13.1
   pkgrel: 1
   url: https://riverbankcomputing.com/software/pyqt/intro
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - glibc
     - python
   source:
-    - https://pypi.python.org/packages/source/P/PyQt6-sip/pyqt6_sip-13.13.0.tar.gz
+    - https://pypi.python.org/packages/source/P/PyQt6-sip/pyqt6_sip-13.13.1.tar.gz
   sha256sums:
-    - 2cd55f575cde208c398d6cfdecc5a13394ed2afb54226210c50e3a6df7c3a997
+    - 83c3c9cb93b6c631af7048084fb0f234b610a01edbf9b2b44c4ee4bda4197efe
 pkgname:
   - name: python-pyqt6-sip
 # generated with artixpkg 0.40.0-1-any
