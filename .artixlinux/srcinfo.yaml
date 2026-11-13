@@ -1,9 +1,9 @@
 ---
-version: 0.5.28-1
+version: 0.5.30-1
 pkgbase:
   name: rio
   pkgdesc: A hardware-accelerated GPU terminal emulator powered by WebGPU
-  pkgver: 0.5.28
+  pkgver: 0.5.30
   pkgrel: 1
   url: https://github.com/raphamorim/rio
   arch:
@@ -29,9 +29,9 @@ pkgbase:
     - oniguruma
     - vulkan-driver
   source:
-    - https://github.com/raphamorim/rio/archive/refs/tags/v0.5.28/rio-0.5.28.tar.gz
+    - https://github.com/raphamorim/rio/archive/refs/tags/v0.5.30/rio-0.5.30.tar.gz
   sha512sums:
-    - cbf9bf2567e35a42cc8ccfb99dff54b471b9fdf02a471624db762c9d6304def7f35821de5e37e2268360eb35fc2b1665bcd9381763397d33a338e3b7405d0016
+    - 4501048b51e03734717bc534d14f6ac421d3adf9e26442ab4672a87c8fe06dad25642253d17f21b4adf869945a0652a2c33b96322db91cb090efda00f7ae34bf
 pkgname:
   - name: rio
     depends:
@@ -43,4 +43,4 @@ pkgname:
       - libstdc++.so
       - oniguruma
       - vulkan-driver
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
