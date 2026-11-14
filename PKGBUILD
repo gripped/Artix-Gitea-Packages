@@ -3,7 +3,7 @@
 
 pkgname=amdsmi
 pkgver=10.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='AMD System Management Interface library'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/amdsmi/en/latest/'

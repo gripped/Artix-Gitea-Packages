@@ -26,9 +26,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 10.1-1
+    version: 10.1-1.1
     packages:
-      - amdsmi-10.1-1-x86_64.pkg.tar.zst
+      - amdsmi-10.1-1.1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: null
