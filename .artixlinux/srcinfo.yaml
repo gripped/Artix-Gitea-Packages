@@ -39,4 +39,4 @@ pkgbase:
     - 8f9cf10922276ca35872ca0bc27e29e717a472ba704a575c5497622b62049e75
 pkgname:
   - name: amdsmi
-# generated with artixpkg 0.40.0-1.6-any
+# generated with artixpkg 0.40.0-1-any
