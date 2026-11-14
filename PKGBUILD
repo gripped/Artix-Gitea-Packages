@@ -4,7 +4,7 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=rccl
-pkgver=10.0
+pkgver=10.1
 pkgrel=1
 pkgdesc="ROCm Communication Collectives Library"
 arch=('x86_64')
@@ -14,7 +14,7 @@ depends=('rocm-core' 'glibc' 'libgcc' 'hip-runtime-amd' 'amdsmi' 'roctracer')
 makedepends=('cmake' 'ninja' 'rocm-cmake' 'rocm-llvm' 'rocm-llvm-static' 'hipify-clang' 'python' 'fmt')
 _git='https://github.com/ROCm/rocm-systems'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('3857bd8c6832651393c982471d59aec4d42d1d9c981f195e252bde9cadf6996a')
+sha256sums=('314d0a54e68217efb12eafd2aacd439d4928f443795c778711d846355d262355')
 options=(!lto)
 
 build() {

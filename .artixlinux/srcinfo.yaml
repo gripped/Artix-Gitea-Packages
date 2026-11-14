@@ -1,9 +1,9 @@
 ---
-version: 10.0-1
+version: 10.1-1
 pkgbase:
   name: rccl
   pkgdesc: ROCm Communication Collectives Library
-  pkgver: 10.0
+  pkgver: 10.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rccl/en/latest/index.html
   arch:
@@ -29,9 +29,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rccl-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/rccl.tar.gz
+    - rccl-10.1.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.1/rccl.tar.gz
   sha256sums:
-    - 3857bd8c6832651393c982471d59aec4d42d1d9c981f195e252bde9cadf6996a
+    - 314d0a54e68217efb12eafd2aacd439d4928f443795c778711d846355d262355
 pkgname:
   - name: rccl
 # generated with artixpkg 0.40.0-1-any
