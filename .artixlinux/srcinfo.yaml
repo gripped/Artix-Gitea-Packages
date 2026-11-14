@@ -1,0 +1,24 @@
+---
+version: 2.89-3
+pkgbase:
+  name: bootlogd
+  pkgdesc: Bootlogd extracted from sysvinit
+  pkgver: 2.89
+  pkgrel: 3
+  url: https://github.com/artix-linux/bootlogd
+  arch:
+    - x86_64
+  license:
+    - GPL
+  makedepends:
+    - git
+  depends:
+    - glibc
+    - logrotate
+  source:
+    - git+https://github.com/artix-linux/bootlogd.git
+  sha256sums:
+    - SKIP
+pkgname:
+  - name: bootlogd
+# generated with artixpkg 0.40.0-1-any
