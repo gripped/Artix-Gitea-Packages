@@ -1,9 +1,9 @@
 ---
-version: 26.09.0-1
+version: 26.11.0-1
 pkgbase:
   name: timeshift
   pkgdesc: A system restore utility for Linux
-  pkgver: 26.09.0
+  pkgver: 26.11.0
   pkgrel: 1
   url: https://github.com/linuxmint/timeshift
   install: timeshift.install
@@ -27,9 +27,9 @@ pkgbase:
     - 'btrfs-progs: For BTRFS support'
     - 'grub-btrfs: For BTRFS snapshots in GRUB'
   source:
-    - timeshift-26.09.0.tar.gz::https://github.com/linuxmint/timeshift/archive/refs/tags/26.09.0.tar.gz
+    - timeshift-26.11.0.tar.gz::https://github.com/linuxmint/timeshift/archive/refs/tags/26.11.0.tar.gz
   sha256sums:
-    - 6c3bbbd3cb905bfee11d565191fd6f550da17acac23e2efc656aa5ab72a6984b
+    - 0c1caa2107198eaa80e526016e610b40f8886b02f67258b61324d4406702b6d7
 pkgname:
   - name: timeshift
 # generated with artixpkg 0.40.0-1-any
