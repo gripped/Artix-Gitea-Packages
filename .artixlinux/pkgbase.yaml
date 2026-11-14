@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: lib32
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: lib32
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,9 +41,8 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: 1.7.2-1
-    packages:
-      - lib32-pam-1.7.2-1-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy-goblins:
     version: null
