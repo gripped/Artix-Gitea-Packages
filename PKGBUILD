@@ -5,8 +5,8 @@
 # Contributor: aksr <aksr at t-com dot me>
 
 pkgname=criu
-pkgver=4.3
-pkgrel=1
+pkgver=4.3.1
+pkgrel=2
 pkgdesc='Utilities to checkpoint and restore processes in userspace'
 arch=(x86_64)
 url='https://criu.org'
@@ -50,8 +50,8 @@ provides=(
 )
 options=(!lto)
 source=("git+https://github.com/checkpoint-restore/criu#tag=v$pkgver")
-sha512sums=('6a066a4ee9fbd5e741131c8927f168ae56c4a82f792d50589fda918610476139a491015e2685d7680a61f079bb582d6c0ddc57792e6fc162c2777781081a3782')
-b2sums=('d7f6bca3535374532cab7c8cfaa1699d2dbafc62cd08590bbbf6f1e916363a2eaae9fea5550a1660f2f4e231f1aa2ec7887338029586c5dd9ebb17b0f6440a44')
+sha512sums=('a503a8ea833319a00c478366868c8313c424cdfd61f4f5e3119fcfc93ccde230614deef848595672311be1189aede33ab2f6147629c20dcccb16510d4d287f32')
+b2sums=('f70b3d496d67007a3cdc51716facdacf11331bc1e2a9db97218c0f66e45143aecdbcd14fb6e66b668380dc7e9840e8e655dcce7246447787600ae6ec4ce12895')
 
 build() {
   cd "$pkgname"
