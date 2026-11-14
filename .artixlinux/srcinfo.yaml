@@ -1,9 +1,9 @@
 ---
-version: 0.40.0-1
+version: 0.40.1-1
 pkgbase:
   name: artools
   pkgdesc: Development tools for Artix
-  pkgver: 0.40.0
+  pkgver: 0.40.1
   pkgrel: 1
   url: https://gitea.artixlinux.org/artix/artools
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   makedepends:
     - git
   source:
-    - git+https://gitea.artixlinux.org/artix/artools.git#tag=0.40.0
+    - git+https://gitea.artixlinux.org/artix/artools.git#tag=0.40.1
   sha256sums:
-    - 0a409e056877296a7a79ceaeaa07dec3b0650340e8303c458d647f42f45b23ae
+    - 4ab6dbc98aa9981197367013ff84bc3366e41bb04068dcfd3835311dd92483ea
 pkgname:
   - name: artools-base
     pkgdesc: Development tools for Artix (base tools)
@@ -80,4 +80,4 @@ pkgname:
       - squashfs-tools
     backup:
       - etc/artools/artools-iso.conf
-# generated with artixpkg 0.39.1
+# generated with artixpkg 0.40.0-1-any
