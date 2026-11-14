@@ -4,7 +4,7 @@ post_install() {
 	# used in the package. See https://bugs.archlinux.org/task/66718 and
 	# https://gitlab.archlinux.org/archlinux/packaging/packages/opensmtpd/-/issues/5
 	# for details.
-	systemd-sysusers /usr/lib/sysusers.d/opensmtpd.conf
+	esysusers /usr/lib/sysusers.d/opensmtpd.conf
 	chgrp smtpq /usr/bin/smtpctl
 	chmod 2555 /usr/bin/smtpctl
 }
