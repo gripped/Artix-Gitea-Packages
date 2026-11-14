@@ -1,9 +1,9 @@
 ---
-version: 20251101-1
+version: 20261111-1
 pkgbase:
   name: mobile-broadband-provider-info
   pkgdesc: APN configuration presets for mobile broadband connections
-  pkgver: 20251101
+  pkgver: 20261111
   pkgrel: 1
   url: https://gitlab.gnome.org/GNOME/mobile-broadband-provider-info
   arch:
@@ -15,11 +15,11 @@ pkgbase:
     - libxslt
     - meson
   source:
-    - git+https://gitlab.gnome.org/GNOME/mobile-broadband-provider-info.git?signed#tag=20251101
+    - git+https://gitlab.gnome.org/GNOME/mobile-broadband-provider-info.git?signed#tag=20261111
   validpgpkeys:
     - 0DB3932762F78E592F6522AFBB5A2C77584122D3
   b2sums:
-    - 4fc28839b669552bf79d011136f8688e144ac4256ddde6252f1f5d90d144e002627cdc7d043a15f38285a1b9cb73a0f667f6bbc1be87ef7d90186a98013ee7bd
+    - 5c856b17d814eae78136288878b1500b4a57937ba907adbfa503f251bb4636a3860356d55936f01ae65cdfd2a9c7f1ed8ebbd3b143700df361fa2d881f57fdb0
 pkgname:
   - name: mobile-broadband-provider-info
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
