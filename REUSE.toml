@@ -45,6 +45,7 @@ path = [
     "chromium-disable-font-tests.patch",
     "chromium-152-unbundle-minizip-undo-unicode.patch",
     "chromium-152-unbundle-opus-devtools.patch",
+    "cef-native-pixmaps.diff"
 ]
 SPDX-FileCopyrightText = "chromium contributors"
 SPDX-License-Identifier = "BSD-3-Clause"

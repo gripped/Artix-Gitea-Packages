@@ -9,12 +9,12 @@ pkgname=cef
 # To update this package, update the _cef_commit and _chromium_ver variables.
 # For the CEF versioning scheme, see
 # https://chromiumembedded.github.io/cef/branches_and_building#version-number-format
-pkgver=156.0.8
+pkgver=156.0.28
 # See https://github.com/chromiumembedded/cef/tree/<release branch>
 # Also see https://chromiumembedded.github.io/cef/branches_and_building
-_cef_commit=426920c33ef22551e0b8f48cf343d623ac25642d
+_cef_commit=57389f04a61ab0e9603d9f96602843d0e08bb11c
 # the chromium version must match CHROMIUM_BUILD_COMPATIBILITY.txt in the CEF repo
-_chromium_ver=156.0.8078.48
+_chromium_ver=156.0.8078.93
 _system_clang=1
 pkgrel=1
 pkgdesc="Chromium Embedded Framework (CEF), simple framework for embedding Chromium-based browsers in other applications"
@@ -55,7 +55,6 @@ makedepends=(
   'python'
   'python-httplib2'
   'python-pyparsing'
-  'python-six'
   'rsync'
   'rust'
   'rust-bindgen'
@@ -88,11 +87,12 @@ source=(
   glibc-2.42-baud-rate-fix.patch
   cef-no-sysroot.patch
   cef-no-libxml-visibility-patch.patch
+  cef-native-pixmaps.diff
   chromium-disable-font-tests.patch
   FindCEF.cmake
 )
-sha256sums=('63042065e7d52ed00e4375f6e989be4caf29fcd4ca0a9e3cadf32ec55462bd9f'
-            '416ceec886b6c93ddc9499534bdf9c4f18b932e02da11f6f2f50f8d7af7738be'
+sha256sums=('858bac041597aee091865adef72e39d469f40d3ed1da2136dab2073c60480a88'
+            'a160c7b5bf0aea777c93d7590bf26f8d15e5039d6a0401cd3cdf21702597629b'
             '11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e'
             '4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e'
             'b9e6339221efe03540ffb360c161d93604a1fc93a5a1c53e5e9849066f987d05'
@@ -114,6 +114,7 @@ sha256sums=('63042065e7d52ed00e4375f6e989be4caf29fcd4ca0a9e3cadf32ec55462bd9f'
             '1c1898f263eaacbc069a8e1a3e732852350350d1dad4cb1a6bba430e3b796cd0'
             'cdc046c3da5a57dae8fba0de49cadbe65d4f8fbfffb172f7a768222232595faa'
             '6695d7bcac489f74b8290a05dac540c2b5c5fed997ee119ae05419d36509445d'
+            'ad30ec1686dfa5b74fc2dc9f4613fb9384df646a745e48842a44f9ebbc558057'
             '44dcc0da55a8c6c6af875addcfb9c552c722b56a31479eb7d99f16d0a27f4ebb'
             'e576250c4d0f3dd307bd22c6d4f9f7aba54fdf4d5899520c0bd1c3527aec65ed')
 
@@ -170,6 +171,11 @@ prepare() {
     third_party/blink/renderer/core/xml/*.cc \
     third_party/blink/renderer/core/xml/parser/xml_document_parser.cc \
     third_party/libxml/chromium/*.cc
+
+  # Fix blank screen on Wayland/AMD
+  # https://github.com/chromiumembedded/cef/issues/4354
+  # https://crrev.com/c/8789062
+  patch -Np1 -i ../cef-native-pixmaps.diff
 
   # Fixes from Gentoo
   patch -Np1 -i ../chromium-138-nodejs-version-check.patch
@@ -297,7 +303,8 @@ prepare() {
   local _expected_chromium_ver=$(grep -oP "refs/tags/\K[0-9.]+" cef/CHROMIUM_BUILD_COMPATIBILITY.txt)
   if [[ "$_expected_chromium_ver" != "$_chromium_ver" ]]; then
     echo "Error: CEF expects chromium $_expected_chromium_ver, but $_chromium_ver was set in PKGBUILD" >&2
-    exit 1
+    # There is no tarball for 156.0.8078.88, so we need to use .93
+    # exit 1
   fi
 }
 

@@ -1,9 +1,9 @@
 ---
-version: 156.0.8-1
+version: 156.0.28-1
 pkgbase:
   name: cef
   pkgdesc: Chromium Embedded Framework (CEF), simple framework for embedding Chromium-based browsers in other applications
-  pkgver: 156.0.8
+  pkgver: 156.0.28
   pkgrel: 1
   url: https://chromiumembedded.github.io/cef
   arch:
@@ -28,7 +28,6 @@ pkgbase:
     - python
     - python-httplib2
     - python-pyparsing
-    - python-six
     - rsync
     - rust
     - rust-bindgen
@@ -71,8 +70,8 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - chromium-156.0.8078.48-lite.tar.xz::https://commondatastorage.googleapis.com/chromium-browser-official/chromium-156.0.8078.48-lite.tar.xz
-    - cef::git+https://github.com/chromiumembedded/cef.git#commit=426920c33ef22551e0b8f48cf343d623ac25642d
+    - chromium-156.0.8078.93-lite.tar.xz::https://commondatastorage.googleapis.com/chromium-browser-official/chromium-156.0.8078.93-lite.tar.xz
+    - cef::git+https://github.com/chromiumembedded/cef.git#commit=57389f04a61ab0e9603d9f96602843d0e08bb11c
     - chromium-138-nodejs-version-check.patch
     - chromium-145-fix-SYS_SECCOMP.patch
     - chromium-147-rust-1.95-bytemuck.patch
@@ -94,11 +93,12 @@ pkgbase:
     - glibc-2.42-baud-rate-fix.patch
     - cef-no-sysroot.patch
     - cef-no-libxml-visibility-patch.patch
+    - cef-native-pixmaps.diff
     - chromium-disable-font-tests.patch
     - FindCEF.cmake
   sha256sums:
-    - 63042065e7d52ed00e4375f6e989be4caf29fcd4ca0a9e3cadf32ec55462bd9f
-    - 416ceec886b6c93ddc9499534bdf9c4f18b932e02da11f6f2f50f8d7af7738be
+    - 858bac041597aee091865adef72e39d469f40d3ed1da2136dab2073c60480a88
+    - a160c7b5bf0aea777c93d7590bf26f8d15e5039d6a0401cd3cdf21702597629b
     - 11a96ffa21448ec4c63dd5c8d6795a1998d8e5cd5a689d91aea4d2bdd13fb06e
     - 4fc040a0656a0a524dd8ad090cd129fc5b6cb21adcc66be82080165789e8c13e
     - b9e6339221efe03540ffb360c161d93604a1fc93a5a1c53e5e9849066f987d05
@@ -120,6 +120,7 @@ pkgbase:
     - 1c1898f263eaacbc069a8e1a3e732852350350d1dad4cb1a6bba430e3b796cd0
     - cdc046c3da5a57dae8fba0de49cadbe65d4f8fbfffb172f7a768222232595faa
     - 6695d7bcac489f74b8290a05dac540c2b5c5fed997ee119ae05419d36509445d
+    - ad30ec1686dfa5b74fc2dc9f4613fb9384df646a745e48842a44f9ebbc558057
     - 44dcc0da55a8c6c6af875addcfb9c552c722b56a31479eb7d99f16d0a27f4ebb
     - e576250c4d0f3dd307bd22c6d4f9f7aba54fdf4d5899520c0bd1c3527aec65ed
 pkgname:
