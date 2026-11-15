@@ -88,4 +88,4 @@ pkgname:
     pkgdesc: Pregenerated locales for GNU C Library
     depends:
       - glibc=2.44+r78+gfcfb867c58ab
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-2-any
