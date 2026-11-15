@@ -1,10 +1,10 @@
 ---
-version: 2.6.4-5
+version: 2.6.4-6
 pkgbase:
   name: lib32-flex
   pkgdesc: A tool for generating text-scanning programs
   pkgver: 2.6.4
-  pkgrel: 5
+  pkgrel: 6
   url: http://flex.sourceforge.net
   arch:
     - x86_64
