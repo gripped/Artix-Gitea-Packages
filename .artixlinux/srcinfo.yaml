@@ -1,10 +1,10 @@
 ---
-version: 2.78-1
+version: 2.78-2
 pkgbase:
   name: lib32-libcap
   pkgdesc: POSIX 1003.1e capabilities (32-bit)
   pkgver: 2.78
-  pkgrel: 1
+  pkgrel: 2
   url: https://sites.google.com/site/fullycapable/
   arch:
     - x86_64
@@ -34,4 +34,4 @@ pkgname:
       - lib32-glibc
       - lib32-pam
       - libcap=2.78
-# generated with artixpkg 0.38.4-1-any
+# generated with artixpkg 0.40.0-1-any
