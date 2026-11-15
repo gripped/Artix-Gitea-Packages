@@ -1,0 +1,30 @@
+---
+version: 0.7-1
+pkgbase:
+  name: blocaled
+  pkgdesc: Provides a stand-alone implementation of the localed D-Bus service.
+  pkgver: 0.7
+  pkgrel: 1
+  url: https://github.com/lfs-book/blocaled
+  arch:
+    - x86_64
+  license:
+    - GPL-2.0-or-later
+  makedepends:
+    - dbus
+    - glib2-devel
+    - gtk-doc
+  depends:
+    - glibc
+    - glib2
+    - libdaemon
+    - polkit
+  conflicts:
+    - openrc-settingsd
+  source:
+    - blocaled-0.7.tar.gz::https://github.com/lfs-book/blocaled/archive/v0.7.tar.gz
+  sha256sums:
+    - 80271fc44ea6449890c4d0aa4cfd9d8a66191b1a1c5122c0a19990c56f304926
+pkgname:
+  - name: blocaled
+# generated with artixpkg 0.40.0-1-any

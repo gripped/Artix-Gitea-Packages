@@ -1,0 +1,4 @@
+[blocaled]
+source = "git"
+git = "https://github.com/lfs-book/blocaled.git"
+prefix = "v"
