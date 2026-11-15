@@ -1,10 +1,10 @@
 ---
-version: 2.89-3
+version: 2.89-4
 pkgbase:
   name: bootlogd
   pkgdesc: Bootlogd extracted from sysvinit
   pkgver: 2.89
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/artix-linux/bootlogd
   arch:
     - x86_64

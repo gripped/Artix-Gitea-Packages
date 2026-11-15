@@ -2,7 +2,7 @@
 
 pkgname=bootlogd
 pkgver=2.89
-pkgrel=3
+pkgrel=4
 arch=('x86_64')
 pkgdesc='Bootlogd extracted from sysvinit'
 license=('GPL')
