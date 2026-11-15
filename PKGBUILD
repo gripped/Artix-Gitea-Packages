@@ -3,7 +3,7 @@
 
 pkgname=limine
 _pkgname=Limine
-pkgver=12.9.6
+pkgver=12.10.0
 pkgrel=1
 pkgdesc="Modern, secure, portable, multiprotocol bootloader and boot manager"
 url="https://github.com/Limine-Bootloader/Limine"
@@ -17,7 +17,7 @@ checkdepends=('python' 'qemu-system-x86' 'qemu-system-aarch64' 'qemu-system-risc
 install="${pkgname}.install"
 source=("git+${url}.git#tag=v${pkgver}?signed"
         "edk2-ovmf-bins-${_ovmfbins}.tar.xz::https://github.com/osdev0/edk2-ovmf-stable-bins/releases/download/${_ovmfbins}/edk2-ovmf-bins.tar.xz")
-sha256sums=('60ebfefbe492a7a0077eef53ae52cfb4c0156a06aa20750d87c21d48250f2389'
+sha256sums=('695e2e6783db77c5658c12beeec8ff4b448120e01304bdae827c7ef1c73a158f'
             '1619a6884c9380516152c2fe3c73fe1d7851014f3ec6a784b5d7b0324983b4d4')
 validpgpkeys=('05D29860D0A0668AAEFB9D691F3C021BECA23821'  # Mintsuki <mintsuki@protonmail.com>
               '6C222EA6B2BD216AA406516AC868F0B6DE38409D') # Kamila Szewczyk <k@iczelia.net>
