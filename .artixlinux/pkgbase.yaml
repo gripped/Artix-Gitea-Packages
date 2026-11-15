@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: null
-  removeRepo: lib32
-  triggersBuild: false
+  addRepo: lib32
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
-  triggersRepoAdd: false
-  triggersRepoRemove: true
+  triggersRepoAdd: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -41,8 +41,9 @@ repos:
     packages: []
     debug: []
   lib32:
-    version: null
-    packages: []
+    version: 1.3.7-2
+    packages:
+      - lib32-libtirpc-1.3.7-2-x86_64.pkg.tar.zst
     debug: []
   galaxy-goblins:
     version: null
