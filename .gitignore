@@ -23,6 +23,7 @@ src/
 *.xz
 *.lzma
 *.cab
+xorg-server/
 
 # ---> systemd
 *.service
