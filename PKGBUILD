@@ -4,8 +4,8 @@
 pkgbase=xorg-server
 pkgname=('xorg-server' 'xorg-server-xephyr' 'xorg-server-xvfb' 'xorg-server-xnest'
          'xorg-server-common' 'xorg-server-devel' 'xorg-server-src')
-pkgver=21.1.25
-pkgrel=2
+pkgver=21.1.26
+pkgrel=1
 arch=('x86_64')
 license=('LicenseRef-Adobe-Display-PostScript'
          'BSD-3-Clause' 
@@ -30,27 +30,18 @@ makedepends=('xorgproto' 'pixman' 'libx11' 'mesa' 'mesa-libgl' 'xtrans'
              'libxmu' 'libxrender' 'libxi' 'libxaw' 'libxtst' 'libxres'
              'xorg-xkbcomp' 'xorg-util-macros' 'xorg-font-util' 'libepoxy'
              'xcb-util' 'xcb-util-image' 'xcb-util-renderutil' 'xcb-util-wm' 'xcb-util-keysyms'
-             'libxshmfence' 'libunwind' 'elogind' 'meson' 'git')
+             'libxshmfence' 'libunwind' 'systemd' 'meson' 'git')
 source=(${pkgbase}::git+https://gitlab.freedesktop.org/xorg/xserver.git?signed#tag=${pkgbase}-${pkgver}
         xvfb-run # with updates from FC master
         xvfb-run.1
-        0001-Revert_damage_Unlink_a_damage_from_the_list_it_was_actually.patch
 )
 validpgpkeys=('3C2C43D9447D5938EF4551EBE23B7E70B467F0BF'  # Peter Hutterer (Who-T) <office@who-t.net>
               '67DC86F2623FC5FD4BB5225D14706DBE1E4B4540'  # Olivier Fourdan <fourdan@xfce.org>
               'FD0004A26EADFE43A4C3F249C6F7AE200374452D'  # Povilas Kanapickas <povilas@radix.lt>
               '3BB639E56F861FA2E86505690FDD682D974CA72A') # Matt Turner <mattst88@gmail.com>
-sha512sums=('c961aeadb92ab7330f4c99257063e037502a2255f4e3a44ff884b5145b58264fed582581d121154731c6f6b1bd42d938fd8d24fd73cf4c81125bec5f6914c880'
+sha512sums=('3480d0ebecf8a9ac9e756571dc2c4c53c4adcd82d96f0f5973d992d91c26c284934d9fde050cbdafb55d94c8d7837ced59b34815f33cd5621a933d1480bdfe51'
             '672375cb5028ba9cda286e317d17bd8c9a9039483e7f79c21f223fd08ba07655729e9f59a082f4b8f5d8de45a77a9e9affce1002fb8c6657e26ef1a490654e49'
-            'de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22'
-            '5b749d10a968ba37b6ff59a459e80e6799e750d00f4b043b93033f9deb152cbb3fbb49cab7b2be2bc650ecf7fad5b4f0bbdaa80f40da017f074ee436d59ae4c3')
-
-prepare() {
-  cd "${srcdir}/${pkgbase}"
-
-# fix ABI breakage
-  patch -Np1 -i ../0001-Revert_damage_Unlink_a_damage_from_the_list_it_was_actually.patch
-}
+            'de5e2cb3c6825e6cf1f07ca0d52423e17f34d70ec7935e9dd24be5fb9883bf1e03b50ff584931bd3b41095c510ab2aa44d2573fd5feaebdcb59363b65607ff22')
 
 build() {
   # Since pacman 5.0.2-2, hardened flags are now enabled in makepkg.conf
@@ -107,7 +98,6 @@ _install() {
 package_xorg-server-common() {
   pkgdesc="Xorg server common files"
   depends=(xkeyboard-config xorg-xkbcomp xorg-setxkbmap)
-  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/lib/xorg/protocol.txt
   _install fakeinstall/usr/share/man/man1/Xserver.1
@@ -121,13 +111,13 @@ package_xorg-server() {
   pkgdesc="Xorg X server"
   depends=(libepoxy libxfont2 pixman xorg-server-common libunwind
            dbus libgl xf86-input-libinput nettle
-           libxdmcp sh glibc libxau libelogind libtirpc
+           libxdmcp sh glibc libxau systemd-libs libtirpc
            libpciaccess libdrm libxshmfence libxcvt) # FS#52949
   # see xorg-server-*/hw/xfree86/common/xf86Module.h for ABI versions - we provide major numbers that drivers can depend on
   # and /usr/lib/pkgconfig/xorg-server.pc in xorg-server-devel pkg
-  provides=('X-ABI-VIDEODRV_VERSION=25.2' 'X-ABI-XINPUT_VERSION=24.4' 'X-ABI-EXTENSION_VERSION=10.0' 'x-server' 'x11win-server')
-  conflicts=('nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting' 'xlibre-xserver')
-  replaces=('glamor-egl' 'xf86-video-modesetting' ${pkgname//xorg-/xlibre-x})
+  provides=('X-ABI-VIDEODRV_VERSION=25.2' 'X-ABI-XINPUT_VERSION=24.4' 'X-ABI-EXTENSION_VERSION=10.0' 'x-server')
+  conflicts=('nvidia-utils<=331.20' 'glamor-egl' 'xf86-video-modesetting')
+  replaces=('glamor-egl' 'xf86-video-modesetting')
   install=xorg-server.install
 
   _install fakeinstall/usr/bin/{X,Xorg,gtf}
@@ -147,11 +137,10 @@ package_xorg-server() {
 
 package_xorg-server-xephyr() {
   pkgdesc="A nested X server that runs as an X application"
-  depends=(libxfont2 libgl libepoxy libunwind libelogind pixman xorg-server-common
+  depends=(libxfont2 libgl libepoxy libunwind systemd-libs pixman xorg-server-common
            xcb-util-image xcb-util-renderutil xcb-util-wm xcb-util-keysyms
            nettle libtirpc
            xcb-util libxdmcp libx11 libxau libxshmfence glibc)
-  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xephyr
   _install fakeinstall/usr/share/man/man1/Xephyr.1
@@ -165,9 +154,8 @@ package_xorg-server-xvfb() {
   # xvfb-run is GPLv2, rest is MIT
   license=('MIT' 'GPL-2.0-only')
   depends=(libxfont2 libunwind pixman xorg-server-common xorg-xauth 
-           libgl nettle libtirpc libelogind
+           libgl nettle libtirpc systemd-libs
            libxdmcp sh glibc libxau)
-  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xvfb
   _install fakeinstall/usr/share/man/man1/Xvfb.1
@@ -182,9 +170,8 @@ package_xorg-server-xvfb() {
 package_xorg-server-xnest() {
   pkgdesc="A nested X server that runs as an X application"
   depends=(libxfont2 libunwind libxext pixman xorg-server-common nettle
-           libtirpc libelogind
+           libtirpc systemd-libs
            libxdmcp glibc libx11 libxau)
-  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/bin/Xnest
   _install fakeinstall/usr/share/man/man1/Xnest.1
@@ -198,7 +185,6 @@ package_xorg-server-devel() {
   depends=('xorgproto' 'mesa' 'libpciaccess' 'pixman'
            # not technically required but almost every Xorg pkg needs it to build
            'xorg-util-macros')
-  replaces=(${pkgname//xorg-/xlibre-x})
 
   _install fakeinstall/usr/include/xorg/*
   _install fakeinstall/usr/lib/pkgconfig/xorg-server.pc
@@ -213,7 +199,6 @@ package_xorg-server-devel() {
 
 package_xorg-server-src() {
   pkgdesc="Source files of the X.Org X server"
-  replaces=(${pkgname//xorg-/xlibre-x})
 
   install -d "${pkgdir}"/usr/src/
   cd "${pkgdir}"/usr/src/
