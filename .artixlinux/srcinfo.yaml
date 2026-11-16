@@ -1,9 +1,9 @@
 ---
-version: 2:1.13.3-1
+version: 2:1.13.4-1
 pkgbase:
   name: julia
   pkgdesc: High-level, high-performance, dynamic programming language
-  pkgver: 1.13.3
+  pkgver: 1.13.4
   pkgrel: 1
   epoch: 2
   url: https://julialang.org/
@@ -43,14 +43,14 @@ pkgbase:
   backup:
     - etc/julia/startup.jl
   source:
-    - https://github.com/JuliaLang/julia/releases/download/v1.13.3/julia-1.13.3-full.tar.gz
-    - https://github.com/JuliaLang/julia/releases/download/v1.13.3/julia-1.13.3-full.tar.gz.asc
+    - https://github.com/JuliaLang/julia/releases/download/v1.13.4/julia-1.13.4-full.tar.gz
+    - https://github.com/JuliaLang/julia/releases/download/v1.13.4/julia-1.13.4-full.tar.gz.asc
     - c12e8515.patch
     - julia-hardcoded-libs.patch
   validpgpkeys:
     - 64B779A570972FFF7BFC2B54EAD471E1A1F2C10A
   sha256sums:
-    - 13c4cd067962d6c81fea60081925be9e2992a4204289cc30dee3ddd9692cf31b
+    - 55bb4442c887a3e99f287b53c467fdd5e78e376344ea2a84865742d13a27d71c
     - SKIP
     - 2cc294b63e601d50341979fb936826bdba59de2165a5929eae927e152652f367
     - 120c3b77a1aecfdb045ac64902164210ea8dd139d2fb8e8b098155b344a8e1fb
