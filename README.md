@@ -1,2 +1,3 @@
 # ublock-origin
 
+https://github.com/gorhill/uBlock/releases
