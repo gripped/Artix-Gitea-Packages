@@ -1,10 +1,10 @@
 ---
-version: 10.1-1.1
+version: 10.1-2
 pkgbase:
   name: rocm-core
   pkgdesc: AMD ROCm core package (version files)
   pkgver: 10.1
-  pkgrel: 1.1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/en/latest/
   arch:
     - x86_64
@@ -15,10 +15,10 @@ pkgbase:
   depends:
     - glibc
     - libgcc
-    - python
-    - python-prettytable
-    - python-pyaml
-    - python-pyelftools
+  optdepends:
+    - 'python: rdhc and runpath_to_rpath.py'
+    - 'python-prettytable: rdhc'
+    - 'python-pyaml: rdhc'
   source:
     - rocm-10.1.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/therock-10.1.tar.gz
     - rocm-ld.conf

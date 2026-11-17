@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 10.1-1.1
+    version: 10.1-2
     packages:
-      - rocm-core-10.1-1.1-x86_64.pkg.tar.zst
+      - rocm-core-10.1-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 7.2.4-1

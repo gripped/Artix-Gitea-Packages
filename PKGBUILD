@@ -4,19 +4,15 @@
 
 pkgname=rocm-core
 pkgver=10.1
-pkgrel=1.1
+pkgrel=2
 pkgdesc='AMD ROCm core package (version files)'
 license=('MIT')
 arch=('x86_64')
-depends=(
-    'glibc'
-    'libgcc'
-    'python'
-    'python-prettytable'
-    'python-pyaml'
-    'python-pyelftools'
-)
+depends=('glibc' 'libgcc')
 makedepends=('cmake')
+optdepends=('python: rdhc and runpath_to_rpath.py'
+            'python-prettytable: rdhc'
+            'python-pyaml: rdhc')
 source=("rocm-$pkgver.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/therock-$pkgver.tar.gz"
         'rocm-ld.conf'
         'rocm-profile.sh'
