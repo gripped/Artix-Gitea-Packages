@@ -1,9 +1,9 @@
 ---
-version: 2:10.1-2
+version: 2:10.1-4
 pkgbase:
   name: rocm-llvm
   pkgver: 10.1
-  pkgrel: 2
+  pkgrel: 4
   epoch: 2
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
@@ -13,6 +13,7 @@ pkgbase:
     - cmake
     - python
     - ninja
+    - clang
     - rocm-core
     - rocm-cmake
     - perl
@@ -83,7 +84,7 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:10.1-2
+      - rocm-llvm=2:10.1-4
       - rocm-llvm-libs
       - rocm-mlir-libs
   - name: rocm-llvm-headers
@@ -91,14 +92,14 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:10.1-2
+      - rocm-llvm=2:10.1-4
   - name: rocm-llvm-static
     pkgdesc: Radeon Open Compute - LLVM static libraries and CMake configuration
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm-headers=2:10.1-2
-      - rocm-llvm-tools=2:10.1-2
+      - rocm-llvm-headers=2:10.1-4
+      - rocm-llvm-tools=2:10.1-4
     optdepends:
       - 'rocm-flang: find_package(Flang)'
   - name: rocm-flang
@@ -106,7 +107,7 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:10.1-2
+      - rocm-llvm=2:10.1-4
       - rocm-llvm-libs
       - rocm-mlir-libs
       - gcc-libs
@@ -133,7 +134,6 @@ pkgname:
       - zlib
       - ncurses
       - rocm-core
-      - rocm-llvm
       - rocm-llvm-libs
       - rocm-device-libs
 # generated with artixpkg 0.40.0-1-any

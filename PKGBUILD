@@ -7,10 +7,10 @@ pkgname=(rocm-llvm rocm-llvm-libs rocm-mlir-libs rocm-llvm-tools rocm-llvm-heade
          rocm-llvm-static rocm-flang rocm-device-libs comgr)
 epoch=2
 pkgver=10.1
-pkgrel=2
+pkgrel=4
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
-makedepends=('git' 'cmake' 'python' 'ninja' 'rocm-core' 'rocm-cmake' 'perl'
+makedepends=('git' 'cmake' 'python' 'ninja' 'clang' 'rocm-core' 'rocm-cmake' 'perl'
              'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
 source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=therock-$pkgver")
 sha256sums=('58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407')
@@ -47,6 +47,13 @@ build() {
         -D CMAKE_BUILD_TYPE=Release
         -D CMAKE_INSTALL_PREFIX="/opt/rocm/lib/llvm"
         -D LLVM_HOST_TRIPLE=$CHOST
+        # GCC exports static locals of inline functions as STB_GNU_UNIQUE.
+        # glibc binds these by name and ignores the symbol version, so the
+        # registries clash with the system LLVM in the same process
+        # This was caused by the recent change of linking comgr dynamically.
+        # Fixes https://gitlab.archlinux.org/archlinux/packaging/packages/rocm-opencl-runtime/-/work_items/15
+        -D CMAKE_C_COMPILER=clang
+        -D CMAKE_CXX_COMPILER=clang++
         # mlir is a hard dependency of flang. flang provides the `flang` driver
         # that `amdflang` dispatches to; without it CLANG_ENABLE_AMDCLANG still
         # installs `amdflang`, leaving it pointing at a non-existent binary.
@@ -133,6 +140,8 @@ build() {
         -D CMAKE_BUILD_TYPE=None
         -D CMAKE_INSTALL_PREFIX=/opt/rocm
         -D BUILD_TESTING=OFF
+        -D CMAKE_C_COMPILER=clang
+        -D CMAKE_CXX_COMPILER=clang++
         -D CMAKE_PREFIX_PATH="$srcdir/build;$srcdir/build-device-libs"
         # comgr is installed in /opt/rocm/lib but links libLLVM.so from
         # /opt/rocm/lib/llvm/lib, which ld.so does not search: rocm.conf only
@@ -349,8 +358,10 @@ package_rocm-device-libs() {
 package_comgr() {
     pkgdesc='AMDGPU GPU Code Object Manager'
     license=('NCSA')
+    # comgr embeds the clang headers and links lld, so it needs no
+    # file of rocm-llvm at run time.
     depends=('glibc' 'libgcc' 'libstdc++' 'zstd' 'zlib' 'ncurses'
-             'rocm-core' 'rocm-llvm' 'rocm-llvm-libs' 'rocm-device-libs')
+             'rocm-core' 'rocm-llvm-libs' 'rocm-device-libs')
 
     DESTDIR="$pkgdir" cmake --install build-comgr
     cd "$pkgbase/amd/comgr"
