@@ -1,9 +1,9 @@
 ---
-version: 10.0-1
+version: 10.1-1
 pkgbase:
   name: rocm-smi-lib
   pkgdesc: ROCm System Management Interface Library
-  pkgver: 10.0
+  pkgver: 10.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rocm_smi_lib/en/latest
   arch:
@@ -21,9 +21,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - rocm-smi-lib-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/rocm-smi-lib.tar.gz
+    - rocm-smi-lib-10.1.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.1/rocm-smi-lib.tar.gz
   sha256sums:
-    - 031cdcf1649bc0bf22d0c326e709ba78ad67b8e4c8c5f27023624b03a056c525
+    - 9648663235c93bbdec91149003c7b1b9e7dcdf3a3728d527298f2ce457916ecb
 pkgname:
   - name: rocm-smi-lib
 # generated with artixpkg 0.40.0-1-any
