@@ -1,49 +1,57 @@
 ---
-version: 0.10.6-2
+version: 1.1.2-4
 pkgbase:
   name: podofo
   pkgdesc: A C++ library to work with the PDF file format
-  pkgver: 0.10.6
-  pkgrel: 2
-  url: http://podofo.sourceforge.net
+  pkgver: 1.1.2
+  pkgrel: 4
+  url: https://github.com/podofo/podofo
   arch:
     - x86_64
   license:
     - LGPL-2.1-only
   makedepends:
     - cmake
+    - git
+    - fast_float
+    - chrono-date
+    - utf8cpp
   depends:
     - fontconfig
+    - glibc
+    - libstdc++
+    - libgcc
+    - fmt
     - freetype2
-    - libidn
     - libjpeg-turbo
     - libpng
     - libtiff
     - libxml2
-    - lua
     - openssl
     - zlib
   source:
-    - https://github.com/podofo/podofo/archive/0.10.6/podofo-0.10.6.tar.gz
+    - git+https://github.com/podofo/podofo#tag=1.1.2
   sha256sums:
-    - 276c7de843a4126c092cdf13935a2b01ec1b6415c10415fb97e04a12195c030a
+    - ac4d03c8fe4024b6d3e7e23171a493bc933a0d3b145553afeacfafd58df54f8c
 pkgname:
   - name: podofo
     provides:
       - libpodofo.so
   - name: podofo-tools
     license:
-      - GPL2
+      - GPL-2.0-or-later
     depends:
       - fontconfig
+      - glibc
+      - libstdc++
+      - libgcc
+      - fmt
       - freetype2
-      - libidn
       - libjpeg-turbo
       - libpng
       - libtiff
       - libxml2
-      - lua
       - openssl
       - zlib
       - libpodofo.so
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
