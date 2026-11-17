@@ -3,7 +3,7 @@
 # Contributor: Alessandro Sagratini
 
 pkgname=inotify-tools
-pkgver=4.26.275
+pkgver=4.26.282
 pkgrel=1
 pkgdesc="a C library and a set of command-line programs for Linux providing a simple interface to inotify."
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('libgcc')
 makedepends=('gcc' 'make' 'doxygen' 'rust')
 options=('docs')
 source=($pkgname-$pkgver.tar.gz::https://github.com/inotify-tools/inotify-tools/archive/refs/tags/$pkgver.tar.gz)
-sha256sums=('11bba75bafb28d872ee91d0c36b0f8a015fcbc3ce0f8d3275445c95d26e04b81')
+sha256sums=('19e8db0825186e116c37401fafc63dee3f251a98a9697817c7a8ba75c8ff54aa')
 
 prepare() {
   cd "$srcdir"/$pkgname-$pkgver
