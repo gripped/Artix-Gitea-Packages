@@ -1,9 +1,9 @@
 ---
-version: 26.8.2-3.1
+version: 26.8.3-1
 pkgbase:
   name: libreoffice-fresh
-  pkgver: 26.8.2
-  pkgrel: 3.1
+  pkgver: 26.8.3
+  pkgrel: 1
   url: https://www.libreoffice.org/
   arch:
     - x86_64
@@ -136,12 +136,12 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://download.documentfoundation.org/libreoffice/src/26.8.2/libreoffice-26.8.2.2.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/26.8.2/libreoffice-26.8.2.2.tar.xz.asc
-    - https://download.documentfoundation.org/libreoffice/src/26.8.2/libreoffice-help-26.8.2.2.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/26.8.2/libreoffice-help-26.8.2.2.tar.xz.asc
-    - https://download.documentfoundation.org/libreoffice/src/26.8.2/libreoffice-translations-26.8.2.2.tar.xz
-    - https://download.documentfoundation.org/libreoffice/src/26.8.2/libreoffice-translations-26.8.2.2.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/26.8.3/libreoffice-26.8.3.1.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/26.8.3/libreoffice-26.8.3.1.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/26.8.3/libreoffice-help-26.8.3.1.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/26.8.3/libreoffice-help-26.8.3.1.tar.xz.asc
+    - https://download.documentfoundation.org/libreoffice/src/26.8.3/libreoffice-translations-26.8.3.1.tar.xz
+    - https://download.documentfoundation.org/libreoffice/src/26.8.3/libreoffice-translations-26.8.3.1.tar.xz.asc
     - https://dev-www.libreoffice.org/src/a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
     - https://dev-www.libreoffice.org/src/0168229624cfac409e766913506961a8-ucpp-1.3.2.tar.gz
     - https://dev-www.libreoffice.org/src/language-subtag-registry-2021-03-05.tar.bz2
@@ -173,11 +173,11 @@ pkgbase:
   validpgpkeys:
     - C2839ECAD9408FBE9531C3E9F434A1EFAFEEAEA3
   sha256sums:
-    - f0012302d9cc70955bd55890d3aaccf6c55677c4a6a46e1003f996b1b0dae8e7
+    - 83006a81376988d04a73eaa4dcf44f6f12774a81fd763726406a831905a9de28
     - SKIP
-    - e7e0270c30b13c4c52acae57e6c7529dc2146d9946123b5da17ae236e3bb4f68
+    - efb82de9a87daa6bfdc4b3a9bb1c255476f21c6fe5cb8fb7bd6217e6082c72b8
     - SKIP
-    - 1a3b6077ebfac899f2c31666d283e29e94c2d30704dd162fda7ba06d77212dd2
+    - 22c191a11907d1c449f27aa2ca976e02abdd98eaf59f823ecf8b35609bf838f0
     - SKIP
     - 75823776fb51a9c526af904f1503a7afaaab900fba83eda64f8a41073724c870
     - 983941d31ee8d366085cadf28db75eb1f5cb03ba1e5853b98f12f7f51c63b776
@@ -333,4 +333,4 @@ pkgname:
       - etc/libreoffice/psprint.conf
       - etc/profile.d/libreoffice-fresh.sh
       - etc/profile.d/libreoffice-fresh.csh
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
