@@ -1,10 +1,10 @@
 ---
-version: 2.2.6-1
+version: 2.2.6-2
 pkgbase:
   name: glycin
   pkgdesc: Sandboxed and extendable image decoding
   pkgver: 2.2.6
-  pkgrel: 1
+  pkgrel: 2
   url: https://gnome.pages.gitlab.gnome.org/glycin/
   arch:
     - x86_64
@@ -64,4 +64,4 @@ pkgname:
   - name: glycin-docs
     pkgdesc: Sandboxed and extendable image decoding - documentation
     depends: []
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
