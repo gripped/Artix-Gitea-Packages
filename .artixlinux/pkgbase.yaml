@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: world-goblins
+  addRepo: world-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -27,8 +27,10 @@ repos:
       - python-gdal-3.13.3-8-x86_64.pkg.tar.zst
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 3.13.3-9
+    packages:
+      - gdal-3.13.3-9-x86_64.pkg.tar.zst
+      - python-gdal-3.13.3-9-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 3.13.3-7
