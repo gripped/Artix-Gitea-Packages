@@ -1,10 +1,10 @@
 ---
-version: 4.0.3-1
+version: 4.0.3-2
 pkgbase:
   name: gthumb
   pkgdesc: Image browser and viewer for the GNOME Desktop
   pkgver: 4.0.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://wiki.gnome.org/Apps/Gthumb
   arch:
     - x86_64

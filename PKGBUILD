@@ -4,7 +4,7 @@
 
 pkgname=gthumb
 pkgver=4.0.3
-pkgrel=1
+pkgrel=2
 pkgdesc="Image browser and viewer for the GNOME Desktop"
 url="https://wiki.gnome.org/Apps/Gthumb"
 arch=(x86_64)
