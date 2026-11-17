@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-gremlins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
@@ -54,8 +54,8 @@ repos:
       - timeshift-26.11.0-1-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 26.09.0-1
+    version: 26.11.1-1
     packages:
-      - timeshift-26.09.0-1-x86_64.pkg.tar.zst
+      - timeshift-26.11.1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
