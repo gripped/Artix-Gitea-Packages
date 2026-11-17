@@ -1,10 +1,10 @@
 ---
-version: 1.3.49-3
+version: 1.3.49-4
 pkgbase:
   name: graphicsmagick
   pkgdesc: Image processing system
   pkgver: 1.3.49
-  pkgrel: 3
+  pkgrel: 4
   url: http://www.graphicsmagick.org/
   arch:
     - x86_64
@@ -47,4 +47,4 @@ pkgbase:
     - 7efa070dc31116b4315061b39f84bc7181e8b060bf61214ec9af851131af9c81
 pkgname:
   - name: graphicsmagick
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
