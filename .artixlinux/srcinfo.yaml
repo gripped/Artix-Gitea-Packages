@@ -1,10 +1,10 @@
 ---
-version: 0.6.0-1
+version: 0.6.0-2
 pkgbase:
   name: hyprgraphics
   pkgdesc: hyprland graphics resources and utilities
   pkgver: 0.6.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/hyprgraphics
   arch:
     - x86_64
@@ -43,4 +43,4 @@ pkgbase:
     - 27e9e19ff59ba75a2963d72c3dcb5c0840b266b90d7fca6d5df7cac105419b08
 pkgname:
   - name: hyprgraphics
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
