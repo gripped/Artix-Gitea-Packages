@@ -5,15 +5,15 @@
 pkgbase=hip-runtime
 pkgname=(hip-runtime-amd hip-runtime-nvidia)
 pkgver=10.1
-pkgrel=1
+pkgrel=2
 _pkgdesc="Heterogeneous Interface for Portability"
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/HIP/en/latest/'
 license=('MIT')
 _amd_depends=('rocm-core' 'bash' 'perl' 'glibc' 'libgcc' 'numactl'
-         'mesa' 'comgr' 'rocminfo' 'rocm-llvm' 'libelf' 'rocprofiler-register')
+         'comgr' 'rocminfo' 'rocm-llvm' 'libelf' 'rocprofiler-register')
 _nvidia_depends=('cuda')
-makedepends=('git' 'cmake' 'python' 'python-cppheaderparser' 'rocm-llvm-static'
+makedepends=('git' 'cmake' 'python' 'python-cppheaderparser' 'rocm-llvm-static' 'mesa'
              "${_amd_depends[@]}" "${_nvidia_depends[@]}")
 _tag="tag=therock-$pkgver"
 _release="https://github.com/ROCm/rocm-systems/releases/download/therock-$pkgver"
@@ -24,15 +24,15 @@ source=("$pkgbase-clr-$pkgver.tar.gz::$_release/clr.tar.gz"
         "$pkgbase-hipother-$pkgver.tar.gz::$_release/hipother.tar.gz"
         "$pkgbase-hipcc::git+$_hipcc#$_tag"
         # https://github.com/ROCm/rocm-systems/pull/12596
-        "$pkgbase-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch"
+        "$pkgbase-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch?full_index=1"
         # https://github.com/ROCm/rocm-systems/pull/13277
-        "$pkgbase-stripped-symtab.patch::https://github.com/ROCm/rocm-systems/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch")
+        "$pkgbase-stripped-symtab.patch::https://github.com/ROCm/rocm-systems/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch?full_index=1")
 sha256sums=('1809eda411c9156ca0b66e79acbfc198fd443aa77077fc113d334e545e8880b4'
             '777eef65d8fcf38baf17401097396dbdf5e9d07ba7f9d24268e8f8fa73f6688d'
             'b3abc044a3eeb1950a1fa7a6404e4e85c550629741b28952454ca519dbd7d5f3'
             '58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407'
-            'eebeb2ae0ec4c33627b2a445eb97832d737f4ec77d4cd74c55d4b9348bded591'
-            'b64cfd84a80cf08b4cf13f827b26068a758bfbbff0d3703add2b446675a30c70')
+            '67ac6cfdd8caeb6ae8659d2559669f4a31b55e88ecf629b976f3c0bffff3ac19'
+            '6f214a668e4d89d9f9dbd02bb698789b219361532ab104822bcd96be7ee265b4')
 
 options=(!lto)
 
@@ -106,8 +106,10 @@ build() {
 package_hip-runtime-amd() {
   pkgdesc="$_pkgdesc (AMD runtime)"
   depends=("${_amd_depends[@]}")
+  # libamdhip64 loads libGL with dlopen for OpenGL interop
   optdepends=('inetutils: Print hostname in hipconfig'
-              'cuda: Cross compile for nvidia')
+              'cuda: Cross compile for nvidia'
+              'mesa: OpenGL interop')
   replaces=("hip")
   provides=("hip=${pkgver}")
   DESTDIR="$pkgdir" cmake --install build-amd
