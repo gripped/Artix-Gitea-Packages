@@ -1,9 +1,9 @@
 ---
-version: 1.4.6-1
+version: 1.4.7-1
 pkgbase:
   name: jxrlib
   pkgdesc: Open source implementation of jpegxr
-  pkgver: 1.4.6
+  pkgver: 1.4.7
   pkgrel: 1
   url: https://github.com/mircomir/jxrlib
   arch:
@@ -16,9 +16,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - git+https://github.com/mircomir/jxrlib#tag=1.4.6
+    - git+https://github.com/mircomir/jxrlib#tag=1.4.7
   sha256sums:
-    - 684c8579e49ec727c238e71290a4c795c1101c0c208c4966164ddab0889d32e8
+    - 3786acfb9f99c57adc310a94e999f1044ae205d4d9555917383d55c05c2e02fa
 pkgname:
   - name: jxrlib
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
