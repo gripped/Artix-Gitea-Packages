@@ -1,9 +1,9 @@
 ---
-version: 3.4.17-1
+version: 3.4.19-1
 pkgbase:
   name: xviewer
   pkgdesc: Simple image viewer
-  pkgver: 3.4.17
+  pkgver: 3.4.19
   pkgrel: 1
   url: https://github.com/linuxmint/xviewer
   arch:
@@ -41,11 +41,9 @@ pkgbase:
   optdepends:
     - 'xviewer-plugins: Additional features'
   source:
-    - git+https://github.com/linuxmint/xviewer.git#tag=3.4.17
-    - xviewer-update-state.patch
+    - git+https://github.com/linuxmint/xviewer.git#tag=3.4.19
   b2sums:
-    - bf003c59b201c1b7f3078fb59f4a43b6497c673dbb5f2c06ec8feaa813c6e2bf8e8e83c27f88f742f5f38fda15cf1dcc8cfd90bc23cfbac97547e679ea3a898a
-    - 515efac7b2fd626ec244dd419a0da873d503ce3c155e75a0ae82e1aedf13ffc3058133c52a652cead4577ff6af143a9803db1f36b92aace1eaa3e748a087830e
+    - ff683a376d65728c61edf338af6c63d521df07313c2fc25d39f4406a59618aa7637f80077ab28f80d627b2a4f1387593a7982d3ac2e315d84298f197b25b41c8
 pkgname:
   - name: xviewer
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
