@@ -1,10 +1,10 @@
 ---
-version: 1.2.4-3
+version: 1.2.4-4
 pkgbase:
   name: glycin1
   pkgdesc: Sandboxed and extendable image decoding (legacy version)
   pkgver: 1.2.4
-  pkgrel: 3
+  pkgrel: 4
   url: https://gitlab.gnome.org/GNOME/glycin
   arch:
     - x86_64
@@ -61,4 +61,4 @@ pkgname:
       - libseccomp
     provides:
       - libglycin-gtk4-1.so
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
