@@ -13,7 +13,7 @@ url="https://github.com/podman-container-tools/container-libs"
 license=(Apache-2.0)
 depends=('container-network-stack>1')
 makedepends=(git go-md2man)
-checkdepends=(buildah podman skopeo)
+#checkdepends=(buildah podman skopeo)
 # configuration override directories need to exist
 options=(emptydirs)
 source=(
