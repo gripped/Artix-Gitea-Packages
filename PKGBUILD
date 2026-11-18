@@ -4,8 +4,8 @@
 # Contributor: Ner0
 
 pkgname=nemo
-pkgver=6.8.3
-pkgrel=1
+pkgver=6.8.4
+pkgrel=2
 pkgdesc='File manager for Cinnamon (Nautilus fork)'
 arch=(x86_64)
 url='https://github.com/linuxmint/nemo'
@@ -17,22 +17,25 @@ depends=(
   cinnamon-desktop
   dconf
   exempi
-  libgcc
   gdk-pixbuf2
   glib2
   glibc
-  gst-plugins-base
+  gst-plugins-base-libs
   gstreamer
+  gtk-layer-shell
   gtk3
+  gvfs
   hicolor-icon-theme
   json-glib
   libexif
+  libgcc
   libx11
   libxmlb
   pango
   python
   python-cairo
   python-gobject
+  wayland
   xapp
 )
 optdepends=(
@@ -55,12 +58,13 @@ makedepends=(
   meson
 )
 source=("git+https://github.com/linuxmint/nemo.git#tag=$pkgver")
-b2sums=('65edf8dceb26db6880128565b322170abda7e3ec47d4e652a9027984bb70a79a7f6f0e4f1293605599bf9473b233d2093ed953173a503bbd1de1d32c362298e5')
+b2sums=(127b8684d2ec04c33d269c73af7f6b9810283ca7d6469179fa54f8a6a321b2758cd8841be21d71a6c757a56390acb81dc745cec54c20d947428ac6b5c58ee127)
 
 build() {
   artix-meson $pkgname build \
     --libexecdir=lib/$pkgname \
-    -D gtk_doc=true
+    -D gtk_doc=true \
+    -D gtk_layer_shell=true
   meson compile -C build
 }
 
