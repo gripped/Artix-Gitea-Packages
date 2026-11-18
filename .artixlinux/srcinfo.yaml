@@ -43,4 +43,4 @@ pkgbase:
     - 1c17db0de89aece9a0cf316bb3c15415cbab9db9570529b95a4927b4c3fb494013f95fd44b46ee9916c4a6c741e8d249a0adcf95af05eb4ee7010029ca4f4892
 pkgname:
   - name: cinnamon-session
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
