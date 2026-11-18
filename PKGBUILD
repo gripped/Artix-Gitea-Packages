@@ -7,7 +7,7 @@
 
 pkgname=cinnamon-control-center
 pkgver=6.8.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A collection of configuration plugins used in cinnamon-settings'
 arch=(x86_64)
 url='https://github.com/linuxmint/cinnamon-control-center'
