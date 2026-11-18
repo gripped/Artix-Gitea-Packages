@@ -1,9 +1,9 @@
 ---
-version: 6.8.1-1
+version: 6.8.4-1
 pkgbase:
   name: muffin
   pkgdesc: Cinnamon window manager based on Mutter
-  pkgver: 6.8.1
+  pkgver: 6.8.4
   pkgrel: 1
   url: https://github.com/linuxmint/muffin
   arch:
@@ -25,7 +25,6 @@ pkgbase:
     - dconf
     - fontconfig
     - fribidi
-    - libgcc
     - gdk-pixbuf2
     - glib2
     - glibc
@@ -34,6 +33,7 @@ pkgbase:
     - json-glib
     - libcanberra
     - libdrm
+    - libgcc
     - libglvnd
     - libgudev
     - libice
@@ -59,19 +59,16 @@ pkgbase:
     - mesa
     - pango
     - pipewire
+    - python
     - startup-notification
     - systemd-libs
     - wayland
+    - xenity
     - xorg-xwayland
-    - zenity
   source:
-    - git+https://github.com/linuxmint/muffin.git#tag=6.8.1
-    - muffin-menu-icon.patch
-    - muffin-wayland-wm-capabilities.patch
+    - git+https://github.com/linuxmint/muffin.git#tag=6.8.4
   b2sums:
-    - c737707bd852ee94b8ee31962868d93a66e1b547ef8b7d71a814cb8d2d456944cbbbda65794bfe081428bf9e934a63286afc152f6b3313bf496f8100a6940b31
-    - 3e511043e740ecc08ca611ec67b4e50d5a13bd4b3e0bb0f300d4ada57a7f4346afa303493bcfa43242f6715c7dc50fb7005a54a9def0079505da1846f8bb4f7c
-    - 90e1dde17c970cc1e87e0517c8fcef3f6f53e20969bec34437aa99a042cc7d27eaf8ed08e722f534c758adf80548055948d6ed3efb06489d30559b3243372034
+    - e97d05dc9cbd51e5b4034d4a7039ee34d3a56e9a3b5a65a9a2d301b1e4b93b4a9f8c2ad6289d10c9a57171be7188909a72d8dc216f504b6f442161b76924fd2b
 pkgname:
   - name: muffin
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
