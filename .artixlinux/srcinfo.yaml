@@ -1,10 +1,10 @@
 ---
-version: 6.8.1-1
+version: 6.8.1-1.1
 pkgbase:
   name: cinnamon-screensaver
   pkgdesc: Screensaver designed to integrate well with the Cinnamon desktop
   pkgver: 6.8.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/linuxmint/cinnamon-screensaver
   arch:
     - x86_64

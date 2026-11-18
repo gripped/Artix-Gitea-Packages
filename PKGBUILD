@@ -7,7 +7,7 @@
 
 pkgname=cinnamon-screensaver
 pkgver=6.8.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='Screensaver designed to integrate well with the Cinnamon desktop'
 arch=(x86_64)
 url='https://github.com/linuxmint/cinnamon-screensaver'
