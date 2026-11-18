@@ -2,7 +2,7 @@
 # Contributor: artist for Artix Linux
 
 pkgname=helium-browser
-pkgver=0.21.1.1
+pkgver=0.22.1.1
 _hlmver="${pkgver%.*}"
 pkgrel=1
 pkgdesc="Private, fast, and honest web browser based on - Ungoogled - Chromium"
@@ -27,8 +27,8 @@ _url_linux="https://github.com/imputnet/helium-linux"
 source=("${_url_main}/archive/refs/tags/${_hlmver}.tar.gz"
         "${_url_linux}/archive/refs/tags/${pkgver}.tar.gz")
 
-sha256sums=('a9d51c0879223f8ca157e191872d6fa0f8b53955eece92635cbf35bc63f24eb8'
-            '5567ac0116c949440d651f37502fcd9564ba656687272768d4ae26d191479027')
+sha256sums=('462ce2d438cbc91cb3ef88b86143c0c772be988f167e6439d3ad90024a01e839'
+            '0f83d7e8f613964c0c4e4d8f3e79b83f8ef38a9a3128e106602b7af7ac5c924c')
 
 prepare() {
   mv -v "helium-${_hlmver}" helium-chromium
