@@ -48,4 +48,4 @@ pkgbase:
     - dd98a19b1589020cccce3be0a7dc3e4c8aca142ba2914a5e748fd3e7589d2962bea8921913b9cbe4c2551f3de4fe4c5efd3359fd3f30d549bb33b99d2e33097e
 pkgname:
   - name: cinnamon-screensaver
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
