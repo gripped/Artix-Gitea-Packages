@@ -3,8 +3,8 @@
 # Contributor: Anton Leontiev <bunder /at/ t-25.ru>
 
 pkgname=perl-business-isbn-data
-pkgver=20261016.001
-pkgrel=1.2
+pkgver=20261112.001
+pkgrel=1
 pkgdesc='Data pack for Business::ISBN'
 arch=(any)
 url='https://github.com/briandfoy/business-isbn-data'
@@ -15,8 +15,8 @@ checkdepends=(perl-test-pod)
 optdepends=('perl-libwww: for access to the xISBN service')
 options=(purge !emptydirs)
 source=("$pkgname::git+$url#tag=release-${pkgver}")
-sha512sums=('d034a168f53d74514d6132e5f9a21535a75b60c8a0ee74cf504b7a9ae9d0fcfaf0ed38ba6bee7bec1dcd16664681411f2199478cd3ff378d3e3b54fc44b716d1')
-b2sums=('44e6b1518f1bebbadf42384f5c1e991c832606972a1aa56743f5ff7519d6714a2b556092f2a99f21d50eebb24b51c46ddd61d8b0503f4bc00439ec7d59e87b9c')
+sha512sums=('7714f001b3a3f88f6a61ca29d602de70928f4500658fcd8fc3c1bf2a698ea931087340647557643230ad5b2f94affdab0a7d89b3fed7d1e0409b266f0f9841f0')
+b2sums=('f53ee08283dc17d229a5fb2deeb4dbb759053346c36a533fdd10b0a5d6e53b84232103d68633718852db43b1077a035a0c9b8ca034a03d1e54e99d0d1735a474')
 
 build() {
   cd "$pkgname"
