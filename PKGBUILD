@@ -3,26 +3,36 @@
 # Contributor: said <atvordhosbn[at]gmail[dot]com>
 
 pkgname=libcue
-pkgver=2.3.0
-pkgrel=2
+pkgver=2.4.0
+pkgrel=1
 pkgdesc='Parses so-called cue sheets and handles the parsed data'
 url='https://github.com/lipnitsk/libcue/'
 arch=('x86_64')
-license=('GPL2')
-source=("$pkgname-$pkgver.tar.gz::https://github.com/lipnitsk/libcue/archive/v$pkgver.tar.gz")
+license=('GPL-2.0-only')
+source=("git+https://github.com/lipnitsk/libcue.git#tag=v$pkgver")
 depends=('glibc')
-makedepends=('cmake')
-sha512sums=('fe2c39cc9794ac36c0706405e0432bab23228d343ba4e3395220d5b2a2ebf8b3c97e71d76a628f9144977c0dd56636f78d0c2d1f9f2b0d4068a837a258f035b6')
+makedepends=('bison' 'cmake' 'flex' 'git')
+sha512sums=('49b1418be4a6d93b7f3b5f99e503f5c32e7d1439a89221485dabb7ee48a33e18d96d0d5be794d813d6666ab0485bb6f3d63e69f5b65d96ac4b758f61d6072efa')
+
+prepare() {
+  cd "$pkgname"
+  # v2.4.0 still reports 2.3.0; upstream corrected this in v2.4.1:
+  # https://github.com/lipnitsk/libcue/commit/5f8f6edd14eb233ef8d9fb00d6c89029af3e07ee
+  sed -i "s/SET(PACKAGE_VERSION 2\.3\.0)/SET(PACKAGE_VERSION $pkgver)/" CMakeLists.txt
+}
 
 build() {
-  cmake -B build -S "$pkgname-$pkgver" \
+  cmake -B build -S "$pkgname" \
       -DCMAKE_BUILD_TYPE=None \
       -DCMAKE_INSTALL_LIBDIR=lib \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DBUILD_SHARED_LIBS=ON \
-      -DCMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -Wno-dev
   cmake --build build
+}
+
+check() {
+  ctest --test-dir build --output-on-failure
 }
 
 package() {
