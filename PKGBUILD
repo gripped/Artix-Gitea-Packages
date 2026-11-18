@@ -4,7 +4,7 @@
 
 pkgname=cinnamon-session
 pkgver=6.8.0
-pkgrel=1
+pkgrel=1.1
 pkgdesc='The Cinnamon session handler'
 arch=(x86_64)
 url='https://github.com/linuxmint/cinnamon-session'

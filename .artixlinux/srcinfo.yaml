@@ -1,10 +1,10 @@
 ---
-version: 6.8.0-1
+version: 6.8.0-1.1
 pkgbase:
   name: cinnamon-session
   pkgdesc: The Cinnamon session handler
   pkgver: 6.8.0
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://github.com/linuxmint/cinnamon-session
   arch:
     - x86_64
