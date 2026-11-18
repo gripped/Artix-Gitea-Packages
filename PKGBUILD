@@ -7,16 +7,36 @@ pkgname=(rocm-llvm rocm-llvm-libs rocm-mlir-libs rocm-llvm-tools rocm-llvm-heade
          rocm-llvm-static rocm-flang rocm-device-libs comgr)
 epoch=2
 pkgver=10.1
-pkgrel=4
+pkgrel=6
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'clang' 'rocm-core' 'rocm-cmake' 'perl'
-             'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf')
-source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=therock-$pkgver")
-sha256sums=('58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407')
+             'gcc-libs' 'zlib' 'zstd' 'libffi' 'libedit' 'ncurses' 'libxml2' 'patchelf'
+             'robin-map')
+# The MLIR Python bindings require nanobind 2.x
+_nanobind=2.12.0
+source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=therock-$pkgver"
+        "git+https://github.com/wjakob/nanobind#tag=v$_nanobind"
+        "$pkgbase-inlinespiller-lanes.patch::https://github.com/ROCm/llvm-project/commit/78302f03ff2523524989bd010a4896101a690330.patch")
+sha256sums=('58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407'
+            'f986a5660f144bb6642b7a9419885b38f6b17d75b55bb52df2384859b92b32b1'
+            '6891582690753f9b605b01ea24acc79fc719306679116b3024b3e334da392cf9')
 options=(staticlibs !lto)
 
+prepare() {
+    # AMDGPU miscompile with subregister liveness, https://github.com/ROCm/FlyDSL/issues/1087
+    # The commit also changes a test that this tag does not have
+    git -C "$pkgbase" apply --include=llvm/lib/CodeGen/InlineSpiller.cpp \
+        "$srcdir/$pkgbase-inlinespiller-lanes.patch"
+}
+
 build() {
+    cmake -S nanobind -B nanobind-build \
+        -D CMAKE_INSTALL_PREFIX="$srcdir/nanobind-install" \
+        -D NB_USE_SUBMODULE_DEPS=OFF \
+        -D NB_TEST=OFF
+    cmake --install nanobind-build
+
     # Build only minimal debug info to reduce size
     CFLAGS+=' -g1'
     CXXFLAGS+=' -g1'
@@ -107,6 +127,13 @@ build() {
         -D FLANG_RT_INCLUDE_AMD=ON
         -D FLANG_INCLUDE_DOCS=OFF
         -D FLANG_INCLUDE_TESTS=OFF
+        # Installs the MLIR Python binding sources; FlyDSL (built by
+        # python-aotriton) compiles its own bindings from them
+        -D MLIR_ENABLE_BINDINGS_PYTHON=ON
+        -D Python3_EXECUTABLE=/usr/bin/python
+        -D nanobind_DIR="$srcdir/nanobind-install/nanobind/cmake"
+        # Stub generation imports nanobind, which is not a system package in version 2
+        -D MLIR_PYTHON_STUBGEN_ENABLED=OFF
     )
     cmake "${cmake_args[@]}"
 
@@ -223,6 +250,9 @@ package_rocm-llvm() {
     # reference *.a files, so they ship together.
     mv "$_llvm"/lib/cmake "$_split/static/lib/"
     find "$_llvm/lib" -maxdepth 1 -name '*.a' -exec mv -t "$_split/static/lib/" {} +
+    # MLIR Python binding sources, referenced by the MLIR CMake config, and the
+    # bindings built from them
+    mv "$_llvm"/src "$_llvm"/python_packages "$_split/static/"
 
     # Remaining binaries (llvm-*, mlir-*, tblgen, FileCheck, ...) -> rocm-llvm-tools
     # A binary missing from _core_bin moves to rocm-llvm-tools.
@@ -238,6 +268,9 @@ package_rocm-llvm() {
     for _compiler in amdclang amdclang++ amdclang-cl amdclang-cpp amdlld; do
         ln -s /opt/rocm/lib/llvm/bin/$_compiler "$pkgdir/opt/rocm/bin/$_compiler"
     done
+
+    # Symlink to old path as some tools still rely on it
+    ln -s /opt/rocm/lib/llvm "$pkgdir/opt/rocm/llvm"
 
     cd "$pkgbase"
     install -Dm644 llvm/LICENSE.TXT "$pkgdir/usr/share/licenses/$pkgname/llvm-LICENSE"
@@ -310,10 +343,11 @@ package_rocm-llvm-static() {
     # The CMake export files also check for include/ and the tools (llvm-tblgen, ...)
     depends=("rocm-llvm-headers=$epoch:$pkgver-$pkgrel" "rocm-llvm-tools=$epoch:$pkgver-$pkgrel")
     # FlangTargets-release.cmake checks for files from rocm-flang
-    optdepends=('rocm-flang: find_package(Flang)')
+    optdepends=('rocm-flang: find_package(Flang)'
+                'python-numpy: MLIR Python bindings')
 
     install -d "$pkgdir/opt/rocm/lib/llvm"
-    cp -a "$srcdir"/split/static/lib "$pkgdir/opt/rocm/lib/llvm/"
+    cp -a "$srcdir"/split/static/{lib,src,python_packages} "$pkgdir/opt/rocm/lib/llvm/"
 
     install -Dm644 "$srcdir/$pkgbase/llvm/LICENSE.TXT" \
         "$pkgdir/usr/share/licenses/$pkgname/llvm-LICENSE"

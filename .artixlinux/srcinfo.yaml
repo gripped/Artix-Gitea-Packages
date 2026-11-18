@@ -1,9 +1,9 @@
 ---
-version: 2:10.1-4
+version: 2:10.1-6
 pkgbase:
   name: rocm-llvm
   pkgver: 10.1
-  pkgrel: 4
+  pkgrel: 6
   epoch: 2
   url: https://rocm.docs.amd.com/en/latest/reference/rocmcc.html
   arch:
@@ -25,13 +25,18 @@ pkgbase:
     - ncurses
     - libxml2
     - patchelf
+    - robin-map
   options:
     - staticlibs
     - '!lto'
   source:
     - rocm-llvm::git+https://github.com/ROCm/llvm-project#tag=therock-10.1
+    - git+https://github.com/wjakob/nanobind#tag=v2.12.0
+    - rocm-llvm-inlinespiller-lanes.patch::https://github.com/ROCm/llvm-project/commit/78302f03ff2523524989bd010a4896101a690330.patch
   sha256sums:
     - 58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407
+    - f986a5660f144bb6642b7a9419885b38f6b17d75b55bb52df2384859b92b32b1
+    - 6891582690753f9b605b01ea24acc79fc719306679116b3024b3e334da392cf9
 pkgname:
   - name: rocm-llvm
     pkgdesc: Radeon Open Compute - LLVM toolchain (clang, lld)
@@ -84,7 +89,7 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:10.1-4
+      - rocm-llvm=2:10.1-6
       - rocm-llvm-libs
       - rocm-mlir-libs
   - name: rocm-llvm-headers
@@ -92,22 +97,23 @@ pkgname:
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:10.1-4
+      - rocm-llvm=2:10.1-6
   - name: rocm-llvm-static
     pkgdesc: Radeon Open Compute - LLVM static libraries and CMake configuration
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm-headers=2:10.1-4
-      - rocm-llvm-tools=2:10.1-4
+      - rocm-llvm-headers=2:10.1-6
+      - rocm-llvm-tools=2:10.1-6
     optdepends:
       - 'rocm-flang: find_package(Flang)'
+      - 'python-numpy: MLIR Python bindings'
   - name: rocm-flang
     pkgdesc: Radeon Open Compute - Fortran compiler
     license:
       - Apache-2.0 WITH LLVM-exception
     depends:
-      - rocm-llvm=2:10.1-4
+      - rocm-llvm=2:10.1-6
       - rocm-llvm-libs
       - rocm-mlir-libs
       - gcc-libs
