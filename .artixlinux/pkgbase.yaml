@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy-goblins
+  addRepo: galaxy
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false

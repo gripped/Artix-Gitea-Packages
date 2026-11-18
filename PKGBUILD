@@ -5,7 +5,7 @@ pkgname=telegram-desktop
 pkgver=7.4.4
 _td_commit=c15d3f5a5de6e3ba5839822c451152e5e18bb700
 _wallet_engine_ver=0.0.7
-pkgrel=2
+pkgrel=1
 pkgdesc='Official Telegram Desktop client'
 arch=('x86_64')
 url="https://desktop.telegram.org/"
@@ -94,7 +94,7 @@ source=(
 sha512sums=('fc597cf9a04edd6228fc06503ca11a37590f4bc423612137ea1a953206c01da33cc8fa8177956f5175922ce848939f64166f4a12a9e07a3824731906549088de'
             'dd4741b3621c5e76ba7c9eee44ffd41b1e6b6c24fdb19988efd780d307aff79a9dcfd710be9ad63db6857cbbd71c273c54d82be524a5326fc22f1233d9eb6ca2'
             'f1a38de20459c5b780c98aaab037fdf34357980e7f3b93c4b523636d016ca4ffc9d9679c2ee4a246b138ef0474b8190d2db1874b204c006b0f30b3c950c62ff6'
-            '71c9b0aacef42e87febee042d251c2835e3d30b8000f9b00afb48d74a7e7aba93a36530c1ef0d6da69bb4d115e7a852a8888f1bcf868d1bd60d9e3f55a024088')
+            'SKIP')
 
 prepare() {
   cd wallet-engine-${_wallet_engine_ver}
