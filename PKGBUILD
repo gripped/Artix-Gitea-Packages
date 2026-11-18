@@ -30,7 +30,7 @@ pkgname=(
   pulse-native-provider
 )
 pkgver=1.6.11
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -534,7 +534,6 @@ package_pipewire-system-services() {
     "pipewire-pulse=$epoch:$pkgver-$pkgrel"
     "pipewire=$epoch:$pkgver-$pkgrel"
   )
-
 
   install -Dm644 pipewire-sysusers.conf \
     "$pkgdir/usr/lib/sysusers.d/pipewire.conf"
