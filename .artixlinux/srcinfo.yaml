@@ -1,22 +1,23 @@
 ---
-version: 1:9.21-1
+version: 1:9.21-2
 pkgbase:
   name: openconnect
   pkgdesc: Open client for Cisco AnyConnect VPN
   pkgver: 9.21
-  pkgrel: 1
+  pkgrel: 2
   epoch: 1
   url: https://www.infradead.org/openconnect/
   arch:
     - x86_64
   license:
-    - LGPL2.1
+    - LGPL-2.1-only
   checkdepends:
     - python-flask
   makedepends:
     - intltool
     - python
   depends:
+    - glibc
     - libxml2
     - gnutls
     - libproxy
@@ -30,6 +31,7 @@ pkgbase:
     - libproxy
     - libp11-kit
     - xdg-utils
+    - libtasn1
     - libstoken.so
     - libtss2-esys.so
     - libtss2-mu.so
@@ -57,4 +59,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: openconnect
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
