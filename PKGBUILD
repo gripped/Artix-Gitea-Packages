@@ -3,7 +3,7 @@
 pkgname=libcupsfilters
 pkgver=2.2.1.r80.ge1dde819
 _commit=e1dde819ca1f0514818f51c82640687263cec34d # master 2026-11-07
-pkgrel=1
+pkgrel=2
 pkgdesc="OpenPrinting CUPS Filters - contains all the code of the filters of the former cups-filters package as library functions"
 arch=('x86_64')
 url="https://github.com/OpenPrinting/libcupsfilters"
