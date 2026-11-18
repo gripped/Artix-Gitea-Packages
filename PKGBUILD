@@ -4,7 +4,7 @@
 pkgname=containers-common
 _upstream=container-libs
 pkgver=0.70.0
-pkgrel=2
+pkgrel=2.1
 epoch=1
 _shortnames_pkgver=2025.03.19
 pkgdesc="Configuration files and manpages for containers"
@@ -13,7 +13,7 @@ url="https://github.com/podman-container-tools/container-libs"
 license=(Apache-2.0)
 depends=('container-network-stack>1')
 makedepends=(git go-md2man)
-#checkdepends=(buildah podman skopeo)
+checkdepends=(buildah podman skopeo)
 # configuration override directories need to exist
 options=(emptydirs)
 source=(

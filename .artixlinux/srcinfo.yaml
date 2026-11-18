@@ -1,16 +1,20 @@
 ---
-version: 1:0.70.0-2
+version: 1:0.70.0-2.1
 pkgbase:
   name: containers-common
   pkgdesc: Configuration files and manpages for containers
   pkgver: 0.70.0
-  pkgrel: 2
+  pkgrel: 2.1
   epoch: 1
   url: https://github.com/podman-container-tools/container-libs
   arch:
     - any
   license:
     - Apache-2.0
+  checkdepends:
+    - buildah
+    - podman
+    - skopeo
   makedepends:
     - git
     - go-md2man
