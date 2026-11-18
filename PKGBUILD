@@ -1,8 +1,8 @@
 # Maintainer: Nebulosa <nebulosa2007-at-yandex-dot-ru>
 
 pkgname=chawan
-pkgver=0.5.0
-pkgrel=2
+pkgver=0.5.2
+pkgrel=1
 pkgdesc='A text-mode web browser and pager for Unix-like systems'
 arch=(x86_64)
 url='https://chawan.net/'
@@ -16,8 +16,8 @@ depends=(
 )
 makedepends=(git 'nim>=2.0.0')
 source=("$pkgname::git+https://git.sr.ht/~bptato/chawan#tag=v$pkgver")
-sha512sums=('4ba601e9bb5025a6f58ad21104b67e465af3f0cf7dbc7f92f354efe1606850d179cc09967009ff3efa21c3ca121f0e6b04af1cfcd09e91e0b73f6dd345a264ea')
-b2sums=('5bb7d2130e40841d4854d82b805e4a861c04382e720f774d98d9f3ed6a76a6959c1ed6946030fc1c54edcb352a189e067a796c6e491846625825d73df1e2ea3e')
+sha512sums=('32c4a99eeae40e263d6a11a5ad3eeb949101ea74dacd261d31bc29e584e09c79e28c7ea0758879e5cced32622d1503b57e3a4dedb805304f0f4943810923dcec')
+b2sums=('5c0863f3df31fa85c8fa95285575e8301ffa1b77827b3e300d300bc9bb0d443a1600838612d02e2814438e1c2074573732945031be263dc05169784ba49a9090')
 
 build() {
   cd "$pkgname"
