@@ -1,10 +1,10 @@
 ---
-version: 6.18.63-2
+version: 6.18.64-1
 pkgbase:
   name: linux-lts
   pkgdesc: LTS Linux
-  pkgver: 6.18.63
-  pkgrel: 2
+  pkgver: 6.18.64
+  pkgrel: 1
   url: https://www.kernel.org
   arch:
     - x86_64
@@ -37,8 +37,8 @@ pkgbase:
     - '!debug'
     - '!strip'
   source:
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.63.tar.xz
-    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.63.tar.sign
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.64.tar.xz
+    - https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.18.64.tar.sign
     - 0001-add-sysctl-to-allow-disabling-unprivileged-CLONE_NEW.patch
     - 0002-drm-amdgpu-avoid-memory-allocation-in-the-critical-c.patch
     - 0003-drm-amdgpu-use-GFP_ATOMIC-instead-of-NOWAIT-in-the-c.patch
@@ -46,13 +46,13 @@ pkgbase:
     - ABAF11C65A2970B130ABE3C479BE3E4300411886
     - 647F28654894E3BD457199BE38DBBDC86092693E
   sha256sums:
-    - 81764a545072d160748beff4d9de2e7d95aa9f16e8261110288f067a2cc61d71
+    - 020d45510c539972e6f14c5c71566878d3b7ef56fb082b3e09134f2ebaade562
     - SKIP
     - fc4525901142589d4bf7d2b8d1bc474647bff879e610147cd3498eca935a2289
     - a5497e9e0a47a581cf7d259419b1ede98096512d2e671222caf59a06816c9167
     - 44caa7c6a79055539f16ab118bece58934cdf93557643a50017634366c864b91
   b2sums:
-    - b8d7dc0e3b5877ecada68a482d8180d525f5056acb198ffc225a538173652b8e1030de06f461db58f4b60ec5f335b78a2e0704a80cb6ab341b404a1fde518e84
+    - 2c9130c8a2f57384556517159efbf843771298943d52abfac7cd3bf5524b10213f0972c9cdc5cfc11028300c06e7afc4ba1a84495119316d286e4c5e0f87e652
     - SKIP
     - 6da4d826e1f432b6fc148adbb636e338bfef4e51233c2fc78446666cd322b66b4846377524ede92dcea376b29359a2ecd2f9900f509c696fc5cd6efcc90363cd
     - bef18d34c0864787aa372db1a3d179a527741e1a86501918badba436555cdb38762a51cc6398230a7534bda276693792a2224f68a045dcdb6bdea63a96edc41b
@@ -60,9 +60,9 @@ pkgbase:
   source_x86_64:
     - config.x86_64
   sha256sums_x86_64:
-    - 944fbae6c1f2efe72f3f9c092e2590a670b865abaa804025383d4f8d644425d3
+    - 524bbdc99248ca1733b1c057202fac3c8eecd6216bfc4a5b19cffba65f1d82b4
   b2sums_x86_64:
-    - 331e11dc3014c8ee06dd38fa29500ce5e9aadeabeda945886c6335700c0bc1ac4e4ddf393b157befcf42202eb7e62b9419299c702670b6e724f78c09ad3fbeaa
+    - 254e8e81973b303defc5e543de0b94950b8378d1e43dd89039a41cfd3e21a777ff924edd8f2d2d873b9615db28255968efb2899936b972f33b0603087d6c7493
 pkgname:
   - name: linux-lts
     pkgdesc: The LTS Linux kernel and modules
