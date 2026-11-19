@@ -1,9 +1,9 @@
 ---
-version: 10.1-1
+version: 10.2-1
 pkgbase:
   name: hipify-clang
   pkgdesc: Convert CUDA to Portable C++ Code
-  pkgver: 10.1
+  pkgver: 10.2
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/HIPIFY/en/latest
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - hipify-clang-10.1.tar.gz::https://github.com/ROCm/HIPIFY/archive/therock-10.1.tar.gz
+    - hipify-clang-10.2.tar.gz::https://github.com/ROCm/HIPIFY/archive/therock-10.2.tar.gz
   sha256sums:
-    - 257f545d98e214599bdb372e40029f63ad2f5de6a6f890d27a4172d66d98f448
+    - 083b962e3ac5f917c3135cc61e2c1a8e733d70f0cf8c38560ed1a616b1f60a4b
 pkgname:
   - name: hipify-clang
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
