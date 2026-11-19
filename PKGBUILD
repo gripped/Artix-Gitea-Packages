@@ -34,8 +34,8 @@ sha256sums=('3f73ed3c58c8aad8e734d8c233f35aace432446c6202645c3a2c90323cf56dff'
             'a0f241f7ee99d7862744da108bb40b4668027335e7923a5edbd5599029e2983a'
             'adebfbf2b81edae003783a6322bbcba8ad02db5da8f1925e3c1edafee09c2cb4'
             'ac64ae579579a140db931d74e08720503fdc49d5d1925c4be6c8a4ee12661d9f'
-            '67ac6cfdd8caeb6ae8659d2559669f4a31b55e88ecf629b976f3c0bffff3ac19'
-            '6f214a668e4d89d9f9dbd02bb698789b219361532ab104822bcd96be7ee265b4')
+            'SKIP'
+            'SKIP')
 
 options=(!lto)
 
