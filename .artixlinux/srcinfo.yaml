@@ -1,10 +1,10 @@
 ---
-version: 10.1-1.1
+version: 10.2-1
 pkgbase:
   name: amdsmi
   pkgdesc: AMD System Management Interface library
-  pkgver: 10.1
-  pkgrel: 1.1
+  pkgver: 10.2
+  pkgrel: 1
   url: https://rocm.docs.amd.com/projects/amdsmi/en/latest/
   arch:
     - x86_64
@@ -32,10 +32,10 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - amdsmi-10.1.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.1/amdsmi.tar.gz
+    - amdsmi-10.2.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.2/amdsmi.tar.gz
     - amdsmi-esmi-d494a3194ceb4cc4dbb2debf9fcbe8773c6d3bef.tar.gz::https://github.com/amd/esmi_ib_library/archive/d494a3194ceb4cc4dbb2debf9fcbe8773c6d3bef.tar.gz
   sha256sums:
-    - 550ecc98dd7e73f7b70fb0c0eeb66fa3bc9fba19644622e76dfb67f8529e1a70
+    - 2afc1725b8216b488a9d84756516140815e703343ac753b66141f1fe6ff2a25c
     - 8f9cf10922276ca35872ca0bc27e29e717a472ba704a575c5497622b62049e75
 pkgname:
   - name: amdsmi

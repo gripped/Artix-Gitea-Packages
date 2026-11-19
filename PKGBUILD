@@ -2,8 +2,8 @@
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 
 pkgname=amdsmi
-pkgver=10.1
-pkgrel=1.1
+pkgver=10.2
+pkgrel=1
 pkgdesc='AMD System Management Interface library'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/amdsmi/en/latest/'
@@ -35,7 +35,7 @@ source=(
   "$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz"
   "$pkgname-esmi-$_esmi_commit.tar.gz::$_esmi/archive/$_esmi_commit.tar.gz"
 )
-sha256sums=('550ecc98dd7e73f7b70fb0c0eeb66fa3bc9fba19644622e76dfb67f8529e1a70'
+sha256sums=('2afc1725b8216b488a9d84756516140815e703343ac753b66141f1fe6ff2a25c'
             '8f9cf10922276ca35872ca0bc27e29e717a472ba704a575c5497622b62049e75')
 options=(!lto)
 _dirname="$(basename "$_git")-$(basename "${source[0]}" .tar.gz)"
