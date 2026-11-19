@@ -8,7 +8,7 @@
 # Contributor: Alexandru M Stan <alex@hypertriangle.com>
 
 pkgname=hsa-rocr
-pkgver=10.1
+pkgver=10.2
 pkgrel=1
 pkgdesc='HSA Runtime API and runtime for ROCm'
 arch=('x86_64')
@@ -31,7 +31,7 @@ makedepends=('cmake' 'rocm-llvm' 'rocm-llvm-static' 'xxd')
 source=("rocm-${pkgver}.tar.gz::$url/archive/therock-$pkgver.tar.gz"
         # https://github.com/ROCm/rocm-systems/pull/13277
         "$pkgname-stripped-symtab.patch::$url/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch")
-sha256sums=('31dc4296cb15c3eada729743731d236ee4a52e4a2a301b9da9075b94c012be19'
+sha256sums=('8559e088a7ac9f9c28399c714f6c18afc5fdd443f1da0ba209c6aa195196afb1'
             'b64cfd84a80cf08b4cf13f827b26068a758bfbbff0d3703add2b446675a30c70')
 _dirname="$(basename "$url")-therock-$pkgver"/projects/rocr-runtime/
 options=(!lto)
