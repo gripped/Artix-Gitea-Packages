@@ -1,10 +1,10 @@
 ---
-version: 4.20.0-1
+version: 4.20.0-2
 pkgbase:
   name: xfce4-mixer
   pkgdesc: A volume control application based on GStreamer
   pkgver: 4.20.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://docs.xfce.org/apps/xfce4-mixer/start
   arch:
     - x86_64
@@ -27,4 +27,4 @@ pkgbase:
     - 1ac11b9e7ecc3e0994599b669e47fb0de71a541c422fd83dc79446a2633e4076
 pkgname:
   - name: xfce4-mixer
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.1-1-any
