@@ -93,4 +93,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: telegram-desktop
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any

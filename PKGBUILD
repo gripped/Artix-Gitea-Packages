@@ -102,6 +102,8 @@ prepare() {
 }
 
 build() {
+  # Disable cache of g-ir-scanner
+  export GI_SCANNER_DISABLE_CACHE=1
   # Build wallet-engine
   cd wallet-engine-${_wallet_engine_ver}
   just build
