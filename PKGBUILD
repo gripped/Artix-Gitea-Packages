@@ -2,21 +2,22 @@
 
 pkgname=perl-text-bibtex
 _dist=Text-BibTeX
-pkgver=0.91
-pkgrel=3
-pkgdesc="Perl interface to read and parse BibTeX files"
-arch=('x86_64')
+pkgver=1.00
+pkgrel=1
+pkgdesc='Perl interface to read and parse BibTeX files'
+arch=(x86_64)
 url="https://metacpan.org/release/${_dist}"
-license=('PerlArtistic' 'GPL')
-depends=('perl')
-makedepends=('perl-module-build'
-             'perl-config-autoconf'
-             'perl-extutils-libbuilder')
-options=('!emptydirs')
+license=('GPL-1.0-or-later OR Artistic-1.0-Perl')
+depends=(perl)
+makedepends=(
+  perl-module-build
+  perl-config-autoconf
+  perl-extutils-libbuilder
+)
+options=(!emptydirs)
 source=(https://search.cpan.org/CPAN/authors/id/A/AM/AMBS/${_dist}-${pkgver}.tar.gz)
-# Checksums from http://search.cpan.org/CPAN/authors/id/A/AM/AMBS/CHECKSUMS
-md5sums=('437862f801cfb7598dff52aa4ff7d888')
-sha256sums=('3f0113cf8fe71dc7484636dc8e2a581637ecbcc82d0be29bbd46d0bf3f8cdb37')
+sha512sums=('ba026452eaa2acebe3a963674e687035984acc3777f91f89f830fefb59bf8df53dac78fa8a01f2ae281a7e7bd36e187d8a52b62b812006b4365ee82eb5642472')
+b2sums=('a2b090f76851cbdb0edf47c26560e628d18477ba83891acad6f5b7a4e0281f37e09fec68391bf025b907e22d4c9c929d13ada548c3789ce005b08963807881c4')
 
 prepare() {
     cd "${srcdir}/${_dist}-${pkgver}"
