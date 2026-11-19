@@ -1,9 +1,9 @@
 ---
-version: 10.1-1
+version: 10.2-1
 pkgbase:
   name: rocm-opencl-runtime
   pkgdesc: OpenCL implementation for AMD
-  pkgver: 10.1
+  pkgver: 10.2
   pkgrel: 1
   url: https://github.com/ROCm/clr
   arch:
@@ -26,9 +26,9 @@ pkgbase:
   provides:
     - opencl-driver
   source:
-    - rocm-systems::git+https://github.com/ROCm/rocm-systems#tag=therock-10.1
+    - rocm-systems::git+https://github.com/ROCm/rocm-systems#tag=therock-10.2
   sha256sums:
-    - 04a12e04a2b143a19ae948c09bceacc66cc8df0359dbcc30760047480ebd7bc7
+    - cde1c80b729bc6ab16c00967ca049e40fa38a630b8d31fc1d5bc7b9821b7bad3
 pkgname:
   - name: rocm-opencl-runtime
 # generated with artixpkg 0.40.0-1-any
