@@ -1,9 +1,9 @@
 ---
-version: 2.2.0-1
+version: 2.3.0-1
 pkgbase:
   name: ktextaddons
   pkgdesc: Various text handling addons
-  pkgver: 2.2.0
+  pkgver: 2.3.0
   pkgrel: 1
   url: https://invent.kde.org/libraries/ktextaddons
   arch:
@@ -13,6 +13,7 @@ pkgbase:
   makedepends:
     - extra-cmake-modules
     - qt6-tools
+    - vosk-api
   depends:
     - glibc
     - karchive
@@ -34,17 +35,20 @@ pkgbase:
     - sonnet
     - syntax-highlighting
   optdepends:
-    - 'languagetool: Grammar checking'
     - 'grammalecte: French grammar checking'
+    - 'languagetool: Grammar checking'
     - 'libreoffice: Use autocorrection data from LibreOffice'
+    - 'vosk-api: Speech to text plugin'
   source:
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.2.0.tar.xz
-    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.2.0.tar.xz.sig
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.3.0.tar.xz
+    - https://download.kde.org/stable/ktextaddons/ktextaddons-2.3.0.tar.xz.sig
+    - system-vosk.patch
   validpgpkeys:
     - 90A774939A973FF1ECC827788FFE4352ED54BB8A
   sha256sums:
-    - 26b78fab82ce76fa19d8d2a47757631d21dcaddb6814442b6dd2853e65cd5a81
+    - dba60c5872e6b3197b4e3427ca952e9af7d0717ff6503ac52c2a7562ff62bc34
     - SKIP
+    - 5ea5bea4eba5c887cee064fdfb55a8c2df975f353a415e5b22dbe2870a56fa65
 pkgname:
   - name: ktextaddons
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
