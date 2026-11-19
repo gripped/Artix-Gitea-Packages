@@ -1,10 +1,10 @@
 ---
-version: 2026.4.0-1
+version: 2026.4.0-2
 pkgbase:
   name: scummvm
   pkgdesc: A 'virtual machine' for several classic graphical point-and-click adventure games.
   pkgver: 2026.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: http://www.scummvm.org/
   arch:
     - x86_64
@@ -46,4 +46,4 @@ pkgbase:
     - 9befd82660d90f64122fd0e2d588cc62d2db9d6ce5c25b6e2bdeb31e62b202dc1e90f46847675de0a6ad32d0f60dc891b6fbd9907b2e680c311595da7af3567e
 pkgname:
   - name: scummvm
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
