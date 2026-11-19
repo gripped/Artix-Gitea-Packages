@@ -1,10 +1,10 @@
 ---
-version: 1.0.0-1
+version: 1.0.0-2
 pkgbase:
   name: cava
   pkgdesc: Console-based Audio Visualizer with support for multiple backends
   pkgver: 1.0.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/karlstav/cava
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 6de652e3029d0ec8e2b682f3c4f9377cbc6712c92be5e0d69178e562edae70c288f98784665f40c03dce9b9cd1ffeb3c866931405e56138a58c69fbe303fb667
 pkgname:
   - name: cava
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.1-1-any
