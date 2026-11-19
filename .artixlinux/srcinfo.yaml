@@ -1,9 +1,9 @@
 ---
-version: 10.1-1
+version: 10.2-1
 pkgbase:
   name: rocminfo
   pkgdesc: ROCm Application for Reporting System Info
-  pkgver: 10.1
+  pkgver: 10.2
   pkgrel: 1
   url: https://github.com/ROCm/rocm-systems
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python
     - rocm-core
   source:
-    - rocminfo-10.1.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.1/rocminfo.tar.gz
+    - rocminfo-10.2.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.2/rocminfo.tar.gz
   sha256sums:
-    - 057f8fcb4fc82d520f266014d6bfb53fb6d5e9413d9e4d71466026696d2c32d1
+    - 71ecf36b4c51a6d3a397ad13c108fe3a91cc45dbbb20365bc394de963d5126c9
 pkgname:
   - name: rocminfo
 # generated with artixpkg 0.40.0-1-any
