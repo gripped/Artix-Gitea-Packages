@@ -5,7 +5,7 @@
 
 pkgname=nemo
 pkgver=6.8.4
-pkgrel=2
+pkgrel=3
 pkgdesc='File manager for Cinnamon (Nautilus fork)'
 arch=(x86_64)
 url='https://github.com/linuxmint/nemo'
@@ -57,8 +57,21 @@ makedepends=(
   libgsf
   meson
 )
-source=("git+https://github.com/linuxmint/nemo.git#tag=$pkgver")
-b2sums=(127b8684d2ec04c33d269c73af7f6b9810283ca7d6469179fa54f8a6a321b2758cd8841be21d71a6c757a56390acb81dc745cec54c20d947428ac6b5c58ee127)
+source=(
+  "git+https://github.com/linuxmint/nemo.git#tag=$pkgver"
+  nemo-fix-csd-position.patch
+)
+b2sums=(
+  127b8684d2ec04c33d269c73af7f6b9810283ca7d6469179fa54f8a6a321b2758cd8841be21d71a6c757a56390acb81dc745cec54c20d947428ac6b5c58ee127
+  dd2096c0da8fddd911d40dea99cf02462aa0480c9e524c0a5ef6415e8aeb1c273165d5247028f5234e357dd282dfd8ea6c8917fc81b91be7fed27c651c08b8f0
+)
+
+prepare() {
+  cd $pkgname
+
+  # Fix desktop window position with client-side decorations
+  git apply -3 ../nemo-fix-csd-position.patch
+}
 
 build() {
   artix-meson $pkgname build \
