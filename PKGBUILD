@@ -4,8 +4,8 @@
 
 pkgbase=hip-runtime
 pkgname=(hip-runtime-amd hip-runtime-nvidia)
-pkgver=10.1
-pkgrel=2
+pkgver=10.2
+pkgrel=1
 _pkgdesc="Heterogeneous Interface for Portability"
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/HIP/en/latest/'
@@ -22,17 +22,20 @@ _hipcc='https://github.com/ROCm/llvm-project'
 source=("$pkgbase-clr-$pkgver.tar.gz::$_release/clr.tar.gz"
         "$pkgbase-hip-$pkgver.tar.gz::$_release/hip.tar.gz"
         "$pkgbase-hipother-$pkgver.tar.gz::$_release/hipother.tar.gz"
+        # clr includes the HRR capture header from hrr/include
+        "$pkgbase-hrr-$pkgver.tar.gz::$_release/hrr.tar.gz"
         "$pkgbase-hipcc::git+$_hipcc#$_tag"
         # https://github.com/ROCm/rocm-systems/pull/12596
         "$pkgbase-no-host-noinline.patch::https://github.com/ROCm/rocm-systems/commit/5d7969b1005b2c688057097a46a0a63860d7367c.patch?full_index=1"
         # https://github.com/ROCm/rocm-systems/pull/13277
         "$pkgbase-stripped-symtab.patch::https://github.com/ROCm/rocm-systems/commit/e9f923eadedbe0a9b7e969940114cd00aade7ebd.patch?full_index=1")
-sha256sums=('1809eda411c9156ca0b66e79acbfc198fd443aa77077fc113d334e545e8880b4'
-            '777eef65d8fcf38baf17401097396dbdf5e9d07ba7f9d24268e8f8fa73f6688d'
-            'b3abc044a3eeb1950a1fa7a6404e4e85c550629741b28952454ca519dbd7d5f3'
-            '58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407'
-            'SKIP'
-            'SKIP')
+sha256sums=('3f73ed3c58c8aad8e734d8c233f35aace432446c6202645c3a2c90323cf56dff'
+            '9c50388cdcc345e468a90220887068944e84f3ca924caa106f6ce7e462fafc2c'
+            'a0f241f7ee99d7862744da108bb40b4668027335e7923a5edbd5599029e2983a'
+            'adebfbf2b81edae003783a6322bbcba8ad02db5da8f1925e3c1edafee09c2cb4'
+            'ac64ae579579a140db931d74e08720503fdc49d5d1925c4be6c8a4ee12661d9f'
+            '67ac6cfdd8caeb6ae8659d2559669f4a31b55e88ecf629b976f3c0bffff3ac19'
+            '6f214a668e4d89d9f9dbd02bb698789b219361532ab104822bcd96be7ee265b4')
 
 options=(!lto)
 
