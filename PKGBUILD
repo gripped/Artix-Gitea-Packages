@@ -6,8 +6,8 @@ pkgbase=rocm-llvm
 pkgname=(rocm-llvm rocm-llvm-libs rocm-mlir-libs rocm-llvm-tools rocm-llvm-headers
          rocm-llvm-static rocm-flang rocm-device-libs comgr)
 epoch=2
-pkgver=10.1
-pkgrel=6
+pkgver=10.2
+pkgrel=1
 arch=('x86_64')
 url='https://rocm.docs.amd.com/en/latest/reference/rocmcc.html'
 makedepends=('git' 'cmake' 'python' 'ninja' 'clang' 'rocm-core' 'rocm-cmake' 'perl'
@@ -18,7 +18,7 @@ _nanobind=2.12.0
 source=("$pkgbase::git+https://github.com/ROCm/llvm-project#tag=therock-$pkgver"
         "git+https://github.com/wjakob/nanobind#tag=v$_nanobind"
         "$pkgbase-inlinespiller-lanes.patch::https://github.com/ROCm/llvm-project/commit/78302f03ff2523524989bd010a4896101a690330.patch")
-sha256sums=('58e44c323502ea44bf61ce4de031b0f9218a28d097d38422376b0e0b7572d407'
+sha256sums=('ac64ae579579a140db931d74e08720503fdc49d5d1925c4be6c8a4ee12661d9f'
             'f986a5660f144bb6642b7a9419885b38f6b17d75b55bb52df2384859b92b32b1'
             '6891582690753f9b605b01ea24acc79fc719306679116b3024b3e334da392cf9')
 options=(staticlibs !lto)
