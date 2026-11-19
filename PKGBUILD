@@ -1,7 +1,7 @@
 # Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 pkgname=rocprofiler-register
-pkgver=10.1
+pkgver=10.2
 pkgrel=1
 pkgdesc='Helper library for the ROCprofiler (v2) library'
 arch=('x86_64')
@@ -10,7 +10,7 @@ license=('MIT')
 depends=('rocm-core' 'glibc' 'libgcc' 'fmt' 'google-glog')
 makedepends=('cmake' 'rocm-cmake')
 source=("rocm-$pkgver.tar.gz::$url/archive/refs/tags/therock-$pkgver.tar.gz")
-sha256sums=('31dc4296cb15c3eada729743731d236ee4a52e4a2a301b9da9075b94c012be19')
+sha256sums=('8559e088a7ac9f9c28399c714f6c18afc5fdd443f1da0ba209c6aa195196afb1')
 _dirname="rocm-systems-therock-$pkgver/projects/$pkgname"
 
 prepare() {

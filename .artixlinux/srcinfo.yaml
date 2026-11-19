@@ -1,9 +1,9 @@
 ---
-version: 10.1-1
+version: 10.2-1
 pkgbase:
   name: rocprofiler-register
   pkgdesc: Helper library for the ROCprofiler (v2) library
-  pkgver: 10.1
+  pkgver: 10.2
   pkgrel: 1
   url: https://github.com/ROCm/rocm-systems
   arch:
@@ -20,9 +20,9 @@ pkgbase:
     - fmt
     - google-glog
   source:
-    - rocm-10.1.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/therock-10.1.tar.gz
+    - rocm-10.2.tar.gz::https://github.com/ROCm/rocm-systems/archive/refs/tags/therock-10.2.tar.gz
   sha256sums:
-    - 31dc4296cb15c3eada729743731d236ee4a52e4a2a301b9da9075b94c012be19
+    - 8559e088a7ac9f9c28399c714f6c18afc5fdd443f1da0ba209c6aa195196afb1
 pkgname:
   - name: rocprofiler-register
 # generated with artixpkg 0.40.0-1-any
