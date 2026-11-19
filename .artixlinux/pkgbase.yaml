@@ -1,6 +1,6 @@
 ---
 actions:
-  addRepo: galaxy
+  addRepo: galaxy-gremlins
   removeRepo: null
   triggersBuild: true
   triggersRebuild: false
