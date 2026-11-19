@@ -5,8 +5,8 @@
 # Contributor: Renato Garcia <fgarcia.renato@gmail.com>
 
 pkgname=trash-cli
-pkgver=0.24.5.26
-pkgrel=3
+pkgver=0.26.9.29
+pkgrel=1
 pkgdesc="Command line trashcan (recycle bin) interface"
 arch=('any')
 url="https://github.com/andreafrancia/trash-cli"
@@ -15,7 +15,7 @@ depends=('python' 'python-psutil' 'python-six')
 makedepends=('python-setuptools' 'python-shtab' 'python-build' 'python-installer' 'python-wheel')
 checkdepends=('python-pytest' 'python-flexmock' 'python-parameterized')
 source=("${pkgname}-${pkgver}.tar.gz::${url}/archive/${pkgver}.tar.gz")
-sha256sums=('1d7dec1ad8f0264ceb1b0211d25fffee99c9409cd2e1d36dcc82ac5540f39ce5')
+sha256sums=('33ec648238d291f1fd247bea9a260ab158528e184b3f83c9da10ea792bd4cdd2')
 
 prepare() {
     cd "${srcdir}"/${pkgname}-${pkgver}
@@ -38,7 +38,12 @@ build() {
 check() {
     cd "${srcdir}"/${pkgname}-${pkgver}
 
-    python -m pytest
+    # help output tests hardcode the shtab shell list (bash,zsh,tcsh), but
+    # python-shtab >= 1.13 also lists fish and powershell
+    python -m pytest \
+        --deselect tests/test_empty/components/test_empty_end_to_end.py::TestEmptyEndToEnd::test_help \
+        --deselect tests/test_list/cmd/test_end_to_end_list.py::TestEndToEndList::test_help \
+        --deselect tests/test_put/cmd/e2e/test_end_to_end_put.py::TestEndToEndPut::test_on_help
 }
 
 package(){

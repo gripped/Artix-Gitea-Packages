@@ -1,10 +1,10 @@
 ---
-version: 0.24.5.26-3
+version: 0.26.9.29-1
 pkgbase:
   name: trash-cli
   pkgdesc: Command line trashcan (recycle bin) interface
-  pkgver: 0.24.5.26
-  pkgrel: 3
+  pkgver: 0.26.9.29
+  pkgrel: 1
   url: https://github.com/andreafrancia/trash-cli
   arch:
     - any
@@ -25,9 +25,9 @@ pkgbase:
     - python-psutil
     - python-six
   source:
-    - trash-cli-0.24.5.26.tar.gz::https://github.com/andreafrancia/trash-cli/archive/0.24.5.26.tar.gz
+    - trash-cli-0.26.9.29.tar.gz::https://github.com/andreafrancia/trash-cli/archive/0.26.9.29.tar.gz
   sha256sums:
-    - 1d7dec1ad8f0264ceb1b0211d25fffee99c9409cd2e1d36dcc82ac5540f39ce5
+    - 33ec648238d291f1fd247bea9a260ab158528e184b3f83c9da10ea792bd4cdd2
 pkgname:
   - name: trash-cli
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.1-1-any
