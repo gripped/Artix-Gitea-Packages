@@ -1,10 +1,10 @@
 ---
-version: 6.8.4-1.3
+version: 6.8.4-2
 pkgbase:
   name: muffin
   pkgdesc: Cinnamon window manager based on Mutter
   pkgver: 6.8.4
-  pkgrel: 1.3
+  pkgrel: 2
   url: https://github.com/linuxmint/muffin
   arch:
     - x86_64
@@ -67,8 +67,10 @@ pkgbase:
     - xorg-xwayland
   source:
     - git+https://github.com/linuxmint/muffin.git#tag=6.8.4
+    - muffin-menu-icon.patch
   b2sums:
     - e97d05dc9cbd51e5b4034d4a7039ee34d3a56e9a3b5a65a9a2d301b1e4b93b4a9f8c2ad6289d10c9a57171be7188909a72d8dc216f504b6f442161b76924fd2b
+    - dd631406237397be00b1a2d6f7c169be4dadf2644f1319a629225b85f1913f204516ee8c2166008c13ae168f98acfebf6db6d15c5130a6f0479fa457b77373e4
 pkgname:
   - name: muffin
 # generated with artixpkg 0.40.1-1-any
