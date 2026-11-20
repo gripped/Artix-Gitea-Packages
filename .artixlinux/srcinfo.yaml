@@ -1,9 +1,9 @@
 ---
-version: 33.0.1-1
+version: 33.0.2-1
 pkgbase:
   name: obs-studio
   pkgdesc: Free, open source software for live streaming and recording
-  pkgver: 33.0.1
+  pkgver: 33.0.2
   pkgrel: 1
   url: https://obsproject.com
   arch:
@@ -70,21 +70,21 @@ pkgbase:
     - 'v4l2loopback-dkms: virtual camera support'
     - 'xdg-desktop-portal-impl: Wayland window/screen capture'
   provides:
-    - obs-studio-plugin-browser=33.0.1
+    - obs-studio-plugin-browser=33.0.2
   conflicts:
     - obs-studio-plugin-browser
   replaces:
     - obs-studio-plugin-browser<=32.2.2
   source:
-    - obs-studio::git+https://github.com/obsproject/obs-studio#tag=33.0.1
+    - obs-studio::git+https://github.com/obsproject/obs-studio#tag=33.0.2
     - obs-studio-libdshowcapture::git+https://github.com/obsproject/libdshowcapture.git
     - obs-studio-obs-browser::git+https://github.com/obsproject/obs-browser.git
     - obs-studio-obs-websocket::git+https://github.com/obsproject/obs-websocket.git
   sha256sums:
-    - 146e64de76ee79a8bc9155a7eb33886ab7b9b3a3de0f275a7ba3ff75ceb2ac74
+    - dbb898c7f42cfba4e4bf5aa363825c0ada6ce856ef5995b7f63f77a2b87b9ea9
     - SKIP
     - SKIP
     - SKIP
 pkgname:
   - name: obs-studio
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
