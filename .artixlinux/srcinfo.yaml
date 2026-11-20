@@ -1,10 +1,10 @@
 ---
-version: 4.7.4-1
+version: 4.7.4-2
 pkgbase:
   name: wireshark
   pkgdesc: Network traffic and protocol analyzer/sniffer
   pkgver: 4.7.4
-  pkgrel: 1
+  pkgrel: 2
   url: https://www.wireshark.org/
   arch:
     - x86_64
@@ -148,4 +148,4 @@ pkgname:
       - wireshark
       - wireshark-gtk
       - wireshark-common
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
