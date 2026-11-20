@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 2.13.0-1
+    version: 2.13.0-2
     packages:
-      - cmus-2.13.0-1-x86_64.pkg.tar.zst
+      - cmus-2.13.0-2-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2.12.0-7

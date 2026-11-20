@@ -1,10 +1,10 @@
 ---
-version: 2.13.0-1
+version: 2.13.0-2
 pkgbase:
   name: cmus
   pkgdesc: Feature-rich ncurses-based music player
   pkgver: 2.13.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://cmus.github.io/
   arch:
     - x86_64
@@ -57,4 +57,4 @@ pkgbase:
     - 92557878245322a0b723f740285f19028777754969d117bb7ac60f60492ef51b7e9249310cb485743be8e31d4927eb17b2fd45ae795cefcb0ed64e1eb3c11671
 pkgname:
   - name: cmus
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
