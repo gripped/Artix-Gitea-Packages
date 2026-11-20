@@ -1,20 +1,21 @@
 ---
 actions:
-  addRepo: system
-  removeRepo: system-gremlins
-  triggersBuild: false
+  addRepo: system-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
-  triggersNoCheck: false
+  triggersRepoRemove: false
+  triggersNoCheck: true
 repos:
   system-goblins:
     version: null
     packages: []
     debug: []
   system-gremlins:
-    version: null
-    packages: []
+    version: 1.0.11-1
+    packages:
+      - libmicrohttpd-1.0.11-1-x86_64.pkg.tar.zst
     debug: []
   system:
     version: 1.0.10-1
