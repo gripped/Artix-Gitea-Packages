@@ -3,7 +3,7 @@
 
 pkgname=five-or-more
 pkgver=48.1
-pkgrel=1
+pkgrel=2
 pkgdesc="Remove colored balls from the board by forming lines"
 url="https://gitlab.gnome.org/GNOME/five-or-more"
 arch=(x86_64)
@@ -33,6 +33,10 @@ b2sums=('ee37da668f7411c2f31efb38d9735fb71c53364eac7f6e2741d07b9891259de725d0f47
 
 prepare() {
   cd $pkgname
+
+  # Fix window state handling
+  # https://gitlab.gnome.org/GNOME/five-or-more/-/work_items/33
+  git cherry-pick -n 5925b2be3540989294d0d65db30204b8f62a40f8
 }
 
 build() {
