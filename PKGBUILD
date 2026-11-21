@@ -3,7 +3,7 @@
 # Contributor: Markus Näther <naetherm@informatik.uni-freiburg.de>
 
 pkgname=rocthrust
-pkgver=10.1
+pkgver=10.2
 pkgrel=1
 pkgdesc='Port of the Thrust parallel algorithm library atop HIP/ROCm'
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('rocm-core' 'hip-runtime-amd' 'rocprim')
 makedepends=('cmake' 'rocm-cmake' 'rocm-toolchain' 'rocm-llvm')
 _git='https://github.com/ROCm/rocm-libraries'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('1b29efe17e3ac506c492176bbedad5de2c245ac2cdbd4e45c891ef920b140196')
+sha256sums=('4c743b315b27755669cdfbf323edcdc7bb6c6c178a10eefd4358de72c1cee820')
 
 build() {
   # -fcf-protection is not supported by HIP, see
