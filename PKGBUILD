@@ -2,7 +2,7 @@
 # Contributor: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=ruby-facets
-pkgver=4.1.0
+pkgver=4.2.0
 pkgrel=1
 pkgdesc='Premiere collection of general purpose method extensions and standard additions for the Ruby programming language'
 arch=(any)
@@ -24,7 +24,7 @@ checkdepends=(
 )
 options=(!emptydirs)
 source=(git+https://github.com/rubyworks/facets.git#tag=$pkgver)
-sha256sums=('20dd5b0b8a7057630c937daf301335b063668715c5b1a15e01942ff91500fdf2')
+sha256sums=('edea74f1de9717d78b40903c4982a3d3317ce74fc6d1c679fe268c27f8821bb3')
 
 build() {
   local _gemdir="$(gem env gemdir)"
