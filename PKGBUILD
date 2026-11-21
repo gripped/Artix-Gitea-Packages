@@ -6,16 +6,20 @@
 
 pkgname=pstoedit
 pkgver=4.3
-pkgrel=1
+pkgrel=2
 pkgdesc='Translates PostScript and PDF graphics into other vector formats'
 arch=(x86_64)
 url='https://www.pstoedit.com'
 _url="https://github.com/woglu/$pkgname"
 license=(GPL-2.0-only)
-depends=(gcc-libs
+depends=(
+         glibc
+         libgcc
+         libstdc++
          gd
          imagemagick
-         plotutils)
+         plotutils
+)
 makedepends=(ghostscript
              texlive-{basic,bin,latex{,recommended}}) # all that for a man page
 _archive="$pkgname-$pkgver"
