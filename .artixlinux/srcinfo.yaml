@@ -1,10 +1,10 @@
 ---
-version: 3.0.24-2
+version: 3.0.24-4
 pkgbase:
   name: vlc
   pkgdesc: Free and open source cross-platform multimedia player and framework
   pkgver: 3.0.24
-  pkgrel: 2
+  pkgrel: 4
   url: https://www.videolan.org/vlc/
   arch:
     - x86_64
@@ -101,9 +101,8 @@ pkgbase:
     - pcsclite
     - projectm
     - protobuf
-    - qt5-base
-    - qt5-svg
-    - qt5-x11extras
+    - qt6-base
+    - qt6-svg
     - sdl12-compat
     - sdl_image
     - smbclient
@@ -237,10 +236,8 @@ pkgname:
       - libvlc
       - libvlccore.so
       - libx11
-      - qt5-base
-      - qt5-svg
-      - qt5-x11extras
-      - qt5-wayland
+      - qt6-base
+      - qt6-svg
       - vlc-cli=3.0.24
       - vlc-plugin-lua=3.0.24
       - vlc-plugin-pulse=3.0.24
