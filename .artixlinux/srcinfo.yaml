@@ -1,11 +1,11 @@
 ---
-version: 24.22.3-1
+version: 24.22.3-2
 pkgbase:
   name: nodejs-lts-krypton
   pkgdesc:
     Evented I/O for V8 javascript ("Active LTS" release: Krypton)
   pkgver: 24.22.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://nodejs.org/
   arch:
     - x86_64
@@ -51,4 +51,4 @@ pkgbase:
     - fbbbf9db63aa3e1f239e1be2c734e773c662bcee9951a3ac69d199dd0459f29952334dda9332e7d0a74d91f1c91c6e66c490e5f556efeb64ad61ff5704f3f6b9
 pkgname:
   - name: nodejs-lts-krypton
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
