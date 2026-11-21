@@ -1,9 +1,9 @@
 ---
-version: 12.10.0-1
+version: 12.11.1-1
 pkgbase:
   name: limine
   pkgdesc: Modern, secure, portable, multiprotocol bootloader and boot manager
-  pkgver: 12.10.0
+  pkgver: 12.11.1
   pkgrel: 1
   url: https://github.com/Limine-Bootloader/Limine
   install: limine.install
@@ -30,14 +30,14 @@ pkgbase:
   depends:
     - glibc
   source:
-    - git+https://github.com/Limine-Bootloader/Limine.git#tag=v12.10.0?signed
+    - git+https://github.com/Limine-Bootloader/Limine.git#tag=v12.11.1?signed
     - edk2-ovmf-bins-20261026T212116Z.tar.xz::https://github.com/osdev0/edk2-ovmf-stable-bins/releases/download/20261026T212116Z/edk2-ovmf-bins.tar.xz
   validpgpkeys:
     - 05D29860D0A0668AAEFB9D691F3C021BECA23821
     - 6C222EA6B2BD216AA406516AC868F0B6DE38409D
   sha256sums:
-    - 695e2e6783db77c5658c12beeec8ff4b448120e01304bdae827c7ef1c73a158f
+    - 9d3374780f7f2d3940c6064fb86ade25831572a7d9280896bd0b0cd2c0250051
     - 1619a6884c9380516152c2fe3c73fe1d7851014f3ec6a784b5d7b0324983b4d4
 pkgname:
   - name: limine
-# generated with artixpkg 0.40.1-2-any
+# generated with artixpkg 0.40.1-2.1-any
