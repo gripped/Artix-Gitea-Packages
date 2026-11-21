@@ -10,7 +10,7 @@
 
 pkgname=nodejs
 pkgver=26.13.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Evented I/O for V8 javascript ("Current" release)'
 arch=('x86_64')
 url='https://nodejs.org/'
@@ -120,9 +120,6 @@ check() {
 
   # https://github.com/nodejs/node/issues/63914
   rm test/parallel/test-snapshot-reproducible.js
-
-  # Does not work on the Artix container
-  rm test/parallel/test-{http,net}-dns-error.js
 
   make test-only
 }
