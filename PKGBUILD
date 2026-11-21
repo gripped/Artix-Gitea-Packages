@@ -2,7 +2,7 @@
 # Contributor: Cory Sanin <corysanin@artixlinux.org>
 
 pkgname=artixlinux-appstream-data
-pkgver=20261020
+pkgver=20261120
 pkgrel=1
 pkgdesc='Artix Linux application database for AppStream-based software centers'
 arch=(any)
@@ -20,22 +20,22 @@ for _repo in $_repos; do
           $_repo-icons-128x128-$pkgver.tar.gz::https://gitea.artixlinux.org/corysanin/appstream-data-pkgbuild/releases/download/v$pkgver/$_repo-icons-128x128.tar.gz)
  noextract+=($_repo.xml.gz-$pkgver $_repo-icons-{48x48,64x64,128x128}-$pkgver.tar.gz)
 done
-sha256sums=('f8cf6e6aebebba23e7e8e9009cebcde26dc302b2f020ba61f3b91aaf342663e2'
+sha256sums=('94f8b98d7ab1e9d641a704d090406ee711497ad8ee3e7a49ebce1b9ed6656cf1'
             '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
             '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
             '7989bb311baa38ef545250282aa065d23281c46dfb8faabe4c653487bdbded5c'
-            '1642e3a010e2773970ae2665284d5dac44c7c04983024396bb7fe6d35f1ebee4'
-            'bc5579f164bf1520464e342da08a477b7c639045e7becbc0ba4faeee9f3b8bc6'
-            '07fff55a3f37e1d6c23a3db39827ab590cbadb8174e394e8945506f67bbe4c55'
-            'd70ca54b099ba7d7fb85a2ccfc1d4abb8b19404fd4b5846062add129f024751c'
-            '41544d22b2e88dddc80ed3e437efad96577af7813ad6466c09efdb206849fdec'
-            '3e1e54bd5de9ea74b3eabb742bc10d463e9c2fabf7c0ec2ebb5fa42b115ac675'
-            '191c0534361b942fb7c4ab5ba480a6021db789be0a25b865357a48609759af11'
-            '521c0951dc7e24f727cfd49236fbd3f07b351f17de326e547904357899212743'
-            '6afe3f9319df54bab523230647ec085218f5fafa75ff5db5f8ef963b648d8524'
-            '817cf610ba9a64e5f62589536374b82829a89fcc4b18ed181c9b126b3fd2e119'
-            '61e65c5ac6b62a182fbd0329f6387238915fedf6864f6312dbe5459fd02a6c34'
-            'cb954d6a3990beb03375479b497713eb744db95f980f60925470874d02cb9e91')
+            '94c61deb0da9657ff45879b42ce33cadfe10fc7b8ad3c5eff244e85fa9bd8840'
+            '3c165f0854cf55d1736a9013c4644df7cfb398079388a0d519e35d3e9955cbfb'
+            '637dc67cc9da28394cfef4f5d71149a74728678738fd858d329246b80bd19b1f'
+            '5039edf34aa5527fcf07722d45115f913dc01840d89ac330624e1e9089376108'
+            '9638672f6f1eefcde1b34fc8fbef18322e10a6d55d8e9f15617479af355320ec'
+            '6278649d5201a7cc8ecf737f77d8524333b3ce46acb33df5400eb8670d74256e'
+            '424bedd1ee16e0dbb51ef38b2906c6f21f98d919349f32b08588732e1f1ad211'
+            '78fa88ac9500701d9fea9a2296472011e34fb7e2616687c71f51ceabcb5deeea'
+            '7ae272bb1c9b3f62f0d79ef107b8e4ce50d8d78c90b47cb6b944bbcd9ad6a1ec'
+            'a94d979a207ebecabd706d6da83049a8c782933e9d178a03b83ee4440dabb056'
+            'dcc2259b9d63746fdba9553e9c1560981f6a1a88e260eae11ad410b8a06e6494'
+            'b57e75d1c7a837d53400cc8f3a5a0b84d335842047aec242748f5467f078b2ac')
 
 package() {
   for _repo in $_repos; do
