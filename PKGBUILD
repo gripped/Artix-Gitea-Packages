@@ -5,7 +5,7 @@
 
 pkgname=rocblas
 pkgver=10.1
-pkgrel=1
+pkgrel=2
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
@@ -45,8 +45,22 @@ optdepends=(
   'amdsmi: for rocblas-bench and rocblas-gemm-tune'
 )
 _git='https://github.com/ROCm/rocm-libraries'
-source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('2f75fdc285a80f0e7dfaf807a15288961427c8867141fd39c4dbef0ee6fff802')
+source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz"
+        # Generic GPU targets, https://github.com/ROCm/rocm-libraries/pull/5243
+        "rocblas-generic-arch-name.patch::$_git/commit/db802561d56ab4b6303874ccd467c1ec4c5316cf.patch"
+        # Commit 1b4a6a629d0f69dfcdeef85af6cf3dbfad6dcd04 of the same pull request,
+        # rebased by Fedora, see
+        # https://src.fedoraproject.org/rpms/rocblas/tree/6b56d7b0f92f1b66e9d8becc92a61c8214ebc255
+        "0006-rocblas-generalize-finding-tensile-for-generics.patch")
+sha256sums=('2f75fdc285a80f0e7dfaf807a15288961427c8867141fd39c4dbef0ee6fff802'
+            'f1634b0a7b6849cb4df8a62a8b608c91c796d05a9d049c521e737534627403ac'
+            '30433bb1d93e05de5a6905dc63b648f15fd7912495e37d2d60efe8ca7c6ab7ca')
+
+prepare() {
+  cd $pkgname
+  patch -Np3 -i "$srcdir/rocblas-generic-arch-name.patch"
+  patch -Np3 -i "$srcdir/0006-rocblas-generalize-finding-tensile-for-generics.patch"
+}
 
 build() {
   # Compile source code for supported GPU archs in parallel
@@ -85,7 +99,8 @@ build() {
     -D BUILD_WITH_PIP=OFF
     # hipblaslt doesn't support all relevant targets
     -D BUILD_WITH_HIPBLASLT=OFF
-    -D GPU_TARGETS=$(rocm-supported-gfx)
+    # gfx9-generic does not cover gfx908 and gfx90a
+    -D GPU_TARGETS="$(rocm-supported-gfx);gfx908:xnack-;gfx90a:xnack+;gfx90a:xnack-"
   )
   cmake "${cmake_args[@]}"
   cmake --build build

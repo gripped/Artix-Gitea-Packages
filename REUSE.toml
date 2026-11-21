@@ -22,3 +22,10 @@ path = [
 ]
 SPDX-FileCopyrightText = "Arch Linux contributors"
 SPDX-License-Identifier = "0BSD"
+
+[[annotations]]
+path = [
+    "0006-rocblas-generalize-finding-tensile-for-generics.patch",
+]
+SPDX-FileCopyrightText = "Tom Rix <Tom.Rix@amd.com>"
+SPDX-License-Identifier = "MIT"

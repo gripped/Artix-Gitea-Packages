@@ -1,10 +1,10 @@
 ---
-version: 10.1-1
+version: 10.1-2
 pkgbase:
   name: rocblas
   pkgdesc: Next generation BLAS implementation for ROCm platform
   pkgver: 10.1
-  pkgrel: 1
+  pkgrel: 2
   url: https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html
   arch:
     - x86_64
@@ -42,8 +42,12 @@ pkgbase:
     - 'amdsmi: for rocblas-bench and rocblas-gemm-tune'
   source:
     - rocblas-10.1.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.1/rocblas.tar.gz
+    - rocblas-generic-arch-name.patch::https://github.com/ROCm/rocm-libraries/commit/db802561d56ab4b6303874ccd467c1ec4c5316cf.patch
+    - 0006-rocblas-generalize-finding-tensile-for-generics.patch
   sha256sums:
     - 2f75fdc285a80f0e7dfaf807a15288961427c8867141fd39c4dbef0ee6fff802
+    - f1634b0a7b6849cb4df8a62a8b608c91c796d05a9d049c521e737534627403ac
+    - 30433bb1d93e05de5a6905dc63b648f15fd7912495e37d2d60efe8ca7c6ab7ca
 pkgname:
   - name: rocblas
-# generated with artixpkg 0.40.0-1.6-any
+# generated with artixpkg 0.40.1-2.1-any
