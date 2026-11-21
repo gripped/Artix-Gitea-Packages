@@ -1,9 +1,9 @@
 ---
-version: 10.1-1
+version: 10.2-1
 pkgbase:
   name: rocprim
   pkgdesc: Header-only library providing HIP parallel primitives
-  pkgver: 10.1
+  pkgver: 10.2
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/rocPRIM/en/latest/index.html
   arch:
@@ -19,9 +19,9 @@ pkgbase:
     - rocm-core
     - hip-runtime-amd
   source:
-    - rocprim-10.1.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.1/rocprim.tar.gz
+    - rocprim-10.2.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.2/rocprim.tar.gz
   sha256sums:
-    - feea175561e6c251837e506af93d4567f4793dd2b083ab302bf8edfb295e41bf
+    - eb82add0b6b83ed5470e2e9bc28b0cdd387f0be222a05cdaf3b2db4302fd260a
 pkgname:
   - name: rocprim
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
