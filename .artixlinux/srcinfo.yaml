@@ -1,10 +1,10 @@
 ---
-version: 17.0.0-2
+version: 17.0.0-3
 pkgbase:
   name: copyq
   pkgdesc: Clipboard manager with searchable and editable history
   pkgver: 17.0.0
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/hluk/copyq
   arch:
     - x86_64
@@ -26,8 +26,10 @@ pkgbase:
     - miniaudio
   source:
     - copyq-17.0.0.tar.gz::https://github.com/hluk/copyq/archive/v17.0.0.tar.gz
+    - 0001-only-use-setWindowRole-for-X11-on-the-mainwindow.patch
   sha256sums:
     - 78c73c6213fe4cf0c91e462c9372228af17c72448a1a69c9e4b0d28c79ff5fbc
+    - a2c4372f8bb96c336db112712b05b208888aafff5c09d321946716dd6d190f64
 pkgname:
   - name: copyq
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
