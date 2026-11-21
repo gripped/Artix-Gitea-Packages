@@ -1,9 +1,9 @@
 ---
-version: 4.26.282-1
+version: 4.26.291-1
 pkgbase:
   name: inotify-tools
   pkgdesc: a C library and a set of command-line programs for Linux providing a simple interface to inotify.
-  pkgver: 4.26.282
+  pkgver: 4.26.291
   pkgrel: 1
   url: https://github.com/inotify-tools/inotify-tools
   arch:
@@ -20,9 +20,9 @@ pkgbase:
   options:
     - docs
   source:
-    - inotify-tools-4.26.282.tar.gz::https://github.com/inotify-tools/inotify-tools/archive/refs/tags/4.26.282.tar.gz
+    - inotify-tools-4.26.291.tar.gz::https://github.com/inotify-tools/inotify-tools/archive/refs/tags/4.26.291.tar.gz
   sha256sums:
-    - 19e8db0825186e116c37401fafc63dee3f251a98a9697817c7a8ba75c8ff54aa
+    - 46b1a5569772011b23f0059330bc46affa8aaaf0ed790edc28114d6c10e690eb
 pkgname:
   - name: inotify-tools
 # generated with artixpkg 0.40.1-1-any
