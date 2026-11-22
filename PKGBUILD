@@ -4,7 +4,7 @@
 
 _name=fastapi
 pkgname=python-$_name
-pkgver=0.162.5
+pkgver=0.165.0
 pkgrel=1
 pkgdesc='FastAPI framework, high performance, easy to learn, fast to code, ready for production'
 arch=(any)
@@ -85,8 +85,8 @@ optdepends=(
   'uvicorn: for Uvicorn as ASGI server'
 )
 source=($_name-$pkgver.tar.gz::$url/archive/$pkgver.tar.gz)
-sha512sums=('6fe27a55d07d62cc622cd4d28a6655b687e20b0caebd2db5eadc5d9ddb1b921ba4f211130709047c60e04f0a6b1351bbab087c4b12e401882f9f1d517e176646')
-b2sums=('84ee7485fc6c0d8cdb4625a2f4bda886c188fced3b2e67800fbaba5f196bd1bff4681a339041c9307b98719cda67deea51617e426b07927d3e7f9c0cabc8efc1')
+sha512sums=('153da7a3efff4d2c57c8aec8c61ee7b6ee60ac37f07ae6cb6478db2dd738cec417b4947b4c60499341bef51dafebf180f0550ac9f7a419382b69b192155fdc03')
+b2sums=('326e34650579926257f44bed43b3d713dbf8e366d8f83185c6b6d630373d1196c057547f4b9224c5123e3baecd7dc6a3a0f74184884ee4ac1832722337ad2827')
 
 prepare() {
   cd $_name-$pkgver
