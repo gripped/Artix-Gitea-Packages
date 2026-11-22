@@ -1,0 +1,36 @@
+---
+version: 6.2.11-1
+pkgbase:
+  name: python-cachebox
+  pkgdesc: The fastest memoizing and caching Python library written in Rust
+  pkgver: 6.2.11
+  pkgrel: 1
+  url: https://github.com/awolverp/cachebox
+  arch:
+    - x86_64
+  license:
+    - MIT
+  checkdepends:
+    - python-hypothesis
+    - python-pytest
+    - python-pytest-asyncio
+  makedepends:
+    - git
+    - python-build
+    - python-installer
+    - python-maturin
+    - python-wheel
+    - rust
+  depends:
+    - glibc
+    - libgcc
+    - python
+  source:
+    - git+https://github.com/awolverp/cachebox.git#tag=v6.2.11
+    - 0001-tests-pause-gc-around-recursive-test.patch
+  sha512sums:
+    - c42f5ab479d723a13baf1dd2a98fd1f5952b4f0bd52b33aa60c65fad5cf33f464909a54ee6a823f2316c64d2bb5b360d50efac42cf404f3566f84f90607972d9
+    - 5f4e775118d9ca8c3d0eb550e9b81adaa6d03f52460aa8e1b9467153eaf3dd3c52694bd775d38be590745263738935e6671116295d03fedc863010f1f773c96b
+pkgname:
+  - name: python-cachebox
+# generated with artixpkg 0.40.0-1-any
