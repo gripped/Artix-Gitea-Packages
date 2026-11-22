@@ -2,7 +2,7 @@
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 
 pkgname=hipblas-common
-pkgver=10.0
+pkgver=10.1
 pkgrel=1
 pkgdesc='Common files shared by hipBLAS and hipBLASLt'
 arch=('any')
@@ -16,7 +16,7 @@ makedepends=(
 )
 _git='https://github.com/ROCm/rocm-libraries'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('1428438a1dca95d4a751ed6d22267e49c54ab08a80f31c07e3e077084bce9d0a')
+sha256sums=('cd34bfe9d3854201dede971fb758df01dc6497dd4e7c17e2cc634f7b240af444')
 
 build() {
   # -fcf-protection is not supported by HIP, see
