@@ -3,7 +3,7 @@
 # Contributor: Evgeniy Filimonov <evgfilim1@gmail.com>
 
 pkgname=python-aiogram
-pkgver=3.31.0
+pkgver=3.33.0
 pkgrel=1
 pkgdesc="A modern and fully asynchronous framework for Telegram Bot API"
 arch=('any')
@@ -51,9 +51,10 @@ optdepends=(
   'python-motor: MongoDB storage support'
   'python-babel: i18n support'
   'python-cryptography: webhook signature verification support'
+  'python-pytest: aiogram.test pytest plugin support'
 )
 source=("git+$url.git#tag=v$pkgver")
-b2sums=('7d770e3b2d2d34735bb300a20d10f45d4a385c2da92993e2a6abc43b0541b993dc387769117a8b4bb0e07f09e8a556d17a069dbc22c9fec6ba6b095c0642a4ca')
+b2sums=('7f069b1333bc0f69b444592ba328a13bd6317039beca1d7567fd93086d8cfb2d8af71ea8404f21da394d7381cd9fc70afaf10299929672728855a606a9b2eff5')
 
 build() {
   cd aiogram
@@ -62,8 +63,12 @@ build() {
 
 check() {
   cd aiogram
+  # Subprocess tests run from temporary directories and require the installed wheel.
+  python -m venv --system-site-packages --without-pip "$srcdir/test-env"
+  "$srcdir/test-env/bin/python" -m installer dist/*.whl
   # shellcheck disable=2016
-  pifpaf run redis -- bash -c 'python -m pytest --redis $PIFPAF_REDIS_URL'
+  # Preserve current fixture-scope behavior; upstream treats pytest-asyncio's warning as an error.
+  PATH="$srcdir/test-env/bin:$PATH" pifpaf run redis -- bash -c 'python -m pytest --redis $PIFPAF_REDIS_URL -o asyncio_default_fixture_loop_scope=fixture-scope'
 }
 
 package() {
