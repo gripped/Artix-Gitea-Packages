@@ -1,9 +1,9 @@
 ---
-version: 10.0-1
+version: 10.1-1
 pkgbase:
   name: roctracer
   pkgdesc: ROCm tracer library for performance tracing
-  pkgver: 10.0
+  pkgver: 10.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/roctracer/en/latest
   arch:
@@ -25,9 +25,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - roctracer-10.0.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.0/roctracer.tar.gz
+    - roctracer-10.1.tar.gz::https://github.com/ROCm/rocm-systems/releases/download/therock-10.1/roctracer.tar.gz
   sha256sums:
-    - b5beb2987b1fde3b32fb482406123382e43589fb370275cd9bbb9101accc35d2
+    - f545ca32582b90d911988b50860b80983e40d6758def8852f30ef983774213b2
 pkgname:
   - name: roctracer
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any

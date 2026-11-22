@@ -3,7 +3,7 @@
 # Contributor: acxz <akashpatel2008 at yahoo dot com>
 
 pkgname=roctracer
-pkgver=10.0
+pkgver=10.1
 pkgrel=1
 pkgdesc='ROCm tracer library for performance tracing'
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('rocm-core' 'glibc' 'libgcc' 'hip-runtime-amd' 'hsa-rocr' 'comgr')
 makedepends=('cmake' 'python-cppheaderparser' 'python-ply' 'rocm-llvm-static')
 _git='https://github.com/ROCm/rocm-systems'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('b5beb2987b1fde3b32fb482406123382e43589fb370275cd9bbb9101accc35d2')
+sha256sums=('f545ca32582b90d911988b50860b80983e40d6758def8852f30ef983774213b2')
 options=('!lto')
 
 build() {
