@@ -1,13 +1,13 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=python-deepdiff
-pkgver=9.0.0
+pkgver=9.2.0
 pkgrel=1
 pkgdesc="Deep Difference and Search of any Python object/data."
 url="https://github.com/qlustered/deepdiff"
 license=('MIT')
 arch=('any')
-depends=('python-orderly-set')
+depends=('python-cachebox' 'python-orderly-set')
 optdepends=('python-click: for cli'
             'python-tomli-w: for TOML support'
             'python-yaml: for YAML support'
@@ -17,13 +17,8 @@ makedepends=('python-build' 'python-flit-core' 'python-installer' 'git')
 checkdepends=('python-pytest' 'python-pytest-benchmark' 'python-clevercsv' 'python-click' 'python-dateutil'
               'python-jsonpickle' 'python-numpy' 'python-tomli-w' 'python-yaml' 'python-orjson'
               'python-pydantic' 'python-pandas' 'python-polars' 'python-pytz' 'python-uuid6')
-source=("git+https://github.com/qlustered/deepdiff.git#tag=$pkgver")
-sha512sums=('28cc2b5693eca9bf3a8f649ec34dd3958462862cbfa8dca83c7d97a1f4556e653c7f9af2317ef54ea4d5e4fcade56fda75b02106501674056ebbe9892313b802')
-
-prepare() {
-  cd deepdiff
-  sed -i 's/flit_core >=3.11,<4/flit_core/' pyproject.toml
-}
+source=("git+https://github.com/qlustered/deepdiff.git#commit=a4441929dcce8524efaf0e10ab5accbdd5b0dd7b")
+sha512sums=('abc6bfc73198cc45ead72b27dc90fe4f4840ad6b3d0d2c6e2e23f78ab76d7b3a724844f6f6735cfcaa9d1dae94e450994fb2773e301a61f31fd1471d40e8b1a3')
 
 build() {
   cd deepdiff

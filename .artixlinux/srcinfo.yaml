@@ -1,9 +1,9 @@
 ---
-version: 9.0.0-1
+version: 9.2.0-1
 pkgbase:
   name: python-deepdiff
   pkgdesc: Deep Difference and Search of any Python object/data.
-  pkgver: 9.0.0
+  pkgver: 9.2.0
   pkgrel: 1
   url: https://github.com/qlustered/deepdiff
   arch:
@@ -32,6 +32,7 @@ pkgbase:
     - python-installer
     - git
   depends:
+    - python-cachebox
     - python-orderly-set
   optdepends:
     - 'python-click: for cli'
@@ -40,9 +41,9 @@ pkgbase:
     - 'python-clevercsv: for more robust CSV parsing'
     - 'python-orjson: for speed and memory optimized parsing'
   source:
-    - git+https://github.com/qlustered/deepdiff.git#tag=9.0.0
+    - git+https://github.com/qlustered/deepdiff.git#commit=a4441929dcce8524efaf0e10ab5accbdd5b0dd7b
   sha512sums:
-    - 28cc2b5693eca9bf3a8f649ec34dd3958462862cbfa8dca83c7d97a1f4556e653c7f9af2317ef54ea4d5e4fcade56fda75b02106501674056ebbe9892313b802
+    - abc6bfc73198cc45ead72b27dc90fe4f4840ad6b3d0d2c6e2e23f78ab76d7b3a724844f6f6735cfcaa9d1dae94e450994fb2773e301a61f31fd1471d40e8b1a3
 pkgname:
   - name: python-deepdiff
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
