@@ -1,9 +1,9 @@
 ---
-version: 1.4.1.post1-1
+version: 1.5.0-1
 pkgbase:
   name: python-pytest-asyncio
   pkgdesc: Pytest support for asyncio.
-  pkgver: 1.4.1.post1
+  pkgver: 1.5.0
   pkgrel: 1
   url: https://github.com/pytest-dev/pytest-asyncio
   arch:
@@ -21,9 +21,9 @@ pkgbase:
     - python
     - python-pytest
   source:
-    - git+https://github.com/pytest-dev/pytest-asyncio.git#tag=v1.4.1.post1
+    - git+https://github.com/pytest-dev/pytest-asyncio.git#tag=v1.5.0
   b2sums:
-    - 93ff185afc8510d8d502d4251efb81d0adc66317a5ac984e916cb88a614063e69d15f8bc567c06fc953dec2ef5c75ac4b8944dd9786e4c55e458e60079bc9666
+    - ee85677b6fd6abb46e0903e9dded15f57baf94236bd1cd0b2847935f123d8e53eda3fc1e0aaa6661dbe333a3c25689a68163642518c1751166c4d1e2d0ddc1f5
 pkgname:
   - name: python-pytest-asyncio
 # generated with artixpkg 0.40.0-1-any
