@@ -6,7 +6,7 @@
 # Contributor: Maciek Marciniak <mm2pl at kotmisia.pl>
 
 pkgname=obs-studio
-pkgver=33.0.2
+pkgver=33.0.3
 pkgrel=1
 pkgdesc="Free, open source software for live streaming and recording"
 arch=('x86_64')
@@ -42,7 +42,7 @@ source=(
   "${pkgname}-obs-browser::git+https://github.com/obsproject/obs-browser.git"
   "${pkgname}-obs-websocket::git+https://github.com/obsproject/obs-websocket.git"
 )
-sha256sums=('dbb898c7f42cfba4e4bf5aa363825c0ada6ce856ef5995b7f63f77a2b87b9ea9'
+sha256sums=('00e29d0f4f9f43118740ee427068cd31b0314e88da2088f92e115fadbcfb3149'
             'SKIP'
             'SKIP'
             'SKIP')
