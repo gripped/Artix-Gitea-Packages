@@ -7,7 +7,7 @@
 # Contributor: Douglas Soares de Andrade <dsa@aur.archlinux.org>
 
 pkgname=ipython
-pkgver=9.18.1
+pkgver=9.19
 pkgrel=1
 pkgdesc='Enhanced Interactive Python shell'
 arch=(any)
@@ -57,7 +57,7 @@ source=(
   git+https://github.com/ipython/ipython.git#tag=$pkgver
   'IPython-icon.png::https://www.packal.org/sites/default/files/public/styles/icon_large/public/workflow-files/nkeimipynbworkflow/icon/icon.png'
 )
-sha256sums=('268e1d04da90e88614437294433a702e3f70c7ab55e75a45680aedcd2fa1dad9'
+sha256sums=('120ab59a8efbcf2380402144c657897390a03a270e7db973dd00388b77d4b69c'
             '3c44a6fa1e3a8afc24754c90469404770b639cb960361988999a4cdd677699d8')
 validpgpkeys=(
   99B17F64FD5C94692E9EF8064968B2CC0208DCC8 # Matthias Bussonnier <bussonniermatthias@gmail.com>
@@ -69,12 +69,12 @@ build() {
   python -m build --wheel --skip-dependency-check --no-isolation
 }
 
-# check() {
-#   cd $pkgname
-#   python -m venv --system-site-packages test-env
-#   test-env/bin/python -m installer dist/*.whl
-#   test-env/bin/python -m pytest -v
-# }
+check() {
+  cd $pkgname
+  python -m venv --system-site-packages test-env
+  test-env/bin/python -m installer dist/*.whl
+  test-env/bin/python -m pytest -v
+}
 
 package() {
   cd $pkgname
