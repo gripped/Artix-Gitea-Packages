@@ -1,10 +1,10 @@
 ---
-version: 10.1-2
+version: 10.1-2.1
 pkgbase:
   name: rocblas
   pkgdesc: Next generation BLAS implementation for ROCm platform
   pkgver: 10.1
-  pkgrel: 2
+  pkgrel: 2.1
   url: https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html
   arch:
     - x86_64
@@ -50,4 +50,4 @@ pkgbase:
     - 30433bb1d93e05de5a6905dc63b648f15fd7912495e37d2d60efe8ca7c6ab7ca
 pkgname:
   - name: rocblas
-# generated with artixpkg 0.40.1-2.1-any
+# generated with artixpkg 0.40.1-1-any

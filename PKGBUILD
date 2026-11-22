@@ -5,7 +5,7 @@
 
 pkgname=rocblas
 pkgver=10.1
-pkgrel=2
+pkgrel=2.1
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
