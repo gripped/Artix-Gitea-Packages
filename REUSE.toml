@@ -23,10 +23,7 @@ SPDX-License-Identifier = "0BSD"
 
 [[annotations]]
 path = [
-    "0001-improve-the-warning-for-asm-caps-mismatches.patch",
     "0002-add-generic-gpu-targets.patch",
-    "0003-improve-fallback-name-to-handle-generics.patch",
-    "0004-generic-arches-need-a-solution-index.patch",
     "0001-tensile-add-gfx1170.patch",
 ]
 SPDX-FileCopyrightText = "Tom Rix <Tom.Rix@amd.com>"

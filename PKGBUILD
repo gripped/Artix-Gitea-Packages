@@ -2,7 +2,7 @@
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 
 pkgname=python-tensile
-pkgver=10.0
+pkgver=10.1
 pkgrel=2
 pkgdesc="benchmark-driven backend libraries for general matrix-matrix multiplications"
 arch=('any')
@@ -12,21 +12,23 @@ depends=('python' 'python-msgpack' 'python-pyaml' 'python-joblib')
 makedepends=('git' 'cmake' 'python-build' 'python-installer' 'python-wheel' 'python-setuptools')
 _git='https://github.com/ROCm/rocm-libraries'
 source=("rocm-libraries::git+$_git.git#tag=therock-$pkgver"
-        # Generic GPU targets and gfx1170 from Fedora, see
+        # Generic GPU targets, https://github.com/ROCm/rocm-libraries/pull/5243
+        "tensile-asm-caps-warning.patch::$_git/commit/2e2aeb071a42901c336c7351dc1c1cab5ca078b4.patch"
+        "tensile-generic-fallback-name.patch::$_git/commit/06848607940ac5a3a90c92fae3270c034f1a8d97.patch"
+        "tensile-generic-solution-index.patch::$_git/commit/12b510b561fa2e198b51715ac2677e20cb7e6b6c.patch"
+        # Commit c01aaa877ee5bbcc442a8ef7bf2bad2322cf1088 of the same pull request,
+        # rebased by Fedora, and gfx1170 from Fedora, see
         # https://src.fedoraproject.org/rpms/rocblas/tree/6b56d7b0f92f1b66e9d8becc92a61c8214ebc255
-        "0001-improve-the-warning-for-asm-caps-mismatches.patch"
         "0002-add-generic-gpu-targets.patch"
-        "0003-improve-fallback-name-to-handle-generics.patch"
-        "0004-generic-arches-need-a-solution-index.patch"
         "0001-tensile-add-gfx1170.patch"
         # Load generic code objects if no arch-specific one exists, from Debian, see
         # https://salsa.debian.org/rocm-team/rocblas/-/tree/5f036a6837b35f6e29795955705633d2b158cbe3/debian/patches
         "tensile-fallback-generic-codeobject-lookup.patch")
-sha256sums=('bc3cc5a8f4bba70d2f7f9cb6582210a16244bfbf353cebc667db05bb756b5b20'
-            '9ea9ca917de348b22f5605cd04fcc7136544f3dbd17954f25e4cbb2b2b173921'
+sha256sums=('2fe2463c0b4344e30f563eb3ee4a94d9426c54d8747d76df15a4ae8018abd6f2'
+            'be3bfe4c21ef3df4b05c3789c5b4894f63ce1d925f0525f85f402ed28bf007cc'
+            'e11b5a8133e470ed7fb8a152db70f8ce7b39f9b72c0aa21c616203119f4827f5'
+            '7908c1fe38e433da2eade3e47db587104c5bef9f8671a5738d9781a893c04699'
             '58756dc67e2611c117951a52dbb7174d865ecbdbb123bb09da5a05398fb288d0'
-            'd9c310660541506c90ed4278a5a4a63559eb46205ae25797de46d2b0b39e4fab'
-            '9a17b4e7c1c6c0c05c7bff4ea548a29781c41d478a836340515cbc2a7de655ac'
             '65475c238c957193c07684900e689604c7116a048dff52fc7b0ec715c85ada39'
             '370172a3e8ebb75256523af742125f1670a02b7acbc773fa7aac5eeb8321ed3b')
 _dirname="rocm-libraries/shared/tensile"
@@ -35,10 +37,10 @@ prepare() {
 	cd ${_dirname}
 
 	# Generic GPU targets, https://github.com/ROCm/rocm-libraries/pull/5243
-	patch -Np3 -i "$srcdir/0001-improve-the-warning-for-asm-caps-mismatches.patch"
+	patch -Np3 -i "$srcdir/tensile-asm-caps-warning.patch"
 	patch -Np3 -i "$srcdir/0002-add-generic-gpu-targets.patch"
-	patch -Np3 -i "$srcdir/0003-improve-fallback-name-to-handle-generics.patch"
-	patch -Np3 -i "$srcdir/0004-generic-arches-need-a-solution-index.patch"
+	patch -Np3 -i "$srcdir/tensile-generic-fallback-name.patch"
+	patch -Np3 -i "$srcdir/tensile-generic-solution-index.patch"
 	patch -Np3 -i "$srcdir/0001-tensile-add-gfx1170.patch"
 	# https://github.com/ROCm/rocm-libraries/issues/9366
 	patch -Np2 -i "$srcdir/tensile-fallback-generic-codeobject-lookup.patch"
