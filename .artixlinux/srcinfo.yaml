@@ -1,10 +1,10 @@
 ---
-version: 7.2.15.rt3.artix1-2
+version: 7.2.15.rt3.artix1-4
 pkgbase:
   name: linux-rt
   pkgdesc: Linux RT
   pkgver: 7.2.15.rt3.artix1
-  pkgrel: 2
+  pkgrel: 4
   url: https://gitlab.archlinux.org/archlinux/packaging/upstream/linux-rt
   arch:
     - x86_64
@@ -194,4 +194,4 @@ pkgname:
       - GPL-2.0-or-later OR X11
       - LGPL-2.1-only OR BSD-2-Clause
       - MIT
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
