@@ -1,10 +1,10 @@
 ---
-version: 1.5.34-2
+version: 1.5.35-1
 pkgbase:
   name: ibus
   pkgdesc: Intelligent input bus for Linux/Unix
-  pkgver: 1.5.34
-  pkgrel: 2
+  pkgver: 1.5.35
+  pkgrel: 1
   url: https://github.com/ibus/ibus/wiki
   arch:
     - x86_64
@@ -45,11 +45,11 @@ pkgbase:
   options:
     - '!emptydirs'
   source:
-    - git+https://github.com/ibus/ibus.git?signed#tag=1.5.34
+    - git+https://github.com/ibus/ibus.git?signed#tag=1.5.35
   validpgpkeys:
     - EEA94553D1CFF4B3DAEDAB54B2F99ED770DC79EC
   b2sums:
-    - 5c577245af802b12fbc8f3f7ba281b012d342a3fec7fdaa991e316d93aa02a0c706240288ab87fd64742b21950000074f3dfabd0ede010569aa594c64198d8c3
+    - 4709b289a1e66e5a013bbac1699629bf0224919aacd87883eaa72024c49fc247d88a1fa36ce53e636b88a2d1adaaea1260d419fa46d555b53a01eeb419a8fd67
 pkgname:
   - name: ibus
     depends:
@@ -73,7 +73,7 @@ pkgname:
       - python
       - python-gobject
       - wayland
-      - libibus=1.5.34
+      - libibus=1.5.35
   - name: libibus
     pkgdesc: IBus support library
     depends:
@@ -84,4 +84,4 @@ pkgname:
       - 'python-gobject: for Python integration'
     provides:
       - libibus-1.0.so
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-2.1-any
