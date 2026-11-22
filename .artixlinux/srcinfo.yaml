@@ -1,9 +1,9 @@
 ---
-version: 10.0-1
+version: 10.1-1
 pkgbase:
   name: hipblas
   pkgdesc: ROCm BLAS marshalling library
-  pkgver: 10.0
+  pkgver: 10.1
   pkgrel: 1
   url: https://rocm.docs.amd.com/projects/hipBLAS/en/latest/index.html
   arch:
@@ -25,9 +25,9 @@ pkgbase:
     - rocm-core
     - rocsolver
   source:
-    - hipblas-10.0.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.0/hipblas.tar.gz
+    - hipblas-10.1.tar.gz::https://github.com/ROCm/rocm-libraries/releases/download/therock-10.1/hipblas.tar.gz
   sha256sums:
-    - 7faf6074692a52e9e86255a5b88279f3b7982ca8381a9ac4f63539976c388e9f
+    - 453fa4099c8d5419fc2e2f03fd17c4b69b7d67a39259fa1841719189024d9fe0
 pkgname:
   - name: hipblas
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-2.1-any

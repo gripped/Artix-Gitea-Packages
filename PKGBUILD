@@ -3,7 +3,7 @@
 # Contributor: Markus Näther <naether.markus@gmail.com>
 
 pkgname=hipblas
-pkgver=10.0
+pkgver=10.1
 pkgrel=1
 pkgdesc='ROCm BLAS marshalling library'
 arch=('x86_64')
@@ -21,7 +21,7 @@ depends=(
 makedepends=('rocm-cmake' 'git' 'cmake' 'gcc-fortran' 'python')
 _git='https://github.com/ROCm/rocm-libraries'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('7faf6074692a52e9e86255a5b88279f3b7982ca8381a9ac4f63539976c388e9f')
+sha256sums=('453fa4099c8d5419fc2e2f03fd17c4b69b7d67a39259fa1841719189024d9fe0')
 
 build() {
   # -fcf-protection is not supported by HIP, see
