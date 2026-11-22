@@ -4,7 +4,7 @@
 pkgname=remmina
 epoch=1
 pkgver=1.4.44
-pkgrel=1
+pkgrel=2
 pkgdesc="Remote desktop client written in GTK+"
 url="https://www.remmina.org"
 arch=('x86_64')
@@ -26,8 +26,17 @@ optdepends=('freerdp: RDP plugin'
             'gnome-terminal: external tools')
 replaces=('remmina-plugins')
 provides=('remmina-plugins')
-source=("${pkgname}-${pkgver}.tar.gz::https://gitlab.com/Remmina/Remmina/-/archive/v${pkgver}/Remmina-v${pkgver}.tar.gz")
-sha512sums=('235a67ef602e7fb9dd73e6b65ba6936f198141a264afdfb8296bb096602553f5e67c9575331c63cbc95097decd17b2ff46829810a013a7afd471f679c4d9584f')
+source=("${pkgname}-${pkgver}.tar.gz::https://gitlab.com/Remmina/Remmina/-/archive/v${pkgver}/Remmina-v${pkgver}.tar.gz"
+        "https://sources.debian.org/data/main/r/remmina/1.4.44%2Bdfsg-1/debian/patches/do-not-phone-home.patch")
+sha512sums=('235a67ef602e7fb9dd73e6b65ba6936f198141a264afdfb8296bb096602553f5e67c9575331c63cbc95097decd17b2ff46829810a013a7afd471f679c4d9584f'
+            'a9d0addd8fb1bb1bc5b8b4dd84c11734f7eb312edec4df677e283ae602f0925453bcd23edf32787dd6c7cb821c55aff84ee1fba7c107c600933e2b5069fde92b')
+
+prepare() {
+	cd "Remmina-v${pkgver}"
+	# Apply Debian patch to not phone home
+	# See https://salsa.debian.org/debian-remote-team/remmina/-/blob/master/debian/patches/do-not-phone-home.patch
+	patch -Np1 -i "${srcdir}/do-not-phone-home.patch"
+}
 
 build() {
 	cmake -S "Remmina-v${pkgver}" -B build -G Ninja \
