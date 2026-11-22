@@ -3,7 +3,7 @@
 
 pkgname=python-pyotp
 _pkgname=pyotp
-pkgver=2.10.0
+pkgver=2.12.0
 pkgrel=1
 pkgdesc='Python library for generating and verifying one-time passwords'
 url='https://pyotp.readthedocs.io/'
@@ -22,8 +22,8 @@ makedepends=(
 )
 options=(!makeflags)
 source=("git+https://github.com/pyotp/pyotp#tag=v$pkgver")
-sha512sums=('989fabeee80f6eb8c9a6d1a4840a462c021c3466841d400f1f349b525d61524d2e87a95dc5aaa6740edccdb9359bc33d1ae26d8925c76ca9653ba62925900f9f')
-b2sums=('b3988156a9bec66a3bcf98ff425790ce36f9e9f77ac2790c879ac95a19b122a66ad27c7503f76a30e47f649ca516a897c0bab935be78c27a055d51e72111145c')
+sha512sums=('9e3a2afc76a83b0fa93679a203c9ed6d122152a635eff71f160dccea04dd0c140243f72d24901bf2cda9c7f1958f63ae1431d157c9325eeb21a5ecf35608e2e8')
+b2sums=('3f1accfe2ff911ee60469199f1ccfdbccbfa64109023b9c89756f395aee69e312dca0b8ac9fc015c7c304720700dd3c3564c9a455309371935db54af84c97508')
 
 build() {
   cd ${_pkgname}
