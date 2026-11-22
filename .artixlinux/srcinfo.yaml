@@ -78,4 +78,4 @@ pkgbase:
     - ace68c93daf2616913bd34e7a9c17f4969d8dfd97ab94b1280f3246e70226ec8
 pkgname:
   - name: qgis
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
