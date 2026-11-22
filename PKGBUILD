@@ -2,8 +2,8 @@
 # Maintainer: Christian Heusel <gromit@archlinux.org>
 
 pkgname=rocsolver
-pkgver=10.0
-pkgrel=2
+pkgver=10.1
+pkgrel=1
 pkgdesc='Subset of LAPACK functionality on the ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocSOLVER/en/latest/index.html'
@@ -29,7 +29,7 @@ makedepends=(
 )
 _git='https://github.com/ROCm/rocm-libraries'
 source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgname.tar.gz")
-sha256sums=('3f99b76d332cd2a11145f7c7b2008c627303667232d4ea66ef4c030cb39d63c9')
+sha256sums=('5c8a54fe17245f2d81ccf4f6c3491cfe61448dac44945c13eccf1ffd0cdfee67')
 options=(!lto)
 
 build() {
