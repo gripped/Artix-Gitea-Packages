@@ -1,10 +1,10 @@
 ---
-version: 10.1-1
+version: 10.1-1.1
 pkgbase:
   name: hipblas
   pkgdesc: ROCm BLAS marshalling library
   pkgver: 10.1
-  pkgrel: 1
+  pkgrel: 1.1
   url: https://rocm.docs.amd.com/projects/hipBLAS/en/latest/index.html
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - 453fa4099c8d5419fc2e2f03fd17c4b69b7d67a39259fa1841719189024d9fe0
 pkgname:
   - name: hipblas
-# generated with artixpkg 0.40.1-2.1-any
+# generated with artixpkg 0.40.1-1-any

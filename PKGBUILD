@@ -4,7 +4,7 @@
 
 pkgname=hipblas
 pkgver=10.1
-pkgrel=1
+pkgrel=1.1
 pkgdesc='ROCm BLAS marshalling library'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/hipBLAS/en/latest/index.html'
