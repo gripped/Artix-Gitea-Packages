@@ -9,13 +9,16 @@ pkgver=3.2.0.ceba893
 # For zero padding, see
 # https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT/blob/0629d08568fff39f9a36bf9ee800fc7bac5bb096/CMakeLists.txt#L265-L266
 _libver=$(awk -F "." '{printf "%05d\n", $1 * 1000 + $2}' <<< $pkgver)
-pkgrel=1
+pkgrel=2
 pkgdesc="Ray Tracing Library for HIP"
 arch=('x86_64')
 url="https://gpuopen.com/hiprt/"
 license=('MIT')
-depends=('rocm-core' 'hip-runtime-amd' 'glibc' 'libgcc' 'libstdc++')
-makedepends=('git' 'python' 'cmake')
+# rocm-core adds /opt/rocm/lib to the linker path.
+# libhiprt loads libamdhip64 and libhiprtc with dlopen.
+depends=('rocm-core' 'glibc' 'libgcc' 'libstdc++')
+makedepends=('git' 'python' 'cmake' 'hip-runtime-amd')
+optdepends=('hip-runtime-amd: run on AMD GPUs')
 source=("$pkgname-$pkgver::git+https://github.com/GPUOpen-LibrariesAndSDKs/HIPRT#tag=$pkgver")
 sha256sums=('f88bdce2bd963d1e3dfd9098f3063744e6fce027e0e14ff5d4940afba6ae942d')
 
