@@ -1,9 +1,9 @@
 ---
-version: 0.6.0-1
+version: 0.7.0-1
 pkgbase:
   name: python-ml-dtypes
   pkgdesc: A stand-alone implementation of several NumPy dtype extensions used in ML
-  pkgver: 0.6.0
+  pkgver: 0.7.0
   pkgrel: 1
   url: https://github.com/jax-ml/ml_dtypes
   arch:
@@ -24,11 +24,11 @@ pkgbase:
     - glibc
     - python-numpy
   source:
-    - git+https://github.com/jax-ml/ml_dtypes#tag=v0.6.0
+    - git+https://github.com/jax-ml/ml_dtypes#tag=v0.7.0
     - python-ml-dtypes-eigen::git+https://gitlab.com/libeigen/eigen.git
   sha256sums:
-    - 95ca6f53f138f6923deaaad93af384ff0459daad1225ab0f6a7db1c6087d2ba6
+    - 163b0188a36316a72c70bad21e65be36849fac98096a364adb1bb0e5946df317
     - SKIP
 pkgname:
   - name: python-ml-dtypes
-# generated with artixpkg 0.39.1-1-any
+# generated with artixpkg 0.40.0-1-any
