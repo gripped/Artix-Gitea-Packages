@@ -1,10 +1,10 @@
 ---
-version: 2.39-15
+version: 2.39-16
 pkgbase:
   name: python-distutils-extra
   pkgdesc: Enhancements to the Python build system
   pkgver: 2.39
-  pkgrel: 15
+  pkgrel: 16
   url: https://launchpad.net/python-distutils-extra
   arch:
     - any
@@ -15,6 +15,8 @@ pkgbase:
   depends:
     - intltool
     - python
+    - python-build
+    - python-installer
     - python-setuptools
   source:
     - https://launchpad.net/python-distutils-extra/trunk/2.39/+download/python-distutils-extra-2.39.tar.gz
@@ -26,4 +28,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: python-distutils-extra
-# generated with artixpkg 0.37.4-1-any
+# generated with artixpkg 0.40.0-1-any
