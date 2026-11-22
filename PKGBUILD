@@ -5,7 +5,7 @@
 
 pkgname=python-openai
 _name=openai-python
-pkgver=3.3.1
+pkgver=3.7.0
 pkgrel=1
 pkgdesc="Python client library for the OpenAI API"
 arch=('any')
@@ -37,11 +37,13 @@ checkdepends=(
   'python-aiohttp'
   'python-inline-snapshot'
   'python-nest-asyncio'
+  'python-packaging'
   'python-pytest'
   'python-pytest-asyncio'
   'python-pytest-xdist'
   'python-rich'
   'python-botocore'
+  'python-websockets'
 )
 optdepends=(
   'python-aiohttp: Use aiohttp as HTTP backend'
@@ -54,12 +56,12 @@ optdepends=(
 source=(
   "git+${url}.git#tag=v${pkgver}"
 )
-b2sums=('6700bfe1673e119e2bbc118930a3f077dbbea460389805584deed208a3e022df44adb780c60c514de39b734c931fa72b717a341d8b35f767416f8e1b74d4feb4')
+b2sums=('90b287c9139ece40ba1993f9467d5cae13d020d80ffd38a33265b5896a53c6fbce89e8b9e83228c001c8253442b17084e1996b495d8b78a590b5ce057e109500')
 
 prepare() {
   cd "${_name}"
   # Run Steady with the packaged Node.js; upstream's launcher requires exactly 22.22.3.
-  sed -i 's|node scripts/utils/node-tooling.cjs steady|npm exec --package=@stdy/cli@0.22.1 -- steady|' \
+  sed -i 's|node scripts/utils/node-tooling.cjs steady|npm exec --package=@stdy/cli@0.22.2 -- steady|' \
     scripts/run-steady
 }
 
@@ -81,11 +83,13 @@ check() {
 
   # Randomly generated mock API key
   export OPENAI_API_KEY=sk-dBAe8c5a9bc4294cca9bed292cd61e0ff9030bB94647adfb
+  # websockets >= 16 follows sync redirects; upstream supports < 16.
   pytest -W ignore::DeprecationWarning:pytest_asyncio.plugin \
     --deselect tests/lib/chat/test_completions.py::test_parse_method_in_sync \
     --deselect tests/lib/chat/test_completions_streaming.py::test_stream_method_in_sync \
     --deselect tests/lib/test_assistants.py::test_create_and_run_poll_method_definition_in_sync \
     --deselect tests/lib/test_assistants.py::test_create_and_run_stream_method_definition_in_sync \
+    --deselect tests/lib/test_azure_websocket_redirects.py::test_sync_azure_websocket_does_not_follow_redirects \
     --deselect tests/test_client.py::TestAsyncOpenAI::test_copy_build_request \
     --deselect tests/test_client.py::TestOpenAI::test_copy_build_request \
     --deselect tests/test_transform.py::test_base64_file_input
