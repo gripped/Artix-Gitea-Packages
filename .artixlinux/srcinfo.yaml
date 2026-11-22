@@ -1,9 +1,9 @@
 ---
-version: 5.3.1-1
+version: 5.3.2-1
 pkgbase:
   name: python-decorator
   pkgdesc: Python Decorator module
-  pkgver: 5.3.1
+  pkgver: 5.3.2
   pkgrel: 1
   url: https://pypi.python.org/pypi/decorator
   arch:
@@ -19,9 +19,9 @@ pkgbase:
   depends:
     - python
   source:
-    - https://pypi.python.org/packages/source/d/decorator/decorator-5.3.1.tar.gz
+    - https://pypi.python.org/packages/source/d/decorator/decorator-5.3.2.tar.gz
   sha512sums:
-    - 55fe7d85849916cecb3f55b582ca325764af654769f5ea93ee3f877304dbc776ab7d0eda8f7d5f6d2f36c18717f7237ab10aef3c8a6b65822a648c9dbaea4772
+    - 68190cd6e6b198268a7f3c5bd4fba83f8e4961f3d88a03c4c11953082d35fd98e69938fc9668da8f0052693681a30ac40d39a474a76c5a560cb3c43f7df12522
 pkgname:
   - name: python-decorator
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.0-1-any
