@@ -1,9 +1,9 @@
 ---
-version: 3.1.1-1
+version: 3.1.2-1
 pkgbase:
   name: python-semver
   pkgdesc: Python helper for Semantic Versioning
-  pkgver: 3.1.1
+  pkgver: 3.1.2
   pkgrel: 1
   url: https://github.com/python-semver/python-semver
   arch:
@@ -22,9 +22,9 @@ pkgbase:
   depends:
     - python
   source:
-    - git+https://github.com/python-semver/python-semver.git#tag=3.1.1
+    - git+https://github.com/python-semver/python-semver.git#tag=3.1.2
   sha512sums:
-    - 780a226102e0f1316d8a512a52bfea7f90f2908be44eecfa33da06ecc04f5e2ef1e84fffff321fda6cdef508a377da57f74195261553e59b4b1f682fb51c39f5
+    - 1cc4f64e8042bb71aaf402566d43e01e56d7f0cf053b0421745b17a5da1a1463521046725599c881eafe308f9240194566b2c4e3865381f236aa80dae0dbb58c
 pkgname:
   - name: python-semver
 # generated with artixpkg 0.40.0-1-any
