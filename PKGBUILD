@@ -5,7 +5,7 @@
 
 pkgname=tpm2-tss
 pkgver=4.2.2s
-pkgrel=1
+pkgrel=2
 pkgdesc='Implementation of the TCG Trusted Platform Module 2.0 Software Stack (TSS2)'
 arch=(x86_64)
 url='https://github.com/tpm2-software/tpm2-tss'
@@ -72,7 +72,7 @@ prepare() {
   cd "$pkgname"
   # NOTE: Set the VERSION file manually, so that configure.ac uses a release version and does not add `-Werror`
   sed '/VERSION/d' -i bootstrap
-  printf '%s\n' "$pkgver" > VERSION
+  printf '%s\n' "$pkgver" | sed 's/[^0-9.]//' > VERSION
   ./bootstrap
 }
 
