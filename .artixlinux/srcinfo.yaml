@@ -1,9 +1,9 @@
 ---
-version: 2.7.1-1
+version: 2.7.4-1
 pkgbase:
   name: flex
   pkgdesc: A tool for generating text-scanning programs
-  pkgver: 2.7.1
+  pkgver: 2.7.4
   pkgrel: 1
   url: https://github.com/westes/flex
   arch:
@@ -19,13 +19,13 @@ pkgbase:
     - m4
     - sh
   source:
-    - https://github.com/westes/flex/releases/download/v2.7.1/flex-2.7.1.tar.gz
-    - https://github.com/westes/flex/releases/download/v2.7.1/flex-2.7.1.tar.gz.sig
+    - https://github.com/westes/flex/releases/download/v2.7.4/flex-2.7.4.tar.gz
+    - https://github.com/westes/flex/releases/download/v2.7.4/flex-2.7.4.tar.gz.sig
   validpgpkeys:
     - 56D664C70CC2364CF5164914B7DFE8BB6C241FED
     - 56C67868E93390AA1039AD1CE4B29C8D64885307
   sha256sums:
-    - 336715b27262c7eefab99ba46b06f05e54a1a39d7bc36c79b826a51bbe4fcb81
+    - 9bf281cd771d2b15d547896c8b53f8d061cfe85c4dd8ed6a6d733b5f10f42fc6
     - SKIP
 pkgname:
   - name: flex
