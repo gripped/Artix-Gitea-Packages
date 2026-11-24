@@ -1,10 +1,10 @@
 ---
-version: 2.8.12-2
+version: 2.8.12-3
 pkgbase:
   name: sdl2_image
   pkgdesc: A simple library to load images of various formats as SDL surfaces (Version 2)
   pkgver: 2.8.12
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/libsdl-org/SDL_image
   arch:
     - x86_64
@@ -30,4 +30,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: sdl2_image
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.1-1-any
