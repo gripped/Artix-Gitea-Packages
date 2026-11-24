@@ -5,7 +5,7 @@
 
 pkgname=waybar
 pkgver=0.16.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Highly customizable Wayland bar for Sway and Wlroots based compositors'
 arch=('x86_64')
 url="https://github.com/Alexays/Waybar/"
@@ -39,7 +39,7 @@ depends=(
     'playerctl'
     'sndio'
     'spdlog'
-    'libelogind'
+    'systemd-libs'
     'upower'
     'wayland'
 )
@@ -67,7 +67,6 @@ build() {
           --buildtype=plain \
           --auto-features=enabled \
           --wrap-mode=nodownload \
-          -Dsystemd=disabled \
           -Dcpp_std=c++20 \
           -Dexperimental=true \
           -Dcava=disabled \
