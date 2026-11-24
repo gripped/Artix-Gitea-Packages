@@ -3,7 +3,7 @@
 # Contributor: said <atvordhosbn[at]gmail[dot]com>
 
 pkgname=libcue
-pkgver=2.4.2
+pkgver=2.4.3
 pkgrel=1
 pkgdesc='Parses so-called cue sheets and handles the parsed data'
 url='https://github.com/lipnitsk/libcue/'
@@ -12,7 +12,7 @@ license=('GPL-2.0-only')
 source=("git+https://github.com/lipnitsk/libcue.git#tag=v$pkgver")
 depends=('glibc')
 makedepends=('bison' 'cmake' 'flex' 'git')
-sha512sums=('7106a8c5c7a6a34d71a24792810ca4e6526667ccc9b83e17c4d1bd92dda13c843fd99fbb8e6d13ffa9ee6a3aea680b77a3ef65b45ce4f49d26511b3b5c1fe834')
+sha512sums=('70acfe327c8b533a4e6d3dace354f6da316168751ede3eabc21e90a316db0e531418ca58f817fa3c9ad3889bd61780bd8fbd1ec2a66887dd1575041622e66f2b')
 
 build() {
   cmake -B build -S "$pkgname" \

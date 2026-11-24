@@ -1,9 +1,9 @@
 ---
-version: 2.4.2-1
+version: 2.4.3-1
 pkgbase:
   name: libcue
   pkgdesc: Parses so-called cue sheets and handles the parsed data
-  pkgver: 2.4.2
+  pkgver: 2.4.3
   pkgrel: 1
   url: https://github.com/lipnitsk/libcue/
   arch:
@@ -18,9 +18,9 @@ pkgbase:
   depends:
     - glibc
   source:
-    - git+https://github.com/lipnitsk/libcue.git#tag=v2.4.2
+    - git+https://github.com/lipnitsk/libcue.git#tag=v2.4.3
   sha512sums:
-    - 7106a8c5c7a6a34d71a24792810ca4e6526667ccc9b83e17c4d1bd92dda13c843fd99fbb8e6d13ffa9ee6a3aea680b77a3ef65b45ce4f49d26511b3b5c1fe834
+    - 70acfe327c8b533a4e6d3dace354f6da316168751ede3eabc21e90a316db0e531418ca58f817fa3c9ad3889bd61780bd8fbd1ec2a66887dd1575041622e66f2b
 pkgname:
   - name: libcue
 # generated with artixpkg 0.40.1-1-any
