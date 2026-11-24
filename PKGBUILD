@@ -39,7 +39,7 @@ depends=(
     'playerctl'
     'sndio'
     'spdlog'
-    'systemd-libs'
+    'libelogind'
     'upower'
     'wayland'
 )
@@ -67,6 +67,7 @@ build() {
           --buildtype=plain \
           --auto-features=enabled \
           --wrap-mode=nodownload \
+          -Dsystemd=disabled \
           -Dcpp_std=c++20 \
           -Dexperimental=true \
           -Dcava=disabled \

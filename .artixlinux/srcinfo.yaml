@@ -46,7 +46,7 @@ pkgbase:
     - playerctl
     - sndio
     - spdlog
-    - systemd-libs
+    - libelogind
     - upower
     - wayland
   optdepends:
@@ -89,7 +89,7 @@ pkgname:
       - playerctl
       - sndio
       - spdlog
-      - systemd-libs
+      - libelogind
       - upower
       - wayland
       - libatkmm-1.6.so
