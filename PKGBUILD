@@ -8,12 +8,12 @@
 pkgname=ruby-tins
 _pkgname="${pkgname#ruby-}"
 pkgver=1.63.0
-pkgrel=1
+pkgrel=2
 pkgdesc='All the stuff that is not good/big enough for a real library'
 arch=(any)
 url='https://github.com/flori/tins'
 license=(MIT)
-depends=(ruby ruby-bigdecimal ruby-sync ruby-mize)
+depends=(ruby ruby-bigdecimal ruby-sync ruby-mize ruby-irb)
 makedepends=(git ruby-rake)
 options=(!emptydirs)
 source=("$pkgname::git+$url#tag=v$pkgver")
@@ -31,6 +31,22 @@ build() {
   cd "$pkgname"
 
   gem build tins.gemspec
+
+  gem install \
+    --local \
+    --verbose \
+    --ignore-dependencies \
+    --build-root "tmp_install" \
+    "${_pkgname}-${pkgver}.gem"
+}
+
+check() {
+  cd "$pkgname"
+
+  local _gemdir="$(gem env gemdir)"
+
+  # tests require many unpackaged deps, so try to import as a smoke check
+  GEM_HOME="tmp_install/${_gemdir}" ruby -e 'require "tins"; puts Tins::VERSION'
 }
 
 package() {
@@ -38,14 +54,7 @@ package() {
 
   local _gemdir="$(ruby -e'puts Gem.default_dir')"
 
-  gem install \
-    --local \
-    --verbose \
-    --ignore-dependencies \
-    --no-user-install \
-    --install-dir "$pkgdir/$_gemdir" \
-    --bindir "$pkgdir/usr/bin" \
-    "$_pkgname-$pkgver.gem"
+  cp --archive --verbose tmp_install/* "${pkgdir}"
 
   # license
   install -vDm644 -t "$pkgdir/usr/share/licenses/$pkgname" LICENSE

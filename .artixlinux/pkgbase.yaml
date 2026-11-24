@@ -2,8 +2,8 @@
 actions:
   addRepo: world-gremlins
   removeRepo: null
-  triggersBuild: true
-  triggersRebuild: false
+  triggersBuild: false
+  triggersRebuild: true
   triggersRepoAdd: true
   triggersRepoRemove: false
   triggersNoCheck: false
@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 1.63.0-1
+    version: 1.63.0-2
     packages:
-      - ruby-tins-1.63.0-1-any.pkg.tar.zst
+      - ruby-tins-1.63.0-2-any.pkg.tar.zst
     debug: []
   world:
     version: 1.62.0-1
