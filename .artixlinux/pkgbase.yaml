@@ -25,9 +25,9 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: 6.31.0-1
+    version: 6.32.0-1
     packages:
-      - kglobalaccel-6.31.0-1-x86_64.pkg.tar.zst
+      - kglobalaccel-6.32.0-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 6.31.0-1
