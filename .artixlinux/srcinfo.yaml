@@ -1,9 +1,9 @@
 ---
-version: 17.0.0-1
+version: 18.0.8-1
 pkgbase:
   name: marked
   pkgdesc: A markdown parser built for speed
-  pkgver: 17.0.0
+  pkgver: 18.0.8
   pkgrel: 1
   url: https://marked.js.org
   arch:
@@ -11,15 +11,14 @@ pkgbase:
   license:
     - MIT
   makedepends:
+    - git
     - npm
   depends:
     - nodejs
-  noextract:
-    - marked-17.0.0.tgz
   source:
-    - https://registry.npmjs.org/marked/-/marked-17.0.0.tgz
+    - git+https://github.com/markedjs/marked.git#tag=v18.0.8
   sha512sums:
-    - 2a40d8116104898270fca0be0d59b5cf396931048c22ee98465b64702bf085e0a9f0758f5c293d2703a61c92819467f3729cdc22deb1dec3274ec466ff9d680e
+    - 13473b820190f7d1483db792c42d3a43370ccb9f3bce0f8776207a6f2f8bd2eba5998d857eced935ce99ce22a1a7e2916adf143f193e92bcb6500152b0eda42e
 pkgname:
   - name: marked
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any

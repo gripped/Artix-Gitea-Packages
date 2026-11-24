@@ -1,20 +1,39 @@
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
 
 pkgname=marked
-pkgver=17.0.0
+pkgver=18.0.8
 pkgrel=1
 pkgdesc="A markdown parser built for speed"
 arch=('any')
 url='https://marked.js.org'
 license=('MIT')
 depends=('nodejs')
-makedepends=('npm')
-source=(https://registry.npmjs.org/$pkgname/-/$pkgname-$pkgver.tgz)
-noextract=($pkgname-$pkgver.tgz)
-sha512sums=('2a40d8116104898270fca0be0d59b5cf396931048c22ee98465b64702bf085e0a9f0758f5c293d2703a61c92819467f3729cdc22deb1dec3274ec466ff9d680e')
+makedepends=('git' 'npm')
+source=("git+https://github.com/markedjs/marked.git#tag=v$pkgver")
+sha512sums=('13473b820190f7d1483db792c42d3a43370ccb9f3bce0f8776207a6f2f8bd2eba5998d857eced935ce99ce22a1a7e2916adf143f193e92bcb6500152b0eda42e')
+
+prepare() {
+  cd marked
+  # npm 12 blocks the GitHub archive required by @markedjs/testutils by default.
+  # https://github.com/markedjs/marked/pull/4174
+  npm ci --allow-remote=all
+}
+
+build() {
+  cd marked
+  npm run build
+}
+
+check() {
+  cd marked
+  npm test
+}
 
 package() {
-  npm install -g --prefix "$pkgdir"/usr "$srcdir"/$pkgname-$pkgver.tgz
+  cd marked
+  # attw -P deletes its tarball during check(), so pack after testing.
+  npm pack
+  npm install -g --prefix "$pkgdir"/usr "$srcdir"/marked/$pkgname-$pkgver.tgz
 
   # Non-deterministic race in npm gives 777 permissions to random directories.
   # See https://github.com/npm/npm/issues/9359 for details.
@@ -25,5 +44,5 @@ package() {
   chown -R root:root "$pkgdir"
 
   install -d "$pkgdir"/usr/share/licenses/$pkgname
-  ln -s ../../../lib/node_modules/marked/LICENSE.md "$pkgdir"/usr/share/licenses/$pkgname/LICENSE.md
+  ln -s ../../../lib/node_modules/marked/LICENSE "$pkgdir"/usr/share/licenses/$pkgname/LICENSE
 }
