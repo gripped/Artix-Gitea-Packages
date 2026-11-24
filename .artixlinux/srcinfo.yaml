@@ -1,9 +1,9 @@
 ---
-version: 6.31.0-1
+version: 6.32.0-1
 pkgbase:
   name: kcrash
   pkgdesc: Support for application crash analysis and bug report from apps
-  pkgver: 6.31.0
+  pkgver: 6.32.0
   pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
@@ -27,14 +27,14 @@ pkgbase:
   optdepends:
     - 'drkonqi: KDE crash handler application'
   source:
-    - https://download.kde.org/stable/frameworks/6.31/kcrash-6.31.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.31/kcrash-6.31.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.32/kcrash-6.32.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.32/kcrash-6.32.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - 8883c740d5de9aea232060f10c7f3bfdc3f83914b2d91d757ce2c8ed535621a6
+    - fe627df1797fa92a24e53a7f33de07111c7556070028d39f258035a0c3bdb5df
     - SKIP
 pkgname:
   - name: kcrash
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
