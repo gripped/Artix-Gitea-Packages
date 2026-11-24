@@ -3,7 +3,7 @@
 # Contributor: Andrea Scarpino <andrea@archlinux.org>
 
 pkgname=kio
-pkgver=6.31.0
+pkgver=6.32.0
 pkgrel=1
 pkgdesc='Resource and network access abstraction'
 arch=(x86_64)
@@ -47,7 +47,7 @@ optdepends=('audiocd-kio: for accessing audio CDs'
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig}
 "https://raw.githubusercontent.com/chimera-linux/cports/49e238206daeb6bc3336a8526df26d3b06bee324/main/kio/patches/nosystemdscope.patch")
-sha256sums=('cdc8e3787be1f4a5c8f8a45fabab5cf540ef6380c549c6fd984f15f093b5eac0'
+sha256sums=('d16d302a3db7a140703082f0a9a7c7127a5bff795c497f2ae7f8cbb53b100b59'
             'SKIP'
             'eca03d2185a66b284a2271d6e5bcfcb22d5759c805fbebe03e75b26cbcd91846')
 validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.org>
@@ -55,8 +55,7 @@ validpgpkeys=(53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB # David Faure <faure@kde.
               )
 
 prepare() {
-  cd "$pkgname-$pkgver"
-  patch -Np1 < "$srcdir/"nosystemdscope.patch
+  patch -d "$srcdir/$pkgname-$pkgver" -Np1 < "$srcdir/nosystemdscope.patch"
 }
 
 build() {
