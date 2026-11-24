@@ -6,9 +6,9 @@
 pkgbase=oxygen-icons
 pkgname=(oxygen-icons
          oxygen-icons-svg)
-pkgver=6.30.0
+pkgver=6.32.0
 epoch=1
-pkgrel=1
+pkgrel=2
 pkgdesc='The Oxygen Icon Theme'
 arch=(any)
 url='https://develop.kde.org/products/frameworks/'
@@ -17,7 +17,7 @@ makedepends=(extra-cmake-modules
              qt6-base)
 groups=(kf6)
 source=(https://download.kde.org/stable/frameworks/${pkgver%.*}/$pkgname-$pkgver.tar.xz{,.sig})
-sha256sums=('8ae13c8827883d54cf903f63fbc9eff246b3a4dd8c0d7c835b610d642f49f37e'
+sha256sums=('743b5277c63592d84a51a643e5381d6afbc5c7563ff775faae6005311d1bfccd'
             'SKIP')
 validpgpkeys=('39FFA93CAE9C6AFC212AD00202325448204E452A' # Carl Schwan <carl@carlschwan.eu>
               '90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1' # Nicolas Fella
@@ -30,6 +30,11 @@ build() {
 
 package_oxygen-icons() {
   DESTDIR="$pkgdir" cmake --install build
+
+# Fix broken icon names
+  for _size in 22 24 48; do
+    mv "$pkgdir"/usr/share/icons/oxygen/simbolicActions/${_size}x${_size}/actions/go-first{" copy",-copy}.svg
+  done
 }
 
 package_oxygen-icons-svg() {
