@@ -1,9 +1,9 @@
 ---
-version: 3.27.5-1
+version: 3.28-1
 pkgbase:
   name: gpsd
   pkgdesc: GPS daemon and library to support USB/serial GPS devices
-  pkgver: 3.27.5
+  pkgver: 3.28
   pkgrel: 1
   url: https://gpsd.gitlab.io/gpsd/
   arch:
@@ -21,9 +21,10 @@ pkgbase:
     - python-setuptools
   depends:
     - dbus
-    - gcc-libs
     - glibc
     - python
+    - libgcc
+    - libstdc++
     - libusb
     - bluez-libs
     - pps-tools
@@ -38,14 +39,14 @@ pkgbase:
   backup:
     - etc/default/gpsd
   source:
-    - https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.27.5.tar.gz
+    - https://download-mirror.savannah.gnu.org/releases/gpsd/gpsd-3.28.tar.gz
     - gpsd.conf
   validpgpkeys:
     - EED4A0893DCC705DB309E202CCF29C7238522905
     - DB239ACA177A35AFBC13F819DD3DD9BBA8F257E8
   sha256sums:
-    - 409873f5048462ef1ac413a51ab35caa8b50b31be62b3347bee1cc2994e7c649
+    - 72f7937f36d98fb348e9fa044ad1e72955982ec5938609b18e4ee7c9e04f83f2
     - dcfa71c4c730b486269995468bdcfa8e96bf3c282db1dadea9384d32015d277f
 pkgname:
   - name: gpsd
-# generated with artixpkg 0.37.5-1-any
+# generated with artixpkg 0.40.1-1-any
