@@ -1,10 +1,10 @@
 ---
-version: 6.8.2-1
+version: 6.8.2-2
 pkgbase:
   name: plasma5support
   pkgdesc: Support components for porting from KF5/Qt5 to KF6/Qt6
   pkgver: 6.8.2
-  pkgrel: 1
+  pkgrel: 2
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -52,4 +52,4 @@ pkgbase:
     - SKIP
 pkgname:
   - name: plasma5support
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
