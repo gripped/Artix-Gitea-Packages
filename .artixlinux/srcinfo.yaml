@@ -1,9 +1,9 @@
 ---
-version: 6.31.0-1
+version: 6.32.0-1
 pkgbase:
   name: kcoreaddons
   pkgdesc: Addons to QtCore
-  pkgver: 6.31.0
+  pkgver: 6.32.0
   pkgrel: 1
   url: https://develop.kde.org/products/frameworks/
   arch:
@@ -33,14 +33,14 @@ pkgbase:
     - 'pyside6: Python bindings'
     - 'qt6-declarative: QML bindings'
   source:
-    - https://download.kde.org/stable/frameworks/6.31/kcoreaddons-6.31.0.tar.xz
-    - https://download.kde.org/stable/frameworks/6.31/kcoreaddons-6.31.0.tar.xz.sig
+    - https://download.kde.org/stable/frameworks/6.32/kcoreaddons-6.32.0.tar.xz
+    - https://download.kde.org/stable/frameworks/6.32/kcoreaddons-6.32.0.tar.xz.sig
   validpgpkeys:
     - 53E6B47B45CEA3E0D5B7457758D0EE648A48B3BB
     - 90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1
   sha256sums:
-    - d3a843249177a6e51714a7211c73829cb071dbebe4f30404423bbbc57ca5ee95
+    - f7373a77afae97099de4359fba13987b46618ccb952f94ddc11c9d31277fe651
     - SKIP
 pkgname:
   - name: kcoreaddons
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
