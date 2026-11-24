@@ -1,10 +1,10 @@
 ---
-version: 26.08.3-1
+version: 26.08.3-2
 pkgbase:
   name: marble
   pkgdesc: Desktop Globe
   pkgver: 26.08.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://apps.kde.org/marble/
   arch:
     - x86_64
@@ -116,4 +116,4 @@ pkgname:
       - libstdc++
       - marble-common
       - qt6-base
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
