@@ -1,130 +1,186 @@
-From 9839138308b7bb8972c1e57b63614fe3fd164908 Mon Sep 17 00:00:00 2001
+From c6e2dae72bfeb3a1a2bb8b04ddecbc17fb80152e Mon Sep 17 00:00:00 2001
 From: Tom Rix <Tom.Rix@amd.com>
-Date: Sun, 29 Mar 2026 11:03:43 -0700
-Subject: [PATCH 6/6] rocblas generalize finding tensile for generics
+Date: Wed, 18 Nov 2026 16:18:57 -0800
+Subject: [PATCH 6/6] [rocblas] generalize finding tensile for generics
 
+If rocblas is built with ex/ gfx11-generic it should run on any
+gfx11XX gpu.  So when finding the tensile library, check first
+the specific gpu, then the generic gpu.
+
+Loop over the specific and generic arch catalog keys, probing
+subdirectories and library files as before, and only report the
+error and abort if neither arch has a Tensile library.
+
+Signed-off-by: Tom Rix <Tom.Rix@amd.com>
 ---
- projects/rocblas/library/src/tensile_host.cpp | 76 +++++++++++--------
- 1 file changed, 44 insertions(+), 32 deletions(-)
+ projects/rocblas/library/src/tensile_host.cpp | 127 ++++++++++--------
+ 1 file changed, 71 insertions(+), 56 deletions(-)
 
 diff --git a/projects/rocblas/library/src/tensile_host.cpp b/projects/rocblas/library/src/tensile_host.cpp
-index d36f686cfeff..d2e8c1bf5708 100644
+index a0bf6c81679a..f81987eb6fbb 100644
 --- a/projects/rocblas/library/src/tensile_host.cpp
 +++ b/projects/rocblas/library/src/tensile_host.cpp
-@@ -813,12 +813,21 @@ namespace
- #endif
+@@ -864,89 +864,104 @@ namespace
  
              // The name of the current GPU platform
--            std::string processor = rocblas_internal_get_arch_name(deviceId);
-+	    std::string specific_processor = rocblas_internal_get_arch_name(deviceId);
-+	    std::string generic_processor = rocblas_internal_get_generic_arch_name(deviceId);
-+	    std::string processors[2] = {specific_processor, generic_processor};
-+	    std::string processor;
+             std::string processor = rocblas_internal_get_arch_name(deviceId);
++            // When no Tensile library is found for the specific arch, fall back
++            // to the generic arch (ex/ gfx1153 -> gfx11-generic)
++            std::string              generic_processor = rocblas_internal_get_generic_arch_name(deviceId);
++            std::vector<std::string> processor_candidates{processor};
++            if(generic_processor != processor)
++                processor_candidates.push_back(generic_processor);
  
              static std::string base_path;
              static int         determined_path{determine_tensile_base_path(base_path)};
  
+-            // The device predicate name stays `processor` (matches the physical
+-            // device for Tensile solution selection); the catalog key may diverge
+-            // to select the strict device library by GPU revision. The strict
+-            // variant is the base arch with a "-strict" suffix.
+-            std::string catalog_key    = processor;
+-            std::string strict_catalog = processor + "-strict";
+-            if(rocblas_internal_is_strict_target(deviceId)
+-               && TestPath(base_path + "/" + strict_catalog))
++            std::string catalog_key;
++            for(size_t i = 0; i < processor_candidates.size(); ++i)
+             {
+-                catalog_key = strict_catalog;
+-            }
++                // The device predicate name stays `processor` (matches the physical
++                // device for Tensile solution selection); the catalog key may diverge
++                // to select the strict device library by GPU revision. The strict
++                // variant is the base arch with a "-strict" suffix.
++                catalog_key = processor_candidates[i];
++                std::string strict_catalog = catalog_key + "-strict";
++                if(rocblas_internal_is_strict_target(deviceId)
++                   && TestPath(base_path + "/" + strict_catalog))
++                {
++                    catalog_key = strict_catalog;
++                }
+ 
 -            path = base_path;
-+            // Loop over processors to find a valid Tensile library
-+            // Only call rocblas_abort on the final processor
-+            for(int i = 0; i < 2; ++i)
-+            {
-+	        processor = processors[i];
+-            // Probe subdirectories from most-specific to least-specific so that shard
+-            // overlays compose correctly regardless of how TheRock splits arch builds:
+-            //   1. library/<arch>-<xnack>/  – split single-xnack-variant shard
+-            //   2. library/<arch>/          – combined xnack or no-xnack single-arch shard
+-            //   3. library/                 – flat multi-arch build (no subdir)
+-            bool        found_subdir = false;
+-            std::string xnack_mode   = rocblas_internal_get_xnack_mode();
+-            if(!xnack_mode.empty())
+-            {
+-                std::string processor_xnack = catalog_key + "-" + xnack_mode;
+-                if(TestPath(path + "/" + processor_xnack))
++                tensile_lazy_load_enabled = true;
 +
-+		path = base_path;
-             // Probe subdirectories from most-specific to least-specific so that shard
-             // overlays compose correctly regardless of how TheRock splits arch builds:
-             //   1. library/<arch>-<xnack>/  – split single-xnack-variant shard
-@@ -836,56 +845,59 @@ namespace
++                path = base_path;
++                // Probe subdirectories from most-specific to least-specific so that shard
++                // overlays compose correctly regardless of how TheRock splits arch builds:
++                //   1. library/<arch>-<xnack>/  – split single-xnack-variant shard
++                //   2. library/<arch>/          – combined xnack or no-xnack single-arch shard
++                //   3. library/                 – flat multi-arch build (no subdir)
++                bool        found_subdir = false;
++                std::string xnack_mode   = rocblas_internal_get_xnack_mode();
++                if(!xnack_mode.empty())
+                 {
+-                    path += "/" + processor_xnack;
+-                    found_subdir = true;
++                    std::string processor_xnack = catalog_key + "-" + xnack_mode;
++                    if(TestPath(path + "/" + processor_xnack))
++                    {
++                        path += "/" + processor_xnack;
++                        found_subdir = true;
++                    }
                  }
-             }
-             if(!found_subdir && TestPath(path + "/" + processor))
--                path += "/" + processor;
-+		  path += "/" + processor;
+-            }
+-            if(!found_subdir && TestPath(path + "/" + catalog_key))
+-                path += "/" + catalog_key;
++                if(!found_subdir && TestPath(path + "/" + catalog_key))
++                    path += "/" + catalog_key;
  
  #ifdef TENSILE_YAML
--            tensileLibraryPath = path + "/TensileLibrary_lazy_" + processor + ".yaml";
-+		tensileLibraryPath = path + "/TensileLibrary_lazy_" + processor + ".yaml";
+-            tensileLibraryPath = path + "/TensileLibrary_lazy_" + catalog_key + ".yaml";
++                tensileLibraryPath = path + "/TensileLibrary_lazy_" + catalog_key + ".yaml";
  #else
--            tensileLibraryPath = path + "/TensileLibrary_lazy_" + processor + ".dat";
-+		tensileLibraryPath = path + "/TensileLibrary_lazy_" + processor + ".dat";
+-            tensileLibraryPath = path + "/TensileLibrary_lazy_" + catalog_key + ".dat";
++                tensileLibraryPath = path + "/TensileLibrary_lazy_" + catalog_key + ".dat";
  #endif
 -            if(!TestPath(tensileLibraryPath))
 -            {
 -                tensile_lazy_load_enabled = false;
-+		if(TestPath(tensileLibraryPath)) {
-+			tensile_lazy_load_enabled = true;
-+			break;
-+		}
++                if(TestPath(tensileLibraryPath))
++                    break;
  
++                tensile_lazy_load_enabled = false;
  #ifdef TENSILE_YAML
-                 tensileLibraryPath = path + "/TensileLibrary_" + processor + ".yaml";
+                 tensileLibraryPath = path + "/TensileLibrary_" + catalog_key + ".yaml";
  #else
-                 tensileLibraryPath = path + "/TensileLibrary_" + processor + ".dat";
+                 tensileLibraryPath = path + "/TensileLibrary_" + catalog_key + ".dat";
  #endif
 -                if(!TestPath(tensileLibraryPath))
 -                {
-+		if(TestPath(tensileLibraryPath))
-+			break;
++                if(TestPath(tensileLibraryPath))
++                    break;
 +
  #ifdef TENSILE_YAML
 -                    tensileLibraryPath = path + "/TensileLibrary.yaml";
-+		tensileLibraryPath = path + "/TensileLibrary.yaml";
++                tensileLibraryPath = path + "/TensileLibrary.yaml";
  #else
 -                    tensileLibraryPath = path + "/TensileLibrary.dat";
-+		tensileLibraryPath = path + "/TensileLibrary.dat";
++                tensileLibraryPath = path + "/TensileLibrary.dat";
  #endif
 -                    if(!TestPath(tensileLibraryPath))
 -                    {
-+		if(TestPath(tensileLibraryPath))
-+			break;
++                if(TestPath(tensileLibraryPath))
++                    break;
++
++                // Try the next (generic) arch before giving up
++                if(i + 1 < processor_candidates.size())
++                    continue;
 +
  #if ROCBLAS_TENSILE_SEPARATE_ARCH
 -                        rocblas_cerr << "\nrocBLAS error: Cannot read " << tensileLibraryPath
 -                                     << ": " << strerror(errno) << " for GPU arch : " << processor
 -                                     << std::endl;
-+		rocblas_cerr << "\nrocBLAS error: Cannot read " << tensileLibraryPath
-+			     << ": " << strerror(errno) << " for GPU arch : " << processor
-+			     << std::endl;
++                rocblas_cerr << "\nrocBLAS error: Cannot read " << tensileLibraryPath
++                             << ": " << strerror(errno) << " for GPU arch : " << processor_candidates[i]
++                             << std::endl;
  #if ROCBLAS_TENSILE_LAZY_LOAD
 -                        std::regex fileMatcher(path + "/TensileLibrary_lazy.*");
-+		std::regex fileMatcher(path + "/TensileLibrary_lazy.*");
++                std::regex fileMatcher(path + "/TensileLibrary_lazy.*");
  #else
 -                        std::regex fileMatcher(path + "/TensileLibrary_gfx\\d+.dat");
-+		std::regex fileMatcher(path + "/TensileLibrary_gfx\\d+.dat");
++                std::regex fileMatcher(path + "/TensileLibrary_gfx\\d+.dat");
  #endif
 -                        rocblas_cerr << " List of available TensileLibrary Files : " << std::endl;
 -                        for(auto& file_name : fs::directory_iterator(path))
 -                        {
 -                            if(std::regex_match(file_name.path().string(), fileMatcher))
 -                            {
-+		rocblas_cerr << " List of available TensileLibrary Files : " << std::endl;
-+		for(auto& file_name : fs::directory_iterator(path))
-+		{
-+			if(std::regex_match(file_name.path().string(), fileMatcher))
-+			{
-                                 rocblas_cerr << file_name << std::endl;
+-                                rocblas_cerr << file_name << std::endl;
 -                            }
 -                        }
-+			}
-+		}
- #else
+-#else
 -                        rocblas_cerr << "\nrocBLAS error: Cannot read " << tensileLibraryPath
 -                                     << ": " << strerror(errno) << std::endl;
-+		rocblas_cerr << "\nrocBLAS error: Cannot read " << tensileLibraryPath
-+			     << ": " << strerror(errno) << std::endl;
- #endif
+-#endif
 -                        rocblas_abort();
--                    }
--                }
--            }
-+		
-+		if (i == 1)
-+			rocblas_abort();
-+	    }
++                rocblas_cerr << " List of available TensileLibrary Files : " << std::endl;
++                for(auto& file_name : fs::directory_iterator(path))
++                {
++                    if(std::regex_match(file_name.path().string(), fileMatcher))
++                    {
++                        rocblas_cerr << file_name << std::endl;
+                     }
+                 }
++#else
++                rocblas_cerr << "\nrocBLAS error: Cannot read " << tensileLibraryPath
++                             << ": " << strerror(errno) << std::endl;
++#endif
++                rocblas_abort();
+             }
  
              // Supports multi architecture configuration
-             static int initialize_once = [&] {
 -- 
-2.53.0
+2.56.1
 

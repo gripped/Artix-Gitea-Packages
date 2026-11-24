@@ -4,8 +4,8 @@
 # Contributor: Lubosz Sarnecki <lubosz@gmail.com>
 
 pkgname=rocblas
-pkgver=10.1
-pkgrel=2.1
+pkgver=10.2
+pkgrel=1
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
@@ -52,9 +52,9 @@ source=("$pkgname-$pkgver.tar.gz::$_git/releases/download/therock-$pkgver/$pkgna
         # rebased by Fedora, see
         # https://src.fedoraproject.org/rpms/rocblas/tree/6b56d7b0f92f1b66e9d8becc92a61c8214ebc255
         "0006-rocblas-generalize-finding-tensile-for-generics.patch")
-sha256sums=('2f75fdc285a80f0e7dfaf807a15288961427c8867141fd39c4dbef0ee6fff802'
+sha256sums=('903d5d93422eeabe232c27dcae6fb3d6e28facc89dccc10d551f4afbf0746045'
             'f1634b0a7b6849cb4df8a62a8b608c91c796d05a9d049c521e737534627403ac'
-            '30433bb1d93e05de5a6905dc63b648f15fd7912495e37d2d60efe8ca7c6ab7ca')
+            'b98d22d9889c335d7e3e648c6fa2f37bc5b79fbb20f8dda6581b03263506d51f')
 
 prepare() {
   cd $pkgname
