@@ -1,10 +1,10 @@
 ---
-version: 10.1-2
+version: 10.2-1
 pkgbase:
   name: python-tensile
   pkgdesc: benchmark-driven backend libraries for general matrix-matrix multiplications
-  pkgver: 10.1
-  pkgrel: 2
+  pkgver: 10.2
+  pkgrel: 1
   url: https://rocm.docs.amd.com/projects/Tensile/en/latest/
   arch:
     - any
@@ -23,20 +23,18 @@ pkgbase:
     - python-pyaml
     - python-joblib
   source:
-    - rocm-libraries::git+https://github.com/ROCm/rocm-libraries.git#tag=therock-10.1
+    - rocm-libraries::git+https://github.com/ROCm/rocm-libraries.git#tag=therock-10.2
     - tensile-asm-caps-warning.patch::https://github.com/ROCm/rocm-libraries/commit/2e2aeb071a42901c336c7351dc1c1cab5ca078b4.patch
-    - tensile-generic-fallback-name.patch::https://github.com/ROCm/rocm-libraries/commit/06848607940ac5a3a90c92fae3270c034f1a8d97.patch
     - tensile-generic-solution-index.patch::https://github.com/ROCm/rocm-libraries/commit/12b510b561fa2e198b51715ac2677e20cb7e6b6c.patch
     - 0002-add-generic-gpu-targets.patch
     - 0001-tensile-add-gfx1170.patch
     - tensile-fallback-generic-codeobject-lookup.patch
   sha256sums:
-    - 2fe2463c0b4344e30f563eb3ee4a94d9426c54d8747d76df15a4ae8018abd6f2
+    - 960cacc3e77176493d285031b6ee2f8f5ef1f75118479d691c761276d2590be1
     - be3bfe4c21ef3df4b05c3789c5b4894f63ce1d925f0525f85f402ed28bf007cc
-    - e11b5a8133e470ed7fb8a152db70f8ce7b39f9b72c0aa21c616203119f4827f5
     - 7908c1fe38e433da2eade3e47db587104c5bef9f8671a5738d9781a893c04699
-    - 58756dc67e2611c117951a52dbb7174d865ecbdbb123bb09da5a05398fb288d0
-    - 65475c238c957193c07684900e689604c7116a048dff52fc7b0ec715c85ada39
+    - eb0e1b763d3158b5ab56e6c46a4fc8ebde1494e4a74e5292a93cb8ee2ce6b6fc
+    - 7894d8b63c70157f519ccc9b56a03127cf563b9498a1e11b5c75067c335442b4
     - 370172a3e8ebb75256523af742125f1670a02b7acbc773fa7aac5eeb8321ed3b
 pkgname:
   - name: python-tensile
