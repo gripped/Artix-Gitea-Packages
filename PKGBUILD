@@ -5,7 +5,7 @@
 
 pkgname=accerciser
 pkgver=3.48.0
-pkgrel=3
+pkgrel=4
 pkgdesc="Interactive Python accessibility explorer for the GNOME desktop"
 url="https://gitlab.gnome.org/GNOME/accerciser"
 arch=(any)
@@ -42,8 +42,13 @@ b2sums=('9c1ce897e9a5d3eac9f3cb59b9de9476b36bc99fd44a7079fb94297c5ece91dee24810c
 
 prepare() {
   cd $pkgname
+
   # Fix use of deprecated / removed pkg_resources
   git cherry-pick -n 96ee4cb698ca82dc40a704dc579fe3190999cb89
+
+  # Fix missing IPython terminal module imports
+  # https://gitlab.gnome.org/GNOME/accerciser/-/merge_requests/105
+  git cherry-pick -n 6f464e4406372d4e6e9f80afded22d8ec6530619
 }
 
 build() {
