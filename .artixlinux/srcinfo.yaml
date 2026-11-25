@@ -1,15 +1,15 @@
 ---
-version: 1.0.8-2
+version: 1.0.8-3
 pkgbase:
   name: python-mpv
   pkgdesc: Python interface to the awesome mpv media player
   pkgver: 1.0.8
-  pkgrel: 2
+  pkgrel: 3
   url: https://github.com/jaseg/python-mpv
   arch:
     - any
   license:
-    - GPL-2.0-or-later OR LGPL-2.0-or-later
+    - GPL-2.0-or-later OR LGPL-2.1-or-later
   checkdepends:
     - python-pytest
     - python-pyvirtualdisplay
@@ -33,4 +33,4 @@ pkgbase:
     - 401535f88b7214b6d370d85388f85d95fa4b4d4b72ca772dba94156b1a9dd627a1adb4b3ce657b331ab52de72b41aa83ea7ebe49baa63a63a2b0035d19dffddf
 pkgname:
   - name: python-mpv
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.1-1-any
