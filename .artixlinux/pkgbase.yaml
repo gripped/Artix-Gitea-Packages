@@ -1,12 +1,12 @@
 ---
 team: world
 actions:
-  addRepo: world
-  removeRepo: world-gremlins
-  triggersBuild: false
+  addRepo: world-gremlins
+  removeRepo: null
+  triggersBuild: true
   triggersRebuild: false
   triggersRepoAdd: true
-  triggersRepoRemove: true
+  triggersRepoRemove: false
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -26,8 +26,10 @@ repos:
     packages: []
     debug: []
   world-gremlins:
-    version: null
-    packages: []
+    version: 2026.2.0_881-1
+    packages:
+      - intel-oneapi-mkl-2026.2.0_881-1-x86_64.pkg.tar.zst
+      - intel-oneapi-mkl-sycl-2026.2.0_881-1-x86_64.pkg.tar.zst
     debug: []
   world:
     version: 2026.0.0_908-1
