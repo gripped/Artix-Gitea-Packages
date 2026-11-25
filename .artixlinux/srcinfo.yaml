@@ -1,10 +1,10 @@
 ---
-version: 4.5.0-1
+version: 4.5.0-2
 pkgbase:
   name: libqtxdg
   pkgdesc: Library providing freedesktop.org XDG specs implementations for Qt
   pkgver: 4.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/libqtxdg
   arch:
     - x86_64
@@ -36,4 +36,4 @@ pkgbase:
     - d03dbe1a2e99c311161cfb6511cec03d3dd3898b58db3c4fb32b52e8bfb745ac
 pkgname:
   - name: libqtxdg
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
