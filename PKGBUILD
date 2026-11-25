@@ -2,8 +2,8 @@
 # Maintainer: Jan Alexander Steffens (heftig) <heftig@archlinux.org>
 
 pkgname=gnome-remote-desktop
-pkgver=51.0
-pkgrel=2
+pkgver=51.1
+pkgrel=1
 pkgdesc="GNOME Remote Desktop server"
 url="https://gitlab.gnome.org/GNOME/gnome-remote-desktop"
 arch=(x86_64)
@@ -43,12 +43,12 @@ makedepends=(
 )
 groups=(gnome)
 source=(
-  "git+$url.git?signed#tag=${pkgver/[a-z]/.&}"
+  "git+$url.git#tag=${pkgver/[a-z]/.&}"
   0001-Lock-user-account.patch
   0001-build-return-a-disabler-object-if-libsystemd-is-not-.patch
   0002-rdp-smartcard-guard-logind-usage.patch
 )
-b2sums=('360cc3b47fdd674ac448634018a646447f17966ec91b842112626fe88f802e6201878ca47639678a8b04c0de56e74445bc17f067787f587d072a31e4fed06e40'
+b2sums=('40f94ed01c21720028d4fe77bb9d49f66235c81eb2c2b82cb122c5522c73da5d22f9f14c41efef214710106c2062a105a78d9ff185aa2501f928f507e89243c1'
         '11fd01261925345e6e918b7525d107abf9fcf41d58fdc3701d05d0f36f8d77876b1df2bc31d318e83bf371818a993264c0def15a4b490196598922cb820f4389'
         'f21d7fa55e1d1f1cd7dce530b904e7fdef34ad720262400b5187f64f9a3778b7ce68f2e210ecd08a3f337dc378f97af3e7745cc08df30d35dd1c295d097a9d80'
         '5a02bd48e735576d146b8a123b6887f9dd4604996322bed72a9d0778a91579c1227579b97140319062c970109cac66edde4de2dd7c039edf35e1bcf0ddd3ca9c')
