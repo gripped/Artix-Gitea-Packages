@@ -1,10 +1,10 @@
 ---
-version: 1.4.0-1
+version: 1.4.0-2
 pkgbase:
   name: ghostty
   pkgdesc: Fast, native, feature-rich terminal emulator pushing modern features
   pkgver: 1.4.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/ghostty-org/ghostty
   arch:
     - x86_64
@@ -89,4 +89,4 @@ pkgname:
     depends:
       - ghostty
       - nautilus-python
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
