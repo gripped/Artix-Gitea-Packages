@@ -2,7 +2,7 @@
 
 pkgbase=radicle-explorer
 pkgname=(radicle-{explorer,httpd})
-pkgver=0.28.0
+pkgver=0.29.0
 pkgrel=1
 pkgdesc="open source, peer-to-peer code collaboration stack built on Git"
 arch=('x86_64')
@@ -24,7 +24,7 @@ source=(
 	"radicle-explorer.config.json"
 	"radicle-explorer.nginx.conf"
 )
-b2sums=('1fb8fa2ef52265829c9ffcbaec8bd042e8fe349a333fda02d5e1513fbf849e2a04e0a6a2797a3674e3ffada1a004a810d1f2062d28e3a3f3bd31baf7ad843f2a'
+b2sums=('77e5555618fb4665cd806ef2bd3664bfc0f565e815d20cea3dbd2ca3e786f5c6bef1d265322412f974c236d6bb23c63d6ac92eaf583bd1b99ff085b2ff9c6369'
         'd29bf8a4344d407cdc19cce3d6d8ef2f28e97454c07978301ef1009a995ba8f352ad706b7230f33d290d7b055d8a8c80c80164625463adc4e0b1191b1c4573f2'
         '5735a8bae977e1fde93a294de1a7f738542f8c4d12d8efeed940c0a8f79f05a59c70101cf9faaa7207f034915e2ac189b0e4af7f0285610dbd9ecc0305d2601c')
 
