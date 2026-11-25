@@ -1,9 +1,9 @@
 ---
-version: 5.3.0-2
+version: 5.3.1-1
 pkgbase:
   name: qbittorrent
-  pkgver: 5.3.0
-  pkgrel: 2
+  pkgver: 5.3.1
+  pkgrel: 1
   url: https://www.qbittorrent.org
   arch:
     - x86_64
@@ -27,11 +27,11 @@ pkgbase:
   optdepends:
     - 'python: needed for torrent search tab'
   source:
-    - git+https://github.com/qbittorrent/qBittorrent/#tag=release-5.3.0
+    - git+https://github.com/qbittorrent/qBittorrent/#tag=release-5.3.1
   validpgpkeys:
     - D8F3DA77AAC6741053599C136E4A2D025B7CC9A2
   sha256sums:
-    - e539959a2df332c1ab77a25aef6476bf4192df1b503b33f2b7f423d647f59bfb
+    - e9f5c00108dab6ffb25146986364f789566838eb12f005607613ca0b82aa9a7b
 pkgname:
   - name: qbittorrent
     pkgdesc: An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar
@@ -47,4 +47,4 @@ pkgname:
       - hicolor-icon-theme
   - name: qbittorrent-nox
     pkgdesc: An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar, w/o gui
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
