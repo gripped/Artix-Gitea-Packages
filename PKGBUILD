@@ -1,11 +1,12 @@
-# Maintainer: David Runge <dvzrv@archlinux.org>
-# Maintainer: Robin Candau <antiz@archlinux.org>
+# Maintainer: Cory Sanin <corysanin@artixlinux.org>
+# Contributor: David Runge <dvzrv@archlinux.org>
+# Contributor: Robin Candau <antiz@archlinux.org>
 # Contributor: Morten Linderud <foxboron@archlinux.org>
 # Contributor: Bartłomiej Piotrowski <bpiotrowski@archlinux.org>
 
 pkgbase=podman
 pkgname=(podman podman-docker)
-pkgver=6.2.0
+pkgver=6.2.1
 pkgrel=1
 pkgdesc='A tool for managing OCI containers and pods.'
 arch=(x86_64)
@@ -30,7 +31,6 @@ makedepends=(
 options=(!lto)
 source=(
   "git+$url?signed#tag=v$pkgver"
-  logdriver.conf
 )
 # See the release-keys repository
 # https://github.com/containers/release-keys
@@ -40,10 +40,8 @@ validpgpkeys=(
   9E33DD8704CC03E2DEB84D9A1C1EDD7CC7C3A0DD  # Lokesh Mandvekar <lsm5@redhat.com>
   DE8B74AD67CA2C1D2F56C4EEEB145DD938A3CAF2  # Paul Holzinger <pholzing@redhat.com>
 )
-sha512sums=('1677773c003547cce53021bbd6231e9d8d8b06cb72a780d92b25830dc4cd6e9c3ebb2563d300959472717b4c3d65696375b712db42d64673a1a15b072221c9bc'
-            '45d52273ab0e728931bf05162481dbb7eb50c30e1525a1ea0bb2622cbe513f8210a4d4496a74b838748cd28a493710efcc09c30d1817c00612eb09b593458157')
-b2sums=('26e985d6b7a94a2f2f3b4aa55b365c904cf0141912c47430581ced40f71481f950396dac1abdea1bf2036c8f24bb2bfb603ccfbd48a0f298e6e4f0956dc97570'
-        '72542f4d0d1610d96ca23faa1d313b9884b4d3c559d28113970f8c4135ef608ca5b1559e671590a0946fb46d93daaa0aae14f32883bac4901066809e0e2c7262')
+sha512sums=('4c7c9c04cf01a17e284c96b51d3f0fc9d91ac7141acb2ac2061c764d2bdf44b4972e662e97b1453dffa573ed913a77ba596389252f130d773f791ad0d3bbd3cb')
+b2sums=('ec888fd91233f3519cbf347b4b04a521e2e08ef7a6c9d8925b76b8eed4b1a8ffb8340de9d2f4eafb615a241b2e540852c9d5331f1a299d72a8e83b2cc539634b')
 
 build() {
   export CGO_CPPFLAGS="${CPPFLAGS}"
@@ -97,8 +95,6 @@ package_podman() {
   make install install.completions DESTDIR="$pkgdir" PREFIX=/usr LIBEXECDIR=/usr/lib -C $pkgbase
 
   rm -r $pkgdir/usr/lib/systemd
-  # work around podman really wanting journald logging
-  install -Dm644 "$srcdir/logdriver.conf" "$pkgdir/etc/containers/containers.conf.d/000-logdriver.conf"
 }
 
 package_podman-docker() {
