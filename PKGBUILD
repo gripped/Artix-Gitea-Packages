@@ -3,7 +3,7 @@
 # Contributor: Kyle Laker <kyle@laker.email>
 
 pkgname=warpinator
-pkgver=2.0.7
+pkgver=2.0.8
 pkgrel=1
 pkgdesc='LAN file sender, send and receive files across the network'
 arch=(any)
@@ -38,7 +38,7 @@ makedepends=(
 )
 optdepends=('ufw: Open a firewall port for Warpinator')
 source=("git+https://github.com/linuxmint/warpinator.git#tag=$pkgver")
-b2sums=(7da5c895d25b014118ebefa1f136ec0b371e1ec9e485601b75c84bb8f72dd994c3ef2e236738bf76c777b06bcfeab7825d32deb571458b908445e9f86b7571fa)
+b2sums=(13f3a5b302b090310be73a74b8076465d5cf3295386ddd086dd0baa05ae64b852512ce4fa48fbd58ffd2a3dceb15182ed1f00ff8b7220dc548762ff0a8ed4a35)
 
 prepare() {
   cd $pkgname
