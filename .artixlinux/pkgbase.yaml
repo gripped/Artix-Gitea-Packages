@@ -54,7 +54,7 @@ repos:
     packages: []
     debug: []
   galaxy:
-    version: 0.46.0-1
+    version: 0.46.1-1
     packages:
-      - zellij-0.46.0-1-x86_64.pkg.tar.zst
+      - zellij-0.46.1-1-x86_64.pkg.tar.zst
     debug: []
