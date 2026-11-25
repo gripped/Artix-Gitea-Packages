@@ -2,7 +2,7 @@
 # Based on AUR package by: Lazerbeak12345 <lazerbeak12345 at users dot noreply dot github dot com>
 
 pkgname=s6-frontend-man-pages
-pkgver=0.1.0.0.1
+pkgver=0.2.0.0.1
 pkgrel=1
 pkgdesc="Manual pages for ${pkgname%-man-pages}"
 arch=('any')
@@ -13,7 +13,7 @@ depends=()
 makedepends=(git)
 optdepends=("${pkgname%-man-pages}: package documented by these man pages")
 source=("git+${url}#tag=v${pkgver}")
-sha256sums=('a1aabc4f8d84878a25ed4b0d56ead2277c33f9bac8abe7bb739dc1ab7dfc63a6')
+sha256sums=('f3823e76699c1605cccad3d1afc3b8918ba216456197b0b4d8f2eb941597c7d1')
 
 package() {
 	cd "$pkgname"
