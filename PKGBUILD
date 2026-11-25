@@ -3,7 +3,7 @@
 
 pkgname=labwc
 pkgver=0.20.3
-pkgrel=1
+pkgrel=2
 pkgdesc='stacking wayland compositor with look and feel from openbox'
 url="https://github.com/labwc/labwc"
 arch=('x86_64')
@@ -28,6 +28,7 @@ depends=(
 )
 makedepends=(
   git
+  libcap
   meson
   scdoc
   wayland-protocols
@@ -48,4 +49,6 @@ build() {
 
 package() {
   meson install -C build --destdir "$pkgdir"
+  # Allow high-priority Vulkan queues (and future SCHED_RR) without root
+  setcap cap_sys_nice=+ep "$pkgdir/usr/bin/labwc"
 }

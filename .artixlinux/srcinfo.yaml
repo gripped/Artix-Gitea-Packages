@@ -1,10 +1,10 @@
 ---
-version: 0.20.3-1
+version: 0.20.3-2
 pkgbase:
   name: labwc
   pkgdesc: stacking wayland compositor with look and feel from openbox
   pkgver: 0.20.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/labwc/labwc
   arch:
     - x86_64
@@ -12,6 +12,7 @@ pkgbase:
     - GPL-2.0-only
   makedepends:
     - git
+    - libcap
     - meson
     - scdoc
     - wayland-protocols
@@ -42,4 +43,4 @@ pkgbase:
     - 9fc8149b66f27e7cfe62ccdf69c78e50346483d5d884cfd71971b16f86322b68c43cbb0551f415b59b7dbce127200e248965c2d5a6e212d7bf8a650d80265756
 pkgname:
   - name: labwc
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
