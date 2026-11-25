@@ -1,15 +1,17 @@
 ---
-version: 1.5.0-1
+version: 1.5.0-2
 pkgbase:
   name: python-mpv-jsonipc
   pkgdesc: Python API to MPV using JSON IPC
   pkgver: 1.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/iwalton3/python-mpv-jsonipc
   arch:
     - any
   license:
     - Apache-2.0
+  checkdepends:
+    - mpv
   makedepends:
     - python-build
     - python-installer
@@ -23,4 +25,4 @@ pkgbase:
     - a681058a35760ea6ce7aca2689287120ad672e8b2f2b72626080cc531167f1843b2bc0866039735aa421ac9a89f127b73390d2d87affc029648e3c918869d30e
 pkgname:
   - name: python-mpv-jsonipc
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
