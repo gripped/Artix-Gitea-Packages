@@ -1,15 +1,17 @@
 ---
-version: 1.21.0-1
+version: 1.21.0-2
 pkgbase:
   name: python-jellyfin-apiclient
   pkgdesc: Python API client for Jellyfin
   pkgver: 1.21.0
-  pkgrel: 1
-  url: https://github.com/iwalton3/jellyfin-apiclient-python
+  pkgrel: 2
+  url: https://github.com/jellyfin/jellyfin-apiclient-python
   arch:
     - any
   license:
     - GPL-3.0-only
+  checkdepends:
+    - python-pytest
   makedepends:
     - python-build
     - python-installer
@@ -22,9 +24,9 @@ pkgbase:
     - python-websocket-client
     - python-certifi
   source:
-    - python-jellyfin-apiclient-1.21.0.tar.gz::https://github.com/iwalton3/jellyfin-apiclient-python/archive/refs/tags/v1.21.0.tar.gz
+    - python-jellyfin-apiclient-1.21.0.tar.gz::https://github.com/jellyfin/jellyfin-apiclient-python/archive/refs/tags/v1.21.0.tar.gz
   b2sums:
     - 2a727a70ff081949608414851d9440dd07008038f9d72ae5f00e2f25dfba4cb2da6164701b69faaec19d76fd258d0113541a2433c74a8f347ee0305788cec78f
 pkgname:
   - name: python-jellyfin-apiclient
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
