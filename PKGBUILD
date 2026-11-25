@@ -4,7 +4,7 @@
 
 pkgname=lib32-expat
 _name=${pkgname#lib32-}
-pkgver=2.10.0
+pkgver=2.11.0
 pkgrel=1
 pkgdesc='An XML Parser library'
 arch=(x86_64)
@@ -21,8 +21,8 @@ makedepends=(
 )
 provides=(libexpat.so)
 source=($_name::git+$_url?signed#tag=R_${pkgver//./_})
-sha512sums=('13078e3a7e97a7c276926cb56dfa7c9c678dc66c9e8557607b350da9fcb45e10006c96624fda3c20df9d13ba332441134b36464450c672a0a5671068b73f8d4d')
-b2sums=('ad3b03449595c450b7814ae9c2f38991e1560fdf6fdd076585647fd0469657140902bad472eae0a3346d93122d718ce7bed0a36f2d393ee0a88e02bd5fd59fa8')
+sha512sums=('74e7b9d54cd697992d71e5115f912fda8fc55a6ee0190d604c93dc88efaa31218a40991ac983f4d5a8ff9a1bcbdbad923bde70326bf36472ac274e9f4c6ea663')
+b2sums=('34538c6106e8f0157e9f708bbf228bafd5a4355e32cb0ae2ff106d4036642f0fd559404bc20c14538605082b44aad94004bc43c781c220f5ce5fa954125c5486')
 validpgpkeys=(3176EF7DB2367F1FCA4F306B1F9B0E909AF37285) # Sebastian Pipping
 
 build() {
