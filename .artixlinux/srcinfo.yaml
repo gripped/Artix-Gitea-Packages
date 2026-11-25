@@ -1,9 +1,9 @@
 ---
-version: 0.17.3-1
+version: 0.17.4-1
 pkgbase:
   name: neovide
   pkgdesc: No Nonsense Neovim Client in Rust
-  pkgver: 0.17.3
+  pkgver: 0.17.4
   pkgrel: 1
   url: https://github.com/neovide/neovide
   arch:
@@ -45,9 +45,9 @@ pkgbase:
   options:
     - '!lto'
   source:
-    - https://github.com/neovide/neovide/archive/0.17.3/neovide-0.17.3.tar.gz
+    - https://github.com/neovide/neovide/archive/0.17.4/neovide-0.17.4.tar.gz
   sha256sums:
-    - 368e2e8f111a09bb2a498be5dd68533796c7cb7e963eecf45176cb9305e00679
+    - ac9bcfcc510da39ac861cbba468296df0f1270fdcd82846a5820c33a73d7da98
 pkgname:
   - name: neovide
 # generated with artixpkg 0.40.1-1-any
