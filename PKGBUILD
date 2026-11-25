@@ -3,12 +3,12 @@
 # Contributor: The-Repo-Club <The-Repo-Club@github.com>
 pkgname=qt6gtk2
 pkgver=0.7
-pkgrel=1.6
+pkgrel=1.7
 pkgdesc='GTK+2.0 integration plugins for Qt6'
-arch=('any')
+arch=('x86_64')
 groups=('artix-style' 'gtk2' 'qt6')
 url='https://www.opencode.net/trialuser/qt6gtk2'
-license=(GPL2)
+license=('GPL-2.0-or-later')
 conflicts=($pkgname-git)
 depends=(qt6-base gtk2 libx11)
 source=("${pkgname}-$pkgver.tar.gz::${url}/-/archive/$pkgver/$pkgname-$pkgver.tar.gz"

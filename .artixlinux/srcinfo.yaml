@@ -1,19 +1,19 @@
 ---
-version: 0.7-1.6
+version: 0.7-1.7
 pkgbase:
   name: qt6gtk2
   pkgdesc: GTK+2.0 integration plugins for Qt6
   pkgver: 0.7
-  pkgrel: 1.6
+  pkgrel: 1.7
   url: https://www.opencode.net/trialuser/qt6gtk2
   arch:
-    - any
+    - x86_64
   groups:
     - artix-style
     - gtk2
     - qt6
   license:
-    - GPL2
+    - GPL-2.0-or-later
   depends:
     - qt6-base
     - gtk2
@@ -28,4 +28,4 @@ pkgbase:
     - 9c60620868ce7dc469985cdde56332e28ce9f60dd13d6dfa516e8d1ef94c7673
 pkgname:
   - name: qt6gtk2
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.1-1-any
