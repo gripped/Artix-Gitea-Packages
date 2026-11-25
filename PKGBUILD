@@ -1,7 +1,7 @@
 # Maintainer: Carl Smedstad <carsme@archlinux.org>
 
 pkgname=satty
-pkgver=0.22.0
+pkgver=0.23.0
 pkgrel=1
 pkgdesc="Modern screenshot annotation tool, inspired by Swappy and Flameshot"
 arch=(x86_64)
@@ -23,7 +23,7 @@ makedepends=(
   git
 )
 source=("$pkgname::git+$url.git#tag=v$pkgver")
-b2sums=('06b136248eab0f123d7bfab34243a2ed227e6e0a4c350c172c7b942d4a42a750ce7ce5535839782b3e9fa740c7da8dafc0347c9854febb56d5a6dc0b28fe4fa3')
+b2sums=('e83beec4f281bcd85083cb0e0d889423a9a1ec7b07631d2b283beca105a3f3943c56fb9059c85ae040ad463c85798d15c859bb32d7a25c7a1aa021a115c65685')
 
 prepare() {
   cd $pkgname
