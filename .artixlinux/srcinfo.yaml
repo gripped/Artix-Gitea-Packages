@@ -1,10 +1,10 @@
 ---
-version: 6.8.2-1.1
+version: 6.8.3-1
 pkgbase:
   name: plasma-workspace
   pkgdesc: KDE Plasma Workspace
-  pkgver: 6.8.2
-  pkgrel: 1.1
+  pkgver: 6.8.3
+  pkgrel: 1
   url: https://kde.org/plasma-desktop/
   arch:
     - x86_64
@@ -133,15 +133,15 @@ pkgbase:
     - plasma-wayland-session
     - plasma-x11-session
   source:
-    - https://download.kde.org/stable/plasma/6.8.2/plasma-workspace-6.8.2.tar.xz
-    - https://download.kde.org/stable/plasma/6.8.2/plasma-workspace-6.8.2.tar.xz.sig
+    - https://download.kde.org/stable/plasma/6.8.3/plasma-workspace-6.8.3.tar.xz
+    - https://download.kde.org/stable/plasma/6.8.3/plasma-workspace-6.8.3.tar.xz.sig
   validpgpkeys:
     - E0A3EB202F8E57528E13E72FD7574483BB57B18D
-    - 0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D
+    - 58743C0A93487794BC44ECE873C3D7758E7A544A
     - D07BD8662C56CB291B316EB2F5675605C74E02CF
     - 1FA881591C26B276D7A5518EEAAF29B42A678C20
   sha256sums:
-    - 52bee29adbac15d0e2f8db98e6440d4ae042fc38340423ed736ac20189778b64
+    - 3f984e2d960c252ee6353ef639807379c7d1bb2777fecedd047943209c52ffcb
     - SKIP
 pkgname:
   - name: plasma-workspace
@@ -246,4 +246,4 @@ pkgname:
       - xorg-xwayland
       - zlib
       - plasma-integration
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
