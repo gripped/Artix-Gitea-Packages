@@ -1,11 +1,11 @@
 ---
-team: null
+team: world
 actions:
-  addRepo: world-gremlins
+  addRepo: null
   removeRepo: null
-  triggersBuild: true
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
+  triggersRepoAdd: false
   triggersRepoRemove: false
   triggersNoCheck: false
 repos:
@@ -57,9 +57,4 @@ repos:
   galaxy:
     version: null
     packages: []
-    debug: []
-  null-gremlins:
-    version: 3.5.3-3
-    packages:
-      - python-srt-3.5.3-3-any.pkg.tar.zst
     debug: []
