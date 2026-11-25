@@ -3,7 +3,7 @@
 pkgname=aurorae
 pkgver=6.8.3
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=1.1
 pkgdesc='A themeable window decoration for KWin'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
