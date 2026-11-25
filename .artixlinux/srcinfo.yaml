@@ -1,10 +1,10 @@
 ---
-version: 1.29.3-1
+version: 1.29.3-2
 pkgbase:
   name: zed
   pkgdesc: A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter
   pkgver: 1.29.3
-  pkgrel: 1
+  pkgrel: 2
   url: https://zed.dev
   arch:
     - x86_64
@@ -33,7 +33,6 @@ pkgbase:
     - libx11
     - libxkbcommon
     - libxkbcommon-x11
-    - netcat
     - nodejs>=18
     - npm
     - sqlite
@@ -65,7 +64,6 @@ pkgname:
       - libx11
       - libxkbcommon
       - libxkbcommon-x11
-      - netcat
       - nodejs>=18
       - npm
       - sqlite

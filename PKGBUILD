@@ -1,10 +1,11 @@
 # Maintainer: Cory Sanin <corysanin@artixlinux.org>
 # Contributor: Caleb Maclennan <caleb@alerque.com>
+# Contributor: DeepChirp <deepchirp@archlinux.org>
 # Contributor: Marcell Pardavi <marcell.pardavi@gmail.com>
 
 pkgname=zed
 pkgver=1.29.3
-pkgrel=1
+pkgrel=2
 pkgdesc='A high-performance, multiplayer code editor from the creators of Atom and Tree-sitter'
 arch=(x86_64)
 url=https://zed.dev
@@ -22,7 +23,6 @@ depends=(alsa-lib
          libx11 # libX11-xcb.so
          libxkbcommon
          libxkbcommon-x11
-         netcat
          'nodejs>=18'
          npm
          sqlite
