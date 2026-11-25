@@ -5,7 +5,7 @@
 
 pkgname=accerciser
 pkgver=3.48.0
-pkgrel=4
+pkgrel=5
 pkgdesc="Interactive Python accessibility explorer for the GNOME desktop"
 url="https://gitlab.gnome.org/GNOME/accerciser"
 arch=(any)
@@ -49,6 +49,15 @@ prepare() {
   # Fix missing IPython terminal module imports
   # https://gitlab.gnome.org/GNOME/accerciser/-/merge_requests/105
   git cherry-pick -n 6f464e4406372d4e6e9f80afded22d8ec6530619
+
+  # Fix window size growing with client-side decorations
+  # https://gitlab.gnome.org/GNOME/accerciser/-/merge_requests/106
+  git cherry-pick -n ff3e107bee2ab6327898db546cd7b3978ce3d9e5
+
+  # Declare support for GNOME Shell 49, 50 and 51
+  # https://gitlab.gnome.org/GNOME/accerciser/-/merge_requests/99
+  git cherry-pick -n 22b7756f7ac42ccaa461c5708ed29f8e6b2a3819 \
+                     03d1eb7f8f18fa8d7ab3785ebd91b21be3a0eed8
 }
 
 build() {

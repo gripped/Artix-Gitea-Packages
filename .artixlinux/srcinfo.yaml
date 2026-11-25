@@ -1,10 +1,10 @@
 ---
-version: 3.48.0-4
+version: 3.48.0-5
 pkgbase:
   name: accerciser
   pkgdesc: Interactive Python accessibility explorer for the GNOME desktop
   pkgver: 3.48.0
-  pkgrel: 4
+  pkgrel: 5
   url: https://gitlab.gnome.org/GNOME/accerciser
   arch:
     - any
