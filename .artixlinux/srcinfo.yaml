@@ -1,9 +1,9 @@
 ---
-version: 51.2-1
+version: 51.2.1-1
 pkgbase:
   name: gnome-control-center
   pkgdesc: GNOME's main interface to configure various aspects of the desktop
-  pkgver: 51.2
+  pkgver: 51.2.1
   pkgrel: 1
   url: https://apps.gnome.org/Settings/
   arch:
@@ -78,13 +78,13 @@ pkgbase:
     - upower
     - wayland
   source:
-    - git+https://gitlab.gnome.org/GNOME/gnome-control-center.git?signed#tag=51.2
+    - git+https://gitlab.gnome.org/GNOME/gnome-control-center.git?signed#tag=51.2.1
     - git+https://gitlab.gnome.org/GNOME/libgnome-volume-control.git
     - git+https://gitlab.gnome.org/GNOME/libgxdp.git#commit=df896e3412b749947bc6f62a91a1aac8e6b6d19b
   validpgpkeys:
     - 9B60FE7947F0A3C58136817F2C2A218742E016BE
   b2sums:
-    - 29b393b0a4e76f6c1c5fd03713a3b2fa3ac879ffb56abfd3e5f7ba7150f42b25df346a6f939ac3cd5830d326d05cd0e993ccdaee475561be34a7c3b3e07a8b92
+    - 48f409099db964bf13b2793b269918250e2074f265a4ff5026e97c294cf3bd5c3461e981c3db88a6db80dc51768429e12d61366f342e4e31478f6c03c9f23ba5
     - SKIP
     - f5bd238c316a55784f97b1b7c8b498d3dfa727375cf8a1bf61f4771e306232b36752df8f61edb8d8c5da7c5e1a7acd8c0e85a53725af56e9b18b8dd1a6f284e0
 pkgname:
