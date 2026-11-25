@@ -1,9 +1,9 @@
 ---
-version: 3.4.11-1
+version: 3.4.14-1
 pkgbase:
   name: pix
   pkgdesc: Image viewer and browser based on gthumb. X-Apps Project.
-  pkgver: 3.4.11
+  pkgver: 3.4.14
   pkgrel: 1
   url: https://github.com/linuxmint/pix
   arch:
@@ -45,9 +45,9 @@ pkgbase:
   conflicts:
     - pix-git
   source:
-    - pix-3.4.11.tar.gz::https://github.com/linuxmint/pix/archive/3.4.11.tar.gz
+    - pix-3.4.14.tar.gz::https://github.com/linuxmint/pix/archive/3.4.14.tar.gz
   sha256sums:
-    - 47ac74d19399fdde5d0e2e5d1c2b4a29c3281a549ca7881a1fb8457b1bf5c5eb
+    - 9e179f42c10d6b21ada7d8767b22314246fe34669b795bc81d52ffb01852b6db
 pkgname:
   - name: pix
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any

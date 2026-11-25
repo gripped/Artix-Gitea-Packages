@@ -1,7 +1,7 @@
 # Maintainer: Nate Simon <njsimon10@gmail.com>
 
 pkgname=pix
-pkgver=3.4.11
+pkgver=3.4.14
 pkgrel=1
 pkgdesc="Image viewer and browser based on gthumb. X-Apps Project."
 arch=('i686' 'x86_64' 'armv7h')
@@ -60,4 +60,4 @@ package(){
     DESTDIR="$pkgdir/" ninja install
 }
 
-sha256sums=('47ac74d19399fdde5d0e2e5d1c2b4a29c3281a549ca7881a1fb8457b1bf5c5eb')
+sha256sums=('9e179f42c10d6b21ada7d8767b22314246fe34669b795bc81d52ffb01852b6db')
