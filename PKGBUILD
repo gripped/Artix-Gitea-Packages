@@ -19,7 +19,7 @@ pkgname=(
   nginx-src
 )
 # IMPORTANT: When bumping $pkgver, remember to rebuild NGINX modules nginx-mod-*.
-pkgver=1.30.7
+pkgver=1.30.8
 pkgrel=1
 _tests_commit=cf2b5bf5f98f578a0a3da13c8c507c996f5f74fe
 arch=(x86_64)
@@ -64,7 +64,7 @@ validpgpkeys=(
   'D6786CE303D9A9022998DC6CC8464D549AF75C0A'  # Sergey Kandaurov <s.kandaurov@f5.com>
   '13C82A63B603576156E30A4EA0EA981B66B0D967'  # Konstantin Pavlov <thresh@nginx.com>
 )
-sha512sums=('00a9a4574eb9e633424ab9bfb0df4847880c917ced8e1bb9dc5339a0b836318cbe4de9b44c662c4d1a2a752eb59ff941be00c6771c8ee7efadf68866dae9ef21'
+sha512sums=('d8c619870c5670590bf7e7db95b277c0851a9d8269f88c55b46195a94b5bca30e64b8d0f68b23d93c63bea27bae1b70339f7672ad7aa4378119925f2d8a753ec'
             'b9fe7db2f4145673bb6148e0d6c902358ecd4b0e6d66c64ffecf18bb67d5dfb693f42a79d82458e200845edda2bd811ef245d832c6a830c3fd5c55ca9a677f14'
             'f707961d716392a0cc5345aa79e0cb1b44d2f1233b26cb77724a2716f1552a766d8aeb5347e20cba801a271e785c9ba1f35ac8e155fbadadd0c145ec222e8e0b')
 
