@@ -1,10 +1,10 @@
 ---
-version: 2.5.0-1
+version: 2.5.0-2
 pkgbase:
   name: lxqt-qtplugin
   pkgdesc: LXQt platform integration for Qt
   pkgver: 2.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/lxqt/lxqt-qtplugin
   arch:
     - x86_64
@@ -29,4 +29,4 @@ pkgbase:
     - 814be52105fae967a8f58d6ae434ed30ad73b473669bea63209e7d64fbae9386
 pkgname:
   - name: lxqt-qtplugin
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
