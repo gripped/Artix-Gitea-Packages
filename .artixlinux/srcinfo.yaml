@@ -1,10 +1,10 @@
 ---
-version: 1.5.0-1
+version: 1.5.0-2
 pkgbase:
   name: xdg-desktop-portal-hyprland
   pkgdesc: xdg-desktop-portal backend for hyprland
   pkgver: 1.5.0
-  pkgrel: 1
+  pkgrel: 2
   url: https://github.com/hyprwm/xdg-desktop-portal-hyprland
   arch:
     - x86_64
@@ -46,4 +46,4 @@ pkgbase:
     - da075667ab2aecb271f6cbd49490f14c725f417d7522c49269decf7f14431d3e
 pkgname:
   - name: xdg-desktop-portal-hyprland
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
