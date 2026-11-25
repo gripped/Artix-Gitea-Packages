@@ -5,7 +5,7 @@
 pkgname=kwin
 pkgver=6.8.3
 _dirver=$(echo $pkgver | cut -d. -f1-3)
-pkgrel=1
+pkgrel=3
 pkgdesc='An easy to use, but flexible, Wayland compositor'
 arch=(x86_64)
 url='https://kde.org/plasma-desktop/'
@@ -93,14 +93,24 @@ groups=(
 )
 source=(
   https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
+  https://invent.kde.org/plasma/kwin/-/commit/19404161bc367b87b794361915b85a14c034ec63.patch
+  https://invent.kde.org/plasma/kwin/-/commit/47f038220448a57e3b071b9d1d70c835e7387128.patch
 )
 sha256sums=('fd5cb783f220ea4526a9afee2f72b582c3e87ef7f91b19bc5c7a6662ffe7fbdc'
-            'SKIP')
+            'SKIP'
+            '657c90be8f2051f742a583e4ce38388d502ecaf0e402f2b01743ceb358836f68'
+            'cd2d27071eabe7f055d3cd0ce55d51dd7016e98b24582b74659195b2fb1f4871')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
               '58743C0A93487794BC44ECE873C3D7758E7A544A'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '90A968ACA84537CC27B99EAF2C8DF587A6D4AAC1'  # Nicolas Fella <nicolas.fella@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
+
+prepare() {
+  cd $pkgname-$pkgver
+  patch -p1 -i ../19404161bc367b87b794361915b85a14c034ec63.patch # https://bugs.kde.org/528824
+  patch -p1 -i ../47f038220448a57e3b071b9d1d70c835e7387128.patch # https://bugs.kde.org/528936
+}
 
 build() {
   cmake -B build  -S $pkgname-$pkgver \
