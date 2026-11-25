@@ -1,9 +1,9 @@
 ---
-version: 5.5-1
+version: 5.6-1
 pkgbase:
   name: libhx
   pkgdesc: A library providing queue, tree, I/O and utility functions
-  pkgver: 5.5
+  pkgver: 5.6
   pkgrel: 1
   url: https://inai.de/projects/libhx/
   arch:
@@ -16,13 +16,13 @@ pkgbase:
   provides:
     - libHX.so
   source:
-    - https://inai.de/files/libhx/libHX-5.5.tar.zst
-    - https://inai.de/files/libhx/libHX-5.5.tar.asc
+    - https://inai.de/files/libhx/libHX-5.6.tar.zst
+    - https://inai.de/files/libhx/libHX-5.6.tar.asc
   validpgpkeys:
     - 2BDA563E9DDE46AF71CC171DAEB6941A2F9C9944
   sha256sums:
-    - 822e51adde09238b29f907ddcd0157b1c0eb34d104ecc1e7ac8f3bccc4fd9a42
+    - 0e86fedea7552f61cfdc8281f51fa696f4978ee35011780521b9cfd8130b40c8
     - SKIP
 pkgname:
   - name: libhx
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
