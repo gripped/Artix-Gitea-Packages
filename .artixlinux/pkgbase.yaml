@@ -56,10 +56,10 @@ repos:
       - linux-rt-lts-docs-6.18.60.rt9.artix1-2-x86_64.pkg.tar.zst
     debug: []
   galaxy:
-    version: 6.18.64.rt10.artix1-1
+    version: 6.18.65.rt10.artix1-1
     packages:
-      - linux-rt-lts-6.18.64.rt10.artix1-1-x86_64.pkg.tar.zst
-      - linux-rt-lts-headers-6.18.64.rt10.artix1-1-x86_64.pkg.tar.zst
-      - linux-rt-lts-docs-6.18.64.rt10.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-6.18.65.rt10.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-headers-6.18.65.rt10.artix1-1-x86_64.pkg.tar.zst
+      - linux-rt-lts-docs-6.18.65.rt10.artix1-1-x86_64.pkg.tar.zst
     debug: []
 team: galaxy
