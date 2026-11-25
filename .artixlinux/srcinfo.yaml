@@ -1,9 +1,9 @@
 ---
-version: 2026.0.0_947-1
+version: 2026.2.0_863-1
 pkgbase:
   name: intel-oneapi-compiler-shared
   pkgdesc: Intel oneAPI compiler runtime libraries
-  pkgver: 2026.0.0_947
+  pkgver: 2026.2.0_863
   pkgrel: 1
   url: https://software.intel.com/content/www/us/en/develop/tools/oneapi.html
   arch:
@@ -17,18 +17,18 @@ pkgbase:
     - intel-oneapi-compiler-shared-runtime-libs
     - level-zero-loader
     - glibc
-    - gcc-libs
+    - libgcc
     - zlib
   provides:
     - intel-oneapi-compiler-shared-common
   conflicts:
     - intel-oneapi-basekit
   noextract:
-    - intel-oneapi-compiler-shared-2026.0-2026.0.0-947_amd64.deb
+    - intel-oneapi-compiler-shared-2026.2-2026.2.0-863_amd64.deb
   source:
-    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-compiler-shared-2026.0-2026.0.0-947_amd64.deb
+    - https://apt.repos.intel.com/oneapi/pool/main/intel-oneapi-compiler-shared-2026.2-2026.2.0-863_amd64.deb
   sha256sums:
-    - 67bf46baff36755aed231381c5f5b8a5e5b0a4b9a6170cac3ebbe129bd36abf9
+    - 6d8b93fd075bb0956862d0a52620c8b08bb32179aac85225a3078399c94a41ca
 pkgname:
   - name: intel-oneapi-compiler-shared
-# generated with artixpkg 0.38.5-1-any
+# generated with artixpkg 0.40.1-1-any

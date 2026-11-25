@@ -1,9 +1,8 @@
-# Maintainer: Cory Sanin <corysanin@artixlinux.org>
-# Contributor: Torsten Keßler <tpkessler at archlinux dot org>
+# Maintainer: Torsten Keßler <tpkessler at archlinux dot org>
 # Contributor: Konstantin Gizdov <arch at kge dot pw>
 
 pkgname=intel-oneapi-compiler-shared
-pkgver=2026.0.0_947
+pkgver=2026.2.0_863
 _pkgver=$(echo $pkgver | sed 's/_/-/')
 _majmin=$(echo $pkgver | cut -d. -f1,2)
 pkgrel=1
@@ -12,10 +11,17 @@ arch=('x86_64')
 url='https://software.intel.com/content/www/us/en/develop/tools/oneapi.html'
 license=("LicenseRef-Intel-EULA-Developer-Tools")
 source=("https://apt.repos.intel.com/oneapi/pool/main/${pkgname}-${_majmin}-${_pkgver}_amd64.deb")
-sha256sums=('67bf46baff36755aed231381c5f5b8a5e5b0a4b9a6170cac3ebbe129bd36abf9')
-depends=('intel-oneapi-compiler-shared-runtime'
-         'intel-oneapi-dpcpp-debugger' 'intel-oneapi-common' 'intel-oneapi-compiler-shared-runtime-libs'
-         'level-zero-loader' 'glibc' 'gcc-libs' 'zlib')
+sha256sums=('6d8b93fd075bb0956862d0a52620c8b08bb32179aac85225a3078399c94a41ca')
+depends=(
+  'intel-oneapi-compiler-shared-runtime'
+  'intel-oneapi-dpcpp-debugger'
+  'intel-oneapi-common'
+  'intel-oneapi-compiler-shared-runtime-libs'
+  'level-zero-loader'
+  'glibc'
+  'libgcc'
+  'zlib'
+)
 provides=("${pkgname}-common")
 conflicts=('intel-oneapi-basekit')
 
