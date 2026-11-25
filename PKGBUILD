@@ -1,7 +1,7 @@
 # Maintainer: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=plasma-systemmonitor
-pkgver=6.8.2
+pkgver=6.8.3
 _dirver=$(echo $pkgver | cut -d. -f1-3)
 pkgrel=1
 pkgdesc='An interface for monitoring system sensors, process information and other system resources'
@@ -36,17 +36,16 @@ groups=(plasma)
 replaces=(ksysguard)
 source=(https://download.kde.org/stable/plasma/$_dirver/$pkgname-$pkgver.tar.xz{,.sig}
 "$pkgname-6.8.0-processesview.patch::https://raw.githubusercontent.com/chimera-linux/cports/0953fe1e320a569885480f1191082e592266cd76/main/plasma-systemmonitor/patches/replace-unsupported-applications-view-with-processes.patch")
-sha256sums=('d3d795edd70579a967f0b146864610c2cb58379f283356eaadd18fd7e57e4524'
+sha256sums=('f368f843bd0d9d0cd261cda627a98b404268fca6a7e15bad9f69d8e050b004ed'
             'SKIP'
             'eec9847192fc930dbc8f67b7c66ce3ce16b0664d1d2848f6c05dd771d108f901')
 validpgpkeys=('E0A3EB202F8E57528E13E72FD7574483BB57B18D'  # Jonathan Esk-Riddell <jr@jriddell.org>
-              '0AAC775BB6437A8D9AF7A3ACFE0784117FBCE11D'  # Bhushan Shah <bshah@kde.org>
+              '58743C0A93487794BC44ECE873C3D7758E7A544A'  # Bhushan Shah <bshah@kde.org>
               'D07BD8662C56CB291B316EB2F5675605C74E02CF'  # David Edmundson <davidedmundson@kde.org>
               '1FA881591C26B276D7A5518EEAAF29B42A678C20') # Marco Martin <notmart@gmail.com>
 
 prepare() {
-  cd "$pkgname-$pkgver"
-  patch -Np1 < "$srcdir/$pkgname-6.8.0-processesview.patch"
+  patch -d "$srcdir/$pkgname-$pkgver" -Np1 < "$srcdir/$pkgname-6.8.0-processesview.patch"
 }
 
 build() {
