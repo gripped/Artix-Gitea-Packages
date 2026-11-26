@@ -1,9 +1,9 @@
 ---
-version: 1.84.3-1
+version: 1.85.4-1
 pkgbase:
   name: grpc
   pkgdesc: High performance, open source, general RPC framework that puts mobile and HTTP/2 first.
-  pkgver: 1.84.3
+  pkgver: 1.85.4
   pkgrel: 1
   url: https://grpc.io
   arch:
@@ -32,16 +32,16 @@ pkgbase:
     - re2
     - re2c
   source:
-    - grpc::git+https://github.com/grpc/grpc.git#tag=v1.84.3
+    - grpc::git+https://github.com/grpc/grpc.git#tag=v1.85.4
     - grpc-grpc-proto::git+https://github.com/grpc/grpc-proto.git
     - grpc-googletest::git+https://github.com/google/googletest.git
-    - https://github.com/protocolbuffers/protobuf/archive/v36.1/protobuf-36.1.tar.gz
+    - https://github.com/protocolbuffers/protobuf/archive/v36.2/protobuf-36.2.tar.gz
     - fix-python-system-abseil.patch
   sha256sums:
-    - f8f79e792e8e75e3c09c2829761b06fc914985cea71bfdbf1e74b2328f20acb6
+    - cd21e21a55768ad2d7ccd753bd3464fa9d8891c5f6be622e1f5f09247b990b93
     - SKIP
     - SKIP
-    - 7a7baff8207a57f3fe5c233d432a09eba67bdfb55a3145839d0817cae8e807a4
+    - 7e7eaf580ec77f1a392ff1ab1013c13d3b04a6716f002f697f67f3c1113f0530
     - 24a8dc761deff4a39b5fc9a7fb2b65c049e600b14c548a28f52376b98c456a7e
 pkgname:
   - name: grpc

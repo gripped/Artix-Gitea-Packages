@@ -6,9 +6,9 @@
 
 pkgbase='grpc'
 pkgname=('grpc' 'python-grpcio' 'python-grpcio-tools' 'php-grpc' 'php-legacy-grpc' 'grpc-cli')
-pkgver=1.84.3
+pkgver=1.85.4
 pkgrel=1
-_protobuf_ver=36.1
+_protobuf_ver=36.2
 pkgdesc="High performance, open source, general RPC framework that puts mobile and HTTP/2 first."
 arch=('x86_64')
 url='https://grpc.io'
@@ -42,10 +42,10 @@ source=(
     "https://github.com/protocolbuffers/protobuf/archive/v${_protobuf_ver}/protobuf-${_protobuf_ver}.tar.gz"
     "fix-python-system-abseil.patch"
 )
-sha256sums=('f8f79e792e8e75e3c09c2829761b06fc914985cea71bfdbf1e74b2328f20acb6'
+sha256sums=('cd21e21a55768ad2d7ccd753bd3464fa9d8891c5f6be622e1f5f09247b990b93'
             'SKIP'
             'SKIP'
-            '7a7baff8207a57f3fe5c233d432a09eba67bdfb55a3145839d0817cae8e807a4'
+            '7e7eaf580ec77f1a392ff1ab1013c13d3b04a6716f002f697f67f3c1113f0530'
             '24a8dc761deff4a39b5fc9a7fb2b65c049e600b14c548a28f52376b98c456a7e')
 
 prepare() {
@@ -58,9 +58,6 @@ prepare() {
   git -c protocol.file.allow=always submodule update --init -- third_party/grpc-proto third_party/googletest
 
   patch -p1 -i "$srcdir/fix-python-system-abseil.patch"
-
-  # support openssl 4
-  git cherry-pick -n fb056ab0bb3ed003febe82f069ff41514288a4f3
 
   # CMake only downloads third party depends when folder does not exist
   rmdir third_party/{cel-spec,envoy-api,xds,googleapis,protoc-gen-validate}
