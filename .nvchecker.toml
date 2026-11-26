@@ -1,4 +1,5 @@
 [cargo-c]
-source = "git"
-git = "https://github.com/lu-zero/cargo-c.git"
+source = "github"
+github = "lu-zero/cargo-c"
 prefix = "v"
+use_latest_release = true

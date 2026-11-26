@@ -1,10 +1,10 @@
 ---
-version: 0.10.26-2
+version: 0.10.28-1
 pkgbase:
   name: cargo-c
   pkgdesc: A cargo subcommand to build and install C-ABI compatible dynamic and static libraries
-  pkgver: 0.10.26
-  pkgrel: 2
+  pkgver: 0.10.28
+  pkgrel: 1
   url: https://github.com/lu-zero/cargo-c/
   arch:
     - x86_64
@@ -25,11 +25,11 @@ pkgbase:
     - libssl.so
     - sqlite
   source:
-    - https://github.com/lu-zero/cargo-c/archive/v0.10.26/cargo-c-0.10.26.tar.gz
-    - cargo-c-0.10.26.Cargo.lock::https://github.com/lu-zero/cargo-c/releases/download/v0.10.26/Cargo.lock
+    - https://github.com/lu-zero/cargo-c/archive/v0.10.28/cargo-c-0.10.28.tar.gz
+    - cargo-c-0.10.28.Cargo.lock::https://github.com/lu-zero/cargo-c/releases/download/v0.10.28/Cargo.lock
   sha256sums:
-    - 57700786539a322a50f1848332e3465bf15efa5af2fd8b6113f36cbfce46c830
-    - d3cb865d40625de197b71fa591f1f24c0593b5a24b46b7c126eae7fecf7be315
+    - 1069764333ff3ef36b8822be6a058d5241b4d12884ac003e7d66695a8a1238e9
+    - 7272f5fdbaa92f4e29750286b6c9f3fde299c306ab21734be879f3b82159c12e
 pkgname:
   - name: cargo-c
 # generated with artixpkg 0.40.0-1-any
