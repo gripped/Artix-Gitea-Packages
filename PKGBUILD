@@ -29,8 +29,8 @@ pkgname=(
   pipewire-session-manager
   pulse-native-provider
 )
-pkgver=1.6.11
-pkgrel=2
+pkgver=1.6.12
+pkgrel=1
 epoch=1
 pkgdesc="Low-latency audio/video router and processor"
 url="https://pipewire.org"
@@ -90,7 +90,7 @@ source=(
   systemd.patch artix-pipewire-launcher
   pipewire-sysusers.conf
 )
-b2sums=('2359991befdbc6cf5a2e5ad31cde4a3f1904675fe455b9ab719754549e994ba0538b0f070b9954a4d64619067101eff9ed9e03ea3d5dd4674b3d21e9991da5b2'
+b2sums=('2763249fa5180ea2deb65959586733abfd19b3f36c0d7e17f5f686dd9331c45f10cf9252c72dc1ed4d51d14f5476be61d2a598a6200a82f1c996f39ea417c081'
         'a0b43d02f5bee1370bf6c811ed51b323dfecdc7f7a7b08aa7a70a8f971d67328c19efdecf59a4abd3f1d0d9ce0e43c25d0ddd537d5ba4c4d35270468b3f8e789'
         '697fc71055e3e8fc50787fe8d69a85eea585ce1afcb90048a528c34ae4639f05b0711efc54a8fd5d8dea41772074e32199f6a282156fdfbfa83fad0134d6d6d4'
         'ea19c2cd60b7b9773b48b2a044c764fbec260ec356d4a0f66a31737015dad5f1509145bf97094988fc2ea55282e98d52df4448a80e46b9e3c2fef57345b87846')
@@ -534,6 +534,8 @@ package_pipewire-system-services() {
     "pipewire-pulse=$epoch:$pkgver-$pkgrel"
     "pipewire=$epoch:$pkgver-$pkgrel"
   )
+
+  mv system/* "$pkgdir"
 
   install -Dm644 pipewire-sysusers.conf \
     "$pkgdir/usr/lib/sysusers.d/pipewire.conf"
