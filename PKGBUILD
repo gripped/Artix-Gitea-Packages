@@ -5,7 +5,7 @@
 
 pkgname=rocblas
 pkgver=10.2
-pkgrel=1
+pkgrel=2
 pkgdesc='Next generation BLAS implementation for ROCm platform'
 arch=('x86_64')
 url='https://rocm.docs.amd.com/projects/rocBLAS/en/latest/index.html'
@@ -99,8 +99,10 @@ build() {
     -D BUILD_WITH_PIP=OFF
     # hipblaslt doesn't support all relevant targets
     -D BUILD_WITH_HIPBLASLT=OFF
-    # gfx9-generic does not cover gfx908 and gfx90a
-    -D GPU_TARGETS="$(rocm-supported-gfx);gfx908:xnack-;gfx90a:xnack+;gfx90a:xnack-"
+    # rocBLAS loads the Tensile libraries by the exact target name of the GPU
+    # and does not find the gfx9-generic files. Use the gfx9 targets of
+    # TARGET_LIST_ROCM_10.2 in CMakeLists.txt instead.
+    -D GPU_TARGETS="$(rocm-supported-gfx -e gfx9-generic);gfx900;gfx906:xnack-;gfx908:xnack-;gfx90a:xnack+;gfx90a:xnack-"
   )
   cmake "${cmake_args[@]}"
   cmake --build build
