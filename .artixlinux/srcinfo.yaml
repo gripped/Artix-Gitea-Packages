@@ -1,9 +1,9 @@
 ---
-version: 0.5.0-1
+version: 0.6.0-1
 pkgbase:
   name: rocm-toolchain
   pkgdesc: Scripts for ROCm packaging
-  pkgver: 0.5.0
+  pkgver: 0.6.0
   pkgrel: 1
   url: https://gitlab.archlinux.org/tpkessler/rocm-toolchain
   arch:
@@ -15,9 +15,9 @@ pkgbase:
   depends:
     - bash
   source:
-    - rocm-toolchain::git+https://gitlab.archlinux.org/tpkessler/rocm-toolchain#tag=v0.5.0
+    - rocm-toolchain::git+https://gitlab.archlinux.org/tpkessler/rocm-toolchain#tag=v0.6.0
   sha256sums:
-    - d0ee1dcae12210755e80cdb4d8a529049b920a7a738d58bb114bc5dba0147498
+    - 0993c57c32bbc2e57e93db389b7c722f8a1d0a401699b869ad10727558255dc2
 pkgname:
   - name: rocm-toolchain
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
