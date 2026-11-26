@@ -5,7 +5,7 @@
 # Contributor: Richard Bradfield <bradfier@fstab.me>
 
 pkgname=github-cli
-pkgver=2.105.0
+pkgver=2.106.0
 pkgrel=1
 pkgdesc="The GitHub CLI"
 arch=("x86_64")
@@ -19,7 +19,7 @@ optdepends=("git: To interact with repositories"
 options=(!lto)
 source=("$pkgname-$pkgver.tar.gz::$url/archive/v$pkgver.tar.gz"
         disable-telemetry.patch)
-sha256sums=('3a8fddd2ca0f7c96983a251d3971a84ef042b230b26ca696e5e6ed811cd0ed8d'
+sha256sums=('ffbaa7f4ba49ca7755ad29c4c92ae28046a969c47476a2218e3ae30183f81346'
             'e306ac9d4020095d2cab773f818e7fa5393106c68465892641b2efa0e34ebbfd')
 
 prepare() {
