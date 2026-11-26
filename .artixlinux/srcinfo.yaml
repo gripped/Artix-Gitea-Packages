@@ -1,25 +1,26 @@
 ---
-version: 1.00-1
+version: 1.00-2
 pkgbase:
   name: perl-text-bibtex
   pkgdesc: Perl interface to read and parse BibTeX files
   pkgver: 1.00
-  pkgrel: 1
-  url: https://metacpan.org/release/Text-BibTeX
+  pkgrel: 2
+  url: https://metacpan.org/dist/Text-BibTeX
   arch:
     - x86_64
   license:
     - GPL-1.0-or-later OR Artistic-1.0-Perl
+  checkdepends:
+    - perl-capture-tiny>=0.06
   makedepends:
-    - perl-module-build
-    - perl-config-autoconf
-    - perl-extutils-libbuilder
+    - perl-module-build>=0.4004
   depends:
-    - perl
+    - glibc
+    - perl>=5.26.0
   options:
     - '!emptydirs'
   source:
-    - https://search.cpan.org/CPAN/authors/id/A/AM/AMBS/Text-BibTeX-1.00.tar.gz
+    - https://cpan.metacpan.org/authors/id/A/AM/AMBS/Text-BibTeX-1.00.tar.gz
   sha512sums:
     - ba026452eaa2acebe3a963674e687035984acc3777f91f89f830fefb59bf8df53dac78fa8a01f2ae281a7e7bd36e187d8a52b62b812006b4365ee82eb5642472
   b2sums:
