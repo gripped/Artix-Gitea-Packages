@@ -1,10 +1,10 @@
 ---
-version: 0.1.2-3
+version: 0.1.2-4
 pkgbase:
   name: hyprshutdown
   pkgdesc: A graceful shutdown utility for Hyprland
   pkgver: 0.1.2
-  pkgrel: 3
+  pkgrel: 4
   url: https://github.com/hyprwm/hyprshutdown
   arch:
     - x86_64
@@ -31,4 +31,4 @@ pkgbase:
     - c4f1d52830e3d1865b496453094ac74174fc8914b699510892947d8fd3fbdad0
 pkgname:
   - name: hyprshutdown
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-2.1-any
