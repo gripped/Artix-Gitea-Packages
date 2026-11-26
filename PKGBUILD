@@ -12,7 +12,7 @@ pkgdesc="Firefox ESR fork with increased security, privacy, and customizability"
 url="https://konform-browser.codeberg.page"
 _l10n_commit=2727528d7a299d3d8f6d1b4f5cbbcb23a4c848c7
 
-pkgver=153.8.0.100rc2
+pkgver=153.8.0.100
 
 pkgrel=1
 _ffbuild=1
@@ -139,7 +139,7 @@ source=(
   "${__pkgname}.desktop"
   "default192x192.png"
 )
-sha256sums=('123b76ecdc695ded44a214edaebe207bf8e8e0d1c91a14540aa8a73d5a46cf91'
+sha256sums=('3d51a545fe0048a9a79cef7d7f27438e90418549ab6222a9eaedb600813c1917'
             '824d5e0bbcae30825ee4ec3267d21018b01d33ac2fda50065de8c41153d4ec85'
             'SKIP'
             '8c3a8581a4a5974d60afbe2d84e402da13da03a68ab66beb6eeee23f18cf68f4'
