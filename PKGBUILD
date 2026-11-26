@@ -6,7 +6,7 @@
 
 _name=term-ansicolor
 pkgname=ruby-$_name
-pkgver=1.11.3
+pkgver=1.12.0
 pkgrel=1
 pkgdesc='A ruby library that colors strings using ANSI escape sequences'
 arch=('any')
@@ -26,7 +26,7 @@ options=('!emptydirs')
 source=(
   $pkgname::git+https://github.com/flori/term-ansicolor#tag=v$pkgver
 )
-sha256sums=('d25339fe079be7ec61d285b28406c082e718657276faf805d6af1ed74dc287fd')
+sha256sums=('cd42c8c14c2139eeb6aa16220c93f0e7bc8d88a10d4452f9ab377e83a0e6cb8c')
 
 prepare() {
   cd "$pkgname"
