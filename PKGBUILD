@@ -3,7 +3,7 @@
 # Contributor: Antonio Rojas <arojas@archlinux.org>
 
 pkgname=simdutf
-pkgver=9.3.0
+pkgver=9.3.3
 pkgrel=1
 pkgdesc="Unicode routines (UTF8, UTF16, UTF32) and Base64"
 arch=('x86_64')
@@ -13,7 +13,7 @@ depends=('glibc' 'libgcc' 'libstdc++')
 makedepends=('cmake' 'git')
 provides=('libsimdutf.so')
 source=("git+https://github.com/${pkgname}/${pkgname}.git#tag=v${pkgver}")
-sha256sums=('ebf7e950ef08369335f87ae77f5bc2ab4837e3896a88008924be0154871e2f1a')
+sha256sums=('8184c35e36fb63e3ab80b44f023540a7caa29121ff9fc236fb17dba22c6b5a82')
 
 build() {
 	cmake -B build \
