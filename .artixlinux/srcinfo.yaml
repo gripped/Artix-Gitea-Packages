@@ -1,9 +1,9 @@
 ---
-version: 12.23.0-1
+version: 12.24.0-1
 pkgbase:
   name: pnpm
   pkgdesc: Fast, disk space efficient package manager
-  pkgver: 12.23.0
+  pkgver: 12.24.0
   pkgrel: 1
   url: https://pnpm.io
   arch:
@@ -22,13 +22,13 @@ pkgbase:
     - sqlite
     - zstd
   source:
-    - git+https://github.com/pnpm/pnpm.git#tag=v12.23.0?signed
+    - git+https://github.com/pnpm/pnpm.git#tag=v12.24.0?signed
     - pnpm.sh
     - pnpm.fish
   validpgpkeys:
     - 7B74D1299568B586BA9962B5649E4D4AF74E7DEC
   b2sums:
-    - 42b833800c0a3880b6a52781037f8d292a57da24e2abf331425894bcd7628d8f74fb39c166137097300923c42b3e901d7f6e7c5425ada94bb25fcd12909bb61d
+    - cf193357f9e37df42b81452bbbb6ff9fd3ce09304955fb85f4c7637da6b96490734c6ac6acaa0d31e8f96d38f78c036526777e129ec88a88002556394cdd8f23
     - f0b7eb8016921175423dc33b7bf2f47a0f79d64fa5870630ed6b423576b3ea16d5021d153f125592e36d3b179d2a6105388dcb741a0503fb7d93c50a795262e8
     - 40bf9fbad001022f2930ae4fdd9946eb3230954a011d1e7bcf86ca7efb839c001204cd342a380c9b965a9f6800d6c1fa4fdbcd116a1d9a251ea6cd1ce7c988b3
 pkgname:
