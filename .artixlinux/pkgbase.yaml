@@ -1,11 +1,11 @@
 ---
 actions:
-  addRepo: galaxy
-  removeRepo: null
-  triggersBuild: true
+  addRepo: null
+  removeRepo: galaxy-gremlins
+  triggersBuild: false
   triggersRebuild: false
-  triggersRepoAdd: true
-  triggersRepoRemove: false
+  triggersRepoAdd: false
+  triggersRepoRemove: true
   triggersNoCheck: false
 repos:
   system-goblins:
@@ -49,11 +49,8 @@ repos:
     packages: []
     debug: []
   galaxy-gremlins:
-    version: 6.18.60.rt9.artix1-2
-    packages:
-      - linux-rt-lts-6.18.60.rt9.artix1-2-x86_64.pkg.tar.zst
-      - linux-rt-lts-headers-6.18.60.rt9.artix1-2-x86_64.pkg.tar.zst
-      - linux-rt-lts-docs-6.18.60.rt9.artix1-2-x86_64.pkg.tar.zst
+    version: null
+    packages: []
     debug: []
   galaxy:
     version: 6.18.65.rt10.artix1-1
