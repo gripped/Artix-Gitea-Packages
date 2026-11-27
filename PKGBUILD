@@ -5,8 +5,8 @@
 # Contributor: Frederik “Freso” S. Olesen <freso.dk@gmail.com>
 
 pkgname=lutris
-pkgver=0.5.22
-pkgrel=3
+pkgver=0.5.23
+pkgrel=1
 pkgdesc='Open Gaming Platform'
 arch=(any)
 url=https://lutris.net
@@ -81,7 +81,7 @@ optdepends=(
 )
 source=("git+https://github.com/lutris/lutris.git#tag=v${pkgver}"
         "git+https://github.com/bartok765/galaxy_blizzard_plugin.git")
-sha256sums=('01092d0357841f1ec0b99b25cd83dfa4d01fb43a98899b71ed33c0ee68067934'
+sha256sums=('871e4cbbf5bee32df7e24dae0b2ed1347a2b020530e41f199ddcfffa7dc2785a'
             'SKIP')
 
 prepare() {
