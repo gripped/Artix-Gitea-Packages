@@ -33,4 +33,4 @@ pkgbase:
     - 515c81e21d31c4cf38a5610c03a4e6d1dca2d7d50df9408ad7236130ad308d6efa89aa09bb3f01cefa541ad82ca6b9876cd870c6b4258fffed8746691f2ce800
 pkgname:
   - name: ruby-pry
-# generated with artixpkg 0.40.0-1-any
+# generated with artixpkg 0.40.1-1-any
